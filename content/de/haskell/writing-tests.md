@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Tests schreiben"
+title:                "Haskell: Test schreiben"
+simple_title:         "Test schreiben"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/writing-tests.md"
 ---
 
@@ -9,54 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Tests sind eine wichtige und notwendige Komponente in der Softwareentwicklung. Sie ermöglichen es Programmierern, die Funktionalität ihrer Codes zu überprüfen und sicherzustellen, dass sie korrekt funktionieren. Das Schreiben von Tests ist ein wichtiger Schritt, um sicherzustellen, dass die Software fehlerfrei ist und den Erwartungen der Benutzer entspricht.
+In der Welt der Programmierung gibt es eine Vielzahl von Meinungen darüber, ob Tests bei der Entwicklung von Software notwendig sind oder nicht. Einige argumentieren, dass Tests zeitaufwändig und unnötig sind, während andere sagen, dass sie unerlässlich sind für die Sicherstellung der Qualität des Codes. Aber warum sollte man überhaupt Tests schreiben?
+
+Der Hauptgrund dafür ist, dass Tests dazu beitragen, Fehler im Code frühzeitig zu erkennen. Sie ermöglichen es, potenzielle Probleme zu identifizieren und zu beheben, bevor sie zu größeren Problemen werden, die möglicherweise erst in der Produktionsumgebung auftreten. Sie dienen als eine Art Sicherheitsnetz für Ihren Code und geben Ihnen die Gewissheit, dass alles wie erwartet funktioniert.
 
 ## Wie man Tests schreibt
+Um Tests in Haskell zu schreiben, müssen wir uns zunächst mit dem Konzept des "QuickCheck" vertraut machen. QuickCheck ist eine Haskell Library, die es ermöglicht, automatisierte Tests zu schreiben, die zufällige Eingaben generieren und überprüfen, ob die Ausgabe wie erwartet ist.
 
-Das Schreiben von Tests in Haskell ist ein relativ einfacher Prozess. Zunächst müssen Sie das Test-Framework `HUnit` importieren, indem Sie folgende Zeile zu Ihrem Code hinzufügen:
-
-```Haskell
-import Test.HUnit
-```
-
-Als nächstes definieren Sie eine Testfunktion, die die Funktionalität testen soll, zum Beispiel eine Funktion `double`, die eine Zahl verdoppelt:
+Um QuickCheck zu verwenden, müssen wir zuerst die `Test.QuickCheck` Module importieren und dann unsere Testfunktion definieren. Wir können dies mit dem folgenden Code tun:
 
 ```Haskell
-double :: Int -> Int
-double x = x * 2
+import Test.QuickCheck
+
+-- Beispieltestfunktion
+additionTest :: Int -> Int -> Bool
+additionTest x y = x + y == y + x
+
+-- Test ausführen
+quickCheck additionTest
 ```
 
-Dann können Sie eine Liste von Tests erstellen, die überprüfen, ob die Funktion korrekt funktioniert:
+Wenn wir diesen Code ausführen, erhalten wir die Ausgabe `+++ OK, passed 100 tests.` Dies bedeutet, dass unsere Funktion in 100 zufälligen Fällen erfolgreich war.
+
+Wir können auch benutzerdefinierte Datentypen verwenden, um spezifischere Tests zu schreiben. Zum Beispiel können wir eine benutzerdefinierte Datentyp `Person` definieren und dann einen Test schreiben, der überprüft, ob das Alter einer Person in einem bestimmten Bereich liegt.
 
 ```Haskell
-doubleTests :: [Test]
-doubleTests = 
-    [ 
-        "Double of 5 should be 10" ~: double 5 ~?= 10, 
-        "Double of 0 should be 0" ~: double 0 ~?= 0 
-    ] 
+data Person = Person String Int
+
+ageRangeTest :: Person -> Bool
+ageRangeTest (Person name age) = age >= 18 && age <= 65
+
+-- Test ausführen
+quickCheck ageRangeTest
 ```
 
-Die Liste enthält Testfälle, die jeweils einen Textbeschreibung des Tests, das erwartete Ergebnis und das tatsächliche Ergebnis enthalten. Schließlich können Sie die Tests mit der `runTestTT` Funktion ausführen:
+Die Ausgabe würde in diesem Fall `+++ OK, passed 100 tests.` oder `*** Failed! Falsifiable (after 4 tests):` sein, je nachdem, ob die Funktion in allen oder nur einigen zufälligen Fällen erfolgreich war.
 
-```Haskell
-main :: IO () 
-main = do 
-    runTestTT $ TestList doubleTests 
-```
+## Tiefere Einblicke
+Wenn es darum geht, Tests zu schreiben, gibt es viele verschiedene Ansätze und Methoden, die man wählen kann. Einige Entwickler bevorzugen Unit-Tests, bei denen jede Funktion oder jede Klasse einzeln getestet wird. Andere bevorzugen Integrationstests, bei denen das Zusammenspiel mehrerer Funktionen getestet wird.
 
-Dies wird die Ausgabe der Tests in der Konsole zeigen, die besagt, ob die Tests erfolgreich sind oder nicht.
+Es gibt auch die Möglichkeit, Eigenschaftstests zu schreiben, bei denen die Funktion eines Programms auf Eigenschaften getestet wird, anstatt konkrete Eingaben zu überprüfen. Dies kann besonders nützlich sein, wenn es darum geht, Komplexität und unerwartete Verhaltensweisen zu erkennen.
 
-## Deep Dive
-
-Tests in Haskell werden normalerweise in einer eigenen Modul-Datei geschrieben, die als `Spec.hs` bezeichnet wird. Diese Datei sollte die gleichen Import-Anweisungen wie die Hauptdatei Ihres Projekts enthalten, sowie alle notwendigen Testfunktionen und Testlisten.
-
-Das `HUnit` Framework bietet auch die Möglichkeit, modulare Tests zu schreiben, die in Untergruppen organisiert sind, um die Lesbarkeit und Verwaltbarkeit zu verbessern. Sie können auch Eigenschaftsbasierte Tests schreiben, die zufällige Eingabewerte verwenden, um die Funktionalität Ihrer Codes weiter zu überprüfen.
-
-Zusätzlich zu `HUnit` gibt es auch andere Test-Frameworks wie `QuickCheck`, die in Haskell verwendet werden können. Es lohnt sich, verschiedene Frameworks auszuprobieren und das zu finden, das am besten zu Ihrem Projekt passt.
+Egal, für welchen Ansatz man sich entscheidet, die Hauptsache ist, dass Tests dazu beitragen, zu garantieren, dass unser Code funktioniert und robust ist.
 
 ## Siehe auch
-
-- [HUnit Dokumentation](https://hackage.haskell.org/package/HUnit)
-- [QuickCheck Dokumentation](https://hackage.haskell.org/package/QuickCheck)
-- [Einführung in das Unit-Testing in Haskell](https://www.stackage.org/lts-14.19/package/hunit-1.6.0.0/docs/Test-HUnit.html)
+- [Haskell QuickCheck-Dokumentation](https://hackage.haskell.org/package/QuickCheck)
+- [Writing Testable Haskell Code](https://www.parsonsmatt.org/2018/10/08/writing_testable_code_in_haskell.html)
+- [Introduction to Property Tests in Haskell](https://jadpole.github.io/introduction-to-property-testing-in-haskell/)

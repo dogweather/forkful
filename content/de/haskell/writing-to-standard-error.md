@@ -1,36 +1,44 @@
 ---
 title:                "Haskell: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Schreiben von Fehlern in die Standardfehlerausgabe ist ein wichtiges Konzept beim Programmieren in Haskell. Es gibt uns die Möglichkeit, Fehlermeldungen und Warnungen zu schreiben, die bei der Ausführung des Programms auf der Konsole angezeigt werden. Dadurch können wir potenzielle Probleme im Code schnell erkennen und beheben.
 
-Das Schreiben an den Standardfehler ist eine wichtige Fähigkeit für jeden Haskell Programmierer. Es ermöglicht uns, wichtige Fehlermeldungen anzuzeigen, die uns bei der Fehlersuche und -behebung helfen können.
+## Wie man es tut
+Um eine Nachricht in die Standardfehlerausgabe zu schreiben, können wir die Funktion `hPutStrLn` aus dem `System.IO`-Modul verwenden. Diese Funktion nimmt als erstes Argument einen `Handle`, der die Ausgabedatei darstellt, und als zweites Argument die Nachricht, die wir schreiben möchten.
 
-## Wie man
-
-Das Schreiben an den Standardfehler in Haskell ist einfach. Man kann einfach die `hPutStrLn` Funktion aus dem `System.IO` Modul verwenden, um eine Zeichenfolge an den Standardfehler zu senden.
-
-```Haskell
+``` Haskell
 import System.IO
 
+main :: IO ()
 main = do
-    hPutStrLn stderr "Dies ist eine Fehlermeldung"
+  hPutStrLn stderr "Dies ist eine Fehlermeldung."
+  hPutStrLn stderr "Dies ist eine Warnung."
 ```
 
-Dies wird die Zeichenfolge "Dies ist eine Fehlermeldung" an den Standardfehler senden. Beachten Sie, dass wir hier `stderr` statt `stdout` verwenden, um spezifisch den Standardfehler anstatt des Standardausgabestroms zu adressieren.
+Die obigen Codezeilen werden bei der Ausführung des Programms die folgende Ausgabe auf der Konsole erzeugen:
 
-## Tiefgehender Einblick
+```
+Dies ist eine Fehlermeldung.
+Dies ist eine Warnung.
+```
 
-Es gibt einige wichtige Dinge zu beachten, wenn man an den Standardfehler schreibt. Zum Beispiel bieten viele Bibliotheken wie `Control.Exception` Funktionen wie `throwIO` und `throw` an, die Fehler an den Standardfehler senden. Bei der Verwendung dieser Funktionen müssen wir jedoch vorsichtig sein, um nicht versehentlich wichtige Informationen zu verlieren.
+## Tiefere Einblicke
+In Haskell gibt es drei verschiedene Handles für den Standardausgabe-, Standardfehler- und Standardeingabestrom, die als `stdout`, `stderr` und `stdin` bezeichnet werden.
 
-Eine weitere wichtige Sache ist, dass der Standardfehler im Allgemeinen nicht gepuffert wird, was bedeutet, dass jeder Aufruf von `hPutStrLn` sofort die Zeichenfolge an den Standardfehler sendet. Dies kann zu einer unübersichtlichen Ausgabe führen, insbesondere wenn mehrere Threads gleichzeitig auf den Standardfehler schreiben.
+Jedes Mal, wenn wir `hPutStrLn` verwenden, wird die Nachricht in den angegebenen `Handle` geschrieben. Standardmäßig ist der `Handle` für `stderr` auf `stdout` gesetzt. Das bedeutet, dass die Ausgabemeldungen für Fehler und Warnungen standardmäßig auf der gleichen Konsole angezeigt werden, wie die Ausgabe unseres Programms.
+
+Es ist jedoch wichtig zu beachten, dass sich die Handles während der Laufzeit des Programms ändern können. Daher ist es zu empfehlen, die Funktion `hSetBuffering` zu verwenden, um sicherzustellen, dass die Ausgabe auf dem richtigen `Handle` gespeichert wird.
 
 ## Siehe auch
-
-- [Haskell Dokumentation zu System.IO](https://hackage.haskell.org/package/base/docs/System-IO.html)
-- [Fehlerbehandlung in Haskell](https://wiki.haskell.org/Error_handling)
+- [Haskell-Dokumentation zu Handles](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html#t:Handle)
+- [Haskell-Dokumentation zu Standardausgabe, Standardfehler und Standardeingabe](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html#v:stderr)
+- [Official Haskell Website](https://www.haskell.org/)

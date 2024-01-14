@@ -1,54 +1,77 @@
 ---
-title:                "Python: Utdraging av delstrenger"
+title:                "Python: Ekstrahering av substringer"
+simple_title:         "Ekstrahering av substringer"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
+## Hvorfor
 
-Noen ganger i programmering kan vi ha behov for å hente ut en spesifikk del av en tekststreng. Dette kalles "substring extraction" på engelsk, og kan være nyttig i mange ulike situasjoner. I denne bloggposten skal vi se nærmere på hvorfor og hvordan man kan gjøre dette ved hjelp av Python.
+Har du noen gang ønsket å hente ut en del av en tekststreng? Å kunne ekstrahere substrings, eller deler av en tekst, er en nyttig funksjon i Python som kan hjelpe deg med å manipulere data på en mer effektiv måte. Uansett om du skal jobbe med tekstbehandling, dataanalyse eller automatisering, kan kunnskap om å ekstrahere substrings være svært nyttig.
 
-##Hvordan gjøre det
+## Hvordan
 
-For å ekstrahere deler av en tekststreng i Python, kan vi bruke en metode kalt "slice". Dette gjøres ved å indikere hvilke indekser vi ønsker å hente ut fra strengen, og deretter skrive disse indeksene mellom hakete klammer. La oss se et eksempel:
-
-```Python
-tekst = "Denne teksten er til eksperimentell bruk"
-
-print(tekst[6:12])
-```
-
-Dette eksempelet vil gi oss output-en "teksten". Her har vi brukt slice-metoden til å hente ut de indeksene som tilsvarer ordet "teksten" i tekststrengen vår.
-
-Vi kan også bruke slice-metoden til å hente ut deler av en tekststreng ved hjelp av negative indekser. Dette betyr at vi teller baklengs fra slutten av strengen. La oss se et annet eksempel:
+Det første du må gjøre er å importere `re` biblioteket, som står for "regular expressions" eller regulære uttrykk på norsk. Dette biblioteket er viktig for å kunne finne og håndtere tekststrenger på en mer avansert måte. Deretter kan du bruke funksjonen `re.search()` for å finne en spesifikk substring i en tekststreng.
 
 ```Python
-tekst = "Dette er en veldig lang setning"
+import re
 
-print(tekst[-9:-1])
+tekst = "Jeg elsker å programmere i Python!"
+
+substring = re.search("programmere", tekst) 
+
+print(substring)
 ```
 
-Output-en her vil være "setning". Vi brukte de negative indeksene -9 og -1 for å hente ut ordet "setning".
+Output:
 
-##Dypdykk
+```
+<re.Match object; span=(10, 20), match='programmere'>
+```
 
-For å forstå hvorfor slice-metoden fungerer, må vi se nærmere på hvordan Python håndterer tekststrenger. En tekststreng består av en rekke enkeltelementer, også kalt "characters". Disse elementene har hver sin plass i strengen, også kalt "indekser". Når vi bruker slice-metoden, forteller vi Python hvilke indekser vi ønsker å utheve og hente ut.
-
-Det er også verdt å nevne at vi kan bruke slice-metoden til å traverse gjennom en tekststreng og ekstrahere hvert n-te element ved hjelp av et tredje argument. La oss se et eksempel på dette:
+Her ser vi at funksjonen `re.search()` har funnet det vi lette etter, nemlig ordet "programmere" i tekststrengen. For å hente ut selve substringen, kan vi bruke metoden `group()` på objektet som blir returnert:
 
 ```Python
-tekst = "ABCDEFG"
-
-print(tekst[::2])
+print(substring.group())
 ```
 
-Her vil output-en være "ACEG". Vi brukte her det tredje argumentet (i dette tilfellet 2) til å hoppe over hver andre bokstav i strengen og hente ut kun disse. Dette kan være nyttig hvis vi ønsker å hente ut hvert annet element, eller hvert tredje element osv.
+Output:
 
-##Se også
-- [Python tutorial](https://docs.python.org/3/tutorial/index.html)
-- [String methods](https://www.w3schools.com/python/python_ref_string.asp)
+```
+programmere
+```
 
-Vi håper dette var nyttig for deg for å forstå hvordan du kan hente ut deler av en tekststreng ved hjelp av slice-metoden i Python. God programmering!
+Du kan også bruke regulære uttrykk for å finne mer komplekse substrings. For eksempel, hvis vi ønsker å finne alle ordene som starter med bokstaven "p" i teksten vår, kan vi bruke uttrykket `p\w+`:
+
+```Python
+import re
+
+tekst = "Python er et fantastisk programmeringsspråk!"
+
+substring = re.search("p\w+", tekst) 
+
+print(substring.group())
+```
+
+Output:
+
+```
+Python
+```
+
+## Dypdykk
+
+Det finnes mange ulike metoder og uttrykk du kan bruke for å ekstrahere substrings i Python. Du kan for eksempel bruke metoden `findall()` for å finne alle forekomster av en substring, eller `split()` for å dele opp en tekststreng i ulike deler.
+
+Videre kan du også bruke symbolske uttrykk for å finne spesifikke mønstre i teksten, som for eksempel å finne alle ord som slutter på en bestemt bokstav. Det finnes også mange nyttige biblioteker og pakker som kan hjelpe deg med å håndtere tekst på en mer avansert måte, som for eksempel `nltk` (Natural Language Toolkit) eller `gensim`.
+
+## Se også
+
+- [Introduction to Regular Expressions in Python](https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial)
+- [Python Regular Expressions: from Beginner to Advanced](https://medium.com/factory-mind/python-regular-expression-tutorial-from-beginner-to-advanced-417dd68658f5)
+- [Mastering Python Regular Expressions](https://masteringpythonregularexpressions.gruppioni.eu/)
+- [How to Extract Data From Websites in Python Using RegEx](https://www.digitalocean.com/community/tutorials/how-to-extract-data-from-websites-in-python-using-regex)

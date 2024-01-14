@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Odczytywanie argumentów linii poleceń"
+title:                "PHP: Odczytywanie argumentów wiersza poleceń"
+simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/reading-command-line-arguments.md"
 ---
 
@@ -9,32 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego warto poznać obsługę argumentów wiersza poleceń w PHP? W skrócie, umożliwia to dostosowywanie działania programu poprzez dostarczanie mu informacji w momencie jego uruchamiania. W ten sposób możesz wpływać na sposób działania swojego programu bez konieczności wprowadzania zmian w samym kodzie.
+Jeśli jesteś programistą PHP i pracujesz z plikami wiersza poleceń, prawdopodobnie zastanawiasz się, dlaczego warto czytać argumenty wiersza poleceń. W tym artykule dowiecie się o niezbędnym narzędziu i jak korzystać z niego w swoich projektach.
 
 ## Jak to zrobić
 
-Aby zacząć korzystać z argumentów wiersza poleceń w PHP, musimy najpierw zdefiniować, które argumenty będą wymagane, a które opcjonalne. W tym celu wykorzystamy funkcję `getopt()`, która zwraca tablicę zawierającą przetworzone argumenty wiersza poleceń. Poniżej znajduje się przykładowy kod:
+Aby odczytać argumenty wiersza poleceń w PHP, wystarczy skorzystać z wbudowanej funkcji `getopt()`. Poniżej znajduje się przykładowy kod, wykorzystujący tę funkcję:
 
 ```PHP
-$options = getopt("h:l", ["help", "log"]);
+$options = getopt("f:h", ["file:", "help"]);
 ```
 
-W tym przypadku, `h` i `l` są opcjonalnymi argumentami, a `help` i `log` są wymaganymi. Teraz, jeśli chcemy uruchomić nasz program z opcjonalnym argumentem `h` o wartości `5`, możemy wpisać w terminalu:
+W powyższym przykładzie, pierwszy parametr funkcji `getopt()` oznacza listę akceptowanych opcji, gdzie każda litera to jedna opcja, a dwukropki oznaczają, że akceptowane są także opcje z parametrem. Drugi parametr to tablica z opcjami, które akceptujemy w formacie dłuższym, gdzie pierwszy element to nazwa opcji, a drugi to jej skrót.
 
-```
-php program.php -h 5
+Następnie należy wykorzystać pętlę `foreach` do odczytania wartości poszczególnych argumentów:
+
+```PHP
+foreach ($options as $key => $value) {
+    switch ($key) {
+        case 'f':
+        case 'file':
+            echo "Odczytano argument 'file' o wartości: " . $value;
+            break;
+        case 'h':
+        case 'help':
+            echo "Wyświetlam pomoc dotyczącą aplikacji.";
+            break;
+    }
+}
 ```
 
-Otrzymamy wtedy w naszej tablicy zwróconej przez `getopt()` wartość `5` pod kluczem `h`.
+Powyższy kod odczyta dwa argumenty: `-f` lub `--file`, a także `-h` lub `--help`. W zależności od wprowadzonych opcji, zostaną wykonane odpowiednie akcje, np. wyświetlenie wartości podanego pliku lub wyświetlenie pomocy dla użytkownika.
 
 ## Deep Dive
 
-Oprócz podstawowej obsługi argumentów opcjonalnych i wymaganych, funkcja `getopt()` umożliwia również bardziej skomplikowane akcje, takie jak ustawianie domyślnej wartości dla argumentów czy filtrowanie argumentów według określonego wzorca za pomocą wyrażeń regularnych. Warto więc zapoznać się z pełną dokumentacją PHP dotyczącą obsługi argumentów wiersza poleceń, aby w pełni wykorzystać ich możliwości.
+Funkcja `getopt()` pozwala nam na wiele zaawansowanych operacji związanych z odczytywaniem argumentów wiersza poleceń. Dzięki niej, możemy kontrolować m.in. kolejność wprowadzania argumentów, obsługiwać parametry opcji czy też walidować wprowadzone wartości.
+
+Istnieje również wiele innych funkcji i bibliotek, które mogą ułatwić pracę z argumentami wiersza poleceń w PHP. Warto poznać je wszystkie, aby w pełni wykorzystać możliwości, jakie daje nam to narzędzie.
 
 ## Zobacz również
 
-Zapraszamy do zapoznania się z poniższymi linkami dla dalszego wgłębiania się w temat:
-
-- https://www.php.net/manual/en/function.getopt.php
-- https://www.php.net/manual/en/reserved.variables.argv.php
-- https://www.php.net/manual/en/function.array-unshift.php
+- [Dokumentacja PHP - getopt()](https://www.php.net/manual/en/function.getopt.php)
+- [Kurs z wiersza poleceń w PHP](https://codecourse.com/watch/command-line/php-command-line-basics)
+- [PHP CLI Parser - biblioteka do parsowania argumentów wiersza poleceń](https://github.com/dericofilho/php-cli-parser)

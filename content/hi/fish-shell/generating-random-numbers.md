@@ -1,35 +1,37 @@
 ---
-title:                "Fish Shell: संयुक्त रांदिअम नंबर बनाना"
+title:                "Fish Shell: तस्वीरें उत्पन्न करना"
+simple_title:         "तस्वीरें उत्पन्न करना"
 programming_language: "Fish Shell"
-category:             "Numbers"
+category:             "Fish Shell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-##इसका क्या करने के लिए: एक साधारण समस्या है, जहां हमें यादृच्छिक नंबरों की आवश्यकता होती है, जैसे खेलों को एकाधिकरण करने के लिए।
+## इसका कारण
 
-##कैसे करें: कुछ मामूली Fish Shell संगणनाओं का उपयोग करके एक अद्भुत कोड संग्रह।
+डेटा विज्ञान, मशीन लर्निंग और साइबर सुरक्षा जैसे क्षेत्रों में सत्यापित और उत्पन्न डेटा के लिए यादृच्छिक संख्याओं का उपयोग करना जरूरी है। यह डेटा को संरचित करने और उससे सार्वजनिक नमूनों को अधिक संवेदनशील बनाने में मदद करता है, जो अनुसंधान और विश्लेषण के लिए अनुकूल होते हैं।
 
-```Fish Shell
-set -q RANDOM
-if not set -q RANDOM; set RANDOM 0 
-for i in (seq 1 5)
-  echo $RANDOM
+## कैसे करे
+
+फिश शेल में, हम `math/rand` लाइब्रेरी का उपयोग करके `rand` कमांड को चला सकते हैं। उसे उदाहरण के साथ बिंदु निर्देशित करें और क्रम में चालू करें।
+
+```fish
+set min 1    # Minimum value
+set max 100  # Maximum value
+set count 10 # Number of random numbers to generate
+for i in (seq $count)
+    echo (rand -r $min $max)
 end
 ```
-नतीजा:
-27403
-56450
-30741
-57548
-22469
 
-##गहराई तक: यादृच्छिक संख्याओं को उत्पन्न करने के लिए विभाजन मानचित्रों, क्रिप्टोग्राफी में उपयोग के साथ, और विभिन्न आवेदनों के लिए डिजिटल सुरक्षा में उपयोग करने का तरीका बताया गया है।
+प्रत्येक दौर में, यह कमांड रैंडमाइज़ड अंक लायेगा जो `min` और `max` के बीच होते हैं। उपरोक्त कोड और संबंधित विषयों पर और अधिक अध्ययन कर सकते हैं।
 
-## देखें भी: 
-- [Fish Shell डॉक्यूमेंटेशन] (https://fishshell.com/docs/current/index.html)
-- [कैसे Fish Shell सामान्य संगणनाओं को उपयोग करता है] (https://stackoverflow.com/questions/52566243/how-fish-shell-uses-general-arithmetic)
-- [ऐसा ही एक खेल जो जादू संख्याओं का उपयोग करता है] (https://www.youtube.com/watch?v=4LWBLY_Iq-o)
+## गहराई में जाए
 
-##अब आप यादृच्छिक संख्याएं उत्पन्न करने के लिए Fish Shell का उपयोग कर सकते हैं! धन्यवाद।
+हम डेटा भण्डारण में कहाँ, डेटा विश्लेषण में कितना समय व्यतीत होता है, और क्या उसका प्रभाव हो सकता है और अन्य बातें पर भी प्रभावित होते हैं। अतिरिक्त विवरण के लिए माइकल कोड्डन का [यह लेख] (https://www.extraordinaryproblems.com/understanding-generating-random-numbers/) देखें।
+
+## यहाँ देखें
+
+[फिश शेल ऑफिशियल दस्तावेज़ीकरण] (https://fishshell.com/docs/current/) | [मजबूतियाँ और मुश्किलें] (https://fishshell.com/docs/current/index.html#strongfeatures) | [कमांड लाइन मानचित्र] (https://learnxinyminutes.com/docs/fish/) | [मशीन लर्निंग और

@@ -1,51 +1,46 @@
 ---
 title:                "Rust recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why Writing Tests in Rust is Important
 
-Writing tests is an essential aspect of programming that ensures the reliability and functionality of our code. It allows us to catch bugs early on and make sure our code works as intended. In the long run, it saves time and effort and improves the overall quality of our projects.
+When it comes to writing code, testing is an essential step in ensuring its reliability and functionality. Rust, being a systems programming language, allows for low-level and efficient code, but that also means more room for errors. Therefore, writing tests in Rust is crucial for ensuring code quality and reducing potential bugs.
 
-## How To
+## How To Write Tests in Rust
 
-To write tests in Rust, we will be using the `assert!` macro from the standard library. This macro takes in a boolean expression and prints an error message if the expression evaluates to false. Let's see an example:
+Writing tests in Rust is simple and intuitive, thanks to its built-in unit testing framework called `test`. Here's an example of a basic test for a function that calculates the square of a number:
 
 ```Rust
-fn add(a: i32, b: i32) -> i32 {
-    a + b
+fn square(x: i32) -> i32 {
+    x * x
 }
 
-// simple test to check if the function correctly adds two numbers
 #[test]
-fn test_add() {
-    let result = add(5, 10);
-    assert!(result == 15, "5 + 10 should equal 15, but got {}", result);
+fn test_square() {
+    assert_eq!(square(5), 25);
 }
 ```
 
-In this `test_add` function, we first call our `add` function with two numbers and store the result in a variable. Then, we use the `assert!` macro to check if the result is equal to 15. If not, the error message will be printed along with the actual value of the result. The `#[test]` attribute tells the compiler to treat this function as a test.
+In the above code, we first define a function called `square` that takes in an integer and returns its square. Then, we use the `test` attribute to define a unit test function called `test_square`. Within this function, we use the `assert_eq` macro to check if the output of `square(5)` is equal to 25, as expected. If the assertion fails, the test will fail, indicating a potential bug.
 
-We can also use the `assert_eq!` macro to check for equality between two values, and the `assert_ne!` macro to check for inequality. Additionally, we can use the `should_panic` attribute to test for expected panics in our code. These are just a few examples, but there are many more testing tools available in Rust.
+To run the test, we use the `cargo test` command. This will compile our code and run all the tests defined in our project. If there are any failures, the output will show which assertion failed, helping us pinpoint the issue in our code.
 
-## Deep Dive
+## Deep Dive into Writing Tests in Rust
 
-In Rust, tests are usually placed in a different directory `tests` than the rest of the codebase. This is to keep the tests separate from the actual code and to prevent them from being included in the compiled code.
+There are several other features and techniques that can be used when writing tests in Rust. These include testing multiple scenarios, using the `#[should_panic]` attribute to test for expected panics, and using the `TestResult` type to handle error messages. There are also crates available, such as `quickcheck` and `proptest`, for property-based testing.
 
-Tests in Rust follow the same naming convention as functions, starting with `test_` and being snake case. Each test function should only test one specific aspect of our code, making it easier to identify and fix bugs.
-
-Apart from unit tests, we can also write integration tests in Rust. These tests are placed in a separate `tests` directory and interact with our code as an external user would. This allows us to test the entire functionality of our code from a user's perspective.
+Additionally, one can use the `integration_test` attribute to write tests that involve multiple files or binaries. And for more complex projects, Rust's `mock` and `spy` features can be used to mock external dependencies, making testing even more efficient.
 
 ## See Also
 
-For more information on writing tests in Rust, check out these resources:
-
-- [Rust Book - Writing Automated Tests](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
-- [Rust by Example - Testing](https://doc.rust-lang.org/rust-by-example/testing.html)
-- [Testing in Rust with `assert!`, `assert_eq!`, and `assert_ne!`](https://www.snoyman.com/blog/2014/12/rust-testing)
-
-Now that you have an understanding of how to write tests in Rust, go ahead and start implementing them in your projects to improve your code's reliability and quality. Happy testing!
+- [Rust Testing Guide](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Official Rust Testing Documentation](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
+- [Property-based testing in Rust with proptest](https://fasterthanli.me/articles/quickcheck-for-rust)
+- [Integration testing in Rust](https://doc.rust-lang.org/book/ch11-02-running-tests.html#the-tests-directory-and-integration-tests)

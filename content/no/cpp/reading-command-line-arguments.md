@@ -1,57 +1,61 @@
 ---
 title:                "C++: Lesing av kommandolinjeargumenter"
+simple_title:         "Lesing av kommandolinjeargumenter"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Mange programmerere kan føle at å lese kommandolinje-argumenter kan være en kjedelig og tidkrevende oppgave. Likevel, det er en viktig ferdighet som kan bidra til å effektivisere kode og gi mer fleksibilitet til brukere av programmet ditt. Derfor er det viktig å lære å lese kommandolinje-argumenter, og denne bloggposten vil vise deg hvordan.
 
-Velkommen til en ny blogginnlegg om C++ programmering! Denne posten er spesielt for våre norske lesere som ønsker å lære mer om å lese kommandolinje-argumenter. Hvorfor ville noen engasjere seg i å lese kommandolinje-argumenter, spør du? Vel, det er flere grunner til dette. For det første, når du utvikler et program, vil du ofte måtte kommunisere med brukeren. Å lese kommandolinje-argumenter gir en enkel og direkte måte å gjøre dette på. Også, for å lage et program som er både fleksibelt og brukervennlig, er det avgjørende å kunne håndtere ulike inndata. Lesing av kommandolinje-argumenter tillater akkurat dette. Så la oss se på hvordan man gjør dette!
+## Hvordan man leser kommandolinje-argumenter i C++
+Kommandolinje-argumenter kan leses enkelt gjennom å bruke et bibliotek kalt `getopt`. Dette biblioteket er tilgjengelig for C++ og kan hjelpe deg å hente ut argumentene som blir sendt til programmet ditt gjennom kommandolinjen.
 
-## Hvordan
-
-For å lese kommandolinje-argumenter i C++, bruker vi funksjonen `main` og parametere `argc` og `argv`. La oss se på et eksempel:
+For å bruke `getopt`, må du inkludere `<getopt.h>` i koden din. Her er et enkelt eksempel på hvordan du kan bruke `getopt` for å lese inn en enkelt kommandolinje-parameter og skrive den ut:
 
 ```C++
 #include <iostream>
+#include <getopt.h>
 
-int main(int argc, char *argv[])
-{
-    std::cout << "Antall argumenter: " << argc << std::endl;
-    
-    for(int i = 0; i < argc; i++)
-    {
-        std::cout << "Argument " << i << ": " << argv[i] << std::endl;
+int main(int argc, char *argv[]) {
+    // Initialiser variabler
+    int c;
+    int option;
+
+    // Loop gjennom alle kommandolinje-argumenter
+    while((c = getopt(argc, argv, "a:")) != -1) {
+        switch(c) {
+            case 'a':
+                // Hent ut argumentet og skriv det ut
+                option = atoi(optarg);
+                std::cout << "Argumentet var: " << option << std::endl;
+                break;
+            default:
+                // Hvis argumentet ikke stemmer overens med mulige alternativer
+                std::cout << "Ukjent argument: " << c << std::endl;
+        }
     }
-    
+
     return 0;
 }
 ```
-La oss si at vi lagrer denne koden i en fil kalt `argumenter.cpp`. Når vi kompilerer og kjører dette programmet i kommandolinjen, vil vi få følgende utskrift:
 
-```
-$ g++ argumenter.cpp -o argumenter
-$ ./argumenter hei alle sammen
-Antall argumenter: 4
-Argument 0: ./argumenter
-Argument 1: hei
-Argument 2: alle
-Argument 3: sammen
-```
+La oss si at dette programmet heter "arguments" og du kjører det med argumentet `-a 42` i kommandolinjen. Da vil programmet skrive ut "Argumentet var: 42".
 
-Her ser vi at `argc` parameteren inneholder antall argumenter (i dette tilfellet 4), og `argv` parameteren inneholder selve argumentene. Disse argumentene er delt opp og lagret som strenger i en array. Derfor kan vi bruke en `for`-løkke til å gå gjennom denne arrayen og skrive ut hvert argument.
+## Dypdykk i lesing av kommandolinje-argumenter
+Så hva skjer egentlig i koden vår? Først og fremst så bruker vi `optarg` til å hente ut argumentet fra kommandolinjen. Dette er faktisk en peker til en streng som inneholder argumentet. Vi bruker også funksjonen `atoi()` for å konvertere argumentet til et tall.
 
-## Dypdykk
+I tillegg bruker vi `switch` og `case` for å håndtere ulike argumenter som kan bli sendt til programmet vårt. Hvis en bruker sender et argument som ikke stemmer overens med alternativene våre, vil programmet vårt gi en feilmelding.
 
-Nå som vi har et grunnleggende eksempel, la oss se på noen flere detaljer når det gjelder å lese kommandolinje-argumenter i C++. Det første å merke seg er at `argc` parameteren alltid vil inneholde minst en verdi. Dette er fordi førsteelementet i `argv` alltid vil være navnet på programmet vårt (her `argumenter`). En annen ting å være oppmerksom på er at når vi leser argumenter i C++, vil alle argumentene bli lagret som strenger, selv om de faktisk er tall eller bokstaver. Så hvis vi ønsker å bruke dem som tall eller bokstaver, må vi konvertere dem.
-
-En annen nyttig funksjon er `getopt()`, som er spesifikk for å lese og tolke kommandolinje-argumenter. Denne funksjonen lar oss spesifisere hvilke argumenter vi ønsker å lese, og deretter gir den oss tilgang til hvert individuelle argument.
+Et annet viktig aspekt ved å lese kommandolinje-argumenter er at det gir oss mulighet til å gjøre programmet vårt mer fleksibelt. Vi kan for eksempel legge til flere alternativer i `switch` og `case` med ulike bokstaver, som vi kan bruke til å endre oppførselen til programmet vårt basert på brukerinput.
 
 ## Se også
+- [getopt dokumentasjon](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
+- [C++ kommandolinjen](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
+- [Kommandolinje-argumenter i C](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
 
-1. [Getopt i C++](https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html)
-2. [Guide til kommandolinjen for C++](https://www.cs.auckland.ac.nz/references/unix/digital/AQTLTBTE/DOCU_019.HTM)
-3. [Lesing av standard input i C++](https://www.cplusplus.com/reference/iostream/istream/istream.html)
+Takk for at du leste! Vi håper dette hjalp deg å forstå hvordan man kan lese kommandolinje-argumenter i C++. Lykke til med kodingen!

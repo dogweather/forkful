@@ -1,40 +1,43 @@
 ---
-title:                "Python: Tulevan tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
+title:                "Python: Tulevan tai menneen päivämäärän laskeminen"
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Miksi kukaan haluaisi laskea tulevaisuuden tai menneen päivämäärän? Se voi olla hyödyllistä esimerkiksi suunnitellessa lomamatkaa tai muuta tärkeää tapahtumaa. Myös historiallisten tapahtumien muistaminen voi olla syy laskea menneitä päiviä.
 
-## Miten tehdä
-Laskeminen tulevaisuuden tai menneen päivämäärän voi olla yksinkertaista Pythonin avulla. Seuraavassa esimerkissä laskemme päivämäärän kahden viikon päähän.
+Laskeminen tulevaisuuden tai menneisyyden päivämäärään voi olla hyödyllistä esimerkiksi suunnitellessasi matkaa tai tapahtumaa. Se voi myös auttaa sinua ymmärtämään ajan kulumista ja päivämäärien välisiä suhteita.
+
+## Kuinka tehdä
 
 ```Python
-#importoidaan datetime moduuli
 import datetime
 
-#luodaan date-objekti nykyisestä päivämäärästä
-current_date = datetime.date.today()
+# Lasketaan tuleva päivämäärä päivien määrällä
+tuleva_paiva = datetime.date.today() + datetime.timedelta(days=7)
+print(tuleva_paiva)
 
-#lisätään kaksi viikkoa nykyiseen päivämäärään
-future_date = current_date + datetime.timedelta(weeks=2)
+# Lasketaan menneinen päivämäärä päivien määrällä
+menneinen_paiva = datetime.date.today() - datetime.timedelta(days=14)
+print(menneinen_paiva)
 
-#tulostetaan tuleva päivämäärä muodossa "pp.kk.vvvv"
-print(future_date.strftime("%d.%m.%Y"))
+# Muokataan tulos haluttuun muotoon
+print("Tuleva päivämäärä:", tuleva_paiva.strftime("%d.%m.%Y"))
+print("Menneinen päivämäärä:", menneinen_paiva.strftime("%d.%m.%Y"))
 ```
 
-Tulostus:
-```
-23.09.2020
-```
+Käyttäen Pythonin sisäänrakennettua datetime-kirjastoa, voit helposti laskea tulevan tai menneen päivämäärän haluamallasi päivämäärämäärällä. Pythonin strftime-metodi auttaa muokkaamaan päivämäärän haluamaasi muotoon.
 
 ## Syvemmälle
-Pythonin datetime-moduuli tarjoaa erilaisia toimintoja päivämäärän laskemiseen ja muokkaamiseen. Voit esimerkiksi lisätä päivän, kuukauden tai vuoden nykyiseen päivämäärään tai laskea eron kahden päivämäärän välillä. Voit myös muuntaa päivämäärän eri muotoihin tai hakea tiettyä tietoa, kuten viikonpäivä tai viikonnumero.
+
+Pythonin datetime-kirjasto tarjoaa myös muita hyödyllisiä työkaluja päivämäärien käsittelyyn. Voit esimerkiksi muuttaa päivämäärän eri aikavyöhykkeelle, laskea päivämäärien erotuksen tai tarkistaa mikä viikonpäivä päivämäärällä oli. Kannattaa tutustua datetime-kirjaston dokumentaatioon ja löytää lisää tapoja hyödyntää sitä.
 
 ## Katso myös
-- [Pythonin datetime-moduulin dokumentaatio](https://docs.python.org/3/library/datetime.html)
-- [Artikkeli: "Calculating future dates in Python using datetime"](https://tecadmin.net/calculate-future-dates-python-datetime/)
+
+- Pythonin datetime-kirjaston dokumentaatio: https://docs.python.org/3/library/datetime.html
+- Hyödyllisiä vinkkejä päivämäärien käsittelyyn Pythonissa: https://www.programiz.com/python-programming/datetime

@@ -1,89 +1,58 @@
 ---
 title:                "C recipe: Concatenating strings"
+simple_title:         "Concatenating strings"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Have you ever needed to combine multiple pieces of text into one string? Concatenation in C programming allows you to do just that! By combining strings, you can create longer, more dynamic messages or data.
+When it comes to programming, string manipulation is a common task that programmers encounter. This includes tasks such as combining or concatenating strings. In this blog post, we will explore the concept of concatenating strings in C programming and understand its importance in building efficient and functional code.
 
 ## How To
 
-To concatenate strings in C, you'll need to use the `strcat()` function from the standard library `string.h`. This function takes two strings and combines them together, storing the result in the first string. Let's take a look at an example:
+In C programming, concatenating strings means combining two or more strings into one. This operation can be done in multiple ways, but the simplest and most commonly used method is by using the string formatting function `sprintf()`.
 
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char name[20] = "John";
-    char greeting[20] = "Hello ";
-
-    strcat(greeting, name);
-
-    printf("%s\n", greeting);
-    // Output: Hello John
-
-    return 0;
-}
-```
-
-In the above code, we have two strings: `name` and `greeting`. We use the `strcat()` function to concatenate `name` onto the end of `greeting`. When we print `greeting`, we see the result of the two strings combined.
-
-You can also concatenate multiple strings in a single line by using the `+` operator. Let's see another example:
+To use `sprintf()` for concatenation, we need to first declare a string variable and initialize it with the first string we want to concatenate. Then, we use `sprintf()` to add the second string to the end of the first string. Let's take a look at an example:
 
 ```C
 #include <stdio.h>
 
 int main() {
-    char word1[10] = "Hello ";
-    char word2[10] = "World";
-    char word3[10] = "!";
-
-    printf("%s\n", word1 + word2 + word3);
-    // Output: Hello World!
-
+    char str1[20] = "Hello";
+    char str2[] = " World!";
+   
+    sprintf(str1, "%s%s", str1, str2);
+    printf("%s", str1);
+   
     return 0;
 }
 ```
 
-In this code, we are using the `+` operator to combine three strings, `word1`, `word2`, and `word3`. Since the `printf()` function uses the `%s` format specifier, we can directly concatenate the strings without calling a separate function.
+In the above code, we first declare a string `str1` of size 20 and initialize it with the string "Hello". Then, we use `sprintf()` to add the string " World!" to the end of `str1`. The output of the above code will be:
 
-## Deep Dive 
-
-Concatenation can also be done using the `sprintf()` function. This function takes a destination string, a format string, and any number of arguments to insert into the format string. Let's see an example:
-
-```C
-#include <stdio.h>
-
-int main() {
-    char output[25];
-    char name[10] = "John";
-    char age[3] = "26";
-
-    sprintf(output, "My name is %s and I am %s years old.", name, age);
-
-    printf("%s\n", output);
-    // Output: My name is John and I am 26 years old.
-
-    return 0;
-}
+```
+Hello World!
 ```
 
-In this code, we use the `sprintf()` function to concatenate the `name` and `age` variables into the `output` string. This allows us to create a more dynamic message by inserting variables into the format string.
+Similarly, we can concatenate more strings by adding more `%s` format specifiers and string variables inside the `sprintf()` function. It is important to note that the first argument in `sprintf()` is the string that will be modified, so make sure to pass the variable you want to modify first.
 
-It's important to note that the `strcat()` and `sprintf()` functions both require enough space in the destination string to hold the combined string. If the destination string is not large enough, the program may crash or unexpected behavior may occur.
+## Deep Dive
 
-## See Also 
+To fully understand the concept of concatenating strings in C, we need to know about the `sprintf()` function in detail. `sprintf()` is a string formatting function that allows us to print formatted output to a string instead of the console.
 
-Here are some additional resources for learning about string concatenation: 
+In our example, we used `%s` to specify a string format specifier. However, there are many other format specifiers that we can use depending on the data type we want to print. Some of the commonly used format specifiers are `%d` for integers, `%f` for floating-point numbers, and `%c` for characters.
 
-- [C String Concatenation - GeeksforGeeks](https://www.geeksforgeeks.org/string-concatenation-in-c/)
-- [C Programming Tutorial - Tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [String Concatenation in C - Programiz](https://www.programiz.com/c-programming/c-strings)
+It is also worth noting that there are other functions in C that can be used for string concatenation, such as `strcat()` and `strcpy()`. However, `sprintf()` is the most versatile option as it allows us to concatenate strings of different data types effortlessly.
 
-Now that you know how to concatenate strings in C, you can use this powerful feature to create more dynamic and flexible programs!
+## See Also
+
+- [String Concatenation in C](https://www.programiz.com/c-programming/library-function/string.h/strcat)
+- [sprintf() function](https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm)
+- [Data Types in C programming](https://www.geeksforgeeks.org/c-data-types/)
+
+Concatenating strings in C is an essential skill for any programmer. Understanding the `sprintf()` function and how to use it for string concatenation can greatly improve the efficiency and functionality of your code. So, make sure to practice and experiment with different methods to become a pro at string manipulation in C.

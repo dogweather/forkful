@@ -1,7 +1,9 @@
 ---
 title:                "Javascript recipe: Finding the length of a string"
+simple_title:         "Finding the length of a string"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/finding-the-length-of-a-string.md"
 ---
 
@@ -9,50 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to find the length of a string in your Javascript code? Maybe you want to validate user input or manipulate a string in a certain way. No matter the reason, knowing how to find the length of a string is an essential skill for any Javascript programmer.
+Have you ever wanted to know how many characters are in a word or sentence? Maybe you're trying to set a character limit for a tweet or limit the number of characters in a username. Whatever the reason may be, finding the length of a string in Javascript can be a useful tool in your programming arsenal.
 
 ## How To
 
-Finding the length of a string in Javascript is fairly straightforward. You can use the built-in `length` property of a string to get the number of characters in it. Let's take a look at an example:
+To find the length of a string in Javascript, you can use the built-in method `length()`. This method returns the number of characters in a string, including spaces and punctuation.
+
+Let's take a look at an example:
 
 ```Javascript
-var str = "Hello World";
-console.log(str.length);
-// Output: 11
+let myString = "Hello World!";
+console.log(myString.length()); // Output: 12
 ```
 
-In this example, we declare a variable `str` and assign it the value of "Hello World". Then, we use the `length` property to get the length of the string and print it to the console. As you can see, the output is `11` because there are 11 characters in the string.
+In this example, we have declared a variable called `myString` and assigned it the value of "Hello World!". Then, by using the `length()` method, we are able to determine that the string contains 12 characters.
 
-You can also use the `length` property on an empty string, which will return `0` as the output. This is because an empty string has no characters.
-
-```Javascript
-var emptyStr = "";
-console.log(emptyStr.length);
-// Output: 0
-```
-
-It's important to note that the `length` property counts all characters, including spaces and punctuation marks. It does not just count the letters in a string.
-
-Now, what if you want to find the length of a string stored in a variable? You can still use the `length` property, as shown in the following example:
-
-```Javascript
-var name = "John";
-console.log(name.length);
-// Output: 4
-```
-
-You can also use the `length` property with string literals, as shown in the first example.
+Keep in mind that the index of a string starts at 0, so the last character in our string would be at index position `myString.length() - 1`.
 
 ## Deep Dive
 
-Behind the scenes, the `length` property works by accessing the `length` property of the string's internal `String` object. This object contains various methods and properties for working with strings.
+When using the `length()` method, it is important to note that it only applies to strings. If you try to use it on any other type of data, such as a number or boolean, it will return undefined. This is because `length()` is a string method and cannot be applied to other types of data.
 
-Additionally, the `length` property is read-only, which means you cannot change its value. This is because the `String` object is immutable in Javascript, meaning it cannot be changed after it has been created.
+Another thing to keep in mind is that the `length()` method gives the total number of characters, including any escape characters. For example, if you have a string with a `"\n"` for a line break, it will count as one character in the length of the string.
 
-It's also worth mentioning that the `length` property is not just limited to strings. It can also be used on arrays, which will return the number of elements in the array. Just like with strings, the `length` property for arrays is read-only.
+Additionally, `length()` will also include any empty spaces at the beginning or end of a string. If you want to exclude these spaces, you can use the `trim()` method first and then apply `length()` to the trimmed string.
 
 ## See Also
 
-- [MDN web docs - String length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [W3Schools - Javascript string length](https://www.w3schools.com/jsref/jsref_length_string.asp)
-- [JavaScript.info - Strings](https://javascript.info/string)
+For more information on the `length()` method and other string methods in Javascript, check out the following resources:
+
+- [MDN Web Docs - String.prototype.length()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [W3Schools - JavaScript String Length](https://www.w3schools.com/js/js_string_length.asp)
+- [JavaScript String Methods Tutorial](https://www.javascripttutorial.net/javascript-string-methods/)

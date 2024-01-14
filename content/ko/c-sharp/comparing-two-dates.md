@@ -1,40 +1,59 @@
 ---
 title:                "C#: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-
-날짜를 비교하는 이유는 여러 가지가 있겠지만, 가장 대표적인 이유는 어떤 이벤트나 작업을 수행하는 데에 있어서 특정한 날짜와 비교해서 조건을 만족시키기 위해서입니다. 예를 들어 사용자의 생일을 비교해서 생일 축하 메세지를 보여주는 등의 경우가 있을 수 있겠네요.
+일반적으로 날짜를 비교하는 것은 프로그래밍에서 자주 사용되는 작업입니다. 두 날짜를 비교하면, 날짜가 이전인지, 이후인지, 또는 같은지를 판단할 수 있습니다. 이는 일정 기간 이내에 발생한 이벤트를 추적하거나, 두 날짜 사이의 차이를 계산하는 데 유용합니다.
 
 ## 방법
-
-C#에서 두 날짜를 비교하는 방법은 다양하지만, 가장 기본적인 방법은 "Compare" 함수를 사용하는 것입니다. 이 함수는 두 날짜를 비교해서 더 빠른 날짜라면 -1, 같다면 0, 더 늦은 날짜라면 1을 반환합니다. 아래는 예제 코드와 결과입니다.
+날짜 비교는 C#에서 매우 간단한 작업입니다. 비교하려는 두 날짜를 DateTime 형식으로 선언하고, ">" 또는 "<" 연산자를 사용하여 비교하면 됩니다. 예를 들어, 다음과 같습니다.
 
 ```C#
-DateTime date1 = new DateTime(2020, 5, 1);
-DateTime date2 = new DateTime(2020, 5, 7);
+DateTime date1 = new DateTime(2021, 4, 15);
+DateTime date2 = new DateTime(2021, 4, 16);
 
-int result = DateTime.Compare(date1, date2);
+if (date1 > date2)
+{
+    Console.WriteLine("date1 is later than date2");
+}
+else if (date1 < date2)
+{
+    Console.WriteLine("date1 is earlier than date2");
+}
+else
+{
+    Console.WriteLine("date1 and date2 are the same date");
+}
 
-Console.WriteLine(result); // Output: -1
+// Output: date1 is earlier than date2
 ```
 
-위의 예제에서는 date1이 date2보다 더 빠른 날짜이기 때문에 -1이 출력됩니다.
+여기서 주의할 점은 DateTime 변수를 선언할 때, year, month, day를 인자로 넘겨줘야 한다는 것입니다. 그렇지 않으면 에러가 발생할 수 있습니다.
 
-이외에도 두 날짜의 차이를 구하는 방법이나 특정 포맷으로 날짜를 출력하는 방법 등 다양한 방법이 존재합니다.
+## 깊이 들어가기
+날짜를 비교하는 더 많은 방법이 있지만, 모두 위에서 언급한 방법과 비슷합니다. 연, 월, 일, 시, 분, 초, 밀리초 등 더 세부적인 부분으로도 비교할 수 있습니다. 또한, 두 날짜 사이의 차이를 계산하는 방법도 있습니다. 이는 TimeSpan 클래스를 사용하여 가능합니다.
 
-## 깊게 알아보기
+간단한 예시를 보겠습니다.
 
-날짜를 비교하는 방법은 보통 이전에 배운 조건문과 함께 사용하는 경우가 많습니다. 예를 들어, 어떤 이벤트를 특정 날짜와 비교해서 그 이전에는 "이벤트가 아직 시작하지 않았습니다"라는 메세지를 출력하고 이후에는 "이벤트가 이미 끝났습니다"라는 메세지를 출력하는 코드를 작성한다고 가정해봅시다. 이때 날짜를 비교하는 것은 매우 중요한 역할을 합니다.
+```C#
+DateTime date1 = new DateTime(2021, 4, 15, 15, 30, 0);
+DateTime date2 = new DateTime(2021, 4, 15, 10, 30, 0);
 
-하지만 날짜를 비교하는 것에는 유의할 점이 있습니다. 예를 들어 시간까지 동일한 두 날짜를 비교한다고 가정해봅시다. 이때는 "Compare" 함수 대신 "Date" 함수를 사용해야 시간을 제외한 날짜만을 비교할 수 있습니다. 또한 날짜 포맷에 따라서도 비교 결과가 달라질 수 있기 때문에 유의해야 합니다.
+TimeSpan difference = date1 - date2;
+Console.WriteLine("The difference in hours is: " + difference.TotalHours);
 
-## 관련 글
+// Output: The difference in hours is: 5
+```
 
-* [DateTime.Compare 메서드 (Microsoft Docs)](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime.compare?view=netcore-3.1)
-* [C#에서 날짜 비교하는 방법 (읍읍이의 공간)](https://leedeagu.tistory.com/entry/C-%EC%97%90%EC%84%9C-%EB%82%A0%EC%A7%9C-%EB%B9%84%EA%B5%90%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
+더 많은 정보를 알고 싶다면, MSDN 레퍼런스나 다른 온라인 자료를 참고하시면 됩니다.
+
+## 더 읽어보기
+* [DateTime 클래스에 대한 MSDN 레퍼런스](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+* [Comparing Dates and Times in C#](https://www.c-sharpcorner.com/UploadFile/mahesh/comparing-dates-and-times-in-C-Sharp/)

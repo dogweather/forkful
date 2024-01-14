@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Розпочинаємо новий проект."
+title:                "Haskell: Початок нового проекту"
+simple_title:         "Початок нового проекту"
 programming_language: "Haskell"
-category:             "Getting Started"
+category:             "Haskell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/haskell/starting-a-new-project.md"
 ---
 
@@ -9,41 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Започаткування нового проекту може бути важливим етапом для розвитку вашого навчання та використання мови програмування Haskell. Це може допомогти вам прокласти шлях до розуміння його синтаксису, абстракцій та функціонального підходу.
+Найновіший проект - відмінна нагода для розвитку в програмуванні та використання нових технологій.
 
-## Як почати
+## Як розпочати
 
-Перш за все, для створення проекту вам необхідно мати встановлений компілятор GHC і пакетний менеджер Cabal на своєму комп'ютері.
-
-Почніть зі створення проекту в терміналі за допомогою наступної команди:
+Використовуйте мову програмування Haskell для створення міцного та ефективного проекту. Тут ми наведемо декілька прикладів для початку роботи.
 
 ```Haskell
-cabal init
+-- Визначення типу даних
+data Book = Book {title :: String, author :: String}
+
+-- Змінні
+myBook :: Book
+myBook = Book "Назва книги" "Автор"
+
+-- Функції
+getBookTitle :: Book -> String
+getBookTitle (Book title _) = title
+
+-- Виклик функції
+getBookTitle myBook
+
+-- Вивід на екран
+"Назва книги"
 ```
 
-Ця команда дозволить вам створити конфігураційний файл для вашого проекту. У папці проекту будуть створені файли `cabal.project` та `package.cabal`, які міститимуть необхідну інформацію про ваш проект.
+## Глибокий погляд
 
-Далі ви можете створити модуль для вашого проекту, наприклад, `Main.hs` та вписати ваш код програми. Не забудьте вказати імпорти необхідних бібліотек.
+Новий проект може бути викликом, але нехай це не зупиняє вас. Починаючи з добре спроектованої структури даних та функцій, ви можете створити високоякісний програмний продукт.
 
-```Haskell
-module Main where
+Серед корисних ресурсів для початку роботи з Haskell є:
 
-import Data.Char (toUpper)
+- [Офіційний сайт мови Haskell](https://www.haskell.org/)
+- [Вступ до мови Haskell на YouTube](https://www.youtube.com/watch?v=nVIPC_2z93c)
+- [Основи програмування на мові Haskell](http://learnyouahaskell.com/chapters)
+- [Курс з Haskell на Coursera](https://www.coursera.org/courses?query=haskell)
+- [Найкращі практики програмування на мові Haskell](https://wiki.haskell.org/Best_practices)
 
-main :: IO ()
-main = putStrLn "Hello, World!"
-```
 
-Коли ваш код готовий, ви можете скомпілювати його за допомогою команди `cabal build`. Це створить виконуваний файл вашої програми, який можна запустити у терміналі за допомогою команди `cabal run`.
+## Дивіться також
 
-## Глибоке занурення
-
-Започаткування нового проекту також допоможе вам навчитися багатьом аспектам мови Haskell. Наприклад, ви можете розділити вашу програму на менші функції та використати різноманітні типи даних, щоб зробити ваш код більш елегантним та ефективним.
-
-Також варто погратися з різними бібліотеками та функціями, які надають Haskell, щоб покращити ваші навички та знайомитися з новими підходами до програмування.
-
-## Дивись також
-
-- [Офіційна документація GHC](https://www.haskell.org/ghc/)
-- [Офіційна документація Cabal](https://www.haskell.org/cabal/)
-- [Початковий курс по Haskell](https://en.wikibooks.org/wiki/Haskell/Beginning_Haskell)
+- [Основи функціонального програмування в Haskell](http://blog.brainpowered.ro/article/functional-programming-in-Haskell)
+- [Створення веб-додатків з використанням Haskell та Yesod](https://www.tweag.io/posts/2013-12-15-yesod-webapp-tutorial.html)
+- [Навчальні матеріали для вивчення Haskell](https://github.com/lampepfl/scala/tree/2.13.x/test/files/neg/t1954)
+- [Онлайн-спільнота програмістів на мові Haskell](https://stackoverflow.com/questions/tagged/haskell)

@@ -1,43 +1,61 @@
 ---
-title:                "Java: Extraindo Substrings"
+title:                "Java: Extraindo subtrings"
+simple_title:         "Extraindo subtrings"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-Extrair substrings é uma habilidade importante para qualquer programador Java. Isso permite que você manipule e trabalhe com strings de forma eficiente, economizando tempo e esforço. Além disso, aprender a extrair substrings é uma etapa fundamental para compreender conceitos mais avançados de programação.
+## Por que extrair substrings?
 
-## Como Fazer
-```Java
-// Código de exemplo para extrair uma substring de uma string existente
-String string = "Extrair substrings é uma habilidade importante";
-String substring = string.substring(8, 18); // Retorna "substrings"
-System.out.println(substring); // Saída: substrings
-```
+Extrair substrings é uma técnica muito útil na programação Java. Com ela, você pode manipular strings de maneira mais fácil e eficiente, obtendo apenas as partes necessárias das strings. Isso pode ser útil em diversas situações, como filtrar dados, validar entradas de usuário e muito mais.
 
-Neste exemplo, nós usamos o método `substring()` para extrair a palavra "substrings" da string original. O primeiro parâmetro indica o índice inicial da substring e o segundo parâmetro indica o índice final (exclusivo). Em outras palavras, a substring será extraída de um trecho da string original que vai do índice 8 ao 17 (pois o último índice é exclusivo).
+## Como extrair substrings
 
-Você também pode usar o método `substring()` para extrair uma substring de uma posição específica até o final da string, apenas fornecendo o índice inicial como parâmetro.
+Para extrair substrings em Java, você pode utilizar o método `substring()` da classe `String`. Este método aceita dois parâmetros: o índice inicial e o índice final da substring que você deseja extrair. Por exemplo:
 
 ```Java
-// Código de exemplo para extrair uma substring do início até o fim da string
-String string = "Extrair substrings é uma habilidade importante";
-String substring = string.substring(8); // Retorna "substrings é uma habilidade importante"
-System.out.println(substring); // Saída: substrings é uma habilidade importante
+String original = "Programação é divertido!";
+
+//Extraindo a substring "divertido"
+String substring = original.substring(12, 21);
+
+//Exibindo o resultado
+System.out.println(substring); //saída: divertido
 ```
 
-Agora que você já sabe como extrair substrings de uma string, vamos explorar um pouco mais sobre esse assunto.
+Você também pode utilizar o método `substring()` para extrair uma substring a partir de um índice específico até o final da string original. Basta informar apenas o índice inicial, como no exemplo a seguir:
 
-## Deep Dive
-Existem duas maneiras principais de extrair substrings em Java: usando o método `substring()` ou usando a classe `StringTokenizer`.
+```Java
+String original = "Java é incrível!";
 
-O método `substring()` é uma opção mais simples, mas limitada. Ele só pode ser usado para extrair substrings com base na posição dos caracteres, não é possível extrair com base em conteúdo (por exemplo, extrair uma substring que contenha a palavra "importante").
+//Extraindo a substring "incrível"
+String substring = original.substring(6);
 
-Por outro lado, a classe `StringTokenizer` permite uma maior flexibilidade ao extrair substrings com base no conteúdo. Isso é especialmente útil quando se tem uma string com um formato específico, como uma data ou número.
+//Exibindo o resultado
+System.out.println(substring); //saída: incrível
+```
+
+## Mergulho Profundo
+
+O método `substring()` também pode ser utilizado para extrair caracteres individuais de uma string. Nesse caso, basta informar o mesmo índice para o início e fim da substring desejada. Por exemplo:
+
+```Java
+String original = "Mundo";
+
+//Extraindo a substring "d"
+String substring = original.substring(3, 4);
+
+//Exibindo o resultado
+System.out.println(substring); //saída: d
+```
+
+Além disso, é importante lembrar que os índices em Java começam a partir de 0, ou seja, a primeira posição da string tem o índice 0. Portanto, a substring "Mundo" teria os índices 1 e 4, e não 0 e 4, como muitos podem pensar.
 
 ## Veja também
-- [Documentação oficial do método substring() em Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
-- [Documentação oficial da classe StringTokenizer em Java](https://docs.oracle.com/javase/8/docs/api/java/util/StringTokenizer.html)
+
+- [Documentação do método `substring()`](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int,%20int))
+- [Tutorial sobre strings no Java](https://www.devmedia.com.br/trabalhando-com-strings-java/25790)

@@ -1,50 +1,57 @@
 ---
-title:                "Ruby: Å lese en tekstfil"
+title:                "Ruby: Å lese en tekstfil."
+simple_title:         "Å lese en tekstfil."
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+# Hvorfor lese en tekstfil?
 
- Det å kunne lese fra en tekstfil er en viktig ferdighet for enhver programmerer. Dette er fordi det tillater deg å interagere med store mengder data på en strukturert og effektiv måte. Enten du leser fra en loggfil eller en konfigurasjonsfil, vil evnen til å lese fra tekstfiler være svært nyttig.
+Tekstfiler er en essensiell del av mange programmeringsprosjekter. De inneholder ofte viktig informasjon som må leses og behandles av et program. Derfor er det viktig å forstå hvordan man kan lese en tekstfil i Ruby.
 
-# Hvordan gjøre det
+# Hvordan lese en tekstfil i Ruby
 
-Det finnes flere måter å lese fra en tekstfil i Ruby, men den vanligste er å bruke File-objektet. Først må du åpne tekstfilen ved hjelp av File.open() metoden og angi om du ønsker å lese fra filen eller skrive til den, ved å bruke "r" eller "w" parameteren.
+Å lese en tekstfil i Ruby er enkelt og kan gjøres ved hjelp av noen få linjer med kode. Først må du åpne tekstfilen ved å bruke File-klassen og passere inn filnavnet som et argument. Deretter kan du lese innholdet av filen ved å bruke metoden "read" på filobjektet.
 
 ```Ruby
-File.open("tekstfil.txt", "r") do |fil|
-  # kode for å lese fra filen
-end
+file = File.open("tekstfil.txt", "r")
+puts file.read
 ```
-Inne i blokken kan du bruke `fil.readlines` metoden til å lese alle linjene i filen og lagre dem i en variabel. Deretter kan du bruke en `each` løkke for å iterere gjennom hver linje og gjøre ønskede manipulasjoner.
+
+I dette eksempelet bruker vi "puts" metoden for å skrive ut innholdet av tekstfilen til konsollen. Du kan også bruke "gets" metoden for å lese innholdet linje for linje.
 
 ```Ruby
-File.open("tekstfil.txt", "r") do |fil|
-  linjer = fil.readlines
-  linjer.each do |linje|
-    # kode for å gjøre manipulasjoner på hver linje
-  end
-end
-```
-En annen måte å lese fra en tekstfil på er å bruke `File.foreach` metoden. Dette vil iterere gjennom hver linje i filen og utføre en gitt handling på hver linje.
-
-```Ruby
-File.foreach("tekstfil.txt") do |linje|
-  # kode for å gjøre en handling for hver linje
+file = File.open("tekstfil.txt", "r")
+file.each_line do |line|
+  puts line
 end
 ```
 
-# Dykk dypere
+# Utforske en tekstfil
 
-Når du leser fra en tekstfil, kan det være nyttig å forstå hvordan ruby håndterer linjeskift. Når du bruker `readlines` metoden, vil ruby automatisk fjerne linjeskiftet fra hver linje og lagre dem som separate elementer i en array. Men når du bruker `foreach` metoden, vil ruby behandle hver linje som en string, inkludert linjeskiftet.
+Når du har åpnet en tekstfil og lest innholdet, kan du utforske det videre ved hjelp av forskjellige Ruby-metoder. Du kan for eksempel bruke "split" metoden for å dele innholdet av filen ved hjelp av et bestemt tegn, og deretter utføre operasjoner på de ulike delene.
 
-En annen viktig ting å huske på er at ruby vil behandle alle tegn i en tekstfil som en string, selv tall og symboler. Derfor må du bruke metoder som `to_i` eller `to_f` for å konvertere strenger til tall.
+```Ruby
+file = File.open("tekstfil.txt", "r")
+content = file.read.split(",")
+puts content[0] # Første del av tekstfilen
+puts content[1] # Andre del av tekstfilen
+```
+
+En annen nyttig metode som kan brukes er "lines", som vil dele innholdet av filen ved hjelp av linjeskift og returnere en array av linjer. Dette kan være nyttig hvis du vil utføre spesifikke oppgaver på ulike deler av teksten.
+
+```Ruby
+file = File.open("tekstfil.txt", "r")
+lines = file.read.lines
+puts lines.length # Antall linjer i tekstfilen
+```
 
 # Se også
 
-- [Ruby dokumentasjon for File-objektet](https://ruby-doc.org/core-2.7.2/File.html)
-- [Tutorial: How to Read a Text File in Ruby](https://www.educative.io/edpresso/how-to-read-a-text-file-in-ruby)
+* [Ruby File-klassen dokumentasjon](https://ruby-doc.org/core-2.7.1/File.html)
+* [Ruby String-klassen dokumentasjon](https://ruby-doc.org/core-2.7.1/String.html)
+* [Video: How to Read a Text File in Ruby](https://www.youtube.com/watch?v=TKBPeIlkQWs)

@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/comparing-two-dates.md"
 ---
 
@@ -9,45 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La comparaison de deux dates est une tâche courante en programmation. Cela peut être utile pour trier des données chronologiquement, vérifier si une date se situe avant ou après une autre, ou pour calculer la différence entre deux dates. Dans cet article, nous allons voir comment réaliser cette opération en utilisant le langage Elm.
+Comparer deux dates est une pratique essentielle lors de la programmation en Elm. Cela peut être utile pour trier des données, créer des rappels ou vérifier l'ancienneté d'une information. Dans cet article, nous allons voir comment comparer facilement et efficacement deux dates en utilisant Elm.
 
 ## Comment faire
 
-Nous allons commencer par définir deux dates sous forme de variables. Dans cet exemple, nous allons utiliser le package `Date` de la bibliothèque standard d'Elm.
+Pour comparer deux dates en Elm, nous pouvons utiliser la fonction `compare` du module `Date`. Cette fonction prend deux arguments de type `Date` et renvoie un `Order` qui peut être `LT` (inférieur), `EQ` (égal) ou `GT` (supérieur). Voici un exemple de code pour comparer deux dates :
 
-```elm
-import Date exposing (Date)
+```Elm
+firstDate = Date.fromYearMonthDay 2020 05 15
+secondDate = Date.fromYearMonthDay 2021 05 20
 
--- Définir la première date
-date1 : Date
-date1 = Date.fromIsoString "2020-01-01"
+comparison = Date.compare firstDate secondDate
 
--- Définir la deuxième date
-date2 : Date
-date2 = Date.fromIsoString "2021-01-01"
+case comparison of 
+    LT ->
+        "La première date est plus ancienne que la deuxième."
+    
+    EQ ->
+        "Les deux dates sont identiques."
+    
+    GT ->
+        "La première date est plus récente que la deuxième."
 ```
 
-Ensuite, nous pouvons utiliser les fonctions fournies par le package `Date` pour comparer ces deux dates. Par exemple, pour vérifier si `date1` se situe avant `date2`, nous pouvons utiliser la fonction `Date.before` qui renvoie une valeur booléenne.
+Dans cet exemple, nous créons deux dates différentes et nous utilisons la fonction `compare` pour obtenir le résultat de la comparaison. Ensuite, nous utilisons un `case` pour traiter les différents cas possibles et afficher un message correspondant.
 
-```elm
-Date.before date1 date2     -- renverra True
-```
+## Plongeons plus profondément
 
-Pour calculer la différence entre ces deux dates en termes de jours, nous pouvons utiliser la fonction `Date.diffInDays`.
+Lorsque nous utilisons `compare`, le résultat est basé sur la comparaison des timestamps des deux dates. Un timestamp représente le nombre de millisecondes écoulées depuis le 1er janvier 1970 à minuit en temps universel (UTC). Cela signifie que si deux dates sont exactement identiques jusqu'au millisecondes, elles seront considérées comme égales.
 
-```elm
-Date.diffInDays date1 date2  -- renverra 366 (une année bissextile)
-```
-
-Il existe également d'autres fonctions comme `Date.after` pour vérifier si une date se situe après une autre, `Date.isLeapYear` pour vérifier si une année est bissextile, etc. N'hésitez pas à explorer la documentation du package `Date` pour en savoir plus.
-
-## Approfondissement
-
-Lorsque vous comparez deux dates, il est important de prendre en compte les différences de fuseau horaire et les années bissextiles. En utilisant le package `Date`, vous n'aurez pas à vous soucier de ces problèmes, car il les gère automatiquement pour vous.
-
-De plus, vous pouvez également utiliser la fonction `Date.fromString` pour définir une date à partir d'une chaîne de caractères au format souhaité, ce qui peut être utile si vous obtenez les dates à partir d'une source externe.
+De plus, si l'une des dates est vide, la fonction renverra automatiquement `EQ`. Enfin, il est important de noter que la fonction `compare` ne prend pas en compte le fuseau horaire. Si les dates ont des fuseaux horaires différents, il est préférable de les convertir en UTC avant de les comparer.
 
 ## Voir aussi
 
-- Documentation du package `Date` : https://package.elm-lang.org/packages/elm/time/latest/Date
-- Démo en ligne : https://ellie-app.com/3hmpQjt7WHqa1
+- [Documentation officielle d'Elm sur le module Date](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [Différentes façons de comparer des dates en JavaScript](https://www.sitepoint.com/comparing-datestimes-using-javascript/)
+- [Article sur la gestion des dates en français avec Elm](https://www.theodo.fr/blog/2021/02/gestion-dates-elm/)

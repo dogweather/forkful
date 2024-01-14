@@ -1,58 +1,49 @@
 ---
 title:                "C++: Verificando se um diretório existe"
+simple_title:         "Verificando se um diretório existe"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porquê
+## Por que verificar se um diretório existe?
 
-Verificar se um diretório existe é uma tarefa comum em muitos projetos de programação. Saber como fazer isso pode economizar tempo e ajudar a evitar erros no código.
+Verificar se um diretório existe é uma tarefa importante ao desenvolver programas em C++. Isso pode garantir que o código execute com segurança, evitando erros causados ​​pela tentativa de acessar um diretório inexistente. Além disso, essa verificação pode permitir que o programa tome decisões diferentes, dependendo se o diretório já existe ou não.
 
-## Como Fazer
-
-Para verificar se um diretório existe em C++, podemos usar a função `opendir()` da biblioteca `<dirent.h>`. Veja o exemplo abaixo:
+## Como fazer?
 
 ```C++
 #include <iostream>
-#include <dirent.h>
-
-using namespace std;
+#include <filesystem> //lib para trabalhar com arquivos e diretórios
+namespace fs = std::filesystem;
 
 int main() {
-    // diretório a ser verificado
-    string dir_path = "C:/Users/Utilizador/Desktop/Meu_Diretorio";
-
-    // tentar abrir o diretório
-    DIR* dir = opendir(dir_path.c_str());
-
-    // checar se o diretório existe
-    if (dir) {
-        cout << dir_path << " existe!" << endl;
-        closedir(dir);
-    } else {
-        cout << dir_path << " não existe!" << endl;
+    //verificar se o diretório "teste" existe
+    if (fs::exists("teste")) {
+        std::cout << "O diretório já existe!";
     }
-
+    else {
+        std::cout << "O diretório não existe!";
+    }
     return 0;
 }
 ```
-Output:
+Saída:
 ```
-C:/Users/Utilizador/Desktop/Meu_Diretorio existe!
+O diretório não existe!
 ```
 
-No exemplo acima, usamos a função `opendir()` para tentar abrir o diretório especificado na variável `dir_path`. Se a função for bem-sucedida, significa que o diretório existe e, portanto, imprimimos a mensagem correspondente. Caso contrário, imprime-se a mensagem de que o diretório não existe.
+## Análise detalhada
+Ao verificar se um diretório existe, o programa utiliza a biblioteca `<filesystem>` para acessar sua função `exists()`. Esta função retorna um valor booleano, `true` se o diretório já existe, `false` caso contrário.
 
-## Deep Dive
+Caso o diretório exista, podemos realizar operações como leitura, escrita ou exclusão de arquivos dentro dele. Caso contrário, podemos tomar ações para criar o diretório ou alertar o usuário sobre o erro.
 
-Para entendermos melhor como essa verificação funciona, é importante entender a função `opendir()`. Esta função retorna um ponteiro para uma estrutura `DIR` que contém informações sobre o diretório. Se o ponteiro for igual a `NULL`, significa que a função falhou em sua tarefa de abrir o diretório, indicando que ele não existe.
+Além disso, é importante lembrar que essa verificação também pode ser feita para arquivos, utilizando a função `is_regular_file()`.
 
-Outra maneira de verificar se um diretório existe é usando a função `ifstream` da biblioteca `<fstream>`. No entanto, ao contrário da função `opendir()`, essa função só pode verificar se um arquivo existe, não um diretório. 
-
-## Veja Também
-
-- <https://www.cplusplus.com/reference/cstdio/opendir/>
-- <https://docs.microsoft.com/pt-br/cpp/c-runtime-library/reference/opendir-wfd?view=msvc-160>
+## Veja também
+- [Documentação da biblioteca <filesystem> no cplusplus.com](http://www.cplusplus.com/reference/filesystem/)
+- [Tutorial sobre como trabalhar com arquivos e diretórios em C++](https://www.geeksforgeeks.org/file-management-c-creating-new-file-name-extension/)
+- [Outras funções úteis da biblioteca <filesystem>](https://docs.microsoft.com/en-us/cpp/standard-library/filesystem-filesytem-header?view=msvc-160)

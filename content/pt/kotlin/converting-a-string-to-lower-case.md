@@ -1,59 +1,45 @@
 ---
 title:                "Kotlin: Convertendo uma string para minúsculo"
+simple_title:         "Convertendo uma string para minúsculo"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para minúsculas?
+## Porque
 
-Ao trabalhar com programação, é comum ter a necessidade de manipular strings de diferentes maneiras. Uma dessas maneiras é converter uma string para minúsculas. Isso pode ser útil em vários cenários, como validar senhas ou nomes de usuário, comparar strings de forma não case-sensitive ou simplesmente para melhorar a legibilidade do código.
+Muitas vezes, ao trabalhar com strings em programas Kotlin, pode ser necessário converter uma string para letras minúsculas. Isso pode ser útil para padronizar a entrada, comparar strings com mais precisão ou simplesmente para fins estéticos. Felizmente, Kotlin oferece uma maneira fácil de fazer isso.
 
-## Como fazer isso em Kotlin
+## Como Fazer
 
-A conversão de uma string para minúsculas em Kotlin é muito simples e pode ser feita de diferentes maneiras. Aqui estão algumas opções:
-
-```Kotlin
-val string = "Olá Mundo!"
-val lowerCaseString = string.toLowerCase()
-
-println(lowerCaseString) // saída: olá mundo!
-```
-
-Também é possível utilizar a função `toLowerCase()` diretamente em uma string:
+Para converter uma string para minúsculas em Kotlin, basta usar o método `toLowerCase ()` na string desejada. Por exemplo:
 
 ```Kotlin
-val string = "Olá Mundo!"
-
-println(string.toLowerCase()) // saída: olá mundo!
+var nome = "João"
+var nomeMin = nome.toLowerCase()
+print(nomeMin)
 ```
+Isso irá imprimir "joão" no console. Como você pode ver, o método `toLowerCase ()` converteu todas as letras da string para minúsculas.
 
-Além disso, se você quiser converter uma única letra para minúscula, pode usar o método `toLowercase()` da classe `Char`:
+## Profundidade
+
+É importante notar que o método `toLowerCase ()` não altera a string original, mas retorna uma nova string com todas as letras convertidas para minúsculas. Isso significa que você pode usar a string original sem se preocupar com possíveis mudanças inesperadas.
+
+Outra coisa a notar é que o método `toLowerCase ()` usa a convenção de letras minúsculas do idioma padrão do sistema. Em outras palavras, se o seu sistema estiver configurado para usar português, todas as letras serão convertidas para minúsculas de acordo com as regras desse idioma.
+
+Você também pode usar o método `toLowerCase (Locale)` para especificar manualmente o idioma que será usado na conversão. Por exemplo, se você quiser garantir que a string seja convertida para minúsculas de acordo com as regras do inglês, você pode usar o seguinte código:
 
 ```Kotlin
-val letter = 'A'
-val lowerCaseLetter = letter.toLowercase()
-
-println(lowerCaseLetter) // saída: a
+var nome = "João"
+var nomeMin = nome.toLowerCase(Locale.ENGLISH)
+print(nomeMin)
 ```
+Isso resultará em "joão" sendo impresso no console, independentemente do idioma padrão do sistema.
 
-## Mergulho profundo
+## Veja Também
 
-É importante ressaltar que a conversão para minúsculas pode variar dependendo da configuração de idioma do sistema onde o código está sendo executado. Em sistemas que possuem acentos, por exemplo, o resultado pode ser diferente do esperado. Para evitar esse tipo de problema, é possível utilizar o método `toLowercase(Locale)` e especificar o idioma desejado:
-
-```Kotlin
-val string = "Olá Mundo!"
-
-println(string.toLowerCase(Locale("PT"))) // saída: olá mundo!
-```
-
-Além disso, é importante lembrar que essa conversão não altera a string original, ela apenas retorna uma nova string com o resultado da conversão.
-
-Outro ponto a ser levado em conta é que esse método não afeta números ou caracteres especiais, ele apenas converte letras maiúsculas em minúsculas.
-
-## Veja também
-
-- Documentação oficial do Kotlin sobre `toLowercase()`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lowercase.html
-- Tutorial sobre manipulação de strings em Kotlin: https://medium.com/@jonathanboccara/kotlin-strings-on-steroids-eb9476f9ba51
+- Documentação oficial do Kotlin para mais informações sobre métodos de strings: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/
+- Guia de estilo Kotlin para melhores práticas ao trabalhar com strings: https://kotlinlang.org/docs/tutorials/kotlin-for-py/guides/string-formatting.html.

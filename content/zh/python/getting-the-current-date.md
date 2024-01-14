@@ -1,42 +1,62 @@
 ---
-title:                "Python: 获取当前日期"
+title:                "Python: 获取当日日期"
+simple_title:         "获取当日日期"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：获取当前日期的原因
-获取当前日期是一个非常有用的技巧。在Python编程中，我们经常需要获取今天的日期，例如记录数据或者生成文件名。通过学习如何获取当前日期，你可以轻松地应用到自己的项目中。
+# 为什么要获取当前日期
 
-怎么做：获取当前日期的方法
-```Python
-# 导入datetime模块
+获取当前日期对于编程来说是很重要的一件事情。无论是在编写日志文件、计算时间间隔还是进行数据分析，都需要准确地获取当前日期。
+
+# 如何获取当前日期
+
+在Python中，可以使用内置的datetime模块来获取当前日期。首先，需要导入datetime模块：
+
+```python
 import datetime
-
-# 使用datetime模块中的date方法获取当前日期
-today = datetime.date.today()
-
-# 打印输出今天的日期
-print("今天的日期是：", today)
 ```
 
-输出：
+然后，使用`datetime.now()`方法即可获取当前日期时间，例如：
+
+```python
+current_date = datetime.now()
 ```
-今天的日期是：2021-09-26
+
+接下来，可以对获取到的日期进行格式化，例如将其转换为年月日的格式：
+
+```python
+formatted_date = current_date.strftime("%Y-%m-%d")
 ```
 
-深入了解：获取当前日期的更多信息
-Python中的datetime模块提供了许多有用的方法来处理日期和时间。对于获取当前日期，我们可以使用`date.today()`方法来获取一个对应当天日期的`date`对象。此外，我们也可以通过`now()`方法来获取当前的日期和时间，或者使用`strftime()`方法来自定义日期的格式。
+最后，我们可以将格式化后的日期打印出来，来验证是否得到了正确的输出：
 
-另外，Python中还有一个`calendar`模块，它可以帮助我们处理更复杂的日期操作，如获取一个月的日历或者判断某一年是否是闰年。
+```python
+print(formatted_date)
+```
 
-总之，掌握如何获取当前日期是十分重要的，它可以让你的日常编程更加高效和便捷。
+输出结果将类似于`2021-01-01`，这就是我们准确地获取到了当前日期。
 
-参考链接：
-- [Python datetime模块文档](https://docs.python.org/3/library/datetime.html)
-- [Python calendar模块文档](https://docs.python.org/3/library/calendar.html)
+# 深入了解获取当前日期
 
-另请参阅：
-个人博客、Python官方文档、Stack Overflow等相关资源。
+除了直接使用`datetime.now()`方法来获取当前日期外，还可以使用其他方法来实现同样的功能。例如，可以使用`date.today()`方法来只获取日期，而不包含时间。
+
+此外，还可以使用`calendar`模块来获取当前日期所在的星期几等信息。而如果要进行日期的加减运算，可以使用`timedelta`对象来实现，非常便捷。
+
+# 参考资料
+
+- [Python文档 - datetime模块](https://docs.python.org/3/library/datetime.html)
+- [RealPython - Working with Dates and Times Using datetime](https://realpython.com/python-datetime/)
+- [菜鸟教程 - Python日期和时间](https://www.runoob.com/python/python-datetime.html)
+
+---
+
+# 相关链接
+
+- [Markdown基本语法](https://www.runoob.com/markdown/md-tutorial.html)
+- [如何在VSCode中使用Markdown](https://code.visualstudio.com/docs/languages/markdown)
+- [Github Markdown指南](https://guides.github.com/features/mastering-markdown/)

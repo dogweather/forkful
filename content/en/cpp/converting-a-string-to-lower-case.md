@@ -1,7 +1,9 @@
 ---
 title:                "C++ recipe: Converting a string to lower case"
+simple_title:         "Converting a string to lower case"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,38 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-When working with strings in C++, it's important to keep in mind the input and output formats. Converting a string to lower case can be useful in a variety of situations, such as when comparing user input to a specific value or when performing case-insensitive searches.
+Have you ever needed to convert a string to lower case in your C++ program? Maybe you want to standardize user input or compare strings without worrying about capitalization. Whatever the reason, knowing how to convert a string to lower case can be a useful skill in any C++ programmer's toolbox.
 
 ## How To
 
-To convert a string to lower case in C++, we can use the `tolower()` function from the `<cctype>` header. Here's an example:
+Converting a string to lower case in C++ is a fairly straightforward process. We will be using the `std::transform()` function from the <algorithm> library to achieve this. Let's take a look at how we can implement this in our code:
 
 ```C++
-#include <iostream>
-#include <string>
-#include <cctype> // header for tolower()
+std::string str = "Hello, WORLD!";
 
-using namespace std;
+// Using std::transform() with a lambda function
+std::transform(str.begin(), str.end(), str.begin(),
+    [](unsigned char c) { return std::tolower(c); });
 
-int main() {
-  string myString = "HELLO WORLD";
-  for (char &c : myString) { // loop through each character in the string
-    c = tolower(c); // convert to lower case
-  }
-  cout << myString; // outputs "hello world"
-  return 0;
-}
+std::cout << str << std::endl;
 ```
 
-In this example, we use a `for` loop to iterate through each character in the string and convert it to lower case using the `tolower()` function. Then, we simply print out the updated string to see the result.
+The `std::transform()` function takes in three parameters - the beginning and ending iterators of the string, and a function that will be applied to each character in the string. In this case, we are using a lambda function to convert each character to its lowercase version using the `std::tolower()` function.
+
+The output of the above code would be: `hello, world!` since all the characters in the string have been converted to lowercase. We can also use a range-based for loop to achieve the same result:
+
+```C++
+std::string str = "Hello, WORLD!";
+
+// Using a range-based for loop
+for (auto& c : str) {
+    c = std::tolower(c);
+}
+
+std::cout << str << std::endl;
+```
+
+Both methods produce the same output. It is important to note that these methods will only work for ASCII characters and may give unpredictable results for non-ASCII characters.
 
 ## Deep Dive
 
-Behind the scenes, the `tolower()` function uses the ASCII values of characters to convert them to lower case. In the ASCII character set, upper case letters have a higher value than lower case letters, making it easy to convert them using simple arithmetic.
+C++ does not have a built-in function to convert a string to lower case, unlike some other programming languages like Python. This is why we rely on the `std::transform()` function to help us achieve the desired result.
 
-It's important to note that the `tolower()` function only works with single characters, so we need to use a loop to convert an entire string. Additionally, this function only works with ASCII characters, so it may not be suitable for languages with special characters or non-ASCII characters.
+The `std::toupper()` and `std::tolower()` functions are part of the <cctype> library and take in a single character as a parameter and return its uppercase or lowercase equivalent, respectively. These functions only work with ASCII characters and may not work as expected for non-ASCII characters.
+
+Additionally, it is important to note that both of these methods will modify the original string. If you do not want to alter the original string, you can create a copy of the string and convert it to lower case using the same methods shown above.
 
 ## See Also
 
-- [ASCII Table](https://www.asciitable.com/) - A helpful reference for ASCII values of characters.
-- [C++ String Functions](https://www.geeksforgeeks.org/string-class-in-cpp/) - A comprehensive guide to working with strings in C++.
+- [C++ String Reference](https://www.cplusplus.com/reference/string/)
+- [std::transform() documentation](https://www.cplusplus.com/reference/algorithm/transform/)
+- [std::toupper() documentation](https://www.cplusplus.com/reference/cctype/toupper/)
+- [std::tolower() documentation](https://www.cplusplus.com/reference/cctype/tolower/)

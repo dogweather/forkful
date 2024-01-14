@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Convertire una stringa in minuscolo"
+simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,45 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Ci sono molte situazioni in cui potresti avere bisogno di convertire una stringa in lettere minuscole durante la programmazione in Elixir. Ad esempio, potresti dover confrontare due stringhe senza tener conto delle maiuscole e minuscole, o forse stai lavorando con dati inseriti dall'utente e vuoi essere sicuro che la stringa sia uniformemente formattata. In entrambi i casi, la conversione di una stringa in lettere minuscole può essere molto utile.
+Ci sono molte ragioni per cui si potrebbe voler convertire una stringa in minuscolo in Elixir. Forse stai cercando di rendere uniforme il testo inserito dagli utenti nel tuo programma, o forse stai eseguendo una ricerca di stringhe in modo case-insensitive. Qualunque sia il motivo, la conversione di una stringa in minuscolo è un'operazione fondamentale da conoscere in Elixir.
 
-## Come Fare
+## Come
 
-Per convertire una stringa in lettere minuscole in Elixir, possiamo utilizzare la funzione `String.downcase/1` o `String.downcase/2`. La prima funzione prende in input una stringa e restituisce una nuova stringa con tutti i caratteri convertiti in minuscolo. La seconda funzione accetta un'opzione aggiuntiva per specificare la lingua da utilizzare per la conversione.
+Per convertire una stringa in minuscolo in Elixir, possiamo utilizzare la funzione `String.downcase/1`. Prende una stringa come input e restituisce una nuova stringa con tutti i caratteri convertiti in minuscolo. Ecco un esempio di come utilizzarlo:
 
-```elixir
+```Elixir
 iex> String.downcase("Ciao Mondo")
 "ciao mondo"
-
-iex> String.downcase("Привет мир", :cyrillic)
-"привет мир"
 ```
 
-Possiamo anche usare la funzione `String.downcase!/1` se vogliamo modificare direttamente la stringa originale invece di crearne una nuova.
+Come puoi vedere, la stringa "Ciao Mondo" viene convertita in "ciao mondo". È importante notare che la funzione `String.downcase/1` non modifica la stringa originale, ma ne restituisce una nuova.
 
-```elixir
-iex> string = "HELLO WORLD"
-iex> String.downcase!(string)
-"hello world"
-iex> string
-"hello world"
+Possiamo anche utilizzare il modulo `String` per convertire una lista di stringhe in minuscolo, utilizzando la funzione `String.downcase/2`. Prende una lista di stringhe come primo argomento e un atomo come secondo argomento per specificare la lingua in cui dovrebbe essere eseguita la conversione. Ad esempio:
+
+```Elixir
+iex> String.downcase(["Ciao", "Mondo"], :it)
+["ciao", "mondo"]
 ```
 
-È importante notare che la conversione in minuscolo dipende dalla codifica dei caratteri utilizzata. Se la stringa contiene caratteri con tono o segni diacritici, potrebbe essere necessario utilizzare la funzione `String.downcase/2` con l'opzione `:unicode` per un risultato corretto.
+Questo converte le stringhe in minuscolo secondo la lingua italiana.
 
-```elixir
-iex> String.downcase("Qué tal?", :unicode)
-"qué tal?"
+## Deep Dive
+
+Se vuoi esplorare ulteriormente come Elixir gestisce la conversione di stringhe in minuscolo, puoi dare uno sguardo al codice sorgente della funzione `String.downcase/1`. Puoi farlo utilizzando il comando `h` nella tua console IEx e passando il nome della funzione come argomento:
+
+```Elixir
+iex> h String.downcase/1
 ```
 
-## Approfondimento
+Questo ti mostrerà il codice sorgente della funzione e ti aiuterà a capire meglio come funziona.
 
-La conversione di una stringa in lettere minuscole in Elixir si basa sulle regole della libreria di standard Unicode. Ciò significa che non solo le lettere della lingua inglese verranno convertite correttamente, ma anche quelle di molte altre lingue come il russo, il cinese e l'arabo.
-
-Inoltre, la conversione in lettere minuscole è sensibile alla localizzazione, il che significa che le regole possono variare a seconda della lingua impostata nel sistema operativo. Questo è importante da considerare se il tuo codice deve essere eseguito su più sistemi con lingue diverse.
+Inoltre, è importante ricordare che la funzione `String.downcase/1` utilizza le regole di conversione della lingua specificata in `Locale`. Se la lingua non è specificata, viene utilizzata la lingua corrente del sistema. Puoi leggere di più sulla gestione dei linguaggi e delle localizzazioni in Elixir nella [documentazione ufficiale](https://hexdocs.pm/elixir/String.html#module-localization).
 
 ## Vedi Anche
 
-- [Documentazione ufficiale di Elixir per String.downcase/1](https://hexdocs.pm/elixir/String.html#downcase/1)
-- [Documentazione ufficiale di Elixir per String.downcase!/1](https://hexdocs.pm/elixir/String.html#downcase!/1)
-- [Altri metodi per la manipolazione di stringhe in Elixir](https://elixirschool.com/en/lessons/basics/strings/)
+- [String documentation](https://hexdocs.pm/elixir/String.html)
+- [Locale documentation](https://hexdocs.pm/elixir/Locale.html)

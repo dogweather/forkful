@@ -1,73 +1,56 @@
 ---
-title:                "C: Excluindo caracteres que correspondem a um padrão"
+title:                "C: Apagando caracteres que correspondem a um padrão"
+simple_title:         "Apagando caracteres que correspondem a um padrão"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que: Entendendo a eliminação de caracteres com um padrão
+## Por que deletar caracteres que correspondem a um padrão?
 
-Às vezes, em um programa de computador, é necessário eliminar determinados caracteres de uma string que correspondam a um padrão específico. Pode ser uma tarefa aparentemente simples, mas entender por que essa ação é necessária pode ajudar a melhorar suas habilidades de programação. 
+Às vezes, em um programa de computador, precisamos lidar com cadeias de caracteres que podem incluir caracteres desnecessários ou indesejados. Em vez de percorrer manualmente cada caractere e excluí-los, podemos usar técnicas de programação para eliminar automaticamente caracteres que correspondem a um padrão específico.
 
-##Como Fazer: Exemplos de código e saída do programa
+## Como fazer isso em C
 
-A seguir, mostraremos como implementar a função para eliminar os caracteres correspondentes a um padrão em uma string. Primeiro, declaremos uma string e um padrão para encontrar e excluir todos os caracteres correspondentes.
+Para deletar caracteres que correspondem a um determinado padrão em C, podemos usar a função "strchr" da biblioteca de strings. Esta função procura uma ocorrência de um caractere especificado em uma string e, se encontrada, retorna um ponteiro para essa posição na string. Combinando essa função com um loop, podemos percorrer a string e excluir cada caractere que corresponde ao padrão.
 
-````C
+Um exemplo de código em C seria:
+
+```
 #include <stdio.h>
 #include <string.h>
- 
-// Função para excluir caracteres correspondentes a um padrão em uma string
-void deleteCharacter(char str[], char pattern[]) 
-{ 
-    // Obtém o tamanho total da string
-    int tamanho = strlen(str); 
-    // Mantém contador para contar os caracteres a serem copiados
-    int count = 0; 
-  
-    // Separa a string em partes e copia apenas os caracteres não correspondentes
-    for (int i = 0; i < tamanho; i++) { 
-        int j; 
-        //Verifica se o caractere atual é diferente do padrão e copia para o índice de contador
-        for (j = 0; j < strlen(pattern); j++) 
-            if (str[i] == pattern[j]) 
-                break; 
-  
-        //Se o caractere atual não for correspondente ao padrão, o copia 
-        if (j == strlen(pattern)) 
-            str[count++] = str[i]; 
-    } 
-    // Adiciona o caractere nulo ao final da string
-    str[count] = '\0'; 
-} 
-  
-//Função principal
-int main() 
-{ 
-    //Exemplo de string e padrão
-    char str[] = "Olá, mundo! Olá, mundo!"; 
-    char pattern[] = "Oa"; 
-  
-    //Invoca a função que deleta os caracteres correspondentes da string
-    deleteCharacter(str, pattern); 
-  
-    //Resultado esperado: "Ol, mund! Ol, mund!"
-    printf("%s", str); 
-    return 0; 
-} 
-````
 
-##Profundidade: Mais informações sobre a eliminação de caracteres correspondentes a um padrão
+int main() {
+    char text[] = "Isso é um exemplo de string com caracteres a mais";
+    char *ptr;
 
-Ao implementar o código acima, é importante notar que a função ```deleteCharacter``` não altera a string original. Em vez disso, ela cria uma nova string com os caracteres não correspondentes. Isso garante que a string original permaneça intacta.
+    while ((ptr = strchr(text, 'a')) != NULL) {
+        memmove(ptr, ptr + 1, strlen(ptr));
+    }
 
-Além disso, é possível criar uma função que aceite um ponteiro para ponteiro de string como argumento para evitar a criação de uma nova string. Isso também pode ser usado para excluir caracteres correspondentes de várias strings.
+    printf("%s", text);
 
-Outro ponto importante é que a função ```strlen ()``` pode ser lenta e, em vez disso, a função ```strlen (padrão)``` pode ser usada para armazenar o tamanho do padrão antes do loop para melhorar o desempenho.
+    return 0;
+}
+```
 
-##Veja também
-- [Tutorial de Programação em C](https://www.programiz.com/c-programming)
-- [Funções de String em C](https://www.geeksforgeeks.org/string-functions-in-c-with-examples/)
-- [Documentação Oficial do C](https://devdocs.io/c/)
+Neste exemplo, estamos percorrendo a string e excluindo todos os caracteres 'a'. Para visualizar o resultado, a saída do programa seria:
+
+```
+Isso é um exemplo de string com crters A mis
+```
+
+## Profundidade técnica
+
+A técnica usada no exemplo acima é conhecida como "exclusão por deslocamento". Isso envolve mover todos os caracteres à direita do caractere excluído um espaço para a esquerda, substituindo essencialmente o caractere indesejado.
+
+No código, usamos a função "memmove" para fazer isso de forma eficiente. Esta função move um bloco de memória de uma posição para outra, garantindo que não haja sobreposição dos dados. Também usamos a função "strlen" para determinar o comprimento da parte da string que precisa ser movida.
+
+## Veja também
+
+- [Documentação da função strchr em C](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm)
+- [Mais sobre a função memmove em C](https://www.studytonight.com/c/function/standard-c-library-function-memmove) 
+- [Tutorial de Strings em C](https://www.geeksforgeeks.org/strings-in-c-2/)

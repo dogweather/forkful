@@ -1,43 +1,36 @@
 ---
-title:                "TypeScript: Zmiana pierwszej litery na wielką w ciągu znaków"
+title:                "TypeScript: Zapisywanie napisu wielkimi literami"
+simple_title:         "Zapisywanie napisu wielkimi literami"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Jeśli jesteś programistą lub uczysz się TypeScript, na pewno spotkasz się z sytuacją, w której będziesz musiał zmienić wielkość liter w jakimś tekście. W tym artykule dowiesz się, dlaczego jest to ważne i jak możesz to zrobić w TypeScript.
+Często zdarza się, że podczas pisania kodu potrzebujemy zmienić duże i małe litery w tekście. W takich przypadkach przydatna jest metoda "toUpperCase" dostępna w wielu językach programowania. W TypeScript można użyć tej metody aby zmienić wszystkie litery na duże w danym łańcuchu znaków.
 
-## Jak to zrobić?
-
-Sprawdzanie, czy jesteś programistą, często wiąże się z pisaniem kodu, który manipuluje tekstem. Ta umiejętność jest szczególnie przydatna, gdy na przykład otrzymujesz dane od użytkownika i musisz upewnić się, że są one w odpowiednim formacie.
-
-Do zmienienia wielkości liter w tekście w TypeScript możesz użyć metody `toUpperCase()`. Przykładowy kod wygląda następująco:
+## Jak To Zrobić
 
 ```TypeScript
-let tekst = "witaj świecie!";
-console.log(tekst.toUpperCase());
+let string = "to jest przykładowy tekst";
+let capitalizedString = string.toUpperCase();
+
+console.log(string); // wynik: to jest przykładowy tekst
+console.log(capitalizedString); // wynik: TO JEST PRZYKŁADOWY TEKST
 ```
 
-Po uruchomieniu tego kodu, powinieneś zobaczyć następujący wynik w konsoli:
-
-```
-WITAJ ŚWIECIE!
-```
+W powyższym przykładzie utworzyliśmy zmienną "string" i przypisaliśmy jej wartość "to jest przykładowy tekst". Następnie użyliśmy metody "toUpperCase" na zmiennej "string" i przypisaliśmy ją do nowej zmiennej "capitalizedString". W wyniku otrzymaliśmy zmienną "capitalizedString" zawierającą ten sam tekst, ale z wszystkimi literami zmienionymi na duże. Aby wyświetlić zawartość zmiennych w konsoli, użyliśmy metody "console.log".
 
 ## Deep Dive
 
-To, co właśnie zobaczyłeś, jest tak naprawdę wywołaniem metody `toUpperCase()`. Jest to wbudowana metoda w JavaScript, z której możemy również skorzystać w TypeScript, ponieważ TypeScript jest nadzbiorem języka JavaScript.
+Metoda "toUpperCase" jest dostępna dla wszystkich typów prostych zdefiniowanych w TypeScript, takich jak string, number czy boolean. Co więcej, można również użyć tej metody na całych wyrażeniach, a nie tylko pojedynczych zmiennych. Można również wykonywać konkatenację różnych ciągów znaków przy użyciu tej metody, co pozwala na jeszcze większą elastyczność w manipulowaniu tekstem.
 
-Jedną z cech tej metody jest to, że zwraca ona nowy ciąg tekstowy, a nie modyfikuje oryginalnego. Oznacza to, że możesz przydzielić zmienną z wynikowym tekstem do nowej zmiennej i używać jej w innych częściach kodu.
+## Zobacz Również
 
-Niektóre inne przydatne metody do zmiany wielkości liter to `toLowerCase()` i `toLocaleUpperCase()`. Pierwsza z nich zamienia wszystkie litery na małe, a druga uwzględnia lokalizację i zwraca wielkość liter odpowiadającą ustawieniom językowym użytkownika.
-
-## Zobacz również
-
-- [Dokumentacja TypeScript - Metody string](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html)
-- [W3Schools - Metody string w TypeScript](https://www.w3schools.com/js/js_string_methods.asp)
-- [Mozilla Developer Network - Metody string w JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/prototype)
+- [Dokumentacja TypeScript: String Operations](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string-operations)
+- [W3Schools: TypeScript Strings](https://www.w3schools.com/ts/ts_strings.asp)
+- [MDN: String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)

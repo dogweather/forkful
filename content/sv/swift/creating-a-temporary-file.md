@@ -1,53 +1,67 @@
 ---
 title:                "Swift: Skapa en temporär fil"
+simple_title:         "Skapa en temporär fil"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skapa en tillfällig fil är en viktig del av Swift-programmering. Det är en metod som används för att temporärt lagra data som behöver behandlas eller sparas i en fil, men inte behöver vara permanent.
 
-## Hur man gör det
-Det finns flera olika sätt att skapa en tillfällig fil i Swift. Här är ett exempel på hur man kan göra det:
+Många gånger när vi programmerar behöver vi skapa tillfälliga filer för att lagra data eller göra temporära beräkningar. Detta kan vara till nytta i en mängd olika användningsområden, som till exempel när vi behöver hantera stora datamängder eller när vi vill göra tester medan vi utvecklar vår kod. I denna bloggpost kommer vi att ta en djupdykning i hur man skapar tillfälliga filer i Swift och hur de kan användas.
 
-```Swift 
-// Skapar en fil med "Hello World"
-let fileContent = "Hello World"
+## Så här gör du
 
-// Skapar en tillfällig fil med namnet "TempFile.txt" i det temporära mappen
-let tempURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("TempFile.txt")
+För att skapa en tillfällig fil i Swift använder vi `FileManager` och `URL` klasserna. Låt oss följa stegen nedan för att skapa en temporär fil och sedan skriva till den:
 
-// Skriver filinnehållet till den tillfälliga filen
+```Swift
+// Skapa en unik URL för vår tillfälliga fil
+let tempURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("temp.txt")
+
+// Skapa en FileManager instans
+let fileManager = FileManager.default
+
+// Skapa en tom fil på den unika URL:en
+fileManager.createFile(atPath: tempURL.path, contents: nil, attributes: nil)
+
+// Skriv till vår temporära fil
+let text = "Hej, detta är en temporär fil!"
 do {
-    try fileContent.write(to: tempURL, atomically: true, encoding: .utf8)
-}
-catch {
-    print("Något gick fel: \(error)")
+    try text.write(to: tempURL, atomically: true, encoding: .utf8)
+} catch {
+    print(error.localizedDescription)
 }
 
-// Läser innehållet i den temporära filen och skriver ut det
+// Läs från vår temporära fil
 do {
-    let tempContent = try String(contentsOf: tempURL, encoding: .utf8)
-    print(tempContent)
-}
-catch {
-    print("Något gick fel: \(error)")
+    let tempText = try String(contentsOf: tempURL, encoding: .utf8)
+    print(tempText)
+} catch {
+    print(error.localizedDescription)
 }
 ```
-Output:
-```Swift 
-Hello World
+
+Om vi kör detta kodblock så kommer vi att få följande output:
+
 ```
+Hej, detta är en temporär fil!
+```
+
+Som vi kan se har vi nu skapat en tillfällig fil och lyckats skriva samt läsa från den. Men vad händer egentligen bakom kulisserna?
 
 ## Djupdykning
-Att skapa en tillfällig fil i Swift är mycket användbart när man behöver lagra eller behandla data som inte behöver vara permanent. En tillfällig fil kan också användas för att skapa en temporär cache av data, vilket kan hjälpa till att snabba upp prestandan.
 
-En viktig sak att tänka på när man arbetar med tillfälliga filer är att se till att filen raderas efter att den har använts. Detta kan göras genom att använda klassen FileManager och dess funktion `removeItem(at:)` för att ta bort filen. Det är också en god praxis att skapa en fil med ett unikt namn, t.ex. genom att lägga till en tidsstämpel, för att undvika att skriva över en befintlig fil eller att flera uppkopplingar försöker använda samma fil.
+När vi skapar en tillfällig fil i Swift så tilldelas den en unik URL genom `NSTemporaryDirectory()` funktionen. Detta är en standardmapp på vårt system som är reserverad för tillfälliga filer. Sedan använder vi `FileManager` för att skapa själva filen på den unika URL:en. Genom att sätta innehållet till `nil` så skapas en tom fil.
+
+Nästa steg är att skriva till vår temporära fil. Här använder vi `write(to:atomically:encoding:)` funktionen från `String` klassen för att skriva önskat innehåll till vår fil. Slutligen använder vi `String(contentsOf:encoding:)` funktionen för att läsa från vår fil och skriva ut innehållet.
+
+Det finns också flera andra alternativ för att skapa tillfälliga filer i Swift, såsom att använda `FileHandle` eller `URLSessionDataTask` klasserna. Det är alltid bra att utforska olika lösningar och hitta det som passar bäst för ens nuvarande användningsområde.
 
 ## Se även
-- [Apple Developer Documentation: Creating and Saving Temporary Files](https://developer.apple.com/documentation/foundation/filesystem/creating_and_saving_temporary_files)
-- [Swift by Sundell: Managing Temporary Files in Swift](https://www.swiftbysundell.com/articles/managing-temporary-files-in-swift/)
-- [NSHipster: Temporary Files](https://nshipster.com/temporary-files/)
+
+- [Apple Developer Dokumentation för FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [En guide till temporära filer i Swift](https://medium.com/better-programming/ultimate-guide-to-temporary-files-in-swift-9272a3b17fe1)
+- [Skapa temporära filer i Swift](https://theswiftdev.com/create-temporary-files-in-swift/)

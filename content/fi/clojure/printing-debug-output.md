@@ -1,38 +1,54 @@
 ---
-title:                "Clojure: Vianmäärityksen tulostaminen"
+title:                "Clojure: Tulostamassa virheenjäljitystulosteita"
+simple_title:         "Tulostamassa virheenjäljitystulosteita"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-On monia syitä, miksi kannattaa tulostaa debug-tulosteita ohjelmoinnin aikana. Yksi tärkeimmistä syistä on virheiden etsiminen ja ohjelman toiminnan ymmärtäminen. Tulostamalla tietoja koodin suorituksen eri vaiheista, voit tarkastella mitä tapahtuu ja missä vaiheessa mahdollinen virhe ilmenee.
+Printtaaminen tahnaustulosteita on tärkeä osa Clojure-ohjelmoinnin kehittämistä ja virheiden korjaamista. Se auttaa kehittäjiä ymmärtämään, mitä koodi todella tekee ja missä mahdolliset virheet voivat olla.
 
-## Miten?
+## Miten
 
-Debug-tulosteiden tulostaminen on helppoa Clojure-ohjelmoinnissa. Voit käyttää funktiota `println` ja antaa sille haluamasi tiedon tulostettavaksi. Alla on esimerkki koodista:
+Useimmat Clojure-kehittäjät käyttävät `println`-funktiota tahnaustulosteiden printtaamiseen. Tämä funktio hyväksyy minkä tahansa arvon ja tulostaa sen konsoliin. Alla on esimerkki, jossa printataan muuttujan `nimi` arvo konsoliin:
 
 ```Clojure
-(def num1 5)
-(def num2 10)
-(println "Summa:" (+ num1 num2))
+(def nimi "Jesse")
+(println nimi)
 ```
 
-Tämän koodin tuloste on `Summa: 15`. Voit myös tulostaa esimerkiksi muuttujien arvoja tai ohjelman suorituksen eri vaiheissa olevien funktioiden palauttamaa tietoa. Debug-tulosteita voi myös käyttää vertailemaan esimerkiksi odotettuja ja todellisia tuloksia, ja näin havaita virheitä ohjelmassa.
+Tämä tulostaa `Jesse` konsoliin. Voit myös ketjuttaa useita arvoja yhdessä `println`-funktion kanssa käyttämällä `str`-funktiota. Alla on esimerkki printtaamisesta useammalla arvolla:
+
+```Clojure
+(def luku1 10)
+(def luku2 5)
+
+(println (str "Ensimmäinen luku: " luku1 ", toinen luku: " luku2))
+```
+
+Tämä tulostaa `Ensimmäinen luku: 10, toinen luku: 5` konsoliin.
 
 ## Syvemmälle
 
-Debug-tulosteiden tulostaminen voi myös auttaa kehittämään ymmärrystäsi ohjelmoinnista ja Clojure-kielen toiminnasta. Voit tarkastella tulosteita ja vertailla niitä koodiisi, jolloin voit oppia uusia asioita ja löytää uusia tapoja ratkaista ongelmia.
+Tahnaustulosteen printtaaminen voi auttaa kehittäjiä myös muokkaamaan ja tarkistamaan koodia. Voit käyttää `prn`-funktiota, joka toimii samalla tavalla kuin `println`, mutta tulostaa myös koodin lukuarvon. Tämä voi auttaa sinua ymmärtämään paremmin koodin suoritusjärjestystä ja mahdollisia virheitä.
 
-On myös tärkeää muistaa poistaa tai kommentoida debug-tulosteet ennen kuin julkaiset lopullisen version ohjelmastasi, jotta ohjelma toimii suorituskykyisemmin.
+Jos haluat tarkistaa, onko jokin ehto totta tai epätotta, voit käyttää `println`-funktiota yhdistettynä `if`-lauseeseen. Alla on esimerkki:
+
+```Clojure
+(let [luku 5]
+  (if (> luku 10)
+    (println "Luku on suurempi kuin 10")
+    (println "Luku on pienempi tai yhtä suuri kuin 10")))
+```
+
+Tämä tulostaa `Luku on pienempi tai yhtä suuri kuin 10`, koska ehto `luku > 10` ei ole totta.
 
 ## Katso myös
 
-- [Clojure - Debugging](https://cljdoc.org/d/clojurians-org/common-clojure/0.2.24/doc/debugging)
-- [Debugging Clojure with Reveal](https://cognitect.com/blog/2014/1/20/debugging-clojure-with-revel)
-- [Clojure Debugging Cheatsheet](https://github.com/essential-logic/Clojure-Debugging-Cheatsheet/blob/master/Clojure-Debugging-Cheatsheet.pdf)
-
-Kiitos lukemisesta, toivottavasti tämä auttoi sinua ymmärtämään debug-tulosteiden käyttöä Clojure-ohjelmoinnissa. Muista käyttää niitä hyödyksesi ratkaislessasi ongelmia ohjelmassasi!
+- [Clojure-line editor](https://github.com/clojure-emacs/clojure-mode)
+- [Clojure-kirjoittajan opas](https://clojure.org/guides/learn/guides-for-professional-programmers)

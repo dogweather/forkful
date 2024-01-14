@@ -1,52 +1,47 @@
 ---
-title:                "Swift: כתיבה לטעות תקן"
+title:                "Swift: כתיבה לשגיאת תקן"
+simple_title:         "כתיבה לשגיאת תקן"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-כתיבה לפלט השגיאות התקניים (standard error) היא כלי חשוב בתכנות בשפת סוויפט. הוא מאפשר למפתחים לתקן בעיות ולמצוא את מקורן של השגיאות בקוד שלהם בצורה מהירה ויעילה.
+מדוע כדאי לכם לכתוב לפלט שגיאות סטנדרטי?
 
-# כיצד לעשות זאת
+## איך לכתוב
 
-תחילה, נצטרך לייבא את `Foundation` framework כדי להשתמש במודול "File Handle" שיאפשר לנו לגשת לכתיבת ה-Python של הפלט התקניים. לאחר מכן, נשתמש בפקודת `guard let` לבדיקת תקינות הארגומנט שאנו מעבירים לפונקציה `FileHandle.standardError`.
+כדי לכתוב לפלט שגיאות סטנדרטי בשפת סוויפט, תוכלו להשתמש בפונקציה "fputs". הנה דוגמה לכתיבת שגיאת "הכנסיות" לפלט סטנדרטי על ידי שימוש בפונקציה המתאימה לכך:
 
-```Swift
-import Foundation
-
-guard let standardError = FileHandle.standardError else {
-  fatalError("Unable to access standard error.")
-}
-
-print("This is a sample error message.", to: standardError)
+``` Swift
+fputs("חרף ציפורי הסתיו", stderr)
 ```
 
-הפלט המתקבל מהקוד שלו תהיה כזו:
+כאשר נריץ את הקוד הנ"ל, נקבל את הפלט הבא:
 
-```
-This is a sample error message.
-```
+`חרף ציפורי הסתיו`
 
-כעת, אם נרצה לשנות את שם הקובץ או את המיקום של הפלט התקניים, אנו יכולים לעשות זאת על ידי שימוש בפקודה `FileHandle.init(forWritingAtPath:)` ולהעביר לה את הנתיב הרלוונטי על מנת ליצור קובץ חדש לכתיבה.
+## חפירה עמוקה
 
-```Swift
-import Foundation
+כאשר אתם כותבים לפלט שגיאות סטנדרטי בשפת סוויפט, יתרומנה כי אתם יכולים להשתמש בפונקציה "fprintf" במקום במקום בפונקציה "fputs". פונקציה זו מאפשרת לכם להוסיף מידע נוסף לפלט השגיאות. לדוגמה:
 
-let fileHandle = FileHandle(forWritingAtPath: "error_log.txt")
+``` Swift
+let name = "שלום"
+let age = 30
 
-guard let errorLog = fileHandle else {
-  fatalError("Unable to create error log file.")
-}
-
-print("This is a sample error message.", to: errorLog)
+fprintf(stderr, "היי, שמי הוא %s ואני בן %d", name, age)
 ```
 
-תוכלו לראות את קובץ השגיאות שנוצר בנתיב שנמצאים בו הקבצים שלכם. אל תשכחו לסגור את הקובץ בסיום התהליך כדי לוודא שהמידע נשמר. כעת כאשר אתם מבינים את הבסיסים, אתם יכולים להתחיל להשתמש בכתיבה לפלט התקניים בקודים שלכם לתיעוד ולאיתור שגיאות.
+הפלט הוא:
 
-# חקירה מעמיקה
+`היי, שמי הוא שלום ואני בן 30`
 
-ה-Python של הפלט התקניים משמש לכתיבה ל-Python של הפלט הרגיל (standard output), איך נדע להבחין ביניהם? ההבדל היחידי הוא בכתובת המפנה המועברת לפונ
+## ראו גם
+
+* [מדריך לשגיאות סטנדרטי בשפת סוויפט](https://www.swiftbysundell.com/articles/standard-errors-in-swift/)
+* [פונקציות פלט סטנדרטיות בשפת סוויפט](https://docs.swift.org/swift-book/LanguageGuide/Functions.html#ID102)
+* [מדריך מלא לתחום התכנות בשפת סוויפט](https://developer.apple.com/swift/resources/)

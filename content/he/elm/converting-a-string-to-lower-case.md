@@ -1,33 +1,34 @@
 ---
 title:                "Elm: המרת מחרוזת לאותיות קטנות"
+simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה
+רבים מתכנתי Elm קוראים לפונקציה שממירה מחרוזת לאותיות קטנות "את חשובה מאוד" - פשוט וסופר שימושי!
 
-למה לבצע המרת מחרוזת לאותיות קטנות באמצעות תכנות Elm? המרת מחרוזת לאותיות קטנות יכולה להיות שימושית כשאנו עובדים עם נתונים מורכבים באנגלית כמו אימיילים ושמות פרטיים.
-
-## איך לעשות זאת
-
-באמצעות פקודת toLower ואינדקס מחרוזת, ניתן לכתוב פונקציה פשוטה שתמיד תמיר את המחרוזת לאותיות קטנות גם אם יוכנסו לה אותיות גדולות.
+## כיצד לעשות זאת
+בעזרת הפונקציה `String.toLower` נוכל להמיר את המחרוזת שנמצאת בתוך הקלט שלנו לאותיות קטנות. לדוגמה:
 
 ```Elm
-toLowerExample : String -> String
-toLowerExample str =
-    String.map toLower str
-
-toLowerExample "ELM" -- Output: "elm"
+String.toLower "HELLO" -- "hello"
 ```
 
-## ידיעה מעמיקה
+בנוסף, ניתן להשתמש גם בחיבור של פונקציות, לדוגמה:
 
-בתוך פונקצית toLower מעלה פעולתי הממירה את המילה לאותיות קטנות היא לבצע בפקודה String.map toLower המאפשרת לנו לעבור על כל אחת מהתווים שבמחרוזת ולהחיל עליהם פעולה מסוימת, כך שנוכל לשנות את כל האותיות לאותיות קטנות בפעולה אחת.
+```Elm
+String.toLower (String.concat [ "h", "e", "l", "l", "o" ]) -- "hello"
+```
+
+## מעמקים
+המרת מחרוזת לאותיות קטנות נעשית על ידי החלפת כל אות גדולה במחרוזת לאות קטנה בעזרת פונקציית `Char.toLower`. בנוסף, אם המחרוזת מכילה תווים לא אלפאביתיים, הם יישארו ללא שינויים.
 
 ## ראו גם
-
-- תיעוד רשמי של String.map באתר Elm: https://package.elm-lang.org/packages/elm/core/latest/String#map 
-- לומדים לכתוב פונקציות ב-Elm: https://elmprogramming.com/creating-functions.html
+- [מדריך התחשבות בהעצמת נסיעת כביש](https://ohanhi.github.io/writing/2017-03-15-Elm-type-uplifting/)
+- [המרת רשימת מחרוזות למחרוזת אחת](https://vsavkin.com/modifying-a-list-of-strings-into-a-single-string-in-elm-a9dcae082f20)
+- [פונקציה `String.map`](https://package.elm-lang.org/packages/elm/core/latest/String#map)

@@ -1,7 +1,9 @@
 ---
 title:                "C++: Перетворення дати у рядок"
+simple_title:         "Перетворення дати у рядок"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/cpp/converting-a-date-into-a-string.md"
 ---
 
@@ -9,51 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Конвертування дати в рядок є важливою частиною програмування з мовою C++. Це дозволяє нам легко відображати дату у форматі, зрозумілому для користувачів, та пов'язувати її з іншими даними.
+Конвертація дати в рядок є важливою частиною багатьох програм, особливо тих, які працюють з даними про час. Це дає можливість користувачам зручно відображати дату у зрозумілому для них форматі.
 
-## Як це зробити
+## Як
+
+Конвертація дати в рядок може бути виконана за допомогою функції `strftime` в стандартній бібліотеці мови C++. Ця функція дозволяє використовувати різні формати для відображення дати в рядку. Наприклад, для відображення поточної дати у форматі "день-місяць-рік" код буде виглядати так:
 
 ```C++
 #include <iostream>
 #include <ctime>
-#include <string>
+using namespace std;
 
 int main() {
-
-  // Отримуємо поточну дату та час
-  time_t now = time(0);
-
-  // Конвертуємо дату у рядок
-  char* convertedDate = ctime(&now);
-
-  // Виводимо результат
-  std::cout << "Поточна дата та час: " << convertedDate << std::endl;
-
-  return 0;
+    time_t now = time(0);
+    char str[80];
+    struct tm * timeinfo = localtime(&now);
+    strftime(str, 80, "%d-%m-%Y", timeinfo);
+    cout << str << endl;
+    return 0;
 }
-
 ```
 
-Приклад виводу:
+Результат виконання програми буде виглядати наступним чином: "03-07-2021".
+
+## Глибоке дослідження
+
+У C++ також є більш потужна бібліотека для роботи з датами та часом - `chrono`. Вона дозволяє працювати з різними типами даних, такими як `time_point` та `duration`. Для конвертації дати в рядок за допомогою цієї бібліотеки можна використовувати функцію `to_iso_string`, наприклад:
 
 ```C++
-Поточна дата та час: Sat, Nov 28 10:05:00 2020
+#include <iostream>
+#include <chrono>
+#include <string>
+using namespace std;
+using namespace chrono;
+
+int main() {
+    system_clock::time_point now = system_clock::now();
+    string str = to_iso_string(now);
+    cout << str << endl;
+    return 0;
+}
 ```
 
-## Поглиблене вивчення
+Результатом буде рядок у форматі "20210703T184332".
 
-При конвертуванні дати в рядок використовується функція `ctime`. Вона приймає в якості аргументу вказівник на об'єкт `time_t` та повертає рядок з датою та часом. Однак, цей метод не завжди дає бажаний результат, оскільки формат рядка може бути різним залежно від операційної системи та локалізації.
+## Дивись також
 
-Іншою альтернативою є використання функції `strftime`, яка дозволяє дещо більш гнучко вказувати формат рядка, в який буде конвертована дата.
-
-## Додаткові матеріали
-
-- [Посібник з праці з датою та часом у C++](https://developer.ibm.com/technologies/systems/articles/au-datetime/)
-- [Документація з функції `ctime`](http://www.cplusplus.com/reference/ctime/ctime/)
-- [Документація з функції `strftime`](http://www.cplusplus.com/reference/ctime/strftime/)
-
-## Дивіться також
-
-- [Розділ про роботу з датою та часом у курсі "Навчання за допомогою C++"](https://www.learncpp.com/cpp-tutorial/513-timing-your-code/)
-- [Використання різноманітних форматів дати в C++](https://stackoverflow.com/questions/2022664/c-format-datetime)
-- [Огляд функції `strftime`](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Стандартна бібліотека C++](https://en.cppreference.com/w/cpp/header)
+- [Бібліотека `chrono` у C++](https://en.cppreference.com/w/cpp/chrono)

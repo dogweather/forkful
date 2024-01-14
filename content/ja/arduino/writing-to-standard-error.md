@@ -1,42 +1,49 @@
 ---
 title:                "Arduino: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜStandard Errorを書くのか
 
-この記事では、Arduinoプログラミングにおいて、エラーメッセージを書き込む必要性とその方法を紹介します。Arduinoを使用する際には、エラーメッセージを正しく処理することが重要です。なぜなら、エラーが起きた際に、その原因を特定するために必要だからです。
+プログラミングをする人々にとって、エラーは日常的なものです。しかし、それらのエラーを解読するのは非常に大変です。そこで、実行中に何が起こっているのかをより正確に把握するために、Standard Errorを書くことが重要です。
 
-## 方法
+# 方法
 
-エラーメッセージを書き込む方法は非常に簡単です。まずは、エラーメッセージを書き込むためのコードを書きます。その際に、`Serial.print()`関数を使用します。例えば、以下のようなコードを書きます。
-
+**Arduinoのライブラリを``#include``することを忘れないように!**
 ```Arduino
-Serial.print("エラーが発生しました：");
+#include <iostream> 
 ```
 
-次に、エラーの詳細な情報を書き込む場合には、`Serial.println()`関数を使用します。例えば、以下のようなコードを書きます。
-
+**``std::cerr``を使用してStandard Errorに書き込む**
 ```Arduino
-Serial.println("エラー番号：");
+std::cerr << "エラーメッセージ" << std::endl;
 ```
 
-これらのコードを追加することで、エラーメッセージを書き込むことができます。その際には、コードの実行中にシリアルモニターを開いておくことで、メッセージを確認することができます。
+**サンプル出力:**
+```
+エラーメッセージ
+```
 
-## 深堀り
+# 深く掘り下げる
 
-エラーメッセージを書き込む際には、より詳細な情報を書き込むこともできます。例えば、配列や変数の値を書き込むことで、デバッグ作業をより簡単にすることができます。
+Standard Errorに書き込むことで、プログラムの実行中に発生したエラーをターミナルに表示できます。これにより、プログラムをデバッグする際に追加の情報を提供し、問題を追跡するのに役立ちます。ストリーム操作子``<<``を使用して、様々なデータ型の情報をStandard Errorに書き込むことができ、より詳細なデバッグが可能になります。
 
-また、`Serial.print()`関数には複数の引数を渡すこともできます。これを利用することで、複数のメッセージを一度に表示することができます。
+# 参考文献
 
-## もっと詳しく知りたい方へ
+- [標準エラー出力 (Standard Error)](https://wa3.i-3-i.info/word11481.html)
+- [C++で標準エラー出力](https://qiita.com/kawaMk4/items/bba378e38cb926138d2d)
+- [Arduino: Serial.printとSerial.println](https://iot-nozaki.blogspot.com/2015/03/arduino-serialprintserialprintln.html)
 
-より詳しい情報を知りたい方は、以下のリンクを参考にしてください。
+# もっと詳しく知りたい方は是非参考にしてください。
 
-- [ArduinoのSerial.print()関数についてのドキュメンテーション](https://www.arduino.cc/reference/ja/language/functions/communication/serial/print/)
-- [エラーメッセージを記述する際のベストプラクティスについての記事](https://www.makeuseof.com/tag/writing-error-messages-best-practices/)
-- [Arduinoのデバッグ方法についてのガイド](https://blog.arduino.cc/2014/02/25/arduino-debugging-for-beginners/)
+## 参考文献
+
+- [標準エラー出力 (Standard Error)](https://wa3.i-3-i.info/word11481.html)
+- [C++で標準エラー出力](https://qiita.com/kawaMk4/items/bba378e38cb926138d2d)
+- [Arduino: Serial.printとSerial.println](https://iot-nozaki.blogspot.com/2015/03/arduino-serialprintserialprintln.html)

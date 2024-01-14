@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/reading-a-text-file.md"
 ---
 
@@ -9,39 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, dlaczego ludzie w ogóle czytają pliki tekstowe w swoim kodzie Ruby? W tym krótkim artykule przekażemy Ci ważne informacje na ten temat i pokażemy, jak możesz w łatwy sposób czytać pliki tekstowe w swoim własnym kodzie.
+Czy kiedykolwiek zastanawiałeś się, dlaczego tak ważne jest umiejętne czytanie plików tekstowych w języku Ruby? Właśnie dlatego, że jest to kluczowa umiejętność dla każdego programisty Ruby. Bez odczytywania i przetwarzania danych z plików, tworzenie skryptów i aplikacji może stać się trudne, a nawet niemożliwe. Dlatego w tym artykule opowiemy o tym, jak wykonać tę czynność w prosty i bezproblemowy sposób.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Czytanie plików tekstowych w Ruby jest bardzo proste. Wystarczy skorzystać z wbudowanej metody `File.open` i podać jej nazwę pliku jako argument, aby otworzyć plik do odczytu. Następnie można użyć metody `readlines`, aby odczytać zawartość pliku linia po linii.
+Otwórzmy plik tekstowy w języku Ruby i odczytajmy jego zawartość. W tym celu wykonaj następujące kroki:
 
-```Ruby
-plik = File.open("nazwa_pliku.txt", "r")
-puts plik.readlines
-plik.close
-```
+1. Użyj metody `open()` i podaj nazwę pliku, który chcesz otworzyć.
+2. Następnie możesz skorzystać z metody `read()` do odczytania zawartości pliku.
+3. Jeśli chcesz odczytać plik wiersz po wierszu, możesz użyć metody `each_line()`.
 
-Powyższy kod otworzy plik o nazwie "nazwa_pliku.txt" i wyświetli jego zawartość na konsoli. Należy pamiętać, aby zawsze zamknąć plik po zakończeniu jego odczytu za pomocą metody `close`, aby uniknąć problemów z pamięcią.
-
-## Pogłębione Podejście
-
-Ponadto, w Ruby istnieje wiele innych metod, które mogą zostać wykorzystane do odczytywania i przetwarzania plików tekstowych. Na przykład, można użyć metody `read` do odczytania całej zawartości pliku w jednym ciągu, lub metody `gets` do odczytywania jednej linii na raz.
+Przykładowy kod wyglądałby następująco:
 
 ```Ruby
-plik = File.open("nazwa_pliku.txt", "r")
-puts plik.read
-plik.close
+file = open("plik.txt")
+puts file.read() # wyświetli zawartość pliku
+file.each_line { |line| puts line } # wyświetli zawartość wiersz po wierszu
 ```
 
-```Ruby
-plik = File.open("nazwa_pliku.txt", "r")
-puts plik.gets
-plik.close
-```
+## Głębszy zanurkowanie
 
-Oprócz tego, w Ruby można także wykorzystać wyrażenia regularne do wyszukiwania i manipulowania tekstem odczytanym z pliku.
+Istnieje wiele ciekawych metod związanych z czytaniem plików tekstowych w języku Ruby, takich jak:
 
-## Zobacz również
-- [Dokumentacja Ruby - Odczytywanie plików](https://ruby-doc.org/core-2.6/File.html#method-c-open)
-- [Tutorial Ruby - Czytanie i zapisywanie plików](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
-- [Forum Ruby - Dyskusja na temat odczytywania plików](https://www.ruby-forum.com/t/reading-files/219147)
+- `readlines()` - odczytuje wszystkie wiersze pliku i zapisuje je w tablicy.
+- `gets()` - odczytuje tylko jeden wiersz pliku na raz.
+- `closed?` - sprawdza, czy plik został zamknięty.
+- `exist?` - sprawdza, czy plik istnieje.
+
+Pamiętaj, że po zakończeniu operacji na pliku, powinieneś go zamknąć przy użyciu metody `close()`.
+
+## Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o pracy z plikami tekstowymi w języku Ruby, polecamy zapoznać się z następującymi linkami:
+
+- Oficjalna dokumentacja języka Ruby na temat plików (https://ruby-doc.org/core-2.7.0/File.html)
+- Przykładowy tutorial z wyjaśnieniami (https://www.rubyguides.com/2015/05/reading-files-ruby/)
+- Praktyczne zastosowanie w projekcie (https://www.educative.io/edpresso/how-to-read-and-write-to-files-in-ruby)
+
+Dziękujemy za przeczytanie naszego artykułu. Mamy nadzieję, że teraz czujesz się pewniej w czytaniu plików tekstowych w języku Ruby. Powodzenia w dalszej nauce!

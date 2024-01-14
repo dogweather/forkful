@@ -1,45 +1,36 @@
 ---
-title:                "Rust: Alimerkkijonojen erottelu"
+title:                "Rust: Alimerkkijonojen palauttaminen"
+simple_title:         "Alimerkkijonojen palauttaminen"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-Rust: Mitä substrings ovat ja miten niitä käytetään
-
 ## Miksi
 
-On olemassa monia tilanteita, joissa ohjelmoinnissa haluamme käsitellä osia merkkijonosta sen sijaan, että käsittelemme sitä kokonaisuutena. Tämä voi olla tarpeen esimerkiksi tietojen analysoinnissa tai tietyn tiedon etsimisessä tietokannoista. Rustin substring-toiminnallisuus tarjoaa mahdollisuuden käsitellä merkkijonon osia tehokkaasti ja luotettavasti.
+Joskus ohjelmoinnissa joudumme työskentelemään merkkijonojen kanssa, ja näiden merkkijonojen sisältöä täytyy ehkä muokata tai etsiä tiettyjä osia. Yksi tapa käsitellä merkkijonoja on erottaa niistä osia eli suoraan sanottuna ottaa niistä osia itsenäisiksi merkkijonoiksi.
 
-## Kuinka
+## Miten
 
-Rustin String-tyyppi tarjoaa valmiina metodin nimeltä `slice` jota voidaan käyttää merkkijonon osien erottamiseen. Tämä toimii samalla tavalla kuin indeksointi tavallisessa taulukossa. Käytännössä voimme antaa `slice` metodille halutun merkkijonon indeksin alusta ja lopusta, ja se palauttaa meille uuden merkkijonon, joka sisältää vain valitut osat.
+Rust-ohjelmointikielissä on helppo ja tehokas tapa ottaa merkkijonoista alamerkkijonoja. Käytämme tämän saavuttamiseen `substring`-funktiota. Esimerkiksi, jos haluamme ottaa merkkijonosta `"Tervetuloa"` osan `"velu"`, käyttäisimme seuraavaa koodia:
 
 ```Rust
-fn main() {
-    let s = "Tämä on esimerkkimerkkijono";
-
-    //erota merkkijonon osa indekseillä
-    let sliced = &s[5..12];
-
-    println!("{}", sliced); //tulostaa "on esim"
-}
+let merkkijono = "Tervetuloa";
+let osa = merkkijono.substring(3, 6);
 ```
 
-Kuten yllä olevasta koodista näemme, `slice`-metodia käytetään String-tyypin muuttujan nimen jälkeen hakasulkeilla, joissa ilmoitetaan haluttu alku- ja loppuindeksi. Indeksin loppuindeksi ei sisälly uuteen merkkijonoon, joten se on kellonaikojen välillä [alku, loppu).
+Tämä koodi luo uuden merkkijonon `"velu"` ja tallentaa sen muuttujaan `osa`. Asetimme `substring`-funktiolle kaksi parametria: ensimmäinen on aloitusindeksi, joka määrittää mistä kohtaa osa otetaan, ja toinen on lopetusindeksi, joka määrittää mihin kohtaan asti osa otetaan. Muista, että indeksit alkavat aina nollasta, joten `substring(3, 6)` tarkoittaa, että haluamme ottaa osan merkkijonon alkaen neljännestä merkistä ja lopettaen kuudenteen merkkiin. Voit myös käyttää negatiivisia indeksejä, jolloin merkkijonon loppupäästä voidaan ottaa osia.
 
-## Syvällinen sukellus
+## Syvemmälle
 
-Substringsit ovat sisäisesti esitettyjä String-slicejä, jotka ovat ikään kuin lainattuja suoraan alkuperäisestä merkkijonosta eivätkä vie ylimääräistä muistia. Tämä tekee niistä tehokkaan käytön erilaisissa ohjelmointitehtävissä. Substringsit ovat myös muokattavissa, joten voimme esimerkiksi käyttää niitä muuttamaan alkuperäistä merkkijonoa.
-
-Lisäksi Rust tarjoaa muita hyödyllisiä metodeja, kuten `split` ja `splitn`, jotka voivat jakaa merkkijonon osiin halutun välimerkin perusteella. Nämä metodit palauttavat iteraattoreita, jotta voimme käsitellä erikseen jokaisen palan merkkijonosta.
+`substring`-funktiolla on myös muita parametreja, jotka voivat olla hyödyllisiä erilaisissa tilanteissa. Voit esimerkiksi käyttää `substring`-funktiota kolmen parametrin kanssa, jolloin kolmas parametri määrää, kuinka monta merkkiä otetaan osaksi. Tämä on kätevää, jos tiedät tarkalleen kuinka monta merkkiä haluat ottaa osaksi. Voit myös käyttää `substring`-funktiota yhdessä `slice`-funktion kanssa, mikä tekee siitä vieläkin voimakkaamman työkalun merkkijonojen käsittelyssä.
 
 ## Katso myös
 
-- [Rustin virallinen dokumentaatio substrings](https://doc.rust-lang.org/std/primitive.str.html#method.slice)
-- [Tutorialspoint: Merkkijonon manipulointi Rustilla](https://www.tutorialspoint.com/rust/rust_strings.htm)
-- [Laaja lista Rustin String-tyypin metodeista](https://doc.rust-lang.org/std/string/struct.String.html#method.slice)
+- [Rustin dokumentaatio](https://doc.rust-lang.org/std/primitive.str.html#method.substring)
+- [Rustin merkkijonojen käsittely](https://www.freecodecamp.org/news/rust-string-vs-str/)
 
-Kiitos lukemisesta ja onnea substringien käyttöön!
+Kiitos lukemisesta! Toivottavasti tämä auttoi sinua ymmärtämään paremmin kuinka ottaa alamerkkijonoja merkkijonoista Rustissa. Hyödyntämällä `substring`-funktiota, voit käsitellä ja muokata merkkijonoja helposti ja tehokkaasti. Onnea ohjelmoinnissa!

@@ -1,50 +1,48 @@
 ---
 title:                "C++: Escrevendo para o erro padrão"
+simple_title:         "Escrevendo para o erro padrão"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão?
+## Por que escrever para o padrão de erro em C++?
 
-Ao escrever em C++, é comum interagir com o usuário do programa através da entrada e saídas padrão. No entanto, às vezes é necessário enviar mensagens de erro para o usuário, e é aí que entra o erro padrão. Ao escrever para o erro padrão, é possível comunicar ao usuário quaisquer problemas ou exceções que ocorram durante a execução do programa, facilitando a identificação e solução de possíveis erros.
+Escrever para o padrão de erro em um programa C++ é uma ótima maneira de depurar e lidar com erros em tempo de execução. Ao enviar mensagens de erro para o padrão de erro, você pode identificar os problemas no seu código e tomar medidas para corrigi-los.
 
-## Como escrever para o erro padrão
+## Como escrever para o padrão de erro em C++
 
-Para escrever para o erro padrão em C++, é necessário utilizar a função `std::cerr`, que faz parte da biblioteca padrão `<iostream>`. Esta função aceita argumentos do tipo `char*`, que são as mensagens de erro que se deseja enviar para o usuário. Veja um exemplo de código abaixo:
+Escrever para o padrão de erro em C++ é simples e pode ser feito usando a função padrão `cerr`. Aqui está um exemplo de código e sua respectiva saída:
 
 ```C++
 #include <iostream>
+using namespace std;
 
 int main() {
-  int idade;
-
-  // Pedindo a idade do usuário
-  std::cout << "Informe sua idade: ";
-  std::cin >> idade;
-
-  // Verificando se a idade é válida
-  if (idade < 0) {
-    // Imprimindo mensagem de erro para o usuário
-    std::cerr << "Idade inválida! A idade não pode ser negativa." << std::endl;
-  }
-
-  return 0;
+    cerr << "Este é um erro!" << endl;
+    return 0;
 }
 ```
 
-Para executar este código, basta compilar e rodar o programa normalmente. Porém, quando a idade digitada for um valor negativo, o usuário receberá a mensagem de erro no terminal.
+Saída:
 
-## Aprofundando-se na escrita para o erro padrão
+```
+Este é um erro!
+```
 
-Além da função `std::cerr`, também é possível utilizar `std::clog` para escrever para o erro padrão. A diferença é que `std::cerr` é desalocada imediatamente após a execução, enquanto `std::clog` é armazenada em um buffer antes de ser desalocada. Em geral, as mensagens de erro devem ser enviadas através de `std::cerr`, enquanto `std::clog` pode ser utilizada para mensagens de depuração ou informações importantes.
+## Aprofundando no assunto
 
-Outro ponto relevante é que a função `std::cerr` é um objeto do tipo `ostream`, assim como `std::cout`, e portanto é possível utilizar os mesmos operadores de formatação para escrever mensagens personalizadas para o usuário.
+A função `cerr` é parte da biblioteca padrão `<iostream>` em C++ e é usada para enviar dados para o padrão de erro. É útil para imprimir mensagens de erro em tempo de execução, bem como para depurar e identificar problemas em seu código.
+
+O padrão de erro é geralmente redirecionado para o mesmo local que o padrão de saída, mas você também pode redirecioná-lo para uma localização diferente. Isso pode ser útil para separar a saída do programa e os erros em arquivos diferentes.
+
+Lembre-se de que, ao escrever para o padrão de erro, você deve usar a função `cerr` e não `cout`, que é usada para a saída padrão. Além disso, é importante adicionar `endl` ao final da mensagem para que o sistema a registre corretamente.
 
 ## Veja também
 
-- [Documentação oficial da função std::cerr](https://www.cplusplus.com/reference/iostream/cerr/)
-- [Tutorial sobre entrada e saída em C++](https://www.geeksforgeeks.org/basic-input-output-c/)
-- [Guia completo sobre formatação de saída em C++](https://www.tutorialspoint.com/cplusplus/cpp_data_output.htm)
+- [Documentação do cerr na CPlusPlus.com](https://www.cplusplus.com/reference/ios/ios_base/cerr)
+- [O que é o padrão de erro em C++?](https://pt.stackoverflow.com/questions/112377/o-que-%C3%A9-o-padr%C3%A3o-de-erro-em-c)
+- [Tratando exceções e erros em C++](https://docs.microsoft.com/pt-br/cpp/cpp/error-handling-in-cpp)

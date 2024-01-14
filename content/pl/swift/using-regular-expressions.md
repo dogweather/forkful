@@ -1,45 +1,42 @@
 ---
-title:                "Swift: Używanie wyrażeń regularnych"
+title:                "Swift: Użycie wyrażeń regularnych"
+simple_title:         "Użycie wyrażeń regularnych"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto używać wyrażeń regularnych w programowaniu Swift?
 
-Często przy tworzeniu aplikacji mobilnych lub stron internetowych, musimy przetwarzać lub wyszukiwać specyficzne ciągi znaków. W takich sytuacjach przydatne mogą okazać się wyrażenia regularne, które pozwalają nam znacznie łatwiej i szybciej manipulować tekstem. W tym artykule dowiesz się, co to są wyrażenia regularne i jak możesz zacząć z nich korzystać w swoim kodzie w języku Swift.
+Wyrażenia regularne są niezwykle potężnym narzędziem w programowaniu Swift. Pozwalają one na łatwą i skuteczną manipulację tekstowymi danymi. Dzięki nim możemy wyszukiwać, porównywać, zamieniać i walczyć z niechcianymi znakami w łańcuchach tekstowych. Jeśli pracujesz z dużą ilością tekstowych danych w swoim kodzie, wyrażenia regularne mogą znacznie ułatwić Ci życie. 
 
-## Jak to zrobić
+# Jak używać wyrażeń regularnych w Swift?
 
-Wyrażenia regularne są wyrażeniami, które pozwalają na wyszukiwanie i manipulowanie tekstem według określonego wzorca. W języku Swift, wykorzystujemy do tego dedykowaną klasę NSRegularExpression. Aby zacząć korzystać z wyrażeń regularnych, musimy najpierw utworzyć instancję tej klasy:
+Używanie wyrażeń regularnych w Swift jest bardzo proste. Najpierw musisz zaimportować odpowiedni moduł używając polecenia ```import Foundation```. Następnie możesz tworzyć wyrażenia regularne za pomocą symbolu ```try```. Niektóre z podstawowych wyrażeń regularnych to:
 
-```Swift
-let pattern = "[a-z]+"
-// Tworzymy wyrażenie regularne dla wyszukiwania dowolnego ciągu małych liter
-let regex = try NSRegularExpression(pattern: pattern, options: [])
-```
+- ```let emailRegex = try NSRegularExpression(pattern: "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$")```: wyrażenie regularne do sprawdzania poprawności adresu e-mail.
+- ```let urlRegex = try NSRegularExpression(pattern: "^(https?:\\/\\/)?([\\w.-]+)\\.([a-z]{2,6}\\.?)(\\/[\\w\\s.-]*)*\\/?$")```: wyrażenie regularne do sprawdzania poprawności adresu URL.
+- ```let passwordRegex = try NSRegularExpression(pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$")```: wyrażenie regularne do sprawdzania siły hasła (minimum 8 znaków, co najmniej jedna mała litera, co najmniej jedna duża litera i co najmniej jedna cyfra).
 
-Następnie możemy użyć tej instancji do przetwarzania tekstu, na przykład:
+Możesz również używać funkcji ```matches(in:options:range)``` aby znaleźć dopasowania do wyrażenia regularnego w danym tekście. Przykładowy kod może wyglądać następująco:
 
 ```Swift
-let text = "Ten tekst będzie przetworzony."
-let matches = regex.matches(in: text, options: [], range: NSRange(text.startIndex..., in: text))
-// Wykorzystujemy metodę matches do znalezienia wszystkich dopasowań wyrażenia regularnego w tekście
+if let match = emailRegex.firstMatch(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count)) {
+  print("Wprowadzony adres e-mail jest poprawny.")
+} else {
+  print("Wprowadzony adres e-mail jest niepoprawny.")
+}
 ```
 
-W ten sposób możemy uzyskać listę dopasowań, które w podanym tekście spełniają nasz wzorzec. Aby dowiedzieć się więcej na temat możliwości klasy NSRegularExpression, możesz zajrzeć do dokumentacji Apple: [NSRegularExpression - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
+# Głębsze zagłębienie w wyrażeniach regularnych w Swift
 
-## Głębsza analiza
+Podstawowe wyrażenia regularne mogą być bardzo przydatne, ale istnieje wiele innych funkcji i opcji, które warto poznać. Możesz na przykład użyć wyrażeń regularnych do wyodrębniania określonych części tekstu, zastępowania wyrażeń lub walidacji danych wejściowych. Możesz również używać symboli specjalnych, które pozwalają tworzyć bardziej skomplikowane wyrażenia. W Internecie znajdziesz wiele źródeł z przykładami wyrażeń regularnych w różnych językach programowania, w tym w Swift.
 
-Język Swift udostępnia wiele przydatnych funkcji dla pracy z wyrażeniami regularnymi. Możemy na przykład sprawdzać czy dany tekst zawiera podany wzorzec, użyć wyrażenia regularnego jako wzorca w innych wyrażeniach, lub dodawać zmienne do naszego wzorca za pomocą operatora `\` (np. `\w` oznacza dowolny znak alfanumeryczny).
+# Zobacz także
 
-Aby dowiedzieć się więcej na temat możliwości i składni wyrażeń regularnych w Swift, zapraszam do zapoznania się z dokumentacją języka: [Regular Expressions - The Swift Programming Language (Swift 5.5.1)](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID293)
-
-## Zobacz także
-
-* [NSRegularExpression - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
-* [Regular Expressions - The Swift Programming Language (Swift 5.5.1)](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID293)
-* [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-* [Regex Tester - Regular Expression Tester](https://regexr.com/)
+- [Dokumentacja Apple na temat wyrażeń regularnych w Swift](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Blog Ray'a Wenderlicha: "Wyrażenia regularne w Swift" (ang.)](https://www.raywenderlich.com/262-regular-expressions-tutorial-for-swift-part-1)
+- [Strona Regex101 - narzędzie do testowania wyrażeń regularnych w różnych językach, w tym w Swift](https://regex101.com/)

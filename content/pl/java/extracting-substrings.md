@@ -1,45 +1,47 @@
 ---
-title:                "Java: Ekstrakcja podciągów"
+title:                "Java: Wyciąganie podciągów"
+simple_title:         "Wyciąganie podciągów"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+# Dlaczego warto wyciągać podciągi
 
-Wydobycie podłańcuchów jest jedną z podstawowych operacji w dziedzinie przetwarzania tekstu w języku Java. Jest to niezbędne do dokonywania różnych manipulacji na ciągach znaków, takich jak znajdowanie wzorców, zastępowanie lub dzielenie tekstu na mniejsze części. Zrozumienie tej operacji jest niezwykle ważne dla każdego programisty, który zajmuje się analizą lub modyfikacją tekstu w swoich projektach.
+Wyciąganie podciągów jest ważnym aspektem programowania w języku Java, ponieważ pozwala na wygodniejsze i efektywniejsze manipulowanie tekstem. Jeśli pracujesz nad projektami, w których musisz operować na wielu różnych ciągach znaków, umiejętność wyciągania podciągów będzie niezbędna. Jest to również ważne w kontekście optymalizacji kodu, ponieważ pozwala na uniknięcie niepotrzebnego przekazywania dużych ciągów znaków pomiędzy funkcjami.
 
-## Jak to zrobić?
+## Jak wyciągać podciągi
 
-Aby wydobyć podłańcuch w języku Java, należy skorzystać z metody `substring()`. Przykładowe użycie tej metody wygląda następująco:
-
-```Java
-String tekst = "Cześć, jestem programistą Java!";
-String podłańcuch = tekst.substring(7, 21); // "jestem programistą"
-```
-
-Powyższy kod utworzy nowy ciąg znaków, który jest fragmentem oryginalnego tekstu, zaczynając od 7. znaku i kończąc na 21. znaku (indeksowane od zera). Warto zauważyć, że drugi parametr metody `substring()` jest wyłączony, więc 21. znak nie będzie już częścią wydobytego podłańcucha.
-
-Możliwe jest również podanie tylko jednego parametru metody `substring()`, wtedy będzie ona wydobywać tekst od podanego indeksu do końca:
+Aby wyciągać podciągi, możesz wykorzystać metodę `substring()` klasy `String`. Przyjmuje ona dwa argumenty: początkowy i końcowy indeks podciągu. Pamiętaj, że indeksowanie w języku Java zaczyna się od zera, więc pierwszy znak będzie miał indeks 0.
 
 ```Java
-String podłańcuch = tekst.substring(7); // "jestem programistą Java!"
+String sentence = "To jest przykładowe zdanie.";
+System.out.println(sentence.substring(3, 13));
 ```
 
-## Wnikliwy przegląd
+**Output:** jest przykł
 
-Metoda `substring()` nie tylko przyjmuje dwa opcjonalne parametry - początkowy i końcowy indeks, ale również może działać w oparciu o indeksy negatywne. W takim przypadku, indeksy są obliczane od tyłu ciągu znaków, zaczynając od -1. Oznacza to, że ostatni znak ma indeks -1, przedostatni -2, itd. Przykładowo:
+Jak widać w powyższym przykładzie, wyciągnęliśmy podciąg z oryginalnego zdania, zaczynając od 4. znaku (indeks 3) do 14. znaku (indeks 13).
+
+Możesz również wykorzystać metodę `substring()` do wydobycia podciągu od danego indeksu do końca ciągu, podając tylko pierwszy argument.
 
 ```Java
-String tekst = "Kot ma mleko!";
-String podłańcuch = tekst.substring(4, -1); // "ma mleko"
+String name = "Katarzyna";
+System.out.println(name.substring(3));
 ```
 
-Użycie indeksów negatywnych jest szczególnie przydatne, gdy nie wiemy dokładnie, ile znaków ma nasz tekst lub chcemy wydobyć ostatnią część tekstu.
+**Output:** arzyna
 
-## Zobacz również
+## Pogłębione informacje o wyciąganiu podciągów
 
-- Dokumentacja Java o metodzie `substring()`: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-
-- Przykładowe użycie `substring()` w przetwarzaniu tekstu: https://howtodoinjava.com/java/string/java-substring-example/
+Wyciąganie podciągów jest możliwe również przy użyciu klasy `StringBuilder`. Jest to bardziej wydajna metoda, jeśli potrzebujesz modyfikować duże ciągi znaków. Metoda `substring()` jest dostępna również w tej klasie, ale należy pamiętać, że biblioteka ta indeksuje znaki od 1, a nie od 0.
+
+Warto również zwrócić uwagę na fakt, że metoda `substring()` nie zmienia oryginalnego ciągu znaków, tylko zwraca nowy ciąg zawierający wyciągnięty podciąg. Jeśli chcesz wprowadzić zmiany bezpośrednio do oryginalnego ciągu, możesz wykorzystać metody klasy `StringBuilder`, takie jak `replace()` lub `insert()`.
+
+# Zobacz również
+
+- Oficjalna dokumentacja Javy dla klasy `String` i `StringBuilder`: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html
+- Przykładowe ćwiczenia z wykorzystaniem wyciągania podciągów: https://www.w3resource.com/java-exercises/string/index.php

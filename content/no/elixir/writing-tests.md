@@ -1,50 +1,54 @@
 ---
-title:                "Elixir: Skrive tester"
+title:                "Elixir: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å skrive tester er en viktig del av å være en god Elixir-programmerer. Det hjelper deg med å sikre at koden du skriver fungerer som den skal og unngå feil når du endrer eller legger til ny kode. Det gir også et godt fundament for å forstå koden din bedre og gjøre den mer lesbar for andre utviklere.
+Testdrevet utvikling har blitt en stadig mer populær metode innen programmering, og det med god grunn. Ved å skrive tester før man skriver selve koden, kan man oppdage feil og sørge for at koden fungerer som den skal. Det kan spare deg for mye tid og frustrasjon på lengre sikt.
 
-## Hvordan
+# Hvordan
 
-Når du skriver tester i Elixir, bruker du ofte biblioteket ExUnit, som er et testrammeverk som følger med Elixir-installasjonen. La oss se på et enkelt eksempel:
+For å skrive tester i Elixir, bruker man ofte et rammeverk som heter ExUnit. Her er et eksempel på hvordan man kan skrive en enkel test for en funksjon som legger sammen to tall:
 
-```Elixir 
-defmodule KalkulatorTest do
+```Elixir
+defmodule Math do
+  def add(x, y) do
+    x + y
+  end
+end
+
+defmodule MathTest do
   use ExUnit.Case
-  test "addisjon" do
-    assert 1 + 1 == 2
+
+  test "add funksjonen legger sammen to tall" do
+    assert Math.add(2, 3) == 5
   end
 end
 ```
-For å kjøre testen, kan du bruke kommandoen `mix test`. Outputen vil være noe som dette:
+
+Koden over viser hvordan man kan definere en funksjon i Elixir, og deretter hvordan man kan teste funksjonen ved hjelp av ExUnit. Når man kjører testen, vil man få følgende output:
 
 ```
-1) test addisjon (KalkulatorTest)
-   test/kalkulator_test.exs:4
-   Assertion with == failed
-   code: 1 + 1 == 2
-   left:  2
-   right: 1
-   stacktrace:
-     test/kalkulator_test.exs:5: (test)
+1 test, 0 failures
 ```
 
-Her ser vi at testen feilet fordi vi forventet at 1+1 skulle være lik 2, men det var ikke tilfelle. Dette er et enkelt eksempel, men du kan også bruke mer komplekse tester for å sjekke at funksjoner og metoder oppfører seg som de skal.
+Dette betyr at testen ble vellykket og at funksjonen fungerer som den skal. Man kan også legge til flere tester for å sjekke flere forskjellige scenarioer.
 
-## Deep Dive
+# Dypdykk
 
-Når du skriver tester, er det viktig å dekke så mange ulike scenarier og kanttilfeller som mulig. Det er også nyttig å følge prinsippet om "enhetstesting", hvor du tester hver enkelt funksjon eller metode separat for å sikre at den oppfører seg som den skal. På denne måten kan du isolere og identifisere eventuelle feil mer effektivt.
+Når man skriver tester, er det viktig å tenke på hvilke deler av koden som er mest sårbare for feil. Disse delene bør testes grundigere for å sikre at de fungerer som de skal. Det kan også være lurt å skrive tester for "edge cases", altså situasjoner som kan føre til uventet oppførsel.
 
-En annen fordel med å skrive tester er at det gjør det enklere å vedlikeholde og refactorere koden din senere. Når du legger til ny funksjonalitet eller endrer noe, kan du kjøre testene for å sikre at alt fortsatt fungerer som det skal. Dette bidrar til å opprettholde kvaliteten på koden over tid.
+I tillegg kan man bruke assert statements til å sjekke at funksjonene returnerer de riktige verdiene eller at de kaster riktig feilmelding når de skal. Man kan også teste sideeffekter av funksjonene, som for eksempel at de oppdaterer en database eller sender ut en e-post.
 
-## Se Også
+# Se også
 
-- [Offisiell Elixir ExUnit-dokumentasjon](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Elixir School: Testing](https://elixirschool.com/en/lessons/basics/testing/)
+- [ExUnit documentation](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [TDD in Elixir for beginners](http://blog.plataformatec.com.br/2017/01/tdd-in-elixir-for-beginners/)
+- [Unit testing your Phoenix controllers](https://blog.drewolson.org/unit-testing-your-phoenix-controllers/)

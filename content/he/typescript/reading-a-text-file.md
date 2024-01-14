@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: קריאת קובץ טקסט"
+simple_title:         "קריאת קובץ טקסט"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/reading-a-text-file.md"
 ---
 
@@ -9,41 +11,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-קריאת קובץ טקסט היא כלי חיוני בכתיבת קוד בטיפוסקריפט ומתאים למגוון מטרות. קריאת קובץ טקסט יכולה לסייע בטעינת נתונים, שמירת תוצאות ועוד. קריאת קובץ טקסט היא גם יעילה יותר מאתר קבצים באמצעות אובייקטים JavaScript בגלל היכולת ליישם קוד לפעול על הנתונים בצורה מותאמת אישית.
+קריאת קובץ טקסט נחשבת לכישלון בתעשיית התוכנה עקב חולשת האיתור. זהו כלי חשוב לפיתוח יישומי תוכנה וכן לניתוח וניהול מידע. בכתבה הזאת נלמד איך לכתוב קוד ב-TypeScript כדי לקרוא קובץ טקסט ולהחזיר את תוכנו.
 
-## איך לבצע קריאת קובץ טקסט
+## איך לעשות את זה
+
+מתחילים עם הכותרת המתאימה:
 
 ```TypeScript
-// קריאת קובץ טקסט עם קוד בסגנון Node.js באמצעות ספריית fs
+function readTextFile(file:string): string {
+// הגדרת משתנה לאחסון התוכן
+let content:string = "";
+
+// הגדרת ייבוא הספריה fs שתאפשר קריאת קבצים
 import * as fs from 'fs';
 
-// קריאת קובץ והמרת תוכן למחרוזת
-const data = fs.readFileSync('file.txt', 'utf-8');
+// השמת הקובץ במשתנה נוסף
+const fileContent = fs.readFileSync(file, 'utf-8');
 
-// הדפסת התוכן שנקרא
-console.log(data);
-
-// דוגמה נוספת עם שימוש בפרמטרי קבצים לתיקיה שלנו
-const files = fs.readdirSync("path/to/directory", { withFileTypes: true });
-// לולאה על הפרמטרים לאיתור קבצים
-for (const file of files) {
-    // בדיקה שהפרמטר הוא קובץ ולא תיקיה
-    if (!file.isDirectory()) {
-        // הדפסת שם הקובץ
-        console.log(file.name);
-    }
+// החזרת התוכן שנקרא
+return content = fileContent;
 }
+
+// קריאת הפונקציה ושמירת התוכן במשתנה
+const fileContent = readTextFile("example.txt");
+
+// הדפסת התוכן
+console.log(fileContent);
 ```
 
-הפלט של הקוד לעיל יכול להיראות כך:
+הנה כמה דוגמאות נוספות ליצירת קוד קריאת קובץ טקסט עם TypeScript:
+
+### קריאת קובץ משמן
+
+```TypeScript
+// ייבוא הספריה fs-extra
+import * as fs from 'fs-extra';
+
+// הגדרת ייצוג הקובץ
+const filePath = "/Users/user/Documents/example.txt";
+
+// קריאת הקובץ והשמת התוכן במשתנה
+const fileContent = fs.readFileSync(filePath, 'utf-8');
+
+// הדפסת התוכן
+console.log(fileContent);
 ```
-שלום! זהו קובץ טקסט פשוט.
-קובץ_אחר.אנד
-קובץ_טקסט.txt
+
+### קריאת קובץ מהאינטרנט
+
+```TypeScript
+// ייבוא הספריה node-fetch
+import fetch from 'node-fetch';
+
+// הגדרת ייצוג הכתובת של הקובץ
+const fileURL = "https://example.com/file.txt";
+
+// קבלת התוכן מהכתובת המתוארת
+fetch(fileURL)
+    .then(response => response.text())
+    .then(data => console.log(data));
 ```
 
-אם נשתמש בדוגמה השנייה של קריאת קבצים, הפלט יראה בדיוק כמו מחרוזת התיקיה עם שמות הקבצים שנמצאו.
+השמה של תוכן קובץ למערך משתנים:
 
-## חקירה מעמיקה
+```TypeScript
+// קריאת קובץ ושמירת התוכן במשתנה fileContent
+const fileContent = fs.readFileSync("example.txt", 'utf-8');
 
-טיפוסקריפט מספק מספר אפשרויות לקריאת קבצים אחרות מלבד ספרייה fs שהוצגה לעיל. למשל, ניתן לקרוא קבצים באמצעות שימוש ב- XMLHttpRequest או באמצעות fetch API. כמו כן, ניתן להשתמש בפונקצי
+// הורדת ה"שורות" של הקובץ למשתנה
+const lines = fileContent.split('\n');
+
+// הדפסת המערך הכולל את ה"שורות" של הקובץ
+console.log(lines);
+```
+
+###

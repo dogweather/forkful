@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Rozpoczynanie nowego projektu"
+title:                "Elm: Rozpoczynając nowy projekt"
+simple_title:         "Rozpoczynając nowy projekt"
 programming_language: "Elm"
-category:             "Getting Started"
+category:             "Elm"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/starting-a-new-project.md"
 ---
 
@@ -9,34 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Zastanawiasz się, dlaczego warto rozpocząć nowy projekt w języku Elm? Przeczytaj ten artykuł, aby poznać odpowiedź na to pytanie.
+Każdy, kto zainteresowany jest programowaniem, z pewnością słyszał o języku Elm. Jest to język, który wprowadza rewolucyjne zmiany w podejściu do tworzenia interaktywnych aplikacji internetowych. Jeśli szukasz nowego wyzwania lub chcesz rozwinąć swoje umiejętności programistyczne, rozpoczęcie nowego projektu w Elm może być świetnym wyborem.
 
-Tworzenie aplikacji w Elm jest nie tylko niezwykle przyjemne, ale również wysoce efektywne. W porównaniu do innych języków programowania, Elm oferuje wyjątkową stabilność i łatwość w utrzymaniu kodu. Z pewnością warto rozważyć jego użycie w swoim kolejnym projekcie.
+## Jak zacząć
 
-## Jak to zrobić
+Pierwszym krokiem w projekcie Elm jest oczywiście pobranie i zainstalowanie języka. Można to zrobić poprzez oficjalną stronę Elm lub za pomocą menedżera pakietów dla swojego systemu operacyjnego.
 
-Rozpoczęcie projektu w Elm jest prostsze, niż mogłoby się wydawać. Wystarczy zainstalować kompilator Elm oraz edytor kodu wspierający ten język, na przykład VS Code z wtyczką Elm. Następnie wystarczy utworzyć plik z rozszerzeniem ".elm" i już można zacząć pisać kod.
+Aby rozpocząć projekt, można użyć polecenia `elm init` w terminalu, które utworzy strukturę plików projektu. Następnie należy skorzystać z edytora kodu, który ma wtyczkę dla Elm, aby zyskać dostęp do sugerowania składni, odświeżania strony internetowej podczas kodowania i wielu innych funkcji ułatwiających pracę z językiem.
+
+Zobacz poniżej przykładowy kod Elm, który wyświetla prosty tekst na stronie internetowej:
 
 ```Elm
-module Main exposing (main)
-
 import Html exposing (text)
 
 main =
-    text "Witaj, świecie!"
+    text "Witaj w języku Elm!"
 ```
 
-Powyżej możesz zobaczyć przykładowy kod w Elm, który wyświetli prosty napis "Witaj, świecie!". Po uruchomieniu kompilatora zobaczysz w przeglądarce rezultat tego kodu.
+Po uruchomieniu tego kodu w przeglądarce, powinno się pojawić "Witaj w języku Elm!" na stronie internetowej. Warto także zwrócić uwagę na sposób deklarowania zmiennych w Elm - nie ma tutaj słowa kluczowego "var" czy "let", a jedynie znak "=", który oznacza przypisanie wartości.
 
 ## Głębszy zanurzenie
 
-Jeśli chcesz dowiedzieć się więcej o tym, jak rozpocząć nowy projekt w Elm, koniecznie przeczytaj oficjalną dokumentację języka. Znajdziesz tam wiele przydatnych informacji i porad dotyczących organizacji projektu, struktury kodu oraz użytecznych narzędzi.
+Rozpoczęcie nowego projektu w Elm może być nieco wyzwaniem dla początkujących programistów ze względu na zupełnie inny sposób myślenia o interaktywnym programowaniu, jaki oferuje ten język. Jednak istnieje wiele zasobów i materiałów, które mogą pomóc w szybkim opanowaniu podstaw i przejściu do bardziej zaawansowanych technik.
 
-Bardzo pomocnym źródłem wiedzy jest także społeczność użytkowników Elm. Wiele osób dzieli się swoimi doświadczeniami oraz przydatnymi narzędziami poprzez fora dyskusyjne, grupy na Facebooku czy konferencje. Dobrym pomysłem jest także przejrzenie repozytoriów na stronie GitHub, gdzie znajduje się wiele gotowych projektów napisanych w Elm.
+Warto również zwrócić uwagę na dostępne narzędzia, takie jak Elm Live, które pozwala na natychmiastowe wyświetlenie zmian na stronie internetowej podczas kodowania oraz Elm Debugger, który ułatwia znalezienie błędów i debugowanie kodu.
+
+Zobacz poniżej linki do przydatnych zasobów i narzędzi dla osób zaczynających przygodę z językiem Elm:
 
 ## Zobacz także
 
-- Oficjalna strona języka Elm: https://elm-lang.org/
-- Dokumentacja języka Elm: https://elm-lang.org/docs
-- Społeczność Elm: https://elmlang.org/community
-- Przykładowe projekty w Elm na GitHub: https://github.com/topics/elm
+- [Oficjalna strona języka Elm](https://elm-lang.org/)
+- [Kurs Elm na Codecademy](https://www.codecademy.com/learn/learn-elm)
+- [Materiały i narzędzia dla początkujących w języku Elm](https://github.com/w0rm/awesome-elm)
+- [Elm Live - narzędzie do natychmiastowego wyświetlania zmian na stronie internetowej](https://github.com/wking-io/elm-live)
+- [Elm Debugger - narzędzie do debugowania w Elm](https://github.com/elm/debug)

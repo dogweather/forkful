@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Skriving til standardfeil"
+title:                "Javascript: Skriver til standardfeil"
+simple_title:         "Skriver til standardfeil"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/writing-to-standard-error.md"
 ---
 
@@ -9,41 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Hvorfor
 
-Skriving til standardfeil (standard error) er en viktig ferdighet for enhver JavaScript-programmer. Det lar deg effektivt fange og håndtere feil i koden din, noe som er avgjørende for å lage pålitelige og robuste programmer. Uten å skrive til standardfeil, kan feil og unntak gå ubemerket hen, noe som kan føre til store problemer i både utvikling og produksjon.
+I dagens digitale verden har JavaScript blitt et av de mest populære programmeringsspråkene. Det er brukt til å lage dynamiske og interaktive nettsider, applikasjoner og spill. En viktig del av å være en god JavaScript-utvikler er å kunne skrive til standard error, også kjent som "console.error". Dette hjelper utviklere med å identifisere og fikse feil og problemer i koden sin, slik at den kan kjøre jevnt og effektivt.
 
-# Hvordan
+# Slik gjør du det
 
-For å skrive til standardfeil i JavaScript, kan du bruke funksjonen `console.error()`. Denne funksjonen tar inn et argument som skal skrives til standardfeil og sender det til konsollen. La oss se på et eksempel:
+Å skrive til standard error er enkelt og kan gjøres på forskjellige måter avhengig av hvilket miljø du bruker JavaScript i. For å skrive til standard error i en nettleser, kan du bruke "console.error ()" funksjonen. Her er et eksempel på hvordan du bruker denne funksjonen:
 
 ```Javascript
-let num1 = 10;
-let num2 = "5";
-let result = num1 / num2;
-console.error("Kan ikke dele string med tall. Resultatet er: ", result);
+console.error("Det har oppstått en feil!"); 
 ```
+Dette vil skrive ut teksten "Det har oppstått en feil!" til standard error i nettleseren din.
 
-I dette tilfellet vil `console.error()` skrive ut følgende melding til standardfeil:
+Hvis du bruker Node.js, kan du bruke "process.stderr.write()" funksjonen for å skrive til standard error. Her er et eksempel på hvordan du bruker denne funksjonen:
 
+```Javascript
+process.stderr.write("Dette er en feilmelding."); 
 ```
-"Kan ikke dele string med tall. Resultatet er: NaN"
-```
+Dette vil skrive ut teksten "Dette er en feilmelding." til standard error i Node.js.
 
-Dette er spesielt nyttig når du ønsker å fange feil og avbryte programmet ditt, slik at du kan feilsøke og rette opp eventuelle problemer.
+# Dykk dypere
 
-# Dypdykk
+Skriver til standard error er nyttig når du vil logge feil i koden din mens den kjører. Det kan hjelpe deg med å finne ut hvor og hvorfor feilen oppstår, og dermed gjøre det enklere å fikse den.
 
-Når du skriver til standardfeil, er det viktig å merke seg at meldingene blir sendt til konsollen og ikke til brukeren av programmet. Derfor bør meldingene være informative og hjelpe deg med å identifisere feilen.
+En annen fordel med å skrive til standard error er at du kan legge til informasjon og variabler i meldingen din, slik at du kan få en mer detaljert feilrapport. Dette kan være spesielt nyttig når du jobber med større og mer komplekse programmer.
 
-En annen viktig ting å merke seg er at du også kan bruke `console.error()` til å håndtere unntak i try/catch-blokker. Dette gjør det enklere å fange og håndtere feil i koden din.
-
-En annen nyttig funksjon for å skrive til standardfeil er `console.trace()`. Denne funksjonen skriver ut en stakksporing (stack trace) som viser kallstabelen for der feilen oppstod. Dette kan være svært nyttig når du jobber med kompleks kode og trenger å finne ut nøyaktig hvor et problem oppsto.
+En viktig ting å huske på er at når du bruker "console.error ()" eller "process.stderr.write()" funksjonen, vil teksten kun vises i konsollen din og ikke på den faktiske nettsiden eller programmet ditt. Dette betyr at det ikke vil være synlig for brukere av applikasjonen din, og du trenger derfor ikke å bekymre deg for å ødelegge brukeropplevelsen.
 
 # Se også
 
-Her er noen nyttige lenker for å lære mer om skriving til standardfeil i JavaScript:
-
-- [MDN - console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [MDN - try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
-- [MDN - console.trace()](https://developer.mozilla.org/en-US/docs/Web/API/Console/trace)
-
-Med disse ressursene og kunnskapen du har nå, bør du være godt rustet til å skrive til standardfeil og håndtere feil i JavaScript-programmeringen din. Lykke til!
+- "console.error()" dokumentasjonen fra MDN: https://developer.mozilla.org/en-US/docs/Web/API/Console/error
+- "process.stderr.write()" dokumentasjonen fra Node.js: https://nodejs.org/api/process.html#process_process_stderr_write_chunk_encoding_callback

@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/finding-the-length-of-a-string.md"
 ---
 
@@ -9,35 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Você provavelmente já se deparou com situações em que precisava descobrir a quantidade de caracteres em uma determinada palavra ou frase. Encontrar o comprimento de uma string é uma tarefa comum na programação, útil para validar inputs de usuário, construir aplicativos de formatação de texto e muito mais.
+Se você é novo na programação ou está aprendendo sobre Javascript, provavelmente já se deparou com o desafio de encontrar o comprimento de uma string. Enquanto isso pode parecer trivial para alguns, a habilidade de calcular o tamanho de uma string é fundamental para muitas tarefas de programação.
 
 ## Como fazer
 
-Para encontrar o comprimento de uma string, é necessário usar a propriedade `length` do objeto string. Confira o exemplo abaixo:
+Para encontrar o comprimento de uma string em Javascript, podemos usar o método `length`. Por exemplo, se queremos encontrar o comprimento da string "Olá mundo!", podemos escrever o seguinte código:
 
 ```Javascript
-let nome = "Joana";
-console.log(nome.length);
-
-// Output: 5 (a string "Joana" tem cinco caracteres)
+let minhaString = "Olá mundo!";
+console.log(minhaString.length); //output: 11
 ```
 
-Você também pode usar essa propriedade diretamente em uma string sem atribuí-la a uma variável, como mostrado abaixo:
+Podemos ver que a propriedade `length` retorna o número de caracteres na string, incluindo espaços em branco e pontuação.
+
+Outra maneira de encontrar o comprimento de uma string é usar a função `strlen()` do Javascript, que exige que coloquemos a string como argumento entre parênteses. Por exemplo:
 
 ```Javascript
-console.log("Hello World!".length);
-
-// Output: 12 (a frase "Hello World!" tem doze caracteres)
+let minhaString = "Bem-vindo!";
+console.log(strlen(minhaString)); //output: 10
 ```
 
-## Mergulho Profundo
+## Mergulhando mais fundo
 
-Agora que aprendemos a usar a propriedade `length` para encontrar o comprimento de uma string, é importante entender que ela conta todos os caracteres, incluindo espaços em branco e pontuações. Além disso, essa propriedade não funciona em strings vazias ou em outros tipos de dados, como números ou booleanos.
+Quando se trata de encontrar o comprimento de uma string, é importante entender como o Javascript armazena e manipula as strings. Em vez de um único tipo de dado, as strings no Javascript são objetos, o que significa que elas possuem propriedades e métodos que podemos acessar. O método `length` é uma dessas propriedades.
 
-Por fim, é importante saber que essa propriedade é apenas para leitura e não pode ser alterada ou atribuída a um novo valor.
+Também é importante observar que o `length` não é um índice ou posição, mas sim uma propriedade que retorna o tamanho da string. Por exemplo, se tentarmos acessar `minhaString[10]`, receberemos `undefined`, porque a última posição válida para esta string é 9.
+
+Por fim, vale ressaltar que o método `length` é sensível ao case, o que significa que ele contará as letras maiúsculas e minúsculas como caracteres diferentes. Portanto, é importante ter isso em mente ao calcular o comprimento de uma string.
 
 ## Veja também
 
-- [MDN Web Docs: String length property](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [W3Schools: Javascript String length Property](https://www.w3schools.com/jsref/jsref_length_string.asp)
-- [freeCodeCamp: Get the Length of a String](https://www.freecodecamp.org/forum/t/get-the-length-of-a-string/219256)
+- <https://www.w3schools.com/js/js_string_length.asp>
+- <https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/length>
+- <https://www.digitalocean.com/community/tutorials/construindo-uma-funcao-para-encontrar-o-comprimento-das-strings-em-javascript>

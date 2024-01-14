@@ -1,48 +1,40 @@
 ---
 title:                "Javascript: Umwandeln eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Beim Programmieren kann es manchmal notwendig sein, dass man einen Teil oder auch den gesamten Text in Kleinbuchstaben umwandeln muss. Dies kann verschiedene Gründe haben, wie zum Beispiel die Vergleichbarkeit von Strings oder die Einheitlichkeit der Groß- und Kleinschreibung in einer Anwendung. In diesem Artikel werden wir uns genauer anschauen, wie man in Javascript eine Zeichenkette in Kleinbuchstaben umwandelt und welche Funktionen dafür zur Verfügung stehen.
+Das Konvertieren eines Strings in Kleinbuchstaben kann hilfreich sein, wenn man eine Suchfunktion implementiert oder Texte vergleicht, da es die Unterschiede in der Groß- und Kleinschreibung eliminiert.
 
-# Wie geht das?
+## Wie funktioniert es?
 
-Um eine Zeichenkette in Javascript in Kleinbuchstaben umzuwandeln, gibt es verschiedene Methoden, die zur Verfügung stehen. Eine einfache Möglichkeit ist die Verwendung der `toLowerCase()` Methode. Diese wandelt alle Buchstaben in der Zeichenkette in Kleinbuchstaben um und gibt diese als neuen String zurück. Hier ein Beispielcode:
-
-```Javascript
-var text = "Hallo, wie geht es dir?";
-var lowerCaseText = text.toLowerCase();
-console.log(lowerCaseText);
-```
-
-Das Ergebnis in der Konsole wäre dann: "hallo, wie geht es dir?". Wie man sieht, wurden alle Buchstaben klein geschrieben.
-
-Eine weitere Möglichkeit ist die Verwendung der `toLocaleLowerCase()` Methode. Diese unterscheidet sich von `toLowerCase()` in der Art, dass sie auch Zeichen aus anderen Sprachen in Kleinbuchstaben umwandelt, je nachdem in welcher Sprache die Anwendung läuft. Hier ein Beispielcode:
+Das Konvertieren eines Strings in Kleinbuchstaben in Javascript ist sehr einfach. Es kann auf verschiedene Arten erreicht werden, aber wir verwenden die `toLowerCase()` Funktion. Hier ist ein Beispielcode:
 
 ```Javascript
-var text = "ÍSLAND";
-var lowerCaseText = text.toLocaleLowerCase();
-console.log(lowerCaseText);
+let string = "Hallo WELT!";
+let lowerCaseString = string.toLowerCase();
+console.log(lowerCaseString);
 ```
 
-Das Ergebnis hier wäre dann: "ísland", da in diesem Beispiel die Sprache des Browsers englisch ist. Wenn die Sprache auf beispielsweise Isländisch eingestellt wäre, würde das Ergebnis "island" lauten.
+Die Ausgabe dieses Codes wird `hallo welt!` sein. Wie Sie sehen können, wurde der ursprüngliche String in Kleinbuchstaben umgewandelt.
 
-# Tiefer gehende Informationen
+## Tiefer in die Materie
 
-Um eine Zeichenkette in Kleinbuchstaben umzuwandeln, verwendet Javascript das ASCII Zeichenschema. Dies bedeutet, dass jeder Buchstabe in eine Zahl umgewandelt wird und diese Zahl dann entsprechend in Kleinbuchstaben übersetzt wird. Großbuchstaben haben dabei einen höheren Zahlenwert als Kleinbuchstaben, daher kann man sich merken, dass bei der Umwandlung in Kleinbuchstaben immer ein bestimmter Zahlenwert abgezogen wird.
+Wussten Sie, dass das Konvertieren eines Strings in Kleinbuchstaben auch Unicode-Buchstaben berücksichtigt? Das bedeutet, dass nicht nur a-z Buchstaben, sondern auch Buchstaben aus anderen Sprachen richtig in Kleinbuchstaben konvertiert werden.
 
-Es ist außerdem wichtig zu beachten, dass die `toLowerCase()` und `toLocaleLowerCase()` Methoden keine Auswirkungen auf Sonderzeichen wie beispielsweise Akzente haben. In diesen Fällen muss man auf andere Methoden zurückgreifen, wie zum Beispiel der `normalize()` Methode in Kombination mit `toLowerCase()`, um auch diese Zeichen in Kleinbuchstaben umzuwandeln.
+Ein weiterer wichtiger Punkt ist, dass die `toLowerCase()` Funktion eine neue, konvertierte Version des Strings zurückgibt, anstatt den ursprünglichen String zu ändern. Wenn Sie also den ursprünglichen String in Kleinbuchstaben haben möchten, müssen Sie ihn der Funktion zuweisen.
 
-# Siehe auch
+## Siehe auch
 
-- [String.prototype.toLowerCase()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
-- [ASCII Zeichenschema](https://www.asciitable.com/)
+- [MDN web docs: `toLowerCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [W3School: JavaScript strings](https://www.w3schools.com/js/js_strings.asp)
+- [freeCodeCamp: Convert Strings to Lowercase](https://www.freecodecamp.org/news/javascript-string-methods-reference/)
 
-Vielen Dank fürs Lesen und happy coding!
+Vielen Dank fürs Lesen! Wir hoffen, dieser Artikel hat Ihnen geholfen, das Konzept des Konvertierens eines Strings in Kleinbuchstaben in Javascript besser zu verstehen. Vergessen Sie nicht, verschiedene Möglichkeiten auszuprobieren und zu experimentieren. Viel Spaß beim Programmieren!

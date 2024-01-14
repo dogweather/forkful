@@ -1,44 +1,58 @@
 ---
 title:                "Javascript recipe: Deleting characters matching a pattern"
+simple_title:         "Deleting characters matching a pattern"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why 
-Have you ever encountered a situation where you needed to delete characters that match a specific pattern? This task is commonly faced in data cleaning and manipulation, where you may need to remove certain characters that are irrelevant to your data analysis. In this blog post, we will explore how to do this using Javascript, a popular programming language for web development.
+## Why
 
-# How To
-To delete characters matching a pattern in Javascript, we can use the string `replace()` method along with a regular expression. Regular expressions are patterns used to match character combinations in strings, making it perfect for our task. Let's take a look at an example:
+Deleting characters that match a specific pattern can be a useful tool for data cleaning and manipulation in programming. It allows you to quickly and efficiently remove unwanted characters from strings, making your code more accurate and readable.
 
-```Javascript
-let str = "This is a sample string with some [special] characters";
-let pattern = /\[.*?\]/g;
-let result = str.replace(pattern, "");
-console.log(result); // Output: This is a sample string with some characters
-```
+## How To
 
-In the above code, we have a string `str` that contains a set of characters enclosed within square brackets. Our goal is to remove these brackets along with the characters inside them. To achieve this, we first define a regular expression `pattern` that matches any character within the square brackets. We use the `g` flag to indicate a global search, i.e. the pattern should be applied to the entire string. Finally, we use the `replace()` method to replace the matched characters with an empty string, effectively deleting them. The result is stored in the `result` variable and we log it to the console.
-
-We can also use the `replace()` method along with a string as the replacement value. Let's see an example of this:
+To delete characters matching a pattern in Javascript, you can use the `replace()` method. Here is an example of how to use it:
 
 ```Javascript
-let str = "This is a sample string with some <special> characters";
-let pattern = /<.*?>/g;
-let result = str.replace(pattern, "brackets");
-console.log(result); // Output: This is a sample string with some brackets characters
+// Define the string with the unwanted characters
+let string = "Hello, world!";
+
+// Use regular expressions to define the pattern you want to remove
+let pattern = /[^\w\s]/g;
+
+// Use the replace() method to remove the matching characters and assign the result to a new variable
+let newString = string.replace(pattern, "");
+
+// Output the new string without the unwanted characters
+console.log(newString); // Output: Hello world
 ```
 
-In this example, we use the `replace()` method to replace the characters enclosed within angle brackets with the word "brackets".
+In this example, we created a regular expression with the pattern `[^\w\s]` to match any non-alphanumeric and non-whitespace characters. We then used the `replace()` method to remove those characters from our string and assigned the result to a new variable `newString`. Finally, we printed the new string without the unwanted characters using `console.log()`.
 
-# Deep Dive
-Regular expressions in Javascript can be quite complex and have various modifiers that can alter their behavior. For example, adding the `i` flag to our `pattern` variable in the first example would make the search case-insensitive, i.e. it would match both "[special]" and "[Special]". Similarly, the `m` flag can be used for multiline searches.
+You can also use this method to selectively replace characters based on a pattern. For example, if you want to remove all punctuation except for commas and periods, you can define the pattern as `/[^.,\s]/g`.
 
-There are also various metacharacters that have special meanings in regular expressions. For example, the `.` metacharacter matches any single character, while the `*` metacharacter matches zero or more occurrences of the preceding character. Understanding these concepts and modifiers can help you create powerful regular expressions for your data manipulation tasks.
+## Deep Dive
 
-# See Also
-- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Regexr: Learn, Build, & Test RegEx](http://regexr.com/)
-- [1-line Regular Expressions in Javascript](https://1loc.dev/#regular-expressions)
+The `replace()` method in Javascript can also take in a callback function as the second argument. This allows for more complex and dynamic replacement logic based on the matched pattern. Here is an example:
+
+```Javascript
+let string = "The quick brown fox jumped over the lazy dog";
+
+// Use a callback function in the replace() method to capitalize all letters that come after the word "the"
+let newString = string.replace(/(the\s)(\w)/g, (match, group1, group2) => {
+  return group1.toUpperCase() + group2.toUpperCase();
+});
+
+console.log(newString); // Output: THE QUICK BROWN FOX JUMPED OVER THE LAZY DOG
+```
+
+In this example, we used the regular expression `(the\s)(\w)` to match the word "the" followed by one letter. Then, in the callback function, we converted both the matching groups to uppercase and returned them. This allowed us to capitalize all letters that come after the word "the" in our string.
+
+## See Also
+
+- [Javascript Documentation on `replace()` method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Regular Expressions in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

@@ -1,65 +1,52 @@
 ---
 title:                "Elixir: Obtendo a data atual"
+simple_title:         "Obtendo a data atual"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Que
+# Por que usar Elixir para obter a data atual?
 
-A obtenção da data atual é uma tarefa muito comum e útil em muitos projetos de programação. Pode ser necessário para registrar quando um evento ocorreu, para executar uma ação em um determinado dia ou até mesmo para fins de formatação de dados. Independentemente do motivo, saber como obter a data atual é uma habilidade importante para qualquer programador.
+Se você é um programador ou está interessado em aprender uma nova linguagem de programação, provavelmente já ouviu falar de Elixir. Esta linguagem de programação funcional, baseada em Erlang, vem ganhando popularidade nos últimos anos devido à sua escalabilidade, eficiência e tolerância a falhas.
 
-## Como Fazer
+Mas talvez você esteja se perguntando: por que eu escolheria Elixir para obter a data atual? Bem, existem várias razões pelas quais Elixir é uma ótima escolha para essa tarefa. Primeiro, sua sintaxe é elegante e fácil de entender, o que a torna ideal para iniciantes e experientes. Além disso, Elixir é altamente otimizado para tarefas concorrentes, o que significa que ele é perfeito para lidar com várias solicitações ao mesmo tempo. Mas agora, vamos mergulhar e ver como podemos obter a data atual em Elixir.
 
-Existem várias maneiras de obter a data atual em Elixir. Aqui estão dois exemplos usando as funções `DateTime.utc_now/0` e `NaiveDateTime.utc_now/0`.
+## Como obter a data atual em Elixir
 
-```
-Elixir DateTime.utc_now()
-{:ok, ~U[2021-02-05 15:33:46.733391Z]} 
-```
+Para obter a data atual em Elixir, usaremos a função `Date.utc_today/0`. Esta função retorna uma data no formato AAAA-MM-DD e é baseada no tempo universal coordenado (UTC). Para usá-la, primeiro precisamos importar o módulo `Date` em nosso código:
 
-```
-Elixir NaiveDateTime.utc_now()
-~N[2021-02-05 15:35:07.617465]
+```Elixir
+import Date
 ```
 
-Ambas as funções retornam um formato de data e hora específico do Elixir. A diferença é que `DateTime.utc_now/0` também inclui informações de fuso horário, enquanto `NaiveDateTime.utc_now/0` não.
+Agora podemos chamar a função `Date.utc_today/0` para obter a data atual:
 
-Você também pode usar a função `Date.utc_today/0` para obter apenas a data atual, sem a hora.
-
-```
-Elixir Date.utc_today()
-{:ok, ~D[2021-02-05]}
+```Elixir
+data_atual = Date.utc_today()
 ```
 
-## Mergulho Profundo
+Podemos então imprimir essa data no terminal usando a função `IO.inspect/1`:
 
-Para entender melhor como as funções de data e hora funcionam em Elixir, é importante conhecer o módulo `Calendar`, que fornece funções para manipular e formatar datas e horas.
-
-Ao usar `DateTime.utc_now/0` ou `NaiveDateTime.utc_now/0`, você pode passar opções de formato para alterar a maneira como a data e a hora são exibidas. Por exemplo:
-
-```
-Elixir DateTime.utc_now(sectos: true)
-{:ok, ~U[2021-02-05 15:41:02.941203Z]}
+```Elixir
+IO.inspect(data_atual) # saída: ~D[2021-08-11]
 ```
 
-A opção `sectos: true` inclui os segundos no formato da data e hora.
+## Profundidade no funcionamento da função `Date.utc_today/0`
 
-Você também pode usar `Calendar` para converter um formato de data e hora específico em outro. Por exemplo, para converter uma data e hora em um formato legível por humanos, você pode usar a função `strftime/2`. Veja um exemplo:
+Agora que sabemos como obter a data atual em Elixir, vamos dar uma olhada em como essa função funciona por baixo dos panos. A função `Date.utc_today/0` usa uma chamada de sistema operacional para obter a data atual do sistema. Em seguida, ela converte a data de um formato interno para o formato desejado (AAAA-MM-DD) e retorna esse valor.
 
-```
-Elixir DateTime.utc_now() |> Calendar.strftime("%d/%m/%Y às %H:%M")
-{:ok, "05/02/2021 às 15:44"}
-```
+Além disso, é importante notar que a função `Date.utc_today/0` sempre retorna a data atual no fuso horário UTC, independentemente do fuso horário em que seu sistema se encontra. Isso garante que a data seja consistente, independentemente de onde seu código esteja sendo executado.
 
-Isso retorna a data e a hora no formato "dia/mês/ano às horas:minutos".
+# Veja também
 
-Há muito mais recursos e opções disponíveis para trabalhar com datas e horas em Elixir. Então, sempre que estiver trabalhando com tais dados, é uma boa ideia consultar a documentação oficial do Elixir para obter mais informações.
+Agora que você sabe como obter a data atual em Elixir, aqui estão alguns links úteis para você continuar aprendendo sobre esta linguagem de programação incrível:
 
-## Veja Também
+- [Documentação oficial do Elixir](https://elixir-lang.org/getting-started/introduction.html)
+- [Guia de estilo de código Elixir](https://github.com/gusaiani/elixir_style_guide/blob/master/README_pt_BR.md)
+- [Lista de recursos e ferramentas recomendados para Elixir](https://github.com/h4cc/awesome-elixir)
 
-- Documentação do Elixir sobre datas e horas (https://hexdocs.pm/elixir/Calendar.html)
-- Guia de referência para formato de data e hora (https://help.interfaceware.com/v6/date-time-fmt)
-- Tutorial de Elixir sobre manipulação de datas (https://elixircasts.io/working-with-dates-and-times-in-elixir)
+Esperamos que este artigo tenha ajudado você a entender um pouco mais sobre Elixir e como obter a data atual usando esta linguagem funcional. Então vá em frente, experimente e divirta-se codando em Elixir!

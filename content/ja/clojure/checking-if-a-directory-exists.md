@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: ディレクトリが存在するかどうかをチェックする"
+title:                "Clojure: ディレクトリが存在するかどうかの確認"
+simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/checking-if-a-directory-exists.md"
 ---
 
@@ -9,31 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-ディレクトリの存在をチェックすることの重要性は、コンピュータプログラムにおいて必須です。例えば、あなたのアプリケーションが特定のディレクトリ内にファイルを作成する必要がある時、そのディレクトリが存在しない場合、アプリケーションが正しく機能しない可能性があります。そのため、ディレクトリの存在を確認することは、プログラムの信頼性を確保するために重要です。
+ディレクトリが存在するかどうかを確認したいと思う理由はさまざまですが、一般的には、プログラミングの中でファイルやディレクトリを処理する際に、それらが存在するかどうかを確認する必要があるからです。ディレクトリが存在するかどうかを確認することで、不必要なエラーを防ぐことができ、プログラムの安定性を保つことができます。
 
-## 方法
+## 作り方
 
-Clojureでは、ファイルシステムを操作するためのたくさんの便利な関数が用意されています。その中の一つが、`clojure.java.io/file`関数です。この関数を使用することで、ファイルやディレクトリのパスを指定してJavaの`java.io.File`オブジェクトを作成できます。そして、`.exists`メソッドを使用して、ファイルやディレクトリが実際に存在するかどうかを確認できます。
+まずは、Clojureの標準ライブラリである`clojure.java.io`を使用して、ディレクトリを表すオブジェクトを作成します。
 
 ```Clojure
 (require '[clojure.java.io :as io])
 
-;; パスを指定してFileオブジェクトを作成
-(def dir-path (io/file "path/to/directory"))
-
-;; ディレクトリが存在するかどうかを確認
-(.exists dir-path)
+(def dir (io/file "path/to/directory"))
 ```
 
-確認したいパスを指定して`io/file`関数を使い、その返り値として得られる`File`オブジェクトに対して、Javaのメソッドを使用することで簡単にディレクトリの存在をチェックすることができます。
+次に、`.exists`メソッドを使用して、ディレクトリが存在するかどうかを確認できます。
 
-## 深堀り
+```Clojure
+(.exists dir) ; => true or false
+```
 
-Clojureの`clojure.java.io`ネームスペースには、ディレクトリの存在を確認する方法以外にも、ファイルやディレクトリを作成したり削除したりするための関数が豊富に用意されています。また、`clojure.java.io.file`関数を使うことで、ディレクトリだけでなく、ファイルに関する情報も取得することができます。
+また、さまざまな条件でディレクトリが存在するかどうかを確認することもできます。例えば、指定したパスがファイルでなくディレクトリであるかどうかを確認することもできます。
 
-さらに、Clojureの`clojure.java.io`ネームスペースには、ファイルの各種操作やストリームの操作に便利な関数が多数用意されているので、ファイルシステムを操作する際には必ずチェックしてみることをお勧めします。
+```Clojure
+(.isDirectory dir) ; => true or false
+```
 
-## さらに見る
+## ディープダイブ
 
-- [Clojure 公式ドキュメント - `clojure.java.io`](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [メジャーなライブラリ - `clojure.java.io`](https://mvnrepository.com/artifact/org.clojure/java.io)
+Clojureでディレクトリの存在を確認するには、Javaの標準ライブラリである`File`クラスを使用することができます。この`File`クラスは、ファイルやディレクトリを表すオブジェクトを作成し、そのオブジェクトに対して`exists`や`isDirectory`などのメソッドを呼び出すことで、ディレクトリの存在を確認することができます。また、`-io`ライブラリを使用することで、より簡潔にディレクトリの存在を確認することができます。
+
+## See Also
+
+- [ClojureDocs - clojure.java.io](https://clojuredocs.org/clojure.java.io)
+- [Oracle - File class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
+- [Clojureverse - Working with Directories and Files](https://clojureverse.org/t/working-with-directories-and-files/2216)

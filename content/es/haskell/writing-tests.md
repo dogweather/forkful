@@ -1,50 +1,47 @@
 ---
-title:                "Haskell: Escribiendo pruebas"
+title:                "Haskell: Programando pruebas"
+simple_title:         "Programando pruebas"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué escribir pruebas en Haskell
 
-La escritura de pruebas es una práctica importante en cualquier lenguaje de programación, incluyendo Haskell. Al escribir pruebas, podemos tener una mayor confianza en nuestro código y asegurarnos de que funcione como lo esperado. Además, las pruebas nos ayudan a detectar errores y problemas en nuestro código antes de que lleguen a producción.
+Escribir pruebas es una parte esencial del proceso de programación en cualquier lenguaje, incluyendo Haskell. Las pruebas ayudan a garantizar que nuestro código sea sólido y funcione correctamente en todas las situaciones posibles. Además, al escribir pruebas primero, podemos diseñar un código más modular y más fácil de mantener.
 
-## Cómo hacerlo
+## Cómo escribir pruebas en Haskell
 
-Para escribir pruebas en Haskell, utilizamos el módulo `Test.HUnit`, que proporciona funciones para crear y ejecutar pruebas unitarias. Primero, importamos el módulo en nuestro archivo de código:
+Para escribir pruebas en Haskell, utilizamos un framework de pruebas llamado Hspec. Este framework nos permite definir suites de pruebas que especifican qué debe hacer nuestro código y cómo debe comportarse en cada situación.
 
-```Haskell
-import Test.HUnit
-```
-
-Luego, podemos definir nuestras pruebas de la siguiente manera:
+Una prueba básica en Haskell se vería así:
 
 ```Haskell
-test1 = TestCase (assertEqual "1 + 1 is equal to 2" 2 (1+1))
+-- Importamos el módulo de pruebas Hspec
+import Test.Hspec
 
-test2 = TestCase (assertEqual "3 * 5 is equal to 15" 15 (3*5))
-
-tests = TestList [TestLabel "Test 1" test1, TestLabel "Test 2" test2]
+-- Definimos una prueba llamada "suma"
+-- que verifica si la función suma funciona correctamente
+main = hspec $ do
+  describe "suma" $ do
+    it "debe sumar dos números correctamente" $
+      suma 2 3 `shouldBe` 5
 ```
 
-En estas pruebas, estamos verificando si nuestras operaciones matemáticas básicas son correctas. Para ejecutar las pruebas, podemos utilizar la función `runTestTT` y pasarle `tests` como argumento:
+Aquí hemos definido una prueba llamada "suma" que verifica si nuestra función suma funciona correctamente al sumar dos números enteros. Usamos la función `shouldBe` para comparar el resultado esperado con el resultado obtenido.
 
-```Haskell
-main = runTestTT tests
-```
+## Profundizando en la escritura de pruebas
 
-Esto generará una salida de prueba que nos informará si nuestras pruebas fueron exitosas o si se encontraron errores.
+Escribir pruebas en Haskell requiere un conocimiento más profundo sobre el lenguaje y su sintaxis. Es importante entender cómo funcionan los tipos de datos y cómo usar funciones de orden superior para construir pruebas más complejas.
 
-## Profundizando
+ Además, es importante tener en cuenta algunos casos de prueba especiales, como números negativos o estructuras de datos complejas como listas y árboles.
 
-Al escribir pruebas en Haskell, es importante tener en cuenta que nuestro código debe ser lo más puro posible, es decir, sin efectos secundarios. Esto puede ser un desafío al principio, pero nos obliga a escribir código más modular y fácil de probar.
+Además de Hspec, existen otros frameworks de pruebas para Haskell, como QuickCheck, que nos permiten generar automáticamente casos de prueba y cubrir un rango más amplio de posibles situaciones.
 
-También es importante recordar que las pruebas deben ser específicas y cubrir todos los casos posibles. De esta manera, podemos estar seguros de que nuestro código funciona no solo en un escenario ideal, sino también en situaciones más complejas.
+## Vea también
 
-## Ver también
-
-- [HUnit Tutorial](https://hackage.haskell.org/package/HUnit-1.6.0.0/docs/Test-HUnit-Tutorial.html)
-- [Pruebas unitarias en Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple-Testing-in-Haskell)
-- [HUnitTest Documentación](https://hackage.haskell.org/package/HUnit-1.6.0.0/docs/Test-HUnit.html)
+- [Documentación de Hspec](https://hspec.github.io/)
+- [Introducción a QuickCheck](https://www.stackbuilders.com/tutorials/haskell/quickcheck/)

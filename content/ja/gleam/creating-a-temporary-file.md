@@ -1,31 +1,39 @@
 ---
 title:                "Gleam: 一時ファイルの作成"
+simple_title:         "一時ファイルの作成"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
+#なぜ
 
-一時的なファイルを作成することに興味がある人にとって、これは非常に重要なトピックです。一時的なファイルを作成することで、コンピューターのメモリーを効率的に使用することができ、ファイルの処理にも役立ちます。
+Gleamで一時ファイルを作成するのには、様々な理由があります。例えば、効率的なデータ処理を行うためには一時ファイルを使用する必要があるかもしれません。また、一時的に保存する必要のあるデータや、一時的なバックアップファイルを作成する場合にも、一時ファイルは便利です。
 
-##How To
+#作り方
 
-一時的なファイルを作成するには、Gleamの``` :file.create_temporary ``` 関数を使用します。これは、一時的なファイルを作成し、そのファイルのパスを返すものです。例えば、 ```Gleam
-let temp_file = :file.create_temporary()
-``` 
-というコードを使用することで、一時的なファイルが作成されます。また、作成されたファイルはプログラムの終了時に自動的に削除されます。
+一時ファイルを作成するためには、Gleamの標準モジュールであるFile.Tempモジュールを使います。まず、モジュールをインポートします。
 
-##Deep Dive
+```Gleam
+import File.Temp
+```
 
-一時的なファイルは、主に一時的に必要なデータを保存するために使用されます。例えば、プログラムが実行中に使用する一時的なデータや、一時的なログファイルなどです。一時的なファイルは、作業中に使用するだけでなく、データのバックアップや移動にも使用することができます。
+次に、`File.Temp.create/2`関数を使って一時ファイルを作成します。この関数には、作成するファイルの名前と拡張子を指定します。
 
-一時的なファイルを作成する際には、注意点があります。まず、ファイルが作成される場所を指定する必要があります。デフォルトでは、プログラムが実行されているディレクトリに作成されますが、必要に応じて他の場所を指定することも可能です。また、ファイルの名前や拡張子を指定することもできます。
+```Gleam
+let { temp_file, temp_file_name } = File.Temp.create("example", ".txt")
+```
 
-##See Also
+上記の例では、`example.txt`という名前の一時ファイルが作成されます。また、関数は作成した一時ファイルのパスを返し、それを`temp_file`変数に、ファイル名だけを`temp_file_name`変数に代入しています。
 
-- [Gleam 公式ドキュメント](https://gleam.run/documentation/)
-- [一時的なファイルの作成方法の詳細](https://dev.to/gleam_lang/how-to-create-temporary-files-in-gleam-2oh1)
-- [Gleamでより高度なファイル処理を行う方法](https://gleam.run/tutorials/files/)
+#深堀り
+
+一時ファイルを作成する際に、Gleamではどのような処理が行われているかを見てみましょう。`File.Temp.create/2`関数は、内部で`File.Temp.random_filename/1`関数を使ってランダムなファイル名を生成し、作成する一時ファイルのパスを決定します。また、GleamのFileモジュールを使って実際にファイルを作成しています。
+
+#参考リンク
+
+- [Gleam File.Tempドキュメンテーション](https://gleam.run/documentation/standard-library/file#temp-module)
+- [Gleamファイルモジュールドキュメンテーション](https://gleam.run/documentation/standard-library/file)

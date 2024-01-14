@@ -1,55 +1,74 @@
 ---
-title:                "Ruby: 日付の比較"
+title:                "Ruby: 「二つの日付を比較する」"
+simple_title:         "「二つの日付を比較する」"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-「日付の比較」を行う理由は、プログラミングにおいて日付をうまく扱うためには欠かせないからです。
 
-## 方法
-日付の比較を行うには、RubyのDateクラスやTimeクラスを使用して行うことができます。以下のコードを参考にしてください。
+日付を比較することの重要性は、プログラミングにおいてよくある作業の一つです。日付を比較することで、例えばイベントの優先順位を決めたり、期限を設定したりすることができます。
+
+## 使い方
+
+日付を比較する方法はいくつかありますが、ここではRubyを使った方法を紹介します。まず最初に、以下のように記述して日付を変数に代入します。
 
 ```Ruby
-# Dateクラスを使用した場合
-date1 = Date.parse("2020/01/01")
-date2 = Date.parse("2020/01/05")
+first_date = Date.new(2020, 1, 1)
+second_date = Date.new(2021, 1, 1)
+```
 
-if date1 > date2
-  puts "date1はdate2よりも後の日付です。"
-elsif date1 < date2
-  puts "date1はdate2よりも前の日付です。"
+上記の例では、それぞれ「2020年1月1日」と「2021年1月1日」を表す日付を変数に代入しています。
+
+次に、以下のように比較演算子「<」や「>」を使って日付を比較します。
+
+```Ruby
+if first_date < second_date
+  puts "first_date is earlier than second_date"
+elsif first_date > second_date
+  puts "first_date is later than second_date"
 else
-  puts "date1とdate2は同じ日付です。"
+  puts "Both dates are the same"
 end
+```
 
-# Timeクラスを使用した場合
-time1 = Time.new(2020, 1, 1)
-time2 = Time.new(2020, 1, 5)
+実行すると、結果は「first_date is earlier than second_date」となります。
 
-if time1 > time2
-  puts "time1はtime2よりも後の日付です。"
-elsif time1 < time2
-  puts "time1はtime2よりも前の日付です。"
+また、日付を文字列として扱う場合は、`Date.parse()`メソッドを使用することで簡単に日付を比較することができます。
+
+```Ruby
+date_string1 = "2020-01-01"
+date_string2 = "2020-01-02"
+
+if Date.parse(date_string1) < Date.parse(date_string2)
+  puts "date_string1 is earlier than date_string2"
+elsif Date.parse(date_string1) > Date.parse(date_string2)
+  puts "date_string1 is later than date_string2"
 else
-  puts "time1とtime2は同じ日付です。"
+  puts "Both dates are the same"
 end
-
 ```
 
-出力結果は以下のようになります。
-
-```
-date1はdate2よりも前の日付です。
-time1はtime2よりも前の日付です。
-```
+実行すると、結果は「date_string1 is earlier than date_string2」となります。
 
 ## 深堀り
-日付の比較には、より柔軟に行う方法もあります。例えば、DateクラスやTimeクラスのメソッドを使用することで、特定の日付の部分だけを比較することができます。また、日付のフォーマットに関しても注意する必要があります。詳細な情報は、Rubyの公式ドキュメントやオンラインの資料を参考にしてください。
 
-## See Also
-- [Rubyの公式ドキュメント](https://www.ruby-lang.org/ja/documentation/)
-- [プロを目指す人のためのRuby入門](https://www.amazon.co.jp/%E3%83%97%E3%83%AD%E3%82%92%E7%9B%AE%E6%8C%87%E3%81%99%E4%BA%BA%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E7%94%A8-Ruby%E5%85%A5%E9%96%80-%E5%A2%97%E7%94%B0-%E5%A4%AA%E5%85%92/dp/4839930216)
+日付の比較にはさまざまな場面で必要になることがあります。例えば、ある日付がある期間内に含まれるかどうかを判定するときや、ある日付から何日後の日付を求めるときなどです。
+
+また、日付を比較する際は、日付が同じだけでなく時間や時間帯も考慮する必要があります。そのため、日時やタイムゾーンを扱えるようにするためのライブラリを使用することも重要です。
+
+## 参考文献
+
+- RubyのDateクラスのドキュメント: https://docs.ruby-lang.org/en/master/Date.html
+- Rubyで日付を比較する方法: https://www.rubyguides.com/2018/08/compare-date-time/
+- Rubyで日付を扱う際の注意点: https://qiita.com/Lukeman/items/b8aad2991b28c729ae8c
+
+# 参考文献を見る
+
+- Comparable moduleのドキュメント: https://docs.ruby-lang.org/en/master/Comparable.html
+- 時差を考慮した日時を扱うためのTimezoneライブラリ: https://github.com/ankane/timezone
+- 時差を計算するためのgemライブラリ一覧: https://rubygems.org/search?utf8=%E2%9C%93&query=timezone

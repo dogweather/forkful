@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Extracción de subcadenas"
+title:                "Haskell: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/extracting-substrings.md"
 ---
 
@@ -9,45 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Extraer subcadenas es una habilidad esencial en programación, especialmente en Haskell. Permite a los programadores manipular y trabajar con datos de manera más eficiente y efectiva. En este artículo, aprenderemos por qué es importante extraer subcadenas y cómo hacerlo en Haskell.
+La extracción de subcadenas es una habilidad esencial en la programación Haskell. Permite a los programadores obtener partes específicas de una cadena de texto, lo que resulta útil en una variedad de escenarios, desde la manipulación de datos hasta la validación de entradas de usuario.
 
 ## Cómo hacerlo
 
-Extraer subcadenas en Haskell es bastante sencillo. Solo necesitas utilizar la función `take` y `drop` para obtener las partes de la cadena que deseas. Por ejemplo, si queremos obtener los primeros 5 caracteres de una cadena, podemos hacerlo de esta manera:
+En Haskell, podemos utilizar la función `take` para extraer una subcadena de una cadena dada. Por ejemplo:
 
 ```Haskell
-take 5 "Haskell"
+take 5 "Hola Mundo"
 ```
 
-La salida será `"Hask"`. Del mismo modo, si queremos obtener los últimos 3 caracteres, podemos usar la función `drop` en lugar de `take`:
+Este código devuelve la subcadena "Hola ", ya que especificamos un número entero de 5 para indicar cuántos caracteres queremos extraer desde el principio de la cadena.
+
+Otra función útil para extraer subcadenas es `drop`, que se utiliza para eliminar una cierta cantidad de caracteres desde el principio de una cadena. Por ejemplo:
 
 ```Haskell
-drop 3 "Haskell"
+drop 5 "Hola Mundo"
 ```
 
-La salida será `"ell"`. También podemos utilizar ambas funciones juntas para extraer una subcadena específica dentro de una cadena. Por ejemplo, si queremos obtener los caracteres del medio de la palabra "Haskell", podemos hacerlo de la siguiente manera:
+Este código devuelve la subcadena "Mundo", ya que hemos eliminado los primeros 5 caracteres de la cadena original.
+
+También podemos usar `take` y `drop` juntas para obtener una subcadena específica dentro de una cadena. Por ejemplo:
 
 ```Haskell
-take 3 (drop 2 "Haskell")
+take 3 (drop 5 "Hola Mundo")
 ```
 
-La salida será `"ske"`.
-
-También podemos utilizar el operador `!!` para obtener un solo carácter de una cadena, donde el primer carácter tiene el índice 0. Por ejemplo, si queremos obtener el tercer carácter de "Haskell":
-
-```Haskell
-"Yaniv" !! 2
-```
-
-La salida será `"n"`.
+Este código devuelve la subcadena "Mun", ya que primero eliminamos los primeros 5 caracteres y luego tomamos los siguientes 3.
 
 ## Profundizando
 
-La función `take` toma dos argumentos como entrada: el número de elementos que quieres extraer y la lista de la que quieres extraerlos. Del mismo modo, la función `drop` también toma dos argumentos: el número de elementos que quieres saltar y la lista de la que quieres saltarlos.
+Además de las funciones `take` y `drop`, Haskell tiene otras funciones para extraer subcadenas, como `dropWhile` y `takeWhile`, que nos permiten extraer caracteres mientras se cumpla una condición dada. También podemos utilizar la función `splitAt` para dividir una cadena en dos partes en un índice dado.
 
-Al usar `take` y `drop` junto con otras funciones y operadores en Haskell, podemos crear diferentes maneras de extraer subcadenas. También podemos utilizar patrones de coincidencia de patrones para extraer subcadenas de manera más precisa.
+Otra técnica interesante para extraer subcadenas es el uso de patrones y guardas en funciones recursivas. Esto nos permite extraer subcadenas de manera más dinámica y flexible.
 
 ## Ver también
 
-- [Haskell Wiki - Manipulación de cadenas](https://wiki.haskell.org/Strings)
-- [Haskell Docs - Funciones de lista](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html)
+- La documentación oficial de Haskell para `take`, `drop` y otras funciones de extracción de subcadenas: https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#g:14
+- Un tutorial en español sobre el uso de funciones de extracción de subcadenas en Haskell: https://josemanuelcr.com/blog/haskell/subcadenas-en-haskell/

@@ -1,66 +1,54 @@
 ---
-title:                "C++: Trovare la lunghezza di una stringa"
+title:                "C++: Calcolare la lunghezza di una stringa"
+simple_title:         "Calcolare la lunghezza di una stringa"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perchè
+## Perché
 
-Trovare la lunghezza di una stringa è un'operazione fondamentale nella programmazione di C++. Sapere quanti caratteri compongono una stringa ci permette di gestirle e manipolarle in modo preciso e efficiente.
+Trovare la lunghezza di una stringa è un'operazione molto comune e importante nella programmazione. Conoscere la lunghezza di una stringa consente di gestire meglio le operazioni di elaborazione dei dati, come la ricerca e l'aggiornamento dei dati all'interno della stringa.
 
-## Come fare
+## Come Fare
 
-Per trovare la lunghezza di una stringa in C++, esistono varie opzioni. La più semplice è utilizzare la funzione integrata `strlen()`, presente nella libreria `<string.h>`. Questa funzione prende come argomento una stringa e restituisce il numero di caratteri che la compongono. Ecco un esempio di codice:
-
-```C++
-#include <iostream>
-#include <string.h>
-
-int main() {
-    char str[] = "Ciao a tutti!";
-    int lunghezza = strlen(str);
-    std::cout << "La stringa \"" << str << "\" ha " << lunghezza << " caratteri." << std::endl;
-    return 0;
-}
-```
-
-Output:
-
-```
-La stringa "Ciao a tutti!" ha 13 caratteri.
-```
-
-Un'altra opzione è utilizzare il metodo `length()` dell'oggetto stringa della libreria standard (`<string>`). Questo metodo restituisce un valore di tipo `size_t`, che corrisponde a un intero non negativo. Ecco un esempio di codice:
+Per trovare la lunghezza di una stringa in C++, possiamo utilizzare la funzione `length()` o `size()`, entrambe disponibili nella libreria standard `string`. Ecco un esempio di come utilizzare queste due funzioni:
 
 ```C++
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 int main() {
-    std::string str = "Ciao a tutti!";
-    size_t lunghezza = str.length();
-    std::cout << "La stringa \"" << str << "\" ha " << lunghezza << " caratteri." << std::endl;
-    return 0;
+	string nome = "Giorgio";
+	int lunghezza = nome.length();
+
+	cout << "La lunghezza della stringa 'nome' è: " << lunghezza << endl;
+
+	string cognome = "Rossi";
+	int size = cognome.size();
+
+	cout << "La lunghezza della stringa 'cognome' è: " << size << endl;
+
+	return 0;
 }
 ```
 
-Output:
+E questo è l'output che otterremo:
 
 ```
-La stringa "Ciao a tutti!" ha 13 caratteri.
+La lunghezza della stringa 'nome' è: 7
+La lunghezza della stringa 'cognome' è: 5
 ```
 
-## Approfondimenti
+## Approfondimento
 
-Esistono alcune differenze tra le due opzioni presentate per trovare la lunghezza di una stringa. Ad esempio, la funzione `strlen()` conta solo i caratteri fino al primo carattere di terminazione della stringa (`'\0'`), mentre il metodo `length()` controlla tutto il contenuto della stringa, incluso il carattere di terminazione.
-
-Inoltre, la funzione `strlen()` richiede come argomento un array di caratteri (`char[]`) mentre il metodo `length()` richiede un oggetto stringa (`string`). Ciò significa che dobbiamo essere attenti a quale tipo di dato utilizziamo per evitare potenziali errori.
+La funzione `length()` e `size()` restituiscono la stessa cosa, cioè la lunghezza della stringa. Ma qual è la differenza tra di loro? In realtà, sono entrambe chiamate dalla stessa funzione `size_type` della libreria `string` e quindi restituiscono lo stesso tipo di valore. La differenza sta nel fatto che `length()` è rappresentato come un metodo della classe `string`, mentre `size()` è una funzione globale. In generale, possiamo usare indifferentemente una delle due funzioni a seconda delle nostre preferenze.
 
 ## Vedi anche
-
-- [Funzione `strlen()` in C++](https://www.cplusplus.com/reference/cstring/strlen/)
-- [Metodo `length()` in C++](https://www.cplusplus.com/reference/string/string/length/)
-- [Stringhe in C++](https://www.cplusplus.com/doc/tutorial/ntcs/)
+- Documentazione ufficiale di string in C++: https://www.cplusplus.com/reference/string/
+- Altro approfondimento sulla libreria string in C++: https://www.geeksforgeeks.org/string-class-in-cpp/

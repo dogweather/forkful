@@ -1,62 +1,66 @@
 ---
-title:                "Elixir: Dr"
+title:                "Elixir: Wydrukowanie danych debugowania"
+simple_title:         "Wydrukowanie danych debugowania"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto używać drukowania danych debugowania w Elixir
+Drukowanie danych debugowania jest kluczowym narzędziem w każdym języku programowania, w tym również w Elixir. Pozwala ono na monitorowanie i analizę przepływu danych w trakcie działania aplikacji, co pozwala programistom na szybsze rozwiązywanie problemów i poprawianie błędów. Jest to nieodłączna część procesu tworzenia oprogramowania i warto znać odpowiednie sposoby jego wykorzystania.
 
-Wiele razy podczas pisania kodu w Elixirze, możemy napotkać trudne do znalezienia błędy lub zagadki dotyczące stanu naszej aplikacji. W takich sytuacjach pomocne może być wypisywanie informacji do konsoli w celu zrozumienia, co się dzieje w naszym programie. W tym artykule dowiesz się, dlaczego warto korzystać z wypisywania debugowych informacji oraz jak to zrobić w kodzie Elixir.
+## Jak używać drukowania danych debugowania w Elixir
+W Elixirze można drukować dane debugowania przy użyciu funkcji `IO.inspect/2`, która pozwala na wyświetlanie wartości różnych typów danych w konsoli. Przykładowe użycie tej funkcji wygląda następująco:
 
-## Jak to zrobić
-
-Aby wypisywać debugowe informacje w Elixirze, możemy skorzystać z funkcji `IO.inspect/2`. Możemy przekazać do niej dowolny obiekt i zostanie on wyświetlony w konsoli na etapie kompilacji lub działania naszego kodu. Przykładowy kod wyglądałby następująco:
-
-```Elixir
-defmodule User do
-  defstruct name: "", age: 0
-
-  def display_name(user) do
-    IO.inspect(user.name)
-  end
-end
-
-user = %User{name: "Adam", age: 32}
-User.display_name(user)
-
-# Output:
-# "Adam"
+```
+Elixir IO.inspect
+1
+2
+3
+4
 ```
 
-Możemy również przekazać drugi parametr do funkcji `IO.inspect/2`, który pozwala na określenie, czy obiekt powinien zostać wyświetlony z dodatkowymi informacjami, takimi jak linia kodu, w której został wywołany. Przykładowy kod będzie wyglądał następująco:
+#> 4
 
-```Elixir
-defmodule User do
-  defstruct name: "", age: 0
+#> 3
 
-  def display_age(user) do
-    IO.inspect(user.age, label: "User age", pretty: true)
-  end
-end
+#> 2
 
-user = %User{name: "Adam", age: 32}
-User.display_age(user)
+#> 1
 
-# Output:
-# User age: 32
-# Line: 7
+Można również użyć opcji `:label` do dodania nazwy dla danych, co ułatwia późniejsze odnalezienie w konsoli.
+
+```
+Elixir IO.inspect
+1
+2, label: :liczba
+
+#> liczba: 2
 ```
 
-Pamiętaj, że funkcja `IO.inspect/2` nie jest jedynym sposobem na wypisywanie debugowych informacji w Elixirze. Istnieje wiele innych narzędzi, takich jak `Logger` czy `ExUnit`, które również mogą być przydatne podczas debugowania kodu.
+W przypadku potrzeby drukowania większej ilości danych, można użyć funkcji `IO.puts/1`, która wyświetla dane w formacie tekstowym. Przykładowe użycie:
 
-## Deep Dive
+```
+Elixir IO.puts
+"Hello, debug!"
+```
 
-Jeśli chcesz poznać więcej szczegółów na temat wypisywania debugowych informacji w Elixirze, warto zagłębić się w dokumentację języka. Możesz znaleźć tam jeszcze więcej funkcji, które pomogą Ci w wyświetlaniu i analizowaniu stanu swojego programu.
+#> Hello, debug!
 
-## Zobacz również
+## Głębokie zagłębienie w drukowaniu danych debugowania
+Ponieważ Elixir jest językiem funkcyjnym, warto mieć na uwadze kilka szczególnych przypadków, które mogą wpłynąć na poprawność drukowania danych debugowania. W przypadku korzystania z funkcji `IO.inspect/2`, należy pamiętać, że argumenty są przekazywane do niej za pomocą odwołania (ang. reference), co oznacza, że drukowane dane mogą nie być najświeższe. W przypadku, gdy chcemy wyświetlić aktualną wartość zmiennej, należy użyć operatora `^`.
 
-- [Dokumentacja Elixir - funkcja IO.inspect/2](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Narzędzia do debugowania w Elixirze](https://elixir-lang.org/getting-started/debugging.html)
+```
+Elixir IO.inspect
+^zmienna
+```
+
+Kolejnym istotnym aspektem jest korzystanie z funkcji wewnątrz innych funkcji, co może skutkować niestandardowym wyświetlaniem danych debugowania. W takiej sytuacji, warto skorzystać z opcji `label` lub użyć funkcji `IO.puts/1` do wyświetlenia danych w postaci tekstu.
+
+## Zobacz także
+- Domyślna dokumentacja Elixir dla funkcji IO.inspect: https://hexdocs.pm/elixir/IO.html#inspect/2
+- Blogowy wpis o korzystaniu z drukowania debugowania w Elixir: https://akouti.com/2016/04/top-5-alternative-phoenix-debugging-techniques/
+- Video tutorial o drukowaniu danych debugowania w Elixir: https://www.youtube.com/watch?v=Up1F7homv5g

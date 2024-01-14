@@ -1,34 +1,68 @@
 ---
 title:                "Fish Shell: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi écrire des tests avec Fish Shell?
 
-Ecrire des tests peut sembler fastidieux au premier abord, mais cela peut en réalité vous faire gagner beaucoup de temps et d'efforts à long terme en vous assurant que votre code fonctionne correctement et en vous aidant à le maintenir dans le futur.
+Ecrire des tests est une pratique essentielle pour les développeurs afin de s'assurer que leur code fonctionne correctement et de détecter d'éventuelles erreurs. En utilisant Fish Shell, vous pouvez facilement créer et exécuter des tests pour votre code, ce qui vous aidera à améliorer la qualité de vos programmes.
 
-## Comment faire
+## Comment procéder?
 
-Pour écrire des tests avec Fish Shell, vous pouvez utiliser la commande `test` suivie d'une condition et d'un bloc de code à exécuter si la condition est vraie. Par exemple:
+Pour écrire des tests avec Fish Shell, vous pouvez utiliser la commande `test` suivie de l'expression à tester et du résultat attendu. Par exemple:
 
-```Fish Shell
-test $var -eq 1
-echo "Le contenu de la variable est égal à 1"
+```
+Fish Shell> test 1 -eq 1
 ```
 
-Si la variable `$var` a une valeur de 1, le test sera réussi et la phrase "Le contenu de la variable est égal à 1" sera affichée à l'écran. Sinon, rien ne se passera.
+Cela va tester si l'expression `1 -eq 1` est égale à `true` et afficher le résultat.
 
-Vous pouvez également utiliser `test` pour vérifier des fichiers ou des dossiers, en utilisant des options telles que `-f` pour vérifier si un fichier existe ou `-d` pour vérifier si un dossier existe.
+Vous pouvez également utiliser les commandes `contains` et `matches` pour tester si une chaîne de caractères contient ou correspond à une autre chaîne. Par exemple:
 
-## Plonger plus profondément
+```
+Fish Shell> contains "Hello World" "Hello"
+```
 
-Pour ceux qui souhaitent en apprendre davantage sur les tests avec Fish Shell, il existe de nombreuses ressources en ligne qui expliquent en détail les différentes options disponibles pour la commande `test`, ainsi que des exemples de cas d'utilisation courants. Vous pouvez également utiliser la documentation officielle de Fish Shell pour en savoir plus sur l'écriture de tests dans ce langage.
+Ceci va tester si la chaîne "Hello" est incluse dans la chaîne "Hello World".
+
+Pour tester des fonctions, vous pouvez utiliser la commande `set -x` pour afficher les variables et `echo` pour vérifier les résultats. Voici un exemple:
+
+```
+Fish Shell> function add_numbers
+            > set -x result (set --local a $argv[1]; set --local b $argv[2]; echo $a + $b)
+            > test (add_numbers 2 3) -eq 5
+```
+
+Ce test va vérifier si la fonction `add_numbers` retourne bien la somme de ses deux arguments.
+
+## Plongée en profondeur
+
+En plus des commandes mentionnées précédemment, Fish Shell propose d'autres fonctionnalités intéressantes pour écrire des tests. Par exemple, vous pouvez utiliser la commande `begin` pour exécuter un bloc de code et vérifier si aucune erreur n'a été signalée, en utilisant la commande `status`. Voici un exemple:
+
+```
+Fish Shell> begin
+            > echo "Running some code..."
+            > exit 0
+            > end
+            > test (status 0)
+```
+
+Vous pouvez également utiliser des opérateurs logiques comme `and` et `or` pour combiner plusieurs tests dans une même commande. Par exemple:
+
+```
+Fish Shell> test (1 -eq 1) and (2 -eq 2)
+```
+
+Ceci va tester si les deux expressions sont égales à `true`.
 
 ## Voir aussi
 
-- [Documentation sur les tests de Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
-- [Exemples de cas d'utilisation de tests avec Fish Shell](https://dev.to/adelphym/fish-shell-test-samples-29g7)
+- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
+- [Guide de l'utilisateur pour les tests en Fish Shell](https://github.com/fish-shell/fish-shell/wiki/Writing-Test-Functions)
+- [Exemples de tests en Fish Shell](https://github.com/fish-shell/fish-shell/tree/master/test)

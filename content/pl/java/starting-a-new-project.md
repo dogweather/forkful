@@ -1,7 +1,9 @@
 ---
 title:                "Java: Rozpoczęcie nowego projektu"
+simple_title:         "Rozpoczęcie nowego projektu"
 programming_language: "Java"
-category:             "Getting Started"
+category:             "Java"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/starting-a-new-project.md"
 ---
 
@@ -9,59 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Rozpoczęcie nowego projektu programistycznego może być nie tylko ekscytującym wyzwaniem, ale także doskonałą okazją do nauki i rozwoju umiejętności programowania. W tym artykule dowiesz się, jak rozpocząć nowy projekt Java i jak wykorzystać to do poszerzenia swojej wiedzy.
+Zaczęcie nowego projektu jest wyzwaniem, ale także doskonałym sposobem na rozwoj i doskonalenie swoich umiejętności w programowaniu. Poza tym, czerpanie radości z tworzenia czegoś od podstaw daje ogromną satysfakcję.
 
 ## Jak to zrobić
 
-Pierwszym krokiem do rozpoczęcia projektu Java jest utworzenie nowego projektu w wybranym IDE, takim jak IntelliJ lub Eclipse. Następnie dodajemy klasy i metody, które będą służyć naszym celom. Możemy wykorzystać również gotowe biblioteki, aby zaoszczędzić czas i uniknąć pisania kodu od zera.
-
-Poniżej przedstawiam przykład utworzenia prostego programu, który wypisuje przywitanie na konsolę:
+Tworzenie aplikacji w języku Java może wydawać się skomplikowane, ale jest to jedna z najpopularniejszych opcji na rynku dzięki swojej wszechstronności i stabilności. W tym artykule opowiem Ci, jak rozpocząć projekt w Javie i zaprezentuję kilka przykładów kodu oraz wyników.
 
 ```Java
-public class Main {
+public class HelloWorld {
   public static void main(String[] args) {
-    System.out.println("Witaj, jestem Java!");
+    System.out.println("Witaj Świecie!");
   }
 }
 ```
-Wyjście na konsolę:
-```
-Witaj, jestem Java!
-```
 
-Możemy również wykorzystać pakiet ```java.util```, aby skorzystać z gotowej klasy do pobierania danych od użytkownika:
+W tym prostym przykładzie stworzyliśmy klasę HelloWorld, która wypisuje napis "Witaj Świecie!" na standardowym wyjściu. Aby wykonać ten kod, wystarczy go skompilować i uruchomić.
 
-```Java
-import java.util.Scanner;
+## Glebokie zanurzenie
 
-public class Main {
-  public static void main(String[] args) {
-    Scanner input = new Scanner(System.in);
-    System.out.println("Podaj swoje imię: ");
-    String name = input.nextLine();
-    System.out.println("Witaj, " + name + "!");
-  }
-}
-```
-Wyjście na konsolę po wpisaniu imienia "Jan":
-```
-Podaj swoje imię: 
-Jan
-Witaj, Jan!
-```
+Bardziej zaawansowane projekty mogą wymagać zastosowania różnych bibliotek lub frameworków w celu ułatwienia pracy. Ważne jest, aby dobrze zaplanować strukturę projektu oraz wybrać odpowiednie narzędzia. Warto także pamiętać o testowaniu kodu i ewentualnych poprawkach, które mogą być konieczne.
 
-## Głębsze zanurzenie
-
-Podczas tworzenia nowego projektu Java warto również zwrócić uwagę na dobre praktyki programistyczne, takie jak używanie poprawnej konwencji nazewnictwa, stosowanie komentarzy do dokumentacji kodu oraz regularnie wykonywanie testów. Możemy również skorzystać z narzędzi do zarządzania kodem, takich jak Git, aby śledzić i kontrolować zmiany w kodzie.
-
-Ważne jest również, aby pamiętać o bezpieczeństwie i stosować się do dobrych praktyk w zakresie ochrony danych i unikania luk w zabezpieczeniach.
-
-Kolejnym ważnym aspektem jest dokumentacja naszego projektu. Należy pamiętać o regularnym aktualizowaniu dokumentacji i opisywaniu funkcjonalności oraz używanych rozwiązań.
+Rozpoczynając projekt w Javie, warto zapoznać się z podstawowymi konceptami takimi jak klasy, obiekty, dziedziczenie czy polimorfizm. Są to fundamenty języka, które pozwolą Ci lepiej zrozumieć, jak działa Java i jak projektować swoje aplikacje.
 
 ## Zobacz również
 
-- [Oficjalna dokumentacja języka Java](https://docs.oracle.com/en/java/)
-- [Poradnik dla początkujących programistów Java](https://java-programming.mooc.fi/)
-- [Blog o programowaniu w języku Java](https://www.javaworld.com/)
-
-Życzę powodzenia w tworzeniu nowych projektów Java oraz rozwijaniu swoich umiejętności programistycznych!
+- [Oficjalna strona Javy](https://www.oracle.com/java/)
+- [Kurs Java podstawy](https://www.samouczekprogramisty.pl/java-podstawy-pierwszy-program-w-jezyku-java/)
+- [Java dla początkujących - podręcznik](https://javastart.pl/kurs/java-dla-poczatkujacych/)

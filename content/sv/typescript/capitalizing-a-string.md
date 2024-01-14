@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Att göra en sträng stor"
+title:                "TypeScript: Stora första bokstäver i en sträng"
+simple_title:         "Stora första bokstäver i en sträng"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/capitalizing-a-string.md"
 ---
 
@@ -9,45 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna konvertera text till versaler är en grundläggande funktion som är användbar för många olika programmeringsproblem. Genom att förstå hur man kapitaliserar en sträng kan du enkelt implementera det i dina projekt för att skapa mer professionella och enhetliga utskrifter.
+Att kunna koda är en stor fördel i dagens digitala värld. Ett programmeringsspråk som blivit alltmer populärt är TypeScript. En användbar funktion i TypeScript är kapitalisering av strängar, vilket kan vara användbart vid formatering av input från användare eller när man behöver presentera text på ett mer professionellt sätt.
 
 ## Hur man gör
 
-För att konvertera en sträng till versaler i TypeScript kan du använda inbyggda funktionen `toUpperCase()` som är tillgänglig för alla strängar. Se nedan för ett exempel:
+För att kapitalisera en sträng i TypeScript finns det flera olika sätt att göra det på, beroende på vad som passar bäst för ditt specifika projekt. Här är två exempel, ett med inbyggd TypeScript-funktion och ett med vanlig JavaScript-funktion:
 
 ```TypeScript
-let sträng = "detta är en sträng som ska kapitaliseras";
-console.log(sträng.toUpperCase());
+// Med inbyggd TypeScript-funktion
+let str = "hello world";
+let capitalizedStr = str.toUpperCase();
+console.log(capitalizedStr); // Output: HELLO WORLD 
 ```
-
-Detta kommer att ge följande utskrift:
-
-```
-DET ÄR EN STRÄNG SOM SKA KAPITALISERAS
-```
-
-Det är också möjligt att konvertera en specifik del av en sträng genom att använda `toUpperCase()` tillsammans med `substring()` funktionen. Se exemplet nedan:
 
 ```TypeScript
-let sträng = "detta är en sträng som ska kapitaliseras";
-let delAvSträng = sträng.substring(20, 31).toUpperCase();
-console.log("Kapitaliserad del av strängen: " + delAvSträng);
+// Med vanlig JavaScript-funktion
+let str = "hello world";
+let capitalizedStr = str.replace(str[0], str[0].toUpperCase());
+console.log(capitalizedStr); // Output: Hello world
 ```
 
-Detta kommer att ge följande utskrift:
+Som ni kan se i exemplen ovan är det enkelt att kapitalisera en sträng i TypeScript genom inbyggda funktioner eller genom att använda vanliga JavaScript-funktioner. Det viktigaste är att förstå hur metoderna fungerar och när de kan vara mest fördelaktiga att använda.
 
-```
-KAPITALISERAD DEL AV STRÄNGEN: SKA KAPITAL
-```
+## Djupdykning
 
-## En djupdykning
-
-När `toUpperCase()` funktionen används på en sträng, skapar den en ny sträng istället för att modifiera den befintliga. Detta kan till en början verka onödigt men är faktiskt en viktig del av "immuniseringsprincipen" i programmering. Detta innebär att det är säkrare att inte göra förändringar på befintliga variabler eftersom det kan leda till oförutsägbara resultat.
-
-En annan intressant sak att notera är att `toUpperCase()` funktionen endast konverterar tecken som är bokstäver i det aktuella språket. Till exempel kommer den inte att förändra siffror eller specialtecken.
+En djupdykning i kapitalisering av strängar i TypeScript innebär att titta närmare på inbyggda funktioner och hur de fungerar under huven. Till exempel kan man lägga till fler parametrar för att specificera vilka bokstäver som ska kapitaliseras, vilket är användbart när man behöver hantera olika språks regler för kapitalisering. Det finns också möjligheter att skapa egna funktioner för att kapitalisera strängar baserat på specifika behov i ens projekt.
 
 ## Se även
 
-- [Lär dig TypeScript på 5 minuter](https://medium.com/better-programming/learn-typescript-in-5-minutes-13ea11dc2c0a)
-- [Effektiva programmeringsvanor för att undvika buggar](https://blog.usejournal.com/effective-programming-habits-to-avoid-bugs-a86a88f3112a)
-- [Officiell Typescript-dokumentation](https://www.typescriptlang.org/docs/home.html)
+Här är några användbara länkar för mer information om kapitalisering av strängar i TypeScript:
+
+- [Officiell TypeScript-dokumentation om strängar](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [En artikel om grundläggande funktioner i TypeScript](https://medium.com/javascript-in-plain-english/learn-typescript-in-5-minutes-13f3aeda0c2a)
+- [Exempelkod för kapitalisering av strängar i TypeScript](https://gist.github.com/YousefED/10078102)

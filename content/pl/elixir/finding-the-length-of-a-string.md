@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/finding-the-length-of-a-string.md"
 ---
 
@@ -9,25 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu spotyka się potrzebę sprawdzenia długości łańcucha znaków. Może to być przydatne, na przykład, przy tworzeniu formularzy lub sprawdzaniu poprawności wprowadzonych danych.
+Dlaczego chcielibyśmy wyznaczyć długość ciągu znaków w Elixir? Wiele zadań programistycznych wymaga manipulowania ciągami znaków, dlatego znajomość metod ich obsługi jest ważna dla każdego programisty.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Można użyć metody `String.length` do znalezienia długości łańcucha. Przykładowy kod wyglądałby następująco:
+Najprostszym sposobem na wyznaczenie długości ciągu znaków w Elixir jest użycie funkcji `String.length()`. Przykładowy kod wyglądałby tak:
 
-```elixir
-string = "Cześć!"
-String.length(string)
+```Elixir
+string = "To jest przykładowy ciąg znaków."
+puts String.length(string)
 ```
 
-To zwróci wartość `6`, ponieważ łańcuch składa się z 6 znaków. W przypadku pustego łańcucha, metoda `String.length` zwróci wartość `0`.
+Po uruchomieniu powyższego kodu, otrzymalibyśmy następujący wynik:
 
-## Nurkowanie w głąb
+```
+34
+```
 
-Istnieje kilka istotnych faktów, o których warto wiedzieć przy używaniu metody `String.length`. Po pierwsze, ta metoda może być wywoływana na dowolnym typie danych, który implementuje protokół `String.Chars`. Oznacza to, że możemy używać jej nie tylko na łańcuchach, ale również na innych typach danych, takich jak liczby czy listy. 
+Możemy też obliczyć długość tylko części ciągu, wykorzystując operator wycinania `[x..y]`, gdzie `x` jest indeksem początkowym a `y` indeksem końcowym. Przykładowy kod wyglądałby tak:
 
-Ponadto, `String.length` nie liczy znaków w sposób tradycyjny, ale zwraca liczbę kodową każdego znaku. Oznacza to, że niektóre znaki Unicode mogą zostać policzone jako więcej niż jeden znak. Jednak dla większości przypadków ten sposób liczenia jest wystarczający.
+```Elixir
+string = "To jest przykładowy ciąg znaków."
+puts String.length(string[4..10])
+```
 
-## Zobacz również
+W tym przypadku, wynik będzie wynosić tylko 7, ponieważ obliczamy długość wybranego fragmentu ciągu.
 
-- Dokumentacja Elixir dla metody `String.length`: https://hexdocs.pm/elixir/String.html#length/1
+## Głębszy Przegląd
+
+Istnieje wiele innych funkcji i metod służących do manipulacji ciągami znaków w Elixir, takich jak `String.contains?`, `String.split` czy `String.downcase`. Warto zapoznać się z nimi, aby rozszerzyć swoje umiejętności programistyczne.
+
+## Zobacz też
+
+- Oficjalna dokumentacja Elixir: https://elixir-lang.org/docs.html
+- Poradnik dla początkujących: https://howistart.org/posts/elixir/1
+- Kursy i materiały: https://elixirschool.com/pl/

@@ -1,7 +1,9 @@
 ---
 title:                "Java recipe: Concatenating strings"
+simple_title:         "Concatenating strings"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/concatenating-strings.md"
 ---
 
@@ -9,69 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Concatenating strings in Java is a fundamental skill that every programmer should have in their arsenal. Simply put, combining multiple strings into one allows for the creation of more complex and dynamic outputs. Whether you are a beginner or seasoned developer, understanding how to concatenate strings can greatly improve your coding abilities.
+As a Java programmer, you may have come across the term "concatenating strings" in your coding journey. But why is it important to know about it? Well, string concatenation is a fundamental concept in Java and is used in many real-world applications. It is the process of combining two or more strings to form a new string. Knowing how to concatenate strings can be useful in tasks such as creating dynamic content, formatting text, and constructing URLs.
 
 ## How To
+Let's dive into the code and see how we can concatenate strings in Java. First, we need to declare two string variables that we want to combine.
 
-The syntax for concatenating strings in Java is relatively simple. First, you need to declare two or more strings that you want to combine. Let's use the example of combining a first and last name:
-
-```
-// First, we declare our two strings
-String firstName = "John";
-String lastName = "Smith";
-
-// Next, we use the "+" operator to concatenate the two strings
-String fullName = firstName + lastName;
-
-// Lastly, we can print out the result
-System.out.println(fullName); // Output: JohnSmith
+```Java
+String greeting = "Hello";
+String name = "John";
 ```
 
-As you can see, the "+" operator is used to join the two strings together. This can also be done with more than two strings, simply by adding them all together with the "+" operator.
+Next, we can use the `+` operator to concatenate the two strings and store the result in a new variable.
 
-```
-// Combining three strings
-String hello = "Hello, ";
-String firstName = "John";
-String lastName = "Smith";
-String greeting = hello + firstName + lastName;
-
-// Output: Hello, JohnSmith
+```Java
+String message = greeting + " " + name;
 ```
 
-In addition to using the "+" operator, there is another method for concatenating strings called the `concat()` method. This method allows you to join two strings together, just like the "+" operator.
+Notice that we used the `+` operator multiple times to add spaces and combine the strings. We can also concatenate strings with variables and numerical values.
 
-```
-// Using the concat() method
-String hello = "Hello, ";
-String world = "world!";
-String greeting = hello.concat(world);
-
-// Output: Hello, world!
+```Java
+String sentence = "I have " + 3 + " pets";
 ```
 
-It's important to note that the `concat()` method works a little differently when it comes to combining more than two strings. Take a look at the following example:
+The output of the above code would be "I have 3 pets". We can also use the `concat()` method of the `String` class to concatenate strings.
 
-```
-String hello = "Hello, ";
-String firstName = "John";
-String lastName = "Smith";
-
-String greeting = hello + firstName.concat(lastName);
-
-// Output: Hello, JohnSmith
+```Java
+String phrase = greeting.concat(" ").concat(name);
 ```
 
-In this case, the `concat()` method is only used on the "firstName" string, which is then combined with the "hello" string using the "+" operator.
+The output would be the same as our previous example. Keep in mind that string concatenation is not limited to only two strings, you can concatenate as many strings as needed using the `+` operator or `concat()` method.
 
 ## Deep Dive
+Now that we know how to concatenate strings, let's take a deeper dive into the concept. In Java, strings are immutable, which means they cannot be changed after being created. So, when we use the `+` operator to combine strings, a new string object is created every time. This can affect the performance of our code, especially when dealing with large amounts of data.
 
-Behind the scenes, concatenating strings in Java actually creates a new string object. Whenever you use the "+" operator or the `concat()` method, a new string is created with the concatenated result. This is because strings in Java are immutable, meaning they cannot be changed after they're created.
-
-It's also worth mentioning that there is a more efficient way to concatenate large amounts of strings - using the `StringBuilder` class. This class allows for the creation of mutable strings, meaning they can be modified after they're created. This results in better performance when dealing with a large number of string concatenations.
+To avoid this, Java introduced the `StringBuilder` and `StringBuffer` classes, which are mutable and can be used for efficient string concatenation. These classes provide methods like `append()` and `insert()` for concatenation and manipulation of strings. They are mainly used in multi-threaded environments, where the `String` class is not thread-safe.
 
 ## See Also
+For further reading on string concatenation in Java, check out these links:
 
-- [Java String documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [StringBuilder class documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html)
-- [String concatenation in Java](https://www.geeksforgeeks.org/string-concatenation-in-java/)
+- [Official Java documentation on string concatenation](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
+- [Java StringBuilder vs StringBuffer](https://www.journaldev.com/538/string-stringbuilder-stringbuffer-java)
+- [A brief history of string concatenation in Java](https://dzone.com/articles/string-concatenation-performance-issues-in-java)
+
+Happy coding!

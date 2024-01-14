@@ -1,82 +1,65 @@
 ---
 title:                "C recipe: Printing debug output"
+simple_title:         "Printing debug output"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Have you ever encountered a bug in your code and spent hours trying to figure out what went wrong? Debug output can be a lifesaver in these situations. By printing out specific variables or messages during program execution, you can gain insights into the code and identify the root cause of the bug.
+Debugging is an essential aspect of programming. It helps to identify and fix any issues or bugs in the code, ensuring the smooth functioning of a program. One popular method of debugging is by using print statements, also known as "debug output." These statements allow developers to see the values of variables and the flow of the program at different points, making it easier to track down errors. In this post, we will explore the importance of print statements and how to effectively use them for debugging in C programming.
 
-## How To 
+## How To
 
-Printing debug output in C is a simple process. You can use the `printf()` function to display the value of a variable or a message on the console. Let's take a look at a simple example:
+Using print statements for debugging is a simple yet powerful technique. The syntax for printing output in C programming is as follows:
+
+```C
+    printf("Debug output: %d, %f, %c", num, float_num, character);
+```
+
+In this example, we are using the 'printf' function to print out the values of variables 'num', 'float_num', and 'character'. The "%d", "%f", and "%c" are format specifiers used to indicate the type of value we want to print. It is crucial to ensure that the correct format specifier is used for each variable to avoid any errors.
+
+Now, let's look at an example of how we can use print statements for debugging:
 
 ```C
 #include <stdio.h>
-
 int main()
 {
-  int num1 = 10;
-  int num2 = 5;
+    int x = 5;
+    float y = 3.14;
 
-  printf("The value of num1 is %d\n", num1);
-  printf("The value of num2 is %d\n", num2);
+    printf("Value of x: %d\n", x);
+    printf("Value of y: %f\n", y);
 
-  return 0;
+    return 0;
 }
 ```
 
-Output:
+In this code snippet, we have declared two variables, 'x' and 'y', with values 5 and 3.14 respectively. By using print statements, we can print out the values of these variables to see if they are being assigned correctly.
+
+The output of the above code would be:
 
 ```
-The value of num1 is 10
-The value of num2 is 5
+Value of x: 5
+Value of y: 3.140000
 ```
 
-In the above code, we use the `%d` format specifier to print the value of the `num1` and `num2` variables. You can also use other format specifiers according to the data type of the variable, such as `%f` for floating-point numbers and `%c` for characters.
+As we can see, using print statements helps us to monitor the values of variables and track the flow of our code. It can be especially useful when dealing with complex algorithms or large codebases.
 
-Besides displaying variable values, you can also print out messages to provide additional information about the program's execution. For example:
+## Deep Dive
 
-```C
-#include <stdio.h>
+While using print statements for debugging is a handy technique, it is essential to use it wisely. Overusing print statements can make the code cluttered and difficult to read, leading to more confusion. One way to minimize the use of print statements is to use conditional statements like 'if' and 'else'. This way, print statements will only be executed if a certain condition is met, reducing unnecessary output.
 
-int main()
-{
-  int age = 25;
+Another helpful tip is to use descriptive messages in print statements. Instead of just printing out the values of variables, we can include information about the specific point in the code or the action being performed. This can provide more context and make debugging more efficient.
 
-  if(age >= 18)
-    printf("You are eligible to vote!\n");
-  else
-    printf("You are not eligible to vote yet.\n");
+Lastly, it is essential to remove all print statements before finalizing the code and pushing it to production. Leaving print statements in the final code can cause performance issues and also pose a risk of exposing sensitive information.
 
-  return 0;
-}
-```
+## See Also
 
-Output:
-
-```
-You are eligible to vote!
-```
-
-## Deep Dive 
-
-There are a few best practices to keep in mind when using debug output in your C programs. 
-
-First, it's essential to use meaningful variable names. This makes it easier to understand the output and reduces confusion. Additionally, you can use comments to explain the purpose of each `printf()` statement.
-
-Second, you can use conditional statements to control when debug output is displayed. This way, you can turn off the debug output when you no longer need it.
-
-Lastly, remember to remove all debug output statements before releasing your code. Leaving them in the final version can impact performance and lead to cluttered code.
-
-## See Also 
-
-- [Debugging Guide for C Programmers](https://www.learnc.org/c-programming/debugging)
-- [The Importance of Good Variable Naming in C](https://medium.com/swlh/the-importance-of-good-variable-naming-in-c-f58e175f6939)
-- [Tips for Debugging in C](https://barrgroup.com/embedded-systems/how-to/debugging-c-program-cortex-m)
-
-By using these techniques, you can effectively use debug output to troubleshoot your code and streamline the debugging process. Happy coding!
+- [The Importance of Debugging in Programming](https://www.computersciencedegreehub.com/5-steps-to-mastering-debugging-in-programming/)
+- [Debugging in C - Tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_program_debugging.htm)
+- [The Power of Print Statements for Debugging - Tutorial by cs50](https://www.youtube.com/watch?v=PEabYjpegFs)

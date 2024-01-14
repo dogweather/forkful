@@ -1,54 +1,68 @@
 ---
 title:                "C# recipe: Capitalizing a string"
+simple_title:         "Capitalizing a string"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Capitalize a String
-Capitalizing a string may seem like a small and insignificant task, but it is an important aspect of string manipulation in programming. By capitalizing a string, we are able to make the first letter of each word uppercase, which is necessary for proper grammar and readability. It is also often used in data validation and creating user-friendly interfaces.
+## Why
 
-## How To Capitalize a String in C#
-To capitalize a string in C#, we can use the `ToUpper()` method. This method returns a new string with all the characters converted to uppercase. Here is an example of how we can capitalize a string in C#:
+Have you ever encountered a situation where you needed to capitalize a string in your C# code? Maybe you're working on a web application and need to display a user's name in all capital letters or you're creating a console program and want to make the user's input all uppercase. Whatever the reason, knowing how to capitalize a string in C# can be a useful tool in your programming arsenal.
 
-```C#
-// Define a string
-string message = "hello world";
+## How To
 
-// Capitalize the string
-string capitalizedMessage = message.ToUpper();
-
-// Output: HELLO WORLD
-Console.WriteLine(capitalizedMessage);
-```
-
-Another approach is to use the `CultureInfo` class, which allows us to specify a culture and its language-specific capitalization rules. Here is an example using the `TextInfo.ToTitleCase` method:
+To capitalize a string in C#, you can use the built-in method `ToUpper()` which converts all lowercase characters in a string to uppercase. Let's take a look at an example:
 
 ```C#
-// Define a string
-string message = "hello world";
-
-// Use the CultureInfo class to get language-specific capitalization rules
-CultureInfo cultureInfo = CultureInfo.CurrentCulture;
-
-// Capitalize the string
-string capitalizedMessage = cultureInfo.TextInfo.ToTitleCase(message);
-
-// Output: Hello World
-Console.WriteLine(capitalizedMessage);
+string name = "john doe";
+string capitalizedName = name.ToUpper();
+Console.WriteLine(capitalizedName);
 ```
 
-## Deep Dive into Capitalizing a String
-While the `ToUpper()` and `ToTitleCase()` methods are simple and efficient ways to capitalize a string, there are other techniques that can be used as well. For instance, we can use a `StringBuilder` to change the first character of each word to uppercase. Additionally, we can create our own custom methods to handle special cases, such as acronyms or abbreviations.
+In this code, we first declare a string variable `name` with the value "john doe". Then, we use the `ToUpper()` method to convert the string to all uppercase letters and store the result in a new variable `capitalizedName`. Finally, we use the `Console.WriteLine()` method to output the capitalized name to the console.
 
-Furthermore, when dealing with large amounts of text, it is important to consider efficiency when capitalizing a string. In such cases, using `String.ToUpper()` or `CultureInfo.TextInfo.ToTitleCase()` may not be the best choice, as they create a copy of the original string. Instead, we can use `TextInfo.ChangeCase()` method for better performance.
+The console will display "JOHN DOE" as the output. 
+
+You can also use the `ToUpper()` method directly on a string without creating a new variable like this:
+
+```C#
+string name = "john doe";
+Console.WriteLine(name.ToUpper());
+```
+
+The output will be the same as before, "JOHN DOE".
+
+## Deep Dive
+
+It's important to note that the `ToUpper()` method only converts lowercase characters to uppercase. Any characters that are already uppercase or non-alphabetical characters will remain unchanged. For example:
+
+```C#
+string sentence = "Today is a sunny day!";
+Console.WriteLine(sentence.ToUpper());
+```
+
+The output will be "TODAY IS A SUNNY DAY!" because the "!" and the space between "a" and "sunny" are already non-alphabetical characters.
+
+You can also use `ToUpper()` in combination with other string methods, like `Substring()` and `IndexOf()`, to manipulate specific parts of a string. For example:
+
+```C#
+string songLyrics = "I've been staring at the edge of the water";
+int index = songLyrics.IndexOf("staring");
+Console.WriteLine(songLyrics.Substring(0, index).ToUpper() + songLyrics.Substring(index));
+```
+
+In this code, we first use the `IndexOf()` method to find the index of the word "staring" in the string. Then, we use the `Substring()` method to split the string into two parts - the first part from the beginning of the string to the index of the word "staring" and the second part from the index to the end of the string. We then use `ToUpper()` on the first part to capitalize it and combine it with the second part using the `+` operator. The output will be "I'VE BEEN STARING at the edge of the water".
 
 ## See Also
-Here are some additional resources on capitalizing a string in C#:
-- [Microsoft documentation on string manipulation](https://docs.microsoft.com/en-us/dotnet/standard/base-types/string-manipulation)
-- [CodeProject article on casing a string](https://www.codeproject.com/Articles/2129/Case-a-string-with-first-letter-of-each-word-in-cap)
-- [Tutorial on creating custom string manipulation methods](https://www.tutlane.com/tutorial/csharp/csharp-string-functions-with-examples)
 
-By utilizing these methods and techniques, we can effectively capitalize strings in C# and improve the readability and quality of our code. So the next time you come across a string that needs to be capitalized, you'll know exactly what to do. Happy coding!
+To learn more about string methods in C#, check out these resources:
+
+- [Microsoft Docs: String Methods](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0#methods)
+- [C# String Functions with Examples](https://www.guru99.com/c-sharp-string.html)
+- [C# String Manipulation](https://www.c-sharpcorner.com/blogs/string-manipulation-in-c-sharp-programming1)
+
+Happy coding!

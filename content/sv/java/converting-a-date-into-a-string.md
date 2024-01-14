@@ -1,52 +1,39 @@
 ---
-title:                "Java: Omvandling av ett datum till en sträng"
+title:                "Java: Omvandla ett datum till en sträng"
+simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-#Varför Konvertera Ett Datum Till En Sträng
+##Varför
+Att kunna konvertera datum till strängar är en vanlig uppgift i Java-programmering. Det är ett användbart verktyg för att visa datum i ett läsbart format och för att utföra olika jämförelser mellan datum.
 
-Att konvertera ett datum till en sträng är en vanlig uppgift inom programmering, och det finns flera anledningar till varför du kanske behöver göra detta. För det första kan det vara användbart när du vill visa datumet i ett läsbart format för användaren. Det kan också vara nödvändigt för att lagra datumet i en databas eller skicka det som en parameter till en annan funktion.
+##Hur man gör det
+För att konvertera ett datum till en sträng, måste vi först skapa ett objekt av typen `Date` och sedan använda Java's `SimpleDateFormat` för att definiera det önskade formatet på vår sträng. För att illustrera detta, ta en titt på följande kodexempel:
 
-##Så Här Gör Du
-
-För att konvertera ett datum till en sträng använder vi oss av klassen `SimpleDateFormat` i Java. Vi börjar med att skapa ett objekt av denna klass, och därefter använder vi metoden `format()` för att konvertera datumet till en sträng.
-
-```Java
-SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-Date date = new Date();
-String dateString = dateFormat.format(date);
+```java
+Date datum = new Date(); // skapar ett nytt datumobjekt
+SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); // definierar formatet för vår sträng
+String datumSomStrang = sdf.format(datum); // konverterar datumet till en sträng
+System.out.println(datumSomStrang); // ger utdata "27/04/2021"
 ```
 
-I det här exemplet skapar vi ett objekt av `SimpleDateFormat` som tar emot ett argument i form av ett format för datumet. Vi använder formatet "dd/MM/yyyy" för att visa datumet i formatet dag/månad/år. Sedan skapar vi ett objekt av klassen `Date`, som representerar dagens datum och tid. Slutligen använder vi `format()`-metoden för att konvertera datumet till en sträng.
+Som du kan se i exemplet ovan, så behöver vi först definiera ett format för vår sträng genom att använda `SimpleDateFormat`. I detta fall har vi valt att visa datumet i formatet dag/månad/år, men du kan välja vilket format som helst baserat på dina behov. Sedan använder vi metoden `format()` för att konvertera vårt datumobjekt till en sträng. Slutligen skriver vi ut strängen till konsolen med `System.out.println()`.
 
-Output:
-```11/05/2021```
+Det är också värt att nämna att Java har inbyggda metoder för att konvertera datum till andra vanliga format, som `toString()` för att konvertera till sträng i standardformat eller `getTime()` för att konvertera till antalet millisekunder sedan Januari 1, 1970.
 
-##Djupare Förklaring
+##Djupdykning
+För mer avancerade behov, som att konvertera datum från en tidszon till en annan eller inkludera tidskomponenter som timmar och minuter, kan du behöva använda andra verktyg som `Calendar` och `TimeZone` i kombination med `SimpleDateFormat`. Du kan också läsa mer om olika formatteringsalternativ i Java's dokumentation för `SimpleDateFormat`.
 
-Det finns flera olika format som kan användas när man vill konvertera ett datum till en sträng. Här är några exempel:
+Ytterligare en viktig sak att tänka på är att hantera eventuella fel som kan uppstå under konverteringen. Till exempel kan ett ogiltigt datum orsaka en `ParseException`. Det är alltid bra att lägga till lämplig felhantering i din kod för att undvika problem.
 
-- `dd/MM/yyyy`: dag/månad/år (ex. 11/05/2021)
-- `MM/dd/yyyy`: månad/dag/år (ex. 05/11/2021)
-- `yyyy-MM-dd`: år/månad/dag (ex. 2021-05-11)
-- `EEE, MMM dd yyyy`: veckodag, månad, dag, år (ex. Tues, May 11 2021)
-
-Tillgängliga format är dock beroende på vilka locale inställningar som är satta i ditt program. Du kan också använda `SimpleDateFormat`-klassen för att konvertera en sträng tillbaka till ett datumobjekt med hjälp av `parse()`-metoden.
-
-##Se Även
-
-För mer information om `SimpleDateFormat` kan du besöka dessa länkar:
-- [Java Dokumentation - SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [W3Schools - SimpleDateFormat](https://www.w3schools.com/java/java_date_formats.asp)
-- [Baeldung - Java Date and Time API](https://www.baeldung.com/java-date-time-api)
-
-#Se Även
-
-För mer information om Java programmering och andra användbara tips och tricks, besök dessa länkar:
-- [Java Developer - Java Programmering](https://www.javadeveloper.nu/java-programmering/)
-- [TutorialsPoint - Java Tutorial](https://www.tutorialspoint.com/java/index.htm)
-- [GeeksforGeeks - Java Programming Language](https://www.geeksforgeeks.org/java/)
+##Se också
+- [Java's Date-klass](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+- [Java's SimpleDateFormat-klass](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+- [Format-strängar för SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html#dateformat) (på engelska)
+- [Java's TimeZone-klass](https://docs.oracle.com/javase/8/docs/api/java/util/TimeZone.html)
+- [Java's Calendar-klass](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)

@@ -1,51 +1,49 @@
 ---
 title:                "Elm: 编写文本文件"
+simple_title:         "编写文本文件"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
-为什么要写一个文本文件？作为一名Elm编程人员，你可能已经知道了答案。但是让我们仍然探索一下这个问题。文本文件可以存储并传输数据，从而使得程序的交互更加方便快捷。举个例子，你可以将一个文本文件作为输入，然后让程序对其进行分析并输出结果。通过使用文本文件，我们可以将数据和程序分离开来，从而使得程序更具可读性和可维护性。
+# 为什么要编写文本文件？
 
-# 如何
-首先，我们需要导入Elm的Text模块： 
-```Elm 
-import Text 
+在编程世界中，文本文件是很重要的一部分。它们可以用来存储和传输数据，也可以用来记录代码和注释。因此，知道如何编写文本文件是很有价值的技能，可以帮助你更有效地处理数据和代码。
 
--- 这里可以写下你的代码 
+# 如何进行文本文件编写？
+
+要在Elm中编写文本文件，你需要使用一个叫做`Text`的模块。首先，你需要导入该模块，如下所示：
+
+```
+import Text
 ```
 
-接着，我们可以使用Text模块中的`fromString`函数来创建一个文本文件对象。例如，我们可以创建一个包含"Hello World"文本的对象： 
-```Elm 
-textFile = Text.fromString "Hello World" 
-``` 
+然后，你可以使用`Text.write`函数来创建文本文件，如下所示：
 
-我们也可以使用`append`函数来在已有的文本文件对象上添加新的文本，例如： 
-```Elm 
-newTextFile = Text.append textFile "This is a new line" 
-``` 
-最后，我们可以使用`toString`函数来将文本文件对象转换为字符串，并将其写入到一个文本文件中： 
-```Elm 
-Text.toString newTextFile -- 将文本文件转换为字符串 
-|> File.write "myTextFile.txt" -- 写入到名为"myTextFile.txt"的文本文件中 
-``` 
+```
+Text.write "myFile.txt" "Hello World!"
+```
 
-# 深入探究
-当我们使用`toString`函数来将文本文件对象转换为字符串时，其实是将文本文件对象转换为JSON格式（JavaScript Object Notation，即JavaScript对象表示法）。这意味着我们也可以使用`toValue`函数将文本文件对象转换为JSON的值。例如，我们可以将一个包含姓名和年龄的文本文件对象转换为JSON对象： 
-```Elm 
-person = Text.fromString "John, 25" -- 创建文本文件对象 
-|> Text.split "," -- 使用逗号将文本文件对象分割为姓名和年龄 
-|> List.map Text.trim -- 去除每个元素两侧的空格 
-|> List.map Text.toValue -- 将每个元素转换为JSON的值 
-|> Object.fromList -- 使用JSON的键-值对来创建对象 
+这段代码将会创建一个名为`myFile.txt`的文本文件，并在其中写入`Hello World!`这段文本。你也可以使用变量来替代文本内容，如下所示：
 
--- 结果为 { "name": "John", "age": 25 } 
-``` 
+```
+let
+    name = "Elm"
+    message = "Welcome to " ++ name
+in 
+    Text.write "myFile.txt" message
+```
 
-# 查看也许有用的其他链接
-- [Elm语言官方网站](https://elm-lang.org/ "Elm语言官方网站") 
-- [Elm语言文档](https://elm-lang.org/docs "Elm语言文档") 
-- [使用Elm语言写一个简单的文本编辑器](https://www.sitepoint.com/building-a-simple-text-editor-with-elm/ "使用Elm语言写一个简单的文本编辑器")
+在上面的例子中，`message`将会被写入文本文件中，它的值为`Welcome to Elm`。
+
+# 深入了解文本文件的编写
+
+创建文本文件时，注意要指定文件的名称和内容，以及正确的语法。你也可以使用`Text.append`函数在已有的文本文件中添加新的内容，以及使用`Text.toUpper`函数将所有文本转换为大写字母。同时，你可以使用`Text.fromHtml`函数将HTML内容转换为文本，并使用`Text.toHtml`将文本转换为HTML格式。
+
+# 参考链接
+
+- Elm官方文档：https://guide.elm-lang.org/architecture/text_files.html
+- Elm官方文本模块文档：https://package.elm-lang.org/packages/elm-lang/text/latest/Text

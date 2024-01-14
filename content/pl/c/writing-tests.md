@@ -1,86 +1,54 @@
 ---
 title:                "C: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto pisać testy w języku C?
+## Dlaczego pisanie testów jest ważne dla C-programistów?
 
-Testowanie kodu jest nieodłączną częścią procesu tworzenia oprogramowania. To sprawdzony i niezawodny sposób na zapewnienie, że nasza aplikacja działa poprawnie i nie zawiera błędów. W języku C, gdzie wydajność i niezawodność są kluczowe, pisanie testów jest niezwykle ważne.
+Pisanie kodu to jedno, ale pisząc go, trzeba także zadbać o jego jakość. Testy są nieodłącznym elementem rozwoju oprogramowania w języku C. Pomagają weryfikować poprawność działania kodu oraz wykrywać potencjalne błędy. W tym blogu opowiemy o tym, dlaczego pisanie testów jest ważne dla każdego programisty i jak to zrobić w praktyce.
 
 ## Jak pisać testy w języku C?
 
-Testowanie w języku C może wydawać się skomplikowane i czasochłonne, ale dzięki kilku prostym krokom możemy uprościć ten proces. Przykładowy kod oraz wynik działania możemy zobaczyć poniżej:
-
+Pisanie testów w języku C jest całkiem proste, jeśli tylko znamy podstawowe zasady. Poniżej przedstawimy przykładowy kod oraz wynik jego działania w formie bloków kodu "```C ... ```".
 ```C
 #include <stdio.h>
-#include <stdbool.h>
 
-// Funkcja, którą będziemy testować
-bool is_even(int num) {
-  if (num % 2 == 0) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-// Funkcja do testowania, zwraca true jeśli testy zostaną zaliczone
-bool test_is_even() {
-  // Test dla parzystej liczby
-  int num = 4;
-  bool result = is_even(num);
-  if (result == true) {
-    printf("Zaliczone - %d jest liczbą parzystą \n", num);
-  } else {
-    printf("Nie zaliczone - %d powinno być liczbą parzystą \n", num);
-    return false;
-  }
-  
-  // Test dla nieparzystej liczby
-  num = 5;
-  result = is_even(num);
-   if (result == true) {
-    printf("Nie zaliczone - %d powinno być liczbą nieparzystą \n", num);
-    return false;
-  } else {
-    printf("Zaliczone - %d jest liczbą nieparzystą \n", num);
-  }
-  return true;
+// Funkcja obliczająca silnię
+int factorial(int n) {
+    // Podstawowy warunek końcowy
+    if (n == 0) {
+        return 1;
+    }
+    // Rekurencyjne wywołanie funkcji
+    else {
+        return n * factorial(n - 1);
+    }
 }
 
 int main() {
-  // Wywołanie funkcji testującej oraz sprawdzenie wyniku
-  bool result = test_is_even();
-  if (result == true) {
-    printf("Wszystkie testy zaliczone, kod jest poprawny!");
-  } else {
-    printf("Niektóre z testów nie zostały zaliczone, sprawdź kod jeszcze raz.");
-  }
-  return 0;
+    // Sprawdzenie działania funkcji
+    int result = factorial(5);
+    printf("%d", result);
+    
+    return 0;
 }
-
 ```
 
-**Wynik działania:**
+Wynik działania powyższego kodu to liczba 120, co jest poprawnym wynikiem dla silni 5. Przykład ten pokazuje, jak używać testów do weryfikacji poprawności działania funkcji.
 
-```
-Zaliczone - 4 jest liczbą parzystą 
-Nie zaliczone - 5 powinno być liczbą nieparzystą 
-Wszystkie testy zaliczone, kod jest poprawny!
-```
+## Głębszy wgląd w pisanie testów
 
-W powyższym przykładzie zawsze możemy być pewni, że nasza funkcja `is_even` działa poprawnie dzięki zastosowaniu testów. W ciągu kilku sekund możemy przetestować różne przypadki i znaleźć i naprawić błędy, zanim nasz kod trafi do produkcji.
+Testy powinny być pisane już na etapie tworzenia kodu, a nie dopiero po jego ukończeniu. W ten sposób łatwiej jest wyłapać błędy i poprawić je na bieżąco. Ważne jest również, aby pisać różnego rodzaju testy, takie jak jednostkowe, integracyjne czy regresyjne. Dzięki nim można mieć większą pewność, że kod działa poprawnie. Należy także pamiętać o tworzeniu testów na wszystkie warunki brzegowe i przypadki wyjątkowe.
 
-## Głębsza analiza pisania testów w języku C
+## Zobacz także
 
-Testowanie w języku C może być wyzwaniem ze względu na brak wbudowanych funkcji do testowania, jakie posiadają niektóre inne języki programowania. Jednak dzięki użyciu biblioteki, takiej jak [Unity](https://github.com/ThrowTheSwitch/Unity), możemy naśladować funkcjonalność testów jednostkowych znanych z innych języków.
-
-Istnieją również inne metody testowania w języku C, takie jak testowanie wydajności lub używanie debuggera do ręcznego sprawdzania kodu. Warto również pamiętać o pisaniu testów jednostkowych w trakcie tworzenia kodu, a nie na końcu projektu, aby uniknąć problemów związanych z modyfikacją już istniejącego kodu.
-
-# Zobacz również
-- [Biblioteka Unity do testowania w języku C](https://github.com/ThrowTheSwitch/Unity)
-- [Przykładowy artykuł o testowaniu kodu w języku C](https://www.
+- [Krótka opowieść o testowaniu w C](https://blog.founders.futuremind.com/testowanie-w-c-41d9de041002)
+- [Testy jednostkowe w języku C – po co i jak?](https://www.samouczekprogramisty.pl/testy-jednostkowe-w-jezyku-c-po-co-i-jak/)
+- [Test-Driven Development w języku C](https://developer.ibm.com/articles/j-c-testdriven/)
+- [Testowanie pod kątem obciążenia w języku C](https://pcsalt.com/c-programming/perform-load-test-c-programs/)

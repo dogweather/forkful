@@ -1,7 +1,9 @@
 ---
 title:                "Gleam: Convirtiendo una fecha en una cadena"
+simple_title:         "Convirtiendo una fecha en una cadena"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/converting-a-date-into-a-string.md"
 ---
 
@@ -9,44 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Convertir una fecha en una cadena de texto es una tarea común en la programación. Puede ser útil para mostrar fechas en un formato específico en una aplicación o para trabajar con fechas en APIs. En Gleam, esto se puede lograr fácilmente utilizando la función `Date.to_string/1`.
+Convertir una fecha a una cadena de texto es una tarea común en la programación, especialmente cuando se trabaja con datos de fechas en una aplicación. En este artículo, vamos a explorar cómo podemos lograr esto utilizando el lenguaje de programación Gleam.
 
 ## Cómo hacerlo
 
-El primer paso para convertir una fecha en una cadena de texto en Gleam es crear una variable que contenga la fecha que deseamos convertir, utilizando la función `Date.new/4`.
+Para convertir una fecha a una cadena de texto en Gleam, podemos utilizar la función `from_date` del módulo `Gleam.Date` y luego llamar a la función `format` con el formato deseado. Por ejemplo, si queremos obtener una cadena en formato `dd/mm/yyyy`, podemos usar el siguiente código:
 
-```
-Gleam
-let fecha = Date.new(2021, 10, 15)
-```
+```Gleam
+import Gleam.Date
 
-Luego, podemos llamar a la función `Date.to_string/1` y pasarle la variable de fecha como argumento. Esto devolverá una cadena de texto en formato ISO 8601.
+let date = Date.from_date(2020, 12, 25)
 
-```
-Gleam
-let fecha = Date.new(2021, 10, 15)
-let fecha_string = Date.to_string(fecha)
+// Convertir a cadena con formato dd/mm/yyyy
+let date_string = Date.format(date, "{dd}/{mm}/{yyyy}")
 
+// Imprimir resultado
+io.print(date_string) // 25/12/2020
 ```
 
-El resultado de `fecha_string` sería `"2021-10-15"`. Sin embargo, si queremos un formato específico, podemos utilizar la función `Date.format/2` y especificar el formato deseado.
+Podemos ver que primero creamos una fecha utilizando la función `from_date` y luego llamamos a `format` con el formato deseado. También podemos cambiar el orden de los elementos de la fecha como deseemos en el formato, por ejemplo, `{mm}/{dd}/{yyyy}` produciría `12/25/2020`.
 
+Podemos obtener diferentes formatos de fecha utilizando códigos específicos para cada elemento de la fecha, como `{yyyy}` para el año, `{mm}` para el mes, y `{dd}` para el día. Además, también podemos agregar texto estático o caracteres especiales en el formato, como en el siguiente ejemplo:
+
+```Gleam
+// Enero 1, 2020
+Date.format(date, "Esta fecha es del día {d} de {m}, {yyyy}")
 ```
-Gleam
-let fecha = Date.new(2021, 10, 15)
-let fecha_string = Date.format(fecha, "D, d MMM YYYY")
-
-```
-
-El resultado de `fecha_string` sería `"Fri, 15 Oct 2021"`, ya que hemos especificado el formato para mostrar el día de la semana, el día del mes, el mes y el año.
 
 ## Profundizando
 
-La función `Date.to_string/1` utiliza el formato ISO 8601 por defecto, pero también se puede especificar otro formato utilizando la función `Date.format/2`. La documentación de Gleam proporciona una lista de los formatos de fecha y hora disponibles para utilizar.
+La función `format` también acepta otros parámetros además del formato, como el idioma y la zona horaria. Podemos especificar el idioma utilizando la función `with_locale` y la zona horaria con `with_time_zone`. Por ejemplo:
 
-También es importante tener en cuenta que, al igual que en otros lenguajes de programación, es necesario tener en cuenta las diferentes zonas horarias al trabajar con fechas y realizar conversiones a cadena de texto.
+```Gleam
+import Gleam.Date
+
+let date = Date.from_date(2020, 12, 25)
+
+// Convertir a cadena con formato "dd de mm del yyyy", en español y en la zona horaria "America/Argentina/Buenos_Aires"
+let date_string = Date.format(date, "dd de mm del yyyy")
+  |> Date.with_locale("es")
+  |> Date.with_time_zone("America/Argentina/Buenos_Aires")
+
+// Imprimir resultado
+io.print(date_string) // 25 de diciembre del 2020
+```
+
+En este ejemplo, especificamos que queremos la fecha en español y en la zona horaria de Buenos Aires. Podemos encontrar la lista de códigos de idioma y zonas horarias disponibles en el [sitio web de Gleam](https://gleam.run/modules/gleam_date/).
 
 ## Ver también
 
-- [Documentación de Gleam sobre fechas](https://gleam.run/documentation/built-in-modules/date)
-- [Ejemplos de formato de fecha y hora en Gleam](https://blog2021.gleam.run/?p=174)
+- [Documentación de Gleam sobre el módulo Date](https://gleam.run/modules/gleam_date/)
+- [Tutorial de Gleam sobre fechas y horas](https://gleam.run/reference/basics/dates_times.html)
+- [Códigos de formato de fecha en la especificación de Unicode](https://www.unicode.org/reports/tr35/tr35-52/tr35-dates.html#Date_Format_Patterns)

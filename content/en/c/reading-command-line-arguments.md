@@ -1,7 +1,9 @@
 ---
 title:                "C recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/reading-command-line-arguments.md"
 ---
 
@@ -9,59 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Reading command line arguments is an important aspect of C programming, especially for those who want to create command line tools or programs that require user input. By learning how to read command line arguments, you can enhance the functionality of your programs and make them more user-friendly.
+Command line arguments are a fundamental aspect of programming in the C language. They allow users to pass parameters to a program at runtime, providing a versatile and efficient way to interact with the program. As a C programmer, it is essential to understand how to read and process command line arguments to create robust and user-friendly programs.
 
 ## How To
 
-To read command line arguments in C, you will need to use the main() function, which is the starting point of any C program. The main() function takes two parameters, argc and argv, which stand for argument count and argument vector respectively.
+To read command line arguments in C, we use the **argc** and **argv** parameters in the **main** function. **argc** stands for "argument count" and represents the number of command line arguments passed to the program. **argv** stands for "argument vector" and is an array of strings that contains the actual command line arguments.
 
-```C
-int main(int argc, char *argv[])
-```
-
-The argc parameter holds the number of arguments passed to the program from the command line, including the program name itself. The argv parameter is an array of strings that contains the actual arguments passed to the program.
-
-Let's take a look at a simple example:
+Let's look at an example of a simple program that takes in two command line arguments and displays them on the screen:
 
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    for(int i=0; i<argc; i++) {
-        printf("Argument %d: %s\n", i, argv[i]);
-    }
-    return 0;
+	// Check if two arguments are passed
+	if (argc == 3) {
+		// Display the first argument
+		printf("First argument: %s\n", argv[1]);
+		// Display the second argument
+		printf("Second argument: %s\n", argv[2]);
+	}
+	else {
+		// Display an error message
+		printf("Invalid number of arguments. Please provide two arguments.\n");
+	}
+
+	return 0;
 }
 ```
 
-In this example, we use a for loop to iterate through the arguments and print them out with the corresponding index number. The output will be:
+**Sample output:**
 
 ```
-./program_name
-Argument 0: ./program_name
+$ ./program arg1 arg2
+First argument: arg1
+Second argument: arg2
 ```
 
-If we run the program with additional arguments, such as `./program_name hello world`, the output will be:
-
-```
-./program_name hello world
-Argument 0: ./program_name
-Argument 1: hello
-Argument 2: world
-```
-
-You can also use command line arguments to pass data into your program. For example, if you want to read a file name from the command line, you can use `argv[1]` to access the first argument after the program name. Note that the arguments passed to the command line are always treated as strings, so you may need to convert them to the appropriate data type if necessary.
+In the above example, we use the **argc** parameter to check if the user has provided the correct number of arguments. If so, we use **argv** to access the individual arguments and display them on the screen. It is essential to note that **argv[0]** will always contain the name of the program itself.
 
 ## Deep Dive
 
-In addition to the argc and argv parameters, the main() function can also take a third parameter, envp, which represents the program's environment variables. These variables can be used to pass additional information from the command line to the program.
+When working with command line arguments, it is crucial to consider potential errors and unexpected input from the user. For example, what if the user provides more or fewer arguments than expected? It is the programmer's responsibility to handle such scenarios gracefully.
 
-It's important to note that the order of the arguments and environment variables may vary depending on the operating system. For example, on Windows systems, the arguments are separated by spaces, while on Unix systems, they are separated by spaces or tabs.
+One way to handle errors is to use conditional statements, as shown in the above example. However, there are other techniques such as using loops and the **strcmp()** function to compare strings. It is also possible to convert strings to numerical values using functions like **atoi()** and **atof()**.
 
-There are also libraries, such as `getopt` and `argp`, that provide more advanced options for parsing command line arguments. These libraries can handle different argument formats and provide features like error handling and help messages.
+Additionally, it is worth noting that the position and order of the command line arguments matter. For instance, if we swap the arguments in the above example, the output will also change. It is essential to consider these nuances when designing a program that relies on command line arguments.
 
 ## See Also
 
-- [C Programming Tutorial - Command Line Arguments](https://www.programiz.com/c-programming/c-command-line-arguments)
-- [The Linux Command Line: Arguments](https://linuxcommand.org/lc3_lts0080.php)
-- [C Standard Library - Environment Variables](https://en.cppreference.com/w/c/program/argv)
+- [Command Line Arguments in C Programming](https://www.programiz.com/c-programming/c-command-line-arguments)
+- [Using Command-Line Arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [C - Command Line Arguments](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)

@@ -1,45 +1,71 @@
 ---
-title:                "Go: Alimerkkijonojen erottaminen"
+title:                "Go: Alirivien erottelu"
+simple_title:         "Alirivien erottelu"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Joskus koodin luvattaminen tai analysointi vaatii tiettyjen merkkijonojen erottamista suuremmasta tekstikokonaisuudesta. Tämä voidaan tehdä luomalla osatekijäkohtia tai tekstipaloja, ja tämä prosessi tunnetaan substraktioina.
+Miksi haluaisit siis erottaa alimerkkijonoja Go-ohjelmoinnissa? Yksinkertaisesti sanottuna, alimerkkijonien erottaminen antaa sinulle mahdollisuuden käsitellä tiettyjä osia merkkijonoista erikseen. Tämän avulla voit suorittaa monimutkaisempia toimintoja ja muokata merkkijonoja haluamasi mukaisesti.
 
-## Miten tehdä?
-
-Käytännössä Go-kielellä substraktiot voidaan tehdä käyttämällä `strings`-pakettia ja sen `Substring`-toimintoa. Seuraavassa esimerkissä otetaan syötteenä olevasta tekstistä osatekijät aikavälillä 0-5 ja tulostetaan ne näytölle.
+## Miten
 
 ```Go
 package main
 
-import (
-    "fmt"
-    "strings"
-)
+import "fmt"
 
 func main() {
-    text := "Tässä on esimerkkiteksti"
-    substr := text[0:5] // otetaan osatekijät
-
-    fmt.Println(substr) // tulostetaan "Tässä"
+  s := "Tämä on esimerkki merkkijonosta"
+  
+  // Erota alimerkkijono tietystä indeksistä alkaen
+  fmt.Println(s[5:]) // tulostaa "on esimerkki merkkijonosta"
+  
+  // Erota alimerkkijono tiettyjen indeksien välillä
+  fmt.Println(s[5:9]) // tulostaa "on e"
+  
+  // Erota alimerkkijono tietystä indeksistä alkaen ja enintään tiettyyn indeksiin asti
+  fmt.Println(s[:7]) // tulostaa "Tämä on"
 }
 ```
 
-Tämä toiminto on erityisen hyödyllinen, jos haluat esimerkiksi tarkistaa, onko tietyllä merkkijonolla tietyn alku tai loppu.
+Yllä oleva koodi näyttää, kuinka voit käyttää sisäänrakennettuja indeksointiominaisuuksia erottaaksesi alimerkkijonoja merkkijonosta. Muista, että merkkijonon indeksit alkavat nollasta.
 
-## Syvällisempi sukellus
+## Syvällinen sukellus
 
-Go-kielessä `Substring`-toimintoa voidaan käyttää myös monimutkaisempiin substraktiioihin. Voit esimerkiksi määrittää muuttujan, joka sisältää haluamasi alun ja lopun indeksit, ja käyttää näitä arvoja `Substring`-toiminnossa.
+Alimerkkijonien erottaminen voi olla erittäin hyödyllistä esimerkiksi, kun käsittelet käyttäjän antamia tekstisyötteitä. Jos haluat esimerkiksi tarkistaa, sisältääkö käyttäjän antama sähköpostiosoite @-merkin, voit erottaa osan merkkijonosta @-merkkiin asti ja tarkistaa, onko siinä oikea muoto.
 
-On myös mahdollista käyttää `Substring` yhdistettynä muihin `strings`-paketin toimintoihin, kuten `IndexOf`, jotta voit löytää halutun merkkijonon tietyssä osassa tekstiä.
+```Go
+package main
+
+import "fmt"
+
+func main() {
+  var email string
+  
+  fmt.Print("Syötä sähköpostiosoite: ")
+  fmt.Scan(&email)
+  
+  // Erota alimerkkijono ensimmäisen @-merkin kohdalta
+  username := email[:strings.Index(email, "@")]
+  
+  // Tarkista käyttäjänimi
+  if username != "" {
+    fmt.Println("Sähköpostiosoite on oikeassa muodossa!")
+  } else {
+    fmt.Println("Sähköpostiosoite on virheellinen!")
+  }
+}
+```
+
+Huomaa, että tässä käytettiin myös `strings` -paketin `Index` -funktiota, joka palauttaa ensimmäisen esiintymän indeksin merkkijonossa. Voit myös käyttää muita Go:n sisäänrakennettuja merkkijonojen käsittelyfunktioita, kuten `Contains` ja `Replace`, joiden avulla voit tehdä monimutkaisempia alimerkkijonien erottamiseen liittyviä toimintoja.
 
 ## Katso myös
 
-- `strings`-paketti Go-kielessä: https://golang.org/pkg/strings/
-- Video selitys Go:sta ja substringien käytöstä: https://www.youtube.com/watch?v=_P9LzCvC-mM
+- [Go:n merkkijonojen käsittely](https://gobyexample.com/strings)
+- [Go:n sisäänrakennetut merkkijonojen käsittelytoiminnot](https://golang.org/pkg/strings/)

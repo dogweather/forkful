@@ -1,85 +1,52 @@
 ---
-title:                "Bash: Szukanie długości ciągu znaków"
+title:                "Bash: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego 
+## Dlaczego
 
-W programowaniu Bash, często musimy operować na ciągach tekstu. W niektórych przypadkach, potrzebujemy również poznać długość tych ciągów. W tym artykule dowiesz się, dlaczego znajdowanie długości ciągów jest ważnym aspektem programowania Bash.
+Programowanie w Bashu jest bardzo popularne wśród programistów i administratorów systemów. Jednym z podstawowych zadań w Bashu jest manipulacja ciągami znaków, a znajomość długości tych ciągów jest niezbędna do wykonywania różnych operacji. W tym artykule dowiesz się, jak znaleźć długość ciągu znaków w Bashu, a także dlaczego jest to ważne.
 
 ## Jak to zrobić
 
-Aby znaleźć długość jednego ciągu tekstu w Bash, możemy skorzystać z wbudowanej funkcji `length`. Spójrz na poniższy przykład:
-
-```Bash
-string="To jest przykładowy ciąg tekstu"
-echo "Długość ciągu to: ${#string}"
-```
-
-Powinniśmy otrzymać następujący wynik:
+Aby znaleźć długość ciągu znaków w Bashu, możesz użyć wbudowanego polecenia ```len```. Przyjmie ono jeden argument - ciąg znaków - i zwróci jego długość. Instrukcja wygląda następująco:
 
 ```
-Długość ciągu to: 29
+len="To jest przykładowy ciąg znaków"
+echo ${#len}
 ```
 
-W powyższym przykładzie użyliśmy operatora `#` przed nazwą zmiennej, aby wyświetlić jej długość. Funkcja `length` jest równoznaczna z użyciem tego operatora.
+Wyjście z tego polecenia będzie wynosić 29, ponieważ to jest długość całego ciągu znaków.
 
-Możemy również znaleźć długość wielu ciągów tekstu jednocześnie. Należy jednak pamiętać, aby oddzielać każdy ciąg spacją. Przykładowo:
-
-```Bash
-ciąg1="To jest pierwszy ciąg"
-ciąg2="A to drugi ciąg"
-ciąg3="I to ostatni ciąg"
-echo "Długość wszystkich ciągów to: ${#ciąg1} ${#ciąg2} ${#ciąg3}"
-```
-
-Spodziewany wynik:
+Możesz również wykorzystać to polecenie w celu znalezienia długości ciągu znajdującego się w zmiennej. Na przykład:
 
 ```
-Długość wszystkich ciągów to: 21 17 19
+name="Kasia"
+echo ${#name}
 ```
 
-## Dogłębna Analiza
+Wyjście wyniesie 5, co oznacza długość ciągu "Kasia".
 
-Podczas znalezienia długości ciągów tekstu, warto zwrócić uwagę na kilka istotnych szczegółów. Po pierwsze, funkcja `length` zwraca również długość spacji. Jeśli więc chcemy wykluczyć spacje z obliczeń, musimy użyć funkcji `echo` z opcją `-n`:
+Pamiętaj, że to polecenie zwraca długość ciągu znaków, a nie indeks ostatniego znaku. Przykładowo, jeśli masz ciąg znaków "Hello World", długość wyniesie 11, a nie 10 (ponieważ polecenie zlicza też spację).
 
-```Bash
-ciąg="To jest ciąg złożony z kilku wyrazów"
-echo -n "Długość ciągu bez spacji: ${#ciąg}"
-```
+## Deep Dive
 
-Wynik:
+Podczas przetwarzania danych w Bashu, często będziesz musiał określać długość ciągu znaków w celu wykonania odpowiednich operacji. Jednym z przykładów jest walidacja danych wprowadzonych przez użytkownika - jeśli wprowadzony ciąg jest za krótki lub za długi, możesz wyświetlić odpowiedni komunikat.
 
-```
-Długość ciągu bez spacji: 28
-```
+Możesz również wykorzystać długość ciągu do wyciągania konkretnej części z tekstu. Na przykład, jeśli masz listę nazwisk w formacie "Nazwisko, Imię", możesz użyć długości ciągu i poleceń takich jak ```cut``` lub ```awk``` do wyciągnięcia tylko imienia lub nazwiska.
 
-Kolejną ważną rzeczą do zapamiętania jest to, że funkcja `length` działa tylko na jedno-wymiarowych ciągach. Nie zadziała np. na tablicy lub wielowymiarowej zmiennej. W takim przypadku, musimy najpierw wyciągnąć odpowiednią część zmiennej, a następnie użyć funkcji `length`. Przykładowo:
+Warto także pamiętać, że Bash oferuje inne przydatne polecenia do manipulacji ciągami znaków, takie jak ```substr``` czy ```expr```. Warto zapoznać się z nimi i wybrać odpowiednie narzędzie do danego problemu.
 
-```Bash
-tablica=(element1 element2 element3)
-echo "Liczba elementów w tablicy: ${#tablica[@]}"
+## Zobacz też
 
-tablica_2d=( [0]="a" [1]="b" [2]="c" [3]="d" )
-echo "Liczba elementów: ${#tablica_2d[@]}" # Błędna wartość!
+* [Intro to Bash Strings](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-5.html)
+* [String Manipulation in Bash](https://linuxconfig.org/string-manipulation-in-bash)
+* [Bash String Manipulation Examples](https://linuxhint.com/bash-string-manipulation-examples/)
 
-echo "Liczba elementów w pierwszym wierszu: ${#tablica_2d[0]}" # Odpowiednia wartość
-```
-
-Spodziewane wyniki:
-
-```
-Liczba elementów w tablicy: 3
-Liczba elementów: 1 # Błędna wartość, bo liczy tylko pierwszy indeks (0)
-Liczba elementów w pierwszym wierszu: 4 # Odpowiednia wartość
-```
-
-## Zobacz też 
-
-- [Dokumentacja Bash o długości ciągów](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
-- [Tutorial o zmiennej w Bash](https://linuxize.com/post/bash-variable-expansion/)
-- [Wideo o wykorzystaniu funkcji `length`](https://www.youtube.com/watch?v=RUrooC3_P6
+Dzięki temu artykułowi powinieneś/-aś mieć już wyraźniejszy obraz tego, jak znaleźć długość ciągu znaków w Bashu i dlaczego jest to przydatne. Pamiętaj, że ciągi znaków są podstawowymi elementami w wielu programach i warto zapoznać się z różnymi metodami ich przetwarzania.

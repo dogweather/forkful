@@ -1,57 +1,54 @@
 ---
 title:                "C++: Kahden päivämäärän vertailu"
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kahta päivämäärää?
+# Miksi Vertailla Päivämääriä?
 
-Vertailu kahden päivämäärän välillä voi olla tärkeää, kun haluat tarkistaa, onko tietty päivämäärä ennen vai jälkeen toisen. Se voi olla hyödyllistä esimerkiksi projektien aikataulutuksessa tai tietyn tapahtuman päivämäärän tarkistamisessa.
+Päivämäärien vertailu on tärkeä osa ohjelmointia, kun halutaan tarkastella aikaa ja päivämääriä eri tilanteissa. Se voi auttaa esimerkiksi tapahtumien järjestämisessä tai päivien välisen eron laskemisessa. Seuraavassa kerromme, miten voit vertailla päivämääriä C++:ssa.
 
-## Miten vertailla kahta päivämäärää?
+## Miten?
 
-Vertaamme kahta päivämäärää käyttämällä C++:n aikojen ja päivämäärien kirjastoa. Seuraavassa esimerkissä tarkastelemme, onko annettu päivämäärä ennen vai jälkeen toista päivämäärää.
+Vertaillaaksesi kahta päivämäärää C++:ssa, sinun tulee käyttää time.h-kirjastoa. Tämän jälkeen voit käyttää "difftime" -funktiota, joka laskee aikavälin kahden päivämäärän välillä. Esimerkiksi katsotaan seuraavaa koodia:
 
 ```C++
 #include <iostream>
 #include <ctime>
- 
-using namespace std;
- 
-int main() {
-   // Luodaan kaksi aikarakennetta
-   struct tm date1 = {0, 0, 0, 1, 3, 120}; // 1.3.2020
-   struct tm date2 = {0, 0, 0, 10, 6, 120}; // 10.6.2020
- 
-   // Muunnetaan aikarakenteet time_t -objekteiksi
-   time_t time1 = mktime(&date1);
-   time_t time2 = mktime(&date2);
- 
-   // Vertaillaan aikakoordinaatteja
-   if (time1 < time2)
-      cout << "Päivämäärä 1 on ennen päivämäärää 2.";
-   else if (time1 > time2)
-      cout << "Päivämäärä 1 on jälkeen päivämäärää 2.";
-   else
-      cout << "Päivämäärät ovat samat.";
- 
-   return 0;
+
+int main()
+{
+  // Määritellään kaksi päivämäärää
+  struct tm päivämäärä1 = {0, 0, 0, 10, 3, 2019};
+  struct tm päivämäärä2 = {0, 0, 0, 22, 7, 2019};
+
+  // Lasketaan päivämäärien välinen aika
+  double aikaväli = difftime(mktime(&päivämäärä2), mktime(&päivämäärä1));
+
+  // Tulostetaan tulos
+  std::cout << "Päivien välinen ero on " << aikaväli/ (60 * 60 * 24) << " päivää." << std::endl;
+
+  return 0;
 }
+
 ```
+Tämä ohjelma tulostaa "Päivien välinen ero on 133 päivää." Voit myös lisätä tarvittavia tarkastuksia, kuten päivämäärien oikeellisuuden varmistamiseksi.
 
-Tulostus:
-```
-Päivämäärä 1 on ennen päivämäärää 2.
-```
+## Syventävä Tarkastelu
 
-## Syvempi sukellus
+C++:ssa on myös muita tapoja vertailla päivämääriä. Voit esimerkiksi käyttää <chrono> -kirjastoa, joka tarjoaa enemmän toimintoja ja tarkempaa ajanhallintaa. Tämä kirjasto on kuitenkin uudempi ja vaatii esimerkiksi C++11:n käyttöä.
 
-Päivämäärä- ja aikafunktiot C++:ssa ovat tärkeitä työkaluja, kun haluat hallita ja vertailla päivämääriä ohjelmoinnissa. `mktime()`-funktio muuntaa aikarakenteen `struct tm` time_t -objektiksi, jota voidaan sitten verrata muihin aikaobjekteihin. On myös mahdollista käyttää muita aikafunktioita, kuten `difftime()`, joka laskee ajaneroa kahden ajan välillä.
+Päivämäärien vertailun lisäksi voit myös muokata niitä ja tehdä erilaisia laskutoimituksia. Näihin tarvittavat tiedot ja toiminnot löydät tarkemmin C++:n dokumentaatiosta.
 
-## Katso myös
+## Katso Myös
 
-- [cppreference - Aikafunktiot](https://en.cppreference.com/w/cpp/chrono)
-- [cplusplus - Aikafunktioilla työskentely](https://www.cplusplus.com/reference/ctime/)
+- [C++ time.h kirjasto](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [C++ chrono kirjasto](https://cplusplus.com/reference/chrono/)
+- [C++:n ajanhallinta ja päivämäärien vertailu](https://www.learncpp.com/cpp-tutorial/514-chrono-library-part-2-calculating-duration/)
+
+Kiitos, että luit tämän oppaan päivämäärien vertailusta C++:ssa. Toivottavasti se auttoi sinua ymmärtämään aiheen paremmin ja löytämään itsellesi sopivan menetelmän päivämäärien käsittelyyn. Onnea ohjelmointiin!

@@ -1,7 +1,9 @@
 ---
-title:                "C: Ausgabe von Debug-Informationen"
+title:                "C: Fehlersuchausgabe drucken"
+simple_title:         "Fehlersuchausgabe drucken"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/printing-debug-output.md"
 ---
 
@@ -9,55 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Debuggen von Code ist für jeden Programmierer ein wichtiger Schritt bei der Entwicklung von Software. Eine Möglichkeit, um Probleme im Code zu identifizieren und zu beheben, ist die Verwendung von Debug-Ausgaben. In diesem Artikel werden wir uns genauer anschauen, wie man Debug-Ausgaben in C-Programmen verwendet.
+Debug-Ausgaben sind ein wesentlicher Bestandteil der Programmierung. Sie helfen dabei, Fehler in unserem Code zu finden und zu beheben. Durch das Drucken von Debug-Ausgaben können wir den Ablauf unseres Programms verfolgen und überprüfen, ob die Variablen die erwarteten Werte haben. Dies trägt erheblich zu einer effizienten Fehlerbehebung bei und spart uns Zeit während der Entwicklung.
 
-## Wie man Debug-Ausgaben in C verwendet
+## Wie geht das?
 
-Debug-Ausgaben können auf verschiedene Arten in ein C-Programm eingefügt werden. Eine Möglichkeit ist die Verwendung der "printf()" Funktion. Diese Funktion ermöglicht es uns, Text auf der Konsole auszugeben, um bestimmte Variablenwerte oder Nachrichten während des Programmablaufs anzuzeigen.
-
-```C
-#include <stdio.h>
-
-int main() {
-  int num = 5;
-  printf("Der Wert von num ist %d", num);
-  return 0;
-}
-```
-
-Die verwendete Formatierung "%d" gibt an, dass die Ausgabe eine Zahl sein wird. Alternativ können wir auch den Variablennamen direkt in den String einfügen.
+Um Debug-Ausgaben in C zu drucken, verwenden wir die Funktion `printf()`. Diese Funktion erlaubt es uns, Variablen und Text auf dem Bildschirm auszugeben. Schauen wir uns ein Beispiel an:
 
 ```C
-#include <stdio.h>
-
-int main() {
-  int num = 5;
-  printf("Der Wert von num ist %d", num);
-  return 0;
-}
+int num = 10;
+printf("Die Zahl ist: %d", num);
 ```
 
-In diesem Beispiel haben wir die Variable "num" ohne Angabe der Formatierung direkt in den String eingefügt. Beachte, dass wir die Variablen innerhalb der Funktion "printf()" nutzen können, auch wenn sie außerhalb der Funktion deklariert wurden.
+In diesem Beispiel wird die Variable `num` mithilfe des Format-Spezifiers `%d` ausgegeben. Dies gibt den Wert von `num` als Ganzzahl aus. Wir können auch mehrere Variablen und Text kombinieren:
+
+```C
+int num1 = 5;
+int num2 = 7;
+printf("Summe der Zahlen %d und %d ist: %d", num1, num2, (num1 + num2));
+```
+
+Das Ergebnis dieser Ausgabe wäre: "Summe der Zahlen 5 und 7 ist: 12".
 
 ## Tiefere Einblicke
 
-Debug-Ausgaben können auch verwendet werden, um den Ablauf des Programms nachzuvollziehen. Mit der Funktion "printf()" können wir auch in Schleifen oder Bedingungen Debug-Ausgaben einfügen, um zu überprüfen, ob der Code so ausgeführt wird, wie wir es erwarten.
+Um Debug-Ausgaben noch effektiver zu gestalten, können wir auch Formatierungsanweisungen verwenden. Diese Anweisungen ermöglichen es uns, Variablenwerte mit bestimmten Formaten auszugeben, beispielsweise als Hexadezimalzahlen oder mit einer bestimmten Anzahl von Nachkommastellen. Schauen wir uns ein Beispiel an:
 
 ```C
-#include <stdio.h>
-
-int main() {
-  int i;
-  for(i = 0; i < 10; i++) {
-    printf("Der Wert von i ist %d", i);
-  }
-  return 0;
-}
+float pi = 3.14159265359;
+printf("Der Wert von pi ist: %.2f", pi);
 ```
 
-In diesem Beispiel geben wir den Wert von "i" in jeder Iteration der Schleife aus, um zu sehen, ob er wie erwartet von 0 bis 9 inkrementiert wird. Auf diese Weise können wir mögliche Fehler oder unerwartete Ergebnisse leichter erkennen.
+Das Ergebnis dieser Ausgabe wäre: "Der Wert von pi ist: 3.14". In diesem Beispiel haben wir mit der Formatierung `%.2f` angegeben, dass die Ausgabe des Float-Wertes `pi` auf zwei Nachkommastellen begrenzt werden soll.
+
+Es ist wichtig zu beachten, dass Debug-Ausgaben nicht in der endgültigen Version unseres Programms enthalten sein sollten. Sie sind nur zur Unterstützung während der Entwicklungsphase gedacht und sollten später entfernt werden.
 
 ## Siehe auch
 
-- [Debugging mit GDB](https://www.gnu.org/software/gdb/): Ein mächtiges Debugging-Tool für C-Programme.
-- [Debugging-Tipps für C-Programme](https://c.learncodethehardway.org/book/ex20.html): Ein Artikel mit hilfreichen Tipps zum Debuggen von C-Code.
+- [Verwendung von printf in C](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
+- [Debugging-Tipps für C-Programmierer](https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.3.0/com.ibm.zos.v2r3.bpxbd00/dbgdbg.htm)

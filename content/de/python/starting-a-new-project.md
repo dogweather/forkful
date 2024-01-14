@@ -1,7 +1,9 @@
 ---
 title:                "Python: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "Python"
-category:             "Getting Started"
+category:             "Python"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/starting-a-new-project.md"
 ---
 
@@ -9,37 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Python ist eine äußerst beliebte Programmiersprache, die für ihre Einfachheit und ihre Vielseitigkeit bekannt ist. Wenn Sie ein neues Projekt starten möchten, kann Python eine großartige Wahl sein, da es viele Funktionen bietet, die es einfach und effizient machen, Code zu schreiben.
+Warum sollte man überhaupt ein neues Programmierprojekt starten? Ganz einfach: um neue Fähigkeiten zu erlernen oder bestehendes Wissen anzuwenden und zu erweitern. Außerdem kann es eine tolle Möglichkeit sein, eigene Ideen umzusetzen und umzusetzen.
 
-## Wie starte ich ein neues Projekt in Python
+## Wie es geht
 
-Um ein neues Projekt in Python zu starten, müssen Sie zuerst eine Entwicklungsumgebung einrichten. Derzeit gibt es viele verfügbare Entwicklungsumgebungen für Python, aber für diesen Leitfaden verwenden wir PyCharm.
+Wenn Sie bereit sind, Ihr erstes Python Programmierprojekt zu starten, gibt es ein paar wichtige Schritte zu beachten:
 
-Nachdem Sie PyCharm installiert haben, öffnen Sie es und erstellen Sie ein neues Projekt. Wählen Sie einen Namen und einen Speicherort für Ihr Projekt aus.
+1. Wählen Sie ein geeignetes Projekt: Wählen Sie ein Projekt, das Ihren Interessen entspricht und nicht zu komplex ist, damit Sie nicht frustriert werden.
+
+2. Planen Sie Ihre Schritte: Bevor Sie mit dem Codieren beginnen, ist es hilfreich, einen Plan zu erstellen, welche Funktionen Ihr Programm haben soll und welche Schritte Sie unternehmen müssen, um diese zu implementieren.
+
+3. Nutzen Sie Dokumentation und Tutorials: Python bietet eine umfangreiche Dokumentation und es gibt unzählige Tutorials im Internet, die Ihnen bei der Umsetzung Ihres Projekts helfen können.
+
+4. Codieren Sie: Verwenden Sie die Syntax von Python und implementieren Sie die gewünschten Funktionen. Verwenden Sie für jede Funktion geeignete Variablen und Kommentare, um den Code leichter zu verstehen.
+
+5. Testen Sie Ihr Programm: Stellen Sie sicher, dass Ihr Programm die gewünschten Funktionen erfüllt und testen Sie es mit verschiedenen Eingaben.
+
+6. Debugging: Wenn Sie auf Fehler stoßen, nutzen Sie die Fehlermeldungen von Python, um diese zu finden und zu beheben. Nutzen Sie auch das Debugging-Tool, um den Code zu analysieren und Fehler zu finden.
+
+7. Verbesserungen vornehmen: Nachdem Ihr Programm läuft, können Sie überlegen, wie Sie es noch verbessern können, z.B. indem Sie neue Funktionen hinzufügen oder die Benutzeroberfläche optimieren.
+
+Hier ist ein Beispiel eines einfachen Python Programms, das "Hello World" ausgibt:
 
 ```python
-print("Hallo, das ist mein neues Python-Projekt!")
+# Ausgabe des Textes "Hello World"
+print("Hello World")
 ```
 
-Der obige Codeblock zeigt ein einfaches Beispiel für die Verwendung der print-Funktion in Python. Diese Funktion gibt den angegebenen Text in der Konsole aus.
+Die Ausgabe dieses Codes wäre: "Hello World"
 
-## Tiefere Einblicke
+## Tieferes Eintauchen
 
-Wenn Sie ein neues Projekt in Python starten, ist es wichtig, sich mit der Sprache und ihren Funktionen vertraut zu machen. Python bietet eine breite Palette an Funktionen, die Ihnen helfen, effizienten und lesbareren Code zu schreiben.
+Es gibt viele verschiedene Ansätze, um ein Python Programmierprojekt zu starten und es kommt immer auf die individuellen Bedürfnisse und Vorlieben an. Wichtig ist jedoch, dass Sie dran bleiben und nicht aufgeben, falls Sie auf Probleme stoßen. Auch das Ausprobieren neuer Dinge und das Lernen von anderen ist immer eine gute Möglichkeit, um sich weiterzuentwickeln.
 
-Eine der bemerkenswertesten Funktionen von Python sind die Listen. Mit Listen können Sie eine Sammlung von Elementen erstellen und darauf zugreifen. Schauen wir uns ein Beispiel an:
+## Siehe auch
 
-```python
-zahlen = [1, 2, 3, 4, 5]
-print(zahlen[0])
-```
-
-In diesem Beispiel erstellen wir eine Liste mit Zahlen von 1 bis 5 und geben dann das erste Element dieser Liste aus. Beachten Sie, dass die Indizierung in Python bei 0 beginnt, daher gibt der Code oben die Zahl 1 aus.
-
-Neben Listen bietet Python auch Funktionen wie Schleifen, Bedingungen und andere hilfreiche Tools, um Ihre Entwicklungsprozesse zu beschleunigen.
-
-## See Also
-
-- [Offizielle Python-Website] (https://www.python.org/)
-- [Tutorial für Anfänger] (https://www.learnpython.org/de/)
-- [Weitere Informationen zu PyCharm] (https://www.jetbrains.com/pycharm/)
+- [Offizielle Python Dokumentation](https://docs.python.org/de/3/)
+- [Interaktives Python Tutorial](https://www.learnpython.org/de/)
+- [Python Code Beispiele](https://www.python-kurs.eu/python_codebeispiele.php)

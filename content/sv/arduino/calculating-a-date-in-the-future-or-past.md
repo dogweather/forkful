@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: Beräkna ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller det förflutna"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,66 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna beräkna datum i framtiden eller förfluten tid är en användbar funktion inom många olika projekt. Det kan hjälpa till att hålla reda på deadlines, schemalägga händelser eller helt enkelt planera för framtiden.
+Att beräkna ett datum i framtiden eller det förflutna kan vara användbart för olika projekt, såsom att bygga en kalenderfunktion eller skapa en påminnelseapp. Med hjälp av Arduino kan du enkelt programmera och köra dessa beräkningar med din egna hårdvara.
 
-## Hur man gör det
+## Så här gör du
 
-För att beräkna ett datum i framtiden eller förfluten tid på Arduino, behöver vi använda oss av en del inbyggda funktioner och variabler. För att komma igång, se till att inkludera biblioteket "Time.h" i din kod.
+För att beräkna datumet i framtiden eller det förflutna på Arduino, måste du först förstå hur datumet är uppbyggt. Standardformatet för datum är "åååå-mm-dd", med år, månad och dag som separata värden. För att beräkna ett datum behöver vi också veta antalet dagar i en månad samt om det är ett skottår eller inte.
 
-För att beräkna ett datum i framtiden kan vi använda funktionen "now()", vilket returnerar antalet sekunder sedan 1970-01-01 00:00:00 i Unix-timestamp format. Vi kan sedan lägga till önskat antal sekunder för att få det framtida datumet.
+För att få dagens datum kan vi använda funktionen `now ()` som ger oss antalet sekunder sedan starten av Arduino. Detta värde kan sedan omvandlas till dagar genom att dela det med antalet sekunder på en dag. Sedan behöver vi bara lägga till eller dra bort det önskade antalet dagar för att få det rätta datumet.
 
-```Arduino
-#include <Time.h>
-
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  time_t now = now();
-  time_t future = now + 3600; // Lägger till 1 timme
-  Serial.print("Datum i framtiden: ");
-  Serial.println(ctime(&future)); // Konverterar till läsbar form
-  delay(1000);
-}
-```
-
-Output:
-```
-Datum i framtiden: Thu Jul 08 21:42:37 2021
-```
-
-För att beräkna ett datum i förfluten tid behöver vi också använda funktionen "now()", tillsammans med funktionen "makeTime()". Här anger vi ett datum och tid för när sedan och beräknar antalet sekunder med hjälp av "now()".
+Låt oss säga att vi vill beräkna datumet 10 dagar framåt från idag. Med hjälp av koden nedan kan vi göra det:
 
 ```Arduino
-#include <Time.h>
-
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  tmElements_t since = { 0, 0, 0, 3, 1, 1970 }; // 1 mars 1970
-  time_t now = now();
-  time_t past = makeTime(since) - now; // Antal sekunder sedan 1 mars 1970
-  Serial.print("Datum i förfluten tid: ");
-  Serial.println(ctime(&past)); // Konverterar till läsbar form
-  delay(1000);
-}
+#include <Time.h> // för att använda tidsfunktioner
+int daysToAdd = 10; // antal dagar vi vill lägga till 
+unsigned long now_seconds = now(); // antal sekunder sedan Arduino startades
+int today = now_seconds / 86400; // antal dagar som har gått sedan starten (86400 är antalet sekunder på en dag)
+int future_date = today + daysToAdd; // adderar antal dagar till dagens datum
+Serial.println(future_date); // skriver ut det framtida datumet
 ```
 
-Output:
-```
-Datum i förfluten tid: Thu Jul 04 18:51:40 2019
-```
+Kör du koden kommer du att få ut datumet som antal dagar från start (dagens datum). För att få ut datumet i standardformatet "åååå-mm-dd" måste du konvertera det till år, månad och dag med hjälp av en omvandlingsfunktion.
 
 ## Djupdykning
 
-För att kunna beräkna ett datum i framtiden eller förfluten tid på rätt sätt, är det viktigt att förstå hur Unix-timestamp fungerar. Det är ett sätt att representera tid som antalet sekunder som har gått sedan 1970-01-01 00:00:00.
+Som nämnts tidigare är det viktigt att veta antalet dagar i en månad för att kunna beräkna datumet korrekt. Men i vissa fall, som vid skottår, är det också nödvändigt att ta hänsyn till extra dagar. Detta görs genom att kolla om året är delbart med 4 och i så fall är det ett skottår, utom om året också är delbart med 100, då är det inte ett skottår. Om året dessutom är delbart med 400, är det ändå ett skottår.
 
-Genom att använda funktionen "now()" får vi en exakt tidpunkt i Unix-timestamp format, vilket vi sedan kan manipulera för att få rätt datum. Det är också viktigt att komma ihåg att dessa funktioner är beroende av den interna klockan på Arduinon, så det är viktigt att se till att den är rätt inställd.
+Det finns också andra sätt att beräkna datum i förflutna eller framtiden baserat på specifika händelser eller årliga evenemang. Dessa metoder kan vara användbara för projekt som involverar till exempel kalendrar eller påminnelser.
 
 ## Se även
 
-* [Time.h biblioteket på Arduino hemsida](https://www.arduino.cc/reference/en/libraries/time/)
-* [Guide för att beräkna datum i framtiden eller förfluten tid på Arduino](https://www.instructables.com/Calculate-Future-and-Past-Dates-using-a-Real-Time-C/)
+- [Arduino dokumentation om tidsfunktioner](https://www.arduino.cc/reference/en/libraries/time/)
+- [Enkel omvandlingsfunktion för datum i Arduino](https://www.circuitsathome.com/mcu/arduino/working-with-time-and-date-projects-converting-integer-data-to-string-date-/)

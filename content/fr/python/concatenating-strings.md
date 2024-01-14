@@ -1,79 +1,89 @@
 ---
-title:                "Python: Concaténation de chaînes"
+title:                "Python: Concaténer des chaînes"
+simple_title:         "Concaténer des chaînes"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-La concaténation de chaînes est une pratique courante en programmation, utilisée pour combiner plusieurs chaînes de caractères en une seule. Cela peut être utile pour créer des messages d'erreur personnalisables, des noms de fichiers dynamiques ou simplement pour afficher du texte formaté. Dans cet article, nous allons explorer comment concaténer des chaînes en Python et pourquoi cela peut être utile pour vos projets de programmation.
+Concaténer des chaînes de caractères est une compétence fondamentale en programmation Python. Cela permet de combiner plusieurs chaînes en une seule, ce qui est utile pour afficher des messages personnalisés, créer des noms de fichiers dynamiques, ou encore construire des requêtes de base de données.
 
-## Comment faire
+# Comment faire
 
-Pour concaténer des chaînes en Python, nous pouvons utiliser l'opérateur "+" ou la méthode .format(). Voyons un exemple de chaque dans un bloc de code :
+En Python, il existe plusieurs façons de concaténer des chaînes de caractères. La première méthode est d'utiliser l'opérateur "+" pour combiner deux chaînes :
 
 ```Python
-# Utiliser l'opérateur "+"
-nom = "Marie"
-message = "Bienvenue sur notre site, " + nom + "!"
+nom = "Sophie"
+message = "Bonjour, je m'appelle " + nom
 print(message)
+```
+Output:
+```
+Bonjour, je m'appelle Sophie
+```
 
-# Utiliser la méthode .format()
+Une autre méthode consiste à utiliser la méthode `format()` pour remplacer des variables dans une chaîne :
+
+```Python
 prenom = "Jean"
 nom = "Dupont"
-message = "Bonjour {0} {1}, comment allez-vous ?".format(prenom, nom)
+age = 30
+message = "Bonjour, je m'appelle {} {} et j'ai {} ans".format(prenom, nom, age)
 print(message)
 ```
-
-La sortie de ces deux exemples sera :
-
+Output:
 ```
-Bienvenue sur notre site, Marie!
-Bonjour Jean Dupont, comment allez-vous ?
+Bonjour, je m'appelle Jean Dupont et j'ai 30 ans
 ```
 
-Comme vous pouvez le voir, l'opérateur "+" nous permet de simplement combiner les chaînes en les plaçant entre les variables, tandis que la méthode .format() utilise des espaces réservés spéciaux pour insérer les variables dans le texte. Dans les deux cas, nous obtenons une chaîne concaténée qui peut être affichée avec print().
-
-## Plongée plus profonde
-
-En plus de l'opérateur "+" et de la méthode .format(), il existe d'autres moyens de concaténer des chaînes en Python. En utilisant l'opérateur "+=", nous pouvons ajouter une chaîne à elle-même pour la prolonger, comme ceci :
+Enfin, la méthode la plus récente est l'utilisation de f-strings (string literals formatées) qui permet d'écrire du code plus lisible :
 
 ```Python
-message = "Bonjour!"
-message += " Comment ça va ?"
+prenom = "Marie"
+nom = "Martin"
+age = 25
+message = f"Bonjour, je m'appelle {prenom} {nom} et j'ai {age} ans"
 print(message)
 ```
-
-La sortie sera :
-
+Output:
 ```
-Bonjour! Comment ça va ?
+Bonjour, je m'appelle Marie Martin et j'ai 25 ans
 ```
 
-Nous pouvons également utiliser la méthode .join() pour concaténer une liste de chaînes en une seule. Voici un exemple :
+# Plongée profonde
+
+Lorsqu'on concatène des chaînes de caractères, il est important de faire attention aux types de données utilisés. Par exemple, si l'un des éléments à concaténer est un entier, il faut le convertir en chaîne en utilisant la fonction `str()` :
 
 ```Python
-prenoms = ["Jean", "Marie", "Pierre"]
-noms = ["Dupont", "Martin", "Lefevre"]
-
-message = "Bienvenue à {0}, {1}".join(noms, prenoms)
+age = 25
+message = "J'ai " + str(age) + " ans"
 print(message)
 ```
-
-La sortie sera :
-
+Output:
 ```
-Bienvenue à Dupont, Martin, Lefevre, Jean, Marie, Pierre
+J'ai 25 ans
 ```
 
-Il est également important de noter qu'en Python, les chaînes sont immuables, ce qui signifie qu'elles ne peuvent pas être modifiées directement. Cela signifie que chaque fois que nous concaténons une chaîne, nous créons en fait une nouvelle chaîne avec les modifications requises.
+Il est également possible de concaténer plus de deux chaînes en une seule fois :
 
-## Voir aussi
+```Python
+prenom = "Paul"
+nom = "Dupuis"
+ville = "Paris"
+message = "Je m'appelle " + prenom + " " + nom + " et j'habite à " + ville
+print(message)
+```
+Output:
+```
+Je m'appelle Paul Dupuis et j'habite à Paris
+```
 
-- [Documentation Python sur les chaînes de caractères](https://docs.python.org/fr/3/tutorial/introduction.html#strings)
-- [Cours sur les chaînes de caractères en français](https://openclassrooms.com/fr/courses/235344-apprenez-a-programmer-en-python/234814-manipulez-des-chaines-de-caracteres)
+# Voir aussi
 
-En utilisant les différentes méthodes de concaténation de chaînes en Python, vous pourrez facilement créer des messages et des noms de fichiers dynamiques, et vous pourrez également ajouter facilement du texte formaté à vos projets de programmation. N'hésitez pas à expérimenter et à trouver la méthode qui fonctionne le mieux pour vous !
+- [Python String Concatenation](https://www.programiz.com/python-programming/string-concatenation)
+- [Python Documentations sur les f-strings](https://docs.python.org/fr/3/library/string.html#formatstrings)

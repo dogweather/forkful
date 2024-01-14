@@ -1,49 +1,72 @@
 ---
 title:                "TypeScript: 임시 파일 만들기"
+simple_title:         "임시 파일 만들기"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜: 임시 파일을 생성하는 이유
+## 왜
 
-임시 파일을 생성하는 것은 프로그래밍에서 중요한 부분입니다. 임시 파일은 일시적으로 사용되며, 주로 소프트웨어의 일부 기능을 수행하거나 데이터를 잠시 저장하는 용도로 사용됩니다.
+임시 파일을 만들어야 하는 이유는 여러 가지가 있을 수 있습니다. 예를 들어, 프로그램이 실행될 때 임시적으로 필요한 데이터를 저장하거나 사용자의 입력 정보를 임시로 보관할 때 사용할 수 있습니다. 임시 파일은 프로그램의 용량을 줄이고 시스템 자원을 효율적으로 관리하는 데 도움이 됩니다.
 
-## 작성방법
+## 만드는 방법
 
-TypeScript에서 임시 파일을 생성하는 방법은 다음과 같습니다. 먼저, Node.js에 내장된 `fs` 모듈을 사용하여 파일 시스템 작업을 할 수 있도록 합니다.
-
-```TypeScript
-import { createWriteStream } from 'fs';
-
-const temporaryFile = createWriteStream('temp.txt');
-```
-
-위의 코드는 `createWriteStream` 함수를 사용하여 `temp.txt`라는 파일을 생성합니다. 생성된 파일의 경로는 프로젝트의 루트 디렉토리에 저장됩니다. 이제 생성된 임시 파일에 데이터를 입력하고 파일을 닫아 보겠습니다.
+TypeScript에서 임시 파일을 만드는 방법은 간단합니다. 우선, `fs` 모듈과 `tmp` 모듈을 import 합니다. 그리고 `tmp.file()` 메소드를 사용하여 임시 파일을 생성할 수 있습니다.
 
 ```TypeScript
-temporaryFile.write('Hello, world!', (err) => {
+import fs from 'fs';
+import tmp from 'tmp';
+
+tmp.file((err, path, fd) => {
   if (err) throw err;
-  temporaryFile.end();
+  // 임시 파일 생성
+  fs.writeFileSync(path, 'Hello World');
+  console.log('임시 파일 경로: ', path);
+  // 파일 내용 출력
+  console.log('파일 내용: ', fs.readFileSync(path, 'utf8'));
+  // 파일 삭제
+  fs.unlinkSync(path);
 });
 ```
 
-위의 코드에서는 `write` 함수를 사용하여 `Hello, world!`라는 데이터를 파일에 쓰고, 데이터 입력이 완료되면 `end` 함수를 호출하여 파일을 닫습니다. 이제 `temp.txt` 파일을 확인하면 `Hello, world!`라는 내용이 입력된 것을 확인할 수 있습니다.
+위 예제 코드에서 `tmp.file()` 메소드는 임시 파일의 경로와 파일 디스크립터를 포함하는 콜백 함수를 반환합니다. 그리고 `fs` 모듈을 사용하여 파일 생성과 삭제를 할 수 있습니다.
 
-## 더 깊이 들어가보기
+## 깊이 파보기
 
-임시 파일을 생성할 때 중요한 점은 파일을 생성한 뒤 적절한 시점에 파일을 삭제하는 것입니다. 파일은 전체 프로그램 실행 중에 임시로만 사용되기 때문에, 불필요한 데이터 누적을 방지하기 위해 파일을 삭제하는 것이 중요합니다. 이를 위해 `fs` 모듈에 내장된 `unlink` 함수를 사용할 수 있습니다.
+`tmp` 모듈은 임시 파일을 생성하는 데 필요한 다양한 옵션을 제공합니다. 예를 들어, 파일 이름의 접두사와 접미사를 지정하거나 생성한 파일의 유지 기간을 설정할 수 있습니다. 또한 `withFileTypes` 옵션을 사용하여 파일의 속성과 권한 정보를 가져올 수도 있습니다.
 
-또 다른 중요한 점은 임시 파일을 생성할 때 마련한 경로가 다른 파일과 충돌하지 않도록 하는 것입니다. 이를 방지하기 위해 Node.js에는 유용한 `mkdtemp` 함수가 있습니다. `mkdtemp` 함수는 임시 디렉토리를 생성하는 함수로, 실제로는 무작위 문자열을 추가하여 충돌을 방지합니다.
+```TypeScript
+// 파일 이름에 접두사와 접미사 추가
+tmp.file({ prefix: 'temp-', postfix: '.txt' }, (err, path, fd) => {
+  if (err) throw err;
+  console.log('임시 파일 경로: ', path);
+});
 
-## 관련 자료
+// 5분 후에 파일 삭제
+tmp.file({ keep: true, expires: 5 * 60 }, (err, path, fd) => {
+  if (err) throw err;
+  setTimeout(() => {
+    // 파일 삭제
+    fs.unlinkSync(path);
+    console.log('파일이 삭제되었습니다.');
+  }, 5 * 60 * 1000); // 5분 후에 삭제
+});
 
-- [Node.js 공식 문서: fs.createWriteStream](https://nodejs.org/api/fs.html#fs_fs_createwritestream_path_options)
-- [TutorialsTeacher: Node.js 파일 시스템](https://www.tutorialsteacher.com/nodejs/nodejs-file-system) 
+// 파일 속성과 권한 정보 가져오기
+tmp.file({ withFileTypes: true }, (err, path, fd) => {
+  if (err) throw err;
+  const stats = fs.statSync(path);
+  console.log('파일 이름: ', stats.name);
+  console.log('파일 권한: ', stats.mode);
+});
+```
 
-## 참고 자료
+위 코드에서는 다양한 옵션을 사용하여 임시 파일을 생성하고 관리하는 방법을 살펴보았습니다. `tmp` 모듈의 다른 메소드들도 비슷한 방식으로 사용할 수 있으며, 필요한 경우 공식 문서를 참조하시면 됩니다.
 
-- [Node.js 공식 문서: fs.unlink](https://nodejs.org/api/fs.html#fs_fs_unlink_path_callback)
-- [Node.js 공식 문서: fs.mkdtemp](https://nodejs.org/api/fs.html#fs_fs_mkdtemp_prefix_options_callback)
+## See Also
+- [Node.js - File System 모듈](https://nodejs.org/api/fs.html)
+- [tmp 모듈 공식 문서](https://github.com/raszi/node-tmp#tmpfileoptions-callback)

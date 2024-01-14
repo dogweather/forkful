@@ -1,43 +1,49 @@
 ---
-title:                "Go: 文字列の大文字化"
+title:                "Go: 「文字列の大文字化」"
+simple_title:         "「文字列の大文字化」"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
 
-文字列を大文字にすることについて、なぜこうするのかを説明します。文字列を大文字にすると、フォーマットや表示には大きな影響があります。例えば、文書内に見出しや特別な文言を含める際に、大文字にすることで目立たせることができます。
+文字列を大文字にする必要性について、Goプログラミングの世界に興味を持っている読者の方々に向けて説明をします。
 
 ## 方法
 
-以下の`Go`コードを使って、文字列を大文字にする方法を説明します。
+文字列を大文字にするには、stringsパッケージのToTitle関数を使います。
 
 ```Go
-func capitalize(str string) string {
-  return strings.ToUpper(str)
-}
+package main
+
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-  stringToCapitalize := "hello world!"
-  fmt.Println(capitalize(stringToCapitalize))
+	word := "hello"
+	fmt.Println(strings.Title(word))
 }
+
+// Output: Hello
 ```
 
-上記の例では、`hello world!`という文字列を大文字に変換しています。コードを実行すると、出力結果は`HELLO WORLD!`となります。
+## 深堀り
 
-## もっと深く
+上記の例では、ToTitle関数を使って文字列を大文字にすることができます。また、stringsパッケージにはToTitleSpecialという、より柔軟に文字列を扱うことができる関数もあります。
 
-文字列の大文字化について、もっと詳しく説明します。関数`ToUpper()`は、`Go`言語の`strings`パッケージに存在します。この関数は、文字列を全て大文字に変換することができるだけではなく、特定のロケールに基づいて変換を行うこともできます。また、文字列に含まれる英数字や記号なども大文字に変換することができます。
+# 参考リンク
 
-## 参考文献
+- [Goでの文字列操作方法](https://golang.org/pkg/strings/)
+- [stringsパッケージのドキュメント](https://pkg.go.dev/strings?utm_source=godoc)
+- [フリーのGoコース](https://www.udemy.com/course/go-the-complete-developers-guide/) 
 
-"大文字化 - 文字列" Goドキュメント (https://golang.org/pkg/strings/#ToUpper)
+# 参考文献
 
-## その他の関連記事
-
-- "Go言語の基本的な文字列操作方法" (https://qiita.com/syossan27/items/0e57b18a8fa1fa94bfda)
-- "文字列の大文字/小文字変換" (https://qiita.com/daijinload/items/e3ba179d9a43903bea8e)
-- "文字列を大文字に変換する方法" (https://programming.guide/go/capitalize-strings.html)
+- ["Hello"を"HELLO"に変換する方法](https://golangdocs.com/golang-capitalizing-first-letter-of-string)
+- [stringsパッケージのドキュメントの例](https://golang.org/pkg/strings/#ToTitle)

@@ -1,51 +1,47 @@
 ---
-title:                "Java: Escrevendo para o erro padrão"
+title:                "Java: Escrevendo em erro padrão"
+simple_title:         "Escrevendo em erro padrão"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão?
+##Por que escrever para o erro padrão em Java?
 
-Escrever para o erro padrão é uma prática comum na programação Java. Ela permite que os desenvolvedores possam visualizar mensagens de erro e depuração do código durante a execução do programa.
+Escrever para o erro padrão, ou standard error, é uma prática comum em Java e outras linguagens de programação. Isso permite que o programador registre e rastreie erros e exceções que ocorrem durante a execução do código. É uma ferramenta valiosa para solucionar problemas e aprimorar a qualidade do código.
 
-## Como fazer isso:
+##Como fazer?
 
-Existem duas maneiras de escrever para o erro padrão em Java: usando a classe System e usando a classe Logger. Veja abaixo exemplos de código em Java e suas respectivas saídas.
+Existem várias maneiras de escrever para o erro padrão em Java. Um método simples é usar o método `System.err.println()` para imprimir uma mensagem de erro. Por exemplo, se você quiser mostrar uma mensagem de erro quando uma exceção `NullPointerException` ocorrer, o código ficaria assim:
 
-#### Usando a classe System:
-
-```Java
-System.err.println("Ocorreu um erro!");
+```java
+try {
+    //código que pode gerar um NullPointerException
+} catch (NullPointerException e) {
+    System.err.println("Ocorreu um erro: " + e.getMessage());
+}
 ```
 
-Saída:
-```
-Ocorreu um erro!
-```
+Isso imprimirá a mensagem de erro no console, indicando onde exatamente ocorreu a exceção.
 
-#### Usando a classe Logger:
+Você também pode usar o objeto `System.err` para escrever diretamente no erro padrão. Por exemplo, se você quiser exibir um erro com uma cor vermelha no console, pode usar o código a seguir:
 
-```Java
-Logger logger = Logger.getLogger("MeuPrograma");
-logger.warning("Aviso: a conexão com o banco de dados falhou!");
+```java
+System.err.print("\033[31m"); //cor vermelha
+System.err.println("Isto é um erro!"); //mensagem de erro
 ```
 
-Saída:
-```
-06-Mai-2021 12:00:00 WARNING MeuPrograma: Aviso: a conexão com o banco de dados falhou!
-```
+##Aprofundando mais
 
-## Mergulho profundo:
+Além de simplesmente imprimir mensagens de erro, é possível personalizar completamente o tratamento de erros em Java. Você pode criar suas próprias classes de exceção personalizadas para lidar com diferentes tipos de erros e usar a instrução `throw` para lançar essas exceções. Também é possível criar classes de tratamento de exceções para lidar com exceções específicas ou gerais.
 
-Escrever para o erro padrão com a classe System permite que o desenvolvedor exiba mensagens de erro e depuração diretamente no console. Já a utilização da classe Logger oferece mais recursos, como a possibilidade de definir o nível de severidade das mensagens e o destino das mesmas (console, arquivo de log, entre outros).
+Outra dica importante é sempre monitorar o registro de erros e exceções em seu código. Isso permite que você identifique e corrija problemas rapidamente, melhorando a eficiência e a qualidade do seu código. Além disso, é importante também documentar os erros e exceções encontrados e quais as soluções adotadas para resolvê-los, facilitando o trabalho futuro e o entendimento do código por outros programadores.
 
-Existem diferentes níveis de severidade em um Logger, sendo os principais: info, warning e severe. É possível definir o nível desejado para cada mensagem, o que facilita a identificação e filtragem das mesmas.
+##Veja também
 
-## Veja também:
-
-- Documentação oficial do Java sobre a classe System: https://docs.oracle.com/javase/tutorial/essential/io/sysout.html
-- Documentação oficial do Java sobre a classe Logger: https://docs.oracle.com/javase/8/docs/api/java/util/logging/Logger.html
-- Tutorial sobre como usar a classe Logger em Java: https://www.baeldung.com/java-logging-intro
+- [Documentação oficial do Java sobre Tratamento de Exceções](https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html)
+- [Tutorial de como usar o erro padrão em Java](https://www.baeldung.com/java-system-err-println)
+- [Guia completo de Tratamento de Exceções em Java](https://www.guru99.com/java-exception-handling.html)

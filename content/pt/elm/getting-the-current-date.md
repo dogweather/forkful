@@ -1,56 +1,43 @@
 ---
 title:                "Elm: Obtendo a data atual"
+simple_title:         "Obtendo a data atual"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que
+## Por que usar Elm para obter a data atual?
 
-Muitas vezes, quando estamos desenvolvendo um programa, precisamos saber a data atual. Isso pode ser útil para rastrear eventos, gerar relatórios ou até mesmo simplesmente exibir a data para o usuário. Em Elm, há uma maneira fácil de obter a data atual e é isso que vamos aprender neste post.
+Se você está familiarizado com programação, sabe como pode ser frustrante trabalhar com datas e horários. Além disso, dependendo da linguagem de programação que você está usando, pode haver diferenças na formatação e na precisão da data. No entanto, com Elm, é muito mais fácil obter a data atual e manipulá-la da maneira desejada. Então, se você está cansado de lutar com datas em outras linguagens, pode ser hora de considerar o uso de Elm.
 
-##Como fazer
+## Como fazer para obter a data atual em Elm?
 
-Para obter a data atual em Elm, podemos usar a função `Time.now`, que retorna uma `Task` que, quando concluída, nos fornece um `Time` com a data atual. Aqui está um exemplo de código:
+Para começar, você precisa importar o módulo `Time` no início do seu código. Em seguida, você pode usar a função `now` do módulo para obter a data e hora atuais. Aqui está um exemplo de código que retorna a data atual formatada como dia/mês/ano:
 
-```
-Elm.Program
-Elm.Time
-import Time exposing (Time)
+``` Elm
+import Time
 
-main : Program Never
-main =
-    let
-        getDate : Time -> String
-        getDate time =
-            Time.toIsoString Time.utc time
-    in
-    Time.now
-        |> Task.attempts 1
-        |> Task.andThen (\result ->
-            case result of
-                Ok time ->
-                    getDate time |> Html.text
-
-                Err err ->
-                    "Não foi possível obter a data atual." |> Html.text
-        )
-        |> Html.program
+atualizarData : String
+atualizarData =
+  Time.now
+    |> Time.toDate
+    |> Time.format "%d/%m/%Y"
 ```
 
-A primeira coisa que fazemos é importar o módulo `Time` do pacote `elm/time`. Em seguida, definimos a função `getDate` que irá converter o objeto `Time` em uma string no formato ISO. Isso será útil para exibir a data em um formato legível para o usuário.
+Ao executar este código, o valor retornado será algo como `09/09/2021`.
 
-Em seguida, usamos a função `Time.now` para obter a data atual como uma `Task`, que representa uma computação assíncrona que será concluída em algum momento e nos fornecerá um valor. Usamos a função `Task.attempts` para especificar o número máximo de tentativas que o Elm deve fazer para executar a tarefa. No nosso caso, queremos apenas uma tentativa. Depois, usamos a função `Task.andThen` para receber o resultado da tarefa e fazer algo com ele. Se a tarefa for bem-sucedida, obtemos um objeto `Time` e usamos nossa função `getDate` para convertê-lo em uma string. Se a tarefa falhar, exibimos uma mensagem de erro.
+## Mergulho mais profundo
 
-Por último, usamos a função `Html.program` para criar um programa HTML que exibe a data atual. E é isso!
+Em Elm, a data é representada pelo tipo `Date`, que contém informações sobre ano, mês e dia. Além disso, o módulo `Time` possui muitas outras funções úteis para trabalhar com datas, como `dayOf` (para obter o dia do mês), `monthOf` (para obter o mês) e `yearOf` (para obter o ano). Você também pode usar essas funções para criar datas personalizadas e compará-las.
 
-##Mergulho profundo
+Outra coisa interessante é que o módulo `Time` também possui funções para trabalhar com horários e fusos horários, o que pode ser útil se você estiver criando uma aplicação em várias regiões do mundo.
 
-Mas, como o Elm obtém a data atual? Como sabemos que é a data atual quando recebemos o objeto `Time` da tarefa? Bem, o segredo está no módulo `Time`, que usa JavaScript nativo para obter a data atual do sistema operacional do usuário. Portanto, a data exibida depende da data e hora definidas no sistema operacional.
+## Veja também
 
-##Veja também
+- Documentação do módulo `Time`: https://package.elm-lang.org/packages/elm/time/latest/
+- Exemplos práticos de uso do módulo `Time`: https://elmprogramming.com/working-with-dates-times-elm.html#Dates-and-Time-in-Elm
 
-- [Documentação do módulo `Time`](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Tutorial básico de Elm](https://www.elm-tutorial.org/pt-br/)
+Agora que você sabe como obter a data atual em Elm, experimente aplicá-la em seu próximo projeto e veja como pode facilitar o trabalho com datas e horários. Com o módulo `Time`, não é mais necessário se preocupar com as diferenças de formatação e precisão da data em diferentes linguagens de programação. Continue aprendendo e explorando os recursos do Elm para aprimorar ainda mais suas habilidades de programação.

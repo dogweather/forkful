@@ -1,7 +1,9 @@
 ---
-title:                "Go: Att starta ett nytt projekt"
+title:                "Go: Att börja ett nytt projekt."
+simple_title:         "Att börja ett nytt projekt."
 programming_language: "Go"
-category:             "Getting Started"
+category:             "Go"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/starting-a-new-project.md"
 ---
 
@@ -9,11 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att starta ett nytt projekt i Go kan verka överväldigande till en början, men det finns många fördelar med att lära sig och använda detta programmeringsspråk. Go är snabbt, tillförlitligt och enkelt att läsa och skriva kod. Det är också ett populärt språk inom mjukvaruutveckling och används många gånger för back-end-system och datahantering. Om du vill bli en allsidig programmerare och lära dig ett kraftfullt språk, så är Go definitivt värt att titta närmare på.
+Att starta ett nytt projekt i Go kan kännas som en överväldigande uppgift, men det finns många fördelar med att göra det. Först och främst kommer det att ge dig möjlighet att lära dig ett nytt språk och utveckla dina programmeringskunskaper. Det kan också hjälpa dig att lösa specifika problem eller skapa ett unikt verktyg som inte finns på marknaden.
 
 ## Hur man gör det
 
-Att starta ett nytt Go-projekt är enkelt och kan göras på bara några få steg. Först och främst behöver du Go installerat på din dator. Sedan kan du skapa en ny mapp för ditt projekt och en ny Go-fil med filändelsen ".go". Öppna filen i din favorittextredigerare och börja koda!
+Att starta ett nytt projekt i Go är enkelt. Det första steget är att installera Go på din dator och konfigurera din utvecklingsmiljö. När det är klart kan du skapa en ny mapp för ditt projekt och börja skriva din kod. Nedan ser du ett enkelt exempel på hur man skriver en klassisk "Hello World"-applikation i Go:
 
 ```Go
 package main
@@ -21,20 +23,21 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Välkommen till mitt Go-projekt!")
+    fmt.Println("Hej världen!")
 }
 ```
 
-I detta enkla exempel importerar vi "fmt" paketet för att kunna använda funktionen "Println", som skriver ut en sträng i terminalen. För att utföra programmet, navigera till mappen i din terminal och kör kommandot "go run filnamn.go". Du bör nu se utskriften "Välkommen till mitt Go-projekt!".
+När du har skrivit din kod kan du köra den genom att öppna terminalen eller kommandoprompten och navigera till din projektmapp. Skriv sedan kommandot "go run [filnamn]" och ditt program kommer att köras.
 
 ## Djupdykning
 
-För att göra ditt Go-projekt mer avancerat, kan du börja använda paket från Go standardbiblioteket eller installera externa paket från Go-filer. Du kan också använda Go-moduler för att hantera beroenden och projektstruktur.
+När du väl har startat ditt projekt finns det många vägar du kan utforska. En bra resurs är Go:s officiella dokumentation, där du kan hitta detaljerad information om språket och dess funktioner. Du kan också utforska olika paket och bibliotek som är tillgängliga i Go:s community. Dessutom finns det många aktiva diskussionsforum och communities där du kan få hjälp och lära dig av andra Go-utvecklare.
 
-En annan viktig aspekt av att starta ett nytt Go-projekt är att använda rätt katalogstruktur. Du kanske vill ha en mapp för din kod, en för tester och en för externa paket. Det är viktigt att organisera din kod på ett sätt som är lätt att förstå och underhålla.
+## Se även
 
-## Se också
+Här är några användbara länkar för dig som vill lära dig mer om att starta ett nytt projekt i Go:
 
-- [Go-programmeringsspråkets officiella webbplats](https://golang.org/)
-- [Go-programmeringsspråkets dokumentation](https://golang.org/doc/)
-- [Tutorials Point's "Learn Go in 24 Hours" guide](https://www.tutorialspoint.com/go/index.htm)
+- Go:s officiella dokumentation: [https://golang.org/doc/](https://golang.org/doc/)
+- Go:s community-hub: [https://golang.org/wiki/Community](https://golang.org/wiki/Community)
+- Go Forum: [https://forum.golangbridge.org/](https://forum.golangbridge.org/)
+- Go subreddit: [https://www.reddit.com/r/golang/](https://www.reddit.com/r/golang/)

@@ -1,45 +1,37 @@
 ---
-title:                "Javascript: Odczytywanie argumentów wiersza poleceń"
+title:                "Javascript: Odczytanie argumentów wiersza poleceń"
+simple_title:         "Odczytanie argumentów wiersza poleceń"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego programowanie w Javascript jest ważne?
 
-Jeśli jesteś programistą JavaScript i chcesz poznać sposoby na odczytywanie argumentów wiersza poleceń, ten artykuł jest dla Ciebie! Poznasz tutaj różne metody, jakie można zastosować, aby wykorzystać argumenty wiersza poleceń w swoim kodzie.
+Programowanie w Javascript jest jedną z najważniejszych umiejętności dla każdego programisty. Jest to uniwersalny język, który jest stosowany na wielu platformach internetowych, od stron internetowych po aplikacje mobilne. Jednym z kluczowych elementów programowania w Javascript jest umiejętność czytania argumentów wiersza poleceń, co pozwala na dostosowanie i personalizację programów.
 
-## Jak to zrobić
+## Jak czytać argumenty wiersza poleceń w Javascript?
 
-Istnieje kilka sposobów odczytywania argumentów wiersza poleceń w JavaScript. Pierwszym z nich jest użycie wbudowanego obiektu process, który zawiera wszystkie informacje o aktualnym procesie, wraz z argumentami wiersza poleceń. Przykładowy kod wykorzystujący ten sposób wyglądałby tak:
-
-```Javascript
-// Użycie process.argv do odczytania argumentów wiersza poleceń
-const args = process.argv.slice(2); // Pierwsze dwa elementy zwracanego tablicy to ścieżka do pliku uruchamiającego oraz ścieżka do interpretera
-console.log(args); // Wyświetli tablicę z wszystkimi argumentami wiersza poleceń przekazanymi podczas uruchamiania programu
-```
-
-Kolejną metodą jest użycie biblioteki yargs, która upraszcza odczytywanie argumentów i pozwala na definiowanie argumentów w bardziej intuicyjny sposób. Przykładowy kod z wykorzystaniem yargs mógłby wyglądać następująco:
+Czytanie argumentów wiersza poleceń w Javascript jest stosunkowo proste i polega na użyciu obiektu `process.argv` oraz metody `slice()` do odzyskania potrzebnych informacji. Poniżej znajduje się przykładowy kod wykorzystujący te elementy:
 
 ```Javascript
-// Użycie biblioteki yargs do odczytania argumentów wiersza poleceń
-const argv = require('yargs').argv; // Import biblioteki
-
-console.log(argv); // W tym przypadku pierwsze dwa elementy nie są wyświetlane, tylko właściwe argumenty
-
-// Definicja argumentów przy użyciu yargs
-// Użycie --option=value lub --option wartość
-argv.option1 // pierwszy sposób przekazania argumentu
-argv.option2 // drugi sposób przekazania argumentu
+let args = process.argv.slice(2); //pominięcie dwóch pierwszych argumentów (ścieżki i nazwy pliku)
+console.log(args); //wypisanie argumentów w konsoli
 ```
 
-## Głębszy zanurzenie
+Przykład ten wyświetli w konsoli tablicę z wprowadzonymi przez użytkownika argumentami wiersza poleceń. Można także użyć pętli `for` do przeiterowania przez tablicę i odczytania każdego argumentu osobno.
 
-Za pomocą obu metod możesz odczytywać argumenty wiersza poleceń w swoim kodzie JavaScript. Jednak warto zauważyć pewne różnice między tymi sposobami. Użycie process.argv wymaga samodzielnej analizy tablicy zwracanej przez ten obiekt, co może być bardziej czasochłonne. Natomiast yargs pozwala na prostszą i bardziej czytelną definicję argumentów, jednak wymaga dodatkowej biblioteki. Możesz wybrać odpowiedni sposób w zależności od swoich preferencji i potrzeb.
+## Głębszy wgląd w czytanie argumentów wiersza poleceń
+
+Powyższy przykład jest tylko podstawowym sposobem na czytanie argumentów wiersza poleceń w Javascript. Istnieje wiele innych metod, takich jak użycie biblioteki `commander.js` lub pakietu `yargs`, które ułatwiają przetwarzanie i obsługę argumentów. Ponadto, warto zapoznać się z dokumentacją języka Javascript, aby poznać wszystkie dostępne metody i funkcje dla obiektu `process` oraz innych przydatnych aspektów języka.
 
 ## Zobacz także
 
-- [Dokumentacja process.argv](https://nodejs.org/api/process.html#process_process_argv)
-- [Dokumentacja yargs](https://yargs.js.org/)
+- [Dokumentacja języka Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript)
+- [Biblioteka commander.js](https://github.com/tj/commander.js)
+- [Pakiet yargs](https://www.npmjs.com/package/yargs)
+
+Dzięki umiejętności czytania argumentów wiersza poleceń w Javascript, możliwe jest tworzenie bardziej elastycznych i użytecznych programów. Bądź na bieżąco z najnowszymi trendami i technologiami, aby rozwijać swoje umiejętności programistyczne.

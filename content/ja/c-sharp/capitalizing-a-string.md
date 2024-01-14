@@ -1,7 +1,9 @@
 ---
-title:                "C#: 「文字列の先頭を大文字化する」"
+title:                "C#: 文字列の大文字化"
+simple_title:         "文字列の大文字化"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/capitalizing-a-string.md"
 ---
 
@@ -9,28 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-英語のテキストでは、単語の最初の文字を大文字にすることは非常に一般的です。例えば、文章のタイトルや人名などが該当します。このような場面で文字列を正しく大文字にすることは非常に重要です。コードを使ってこれを行う方法を学ぶことで、より効率的に作業を進めることができます。
+文字列を大文字にすることについて、なぜ誰かがそれに取り組みたがるのかを説明します。
 
 ## 方法
 
-大文字にするには、C#の```ToUpper()```メソッドを使用します。以下の例をご覧ください。
+"```C#
+// 入力文字列
+string input = "hello world";
+// 文字列を大文字に変換
+string output = input.ToUpper();
+// 出力
+Console.WriteLine(output); // HELLO WORLD
+```"
 
-```C#
-string text = "hello world";
-string capitalizedText = text.ToUpper();
-Console.WriteLine(capitalizedText);
+## ディープダイブ
 
-// Output: HELLO WORLD
-```
+文字列を大文字にする機能は、プログラムで非常に便利です。例えば、ユーザーの入力を確実に大文字に変換することで、入力ミスを防ぐことができます。また、大文字と小文字を区別しない検索やソートを行う際にも、大文字に統一することで正確な結果を得ることができます。
 
-以上のように、文字列を```ToUpper()```メソッドで大文字にすることができます。これは、入力された文字列を大文字にするだけでなく、トリムやパディングなどの文字列の編集も自動的に行ってくれます。また、英語のアルファベットだけでなく、日本語のようなマルチバイト文字も正しく処理してくれます。
+## 参考
 
-## 深堀り
+[.NET フレームワーク ドキュメント - string.ToUpper メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.toupper?view=net-5.0)
 
-C#では、文字列の大文字化にはほかにも様々なメソッドやライブラリがあります。例えば、```ToUpperInvariant()```メソッドはカルチャに依存せず、常に英語のみを大文字にします。また、```CultureInfo```クラスを使用することで、特定の地域や言語のルールに従って文字列を大文字にできます。これらのメソッドやクラスを組み合わせることで、より柔軟に文字列を編集することができます。
-
-## See Also
-
-- [String.ToUpper Method (System) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
-- [Culture-Sensitive String Operations - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/culture-sensitive-string-operations)
-- [CultureInfo Class - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-5.0)
+[C# リファレンス - 文字列操作](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/strings/)

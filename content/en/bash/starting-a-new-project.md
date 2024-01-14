@@ -1,43 +1,53 @@
 ---
 title:                "Bash recipe: Starting a new project"
+simple_title:         "Starting a new project"
 programming_language: "Bash"
-category:             "Getting Started"
+category:             "Bash"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Starting a new project can be both exciting and daunting. Whether you're a seasoned developer or just starting out, creating something from scratch allows you to unleash your creativity and bring your ideas to life. It's also a great way to learn new skills and expand your knowledge. So if you're feeling inspired, here's a guide on how to start a new project using Bash programming.
+## Why 
 
-## How To
-To begin, open your terminal and create a new directory for your project. You can do this by using the `mkdir` command followed by the name of your project. For example, if you want to create a project called "MyBashProject", you would type `mkdir MyBashProject` in your terminal.
+Starting a new project can be a daunting task, especially for beginners. But it can also be an exciting journey that leads to new discoveries and growth. By learning how to code and create projects, you can expand your skill set and open doors to new opportunities in the world of technology. Plus, creating something from scratch can bring a sense of satisfaction and accomplishment. 
 
-Next, navigate into your new project directory using the `cd` command. Once inside, create a new file for your Bash script using the `touch` command. Let's name this file "my_script.sh". You can do this by typing `touch my_script.sh` in your terminal.
+## How To 
 
-Now, let's open the file in a text editor using the `nano` command. Once opened, you can start writing your Bash script. For our example, let's create a simple "Hello World" script.
+If you're interested in starting a new project with the Bash programming language, you've come to the right place! Here are some simple steps to get you started: 
 
-```
-Bash
-#!/bin/bash
+- First, make sure you have Bash installed on your computer. If not, you can easily install it through a package manager or download it from the official website. 
+- Next, open your favorite text editor or integrated development environment (IDE) and create a new file with the `.sh` extension. This is the standard extension for Bash scripts. 
+- Now, let's dive into some coding examples! 
 
-echo "Hello World!"
-```
+```Bash 
+#!/bin/bash 
+echo "Welcome to my first Bash project!" 
+``` 
+This short code snippet is an example of a basic Bash script. The first line, `#!/bin/bash`, is called the shebang and tells the system to execute the rest of the code using the Bash interpreter. The following line, `echo`, is a command that prints the string within the quotation marks to the terminal. Save this file, navigate to its directory in your terminal, and execute it by typing `./filename.sh`. You should see the output, "Welcome to my first Bash project!", printed on your screen. 
 
-To run this script, save the file and navigate back to your terminal. Make sure you are still in the project directory and use the `sh` command followed by the name of your script. In this case, it would be `sh my_script.sh`. You should see the output "Hello World!" in your terminal.
+Now, let's explore an example that involves user input and a simple if-else statement. 
 
-## Deep Dive
-Starting a new project in Bash gives you the opportunity to use a powerful and versatile scripting language. Bash, short for "Bourne Again SHell", is a command-line interpreter and a default shell for most Linux distributions. It offers a wide range of features such as variables, loops, conditional statements, functions and many more.
+```Bash 
+#!/bin/bash 
+echo "Please enter your name: " 
+read name 
+if [[ $name == "John" ]]; then 
+  echo "Hello, John! Welcome to my Bash project!" 
+else 
+  echo "Sorry, you are not the intended user." 
+fi 
+``` 
 
-When creating a new project in Bash, it's important to have a clear understanding of what you want to achieve. Start by defining the problem you want to solve and breaking it down into smaller tasks. This will help you determine which Bash features you will need to use.
+In this code, we ask the user to input their name. Then, we use an if statement to check if the input matches the correct name. If it does, we print a personalized greeting. If not, we print a message stating that they are not the intended user. Feel free to play around with these examples and add more lines of code to create your own unique project. 
 
-Another important aspect is proper error handling. Bash provides a set of tools that allows you to handle errors and exceptions gracefully. This will not only make your script more robust but also help with debugging and troubleshooting.
+## Deep Dive 
 
-Furthermore, there are many resources available online to help with learning Bash, including tutorials, forums, and documentation. Don't be afraid to reach out and ask for help when needed.
+Now, let's dive a bit deeper and discuss some important considerations when starting a new project with Bash. Firstly, it's crucial to plan and outline your project before jumping into coding. This will help you stay organized and focused. Also, take advantage of the many resources available online, such as tutorials and documentation, to learn more about Bash and its capabilities. Finally, don't be afraid to experiment and make mistakes. That's how we learn and grow as programmers. 
 
-## See Also
-- [Bash Guide for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Bash Scripting Cheat Sheet](https://devhints.io/bash)
-- [Bash Official Documentation](https://tiswww.case.edu/php/chet/bash/bashtop.html)
+## See Also 
 
-Starting a new project in Bash may seem daunting, but with practice and the right resources, you can become a proficient Bash programmer. Happy coding!
+- [Bash Documentation](https://www.gnu.org/software/bash/manual/bash.html) 
+- [Bash Guide for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners) 
+- [Codeacademy's Learn Bash Course](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)

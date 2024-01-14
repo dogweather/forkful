@@ -1,44 +1,57 @@
 ---
-title:                "Elm: 文字列の連結"
+title:                "Elm: 「文字列の連結」"
+simple_title:         "「文字列の連結」"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
 
-文字列を連結する理由は、プログラミングで特定の情報を1つの文字列としてまとめる必要があるからです。例えば、名前と苗字を連結してフルネームを作成する場合や、日付を表す文字列を生成する場合などがあります。
+なぜ文字列を連結するのか、説明します。文字列の連結は非常に一般的なタスクであり、プログラム内の情報を組み合わせる際によく使われます。例えば、ユーザーの名前とアドレスを結合して、メッセージを表示することができます。
 
-## 方法
-
-```Elm
-name = "山田"
-surname = "太郎"
-fullName = name ++ " " ++ surname
-```
-
-上記のコードでは、2つの文字列を連結してフルネームを作成しています。`++`演算子を使用することで、簡単に文字列を結合することができます。また、日付を表す文字列を生成する場合は、`String.fromInt`関数を使用して数値を文字列に変換することもできます。
+# 連結の仕方
 
 ```Elm
-year = 2020
-month = 6
-day = 24
-dateString = String.fromInt year ++ "/" ++ String.fromInt month ++ "/" ++ String.fromInt day
+-- 文字列を連結する
+concatenateStrings str1 str2 =
+  str1 ++ str2
+
+-- サンプルコード
+main =
+  let
+    name = "田中"
+    address = "東京都渋谷区"
+  in
+    "こんにちは、" ++ name ++ "さん！あなたの住所は" ++ address ++ "ですね。"
 ```
 
-上記のコードでは、数値を文字列に変換して日付を表す文字列を作成しています。
+このコードでは、`concatenateStrings`という関数を定義しています。この関数は、引数として与えられた2つの文字列を連結して返します。そして、`main`関数内では、`name`と`address`という2つの変数を定義し、`concatenateStrings`を使って文字列を連結することで、メッセージを表示しています。
 
-## 深堀り
+このコードを実行すると、以下のような出力が得られます。
 
-文字列の連結には、純粋な方法と効率的な方法の2つがあります。純粋な方法は、`++`演算子を使用して1つの文字列に結合する方法です。この方法は、コードがシンプルで読みやすくなりますが、大きな文字列を結合する場合にはパフォーマンスの問題が生じる可能性があります。
+```
+こんにちは、田中さん！あなたの住所は東京都渋谷区ですね。
+```
 
-一方、効率的な方法は、`List`モジュールの`intercalate`関数を使用する方法です。この関数は、リスト内の複数の要素を指定した区切り文字で連結することができます。例えば、`intercalate "," ["a", "b", "c"]`は、文字列`"a,b,c"`を作成します。この方法は、大きな文字列を結合する場合にも高速であり、パフォーマンスを気にする場合にはおすすめです。
+# 深堀り
 
-## 参考サイト
+Elmでは、文字列を連結する方法として、`++`という演算子が用意されています。`++`は左側の文字列に右側の文字列を連結することができます。また、複数の文字列を連結する場合は、`++`を連続して使うこともできます。
 
-- [Elm公式サイト](https://elm-lang.org/)
-- [Learn X in Y minutes - Elm](https://learnxinyminutes.com/docs/elm/)
-- [Elm Documentation](https://package.elm-lang.org/packages/elm/core/latest/)
-- [Elm in Japanese](https://elmjapan.org/)
+また、文字列を連結する際には、`concat`という組み込み関数も使うことができます。例えば、以下のようになります。
+
+```Elm
+concat ["こんにちは", "田中", "さん！"] -- こんにちは田中さん！
+```
+
+文字列を結合する際には、特に気を付ける必要はありませんが、「＋」を使って文字列を結合することはできません。`＋`は数値を足すための演算子であり、文字列を結合することはできません。
+
+# おすすめリンク
+
+- [Elm公式ドキュメント](https://guide.elm-lang.org/core_language.html#concatenation)
+- [Elm入門ガイド (日本語)](https://elm-jp.org/introduction.html)
+- [Elm入門チュートリアル (日本語)](https://www.yoheim.net/blog.php?q=20190101)
+- [Elmビギナートレーニング (日本語)](https://boennemann.github.io/elm-training-jp/)

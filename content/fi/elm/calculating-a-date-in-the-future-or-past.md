@@ -1,71 +1,76 @@
 ---
-title:                "Elm: Sekunneista tulevaisuuteen tai menneisyyteen laskenta"
+title:                "Elm: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+simple_title:         "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi laskisit aikaa tulevaisuudessa tai menneessä?
+# Miksi laskea tulevia tai menneitä päivämääriä?
 
-Calculating dates in the future or past is a common task in many programming projects. It allows us to plan and keep track of important events, deadlines, or recurring events. In Elm, we can use the built-in `Date` module to easily calculate dates, making it a useful skill for any Elm programmer.
+On monia syitä, miksi haluat ehkä laskea päivämääriä tulevaisuudessa tai menneisyydessä. Ehkä tarvitset tätä ominaisuutta sovelluksessasi, jotta voit muistuttaa käyttäjiä tärkeistä tapahtumista tai laskuttaa tulevaa laskua. Tai ehkä haluat vain antaa käyttäjille mahdollisuuden nähdä, kuinka paljon päiviä on jäljellä heidän syntymäpäiväänsä. Joka tapauksessa, tässä on muutama yksinkertainen tapa laskea päivämääriä tulevaisuudessa tai menneisyydessä käyttäen Elm-ohjelmointikieltä.
 
-## Miten tehdä
+## Miten lasketaan päivämääriä tulevaisuudessa tai menneisyydessä?
 
-Ajan laskeminen tulevaisuudessa tai menneisyydessä vaatii muutaman vaiheen, jotka on helppo toteuttaa Elm-kielellä. Ensimmäinen vaihe on tuoda käyttöön `Date`-moduuli, joka sisältää tarvittavat työkalut ajan laskemiseen.
+### Päivien lisääminen
 
-```Elm
-import Date exposing (Date, toTime, fromTime, add, subtract, millisecond)
-```
-
-Seuraavaksi, voimme luoda `Date`-tyypin oliorakenteen valitulla päivämäärällä, tällä kertaa tulevaisuuteen 10 päivää eteenpäin. Tämä voidaan tehdä käyttämällä `add`-funktiota ja antamalla haluttu luku ja aikayksikkö.
+Jos haluat lisätä päiviä tiettyyn päivämäärään, voit käyttää `addDays` -funktiota. Esimerkiksi:
 
 ```Elm
-futureDate : Date
-futureDate = add 10 millisecond Date.now
+import Date exposing (addDays, fromParts)
+
+-- Laskee viisi päivää tulevaisuudessa
+addDays 5 (fromParts 2020 February 14)
+-- Palauttaa Date-armeen 2020 helmikuu 19
 ```
 
-Tuloksena saamme päivämäärän 10 päivän päästä tästä hetkestä.
+### Kuukausien lisääminen
 
-```
-2100-01-11T00:00:00.000Z
-```
-
-Voimme myös laskea aikaa menneisyydessä käyttämällä `subtract`-funktiota. Esimerkiksi, jos haluamme laskea päivämäärän 5 päivää sitten, käytämme seuraavaa koodia:
+Jos haluat lisätä kuukausia tiettyyn päivämäärään, voit käyttää `addMonths` -funktiota. Esimerkiksi:
 
 ```Elm
-pastDate : Date
-pastDate = subtract 5 millisecond Date.now
+import Date exposing (addMonths, fromParts)
+
+-- Laskee neljä kuukautta tulevaisuudessa
+addMonths 4 (fromParts 2020 February 14)
+-- Palauttaa Date-armeen 2020 kesäkuu 14
 ```
 
-Tässä tapauksessa saamme päivämäärän 5 päivää taaksepäin tästä hetkestä.
+### Vuosien lisääminen
 
-```
-2099-12-27T00:00:00.000Z
-```
-
-## Syvällinen sukellus
-
-`Date`-moduuli sisältää myös muita hyödyllisiä funktioita, jotka antavat meille enemmän kontrollia päivämäärien laskemisessa. Esimerkiksi `fromTime`-funktio muuttaa millisekunnit `Date`-tyypin olioksi.
+Jos haluat lisätä vuosia tiettyyn päivämäärään, voit käyttää `addYears` -funktiota. Esimerkiksi:
 
 ```Elm
-fromTime : Time -> Date
+import Date exposing (addYears, fromParts)
+
+-- Laskee kaksi vuotta tulevaisuudessa
+addYears 2 (fromParts 2020 February 14)
+-- Palauttaa Date-armeen 2022 helmikuu 14
 ```
 
-Voimme käyttää tätä yhdessä `toTime`:n kanssa muuttaaksemme `Date`-tyypin takaisin millisekunneiksi.
+### Päivien vähentäminen
 
-Toinen hyödyllinen funktio on `difference` joka laskee aikaeron kahden päivämäärän välillä ja palauttaa sen millisekunteina.
+Voit myös vähentää päiviä, kuukausia ja vuosia tietystä päivämäärästä käyttämällä vastaavia funktioita `subDays`, `subMonths` ja `subYears`. Esimerkiksi:
 
 ```Elm
-difference : Date -> Date -> Time
+import Date exposing (subMonths, fromParts)
+
+-- Vähentää yhden kuukauden menneisyydessä
+subMonths 1 (fromParts 2020 February 14)
+-- Palauttaa Date-armeen 2020 tammikuu 14
 ```
 
-Tämä auttaa meitä laskemaan päivien, tuntien ja minuuttien eroja eri päivämäärien välillä.
+### Huomioita
+
+On hyvä tiedostaa, että nämä funktiot käyttävät uutta päivämäärätyyppiä, joka tuli käyttöön Elm-versiossa 0.19. Jos käytät vanhempaa versiota Elmistä, sinun pitäisi käyttää `Date.add` ja `Date.subtract` -funktioita sen sijaan. Voit tarkistaa käyttämäsi Elm-version `elm.json` -tiedostosta projektisi juuresta.
+
+## Syventävä tutkimus
+
+Jos haluat syvemmän katsauksen päivämäärien laskemiseen tulevaisuudessa tai menneisyydessä, hyvä lähtökohta on tutustua `Date` -moduuliin ja sen tarjoamiin erilaisiin funktioihin ja tietotyyppeihin. Voit myös suorittaa lisätutkimusta päivämäärien käsittelystä yleisesti, jotta ymmärrät paremmin niiden toimintaperiaatteita.
 
 ## Katso myös
 
-- [Elm Date -dokumentaatio](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Elm Language Guide](https://guide.elm-lang.org/)
-
-Kiitos lukemisesta! Toivottavasti tämä opas auttoi sinua ymmärtämään, kuinka lasketaan aikaa tulevaisuudessa tai menneisyydessä käyttäen Elm-kielellä. Muista tutustua lisäresursseihin jatkaaksesi oppimista. Onnea Elm-ohjelmoinnissa!
+- [Elm-opp

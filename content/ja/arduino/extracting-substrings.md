@@ -1,39 +1,37 @@
 ---
-title:                "Arduino: 部分文字列の抽出"
+title:                "Arduino: サブストリング抽出"
+simple_title:         "サブストリング抽出"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+なぜ文字列から部分文字列を抽出するか。Arduinoプログラマーの皆さんは、時には文字列を処理しなければならない場面に遭遇することがあります。例えば、文字列から特定の情報を抽出したり、ある部分を置き換えたりする必要があるかもしれません。そのような場合には、文字列内の部分的な情報を取得するために部分文字列抽出が必要になる場合があります。
 
-Arduinoは、ユーザーが独自のプログラムを作成して、マイクロコントローラーを制御することができるプログラミングツールです。今回は、Arduinoを使って文字列から部分文字列を抽出する方法について紹介します。これは、文字列処理を行う上で重要なスキルであり、多くのアプリケーションで役立ちます。
+## テクニック
+部分文字列抽出のプログラミング方法を説明します。まず、文字列を格納するための変数を定義します。次に、その変数から特定の位置にある文字を抽出するために、インデックスと呼ばれる数字を使用します。インデックスは、文字列内の文字の位置を指定するために使用されます。例えば、 "Hello"という文字列において、インデックス0は"H"、インデックス1は"e"を指定します。そして、抽出したい部分文字列の開始位置と終了位置をインデックスで指定します。抽出したい部分文字列を指定するためには、Arduinoのサブストリング関数を使用します。
 
-## 方法
+```Arduino
+// 文字列を格納する変数の定義
+String str = "Hello World";
 
-Arduinoで部分文字列を抽出する方法は簡単です。まずは、抽出したい文字列を定義します。次に、```substring()```関数を使用して、抽出したい部分文字列の開始位置と終了位置を指定します。例えば、文字列 "Arduinoの部分文字列を抽出する方法" から "抽出する方法" を抽出するコードは以下のようになります。
+// 部分文字列を抽出する
+String sub = str.substring(6, 11); // "World"が抽出される
 
+// 抽出した部分文字列をシリアルモニターに出力する
+Serial.println(sub); // "World"が出力される
 ```
-Arduinoの部分文字列を抽出する方法
 
-String str = "Arduinoの部分文字列を抽出する方法";
+## 詳細
+部分文字列抽出には、さまざまな方法があります。上記の例では、特定の位置から特定の文字数を抽出する方法を見てきましたが、他にもさまざまな方法があります。例えば、部分文字列内の特定の文字を検索して抽出する方法や、正規表現を使用してパターンに一致する部分文字列を抽出する方法などがあります。Arduinoのドキュメントやインターネット上のチュートリアルを参考にして、自分に合った抽出方法を見つけてみてください。
 
-String substr = str.substring(11, 18);
+## さらに見る
+今回紹介したのは部分文字列抽出の基本的な方法でしたが、Arduinoでは他にも便利な文字列操作の関数がたくさんあります。以下のリンクを参考にして、さまざまな文字列操作の方法を学んでみましょう。
 
-Serial.println(substr); //出力結果: 抽出する方法
-```
-
-この例では、```substring()```関数の引数として、開始位置を11、終了位置を18と指定しています。これにより、元の文字列の11番目の文字から18番目の文字までが抽出され、```substr```に代入されます。
-
-## ディープダイブ
-
-文字列を操作する上で部分文字列の抽出は重要な方法です。例えば、センサーやデバイスから送られてくる文字列の一部を取り出して特定の値を抽出することができます。また、文字列を分割して特定の単語や数値を入力する際にも部分文字列の抽出が役立ちます。Arduinoでは、```indexOf()```関数や```subString()```関数以外にもさまざまな文字列操作関数が用意されています。これらを組み合わせることで、より複雑な文字列処理を行うことができます。
-
-## 参考リンク
-
-- [Arduino公式サイト](https://www.arduino.cc/)
-- [Arduino リファレンス](https://www.arduino.cc/reference/)
-- [Arduinoで文字列を操作する方法](https://qiita.com/mamoruuuuuuuuuu/items/a14432a05b052f825eee)
-- [Arduinoで部分文字列を抽出する方法](https://en-in.instructables.com/id/Extract-Substring-of-a-String-On-Arduino/)
+- https://www.arduino.cc/en/Reference/StringObject
+- https://www.arduino.cc/en/Tutorial/StringConstructors
+- https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/

@@ -1,47 +1,56 @@
 ---
 title:                "Kotlin: Imprimindo saída de depuração"
+simple_title:         "Imprimindo saída de depuração"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração em Kotlin?
+## Por Que
 
-Imprimir saída de depuração é uma ferramenta útil para os desenvolvedores Kotlin entenderem o fluxo de seus códigos e identificarem possíveis erros. Ajuda a visualizar os valores das variáveis ​​em diferentes pontos do código, permitindo uma depuração mais eficiente.
+Você já se encontrou em uma situação em que seu código não estava funcionando corretamente e você não conseguia descobrir o porquê? Muitas vezes, pode ser difícil determinar onde exatamente o problema está ocorrendo. É por isso que imprimir saída de debug pode ser uma ferramenta útil para os programadores.
 
 ## Como Fazer
 
-Para imprimir saída de depuração em Kotlin, podemos utilizar a função print() ou println(). A função print() imprime no console sem uma nova linha, enquanto a função println() imprime com uma nova linha. Podemos utilizar essas funções passando as variáveis ou strings desejadas como parâmetros.
+Para imprimir saída de debug em Kotlin, você pode usar a função `println()` ou a função `Log.d()` da biblioteca de Log do Android. Aqui está um exemplo simples de como usar essas funções:
 
 ```Kotlin
-val nome = "João"
-print("Seu nome é: ")
-print(nome)
-
-// Saída: Seu nome é: João
+val nome = "Rafaela"
+val idade = 25
+println("O nome é $nome e a idade é $idade.")
 ```
 
-Podemos ainda formatar a saída de depuração usando a função String.format() ou expressões de formatação. Por exemplo:
+Saída:
+```
+O nome é Rafaela e a idade é 25.
+```
+
+Você também pode usar as funções de impressão de debug em expressões lógicas para ver os valores das variáveis enquanto seu código está sendo executado. Veja um exemplo:
 
 ```Kotlin
-val numero = 10
-println("O número é: $numero")
+val numero1 = 10
+val numero2 = 5
 
-// Saída: O número é: 10
+println("A soma de $numero1 e $numero2 é ${numero1 + numero2}.")
 ```
 
-Também podemos utilizar a função Any?.toString() para converter qualquer tipo de dado em uma string para ser impressa na saída de depuração.
+Saída:
+```
+A soma de 10 e 5 é 15.
+```
 
-## Deep Dive
+## Aprofundando
 
-Além das funções print() e println(), existem outras formas de imprimir saída de depuração em Kotlin. Uma delas é utilizando a biblioteca de Log que está incluída no Android Studio. Essa biblioteca permite que registremos mensagens de log com diferentes níveis de gravidade, como debug, informação, aviso e erro. Isso permite uma depuração mais detalhada e organizada.
+A impressão de debug é especialmente útil durante o processo de depuração de código, que é o processo de encontrar e corrigir erros em seu código. Ao imprimir a saída de valores de variáveis ​​e expressões, você pode ver como eles estão sendo manipulados e comparar com o resultado esperado. Isso pode ajudar a identificar possíveis problemas em seu código.
 
-Outra forma é utilizar a biblioteca de depuração integrada do Kotlin, que permite que coloquemos pontos de interrupção no código e visualizemos o valor das variáveis no momento da execução. Isso é especialmente útil em situações de bugs que não podem ser facilmente identificados apenas com a saída de depuração no console.
+Além disso, você pode usar a impressão de debug para entender melhor o fluxo de execução do seu código. Ao imprimir valores dentro de loops e condicionais, você pode ver como seu código está se comportando em diferentes cenários.
 
-## Veja Também
+Uma dica para imprimir saída de debug efetivamente é usar informações descritivas, como o nome da variável ou uma descrição do que o valor representa. Isso pode ajudar a identificar a qual parte do código pertence a saída de debug específica.
 
-- [Documentação Oficial do Kotlin sobre Depuração](https://kotlinlang.org/docs/debugging.html)
-- [Guia do Jetbrains sobre Depuração em Kotlin](https://www.jetbrains.com/help/kotlin/debugging.html)
-- [Utilizando Log para saída de depuração em Kotlin no Android](https://developer.android.com/reference/android/util/Log)
+## Ver Também
+
+- [Documentação da Função `println()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/println.html)
+- [Documentação da Função `Log.d()`](https://developer.android.com/reference/android/util/Log.html#d(java.lang.String,%20java.lang.String))

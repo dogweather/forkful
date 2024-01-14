@@ -1,41 +1,52 @@
 ---
 title:                "Rust: Capitalizzare una stringa"
+simple_title:         "Capitalizzare una stringa"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché 
 
-Se sei nuovo alla programmazione in Rust, potresti chiederti perché qualcuno vorrebbe capitalizzare una stringa. In realtà, ci sono molte situazioni in cui il capitalizzare una stringa può essere molto utile. Ad esempio, potresti voler visualizzare correttamente i nomi dei tuoi utenti o creare una stringa con una parola in maiuscolo come titolo. Imparare a capitalizzare una stringa è un'abilità importante per ogni programmatore Rust.
+Capitalizzare una stringa è un'operazione comune quando si lavora con le stringhe in molti linguaggi di programmazione. Ci sono diverse situazioni in cui potresti aver bisogno di capitalizzare una stringa, come ad esempio per rendere uniformi i dati inseriti dall'utente o per confrontare due stringhe in modo case-insensitive.
 
-## Come fare
+## Come Fare
 
-In Rust, puoi capitalizzare una stringa in modo molto semplice utilizzando il metodo `to_uppercase()`. In questo metodo, basta passare la tua stringa come argomento e otterrai una nuova stringa con tutti i caratteri convertiti in maiuscolo.
+Per capitalizzare una stringa in Rust, puoi utilizzare il metodo `to_uppercase` della struttura di dati `String`. Basta passare la stringa che si desidera capitalizzare come argomento e assegnare il risultato a una nuova variabile. Ad esempio:
 
 ```Rust
-let stringa = "questa è una stringa da capitalizzare";
-let stringa_in_maiuscolo = stringa.to_uppercase();
-
-println!("{}", stringa_in_maiuscolo); // OUTPUT: QUESTA È UNA STRINGA DA CAPITALIZZARE
+let stringa = String::from("hello world");
+let stringa_capitalizzata = stringa.to_uppercase();
+println!("{}", stringa_capitalizzata); // output: HELLO WORLD
 ```
 
-Se preferisci capitalizzare solo la prima lettera di una stringa, puoi utilizzare il metodo `capitalize()`.
+In questo esempio, abbiamo dichiarato una variabile `stringa` che contiene la stringa "hello world" e poi abbiamo chiamato il metodo `to_uppercase` sulla variabile, assegnando il risultato alla variabile `stringa_capitalizzata`. Infine, abbiamo stampato la stringa capitalizzata utilizzando il metodo `println`.
+
+Puoi anche capitalizzare solo la prima lettera di una stringa utilizzando il metodo `capitalize`, che funziona allo stesso modo.
 
 ```Rust
-let stringa = "questa è una stringa da capitalizzare";
-let stringa_con_prima_lettera_in_maiuscolo = stringa.to_ascii_lowercase().capitalize();
-
-println!("{}", stringa_con_prima_lettera_in_maiuscolo); // OUTPUT: Questa è una stringa da capitalizzare
+let nome = String::from("marco");
+let nome_capitalizzato = nome.capitalize();
+println!("{}", nome_capitalizzato); // output: Marco
 ```
 
 ## Approfondimento
 
-Se vuoi capire meglio come funziona il metodo `to_uppercase()` e imparare a capitalizzare una stringa manualmente, puoi approfondire il concetto di Unicode e di codifica dei caratteri in Rust. In poche parole, il metodo `to_uppercase()` utilizza tabelle di conversione per trasformare i caratteri in maiuscolo. Invece di utilizzare questo metodo predefinito, puoi utilizzare queste tabelle di conversione per creare una funzione personalizzata che adatta la conversione ai tuoi specifici requisiti.
+È importante notare che il metodo `to_uppercase` e `capitalize` non modificano direttamente la stringa originale, ma restituiscono una nuova stringa con la lettera maiuscola o solo la prima lettera in maiuscolo. Ciò significa che è necessario assegnare il risultato del metodo a una nuova variabile o sovrascrivere la stringa originale per utilizzare la versione capitalizzata.
 
-## Vedi anche
+Inoltre, è possibile specificare una lingua specifica come parametro per il metodo `to_uppercase` per garantire che le lettere accentate siano capitalizzate correttamente.
 
-- [Unità e conversioni di stringhe in Rust](https://doc.rust-lang.org/std/ascii/struct.EscapeDefault.html#example)
-- [Rust Unicode FAQ](https://www.rust-lang.org/it-IT/frequently-asked-questions#unicode)
+```Rust
+let stringa = String::from("ciao");
+let stringa_capitalizzata = stringa.to_uppercase(Some(Locale::Language("it".parse().unwrap())))
+println!("{}", stringa_capitalizzata); // output: CIAO
+```
+
+## Vedi Anche
+
+- [La documentazione ufficiale di Rust per il metodo `to_uppercase`](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
+- [Ulteriori informazioni su `String` e i suoi metodi](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Una guida su come manipolare le stringhe in Rust](https://www.tutorialspoint.com/rust/rust_strings.htm)

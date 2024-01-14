@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Å sjekke om en mappe eksisterer"
+title:                "Elixir: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/checking-if-a-directory-exists.md"
 ---
 
@@ -9,40 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Hvorfor
 
-Noen ganger i programmeringsverdenen, spesielt når man jobber med filbehandling, trenger man å sjekke om en bestemt mappe eksisterer før man utfører ytterligere operasjoner. Dette kan være for å unngå unødvendige feilmeldinger eller sikre at de riktige filene er tilgjengelige før de brukes. I denne bloggposten vil vi se nærmere på hvordan man kan sjekke om en mappe eksisterer ved hjelp av Elixir-programmeringsspråket.
+Det er viktig å vite om en mappe eksisterer når man jobber med programmering, spesielt hvis man trenger å hente ut eller lagre data. Ved å sjekke om en mappe eksisterer, kan man unngå feil og sikre at programmet fungerer som forventet.
 
-# Hvordan gjøre det
+# Slik gjør du det
 
-For å sjekke om en mappe eksisterer i Elixir, kan vi bruke funksjonen `File.exists?/1` fra `File`-modulen. Dette vil returnere en boolsk verdi som indikerer om mappen eksisterer eller ikke. La oss se på et eksempel:
+For å sjekke om en mappe eksisterer, kan du bruke funksjonen `File.dir?/1`, hvor 1 representerer stien til mappen du ønsker å sjekke. Her er et eksempel på hvordan du bruker denne funksjonen i praksis:
 
-```Elixir
-folder_path = "min-mappe/"
-if File.exists?(folder_path) do
-  IO.puts "Mappen #{folder_path} eksisterer."
-else
-  IO.puts "Mappen #{folder_path} eksisterer ikke."
-end
+```elixir
+resultat = File.dir?("/brukere/brukernavn/mappenavn")
+IO.puts resultat
+
+# output: true
 ```
 
-I dette eksempelet sjekker vi om mappen "min-mappe" eksisterer. Hvis den gjør det, vil vi få utskriften "Mappen min-mappe/ eksisterer.", ellers vil vi få utskriften "Mappen min-mappe/ eksisterer ikke.".
+I dette tilfellet vil funksjonen returnere `true` hvis mappen eksisterer, og `false` hvis den ikke gjør det.
 
 # Dypdykk
 
-Hvis du ønsker å sjekke om en mappe eksisterer på en spesifikk plassering, kan du bruke funksjonen `File.read_dir/1` fra `File`-modulen. Denne funksjonen vil returnere en liste med alle filer og mapper som finnes på den gitte plasseringen. Hvis mappen du leter etter er en del av denne listen, betyr det at den eksisterer. La oss se på et eksempel:
-
-```Elixir
-folder_path = "/bruker/navn/dokumenter/"
-file_list = File.read_dir(folder_path)
-if Enum.member?(file_list, "min-mappe") do
-  IO.puts "Mappen #{folder_path} eksisterer."
-else
-  IO.puts "Mappen #{folder_path} eksisterer ikke."
-end
-```
-
-I dette eksempelet sjekker vi om mappen "min-mappe" ligger i mappen "dokumenter" på brukerens plassering. Hvis den gjør det, vil vi få utskriften "Mappen /bruker/navn/dokumenter/ eksisterer.", ellers vil vi få utskriften "Mappen /bruker/navn/dokumenter/ eksisterer ikke.".
+Hvis du ønsker å lære mer om hvordan sjekking av mapper fungerer i Elixir, kan du se på hvordan funksjonen `File.dir?/1` er implementert i Elixir-kildekoden. Du kan også utforske ulike metoder for å håndtere forskjellige typer mapper, for eksempel skjulte mapper eller mapper med spesielle tillatelser.
 
 # Se også
 
-- [Elixir File-modulen dokumentasjon](https://hexdocs.pm/elixir/File.html)
-- [Elixir Enum-modulen dokumentasjon](https://hexdocs.pm/elixir/Enum.html)
+- Offisiell Elixir dokumentasjon for `File.dir?/1`: https://hexdocs.pm/elixir/File.html#dir?/1
+- Artikkel om filbehandling i Elixir: https://elixirschool.com/nn/lessons/specifics/file/

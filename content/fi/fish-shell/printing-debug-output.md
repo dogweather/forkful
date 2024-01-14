@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Virheenjäljitystulosteen tulostaminen"
+title:                "Fish Shell: Tulostaminen virheenkorjaustulosteena"
+simple_title:         "Tulostaminen virheenkorjaustulosteena"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/printing-debug-output.md"
 ---
 
@@ -9,30 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittaessamme koodia, yksi tapa löytää ja korjata bugeja on tulostaa debug-viestejä. Tämä auttaa meitä ymmärtämään tarkemmin, mitä koodi tekee ja missä kohtaa on ongelmia. Fish Shellin avulla tämä prosessi on helppo ja tehokas.
+Joskus koodin kehittämisessä voi tulla vastaan tilanne, jossa tarvitsee tarkastella mitä tietoja muuttujissa on juuri tietyllä hetkellä. Tässä tilanteessa debug-tulosteiden tulostaminen voi auttaa hahmottamaan koodin suoritusta ja pääsemään lähemmäksi ratkaisua ongelmaan.
 
-## Kuinka tehdä
+## Miten
 
-Fish Shellin avulla voimme helposti tulostaa debug-viestejä käyttämällä sisäänrakennettua `echo` -toimintoa. Samoin kuin muutkin komentotulkkien komennot, se voidaan kirjoittaa käyttämällä putkea, kuten esimerkiksi `echo "Debug-viesti" | less` mikä tulostaa viestin ja samalla avaa sen less-ohjelmassa.
+Aloita lisäämällä koodiin `set -x`, jotta Fish-shell tulostaa debug-tulosteet.
 
-```fish
-echo "Tämä on debug-viesti"
+```
+Fish Shell koodi:
+set -x
+muuttuja=1
+toinen_muuttuja="Hei Maailma!"
 ```
 
-Jos haluamme lisätä enemmän tietoa viestiin, voimme käyttää erilaisia ​​muuttujia ja sisäänrakennettuja funktionaalisuuksia, kuten `set`, `printf` ja `env`. Nämä antavat meille enemmän hallintaa siitä, mitä haluamme tulostaa.
+Tässä esimerkissä `set -x` tulostaa muuttujien arvot alapuolella olevaan tulosteeseen:
 
-```fish
-set viesti "Tämä on %s-viesti" debug
-printf $viesti
-env > debug.txt
+```
+1 muuttuja=1
+2 toinen_muuttuja="Hei Maailma!"
 ```
 
-## Syvällinen sukellus
+Voit myös lisätä `echo`-komentoja koodiin niiden osien ja muuttujien tulostamiseksi, joita haluat tarkastella.
 
-Debug-viestien avulla voimme nähdä vaiheittain, mitä koodimme tekee ja missä kohtaa se saattaa aiheuttaa ongelmia. Voimme myös käyttää ingnostista-tilaa, joka antaa meille tarkempaa tietoa Debug-viestit-järjestelmästä, kuten esimerkiksi missä tiedostossa virhe sijaitsee ja mikä rivi aiheutti sen.
+```
+Fish Shell koodi:
+muuttuja=1
+echo "Muuttujan arvo on $muuttuja."
+toinen_muuttuja="Hei Maailma!"
+echo "Toisen muuttujan arvo on $toinen_muuttuja."
+```
+
+Tämä tulostaisi seuraavan:
+
+```
+Muuttujan arvo on 1.
+Toisen muuttujan arvo on Hei Maailma!
+```
+
+## Syvempää sukellusta
+
+Fish-shellin `set -x` komento tulostaa vain arvot, mutta voit myös käyttää `set -v` tulostamaan myös muuttujien nimet. Lisäksi voit käyttää `set -l` tulostamaan myös koodirivinumerot, mikä helpottaa debuggaamista suuremmissa koodikokonaisuuksissa.
+
+Voit myös käyttää `set -n` tulostamaan koodin, mutta estämään sen suorittamisen. Tämä on hyödyllistä tarkastellessasi koodin suoritusjärjestystä ja mahdollisia ongelmakohtia.
 
 ## Katso myös
 
-- [Fish Shellin viralliset dokumentit](https://fishshell.com/docs/current/index.html)
-- [Fish Shellin vinkkejä ja temppuja](https://hackernoon.com/fish-shell-is-a-smart-and-user-friendly-command-line-shell-for-linux-mac-and-windows-95d177f5f1f7)
-- [Kehittynyt Fish Shell -ohje](https://dev.to/iggystoian/fish-shell-an-in-depth-tutorial-3p0j)
+- [Fish-shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Debuggaaminen Fish-shellillä](https://fishshell.com/docs/current/tutorial.html#tut_debugging)
+- [Fish-shellin keskusteluryhmä](https://github.com/fish-shell/fish-shell/discussions)

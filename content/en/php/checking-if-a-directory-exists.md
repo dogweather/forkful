@@ -1,59 +1,54 @@
 ---
 title:                "PHP recipe: Checking if a directory exists"
+simple_title:         "Checking if a directory exists"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-When writing PHP code, it is important to ensure that all necessary directories and files exist. By checking if a directory exists, we can prevent potential errors and ensure that our code runs smoothly.
+
+One common task in PHP programming is to check if a directory exists before performing any operation on it. This can be helpful in scenarios where the directory is expected to exist, but for some reason it may have been deleted or moved.
 
 ## How To
 
-To check if a directory exists in PHP, we can use the `is_dir()` function. This function takes in a string representing the directory path and returns a boolean value indicating whether the directory exists or not.
-
-Let's take a look at a simple example:
+Checking if a directory exists in PHP is a straightforward process. The `is_dir()` function can be used to check if a given path is a directory or not. Here is an example of how this function can be used:
 
 ```PHP
-$directory = '/path/to/dir';
-if (is_dir($directory)) {
-    echo 'The directory exists.';
+$directory = "/path/to/directory";
+if(is_dir($directory)){
+    echo "The directory exists.";
 } else {
-    echo 'The directory does not exist.';
+    echo "The directory does not exist.";
 }
 ```
 
-In this example, we first set the directory path as a variable. Then, we use the `is_dir()` function to check if the directory exists. If it does, the code within the if statement will be executed and we will see the output "The directory exists." If the directory does not exist, the code within the else statement will be executed and we will see the output "The directory does not exist."
+The `is_dir()` function returns a boolean value (`true` or `false`) depending on whether the directory exists or not. In the above example, if the directory exists, the output will be "The directory exists." If the directory does not exist, the output will be "The directory does not exist."
 
-We can also add additional logic to our code, such as creating the directory if it does not exist or displaying an error message if the directory cannot be created. Here's an example:
+It is also possible to use the `file_exists()` function to check for the existence of a directory. However, this function can also check for the existence of a file, so it is not as specific as the `is_dir()` function.
 
 ```PHP
-$directory = '/path/to/dir';
-if (!is_dir($directory)) {
-    // create the directory if it does not exist
-    if (!mkdir($directory)) {
-        echo 'Error creating directory.';
-    } else {
-        echo 'Directory created.';
-    }
+$directory = "/path/to/directory";
+if(file_exists($directory) && is_dir($directory)){
+    echo "The directory exists.";
 } else {
-    echo 'The directory already exists.';
+    echo "The directory does not exist.";
 }
 ```
 
-In this example, we first check if the directory exists using the `is_dir()` function. If it does not exist, we then use the `mkdir()` function to create the directory. The `mkdir()` function returns a boolean value, so we can check if the directory was successfully created and display an appropriate message.
+In the above example, the `file_exists()` function is used first to check if the given path exists. If it does, then the `is_dir()` function is used to ensure that the path is a directory and not a file.
 
 ## Deep Dive
-Behind the scenes, the `is_dir()` function makes use of the `opendir()` function which opens a directory handle and returns a resource. This resource is then passed to the `closedir()` function to close the directory handle.
 
-Additionally, the `is_dir()` function also checks for symbolic links and will return `true` if a symbolic link points to a directory that exists.
+When using the `is_dir()` function, it is important to note that it only checks for the existence of the directory, not if it is readable or writable. To check for those permissions, the `is_readable()` and `is_writable()` functions can be used, respectively. 
 
-It is also worth noting that the `is_dir()` function will not work for directories on remote locations, as it only checks for directories on the local file system.
+Another thing to keep in mind is that the path passed to the `is_dir()` function must be a valid path on the server. This means that relative paths (e.g. "../directory") may not work as expected. To ensure proper functionality, it is recommended to use absolute paths.
 
 ## See Also
-- [PHP Documentation - is_dir()](https://www.php.net/manual/en/function.is-dir.php)
-- [PHP Documentation - mkdir()](https://www.php.net/manual/en/function.mkdir.php)
-- [PHP Documentation - opendir()](https://www.php.net/manual/en/function.opendir.php)
-- [PHP Documentation - closedir()](https://www.php.net/manual/en/function.closedir.php)
+- [PHP is_dir() function documentation](https://www.php.net/manual/en/function.is-dir.php)
+- [PHP file_exists() function documentation](https://www.php.net/manual/en/function.file-exists.php)
+- [PHP is_readable() function documentation](https://www.php.net/manual/en/function.is-readable.php)
+- [PHP is_writable() function documentation](https://www.php.net/manual/en/function.is-writable.php)

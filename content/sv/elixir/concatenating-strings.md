@@ -1,51 +1,49 @@
 ---
 title:                "Elixir: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
-Att konkatenera strängar, det vill säga sammanslå flera strängar till en enda, är en grundläggande och användbar funktion inom Elixir-programmering. Genom att kunna sammanslå strängar kan du skapa dynamiska texter och formatera data på ett smidigt sätt.
+## Varför
 
-## Hur man gör
-Att konkatenera strängar i Elixir är enkelt. Använd funktionen `<>` för att sammanslå två eller flera strängar. Se nedan för exempel:
+Det kan verka som en enkel uppgift, men att sammanslå strängar är en vanlig uppgift inom programmering och kan vara användbar i många olika sammanhang. Genom att förstå hur man konkatenerar strängar i Elixir kan du öka dina kodningskunskaper och skriva mer effektiv och läsbar kod.
 
-```Elixir
-sträng1 = "Hej "
-sträng2 = "Elixir"
-konkatenerad_sträng = sträng1 <> sträng2
-IO.puts konkatenerad_sträng
-```
+## Hur man gör det
 
-Output:
-```Elixir
-Hej Elixir
-```
-
-Du kan även konkatenera strängar med andra värden, som till exempel en variabel eller en konstant. Se exempel nedan:
+För att sammanslå strängar i Elixir kan du använda operatorn `<>`. Det gör att två strängar förenas och skapar en ny sträng. Du kan också använda `String.concat/1` -funktionen som tar en lista av strängar och slår samman dem till en enda sträng. Här är några exempel på hur du kan göra det:
 
 ```Elixir
-namn = "Anna"
-ålder = 28
-IO.puts "Mitt namn är " <> namn <> " och jag är " <> ålder <> " år gammal."
+IO.puts "Hello " <> "world!" 
+=> Hello world!
+
+String.concat(["Coding", "is", "fun"])
+=> Codingisfun
 ```
 
-Output:
-```Elixir
-Mitt namn är Anna och jag är 28 år gammal.
-```
+Som du kan se ovan måste du använda citationstecken runt de strängar som du vill sammanslå. Om du inte gör det kan du få olika felmeddelanden.
 
 ## Djupdykning
-När du konkatenerar strängar i Elixir skapas en helt ny sträng istället för att ändra på de ursprungliga strängarna. Detta sker på grund av Elixir's immutabilitet, vilket innebär att värden inte kan ändras efter att de har skapats. Detta kan kallas för "copy and concat" approach.
 
-En annan viktig aspekt är att funktionen `<>` tar två argument av samma typ, vilket innebär att om du försöker sammanslå en sträng med en annan typ av värde, som en integer eller en lista, kommer det att resultera i ett error.
+En intressant sak att notera är att operatorn `<>` är kommutativ, vilket innebär att ordningen på strängarna inte spelar någon roll. Men funktionen `String.concat/1` är inte kommutativ och ordningen på strängarna spelar en viktig roll. Om vi till exempel tar följande kod:
+
+```Elixir
+IO.puts "1" <> 2
+=> ** (ArgumentError) argument error
+
+String.concat([1, "2"])
+=> 12
+```
+
+I det första exemplet får vi ett felmeddelande eftersom vi försöker slå samman en sträng med ett heltal. Men i det andra exemplet konverteras heltalen till strängar och slås sedan samman.
+
+Det är också värt att nämna att det finns andra inbyggda funktioner i Elixir som kan användas för att konkatenera strängar, som `Kernel.to_string/1` eller `Integer.to_string/1`. Det är viktigt att förstå vilken typ av data du arbetar med och välja rätt funktion för att undvika fel.
 
 ## Se även
-För mer information om strängar och andra grundläggande koncept inom Elixir, kolla in följande resurser:
 
-- [Elixir School](https://elixirschool.com/sv/)
-- [Officiell Elixir Dokumentation](https://hexdocs.pm/elixir/overview.html)
-- [Awesome Elixir](https://github.com/h4cc/awesome-elixir) - en samling av användbara bibliotek, tools och resurser för Elixir-programmering.
+- [Elixir dokumentation om strängar](https://elixir-lang.org/getting-started/strings.html)
+- [Elixir School - Strängar](https://elixirschool.com/sv/lessons/basics/strings/)

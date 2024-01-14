@@ -1,57 +1,72 @@
 ---
-title:                "C++: Alastringien erottaminen"
+title:                "C++: Alaohjelmien erottaminen"
+simple_title:         "Alaohjelmien erottaminen"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Substringien erottaminen on tärkeä osa ohjelmointia, koska se mahdollistaa merkkijonojen manipuloinnin ja käsittelyn. Tämä voi olla hyödyllistä esimerkiksi tietokantaohjelmoinnissa tai tekstin käsittelyssä.
+Substringien erottaminen on toiminto, joka on välttämätön taito ainakin C++-ohjelmoinnissa. Se antaa sinulle mahdollisuuden ottaa tietyn osan merkkijonosta ja käyttää sitä eri tavoin sovelluksissasi. Tässä blogikirjoituksessa tarkastelemme tarkemmin substringien erottamisen hyötyjä, miten se tehdään ja mitä lisätietoja sinun tulisi tietää tästä tärkeästä ohjelmoinnin osa-alueesta.
 
-## Kuinka tehdä
+# Miten tehdä?
 
-Substringien erottaminen C++:lla on helppoa. Ensimmäiseksi tarvitaan merkkijono, josta haluat erottaa alimerkkijonon. Tämän jälkeen käytetään `substr()` -funktiota, joka ottaa parametreina alkuindeksin ja loppuindeksin ja palauttaa erillisen alimerkkijonon.
+Substringien erottaminen voidaan tehdä useilla eri tavoilla C++-kielisessä koodissa. Yksi yleisimmistä tavoista on käyttää C++:n valmiita funktioita, kuten `substr()`, joka löytyy `<string>`-kirjastosta. Tämä funktio ottaa kaksi parametria: aloitusindeksin ja loppuindeksin ja palauttaa näiden indeksien välissä olevan osan merkkijonosta. Alla on yksinkertainen esimerkki koodista, joka käyttää `substr()`-funktiota:
 
 ```C++
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
-  string s = "Hei maailma!";
-  string sub = s.substr(4, 6); // aloittaa indeksistä 4 ja ottaa 6 merkkiä
-  cout << sub << endl; // tulostaa "maailma"
-  return 0;
+    string teksti = "Tämä on esimerkki tekstistä!";
+    string aliteksti = teksti.substr(5, 3); // aloitusindeksi on 5 ja loppuindeksi on 3
+    cout << aliteksti << endl; // tulostaa "on "
+    return 0;
 }
 ```
 
-Tässä esimerkissä otetaan merkkijonosta "Hei maailma!" alimerkkijono "maailma" aloittaen indeksistä 4 ja ottamalla 6 merkkiä.
-
-## Syvemmälle
-
-C++ tarjoaa myös muita tapoja erottaa alimerkkijonoja. Esimerkiksi `find()` -funktio löytää annetun merkkijonon ensimmäisen esiintymän ja palauttaa sen indeksin. Tämän tiedon avulla voidaan käyttää `substr()` -funktiota erottamaan haluttu alimerkkijono.
+Toinen tapa erottaa substring on käyttää `string`-luokan `find()`-funktiota, joka palauttaa parametrina annetun merkkijonon ensimmäisen esiintymäpaikan. Voit sitten käyttää alkuperäisen merkkijonon `substr()`-funktiota saadaksesi haluamasi osan merkkijonosta. Alla on esimerkki koodista, joka käyttää tätä lähestymistapaa:
 
 ```C++
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
-  string s = "Tämä on esimerkkiteksti";
-  int index = s.find("esimerkki"); // löytää merkkijonon "esimerkki" indeksin
-  string sub = s.substr(index, 9); // aloittaa löydetyltä indeksiltä ja ottaa 9 merkkiä
-  cout << sub << endl; // tulostaa "esimerkki"
-  return 0;
+    string teksti = "Tämä on esimerkki tekstistä!";
+    size_t indeksi = teksti.find("esimerkki"); // etsii "esimerkki"-merkkijonon indeksin
+    string aliteksti = teksti.substr(indeksi, 8); // alkuperäisen merkkijonon ei tarvitse olla tunnettu tällä lähestymistavalla
+    cout << aliteksti << endl; // tulostaa "esimerkki"
+    return 0;
 }
 ```
 
-Substringien erottaminen voi myös olla hyödyllistä tiedon tallentamisessa ja käsittelyssä, jos halutaan esimerkiksi tallentaa tietyn tiedoston tiettyjen osien sisältö erillisiin muuttujiin.
+On myös mahdollista erottaa substring käyttämällä C++:n `stringstream`-luokkaa, joka muuntaa merkkijonon virtaukseksi ja antaa sinulle mahdollisuuden käyttää erilaisia merkkijonon käsittelytoimintoja. Seuraava esimerkki käyttää `stringstream`-luokkaa saadakseen tekstin ennen ensimmäistä välilyöntiä:
 
-## Katso myös
+```C++
+#include <iostream>
+#include <sstream>
+#include <string>
 
-- [C++ string class](https://www.cplusplus.com/reference/string/string/) (C++-merkkijonojen luokka)
-- [Substring manipulation in C++](https://www.geeksforgeeks.org/substring-manipulation-in-c-string-find-substr/) (Substringien käsittely C++:ssa)
-- [String functions in C++](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm) (Merkkijonofunktiot C++:ssa)
+using namespace std;
+
+int main() {
+    string teksti = "Tämä on esimerkki tekstistä!";
+    stringstream virtaus(teksti); // muuntaa tekstin virtaukseksi
+    string aliteksti;
+    getline(virtaus, aliteksti, ' '); // erottelee merkkijonon ensimmäiseen välilyöntiin asti
+    cout << aliteksti << endl; // tulostaa "Tämä"
+    return 0;
+}
+```
+
+# Syvemmälle
+
+On tärkeää huomata, että substringien erottaminen voi olla tehokkain tapa käsitellä merkkijonoja C++:ssa. Tämä johtuu siitä, että se antaa sinulle mahdollisuuden käyttää vain haluamasi osan merkk

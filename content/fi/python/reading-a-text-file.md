@@ -1,60 +1,38 @@
 ---
-title:                "Python: Tekstitiedoston lukeminen"
+title:                "Python: Tiedoston lukeminen"
+simple_title:         "Tiedoston lukeminen"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi lukea tekstitiedostoja?
 
-Tekstitiedostojen lukeminen on tärkeä taito jokaiselle Python-ohjelmoijalle. Se antaa sinulle mahdollisuuden käsitellä suurta määrää tietoa ja tehdä muutoksia tiedostoihin nopeasti ja helposti.
+Lukeminen on yksi tärkeimmistä taidoista, jota tarvitset koodatessasi Pythonilla. Monet koodaustehtävät vaativat tiedon lukemista ja käsittelyä tekstitiedostosta, joten tämän taidon hallitseminen on välttämätöntä.
 
-## Kuinka
+## Kuinka lukea tekstitiedostoja?
 
-Tekstitiedoston lukeminen Python-ohjelmassa on hyvin yksinkertaista. Sinun täytyy vain avata tiedosto, lukea sen sisältö ja sulkea se. Tässä on esimerkki koodista ja tulosteesta:
+Tekstitiedostojen lukeminen Pythonilla on hyvin yksinkertaista. Voit käyttää `open()`-funktiota, joka avaa tiedoston ja palauttaa tiedostopointterin. Tämän jälkeen voit käyttää `read()`-metodia lukeaksesi tiedoston sisällön ja tallentaa sen muuttujaan. Esimerkiksi:
 
-```Python
-# Avaa tiedosto lukemista varten
-tiedosto = open("tiedosto.txt", "r")
-# Lue ja tulosta tiedoston sisältö
-sisalto = tiedosto.read()
+```python
+file = open("tekstitiedosto.txt", "r")
+sisalto = file.read()
 print(sisalto)
-# Sulje tiedosto
-tiedosto.close()
 ```
 
-Tämä koodi avaa tiedoston nimeltä "tiedosto.txt" ja lukee sen sisällön muuttujaan nimeltä "sisalto". Sitten se tulostaa sisällön konsoliin ja lopuksi sulkee tiedoston. 
+Tämä koodi avaa tekstitiedoston nimeltä "tekstitiedosto.txt" ja tallentaa sen sisällön muuttujaan `sisalto`. Lopuksi tulostetaan tiedoston sisältö konsolille. Huomaa, että `"r"`-parametri avaukseen määrittää, että tiedosto avataan lukutilassa.
 
-## Syvemmälle
+## Syvällinen sukellus
 
-Voit myös lukea tiedostoa rivi kerrallaan käyttämällä "readlines()" -metodia:
+Pythonilla on monia tapoja lukea ja käsitellä tekstitiedostoja, kuten käyttämällä `with`-lauseketta tai `readline()`-metodia. Voit myös määrittää avaukseen erilaisia parametreja, kuten `"w"`-parametrin kirjoitustilassa avaamiseen. Lisää tietoa näistä vaihtoehdoista löydät Pythonin virallisesta dokumentaatiosta.
 
-```Python
-# Avaa tiedosto lukemista varten
-tiedosto = open("tiedosto.txt", "r")
-# Lue tiedoston sisältö ja tallenna rivit listaan
-rivit = tiedosto.readlines()
-# Tulosta jokainen rivi erikseen
-for rivi in rivit:
-  print(rivi)
-# Sulje tiedosto
-tiedosto.close()
-```
-
-Voit myös avata, lukea ja sulkea tiedoston yhdellä komennolla "with", joka huolehtii automaattisesti tiedoston sulkemisesta:
-
-```Python
-# Avaa tiedosto lukemista varten
-with open("tiedosto.txt", "r") as tiedosto:
-  # Käsittele tiedoston sisältö tässä
-  # ...
-# Tiedosto suljetaan automaattisesti tämän jälkeen
-```
+Lisäksi Pythonilla on myös erilaisia kirjastoja, kuten `csv` ja `json`, jotka tekevät tekstitiedostojen lukemisesta ja käsittelystä vieläkin helpompaa. Nämä kirjastot tarjoavat käteviä toimintoja tiedostojen parsimiseen ja datan muuttamiseen eri muotoihin.
 
 ## Katso myös
 
-- [Pythonin dokumentaatio tekstitiedoston lukemisesta](https://docs.python.org/fi/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Tutorialspointin opas tekstitiedoston lukemiseen Pythonilla](https://www.tutorialspoint.com/python/python_files_io.htm)
-- [GeeksforGeeksin esimerkkejä tekstitiedoston lukemisesta Pythonilla](https://www.geeksforgeeks.org/reading-writing-text-files-python/)
+- [Pythonin virallinen dokumentaatio](https://docs.python.org/3/tutorial/inputoutput.html)
+- [CSV-kirjaston dokumentaatio](https://docs.python.org/3/library/csv.html)
+- [JSON-kirjaston dokumentaatio](https://docs.python.org/3/library/json.html)

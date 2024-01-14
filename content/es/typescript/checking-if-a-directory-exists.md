@@ -1,71 +1,51 @@
 ---
-title:                "TypeScript: Comprobando si existe un directorio"
+title:                "TypeScript: Comprobando si un directorio existe."
+simple_title:         "Comprobando si un directorio existe."
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porqué
+## Por qué
+Antes de comenzar a verificar la existencia de un directorio en TypeScript, es importante entender por qué necesitamos hacerlo. Comprobar si un directorio existe es una tarea común en la programación, ya que permite a los desarrolladores asegurarse de que un directorio necesario para su aplicación esté presente antes de continuar con el código.
 
-¿Alguna vez te has encontrado en una situación en la que necesitas saber si una carpeta existe en tu sistema de archivos? Bueno, en esta publicación de blog aprenderás cómo hacerlo usando TypeScript.
+## Cómo hacerlo
+Para verificar si un directorio existe en TypeScript, podemos usar la función `existsSync()` del módulo `fs`, que verifica la existencia de un archivo o directorio sincrónicamente. Primero, debemos importar el módulo `fs` en nuestro archivo de TypeScript:
 
-## Cómo Hacerlo
-
-Para verificar si una carpeta existe en TypeScript, podemos usar la librería incorporada `fs` y su método `existsSync`. Este método acepta una ruta de la carpeta como parámetro y devuelve un valor booleano indicando si la carpeta existe o no.
-
-```TypeScript
-import fs from "fs";
-
-const exists = fs.existsSync("mi_carpeta");
-
-// Salida: true si la carpeta existe, false si no existe
-console.log(exists);
+```typescript
+import * as fs from 'fs';
 ```
 
-¡Y así de simple es! Con sólo unas pocas líneas de código, podemos verificar la existencia de una carpeta en nuestro sistema de archivos.
+Luego, podemos usar la función `existsSync()` pasando la ruta del directorio que queremos verificar como argumento. Esta función devolverá un valor booleano `true` si el directorio existe y `false` si no existe.
 
-## Deep Dive
+```typescript
+const directoryExists = fs.existsSync('/ruta/del/directorio');
 
-Si deseas profundizar un poco más en el tema, también podemos usar el método `readdirSync` de la librería `fs` para obtener una lista de todas las carpetas y archivos en una ruta específica y luego comprobar si nuestra carpeta objetivo está en esa lista.
+console.log(directoryExists); // Output: true o false
+```
 
-```TypeScript
-import fs from "fs";
+## Profundizando
+La función `existsSync()` utiliza el método `statSync()` para determinar la existencia del directorio. Este método devuelve un objeto `fs.Stats` que contiene información sobre el archivo o directorio especificado, incluyendo un atributo `isDirectory()` que nos indica si se trata de un directorio o no.
 
-const folderList = fs.readdirSync("mi_ruta");
+Si queremos realizar acciones específicas si un directorio existe o no, podemos usar una declaración `if` junto con el método `isDirectory()` para verificar eso.
 
-// Verificamos si "mi_carpeta" está en la lista
-if (folderList.includes("mi_carpeta")) {
-  // La carpeta existe
-  console.log("La carpeta existe en la ruta dada");
-} else {
-  // La carpeta no existe
-  console.log("La carpeta no existe en la ruta dada");
+```typescript
+if (fs.existsSync('/ruta/del/directorio')) {
+    const directoryStats = fs.statSync('/ruta/del/directorio');
+    if (directoryStats.isDirectory()) {
+        // Hacer algo si es un directorio
+    } else {
+        // Hacer algo si no es un directorio
+    }
 }
 ```
 
-También podemos usar el método `statSync` para obtener información detallada sobre una ruta, incluyendo si es una carpeta o no. Luego podemos verificar si la propiedad `isDirectory()` es verdadera para determinar si nuestra ruta realmente es una carpeta o no.
+## Ver también
+- [Documentación de fs.existsSync()](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
+- [Documentación de fs.statSync()](https://nodejs.org/api/fs.html#fs_fs_stats_path_options)
+- [Documentación de fs.Stats](https://nodejs.org/api/fs.html#fs_class_fs_stats)
 
-```TypeScript
-import fs from "fs";
-
-const stats = fs.statSync("mi_ruta");
-
-// Verificamos si es una carpeta
-if (stats.isDirectory()) {
-  // La ruta es una carpeta
-  console.log("La ruta dada es una carpeta");
-} else {
-  // La ruta no es una carpeta
-  console.log("La ruta dada no es una carpeta");
-}
-```
-
-¡Con todas estas opciones a tu disposición, ahora puedes verificar la existencia de una carpeta en TypeScript de manera fácil y eficiente!
-
-## Ver También
-
-- [Documentación oficial de node.js para fs.existsSync](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
-- [Documentación oficial de node.js para fs.readdirSync](https://nodejs.org/api/fs.html#fs_fs_readdirsync_path_options)
-- [Documentación oficial de node.js para fs.statSync](https://nodejs.org/api/fs.html#fs_fs_statsync_path_options)
+¡Ahora estás listo para verificar la existencia de un directorio en TypeScript! Espero que este artículo te haya sido útil. ¡Hasta la próxima!

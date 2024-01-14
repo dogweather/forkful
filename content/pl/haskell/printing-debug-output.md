@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Wypisywanie wyjścia debugowania"
+title:                "Haskell: Wydrukowanie wyników debugowania"
+simple_title:         "Wydrukowanie wyników debugowania"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/printing-debug-output.md"
 ---
 
@@ -9,44 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często podczas programowania napotykamy błędy i problemy, które są trudne do zdiagnozowania tylko na podstawie kodu. W takich przypadkach pomocne może być wypisywanie informacji o stanie naszej aplikacji za pomocą kodu debugowania. W artykule tym dowiesz się, dlaczego warto drukować informacje debugowania w twoim kodzie Haskell.
+Wyświetlanie informacji debugujących jest ważnym narzędziem podczas tworzenia programów w Haskellu. Pozwala na łatwe śledzenie i zrozumienie działania programu oraz diagnozowanie ewentualnych błędów.
 
 ## Jak to zrobić
 
-W celu wypisywania informacji debugowania w kodzie Haskell, możemy używać funkcji `Debug.Trace.trace` z modułu `Debug.Trace`. Poniżej znajduje się przykładowy kod wraz z komentarzami, który pokaże ci, jak to zrobić:
+Aby wyświetlać informacje debugujące w Haskellu, wystarczy użyć funkcji `print`. Przykładowy kod wyglądałby następująco:
 
 ```Haskell
-import Debug.Trace -- importujemy moduł Debug.Trace, aby użyć funkcji trace
-
-main :: IO ()
-main = do
-  -- tworzymy przykładową listę liczb
-  let numbers = [1, 2, 3, 4, 5]
-
-  -- iterujemy przez listę i wypisujemy informację debugowania przy każdej iteracji
-  -- funkcja `trace` pobiera dwa argumenty - wiadomość do wypisania i wartość, którą chcemy wypisać
-  -- w tym przypadku wartością jest aktualny element listy
-  forM_ numbers $ \n -> do
-    trace ("Aktualnie przetwarzany element to: " ++ show n) n
-
+myList = [1, 2, 3]
+print myList
 ```
 
-Po uruchomieniu tego kodu, powinieneś zobaczyć informacje debugowania przy każdej iteracji w konsoli:
+Otrzymalibyśmy następujący output:
 
 ```
-Aktualnie przetwarzany element to: 1
-Aktualnie przetwarzany element to: 2
-Aktualnie przetwarzany element to: 3
-Aktualnie przetwarzany element to: 4
-Aktualnie przetwarzany element to: 5
+[1,2,3]
 ```
 
-## Deep Dive
+Można także użyć funkcji `putStrLn` w celu wyświetlenia tekstu lub wartości innych typów danych. Przykład:
 
-Warto zwrócić uwagę, że funkcja `Debug.Trace.trace` jest przeznaczona tylko do celów debugowania i nie powinna być używana w kodzie produkcyjnym. Ponadto, jej użycie może mieć negatywny wpływ na wydajność naszego programu. Dlatego zalecane jest usuwanie wszystkich wywołań tej funkcji po zakończeniu procesu debugowania.
+```Haskell
+print "Hello World"
+print 123
+```
 
-## Zobacz również
+Output:
 
-- Dokumentacja funkcji `Debug.Trace.trace`: http://hackage.haskell.org/package/base-4.14.0.0/docs/Debug-Trace.html#g:1
-- Przykładowe zadania związane z debugowaniem w Haskell: https://adventofcode.com/
-- Blog o programowaniu w Haskell (w języku polskim): https://hask.pl/
+```
+Hello World
+123
+```
+
+## Wgłąb tematu
+
+Istnieje wiele metod wyświetlania informacji debugujących, w tym także biblioteki specjalnie zaprojektowane do tego celu, np. `Debug.Trace`. Ta biblioteka pozwala na dodawanie śledzonych punktów w kodzie oraz wyświetlanie wartości zmiennych w tych punktach.
+
+Używanie informacji debugujących jest szczególnie przydatne w przypadku skomplikowanych funkcji lub kodu, gdzie trudno jest zrozumieć jego działanie tylko na podstawie samego kodu. Dzięki wyświetlaniu informacji debugujących można łatwiej zlokalizować błędy i szybciej je naprawić.
+
+## Zobacz także
+
+- [Dokumentacja biblioteki Debug.Trace](https://hackage.haskell.org/package/base/docs/Debug-Trace.html)
+- [Tutorial nt. debugowania w Haskellu](https://serokell.io/blog/haskell-debugging-tips)
+- [Poradnik nt. użytkowania funkcji `print` i `putStrLn`](https://www.tutorialspoint.com/haskell/haskell_input_output.htm)

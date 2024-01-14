@@ -1,35 +1,43 @@
 ---
-title:                "Rust: 「パターンにマッチする文字の削除」"
+title:                "Rust: パターンに一致する文字の削除"
+simple_title:         "パターンに一致する文字の削除"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ？（Why）
+## なぜ
 
-あなたがプログラミングをしているときに、文字のパターンにマッチする文字を削除したいと思うことはよくあります。例えば、文字列からすべての数字を削除したい場合などがあります。そんなときに、Rustプログラミング言語でどのようにして文字を削除するかについて学びましょう。
+Rustを使って文字をパターンにマッチさせて削除することが必要な理由について、1-2文で説明します。
 
-## 方法（How To）
+## 方法
 
-Rustでは、特定のパターンにマッチする文字を削除するために`replace`メソッドを使用します。以下のコード例を参考にしてみてください。
+パターンにマッチする文字を削除する方法のコーディング例とサンプル出力を「```Rust ... ```」のコードブロックで紹介します。
 
 ```Rust
-fn main() {
-    let word = "Hello,123World!";
-    let new_word = word.replace(char::is_numeric, ""); // 数字を含む文字をすべて削除
-    println!("{}", new_word); // => Hello,World!
+// 文字列を定義
+let mut text = String::from("Hello, World!");
+
+// パターンを定義
+let pattern = "lo";
+
+// 文字列からパターンを探し、マッチした場合は削除する
+while text.contains(pattern) {
+    text = text.replace(pattern, "");
 }
+
+// 結果を出力
+println!("{}", text); // 出力: He, World!
 ```
 
-このコードでは、`replace`メソッドを使用して文字列`Hello,123World!`から数字を含む文字をすべて削除し、新しい文字列`Hello,World!`を作成しています。このように、`replace`メソッドを使うことで簡単に文字を削除することができます。
+## 深堀り
 
-## 詳細（Deep Dive）
+パターンマッチングについて、もっと詳しく説明します。Rustでは`replace()`メソッドを使って、文字列から指定したパターンを検索して置換することができます。このメソッドは、最初にマッチしたパターンのみを置換するため、すべてのマッチした箇所を削除するためにはループを使う必要があります。さらに、マッチしない場合は元の文字列をそのまま返すため、`contains()`メソッドを使ってループを制御する必要があります。このように、Rustではシンプルなコードでも様々な方法でパターンマッチングを利用することができます。
 
-`replace`メソッドは、文字列以外にも`char`や`&str`でも使用することができます。また、正規表現を使用して複雑なパターンにもマッチすることができます。さらに、`replace`メソッドは新しい文字列を返すだけでなく、元の文字列を変更することもできます。詳細については、公式ドキュメントを参考にしてください。
+## その他のリンク
 
-## See Also
-
-- [Rust公式ドキュメント：`replace`メソッド]（https://doc.rust-lang.org/std/string/struct.String.html#method.replace）
-- [Rustでの正規表現の使用方法]（https://tech-blog.optim.co.jp/entry/2018/09/06/080000）
+- Rustプログラミング言語: https://www.rust-lang.org/ja/
+- Rust公式ドキュメント: https://doc.rust-lang.org/

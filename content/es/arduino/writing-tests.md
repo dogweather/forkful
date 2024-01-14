@@ -1,44 +1,49 @@
 ---
-title:                "Arduino: Escribir pruebas"
+title:                "Arduino: Escribiendo pruebas"
+simple_title:         "Escribiendo pruebas"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir pruebas (tests) en Arduino?
+¿Por qué escribir pruebas en Arduino?
 
-Escribir pruebas (tests) en Arduino es una forma efectiva de garantizar que el código que estamos escribiendo funciona correctamente. Las pruebas nos ayudan a detectar errores y problemas en nuestro código antes de implementarlo en un dispositivo físico. También nos permiten realizar cambios en nuestro código de manera segura, sin preocuparnos de romper funcionalidades previamente implementadas.
+Es importante escribir pruebas en Arduino para asegurarse de que el código funciona correctamente. Las pruebas pueden ayudar a detectar errores y a garantizar que el Arduino funcione como se espera.
 
-## Cómo escribir pruebas en Arduino
+## Cómo hacerlo
 
-Para escribir pruebas en Arduino, utilizamos la biblioteca "ArduinoUnit". Esta biblioteca nos permite definir casos de prueba (test cases) y verificar los resultados esperados. Aquí hay un ejemplo sencillo de cómo escribir una prueba para una función que suma dos números:
+Hay varias formas de escribir pruebas en Arduino, pero aquí vamos a enfocarnos en el uso de la biblioteca "ArduinoUnit". Primero, debemos descargar e instalar la biblioteca en el IDE de Arduino. Una vez instalada, podemos comenzar a escribir nuestras pruebas.
+
+Primero, debemos incluir la biblioteca en nuestro código con la siguiente línea:
 
 ```Arduino
 #include <ArduinoUnit.h>
-
-test(sumaTest) {
-  int a = 5;
-  int b = 10;
-  assertEquals(a + b, 15);
-}
-
-unittest_main();
 ```
 
-Este código define una función de prueba llamada "sumaTest". Dentro de esta función, definimos dos variables y utilizamos el método "assertEquals" para verificar que la suma de ambas variables sea igual a 15. Si esto es cierto, la prueba se considera exitosa.
+Luego, podemos comenzar a escribir nuestras pruebas utilizando las macros proporcionadas por la biblioteca. Por ejemplo, si queremos probar si una variable tiene el valor esperado, podemos usar la macro "assertEqual". Aquí hay un ejemplo de una prueba simple que verifica si una variable es igual a 5:
 
-## Profundizando en la escritura de pruebas en Arduino
+```Arduino
+bool test_equal(){
+  int x = 5;
+  assertEqual(x, 5);
+}
+```
 
-Para escribir pruebas efectivas en Arduino, es importante seguir algunas buenas prácticas. Una de ellas es asegurarse de que cada prueba sea independiente y no dependa de otras pruebas para su ejecución. Además, es recomendable nombrar las pruebas de manera significativa para saber exactamente qué se está probando.
+La biblioteca también proporciona macros para probar otros tipos de condiciones, como "assertTrue" y "assertFalse" para verificar si una condición es verdadera o falsa, respectivamente.
 
-Otra buena práctica es utilizar el método "setup" para preparar nuestras pruebas, por ejemplo, estableciendo los valores iniciales de las variables que utilizaremos. De la misma forma, es importante utilizar el método "tearDown" para limpiar cualquier cambio que hayamos hecho en nuestro entorno de prueba.
+Una vez que hayamos escrito nuestras pruebas, debemos compilar y cargar el código en el Arduino. Si todas las pruebas pasan, significa que el código está funcionando como se espera. Pero si una prueba falla, significa que ha habido un error en el código y es necesario realizar una depuración.
 
-También es recomendable utilizar "asserts" específicos para cada tipo de dato en lugar de utilizar siempre "assertEquals". Por ejemplo, para verificar que dos variables de tipo "float" sean iguales, podemos utilizar el método "assertEqualFloats" en lugar de "assertEquals".
+## Un vistazo más profundo
+
+Las pruebas en Arduino nos permiten hacer verificaciones muy específicas en nuestro código y nos ayudan a encontrar posibles errores más rápidamente. Además, con las pruebas podemos asegurarnos de que nuestro código sigue funcionando correctamente después de realizar cambios en él.
+
+Es importante tener en cuenta que las pruebas no garantizan que el Arduino funcionará correctamente en todas las situaciones, pero sí nos brindan más confianza y seguridad en nuestro código.
 
 ## Ver también
 
-- Biblioteca ArduinoUnit: https://github.com/mmurdoch/arduinounit
-- Tutorial de ArduinoUnit: https://learn.adafruit.com/arduino-unit-testing?view=all
-- Consejos para escribir pruebas en Arduino: https://rosagulla.es/arduino-testing-tips/
+- [Guía de la biblioteca ArduinoUnit](https://github.com/mmurdoch/arduinounit)
+- [Documentación oficial de Arduino](https://www.arduino.cc/en/Tutorial/ArduinoUnit)
+- [Ejemplos de pruebas en Arduino](https://github.com/mmurdoch/arduinounit/tree/master/examples)

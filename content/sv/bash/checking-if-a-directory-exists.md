@@ -1,56 +1,34 @@
 ---
-title:                "Bash: Kontrollera om en mapp finns tillgänglig"
+title:                "Bash: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+# Varför
+Det finns många gånger i programmering när man behöver kontrollera om en viss mapp finns eller inte. Det kan till exempel vara för att undvika att skriva över befintliga filer eller för att navigera i ett stort projektstruktur. Att känna till hur man gör detta är en viktig del av en vardaglig Bash-programmering.
 
-Att kolla om en mapp existerar är en viktig del av Bash programmering, särskilt när man jobbar med filsystem och behöver göra kontroller och beslut baserat på olika mappar. Genom att kolla om en mapp finns, kan du också undvika fel och driftstopp i ditt skript.
-
-##Hur man gör
-
-För att kolla om en mapp existerar i Bash, kan du använda kommandot [ -d ]. Detta kommando kollar om en given sökväg är en befintlig mapp och returnerar antingen sant eller falskt. Här är ett exempel som testar om en mapp "Documents" existerar i din nuvarande arbetsmapp.
-
+# Hur man gör det
+Det finns flera olika sätt att kontrollera om en mapp finns i Bash. Ett enkelt sätt är att använda kommandot `if`, följt av `[-d <mappen>]` för att kolla om mappen existerar eller inte. Detta kan se ut såhär:
 ```Bash
-if [ -d Documents ]; then
-    echo "Mappen Documents existerar."
+if [-d /hem/Kalle/mapp]; then
+  echo "Mappen finns!"
 else
-    echo "Mappen Documents existerar inte."
+  echo "Mappen finns inte."
 fi
 ```
+Detta kodblock kommer att kontrollera om mappen "mapp" finns i sökvägen `/hem/Kalle/`. Om mappen finns kommer ett meddelande om det att skrivas ut, annars skrivs ett annat meddelande ut. Det är viktigt att observera att en mellanslag måste finnas mellan `[` och `-d` för att det ska fungera.
 
-I detta exempel använder vi en "if" sats för att utföra en viss handling beroende på resultatet av testet. Om mappen existerar, kommer utskriften att vara "Mappen Documents existerar.", om inte, kommer utskriften att vara "Mappen Documents existerar inte." Observera att du måste använda utropstecken före kommandot [-d] för att dess output ska användas i en "if" sats.
+# Djupdykning
+För de som vill veta mer om hur man kontrollerar mappar i Bash finns det flera andra metoder. Till exempel kan man använda `test`-kommandot istället för `if -d` för att göra samma sak. Test-kommandot är mer allmänt och kan också användas för att kontrollera andra typer av filer, som textfiler eller binärfiler.
 
-Du kan också använda en variabel som sökväg för att testa om en mapp existerar. I det här exemplet, kollar vi om mappen som är lagrad i variabeln "folder" existerar.
+En annan användbar teknik är att använda wildcard-tecknet `*` för att kontrollera innehållet i en mapp. Om man till exempel bara vill kontrollera om en mapp innehåller en viss fil istället för att kontrollera hela mappstrukturen kan man skriva `[ -f /hem/Kalle/mapp/* ]`, där `*` står för alla filer i mappen. Detta kommer att returnera sant om någon av filerna matchar och falskt om inga filer matchar.
 
-```Bash
-folder='/home/user/Pictures'
-if [ -d $folder ]; then
-  echo "$folder existerar."
-else
-  echo "$folder existerar inte."
-fi
-```
-
-Om du vill kolla om en mapp INTE existerar, kan du använda [ ! -d ]. Till exempel, om du vill se till att en mapp "Videos" inte finns, kan du använda följande kod.
-
-```Bash
-if [ ! -d Videos ]; then
-    echo "Mappen Videos finns inte."
-fi
-```
-
-##Djupdykning
-
-Kommandot [ -d ] kollar bara om en sökväg är en mapp eller inte. Det betyder att om sökvägen är en fil eller en symbolisk länk, kommer det att returnera falskt oavsett om en mapp med samma namn finns eller inte. För att undvika detta kan du använda [ -e ] - kommandot som kollar om en sökväg existerar oavsett om det är en mapp, fil, eller länk.
-
-En annan användbar kommando för att kontrollera mappar är [ -w ] som kollar om mappen är skrivbar. Detta kan vara praktiskt när du behöver skapa eller ändra filer inuti en mapp men vill se till att du har tillstånd att göra det innan du fortsätter i ditt skript.
-
-##Se även
-
-- [Bash scripting tutorial](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Looping in Bash](https://www.geeksforgeeks.org/loops-in-bash-shell-scripting/)
+# Se även
+- [Bash if-sats](https://www.linuxcast.se/tips/bash-if-sats/)
+- [Bash test-kommandon](https://linuxize.com/post/bash-test-command/)
+- [Bash wildcard-tecken](https://www.gnu.org/software/bash/manual/html_node/Wildcards.html)

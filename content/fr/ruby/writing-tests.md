@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Ecrire des tests"
+title:                "Ruby: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/writing-tests.md"
 ---
 
@@ -9,45 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes développeur, vous avez peut-être déjà entendu parler de tests unitaires, tests fonctionnels et autres formes de tests. Mais pourquoi les écrire en premier lieu ? Les tests sont essentiels pour s'assurer de la qualité et de la stabilité de votre code. Ils permettent également de détecter les erreurs plus rapidement et de les corriger avant qu'elles ne causent des problèmes pour les utilisateurs réels.
+L'écriture de tests est une étape importante dans le processus de développement de logiciels. Cela permet de s'assurer que le code fonctionne correctement et qu'il peut être facilement modifié sans créer de bugs. De plus, cela améliore la qualité du code et facilite la collaboration entre les membres de l'équipe.
 
 ## Comment faire
 
-Pour écrire des tests en utilisant Ruby, vous pouvez utiliser le framework de test intégré appelé MiniTest. Il suffit de créer un fichier avec l'extension ".rb" et d'utiliser le template suivant :
+Pour écrire des tests en Ruby, il est recommandé d'utiliser le framework de test RSpec. Il offre une syntaxe facile à comprendre et à utiliser, ainsi qu'une bonne organisation pour les tests. Voici un exemple de test avec RSpec :
 
-````Ruby
-# importer le framework de test
-require "minitest/autorun"
+```Ruby
+# code à tester
 
-# définir une classe de test
-class TestCalculator < Minitest::Test
-
-  # une méthode de test doit commencer par "test_"
-  def test_addition
-    # tester la méthode d'addition en utilisant l'assertion "assert_equal"
-    assert_equal 5, 2 + 3
-  end
-
+def add(x, y)
+  return x + y
 end
-````
 
-Pour lancer les tests, il suffit d'exécuter le fichier avec la commande "ruby" suivie du nom du fichier.
+# test avec RSpec
 
-Par exemple, si votre fichier s'appelle "calculator_test.rb", vous pouvez exécuter vos tests en tapant dans votre terminal :
+describe "add" do
+  it "should add two numbers correctly" do
+    result = add(2, 3)
+    expect(result).to eq(5)
+  end
+  
+  it "should return the correct type" do
+    result = add(2, 3)
+    expect(result).to be_a(Integer)
+  end
+end
+```
 
-````bash
-ruby calculator_test.rb
-````
+Lors de l'exécution des tests avec RSpec, vous obtiendrez un résultat comme ceci :
 
-Vous devriez voir une sortie qui indique si les tests ont réussi ou échoué.
+```
+Finished in 0.001 seconds (files took 0.31116 seconds to load)
+2 examples, 0 failures
+```
+
+Cela signifie que tous les tests ont réussi et qu'aucun bug n'a été détecté.
 
 ## Plongée en profondeur
 
-Il existe différents types de tests, chacun ayant un objectif spécifique. Les tests unitaires permettent de vérifier que chaque morceau de code fonctionne correctement de manière isolée. Les tests d'intégration sont utilisés pour vérifier que toutes les parties du code communiquent bien entre elles. Les tests fonctionnels sont conçus pour tester le code du point de vue de l'utilisateur. Avec tous ces différents types de tests, il est possible de s'assurer de la robustesse et de la cohérence de votre code.
+Lors de l'écriture de tests, il est important d'avoir une bonne couverture de code. Cela signifie que tous les aspects du code doivent être testés afin de s'assurer qu'il n'y ait pas de bugs. Pour cela, il est recommandé de pratiquer le TDD (Test Driven Development), ce qui signifie écrire les tests avant même d'écrire le code. Cela vous permet de réfléchir à la façon dont votre code devrait fonctionner avant de l'écrire.
 
-De plus, en utilisant des tests automatisés, vous pourrez économiser du temps et de l'énergie en évitant de devoir tester manuellement votre code à chaque modification.
+Il est également important de tester les cas limites, c'est-à-dire les situations qui peuvent causer des erreurs dans votre code. Par exemple, si votre fonction attend un nombre entier en entrée, il est important de tester ce qui se passe si une chaîne de caractères est passée en paramètre.
 
 ## Voir aussi
 
-- [Documentation officielle Ruby](https://www.ruby-lang.org/fr/documentation/)
-- [Tutoriel sur les tests en Ruby](https://bundler.io/guides/testing.html)
+- [Tutoriel RSpec](https://www.rubyguides.com/2018/07/rspec-tutorial/)
+- [Pratiques de développement agiles](https://www.smashingmagazine.com/2018/07/agile-test-driven-development-rspec-capybara/)
+- [Documentation RSpec](https://rspec.info/documentation/)

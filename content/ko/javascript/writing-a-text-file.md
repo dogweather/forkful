@@ -1,39 +1,45 @@
 ---
-title:                "Javascript: 텍스트 파일 작성하기"
+title:                "Javascript: 텍스트 파일 쓰기"
+simple_title:         "텍스트 파일 쓰기"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-텍스트 파일을 작성하는 것은 프로그래밍에서 중요한 부분입니다. 이것은 다양한 목적으로 사용될 수 있고 데이터를 다루는 많은 방법 중 하나입니다. 만약 당신이 텍스트 파일을 작성하는 방법을 아직 모른다면 이 글을 계속 읽어보세요!
+텍스트 파일을 작성하는 것은 프로그래머가 자주 반복적으로 하게되는 작업 중 하나입니다. 텍스트 파일은 설정 파일, 데이터베이스 백업 파일 및 다양한 기술 문서에 사용될 수 있으며, 간단하면서도 매우 유용한 방법으로 정보를 저장합니다.
 
-## 어떻게
+## 작성하는 방법
 
-텍스트 파일을 작성하는 가장 간단한 방법은 `writeFileSync()` 함수를 사용하는 것입니다. 이 함수는 Node.js에서 제공되는 기능으로, 파일 경로와 데이터를 인자로 받아 파일을 생성하고 데이터를 쓸 수 있게 해줍니다. 아래의 예제를 참고하세요.
+텍스트 파일을 작성하는 가장 간단한 방법은 내장된 Node.js 메서드인 `fs.writeFileSync()`를 사용하는 것입니다. 이 방법을 사용하면 Javascript 코드 내에서 파일을 만들고 내용을 작성할 수 있으며, 이를 통해 다양한 정보를 저장하고 관리할 수 있습니다.
+
+예시를 보겠습니다:
 
 ```Javascript
-fs.writeFileSync('output.txt', 'Hello, world!');
+const fs = require('fs');
 
+// 파일 생성
+fs.writeFileSync('example.txt', '안녕하세요! 이것은 텍스트 파일입니다.');
+
+// 파일 읽기
+let contents = fs.readFileSync('example.txt', 'utf-8');
+
+console.log(contents);
+// 출력: '안녕하세요! 이것은 텍스트 파일입니다.'
 ```
 
-이 코드를 실행하면 현재 디렉토리에 `output.txt`이라는 이름의 파일이 생성되고 "Hello, world!"라는 내용이 쓰여집니다.
+위의 예시에서는 `fs.writeFileSync()`를 이용하여 'example.txt'라는 파일을 생성하고, 그 내용으로 '안녕하세요! 이것은 텍스트 파일입니다.'을 작성합니다. 그 후에는 `fs.readFileSync()`를 이용하여 해당 파일을 읽고, 그 내용을 `console.log()`를 통해 출력합니다.
 
-## 딥 다이브
+## 깊게 들어가보기
 
-텍스트 파일을 작성하는 것은 결국 데이터를 저장하는 것입니다. 이때 데이터 포맷이 중요해지는데, 일반적으로 텍스트 파일은 간단한 문자열로 구성되어 있습니다. 그리고 그 문자열은 여러 줄로 이뤄져 있을 수 있고 그 안에는 다양한 정보가 들어갈 수 있습니다. 예를 들어, CSV 파일은 쉽게 만들 수 있고 여러 데이터를 포함시킬 수 있습니다.
+텍스트 파일을 작성하는 것은 기술 스택에서 꼭 필요한 기능 중 하나입니다. 이를 통해 데이터를 저장하고 로드하며, 소스 코드를 백업하고, 설정 파일을 관리할 수 있습니다. 뿐만 아니라, 주로 프로그램의 디버깅 및 데이터를 시각화하는 용도로도 사용됩니다.
 
-하지만 앞서 말한 `writeFileSync()` 함수는 단순한 예제이므로 중요한 것은 데이터 포맷보다는 파일을 만드는 방법과 데이터를 어떻게 쓰느냐에 대해 이해하는 것입니다.
+## See Also (참고)
 
-## 더 알아보기
-
-텍스트 파일을 작성하는 것 외에도 Node.js에서는 다양한 파일 작업 기능을 제공합니다. 파일을 읽고 쓰는 방법을 익히는 것은 프로그래밍에서 매우 중요한 부분이기 때문에 관련 정보를 더 찾아보는 것을 추천합니다.
-
-### 이것도 참고하세요
-
-- [Node.js fs 모듈 문서](https://nodejs.org/api/fs.html)
-- [텍스트 파일 쓰기 - 노마드코더 유튜브 강의](https://youtu.be/RuztJ4phU_Y)
-- [파일 다루기 - 드림코딩 엘리스 유튜브 강의](https://youtu.be/T7cDYFiz4lk)
+- [Node.js의 File System 모듈 문서](https://nodejs.org/api/fs.html)
+- [Node.js로 텍스트 파일을 읽고 쓰는 방법](https://javatutorial.net/node-js-read-write-file)
+- [Node.js를 이용한 데이터 시각화](https://stackabuse.com/data-visualization-with-nodejs-and-canvas/)

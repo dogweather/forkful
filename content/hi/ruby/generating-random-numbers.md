@@ -1,44 +1,49 @@
 ---
-title:                "Ruby: कंप्यूटर प्रोग्रामिंग पर लेख: रैंडम नंबरों का उत्पादन"
+title:                "Ruby: Hindi: अनियमित संख्याओं का उत्पादन"
+simple_title:         "Hindi: अनियमित संख्याओं का उत्पादन"
 programming_language: "Ruby"
-category:             "Numbers"
+category:             "Ruby"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun
+" # क्यों
 
-Kya aapko kabhi kabhi apne code mein kuch naya aur alag try karna pasand hai? Kya aapko khudse sawal puchhna aur uska jawab dhundhna pasand hai? Agar haan, to shayad random numbers generate karna aapke liye ek majedaar kaam ho sakta hai! Random numbers generate karne se, aap apne code mein surprise elements add kar sakte hai aur naye solutions explore kar sakte hai. Iss article mein hum dekhenge ki hum kaise Ruby mein random numbers generate kar sakte hai.
+अधिकांश कंप्यूटर साइन्स के प्रोग्रामिंग भाषाओं में रैन्डम नंबर जेनरेट करने का उपयोग मुख्य रूप से यह होता है कि कोड को इसके बाहर अनुत्पादक बनाने के लिए उपयोग किया जाता है। रैन्डम नंबर जेनरेट करने से यह सुनिश्चित होता है कि कोड के प्रत्येक बार अलग-अलग नतीजे होंगे और इससे कोड की भविष्यवाणी करना बहुत मुश्किल हो जाता है।
 
-## Kaise Karein
+## कैसे करें
 
-Sabse pehle, hum randomNumber naam ka ek variable declare karenge, jisme hum random number store karenge. Uske baad, hum Random module ko use karke random number generate karenge. Neeche diye gaye code block mein aapko samajh aa jayega -
-
-```Ruby
-randomNumber = Random.rand(1..10)
-puts "Aapka random number hai: #{randomNumber}"
-```
-
-Agar aap yeh code implement karenge, to har baar jab aapise run karenge, aapko ek naya random number milega. Code mein "1..10" humne yeh bataya hai ki aapko numbers ki range kya honi chahiye, aap apni marzi ke hisaab se iss range ko change kar sakte hai.
-
-Ab, agar aap chahte hai ki aapko har baar same random number mile, to aap seed value ka use kar sakte hai. Seed value basically hume batata hai ki humare code mein kitna randomness chahiye. Seed value ko neeche diye gaye code block mein dekhiye -
+रुबी में रैन्डम नंबर जेनरेट करने के लिए `rand` फंक्शन का उपयोग किया जाता है। निम्न उदाहरण में, हम `rand` फंक्शन का उपयोग करके 1 से 10 के बीच एक रैन्डम नंबर जेनरेट करते हैं।
 
 ```Ruby
-randomNumber = Random.new_seed
-puts "Aapka random number hai: #{randomNumber}"
+random_number = rand(1..10)
+puts random_number
 ```
 
-Seed value har baar change hoti rahegi, isliye aapko har baar different random number milega.
+उपरोक्त कोड का उपयोग करने से हमें कुछ इस तरह का आउटपुट मिलेगा -
 
-## Gehri Jankari
+```
+1
+```
 
-Random number generate karne ke liye, Ruby mein kai saare methods available hai. Humne upar jo example diye hai, woh Random module ka ek method hai. Iske alava, aap "rand" method ka use karke bhi random numbers generate kar sakte hai. Isme aapko ek argument dena padega, jiski value aapko random number ki range batayegi.
+एक और उदाहरण में, हम परिकल्पना कर सकते हैं कि यदि हम दो वस्तुओं की एक सूची से रैन्डम आइटम को चुनते हैं।
 
-Ruby mein, random numbers generate karne ke liye algorithm ka use hota hai. Woh algorithm "Mersenne Twister" hai, jo ki ek pseudorandom number generator hai. Pseudorandom number generator matlab woh number generate karta hai jo ki random hi lagta hai, lekin uske seed value se hi generate hota hai.
+```Ruby
+my_array = ["आपल्या", "दोस्त", "नमस्कार", "विशेषज्ञ", "सुगंध"]
+random_item = my_array[rand(my_array.length)]
+puts random_item
+```
 
-## Dekhiye Bhi
+उपरोक्त कोड का उपयोग करने से हमें कुछ इस तरह का आउटपुट मिलेगा -
 
-- [Ruby Random Module] (https://ruby-doc.org/core-2.6.3/Random.html)
-- [Pseudorandom Number Generator] (https://www.rubyguides.com/2016/05/pseudo-random-numbers/)
-- [Difference Between rand and Random] (https://www.geeksforgeeks.org/difference-between-rand-and-random-ruby/)
+```
+नमस्कार
+```
+
+अधिक जानकारी के लिए, आप यहां [रैन्डम नंबर जेनरेट करना।](https://ruby-doc.org/core-2.6.3/Array.html#method-i-sample)
+
+## गहराई में
+
+कोई भी कंप्यूटर या सैम्पलिंग डिवाइस निर्ज्ञान में रैन्डम नंबर जेनरेट कर सकता

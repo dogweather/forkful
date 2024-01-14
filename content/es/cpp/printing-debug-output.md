@@ -1,50 +1,41 @@
 ---
-title:                "C++: Imprimiendo salida de depuración"
+title:                "C++: Imprimir salida de depuración"
+simple_title:         "Imprimir salida de depuración"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué imprimir salida de depuración en C++?
 
-A veces, cuando escribimos programas en C++, podemos enfrentarnos a errores o problemas que no podemos solucionar fácilmente. En estos casos, puede ser de gran ayuda imprimir información de depuración en la consola para comprender mejor lo que está sucediendo en nuestro código. Como programadores, es importante saber cómo imprimir información de depuración en C++ para facilitar la solución de problemas en nuestro código.
+A veces, cuando estamos programando en C++, nos encontramos con errores en nuestro código que no podemos detectar fácilmente. En estos casos, imprimir salida de depuración puede ser de gran ayuda para identificar y solucionar estos errores.
 
-## Cómo hacerlo
+## Cómo imprimir salida de depuración en C++
 
-Imprimir información de depuración en C++ es muy fácil y solo requiere una línea de código. Utilizando la función `cout` de la biblioteca estándar, podemos imprimir cualquier variable o mensaje en la consola. Aquí hay un ejemplo de cómo imprimir el valor de una variable entera llamada `numero`:
-
-```C++
-cout << "El número es: " << numero << endl;
-```
-
-El uso del operador `<<` nos permite imprimir varias variables o mensajes juntos. Además, el uso del manipulador de flujo `endl` nos permite enviar un carácter de nueva línea al final del mensaje impreso.
-
-Aquí hay un ejemplo de ejecución del código anterior:
-
-```
-El número es: 10
-```
-
-Es importante tener en cuenta que al imprimir diferentes tipos de datos, debemos utilizar el operador correcto. Para variables de tipo `string` o `char` debemos utilizar el operador `<<`, mientras que para variables de tipo `integer` o `double` debemos utilizar el operador `+`.
-
-## Deep Dive
-
-Además de imprimir variables o mensajes en la consola, también podemos utilizar la información de depuración para verificar si nuestro código está funcionando correctamente. En lugar de imprimir todos los resultados en la consola, podemos utilizar una declaración `if` para imprimir solo cuando se cumple una determinada condición.
-
-Por ejemplo, supongamos que tenemos un programa que calcula el área de un triángulo. Podemos utilizar una declaración de impresión de depuración para asegurarnos de que la fórmula que estamos utilizando es correcta:
+Podemos imprimir salida de depuración en C++ utilizando la función `std::cout`, la cual enviará la salida a la consola. Para ello, simplemente debemos incluir la librería `iostream` en nuestro código y utilizar el operador de inserción `<<`. Por ejemplo:
 
 ```C++
-if (altura > base) {
-    cout << "La altura es mayor que la base, por lo que el resultado puede ser incorrecto." << endl;
+#include <iostream>
+using namespace std;
+
+int main(){
+    int num = 10;
+    cout << "El valor de num es " << num << endl;
+    return 0;
 }
 ```
 
-De esta forma, podemos detectar y corregir errores en nuestro código a medida que avanzamos en el desarrollo.
+La salida de este código sería "El valor de num es 10". Podemos utilizar este método para imprimir cualquier tipo de dato.
 
-## Ver también
+## Detalles sobre la impresión de salida de depuración
 
-- [Aprende C++](https://www.aprendecpp.com/)
-- [Documentación de C++](https://devdocs.io/cpp/)
-- [Solución de problemas en C++](https://www.codementor.io/@martinagudo/troubleshooting-tips-for-c-BBFj9sKLz)
+Es importante tener en cuenta que para imprimir variables, necesitamos conocer su tipo de datos. Además, es recomendable agregar mensajes descriptivos para entender mejor el flujo de nuestro programa. Podemos imprimir la salida de depuración en diferentes partes de nuestro código para hacer un seguimiento del mismo.
+
+## Consulta también
+
+- [Uso de la función std::cout en C++](https://www.cplusplus.com/reference/iostream/cout/)
+- [Cómo imprimir distintos tipos de datos en C++](https://www.geeksforgeeks.org/input-output-in-c-cpp/)
+- [Cómo mejorar tus habilidades de depuración en C++](https://www.studytonight.com/cpp/debugging-cpp-programs.php)

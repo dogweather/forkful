@@ -1,47 +1,43 @@
 ---
-title:                "C++: Omvandling av datum till sträng"
+title:                "C++: Konvertera ett datum till en sträng"
+simple_title:         "Konvertera ett datum till en sträng"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att konvertera ett datum till en sträng är en vanlig uppgift i en programmerares vardag. Det kan användas för att visa datum i ett användargränssnitt eller för att spara datum som en del av en fil eller databas. I denna bloggpost kommer jag att visa hur du enkelt kan konvertera ett datum till en sträng i C++.
 
-Att konvertera ett datum till en sträng är en vanlig uppgift i C++ programmering, särskilt när man arbetar med användarinmatning eller lagring av datumdata. Det är viktigt att kunna arbeta med datatyper som passar dina specifika behov, och detta inkluderar att kunna konvertera dem till läsbara format som strängar.
-
-## Hur man gör det
-
-För att konvertera ett datum till en sträng i C++ finns det flera sätt att göra det. Ett vanligt sätt är att använda funktionen `strftime` som är en del av `<ctime>` biblioteket. Denna funktion tar in ett datumobjekt och en formatsträng som parametrar och returnerar en sträng med det formaterade datumet.
+## Hur man gör
+För att konvertera ett datum till en sträng i C++ behöver du först inkludera <iostream> och <string> biblioteken. Sedan kan du använda funktionen std::to_string() för att konvertera ett heltal till en sträng. Du kan också använda funktionen std::tm för att representera ett datum och sedan använda std::put_time() för att formatera datumet till en sträng. Här är ett kodexempel:
 
 ```C++
-// Exempel på konvertering av datum till sträng med strftime funktionen
-
 #include <iostream>
+#include <string>
+#include <iomanip>
 #include <ctime>
-using namespace std;
 
-int main() {
-  time_t now = time(0); // Skapar ett datumobjekt för dagens datum och tid
-  char dateBuffer[80];
-  strftime(dateBuffer, 80, "%d/%m/%Y", localtime(&now)); // Konverterar datumet till en sträng i formatet dd/mm/yyyy
-  cout << dateBuffer << endl; // Output: 22/03/2021
-  return 0;
+int main()
+{
+    // Konvertera datumet till en sträng med hjälp av std::tm och std::put_time
+    std::time_t t = std::time(nullptr);
+    std::tm* now = std::localtime(&t);
+    std::string date = std::put_time(now, "%d/%m/%Y");
+
+    std::cout << "Dagens datum är: " << date << std::endl;
+    return 0;
 }
 ```
-
-Det finns många olika formatsträngar som kan användas med `strftime` funktionen för att få olika format på den konverterade strängen. Det är viktigt att notera att formatet av datum och tid kan skilja sig åt beroende på vilken plattform eller operativsystem du arbetar på, så se till att testa din kod på olika enheter för att förvissa dig om att det fungerar som förväntat.
-
-Det är också värt att nämna att `strftime` funktionen förväntar sig att ta in ett datumobjekt som är i UTC-tid, så se till att hantera tidszoner korrekt om du vill konvertera ett datum från en annan tidszon.
+Detta kodexempel kommer att skriva ut dagens datum i formatet DD/MM/YYYY.
 
 ## Djupdykning
-
-Som nämnts finns det många olika formatsträngar som kan användas för att formatera den konverterade datumen in på önskad vayat87, uvärsär det dock viktigt att vara medveten om att vissa tecken kan ha en annan betydelse på olika plattformar eller operativsystem. Till exempel kan `%d` som i exemplet ovan förvänta sig att visa talet i en ledande nolla på vissa operativsystem, medan det på andra system kan förväntas att visa utan en ledande nolla.
-
-Det är också värt att nämna att det finns andra funktioner och bibliotek som kan användas för att konvertera datum till strängar i C++, såsom `std::stringstream` och `boost::format`. Valet av konverteringsmetod beror på dina specifika behov och preferenser.
+Enligt C++11-standard tillhandahåller standardbiblioteket funktionen std::put_time() för att formatera ett std::tm-objekt (representativt för ett datum och en tid) till en sträng. Formatsträngen som används i detta exempel ("%d/%m/%Y") är en specifierare för datum som består av dag (DD), månad (MM) och år med fyra siffror (YYYY). Det finns också flera andra specifierare som du kan använda för att anpassa formatet på den genererade strängen.
 
 ## Se även
-
-- [C++ Date and Time Manipulation](https://www.geeksforgeeks.org/c-date-and-time-manipulation-step-by-step-guide/)
-- [strftime documentation](https://www.cplusplus.com/reference/ctime/strftime/)
+- [std::to_string()](https://www.cplusplus.com/reference/string/to_string/)
+- [std::tm](https://www.cplusplus.com/reference/ctime/tm/)
+- [std::put_time()](https://www.cplusplus.com/reference/iomanip/put_time/)

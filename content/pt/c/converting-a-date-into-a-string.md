@@ -1,58 +1,69 @@
 ---
 title:                "C: Convertendo uma data em uma string"
+simple_title:         "Convertendo uma data em uma string"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que converter uma data em uma string?
+# Por que converter uma data em uma string em C?
 
-Converter uma data em uma string é uma tarefa comum em muitos programas de computador. Isso ocorre porque as datas são armazenadas em formatos específicos para cálculos e comparações, mas muitas vezes é necessário apresentá-las em um formato mais amigável ao usuário.
+Converter uma data em uma string é uma tarefa muito comum em programação C. Isso permite que os programadores exibam a data de forma legível para os usuários ou a armazenem em um banco de dados sem perder o formato original. Além disso, converter uma data em uma string permite uma maior flexibilidade no manuseio e manipulação de datas em um programa.
 
-# Como fazer
+## Como fazer a conversão
 
-## Bibliotecas necessárias
-Para converter uma data em uma string, você precisa incluir a biblioteca `time.h` em seu código.
+Para converter uma data em uma string em C, é necessário usar a função `strftime` da biblioteca `time.h`. Essa função permite que você especifique o formato em que a data será exibida. Abaixo está um exemplo de código que mostra como usar a função `strftime` para converter uma data em uma string.
 
-## Exemplo de código
-Vamos usar a função `strftime()` para converter uma data em uma string. Esta função aceita dois argumentos: o formato da string de saída e uma estrutura `struct tm` que armazena a data e a hora.
-
-```
+```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    // Obtém a data atual
-    time_t now = time(NULL);
-    // Converte para uma estrutura de tempo
-    struct tm *local = localtime(&now);
-    // Define o tamanho máximo da string de saída
-    char buffer[80];
-    // Converte a data para uma string no formato dia/mês/ano
-    strftime(buffer, 80, "%d/%m/%Y", local);
+int main() {
+    // cria uma estrutura de data
+    time_t data_atual;
+    struct tm *data;
+    char string_data[50];
 
-    // Imprime a data na tela
-    printf("Data atual: %s\n", buffer);
+    // obtém a data atual do sistema
+    data_atual = time(NULL);
+    data = localtime(&data_atual);
+
+    // converte a data em uma string com o formato desejado
+    strftime(string_data, 50, "%d/%m/%Y", data);
+
+    // imprime a string com a data formatada
+    printf("Data atual: %s", string_data);
 
     return 0;
 }
 ```
-Output:
+
+Exemplo de saída:
+
 ```
-Data atual: 12/04/2021
+Data atual: 04/07/2021
 ```
 
-# Mergulho profundo
+Você pode alterar o formato na chamada da função `strftime` para atender às suas necessidades. Aqui estão alguns dos códigos de formatação mais comuns para datas:
 
-Existem muitos formatos diferentes que podem ser usados ​​para converter uma data em uma string, como o formato de 24 horas, o formato AM/PM e a apresentação do ano com dois ou quatro dígitos. Você pode escolher o formato que melhor se adapta ao seu programa usando uma combinação de caracteres especiais na função `strftime()`. Alguns exemplos são `%H` para horas em formato 24 horas, `%I` para horas em formato 12 horas, `%p` para AM/PM e `%y` para o ano com dois dígitos.
+- `%d` - dia do mês (01-31)
+- `%m` - mês (01-12)
+- `%Y` - ano com 4 dígitos
+- `%y` - ano com 2 dígitos
+- `%a` - abreviação do nome do dia da semana (Sun, Mon, Tue, etc.)
+- `%A` - nome completo do dia da semana (Sunday, Monday, Tuesday, etc.)
+- `%b` - abreviação do nome do mês (Jan, Feb, Mar, etc.)
+- `%B` - nome completo do mês (January, February, March, etc.)
 
-Além disso, você também pode especificar o idioma da string de saída usando a opção `%b` ou `%B` para o nome do mês abreviado ou completo, respectivamente.
+## Mergulho profundo
+
+Além do formato da data, a função `strftime` também permite que você especifique o idioma em que a data será exibida. Isso é especialmente útil quando você precisa exibir datas em diferentes idiomas em um programa. Para fazer isso, basta usar a função `setlocale` da biblioteca `locale.h`, fornecendo o idioma desejado como argumento.
+
+Outro detalhe importante a se ter em mente é que a função `strftime` retorna o número de caracteres escritos na string de saída. Isso pode ser muito útil quando você precisa manipular a string ou alocar memória para ela.
 
 # Veja também
-
-- [Documentação da função strftime](https://www.cplusplus.com/reference/ctime/strftime/)
-- [Tutorial de C da W3Schools](https://www.w3schools.in/c-tutorial/date-time/)
-- [Artigo sobre conversão de data em string em C](https://www.geeksforgeeks.org/convert-date-string-using-c/)
+- [Documentação oficial da função `strftime`](https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html#Formatting-Calendar-Time)
+- [Símbolos de formato para datas em C](https://www.cplusplus.com/reference/ctime/strftime/) (em inglês)

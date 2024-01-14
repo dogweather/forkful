@@ -1,58 +1,107 @@
 ---
 title:                "C: Obtenir la date actuelle"
+simple_title:         "Obtenir la date actuelle"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Obtenir la date courante est une tâche courante dans de nombreux programmes C. Cela peut être utile pour les applications telles que les systèmes de gestion de fichiers, les applications de calendrier et les sauvegardes de données régulières. En utilisant la bibliothèque standard de C, il est facile d'obtenir la date actuelle dans votre code.
+La récupération de la date actuelle est une tâche courante pour de nombreux programmeurs, que ce soit pour l'afficher dans une interface utilisateur ou pour suivre l'heure à laquelle une action a été effectuée. Dans cet article, nous allons explorer les différentes façons de récupérer la date actuelle en C et discuter des avantages et des inconvénients de chaque approche.
 
-# Comment Faire
+## Comment Faire
 
-Pour obtenir la date et l'heure actuelles dans un programme C, nous utiliserons les fonctions fournies par la bibliothèque "time.h". Tout d'abord, nous devons inclure cette bibliothèque en utilisant la directive "#include" :
+Il existe plusieurs façons de récupérer la date actuelle en C, en utilisant des fonctions prédéfinies ou en écrivant votre propre code. Jetons un coup d'œil à quelques exemples de code pour récupérer la date actuelle en utilisant différentes méthodes.
 
-```C
+```c
+// Utilisation de la fonction time()
+#include <stdio.h>
 #include <time.h>
+
+int main() {
+  // Déclaration d'une variable de type time_t
+  time_t currentTime;
+  // Utilisation de la fonction time() pour récupérer la date actuelle
+  time(&currentTime);
+  // Convertit la date en une chaîne de caractères
+  char* dateString = ctime(&currentTime);
+  // Affiche la date actuelle
+  printf("%s", dateString);
+  return 0;
+}
+
+/* Output:
+Sun Jul 19 18:36:07 2020
+*/
 ```
 
-Ensuite, nous pouvons utiliser la fonction "time" pour obtenir le nombre de secondes écoulées depuis le 1er janvier 1970 :
+Nous pouvons également utiliser la fonction `localtime()` pour obtenir une structure de temps locale à partir de laquelle nous pouvons extraire les informations de date. Voici un exemple de code utilisant cette méthode :
 
-```C
-time_t currentTime = time(NULL);
+```c
+// Utilisation de la fonction localtime()
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+  // Déclaration d'une variable de type time_t
+  time_t currentTime;
+  // Utilisation de la fonction time() pour récupérer la date actuelle
+  time(&currentTime);
+  // Convertit l'heure actuelle en heure locale
+  struct tm *localTime = localtime(&currentTime);
+  // Affiche le mois, le jour et l'année actuels
+  printf("Mois : %d\nJour : %d\nAnnée : %d\n", 
+    localTime->tm_mon + 1, localTime->tm_mday, localTime->tm_year + 1900);
+  return 0;
+}
+
+/* Output:
+Mois : 7
+Jour : 19
+Année : 2020
+*/
 ```
 
-Nous pouvons ensuite utiliser cette valeur pour obtenir une structure "tm" qui contient l'heure et la date actuelles en utilisant la fonction "localtime" :
+Il est également possible de récupérer la date actuelle en utilisant la fonction `strftime()` pour formater la date selon vos préférences. Voici un exemple de code montrant comment utiliser cette fonction :
 
-```C
-struct tm *localTime = localtime(&currentTime);
+```c
+// Utilisation de la fonction strftime()
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+  // Déclaration d'une variable de type time_t
+  time_t currentTime;
+  // Utilisation de la fonction time() pour récupérer la date actuelle
+  time(&currentTime);
+  // Définit le format de la date
+  char* format = "%A, %B %d, %Y";
+  // Déclare une variable pour stocker la date formatée
+  char dateString[50];
+  // Utilise la fonction strftime() pour formater la date
+  strftime(dateString, 50, format, localtime(&currentTime));
+  // Affiche la date formatée
+  printf("%s", dateString);
+  return 0;
+}
+
+/* Output:
+Sunday, July 19, 2020
+*/
 ```
 
-Enfin, nous pouvons accéder aux différents éléments de la date et de l'heure en utilisant les champs de la structure "tm". Par exemple, pour afficher l'heure actuelle au format 24 heures, nous pouvons utiliser la fonction "strftime" :
+## Plongée Approfondie
 
-```C
-char timeString[10];
-strftime(timeString, sizeof(timeString), "%H:%M:%S", localTime);
-printf("Il est %s", timeString);
-```
+Maintenant que nous avons vu quelques exemples de code pour obtenir la date actuelle, examinons de plus près certaines des fonctions que nous utilisons. La fonction `time()` renvoie le nombre de secondes écoulées depuis le 1er janvier 1970 à 00:00:00 UTC, également connu sous le nom d'époque Unix. Cette valeur est stockée dans une variable de type `time_t`.
 
-Ce code produira une sortie similaire à ceci : "Il est 15:23:46".
+La fonction `localtime()` convertit cette valeur de temps en une structure de type `tm` qui stocke les informations de date et d'heure en fonction du fuseau horaire local. Cette structure contient les membres suivants :
 
-# Plongée Profonde
-
-La fonction "time" renvoie le nombre de secondes écoulées depuis le 1er janvier 1970, également appelé "epoch". Cette méthode de calcul du temps est appelée "epoch time" et est largement utilisée dans les systèmes Unix et Windows.
-
-La fonction "localtime" convertit le nombre de secondes en une structure "tm" qui contient des informations sur la date et l'heure locales telles que l'année, le mois, le jour, l'heure, le minute, etc.
-
-La fonction "strftime" convertit ensuite la structure "tm" en une chaîne de caractères au format spécifié. Ici, nous avons utilisé "%H:%M:%S" pour afficher l'heure au format 24 heures.
-
-Il est important de noter que ces fonctions utilisent l'heure locale du système, donc si vous souhaitez obtenir l'heure dans un fuseau horaire différent, vous devrez utiliser une fonction différente telle que "gmtime".
-
-# Voir Aussi
-
-- [Documentation de la bibliothèque de temps en C](https://en.wikipedia.org/wiki/C_date_and_time_functions)
-- [Guide complet de la bibliothèque de temps en C](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
-- [Fonction "time" sur cppreference.com](https://en.cppreference.com/w/c/chrono/time)
+- `tm_sec` : les secondes (de 0 à 61 car il y a une seconde intercalaire tous les quelques ans).
+- `tm_min` : les minutes (de 0 à 59).
+- `tm_hour` : les heures (de 0 à 23).
+- `tm_mday` : le jour du mois (de 1 à 31).
+- `tm_mon` : le mois de l'année (de 0 à 11).

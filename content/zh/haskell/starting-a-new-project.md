@@ -1,54 +1,46 @@
 ---
 title:                "Haskell: 开始一个新项目"
+simple_title:         "开始一个新项目"
 programming_language: "Haskell"
-category:             "Getting Started"
+category:             "Haskell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么: 为什么要开始一个新的项目？
+＃＃ 为什么
+编程是一项有趣的技能，它可以让您创造出令人惊叹的应用程序和工具。使用Haskell作为您的编程语言之一，可以提供许多独特的功能和优势，让您的项目更加强大和高效。
 
-很多人都对编程感兴趣，希望能够用技术来创造一些有用的东西。开始一个新的项目是实现这一目标的重要一步，它允许我们探索新的编程语言和技术，并且通过构建自己的应用来提高自己的技能。
+＃＃ 如何进行
+```Haskell 
+main :: IO ()
+main = do
+    putStrLn "欢迎来到Haskell编程世界！"
+    putStrLn "让我们开始吧！"
+    putStrLn "首先，让我们定义一个简单的函数来计算两个数字的和。"
 
-## 如何做到: 开始一个新的项目
+add :: Int -> Int -> Int
+add x y = x + y
 
-开始一个新的项目需要一些准备工作。首先，我们需要安装Haskell编译器和包管理器。然后，我们可以使用```Haskell```来编写我们的代码。
-
-下面是一个简单的例子，展示如何在Haskell中打印“Hello, World!”：
-
-```Haskell
-main = putStrLn "Hello, World!"
+main = do
+    putStrLn "请输入两个数字："
+    a <- getLine
+    b <- getLine
+    let result = add (read a) (read b)
+    putStrLn ("结果是：" ++ show result)
 ```
 
-编译并执行这个程序，我们可以得到以下输出：
+在上面的代码中，我们首先定义了一个函数`add`来计算两个整数的和。然后，我们使用`getLine`来获取用户的输入，并使用`read`函数来将输入转换为整数。最后，我们调用`add`函数，并使用`putStrLn`来打印计算结果。
 
-```
-Hello, World!
-```
+＃＃ 深入探究
+使用Haskell开始一个新的项目可能会有些挑战，但它也会带来许多好处。Haskell是一种函数式编程语言，它拥有强大的类型系统和惰性求值，这使得它具有更高的性能和更少的错误。
 
-通过这个例子，我们可以看到Haskell的语法非常简洁和优雅。它也有着强大的类型系统，能够帮助我们避免许多常见的编程错误。
+另一个令人兴奋的特性是Haskell的模式匹配功能。它可以让您更轻松地处理不同的输入情况，并编写出更清晰和简洁的代码。
 
-## 深入了解开始一个新的项目
+最重要的是，Haskell拥有一个庞大的社区支持，您可以在这个社区中获得各种各样的帮助和资源，让您的项目变得更加优秀和完善。
 
-开始一个新的项目并不仅仅是编写一些简单的代码。我们还需要考虑如何组织我们的代码，如何处理错误，如何与其他人协作等等。
-
-一种推荐的做法是使用一个现成的框架，如Yesod或HappStack，来帮助我们组织我们的代码。这些框架提供了一些常用的功能，如路由，数据库访问和表单处理，可以节省我们的时间和精力。
-
-另外，当我们遇到问题时，我们可以通过参考Haskell社区的文档和论坛来寻求帮助。Haskell社区非常友好和乐于助人，我们可以从中学习并与其他有相同兴趣的人交流。
-
-## 参考
-
-[Learn You a Haskell for Great Good! - 一个好的Haskell教程](http://learnyouahaskell.com/)
-
-[Haskell官方文档 - 官方的Haskell文档和论坛](https://www.haskell.org/documentation/)
-
-[Yesod官方网站 - Yesod框架的官方网站](https://www.yesodweb.com/)
-
-[HappStack官方网站 - HappStack框架的官方网站](http://happstack.com/)
-
-# 参见
-
-[使用Haskell构建Web应用 - 一篇关于使用Haskell构建Web应用的博客文章](https://www.cnblogs.com/zippy/p/5747416.html)
-
-[为什么选择Haskell作为新的编程语言 - 一篇关于选择Haskell的优势的博客文章](https://www.cnblogs.com/stonexulu/p/5615772.html)
+＃＃ 参见
+- [Haskell官方网站](https://www.haskell.org/)
+- [Haskell教程](https://learn.hfm.io/)
+- [Haskell社区](https://www.reddit.com/r/haskell/)

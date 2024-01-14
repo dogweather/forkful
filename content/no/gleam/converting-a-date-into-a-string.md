@@ -1,39 +1,45 @@
 ---
-title:                "Gleam: Omgjøring av en dato til en streng"
+title:                "Gleam: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Mange programmerere kan støte på situasjoner hvor de må konvertere en dato til en streng. Dette kan være for å presentere datoer på en mer lesbar måte, eller for å utføre spesifikke beregninger. I Gleam, en ny og spennende funksjonell programmeringsspråk, kan du enkelt utføre denne konverteringen ved hjelp av innebygde funksjoner. I denne bloggposten vil vi gå gjennom hvordan man konverterer en dato til en streng i Gleam.
 
-## Hvordan
-Først må du importere biblioteket `gleam/calendar`, som inneholder funksjoner for å håndtere datoer og kalendere. Deretter kan du bruke funksjonen `format_date` for å konvertere en dato til en streng. Her er et eksempel som viser hvordan du kan konvertere en dato til en streng og deretter skrive den ut i konsollen:
+Å konvertere en dato til en streng er en vanlig oppgave i programmering, spesielt når man jobber med brukerinput og databaser. I Gleam kan dette gjøres enkelt og effektivt ved å følge noen få trinn.
+
+## Slik gjør du det
+
+For å konvertere en dato til en streng i Gleam, kan du følge følgende kodeeksempel:
 
 ```Gleam
-import gleam/calendar
+import gleam/zx
+import time
 
-let date = Time.utc_now()
-let str = Calendar.format_date(date, "%Y-%m-%d")
-Log.info(str)
+let now = time.now()
+let formatted = time.format(now, "%d.%m.%Y")
+zx.println(formatted)
 ```
 
-Kjører denne koden vil gi følgende resultat:
+Dette eksempelet viser hvordan du bruker Gleams innebygde bibliotek for tid og formaterer datoen ved hjelp av spesifikke formateringsstrenger. Output blir da følgende:
 
 ```
-2020-10-20
+17.03.2021
 ```
 
-I dette eksempelet brukte vi `%Y-%m-%d` som formateringsmønster, men du kan også bruke andre formateringsalternativer, som beskrevet i dokumentasjonen til `format_date`-funksjonen. Du kan også angi en lokal tidssone ved å legge til en tidszoneparameter i funksjonskallet.
+I dette eksempelet brukte vi "%d.%m.%Y" for å angi at datoen skal vises med dag, måned og år på formatet DD.MM.YYYY.
 
-## Dypdykk
-Å konvertere en dato til en streng kan virke som en enkel oppgave, men det er faktisk ganske komplekst. Datoer kan representeres på forskjellige måter, for eksempel i ulike kalendere eller tidsformateringssystemer. Derfor er det viktig å velge riktig formateringsmønster for å sikre nøyaktigheten i konverteringen.
+## Dykk dypere
 
-I Gleam bruker `Time`-modulen den internasjonale standarden ISO8601 for å representere dato og tid. Dette sikrer at alle datoer blir håndtert på en standardisert og konsistent måte. Når du bruker formateringsmønster i `format_date`-funksjonen, må du sørge for å følge denne standarden for å unngå feil i konverteringen.
+Å konvertere datoer til strenger kan være nyttig når man skal utføre ulike operasjoner med datoen, som å vise den på en bestemt måte eller lagre den i en database. I Gleam kan man også benytte seg av biblioteker som "chronos" og "dateformat" for mer avanserte operasjoner med datoer og tidsformatering.
 
-## Se Også
-- [Dokumentasjon for `gleam/calendar` biblioteket](https://gleam.run/api/master/gleam_calendar.html)
-- [Gleam programmeringsspråkets offisielle nettside] (https://gleam.run)
+## Se også
+
+- Gleams offisielle dokumentasjon for tid og dato: https://gleam.run/documentation/stdlib/time
+- "Chronos" biblioteket: https://github.com/awetzel/chronos
+- "Dateformat" biblioteket: https://github.com/tmattio/dateformat

@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Skapa slumpmässiga tal"
+title:                "Rust: Generering av slumpmässiga nummer"
+simple_title:         "Generering av slumpmässiga nummer"
 programming_language: "Rust"
-category:             "Numbers"
+category:             "Rust"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/generating-random-numbers.md"
 ---
 
@@ -9,37 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att generera slumpmässiga nummer är en viktig del av många programmeringsprojekt, oavsett om det är för att skapa slumpmässiga spel, simuleringsprogram eller för att utföra statistisk analys. Med Rusts inbyggda randomiseringsverktyg kan du enkelt generera pålitliga och slumpmässiga nummer för ditt projekt.
+Att kunna generera slumpmässiga nummer är en viktig del av många program och spel. Det tillåter oss att skapa variation och hjälper till att skapa en mer spännande användarupplevelse.
 
 ## Hur man gör det
 
-Att generera slumpmässiga nummer i Rust är enkelt. Först måste du importera biblioteket "rand". Sedan kan du använda funktionen "thread_rng()" för att skapa en trådsäker generator och sedan använda funktionen "gen_range()" för att generera ett slumpmässigt nummer inom ett angivet intervall.
-
 ```Rust
-use rand::prelude::*; // Importera rand biblioteket
+use rand::Rng;
 
-let mut rng = thread_rng(); // Skapa en trådsäker generator
-
-let num = rng.gen_range(1..=100); // Generera ett slumpmässigt tal mellan 1 och 100
-
-println!("Det slumpmässiga talet är: {}", num); // Skriv ut det slumpmässiga numret
+fn main() {
+    // För att generera ett slumpmässigt heltal mellan 1 och 100
+    let num = rand::thread_rng().gen_range(1, 101);
+    println!("Det slumpmässiga talet är: {}", num);
+    
+    // För att generera ett slumpmässigt flyttal mellan 0 och 1
+    let float = rand::thread_rng().gen();
+    println!("Det slumpmässiga flyttalet är: {}", float);
+}
 ```
 
 Output:
-```
-Det slumpmässiga talet är: 57
-```
+
+Det slumpmässiga talet är: 56
+Det slumpmässiga flyttalet är: 0.03915819815607013
+
+I detta exempel använder vi Rust biblioteket "rand" för att generera slumpmässiga nummer. För att göra detta behöver vi först importera "Rng" modulen. Sedan använder vi "thread_rng()" funktionen för att skapa en slumpmässig generator och "gen_range()" functionen för att ange vilket intervall numret ska vara mellan. Du kan läsa mer om de olika funktionerna och alternativen de har i dokumentationen för "rand" biblioteket.
+
+Det är important att observera att resultaten i exemplet ovan kommer att vara olika varje gång koden körs, eftersom den genererar ett sant slumpmässigt nummer varje gång.
 
 ## Djupdykning
 
-Den mångsidiga "rand" biblioteket i Rust ger flera alternativ för att generera slumpmässiga nummer. Du kan till exempel använda funktionen "gen()" för att generera en slumpmässig bool (true/false), funktionen "gen_bool()" för att generera ett slumpmässigt flyttal, och funktionen "gen_ascii_chars()" för att generera slumpmässiga ASCII-tecken.
+Bakom kulisserna använder "rand" biblioteket ett koncept som kallas för "pseudo-random nummer generering". Detta innebär att numren som genereras egentligen inte är helt slumpmässiga, men de är tillräckligt nära för att inte göra någon skillnad för de flesta användningsområden.
 
-För att kontrollera hur slumpmässiga dina genererade nummer är, kan du använda funktionen "gen_seedable()" tillsammans med en "SeedableRng" för att skapa en generare med en specifik utgångspunkt (seed). Detta gör att du kan återskapa samma sekvens av slumpmässiga nummer vid varje körning av ditt program.
+Detta är möjligt genom att använda en matematisk algoritm som tar ett startvärde, eller en "seed", och använder det för att beräkna nästa nummer i sekvensen. Så länge startvärdet är olika varje gång du kör koden, kommer den genererade sekvensen av nummer att vara unik varje gång.
 
 ## Se även
 
-- Rust dokumentation för randomiseringsbiblioteket:https://docs.rs/rand/0.6.5/rand/
-
-- Att använda slumpmässighet i spelutveckling i Rust: https://rustgamedev.com/creating-a-random-number-generator-in-rust/
-
-- Användning av slumpmässiga tal för simuleringar i Rust: https://vitiral.github.io/2018/01/07/Rust-Random-with-Std-Thread-Rng.html
+* [Dokumentation för rand biblioteket](https://docs.rs/rand/0.8.4/rand/)
+* [En djupare förklaring om pseudo-random nummer generering](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/)

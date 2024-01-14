@@ -1,62 +1,59 @@
 ---
 title:                "Bash recipe: Deleting characters matching a pattern"
+simple_title:         "Deleting characters matching a pattern"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why Deleting Characters Matching a Pattern can be Useful
+## Why
 
-Have you ever encountered a situation where you needed to delete certain characters from a text file or string? Maybe you wanted to remove all the numbers from a string or delete specific symbols from a file. In such cases, using Bash to delete characters matching a pattern can be extremely useful.
+Have you ever come across a situation where you need to delete a specific set of characters from a file or text? Maybe they are typos or unwanted symbols that you want to remove. In such cases, knowing how to delete characters matching a pattern in Bash can come in handy.
 
-By understanding how to delete characters matching a pattern in Bash, you can save time and effort in editing files or manipulating data. In this blog post, we will discuss how to achieve this task and provide a deeper understanding of the process.
+## How To
 
-## How To Use Bash to Delete Characters Matching a Pattern
+To delete characters matching a pattern in Bash, you need to use the `tr` command. This command allows you to translate or delete characters in a file or text. Here's an example of how you can use `tr` to delete the letter "a" from a file:
 
-To delete characters matching a pattern in Bash, we can use the `sed` and `tr` commands. Let's take a look at some coding examples to understand how to use these commands.
-
-### Using `sed` command
-
-The `sed` command, short for "stream editor," is used for manipulating text files. To delete characters matching a pattern with `sed`, we use the `s` (substitute) command followed by the pattern we want to delete and the replacement. Let's see how this works with an example.
-
-Let's say we have a text file with a mix of lowercase and uppercase letters, and we want to delete all the uppercase letters. We can use the following command:
-
-```Bash 
-sed 's/[A-Z]//g' file.txt
+```Bash
+echo "apple" | tr -d 'a'
 ```
 
-Here, `s/[A-Z]//g` means we are substituting all uppercase letters with nothing, effectively deleting them. The `g` at the end means the substitution should be global, affecting all instances of the pattern.
+The above command will output "pple" after deleting the letter "a".
 
-The output of this command will be the contents of `file.txt` with all the uppercase letters removed.
+You can also provide a set of characters to be deleted instead of just one. For example, if you want to delete vowels from a file, you can use the following command:
 
-### Using `tr` command
-
-The `tr` command, short for "translate," is used for translating or deleting characters from standard input. To delete characters matching a pattern with `tr`, we use the `-d` option followed by the characters we want to delete. Let's see an example of this in action.
-
-Let's say we have a string containing both letters and numbers, and we want to delete all the numbers. We can use the following command:
-
-```Bash 
-echo "a1b2c3d4" | tr -d '0-9'
+```Bash
+echo "hello" | tr -d 'aeiou'
 ```
 
-Here, `-d '0-9'` means we are deleting all characters from `0` to `9`. The output of this command will be `abcd`, with all the numbers removed from the original string.
+This will output "hll" after deleting all the vowels.
 
-## Deep Dive into Deleting Characters Matching a Pattern
+You can also specify a range of characters to be deleted using the `-c` option. For example, if you want to delete all numbers from a file, you can use the following command:
 
-Now that we know how to use `sed` and `tr` to delete characters matching a pattern, let's understand a bit more about the process.
+```Bash
+echo "abc123" | tr -d -c 'a-z'
+```
 
-When using `sed` to delete characters, we can use a range of characters or a regular expression as a pattern. By using different ranges or expressions, we can tailor our deletion to specific needs. For example, we can delete only vowels or only punctuation marks from a file.
+This will output "abc" after deleting all the numbers.
 
-With `tr`, we can use the `-s` option to squeeze repeated characters. This can be useful if we want to delete all occurrences of a certain character, but not if they are repeated consecutively. For example, if we want to delete all spaces from a sentence but not the spaces between words, we can use `tr -s ' ' `.
+## Deep Dive
 
-It's also important to note that both `sed` and `tr` can also be used in conjunction with other commands, allowing for more complex and powerful manipulations of text.
+The `tr` command is useful for deleting characters because it processes the input one character at a time and replaces it with the specified character. This makes it efficient for large files or texts.
+
+Another advantage of using `tr` is that it allows you to delete characters from stdin as well as from a file. This means you can use this command in your scripts to automate the deletion of characters.
+
+It's also worth mentioning that you can use regular expressions with `tr` to delete patterns of characters instead of just single characters. Regular expressions provide much more flexibility in terms of what you can delete, making the `tr` command even more powerful.
 
 ## See Also
 
-Here are some useful links for further learning:
+To learn more about the `tr` command and its options, you can check out the following resources:
 
-- [sed tutorial from Linuxize](https://linuxize.com/post/sed-command-in-linux/)
-- [tr command reference from The Linux Documentation Project](https://tldp.org/LDP/abs/html/string-manipulation.html#TRREF)
-- [Regular Expressions tutorial from DigitalOcean](https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux)
+- [Bash tr command](https://www.gnu.org/savannah-checkouts/gnu/coreutils/manual/html_node/tr-invocation.html)
+- [Linux tr command](https://linux.die.net/man/1/tr)
+- [Bash regex tutorial](https://linuxconfig.org/bash-regex)
+- [Bash scripting guide](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+
+Happy coding!

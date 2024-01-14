@@ -1,43 +1,49 @@
 ---
-title:                "TypeScript: Zeichenfolgen verketten"
+title:                "TypeScript: Verkettung von Zeichenfolgen"
+simple_title:         "Verkettung von Zeichenfolgen"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum 
 
-Das Verketten von Strings ist ein grundlegender Prozess in der Programmierung, bei dem mehrere Strings zu einem einzigen neuen String kombiniert werden. Dies ist besonders nützlich bei der Erstellung von dynamischen Texten, z.B. bei der Ausgabe von Benutzerdaten oder bei der Implementierung von Suchfunktionen.
+Das Verketten von Zeichenketten ist eine grundlegende Funktion in der TypeScript-Programmierung. Es ermöglicht uns, mehrere Zeichenketten zu einem einzigen String zu kombinieren, der dann weiterverarbeitet werden kann.
 
-## Wie man Strings verbindet
+## Wie man Zeichenketten verketten kann
 
-Um Strings in TypeScript zu verketten, können wir den `+` Operator verwenden. Hier ist ein Beispielcode, der zwei Strings miteinander verbindet und das Ergebnis in der Konsole ausgibt:
+Das Verketten von Zeichenketten ist in TypeScript sehr einfach. Wir verwenden einfach den "+" Operator, um zwei oder mehr Zeichenketten zusammenzufügen. Schauen wir uns hier ein Beispiel an:
 
-```TypeScript
-let str1 = "Hallo, ";
-let str2 = "Welt!";
-console.log(str1 + str2); // Ausgabe: Hallo, Welt!
+```TypeScript 
+let name: string = "Max";
+let greeting: string = "Hallo, ";
+
+let fullName: string = greeting + name;
+
+console.log(fullName); // Output: "Hallo, Max"
 ```
 
-Wir können auch die `concat()` Methode verwenden, um Strings zu verbinden. Diese Methode nimmt beliebig viele Argumente und verbindet sie zu einem neuen String. Hier ist ein Beispiel, das drei Strings miteinander verbindet:
+In diesem Beispiel haben wir zwei Variablen, "name" und "greeting", die beide vom Typ "string" sind. Wir verwenden dann den "+" Operator, um die beiden Zeichenketten zusammenzufügen und in der Variable "fullName" zu speichern. Wenn wir den "fullName" String ausgeben, erhalten wir "Hallo, Max".
+
+## Eine tiefere Betrachtung der Zeichenketten-Verkettung
+
+Bei der Zeichenketten-Verkettung sollte beachtet werden, dass der "+" Operator nicht nur für Strings funktioniert, sondern auch für andere Datentypen wie Zahlen oder Booleans. Allerdings sollte man vorsichtig sein, da dies zu unerwarteten Ergebnissen führen kann. Hier ein weiteres Beispiel:
 
 ```TypeScript
-let str1 = "Das ";
-let str2 = "ist ";
-let str3 = "eine Verkettung.";
-console.log(str1.concat(str2, str3)); // Ausgabe: Das ist eine Verkettung.
+let num1: number = 5;
+let num2: number = 10;
+
+let result: string = "Das Ergebnis ist " + num1 + num2;
+console.log(result); // Output: "Das Ergebnis ist 510"
 ```
 
-## Tiefere Einblicke
-
-Während es einfach erscheinen mag, Strings zu verbinden, gibt es einige wichtige Dinge zu beachten. Beispielsweise können wir keine String-Objekte mit dem `+` Operator verbinden, sondern nur Literal-Strings. Dies bedeutet, dass wir möglicherweise den `toString()` Befehl verwenden müssen, um Objekte in einen String umzuwandeln, bevor wir sie verbinden können.
-
-Wir sollten auch darauf achten, wie viele Strings wir miteinander verbinden. Bei großen Mengen von Strings kann dies zu einer großen Anzahl von Zwischenspeicherungen im Arbeitsspeicher führen, was zu Leistungsproblemen führen kann. In solchen Fällen kann es ratsam sein, stattdessen die `concat()` Methode zu verwenden.
+In diesem Beispiel haben wir Zahlen anstatt Strings verwendet. Das Ergebnis ist jedoch immer noch ein String, da der "+" Operator automatisch die Zahlen in Strings umwandelt. Deshalb werden die beiden Zahlen nicht addiert, sondern aneinandergehängt.
 
 ## Siehe auch
 
-- [Offizielle TypeScript Dokumentation zur Verkettung von Strings](https://www.typescriptlang.org/docs/handbook/strings.html#string-literal-types)
-- [Tutorial: Das Verbinden von Strings in TypeScript](https://www.digitalocean.com/community/tutorials/how-to-concatenate-strings-in-typescript)
-- [Weitere Beispiele zur Verkettung von Strings in TypeScript](https://www.w3schools.com/js/js_string_methods.asp)
+- <https://www.typescriptlang.org/docs/handbook/basic-types.html#string>
+- <https://www.freecodecamp.org/news/the-typescript-handbook/>
+- <https://www.educba.com/typescript-string/>

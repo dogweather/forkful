@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Comprobar si existe un directorio"
+title:                "Elixir: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/checking-if-a-directory-exists.md"
 ---
 
@@ -9,31 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-La verificación de la existencia de un directorio es una tarea común en la programación en Elixir. Puede ser necesaria para garantizar que el directorio al que estamos apuntando existe antes de realizar una operación en él, o para evitar errores potenciales en nuestro código.
+En programación, es importante verificar si una carpeta existe antes de realizar ciertas acciones en ella, como crear nuevos archivos o mover archivos existentes. Esto puede evitar errores y asegurarse de que nuestro código se ejecute correctamente.
 
 ## Cómo hacerlo
 
-Para verificar si un directorio existe en Elixir, podemos utilizar la función `File.dir?` pasando como argumento la ruta del directorio que queremos verificar. Esta función devolverá `true` si el directorio existe y `false` en caso contrario.
-
 ```Elixir
-File.dir?("ruta/del/directorio")
-# => true
-```
+# Verificar si una carpeta existe en una ruta dada
+File.dir?("/ruta/a/carpeta")
+#=> true
 
-También podemos utilizar `File.exists?` que funciona de la misma manera, pero también puede verificar la existencia de archivos.
+# Verificar si una carpeta existe en una ruta relativa
+File.dir?("carpeta")
+#=> true
 
-```Elixir
-File.exists?("ruta/del/archivo")
-# => true
+# Comprobar si una carpeta existe en una ruta especificada por una tupla
+File.dir?({:home, "mi_usuario", "Documentos"})
+#=> true
 ```
 
 ## Profundizando
 
-Ambas funciones utilizan llamadas al sistema operativo para verificar la existencia de un directorio o archivo. En el caso de `File.dir?` se llama a la función `dir?` de la librería estándar de Erlang, mientras que `File.exists?` llama a la función `file:read_file_info` de Erlang.
+Elixir proporciona la función `File.dir?` para comprobar si una carpeta existe en una ruta especificada. Esta función devuelve un booleano `true` si la carpeta existe y `false` si no existe. Además, esta función también se puede utilizar para comprobar si una carpeta existe en una ruta relativa, lo que significa que solo se necesita el nombre de la carpeta en lugar de la ruta completa.
 
-Es importante tener en cuenta que estas funciones no hacen ninguna comprobación de permisos de acceso al directorio o archivo, por lo que puede devolver `true` incluso si no tenemos permisos para acceder al mismo.
+Una forma avanzada de utilizar `File.dir?` es proporcionando una tupla como argumento. Esta tupla debe contener la ruta absoluta de la carpeta que se desea verificar, pero también puede contener opciones adicionales como el nombre de usuario o el directorio raíz. Al proporcionar una tupla, podemos verificar si una carpeta existe en una ubicación específica del sistema de archivos.
 
-## Ver También
+## Ver también
 
-- [Documentación de Elixir sobre la función File.dir?](https://hexdocs.pm/elixir/File.html#dir/1)
-- [Documentación de Elixir sobre la función File.exists?](https://hexdocs.pm/elixir/File.html#exists/1)
+- [Documentación de Elixir sobre File.dir?](https://hexdocs.pm/elixir/File.html#dir?/1)
+- [Artículo en inglés sobre cómo verificar si una carpeta existe en Elixir](https://elixirschool.com/en/lessons/basics/basics/#exists-questionmark)

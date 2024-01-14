@@ -1,51 +1,39 @@
 ---
-title:                "C#: 패턴에 맞는 문자 삭제하기"
+title:                "C#: 패턴과 일치하는 문자 삭제"
+simple_title:         "패턴과 일치하는 문자 삭제"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-컴퓨터 프로그래밍을 하다보면, 우리는 종종 데이터 정리를 위해 특정한 패턴과 일치하는 문자를 삭제해야 할 때가 있습니다. 이러한 상황에서 우리는 어떻게 해야 할지 궁금할 수 있습니다. 그래서 오늘은 C#에서 패턴과 일치하는 문자를 삭제하는 방법에 대해 알아보겠습니다.
+문자열에서 특정 패턴과 일치하는 문자를 삭제하는 것이 왜 유용한지 궁금할 수 있습니다. 예를 들어, 사용자의 입력에서 특정 문자를 제거하고자 할 때 이 기능을 사용할 수 있습니다.
 
-## 어떻게 해야 할까요?
+## 사용 방법
 
-우선, 우리는 특정 문자열 안에 있는 패턴과 일치하는 문자를 모두 삭제해야 합니다. 이를 위해 우리는 C#에서 제공하는 `Regex` 클래스를 사용할 수 있습니다. `Regex` 클래스는 정규식을 사용하여 문자열을 분석하고 처리하는데 사용됩니다.
+코드 블록을 사용하여 C# 예시와 결과를 제공합니다. 
 
 ```C#
-using System;
-using System.Text.RegularExpressions;
-
-public class Program
-{
-	public static void Main()
-	{
-		// 문자열 입력
-		string str = "Hello World! 1234";
-		
-		// 삭제할 패턴 정의
-		Regex regex = new Regex("[0-9]"); // 숫자를 가진 문자
-		
-		// Replace 메서드를 사용하여 패턴과 일치하는 문자를 공백으로 대체
-		str = regex.Replace(str, "");
-		
-		// 결과 출력
-		Console.WriteLine(str); // 결과: Hello World!
-	}
-}
+string input = "hello123";
+string pattern = "[0-9]"; //숫자를 나타내는 정규표현식
+string output = Regex.Replace(input, pattern, ""); //문자열에서 숫자를 삭제
+Console.WriteLine(output); //결과: hello
 ```
 
-위의 예시에서 보듯이, `Regex` 클래스의 `Replace` 메서드를 사용하여 패턴과 일치하는 문자를 제거할 수 있습니다. 이렇게 하면 문자열에서 원하는 부분만 남기고 나머지는 모두 삭제할 수 있습니다. 추가적으로 `Regex` 클래스를 사용하면 정규식을 이용해 더 다양한 패턴과 일치하는 문자를 삭제할 수 있습니다.
+이 예제에서는 입력된 문자열에서 숫자를 제거하고 나머지만 남게 됩니다. 이를 응용하여 사용자가 원하는 패턴 혹은 문자를 선택적으로 삭제할 수 있습니다. 이를 통해 데이터 정리나 검색 기능 등에 활용할 수 있습니다.
 
 ## 딥 다이브
 
-보다 깊은 수준에서 패턴과 일치하는 문자를 삭제하는 것은 정규식과 관련된 지식이 필요합니다. 정규식은 문자 패턴을 표현하는 방식을 나타내는데, 예를 들어 `[0-9]`는 0부터 9까지의 숫자를 의미합니다. 이렇게 정규식으로 패턴을 정의하면, 해당하는 문자를 찾아서 원하는 처리를 할 수 있습니다.
+삭제된 문자를 처리하는 메커니즘에 대해 더 자세히 살펴보겠습니다. 문자를 삭제하는 것은 주로 정규표현식을 사용하여 이루어집니다. 정규표현식은 특정 패턴을 가진 문자열을 검색하고 삭제하는 작업에 매우 유용합니다. 또한, 정규표현식은 문자열 처리에 있어서 다양한 기능을 제공하기 때문에 개발자에게 매우 중요한 도구 중 하나입니다.
 
-하지만 정규식은 처음에 배우기에는 조금 난해할 수 있지만, 능숙하게 다룰 수 있다면 매우 유용한 도구가 될 것입니다. 자세한 내용은 링크를 참고하시기 바랍니다.
+## 참고 자료
 
-## 같이 보기
+- [C# 정규표현식 - Microsoft 문서](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [트리밍과 정규표현식 관련 포스팅 - velog 사이트](https://velog.io/@dahaha0313/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9Dtrim)
+- [정규표현식을 사용한 문자열 처리 - Tistory 블로그](https://darock.tistory.com/31)
 
-- [C#에서 정규식 사용하기](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/regular-expression-language-quick-reference)
+# 참고 자료

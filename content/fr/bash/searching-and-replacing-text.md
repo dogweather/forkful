@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Recherche et remplacement de texte"
+title:                "Bash: Rechercher et remplacer du texte"
+simple_title:         "Rechercher et remplacer du texte"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/searching-and-replacing-text.md"
 ---
 
@@ -9,57 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La recherche et le remplacement de texte sont des tâches courantes dans la programmation Bash. Cela permet de modifier rapidement du texte dans un fichier ou un script, ce qui peut faire gagner du temps et éviter les erreurs. Apprenez comment effectuer cette tâche en suivant les étapes ci-dessous.
+La recherche et le remplacement de texte sont des tâches courantes dans la programmation Bash. Cela peut être utile pour corriger des erreurs, mettre à jour du code obsolète ou encore formater des données spécifiques. Apprendre à le faire efficacement peut vous faire gagner beaucoup de temps lors de l'écriture de scripts Bash.
 
 ## Comment faire
 
-La syntaxe de base pour rechercher et remplacer du texte dans Bash est la suivante :
+La commande « `sed` » est souvent utilisée pour rechercher et remplacer du texte dans Bash. Voyons un exemple pour comprendre comment cela fonctionne.
 
-```bash
-sed 's/mot_a_remplacer/nouveau_mot/g' fichier.txt
+Supposons que nous avons un fichier texte contenant une liste de noms de personnes, chacun séparé par un espace. Nous souhaitons remplacer tous les prénoms par des initiales. Voici le contenu du fichier « names.txt »:
+
+```
+John Smith
+Mary Johnson
+David Williams
 ```
 
-Ici, "sed" est la commande pour stream editor, "s" indique que nous voulons effectuer un remplacement, "mot_a_remplacer" est le mot que nous voulons remplacer, "nouveau_mot" est le mot que nous voulons utiliser à la place, et "fichier.txt" est le nom du fichier dans lequel nous voulons effectuer la modification.
+Nous pouvons utiliser la commande « `sed` » pour remplacer les prénoms par des initiales. Nous saisissons la commande suivante dans le terminal:
 
-Par exemple, si le fichier "exemple.txt" contient le texte "Bonjour monde", nous pouvons utiliser la commande suivante pour le modifier :
-
-```bash
-sed 's/Bonjour/Hello/g' exemple.txt
+```
+sed -i 's/\([A-Z]\)\w*\s/\1./g' names.txt
 ```
 
-Cela remplacera "Bonjour" par "Hello" et produira le texte "Hello monde" dans le fichier.
+Analysons chaque élément de cette commande:
 
-Nous pouvons également utiliser des expressions régulières pour rechercher et remplacer du texte. Par exemple, si nous voulons remplacer toutes les occurrences de nombres par le mot "numéro" dans un fichier, nous pouvons utiliser la commande suivante :
+- `-i` indique à « `sed` » de modifier directement le fichier d'origine, au lieu de simplement afficher le résultat dans le terminal.
+- `s` indique que nous allons effectuer une substitution.
+- `\([A-Z]\)\w*\s` est le motif destiné à être remplacé. Il correspond à une lettre majuscule, suivie de zéro ou plusieurs caractères alphanumériques (les prénoms), puis un espace.
+- `\1.` est le remplacement. Il correspond au premier groupe de caractères que nous avons capturé dans le motif (la première lettre du prénom), suivi d'un point.
+- `g` indique à « `sed` » de remplacer toutes les occurrences du motif, et pas seulement la première.
 
-```bash
-sed 's/[0-9]/numéro/g' fichier.txt
+Et voici le résultat obtenu dans le fichier « names.txt » après avoir exécuté cette commande:
+
+```
+J. Smith
+M. Johnson
+D. Williams
 ```
 
-Cela remplacera tous les chiffres par le mot "numéro".
+Nous avons maintenant des initiales à la place des prénoms. Vous pouvez essayer d'autres options et motifs pour expérimenter avec « `sed` » et trouver ce qui fonctionne le mieux pour votre cas d'utilisation.
 
-## Plongée en profondeur
+## Approfondissement
 
-Vous pouvez également utiliser des options pour modifier le comportement de la commande "sed". Voici quelques-unes des options les plus courantes :
+Bien que la commande « `sed` » soit très utile pour la recherche et le remplacement de texte, il existe d'autres moyens de le faire en Bash. Vous pouvez utiliser les commandes « `awk` », « `grep` » ou encore des opérations avec des expressions régulières intégrées dans un script Bash.
 
-- "i" : insérer du texte avant une ligne correspondante
-- "c" : remplacer la ligne entière par un nouveau texte
-- "d" : supprimer la ligne correspondante
-- "p" : imprimer la ligne correspondante
-- "g" : remplacer toutes les occurrences de la ligne correspondante
-- "n" : lire la ligne suivante
-
-Par exemple, si nous voulons remplacer une ligne entière par un nouveau texte dans un fichier, nous pouvons utiliser la commande suivante :
-
-```bash
-sed '3c/Nouveau texte/' fichier.txt
-```
-
-Cela remplacera la troisième ligne dans le fichier par "Nouveau texte".
+Il est également important de comprendre comment fonctionnent les modèles et les expressions régulières pour effectuer des recherches plus complexes. Vous pouvez consulter le manuel de référence officiel de Bash pour en savoir plus sur l'utilisation de ces outils.
 
 ## Voir aussi
 
-Pour en savoir plus sur la commande "sed" et ses nombreuses options, consultez ces ressources :
-
-- [Document officiel pour la commande "sed"](https://www.gnu.org/software/sed/manual/sed.html)
-- [Guide pratique pour utiliser la commande "sed"](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
-- [Tutoriel vidéo sur la commande "sed"](https://www.youtube.com/watch?v=kEltwTZBI8U)
+- [Manuel de référence de Bash](https://www.gnu.org/software/bash/manual/)
+- [Guide de la commande « sed »](https://www.gnu.org/software/sed/manual/sed.html)
+- [Guide de la commande « awk »](https://www.gnu.org/software/gawk/manual/)
+- [Guide de la commande « grep »](https://www.gnu.org/software/grep/manual/)

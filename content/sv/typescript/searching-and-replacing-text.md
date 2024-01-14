@@ -1,42 +1,57 @@
 ---
 title:                "TypeScript: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att söka och ersätta text är en viktig del av programmering och kan hjälpa till att effektivisera arbetet med stora mängder text. Genom att använda TypeScript kan du enkelt söka och ersätta text i ditt kodprojekt.
+Att söka och ersätta text är en vanlig uppgift inom programmering. Oavsett om du behöver ändra namn på variabler eller ersätta felaktig text, kan det vara en tidsbesparande teknik att behärska.
 
-## Hur man gör det
+# Såhär gör du
 
-Först behöver vi importera "fs" modulen för att kunna läsa och skriva till filer. Sedan kan vi använda funktionen "readFileSync" för att läsa in en fil och använda "replace" funktionen för att söka och ersätta text. Se koden nedan för en enkel mängdexempel.
+I TypeScript finns det olika metoder för att söka och ersätta text. En av de vanligaste är `replace()`-metoden, som tar två argument: en söksträng och en sträng som ska ersätta den hittade texten.
 
 ```TypeScript
-import * as fs from 'fs';
+let text = "Hej världen!";
+let nyText = text.replace("världen", "du");
+console.log(nyText);
 
-const file = fs.readFileSync('./example.txt', 'utf8');
-
-const newContent = file.replace('hej', 'hallå');
-
-fs.writeFileSync('./example.txt', newContent);
+// Output: Hej du!
 ```
 
-I detta exempel har vi läst in en fil som heter "example.txt" och ersatt alla instanser av ordet "hej" med "hallå". Sedan har vi skrivit över den befintliga filen med det nya innehållet.
+För att göra en global sökning och ersättning, lägg till en `g`-flagga som sista argumentet i `replace()`-metoden. Detta gör att alla förekomster av söksträngen kommer att ersättas.
 
-## Djupdykning
+```TypeScript
+let text = "Välkommen till TypeScript!";
+let nyText = text.replace(/o/g, "a");
+console.log(nyText);
 
-Det finns olika sätt att söka och ersätta text i TypeScript, beroende på vilka behov du har. Du kan använda reguljära uttryck för mer avancerade sökningar eller använda funktioner som trim eller toUpperCase för att manipulera texten innan du utför ersättningen.
+// Output: Välkammen till TypeScrapt!
+```
 
-Det är också viktigt att tänka på vilken typ av fil du arbetar med. Om du arbetar med en JSON-fil kan du använda "JSON.stringify" och "JSON.parse" för att manuellt söka och ersätta text i JSON-objektet.
+# Djupdykning
 
-## Se också
+Utöver `replace()`-metoden finns det andra sätt att söka och ersätta text i TypeScript. Till exempel kan du använda `indexOf()`-metoden för att hitta positionen för en specifik teckenföljd i en sträng och sedan använda `slice()`-metoden för att ersätta den.
 
-[Officiell TypeScript dokumentation för String manipulation](https://www.typescriptlang.org/docs/handbook/advanced-types.html#mapped-types)
+```TypeScript
+let text = "Hello world!";
+let position = text.indexOf("world");
+let nyText = text.slice(0, position) + "universe";
+console.log(nyText);
 
-[StackOverflow tråd om reguljära uttryck för sök- och ersättningsfunktioner i TypeScript](https://stackoverflow.com/questions/9527460/search-and-replace-with-regular-expression-in-typescript) 
+// Output: Hello universe!
+```
 
-[En guide för att använda "fs" modulen i Node.js](https://nodejs.dev/learn/the-nodejs-fs-module)
+Det finns också regex-mönster som kan användas för att söka efter specifika mönster i texten och sedan ersätta dem. Detta ger en mer avancerad och flexibel sökning och ersättning.
+
+# Se även
+
+- [TypeScript officiell dokumentation om strängar](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [W3Schools guide om sökning och ersättning i JavaScript](https://www.w3schools.com/jsref/jsref_replace.asp)
+- [MDN webbdokumentation om regex i JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

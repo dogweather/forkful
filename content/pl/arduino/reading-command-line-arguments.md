@@ -1,59 +1,58 @@
 ---
 title:                "Arduino: Odczytywanie argumentów wiersza poleceń"
+simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Arduino jest jedną z najpopularniejszych platform programistycznych, a jego możliwości są ogromne. Jednak, żeby w pełni wykorzystać potencjał tej platformy, ważne jest, aby poznać różne sposoby programowania. Dziś postaram się przybliżyć wam jedną z nich – czytanie argumentów wiersza poleceń.
 
-## Jak to zrobić
-Aby odczytać argumenty wiersza poleceń, musimy wykorzystać metodę ```readCommandLine()```. Przykładowy kod wyglądałby następująco:
+Czy znasz ten moment, kiedy chcesz zmienić ustawienia swojego projektu Arduino, ale musisz przeprogramować cały kod? To czasochłonne i może być frustrujące. Ale czy wiesz, że istnieje sposób aby zmienić ustawienia bez zmiany całego kodu? Taki sposób to czytanie argumentów wiersza poleceń! W tym artykule dowiesz się, jak to zrobić.
 
+## Jak To Zrobić
 ```Arduino
-String argument = readCommandLine(); // Przypisanie pierwszego argumentu do zmiennej "argument"
 
-Serial.println(argument); // Wyświetlenie argumentu w monitorze szeregowym
-```
+void setup()
+{
+  //rozpocznij komunikację z portem szeregowym
+  Serial.begin(9600);
 
-Przykładowy output:
-```
-> mój-program pierwszy_argument drugi_argument
-pierwszy_argument
-```
+  //ustaw domyślny czas trwania pomiarów na 1000 ms
+  int czasPomiaru = 1000;
 
-W powyższym przykładzie, wykorzystaliśmy metodę ```readCommandLine()``` oraz funkcję ```Serial.println()```, aby wyświetlić pierwszy argument wiersza poleceń.
+  //jeśli zostaną podane argumenty wiersza poleceń, zmień czas pomiaru na podany
+  if (Serial.available() > 0)
+  {
+    czasPomiaru = Serial.parseInt(); //odczytaj czas pomiaru z argumentów
+    Serial.print("Nowy czas pomiaru: ");
+    Serial.println(czasPomiaru);
+  }
 
-## Głębszy zanurzenie
-Oczywiście, argumentów wiersza poleceń może być więcej niż jeden. W takiej sytuacji, może być przydatne wykorzystanie tablicy do przechowywania każdego argumentu. Przykładowy kod wyglądałby następująco:
+  //kod mierzący wartość wyjścia pinu A0
+  int wartoscCzujnika = analogRead(A0);
 
-```Arduino
-int maxArgs = 3; // Maksymalna liczba argumentów
-String args[maxArgs]; // Tablica przechowująca argumenty
+  //wyświetl pomiar
+  Serial.print("Wartość czujnika: ");
+  Serial.println(wartoscCzujnika);
 
-for(int i = 0; i < maxArgs; i++) {
-  args[i] = readCommandLine(); // Odczytanie argumentów i zapisanie ich do tablicy
-
-  Serial.print("Argument ");
-  Serial.print(i);
-  Serial.print(": ");
-  Serial.println(args[i]); // Wyświetlenie każdego argumentu w monitorze szeregowym
+  //przerwa 1000 ms przed kolejnym pomiarem
+  delay(czasPomiaru);
 }
+
+void loop() {}
+
 ```
 
-Przykładowy output:
-```
-> mój-program pierwszy_argument drugi_argument trzeci_argument
-Argument 0: pierwszy_argument
-Argument 1: drugi_argument
-Argument 2: trzeci_argument
-```
+Przetestuj ten kod w swoim projekcie Arduino. Uruchom monitor portu szeregowego i wprowadź wartość w milisekundach jako argument wiersza poleceń (np. ```2000```). Zauważ, jak zmienia się czas trwania pomiarów.
 
-W ten sposób, możemy wykorzystać tablicę do przechowywania różnych argumentów, zamiast robić to ręcznie.
+## Deep Dive
+Teraz, gdy już wiesz jak czytać argumenty wiersza poleceń, możesz dowolnie zmieniać ustawienia swojego projektu. Możesz też wykorzystać tę funkcję dla bardziej zaawansowanych zastosowań, takich jak zmiana trybu pracy na podstawie argumentów lub przesyłanie danych z komputera do Arduino za pomocą argumentów.
 
-## Zobacz również
-- [Dokumentacja Arduino o funkcji ```readCommandLine()```](https://www.arduino.cc/reference/en/language/functions/communication/serial/readcommandline/)
-- [Tutorial o obsłudze argumentów wiersza poleceń w Arduino](https://learn.adafruit.com/serial-debugging-for-beginners/command-line-arguments)
+## Zobacz też
+- [Arduino Serial Monitor](https://www.arduino.cc/reference/en/language/functions/communication/serial/monitor/)
+- [Arduino Command-Line Interface](https://www.arduino.cc/en/Main/SoftwareCMDLine)
+- [Serial.parseInt()](https://www.arduino.cc/reference/en/language/functions/communications/serial/parseint/)

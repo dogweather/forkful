@@ -1,36 +1,55 @@
 ---
 title:                "Elm: Obtenir la date actuelle"
+simple_title:         "Obtenir la date actuelle"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi obtenir la date actuelle en Elm
-La programmation en Elm est de plus en plus populaire en raison de son langage simple et fonctionnel, ainsi que de sa fiabilité. Il est souvent nécessaire d'obtenir la date actuelle dans les applications web pour afficher l'heure et la date, ou pour gérer des tâches en temps réel. Dans cet article, nous allons explorer comment obtenir la date actuelle en Elm.
+## Pourquoi
 
-## Comment faire
-Pour obtenir la date actuelle en Elm, nous allons utiliser la fonction `Time.now` de la bibliothèque de base de Elm. Cette fonction renvoie un `Time` qui représente la date et l'heure actuelles en utilisant le fuseau horaire UTC. Nous pouvons ensuite transformer cette valeur `Time` en une chaîne de caractères avec la fonction `Time.toString`.
+Lorsque vous créez des applications en Elm, il est souvent nécessaire d'afficher la date actuelle à l'utilisateur. Cela peut sembler être une tâche simple, mais cela peut parfois être déroutant pour les débutants en programmation. Dans cet article, nous allons vous expliquer pourquoi il est important de savoir comment obtenir la date actuelle en Elm et comment le faire facilement.
 
-```Elm
-import Time exposing (..)
+## Comment Faire
 
-currentDate : String
-currentDate =
-    let
-        time = Time.now
-    in
-        Time.toString "%d/%m/%Y" time -- Format de date personnalisé
+La première étape pour obtenir la date actuelle en Elm consiste à importer le module Time dans votre code. Vous pouvez le faire en utilisant la commande suivante :
+
+```
+import Time
 ```
 
-La sortie de ce code sera une chaîne de caractères au format jour/mois/année, par exemple "17/08/2021".
+Ensuite, vous pouvez utiliser la fonction `now` pour obtenir la date actuelle sous forme de nombre de millisecondes depuis le 1er janvier 1970. Vous pouvez stocker cette valeur dans une variable et la transformer en une date lisible en utilisant la fonction `utcTimeToString`. Le code suivant illustre ce processus :
 
-## Plongée profonde
-Il est important de comprendre que la fonction `Time.now` est basée sur l'heure système de l'ordinateur de l'utilisateur. Cela signifie que si l'heure de l'ordinateur est incorrecte, la date renvoyée par la fonction `Time.now` sera également incorrecte. Il est donc essentiel de vérifier et d'ajuster l'heure système avant d'utiliser cette fonction.
+```
+import Time
 
-Il est également possible de créer un horodateur en temps réel en utilisant la valeur `Time` renvoyée par `Time.now`. En utilisant des abonnements et la fonctionnalité de mise à jour en temps réel d'Elm, nous pouvons mettre à jour l'affichage de la date et de l'heure à chaque seconde. Cela peut être utile pour les applications de surveillance en temps réel ou pour créer des minuteries.
+-- Obtenir la date actuelle en millisecondes
+currentTime : Int
+currentTime =
+  Time.now
 
-# Voir aussi
-- [Documentation de la fonction Time.now dans la bibliothèque de base de Elm](https://package.elm-lang.org/packages/elm/time/latest/Time#now)
-- [Guide de la mise à jour en temps réel dans Elm](https://guide.elm-lang.org/effects/time.html)
+-- Transformer le nombre de millisecondes en une date lisible
+currentDate : String 
+currentDate =
+  Time.utcTimeToString Time.utc currentTime
+```
+
+Si vous évaluez la variable `currentDate`, vous obtiendrez quelque chose comme `Tue, 16 Jul 2019 17:06:12 GMT`.
+
+## Plongée en Profondeur
+
+Maintenant que vous savez comment obtenir la date actuelle en Elm, il est également important de comprendre comment fonctionne la fonction `utcTimeToString`. Cette fonction prend deux arguments : un type Time et un nombre de millisecondes. Le type Time peut être soit `utc` pour l'heure universelle, soit `local` pour l'heure locale du système. En passant ces valeurs en paramètre, vous pouvez obtenir la date dans le fuseau horaire souhaité.
+
+De plus, la fonction `utcTimeToString` accepte un troisième argument de type `DateTimeFormat` qui vous permet de personnaliser le format de la date. Par exemple, si vous voulez obtenir uniquement le jour et le mois de la date, vous pouvez utiliser `Time.CustomFormat "%a, %b %d"`.
+
+## Voir Aussi
+
+Pour plus d'informations sur la manipulation de dates en Elm, vous pouvez consulter les ressources suivantes :
+
+- Le module Time dans la documentation Elm : https://package.elm-lang.org/packages/elm/time/latest/Time
+- Un tutoriel sur la manipulation de dates en Elm : https://thoughtbot.com/blog/elm-and-dates
+
+Maintenant que vous savez comment obtenir la date actuelle en Elm, vous pouvez facilement l'implémenter dans vos applications pour une meilleure expérience utilisateur. N'hésitez pas à explorer les différentes options de formatage de date pour répondre à vos besoins spécifiques. À bientôt pour un nouvel article sur la programmation en Elm !

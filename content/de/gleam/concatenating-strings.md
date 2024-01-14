@@ -1,38 +1,49 @@
 ---
-title:                "Gleam: Zeichenfolgen verknüpfen"
+title:                "Gleam: Verknüpfung von Zeichenketten"
+simple_title:         "Verknüpfung von Zeichenketten"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Ein wichtiger Teil des Programmierens ist die Manipulation von Text. Eine entscheidende Fähigkeit in dieser Manipulation ist das Verbinden von Strings, auch als "Concatenation" bezeichnet. Aber warum ist es überhaupt wichtig, das zu tun?
 
-Strings zu konkatentieren ist ein wichtiger Bestandteil der alltäglichen Programmierung. Durch die Verwendung von Gleam können Entwicklerinnen und Entwickler auf einfache Weise Strings zusammenfügen, um komplexe Ausgaben zu erstellen.
+Wenn Sie beispielsweise eine Webanwendung schreiben, müssen Sie möglicherweise verschiedene Textfetzen zu einer vollständigen Nachricht zusammenfügen. Oder Sie möchten eine personalisierte E-Mail an Ihre Nutzer senden, in der bestimmte Textteile mit individuellen Informationen kombiniert werden. In all diesen Situationen ist das Verbinden von Strings unerlässlich.
 
-## Wie man Strings in Gleam konkatentiert
+In dieser kurzen "How To"-Anleitung werde ich Ihnen zeigen, wie Sie in Gleam Strings miteinander verbinden können.
 
-Die Konkatenation von Strings erfolgt in Gleam mit dem "+" Operator. Hier ist ein Beispiel, wie man zwei Strings zusammenfügt:
+## Wie geht das?
+Um Strings in Gleam zu verbinden, können Sie das `<>`-Operator verwenden. Dieser Operator akzeptiert zwei Strings als Parameter und gibt einen neuen String zurück, der beide miteinander verbunden hat.
 
-```Gleam
-let str1 = "Hallo";
-let str2 = "Welt";
-let result = str1 + str2;
+Ein Beispiel dazu in Gleam:
+
+```
+Gleam> name = "Max"
+Gleam> greeting = "Hallo "
+Gleam> message = greeting <> name
+Gleam> IO.puts(message)
+"Hello Max"
 ```
 
-Das Ergebnis dieser Operation lautet "HalloWelt".
+Hier haben wir den Operator verwendet, um `greeting` und `name` miteinander zu verbinden und den neuen String `message` zu erstellen. Wenn wir `message` ausgeben, erhalten wir die Nachricht "Hallo Max".
 
-## Tiefergehende Informationen
+Sie können auch mehr als zwei Strings miteinander verbinden, indem Sie den Operator mehrmals hintereinander verwenden oder die `concat`-Funktion verwenden.
 
-Bei der Konkatentation von Strings in Gleam ist es wichtig zu beachten, dass die Datentypen der zu konkatentierenden Strings übereinstimmen müssen. Andernfalls wird ein Fehler erzeugt. Außerdem können auch mehr als zwei Strings auf einmal konkatentiert werden, indem man mehrere "+" Operatoren verwendet.
+## Deep Dive
+Um noch tiefer in das Thema der String-Verknüpfung einzutauchen, ist es wichtig zu verstehen, dass Strings in Gleam unveränderliche Werte sind. Das bedeutet, dass wenn Sie Strings miteinander verbinden, tatsächlich neue Strings erstellt werden. Die ursprünglichen Strings bleiben unberührt.
+
+Außerdem sollten Sie beachten, dass der `<>`-Operator nur Strings miteinander verbinden kann. Wenn Sie andere Datentypen, wie z.B. Zahlen oder Booleans, kombinieren möchten, müssen Sie diese vorher in Strings umwandeln.
+
+In komplexeren Anwendungen kann es auch sinnvoll sein, eine spezielle Funktion für die String-Verknüpfung zu erstellen, um die Wartbarkeit des Codes zu verbessern.
 
 ## Siehe auch
+- Die offizielle Gleam-Dokumentation zu Strings: https://gleam.run/articles/strings
+- Weitere Beispiele für String-Verknüpfung in Gleam: https://gist.github.com/mrvisser/4ed9de0af1950fde890351ec30f4fde0
 
-Weitere nützliche Informationen zu Strings in Gleam finden Sie hier:
+*Möchten Sie mehr über die Funktionalität von Gleam erfahren? Schauen Sie sich doch auch unsere anderen Blog-Einträge an!*
 
-- [Gleam String-Dokumentation](https://gleam.run/book/std/string.html)
-- [Offizielle Gleam-Website](https://gleam.run/)
-- [Github Repository von Gleam](https://github.com/gleam-lang/gleam)
-
-Jetzt sind Sie bereit, Strings in Gleam zu konkatentieren. Viel Spaß beim Programmieren!
+*Möchten Sie mit anderen Gleam-Enthusiasten in Kontakt treten? Werden Sie Teil der Gleam-Community auf Discord: https://discord.com/invite/gleam*

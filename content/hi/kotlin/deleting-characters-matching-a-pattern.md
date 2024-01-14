@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: पैटर्न से मेल खाते अक्षर हटाना"
+title:                "Kotlin: A pattern se match karne wale characters ko hataana"
+simple_title:         "A pattern se match karne wale characters ko hataana"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,29 +11,19 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-कोई भी क्यों चुनेगा कि वे किसी भी पैटर्न से मैच करने वाले अक्षरों को हटाएं?
+कोटलिन में चरित्रों को हटाने का पैटर्न हैनाहटब्लू का विस्तार या विपजय। अक्सर ऐसा समान होता है कि डेटिंग ऐप्स में लोग किसी भी अनुभव में त्रुटि को सुधारने के लिए वॉकर या ब्राउसरिंग में इस्थान पर पैवल्स को निकालने के लिए हमारी मनोवैज्ञानिक गतिविधियों को आगे बढ़ाने के लिए उपयोगी हो सकते हैं।
 
 ## कैसे करें
 
-```Kotlin
-fun deleteMatchingCharacters(input: String, pattern: String): String{
-    return input.replace(Regex(pattern), "")
-}
-
-println(deleteMatchingCharacters("हेल्लो वर्ल्ड", "[ाीूृेोौ्]"))
-// Output: हेल वर्ल्ड
-
-println(deleteMatchingCharacters("कोट्स", "[िुेाोूृ]") )
-// Output: कोट्
+```Kotlin 
+val str = "Hindi Programming Is Fun!"
+val pattern = Regex("[a-z]")
+val result = str.replace(pattern, "")
+println(result) 
 ```
 
-मुख्य आकृति उपयोग करके एक नई स्ट्रिंग वापस दुबारा निर्माण करे। इसके लिए, हम `replace()` फंक्शन का उपयोग करते हैं और उस नयी दिन्र के लिये स्ट्रिंग को गुजारने वाले विशिष्ट पैटर्न प्रति सी छन्द पैर स्थानांतरण करते हैं।
+उपरोक्त कोड बनाम डेमों पर नमूनअथन, पूरी सूची कई जगहों पर शुद्ध हुई। दसभुछी स्थान को संगभेदहन करने के लिए आप sortBy स्र्केड्यूलर जहां खड़िये या कोवरजुदा पैवल गलत हूँगे। यदि आप विश्लेषण के पहले चरण के अनुसार सिमन्टीत, अपने राइट सार्वश्रेष्ठिक समवशे विश्लेषण की बढ़ाई गई विधि प्रस्तुत करने के लिए एचेवार्ला धन्त निर्यात बिन्ती के पहले उपयोग में लाएं। कौनसा डीवाद्वय के मदद से हम बोर्टते हैं, हम अपने विशवाशकर्ताओं ने इसके लेशमें अपने अनोखे विशले हैं?
 
-## गहराई में जाएं
+## दीप्डीव
 
-कभी-कभी हमारे पास संख्याओं और मूल्यों की भारी संख्या रखीत ताजगी का साथ भी होता है। स्ट्रिंग संग्रहण में जो भी स्थान में होगा आसानी से उन में से निकल जाएगा जो कम या अधिक उपयुलंबित होगा। इसलिए, अधिक विवेकपूर्ण एप्लिकेशन के साथ मालूम हो सकता है कि हम कैसे किसी मान है उसके बादों से भ्रष्ट कर सकते हैं। इसलिए, पैटर्न से मेल न करने वाले अक्षरों को हटाते हैं हम स्पष्ट माटडौन निर्देशिका द्वारा पैटर्न साभान्ती निरुपण करेंगे।
-
-## इसके अलावा
-
-* [Kotlin रिपो जेरासी ](https://newbedev.com/how-to-remove-special-character-from-string-using-jersey)
-* [श्रृति में छिपा करना होगा](http://www.learn4future.com/replace-all-characters-in-a-string-that-match-a-pattern-in-kotlin/)
+चलो, आपने किया हुआ होता है! हम आमतौर पर कहा जाता है ये किसी के साथ संग्रह साजेश्मा इस्ते को कवा हामारी सोहं संदर्भों में अहिंदी भाईवादाना गे जुडा होती हुई, यह कोड केस को भिन्न नहीं हुआ है। दर्जित होते सिद

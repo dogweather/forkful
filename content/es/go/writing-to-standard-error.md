@@ -1,67 +1,47 @@
 ---
 title:                "Go: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir en el error estándar en Go?
+## Por qué
 
-Escribir en el error estándar es una práctica común en la programación en Go. Al enviar mensajes de error a esta salida, podemos monitorear y depurar nuestro código de manera más eficiente.
+La escritura al estándar de error es una técnica común en Go para manejar errores en el código. Al utilizar esta práctica, se pueden identificar y solucionar problemas de manera más eficiente, mejorando la calidad del código y la experiencia del usuario.
 
 ## Cómo hacerlo
 
-En Go, podemos escribir en el error estándar utilizando la función `fmt.Fprintf()`. Aquí hay un ejemplo de cómo hacerlo:
+Para escribir al estándar de error en Go, se utiliza la función "fmt.Fprintf()", pasando como primer argumento "os.Stderr". Luego, se puede agregar el mensaje de error o información adicional como segundo argumento, utilizando el formato de cadena "%v".
 
-```Go
+```
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-
-	// Se declara la variable para guardar el mensaje de error
-	errorMsg := "¡Algo salió mal!"
-
-	// Se escribe en el error estándar
-	fmt.Fprintf(os.Stderr, "%s\n", errorMsg)
+    fmt.Fprintf(os.Stderr, "¡Hola desde el estándar de error!")
 }
 ```
 
-Este código imprimirá el mensaje de error en la salida estándar de errores, en este caso, la consola. La sintaxis de `fmt.Fprintf()` es similar a la de `fmt.Printf()` pero en este caso utilizamos `os.Stderr` como el primer argumento para especificar que escribir en la salida de errores.
+Este código producirá la siguiente salida:
 
-## Profundizando en la escritura en el error estándar
+`¡Hola desde el estándar de error!`
 
-Además de simplemente enviar mensajes de error, también podemos formatearlos de manera específica y añadir información adicional. Por ejemplo, si queremos incluir el nombre del archivo y la línea donde ocurrió un error, podemos hacer lo siguiente:
+## Profundizando
 
-```Go
-package main
+La escritura al estándar de error en Go es especialmente útil cuando se trata de errores que pueden suceder en tiempo de ejecución. Al utilizar el estándar de error, se pueden mostrar mensajes de error personalizados y detallados, proporcionando información valiosa para solucionar problemas.
 
-import (
-	"fmt"
-	"os"
-)
+También es importante tener en cuenta que al utilizar esta técnica, se deben utilizar los valores de retorno de las funciones para identificar si hubo algún error. Si no se maneja adecuadamente, los errores escritos al estándar de error pueden pasar desapercibidos.
 
-func main() {
+## Ver también
 
-	// Se declara el archivo y la línea donde ocurrió el error
-	fileName := "miArchivo.txt"
-	lineNum := 10
-
-	// Se escribe en el error estándar con formato
-	fmt.Fprintf(os.Stderr, "¡Error en %s en la línea %d!\n", fileName, lineNum)
-}
-```
-
-Esto imprimirá el siguiente mensaje de error en la consola: `¡Error en miArchivo.txt en la línea 10!`. Esto puede ayudar a los desarrolladores a identificar y resolver problemas en su código de manera más eficiente.
-
-## Véase también
-
-- Documentación oficial de Go sobre `fmt.Fprintf()`: https://golang.org/pkg/fmt/#Fprintf
-- Cómo manejar errores en Go: https://blog.golang.org/error-handling-and-go
-- Tutorial de Go: https://tour.golang.org/welcome/1
+- Documentación oficial de Go sobre la función "fmt.Fprintf()": https://golang.org/pkg/fmt/#Fprintf
+- Una guía completa sobre manejo de errores en Go: https://blog.gopheracademy.com/advent-2015/error-handling-in-go/
+- Cómo imprimir errores en Go de manera eficiente: https://www.calhoun.io/how-to-print-pretty-errors-in-go/

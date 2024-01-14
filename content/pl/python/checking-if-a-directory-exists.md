@@ -1,57 +1,40 @@
 ---
-title:                "Python: Sprawdzanie, czy istnieje katalog"
+title:                "Python: Sprawdzanie istnienia katalogu"
+simple_title:         "Sprawdzanie istnienia katalogu"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-"Czy istnieje katalog w Pythonie? Przewodnik dla początkujących"
+## Dlaczego?
 
-## Dlaczego
+W dzisiejszych czasach, w których pracujemy z różnymi systemami operacyjnymi, często musimy mieć do czynienia z plikami i folderami. Sprawdzanie, czy dany katalog istnieje, może być kluczowym elementem w naszym kodzie, aby upewnić się, że operacja, którą chcemy przeprowadzić, może być wykonana.
 
-Sprawdzanie, czy katalog istnieje, jest ważną częścią programowania w Pythonie. To pozwala nam na upewnienie się, czy ścieżka, którą chcemy użyć w naszym kodzie, jest prawidłowa i czy nie powoduje błędów podczas działania programu.
+## Jak to zrobić?
 
-## Jak to zrobić
-
-Istnieje kilka różnych sposobów, aby sprawdzić, czy katalog istnieje w Pythonie. Jednym z najprostszych jest użycie funkcji `os.path.exists()`. Spójrzmy na poniższy kod:
+Aby sprawdzić, czy dany katalog istnieje w naszym systemie plików, możemy użyć biblioteki os w języku Python. Służy ona do interakcji z systemem plików i dostarcza różne funkcje do zarządzania plikami i folderami. Aby sprawdzić, czy dany katalog istnieje, możemy wykorzystać funkcję `path.isdir()` w następujący sposób:
 
 ```Python
 import os
 
-# ścieżka do katalogu, który chcemy sprawdzić
-path = "C:/Users/Example/Desktop"
-
-if os.path.exists(path):
-  print("Katalog istnieje!")
+if os.path.isdir("moj_katalog"):
+    print("Katalog istnieje")
 else:
-  print("Katalog nie istnieje!")
+    print("Katalog nie istnieje")
 ```
 
-W tym przykładzie użyliśmy funkcji `os.path.exists()`, aby sprawdzić, czy podana ścieżka istnieje. Jeśli tak, zostanie wyświetlony komunikat "Katalog istnieje!", a jeśli nie, zostanie wyświetlony komunikat "Katalog nie istnieje!".
+Jeśli katalog o nazwie "moj_katalog" istnieje w naszym bieżącym katalogu, to na ekranie zostanie wyświetlony komunikat "Katalog istnieje". W przeciwnym razie, zostanie wyświetlony komunikat "Katalog nie istnieje".
 
-Możemy również użyć funkcji `os.path.isdir()` aby upewnić się, że podana ścieżka jest katalogiem, nie tylko plikiem. Poniżej przedstawiony jest przykładowy kod:
+## Głębsze zanurzenie
 
-```Python
-import os
+Podczas korzystania z biblioteki os do sprawdzania istnienia katalogu, warto zauważyć, że funkcja `path.isdir()` przyjmuje jako argument ścieżkę do katalogu, a nie samą nazwę katalogu. Możemy więc określić ścieżkę względną do naszego katalogu lub użyć funkcji `path.abspath()` do uzyskania pełnej ścieżki.
 
-# ścieżka do katalogu, który chcemy sprawdzić
-path = "C:/Users/Example/Documents"
+Ponadto, możemy również wykorzystać funkcję `path.exists()` do sprawdzenia istnienia pliku lub katalogu, bez względu na jego typ. Możemy także wykorzystać funkcję `path.isfile()` do sprawdzenia, czy dany plik istnieje.
 
-if os.path.isdir(path):
-  print("To jest katalog!")
-else:
-  print("To nie jest katalog!")
-```
+## Zobacz także
 
-W tym przypadku sprawdziliśmy, czy podana ścieżka jest katalogiem, a następnie wyświetliliśmy odpowiedni komunikat.
-
-## Pogłębione zagadnienia
-
-W Pythonie istnieje wiele innych funkcji i metod, które możemy użyć do sprawdzania istnienia katalogów, takich jak `os.path.isfile()`, `os.path.islink()`, czy `os.path.getsize()`. Warto zapoznać się z dokumentacją Pythona, aby poznać wszystkie dostępne opcje.
-
-## Zobacz również
-
-- Dokumentacja Pythona o modułach `os` i `os.path`: https://docs.python.org/3/library/os.html
-- Przewodnik programowania Python dla początkujących: https://www.learnpython.org/pl/
+- Dokumentacja biblioteki os w języku Python: https://docs.python.org/3/library/os.html
+- Inne sposoby sprawdzania istnienia katalogów w Pythonie: https://www.geeksforgeeks.org/python-os-path-isdir-method/

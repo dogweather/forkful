@@ -1,32 +1,45 @@
 ---
-title:                "TypeScript: Pisanie do standardowego błędu"
+title:                "TypeScript: Pisanie do standardowego wyjścia błędów"
+simple_title:         "Pisanie do standardowego wyjścia błędów"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego korzystać ze standardowego strumienia błędów w programowaniu TypeScript?
+## Dlaczego
 
-Korzystanie ze standardowego strumienia błędów jest niezbędnym elementem programowania w TypeScript. Wiele aplikacji wymaga komunikacji z użytkownikiem w przypadku wystąpienia błędów lub nieprawidłowego działania. Dzięki wykorzystaniu standardowego strumienia błędów możliwe jest wyświetlanie dokładnych i przejrzystych informacji o błędzie, co ułatwia zarządzanie i poprawę kodu.
+Często zdarzają się sytuacje, w których jako programista musisz poinformować użytkownika o wystąpieniu błędu lub wyświetlić pewne ważne informacje. W takim przypadku używana jest funkcja `console.log()`, która wypisuje tekst na standardowe wyjście. Jednak, co w sytuacji, gdy chcesz przekazać informacje do standardowego wyjścia błędów? W tym przypadku przyda nam się funkcja `process.stderr.write()`, która pozwala na wypisanie tekstu na standardowe wyjście błędów. W tym artykule dowiemy się dlaczego warto korzystać z tej funkcji oraz jak ją używać.
 
-## Jak wykorzystać standardowy strumień błędów w TypeScript?
+## Jak to zrobić
 
-Aby wyświetlić błąd w standardowym strumieniu błędów w TypeScript, należy użyć wbudowanego obiektu `console` wraz z metodą `error`. Poniższy przykład przedstawia to w praktyce:
+Aby wypisać tekst na standardowe wyjście błędów, musimy najpierw zaimportować moduł `process` z pakietu `@types/node`. Możemy to zrobić przy pomocy polecenia:
 
 ```TypeScript
-console.error("Nie udało się załadować pliku."); 
+import * as process from 'process'; 
 ```
 
-W efekcie na konsoli pojawi się komunikat: `Nie udało się załadować pliku.`
+Następnie, korzystając z funkcji `process.stderr.write()`, możemy przekazać tekst, który chcemy wypisać na standardowe wyjście błędów. Przykładowy kod może wyglądać następująco:
 
-## Głębszy przegląd standardowego strumienia błędów
+```TypeScript
+process.stderr.write('Błąd: Nieprawidłowy format danych'); 
+```
 
-Korzystanie ze standardowego strumienia błędów jest ważnym elementem w zarządzaniu błędami w kodzie TypeScript. Dzięki temu można szybko i prosto informować użytkownika o wystąpieniu błędu, co ułatwia jego poprawę. Dodatkowo, standardowy strumień błędów można używać do wyświetlania różnych typów komunikatów, dzięki czemu można dostosować informacje w zależności od potrzeb aplikacji.
+Po wykonaniu takiego kodu, powyższy tekst zostanie wypisany na standardowym wyjściu błędów:
 
-## Zobacz również
+```
+Błąd: Nieprawidłowy format danych
+```
 
-- [Dokumentacja TypeScript o standardowym strumieniu błędów](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#example-1)
-- [Tutorial na temat obsługi błędów w TypeScript](https://www.tutorialspoint.com/typescript/typescript_errors.htm)
-- [Przykładowe zastosowania standardowego strumienia błędów w TypeScript](https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-errors)
+## Deep Dive
+
+Funkcja `process.stderr.write()` jest często używana w celu poinformowania użytkownika o błędzie w programie. Jednak warto również wiedzieć, że można również przekierować standardowe wyjście błędów do pliku, korzystając z operatora `>` w terminalu. Dzięki temu można łatwo zapisywać informacje o błędach do pliku, co może być przydatne w przypadku późniejszej analizy i debugowania programu.
+
+## Zobacz też
+
+* [Dokumentacja funkcji `process.stderr.write()` (w języku angielskim)](https://nodejs.org/api/process.html#process_process_stderr_write_data_encoding_callback)
+* [Artykuł o standardowym wyjściu i wyjściu błędów w Node.js (w języku polskim)](https://poradnikjavascript.pl/standardowe-wyjscie-i-wyjscie-bledow-w-node-js/)
+
+Dziękuję za przeczytanie tego artykułu. Mam nadzieję, że pomógł on w zrozumieniu funkcji `process.stderr.write()` oraz w jej wykorzystaniu w Twoich projektach. Jeśli masz jakieś pytania lub uwagi, daj znać w komentarzu poniżej. Do zobaczenia w kolejnych artykułach!

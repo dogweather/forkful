@@ -1,7 +1,9 @@
 ---
 title:                "C recipe: Searching and replacing text"
+simple_title:         "Searching and replacing text"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/searching-and-replacing-text.md"
 ---
 
@@ -9,66 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Searching and replacing text is a crucial task in programming. It allows you to make changes to multiple instances of a particular string or character in a file, saving you time and effort. In this blog post, we will explore how to perform this task in C programming language.
+Searching and replacing text is a common task in programming. It allows us to quickly make changes to our code or data without having to manually go through each line. This saves us time and ensures that the changes are consistent throughout the file.
 
 ## How To
 
-To search and replace text in C programming, we will use the `strstr()` and `strncpy()` functions. The `strstr()` function searches for a substring within a string and returns a pointer to the first occurrence of the substring. The `strncpy()` function copies a specific number of characters from one string to another.
+To search and replace text in C programming, we can use the `strchr()` and `strncpy()` functions from the standard C library. Here's an example of how we can use these functions to replace all occurrences of a specific character with another character:
 
-Let's take a look at an example to understand how to use these functions:
-
-```
+```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str[50] = "Hello, world!";
-    char old_str[] = "world";
-    char new_str[] = "everyone";
+    char str[] = "Hello world!";
+    char *ptr = strchr(str, 'o'); // returns a pointer to the first occurrence of 'o'
 
-    char *ptr = strstr(str, old_str); //search for "world" in str
-
-    strncpy(ptr, new_str, strlen(new_str)); //replace "world" with "everyone"
-
-    printf("%s", str); //output: Hello, everyone!
-
-    return 0;
-}
-```
-In this code, we have a string `str` with the value "Hello, world!". We then use `strstr()` to find the substring "world" within `str` and store the pointer to it in `ptr`. Next, we use `strncpy()` to replace "world" with "everyone" at the location pointed by `ptr`. Finally, we print the modified string `str`, which now becomes "Hello, everyone!".
-
-You can also use these functions in a loop to search and replace all occurrences of a string. Here's another example:
-
-```
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str[50] = "Hey there, how are you?";
-    char old_str[] = "there";
-    char new_str[] = "everyone";
-
-    while (strstr(str, old_str) != NULL) { //loop until all occurrences are replaced
-        char *ptr = strstr(str, old_str); //search for "there" in str
-        strncpy(ptr, new_str, strlen(new_str)); //replace "there" with "everyone"
+    while (ptr) {
+        strncpy(ptr, "x", 1); // replaces the character at the pointer's position with 'x'
+        ptr = strchr(ptr + 1, 'o'); // moves the pointer to the next occurrence of 'o'
     }
 
-    printf("%s", str); //output: Hey everyone, how are you?
-
+    printf("%s", str); // output: Hellx wxrld!
     return 0;
 }
 ```
+
+In this example, we used `strchr()` to find the first occurrence of the character 'o' in the string and then used `strncpy()` to replace it with 'x'. We then continued to use `strchr()` to find and replace all other occurrences of 'o' until the end of the string.
+
+It's important to note that `strncpy()` includes the null terminator character in the replacement, so we can only replace one character at a time. If we want to replace a sequence of characters, we can use the `memcpy()` function instead.
 
 ## Deep Dive
 
-The `strstr()` function has a prototype of `char *strstr(const char *haystack, const char *needle)`. It returns a pointer to the first occurrence of the `needle` string in the `haystack` string. If the `needle` string is not found, it returns `NULL`.
+The `strchr()` function takes in two arguments: a string and a character to search for. It returns a pointer to the first occurrence of the character in the string, or a NULL pointer if the character is not found. We can then use this pointer in conjunction with other standard string functions like `strncpy()`, `strcpy()`, or `strcat()` to make changes to the string.
 
-Similarly, the `strncpy()` function has a prototype of `char *strncpy(char *dest, const char *src, size_t n)`. It copies the first `n` characters of `src` to `dest`. If `src` is shorter than `n` characters, it appends null characters until a total of `n` characters have been written.
+On the other hand, the `strncpy()` function takes in three arguments: a pointer to the destination string, a pointer to the source string, and the number of characters to copy. It copies the specified number of characters from the source string to the destination string, including the null terminator character. This is why we used a length of 1 in our example when replacing a single character.
 
-Both these functions are included in the standard library `<string.h>`.
+Additionally, the `strncpy()` function does not automatically add a null terminator character if the source string is shorter than the specified length. This is why we always need to make sure the destination string is large enough to hold the copied characters, and we manually add the null terminator at the end if necessary.
 
 ## See Also
 
-- [strchr() function in C](https://www.geeksforgeeks.org/strchr-c-implementation/)
-- [strcpy() function in C](https://www.tutorialspoint.com/c_standard_library/c_function_strcpy.htm)
-- [String manipulation in C](https://www.programiz.com/c-programming/c-strings)
+- [strchr() function in C](https://www.geeksforgeeks.org/strchr-in-c/)
+
+- [strncpy() function in C](https://www.geeksforgeeks.org/strncpy-c-library-function/)
+
+- [String manipulation functions in C](https://www.geeksforgeeks.org/string-manipulation-in-c-with-examples/)

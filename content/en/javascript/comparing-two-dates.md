@@ -1,7 +1,9 @@
 ---
 title:                "Javascript recipe: Comparing two dates"
+simple_title:         "Comparing two dates"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/comparing-two-dates.md"
 ---
 
@@ -9,48 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-When working with dates in Javascript, there may come a time when you need to compare two dates. This could be for a variety of reasons, such as checking if a specific date has passed, or finding the difference between two dates. Whatever the reason may be, understanding how to compare dates in Javascript is an essential skill for any programmer.
+Comparing two dates may seem like a mundane task, but it can actually be quite useful in many programming scenarios. Whether you need to sort events in chronological order or check for overlapping time intervals, being able to compare dates is an essential skill for any Javascript programmer.
 
 ## How To
 
-To compare two dates in Javascript, we can use the built-in `Date` object. This object allows us to create a variable with a specific date and perform various operations on it. Let's take a look at some examples to better understand how this works.
+Comparing dates in Javascript can be done using the `Date` object and built-in methods. Let's take a look at some code examples to demonstrate how it works.
 
-First, we can create two variables representing two different dates, such as today's date and a future date:
-
-```Javascript
-var today = new Date();
-var futureDate = new Date("2020/12/31");
 ```
+// Create two date objects
+var date1 = new Date("2021-01-01");
+var date2 = new Date("2021-02-01");
 
-To compare these two dates, we can use conditional statements such as `if` or `switch`. For example, we can check if the future date is before today's date:
-
-```Javascript
-if (futureDate < today) {
-  console.log("The future is in the past.");
-} else {
-  console.log("The future is yet to come.");
+// Compare if date1 is before date2
+if (date1 < date2) {
+    console.log("date1 is before date2");
 }
+// Output: date1 is before date2
+
+// Compare if date1 is equal to date2
+if (date1.getTime() === date2.getTime()) {
+    console.log("date1 is equal to date2");
+}
+// Output: None
+
+// Compare if date1 is after date2
+if (date1 > date2) {
+    console.log("date1 is after date2");
+}
+// Output: None
 ```
 
-In the above code, we use the less than operator (`<`) to compare the two dates. If the future date is indeed before today's date, the first statement will be executed, otherwise, the second statement will be executed.
+In the first example, we use the `<` operator to check if `date1` is before `date2`. This works because the comparison is done based on the numeric value of the dates, which is the number of milliseconds that have passed since January 1, 1970.
 
-We can also find the difference between two dates by subtracting them using the `-` operator. For example, if we want to find the number of days between today and the future date, we can do the following:
+In the second example, we use the `getTime()` method to get the numeric value of the dates, and then use strict equality `===` to check if they are equal. Keep in mind that even if two dates represent the same moment, they will still have different objects and therefore not be strictly equal.
 
-```Javascript
-var daysDifference = (futureDate - today) / (1000 * 3600 * 24);
-console.log("There are " + daysDifference + " days between today and the future date.");
-```
-
-In this case, we use some basic math to convert the difference in milliseconds into days. We then print out the result, which would be approximately 495 days in this case.
+The same logic can be applied to other comparison operators like `<=`, `>=`, `!=`, etc.
 
 ## Deep Dive
 
-When we compare two dates in Javascript, we are essentially comparing two objects. This means that when we use comparison operators like `==` or `!=`, we are not actually comparing the dates themselves, but rather the objects. In most cases, this will not be a problem, but it is essential to keep in mind when dealing with dates in Javascript.
+When comparing dates in Javascript, it's important to understand how the dates are being compared. As mentioned earlier, the comparison is based on the number of milliseconds elapsed since January 1, 1970. This is commonly known as the Unix Epoch time. This means that the comparison will be affected by timezones and daylight saving time. For example, if you compare two dates from different timezones, you may get unexpected results.
 
-Also, it is worth noting that the `Date` object in Javascript represents the date and time in the local time zone of the user's computer. This can lead to unexpected results if the users are in different time zones. To avoid this issue, we can use libraries such as Moment.js, which offers timezone support.
+Another thing to keep in mind is that the `Date` object in Javascript has limited precision, with only milliseconds being the smallest unit. This means that comparing dates that are only a few milliseconds apart could give inaccurate results.
+
+Lastly, when using the `getTime()` method to get the numeric value of a date, it's important to remember that it returns an integer. This means that any time information (hours, minutes, seconds) will be truncated.
+
+To avoid these potential issues, it's recommended to use external libraries like Moment.js or Date-fns for more robust and precise date comparisons.
 
 ## See Also
 
-- [MDN web docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools: Date Methods](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+- [MDN Web Docs - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - [Moment.js](https://momentjs.com/)
+- [Date-fns](https://date-fns.org/)

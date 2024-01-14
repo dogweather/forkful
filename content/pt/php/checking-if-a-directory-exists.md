@@ -1,37 +1,43 @@
 ---
 title:                "PHP: Verificando se um diretório existe"
+simple_title:         "Verificando se um diretório existe"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-### Por que verificar se um diretório existe?
+# Por que verificar se um diretório existe?
 
-Verificar se um diretório existe é um passo importante ao realizar operações de manipulação de arquivos em um projeto de programação PHP. Isso permite que você garanta que o caminho do diretório fornecido é válido antes de manipulá-lo, evitando erros no seu código.
+Às vezes, em nosso código PHP, é necessário verificar se um diretório existe antes de executar certas ações. Isso pode ser útil para garantir que nosso script possa acessar e manipular os arquivos dentro do diretório corretamente, evitando erros ou exceções inesperadas.
 
-### Como fazer
+# Como verificar se um diretório existe
 
-```PHP
-// Verificando se o diretório existe
-if (is_dir('/caminho/do/diretorio')) {
-  // Código a ser executado caso o diretório exista
-  echo "O diretório existe!";
+Podemos verificar a existência de um diretório usando a função `is_dir()` do PHP. Esta função recebe um parâmetro, o caminho do diretório que desejamos verificar, e retorna `true` se o diretório existir ou `false` se não existir.
+
+```
+<?php
+if (is_dir('caminho/para/diretorio') === true) {
+    echo "O diretório existe!";
 } else {
-  // Código a ser executado caso o diretório não exista
-  echo "O diretório não existe!";
+    echo "O diretório não existe.";
 }
 ```
 
-No código acima, usamos a função `is_dir()` para checar se o diretório especificado existe. Caso exista, o bloco de código dentro do `if` é executado, caso contrário, o bloco dentro do `else` é executado.
+Se o diretório existir, a saída do código acima será "O diretório existe!". No entanto, se o diretório não existir, a saída será "O diretório não existe.".
 
-### Aprofundando-se
+# Aprofunde-se na verificação da existência de diretórios
 
-Além da função `is_dir()`, também é possível usar outras funções para verificar a existência de diretórios em um projeto PHP, como `file_exists()` e `is_readable()`. Além disso, é importante lembrar que é possível trabalhar com caminhos absolutos ou relativos ao verificar a existência de um diretório.
+Além do `is_dir()`, o PHP possui outras funções úteis para trabalhar com diretórios, como `mkdir()` para criar um novo diretório e `rmdir()` para remover um diretório existente.
 
-### Veja também
+Podemos também usar a função `scandir()` para obter uma lista de arquivos e diretórios dentro de um diretório específico.
 
-- [Documentação oficial do PHP sobre a função `is_dir()`](https://www.php.net/manual/pt_BR/function.is-dir.php)
-- [Post do blog "PHP para iniciantes: manipulação de arquivos e diretórios"](https://blog.geekhunter.com.br/php-para-iniciantes-manipulacao-de-arquivos-e-diretorios/)
-- [Videoaula sobre manipulação de arquivos e diretórios em PHP](https://www.youtube.com/watch?v=-A7Hl--IGJc)
+É importante lembrar que a verificação da existência de um diretório é uma etapa importante no processo de manipulação de arquivos, pois nos permite garantir que nosso código funcione corretamente.
+
+# Veja também
+
+- Documentação oficial do PHP para `is_dir()`: https://www.php.net/manual/pt_BR/function.is-dir.php
+- Tutorial sobre manipulação de arquivos no PHP: https://www.tutorialspoint.com/php/php_file_management.htm
+- Vídeo explicativo sobre `is_dir()` e outras funções de diretórios no PHP: https://www.youtube.com/watch?v=NG0nTjBbM_s

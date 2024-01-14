@@ -1,42 +1,38 @@
 ---
-title:                "Gleam: כתיבה אל שגיאת התקנה"
+title:                "Gleam: כתיבה לסטנדרט שגיאה."
+simple_title:         "כתיבה לסטנדרט שגיאה."
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-עוד רבים מתכנתים לא משתמשים בתהליך הדרגתי של כתיבת שגיאות לשגיאה סטנדרטית. כתיבת שגיאות סטנדרטית היא דרך קלה ויעילה לזהות ולטפל בבעיות בקוד שלנו. במאמר הזה נלמד את מהות הכתיבה לשגיאה סטנדרטית ואת היתרונות שלה. 
+למה לכתוב לפלט שגיאות סטנדרטי? כתיבה לפלט שגיאות סטנדרטי היא דרך יעילה ומתקדמת לזהות ולטפל בשגיאות בקוד בעת הרצתו. זה יכול לעזור למתכנתים לפתור בעיות בקוד ולשפר את הביצועים של התוכנית.
 
-# כיצד לעשות זאת
+## כיצד לכתוב
 
-כדי לכתוב לשגיאה סטנדרטית ב-Gleam, נשתמש בפונקציית `io.stderr.write`. לדוגמה, ננסה להדפיס שגיאה סטנדרטית עבור מספר שהוא לא מספר שלם:
+הראה את הקוד הבא לכתיבת שגיאה לפלט סטנדרטי ב-Gleam:
 
 ```Gleam
-iex> import gleam/io
-iex> {n, _} = Integer.parse("Not a number")
-iex> case n {
-iex>   Integer.Integer(i) -> {:ok, i}
-iex>   _ -> io.stderr.write("Error: Expected an integer, got " ++ IO.inspect(n))
-iex> }
+fn main() {
+  error ! "איזור שגיאה"
+}
 ```
 
-כאשר נריץ את הקוד הזה, נקבל את הפלט הבא בקונסול:
+כאן, המילה "איזור שגיאה" תופיע בפלט הסטנדרטי כאשר הקוד ירוץ. ניתן להיעזר בקוד זה כדי לזהות ולהתמודד עם שגיאות בקוד שלך.
 
-```
-Error: Expected an integer, got "Not a number"
-```
+כדי להדפיס שגיאות סטנדרטי בפלט, יש להשתמש בפונקציית ה-`error` ולספק את המחרוזת של השגיאה.
 
-בקלות שניתן לזהות את השגיאה ולהבין מייד מה הולך לא נכון בקוד שלנו. 
+## מבוא חקירה
 
-# חפירה עמוקה
+כמו שכבר נכתב, כתיבת שגיאה לפלט סטנדרטי יכולה לעזור לזהות ולישור שגיאות בקוד שלך. בנוסף, תהליך זה יכול להיות מועיל גם לצרכי איתור ותיקון בעיות עם קודים מורכבים. ניתן להשתמש בכתיבת שגיאה בפלט סטנדרטי לטובת ניטור וניתור שגיאות בכל שלב של הפיתוח.
 
-כשנשתמש בכתיבה לשגיאה סטנדרטית, השגיאות שנוצרות מועברות ל-stderr במקום ל-stdout. זה מאפשר לנו לנקוט בפעולות בקוד שלנו על הפלט שלנו (stdout) כרגיל, ולא לפגום בתהליכי קריאה/כתיבה של קובץ השגיאות. כמו כן, כתיבת שגיאות לשגיאה סטנדרטית גם מאפשרת לנו לקבל פלט מפורט יותר של השגיאות הנוצרות, ולא רק הודעת שגיאה פשוטה. 
+## ראה גם
 
-# ראה גם
-
-- [Gleam Documentation on Writing to Standard Error](https://gleam.run/documentation/stdlib/io#stderr)
-- [Elixir Programming Blog Post on Writing to Standard Error](https://elixir-lang.org/blog/2018/03/22/working-with-standard-error-in-elixir/)
+- תיעוד רשמי לכתיבת שגיאה לפלט סטנדרטי ב-Gleam: https://gleam.run/articles/writing-errors-to-stdout
+- דוגמאות לכתיבת שגיאות ב-Gleam: https://github.com/gleam-lang/gleam/tree/master/examples/error_handling
+- הקוד המקור של Gleam בגיטהאב: https://github.com/gleam-lang/gleam

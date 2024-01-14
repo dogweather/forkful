@@ -1,43 +1,68 @@
 ---
 title:                "Gleam recipe: Capitalizing a string"
+simple_title:         "Capitalizing a string"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Capitalize a String in Gleam
+## Why
 
-Capitalizing a string is a common task in programming and can be useful for various reasons. For example, when displaying user input or creating proper titles, it is important to have the first letter of each word capitalized. In this blog post, we will explore how to capitalize a string in Gleam and provide a deep dive into the process.
+Capitalizing a string is a common task in programming, especially when working with user input or formatting data for display. It can help improve the readability and consistency of your code, making it easier to understand for both you and others.
 
-## How To Capitalize a String in Gleam
+## How To
 
-To capitalize a string in Gleam, we will use the `String.to_title_case` function. This function takes in a string as its parameter and returns the capitalized string. Let's take a look at an example:
+To capitalize a string in Gleam, we can use the `String.capitalise` function. Let’s take a look at an example:
 
 ```Gleam
-import String
-import Gleam.List
+import gleam/string
 
-let name = "john smith"
+let my_string = "hello world"
+let capitalized_string = string.capitalise(my_string)
 
-let capitalized_name = String.to_title_case(name)
-
-Gleam.List
-  .map(String.to_list(capitalized_name), char_to_list)
-  # Output: ['J', 'o', 'h', 'n', ' ', 'S', 'm', 'i', 't', 'h']
+IO.println(capitalized_string)
 ```
 
-As we can see from the output, `String.to_title_case` has successfully capitalized the first letter of each word in our string. It is important to note that this function will not alter any other letters in the string - only the first letter of each word will be capitalized.
+This will output `Hello world`. As you can see, the first letter of the string has been capitalized while the rest of the letters remain unchanged.
 
-## Deep Dive into Capitalizing a String
+We can also capitalize all words in a string by using the `String.capitalise_all_words` function. For example:
 
-Behind the scenes, the `String.to_title_case` function uses Unicode rules to determine which letters should be capitalized. This means that it can handle a variety of languages and special characters, making it a robust solution for capitalizing strings.
+```Gleam
+let my_string = "hello world"
+let capitalized_string = string.capitalise_all_words(my_string)
 
-It is also worth noting that the function works with not only single words, but with whole sentences as well. Each word in the sentence will be capitalized, while any other punctuation or symbols will remain unchanged. Additionally, if the string contains any non-letter characters, they will be preserved in the output.
+IO.println(capitalized_string)
+```
+
+This will output `Hello World`. In addition, we can also specify a particular language for capitalization rules by passing a `lang` argument to these functions.
+
+## Deep Dive
+
+Under the hood, the `String.capitalise` and `String.capitalise_all_words` functions use the `String.foldl` function. This allows us to customize how the string is capitalized by defining our own rules.
+
+For example, if we want to capitalize the first letter of every word and convert all remaining letters to lowercase, we can do so by passing in a custom function to the `String.foldl` function:
+
+```Gleam
+fn update_character(_index, character, accumulator) {
+  case accumulator {
+    _ -> character
+    | ' ' -> Unicode(Unicode.byte_to_uppercase(character))
+  }
+}
+
+let my_string = "hello world"
+let capitalized_string = string.foldl(update_character, my_string)
+
+IO.println(capitalized_string)
+```
+
+This will output `Hello World`. By understanding the underlying functions, we have more control and flexibility when it comes to capitalizing strings in Gleam.
 
 ## See Also
 
-- [Gleam Documentation on String](https://gleam.run/documentation/stdlib/string/)
-- [Unicode Character Database](https://unicode.org/ucd/)
-- [Gleam Discord Community](https://discord.gg/XzYcS2X)
+- Official Gleam Documentation for `String` module: https://gleam.run/modules/string.html
+- Tutorial for learning Gleam: https://gleam.run/book/tour.html
+- Further reading on working with strings in Gleam: https://stratus3d.com/blog/2020/02/20/working-with-strings-in-gleam/

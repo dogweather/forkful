@@ -1,33 +1,53 @@
 ---
-title:                "C#: Zmiana wielkości liter w ciągu znaków"
+title:                "C#: Zmiana ciągu znaków na duże litery"
+simple_title:         "Zmiana ciągu znaków na duże litery"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pisać bloga o programowaniu w języku C#?
+## Dlaczego
 
-Język C# jest jednym z najpopularniejszych języków programowania na świecie. Jest on wykorzystywany w tworzeniu różnego rodzaju aplikacji, od prostych narzędzi po skomplikowane systemy. Dlatego też warto dzielić się wiedzą na temat tego języka, w tym również na temat prostych zadań, takich jak kapitalizacja stringów. W wielu programach jest to codzienna czynność, dlatego ważne jest, aby móc wykonać ją w prosty sposób.
+Kapitalizacja to podstawowa czynność w programowaniu, która jest niezbędna do wielu zadań. Gdy chcemy, aby nasz program był czytelny dla użytkownika lub wyświetlany w odpowiedni sposób, często musimy skorzystać z kapitalizacji. W tym blogu dowiesz się, jak w prosty sposób zastosować tę funkcję w języku C#.
 
-## Jak przeprowadzić kapitalizację stringów w języku C#?
+## Jak To Zrobić
 
-Przede wszystkim, musimy zdefiniować nasz string, który chcemy skapitalizować. Następnie, za pomocą metody "ToUpper()", możemy zmienić wszystkie litery na wielkie. Poniższy przykład pokazuje, jak to zrobić w praktyce:
+Kapitalizacja w C# odbywa się za pomocą metody `ToUpper`, która zmienia wszystkie litery w ciągu znaków na wielkie. Przykładowy kod wyglądałby następująco:
 
 ```C#
-string text = "to jest przykładowy tekst";
-string capitalizedText = text.ToUpper();
-Console.WriteLine(capitalizedText);
+string name = "jan kowalski";
+
+Console.WriteLine(name.ToUpper());
 ```
 
-Po uruchomieniu tego kodu, powinniśmy zobaczyć wyjście "TO JEST PRZYKŁADOWY TEKST". Ważne jest również, aby pamiętać o użyciu odpowiedniego zestawu znaków, na przykład polskiego (pl-PL), jeśli nasz string zawiera polskie znaki diakrytyczne.
+W powyższym przykładzie, wartość zmiennej `name` zostanie zmieniona na "JAN KOWALSKI". Możemy również zastosować funkcję `ToLower`, która zmieni wszystkie litery na małe.
 
-## Dogłębna analiza kapitalizacji stringów w języku C#
+Dodatkowo, możemy również wykorzystać metodę `ToTitleCase` do kapitalizacji tylko pierwszej litery w każdym wyrazie. Przykładowy kod wyglądałby w ten sposób:
 
-Kapitalizacja stringów w języku C# jest nieskomplikowanym zadaniem, jednak istnieje wiele różnych metod i sposobów na jej wykonanie. Możliwe jest również wykorzystanie pętli i warunków, aby dopasować odpowiednio każdą literę w stringu. Inną opcją jest użycie funkcji z obszaru System.Globalization, takich jak "ToTitleCase()", która będzie uwzględniać specyfikę danego języka w kapitalizacji.
+```C#
+string sentence = "cześć, jak się masz?";
+
+// Dodajemy referencję do przestrzeni nazw System.Globalization
+string capitalizedSentence = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(sentence);
+
+Console.WriteLine(capitalizedSentence);
+```
+
+W tym przypadku, wartość zmiennej `capitalizedSentence` zostanie zmieniona na "Cześć, Jak Się Masz?".
+
+## Deep Dive
+
+Metody `ToUpper` i `ToLower` działają poprawnie tylko w przypadku standardowych znaków ASCII. Jeśli jednak potrzebujemy kapitalizować znaki spoza tego zakresu, musimy użyć funkcji `ToUpperInvariant` lub `ToLowerInvariant`. Te metody są bardziej elastyczne i działają dla wszystkich znaków, niezależnie od ich kodowania.
+
+Dodatkowo, warto również zwrócić uwagę na wydajność kodu. W przypadku dużych ilości danych do kapitalizacji, zaleca się używanie StringBuilder, aby uniknąć tworzenia zbędnych obiektów typu string.
 
 ## Zobacz również
 
-- Dokumentacja Microsoft na temat kapitalizacji stringów w języku C#: https://docs.microsoft.com/pl-pl/dotnet/api/system.string.totitlecase
-- Wideo tutorial o kapitalizacji stringów w języku C#: https://www.youtube.com/watch?v=MY1eQZ7o8ZU
+- [Metoda ToUpper w dokumentacji języka C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.toupper)
+- [Przestrzeń nazw System.Globalization w dokumentacji języka C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.globalization?view=netframework-4.8)
+- [Optymalizacja kodu w języku C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/concepts/code-quality/optimize-your-code)
+
+Dziękujemy za lekturę tego bloga. Mamy nadzieję, że dzięki niemu dowiedziałeś się, jak w prosty sposób zastosować kapitalizację do ciągu znaków w języku C#.

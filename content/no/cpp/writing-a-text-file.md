@@ -1,7 +1,9 @@
 ---
-title:                "C++: Å skrive en tekstfil"
+title:                "C++: Skrive en tekstfil"
+simple_title:         "Skrive en tekstfil"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-a-text-file.md"
 ---
 
@@ -9,53 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive en tekstfil er en viktig del av programmering, enten det er for å lagre data eller for å kommunisere med andre programmer. Tekstfiler kan inneholde enkle tekstlinjer eller komplekse datastrukturer, og gir en måte å strukturere og lagre informasjon på. Å kunne skrive en tekstfil i C++ kan være svært nyttig og åpner for mange muligheter innenfor programmering. 
+Å skrive en tekstfil er en vanlig oppgave for programmerere, spesielt i C++. Tekstfiler lar deg lagre og manipulere tekstbasert data på en enkel og effektiv måte. Enten du trenger å lagre brukerinnstillinger eller behandle store deler av tekst, er tekstfiler et nyttig verktøy å ha i verktøykassen din.
 
 ## Hvordan
 
-For å kunne skrive en tekstfil i C++, må man først importere `ofstream` biblioteket. Dette er en del av `fstream` biblioteket som lar oss håndtere strømmer av data. Deretter må vi åpne filen vi ønsker å skrive til ved å bruke en `ofstream` variabel og angi filnavnet.
+For å skrive en tekstfil i C++, må du følge disse trinnene:
 
-```
-#include <fstream>
+1. Åpne en ny `ofstream`-strøm ved hjelp av `open()`-funksjonen og angi filnavnet du vil bruke.
 
-int main() {
-    ofstream fil("min_fil.txt");
-}
-```
+````C++
+ofstream utstrøm("tekstfil.txt");
+````
 
-Nå kan vi begynne å skrive til filen ved å bruke `<<` operator til å legge til data i variabelen. Vi kan skrive tekstlinjer eller variabler til filen ved å inkludere dem i operator-uttrykket.
+2. Skriv til tekstfilen ved å bruke strømoperatoren `<<`.
 
-```
-#include <fstream>
+````C++
+utstrøm << "Dette er en eksempeltekst som vil bli lagret i tekstfilen." << endl;
+````
 
-int main() {
-    ofstream fil("min_fil.txt");
-    fil << "Dette er en test" << endl;
-    fil << "Tall: " << 42 << endl;
-}
-```
+3. Når du er ferdig med å skrive til filen, må du lukke strømmen ved hjelp av `close()`-funksjonen.
 
-Etter å ha skrevet til filen, må vi huske å lukke den ved å bruke `close()` funksjonen.
+````C++
+utstrøm.close();
+````
 
-```
-#include <fstream>
+## Dykk dypere
 
-int main() {
-    ofstream fil("min_fil.txt");
-    fil << "Dette er en test" << endl;
-    fil << "Tall: " << 42 << endl;
-    fil.close();
-}
-```
+Det er viktig å merke seg at når du åpner en `ofstream`-strøm, vil den opprette en ny fil hvis filen ikke allerede eksisterer. Hvis filen allerede eksisterer, vil den bli overskrevet. Dette kan være problematisk hvis du ikke ønsker å miste data som allerede er lagret i filen. I så fall kan du bruke `app`-flagget sammen med `open()`-funksjonen for å åpne filen i append-modus, noe som betyr at nytt innhold vil bli lagt til på slutten av filen i stedet for å bli overskrevet.
 
-Etter å ha kjørt programmet vårt, vil en fil med navnet "min_fil.txt" bli opprettet og inneholde teksten og tallene vi skrev til den.
+````C++
+ofstream utstrøm;
+utstrøm.open("tekstfil.txt", ios::app);
+````
 
-## Dypdykk
-
-Nå som vi har sett hvordan vi kan skrive en tekstfil i C++, er det viktig å forstå noen grunnleggende konsepter i forhold til dette. Når vi åpner en fil, kan vi spesifisere hvilken tilgangsmodus vi ønsker å bruke. Standardmodusen er `ios::out` som lar oss skrive til filen, mens `ios::app` legger til data i slutten av filen uten å slette eksisterende data. `ios::in` lar oss lese fra en fil, og `ios::trunc` sletter all eksisterende data og åpner filen for skriving. Det kan også være lurt å bruke måter å sjekke om åpning og skriving til filen var vellykket, for eksempel ved å bruke `is_open()` og `good()` funksjonene.
+Det er også viktig å lukke strømmen når du er ferdig med å bruke den. Dette sikrer at eventuelle ufullstendige operasjoner blir fullført og at ressurser blir frigjort.
 
 ## Se også
 
-- [Skriver til en fil i C++](https://www.w3schools.com/cpp/cpp_files.asp)
-- [ifstream dokumentasjon](https://en.cppreference.com/w/cpp/io/basic_ifstream)
-- [C++ File Handling Tutorial](https://www.geeksforgeeks.org/file-handling-c-classes/)
+- [C++ - Grundleggende om filbehandling](https://www.w3schools.com/cpp/cpp_files.asp)
+- [C++ - ofstream](https://www.geeksforgeeks.org/ofstream-objects-in-cpp/)
+- [Hvordan bruke Markdown](https://www.markdownguide.org/getting-started/)

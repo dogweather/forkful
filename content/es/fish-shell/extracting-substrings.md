@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/extracting-substrings.md"
 ---
 
@@ -9,42 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Extraer subcadenas de texto puede ser una tarea muy útil y eficiente en la programación. Por ejemplo, si necesitas obtener parte de una dirección de correo electrónico, una fecha o información específica de un texto más largo, extraer substrings es la mejor manera de hacerlo.
+Al programar en Fish Shell, a menudo nos encontramos con la necesidad de extraer subcadenas de una cadena de texto más grande. Esto puede ser útil para realizar ciertas operaciones o manipulaciones en la información de manera más específica. A continuación, te mostraremos cómo puedes hacerlo de manera sencilla.
 
-## Cómo
+## Cómo hacerlo
 
-El lenguaje Fish Shell tiene algunas funciones muy útiles para extraer subcadenas de texto de manera sencilla. Veamos algunos ejemplos:
+Para extraer una subcadena en Fish Shell, utilizaremos el comando `string` seguido del argumento `-s` y las posiciones de inicio y fin de la subcadena que deseamos extraer. Por ejemplo, si tenemos la cadena "Hola World", y queremos extraer solamente "World", podemos utilizar el siguiente código:
 
-```
-Fish Shell - Comando:              Descripción:                    Ejemplo:
-string sub <string> which           Devuelve posición de la        string sub "Hola Mundo" which o
-                                   primera ocurrencia de una      "Mundo" which     # Devuelve 5
-                                   cadena
-string sub <string> 0 2             Devuelve una subcadena         string sub "Hola Mundo" 0 2 o
-                                   desde una posición dada hasta  "Hola"           # Devuelve "Ho"
-                                   otra indicada
-string sub <string> 3               Devuelve la subcadena          string sub "Hola Mundo" 3 o
-                                   desde una posición dada hasta  "a Mundo"        # Devuelve "a Mundo"
-                                   el final del texto
-string sub <string> 'palabra' 1     Devuelve una subcadena         string sub "Hola Mundo" 'nombre' 1 o
-                                   desde una posición dada hasta  "Mundo"          # Devuelve "Mundo"
-                                   la siguiente ocurrencia de
-                                   una palabra dada
+```Fish Shell
+set cadena "Hola World"
+echo $cadena
+output: Hola World
+set subcadena (string -s 5 9 $cadena)
+echo $subcadena
+output: World
 ```
 
-Puedes usar estos comandos directamente en tu terminal de Fish Shell o integrarlos en tus scripts de programación para obtener subcadenas de texto de manera rápida y eficiente.
+En este caso, especificamos que queremos extraer la subcadena empezando en la posición 5 y terminando en la posición 9. Es importante mencionar que las posiciones comienzan desde 1 y no desde 0.
 
-## Deep Dive
+También podemos utilizar el comando `substring`, que es una abreviación del comando `string`, pero la sintaxis es un poco diferente. Podemos utilizarlo de la siguiente manera:
 
-Si quieres profundizar más en el tema de extraer subcadenas de texto, aquí hay algunos detalles que pueden serte de ayuda:
+```Fish Shell
+set cadena "Hola World"
+echo $cadena
+output: Hola World
+set subcadena $cadena[6..10]
+echo $subcadena
+output: World
+```
 
-- Puedes usar comillas simples o dobles alrededor de las palabras si tienen espacios o caracteres especiales en ellas.
-- Si no especificas una posición inicial o final en el comando `string sub`, se asume que es el principio o el final del texto, respectivamente.
-- Puedes usar variables en lugar de escribir la cadena directamente en el comando. Esto puede ser útil si quieres extraer una subcadena de manera dinámica en tus scripts.
+En este caso, utilizamos los corchetes y los dos puntos para especificar el inicio y fin de la subcadena. Esta sintaxis puede ser más sencilla para algunos usuarios.
 
-¡Con estos detalles en cuenta, estarás listo para extraer subcadenas de texto como un profesional!
+## Profundizando
+
+Si queremos extraer una subcadena a partir de una palabra o letra en específico, podemos utilizar el comando `string match`. Este comando buscará la coincidencia más cercana a la palabra o letra que le indiquemos y extraerá la subcadena a partir de ahí. Por ejemplo:
+
+```Fish Shell
+set cadena "¡Hola a todos!"
+echo $cadena
+output: ¡Hola a todos!
+set subcadena (string match a $cadena)
+echo $subcadena
+output: a todos!
+```
+
+Aquí, utilizamos el comando `string match` para encontrar la letra "a" en la cadena y extraer la subcadena a partir de ahí. Esto nos puede ser útil si no sabemos exactamente en qué posición se encuentra la subcadena que queremos extraer.
 
 ## Ver también
 
-- [Documentación de Fish Shell sobre el comando "string sub"](https://fishshell.com/docs/3.1/cmds/string.html#string-sub)
-- [Tutorial interactivo de Fish Shell sobre la extracción de subcadenas](https://rootnroll.com/d/extrayendo-subcadenas-de-texto-con-el-comando-string-sub-en-fish-shell/)
+Si quieres aprender más sobre cómo manipular cadenas en Fish Shell, puedes revisar la documentación oficial y otros tutoriales en línea:
+
+- Documentación oficial de Fish Shell: https://fishshell.com/docs/current/index.html
+- Tutorial de Manipulación de Cadenas en Fish Shell (en inglés): https://scriptingosx.com/2017/05/manipulating-strings-in-fish/
+- Otros tips y trucos para Fish Shell (en inglés): https://dev.to/bowmanjd/great-fish-shell-tips-i-wish-i-had-known-from-the-beginning-23o5

@@ -1,47 +1,60 @@
 ---
 title:                "Elixir: Verificando se um diretório existe"
+simple_title:         "Verificando se um diretório existe"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que verificar se um diretório existe?
+## Por que
 
-Muitas vezes, quando estamos escrevendo um programa, é necessário verificar se um diretório existe antes de executar determinadas ações, como criar um novo arquivo ou fazer um backup de arquivos existentes. Fazer essa verificação pode ajudar a evitar erros e problemas no nosso código, tornando-o mais robusto e confiável.
+Você pode precisar verificar se um diretório específico existe antes de executar alguma ação nele, como criar um novo arquivo ou fazer uma cópia. Verificar a existência de um diretório também pode garantir a segurança e a integridade do seu código, evitando possíveis erros.
 
-## Como Fazer
+## Como fazer
 
-Em Elixir, podemos verificar se um diretório existe usando a função `File.dir?/1` e passando o caminho do diretório como argumento. Essa função retorna `true` se o diretório existe ou `false` se não existe. Veja um exemplo:
+Para verificar se um diretório existe, você pode usar a função `File.dir?/1` na linguagem de programação Elixir. Esta função recebe um caminho de arquivo como argumento e retorna verdadeiro se o caminho do arquivo for um diretório existente ou falso se não existir. Veja um exemplo abaixo utilizando a função `File.dir?/1` para verificar se o diretório "documents" existe:
 
-```Elixir
-File.dir?("caminho/do/diretório")
-# => true
-```
-
-Para trabalhar com diretórios de forma mais eficiente, podemos usar o módulo `Path` e suas funções para lidar com caminhos de arquivos e diretórios. Vamos ver um exemplo de como criar um novo diretório caso ele não exista:
-
-```Elixir
-defp create_directory(dir) do
-  if !File.dir?(dir) do
-    Path.mkdir(dir)
-  end
+```elixir
+if File.dir?("documents") do
+  IO.puts "Diretório documents encontrado!"
+else
+  IO.puts "Diretório documents não encontrado."
 end
 ```
 
-## Mergulho Profundo
+A saída do código acima será "Diretório documents encontrado!" se o diretório existir ou "Diretório documents não encontrado." se não existir.
 
-A função `File.dir?/1` simplesmente verifica a existência de um diretório, mas não pode distinguir entre um diretório ou um arquivo com o mesmo nome. Para uma verificação mais precisa, podemos usar a função `Path.wildcard/1` que retorna uma lista de arquivos e diretórios que correspondem a um padrão específico. Um exemplo de código para verificar especificamente se um arquivo existe seria:
+## Profundando
 
-```Elixir
-defp file_exists?(file) do
-  !Path.wildcard(file) == []
-end 
+No Elixir, você também pode usar o módulo `Path` para verificar a existência de diretórios. A função `Path.expand/2` recebe um diretório e retorna o caminho absoluto para ele. Em seguida, você pode usar a função `File.exists?/1` para verificar se o diretório existe. Veja um exemplo abaixo:
+
+```elixir
+path = Path.expand("documents")
+if File.exists?(path) do
+  IO.puts "Diretório documents encontrado!"
+else
+  IO.puts "Diretório documents não encontrado."
+end
 ```
 
-## Veja Também
+Além disso, você também pode usar a função `File.writable?/1` para verificar se o diretório é gravável. Esta função retornará verdadeiro se o diretório for gravável ou falso se não for. Veja um exemplo abaixo:
 
-- Documentação oficial sobre a função `File.dir?/1` em Elixir (https://hexdocs.pm/elixir/File.html#dir?/1)
-- Artigo sobre manipulação de arquivos em Elixir (https://www.infoq.com/br/articles/file-handling-in-elixir/)
-- Vídeo tutorial sobre como criar diretórios em Elixir (https://www.youtube.com/watch?v=1kwc44-idx7)
+```elixir
+path = Path.expand("documents")
+if File.writable?(path) do
+  IO.puts "Diretório documents é gravável!"
+else
+  IO.puts "Diretório documents não é gravável."
+end
+```
+
+Você pode combinar as funções `File.dir?/1` e `File.writable?/1` para verificar se um diretório existe e se é gravável antes de fazer alterações nele, garantindo assim a segurança do seu código.
+
+## Veja também
+
+- [Documentação oficial do Elixir sobre verificação de diretórios](https://hexdocs.pm/elixir/File.html#dir?/1)
+- [Tutorial sobre como criar e verificar diretórios em Elixir](https://www.poeticoding.com/creating-and-checking-directories-in-elixir/)
+- [Vídeo mostrando exemplos de como verificar a existência de diretórios em Elixir](https://www.youtube.com/watch?v=ZzA1yC_jO34)

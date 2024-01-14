@@ -1,7 +1,9 @@
 ---
 title:                "C# recipe: Calculating a date in the future or past"
+simple_title:         "Calculating a date in the future or past"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Why would you want to calculate a date in the future or past? Well, imagine you're planning an event and you need to know the date of the event one month from now. Instead of counting each day on a calendar, you can use code to quickly and accurately calculate the date for you. Or maybe you need to schedule a reminder for a specific date in the future. Whatever the reason may be, knowing how to calculate dates in the future or past can save you time and effort.
+Have you ever needed to calculate a date in the future or past for your programming project? Maybe you're creating a scheduling app or a countdown timer. No matter the reason, knowing how to accurately calculate dates will come in handy for a variety of projects.
 
 ## How To
 
-To calculate a date in the future or past, we can use the `DateTime` class in C#. This class represents a specific date and time and provides useful methods for manipulating dates. Let's take a look at some examples using `DateTime` to calculate dates:
+Calculating dates in C# may seem daunting at first, but fear not! With a basic understanding of the DateTime class and some helpful methods, you can easily calculate dates in the future or past.
+
+First, to calculate a future date, you will need to use the Add method. This method takes in a TimeSpan as a parameter, which represents the amount of time you want to add to the current date. For example, let's say we want to calculate a date 10 days in the future:
 
 ```C#
-//Calculating a date 1 month from now
-DateTime currentDate = DateTime.Today;
-DateTime futureDate = currentDate.AddMonths(1);
-Console.WriteLine("1 month from now will be: " + futureDate.ToShortDateString()); //Output: 9/4/2021
-
-//Calculating a date 2 weeks from now
-DateTime currentDate = DateTime.Today;
-DateTime futureDate = currentDate.AddDays(14);
-Console.WriteLine("2 weeks from now will be: " + futureDate.ToShortDateString()); //Output: 9/16/2021
-
-//Calculating a date 1 year from now
-DateTime currentDate = DateTime.Today;
-DateTime futureDate = currentDate.AddYears(1);
-Console.WriteLine("1 year from now will be: " + futureDate.ToShortDateString()); //Output: 9/3/2022
+DateTime currentDate = DateTime.Now;
+DateTime futureDate = currentDate.Add(new TimeSpan(10, 0, 0, 0));
 ```
+In this code, we first get the current date using the DateTime.Now property and store it in a variable. Then, we use the Add method to add 10 days to the current date and store the result in a new variable called futureDate. 
 
-In the examples above, we used the `AddMonths()`, `AddDays()`, and `AddYears()` methods to add a specified amount of time to our current date. These methods return a new `DateTime` object with the calculated date. We can then use the `ToShortDateString()` method to format the output in a readable way.
+On the other hand, if you want to calculate a date in the past, you can use the Subtract method. This method works in the same way as the Add method, except it subtracts the specified amount of time from the current date. Let's say we want to calculate a date 2 weeks in the past:
 
-We can also calculate past dates by using negative numbers in the `AddMonths()`, `AddDays()`, and `AddYears()` methods. For example, to calculate a date 3 days ago, we can use `currentDate.AddDays(-3)`.
+```C#
+DateTime currentDate = DateTime.Now;
+DateTime pastDate = currentDate.Subtract(new TimeSpan(14, 0, 0, 0));
+```
 
 ## Deep Dive
 
-Calculating dates in the future or past may seem simple, but it can get more complex when considering factors such as leap years, different time zones, and daylight saving time. Fortunately, the `DateTime` class handles these factors for us, making our calculations accurate and reliable.
+There are many other useful methods and properties in the DateTime class that can help you manipulate dates in C#. Here are a few examples:
 
-One thing to keep in mind is that `DateTime` is a mutable object, meaning it can be changed once it is created. This can lead to unexpected results if not handled carefully. To avoid this, we can use the `AddMonths()`, `AddDays()`, and `AddYears()` methods to create a new `DateTime` object instead of modifying the existing one.
+- To get the current date and time, you can use the DateTime.Now property.
+- If you want to get only the current date without the time, you can use the DateTime.Today property.
+- You can also get a specific date by using the DateTime constructor, which takes in the year, month, and day as parameters.
+- The DateTime class also has methods to compare dates, check for leap years, and convert between different time zones.
 
-Another useful feature of the `DateTime` class is the ability to compare dates. We can use methods such as `Compare()`, `Equals()`, and `CompareTo()` to check if a date is before, after, or equal to another date.
+Remember, when working with dates in C#, it's important to consider time zones and culture settings. It's always a good idea to explicitly specify the time zone and culture in your code to avoid any unexpected results.
 
 ## See Also
 
-- Official Microsoft documentation on [DateTime structure](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- Tutorial from Tutorialspoint on [C# DateTime](https://www.tutorialspoint.com/csharp/csharp_datetime.htm)
-- Article on calculating dates in different time zones with C# from [Code Maze](https://code-maze.com/calculate-datetime-differences-csharp/)
+- [DateTime Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
+- [Date and Time Manipulation in C#](https://www.tutorialspoint.com/csharp/csharp_date_time.htm)
+- [Handling Dates and Time with C#](https://www.codemag.com/Article/0907061/Handling-Dates-and-Time-with-C)

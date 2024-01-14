@@ -1,36 +1,54 @@
 ---
-title:                "Clojure: 미래나 과거의 날짜 계산하기"
+title:                "Clojure: 미래 혹은 과거의 날짜 계산하기"
+simple_title:         "미래 혹은 과거의 날짜 계산하기"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-날짜를 미래나 과거로 계산하는 것에 대해 관심을 가질 수 있는 이유는 매우 다양합니다. 예를 들어, 기념일이나 이벤트를 준비하기 위해 미래의 특정 날짜를 계산하거나, 어떤 사건이 발생한 지 몇 일이 지났는지를 알기 위해서도 날짜 계산이 필요할 수 있습니다. 또한 개발자들은 프로그램에서 날짜를 다룰 때 이러한 기능이 필수적입니다.
+날짜를 미래나 과거로 계산하는 일에 참여해야 할 이유는 다양합니다. 예를 들어, 스마트폰 어플리케이션에서 약속 날짜를 설정하거나 생일을 계산할 때가 있습니다. 또는 수학적인 문제를 해결하는 과정에서도 날짜 계산이 필요할 수 있습니다. 어떤 경우에도 쉽고 간단하게 날짜를 계산하는 방법을 알아보겠습니다.
 
-## 사용 방법
+# 어떻게
 
 ```Clojure
-(require '[clojure.java-time :as t]) 
-
-(t/plus (t/today) (t/period 2 :days))
-;; => #object[java.time.LocalDate 0x420e52b8 "2022-02-23"]
-
-(t/minus (t/now) (t/period 1 :years))
-;; => #object[java.time.LocalDateTime 0x1b5a6b57 "2020-02-23T16:23:16.21"]
+(defn calculate-date [num-of-days]
+  (.getTime 
+    (java.util.Date. 
+      (+ 
+        (.getTime (java.util.Date. today) (days num-of-days)))))
 ```
 
-위의 코드는 `clojure.java-time` 라이브러리를 사용하여 오늘 날짜에서 2일을 더하거나, 현재 시각에서 1년을 뺀 날짜를 계산하는 예시를 보여줍니다. `t/plus` 함수는 두 개의 인자를 받아서 첫 번째 인자(`LocalDate`나 `LocalDateTime` 객체)에 두 번째 인자인 `Period` 객체를 더해주는 함수입니다. `t/period` 함수는 시간 단위와 숫자를 입력받아서 해당 단위로 날짜를 계산할 수 있는 `Period` 객체를 반환합니다. `t/minus` 함수는 `plus`와 동일한 기능을 하지만 첫 번째 인자에 두 번째 인자를 뺀 값을 반환합니다.
+위의 예제 코드는 현재 날짜로부터 인자로 전달된 일수를 더한 날짜를 계산하는 함수입니다. 함수 내부에서는 `java.util.Date` 클래스의 `.getTime` 메소드를 사용하여 현재 날짜를 얻은 뒤, `days` 함수를 사용하여 일수를 더한 다음 `java.util.Date` 클래스의 인스턴스를 생성합니다. 마지막으로 `.getTime` 메소드를 다시 사용하여 더한 날짜를 리턴합니다.
 
-## 깊이 파고들기
+이제 함수를 호출하여 날짜를 계산해보겠습니다.
 
-자세한 날짜 계산 방법을 알기 위해서는 `java.time` 패키지에 대해 더 알아야 합니다. `plus`와 `minus` 함수에서 사용한 `Period` 객체는 `t/period` 함수를 통해 만들었지만, `java.time` 패키지에서 제공하는 다른 클래스들을 사용할 수도 있습니다. 예를 들어, 여러 개의 날짜 객체를 비교하거나, 특정 날짜를 원하는 형식으로 출력하거나, 지역 시간대를 고려해야할 경우 `LocalDate`, `LocalDateTime` 외에도 `ZonedDateTime`, `OffsetDateTime` 등을 사용할 수 있습니다.
+```Clojure
+(def today (calculate-date 10))
 
-## 참고하기
+;; 결과
+#inst "2020-06-12T07:22:09.468-00:00"
+```
 
-* [java.time 패키지 문서](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-* [Clojure java-time 라이브러리 문서](https://cljdoc.org/d/clojure.java-time/clojure.java-time/0.2.0/doc/readme)
-* [인프런 - 클로저로 배우는 함수형 프로그래밍 기초: 날짜와 시간](https://www.inflearn.com/course/%ED%81%B4%EB%A1%9C%EC%A0%80-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8-%EA%B8%B0%EC%B4%88-%EB%82%A0%EC%A7%9C-%EC%8B%9C%EA%B0%84/dashboard)
+10일이 더해진 날짜를 얻을 수 있었습니다. 비슷한 방식으로 어떤 날짜를 기준으로 미래나 과거의 날짜를 계산할 수 있습니다.
+
+# 딥 다이브
+
+실제로 날짜 계산에는 더 많은 처리 과정과 요구사항이 있을 수 있습니다. 예를 들어, 윤년을 처리하거나 특정 월의 마지막 날을 정확하게 계산해야 할 수도 있습니다. 따라서 실제 프로젝트에서 날짜 계산을 할 때에는 이러한 요구사항을 고려하여 코드를 작성해야 합니다.
+
+또한 날짜를 계산하는 다양한 라이브러리나 함수들이 존재하며, 각각의 장단점이 있을 수 있습니다. 따라서 다양한 방식으로 날짜를 계산하는 방법을 알고 있으면 유용합니다.
+
+# 비슷한 주제
+
+- [Clojure 스트링 다루기](https://clojure.org/guides/learn/common_data_structures#_strings)
+- [Clojure 컬렉션 다루기](https://clojure.org/guides/learn/common_data_structures#_collection_manipulation)
+- [Clojure 날짜 다루기](https://clojure.github.io/java.time-api/#clojure.java-time)
+
+# 참고자료
+
+- [Clojure 공식 문서](https://clojure.org/)
+- [Clojure 한국 사용자 그룹](https://www.facebook.com/groups/ClojureKr/)

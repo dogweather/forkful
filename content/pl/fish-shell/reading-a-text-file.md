@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Odczytywanie pliku tekstowego."
+title:                "Fish Shell: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/reading-a-text-file.md"
 ---
 
@@ -9,40 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą lub po prostu lubisz eksperymentować z nowymi narzędziami, ten post jest dla Ciebie! Dowiecie się jak wykorzystać powłokę Fish Shell do odczytywania plików tekstowych, co może przydać się w różnych projektach.
+Jeśli jesteś początkującym programistą, zapewne słyszałeś o możliwości czytania plików tekstowych za pomocą Fish Shell. Ale może zastanawiasz się, dlaczego jest to ważne i dlaczego warto się dowiedzieć jak to zrobić. W tym blogu postaram się wytłumaczyć, czemu warto poznać tę umiejętność.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Pierwszym krokiem jest otworzenie aplikacji Terminal i uruchomienie Fish Shell. Aby odczytać plik tekstowy, musisz użyć wbudowanego polecenia `cat`. Na przykład, jeśli chcemy wyświetlić zawartość pliku o nazwie "tekst.txt", wykonujemy następującą komendę:
-
-```Fish Shell
-cat tekst.txt
-```
-
-Jeśli plik tekstowy jest w innym folderze, musisz podać jego dokładną ścieżkę. W przypadku, gdy chcesz wyświetlić więcej niż jeden plik, możesz podać ich nazwy rozdzielone spacjami. 
-
-Aby zapisać zawartość pliku do nowego pliku, używamy operatora `>` wraz z nazwą docelowego pliku. Na przykład:
+Do czytania plików tekstowych w Fish Shell możemy użyć komendy ```cat```. Poniżej przedstawiam przykładowy kod oraz oczekiwaną odpowiedź:
 
 ```Fish Shell
-cat tekst.txt > nowy_plik.txt
+cat hello.txt
 ```
 
-To samo możemy osiągnąć poprzez użycie polecenia `tee`, które wyświetli zawartość pliku oraz zapisze ją do nowego pliku. Na przykład:
-
-```Fish Shell
-cat tekst.txt | tee nowy_plik.txt
+```
+Hello, World!
 ```
 
-## Deep Dive
+W tym przykładzie, ```cat``` jest komendą, a ```hello.txt``` jest plikiem tekstowym, który chcemy przeczytać. To proste i przydatne narzędzie, które warto mieć w swoim programistycznym arsenale.
 
-Podczas odczytywania plików tekstowych z pomocą powłoki Fish Shell, mamy również dostęp do różnych flag i opcji. Na przykład, możemy użyć flagi `-n` aby wyświetlić numerowane linie pliku lub `-5` aby wyświetlić tylko pierwsze pięć linii. Możemy także użyć opcji `-s` aby wyciąć dane z pliku według podanych kryteriów. 
+## Od podstaw
 
-Możemy również wykorzystać polecenie `head` do wyświetlenia pierwszych kilku linii pliku lub `tail` do wyświetlenia jego ostatnich linii. Innym przydatnym narzędziem jest polecenie `less`, które pozwala przewijać plik w pionie oraz zapewnia dodatkowe funkcje, takie jak wyszukiwanie w tekście.
+Teraz, że już wiesz jak użyć komendy ```cat```, pora na głębsze zanurzenie się w czytanie plików tekstowych w Fish Shell. Istnieją różne opcje, jakie możesz dodać do tej komendy, aby uzyskać różne wyniki. Na przykład, możesz użyć flagi ```-n```, aby wyświetlić numerowane wiersze lub flagi ```-r``` do czytania pliku od końca. Możesz też użyć ```|``` do przesyłania wyjścia do innego polecenia, lub ```>>``` do przekierowania wyjścia do nowego pliku.
 
-## Zobacz również
+## Zobacz też
 
-- [Oficjalna dokumentacja Fish Shell] (https://fishshell.com/docs/current/)
-
-- [Poradnik Fish Shell dla początkujących] (https://fishshell.com/docs/current/tutorial.html)
-
-- [Materiały edukacyjne i przykładowe kody Fish Shell] (https://fishshell.com/docs/current/index.html)
+- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/cmds/cat.html)
+- [Przewodnik po komendzie cat](https://www.howtogeek.com/435903/how-to-use-the-cat-command-in-linux)
+- [Inne przydatne komendy Fish Shell](https://fishshell.com/docs/current/commands.html)

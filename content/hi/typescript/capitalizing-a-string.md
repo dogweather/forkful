@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: स्ट्रिंग को बड़े अक्षरों में लिखना"
+title:                "TypeScript: स्ट्रिंग कैपिटलाइजिंग"
+simple_title:         "स्ट्रिंग कैपिटलाइजिंग"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/capitalizing-a-string.md"
 ---
 
@@ -9,23 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-यदि आप एक विकसित प्रोग्रामर हैं और अपने कोड में शामिल एक इम्पचरिकल स्ट्रिंग का उपयोग कर रहे हैं, तो आपको उसे कैपिटलाइज़ करना पड़ सकता है। यह इसलिए जरूरी है कि कई बार हमें इम्पचरिकल स्ट्रिंग को लेख के प्रथम अक्षर के स्थान पर कैपिटल लेटर के साथ छोड़ना होता है। अगर आप इसे सही ढंग से नहीं चेंज करते हैं, तो यह आपके कोड को खराब भी कर सकता है।
+कैसे आप किसी भी मूल्य को अग्रणी अक्षरों में बदल सकते हैं? एक शब्द की पहचान पर विचार करें, जिसमें आपको हर समय पर्याप्त रूप से पता चल जाता है कि वह शब्द क्या है। उदाहरण के लिए, दिनांक, वेबसाइट नाम या उपयोगकर्ता नाम। इस प्रकार, जब हम किसी शब्द को अपने कोड में उपयोग करते हैं, हमारे लिए उसे अग्रणी अक्षरों में प्रदर्शित करना आसान होता है। इसलिए, यह आवश्यक हो सकता है कि किसी भी मूल्य को अग्रणी अक्षरों में कैसे बदला जाए।
 
 ## कैसे करें
 
-यदि आप अपने टाइपस्क्रिप्ट कोड में स्ट्रिंग को कैपिटलाइज़ करना चाहते हैं, तो आप निम्नलिखित कदमों का पालन कर सकते हैं।
+```TypeScript
+function capitalize(str: string) {
+  return str.toUpperCase();
+}
 
-आयात भाषा अगर प्रचलित : ```TypeScript Import``` 
+console.log(capitalize("hello")); // output: HELLO
+console.log(capitalize("how are you")); // output: HOW ARE YOU
+```
 
-फिर से कैपिटलाइज़ करें :```TypeScript string.toUpperCase ()``` 
+```TypeScript
+const name = "john";
+console.log(`Welcome, ${capitalize(name)}.`); // output: Welcome, JOHN.
+```
 
-सांकेतिक स्ट्रिंग कैपिटलाइज़ करें : ```TypeScript string.charAt (0). toUpperCase () + string.slice (1)```
+## गहराई में जाएँ
 
-यदि आप कोड को अमरीकी इंग्रजी में लिख रहे हैं, तो आप निम्नलिखित कोड का उपयोग कर सकते हैं: ```TypeScript string.charAt (0). toUpperCase () + string.slice (1) ``` यह स्ट्रिंग का प्रथम अक्षर कैपिटलाइज़ करेगा और शेष स्ट्रिंग को अनुवाद करेगा क्योंकि इसे कैमेल केस में लिखा गया है।
+एक और सरल तरीके से आप अपने वर्तमान कोड को पोलिश कर सकते हैं। आप एक प्रोमीज़ को इस्तेमाल करके अग्रणी अक्षरों में बदलने का एक प्रयास कर सकते हैं।
 
-आप भी अपने कोड में मानचित्र की मदद से कैपिटलाइज़ को साधन संग्रह में जमा सकते हैं। निम्नलिखित कोड का उपयोग कैरॉक लिए किया है।
+```TypeScript
+function capitalizePromise(str: string): Promise<string> {
+  return new Promise((resolve, reject) => {
+    if (typeof str !== "string") {
+      reject("Argument must be a string.");
+    } else {
+      resolve(str.toUpperCase());
+    }
+  });
+}
 
-```TypeScript for (let i = 0; i <stringArray.length; i ++) 
-{ console.log (stringArray [i]. charAt (0) . toUpperCase () + stringArray [i] .slice (1)); } ```
+capitalizePromise("bye")
+  .then(result => console.log(result)) // output: BYE
+  .catch(error => console.log(error));
+```
 
-इस आउटपुट समूह का उपयोग कर
+```TypeScript
+const sentence = "i am learning typescript";
+capitalizePromise(sentence)
+  .then(result => console.log(`Now I can say: ${result}.`)) // output: Now I can say: I AM LEARNING TYPESCRIPT.
+  .catch(error => console.log(error));
+```
+
+## देखें भी
+
+[MDN अक्षरों को अपडेट करना](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)

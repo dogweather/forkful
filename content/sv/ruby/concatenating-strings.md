@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Sammanslagning av strängar"
+title:                "Ruby: Sammanfogning av strängar"
+simple_title:         "Sammanfogning av strängar"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/concatenating-strings.md"
 ---
 
@@ -9,42 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att lära sig hur man sammanfogar strängar i Ruby är ett viktigt koncept för att kunna skapa dynamiska och interaktiva program. Genom att kombinera flera strängar kan du skapa mer användbara och föränderliga meddelanden och utskrifter i ditt program.
+Att sammanslå strängar eller *concatenation* som det också kallas är en vanlig operation inom programmering. Genom att kombinera flera strängar till en enda kan man skapa en mer komplex text som kan användas för olika ändamål. Det kan till exempel vara användbart när man vill skapa en dynamisk text för användaren baserat på olika variabler.
 
-## Så här gör du
+## Hur man gör
 
-För att sammanfoga strängar i Ruby kan du använda operatorn "+" eller metoden "concat". Här är ett enkelt exempel:
-
-```Ruby
-first_name = "Lisa"
-last_name = "Svensson"
-
-puts first_name + " " + last_name
-```
-
-Output: Lisa Svensson
-
-För att undvika att behöva skriva "+" flera gånger, kan du använda metoden "concat" istället:
+För att sammanslå strängar i Ruby använder man operatorn `+` eller metoden `concat`. Nedan följer några exempel på hur man kan använda dessa i sin kod:
 
 ```Ruby
-first_name = "Lisa"
-last_name = "Svensson"
+str1 = "Hej"
+str2 = "världen!"
 
-puts first_name.concat(" ", last_name)
+puts str1 + str2
+# Output: Hej världen!
+
+puts str1.concat(str2)
+# Output: Hej världen!
 ```
 
-Output: Lisa Svensson
+Som du ser blir resultatet samma oavsett om vi använder `+` eller `concat`. Det är en smaksak vilken man väljer, men det är bra att vara medveten om att `+` kan användas för att även kombinera andra datatyper som siffror och boolean-värden, medan `concat` endast fungerar på strängar.
 
-Det finns även andra sätt att sammanfoga strängar, som att använda "<<" eller interpolering med "#{}". Läs mer om dessa metoder och deras syntax i dokumentationen för Ruby.
+Om du vill använda sammanslagna strängar som värden för variabler kan du göra på följande sätt:
+
+```Ruby
+str1 = "Det är "
+str2 = "viktigt att vara "
+str3 = "inkluderande."
+
+ny_sträng = str1 + str2 + str3
+
+puts ny_sträng
+# Output: Det är viktigt att vara inkluderande.
+```
+
+Som du ser går det också att kombinera flera strängar i en enda rad genom att använda `+` flera gånger.
 
 ## Deep Dive
 
-När vi sammanfogar strängar i Ruby skapar vi egentligen en ny sträng istället för att ändra på de befintliga strängarna. Detta beror på att strängar är oföränderliga, vilket betyder att de inte kan ändras efter att de har skapats. Därför är det viktigt att förstå skillnaden mellan att ändra en sträng och att skapa en ny.
+När man sammanslår strängar måste man vara uppmärksam på vilket tecken man använder mellan dem, eftersom det kan påverka resultatet. En vanlig fallgrop är att glömma mellanslag mellan orden. Om du till exempel sammanslår strängarna `"Hej"` och `"världen!"` utan mellanslag kommer resultatet att bli `"Hejvärlden!"`, vilket kanske inte var det du var ute efter.
 
-En annan viktig sak att komma ihåg när det gäller sammanfogning av strängar är att många operationer i Ruby returnerar en ny sträng istället för att ändra på den befintliga. Detta gäller särskilt om du använder metoden "split" för att dela en sträng i flera delar.
+Även specialtecken som `\n` (radbrytning) och `\t` (tabb) kan sättas in mellan strängar för att formatera texten på ett önskat sätt.
 
-## Se också
+## Se även
 
-* Dokumentation för Ruby - https://www.ruby-lang.org/sv/documentation/
-* En guide till sammanfogning av strängar i Ruby - https://www.rubyguides.com/2017/01/ruby-string-concatenation/
-* Mer om oföränderliga objekt i Ruby - https://medium.com/rubyinside/the-surprising-and-quite-deliberate-things-you-should-know-about-ruby-swap-cd4682f7dede
+Här är några ytterligare resurser som kan vara användbara för att lära sig mer om att sammanslå strängar i Ruby:
+
+- [Official Ruby Documentation](https://ruby-lang.org/en/documentation/)
+- [Ruby Guides - Strings](https://www.rubyguides.com/2015/06/ruby-strings/)
+- [Ruby String Concatenation](https://www.geeksforgeeks.org/ruby-string-concatenation/)

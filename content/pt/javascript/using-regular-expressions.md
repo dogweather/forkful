@@ -1,66 +1,51 @@
 ---
-title:                "Javascript: Utilizando expressões regulares"
+title:                "Javascript: Usando expressões regulares"
+simple_title:         "Usando expressões regulares"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar Expressões Regulares no Javascript?
+# Por que usar expressões regulares em Javascript?
 
-Expressões Regulares (também conhecidas como RegEx) são ferramentas poderosas que permitem encontrar padrões em texto. No Javascript, elas são muito úteis para validar dados de formulários, filtrar ou substituir strings e até mesmo para criar expressões de busca complexas. Se você é um programador Javascript, aprender a usar Expressões Regulares pode facilitar muito a sua vida.
+Se você é um desenvolvedor Javascript, provavelmente já ouviu falar sobre expressões regulares, também conhecidas como "regex". Elas são uma ferramenta poderosa para lidar com strings e padrões em seu código. Neste post, vamos explorar por que as expressões regulares são úteis e como usá-las em seus projetos.
 
-## Como utilizar Expressões Regulares no Javascript
+## Como usar expressões regulares em Javascript
 
-Para utilizar Expressões Regulares no Javascript, é necessário criar um objeto RegExp ou utilizar o método nativo `match()`, `search()`, `replace()` ou `split()`. Vamos ver alguns exemplos de como utilizar cada um desses métodos:
+As expressões regulares são representadas por um objeto RegExp em Javascript. Você pode criar este objeto usando o construtor `new RegExp()` ou simplesmente colocando seu padrão entre barras (`/pattern/`). Aqui está um exemplo de como podemos encontrar o número de ocorrências de uma determinada palavra em uma string usando uma expressão regular:
 
 ```Javascript
-// Criando um objeto RegExp
-let regex = new RegExp("palavra");
-let texto = "Essa string contém a palavra exemplo";
+// Criando uma expressão regular para buscar a palavra "Javascript"
+const regex = /Javascript/g;
 
-regex.test(texto);
-// Output: true
+// String de exemplo
+const string = "Preciso aprender Javascript para aprimorar minhas habilidades de programação."
 
-// Utilizando o método match()
-let texto2 = "Existem muitas palavras repetidas nesse texto";
+// Usando o método .match() para encontrar todas as ocorrências da palavra
+const matches = string.match(regex);
 
-texto2.match(/palavras/g);
-// Output: ["palavras", "palavras"]
-
-// Utilizando o método search()
-let texto3 = "javascript é uma linguagem de programação";
-
-texto3.search(/java/i);
-// Output: 0 (índice da primeira ocorrência)
-
-// Utilizando o método replace()
-let texto4 = "Hoje é dia de aprender regex";
-
-console.log(texto4.replace(/regex/g, "Expressões Regulares"));
-// Output: Hoje é dia de aprender Expressões Regulares
-
-// Utilizando o método split()
-let texto5 = "Que tal separar essa string em palavras?";
-
-texto5.split(/ /g);
-// Output: ["Que", "tal", "separar", "essa", "string", "em", "palavras?"]
+// Output: ["Javascript"]
+console.log(matches);
 ```
 
-## Mergulho profundo: dicas e truques para Expressões Regulares
+Existem vários métodos úteis que podemos usar com expressões regulares, como o `.test()` para verificar se um padrão existe em uma string e o `.replace()` para substituir partes de uma string. Além disso, podemos usar caracteres especiais, como `^` para encontrar um padrão no início de uma string e `$` para encontrar um padrão no final.
 
-Aqui estão algumas dicas para aprofundar ainda mais o seu conhecimento em Expressões Regulares no Javascript:
+## Mergulhando nas expressões regulares
 
-- Utilize a flag `g` para realizar uma busca global (encontrar todas as ocorrências) ou `i` para ignorar maiúsculas e minúsculas.
-- Utilize os operadores `|` (OU), `[]` (intervalos de caracteres) e `()` (grupos) para deixar suas expressões mais complexas.
-- Utilize os quantificadores `*` (zero ou mais repetições), `+` (uma ou mais repetições) e `?` (zero ou uma repetição) para buscar padrões repetidos.
-- Utilize os metacaracteres `\w` (qualquer caractere alfanumérico), `\d` (qualquer dígito), `\s` (qualquer espaço em branco) e `\b` (fronteira entre palavras) para criar expressões mais precisas.
-- Utilize as funções de callback para realizar tarefas mais complexas, como substituir o conteúdo encontrado usando uma função personalizada.
+As expressões regulares podem ser um pouco complexas no início, mas é uma habilidade valiosa para qualquer desenvolvedor. Alguns dos conceitos importantes a serem compreendidos incluem:
 
-Para saber mais sobre Expressões Regulares no Javascript, confira a documentação oficial da Mozilla: [Javascript Regular Expressions](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp).
+- Metacaracteres: são caracteres especiais que têm significados específicos em expressões regulares, como `.` para representar qualquer caractere e `+` para representar a ocorrência de um ou mais caracteres.
+- Grupos de captura: são usados para extrair partes específicas de uma string que correspondem a um padrão. Podemos definir grupos de captura usando parênteses `()`.
+- Modificadores: são utilizados para alterar o comportamento de uma expressão regular, como `g` para fazer uma correspondência global em toda a string e `i` para ignorar diferenças entre letras maiúsculas e minúsculas.
+
+Para se aprofundar mais nesse assunto, recomendo ler a documentação oficial do Javascript sobre expressões regulares e praticar com diferentes exemplos.
 
 ## Veja também
 
-- [Regex101](https://regex101.com/) - ferramenta online para testar e aprender sobre Expressões Regulares.
-- [Mastering Regular Expressions](https://www.amazon.com.br/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124) - livro que aprofunda o conhecimento sobre RegEx em diversas linguagens de programação.
+- ["Como dominar expressões regulares em Javascript" por Flavio Copes](https://flaviocopes.com/javascript-regular-expressions/)
+- ["Expressões regulares em 30 minutos" por TylerMcGinnis](https://twitter.com/tylermcginnis/status/826840380940697344)
+
+Espero que este post tenha ajudado você a entender melhor as expressões regulares e a usá-las em seu código Javascript. Com um pouco de prática, você estará dominando essa ferramenta poderosa em pouco tempo!

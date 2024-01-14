@@ -1,50 +1,37 @@
 ---
-title:                "Rust: Päätteen vastaavien merkkien poistaminen"
+title:                "Rust: Poistetaan kaavoja vastaavia merkkejä"
+simple_title:         "Poistetaan kaavoja vastaavia merkkejä"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
+Tervetuloa kaikille lukijoille! Tässä blogipostauksessa me käsittelemme Rust ohjelmointikieltä ja tärkeää taitoa - merkkien poistamista tietystä kaavasta. Tämä taito on ensiarvoisen tärkeää osata, jotta voit käsitellä dataa tehokkaasti ja optimoida koodiasi.
+
 ## Miksi
+On tärkeää osata poistaa merkkejä tietystä kaavasta ohjelmoinnissa, sillä se voi auttaa sinua muokkaamaan ja jalostamaan dataa nopeammin ja tarkemmin. Tämä taito on erityisen hyödyllinen, kun käsittelet suuria määriä dataa tai haluat muokata tiedostoja tiettyjen vaatimusten mukaisesti.
 
-Oletko joskus törmännyt tilanteeseen, jossa haluat poistaa tietystä kaavasta tai kuvitteellisesta merkkijonosta vastaavia merkkejä? Kenties haluat siistiä merkkijonon tulostusta tai suorittaa tekstitiedostojen käsittelyä. Tässä blogikirjoituksessa tarkastelemme miten voit ratkaista tämän ongelman käyttämällä Rust-ohjelmointikieltä.
-
-## Miten tehdä
-
-Ensimmäiseksi, tarvitsemme jonkin verran taustatietoa String-tyypistä sekä patternilla-ohjelmalogiikasta. Pattern-metodi mahdollistaa merkkijonon tiettyjen merkkien korvaamisen toisilla. Tämä tarkoittaa usein merkkien poistoa, jos korvaavassa merkkijonossa ei ole mitään.
-
-Aloitetaan luomalla String-tyyppinen muuttuja ja määrittämällä pattern, joka määrittelee poistettavien merkkien kaavan.
+## Kuinka tehdä
+Alla on esimerkki koodista, joka osoittaa kuinka voit poistaa merkkejä tietyistä kohdista tekstissä. Tämä koodi käyttää Rustin `replace` funktiota, joka korvaa tietyt merkit toisilla merkeillä.
 
 ```Rust
-let string = String::from("Tervetuloa blogiartikkeliin!");
-let pattern = "aeiou";
+let teksti = "Tämä on esimerkki";
+let uusi_teksti = teksti.replace(" ", ""); //Poistaa välilyönnit
+println!("{}", uusi_teksti); //Tulostaa "Tämäonesimerkki"
 ```
+Kuten näet, `replace` funktioon voi antaa minkä tahansa kaavan, jonka haluat poistaa tekstin sisältä. Voit myös käyttää `RegEx` -kaavoja monimutkaisempiin merkkien poistamisiin.
 
-Seuraavaksi voimme käyttää `replace`-metodia, joka korvaa merkkijonossa `string` löydetyt merkit `pattern`-muuttujalla. Tässä tapauksessa `pattern`-muuttuja määrittää poistettavat merkit, joten korvaavaksi merkkijonoksi jätämme tyhjän merkkijonon.
-
-```Rust
-let new_string = string.replace(pattern, "");
-println!("{}", new_string);
-```
-
-Tuloste olisi seuraavanlainen:
-
-```plaintext
-Trvttl blgrttljn!
-```
-
-## Syvemmälle aiheeseen
-
-Kun ymmärrät miten `replace`-metodi toimii, voit alkaa tutkimaan muita vaihtoehtoja. Esimerkiksi, jos haluat korvata merkkejä tilalle, voit antaa sille toisen merkkijonon `replace`-metodin toisena parametrina. Voit myös käyttää `regex`-kirjastoa, joka mahdollistaa monimutkaisempien kaavojen käytön.
-
-Rustin standardikirjasto tarjoaa myös muita hyödyllisiä metodeja merkkijonojen käsittelyyn, kuten `trim` ja `slice`.
+## Syvällinen tarkastelu
+Tarkastellaan nyt hieman syvemmin, miten Rust käsittelee merkkien poistamista. Rustissa merkkijonot ovat muuttumattomia eli `immutable`, mikä tarkoittaa, että ne eivät voi muuttua koodin aikana. Siksi merkkien poistaminen tarkoittaa myös uuden merkkijonon luomista, joka ei sisällä poistettavia merkkejä. Tämä tekee Rust-kielen tehokkaammaksi ja turvallisemmaksi, sillä se estää useita yleisiä ohjelmointivirheitä.
 
 ## Katso myös
+Suosittelemme tutustumaan Rustin viralliseen dokumentaatioon, joka tarjoaa lisätietoa merkkijonojen käsittelystä ja muista hyödyllisistä koodinpätkistä.
 
-- [String - Rustin dokumentaatio](https://doc.rust-lang.org/std/string/struct.String.html)
-- [regex - Github](https://github.com/rust-lang/regex)
-- [Rust Standardikirjasto](https://doc.rust-lang.org/std/)
+- [Rustin virallinen dokumentaatio](https://doc.rust-lang.org/)
+- [Koodin esimerkki merkkien poistamisesta Rustissa](https://github.com/rust-lang/rust-by-example/blob/master/str/basics.md)
+- [RegEx tutorial](https://www.regular-expressions.info/tutorial.html)
 
-Toivottavasti tämä blogikirjoitus auttoi sinua ymmärtämään miten voit poistaa merkkejä vastaavalla kaavalla Rustilla. Onnea ohjelmoinnissa!
+Kiitos lukemisesta ja toivottavasti tämä postaus auttoi sinua oppimaan uutta Rustista! Nähdään seuraavassa blogipostauksessa.

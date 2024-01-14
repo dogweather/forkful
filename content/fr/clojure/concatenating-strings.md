@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Concaténation de chaînes"
+title:                "Clojure: Concaténer des chaînes"
+simple_title:         "Concaténer des chaînes"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/concatenating-strings.md"
 ---
 
@@ -9,53 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Concaténer des chaînes de caractères est une tâche courante en programmation, en particulier lorsque l'on travaille avec des données textuelles. Cela permet de combiner plusieurs chaînes en une seule, ce qui peut être utile dans de nombreuses situations différentes.
+La concaténation de chaînes est un aspect important de la programmation Clojure car elle permet de combiner plusieurs chaînes en une seule. Cela peut être utile pour créer des messages d'erreur, des noms de fichiers dynamiques ou même construire des requêtes de base de données.
 
 ## Comment faire
 
-Pour concaténer des chaînes en Clojure, il suffit d'utiliser la fonction `str`. Voici un exemple de code :
+La concaténation de chaînes peut être réalisée en utilisant l'opérateur `str` ou la fonction `str`. Voici un exemple de code avec leur utilisation :
 
 ```Clojure
-(def prenom "Jean")
-(def nom "Dupont")
-(def nom-complet (str prenom " " nom))
-(println nom-complet)
+(str "Bonjour " "mon ami" "!") ;; Output: Bonjour mon ami!
+(str "1 + 1 = " (+ 1 1)) ;; Output: 1 + 1 = 2
 ```
-Output: "Jean Dupont"
 
-On peut également concaténer plus de deux chaînes en utilisant la même fonction :
+Dans cet exemple, nous combinons deux chaînes statiques avec une expression dynamique en utilisant `str`. Remarquez comment la valeur de l'expression est convertie en chaîne avant d'être concaténée.
+
+Nous pouvons également utiliser `str` avec des variables pour concaténer des valeurs stockées :
 
 ```Clojure
-(def ville "Paris")
-(def code-postal "75001")
-(def adresse (str "Adresse : " ville " " code-postal))
-(println adresse)
+(def nom "Marie")
+(def age 25)
+(str nom " a " age " ans.") ;; Output: Marie a 25 ans.
 ```
-Output: "Adresse : Paris 75001"
 
-Il est également possible d'utiliser l'opérateur `str` pour concaténer des chaînes au sein d'une fonction `println` :
+Si nous voulons concaténer plus de deux valeurs, nous pouvons utiliser la fonction `str` avec une liste de paramètres :
 
 ```Clojure
-(def age 30)
-(println "J'ai " (str age) " ans.")
+(str "La " "nuit " "dernière " "j'ai " "rêvé " "d'un " "serpent.")
 ```
-Output: "J'ai 30 ans."
 
-## Plongée en profondeur
+## Plongeon Profond
 
-En Clojure, les chaînes de caractères sont immuables, ce qui signifie qu'elles ne peuvent pas être modifiées une fois créées. Lorsque l'on concatène des chaînes, une nouvelle chaîne est créée chaque fois, ce qui peut provoquer des problèmes de performances si l'on concatène un grand nombre de chaînes.
+En utilisant l'opérateur `str`, la concaténation de chaînes est réalisée en utilisant une méthode Java sous-jacente appelée `StringBuilder`. Cela signifie que `str` est optimisé pour les performances, en comparaison avec la fonction `str` qui utilise la méthode `StringBuilder` à chaque appel.
 
-Pour résoudre ce problème, Clojure propose la fonction `str-join` qui permet de concaténer plusieurs chaînes en une seule opération. Voici un exemple :
+Il est également important de noter que la concaténation de chaînes peut avoir un impact sur le temps d'exécution si elle est utilisée fréquemment avec de grandes chaînes. Il est préférable d'utiliser la fonction `str` avec une liste de paramètres dans ce cas.
 
-```Clojure
-(def numeros [1 2 3 4 5])
-(println (str-join ", " (map str numeros)))
-```
-Output: "1, 2, 3, 4, 5"
-
-Cela fonctionne en créant une séquence de chaînes et en les concaténant toutes en une seule fois, ce qui est beaucoup plus efficace en termes de performances.
+Enfin, en utilisant `str` ou la fonction `str` avec des expressions complexes ou une longue chaîne de concaténation peut être difficile à lire et à déboguer. Dans ces cas, il est recommandé d'utiliser la fonction `format` qui utilise la syntaxe de chaîne de format de Java.
 
 ## Voir aussi
 
-- Documentation officielle Clojure sur la fonction `str` : https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/str
-- Documentation officielle Clojure sur la fonction `str-join` : https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/str-join
+- [Documentation officielle de Clojure sur la concaténation de chaînes](https://clojure.org/guides/faq#concatenation)
+- [Tutoriel vidéo pour les débutants sur la concaténation de chaînes en Clojure](https://www.youtube.com/watch?v=RlYfFVK2_zA)
+- [Un guide de bonnes pratiques pour la concaténation de chaînes en Java](https://www.baeldung.com/java-string-concatenation-performance)

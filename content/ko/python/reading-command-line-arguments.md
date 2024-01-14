@@ -1,48 +1,58 @@
 ---
-title:                "Python: 컴퓨터 프로그래밍에서 명령 줄 인수 읽기"
+title:                "Python: 컴퓨터 프로그래밍에서의 명령줄 인수 읽기"
+simple_title:         "컴퓨터 프로그래밍에서의 명령줄 인수 읽기"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-명령 줄 인수를 읽는 방법을 배우는 것은 파이썬 프로그래밍에 있어 중요합니다. 명령 줄 인수를 사용하면 사용자가 프로그램을 실행할 때 프로그램에 추가적인 정보를 전달할 수 있습니다.
+우리는 대다수의 프로그램이 사용자로부터 입력을 받는 것을 본 적이 있습니다. 나중에 실행할 수도 있지만, 매번 다른 입력을 프로그램에 전달하는 것은 매우 번거로운 일입니다. 이때 명령 줄 인수를 사용하면 매번 입력을 다시 하지 않아도 되며, 프로그램을 더 효율적으로 사용할 수 있게 됩니다. 그렇기 때문에 명령 줄 인수를 배우는 것은 프로그래밍을 개발하는 데 매우 유용한 기술입니다.
 
-## 사용 방법
+## 어떻게
 
-먼저, `sys` 모듈을 임포트하고 `argv` 속성을 사용하여 명령 줄 인수를 읽습니다. 매개변수 `argv`는 문자열의 리스트로 이루어져 있으며, 각 문자열은 사용자가 프로그램 실행 시에 추가한 인수입니다.
+Python에서 명령 줄 인수를 읽는 것은 매우 간단합니다. 다음과 같은 코드를 사용하면 됩니다.
 
 ```Python
 import sys
 
-# 첫 번째 인수는 항상 파일 이름이므로 무시합니다.
-arguments = sys.argv[1:]
+# 명령 줄 인수를 모두 가져오기
+args = sys.argv
 
-# 문자열로 이루어진 리스트로 출력됩니다.
-print(arguments)
+# 첫 번째 인수인 프로그램 이름 출력
+print("프로그램 이름:", args[0])
+
+# 두 번째 인수 이후는 모두 사용자가 입력한 값으로 출력
+print("사용자 입력:", " ".join(args[1:]))
 ```
 
-만약 사용자가 다음과 같은 명령을 실행할 경우:
+위 코드를 sample.py로 저장하고, 다음 명령어를 실행해보세요.
 
-```bash
-python my_program.py arg1 arg2 arg3
+```
+python sample.py Hello World!
 ```
 
-`['arg1', 'arg2', 'arg3']`가 출력됩니다.
+다음과 같은 결과를 볼 수 있습니다.
 
-출력된 인수를 다양한 방법으로 활용할 수 있습니다. 예를 들어, `argparse` 모듈을 사용하여 지정한 이름의 플래그를 사용하고 그에 대한 값을 저장할 수 있습니다. 또는 각 인수에 대해 `if`문을 사용하여 원하는 작업을 수행할 수도 있습니다.
+```
+프로그램 이름: sample.py
+사용자 입력: Hello World!
+```
 
-## 깊게 들어가기
+이를 통해 sys.argv를 사용하여 명령 줄 인수를 읽어오고, 이를 활용하여 프로그램에 필요한 작업을 수행할 수 있음을 알 수 있습니다.
 
-명령 줄 인수를 읽는 방법은 매우 유용하지만, 주의할 점도 있습니다. 첫 번째로, 사용자가 정확한 인자의 개수를 제공하지 않을 수 있기 때문에 예외 처리를 꼭 해주어야 합니다. 또한 인수들 사이의 공백, 따옴표 등이 서로 다른 운영체제에서 다르게 처리될 수 있기 때문에 이에 대한 처리도 필요합니다.
+## 더 깊이 들어가기
 
-명령 줄 인수를 사용하여 보다 유연하고 다양한 입력을 받을 수 있는 프로그램을 작성할 수 있으며, 파이썬의 강력한 기능 중 하나로 꼭 익혀두어야 합니다.
+명령 줄에서 인수를 읽는 것은 매우 유용하지만, 때로는 인수가 부족하거나 잘못된 형식인 경우 예외를 처리해야 할 수도 있습니다. 이때 sys.argv의 길이를 확인하거나 인수가 올바른 형식인지 확인하여 예외 처리를 수행할 수 있습니다.
 
-## 참고자료
+또한, 인수를 더욱 복잡하게 처리하고 싶은 경우 argparse 모듈을 사용할 수도 있습니다. 이 모듈을 사용하면 명령 줄 인수를 손쉽게 분석하고 처리할 수 있습니다.
 
-- [Python docs - sys module](https://docs.python.org/3/library/sys.html)
-- [RealPython - Command-line arguments in Python](https://realpython.com/python-command-line-arguments/)
-- [GeeksforGeeks - Handling command line arguments in Python](https://www.geeksforgeeks.org/handling-command-line-arguments-in-python/)
+# See Also
+
+- [Python 공식 문서 - sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
+- [Python 공식 문서 - argparse](https://docs.python.org/3/library/argparse.html)
+- [Real Python 블로그 - 명령 줄 인수 처리하기](https://realpython.com/command-line-interfaces-python-argparse/)

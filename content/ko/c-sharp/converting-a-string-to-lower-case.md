@@ -1,40 +1,39 @@
 ---
 title:                "C#: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
- 왜 한국어로 된 블로그 포스트를 읽고 있는 당신이 문자열을 소문자로 변환하는 데 관심이 있을까요? 문자열을 소문자로 변환하는 것은 프로그래밍에서 자주 쓰이는 기능 중 하나입니다. 예를 들면, 사용자가 입력한 정보를 데이터베이스와 비교할 때 대소문자를 구분하지 않기 위해 문자열을 소문자로 변환하는 것이 필요할 수 있습니다. 자세한 내용은 아래에서 확인해보세요.
+문자열을 소문자로 변환하는 것에 참여하는 이유는 다양합니다. 예를 들어, 검색 엔진에서 대소문자를 구분하지 않는 경우, 소문자로 변환하여 일관된 결과를 얻기 위해 사용할 수 있습니다.
 
-## 방법
+## 하는 방법
+문자열의 소문자 변환은 C#의 ToLower() 메소드를 사용하여 쉽게 할 수 있습니다. 아래는 ToLower() 메소드를 사용한 예제 코드와 그 결과입니다.
 ```C#
-var inputString = "Hello World!";
-var lowerCaseString = inputString.ToLower();
-Console.WriteLine(lowerCaseString);
-```
-위의 예제는 입력된 문자열을 소문자로 변환하는 가장 간단한 방법입니다. 입력된 문자열을 `ToLower()` 메소드를 사용하여 소문자로 변환한 후, 변환된 문자열을 출력하는 예제입니다. 결과로는 "hello world!"가 출력됩니다.
-
-때로는 문자열 안에 있는 특정 부분만 소문자로 변환하고 싶을 수도 있습니다. 이때는 `Substring()` 메소드를 이용하면 됩니다.
-
-```C#
-var inputString = "Hello World!";
-var titleCaseString = inputString.Substring(0,1).ToUpper() + inputString.Substring(1).ToLower();
-Console.WriteLine(titleCaseString);
+string str = "TESTING";
+Console.WriteLine(str.ToLower());
+// Output: testing
 ```
 
-위의 예제는 입력된 문자열의 첫 글자는 대문자로, 나머지는 소문자로 변환하는 예제입니다. 출력 결과는 "Hello world!"가 됩니다.
+문자열의 모든 문자를 소문자로 변환하는 것이 아니라, 특정 문자열만 소문자로 변환하고 싶은 경우에는 ToLower() 메소드 대신에 String.ToLowerInvariant() 메소드를 사용할 수도 있습니다.
 
-## 깊숙한 곳을 파헤치기
+```C#
+string str = "Testing";
+string str2 = "tESTING";
+Console.WriteLine(str.ToLowerInvariant());
+Console.WriteLine(str2.ToLowerInvariant());
+// Output: testing
+// testing
+```
+## 더 깊게 들어가기
+문자열의 소문자 변환의 경우, .NET Framework의 문자 변환 규칙을 따라 소문자로 변환됩니다. 하지만 이는 특수한 사례가 있을 수 있습니다. 예를 들어, 터키어에서 대소문자 변환 시 변경되는 문자열이 있습니다.
 
-문자열을 소문자로 변환하는 방법은 문자열을 처리하는 데 필수적인 기능이기 때문에 많이 사용됩니다. C#에서는 `ToLower()` 메소드를 이용하여 소문자로 변환할 수 있지만, 다른 프로그래밍 언어를 사용하는 경우에는 다른 방법을 사용해야할 수도 있습니다.
-
-또한, 문자열을 소문자로 변환하는 과정에서 발생하는 성능 차이에 대해서도 깊게 알아보는 것이 중요합니다. 문자열이 많이 사용되는 프로그램에서는 성능 차이가 큰 요소가 될 수 있기 때문입니다. 이러한 성능 차이를 최소화하기 위해서는 어떤 방법이 있는지도 알아보세요.
-
-## 관련자료
-
-- 메소드 정보: https://docs.microsoft.com/ko-kr/dotnet/api/system.string.tolower?view=net-5.0
-- 성능 비교: https://www.dotnetperls.com/tolower-optimization
+## 더 알아보기
+- 문자열 변환에 대한 공식 문서: https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=netframework-4.8
+- 터키어에서 대소문자 변환이 다른 언어와 다른 이유에 대한 설명: https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-do-turkish-culture-information-classes-interpret-strings
+- 다양한 문자열 변환 방법: https://www.c-sharpcorner.com/blogs/string-case-conversion-to-uppercase-lowercase-and-title-case1

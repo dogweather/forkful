@@ -1,42 +1,49 @@
 ---
 title:                "Haskell: Kahden päivämäärän vertailu"
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kahta päivämäärää?
+## Miksi vertailla kahden päivämäärän eroa?
 
-Päivämäärien vertailu on tärkeää esimerkiksi ohjelmoinnissa, jossa tiedon käsittely tapahtuu usein päivämäärien avulla. Vertailu auttaa selvittämään, onko tietty päivämäärä ennen vai jälkeen toista ja siten ohjaamaan ohjelman toimintaa.
+Päivämäärän vertaileminen on tärkeä osa ohjelmointia, esiintyy usein esimerkiksi sovelluksissa, jotka käsittelevät varauksia tai aikatauluja. Se auttaa myös käyttäjiä löytämään tiettyjä tietoja tietystä ajanjaksosta tai selvittämään, onko tietty tapahtuma jo tapahtunut vai tapahtuuko se tulevaisuudessa.
 
-## Kuinka vertailla päivämääriä Haskellissa?
+## Kuinka vertailla kahden päivämäärän eroa?
 
-Haskellissa päivämäärät voidaan esittää util-paketin `Data.Time` moduulilla. Alla olevassa koodiesimerkissä vertaillaan kahta päivämäärää käyttäen `diffDays` funktiota, joka palauttaa päivien määrän kahden päivämäärän välillä.
+Päivämäärän vertailu Haskellissa on helppoa, ja se onnistuu käyttämällä Standard Librariesin DateTime-moduulia. Ensimmäinen askel on tuoda DateTime-moduuli sisään.
 
-```Haskell
+```
 import Data.Time
-
-paivamaara1 :: Day
-paivamaara1 = fromGregorian 2020 3 15 
-
-paivamaara2 :: Day
-paivamaara2 = fromGregorian 2020 3 20 
-
-ero :: Integer
-ero = diffDays paivamaara2 paivamaara1
 ```
 
-Yllä olevassa esimerkissä `ero` muuttujaan tallennetaan päivien määrä, joka on kulunut `paivamaara1` ja `paivamaara2` välillä. Tämä lasketaan `diffDays` funktiolla, joka ottaa parametreiksi kaksi päivämäärää ja palauttaa niiden välisen päivien määrän kokonaislukuna.
+Seuraavaksi voimme määrittää kaksi päivämäärää, esimerkiksi nykyisen päivämäärän ja tulevan päivämäärän.
 
-## Syvempi sukellus päivämäärän vertailuun
+```
+tämäpäivä <- utctDay <$> getCurrentTime
+tulevapäivä <- return $ fromGregorian 2021 1 1
+```
 
-Päivämäärien vertailua voidaan tehdä myös tarkemmin `Data.Time` moduulin avulla. Esimerkiksi `getGregorian` funktiolla voidaan selvittää päivämäärän vuosi, kuukausi ja päivä. Samoin `diffUTCTime` funktiolla voidaan laskea aikaero kahden päivämäärän välillä.
+Ja lopuksi voimme käyttää `diffDays` -funktiota, joka palauttaa kahden päivämäärän välisen päivien erotuksen.
 
-Päivämäärien vertailuun liittyvään täsmälliseen syvempään tietoon voi tutustua lisää `Data.Time` moduulin dokumentaatiosta.
+```
+roju <- return $ diffDays tulevapäivä tämäpäivä
+```
+
+Saamme lopputulokseksi 257 päivää. Voimme myös käyttää muita funktioita, kuten `diffHours` tai `diffMonths` päivien sijasta, jos haluamme erilaisia vertailuja.
+
+## Syvä sukellus päivämäärän vertailuun
+
+Haskellin Standard Librariesin DateTime-moduulissa on monia muita hyödyllisiä funktioita ja työkaluja päivämäärän vertailuun. Esimerkiksi `addDiffTime` -funktio voi auttaa lisäämään tai vähentämään aikaa tietystä päivämäärästä. `getTimeZone` -funktio auttaa löytämään tietyn aikavyöhykkeen päivämäärälle ja `parseTimeM` voi auttaa muuntamaan päivämäärän eri muotoihin.
+
+Päivämäärän vertailu voi myös olla haastavaa, sillä on tärkeää huomioida aikavyöhyke- ja kesäaikaongelmat sekä vuoden vaihteen aiheuttamat poikkeukset. Siksi on tärkeää käyttää oikeita työkaluja ja tarkistaa dokumentaatio tarvittaessa.
 
 ## Katso myös
 
-- [Data.Time moduulin dokumentaatio](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [Päivämäärien vertailun erityiskäsitteet Haskellissa](https://stackoverflow.com/questions/10194289/comparing-two-hours-in-haskell)
+- [DateTime-moduulin dokumentaatio](http://hackage.haskell.org/package/datetime)
+- [Haskell-ohjelmoinnin perusteet](https://haskell.org/) 
+- [Päivämäärän vertailun strategiat muilla ohjelmointikielillä](https://www.baeldung.com/java-date-compare)

@@ -1,49 +1,52 @@
 ---
 title:                "Kotlin recipe: Deleting characters matching a pattern"
+simple_title:         "Deleting characters matching a pattern"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why 
 
-When working on a project, it is not uncommon to come across situations where characters need to be deleted from a string based on a specific pattern. This could be for data cleansing, formatting, or other purposes. Knowing how to efficiently delete characters matching a pattern could save time and effort in such scenarios.
+Have you ever found yourself needing to remove certain characters from a string? Maybe you have a string with extra spaces or punctuation that you want to get rid of. In Kotlin, there is a convenient way to delete characters that match a specific pattern, saving you time and effort. In this blog post, we will explore how to do this and take a deep dive into the process. 
 
-## How To
+## How To 
 
-To delete characters matching a pattern in Kotlin, we can use the built-in `replace()` function. This function takes two parameters - the pattern to match and the replacement string. Within the function, we can use regular expressions to match the desired pattern.
+To delete characters matching a pattern in Kotlin, we can use the `replace` method on a string. This method takes in two parameters: the pattern to match and the replacement string. Let's take a look at an example:
+ 
+```
+Kotlin val str = "Hello! How are you?!"
 
-Let's consider a simple example where we have a string containing a mix of alphabets and numbers and we want to delete all numbers from the string. Here's how we can achieve this in Kotlin:
+val newStr = str.replace(Regex("[!?.]"), "")
 
-```Kotlin
-val input = "abc123def456ghi"
- val result = input.replace("[0-9]".toRegex(), "")
- println(result) // output: abcdefghi
+println(newStr)
 ```
 
-In the above code, we first declare our input string containing both letters and numbers. Then, using the `replace()` function with a regular expression pattern of `[0-9]` (matching all numbers), we replace those numbers with an empty space, effectively deleting them from the string. The result is then printed, displaying the updated string with no numbers.
+The output of this code would be: "Hello How are you". We used the `replace` method to remove all instances of the characters exclamation mark, question mark, and period. We specified these characters as a pattern using the `Regex` class and provided the replacement string as an empty string. This essentially removes any matches of our pattern from the original string. 
 
-Apart from deleting specific characters, we can also use the `replace()` function to replace them with a specific string. For example, if we want to replace all vowels with a `*` symbol, we can use the following code:
+Another way to delete matching characters is by using the `filter` method. This method takes in a predicate function that returns true or false depending on whether the character should be included in the final string or not. Let's see an example:
+ 
+```
+Kotlin val str = "Kotlin is super fun!"
 
-```Kotlin
-val input = "Hello World"
-val result = input.replace("[aeiou]".toRegex(),"*")
-println(result) // output: H*ll* W*rld
+val newStr = str.filter { it.isLetter() }
+
+println(newStr)
 ```
 
-Here, we specify a pattern of `[aeiou]` (matching all vowels) and replace them with the `*` symbol.
+The output of this code would be: "Kotlinissuperfun". We used the `filter` method with the `isLetter()` function to only include letters in the final string, effectively removing all other characters. 
 
-## Deep Dive
+Keep in mind that both the `replace` and `filter` methods return a new string with the changes, instead of modifying the original string. 
 
-The `replace()` function accepts two parameters - the first one is a regular expression pattern, and the second one is the replacement string. The pattern can be a simple string or a more complex regular expression. The replacement string can also contain special symbols or references to capture groups in the pattern.
+## Deep Dive 
 
-Additionally, the `replace()` function also has an optional third parameter - `ignoreCase`. By default, this parameter is set to `false`, but if set to `true`, it ignores the case when performing the replacement. This can be useful when dealing with strings where the case does not matter.
+Behind the scenes, Kotlin uses regular expressions to match patterns and perform the deletion. In our examples, we used the `Regex` class to specify our pattern. Regular expressions, also known as regex, are powerful tools for searching and manipulating strings based on patterns. They are supported in many programming languages, including Kotlin, and have their own syntax and rules. If you want to learn more about regular expressions, there are plenty of online resources and tutorials available. 
 
-## See Also
+## See Also 
 
-- [Kotlin String class documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Regular expressions in Kotlin](https://kotlinlang.org/docs/regular-expressions.html)
-
-Deleting characters matching a pattern is a handy skill to have when working with strings in Kotlin. Whether it is for data manipulation or formatting, the `replace()` function allows us to quickly and efficiently delete characters based on a specific pattern. So the next time you come across such a scenario, remember to use this function to make your task easier.
+- Official Kotlin documentation on strings and regular expressions: https://kotlinlang.org/docs/reference/strings.html 
+- FreeCodeCamp's tutorial on regular expressions in Kotlin: https://www.freecodecamp.org/news/kotlin-regular-expressions-a-comprehensive-guide/
+- Tutorialspoint's interactive lessons on regular expressions in Kotlin: https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm

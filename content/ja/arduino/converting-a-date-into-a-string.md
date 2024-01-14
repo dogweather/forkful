@@ -1,45 +1,59 @@
 ---
 title:                "Arduino: 日付を文字列に変換する"
+simple_title:         "日付を文字列に変換する"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-日付を文字列に変換する必要があるかもしれません。例えば、LCD画面に日付を表示したり、データをログに記録したりする際に、文字列形式で日付を扱う必要があります。Arduinoを使う場合、どのように日付を文字列に変換するかを学ぶことが重要です。
+
+日付を文字列に変換することの利点は多岐にわたります。日付を扱う際に、より柔軟に操作が可能になります。また、シリアルモニターなどで日付を読みやすい形式で表示することもできます。
 
 ## 方法
-まずは、日付を取得する方法を確認しましょう。Arduinoでは、`DateTime`ライブラリを使うことで、現在の日付や時間を取得することができます。次に、取得した日付を文字列に変換する方法を見ていきます。
 
-```
-Arduino ...
+日付を文字列に変換するには、まず`String()`関数を使う必要があります。この関数は、データ型を文字列に変換する際に使用されます。例として、現在の日付を変数に保存し、`String()`関数を使って文字列に変換する方法を示します。
 
-#include <DateTime.h>
-DateTime now = DateTime.now();
-
-// 日付を取得する
-int year = now.year();
-int month = now.month();
-int day = now.day();
+```Arduino
+// 現在の日付を保存する
+int day = 01;
+int month = 07;
+int year = 2021;
 
 // 日付を文字列に変換する
-String date = String(year) + "/" + String(month) + "/" + String(day);
+String date = String(day) + '/' + String(month) + '/' + String(year);
+
+// 日付をシリアルモニターに出力する
+Serial.println(date);
 
 ```
 
-この方法では、取得した日付を`String`型にキャストし、`+`演算子を使って文字列を結合しています。このようにすることで、日付を文字列として扱えるようになります。
+上記のコードを実行すると、シリアルモニターには"01/07/2021"という日付が表示されます。
 
-さらに、フォーマットを変更したい場合は、`DateTime`ライブラリに含まれる`toString()`関数を使うことで日付のフォーマットを指定することができます。例えば、`toString("YYYY-MM-DD")`とすると、年月日の順に表示されるようになります。
+## ディープダイブ
 
-## 深堀り
-日付を文字列に変換する方法はさまざまありますが、一般的な方法としては、`sprintf()`関数を使うことが挙げられます。この関数は、指定したフォーマットに従って文字列を生成することができます。例えば、`sprintf(output, "%04d/%02d/%02d", year, month, day)`とすると、`output`には`YYYY/MM/DD`形式で日付が生成されるようになります。
+日付を文字列に変換する際に、特に注意する必要があるのは日付のフォーマットです。上記の例では、ユーザーが指定した日付をそのまま文字列に変換していますが、一般的な日付フォーマットに沿った形式に変換する方法もあります。例えば、"2021年7月1日"のような形式で日付を表す場合は、`String()`関数ではなく`sprintf()`関数を使うと便利です。
 
-また、日付を日本語表記にしたい場合は、外部ライブラリの`TimeLib`を使うことで可能です。このライブラリでは、`Japanese_Holidays.h`を追加することで、日本の祝日を日本語で表示することができます。
+```Arduino
+int day = 01;
+int month = 07;
+int year = 2021;
 
-## 参考リンク
-- [DateTime Library by Makuna](https://github.com/Makuna/DateTime)
-- [sprintf() function](https://www.arduino.cc/reference/en/language/functions/communication/serial/sprintf/)
-- [Time Library by PaulStoffregen](https://github.com/PaulStoffregen/Time)
-- [Japanese Holidays Library](https://github.com/iwatake2222/Japanese_Holidays)
+// 日付を指定したフォーマットに変換する
+char date[11];
+sprintf(date, "%04d年%02d月%02d日", year, month, day);
+
+// 日付をシリアルモニターに出力する
+Serial.println(date);
+```
+
+上記のコードを実行すると、シリアルモニターには"2021年07月01日"という形式で日付が表示されます。フォーマット指定子（`%04d`や`%02d`）を使うことで、桁数や整数の0埋めなど、細かい設定ができます。
+
+## 参考資料
+
+- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [sprintf() function](https://www.cplusplus.com/reference/cstdio/sprintf/)
+- [Formatting Date and Time in Arduino](https://www.instructables.com/Formatting-Date-and-Time-in-Arduino/)

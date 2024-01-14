@@ -1,47 +1,47 @@
 ---
 title:                "Arduino: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere test per il tuo programma Arduino
+## Perché
+Scrivere test è un'abitudine importante per ogni programmatore che utilizza Arduino. Grazie ai test, è possibile verificare il corretto funzionamento del codice e prevenire possibili errori. Inoltre, i test possono aiutare a mantenere il codice organizzato e facilmente modificabile in futuro.
 
-Scrivere test per il tuo programma Arduino può sembrare un passo inutile o noioso, ma in realtà può essere estremamente utile nel lungo periodo. Se vuoi creare programmi di qualità e ridurre al minimo i bug, i test sono fondamentali per assicurarti che tutto funzioni correttamente.
+## Come fare
+Per iniziare a scrivere test in Arduino, è necessario seguire questi semplici passaggi:
 
-## Come scrivere test per il tuo programma Arduino
+1. Definire quali parti del codice devono essere testate. Potresti voler testare funzioni specifiche o la comunicazione con i componenti esterni.
 
-La prima cosa da fare è impostare un ambiente di sviluppo per Arduino che includa un framework di testing. Ci sono diversi framework disponibili, ma uno dei più popolari è il "ArduinoUnit", che semplifica la scrittura dei test e l'esecuzione dei risultati.
+2. Utilizzare una libreria di unit testing, come ```ArduinoUnit```, per semplificare il processo di scrittura dei test. Questa libreria offre diverse funzionalità utili, come la possibilità di eseguire test automaticamente ogni volta che si carica il codice su Arduino.
 
-Una volta che hai impostato l'ambiente di sviluppo con il framework di testing, puoi iniziare a scrivere i tuoi test. Per prima cosa, devi identificare le parti del tuo programma che desideri testare. In generale, è una buona pratica testare tutte le funzioni e le variabili del tuo programma.
-
-Di seguito è riportato un esempio di test per una funzione di somma di due numeri:
-
+3. Scrivere i test utilizzando la sintassi definita dalla libreria di unit testing scelta. Ad esempio, se si utilizza ```ArduinoUnit```, è possibile definire un test nel seguente modo:
 ```Arduino
-#include <ArduinoUnit.h>
-
-void sumTest() {
-  int a = 10;
-  int b = 5;
-  assertEqual(sum(a, b), 15); // verifica se la somma è corretta
-}
-
-test(sumTest);
-
-int sum(int num1, int num2) {
-  return num1 + num2;
+TEST(nome_test) {
+    // Asserzioni e azioni da testare
 }
 ```
 
-## Approfondimenti sulla scrittura dei test
+4. Eseguire i test e verificare che tutti i risultati siano conformi alle asserzioni. In caso contrario, è necessario esaminare il codice e individuare l'errore.
 
-Scrivere test per il tuo programma Arduino può richiedere un po' di tempo e sforzo aggiuntivo, ma i benefici a lungo termine ne valgono sicuramente la pena. I test ti aiutano a individuare eventuali bug prima che diventino un problema più grande e ti consentono di effettuare modifiche al tuo codice senza preoccupazioni. Inoltre, nei progetti più complessi, i test possono aiutare a mantenere una migliore organizzazione e struttura del codice.
+Ecco un esempio di test utilizzando ```ArduinoUnit``` per verificare che una funzione ritorni il valore corretto:
+```Arduino
+TEST(test_somma) {
+    int risultato = somma(2, 3);
+    assertEqual(risultato, 5);
+}
+```
 
-Assicurati di scrivere test che coprano tutti i possibili input e output delle tue funzioni e variabili. Inoltre, è importante eseguire i test regolarmente per essere sicuri che il tuo programma continui a funzionare come previsto man mano che apporti modifiche.
+## Approfondimento
+Scrivere test efficienti richiede anche una buona comprensione dei principi di unit testing. È importante scrivere test che siano il più indipendenti possibile tra loro, in modo da poter individuare con precisione quali parti del codice sono responsabili di eventuali errori. Inoltre, è consigliabile includere una descrizione chiara e dettagliata di ogni test, in modo da poterlo identificare facilmente in caso di errori.
+
+Per maggiori informazioni su come scrivere test efficaci in Arduino, si consiglia di consultare la documentazione delle librerie di unit testing e di studiare gli esempi forniti.
 
 ## Vedi anche
-
-- [ArduinoUnit - documentazione ufficiale](https://github.com/mmurdoch/arduinounit)
-- [Testing Arduino Sketches with ArduinoUnit - tutorial dettagliato](https://www.rs-online.com/designspark/automated-testing-of-arduino-sketches-with-arduinounit)
+- Libreria ```ArduinoUnit```: https://playground.arduino.cc/Code/UnitTest/
+- Documentazione su unit testing in Arduino: https://www.arduino.cc/reference/en/libraries/unit-test-library/
+- Esempi di test con ```ArduinoUnit```: https://github.com/mmurdoch/arduinounit/tree/master/examples

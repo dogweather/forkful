@@ -1,42 +1,34 @@
 ---
-title:                "PHP: Skriva en textfil"
+title:                "PHP: Att skriva en textfil"
+simple_title:         "Att skriva en textfil"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att skriva en textfil är en grundläggande färdighet för programmerare i alla språk, inklusive PHP. Det är ett sätt att lagra och organisera data på ett enkelt och lättillgängligt sätt. Det är också användbart för att till exempel spara användarinställningar eller skapa loggfiler.
+Att kunna skriva en textfil är en grundläggande färdighet för varje PHP-programmerare. Det tillåter oss att lagra data permanent på en server och använda det i våra program.
 
-## Hur man gör det
+# Hur man gör det
 
-Att skriva en textfil i PHP är en enkel process som kan göras med bara några få kodrader. Först måste du öppna en filhandtag med fopen-funktionen och välja om du vill öppna filen för att skriva eller lägga till data. Sedan använder du fwrite-funktionen för att skriva dina data till filen. När du är klar måste du stänga filen med fclose-funktionen.
-
-Här är ett exempel på hur du skriver en textfil i PHP som heter "ny_fil.txt":
+För att skriva en textfil i PHP, behöver vi först öppna en fil med fopen() funktionen. Det första argumentet är filens namn, och det andra argumentet anger åtkomstläge, som kan vara "r" för läsning, "w" för skrivning eller "a" för append. För att skriva in i filen använder vi fwrite() funktionen och stänger sedan filen med fclose().
 
 ```PHP
-$file = fopen("ny_fil.txt", "w") or die("Kan inte öppna filen!"); // Öppnar filen för att skriva
-$txt = "Detta är en textfil som skapats med PHP!"; // Text som ska skrivas till filen
-fwrite($file, $txt); // Skriver texten till filen
-fclose($file); // Stänger filen
+$fil = fopen("minfil.txt", "w"); // öppna filen för skrivning
+fwrite($fil, "Detta är en text som jag skriver i filen."); // skriv in texten
+fclose($fil); // stäng filen
 ```
 
-Om du vill lägga till data till en befintlig fil kan du använda "a" istället för "w" i fopen-funktionen. Detta kommer att lägga till dina data i slutet av filen istället för att skriva över allt som redan finns i filen.
+Om filen redan finns kommer fopen() att öppna den för skrivning och skriva över all tidigare data. Om vi vill lägga till ny data utan att skriva över den befintliga datan, bör vi använda "a" som åtkomstläge istället.
 
-## Djupdykning
+# Djupdyk
 
-När du skriver en textfil i PHP finns det några viktiga saker du bör veta. Först och främst måste du se till att du har rätt behörigheter för att kunna skriva till filen du försöker öppna. Om du inte har rätt behörigheter kommer fopen-funktionen att misslyckas och du får ett felmeddelande.
+Att skriva en textfil är bara en del av processen för att spara data i en fil. Det finns också sätt att läsa från en textfil, uppdatera befintlig data och hantera eventuella fel som kan uppstå. För en mer detaljerad förklaring och fler exempel, besök gärna PHP:s dokumentation för filhantering.
 
-Det är också bra att veta att du kan använda olika format för att skriva data till filen. Till exempel kan du använda PHP:s sprintf-funktion för att formatera data på ett mer strukturerat sätt eller använda olika tecken för att separera data.
+# Se även
 
-## Se även
-
-Här är några användbara länkar för dig som vill fördjupa dig i att skriva textfiler i PHP:
-
-- [PHP manual - fopen](https://www.php.net/manual/en/function.fopen.php)
-- [PHP manual - fwrite](https://www.php.net/manual/en/function.fwrite.php)
-- [PHP manual - fclose](https://www.php.net/manual/en/function.fclose.php)
-- [W3Schools - PHP Write to File](https://www.w3schools.com/php/php_file_write.asp)
+[PHP:s dokumentation för filhantering](https://www.php.net/manual/en/ref.filesystem.php)

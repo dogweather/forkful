@@ -1,61 +1,48 @@
 ---
 title:                "Ruby: Lecture d'un fichier texte"
+simple_title:         "Lecture d'un fichier texte"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
-
-Lire un fichier texte est une tâche courante en programmation. Cela peut être utile pour extraire des données, enregistrer des informations ou simplement afficher du contenu. Si vous utilisez Ruby comme langage de programmation, vous devez savoir comment lire un fichier texte. Heureusement, c'est assez simple à faire et dans cet article, nous allons vous montrer comment.
+# Pourquoi
+Lire des fichiers texte est une tâche fondamentale pour tout programmeur Ruby. Cela permet de manipuler facilement des données externes et d'en extraire des informations utiles. Que vous soyez un débutant ou un programmeur expérimenté, il est nécessaire de savoir comment lire des fichiers texte en utilisant Ruby.
 
 ## Comment faire
-
-La méthode la plus courante pour lire un fichier texte en Ruby est d'utiliser la classe File. Tout d'abord, nous devons ouvrir le fichier en utilisant la méthode `open`.
-
-```Ruby
-fichier = File.open('exemple.txt')
-```
-
-Ensuite, nous pouvons lire le contenu du fichier en utilisant la méthode `read`. Si nous voulons le stocker dans une variable, nous pouvons le faire en ajoutant un signe égal à la fin.
+Pour lire un fichier texte en Ruby, vous pouvez utiliser la méthode "File.open". Voici un exemple de code:
 
 ```Ruby
-contenu = fichier.read
+File.open("mon_fichier.txt").each do |ligne|
+  puts ligne
+end
 ```
 
-Nous pouvons également utiliser la méthode `readlines` pour lire chaque ligne du fichier et les stocker dans un tableau.
+Ce code va ouvrir le fichier "mon_fichier.txt" et afficher chaque ligne à l'écran. Vous pouvez également utiliser la méthode "readlines" pour stocker chaque ligne du fichier dans un tableau. Par exemple:
 
 ```Ruby
-lignes = fichier.readlines
+lignes = File.readlines("mon_fichier.txt")
+puts lignes
 ```
 
-Enfin, n'oubliez pas de fermer le fichier en utilisant la méthode `close` une fois que vous avez terminé de le lire.
+L'utilisation de ces méthodes vous permet de lire des fichiers texte de différentes manières en fonction de vos besoins.
+
+## Profondeur de plongée
+Il est important de noter que les fichiers texte peuvent contenir des données dans différents formats, tels que CSV, JSON ou XML. Vous devez donc être en mesure de lire et de manipuler ces formats en utilisant Ruby. Par exemple, pour lire un fichier CSV, vous pouvez utiliser la gemme "csv". Voici un exemple de code:
 
 ```Ruby
-fichier.close
+require 'csv'
+
+CSV.foreach("mon_fichier.csv") do |ligne|
+  puts ligne
+end
 ```
 
-Voici un exemple complet:
-
-```Ruby
-fichier = File.open('exemple.txt')
-contenu = fichier.read
-ligne = fichier.readlines
-fichier.close
-```
-
-Le contenu du fichier `exemple.txt` sera stocké dans la variable `contenu` et chaque ligne sera stockée dans le tableau `lignes`.
-
-## Plongée en profondeur
-
-En plus de la méthode `read` et `readlines`, la classe File a d'autres méthodes pour lire un fichier texte. Par exemple, vous pouvez utiliser `each_line` pour itérer sur chaque ligne du fichier sans stocker le contenu dans une variable. Vous pouvez également spécifier le nombre de caractères à lire en utilisant `read(n)`, où n est le nombre de caractères.
-
-De plus, si vous voulez lire un fichier texte sans avoir à l'ouvrir et à le fermer manuellement, vous pouvez utiliser la méthode `File.foreach`. Cela itérera sur chaque ligne du fichier sans nécessiter d'ouverture et de fermeture manuelle du fichier.
+De plus, vous devriez également être conscient des erreurs courantes lors de la lecture de fichiers texte, telles que les fichiers manquants ou les erreurs de formatage. Il est important de gérer ces erreurs de manière appropriée afin de garantir que votre programme fonctionne correctement.
 
 # Voir aussi
-
-- [Ruby Documentation on File Class](https://ruby-doc.org/core-2.7.3/File.html)
-- [Ruby File Class Cheatsheet](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
-- [Reading a Text File in Ruby - Tutorial](https://www.youtube.com/watch?v=VEaNBsktpvg)
+- [Documentation officielle Ruby sur la lecture de fichiers](https://ruby-doc.org/core-2.5.0/File.html)
+- [Gemme CSV pour la manipulation de fichiers CSV en Ruby](https://github.com/ruby/csv)

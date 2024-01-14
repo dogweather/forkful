@@ -1,40 +1,36 @@
 ---
 title:                "Java: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜ
+## なぜ
 
-文字列から部分文字列を抽出する必要性は、プログラミングにおいて非常に一般的です。例えば、テキスト処理やユーザー入力の検証など、さまざまなシナリオで部分文字列を抽出する必要があります。部分文字列を抽出することで、より効率的かつ正確なプログラムを作成することができるようになります。
+サブストリングを抽出することには、多くの理由があります。例えば、テキスト処理や文字列操作を行う際に、特定の部分だけを抽出したい場合があります。また、文字列を比較する際にも、サブストリングを使用することができます。簡単に言えば、サブストリングを抽出することは、プログラミングの便利なテクニックのひとつです。
 
-##方法
+## 抽出方法
 
-抽出したい部分文字列の開始位置と長さを指定することで、Javaのsubstringメソッドを使用して簡単に部分文字列を抽出することができます。以下の例では、"Hello World!"という文字列から、"World"という部分文字列を抽出しています。
-
-```Java
-String str = "Hello World!";
-String subStr = str.substring(6, 11);
-System.out.println(subStr); // Output: World
-```
-
-もし部分文字列の開始位置を指定せず、終了位置だけを指定したい場合は、文字列の長さを取得し、そこから計算して部分文字列を抽出することもできます。
+サブストリングを抽出する方法は、非常に簡単です。まずは、抽出したい部分の開始位置と終了位置を指定します。例えば、文字列の最初から5文字目までを抽出する場合は、「substring(0,5)」のように指定します。続いて、そのサブストリングを変数に代入することで、後の処理に使うことができます。以下は、Javaでサブストリングを抽出する例です。
 
 ```Java
-String str = "Hello World!";
-int end = str.length();
-String subStr = str.substring(end - 5, end);
-System.out.println(subStr); // Output: World
+String text = "今日はとても暑いです";
+String substring = text.substring(2, 5);
+System.out.println(substring);  // 出力結果：「とても」
 ```
 
-##ディープダイブ
+また、終了位置を省略することで、文字列の最後までを抽出することもできます。例えば、「substring(2)」と指定した場合は、文字列の最後までを抽出します。
 
-Javaのsubstringメソッドは、内部的には開始位置と長さを指定する別の方法のオーバーロードメソッドを使用しています。これにより、より複雑な部分文字列の抽出も可能になります。また、Unicode文字や特殊文字にも対応しています。これらの詳細については、Javaの公式ドキュメントを参照することをお勧めします。
+## 深堀り
 
-##関連リンク
+サブストリングを抽出する際には、いくつかの注意点があります。まず、開始位置を指定する際は、インデックス番号を使用します。つまり、最初の文字は「0」から始まります。また、終了位置は開始位置よりも1つ大きい数字を指定する必要があります。さらに、文字列の長さを超える数字を指定した場合は、エラーが発生します。これらの点に注意して、サブストリングを使用するようにしましょう。
 
-- [Javaのsubstringメソッドのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html#substring-int-int-)
-- [JavaのStringクラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
+## 参考リンク
+
+[Javaで文字列の操作をする方法](https://www.javadrive.jp/start/string/index1.html)
+[TechAcademy - Javaで文字列を抽出する方法](https://techacademy.jp/magazine/47006)
+[Java APIドキュメント - substringメソッド](https://docs.oracle.com/javase/jp/6/api/java/lang/String.html#substring(int,%20int))

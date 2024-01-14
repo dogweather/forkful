@@ -1,60 +1,57 @@
 ---
 title:                "TypeScript: Otrzymywanie aktualnej daty"
+simple_title:         "Otrzymywanie aktualnej daty"
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto dowiedzieć się, jaka jest data
+## Dlaczego
 
-Zastosowanie aktualnej daty w programowaniu jest nieodłącznym elementem wielu aplikacji. Jest to szczególnie ważne w przypadku tworzenia narzędzi, które śledzą lub prezentują informacje o tymczasowych zdarzeniach lub wydarzeniach z przeszłości. Poznanie aktualnej daty i czasu jest także niezbędne przy obsłudze bieżących działań na różnych urządzeniach.
+Pozyskiwanie aktualnej daty jest nieodłączną częścią wielu aplikacji i skryptów. W TypeScript możemy to zrobić w prosty sposób, korzystając z wbudowanej funkcji "Date()".
 
-## Jak to zrobić w TypeScripcie
+## Jak to zrobić
 
-Przed przystąpieniem do kodowania, należy zaimportować moduł `Date` w pliku TypeScript:
-
-```TypeScript
-import { Date } from 'Date';
-```
-
-Następnie można stworzyć nową instancję `Date` i przypisać ją do zmiennej, aby otrzymać aktualną datę:
+Możemy uzyskać aktualną datę na kilka sposobów, na przykład:
 
 ```TypeScript
-const currentDate = new Date();
+let currentDate = new Date();
+console.log(currentDate);
 ```
 
-Aby wyświetlić aktualną datę w konsoli, można wykorzystać metodę `toLocaleDateString()`:
+Wynik wyświetli się na konsoli w formacie: `YYYY-MM-DD HH:MM:SS`.
+
+Możemy również wyświetlić separowane dane z daty, takie jak dzień, miesiąc czy rok:
 
 ```TypeScript
-console.log(currentDate.toLocaleDateString());
+let currentDate = new Date();
+
+let day = currentDate.getDate(); // pobieramy dzień
+let month = currentDate.getMonth() + 1; // pobieramy miesiąc (+ 1, ponieważ styczeń to index 0)
+let year = currentDate.getFullYear(); // pobieramy rok
+
+console.log(`${day}.${month}.${year}`); // wyświetlamy date w formacie DD.MM.YYYY
 ```
 
-Można także wyświetlić dokładną godzinę, wykorzystując metodę `toLocaleTimeString()`:
+Wynik: `13.12.2021`
+
+## Deep Dive
+
+Funkcja "Date()" może przyjmować również argumenty, pozwalając nam na ustawianie własnej daty. Możemy podać rok, miesiąc i dzień, aby uzyskać konkretny dzień tygodnia, na przykład:
 
 ```TypeScript
-console.log(currentDate.toLocaleTimeString());
+let specifiedDate = new Date(2021, 11, 25); // rok, miesiąc, dzień
+console.log(specifiedDate.getDay()); // wyświetli index dnia tygodnia (0 - niedziela, 6 - sobota)
 ```
 
-Kod w całości może wyglądać tak:
+Wynik: `6`
 
-``` TypeScript
-import { Date } from 'Date';
+Funkcja "Date()" pozwala również na uzyskanie innych danych, takich jak godzina, minuty czy sekundy. Dokładny opis dostępnych metod można znaleźć w dokumentacji TypeScript.
 
-const currentDate = new Date();
-console.log(currentDate.toLocaleDateString());
-console.log(currentDate.toLocaleTimeString());
-```
+## Zobacz również
 
-Po uruchomieniu powyższego kodu, w konsoli powinna pojawić się aktualna data i godzina w formacie ustawionym w systemie operacyjnym.
-
-## Głębsze zanurzenie
-
-W bibliotece `Date` dostępnych jest wiele metod, które pozwalają na dokładniejsze manipulowanie aktualną datą. Aby poznać więcej możliwości, warto zagłębić się w dokumentację [biblioteki Date](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date).
-
-## Zobacz także
-
-- [Dokumentacja biblioteki Date](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date)
-- [Poradnik programowania w TypeScript](https://auth0.com/blog/typescript-tutorial-for-javascript-developers/)
-- [Tworzenie aplikacji z u
+- Dokumentacja TypeScript dotycząca funkcji "Date()": https://www.typescriptlang.org/docs/handbook/standard-library.html#date
+- Przykładowe tutorial na temat pozyskiwania daty w TypeScript: https://www.techiedelight.com/get-current-date-time-timestamp-typescript/

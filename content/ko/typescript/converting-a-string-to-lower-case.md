@@ -1,46 +1,53 @@
 ---
 title:                "TypeScript: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-여러분은 TypeScript로 프로그래밍을 하다가 문자열을 소문자로 변환해야 할 때가 있습니다. 왜 매번 문자열을 소문자로 변환할까요? 그 이유를 알아볼까요?
-
 ## 왜
 
-대부분의 프로그래밍 언어에서는 대소문자를 구별하므로 문자열을 소문자로 변환하는 것은 중요합니다. 예를 들어 사용자의 입력을 받는 폼에서 이메일 주소를 입력받을 때, 대소문자를 구별하지 않고 비교하려면 문자열을 모두 소문자로 변환해야 합니다. 또한 데이터베이스나 파일 시스템에서도 대소문자를 구별하는 경우가 있으므로 문자열을 소문자로 변환하는 것은 중요합니다.
+문자열을 소문자로 변환하는데 참여하려는 이유는 여러가지가 있을 수 있습니다. 예를 들면, 사용자의 입력을 모두 소문자로 변환하여 일관성 있는 데이터를 유지하거나, 문자열 비교를 위해 일관된 형식으로 문자열을 조작해야 할 때가 있을 수 있습니다.
 
-## How To
+## 하는 방법
 
-TypeScript에서 문자열을 소문자로 변환하는 방법은 간단합니다. 다음 예제를 보며 따라 해보세요.
-
-```TypeScript
-let str: string = "HELLO WORLD";
-let lowerCaseStr = str.toLowerCase();
-console.log(lowerCaseStr); // output: hello world
-```
-
-위 예제에서는 `toLowerCase()` 메소드를 사용하여 문자열을 소문자로 변환했습니다. 이 메소드는 문자열의 모든 문자를 소문자로 바꿔줍니다. 따라서 `HELLO WORLD`가 `hello world`로 변환된 것을 볼 수 있습니다.
-
-또 다른 방법으로는 정규표현식을 사용하는 것입니다. 정규표현식을 사용하면 대문자와 소문자를 구분하지 않고 원하는 패턴을 일치시킬 수 있습니다.
+문자열을 소문자로 변환하는 방법에 대해 알아보겠습니다. 먼저, `toLowerCase()` 함수를 사용하여 문자열을 소문자로 변환할 수 있습니다. 예제 코드는 아래와 같습니다.
 
 ```TypeScript
-let str: string = "Hello World";
-let lowerCaseStr = str.replace(/[A-Z]/g, (match) => match.toLowerCase());
-console.log(lowerCaseStr); // output: hello world
+let str = "HELLO WORLD";
+str = str.toLowerCase();
+
+// Output: hello world
 ```
 
-위 예제에서는 `replace()` 메소드를 사용해 `Hello World` 문자열에서 대문자를 찾아 소문자로 바꾸는 것을 뜻하는 정규표현식을 사용했습니다. 따라서 `Hello World`가 `hello world`로 변환된 것을 볼 수 있습니다.
+하지만 이 방법은 문자열을 새로운 변수에 할당하여 변환해야 하기 때문에 원본 문자열이 바뀌지 않습니다. 원본 문자열을 바로 변환하는 방법은 `toLocaleLowerCase()` 함수를 사용하는 것입니다. 예제 코드는 아래와 같습니다.
 
-## Deep Dive
+```TypeScript
+let str = "HELLO WORLD";
+str.toLocaleLowerCase();
 
-TypeScript에서 문자열을 소문자로 변환하는 방법에는 다양한 메소드가 있습니다. `toLowerCase()` 외에도 `toLocaleLowerCase()`와 `String.prototype.toLocaleLowerCase()` 메소드를 사용할 수 있습니다. 이들 메소드는 인자로 지역 설정을 받아 해당 지역 설정에 맞는 소문자를 반환합니다.
+// Output: hello world
+```
 
-또한 정규표현식을 사용하면 대소문자를 구분하지 않고 일치하는 패턴이 있는 문자열을 소문자로 바꿔줄 수 있습니다. 이를 활용해 더 다양한 문자열 변환 기능을 구현할 수 있습니다.
+만약 여러 개의 단어로 이루어진 문자열을 소문자로 변환하고 싶다면, `split()` 함수로 단어를 각각 분리한 후, `map()` 함수와 `toLowerCase()` 함수를 사용하여 각 단어를 소문자로 변환한 뒤 다시 `join()` 함수로 합쳐주면 됩니다. 예제 코드는 아래와 같습니다.
 
-## See Also
+```TypeScript
+let str = "HELLO WORLD";
+str = str.split(" ").map(word => word.toLowerCase()).join(" ");
 
-- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/handbook/utility-types.html#lowercasestring-strings)
+// Output: hello world
+```
+
+## 깊게 들어가보기
+
+문자열을 소문자로 변환하는 과정에서 가장 중요한 것은 유니코드(Unicode)를 고려하는 것입니다. 유니코드는 전 세계의 모든 문자를 컴퓨터에서 사용할 수 있도록 코드로 표현해 놓은 국제 표준입니다. 예를 들어, 영어 알파벳 대문자 `A`는 유니코드로 `U+0041`로 표현되고, 소문자 `a`는 유니코드로 `U+0061`로 표현됩니다. 이처럼 대소문자 간에도 다른 유니코드를 갖기 때문에 문자열을 소문자로 변환할 때, 단순히 알파벳만 생각하는 것이 아니라 유니코드를 고려하여 변환해야 합니다.
+
+또한, `toLowerCase()` 함수는 주어진 문자열을 완전히 소문자로 변환하는 것이 아니라 유니코드 중 대응되는 소문자를 찾아 변환해줍니다. 예를 들어, 터키어의 `I`는 대문자로 `I`와 소문자로 `ı`가 모두 있지만, 영어와 같은 소문자 `i`는 없습니다. 이런 경우, `toLowerCase()` 함수는 대문자 `I`를 소문자 `i`가 아닌 `ı`로 변환해줍니다.
+
+## 또 다른 정보들
+
+이외에도 `toLocaleLowerCase()` 함수는 터키어 방식으로 문자열을 변환할 수 있도록 인자로 `'tr'`을 받아 변환이 가능합니다. 또한, 유니코드에는 `toUpperCase()` 함수와 마찬가지로 대소문자 간에 부등호가 성립하지 않는 다양한 문자들이 있으므로 문자열을 비교할 때에도 유니코드를 고려해서 조작해야

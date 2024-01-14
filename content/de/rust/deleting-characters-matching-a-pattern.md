@@ -1,35 +1,54 @@
 ---
-title:                "Rust: Entfernen von Zeichen, die einem Muster entsprechen"
+title:                "Rust: Löschen von Zeichen, die einem Muster entsprechen."
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen."
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist oft eine nützliche Aufgabe in der Programmierung. Es kann verwendet werden, um unerwünschte Zeichen aus einer Zeichenkette zu entfernen oder um spezifische Daten aus einer größeren Menge von Text zu extrahieren.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine häufige Aufgabe in der Programmierung. Mit der Sprache Rust wird dies jedoch besonders effizient und einfach zu implementieren. In diesem Blogbeitrag zeigen wir, warum es sich lohnt, diese Methode zu nutzen.
 
-# Wie funktioniert es
+## Wie geht man vor
 
-Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, können Sie die `replace` Funktion in Rust verwenden. Diese Funktion akzeptiert zwei Parameter: das zu ersetzende Muster und den Ersatztext. Ein Beispiel dafür ist:
+Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, können wir die `trim_matches` Funktion aus der Standardbibliothek von Rust verwenden. Diese Funktion durchläuft einen gegebenen String und entfernt alle Zeichen, die dem angegebenen Muster entsprechen.
 
-```Rust
-let text = "Dies ist ein Beispieltext mit unerwünschten Zeichen!!!";
-let neuer_text = text.replace("!!!", "");
+Hier ist ein Beispiel, wie wir diese Funktion verwenden können:
+
+```Rust 
+let text = "Hello!!!";
+let result = text.trim_matches('!');
+println!("{}", result);
 ```
 
-Das Ergebnis dieser Codezeilen ist eine neue Zeichenkette ohne die Zeichen "!!!". Dies ist ein einfaches Beispiel, aber Sie können auch reguläre Ausdrücke verwenden, um komplexere Muster zu löschen. Zum Beispiel können Sie alle Ziffern aus einer Zeichenkette entfernen, indem Sie den regulären Ausdruck `[0-9]` als Muster und einen leeren String als Ersatztext verwenden.
+In diesem Beispiel wird der Text "Hello!!!" eingelesen und dann mittels `trim_matches` alle Ausrufezeichen entfernt. Das Ergebnis ist dann "Hello".
 
-# Tiefergehende Informationen
+Eine weitere Möglichkeit ist die Verwendung der `replace` Funktion. Diese ersetzt alle Vorkommen eines bestimmten Musters durch ein anderes Zeichen oder einen anderen String. Hier ist ein Beispiel:
 
-Das Löschen von Zeichen basierend auf einem Muster kann auch mit anderen Funktionen wie `trim` und `trim_matches` erreicht werden. Diese Funktionen können verwendet werden, um Zeichen am Anfang oder Ende einer Zeichenkette zu entfernen, oder Zeichen zu entfernen, die einem bestimmten Zeichenmuster entsprechen.
+```Rust 
+let text = "Hello!!!";
+let result = text.replace('!', '');
+println!("{}", result);
+```
 
-Es ist auch wichtig zu beachten, dass das Löschen von Zeichen, die einem bestimmten Muster entsprechen, in Rust sehr effizient ist. Rust ist eine stark typisierte Sprache, die beim Kompilieren Code überprüft und sicherstellt, dass keine unerwarteten Ergebnisse auftreten.
+In diesem Fall wird wieder der Text "Hello!!!" eingelesen, aber alle Ausrufezeichen werden durch leere Strings ersetzt, was also zu "Hello" als Ergebnis führt.
 
-# Siehe auch
+In beiden Fällen können wir natürlich auch beliebige andere Muster angeben, die gelöscht werden sollen. Es ist auch möglich, mehrere Muster in einem Durchlauf zu löschen, indem man diese in einer Liste angibt, beispielsweise `trim_matches(&['!', '?'])`.
 
-- [Offizielle Rust-Dokumentation](https://www.rust-lang.org/learn)
-- [RegEx in Rust](https://docs.rs/regex/1.3.6/regex/)
-- [Patternmatching in Rust](https://doc.rust-lang.org/std/keyword.match.html)
+## Tieferer Einblick
+
+Im Hintergrund nutzt die `trim_matches` Funktion die `Pattern` Trait aus der Rust Standardbibliothek, um die Zeichen zu finden, die dem angegebenen Muster entsprechen. Dies ermöglicht es uns, auch komplexere Muster zu verwenden, wie zum Beispiel reguläre Ausdrücke.
+
+Die `Pattern` Trait definiert die `matches` Methode, die überprüft, ob ein gegebenes Zeichen dem Muster entspricht oder nicht. Dies wird dann von `trim_matches` genutzt, um das String zu durchlaufen und die entsprechenden Zeichen zu löschen.
+
+Es ist auch möglich, selbst ein eigenes Muster zu definieren, indem man dieses Trait implementiert. Dies bietet uns die Flexibilität, maßgeschneiderte Lösungen für unsere spezifischen Anforderungen zu erstellen.
+
+## Siehe auch
+
+- [Die Rust Standardbibliothek](https://doc.rust-lang.org/std/index.html)
+- [Die Pattern Trait Dokumentation](https://doc.rust-lang.org/std/pattern/trait.Pattern.html)
+- [Rust By Example: String Manipulation](https://doc.rust-lang.org/stable/rust-by-example/std/str.html#string-manipulation)

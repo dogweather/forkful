@@ -1,43 +1,42 @@
 ---
 title:                "C#: חיפוש והחלפת טקסט"
+simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+המטרה של חיפוש והחלפה של טקסט היא לאפשר למתכנתים לשנות את הטקסט בקלות ולאחר מכן לשחזר אותו תוך שמירה על קוד נקי ומאורגן. זה יכול להוביל להפחתת זמן פיתוח ולשיפור היציבות של התוכנה.
 
-למה איש רוצה לעסוק בחיפוש והחלפת טקסט? ישנם מספר סיבות לכך, ביניהם: על מנת למצוא ולתקן שגיאות בקוד, ליישר פורמטים, ולשנות משתנים או ערכים במספר מקומות בקוד המקור.
-
-## איך לעשות זאת 
-
-ישנם מספר דרכים לבצע חיפוש והחלפה טקסט בשפת סי שארפ. הכי פשוט הוא להשתמש בפונקציה "Replace" שבספריית "String", כך שאתם יכולים למצוא ולהחליף טקסט במחרוזת. ישנם גם מתודות אחרות כגון "ReplaceAll" או "ReplaceFirst" שבאפשרותכם להשתמש בהם לפי הצורך. כדי להציג את הפונקציות והתוצאות בצורה מדויקת, הנה דוגמאות בקוד:
+כיצד לבצע חיפוש והחלפה בקוד של C#: 
 
 ```C#
-// הגדרת מחרוזת עם טקסט לחיפוש והחלפה
-string text = "שלום עולם";
+//שימוש בתוכנית Regex לחיפוש והחלפת טקסט 
+using System.Text.RegularExpressions;
 
-// השתמשו בפונקציית Replace כדי להחליף את האות ובין לאות ליברך
-text = text.Replace("ו", "כל");
+//שימוש בשיטה Replace על מחרוזת כדי להחליף טקסט
+string newString = Regex.Replace(originalString, "textToReplace", "replacementText");
 
-// תוצאה כלומר "שלם כלמ"
-Console.WriteLine(text);
+//דוגמה:
+string original = "זהו טקסט לדוגמה";
+string newString = Regex.Replace(original, "טקסט", "מתמטיקה");
 
-// הגדרת משתנה מספרי לחיפוש והחלפה
-int number = 12345;
-
-// השתמשו בפונקציית ToString כדי להמיר את המספר למחרוזת
-string numberString = number.ToString();
-
-// השתמשו בפונקציית ReplaceAll כדי להחליף את הספרות הזוגיות במספר באחדים
-numberString = numberString.ReplaceAll("2, 4", "1");
-
-// תוצאה כלומר "1335"
-Console.WriteLine(numberString);
+//output: זהו מתמטיקה לדוגמה
 ```
 
-## לכיוון עמוק 
+עומקנו:
 
-בנוסף לפונקציות המובנות לחיפוש והחלפה, ישנם גם ספריות מתקדמות כמו "Regex" שמאפשרות לנו לתאם ולהחליף אמור לחיפוש בטקסט בצורה עמוקה יותר. כמו כן, ניתן להשתמש בלולאות כד
+כמו כל כלי חזק, ישנם עוד כמה דברים שניתן לעשות עם חיפוש והחלפה של טקסט. לדוגמה, ניתן להשתמש בתכונות נוספות של Regex כגון ניתוח הביטויים הרגולריים, שינוי גודל האותיות, ועוד. בנוסף, כדאי להבצע חיפוש והחלפה על מחרוזות גדולות על מנת לתקן שגיאות כמו תווים ריקים או תווים ספציפיים שגויים.
+
+על מנת ללמוד עוד על חיפוש והחלפה של טקסט ב-C#, ניתן לבדוק את המדריכים הבאים:
+
+- [Microsoft Docs: Regex Class](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8)
+- [C# Regex Tutorial](https://www.c-sharpcorner.com/UploadFile/dbd951/regular-expression-in-C-Sharp/)
+- [Codecademy: Learn to use Regular Expressions in C#](https://www.codecademy.com/learn/learn-regular-expressions/modules/learn-regular-expressions-csharp/) 
+
+ראה גם:
+
+- [Markdown: שיטת כתיבה פשוטה לכתיבת מדריכים טכניים](https://daringfireball.net/projects/markdown/)

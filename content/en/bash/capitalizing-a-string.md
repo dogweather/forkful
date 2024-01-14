@@ -1,46 +1,46 @@
 ---
 title:                "Bash recipe: Capitalizing a string"
+simple_title:         "Capitalizing a string"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
-Are you tired of seeing strings in all lowercase letters? Do you want to add some emphasis to your strings? Look no further! Capitalizing a string can easily be done in Bash programming.
+## Why
 
-##How To
-Coding in Bash may seem intimidating at first, but it's actually quite simple. To capitalize a string, follow these steps:
+Capitalizing a string may seem like a small task, but it can actually make a big difference in the overall appearance and readability of your code. By capitalizing certain words or phrases, you can add emphasis or make them stand out more, making your code easier to understand and follow.
 
-1. Start by creating a variable that contains the string you want to capitalize. For this example, we'll use the string "hello world".
-```
-Bash
-string="hello world"
-```
-2. Next, we can use the `tr` command to translate lowercase characters to uppercase. The `-u` flag specifies that we want to convert to uppercase.
-```
-Bash
-capitalized_string=`echo $string | tr '[:lower:]' '[:upper:]'`
-```
-3. Finally, we can print out the capitalized string using the `echo` command.
-```
-Bash
-echo $capitalized_string
-```
-The output of this code will be:
-```
-HELLO WORLD
-```
-Congratulations, you have successfully capitalized a string in Bash!
+## How To
 
-##Deep Dive
-Behind the scenes, the `tr` command works by using a translation table. In our example, the translation table has all lowercase letters mapped to their uppercase counterparts. This means that when we use the `tr` command, the lowercase "h" in "hello world" is translated to an uppercase "H", and so on.
+Capitalizing a string in Bash is a simple process. Follow these steps to learn how to do it:
 
-Additionally, it's worth noting that the `tr` command only works with single characters. If you try to pass in a string, it will only process the first character. This is why we had to use the `echo` command to pass in the entire string.
+1. First, you will need to open your terminal and navigate to the directory where you want to create your Bash script.
+2. Inside this directory, create a new file and give it a name, such as "capitalize.sh".
+3. Within this file, start by declaring a variable and assigning it a string value that you want to capitalize. For example, `str="hello, world"`.
+4. Next, use the `tr` command to make the string uppercase. The syntax for this would be `tr '[:lower:]' '[:upper:]' <<< $str`. This command uses the `tr` utility to convert all lowercase letters in the string to uppercase.
+5. Lastly, use the `echo` command to print the capitalized string to the terminal. The full code should look like this:
 
-##See Also
-To dive even deeper into the `tr` command, check out these resources:
-- [The tr command in Bash](https://www.geeksforgeeks.org/tr-command-in-linux-with-examples/)
-- [Using Bash's tr command](https://linuxize.com/post/linux-tr-command/)
-- [Utilities: tr](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+```Bash
+#!/bin/bash
+str="hello, world"
+echo $(tr '[:lower:]' '[:upper:]' <<< $str)
+```
+6. Save and exit the file, then make it executable by using the command `chmod +x capitalize.sh`.
+7. Finally, run the script by using `./capitalize.sh` and you should see the output as `HELLO, WORLD`.
+
+## Deep Dive
+
+While the `tr` command is a quick and easy way to capitalize a string, there are other methods you can use as well. For example, you can use the `awk` command with the `toupper` function or the `sed` command with the `s//` substitution. Both of these methods also allow you to specify which characters you want to capitalize, giving you more control over the output.
+
+It's important to keep in mind that the `tr` command and other methods may have different results depending on the locale and language settings in your terminal. So if you're not seeing the expected results, try setting your locale to "C" with the command `export LC_ALL=C` before running the script again.
+
+## See Also
+
+If you want to learn more about string manipulation in Bash, check out these resources:
+
+- [How To Work with Strings in Bash](https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-bash)
+- [The Linux Documentation Project - Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/Bash-Beginners-Guide.pdf)
+- [BashGuide - Manipulating Variables](https://mywiki.wooledge.org/BashGuide/ManipulatingVariables)

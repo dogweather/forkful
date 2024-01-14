@@ -1,36 +1,50 @@
 ---
 title:                "PHP: השוואת שתי תאריכים"
+simple_title:         "השוואת שתי תאריכים"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה
+מדוע יש צורך לטפל בהשוואת שני תאריכים? לעיתים קרובות נחזה לטפל בתאריכים כחלק מתהליך התכנות. היכולת להשוות שני תאריכים מאפשרת לנו לבדוק האם תאריך מסוים נמצא לפני או אחרי תאריך אחר ולפעול בהתאם. במאמר זה נעסוק בדרכים שונות להשוות שני תאריכים בשפת PHP.
 
-בעולם התכנות, ייתכן ותתקלו במקרים בהם יהיה עליכם להשוות שתי תאריכים. השוואת תאריכים היא כלי חשוב בתכנות שיש להשתמש בו בכדי להתאים מתאם מהיר וקל להבנה שלבין שני תאריכים שונים.
-
-# כיצד לבצע
-
-בכדי להשוות שתי תאריכים ב- PHP, ניתן להשתמש בפונקציה המובנית strtotime כדי להמיר את התאריך לפורמט ידוע יותר כמו תאריך Unix timestamp. לאחר מכן, ניתן להשתמש בפונקציה המובנית date כדי להציג את התאריך בפורמט המבוקש. נהלך קדימה לדוגמאות ולפלט המתאים בתוך פסקת הקוד שלנו.
+## כיצד לעשות זאת
+נוכל להשתמש בפונקציה המובנית של PHP strtotime() כדי להמיר תאריך טקסטואלי לתאריך Unix timestamp ולאחר מכן להשתמש באופרטורי השוואה כדי להשוות בין שני התאריכים. לדוגמה:
 
 ```PHP
-<?php
-$date1 = strtotime("2020/10/01");
-$date2 = strtotime("2020/12/25");
-echo date("d/m/Y", $date1); // Output: 01/10/2020
-echo date("d/m/Y", $date2); // Output: 25/12/2020
-?>
+$first_date = "2021-01-01";
+$second_date = "2021-01-15";
+
+if (strtotime($first_date) < strtotime($second_date)) {
+    echo "$first_date נמצא לפני $second_date";
+} elseif (strtotime($first_date) > strtotime($second_date)) {
+    echo "$first_date נמצא אחרי $second_date";
+} else {
+    echo "שני התאריכים זהים";
+}
+
+// פלט: "2021-01-01 נמצא לפני 2021-01-15"
 ```
 
-# פינות עמוקות
+נוכל גם להשתמש בפונקציה המובנית של PHP strtotime() כדי להמיר שני תאריכים לתאריך Unix timestamp ולאחר מכן להשתמש בפונקציה date() כדי להציג את התאריך לפי הפורמט הרצוי. לדוגמה:
 
-כאשר משווים שני תאריכים, חשוב להתחשב במקרים מיוחדים כמו שנת ליקוי, שנת פברואר ועוד. כדי להתמודד עם מקרים אלו, ניתן להשתמש בפונקציות נוספות כמו checkdate ו cal_days_in_month. חשוב גם לבדוק כי הערכים שהוכנסו מייצגים באמת תאריכים וניתן להשתמש בדוגמאות שנמצאות מתחת כדי לוודא כי הפסקלאות שלכם עובדות כצפוי.
+```PHP
+$first_date = "2021-01-01";
+$second_date = "2021-01-15";
 
-# ראו גם
+$first_timestamp = strtotime($first_date);
+$second_timestamp = strtotime($second_date);
 
-- https://www.php.net/manual/en/function.strtotime.php
-- https://www.php.net/manual/en/function.date.php
-- https://www.php.net/manual/en/function.checkdate.php
-- https://www.php.net/manual/en/function.cal-days-in-month.php
+echo date("d/m/Y", $first_timestamp) . " נמצא לפני " . date("d/m/Y", $second_timestamp);
+
+// פלט: "01/01/2021 נמצא לפני 15/01/2021"
+```
+
+## כיול עמוק
+כאשר אנו משווים שני תאריכים, חשוב לקחת בחשבון את הצורך בכיול עמוק. כלומר, לבדוק את התאריך המלא ולא רק את היום או השנה. לדוגמה, שני תאריכים יכולים להיות שווים ביום נתון, אך להיות שונים בזמן.
+
+נוכל לכוון כי

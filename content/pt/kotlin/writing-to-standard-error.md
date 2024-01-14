@@ -1,36 +1,48 @@
 ---
 title:                "Kotlin: Escrevendo para o erro padrão"
+simple_title:         "Escrevendo para o erro padrão"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-Por que escrever para o erro padrão é importante
+## Por que escrever no standard error?
 
-Escrever para o erro padrão é uma prática essencial para programadores Kotlin, pois permite identificar e resolver problemas em seus códigos de forma mais eficiente. Além disso, é uma maneira de fornecer informações importantes sobre o funcionamento do programa ao usuário final.
+Existem várias razões pelas quais você pode querer escrever para o standard error em seus programas Kotlin.
 
-Como fazer
+Uma delas é que, ao contrário do standard output, que é destinado a exibir informações ao usuário, o standard error é usado para exibir mensagens de erro ou exceções em seu código. Isso pode ser útil para depuração e identificação de problemas em seu programa.
 
-Para escrever para o erro padrão em Kotlin, é necessário importar a classe `System` e utilizar o método `err`. Veja um exemplo abaixo:
+Além disso, algumas ferramentas e sistemas, como o JUnit, consideram a saída do standard error ao avaliar a execução de testes. Portanto, escrever para o standard error pode ajudar a identificar e resolver erros em seus testes.
 
-```Kotlin
-import java.lang.System
+## Como fazer
 
-fun main(args: Array<String>) {
-    System.err.println("Um erro ocorreu!")
+Para escrever no standard error em Kotlin, você pode usar a função `System.err.println()`, que imprimirá sua mensagem no standard error. Veja um exemplo abaixo:
+
+```kotlin
+fun main() {
+    val num1 = 10
+    val num2 = 0
+    try {
+        val result = num1 / num2
+    } catch (e: ArithmeticException) {
+        System.err.println("Não é possível dividir por zero!")
+    }
 }
 ```
 
-Neste exemplo, estamos utilizando a função `println` para imprimir a mensagem de erro para o erro padrão. É importante notar que a utilização do `err` garante que a mensagem será exibida em vermelho, facilitando a sua identificação.
+A saída desse código será "Não é possível dividir por zero!" impresso no standard error.
 
-Profundidade de mergulho
+## Mergulho Profundo
 
-É possível especificar o tipo de erro ao utilizar o método `err` no seu código. Por exemplo, se você quiser indicar um erro de bug, pode usar o código `System.err.println("Um erro de bug ocorreu!")`. Além disso, também é possível utilizar o `printStackTrace()` para imprimir o stack trace completo do erro, fornecendo informações mais detalhadas sobre sua ocorrência.
+Ao escrever para o standard error, é importante lembrar que ele é apenas um fluxo de saída e não um local de armazenamento. Isso significa que as mensagens escritas no standard error a cada momento serão imediatamente exibidas e descartadas.
 
-Ver também
+Além disso, é importante decidir com cuidado o que escrever para o standard error, pois muitas mensagens podem dificultar a leitura da saída do seu programa e dificultar a identificação de problemas reais.
 
-- [Como escrever para o erro padrão em Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/system/i-o/err.html)
-- [Documentação oficial do Kotlin](https://kotlinlang.org/docs/reference/)
-- [Tutorial do Kotlin para iniciantes](https://www.devmedia.com.br/introducao-ao-kotlin/40247)
+## Veja também
+
+- [Documentação oficial do Kotlin sobre a função System.err.println()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-print-stream/println.html)
+- [Guia de Exceções e Erros em Kotlin](https://kotlinlang.org/docs/reference/exceptions.html)
+- [Documentação oficial do JUnit sobre o uso do standard error](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions)

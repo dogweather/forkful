@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/writing-a-text-file.md"
 ---
 
@@ -9,24 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi kirjoittaisit tekstitiedoston Elixirillä? Yksi syy voi olla tiedon tallentaminen ja jakaminen muiden ohjelmien ja käyttäjien kanssa. Lisäksi Elixirin avulla tekstitiedoston käsittely ja muokkaaminen on helppoa ja tehokasta.
+Kirjoittaminen on olennainen osa monien ohjelmoijien arkea Elixir-ohjelmointikielen käytön myötä. Tekstikenttien kirjoittaminen voi olla hyödyllistä esimerkiksi tiedostojen tallentamisessa tai tietokantojen käsittelyssä.
 
 ## Miten
 
-Aloitetaan luomalla uusi tekstitiedosto Elixirillä. Voit tehdä tämän komennolla ```File.write("tiedosto.txt", "Tässä on esimerkki tekstitiedostosta")```. Tämä luo uuden tiedoston nimeltään "tiedosto.txt" ja tallentaa siihen annetun merkkijonon. Voit myös lukea tiedoston sisällön komennolla ```File.read("tiedosto.txt")```.
+Tekstitiedoston kirjoittaminen on melko yksinkertaista Elixirissä. Se voidaan tehdä käyttämällä `File.write/2` -funktiota, joka ottaa parametreinaan tiedoston nimen ja kirjoitettavan tekstin. Esimerkiksi:
 
-Jos haluat lisätä tiedostoon uuden rivin, voit käyttää komentoa ```File.append("tiedosto.txt", "Uusi rivi")```. Tällä tavalla voit jatkuvasti lisätä ja muokata tiedostoa tarpeidesi mukaan.
+```Elixir
+File.write("tiedosto.txt", "Tämä on tekstiä, joka tallennetaan tiedostoon.")
+```
 
-Voit myös luoda ja muokata CSV-tiedostoja Elixirillä. Tämä onnistuu esimerkiksi CSV-kirjaston avulla.
+Tämän koodin suorittamisen jälkeen, uusi tiedosto nimeltä "tiedosto.txt" luodaan Elixir-projektisi juurikansioon ja siihen tallennetaan annettu teksti.
 
-## Syvällinen sukellus
+Voit myös halutessasi luoda uuden tiedoston käyttämällä `File.open/2` -funktiota ja kirjoittaa siihen tekstiä käyttämällä `IO.write/2` -funktiota. Tämä antaa sinulle enemmän hallintaa tiedostoon kirjoittamisessa. Esimerkiksi:
 
-Voit käyttää Elixirin IO-moduulia luomaan ja muokkaamaan tiedostoja. IO-moduulilla on kätevä set of funktioita, kuten ```IO.write``` ja ```IO.read```, jotka helpottavat tiedoston käsittelyä. Voit myös käyttää File-moduulia CSV-tiedostojen käsittelyyn, joten sinun ei tarvitse hankkia erillisiä kirjastoja.
+```Elixir
+File.open("uusi_tiedosto.txt", [:write], fn file ->
+  IO.write(file, "Tämä on uusi tiedosto.")
+end)
+```
 
-Kun olet valmis, muista aina sulkea tiedosto lopuksi komennolla ```File.close(file)```.
+Tässä esimerkissä luomme uuden tiedoston nimeltä "uusi_tiedosto.txt" ja kirjoitamme siihen tekstin "Tämä on uusi tiedosto." Käyttämällä `File.open/2` -funktiota ja `IO.write/2` -funktiota, voit myös muokata kirjoitustilan asetuksia, kuten käyttää binäärialiasta tai asettaa tiedostoon kirjoitettava koodausjärjestelmä.
+
+## Syvä sukellus
+
+Elixirin mahdollistama `File` -moduuli tarjoaa useita muita hyödyllisiä toimintoja tiedostoja käsitteleviin tehtäviin. Näihin kuuluu muun muassa `File.cp/2`, joka mahdollistaa tiedoston kopioinnin, ja `File.ls/1`, joka listaa tiedoston sisältämät tiedostot ja kansiot.
+
+Lisäksi, `File` -moduuli sisältää myös `IO.gets/2` ja `IO.read/2` -funktiot, joiden avulla voit lukea tiedostosta tietoa käyttäen esimerkiksi rivien lukumäärää tai merkkijonoa rajauksena. Täysi lista `File` -moduulissa saatavilla olevista funktioista löytyy [Elixirin virallisesta dokumentaatiosta](https://hexdocs.pm/elixir/File.html).
 
 ## Katso myös
 
-- Elixirin IO-moduuli: https://hexdocs.pm/elixir/IO.html
-- CSV-kirjasto: https://hexdocs.pm/csv/readme.html
-- File-moduulin dokumentaatio: https://hexdocs.pm/elixir/File.html
+- [Elixirin virallinen dokumentaatio tiedostojen käsittelystä](https://hexdocs.pm/elixir/File.html)
+- [Elixirin tiedostojen käsittelyn perusteet -opas](https://www.learnelixir.tv/elixir-tutorial/files/)

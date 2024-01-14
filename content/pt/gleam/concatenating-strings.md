@@ -1,45 +1,57 @@
 ---
-title:                "Gleam: Juntando cadeias de caracteres"
+title:                "Gleam: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que concatenar strings é útil em Gleam?
+# Por que concatenar strings?
 
-Concatenar, ou juntar, strings é uma tarefa comum em programação. Em Gleam, a concatenação de strings é especialmente útil para criar mensagens personalizadas, gerar relatórios ou formatar dados de saída. É uma ferramenta fundamental para criar scripts e programas dinâmicos e interativos.
+Ao escrever código em qualquer linguagem de programação, muitas vezes precisamos unir strings, ou seja, juntar duas ou mais cadeias de caracteres para formar uma única string. Isso é especialmente útil quando estamos trabalhando com dados de entrada do usuário ou quando precisamos construir uma mensagem dinâmica.
 
-## Como fazer a concatenação de strings em Gleam
+# Como fazer
 
-Fazer a concatenação de strings em Gleam é simples. Basta utilizar o operador "+" para juntar duas ou mais strings. Veja um exemplo:
+Em Gleam, podemos concatenar strings usando o operador `++` ou a função embutida `string.concat()`. Vamos ver alguns exemplos:
 
-```Gleam
-let nome = "Maria"
-let sobrenome = "Silva"
-let nome_completo = nome + " " + sobrenome
-```
-
-O valor da variável "nome_completo" será "Maria Silva". É possível também adicionar strings diretamente a uma variável existente, utilizando o operador "+=":
+### Usando o operador `++`
 
 ```Gleam
-let mensagem = "Olá "
-mensagem += nome_completo
-mensagem += "! Bem-vinda ao meu blog!"
+let greeting = "Olá, "
+let name = "Maria"
+let message = greeting ++ name
 ```
 
-Agora, o valor da variável "mensagem" será "Olá Maria Silva! Bem-vinda ao meu blog!". Perceba como a concatenação de strings permite criar mensagens personalizadas e dinâmicas.
+Neste exemplo, `message` terá o valor "Olá, Maria". Podemos também concatenar mais de duas strings:
 
-## Detalhando a concatenação de strings em Gleam
+```Gleam
+let first_name = "João"
+let last_name = "Silva"
+let full_name = first_name ++ " " ++ last_name
+```
 
-Em Gleam, a concatenação de strings é feita através do operador "+". Porém, é importante lembrar que esse operador serve apenas para unir strings, não sendo possível realizar operações matemáticas entre elas. Além disso, é possível concatenar strings com outros tipos de dados, como inteiros e booleanos, mas é preciso convertê-los para string antes.
+Agora `full_name` será igual a "João Silva".
 
-Outro detalhe importante é que a concatenação de strings em Gleam é feita de forma eficiente e segura, evitando problemas comuns como a falta de memória. Assim, é possível utilizar essa funcionalidade sem se preocupar com possíveis erros ou bugs.
+### Usando a função `string.concat()`
 
-## Veja também
+```Gleam
+let greeting = "Bom dia, "
+let pronoun = "você"
+let message = string.concat([greeting, pronoun])
+```
 
-- [Documentação oficial sobre strings em Gleam](https://gleam.run/stdlib/string.html)
-- [Tutorial sobre manipulação de strings em Gleam](https://dev.to/t/hacky-dev-gleam)
+Aqui, `message` será "Bom dia, você". A função `string.concat()` também nos permite concatenar mais de duas strings ao passar uma lista de strings como argumento.
 
-Esperamos que este artigo tenha sido útil para entender melhor a concatenação de strings em Gleam. Com essa ferramenta, você poderá criar programas mais dinâmicos e interativos. Continue explorando a linguagem e veja o que mais é possível fazer!
+# Aprofundando
+
+Ao concatenar strings, é importante lembrar que o tipo resultante sempre será uma string. Isso significa que podemos combinar strings com outros tipos de dados, como inteiros ou booleanos, sem se preocupar com possíveis erros de tipo.
+
+Também é importante mencionar que usar o operador `++` muitas vezes pode levar a uma má performance devido à criação frequentemente desnecessária de novas strings. Por isso, é recomendado utilizar a função `string.concat()` sempre que possível para otimizar seu código.
+
+# Veja também
+
+- Documentação oficial sobre strings em Gleam: https://gleam.run/documentation/stdlib#string
+- Tutorial sobre concatenação de strings em Gleam: https://gleam.run/getting-started/strings#concatenating-strings

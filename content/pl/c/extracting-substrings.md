@@ -1,54 +1,59 @@
 ---
 title:                "C: Wycinanie podciągów"
+simple_title:         "Wycinanie podciągów"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Zapewne wielu czytelników zastanawia się, po co w ogóle zajmować się wyodrębnianiem podłańcuchów w języku C. Czy nie jest to po prostu zbędne utrudnienie? Tymczasem wyodrębnianie podłańcuchów może być bardzo przydatne w różnych scenariuszach programistycznych. Przykładowo, możemy chcieć wyodrębnić wybrane elementy z jednego dłuższego łańcucha znaków, aby móc je przetworzyć lub wyświetlić w inny sposób. Dzięki wyodrębnianiu podłańcuchów możemy także efektywniej przeprowadzić operacje na tekście, co może znacznie przyśpieszyć nasz kod. W tym artykule pokażemy Wam kilka sposobów, jak wyodrębnić podłańcuchy w języku C.
+Wynajmowanie podciągów jest ważną częścią programowania w języku C. Pozwala ono na wyodrębnienie pewnej części tekstu z danego ciągu znaków, co jest niezbędne w wielu projektach. W tym poście dowiesz się, dlaczego warto używać tej funkcji i jak to zrobić.
 
-## Jak to zrobić?
+## Jak to zrobić
+
+Aby wydobyć podciąg w języku C, należy użyć funkcji `substr`, która jest dostępna w większości kompilatorów. Przede wszystkim, należy określić wejściowy ciąg i indeks początkowy oraz końcowy podciągu. Następnie, można wyświetlić go na ekranie przy użyciu funkcji `printf`. Przykładowy kod znajduje się poniżej:
 
 ```C
 #include <stdio.h>
-#include <string.h>
 
 int main() {
+    char input[] = "Ten post jest świetny!";
+    int start = 4;
+    int end = 8;
+    char output[end - start + 1];
 
-  // przykładowy łańcuch znaków
-  char str[] = "Przykładowe zdanie";
+    // Wybranie podciągu
+    for (int i = start; i < end; i++) {
+        output[i - start] = input[i];
+    }
+    // Dodanie terminatora znaku
+    output[end - start] = '\0';
 
-  // wyodrębnienie podłańcucha od indeksu 4 do 13
-  char substr[10];
-  strncpy(substr, &str[4], 10); // skopiuj 10 znaków od indeksu 4
-  substr[10] = '\0'; // zakończ łańcuch znakiem null
-  printf("%s\n", substr); // wyświetli "kładowe z"
+    // Wyświetlenie wyniku
+    printf("%s", output);
 
-  // wyodrębnienie podłańcucha do pierwszego wystąpienia spacji
-  char *space = strchr(str, ' '); // znajdź indeks pierwszej spacji
-  if (space != NULL) {
-    int index = (int)(space - str);  // konwertuj wskaźnik na indeks
-    char substr2[index+1]; // utwórz tablicę o odpowiedniej długości
-    strncpy(substr2, str, index); // skopiuj odpowiedni fragment łańcucha
-    substr2[index] = '\0'; // zakończ łańcuch znakiem null
-    printf("%s\n", substr2); // wyświetli "Przykładowe"
-  }
-
-  return 0;
+    return 0;
 }
 ```
 
-W powyższym przykładzie wykorzystaliśmy funkcję `strncpy()`, która służy do kopiowania określonej liczby znaków z jednego łańcucha do drugiego. W przypadku wyodrębnienia pierwszego wystąpienia spacji, użyliśmy funkcji `strchr()`, która zwraca wskaźnik na pierwsze wystąpienie danego znaku w łańcuchu. Następnie wykorzystaliśmy konwersję wskaźnika na indeks, aby określić długość wyodrębnianego podłańcucha.
+Powyższy kod wyświetli podciąg "post" na ekranie. Jest to wynik przetwarzania wejściowego tekstu "Ten post jest świetny!" przez kod, który wybiera tylko znaki z indeksami od 4 do 8.
 
-## Głębsze zagłębianie się w temat
+## Wnikliwa analiza
 
-Istnieje wiele innych funkcji, które mogą nam pomóc w wycinaniu lub wyodrębnianiu podłańcuchów w języku C. Przykładowo, możemy wykorzystać funkcję `strtok()` do podzielenia łańcucha na mniejsze części za pomocą określonego separatora. Warto również wspomnieć o funkcji `sscanf()`, która pozwala na wyodrębnienie podłańcucha, używając formatowania znane ze skanowania za pomocą `scanf()`. Dzięki temu możemy wygodnie określić co i gdzie chcemy wyciąć z łańcucha.
+Aby lepiej zrozumieć funkcję `substr` i z jej właściwościami, warto wiedzieć, że w języku C indeksowanie zaczyna się od 0. Oznacza to, że pierwszy znak w ciągu ma indeks 0, drugi - 1 itd. Aby określić podciąg, musimy ustalić indeks początkowy i końcowy, ale zwykle musimy również wiedzieć, czy ostatni znak jest włączony do podciągu czy nie. W przypadku naszego przykładu, musieliśmy użyć `end - start + 1` w celu zapewnienia, że ostatni znak jest wliczony.
 
-## Zobacz także
+Inną przydatną funkcją jest `strlen`, która zwraca długość ciągu znaków oraz `strcpy`, która umożliwia kopiowanie tekstu z jednej zmiennej do drugiej. Te dwie funkcje mogą być przydatne przy pracy z podciągami.
 
-- [Dokumentacja języka C - funkcja strncpy()](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)
-- [Dokumentacja języka C - funkcja strchr()](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm
+Inną istotną rzeczą do zapamiętania jest to, że podciągi w języku C muszą być zawsze kończone terminatorami znaków `\0`. Jest to konieczne ze względu na to, jak język C obsługuje ciągi znaków. Bez dodania terminatora, funkcje operujące na ciągach mogą sprawiać problemy lub nie działać poprawnie.
+
+## Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej na temat pracy z ciągami znaków w języku C, możesz zerknąć na następujące linki:
+
+- [Dokumentacja języka C](https://www.tutorialspoint.com/cprogramming/index.htm)
+- [Funkcje dla obsługi ciągów znaków w języku C](https://www.geeksforgeeks.org/c-string-class-and-its-applications/)
+- [Tutorial video na temat wybierania podciągów w języku C](https://www.youtube.com/watch?v=cG30ON6iQyM)

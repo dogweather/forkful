@@ -1,62 +1,56 @@
 ---
-title:                "Fish Shell: 부분 문자열 추출"
+title:                "Fish Shell: 문자열 추출하기"
+simple_title:         "문자열 추출하기"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-파일을 다룰 때 종종 사람들은 특정 부분을 추출하고 싶어합니다. 이를 위해 여러 가지 방법이 있지만, `substr` 함수는 특정 문자열에서 원하는 부분을 추출하는 데에 유용하게 사용될 수 있습니다.
+문자열에서 일부 문자열을 추출하는 과정은 프로그래밍에서 자주 필요한 작업입니다. 예를 들어, 특정 패턴을 따르는 파일 이름을 필터링하는 경우, 일부 문자열을 추출하고 그것을 비교하는 것이 효과적일 수 있습니다. 또한, 추출한 문자열을 변수로 사용하여 자동화된 작업을 수행할 수도 있습니다.
 
-## 어떻게
+## 어떻게?
 
-먼저, `substr`을 사용하기 전에 먼저 Fish Shell을 적극적으로 사용해야 합니다. 그 후 Fish Shell을 설치하고 사용할 수 있게 되면, `substr` 함수를 사용하여 원하는 부분을 추출할 수 있습니다.
+Fish Shell은 문자열 추출을 간단하고 쉽게 처리하는 기능을 제공합니다. 다음은 간단한 예제 코드와 함께 추출 방법을 보여줍니다.
 
-```
-Fish Shell에서 문자열 추출하기
+```Fish Shell
+# First, define a string variable
+set my_string "Hello World"
 
-$ set string "안녕하세요"
-
-$ echo (substr -l 2 $string)
-안녕
-```
-
-위의 예시에서 보듯이, `substr` 함수를 사용할 때는 먼저 추출하고자 하는 길이를 지정해야 합니다. `-l` 옵션을 사용하여 추출할 길이를 지정해줄 수 있습니다. 여기서는 `2`를 지정하여 "안녕"이 추출되었습니다.
-
-## 깊게 들어가기
-
-`substr` 함수는 추출할 문자열이 시작하는 위치를 지정하는 `-b` 옵션도 제공합니다. 기본값은 `0`으로, 문자열의 처음부터 시작하는 것을 의미합니다. 따라서 `-b` 옵션을 사용하여 추출하고자 하는 문자열의 시작 위치를 지정해줄 수 있습니다.
-
-```
-Fish Shell에서 문자열 추출하기
-
-$ set string "첫번째부터 다섯번째까지의 문자열"
-
-$ echo (substr -b 0 -l 5 $string)
-첫번째
+# Use the `string sub` command to extract a substring
+string sub -s 6 $my_string    # This will output "World"
 ```
 
-또한 `substr` 함수는 `-e` 옵션을 제공하여 추출하고자 하는 문자열의 끝 위치를 지정해줄 수도 있습니다. 이 옵션은 추출할 문자열의 길이가 아닌 끝 위치를 지정하는 것이기 때문에, `-l` 옵션과 함께 사용하여 추출하고자 하는 문자열의 길이를 지정해줘야 합니다.
+파일 이름을 필터링하는 예제에서, `string sub` 명령어를 사용하여 파일의 확장자를 추출하고 그것을 비교할 수 있습니다.
 
+```Fish Shell
+# Define a variable for the file name
+set file_name "my_document.txt"
+
+# Extract the file extension using `string sub`
+string sub -bse 5 $file_name   # This will output "txt"
 ```
-Fish Shell에서 문자열 추출하기
 
-$ set string "처음부터 여섯번째까지의 문자열"
+## 딥 다이브
 
-$ echo (substr -b 0 -e 6 $string)
-처음부
-```
+추출한 문자열을 사용할 때 유용한 옵션과 플래그가 있습니다. 다음은 몇 가지 예시입니다.
+
+- `-s` 옵션: 추출할 부분의 시작 위치를 지정합니다.
+- `-e` 옵션: 추출할 부분의 끝 위치를 지정합니다.
+- `-b` 옵션: 추출할 부분의 시작 위치를 역순으로 지정합니다.
+- `-w` 옵션: 추출할 부분의 문자 수를 지정합니다.
+
+또한, 상황에 따라 정규식을 사용하여 문자열을 추출할 수도 있습니다. 이 기능을 사용하면 더 많은 유연성을 가지고 추출 작업을 수행할 수 있습니다.
 
 ## 더 알아보기
 
-`substr` 함수는 길이나 시작/끝 위치를 지정하는 옵션 외에도 다양한 옵션을 제공합니다. 또한 주어진 문자열이 아닌 파일에서도 문자열을 추출할 수 있는 `substr < FILE` 형태의 사용법도 있습니다. 더 많은 정보는 [Fish Shell 공식문서](https://fishshell.com/docs/current/cmds/substr.html)를 참고하세요.
+더 자세한 내용을 알고 싶다면 공식 Fish Shell 문서를 참조하세요. https://fishshell.com/docs/current/cmds/string.html
 
-## 연관 정보
+## 관련 링크
 
-* [Fish Shell 설치 방법](https://fishshell.com/)
-* [Fish Shell 공식문서](https://fishshell.com/docs/current/)
-* [Fish Shell의 유용한 기능들](https://github.com/fish-shell/fish-shell/wiki/Built-in-Functions)
-* [Fish Shell의 고급 설정 및 사용법](https://en.wikipedia.org/wiki/Fish_(Unix_shell))
+- Fish Shell 사용 방법: https://medium.com/home-decor-hacks/the-power-of-fish-shell-e942a5fac4b7
+- 문자열 처리를 위한 정규식 튜토리얼: https://regexone.com/

@@ -1,48 +1,39 @@
 ---
 title:                "Elm: Creazione di un file temporaneo"
+simple_title:         "Creazione di un file temporaneo"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
-Una delle sfide più comuni quando si scrive codice è gestire i file temporanei. Che si tratti di archivi compressi, file di configurazione o semplicemente file temporanei per l'elaborazione dei dati, doverli creare e gestire può essere una seccatura. Fortunatamente, Elm ha un modo semplice e potente per gestire i file temporanei: il package `elm/file`.
+### Perché
+Creare un file temporaneo può essere utile per gestire dati temporanei o per eseguire operazioni di scrittura senza influire sui file permanenti.
 
-## Come
-Usando il package `elm/file`, è possibile creare un file temporaneo con pochi semplici passaggi. Innanzitutto, è necessario importare il modulo `File` e definire una Funzione chiamata `temporary`.
+### Come fare
+Per creare un file temporaneo in Elm, dobbiamo utilizzare la funzione `File.temp` fornita dalla libreria `elm/file`. Questa funzione accetta tre argomenti: 
+- Un percorso (path) opzionale, che specifica la directory in cui vogliamo creare il file temporaneo. Se non viene fornito alcun percorso, il file verrà creato nella directory di lavoro corrente.
+- Un prefisso opzionale, che non è altro che il primo segmento di nome del file temporaneo che verrà creato. Se viene omesso, il prefisso predefinito sarà "temp",
+- Un suffisso opzionale, che è invece l'ultima parte del nome del file temporaneo. Se omesso, il suffisso predefinito sarà una stringa vuota.
 
-```Elm
-import File exposing (..)
-
-temporary : Task x FilePath
-temporary =
-    Temp.file "mytempfile.txt"
-```
-
-Successivamente, è possibile utilizzare la funzione `perform` per eseguire la task e ottenere il percorso del file temporaneo creato.
+Il seguente codice mostra come utilizzare la funzione `File.temp` per creare un file temporaneo nella directory di lavoro corrente con il prefisso "elm_" e il suffisso ".tmp":
 
 ```Elm
-perform temporary
-    (File.map
-        (\path ->
-            -- fai qualcosa con il percorso del file temporaneo
-            )
-        (File.onError
-            (\error ->
-                -- gestisci eventuali errori
-                )
-            )
-        )
+import File exposing (temp)
+
+main =
+  temp "elm_" ".tmp"
+    |> Result.map (\filePath -> "File temporaneo creato: " ++ filePath)
+    |> Result.withDefault "Errore!"
 ```
 
-## Deep Dive
-Una volta creato il file temporaneo, è possibile utilizzarlo come se fosse un file normale all'interno della propria applicazione. Ciò significa che è possibile leggerlo, scrivere su di esso e anche cancellarlo una volta che non è più necessario.
+L'output del codice sarà una stringa contenente il percorso del file temporaneo appena creato. Se l'operazione non riesce, la stringa di output sarà "Errore!".
 
-Per ulteriori informazioni sulle operazioni disponibili, controlla la documentazione completa di `elm/file`.
+### Approfondimento
+Creare un file temporaneo può essere una soluzione veloce e facile per gestire dati temporanei, ma è importante considerare alcune cose. Prima di tutto, i file temporanei vengono eliminati automaticamente al termine del programma eseguito. Inoltre, se si vuole utilizzare il file temporaneo al di fuori della funzione in cui è stato creato, si dovrà passare il percorso del file come argomento alla funzione successiva.
 
-## Vedi anche
-- Documentazione ufficiale `elm/file`: https://package.elm-lang.org/packages/elm/file/latest/
-- Articoli sulla gestione dei file in Elm: https://css-tricks.com/introduction-to-elm-and-file-operations-part-1/
-- Esempi pratici di utilizzo di `elm/file`: https://github.com/vilic/elm-file/tree/master/example
+### Vedi anche
+- Documentazione ufficiale della funzione `File.temp`: https://package.elm-lang.org/packages/elm/file/latest/File#temp
+- Altro tutorial su come creare un file temporaneo in Elm: https://dev.to/ifazio/how-to-create-temporary-files-in-elm-3f94

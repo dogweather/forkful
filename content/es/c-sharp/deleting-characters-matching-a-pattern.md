@@ -1,7 +1,9 @@
 ---
 title:                "C#: Borrando caracteres que coinciden con un patrón"
+simple_title:         "Borrando caracteres que coinciden con un patrón"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,44 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-A veces, eliminar caracteres que coinciden con un patrón puede ser útil en la programación para limpiar cadenas de texto o realizar operaciones específicas. En esta entrada de blog, exploraremos cómo hacerlo en C#.
+Eliminar caracteres que coinciden con un patrón es una tarea común en la programación, especialmente cuando se trabaja con cadenas de texto o archivos de texto. Puede ser útil para limpiar y formatear los datos, o para obtener información específica de un conjunto de caracteres.
 
 ## Cómo hacerlo
 
-Para eliminar caracteres coincidentes con un patrón en C#, podemos utilizar la clase `Regex` del espacio de nombres `System.Text.RegularExpressions`. Primero, debemos definir el patrón de caracteres a eliminar utilizando expresiones regulares. Por ejemplo, si queremos eliminar todas las vocales de una cadena de texto, podemos usar el patrón `[aeiouAEIOU]`.
+Existen varias formas de eliminar caracteres que coinciden con un patrón en C#. Aquí mostraremos dos ejemplos utilizando la función `Regex.Replace()`.
 
-Una vez que tenemos nuestro patrón, podemos crear una instancia de la clase `Regex` y utilizar el método `Replace` para reemplazar los caracteres coincidentes con una cadena vacía. Aquí hay un ejemplo de código:
+### Ejemplo 1:
 
-```C#
-string texto = "Hola mundo!";
-string patron = "[aeiouAEIOU]";
-Regex regex = new Regex(patron);
-string resultado = regex.Replace(texto, "");
-Console.WriteLine(resultado); // Hl mnd!
-```
-
-En este ejemplo, utilizamos el método `Replace` para reemplazar todas las vocales en la cadena `texto` con una cadena vacía, lo que resulta en la cadena `Hl mnd!` como resultado.
-
-También podemos utilizar el método `Match` para obtener un objeto `Match` que represente la primera coincidencia del patrón en una cadena. A partir de ahí, podemos utilizar el método `Remove` para eliminar esa coincidencia. Aquí hay un ejemplo:
+Supongamos que tenemos una cadena de texto con varias palabras separadas por espacios, y queremos eliminar todas las palabras que contengan la letra "a". Podemos hacerlo utilizando una expresión regular y la función `Regex.Replace()` de la siguiente manera:
 
 ```C#
-string texto = "Hola mundo!";
-string patron = "[aeiouAEIOU]";
-Regex regex = new Regex(patron);
-Match match = regex.Match(texto);
-string resultado = regex.Remove(texto, match.Index);
-Console.WriteLine(resultado); // Hla mundo!
+string texto = "Hola amigos, ¿cómo están?";
+string patron = @"\b[aA]\w+\b"; // Expresión regular para coincidir con palabras que comienzan con "a"
+string resultado = Regex.Replace(texto, patron, ""); // Reemplaza las palabras que coinciden con el patrón por una cadena vacía
+Console.WriteLine(resultado); // Imprime: ", ¿cómo están?"
 ```
 
-En este caso, utilizamos el método `Match` para obtener la primera coincidencia del patrón en la cadena `texto`, que es la letra "o". Luego, utilizamos el método `Remove` para eliminar esa coincidencia y obtenemos como resultado la cadena `Hla mundo!`.
+### Ejemplo 2:
+
+Otra forma de eliminar caracteres que coinciden con un patrón es utilizando la función `Regex.Replace()` en conjunto con la función `MatchEvaluator`. Esta última nos permite definir una función que será llamada para cada coincidencia encontrada en la cadena, y devolverá la cadena que se utilizará para reemplazarla. Veamos un ejemplo:
+
+```C#
+string texto = "I love programming";
+string patron = @"\w+ing"; // Expresión regular para coincidir con palabras que terminan con "ing"
+string resultado = Regex.Replace(texto, patron, match => match.Value.ToUpper()); // Reemplaza las palabras que coinciden con el patrón por su versión en mayúsculas
+Console.WriteLine(resultado); // Imprime: I LOVE PROGRAMMING
+```
 
 ## Profundizando
 
-En este ejemplo, solo hemos usado un patrón muy simple para eliminar caracteres de una cadena. Sin embargo, las expresiones regulares ofrecen una gran cantidad de funcionalidades para buscar y reemplazar patrones complejos en texto. Puedes aprender más sobre esto en nuestra guía de expresiones regulares en C# [aquí](https://docs.microsoft.com/es-es/dotnet/standard/base-types/regular-expression-language-quick-reference).
-
-Recuerda que las expresiones regulares pueden ser muy poderosas, pero también pueden ser complicadas de entender. Siempre asegúrate de probar y validar tus patrones antes de utilizarlos en tu código.
+Cuando se trabaja con expresiones regulares, es importante tener en cuenta que cada lenguaje de programación puede tener diferencias en la sintaxis o en las funciones disponibles. Es recomendable consultar la documentación oficial de C# para conocer más sobre las funciones y opciones disponibles para trabajar con patrones y expresiones regulares.
 
 ## Ver también
 
-- [Guía de expresiones regulares en C#](https://docs.microsoft.com/es-es/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Clase Regex en C#](https://docs.microsoft.com/es-es/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)
+- [Documentación oficial de Microsoft sobre expresiones regulares en C#](https://docs.microsoft.com/es-es/dotnet/standard/base-types/regular-expression-language-quick-reference) 
+- [Tutorial de Expressions Regular de C# de Codecademy](https://www.codecademy.com/learn/learn-regular-expressions)

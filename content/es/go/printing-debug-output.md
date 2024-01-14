@@ -1,19 +1,19 @@
 ---
-title:                "Go: Impresión de salida de depuración"
+title:                "Go: Imprimiendo la salida de depuración"
+simple_title:         "Imprimiendo la salida de depuración"
 programming_language: "Go"
-category:             "Testing and Debugging"
+category:             "Go"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Imprimir mensajes de depuración es una parte importante del proceso de programación en Go. Al mostrar o registrar información en la consola, podemos entender mejor cómo nuestro código está funcionando y encontrar posibles errores.
+¿Alguna vez te has encontrado con un error en tu código y no puedes entender por qué está sucediendo? ¡La impresión de la salida de depuración puede ser una herramienta muy útil en estas situaciones! Al imprimir información específica en puntos clave de tu código, puedes rastrear y solucionar errores más fácilmente.
 
 ## Cómo hacerlo
-
-Para imprimir mensajes de depuración en Go, podemos utilizar la función `fmt.Println()`. Por ejemplo:
+Para imprimir la salida de depuración en Go, puedes usar la función "fmt.Println()". Por ejemplo:
 
 ```Go
 package main
@@ -21,17 +21,15 @@ package main
 import "fmt"
 
 func main() {
+  // Crea una variable
   nombre := "Juan"
-  edad := 25
-  fmt.Println("El nombre del usuario es", nombre, "y tiene", edad, "años.")
+
+  // Imprime la variable
+  fmt.Println("El nombre es:", nombre)
 }
 ```
 
-Este código producirá la siguiente salida en la consola:
-
-`El nombre del usuario es Juan y tiene 25 años.`
-
-Podemos también imprimir valores de variables de diferentes tipos de datos, como enteros, flotantes y booleanos utilizando la función `fmt.Printf()`. Por ejemplo:
+La salida de este código sería: "El nombre es: Juan". También puedes utilizar la función "fmt.Printf()" para formatear la salida de manera más específica. Por ejemplo:
 
 ```Go
 package main
@@ -39,25 +37,22 @@ package main
 import "fmt"
 
 func main() {
-  altura := 1.75
-  esCasado := true
-  fmt.Printf("La altura del usuario es %.2f y su estado civil es %t", altura, esCasado)
+  // Crea una variable
+  edad := 22
+
+  // Imprime la variable formateada
+  fmt.Printf("La edad es: %d años", edad)
 }
 ```
 
-La salida de este código será:
+La salida de este código sería: "La edad es: 22 años". Puedes ver cómo el formato "%d" se reemplaza con el valor de la variable "edad".
 
-`La altura del usuario es 1.75 y su estado civil es true`
+## Profundizando
+Además de la función "fmt", Go también cuenta con el paquete "log" que proporciona funcionalidades para imprimir la salida de depuración. Este paquete tiene diferentes funciones como "log.Print()", "log.Println()" y "log.Printf()". También puedes especificar el nivel de logeo (debug, info, warning, error) y la hora en que se imprime la salida.
 
-En estos ejemplos, estamos utilizando el operador `%` para indicar dónde queremos imprimir cada valor. El `.` seguido de un número en la cadena de formato, indica cuántos decimales queremos mostrar en el caso de números. También podemos utilizar `%s` para imprimir cadenas y `%v` para imprimir el valor predeterminado de una variable.
-
-## Profundizando en la impresión de mensajes de depuración
-
-Cuando estamos depurando un programa, es importante tener en cuenta que imprimir demasiados mensajes puede hacer que la consola se vuelva confusa y difícil de leer. Por lo tanto, debemos ser selectivos en qué información imprimimos y dónde lo hacemos.
-
-Una alternativa a la impresión de mensajes de depuración en la consola es utilizar un paquete de registro, como `log` o `logrus`, que nos permite guardar mensajes en un archivo en lugar de solo imprimirlos en la consola. También podemos utilizar niveles de registro para mostrar diferentes tipos de mensajes, como mensajes de información, advertencias o errores.
+Otra forma de imprimir la salida de depuración en Go es utilizando el debugger integrado en las principales IDE como Visual Studio Code o Goland. Este te permite visualizar variables, pausar la ejecución y rastrear errores de manera más eficiente.
 
 ## Ver también
-
-- [Documentación oficial de Go sobre la función fmt](https://pkg.go.dev/fmt)
-- [Ejemplo de uso de paquetes de registro en Go](https://www.golangprograms.com/go-language/advance-programming/go-logging-package-use-in-logrus-example.html)
+- [Documentación oficial de debugging en Go](https://golang.org/doc/gdb) 
+- [Tutorial de debugging en Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging) 
+- [Tutorial de debugging en Goland](https://www.jetbrains.com/help/go/debugging-with-goland.html)

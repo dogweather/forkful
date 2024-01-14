@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Ruby"
-category:             "Getting Started"
+category:             "Ruby"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/starting-a-new-project.md"
 ---
 
@@ -9,36 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å starte et nytt programmeringsprosjekt kan være en spennende og givende opplevelse. Det kan hjelpe deg med å forbedre dine ferdigheter, utforske nye muligheter og til og med skape noe som kan være nyttig for andre.
+Å starte et nytt programmeringsprosjekt kan føles overveldende og skremmende, spesielt for de som er nye til Ruby. Men når du først kommer i gang og ser resultatene, er det en utrolig tilfredsstillende følelse. Å skape noe fra bunnen av og se det ta form er en av de største gledene ved å være en programmerer.
 
-## Hvordan Du Starter
+## Slik gjør du det
 
-Å starte et nytt Ruby-prosjekt er enkelt og krever bare noen få trinn. Først må du sørge for at du har Ruby installert på datamaskinen din. Deretter kan du følge disse trinnene for å starte ditt første prosjekt:
+For å komme i gang med ditt nye Ruby-prosjekt, må du først sørge for at du har de riktige verktøyene på plass. Det første du trenger er selvfølgelig Ruby-programmeringsspråket installert på datamaskinen din. Dette kan gjøres ved å følge instruksjonene for din spesifikke operativsystem.
+
+Etter å ha installert Ruby, må du også ha en teksteditor som lar deg skrive og kjøre Ruby-kode. Det er mange forskjellige tekstredigeringsprogrammer å velge mellom, men noen av de mest populære for Ruby-programmering er Sublime Text, Atom og Visual Studio Code.
+
+Når du har alt du trenger på plass, kan du begynne å skrive kode! Her er et enkelt eksempel på et "Hello World!"-program i Ruby:
 
 ```Ruby
-# 1. Lag en ny mappe for prosjektet ditt
-mkdir mitt-prosjekt
-
-# 2. Naviger til prosjektmappen
-cd mitt-prosjekt
-
-# 3. Lag en ny Ruby-fil
-touch main.rb
+puts "Hei verden!"
 ```
 
-Nå har du en tom Ruby-fil klar til å bli fylt med kode.
+Når du kjører dette programmet, vil du se teksten "Hei verden!" bli trykket ut i terminalen din.
 
-## Dypdykk
+## Dykk dypere
 
-Nå som du har ditt nye prosjekt klart, kan du begynne å utforske de ulike aspektene ved Ruby-programmering. Her er noen tips for å hjelpe deg i gang:
+Å starte et nytt Ruby-prosjekt innebærer mer enn bare å kunne skrive kode. Det er viktig å også ha en god forståelse av de grunnleggende konseptene og syntaksen i språket. Dette vil hjelpe deg med å unngå feil og effektivisere kodingen din.
 
-- Utforsk forskjellige Ruby syntaks og nøkkelord, som for eksempel `puts`, `if`, `while` osv.
-- Lær om Ruby-objekter og metoder, og hvordan de kan hjelpe deg med å strukturere og organisere koden din.
-- Utforsk Nettleserne og RubyGems for å finne nyttige biblioteker for ditt prosjekt.
-- Prøv deg frem med ulike prosjektideer, som en kalenderapplikasjon, et tekstbasert spill, et enkelt nettsted osv.
+Et annet viktig steg når du starter et nytt prosjekt er å sette opp et godt strukturert prosjektmal. Dette vil gjøre det enklere for deg å organisere koden din og holde oversikt over de forskjellige filene som er en del av prosjektet ditt.
 
-## Se Også
+Det kan også være lurt å utforske forskjellige Ruby-biblioteker og rammeverk som kan hjelpe deg med å bygge ditt prosjekt. Noen populære eksempler er Rails, Sinatra og Ruby on Rails. Disse verktøyene kan gjøre det enklere å håndtere vanskelige oppgaver og fremskynde utviklingsprosessen.
 
-- [Ruby Dokumentasjon](https://www.ruby-lang.org/no/documentation/)
-- [Ruby Nettleser](https://rubygems.org/)
-- [RubyGems](https://www.rubygems.org/)
+## Se også
+
+- [Ruby Documentation](https://www.ruby-lang.org/en/documentation/)
+- [Ruby Gems](https://rubygems.org/)
+- [Rails Tutorial](https://www.railstutorial.org/)

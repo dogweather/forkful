@@ -1,40 +1,38 @@
 ---
-title:                "Fish Shell: Convertendo uma data em uma string"
+title:                "Fish Shell: Convertendo uma data em uma string."
+simple_title:         "Convertendo uma data em uma string."
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma data em uma string?
+## Por que utilizar o Fish Shell para converter uma data em uma string?
 
-Converter uma data em uma string é uma tarefa muito comum na programação, especialmente quando se lida com dados de diferentes formatos. Ao converter uma data em uma string, é possível personalizar a maneira como a data é apresentada, atendendo às necessidades específicas do projeto. Isso também permite que o programador manipule a data para uso em diferentes contextos, como em relatórios ou sistemas de banco de dados.
+Não importa se você é novo na programação ou se já tem anos de experiência, há momentos em que é necessário converter uma data em uma string para realizar determinadas tarefas. O Fish Shell torna esse processo simples e eficiente, permitindo que você se concentre em outras partes importantes do seu código.
 
-## Como fazer: Convertendo uma data em uma string no Fish Shell
+## Como fazer a conversão de data em string utilizando o Fish Shell
+
+Para converter uma data em uma string no Fish Shell, basta seguir alguns passos simples. Primeiro, é necessário ter uma data no formato `AAAA-MM-DD` salva em uma variável. Então, utilizando o comando `date` e especificando o formato desejado, podemos converter essa data em uma string. Veja um exemplo abaixo:
 
 ```Fish Shell
-# Definindo a data atual
-set data (date +%d/%m/%Y)
-
-# Convertendo a data em uma string
-set data_string (string replace "/" "-" $data)
-
-# Imprimindo o resultado
-echo $data_string
+set data 1995-02-22
+set data_string (date --date=$data '+Dia %d, mês %m, ano %Y')
+echo $data_string # Output: Dia 22, mês 02, ano 1995
 ```
 
-Neste exemplo, usamos o comando `date` para obter a data atual no formato "dia/mês/ano" e armazenamos em uma variável chamada `data`. Em seguida, usamos o comando `string replace` para substituir as barras (/) por hífens (-) e armazenar o resultado em uma nova variável chamada `data_string`. Por fim, imprimimos o valor da variável para ver o resultado da conversão.
+Com essa técnica, é possível personalizar a formatação da data de acordo com as suas necessidades. Você pode adicionar ou remover informações no comando `date` para obter a string desejada.
 
-A saída deverá ser algo como "09-02-2021", dependendo da data atual. Você também pode personalizar a formatação da data conforme sua preferência, basta consultar a documentação do comando `date` para mais opções.
+## Aprofundando-se na conversão de data em string no Fish Shell
 
-## Aprofundando: Entendendo o processo de conversão
+O Fish Shell utiliza o comando `date` do sistema operacional para realizar a conversão de data em string. Isso significa que, ao utilizar esse comando, você tem acesso a diversos formatos e opções para personalizar a saída da string. É importante ressaltar que o formato escolhido pode variar de acordo com o sistema operacional utilizado.
 
-Ao converter uma data em uma string, é importante entender como o formato da data pode afetar o resultado. Em geral, o Fish Shell segue o padrão da linguagem C quando se trata de formatação de datas. Por exemplo, se você quiser exibir o ano com quatro dígitos em vez de apenas dois, você pode usar o código `%Y` em vez de `%y`.
+Uma outra opção é utilizar a função `strftime`, que também permite a formatação personalizada da data. Além disso, você pode consultar a documentação do Fish Shell para descobrir mais informações e opções sobre a conversão de data em string.
 
-Além disso, é importante estar atento a possíveis erros na conversão, principalmente quando se trabalha com datas em diferentes formatos ou em diferentes idiomas. Para evitar problemas, sempre utilize o comando `date` com opções de formatação específicas para obter a data em um formato padronizado antes de convertê-la em uma string.
+## Veja também
 
-## See Also 
-- [Documentação do comando `date` no Fish Shell](https://fishshell.com/docs/current/cmds/date.html)
-- [Guia de formatação de datas em C](https://www.tutorialspoint.com/c_standard_library/time_h.htm) 
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Documentação do Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Guia de referência do comando date](https://linux.die.net/man/1/date)
+- [Documentação strftime no Fish Shell](https://fishshell.com/docs/current/cmds/strftime.html)

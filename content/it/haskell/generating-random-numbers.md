@@ -1,42 +1,70 @@
 ---
 title:                "Haskell: Generazione di numeri casuali"
+simple_title:         "Generazione di numeri casuali"
 programming_language: "Haskell"
-category:             "Numbers"
+category:             "Haskell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Il generare numeri casuali è utile in diversi ambiti della programmazione, dalle simulazioni ai giochi, fino allo sviluppo di algoritmi di machine learning. Con Haskell, possiamo generare numeri casuali in modo sicuro e controllato, e questo rende la scelta di utilizzare questo linguaggio ancora più attraente.
 
-## Come fare
-Per generare numeri casuali in Haskell, utilizziamo la funzione `randomR` del modulo `System.Random`. Possiamo specificare un intervallo di numeri in cui vogliamo che il numero casuale sia generato, ad esempio:
+La generazione di numeri casuali è un'attività comune e utile nella programmazione. Può essere utilizzata per creare giochi, simulazioni o per testare algoritmi. Inoltre, imparare a generare numeri casuali in Haskell ci permette di esplorare le funzionalità del linguaggio e arricchire le nostre capacità di programmazione.
 
-```Haskell
-randomR (1, 10) :: IO Int
-```
+## Come si fa
 
-Questa funzione restituisce un valore di tipo `IO Int`, il che significa che viene eseguita all'interno del mondo della IO e, quindi, produce un numero casuale ogni volta che viene chiamata. Possiamo anche generare un numero casuale di tipo `Double`, specificando il range corrispondente:
+In Haskell, la generazione di numeri casuali è possibile grazie al modulo `System.Random`, che fornisce una serie di funzioni per creare e manipolare generatori di numeri casuali.
 
 ```Haskell
-randomR (0.0, 1.0) :: IO Double
+import System.Random
+
+-- Creare un generatore di numeri casuali a partire da un valore seed
+mkStdGen :: Int -> StdGen
+
+-- Generare un numero intero casuale nell'intervallo specificato
+randomR :: (Random a, RandomGen g) => (a, a) -> g -> (a, g)
+
+-- Generare una lista di numeri casuali interi
+randomRs :: (Random a, RandomGen g) => (a, a) -> g -> [a]
 ```
 
-Se invece vogliamo ottenere un numero casuale in un range specifico senza essere limitati a un tipo specifico, possiamo utilizzare la funzione `random`:
+Utilizzando `mkStdGen`, possiamo creare un generatore di numeri casuali fornendo un valore di seed. Successivamente, utilizzando `randomR` o `randomRs` possiamo generare uno o più numeri casuali rispettivamente. Ecco un esempio di codice che genera tre numeri casuali tra 1 e 10:
 
 ```Haskell
-random :: (Random a, RandomGen g) => g -> (a, g)
+import System.Random
+
+main = do
+    let gen = mkStdGen 10 -- creiamo un generatore di numeri casuali con seed 10
+        (num1, gen') = randomR (1, 10) gen -- generiamo il primo numero casuale
+        (num2, gen'') = randomR (1, 10) gen' -- generiamo il secondo numero casuale
+        (num3, _) = randomR (1, 10) gen'' -- generiamo il terzo numero casuale
+    putStrLn $ show num1 -- stampiamo i numeri casuali
+    putStrLn $ show num2
+    putStrLn $ show num3
 ```
 
-Questa funzione restituisce un numero casuale e un nuovo generatore, utile se ci troviamo a dover generare più numeri casuali all'interno della stessa esecuzione.
+L'output di questo programma potrebbe essere:
+
+```
+5
+3
+9
+```
+
+Notiamo che ogni volta che viene chiamata una funzione di generazione di numeri casuali, viene restituito anche un nuovo generatore che può poi essere utilizzato per generare ulteriori numeri.
 
 ## Approfondimento
-Per generare numeri casuali in modo sicuro e affidabile, Haskell utilizza un concetto chiamato "generatore". Il generatore è in realtà un'implementazione dell'algoritmo di generazione di numeri pseudo-casuali, che utilizza un seed (seme) per generare i numeri. Questo significa che se utilizziamo lo stesso seed, otterremo sempre gli stessi numeri casuali. Possiamo anche utilizzare una "carta di gioco" come seed, ottenendo così una sequenza di numeri casuali che riproduce lo stesso ordine delle carte in un mazzo.
 
-Inoltre, possiamo controllare il seed utilizzato dal generatore, in modo da poter riprodurre sempre la stessa sequenza di numeri casuali. Questo è particolarmente utile durante la fase di debug, quando dobbiamo analizzare un comportamento dipendente dai numeri casuali.
+In Haskell, la generazione di numeri casuali è basata sull'algoritmo di generazione di numeri casuali Mersenne Twister, un algoritmo probabilistico molto efficiente e ampiamente utilizzato.
+
+Inoltre, è possibile manipolare i generatori di numeri casuali in modi più avanzati, ad esempio combinandoli tra loro o utilizzando la funzione `split` per dividerne uno in due nuovi generatori.
+
+La generazione di numeri casuali può anche essere utilizzata per implementare algoritmi di generazione di sequenze pseudo-casuali, utili in contesti come la crittografia.
 
 ## Vedi anche
-- [Documentazione ufficiale di Haskell sulla generazione di numeri casuali](https://www.haskell.org/onlinereport/random.html)
-- [Tutorial su come generare numeri casuali in Haskell](https://www.codewars.com/kata/54c3a5939aeeceeae1001000)
-- [Esempi pratici di utilizzo della generazione di numeri casuali in Haskell](https://williamyaoh.com/posts/2015-09-11-Haskell-Random/index.html)
+
+- [Documentazione del modulo `System.Random` su Hackage](https://hackage.haskell.org/package/random/docs/System-Random.html)
+- [Tutorial su come generare numeri casuali in Haskell](https://www.codementor.io/@sheena/haskell-random-number-generation-tutorial-cguedb1at)
+- [Mersenne Twister su Wikipedia](https://it.wikipedia.org/wiki/Mersenne_Twister)

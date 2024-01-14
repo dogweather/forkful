@@ -1,56 +1,49 @@
 ---
-title:                "Go: Lesen von Befehlszeilenargumenten"
+title:                "Go: Das Lesen von Befehlszeilen-Argumenten"
+simple_title:         "Das Lesen von Befehlszeilen-Argumenten"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für jeden, der Go-Programmierung betreibt. Ob Sie eine kleine Anwendung oder ein großes Framework entwickeln, das Verständnis von Befehlszeilenargumenten ermöglicht es Ihnen, Ihre Programme flexibler und benutzerfreundlicher zu gestalten.
 
-## Wie geht's
-Um Befehlszeilenargumente in Go zu lesen, verwenden Sie einfach die `os.Args` Funktion. Diese Funktion gibt ein Array von Strings zurück, die alle vom Benutzer eingegebenen Argumente enthalten. Hier ist ein Beispielcode:
+Das Lesen von Befehlszeilenargumenten ist ein wichtiger Teil der Go-Programmierung. Wenn du wissen möchtest, wie du deine Anwendungen anpasst und erweiterst, dann ist das Verständnis von Befehlszeilenargumenten entscheidend.
+
+## Wie man es macht
+
+Das Lesen von Befehlszeilenargumenten in Go ist einfach und unkompliziert. Mit dem `flag` Paket kannst du ganz einfach Argumente aus der Befehlszeile in dein Programm einlesen.
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"os"
-)
-
-func main() {
-	args := os.Args
-	for _, arg := range args {
-		fmt.Println(arg)
-	}
-}
-
+import "flag"
 ```
 
-Angenommen, Sie haben dieses Programm als "go-arguments.go" gespeichert, können Sie es auf der Kommandozeile folgendermaßen ausführen:
+Als nächstes musst du die Argumente definieren, die du lesen möchtest. Zum Beispiel könnten wir eine Variable `name` definieren, die den Namen des Benutzers aufnehmen soll.
 
-```bash
-go run go-arguments.go hello world
+```Go
+var name string
 ```
 
-Die Ausgabe wird sein:
+Jetzt müssen wir nur noch das Argument mit dem `flag` Paket verknüpfen und das Programm ausführen.
 
+```Go
+flag.StringVar(&name, "name", "", "Gib deinen Namen ein.")
+flag.Parse()
 ```
-go-arguments ./hello
-go-arguments ./world
-```
 
-Wie Sie sehen können, gibt `os.Args` auch den Namen der ausführbaren Datei (in diesem Fall "go-arguments") als ersten Eintrag in der Liste zurück. Die restlichen Einträge sind die vom Benutzer eingegebenen Argumente.
+Du kannst nun den Wert von `name` in deinem Programm verwenden. Wenn wir beispielsweise den Befehl `go run main.go -name Max` ausführen, wird `name` auf den Wert "Max" gesetzt.
 
-## Tiefer eintauchen
-Es gibt viele Möglichkeiten, die mit Befehlszeilenargumenten in Go gemacht werden können. Zum Beispiel können Sie Flaggen verwenden, um bestimmte Funktionen oder Optionen ein- oder auszuschalten. Sie können auch Argumente in bestimmte Datentypen konvertieren und sie für andere Berechnungen verwenden.
+## Tiefentauchen
 
-Eine Sache zu beachten ist, dass die Reihenfolge der Argumente wichtig sein kann, je nachdem, wie Sie sie in Ihrem Code verarbeiten. Wenn Sie genau wissen wollen, warum dies der Fall ist und wie Sie damit umgehen können, empfehlen wir Ihnen, sich mit dem Konzept der "Argumentvariablen" in Go vertraut zu machen.
+Das `flag` Paket bietet viele weitere Möglichkeiten, um Befehlszeilenargumente zu lesen und zu verarbeiten. Du kannst zum Beispiel auch verschiedene Datentypen wie Integers oder Booleans einlesen oder standardmäßige Werte für Argumente festlegen.
+
+Weitere Informationen findest du in der offiziellen [Dokumentation des `flag` Pakets](https://golang.org/pkg/flag/).
 
 ## Siehe auch
-- Offizielle Dokumentation zu `os.Args`: https://golang.org/pkg/os/#pkg-variables
-- Beispielprogramm mit Flaggen: https://gobyexample.com/command-line-flags
-- Eine detaillierte Erläuterung zu Befehlszeilenargumenten in Go: https://yourbasic.org/golang/command-line-arguments/
+
+- [Offizielle Go-Dokumentation](https://golang.org/doc/)
+- [Go-Forum auf Reddit](https://www.reddit.com/r/golang/)
+- [Go-Blog](https://blog.golang.org/)

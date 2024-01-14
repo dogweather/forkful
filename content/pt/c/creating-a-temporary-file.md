@@ -1,62 +1,53 @@
 ---
 title:                "C: Criando um arquivo temporário"
+simple_title:         "Criando um arquivo temporário"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário em programação?
+# Por que criar um arquivo temporário em programação?
 
-Criar um arquivo temporário em programação pode ser útil em diversas situações, como para armazenar dados temporários que serão usados posteriormente ou para criar backups antes de modificar um arquivo de dados original. No entanto, é importante lembrar que esses arquivos são temporários e devem ser excluídos após o uso para evitar ocupar espaço desnecessário no disco.
+Ao escrever código em linguagem C, é comum a necessidade de criar um arquivo temporário. Um arquivo temporário é um arquivo criado pelo programa durante a execução, geralmente para armazenar informações temporárias que serão descartadas após o uso.
 
 ## Como criar um arquivo temporário em C?
 
-A criação de um arquivo temporário em C é relativamente simples e pode ser feita utilizando a função `tmpfile ()`. Esta função cria um arquivo temporário vazio e retorna um ponteiro para ele. Veja um exemplo de código abaixo:
+Para criar um arquivo temporário em C, podemos usar a função `tmpfile()`. Veja abaixo um exemplo de código e a saída correspondente:
 
 ```C
-#include<stdio.h>
-#include<stdlib.h>
+// Cria um arquivo temporário
+FILE *temp = tmpfile();
 
-int main() {
-    // Criando um arquivo temporário
-    FILE *temp_file = tmpfile();
+// Escreve informações no arquivo
+fprintf(temp, "Este é um arquivo temporário criado pelo programa.");
 
-    if (temp_file == NULL) {
-        printf("Erro ao criar arquivo temporário!");
-        return 1;
-    }
+// Lê e imprime o conteúdo do arquivo
+char buffer[50];
+fscanf(temp, "%s", buffer);
+printf("%s", buffer);
 
-    // Escrevendo dados no arquivo temporário
-    fprintf(temp_file, "Este é um exemplo de arquivo temporário criado em C.\n");
-
-    // Lendo dados do arquivo temporário
-    rewind(temp_file);
-
-    char buffer[100];
-
-    fgets(buffer, 100, temp_file);
-    printf("Conteúdo do arquivo temporário: %s", buffer);
-
-    // Limpando e excluindo o arquivo temporário
-    fclose(temp_file);
-    remove("temp_file");
-
-    return 0;
-}
+// Fecha o arquivo temporário
+fclose(temp);
 ```
 
-A saída deste código seria: `Conteúdo do arquivo temporário: Este é um exemplo de arquivo temporário criado em C.`.
+Saída:
 
-## Aprofundando na criação de arquivos temporários
+```
+Este é um arquivo temporário criado pelo programa.
+```
 
-Além da função `tmpfile()`, existem outras formas de criar arquivos temporários em C. Por exemplo, a função `tmpnam()` cria um nome para um arquivo temporário e retorna uma string contendo o caminho para este arquivo. Outra opção é utilizar a biblioteca `stdlib.h` para criar um arquivo temporário com `mkstemp()`, que permite criar o arquivo com um nome específico.
+## Aprofundando no assunto
 
-É importante lembrar que, ao criar um arquivo temporário, é necessário garantir que ele seja excluído após o uso para evitar possíveis problemas de segurança ou ocupação desnecessária de espaço no disco.
+Ao chamar a função `tmpfile()`, um arquivo temporário vazio é criado no diretório temporário do sistema. Podemos também especificar um caminho para a criação do arquivo, usando a função `tmpnam()`. 
 
-## Veja também
+É importante lembrar que um arquivo temporário é automaticamente removido após o encerramento do programa. Porém, se for necessário mantê-lo, podemos renomeá-lo usando a função `rename()`.
 
-- [Função `tmpfile()` em C](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
-- [Manipulação de arquivos em C](https://www.embarcados.com.br/manipulacao-de-arquivos-em-c/)
-- [Criação de arquivos temporários em diferentes sistemas operacionais](https://stackoverflow.com/questions/9403250/create-a-temporary-file-in-c)
+Existem diversas situações em que a criação de um arquivo temporário é útil, como por exemplo quando precisamos armazenar grandes quantidades de dados durante a execução de um programa ou quando precisamos realizar operações com arquivos de forma segura, sem correr o risco de sobrescrever arquivos já existentes.
+
+# Veja também
+
+- Documentação da função `tmpfile()`: https://linux.die.net/man/3/tmpfile
+- Tutorial sobre criação de arquivos temporários em C: https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm

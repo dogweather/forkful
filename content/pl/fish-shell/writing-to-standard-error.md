@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/writing-to-standard-error.md"
 ---
 
@@ -9,40 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Praca z błędami w programowaniu może wydawać się frustrująca, ale często jest niezbędna do poprawnego działania aplikacji. Pisanie do standardowego błędu może pomóc w odnajdywaniu i rozwiązywaniu problemów, dzięki czemu kod będzie działać bardziej efektywnie.
+W dzisiejszym wpisie omówimy, dlaczego pisanie do standardowego błędu może być ważnym narzędziem w naszym programowaniu. Poznamy również kilka prostych przykładów, jak tego użyć w języku Fish Shell.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby pisać do standardowego błędu w Fish Shell, możemy użyć polecenia `echo` z opcją `&2` oraz podać wiadomość lub zmienną, która ma zostać wyświetlona. Na przykład, jeśli chcemy wyświetlić wiadomość "Błąd wykonania skryptu" do standardowego błędu, możemy użyć następującego kodu:
-
-```Fish Shell
-echo "Błąd wykonania skryptu" &2
-```
-
-To spowoduje wyświetlenie tej wiadomości jako błędu w terminalu.
-
-Dodatkowo, jeśli chcemy zapisywać błędy do pliku, możemy użyć "przekierowania strumienia", które pozwoli nam przekierować wynik `echo` do pliku tekstowego. Przykładowy kod wyglądałby tak:
+Fish Shell oferuje nam prosty i przejrzysty sposób na przekierowanie informacji do standardowego błędu za pomocą operatora "2>". Przykładowy kod wyglądałby następująco:
 
 ```Fish Shell
-echo "Błąd wykonania skryptu" &2 > error.log
+ls -1 /home/bruno 2>errors.txt
 ```
 
-Ten kod spowoduje zapisanie wiadomości "Błąd wykonania skryptu" do pliku error.log zamiast wyświetlania jej w terminalu.
+W tym przykładzie używamy polecenia "ls" aby wyświetlić zawartość katalogu "/home/bruno", a za pomocą operatora "2>" przekierowujemy wszystkie błędy, które mogą wystąpić do pliku "errors.txt". 
 
-## Głębsze zagadnienia
-
-Pisanie do standardowego błędu może być także przydatne w debugowaniu aplikacji. Błędy, które nie są łatwo zauważalne w konsoli, mogą zostać zapisane do pliku, co ułatwi ich analizę i rozwiązanie.
-
-Należy jednak pamiętać, że standardowy błąd jest połączony ze standardowym wyjściem, dlatego warto korzystać z funkcji `>&` do oddzielenia tych dwóch strumieni. Na przykład, jeśli chcemy zapisać tylko błędy do pliku, a wyświetlać wszystko inne w terminalu, możemy użyć tego kodu:
+Możemy też użyć tego narzędzia do wyświetlania konkretnych komunikatów, na przykład:
 
 ```Fish Shell
-&> log.txt echo "Błąd wykonania skryptu" &2
+echo "Ups, coś poszło nie tak!" 2>/dev/null
 ```
 
-W tym przypadku, wiadomość o błędzie zostanie zapisana do pliku log.txt, a inne komunikaty będą wyświetlane w konsoli.
+Tutaj przekierowujemy komunikat "Ups, coś poszło nie tak!" do standardowego błędu, ale jednocześnie używamy operatora "/dev/null" aby ten błąd nie został wyświetlony na ekranie.
 
-## Zobacz również
+## Głębsze Zagłębienie
+
+Pisanie do standardowego błędu może okazać się bardzo przydatne, gdy piszemy skrypty lub programy, które mają działać bez nadzoru użytkownika. Dzięki przekierowaniu błędów do pliku, możemy łatwiej monitorować nasz kod i w razie wystąpienia problemu szybko zareagować.
+
+Pamiętajmy jednak, że zbyt duża ilość przekierowanych błędów może sprawić, że pliki będą szybko rosnąć i zabierać cenne miejsce na naszym dysku. Dlatego musimy uważnie dobierać jakie informacje chcemy przekierować do standardowego błędu.
+
+## Zobacz też
 
 - [Dokumentacja Fish Shell](https://fishshell.com/docs/current/)
-- [Podręcznik użytkownika Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Przekierowanie strumienia w Fish Shell](https://fishshell.com/docs/current/tutorial.html#redirection)
+- [Przekierowanie wyjścia i błędów w języku Fish Shell](https://devdungeon.com/content/stdout-stderr-redirect-fish-shell)

@@ -1,49 +1,62 @@
 ---
-title:                "TypeScript: Kontrollera om en katalog finns"
+title:                "TypeScript: Kontrollera om en mapp existerar"
+simple_title:         "Kontrollera om en mapp existerar"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kontrollera om en katalog finns kan vara en viktig del av din TypeScript-programmering. Genom att titta på om en katalog finns, kan du bestämma om du behöver skapa den eller hantera beroenden på rätt sätt.
 
-## Så här gör du
-Först och främst behöver du använda dig av `fs`-modulen för att arbeta med filsystemet i Node.js. För att kontrollera om en katalog finns använder vi oss av metoden `existSync()` och anger sökvägen till katalogen som ett argument. Här är ett exempel på funktionen för att kontrollera om en katalog med namnet "projekt" finns:
+Att kunna kontrollera om en mapp finns är en viktig del av programmering, särskilt när du arbetar med filhantering eller hanterar användarinput. Det är också en användbar funktion för att undvika fel och optimera ditt program. I denna bloggpost kommer vi att titta närmare på hur man kan kontrollera om en mapp finns i TypeScript.
 
-```TypeScript
-import * as fs from 'fs';
+## Hur man gör det
 
-function checkDirectory(directory: string): boolean {
-  return fs.existsSync(directory);
-}
+För att kontrollera om en mapp finns, använder vi ``fs.existsSync()`` funktionen från Node.js File System modulen. Den här funktionen tar en sökväg till mappen som argument och returnerar en boolean som visar om mappen finns eller inte. Om den hittar mappen returnerar den true, annars false.
 
-console.log(checkDirectory('projekt')); // true
-console.log(checkDirectory('falskkatalog')); // false
-```
-
-Funktionen returnerar `true` om katalogen finns och `false` om den inte finns. Du kan sedan använda detta resultat för att utföra lämpliga åtgärder, som att skapa katalogen om den inte finns.
-
-## Fördjupning
-Om du vill ha en mer detaljerad kontroll av katalogen kan du använda metoden `statSync()` från `fs`-modulen. Detta returnerar en instans av klassen `fs.Stats` som innehåller information om filen eller katalogen. Här är ett exempel på hur du kan använda detta:
+Först behöver vi importera ``fs`` modulen i vårt TypeScript-program:
 
 ```TypeScript
-import * as fs from 'fs';
-
-function checkDirectoryStats(directory: string): boolean {
-  const stats = fs.statSync(directory);
-  return stats.isDirectory();
-}
-
-console.log(checkDirectoryStats('projekt')); // true
-console.log(checkDirectoryStats('index.js')); // false
+import fs from 'fs';
 ```
 
-Funktionen kontrollerar nu om sökvägen är en katalog genom `stats.isDirectory()` och returnerar `true` eller `false` beroende på resultatet.
+Sedan kan vi använda ``fs.existsSync()`` funktionen för att kontrollera om en mapp med namnet "documents" finns i vår nuvarande sökväg:
+
+```TypeScript
+if (fs.existsSync('documents')) {
+  console.log('Mappen finns.');
+} else {
+  console.log('Mappen finns inte.');
+}
+```
+
+Om mappen existerar kommer utskriften att vara "Mappen finns.", annars kommer den visa "Mappen finns inte.".
+
+## Djupdykning
+
+En sak att notera är att ``fs.existsSync()`` funktionen endast returnerar true om mappen finns på exakt den sökväg som vi har angivit. Det betyder att om vi till exempel anger "documents/test" som sökväg istället för bara "documents", kommer funktionen att returnera false eftersom "documents/test" inte är en existerande mapp. För att kunna söka efter en mapp i en undermapp, måste vi använda ``fs.existsSync()`` funktionen med ``path.join()`` från Node.js Path modulen.
+
+```TypeScript
+import fs from 'fs';
+import path from 'path';
+
+const mappNamn = 'test';
+const undermapp = 'documents';
+
+const sökväg = path.join(undermapp, mappNamn);
+if (fs.existsSync(sökväg)) {
+  console.log('Mappen finns.');
+} else {
+  console.log('Mappen finns inte.');
+}
+```
+
+Nu kommer utskriften att vara "Mappen finns." om "test" finns i undermappen "documents".
 
 ## Se även
-- [TypeScript-dokumentation: fs module](https://www.typescriptlang.org/docs/handbook/nodejs-modules.html#fs)
-- [Node.js dokumentation: fs module](https://nodejs.org/api/fs.html)
-- [fs-extra: En utökad version av fs-modulen](https://www.npmjs.com/package/fs-extra)
+
+- [Node.js File System modulen](https://nodejs.org/api/fs.html)
+- [Node.js Path modulen](https://nodejs.org/api/path.html)

@@ -1,39 +1,50 @@
 ---
-title:                "Rust: Kirjoittaminen standardivirheeseen"
+title:                "Rust: Kirjoittaminen vakiovirheeseen"
+simple_title:         "Kirjoittaminen vakiovirheeseen"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa standardivirheeseen
+## Miksi
 
-Rust on yhä suositumpi ohjelmointikieli, joka tarjoaa korkean suorituskyvyn ja turvallisen kehitysympäristön. Yksi tärkeä ominaisuus Rustissa on kyky kirjoittaa ohjelmaan standardivirheeseen (stderr), jota käytetään ohjelman virheiden tulostamiseen. Tässä blogikirjoituksessa käymme läpi, miksi ja miten kirjoittaa standardivirheeseen Rust-ohjelmassa.
+Rust on nuori ohjelmointikieli, jossa yhdistyvät tehokkuus ja turvallisuus modernilla tavalla. Eräs tärkeä osa ohjelmointia on virheiden hallinta ja niiden raportointi. Tässä blogipostissa tarkastellaan, miten kirjoittaa standardivirheeseen Rustilla.
 
-## Miten kirjoittaa standardivirheeseen
+## Miten
 
-Rustissa standardivirheeseen kirjoittaminen voidaan tehdä käyttämällä `println!` makroa ja välittämällä sille parametri `eprintln!` sijaan. Tämä varmistaa, että tuloste ohjataan standardivirheeseen eikä standarditulostukseen. Alla on esimerkki koodista:
+Koodiesimerkit käyttävät `println!` -makroa ja `eprintln!` -makroa, jotka tulostavat merkkijonon standardilähtöön ja standardivirheeseen.
 
 ```Rust
 fn main() {
-  // Kirjoitetaan standardivirheeseen käyttämällä eprintln! makroa
-  eprintln!("Tämä on virheilmoitus!");
+    let nimi = "Iina";
+    println!("Hei, minun nimeni on {}", nimi);
+    eprintln!("Tämä on vakava virhe!");
+}
+```
+Tämä koodi tulostaa standardilähtöön `Hei, minun nimeni on Iina` ja standardivirheeseen `Tämä on vakava virhe!` Huomaa, että standardivirheen tulostus eroaa tavallisesta tulostuksesta `println!`-makrolla.
+
+## Syväsukellus
+
+Kirjoittaessamme standardivirheeseen Rustin avulla, käytämme `std::io::stderr` -olion `write_all`-metodia. Tämä mahdollistaa myös erilaisten muuttujien ja tietorakenteiden tulostamisen standardivirheeseen.
+
+```Rust
+use std::io::Write;
+fn main() {
+    let virhe = "Tämä on virhe";
+    let luku = 42;
+    std::io::stderr().write_all(virhe.as_bytes()).unwrap();
+    std::io::stderr().write_all(b" ja luvuksi arvotaan ").unwrap();
+    std::io::stderr().write_all(luku.to_string().as_bytes()).unwrap();
 }
 ```
 
-Esimerkin koodi tulostaisi "Tämä on virheilmoitus!" standardivirheeseen. Huomaa, että se ei tulostaisi mitään näytölle tai standarditulostukseen.
-
-## Syvällinen sukellus
-
-Kirjoittaminen standardivirheeseen on hyödyllistä silloin, kun halutaan erottaa ohjelman virheilmoitukset tavallisista tulosteista. Tämä antaa mahdollisuuden selkeästi erottaa virheet ja helpottaa niiden havaitsemista ja käsittelyä. Standardivirheeseen kirjoittaminen on myös hyödyllistä silloin, kun halutaan suorittaa ohjelmaa esimerkiksi komentoriviltä, ja halutaan erottaa tulosteet ja virheilmoitukset.
-
-Rustissa standardivirheeseen voi myös kirjoittaa käyttämällä `eprint!` makroa, joka toimii samalla tavalla kuin `eprintln!` mutta ei lisää uutta riviä loppuun. Tämä voi olla hyödyllistä, jos halutaan tulostaa useita virheilmoituksia peräkkäin samaan riviin.
+Tämä tulostaa standardivirheeseen `Tämä on virhe ja luvuksi arvotaan 42`.
 
 ## Katso myös
 
-Tässä blogikirjoituksessa kävimme läpi, miksi ja miten kirjoittaa standardivirheeseen Rust-ohjelmassa. Jos haluat tutustua lisää Rustin ominaisuuksiin ja kehitystyökaluihin, suosittelemme seuraavia linkkejä:
-
-- Rust-ohjelmointikielen virallinen verkkosivusto: https://www.rust-lang.org/fi
-- Rust-oppimateriaalit: https://www.rust-lang.org/learn
-- Visual Studio Coden Rust-laajennus: https://marketplace.visualstudio.com/items?itemName=rust-lang.rust
+- [Rust-ohjelmointikielen kotisivu](https://www.rust-lang.org/fi/)
+- [Rust ohjelmointikielen opetusohjelma](https://doc.rust-lang.org/book/)
+- [Rust yhteisöfoorumi](https://users.rust-lang.org/)

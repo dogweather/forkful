@@ -1,52 +1,60 @@
 ---
 title:                "C: Lesing av kommandolinje-argumenter"
+simple_title:         "Lesing av kommandolinje-argumenter"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
 
-Har du noen gang lurt på hvordan du kan gjøre interaksjonen med et C-program mer fleksibelt og tilpassbart? Gjennom å lese kommandolinjeargumenter kan du gi brukerne dine muligheten til å påvirke programmet ditt på en enkel og effektiv måte. Les videre for å lære hvordan du kan implementere dette i ditt eget C-program.
+Når du jobber med C programmering, er det alskens ting du må ta i betrakning, forstå og implementere. Command line arguments er en av de tingene du bør være kjent med. Det er nyttig for både utvikling og testing av koden din. Derfor kan det være nyttig å forstå hva command line argumenter er og hvordan man bruker dem.
 
-## Hvordan
+##Slik gjør du det
 
-For å lese kommandolinjeargumenter i C-programmer, må du først inkludere <stdio.h> biblioteket i koden din. Deretter må du definere "int main(int argc, char *argv[])" for å kunne ta imot argumentene fra kommandolinjen i form av en array. Her er "argc" antall argumenter og "argv[]" er selve arrayen med argumentene.
-
-For å få tilgang til de ulike argumentene, kan du bruke en "for"-løkke som går gjennom hele arrayen og skriver ut dem til terminalen. Et eksempel på dette kan se slik ut:
+Å lese command line argumenter i C er enkelt og kan gjøres med få linjer med kode. Først trenger du en main-funksjon som tar i mot to parametere, argc og argv. "argc" er antall argumenter som blir levert til programmet, while argv er selve argumentene. Så hvordan leser vi disse argumentene? La oss se på et eksempel:
 
 ```C
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
-    for (int i = 0; i < argc; i++) {
-        printf("Argument %d: %s\n", i, argv[i]);
-    }
-    return 0;
+int main(int argc, char *argv[])
+{
+  int i;
+
+  for (i = 0; i < argc; i++) {
+    printf("Argument %d: %s\n", i, argv[i]);
+  }
+
+  return 0;
 }
 ```
 
-Når du kjører dette programmet og gir det noen argumenter fra kommandolinjen, vil det skrive ut argumentenes nummer og verdi til terminalen. For eksempel:
+Når du kjører programmet og inkluderer noen argumenter, vil du få en output som ligner på dette:
 
 ```
-$ ./program.exe hello world
-Argument 0: ./program.exe
-Argument 1: hello
-Argument 2: world
+$ ./program arg1 arg2
+Argument 0: ./program
+Argument 1: arg1
+Argument 2: arg2
 ```
 
-Du kan også bruke konverteringsfunksjoner som "atoi()" og "atof()" for å konvertere argumentene fra tekst til tall eller flyttall.
+Som du kan se, er argumentene lagret som en streng i "argv" og indexert fra 0 til antallet argumenter minus 1. Dette gjør det enkelt å lese og behandle argumentene i koden din.
 
-## Dypdykk
+##Dykk dypere
 
-En annen nyttig funksjon for å lese kommandolinjeargumenter er "getopt()". Denne funksjonen lar deg håndtere kommandolinjen mer effektivt ved å tillate bruk av flagg og opsjoner. For å bruke denne funksjonen må du inkludere <unistd.h> biblioteket i koden din.
+Det er viktig å merke seg at argumentene som blir levert til programmet ditt er strenger, uavhengig av hva slags type data som blir levert. Derfor må du være forsiktig hvis du prøver å konvertere dem til andre datatyper. En annen ting du bør være klar over er at argumentene blir levert i riktig rekkefølge, så du kan bygge logikk og logiske tester basert på dette.
 
-I tillegg til å håndtere argumentene, bør du også sjekke om brukeren har gitt riktig antall argumenter og gi en feilmelding hvis dette ikke stemmer. Dette kan gjøres ved å sammenligne "argc" med antall forventede argumenter.
+En annen nyttig funksjon er å kunne lese argumentene på en måte som ikke er avhengig av rekkefølgen de blir levert i. Dette kan gjøres ved hjelp av argument flags. For eksempel kan du lage et flagg "-h" for å vise en hjelpetekst og et flagg "-v" for å vise versjonsinformasjon.
 
-## Se også
+I tillegg kan du også bruke argumenter til å aktivere eller deaktivere visse deler av koden din, noe som kan være nyttig for å teste ulike funksjoner og scenarier.
 
-- [Kommunikasjon med kommandolinjen i C-programmer](https://www.ntnu.no/studier/emner/IMT3005/2017/hjemmesider/oblig4/lesfracli.html)
-- [Getopt() dokumentasjon](https://www.gnu.org/software/libc/manual/html_node/Getopt-Long-Option-Example.html)
-- ["atof()" konverteringsfunksjonen](https://www.tutorialspoint.com/c_standard_library/c_function_atof.htm)
+##Se også
+
+For mer informasjon om command line arguments i C, se følgende ressurser:
+
+- [C Command Line Arguments](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [C Programming Tutorial: Command Line Arguments](https://www.learn-c.org/en/Command_Line_Arguments)
+- [Command-Line Arguments in C](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)

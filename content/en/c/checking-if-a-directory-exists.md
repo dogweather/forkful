@@ -1,58 +1,58 @@
 ---
 title:                "C recipe: Checking if a directory exists"
+simple_title:         "Checking if a directory exists"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever wondered if a directory exists before creating a new one? Checking if a directory exists is an important aspect of programming, especially in situations where you want to avoid overwriting existing files or simply need to confirm the presence of a specific directory.
+Have you ever encountered a situation where you needed to perform a certain operation in your code, but only if a specific directory exists? Checking for the existence of a directory is an essential task in programming, as it allows your code to anticipate and handle potential errors or unexpected scenarios.
 
 ## How To
+To check if a directory exists in C, we can use the `opendir()` function from the `dirent.h` header. This function takes in the name of the directory as its parameter and returns a `DIR` pointer if the directory exists, or `NULL` if it does not. Here's an example code snippet:
 
-In C programming, the `opendir()` function can be used to check if a directory exists. First, a directory path is passed as a parameter to the function. If the directory exists, the function will return a pointer to the directory. If not, it will return NULL.
-
-```
-C #include <stdio.h>
+```C
+#include <stdio.h>
 #include <dirent.h>
 
 int main()
 {
-    DIR *dir = opendir("/path/to/directory");
+    // Specify the directory name to check
+    char *dir_name = "/home/user/Desktop";
 
-    if (dir != NULL) {
-        printf("Directory exists!");
+    // Use opendir() to check for the directory's existence
+    DIR *dir = opendir(dir_name);
+
+    // Check if the directory exists
+    if(dir)
+    {
+        printf("Directory %s exists!\n", dir_name);
         closedir(dir);
-    } else {
-        printf("Directory does not exist!");
+    }
+    else
+    {
+        printf("Directory %s does not exist!\n", dir_name);
     }
 
     return 0;
 }
 ```
 
-Sample output when the directory exists:
-
+Sample output:
 ```
-Directory exists!
-```
-
-Sample output when the directory does not exist:
-
-```
-Directory does not exist!
+Directory /home/user/Desktop exists!
 ```
 
 ## Deep Dive
+Behind the scenes, the `opendir()` function actually uses the `access()` system call to check for the existence of the directory. This system call takes in two parameters: the path to the directory and an integer representing the permissions we want to check for (in this case, we use the `F_OK` constant to simply check if the path exists). If the directory exists, the system call returns a value of 0, and if it does not exist, it returns `-1` and sets the `errno` variable to `ENOENT` (indicating an error of "no such file or directory").
 
-The `opendir()` function uses the `stat()` system call behind the scenes to check if a directory exists. This system call checks the file or directory information and returns it to the calling program. If the file or directory does not exist, an error message is returned.
-
-It is also worth noting that the `opendir()` function only checks if a directory exists, and not if it is a valid directory. Therefore, it is important to also handle any possible errors that may occur while trying to access the directory.
+Also, it's worth noting that `opendir()` only checks for the existence of the directory, not whether or not the current user has permission to access it. This is where the `access()` system call can come in handy, as it also allows us to check for read, write, and execute permissions.
 
 ## See Also
-
-- `opendir()` function documentation: https://www.gnu.org/software/libc/manual/html_node/Opening-a-Directory.html#Opening-a-Directory
-- `stat()` system call documentation: https://man7.org/linux/man-pages/man2/stat.2.html
+- [opendir documentation](https://www.man7.org/linux/man-pages/man3/opendir.3.html)
+- [access documentation](https://www.man7.org/linux/man-pages/man2/access.2.html)
+- [List of errno values](https://www.man7.org/linux/man-pages/man3/errno.3.html)

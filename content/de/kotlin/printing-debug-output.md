@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Ausgabe von Debug-Daten"
+title:                "Kotlin: Debug-Ausgabe drucken"
+simple_title:         "Debug-Ausgabe drucken"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/printing-debug-output.md"
 ---
 
@@ -9,51 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Warum
 
-Beim Programmieren tritt man oft auf Fehler oder unerwartete Ergebnisse. Das Hinzufügen von Debug-Ausgaben (Ausgaben zur Fehlerbehebung) kann dabei helfen, diese schnell zu identifizieren und zu beheben. Mit Kotlin können Sie einfach und effektiv Debug-Ausgaben erstellen.
+Die Ausgabe von Debug-Informationen ist ein wichtiger Teil des Programmierens, da sie uns dabei hilft, Fehler in unserem Code zu finden und zu beheben. Es ist wichtig, Debug-Informationen richtig zu drucken, um einen reibungslosen Programmierprozess sicherzustellen.
 
-## Wie man Debug-Ausgaben druckt
+# Wie geht's
 
-Verwenden Sie die Standardbibliotheksfunktion `println()` oder `print()` in Kombination mit der `run()` Funktion, um schnell Debug-Ausgaben zu erstellen. Hier ist ein Beispiel:
-
-```Kotlin
-val number = 5
-println("Die Nummer ist $number")
-```
-
-Dies würde die folgende Ausgabe erzeugen: "Die Nummer ist 5". Beachten Sie die Verwendung von `$`, um die Variable `number` in den String einzufügen.
-
-Sie können auch das `debug()` Statement verwenden, um Debug-Ausgaben zu spezifischen Eigenschaften oder Variablen zu erstellen. Hier ist ein Beispiel:
+Der einfachste Weg, Debug-Informationen in Kotlin zu drucken, ist die Verwendung der `println()` Funktion. Zum Beispiel:
 
 ```Kotlin
-val text = "Hallo!"
-debug(text)
+println("Dies ist eine Debug-Ausgabe")
 ```
 
-Dies würde die folgende Ausgabe erzeugen: "text = Hallo!". Beachten Sie, dass `debug()` eine Erweiterungsfunktion von `println()` ist, die es ermöglicht, Variablen und Eigenschaften direkt zu übergeben.
+Dies druckt einfach die angegebene Zeichenfolge in der Konsole aus.
 
-## Tiefere Einblicke
-
-Sie können die Debug-Ausgaben auch mithilfe von Anführungszeichen und Dollarzeichen formatieren. Hier ist ein Beispiel:
+Eine andere Möglichkeit ist die Verwendung der `Log` Klasse aus dem Android OS. Diese Klasse bietet verschiedene Methoden zum Drucken von Debug-Informationen, je nach Verwendungszweck. Zum Beispiel:
 
 ```Kotlin
-val radius = 5.0
-println("Der Radius beträgt ${"%.2f".format(radius)}")
+Log.d("TAG", "Dies ist eine Debug-Ausgabe")
 ```
 
-Dies würde die folgende Ausgabe erzeugen: "Der Radius beträgt 5.00". Beachten Sie die Verwendung von `%.2f` innerhalb von `{}`, um den Radius auf zwei Dezimalstellen zu formatieren.
+Hier wird der erste Parameter als Tag verwendet, um die Debug-Ausgabe leichter identifizieren zu können.
 
-Es ist auch möglich, mehrere Variablen oder Eigenschaften in eine Debug-Ausgabe einzufügen. Hier ist ein Beispiel:
+# Tiefergehende Einblicke
 
-```Kotlin
-val vorname = "Max"
-val nachname = "Mustermann"
-val alter = 25
-println("$vorname $nachname, Alter: $alter")
-```
+Es gibt verschiedene Ansätze, Debug-Informationen in Kotlin zu drucken, je nach Anwendungsfall und Präferenz. Einige Entwickler bevorzugen es, eigene Funktionen zu erstellen, die die Ausgabe ihrer Debug-Informationen steuern, anstatt die `println()` Funktion oder die `Log` Klasse zu verwenden.
 
-Dies würde die folgende Ausgabe erzeugen: "Max Mustermann, Alter: 25".
+Eine andere Sache zu beachten ist, dass sich die Ausgabe von Debug-Informationen je nach Umgebung und Plattform unterscheiden kann. Zum Beispiel kann die Ausgabe auf der Konsole in einer Desktop-Anwendung anders sein als in einer Android-App.
 
-## Siehe auch
+Es ist auch wichtig, sicherzustellen, dass die Debug-Ausgaben nur in der Entwicklungsphase verwendet werden und nicht in der Produktionsversion des Codes.
 
-- [Kotlin - Standardbibliothek](https://kotlinlang.org/api/latest/jvm/stdlib/)
-- [Kotlin - Debugging](https://kotlinlang.org/docs/reference/debugging.html)
+# Siehe auch
+
+- [The Basics of Debugging in Kotlin](https://medium.com/talentica/the-basics-of-debugging-in-kotlin-62a286b01d45)
+- [Logging in Kotlin with Log-Logcat](https://blog.mindorks.com/logging-in-kotlin-with-log-logcat)
+- [Debugging Techniques for Kotlin Applications](https://betterprogramming.pub/debugging-techniques-for-kotlin-applications-b7fd3d3ae0d1)

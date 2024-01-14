@@ -1,37 +1,52 @@
 ---
-title:                "Gleam: Extrayendo subcadenas"
+title:                "Gleam: Extractando subcadenas"
+simple_title:         "Extractando subcadenas"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué extraer subcadenas es útil en Gleam?
+## Por qué
 
-Extraer subcadenas es una técnica importante en la programación de Gleam que permite manipular cadenas de texto de manera eficiente. Puede ser útil en varias situaciones, como la validación de la entrada del usuario, el procesamiento de datos o la generación de informes.
+Extraer subcadenas de texto es una tarea común en la programación, ya sea para manipular datos o para mostrar contenido dinámicamente. En este artículo, aprenderemos cómo hacerlo en Gleam y profundizaremos en los detalles para que puedas utilizarlo en tus propios proyectos.
 
 ## Cómo hacerlo
 
-Para extraer una subcadena en Gleam, podemos utilizar la función `String.slice`. Esta función toma dos parámetros: la cadena de origen y el rango (o índices) de la subcadena que queremos extraer. A continuación, se muestra un ejemplo:
+El método para extraer subcadenas en Gleam es muy sencillo. Simplemente utilizamos la función `String.slice` y le pasamos el índice inicial y final del texto que queremos extraer, separados por dos puntos.
 
 ```Gleam
-let cadena = "¡Hola, mundo!"
-let subcadena = String.slice(cadena, 0, 4)
+extraction = String.slice("Hola mundo!", 0:4)
 ```
 
-En este caso, la variable `subcadena` contendría "¡Hola". Podemos especificar diferentes rangos para obtener diferentes subcadenas. Por ejemplo, si queremos empezar desde el tercer carácter y extraer los siguientes 5 caracteres, podemos utilizar `String.slice(cadena, 2, 6)`.
+El ejemplo anterior extraerá los primeros cuatro caracteres de la cadena, en este caso "Hola". Si queremos extraer desde un índice hasta el final, solo omitimos el segundo número.
 
-También podemos utilizar valores negativos para indicar el índice desde el final de la cadena. Por ejemplo, `String.slice(cadena, -5, -1)` extraería "undo" de la cadena original.
+```Gleam
+rest = String.slice("Hola mundo!", 5:)
+```
 
-## Profundizando en la extracción de subcadenas
+En este caso, la variable `rest` contendrá la subcadena "mundo!". También podemos hacer uso de números negativos para empezar a contar desde el final de la cadena.
 
-La función `String.slice` también puede tomar un tercer parámetro opcional, "step", que indica la cantidad de caracteres a saltar entre cada elemento de la subcadena. Por defecto, el valor de "step" es 1, pero podemos cambiarlo según sea necesario. Por ejemplo, si queremos extraer cada segundo carácter de una cadena, podemos utilizar `String.slice(cadena, 0, 10, 2)`.
+```Gleam
+last_word = String.slice("Hola mundo!", -5:)
+```
 
-Además, podemos utilizar otros métodos para manipular las subcadenas extraídas, como `String.trim` para eliminar espacios vacíos al principio y al final, `String.to_upper_case` para convertir la subcadena a mayúsculas, o `String.reverse` para revertirla.
+En este ejemplo, `last_word` será igual a "mundo!".
 
-# Ver también
+## Profundizando
 
-- Documentación oficial de Gleam sobre las cadenas de texto: https://gleam.run/book/tour/modules/strings.html
-- Ejemplos de código de Gleam: https://github.com/gleam-lang/gleam/tree/master/examples
-- Tutoriales de Gleam en español: https://medium.com/@jlealtruiz/gleam-programaci%C3%B3n-funcional-en-erlang-98abbd35487
+Si deseamos extraer una subcadena basándonos en un patrón específico, podemos utilizar la función `String.split` y proporcionar el patrón como argumento.
+
+```Gleam
+parts = String.split("Hola, cómo estás?", ", ")
+```
+
+En este caso, `parts` contendrá una lista con dos elementos, "Hola" y "cómo estás?". También podemos proporcionar un patrón de expresión regular para una extracción más precisa.
+
+## Ver también
+
+- Function `String.slice`: https://gleam.run/core/string.html#slice
+- Function `String.split`: https://gleam.run/core/string.html#split
+- Expressions regulares: https://gleam.run/core/regexp.html

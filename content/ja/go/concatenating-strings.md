@@ -1,58 +1,71 @@
 ---
 title:                "Go: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-Go言語で文字列を連結することに関心を持つのかについて、簡単に説明します。
 
-## 方法
-文字列を連結する方法について、コーディング例と出力サンプルを含めて ```Go ... ``` のコードブロックを使用して説明します。
+なぜGo言語で文字列を連結する必要があるのでしょうか？Go言語では、プログラムの実行速度が非常に重要です。そのため、文字列の連結方法も素早く効率的である必要があります。
 
-```
-// 文字列を連結する例
+## どのように
+
+Go言語では、文字列を連結する方法はいくつかありますが、今回は `+` 演算子を使用する方法をご紹介します。以下のコード例では、`Hello`と`World`を連結し、`Hello World`という出力を得ることができます。
+
+```Go
 package main
 
 import "fmt"
 
 func main() {
-    str1 := "Hello"
-    str2 := "World"
-
-    fmt.Println(str1 + " " + str2) // Output: Hello World
+  str1 := "Hello"
+  str2 := "World"
+  result := str1 + " " + str2
+  fmt.Println(result)
 }
+```
+
+出力：
+```
+Hello World
 ```
 
 ## 深堀り
-Go言語で文字列を連結する方法の詳細について、より深く説明します。
 
-文字列を連結するには、```+```演算子を使用します。また、複数の文字列を連結する場合は、```+```演算子を使い続けるよりも、```fmt.Sprintf()```関数を使用する方が効率的です。
+文字列を連結する場合、1つの方法は `strings.Join()` 関数を使用することです。この方法では、複数の文字列を受け取り、指定した区切り文字を用いて連結することができます。以下のコード例では、`Hello`と`World`の間に`-`を挿入して連結しています。
 
-さらに、Go言語では文字列の連結に```strings.Join()```関数を使うこともできます。この関数には、連結したい文字列のスライスと区切り文字を指定することができます。例えば、以下のようになります。
-
-```
-// 文字列のスライスを連結する例
+```Go
 package main
 
 import (
-    "fmt"
-    "strings"
+  "fmt"
+  "strings"
 )
 
 func main() {
-    strs := []string{"Hello", "World"}
-
-    fmt.Println(strings.Join(strs, " ")) // Output: Hello World
+  strs := []string{"Hello", "World"}
+  result := strings.Join(strs, "-")
+  fmt.Println(result)
 }
 ```
 
-## See Also
-参考になるリンクをいくつか紹介します。
+出力：
+```
+Hello-World
+```
 
-- [The Go Blog: Strings, bytes, runes and characters in Go](https://blog.golang.org/strings)
-- [Go by Example: Strings](https://gobyexample.com/strings)
-- [Go言語で配列やスライスを連結する方法](https://qiita.com/genkiroid/items/2b601c64ce35abbfaebc)
+## 参考リンク
+
+- [Go言語 公式ドキュメント](https://golang.org/)
+- [Golangで文字列を連結する方法](https://qiita.com/tenntenn/items/10b5b41b1a2c2953d4ae)
+- [Effective Go (日本語訳)](https://go-lang.xyz/effective.go.html#strings)
+
+## 関連リンク
+
+- [↑↑↑ 標準出力のフォーマット方法](https://example.com)
+- [左右のスペースを削除する方法 →→→](https://example.com)

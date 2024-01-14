@@ -1,38 +1,45 @@
 ---
-title:                "Gleam: Kansion olemassaolon tarkistaminen"
+title:                "Gleam: Tarkistetaan löytyykö kansio"
+simple_title:         "Tarkistetaan löytyykö kansio"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa, onko kansio olemassa?
+## Miksi tarkistaa onko kansio olemassa?
 
-Kansioita tarvitaan usein ohjelmoinnissa tiedostojen järjestämiseen ja hallintaan. On tärkeää tarkistaa, onko tietty kansio olemassa ennen kuin yrität käsitellä sitä, jotta vältytään mahdollisilta virheiltä ja ohjelman kaatumiselta.
+Eräs yleinen tehtävä ohjelmoinnissa on tarkistaa, löytyykö tietyltä polulta tiettyä kansiota tai tiedostoa. Tämä voi olla tarpeen esimerkiksi ennen tiedoston avaamista tai tallentamista, jotta vältetään mahdolliset virheet. Gleam kielessä tämän voi tehdä kätevästi ja tehokkaasti Directory moduulilla.
 
-## Kuinka tarkistaa, onko kansio olemassa
+## Miten tehdä se?
 
-Tässä esimerkissä käytämme Gleam-ohjelmointikieltä, joka soveltuu hyvin kansiohakemistojen käsittelyyn.
+Gleamissa on valmiiksi integroitu `Directory.exists` funktio, joka palauttaa boolean arvon sen mukaan, löytyykö annetulta polulta kansiota tai tiedostoa. Tässä on yksinkertainen esimerkki:
 
 ```Gleam
-import gleam/io
+import Directory
 
-// Tarkistetaan, onko kansio "hakemisto" olemassa ja vastataan sen perusteella
-match io.dir_exists("hakemisto") {
-  True -> io.println("Kansio on olemassa")
-  False -> io.println("Kansiota ei ole olemassa")
+let directory_path = "./testikansio"
+
+if Directory.exists(directory_path) {
+  // Tee jotain jos kansio on olemassa
+  IO.println("Kansio löytyi!")
+} else {
+  // Tee jotain jos kansioa ei ole olemassa
+  IO.println("Kansiota ei löytynyt!")
 }
 ```
 
-Jos kansio "hakemisto" on olemassa, ohjelma tulostaa "Kansio on olemassa". Muussa tapauksessa tulostetaan "Kansiota ei ole olemassa".
+Jos kansio löytyy, tulostetaan "Kansio löytyi!" ja muuten "Kansiota ei löytynyt!". Koodilohkon alussa tuodaan Directory moduuli ja sen jälkeen funktiota hyödynnetään if-lauseessa.
 
-## Syventyvä tarkastelu
+## Syvällisempi tutustumien kansiotarkistamiseen
 
-Kansiohakemistojen käsittelyyn on myös muita tapoja Gleam-ohjelmointikielessä. Joihinkin menetelmiin sisältyy virhehallinta, joka tarjoaa mahdollisuuden reagoida ohjelman suoritusaikana tapahtuneisiin virheisiin. Voit myös tarkistaa, onko tietyssä hakemistopolussa tiedostoja tai alihakemistoja käyttämällä `io.file_exists()` tai `io.dir_children()` -funktioita.
+Gleamin Directory moduli tarjoaa myös muita hyödyllisiä funktioita, kuten `Directory.list_files` ja `Directory.delete`. On myös mahdollista käyttää `Directory.exists` funktiota apuna esimerkiksi sellaisten polkujen luomisessa, jotka eivät saa johtaa tiedostoon tai kansion.
 
-See Also:
+Tämän tarkempiin yksityiskohtiin pääsee käsiksi tutustumalla Gleamin viralliseen dokumentaatioon. Sieltä löytyy tarkemmat kuvaukset ja esimerkit jokaisesta Directory moduulin tarjoamasta funktiosta.
 
-- [Gleam käyttöohjeet](https://gleam.run/)
-- [Pythonin hakemistonhallinta](https://docs.python.org/3/library/os.html#os.path.isdir)
-- [Rust kansiohakemiston käsittely](https://doc.rust-lang.org/std/fs/fn.metadata.html)
+## Katso myös
+
+- [Gleam Documentation - Directory](https://gleam.run/documentation/stdlib/Directory.html)
+- [How to Check if a File or Directory Exists in Gleam](https://gleam.run/documentation/cookbook/check-if-file-directory-exists.html)

@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/extracting-substrings.md"
 ---
 
@@ -9,33 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Con l'uso sempre più diffuso della programmazione funzionale, l'estrazione di sottostringhe è diventata una pratica comune per gestire i dati. Con Elm, questa operazione è particolarmente facile e veloce da eseguire.
+Se stai scrivendo codice in Elm, potresti trovarti nella situazione in cui devi estrarre una sottostringa da una stringa più grande. Questa operazione è comune quando si lavora con dati di input utente o si deve manipolare una stringa prima di elaborarla ulteriormente. In questo caso, conoscere come estrarre una sottostringa è utile per semplificare il tuo codice e ottenere il risultato desiderato.
 
 ## Come fare
 
-Per estrarre una sottostringa in Elm, è necessario utilizzare la funzione `slice` presente nel modulo `String` di Elm. Questa funzione accetta tre argomenti: l'indice di inizio, l'indice di fine e la stringa da cui estrarre la sottostringa. Ad esempio:
+Per estrarre una sottostringa in Elm, utilizzeremo una funzione chiamata `slice` che accetta tre parametri: la stringa di input, l'indice iniziale e l'indice finale della sottostringa che desideri estrarre. Ad esempio, se volessi estrarre il secondo, terzo e quarto carattere dalla parola "ciao", dovresti scrivere il seguente codice:
 
 ```Elm
-import String exposing (slice)
-
-myString = "Buon compleanno a tutti!"
-
-substring = slice 5 15 myString
-
+slice "ciao" 1 4
 ```
 
-Il codice sopra estrae la sottostringa "compleanno" dalla nostra stringa `myString`. L'indice di inizio 5 indica il carattere "c", mentre l'indice di fine 15 indica il carattere "o" di "compleanno". Il risultato viene assegnato alla variabile `substring` e può essere utilizzato successivamente nel nostro codice.
+Questo ci restituirebbe "iao" come output. Vale la pena notare che l'indice finale è esclusivo, quindi dobbiamo includere l'indice successivo all'ultimo carattere che vogliamo estrarre.
 
-## Approfondimenti
+## Approfondimento
 
-Ci sono alcune cose da tenere a mente quando si lavora con la funzione `slice`:
+La funzione `slice` può essere utilizzata anche per estrarre le sottostringhe in base alla loro lunghezza invece che agli indici. Ciò significa che possiamo specificare quanti caratteri vogliamo estrarre dalla stringa: il secondo parametro diventa la posizione iniziale e il terzo parametro diventa la lunghezza della sottostringa. Ad esempio:
 
-- Gli indici di inizio e fine inclusi nella funzione `slice` sono basati su zero, il che significa che il primo carattere ha indice 0 e non 1. Questo è un concetto comune nella programmazione e dovrebbe essere preso in considerazione quando si utilizza `slice`.
-- Se l'argomento di fine è maggiore o uguale alla lunghezza della stringa, la sottostringa estratta sarà fino alla fine della stringa.
-- Se l'argomento di inizio è negativo, viene contanto dall'ultimo carattere della stringa. Ad esempio, un indice di inizio di -1 corrisponde all'ultimo carattere della stringa, -2 al penultimo e così via.
-- Se l'argomento di fine è negativo, viene contanto dalla fine della stringa. Ad esempio, un indice di fine di -1 corrisponde all'ultimo carattere della stringa, -2 al penultimo e così via.
+```Elm
+slice "ciao" 1 2
+```
+
+Questo ci restituirebbe "ci" come output, poiché stiamo iniziando dalla seconda posizione e stiamo estraendo 2 caratteri. Questo è utile quando non conosciamo gli indici esatti della sottostringa che vogliamo estrarre.
 
 ## Vedi anche
 
-- Documentazione della funzione `slice` nel modulo String di Elm: https://package.elm-lang.org/packages/elm/core/latest/String#slice
-- Un articolo utile su come utilizzare la funzione `slice` per manipolare stringhe in Elm: https://rundis.github.io/blog/elm/slice-and-concat
+- La documentazione ufficiale di Elm sulla funzione `slice`: https://package.elm-lang.org/packages/elm/core/latest/String#slice
+- Un articolo di Medium che esplora altre funzioni utili per lavorare con le stringhe in Elm: https://medium.com/swlh/manipulating-strings-in-elm-486b683e4a42

@@ -1,70 +1,52 @@
 ---
-title:                "Clojure: Utskrift av feilrettingsutdata"
+title:                "Clojure: Utskrift av feilsøkingsutdata"
+simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor?
 
-Å skrive ut feilsøkingsmeldinger kan være en viktig del av utviklingsprosessen. Ved å skrive utmeldinger kan du enklere finne og løse feil i koden din. I denne bloggposten vil vi utforske hvordan man kan skrive ut debug meldinger i Clojure.
+Det er ofte nødvendig å finne ut hva som skjer under kjøring, spesielt når man arbeider med komplekse kodebaser eller feilsøker problemer. Ved å skrive ut debug-utdata kan man få en bedre forståelse av hva koden gjør, og hvor potensielle feil kan ligge.
 
-## Hvordan
+## Hvordan gjøre det
 
-Først må du importere "clojure.pprint" biblioteket for å kunne bruke funksjonen "pprint". Deretter kan du enkelt legge til debug meldinger ved hjelp av "pprint" funksjonen, som vil skrive ut objekter i en mer leselig format.
-
-```Clojure
-(ns min-prosjekt.core
-  (:require [clojure.pprint :refer [pprint]]))
-
-(defn funksjon [param1 param2]
-  (pprint (str "Param1: " param1))
-  (pprint (str "Param2: " param2))
-  (pprint (str "Resultat: " (+ param1 param2))))
-```
-
-Når du kjører denne koden, vil du få følgende output:
+For å skrive ut debug-utdata, kan man bruke funksjonene `prn` eller `println` i Clojure. Disse funksjonene tar inn en eller flere verdier og skriver dem ut til konsollen. La oss se på et eksempel:
 
 ```Clojure
-Param1: Verdi1
-Param2: Verdi2
-Resultat: 3
+(def num 42)
+(prn "The meaning of life is:" num)
 ```
 
-Dette gjør det enklere å se hva som blir sendt inn i funksjonen og hva resultatet blir.
+Dette vil skrive ut "The meaning of life is: 42" til konsollen. Man kan også bruke `println` på samme måte, men denne funksjonen legger til et ekstra nytt linjeskift på slutten.
+
+Det er også mulig å skrive ut mer kompleks datastrukturer ved hjelp av funksjonen `pprint`. Denne funksjonen sørger for at utdataen blir formatert på en mer lesbar måte. La oss se på et eksempel:
+
+```Clojure
+(def person {:name "John Doe" :age 30 :country "Norway"})
+(pprint person)
+```
+
+Dette vil skrive ut person-objektet på en fin måte til konsollen:
+
+```
+{:name "John Doe",
+ :age 30,
+ :country "Norway"}
+```
 
 ## Dypdykk
 
-Hvis du ønsker å dykke dypere og skrive ut mer komplekse objekter, kan du bruke funksjonen "pprint-table". Denne funksjonen gjør at du kan skrive ut datastrukturer som kart, sett og vektorer på en mer organisert måte.
+Når man skal skrive ut debug-utdata, er det viktig å være bevisst på hva man skriver ut. Selv om det kan være fristende å skrive ut alle variablene i et program, kan dette føre til unødvendig mye utdata. Det er bedre å være selektiv og kun skrive ut de verdiene man faktisk trenger for å forstå koden.
 
-```Clojure
-(ns min-prosjekt.core
-  (:require [clojure.pprint :refer [pprint-table]]))
-
-(def data {:navn "Maria" :alder 26 :yrke "Programmerer"})
-
-(pprint-table data)
-```
-
-Output:
-
-```Clojure
-|----------------|
-| :navn | :alder |
-|-------+--------|
-| Maria |    26  |
-|----------------|
-| :yrke |         |
-|--------+--------|
-|Programmerer|     |
-|---------+-------|
-```
-
-Dette gjør det enklere å se strukturen til komplekse objekter, og kan være nyttig når du må analysere større datamengder.
+Det er også viktig å huske at debug-utdata ikke bør være en permanent del av koden. Når man har løst problemet og forstått hva som skjer, bør man fjerne debug-utdataen for å unngå å forurense koden.
 
 ## Se også
 
-* [Clojure offisiell dokumentasjon] (https://clojure.org/)
-* [Clojure feilsøking] (https://tech.lendingclub.com/clojure-debugging-101/)
+- [Clojure debug guide](https://clojure.org/guides/debugging)
+- [Debugging in Clojure - Learn Clojure](https://www.learn-clojure.com/clojure/debugging-in-clojure/)
+- [Instrumenting code for debugging in Clojure](https://alexdvance.com/blog/instrumenting-code-for-debugging-in-clojure/)

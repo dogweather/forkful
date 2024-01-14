@@ -1,52 +1,61 @@
 ---
-title:                "PHP: 두 날짜 비교하기"
+title:                "PHP: 두 날짜를 비교하는 방법"
+simple_title:         "두 날짜를 비교하는 방법"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-두 개의 날짜를 비교하는 것에 대해 관심을 가질 수 있는 이유는 여러 가지가 있습니다. 예를 들어, 날짜를 정확하게 비교하면 특정 기간 동안 무엇이 발생했는지 더 잘 이해할 수 있습니다. 또한 날짜를 비교하여 얼마나 많은 시간이 지났는지를 파악할 수 있습니다. 이를 통해 효율적인 일정 계획이나 시간 관리를 할 수 있습니다.
+# 왜
 
-## 어떻게
-PHP를 사용하여 두 날짜를 비교하는 방법은 간단합니다. 우선, 비교하고자 하는 두 개의 날짜를 각각 변수에 할당합니다. 그리고 이 변수들을 `strtotime()` 함수를 사용하여 timestamp 형식으로 변환해줍니다. 그리고 `time()` 함수를 사용하여 현재 시간을 timestamp 형식으로 변환한 후, 두 개의 timestamp 값을 비교합니다. 비교한 결과에 따라 원하는 출력을 할 수 있습니다.
+두 날짜를 비교하는 것에 대해 이야기해보겠습니다. 여러분들은 아마도 어디에서나 날짜 비교를 할 수 있는 다양한 방법들을 본 적이 있을 것입니다. 하지만 PHP를 사용하는 경우에는 다른 언어들과는 다른 방식으로 날짜를 비교해야 합니다. 이 글에서는 PHP를 사용하여 두 날짜를 비교하는 방법에 대해 알아보겠습니다.
+
+# 어떻게
+
+가장 간단한 방법은 ```strtotime()``` 함수를 사용하는 것입니다. 이 함수는 문자열로 표현된 날짜를 타임스탬프로 변환해줍니다. 그리고 ```date()``` 함수를 사용하여 날짜를 원하는 형식으로 출력할 수 있습니다.
 
 ```PHP
-$first_date = "2020-01-01";
-$second_date = "2020-02-01";
+$date1 = "2021-01-01";
+$date2 = "2021-01-02";
 
-$timestamp1 = strtotime($first_date);
-$timestamp2 = strtotime($second_date);
+$timestamp1 = strtotime($date1);
+$timestamp2 = strtotime($date2);
 
-$current_time = time();
-
-if ($timestamp1 < $timestamp2) {
-    echo "첫 번째 날짜가 두 번째 날짜보다 이전입니다.";
-} else if ($timestamp1 > $timestamp2) {
-    echo "첫 번째 날짜가 두 번째 날짜보다 미래입니다.";
-} else {
-    echo "두 날짜가 같습니다.";
-}
+echo "두 날짜의 차이는 " . ($timestamp2 - $timestamp1) . "초 입니다."; // 결과: 두 날짜의 차이는 86400초 입니다.
 ```
 
-위 코드를 실행하면 다음과 같은 결과를 얻을 수 있습니다.
+때때로 우리는 두 날짜를 정확한 단위로 비교해야 할 필요가 있습니다. 이 경우, ```date_diff()``` 함수를 사용할 수 있습니다. 이 함수는 두 날짜 사이의 차이를 나타내는 객체를 반환해줍니다.
 
+```PHP
+$date1 = "2021-01-01";
+$date2 = "2021-01-31";
+
+$diff = date_diff(date_create($date1), date_create($date2));
+
+echo "두 날짜 사이의 차이는 " . $diff->format('주간 %a일') . "입니다."; // 결과: 두 날짜 사이의 차이는 주간 30일입니다.
 ```
-두 번째 날짜가 첫 번째 날짜보다 미래입니다.
+
+# 깊이 파헤치기
+
+PHP에서 날짜를 비교할 때, 우리는 다양한 형식의 날짜 문자열을 다루어야 합니다. 이는 문자열의 형식이 맞지 않으면 예상치 못한 결과를 낳을 수 있기 때문입니다. 예를 들어, 다음과 같이 문자열로 표현된 날짜를 비교한다고 가정해봅시다.
+
+```PHP
+$date1 = "2021-01-31";
+$date2 = "31-01-2021";
+
+$timestamp1 = strtotime($date1);
+$timestamp2 = strtotime($date2);
+
+echo "두 날짜의 차이는 " . ($timestamp2 - $timestamp1) . "초 입니다."; // 결과: 두 날짜의 차이는 86400초 입니다.
 ```
 
-## 딥 다이브
-두 개의 날짜를 비교하는 방법은 간단하지만, 조금 더 깊게 살펴보면 더 많은 것을 배울 수 있습니다. PHP에서 두 날짜를 timestamp로 변환하면, 이는 초 단위의 숫자로 저장됩니다. 따라서 timestamp를 사용하여 시간 간격을 계산하거나, 특정 날짜에 대한 정보를 추출할 수 있습니다. 또한 `date()` 함수를 사용하여 timestamp 값을 날짜 형식으로 변환하여 출력할 수도 있습니다.
+두 날짜는 다른 형식으로 표현되지만, PHP는 아무런 에러 없이 결과를 반환합니다. 이는 strtotime() 함수가 문자열을 파싱할 때, 먼저 설정된 시스템로케일을 기준으로 날짜 형식을 파악하고, 그에 맞게 해석하기 때문입니다. 우리는 이러한 예상치 못한 결과를 피하기 위해 항상 날짜 문자열을 ```YYYY-MM-DD``` 형식으로 표기하는 것이 좋습니다.
 
-## 참고
-- [PHP date() 함수](https://www.php.net/manual/en/function.date.php)
-- [PHP time() 함수](https://www.php.net/manual/en/function.time.php)
-- [PHP strtotime() 함수](https://www.php.net/manual/en/function.strtotime.php)
+# 또 다른 참고자료
 
----
-
-## 참고 자료
-- [PHP로 날짜 비교하기](https://zinee-world.tistory.com/245)
-- [PHP로 시간 계산하기](https://zetawiki.com/wiki/PHP_%EC%8B%9C%EA%B0%84_%EA%B3%84%EC%82%B0%ED%95%98%EA%B8%B0)
+- https://www.php.net/manual/en/function.strtotime.php
+- https://www.php.net/manual/en/function.date.php
+- https://www.php.net/manual/en/function.date-diff.php

@@ -1,42 +1,42 @@
 ---
 title:                "PHP: Comenzando un nuevo proyecto"
+simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "PHP"
-category:             "Getting Started"
+category:             "PHP"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué empezar un nuevo proyecto?
+## Por qué empezar un nuevo proyecto
 
-Es posible que te hayas dado cuenta de que siempre estás utilizando las mismas herramientas y tecnologías en tus proyectos, y que ha llegado el momento de probar algo nuevo. Tal vez quieras ampliar tus habilidades o simplemente explorar nuevas posibilidades. Cualquiera que sea la razón, empezar un nuevo proyecto puede ser una experiencia emocionante y enriquecedora.
+Hay muchas razones por las cuales alguien podría querer comenzar un nuevo proyecto de programación en PHP. Puede ser por curiosidad, por aprender nuevas habilidades, por mejorar un sitio web o simplemente por diversión. Sea cual sea la razón, empezar un nuevo proyecto es una excelente manera de poner en práctica tus conocimientos y de expandir tus habilidades en programación.
 
-## Cómo empezar un nuevo proyecto en PHP
+## Cómo hacerlo
 
-Para empezar un nuevo proyecto en PHP, lo primero que debes hacer es asegurarte de tener instalado PHP en tu equipo. Puedes descargar la última versión desde el sitio oficial de PHP. Una vez que tengas instalado PHP, puedes crear una nueva carpeta para tu proyecto y empezar a escribir código.
+Para empezar un proyecto de programación en PHP, primero debemos tener instalado un servidor local en nuestra computadora. El servidor local es donde podremos escribir y probar nuestro código antes de subirlo a un servidor en línea.
 
-A continuación, te mostramos un ejemplo de un código básico en PHP que muestra "¡Hola Mundo!" en la página web:
+Una vez que tengamos nuestro servidor local configurado, podemos comenzar a escribir nuestro código en un archivo PHP. A continuación se muestra un ejemplo básico de un archivo PHP que imprime "Hola Mundo" en el navegador:
 
-```php
+```PHP
 <?php
+
 echo "¡Hola Mundo!";
-?>
 ```
 
-Una vez que tengas tu código escrito, puedes ejecutarlo abriendo tu navegador web y escribiendo la dirección URL de tu archivo PHP. Si todo funciona correctamente, deberías poder ver el mensaje "¡Hola Mundo!" en tu pantalla.
+Este código utilizará la función "echo" en PHP para imprimir la frase "Hola Mundo" en la pantalla. Después de guardar este archivo, podemos abrir nuestro navegador y navegar a la dirección donde guardamos el archivo para ver el resultado.
 
-## Sumérgete más en el mundo de PHP
+## Profundizando en el proyecto
 
-Si quieres profundizar en tus conocimientos de PHP, hay muchas herramientas y recursos disponibles en línea. Puedes explorar la documentación oficial de PHP, unirte a comunidades en línea de programadores de PHP y seguir tutoriales y ejemplos en línea.
+Ahora que tenemos una idea básica de cómo empezar un proyecto en PHP, podemos profundizar un poco más. Podemos aprender sobre la sintaxis de PHP, diferentes funciones y métodos, y cómo interactuar con bases de datos y otras tecnologías web.
 
-Además, también puedes considerar utilizar un framework de PHP, como Laravel o Symfony, para facilitar el proceso de desarrollo. Estos frameworks ofrecen una estructura y herramientas adicionales para crear aplicaciones web más complejas.
+También es importante tener una buena estructura de proyecto para mantener nuestro código organizado y fácil de mantener. Podemos utilizar frameworks como Laravel o CodeIgniter para ayudarnos con esta tarea.
 
-Incluso puedes explorar otras ramas de PHP, como WordPress, para crear sitios web y blogs dinámicos.
+No olvidemos también la importancia de la seguridad en nuestro proyecto. Al trabajar con tecnologías web, es necesario tomar medidas para proteger nuestros sitios y aplicaciones de posibles ataques.
 
-## Ver también
+## Ver También
 
-- [Sitio oficial de PHP](https://www.php.net/)
-- [Documentación oficial de PHP](https://www.php.net/docs.php)
-- [Laravel - framework de PHP](https://laravel.com/)
-- [Symfony - framework de PHP](https://symfony.com/)
-- [WordPress](https://wordpress.org/)
+- [Instalando un servidor local en Windows](https://www.youtube.com/watch?v=bSeFrPrqZ2A)
+- [10 proyectos en PHP para mejorar tus habilidades](https://www.codeofaninja.com/2016/04/10-fun-php-projects-code-ninja.html)
+- [Tutorial de Laravel para principiantes](https://www.sitepoint.com/series/laravel-5-tutorial-for-beginners/)

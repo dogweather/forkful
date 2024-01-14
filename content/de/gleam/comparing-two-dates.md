@@ -1,39 +1,45 @@
 ---
-title:                "Gleam: Vergleich zweier Daten"
+title:                "Gleam: Vergleich von zwei Datumsangaben"
+simple_title:         "Vergleich von zwei Datumsangaben"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Vergleichen von zwei Daten in der Programmierung ist ein wichtiger Schritt bei der Datumsmanipulation. Es ermöglicht uns, bestimmte Aktionen basierend auf dem Verhältnis zwischen zwei Daten auszuführen. Wenn Sie zum Beispiel überprüfen möchten, ob eine Sitzung abgelaufen ist, müssen Sie das aktuelle Datum mit dem Ablaufdatum vergleichen.
 
-Das Vergleichen von zwei Daten ist ein wichtiger Teil der Programmierung, der dabei hilft, zeitliche Abhängigkeiten zu erkennen und zu verarbeiten. Es ermöglicht auch die Durchführung von Aktionen basierend auf dem Vergleich von zwei Datumsangaben, wie zum Beispiel das Festlegen von Ablaufdaten oder das Sortieren von Daten in chronologischer Reihenfolge.
-
-# Wie man es macht
-
-Um zwei Daten in Gleam zu vergleichen, können Sie die `date.compare()` Funktion verwenden. Diese Funktion nimmt zwei Datumswerte als Argumente und gibt entweder 0, 1 oder -1 zurück, je nachdem, ob das erste Datum gleich, größer oder kleiner als das zweite Datum ist. Hier ist ein Beispiel, das zeigt, wie Sie diese Funktion verwenden können:
+## How To
+Um zwei Daten in Gleam zu vergleichen, verwenden wir die `cmp` Funktion. Diese Funktion vergleicht zwei Daten und gibt `Ordering` zurück, je nachdem ob das erste Datum vor, nach oder gleich dem zweiten Datum liegt.
 
 ```Gleam
-let date1 = date.new(2021, 1, 1)
-let date2 = date.new(2021, 2, 1)
+let datum_1 = Date.from_iso8601("2021-04-08")
+let datum_2 = Date.from_iso8601("2021-04-10")
 
-let result = date.compare(date1, date2)
+// Vergleichen der Daten und Zuweisen der Ergebnisse an eine Variable
+let vergleich = Date.cmp(datum_1, datum_2)
+
+// Ausgabe des Vergleichs mit einem einfachem Match-Ausdruck
+case vergleich {
+  Ordering.Lt -> IO.print("Das erste Datum ist vor dem zweiten Datum")
+  Ordering.Gt -> IO.print("Das erste Datum ist nach dem zweiten Datum")
+  Ordering.Eq -> IO.print("Beide Daten sind gleich")
+}
 ```
 
-In diesem Beispiel lautet die Ausgabe `result = -1`, da `date1` kleiner als `date2` ist.
+Die möglichen Ausgaben wären je nachdem welches Datum als erstes eingegeben wurde:
+- `Das erste Datum ist vor dem zweiten Datum`
+- `Das erste Datum ist nach dem zweiten Datum`
+- `Beide Daten sind gleich`
 
-# Tiefer Einblick
+## Deep Dive
+Die `cmp` Funktion verwendet den Vergleichsoperator `<`intern um die Reihenfolge der Daten zu bestimmen. Dies bedeutet, dass beide Daten zu `Integers` konvertiert und dann verglichen werden. Dabei entspricht jeder Tag in einem `Date`-Objekt einem `Integer` und je größer der Tag, desto größer der `Integer`-Wert.
 
-Beim Vergleichen von Daten gibt es einige wichtige Dinge zu beachten. Zum einen müssen die Daten im gleichen Format vorliegen, damit sie sinnvoll verglichen werden können. Gleam bietet verschiedene Funktionen, um Datumswerte in das gewünschte Format umzuwandeln, wie zum Beispiel die `date.from_string()` Funktion.
+Bei der Verwendung von `cmp` müssen beide Daten vom gleichen Typ sein. Andernfalls erhält man einen Compilerfehler.
 
-Außerdem ist es wichtig, die Zeitzone zu berücksichtigen, wenn Sie Daten vergleichen. Wenn Sie zum Beispiel Daten von verschiedenen Orten vergleichen, kann dies zu unerwarteten Ergebnissen führen, da die Zeitzone unterschiedlich sein kann.
-
-In Gleam gibt es auch die Möglichkeit, benutzerdefinierte Vergleichsfunktionen zu erstellen, um spezifische Vergleiche durchzuführen, beispielsweise basierend auf spezifischen Kriterien für Zeit oder Datum.
-
-# Siehe auch
-
-- [Gleam Dokumentation zu Datumswerten](https://gleam.run/book/tour/dates)
-- [Formatierung von Daten in Gleam](https://gleam.run/book/core/date.html#format)
-- [Zeitzonenumrechnung in Gleam](https://gleam.run/book/library/chronos)
+## Siehe Auch
+- [Date Module Documentation](https://gleam.run/core/date.html)
+- [Comparison Operators in Gleam](https://gleam.run/book/stdlib.html#comparison-operators)

@@ -1,52 +1,50 @@
 ---
 title:                "Arduino: 텍스트 파일 읽기"
+simple_title:         "텍스트 파일 읽기"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-인간이 아니라 기계가 사용하는 언어로 프로그래밍한 텍스트 파일을 읽을 때 유용한 정보를 제공합니다.
+# 왜
 
-## 어떻게
-텍스트 파일을 읽는 것은 매우 간단합니다. 먼저 `Serial` 라이브러리를 `Arduino`에 추가하고, `Serial.begin(9600)`를 사용하여 시리얼 통신을 시작합니다. 그리고 `Serial.println()`을 사용하여 `Hello world!`와 같이 메시지를 출력할 수 있습니다.
+텍스트 파일을 읽는 것에 대해 궁금한 사람들은 코딩과 Arduino에 대해 더 많이 배우고 싶을 것입니다.
 
-살펴보면 다음과 같이 코드를 작성하고 시리얼 모니터를 열고, 전송 속도를 9600bps로 설정한 후 컴퓨터와 `Arduino`를 연결합니다.
-```
-Arduino
-#include <Serial.h>
-Serial.begin(9600);
+# 어떻게
 
-Serial.println("Hello world!");
-```
+텍스트 파일을 읽는것은 매우 쉬운 작업입니다. 다음 예제 코드를 따라해보세요.
 
-그러면 다음과 같은 결과를 얻을 수 있습니다.
-```
-Hello world!
-```
-
-이제 `Arduino`에서 텍스트 파일을 읽는 방법을 살펴보겠습니다. 다음과 같이 코드를 작성하고 `open()` 함수로 파일을 열고 `println()` 함수로 파일의 내용을 출력합니다.
-```
-Arduino
-String data;
+```Arduino 
 File myFile;
-
-myFile = SD.open("example.txt", FILE_READ);
-
-while (myFile.available()) {
-  data = myFile.println();
-  Serial.println(data);
+void setup() {
+  Serial.begin(9600); // 시리얼 모니터를 엽니다.
+  myFile = SD.open("example.txt"); // 텍스트 파일을 엽니다.
+  if (myFile) { // 파일이 열렸는지 확인합니다.
+    while (myFile.available()) { // 파일이 읽기 가능한지 확인합니다.
+      Serial.write(myFile.read()); // 파일의 모든 내용을 읽어서 시리얼 모니터에 출력합니다.
+    }
+    myFile.close(); // 파일을 닫습니다.
+  }
+}
+void loop() {
+  // 아무것도 하지 않습니다.
 }
 ```
 
-위 코드를 실행하면 `example.txt` 파일의 내용이 시리얼 모니터에 출력됩니다.
+위 코드를 실행하면, "example.txt" 파일의 모든 내용이 시리얼 모니터에 출력됩니다.
 
-## 깊이 파고들기
-텍스트 파일을 읽는 것은 프로그래밍에서 매우 중요합니다. 그렇지만 주의할 점이 있습니다. 텍스트 파일을 읽을 때 파일의 크기와 메모리 공간, 파일의 형식에 따라서 읽을 수 있는 용량에 제한이 있을 수 있습니다. 따라서 프로그래머는 파일을 읽기 전에 파일의 크기와 형식을 확인하는 것이 좋습니다.
+## 깊은 이해
 
-## 또 다른 정보
-- [SD 라이브러리 사용 설명서](https://www.arduino.cc/en/Reference/SD)
-- [아두이노로 SD카드 읽기](https://brain-cafe.tistory.com/206)
-- [아두이노로 텍스트 파일 읽기](https://m.blog.naver.com/PostView.nhn?blogId=heaven_mat&logNo=220383554352&proxyReferer=https:%2F%2Fwww.google.com%2F)
+텍스트 파일을 읽기 위해서는 Arduino에 SD(Secure Digital) 라이브러리를 추가해야 합니다. 이 라이브러리는 Arduino SD 카드 모듈로부터 파일을 읽거나 쓰는 기능을 제공합니다.
+
+또한 SD 라이브러리와 함께 사용하기 위해서는 FAT 파일 시스템도 필요합니다. FAT 파일 시스템은 디지털 카메라나 MP3 플레이어와 같은 디바이스에서도 널리 사용되는 파일 시스템입니다.
+
+즉, SD 라이브러리를 사용하면 Arduino에서 SD 카드 모듈을 통해 텍스트 파일을 읽을 수 있게 됩니다.
+
+# 같이 보기
+
+- [Arduino SD 라이브러리 공식 문서](https://www.arduino.cc/en/Reference/SD)
+- [FAT 파일 시스템에 대한 이해](https://www.tldp.org/LDP/tlk/fs/filesystem.html)

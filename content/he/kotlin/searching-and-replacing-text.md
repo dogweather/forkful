@@ -1,61 +1,58 @@
 ---
 title:                "Kotlin: חיפוש והחלפת טקסטים"
+simple_title:         "חיפוש והחלפת טקסטים"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+## למה
 
-למה בכלל צריך להתעסק בחיפוש והחלפת טקסט? כי הם כלי עיקריים לעיבוד טקסט ומאפשרים לנו לבצע פעולות מסוימות על טקסטים בקלות ובמהירות.
+כשנמצאים בתהליך של כתיבת קוד בשפת קוטלין, ייתכן שנתקלו בצורך להחליף טקסט באופן מסוים. זהו תהליך חשוב ושכיח בתכנות, ולכן חשוב לדעת היטב איך לעשות זאת.
 
-## כיצד לעשות זאת
+## איך לעשות
 
-כאשר אנו עובדים עם קוד, ייתכן שנתקל בצורך לחפש ולהחליף טקסט בכמה מקומות בקוד. בשפת קוטלין, ישנם מספר דרכים לבצע פעולת חיפוש והחלפה של טקסט.
-
-תחילה, נצטרך להגדיר מחרוזת של הטקסט שנרצה לחפש ולהחליף. לדוגמה:
+תהליך החיפוש וההחלפה של טקסט בשפת קוטלין יכול להיות פשוט ונוח. ניתן לעשות זאת באמצעות הפונקציות `replace()` ו- `replaceFirst()` שקיימות בספריית הסטנדרטית של קוטלין. ניתן להשתמש בהן על מחרוזות או על ערכים משתנים. כדי להשתמש בפונקציות אלה, ניתן להכין מחרוזת חדשה עם הטקסט המתאים לחיפוש והטקסט החדש שיחליף אותו. למשל:
 
 ```Kotlin
-val oldText = "Hello"
-val newText = "Bonjour"
+var text = "קוטלין היא שפת תכנות מדהימה"
+var newText = text.replace("תכנות", "תכנות מונחה מאוד")
+```
+הפלט של הקוד יהיה:
+
+```
+קוטלין היא שפת תכנות מונחה מאוד מדהימה
 ```
 
-כעת, נוכל להשתמש בפעולת החיפוש והחלפה כדי לחלוף את הטקסט הישן בחדש בכל מקום בקוד. ניתן לעשות זאת באמצעות פיקוד ה-[replaceFirst] או ה-[replace] כפי שמסופק בדוגמה הבאה:
+אנו יכולים גם להשתמש בפונקציות אלה בשילוב עם ביטויים רגולריים, כך שניתן יהיה לחפש ולהחליף קטעים טקסט מסובכים יותר. לדוגמה:
+
 
 ```Kotlin
-val myString = "Hello World!"
-val newString = myString.replaceFirst(oldText, newText)
-println(newString) // Bonjour World!
+var text = "המסננת יבשים סוכר"
+var newText = text.replace(Regex("[ייבשים ס]וכר"), "מים")
+```
+הפלט של הקוד יהיה:
+
+```
+המסננת מים מים
 ```
 
-בנוסף, ניתן להשתמש באופרטור [in] כדי לבדוק אם טקסט מסוים נמצא בתוך מחרוזת. לדוגמה:
+ניתן גם להחליף בין מחרוזת לבין מספרים, באמצעות הפונקציה `replaceAfter()` ו- `replaceBefore()`. למשל:
 
 ```Kotlin
-val myString = "Hello World!"
-if(oldText in myString) {
-    println("Old text found!")
-}
-else {
-    println("Old text not found.")
-}
+var text = "שרשרת 12345"
+var newText = text.replaceAfter("שרשרת", "2")
 ```
 
-בתוך פונקציית ה-[replace] ניתן להשתמש בביטוי רגולרי כדי לחלוף את הטקסט בצורה יותר גמישה. לדוגמה:
+הפלט של הקוד יהיה:
 
-```Kotlin
-val myString = "Today is a sunny day."
-val newString = myString.replace(Regex("[Ss]unny"), "cloudy")
-println(newString) // Today is a cloudy day.
+```
+שרשרת 2
 ```
 
-כדי לחלק את הטקסט לפי תבנית מסוימת, ניתן להשתמש בפונקציית [split] ולהגדיר את התבנית כמחרוזת או ביטוי רגולרי. לדוגמה:
+## דיפ דייב
 
-```Kotlin
-val myString = "One,Two,Three,Four,Five"
-val myList = myString.split(",")
-println(myList) // [One, Two, Three, Four, Five]
-```
-
-## ניר
+לכאורה, חיפוש והחלפת טקסט נשמ

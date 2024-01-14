@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Skriving til standard error"
+title:                "Elixir: Skriver til standardfeil"
+simple_title:         "Skriver til standardfeil"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/writing-to-standard-error.md"
 ---
 
@@ -9,67 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive til standard error er et viktig aspekt av feilhåndtering i Elixir-programmering. Ved å skrive feilmeldinger til standard error, kan vi effektivt identifisere og håndtere eventuelle feil i koden vår. Derfor er det viktig å forstå og kunne implementere dette i våre programmer.
+Skriving til standardfeil kan være en nyttig del av en Elixir programmerers verktøykasse. Det tillater deg å sende feilmeldinger eller annen informasjon som skal ses av brukeren i terminalen samtidig som koden kjører.
 
 ## Hvordan
 
-Å skrive til standard error i Elixir er enkelt og kan gjøres ved hjelp av `IO.puts/1`-funksjonen. La oss se på et enkelt eksempel:
+For å skrive til standardfeil i Elixir, kan du bruke `IO.puts/2` eller `IO.write/2` funksjoner og passere `:stderr` som første argument. La oss se på et eksempel:
 
-``` Elixir
-defmodule Feilhåndtering do
-  def del_tall(tall1, tall2) do
-    if tall2 == 0 do
-      IO.puts("Kan ikke dele på 0!")
-    else
-      IO.puts(tall1 / tall2)
-    end
-  end
-end
-
-Feilhåndtering.del_tall(10, 2)
-Feilhåndtering.del_tall(10, 0)
+```Elixir
+IO.puts(:stderr, "Dette er en feilmelding")
 ```
 
-I dette eksempelet deler vi tall1 med tall2, men hvis tall2 er 0, skriver vi en feilmelding til standard error i stedet for å prøve å dele på 0. Når vi kjører dette programmet, vil vi få følgende utskrift:
+Dette vil skrive ut "Dette er en feilmelding" i standard feilstrømmen.
 
-``` Elixir
-5
-Kan ikke dele på 0!
+Du kan også kombinere dette med annen informasjon, for eksempel variabler eller funksjoner:
+
+```Elixir
+error_message = "En uventet feil oppstod"
+IO.puts(:stderr, error_message <> " for bruker #{username}")
 ```
 
-Som du kan se, kan vi enkelt skrive feilmeldinger til standard error ved å bruke `IO.puts/1`-funksjonen.
+Dette vil skrive ut "En uventet feil oppstod for bruker Jane" hvis `username` variabelen er satt til "Jane".
 
 ## Dypdykk
 
-Hvis du vil ha mer kontroll over hvordan feilmeldinger håndteres, kan du bruke funksjonen `IO.write/2`. Denne funksjonen tar inn en IO-enhet og en liste av data som skal skrives til enheten. Dette gir oss muligheten til å skrive feilmeldinger til en spesifikk IO-enhet, som for eksempel en fil eller en logg.
+En ting å merke seg er at skriving til standardfeil ikke vil stoppe programmet hvis det oppstår en feil. Det vil bare skrive ut informasjonen til brukeren. Du kan også se etter feil som oppstår og skrive dem til standardfeil ved hjelp av `try/catch` blokker:
 
-Vi kan også bruke `Kernel.SpecialForms.raise/1`-funksjonen til å heve en feil og skrive en melding til standard error samtidig. La oss se på et eksempel:
-
-``` Elixir
-defmodule Feilhåndtering do
-  def sjekk_tall(tall) do
-    if is_integer(tall) do
-      IO.puts("#{tall} er et heltall")
-    else
-      raise "Inndata må være et heltall"
-    end
-  end
+```Elixir
+try do
+  # Kode som kan føre til en feil
+catch
+  message ->
+    IO.puts(:stderr, message)
 end
-
-Feilhåndtering.sjekk_tall(10)
-Feilhåndtering.sjekk_tall("ti")
 ```
 
-Når vi kjører dette programmet, vil vi få følgende utskrift:
+Dette vil fange en eventuell feil som oppstår i `try` blokken og skrive den til standard feilstrømmen.
 
-``` Elixir
-10 er et heltall
-** (RuntimeError) Inndata må være et heltall
-```
+## Se Også
 
-Som du kan se, blir feilmeldingen også skrevet til standard error ved hjelp av `raise/1`-funksjonen.
-
-## Se også
-
-- Elixir dokumentasjon for `IO`-modulen: https://hexdocs.pm/elixir/IO.html
-- Blogginnlegg om feilhåndtering i Elixir: https://elixirschool.com/en/lessons/advanced/error-handling/
+- [Elixir IO modul](https://hexdocs.pm/elixir/IO.html)
+- [Elixir Try/Catch dokumentasjon](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#try/1)
+- [Elixir Error modul](https://hexdocs.pm/elixir/Error.html)
+- [Elixir Exception dokumentasjon](https://hexdocs.pm/elixir/Exception.html)

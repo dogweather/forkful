@@ -1,33 +1,46 @@
 ---
-title:                "Elixir: 「一時ファイルの作成」"
+title:                "Elixir: 一時ファイルを作成する。"
+simple_title:         "一時ファイルを作成する。"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-#なぜ
-一時的なファイルを作成することについて *なぜ* 人々が取り組むのか、その理由を1-2文で説明します。
+なぜ：一時ファイルを作成する理由
 
-一時的なファイルを作成する必要があるかもしれません。例えば、アプリケーションでデータを一時的に保存する必要がある場合や、ファイルの一時的なバックアップを作成する必要がある場合などです。
+一時ファイルを作成する理由は、一時的にデータを保存するためです。例えば、プログラムの実行中に作成されたデータを一時的に保存したい場合や、一時的なファイルを使用してプログラムの実行中に他のアクションを続行したい場合などが挙げられます。
 
-##やりかた
+## 作り方
 
-```Elixir
-{:ok, file} = File.open_temp() 
-|> File.write("This is a temporary file.")
-|> File.close()
+一時ファイルを作成するためには、`Tempfile`モジュールを使用します。
 
-IO.inspect file.path
+```
+Elixir
+# Tempfileモジュールを使用
+{:ok, file} = Tempfile.open()
+
+# ファイルにデータを書き込む
+IO.write(file, "Hello, World!")
+
+# ファイルを閉じる
+File.close(file)
+
+# ファイルパスを取得
+IO.puts(file.path)
+# => "/tmp/elixirtempfile20190415-1"
 ```
 
-実行すると、現在の作業ディレクトリに一時的なファイルが作成され、そのパスが表示されます。このファイルはプロセスが終了すると自動的に削除されます。
+上記の例では、`Tempfile.open()`メソッドを使用して一時ファイルを作成し、`IO.write()`メソッドを使用してファイルにデータを書き込み、最後に`File.close()`メソッドを使用してファイルを閉じています。最後に、`file.path`を使用してファイルのパスを取得しています。
 
-##ディープダイブ
+## ディープダイブ
 
-一時的なファイルの作成には、Elixirに組み込まれている `File` モジュールが使用されます。このモジュールには、一時的なファイルを作成し書き込むための様々な関数が用意されています。例えば、 `File.open_temp/2` は一時的なファイルを作成してそのリソースを返します。また、`File.write/2` を使用することでファイルにデータを書き込むことができます。
+一時ファイルを作成する際に使用する`Tempfile`モジュールは、様々なオプションを提供しています。例えば、ファイルの作成場所を指定したり、ファイルの名前をカスタマイズしたりすることができます。また、一時ファイルを作成する際に使用されるテンプレートのフォーマットをカスタマイズすることもできます。詳細については、[Elixir公式ドキュメント](https://hexdocs.pm/elixir/Tempfile.html)を参照してください。
 
-#参考リンク
-- [Elixir Fileモジュールドキュメント](https://hexdocs.pm/elixir/File.html)
-- [一時ファイル作成時にエラーを避ける方法](https://stackoverflow.com/questions/43549955/how-can-i-avoid-getting-an-error-could-not-locally-open-save-edited-file-no-s)
+## See Also
+
+- [Elixir 公式ドキュメント](https://hexdocs.pm/elixir/Tempfile.html)
+- [TempfileモジュールのGitHubリポジトリ](https://github.com/elixir-lang/elixir/blob/master/lib/tempfile.ex)
+- [一時ファイルを使用する場合のセキュリティについて](https://www.schneier.com/blog/archives/2006/11/safely_using_te.html)

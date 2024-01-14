@@ -1,54 +1,49 @@
 ---
 title:                "Haskell: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-
-현재 날짜를 얻는 과정에 관심을 가지는 이유는 다양합니다. 일상적인 프로그래밍 작업에서 날짜 정보를 사용하기 위해서, 또는 날짜와 관련된 여러 작업들을 자동화하기 위해서 일 수 있습니다. 바로 어떤 이유로든, Haskell을 사용하여 현재 날짜를 얻는 방법을 배울 것입니다.
+## 왜
+현재 날짜를 가져오는 것을 왜 하는지 궁금하신가요? 프로그래밍을 하는 데 있어서 많은 경우 현재 날짜와 시간을 사용해야 할 때가 있습니다. 예를 들어, 파일 또는 데이터베이스에 로그를 남기거나, 알림을 표시하거나, 배송일자를 계산할 때 등이 있습니다.
 
 ## 어떻게
-
-우선, `Data.Time` 모듈을 가져와서 날짜와 시간 정보를 다룰 수 있도록 지원 받아야 합니다.
-
-```Haskell
-import Data.Time
-```
-
-그 다음, `getCurrentTime` 함수를 이용하여 현재 시간을 가져올 수 있습니다. 이 함수는 `IO UTCTime` 타입을 반환하므로, `do` 블록 안에서 패턴 매칭을 이용하여 값을 바인딩해줄 수 있습니다.
+Haskell 언어를 사용하여 현재 날짜를 가져오는 것은 간단합니다. 아래의 코드 예제를 확인해보세요.
 
 ```Haskell
-do
-  currentTime <- getCurrentTime
+import Data.Time.Clock.LocalTime
+import Data.Time.Calendar
+
+-- 오늘 날짜와 시간을 가져오기 위해 getCurrentTime 함수를 사용합니다.
+getCurrentTime :: IO UTCTime
+
+-- UTCTime에서 LocalTime으로 변환합니다.
+utcToLocalTime :: TimeZone -> UTCTime -> LocalTime
+
+-- UTC 날짜를 스트링 형식으로 변환합니다.
+show :: FormatTime t => t -> String
+
+-- 오늘 날짜와 시간을 출력합니다.
+main = do
+    time <- getCurrentTime
+    let localTime = utcToLocalTime (minutesToTimeZone 540) time
+    let date = show localTime
+    putStrLn date
+```
+실행 결과:
+```
+2021-11-29 12:30:45
 ```
 
-이제 날짜와 시간 정보를 원하는 형식으로 변환하기 위해 `Data.Time.Format` 모듈을 가져와야 합니다. 예를 들어, 현재 날짜를 `"yyyy-mm-dd"` 형식의 문자열로 만들어보겠습니다.
+## 심층 분석
+보다 정확한 날짜와 시간을 얻기 위해서는 `TimeZone` 모듈을 불러와 TimeZone 데이터 형식을 이용해야 합니다. 이 모듈은 지역 시간과 UTC 사이의 차이를 계산할 수 있는 함수들을 제공합니다. 입력된 `TimeZone` 값은 분 단위로 설정되는데, 한국 기준의 GMT+09:00과 같은 값이 됩니다. 이 외에도 `getCurrentTime` 함수를 이용해 년, 월, 일, 시간 등 다양한 정보를 얻을 수 있습니다.
 
-```Haskell
-import Data.Time.Format
-
-do
-  currentTime <- getCurrentTime
-  let dateString = formatTime defaultTimeLocale "%Y-%m-%d" currentTime
-```
-
-최종적으로, `dateString` 변수에는 현재 날짜를 나타내는 문자열이 담겨 있게 됩니다. 아래는 실제 실행 결과 예시입니다.
-
-```
-2021-06-22
-```
-
-## 깊게 파보기
-
-현재 날짜를 얻는 과정에서 중요한 개념은 `UTCTime`과 `ZonedTime`으로 현재 시간을 나타낼 수 있다는 것입니다. `UTCTime`은 세계 표준시(UTC)에 따른 현재 시간을 나타내는 타입이고, `ZonedTime`은 특정 시간대에 따른 현재 시간을 나타내는 타입입니다.
-
-또 다른 중요한 개념은 시간과 관련된 포맷팅입니다. `formatTime` 함수에서 이용한 `defaultTimeLocale`은 기본적으로 영어로 출력하는 포맷팅 규칙을 가지고 있지만, 한국어로 출력하고 싶다면 `koreanTimeLocale`과 같은 사용자 정의 포맷팅을 이용할 수도 있습니다.
-
-# 더 읽어보기
-
-- [Haskell 공식 문서 - Getting the current date and time](https://www.haskell.org/haskellwiki/Getting_the_current_date_and_time)
-- [Real World Haskell - Dealing with Time and Date](http://book.realworldhaskell.org/read/using-time-and-date.html)
+## 참고 자료
+- [Haskell의 Data.Time.Clock.LocalTime 모듈](https://hackage.haskell.org/package/time-locale-compat-0.1.1/docs/Data-Time-Clock-LocalTime.html)
+- [Haskell의 Data.Time.Calendar 모듈](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html)
+- [Haskell의 FormatTime 함수](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:formatTime)

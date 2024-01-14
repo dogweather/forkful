@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Iniziare un nuovo progetto"
+simple_title:         "Iniziare un nuovo progetto"
 programming_language: "Elm"
-category:             "Getting Started"
+category:             "Elm"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/starting-a-new-project.md"
 ---
 
@@ -9,36 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se sei interessato a iniziare un nuovo progetto di programmazione, dovresti considerare l'utilizzo di Elm. Questo linguaggio funzionale ti permette di creare applicazioni web robuste e conformi ai principi della programmazione funzionale.
+Iniziare un nuovo progetto con Elm può sembrare intimidatorio, ma in realtà è una decisione eccellente per i programmatori che cercano di creare applicazioni web funzionali ed efficienti. Con la sua sintassi chiara e la sicurezza dei tipi incorporata, Elm offre un ambiente di sviluppo stabile e predittibile.
 
-## Come fare
+## Come Fare
 
-Per iniziare a scrivere in Elm, è necessario installare la sua dipendenza principale, il compilatore Elm. Una volta installato, puoi creare un nuovo file `.elm` e iniziare a codificare. Ecco un esempio di come dichiarare una funzione `add` che somma due numeri in Elm:
+Per iniziare un nuovo progetto in Elm, segui questi semplici passaggi:
 
-```elm
-add x y =
-  x + y
+1. Installa Elm seguendo le istruzioni sul sito ufficiale.
+2. Utilizza il gestore dei pacchetti di Elm, chiamato Elm Package Manager (o "elm-package"), per gestire le dipendenze del progetto.
+3. Crea un file main.elm e inizia a scrivere il tuo codice.
+
+Ecco un esempio di codice Elm che stampa "Ciao mondo" a schermo:
+
 ```
-
-Esempio di output:
-
+Elm.program
+	{
+		init = 0,
+		update = \msg model -> (model, Cmd.none),
+		view = \model -> Html.text "Ciao mondo"
+	}
 ```
-add 3 5
-=>  8
-```
-
-Uno dei concetti chiave di Elm è la gestione immutabile dei dati. Questo significa che una volta definito un valore, non può essere modificato. Invece, si crea una copia del valore con le modifiche desiderate. Questo aiuta a mantenere il codice pulito e prevenire bug causati da modifiche accidentali.
-
-Un'altra caratteristica utile di Elm è la sua architettura "Model-View-Update". Questo schema aiuta a strutturare il codice in modo modulare e prevedibile. Se vuoi saperne di più su come utilizzarlo, puoi consultare la documentazione ufficiale di Elm.
+Eseguendo questo codice, dovresti vedere la stringa "Ciao mondo" sulla pagina web.
 
 ## Approfondimento
 
-Prima di iniziare un nuovo progetto in Elm, è importante avere una buona comprensione dei fondamenti del linguaggio. Puoi iniziare trovando risorse didattiche online, come corsi o tutorial, o partecipando a conferenze o meetup di Elm nella tua zona.
+Prima di iniziare un progetto in Elm, è importante avere una buona comprensione dei fondamenti del linguaggio e della sua architettura. In particolare, è utile capire il concetto di model-view-update (MVU) e come è implementato in Elm.
 
-Inoltre, assicurati di essere a tuo agio con i concetti della programmazione funzionale, come la currying e le funzioni di ordine superiore, prima di immergerti completamente in Elm.
+Inoltre, è consigliabile consultare la documentazione ufficiale di Elm e cercare esempi di progetti già sviluppati in questo linguaggio per avere un'idea di come funziona in pratica.
 
-## Vedi anche
+## Vedi Anche
 
 - Documentazione ufficiale di Elm: https://guide.elm-lang.org/
-- Esempi di progetti Elm: https://github.com/elm/projects
-- Risorse didattiche su Elm: https://www.elm-tutorial.org
+- Esempi di progetti in Elm su GitHub: https://github.com/topics/elm
+- Un tutorial su Elm per principianti: https://elmprogramming.com/

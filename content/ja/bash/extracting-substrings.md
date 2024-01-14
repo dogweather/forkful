@@ -1,7 +1,9 @@
 ---
-title:                "Bash: 部分文字列の抽出"
+title:                "Bash: 部分文字列を抽出する"
+simple_title:         "部分文字列を抽出する"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/extracting-substrings.md"
 ---
 
@@ -9,31 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-サブストリングの抽出を行う理由はさまざまです。その一つは、特定の文字列や単語を抽出してより効率的な処理を行うことができるからです。また、テキストデータの分析や検索を行う際にも便利です。
+サブストリングを抽出することには、リストやテキストの特定の部分を取得する必要があるため、便利な場合があります。たとえば、特定の単語や文字列を検索する、またはテキストをカテゴリごとに分類する場合などがあります。
 
 ## 方法
 
-サブストリングを抽出するには、以下の方法を使うことができます。
+サブストリングを抽出するには、Bashの組み込みコマンドである`cut`を使用します。以下のような形式で使用します。
 
+```Bash
+cut -(options) filename
 ```
-Bash
-# 変数を定義
-str="こんにちは、私の名前は太郎です。"
 
-# 抽出したい文字列を指定してサブストリングを抽出
-echo ${str:9:3}
+`cut`コマンドは、指定したオプションに応じて、渡されたファイルからサブストリングを切り出します。たとえば、次のコマンドは、スペースで区切られたテキストの2番目の単語を取得します。
 
-# 出力結果: 太郎
+```Bash
+cut -d " " -f 2 filename
 ```
+
+また、`cut`コマンドは標準入力からもデータを受け取ることができます。例えば、`echo`コマンドを使用して文字列を出力し、それを`cut`コマンドにパイプしてサブストリングを抽出することもできます。
+
+```Bash
+echo "Hello World" | cut -d " " -f 2
+```
+
+上記の例では、"Hello World"という文字列から空白区切りで2番目の単語である"World"が抽出されます。
 
 ## ディープダイブ
 
-サブストリングを抽出する方法には様々なバリエーションがあります。例えば、文字列の開始位置や終了位置を指定したり、特定のパターンに一致する部分文字列を抽出することもできます。また、正規表現を使用してサブストリングを抽出することも可能です。
+`cut`コマンドでは、オプションを組み合わせることで、より複雑なサブストリングの抽出が可能です。例えば、`-c`オプションを使用すると、文字列の指定した位置や範囲の文字を抽出できます。
 
-しかし、サブストリングを抽出する際には文字列のインデックス番号に注意する必要があります。Bashでは、文字列の1文字目が0番目となります。また、マイナスの数値を指定すると文字列の末尾からカウントされます。
+また、正規表現を使用することで、より柔軟なパターンにマッチするテキストを抽出することも可能です。
 
-## 関連リンク
+さらに、`cut`コマンドには、`-s`オプションを使用することで、指定した位置に文字列が存在しない場合には表示しないという機能もあります。
 
-* [Bash Guide for Beginners](https://guide.bash.academy/)
-* [Bash Substring Manipulation](https://www.baeldung.com/linux/bash-substring)
-* [Advanced Bash-Scripting Guide - Substring Expanding](https://www.tldp.org/LDP/abs/html/parameter-substitution.html#SUBSTREXPAND)
+## 参考
+
+「Bashでサブストリングを抽出する方法」: https://opensource.com/article/19/4/extracting-substrings-bash
+
+「初心者のためのLinuxコマンド: cut」: http://www.lpi.org/blog/2014/04/23/learn-linux-101-cut
+
+「Bashから文字列を取得する方法」: https://www.tecmint.com/bash-extract-filename-and-extension-in-linux/
+
+## 関連記事
+
+「Bashでの文字列操作の基本」: https://dev.classmethod.jp/articles/bash-string-process/
+
+「Bashで正規表現を使用する方法」: https://pierrecarion.com/2018/01/extract-strings-linux/

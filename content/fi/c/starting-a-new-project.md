@@ -1,7 +1,9 @@
 ---
 title:                "C: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "C"
-category:             "Getting Started"
+category:             "C"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/starting-a-new-project.md"
 ---
 
@@ -9,62 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Uuden projektin aloittaminen voi tuntua pelottavalta ja hämmentävältä tehtävältä. Mutta jos olet kiinnostunut oppimaan uutta ja haluat haastaa itsesi, niin C-ohjelmointi voi tarjota mielenkiintoisen ja palkitsevan kokemuksen. Uutena ohjelmoijana aloittaminen voi myös auttaa sinua kehittymään ongelmanratkaisutaidoissasi ja muokkaamaan ajatteluasi loogisemmaksi.
+Tervetuloa tekemään jotain uutta projektia C-kielellä! On monia syitä, miksi voit haluta aloittaa uuden projektin, kuten oppia uutta, testata taitojasi tai ratkaista jonkin ongelman. Riippumatta siitä miksi, tärkeintä on lähteä liikkeelle ja saada aikaan jotain omaa.
 
-## Kuinka aloitat uuden projektin C-kielellä 
+## Miten
 
-```
-#include <stdio.h> 
+Aloittaminen uuden C-projektin kanssa voi tuntua ylivoimaiselta, mutta se ei ole vaikeaa kun tiedät miten aloittaa. Ensinnäkin, sinun tulee luoda uusi tiedosto ja lisätä siihen pääfunktio `main()`. Tämän jälkeen voit aloittaa kirjoittamaan koodia `main()`-funktion sisälle. Alla on esimerkki yksinkertaisesta koodista, joka tulostaa tekstiä näytölle:
 
-int main(void) 
-{
-    printf("Tervetuloa uuden projektin aloittamiseen C-kielellä!\n");
-    return 0;
-}
-```
-
-Tässä yksinkertaisessa koodissa näet perusmallin C-ohjelmalle. Tämä ohjelma tulostaa näytölle "Tervetuloa uuden projektin aloittamiseen C-kielellä!" ja lopettaa sen jälkeen suorituksen. Tämän yksinkertaisen esimerkin avulla voit helposti aloittaa uuden projektin.
-
-Seuraavassa esimerkissä käytämme muuttujia ja ehtolauseita määrittämään, kuinka monta kertaa merkkijono tulostetaan näytölle:
-
-```
+```C
 #include <stdio.h>
 
-int main(void)
-{
-    int i;
-    
-    for(i = 0; i < 5; i++)
-    {
-        printf("Tervetuloa uuden projektin aloittamiseen C-kielellä!\n");
-    }
-    
+int main() {
+    printf("Tervetuloa uuden projektin pariin!");
     return 0;
 }
 ```
 
-Tämän ohjelman tulostus olisi seuraavanlainen:
+Tämän koodin tulosteen pitäisi näyttää tältä:
 
 ```
-Tervetuloa uuden projektin aloittamiseen C-kielellä!
-Tervetuloa uuden projektin aloittamiseen C-kielellä!
-Tervetuloa uuden projektin aloittamiseen C-kielellä!
-Tervetuloa uuden projektin aloittamiseen C-kielellä!
-Tervetuloa uuden projektin aloittamiseen C-kielellä!
+Tervetuloa uuden projektin pariin!
 ```
 
-Näiden esimerkkien avulla pääset hyvään alkuun uuden projektin aloittamisessa C-kielellä.
+Seuraavaksi voit alkaa lisätä haluamiasi toiminnallisuuksia koodiin ja testata niitä menemällä `main()`-funktion sisällä syvemmälle.
 
-## Syväsukellus
+## Syvempää tietoa
 
-Uuden projektin aloittaminen C-kielellä vaatii hieman työtä ja opiskelua, mutta palkitsee kuitenkin lopulta taitojen kehittymisellä ja uuden koodin luomisella. Tärkeintä on aloittaa yksinkertaisista projekteista ja vähitellen edetä monimutkaisempiin.
+On tärkeää huomata, että C-kielessä ei ole valmiiksi valmiita ominaisuuksia, kuten esimerkiksi taulukot tai merkkijonot. Sinun täytyy itse luoda ja hallinnoida näitä työkaluja. Tämä voi aluksi vaikuttaa haastavalta, mutta se antaa sinulle täyden kontrolin projektissasi.
 
-Hyvä tapa aloittaa uusi projekti on suunnitella ensin minkälaisen ohjelman haluat luoda ja hahmottaa sen rakenne pseudokoodin tai kaavioiden avulla. Tämän jälkeen voit aloittaa koodaamisen ja testata ohjelmaasi säännöllisesti varmistaaksesi sen toimivuuden.
-
-Voit myös hyödyntää erilaisia resursseja, kuten opetusvideoita, oppaita ja ohjelmoijayhteisöjä, jotka voivat tarjota hyödyllisiä vinkkejä ja neuvoja uuden projektin aloittamiseen.
+Lisäksi on suositeltavaa kirjoittaa selkeää ja helposti ymmärrettävää koodia. Näin projekti pysyy hallinnassa ja on helpompi muokata ja laajentaa myöhemmin.
 
 ## Katso myös
 
-- [C-koodauksen perusteet](https://www.learn-c.org/)
-- [C-kirjasto-opas](https://www.tutorialspoint.com/c_standard_library/index.htm)
-- [Ohjelmointiyhteisö](https://www.reddit.com/r/C_Programming/)
+- [C-tutoriaali aloittelijoille](https://www.learn-c.org/)
+- [C-koodiesimerkkejä](https://www.programiz.com/c-programming/examples)
+- [Harjoitustehtäviä C-kielelle](https://www.w3resource.com/c-programming-exercises/)

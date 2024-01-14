@@ -1,7 +1,9 @@
 ---
-title:                "Java: Szeregowanie ciągów znaków"
+title:                "Java: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/concatenating-strings.md"
 ---
 
@@ -9,43 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli programujesz w języku Java, prawdopodobnie już spotkałeś/aś się z koniecznością łączenia ze sobą ciągów znaków (ang. string concatenation). Może się wydawać to prostym zadaniem, ale warto poznać dokładniejsze informacje na ten temat, aby uniknąć błędów i zoptymalizować swój kod.
+Dlaczego warto połączyć ze sobą stringi w programowaniu?
 
-## Jak to zrobić
+Połączenie ze sobą wielu stringów jest niezbędne w wielu aplikacjach. Może to być przydatne przy tworzeniu wiadomości, adresów e-mail, dokumentów itp. Funkcja ta jest szczególnie przydatna, gdy mamy do czynienia z dynamicznymi danymi, które zmieniają się w zależności od użytkownika lub sytuacji.
 
-Aby połączyć dwa lub więcej ciągów znaków w jedną linię, w języku Java używa się operatora `+`. Przykładowy kod wyglądałby następująco:
+## Jak to zrobić?
 
-```Java
-String firstName = "Jan";
-String lastName = "Kowalski";
-String fullName = firstName + " " + lastName;
+Łączenie stringów w języku Java jest bardzo proste i wymaga wykorzystania operatora "+" lub metody "concat()". Przykładowy kod wyglądałby następująco:
+
+```java
+String str1 = "Witaj";
+String str2 = "świecie!";
+String str3 = str1 + str2;
+System.out.println(str3);
+```
+
+Output: "Witaj świecie!"
+
+Możemy również użyć metody "concat()" w następujący sposób:
+
+```java
+String name = "Anna";
+String surname = "Kowalska";
+String fullName = name.concat(" ").concat(surname);
 System.out.println(fullName);
 ```
 
-Oczekiwanym wynikiem będzie wyświetlenie `Jan Kowalski` na konsoli.
+Output: "Anna Kowalska"
 
-W przypadku, gdy chcemy połączyć więcej niż dwa ciągi znaków, można użyć metody `concat()` z klasy `String`. Przykładowy kod wyglądałby tak:
-
-```Java
-String firstName = "Jan";
-String middleName = "Nowak";
-String lastName = "Kowalski";
-String fullName = firstName.concat(" ").concat(middleName).concat(" ").concat(lastName);
-System.out.println(fullName);
-```
-
-Oczekiwanym wynikiem jest ponownie `Jan Nowak Kowalski`.
-
-Warto również zwrócić uwagę na to, że w przypadku łączenia ciągów znaków z liczbami, konieczne jest wykorzystanie metody `toString()` w celu zamiany liczby na ciąg znaków.
+Pamiętajmy, że operator "+" automatycznie konwertuje inne typy danych na typ String, co oznacza, że możemy połączyć ze sobą nie tylko dwie zmienne typu String, ale również np. liczbę z tekstem.
 
 ## Deep Dive
 
-Istnieją pewne rzeczy, o których warto pamiętać, aby uniknąć błędów i zoptymalizować swój kod przy łączeniu ciągów znaków w języku Java:
+Podczas łączenia stringów warto pamiętać o tym, że operacja ta nie jest wykonywana na oryginalnych zmiennych, a jedynie tworzy nowy obiekt zawierający połączenie tych stringów. W przypadku gdy mamy do czynienia z większą ilością stringów, lepiej użyć klasy StringBuilder lub StringBuffer, które są bardziej wydajne.
 
-- Operator `+` działa po lewej stronie od prawej, dlatego lepiej nie używać go do łączenia dużej ilości ciągów znaków.
-- Jeśli zamieniamy wiele razy wartość ciągu znaków, lepiej użyć `StringBuffer` lub `StringBuilder` zamiast operatora `+`, ponieważ jest to bardziej wydajne.
+Innym ważnym aspektem jest obsługa znaków specjalnych. Jeśli chcemy, aby znaki takie jak "\n" czy "\t" były poprawnie wyświetlane, powinniśmy użyć metody "replace()" lub "replaceAll()".
 
-## Zobacz również
+## Zobacz także
 
-- Dokumentacja języka Java na temat string concatenation: https://docs.oracle.com/javase/tutorial/java/data/strings.html
-- Porównanie wydajności String, StringBuffer i StringBuilder: https://www.javatpoint.com/StringBuilder-vsStringBuffer
+- [Java String concatenation](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
+- [Java StringBuilder and StringBuffer](https://www.baeldung.com/java-string-builder-string-buffer)
+- [Metoda concat() w Java](https://www.javatpoint.com/java-string-concat)

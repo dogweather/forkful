@@ -1,19 +1,21 @@
 ---
-title:                "C++: Hitta längden på en sträng"
+title:                "C++: Att hitta längden på en sträng"
+simple_title:         "Att hitta längden på en sträng"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-När du skriver kod i C++ är det viktigt att ha koll på olika datastrukturer och funktioner som kan underlätta din programmering. En sådan funktion är "length", som används för att hitta längden på en sträng. Att kunna hitta längden på en sträng kan vara användbart när du till exempel behöver kontrollera om en inmatning från användaren är inom ett visst gränsvärde eller när du behöver manipulera strängen på något sätt.
+Att kunna hitta längden på en sträng är en grundläggande funktion inom programmering som kan vara användbar i många olika situationer. Det är ett enkelt och snabbt sätt att få information om hur många tecken som finns i en sträng, vilket kan underlätta vid bearbetning av data.
 
-## Så här gör du
+## Hur du gör det
 
-Att hitta längden på en sträng i C++ är enkelt. Du kan använda funktionen "length" som är en del av standardbiblioteket <string>. Funktionen tar inga argument och returnerar en "int" som motsvarar längden på strängen. Här är ett exempel på hur du kan använda funktionen i din kod:
+Att hitta längden på en sträng i C++ är enkelt och kan göras på flera olika sätt. Här är ett exempel på hur det kan göras med hjälp av en inbyggd funktion:
 
 ```C++
 #include <iostream>
@@ -22,29 +24,30 @@ Att hitta längden på en sträng i C++ är enkelt. Du kan använda funktionen "
 using namespace std;
 
 int main() {
-    string namn = "Karin";
+   string minStrang = "Hej, jag lär mig C++!";
+   int langd = minStrang.length();
 
-    // Här använder vi funktionen "length" för att hitta längden på strängen "Karin"
-    int langd = namn.length();
+   cout << "Längden på strängen är: " << langd;
 
-    cout << "Längden på strängen Karin är: " << langd << endl;
-
-    return 0;
+   return 0;
 }
+
+// Output: Längden på strängen är: 22
 ```
 
-Output:
+Här används funktionen `length()` som finns inbyggd i C++s `string` bibliotek för att hitta längden på en sträng. Funktionen returnerar antalet tecken i strängen och detta värde tilldelas sedan till variabeln `langd`. Sedan skrivs det ut i konsolen.
 
-```
-Längden på strängen Karin är: 5
-```
+Det finns också andra sätt att hitta längden på en sträng i C++, till exempel genom att använda en for-loop för att räkna antalet tecken i strängen. Men `length()` funktionen är den snabbaste och enklaste metoden.
 
 ## Djupdykning
 
-Funktionen "length" är en metoden för klassen "string". En klass är en mall för objekt som definierar dess beteende och egenskaper. För att använda en klass som "string" måste du inkludera dess tillhörande standardbibliotek. Det finns också en liknande funktion som heter "size", som också används för att hitta längden på en sträng men som returnerar en "size_t" istället för en "int". "size_t" är en datatyp som är integer av högsta möjliga storlek i systemet och är därför mer lämplig för större strängar.
+Att hitta längden på en sträng är en viktig grundläggande kunskap inom programmering och kan vara till nytta i många olika situationer. Det kan användas för att validera inmatade data, göra beräkningar eller manipulera strängar för att få önskat resultat. Här kommer några tips som kan vara användbara när du arbetar med att hitta längden på strängar:
 
-# Se även
+- Om du vill hitta längden på en sträng som använder speciella tecken eller tecken från ett annat språk, se till att använda en lämplig kodning för att undvika felaktiga resultat.
+- I C++ är det vanligt att använda en null-terminerad sträng, vilket innebär att strängen avslutas med en null-karaktär. När du hittar längden på en sådan sträng måste du räkna in null-karaktären i längden.
+- Om du behöver hitta längden på en sträng som läses in från en fil, se till att kontrollera att filen har öppnats korrekt och att innehållet i filen läses in som en sträng, inte som en annan datatyp.
 
-- [C++ standardbibliotek](https://www.cplusplus.com/reference/string/)
-- [C++ Klasser och objekt](https://www.cplusplus.com/doc/tutorial/classes/)
-- [Mer om datastrukturer i C++](https://www.geeksforgeeks.org/data-structures-in-cpp/)
+## Se också
+
+- [cppreference.com - string length()](https://en.cppreference.com/w/cpp/string/basic_string/length)
+- [GeeksForGeeks - Different ways to find length of a string in C++](https://www.geeksforgeeks.org/different-ways-to-find-length-of-a-string-in-cpp/)

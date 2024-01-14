@@ -1,48 +1,46 @@
 ---
-title:                "Fish Shell: Tarkista onko hakemistoa olemassa"
+title:                "Fish Shell: Tarkistetaan löytyykö kansio"
+simple_title:         "Tarkistetaan löytyykö kansio"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa hakemiston olemassaolo?
+## Miksi
+Tervetuloa Fish Shell ohjelmointiblogiin! Tässä blogikirjoituksessa kerromme, miksi kannattaa tarkistaa, onko hakemistoa olemassa Fish Shell -ohjelmoinnissa.
 
-Monissa ohjelmointiprojekteissa on tarpeen tarkistaa, onko tietty hakemisto olemassa ennen kuin siihen tehdään muutoksia. Tämä voi olla hyödyllistä esimerkiksi skriptejä ja komentorivikomentoja käytettäessä. Tässä blogikirjoituksessa opit, miten voit tarkistaa hakemiston olemassaolon Fish Shell käyttämällä.
+Fish Shell tarjoaa helpon ja käyttäjäystävällisen tavan ohjelmointiin, joka sisältää käteviä työkaluja ja toimintoja. Yksi näistä on mahdollisuus tarkistaa, onko hakemistoa olemassa, mikä voi olla erittäin hyödyllistä monimutkaisemmissa projekteissa. Jatka lukemista ja selvitä, miten voit tarkistaa hakemiston olemassaolon Fish Shell -ohjelmoinnissa!
 
-## Miten tehdä se?
-
-Ensinnäkin, voit käyttää komentoa `test` tarkistaaksesi, onko hakemisto olemassa. Tämä komento palauttaa arvon 0, jos hakemisto on olemassa, ja arvon 1, jos sitä ei ole.
+## Miten
+Tässä osiossa annamme käytännön esimerkkejä siitä, miten voit tarkistaa, onko hakemistoa olemassa Fish Shell -ohjelmoinnissa.
 
 ```Fish Shell
-if test -d "hakemiston_nimi"
-    echo "Hakemisto on olemassa."
+if [ -d "hakemisto" ]  # tarkistaa, onko "hakemisto" olemassa
+  echo "Hakemisto löytyy!"
 else
-    echo "Hakemisto ei ole olemassa."
+  echo "Hakemistoa ei löydy."
 end
 ```
 
-Tämä koodi tarkistaa, onko `hakemiston_nimi` niminen hakemisto olemassa ja tulostaa sen mukaisen viestin.
-
-Voit myös käyttää komentoa `stat` tarkistaaksesi hakemiston tilasta. Tämä komento palauttaa tietoja tiedostosta tai hakemistosta, ja sen avulla voit tarkistaa, onko hakemisto olemassa.
+Tämä koodin pätkä tarkistaa, onko hakemisto nimeltä "hakemisto" olemassa ja tulostaa sen perusteella joko "Hakemisto löytyy!" tai "Hakemistoa ei löydy." Voit myös korvata "hakemiston" haluamallasi nimellä ja muuttaa tulostuksen vastaavasti.
 
 ```Fish Shell
-if stat -t "hakemiston_nimi" > /dev/null 2>&1
-    echo "Hakemisto on olemassa."
-else
-    echo "Hakemisto ei ole olemassa."
-end
+test -d "hakemisto" && echo "Hakemisto löytyy!" || echo "Hakemistoa ei löydy."
 ```
 
-Huomaa, että tässä käytetään hyödyksi `> /dev/null 2>&1` -merkintää, joka ohjaa komennon tulosteen pois näkyvistä, jottei sitä tulosteta ruudulle.
+Tässä toisessa esimerkissä käytetään samanlaista tarkistusta, mutta lyhyempien käskyjen avulla. Testikomento tarkistaa hakemiston olemassaolon ja käytetään sitten ehtolausekkeissa, jotka määrittävät, mitä tulostetaan sen perusteella. Nämä ovat vain muutama esimerkki siitä, miten voit tarkistaa hakemiston olemassaolon Fish Shell -ohjelmoinnissa, joten kokeile rohkeasti ja löydä oma tapasi tehdä se!
 
-## Syvempi sukellus
-
-Fish Shellin manuaalisivulta löytyy lisätietoja näistä ja muista hakemiston olemassaolon tarkistamiseen liittyvistä komennoista. Voit myös käyttää komentoa `help [komento]` saadaksesi tarkempia tietoja tietyistä komennoista, esimerkiksi `help test` tai `help stat`.
+## Syväsukellus
+Tässä osiossa tarjoamme syvempää tietoa hakemiston tarkistamisesta Fish Shell -ohjelmoinnissa. Fish Shell tarjoaa myös muita työkaluja ja funktioita, kuten `-e` joka tarkistaa tiedoston olemassaolon, `-f` joka tarkistaa tiedoston olemassaolon ja aktiivisuuden, sekä `-h` joka tarkistaa tiedoston symbolisen linkin olemassaolon. Voit käyttää näitä komentoja yhdessä `-d` kanssa tarkistaaksesi haluamasi tiedoston tai hakemiston olemassaolon ja välttääksesi virheitä.
 
 ## Katso myös
+Tässä ovat muutama hyödyllinen linkki aiheeseen liittyen:
 
-- [Fish Shellin manuaalisivut](https://fishshell.com/docs/current/index.html)
-- [Fish Shellin ohjeet ja esimerkit](https://fishshell.com/docs/current/tutorial.html)
-- [Fish Shellin Slack-yhteisö](https://fishshell.com/docs/current/tutorial.html)
+- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/cmds/test.html)
+- [Fish Shell cheat sheet](https://github.com/jorgebucaran/fish-cheatsheet)
+- [Linux.fi - Fish Shell opas](https://linux.fi/wiki/Fish_Shell_opas)
+
+Kiitos lukemisesta ja toivottavasti tämä artikkeli auttaa sinua tarkistamaan hakemiston olemassaolon Fish Shell -ohjelmoinnissa! Nähdään seuraavassa blogikirjoituksessa.

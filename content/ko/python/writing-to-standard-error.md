@@ -1,43 +1,36 @@
 ---
-title:                "Python: 표준 오류 출력에 쓰는 방법"
+title:                "Python: 표준 에러에 쓰는 방법"
+simple_title:         "표준 에러에 쓰는 방법"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 
+## 왜
 
-표준 에러를 작성하는 것은 디버깅 하고 코드 에러를 추적하는데 매우 중요합니다.
+표준 에러에 대해 작성하는 것은 프로그램의 디버깅을 돕기 위해 중요합니다.
 
-## 어떻게
+## 하우 투
 
 ```Python
-import sys
-
-# 표준 에러로 메시지를 작성하는 예제
-sys.stderr.write("이것은 표준 에러 메시지입니다.")
-
-# 예외를 발생시키는 예제
 try:
-  raise Exception("이것은 예외 메시지입니다.")
+    # 코드 실행
 except Exception as e:
-  # 예외 메시지를 표준 에러로 작성
-  sys.stderr.write(str(e))
+    # 에러 메시지를 표준 에러에 작성
+    sys.stderr.write(str(e))
 ```
 
-출력 예시:
-```
-이것은 표준 에러 메시지입니다.
-이것은 예외 메시지입니다.
-```
+예외 처리를 사용하여 코드를 실행하고, 발생한 예외를 변수로 저장합니다. 그리고 해당 변수를 문자열로 변환하여 표준 에러에 작성하는 방식으로 표준 에러에 대한 메시지를 출력할 수 있습니다.
 
-## 깊이있게 살펴보기
+## 딥 다이브
 
-표준 에러는 표준 출력과 달리 프로그램의 진행을 방해하지 않고 디버깅에 매우 유용합니다. 또한 ```try-except``` 구문과 함께 사용되어 예외 처리에도 매우 유용합니다.
+표준 에러는 프로그램 실행 중에 발생한 예외 및 오류의 상세 정보를 제공합니다. 이를 활용하여 디버깅에 유용하게 사용할 수 있습니다. 또한 표준 에러를 파일로 저장하면 프로그램 실행 이후에도 오류 메시지를 확인할 수 있습니다.
 
-## 또한 참고
+## 연관 항목
 
-- [Python 공식 문서 - sys 모듈](https://docs.python.org/3/library/sys.html)
-- [Python 공식 문서 - 예외 처리](https://docs.python.org/3/tutorial/errors.html)
+- [파이썬 예외 처리](https://www.python.org/dev/peps/pep-0343/)
+- [표준 에러와 표준 출력](https://www.geeksforgeeks.org/python-output-error-handling/)
+- [디버깅의 기초](https://code.tutsplus.com/ko/tutorials/debugging-for-beginners--net-7135)

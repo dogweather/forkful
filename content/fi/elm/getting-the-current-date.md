@@ -1,38 +1,45 @@
 ---
-title:                "Elm: Nykyisen päivämäärän hakeminen."
+title:                "Elm: Päivämäärän hakeminen"
+simple_title:         "Päivämäärän hakeminen"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: 
+Miksi kukaan haluaisi hakea nykyisen päivämäärän Elm-ohjelmoinnilla? Hyvä kysymys. Syynä voi olla esimerkiksi tarve näyttää nykyinen päivämäärä käyttäjälle tai tallentaa se tietokantaan.
 
-Elm on suosittu ja suhteellisen uusi ohjelmointikieli, joka on suunniteltu helpottamaan verkkosovellusten kehittämistä. Yksi sen hyödyllisimpiä ominaisuuksia on sen kyky saada nykyinen päivämäärä ja aika, mikä on tärkeä toiminto monille sovelluksille. Tässä blogikirjoituksessa kerromme, miten voit käyttää Elm-kieltä saadaksesi nykyisen päivämäärän ja ajan.
+## Miten: 
+Hakeminen nykyinen päivämäärä Elm-ohjelmoinnilla on helppoa ja suoraviivaista. Sinun tarvitsee vain käyttää `Date`-moduulia ja sen funktiota `today`. Voit tulostaa päivämäärän konsolille tai tallentaa sen muuttujaan, ja halutessasi muokata sitä lisäämällä tai vähentämällä päiviä tai kuukausia. Alla on muutama esimerkki:
 
-## Miten
+```Elm
+import Date exposing (Date, today)
 
-Getting the current date with Elm is a simple task. First, you will need to import the `Time` module into your Elm program. Then, you can use the built-in function `now` to get the current date and time. Here is an example code block:
+-- Tulostaa nykyisen päivämäärän konsolille
+today |> Date.toString |> Html.text 
 
-``` Elm
-import Time exposing (now)
+-- Tallentaa nykyisen päivämäärän muuttujaan
+let
+  currentDate = today
+in
+  Html.text (currentDate |> Date.toString)
 
-currentDate = now
+-- Lisää päiviä nykyiseen päivämäärään ja tulostaa lopputuloksen
+today
+  |> Date.add 5 "days"
+  |> Date.toString
+  |> Html.text
 ```
 
-The output will be a `Time.Posix` value, which represents the current date and time in milliseconds. This value can then be converted into a readable format using the `Time` module functions, such as `Time.toDate` or `Time.toString`.
+Tässä on esimerkin tulostama pvm: `2021-11-02`.
 
-## Syväsukellus
+## Deep Dive: 
+Nykyisen päivämäärän hakeminen Elm-ohjelmoinnilla perustuu `Date`-moduulin tarjoamaan toiminnallisuuteen. Moduulin tärkein funktio on `today`, joka palauttaa tällä hetkellä olevan päivämäärän. Tämän jälkeen voit käyttää muita funktioita, kuten `add` ja `sub` lisätäksesi tai vähentääksesi päiviä tai kuukausia nykyiseen päivämäärään. Muista myös muuttaa päivämäärä haluttuun muotoon `toString`-funktion avulla ennen kuin tulostat sen tai tallennat muuttujaan.
 
-Saadaksesi tarkemman käsityksen siitä, miten `now`-funktio toimii, voit tutustua Elm-kielen dokumentaatioon ja lähdekoodiin. On myös hyödyllistä tutkia `Time` moduulin muita toimintoja, kuten `fromCalendar` ja `atMidnight`, jotka tarjoavat erilaisia tapoja käsitellä päivämääriä ja aikoja Elm-ohjelmassa.
-
-Lisäksi on tärkeää huomata, että saadessaan nykyisen päivämäärän ja ajan `now`-funktio käyttää tietokoneen paikallista aikavyöhykettä. Tämä on hyödyllistä ottaa huomioon niille, jotka käyttävät sovellustasi eri aikavyöhykkeillä.
-
-## Katso myös
-
-- [Elm-ohjelman aloittaminen] (https://guide.elm-lang.org/)
-- [Time Moduulin dokumentaatio] (https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Elm-kielen lähdekoodi] (https://github.com/elm/compiler)
-
-Kiitos kun luit tämän blogikirjoituksen saadaksesi lisätietoja siitä, miten saat nykyisen päivämäärän ja ajan Elm-ohjelmalla. Toivottavasti tämä auttoi sinua ymmärtämään tätä toimintoa paremmin ja voit nyt käyttää sitä tehokkaasti sovelluksissasi. Onnea koodaukseen!
+## Katso myös:
+- [Elm-ohjelmointikielen kotisivut](https://elm-lang.org/)
+- [Virallinen Elm-oppikirja](https://guide.elm-lang.org/)
+- [Date-moduulin dokumentaatio](https://package.elm-lang.org/packages/elm/time/latest/Date)

@@ -1,67 +1,40 @@
 ---
-title:                "Gleam: Elaborando un archivo de texto"
+title:                "Gleam: Escribiendo un archivo de texto"
+simple_title:         "Escribiendo un archivo de texto"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir un archivo de texto es importante en Gleam
+# ¿Por qué escribir un archivo de texto en Gleam?
 
-Escribir un archivo de texto es una habilidad esencial para cualquier programador de Gleam. Permite almacenar y guardar información de forma permanente, así como trabajar con archivos externos en sus programas. En este artículo, exploraremos cómo escribir un archivo de texto en Gleam y por qué es una práctica esencial para cualquier desarrollador.
+Escribir un archivo de texto en Gleam puede ser una tarea útil y necesaria al trabajar en proyectos de programación. Al guardar información en un archivo de texto, podemos acceder a ella fácilmente en el futuro y compartirla con otros desarrolladores.
 
-## Cómo escribir un archivo de texto en Gleam
+## Cómo hacerlo
 
-Para escribir un archivo de texto en Gleam, primero debemos importar el módulo de sistema de archivos `gleam/os`. Luego, podemos utilizar la función `write_file` para crear un nuevo archivo de texto y escribir nuestro contenido en él.
+Primero, debemos importar el módulo `gleam/fs` para tener acceso a las funciones de manejo de archivos. Luego, podemos utilizar la función `fs.write_file` para escribir un archivo de texto. Esta función toma dos argumentos: la ruta del archivo y el contenido que queremos escribir. Por ejemplo:
 
-```
-import gleam/os
+```Gleam
+import gleam/fs
 
-let file = os.write_file("miarchivo.txt", "¡Hola desde Gleam!")
-```
-
-Una vez que hayamos importado el módulo y creado nuestro archivo, podemos utilizar la función `write` para añadir contenido adicional al archivo. Por ejemplo, podemos escribir un mensaje de bienvenida utilizando una variable para nuestro nombre:
-
-```
-let nombre = "Juan"
-
-file = file.write("Bienvenido a mi blog, " ++ nombre)
+fs.write_file("ejemplo.txt", "Este es un archivo de ejemplo")
 ```
 
-Por último, podemos cerrar nuestro archivo utilizando la función `close` para asegurarnos de que toda la información se haya guardado correctamente:
+Este código creará un archivo llamado "ejemplo.txt" en el mismo directorio donde se encuentra el archivo de código fuente. El contenido del archivo será "Este es un archivo de ejemplo".
 
-```
-file.close()
-```
+También podemos utilizar la función `fs.append_file` para agregar contenido a un archivo existente. Esta función toma los mismos argumentos que `fs.write_file`.
 
-Siempre es importante verificar si hay errores al escribir un archivo de texto, por lo que es una buena práctica envolver nuestras operaciones en un bloque `try` y `catch` para manejar posibles errores.
+## Inmersión profunda
 
-```
-try {
-  let file = os.write_file("miarchivo.txt", "¡Hola desde Gleam!")
-  // Operaciones de escritura adicionales
-  file.close()
-} catch err {
-  // Manejo de errores
-}
-```
+Al escribir un archivo de texto en Gleam, es importante tener en cuenta la codificación del archivo. Por defecto, los archivos se guardan en UTF-8, pero si necesitamos utilizar una codificación diferente, podemos usar la función `fs.write_file_with_encoding`. Esta función toma un tercer argumento que especifica la codificación que queremos utilizar.
 
-Una vez que hayamos escrito nuestro archivo de texto, podemos ver su contenido utilizando la función `cat` desde la línea de comandos.
+Además, es importante cerrar el archivo después de escribir en él utilizando la función `fs.close_file`. De esta manera, nos aseguramos de que el archivo sea guardado correctamente y que no haya problemas de permisos al intentar acceder nuevamente al archivo.
 
-```
-cat miarchivo.txt
-> ¡Hola desde Gleam!
-  Bienvenido a mi blog, Juan
-```
+# Ver también
 
-## Profundizando en la escritura de archivos de texto
-
-Escribir un archivo de texto puede parecer una tarea sencilla, pero es importante entender cómo funcionan los archivos de texto en Gleam. Los archivos se manejan en modo de lectura y escritura secuencial, lo que significa que cada operación de escritura se realiza en la posición actual del cursor dentro del archivo.
-
-Esto nos permite escribir en diferentes partes del archivo sin sobrescribir el contenido existente. También es importante tener en cuenta que al escribir en un archivo de texto, debemos asegurarnos de cerrarlo adecuadamente después de finalizar las operaciones de escritura, ya que un archivo abierto puede causar problemas de memoria en nuestro programa.
-
-## Ver también
-
-- [Documentación oficial de Gleam sobre archivos de texto](https://gleam.run/book/tour/io.html#files)
-- [Tutorial interactivo sobre escritura de archivos en Gleam](https://play.gleam.run/?gist=d7fa9343ad4cd109341f89d7c7276aa5)
+- Documentación oficial de Gleam sobre el módulo `gleam/fs`: [https://gleam.run/documentation/stdlib/fs/](https://gleam.run/documentation/stdlib/fs/)
+- Tutorial de Gleam en español: [https://gleam.run/es/tutorials/](https://gleam.run/es/tutorials/)
+- Repositorio de código fuente de Gleam: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)

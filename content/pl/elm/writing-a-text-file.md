@@ -1,38 +1,50 @@
 ---
-title:                "Elm: Pisanie pliku tekstowego"
+title:                "Elm: Tworzenie pliku tekstowego"
+simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego pisać plik tekstowy w języku Elm?
 
-Programowanie to sztuka, która pozwala nam tworzyć rozwiązania na potrzeby rzeczywistego świata. Jednym z narzędzi, które może nam w tym pomóc, jest język Elm. Dziś zajmiemy się jednym z podstawowych zadań programisty - pisaniem plików tekstowych. Dlaczego warto nauczyć się tego? Przede wszystkim, pozwala to na tworzenie spersonalizowanych i uporządkowanych tekstów, które zawierają informacje w formacie zrozumiałym dla komputera. Jest to niezbędne w wielu programistycznych projektach.
+Pisanie plików tekstowych jest jedną z podstawowych czynności podczas pracy programisty. W języku programowania Elm jest to szczególnie ważne, ponieważ jest on zaprojektowany z myślą o prostocie i czytelności. Pisanie plików tekstowych w Elm może również pomóc w organizacji kodu i utrzymaniu jego czystości.
 
-## Jak to zrobić?
+## Jak pisać plik tekstowy w języku Elm?
 
-Aby rozpocząć, musimy zaimportować moduł "Text" w naszej aplikacji Elm. Następnie użyjemy funkcji "toString", aby przekonwertować nasz tekst na typ "String". W przykładzie poniżej połączymy trzy różne zmienne tekstowe i zapiszemy je w pliku o nazwie "file.txt".
+Aby napisać plik tekstowy w języku Elm, potrzebujemy kilku prostych kroków. Najpierw musimy utworzyć nowy plik z rozszerzeniem ".elm". Następnie możemy przejść do pisania kodu, używając specjalnych funkcji do obsługi plików tekstowych, takich jak `Text.append` czy `Text.writeFile`.
 
-```Elm
-import Text
+```elm
+-- Tworzenie pliku "hello.txt"
+let hello = "Cześć, jestem Elm!"
+Text.writeFile "hello.txt" hello
+```
+Podczas pisania pliku tekstowego w Elm, należy pamiętać o ważnym aspekcie - zamykaniu pliku po zakończeniu pracy. W przeciwnym razie możemy spowodować np. utratę danych. Aby uniknąć takiej sytuacji, możemy użyć funkcji `File.withFile`, która automatycznie zamyka plik po zakończeniu wykonywania podanego kodu.
 
-fileContent = "Witaj, "
-            ++ "to jest plik "
-            ++ "tekstowy!"
-
-main = Text.file fileContent "file.txt"
+```elm
+-- Tworzenie pliku "hello.txt" i dodawanie do niego tekstu
+File.withFile "hello.txt" [File.Write, File.Append] (\file ->
+    File.write file "Witaj, jestem Elm!"
+)
 ```
 
-Teraz gdy uruchomimy naszą aplikację, utworzy się plik "file.txt" z zawartością "Witaj, to jest plik tekstowy!".
+## Głębszy wgląd w pisanie pliku tekstowego w języku Elm
 
-## Głębsza analiza
+Pisząc plik tekstowy w Elm, powinniśmy również pamiętać o różnych sposobach formatowania i organizacji tekstu. Możemy używać różnych funkcji do manipulacji tekstem, takich jak `Text.toUpper` czy `Text.lines`, aby dostosować plik do naszych potrzeb. Warto również zwrócić uwagę na obsługę błędów przy zapisywaniu pliku, na przykład używając funkcji `Result.mapError`.
 
-Pisanie plików tekstowych w Elm jest możliwe dzięki funkcji "file" z modułu "Text". Istnieją także inne funkcje, takie jak "append" czy "write", które pozwalają na dodawanie tekstu do istniejących plików lub nadpisywanie ich zawartości. Warto także zwrócić uwagę na to, że pliki tekstowe w Elm są niezmiennym typem, co oznacza, że operacje na nich nie zmieniają oryginalnego pliku, a jedynie zwracają nowy tekst.
+```
+-- Przykład funkcji zwracającej błąd przy zapisywaniu pliku
+File.withFile "hello.txt" [File.Write, File.Append] (\file ->
+    File.write file "Witaj, jestem Elm!"
+        |> Result.mapError (\err -> Debug.toString err)
+)
+```
 
-## Zobacz także
+## Zobacz też
 
-- Dokumentacja Elm dla funkcji Text: https://package.elm-lang.org/packages/elm/core/latest/Text
-- Przykładowe projekty korzystające z pisanie plików tekstowych w Elm: https://gist.github.com/jxxcarlson/08e97656fb3506daa82fe8b5b3898ed3
-- Inne narzędzia pomocne w programowaniu w Elm: https://elm-lang.org/learn
+- Dokumentacja języka Elm: https://elm-lang.org/docs
+- Oficjalna strona języka Elm: https://elm-lang.org/
+- Przykładowy projekt w Elm: https://github.com/rtfeldman/elm-spa-example

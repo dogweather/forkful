@@ -1,7 +1,9 @@
 ---
 title:                "Haskell recipe: Starting a new project"
+simple_title:         "Starting a new project"
 programming_language: "Haskell"
-category:             "Getting Started"
+category:             "Haskell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/starting-a-new-project.md"
 ---
 
@@ -9,51 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-If you're interested in functional programming and want to challenge yourself with a new language, starting a project in Haskell can be an exciting and rewarding experience. Haskell is a purely functional language that allows you to write elegant, concise code that is also highly efficient.
+Starting a new project in Haskell can be a daunting task for some, but it can also be an exciting and rewarding experience. With a functional programming language like Haskell, you have the opportunity to create highly performant and reliable software that is also easy to maintain and extend. So why not dive into the world of Haskell and see what you can create?
 
 ## How To
 
-To get started with Haskell, you'll need to download a Haskell compiler, such as GHC (Glasgow Haskell Compiler). Once you have that installed, you can use a text editor or integrated development environment (IDE) to write your code. Let's look at a simple example of a function that calculates the area of a rectangle:
+To get started with Haskell, you will need to have the Haskell platform installed on your computer. Once that is set up, you are ready to start coding! Let's go through a basic example of creating a simple function in Haskell.
 
 ```Haskell
-area :: Double -> Double -> Double
-area x y = x * y
+-- Define a function called add
+add :: Int -> Int -> Int
+add x y = x + y  -- add takes in two Integers and returns their sum
+
+-- Use the function
+add 2 3
+-- Output: 5
 ```
 
-Here, we've declared a function called "area" that takes in two parameters, "x" and "y", both of type "Double". The function multiplies the two parameters together to calculate the area and returns a value of type "Double". Let's try running this function in the GHCi (GHC interactive) tool:
-
-```Haskell
-Prelude> area 5 6
-30.0
-```
-
-As you can see, we specified the values for "x" and "y" when calling the function, and it correctly calculated the area of a rectangle with sides of length 5 and 6.
-
-Haskell also has powerful pattern matching capabilities, which allow you to define different cases for a given function. For example:
-
-```Haskell
-sayHello :: String -> String
-sayHello "World" = "Hello, World!"
-sayHello name = "Hello, " ++ name ++ "!"
-```
-
-Here, we have a function called "sayHello" that takes in a string parameter and returns a string. The first case specifies that if the parameter is equal to "World" then the function will return "Hello, World!" Otherwise, it will concatenate the name with "Hello, " and "!" to create a personalized greeting.
+In this example, we have defined a function called "add" which takes in two Integers and adds them together. We have specified the types of the function parameters and the return type using the arrow notation. Once the function is defined, we can use it by passing in two values and getting back the sum.
 
 ## Deep Dive
 
-Functional programming is heavily reliant on recursion, and Haskell is no exception. Recursion is the process of a function calling itself until a base case is reached. This allows for elegant and concise solutions to various problems, such as calculating factorials or creating a Fibonacci sequence.
+When starting a new project in Haskell, it is important to plan out your code architecture and data structures beforehand. This will help you stay organized and make the development process smoother. You should also familiarize yourself with the standard library and popular third-party libraries, such as "Data.Text" for working with text data and "HSpec" for testing.
 
-Haskell also has a strong type system that helps catch errors at compile time, making it easier to write bug-free code. It also allows for the creation of user-defined data types, which can help in modeling real-world problems.
-
-When starting a project in Haskell, it's essential to understand the concept of "monads," which are used for managing side effects and keeping code pure. They can be a challenging but crucial aspect of learning Haskell.
+Another important aspect to consider when starting a new project in Haskell is using a build tool, such as "Stack" or "Cabal". These tools can help you manage dependencies, build your project, and run tests.
 
 ## See Also
 
-Here are some useful resources to help you get started with Haskell:
+For more resources on getting started with Haskell and building projects, check out the following links:
 
-- [Haskell Official Website](https://www.haskell.org/)
-- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)
-- [Real World Haskell](http://book.realworldhaskell.org/)
-- [Haskell Wiki](https://wiki.haskell.org/)
-
-Now that you have an overview of why and how to start a project in Haskell, go ahead and give it a try! Happy coding!
+- [Haskell.org](https://www.haskell.org/) - Official website for Haskell, with tutorials, documentation, and community forums.
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - A beginner-friendly book on Haskell.
+- [Haskell Weekly](https://haskellweekly.news/) - A weekly newsletter with news, job postings, and learning resources.
+- [Real World Haskell](http://book.realworldhaskell.org/read/) - A comprehensive guide on using Haskell in real-world projects.

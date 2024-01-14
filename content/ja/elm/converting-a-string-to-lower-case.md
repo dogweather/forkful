@@ -1,37 +1,46 @@
 ---
-title:                "Elm: 「文字列を小文字に変換する」"
+title:                "Elm: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-Stringを小文字に変換することに関心があるかもしれません。例えば、入力されたユーザー名やパスワードを小文字に変換して、大文字と小文字を区別せずに認証する必要がある場合があります。また、文字列を比較する際に、大文字と小文字を区別せずに処理したい場合もあります。
+プログラマーの中には、文字列を小文字に変換する必要がある場合があります。例えば、データの検索や比較を行う際に、大文字と小文字を区別したくない場合などです。Elmでは、簡単に文字列を小文字に変換することができるので、この技術を学ぶことは重要です。
 
 ## 方法
-
-文字列を小文字に変換するには、Stringモジュールの`toLower`関数を使用します。下記の例では、文字列 "Elm Programming" を小文字に変換し、コンソールに出力しています。
+文字列を小文字に変換するには、StringモジュールのtoLower関数を使います。例えば、次のように使用します。
 
 ```Elm
-import String exposing (toLower)
+import String
 
-main =
-    let
-        inputString = "Elm Programming"
-        convertedString = toLower inputString
-    in
-        convertedString
+sampleString = "ELM PROGRAMMING"
+
+lowercaseString = String.toLower sampleString
+
 ```
 
-上記のコードを実行すると、"elm programming"という出力が得られます。文字列が小文字に変換されたことが確認できます。
+このコードを実行すると、"ELM PROGRAMMING"が"elm programming"に変換されます。
 
 ## 深堀り
+Elmでは、文字列を操作するための便利な関数が多数用意されています。しかし、StringモジュールのtoLower関数は単純で、特に深い解説を必要としません。ただ、文字列を小文字に変換することに加えて、toLower関数には文字列内のUniode文字をASCIIに変換する機能もあります。
 
-Stringモジュールには、文字列を大文字・小文字を無視して比較するための`compareIgnoreCase`や、特定の文字列を検索してその位置を返す`indexes`といった便利な関数があります。また、文字列操作以外にも、日付や数値の操作など、さまざまな便利な関数が含まれています。詳細は公式ドキュメントを参照してください。
+## 詳しくは
+詳しい情報やElmの文字列を操作するための他の便利な関数については、次のリンクを参考にしてください。
 
-## See Also
-- Elm公式ドキュメント: https://guide.elm-lang.org/
-- Stringモジュールのドキュメント: https://package.elm-lang.org/packages/elm/core/latest/String
+[Elm Strings - Elm Guide](https://guide.elm-lang.org/strings/)
+
+[Elm Stringモジュール - Elmドキュメント](https://package.elm-lang.org/packages/elm-lang/core/latest/String)
+
+[The Power of Elm Strings - Charlie Koster](https://dev.to/charliekoster/gotchas-in-the-elm-string-modules-a-hitchhiker-s-guide-52df)
+
+[Elm String Operations - TomaEasy](https://github.com/TomaEasy/elm-string-operations)
+
+## 他のリソースを参照する
+[Learn Elm - 公式Elmドキュメント](https://elm-lang.org/docs)
+
+[String toLowerCase - Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

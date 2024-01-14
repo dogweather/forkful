@@ -1,47 +1,37 @@
 ---
-title:                "Javascript: Merkkijonon yhdistäminen"
+title:                "Javascript: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Merkkijonojen yhdistäminen
+Miksi joku ylipäänsä haluaisi käyttää aikaa ja vaivaa merkkijonojen yhdistämiseen? Yksinkertaisesti sanottuna, merkkijonojen yhdistäminen on tärkeä osa Javascript-ohjelmointia, joka mahdollistaa erilaisten tekstipohjaisten tietojen yhdistämisen ja käytön.
 
-JavaScript-ohjelmoijat käyttävät usein merkkijonojen yhdistämistä, jotta he voivat luoda dynaamisia ja muuttuvia tekstipalasia. Tämä on erityisen hyödyllistä, kun halutaan luoda viestejä tai tekstejä, jotka sisältävät tietoja, jotka muuttuvat käyttäjän toimintojen tai tietojen perusteella.
-
-## Miten
-
-Seuraavaksi annan muutaman esimerkin, jotka voit toistaa kokeillaksesi merkkijonojen yhdistämistä JavaScriptillä. Koodiesimerkkien tulokset on näytetty kommenttien vieressä.
+## Miten: Esimerkkejä ja koodilohkoja
+Merkkijonojen yhdistämistä varten käytetään plus-merkkiä (`+`) tai `.concat()` -funktiota. Seuraavassa on esimerkki:
 
 ```Javascript
-var nimi = "Maria";
-var ika = 28;
-console.log("Tervetuloa " + nimi + "! Olet " + ika + " vuotta vanha.");
-// Tuloste: Tervetuloa Maria! Olet 28 vuotta vanha.
+let etunimi = "Matti";
+let sukunimi = "Meikäläinen";
+
+// Plus-merkin käyttö:
+let nimi = etunimi + " " + sukunimi;
+console.log(nimi); //OUTPUT: "Matti Meikäläinen"
+
+// .concat()-funktion käyttö:
+let nimi = etunimi.concat(" ", sukunimi);
+console.log(nimi); //OUTPUT: "Matti Meikäläinen"
 ```
 
-```Javascript
-var tuote = "t-paita";
-var maara = 3;
-console.log("Ostit " + maara + " " + tuote + "a.");
-// Tuloste: Ostit 3 t-paitaa.
-```
-
-```Javascript
-var aika = "10"; // huomaa, että tämä on merkkijono eikä numero
-console.log("Sivustolla on käynyt " + aika + " käyttäjää tänään.");
-// Tuloste: Sivustolla on käynyt 10 käyttäjää tänään.
-```
-
-## Syvällisempi tarkastelu
-
-Merkkijonojen yhdistäminen JavaScriptillä käyttää plus-merkkiä (+) yhdistämään merkkijonoja toisiinsa. On tärkeää huomata, että tulosteen tyyppi riippuu ensimmäisestä operandista eli siitä, mikä merkkijono toimii ensimmäisenä. Jos ensimmäinen operandi on numero, JS muuttaa sen automaattisesti merkkijonoksi ja lisää sen toisen operandin kanssa.
-
-Lisäksi on mahdollista käyttää muita menetelmiä, kuten `concat()` ja `join()` yhdistämiseen, mutta tässä artikkelissa keskitymme plus-merkin käyttöön.
+## Syvällisempi tarkastelu: Merkkijonojen yhdistämisen takana
+Merkkijonojen yhdistäminen toimii periaatteessa siten, että se "liimaa" kaksi merkkijonoa yhteen. Tätä käytetään esimerkiksi silloin, kun halutaan luoda kokonaisia lauseita tai yhdistää muuttujien arvoja. Plus-merkin käytössä täytyy huomioida, että jos yhdistettävänä on eri tyyppisiä muuttujia, ne muunnetaan aina merkkijonoiksi. Myös `.concat()`-funktio toimii samalla periaatteella, mutta se mahdollistaa enemmän merkkijonojen yhdistelyä ketjujen muodossa.
 
 ## Katso myös
-
-- [MDN Web Docs: Yhdistäminen](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Operators/Concatenation) 
-- [W3Schools: Merkkijonojen yhdistäminen](https://www.w3schools.com/js/js_string_concat.asp)
+- [MDN: String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [w3schools: JavaScript Strings](https://www.w3schools.com/js/js_strings.asp)
+- [Codecademy: Strings in Javascript](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-strings)

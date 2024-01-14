@@ -1,48 +1,58 @@
 ---
-title:                "Swift: Отримання поточної дати."
+title:                "Swift: Отримання поточної дати"
+simple_title:         "Отримання поточної дати"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому 
+## Чому
 
-Отримання поточної дати є важливою функцією у програмуванні для великої кількості сценаріїв. Наприклад, ви можете використовувати поточну дату для показу часу створення, розміщення або сповіщення про подію. 
+Будь-який програміст, безумовно, знає, що отримання поточної дати є важливою задачею при розробці додатків. Для чого це потрібно? Тут ми розглянемо це питання і дамо деякі приклади використання.
 
-## Як
+## Як виконати це завдання
 
-Для отримання поточної дати використовуйте клас `Date`. Перш за все, необхідно імпортувати фреймворк `Foundation` у свою програму. Потім можна використовувати метод `Date()` для створення об'єкта `Date`, який буде містити поточну дату. Нижче наведено приклад коду та його вихідного результату: 
+```Swift
+// Отримуємо поточну дату в форматі року, місяця та дня
+let currentDate = Date()
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "yyyy-MM-dd"
+let dateString = dateFormatter.string(from: currentDate)
+print(dateString)
+```
 
-```Swift 
-import Foundation 
+```Swift
+// Отримуємо поточний час в форматі годин, хвилин та секунд
+let currentDate = Date()
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "HH:mm:ss"
+let timeString = dateFormatter.string(from: currentDate)
+print(timeString)
 
-let currentDate = Date() 
-print(currentDate) 
-``` 
+```
 
-Виведе: `2021-02-08 19:12:56 +0000` 
+```Swift
+// Отримуємо повний формат дати та часу
+let currentDate = Date()
+let dateFormatter = DateFormatter()
+dateFormatter.dateStyle = .full
+dateFormatter.timeStyle = .full
+let dateTimeString = dateFormatter.string(from: currentDate)
+print(dateTimeString)
+```
 
-Також, можна використовувати клас `DateFormatter`, щоб отримати поточну дату у більш зручному для користувача форматі. Наприклад, можна вивести дату у зрозумілому форматі користувачу своєї країни. Нижче наведено приклад коду та його вихідного результату: 
+Всі ці кодові приклади показують різні формати отримання поточної дати і часу. Вони дають можливість використовувати їх для власних потреб. Також існує багато інших форматів, які можна використовувати за допомогою класу DateFormatter.
 
-```Swift 
-import Foundation 
+## Глибокий аналіз
 
-let dateFormatter = DateFormatter() 
-dateFormatter.dateFormat = "dd/MM/yyyy" 
+В цьому розділі ми розглянемо детальніше процес отримання поточної дати в Swift. У документації Apple застосовується термін "часова точка" для позначення визначення дати і часу. Це може здатися складною концепцією, але насправді це просто стан календаря в певний момент часу.
 
-let currentDate = Date() 
-print(dateFormatter.string(from: currentDate)) 
-``` 
+У Swift існує клас Date, який забезпечує можливість працювати з часовими точками. Він використовує тип даних TimeInterval для представлення часу в секундах, що пройшли з 1 січня 2001 року. Також існує багато допоміжних методів для роботи з датами, таких як додавання або віднімання певної кількості секунд.
 
-Виведе: `08/02/2021` 
+## Дивись також
 
-## Глибока занурення 
-
-В класі `Date` також доступні методи для отримання специфічних значень, таких як день, місяць, рік та час. Наприклад, `dateComponents()` дозволяє отримати компоненти дати, такі як день тижня, місяць та рік. Для отримання більш детальної інформації про ці методи, можна переглянути [документацію](https://developer.apple.com/documentation/foundation/date) по класу `Date`.
-
-## Дивись також 
-
-- [Стаття про клас Date у мові Swift](https://www.ioscreator.com/tutorials/get-current-date)
-- [Документація Apple Developer про клас Date](https://developer.apple.com/documentation/foundation/date)
+- [Робота з датами і часом в Swift](https://www.raywenderlich.com/3932-dates-and-times-in-swift-getting-started-with-foundation)
+- [Офіційна документація Apple](https://developer.apple.com/documentation/foundation/date)

@@ -1,57 +1,56 @@
 ---
 title:                "PHP recipe: Comparing two dates"
+simple_title:         "Comparing two dates"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Most commonly, programmers encounter the need to compare two dates when working with date-based data such as event planning, payment schedules, or user activity. Being able to compare dates allows for efficient data manipulation and logical decision-making in PHP applications.
+## Why 
 
-## How To
-```PHP
-// Defining two dates
-$firstDate = "2020-05-01";
-$secondDate = date("Y-m-d");
+Comparing two dates is a fundamental concept in PHP programming. It allows developers to determine which date comes before or after another, as well as calculate the time difference between two dates. This information can be useful in various scenarios such as event scheduling, data analysis, and more.
 
-// Comparing if the first date is before the second date
-if (strtotime($firstDate) < strtotime($secondDate)) {
-    echo "The first date is before the second date.";
-}
+## How To 
 
-// Output: The first date is before the second date.
-```
+To compare two dates in PHP, we can use the built-in function `strtotime()`. This function converts a date string into a UNIX timestamp, which is essentially a number representing the number of seconds since January 1st, 1970. We can then use the `>` (greater than) and `<` (less than) operators to compare the timestamps and determine which date comes first.
 
-It is important to note that the `strtotime()` function converts the date string into a Unix timestamp, which is necessary for date comparisons in PHP. Here are some other examples of date comparisons:
+Let's see an example of how this works in code:
 
 ```PHP
-// Is one date equal to another date?
-if (strtotime($firstDate) == strtotime($secondDate)) {
-    // Do something
-}
+$date1 = "2020-01-05";
+$date2 = "2020-02-10";
 
-// Is one date after another date?
-if (strtotime($firstDate) > strtotime($secondDate)) {
-    // Do something
-}
+$timestamp1 = strtotime($date1);
+$timestamp2 = strtotime($date2);
 
-// Is one date within a certain range?
-if (strtotime($firstDate) >= strtotime($startDate) && strtotime($firstDate) <= strtotime($endDate)) {
-    // Do something
+if ($timestamp1 > $timestamp2) {
+    echo "$date1 comes after $date2";
+} else {
+    echo "$date1 comes before $date2";
 }
 ```
 
-For more complex comparisons, there is also the `DateTime` class in PHP which allows for more precise control over date and time calculations.
+The code above will output `"2020-01-05 comes before 2020-02-10"`. This tells us that January 5th, 2020 comes before February 10th, 2020. We can also use the `==` (equal to) operator to check if two dates are the same.
 
-## Deep Dive
-Comparing dates may seem straightforward at first, but there are some key things to keep in mind. Firstly, the `strtotime()` function accepts a wide variety of date formats, but it is important to use a consistent format for accurate comparisons. It is also important to consider timezones when working with dates to avoid any inconsistencies.
+Another important concept to keep in mind while comparing two dates is the time zone. When comparing two dates, it's important to make sure that they are in the same time zone. This can be achieved by setting the time zone using the `date_default_timezone_set()` function.
 
-Another aspect to consider is the concept of "fuzzy" comparisons. When using the comparison operators (`<`,`>`,`==`), PHP will automatically convert the date strings into Unix timestamps, which allows for easy comparisons. However, this means that the comparison is made at a specific point in time and does not take into account the time component of the dates. This can lead to unexpected results, especially when dealing with dates that include a time component. To avoid this, it is recommended to use the `DateTime` class or to convert both dates to Unix timestamps before making the comparison.
+## Deep Dive 
+
+As mentioned earlier, the `strtotime()` function converts a date string into a UNIX timestamp. This function also has the ability to handle various date formats, making it a powerful tool for comparing dates.
+
+Some common date formats that `strtotime()` can handle are:
+
+- `Y-m-d` (year-month-day)
+- `m/d/Y` (month/day/year)
+- `d-M-Y` (day-month-year)
+- `F jS, Y` (month day, year)
+
+In addition to the greater than, less than, and equal to operators, there are also other comparison operators that can be useful when working with dates. These include `>=` (greater than or equal to), `<=` (less than or equal to), and `!=` (not equal to).
 
 ## See Also
-- [PHP date and time functions](https://www.php.net/manual/en/ref.datetime.php)
-- [PHP DateTime class documentation](https://www.php.net/manual/en/class.datetime.php)
-- [Understanding Unix timestamps](https://www.epochconverter.com/)
-- [Handling timezones in PHP](https://www.php.net/manual/en/timezones.php)
+
+- PHP Date and Time functions: https://www.php.net/manual/en/ref.datetime.php
+- Understanding UNIX Timestamps: https://www.unixtimestamp.com/

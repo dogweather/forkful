@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Sletting av tegn som matcher et mønster"
+simple_title:         "Sletting av tegn som matcher et mønster"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,33 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Noen ganger kan det være nyttig å kunne slette visse tegn eller mønstre fra en tekststreng. Dette kan være nyttig når du for eksempel ønsker å fjerne ekstra mellomrom, spesialtegn eller et bestemt ord fra en tekst.
+Noen ganger kan det være nyttig å slette tegn som matcher et visst mønster i en tekststreng. Dette kan gjøres raskt og enkelt med Fish Shell.
 
-## Slik gjør du det
+## Hvordan
 
-For å kunne slette tegn etter et spesifikt mønster i Fish Shell, kan du bruke kommandoen `sed`. Dette står for stream editor og kan brukes til å manipulere tekststrenger på en effektiv måte.
+For å slette tegn som matcher et mønster i Fish Shell, kan du bruke kommandoen `string delete -r`. La oss si at du har en tekststreng `hello123world`, og du vil slette alle tallene. Da kan du bruke følgende kommando:
 
-En enkel måte å bruke `sed` på er å kombinere den med kommandoen `tr`, som står for translate. Dette lar deg erstatte tegnene som matcher mønsteret med et annet tegn, eller slette dem helt.
+```
+fish shell: `string delete -r '\d' hello123world`
 
-```Fish Shell
-echo "Dette er en tekststreng" | sed 's/en//g' | tr -d " "
+Output: helloworld
 ```
 
-Dette eksempelet vil fjerne alle forekomster av "en" og slette alle mellomrom i teksten. Resultatet vil bli "Dtteistrk".
+Dette fjerner alle tallene fra teksten og returnerer `helloworld`.
 
-En annen måte å slette tegn eller mønstre i en tekst på er å bruke kommandoen `grep`. Dette vil filtrere ut linjer som inneholder mønsteret du ønsker å slette, og deretter bruke kommandoen `tr` for å fjerne tegnene.
+## Dykk dypere
 
-```Fish Shell
-grep -v "tekst" < filnavn | tr -d " "
+I tillegg til å bruke regex, kan du også bruke `string delete`-kommandoen til å slette tegn som matcher et bestemt sett av tegn eller enkelttegn i en tekststreng. For eksempel hvis du vil slette alle de små bokstavene i teksten, kan du bruke følgende kommando:
+
+```
+fish shell: `string delete a-z hello123world`
+
+Output: 123.
 ```
 
-Her vil kommandoen først filtrere ut alle linjer som inneholder ordet "tekst" og deretter fjerne alle mellomrom fra resultatet.
+Dette vil returnere `123`, og slette alle små bokstaver fra teksten.
 
-## Mer avansert
-
-Dette er bare to enkle måter å slette tegn eller mønstre i Fish Shell, men det finnes flere muligheter og kombinasjoner du kan bruke for å oppnå ønsket resultat. For å lære mer om andre kommandoer og funksjoner du kan bruke, kan du lese dokumentasjonen for Fish Shell og prøve deg frem med forskjellige kombinasjoner.
+Fish Shell har også muligheten til å slette tegn fra bestemte posisjoner i en tekststreng ved hjelp av indeksering.
 
 ## Se også
 
-- Fish Shell dokumentasjon (https://fishshell.com/docs/current/index.html)
-- Sed og tr kommandoer (https://www.gnu.org/software/sed/manual/sed.html, https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [Fish Shell hjemmeside](https://fishshell.com/)
+- [Offisiell Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
+- [Learning Fish](https://fishshell.com/docs/current/tutorial.html)

@@ -1,80 +1,34 @@
 ---
 title:                "Ruby: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi:
+# Pourquoi 
 
-La conversion en minuscules est un processus courant en programmation de Ruby. Cela peut être utile si vous devez comparer des chaînes de caractères sans tenir compte de la casse, ou si vous voulez simplement uniformiser le format de vos données. Dans cet article, nous allons explorer les différentes façons de convertir une chaîne en minuscules en utilisant Ruby.
+La conversion d'une chaîne de caractères en minuscules est une tâche courante en programmation Ruby, car elle permet de normaliser les données et de faciliter leur traitement. Cela peut être utile pour le traitement de données utilisateur ou pour la comparaison de chaînes de caractères. 
 
-## Comment faire:
+## Comment faire 
 
-Nous pouvons utiliser la méthode `downcase` pour convertir une chaîne en minuscules. Voici un exemple de code:
+Pour convertir une chaîne de caractères en minuscules en Ruby, vous pouvez utiliser la méthode `downcase`. Voici un exemple de code montrant comment utiliser cette méthode : 
 
-```ruby
-phrase = "JE SUIS EN MAJUSCULES."
+```Ruby 
+string = "Bonjour Monde" 
+puts string.downcase 
+``` 
 
-puts phrase.downcase
-```
+La sortie de ce code sera : *bonjour monde*. Comme vous pouvez le voir, la méthode `downcase` a converti toutes les lettres en minuscules. 
 
-**Sortie:**
-je suis en majuscules.
+## Plongée en profondeur 
 
-Nous pouvons également utiliser la méthode `downcase!` pour modifier la chaîne d'origine sans avoir à en créer une nouvelle. Voici un exemple:
+En plongeant un peu plus dans le sujet, il est important de noter que la méthode `downcase` ne convertit que les lettres de la langue anglaise en minuscules. Si vous travaillez avec des caractères accentués ou des caractères de langue étrangère, vous devrez utiliser la méthode `downcase!` pour une conversion correcte. De plus, si vous souhaitez ignorer la casse lors de la comparaison de chaînes de caractères, vous pouvez utiliser la méthode `casecmp`, qui renvoie un nombre négatif si la première chaîne est inférieure à la seconde en termes de tri de dictionnaire, 0 si les chaînes sont égales et un nombre positif si la première chaîne est supérieure à la seconde. 
 
-```ruby
-phrase = "JE SUIS EN MAJUSCULES."
+# Voir aussi 
 
-phrase.downcase!
-puts phrase
-```
-
-**Sortie:**
-je suis en majuscules.
-
-Il est également possible d'utiliser la méthode `tr` pour convertir une chaîne en modifiant chaque lettre individuellement. Voici un exemple:
-
-```ruby
-phrase = "JE SUIS EN MAJUSCULES."
-
-puts phrase.tr('A-Z', 'a-z')
-```
-
-**Sortie:**
-je suis en majuscules.
-
-## Plongée profonde:
-
-Il y a quelques points à considérer lors de la conversion d'une chaîne en minuscules en utilisant Ruby. Tout d'abord, il est important de noter que la méthode `downcase` ne modifiera pas une chaîne si elle ne contient aucun caractère en majuscule. Par exemple:
-
-```ruby
-phrase = "je suis en minuscules."
-
-puts phrase.downcase
-```
-
-**Sortie:**
-je suis en minuscules.
-
-De plus, la méthode `downcase` ne prend pas en compte les caractères spéciaux, tels que les accents ou les caractères non alphabétiques, lors de la conversion en minuscules. Par exemple:
-
-```ruby
-phrase = "Être ou ne pas être."
-
-puts phrase.downcase
-```
-
-**Sortie:**
-être ou ne pas être.
-
-Enfin, il existe également des méthodes similaires pour convertir une chaîne en majuscules (`upcase` et `upcase!`) et pour modifier le premier caractère en majuscule (`capitalize` et `capitalize!`).
-
-## Voir aussi:
-
-- La documentation officielle de Ruby sur la méthode `downcase`: https://ruby-doc.org/core-2.6/String.html#method-i-downcase
-- Un guide sur les méthodes de manipulation de chaînes en Ruby: https://www.rubyguides.com/2015/09/ruby-string-methods/
-- Les différences entre `downcase` et `tr` pour la conversion en minuscules: https://stackoverflow.com/questions/18561646/difference-between-downcasetr-and-tr-in-ruby
+- [Documentation officielle Ruby sur la méthode `downcase`](https://ruby-doc.org/core-2.6.3/String.html#method-i-downcase) 
+- [Documentation officielle Ruby sur la méthode `casecmp`](https://ruby-doc.org/core-2.6.3/String.html#method-i-casecmp)

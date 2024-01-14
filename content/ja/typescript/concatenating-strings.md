@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: 文字列の結合"
+simple_title:         "文字列の結合"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/concatenating-strings.md"
 ---
 
@@ -9,44 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-文字列を連結することの意義についてご紹介します。文字列の連結は、プログラムをより柔軟にして簡潔に保つことができます。例えば、ユーザーの名前やメッセージを入力させるときに、個々の要素をすべて手作業で連結するのではなく、便利な方法で文字列を連結することができます。
+文字列の連結を行う理由は、文字列をより複雑な形に整形するためです。例えば、データベースから取得した情報を使ってメッセージを作成したり、ユーザーからの入力と固定のテキストを組み合わせたりすることができます。
 
-## 連結する方法
+## 方法
 
-以下に、TypeScriptで文字列を連結する方法のコード例と出力を示します。
-
-```TypeScript
-let name = "John";
-let message = "Hello " + name;
-console.log(message);
-
-// Output: Hello John
-```
-
-上記のコードでは、変数`name`に"John"という文字列が代入されています。そして、`message`という変数には、文字列を連結する`+`演算子を使って、"Hello "と`name`変数を結合しています。最後に、`console.log()`メソッドを使用して、メッセージをコンソールに出力します。
-
-また、ES6以降では、テンプレート文字列を使用しても文字列の連結ができます。これはバッククォート（`` ` ``）で囲まれた文字列の中に、`${}`を使うことで、変数や式を埋め込むことができます。
+文字列の連結を行うには、`+`演算子を使用します。例えば、以下のようなコードを使って、2つの文字列を繋げることができます。
 
 ```TypeScript
-let name = "John";
-let message = `Hello ${name}`;
+let name = "山田"
+let message = "こんにちは、" + name + "さん！";
 console.log(message);
-
-// Output: Hello John
 ```
 
-テンプレート文字列を使用すると、文字列中に変数や式を埋め込むことができるため、より複雑な処理を行う際に便利です。
+このコードの出力は、`こんにちは、山田さん！`となります。
+
+また、`${}`を使って複数の値を繋げることもできます。例えば、以下のように書くことで、複数の変数や定数を簡単に組み合わせることができます。
+
+```TypeScript
+let firstName = "太郎";
+let lastName = "田中";
+let age = 30;
+let message = `私の名前は${lastName}${firstName}です。年齢は${age}歳です。`;
+console.log(message);
+```
+
+このコードの出力は、`私の名前は田中太郎です。年齢は30歳です。`となります。
 
 ## 深堀り
 
-文字列を連結する方法についてもっと詳しく見ていきましょう。文字列の連結はJavaScriptやTypeScriptだけでなく、ほとんどのプログラミング言語で使用される一般的なテクニックです。そのため、覚えておくと他の言語でも役立ちます。
+文字列の連結を行う時には、文字列として扱うことができることに注意しましょう。例えば、以下のように数字の10と文字列の"10"を結合すると、"1010"という文字列になります。
 
-文字列の連結は、単に文字列を結合するのではなく、文字列を変数に代入したり、条件やループで動的に行ったりすることができるため、プログラムの柔軟性を高めることができます。
+```TypeScript
+let num1 = 10;
+let num2 = "10";
+let result = num1 + num2;
+console.log(result);
+```
 
-## 関連記事
+このコードの出力は、`1010`となります。
 
-[TypeScript公式ドキュメント-文字列](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+また、`+=`演算子を使って文字列を追加することもできます。例えば、以下のように書くことで、前の値に新しい値を追加していきます。
 
-[テンプレート文字列に関する記事](https://typescript-jp.gitbook.io/deep-dive/template-literals)
+```TypeScript
+let message = "今日は";
+message += "いい天気ですね。";
+message += "外に出かけましょう！";
+console.log(message);
+```
 
-[他のプログラミング言語での文字列連結の方法](https://www.w3schools.com/js/js_strings.asp)
+このコードの出力は、`今日はいい天気ですね。外に出かけましょう！`となります。
+
+## 参考
+
+- [TypeScriptの公式ドキュメント - 文字列](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [MDN web docs - 文字列の連結](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [Udemy - TypeScriptの基本](https://www.udemy.com/course/typescript-lesson-for-javascript-developers-template-literals/)

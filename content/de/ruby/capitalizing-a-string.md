@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Großschreibung einer Zeichenkette"
+simple_title:         "Großschreibung einer Zeichenkette"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/capitalizing-a-string.md"
 ---
 
@@ -9,54 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Verändern von Strings ist eine grundlegende Funktion in der Ruby Programmierung. Eine übliche Aufgabe ist es, Strings in Großbuchstaben umzuwandeln und in diesem Blogpost werde ich zeigen, wie man das mit Ruby erreichen kann.
+Das Kapitalisieren von Strings ist eine häufige Aufgabe, die in Ruby Programmen durchgeführt werden muss. Durch die Großschreibung eines Strings kann die Lesbarkeit und Übersichtlichkeit des Codes erhöht werden. Dies ist besonders hilfreich, wenn es um die Anzeige von Benutzerinformationen oder die Erstellung von Textausgaben geht.
 
-## Wie geht's
+## Wie geht man vor?
 
-Die einfachste Möglichkeit, Strings in Großbuchstaben umzuwandeln, ist mit der `.upcase` Methode. Zum Beispiel:
-
-```Ruby
-puts "hallo".upcase
-```
-
-Das Ergebnis dieser Code-Zeile wäre "HALLO".
-
-Man kann auch wählen, ob man den gesamten String in Großbuchstaben umwandeln möchte oder nur den Anfangsbuchstaben. Hier ein Beispiel, um den ersten Buchstaben eines Strings in einen Großbuchstaben zu ändern:
+Es gibt mehrere Methoden in Ruby, um einen String zu kapitalisieren. Die einfachste Methode ist die Verwendung der `.capitalize` Methode. Diese Methode wandelt den ersten Buchstaben eines Strings automatisch in einen Großbuchstaben um und den Rest der Buchstaben in Kleinbuchstaben. Hier ist ein Beispiel:
 
 ```Ruby
-puts "ruby".capitalize
+name = "max muster"
+puts name.capitalize
+# Output: Max muster
 ```
 
-Das Ergebnis wäre "Ruby".
-
-Die `.capitalize` Methode kann besonders nützlich sein, wenn man Nutzerinput erwartet und sicherstellen möchte, dass der erste Buchstabe jedes Wortes groß geschrieben wird, unabhängig davon, wie der Nutzer es eingibt.
-
-Zusätzlich gibt es auch noch die Möglichkeit, einen String in Kleinbuchstaben umzuwandeln, indem man die `.downcase` Methode nutzt.
+Eine weitere Methode ist die Verwendung der `.upcase` Methode. Diese Methode wandelt alle Buchstaben eines Strings in Großbuchstaben um. Beispiel:
 
 ```Ruby
-puts "WE <3 RUBY".downcase
+text = "hello ruby"
+puts text.upcase
+# Output: HELLO RUBY
 ```
 
-Das Ergebnis wäre "we <3 ruby".
-
-## Tiefer Einblick
-
-Wenn man sich etwas näher mit dem Ruby Code beschäftigt, gibt es eine Methode, die unter der Haube verwendet wird, um Strings in Großbuchstaben umzuwandeln: `.swapcase`.
+Es gibt auch die Möglichkeit, einen String manuell zu kapitalisieren, indem man den Zugriff auf den ersten Buchstaben über den Index `[0]` verwaltet und diesen in einen Großbuchstaben umwandelt. Beispiel:
 
 ```Ruby
-puts "Hallo Ruby!".swapcase
+string = "hallo"
+string[0] = string[0].capitalize
+puts string
+# Output: Hallo
 ```
 
-Das Ergebnis wäre "hALLO rUBY!".
+## Tiefergehende Informationen
 
-Dies ist besonders nützlich, wenn man zum Beispiel einen String hat, in dem einige Buchstaben bereits groß geschrieben sind, aber man möchte, dass alle Buchstaben, die zuvor großgeschrieben waren, nun klein geschrieben werden.
+Es gibt auch die Möglichkeit, nur den ersten Buchstaben jedes Wortes in einem String zu kapitalisieren. Dies wird als Titelkapselung bezeichnet und kann mit der `.titleize` Methode erreicht werden. Diese Methode wandelt den ersten Buchstaben jedes Wortes in einen Großbuchstaben um und konvertiert alle anderen Buchstaben in Kleinbuchstaben. Beispiel:
+
+```Ruby
+text = "hallo ruby welt"
+puts text.titleize
+# Output: Hallo Ruby Welt
+```
+
+Es ist auch möglich, die verschiedenen Methoden zu kombinieren, um spezifische Kapitalisierungsvorgänge durchzuführen. Zum Beispiel kann man die `.capitalize` Methode verwenden, um nur den ersten Buchstaben eines Strings zu ändern, und dann die `.gsub` Methode verwenden, um alle übrigen Buchstaben in Kleinbuchstaben umzuwandeln. Beispiel:
+
+```Ruby
+text = "hallo RUBY welt"
+puts text.capitalize.gsub(/[^A-Z]/, ' ')
+# Output: Hallo RUBY Welt
+```
 
 ## Siehe auch
 
-Weitere nützliche Methoden für die String-Manipulation in Ruby:
-
-- `gsub` ersetzt alle Vorkommen von einem bestimmten Zeichen oder einer Zeichenfolge in einem String. Beispiele und Erklärungen findest du auf [ruby-doc.org](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub).
-- `length` gibt die Länge eines Strings zurück. Mehr dazu auf [ruby-doc.org](https://ruby-doc.org/core-2.7.1/String.html#method-i-length).
-- `split` teilt einen String an einem bestimmten Zeichen oder einer Zeichenfolge und gibt ein Array mit den einzelnen Teilen zurück. Eine ausführliche Erklärung und Beispiele findest du auf [ruby-doc.org](https://ruby-doc.org/core-2.7.1/String.html#method-i-split).
-
-Für eine Gesamtübersicht über alle String-Methoden in Ruby, schau dir die offizielle Dokumentation auf [ruby-doc.org](https://ruby-doc.org/core-2.7.1/String.html) an.
+- https://ruby-doc.org/core-2.6.3/String.html#method-i-capitalize
+- https://ruby-doc.org/core-2.6.3/String.html#method-i-titleize
+- https://ruby-doc.org/core-2.6.3/String.html#method-i-upcase

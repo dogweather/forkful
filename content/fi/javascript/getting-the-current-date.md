@@ -1,46 +1,56 @@
 ---
-title:                "Javascript: Päivämäärän hakeminen"
+title:                "Javascript: Päivämäärän hankkiminen"
+simple_title:         "Päivämäärän hankkiminen"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi Hakea Nykyinen Päivämäärä?
+## Miksi
 
-Javascriptissä on monia tilanteita, joissa tarvitsemme tietoa nykyisestä päivämäärästä. Esimerkiksi voi olla tarpeen näyttää käyttäjälle ajankohtaista tietoa tai tallentaa jokin toimenpide tietokantaan tietyn päivämäärän mukaan. Tässä blogikirjoituksessa käymme läpi, miten voit helposti hakea nykyisen päivämäärän Javascriptillä.
+Javascript on yksi suosituimmista ohjelmointikielistä, ja yksi sen käyttökohteista on päivämäärän ja ajan hallinta. Saadaksemme nykyisen päivämäärän ja ajan käyttöömme, tarvitsemme Javascriptin Date-objektin avulla. Mutta miksi meidän kannattaisi edes vaivautua saamaan ne käyttöömme?
 
-## Miten Tehdä Se?
+Javascriptin Date-objekti mahdollistaa monipuolisen päivämäärän ja ajan käsittelyn, kuten erilaisten muotojen muuntamisen, mutta myös tulevien päivien ja aikojen ennustamisen. Se on myös hyödyllinen esimerkiksi sovelluksissa, jotka tarvitsevat tarkkoja aikaleimoja tietyn toiminnon suorittamiseen. Tästä syystä on hyödyllistä osata käyttää Date-objektia ja hankkia nykyinen päivämäärä ja aika tarvittaessa.
 
-Onneksi Javascriptillä on sisäänrakennettu Date-objekti, jolla voimme helposti hakea nykyisen päivämäärän. Voit luoda uuden Date-objektin joko pelkällä Date-sanaa käyttäen tai antamalla sille parametrina halutun vuoden, kuukauden ja päivän. Alla olevissa esimerkeissä näytämme molemmat vaihtoehdot.
+## Miten
 
-```Javascript
-// Hakee nykyisen päivämäärän
-var nykyinenPäivä = new Date();
-console.log(nykyinenPäivä); // Tulostaa esimerkiksi Wed Sep 29 2021 09:56:15 GMT+0300 (Eastern European Summer Time)
-
-// Hakee tietyn päivämäärän vuoden, kuukauden ja päivän mukaan
-var haluttuPäivä = new Date(2021, 8, 29); // Huomaa, että kuukaudet aloitetaan nollasta (tammikuu on 0, helmikuu 1 jne.)
-console.log(haluttuPäivä); // Tulostaa Wed Sep 29 2021 00:00:00 GMT+0300 (Eastern European Summer Time)
-```
-
-Voit myös hakea tiettyjä osia päivämäärästä erikseen. Alla olevassa esimerkissä näytämme, miten voit hakea päivän, kuukauden ja vuoden erikseen.
+Jos olet perillä Javascriptin perusteista, tiedät varmasti, että voit luoda uuden Date-objektin käyttämällä ```new Date()``` -funktiota. Tämä luo uuden objektin, joka sisältää nykyisen päivämäärän ja ajan.
 
 ```Javascript
-var nykyinenPäivä = new Date();
+let nykyinenAika = new Date();
+console.log(nykyinenAika);
 
-console.log(nykyinenPäivä.getDate()); // Tulostaa nykyisen päivämäärän numerona (esimerkiksi 29)
-console.log(nykyinenPäivä.getMonth()); // Tulostaa nykyisen kuukauden numerona (tässä tapauksessa 8, koska kuukaudet aloitetaan nollasta)
-console.log(nykyinenPäivä.getFullYear()); // Tulostaa nykyisen vuoden numerona (esimerkiksi 2021)
+// Tue Jan 07 2020 14:23:23 GMT+0200 (Itä-Euroopan aika)
 ```
 
-## Syvä Sukellus
+Voit myös luoda Date-objektin tietyllä päivämäärällä ja ajalla antamalla parametreina vuoden, kuukauden ja päivän sekä tarvittaessa tunnin, minuutin ja sekunnin.
 
-Date-objektilla on monia muitakin hyödyllisiä metodeja, jotka voivat auttaa sinua työskennellessäsi päivämäärien kanssa. Voit esimerkiksi hakea päivämäärän tietyn aikavälin päästä tai tarkastaa, onko vuosi karkausvuosi. Suosittelemme tutustumaan lisää Date-objektin dokumentaatioon, jotta voit käyttää sitä täysin hyödyksi.
+```Javascript
+let jouluAatto = new Date(2019, 11, 24, 18, 0, 0, 0); // kuukaudet lähtevät indeksistä 0, joten joulukuu on 11
+console.log(jouluAatto);
 
-## Katso Myös
+// Tue Dec 24 2019 18:00:00 GMT+0200 (Itä-Euroopan aika)
+```
 
-- [Javascript Date - Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Date Object - W3Schools](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [Päivämäärän Haku - Codecademy (englanniksi)](https://www.codecademy.com/blog/77-p%C3%A4iv%C3%A4m%C3%A4%C3%A4r%C3%A4n-haku-javascriptill%C3%A4)
+Voit myös käyttää Date-objektin metodeja saadaksesi haluamasi tiedot erikseen. Esimerkiksi ```getFullYear()``` palauttaa vuosiluvun ja ```getMonth()```, ```getDate()``` ja ```getDay()``` palauttavat vastaavasti kuukauden, päivän ja viikonpäivän numeromuodossa.
+
+```Javascript
+let tanaan = new Date();
+let vuosi = tanaan.getFullYear();
+let kuukausi = tanaan.getMonth() + 1; // lisätään 1, koska kuukaudet lähtevät indeksistä 0
+let paiva = tanaan.getDate();
+let paivaViikossa = tanaan.getDay(); // 0 = sunnuntai, 1 = maanantai jne.
+
+console.log(`Tänään on ${paiva}.${kuukausi}.${vuosi} ja päivä viikossa on ${paivaViikossa}`);
+
+// Tänään on 7.1.2020 ja päivä viikossa on 2
+```
+
+## Syvällinen sukellus
+
+Date-objektin käyttö on kuitenkin paljon monipuolisempaa kuin pelkkä nykyisen päivämäärän ja ajan hankkiminen tai tietylle päivämäärälle ja ajalle asettaminen. Voit esimerkiksi muuttaa päivämäärän ja ajan muotoa käyttämällä erilaisia metodeita, kuten ```toDateString()```, ```toLocaleDateString()``` tai ```toString()```. Voit myös lisätä tai vähentää aikaa haluamillasi ajanjaksoilla Date-objektin metodeilla, kuten ```setDate()``` ja ```setHours()```.
+
+Date-objektin yksi hyödyllisimmistä ominaisuuksista

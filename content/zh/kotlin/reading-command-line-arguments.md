@@ -1,49 +1,72 @@
 ---
 title:                "Kotlin: 读取命令行参数"
+simple_title:         "读取命令行参数"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么
+命令行参数是一种非常常用和重要的编程概念，它允许我们通过命令行来向程序传递输入值。通过阅读本文，您将学习如何在Kotlin中读取命令行参数，并为您的程序增加更多的灵活性。
 
-读取命令行参数是编程中一个常见的需求。通过读取命令行参数，您可以在运行程序时向它提供输入，从而使程序更加灵活和可定制。这对于编写可用性强的程序来说至关重要，因此了解如何读取命令行参数是非常重要的。
+## 如何读取命令行参数
 
-## 如何做
+在Kotlin中，我们可以使用args变量来访问从命令行传递的参数。以下是一个简单的示例程序，它将打印出传递的参数数量和每个参数的值：
 
-在Kotlin中，读取命令行参数是非常简单的。首先，您需要使用`args`关键字来声明一个数组来存储命令行参数。然后，您可以使用循环来遍历数组中的参数，并以您需要的方式使用它们。
+```Kotlin
+fun main(args: Array<String>) {
+  // 打印参数数量
+  println("参数数量: ${args.size}")
 
-例如，假设我们的程序需要从命令行接收两个参数：姓名和年龄。那么我们可以这样写代码：
-
-```
-fun main(args: Array<String>) { // 使用args关键字声明一个Array来存储命令行参数
-    for (arg in args) { // 使用循环遍历数组中的参数
-        println("Command line argument: $arg") // 使用println函数打印参数
-    }
+  // 遍历输出每个参数的值
+  for (arg in args) {
+    println("参数值: $arg")
+  }
 }
 ```
 
-假设我们在命令行中输入`kotlin Main.kt John 25`，那么程序的输出将是：
+假设我们在命令行运行这个程序，使用“kotlin CommandLineArgs.kt arg1 arg2”作为命令，将会得到如下输出：
 
 ```
-Command line argument: John
-Command line argument: 25
+参数数量: 2
+参数值: arg1
+参数值: arg2
 ```
 
-因此，您可以看到如何使用Kotlin来读取和使用命令行参数非常简单。
+我们也可以在程序中使用命令行参数，比如假设我们的第一个参数表示一个数字，我们可以将它转换成整数并进行计算：
 
-## 深入了解
+```Kotlin
+fun main(args: Array<String>) {
+  // 获取第一个参数，并将其转换成整数
+  val num1 = args[0].toInt()
 
-实际上，Kotlin中的`main`函数本身就接收一个参数`args`。这个参数就是一个Array，包含了所有的命令行参数。您也可以使用索引来访问特定的参数，例如`args[0]`代表第一个参数。
+  // 获取第二个参数，并将其转换成整数
+  val num2 = args[1].toInt()
 
-另外，如果您想要指定参数的类型，您可以使用`args: Array<String>`，其中`String`可以替换为您需要的任何类型，例如`Int`、`Double`等等。这样可以帮助您在使用参数时更加灵活和规范。
+  // 计算两个数字的和并打印结果
+  val sum = num1 + num2
+  println("$num1 + $num2 = $sum")
+}
+```
 
-另外，您也可以使用Java中的`Scanner`类来读取命令行输入。这种方式可以更加自定义命令行输入的格式，但需要导入Java库。
+## 深入学习命令行参数
 
-## 参考链接
+除了基本的读取命令行参数，您还可以通过使用各种库来增强程序的功能。例如，您可以使用ArgParser库来解析复杂的命令行参数，或者使用Args4j库来构建符合Unix风格的命令行工具。
 
-- [Kotlin官方文档：读取命令行参数](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-args/index.html)
-- [Kotlin For Java Developers](https://www.udemy.com/kotlin-for-java-developers/)
-- [Kotlin快速入门教程](https://www.w3cschool.cn/kotlin/)
+此外，您还可以了解如何在Android开发中读取命令行参数，以及如何通过Gradle插件来传递命令行参数。
+
+# 参考链接
+
+- [Kotlin命令行参数教程](https://www.journaldev.com/23530/kotlin-command-line-arguments)
+- [使用ArgParser解析命令行参数](https://stormpath.com/blog/kotlin-argparser)
+- [使用Args4j构建命令行工具](https://medium.com/@danilovf/command-line-interface-with-kotlin-and-args4j-d122e0df920b)
+- [在Android中读取命令行参数](https://android.jlelse.eu/what-are-command-line-arguments-and-how-to-read-them-dace41930f4)
+- [通过Gradle传递命令行参数](https://kotlinexpertise.com/command-line-parameters-kotlin-gradle/)
+
+# 参见
+
+- [Kotlin官方文档](https://kotlinlang.org/docs/home.html)
+- [Kotlin中文社区](https://www.kotlincn.net/)

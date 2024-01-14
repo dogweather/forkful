@@ -1,42 +1,39 @@
 ---
-title:                "Elm: 「テキストファイルの作成」"
+title:                "Elm: テキストファイルの書き方"
+simple_title:         "テキストファイルの書き方"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Elmプログラミングを学ぶのに最適な言語として、近年注目を集めているElm。その中でも、テキストファイルの書き方は、重要なスキルの一つです。そこで今回は、Elmでテキストファイルを書く方法について、ご紹介します。
+## なぜ
 
-## なぜテキストファイルを書くのか
+テキストファイルを作成することの利点は何でしょうか？テキストファイルを作成することは、情報を整理し、保存することに役立ちます。また、多くのプログラミング言語で使用されているため、エンジニアとしては重要なスキルです。
 
-テキストファイルを書くことには、様々なメリットがあります。例えば、プログラムのコードやデータを保管するのに適しています。また、バージョン管理システムの一つであるGitでもテキストファイルが使用されています。そのため、Elmでテキストファイルを書くことは、プログラミングにおける基本的なスキルの一つと言えるでしょう。
+## 方法
 
-## 書き方の手順
+まずは必要なパッケージをインストールしましょう。コマンドラインで`elm install`を使用して、必要なパッケージをインストールします。次に、`main`関数を定義し、ファイルを作成する際の基本的な手順を示します。
 
-まずは、Elmのインストールを行います。次に、テキストファイルを作成し、拡張子を「.elm」に設定します。コーディングを開始する前に、必ずファイルの最初に「module Main exposing (..)」と記述し、モジュールを指定します。
-
-```elm
-module Main exposing (..)
-
--- ここにコーディングを行います
+```
+Elm .Text
+main =
+    file = textFile "example.txt" "This is an example text file."
+    writeFile file
 ```
 
-テキストファイルにコードを書く際には、基本的にはElmの構文に従います。例えば、変数を宣言するときは「let」というキーワードを使用します。
-
-```elm
-let myVariable = "Hello, World!"
-```
-
-コードの最後には「-」を入力し、ファイルを閉じます。そして、コマンドプロンプトやターミナル上でコンパイルを行い、実行することで、テキストファイルに書いたコードが実行されます。
+上記のコードでは、`textFile`関数を使用して`example.txt`というファイルを作成し、その中に`This is an example text file.`というテキストを書き込んでいます。最後に、`writeFile`関数を使用してファイルを保存します。
 
 ## 深く掘り下げる
 
-テキストファイルを書く際には、エディタの選択も重要です。Elmで使用することができるエディタはいくつかありますが、初心者におすすめのものは「Atom」や「Visual Studio Code」です。また、Elmにはデバッグ機能も備わっており、コードのテストや修正を行うことができます。
+テキストファイルを作成する際には、注意すべきいくつかのポイントがあります。まずは、ファイルのパスを指定すること、そして同じパスに既に同名のファイルが存在する場合は上書きするかどうかを確認することが重要です。また、文字コードや改行コードなどのエンコーディングにも注意する必要があります。
+
+テキストファイルを作成する際には、エディタで表示されるようにフォーマットしておくことも重要です。これにより、読みやすく、わかりやすいコードを書くことができます。
 
 ## 参考リンク
 
-- [Elmの公式ドキュメント](https://guide.elm-lang.org/)
-- [Atomのインストール方法](https://flight-manual.atom.io/getting-started/sections/installing-atom/)
-- [Visual Studio Codeのデバッグ機能の使い方](https://code.visualstudio.com/docs/editor/debugging)
+[Elm公式ドキュメント](https://elm-lang.org/docs/)
+[テキストファイルの作成 - Qiita](https://qiita.com/yuttymir/items/afa18c2832ff1b258b25)
+[テキストファイルを書き込む - Elmドキュメント](http://docs.elm-lang.org/0.18/File.html#writeFile)

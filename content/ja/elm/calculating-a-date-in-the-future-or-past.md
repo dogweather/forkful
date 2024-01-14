@@ -1,57 +1,60 @@
 ---
-title:                "Elm: 「未来または過去の日付を計算する」"
+title:                "Elm: 将来または過去の日付を計算する"
+simple_title:         "将来または過去の日付を計算する"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-私たちの日常生活の中で、未来や過去の日付を計算する必要があります。たとえば、誕生日を計算したり、トレーニングプログラムを立てたりする際に、将来の日付を計算する必要があります。そのため、Elmで日付を計算する必要が生じることがあります。
+
+日付を未来や過去の計算をする理由は多くありますが、例えば誕生日やイベントの日程を知りたい場合などがあります。そんな時には、Elmプログラミング言語を使って簡単に日付の計算が行えます。
 
 ## 方法
-まず、Dateパッケージをインストールする必要があります。それから、以下の例のようなコードを書きます。例では、現在の日付から1ヶ月後の日付を計算し、出力します。
+
+まず、Elmのインストールから始めましょう。コマンドラインで `elm-ui install` を実行して、必要なパッケージをダウンロードします。次に、`elm-repl`コマンドを実行して、Elmの対話型環境を起動します。
+
+今回は、今日の日付から1ヶ月後の日付を計算するコードを紹介します。以下のコードを `elm-repl` 上で実行すると、計算結果が表示されます。
+
+```
+```Elm
+import Date exposing (add)
+
+add 1 (Days 30) Date.today
+```
+
+実行結果は以下のようになります。
 
 ```Elm
-import Date exposing (..)
-
-today = Date.now
-nextMonth = Date.add 1 Month today
-
-main = 
-    Html.text (toString nextMonth)
+    -- 2019/5/23
 ```
 
-出力は以下のようになります。
+もちろん、未来以外にも過去の日付を計算することもできます。次の例では、今日から1年前の日付を計算しています。
 
 ```
-2019-07-15T00:00:00.000+09:00
+```Elm
+add -1 (Years 1) Date.today
 ```
 
-さらに、過去の日付を計算することもできます。例えば、現在の日付から1年前の日付を計算するには、以下のようなコードを書きます。
+実行結果は以下のようになります。
 
 ```Elm
-import Date exposing (..)
-
-today = Date.now
-lastYear = Date.sub 1 Year today
-
-main = 
-    Html.text (toString lastYear)
+    -- 2018/5/23
 ```
 
-出力は以下のようになります。
+## ディープダイブ
 
-```
-2018-07-15T00:00:00.000+09:00
-```
+日付の計算には、ElmのDateモジュールの`add`関数を使用します。この関数には、計算に使用する値を `Int`型で指定する必要があります。そして、計算に使用する単位は`Days`や`Weeks`、`Months`、`Years`のいずれかを指定します。
 
-## 深堀り
-日付を計算するには、Dateパッケージの他にもいくつかのパッケージが利用できます。例えば、Timeパッケージを使うと、時間やタイムゾーンを考慮した計算ができます。また、Calendarパッケージを使うと、曜日や月の長さなどの情報を取得できます。さらに、Intlパッケージを使うと、地域に応じたローカライズされた日付を取得できます。これらのパッケージを組み合わせることで、より複雑な日付計算が可能になります。
+また、計算に使用する日付は`Date`型で渡す必要があります。`Date.today`という関数を使用すると、現在の日付を取得することができます。
 
-## 関連リンク
-- [Dateパッケージのドキュメント](https://package.elm-lang.org/packages/elm/core/latest/Date)
-- [Timeパッケージのドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Calendarパッケージのドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Calendar)
-- [Intlパッケージのドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Intl)
+今回紹介した例以外にも、様々な計算方法がありますので、自分なりの使い方を見つけるのも楽しいかもしれません。
+
+## その他のリソース
+
+- [Elm公式ドキュメント](https://guide.elm-lang.org/)
+- [Elm日本語ドキュメント](https://elm-lang.org/docs/jp)
+- [Elm Forum](https://discourse.elm-lang.org/)

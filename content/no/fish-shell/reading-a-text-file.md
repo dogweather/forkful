@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Lese en tekstfil"
+title:                "Fish Shell: Lesing av en tekstfil"
+simple_title:         "Lesing av en tekstfil"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/reading-a-text-file.md"
 ---
 
@@ -9,42 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du er interessert i å forstå hvordan Fish Shell fungerer og ønsker å lære mer om hvordan du kan lese og manipulere tekstfiler, så er denne bloggposten for deg.
+Lurer du på hvordan du kan lese tekstfiler ved hjelp av Fish Shell? Da er du på rett sted! Dette innlegget vil vise deg hvordan du kan gjøre dette enkelt og effektivt.
 
 ## Hvordan
 
-Du kan lese en tekstfil ved å bruke `cat`-kommandoen i Fish Shell, som står for "concatenate". Det betyr at filen vil bli skrevet ut på skjermen. For eksempel, hvis du vil lese filen "tekst.txt", skriv følgende i Fish Shell:
+For å lese en tekstfil i Fish Shell, kan du bruke kommandoen `cat`. Denne kommandoen vil lese innholdet i filen og vise det i terminalvinduet. La oss si at vi har en tekstfil kalt "minfil.txt" som inneholder følgende tekst:
 
-```Fish Shell
-cat tekst.txt
+```
+Hei! Velkommen til min blogg om Fish Shell.
 ```
 
-Dette vil gi deg hele innholdet i tekstfilen på skjermen.
-
-Du kan også bruke `head`-kommandoen for å bare vise de første linjene i en tekstfil. For eksempel:
+For å lese denne filen i Fish Shell, skriver vi følgende kommando i terminalen:
 
 ```Fish Shell
-head -5 tekst.txt
+cat minfil.txt
 ```
 
-Dette vil vise de første fem linjene i tekstfilen.
+Dette vil gi oss følgende output:
 
-For å søke etter et bestemt ord eller uttrykk i en tekstfil, kan du bruke `grep`-kommandoen. For eksempel, hvis du vil søke etter ordet "Fish" i tekstfilen, skriv følgende:
+```
+Hei! Velkommen til min blogg om Fish Shell.
+```
+
+Du kan også bruke `less` kommandoen for å lese tekstfiler. Denne kommandoen vil gi deg muligheten til å bla gjennom tekstfilen.
 
 ```Fish Shell
-grep Fish tekst.txt
+less minfil.txt
 ```
 
-Dette vil gi deg alle linjene som inneholder ordet "Fish".
+Ved å trykke på piltastene opp og ned, kan du navigere gjennom filen. For å avslutte, kan du trykke på "q" på tastaturet ditt.
 
 ## Deep Dive
 
-For å utforske mer avanserte måter å lese tekstfiler på, kan du også bruke forskjellige flagg og kombinere flere kommandoer i Fish Shell. For eksempel kan du bruke `awk`-kommandoen for å filtrere ut spesifikke deler av en tekstfil basert på et gitt mønster. Du kan også bruke `sed`-kommandoen for å manipulere og endre innholdet i en tekstfil.
+Hvis du vil lese en fil som har flere sider med innhold, kan du bruke `head` og `tail` kommandoene. `head` vil vise de første linjene i filen, mens `tail` vil vise de siste linjene.
 
-Det er også viktig å merke seg at Fish Shell har innebygde variabler som gjør det enklere å arbeide med tekstfiler. Du kan bruke `$argv` for å lese argumenter gitt til en kommando, og `$status` for å få tilbakemelding om statusen til den siste kommandoen som ble utført.
+```Fish Shell
+head minfil.txt
+```
+
+Dette vil gi oss følgende output:
+
+```
+Hei! Velkommen til min blogg om Fish Shell.
+```
+
+Mens denne kommandoen:
+
+```Fish Shell
+tail minfil.txt
+```
+
+Vil gi oss følgende output:
+
+```
+Hei! Velkommen til min blogg om Fish Shell.
+```
 
 ## Se også
 
-- [Official Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Unix Text Processing Commands](https://www.tutorialspoint.com/unix/unix-regular-expressions.htm)
-- [Bash vs Fish: Which is the Best Shell?](https://www.freecodecamp.org/news/bash-vs-fish-shell-which-is-the-best-shell-fd2cc0ba8b07/)
+- [Offisiell dokumentasjon for Fish Shell](https://fishshell.com/docs/current/)
+- [En introduksjon til Fish Shell](https://medium.com/better-programming/a-gentle-introduction-to-the-fish-shell-1577c8af905e)
+- [Fish Shell tutorial på norsk](https://github.com/SindreSvendby/fish-tutorial/blob/master/tutorial.md)

@@ -1,35 +1,40 @@
 ---
 title:                "PHP: Väliaikaisen tiedoston luominen"
+simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Temporary-tiedostoilla on monia käyttötapoja PHP-ohjelmoinnissa, kuten tallentamalla väliaikaisesti käyttäjän lähettämiä tiedostoja ennen niiden lopullista tallentamista tai luomalla väliaikaisia muuttujia.
+# Miksi luoda väliaikainen tiedosto?
 
-## Kuinka tehdä
+Väliaikaiset tiedostot ovat välttämättömiä monissa PHP-ohjelmoinnin sovelluksissa, kuten latausten käsittelyssä ja tietojen tallentamisessa. Luodessaan väliaikaisen tiedoston, voit varmistaa, että tiedot ovat turvallisesti tallennettuina ja että ne eivät häviä, vaikka ohjelma kaatuu tai istunto päättyy. 
+
+## Miten luoda väliaikainen tiedosto?
+
+Luodaksesi väliaikaisen tiedoston PHP:ssa, käytä funktiota `tmpfile()`. Tämä funktio luo väliaikaisen tiedoston, jonka avulla voit tallentaa väliaikaisia tietoja ja käyttää niitä myöhemmin. Seuraava esimerkki näyttää, kuinka luodaan väliaikainen tiedosto ja tallennetaan siihen merkkijono "Hello world!".
+
 ```PHP
-// Luo väliaikainen tiedosto
-$tempFile = tempnam(sys_get_temp_dir(), 'tmp');
-echo $tempFile; // Tulostaa esimerkiksi "/tmp/tmp5c7bgv"
-
-// Tallenna tiedostoon
-file_put_contents($tempFile, 'Hello World!');
-
-// Lue tiedosto
-echo file_get_contents($tempFile); // Tulostaa "Hello World!"
-
-// Poista tiedosto
-unlink($tempFile);
+$file = tmpfile();
+fwrite($file, "Hello world!");
+echo fgets($file);
 ```
 
-## Syvällinen tarkastelu
-Temporary-tiedostojen luominen tapahtuu tempnam-funktion avulla. Se hyödyntää käyttöjärjestelmän väliaikaishakemistoa ja luo ainutlaatuisen tiedostonimen antamasi etuliitteen perusteella. Tämän jälkeen voit käsitellä tiedostoa kuten mitä tahansa normaalia tiedostoa, kuten tallentaa ja lukea siitä tietoja. On myös hyvä muistaa poistaa tiedosto, kun se ei enää ole tarpeellinen.
+Tulostus:
 
-## Katso myös
-- [PHP tempnam-dokumentaatio](https://www.php.net/manual/en/function.tempnam.php)
-- [PHP temporary files tutorial](https://www.tutorialrepublic.com/php-tutorial/php-file-uploading.php) (englanniksi)
-- [PHP:n sys_get_temp_dir-funktio](https://www.php.net/manual/en/function.sys-get-temp-dir.php)
+```
+Hello world!
+```
+
+## Syvällisemmin väliaikaisista tiedostoista
+
+Väliaikaiset tiedostot luodaan yleensä käyttämällä palvelimen oletusvälimuistia, mutta voit myös asettaa väliaikaisten tiedostojen tallennuspaikan manuaalisesti `sys_get_temp_dir()` -funktion avulla. Lisäksi voit poistaa väliaikaiset tiedostot käytöstä funktiolla `unlink()`, joka poistaa tiedoston heti sen käytön jälkeen.
+
+# Katso myös
+
+- [PHP.net - tmpfile()](https://www.php.net/manual/en/function.tmpfile.php)
+- [PHP.net - sys_get_temp_dir()](https://www.php.net/manual/en/function.sys-get-temp-dir.php)
+- [PHP.net - unlink()](https://www.php.net/manual/en/function.unlink.php)

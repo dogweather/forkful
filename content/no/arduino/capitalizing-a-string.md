@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Store bokstaver i en streng"
+title:                "Arduino: Skriver en streng med store bokstaver"
+simple_title:         "Skriver en streng med store bokstaver"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/capitalizing-a-string.md"
 ---
 
@@ -9,38 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor skulle du bry deg om å skrive en kode som gjør at bokstaver blir store? Vel, det kan være mange grunner til dette. Kanskje du ønsker at teksten på en LCD-skjerm skal være i store bokstaver for å gjøre den mer lesbar. Eller kanskje du ønsker at en bestemt del av koden skal skrive ut en melding i store bokstaver for å tiltrekke seg oppmerksomheten din. Uansett hva grunnen er, kan det være nyttig å vite hvordan du kan få bokstaver til å bli store i Arduino-programmering.
+Å kapitalisere en streng i et Arduino-program kan være nyttig for å gjøre teksten mer leselig for brukere. Dette kan være spesielt viktig når man skal vise informasjon på en LCD-skjerm eller seriell monitor.
 
 ## Hvordan
 
-Programmering av en funksjon for å få bokstaver til å bli store i Arduino er faktisk ganske enkelt. Du trenger bare å følge disse trinnene:
-
-1. Start med å opprette en variabel som inneholder teksten du ønsker å kapitalisere, for eksempel `tekst`.
-2. Lag en `for`-løkke som går gjennom alle bokstavene i variabelen `tekst` ved hjelp av funksjonen `length()`.
-3. Bruk funksjonene `tolower()` og `toupper()` for å konvertere små bokstaver til store bokstaver.
-4. Opprett en ny variabel, for eksempel `kapitalisertTekst`, som inneholder den kapitaliserte teksten.
-5. Skriv ut den nye variabelen ved hjelp av `Serial.println()`-funksjonen.
+For å kapitalisere en streng i Arduino, kan du bruke funksjonen ```toUpperCase()```. Denne funksjonen tar inn en streng som parameter og returnerer en ny streng med alle bokstavene omgjort til store bokstaver.
 
 ```Arduino
-String tekst = "dette er en tekst";
-String kapitalisertTekst;
-
-for (int i = 0; i < tekst.length(); i++) {
-  kapitalisertTekst += toupper(tekst[i]);
-}
-
-Serial.println(kapitalisertTekst);
+String originalStreng = "dette er en test"; // Opprinnelig streng med små bokstaver
+String kapitalisertStreng = originalStreng.toUpperCase(); // Bruker toUpperCase() for å kapitalisere strengen
+Serial.println(kapitalisertStreng); // Skriver ut den kapitaliserte strengen på seriell monitor
 ```
 
-Output: `DETTE ER EN TEKST`
-
-Det er også viktig å merke seg at `toupper()`-funksjonen bare vil fungere for engelsk alfabet. Hvis du trenger å kapitalisere teksten for andre språk, må du bruke en annen funksjon som støtter dette språket.
+Dette vil resultere i følgende utskrift: "DETTE ER EN TEST".
 
 ## Dypdykk
 
-Å kapitalisere teksten kan virke som en enkel oppgave, men det er viktig å forstå hvordan den faktisk fungerer i koden. `for`-løkken går gjennom hver bokstav i teksten og bruker `toupper()`-funksjonen til å konvertere den til store bokstaver. Det er også mulig å bruke andre funksjoner, som for eksempel `toascii()`, for å konvertere bokstaver til store bokstaver. Det er viktig å eksperimentere med ulike funksjoner for å se hva som fungerer best for ditt spesifikke behov.
+For å forstå hvordan funksjonen ```toUpperCase()``` fungerer, kan du se nærmere på kildekoden for Arduino-biblioteket. I kildekoden kan vi se at funksjonen først konverterer strengen til en char-array og deretter bruker en loop for å gå gjennom hvert tegn og konvertere det til en stor bokstav ved hjelp av ASCII-tabellen. Dette kan være nyttig å vite dersom du ønsker å tilpasse funksjonen eller lage din egen implementering.
 
 ## Se også
 
-- [Arduino Tutorial: Strings](https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringConstructors/)
-- [ASCII Table](https://www.asciitable.com/)
+- Les mer om ```toUpperCase()``` i Arduino-dokumentasjonen: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/
+- Utforsk ASCII-tabellen for å forstå hvordan bokstaver lagres som tall: https://www.asciitable.com/
+- Finn flere Arduino-tips og triks på vår blogg: https://www.arduino.no/blogg/

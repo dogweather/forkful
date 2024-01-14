@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: パターンに一致する文字を削除する"
+title:                "TypeScript: パターンと一致する文字の削除"
+simple_title:         "パターンと一致する文字の削除"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,34 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-文字のパターンに合致する文字を削除することのメリットについて説明します。
+データ処理を行う際に、特定のパターンに一致した文字を削除する必要があることがあります。これは、データをよりクリーンに整理するためや、条件に合致するデータのみを取得するためなどさまざまな理由で行われます。
 
-## 使い方
+## 方法
 
-例として、以下のコードを使用して文字のパターンに合致する文字を削除する方法をご紹介します。
-
-```TypeScript
-const text = "Hello World!";
-const pattern = /[aeiou]/gi;
-const newText = text.replace(pattern, "");
-console.log(newText);
-```
-このコードは、`Hello World!`という文字列から、母音を含む文字を削除して`Hll Wrld!`という文字列を出力します。
-
-## 詳細を深く掘り下げる
-
-パターンに合致する文字を削除する際、場合によっては文字列の中の特定の文字を取り除くという必要性があります。その場合は、`replace()`メソッドを使用して、特定の文字だけを削除することができます。例えば、以下のコードを使用すると、大文字の`O`を削除することができます。
+TypeScriptを使用してパターンに一致した文字を削除する方法を以下に示します。
 
 ```TypeScript
-const text = "Hello World!";
-const pattern = /O/gi;
-const newText = text.replace(pattern, "");
-console.log(newText);
+// 文字列の定義
+let string = "Hello World";
+
+// パターンに一致した文字を空文字に置換し、新しい文字列として再定義
+let newString = string.replace(/[eo]/g, "");
+
+// 結果の出力
+console.log(newString); // "Hll Wrld"
 ```
-これにより、`Hell Wrld!` という文字列が出力されます。
 
-## See Also
+以上の例では、`replace`メソッドを使用して文字列中の`"e"`と`"o"`を空文字に置換しています。`/g`は、指定したパターンに全てマッチする文字を置換するためのフラグです。他にも、`i`フラグを使用することで大文字と小文字を無視した置換が可能です。
 
-- [JavaScriptの正規表現を使って文字列から特定の文字を削除する方法](https://qiita.com/riku-shiru/items/c8da48103ebaff0df3c2)
-- [TypeScriptで正規表現を使って文字列を置換する方法](https://zenn.dev/finny/th121uxtsp)
-- [正規表現の基礎知識](https://www.webprofessional.jp/getting-started-with-javascript-regular-expressions-正規表現の基礎4/)
+また、正規表現を使用しなくても、以下のようにシンプルに文字を削除することも可能です。
+
+```TypeScript
+// 文字列の定義
+let string = "Good Morning";
+
+// 文字を削除し、新しい文字列として再定義
+let newString = string.split(" ").join("");
+
+// 結果の出力
+console.log(newString); // "GoodMorning"
+```
+
+`split`メソッドを使用して文字列を単語ごとに分割し、`join`メソッドで空白を除いて再結合しています。
+
+## ディープダイブ
+
+パターンに一致した文字を削除する方法には、いくつかのテクニックがあります。例えば、`replace`メソッドを使用する際にパターンとして正規表現を利用する方法や、配列の`filter`メソッドを使用する方法などがあります。また、文字を置換するだけでなく、マッチした文字を保持する方法もあります。それぞれの方法をより詳細に説明したいところですが、それは別の記事のテーマとなります。
+
+## 参考リンク
+
+- [TypeScript Strings](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [JavaScript RegExp Object](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)

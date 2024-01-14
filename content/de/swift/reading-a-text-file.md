@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Eine Textdatei lesen"
+title:                "Swift: Eine Textdatei lesen."
+simple_title:         "Eine Textdatei lesen."
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/reading-a-text-file.md"
 ---
 
@@ -9,44 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Textdateien sind ein wichtiger Bestandteil der Programmierung in Swift. Sie ermöglichen es uns, Daten auszulesen und zu verarbeiten, die in einem menschenlesbaren Format gespeichert sind. In diesem Blogbeitrag werden wir uns genauer mit dem Lesen von Textdateien in Swift befassen und zeigen, wie einfach es ist, dies in unseren eigenen Projekten umzusetzen.
+Textdateien spielen in der Programmierung eine wichtige Rolle, da sie eine einfache und universelle Möglichkeit bieten, Daten zu speichern und zu verarbeiten. In diesem Blogbeitrag werden wir uns damit beschäftigen, wie wir mithilfe von Swift Programmierung eine Textdatei einlesen und verarbeiten können.
 
-## Wie geht man vor
+## Wie geht das?
 
-Um eine Textdatei in Swift zu lesen, müssen wir zunächst eine Instanz der Klasse `FileManager` erstellen. Diese ermöglicht es uns, auf Dateien in unserem Dateisystem zuzugreifen. Anschließend können wir die Methode `contents(atPath:)` verwenden, um den Inhalt der Textdatei als `Data`-Objekt zu erhalten.
+Um eine Textdatei in Swift zu lesen, nutzen wir die Funktion `String(contentsOfFile:encoding)`, welche den Inhalt der Datei als String zurückgibt. Wir möchten dabei beachten, dass wir den Pfad zur Datei sowie die richtige Zeichenkodierung angeben müssen. Als Beispiel nutzen wir eine einfache Textdatei mit dem Inhalt "Hello World!".
 
-```Swift
-if let fileManager = FileManager.default,
-   let fileData = fileManager.contents(atPath: "textdatei.txt") {
-    // den Inhalt der Textdatei verarbeiten
-    let text = String(data: fileData, encoding: .utf8)
-    print(text)
-} else {
-    // Fehlerbehandlung, falls die Datei nicht gefunden werden konnte
-    print("Die Datei konnte nicht gefunden werden.")
+``` Swift
+let path = "pfad/zur/datei.txt" 
+let encoding = String.Encoding.utf8 
+if let content = try? String(contentsOfFile: path, encoding: encoding) { 
+  print(content) 
 }
 ```
-Das `Data`-Objekt, das wir erhalten, können wir anschließend in einen `String` umwandeln und somit den Inhalt der Textdatei auslesen. Hier verwenden wir die Encodierung `.utf8`, da diese in den meisten Fällen die gängigste für Textdateien ist. Falls die Datei nicht gefunden werden konnte, geben wir eine Fehlermeldung aus.
 
-## Tiefergehend
+Die Ausgabe dieses Codeschnipsels wird "Hello World!" sein. Wir haben erfolgreich den Inhalt der Textdatei in die `content` Variable geladen und diesen anschließend ausgegeben.
 
-Beim Lesen von Textdateien in Swift müssen wir uns auch mit der Verarbeitung von Zeilenumbrüchen auseinandersetzen. Diese werden in einem `String`-Objekt durch das Zeichen `\n` dargestellt. Wenn wir also jede Zeile der Textdatei einzeln verarbeiten möchten, können wir die Methode `components(separatedBy:)` verwenden und `\n` als Trennzeichen angeben. Dies gibt uns ein Array von `String`-Objekten, wobei jedes Element eine Zeile aus der Textdatei darstellt.
+## Tiefer Einblick
 
-```Swift
-if let fileManager = FileManager.default,
-   let fileData = fileManager.contents(atPath: "textdatei.txt") {
-    let text = String(data: fileData, encoding: .utf8)
-    // das Array words enthält jetzt jede Zeile der Textdatei als String
-    let words = text?.components(separatedBy: "\n")
-    
-    // jedes Element des Arrays kann jetzt einzeln verarbeitet werden
-    for word in words {
-    print(word)
-    }
-}
-```
+Beim Einlesen von Textdateien in Swift gibt es ein paar Dinge zu beachten. Zum einen sollte der Pfad zur Datei absolut und nicht relativ sein, um sicherzustellen, dass die Datei immer an der gleichen Stelle gefunden wird. Zudem ist es wichtig, die korrekte Zeichenkodierung anzugeben, um sicherzustellen, dass Sonderzeichen und Umlaute korrekt dargestellt werden.
+
+Des Weiteren gibt es verschiedene Methoden, um den Inhalt einer Textdatei weiterzuverarbeiten, wie zum Beispiel das Herausfiltern von bestimmten Informationen oder das Speichern des Inhalts in einer Datenstruktur. Auch das Einlesen mehrerer Textdateien ist möglich, indem man eine Schleife nutzt und den Pfad zur Datei dynamisch ändert.
 
 ## Siehe auch
 
-- [Apple Dokumentation zu `FileManager`](https://developer.apple.com/documentation/foundation/filemanager)
-- [Swift Standard Library Referenz zu `String`](https://developer.apple.com/documentation/swift/string)
+- [Ressource zu Swift Dateiverarbeitung](https://www.raywenderlich.com/9265-filemanager-class-tutorial-for-macos-how-to-read-and-write-files)
+- [Dokumentation von Swift String](https://developer.apple.com/documentation/swift/string)

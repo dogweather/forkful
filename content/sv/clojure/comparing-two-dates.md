@@ -1,55 +1,44 @@
 ---
-title:                "Clojure: Jämföring av två datum"
+title:                "Clojure: Jämförande av två datum"
+simple_title:         "Jämförande av två datum"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Har du någonsin behövt jämföra två datum i ditt Clojure-program? Det finns flera anledningar till varför man kanske skulle vilja göra detta, till exempel för att avgöra vilket datum som är senare eller för att kontrollera om ett datum ligger inom en viss tidsram.
 
-Att jämföra två datum kan vara en viktig del av många Clojure-program. Det kan hjälpa till att hitta skillnader mellan datum, avgöra vilket datum som kommer först eller hantera tidsbundna händelser. Låt oss titta på hur man kan jämföra två datum i Clojure.
+## Hur man gör det
+Att jämföra två datum i Clojure är enkelt med hjälp av inbyggda funktioner som `compare` och `before?/after?`. Här är ett exempel på hur man kan jämföra två datum:
 
-## Så här gör du
-
-Först måste vi definiera två datum som vi vill jämföra. Vi kan använda funktionen `date` för att skapa ett datum från dag, månad och år:
-
-```Clojure
-(def datum1 (date 2021 3 25))
-(def datum2 (date 2021 5 15))
 ```
-
-Nu kan vi använda funktionen `before?` eller `after?` för att jämföra dessa två datum. Dessa funktioner returnerar `true` om det första datumet kommer före det andra datumet och `false` annars.
-
-```Clojure
-(before? datum1 datum2) ;; returnerar true
-(after? datum1 datum2) ;; returnerar false
-```
-
-Vi kan också använda funktionen `min` och `max` för att hitta det minsta eller största datumet mellan två givna datum:
+(def date1 (java.util.Date. 2021 10 1))
+(def date2 (java.util.Date. 2021 12 1))
 
 ```Clojure
-(min datum1 datum2) ;; returnerar datum1
-(max datum1 datum2) ;; returnerar datum2
-```
+;; Jämför date1 med date2
+(compare date1 date2)
 
-Om vi behöver jämföra tidsstämpeln för ett datum, kan vi använda funktionen `instant` för att få en Unix-tidsstämpel och sedan använda aritmetiska operationer för att jämföra dessa tidsstämplar.
+;; Output: -1 (date1 är tidigare än date2)
 
-```Clojure
-(def timestamp1 (instant datum1))
-(def timestamp2 (instant datum2))
-(> timestamp2 timestamp1) ;; returnerar true
+;; Kontrollera om date1 kommer före date2
+(before? date1 date2)
+
+;; Output: true
 ```
 
 ## Djupdykning
+När man jämför två datum är det viktigt att vara medveten om hur Clojure behandlar dem. Datum i Clojure representeras som antal millisekunder från Unix-epoken (1 januari 1970). Detta innebär att när du jämför två datum, så jämför du egentligen antalet millisekunder mellan dem.
 
-Vid jämförelse av datum måste vi ta hänsyn till olika tidszoner och sommartid. Clojure ger oss möjlighet att använda biblioteket `clj-time` som erbjuder en mängd olika funktioner för att hantera tidszon och sommartid.
+En viktig sak att komma ihåg är att ju senare datumet är, desto större är antalet millisekunder och därför kommer den att vara "större" än ett tidigare datum när man använder `compare` eller `before?/after?`.
 
-Det är också viktigt att notera att jämförelser av datum kan vara känsliga för tidsprecision, särskilt vid jämförelse av Unix-tidsstämplar. Det är viktigt att noga överväga vilken precision som är nödvändig för det aktuella användningsområdet.
+## Se även
+Här är några länkar med mer information om att jämföra datum i Clojure:
 
-## Se också
-
-* Officiell dokumentation för Clojure `date` funktionen: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/date
-* Dokumentation för `clj-time` biblioteket: https://github.com/clj-time/clj-time/wiki
-* En djupare artikel om jämförelse av datum i Clojure: https://www.mikera.net/posts/2012-07-10-clojure-date-comparisons.html
+* [Officiell dokumentation om `compare`](https://clojuredocs.org/clojure.core/compare)
+* [Komparera datum med Joda-Time library](https://www.thoughtworks.com/insights/blog/clojure-dynamic-comparing-date-time)
+* [Mer information om datumrepresentation i Clojure](https://clojure.org/reference/chronology)

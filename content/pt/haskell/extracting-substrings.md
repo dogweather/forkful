@@ -1,45 +1,64 @@
 ---
-title:                "Haskell: Extração de subcadeias"
+title:                "Haskell: Extraindo subtrings"
+simple_title:         "Extraindo subtrings"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+# Por que extrair substrings em Haskell?
 
-Extração de substrings é uma habilidade importante em programação Haskell, já que permite que os desenvolvedores manipulem strings de forma eficiente e precisa. Além disso, essa técnica é útil em diversas aplicações práticas, como manipulação de dados e processamento de linguagem natural.
+Extrair substrings é uma tarefa bastante comum em programação, especialmente quando lidamos com manipulação de texto ou análise de dados. Em Haskell, existem diversas ferramentas e funções para nos auxiliar nessa tarefa, tornando o processo mais fácil e eficiente. Neste artigo, vamos explorar o porquê de se extrair substrings e como fazer isso em Haskell.
 
 ## Como fazer
 
-Para extrair uma substring em Haskell, podemos usar a função `take` ou `drop`, dependendo do que queremos obter. Por exemplo, para extrair os primeiros 5 caracteres de uma string, usamos `take 5 "Hello World"`, e o resultado será "Hello". Também podemos usar índices negativos, como em `drop (-3) "Hello World"`, que irá remover os últimos 3 caracteres e retornar "Hello".
+Para extrair substrings em Haskell, podemos utilizar a função `take` e `drop`. A função `take` recebe como argumentos a quantidade de elementos que queremos extrair e a lista de origem. Já a função `drop` recebe como argumentos a quantidade de elementos que queremos pular e a lista de origem. Em seguida, utilizamos a função `length` para determinar o tamanho da substring que queremos extrair.
 
-```Haskell
--- Exemplo de uso da função take
-take 3 "abcde" -- Resultado: "abc"
+Um exemplo prático seria o seguinte:
 
--- Exemplo de uso da função drop
-drop 2 "abcde" -- Resultado: "cde"
+```
+-- código Haskell
+str = "Olá, mundo!"
+take (length "Olá") str
+drop (length "Olá, ") str
 ```
 
-Outra forma de extrair substrings em Haskell é usando a função `substring` da biblioteca `Data.List`. Esta função recebe três parâmetros: o índice inicial, o comprimento da substring e a string original. Por exemplo, `substring 2 4 "Hello World"` irá retornar "llo ".
+O output seria o seguinte:
 
-```Haskell
-import Data.List (substring)
-
--- Exemplo de uso da função substring
-substring 1 5 "Hello World" -- Resultado: "ello "
+```
+-- output
+"Olá"
+"mundo!"
 ```
 
-## Aprofundando
+Podemos também utilizar a função `substring` do pacote `Data.Text` para extrair substrings. Ela recebe como argumentos o índice inicial e o índice final da substring que queremos extrair. Veja um exemplo:
 
-Para entender melhor como a extração de substrings funciona em Haskell, é importante conhecer alguns conceitos-chave. Em Haskell, as strings são tratadas como listas de caracteres, o que nos permite usar as funções `take` e `drop` diretamente nelas. Além disso, as strings também podem ser representadas como matrizes de caracteres, o que possibilita o uso da função `substring`.
+```
+-- código Haskell
+import Data.Text (substring)
 
-Outro ponto importante é o uso de índices na extração de substrings. Em Haskell, os índices começam com o número 0, o que significa que o primeiro elemento da lista tem o índice 0, o segundo tem o índice 1, e assim por diante. Além disso, como mencionado anteriormente, também podemos usar índices negativos para contar do final da lista.
+str = "Hello World"
+substring 0 4 str
+substring 6 10 str
+```
+
+O output seria o seguinte:
+```
+-- output
+"Hello"
+"World"
+```
+
+## Mergulho profundo
+
+Extrair substrings pode ser uma tarefa simples, mas é importante entender alguns detalhes por trás disso. Em Haskell, as strings são tratadas como listas de caracteres, portanto, podemos utilizar as mesmas funções e conceitos utilizados para manipulação de listas. Além disso, ao utilizar a função `take` e `drop`, é importante lembrar que elas retornam novas listas, portanto, é necessário atribuí-las a uma variável para podermos utilizá-las posteriormente.
+
+Outro ponto importante é o uso do pacote `Data.Text`, que é mais eficiente para manipulação de textos em comparação com a função `take` e `drop`, que são mais adequadas para manipular listas em geral. Portanto, é importante entender qual ferramenta é mais adequada para cada situação.
 
 ## Veja também
 
-- [Documentação da função `take` em Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Tuple.html#v:take)
-- [Documentação da função `drop` em Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Tuple.html#v:drop)
-- [Documentação da função `substring` em Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:substring)
+- [Documentação da função `take` e `drop`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#g:14)
+- [Documentação da função `substring`](https://hackage.haskell.org/package/text-1.2.3.2/docs/Data-Text.html#v:substring)

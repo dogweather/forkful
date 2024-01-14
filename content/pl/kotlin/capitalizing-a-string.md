@@ -1,34 +1,69 @@
 ---
 title:                "Kotlin: Zmiana wielkości liter w ciągu znaków"
+simple_title:         "Zmiana wielkości liter w ciągu znaków"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto używać kapitalizacji w ciągu znaków
 
-Czy nigdy zdarzyło Ci się chcieć zmienić wielkość liter w tekście, ale nie wiedzieć jak? Dzięki tej prostyemu krokowi w Kotlinie, będziesz miał możliwość szybko i łatwo zmienić wielkość liter w swoim tekście. Nie musisz już się martwić, o tytuły w różnych formatach, bo teraz będziesz mógł szybko je zmienić dzięki niewielkiej funkcji w Kotlinie.
+Kapitalizacja jest ważnym elementem w wielu programach, szczególnie w aplikacjach, które odwołują się do języka naturalnego, takich jak strona internetowa czy aplikacja do przetwarzania tekstu. Poprawna kapitalizacja pomaga w czytelności tekstu oraz wyróżnieniu ważnych elementów. W tym poście pokażemy, jak w prosty sposób zastosować kapitalizację w języku Kotlin.
 
 ## Jak to zrobić
 
-Aby zmienić wielkość liter w tekście w Kotlinie, wystarczy użyć funkcji ```toUpperCase()``` lub ```toLowerCase()```. Oto przykładowy kod:
+Kapitalizacja występuje w różnych formach, ale najczęstszym jej zastosowaniem jest zmiana pierwszej litery słowa na wielką. W języku Kotlin istnieje prosta funkcja, która umożliwia nam dokonanie tego szybko i bezproblemowo.
 
-```Kotlin 
-val originalText = "To jest przykładowy tekst."
-val capitalizedText = originalText.toUpperCase()
+```Kotlin
+fun capitalize(str: String): String {
+    return str.capitalize()
+}
 ```
 
-Wynikiem powyższego kodu będzie zmodyfikowany tekst zapisany w zmiennej ```capitalizedText```, który wyglądał będzie następująco: "TO JEST PRZYKŁADOWY TEKST." W przypadku użycia funkcji ```toLowerCase()``` wynik byłby taki: "to jest przykładowy tekst." 
+W powyższym przykładzie wykorzystaliśmy funkcję `capitalize()`, która jako argument przyjmuje ciąg znaków i zwraca ten ciąg z pierwszą literą zamienioną na wielką. 
 
-## Głębsze zagadnienia
+Przykładowe wywołanie funkcji może wyglądać następująco:
 
-Jeśli chcesz dokładniej poznać działanie funkcji ```toUpperCase()``` i ```toLowerCase()```, warto wiedzieć, że działają one na podstawie znaków Unicode. Oznacza to, że jeśli w Twoim tekście zawarte są znaki diakrytyczne, zostaną one odpowiednio zmienione z zachowaniem wielkości liter. 
+```Kotlin
+print(capitalize("kotlin"))
+```
 
-Na przykład, słowo "żółty" po użyciu funkcji ```toUpperCase()``` będzie wyglądało tak: "ŻÓŁTY", a po użyciu funkcji ```toLowerCase()``` będzie wyglądało tak: "żółty". Dzięki temu możesz mieć pewność, że nie ma znaczenia, czy w tekście znajdują się polskie, czy angielskie słowa, funkcja zadziała poprawnie.
+Output: Kotlin
+
+Funkcja `capitalize()` zawsze zwróci ciąg znaków z pierwszą literą będącą wielką, nawet jeśli słowo zaczyna się od małej litery. Na przykład:
+
+```Kotlin
+print(capitalize("każdy"))
+```
+
+Output: Każdy
+
+### Obsługa wyjątków
+
+W niektórych przypadkach, na przykład gdy przetwarzamy słowa wycinane z dłuższego tekstu, może się zdarzyć, że wyraz będzie zaczynał się od znaku inny niż litera. W takiej sytuacji funkcja `capitalize()` nie zadziała poprawnie, ale możemy to łatwo naprawić poprzez sprawdzenie pierwszego znaku i ewentualną zmianę go na literę.
+
+```Kotlin
+fun capitalize(str: String): String {
+    if(str[0].isLetter()) {
+        return str.capitalize()
+    }
+    return str[0].toUpperCase() + str.substring(1)
+}
+```
+
+Funkcja ta najpierw sprawdza, czy pierwszy znak w ciągu znaków jest literą. Jeśli tak, to wykorzystuje funkcję `capitalize()`, w przeciwnym razie zamienia pierwszy znak na wielką literę oraz dodaje do niego resztę ciągu (bez pierwszego znaku).
+
+## Dogłębne omówienie
+
+Kapitalizacja jest często wykorzystywana do poprawy czytelności tekstu i wyróżniania ważnych elementów, ale warto pamiętać, że w różnych językach istnieją różnice w wykorzystywaniu kapitalizacji. Na przykład, w języku polskim obowiązuje kapitalizacja inicjałowa - wielka litera jest stosowana tylko na początku zdania oraz w nazwach własnych.
+
+Język Kotlin oferuje wiele innych funkcji związanych z kapitalizacją, takich jak `decapitalize()` (zamiana pierwszej litery na małą), `upperCase()` (zamiana wszystkich liter na wielkie) czy `lowerCase()` (zamiana wszystkich liter na małe). W zależności od potrzeb, możemy wykorzystywać różne funkcje do dostosowania naszego tekstu.
 
 ## Zobacz także
 
-- Biblioteka funkcji standardowych w Kotlinie (https://kotlinlang.org/docs/reference/stdlib.html)
-- Podstawy Kotlin dla początkujących (https://kotlinlang.org/docs/reference/basic-syntax.html)
+- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/reference/
+- Wprowadzenie do języka Kotlin: https://kotlinlang.org/docs/tutorials/getting-started.html
+- Wprowadzenie do funkcji w Kotlinie: https://kotlinlang.org/docs/reference/functions.html

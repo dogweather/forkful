@@ -1,45 +1,53 @@
 ---
-title:                "Haskell: 一時ファイルの作成"
+title:                "Haskell: 一時ファイルを作成する"
+simple_title:         "一時ファイルを作成する"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ一時ファイルを作成するのか？
+## なぜ
+一時的なファイルを作成することについて、なぜ取り組むべきかを説明します。
 
-一時ファイルは、一時的にデータを保存するのに便利です。例えば、プログラムの実行中に一時的な変数を保存したり、複数のプログラム間でデータを共有したりすることができます。
+一時的なファイルを作成する最も一般的な理由は、プログラムの実行中に一時的な情報を保存する必要がある場合です。例えば、大量のデータを処理するプログラムで一時ファイルを使用することで、メモリの使用量を減らすことができます。
 
 ## 作り方
-
-一時ファイルを作成するには、Haskellの標準ライブラリである`System.IO.Temp`を使用します。まず、一時ファイルを作成したいディレクトリを指定します。
+まず、一時ファイルを扱うためのモジュールをインポートする必要があります。
 
 ```Haskell
-import System.IO.Temp (withSystemTempFile)
-
-withSystemTempFile "tmp/" $ \fp h -> do
-  -- ここにファイル作成のコードを記述します
-  -- 作成したファイルを使用したコードを記述します
-  hClose h -- ファイルをクローズします
+import System.IO
+import System.Directory
 ```
 
-上記のコードでは、`tmp/`ディレクトリに`withSystemTempFile`関数でファイルを作成し、ファイルハンドル`h`を取得しています。このファイルハンドルを使用して、ファイルにデータを書き込んだり、読み込んだりすることができます。
+次に、`withTempFile`関数を使用して一時ファイルを作成します。
 
-## 詳細解説
+```Haskell
+withTempFile :: FilePath -> String -> (FilePath -> Handle -> IO a) -> IO a
+```
 
-一時ファイルを作成する際、ファイル名を指定する必要はありません。また、ファイルが作成されると同時にファイルハンドルも取得できるので、すぐにファイルを操作することができます。さらに、ファイルを使用し終わった後は、自動的にクリーンアップされるため、メモリリークなどの問題を気にすることなく使うことができます。
+この関数は、3つの引数を取ります。`FilePath`は一時ファイルの保存先を指定します。`String`は一時ファイルの接頭辞となる文字列です。そして、最後の引数は一時ファイルが作成された後に実行される関数です。
 
-# これを知っといたら便利！
+例えば、次のようなコードを書くことで、一時ファイルを作成し、データを書き込み、読み込むことができます。
 
-一時ファイルを作成する方法を知ることで、プログラムの作成やデータ処理をよりスムーズに行うことができます。ぜひ試してみてください。
+```Haskell
+withTempFile "tmp/" "example" $ \fileName handle -> do
+    hPutStrLn handle "Hello World"
+    hGetContents handle
+```
 
-# おわりに
+上記のコードでは、"tmp/"というディレクトリに"example"という接頭辞を持つ一時ファイルが作成されます。そして、`hPutStrLn`関数を使用してテキストを書き込み、`hGetContents`関数を使用してそのテキストを読み込んでいます。
 
-一時ファイルの作成方法についてご紹介しました。一時ファイルを作成する際に役立つ情報をお伝えできたかと思います。ぜひ参考にしてください。
+## 深堀り
+一時ファイルを作成する際には、ファイル名の重複に注意が必要です。`withTempFile`関数では、自動的にユニークなファイル名を生成して改名するため、ファイル名の重複を心配する必要はありません。
 
-# 関連記事
+また、一時ファイルを作成する際には、後で削除する必要があるため、`withTempFile`関数の最後に`removeFile`関数を使用して一時ファイルを削除することをお勧めします。
 
-- [Haskellの標準ライブラリ - System.IO.Temp](https://hackage.haskell.org/package/base/docs/System-IO-Temp.html)
-- [一時ファイルを作成する方法まとめ](https://qiita.com/toshimaru/items/a29287b147e1f031943a)
-- [一時ファイルの利用メリットとデメリット](https://yagince.hatenablog.com/entry/2013/05/24/122148)
+## 参考リンク
+- [Haskellの公式ドキュメント](https://downloads.haskell.org/~ghc/8.10.3/docs/html/libraries/base-4.14.1.0/System-IO.html#v:withTempFile)
+- [Real World Haskellのチュートリアル](http://book.realworldhaskell.org/read/io.html#id773870)
+
+## 参考
+[Haskellで一時ファイルを作成する](https://example.com)

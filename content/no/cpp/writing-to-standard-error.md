@@ -1,48 +1,75 @@
 ---
-title:                "C++: Skriver til standardfeil"
+title:                "C++: Skriving til standard feil"
+simple_title:         "Skriving til standard feil"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor?
+# Hvorfor skrive til standardfeil
 
-Å skrive til standard error kan være nyttig i tilfeller der du ønsker å vise feil- og progressmeldinger til brukeren. Dette kan hjelpe deg med å feilsøke og forbedre koden din.
+Å skrive til standardfeil kan være et nyttig verktøy for å få informasjon ut av programmet ditt som ikke skal vises til brukeren. Dette kan inkludere feilmeldinger, debugging informasjon eller annen viktig informasjon som kan hjelpe deg med å forstå og forbedre koden din.
 
-## Hvordan gjøre det?
+## Slik gjør du det
 
-For å skrive til standard error i C++, må du bruke biblioteket `iostream` og operatoren `<<`. Nedenfor er et eksempel på hvordan du kan skrive til standard error:
+Hvis du vil skrive til standardfeil i C++, kan du bruke std::cerr-objektet. Dette vil skrive ut informasjon på standard feilstrøm, som standard blir sendt til konsollen din.
 
 ```C++
 #include <iostream>
-using namespace std;
 
 int main() {
-    cerr << "Dette er en feilmelding" << endl;
-    cout << "Dette er en vanlig utskrift" << endl;
-    
+    std::cerr << "Dette er en feilmelding" << std::endl;
     return 0;
 }
 ```
 
-Output:
+Dette vil resultere i følgende utdata:
 
 ```
 Dette er en feilmelding
-Dette er en vanlig utskrift
 ```
-Som du kan se, blir feilmeldingen skrevet til standard error ved hjelp av `cerr`, mens den vanlige utskriften blir skrevet til standard output ved hjelp av `cout`. Ved å skrive til standard error, skiller du disse to typene utskrifter og kan enklere identifisere feilene dine.
 
-## Dykk dypere
+Du kan også kombinere dette med forskjellige variabler eller uttrykk for å skrive ut mer dynamisk informasjon:
 
-Å skrive til standard error er en del av "streaming" konseptet i C++, der data sendes via en strøm av tegn. Denne strømmen kan enten være inn- eller ut-data, noe som gir deg fleksibilitet til å skrive til både standard output og error.
+```C++
+#include <iostream>
 
-Det er også viktig å merke seg at når du bruker C++ på forskjellige plattformer, kan standard error vises annerledes. På Windows brukes en rød tekst med en "X" som feilmelding, mens på Unix og Linux brukes det røde tekst og ingen spesiell symbol. Derfor kan det være lurt å teste koden din på ulike plattformer for å sikre konsistent utskrift.
+int main() {
+    int x = 5;
+    std::cerr << "Verdien av x er: " << x << std::endl;
+    return 0;
+}
+```
 
-## Se også
+Dette vil resultere i følgende utdata:
 
-- [Å skrive til standard error i C++ av GeeksforGeeks (engelsk)](https://www.geeksforgeeks.org/writing-to-file-and-error-console-in-cpp/)
-- [Stream konseptet i C++ av cplusplus.com (engelsk)](http://www.cplusplus.com/doc/tutorial/files/)
-- [Standard error på ulike plattformer av The C++ Programming Language (engelsk)](https://stackoverflow.com/questions/15175178/how-to-change-the-text-color-of-cerr-in-windows)
+```
+Verdien av x er: 5
+```
+
+## Dypdykk
+
+En annen måte å skrive til standardfeil på er å bruke std::errbuf-objektet. Dette vil skrive ut informasjon til en buffer som deretter kan bli hentet ut og brukt senere i programmet.
+
+```C++
+#include <iostream>
+
+int main() {
+    std::errbuf << "Dette vil bli lagret i bufferen" << std::endl;
+
+    // koden din fortsetter her
+
+    std::cerr << std::errbuf; // henter ut bufferen og skriver til standardfeil
+    return 0;
+}
+```
+
+Dette kan være nyttig når du trenger å loggføre informasjon eller når du må skrive ut informasjon senere i koden din.
+
+# Se også
+
+- [C++ Standard Library](https://www.cplusplus.com/reference/) for mer informasjon om std::cerr og std::errbuf.
+- [Feilhåndtering i C++: try, catch, throw](https://www.w3schools.com/cpp/cpp_exceptions.asp) for å lære om hvordan du kan håndtere og skrive ut feil i C++.

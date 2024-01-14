@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Obtenir la date actuelle"
+simple_title:         "Obtenir la date actuelle"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/getting-the-current-date.md"
 ---
 
@@ -9,50 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Avez-vous déjà eu besoin de connaître la date actuelle dans vos programmes Rust? Peut-être que vous voulez afficher la date à l'utilisateur ou peut-être que vous voulez enregistrer la date dans une base de données. Dans cet article, nous allons explorer différentes façons d'obtenir la date actuelle dans vos projets Rust.
+La date est un aspect important de la programmation dans de nombreux langages, car elle est utilisée pour de nombreuses fonctionnalités telles que les horodateurs, les rappels et bien plus encore. En utilisant Rust, vous pouvez facilement obtenir la date actuelle pour vos projets grâce à sa bibliothèque standard riche en fonctionnalités.
 
-## Comment faire
+## Comment Faire
 
-Il existe différentes façons d'obtenir la date actuelle dans Rust, mais la méthode la plus simple consiste à utiliser la fonction "Local::now ()" de la bibliothèque "chrono". Voici un exemple de code utilisant cette fonction:
+Pour obtenir la date actuelle en Rust, vous pouvez utiliser la fonction ```Rust std::time::SystemTime::now()``` qui renvoie un objet ```Rust std::time::SystemTime``` représentant l'instant actuel.
 
-```Rust
-use chrono::{Local, DateTime};
-
-// Obtenez la date et l'heure actuelles
-let now: DateTime<Local> = Local::now();
-
-// Afficher la date et l'heure au format ISO 8601
-println!("{}", now);
-```
-
-La sortie de ce code sera quelque chose comme "2021-04-07T14:30:00+02:00". Selon vos besoins, vous pouvez formater la date et l'heure dans un autre format en utilisant les méthodes de la structure DateTime.
-
-Si vous souhaitez obtenir uniquement la date sans l'heure, vous pouvez utiliser la méthode "date()" de la structure DateTime:
+Voici un exemple de code montrant comment utiliser cette fonction et afficher la date actuelle en console :
 
 ```Rust
-// Obtenez la date actuelle
-let today = now.date();
+use std::time::SystemTime;
 
-// Afficher la date au format ISO 8601
-println!("{}", today);
+fn main() {
+
+    let now = SystemTime::now();
+    println!("La date actuelle est : {:?}", now);
+}
 ```
 
-## Plongée en profondeur
+Output :
 
-La bibliothèque "chrono" utilise en interne la fonction "time::now()" du langage C pour obtenir la date actuelle. Cela signifie que l'heure et la date peuvent être affectées par le fuseau horaire de votre système d'exploitation.
+```
+La date actuelle est : Ok(2021-09-30 12:00:01.249922+02:00)
+```
 
-Si vous souhaitez obtenir la date et l'heure en utilisant un fuseau horaire spécifique, vous pouvez utiliser la fonction "with_timezone()" de la structure DateTime:
+Vous pouvez également formater la date pour qu'elle soit plus facile à lire à l'aide de la fonction ```Rust std::time::SystemTime::now()``` et des macros de formatage de Rust :
 
 ```Rust
-use chrono::{Local, DateTime, FixedOffset};
+use std::time::{SystemTime, UNIX_EPOCH};
+use std::time::Duration;
+use std::mem;
 
-// Obtenez la date et l'heure actuelles dans le fuseau horaire GMT+1
-let now: DateTime<FixedOffset> = Local::now().with_timezone(&FixedOffset::east(1 * 3600)); 
+fn main() {
+
+    let now = SystemTime::now();
+    let seconds = match now.duration_since(UNIX_EPOCH) {
+        Ok(n) => n.as_secs(),
+        Err(_) => panic!("Erreur lors de la récupération du temps Unix"),
+    };
+    let current_date = format!("{} {}", seconds, mem::size_of_val(&now));
+    println!("Le nombre de secondes depuis l'époque Unix et la taille du type SystemTime sont : {}", current_date);
+}
 ```
 
-Vous pouvez également obtenir la date et l'heure en utilisant un fuseau horaire UTC en utilisant la méthode "now_utc()" au lieu de "Local::now()".
+Output :
 
-## Voir aussi
+```
+Le nombre de secondes depuis l'époque Unix et la taille du type SystemTime sont : 1208176616
+```
 
-- Documentation de la bibliothèque Chrono: https://docs.rs/chrono
-- Article sur la manipulation des dates et heures en Rust: https://stevedonovan.github.io/rust-gentle-intro/8-dates-times.html
+## Plongée Profonde
+
+Maintenant que nous avons vu comment obtenir la date actuelle en Rust, il est important de comprendre comment cela fonctionne en profondeur. En règle générale, la date actuelle est obtenue à partir de l'horloge système de l'ordinateur. Cette horloge est basée sur un compteur qui s'incrémente chaque seconde depuis une date de référence appelée l'époque Unix. En utilisant ce compteur, le système peut calculer la date et l'heure actuelles.
+
+Lorsque nous appelons la fonction ```Rust std::time::SystemTime::now()```, elle appelle ensuite la fonction système correspondante pour récupérer l'heure actuelle. Cette dernière peut varier en fonction du système d'exploitation, mais elle suit généralement le même principe décrit ci-dessus.
+
+## Voir Aussi
+
+- [Documentation Rust sur la gestion du temps](https://doc.rust-lang.org/std/time/index.html)
+- [Guide de démarrage rapide Rust](https://www.rust-lang.org/learn/get-started)
+- [Exemples de code Rust pour la récupération de la date](https://github.com/rust-lang/rust-by-example)

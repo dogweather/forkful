@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Generering av tilfeldige tall"
+title:                "Haskell: Generere tilfeldige tall"
+simple_title:         "Generere tilfeldige tall"
 programming_language: "Haskell"
-category:             "Numbers"
+category:             "Haskell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/generating-random-numbers.md"
 ---
 
@@ -9,40 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Mange programmer krever tilfeldige tall for å skape variasjon og unngå forutsigbarhet. Enten det er for å lage spill, simulere data eller generere tilfeldige skyer i et landskapsbilde, så er tilfeldige tall en viktig funksjon i mange programmeringsprosjekter. I denne bloggposten skal vi se på hvordan vi kan generere tilfeldige tall ved hjelp av Haskell.
+Å generere tilfeldige tall er en viktig del av mange programmeringsoppgaver, spesielt når det kommer til å teste og simulere ulike situasjoner. Ved å skape tilfeldige tall kan vi imitere virkeligheten og bidra til å løse problemer som krever en viss grad av usikkerhet.
 
-## Hvordan gjøre det?
-
-Før vi begynner å kode, må vi importere modulen som lar oss generere tilfeldige tall:
+## Slik gjør du det
 
 ```Haskell
+-- Importerer biblioteket for å generere tilfeldige tall
 import System.Random
+
+-- Funksjon for å generere et tilfeldig tall mellom 0 og 10
+randomNumber :: IO Int
+randomNumber = randomRIO (0, 10)
+
+-- Eksempel på hvordan funksjonen kan brukes
+main :: IO ()
+main = do
+    -- Lagrer det tilfeldige tallet i en variabel
+    tall <- randomNumber
+    -- Skriver ut tallet
+    putStrLn $ "Det tilfeldige tallet er: " ++ show tall
 ```
 
-For å generere et tilfeldig tall mellom 0 og 10, kan vi bruke funksjonen `randomRIO` fra `System.Random`-modulen. Denne funksjonen tar inn en tuple som spesifiserer intervallet for det tilfeldige tallet. Vi kan også angi datatypen vi ønsker å få tilbake, for eksempel `Int` eller `Float`.
+Dette vil gi følgende output:
 
-```Haskell
-tilfeldigTall <- randomRIO (0, 10) :: IO Int
-print tilfeldigTall
+```
+Det tilfeldige tallet er: 8
 ```
 
-Hver gang vi kjører denne koden, vil vi få et nytt tilfeldig tall mellom 0 og 10 som output. Vi kan også generere flere tilfeldige tall ved hjelp av en løkke:
+## Dykk dypere
 
-```Haskell
-tilfeldigeTall <- sequence $ replicate 5 (randomRIO (0, 10) :: IO Int)
-print tilfeldigeTall
-```
-
-Dette vil generere 5 tilfeldige tall mellom 0 og 10 og lagre dem i en liste.
-
-## Dypdykk
-
-I Haskell er tilfeldige tall ikke generert direkte, men heller basert på en tilfeldig nummergenerator (rng). Denne generatoren tar inn et seed-nummer, og bruker dette til å generere en sekvens av tall som kan anses som tilfeldige ved bruk av kompliserte algoritmer. Dette betyr at dersom vi gir samme seed-nummer, vil vi alltid få den samme sekvensen av tilfeldige tall.
-
-Vi kan også angi en egen rng-funksjon ved å bruke `mkStdGen`. Dette gir oss mer kontroll over den tilfeldige nummergeneratoren, og kan være nyttig i visse situasjoner.
+I Haskell bruker vi funksjonen `randomRIO` fra `System.Random` biblioteket for å generere tilfeldige tall. Denne funksjonen tar imot et tuple med to verdier, og genererer et tilfeldig tall mellom disse to verdiene. For å bruke en rekke med tilfeldige tall, kan vi også bruke `randomRs` funksjonen. I tillegg kan vi også bruke funksjonen `random` for å generere et tilfeldig tall med en bestemt tilfeldighetsfordeling.
 
 ## Se også
 
-- [Haskell Wiki - Random Numbers](https://wiki.haskell.org/Random_numbers)
-- [Haskell Documentation - System.Random](https://hackage.haskell.org/package/random/docs/System-Random.html)
-- [Learn You a Haskell for Great Good! - Randomness](http://learnyouahaskell.com/input-and-output#randomness)
+- [Offisiell Haskell dokumentasjon for tilfeldige tall](https://www.haskell.org/haskellwiki/Random_number_generation)
+- [Enkel guide for å generere tilfeldige tall i Haskell](https://kunigami.blog/2014/01/21/how-to-generate-random-numbers-in-haskell/)
+- [Eksperimentere med tilfeldige tall i Haskell](https://www.haskell.org/haskellwiki/Introduction_to_Haskell_IO/Common_monads#Random_numbers)

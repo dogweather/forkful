@@ -1,46 +1,53 @@
 ---
-title:                "Elixir: Utiliser des expressions régulières"
+title:                "Elixir: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-"Pourquoi : Utiliser des expressions régulières en programmation Elixir
+## Pourquoi
 
-Les expressions régulières sont un outil puissant pour manipuler et traiter des données de manière efficace. En utilisant des expressions régulières en Elixir, vous pouvez rechercher, filtrer et modifier rapidement des chaînes de caractères selon des motifs spécifiques. Cela peut s'avérer très utile lors de la validation de données entrées par l'utilisateur, du traitement de fichiers ou de la mise en forme de données pour une sortie spécifique. Les expressions régulières peuvent également vous faire gagner du temps en automatisant des tâches fastidieuses liées à la manipulation de chaînes de caractères.
+Les expressions régulières sont un outil puissant pour la manipulation de chaînes de caractères dans un programme Elixir. Elles permettent de rechercher et de remplacer des motifs spécifiques dans une chaîne, ce qui peut être utile pour diverses tâches telles que la validation de données d'utilisateur ou le traitement de fichiers.
 
-Comment Faire :
+## Comment utiliser les expressions régulières en Elixir
 
-Pour utiliser des expressions régulières en Elixir, vous pouvez utiliser la fonction `Regex.match?` ou `Regex.run`. Par exemple, si vous avez une chaîne de caractères contenant des numéros de téléphone au format international, vous pouvez utiliser une expression régulière pour extraire les numéros de téléphone à partir de cette chaîne.
+Les expressions régulières en Elixir sont déclarées en utilisant la fonction `~r`, suivie du motif que vous souhaitez rechercher entre des guillemets. Voici un exemple de recherche de toutes les lettres majuscules dans une chaîne:
 
-```Elixir
-texte = "Mon numéro de téléphone est +33 6 12 34 56 78."
-Regex.run(~r/[+]\d{2} \d{1} \d{2} \d{2} \d{2} \d{2}/, texte)
-
-# Output: [+33 6 12 34 56 78]
+```elixir
+~r/[A-Z]/
 ```
 
-Vous pouvez également utiliser des expressions régulières pour effectuer des remplacements de caractères dans une chaîne, par exemple pour supprimer tous les espaces dans un texte.
+Vous pouvez ensuite utiliser cette expression régulière dans des fonctions telles que `Regex.match?` pour vérifier si une chaîne donnée correspond au motif.
 
-```Elixir
-texte = "Bonjour tout le monde!"
-Regex.replace(~r/\s/, texte, "")
+En voici un exemple complet:
 
-# Output: "Bonjourtoutlemonde!"
+```elixir
+string = "Bonjour le monde"
+pattern = ~r/[A-Z]/
+Regex.match?(pattern, string)
+# Résultat: false
 ```
 
-En utilisant des caractères spéciaux et des quantificateurs, vous pouvez créer des motifs de recherche plus complexes. Vous pouvez également utiliser des groupes de capture pour récupérer des parties spécifiques d'une chaîne correspondant au motif.
+Vous pouvez également utiliser une expression régulière pour remplacer des parties d'une chaîne en utilisant la fonction `Regex.replace`:
 
-En fin de compte, l'utilisation de régulières peut paraître compliquée au début, mais une fois que vous vous familiarisez avec les différents caractères et quantificateurs, cela devient un outil extrêmement puissant pour manipuler vos chaînes de caractères en Elixir.
+```elixir
+string = "Le soleil est jaune"
+Regex.replace(~r/jaune/, string, "rouge")
+# Résultat: "Le soleil est rouge"
+```
 
-Plongée dans les détails :
+## Approfondissement dans les expressions régulières
 
-Si vous souhaitez en savoir plus sur les expressions régulières, il existe de nombreuses ressources en ligne pour approfondir vos connaissances. Vous pouvez également consulter la documentation officielle d'Elixir qui donne un aperçu détaillé des différents caractères et quantificateurs disponibles.
+Les expressions régulières en Elixir utilisent la syntaxe PCRE (Perl Compatible Regular Expressions) et offrent des options avancées telles que l'utilisation de groupes de capture et de quantificateurs. Il existe également des fonctions spéciales pour rechercher des motifs spécifiques tels que les numéros de téléphone ou les adresses e-mail.
 
-Voir aussi :
+Il est important de noter que les expressions régulières peuvent être difficiles à lire et à comprendre, il est donc essentiel de bien documenter votre code et de le tester soigneusement.
 
-- [Documentation officielle d'Elixir sur les expressions régulières](https://hexdocs.pm/elixir/Regex.html)
-- [Site web de regex101 pour tester et expérimenter avec des expressions régulières](https://regex101.com/)
-- [Tutoriel d'expressions régulières d'OpenClassrooms (en français)](https://openclassrooms.com/fr/courses/918836-concevez-votre-site-web-avec-php-et-mysql/913820-les-expressions-regulieres-1)
+## Voir aussi
+
+- [Documentation Elixir sur les expressions régulières](https://hexdocs.pm/elixir/Regex.html)
+- [Tutoriel Elixir sur les expressions régulières](https://elixirschool.com/fr/lessons/advanced/regex/)
+- [Site web pour tester les expressions régulières](https://regex101.com/)

@@ -1,43 +1,36 @@
 ---
-title:                "TypeScript: Tulevien tai menneiden päivämäärien laskeminen"
+title:                "TypeScript: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi lasketaan päivämäärä tulevaisuudessa tai menneisyydessä?
+## Miksi
 
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä voi olla hyödyllistä monissa ohjelmointitilanteissa. Esimerkiksi tiettyä tapahtumaa tai deadlinea varten halutaan saada tieto siitä, kuinka monen päivän päästä tai kuinka monen päivän takana tämä päivämäärä on. Tai ehkä tarkoituksena on laskea henkilön ikä tietynä päivänä tai tarkastella tiettyjen päivämäärien välistä aikaväliä. Tällaisissa tilanteissa päivämäärän laskeminen tulevaisuudessa tai menneisyydessä voi olla hyödyllistä ja säästää aikaa ja vaivaa.
+Laskemalla tulevaisuuden tai menneisyyden päivämäärää voi olla hyödyllistä esimerkiksi tapahtumien suunnittelussa tai aikataulujen laatimisessa.
 
-## Miten lasketaan päivämäärä tulevaisuudessa tai menneisyydessä?
+## Ohjeet
 
-Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä on helppoa käyttäen TypeScript ohjelmointikieltä. Alla on esimerkki koodista, jossa lasketaan tietyn päivämäärän päivien määrä tulevaisuuteen tai menneisyyteen.
+Laskeminen tulevaisuuden tai menneisyyden päivämäärää TypeScript-koodissa on helppoa. Käytä ensin JavaScriptin Date-objektia luomaan haluttu päivämäärä. Sitten voit käyttää Date-objektin sisäänrakennettuja metodeja, kuten `setFullYear()` tai `getFullYear()` muokatakseen tai palauttaakseen vuoden. Esimerkiksi:
 
 ```TypeScript
-// Alkuperäinen päivämäärä 1.1.2020
-let date = new Date(2020, 0, 1);
+let tulevaisuudenPaiva = new Date();
+tulevaisuudenPaiva.setFullYear(2021);
+console.log(tulevaisuudenPaiva); // output: Fri Jun 25 2021 12:00:00 GMT+0300 (Eastern European Summer Time)
 
-// Lasketaan päivä eteenpäin 10 päivää
-date.setDate(date.getDate() + 10);
-console.log(date); // Output: Wed Jan 11 2020
-
-// Lasketaan päivä taaksepäin 5 päivää
-date.setDate(date.getDate() - 5);
-console.log(date); // Output: Fri Jan 6 2020
+let menneisyydenPaiva = new Date();
+menneisyydenPaiva.setFullYear(1990);
+console.log(menneisyydenPaiva); // output: Wed Jun 25 1990 12:00:00 GMT+0300 (Eastern European Summer Time)
 ```
 
-Kuten koodista nähdään, uusi päivämäärä saadaan laskettua muuttamalla alkuperäisen päivämäärän päivämäärää `setDate()` funktion avulla. Päivien määrä muuttuu sen mukaan, kuinka monta päivää lisätään tai vähennetään alkuperäisestä päivämäärästä.
+## Syvempi sukellus
 
-## Syvällisempi tarkastelu päivämäärän laskemisesta tulevaisuudessa tai menneisyydessä
-
-Päivämäärän laskemisessa tulevaisuudessa tai menneisyydessä on tärkeää huomioida erilaiset aikavyöhykkeet ja kesäaika. Esimerkiksi tietokoneen asetukset ja sijainti voivat vaikuttaa päivämäärän laskemiseen. Siksi on tärkeää varmistaa, että aikavyöhykkeet ja kesäaika ovat oikein asetettuna ennen päivämäärän laskemista.
-
-Lisäksi TypeScriptissä on käytettävissä muitakin päivämäärää ja aikaa käsitteleviä toimintoja, kuten `getFullYear()` ja `getMonth()` funktiot. Näitä kannattaa hyödyntää, jos halutaan tarkemmin manipuloida päivämäärää tulevaisuudessa tai menneisyydessä.
+Date-objektin metodeilla on useita eri parametreja, joilla voit muokata päivämäärää tarkemmin. Esimerkiksi voit käyttää `setDate()`-metodia asettaaksesi tietyn päivän kuukaudesta tai `getMonth()`-metodia saadaksesi kuukauden numeron sijasta kuukauden nimen. Voit myös käyttää `getTime()`-metodia saadaksesi päivämäärän millisekunneissa laskettuna. Tutustu JavaScriptin dokumentaatioon saadaksesi lisätietoja näistä ja muista Date-objektin metodeista.
 
 ## Katso myös
 
-- [Date API Reference by Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Date and Time Operations in TypeScript](https://www.tutorialspoint.com/typescript/typescript_date.htm)
-- [Handling Dates and Times in TypeScript](https://medium.com/@roszczux/handling-dates-and-times-in-typescript-cf257538a9af)
+- [Date-objektin dokumentaatio JavaScriptissä (MDN)](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)

@@ -1,36 +1,45 @@
 ---
 title:                "Haskell: Convirtiendo una cadena a minúsculas"
+simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
- Muchas veces en la programación, nos encontramos con la necesidad de manipular cadenas de texto y una de las operaciones más comunes es convertirlas a minúsculas. Ya sea para hacer comparaciones de cadenas de igual tamaño, validar datos ingresados por el usuario, o simplemente para fines estéticos. En este blog post, aprenderemos cómo convertir cadenas de texto a minúsculas en Haskell de manera sencilla y eficiente.
+## ¿Por qué convertir una cadena a minúsculas en Haskell?
+
+Si estás trabajando con manipulación de cadenas en Haskell, es posible que te hayas preguntado cómo convertir una cadena a minúsculas. Esto puede ser útil para estandarizar el formato de las cadenas o para realizar comparaciones de manera más precisa. A continuación, te mostraremos cómo hacerlo de forma sencilla y eficaz.
 
 ## Cómo hacerlo
-Para convertir una cadena de texto a minúsculas en Haskell, podemos utilizar la función `toLower` del módulo `Data.Char`. Esta función tiene la siguiente definición:
+
+La forma más sencilla de convertir una cadena a minúsculas en Haskell es utilizando la función `toLower` de la biblioteca `Data.Char`. Esta función toma un solo carácter y devuelve su equivalente en minúsculas. Sin embargo, para aplicarla a una cadena completa, es necesario hacer uso de otras funciones y técnicas.
+
+Primero, necesitamos convertir la cadena en una lista de caracteres utilizando la función `words`. Luego, aplicamos la función `toLower` a cada carácter utilizando `map`, y finalmente, juntamos la lista de caracteres nuevamente en una cadena utilizando la función `unwords`. Veamos un ejemplo:
 
 ```Haskell
-toLower :: Char -> Char
+import Data.Char (toLower)
+
+convertirMinusculas :: String -> String
+convertirMinusculas cadena = unwords (map toLower (words cadena))
 ```
 
-Esto significa que toma un carácter como argumento y devuelve el mismo carácter en minúscula. Podemos hacer uso de la función `map` para aplicar `toLower` a cada carácter de una cadena de texto. Veamos un ejemplo de cómo utilizarlo:
+Ahora, si aplicamos la función `convertirMinusculas` a una cadena, obtendremos su versión en minúsculas. Por ejemplo, si aplicamos la función a la cadena "Haskell es un lenguaje de programación funcional", obtendremos como resultado "haskell es un lenguaje de programación funcional".
 
-```Haskell
-Prelude> import Data.Char
-Prelude Data.Char> map toLower "Haskell"
-"haskell"
-```
-
-Aquí, hemos importado el módulo `Data.Char` y luego utilizado la función `map` para aplicar `toLower` a cada carácter de la cadena "Haskell". El resultado es una nueva cadena en minúsculas: "haskell".
+Es importante tener en cuenta que la función `toLower` sólo funciona con caracteres latinos estándar. Si tu cadena contiene caracteres acentuados u otros símbolos, es posible que necesites utilizar una biblioteca externa para una conversión más precisa.
 
 ## Profundizando
-Ahora que sabemos cómo usar la función `toLower`, es importante entender cómo funciona por debajo. En Haskell, las cadenas de texto son listas de caracteres, por lo que cuando aplicamos `map` a una cadena, estamos aplicando la función a cada elemento de la lista (es decir, cada carácter). Además, en Haskell, los caracteres se representan internamente como números (códigos ASCII), y la función `toLower` simplemente resta 32 a estos códigos para convertirlos a sus equivalentes en minúsculas.
+
+Si queremos entender mejor cómo funciona la conversión de cadenas a minúsculas en Haskell, podemos dar un vistazo a la implementación de la función `toLower` en la biblioteca `Data.Char`. Esta función utiliza tablas de búsqueda y patrones de coincidencia para determinar el equivalente en minúsculas de un carácter.
+
+Otra forma de convertir una cadena a minúsculas es utilizando la técnica de recursión en Haskell. Esta técnica utiliza patrones de coincidencia para determinar si un carácter es mayúscula, y en ese caso, lo convierte a minúscula y sigue recursivamente con el resto de la cadena. Este enfoque es más eficiente en términos de memoria, pero puede ser más difícil de entender para principiantes.
+
+En resumen, hay varias formas de convertir una cadena a minúsculas en Haskell y cada una tiene sus pros y contras. La mejor opción dependerá del contexto y de los requisitos del código en el que se esté trabajando.
 
 ## Ver también
-- [Documentación de `Data.Char`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
-- [Tutorial de Haskell en español](https://www.haskell.org/documentation.es.html)
-- [Artículo sobre el uso de `map` en Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20examples#map)
+
+- [Documentación de la biblioteca `Data.Char`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
+- [Tutorial de Haskell en español](https://wiki.uclm.es/index.php?title=P._36-_%C2%ABHaskell_en_espa%C3%B1ol%C2%BB)
+- [Ejemplos prácticos de manipulación de cadenas en Haskell](https://github.com/mulder21c/haskell-cadenas)

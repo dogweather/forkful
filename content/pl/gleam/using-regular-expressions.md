@@ -1,38 +1,49 @@
 ---
-title:                "Gleam: Korzystanie z wyrażeń regularnych"
+title:                "Gleam: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto używać wyrażeń regularnych w programowaniu?
+## Dlaczego
 
-Wyrażenia regularne to potężne narzędzie, które pozwala na efektywne przetwarzanie tekstu i wyszukiwanie wzorców w tekście. Jest to szczególnie przydatne dla programistów, którzy pracują z danymi tekstowymi, takimi jak formularze czy zasoby internetowe. Dzięki wyrażeniom regularnym nie tylko zaoszczędzisz czas, ale także unikniesz błędów w swoim kodzie.
+Wykorzystanie wyrażeń regularnych jest niezbędne w wielu dziedzinach programowania, zwłaszcza przy analizie i manipulacji tekstem. Jest to niezwykle przydatne narzędzie do przetwarzania i wyszukiwania danych w różnych formatach, a także ułatwiające pracę z dużymi zbiorami danych. W artykule dowiesz się, dlaczego warto nauczyć się korzystać z wyrażeń regularnych w języku programowania Gleam.
 
-## Jak używać wyrażeń regularnych w Gleam?
+## Jak wykorzystać wyrażenia regularne w Gleam
 
-Używanie wyrażeń regularnych w Gleam jest bardzo proste. Wystarczy użyć wbudowanej biblioteki `re` i skorzystać z funkcji `match` lub `replace`. Spójrzmy na przykład:
+Aby rozpocząć pracę z wyrażeniami regularnymi w Gleam, należy zaimportować pakiet "tobby/regex" za pomocą polecenia ```import "tobby/regex"```. Następnie można użyć funkcji ```Regex.new()``` do utworzenia wyrażenia regularnego, a następnie ```Regex.match()``` do przeszukiwania tekstu i zwrócenia dopasowań. Poniższy przykład ilustruje wykorzystanie wyrażeń regularnych do odnalezienia powtarzających się słów w zdaniu:
 
 ```Gleam
-let text = "Witaj w świecie Gleam!"
+import "tobby/regex"
 
-let pattern = r"[a-zA-Z]+"
+let sentence = "To jest przykładowe zdanie z powtarzającymi się słowami. To jest przykładowe zdanie."
+let regex = Regex.new("(?i)\\b(\\w+)\\b\\s+\\b\\1\\b")
+let matches = Regex.match(regex, sentence)
 
-let result = re.match(pattern, text)
-
-// output: Some(["Witaj", "w", "świecie", "Gleam"])
+// samples zawiera listę ["To", "jest"] jako dopasowane słowa
 ```
 
-W powyższym przykładzie używamy funkcji `match` do wyszukania wszystkich słów składających się z liter od A do Z, zarówno małych jak i wielkich, w tekście. Wynikiem jest lista dopasowanych wyrazów. W podobny sposób możemy również skorzystać z funkcji `replace`, aby zamienić dopasowane wyrazy na inne.
+Innym przydatnym narzędziem jest funkcja ```Regex.replace()```, która pozwala na zamianę dopasowanych fragmentów tekstu na wybrane wyrażenie. Przykładowo, można przeformatować daty zapisane w niejednolitym formacie:
 
-## Wprowadzenie do wyrażeń regularnych
+```Gleam
+let dates = "01-01-2020, 01.02.2021, 01/03/2022"
+let regex = Regex.new("(\\d{2})[./-](\\d{2})[./-](\\d{4})")
+let formatted_dates = Regex.replace(regex, dates, "YYYY-MM-DD")
 
-Wyrażenia regularne są wyjątkowo przydatne w przetwarzaniu tekstu, ponieważ pozwalają na elastyczne wyszukiwanie wzorców za pomocą specjalnych symboli i operatorów. Możesz na przykład wyszukać konkretne słowa, frazy, liczby czy nawet daty w tekście, a także wykonywać operacje takie jak podstawianie, kasowanie czy zamiana. Aby poznać wszystkie możliwości, warto zacząć od nauki podstaw, takich jak znaki specjalne i operatory, a następnie praktykować na coraz bardziej zaawansowanych przykładach.
+// wynikiem będzie "2020-01-01, 2021-02-01, 2022-03-01"
+```
 
-## Zobacz również
+## Zagłębienie się w wyrażenia regularne
 
-* Dokumentacja wyrażeń regularnych w Gleam: <https://gleam.run/modules/std/re.html>
-* Poradnik dla początkujących: <https://regexone.com/>
-* Przykłady zadań do rozwiązania: <https://regexcrossword.com/>
+Wyrażenia regularne oferują wiele możliwości, a z czasem można nauczyć się coraz bardziej skomplikowanych wzorców i wykorzystywać dodatkowe funkcje i składnię. W języku Gleam dostępne są także inne pakiety, takie jak "tobby/peg" czy "evadne/lingua" oferujące jeszcze więcej funkcjonalności związanych z wyrażeniami regularnymi.
+
+## Zobacz także
+
+- Dokumentacja Gleam: https://gleam.run/
+- Przewodnik po wyrażeniach regularnych: https://regexone.com/
+- Wyrażenia regularne w języku Gleam: https://gleam.toby.cloud/tobby/regex/latest/Regex/
+- Inne przydatne pakiety Gleam: https://github.com/gleam-lang/awesome-gleam

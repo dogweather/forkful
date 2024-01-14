@@ -1,21 +1,21 @@
 ---
 title:                "C: 使用正则表达式"
+simple_title:         "使用正则表达式"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么使用正则表达式
 
-当我们在编写代码时，经常会需要对于字符串进行匹配或者替换操作。使用正则表达式（regular expressions）可以极大地简化这一过程，让我们的代码更加灵活和高效。在这篇文章中，我们将会深入探讨如何在C语言中使用正则表达式。
+正则表达式是一种强大的工具，它可以帮助程序员轻松处理文本数据。如果你需要从文本中提取特定的信息，替换文本中的一些内容，或者验证用户输入的格式是否正确，那么正则表达式是必不可少的工具。使用正则表达式可以减少代码量，提高程序的可读性和稳定性。
 
-## 如何
+## 如何使用正则表达式
 
-正则表达式是由特殊字符和文本组成的模式，用于匹配字符串中符合规则的部分。在C语言中，我们可以使用regcomp()和regexec()两个函数来进行正则表达式的编译和匹配操作。
-
-让我们来看一个简单的例子，假设我们有一个包含电子邮箱地址的字符串，我们想要从中提取出用户名。我们可以使用正则表达式"(.*)@(.*)"来匹配这个字符串，并使用regexec()函数获取匹配的结果。
+使用正则表达式的第一步是导入"regex.h"头文件。接下来，我们可以使用函数regex_match()从文本中匹配出我们需要的内容。让我们来看一个简单的例子，从一组手机号码中筛选出中国大陆的手机号码。
 
 ```C
 #include <stdio.h>
@@ -23,53 +23,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 int main()
 {
-    // 定义正则表达式和待匹配字符串
-    char *pattern = "(.*)@(.*)";
-    char *str = "example@example.com";
-
-    // 定义regcomp()函数需要的结构体
+    char *phone_numbers[] = { "+86-13812345678", "001-1111111", "123456789", "+44 234567890"};
     regex_t regex;
+    regcomp(&regex, "^\\+86-1[3|4|5|6|7|8|9]\\d{9}$", REG_EXTENDED);
 
-    // 编译正则表达式
-    regcomp(&regex, pattern, 0);
+    for (int i=0; i<4; i++)
+    {
+        if (regexec(&regex, phone_numbers[i], 0, NULL, 0) == 0)
+        {
+            printf("Match found: %s\n", phone_numbers[i]);
+        }
+    }
 
-    // 匹配正则表达式
-    regmatch_t match[3];
-    regexec(&regex, str, 3, match, 0);
-
-    // 输出匹配的结果
-    printf("用户名：%.*s \n", match[1].rm_eo - match[1].rm_so, str + match[1].rm_so);
-
-    // 释放正则表达式结构体
-    regfree(&regex);
-    
     return 0;
 }
-
 ```
 
-输出结果为：
+在这个例子中，我们使用了正则表达式"^\\+86-1[3|4|5|6|7|8|9]\\d{9}$"去匹配中国大陆的手机号码。首先，我们使用regcomp()函数将正则表达式编译成可供程序使用的格式，然后使用regexec()函数去匹配每一个手机号码。如果找到匹配项，就会打印出该手机号码。在这个例子中，我们就可以找出"13812345678"是一个有效的手机号码。
 
-```
-用户名：example 
-```
+## 深入了解正则表达式
 
-除了使用"."来匹配任意字符，我们还可以使用特殊字符来指定匹配的范围，比如"[a-z]"表示匹配小写字母，"[0-9]"表示匹配数字等等。此外，我们还可以使用"?"来表示可选项，"*"来表示任意个数的重复，"+"来表示至少一个的重复等等。
+正则表达式是一个庞大而复杂的主题，我们无法在这篇文章中涵盖所有内容。不过，让我们来看一些正则表达式的基本语法，以及一些常用的元字符。
 
-## 深入探讨
+- 基本语法：正则表达式由普通字符（字母、数字、标点符号等）和特殊字符（元字符）组成。
+- 元字符：元字符是一些特殊的字符，用来表示匹配的规则。例如，"^"表示匹配字符串的起始位置，"$"表示匹配字符串的结尾位置。
+- 基本规则：多个普通字符会依次匹配字符串中的每一个字符，[ ]内的字符表示匹配任意一个字符，*表示匹配前面的字符0次或多次，+表示匹配前面的字符1次或多次，?表示匹配前面的字符0次或1次。
+- 常用的元字符：除了上面提到的"^"、"$"、"*"、"+"、"?"以外，还有一些常用的元字符，比如"."表示匹配任意一个字符，{ }表示匹配指定次数的字符，|表示"或"操作，\d表示匹配数字，\s表示匹配空白字符。
 
-除了上面提到的两个函数外，C语言还提供了regerror()和regfree()函数来处理错误和释放正则表达式结构体。
+如果你想深入了解更多关于正则表达式的知识，建议阅读正则表达式的官方文档或其他相关的书籍。
 
-在实际应用中，我们可能会遇到更复杂的匹配需求，这时候可以使用一些高级特性，比如反向引用（backreferences）、断言（lookaround）、非贪婪匹配（non-greedy matching）等等。如果对正则表达式有更深入的了解，可以参考Perl兼容正则表达式（PCRE）和GNU扩展正则表达式（ERE）的文档。
+## 查看还有
 
-## 参考链接
+- [正则表达式教程](https://regexone.com/)
+- [正则表达式语法](https://www.regular-expressions.info/wildcards.html)
+- [使用正则表达式的示例](https://www.gnu.org/software/gawk/manual/html_node/Regular-Expressions.html)
 
-- [GNU C Library](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html#Regular-Expressions)
-- [Regular Expressions in C](https://www.geeksforgeeks.org/regular-expressions-in-c/)
-- [PCRE Documentation](https://www.pcre.org/current/doc/html/pcre2syntax.html)
-- [ERE Documentation](https://www.gnu.org/software/gnulib/manual/html_node/ERE-POSIX.html)
-
-## 参见
-
-- [Markdown语法介绍](https://www.jianshu.com/p/9e3b13c3c2b2)
-- [正则表达式测试工具](https://regex101.com/)
+感谢阅读，希望这篇文章能帮

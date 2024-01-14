@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Wydrukowanie wyników debugowania"
+title:                "TypeScript: Wyświetlanie danych debugowania"
+simple_title:         "Wyświetlanie danych debugowania"
 programming_language: "TypeScript"
-category:             "Testing and Debugging"
+category:             "TypeScript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/printing-debug-output.md"
 ---
 
@@ -9,29 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W programowaniu nieuniknione są błędy, które często sprawiają nam problemy. Jednym z najczęstszych sposobów na zdiagnozowanie problemów w naszym kodzie jest drukowanie wyjścia debugowania. Jest to proces wyświetlania wartości zmiennych i informacji o wykonaniu kodu w celu znalezienia błędów i zrozumienia, co dzieje się w trakcie działania programu. W tym artykule dowiesz się dlaczego warto wykorzystać drukowanie wyjścia debugowania w języku TypeScript.
+Często podczas tworzenia programów w języku TypeScript, przydaje się drukowanie wiadomości debugujących, aby zrozumieć, co dzieje się w naszym kodzie i w razie potrzeby go naprawić. W tym artykule przeczytasz, dlaczego warto używać drukowania debug output oraz jak to zrobić w praktyce.
 
 ## Jak to zrobić
 
-Aby drukować wyjście debugowania w języku TypeScript, możesz skorzystać z wbudowanej funkcji `console.log()`. Jest to prosty i skuteczny sposób na wyświetlanie wartości zmiennych i informacji o kodzie. Przykładowy kod wyglądałby mniej więcej tak:
+Aby wyświetlić debug output w języku TypeScript, możesz skorzystać z metody `console.log`. W poniższym przykładzie używamy tej metody do wyświetlenia tekstu "Witaj świecie!".
 
 ```TypeScript
-let name = "Jan";
-console.log("Witaj, " + name); // Wyjście: Witaj, Jan
+console.log('Witaj świecie!');
+```
+W terminalu powinno zostać wyświetlone:
+
+```
+Witaj świecie!
 ```
 
-Dodatkowo, możesz wykorzystać również funkcję `console.error()`, która pozwala na drukowanie błędów w konsoli.
+Możesz również drukować zmienne, aby sprawdzić ich wartości. Na przykład, jeśli chcesz sprawdzić wartość zmiennej `liczba`, możesz napisać:
 
-## Głębsza analiza
+```TypeScript
+let liczba = 10;
+console.log('Wartość zmiennej liczba to: ' + liczba);
+```
+W efekcie otrzymasz:
 
-Drukowanie wyjścia debugowania może być nie tylko pomocne przy znajdowaniu błędów w kodzie, ale także w lepszym zrozumieniu, w jaki sposób nasz program działa. Dzięki temu możemy śledzić wartości zmiennych i wykonanie poszczególnych części kodu w celu lepszego zapoznania się z jego działaniem. Jest to szczególnie przydatne przy programowaniu aplikacji o większym zakresie i złożoności.
+```
+Wartość zmiennej liczba to: 10
+```
+
+## Deep Dive
+
+Drukowanie debug output jest nie tylko przydatne, ale także ważne podczas debugowania kodu. Może pomóc zlokalizować błędy lub zrozumieć, dlaczego pewne rzeczy nie działają tak, jak powinny. Dzięki temu możesz szybciej naprawić problemy i ułatwić sobie pracę.
+
+Pamiętaj jednak, że drukowanie debug output nie jest zalecane w kodzie produkcyjnym, ponieważ może spowolnić działanie aplikacji lub wyświetlać niepotrzebne informacje użytkownikom.
 
 ## Zobacz również
 
-Jeśli jesteś zainteresowany/a dalszym rozwojem swojej wiedzy na temat drukowania wyjścia debugowania w języku TypeScript, polecamy zapoznać się z poniższymi linkami:
-
-- [Oficjalna dokumentacja TypeScript](https://www.typescriptlang.org/docs/home.html)
-- [Przewodnik po drukowaniu wyjścia debugowania w TypeScript](https://www.digitalocean.com/community/tutorials/how-to-troubleshoot-with-console-log-in-typescript)
-- [Przykłady z wykorzystaniem funkcji console w TypeScript](https://www.geeksforgeeks.org/typescript-console/)
-
-Dziękujemy za przeczytanie naszego artykułu. Mamy nadzieję, że dowiedziałeś/aś się czegoś nowego i będziesz mógł/mogła wykorzystać te informacje w swoim własnym kodzie.
+- [Dokumentacja TypeScript](https://www.typescriptlang.org/)
+- [Console API w TypeScript](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+- [Narzędzia do debugowania TypeScript](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)

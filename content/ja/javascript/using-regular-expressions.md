@@ -1,45 +1,38 @@
 ---
-title:                "Javascript: 正規表現を使う"
+title:                "Javascript: 正規表現の利用"
+simple_title:         "正規表現の利用"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ正規表現を使うのか
+## なぜ正規表現を使うのか 
 
-正規表現は、文字列パターンを簡単に検索や置換できる便利なツールです。これにより、文字列やテキストデータを処理する際に、より効率的かつ柔軟にコードを記述することができます。
+正規表現とは、パターンを表現する為の特殊な文字列であり、文字列のマッチングや検索に役立つ便利なツールです。これを使うことで、より効率的に文字列を処理することができ、コードの量も減らすことができます。
 
 ## 正規表現の使い方
 
-正規表現は、文字列に沿ったパターンを定義するための特殊な文字列です。これを用いることで、指定した文字列や文字パターンを簡単かつ高速に検索や置換することができます。
-
-以下に、正規表現を使うための基本的なコード例を示します。
+正規表現を使うには、まず正規表現を表す文字列を定義します。例えば、`/hello/`という正規表現は、文字列の中に"hello"という文字列が含まれるかどうかをチェックします。次に、`.test()`メソッドを使って指定した文字列が正規表現にマッチするかどうかを確認します。下のコードブロックを参考にしてみてください。
 
 ```Javascript
-// 文字列 "Hello World!" から "Hello" を検索する
-let str = "Hello World!";
-let pattern = /Hello/; // スラッシュで囲んだ部分が正規表現のパターンとなる
-let result = pattern.test(str);
-console.log(result); // true
-
-// 文字列 "Hello World!" の中の "l" を全て "x" に置換する
-let str = "Hello World!";
-let pattern = /l/g; // gはすべてのマッチした箇所を置換するオプション
-let result = str.replace(pattern, "x");
-console.log(result); // Hexxo Worxd!
+const regex = /hello/;
+const string1 = "Hello, world!";
+const string2 = "Goodbye, world!";
+regex.test(string1); // Output: true
+regex.test(string2); // Output: false
 ```
 
-## 正規表現の深堀り
+このように使うことで、単純な文字列検索だけでなく、文字列の置換や指定した形式に合った文字列の抽出も行うことができます。
 
-正規表現は、より複雑なパターンを定義することも可能です。たとえば、特定の文字列のパターンをマッチングしたり、特定の文字を指定した回数繰り返したりすることができます。また、正規表現を使うことで、文字列のバリデーションなども行うことができます。
+## 正規表現の深い掘り下げ
 
-JavaScriptで使える正規表現の特殊文字やオプションについては、公式ドキュメントやオンラインチュートリアルなどを参考にすると良いでしょう。
+正規表現を使いこなすためには、パターンの作り方や特殊文字の使い方を理解する必要があります。例えば、ブラケット`[]`を使うことで、指定した文字の1つをマッチさせることができます。また、カレット`^`を使うことで、指定した文字以外の文字をマッチさせることもできます。正規表現を使う際には、より高度なパターンやオプションを使うことで、より複雑な文字列の処理を行えるようになります。
 
-## 参考リンク
+## 関連リンク
 
-- [MDN: 正規表現](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [正規表現チュートリアル (英語)](https://regexone.com/)
-- [正規表現101 (英語)](https://regex101.com/)
-- [W3Schools: 正規表現](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [MDN - 正規表現](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [レギュラーミート - 正規表現入門](https://www.regular-meet.com/lesson/regexp1.html)
+- [Regex101 - 正規表現のテストツール](https://regex101.com/)

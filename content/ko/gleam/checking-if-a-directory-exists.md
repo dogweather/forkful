@@ -1,46 +1,67 @@
 ---
-title:                "Gleam: 디렉토리가 존재하는지 확인하는 방법"
+title:                "Gleam: 디렉토리가 존재하는지 확인하기"
+simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜:
+## 왜
 
-디렉토리가 존재하는지 확인하는 것이 왜 중요한지 궁금하신가요? 일반적으로 기존의 파일 시스템에서 디렉토리는 파일을 저장하는 데 사용되는 기본 단위입니다. 따라서 디렉토리가 존재하는지 확인하기 위해서는 해당 파일 또는 서비스의 정상적인 작동 여부를 판단하는 데 도움이 될 수 있습니다. 만약 디렉토리가 존재하지 않는다면, 이는 실행 중인 프로그램이 파일 시스템의 다른 부분에 영향을 미칠 수 있음을 의미합니다.
+파일이나 디렉터리가 존재하는지 확인하는 것은 프로그래밍에서 널리 사용되는 중요한 작업입니다. 파일을 읽고 쓰기 전에 존재 여부를 확인하고, 존재하지 않는 경우에는 해당 작업을 중단시키는 등 다양한 상황에서 필요합니다. 이번 글에서는 Gleam 프로그래밍 언어를 사용하여 디렉터리가 존재하는지 확인하는 방법을 알려드리겠습니다.
 
-## 어떻게:
+## 하면서
 
-가장 쉽게 디렉토리가 존재하는지를 확인하는 방법은 기존의 파일 시스템을 탐색하고 해당 디렉토리를 찾는 것입니다. 하지만 Gleam을 사용하면 이러한 작업을 간단하게 처리할 수 있습니다. 아래의 코드 예제를 확인해보세요.
+**1. 단순한 방법**
+
+가장 간단한 방법은 `gleam/os` 모듈의 `exists` 함수를 사용하는 것입니다. 이 함수는 파일이나 디렉터리의 존재 여부를 `Boolean` 타입으로 반환해줍니다.
 
 ```Gleam
-let
-  path = "my/directory/" // 확인할 디렉토리 경로
-in
-  match fs.find(path) {
-    Ok(_) -> "디렉토리가 존재합니다."
-    Err(_) -> "디렉토리가 존재하지 않습니다."
-  }
+import gleam/os.{exists}
+
+let is_exists = exists("directory/")
+// 만약 "directory/"가 존재한다면 `true`가 반환됩니다.
 ```
 
-위의 코드에서는 `fs` 라이브러리를 사용하여 디렉토리를 찾는 동작을 수행하고 있습니다. 이 라이브러리는 파일 시스템을 다루는 데 사용되는 많은 유용한 함수를 제공합니다. 따라서 디렉토리가 존재하는지를 확인하기 위해서는 먼저 해당 디렉토리를 탐색하는 코드를 작성해야 합니다.
+**2. 디렉터리인지도 확인하기**
 
-## 딥 다이브:
+가끔 디렉터리가 아니라 파일을 확인해야 할 때가 있습니다. 이때는 `gleam/os` 모듈의 `is_directory` 함수를 이용하면 됩니다.
 
-만약 디렉토리가 존재하지 않는다는 사실을 알게 된다면, 왜 그렇게 되었는지를 알아야 할 필요가 있을 수 있습니다. 이를 위해서는 디렉토리가 존재하는지를 확인하는 코드를 어떻게 작성하는지에 대해 더 자세히 알아볼 필요가 있습니다.
+```Gleam
+import gleam/os.{exists, is_directory}
 
-일반적으로 디렉토리가 존재하지 않는 이유는 두 가지입니다. 첫째, 디렉토리가 삭제되었거나 이동되었기 때문입니다. 둘째, 디렉토리가 아직 생성되지 않았기 때문입니다. 따라서 디렉토리가 존재하지 않는 이유를 파악하기 위해서는 이러한 상황을 고려해야 합니다.
+let directory = "directory/"
+let is_exists = exists(directory)
+let is_directory = is_directory(directory)
+```
 
-## 또 다른 정보:
+위 예제에서 `is_directory` 변수는 `Boolean` 타입으로 디렉터리인지 아닌지를 나타냅니다.
 
-자세한 내용은 [Gleam 공식 문서](https://gleam.run/documentation/)를 참조하시기 바랍니다.
+**3. 조금 더 복잡한 방법**
 
----
+따로 모듈을 사용하지 않아도 `Std.File.Info` 모듈을 사용하여 파일의 `Info`를 받아올 수 있습니다.
 
-## 참고:
+```Gleam
+import gleam/os.{exists}
 
-- [Gleam 공식 문서](https://gleam.run/documentation/)
-- [Gleam 파일 시스템 라이브러리](https://hexdocs.pm/gleam_stdlib/Gleam.Filesystem.html)
-- [Gleam에서 파일 시스템 다루기](https://medium.com/@mperham/gleam-io-day-4-filesystem-gestures-2bea812ccf7b)
+let file_info = Std.File.Info.read("directory/")
+let is_file_exist = case file {
+    Ok(info) -> true
+    Error(_error) -> false
+}
+```
+
+이렇게는 `directory/`의 존재 여부를 확인할 수 있지만, `is_directory` 함수를 사용하지 않기 때문에 디렉터리인지 아닌지는 모릅니다.
+
+## 심도있게 살펴보기
+
+이렇게 쉽게 파일이나 디렉터리의 존재 여부를 확인할 수 있지만, 조금 더 깊게 살펴보면, `gleam/os` 모듈의 함수들은 내부에서 `Std.File` 모듈을 이용하고 있는 것을 알 수 있습니다. 따라서 직접 `Std.File` 모듈의 함수를 사용해도 동일한 결과를 얻을 수 있습니다. `Std.File` 모듈은 파일 및 디렉터리를 효율적으로 다룰 수 있는 다양한 함수들을 제공합니다. 자세한 내용은 공식 문서를 참고하시기 바랍니다.
+
+## 더 알아보기
+
+- [Gleam 공식 문서](https://gleam.run/)
+- [Gleam 개발자 블로그](https://medium.com/gleam-lang)
+- [Gleam GitHub 리포지토리](https://github.com/gleam-lang/gleam)

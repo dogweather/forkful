@@ -1,34 +1,46 @@
 ---
-title:                "C#: Merkkijonon iso kirjoittaminen"
+title:                "C#: Pienentäminen ja suurentaminen"
+simple_title:         "Pienentäminen ja suurentaminen"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi Capitalize?
+## Miksi:
+Miksi kukaan haluaisi muuttaa merkkijonon kaikki kirjaimet ISOIKSI?
 
-Capitalizen käyttäminen on tärkeää, kun haluat muuttaa kirjainkoon merkkijonossa. Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluat varmistaa, että tietokannan tallentamat tiedot ovat yhtenäisessä muodossa tai kun haluat käyttäjän syöttämää tekstiä näyttämään siistimmältä ja helpommin luettavalta. Se on myös hyödyllistä, kun työskentelet käyttäjän kanssa ja haluat välttää mahdolliset virheet tapahtumasta, kuten nimien väärin kirjoittamisesta.
+Vastaus on yksinkertainen - joskus on tarvetta muuttaa merkkijonoa eri muotoon. Tämä voi olla tarpeellista esimerkiksi tietokantakyselyiden tekemisessä, käyttäjän syötteen käsittelyssä tai yksinkertaisesti merkkijonon muotoilussa. Tässä blogikirjoituksessa opit, miten voit käyttää C#-kielen toimintoja muuttaaksesi merkkijonon kaikki kirjaimet isoiksi.
 
-## Kuinka käyttää Capitalizea?
-
-Capitalizen käyttäminen on helppoa C#:ssa. Sinun tarvitsee vain käyttää String-luokan Capitalize-metodia ja antaa sille haluamasi merkkijono parametrina. Alla on esimerkki siitä, kuinka Capitalizea käytetään:
-
+## Kuinka:
 ```C#
-string s = "tämä on esimerkki";
-string capitalized = s.Capitalize();
-Console.WriteLine(capitalized);
+string merkkijono = "Tämä on esimerkki merkkijonosta.";
+
+// Käytetään string-luokan ToUpper() -metodia muuttaaksesi merkkijonon kaikki kirjaimet isoiksi.
+string uusiMerkkijono = merkkijono.ToUpper();
+
+Console.WriteLine(uusiMerkkijono);
+// Uusi merkkijono on "TÄMÄ ON ESIMERKKI MERKKIJONOSTA."
 ```
 
-Tämä tulostaisi "Tämä On Esimerkki" konsoliin. Huomaa, että alkuperäistä merkkijonoa ei muutettu, vaan Capitalize-metodi luo uuden merkkijonon, josta kaikki sanat on muutettu aloittamaan isolla kirjaimella.
+Kuten yllä olevasta koodiesimerkistä näet, merkkijonon kaikkien kirjainten muuttaminen isoiksi on erittäin helppoa C#-kielen string-luokan ToUpper() -metodilla. Voit käyttää tätä metodia mihin tahansa merkkijonoon, joka sisältää vähintään yhden kirjaimen.
 
-## Syvällinen selitys Capitalizen toiminnasta
+```C#
+string nimi = "Finnish Readers";
 
-Capitalizen toiminta perustuu siihen, että se käy läpi merkkijonon sanat, ja muuttaa jokaisen sanan ensimmäisen kirjaimen isoksi. Lisäksi se muuttaa kaikki muut kirjaimet pieniksi, joten kaikki sanat ovat yhtenäisessä muodossa. Tämä tehdään käyttämällä Char-tietotyyppiä, joka edustaa yhtä merkkiä ja sen sisältämää Unicode-tietokantaa.
+Console.WriteLine(nimi.ToUpper());
+// Uusi merkkijono on "FINNISH READERS"
+```
 
-## Katso myös
+Mutta miten tämä toimii taustalla?
 
-- [String-luokan dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/api/system.string?view=net-5.0)
-- [Char-tietotyypin dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/api/system.char?view=net-5.0)
-- [C# perusteet - kokoelmien käsittely](https://www.tutorialsteacher.com/csharp/csharp-string)
+## Syvempi sukellus:
+Kun käytät ToUpper() -metodia, C#-kieli muuttaa merkkijonon jokaisen kirjaimen ISOIKSI. Tämä perustuu siihen, että jokaiselle kirjaimelle on olemassa vastaava ISO-koodi. Esimerkiksi kirjaimelle "a" on olemassa kaksi eri ISO-koodia - "A" ja "a". Metodi tarkistaa jokaisen merkin ja korvaa sen ISO-koodilla, jos sellainen löytyy.
+
+On myös hyvä huomata, että ToUpper() -metodi ei vaikuta merkkijonon alkuperäiseen muotoon, vaan se luo uuden merkkijonon, joka sisältää muutetut isot kirjaimet. Tämä on tärkeä huomioitava esimerkiksi silloin, kun käsittelet käyttäjän syöttämää tietoa ja haluat säilyttää alkuperäisen merkkijonon muodon.
+
+## Katso myös:
+- [String-luokka (C#-ohjelmointiopas)](https://docs.microsoft.com/fi-fi/dotnet/api/system.string?view=net-5.0)
+- [ToUpper() -Metodi (C#-ohjelmointiopas)](https://docs.microsoft.com/fi-fi/dotnet/api/system.string.toupper?view=net-5.0)

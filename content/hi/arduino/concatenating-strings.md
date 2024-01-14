@@ -1,28 +1,43 @@
 ---
-title:                "Arduino: स्ट्रिंगों को संयोजित करना"
+title:                "Arduino: स्ट्रिंग्स को जोड़ना"
+simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-आपने अभी तक Arduino के कोडिंग में string concatenation शब्द सुने ही होंगे। इसका मतलब है कि आप कुछ अलग-अलग strings को एक साथ जोड़ना चाहते हैं। यह आमतौर पर वर्कशीट को अभिव्यक्त करने के लिए किया जाता है, जब आपको विशेष तारीके से संग्रहीत करना होता है।
 
-## कैसे
+Arduino प्रोग्रामिंग का एक महत्वपूर्ण तत्व तारों को जोड़ने का है। यह विधि आपको दो या अधिक तर्कों को एक ही स्ट्रिंग में जोड़ने की अनुमति देती है, जो कि आपके स्केच को अधिक बढ़िया बनाता है।
+
+## कैसे करें
+
+Arduino में तारों को जोड़ने के लिए, हम `concat()` फ़ंक्शन का उपयोग करते हैं। इस फंक्शन को दो स्ट्रिंग्स के साथ कॉल किया जा सकता है और यह उन्हें एक ही स्ट्रिंग में जोड़ देगा। नीचे दिए गए उदाहरण में हम `firstString` और `secondString` नामक दो स्ट्रिंग्स को जोड़ रहे हैं।
+
 ```Arduino
-String str1 = "Hello";
-String str2 = "world";
-Serial.println(str1 + " " + str2); /*output: Hello world*/
+String firstString = "Hello";
+String secondString = "World";
+String finalString = firstString.concat(secondString);
+Serial.println(finalString);
+// Output: HelloWorld
 ```
 
-आप देख सकते हैं कि यहां हमने दो strings को प्रिंट करने के लिए "+" ऑपरेटर का प्रयोग किया है। साथ ही हमने पढ़ा कि Arduino में strings को concatenate करने के लिए "+","+=" और "concat()" ऑपरेटर उपलब्ध है। आप जितनी चाहें उतने स्ट्रिंग्स को जोड़ सकते हैं।
+## गहराई में जाएं
 
-## गहराई में
-जब आप strings को "+" ऑपरेटर से जोड़ते हैं, तो यह वास्तव में उस strings को concatenate करता है जो उस वक्त में पहले से ही मौजूद होते हैं। अगर आप उस strings को इसके बाद बदलते हैं, तो यह उसको स्वतः आगे चलकर concatenate करता है। और अगर आप इस strings को किसी भी प्रकार से modify करते हैं, तो आपको इसे सामान्य सुम्मा की तरह ही concatenate करना होगा।
+Arduino में तारों को जोड़ने के लिए `concat()` फ़ंक्शन का उपयोग करना एक बहुत ही सरल और सटीक तरीका है। लेकिन, यदि आप एक अधिक उत्कृष्ट विकासक हैं, तो आप अपने स्केच में अन्य तरीकों से भी तारों को जोड़ सकते हैं। आप `+` ऑपरेटर का उपयोग करके भी स्ट्रिंग तारों को जोड़ सकते हैं।
+
+```Arduino
+String firstString = "Hello";
+String secondString = "World";
+String finalString = firstString + secondString;
+Serial.println(finalString);
+// Output: HelloWorld
+```
 
 ## देखें भी
-- [String concatenation tutorial by Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
-- [String concatenation examples by Hackster](https://www.hackster.io/Arduino_Genuino/string-concatenation-using-arduino-9fc181)
-- [Tutorial on using the String library by GeeksforGeeks](https://www.geeksforgeeks.org/working-with-strings-using-string-library-in-arduino-ide/)
+
+- [आर्दुइनो के साथ बच्चों को कोडिंग सिखाने के लिए 5 आसान तरीके](https://hindi.arduino.cc/blog/teaching-kids-coding-with-arduino/)
+- [आर्दुइनो के साथ स्मार्ट होम बनाने के लिए सरल उपकरण](https://hindi.arduino.cc/blog/building-a-smart-home-with-arduino/)

@@ -1,43 +1,44 @@
 ---
-title:                "Gleam: Lecture des arguments en ligne de commande"
+title:                "Gleam: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi lire les arguments de ligne de commande en programmation Gleam ?
+## Pourquoi
 
-Si vous êtes un développeur en programmation Gleam, vous êtes sûrement familier avec l'utilisation de la ligne de commande pour exécuter vos programmes. Mais saviez-vous qu'il est également possible de lire des arguments de ligne de commande dans vos programmes ? Dans cet article, nous allons explorer pourquoi il peut être utile de le faire et comment le faire en utilisant le langage Gleam.
+Si vous êtes un développeur qui aime travailler avec la ligne de commande, alors vous savez que la manipulation des arguments en ligne de commande est un aspect important de la programmation. Lire les arguments en ligne de commande peut vous aider à personnaliser l'exécution de votre programme en fonction des entrées de l'utilisateur. Dans cet article, nous allons vous montrer comment lire les arguments en ligne de commande en utilisant Gleam.
 
 ## Comment faire
 
-Pour lire les arguments de ligne de commande en Gleam, nous allons utiliser la fonction `Gleam.Args.parse` qui prend un tableau de chaînes de caractères en entrée et retourne une structure de données contenant les arguments. Voici un exemple de code :
-
-```Gleam 
-import gleam/io
-
-let args = Gleam.Args.parse(os.args)
-
-gleam/io.info("Les arguments de la ligne de commande sont : (${args})")
-```
-
-Lorsque nous exécutons ce code avec la commande `gleam run monprogramme gleam`, nous obtenons le résultat suivant dans la console :
+Pour lire les arguments en ligne de commande en utilisant Gleam, nous allons utiliser la fonction `gleam/program/args.get()` qui retourne une liste de valeurs. Dans l'exemple ci-dessous, nous allons afficher tous les arguments passés lors de l'exécution du programme :
 
 ```
-Les arguments de la ligne de commande sont : ([monprogramme, gleam])
+Gleam program args.get()
+|> io.format("%?", "/"println)
 ```
 
-Comme vous pouvez le voir, la fonction `parse` nous retourne un tableau avec le nom de notre programme en premier élément, suivi des arguments spécifiés lors de l'exécution. Vous pouvez ensuite utiliser ces arguments dans votre programme pour contrôler son comportement en fonction des paramètres donnés.
+Si nous exécutons ce programme avec `gleam run program.gleam un deux trois`, la sortie sera `["un", "deux", "trois"]`.
 
 ## Plongée en profondeur
 
-La fonction `Gleam.Args.parse` a quelques options supplémentaires qui permettent de spécifier des arguments optionnels, de vérifier leur type et de leur donner des valeurs par défaut. Pour en savoir plus sur ces options, vous pouvez consulter la documentation officielle du langage Gleam.
+Il est important de noter que les arguments en ligne de commande sont traités comme des chaînes de caractères par Gleam. Cela signifie que si vous voulez les utiliser comme des entiers ou des booléens, vous devrez les convertir en utilisant des fonctions telles que `int.from_string()` ou `bool.from_string()`. De plus, il est possible de spécifier des arguments avec des drapeaux en utilisant le préfixe `-` ou `--` avant le nom du drapeau. Dans cet exemple, nous allons afficher la valeur du drapeau `--message` :
 
-De plus, il est important de noter que cette fonction ne fonctionne que pour les programmes Gleam compilés. Si vous souhaitez utiliser des arguments de ligne de commande dans votre code non compilé, vous devrez utiliser une bibliothèque tierce.
+```
+Gleam program args.get()
+|> Map.get("message")
+|> option.unwrap_or_else(|| "NO MESSAGE")
+|> io.format("The message is: %?", "/", println)
+```
 
-# Voir aussi
+Si nous exécutons ce programme avec `gleam run program.gleam --message "Hello World!"`, la sortie sera `The message is: Hello World!`.
 
-- [Documentation officielle du langage Gleam](https://gleam.run/book/tour/command-line-arguments.html)
-- [Bibliothèque de traitement des arguments de ligne de commande en Gleam](https://github.com/gleam-lang/gleam-args)
+## Voir aussi
+
+- La documentation officielle de Gleam sur la manipulation des arguments en ligne de commande : https://gleam.run/book/basics/block-arguments.html
+- Un tutoriel en français pour débuter avec Gleam : https://dev.to/csstoltenberg/commencer-avec-gleam-2fig
+- Un guide en ligne de Gleam pour apprendre les bases : https://gleam.run/

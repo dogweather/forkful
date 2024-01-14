@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Konwersja daty na ciąg znaków."
+title:                "Clojure: Konwertowanie daty na ciąg znaków"
+simple_title:         "Konwertowanie daty na ciąg znaków"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/converting-a-date-into-a-string.md"
 ---
 
@@ -9,40 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu spotykamy się z koniecznością przetworzenia daty na ciąg znaków, który będzie czytelny dla użytkownika. W tym wpisie dowiesz się, jak w prosty sposób wykonać tę konwersję w języku Clojure.
+Konwersja daty na ciąg znaków jest niezbędnym narzędziem w wielu programach, szczególnie tych związanych z obsługą danych lub wyświetlaniem informacji użytkownikowi. W tym artykule dowiesz się, jak za pomocą języka Clojure przekonwertować datę na czytelny dla człowieka format.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Pierwszym krokiem jest zaimportowanie biblioteki `clj-time`, która udostępnia funkcje do pracy z datami. Następnie, używając funkcji `format`, możemy przekształcić datę w wybrany przez nas format. Poniżej znajdują się przykładowe użycia tej funkcji:
-
-```Clojure
-(ns date-to-string.core
-  (:require [clj-time.format :as fmt]))
-
-(fmt/format "dd MMMM yyyy" (clj-time.core/now))
-;; Output: "10 października 2021"
-
-(fmt/format "dd-MM-yyyy" (clj-time.core/now))
-;; Output: "10-10-2021"
-```
-Funkcja `format` przyjmuje dwa argumenty - format, na jaki chcemy przekształcić datę oraz samą datę.
-
-Możemy również wykorzystać funkcję `parse` do przekształcenia ciągu znaków w datę. Przykład:
+Pierwszym krokiem jest zaimportowanie modułu Java.time, który jest odpowiedzialny za zarządzanie datami w języku Clojure.
 
 ```Clojure
-(ns date-to-string.core
-  (:require [clj-time.format :as fmt]))
-
-(fmt/parse (clj-time.format/datetime-formatter "dd-MM-yyyy") "10-10-2021")
-;; Output: #object[org.joda.time.DateTime 0xb5d7ce9f "2021-10-10T00:00:00.000Z"]
+(require '[java.time :as time])
 ```
 
-## Głębsze zagadnienia
+Następnie możemy utworzyć obiekt daty za pomocą funkcji `now` z modułu `LocalDate`.
 
-Podczas pracy z datami warto zwrócić uwagę na użycie funkcji `format-local` i `parse-local` zamiast `format` i `parse`. Jest to zalecane w przypadku, gdy pracujemy z datami w różnych strefach czasowych. Ponadto, biblioteka `clj-time` oferuje wiele innych funkcji do pracy z datami, takich jak `plus`, `minus`, czy `duration`.
+```Clojure
+(def data-dzisiejsza (time/LocalDate/now))
+```
 
-## Zobacz również
+Teraz pozostaje tylko przekonwertować tę datę na ciąg znaków za pomocą funkcji `toString`.
 
-- Dokumentacja biblioteki `clj-time`: https://clj-time.github.io/clj-time/
-- Konwersja typów danych w języku Clojure: https://clojure.org/guides/spec#_converting_between_types
-- Praca z datami za pomocą biblioteki `java.time` w Clojure: https://www.baeldung.com/java-time-clojure
+```Clojure
+(def data-tekstowa (.toString data-dzisiejsza))
+```
+
+W efekcie otrzymujemy datę w formacie `rrrr-mm-dd`, na przykład "2021-02-15".
+
+## Rzut Okiem
+
+Każda data w języku Clojure jest przechowywana jako obiekt, więc w przypadku konwersji na ciąg znaków musimy uważać na odpowiednie formatowanie. Jeśli chcemy otrzymać datę w innym formacie niż "rrrr-mm-dd", możemy skorzystać z metody `format` z modułu `LocalDate`.
+
+```Clojure
+(def data-formatowana (.format data-dzisiejsza (time/format "dd.MM.rrrr")))
+```
+
+Tutaj określamy pożądany format za pomocą specjalnych znaków, na przykład "dd.MM.rrrr" oznacza datę w formacie "dzisiaj.miesiąc.rok", czyli "15.02.2021".
+
+## Zanurzenie W Temat
+
+W języku Clojure można również skonwertować datę i czas do jednego obiektu za pomocą modułu `LocalDateTime`.
+
+```Clojure
+(def data-i-czas (time/LocalDateTime/now))
+```
+
+Pozwala to na jeszcze większą kontrolę nad wyświetlanymi informacjami, na przykład można wyświetlić czas wraz z datą za pomocą formatu "rrrr-mm-dd hh:mm:ss".
+
+```Clojure
+(def data-i-czas-formatowane (.format data-i-czas (time/format "rrrr-mm-dd hh:mm:ss")))
+```
+
+W ten sposób otrzymujemy datę w formacie "2021-02-15 15:47:25".
+
+## Zobacz Również
+
+Jeśli chcesz dowiedzieć się więcej o pracy z datami w języku Clojure, polecamy zapoznać się z dokumentacją modułu Java.time oraz skorzystać z następujących linków:
+
+- [Java.time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Przykłady formatowania dat w Clojure](https://clojuredocs.org/clojure.java-time/format)
+- [Poradnik dotyczący pracy z datami i czasem w Clojure](https://purelyfunctional.tv/guide/clojure-date-time/)

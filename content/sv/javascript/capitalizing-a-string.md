@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Stor bokstavering av en sträng"
+title:                "Javascript: Kapitalisera en sträng"
+simple_title:         "Kapitalisera en sträng"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/capitalizing-a-string.md"
 ---
 
@@ -9,29 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna omvandla en sträng till versaler är en viktig del av programmering, särskilt när man arbetar med textbearbetning och formatering av utdata. Det gör att texten blir lättare att läsa och kan också krävas för att uppfylla vissa krav för vissa program eller webbsidor. Det är en enkel men användbar funktion som alla utvecklare bör ha i sin verktygslåda.
+Att kunna ändra en sträng till versaler eller gemener är en viktig funktion i programmering eftersom det ger en möjlighet att hantera text på ett mer effektivt sätt. Till exempel kan man använda detta för att jämföra strängar på ett mer enhetligt sätt.
 
-## Hur man gör det
+## Hur Du Gör Det
 
-Det finns många olika sätt att omvandla en sträng till versaler i Javascript, men det vanligaste och enklaste är att använda funktionen `toUpperCase()`. Denna funktion tar en sträng som argument och returnerar en ny sträng med bara versaler. Här är ett exempel på hur du kan använda det i en kod:
+För att ändra en sträng till versaler i Javascript kan du använda metoden `toUpperCase()`. Här är ett exempel på hur du kan använda denna metod:
 
 ```Javascript
-let text = "hej! välkommen till min blogg!";
-console.log(text.toUpperCase());
+let str = "hej allesammans!";
+let capitalizedStr = str.toUpperCase();
 
-//Output: HEJ! VÄLKOMMEN TILL MIN BLOGG!
+console.log(capitalizedStr);
 ```
 
-Som du kan se behåller funktionen `toUpperCase()` alla andra teckenbaserade delar av strängen, men omvandlar bara de bokstäver som är i gemener till versaler.
+Detta kommer att skriva ut "HEJ ALLESAMMANS!" i din konsol. Du kan också använda metoden `toLowerCase()` för att ändra en sträng till gemener på samma sätt.
 
-Det är också möjligt att använda `charAt()` och `charCodeAt()` för att iterera igenom en sträng och omvandla varje tecken till versaler, men detta är ett mer komplicerat tillvägagångssätt och rekommenderas bara för avancerade användare.
+## Djupdykning
 
-## Deep Dive
+Det finns flera olika sätt att ändra en sträng till versaler eller gemener i Javascript. En annan metod är att använda `charAt()` och `charCodeAt()` för att iterera genom varje tecken i strängen och ändra dess kodvärde till det önskade fallet. Detta är dock en något mer avancerad metod och används sällan jämfört med `toUpperCase()` och `toLowerCase()`.
 
-För de som vill lära sig mer om hur versaler fungerar i Javascript och andra programmeringsspråk kan det vara värt att titta närmare på Unicode-standarderna. Versalt till gemena omvandling är en del av Unicode-tablellen och är baserad på deras hierarkiska struktur av bokstäver och tecken. Detta är en intressant djupdykning i hur datorer hanterar text och kan hjälpa till att förbättra dina färdigheter som utvecklare.
+Det är också viktigt att komma ihåg att det finns skillnader i hur teckenkoderna för versaler och gemener är ordnade i olika teckenuppsättningar, vilket kan orsaka problem när du hanterar text på flera språk. Det är därför viktigt att alltid kontrollera vilken teckenuppsättning som används för att undvika oväntade resultat.
 
-## Se även
+## Se Också
 
-- [String.prototype.toUpperCase() - MDN Web Docs](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [JavaScript Strings - W3Schools](https://www.w3schools.com/js/js_strings.asp)
-- [Unicode Character Categories - Unicode.org](https://unicode.org/versions/Unicode13.0.0/ch04.pdf)
+- [Doc: String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [Doc: String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Blogg: Versaler och gemener i Unicode](https://unicode.org/faq/casemap_charprop.html)

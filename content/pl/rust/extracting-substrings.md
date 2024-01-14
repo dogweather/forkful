@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Wydobywanie podciągów"
+title:                "Rust: Wycinanie podciągów"
+simple_title:         "Wycinanie podciągów"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/extracting-substrings.md"
 ---
 
@@ -9,48 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszym poście porozmawiamy o tym, jak w języku Rust wyciągać podciągi czyli fragmenty ciągów znaków. Jest to przydatna umiejętność, która może przydać się w różnych sytuacjach, na przykład podczas przetwarzania tekstu czy analizowania danych.
+Ekstrakcja podciągów jest często wykorzystywaną funkcją w programowaniu i może mieć wiele zastosowań. Może być wykorzystywana do filtrowania danych, manipulowania tekstami lub tworzenia wygodnych funkcji dla użytkowników. W tym artykule dowiesz się, dlaczego warto nauczyć się tej funkcji w języku Rust.
 
 ## Jak to zrobić
 
-Aby wyciągnąć podciągi w języku Rust, możemy skorzystać z metody `slice()`. W poniższym kodzie, przyjmijmy, że mamy zmienną `text`, która zawiera cały ciąg znaków, a chcemy pobrać tylko jego fragment od 5. do 10. pozycji:
+Aby wydobyć podciągi w języku Rust, można użyć metody `slice()` lub notacji indeksowej `[]`. Spójrzmy na przykładowy kod:
 
 ```Rust
 let text = "To jest przykładowy tekst";
-let substring = &text[5..10]; // tutaj wykorzystujemy metodę slice()
-println!("{}", substring); // output: jest 
+let extracted = &text[4..11];
+
+println!("{}", extracted);
 ```
 
-Ważne jest, aby pamiętać o indeksowaniu od zera, dlatego 5. pozycja odpowiada w rzeczywistości 6. znakowi w ciągu. Aby pobrać do końca ciągu, możemy skorzystać z indeksu `..` na końcu naszego zakresu, na przykład `0..` oznacza od początku do końca ciągu.
-
-Również warto wspomnieć, że w języku Rust wyciąganie podciągów jest bardzo wydajne, ponieważ nie tworzy nowych ciągów, a jedynie referencję do istniejącego ciągu, co jest ważne szczególnie w przypadku pracy z dużymi danymi.
-
-## Deep Dive
-
-Metoda `slice()` akceptuje również zmienne typu `String` lub `StringLiteral`. W przypadku typu `String`, możemy użyć metody `as_str()` aby uzyskać ciąg znaków, na którym możemy wywoływać metodę `slice()`.
-
-```Rust
-let text = String::from("To jest przykładowy tekst");
-let substring = &text[5..10];
-println!("{}", substring); // output: jest
-```
-
-Jeśli natomiast mamy po prostu ciąg znaków umieszczony w kodzie, możemy wywołać metodę `as_ref()` aby uzyskać referencję do niego i następnie wywołać metodę `slice()`.
+Rezultatem powyższego kodu będzie wydrukowanie podciągu "jest pr". Możemy także użyć metody `find()` w celu znalezienia konkretnego znaku lub podciągu w tekście. Poniżej przedstawiono przykład:
 
 ```Rust
 let text = "To jest przykładowy tekst";
-let substring = &text.as_ref()[5..10];
-println!("{}", substring); // output: jest
+let found = text.find("przykładowy");
+
+println!("{}", found);
 ```
 
-W ten sposób możemy wyciągać podciągi z różnych typów danych w języku Rust.
+Wynikiem powyższego kodu będzie wydrukowanie indeksu, na którym znajduje się szukany podciąg, w tym przypadku będzie to wartość 8.
 
-## Zobacz również
+## Głębszy zanurzenie
 
-Jeśli chcesz dowiedzieć się więcej o manipulacji ciągami znaków w języku Rust, zapoznaj się z następującymi materiałami:
+W języku Rust, podciągi są reprezentowane przez typ danych `&str`, który jest odpowiednikiem dla typu `String` zmutowalnego. Jednak wydobyte podciągi nie będą zmutowane w oryginalnym tekście, co jest ważne do zapamiętania.
 
-- [Oficjalna dokumentacja Rust](https://www.rust-lang.org/learn)
-- [Getting started with Rust](https://dev.to/penelope_zone/getting-started-with-rust-1a1e)
-- [The Rust Programming Language Book](https://doc.rust-lang.org/book/title-page.html)
+Istnieje kilka rzeczy, które warto zauważyć przy korzystaniu z funkcji ekstrakcji podciągów w języku Rust:
 
-Dziękujemy za przeczytanie tego postu i mamy nadzieję, że pomógł on w zrozumieniu jak wyciągać podciągi w języku Rust. Do zobaczenia w kolejnym artykule!
+1. Indeksowanie rozpoczyna się od zera, dlatego przedział `[4..11]` z poprzedniego przykładu właściwie odnosi się do znaków od 5 do 10 w tekście, ponieważ znak o indeksie 11 nie jest uwzględniony.
+2. Wydobywanie podciągów poza zakresem spowoduje błąd wykonania programu, dlatego warto upewnić się, że wybrany zakres jest poprawny.
+3. Metoda `find()` zwróci `None` jeśli nie znajdzie szukanego znaku lub podciągu, dlatego należy sprawdzić czy wartość jest dostępna przed wydrukowaniem lub wykorzystaniem w dalszej części kodu.
+
+## Zobacz też
+
+- Dokumentacja Rust na temat funkcji ekstrakcji podciągów: https://doc.rust-lang.org/std/primitive.str.html#method.slice
+- Przydatne wskazówki na temat pracy z podciągami w Rust: https://www.newline.co/write-a-safe-string-slice-in-rust/

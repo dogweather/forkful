@@ -1,7 +1,9 @@
 ---
 title:                "Java: テストを書く"
+simple_title:         "テストを書く"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/writing-tests.md"
 ---
 
@@ -9,43 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜテストを書くのか
 
-テストを書くという行為には多くの理由がありますが、最も重要なのはコードの品質を保証することです。テストを書くことで、バグやエラーをより早く発見し、修正することができます。これにより、ソフトウェアの信頼性が向上し、より高い品質の製品を提供することができるようになります。
+プログラミングをする際、まず最初に行うことの一つがテストの作成です。テストを書くことにより、自分の書いたコードが正しく動作するかどうかを確認することができます。また、将来コードを改善したり、他の人がコードを修正する際にもテストがあれば安心して修正することができます。
 
-## テストを書く方法
+## テストの書き方
 
-テストを書く方法は多様ですが、ここではJUnitと呼ばれるJava用のテスティングフレームワークを使用した例を紹介します。以下のコードブロックを参考に、自分のコードに合わせてテストを書くことができます。
-
+テストを書くためには、まずテストするためのメソッドを作成します。次に、テストしたいコードを実際に呼び出して、期待する結果と実際の結果を比較するようにコードを書きます。最後に、テストを実行するコマンドを実行し、テストの結果を確認します。
 ```Java
 @Test
-public void testAdd() {
+public void testAddition() {
     Calculator calculator = new Calculator();
-    int result = calculator.add(3, 5);
-    assertEquals(8, result); // Expected output: 8
+    int result = calculator.add(2, 3);
+    assertEquals(5, result);
 }
 ```
 
-このコードは、Calculatorクラスのaddメソッドが正しく機能するかテストしています。まず、Calculatorオブジェクトを作成し、addメソッドを使用して3と5を足した結果をresult変数に代入します。そして、assertEqualsメソッドを使用して期待される結果が8であることを検証します。もし計算結果が期待通りでなければ、テストは失敗となります。
+上記の例では、加算を行うメソッドをテストしています。`assertEquals`メソッドを使用することで、実際の結果が期待する結果と一致するかどうかを確認しています。テストが成功すると、テストの結果は次のように表示されます。
+```
+テスト件数: 1, 失敗件数: 0
+```
 
-## テストの深層に潜る
+## テストの深堀り
 
-テストを書く際に気をつけるべき点やより高度なテストの手法など、より深い知識を得ることができるリソースを紹介します。
+テストを書く際には、さまざまなテストの種類やテストする範囲を考慮する必要があります。たとえば、単体テストでは個々のメソッドの動作を確認しますが、結合テストでは複数のメソッドやクラスが協調して正しく動作するかを確認します。また、例外処理や境界値テストなども重要なテストの種類です。
 
-* [JUnit公式ドキュメント](https://junit.org/junit5/docs/current/user-guide/)
-* [ユニットテストの基礎](https://www.tutorialspoint.com/junit/junit_environment_setup.htm)
-* [モックオブジェクトを使用したテスト](https://www.baeldung.com/mockito-series)
-* [コードカバレッジとは何か](https://www.geeksforgeeks.org/code-coverage-in-software-testing/)
+テストを書く際には、できる限り網羅的にテストすることが重要です。テストし忘れや、十分なテストが行われていないとバグが見つかっても修正が難しくなることがあります。また、テストコードもメンテナンスする必要があるため、クリーンで読みやすいテストコードを書くように心がけましょう。
 
-## さらに学ぶ
+## 一緒に見てみよう
 
-テストを書くことはソフトウェア開発において欠かせない重要なスキルの一つです。より詳細な知識を得るためにさらに学ぶことをお勧めします。
+テストの書き方やテストの深堀りについてご紹介しましたが、実際にコードを書いてみるとより理解が深まるかと思います。以下のリンクからサンプルコードをご覧いただけますので、ぜひ参考にしてみてください。
 
-* [テスト駆動開発（TDD）の基本](https://www.agilealliance.org/glossary/tdd/)
-* [コードリーディングの技術を磨くためのTips](https://www.anthonyarbaut.com/jp/blog/code-reading/)
-* [実践的なテスト自動化](https://dev.classmethod.jp/articles/try-testing-function-inside-app/)
-* [テストコードのメンテナンスに関するベストプラクティス](https://juliandale.com/2015/04/tips-for-maintaining-tests/)
+### 参考リンク
+- [JUnitを使用したテストの書き方](https://www.codejava.net/testing/junit-testing-beginners-guide)
+- [JUnitの基本](https://junit.org/junit4/)
+- [JavaのEqualsとJUnitのassertEqualsの違い](https://stackoverflow.com/questions/19190571/difference-between-java-lang-object-equals-and-org-junit-assert-equals) 
 
-## 関連リンク
+## 関連記事を見る
 
-* [JavaにおけるTDDのパターン](https://www.javaworld.com/article/2078513/core-java/unit-test-java-1-3-classes-with-mock-objects.html)
-* [ソフトウェアテスターとしてのキャリアパス](https://www.testguys.net/japan/2019/07/17/software-testing-as-a-career-path/)
-* [エラーハンドリングにおけるテストの重要性](https://www.guru99.com/java-exceptions-handling.html)
+テストはプログラミングにおいて欠かせない重要なプロセスです。より実践的なテストの書き方やテスト駆動開発(TDD)について学びたい方は、以下のリンクから関連記事をご覧ください。
+
+###

@@ -1,7 +1,9 @@
 ---
 title:                "C: Commencer un nouveau projet"
+simple_title:         "Commencer un nouveau projet"
 programming_language: "C"
-category:             "Getting Started"
+category:             "C"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/starting-a-new-project.md"
 ---
 
@@ -9,54 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes passionné par la programmation en C, vous avez probablement déjà pensé à lancer un nouveau projet. Mais pourquoi se lancer dans cette aventure ? Il y a plusieurs raisons qui pourraient vous motiver. Peut-être avez-vous une idée de programme qui n'existe pas encore ou vous souhaitez améliorer un existant. Peut-être voulez-vous simplement vous challenger et apprendre de nouvelles compétences. Quelle que soit la raison, c'est un excellent moyen d'utiliser vos connaissances en C et de créer quelque chose de nouveau et utile.
+Que vous soyez un développeur expérimenté ou un débutant en programmation, il est toujours excitant de démarrer un nouveau projet. Cela peut être pour améliorer vos compétences, pour un projet personnel ou même pour quelque chose de plus significatif comme une contribution à la communauté open-source. Quelle que soit la raison, il est important de comprendre les étapes à suivre pour bien démarrer un nouveau projet en programmation.
 
 ## Comment faire
 
-Maintenant que nous avons exploré les raisons pour démarrer un nouveau projet, passons à la partie technique. Voici quelques exemples de code pour vous aider à démarrer.
+Avant de commencer à écrire du code, il est important d'avoir une planification et une réflexion préalable. Voici quelques étapes à suivre pour bien démarrer votre projet en langage C.
 
 ```C
-#include <stdio.h>
+#include<stdio.h>
 
+// Déclaration de la fonction principale
 int main() {
-  printf("Bonjour le monde !");
-  return 0;
+
+    // Code à exécuter
+    printf("Bonjour, monde !");
+
+    // Retourne une valeur à la fin de la fonction
+    return 0;
 }
 ```
 
-Ce premier exemple est un classique en programmation : le fameux "Hello, World!". Ici, nous utilisons la bibliothèque standard `stdio.h` pour afficher un message à l'écran. Lorsque vous exécutez ce code, vous devriez voir le message "Bonjour le monde !" s'afficher.
+Dans l'exemple ci-dessus, nous pouvons voir une déclaration de fonction principale `main()` ainsi qu'un code à exécuter à l'intérieur des accolades. La fonction `printf()` est utilisée pour afficher du texte sur la console. Ensuite, nous avons une instruction `return` qui renvoie une valeur après l'exécution de la fonction.
 
-Voici un autre exemple plus avancé :
+Une fois que vous avez une compréhension de base de la structure du code en C, vous pouvez commencer à écrire votre propre code pour votre projet. Voici quelques choses importantes à garder à l'esprit :
 
-```C
-#include <stdio.h>
-
-int main() {
-  int nombre;
-  printf("Entrez un nombre : ");
-  scanf("%d", &nombre);
-  printf("Le carré de %d est %d", nombre, nombre * nombre);
-  return 0;
-}
-```
-Dans ce code, nous demandons à l'utilisateur d'entrer un nombre, puis nous calculons et affichons son carré. L'utilisation de la fonction `scanf` permet de capturer la valeur entrée par l'utilisateur et de la stocker dans la variable `nombre`.
+- Prenez le temps de bien comprendre le problème que vous essayez de résoudre.
+- Planifiez et réfléchissez à votre algorithme avant de commencer à écrire du code.
+- Écrivez votre code de manière organisée et facile à lire pour que les autres puissent comprendre et contribuer facilement.
+- Testez et déboguez votre code régulièrement pour vous assurer qu'il fonctionne correctement.
 
 ## Plongée en profondeur
 
-Maintenant que vous avez une idée de la façon de démarrer un projet en C, voyons quelques conseils pour rendre cette expérience plus productive et moins stressante.
+En plus des étapes de base pour commencer un projet en C, voici quelques autres conseils pour vous aider à réussir :
 
-Tout d'abord, commencez par un plan clair de ce que vous voulez réaliser. Cela peut sembler évident, mais souvent, les développeurs se lancent dans un projet sans vraiment savoir où ils veulent aller. Prenez le temps de définir les fonctionnalités de votre programme et de sa structure.
-
-Ensuite, n'hésitez pas à utiliser des outils tels que des gestionnaires de versions ou des frameworks pour vous aider à organiser et à gérer votre code. Cela vous fera gagner du temps et vous évitera des erreurs.
-
-Enfin, n'oubliez pas de faire des pauses régulières et de ne pas vous laisser submerger par le code. Prendre du recul et prendre soin de vous est essentiel pour maintenir un bon niveau de productivité.
+- Étudiez et comprenez les bonnes pratiques en matière de codage en C, telles que l'utilisation de la mémoire de manière efficace et la gestion des erreurs.
+- Utilisez des outils et des ressources comme des IDE (environnement de développement intégré) pour vous aider à écrire du code plus rapidement et de manière plus efficace.
+- N'ayez pas peur de demander de l'aide à d'autres développeurs en cas de besoin. La communauté open-source est généralement très accueillante et prête à aider.
 
 ## Voir aussi
 
-Voici quelques ressources utiles pour vous aider à démarrer votre nouveau projet en C :
-
-- [Documentation officielle du langage C](https://en.cppreference.com/w/c)
-- [Apprendre à programmer en C - OpenClassrooms](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c)
-- [GitHub - gestionnaire de versions](https://github.com/)
-
-N'oubliez pas de vous amuser et d'explorer toutes les possibilités offertes par le langage C dans votre nouveau projet !
+- [Débuter en programmation C](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c)
+- [Guide de style de programmation en C](https://www.sei.cmu.edu/legacy/).

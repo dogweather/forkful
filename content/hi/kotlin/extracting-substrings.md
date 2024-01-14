@@ -1,33 +1,37 @@
 ---
-title:                "Kotlin: उपरिंतुए स्तंभ निकालना"
+title:                "Kotlin: उप-स्ट्रिंग्स ताक निकालना"
+simple_title:         "उप-स्ट्रिंग्स ताक निकालना"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+# Kyun: Substrings ko nikalne me kyu laga rahe hai?
 
-क्या आपको कोटलिन प्रोग्रामिंग में स्ट्रिंग के आंश निकालना सीखना है? यदि हां, तो इस ब्लॉग पोस्ट में हम आपको स्ट्रिंग के आंश निकालने के लिए एक आसान तरीका सिखाएंगे जो आपको आपके कोड को अधिक मजबूत और उपयोगी बनाएगा। 
+Substrings ko nikalna kisi code ki flexibility aur readability ko bhadhata hai. Iske alawa, isse hum apne code ko optimize aur efficient banate hai. Substrings ka use kai alag alag situation me kiya ja sakta hai, jaise ki data cleaning, string manipulation, ya algorithms ki implementation me.
 
-## कैसे
+## Kaise Kare: Substrings ko nikalna
 
-```Kotlin
-fun main() {
-    val str = "Hello World"
-    println(str.substring(0, 5))
-}
+Substrings ko Kotlin me nikalne ke liye, hum `substring()` function ka use karte hai. Ye function hume ek range ya starting index aur ending index provide karta hai, jiske beech ke characters ko hum nikal sakte hai. Neechey diye gaye example ko dekhkar iska istemaal aur samajh sakte hai:
+
+```
+Kotlin val str = "Hello World"
+val subString = str.substring(0, 5)
+
+println(subString) // Output: Hello
 ```
 
-उपरोक्त कोड में, हमने "Hello World" नामक स्ट्रिंग से प्रथम पांच आंश निकाला है जिससे हमें "Hello" आंश मिलता है। आप भी अपनी स्ट्रिंग से चाहे जितने आंश निकाल सकते हैं और उन्हें अपनी जरूरत के अनुसार प्रिंट कर सकते हैं। यह आपके कोड को बहुत अधिक मजबूत बनाता है और उपयोगी बनाता है। 
+Is code me, humne `substring()` function ka use kiya hai `str` string ki starting index 0 aur ending index 5 tak. Iss tarah se humne `Hello` substring nikala hai. Is tarah se hum apne code me koi bhi range ya starting aur ending index ka combination use karke substring nikal sakte hai.
 
-## गहराई में
+## Gehri Khudayi: Substrings ka anant gyan
 
-स्ट्रिंग से आंश निकालना बहुत सारे प्रोग्रामिंग स्प्रेडशीट के लिए बहुत महत्वपूर्ण है। यह आपके कोड को अधिक स्पष्ट बनाता है और कोड को पढ़ने और समझने में आसानी प्रदान करता है। आप स्ट्रिंग से आंश निकालने के लिए अन्य अल्गोरिदम्स भी इस्तेमाल कर सकते हैं जैसे गहराई के और दायरे का आंश, खाली स्थान वाला आंश आदि। 
+String manipulation ke liye, hum substring ka use karte hai. Isse hum apne strings ko extract aur manipulate kar sakte hai. Substrings ko niyamit taur par istemaal karke, hum apne code ko efficient aur optimized bana sakte hai. Substrings ko use karke, hum alag alag patterns aur combinations bana sakte hai, jisse hum apne code ko aur bhi powerful bana sakte hai.
 
-## देखिए भी
+## Dekhe Bhi:
 
-- [कोटलिन स्ट्रिंग ऑपरेशंस मैनुअल](https://kotlinlang.org/docs/reference/strings.html)
-- [गहराई के आंश निकालने के लिए अन्य अल्गोरिदम्स](https://www.geeksforgeeks.org/program-for-substring-removal/)
-- [रेगुलर एक्सप्रेशन इस्तेमाल करके स्ट्रिंग से आंश निकालना](https://www.ba
+- [Substring function in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+- [Different ways to extract substrings in Kotlin](https://www.baeldung.com/kotlin/substring)
+- [Kotlin Strings Tutorial](https://www.geeksforgeeks.org/kotlin-standard-strings/)

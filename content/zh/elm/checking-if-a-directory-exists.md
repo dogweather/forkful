@@ -1,43 +1,53 @@
 ---
 title:                "Elm: 检查目录是否存在"
+simple_title:         "检查目录是否存在"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要检查目录是否存在？
+为什么要检查目录是否存在？
 
-在编程中，有时候我们需要检查某个目录是否存在。这个功能可以让我们在程序中做出不同的逻辑分支，从而更好地控制程序的行为。接下来，我会介绍如何使用Elm语言来检查目录是否存在，并深入探讨这个功能的一些细节。
+检查一个目录是否存在是很有用的，尤其是当你需要在程序中操作多个文件和目录时。通过检查目录是否存在，你可以避免出现不必要的错误和异常，从而使你的程序更加稳定。
 
-## 如何实现目录检查？
-
-为了检查目录是否存在，我们需要使用`File`模块中的`exists`函数。一起来看一个简单的例子：
+如何进行检查？
 
 ```Elm
-import File exposing (exists)
+import File
+import Process
 
-main =
-    case exists "path/to/directory" of
-        True ->
-            -- do something if directory exists
-            "This directory exists!"
+dirPath = "my_directory"
 
-        False ->
-            -- do something else if directory doesn't exist
-            "This directory does not exist."
+File.exists dirPath
+    |> Process.spawn
+    |> Task.andThen Process.successful
+    |> Task.perform
 ```
 
-如果目录`path/to/directory`存在，那么`exists`函数会返回 `True`，我们可以在代码中进行相应的处理。如果目录不存在，则会返回`False`。
+在这个简单的代码示例中，我们通过导入`File`模块来使用`exists`函数来检查指定路径的目录是否存在。在这里，我们检查的路径是`my_directory`，你可以根据你的实际需求来修改。当检查完成后，我们使用`Process`模块的`spawn`函数来发送一个指令给操作系统，然后使用`Task`模块的`andThen`函数来获取返回结果。最后，我们使用`perform`函数来执行这个`Task`。如果目录存在，则发送的指令将返回`Process.successful`，如果目录不存在，则将返回`Process.failed`。
 
-## 深入介绍
+深入探讨
 
-在Elm中，目录检查的基本原理是基于文件系统的权限，通过调用操作系统的系统接口来检查文件或目录的权限。所以，除非你对该目录拥有读取权限，否则`exists`函数总是会返回`False`。
+检查目录是否存在的原理是通过调用操作系统的指令来实现的。在我们的例子中，我们使用了`Process`模块的`spawn`函数来调用`ls`命令来检查目录是否存在。如果你想要对这个过程进行更多的探究，可以查阅以下资源：
 
-此外，`exists`函数也可以用于检查文件是否存在。同样的方法，我们只需将文件名作为参数传递给`exists`函数即可。
+[A Guide to Elm on Windows - Checking for a Directory](https://dev.to/magopian/a-guide-to-elm-on-windows---checking-for-a-directory-47lg)
 
-## 参考链接
+[Elm Package Documentation for File Module](https://package.elm-lang.org/packages/elm/file/latest/)
 
-- [Elm官方文档 - File模块](https://package.elm-lang.org/packages/elm/core/latest/File)
-- [Elm语言实战教程](https://elmprogramming.com/) by Bogdan Popa
+[Elm Package Documentation for Process Module](https://package.elm-lang.org/packages/elm-lang/core/latest/Process)
+
+[Linux Command Line Tutorial for Beginners](https://www.guru99.com/linux-commands-cheat-sheet.html)
+
+看看其它的资源
+
+[参考资料](https://www.elm-tutorial.org/en/06-elm-install/10-file.html)
+
+## 参考资源
+
+- [Elm安装指南 - 操作文件](https://www.elm-tutorial.org/en/06-elm-install/10-file.html)
+- [Elm Package文档 - File模块](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Elm Package文档 - Process模块](https://package.elm-lang.org/packages/elm-lang/core/latest/Process)
+- [Linux命令行教程 - 新手指南](https://www.guru99.com/linux-commands-cheat-sheet.html)

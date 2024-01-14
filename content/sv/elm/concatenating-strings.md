@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Sammanfogning av strängar"
+title:                "Elm: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/concatenating-strings.md"
 ---
 
@@ -9,33 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att sammanslå strängar är en essentiell färdighet i Elm programmering. Genom att kombinera flera strängar till en enda kan du skapa dynamiskt innehåll, som till exempel meddelanden eller användarprofiler. Det är också ett sätt att spara utrymme och undvika upprepning av kod. 
+Att sammanfoga strängar är en viktig del av programmering, speciellt i språket Elm. Genom att sammanfoga strängar kan du skapa dynamiska meddelanden och innehåll baserat på användarens input och andra variabler. Det är ett användbart verktyg för att skapa interaktiv och anpassad programvara.
 
 ## Så här gör du
 
-För att sammanslå strängar i Elm, använder vi funktionen `String.concat`. Låt oss ta en titt på ett exempel:
+För att sammanfoga strängar i Elm, används funktionen `String.concat`. Detta är en inbyggd funktion som tar en lista av strängar och sammanfogar dem till en enda sträng. Se nedan för ett exempel på hur denna funktion kan användas i praktiken:
 
 ```Elm
-resultat = String.concat ["Hej", " ", "världen"]
+-- Skapa en lista med två strängar
+let lista = ["Hej ", "världen!"]
+
+-- Sammanfoga strängarna i listan genom att använda funktionen String.concat
+let sammanslagenSträng = String.concat lista
+
+-- Skriv ut resultatet
+-- Output: Hej världen!
+Debug.log "Resultat" sammanslagenSträng 
 ```
 
-I det här exemplet sätter vi ihop tre strängar, "Hej", ett tomrum och "världen". Resultatet blir en enda sträng, "Hej världen". Låt oss nu se vad som händer när vi sätter ihop flera strängar i en funktion:
-
-```Elm
-minFunktion str1 str2 str3 =
-  String.concat [str1, str2, str3]
-````
-
-När vi anropar funktionen med `minFunktion "Hej" " " "världen"`, får vi samma resultat som i det första exemplet. Men nu kan vi enkelt anropa funktionen med olika kombinationer av strängar och få olika resultat.
+Som du kan se, används funktionen `Debug.log` för att skriva ut resultatet i detta exempel. Du kan också använda `Text.concat` för att sammanfoga textsnuttar istället för strängar, vilket kan vara användbart när du arbetar med mer textbaserad data.
 
 ## Djupdykning
 
-När det kommer till sammanslagning av strängar i Elm, finns det några saker att hålla i åtanke. För det första, funktionen `String.concat` kan endast ta emot en lista av strängar som argument. Om du vill sätta ihop en annan typ av data, som till exempel en int eller en float, måste du först konvertera den till en sträng med hjälp av funktionen `String.fromInt` eller `String.fromFloat`.
+Att sammanfoga strängar kan verka enkelt, men det finns några viktiga saker att tänka på när du gör det i Elm. Till exempel är alla argument till `String.concat` av typen `List String`, vilket innebär att alla element i listan måste vara strängar. Om en lista innehåller andra typer av variabler, som heltal eller booleaner, måste de först konverteras till strängar med hjälp av Elm:s inbyggda funktioner som `String.fromInt` eller `String.fromBool`.
 
-För det andra, var noga med att tänka på ordningen som strängarna läggs ihop. Om du till exempel har en lista av namn och vill skapa ett meddelande som innehåller dessa namn, måste du se till att namnen hamnar i rätt ordning så att meddelandet inte blir bakvänt.
+Det är också viktigt att komma ihåg att strängar i Elm är inte muterbara, vilket innebär att de inte kan ändras efter att de skapats. Istället skapar funktionen `String.concat` en helt ny sträng med det sammanfogade innehållet. Detta kan bidra till bättre prestanda och färre buggar, men det är viktigt att vara medveten om när man arbetar med strängar i Elm.
 
 ## Se även
 
-- [Elm dokumentation om sammanslagning av strängar](https://package.elm-lang.org/packages/elm/core/latest/String#concat)
-- [Elm dokumentation om konvertering av data till strängar](https://package.elm-lang.org/packages/elm/core/latest/String#fromInt)
-- [Officiell Elm-hemsida](https://elm-lang.org/)
+- [Elm dokumentation om strängar](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [En guide till att bygga interaktiva webbapplikationer med Elm](https://www.teachyourselfcs.com/elm/)
+- [En introduktion till funktionell programmering med Elm](https://medium.com/@bcodeswe/introduction-to-functional-programming-with-elm-dbafb5e6a625)
+
+Tack för att du läste! Jag hoppas att denna artikel har gett dig en bättre förståelse för hur man sammanfogar strängar i Elm och varför det är en viktig del av programmering. Fortsätt utforska språket och bygg fantastiska applikationer!

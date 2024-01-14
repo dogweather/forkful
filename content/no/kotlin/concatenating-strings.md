@@ -1,65 +1,53 @@
 ---
-title:                "Kotlin: Sammenføying av strenger"
+title:                "Kotlin: Sammenkobling av strenger"
+simple_title:         "Sammenkobling av strenger"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Dette er et vanlig spørsmål blant nybegynnere i programmering: hvorfor skal man samle sammen strenger? Svaret er enkelt - å concatenere, eller sammenføye, strenger lar deg sette sammen forskjellige deler av en tekststreng for å lage en komplett setning eller tekst. Dette gjør det enklere å generere dynamiske tekster eller å formatere tekster på en mer fleksibel måte.
 
-Å konkatenerere strenger, eller å kombinere flere strenger til en lengre streng, er en viktig del av å programmere i Kotlin. Dette er nyttig når du ønsker å lage dynamisk tekst, som for eksempel beskjeder til brukeren basert på inndata fra programmet. Å bruke konkatenering i Kotlin er en enkel, men kraftig måte å manipulere tekst på.
-
-## Hvordan
-
-Det er flere måter å konkatenererere strenger i Kotlin på, men en av de enkleste er å bruke plussoperatøren (+). Dette gjør at du kan legge til to strenger sammen. La oss se på et enkelt eksempel:
+## Slik gjør du det
+For å concatenere strenger i Kotlin, bruker vi operatøren "+" mellom de ulike elementene vi ønsker å kombinere. La oss se på et enkelt eksempel:
 
 ```Kotlin
-val fornavn = "Marius"
-val etternavn = "Hansen"
-val fulltNavn = fornavn + " " + etternavn
-println(fulltNavn)
-```
-
-Dette vil gi følgende utskrift: `Marius Hansen`. Ved å bruke plussoperatøren, kan du også legge til tall og andre verdier til strenger, som i et eksempel:
-
-```Kotlin
+val navn = "Maren"
 val alder = 25
-val beskjed = "Jeg er " + alder + " år gammel."
-println(beskjed)
+val tekst = "Hei, mitt navn er " + navn + " og jeg er " + alder + " år gammel."
+print(tekst)
 ```
 
-Dette vil gi følgende utskrift: `Jeg er 25 år gammel.`
+Dette vil gi følgende utskrift: Hei, mitt navn er Maren og jeg er 25 år gammel.
 
-Du kan også bruke funksjonen `plus()` for å konkatenerere strenger. La oss se på et eksempel:
+Operatøren "+" kan også brukes mellom en streng og en annen datatype, som for eksempel et tall. I slike tilfeller vil Kotlin automatisk konvertere datatypen til en streng før concatenasjonen.
 
 ```Kotlin
-val språk = "Kotlin"
-val beskrivelse = " er et kult programmeringsspråk."
-val helsetning = språk.plus(beskrivelse)
-println(helsetning)
+val tall = 42
+print("Svaret på alt er: " + tall)
 ```
 
-Dette vil gi følgende utskrift: `Kotlin er et kult programmeringsspråk.`
+Her vil utskriften bli: Svaret på alt er: 42.
 
-## Dypdykk
-
-Når du bruker plussoperatøren i Kotlin, blir det konkatenerert strenger bak kulissene ved hjelp av `StringBuilder`-klassen. Denne klassen håndterer effektivt sammenslåingen av strenger og sørger for at det ikke oppstår unødvendige kopier av strengene. Dette gjør at det ikke påvirker ytelsen til programmet.
-
-Du kan også bruke formateringsstreng for å konkatenerere strenger og for å bytte ut verdier i en tekst. La oss se på et eksempel:
+## Dykk dypere
+I tillegg til å bruke operatøren "+" kan vi også bruke funksjonen "plus()" for å concatenere strenger i Kotlin. Denne funksjonen tar imot en eller flere strenger som parametere og returnerer en ny streng som er resultatet av concatenasjonen.
 
 ```Kotlin
-val navn = "Anders"
-val beskjed = "Hei, mitt navn er %s."
-val helsetning = beskjed.format(navn)
-println(helsetning)
+val fornavn = "Per"
+val etternavn = "Hansen"
+val fulltNavn = fornavn.plus(" ").plus(etternavn) //Merk at " " brukes for å legge til et mellomrom mellom fornavn og etternavn
+print(fulltNavn)
 ```
 
-Dette vil gi følgende utskrift: `Hei, mitt navn er Anders.` Her erstattes `%s` med verdien av variabelen `navn`.
+Utskriften vil bli: Per Hansen.
+
+Dersom du ønsker å concatenate flere strenger uten mellomrom i mellom, kan du heller bruke funksjonen "concat()" som tar imot en Collection av strenger.
 
 ## Se også
-
-- [Kotlin Dokumentasjon - Strenger og tegn](https://kotlinlang.org/docs/reference/basic-types.html#strings-and-characters)
-- [Kotlin i Action - Innebygde operasjoner for strenger](https://www.manning.com/books/kotlin-in-action#builtin-operations-for-strings)
-- [Offisiell nettside for Kotlin](https://kotlinlang.org/)
+- [Offisiell Kotlin dokumentasjon om strings](https://kotlinlang.org/docs/reference/strings.html)
+- [Kotlin string concatenation tutorial](https://www.baeldung.com/kotlin-string-concatenation)
+- [Kotlin string manipulation functions](https://www.geeksforgeeks.org/kotlin-string-manipulations/)

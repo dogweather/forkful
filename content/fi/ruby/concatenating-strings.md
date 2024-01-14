@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/concatenating-strings.md"
 ---
 
@@ -9,35 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Yksi tärkeimmistä taidoista, joita aloittelijan tulisi oppia Ruby-ohjelmoidessa, on merkkijonojen yhdistäminen. Merkkijonot ovat yksi ohjelmoinnin peruskäsitteistä ja niitä käytetään usein viestien, käyttäjän syötteiden ja palvelimelta saadun datan käsittelyssä. Merkkijonon yhdistäminen mahdollistaa useiden eri arvojen yhdistämisen yhdeksi kokonaisuudeksi, mikä on erittäin hyödyllistä ohjelmoinnissa.
+Miksi meidän tulisi käyttää merkkijonojen yhdistämistä Rubyssa? Merkkijonojen yhdistäminen on tärkeä osa ohjelmointia, koska se mahdollistaa eri tietojen yhdistämisen ja luomisen yhdeksi kokonaisuudeksi. Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluamme luoda dynaamisia tekstejä tai tietokantojen kyselyjä.
 
-## Miten
+## Kuinka
 
-Ruby tarjoaa helpon tavan yhdistää merkkijonoja käyttämällä "+" -merkkiä. Voit yhdistää kaksi merkkijonoa yksinkertaisesti kirjoittamalla ne peräkkäin:
-
-```Ruby
-echo = "Hei"
-nimi = "Maija"
-puts echo + nimi
-```
-
-Tämä koodi tulostaa "Hei Maija". Voit myös käyttää yhdistettäessä muuttujia, kuten tässä esimerkissä:
+Merkkijonojen yhdistämiseen on monta tapaa, mutta yksi yleisimmistä on käyttää `+` -operaattoria. Tämä yhdistää kaksi merkkijonoa yhdeksi kokonaisuudeksi. Katso alla olevaa esimerkkiä:
 
 ```Ruby
-etunimi = "Maija "
-sukunimi = "Meikäläinen"
-kokonimi = etunimi + sukunimi
-puts "Tervehdys, #{kokonimi}!"
+first_name = "Matti"
+last_name = "Meikäläinen"
+full_name = first_name + last_name
+puts full_name
 ```
 
-Tämä koodi tulostaa "Tervehdys, Maija Meikäläinen!". Huomaa, että käytimme "puts"-metodia tulostaaksemme lopputuloksen.
+Tämä koodi tulostaa "MattiMeikäläinen". Huomaatko, että välilyöntiä ei ole? Tämä johtuu siitä, että `+` -operaattori vain yhdistää kaksi merkkijonoa ilman ylimääräisiä välilyöntejä.
+
+Toinen yleinen tapa yhdistää merkkijonoja on käyttää `concat()` -metodia. Tämä metodi yhdistää merkkijonot ja lisää tarvittaessa välilyönnin alkuun. Alla olevassa esimerkissä käytämme myös `gsub()` -metodia korvaamaan `å` -merkin `aa` -merkillä.
+
+```Ruby
+first_name = "Matti"
+last_name = "Mäkinen"
+full_name = first_name.concat(" ", last_name)
+full_name = full_name.gsub("å", "aa")
+puts full_name
+```
+
+Tulostus olisi nyt "Matti Mäkinen".
 
 ## Syvemmälle
 
-Merkkijonojen yhdistämisessä voi käyttää myös muita merkkejä, kuten "-" tai "*". Ruby tarjoaa myös erityisen "concat" -metodin merkkijonojen yhdistämiseen. Voit lukea lisää tästä ja muista merkkijonojen manipulointitoiminnoista Ruby-oppaasta.
+On tärkeää muistaa, että merkkijonojen yhdistäminen voi vaikuttaa ohjelman suoritusnopeuteen. Jos yhdistät suuria määriä merkkijonoja, voi olla parempi käyttää `<<` -operaattoria tai `push()` -metodia. Nämä eivät luo uutta merkkijonoa, vaan muokkaavat olemassa olevaa.
+
+Voit myös käyttää `.join()` -metodia, joka yhdistää taulukon merkkijonoiksi käyttäen annettua erotinta. Tämä voi olla hyödyllistä, kun haluat yhdistää useita merkkijonoja yhteen ilman `+` -operaattoria. Alla olevassa esimerkissä käytämme tätä metodia yhdistämään taulukon merkkijonoiksi ja tulostamme ne konsoliin.
+
+```Ruby
+names = ["Matti", "Mäkinen", "Meikäläinen"]
+full_name = names.join(" ")
+puts full_name
+```
+
+Tämä tulostaisi "Matti Mäkinen Meikäläinen".
 
 ## Katso myös
 
-- [Ruby-oppaat](https://www.ruby-lang.org/fi/documentation/)
-- [Merkkijonon yhdistäminen Rubyssa](http://ruby-doc.org/core-2.5.1/String.html#method-i-2B)
-- [Merkkijonon muotoilu Rubyssa](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
+- Ruby Docs: https://ruby-doc.org/core-2.6/String.html#method-i-2B
+- Concat, push ja join: https://medium.com/@AndrewSchechterman/ruby-join-concat-push-and-just-do-it-the-basics-ac5b75611aff
+- Strings in Ruby: https://www.rubyguides.com/2019/08/ruby-strings/

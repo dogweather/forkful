@@ -1,72 +1,68 @@
 ---
 title:                "Go: ランダムな数字を生成する"
+simple_title:         "ランダムな数字を生成する"
 programming_language: "Go"
-category:             "Numbers"
+category:             "Go"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜランダムな数値を生成するのか？
 
-ランダムな数字を生成することに興味がある方々は多いかもしれません。それは、おもしろいゲームやアプリを作るために必要だったり、統計的なデータ分析を行うために必要だったりするからです。Go言語では、簡単にランダムな数字を生成することができます。今回はその方法をご紹介します。
+コンピューターの世界では、ランダムな数値を生成することがよく行われます。これは、ゲームやランダムイベントのシミュレーション、セキュリティーの為の暗号化など、さまざまな用途に使われます。Go言語を使ってランダムな数値を生成する方法について学びましょう！
 
-## 生成する方法
+## 生成方法
 
-最も基本的な方法は、math/randパッケージを使用することです。以下のコードを実行すると、0以上10未満の整数がランダムで生成されます。
+Go言語を使ってランダムな数値を生成するには、math/randパッケージを使います。まず、パッケージをインポートします。
 
 ```Go
-package main
+import "math/rand"
+```
 
-import (
-	"fmt"
-	"math/rand"
-)
+次に、ランダムシードを設定します。これは、ランダムを生成する際に元となる値を指定するものです。例えば、現在の時間を指定することで、毎回異なるランダムな数値を生成することができます。
 
-func main() {
-	fmt.Println(rand.Intn(10))
+```Go
+rand.Seed(time.Now().UnixNano())
+```
+
+最後に、生成したい数値の範囲を指定し、rand.Intn()関数を使ってランダムな数値を生成します。以下の例では、1から10までのランダムな数値を生成しています。
+
+```Go
+for i := 0; i < 10; i++ {
+  fmt.Println(rand.Intn(10) + 1)
 }
 ```
 
-ここで使用しているrand.Intn()関数は、引数に渡した数未満のランダムな整数を生成します。
+✨ 以下のような出力が得られます。
 
-さらに、より複雑なパターンでランダムな数字を生成することもできます。例えば、以下のコードでは、0以上10未満のランダムな整数を5回生成して表示することができます。
-
-```Go
-package main
-
-import (
-	"fmt"
-	"math/rand"
-	"time"
-)
-
-func main() {
-	rand.Seed(time.Now().Unix()) //時刻をシードに使用する
-	for i := 0; i < 5; i++ {
-		fmt.Println(rand.Intn(10))
-	}
-}
+```
+7
+2
+6
+10
+1
+4
+5
+9
+2
+8
 ```
 
-rand.Seed()関数は、ランダムな数字を生成する際に使用する乱数の種を設定します。ここでは、現在の時刻を乱数の種として設定することで、よりランダムな数字を生成することができます。
+## ディープダイブ
 
-## 深堀り
+Go言語のmath/randパッケージは、擬似乱数（pseudo-random）を生成します。つまり、ある種のパターンに基づいてランダムな数値を生成することになります。そのため、非常に長い期間にわたって同じパターンが繰り返される可能性があります。
 
-Go言語のmath/randパッケージは、擬似乱数（pseudo-random numbers）を生成するために線形合同法（linear congruential generator）というアルゴリズムを使用しています。このアルゴリズムは、設計や実装の容易さから広く使用されていますが、その一方で予測しやすいという問題点もあります。
+しかし、より高度なランダム性が求められる場合は、crypto/randパッケージを使用することが推奨されています。このパッケージは、暗号的に安全な乱数（cryptographically secure random）を生成します。
 
-そのため、本番環境でより高品質な乱数を必要とする場合には、crypto/randパッケージを使用することをお勧めします。このパッケージは、暗号論的に安全な乱数を生成するための様々なアルゴリズムを提供しています。
+また、Go言語では独自の乱数生成器を実装することも可能です。その場合、線形合同法やメルセンヌ・ツイスターなど、さまざまなアルゴリズムを用いることができます。
 
-また、math/randパッケージを使用して生成された乱数は、プログラムを実行するたびに同じ結果が得られる可能性があります。そのような事態を避けるためにも、乱数の種を毎回変えるようにするなどの工夫が必要です。
+# 参考リンク
 
-## 参考リンク
-
-- math/randパッケージのドキュメント：https://golang.org/pkg/math/rand/
-- crypto/randパッケージのドキュメント：https://golang.org/pkg/crypto/rand/
-- 擬似乱数生成アルゴリズムの詳細：https://en.wikipedia.org/wiki/Linear_congruential_generator
-
-## 関連リンク
-
-- https://golang.org/pkg/math/rand/
-- https://www.golangprograms.com/go-language/math-packages.html
-- https://dev.to/manoj_hanwani/intro-to-golang-math-random-package-efk
+- [Go言語のmath/randパッケージドキュメント](https://golang.org/pkg/math/rand/)
+- [Go言語のmath/randパッケージのソースコード](https://golang.org/src/math/rand/rand.go)
+- [Effective Go - ランダムな数値の生成](https://golang.org/doc/effective_go.html#random-numbers)
+- [Creating Good Test Seed Values with Golang](https://www.calhoun.io/creating-good-test-seed-values-in-go/)
+- [Go言語のcrypto/randパッケージドキュメント](https://golang.org/pkg/crypto/rand/)
+- [Cryptographically secure pseudorandom number generator](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator)

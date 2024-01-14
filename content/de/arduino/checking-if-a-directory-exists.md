@@ -1,35 +1,52 @@
 ---
-title:                "Arduino: Überprüfen, ob ein Verzeichnis vorhanden ist"
+title:                "Arduino: Überprüfen, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum: Es gibt viele Gründe, warum man prüfen möchte, ob ein Verzeichnis existiert. Zum Beispiel könnte man diese Überprüfung nutzen, um sicherzustellen, dass eine Datei erfolgreich gespeichert wurde oder um sicherzustellen, dass ein bestimmtes Verzeichnis existiert, bevor man versucht, Daten dorthin zu speichern.
+## Warum
 
-Wie man prüft, ob ein Verzeichnis existiert: Um zu überprüfen, ob ein Verzeichnis existiert, kann man die Funktion "exists()" verwenden, die in der Arduino-IDE verfügbar ist. Diese Funktion akzeptiert eine Zeichenfolge, die den Pfad des zu prüfenden Verzeichnisses enthält, und gibt true zurück, wenn das Verzeichnis existiert, oder false, wenn es nicht existiert. Im Folgenden ist ein Beispielcode zu sehen:
+In der Programmierung mit Arduino gibt es oft das Szenario, dass man überprüfen möchte, ob ein bestimmtes Verzeichnis vorhanden ist. Ein Beispiel für die Anwendung dieser Funktion ist, wenn man Daten aus einem Verzeichnis lesen oder schreiben möchte. In diesem Blogbeitrag werde ich Ihnen zeigen, wie Sie mit Arduino prüfen können, ob ein Verzeichnis vorhanden ist und was Sie dabei beachten sollten.
+
+## Wie
+
+Um zu überprüfen, ob ein Verzeichnis existiert, gibt es in der Arduino-Programmierung eine spezielle Funktion namens "exists()". Diese Funktion überprüft, ob der angegebene Pfad existiert und gibt eine "true" oder "false" Rückgabe zurück. Um diese Funktion zu verwenden, müssen Sie zuerst die SD-Library in Ihrem Sketch einbinden.
 
 ```Arduino
-if(SD.exists("/Mein-Verzeichnis")){
-  Serial.println("Das Verzeichnis existiert!");
+#include <SD.h>
+
+void setup() {
+  Serial.begin(9600); // Serielle Verbindung zum PC herstellen
+  if (SD.exists("/meinVerzeichnis")) { // Überprüfung, ob Verzeichnis existiert
+    Serial.println("Das Verzeichnis existiert!");
+  }
+  else {
+    Serial.println("Das Verzeichnis existiert nicht!");
+  }
 }
-else{
-  Serial.println("Das Verzeichnis existiert nicht!");
+
+void loop() {
+  
 }
 ```
 
-Ausgabe:
+In diesem Beispiel wird geprüft, ob das Verzeichnis "meinVerzeichnis" vorhanden ist. Wenn dies der Fall ist, wird eine entsprechende Meldung auf dem seriellen Monitor ausgegeben. Ansonsten wird die Meldung angezeigt, dass das Verzeichnis nicht existiert.
 
-```Arduino
-Das Verzeichnis existiert!
-```
+## Deep Dive
 
-Tiefergehende Informationen: Bevor man versucht, auf ein bestimmtes Verzeichnis zuzugreifen oder Daten dorthin zu speichern, ist es wichtig, zu überprüfen, ob das Verzeichnis überhaupt existiert. Dies kann verhindern, dass Fehler auftreten und das Programm möglicherweise abstürzt. Es ist auch hilfreich, die Funktion "exists()" zu verwenden, um zu prüfen, ob ein neu erstelltes Verzeichnis erfolgreich erstellt wurde. Wenn das Programm weiß, dass das Verzeichnis existiert, kann es sicher darauf zugreifen und Daten speichern. 
+Bei der Verwendung der "exists()" Funktion gibt es einige Dinge zu beachten. Zum einen müssen Sie sicherstellen, dass Sie die richtige Schreibweise des Verzeichnisnamens verwenden. Groß- und Kleinschreibung müssen dabei genau übereinstimmen. Andernfalls erkennt die Funktion das Verzeichnis nicht als vorhanden.
 
-Siehe auch: 
+Außerdem ist es wichtig zu wissen, dass die "exists()" Funktion auch überprüft, ob eine Datei mit dem angegebenen Namen vorhanden ist. Wenn also bereits eine Datei mit dem Namen "meinVerzeichnis" existiert, wird die Funktion auch dann "true" zurückgeben, selbst wenn kein Verzeichnis mit diesem Namen vorhanden ist.
 
-- [Arduino Referenz für die Funktion "exists()"](https://www.arduino.cc/reference/en/libraries/sd/existence-functions/exists/) 
+Darüber hinaus kann die "exists()" Funktion auch verwendet werden, um zu überprüfen, ob eine Datei vorhanden ist. Dazu wird einfach der vollständige Pfad der Datei als Parameter angegeben.
 
-- [Tutorial zum Speichern von Daten auf einer SD-Karte mit Arduino](https://create.arduino.cc/projecthub/Marcel/datalogger-getting-data-from-sensors-into-excel-ac
+## Siehe auch
+
+- [SD Library Reference](https://www.arduino.cc/en/Reference/SD)
+- [Tutorial: Arduino und SD-Karte](https://funduino.de/nr-31-tutorial-arduino-und-sd-karte)
+- [Arduino Forum: How to check if the directory exist](https://forum.arduino.cc/index.php?topic=326169.0)

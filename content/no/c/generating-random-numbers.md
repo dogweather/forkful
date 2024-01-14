@@ -1,7 +1,9 @@
 ---
 title:                "C: Generering av tilfeldige tall"
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "C"
-category:             "Numbers"
+category:             "C"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/generating-random-numbers.md"
 ---
 
@@ -9,34 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å generere tilfeldige tall er en nyttig ferdighet i programmering. Det tillater deg å lage dynamiske og varierte løsninger, enten det er for å simulere virkelige situasjoner eller for å sikre unike verdier i et spill. Uansett formål, er å kunne lage tilfeldige tall essensielt for enhver programmerer.
+Å generere tilfeldige tall er en viktig del av mange programmeringsoppgaver, spesielt i datavitenskap og matematikk. Dette kan være nyttig for å simulere tilfeldige situasjoner eller for å generere unike identifikatorer.
 
 ## Hvordan
 
-Generering av tilfeldige tall i C er enkel takket være innebygde funksjoner i språket. Her er et eksempel på hvordan du kan generere en tilfeldig heltall mellom 1 og 100:
+Det er flere måter å generere tilfeldige tall på i C-programmeringsspråket. En vanlig metode er å bruke funksjonen `rand()` som returnerer et tilfeldig tall mellom 0 og `RAND_MAX`. For å generere tall i et annet område, må man bruke matematiske formler som begrenser resultatet.
 
 ```C
-#include <stdio.h> // inkluderer standard input-output biblioteket
-#include <stdlib.h> // inkluderer standard biblioteket
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 int main()
 {
-    int tilfeldig = rand() % 100 + 1; // genererer et tilfeldig heltall mellom 1 og 100
-    printf("Tilfeldig tall: %d\n", tilfeldig); // skriver ut det tilfeldige tallet
+    // Setter en forandrelig seed basert på nåværende tid
+    srand(time(0));
+    
+    // Genererer 10 tilfeldige tall mellom 1 og 100
+    for (int i = 0; i < 10; i++) {
+        int random_num = rand() % 100 + 1;
+        printf("%d\n", random_num);
+    }
+    
     return 0;
 }
 ```
 
-Kjører dette programmet flere ganger vil gi forskjellige tilfeldige tall hver gang. Dette er fordi funksjonen `rand()` genererer tall basert på en intern algoritme og den tilfeldige verdien vil endre seg hver gang programmet kjøres.
+Eksempel output:
+```
+87
+24
+53
+12
+79
+38
+16
+91
+72
+8
+```
 
-## Dypere dykk
+## Dykk dypere
 
-Dette er det grunnleggende for å generere tilfeldige tall, men det finnes flere funksjoner i C som kan hjelpe deg å kontrollere og tilpasse den tilfeldige prosessen. For eksempel kan du bruke `srand()` for å initialisere en startverdi for den interne algoritmen, noe som kan føre til mer forutsigbare tilfeldige tall.
+I C er ikke `rand()` funksjonen nødvendigvis en pålitelig måte å generere tilfeldige tall på. Dette skyldes at den returnerer en sekvens av tall som vil gjenta seg selv etter en viss tid. Dette kan føre til sikkerhetsrisikoer i sensitiv informasjon som bruker genererte tilfeldige tall som passord eller krypteringsnøkler.
 
-En annen viktig ting å huske på er at tilfeldige tall generert på denne måten ikke er helt tilfeldige i matematisk forstand. De følger en bestemt distribusjon og kan ikke garantere fullstendig tilfeldighet. For å få virkelig tilfeldige tall, er det nødvendig å bruke eksterne enheter som en tilfeldighetsgenerator eller en fysisk hendelse som en radioaktiv desintegrering.
+En bedre metode for å generere tilfeldige tall er å bruke funksjoner fra biblioteket `<stdlib.h>` som `random()` og `srandom()`, som garanterer mer komplekse og uforutsigbare tall for hver kjøring.
 
 ## Se også
 
-- [Generering av tilfeldige tall i C++](https://www.geeksforgeeks.org/generating-random-number-range-c/)
-- [Tilfeldighetsfunksjoner i C biblioteket](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
-- [Matematisk konsept av tilfeldig](https://no.wikipedia.org/wiki/Tilfeldighet)
+- [The C Programming Language](https://en.wikipedia.org/wiki/The_C_Programming_Language)
+- [Introduction to Random Numbers](https://www.geeksforgeeks.org/random-numbers-in-c/)

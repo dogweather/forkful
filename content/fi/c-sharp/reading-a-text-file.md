@@ -1,7 +1,9 @@
 ---
 title:                "C#: Tiedoston lukeminen"
+simple_title:         "Tiedoston lukeminen"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/reading-a-text-file.md"
 ---
 
@@ -9,72 +11,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tekstitiedostojen lukeminen on tärkeä ja usein tarvittu taito kaikille ohjelmoijille. Monissa projekteissa joudutaan käsittelemään tekstiä, kuten lokitiedostoja, tietokantojen kenttiä, tai käyttäjän syöttämiä tietoja. Tässä blogipostissa opit lukemaan tekstitiedostoja C# ohjelmointikielellä!
+Tekstitiedostojen lukeminen on yksi perustaidoista C# -ohjelmoinnissa. Se on tärkeä taito, joka auttaa ohjelmoijia käsittelemään ja analysoimaan suuria määriä tietoa tiedostoista. Olipa kyseessä sitten tiedon tallentaminen, raporttien luominen tai tietojen visualisointi, tekstitiedostojen lukeminen on välttämätöntä lähes jokaisessa ohjelmassa.
 
-## Kuinka
+## Miten tehdä
 
-Jotta voit lukea tekstitiedostoja C# kielellä, sinun täytyy ensin avata tiedosto input stream -komennolla. Tämän jälkeen voit lukea tiedoston sisältöä käyttämällä TextReader luokkaa. Alla olevassa esimerkissä luomme teksti tiedoston nimi “teksti.txt” ja kirjoitamme siihen muutaman rivin tekstiä:
-
-```C#
-public static void Main(){
-  // Luodaan tekstitiedosto
-  File.WriteAllText("teksti.txt", "Tämä on esimerkkitiedosto tekstinlukemista varten.");
-
-  // Avataan tiedosto input stream -komennolla
-  FileStream fs = new FileStream("teksti.txt", FileMode.Open);
-
-  // Luodaan TextReader ja luetaan tiedoston sisältöä
-  using (TextReader reader = new StreamReader(fs)){
-    string line;
-
-    while ((line = reader.ReadLine()) != null){
-      Console.WriteLine(line);
-    }
-  }
-}
-```
-
-#### Output:
-Tämä on esimerkkitiedosto tekstinlukemista varten.
-
-Kuten näet, avasimme tiedoston input stream -komennolla ja luimme sen sisältöä riviltä riville käyttämällä TextReader luokkaa. TextReader luokassa on muitakin hyödyllisiä metodeja tiedoston lukemiseen, kuten Read() ja ReadToEnd(), jotka voit oppia lisää dokumentaatiosta.
-
-## Syväsukellus
-
-Tekstitiedostojen lukeminen ei kuitenkaan rajoitu vain yksittäisiin riveihin. Voit myös käyttää C# kielen säännöllisiä lausekkeita (regular expressions) helpottamaan tiedoston lukemista ja tietojen parseerausta. Tämä säästää paljon aikaa ja vaivaa, varsinkin jos käsiteltävät tiedostot ovat suurempia.
-
-Alla olevassa esimerkissä käytämme Regex luokkaa löytämään ja tulostamaan kaikki sanoja, jotka alkavat isolla kirjaimella tiedostosta “teksti.txt”:
+Tekstitiedoston lukeminen C# -kielellä on yllättävän yksinkertaista. Käytämme siihen StreamReader-luokkaa, joka tarjoaa monia käteviä metodeja tekstitiedoston lukemiseen. Katso seuraavia koodirivejä saadaksesi paremman käsityksen:
 
 ```C#
-public static void Main(){
-  // Luodaan tekstitiedosto
-  File.WriteAllText("teksti.txt", "Tämä on esimerkkitiedosto tekstinlukemista varten.");
+// Avaa tiedosto ja luo uusi StreamReader-olio
+StreamReader reader = new StreamReader("tiedostonimi.txt");
 
-  // Avataan tiedosto input stream -komennolla
-  using (var sr = new StreamReader("teksti.txt")){
-    var regex = new Regex(@"[A-Z]\w+");
+// Lukee tiedoston sisällön kokonaisuudessaan ja tallentaa sen muuttujaan
+string text = reader.ReadToEnd();
 
-    // Käydään läpi tiedoston jokainen rivi
-    while(!sr.EndOfStream){
-      string line = sr.ReadLine();
+// Sulkee tiedoston lukemisen jälkeen
+reader.Close();
 
-      // Etsitään kaikki sanat, jotka alkavat isolla kirjaimella ja tulostetaan ne
-      MatchCollection matches = regex.Matches(line);
+// Tulostaa tiedoston sisällön konsoliin
+Console.WriteLine(text);
 
-      foreach (Match match in matches){
-        Console.WriteLine(match.Value);
-      }
-    }
-  }
-}
 ```
 
-#### Output:
-Tämä
-Tiedosto
-Lukemista
+Seuraava koodiesimerkki näyttää, kuinka voit lukea ja käsitellä tekstitiedostoa rivi kerrallaan. Tässä esimerkissä käytämme while-silmukkaa ja StreamReaderin ReadLine-metodia:
 
-Tässä esimerkissä käytämme säännöllistä lauseketta [A-Z]\w+, joka etsii kaikki sanat, jotka alkavat isolla kirjaimella (A-Z) ja ovat vähintään yhden merkin pituisia (\w+). Regex luokka tarjoaa paljon eri mahdollisuuksia tiedoston lukemiseen ja datan käsittelyyn, joten kannattaa ottaa selvää siitä lisää dokumentaatiosta.
+```C#
+// Avaa tiedosto ja luo uusi StreamReader-olio
+StreamReader reader = new StreamReader("tiedostonimi.txt");
+
+// Luetaan tiedosto rivi kerrallaan ja tulostetaan jokainen rivi konsoliin
+string line;
+while ((line = reader.ReadLine()) != null)
+{
+    Console.WriteLine(line);
+}
+
+// Sulkee tiedoston lukemisen jälkeen
+reader.Close();
+
+```
+
+Näissä esimerkeissä käytämme File-luokkaa luomaan uuden tekstitiedoston ja kirjoittamaan siihen tietoa. Tämä on hyödyllistä esimerkiksi silloin, kun haluat tallentaa käyttäjältä saatuja tietoja tiedostoon:
+
+```C#
+// Luodaan uusi tekstitiedosto nimellä "uusi_tiedosto.txt"
+File.Create("uusi_tiedosto.txt");
+
+// Avataan tiedosto ja luodaan StreamWriter-olio
+StreamWriter writer = new StreamWriter("uusi_tiedosto.txt");
+
+// Kirjoitetaan tietoa tiedostoon
+writer.WriteLine("Tervetuloa blogiimme!");
+writer.WriteLine("Tutustu artikkeleihimme ja opi uutta C# -ohjelmoinnista.");
+
+// Suljetaan tiedosto
+writer.Close();
+
+```
+
+## Syventävä tieto
+
+Tekstitiedostojen lukeminen on perustietoa C# -ohjelmoinnissa, mutta siitä löytyy myös monia edistyneempiä ominaisuuksia. Voit esimerkiksi määrittää erilaisia lukutapoja, kuten käsittelyä merkitsemättömien rivien kohdalla tai tiedoston koodauksen. Lisäksi voit käyttää muita luokkia, kuten FileStream tai BinaryReader, tekstitiedoston lukemiseen.
+
+Jos haluat oppia lisää tekstitiedoston lukemisesta C# -kielellä, suosittelemme tarkistamaan C# -kielen dokumentoinnin aiheesta tai tutustumaan erilaisiin oppimateriaaleihin.
 
 ## Katso myös
-- [C# TextReader luokka](https://docs.microsoft.com/en-us/dotnet/api/system.io.textreader?view=
+
+- C# Language Reference: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/
+- C# Programming Guide: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/
+- Tutorialspoint: https://www.tutorialspoint.com/csharp/csharp_text_files.htm

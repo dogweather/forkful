@@ -1,7 +1,9 @@
 ---
-title:                "C: Sletting av tegn som matcher et mønster"
+title:                "C: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,51 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Noen ganger kan det være nyttig å fjerne bestemte tegn fra en tekststreng eller fil. Dette kan være for å reformatere data, fjerne uønskede tegnfeil eller utføre andre manipulasjoner av data. I C-programmering kan vi enkelt slette tegn som matcher et bestemt mønster med noen få linjer med kode. I denne bloggposten vil vi gå gjennom hvordan du kan gjøre dette.
+Å slette tegn som matcher et mønster er en vanlig oppgave i programmering, spesielt når du arbeider med tekstbehandling. Det kan være nyttig å fjerne spesifikke tegn for å konvertere tekst til et annet format, eller for å rydde opp i uønskede karakterer i en tekststreng.
 
 ## Hvordan
 
-For å slette tegn som matcher et mønster, kan vi bruke funksjonen "strchr" fra string.h-biblioteket. Denne funksjonen søker gjennom en tekststreng og returnerer en peker til det første forekomsten av et gitt tegn. Vi kan deretter bruke denne pekeren til å slette tegnene fra tekststrengen ved å overskrive det med påfølgende tegn.
-
-La oss se på et eksempel:
+Å slette tegn som matcher et mønster kan gjøres ved å bruke funksjoner som "strchr" eller "strpbrk" i C. Her er et eksempel å bruke "strchr" for å fjerne alle forekomster av et spesifikt tegn fra en tekststreng:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-  char tekststreng[] = "Dette er en tekststreng med noen uønskede tegn.";
-  char uønsket_tegn = 'e'; // vi ønsker å fjerne alle forekomstene av 'e' fra teksten
+  char string[] = "Hei, verden!";
+  char *result;
 
-  char *match = strchr(tekststreng, uønsket_tegn); // finner første forekomst av 'e'
+  // Finn posisjonen til "e" i tekststrengen
+  result = strchr(string, 'e');
 
-  while (match != NULL) { // så lenge det er flere forekomster av 'e'
-    strcpy(match, match+1); // kopierer de påfølgende tegnene over denne forekomsten
-    match = strchr(tekststreng, uønsket_tegn); // finner neste forekomst av 'e'
+  // Slett alle forekomster av "e" fra tekststrengen
+  while (result != NULL) {
+    memmove(result, result + 1, strlen(result));
+    result = strchr(result, 'e');
   }
 
-  printf("%s", tekststreng); // skriver ut den nye tekststrengen uten de uønskede tegnene
+  printf("%s", string);
 
   return 0;
 }
 ```
 
 Output:
+```Hei, vrdn!```
 
-```
-Dtt r n txtstrng md ngn uønskt dgn
-```
+I dette eksemplet bruker vi "strchr" til å finne posisjonen til tegnet "e" i tekststrengen, og deretter bruker vi "memmove" til å flytte alle tegnene etter dette tegnet en plass fremover. Dette fjerner effektivt alle forekomster av tegnet "e" fra tekststrengen. 
 
-Som du kan se, har alle forekomstene av 'e' blitt fjernet fra teksten. Dette eksempelet viser en enkel implementering av en funksjon for å slette tegn som matcher et mønster. Du kan tilpasse og utvide denne koden etter dine behov og til din spesifikke datasett.
+## Dypdykk 
 
-## Dypdykk
-
-Vi har nå sett på en enkel måte å slette tegn som matcher et mønster, men det finnes også andre metoder å gjøre dette på. En vanlig metode er å bruke en loop og en teller for å gå gjennom tekststrengen og slette tegnene etter behov. Det er også verdt å nevne at funksjonen "strchr" faktisk søker gjennom hele tekststrengen, så hvis du ønsker å slette bare det første tegnet som matcher, kan du bruke funksjonen "strpbrk" i stedet.
-
-Det kan også være nyttig å lære å bruke regulære uttrykk for å slette tegn. Dette gir større fleksibilitet og kraft i manipulasjonen av tekst og tegn. Se gjerne på linker nedenfor for mer informasjon om dette temaet.
+Det er flere måter å slette tegn som matcher et mønster på i C, og noen kan være mer effektive enn andre for bestemte situasjoner. Det er også viktig å være forsiktig med hvordan du manipulerer en tekststreng, da feil kan føre til uforutsette resultater eller til og med programkrasj. Det kan være lurt å bruke innebygde funksjoner som "strncpy" eller "strcpy_s" for å unngå bufferoverløp. 
 
 ## Se også
 
-- [strchr() dokumentasjon på Cplusplus.com (engelsk)](https://www.cplusplus.com/reference/cstring/strchr/)
-- [strpbrk() dokumentasjon på Cplusplus.com (engelsk)](https://www.cplusplus.com/reference/cstring/strpbrk/)
-- [Regulære uttrykk tutorial på w3schools.com (engelsk)](https://www.w3schools.com/cpp/cpp_strings_regex.asp)
+- [string.h dokumentasjon](https://www.cplusplus.com/reference/cstring/)
+- [C string funksjoner tutorial](https://www.programiz.com/c-programming/c-strings)
+- [Hvordan fjerne tegn fra en tekststreng i C](https://stackoverflow.com/questions/2022078/how-to-remove-characters-from-a-string-in-c)

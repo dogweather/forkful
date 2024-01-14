@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Stampa di output di debug"
+title:                "Fish Shell: Stampa dell'output di debug"
+simple_title:         "Stampa dell'output di debug"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/printing-debug-output.md"
 ---
 
@@ -9,33 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Stampare l'output di debug è un'azione essenziale per ogni programmatore di Fish Shell. Ciò consente di individuare e risolvere eventuali errori di codice, facilitando il processo di debugging.
+Stampare l'output di debug è una pratica comune nella programmazione. Questo aiuta a identificare e risolvere eventuali errori nel codice. Inoltre, può essere utile per comprendere meglio il flusso di esecuzione del programma.
 
 ## Come fare
 
-La stampa di debug output può essere realizzata in modo semplice e veloce utilizzando il comando `echo`. In questo esempio, stamperemo il valore di una variabile chiamata `nome`:
+Per stampare l'output di debug nel terminale utilizzando Fish Shell, segui questi semplici passaggi:
+
+1. Utilizza il comando `set -q DEBUG` per verificare se la modalità di debug è attiva. Se restituisce "1", significa che la modalità è attiva.
+2. Se la modalità di debug è attiva, utilizza il comando `echo` per stampare l'output desiderato. Ad esempio: 
 
 ```
-Fish Shell>echo $nome
-John
-```
-Questa istruzione stampa semplicemente il valore della variabile `nome`, che in questo caso è "John". È possibile utilizzare questo comando per stampare qualsiasi variabile o valore all'interno del tuo codice.
-
-È anche possibile utilizzare il comando `printf` per stampare l'output di debug utilizzando un formato specifico. Ad esempio:
-
-```
-Fish Shell>printf "L'etichetta del prodotto è %s, il prezzo è %.2f" $nome $prezzo
-L'etichetta del prodotto è Sapone per le mani, il prezzo è 5.99
+Fish Shell
+echo "La modalità di debug è attiva."
 ```
 
-## Approfondimento
+3. Assicurati di disattivare la modalità di debug quando hai terminato, utilizzando il comando `set -e DEBUG`.
 
-La stampa di debug output può essere personalizzata ulteriormente utilizzando le opzioni dei comandi `echo` e `printf`. Inoltre, è possibile utilizzare il comando `set -x` per abilitare la modalità di debug, che fornirà informazioni sulle variabili, i comandi e gli argomenti che vengono eseguiti durante l'esecuzione del codice.
+## Deep Dive
 
-Inoltre, è possibile utilizzare il redirect di output `>` per salvare l'output di debug in un file di log per analizzarlo successivamente.
+Mentre stampare l'output di debug può sembrare un'operazione semplice, ci sono alcune altre cose che dovresti sapere:
+
+- Usa `echo -s` per stampare l'output senza alcun formattazione, in modo da ottenere una visualizzazione più pulita.
+- Puoi anche utilizzare il comando `fish_indent` per formattare correttamente l'output di debug, rendendolo più facile da leggere.
+- Se vuoi stampare solo alcune variabili specifiche, puoi utilizzare il comando `printf` per formattare l'output in modo più preciso.
 
 ## Vedi anche
 
-- Documentazione ufficiale di Fish Shell su come stampare debug output: https://fishshell.com/docs/current/cmds/echo.html
-- Guida di Fish Shell sul comando `printf`: https://fishshell.com/docs/current/cmds/printf.html
-- Tutorial su come fare il debugging in Fish Shell: https://www.digitalocean.com/community/tutorials/how-to-debug-fish-scripts-on-a-linux-vps
+- [Guida alla modalità di debug in Fish Shell](https://fishshell.com/docs/current/tutorial.html#debug-mode)
+- [Comandi di Fish Shell](https://fishshell.com/docs/current/cmds.html)
+- [Formattazione dell'output in Fish Shell](https://fishshell.com/docs/current/tutorial.html#formatting-output)

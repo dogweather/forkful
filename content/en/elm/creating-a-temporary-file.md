@@ -1,7 +1,9 @@
 ---
 title:                "Elm recipe: Creating a temporary file"
+simple_title:         "Creating a temporary file"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/creating-a-temporary-file.md"
 ---
 
@@ -9,60 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Creating temporary files may not seem like a glamorous or exciting task, but it can be an essential step in many programs. Temporary files are often used for storing intermediate data or as a placeholder for information that is needed temporarily. They can also be useful for debugging and troubleshooting purposes.
+Creating temporary files is a common task in programming. It allows for the temporary storage and manipulation of data before it is permanently saved or discarded. In Elm, temporary files can be useful for tasks like file uploads, caching, and data processing.
 
 ## How To
 
-To create a temporary file in Elm, we can use the "tempfile" package. This package provides a convenient and easy-to-use API for managing temporary files. To begin, we first need to install the package by running the following command in our project directory:
+To create a temporary file in Elm, we first need to import the `File` module:
 
-```
-Elm install elm/tempfile
-```
-
-Once the package is installed, we can import it into our Elm file using the following statement:
-
-```
-import Tempfile
+```Elm
+import File
 ```
 
-Next, we can use the `new` function from the `Tempfile` module to create a temporary file. Here's an example of how we can create a temporary file named "test.txt" in the current directory:
+Next, we can use the `create` function from the `File` module to create a temporary file. This function takes in two arguments: a filename and the content of the file.
 
-```
-file : Tempfile.File
-file =
-    Tempfile.new "test.txt" 
+```Elm
+File.create "temp.txt" "This is the content of the temporary file." 
 ```
 
-We can also specify a different directory for the temporary file to be created in by passing in the desired directory as the second argument to the `new` function. 
+This will create a temporary file named `temp.txt` with the given content. We can also use `File.create` to create a file with data from a specific source, such as a URL or a user's input:
 
-Once the temporary file is created, we can use the `path` function to get the file path and use it to perform any necessary operations. For example, we can write data to the temporary file using the `write` function like so:
-
-```
-file |> Tempfile.write "Hello, world!"
+```Elm
+File.create "temp.txt" model.fileData
 ```
 
-And to read the data from the file, we can use the `read` function:
-
-```
-file |> Tempfile.read
---> Just "Hello, world!"
-```
-
-Once we are done using the temporary file, we can use the `cleanup` function to delete it:
-
-```
-file |> Tempfile.cleanup
-```
+Once the temporary file is created, we can manipulate and use it as needed within our program. It is important to remember that temporary files are not automatically deleted, so we need to use the `delete` function from the `File` module to remove them when they are no longer needed.
 
 ## Deep Dive
 
-Behind the scenes, the `new` function from the `Tempfile` module is actually creating a unique file name by appending a random string of characters to the specified file name. This ensures that the temporary file has a unique and safe name, avoiding any conflicts with other files.
+Behind the scenes, creating a temporary file in Elm actually creates a real file on your computer's file system. However, the file's name will have a unique indicator attached to it, such as a random number or timestamp, to differentiate it from other files.
 
-It's also important to note that temporary files are not automatically deleted once the program finishes running. This is why we need to explicitly use the `cleanup` function to remove the temporary file.
+It is also worth noting that the temporary file will be stored in a system-specific temporary directory, rather than the directory where your Elm code is located. This is to prevent cluttering your code directory with temporary files.
+
+When using `File.create`, it is also possible to specify the type of data you are including in the file by providing a third argument, such as `text/plain` or `image/png`. This can be useful for file uploads or when working with different types of data.
 
 ## See Also
 
-- [Elm tempfile package](https://package.elm-lang.org/packages/elm/tempfile/latest/)
-- [Elm's official documentation on modules](https://guide.elm-lang.org/reuse/)
-
-With the "Tempfile" package, creating and managing temporary files in Elm is a simple and straightforward task. It can come in handy for a variety of use cases and can help with organizing and optimizing your code. So give it a try and see how it can improve your Elm programming experience. Happy coding!
+- [Elm File module documentation](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Temporary files in programming](https://en.wikipedia.org/wiki/Temporary_file)

@@ -1,31 +1,36 @@
 ---
-title:                "Elm: डिबग आउटपुट प्रिंट करना"
+title:                "Elm: Debug आउटपुट प्रिंट करना"
+simple_title:         "Debug आउटपुट प्रिंट करना"
 programming_language: "Elm"
-category:             "Testing and Debugging"
+category:             "Elm"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun:
+## क्यों
 
-Debug output ko print karne ka matlab hai ki aap apne code ki performance aur errors ko monitor kar sake. Isse aap apne code ke kisi bhi hisse mein agar koi problem ho to usse identify aur solve kar sakte hain. Debug output aapko apne code ko samajhne aur improve karne mein madad karta hai.
+डिबग आउटपुट प्रिंट करने के लिए क्यों कोई लोग हो सकते हैं। 
 
-## Kaise Kare:
-
-Debug output ko print karne ke liye, aapko Elm ka `Debug.log` function ka istemal karna hoga. Is function mein aapko apne desired message aur value ko pass karna hai jisse aap debug output mein dekhna chahte hain.
+## कैसे करें
 
 ```Elm
-myNumber = 5
-Debug.log "My Number is:" myNumber
+import Debug
+
+name = "John"
+
+Debug.log "Name:" name
 ```
-Ye code debug output mein "My Number is: 5" print karega. Is tarah se aap apne code ki kisi bhi variable ya value ka output dekh sakte hain.
 
-## Gehri Jhaank:
+इस उदाहरण में, हमने `Debug` मॉड्यूल को इम्पोर्ट करके `name` चर को पहले श्रेणी में डिबग आउटपुट के साथ प्रिंट करते हुए उसकी मूल्य को प्रिंट किया है। इससे हमें कन्सोल में नाम विश्लेषण के साथ "जॉन" देखने को मिलता है। यह बहुत उपयोगी है जब आप अपने कोड की समस्याओं के निर्देश के खोज कर रहे हों। 
 
-Debug output ka istemal aapko apne code ki performance aur errors ke alawa bhi kuch aur fayde deta hai. Aap isse apne code ki execution flow ko samajh sakte hain aur apne code ko optimize kar sakte hain. Iske alawa, aap apne code mein breakpoints laga kar step through debugging bhi kar sakte hain.
+## गहराई में जाएं
 
-## Dekhe Bhi:
+डिबग आउटपुट प्रिंट करने के बारे में और गहराई से जानने के लिए, आप इस ब्लॉग पोस्ट को पढ़ सकते हैं: (insert link)
 
-- [Elm ka Debug library](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Elm ka Debugging Guide](https://guide.elm-lang.org/debugging/)
+## देखें भी
+
+- Elm बहुत उपयोगी प्रोग्रामिंग भाषा है। आप अपनी जानकारी बढ़ाने के लिए यह Elm ऑनलाइन ट्यूटोरियल को देख सकते हैं: (insert link)
+- यदि आप डिबगिंग के बारे में और जानकारी चाहते हैं, तो आप यह Elm डिबगिंग गाइड को देख सकते हैं: (insert link)
+- Elm कम्यूनिटी भी बहुत अच्छी है और आप उनसे सीख सकते हैं, समय-समय पर आयोजित होने वाले मीटअप्स में हिस्सा ले सकते हैं: (insert link)

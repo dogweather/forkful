@@ -1,46 +1,47 @@
 ---
-title:                "Python: Beregning av en dato i fremtiden eller fortiden"
+title:                "Python: Å beregne en dato i fremtiden eller fortiden"
+simple_title:         "Å beregne en dato i fremtiden eller fortiden"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-### Hvorfor
-Det kan være mange grunner til at man ønsker å kunne beregne en dato i fremtiden eller fortiden i Python. Dette kan være nyttig for å planlegge fremtidige hendelser, beregne alder eller for å løse mer komplekse problemstillinger.
+##Hvorfor
 
-### Hvordan
-For å beregne en dato i Python, må man først importere datatypen datetime ved å skrive følgende kode:
+Å beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge eller forstå hendelser i livet ditt. Det kan også være nyttig for å løse problemer eller forutsi fremtidige datoer for ulike arrangementer.
+
+##Slik gjør du det
 
 ```Python
 import datetime
+
+# Beregn en dato 100 dager fra i dag
+dato = datetime.date.today() + datetime.timedelta(days=100)
+print(dato)
+
+# Output:
+# 2022-03-31
 ```
 
-Deretter kan man initialisere en variabel med dagens dato ved å bruke datatypen datetime.date som vist under:
+For å beregne en dato i fremtiden, kan du bruke datetime biblioteket i Python. Ved å bruke timedelta funksjonen, kan du legge til et gitt antall dager, uker, måneder eller år til en eksisterende dato. Dette gjør det enkelt å beregne en dato basert på et bestemt antall dager fra dagens dato.
 
-```Python
-today = datetime.date.today()
-```
+For å beregne en dato i fortiden, kan du bruke samme metode, men i stedet trekke fra et gitt antall dager, uker, måneder eller år til en eksisterende dato. Søk på nettet for å finne ut mer om hvordan du kan bruke datetime biblioteket for å beregne datoer etter dine behov.
 
-For å beregne en dato i fremtiden er det bare å legge til ønsket antall dager til variabelen today. For eksempel, hvis vi ønsker å finne datoen 30 dager frem i tid kan vi gjøre følgende:
+##Dypdykk
 
-```Python
-future_date = today + datetime.timedelta(days=30)
-```
+Datoer kan være komplekse å håndtere, spesielt når man tar hensyn til ulike kalendere og tidszoner. Python har et bredt spekter av biblioteker og moduler som kan hjelpe deg med å håndtere disse situasjonene.
 
-På samme måte kan man beregne en dato i fortiden ved å trekke fra ønsket antall dager. Her er et eksempel på å beregne datoen 30 dager tilbake i tid:
+Du kan for eksempel bruke 'dateutil' biblioteket for å håndtere datoer som følger den gregorianske kalenderen, men vises i andre kalendere, som for eksempel den jødiske kalenderen.
 
-```Python
-past_date = today - datetime.timedelta(days=30)
-```
+Det finnes også biblioteker som 'pytz' som lar deg håndtere tidszoner og konvertere datoer til forskjellige tidssoner. Dette er spesielt nyttig når du må samhandle med systemer som befinner seg i ulike deler av verden.
 
-Det er også mulig å beregne datoer utifra andre enheter, som for eksempel uker, år eller timer. For å lære mer om dette kan man lese dokumentasjonen til datatypen datetime.
+Søk på nettet for å finne ut mer om disse og andre biblioteker som kan hjelpe deg med å håndtere datoer på en mer avansert måte.
 
-### Dype dykk
-I tillegg til å kunne beregne en enkelt dato, kan man også gjøre mer avanserte beregninger i Python. Dette kan inkludere å finne ut hvilken dag en dato faller på, beregne forskjellen mellom to datoer eller manipulere datoer basert på spesifikke krav. Det finnes også flere biblioteker som kan hjelpe med mer komplekse beregninger, som for eksempel Arrow eller Pendulum.
+##Se også
 
-### Se også
-- [Dokumentasjon for datatypen datetime i Python](https://docs.python.org/3/library/datetime.html)
-- [Arrow biblioteket for dato og tid håndtering i Python](https://arrow.readthedocs.io/en/latest/)
-- [Pendulum biblioteket for enkel dato og tid håndtering i Python](https://pendulum.eustace.io/docs/)
+- [Python datetime bibliotek dokumentasjon](https://docs.python.org/3/library/datetime.html)
+- [dateutil bibliotek dokumentasjon](https://dateutil.readthedocs.io/en/stable/)
+- [pytz bibliotek dokumentasjon](http://pytz.sourceforge.net/)

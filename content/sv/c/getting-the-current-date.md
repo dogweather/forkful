@@ -1,7 +1,9 @@
 ---
-title:                "C: Att hämta aktuellt datum"
+title:                "C: Att få den aktuella datumet"
+simple_title:         "Att få den aktuella datumet"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/getting-the-current-date.md"
 ---
 
@@ -9,60 +11,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att få den aktuella datumet kanske inte verkar som en stor uppgift, men det kan vara användbart i olika situationer som att lagra information eller skriva ut rapporter med datumet. I denna blogginlägg kommer vi att ta en titt på hur man enkelt kan få det aktuella datumet i ett C-program genom att använda biblioteksfunktioner.
+Att kunna få den nuvarande datumet är en viktig del av många C-program. Det kan hjälpa till att spåra tider och datum för användarsessioner, hantera filnamn baserat på datum och mycket mer.
 
-## Hur man
+## Så här gör du
 
-För att få det aktuella datumet i C behöver vi först inkludera biblioteket time.h. Detta ger tillgång till funktioner som hjälper oss att arbeta med datum och tid.
+För att få den nuvarande datumet i C, måste vi använda funktionen `time.h` i vårt program. Först inkluderar vi biblioteket genom att lägga till `#include <time.h>` på toppen av vårt program.
+
+Sedan deklarerar vi en variabel `time_t current_time` för att hålla den aktuella tiden och sedan kör `time()` funktionen och tilldelar resultatet till vår variabel. Detta ger oss antalet sekunder som har gått sedan 1 januari 1970.
+
+```C
+#include <time.h>
+
+int main() {
+    time_t current_time;
+    current_time = time(NULL);
+    return 0;
+}
+```
+
+För att få datumet från detta nummer, använder vi funktionen `localtime()` som tar innanför ett `time_t` värde och konverterar det till ett datumstrukturobjekt. Vi deklarerar även en variabel `struct tm *current_date` som håller detta datumstruktur.
+
+```C 
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    time_t current_time;
+    time(&current_time);
+
+    struct tm *current_date;
+    current_date = localtime(&current_time);
+
+    return 0;
+}
+```
+
+Nu kan vi använda `current_date` för att få det aktuella datumet i formatet vi behöver. Till exempel, om vi vill skriva ut datumet i formatet "DD-MM-YYYY", kan vi använda `printf()` funktionen med ett formatsträng som innehåller olika konverteringar för dagen, månaden och året.
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-  // Skapar variabeln för att lagra datumet
-  time_t datum;
-  time(&datum);
+    time_t current_time;
+    time(&current_time);
 
-  // Skriver ut datumet på skärmen
-  printf("Aktuellt datum: %s", ctime(&datum));
+    struct tm *current_date;
+    current_date = localtime(&current_time);
 
-  return 0;
+    printf("Current Date: %02d-%02d-%04d\n", current_date->tm_mday, current_date->tm_mon+1, current_date->tm_year+1900);
+
+    return 0;
 }
 ```
 
-I detta exempel använder vi funktionen ctime() för att konvertera den numeriska representationen av datumet till en sträng som kan skrivas ut. Resultatet beror på vilken datumformat som används på din dator.
-
-Både time() och ctime() funktioner är en del av standardbiblioteket i C, så du behöver inte oroa dig för att installera eller importera ytterligare bibliotek.
+Detta kommer att producera utmatning som "Current Date: 28-09-2020", som är dagens datum när detta skrivs.
 
 ## Djupdykning
 
-Om du vill ha mer precision i hur datumet visas kan du använda funktionen localtime(). Detta returnerar en struct med specifik information om datumet, till exempel år, månad, dag och klockslag.
+Funktionerna i `time.h` biblioteket är baserade på Unix time system, där tiden mäts som antalet sekunder som har gått sedan 1 januari 1970. Detta är också känt som "epoch" och används för att hålla en konsekvent tidsreferenspunkt över olika system.
 
-```C
-#include <stdio.h>
-#include <time.h>
-
-int main() {
-  // Skapar en struct för att lagra datumet
-  struct tm *datum_detaljer;
-  time_t datum;
-  time(&datum);
-
-  // Använder localtime() och lagrar den i vår struct
-  datum_detaljer = localtime(&datum);
-
-  // Skriver ut komponenterna i datumet
-  printf("Dagens datum är: %d/%d/%d", datum_detaljer->tm_year + 1900, datum_detaljer->tm_mon + 1, datum_detaljer->tm_mday);
-
-  return 0;
-}
-```
-
-Genom att använda de olika komponenterna som returneras från localtime() funktionen kan du anpassa hur datumet visas i ditt program.
+Den `time_t` variabel som vi använder för att lagra den aktuella tiden är egentligen bara ett heltal som representerar sekunderna som har gått sedan epoch. Detta gör det enkelt och effektivt att hantera tider i C-programmering.
 
 ## Se även
 
-- [C Biblioteksfunktioner för datum och tid](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Tutorial på Hur man använder time.h i C](https://www.geeksforgeeks.org/time-h-header-file-in-c-with-examples/)
-- [Enkel guide för C-timing och datum](https://www.programiz.com/c-programming/c-current-date-time)
+- [C Date and Time tutorial](https://www.programiz.com/c-programming/c-date-time)
+- [time.h reference](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Epoch (Unix)](https://en.wikipedia.org/wiki/Epoch_(computing))

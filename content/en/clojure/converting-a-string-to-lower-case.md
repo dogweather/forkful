@@ -1,7 +1,9 @@
 ---
 title:                "Clojure recipe: Converting a string to lower case"
+simple_title:         "Converting a string to lower case"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,36 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Converting strings to lower case is a fundamental operation in many programming languages, including Clojure. This is useful for tasks such as comparing strings without worrying about case sensitivity and formatting data in a consistent way.
+Converting a string to lower case may seem like a mundane task, but it can actually be quite useful in various programming scenarios. For example, it can be used to standardize user input, compare strings in a case-insensitive manner, or simply for aesthetic purposes.
 
 ## How To
 
-To convert a string to lower case in Clojure, we can use the `lower-case` function. Let's look at an example:
+In Clojure, converting a string to lower case is a simple task using the `clojure.string/lower-case` function. Let's take a look at some coding examples.
 
-```Clojure
-(lower-case "HELLO WORLD")
+```Clojure 
+(clojure.string/lower-case "HELLO") ;; output: "hello"
+(clojure.string/lower-case "Hello World") ;; output: "hello world"
+(clojure.string/lower-case "1234") ;; output: "1234"
 ```
 
-This code will take the input string "HELLO WORLD" and return "hello world". Pretty simple, right?
-
-Now, let's say we have a list of strings and we want to convert all of them to lower case. We can use the `map` function in conjunction with `lower-case` to achieve this. Here's an example:
-
-```Clojure
-(map lower-case ["CAT", "DOG", "BIRD"])
-```
-
-The output of this code will be `("cat" "dog" "bird")`. Notice how each string in the list has been converted to lower case.
+We can see that the `clojure.string/lower-case` function works with not just letters, but with numbers as well. It will also preserve any non-letter characters, such as spaces or punctuation.
 
 ## Deep Dive
 
-For those interested in the technical details, the `lower-case` function in Clojure uses the Java `String` class's `toLowerCase` method under the hood. This ensures consistent behavior across different platforms and avoids any potential issues with special characters.
+Under the hood, the `clojure.string/lower-case` function uses the `java.lang.String` method `toLowerCase()` to perform the conversion. This method follows the Unicode standard for case-insensitive comparisons. This means that accented characters and letters from different alphabets will be converted to their lowercase equivalents.
 
-Additionally, it's worth noting that the `lower-case` function only works on ASCII characters. This means that converting strings with non-English characters may not produce the desired results. If you need to handle non-ASCII characters, you can use the `clojure.string/lower-case` function, which uses the Java `Locale` class to handle different language-specific cases.
+It's also worth noting that the `clojure.string/lower-case` function is not limited to just strings. It can also be applied to sequences of strings, such as lists or vectors. When applied to a sequence, the function will return a sequence with all elements converted to lowercase.
 
 ## See Also
 
-Here are some helpful resources for further reading on string manipulation in Clojure:
+To learn more about string manipulation in Clojure, check out these resources:
 
-- Official Clojure documentation for `lower-case`: https://clojuredocs.org/clojure.core/lower-case
-- Clojure Cheat Sheet: https://clojure.org/api/cheatsheet
-- Clojure String API: https://clojure.org/reference/java_interop#_strings
+- [ClojureDocs - clojure.string/lower-case](https://clojuredocs.org/clojure.string/lower-case)
+- [The Joy of Clojure - Chapter 2: Strings](https://www.manning.com/books/the-joy-of-clojure)
+- [Clojure for the Brave and True - Chapter 7: Strings](https://www.braveclojure.com/strings/)

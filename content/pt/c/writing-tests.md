@@ -1,94 +1,78 @@
 ---
 title:                "C: Escrevendo testes"
+simple_title:         "Escrevendo testes"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-Por que escrever testes em C pode melhorar seu código
+## Por que escrever testes é importante para programadores
 
-Escrever testes é uma das melhores práticas de programação que pode ajudar a melhorar a qualidade do seu código em C. Testes bem escritos podem detectar erros e bugs em seu código antes mesmo de serem implementados, economizando tempo e esforço.
+Escrever testes é uma parte essencial do processo de desenvolvimento de software, especialmente na programação em C. Esse tipo de linguagem requer uma abordagem minuciosa e cuidadosa, pois pequenos erros podem se tornar grandes problemas no funcionamento do programa. Escrever testes ajuda a garantir que o código esteja funcionando corretamente e a detectar possíveis erros antes que eles causem falhas críticas no sistema.
 
-Como escrever testes em C
+## Como escrever testes em C
 
-Para escrever testes em C, você deve primeiro garantir que tenha uma compreensão sólida do código que está testando. Em seguida, você deve seguir as etapas abaixo:
+Escrever testes em C pode parecer intimidante no início, mas com um pouco de prática, se torna uma tarefa simples e eficiente. Primeiramente, é importante escolher um framework de testes, como o CUnit ou Unity, para facilitar a organização e execução dos testes.
 
-1. **Escolha um framework de teste**: existem várias opções de frameworks de teste disponíveis para C, como "CuTest" e "Check". Escolha o que melhor se adequa às suas necessidades e conhecimentos.
-
-2. **Defina suas funções de teste**: crie funções de teste que verifiquem o comportamento de suas funções no código. Essas funções devem retornar "pass" ou "fail" com base nos resultados do teste.
-
-3. **Utilize as macros adequadas**: as macros fornecidas pelo framework de teste selecionado ajudarão a verificar assertivamente os resultados esperados no seu código.
-
-4. **Execute seus testes**: compilo e execute seus testes para verificar se eles estão retornando os resultados esperados. Se alguns testes falharem, você precisará fazer ajustes no seu código.
-
-Exemplo de código em C:
+A seguir, vamos ver um exemplo de código em C que utiliza o framework CUnit para escrever e executar testes em uma função que realiza a soma de dois números inteiros:
 
 ```C
-#include <stdio.h> 
-#include "CuTest.h" 
+#include <CUnit/CUnit.h>
 
-void test_function1(CuTest* test) { 
-    CuAssertIntEquals(test, 10, function1(2, 5)); 
-    CuAssertIntEquals(test, 45, function1(15, 30)); 
-} 
-
-void test_function2(CuTest* test) { 
-    CuAssertIntEquals(test, 5, function2(10)); 
-    CuAssertIntEquals(test, -2, function2(-4)); 
-} 
-
-CuSuite* function1_suite() { 
-    CuSuite* suite = CuSuiteNew(); 
-    SUITE_ADD_TEST(suite, test_function1); 
-    return suite; 
-} 
-
-CuSuite* function2_suite() { 
-    CuSuite* suite = CuSuiteNew(); 
-    SUITE_ADD_TEST(suite, test_function2); 
-    return suite; 
-} 
-
-void all_suites(CuSuite* testSuite) { 
-    SUITE_ADD_SUITE(testSuite, function1_suite()); 
-    SUITE_ADD_SUITE(testSuite, function2_suite()); 
-} 
-
-int main() { 
-    CuSuite *suites = CuSuiteNew(); 
-    all_suites(suites); 
-    CuSuiteRun(suites); 
-    
-    printf("Number of tests run: %d\n", suites->countRun); 
-    
-    CuString *output = CuStringNew(); 
-    CuSuiteSummary(suites, output); 
-    printf("Summary: %s\n", output->buffer); 
-    
-	CuSuiteDetails(suites, output); 
-    printf("Details: %s/n", output->buffer); 
-    
-    CuSuiteDelete(suites); 
-    CuStringDelete(output); 
-    return 0; 
+// Função a ser testada
+int soma(int a, int b) {
+    return a + b;
 }
 
+// Função auxiliar para inicializar os testes
+int iniciar_testes() {
+    return 0;
+}
+
+// Função auxiliar para encerrar os testes
+int encerrar_testes() {
+    return 0;
+}
+
+// Teste para verificar se a função soma está retornando o valor correto
+void teste_soma() {
+    CU_ASSERT_EQUAL(soma(2, 3), 5); // 2 + 3 = 5
+    CU_ASSERT_EQUAL(soma(10, -5), 5); // 10 + (-5) = 5
+    CU_ASSERT_EQUAL(soma(-8, -8), -16); // (-8) + (-8) = -16
+}
+
+// Adiciona os testes a uma suite e registra as funções auxiliares
+void adicionar_testes() {
+    CU_pSuite suite = CU_add_suite("Suite de testes para soma", iniciar_testes, encerrar_testes);
+    CU_add_test(suite, "teste_soma", teste_soma);
+}
+
+// Função principal para executar os testes
+int main() {
+    CU_initialize_registry();
+    adicionar_testes();
+
+    CU_basic_run_tests();
+    CU_cleanup_registry();
+
+    return 0;
+}
 ```
 
-Saída esperada:
+Neste exemplo, utilizamos a função `CU_ASSERT_EQUAL` para comparar o resultado da função `soma` com o valor esperado. Ao executar o programa, se algum dos testes falhar, o framework CUnit irá mostrar uma mensagem de erro indicando qual teste falhou e o porquê.
 
-```
-Number of tests run: 4 
-Summary: Cases run: 4, Failures: 0 
-Details: Test function1 <PASSED> 
-Test function2 <PASSED> 
+## Uma visão mais profunda sobre escrita de testes
 
-See Also
+Escrever testes é uma prática importante para garantir a qualidade e eficiência do seu código, mas também pode ajudar a melhorar o design e a organização do seu programa. Ao escrever os testes antes de implementar a função, você pode pensar nos possíveis casos de uso e no comportamento esperado da função, o que pode levar a um código mais claro e legível.
 
-Para saber mais sobre como escrever testes em C, confira os links abaixo:
+Além disso, escrever testes pode ser útil para evitar regressões em seu código. Caso você precise fazer alterações em uma função já existente, ter testes para essa função irá garantir que o seu novo código não quebre a funcionalidade anterior.
 
-- [Tutorial: How to write test cases in C](https://www.tutorialspoint.com/cprogramming/cprogramming_unittesting.htm)
-- [Using Check: A unit testing framework for C](https://libcheck.github.io/check/)
-- [Unit Testing Techniques for C](https://www.slideshare.net/GeoffreySereg/testing-techniques-for-c)
+## Veja também
+- [Documentação do CUnit](https://github.com/jfoster/cunit)
+- [Framework de testes Unity para C](https://github.com/throwtheswitch/unity)
+- [Tutorial de escrita de testes em C](https://www.skybert.net/c/unit-testing-c-code/)
+- [Exemplos de testes em C](https://github.com/chriskohlhoff/CxxSpec)
+- [Guia de boas práticas para escrita de testes em C](https://github.com/Leo230/ctests/blob/master/doc/guide_pt_br.md)

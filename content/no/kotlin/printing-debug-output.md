@@ -1,47 +1,57 @@
 ---
-title:                "Kotlin: Utskrift av feilsøkingsutdata"
+title:                "Kotlin: Utskrift av feilsøkingsresultater"
+simple_title:         "Utskrift av feilsøkingsresultater"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor?
 
-Noen ganger kan det være utfordrende å finne feil i koden din. Du kan tilbringe timer med å skrive og teste koden din, men likevel ikke være sikker på hvor feilen ligger. Det er her utskrift av feilsøkingsutdata kommer inn i bildet. Ved å skrive ut variabler, verdier og kodelinjer kan du enklere få oversikt over hva som skjer i koden din og finne feilen raskere.
+Feilsøking er en viktig del av programmeringsprosessen uansett hvilket språk du bruker. Ved å skrive ut debug-utgang kan du identifisere og løse problemer i koden din. Selv om dette kan virke som en enkel oppgave, er det viktig å forstå hvorfor det er nyttig å gjøre det riktig.
 
-## Hvordan
+## Hvordan gjør man det?
 
-Det er flere måter å skrive ut feilsøkingsutdata i Kotlin, men den enkleste er å bruke funksjonen `println()`. Denne funksjonen tar inn en hvilken som helst datatype som argument og skriver den ut på skjermen. Her er et eksempel på hvordan du kan skrive ut en variabel og en streng i Kotlin:
-
-```Kotlin
-var nummer = 42
-println("Verdien av variabelen nummer er: $nummer")
-```
-
-Output: Verdien av variabelen nummer er: 42
-
-Du kan også bruke en tekstmaler for å lage en mer beskrivende melding:
+Når det kommer til Kotlin, er det flere måter å skrive ut debug-utgang på. En måte er å bruke `println()` funksjonen, som vil skrive ut dataen til standardutgangen. For å gjøre dette, bruker du bare `println()` etterfulgt av variabelen du vil skrive ut, som vist i eksempelet nedenfor:
 
 ```Kotlin
-var navn = "Kari"
-var alder = 30
-println("$navn er $alder år gammel.")
+val nummer = 42
+println(nummer)
 ```
 
-Output: Kari er 30 år gammel.
+Output: 42
 
-Husk at du kan skrive ut så mange variabler og verdier du trenger for å få en god oversikt over koden din.
+En annen måte å skrive ut debug-utgang på er å bruke `$`-tegnet for å interpolere variabler inn i en streng, som vist i eksempelet nedenfor:
 
-## Dypdykk
+```Kotlin
+val navn = "Sara"
+println("Mitt navn er $navn")
+```
 
-Når du bruker `println()` for feilsøking, er det viktig å være klar over at denne funksjonen kun skal brukes midlertidig. Å ha mange utskrifter i koden din kan senke ytelsen og gjøre koden vanskeligere å lese. Derfor bør du fjerne utskriftene når du har funnet og løst feilen.
+Output: Mitt navn er Sara
 
-En annen måte å skrive ut feilsøkingsutdata på er ved å bruke loggfunksjoner som `Log.d()` eller `Log.e()` i Android-utvikling. Disse funksjonene er nyttige i større prosjekter og gjør det mulig å filtrere utskriftene dine basert på nivå (debug, error, osv.) og komponent i koden.
+For mer komplisert debugging, kan du også bruke `debug`-funksjonen fra Kotlin's standard bibliotek. Dette vil gi deg mer detaljert informasjon om verdien av en variabel, da det konverterer den til en streng og skriver den ut. Bruk av `debug`-funksjonen krever en ekstra import og ser slik ut:
 
-## Se Også
+```Kotlin
+import kotlin.text.debug
 
-- [Offisiell dokumentasjon om feilsøking i Kotlin] (https://kotlinlang.org/docs/reflection.html#debugging)
-- [En guide til feilsøking i Kotlin] (https://www.raywenderlich.com/6013-kotlin-debugging-on-android-for-beginners)
-- [Eksempelkode med utskrift av feilsøkingsutdata] (https://github.com/kotlin/kotlinx.serialozation/blob/master/docs/troubleshooting.md#printing-debug-output)
+val navn = "Sara"
+debug(navn)
+```
+
+Output: "Sara"
+
+## Dykk dypere ned
+
+Nå som du vet hvordan du skriver ut debug-utgang i Kotlin, er det viktig å forstå når og hvor du skal bruke det. Det er spesielt nyttig når du jobber med store og komplekse koder, da det kan hjelpe deg med å identifisere hvilken del av koden som forårsaker feil. Det kan også være nyttig når du vil sjekke verdien av variabler i ulike deler av koden for å sikre at de er riktig satt til det du forventer.
+
+Det er viktig å huske å fjerne all debug-utgang før du publiserer eller deler koden din. Dette vil sikre at sluttbrukere ikke ser eller påvirkes av debug-beskjeder.
+
+## Se også
+
+- [Offisiell Kotlin dokumentasjon](https://kotlinlang.org/docs/tutorials/kotlin-for-py/debugging.html)
+- [Debugging i Kotlin av CodeBrainer](https://www.youtube.com/watch?v=9nL3wpKjDrg)
+- [Feilsøking og logging i Kotlin av Ray Wenderlich](https://www.raywenderlich.com/13909341-debugging-and-logging-in-kotlin)

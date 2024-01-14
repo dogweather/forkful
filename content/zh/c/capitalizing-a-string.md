@@ -1,7 +1,9 @@
 ---
-title:                "C: 将字符串转换为大写"
+title:                "C: 改变字符串的大小写"
+simple_title:         "改变字符串的大小写"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/capitalizing-a-string.md"
 ---
 
@@ -9,43 +11,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-在编写C程序时，有时候我们需要将字符串的首字母变成大写，这样可以提高程序的可读性和用户体验。例如，我们可能需要将用户输入的名字显示为大写首字母形式，或者格式化一些特定的数据。不管是什么原因，学习如何在C中实现字符串的首字母大写都是非常有用的技能。
+在程序设计中，有时候我们需要将字符串中的字母变成大写。这可能是为了遵循特定的格式要求，或者是为了方便数据的处理。无论出于什么原因，大写化字符串是一个常见的需求，因此学习如何实现这一功能是很重要的。
 
-## 如何做
+## 如何实现
 
-在C语言中，首字母大写的方式有很多种，我们这里介绍一种简单的方法。首先，我们需要定义一个函数来实现字符串的首字母大写功能：
+大写化字符串可以通过使用C语言的标准库函数 `toupper()`来实现。这个函数可以将小写字母转换为大写字母，并返回转换后的字符。下面的代码展示了如何使用 `toupper()`函数来大写化一个字符串，并打印出结果：
 
 ```C
-void capitalize(char str[]){
-    if(str[0]>=97&&str[0]<=122){ //检查首字母是否为小写字母
-        str[0]-=32; //转换为大写字母
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    // 声明一个字符串并赋值
+    char str[] = "hello world";
+    // 用于遍历字符串的循环
+    int i;
+    // 使用循环将字符串中的每个字符转换为大写字母
+    for (i = 0; str[i] != '\0'; i++) {
+        str[i] = toupper(str[i]);
     }
-}
-```
+    // 打印大写化后的字符串
+    printf("%s\n", str);
 
-上面的函数接受一个字符串作为参数，并且假设输入的字符串只包含字母和空格。首先，我们通过检查字符串的第一个字符是否在小写字母的ASCII码范围内来判断第一个字符是否为小写字母。然后，我们通过将第一个字符的ASCII码减去32来实现大写转换。最后，我们可以在主函数中使用这个函数来对字符串进行首字母大写操作：
-
-```C
-int main(){
-    char name[] = "john";
-    capitalize(name);
-    printf("%s\n", name); //输出结果为"John"
     return 0;
 }
+
 ```
 
-## 深入了解
+上面的代码输出为 `HELLO WORLD`，就是我们想要的结果。
 
-上面介绍的方法只是对字符串首字母大写的一种简单实现。实际上，字符串的首字母大写有很多种方式，并且实现的复杂程度也各不相同。一些更复杂的实现可能会考虑字符串中的数字和特殊字符，或者支持不同的语言。如果你对字符串的操作感兴趣，可以继续深入学习字符串的处理和转换技巧。
+## 深入探讨
 
-## 参考资料
+在上面的例子中，我们通过使用循环来遍历字符串中的每个字符，然后使用 `toupper()`函数将它们转换为大写字母。但是，这种方法只适用于单词中没有空格的情况。如果字符串中有空格，我们需要另一种方法来处理。
 
-- [How to capitalize a string in C](https://www.geeksforgeeks.org/c-program-captalize-first-letter-every-word-string/)
-- [ASCII码表](http://www.asciitable.com/)
-- [C字符串处理教程](http://www.runoob.com/cprogramming/c-strings.html)
+一种解决方法是使用 `gets()`函数来接受用户输入的字符串，然后再使用循环和 `toupper()`函数来处理。但是，由于 `gets()`函数已被弃用，所以我们推荐使用 `fgets()`函数来接受输入。下面的代码展示了如何使用 `fgets()`函数来接受用户输入，并将输入的字符串转换为大写字母：
 
-## 参见
+```C
+#include <stdio.h>
+#include <ctype.h>
 
-- [Markdown文档](https://www.markdownguide.org/)
-- [C语言教程](http://www.runoob.com/cprogramming/c-tutorial.html)
-- [字符串处理函数参考手册](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+int main() {
+    // 声明一个字符串并预先分配内存
+    char str[100];
+    // 使用fgets()函数接受用户输入
+    fgets(str, 100, stdin);
+    // 使用循环和toupper()函数将字符串转换为大写字母
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = toupper(str[i]);
+    }
+    // 打印大写化后的字符串
+    printf("%s\n", str);
+
+    return 0;
+}
+
+```
+
+上面的代码可以处理包含空格的字符串，并且使用 `fgets()`函数可以避免缓冲区溢出的问题。
+
+## 参考链接
+
+- [toupper()函数文档](https://www.cplusplus.com/reference/cctype/toupper/)
+- [gets()函数文档](https://www.cplusplus.com/reference/cstdio/gets/)
+- [fgets()函数文档](https://www.cplusplus.com/reference/cstdio/fgets/)

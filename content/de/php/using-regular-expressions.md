@@ -1,53 +1,79 @@
 ---
 title:                "PHP: Verwendung von regulären Ausdrücken"
+simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Die Verwendung von regulären Ausdrücken kann die Arbeit von Programmierern erheblich erleichtern. Sie ermöglichen es, komplexe Suchmuster in Texten zu definieren und somit effizienter und präziser zu arbeiten.
+## Warum Regular Expressions verwenden?
 
-## How To
-Reguläre Ausdrücke in PHP werden mit Hilfe der `preg_match()` Funktion verwendet. Beispiel:
+Regular Expressions, oder auch reguläre Ausdrücke, sind ein leistungsstarkes Tool für alle Programmierer und Entwickler. Sie ermöglichen es, Textmuster in Strings zu finden und zu manipulieren. Dies spart nicht nur Zeit, sondern auch viele Codezeilen. Wenn du komplexe Such- und Ersetzungsvorgänge in deinem Code durchführen musst, sind Regular Expressions die beste Option.
 
-```PHP
-$text = "Hallo, mein Name ist Max";
-if (preg_match("/Max/", $text)) {
-   echo "Der Text enthält den Namen Max";
-}
-```
+## Wie man Regular Expressions verwendet
 
-Dieser Code durchsucht den gegebenen Text nach dem Suchmuster "Max" und gibt eine Nachricht aus, wenn dieser gefunden wurde. Die Ausgabe lautet: "Der Text enthält den Namen Max".
-
-Reguläre Ausdrücke ermöglichen es auch, Variablen in das Suchmuster einzubinden, um so noch präzisere Suchen durchzuführen. Beispiel:
+Um Regular Expressions in PHP zu verwenden, musst du die Funktion `preg_match()` verwenden. Diese Funktion nimmt zwei Argumente an: das Muster, nach dem gesucht werden soll, und den String, in dem gesucht werden soll. Zum Beispiel:
 
 ```PHP
-$text = "Ich habe 3 Hunde und 2 Katzen";
-if (preg_match("/(\d+) Hunde und (\d+) Katzen/", $text, $matches)) {
-   echo "In dem Text wurden ".$matches[1]." Hunde und ".$matches[2]." Katzen gefunden";
-}
+<?php
+
+$string = "Hallo, mein Name ist Lisa und ich bin 25 Jahre alt.";
+$pattern = "/[a-z]+/i";
+
+preg_match($pattern, $string, $matches);
+
+print_r($matches);
+
+// Ausgabe: Array ( [0] => Hallo [1] => mein [2] => Name [3] => ist [4] => Lisa [5] => und [6] => ich [7] => bin [8] => Jahre [9] => alt )
 ```
 
-Dieser Code sucht nach der Anzahl der Hunde und Katzen im Text und gibt diese aus. Die Ausgabe lautet: "In dem Text wurden 3 Hunde und 2 Katzen gefunden".
+In diesem Beispiel wird das Muster `[a-z]+` verwendet, um nach allen Wörtern im String zu suchen, die aus mindestens einem Kleinbuchstaben bestehen. Das `i` am Ende des Musters bedeutet, dass die Groß- und Kleinschreibung ignoriert wird.
 
-## Deep Dive
-Reguläre Ausdrücke können auch eine Vielzahl von Wildcards und Modifikatoren enthalten, um noch komplexere Suchmuster zu definieren. Einige Beispiele sind:
+Du kannst auch mit regulären Ausdrücken ersetzen, indem du die Funktion `preg_replace()` verwendest. Diese Funktion nimmt drei Argumente an: das Muster, nach dem gesucht werden soll, die Ersetzung und der String, in dem die Ersetzung durchgeführt werden soll. Beispiel:
 
-- `.` als Wildcard für ein beliebiges Zeichen
-- `*` für null oder mehr Vorkommnisse
-- `+` für eins oder mehr Vorkommnisse
-- `?` für null oder eins Vorkommnisse
-- `^` für das erste Zeichen in einer Zeile
-- `$` für das letzte Zeichen in einer Zeile
-- `[]` für den Bereich von Zeichen oder Zahlen
-- `()` für Gruppierungen
+```PHP
+<?php
 
-Es empfiehlt sich, sich ausführlicher mit regulären Ausdrücken auseinanderzusetzen, um deren volles Potenzial ausnutzen zu können.
+$string = "Heute ist ein schöner Tag";
+$pattern = "/schöner/";
+$replace = "herrlicher";
+
+$new_string = preg_replace($pattern, $replace, $string);
+
+echo $new_string;
+
+// Ausgabe: Heute ist ein herrlicher Tag
+```
+
+Wie du sehen kannst, wird das Wort "schöner" durch "herrlicher" ersetzt.
+
+## Tiefer Einblick in Regular Expressions
+
+Regular Expressions können noch viel mehr als nur einfache Such- und Ersetzungsvorgänge. Du kannst zum Beispiel mit sogenannten Quantifizierern wie `+` oder `*` arbeiten, um das Muster anzupassen. `+` bedeutet, dass das vorhergehende Zeichen ein oder mehrmals vorkommen muss, während `*` bedeutet, dass es beliebig oft oder gar nicht vorkommen kann. Beispiel:
+
+```PHP
+<?php
+
+$string = "aaaab";
+$pattern = "/a+b/";
+$replace = "c";
+
+$new_string = preg_replace($pattern, $replace, $string);
+
+echo $new_string;
+
+// Ausgabe: cab
+```
+
+Hier wird das Muster `a+b` verwendet, was bedeutet, dass mindestens ein "a" vorkommen muss, aber auch mehrere nebeneinander vorkommen können.
+
+Es gibt noch viele weitere Möglichkeiten und Optionen bei der Verwendung von Regular Expressions, die es dir ermöglichen, komplexe Textmanipulationen effizient durchzuführen. Es lohnt sich auf jeden Fall, sich tiefer damit zu beschäftigen.
 
 ## Siehe auch
-- [PHP-Dokumentation zu regulären Ausdrücken](http://php.net/manual/de/book.pcre.php)
-- [RegExr - Online-Tool zur Erstellung und Testen von regulären Ausdrücken](https://regexr.com/)
-- [Einführung in reguläre Ausdrücke auf Selfhtml](https://wiki.selfhtml.org/wiki/Shell/Regul%C3%A4rer_Ausdruck)
+
+- [PHP Regular Expressions Dokumentation](https://www.php.net/manual/de/book.pcre.php)
+- [RegExr - Online Regular Expression Tester](https://regexr.com/)
+- [Regular Expressions Cheat Sheet](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285) (Englisch)

@@ -1,75 +1,55 @@
 ---
-title:                "Rust: Leyendo argumentos de línea de comando"
+title:                "Rust: Leyendo argumentos de línea de comandos"
+simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Los argumentos de línea de comandos son una forma útil de interactuar con un programa de Rust. Ya sea para proporcionar opciones o datos adicionales, entender cómo leer y utilizar estos argumentos puede mejorar la funcionalidad y la eficiencia de tu código.
+Los argumentos de línea de comando son una herramienta útil para permitir que los usuarios interactúen con un programa desde la línea de comandos. Aprender a leerlos en Rust te permitirá crear programas más versátiles y fáciles de usar para tus usuarios.
 
 ## Cómo hacerlo
-
-Para leer los argumentos de línea de comandos en Rust, puedes utilizar la función `args()` del módulo `std::env`. Esta función devuelve un iterador que puedes recorrer para obtener los argumentos proporcionados al programa.
-
-Por ejemplo, si deseas imprimir en pantalla todos los argumentos que se pasaron al programa, puedes hacerlo de la siguiente manera:
+Para leer los argumentos de línea de comando en Rust, primero debes importar el módulo `std::env`. Luego, puedes utilizar el método`args()` para obtener un iterador que contiene todos los argumentos proporcionados en la línea de comando. A continuación, puedes utilizar un ciclo `for` para recorrer todos los argumentos y realizar cualquier acción que necesites.
 
 ```Rust
 use std::env;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args = env::args();
     for argumento in args {
         println!("{}", argumento);
     }
 }
 ```
 
-Supongamos que el programa se llama `mi-programa` y se ejecuta de la siguiente manera:
-
-```bash
-$ mi-programa hola mundo
-```
-
-El resultado impreso en pantalla será:
+Si ejecutas este programa con los argumentos `rust blog` en la línea de comando, la salida será:
 
 ```
-mi-programa
-hola
-mundo
+rust
+blog
 ```
 
-## Profundizando
-
-Además de leer los argumentos proporcionados, también puedes realizar otras operaciones con ellos. Por ejemplo, puedes acceder a un argumento específico utilizando su índice en el vector de argumentos, como se muestra a continuación:
+Puedes acceder a los argumentos individuales utilizando su índice en el iterador `args`. Por ejemplo, el primer argumento tendría el índice `1` ya que el índice `0` es el nombre del programa.
 
 ```Rust
 use std::env;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    let primer_argumento = &args[1];
-    println!("El primer argumento es: {}", primer_argumento);
+    let args = env::args();
+    let primer_argumento = args.nth(1).expect("Falta el primer argumento");
+    println!("El primer argumento es {}", primer_argumento);
 }
 ```
 
-De esta forma, si ejecutas el programa `mi-programa` de la siguiente manera:
+La función `nth()` devuelve el argumento en el índice especificado y elimina ese argumento del iterador. Si el índice es mayor que el número de argumentos, devuelve un error.
 
-```bash
-$ mi-programa hola mundo
-```
+## Profundizando
+Hay muchas otras formas de leer y manejar los argumentos de línea de comando en Rust, como utilizar argumentos opcionales o validar los argumentos proporcionados por el usuario. Puedes leer más sobre esto en la documentación oficial de Rust o buscar ejemplos de código en línea.
 
-La salida será:
-
-```
-El primer argumento es: hola
-```
-
-## Ver también
-
-- Documentación oficial de `std::env`: https://doc.rust-lang.org/std/env/
-- Tutorial de lectura de argumentos en Rust: https://www.rust-lang.org/learn/get-started#command-line-arguments
-- Ejemplos de programas que utilizan argumentos de línea de comandos: https://github.com/rust-lang/rust-by-example#command-line
+## Vea también
+- [Documentación oficial de Rust sobre `std::env`](https://doc.rust-lang.org/std/env/index.html)
+- [Ejemplos de código para leer argumentos de línea de comando en Rust](https://www.conwaydev.com/working-with-command-line-arguments-in-rust/)

@@ -1,36 +1,34 @@
 ---
-title:                "Kotlin: स्ट्रिंग जोड़ना"
+title:                "Kotlin: स्ट्रिंग्स को जोड़ना"
+simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+String ko concat karna programming mein behad hi aam aur zaroori hai. Jab hum alag alag strings ko ek saath jodte hain, to humare code mein flexibility, readability aur functionality badh jati hai.
 
-कोटलिन में स्ट्रिंग्स को जोड़ने का तरीका शायद सबसे सरल और उपयोगी हो। इस समस्या का समाधान करने के लिए, आपको स्ट्रिंग्स को जोड़ने की जरूरत होती है, जो आपके कोड को और भी अधिक अच्छा बनाता है।
-
-## कैसे करें
-
-वर्तमान स्थिति में, हम एक स्ट्रिंग को दूसरे स्ट्रिंग देखेंगे, और उदाहरण के लिए हम सबसे पहले दो स्ट्रिंग्स को लेकर एक `result` नाम का स्ट्रिंग बनाते हैं। उसके बाद, हम `+` ऑपरेटर का उपयोग करके गुणा दो रहे हैं। आखिर में, हम इसका आउटपुट प्रिंट कर रहे हैं:
+## Kaise Karein
+Concatenating strings Kotlin mein behad hi asaan hai. Hum simple "+" operators ka istemal karke strings ko jod sakte hain. Iske liye, hum ek "plus" function ka istemal karte hain jo do strings ko ek saath jodkar ek naya string create karta hai. Chaliye isko ek example ke through samajhte hain:
 
 ```Kotlin
-var string1 = "Hello"
-var string2 = " World"
-var result = string1 + string2
-println(result) // Output: Hello World
+val firstName = "Aryan"
+val lastName = "Sharma"
+val fullName = firstName + " " + lastName
+println(fullName)
+
+// Output: Aryan Sharma
 ```
+Is example mein humne pehle do variables, "firstName" aur "lastName" mein alag alag strings assign kiya. Fir humne "fullName" variable mein "+" operator ka istemal karke dono strings ko jodkar ek naya string create kiya. Aur iski output ko print kiya.
 
-आप देख सकते हैं कि `+` ऑपरेटर का उपयोग करके हमने दो स्ट्रिंग्स को जोड़ दिया है। इसी तरह, आप `*` ऑपरेटर का उपयोग करके भी दो स्ट्रिंग्स को गुणा सकते हैं। आप इस तरह फिर से `println()` का उपयोग करके उसका आउटपुट देख सकते हैं:
+## Deep Dive
+Humne dekha ki '+' operator ka istemal karke hum bahut asaani se strings ko jod sakte hain. Lekin Kotlin mein hum "plus" function ke sath sath "plusAssign" bhi function ka istemal kar sakte hain jo humare variable ko update karke usmein concat kiya hua string rakhta hai. Is tarah se humare code mein less clutter aur better performance milti hai.
 
-```Kotlin
-var string1 = "hello"
-var string2 = "world"
-var answer = string1 * string2
-println(answer) // Output: helloworld
-```
-
-## डीप डाइव
-
-आपको पहले भी कुछ उपयोगी ऑपरेटर्स के बारे में बताया गया है, जिनका उपयोग आप स्ट्रिंग्स को जोड़ने या गुणा करने के लिए कर सकते हैं। इन के अलावा, आप `StringBuilder` और `StringBuffer` का भी उपयोग कर सकते हैं। इन दोनों क्लासेज आपको योग्य तारीके से स्ट्रिंग्स को जोड़ने या गुणा करने की अनुमति देत
+## Dekhein Bhi
+* [Official Kotlin Documentation on strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+* [Tutorial on concatenating strings in Kotlin](https://www.geeksforgeeks.org/kotlin-string-concatenation/)
+* [Medium article on string manipulation in Kotlin](https://medium.com/codingtown/kotlin-string-manipulation-ffc3a5a0b445)

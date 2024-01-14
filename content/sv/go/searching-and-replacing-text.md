@@ -1,53 +1,46 @@
 ---
-title:                "Go: Sökning och ersättning av text"
+title:                "Go: Söka och ersätta text"
+simple_title:         "Söka och ersätta text"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att söka och ersätta text är en vanlig process inom programmering som kan effektivisera och underlätta arbetsflödet. I Go-språket finns det många inbyggda funktioner som gör det enkelt att utföra sökningar och ersättningar i text.
 
-Att söka och ersätta text är en vanlig uppgift inom programmering, särskilt när man arbetar med textfiler eller strängar. Genom att kunna effektivt söka och ersätta text kan du spara tid och undvika manuella fel.
-
-## Så här gör du
-
-Det finns flera sätt att söka och ersätta text i Go. En av de enklaste är att använda funktionen "ReplaceAll" från standardpaketet "strings". Här är ett exempel på hur du kan använda det:
+## Hur man gör
+För att söka och ersätta text i Go använder man sig av funktionen "strings.Replace()". Denna funktion tar in tre argument: strängen som ska sökas igenom, strängen som ska ersättas och det antal gånger som ersättningen ska göras. Nedan finns ett exempel på hur man kan använda funktionen:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    str := "Hej världen"
-    fmt.Println(str) // Skriver ut "Hej världen"
-
-    nyStr := strings.ReplaceAll(str, "Hej", "Hallå")
-    fmt.Println(nyStr) // Skriver ut "Hallå världen"
+	originalStr := "Välkommen till Golang!"
+	ersattStr := strings.Replace(originalStr, "Golang", "Go", 1)
+	fmt.Println(ersattStr)
 }
 ```
 
-I detta exempel använder vi "strings.ReplaceAll" för att ersätta alla förekomster av "Hej" med "Hallå" i strängen "Hej världen".
+Output:
+```
+Välkommen till Go!
+```
 
-Du kan också använda "Replace" för att bara ersätta den första förekomsten av en matchning. Det finns också mer avancerade mönstermatchningsfunktioner som "Regexp" från paketet "regexp".
+Detta exempel visar hur man enkelt kan ersätta en del av en sträng med en annan del.
 
 ## Djupdykning
+För den som vill veta mer om hur sökningar och ersättningar fungerar i Go-språket finns det flera olika metoder och tekniker som man kan använda sig av. En vanlig teknik är att använda reguljära uttryck för att söka efter mönster i en sträng. Go har inbyggda paket för reguljära uttryck, såsom "regexp", som gör det enkelt att söka och ersätta text baserat på ett givet mönster.
 
-Att förstå hur sök- och ersättningsprocessen fungerar under ytan kan hjälpa dig att bli mer effektiv i din kodning. När det kommer till textmatching finns det två vanliga algoritmer som används: "Boyer-Moore" och "Knuth-Morris-Pratt".
-
-Boyer-Moore-algoritmen fokuserar på att flytta sig i texten så lite som möjligt när den letar efter en matchning. Den börjar från höger sida av söksträngen och arbetar sig tillbaka mot vänster för att hoppa över delar av texten som inte kan matcha. Knuth-Morris-Pratt-algoritmen använder en liknande strategi, men lägger även till ytterligare datastrukturer för att undvika att jämföra tecken som redan har matchats.
-
-Du kan läsa mer om dessa algoritmer och hur de implementeras i Go på dessa länkar:
-
-- [Boyer-Moore-algoritmen](https://en.wikipedia.org/wiki/Boyer–Moore_string_search_algorithm)
-- [Knuth-Morris-Pratt-algoritmen](https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm)
-
-## Se också
-
-- [Go:s stränghanteringspaket](https://golang.org/pkg/strings/)
-- [Tutorial: Sök och ersätt i Go](https://gobyexample.com/string-functions)
+## Se även
+- [Go-dokumentationen för strings.Replace()](https://golang.org/pkg/strings/#Replace)
+- [En guide till reguljära uttryck i Go](https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go)
+- [Go:s inbyggda paket för reguljära uttryck](https://golang.org/pkg/regexp/)

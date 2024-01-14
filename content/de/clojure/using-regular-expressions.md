@@ -1,46 +1,51 @@
 ---
-title:                "Clojure: Verwenden von regulären Ausdrücken"
+title:                "Clojure: Verwendung von regulären Ausdrücken"
+simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
-Warum sollte man sich überhaupt mit regulären Ausdrücken in der Programmierung beschäftigen? Nun, reguläre Ausdrücke sind sehr nützlich, wenn es darum geht, bestimmte Muster in Texten oder Datensätzen zu finden und zu bearbeiten. Sie können auch dabei helfen, komplexe Daten zu untersuchen und zu filtern. In diesem Blog-Beitrag werden wir uns ansehen, wie man reguläre Ausdrücke in Clojure verwenden kann und warum sie eine wichtige Fähigkeit für jeden Programmierer sind.
+## Warum
 
-##Wie man reguläre Ausdrücke in Clojure verwendet
-Um reguläre Ausdrücke in Clojure zu verwenden, müssen wir das "re-seq" Modul importieren:
+Regex (reguläre Ausdrücke) sind ein äußerst nützliches Werkzeug für jeden, der in Clojure programmiert. Sie bieten eine einfache und effiziente Möglichkeit, Textmuster zu erkennen und zu verarbeiten. Egal ob Sie Daten analysieren, Texte parsen oder einfach nur nach bestimmten Wörtern suchen wollen, Regex sind ein unverzichtbares Werkzeug für jeden Clojure-Entwickler.
 
-```Clojure
-(ns example-regex.core
-(:require [clojure.string :as str]))
+## Wie geht's?
+
+Um Regex in Clojure zu nutzen, müssen Sie zunächst das Modul `clojure.string` importieren. Dieses Modul enthält alle Funktionen, die Sie zur Verarbeitung von Strings benötigen, einschließlich einem speziellen Regex-Modul. Nachdem Sie das Modul importiert haben, können Sie die Funktion `re-matches` verwenden, um ein Regex-Muster auf einen String anzuwenden. Hier ist ein Beispielcode für die Verwendung von Regex in Clojure:
+
+```Clojure 
+(require '[clojure.string :as str])
+
+(def text "Diese Schokolade ist super lecker!")
+(def pattern #"[a-z]+$")
+
+(str/re-matches pattern text)
 ```
 
-Wir können dann verschiedene Funktionen verwenden, um Strings zu durchsuchen und zu bearbeiten. Zum Beispiel, um alle Vorkommen von Zahlen in einem String zu finden, können wir die Funktion "str/replace" verwenden:
+Dieser Code prüft, ob der String `text` mit dem Regex-Muster `pattern` übereinstimmt. In diesem Fall ist das Ergebnis `lecker`, da es der letzte Teil des Strings ist, der aus Kleinbuchstaben besteht. Beachten Sie, dass Regex-Muster mit dem `#"` Zeichen in Clojure eingeleitet werden und dass der String `pattern` durch den Strichpunkt am Ende beendet wird.
 
-```Clojure
-(str/replace "I have 5 apples and 3 oranges" #"\d+" "X")
-```
+## Tiefer Einblick
 
-Dies würde den String in "I have X apples and X oranges" ändern. Hier wird die reguläre Ausdruckssyntax #"\d+" verwendet, um nach ganzen Zahlen (1 oder mehr) zu suchen und sie durch den Platzhalter "X" zu ersetzen. Weitere Funktionen, die mit regulären Ausdrücken verwendet werden können, sind "str/split" und "re-find". Es gibt noch viele weitere Möglichkeiten, reguläre Ausdrücke in Clojure zu verwenden, also experimentiere ruhig mit ihnen!
+Während das obige Beispiel einfache Regex in Clojure demonstriert, gibt es viele weitere Funktionen und Techniken, die Sie nutzen können, um Textmuster noch effektiver zu erkennen und zu verarbeiten. Hier sind einige wichtige Dinge, die Sie wissen sollten:
 
-##Tiefen Tauchgang in reguläre Ausdrücke
-Reguläre Ausdrücke folgen einer bestimmten Syntax und es kann eine Weile dauern, bis man sie vollständig versteht. Sie bestehen aus bestimmten Zeichen und Kombinationen, die verwendet werden, um Muster zu definieren, die dann in einem String gefunden und bearbeitet werden können. Zum Beispiel muss man zwischen "greedy" und "non-greedy" Quantifiern unterscheiden, um zu vermeiden, dass man zu viele oder zu wenige übereinstimmende Teile findet. Auch die Verwendung von Backslash-Fluchtsequenzen kann verwirrend sein, insbesondere wenn wir tatsächlich einen Backslash in unserem regulären Ausdruck benötigen.
+- Wildcards: Das Fragezeichen `?` steht für ein einzelnes beliebiges Zeichen, während das Sternchen `*` für eine beliebige Anzahl von Zeichen steht. Zum Beispiel würde das Muster `ba?r` sowohl `bar` als auch `bär` erkennen.
+- Quantifiers: Sie können auch angeben, wie viele Zeichen ein bestimmtes Muster beinhalten soll. Zum Beispiel würde das Muster `ba{1,3}r` `bar`, `baaar` und `baaar` erkennen, aber nicht `br` oder `baaaar`.
+- Zeichenklassen: Sie können bestimmte Zeichenklassen wie Buchstaben, Zahlen oder Sonderzeichen angeben, indem Sie das entsprechende Symbol in eckigen Klammern schreiben, z.B. `[a-z]` für alle Kleinbuchstaben und `[0-9]` für alle Zahlen.
+- Capturing Groups: Mit Klammern können Sie Teile eines Regex-Patterns in sogenannte Capturing Groups gruppieren. Diese können dann einzeln abgerufen werden, um weiter mit ihnen zu arbeiten.
+- Escape Characters: Wenn Sie ein spezielles Zeichen wie `+` oder `{` in Ihrem Muster verwenden möchten, müssen Sie es mit einem `\` voranstellen, damit es nicht als Regex-Syntax interpretiert wird.
 
-Eine wichtige Sache, die zu beachten ist, ist, dass reguläre Ausdrücke möglicherweise nicht immer die beste Lösung für alle Probleme sind. In einigen Fällen kann es möglicherweise effizienter sein, eine andere Methode zu verwenden, um die gleichen Ergebnisse zu erzielen. Es ist auch wichtig, Vorsicht bei der Verwendung von regulären Ausdrücken in produktiven Code zu walten, da sie eine niedrige Lesbarkeit und Wartbarkeit haben können.
+Es gibt viele weitere Möglichkeiten, Regex in Clojure zu nutzen, daher empfehle ich Ihnen, sich weiter zu informieren und zu experimentieren, um Ihre Fähigkeiten zu verbessern.
 
-##Weitere Informationen
-Hier sind einige nützliche Links, um mehr über die Verwendung von regulären Ausdrücken in Clojure zu erfahren:
+## Siehe auch
 
-- Clojure Cheat Sheet zu regulären Ausdrücken: https://clojure.org/api/cheatsheet
-- Offizielle Dokumentation zu regulären Ausdrücken in Clojure: https://clojure.org/guides/reducers
-- Interaktive reguläre Ausdrücke: https://regex101.com/
+Hier sind einige nützliche Links, die Ihnen helfen können, noch mehr über Regex in Clojure zu lernen:
 
- Viel Spaß beim Erkunden und Ausprobieren von regulären Ausdrücken in Clojure! 
+- offizielle Clojure-Dokumentation über `clojure.string`: https://clojure.github.io/clojure/clojure.string-api.html
+- Einführung in Regex von Exercism: https://exercism.io/tracks/clojure/exercises/regex/introduction
+- Reguläre Ausdrücke in Clojure von Baeldung: https://www.baeldung.com/regular-expressions-clojure
 
-##Siehe auch
-- Einführung in die Nutzung von regulären Audrücken: https://blog.codinghorror.com/regular-expressions-now-you-have-two-problems/
-- Verwendung von regulären Ausdrücken in anderen Programmiersprachen: https://www.regular-expressions.info/clojure.html
-- Unterschiede zwischen "greedy" und "non-greedy" Quantifiern: https://stackoverflow.com/questions/3075130/what-is-the-difference-between-and-regular-expressions
+Ich hoffe, dieser Artikel hat Ihnen geholfen, einen Einblick in die Verwendung von Regex in Clojure zu bekommen. Viel Spaß beim Programmieren!

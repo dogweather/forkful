@@ -1,83 +1,51 @@
 ---
 title:                "C#: 새 프로젝트 시작하기"
+simple_title:         "새 프로젝트 시작하기"
 programming_language: "C#"
-category:             "Getting Started"
+category:             "C#"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-왜 누군가 새로운 프로젝트를 시작하는 것에 흥미를 느끼게 될까요? 프로그래밍은 끊임없이 발전하고 발전하는 분야이기 때문입니다. 새로운 프로젝트를 시작하면 새로운 기술과 도구를 배우고, 능력을 향상시키고, 아이디어를 구체화할 수 있습니다.
+# 왜
 
-## 시작하는 방법
-새로운 프로젝트를 시작하는 것은 쉬운 일이 아닙니다. 하지만 C# 프로그래밍 언어를 사용한다면, 당신은 프로젝트를 시작하고 성공적으로 완료할 수 있을 것입니다.
+새로운 프로젝트를 시작하는 것에 대해 생각하는 사람들이 꽤 있습니다. 그러나 대부분의 경우, 이들은 왜 새로운 프로젝트를 시작해야 하는지 명확한 이유가 없습니다. 실제로, 새로운 프로젝트를 시작하는 것은 새로운 도전, 새로운 아이디어를 탐구하고 전 세계의 다른 프로그래머들과 나눌 수 있는 기회를 제공합니다. 더 나은 소프트웨어 개발자가 되기 위해서도 새로운 프로젝트를 시작하는 것이 중요합니다.
 
-먼저, C# 언어를 사용하여 새로운 콘솔 프로젝트를 만들어보겠습니다. 코드 블록 ```C# ... ``` 안에 있는 예제를 참고하면서 직접 따라해 보세요.
+# 방법
+
+새로운 C# 프로젝트를 시작하는 것은 매우 쉽습니다. 우선, "dotnet new" 명령을 사용하여 새로운 프로젝트를 생성합니다. 이 명령은 최소한의 구조를 가진 새로운 C# 프로젝트를 만들어 줍니다. 그리고 나서, 프로젝트를 개발하는 동안 사용할 수 있는 다양한 기능들을 추가할 수 있습니다. 예를 들어, "using System;"와 같은 "using" 문을 사용하여 다른 네임스페이스를 포함할 수 있습니다. 또한 "Console" 클래스를 사용하여 출력을 할 수 있습니다. 아래의 예제는 새로운 프로젝트를 만들고 "Hello World!"를 출력하는 간단한 코드입니다.
 
 ```C#
 using System;
-
-namespace HelloWorld
+ 
+namespace MyProject
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello world!");
+            Console.WriteLine("Hello World!");
         }
     }
 }
 ```
 
-위의 코드는 콘솔 창에 "Hello world!"라는 메시지를 출력하는 간단한 프로그램입니다. C# 언어는 중괄호를 사용하여 코드의 영역을 나누고, 세미콜론을 사용하여 각 줄의 끝을 표시합니다.
-
-위의 예제를 실행하면, 콘솔 창에 "Hello world!"라는 문구가 출력될 것입니다. 이제 여러분은 새로운 프로젝트를 시작하는 첫 단계를 완료했습니다.
-
-더 복잡한 예제를 살펴보면서 C# 언어를 더 자세히 알아보겠습니다.
-
-```C#
-using System;
-
-namespace Calculator
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            int num1 = 10;
-            int num2 = 5;
-
-            int sum = num1 + num2;
-            int difference = num1 - num2;
-            int product = num1 * num2;
-            int quotient = num1 / num2;
-
-            Console.WriteLine("Sum: " + sum);
-            Console.WriteLine("Difference: " + difference);
-            Console.WriteLine("Product: " + product);
-            Console.WriteLine("Quotient: " + quotient);
-        }
-    }
-}
-```
-
-위의 예제는 두 개의 숫자를 더하고, 빼고, 곱하고, 나누는 간단한 계산기 프로그램입니다. 할당 연산자인 "=" 를 사용하여 변수에 값을 할당하고, 사칙연산 기호를 사용하여 산술 연산을 수행합니다.
-
-위의 예제를 실행하면, 콘솔 창에 다음과 같은 결과가 출력될 것입니다.
+위의 코드를 실행하면 다음과 같은 출력을 볼 수 있습니다.
 
 ```
-Sum: 15
-Difference: 5
-Product: 50
-Quotient: 2
+Hello World!
 ```
 
-위의 예제처럼 여러분도 자신만의 프로젝트를 만들 수 있습니다. 이렇게 하면 프로그래밍이 더 재미있어질 것입니다.
+더 많은 기능들을 사용하고 싶다면, MSDN 문서를 참조하시기 바랍니다. 이 문서는 다양한 C# 기능과 사용법을 자세하게 설명하고 있습니다.
 
-## 더 깊게 알아보기
-새로운 프로젝트를 시작하는 것은 단순히 말하기 쉽지만, 실제로 이를 실행하는 것은 쉽지 않습니다. 프로젝트를 시작하기 전에 몇 가지 중요한 고려사항이 있습니다.
+# 깊게 들어가기
 
-첫째, 무엇을 만들고 싶은지 생각해보세요. 새로운 아이디어를 구체화하고, 목표를 설정하는 것이 중요합니다.
+새로운 프로젝트를 만들 때, 목적이 뚜렷해야 합니다. 왜 새로운 프로젝트를 시작하는지, 무슨 기술을 사용할지, 어떤 기능을 추가할지, 어떻게 개발할지 등의 질문에 대한 답을 갖추고 있어야 합니다. 이러한 명확한 목적을 가지고 시작하면, 프로젝트를 진행하는 동안 효율적으로 작업할 수 있고 보다 좋은 결과물을 얻을 수 있습니다. 또한 프로젝트를 완료한 후에는 다른 사람들과 나누고 발전시킬 수 있는 포트폴리오를 만들 수 있습니다.
 
-둘째, 사용할 도
+# 이어서 보기
+
+- [C# 도전 과제 모음](https://www.codewars.com/) - C#에 대한 도전적인 코딩 문제를 풀어보세요.
+- [C# 101](https://docs.microsoft.com/ko-kr/dotnet/csharp/) - C# 언어에 대한 공식 문서를 참조하세요.
+- [Unity 개발자 포럼](https://forum.unity.com/forums/c-scripting.12/) - C#을 사용하는 Unity 엔진에 대한 다양한 논의를 볼 수 있습니다.

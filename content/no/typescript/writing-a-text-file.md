@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Å skrive en tekstfil"
+simple_title:         "Å skrive en tekstfil"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/writing-a-text-file.md"
 ---
 
@@ -9,31 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det er mange grunner til å skrive en tekstfil i TypeScript. Noen ganger er det nødvendig å lagre data som kan endres eller leses på et senere tidspunkt. Andre ganger er det nyttig å kunne lese tekstfiler for å behandle informasjon eller for å generere output. Uansett hva grunnen er, er det viktig å vite hvordan man kan skrive en tekstfil i TypeScript.
+Å skrive en tekstfil kan være en nyttig ferdighet for å lagre og organisere data i programmering. Det kan også være nyttig for å lage enkle tekstbaserte applikasjoner eller skript.
 
-## Hvordan
+## Hvordan å skrive en tekstfil i TypeScript
 
-Å skrive en tekstfil i TypeScript er enkelt og kan gjøres ved hjelp av noen få linjer med kode. Først må vi importere filsystemmodulen ved å bruke `fs` nøkkelordet. Deretter kan du bruke `writeFile` -metoden for å skrive til filen. Her er et eksempel på hvordan du kan skrive tekst til en fil:
+For å skrive en tekstfil i TypeScript, må vi bruke Node.js-funksjonalitet. Først må vi importere "fs" modulen ved å bruke `require` kommandoen i TypeScript. Deretter kan vi bruke `createWriteStream()` og `write()` metoder for å åpne en fil og skrive data til den.
 
 ```TypeScript
-import * as fs from 'fs';
+import fs from 'fs';
 
-fs.writeFile('mittTekstdokument.txt', 'Dette er en tekstfil skrevet i TypeScript!', (err) => {
-    if (err) throw err;
-    console.log('Tekstfilen ble skrevet!');
-})
+fs.createWriteStream('tekstfil.txt')
+  .write('Hei, dette er en tekstfil som er skrevet ved hjelp av TypeScript!');
 ```
 
-Dette eksemplet oppretter en fil med navnet "mittTekstdokument.txt" og skriver teksten "Dette er en tekstfil skrevet i TypeScript!" inn i filen. Hvis alt gikk som planlagt, vil utskriften være "Tekstfilen ble skrevet!" Du kan endre teksten og filnavnet etter dine behov.
+Koden ovenfor vil opprette en ny fil med navnet "tekstfil.txt" og skrive teksten inne i parentesene til filen. Vi kan også bruke `appendFile()` i stedet for `write()` for å legge til tekst til en eksisterende tekstfil.
 
-## Deep Dive
+```TypeScript
+fs.appendFile('tekstfil.txt', '\nDette er en ny linje lagt til filen.', function (err) {
+    if (err) throw err;
+    console.log('Tekst lagt til filen!');
+});
+```
 
-Når du skriver en tekstfil i TypeScript, er det viktig å vite hva som skjer bak kulissene. Når du bruker `writeFile` -metoden, opprettes en ny fil med det angitte navnet hvis filen ikke allerede eksisterer. Hvis filen allerede eksisterer, vil den gamle filen bli overskrevet med den nye teksten. Hvis du vil legge til tekst i en eksisterende fil, kan du bruke `appendFile` -metoden i stedet for `writeFile`.
+Koden ovenfor vil legge til teksten inne i parentesene til slutten av `tekstfil.txt`.
 
-Det er også verdt å merke seg at `writeFile` er en asynkron operasjon, noe som betyr at filen vil bli skrevet i bakgrunnen mens programmet fortsetter å kjøre. Hvis du foretrekker å skrive filen synkront, kan du bruke `writeFileSync` -metoden i stedet.
+## Dypdykk
+
+Når vi skriver en tekstfil, må vi spesifisere filsti og navn for filen vi vil opprette eller redigere. Vi kan også bruke ulike flagg, som `r` for å lese en fil, `w` for å skrive til en fil, eller `a` for å legge til tekst til en fil. Disse flaggene spesifiseres som en del av argumentet for `createWriteStream()` eller i en `write()` kommando.
+
+Det er også viktig å huske å lukke filen når vi er ferdige med å skrive til den ved hjelp av `close()` metoden.
+
+```TypeScript
+const fil = fs.createWriteStream('tekstfil.txt');
+
+fil.write('Dette er teksten som vil bli skrevet til filen.');
+
+// Når vi er ferdige med å skrive til filen, må vi lukke den.
+fil.close();
+```
 
 ## Se også
 
-- [fs.writeFile() dokumentasjon](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
-- [fs.appendFile() dokumentasjon](https://nodejs.org/api/fs.html#fs_fs_appendfile_path_data_options_callback)
-- [fs.writeFileSync() dokumentasjon](https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options)
+- [Node.js](https://nodejs.org/no/docs/)
+- [File System modulen i Node.js](https://nodejs.org/api/fs.html)

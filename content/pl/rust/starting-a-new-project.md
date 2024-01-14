@@ -1,27 +1,44 @@
 ---
-title:                "Rust: Zaczynając nowy projekt"
+title:                "Rust: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Rust"
-category:             "Getting Started"
+category:             "Rust"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto zacząć nowy projekt w Rust?
 
-Wiele osób zastanawia się czemu warto zacząć projekt w Rust. Jednym z najważniejszych powodów jest wydajność języka, który jest porównywalna ze światowymi liderami, takimi jak C++ czy Go. Ponadto, Rust jest bardzo bezpieczny dzięki swoim zaawansowanym mechanizmom typów i systemowi wypożyczania, co sprawia, że jest idealnym wyborem dla projektów wymagających niezawodności i stabilności.
+Istnieje wiele powodów, dla których warto rozważyć rozpoczęcie nowego projektu w języku programowania Rust. Przede wszystkim, jest to nowoczesny, efektywny i bezpieczny język, który pozwala tworzyć wydajne i niezawodne aplikacje. Ponadto, Rust jest stale rozwijany przez społeczność programistów, co oznacza, że można spodziewać się ciągłych ulepszeń i aktualizacji.
 
-## Jak
+## Jak zacząć projekt w Rust?
 
-Aby zacząć projekt w Rust, potrzebujemy najpierw zainstalować odpowiednie narzędzia. Możemy użyć menedżera pakietów Cargo, który jest dostarczany wraz z instalacją kompilatora Rust. Następnie, możemy stworzyć nowy projekt za pomocą polecenia `cargo new <nazwa_projetu>`. Wewnątrz tego projektu znajdziemy plik `main.rs`, który jest początkowym punktem naszej aplikacji. Możemy też użyć edytora kodu, takiego jak Visual Studio Code, który posiada wsparcie dla języka Rust.
+Aby rozpocząć nowy projekt w Rust, należy najpierw zainstalować odpowiednią wersję języka, która jest dostępna dla różnych systemów operacyjnych. Następnie, warto zapoznać się z podstawowymi konceptami języka, takimi jak właściwości, struktury danych i pętle. Poniżej przedstawiam przykładowy kod w Rust, który wyświetli napis "Hello, world!"
+
+```Rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+Wynik działania tego kodu będzie wyglądał następująco:
+
+`Hello, world!`
+
+Każdy projekt w Rust powinien również zawierać plik `Cargo.toml`, w którym definiuje się zależności i konfiguracje projektu.
 
 ## Deep Dive
 
-Aby lepiej zrozumieć proces tworzenia projektu w Rust, warto dowiedzieć się o podstawowych konceptach języka, takich jak deklarowanie zmiennych, struktury, funkcje czy pętle. Możemy też przyjrzeć się bardziej zaawansowanym mechanizmom, takim jak wypożyczanie i mutowanie, które są bardzo ważne w Rust. Warto też poznać biblioteki i frameworki używane w świecie Rust, takie jak aktorki Tokio czy framework webowy Rocket.
+Jeśli chcesz zgłębić temat tworzenia projektów w Rust, przydatne będzie zapoznanie się z dokumentacją języka oraz udział w społeczności programistów. Znajdziesz tam wiele przydatnych informacji i porad dotyczących rozpoczynania, rozwijania i utrzymywania projektów w Rust.
 
-## Zobacz też
+Ważne jest również, aby pamiętać o zasadach bezpieczeństwa w Rust, takich jak system typów, własność i sposoby unikania pamięci niedostępnej.
 
-- Oficjalna strona języka Rust: https://www.rust-lang.org/
-- Dokumentacja języka Rust: https://doc.rust-lang.org/
-- Rust Cookbook: https://rust-lang-nursery.github.io/rust-cookbook/
-- Rustlings - ćwiczenia dla początkujących: https://github.com/rust-lang/rustlings.git
+## Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o języku programowania Rust i jego możliwościach, zapoznaj się z poniższymi linkami:
+
+- [Oficjalna strona języka Rust](https://www.rust-lang.org/)
+- [Dokumentacja języka Rust](https://doc.rust-lang.org/book/)
+- [Społeczność programistów Rust](https://www.rust-lang.org/community)

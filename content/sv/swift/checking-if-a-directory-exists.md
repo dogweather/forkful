@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Att kolla om en mapp finns"
+title:                "Swift: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/checking-if-a-directory-exists.md"
 ---
 
@@ -9,35 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Det är viktigt att kunna kolla om en mapp existerar i Swift eftersom det är en avgörande del av många funktioner inom programmering. Genom att kunna kontrollera om en mapp existerar kan du utföra åtgärder som att skapa, läsa, uppdatera eller radera filer inuti mappen.
+I denna bloggpost kommer vi att utforska hur man kontrollerar om en katalog finns i Swift.
+
+Att kunna undersöka om en katalog existerar är en viktig del av programmering. Det kan hjälpa dig att undvika fel i din kod och säkerställa att allt fungerar som det ska.
 
 ## Hur man gör
 
-För att kontrollera om en mapp existerar i Swift, kan vi använda oss av FileManager-klassen. Vi behöver först ange sökvägen till mappen vi vill kontrollera. Sedan använder vi funktionen fileExists(atPath:) för att se om mappen faktiskt existerar. Nedan följer ett exempel som visar hur du kan kontrollera om en mapp vid namn "Blogg-inlägg" existerar i ditt dokumentbibliotek.
+För att kontrollera om en katalog existerar i Swift, kan du använda funktionen `FileManager.default.fileExists(atPath: <path>)`. Låt oss titta på ett exempel:
 
 ```Swift
-// Definiera sökvägen till mappen
-let directoryPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("Blogg-inlägg")
+// Skapar en URL för katalogen vi vill kontrollera
+let directoryURL = URL(fileURLWithPath: "/Users/min användare/Documents/Projekt")
 
-// Kontrollera om mappen existerar
-if FileManager.default.fileExists(atPath: directoryPath.path) {
-    print("Mappen existerar!")
+// Använder funktionen för att se om katalogen existerar
+if FileManager.default.fileExists(atPath: directoryURL.path) {
+    print("Katalogen finns!")
 } else {
-    print("Mappen existerar inte.")
+    print("Katalogen finns inte :(")
 }
 ```
 
-Om mappen existerar kommer konsollen att skriva ut "Mappen existerar!", annars skrivs "Mappen existerar inte."matt.exists(atPath:) returnerar en boolean-variabel och kan användas för att utföra olika åtgärder baserat på resultatet.
+I detta exempel skapar vi en URL för katalogen "Projekt" i mappen "Documents" för användaren "min användare". Sedan använder vi `FileManager` för att kontrollera om katalogen existerar genom att använda `fileExists(atPath:)`-funktionen på URL:en.
 
-Om du vill skapa en mapp om den inte existerar, kan du använda dig av funktionen createDirectory(atPath:withIntermediateDirectories:attributes:). Den här funktionen tar även in en boolean-parameter som anger om mapparna i sökvägen ska skapas automatiskt om de inte existerar. Om du sätter den till true kommer mappen "Blogg-inlägg" att skapas om den inte redan finns.
+Om katalogen existerar, skrivs "Katalogen finns!" ut. Om katalogen inte finns, skrivs "Katalogen finns inte :(" ut.
 
-## Djupdykning
+## Deep Dive
 
-När vi kontrollerar om en mapp existerar, tittar vi egentligen bara på om en fil vid sökvägen existerar. Detta kan innebära att sökvägen leder till en annan typ av fil, som till exempel en bildfil eller en textfil. Därför är det viktigt att kontrollera om filen vi letar efter faktiskt är en mapp innan vi utför några åtgärder på den.
+När man kontrollerar en katalogs existens i Swift, används funktionen `fileExists(atPath:)` egentligen för att kontrollera om filen eller katalogen på den angivna sökvägen existerar.
 
-Det är också viktigt att notera att sökvägen vi anger måste vara exakt och korrekt för att funktionen ska fungera. Om sökvägen är felaktig kommer funktionen att returnera false, även om mappen faktiskt existerar.
+Om stigen som du anger pekar på en katalog, kommer `fileExists(atPath:)` att returnera `true` oavsett om katalogen är tom eller inte. Om stigen pekar på en fil, kommer funktionen att returnera `true` om filen finns och `false` om den inte finns.
+
+Det är värt att notera att denna funktion inte kontrollerar om du har behörighet att komma åt den angivna stigen eller om det finns några skrivskyddade filer i katalogen. Det är därför viktigt att vara uppmärksam på eventuella fel som kan uppstå när du försöker komma åt en katalog eller fil.
 
 ## Se även
 
-- [Apple Developer - FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Stack Overflow - Checking if a directory exists in Swift](https://stackoverflow.com/questions/3437897/checking-if-a-directory-exists-in-a-unix-shell-script)
+Här är några andra användbara resurser för att lära dig mer om fil- och kataloghantering i Swift:
+
+- [Apple Developer Documentation - FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Swifting.io - Working with files in Swift](https://swifting.io/blog/2016/01/26/17-working-with-files-in-swift/)
+
+Tack för att du läste! Vi hoppas att denna bloggpost varit hjälpsam för dig att lära dig hur man kontrollerar om en katalog existerar i Swift. Kom ihåg att alltid vara uppmärksam på eventuella fel eller problem som kan uppstå när du hanterar filer och kataloger i din kod. Ha det kul med Swift-programmering!

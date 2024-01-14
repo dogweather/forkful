@@ -1,56 +1,31 @@
 ---
-title:                "Java: Generering av tilfeldige tall"
+title:                "Java: Fremstilling av tilfeldige tall"
+simple_title:         "Fremstilling av tilfeldige tall"
 programming_language: "Java"
-category:             "Numbers"
+category:             "Java"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+Random nummergenerering er en viktig del av mange programmeringsoppgaver. Det kan hjelpe med å simulere tilfeldige situasjoner, generere unike IDer, og kan være nyttig for å teste funksjonalitet i et program. 
 
-Generering av tilfeldige tall er en viktig del av mange programmeringsoppgaver. Det kan være nyttig for å teste koden din, lage simuleringer eller for å tilføre tilfeldighet i et spill eller en annen applikasjon.
+# Hvordan 
+For å generere tilfeldige tall i Java, kan du bruke `Math.random()` funksjonen. Denne funksjonen returnerer et flyttall mellom 0.0 og 1.0. For å få et tilfeldig tall innenfor et bestemt område, kan du multiplisere resultatet med områdets størrelse og legge til startverdien. For eksempel, hvis du ønsker et tilfeldig tall mellom 1 og 10, kan du bruke følgende kode: 
 
-## Slik gjør du det
-
-Det finnes mange måter å generere tilfeldige tall på i Java. Her er to eksempler som viser deg hvordan du kan gjøre det:
-
-```Java
-// Eksempel 1 - Bruk Random-klassen
-
-// Importer Random-klassen
-import java.util.Random; 
-
-// Opprett et Random-objekt
-Random rand = new Random();
-
-// Generer et tilfeldig heltall mellom 0 og 10
-int randomNumber = rand.nextInt(11);
-
-// Print ut det tilfeldige tallet
-System.out.println("Tilfeldig tall: " + randomNumber);
-
-
-// Eksempel 2 - Bruk Math.random() metoden
-
-// Generer et tilfeldig desimaltall mellom 0 og 1
-double randomDecimal = Math.random();
-
-// Gjør desimaltallet om til et heltall mellom 0 og 10
-int randomInteger = (int) (randomDecimal * 10);
-
-// Print ut det tilfeldige tallet
-System.out.println("Tilfeldig tall: " + randomInteger);
+```Java 
+int min = 1; 
+int max = 10; 
+int random = (int)(Math.random() * (max - min + 1) + min); 
+System.out.println(random); // Output: et tilfeldig tall mellom 1 og 10 
 ```
 
-## Dypdykk
+# Dypdykk 
+Mens `Math.random()` er den mest vanlige måten å generere tilfeldige tall i Java, er det også andre metoder som gir mer kontroll over tilfeldigheten. Du kan for eksempel bruke `Random` klassen som lar deg spesifisere et såkalt "seed" - nummer for å generere en sekvens av tall. En seed-nummer brukes som utgangspunkt for å generere tilfeldige tall, og å bruke samme seed-nummer vil resultere i samme sekvens av tall. Dette kan være nyttig for å teste og feilsøke tilfeldighetsbasert funksjonalitet i et program. 
 
-Hvis du ønsker å lære mer om hvordan tilfeldige tall genereres i Java, kan du se nærmere på de forskjellige metodekallene og hvordan de fungerer. Klassen Random tilbyr ulike metoder for å generere ulike typer tilfeldige tall, som for eksempel flyttall, heltall eller booleanske verdier. Math-klassen har også en metode som returnerer et tilfeldig desimaltall mellom 0 og 1.
-
-En viktig ting å huske på når du genererer tilfeldige tall i Java er å sette et seed-nummer. Dette seed-nummeret bestemmer startverdien for genereringen av tilfeldige tall, og ved å bruke samme seed-nummer vil du få samme rekkefølge av tilfeldige tall hver gang koden kjøres.
-
-## Se også
-
-- [Java Random Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Math Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)
-- [Java Random Numbers Tutorial](https://www.javatpoint.com/java-random-number)
+# Se også 
+- [Offisiell Java dokumentasjon for Random klassen](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [Tutorialspoint - Random number generation in Java](https://www.tutorialspoint.com/generating-random-numbers-in-java)
+- [Java random number generators - en sammenligning](https://www.baeldung.com/java-random)

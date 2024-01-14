@@ -1,47 +1,51 @@
 ---
 title:                "Go: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva till standardfel är en viktig del av Go-programmering eftersom det ger en enkel och användbar metod för att hantera fel och rapportera status till användaren. Det är också ett bra sätt att hålla koden mer ren och lättläst genom att skilja ut felhanteringskoden från huvudflödet.
 
-## Hur man gör det
-Det finns flera sätt att skriva till standardfel i Go. Ett enkelt sätt är att använda funktionen `fmt.Fprintln()` där den första parameter är `os.Stderr` för att skriva till standardfel. Här är ett exempel:
+Att skriva till standardfel i Go är en viktig del av felsökning och debugging-processen. Genom att skriva till standardfel kan du få information om eventuella fel och undantag som uppstår under körning av ditt program.
+
+## Så här gör du
+
+För att skriva till standardfel i Go använder vi funktionen `fmt.Fprintf()` tillsammans med `os.Stderr`. Detta gör det möjligt för oss att skriva information till standardfel istället för standardutgången. Nedan följer ett exempel:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	numbers := []int{1, 2, 3, 4, 5}
-	index := 6
-	if index >= len(numbers) {
-		fmt.Fprintln(os.Stderr, "Index utanför omfånget")
-		return
-	}
-	fmt.Println(numbers[index])
+    // Skriver information till standardfel
+    fmt.Fprintf(os.Stderr, "Detta är ett felmeddelande")
 }
 ```
 
-Output:
+När vi kör detta program kommer vi att se följande output:
+
 ```
-Index utanför omfånget
+Detta är ett felmeddelande
 ```
 
-I det här exemplet försöker vi få tillgång till ett element utanför listans omfång, vilket kommer att orsaka ett fel. Genom att använda `fmt.Fprintln()` och `os.Stderr` i felhanteringskoden, kommer felmeddelandet att skrivas ut på standardfelströmmen.
+Detta visar hur vi kan använda `fmt.Fprintf()`-funktionen för att skriva till standardfel i Go. Genom att använda denna teknik kan vi få viktig information om eventuella fel och undantag som uppstår under körning av våra program.
 
 ## Djupdykning
-Att använda `fmt.Fprintln()` är enkelt och effektivt för att skriva till standardfel, men det finns andra metoder som kan användas. Ett exempel är att använda `log`-paketet som erbjuder mer avancerade funktioner för att hantera fel och loggning. Det finns även möjlighet att skapa en egen typ av fel och använda `fmt.Fprintf()` för att formatera felmeddelandet på ett mer flexibelt sätt.
+
+Skrivning till standardfel kan vara särskilt användbart när vi arbetar med flera trådar eller när vi vill övervaka programmet i realtid, eftersom informationen skrivs ut omedelbart utan att buffras för utmatning. Det är också viktigt att tänka på att vi inte ska använda `fmt.Printf()` för att skriva till standardfel eftersom detta kan orsaka konflikter med andra komponenter i vårt program.
 
 ## Se även
-- [fmt-paketet på Go-docs](https://golang.org/pkg/fmt/)
-- [log-paketet på Go-docs](https://golang.org/pkg/log/)
+
+- [Officiell dokumentation för fmt-paketet i Go](https://golang.org/pkg/fmt/)
+- [En grundläggande guide till felsökning i Go](https://blog.golang.org/debugging-go-code-with-gdb)
+
+Tack för att du läste denna guide om hur du skriver till standardfel i Go. Genom att använda detta verktyg kan du förbättra din felsökning och göra dina Go-program mer robusta. Lycka till med programmeringen!

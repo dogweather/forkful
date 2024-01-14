@@ -1,41 +1,51 @@
 ---
-title:                "Haskell: Uniendo cadenas"
+title:                "Haskell: Uniendo cadenas de texto"
+simple_title:         "Uniendo cadenas de texto"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué es importante concatenar cadenas?
-Al igual que en cualquier otro lenguaje de programación, en Haskell a menudo necesitamos combinar múltiples cadenas de texto juntas en una sola. Esto es especialmente útil cuando queremos mostrar información al usuario o crear mensajes personalizados. Además, la concatenación de cadenas nos permite crear programas más dinámicos y flexibles.
+## Por qué
+
+Concatenar cadenas de texto es una operación común en programación. Puede ser útil cuando se desea combinar múltiples cadenas en una sola, ya sea para su impresión o manipulación posterior.
 
 ## Cómo hacerlo
-En Haskell, podemos concatenar cadenas utilizando el operador `++` o la función `concat`. Veamos algunos ejemplos utilizando ambos métodos:
+
+En Haskell, se puede utilizar la función `++` para concatenar dos cadenas de texto. Por ejemplo:
 
 ```Haskell
--- Utilizando el operador ++
-concatenar = "Hola " ++ "mundo!"
--- Output: "Hola mundo!"
-
--- Utilizando la función concat con una lista de cadenas
-concatenarLista = concat ["Me ", "gusta ", " programar."]
--- Output: "Me gusta programar."
+"¡Hola " ++ "mundo!"
 ```
+
+El resultado de este código sería "¡Hola mundo!".
+
+También se puede concatenar más de dos cadenas utilizando el mismo operador. Por ejemplo:
+
+```Haskell
+"La " ++ "vida " ++ "es " ++ "una " ++ "carnaval"
+```
+
+Esto produciría "La vida es una carnaval".
+
+Si se quisiera añadir un espacio entre las cadenas, se puede utilizar la función `concat` en conjunto con la lista de cadenas:
+
+```Haskell
+concat ["Hoy", " ", "es", " ", "un", " ", "buen", " ", "día"]
+```
+
+Esto daría como resultado "Hoy es un buen día".
 
 ## Profundizando
-En Haskell, las cadenas de texto son en realidad listas de caracteres, por lo que podemos usar muchas funciones y métodos de listas con ellas. Por ejemplo, podemos utilizar la función `words` para dividir una cadena en una lista de palabras, y luego utilizar la función `unwords` para unir esa lista nuevamente en una sola cadena. Veamos un ejemplo:
 
-```Haskell
-cadena = "Este es un ejemplo de una cadena de texto."
-palabras = words cadena
--- Output: ["Este", "es", "un", "ejemplo", "de", "una", "cadena", "de", "texto."]
+La concatenación de strings en Haskell se basa en dos conceptos: la evaluación perezosa y los tipos de datos inmutables. Esto significa que la concatenación de cadenas no cambia los valores originales, sino que crea una nueva cadena como resultado.
 
-cadenaNueva = unwords palabras
--- Output: "Este es un ejemplo de una cadena de texto."
-```
+También es importante tener en cuenta que la concatenación de cadenas puede ser costosa en términos de rendimiento, especialmente cuando se están concatenando muchas cadenas. En ese caso, se puede utilizar la función `concat` para mejorar la eficiencia.
 
 ## Ver también
-- [Documentación oficial sobre cadenas en Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.14.0.0/Data-String.html)
-- [Tutorial sobre cadenas en Haskell](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
-- [Explicación detallada sobre listas en Haskell](https://www.fpcomplete.com/haskell/tutorial/list/)
+
+- [Documentación de la función `++`](https://hackage.haskell.org/package/base-4.15.1.0/docs/Prelude.html#v:-43--43-)
+- [Documentación de la función `concat`](https://hackage.haskell.org/package/base-4.15.1.0/docs/Prelude.html#v:concat)

@@ -1,45 +1,67 @@
 ---
 title:                "C++: Convirtiendo una cadena a minúsculas"
+simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una cadena a minúsculas?
+## Por qué
 
-Convertir una cadena de texto a minúsculas puede ser útil en varias situaciones, como por ejemplo cuando se necesita comparar dos cadenas sin tener en cuenta las mayúsculas y minúsculas, o para mejorar la presentación visual de una palabra o frase en un programa.
+A menudo, cuando trabajamos con texto en nuestro programa, es necesario convertir cadenas de caracteres a minúsculas. Ya sea para comparar dos palabras con diferentes capitalizaciones o para asegurarse de que los datos ingresados sean consistentes, el uso de letras minúsculas puede ser esencial. En esta entrada del blog, hablaremos sobre cómo convertir cadenas a minúsculas en C++.
 
 ## Cómo hacerlo
 
-Se puede realizar la conversión de una cadena a minúsculas de varias maneras en C++. Una opción es utilizar la función `tolower()` de la biblioteca estándar. Por ejemplo:
+La conversión de una cadena a minúsculas en C++ es muy sencilla. Primero, necesitamos incluir la librería de cadenas `string` en nuestro programa. Luego, podemos utilizar la función `tolower()` que convierte una letra en minúscula. Podemos aplicar esta función a cada carácter de la cadena utilizando un bucle `for` y así obtener la cadena en minúsculas completa.
 
 ```C++
-std::string texto = "PROGRAMACIÓN EN C++";
-std::transform(texto.begin(), texto.end(), texto.begin(), ::tolower);
-std::cout << texto << std::endl;
-```
+#include <string>
 
-El resultado de este código sería "programación en c++". Otro método es utilizar un bucle for para recorrer cada uno de los caracteres de la cadena y reemplazar las letras mayúsculas con sus equivalentes en minúsculas utilizando la tabla ASCII.
-
-```C++
-std::string texto = "PROGRAMACIÓN EN C++";
-for (int i = 0; i < texto.length(); i++) {
-    if (texto[i] >= 65 && texto[i] <= 90) {
-        texto[i] = texto[i] + 32; // La diferencia entre mayús. y minús. en ASCII es de 32
+std::string lowercase(std::string str) {
+    for(int i = 0; i < str.size(); i++) {
+        str[i] = tolower(str[i]);
     }
+    return str;
 }
-std::cout << texto << std::endl;
+
+int main() {
+    std::string str = "HOLA MUNDO";
+    std::cout << lowercase(str) << std::endl; // salida: hola mundo
+    return 0;
+}
 ```
 
-Este código también produciría como resultado "programación en c++". Ambos métodos son válidos y tienen sus propias ventajas y desventajas, por lo que se puede elegir el que mejor se adapte a la situación y preferencia del programador.
+## Profundizando
 
-## Profundizando en la conversión de cadenas a minúsculas
+Una cosa importante a tener en cuenta es que la función `tolower()` solo funciona con caracteres individuales. Si queremos convertir una cadena entera a minúsculas, debemos aplicarla a cada carácter de la cadena como se muestra en el ejemplo anterior.
 
-Es importante tener en cuenta que no todas las letras tienen equivalentes en mayúsculas y minúsculas en todos los idiomas, por lo que es necesario tener cuidado con la codificación y el contexto en el que se necesita realizar esta conversión. Además, existen otras formas de realizar la conversión de una cadena a minúsculas, como utilizando expresiones regulares o bibliotecas externas específicas para manejar texto en diferentes idiomas.
+Además, también es posible utilizar la función `transform()` de la librería `algorithm` para convertir una cadena completa a minúsculas. Esta función toma como argumentos el inicio y el final de la cadena, y una función que se aplicará a cada carácter. En este caso, utilizamos la función `tolower()`.
+
+```C++
+#include <string>
+#include <algorithm>
+
+std::string lowercase(std::string str) {
+    std::transform(str.begin(), str.end(), str.begin(), ::tolower);
+    return str;
+}
+
+int main() {
+    std::string str = "HOLA MUNDO";
+    std::cout << lowercase(str) << std::endl; // salida: hola mundo
+    return 0;
+}
+```
+
+Otra cosa importante a tener en cuenta es que la conversión solo se aplicará a letras del alfabeto. Cualquier otro carácter, como números o símbolos, permanecerán sin cambios.
 
 ## Ver también
 
-- [10 Formas de Manipular Cadenas en C++](https://www.educative.io/edpresso/10-formas-de-manipular-cadenas-en-cpp)
-- [La importancia de la codificación de caracteres en programación](https://dev.to/njorogeth/la-importancia-de-la-codificaci-n-de-caracteres-en-programaci-n-2g7p)
+Si quieres saber más sobre el manejo de cadenas en C++, te recomendamos los siguientes enlaces:
+
+- [Documentación oficial de C++ sobre la librería de cadenas](https://devdocs.io/cpp/string/basic_string)
+- [Tutorial de Programiz sobre la manipulación de cadenas en C++](https://www.programiz.com/cpp-programming/strings)
+- [Preguntas y respuestas relacionadas con cadenas en Stack Overflow en Español](https://es.stackoverflow.com/questions/tagged/c%2b%2b?tab=Votes&pagesize=15&q=%5bstring%5d+lower)

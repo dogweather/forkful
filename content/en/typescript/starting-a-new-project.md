@@ -1,73 +1,59 @@
 ---
 title:                "TypeScript recipe: Starting a new project"
+simple_title:         "Starting a new project"
 programming_language: "TypeScript"
-category:             "Getting Started"
+category:             "TypeScript"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Starting a new project can seem like a daunting task for any programmer, but with the rise of TypeScript, it has become more accessible than ever. By using TypeScript, you can easily build scalable and maintainable applications with the help of strong typing and advanced JavaScript features. In this blog post, we will explore the benefits of starting a new project in TypeScript and provide you with a step-by-step guide on how to get started.
+
+Starting a new programming project can seem daunting, but it can also be exciting! With the power of TypeScript, you can create robust and scalable applications while also enjoying the perks of a modern, typed language. In this blog post, we'll explore the benefits of using TypeScript and how to get started with your own project.
 
 ## How To
-To start a new project in TypeScript, follow these simple steps:
 
-1. Install TypeScript globally on your system by running the command `npm install -g typescript`.
-2. Create a new folder for your project and navigate to it in your terminal.
-3. Initialize your project with `npm init -y` to create a `package.json` file.
-4. Install the required development dependencies by running `npm install --save-dev typescript ts-loader webpack`.
-5. Create a `tsconfig.json` file by running the command `tsc --init`.
-6. In your `tsconfig.json` file, specify the entry point of your project in the `rootDir` property and the output location in the `outDir` property.
-7. Create a `webpack.config.js` file and add the following code:
+To get started with TypeScript, you'll need to have Node.js installed on your computer. Once that's taken care of, you can use the Node Package Manager (npm) to install TypeScript globally:
 
-```
-const path = require('path');
-
-module.exports = {
-  mode: 'development',
-  entry: './src/index.ts',
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
-  },
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-};
+```TypeScript
+npm install -g typescript
 ```
 
-8. Create a `src` folder and add an `index.ts` file. This will be the entry point for your project.
-9. Write your TypeScript code in the `index.ts` file, such as:
+Next, create a new directory for your project and navigate into it. Then, run the following command to initialize a new TypeScript project:
 
-```
-const name: string = "John";
-console.log(`Hello ${name}!`);
+```TypeScript
+tsc --init
 ```
 
-10. Lastly, run the command `npm run build` in your terminal to transpile your TypeScript code into JavaScript and bundle it using webpack. This will create a `bundle.js` file in your `dist` folder.
-11. You can now run your project by opening the `index.html` file and viewing the console to see the output.
+This will create a `tsconfig.json` file, which is used to configure your project's TypeScript settings.
+
+Now, you can start writing your code! Here's a simple "Hello World" example in TypeScript:
+
+```TypeScript
+// main.ts
+
+const greeting: string = "Hello World!";
+console.log(greeting);
+```
+
+In the above code, we define a variable `greeting` with the type `string` and assign it the value of "Hello World!" Then, we use `console.log()` to print the greeting to the console. To compile and run this code, use the following command:
+
+```TypeScript
+tsc main.ts && node main.js
+```
+
+You should see "Hello World!" printed to your console. Congrats, you've written your first TypeScript code!
 
 ## Deep Dive
-Starting a new project in TypeScript offers many advantages, such as:
 
-- **Reduced errors:** TypeScript's strong typing system helps catch errors during development, making debugging easier.
-- **Better code organization:** With the use of interfaces and classes, your code becomes more structured and easier to maintain.
-- **Improved scalability:** As your project grows, TypeScript allows for easier refactoring and scaling without compromising the integrity of your code.
-- **Support for modern JavaScript features:** TypeScript supports the latest features of JavaScript, making it a powerful tool for building modern applications.
+In addition to its strong typing system, TypeScript also offers a wide range of features such as interfaces, classes, and decorators. These features make it easier to write and maintain complex code. TypeScript also allows for better error checking and code completion, making debugging much easier.
 
-In addition to these benefits, TypeScript also has a large and active community, with great documentation and support available. It also integrates well with popular frameworks like React and Angular, making it a versatile choice for any project.
+For a deeper dive into TypeScript, you can explore the official documentation and experiment with more advanced features. You can also look into building TypeScript projects using popular frameworks like Angular or React.
 
-## See Also
-- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)
-- [React with TypeScript](https://create-react-app.dev/docs/adding-typescript/)
-- [Angular with TypeScript](https://angular.io/guide/typescript-configuration)
+See Also: 
+
+- Official TypeScript documentation: https://www.typescriptlang.org/docs/
+- Angular: https://angular.io/
+- React: https://reactjs.org/

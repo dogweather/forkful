@@ -1,84 +1,50 @@
 ---
 title:                "Elm recipe: Using regular expressions"
+simple_title:         "Using regular expressions"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why Use Regular Expressions in Elm?
 
-Regular expressions are powerful tools for manipulating and searching text. They can help you validate user input, extract data from strings, and even transform data in your Elm programs. Learning how to use regular expressions can greatly improve your productivity and make your code more dynamic.
+Regular expressions, also known as regex, are an incredibly useful tool for manipulating and validating text data. They can be used for tasks such as finding and replacing specific patterns in strings, validating user input, and parsing complex data structures. In the context of Elm, regular expressions can greatly enhance your code's functionality and make data manipulation much easier.
 
-## How To
+# How To Use Regular Expressions in Elm
 
-To use regular expressions in Elm, you will need to import the `Regex` module. The `Regex` module provides functions for creating, manipulating, and matching regular expressions.
-
-To create a regular expression, we use the `Regex.fromString` function. For example, let's create a regular expression to match a phone number in the format of `###-###-####`:
+Using regular expressions in Elm is a simple process. First, you must import the Regex module from the standard library. Then, you can use the `Regex.regex` function to create a regexp object that represents the pattern you want to match. Let's look at an example of finding and replacing text using regular expressions:
 
 ```Elm
-import Regex exposing (Regex)
+import Regex
 
-phoneNumberRegex : Regex
-phoneNumberRegex =
-    Regex.fromString "\\d{3}-\\d{3}-\\d{4}"
+text = "Hello, World!"
+pattern = Regex.regex "Hello"
+replacedText = Regex.replace pattern (\_ -> "Hi") text
 ```
 
-Once we have our regular expression, we can use the `Regex.find` function to search for a match within a string:
+In this example, we use the `replace` function to replace all instances of the word "Hello" with "Hi" in the string "Hello, World!". The `\_` is a wildcard symbol which matches any character. This code would output "Hi, World!". You can also use regular expressions for more complex tasks, such as validating email addresses or extracting specific data from a string.
 
-```Elm
-import Regex exposing (Regex)
+# Deep Dive
 
-phoneNumberRegex : Regex
-phoneNumberRegex =
-    Regex.fromString "\\d{3}-\\d{3}-\\d{4}"
+Regular expressions use a combination of characters and special symbols to define a pattern to match in a string. Some of the most commonly used symbols in regular expressions include:
 
-phoneNumberString : String
-phoneNumberString =
-    "555-555-5555"
+- `.` to match any single character.
+- `*` to match zero or more instances of the preceding pattern.
+- `+` to match one or more instances of the preceding pattern.
+- `[]` to match a character set, such as `[a-z]` to match any lowercase letter.
+- `()` to group patterns together.
+- `\` to escape special characters and treat them as regular characters.
 
-Regex.find phoneNumberRegex phoneNumberString
---> Just (Matched "555-555-5555")
-```
+Understanding these symbols and how to use them can greatly enhance your regular expression skills.
 
-As you can see, the `Regex.find` function returns a `Maybe Regex.Match` type, indicating whether a match was found or not. If a match is found, the `Matched` constructor returns the actual matched string.
+# See Also
 
-We can also use regular expressions for replacements using the `Regex.replace` function. For example, let's replace all occurrences of the word "Elm" with "Regular Expressions" in a string:
+To learn more about regular expressions in Elm, check out the following resources:
+- [Official Elm Regex Documentation](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [Online Regex Tester for Elm](http://regex-tester.net/elm)
+- [RegexOne Elm Tutorial](https://regexone.com/references/elm)
 
-```Elm
-import Regex exposing (Regex)
-
-replaceRegex : Regex
-replaceRegex =
-    Regex.fromString "Elm"
-
-inputString : String
-inputString =
-    "I love Elm programming!"
-
-Regex.replace replaceRegex inputString "Regular Expressions"
---> "I love Regular Expressions programming!"
-```
-
-## Deep Dive
-
-Regular expressions are made up of symbols and characters that follow a specific pattern. Some commonly used symbols are:
-
-- `.` - matches any single character
-- `+` - matches one or more occurrences of the preceding character or group
-- `*` - matches zero or more occurrences of the preceding character or group
-- `?` - matches zero or one occurrence of the preceding character or group
-- `^` - matches the beginning of a string
-- `$` - matches the end of a string
-- `[]` - matches any character within the brackets
-- `()` - groups the enclosed characters together
-- `|` - matches either the expression before or after the symbol
-
-To learn more about the different symbols and their usage, I recommend checking out the official Elm documentation on regular expressions or trying out different regular expressions on websites like RegExr or Regex101.
-
-## See Also
-
-For more information on regular expressions in Elm, check out the official Elm documentation: https://package.elm-lang.org/packages/elm/regex/latest/
-
-To practice and test your regular expressions, check out these websites: https://regexr.com/ and https://regex101.com/
+Now that you have a basic understanding of regular expressions in Elm, go forth and make your code more powerful and flexible!

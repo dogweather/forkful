@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/writing-tests.md"
 ---
 
@@ -9,35 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva tester är en viktig del av utvecklingsprocessen, oavsett vilket programmeringsspråk eller verktyg man använder sig av. Tester hjälper till att säkerställa att vår kod fungerar som den ska och minskar risken för buggar och fel i vår programvara. Genom att skriva tester blir vår kod mer robust och tillförlitlig, vilket sparar tid och pengar i längden.
+Att skriva tester är ett viktigt steg i utvecklingsprocessen för programvara. Det hjälper utvecklare att upptäcka och lösa fel i kod och garanterar att programmet fungerar som det ska.
 
-## Så här gör du
+## Hur man gör det
 
-För att skriva tester i Fish Shell behöver vi använda oss av inbyggda funktioner som `assert`, `contain`, och `status`. Här nedanför följer några exempel på hur man kan använda dessa funktioner för att skapa tester.
+Det finns många sätt att skriva tester, men i den här bloggposten kommer vi att fokusera på hur man gör det med hjälp av Fish Shell. För att skriva tester i Fish Shell behöver du följa dessa steg:
+
+1. Skapa en fil som slutar med `.test.fish`. Detta är en konvention som hjälper till att skilja tester från annan kod.
+2. Skriv dina tester med hjälp av Fish Shell-biblioteket `test` inuti en `begin` och `end` block. Här är ett exempel på hur det kan se ut:
 
 ```Fish Shell
-# Testa om en variabel är satt
-assert set VAR
-
-# Testa om en variabel innehåller ett visst värde
-contain "hello" $VAR
-
-# Testa exit status av en viss funktion
-status -q cp $FILE $NEW_FILE
+begin
+  echo "Testar om 2 är större än 1"
+	if test 2 -gt 1
+	  echo "Passerade!"
+	else
+	  echo "Misslyckades."
+	end
+end
 ```
 
-Det är också viktigt att hålla koll på vilken version av Fish Shell man använder, eftersom vissa funktioner kan vara annorlunda mellan olika versioner. Genom att använda `fish -v` kan man se vilken version man har installerad och anpassa sina tester efter det.
+3. Kör testet genom att använda kommandot `fish testfile.test.fish`. Om det passerar ska du se en utskrift som säger “Passerade!”, annars kommer du att se “Misslyckades.”.
 
 ## Fördjupning
 
-När man skriver tester bör man tänka på att täcka så många fall som möjligt för att ha en så omfattande testsvit som möjligt. Man kan också använda sig av `if`-satser och andra logiska operatorer för att kunna testa mer komplext kod.
+Att skriva tester är en viktig del av utvecklingsprocessen eftersom det hjälper till att upptäcka fel i kod och garanterar att programmet fungerar som det är tänkt. Det är också ett bra sätt att dokumentera din kod och göra den mer lättförståelig för andra utvecklare som kommer att arbeta med den i framtiden.
 
-En annan viktig aspekt att tänka på är hur man väljer sina testfall. Testerna bör vara relevanta och täcka den funktionalitet som är viktigast för applikationen. Det kan också vara en bra idé att ha en separat testmiljö där man kan köra tester automatiskt för att minska risken för mänskliga fel.
+En fördel med att använda Fish Shell för att skriva tester är att koden kan köras direkt från terminalen, vilket gör det snabbt och enkelt att se resultatet av testerna. Dessutom är syntaxen i Fish Shell enkel och lätt att lära sig även för nybörjare.
 
-## Se också
+Men det är viktigt att komma ihåg att tester inte kan garantera att din kod är 100% felfri. Det är bara ett verktyg för att upptäcka och förebygga fel i din kod. Det är också viktigt att kontinuerligt uppdatera och köra tester när du gör ändringar i din kod.
 
-Här nedanför följer några användbara länkar för mer information om att skriva tester i Fish Shell:
+## Se även
 
-- [Fish Shell dokumentation om att skriva tester](https://fishshell.com/docs/current/cmds/assert.html)
-- [En grundläggande guide till att skriva tester i Fish Shell](https://medium.com/@thechatanator/unit-testing-in-fish-shell-6f8fdb73c837)
-- [Tips och tricks för att skriva effektiva tester i Fish Shell](https://www.jeffreyturner.org/testing-shell-scripts/)
+- [Fish Shell officiell hemsida](https://fishshell.com/)
+- [Enkel guide till testning i Fish Shell](https://medium.com/@castanso/quick-guide-to-testing-in-fish-shell-6dd287596b39)
+- [Fish Shell-testbiblioteket på GitHub](https://github.com/fish-shell/fish-shell/blob/master/share/functions/test.fish)

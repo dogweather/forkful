@@ -1,39 +1,21 @@
 ---
-title:                "Go: Extrahieren von Teilstrings"
+title:                "Go: Substringextraktion"
+simple_title:         "Substringextraktion"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum substrings extrahieren?
+## Warum
 
-Das Extrahieren von Substrings ist eine nützliche Funktion in der Go-Programmierung. Es ermöglicht das Aufteilen von Strings in kleinere Teile und die gezielte Auswahl bestimmter Informationen. In diesem Blog-Beitrag werden wir uns ansehen, warum man Substrings extrahieren würde und wie man es in Go umsetzen kann.
+Substring-Extraktion ist ein häufig verwendetes Konzept in der Go-Programmierung. Es ermöglicht uns, einen Teil eines Strings zu extrahieren, der für unsere Anwendung relevant ist. In diesem Blog-Beitrag werden wir uns genauer mit diesem Konzept beschäftigen und sehen, wie es in unseren Programmen verwendet werden kann.
 
-## Wie man Substrings in Go extrahiert
+## Wie geht das
 
-Um Substrings in Go zu extrahieren, gibt es mehrere Möglichkeiten. Eine davon ist die Verwendung der `substring`-Funktion, die in der Standardbibliothek von Go enthalten ist. Hier ist ein Beispielcode mit der Verwendung der `substring`-Funktion:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-	str := "Hallo, das ist ein Beispieltext."
-	substr := str[14:26]
-
-	fmt.Println("Der extrahierte Substring ist:", substr) // Ausgabe: "Beispieltext."
-}
-```
-
-In diesem Beispiel haben wir den Teil des Satzes extrahiert, der den Substring "Beispieltext" enthält, indem wir die Start- und Endpositionen angegeben haben. Beachten Sie, dass die Endposition nicht den tatsächlichen Index des letzten Zeichens im Substring, sondern den Index des Zeichens direkt dahinter angibt.
-
-Eine weitere Möglichkeit, Substrings in Go zu extrahieren, ist die Verwendung von `strings.Split`, um den String anhand eines Trennzeichens in ein Array von Substrings zu zerlegen. Hier ist ein Beispielcode:
+Die String-Extraktion in Go ist sehr einfach und intuitiv. Wir können die `substring`-Funktion aus dem `strings`-Paket verwenden, um einen Teil eines Strings zu extrahieren. Hier ist ein kleines Beispiel, wie wir einen Teil eines Strings extrahieren können:
 
 ```Go
 package main
@@ -44,40 +26,39 @@ import (
 )
 
 func main() {
-	str := "Dies|ist|ein|Beispieltext."
-	substr := strings.Split(str, "|")[3]
-
-	fmt.Println("Der extrahierte Substring ist:", substr) // Ausgabe: "Beispieltext."
+	text := "Gophers sind großartig!"
+	substring := text[8:14]
+	fmt.Println(substring)
 }
+
 ```
 
-In diesem Beispiel haben wir den Substring "Beispieltext" extrahiert, indem wir das Trennzeichen "|" verwendet haben, um den String in ein Array von Substrings aufzuteilen. Da der Substring, den wir benötigen, an der 4. Stelle im Array steht, wählen wir einfach den entsprechenden Index aus.
-
-## Tiefere Einblicke ins Extrahieren von Substrings
-
-In Go gibt es auch die Möglichkeit, Substrings mit Hilfe von regulären Ausdrücken zu extrahieren. Reguläre Ausdrücke sind eine leistungsstarke Methode, um Muster in Strings zu finden und zu manipulieren. Ein Beispielcode für die Verwendung von regulären Ausdrücken in Go könnte so aussehen:
+Die Ausgabe dieses Codes wird `sind g` sein, da wir die Zeichen von der 8. Position bis zur 14. Position extrahieren. Wenn wir nur den Startindex angeben, wird der Rest des Strings bis zum Ende extrahiert. Hier ist ein weiteres Beispiel:
 
 ```Go
 package main
 
 import (
 	"fmt"
-	"regexp"
+	"strings"
 )
 
 func main() {
-	re := regexp.MustCompile(`H[a-z]+,`)
-	str := "Hallo, dies ist ein Beispieltext."
-	substr := re.FindString(str)
-
-	fmt.Println("Der extrahierte Substring ist:", substr) // Ausgabe: "Hallo,"
+	text := "Hello, world!"
+	substring := text[7:]
+	fmt.Println(substring)
 }
+
 ```
 
-In diesem Beispiel haben wir den Substring "Hallo," extrahiert, indem wir nach einem Muster gesucht haben, das mit einem "H" beginnt, gefolgt von einem oder mehreren Kleinbuchstaben und einem Komma. Beachten Sie, dass reguläre Ausdrücke in Go mit der `regexp`-Bibliothek verwendet werden und es verschiedene Methoden gibt, um Muster zu finden und zu manipulieren.
+Die Ausgabe wird `world!` sein, da wir von der 7. Position bis zum Ende des Strings extrahieren. Wir können auch den Endindex weglassen, um den gesamten String ab einem bestimmten Index zu extrahieren.
+
+## Tiefer eintauchen
+
+Die `substring`-Funktion in Go basiert auf der `slice`-Syntax, die verwendet wird, um Teile von Arrays oder Slices zu extrahieren. In der `slice`-Syntax gibt der Startindex an, wo das Teil-Array / der Slice beginnen soll, und der Endindex gibt an, wo das Teil-Array / der Slice enden soll. Beachten Sie, dass der Endindex nicht einschließlich des Elements an dieser Position ist. Dies ist auch der Fall bei der Verwendung der `substring`-Funktion.
 
 ## Siehe auch
 
-- Weitere Informationen zur `substring`-Funktion: https://golang.org/pkg/strings/#Substring
-- Dokumentation über das `strings`-Paket: https://golang.org/pkg/strings/
-- Tutorial zu regulären Ausdrücken in Go: https://www.digitalocean.com/community/tutorials/how-to-use-regular-expressions-in-go-de
+- [Golang.org Strings-Paket](https://golang.org/pkg/strings/)
+- [Golang.org Slice-Operationen](https://blog.golang.org/go-slices-usage-and-internals)
+- [Go-Tutorial auf Youtube](https://www.youtube.com/watch?v=CF9S4QZuV30&t=36s)

@@ -1,39 +1,52 @@
 ---
-title:                "PHP: Lesen von Befehlszeilenargumenten"
+title:                "PHP: Einlesen von Befehlszeilenargumenten."
+simple_title:         "Einlesen von Befehlszeilenargumenten."
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Es gibt viele Gründe, warum man sich mit dem Lesen von Befehlszeilenargumenten in der PHP-Programmierung beschäftigen sollte. Einer davon ist, dass es eine effiziente Möglichkeit ist, externe Eingaben in ein Skript zu integrieren. Außerdem kann es bei der Entwicklung von Kommandozeilenanwendungen hilfreich sein.
+# Warum
 
-## Wie geht das
-Das Lesen von Befehlszeilenargumenten in PHP ist relativ einfach. Zunächst müssen wir die `$_SERVER['argv']`-Variable abfragen, um an die Argumente zu gelangen. Diese Variable enthält einen Array mit allen übergebenen Argumenten. Hier ist ein Beispielcode, der die Argumente ausgibt:
+Wenn Sie in der Welt der Programmierung sind, haben Sie wahrscheinlich schon von der Eingabeaufforderung gehört. Diese Befehlszeile ermöglicht es Ihnen, direkt mit Ihrem Computer zu kommunizieren und verschiedene Aktionen durchzuführen. Aber wussten Sie, dass Sie auch in PHP Befehlszeilenargumente lesen können? In diesem Blogbeitrag werden wir uns damit beschäftigen, warum es wichtig ist, Befehlszeilenargumente zu lesen und wie Sie es in Ihren eigenen Projekten anwenden können.
+
+# Wie es geht
+
+Das Lesen von Befehlszeilenargumenten ist in PHP unglaublich einfach. Es erfordert nur wenige Zeilen Code und kann in vielen verschiedenen Anwendungen nützlich sein. Schauen wir uns ein Beispiel an.
 
 ```PHP
 <?php
-for ($i = 0; $i < count($_SERVER['argv']); $i++) {
-    echo "Argument #" . $i . ": " . $_SERVER['argv'][$i] . "\n";
+// Prüfen ob ein Argument gegeben wurde
+if (isset($argv[1])) {
+  echo "Das gegebene Argument ist: " . $argv[1];
+} else {
+  echo "Es wurde kein Argument gegeben!";
 }
+?>
 ```
 
-Wenn wir dieses Skript mit dem Befehl `php script.php argument1 argument2` ausführen, wird die Ausgabe wie folgt aussehen:
+**Output:**
+
+Wenn Sie das Script im Terminal ausführen und ein Argument geben, sollte die Ausgabe folgendermaßen aussehen:
 
 ```
-Argument #0: script.php
-Argument #1: argument1
-Argument #2: argument2
+$ php read_arguments.php Hallo Welt
+Das gegebene Argument ist: Hallo Welt
 ```
 
-## Tiefer gehende Information
-Es gibt verschiedene Methoden, um Befehlszeilenargumente zu verarbeiten. In unserem Beispiel haben wir einfach durch die `$_SERVER['argv']`-Variable iteriert, aber es gibt auch Funktionen wie `getopt()`, die die Argumente in einer strukturierteren Form zurückgeben.
+In unserem Codebeispiel haben wir die Variable `$argv` verwendet, um auf das Argument zuzugreifen. Diese Variable enthält ein Array mit allen übergebenen Argumenten. Das erste Argument wird immer `$argv[1]` sein, da `$argv[0]` für den Pfad zur Skriptdatei reserviert ist.
 
-Außerdem ist es wichtig zu beachten, dass Befehlszeilenargumente in der Regel als Strings behandelt werden. Wenn Sie also Zahlen oder andere Datenformate benötigen, müssen Sie diese entsprechend konvertieren.
+# Deep Dive
 
-## Siehe auch
-- [PHP-Dokumentation zu Lesen von Befehlszeilenargumenten](https://www.php.net/manual/en/features.commandline.php)
-- [Blog-Beitrag: 10 Tipps für die Arbeit mit Befehlszeilenargumenten in PHP](https://www.example.com/10-tipps-befehlszeilenargumente-php)
-- [Video-Tutorial: Befehlszeilenargumente in PHP lesen und verarbeiten](https://www.example.com/befehlszeilenargumente-php-tutorial)
+Nun, da Sie wissen, wie einfach es ist, Befehlszeilenargumente in PHP zu lesen, wollen wir uns etwas tiefer damit beschäftigen. Wenn Sie mehrere Argumente an Ihr Skript übergeben möchten, können Sie einen `for`-Loop verwenden oder die Funktion `count()` angewenden, um die Anzahl der Argumente zu ermitteln. Außerdem können Sie die Argumente optional machen, indem Sie eine Standardwert für das Argument definieren, falls keines gegeben wurde.
+
+Wenn Sie mehr über das Lesen von Befehlszeilenargumenten in PHP erfahren möchten, empfehle ich Ihnen, die offizielle Dokumentation zu lesen [hier](https://www.php.net/manual/en/reserved.variables.argv.php).
+
+# Siehe auch
+
+- [PHP CLI-Dokumentation](https://www.php.net/manual/en/features.commandline.php)
+- [Command Line Arguments in PHP](https://www.tutorialspoint.com/php/php_command_line.htm)
+- [PHP Command Line Scripts: Taming the Interface](https://www.sitepoint.com/php-command-line-scripts-taming-the-interface/)

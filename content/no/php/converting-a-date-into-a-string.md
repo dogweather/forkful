@@ -1,45 +1,37 @@
 ---
-title:                "PHP: Konvertering av dato til streng"
+title:                "PHP: Konvertere en dato til en streng."
+simple_title:         "Konvertere en dato til en streng."
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å konvertere en dato til en streng er et viktig konsept innen PHP-programmering. Det lar deg vise datoen i et bestemt format for å kunne bruke den i forskjellige situasjoner, som å vise datoen i en lesbar form i en utskrift eller å lagre den i en database. Uten å konvertere datoen til en streng, ville det være vanskelig å arbeide med den i koden din.
+Å konvertere en dato til en streng kan være en nyttig ferdighet for å formatere datoer i et leselig format eller for å sammenligne datoer i et program. Dette gjør det også enklere å vise datoer på ulike språk og i ulike formater.
 
-# Hvordan
-
-For å konvertere en dato til en streng i PHP, kan du bruke funksjonen `date()`. Denne funksjonen tar to parametre: et format for hvordan du vil vise datoen, og datoen du vil konvertere. La oss si at vi vil konvertere dagens dato til det vanlige norske formatet DD.MM.YYYY. Vi kan gjøre dette ved å skrive følgende i en PHP-fil:
+## Hvordan
 
 ```PHP
-<?php
-echo date("d.m.Y");
-?> 
+$today = date_create(); // lager en ny instans av "DateTime" 
+echo date_format($today, 'd/m/Y'); // skriver ut dag, måned og år på norsk format (01/01/2021)
 ```
-
-Dette vil gi oss utskriften "14.10.2020". Vi kan også legge til en variabel eller en konstant for å konvertere en spesifikk dato, for eksempel:
 
 ```PHP
-<?php
-$birthday = "1977-01-31";
-echo date("d.m.Y", strtotime($birthday));
-?> 
+$dato = date_create('2020-12-25'); // lager en DateTime instans med en spesifikk dato
+setlocale(LC_TIME, "no_NO"); // setter ønsket norsk språk
+echo strftime('%A, %d.%B %Y', date_timestamp_get($dato)); // skriver ut ukedag, dag og måned på norsk (fredag, 25.desember 2020)
 ```
 
-Dette vil gi oss utskriften "31.01.1977". Vi brukte også funksjonen `strtotime()` for å konvertere datostrengen til et tallformat som `date()`-funksjonen kan forstå.
+## Dykk dypere
 
-# Dypdykk
+I PHP er det flere funksjoner for å formatere datoer, som `date()` og `strtotime()`. Men ved å bruke `$format` parameteren for `date_format()` eller `strftime()`, kan man få en mer pålitelig og fleksibel måte å konvertere en dato til en streng på. Man kan også bruke `setlocale()` for å få utdato og månedsnavn på ønsket språk.
 
-Det er viktig å merke seg at `date()`-funksjonen vil konvertere datoen basert på serverens tidssoneinnstillinger. Hvis du vil konvertere datoen basert på en annen tidssone, kan du bruke funksjonen `date_default_timezone_set()` før du kaller `date()`-funksjonen.
+## Se også
 
-Det finnes også flere konverteringstegn som du kan bruke i `date()`-funksjonen for å tilpasse formatet til datoen din. Du kan se en fullstendig liste over disse konverteringstegnene på PHPs offisielle nettside.
-
-# Se også
-
-* [PHP date() funksjonen dokumentasjon](https://www.php.net/manual/en/function.date.php)
-* [w3schools - PHP date() funksjonen](https://www.w3schools.com/php/func_date_date.asp)
-* [Tutorialedge - Converting a date to a string in PHP](https://tutorialedge.net/php/converting-date-string-php/)
+- [PHP.net: Date and Time functions](https://www.php.net/manual/en/ref.datetime.php)
+- [W3Schools: PHP Date and Time](https://www.w3schools.com/php/php_date.asp)
+- [GeeksforGeeks: Convert date to string](https://www.geeksforgeeks.org/php-date-time-datetime-datenow-datetime-create-from-format-functions)

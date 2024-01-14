@@ -1,55 +1,85 @@
 ---
-title:                "C++: Lettura di un file di testo"
+title:                "C++: Leggere un file di testo"
+simple_title:         "Leggere un file di testo"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché leggere un file di testo in C++
+## Perchè 
 
-Lettura di file di testo è un compito comune nella programmazione in C++. Potresti voler leggere un file per recuperare dati, come un elenco di nomi o numeri, oppure per analizzare il suo contenuto. In questo articolo, esploreremo come leggere un file di testo in C++ usando metodi semplici ma efficaci.
+Leggere un file di testo è un'operazione fondamentale nella programmazione in C++. Spesso abbiamo la necessità di leggere dati da un file per elaborarli o visualizzarli in qualche modo all'interno del nostro programma.
 
-## Come leggere un file di testo in C++
+## Come farlo
 
-Per prima cosa, dobbiamo includere la libreria standard per la gestione dei file, ```<fstream>```. Utilizzando questa libreria, possiamo aprire il file di testo specificando il suo percorso e il suo nome usando la funzione ```open()```. Assicurati di avere il file nella stessa cartella del tuo programma, altrimenti dovrai specificare il percorso completo del file.
+Per leggere un file di testo in C++, dobbiamo seguire alcuni passaggi:
 
-Una volta aperto il file, possiamo leggere il suo contenuto usando la funzione ```getline()```, che legge una riga alla volta fino a raggiungere il carattere di newline. Questo ci permette di leggere il contenuto del file e stamparlo a schermo usando la funzione ```cout```. Ad esempio:
+1. Aprire il file utilizzando la funzione `ifstream`
+2. Controllare se il file è stato aperto correttamente
+3. Leggere il contenuto del file e memorizzarlo in una variabile
+4. Chiudere il file utilizzando la funzione `close()` 
 
-```C++
+Ecco un esempio di codice che mostra come leggere un file di testo contenente una lista di nomi e stamparla a schermo:
+
+```
 #include <iostream>
 #include <fstream>
 
-using namespace std;
+int main() 
+{
+    // apriamo il file di testo
+    std::ifstream input("nomi.txt");
 
-int main() {
-    
-    // Apriamo il file in modalità lettura
-    ifstream file("esempio.txt");
-    
-    // Leggiamo il contenuto del file ed eseguiamo un'azione su ogni riga
-    string riga;
-    while (getline(file, riga)) {
-        // Stampiamo la riga a schermo
-        cout << riga << endl;
+    // controlliamo se il file è stato aperto correttamente
+    if (!input.is_open()) 
+    {
+        std::cout << "Errore durante l'apertura del file!";
+        return 1;
     }
-    
-    // Chiudiamo il file
-    file.close();
-    
+
+    // leggiamo il contenuto del file e lo memorizziamo in una variabile
+    std::string nome;
+    while (input >> nome) 
+    {
+        // stampiamo il nome a schermo
+        std::cout << nome << std::endl;
+    }
+
+    // chiudiamo il file
+    input.close();
     return 0;
 }
 ```
 
-Il risultato sarà l'output di ogni riga del file. Assicurati di aggiungere un'istruzione ```cout``` per stampare eventuali errori di apertura del file.
+Ecco il contenuto del file `nomi.txt`:
 
-## Approfondimento sulla lettura di file di testo
+```
+Marco
+Luca
+Giulia
+Pietro
+```
 
-Esistono diverse funzioni e metodi per leggere un file di testo in C++, come l'utilizzo di stream di input e output o l'utilizzo della funzione ```get()``` per leggere carattere per carattere. Puoi esplorare questi metodi per trovare quello che meglio si adatta alle tue esigenze.
+E questa è l'output del nostro programma:
+
+```
+Marco
+Luca
+Giulia
+Pietro
+```
+
+## Approfondimento
+
+Oltre alle operazioni di base per leggere un file di testo, esistono molte altre funzionalità utili che possono aiutarci nell'elaborazione dei dati. Ad esempio, possiamo leggere solo una parte del file utilizzando il metodo `getline()` oppure possiamo specificare il delimitatore per separare i dati durante la lettura.
+
+La lettura di file di testo è solo uno degli aspetti dell'accesso ai file in C++. Per saperne di più, puoi consultare la documentazione ufficiale sulle operazioni con file del linguaggio.
 
 ## Vedi anche
 
-- [Come scrivere un file di testo in C++](link to article in Italian)
-- [Gestione degli errori durante la lettura di file in C++](link to article in Italian)
-- [Come leggere e scrivere file binari in C++](link to article in Italian)
+- [C++: operazioni con file](https://en.cppreference.com/w/cpp/io)
+- [Tutorial su come leggere e scrivere su file utilizzando C++](https://www.geeksforgeeks.org/basics-file-handling-c/)
+- [Esempi di codice per la lettura di file in C++](https://www.programiz.com/cpp-programming/library-function/ofstream/ofstream-open)

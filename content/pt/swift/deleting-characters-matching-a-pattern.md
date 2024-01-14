@@ -1,43 +1,46 @@
 ---
 title:                "Swift: Excluindo caracteres que correspondem a um padrão"
+simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
-Às vezes, em programação Swift, pode ser necessário excluir caracteres específicos dentro de uma string. Isso pode ser útil em casos como validação de entrada de usuário ou manipulação de dados.
+
+Às vezes, ao trabalhar em um projeto de programação, pode ser necessário remover caracteres específicos de uma string que correspondam a um determinado padrão. Isso pode ser útil para limpar os dados ou formatar uma entrada de usuário, por exemplo.
 
 ## Como fazer
-Você pode deletar caracteres que correspondem a um determinado padrão usando o método `replacingOccurrencies(of:with:)`. Veja um exemplo abaixo:
+
+Existem várias maneiras de remover caracteres que correspondam a um padrão em Swift. Uma maneira simples de fazer isso é usando o método `replacingOccurrences(of:with:)` em uma string, onde o primeiro argumento é o padrão a ser encontrado e o segundo é a string de substituição. Por exemplo:
 
 ```Swift
-let minhaString = "Este texto contém ##alguns# caracteres# de# teste"
-let novoTexto = minhaString.replacingOccurrences(of: "#", with: "")
-
-print(novoTexto)
-
-// Saída:
-"Este texto contém alguns caracteres de teste"
+let sentence = "Eu amo programação em Swift!"
+let newSentence = sentence.replacingOccurrences(of: "am", with: "gosto")
+print(newSentence)
+// Output: "Eu gosto programação em Swift!"
 ```
 
-## Aprofundando
-O método `replacingOccurrences(of:with:)` é muito útil, mas você também pode querer fazer uma exclusão mais específica, como excluir todos os dígitos de uma string. Para isso, você pode usar a classe `CharacterSet`. Vamos dar uma olhada em outro exemplo:
+Outra opção é usar expressões regulares com a classe `NSRegularExpression`. Esta é uma maneira mais avançada de lidar com padrões e oferece uma maior flexibilidade. Por exemplo:
 
 ```Swift
-let meuNumero = "+123 456-7890"
-let setDeCaracteres = CharacterSet.decimalDigits
-let novoNumero = meuNumero.components(separatedBy: setDeCaracteres).joined()
-print(novoNumero)
-
-// Saída:
-"+ -"
+let sentence = "Eu amo programação em Swift!"
+let regex = try! NSRegularExpression(pattern: "\\w*amo\\w*", options: [])
+let newSentence = regex.stringByReplacingMatches(in: sentence, options: [], range: NSRange(location: 0, length: sentence.utf16.count), withTemplate: "gosto")
+print(newSentence)
+// Output: Eu gosto programação em Swift!
 ```
 
-Neste exemplo, usamos o método `components(separatedBy:)` para separar a string em componentes com base no conjunto de caracteres especificado. Em seguida, usamos o método `joined()` para juntar os componentes novamente sem os dígitos. Você pode experimentar com diferentes conjuntos de caracteres para excluir diferentes tipos de caracteres de uma string.
+## Deep Dive
+
+Ao usar o método `replacingOccurrences(of:with:)`, é importante notar que ele faz distinção entre maiúsculas e minúsculas. Isso significa que ao usar este método para substituir caracteres, ele só substituirá aqueles que correspondem exatamente ao padrão fornecido.
+
+Já ao usar expressões regulares, é possível usar símbolos especiais para definir regras mais complexas e substituir partes específicas de uma string. Além disso, a classe `NSRegularExpression` oferece muitos métodos úteis para o trabalho com expressões regulares, como verificar se a string corresponde ao padrão ou obter informações sobre as correspondências encontradas.
 
 ## Veja também
-- [Documentação oficial do Swift sobre o método `replacingOccurrences(of:with:)`](https://developer.apple.com/documentation/swift/string/1786172-replacingoccurrences)
-- [Documentação oficial do Swift sobre a classe `CharacterSet`](https://developer.apple.com/documentation/foundation/characterset)
+
+- [Documentação oficial do Swift: NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Tutorial de expressões regulares em Swift](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial)

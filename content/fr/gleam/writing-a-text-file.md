@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Écrire un fichier texte"
+title:                "Gleam: Rédiger un fichier texte"
+simple_title:         "Rédiger un fichier texte"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/writing-a-text-file.md"
 ---
 
@@ -9,44 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La création d'un fichier texte est un élément essentiel de la programmation en Gleam. Cela permet de stocker et de manipuler des données, ainsi que de les utiliser dans le code pour réaliser des tâches spécifiques.
+Il peut sembler banal d'écrire un simple fichier texte, mais en réalité, c'est une tâche très utile pour les programmeurs en Gleam. Les fichiers textes sont une forme commune de stockage de données et les manipuler est un moyen efficace de gérer des informations dans vos programmes.
 
 ## Comment faire
 
-Pour créer un fichier texte en Gleam, il faut utiliser le module `file`, qui fournit des fonctions pour créer, lire et écrire dans un fichier. Voici un exemple de code pour écrire dans un fichier texte :
+Pour écrire un fichier texte en Gleam, utilisez la fonction `File.write` en passant le chemin du fichier et le contenu que vous souhaitez écrire. Par exemple, si vous voulez écrire "Bonjour le monde !" dans un fichier appelé "mon_fichier.txt", vous pouvez le faire comme suit:
 
 ```Gleam
-import file.{write}
-
-let message = "Bonjour tout le monde!"
-file.write("message.txt", message)
+File.write("mon_fichier.txt", "Bonjour le monde !")
 ```
 
-Cette fonction va créer un fichier texte appelé "message.txt" et y écrire le contenu de la variable `message`. Vous pouvez également écrire du contenu directement sans utiliser de variable :
-
-```Gleam
-import file.{write}
-
-file.write("intro.txt", "Bienvenue sur mon blog de programmation!")
-```
-
-Pour lire le contenu d'un fichier texte, vous pouvez utiliser la fonction `read` :
-
-```Gleam
-import file.{read}
-
-let contenu = file.read("message.txt")
-```
-
-La variable `contenu` va contenir le contenu du fichier "message.txt". Vous pouvez ensuite l'utiliser dans d'autres parties de votre code.
+Si le fichier n'existe pas encore, il sera créé automatiquement. Si le fichier existe déjà, son contenu sera remplacé par le nouveau contenu que vous avez fourni.
 
 ## Plongée en profondeur
 
-En plus des fonctions de base pour écrire et lire des fichiers, le module `file` offre également des fonctionnalités avancées pour la manipulation de fichiers. Par exemple, vous pouvez déplacer, copier ou supprimer des fichiers en utilisant les fonctions `move`, `copy` et `delete`.
+Lorsque vous écrivez un fichier texte en Gleam, vous pouvez également spécifier le mode d'écriture à utiliser. Par défaut, Gleam utilise le mode d'écriture "w" qui remplace le contenu du fichier à chaque appel de `File.write`. Vous pouvez également utiliser le mode d'écriture "a", qui ajoutera le contenu à la fin du fichier au lieu de le remplacer.
 
-De plus, vous pouvez également travailler avec des fichiers compressés en utilisant les fonctions `zip` et `unzip` pour créer et extraire des fichiers zip.
+En outre, vous pouvez également spécifier la langue d'écriture en utilisant le paramètre `encoding`. Par défaut, Gleam utilise l'encodage de caractères UTF-8, mais vous pouvez choisir d'autres encodages tels que UTF-16 ou ASCII si nécessaire.
 
 ## Voir aussi
 
-- Documentation officielle de Gleam sur les fichiers : https://gleam.run/documentation/stdlib/file
-- Exemples de code pour la manipulation de fichiers en Gleam : https://github.com/gleam-lang/gleam/blob/master/lib/file/tests/file_test.gleam
+- La documentation officielle de la fonction `File.write`: https://gleam.run/std/file#write
+- Un tutoriel sur les fichiers en Gleam: https://gleam.run/book/tutorials/files
+
+Merci de lire cet article sur l'écriture de fichiers texte en Gleam ! Nous espérons que cela vous a été utile dans votre apprentissage de ce langage de programmation fonctionnelle moderne. N'oubliez pas d'explorer davantage les nombreuses possibilités qu'offre Gleam pour gérer et manipuler les fichiers. Bonne programmation !

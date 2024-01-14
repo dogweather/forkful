@@ -1,47 +1,38 @@
 ---
 title:                "Rust: Comenzando un nuevo proyecto"
+simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Rust"
-category:             "Getting Started"
+category:             "Rust"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué empezar un nuevo proyecto con Rust
-Rust es un lenguaje de programación moderno y eficiente que se ha vuelto muy popular en los últimos años. Si estás buscando iniciar un nuevo proyecto, Rust es definitivamente una opción que debes considerar. En este artículo, te explicaremos por qué.
+## Por qué
 
-## Cómo empezar un proyecto en Rust
-Para comenzar un nuevo proyecto en Rust, primero necesitas instalar el compilador de Rust y el gestor de paquetes Cargo. Puedes encontrar instrucciones detalladas para hacer esto en la [documentación oficial de Rust](https://www.rust-lang.org/tools/install). Una vez que tengas todo instalado, puedes seguir estos pasos para crear y ejecutar tu primer programa en Rust:
+Rust es un lenguaje de programación moderno que ofrece una combinación única de rendimiento y seguridad. Si estás buscando iniciar un nuevo proyecto, Rust es una excelente opción debido a su sintaxis concisa, su facilidad para manejar problemas de memoria y su amplia comunidad de apoyo.
 
-```
-Rust
-fn main() {
-    println!("¡Hola mundo!");
-}
-```
+## Cómo hacerlo
 
-Esta es una función simple que imprimirá "¡Hola mundo!" en la pantalla cuando se ejecute. Guarda este código en un archivo con la extensión `.rs`, por ejemplo, `hola_mundo.rs`. Luego, en tu terminal, navega hasta el directorio donde guardaste el archivo y ejecuta el siguiente comando:
+Primero, asegúrate de tener instalado Rust en tu sistema. Puedes descargarlo desde su sitio web oficial o a través de un gestor de paquetes. Una vez instalado, puedes crear un nuevo proyecto ejecutando el siguiente comando en tu terminal:
 
-```
-Rust
-$ rustc hola_mundo.rs
+```Rust
+cargo new nombre_proyecto
 ```
 
-Esto compilará tu código y creará un ejecutable que puedes correr con:
+Esto creará una estructura de proyecto básica que incluye el archivo `main.rs` donde puedes escribir tu código. A continuación, puedes compilar y ejecutar tu proyecto con el comando `cargo run` y ver el resultado en la consola.
 
-```
-Rust
-$ ./hola_mundo
-```
+¡Ahora estás listo para comenzar a codificar en Rust! Puedes explorar la documentación oficial para aprender más sobre la sintaxis del lenguaje y las librerías disponibles.
 
-¡Y ahí lo tienes, tu primer programa en Rust! Puedes seguir explorando más ejemplos en la [documentación oficial](https://doc.rust-lang.org/stable/rust-by-example/) para aprender más sobre la sintaxis y las características de Rust.
+## Profundizando
 
-## Más sobre empezar un nuevo proyecto
-Una de las mejores cosas de Rust es su comunidad activa y amigable. Si tienes alguna pregunta o problema mientras empiezas tu proyecto, siempre puedes acudir a la [comunidad de Rust](https://www.rust-lang.org/community) para recibir ayuda y orientación.
+Además de ser un lenguaje de programación versátil, Rust también es una excelente opción para proyectos de sistemas en tiempo real y aplicaciones de alto rendimiento. Su sistema de tipos y su enfoque en la seguridad de la memoria hacen que sea ideal para crear aplicaciones estables y confiables.
 
-Además, Rust cuenta con una gran cantidad de librerías y herramientas disponibles a través de su gestor de paquetes Cargo. Puedes explorarlas en [crates.io](https://crates.io/) para encontrar la mejor opción para tu proyecto y ahorrar tiempo en la implementación de funciones comunes.
+También vale la pena mencionar que Rust es un lenguaje que está en constante crecimiento y evolución, por lo que nunca te quedarás sin recursos y actualizaciones para mejorar tus proyectos.
 
 ## Ver también
-- [Documentación de Rust](https://doc.rust-lang.org)
-- [Crates.io](https://crates.io/)
-- [Comunidad de Rust](https://www.rust-lang.org/community)
+
+- [Documentación oficial de Rust](https://www.rust-lang.org/es)
+- [Rust Cookbook en español](https://docs.rs/rust-cookbook-es/latest/rust-cookbook-es/)
+- [Videos tutoriales de Rust en español](https://www.youtube.com/playlist?list=PLfRP3G-r10_iUX5R7SQ86tZ_lP1zaHyWd)

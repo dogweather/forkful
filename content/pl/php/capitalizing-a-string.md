@@ -1,31 +1,55 @@
 ---
-title:                "PHP: Zmiana wielkości liter w łańcuchu znaków"
+title:                "PHP: Zapisywanie wielkich liter ciągu znaków"
+simple_title:         "Zapisywanie wielkich liter ciągu znaków"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego capitalizowanie tekstu może być ważne w programowaniu?
+## Dlaczego
 
-Czasami potrzebujemy, aby nasze teksty były zapisane zgodnie z określoną konwencją, taką jak na przykład w nazwie użytkownika czy też w tytule artykułu. Wtedy z pomocą przychodzi nam kapitalizowanie tekstu, czyli zamiana pierwszej litery na wielką.
+Często w programowaniu potrzebujemy modyfikować ciągi znaków, na przykład zmiany ich rozmiaru czy stylu. Jeden z takich przypadków to konieczność zamiany pierwszej litery każdego słowa w ciągu na wielką literę. Ten proces nazywa się "kapitalizacją" i jest bardzo częstym zadaniem w PHP. Dlatego w tym artykule pokażemy, jak w prosty sposób kapitalizować ciągi znaków w PHP.
 
-## Jak to zrobić w PHP?
+## Jak To Zrobić
+
+Do kapitalizacji ciągów znaków w PHP możemy użyć funkcji `ucwords()`. Przyjmuje ona jeden argument - ciąg znaków, który chcemy zmodyfikować. Następnie zwraca ona nowy ciąg znaków z pierwszą literą każdego słowa kapitalizowaną.
 
 ```PHP
-$string = "paweł jest programistą";
-$capitalized_string = ucwords($string);
-echo $capitalized_string;
+$ciag = 'to jest przykladowy ciag do kapitalizacji';
+echo ucwords($ciag);
 ```
-Ten kod powinien wyświetlić nam "Paweł Jest Programistą" jako wynik.
 
-## Głębszy wgląd w mechanizm capitalizowania tekstu
+**Output:** To Jest Przykladowy Ciag Do Kapitalizacji
 
-Funkcja `ucwords()` w PHP działa poprzez podzielenie podanego tekstu na słowa i zmianę pierwszej litery każdego słowa na wielką. Należy jednak pamiętać, że funkcja ta zależy od ustawień lokalnych systemu, co może wpływać na wynik w różnych językach.
+Funkcja `ucwords()` jest szczególnie przydatna, gdy chcemy kapitalizować również słowa zaczynające się od znaku specjalnego, na przykład `-` lub `.`.
 
-## Zobacz także
+```PHP
+$ciag = 'ciało-energia-pojawienie się';
+echo ucwords($ciag);
+```
+
+**Output:** Ciało-Energia-Pojawienie Się
+
+## Deep Dive
+
+Jeśli chcemy kapitalizować ciąg znaków bez uwzględniania znaków specjalnych, możemy użyć funkcji `ucfirst()`. Różni się ona od `ucwords()` tym, że kapitalizuje tylko pierwszą literę ciągu.
+
+Funkcja `ucwords()` wykorzystuje również ustalony przez użytkownika separator słów. Domyślnie jest nim spacja, ale można to zmienić poprzez przekazanie opcjonalnego drugiego argumentu do funkcji.
+
+```PHP
+$ciag = 'to jest przykladowy ciag do kapitalizacji';
+echo ucwords($ciag, "-");
+```
+
+**Output:** To Jest Przykladowy Ciag Do Kapitalizacji
+
+W przypadku gdy potrzebujemy kapitalizować tylko pierwsze litery wyrazów, ale zachowując oryginalny rozmiar liter pozostałych znaków, możemy użyć funkcji `mb_convert_case()`, która dostępna jest w PHP w wersjach 7 i wyższych.
+
+## Zobacz Także
 
 - [Dokumentacja funkcji ucwords() w PHP](https://www.php.net/manual/en/function.ucwords.php)
-- [Poradnik o manipulacji tekstem w PHP](https://www.w3schools.com/php/php_string.asp)
-- [Inne przydatne funkcje PHP do pracy z tekstem](https://www.codecademy.com/learn/learn-php/modules/learn-php-string-functions)
+- [Dokumentacja funkcji ucfirst() w PHP](https://www.php.net/manual/en/function.ucfirst.php)
+- [Dokumentacja funkcji mb_convert_case() w PHP](https://www.php.net/manual/en/function.mb-convert-case.php)

@@ -1,43 +1,35 @@
 ---
 title:                "Gleam: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi etsiä ja korvata tekstiä?
+## Miksi
 
-Etsi ja korvaa tekstiä -toiminto on tärkeä osa jokapäiväistä ohjelmointia. Se auttaa sinua nopeasti ja tehokkaasti korvaamaan tekstin tietystä tiedostosta tai koodista. Tämä säästää aikaa ja vaivaa manuaaliselta etsimiseltä ja korvaamiselta.
+Miksi kukaan haluaisi etsiä ja korvata tekstejä Gleam-ohjelmoinnilla? No, yksi hyvä syy voisi olla tekstien muokkaaminen ja parantaminen tehokkaammin.
 
-# Miten se tehdään?
-
-Voit hyödyntää Gleam-ohjelmointikielen tarjoamaa helppoa ja tehokasta tekstinsyöttötoimintoa.
+## Kuinka
 
 ```Gleam
-// Luo uusi muuttuja nimeltä "teksti" ja aseta siihen alkuarvo
-teksti = "Tämä on alkuperäinen teksti"
-
-// Etsi tekstistä sana "alkuperäinen" ja korvaa se sanalla "uusi"
-uusi_teksti = teksti |> String.replace("alkuperäinen", "uusi")
-
-// Tulostaa uuden tekstin
-IO.print(uusi_teksti)
-``` 
-
-```
-Tämä on uusi teksti
+let teksti = "Tervetuloa Gleamiin!"
+let uusi_teksti = teksti |> String.replace("Tervetuloa", "Hello")
+IO.print("Uusi teksti: #{uusi_teksti}")
 ```
 
-Gleam tarjoaa myös muita vaihtoehtoja haun ja korvauksen muuttamiseen, kuten säännölliset lausekkeet ja erilaiset vertailukriteerit. Voit löytää kaikki Gleam-tekstinmuokkaustoiminnot Gleamin virallisesta dokumentaatiosta.
+Tulostus: "Uusi teksti: Hello Gleamiin!"
 
-# Syvemmälle aiheeseen
+Tässä esimerkissä käytetään Gleamin `String` -moduulia etsimään ja korvaamaan tekstiä. Voit vaihtaa tekstejä valitsemalla tekstiriviltä (ensimmäinen parametri) ja korvaamalla sen uudella tekstillä (toinen parametri). Lopuksi tulostetaan uusi teksti käyttämällä Gleamin `IO` -moduulia.
 
-Etsi ja korvaa -toiminnossa on useita hienosäätömahdollisuuksia, kuten haun tarkentaminen tiettyihin osiin tekstistä ja erilaisten korvausten yhdistäminen toisiinsa. Lisäksi voit myös suorittaa tekstikäsittelytoimintoja useassa tiedostossa kerrallaan.
+## Syvällinen sukellus
 
-# Katso myös
+Ehkä olet jo käyttänyt etsimis- ja korvaamistoimintoja muilla ohjelmointikielillä ja haluat tietää enemmän Gleamin `String` -moduulista. Voit löytää lisätietoja virallisesta dokumentaatiosta, jossa kerrotaan tarkemmin `String.replace` -funktiosta ja sen muista toiminnoista.
 
-- [Gleam-ohjelmointikielen viralliset sivut] (https://gleam.run/)
-- [Gleamin tekstinsyöttötoiminnon dokumentaatio] (https://gleam.run/documentation)
-- [Gleamin tekstinmuokkaustoimintojen esimerkkejä] (https://github.com/gleam-lang/gleam/blob/master/examples/strings)
+## Katso myös
+- [Gleamin virallinen dokumentaatio (englanniksi)](https://gleam.run/standard-library/string.html)
+- [Gleamin GitHub-sivu (englanniksi)](https://github.com/gleam-lang/gleam)
+- [Gleamin virallinen Twitter-tili (englanniksi)](https://twitter.com/gleamlanguage)

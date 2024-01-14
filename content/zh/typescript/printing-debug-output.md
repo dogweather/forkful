@@ -1,59 +1,50 @@
 ---
 title:                "TypeScript: 打印调试输出"
+simple_title:         "打印调试输出"
 programming_language: "TypeScript"
-category:             "Testing and Debugging"
+category:             "TypeScript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要打印调试输出
+## 为什么要打印调试输出
 
-在编写复杂的代码时，打印调试输出是一种很有用的技巧。它可以帮助我们更容易地理解代码的执行过程，发现潜在的错误，并提高代码的可读性和可维护性。
+在编写 TypeScript 代码时，打印调试输出是一个非常有用的技巧。它可以帮助开发人员检查程序的执行流程，找出错误和改进代码。通过打印调试输出，开发人员可以更快地调试代码，提高编码效率。
 
-# 如何打印调试输出
+## 如何打印调试输出
 
-要打印调试输出，我们可以使用TypeScript中的`console.log()`函数。它可以接受任何类型的参数，并将它们输出到控制台中。例如：
-
-```TypeScript
-let num = 5;
-let str = "Hello";
-console.log(num, str);
-```
-
-这段代码将打印出`5 "Hello"`，分别代表变量`num`和`str`的值。我们还可以使用模板字符串来打印更复杂的调试信息，如下所示：
+在 TypeScript 中，可以使用 `console.log()` 来打印调试输出。例如：
 
 ```TypeScript
-let name = "John";
-let age = 30;
-console.log(`My name is ${name} and I am ${age} years old.`);
+const num1: number = 10;
+const num2: number = 20;
+console.log('The sum of ' + num1 + ' and ' + num2 + ' is ' + (num1 + num2));
 ```
 
-这将打印出`My name is John and I am 30 years old.`，其中`${name}`和`${age}`将会被对应的变量值替换。
-
-# 深入探讨打印调试输出
-
-除了简单地打印变量的值，我们还可以使用`console.log()`来打印对象或数组的属性和元素。例如：
+以上代码将输出：`The sum of 10 and 20 is 30`。开发人员还可以使用模板字符串来打印更复杂的调试信息。例如：
 
 ```TypeScript
-interface Person {
-  name: string;
-  age: number;
-}
-
-let person: Person = {
-  name: "Alice",
-  age: 25
-};
-
-console.log(person.name, person.age);
+const name: string = 'John';
+const age: number = 25;
+console.log(`Name: ${name}, Age: ${age}, Birth Year: ${new Date().getFullYear() - age}`);
 ```
 
-这段代码将打印出`Alice 25`，分别代表对象`person`的`name`和`age`属性的值。我们也可以使用`console.table()`来以表格形式打印对象或数组的属性和元素，更清晰地展示它们的结构。
+以上代码将输出：`Name: John, Age: 25, Birth Year: 1996`。通过使用模板字符串，可以更方便地在调试信息中嵌入变量。
 
-# 参考链接
+## 深入了解打印调试输出
 
-- [TypeScript官方文档](https://www.typescriptlang.org/docs/)
-- [TypeScript中的console.log()函数](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#improved-checking-for-this-in-more-cases)
-- [TypeScript中的模板字符串](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-4.html#template-strings)
-- [更多有用的调试技巧](https://www.freecodecamp.org/news/javascript-debugging-tips-and-tricks/)
+除了常规的 `console.log()` 之外，TypeScript 还提供了 `console.warn()` 和 `console.error()` 来分别打印警告和错误信息。另外，开发人员还可以使用 `console.assert()` 来进行断言测试，如果断言不成立，则会打印错误信息。例如：
+
+```typescript
+const num: number = 5;
+console.assert(num < 3, 'The number must be less than 3');
+```
+
+以上代码将输出：`Assertion failed: The number must be less than 3`。
+
+## 参考链接
+
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/)
+- [MDN Web Docs: console](https://developer.mozilla.org/zh-CN/docs/Web/API/console)

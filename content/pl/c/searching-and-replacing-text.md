@@ -1,7 +1,9 @@
 ---
-title:                "C: Wyszukiwanie i zastępowanie tekstu"
+title:                "C: Wyszukiwanie i zamiana tekstu"
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/searching-and-replacing-text.md"
 ---
 
@@ -9,72 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Podczas pisania oprogramowania często zdarza się, że chcemy dokonać zmian w tekście. Może to być konieczne podczas tworzenia raportów, przetwarzania danych lub po prostu w celu ułatwienia sobie pracy. W takich sytuacjach użytecznym narzędziem jest funkcja "szukaj i zamień", która pozwala na szybkie i dokładne zmiany w tekście.
+W programowaniu tekstowym zwykle występuje potrzeba zmiany fragmentu tekstu w jednej lub wielu liniach kodu. To może być spowodowane błędami w pisowni, aktualizacją danych lub po prostu potrzebą dostosowania tekstu do konkretnych wymagań. W takich przypadkach przydatne jest narzędzie do wyszukiwania i zamiany tekstu. W tym artykule omówimy, jak zrealizować to zadanie za pomocą języka programowania C.
 
 ## Jak to zrobić
 
-Aby wykonać "szukaj i zamień" w języku C, musisz użyć funkcji `str_replace()`. Najpierw musisz zadeklarować dwie zmienne typu `char` - jedną zawierającą tekst, w którym będziemy szukać, a drugą z tekstem, który będzie podmieniany. Następnie, używając pętli `for`, możesz przeiterować po tekście i sprawdzić, czy zawiera ona szukaną frazę, a następnie użyć funkcji `strcpy()` do zastąpienia jej nowym tekstem.
+Aby przeprowadzić wyszukiwanie i zamianę tekstu w języku C, potrzebujemy dwóch podstawowych elementów: funkcji `strstr()` i funkcji `strcpy()`. Funkcja `strstr()` służy do wyszukania ciągu znaków w danej napisie, a funkcja `strcpy()` do kopiowania tekstu z jednego miejsca do drugiego. W poniższym przykładzie użyjemy również funkcji `printf()`, aby wyświetlić rezultaty na ekranie.
 
-```
+```C
 #include <stdio.h>
 #include <string.h>
 
-char text[] = "Blog post for Polish readers using Markdown";
-char search[] = "Polish";
-char replace[] = "Polski";
+// Funkcja wyszukująca i zamieniająca tekst 
+void searchAndReplace(char *text, char *search, char *replace) {
+    char *textPtr;
+    // Używamy pętli while, aby przeszukiwać cały napis
+    while((textPtr = strstr(text, search))) {
+        // Kopiujemy tekst przed szukanym ciągiem do nowej zmiennej
+        char before[100];
+        strncpy(before, text, textPtr-text);
+        // Dodajemy znak końca linii
+        before[textPtr-text] = '\0';
 
-void str_replace(char *original, char *search, char *replace) {
-    char *result;
-    int i, cnt = 0;
-    int new_len = strlen(replace);
-    int old_len = strlen(search);
-    
-    for (i = 0; original[i] != '\0'; i++) {
-        if (strstr(&original[i], search) == &original[i]) {
-            cnt++;
-            i += old_len - 1;
-        }
+        // Teraz dodajemy tekst do zmiennej zastępczej
+        char after[100];
+        strcpy(after, replace);
+
+        // Dodajemy tekst po szukanym ciągu do zmiennej zastępczej
+        strcat(after, textPtr+strlen(search));
+
+        // Kopiujemy tekst ze zmiennej po zmianie do zmiennej oryginalnej
+        // W ten sposób dokonujemy zamiany tekstu
+        strcpy(text, before);
+        strcat(text, after);
     }
-
-    result = (char *)malloc(i + cnt * (new_len - old_len) + 1);
-
-    i = 0;
-    while (*original) {
-        if (strstr(original, search) == original) {
-            strcpy(&result[i], replace);
-            i += new_len;
-            original += old_len;
-        } else
-            result[i++] = *original++;
-    }
-
-    result[i] = '\0';
-    printf("%s\n", result);
 }
 
 int main() {
-    printf("Original text: %s\n", text);
-    printf("Modified with str_replace: ");
-    str_replace(text, search, replace);
+    // Przykładowy napis do przeszukania i zmiany
+    char text[] = "Przykladowy napis do przeszukania i zmiany.";
+
+    // Wywołujemy funkcję searchAndReplace(), przekazując jako argumenty 
+    // napis do przeszukania, szukany ciąg i ciąg zastępczy
+    searchAndReplace(text, "zmiany", "modyfikacji");
+
+    // Wyświetlamy zmieniony napis na ekranie
+    printf("%s", text);
     return 0;
 }
 ```
 
-Wynikiem działania tego kodu będzie:
+Powyższy przykład wyświetli na ekranie: "Przykladowy napis do przeszukania i modyfikacji." Jak widać, używając funkcji `strstr()` i `strcpy()`, możemy łatwo przeprowadzić zamianę tekstu w napisie.
 
-```
-Original text: Blog post for Polish readers using Markdown
-Modified with str_replace: Blog post for Polski readers using Markdown
-```
+## Wnikliwe spojrzenie
 
-## Głębszy zanurzanie
+W języku C istnieje wiele innych funkcji, które mogą być przydatne w przeprowadzaniu zmian tekstowych. Na przykład funkcja `strncpy()` kopiująca n znaków z jednego ciągu do drugiego lub funkcja `strtok()` służąca do dzielenia tekstu na mniejsze części. Zawsze warto zapoznać się z możliwościami danego języka programowania i wybrać najlepszą funkcję do konkretnego zadania.
 
-Chociaż funkcja `str_replace()` jest bardzo przydatna do szybkiej zmiany tekstu, warto zwrócić uwagę, że wymaga ona podania dokładnej frazy, którą chcemy zamienić. Jeśli chcesz być bardziej elastyczny w wyborze tekstu, który ma zostać zamieniony, możesz użyć innych funkcji, takich jak `strtok()` lub `regexp()`.
+## Zobacz też
 
-Funkcja `strtok()` pozwala na podzielenie tekstu na mniejsze części, które można edytować lub zamienić. Natomiast `regexp()` pozwala na dopasowanie tekstu do wyrażeń regularnych, co jest szczególnie przydatne w przypadku, gdy chcesz zmienić całą grupę wyrazów za jednym razem.
-
-## Zobacz także
-
-- Funkcja `str_replace()` w języku C: https://www.tutorialspoint.com/c_standard_library/c_function_str_replace.htm
-- Wyrażenia regularne w języku C: https://www.tutorialspoint.com/c_standard_library/c_function_regexp.htm
-- Podstawy Markdown: https://www.markdownguide.org/basic-syntax/
+- [Oficjalna dokumentacja języka C](https://www.cplusplus.com/reference/cstring/strstr/)
+- [Przewodnik po funkcjach string w C](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
+- [Wyszukiwanie i zamiana w tekście w języku C++](https://www.educative.io/edpresso/how-to-find-and-replace

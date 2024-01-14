@@ -1,43 +1,38 @@
 ---
-title:                "Haskell: Mallia vastaavien merkkien poistaminen"
+title:                "Haskell: Asetusten vastaavien merkkien poistaminen"
+simple_title:         "Asetusten vastaavien merkkien poistaminen"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi 
+## Miksi
 
-Kuvittele, että sinulla on valtava määrä tietoa tai tekstiä, josta haluat poistaa tietyt merkit tai merkkijonot. Ehkä haluat vain poistaa ylimääräiset välilyönnit tai erikoismerkit, tai ehkä sinun täytyy suodattaa tietoa tietystä formaatista. Tässä tilanteessa on äärimmäisen tärkeää löytää tapa poistaa nämä merkit nopeasti ja tehokkaasti. Tässä tulee apuun haskellin ominaisuus poistaa merkkejä, jotka täyttävät tietyn kuvion.
+Monissa ohjelmoinnin tehtävissä voi olla tarpeen poistaa merkkejä tietystä kuvioista teksteistä. Tämä voi olla hyödyllistä esimerkiksi tietojenpuhdistuksessa tai tiedostojen muokkaamisessa. Haskell tarjoaa tehokkaan ja helppokäyttöisen menetelmän poistaa merkkejä tietystä kuvioista käyttäen `Data.List` kirjastoa.
 
-## Kuinka Teet
+## Kuinka tehdä se
 
-Haskellilla on käytännöllinen tapa poistaa merkkejä, jotka ovat dynaamisesti määritettyjä merkkijonoja. Voit käyttää funktiota "deleteChar" poistaaksesi merkkejä merkkijonosta, joka vastaa tiettyä kuvioa. Voit tehdä tämän esimerkiksi seuraavalla tavalla:
-
-```Haskell
-deleteChar :: Char -> String -> String
-deleteChar c [] = []
-deleteChar c (x:xs) | c == x    = deleteChar c xs
-                    | otherwise = x : deleteChar c xs
-```
-
-Tämä esimerkki funktio ottaa parametreina merkin ja merkkijonon ja palauttaa uuden merkkijonon, jossa merkki on poistettu. Voit kutsua tätä funktiota ja antaa parametriksi haluamasi merkin ja merkkijonon, josta haluat poistaa merkin. Esimerkiksi:
+Aluksi meidän täytyy ladata `Data.List` kirjasto käyttöömme `import`-käskyllä. Sitten voimme käyttää `deleteBy` funktiota, joka ottaa kaksi argumenttia: poistettavan kuvion ja listan, josta haluamme poistaa kyseisen kuvion. Esimerkiksi, jos haluamme poistaa kaikki numerot merkkijonosta, voimme käyttää seuraavaa koodia:
 
 ```Haskell
-deleteChar 'a' "Haskell on mahtava!"  #=> "Hskell on mhtv!"
+import Data.List
+
+let merkkijono = "123abc456"
+let numerot = ['0','1','2','3','4','5','6','7','8','9']
+
+deleteBy (\x y -> x == y) numerot merkkijono
 ```
 
-Tässä tapauksessa välilyönnit eivät ole välitettyjä, joten ne eivät ole tuloksessa.
+Tämä antaisi meille tulokseksi `"abc"` eli merkkijonon missä kaikki numerot on poistettu. Voimme myös asettaa erilaisia kriteereitä poistamiselle, esimerkiksi poistaa vain merkit `a-f` annetusta merkkijonosta käyttäen `isLower` ja `isAlpha` funktioita.
 
-## Syväsukellus
+## Syvemmälle aiheeseen
 
-Kun käytät "deleteChar" -funktiota haskellissa, sinun täytyy pitää mielessä, että se toimii rekursiivisesti. Tämä tarkoittaa sitä, että funktio kutsuu itseään, kunnes tulee tietty ehto, jolloin se palauttaa halutun tuloksen.
-
-Funktio ei myöskään muuta alkuperäistä merkkijonoa, vaan palauttaa uuden merkkijonon, joka sisältää muutokset. Tämä on tärkeää pitää mielessä, kun käytät "deleteChar" -funktiota osana laajempaa ohjelmaa.
+Haskellissa on myös muita hyödyllisiä funktioita, kuten `delete` ja `deleteFirstsBy`, jotka voivat poistaa tietyn merkin tai useita merkkejä listalta. `delete` poistaa kaikki esiintymät annetusta merkistä, kun taas `deleteFirstsBy` poistaa vain ensimmäisen esiintymän. Näitä funktioita voivat olla hyödyllisiä esimerkiksi silloin kun haluamme poistaa tietyn merkin useista merkkijonoista tai tarkemmin määritellä mitkä merkit poistetaan.
 
 ## Katso myös
 
-- [Haskelin viralliset kotisivut] (https://www.haskell.org/)
-- [Tutorial: Haskel on 5 minuutissa] (https://www.haskell.org/downloads/#platform)
-- [Haskel Cheat Sheet] (https://haskel.org/haskell-cheat-sheet/)
+- [Haskellin virallinen dokumentaatio](https://www.haskell.org/documentation/)
+- [Data.List kirjaston dokumentaatio](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)

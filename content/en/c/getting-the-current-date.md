@@ -1,49 +1,63 @@
 ---
 title:                "C recipe: Getting the current date"
+simple_title:         "Getting the current date"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever wondered what day it is or what the current date is? Knowing the current date is important for various reasons, such as for organizing tasks, scheduling events, or simply keeping track of time. In this blog post, we will explore how to get the current date using C programming.
+Have you ever wondered how your computer knows what the current date is? Whether you're curious or looking to incorporate date functions into your C programs, getting the current date can be a useful task to learn. In this blog post, we'll explore the reasons for wanting to get the current date and how to do so in the C programming language.
 
 ## How To
-
-Getting the current date in C programming involves using the `time.h` library, which provides functions for manipulating time and dates. The most commonly used functions for getting the current date are `time()` and `localtime()`.
+To get the current date in C, we'll need to use the `time.h` header file, which contains functions for working with dates and times. Specifically, we'll use the `time()` function, which returns the number of seconds from January 1st, 1970 to the current date and time. We can then use this value to calculate the current date in various formats.
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // time() returns the time in seconds since 00:00:00 UTC on January 1, 1970
-    time_t t = time(NULL);
-    
-    // localtime() converts the time to a more readable format
-    struct tm *now = localtime(&t);
-    
-    // Print out the current date in a specified format
-    printf("Today is %02d/%02d/%d\n", now->tm_mon + 1, now->tm_mday, now->tm_year + 1900);
-    
-    return 0;
+  // get current date and time
+  time_t now = time(NULL);
+  
+  // calculate current date and time in different formats
+  struct tm *local = localtime(&now);
+  
+  // long date format (e.g. Friday, October 15, 2021)
+  char long_date[20];
+  strftime(long_date, 20, "%A, %B %d, %Y", local);
+  printf("Long date: %s\n", long_date);
+  
+  // short date format (e.g. 10/15/2021)
+  char short_date[11];
+  strftime(short_date, 11, "%m/%d/%Y", local);
+  printf("Short date: %s\n", short_date);
+  
+  // custom date format (e.g. 10-15-21)
+  char custom_date[9];
+  strftime(custom_date, 9, "%m-%d-%y", local);
+  printf("Custom date: %s\n", custom_date);
+  
+  return 0;
 }
 ```
 
-Running this code will output the current date in the format `MM/DD/YYYY`, for example: `Today is 07/12/2021`.
+The output for this program would be:
+```
+Long date: Friday, October 15, 2021
+Short date: 10/15/2021
+Custom date: 10-15-21
+```
 
 ## Deep Dive
+As we saw in the code example, the `time()` function returns the number of seconds from a specific date and time (in this case, January 1st, 1970) to the current date and time. This value is known as a "Unix timestamp" and is commonly used in computer systems to indicate dates and times. The `localtime()` function then converts this timestamp into a more readable structure called `struct tm`.
 
-The `time()` function is used to get the current time as a `time_t` object, which represents the number of seconds elapsed since the Unix epoch. This value is then passed as an argument to `localtime()`, which converts it into a structure containing various fields such as year, month, day, and time. The structure is then accessed using the `->` operator to print out the desired date format.
-
-It's important to note that the `localtime()` function uses the local timezone, whereas `gmtime()` uses the Coordinated Universal Time (UTC). Additionally, the `strftime()` function can be used to format the date in various ways, such as displaying the day of the week or the full month name.
+The `strftime()` function, which stands for "string format time", allows us to format the current date and time in various ways using the values stored in `struct tm`. We can specify the date format we want by using symbols such as `%Y` for the four-digit year, `%m` for the month (with leading zero), `%d` for the day (with leading zero), and so on. You can find a full list of these symbols and their meanings in the C documentation for `strftime()`.
 
 ## See Also
-
-- [C time and date](https://www.programiz.com/c-programming/library-function/time)
-- [How to display current date and time in C](https://www.guru99.com/c-programs-getting-system-date.html)
-
-Getting the current date in C programming is a useful skill to have and can be applied in various scenarios. With the help of the `time.h` library and the functions discussed, you can easily get the current date in your desired format. So go ahead and give it a try in your next C program!
+- [C time and date functions](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [C strftime() function](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+- [Unix timestamp](https://www.unixtimestamp.com/)

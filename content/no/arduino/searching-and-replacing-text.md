@@ -1,37 +1,54 @@
 ---
-title:                "Arduino: Søking og bytting av tekst"
+title:                "Arduino: Søking og erstatting av tekst"
+simple_title:         "Søking og erstatting av tekst"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Alle som har programmert har sannsynligvis opplevd å måtte endre tekst i koden sin, enten for å rette feil eller for å gjøre koden mer effektiv. Å kunne søke og bytte ut tekst er en grunnleggende ferdighet som kan spare deg for mye tid og arbeid når du jobber med Arduino.
+Har du noen gang sittet i timevis og oppdatert kode manuelt, en linje om gangen? Det kan være utrolig tidkrevende og kjedelig. Heldigvis har vi en løsning for deg - søk og erstatt i din Arduino-kode! Ved å bruke denne funksjonen, kan du raskt og enkelt endre flere deler av koden din på en gang, noe som sparer deg for verdifull tid og gjør kodingen mye mer effektiv.
 
-# Hvordan
+## Hvordan
 
-Å søke og bytte ut tekst i Arduino er en enkel prosess. Du kan bruke den innebygde "Find and Replace" -funksjonen i Arduino IDE, eller du kan bruke tekstredigeringsprogrammer som støtter søk og erstatt-funksjonalitet. La oss se på et eksempel der vi ønsker å endre alle forekomster av "ledPin" til "ledPin2" i koden vår.
+For å søke og erstatte tekst i din Arduino-kode, følg disse trinnene:
+
+1. Åpne Arduino IDE og åpne filen du vil søke og erstatte tekst i.
+2. Klikk på "Edit" i menylinjen og velg "Find and Replace" fra rullegardinmenyen.
+3. Skriv inn teksten du vil søke etter i "Find" -feltet og teksten du vil erstatte den med i "Replace" -feltet.
+4. Velg hva du vil søke i ved å velge mellom "Current Document" eller "All Open Documents".
+5. Klikk på "Replace" for å erstatte én instans av teksten, eller "Replace All" for å erstatte alle instansene i dokumentet(d) du har valgt.
+
+Her er et eksempel på en linje kode som inneholder ordet "lys", og som vi vil erstatte med "LED":
 
 ```Arduino
-int ledPin = 9;  // Definerer pin for LED-utgang
+digitalWrite(lys, HIGH);
 ```
 
-For å søke og erstatte tekst i Arduino IDE, går du til "Edit" -menyen og velger "Find and Replace" (Finn og erstatt). I søkefeltet skriver du inn "ledPin" og i erstatningsfeltet skriver du "ledPin2". Trykk på "Replace" (Erstatt) for å erstatte teksten eller "Replace All" (Erstatt alle) for å erstatte alle forekomster i koden.
+Etter å ha fulgt trinnene ovenfor, vil koden se slik ut:
 
-I en tekstredigerer kan du bruke tastatursnarveier som "Ctrl + F" for å åpne søkefunksjonen og "Ctrl + H" for å åpne søke og erstatt-funksjonen. Vær oppmerksom på at det å bruke tekstredigeringsprogrammer kan være mer risikabelt ettersom de ikke har kunnskap om syntaksen til Arduino-koden din.
+```Arduino
+digitalWrite(LED, HIGH);
+```
+
+Som du kan se, byttet søk og erstatte funksjonen ut "lys" med "LED" i hele koden, noe som gjør det mye enklere og raskere enn å endre hver linje manuelt.
 
 ## Dypdykk
 
-Når du bytter ut tekst i Arduino-koden din, er det viktig å være klar over at Arduino IDE bare tar hensyn til tegnene som er synlige i skjermbildet. Dette betyr at hvis du har koden på flere linjer, kan du ikke søke og erstatte et uttrykk som går over flere linjer. Du kan imidlertid bruke "Find" (Søk) -funksjonen til å finne forekomster av tekst og navigere til dem.
+Søk og erstatte-funksjonen er en utrolig nyttig verktøy, men det er viktig å være forsiktig når du bruker den. En feil grep kan føre til uønskede endringer i koden din, så sørg for å dobbeltsjekke alle endringene før du lagrer dem.
 
-En annen ting å merke seg er at søket er casesensitivt. Dette betyr at hvis du søker etter "ledpin" vil ikke "ledPin" bli funnet og erstattet. Hvis du vil søke uten å ta hensyn til store og små bokstaver, må du huke av for "Match case" (Match case) i Arduino IDE.
+I tillegg, hvis du ikke er sikker på hvilke deler av koden din som må endres, kan du bruke funksjonen "Find" for å finne de ulike instansene av et ord eller uttrykk i koden din. Dette kan hjelpe deg med å identifisere hva du trenger å bytte ut før du bruker "Replace" -funksjonen.
 
-# Se også
+## Se også
 
-- [Introduksjon til Arduino](https://www.arduino.cc/en/Guide/Introduction)
-- [Offisiell Arduino dokumentasjon](https://www.arduino.cc/reference/en/)
-- [Bruk av variabler i Arduino](https://create.arduino.cc/projecthub/infusionwest/tutorial-using-variables-in-arduino-part-1-interactive-modes-627adc)
-- [Feilsøking i Arduino-prosjekter](https://create.arduino.cc/projecthub/SavageCorona/arduino-troubleshooting-3a8abf)
+For mer informasjon om å søke og erstatte i Arduino-kode, her er noen nyttige ressurser:
+
+- [Offisiell dokumentasjon for søk og erstatte på Arduino-nettstedet](https://www.arduino.cc/reference/en/language/functions/advanced-io/replacetext/)
+- [YouTube-video som viser hvordan du bruker søk og erstatte i Arduino IDE](https://www.youtube.com/watch?v=k8Jkugg6RF0)
+- [Artikkel om beste praksis for søk og erstatte i programmering](https://medium.com/@esotic/the-dos-and-donts-of-search-and-replace-b402bd0445ca)
+
+Vi håper denne bloggposten var nyttig for deg og at du kan nyte fordelene av å bruke søk og erstatte i dine Arduino-prosjekter. Lykke til med kodingen!

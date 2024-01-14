@@ -1,52 +1,47 @@
 ---
-title:                "Elixir: Ein neues Projekt beginnen."
+title:                "Elixir: Eine neue Projekt starten"
+simple_title:         "Eine neue Projekt starten"
 programming_language: "Elixir"
-category:             "Getting Started"
+category:             "Elixir"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Es gibt viele Gründe, warum man ein neues Elixir-Projekt starten möchte. Vielleicht ist es ein persönliches Projekt, an dem man schon lange arbeitet und endlich in Produktionsumgebung bringen möchte. Oder vielleicht ist es ein geschäftliches Projekt, das von Grund auf mit Elixir aufgebaut werden soll. Egal aus welchem Grund, in diesem Blogbeitrag werden wir uns anschauen, wie man ein neues Elixir-Projekt startet und was dabei zu beachten ist.
+Elixir ist eine aufstrebende Sprache, die immer beliebter wird. Sie zeichnet sich durch ihre robuste Fehlerbehandlung und die Fähigkeit aus, verteilte Systeme effizient zu verwalten. Wenn Sie ein neues Projekt starten möchten, ist Elixir definitiv eine Sprache, die es sich lohnt zu erkunden.
 
-## Wie geht's?
+# Wie man anfängt
 
-Um ein neues Elixir-Projekt zu starten, müssen wir zunächst die Elixir-Entwicklungsumgebung einrichten. Dazu benötigen wir die Elixir-Sprache und die dazugehörige Laufzeitumgebung. Wenn du noch keine Erfahrung mit Elixir hast, ist es empfehlenswert, die offizielle Dokumentation zu lesen und ein paar Tutorials zu durchlaufen, um dich mit der Sprache vertraut zu machen.
+Um ein neues Elixir-Projekt zu starten, müssen Sie zuerst die Sprache auf Ihrem System installieren. Dazu können Sie entweder den Paketmanager Ihrer Wahl verwenden oder die offizielle Elixir-Website besuchen. Sobald Sie Elixir installiert haben, können Sie mit der Erstellung eines neuen Projekts beginnen.
 
-Nachdem wir die Entwicklungsumgebung eingerichtet haben, können wir ein neues Projekt erstellen, indem wir das Terminal/ die Konsole öffnen und folgenden Befehl ausführen:
+Öffnen Sie zunächst Ihre Terminalanwendung und navigieren Sie zu dem Ordner, in dem Sie das Projekt speichern möchten. Verwenden Sie den Befehl `mix new {Projektname}` um ein neues Elixir-Projekt zu erstellen. Dadurch werden alle erforderlichen Dateien und Ordner automatisch erstellt.
 
-```Elixir
-mix new my_project
-```
-
-Dieser Befehl erstellt ein neues Elixir-Projekt mit dem Namen "my_project" und fügt alle benötigten Dateien und Ordner hinzu. Nun können wir in unserem Projektordner die Datei "mix.exs" öffnen und die gewünschten Abhängigkeiten hinzufügen, indem wir sie in der `deps` Funktion angeben.
+Nun können Sie Ihre Elixir-Dateien schreiben und ausführen. Hier ist ein Beispiel, das "Hello World!" auf der Konsole ausgibt:
 
 ```Elixir
-defp deps do
-  [
-    {:phoenix, "~> 1.4.0"}
-  ]
+defmodule HelloWorld do
+  def hello do
+    IO.puts "Hello World!"
+  end
 end
+
+HelloWorld.hello()
 ```
 
-Anschließend müssen wir die Abhängigkeiten mit dem Befehl `mix deps.get` installieren. Danach können wir unseren Code schreiben und mit `mix compile` kompilieren. Um unser Projekt auszuführen, können wir entweder den Befehl `mix run` verwenden, um alle Dateien auszuführen, oder wir können das Modul direkt aus dem Terminal aufrufen:
+Die Ausgabe dieses Codes wird "Hello World!" sein.
 
-```Elixir
-iex -S mix
-```
+# Eintauchen in die Details
 
-Jetzt können wir mit unserem neuen Elixir-Projekt loslegen!
+Wenn Sie tiefer in die Erstellung eines Elixir-Projekts eintauchen möchten, gibt es einige wichtige Konzepte, die Sie verstehen sollten. Zum Beispiel verwenden Elixir und die dazugehörige Plattform Phoenix eine bestimmte Dateistruktur und Benennungskonventionen für das Organisieren von Code. Es ist auch wichtig zu wissen, wie Abhängigkeiten in Elixir behandelt werden und wie Sie Pakete von Drittanbietern in Ihre Projekte integrieren können.
 
-## Tieferer Einblick
+Darüber hinaus ist es hilfreich zu verstehen, wie Sie Ihre Elixir-Anwendung testen können, um sicherzustellen, dass alles wie beabsichtigt funktioniert. Elixir hat ein integriertes Test-Framework, das es Ihnen ermöglicht, Tests für jede Funktion oder Modul in Ihrer Anwendung zu schreiben. Dies hilft Ihnen, Fehler zu identifizieren und sicherzustellen, dass Ihre Anwendung immer zuverlässig bleibt.
 
-Bevor wir mit der Entwicklung unseres Projekts beginnen, gibt es noch ein paar wichtige Dinge zu beachten. Elixir verwendet das Konzept von "Supervisors" und "Workers", um Fehler zu verwalten und die Stabilität unserer Anwendung zu gewährleisten. Deshalb ist es wichtig, sich mit diesem Konzept vertraut zu machen und die richtige Strukturierung unserer Anwendung zu berücksichtigen.
+# Siehe auch
 
-Außerdem bietet Elixir eine leistungsfähige Standardbibliothek mit vielen nützlichen Funktionen und Modulen. Es lohnt sich, sich mit diesen vertraut zu machen und sie in unserem Projekt einzusetzen, um effizientere und wartbarere Code zu schreiben.
-
-## Siehe auch
-
-- Offizielle Elixir-Dokumentation: https://elixir-lang.org
-- Elixir-Tutorials: https://elixir-lang.org/learning.html
-- Elixir Standardbibliothek: https://hexdocs.pm/elixir/Kernel.html
+- Offizielle Elixir-Website: https://elixir-lang.org/
+- Elixir-Dokumentation: https://hexdocs.pm/elixir/
+- Phoenix Framework: https://www.phoenixframework.org/
+- Elixir Forum (auf Deutsch): https://elixirforum.de/

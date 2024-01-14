@@ -1,37 +1,26 @@
 ---
-title:                "Gleam: स्ट्रिंग को मूल्यवर्धित करना"
+title:                "Gleam: स्ट्रिंग को बड़ा लिखना"
+simple_title:         "स्ट्रिंग को बड़ा लिखना"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-"## Kyun"
-Kisi bhi programming language mein, string ko capitalize karna bahut common hai. Lekin Gleam mein isko karne ka ek unique aur aasaan tarika hai. Is blog post mein hum jaanenge ki capitalizing string kyu important hai aur iske kya benefits hai.
+## क्यों
 
-"## Kaise Kare"
-Capitalizing string Gleam mein karna bahut hi simple hai. Sabse pehle, humein string ko define karna hoga. Fir hum `String.capitalize/1` function ka use karenge, jiska kaam hai string ko capitalize karna. Hum isko `|>` operator ke through bhi execute kar sakte hai.
+प्रोग्रामिंग में तोहफा होने के नाते आपको मालूम होगा के डेटा प्रसंस्करण और फॉर्मैटिंग कितना महत्वपूर्ण है। इसके साथ ही, अपने एप्लिकेशन या वेबसाइट में अच्छे और आसान समझने वाले स्ट्रिंग्स का प्रयोग करने से उसका अनुभागियों को उनका काम करने में आसानी होती है। इसलिए, ग्लीम लेंग्वेज में स्ट्रिंग को कैपीटलाइज करना इसके लिए एक महत्वपूर्ण और उपयोगी क्रिया है।
 
-"```Gleam
-let name = "john"
-let capitalized_name = name |> String.capitalize/1
-IO.println(capitalized_name)
+## कैसे
+
+```Gleam
+string = "hello world"
+capitalized_string = String.capitalize(string)
 ```
-Output: "John"
+आप इस सम्पूर्ण कोड को अपने अप्लिकेशन में स्वतंत्र रूप से बार-बार अपनी जरूरत के अनुसार उपयोग कर सकते हैं। उपरोक्त उदाहरण प्रमाण के रूप में हमने `hello world` स्ट्रिंग को कैपिटलाइज किया है और अब उसका आउटपुट `Hello world` है। इस तरह से, आप अपने स्ट्रिंग को कोडिंग से अपने मनमंथ रूप में बदल सकते हैं और स्ट्रिंग एसियन्सी जोड़े, सामान्य स्थान [Unicode](https://unicode.org/charts/), ऑरियेंटेशन अथवा अन्य स्ट्रिंग्स की प्रकरण प्रक्रिया को संपादित कर सकतें हैं।
 
-Humne yaha pe ek variable `name` define kiya hai jisko humne `"john"` assign kiya hai. Fir humne `|>` operator se `String.capitalize/1` function ko `name` variable pe execute kiya hai aur uski output `capitalized_name` variable mein store kiya hai. Fir bas humne `IO.println` function ka use karke `capitalized_name` variable ki output print kar di.
+## गहराई में जाएँ
 
-Ab jab bhi hum `capitalized_name` variable ko print karwayenge, uski output capitalized form mein aayegi.
-
-"## Gehri Jhaank"
-String ko capitalize karna kafi common hai, lekin kya aapko pata hai ki Gleam mein iske liye kya process hota hai? Gleam mein string ko manipulate karne ke liye Unicode code point ka use kiya jata hai. Isse hum characters ko manipulate kar sakte hai aur unke case ko bhi change kar sakte hai.
-
-Iske alawa, Gleam mein `String.capitalize/1` function ke alawa aur bhi functions hai jaise `String.uppercase/1` aur `String.lowercase/1` jo ki string ke case ko change karne ke liye use kiye ja sakte hai.
-
-"## Dekhiye Bhi"
-Agar aap aur jyada Gleam programming ke bare mein jaanna chahte hai, toh yeh links aapke liye helpful honge:
-- [Official Gleam documentation](https://gleam.run/documentation/)
-- [Gleam tutorial series](https://dev.to/codingthly/learn-gleam-programming-language-part-1-introduction-4lno)
-
-Happy coding!
+स्ट्रिंग को कैपिटलाइज करने के पीछे एक मूल कारण है केस सेंसिटिव भाषा लिखी गई कोडबेस को सही चालान से चलाने के लिए। हालांकि, ग्लीम में स्ट्रिंग को कैपिटलाइज करने के बहुत सारे अन्य तरीके भी है जिन्हें अपने प्रोजेक्ट में इस्त

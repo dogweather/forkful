@@ -1,57 +1,41 @@
 ---
-title:                "Fish Shell: 文字列の抽出"
+title:                "Fish Shell: 「サブストリングを抽出する」"
+simple_title:         "「サブストリングを抽出する」"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ?
 
-文字列の中から部分文字列を抽出することは、プログラミングにおいて非常に便利です。例えば、ある文字列から特定のデータを抽出したり、文字列の特定の部分を置換したりすることができます。Fish Shellを使用して文字列から部分文字列を抽出する方法を学びましょう。
+Substringの抽出に従事する理由は何でしょうか？Fish Shellプログラミングにおいて、特定の部分のみを抽出することはとても便利です。例えば、テキストから特定の単語を見つけ出したり、文字列を加工したりする際によく使われます。是非試してみてください！
 
 ## 方法
 
-Fish Shellで文字列から部分文字列を抽出するには、substrコマンドを使用します。以下のコマンドを使用して、文字列 "Hello World!" から "World"を抽出してみましょう。
+抽出する方法はとても簡単です。まずは文字列を変数に設定し、その後にsubstringコマンドを使用します。下記のコードを参考にしてみてください。
 
 ```Fish Shell
-set str "Hello World!"
-substr $str 6 5
+set text "こんにちは、私はFish Shellプログラマーです！"
+substring な私はFish Shellプログラマーです！」
 ```
-➜ World
 
-このコマンドは、文字列の6番目の文字から始まり、5文字を抽出します。これにより、"World"という部分文字列が抽出されます。また、始めの数値を"-"にすることで、末尾からの文字数を指定することもできます。例えば、"-5"を指定すると、末尾から5文字を抽出します。
+抽出した結果は次のようになります。
 
-```Fish Shell
-substr $str -5 5
 ```
-➜ World
-
-さらに、文字列の長さを取得するには、"len"サブコマンドを使用します。
-
-```Fish Shell
-set len (len $str)
-echo $len
+私はFish Shellプログラマーです！
 ```
-➜ 12
 
-これにより、文字列 "Hello World!" の長さが12であることが確認できます。
+## 深堀り
 
-## ディープダイブ
+substringコマンドには様々なオプションがあります。例えば、インデックス番号を指定して抽出する部分の範囲を指定することもできます。詳しくはFish Shellの公式ドキュメントを参考にしてください。
 
-Fish Shellのsubstrコマンドは非常に柔軟で、さまざまな文字列の操作に使用することができます。例えば、ある文字列の一部を置換する際にも便利です。以下のコマンドを使用して、"Hello World!"の"Hello"を"こんにちは"に置き換えてみましょう。
+## その他のリンク
 
-```Fish Shell
-substr $str 0 5
-echo (substr $str 5 7)
-```
-➜ こんにちは World!
+[Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
 
-このように、substrコマンドを使用すれば、簡単に文字列を部分的に操作することができます。
+## 参考
 
-## See Also
-
-- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/cmds/substr.html)
-- [Fish Shellの文字列操作に関するチートシート](https://fishshell.com/docs/current/tutorial.html#string-manipulation-1)
-- [Fish Shellで文字列を扱う際のベストプラクティス](https://fishshell.com/docs/current/tutorial.html#string-manipulation-best-practices)
+[Substringの抽出方法について](https://fishshell.com/docs/current/cmds/substr.html)

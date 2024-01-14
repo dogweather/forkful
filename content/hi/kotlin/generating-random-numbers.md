@@ -1,57 +1,36 @@
 ---
-title:                "Kotlin: यादृच्छिक संख्याएं उत्पन्न करना"
+title:                "Kotlin: यादृच्छिक संख्याओं का उत्पादन"
+simple_title:         "यादृच्छिक संख्याओं का उत्पादन"
 programming_language: "Kotlin"
-category:             "Numbers"
+category:             "Kotlin"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्यों
 
-Random numbers kyun banane ka ek aasan tarika hai apne code mein unpredictability aur variability add karne ka. Isse aap apne code ko interesting aur versatile bana sakte hain.
+क्या आपको पता है कि कोटलिन में रैंडम नंबरों को उत्पन्न करने के लिए कई तरीके हैं? इस ब्लॉग पोस्ट में हम देखेंगे कि रैंडम नंबरों को कोटलिन में कैसे उत्पन्न किया जाता है और इसके पीछे की तकनीकों के बारे में भी बात करेंगे।
 
-## Kaise Kare
+## कैसे करें
 
-Random numbers banane ke liye, Kotlin mein `Random` class ka istemaal kiya jaata hai. Iske liye aap ye steps follow kar sakte hain:
-
-1. `Random()` constructor ke saath ek object create karein.
-2. `nextInt()` function ka use karke ek random integer generate karein.
-3. Agar aap chahte hain ki random numbers ek specific range ke andar hi generate ho, toh `nextInt(n)` function ka use karein jahaan `n` aapke desired range ka ek number hai.
-4. Agar aap chahte hain ki random numbers decimal values mein generate ho, toh `nextDouble()` function ka use kar sakte hain.
-
-For example, agar hum chahte hain ki 1 se 10 ke beech random integers generate ho, toh hum ye code likh sakte hain:
+आप `java.util.Random` का उपयोग करके चाहे तो अपनी चाह के अनुसार बेहतरीन रैंडम नंबर प्राप्त कर सकते हैं। आप इसके साथ कुछ पैरामीटर भी सेट कर सकते हैं जैसे कि `nextInt(n)` जो कि 0 से n के बीच का रैंडम नंबर उत्पन्न करता है। निम्नलिखित कोड ब्लॉक में हम इसका उदाहरण देखेंगे।
 
 ```Kotlin
-val random = Random()
-val num = random.nextInt(10) + 1
-println(num)
+import java.util.Random
+
+fun main() {
+    val random = Random()
+    val randomNumber = random.nextInt(10)
+    println(randomNumber)
+}
 ```
-Iske output ke examples hain: 4, 8, 2, 10, etc.
 
-Agar hum chahte hain ki random decimal values generate ho, toh hum ye code likh sakte hain:
+उपरोक्त कोड ब्लॉक में हमने `java.util.Random` को इम्पोर्ट किया है और `nextInt()` फंक्शन का उपयोग करके एक रैंडम नंबर प्राप्त किया है। आप अपनी चाह के अनुसार संख्या को भी बदल सकते हैं।
 
-```Kotlin
-val random = Random()
-val num = random.nextDouble()
-println(num)
-```
-Output ke examples hain: 0.247593550982, 0.7658193592, 0.0512987413, etc.
+## गहराई में जाएं
 
-## Gehraai Mein Jhaarnaa
+रैंडम नंबर उत्पन्न करने की तकनीकों के पीछे बहुत सारे अंतर्निहित कारक हो सकते हैं। इसके लिए सभी कॉम्प्यूटर प्रोग्राम एक स्पेशल अल्गोरिथ्म का उपयोग करते हैं जो एक या अधिक स्थिर नंबरों का उपयोग करते हुए एक नए नंबर को उत्पन्न करता है। इसलिए, दो साइड आते हैं - सही स्थिर नंबरों का चयन और उन्हें मिश्रण का चयन करने का तरीका।
 
-Random numbers generate karne ke liye, `Random` class ke alawa bhi kuch aur methods hain jinhein aap istemaal kar sakte hain. Kuch examples hain:
-
-1. `nextFloat()` function aapko random floating point numbers generate karne mein help karega.
-2. `nextBoolean()` function aapko true ya false values random tarike se generate karne mein help karega.
-3. Hum `Seed` concept se bhi eksath random numbers generate kar sakte hain. Seed basically ek starting point hota hai jisein computer seed kiya jaata hai aur woh uss point se random numbers generate karta hai. Iske liye aap `setSeed()` function ka use kar sakte hain aur seed ko specify kar sakte hain.
-
-## Dekhiye Bhi
-
-### See Also
-
-- [Kotlin Random class documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-random/index.html)
-- [Random Number Generation in Kotlin](https://www.baeldung.com/kotlin/random)
-- [Using Random Numbers in Kotlin](https://medium.com/@abbasalom/using-random-numbers-in-kotlin-b645d0d535cb)
-
-Isse aapko random numbers generate karne mein koi problem nahi hogi. Ab aap apne code ko aur versatile bana sakte hain!
+## द

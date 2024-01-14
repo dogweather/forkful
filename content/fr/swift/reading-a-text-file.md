@@ -1,7 +1,9 @@
 ---
 title:                "Swift: Lecture d'un fichier texte"
+simple_title:         "Lecture d'un fichier texte"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/reading-a-text-file.md"
 ---
 
@@ -9,38 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes intéressé par la programmation Swift, vous avez probablement entendu parler de la manipulation de fichiers texte. Mais pourquoi est-il important de savoir comment lire un fichier texte? Eh bien, la réponse est simple : la lecture de fichiers texte est une compétence fondamentale pour tout programmeur, car elle vous permet d'interagir avec des données stockées dans un format facilement lisible.
+Si vous êtes un développeur Swift, alors vous savez que la lecture d'un fichier texte est une tâche courante dans de nombreux projets. Cela peut être pour lire des données d'un fichier de configuration, des données d'utilisateurs à partir d'un fichier CSV, ou même simplement pour afficher le contenu d'un fichier texte à l'utilisateur. Dans cet article, nous allons explorer comment lire efficacement un fichier texte en utilisant Swift.
 
 ## Comment faire
 
-Pour lire un fichier texte en Swift, nous allons utiliser la méthode `String(contentsOf:)`. Prenons un exemple concret en créant un fichier texte nommé "hello.txt" avec le contenu suivant :
+La méthode la plus simple pour lire un fichier texte en Swift est d'utiliser la fonction `contentsOfFile` de la classe `FileManager`. Jetons un coup d'oeil à un exemple de code pour mieux comprendre:
 
-```
-Bonjour le monde!
-```
-
-Maintenant, dans notre code Swift, nous pouvons utiliser cette méthode pour lire le contenu du fichier et l'afficher dans la console :
-
-```
-if let contenu = try? String(contentsOf: URL(fileURLWithPath: "hello.txt")) {
-    print(contenu)
+```Swift
+if let path = Bundle.main.path(forResource: "example", ofType: "txt") {
+    do {
+        let contents = try String(contentsOfFile: path)
+        print(contents)
+    } catch {
+        print("Error while reading file")
+    }
 }
 ```
 
-Dans cet exemple, nous utilisons le mot-clé `if let` pour vérifier s'il existe une valeur pour `contenu` avant de l'utiliser. La méthode `String(contentsOf:)` peut lancer une erreur si elle ne trouve pas le fichier spécifié, donc nous devons être prudents.
+Dans cet exemple, nous utilisons `Bundle.main.path` pour obtenir le chemin du fichier texte dans notre bundle de l'application, puis nous utilisons `String(contentsOfFile:)` pour lire le contenu du fichier et le stocker dans une variable. Enfin, nous affichons le contenu du fichier à l'utilisateur.
 
-Maintenant, si nous exécutons ce code, nous devrions voir "Bonjour le monde!" imprimé dans la console.
+Il est également possible de lire le contenu du fichier ligne par ligne en utilisant la méthode `enumerateLines` de la classe `String` :
 
-## Deep Dive
+```Swift
+if let path = Bundle.main.path(forResource: "example", ofType: "txt") {
+    do {
+        let contents = try String(contentsOfFile: path)
+        contents.enumerateLines { line, _ in
+            print(line)
+        }
+    } catch  {
+        print("Error while reading file")
+    }
+}
+```
 
-En utilisant la méthode `String(contentsOf:)`, Swift va automatiquement essayer de déterminer l'encodage du fichier pour le lire correctement. Cependant, il est également possible de spécifier explicitement l'encodage souhaité en utilisant un paramètre optionnel dans la méthode.
+## Plongée en profondeur
 
-De plus, il est important de noter que cette méthode peut être utilisée pour lire d'autres types de fichiers en plus de fichiers texte, tels que des fichiers HTML ou JSON.
+Lors de la lecture d'un fichier texte, il est important de comprendre l'encodage de caractères utilisé dans le fichier, car cela peut avoir un impact sur la manière dont le contenu est lu. Par défaut, la méthode `contentsOfFile` utilise l'encodage de caractères système, mais vous pouvez également spécifier un autre encodage en utilisant le paramètre `usedEncoding`.
+
+De plus, si vous avez besoin de lire une grande quantité de données à partir d'un fichier, il peut être plus efficace d'utiliser la classe `FileHandle` pour lire le contenu du fichier en utilisant un buffer.
 
 ## Voir aussi
 
-Pour en apprendre davantage sur la lecture de fichiers texte en Swift, voici quelques ressources utiles en français :
-
-- [Documentation officielle de Swift sur la manipulation de fichiers](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html)
-- [Tutoriel vidéo sur la manipulation de fichiers avec Swift](https://www.youtube.com/watch?v=guBhCFat26w)
-- [Article de blog sur la lecture de CSV avec Swift](https://www.ios-blog.com/tutorials/swift/how-to-read-csv-file-with-swift)
+- [La documentation de `FileManager`](https://developer.apple.com/documentation/foundation/filemanager)
+- [La documentation de `String`](https://developer.apple.com/documentation/swift/string)
+- [La documentation de `FileHandle`](https://developer.apple.com/documentation/foundation/filehandle)

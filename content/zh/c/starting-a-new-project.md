@@ -1,55 +1,49 @@
 ---
 title:                "C: 开始一个新项目"
+simple_title:         "开始一个新项目"
 programming_language: "C"
-category:             "Getting Started"
+category:             "C"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
+如果您是一个初学者或者是一个有经验的程序员，您可能会想要开始一个新的项目。这可能是因为您想学习新的编程技能，或者是因为您想要探索一个新的主题。无论是什么原因，开始一个新的项目都是锻炼自己技能和提高自己的能力的好方法。
 
-如果你是一个热爱编程的人，你一定会经常想要开始一个新的项目。这可能是因为你想要尝试新的编程语言、挑战自己的技能，或者实现一个新的想法。不论是什么原因，开展一个新的项目都是一个非常兴奋的过程，让我们一起来探索一下吧！
-
-## 如何开始
-
-首先，我们需要选择一个编程语言来开始我们的新项目。今天，我们就来学习如何使用C语言来开展一个新的项目。下面是一个简单的示例代码：
+## 如何
+下面我将用一些示例来介绍如何开始一个新的C编程项目。首先，我们需要创建一个新的C程序文件。打开您喜欢的文本编辑器，例如Notepad++或者Sublime Text。然后在新文件中输入以下代码：
 
 ```C
 #include <stdio.h>
 
-int main() {
-  printf("你好，世界！\n");
-  return 0;
+int main()
+{
+   printf("欢迎来到我的C编程项目！\n");
+   return 0;
 }
 ```
 
-这段代码的作用是打印出一句简单的问候语“你好，世界！”。让我们来运行一下这段代码，看看会发生什么：
+保存这个文件，并将它命名为“hello.c”。然后打开命令行界面，进入保存文件的目录，并输入以下命令来编译程序：
 
 ```
-你好，世界！
+gcc hello.c -o hello
 ```
 
-如果你看到了上面这句话，那么恭喜你，第一个C语言项目就成功地开始了！
+这里我们使用gcc编译器来编译程序，并将编译后的可执行文件命名为“hello”。最后，我们可以运行程序：
 
-## 深入了解
+```
+./hello
+```
 
-开展一个新的项目需要我们有一些基础知识。首先，我们需要了解C语言的语法和基本的命令。接着，我们需要学习如何使用函数、变量和控制流来构建一个完整的程序。最后，我们还需要掌握如何使用调试工具来解决可能遇到的问题。
+您将会看到屏幕上输出了“欢迎来到我的C编程项目！”。恭喜，您已经成功开始了一个新的C编程项目！
 
-在开始一个新的项目之前，建议你先学习一些有关C语言的基础知识。你可以通过阅读书籍、参加相关的课程或者上网搜索来学习。记住，学习是一个不断进步的过程，不要放弃，每天都要努力提升自己！
+## 深入探讨
+在开始一个新的C编程项目之前，您可能想要考虑一些问题。首先，您想要解决哪个问题？确定您的项目的目的和目标非常重要。其次，您将需要哪些工具？选择合适的文本编辑器和编译器是成功的关键。最后，您是否需要学习新的C语法或使用新的库？确保您有充分的准备和知识来完成您的项目是非常重要的。
 
-## 参考链接
-
-[An Introduction to the C Programming Language](https://www.cprogramming.com/tutorial/c/lesson1.html)
-
-[C in a Nutshell](https://www.oreilly.com/library/view/c-in-a/9781491904136/)
-
-[C语言教程](https://www.runoob.com/cprogramming/c-tutorial.html)
-
-## 更多阅读
-
-[如何选择合适的编程语言？](https://www.cnblogs.com/starof/p/6100504.html)
-
-[如何建立一个成功的编程项目？](https://www.techopedia.com/2/29868/development/8-key-steps-to-building-a-successful-programming-project)
-
-[利用Github来管理你的项目](https://guides.github.com/introduction/flow/)
+## 参考
+了解C语言：https://www.learn-c.org/
+使用Sublime Text编写C代码：https://www.freecodecamp.org/news/building-and-running-c-programs-with-sublime-text-c031a59e9756/
+常用的C库：https://www.geeksforgeeks.org/top-10-libraries-in-c/
+命令行界面入门指南：https://www.codecademy.com/articles/command-line-setup

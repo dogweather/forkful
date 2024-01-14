@@ -1,80 +1,42 @@
 ---
 title:                "Haskell recipe: Extracting substrings"
+simple_title:         "Extracting substrings"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Substring extraction is a common task in programming, especially when working with text data. It involves taking a part of a larger string and using it separately. This can be useful when manipulating data, searching for specific patterns, or just organizing information.
+Substring extraction is a common task in programming, and luckily, Haskell provides us with an easy and efficient way to do it. By extracting substrings, we can manipulate and work with specific parts of a larger string, making our programs more dynamic and flexible.
 
 ## How To
-
-### Basic Substring Extraction
-
-In Haskell, substring extraction can be done using the `take`, `drop`, and `splitAt` functions. The `take` function takes the first n characters from a string, while the `drop` function drops the first n characters. The `splitAt` function takes a number n and a string, and returns a tuple with the substring up to n characters and the remaining characters.
-
+To extract a substring in Haskell, we will be using the `take` and `drop` functions. Let's say we have the string "Hello World" and we want to extract the substring "World". We can do this by using the following code:
 ```Haskell
--- Basic substring extraction using take, drop, and splitAt
-
--- take first 5 characters
-take 5 "Hello, World!" 
--- output: "Hello"
-
--- drop first 5 characters
-drop 5 "Hello, World!"
--- output: ", World!"
-
--- split at index 5
-splitAt 5 "Hello, World!"
--- output: ("Hello", ", World!")
+let myString = "Hello World"
+let mySubstring = drop 6 myString
 ```
+In the code above, we first define the original string, "Hello World", and then use the `drop` function to drop the first 6 characters, leaving us with the substring "World". 
 
-### Regex Substring Extraction
-
-Haskell also has a `substring` function in the `Text.Regex.PCRE` module that allows for regular expression substring extraction. Regular expressions are useful for more complex patterns that cannot be easily handled with the basic substring functions.
-
+We can also use the `take` function to extract a substring. For example, if we want to get the first 5 characters of our string, we can use the following code:
 ```Haskell
--- Substring extraction using regular expressions
-
--- extract numbers from a string
-substring "[0-9]+" "21 days left"
--- output: "21"
-
--- extract email domain
-substring "@[a-z]+\\.[a-z]+" "email@example.com"
--- output: "@example.com"
+let myString = "Hello World"
+let mySubstring = take 5 myString
 ```
+This will give us the substring "Hello". 
 
-### Partial Application
-
-A useful technique when working with substring extraction is partial application. Partial application means applying a function to some of its arguments and returning a new function with the remaining arguments as parameters. This allows for greater flexibility when dealing with strings of different lengths.
-
-```Haskell
--- Partial application for substring extraction using take
-
--- create a function to take the first n characters
-substringN n = take n "Hello, World!"
-
--- take first 5 characters
-substring5 = substringN 5 "Hello, World!"
--- output: "Hello"
-
--- take first 10 characters
-substring10 = substringN 10 "Hello, World!"
--- output: "Hello, Worl"
-```
+In both examples, we used the `let` keyword to define a new variable for our substring. However, we can also use the `take` and `drop` functions directly within a larger expression.
 
 ## Deep Dive
+Now let's take a deeper look at the `take` and `drop` functions. Both of these functions take in an integer value as their first argument, which determines the number of characters to take or drop from the string. 
 
-There are many other functions and techniques that can be used for substring extraction in Haskell, such as `substr`, `breakOn`, `takeWhile`, and more. It is also important to consider the efficiency of substring extraction, as certain functions may be more efficient for large strings. Understanding the different options and techniques for substring extraction can greatly improve the efficiency and functionality of your code.
+The `take` function starts from the beginning of the string and takes the specified number of characters, while the `drop` function starts from the beginning of the string and drops the specified number of characters. 
+
+It's important to note that both functions will return a new string, as Haskell strings are immutable.
 
 ## See Also
-
-- [Haskell `take` function](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:take)
-- [Haskell `drop` function](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:drop)
-- [Haskell `splitAt` function](https://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html#v:splitAt)
-- [Haskell `substring` function](http://hackage.haskell.org/package/regex-pcre-1.0.2/docs/Text-Regex-PCRE.html#v:substring)
+- [Haskell documentation on String functions](https://www.haskell.org/hoogle/?q=string#t:%5BChar%5D%20-%3E%20%5B%Char%5D)
+- [How To Extract Substrings in Python](https://realpython.com/lessons/extracting-substrings-python/)
+- [More on String Functions in Haskell](https://wiki.haskell.org/Character_string_functions)

@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Commencer un nouveau projet"
+simple_title:         "Commencer un nouveau projet"
 programming_language: "Elm"
-category:             "Getting Started"
+category:             "Elm"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/starting-a-new-project.md"
 ---
 
@@ -9,29 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous cherchez un langage de programmation fonctionnel moderne, alors Elm est fait pour vous. Créé en 2012 par Evan Czaplicki, Elm est conçu pour rendre le développement web plus simple, fiable et performant. Avec une syntaxe claire et concise et un excellent système de types, Elm est idéal pour les débutants en programmation fonctionnelle ainsi que pour les développeurs expérimentés.
+L'une des principales raisons d'utiliser le langage de programmation Elm pour un nouveau projet est sa sécurité et sa stabilité. Avec son système de types avancé et sa mise en évidence des erreurs de manière proactive, Elm permet de produire du code fiable et robuste, ce qui peut être essentiel pour des projets de grande envergure.
 
-## Comment faire
+## Comment procéder
 
-Pour commencer un nouveau projet en Elm, il vous suffit de suivre ces quelques étapes simples :
+Avant de commencer à coder en Elm, il est important de comprendre la structure du langage et les principes de base. Voici un exemple de code pour une simple application qui affiche un message d'accueil en utilisant la syntaxe `Elm` :
 
-```Elm
+```
+module Main exposing (..)
+
 import Html exposing (text)
 
-main =
-    text "Bonjour le monde!"
+main = text "Bonjour, bienvenue à mon projet en Elm !"
 ```
 
-Ce code affichera un simple "Bonjour le monde!" lorsque vous l'exécuterez. Maintenant, vous pouvez ajouter vos propres fonctions, types et modules pour construire votre application. N'oubliez pas d'utiliser le compilateur Elm pour vérifier que votre code est exempt d'erreurs avant de l'exécuter.
+Ce code déclare un module "Main" qui importe le module `Html` pour utiliser sa fonction `text` et affiche le message "Bonjour, bienvenue à mon projet en Elm !". Pour exécuter ce code, il suffit de lancer la commande `elm reactor` dans le terminal, puis d'ouvrir le navigateur et de naviguer vers le fichier `index.html` généré.
 
-## Approfondissement
+## Plongée en profondeur
 
-L'une des caractéristiques uniques d'Elm est son architecture de modèle-vue, qui aide les développeurs à gérer efficacement les données et à mettre à jour l'interface utilisateur. De plus, la communauté Elm est très active et propose de nombreux packages utiles pour faciliter votre développement. Vous pouvez également utiliser des librairies JavaScript existantes en les intégrant à votre projet Elm.
+Pour bien commencer un nouveau projet en Elm, il est également important de se familiariser avec les différents outils et ressources disponibles. Par exemple, la documentation officielle du langage est très complète et contient des exemples utiles pour comprendre les concepts clés. Il existe également une communauté active de développeurs Elm qui partagent leurs connaissances et leurs expériences sur des forums et des réseaux sociaux.
 
-Maintenant que vous savez comment démarrer un projet en Elm, n'hésitez pas à explorer davantage les nombreuses fonctionnalités et avantages de ce langage de programmation !
+En outre, il est recommandé d'utiliser un gestionnaire de paquets tel que `npm` pour installer et gérer les dépendances dont votre projet pourrait avoir besoin. Vous pouvez également utiliser des outils tels que `elm-format` pour formater automatiquement votre code et `elm-test` pour écrire des tests automatisés.
 
-## À voir aussi
+## Voir aussi
 
-- [Site officiel Elm](https://elm-lang.org/)
 - [Documentation officielle Elm](https://guide.elm-lang.org/)
-- [Exemples de code en Elm](https://github.com/rofrol/awesome-elm)*note: text changed from English to highlight French for reader familiarity.*
+- [Forum Elm](https://discourse.elm-lang.org/)
+- [Gestionnaire de paquets npm](https://www.npmjs.com/)
+- [Outil elm-format](https://github.com/avh4/elm-format)
+- [Outil elm-test](https://github.com/elm-explorations/test)

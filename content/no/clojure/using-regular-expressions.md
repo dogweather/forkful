@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/using-regular-expressions.md"
 ---
 
@@ -9,34 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å bruke regulære uttrykk er en kraftig måte å søke og manipulere tekst på i Clojure. Det kan hjelpe deg med å finne spesifikke mønstre i en tekst, erstatte deler av en streng eller validere data. Regulære uttrykk kan også brukes i ulike programmeringsspråk og tekstbehandlingsprogrammer, så det er en nyttig ferdighet å ha.
+Regular expressions (regex) er et uttrykksmønster som brukes i programmering for å søke og manipulere tekst. Det er nyttig å lære og bruke regex for å effektivisere programmeringsoppgaver som involverer tekstbehandling og dataanalyse. 
 
 ## Hvordan
 
-For å bruke regulære uttrykk i Clojure bruker vi funksjonene `re-seq` og `re-find`. `re-seq` returnerer en sekvens av treff for et gitt uttrykk, mens `re-find` returnerer det første treffet som en streng. La oss se på et eksempel der vi bruker regulære uttrykk til å finne alle ord som begynner med en stor bokstav i en tekst.
-
 ```Clojure
-(def tekst "Dette er en tekst med noen store bokstaver.")
+;; Søke etter et spesifikt ord i en tekststreng
+(re-find #"verden" "Hei verden!") 
+;; Output:
+"verden"
 
-(re-seq #"[A-Z][a-z]*" tekst)
-;; => ("Dette" "tekst" "store" "bokstaver")
+;; Endre tekst ved hjelp av regex
+(clojure.string/replace "Hello world!" #"world" "everyone")
+;; Output:
+"Hello everyone!"
 
-(re-find #"[A-Z][a-z]*" tekst)
-;; => "Dette"
+;; Hente ut tall fra en tekststreng
+(re-matches #"\d+" "Jeg skal på konsert i morgen kl 8:00")
+;; Output:
+(["8"])
+
+;; Bruke regex for å filtrere data
+(filter #(re-matches #"\d{3}-\d{2}-\d{4}" (get-in % [:navn])) data-liste)
+;; Output:
+[{:navn "Trude Olsen", :fødselsnummer "123-45-6789"}
+ {:navn "Per Hansen", :fødselsnummer "456-78-9123"}
+ {:navn "Lise Berg", :fødselsnummer "789-01-2345"}]
 ```
 
-I eksempelet bruker vi `re-seq` for å finne alle ord som starter med en stor bokstav og `re-find` for å finne det første ordet som gjør det. Vi bruker også regulære uttrykk for å spesifisere mønsteret vi søker etter, i dette tilfellet et ord som starter med en stor bokstav og har en eller flere små bokstaver etter det.
+## Deep Dive
 
-## Dypdykk
+Regex kan virke forvirrende og komplekst til å begynne med, men med litt øvelse vil man oppdage hvor nyttig det kan være. Her er noen tips for å bruke regex i Clojure:
 
-Regulære uttrykk kan være komplekse og vanskelige å lære, men de kan være utrolig nyttige når du blir komfortabel med dem. Hvis du ønsker å lære mer, anbefaler vi å se på følgende ressurser:
-
-- **Mastering Regular Expressions**: en omfattende bok om regulære uttrykk som dekker alt fra de grunnleggende til avanserte teknikker.
-- **RegexOne**: en interaktiv nettside som lærer deg regulære uttrykk ved å løse forskjellige oppgaver.
-- **ClojureDocs**: en samling av Clojure-dokumentasjon som inkluderer informasjon om regulære uttrykk og relaterte funksjoner.
+- Husk at regex er en streng, så alltid bruke " " rundt uttrykket.
+- #regexformerkyler bruker Clojure`s interne regex parser og er raskere enn java.util regex.
+- #{ } kan brukes for å søke etter en gruppe av valgfrie karakterer.
+- Regex kan også brukes med variabler og funksjoner, så det er mulig å dynamisk endre hva man leter etter.
 
 ## Se også
 
-- [Mastering Regular Expressions](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)
-- [RegexOne](https://regexone.com/)
-- [ClojureDocs](https://clojuredocs.org/)
+- [Offisiell dokumentasjon for regex i Clojure](https://clojure.org/api/cheatsheet#Regular%20Expressions)
+- [Regex tutorial på norsk](https://www.ntnu.no/wiki/pages/viewpage.action?pageId=97555282)
+- [Regex101 - nettsted for å teste og eksperimentere med regex](https://regex101.com/)

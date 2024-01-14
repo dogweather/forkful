@@ -1,68 +1,58 @@
 ---
-title:                "Haskell: Capitalizando uma string"
+title:                "Haskell: Transformando uma string em maiúsculas"
+simple_title:         "Transformando uma string em maiúsculas"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+# Por que capitalizar uma string?
 
-Você já se deparou com uma situação em que precisou capitalizar uma string em um programa Haskell? Talvez você esteja trabalhando em um projeto que requer dados em um formato específico, ou talvez apenas para fins de formatação visual. Independentemente do motivo, é uma tarefa comum em programação e neste artigo vamos explorar como fazer isso de forma simples e eficiente.
+Muitos desenvolvedores podem se perguntar por que eles precisariam capitalizar uma string em seu código. A resposta é simples - às vezes, é necessário formatar as strings de maneira consistente, seja para apresentação visual ou para processamento de dados.
 
-## Como Fazer
+# Como fazer isso em Haskell?
 
-Primeiro, precisamos entender o que é uma string em Haskell. Em termos simples, uma string é uma sequência de caracteres, como "hello world" ou "1234". Portanto, para capitalizar uma string, precisamos apenas modificar as letras maiúsculas e minúsculas dos caracteres individuais.
+Não se preocupe, capitalizar uma string em Haskell é fácil! Basta seguir os seguintes passos:
 
-Vamos começar com um exemplo básico: capitalizar uma string fornecida pelo usuário.
-
-```Haskell
-main :: IO ()
-main = do
-    putStrLn "Digite uma string: "
-    input <- getLine
-    let capitalized = map toUpper input
-    putStrLn capitalized
-```
-
-Este código primeiro solicita ao usuário que digite uma string e armazena a entrada em uma variável chamada "input".  Em seguida, usamos a função "map" para aplicar a função "toUpper" a cada caractere da string, transformando-o em maiúsculo. O resultado é armazenado em uma nova variável chamada "capitalized" e finalmente é impresso na tela.
-
-A saída deste programa seria algo como: "Digite uma string: hello world
-HELLO WORLD"
-
-Agora, vamos ver um exemplo de como capitalizar uma string definida pelo programador:
+### Passo 1: Importar o módulo "Data.Char"
+Primeiro, você precisa importar o módulo "Data.Char" para ter acesso às funções de manipulação de caracteres.
 
 ```Haskell
 import Data.Char
-
-capitalize :: String -> String 
-capitalize [] = []
-capitalize (x:xs) = toUpper x : map toLower xs
-
-main :: IO ()
-main = do
-    let string = "programando em Haskell"
-    let capitalized = capitalize string
-    putStrLn capitalized
 ```
 
-Neste exemplo, definimos uma função chamada "capitalize", que recebe uma string e retorna a string capitalizada. Neste caso, usamos as funções "toUpper" e "toLower" da biblioteca padrão de Haskell para transformar a primeira letra em maiúscula e deixar o restante em minúsculas.
+### Passo 2: Usando a função "toUpper"
+Agora, você pode usar a função "toUpper" para capitalizar uma string. Esta função leva um caractere como parâmetro e retorna o mesmo caractere, mas em maiúsculo.
 
-A saída deste programa seria: "Programando em haskell".
+```Haskell
+toUpper 'a' -- retorna 'A'
+```
 
-## Deep Dive
+### Passo 3: Usando a função "map"
+Para capitalizar uma string inteira, você pode usar a função "map" em conjunto com a função "toUpper". A função "map" aplicará a função "toUpper" em cada caractere da string.
 
-Até agora, vimos duas formas simples de capitalizar strings em Haskell. No entanto, é importante notar que existem outras maneiras de fazer isso e pode ser uma tarefa mais complexa dependendo do contexto.
+```Haskell
+map toUpper "hello" -- retorna "HELLO"
+```
 
-Por exemplo, se a string contiver símbolos ou acentos, precisaremos tratar esses casos de forma diferente. Além disso, devemos considerar como lidar com espaços em branco no início ou no final da string.
+E voilà, você acabou de capitalizar uma string em Haskell!
 
-Além disso, existem bibliotecas externas que podem fornecer funções mais avançadas para capitalizar strings, como a biblioteca "text".
+# Aprofundando na capitalização de strings
 
-Portanto, é importante ter em mente que a capitalização de strings em Haskell pode exigir mais considerações do que apenas aplicar funções básicas "toUpper" e "toLower".
+Se você quiser entender melhor a função "toUpper", pode dar uma olhada na sua implementação em Haskell:
 
-## Veja Também
+```Haskell
+toUpper :: Char -> Char
+toUpper c
+    | ord c >= 97 && ord c <= 122 = chr (ord c - 32)
+    | otherwise = c
+```
 
-- [Tutorial básico de Haskell](https://www.haskell.org/tutorial/index.html)
-- [Documentação da biblioteca "text"](https://hackage.haskell.org/package/text/docs/Data-Text.html)
-- [Exemplos de código para capitalizar strings em Haskell](https://www.tutorialspoint.com/learn_haskell/haskell_strings.htm)
+Esta função primeiro verifica se o caractere fornecido está dentro dos limites ASCII de letras minúsculas (97 a 122). Se estiver, ele converte o caractere para seu equivalente em maiúsculo (subtraindo 32 do seu código ASCII). Caso contrário, retorna o caractere original.
+
+# Veja também
+- [Documentação do módulo "Data.Char"](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html)
+- [Tutorial de Haskell em português](https://haskell.tailorfontela.com.br/)

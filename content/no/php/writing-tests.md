@@ -1,42 +1,45 @@
 ---
-title:                "PHP: Skrive tester"
+title:                "PHP: Skriver tester"
+simple_title:         "Skriver tester"
 programming_language: "PHP"
-category:             "Testing and Debugging"
+category:             "PHP"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Å skrive tester er en viktig del av programmering fordi det hjelper deg med å identifisere og løse feil og sørger for at koden din fungerer som den skal. Det kan også bidra til å forebygge fremtidige problemer og gjøre det enklere å vedlikeholde koden.
+## Hvorfor
 
-# Hvordan
-For å skrive tester i PHP, kan du bruke et rammeverk som PHPUnit. Her er et eksempel på hvordan du kan skrive en enkel test som sjekker om et gitt tall er større enn 10:
+Å skrive tester er en viktig og verdifull del av PHP-programmering. Det hjelper deg med å sikre kvalitet og pålitelighet i koden din, og kan bidra til å identifisere og løse feil på en rask og effektiv måte.
+
+## Hvordan
+
+Å skrive tester i PHP kan virke skremmende for mange, men det trenger ikke å være det. La oss se på et enkelt eksempel på hvordan du kan skrive og kjøre en test ved hjelp av PHPUnit:
 
 ```PHP
 <?php
-use PHPUnit\Framework\TestCase;
+require 'Calculator.php';
 
-class TestEksempel extends TestCase
+class CalculatorTest extends PHPUnit_Framework_TestCase
 {
-    public function testSjekkTall()
+    public function testAdd()
     {
-        $tall = 12;
-        $this->assertGreaterThan(10, $tall);
+        $calculator = new Calculator();
+        $this->assertEquals(3, $calculator->add(1, 2));
     }
 }
+?>
 ```
 
-Når du kjører denne testen, vil du få en output som sier "OK (1 test, 1 assertion)". Dette betyr at testen har passert og tallet er faktisk større enn 10.
+I dette eksemplet oppretter vi en testklasse og en testmetode som kontrollerer om funksjonen for å legge sammen tall i `Calculator`-klassen fungerer riktig. Output av denne testen vil være `OK (1 test, 1 assertion)`, noe som indikerer at testen er bestått.
 
-# Dypdykk
-Når du skriver tester, er det viktig å tenke på ulike scenarioer og dekke alle mulige utfall. Dette kan være f.eks. å teste funksjoner med ulike inputs, håndtere feil og unntak, og sjekke hvordan koden din oppfører seg med ulike versjoner av PHP.
+## Dykk dypere
 
-En annen god praksis når du skriver tester er å skrive dem før du begynner å kode. Dette vil hjelpe deg med å definere hva du forventer at koden skal gjøre, og du kan bruke testene som en guide mens du utvikler.
+Å skrive tester handler ikke bare om å kjøre enkle tester og sjekke om de passerer eller ikke. Det er et viktig konsept å forstå hvordan man skriver gode og effektive tester. Dette inkluderer å lære å skrive modulforkastelser, mock objekter og funksjonelle tester. Jo bedre du forstår disse konseptene, jo bedre blir testene dine.
 
-# Se også
-- [PHPUnit dokumentasjon](https://phpunit.readthedocs.io/en/9.3/)
-- [Beste praksis for å skrive tester i PHP](https://phptherightway.com/#testing)
-- [Hvordan bruke PHP CodeSniffer for å sikre koden din](https://www.keycdn.com/blog/php-codesniffer)
+## Se også
 
-Med disse tipsene bør du være godt rustet til å komme i gang med å skrive tester i PHP. Lykke til!
+- [PHPUnit dokumentasjon](https://phpunit.de/documentation.html)
+- [Tutorial: Basic Unit Testing](https://www.tutorialspoint.com/phpunit/phpunit_basic_unit_testing.htm)
+- [7 Tips for Writing Better Unit Tests](https://blog.gurock.com/unit-testing-tips-best-practices/)

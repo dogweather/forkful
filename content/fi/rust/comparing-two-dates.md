@@ -1,54 +1,42 @@
 ---
 title:                "Rust: Kahden päivämäärän vertailu"
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kahta päivämäärää?
+## Miksi
+Vertaamalla kahta päivämäärää voidaan helposti tarkistaa esimerkiksi kahden päivämäärän välillä oleva aikaero tai selvittää, kumpi päivämäärä on tulevaisuudessa tai menneisyydessä. Tässä blogikirjoituksessa käsitellään, miten tätä tehtävää voi suorittaa Rust-ohjelmointikielellä.
 
-Rust on kasvava ohjelmointikieli, joka tarjoaa erinomaisen työkalun päivämäärien vertailuun. Päivämäärien vertailu on tärkeää monissa sovelluksissa, kuten ajanhallinnassa ja tietokannoissa. Tässä blogikirjoituksessa näytämme, miten voit vertailla kahta päivämäärää Rustin avulla.
-
-## Miten vertailla kahta päivämäärää?
-
-Rust tarjoaa kätevän tavan vertailla kahta päivämäärää käyttämällä DateTime-kirjastoa. Voit tehdä tämän luomalla kaksi DateTime-oliota ja käyttämällä sisäänrakennettuja metodeja, kuten `cmp()` ja `is_after()`.
-
-```Rust
+## Miten
+Vertailuun kahta päivämäärää voidaan käyttää DateTime-tyypin muuttujia ja niiden tarjoamia metodeja. Päivämäärän voi luoda luomalla ensin uuden DateTime-instanssin käyttämällä DateTime::parse_from_str-funktiota ja antamalla sille päivämäärän merkkijonona muodossa "YYYY-MM-DD". 
+```
+Rust
 use std::time::Duration;
-use std::time::SystemTime;
-use std::time::SystemTimeError;
+use chrono::{DateTime, Utc};
 
-// Määrittele kaksi päivämäärää
-let date1 = SystemTime::now();
-let date2 = SystemTime::now() + Duration::from_secs(3600);
-
-// Vertaile päivämääriä
-match date1.cmp(&date2) {
-    Ordering::Less => println!("date1 on ennen date2."),
-    Ordering::Greater => println!("date1 on jälkeen date2."),
-    Ordering::Equal => println!("Päivämäärät ovat samat."),
-}
-
-// Tarkista, onko date1 myöhempi kuin date2
-if date1.is_after(date2) {
-    println!("date1 on myöhempi kuin date2.");
+let date1 = DateTime::parse_from_str("2021-01-01", "%Y-%m-%d").expect("Päivämäärän luonti epäonnistui!");
+let date2 = DateTime::parse_from_str("2021-02-01", "%Y-%m-%d").expect("Päivämäärän luonti epäonnistui!");
+```
+Nyt voimme käyttää DateTime-muuttujien metodeja kuten .year(), .month() ja .day() saadaksemme päivämäärän osat ja vertailla niitä esimerkiksi if/else-lausekkeilla.
+```
+Rust
+if date1 > date2 {
+    println!("Ensimmäinen päivämäärä on myöhäisempi");
+} else if date1 < date2 {
+    println!("Toinen päivämäärä on myöhäisempi");
 } else {
-    println!("date2 on myöhempi kuin date1.");
+    println!("Päivämäärät ovat samat");
 }
 ```
-
-Tämä koodi luo kaksi päivämäärää, vertailee niitä ja tulostaa vastaavan viestin. Voit myös käyttää muita DateTime-metodeja, kuten `is_before()` ja `duration_since()`, vertailun tekemiseen.
-
-## Syvällinen sukellus
-
-Päivämäärien vertailemiseen on myös muita vaihtoehtoja Rustissa. Voit esimerkiksi käyttää Chrono-kirjastoa, joka tarjoaa enemmän vaihtoehtoja päivämäärien käsittelyyn ja vertailuun. Voit myös luoda omia vertailufunktioita, jotka sopivat paremmin sovelluksesi tarpeisiin.
-
-Rust tarjoaa myös monia muita hyödyllisiä työkaluja, kuten DateTimeFormatterin, joka auttaa muokkaamaan päivämääriä haluamallasi tavalla. Syvemmän sukelluksen tekeminen Rustin tarjoamiin päivämäärätyökaluihin auttaa sinua hyödyntämään niitä tehokkaasti omassa ohjelmoinnissasi.
+## Syvempi sukellus
+DateTime-tyyppiä käytetään myös monissa muissa tilanteissa päivämäärä- ja aika-arvojen käsittelyssä Rustissa. Tärkeitä metodeja tähän tarkoitukseen ovat esimerkiksi .now(), jolla saadaan nykyinen päivämäärä ja aika, ja .format(), jolla voidaan muotoilla päivämäärä- ja aika-arvoja halutunlaisiksi merkkijonoiksi.
 
 ## Katso myös
-
-- [DateTime-dokumentaatio](https://doc.rust-lang.org/std/time/struct.DateTime.html)
-- [Rustin aikaohjelmat](https://crates.io/keywords/date-time)
-- [Chrono-kirjasto](https://crates.io/crates/chrono)
+- [DateTime-tyyppi Rustin virallisessa dokumentaatiossa](https://doc.rust-lang.org/std/time/struct.DateTime.html)
+- [Rust By Example -sivusto, jossa esimerkkejä Rust-ohjelmoinnin perusteista](https://doc.rust-lang.org/std/time/struct.DateTime.html)
+- [Chrono-kirjasto, joka tarjoaa laajemmat mahdollisuudet päivämäärä- ja aikamuotoiluihin Rustissa](https://crates.io/crates/chrono)

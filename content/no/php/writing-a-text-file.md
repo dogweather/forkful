@@ -1,35 +1,38 @@
 ---
-title:                "PHP: Skriving av tekstfil"
+title:                "PHP: Å skrive en tekstfil"
+simple_title:         "Å skrive en tekstfil"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å skrive en tekstfil ved hjelp av PHP kan være svært nyttig for å lagre og behandle data på en enkel måte. Ved å bruke PHP kan du enkelt lage og manipulere tekstfiler som kan være nyttige for alt fra logging av data til å lagre brukerinnstillinger.
+Det er mange grunner til å skrive en tekstfil ved hjelp av PHP. En av de vanligste årsakene er å lagre data som kan brukes senere, for eksempel innstillinger eller brukerinformasjon. Tekstfiler er også praktiske når du trenger å opprette en rapport eller en logg fra programmet ditt.
 
-## Slik gjør du det
+# Hvordan
 
-For å skrive en tekstfil i PHP trenger du først å åpne en filstrøm ved hjelp av fopen() funksjonen. Deretter kan du bruke fwrite() funksjonen til å skrive ønsket tekst til filen. Til slutt må du huske å lukke filstrømmen ved hjelp av fclose() funksjonen. Under ser du et eksempel på hvordan dette kan gjøres:
+For å skrive en ny tekstfil i PHP kan du bruke fopen-funksjonen. Denne funksjonen åpner en fil og returnerer en peker til denne filen som du kan bruke videre til å skrive data til filen.
 
 ```PHP
-$file = fopen("tekstfil.txt", "w") or die("Kan ikke åpne filen!");
-$txt = "Dette er en tekst som jeg ønsker å skrive til min tekstfil.";
-fwrite($file, $txt);
+$file = fopen("nyfil.txt", "w");
+
+fwrite($file, "Dette er innholdet i den nye tekstfilen.");
+
 fclose($file);
 ```
 
-Når du har kjørt koden over, vil du se at det har blitt opprettet en tekstfil med navnet "tekstfil.txt". Om du åpner denne filen vil du se at teksten du skrev inn i variabelen $txt nå ligger lagret der.
+Koden over vil opprette en ny tekstfil kalt "nyfil.txt" og skrive teksten "Dette er innholdet i den nye tekstfilen." til filen. Deretter lukker vi filen ved hjelp av fclose-funksjonen for å sikre at ingen flere endringer gjøres.
 
-## Dypdykk
+# Dykk dypere
 
-Det finnes flere parametere du kan bruke når du skriver en tekstfil i PHP, for eksempel for å skrive til forskjellige linjer i filen eller å legge til tekst i en allerede eksisterende fil. Det finnes også flere måter du kan åpne en filstrøm på, avhengig av hva slags informasjon du ønsker å skrive til filen. Det kan være lurt å utforske dette nærmere og lese mer om de ulike mulighetene som finnes.
+Det finnes flere andre funksjoner som du kan bruke til å skrive data til en tekstfil i PHP. For eksempel kan du bruke file_put_contents eller file_get_contents for å skrive eller lese fra en fil på en enkel måte. Det er også viktig å huske på å kontrollere filtilgang og håndtere eventuelle feil som kan oppstå under skrivingen.
 
-## Se også
+# Se også
 
-- [PHP fopen() funksjonen](https://www.w3schools.com/php/func_filesystem_fopen.asp)
-- [PHP fwrite() funksjonen](https://www.w3schools.com/php/func_filesystem_fwrite.asp)
-- [PHP fclose() funksjonen](https://www.w3schools.com/php/func_filesystem_fclose.asp)
+- [PHP - filbehandling](https://www.php.net/manual/en/book.filesystem.php)
+- [W3Schools - PHP File Handling](https://www.w3schools.com/php/php_file.asp)
+- [Stack Overflow - How to write a text file using PHP](https://stackoverflow.com/questions/1332146/how-to-write-to-file-in-php)

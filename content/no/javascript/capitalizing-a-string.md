@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Store bokstaver i en streng"
+title:                "Javascript: Kapitalisering av en streng"
+simple_title:         "Kapitalisering av en streng"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/capitalizing-a-string.md"
 ---
 
@@ -9,48 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive kode handler ikke bare om å få programmet til å fungere, men også om å gjøre den leselig og forståelig for andre utviklere. En måte å gjøre dette på er å formatere strenger i riktig form, som å gjøre den første bokstaven i et ord til en stor bokstav. Dette gir en bedre visuell struktur og gjør det enklere å lese koden.
+Enten du er nybegynner eller erfaren programmerer, så har du sannsynligvis støtt på en situasjon hvor du trenger å endre en tekststreng til store bokstaver. Kanskje du ønsker å lage en tittel til en nettside eller formatere et brukernavn. Uansett hva årsaken er, så er det viktig å vite hvordan du kan gjøre dette på en enkel og effektiv måte. Derfor skal vi i dag ta en titt på hvordan du kan kapitalisere en tekststreng ved hjelp av Javascript.
 
 ## Slik gjør du det
 
-For å kapitalisere en streng, kan du bruke metoden `.toUpperCase()` i kombinasjon med metoden `.charAt()` for å få tak i den første bokstaven i strengen. Deretter kan du kombinere denne bokstaven med resten av strengen ved hjelp av metoden `.substring()`. Her er et eksempel på hvordan dette kan gjøres i Javascript:
+Før vi begynner å kode, la oss først se på hva vi ønsker å oppnå. La oss si at vi har en tekststreng som sier "javascript er gøy". Vi ønsker å endre denne til "Javascript er gøy". 
+
+For å kunne gjøre dette, må vi først konvertere teksten til en array ved hjelp av "split" funksjonen. Dette vil gjøre det enklere for oss å manipulere teksten. 
 
 ```Javascript
-let tekst = "dette er en tekst som skal kapitaliseres";
-
-// Finner den første bokstaven og konverterer den til stor bokstav
-let førsteBokstav = tekst.charAt(0).toUpperCase();
-
-// Finner resten av strengen og konverterer den til små bokstaver
-let restenAvTekst = tekst.substring(1).toLowerCase();
-
-// Kombinerer den kapitaliserte bokstaven og resten av strengen
-let kapitalisertTekst = førsteBokstav + restenAvTekst;
-
-console.log(kapitalisertTekst); // Output: Dette er en tekst som skal kapitaliseres
+let tekst = "javascript er gøy";
+let tekstArray = tekst.split("");
 ```
 
-Du kan også bruke en enklere metode som `.replace()` for å erstatte den første bokstaven i strengen med dens kapitaliserte versjon. Denne metoden tar imot en funksjon som parameter, hvor du kan manipulere og returnere den ønskede strengen etter å ha funnet den første bokstaven. Her er et eksempel på hvordan dette kan gjøres:
+Nå som vi har teksten som en array, kan vi begynne å endre de ulike elementene. Vi ønsker å endre det første elementet, altså "j", til stor bokstav. Dette kan vi gjøre ved å bruke "toUpperCase" funksjonen.
 
 ```Javascript
-let tekst = "dette er en tekst som skal kapitaliseres";
-
-let kapitalisertTekst = tekst.replace(tekst.charAt(0), tekst.charAt(0).toUpperCase());
-
-console.log(kapitalisertTekst); // Output: Dette er en tekst som skal kapitaliseres
+tekstArray[0] = tekstArray[0].toUpperCase();
 ```
 
-Det finnes også mange innebygde funksjoner og biblioteker som kan kapitalisere strenger på en enkel måte, avhengig av hvilket programmeringspråk eller bibliotek du bruker.
+Etter dette ønsker vi å sette sammen teksten igjen til en tekststreng ved hjelp av "join" funksjonen og legge til mellomrom mellom hvert ord.
 
-## Dypdykk
+```Javascript
+let nyTekst = tekstArray.join(" ");
+console.log(nyTekst);
+// Output: Javascript er gøy
+```
 
-I tillegg til å bruke kapitalisering for å gjøre koden mer lesevennlig, kan det også være nyttig i situasjoner der du ønsker å sammenligne to strenger. Ved å kapitalisere begge strengene, vil de bli behandlet som like hvis de inneholder samme ord med samme store og små bokstaver.
+Med disse få linjene med kode har vi lykkes med å kapitalisere tekststrengen vår.
 
-Det er også viktig å være oppmerksom på at kapitalisering er forskjellig fra å endre bokstaver til store eller små. For eksempel vil en streng som allerede er helt i stor bokstav, fortsatt være i stor bokstav selv etter å ha blitt kapitalisert.
+## Dykk dypere
+
+Nå lurer du kanskje på hvorfor vi konverterte teksten til en array før vi endret den? Det er fordi arrays i Javascript er modifiserbare, noe som gjør det lettere å endre enkeltkomponenter. Dette trikset kan også brukes til mange andre situasjoner der du ønsker å endre deler av en tekststreng.
+
+Det er også verdt å nevne at det finnes en innebygd funksjon i Javascript for å kapitalisere en tekststreng, nemlig "toUpperCase" funksjonen. Men hvis du ønsker å gjøre dette på en dynamisk måte, for eksempel ved å bruke variabler, så kan trikset med å konvertere teksten til en array være nyttig.
 
 ## Se også
 
-- [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [String.prototype.substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Javascript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+- [Stack Overflow - How to capitalize a word in Javascript?](https://stackoverflow.com/questions/1026069/how-to-capitalize-the-first-letter-of-each-word-in-a-string)
+- [MDN Web Docs - String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)

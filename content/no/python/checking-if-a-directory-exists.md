@@ -1,80 +1,44 @@
 ---
 title:                "Python: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+#Hvorfor
 
-Mange ganger når vi skriver programmer, vil vi sannsynligvis arbeide med forskjellige filer og mapper. Noen ganger trenger vi å sjekke om en bestemt mappe eksisterer før vi kan fortsette med resten av koden vår. Dette kan være spesielt nyttig hvis vi prøver å navigere i en bestemt mappe, kopiere filer eller opprette nye mapper.
+Sjekking om en mappe eksisterer i et Python-program kan være nyttig når du jobber med filbehandling. Det kan hjelpe deg med å unngå feil og sikre at programmet kjører jevnt.
 
-## Hvordan
+#Slik gjør du det
 
-For å sjekke om en mappe eksisterer i Python, kan vi bruke funksjonen `path.exists()` fra `os` modulen. Dette vil returnere `True` hvis mappen eksisterer og `False` hvis den ikke gjør det.
-
-```Python
+```python
+# Importer os-modulen for å få tilgang til operativsystemfunksjoner
 import os
 
-# Sjekk om mappen "Dokumenter" eksisterer
-if os.path.exists("Dokumenter"):
-    print("Mappen eksisterer")
+# Definer en variabel med stien til mappen du vil sjekke
+mappe = "/brukere/brukernavn/dokumenter"
+
+# Bruk os.path.exists() for å sjekke om mappen eksisterer
+if os.path.exists(mappe):
+    print("Mappen eksisterer.")
 else:
-    print("Mappen eksisterer ikke")
+    print("Mappen eksisterer ikke.")
 ```
 
-Output:
-
-```
-Mappen eksisterer
+```output
+Mappen eksisterer.
 ```
 
-En annen måte å sjekke eksistensen av en mappe er ved å bruke `path.isdir()` funksjonen. Denne vil returnere `True` hvis stien peker på en mappe og `False` hvis det er en fil.
+#Dykk dypere
 
-```Python
-import os
+Hvis du vil vite mer om hvorfor og hvordan man sjekker om en mappe eksisterer i Python, kan du se på os.path modulen. Den inneholder også funksjoner for å sjekke om en fil eksisterer og om en sti er en fil eller mappe.
 
-# Sjekk om mappen "Bilder" er en mappe
-if os.path.isdir("Bilder"):
-    print("Bilder er en mappe")
-else:
-    print("Bilder er ikke en mappe")
-```
+#Se også
 
-Output:
-
-```
-Bilder er en mappe
-```
-
-Vi kan også bruke `path.join()` funksjonen til å kombinere to stier og dermed sjekke om en mappe eksisterer i en bestemt undermappe. For eksempel:
-
-```Python
-import os
-
-# Kombiner stien til "Dokumenter" med "mine_prosjekter" og sjekk om den eksisterer
-if os.path.exists(os.path.join("Dokumenter", "mine_prosjekter")):
-    print("Undermappen eksisterer")
-else:
-    print("Undermappen eksisterer ikke")
-```
-
-Output:
-
-```
-Undermappen eksisterer ikke
-```
-
-## Dypdykk
-
-Når vi sjekker om en mappe eksisterer, kan det være lurt å vurdere hvilke faktorer som kan påvirke resultatet. For eksempel kan filrettigheter, stienespesifiseringer og til og med operativsystemet vårt ha en rolle i denne prosessen.
-
-Det kan også være nyttig å ta hensyn til unntak eller feil som kan oppstå når vi prøver å sjekke en mappes eksistens. Det er viktig å håndtere disse unntakene på en riktig måte for å unngå krasj i programmet vårt.
-
-## Se også
-
-- Dokumentasjon for `os` modulen: https://docs.python.org/3/library/os.html
-- Mer om å håndtere filer og mapper i Python: https://www.w3schools.com/python/python_file_handling.asp
-- Utforske ulike måter å sjekke eksistensen av en mappe i Python: https://stackabuse.com/python-check-if-a-file-or-directory-exists/
+- [Offisiell dokumentasjon for os.path modulen](https://docs.python.org/3/library/os.path.html)
+- [Hvordan sjekke om en fil eksisterer i Python](https://www.ionos.com/digitalguide/server/konfigurasjon/sjekk-fil-eksisterer-i-python/)
+- [Brukbarheten av å bruke os.path.exists() sammen med shutil modulen i Python](https://itnext.io/reliable-file-and-folder-checking-in-python-eb73309a90f9)

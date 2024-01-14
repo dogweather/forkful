@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Jämföring av två datum"
+title:                "Swift: Jämförelse av två datum"
+simple_title:         "Jämförelse av två datum"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/comparing-two-dates.md"
 ---
 
@@ -9,43 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att jämföra två datum kan vara användbart för att få ut specifik information om tidsperioder eller för att kontrollera om en specifik händelse inträffat före eller efter en annan.
+Att jämföra två datum är en viktig del av Swift-programmering, oavsett om du utvecklar en app eller jobbar med backend-system. Att förstå hur man jämför datum är avgörande för att säkerställa att din kod fungerar korrekt och att undvika felaktig data. I denna bloggpost kommer vi att gå igenom varför det är viktigt att kunna jämföra datum och hur man gör det på ett effektivt sätt.
 
-## Hur man gör det
+## Så här gör du
 
-För att jämföra två datum i Swift, kan du använda metoden `compare()` som finns på `Date`-objektet. Nedan finns ett exempel på hur du kan använda denna metod för att jämföra två datum:
+För att jämföra två datum i Swift, används vanligtvis det inbyggda Date-typen och dess metoder. Först måste vi skapa två Date-objekt som representerar de två datum som vi vill jämföra. Detta kan göras på flera olika sätt, men ett vanligt sätt är att använda DateComponents för att definiera ett specifikt datum och sedan använda Calendar för att skapa ett Date-objekt från dessa komponenter.
 
 ```Swift
-let datum1 = Date()
-let datum2 = Date(timeIntervalSinceNow: -3600) // Skapar ett datum som är en timme tidigare än datum1
+let calendar = Calendar.current // Hämta aktuell kalender
+let date1Components = DateComponents(year: 2021, month: 10, day: 1) // Skapa komponenter för första datumet
+let date2Components = DateComponents(year: 2021, month: 10, day: 10) // Skapa komponenter för andra datumet
 
-if datum1.compare(datum2) == .orderedAscending {
+let date1 = calendar.date(from: date1Components) // Skapa ett Date-objekt från komponenterna
+let date2 = calendar.date(from: date2Components) // Skapa ett Date-objekt från komponenterna
+```
+
+Nu när vi har våra två Date-objekt, kan vi använda funktionen `compare` för att jämföra dem med varandra. Denna funktion returnerar en `ComparisonResult` som antingen kan vara `.orderedDescending`, `.orderedSame` eller `.orderedAscending`, beroende på om det första datumet är senare, samma eller tidigare än det andra datumet.
+
+```Swift
+let result = date1?.compare(date2!) // Jämför datum 1 med datum 2 
+if result == .orderedAscending { // Om resultatet är .orderedAscending
     print("Datum 1 är tidigare än datum 2")
-} else if datum1.compare(datum2) == .orderedDescending {
+} else if result == .orderedDescending { // Om resultatet är .orderedDescending
     print("Datum 1 är senare än datum 2")
-} else {
-    print("Datum 1 och datum 2 är samma")
-}
-
-// Output: Datum 1 är senare än datum 2
-```
-
-Du kan också jämföra datum med hjälp av operatörer, exempelvis udig `>` och `<`:
-
-```Swift
-if datum1 > datum2 {
-    print("Datum 1 är senare än datum 2")
+} else { // Om resultatet är .orderedSame
+    print("Datum 1 och datum 2 är samma datum")
 }
 ```
+
+Beroende på hur du vill använda resultatet av jämförelsen kan du också använda de olika metoderna som finns tillgängliga för Date, som `addingTimeInterval` eller `timeIntervalSince`, för att få mer detaljerad information om skillnaden mellan de två datum. Se Apples dokumentation för mer information om dessa metoder.
 
 ## Djupdykning
 
-När du jämför datum med Swift, måste du vara medveten om att jämförelsen görs på millisekundsnivå. Det betyder att även om två datum kanske verkar samma på ögat, så kan en millisekund skilja dem åt. För att undvika detta kan du använda metoden `timeIntervalSince(_:)` som ger dig en tidsperiod i sekunder mellan två datum istället för att bara jämföra dem.
+Att kunna jämföra datum är en viktig del av Swift-programmering, men det finns många fall där det inte är så enkelt som att bara använda funktionen `compare`. Till exempel, om du vill jämföra datum från olika tidszoner eller om du behöver ta hänsyn till sommartid, måste du ta hänsyn till dessa faktorer när du jämför datum.
 
-En annan viktig sak att komma ihåg när man jämför datum är tidszoner och kalendrar. En del länder använder en annan kalender än den gregorianska, vilket kan påverka hur datum visas och jämförs. Det är därför viktigt att du är medveten om vilken tidszon och kalender som används för att få korrekta jämförelser mellan datum.
+En annan utmaning kan vara att jämföra enbart datum utan tidskomponenten. I sådana fall måste du först skapa en NormalizedDate genom att ta bort tidskomponenten från dina Date-objekt och sedan jämföra dessa istället. Detta kan göras med hjälp av `dateComponents(_:from:)`-funktionen på Calendar.
 
 ## Se även
 
-- [Apple Developer - Date](https://developer.apple.com/documentation/foundation/date)
-- [Hacking with Swift - How to compare dates the Swift way](https://www.hackingwithswift.com/example-code/system/how-to-compare-dates-the-swift-way)
-- [Swift Examples - Dates](https://swiftexamples.com/dates/)
+- [Apple dokumentation om Date](https://developer.apple.com/documentation/foundation/date)
+- [Apple dokumentation om DateComponents](https://developer.apple.com/documentation/foundation/datecomponents)
+- [Apple dokumentation om Calendar](https://developer.apple.com/documentation/foundation/calendar)
+- [Real Swift dokumentation om att jämföra datum](https://learnappmaking.com/compare-dates-swift-how-to/)

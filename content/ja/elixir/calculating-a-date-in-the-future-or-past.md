@@ -1,31 +1,60 @@
 ---
-title:                "Elixir: 将来または過去の日付を計算する"
+title:                "Elixir: 未来または過去の日付の計算方法"
+simple_title:         "未来または過去の日付の計算方法"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-今日はElixirで将来や過去の日付を計算することについて説明します。私たちは、生活の中で日付を計算する必要があります。例えば、予定を立てたり、期限を追加したり、誕生日を計算したりします。Elixirを使えば、このような日付計算を簡単に実装することができます。
+
+未来や過去の日付を計算することについて、なぜ誰かが参加するかをわかりやすく説明します。
 
 ## 方法
-まず、`Date`モジュールを使って現在の日付を取得します。例えば、`Date.utc_today()`は現在の日付をUTCで取得することができます。次に、`Date.add()`関数を使って、現在の日付から指定した日数を足したり引いたりすることができます。例えば、`Date.add(Date.utc_today(), 7)`は現在の日付から7日後の日付を計算します。
+
+以下の```Elixir```コードブロック内に、コーディングの例と出力サンプルを記載しています。
 
 ```Elixir
-current_date = Date.utc_today()
-future_date = Date.add(current_date, 7) # 今日の日付から7日後の日付を計算
-past_date = Date.add(current_date, -7) # 今日の日付から7日前の日付を計算
+# 今日の日付を取得
+today = Date.utc_today()
+
+# 1週間後の日付を計算
+next_week = Date.add(today, 7)
+
+# 日付のフォーマットを指定して出力
+IO.puts "今日から1週間後の日付は #{Date.to_string(next_week, "{YYYY年MM月DD日}")} です。"
 ```
 
-このようにして、現在の日付から任意の日数を加算または減算することで、将来や過去の日付を簡単に計算することができます。
+出力例:
+
+```
+今日から1週間後の日付は 2021年06月17日 です。
+```
 
 ## 深堀り
-さらに興味を持っている方には、`Calendar`モジュールを使ってさまざまな日付計算を行うことができます。例えば、`Calendar.DateTime`を使うことで、特定の時刻を含む日付を計算することができます。また、`Calendar.Date`を使うことで、特定の日付を含む週や月を計算することができます。
 
-また、`Calendar`モジュールには多くの便利な関数が用意されていますので、ぜひ使ってみてください。
+未来や過去の日付を計算する方法はいくつかあります。例えば、```Date.add/2```関数を使用する方法や、```Date.new!/3```関数を使用し、日付の値を手動で指定する方法があります。また、日付を計算する際には、タイムゾーンやクリスマスや年末年始などの特殊な日付にも注意が必要です。
+
+## もっと詳しくは
+
+「深堀り」のセクションで説明した方法以外にも、未来や過去の日付を計算する方法は様々あります。興味がある方は以下のリンクを参考にしてみてください。  
+
+### Elixirの公式ドキュメント
+https://hexdocs.pm/elixir/Date.html
+
+### ブログ記事「Elixirで日付を取得する方法」
+https://blog.yuyat.jp/post/elixir-date/
+
+### ブログ記事「Elixirで年末年始の日付を計算する方法」
+https://qiita.com/morikat/items/53f0881c3efb1405c2c7
 
 ## 参考リンク
-- [Elixir Dateモジュールの公式ドキュメント（英語）](https://hexdocs.pm/elixir/master/Date.html)
-- [Elixir Calendarモジュールの公式ドキュメント（英語）](https://hexdocs.pm/elixir/master/Calendar.html)
+
+[See Also:](参考リンク)
+
+- [https://hexdocs.pm/elixir/Date.html](https://hexdocs.pm/elixir/Date.html)
+- [https://blog.yuyat.jp/post/elixir-date/](https://blog.yuyat.jp/post/elixir-date/)
+- [https://qiita.com/morikat/items/53f0881c3efb1405c2c7](https://qiita.com/morikat/items/53f0881c3efb1405c2c7)

@@ -1,45 +1,58 @@
 ---
 title:                "Bash: Capitalizando una cadena"
+simple_title:         "Capitalizando una cadena"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué capitalizar una cadena en Bash?
+## Por qué
 
-Capitalizar una cadena en Bash puede ser útil en muchos casos, especialmente si estás trabajando con texto y quieres que tu código sea más legible. Por ejemplo, si tienes una lista de nombres en minúsculas y quieres que todas las primeras letras sean mayúsculas, capitalizar la cadena te facilitará mucho el trabajo.
+Una de las acciones más comunes en la programación es capitalizar una cadena de texto. Puede ser necesario por diversas razones, como por ejemplo estética, para cumplir con ciertos requisitos de formato o simplemente para facilitar la lectura del texto.
 
-## Cómo capitalizar una cadena en Bash
+## Cómo hacerlo
 
-Para capitalizar una cadena en Bash, puedes utilizar el comando `tr` (traductor), que te permite realizar traducciones y transformaciones de caracteres. El siguiente ejemplo muestra cómo capitalizar la primera letra de una cadena:
-
-```Bash
-cadena="hola mundo"
-cadena_capitalizada=$( echo $cadena | tr '[:lower:]' '[:upper:]' )
-echo $cadena_capitalizada
-```
-
-El resultado de este comando será `Hola mundo`.
-
-También puedes utilizar el comando `sed` (editor de texto) para capitalizar una cadena en Bash. Aquí hay un ejemplo de cómo hacerlo:
+Para capitalizar una cadena en Bash, podemos hacer uso de una sola línea de código utilizando el comando `tr` (traducir). Por ejemplo:
 
 ```Bash
 cadena="hola mundo"
-cadena_capitalizada=$( echo $cadena | sed 's/\b\w/\u&/g' )
-echo $cadena_capitalizada
+echo $cadena | tr '[a-z]' '[A-Z]'
 ```
 
-Este comando también producirá `Hola mundo` como resultado.
+Esto producirá la salida `HOLA MUNDO`, lo que significa que la función `tr` ha convertido todas las letras minúsculas en mayúsculas.
 
-## Profundizando en la capitalización de cadenas
+Para explicar un poco más, el comando `tr` toma dos argumentos: el primero es el conjunto de caracteres que queremos reemplazar, y el segundo es el conjunto de caracteres en los que queremos reemplazarlos. En este caso, hemos definido el primer argumento como todas las letras minúsculas de la "a" a la "z" y el segundo argumento como las mismas letras en mayúsculas.
 
-Hay varias formas de capitalizar una cadena en Bash, y cada una tiene sus ventajas y desventajas. El uso de `tr` y `sed` es solo una forma, pero también puedes utilizar otras herramientas, como el comando `awk` (analizador de textos). Además, si quieres capitalizar una cadena con más de una palabra, deberás utilizar un bucle o una función para recorrer y capitalizar cada palabra individualmente.
+Otra forma de capitalizar una cadena es utilizando el comando `awk`, que es una herramienta muy poderosa para el manejo de texto en Bash. Podemos hacer lo siguiente:
 
-Otra cosa a tener en cuenta al capitalizar una cadena es el idioma. Algunos idiomas, como el español, tienen reglas específicas para la capitalización, por lo que es importante tener esto en cuenta al escribir tu código. Puedes consultar la documentación de Bash para obtener más información sobre cómo capitalizar cadenas en diferentes idiomas.
+```Bash
+cadena="hola mundo"
+echo $cadena | awk '{print toupper($0)}'
+```
+
+La salida será la misma que en el ejemplo anterior. En este caso, estamos utilizando la función `toupper` de `awk` para convertir la cadena completa en mayúsculas. También podemos aplicarla de manera más específica a cada palabra de la cadena utilizando otra función como `tolower` para convertir las letras en minúsculas.
+
+## Profundizando en el tema
+
+Además de los dos métodos mencionados anteriormente, también podemos capitalizar una cadena utilizando expresiones regulares en Bash. Esto nos permite una mayor flexibilidad y control sobre cómo queremos capitalizar nuestro texto.
+
+Por ejemplo, podríamos utilizar el comando `sed` para encontrar y reemplazar patrones específicos de texto y capitalizarlos. Por ejemplo, si quisieramos convertir todas las letras después de un punto en mayúsculas, podríamos hacer lo siguiente:
+
+```Bash
+cadena="hola. este es un ejemplo."
+echo $cadena | sed 's/\.\(.*\)/\.\U\1/'
+```
+
+La salida sería `Hola. Este es un ejemplo.`, ya que hemos utilizado la bandera `\U` para especificar que queremos convertir las siguientes letras en mayúsculas. Esto nos permite capitalizar palabras en medio del texto sin afectar las demás.
+
+En resumen, la capitalización de cadenas en Bash es una tarea bastante simple y podemos utilizar diferentes métodos según nuestras necesidades y preferencias.
 
 ## Ver también
-- [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/html_node/index.html)
-- [Tutorial de Bash para principiantes](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Guía para manejar cadenas en Bash](https://www.baeldung.com/linux/bash-string-manipulation)
+
+- Artículo de [Wikipedia](https://en.wikipedia.org/wiki/capitalization)
+- Referencia oficial de [Bash](https://www.gnu.org/software/bash/)
+- Documentación de [tr](https://linux.die.net/man/1/tr)
+- Tutorial de [awk](https://www.tutorialspoint.com/awk/index.htm)

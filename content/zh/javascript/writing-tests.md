@@ -1,54 +1,55 @@
 ---
 title:                "Javascript: 编写测试"
+simple_title:         "编写测试"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么写测试很重要？
+## 为什么要写测试？
 
-编写测试是软件开发过程中的关键部分。它可以帮助开发人员更快地发现并修复错误，确保代码的可靠性和稳定性。这将节省开发时间和资源，并提高整体的软件质量。
+编写测试是Javascript编程中不可或缺的一部分。它可以帮助我们验证代码的正确性，提高代码的健壮性和可维护性。通过编写测试，我们可以更自信地重构代码，确保每次更改都不会对原有功能造成影响。最终，它可以节省我们的时间和精力，让我们更专注于编写高质量的代码。
 
-如何编写测试？
+## 如何编写测试？
+
+编写测试的第一步是引入一个测试框架，比如Mocha。然后，我们需要编写一个测试用例来验证我们的代码。这个测试用例需要包含两部分：断言和预期结果。以下是一个简单的例子，测试一个加法函数：
 
 ```Javascript
-// 示例代码
-// 创建一个简单的函数来执行加法运算
+// 引入断言库
+const assert = require('assert');
+
+// 定义加法函数
 function add(a, b) {
   return a + b;
 }
 
-// 编写测试用例来验证函数的正确性
-describe("加法函数", function(){
-  it("应该正确计算两个数字的和", function(){
-    expect(add(2, 3)).toBe(5);
+// 编写测试用例
+describe('加法函数测试', () => {
+  it('1 + 2 应该等于 3', () => {
+    // 使用断言验证结果是否等于预期值
+    assert.equal(add(1, 2), 3);
   });
 });
 ```
 
-这段代码使用了流行的Javascript测试库Jasmine来编写测试用例。通过使用`describe`和`it`来定义测试套件和测试用例，我们可以清晰地组织和测试我们的代码。在代码块中，我们可以对函数的输入和输出进行断言，以确保函数的正确性。
+运行这个测试用例，如果没有报错，就说明测试通过了。如果报错，则说明我们需要修改代码。
 
-深入了解测试编写
+## 深入测试
 
-在编写测试时，还可以使用其他工具和技巧来提高测试的可靠性和效率。例如，使用Mock来模拟外部依赖项，使用Coverage工具来衡量测试覆盖率，以及使用Test-Driven Development (TDD)方法来驱动编写测试等等。深入了解这些工具和技巧将有助于您编写更高质量的测试。
-
-同样见：
-
-1. [Jasmine](https://jasmine.github.io/)
-2. [Mocking in Javascript](https://medium.com/better-programming/mocking-in-javascript-a8d28c99eaa5)
-3. [Code Coverage Tools](https://hackernoon.com/top-10-javascript-code-coverage-tools-6940e9408db6)
-4. [Test-Driven Development](https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2/)
-
-请阅读更多关于上述内容，以及其他测试编写相关主题。编写测试不仅仅是一项技能，而是一种开发习惯，它将使您的代码更加可靠和可维护。快来尝试编写自己的测试吧！
-
-同样见：
+除了基本的断言外，测试中还有很多高级的用法，比如钩子函数、测试覆盖率和模拟。钩子函数可以在测试前/后执行一些操作，比如连接/断开数据库。测试覆盖率可以帮助我们查看已测试代码的百分比，从而帮助我们发现未测试的代码。模拟可以帮助我们模拟一些特定的情况，比如网络请求失败，以测试代码的健壮性。
 
 ## 参考链接
 
-1. [为什么编写测试很重要？](https://www.freecodecamp.org/news/why-write-tests-in-javascript/)
-2. [Jasmine 教程](https://www.runoob.com/w3cnote/javascript-jasmine-tutorial.html)
-3. [Mock in JavaScript](https://medium.com/better-programming/mocking-in-javascript-a8d28c99eaa5)
-4. [JavaScript 测试覆盖率工具排名](https://hackernoon.com/top-10-javascript-code-coverage-tools-6940e9408db6)
-5. [测试驱动开发 (Test-Driven Development)](https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2/)
+- [Mocha官方文档](https://mochajs.org/)
+- [Node.js断言库Assert官方文档](https://nodejs.org/api/assert.html)
+- [了解Javascript测试覆盖率](https://www.sitepoint.com/testing-javascript-code-coverage/)
+- [深入了解模拟测试](https://www.toptal.com/javascript/guide-to-mocking-http-requests-and-promises-in-nodejs-unit-tests)
+
+## 请参考
+
+- [React.js官方文档](https://reactjs.org/)
+- [Vue.js官方文档](https://vuejs.org/)
+- [Angular官方文档](https://angular.io/)

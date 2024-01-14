@@ -1,38 +1,56 @@
 ---
 title:                "Go: 编写文本文件"
+simple_title:         "编写文本文件"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-#为什么
+## 为什么
 
-写文本文件是编程中一项基本而重要的任务。无论是作为程序功能的一部分，还是用于存储数据，文本文件都是编程中必不可少的组成部分。通过掌握文本文件的写入技巧，可以更有效地处理数据和信息，提高编程效率。
+虽然写文本文件可能并不是编程中最激动人心的部分，但它却是非常重要的。通过编写文本文件，您可以保存和共享数据，而不是让它们丢失在程序结束后。它也可以让您更方便地阅读和编辑数据，而无需运行整个程序。
 
-#如何做
+## 如何操作
 
-要在Go语言中写入文本文件，可以使用内置的ioutil包。首先需要导入此包，并创建一个新的文件。接下来，使用WriteFile函数将数据写入到新文件中。下面是一个简单的示例代码：
+在Go语言中，编写文本文件非常容易。首先，您需要导入 "os" 和 "io/ioutil" 包。然后，使用 "os.Create()" 函数来创建一个文件，并指定文件名和权限。接着，使用 "WriteString()" 函数来写入内容，并使用 "Close()" 函数来保存和关闭文件。最后，使用 "fmt.Println()" 函数打印操作完成的提示信息。
 
 ```Go
-import "io/ioutil"
+import (
+  "os"
+  "io/ioutil"
+)
 
 func main() {
-  data := []byte("这是一行文本")
-  err := ioutil.WriteFile("textfile.txt", data, 0644)
+  file, err := os.Create("sample.txt") // 创建文件
   if err != nil {
-    fmt.Println("写入文件失败")
+    fmt.Println("创建文件错误：", err)
+    return
   }
+  defer file.Close()
+
+  content := "这是一个文本文件的示例。" // 写入的内容
+  _, err = file.WriteString(content) // 写入文件
+  if err != nil {
+    fmt.Println("写入文件错误：", err)
+    return
+  }
+
+  file.Close()
+  fmt.Println("文本文件写入成功！")
 }
 ```
-执行上述代码后，将在当前目录下创建一个名为 `textfile.txt` 的文本文件，并将指定的数据写入其中。
 
-#深入了解
+运行以上程序后，在同一目录下就会生成一个名为 "sample.txt" 的文本文件，其中包含 "这是一个文本文件的示例。" 这一行内容。如果您想要写入多行内容，可以在每行末尾添加一个换行符 "\n"。您也可以使用 "file.WriteString()" 函数多次写入内容，每次写入一行。最后，使用 "file.Close()" 函数来保存和关闭文件。
 
-除了使用ioutil包之外，还可以使用os包中的OpenFile函数来写入文本文件。通过设置不同的参数，可以实现不同的写入方式，例如追加数据、清空原有内容再写入等。此外，还可以通过设置文件的权限来控制文件的可读写性。更多关于文本文件写入的细节，请参考[官方文档](https://golang.org/pkg/os/#FileMode)。
+## 深入了解
 
-##参考链接
+除了使用 "WriteString()" 函数来写入文本文件外，您也可以使用 "file.Write()" 函数来写入字节切片，以及 "file.WriteString()" 和 "file.WriteByte()" 函数来写入单个字符。此外，如果您想要在写入内容时追加到文本文件末尾，可以使用 "file.WriteString()" 和 "file.Write()" 函数的前缀 "file.Seek(0, io.SeekEnd)" 来实现。
 
-- [ioutil包文档](https://golang.org/pkg/io/ioutil/)
-- [os包文档](https://golang.org/pkg/os/)
+## 参考链接
+
+- [编写文件 - Go语言标准库文档](https://golang.org/pkg/os/#Create)
+- [写入文本文件 - Go语言开发者指南](https://tour.golang.org/methods/16)
+- [文本文件操作示例 - 代码行数](https://www.codewars.com/kata/writing-to-a-text-file-with-golang/discuss/go)

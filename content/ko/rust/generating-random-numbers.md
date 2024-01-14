@@ -1,37 +1,49 @@
 ---
-title:                "Rust: 난수 생성하기"
+title:                "Rust: 랜덤 숫자 생성"
+simple_title:         "랜덤 숫자 생성"
 programming_language: "Rust"
-category:             "Numbers"
+category:             "Rust"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
-랜덤 숫자를 생성하는 것에 대해 생각해보았을 때, "왜 필요한가?"라는 의문이 드는 분들도 있으실 것입니다. 하지만 랜덤 숫자는 많은 분야에서 필수적으로 사용되는 기능입니다. 예를 들어 게임에서는 랜덤으로 아이템을 드롭하고, 보안 알고리즘에서는 암호를 생성하기 위해 랜덤 숫자를 사용합니다. 랜덤 숫자를 생성하는 것은 우리의 일상에서도 매우 자주 사용되는 기능입니다.
+## 왜
 
-# 방법
-랜덤 숫자를 생성하기 위해 Rust 언어의 랜덤 라이브러리를 사용할 수 있습니다. 먼저, `rand` 라이브러리를 제공하는 [crates.io](https://crates.io/) 웹사이트에서 라이브러리를 다운로드합니다. 다음으로, 우리가 원하는 랜덤 숫자의 범위를 설정할 수 있습니다. 예를 들어, `1`부터 `10` 사이의 랜덤 숫자를 생성하려면 다음과 같은 코드를 사용할 수 있습니다.
+랜덤한 수를 생성하는 작업을 하는 이유는 다양합니다. 예를 들어 게임을 만들거나 새로운 데이터를 시뮬레이션하는 등의 프로그래밍 작업을 수행하는 경우, 실제 세계에서 발생하는 랜덤한 요소를 모방하기 위해 랜덤한 수를 사용할 수 있습니다. 또는 암호화나 보안 등의 분야에서도 랜덤한 수는 중요한 요소입니다.
+
+## 어떻게
+
+Rust에서 랜덤한 수를 생성하는 가장 간단한 방법은 `rand` 라이브러리를 사용하는 것입니다. 먼저 `Cargo.toml` 파일에 다음과 같은 의존성을 추가해줍니다.
+
+```
+[dependencies]
+rand = "0.8.3"
+```
+
+그리고 다음과 같은 코드를 사용하여 랜덤한 수를 생성할 수 있습니다.
 
 ```Rust
 use rand::Rng;
 
-let mut rng = rand::thread_rng();
-let number = rng.gen_range(1, 11);
-
-println!("랜덤 숫자: {}", number);
+fn main() {
+    // 1부터 10 사이의 랜덤한 정수를 생성합니다.
+    let random_number = rand::thread_rng().gen_range(1..11);
+    println!("랜덤한 수: {}", random_number);
+}
 ```
 
-위 코드에서 `rng` 변수는 `thread_rng()` 함수를 사용하여 스레드 로컬 랜덤 생성기를 생성합니다. 그리고 `gen_range()` 함수를 사용하여 원하는 범위의 랜덤 숫자를 생성합니다. 이처럼 간단한 코드로 우리는 원하는 범위의 랜덤 숫자를 쉽게 생성할 수 있습니다.
+위 코드를 실행하면, 예를 들어 3이나 8 같은 랜덤한 수가 출력될 것입니다.
 
-# 더 깊게
-실제로 랜덤 숫자를 생성하는 것은 컴퓨터에서 가상적인 랜덤을 만드는 것입니다. 컴퓨터는 랜덤이라는 개념을 이해하지 못하기 때문에 특정한 알고리즘을 통해 랜덤 같은 숫자를 생성할 뿐입니다. 따라서 여러분은 적절한 랜덤 숫자의 범위와 라이브러리의 사용법을 알아야 합니다. 더 중요한 것은 랜덤 숫자를 사용하는 분야에 대해 잘 이해하는 것입니다. 이를 통해 랜덤 숫자를 보안에 활용할 수도 있고, 더 효율적으로 코드를 작성할 수도 있습니다.
+## 딥 다이브
 
-# 더 알아보기
-이 글에서 설명한 `rand` 라이브러리 외에도 랜덤 숫자를 생성하는 다양한 라이브러리가 있습니다. 그리고 랜덤 숫자를 사용하는 다양한 분야에 대해 더 알아 볼 수도 있습니다. 아래 링크에서 추가 정보를 찾아보세요.
+`rand` 라이브러리는 여러가지 다양한 메소드를 제공합니다. 예를 들어 `gen_range` 대신 `gen` 메소드를 사용하면, `i32`와 같은 모든 정수 타입이나 `f64`와 같은 모든 부동 소수점 타입을 랜덤하게 생성할 수 있습니다. 또한 `gen_bool` 메소드는 `true` 또는 `false`를 랜덤하게 생성하며, `gen_ascii_chars` 메소드를 사용하면 랜덤한 ASCII 문자열을 생성할 수 있습니다.
 
-* [Rust 공식 문서](https://doc.rust-lang.org/rand/rand/index.html)
-* [랜덤 숫자 기능이 필요한 프로젝트 예제](https://github.com/rust-random/rand#examples)
-* [랜덤 숫자를 사용하는 암호화 방식](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator)
+이외에도 `rand` 라이브러리는 유용한 기능들을 제공하니, 관련 문서를 참고하여 더 자세한 정보를 얻을 수 있습니다.
 
-# 더 읽어보기
+## 아래 링크를 확인해보세요
+
+- `rand` 라이브러리 문서: https://docs.rs/rand/0.8.3/rand/
+- Rust 공식 웹사이트: https://www.rust-lang.org/
+- Rust 커뮤니티 포럼: https://users.rust-lang.org/

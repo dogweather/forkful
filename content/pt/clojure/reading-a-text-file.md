@@ -1,45 +1,47 @@
 ---
 title:                "Clojure: Lendo um arquivo de texto"
+simple_title:         "Lendo um arquivo de texto"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler um arquivo de texto?
+## Por que ler um arquivo de texto em Clojure?
 
-Ler um arquivo de texto é uma habilidade básica para qualquer programador de Clojure. Isso permite que você acesse informações armazenadas em um formato simples e universalmente suportado. Além disso, pode ser útil para processar grandes conjuntos de dados ou interagir com bibliotecas externas que armazenam informações em arquivos de texto.
+Ler e manipular arquivos de texto é uma tarefa comum em muitos projetos de software. Em Clojure, essa tarefa é simples e eficiente, permitindo que desenvolvedores possam facilmente trabalhar com dados armazenados em arquivos. 
 
-## Como fazer
+## Como fazer?
 
-Ler um arquivo de texto em Clojure é uma tarefa simples e direta. Você pode usar a função `read-string` para ler um arquivo de texto e armazenar seu conteúdo em uma variável.
+```Clojure
+;; Primeiro, precisamos importar a biblioteca "java.io"
+(import java.io) 
 
-```
-Clojure
-(def conteudo (read-string "meu_arquivo.txt"))
-```
+;; Em seguida, podemos utilizar a função "slurp" para ler o conteúdo de um arquivo.
+(def texto (slurp "arquivo.txt")) 
 
-Isso irá ler o arquivo `meu_arquivo.txt` e armazenar seu conteúdo na variável `conteudo`. Em seguida, você pode usar a função `println` para imprimir seu conteúdo no console.
+;; Para imprimir esse texto na tela, podemos usar a função "println"
+(println texto) 
 
-```
-Clojure
-(println conteudo)
+;; Se quisermos armazenar as linhas do arquivo em uma lista, podemos usar a função "line-seq" e a função "map"
+(def linhas (map read-line (line-seq "arquivo.txt"))) 
+
+;; Podemos utilizar a função "count" para saber quantas linhas foram lidas
+(println (count linhas)) 
+
+;; Para escrever em um arquivo, podemos utilizar a função "spit"
+(def novo-texto "Novo texto para ser escrito no arquivo")
+(spit "arquivo.txt" novo-texto)
 ```
 
 ## Aprofundando-se
 
-Existem várias maneiras de ler um arquivo de texto em Clojure. Além da função `read-string`, você também pode usar a função `slurp` para ler o conteúdo de um arquivo diretamente em uma string. Por exemplo:
-
-```
-Clojure
-(def conteudo (slurp "meu_arquivo.txt"))
-```
-
-Você também pode especificar o caminho absoluto ou relativo do arquivo. Além disso, é possível passar um modo de leitura opcional como segundo argumento da função `read-string` ou `slurp`, como `:utf-8` para especificar a codificação do arquivo de texto.
+A biblioteca "java.io" oferece várias funções úteis para trabalhar com arquivos de texto em Clojure. Além disso, com a ajuda da função "map", é possível aplicar transformações nos dados lidos do arquivo de forma eficiente. Também é importante lembrar de fechar o arquivo após a leitura ou escrita, utilizando a função "close".
 
 ## Veja também
 
-- [Documentação oficial de Clojure sobre leitura de arquivos](https://clojuredocs.org/clojure.java.io/reader)
-- [Exemplos de leitura de arquivos em Clojure](https://gist.github.com/yogthos/2780362)
-- [Tutorial de Clojure sobre ler e escrever arquivos](https://www.tutorialspoint.com/clojure/clojure_file_io.htm)
+- Documentação do Clojure: https://clojure.org/
+- Biblioteca "java.io": https://clojure.github.io/clojure/clojure.java.io-api.html
+- Funções para manipular coleções em Clojure: https://clojure.org/reference/sequences

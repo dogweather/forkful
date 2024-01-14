@@ -1,35 +1,51 @@
 ---
-title:                "Rust: 「現在の日付を取得する」"
+title:                "Rust: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-Rustで現在の日付を取得するのは重要ですか？
+#なぜ？
 
-Rustは現代的なプログラミング言語であり、その才能に満ちています。Rustはメモリ安全性と高速性を備えているため、多くの開発者にとって魅力的なオプションとなっています。現在の日付を取得することは、プログラムの実行中に時間に関する情報を必要とする様々なアプリケーションにとって重要な要素です。そのため、Rustで現在の日付を取得する方法を知ることは、より効率的で正確なプログラムを作成する上で重要なスキルの1つです。
+Rustで現在の日付を取得するのは、プログラマーとして基本的なスキルです。現在の日付は、多くのアプリケーションにとって重要な情報であり、時刻管理やデータ処理においても不可欠です。さらに、Rustの標準ライブラリには日付を扱うための便利な機能がたくさんあります。
 
-## 使い方
-```rust
-use std::time::SystemTime;
-use chrono::{DateTime, Utc};
+## 方法
 
-fn main() {
-    let current_time = SystemTime::now().duration_since(SystemTime::UNIX_EPOCH).unwrap();
-    let current_datetime = DateTime::<Utc>::from(current_time);
-    println!("{}", current_datetime);
-}
+Rustで現在の日付を取得するには、標準ライブラリの`chrono`モジュールを使用します。まず、`chrono`モジュールをプロジェクトに追加する必要があります。
+
+```Rust
+use chrono::{Local, DateTime, TimeZone};
 ```
 
-上記のコードを実行すると、現在の日付がUTC形式で出力されます。まず、`SystemTime::now()`を使用して現在の時間を取得し、`UNIX_EPOCH`との差を計算して時刻を取得します。それから、`chrono`ライブラリを使用して日付をUTC形式に変換し、`println!`マクロを使ってコンソールに出力します。このコードは、簡単にカスタマイズすることができ、ローカルタイムゾーンにも対応できます。
+次に、`Local`構造体を使用して現在のタイムゾーンの情報を取得し、`DateTime`構造体を使用して現在の日付と時刻を取得します。最後に、`format()`メソッドを使用して任意の書式で日付と時刻をフォーマットします。
+
+```Rust
+let local = Local::now();
+let date_time: DateTime<Local> = local.to_datetime();
+println!("{}", date_time.format("%Y/%m/%d %H:%M:%S"));
+```
+
+上記のコードを実行すると、現在の日付と時刻が指定した書式で表示されます。
+
+```
+2021/01/01 12:00:00
+```
+
+さらに、`chrono`モジュールには、日付や時刻の計算や変換を行うための様々なメソッドが用意されています。詳細な使い方は公式ドキュメントを参照してください。
 
 ## 深堀り
-`SystemTime`と`chrono`ライブラリは、現在の日付を取得するための強力なツールです。`SystemTime`は、UNIXエポック（1970年1月1日00:00:00 UTC）からの経過時間を表すstructであり、プログラムの開始時に取得した`SystemTime`と比較することで、任意の時点の経過時間を計算することができます。また、`chrono`ライブラリは、タイムゾーンの変換や日付のフォーマットなど、さまざまな機能を提供しています。これらのツールを組み合わせることで、より正確な日付を取得することができます。
 
-## See Also
-- [Rustドキュメント](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
-- [Chronoライブラリドキュメント](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust入門ガイド](https://www.rust-lang.org/learn/get-started)
+`chrono`モジュールは、日付や時刻を正確に扱うために、ISO 8601規格に基づいた内部表現を使用します。これにより、様々なタイムゾーンや夏時間の変更にも対応することができます。また、`DateTime`構造体には、日付と時刻の両方を扱うことができるため、柔軟な日付処理が可能です。
+
+また、`chrono`モジュールには、`Duration`構造体や`Period`構造体を使用することで、日付や時刻の計算をより簡単に行うことができます。
+
+See Also
+
+- [Rust公式ドキュメント](https://doc.rust-lang.org/std/time/)
+- [Chronoクレート](https://docs.rs/chrono/0.4.19/chrono/)
+
+現在の日付を取得する方法は、プログラミング言語や環境によって異なる場合がありますが、Rustであれば`chrono`モジュールを使うことで簡単に実装することができます。この記事を参考に、ぜひ日付処理をマスターしてください！

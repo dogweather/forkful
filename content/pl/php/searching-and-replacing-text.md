@@ -1,7 +1,9 @@
 ---
 title:                "PHP: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/searching-and-replacing-text.md"
 ---
 
@@ -9,36 +11,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Każdy programista lubi mieć czysty i czytelny kod. Czasami jednak musimy zmienić pewne części tekstu w naszym kodzie, aby poprawić wydajność lub dostosować go do zmieniających się wymagań. W takich przypadkach żmudne ręczne zmienianie tekstu może okazać się nieefektywne oraz podatne na błędy. Właśnie wtedy przydaje się umiejętność szybkiego wyszukiwania i zamieniania tekstu w kodzie, co pozwala nam zaoszczędzić czas i zachować spójność w naszym projekcie.
+Czasami w trakcie tworzenia aplikacji internetowych musimy dokonać zmian w tekście. Mogą to być np. poprawki ortograficzne lub zmiana nazw zmiennych w kodzie. W takich przypadkach bardzo przydatną i często używaną funkcją jest wyszukiwanie i zamiana tekstu. W tym artykule opiszemy, jak wykorzystać tę funkcję w języku PHP.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Do wyszukiwania i zamieniania tekstu w PHP możemy wykorzystać funkcję `str_replace()`. W przykładzie poniżej użyjemy tej funkcji, aby zmienić wszystkie wystąpienia słowa "hello" na "cześć" w naszym tekście.
-
-```PHP
-$tekst = "hello, world!";
-$nowy_tekst = str_replace("hello", "cześć", $tekst);
-echo $nowy_tekst; // wypisze "cześć, world!"
-```
-
-Jak widać, funkcja `str_replace()` przyjmuje trzy argumenty - szukany tekst, nowy tekst oraz tekst, w którym chcemy dokonać zmiany. W ten sposób możemy łatwo zmieniać dowolne fragmenty tekstu w zadanym dokumencie.
-
-## Głębszy zanurzenie
-
-Funkcja `str_replace()` posiada również opcję podmiany wielu fragmentów tekstu jednocześnie. Możemy przekazać jej tablicę szukanych i nowych tekstów, co pozwala na zamianę wielu wyrazów na raz. Przykład zastosowania:
+Do wyszukiwania i zamiany tekstu w PHP możemy wykorzystać funkcję `str_replace()`. Jej składnia wygląda następująco:
 
 ```PHP
-$tekst = "witaj, świecie!";
-$szukaj = array("witaj", "świecie");
-$nowy = array("cześć", "świecie");
-$nowy_tekst = str_replace($szukaj, $nowy, $tekst);
-echo $nowy_tekst; // wypisze "cześć, world!"
+str_replace($co_wyszukujemy, $na_co_zamieniamy, $tekst);
 ```
 
-Dodatkowo możemy wykorzystać funkcję `str_ireplace()` w celu wykonania wyszukiwania i zamiany tekstu, z uwzględnieniem wielkości liter.
+W miejscu `$co_wyszukujemy` wpisujemy szukaną frazę, a w miejscu `$na_co_zamieniamy` wpisujemy tekst, na który chcemy ją zamienić. Ostatnim argumentem jest sam tekst, w którym dokonujemy zmian.
 
-## Zobacz też
+Przykład:
 
-- [Oficjalna dokumentacja PHP dla funkcji str_replace()](https://www.php.net/manual/en/function.str-replace.php)
-- [Funkcje string w PHP - artykuł na blogu programistycznym](https://blogprogramisty.net/funkcje-string-w-php/)
-- [Poradnik dla początkujących w PHP - pisanie skryptów](https://developer.mozilla.org/pl/docs/Web/Javascript/Dzisiejszy_JavaScript_podstawy/Zmienne_i_rozdzialki/Skrypty_w_PHP)
+```PHP
+$tekst = "Jestem programistą PHPP.";
+
+$nowy_tekst = str_replace("PHPP", "PHP", $tekst);
+
+echo $nowy_tekst;
+```
+
+W powyższym przykładzie wynikiem będzie napis "Jestem programistą PHP.".
+
+Innym sposobem jest użycie funkcji `preg_replace()`, która wykorzystuje wyrażenia regularne do wyszukania i zamiany tekstu.
+
+Przykład:
+
+```PHP
+$tekst = "Wpisz swoje dane: imię i nazwisko.";
+
+$nowy_tekst = preg_replace("/imię i nazwisko/", "imię i nazwisko: John Smith", $tekst);
+
+echo $nowy_tekst;
+```
+
+W tym przypadku wynikiem będzie "Wpisz swoje dane: imię i nazwisko: John Smith.".
+
+## Deep Dive
+
+W PHP możemy także dokonać wielokrotnej zamiany tekstu za pomocą funkcji `strtr()`. Jej składnia wygląda następująco:
+
+```PHP
+strtr($tekst, $tablica);
+```
+
+Jako drugi argument musimy podać tablicę, w której kluczami są szukane frazy, a wartościami są teksty, na które chcemy je zamienić.
+
+Przykład:
+
+```PHP
+$tekst = "Jestem programistą PHPP.";
+
+$tablica = array("PHPP" => "PHP", "programistą" => "programistą języka");
+
+$nowy_tekst = strtr($tekst, $tablica);
+
+echo $nowy_tekst;
+```
+
+Wynikiem będzie napis "Jestem programistą języka PHP.".
+
+## Zobacz także
+
+- Dokumentacja funkcji `str_replace()` w języku PHP: https://www.php.net/manual/en/function.str-replace.php
+- Przykłady użycia funkcji `preg_replace()` w języku PHP: https://www.geeksforgeeks.org/php-preg-replace-function/
+- Szczegóły na temat funkcji `strtr()` w języku PHP: https://www.php.net/manual/en/function.strtr.php

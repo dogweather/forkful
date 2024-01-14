@@ -1,7 +1,9 @@
 ---
 title:                "Elm recipe: Reading a text file"
+simple_title:         "Reading a text file"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/reading-a-text-file.md"
 ---
 
@@ -9,58 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Are you tired of manually typing in data into your Elm program? Do you want to easily import data from a text file instead? Well, you're in luck! In this blog post, we will explore how to read a text file in Elm, making your coding process more efficient and streamlined.
+When it comes to programming, there are endless possibilities and techniques to learn. One of the most important skills to have as a programmer is the ability to read and understand text files. In this blog post, we will explore how to read a text file using Elm, a functional programming language that is gaining popularity for its simplicity and powerful features.
 
 ## How To
 
-First, we need to import the `Text` module in order to use the `Text.fromFile` function. This function takes in a string representing the file path and returns a `Task` with either an error message or the contents of the file. Let's see an example:
+To read a text file in Elm, you first need to create a function that will handle the file reading. You can do this by using the `File` library, which provides convenient functions for working with files.
 
 ```Elm
-import Text exposing (fromFile)
+import File
 
-readFile : Task String String
-readFile =
-  fromFile "myFile.txt"
-
+readFile : String -> Task x String
+readFile path =
+    File.readString path
+        |> Task.toResult
+        |> Task.mapError toString
 ```
+In the above code, we import the `File` library and define a function called `readFile` that takes in a string (the path to the text file) and returns a `Task`, which represents an asynchronous computation that may succeed with a value or fail with an error. The `File.readString` function reads the contents of the file and returns a `Task` that contains the text.
 
-In the above code, we are importing the `fromFile` function and then using it to read the contents of a file called "myFile.txt". Notice that the function returns a `Task` with a `String` representing any error message and a `String` with the actual contents of the file. We can then use the `Task.perform` function to handle the result.
+To actually execute the `Task`, we can use the `Task.perform` function, which takes in two functions as arguments: one for handling success and one for handling error.
 
 ```Elm
-import Text exposing (fromFile)
-
-readFile : Task String String
-readFile =
-  fromFile "myFile.txt"
-
-handleFile : Result String String -> String
-handleFile result =
-  case result of
-    Ok contents ->
-      contents
-    Err error ->
-      error
-
-readFileTask : Task String String
-readFileTask =
-  Task.perform handleFile readFile
+readFile "example.txt"
+    |> Task.perform
+        (\text -> -- handle success
+            text
+                |> String.lines
+                |> List.indexedMap (\i line -> (i+1, line))
+                |> String.join "\n"
+                |> Debug.log "file contents"
+        )
+        (\err -> -- handle error
+            Debug.log "error reading file: " ++ err
+        )
 ```
 
-In the above code, we are using the `Task.perform` function to handle the result of the `readFile` function. If the result is an `Ok`, we simply return the contents of the file. If the result is an `Err`, we return the error message. Now, we can use the `readFileTask` to read the file and print its contents:
+The first function passed to `Task.perform` takes the text from the file and performs some actions with it. In this case, we use the `String.lines` function to split the text into a list of lines, then use `List.indexedMap` to add line numbers to each line, and finally, we use `String.join` to join the lines back together with a newline between them. The `Debug.log` function is used to log the result to the console.
 
-```Elm
-readFileTask |> Task.attempt
--- outputs: "This is the content of the file."
-```
+The second function handles any errors that may occur while reading the file. In this example, we simply log the error to the console.
 
 ## Deep Dive
 
-Let's take a deeper look at the `fromFile` function. Internally, it uses the `Text.readFile` function which reads a file asynchronously and returns a `Text.File` with the contents. The `fromFile` function then takes this result and wraps it in a `Task` for easier handling. This is why we use the `Task.perform` function to handle the result.
+Reading a text file may seem like a simple task, but there are some important things to keep in mind. First, make sure that the text file you are trying to read actually exists and is accessible by your code. Otherwise, errors may occur.
 
-It's worth noting that the `fromFile` function expects the file to be encoded in UTF-8. So if your file is using a different encoding, you may need to use the `Text.readFileWith` function and specify the correct encoding.
+Second, it is important to handle any errors that may occur while reading the file. This could be due to an incorrect file path, a corrupt file, or other reasons. By using the `Task` type, we can easily handle success and failure scenarios in our code and make sure our program does not crash unexpectedly.
+
+Lastly, remember to always close the file after reading it to avoid any potential memory leaks.
 
 ## See Also
 
-- [Official Text module documentation](https://package.elm-lang.org/packages/elm/core/latest/Text)
-- [Elm guide on handling tasks](https://guide.elm-lang.org/error_handling/tasks.html)
-- [Elm syntax highlighting for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=sbrink.elm)
+- [Elm File library documentation](https://package.elm-lang.org/packages/elm/file/latest/File)
+- [Elm official website](https://elm-lang.org/)
+- [Elm tutorials and resources](https://github.com/isRuslan/awesome-elm#resources)

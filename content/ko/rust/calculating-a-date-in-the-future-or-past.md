@@ -1,52 +1,46 @@
 ---
 title:                "Rust: 미래나 과거의 날짜 계산하기"
+simple_title:         "미래나 과거의 날짜 계산하기"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+루스트 프로그래밍을 하는 이유는 다양합니다. 그 중 하나는 미래나 과거의 날짜를 계산하고 싶어서일 수 있습니다.
 
-Rust 프로그래밍이 다른 언어와 비교하여 강력하고 안전한 이유 중 하나는 날짜 계산이 용이하기 때문입니다. 따라서 오늘은 Rust로 미래나 과거 날짜를 계산하는 방법에 대해 알아보겠습니다.
-
-## 방법
-
-다음은 날짜를 계산하는 방법에 대한 Rust 코드 예제입니다. 아래 코드 블록은 ```Rust ... ```로 시작해야 합니다.
+## 어떻게
+먼저, `chrono` 라이브러리를 사용하여 날짜를 처리할 수 있습니다. 다음은 과거 날짜를 계산하는 간단한 예제 코드입니다.
 
 ```Rust
-use chrono::{Duration, NaiveDate};
+use chrono::{NaiveDate, Duration};
 
-// 미래 날짜 계산
-let now = chrono::Utc::now().naive_utc();
-let future_date = now + Duration::days(30);
+fn calculate_date_past(year: i32, month: u32, day: u32) -> String {
+    let date = NaiveDate::from_ymd(year, month, day);
+    let past = date - Duration::days(365);
+    past.format("%Y-%m-%d").to_string()
+}
 
-// 과거 날짜 계산
-let past_date = now - Duration::weeks(3);
-
-// 출력
-println!("현재 날짜: {}", now);
-println!("미래 날짜: {}", future_date);
-println!("과거 날짜: {}", past_date);
+fn main() {
+    let result = calculate_date_past(2021, 7, 25);
+    println!("{}", result); // Output: 2020-07-25
+}
 ```
 
-위 코드를 실행하면 다음과 같은 결과가 나타납니다.
-
-```
-현재 날짜: 2021-08-01
-미래 날짜: 2021-08-31
-과거 날짜: 2021-07-11
-```
+위 코드를 실행하면, 현재 날짜보다 365일 전인 과거 날짜가 출력됩니다. 이와 같은 방식으로 미래 날짜를 계산할 수도 있습니다.
 
 ## 딥 다이브
+날짜를 계산하는 것은 단순한 수학적 계산에 불과하지만, 다양한 오차를 고려해야 합니다. 예를 들어, 윤년을 표현하는 Schotch-Whittemore 규칙이나, 각 달의 일 수를 고려해야 합니다. 또한, 타임존이나 로컬 데이터를 계산에 반영해야 할 수도 있습니다.
 
-Rust에서 날짜를 계산하는 과정에서 사용되는 라이브러리는 `chrono`입니다. 이 라이브러리는 다양한 날짜 계산 함수와 유연한 시간대 및 달력 지원을 제공합니다. 이를 통해 다양한 시간 형식을 다루는데 매우 유용합니다.
+## 더 자세한 내용
+- [Chrono 라이브러리 문서](https://docs.rs/chrono/0.4.19/chrono/index.html)
+- [Rust 언어 공식 문서](https://www.rust-lang.org/ko/learn)
+- [날짜 계산 예제 코드](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=4e26a6769200c1333721bd8eab81afc7) 
 
-예를 들어, `Duration`을 이용해 날짜 간의 차이를 구할 수 있습니다. `NaiveDate`를 사용하면 특정한 날짜를 생성할 수 있습니다. 이 외에도 `DateTime`, `TimeZone` 등 다양한 기능을 제공하니 적극적으로 활용해보세요.
-
-## 더 알아보기
-
-- [Rust 공식 문서: chrono 라이브러리](https://doc.rust-lang.org/chrono/)
-- [Rust 날짜 계산 관련 블로그 글](https://erickt.github.io/blog/2019/04/04/dates-in-rust/)
-- [Panics vs. Errors in Rust: 날짜 계산 시 발생하는 에러 처리 방법](https://www.viget.com/articles/panics-vs-errors-in-rust/)
+## 더 참고할 만한 자료
+- [Rules for calculating dates in the Gregorian calendar](https://www.timeanddate.com/calendar/aboutgregorian.html)
+- [Understanding time zones in Rust](https://blog.logrocket.com/how-to-work-with-time-zones-in-rust/)
+- [Handling local date and time in Rust](https://deterministic.space/naive-dates.html)

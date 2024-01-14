@@ -1,74 +1,100 @@
 ---
-title:                "C#: Lese en tekstfil"
+title:                "C#: Lesing av tekstfil"
+simple_title:         "Lesing av tekstfil"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Lesing og behandling av tekstfiler er en viktig del av programmering. Det lar oss lese data fra en fil og bruke den i våre programmer. Det er også nyttig for å behandle store mengder data eller for å lage rapporter basert på tekstfiler.
 
-Hvis du noen gang har jobbet med datafiler i programmering, har du mest sannsynligvis måttet håndtere tekstfiler. Tekstfiler er en vanlig måte å lagre og håndtere data på, og derfor er det viktig å ha god kunnskap om hvordan man leser og behandler dem. Hvis du ønsker å lære å lese en tekstfil ved hjelp av C# programmeringsspråket, så er du på rett sted.
-
-## Hvordan
-
-Å lese en tekstfil ved hjelp av C# er en relativt enkel prosess som krever noen få linjer med kode. Før vi dykker inn i eksemplene, må vi først forstå noen få konsepter og begreper som er nødvendige for å lese en fil. 
-
-Først og fremst må du forstå at tekstfiler kan inneholde forskjellige typer data og formater, som for eksempel vanlig tekst, tall eller symboler. Derfor må du bestemme hvilken type data du forventer å finne i filen din før du begynner å lese den. 
-
-Et annet viktig konsept er filbanen, som er den unike plasseringen til filen din på datamaskinen din. Det er viktig å ha filbanen riktig formatert i C# koden din for å sikre at programmet finner og kan lese filen.
-
-Nå, la oss se på et eksempel på hvordan du kan lese en tekstfil og skrive ut innholdet til konsollen ved hjelp av C#-kode:
+## Hvordan gjøre det
+For å lese en tekstfil i C#, må vi først opprette en instans av klassen `StreamReader` og koble den til filen vi vil lese. Dette gjøres ved å bruke `File.OpenText()`-metoden og oppgi banen til filen som parameter.
 
 ```C#
-string filbane = @"C:\Users\Navn\Desktop\tekstfil.txt";
+using System; 
+using System.IO;
 
-// Opprett et StreamReader-objekt for å lese filen
-using(StreamReader sr = new StreamReader(filbane))
-{
-	// Les hver linje av tekstfilen
-	string linje = "";
-	while((linje = sr.ReadLine()) != null)
-	{
-		// Skriv ut hver linje til konsollen
-		Console.WriteLine(linje);
-	}
-}
+StreamReader reader = File.OpenText("filbane/filnavn.txt"); // oppretter en instans av `StreamReader` og åpner filen
+string line = reader.ReadLine(); // leser en linje fra filen og lagrer den i en string
+Console.WriteLine(line); // skriver ut linjen i konsollen
+reader.Close(); // lukker filen
 ```
 
-I dette eksemplet bruker vi `StreamReader` -objektet og `ReadLine()` -metoden for å lese hver linje av tekstfilen og skrive dem ut til konsollen.
+Output:
+```
+Dette er en linje med tekst i filen.
+```
 
-Et annet nyttig eksempel er å lese en tekstfil og lagre innholdet til en `List` -samling. Dette gjør det enklere å behandle og manipulere teksten senere i koden din.
+Vi kan også lese en hel fil på en gang ved hjelp av `ReadToEnd()`-metoden, som returnerer hele innholdet i filen som en string. Dette kan være nyttig når vi jobber med mindre filer.
 
 ```C#
-string filbane = @"C:\Users\Navn\Desktop\tekstfil.txt";
+using System; 
+using System.IO;
 
-// Opprett en tom List for å lagre tekstlinjene
-List<string> tekstlinjer = new List<string>();
-
-using(StreamReader sr = new StreamReader(filbane))
-{
-	string linje = "";
-	while((linje = sr.ReadLine()) != null)
-	{
-		// Legg til hver linje i List-samlingen
-		tekstlinjer.Add(linje);
-	}
-}
+string fileContent = File.ReadAllText("filbane/filnavn.txt"); // leser hele filen og lagrer innholdet som en string
+Console.WriteLine(fileContent); // skriver ut innholdet i filen i konsollen
 ```
 
-Som du kan se, er det enkelt å lese en tekstfil ved hjelp av C# - du trenger bare å vite hvilke objekter og metoder som er nødvendige for å utføre oppgaven.
+Output:
+```
+Dette er en linje med tekst i filen.
+Dette er en annen linje med tekst.
+Enda en linje med tekst.
+```
 
 ## Dypdykk
+Når vi leser en tekstfil, er det viktig å håndtere eventuelle feil som kan oppstå. For eksempel hvis filen ikke eksisterer eller hvis det oppstår en feil under lesingen. Dette kan gjøres ved å bruke `try-catch`-blokker i koden vår.
 
-Som nevnt tidligere, er det viktig å ha riktig forståelse av filbanen og filformatet når du skal lese tekstfiler i C#. Sørg for at du har en grundig forståelse av disse begrepene før du går videre og manipulerer teksten i filen din. 
+```C#
+try 
+{
+    StreamReader reader = File.OpenText("filbane/filnavn.txt"); // prøver å åpne filen
+    string line = reader.ReadLine();
+    Console.WriteLine(line);
+    reader.Close(); // hvis filen er åpen, lukker vi den
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message); // hvis det oppstår en feil, skriver vi ut feilmeldingen
+}
+```
 
-En annen viktig ting å huske på er at filen din kan inneholde forskjellige tegnsett, som for eksempel Unicode eller ASCII. Du må sørge for at du har riktig koding satt i koden din for å kunne lese og behandle disse forskjellige tegnsettene.
+Vi kan også lese fra og skrive til filer samtidig ved å bruke `StreamWriter`-klassen. Dette kan være nyttig for å opprette nye filer eller legge til innhold i eksisterende filer.
 
-Det er også viktig å ha en god feilhåndtering når du leser tekstfiler. Dette sikrer at programmet ditt håndterer eventuelle unntak eller problemer som kan oppstå under lesing av filen.
+```C#
+using System;
+using System.IO;
+
+try 
+{
+    StreamWriter writer = File.AppendText("filbane/filnavn.txt"); // oppretter en instans av `StreamWriter` og åpner filen
+    writer.WriteLine("En ny linje skrevet med StreamWriter.");
+    writer.Close(); // lukker filen
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message); // hvis det oppstår en feil, skriver vi ut feilmeldingen
+}
+
+StreamReader reader = File.OpenText("filbane/filnavn.txt"); // åpner filen på nytt for å lese den
+string line = reader.ReadLine(); // leser den nye linjen vi skrev til filen
+Console.WriteLine(line);
+reader.Close(); // lukker filen
+```
+
+Output:
+```
+Dette er en linje med tekst i filen.
+Dette er en annen linje med tekst.
+Enda en linje med tekst.
+En ny linje skrevet med StreamWriter.
+```
 
 ## Se også
-
-- [Offisiell dokumentasjon for StreamReader klasse](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-5.0)
-- [C# StreamReader Tutorial](https://www.c-sharpcor
+- [Microsoft Docs - StreamReader Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
+- [Microsoft Docs - StreamWriter Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamwriter)

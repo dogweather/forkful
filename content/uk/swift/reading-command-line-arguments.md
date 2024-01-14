@@ -1,7 +1,9 @@
 ---
 title:                "Swift: Читання аргументів командного рядка"
+simple_title:         "Читання аргументів командного рядка"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/reading-command-line-arguments.md"
 ---
 
@@ -9,43 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Записки з аргументів командного рядка можуть бути корисними для отримання вхідних даних і керування процесом програми. Це може бути особливо корисно при взаємодії з користувачем або при виконанні скриптів на сервері.
+Якщо ви програмуєте на Swift і хочете більш ефективно керувати вашою програмою, читання аргументів командного рядка є дуже корисною навичкою. Це дозволяє вам зняти значну частину вхідної інформації з вашої програми і зробити її більш динамічною.
 
-## Як
+## Як це зробити
 
-```Swift
-let arguments = CommandLine.arguments
-print(arguments)
-```
-
-При запуску цього коду в консолі буде виведено масив з аргументами командного рядка, які були вказані при запуску програми. Наприклад, якщо запустити програму з наступними параметрами: `./program -name John -age 25`, то в консолі буде виведено: `["./program", "-name", "John", "-age", "25"]`. Також можна використовувати ці аргументи для написання умовних виразів та полегшення роботи з даними.
-
-## Поглиблене дослідження
-
-Окрім звичайного зчитування аргументів командного рядка, Swift також надає можливість робити це за допомогою функцій з бібліотеки Foundation. На прикладі параметрів `--name John --age 25` це можна зробити таким чином:
+Для читання аргументів командного рядка використовується функція `CommandLine.arguments`. Наприклад, якщо ми хочемо отримати перший аргумент, ми можемо написати:
 
 ```Swift
-import Foundation
-
-let arguments = ProcessInfo.processInfo.arguments
-print(arguments)
+let firstArgument = CommandLine.arguments[1]
+print("Перший аргумент: \(firstArgument)")
 ```
 
-Щоб отримати дані з аргументів командного рядка у вигляді словника, можна використовувати наступний код:
+Якщо ми запустимо цей код з аргументами "hello world", то в консолі ми побачимо:
 
-```Swift
-import Foundation
-
-let keys = CommandLine.arguments.indices.filter { $0 % 2 == 0 }.map { CommandLine.arguments[$0] }
-let values = CommandLine.arguments.indices.filter { $0 % 2 == 1 }.map { CommandLine.arguments[$0] }
-let arguments = Dictionary(uniqueKeysWithValues: zip(keys, values))
-print(arguments)
+```
+Перший аргумент: hello
 ```
 
-Цей метод узгоджує індекси аргументів та об'єднує їх у словник, що може бути корисним для більш складних програм.
+## Розгон
+
+Спочатку, коли ви побачили функцію `CommandLine.arguments`, ви можете подумати, що це просто масив вхідних аргументів. Проте, це має багато корисних функцій, таких як перевірка кількості аргументів, обробка помилок та отримання доступу до іменованих аргументів.
+
+Наприклад, функція `CommandLine.arguments.count` дозволяє нам перевірити, чи передано аргументи у нашу програму. Якщо ви хочете передати в багато аргументів даних, ви можете використовувати `CommandLine.arguments.dropFirst()` для отримання лише аргументів.
+
+Щоб отримати доступ до іменованих аргументів, ви можете використовувати `CommandLine.arguments.firstIndex(of: <ім'я>)` та `CommandLine.arguments[<індекс>]`. Це особливо корисно, якщо ваша програма приймає такі аргументи, як `-name "John Smith"`.
 
 ## Дивіться також
 
-- [Документація Swift про аргументи командного рядка](https://developer.apple.com/documentation/swift/commandline/arguments)
-- [Стаття "Handling Command-line Arguments in Swift 3" на сайті AppCoda](https://www.appcoda.com.tw/command-line-arguments/)
-- [Відео "Working with Command-Line Arguments in Swift" з YouTube каналу Code Together](https://www.youtube.com/watch?v=2yj5GHHeRg0)
+- [Документація Apple для CommandLine](https://developer.apple.com/documentation/foundation/commandline)
+- [Стаття про читання аргументів командного рядка на сайті Swift by Sundell](https://www.swiftbysundell.com/basics/reading-command-line-arguments-in-swift/)

@@ -1,44 +1,50 @@
 ---
 title:                "Ruby: 텍스트 파일 읽기"
+simple_title:         "텍스트 파일 읽기"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+# 왜Text file을 읽는가?
 
-텍스트 파일을 읽는 것은 프로그래밍에서 매우 중요한 기술이다. 텍스트 파일을 읽는 방법을 배우면 다양한 파일 형식을 다룰 수 있고, 데이터를 처리하고 분석하는 데 도움이 된다.
+많은 프로그래머들이 텍스트 파일을 읽어야 하는 일상적인 작업을 맡게 됩니다. 이를 위해 여러 가지 이유가 있을 수 있지만 가장 일반적인 이유는 파일로부터 데이터를 추출할 필요가 있기 때문입니다. 예를 들어, 특정 문자열을 포함하는 텍스트 파일을 찾아야 할 때, 파일을 읽어 검색할 수 있습니다. 또는 파일의 내용을 분석하여 데이터를 추출하고 가공할 수도 있습니다. 어떤 이유든간에, 텍스트 파일을 읽는 것은 프로그래밍에서 중요한 부분입니다.
 
-## 어떻게
+## 어떻게 Text file을 읽는가?
 
-아래의 코드 예제를 통해 Ruby로 텍스트 파일을 읽는 방법을 알아보자.
+Ruby에서는 `File` 클래스를 이용하여 텍스트 파일을 읽을 수 있습니다. 가장 간단한 방법은 `File.read` 메서드를 사용하는 것입니다. 이 메서드는 파일의 모든 내용을 하나의 문자열로 반환합니다.
 
 ```Ruby
-# 파일 열기
-file = File.open("sample.txt", "r")
-
-# 파일 내용 읽기
-contents = file.read
-
-# 파일 닫기
-file.close
-
-# 내용 출력
-puts contents
+file_content = File.read("text.txt")
+puts file_content
 ```
 
-위의 코드는 "sample.txt" 파일을 읽고, 그 내용을 출력하는 간단한 예제이다.
+만약 파일을 한 줄씩 읽고 싶다면, `File::foreach` 메서드를 사용할 수 있습니다. 이 메서드는 파일의 각 줄을 함수의 인자로 전달하여 처리합니다.
 
-## 딥 다이브
+```Ruby
+File.foreach("text.txt") do |line|
+  puts line
+end
+```
 
-텍스트 파일을 읽는 방법은 간단하지만, 조금 더 깊은 수준에서 살펴보면 다양한 옵션이 있다. 예를 들어, 파일을 한 줄씩 읽을 수도 있고, 파일에 존재하는 특정 문자열을 찾을 수도 있다.
+또 다른 방법은 파일 객체를 생성하여 `readline` 메서드를 이용하는 것입니다. 이 방법은 파일을 한 줄씩 읽는 것이 아니라, 직접 파일의 내용을 다룰 수 있게 해줍니다.
 
-텍스트 파일을 읽는 과정에서 발생할 수 있는 오류도 잘 다루는 것이 중요하다. 오류 처리에 대한 더 자세한 정보는 다른 블로그 게시글을 참고하길 바란다.
+```Ruby
+file = File.open("text.txt")
+line = file.readline
+puts line
+```
 
-## 관련 글
+## Deep Dive
 
-- [Ruby 파일 읽기와 쓰기](https://rubykr.github.io/ruby/corereference/file/)
-- [RubyMine으로 텍스트 파일 읽기](https://blog.jetbrains.com/ruby/2012/10/rubymine-50-fle-editing/)
-- [Ruby에서 파일 입출력](https://www.digitalocean.com/community/tutorials/how-to-work-with-files-using-ruby)
+Ruby에서는 `File` 클래스 이외에도 `IO` 클래스를 통해 파일을 다룰 수 있습니다. `IO` 클래스는 파일 입력과 출력을 담당하는 모든 클래스의 부모 클래스입니다. 그래서 텍스트 파일을 읽는 모든 방법은 `IO` 클래스의 메서드를 이용하는 것입니다.
+
+`read` 메서드는 파일 전체를 읽을 수 있지만, 큰 파일을 읽거나, 파일을 한 번에 읽는 것이 불가능한 상황일 수도 있습니다. 이때는 `readline` 메서드를 사용하여 파일을 분할해서 읽을 수 있습니다. 또한, 파일에 대해 `each` 메서드를 호출하면 파일의 내용을 반복적으로 처리할 수 있습니다.
+
+See Also
+- [File - Ruby 문서] (https://ruby-doc.org/core-3.0.2/File.html)
+- [IO - Ruby 문서] (https://ruby-doc.org/core-3.0.2/IO.html)
+- [How to Read Files in Ruby] (https://www.tutorialspoint.com/ruby/ruby_input_output.htm)

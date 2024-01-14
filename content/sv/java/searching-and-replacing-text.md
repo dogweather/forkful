@@ -1,55 +1,42 @@
 ---
-title:                "Java: Söka och byta ut text"
+title:                "Java: Söka och ersätta text"
+simple_title:         "Söka och ersätta text"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att söka och ersätta text är en vanlig uppgift inom programmering. Genom att använda denna funktion kan du enkelt ändra eller uppdatera stora mängder text i din kod. Det är också ett bra sätt att snabbt hitta och åtgärda felaktig eller föråldrad kod.
+Att söka och ersätta text är en viktig del av programmering. Det hjälper dig att ändra stora mängder text på en gång, vilket gör koden mer effektiv och sparar tid.
 
-## Så här gör du
+# Hur man gör
 
-För att söka och ersätta text i Java kan du använda den inbyggda metoden `.replace()`. Detta tar två parametrar: den text du vill byta ut och den nya texten du vill ersätta den med. Till exempel:
+Att söka och ersätta text i Java är enkelt med hjälp av metoden `replaceAll()`. Här är ett exempel på hur man använder denna metod för att byta ut alla förekomster av "hej" med "hej hej":
 
-```java
-String original = "Hej! Välkommen till min blogg!";
-String updated = original.replace("Hej", "Hallå");
-System.out.println(updated);
+```Java
+String text = "Hej, jag heter Alice!";
+String newText = text.replaceAll("hej", "hej hej");
+System.out.println(newText);
 ```
 
-Detta kommer att skriva ut: `Hallå! Välkommen till min blogg!`
-
-Du kan också använda `.replace()` för att ta bort viss text genom att byta ut den med en tom sträng. Till exempel:
-
-```java
-String original = "Det är fredag idag!";
-String updated = original.replace("fredag", "");
-System.out.println(updated);
+Output:
+```
+Hej hej, jag heter Alice!
 ```
 
-Detta kommer att skriva ut: `Det är idag!`
+Här ser vi att alla förekomster av "hej" i strängen har ersatts med "hej hej". Metoden `replaceAll()` tar emot två argument - den första är den text du vill ersätta och den andra är den nya texten du vill använda.
 
-## Fördjupning
+# Djupdykning
 
-För att söka och ersätta mer avancerade mönster i din kod kan du använda regular expressions (Regex). Dessa mönster gör det möjligt att hitta och ersätta text som är mer komplex än en enkel sträng.
+När du använder `replaceAll()`-metoden, behöver du vara medveten om att det är en fallkänslig process. Det betyder att om du har en sträng som innehåller både stora och små bokstäver och du använder metoden för att byta ut en bokstav, kommer den bara att ersätta bokstäver som matchar exakt. Om du vill byta ut bokstäver oavsett deras storlek, kan du använda metoden `replace()` istället.
 
-För att använda Regex i Java, använd `Pattern` och `Matcher` klasserna. Här är ett exempel på hur du kan använda det för att byta ut alla siffror i en sträng med "X":
+En annan viktig sak att komma ihåg är att metoden `replaceAll()` använder en särskild form av regex (regular expressions) för att söka och ersätta text. Det innebär att du kan använda olika specialtecken för att göra mer avancerade sökningar och ersättningar. Till exempel kan du använda `.+` för att ersätta alla bokstäver och symboler mellan två visst angivna tecken.
 
-```java
-String original = "Din lösenord är 1234";
-Pattern pattern = Pattern.compile("\\d");
-Matcher matcher = pattern.matcher(original);
-String updated = matcher.replaceAll("X");
-System.out.println(updated);
-```
+# Se även
 
-Detta kommer att skriva ut: `Ditt lösenord är XXXX`
-
-## Se även
-
-- Java String API: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
-- Java Matcher API: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Matcher.html
+- [Java String API Reference](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+- [Regular Expressions in Java](https://www.codejava.net/java-se/text/regular-expressions-regex-api-tutorial-for-java)

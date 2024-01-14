@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Att påbörja ett nytt projekt."
+title:                "Gleam: Att påbörja ett nytt projekt"
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Gleam"
-category:             "Getting Started"
+category:             "Gleam"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/starting-a-new-project.md"
 ---
 
@@ -9,52 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att starta ett nytt projekt kan verka överväldigande, men det finns många fördelar med att använda Gleam-programmering för ditt nästa projekt. Gleam är ett funktionellt programspråk som är utformat för att vara lättläst och lättförståeligt, vilket gör det till ett bra val för både nya och erfarna utvecklare. Dessutom finns det ett starkt community och stöd för Gleam, vilket gör det till ett pålitligt val för dina projektbehov.
+Att starta ett nytt projekt kan vara en spännande och utmanande uppgift för alla som är intresserade av programmering. Det ger dig möjligheten att skapa något unikt och utveckla dina kunskaper inom Gleam-programmering.
 
-## Hur man gör
+## Så här gör du
 
-För att komma igång med Gleam-programmering behöver du först installera Gleam-compiler och Gleam-paketet från deras officiella hemsida. När du har gjort det kan du skapa ditt första projekt i Gleam genom att följa dessa steg:
+Att starta ett nytt projekt i Gleam kan vara enkelt och roligt. Du behöver bara följa några enkla steg:
 
-```
-Gleam nytt projektnamn
-cd projektnamn
-```
-
-Nu är du redo att börja programmera i Gleam! Här är ett exempel på en enkel funktion som tar emot två heltal och returnerar deras produkt:
-
-```
-fn multiplicera(x, y) {
-  x * y
-}
-
-main() {
-  let resultat = multiplicera(5, 10)
-  IO.println(resultat)
-}
+```Gleam
+git init mittprojekt
+cd mittprojekt
+gleam new app hello_world
 ```
 
-Kör sedan ditt program genom att köra följande kommando:
+Det här kommer att skapa en ny app med namnet "hello_world" i ditt projekt. Du kan sedan öppna den i ditt favoritredigeringsprogram och börja koda!
 
+För att bygga och köra din app kan du använda följande kommandon:
+
+```Gleam
+gleam build
+gleam run
 ```
-Gleam kör
-```
 
-Output: 50
-
-Ovanstående kod skapar en funktion som heter "multiplicera" och kallas sedan i huvudfunktionen "main". Funktionen tar emot två parametrar och använder sedan operatorn "*" för att multiplicera dem och returnera resultatet. I "main" funktionen används detta resultat sedan för att skriva ut det till konsolen med hjälp av IO.println.
-
-Du kan testa och utveckla ditt Gleam-projekt ytterligare genom att använda olika typer av datastrukturer, loopar, jämförelseoperatorer och mycket mer. Det finns en mängd resurser online för att lära sig mer om Gleam och för att få inspiration till dina projekt.
+Outputen av din app kommer att visas i terminalen. Grattis, du har nu startat ditt första projekt i Gleam!
 
 ## Djupdykning
 
-För att få ut mesta möjliga av ditt Gleam-projekt, är det viktigt att förstå de grundläggande delarna i programspråket. Gleam är ett starkt typat språk, vilket innebär att alla variabler måste deklareras med en specifik typ och inte kan ändras senare. Detta leder till mer stabila och säkra program.
+För att verkligen ta ditt nya projekt till nästa nivå, finns det några saker du kan göra:
 
-Gleam använder också funktionell programmering, vilket innebär att funktioner är förstaklasss medborgare och därmed kan användas som argument till andra funktioner eller returneras från funktioner. Detta gör det möjligt att skriva kompakt och elegant kod.
+1. Lägg till beroenden: Med Gleams pakethanterare kan du enkelt lägga till beroenden till ditt projekt och använda dem i din kod.
+2. Skriv tester: Testning är viktigt för att säkerställa att din kod fungerar som den ska. Genom att skriva tester kan du upptäcka och fixa buggar innan de hamnar i produktion.
+3. Använd moduler: Gleam tillåter dig att organisera din kod i moduler för att hålla den mer strukturerad och lättare att underhålla.
 
-En annan viktig del av Gleam är moduler, som låter dig organisera ditt projekt i åtskilda filer och moduler, vilket gör det lättare att hantera och underhålla större projekt.
+Se till att utforska Gleams dokumentation och community för mer information om hur du kan utveckla ditt projekt.
 
-## Se också
+## Se även
 
-- Gleams officiella hemsida: [https://gleam.run/](https://gleam.run/)
-- Gleam-paket: [https://lib.rs/crates/gleam](https://lib.rs/crates/gleam)
-- Gleam-communityn: [https://github.com/gleam-lang/gleam/discussions](https://github.com/gleam-lang/gleam/discussions)
+- [Gleam's officiella dokumentation](https://gleam.run)
+- [Gleam's GitHub repository](https://github.com/gleam-lang/gleam)

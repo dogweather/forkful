@@ -1,47 +1,46 @@
 ---
-title:                "Bash: Utilizzo delle espressioni regolari"
+title:                "Bash: Utilizzare le espressioni regolari"
+simple_title:         "Utilizzare le espressioni regolari"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché utilizzare le espressioni regolari
+## Perché
 
-Le espressioni regolari sono uno strumento potente per manipolare testo e stringhe in Bash. Consentono di cercare, sostituire e manipolare facilmente testo basandosi su un pattern specifico. Con regole precise e un po' di pratica, le espressioni regolari possono semplificare il processo di coding e risparmiare tempo ed energia.
+Le espressioni regolari sono utilizzate per trovare e manipolare testo in modo rapido ed efficiente. Sono uno strumento potente per controllare gli input dell'utente, estrarre informazioni da un testo e controllare la validità dei dati prima di elaborarli nel tuo codice Bash.
 
-## Come utilizzare le espressioni regolari in Bash
+## Come utilizzarle
 
-Per utilizzare le espressioni regolari in Bash, utilizziamo il comando `regex` seguito dal pattern che vogliamo cercare e dalle opzioni desiderate. Ad esempio, per cercare la parola "casa" all'interno di un file di testo, possiamo utilizzare il seguente comando:
-
-```Bash
-regex casa file.txt
-```
-
-Questo comando cercherà la parola "casa" all'interno del file.txt e restituirà tutte le occorrenze trovate.
-
-Possiamo anche utilizzare le espressioni regolari per sostituire del testo. Ad esempio, se volessimo sostituire la parola "casa" con "appartamento" nel file.txt, possiamo utilizzare il seguente comando:
+Per utilizzare le espressioni regolari in Bash, è necessario utilizzare il comando "grep". Ad esempio, per cercare una determinata parola in un file di testo, è possibile utilizzare il seguente codice:
 
 ```Bash
-regex -s casa appartamento file.txt
+grep "parola" file.txt
 ```
 
-Per maggiori opzioni e utilizzo avanzato delle espressioni regolari in Bash, possiamo consultare la documentazione ufficiale del comando `regex`.
+Questo esempio restituirebbe tutte le righe del file che contengono la parola cercata. È possibile anche utilizzare espressioni regolari per cercare un determinato modello di testo. Ad esempio, per trovare tutte le parole che iniziano con la lettera "a", il codice sarebbe:
 
-## Approfondimenti sulle espressioni regolari
+```Bash
+grep "^a" file.txt
+```
 
-Le espressioni regolari in Bash possono essere utilizzate per molti scopi, come la validazione di input utente, il controllo di stringhe e la manipolazione di testo. Esistono diverse sintassi e regole per creare pattern precisi e potenti. Ecco alcuni suggerimenti per un utilizzo più efficace delle espressioni regolari:
+## Approfondimento
 
-- Utilizzare il comando `grep` per cercare e filtrare testo basandosi su un pattern specifico.
-- Familiarizzarsi con le diverse opzioni di `regex` per specificare comportamenti diversi, come case-insensitive o non-greedy match.
-- Utilizzare i meta-caratteri, come `*` e `+`, per rappresentare un numero variabile di caratteri.
-- Imparare ad utilizzare le parentesi e le espressioni logiche per creare pattern più complessi.
+Le espressioni regolari possono diventare molto complesse e potenti. Ad esempio, è possibile utilizzare i simboli "*" e "?" per indicare corrispondenze multiple o facoltative, rispettivamente. Inoltre, le parentesi possono essere utilizzate per creare gruppi di espressioni all'interno di una regola.
 
-Esistono anche molti siti e risorse online che offrono tutorial e esempi di utilizzo delle espressioni regolari in Bash. Con un po' di pratica e pazienza, è possibile diventare esperti nell'utilizzo di questo strumento utile per il nostro lavoro di coding.
+Un'altra caratteristica utile delle espressioni regolari in Bash è che supportano anche l'utilizzo di "backreferences". Questi consentono di fare riferimento a gruppi precendenti all'interno della stessa espressione regolare. Ad esempio, è possibile utilizzare il codice seguente per trovare le parole duplicate in un testo:
+
+```Bash
+grep -E '([a-zA-Z]+).*\1' file.txt
+```
+
+Questo esempio troverà tutte le parole composte da almeno due lettere e ripetute una o più volte all'interno dello stesso file.
 
 ## Vedi anche
 
-- [Documentazione ufficiale del comando `regex`](https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html)
-- [Tutorial sulle espressioni regolari in Bash](https://www.compose.com/articles/mastering-fun-with-bash-regular-expressions/)
-- [Esempi di utilizzo delle espressioni regolari](https://www.howtoforge.com/tutorial/linux-regular-expressions/)
+- [The Linux Command Line: A Complete Guide to the Linux Operating System](https://www.amazon.it/Linux-CommandLine-Complete-Bill-Shotts/dp/1593279523)
+- [Introduzione alle espressioni regolari di Bash](https://www.linux.com/tutorials/introduction-regular-expressions/)
+- [Bash Guide per principianti: Espressioni regolari](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html)

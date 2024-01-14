@@ -1,46 +1,43 @@
 ---
 title:                "Fish Shell: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué obtener la fecha actual en Fish Shell?
 
-¿Alguna vez te has preguntado cómo puedes obtener la fecha actual en tu terminal? Saber la fecha puede ser útil en muchas situaciones, como por ejemplo cuando estás organizando tus archivos o cuando necesitas marcar una fecha para un recordatorio. En este artículo te explicaremos cómo obtener la fecha actual en Fish Shell y algunas de sus funciones.
+Hay varias razones por las cuales podrías necesitar obtener la fecha actual en tu programa de Fish Shell. Puede ser para registrar cuando se realizó una acción en particular, para mostrar la fecha actual en una interfaz de usuario o para automatizar tareas basadas en la fecha.
 
 ## Cómo hacerlo
 
-Para empezar, puedes utilizar el comando `date` para obtener la fecha actual en tu terminal. Por ejemplo:
+Para obtener la fecha actual en Fish Shell, usamos el comando `date` seguido de un formato específico. Por ejemplo, si queremos mostrar la fecha en formato "día-mes-año", escribiríamos lo siguiente en la terminal:
 
-```Fish Shell
-date
 ```
-```
-dom dic 20 17:30:01 EST 2020
+Fish Shell> date +"%d-%m-%Y"
 ```
 
-Sin embargo, esto nos da una fecha en un formato bastante específico que puede ser difícil de entender para algunos usuarios. Por eso, Fish Shell tiene una función llamada `strftime` que nos permite dar formato a la fecha de acuerdo a nuestras preferencias. Por ejemplo:
+Esto nos devolvería la fecha actual en el formato deseado, por ejemplo: 10-06-2021. Podemos personalizar el formato según nuestras necesidades utilizando los diferentes códigos que se encuentran en la documentación de Fish Shell para el comando `date`.
 
-```Fish Shell
-echo (date | strftime "%d de %B del %Y")
+## Inmersión profunda
+
+Además del comando `date`, existen otras opciones para obtener la fecha actual en Fish Shell. Por ejemplo, podemos usar el comando `strftime` para formatear la fecha y hora, o el comando `quirkydate` que nos permite especificar una fecha y hora específicas en el formato que queramos.
+
+Otra opción interesante es utilizar variables de Fish Shell para almacenar la fecha actual y utilizarla en nuestro código. Por ejemplo, podemos crear una variable llamada `hoy` y almacenar la fecha utilizando el comando `date`:
+
 ```
+Fish Shell> set hoy (date +"%d-%m-%Y")
 ```
-20 de diciembre del 2020
-```
 
-Con esta función, podemos especificar cómo queremos que se muestre la fecha utilizando diferentes símbolos. Por ejemplo, `%d` representa el día del mes, `%B` el nombre del mes y `%Y` el año completo. En la [documentación](https://fishshell.com/docs/current/cmds/date.html) de Fish Shell puedes encontrar todos los símbolos disponibles y cómo utilizarlos.
-
-## Profundizando
-
-Si quieres obtener más información sobre la fecha actual, Fish Shell también tiene la función `date`. Por ejemplo, puedes utilizar `date +"%s"` para obtener la fecha en formato Unix y `date +"%z"` para obtener la zona horaria en la que te encuentras.
-
-Otra función interesante es `epoch`, que nos da la cantidad de segundos que han pasado desde el 1 de enero de 1970 hasta la fecha actual. Esta función puede ser útil para calcular la diferencia de tiempo entre dos fechas.
+Luego, podemos llamar a esta variable en nuestro código y mostrar la fecha actual en cualquier lugar que queramos.
 
 ## Ver también
 
-- [Documentación de Fish Shell sobre el comando `date`](https://fishshell.com/docs/current/cmds/date.html)
-- [Lista de símbolos para la función `strftime`](http://www.cplusplus.com/reference/ctime/strftime/)
-- [Más información sobre la función `epoch`](https://fishshell.com/docs/current/commands.html#epoch)
+- Documentación de Fish Shell para el comando `date`: https://fishshell.com/docs/current/cmds/date.html
+- Opciones de formatos para `date`: https://fishshell.com/docs/current/cmds/date.html#formatting
+- Comando `strftime`: https://fishshell.com/docs/current/cmds/strftime.html
+- Comando `quirkydate`: https://fishshell.com/docs/current/cmds/quirkydate.html

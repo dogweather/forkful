@@ -1,21 +1,21 @@
 ---
-title:                "Go: 「文字列を小文字に変換する」"
+title:                "Go: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは Go プログラミングの皆さん！今日は文字列を小文字に変換する方法についてお話ししたいと思います。なぜ誰かが文字列を小文字に変換するのか、そしてどのようにするのか、さらに詳しく掘り下げてみましょう。
+# なぜGo言語を学ぶ必要があるのか
 
-## なぜ
+Go言語は近年、プログラミング界隈で注目を集めている言語の一つです。特に、クラウド環境での高いパフォーマンスと簡潔な構文が評価され、多くの開発者がGo言語を取り入れています。その中でも重要な機能の一つに、文字列を小文字に変換する方法があります。本記事では、Go言語で文字列を小文字に変換する方法を紹介します。
 
-文字列を小文字に変換する理由はいくつかあります。例えば、ユーザーが入力した文字列を全て小文字に統一することで、データの一貫性を保つことができます。また、文字列を比較する際に大文字と小文字を区別せずに扱いたい場合や、検索機能の際に文字列の大文字小文字を区別したくない場合などもあります。
+## Go言語で文字列を小文字に変換する方法
 
-## 使い方
-
-Go言語では、stringsパッケージにあるToLower関数を使用することで文字列を小文字に変換することができます。下記のコードをご覧ください。
+Go言語では、文字列を小文字に変換するための組み込み関数`strings.ToLower()`を使用します。この関数は、引数として受け取った文字列を全て小文字に変換した結果を返します。
 
 ```Go
 package main
@@ -26,26 +26,30 @@ import (
 )
 
 func main() {
-	str := "Hello, WORLD!"
+	str := "HELLO WORLD"
 	fmt.Println(strings.ToLower(str))
 }
 ```
-下記のような出力が得られます。
+
+このコードを実行すると、以下のような結果が得られます。
 
 ```
-hello, world!
+hello world
 ```
 
-## もっと詳しく
+## 文字列を小文字に変換する方法の詳細
 
-Go言語のstringsパッケージには、ToLower以外にも文字列を変換するための関数がいくつかあります。例えば、ToLowerSpecial関数を使用することで特定の文字にだけ変換を行うことができます。また、stringsパッケージ以外にもUnicodeやUTF-8に関する知識があると、より詳細な変換が可能になります。
+`strings.ToLower()`関数は、引数として与えられた文字列の全ての文字を、Unicodeに従って小文字に変換します。そのため、英字以外の文字も正しく小文字に変換されます。
 
-## 今後も参考にしてください
+また、この関数は元の文字列を破壊しないため、変換後の結果を新しい変数に代入する必要があります。もし元の文字列を変更したい場合は、`strings.ToLower()`ではなく`strings.ToLowerIov()`関数を使用します。
 
-もし今回ご紹介した方法以外にも文字列を小文字に変換する方法があるかもしれません。ご紹介した関数以外にも、是非試してみてください！さらに、下記のリンクを参考にしながらもっと深く学んでみてください。
+## 参考リンク
+
+- [The Go Programming Language](https://golang.org/)
+- [strings package](https://golang.org/pkg/strings/)
+- [Learn Go in Y minutes](https://learnxinyminutes.com/docs/ja-jp/go-ja/)
 
 ## 関連リンク
 
-- [Go言語公式ドキュメント - stringsパッケージ](https://golang.org/pkg/strings/)
-- [Unicode公式サイト](https://unicode.org/)
-- [UTF-8について学ぶ - Qiita](https://qiita.com/mzsmz/items/ad1b1ff8c23213a7725a)
+- [Golang.jp](https://golang.jp/)
+- [Awesome-Go](https://github.com/avelino/awesome-go)

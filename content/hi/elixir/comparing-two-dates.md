@@ -1,45 +1,35 @@
 ---
-title:                "Elixir: दो तारीखों का तुलना करना"
+title:                "Elixir: दो तारीखों की तुलना करना"
+simple_title:         "दो तारीखों की तुलना करना"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+##क्यों
+दो तारीखों को तुलना करने में शामिल होने के लिए क्यों किसी को निर्देशित करें।
 
-किसी तारीखों को तुलना करने में शामिल होने के लिए *क्यों* किसी को ज्यादातर इंसान द्वारा प्रयुक्त जॉडा काल्पनिक क्षेत्र के रूप में खेलने की क्षमता को बढ़ाने में मदद कर सकती है।
-
-## कैसे करें
-
-कूटमजगर और कोड प्रवर्तन जैसे विषयों में मकिंग के दौरान यह फायदेमंद हो सकता है, इस उदाहरण में, यह तारीखों को तुलना करने में कैसे मदद करता है:
-
+##कैसे करे
 ```Elixir
-defmodule DateComparison do
-  def compare_dates(date1, date2) do
-    if date1 > date2 do
-      IO.puts "#{date1} is after #{date2}"
-    else
-      IO.puts "#{date2} is after #{date1}"
-    end
-  end
+defcompare_dates(date1, date2) do
+  date1 < date2 
 end
-
-DateComparison.compare_dates(~D[2021-06-05], ~D[2021-06-01])
 ```
+उपरोक्त कोड ब्लॉक में हमने Elixir में दो तारीखों को तुलना करने का सरल एक्साम्पल देखा है। कोड पर, हम "compare_dates" फंक्शन का उपयोग करते हैं जो दो तारीखों को लेता है और उन्हें तुलना करता है। फंक्शन अगर पहली तारीख दूसरी से कम हो तो true वापस करता है। प्रकरण तुलना के मद्देनजर ध्यान दें।
 
 आउटपुट:
-2021-06-05 is after 2021-06-01
+```Elixir
+true
+```
 
-## गहराई में जाएं
+##गहराई में खोज
+दो तारीखों की तुलना और तारीख समझ में आने वाले कॉडिंग असामान्य उदाहरणों का अध्ययन करते हुए अधिक जान सकते हैं। इसके अलावा, यह आपको दो तारीखों को तुलना करने के लिए अन्य Elixir प्रोग्रामिंग कार्यों के लिए भी मूल्यबोध और समझ देने में मदद कर सकता है।
 
-जैसा कि पहले भी उल्लेख किया गया है, तारीखों को तुलना करना बहुत महत्वपूर्ण हो सकता है जब हम बेहतर लोग बनने केंद्रित होते हैं। यह ट्यूटोरियल कुछ आभासी उदाहरण तारीख के मामले के लिए तारीख अपडेट करने और दो अलग प्रकार की तारीखों के बीच तुलना करने के लिए कुछ महत्वपूर्ण कूटस्थितियों को शामिल कर सकता है।
+##देखें
+इस आर्टिकल में हमने देखा कि दो तारीखों को Elixir में तुलना कैसे किया जाता है और उससे क्या सीखा जा सकता है। अधिक जानने के लिए निम्नलिखित लिंक्स का उपयोग करे:
 
-## इसके अलावा देखें
-
-[अमीताभ सिंह द्वारा लिखित एक हार्डवेयर समन्वय समाधान के बारे में जानकारी](https://elixir-lang.org/getting-started/introduction.html)
-
-[0xAX की ब्लॉग पोस्ट जो Elixir के ग्राहक को होस्ट करते हैं](https://elixir-lang.org/getting-started/introduction.html)
-
-[व्यावसायिक Elixir दस्तावेज़ की जांच जानकारी](https://hexdocs.pm/elixir/getting-started.html)
+- Elixir Docs on Date Comparison: https://hexdocs.pm/elixir/Date.html#compare/2
+- A Comprehensive Guide to Elixir Dates: http://elixir.org.uk/tutorials/dates.html

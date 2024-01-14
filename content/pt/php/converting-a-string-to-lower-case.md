@@ -1,34 +1,45 @@
 ---
-title:                "PHP: Convertendo uma string para letras minúsculas"
+title:                "PHP: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para letras minúsculas?
+# Por que converter uma string para letras minúsculas?
 
-Converter uma string para letras minúsculas é uma tarefa comum em programação, especialmente quando se trabalha com entradas de usuário. Isso garante que não haja problemas de comparação de strings ou erros ao digitar algum texto com letras maiúsculas acidentalmente.
+Existem várias razões pelas quais alguém pode precisar converter uma string para letras minúsculas ao lidar com programação em PHP. Alguns motivos comuns incluem padronização de dados, facilitar a comparação de strings e evitar erros de case sensitivity.
 
-## Como fazer isso em PHP?
+# Como fazer isso em PHP?
 
-Para converter uma string em letras minúsculas em PHP, podemos utilizar a função `strtolower()`. Veja um exemplo abaixo:
+Existem várias maneiras de converter uma string para letras minúsculas em PHP. Aqui estão alguns exemplos usando diferentes funções:
 
 ```PHP
-$string = "Olá MUNDO!";
-echo strtolower($string);
+// Usando a função strtolower()
+$string = "ESTA É UMA STRING EM MAIÚSCULAS";
+echo strtolower($string); // saída: "esta é uma string em maiúsculas"
+
+// Usando a função mb_strtolower(), se sua string contém caracteres multibyte
+$string = "ESSA É UMA STRING EM UTF-8";
+echo mb_strtolower($string); // saída: "essa é uma string em utf-8"
+
+// Usando a função strcasecmp() para comparar strings sem levar em conta o case
+$str1 = "olá";
+$str2 = "OLÁ";
+echo strcasecmp($str1, $str2); // saída: 0 (strings são iguais)
 ```
 
-O código acima irá imprimir "olá mundo!", já que a função `strtolower()` transforma todas as letras maiúsculas em minúsculas.
+# Informações adicionais sobre a conversão de strings para letras minúsculas
 
-## Aprofundando mais
+É importante notar que, ao converter uma string para letras minúsculas, a função irá considerar o charset do seu arquivo PHP. Se você não especificar o charset, a função usará o padrão definido nas configurações do PHP, que pode variar dependendo do servidor.
 
-É importante lembrar que a conversão para letras minúsculas pode variar de acordo com a codificação de caracteres utilizada. Por exemplo, em UTF-8, o caractere "É" será convertido para "é", mas em ISO-8859-1, ele será convertido para "ê".
+Além disso, é importante ter em mente que a conversão para letras minúsculas pode ter algumas variações em diferentes idiomas. Por exemplo, em algumas línguas, a letra "I" maiúscula pode ser convertida para "ı" minúscula, enquanto em outras, pode ser convertida para "i" minúscula. Então, é sempre importante testar e verificar se a conversão está sendo feita corretamente para o idioma em questão.
 
-Também é possível converter apenas a primeira letra de uma string para minúscula, utilizando a função `lcfirst()`. E, caso seja necessário converter todas as primeiras letras das palavras em uma string para minúsculas, podemos utilizar a função `ucwords()`.
+# Veja também
 
-## Veja também
-
-- Documentação oficial do PHP para a função `strtolower()`: https://www.php.net/manual/pt_BR/function.strtolower.php
-- Mais informações sobre conversão de strings no PHP: https://www.php.net/manual/pt_BR/reference.mbstring.php
+- [Documentação oficial do PHP para strtolower()](https://www.php.net/manual/pt_BR/function.strtolower.php)
+- [Tutorial sobre case sensitivity e como lidar com isso em PHP](https://www.tutorialrepublic.com/php-tutorial/php-string-case-insensitive.php)
+- [Informações sobre configurações de charset no PHP](https://www.php.net/manual/pt_BR/function.mb-internal-encoding.php)

@@ -1,7 +1,9 @@
 ---
 title:                "Python: Väliaikaisen tiedoston luominen"
+simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/creating-a-temporary-file.md"
 ---
 
@@ -9,53 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Miksi luoda väliaikainen tiedosto?
 
-Väliaikaisten tiedostojen luominen on ratkaisevan tärkeää monissa tilanteissa ohjelmoinnissa. Niitä käytetään esimerkiksi tallentamaan tilapäisiä tietoja tai tiedostoja, jotka voidaan poistaa turvallisesti sen jälkeen kun niitä ei enää tarvita.
+Väliaikaisia tiedostoja käytetään useisiin tarkoituksiin Python-ohjelmoinnissa. Ne voivat auttaa tallentamaan väliaikaisia tietoja, jotka eivät ole tarpeen pitkäaikaiseen tallennukseen tai ne voivat auttaa suorittamaan tiettyjä tehtäviä, kuten tiedostojen jakamista tai päivittämistä, ohjelman suorituksen aikana.
 
-# Miten luoda väliaikainen tiedosto
+# Kuinka tehdä se?
 
-Väliaikaisen tiedoston luominen Pythonissa on helppoa käyttämällä `tempfile` -kirjastoa. Se tarjoaa erilaisia ​​toimintoja ja vaihtoehtoja väliaikaisten tiedostojen luomiseen ja hallintaan. Alla on esimerkkejä eri tapoista luoda väliaikainen tiedosto ja sen käyttämisestä:
+Väliaikaisen tiedoston luominen Pythonissa on helppoa ja nopeaa. Käytämme 'tempfile' moduulia tämän tarkoitukseen. Voit aloittaa tuomalla tämän moduulin käyttäen seuraavaa koodia:
 
 ```Python
 import tempfile
+```
 
-# Luodaan väliaikainen tiedosto ja tallennetaan se muuttujaan
-temp_file = tempfile.TemporaryFile()
+Arvailun välttämiseksi voimme määrittää väliaikaisen tiedoston nimen ja sijainnin käyttäen ```tempfile.NamedTemporaryFile()``` -funktiota. Tämä luo väliaikaisen tiedoston ja palauttaa sen tiedostokahvan, jota voimme käyttää työskennellessämme tiedoston kanssa.
 
-# Kirjoitetaan tiedostoon tekstiä
-temp_file.write(b"Tämä on väliaikainen tiedosto.")
+```Python
+temp_file = tempfile.NamedTemporaryFile()
+print(temp_file.name)
+```
 
-# Siirrytään tiedoston alkuun
-temp_file.seek(0)
+Tämän koodin tulostuksena pitäisi näkyä väliaikaisen tiedoston nimi, esimerkiksi "/tmp/tmpxyz45tw".
 
-# Luetaan tiedostosta ja tulostetaan sen sisältö
-print(temp_file.read())
+# Syventävä tarkastelu
 
-# Suljetaan ja poistetaan tiedosto automaattisesti
-temp_file.close()
+Tempfile-moduuli tarjoaa myös muita vaihtoehtoja väliaikaisten tiedostojen luomiseen. Voimme esimerkiksi määrittää tiedoston nimen ja sijainnin itse käyttäen ```tempfile.TemporaryDirectory()``` -funktiota.
 
-# Luodaan väliaikainen hakemisto ja sen alle tiedosto
+```Python
+temp_dir = tempfile.TemporaryDirectory()
+print(temp_dir.name)
+```
+
+Tämä koodi tulostaa hakemiston nimen, joka on luotu väliaikaisia tiedostoja varten, esimerkiksi "/tmp/tmpxyz45tw".
+
+Voimme myös asettaa väliaikaisen tiedoston poistettavaksi automaattisesti ohjelman suorituksen päätyttyä käyttämällä ```with``` -lauseketta.
+
+```Python
 with tempfile.TemporaryDirectory() as temp_dir:
-    temp_path = tempfile.mkstemp(dir=temp_dir)[1]
-    # tulostetaan luodun tiedoston polku
-    print(temp_path)
+    print(temp_dir.name)
 ```
 
-## Tulostus
-
-```
-b'Tämä on väliaikainen tiedosto.'
-
-/var/folders/hr/cf98j0l93xv1qrftlcswxgp00000gn/C/tmpttuohunz
-```
-
-# Syvemmälle väliaikaisiin tiedostoihin
-
-Väliaikaisten tiedostojen luomisessa on useita tärkeitä asioita, jotka on otettava huomioon. Esimerkiksi `delete=False` asetus `mkstemp()` -toiminnossa estää tiedoston automaattisen poistamisen suljettaessa. `NamedTemporaryFile()` -toiminto luo nimetyn tiedoston, johon voidaan myöhemmin viitata uudelleen. `gettempdir()` palauttaa oletushakemiston, johon väliaikaisia tiedostoja tallennetaan.
-
-Katso [Pythonin virallinen dokumentaatio](https://docs.python.org/fi/3/library/tempfile.html) lisätietoja ja vaihtoehtoja väliaikaisten tiedostojen luomiseen.
+Tämä varmistaa, että väliaikainen tiedosto poistetaan ohjelman suorituksen päätyttyä, vähentäen tarvetta huolehtia tiedoston poistamisesta itse.
 
 # Katso myös
 
-- [How to manage temporary files in Python?](https://www.geeksforgeeks.org/how-to-manage-temporary-files-in-python/)
-- [Creating Temporary Files and Directories with Python](https://stackabuse.com/creating-temporary-files-and-directories-with-python/)
-- [Understanding Temporary Files and Folders in Python](https://levelup.gitconnected.com/understanding-temporary-files-and-folders-in-python-ae475e7c2b0)
+- [Tempfile-moduulin dokumentaatio](https://docs.python.org/3/library/tempfile.html)
+- [Python-tiedostojen hallinta](https://realpython.com/python-file-management/)
+- [Tietoa Pythonista](https://www.python.org/)

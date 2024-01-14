@@ -1,41 +1,48 @@
 ---
 title:                "Bash: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi etsiminen ja korvaaminen tekstin kanssa on tarpeellista
+## Miksi
 
-Etsiminen ja korvaaminen tekstin kanssa on tärkeä osa käyttäjän ja sovelluksen välisen vuorovaikutuksen parantamista. Se auttaa nopeuttamaan työprosesseja ja säästää aikaa manuaaliselta työltä.
+Haluatko tehdä nopeita ja tehokkaita muutoksia tekstiin? Haluatko korjata useita sanoja tai lauseita samanaikaisesti? Sitten tekstinhaku ja korvaaminen voi olla juuri oikea ratkaisu sinulle. Se on helppo tapa muokata suuria määriä tekstiä helposti ja nopeasti.
 
-## Miten: Esimerkkejä koodista ja tulostaulukoista, jotka on kirjoitettu Bash-kielellä
+## Kuinka
 
+Bash-ohjelmoinnissa on useita tapoja etsiä ja korvata tekstiä. Yksi yleisimmistä tavoista on käyttää "sed" -komentoa, joka on lyhenne sanalle "stream editor". Se näyttää tältä:
+
+```Bash
+sed 's/etsitty teksti/korvaava teksti/g' tiedostonimi
 ```
-# Etsi ja korvaa teksti sulkumerkkeissä
-echo "Tervetuloa (Nimi)!" | sed 's/(.*)/John/' 
-```
-Tuloste: Tervetuloa John!
 
-```
-# Etsi ja korvaa kaikki esiintymät tekstin sisällä
-echo "Tämä on testilause." | sed 's/testi/koe/g' 
-```
-Tuloste: Tämä on koelause.
+Tässä komennossa "s" viittaa etsittävään tekstiin ja "g" viittaa sanojen tai lauseiden korvaamiseen koko tiedostossa. Voit myös käyttää muita säännöllisiä lausekkeita korvaamiseen, kuten esimerkiksi korvaamaan kaikki numerot tiedostossa:
 
+```Bash
+sed 's/[0-9]/#/g' tiedostonimi
 ```
-# Tallenna muutokset alkuperäiseen tiedostoon
-sed -i 's/hae/haku/g' tiedosto.txt
+
+Toinen tapa etsiä ja korvata tekstiä on käyttää "tr" -ohjelmaa, joka on lyhenne sanalle "translate". Se näyttää tältä:
+
+```Bash
+tr 'etsitty teksti' 'korvaava teksti' < tiedostonimi
 ```
-Tämä käsky korvaa kaikki esiintymät "hae" tekstin tiedostossa "haku" tekstillä ja tallentaa muutokset alkuperäiseen tiedostoon.
 
-## Syvä sukellus: Lisätietoa etsimisestä ja korvaamisesta tekstin kanssa
+Tämä komento korvaa vain ensimmäisen esiintymän jokaisesta etsitystä sanasta tai lauseesta. Voit myös käyttää säännöllisiä lausekkeita "tr" -komennossa.
 
-Etsiminen ja korvaaminen tekstin kanssa on tehokas työkalu Bash-ohjelmoinnissa, ja sitä voidaan käyttää erilaisiin tarkoituksiin. Se voidaan yhdistää muihin komentorivin työkaluihin, kuten awk ja grep, jotta voidaan suorittaa monimutkaisempia tekstin käsittelyä. Sed-komento on myös erittäin monipuolinen ja siinä on erilaisia vaihtoehtoja, kuten "s///g" joka korvaa kaikki esiintymät tiedostossa tai "s///1", joka korvaa vain ensimmäisen esiintymän.
+## Syvällisempi tarkastelu
+
+Etsimisen ja korvaamisen lisäksi Bash-ohjelmoinnissa on useita muita tapoja muokata tekstiä. Voit muun muassa käyttää "grep"-komennolla etsiä tietynlaista tekstiä ja sitten "cut"-komennolla poistaa halutut osat. Voit myös yhdistellä erilaisia komentoja saadaksesi tarkempia muokkausmahdollisuuksia.
+
+On myös hyödyllistä ymmärtää säännöllisiä lausekkeita ja niiden käyttöä haku- ja korvaustoiminnoissa. Ne antavat sinulle enemmän joustavuutta ja tarkempaa kontrollia muokkauksiin.
 
 ## Katso myös
-- [Sed-komento: tekstintyöstöura ja sen hyödyt](https://www.tldp.org/LDP/abs/html/textproc.html)
-- [RegEx-opas: ilmaisuja ja säännöllisiä lausekkeita Bashissa](https://www.linux.com/training-tutorials/introducing-regular-expression-tutorial-basics/)
-- [Grep-komento: tekstinhaku ja sen sovellukset Bashissa](https://www.gnu.org/software/grep/manual/grep.html)
+
+- [Bash Cheat Sheet](https://www.educative.io/blog/bash-shell-command-cheat-sheet)
+- [Perusteet Bash-skriptauksesta](https://linuxjourney.com/lesson/bash-scripting-basics)
+- [Säännölliset lausekkeet - yksinkertainen opas](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)

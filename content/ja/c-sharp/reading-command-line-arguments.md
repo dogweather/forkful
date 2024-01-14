@@ -1,48 +1,67 @@
 ---
-title:                "C#: コンピュータープログラミングの記事タイトル：コマンドライン引数の読み取り"
+title:                "C#: コンピュータプログラミングの記事タイトル：「コマンドライン引数の読み込み」"
+simple_title:         "コンピュータプログラミングの記事タイトル：「コマンドライン引数の読み込み」"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜコマンドライン引数を読み取るのか
+## なぜ読むのか
 
-コマンドライン引数を読み取ることは、特定のプログラムを実行する際に非常に便利です。たとえば、ファイル名やディレクトリ、接続情報などをプログラムに渡すことができます。このように、コマンドライン引数を使用することで、プログラムをより柔軟に動作させることができます。
+コマンドライン引数を読むことは、プログラマーにとって非常に重要なスキルです。コマンドライン引数を読むことにより、ユーザーがプログラムを起動する際にコマンドラインから入力した値を取得することができます。これにより、ユーザーがプログラムをより柔軟に操作できるようになります。さらに、コマンドライン引数を取得することで、プログラムの実行中に必要な情報を追加することもできます。
 
-# 使い方
+## 使い方
 
-コマンドライン引数を読み取るには、C#に用意されている```Main```メソッドを使用します。このメソッドには、```string[] args```という名前のパラメータがあります。このパラメータには、実行時に渡されるコマンドライン引数が格納されています。
-
-例えば、以下のようなコードを実行すると、```Hello World```というメッセージとともに、渡されたコマンドライン引数が出力されます。
+コマンドライン引数を読むには、複数の方法があります。まず最初に、プログラムの実行時に指定された全ての引数を取得する方法です。以下の例を参考にしてください。
 
 ```C#
-static void Main(string[] args)
+using System;
+
+class Program 
 {
-    Console.WriteLine("Hello World!");
-    Console.WriteLine("コマンドライン引数: " + args[0]);
+  static void Main(string[] args) 
+  {
+    Console.WriteLine("指定された引数の数は: {0}", args.Length);
+    for (int i = 0; i < args.Length; i++) 
+    {
+      Console.WriteLine(args[i]);
+    }
+  }
+}
+```
+このプログラムを実行すると、コマンドラインから入力した引数の数とその値が表示されます。
+
+実行時に引数を指定しなかった場合、`args.Length`は0になります。そのため、引数がない場合の処理も行う必要があります。
+
+もう一つの方法は、指定した引数を個別に取得することです。以下の例を参考にしてください。
+
+```C#
+using System;
+
+class Program 
+{
+  static void Main(string[] args) 
+  {
+    string name = args[0]; // 最初の引数を取得
+    int age = int.Parse(args[1]); // 二番目の引数を数値に変換して取得
+    Console.WriteLine("私の名前は{0}です。年齢は{1}歳です。", name, age);
+  }
 }
 ```
 
-入力するコマンド：```dotnet run test``` 
+このプログラムを実行する際には、引数として名前と年齢を順番に入力する必要があります。
 
-出力：
-```
-Hello World!
-コマンドライン引数: test
-```
+## 詳細を深く掘る
 
-# 深堀り
+コマンドライン引数の取得については、さらに詳しい情報があります。例えば、引数をオプションとして設定したり、引数にデフォルト値を設定したりすることもできます。また、引数の値をチェックしてエラーを防ぐ方法もあります。これらの情報については、[この記事](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)を参考にしてください。
 
-コマンドライン引数は、プログラム実行時に変更される可能性があるため、注意が必要です。```args```配列には常に最低でも1つの要素が含まれていることを確認する必要があります。また、コマンドライン引数は文字列として渡されるため、必要に応じて数値などの型変換が必要になる場合があります。
+コマンドライン引数は、プログラムをより柔軟に制御するために欠かせないものです。ぜひ覚えておいて、自分のプログラムに活用してみてください。
 
-さらに、コマンドライン引数を受け取るのに便利なライブラリや、複数のコマンドライン引数をまとめて受け取る方法など、さまざまなテクニックがあります。詳細については、以下のリンクを参考にしてください。
+## 関連情報を見る
 
-# 参考リンク
-
-[Microsoft Docs: コマンドライン引数に対するアクセス](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/main-and-command-args/?view=netframework-4.7.2)
-
-[C# エキスパートプログラミング入門：コマンドライン引数の処理](https://www.atmarkit.co.jp/ait/articles/0806/05/news146.html)
-
-[C# 超入門：コマンドライン引数を受け取る方法](https://tps-study-hirooka.hateblo.jp/entry/2020/04/21/210000)
+- [C#ドキュメント: Main メソッドとコマンドライン引数](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [C#ドキュメント: コマンドライン引数を使用する](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/main-and-command-args/how-to-use-command-line-arguments)
+- [C#ドキュメント: コマンドライン引数を正しく処理する](https://docs.microsoft.com/ja-jp/archive/blogs/kebab/executing-a-command-line-tool-sensibly)

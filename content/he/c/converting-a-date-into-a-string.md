@@ -1,60 +1,44 @@
 ---
-title:                "C: המרת תאריך למחרוזת"
+title:                "C: ממירים תאריך למחרוזת"
+simple_title:         "ממירים תאריך למחרוזת"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
- Converting a date into a string is a useful skill to have in programming. It allows you to manipulate and display dates in a user-friendly format, making your programs more practical and visually appealing. Whether you need to display dates in a specific format or perform calculations using date and time, being able to convert them into strings is an essential skill to have.
+על מה אנחנו מדברים?
 
-## איך לעשות זאת
-כדי להמיר תאריכים למחרוזות בקוד C, ישנם מספר דרכים. אחת הדרכים הנפוצות היא על ידי שימוש בפונקציית `strftime()`, המאפשרת לנו להפוך תאריכים למחרוזות בפורמט שאנחנו רוצים. ניצור תוכנית קטנה שתדגים איך זה עובד:
+בכתיבת קוד עבור תכנית מחשב, ייתכן שתתקלו בצורך להמיר תאריך מסוים למחרוזת. המטרה היא להציג את התאריך בפורמט שאנשים יכולים לקרוא ולהבין בקלות, כגון "יום-חודש-שנה" או "חודש-יום-שנה".
+
+איך לעשות את זה?
+
+כדי לבצע את המימוש הזה בשפת סי, ניתן להשתמש בפונקציית "strftime". להלן דוגמה של שימוש בפונקציה להמרת תאריך למחרוזת:
 
 ```C
-#include <stdio.h>
 #include <time.h>
-
+#include <stdio.h>
 int main() {
-  time_t now = time(NULL); // מקבל את התאריך והשעה הנוכחיים
-  char date_string[50];
-
-  strftime(date_string, 50, "%d/%m/%Y", localtime(&now)); 
-
-  printf("Today's date is: %s\n", date_string); // הדפסת התאריך הנוכחי כמחרוזת בפורמט ״dd/mm/yyyy״
+  time_t now = time(NULL);
+  struct tm *timeinfo = localtime(&now);
+  
+  char buffer[80];
+  strftime(buffer, 80, "%d-%m-%Y", timeinfo);
+  printf("התאריך היום הוא: %s\n", buffer);
   return 0;
 }
 ```
 
-פלט:
-```
-Today's date is: 01/01/2021
-```
+התאריך היום הוא: 01-01-2020
 
-כאן אנחנו משתמשים בפונקציית `strftime()` כדי להמיר את התאריך הנוכחי למחרוזת בפורמט ״dd/mm/yyyy״ ולהדפיס אותו.
+דיבוג:
+הפונקציה "strftime" מאפשרת לנו לציין את הפורמט של המחרוזת שנרצה לקבל כתוצאה. ניתן להשתמש בתווים שונים לכתוב את התאריך בפורמט הרצוי, כגון %d ליום, %B לחודש, ו-%Y לשנה.
 
-וכדי לעשות את זה בפורמט מסוגרת, נוסיף עוד שורת קוד:
+עוד דברים לדעת:
+הפונקציה "strftime" נמצאת בספריית הסטנדרטית המתאימה לשפת סי – "time.h". לכן, יש לוודא שהקובץ המכיל את הקוד שלנו מכיל גם את הג'ירה "#include <time.h>". כמו כן, יש לוודא כי נשתמש במשתנה "now" שמכיל את הזמן הנוכחי ובמשתנה "timeinfo" שיכיל את פרטי התאריך שנרצה להמיר למחרוזת.
 
-```C
-#include <string.h>
-
-int main() {
-  // קוד קודם
-  strftime(date_string, 50, "Today's date is: (%d/%m/%Y)", localtime(&now));
-
-  printf("%s", date_string);
-  return 0;
-}
-```
- 
-פלט:
-```
-Today's date is: (01/01/2021)
-```
-
-כפי שאתם רואים, ישנן מגוון רחב של אפשרויות להמרת תאריכים למחרוזת, והיישומים שלה הם מגוונים וחשובים.
-
-## מנתחים עמוק
-ההמרה של תאריכים למחרוזת היא עניין של פונקציות מובנות שמאפשרות לנו לצור את המחרוזת המבוקשת בקלות. הפונקציות המשמשות להמרת תאריכים למחרוזות נמצאות בתכניות הספריה `time.h` ומציעות מגוון רחב של אפשרויות להצגה ופורמ
+ראו גם:
+- [מדריך על strftime ב-GeeksforGeeks](https://www.geeksforgeeks.org/strftime-function-in-c/)
+- [תיעוד של הפונקציה strftime באתר הרשמי של Microsoft](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/strftime-wcsftime-strftime-l-wcsftime-l?view=vs-2019)

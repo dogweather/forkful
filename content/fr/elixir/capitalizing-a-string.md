@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Majuscule d'une chaîne de caractères"
+title:                "Elixir: Capitaliser une chaîne"
+simple_title:         "Capitaliser une chaîne"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/capitalizing-a-string.md"
 ---
 
@@ -9,47 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La mise en majuscule d'une chaîne de caractères est un moyen courant de formater du texte dans de nombreuses langues de programmation. Dans cet article, nous allons plonger plus en profondeur dans le processus de mise en majuscule des chaînes en utilisant le langage de programmation Elixir.
+Il est souvent nécessaire de capitaliser une chaîne de caractères dans un programme Elixir, que ce soit pour des raisons d'affichage esthétique ou pour des besoins de manipulation de données. Dans cet article, nous allons explorer comment effectuer cette opération de manière efficace et élégante.
 
-## Comment faire
+## Comment Faire
 
-Pour mettre en majuscule une chaîne de caractères en Elixir, vous pouvez utiliser la fonction `String.upcase/1`. Elle prend une chaîne de caractères en entrée et renvoie une nouvelle chaîne mise en majuscule.
-
-```Elixir
-phrase = "Bonjour le monde!"
-
-resultat = String.upcase(phrase)
-
-IO.puts(resultat) # Affiche "BONJOUR LE MONDE!"
-```
-
-Vous pouvez également utiliser la fonction `String.capitalize/1` pour mettre uniquement la première lettre de la chaîne en majuscule.
+Pour capitaliser une chaîne de caractères en Elixir, il existe plusieurs options selon vos besoins spécifiques. Voici quelques exemples :
 
 ```Elixir
-phrase = "bonjour le monde!"
+string = "bonjour le monde"
 
-resultat = String.capitalize(phrase)
+# En utilisant la fonction String.capitalize/1
+capitalized = String.capitalize(string)
+IO.puts capitalized
+# Output: Bonjour le monde
 
-IO.puts(resultat) # Affiche "Bonjour le monde!"
+# En utilisant la fonction String.replace/3 et une expression régulière
+capitalized = String.replace(string, ~r/.*/, &String.capitalize/1)
+IO.puts capitalized
+# Output: Bonjour le monde
+
+# En utilisant une méthode de chaîne de caractères en mutable
+capitalized = string |> String.to_charlist() |> :lists.map(fn(x) -> String.capitalize(x) end) |> to_string()
+IO.puts capitalized
+# Output: Bonjour le monde
 ```
 
-Enfin, si vous souhaitez mettre en majuscule uniquement la première lettre de chaque mot dans une phrase, vous pouvez utiliser la fonction `String.capitalize_words/1`.
+Comme vous pouvez le voir, il existe plusieurs façons d'accomplir cette tâche en Elixir, chacune avec ses avantages et ses limites. À vous de choisir celle qui convient le mieux à votre situation.
 
-```Elixir
-phrase = "bonjour le monde!"
+## Deep Dive
 
-resultat = String.capitalize_words(phrase)
+Maintenant, rentrons un peu plus dans les détails et examinons comment fonctionne la fonction String.capitalize/1. Elle prend en paramètre une chaîne de caractères et renvoie cette même chaîne de caractères avec la première lettre en majuscule. Facile, n'est-ce pas ?
 
-IO.puts(resultat) # Affiche "Bonjour Le Monde!"
-```
+Mais attention, cette fonction utilise la convention Unicode pour les majuscules et les minuscules, ce qui signifie que les caractères accentués ne seront pas forcément convertis comme vous le souhaitez. Par exemple, "éclat" deviendra "Éclat" et non pas "ÉClat" comme on pourrait s'y attendre.
 
-## Plongée en profondeur
+Si vous souhaitez conserver la casse exacte du reste de la chaîne et ne modifier que la première lettre, alors String.replace/3 avec une expression régulière sera votre meilleur allié. En utilisant `[a-z]` comme motif dans l'expression régulière, cela signifie "tous les caractères de a à z", et ainsi, seuls les caractères minuscules seront touchés.
 
-En Elixir, les chaînes de caractères sont immuables, ce qui signifie qu'elles ne peuvent pas être modifiées directement. Lorsque vous utilisez les fonctions `String.upcase/1`, `String.capitalize/1` ou `String.capitalize_words/1`, une nouvelle chaîne de caractères est renvoyée à partir de la chaîne d'origine. Cela peut sembler inutile, mais cela permet d'éviter les effets de bord et de garantir l'immutabilité des données.
+## Voir Aussi
 
-De plus, ces fonctions s'appuient sur la bibliothèque Unicode pour prendre en charge les caractères non ASCII. Cela signifie que vous pouvez également utiliser ces fonctions pour mettre en majuscule des caractères Unicode spéciaux.
-
-## Voir aussi
-
-- [Documentation officielle sur les chaînes de caractères en Elixir](https://hexdocs.pm/elixir/String.html)
-- [Liste des fonctions de la bibliothèque Unicode en Elixir](https://hexdocs.pm/elixir/Unicode.html)
+- [Documentation officielle de la fonction String.capitalize/1](https://hexdocs.pm/elixir/String.html#capitalize/1)
+- [Tutoriel sur les expressions régulières en Elixir](https://elixir-lang.org/getting-started/regex.html)
+- [Article sur les méthodes de chaîne de caractères en mutable en Elixir](https://www.poeticoding.com/elixir-strings-functions-to-char-list-from-char-list-to-string/)

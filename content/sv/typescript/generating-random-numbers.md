@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Generering av slumpmässiga tal"
+title:                "TypeScript: Generera slumpmässiga siffror"
+simple_title:         "Generera slumpmässiga siffror"
 programming_language: "TypeScript"
-category:             "Numbers"
+category:             "TypeScript"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/generating-random-numbers.md"
 ---
 
@@ -9,49 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-När man programmerar i TypeScript eller något annat programmeringsspråk, finns det många gånger behov att generera slumpmässiga nummer. Det kan vara för att skapa en mer dynamisk användarupplevelse, skapa unika identifierare eller helt enkelt för att testa en funktion. Oavsett anledning är det viktigt att veta hur man genererar slumpmässiga nummer på rätt sätt.
+Att generera slumpmässiga nummer är en vanlig praxis inom programmering för att skapa variation och slumpmässighet i ett program. Det är särskilt användbart när man behöver simulera verkliga situationer eller testa olika scenarier.
 
-## Så här gör du
+## Hur man gör det
 
-För att generera slumpmässiga nummer i TypeScript, finns det en inbyggd funktion som heter `Math.random()`. Denna funktion returnerar ett decimaltal mellan 0 och 1. Om man vill ha ett heltal istället, kan man använda `Math.floor()` för att avrunda talet nedåt. Om man vill ha ett heltal mellan ett visst intervall, måste man multiplicera resultatet från `Math.random()` med det önskade intervallet och sedan använda `Math.floor()` för att avrunda talet.
-
-```TypeScript
-// Genererar ett slumpmässigt decimaltal mellan 0 och 1
-let randomDecimal = Math.random();
-
-// Genererar ett slumpmässigt heltal mellan 0 och 10
-let randomInteger = Math.floor(Math.random() * 10);
-
-// Genererar ett slumpmässigt heltal mellan 5 och 15
-let randomRange = Math.floor(Math.random() * 10) + 5;
-
-console.log(randomDecimal); // Exempel output: 0.724871925567936 
-console.log(randomInteger); // Exempel output: 7
-console.log(randomRange); // Exempel output: 12
-```
-
-Om man vill ha mer kontroll över resultatet av det slumpmässiga numret, kan man använda sig av en seed. En seed är ett startvärde som tillsammans med algoritmen i `Math.random()` skapar ett förutbestämt mönster av slumpmässiga nummer. Detta är användbart om man t.ex. vill återskapa ett slumpmässigt nummer som användes tidigare. För att använda en seed måste man använda `Math.seedrandom()` från biblioteket "seedrandom".
+För att generera slumpmässiga nummer i TypeScript, kan vi använda oss av Math-funktionen. Vi kan använda metoden "random()" för att få ett nummer mellan 0 och 1, och sedan använda det för att skapa ett större intervall.
 
 ```TypeScript
-import seedrandom from 'seedrandom';
+// Generera ett slumpmässigt heltal mellan 0 och 10
+let randomNum = Math.floor(Math.random() * 10);
 
-// Skapar en seed med texten "random"
-let randomSeed = seedrandom("random");
+// Generera ett slumpmässigt decimaltal mellan 0 och 100
+let randomDecimal = Math.random() * 100;
 
-// Genererar ett slumpmässigt decimaltal med seeden
-let randomDecimal = randomSeed();
+// Generera ett slumpmässigt heltal mellan två givna nummer
+function randomIntBetween(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-console.log(randomDecimal); // Exempel output: 0.1739793335947135
+// Använda funktionen för att generera ett slumpmässigt nummer mellan 5 och 10
+let randomNumber = randomIntBetween(5, 10);
+
+console.log(randomNum); // Till exempel: 7
+console.log(randomDecimal); // Till exempel: 58.352
+console.log(randomNumber); // Till exempel: 8
 ```
 
 ## Djupdykning
 
-Generering av slumpmässiga nummer är en viktig del av många algoritmer och program. En vanlig missuppfattning är att `Math.random()` genererar helt slumpmässiga nummer. Men i verkligheten använder funktionen en algoritm baserad på ett startvärde för att producera en följd av pseudo-slumpmässiga nummer. Detta är varför det är viktigt att använda en seed om man vill återskapa ett slumpmässigt nummer.
+För att förstå hur Math.random() fungerar, kan vi titta på dess implementering i JavaScript. Funktionen returnerar en pseudo-slumpmässig decimal mellan 0 och 1 genom att multiplicera ett tal med en stor multiplikator och sedan ta modulus av det. Multiplikatorn genereras av implementationen av JavaScript och är baserad på tiden och datorspecifika faktorer.
 
-Det finns många olika sätt att skapa ett slumptal i programmering och vilken metod man ska använda beror på vad man vill använda det till. Det är också viktigt att förstå att slumptalen inte är helt slumpmässiga och att det finns sätt att förutsäga nästa slumptal baserat på tidigare nummer i följden.
+Det finns också andra metoder för att generera slumpmässiga nummer i TypeScript, som att använda sig av tredjepartsbibliotek som "random-js" eller "random-pick". Dessa ger mer avancerade metoder för att skapa önskade variationer och kontroll över nummerna.
 
 ## Se även
 
-- [Math.random() - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [seedrandom - npm](https://www.npmjs.com/package/seedrandom)
-- [The trouble with probability: Maths and random number generation - EX²OUTLIER](https://ex2outlier.com/the-trouble-with-probability-maths-and-random-number-generation/)
+- [Math-funktionen på Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
+- [Random-js biblioteket](https://github.com/ckknight/random-js)
+- [Random-pick biblioteket](https://www.npmjs.com/package/random-pick)

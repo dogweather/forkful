@@ -1,53 +1,56 @@
 ---
-title:                "Javascript: Cálculo de uma data no futuro ou passado"
+title:                "Javascript: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Porque
+Calculating dates can be a useful skill when working with time-sensitive data, such as project deadlines or event scheduling. It allows you to quickly find out the date of a specific day in the past or in the future, making it easier to plan and organize your tasks.
 
-Calcular datas no futuro ou no passado pode ser útil em muitos casos, como em um sistema de reservas ou planejamento de eventos. É importante saber como realizar esse cálculo de forma eficiente e precisa.
+## Como Fazer
+Para calcular uma data no futuro ou no passado, podemos utilizar a biblioteca nativa Date do Javascript. Vamos ver alguns exemplos práticos para entender melhor como isso funciona.
 
-## Como fazer
-
-Para calcular uma data no futuro ou no passado, é necessário usar a classe `Date` do Javascript. Esta classe possui diversos métodos que permitem manipular datas de forma flexível e poderosa.
-
-Um exemplo simples de como calcular uma data no futuro seria adicionar um determinado número de dias à data atual. Veja como isso pode ser feito:
+Primeiro, vamos definir uma data de referência, que será a data que iremos calcular a partir dela. Por exemplo: 
 
 ```Javascript
-// Declara a variável com a data atual
-let dataAtual = new Date();
-// Define o número de dias a serem adicionados (neste caso, 7 dias)
-let dias = 7;
-// Adiciona os dias à data atual
-dataAtual.setDate(dataAtual.getDate() + dias);
+const dataReferencia = new Date();
 ```
 
-Agora, se quisermos calcular uma data no passado, basta subtrair o número de dias desejado ao invés de adicioná-lo. Veja:
+Para calcular uma data no futuro, podemos utilizar o método `setDate()` e passar um valor positivo como parâmetro, que será somado à data de referência.
 
 ```Javascript
-// Declara a variável com a data atual
-let dataAtual = new Date();
-// Define o número de dias a serem subtraídos (neste caso, 14 dias)
-let dias = 14;
-// Subtrai os dias da data atual
-dataAtual.setDate(dataAtual.getDate() - dias);
+// Calculando a data de 1 dia no futuro
+dataReferencia.setDate(dataReferencia.getDate() + 1);
+console.log(dataReferencia); // Output: Sat Aug 29 2020 23:57:34 GMT-0300 (Brasilia Standard Time)
+
+// Calculando a data de 5 dias no futuro
+dataReferencia.setDate(dataReferencia.getDate() + 5);
+console.log(dataReferencia); // Output: Thu Sep 03 2020 23:57:34 GMT-0300 (Brasilia Standard Time)
 ```
 
-É importante lembrar que essa operação altera diretamente o objeto `Date` da variável `dataAtual`. Se for necessário manter a data atual sem alterações, é possível criar uma cópia da data antes de realizar o cálculo.
+Da mesma forma, para calcular uma data no passado, podemos utilizar o método `setDate()` e passar um valor negativo como parâmetro, que será subtraído da data de referência.
 
-## Mergulho profundo
+```Javascript
+// Calculando a data de 1 dia no passado
+dataReferencia.setDate(dataReferencia.getDate() - 1);
+console.log(dataReferencia); // Output: Fri Aug 28 2020 23:57:34 GMT-0300 (Brasilia Standard Time)
 
-Além de adicionar ou subtrair dias, a classe `Date` possui muitos outros métodos que permitem calcular datas no futuro ou no passado de diversas formas. É possível, por exemplo, obter o primeiro dia do próximo ou do último mês, ou ainda verificar se uma determinada data já passou.
+// Calculando a data de 5 dias no passado
+dataReferencia.setDate(dataReferencia.getDate() - 5);
+console.log(dataReferencia); // Output: Sun Aug 23 2020 23:57:34 GMT-0300 (Brasilia Standard Time)
+```
 
-Além disso, é importante prestar atenção nos formatos de data e hora utilizados pelo Javascript, pois eles podem variar de acordo com a localização e configurações do sistema. Para isso, é possível utilizar os métodos `toLocaleString()` e `toLocaleDateString()` para obter a data e hora em formatos específicos.
+## Mergulho Profundo
+Além dos métodos `setDate()` mostrados acima, a biblioteca Date também possui outros métodos que podem ser úteis para calcular datas no futuro ou no passado. Alguns exemplos são: `setFullYear()`, `setMonth()` e `setFullYear()`, que permitem alterar o ano, mês e ano completo de uma data respectivamente.
 
-Para saber mais sobre como se aprofundar no cálculo de datas futuras ou passadas, consulte a documentação oficial do Javascript sobre a classe `Date` e seus métodos.
+Além disso, é possível realizar cálculos mais complexos utilizando a biblioteca Moment.js, que fornece uma série de métodos para manipular e formatar datas.
 
-## Veja também
-
-- [Documentação oficial - classe Date (em inglês)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Tutorial para manipulação de datas em Javascript (em português)](https://www.devmedia.com.br/manipulando-datas-em-javascript/31185)
+## Veja Também
+- [Documentação da biblioteca Date do Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Documentação da biblioteca Moment.js](https://momentjs.com/)
+- [Artigo: Como trabalhar com datas no Javascript](https://blog.betrybe.com/javascript/datas-javascript/)

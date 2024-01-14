@@ -1,60 +1,78 @@
 ---
 title:                "Go: Lendo argumentos da linha de comando"
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porquê
+## Por que ler argumentos da linha de comando em Go?
 
-Ao criar um programa em Go, muitas vezes é necessário interagir com o utilizador e receber entradas para possibilitar diferentes comportamentos do programa. Uma forma de realizar isso é através da leitura de argumentos da linha de comando. Neste artigo, vamos explorar como podemos ler e utilizar estes argumentos em um programa Go.
+Ler argumentos da linha de comando é essencial para criar programas flexíveis e interativos em Go. Ao entender como ler e usar esses argumentos, você pode tornar seus programas mais dinâmicos e customizáveis para diferentes casos de uso.
 
-## Como Fazer
+## Como fazer:
 
-Para ler argumentos da linha de comando em um programa Go, podemos utilizar a função `os.Args`, que retorna uma slice contendo os argumentos fornecidos pelo utilizador. Podemos percorrer esta slice e utilizar os valores em nosso programa.
-
-Para obter uma leitura mais organizada, podemos utilizar o pacote `flag`, que nos permite definir argumentos com diferentes tipos de valores e, em seguida, acessar esses valores através de variáveis. Por exemplo, podemos utilizar a função `flag.Int()` para definir um argumento que só aceita valores inteiros, e em seguida, utilizar a função `flag.Parse()` para atribuir o valor fornecido pelo utilizador à nossa variável.
-
-Veja um exemplo de como podemos utilizar a função `flag` para ler e utilizar argumentos da linha de comando em um programa Go:
+Para ler argumentos da linha de comando em Go, é preciso primeiro importar o pacote "os". Em seguida, usar a função "os.Args" que retorna uma slice contendo os argumentos passados na linha de comando. Por exemplo:
 
 ```Go
 package main
 
 import (
-    "flag"
-    "fmt"
+	"fmt"
+	"os"
 )
 
 func main() {
-    nome := flag.String("nome", "utilizador", "Escreva o seu nome.")
-    idade := flag.Int("idade", 18, "Escreva a sua idade.")
-
-    // É necessário chamar a função `flag.Parse()` para que os valores
-    // fornecidos pelo utilizador sejam atribuídos às variáveis.
-    flag.Parse()
-
-    fmt.Printf("Olá, %s! Você tem %d anos.\n", *nome, *idade)
+	args := os.Args
+	fmt.Println(args)
 }
 ```
 
-Se executarmos este programa com o comando `go run main.go --nome João --idade 25`, por exemplo, veremos a seguinte saída:
+Se rodarmos este programa na linha de comando com alguns argumentos, veremos a seguinte saída:
 
 ```
-Olá, João! Você tem 25 anos.
+$ go run main.go arg1 arg2 arg3
+[arg1 arg2 arg3]
 ```
 
-## Aprofundando
+Agora, podemos acessar cada argumento individualmente a partir da slice retornada. Por exemplo, se quisermos imprimir apenas o segundo argumento, podemos fazer:
 
-Além da função `os.Args` e do pacote `flag`, existem outras formas de ler argumentos da linha de comando em Go, como utilizar o pacote `os` para acessar diretamente as variáveis de ambiente, ou utilizar uma biblioteca de terceiros como o `cobra`.
+```Go
+package main
 
-Também é importante ressaltar que a ordem dos argumentos pode ser importante em certos casos, e que existem convenções para utilização de flags (argumentos com opções) e parâmetros (argumentos sem opções).
+import (
+	"fmt"
+	"os"
+)
 
-## Veja Também
+func main() {
+	args := os.Args
+	fmt.Println(args[1])
+}
+```
 
-- [Documentação oficial do pacote `flag`](https://pkg.go.dev/flag)
-- [Tutorial sobre a leitura de argumentos da linha de comando em Go](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-golang)
-- [Outras formas de ler argumentos da linha de comando em Go](https://www.callicoder.com/golang-command-line-arguments/#alternative-ways-to-read-command-line-arguments)
+A saída será:
 
-Obrigado por ler este artigo! Espero que tenha sido útil para você utilizar argumentos da linha de comando em seus programas Go. Até a próxima!
+```
+$ go run main.go arg1 arg2 arg3
+arg2
+```
+
+## Aprofundando:
+
+Além da função "os.Args", existem outras formas de ler argumentos da linha de comando em Go. Você pode usar a função "flag" do pacote "flag" para criar argumentos com opções e flags. Também é possível usar a estrutura "os.Args" para acessar argumentos específicos por meio de índices ou usar a função "os.Getopt" para acessar opções mais complexas.
+
+Veja alguns links úteis para aprofundar seu conhecimento sobre leitura de argumentos da linha de comando em Go:
+
+- [Documentação oficial do pacote "flag"](https://golang.org/pkg/flag/)
+- [Tutorial do pacote "flag" em inglês](https://www.digitalocean.com/community/tutorials/how-to-use-the-flag-package-in-go-pt)
+- [Documentação oficial do pacote "os"](https://golang.org/pkg/os/)
+- [Tutorial do pacote "os" em português](https://golang.org/doc/articles/syscall_pt_br.html)
+
+## Veja também:
+
+- [Documentação do pacote "flag"](https://golang.org/pkg/flag/)
+- [Documentação do pacote "os"](https://golang.org/pkg/os/)

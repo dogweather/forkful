@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Eine neue Projekt beginnen"
+title:                "Fish Shell: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Fish Shell"
-category:             "Getting Started"
+category:             "Fish Shell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/starting-a-new-project.md"
 ---
 
@@ -9,43 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn Sie sich entscheiden, ein neues Projekt zu starten, gibt es viele Programmiersprachen und Tools zur Auswahl. In diesem Blogbeitrag werden wir uns mit der Fish Shell befassen und zeigen, wie sie Ihnen dabei helfen kann, effizientere und benutzerfreundlichere Skripte zu erstellen.
+Wenn du ein neues Projekt starten möchtest, lohnt es sich, die Fish Shell zu nutzen. Mit ihrer benutzerfreundlichen Syntax und den vielen eingebauten Funktionen kann die Fish Shell dein Entwicklungsprozess erleichtern und beschleunigen.
 
-## Wie 
+## Wie geht's
 
-Die Fish Shell ist eine leistungsstarke, benutzerfreundliche und moderne UNIX-Shell. Sie verfügt über viele nützliche Funktionen, die das Schreiben von Shell-Skripten einfacher und schneller machen. Um ein neues Projekt mit Fish Shell zu starten, folgen Sie diesen Schritten:
+### Installation
 
-```Fish Shell
-# Erstellen Sie ein neues Verzeichnis für Ihr Projekt
-mkdir meinProjekt
-# Wechseln Sie in das Verzeichnis
-cd meinProjekt
-# Erstellen Sie eine neue Datei mit dem Namen "hallo.sh"
-touch hallo.sh
-# Öffnen Sie die Datei mit einem Texteditor Ihrer Wahl
-vim hallo.sh
-```
+Um die Fish Shell zu installieren, folge den Anweisungen auf ihrer offiziellen Website. Je nach Betriebssystem gibt es verschiedene Möglichkeiten, die Fish Shell zu nutzen. Eine detaillierte Anleitung findest du unter [https://fishshell.com/](https://fishshell.com).
 
-Nun können Sie Ihr Shell-Skript in der Datei "hallo.sh" schreiben und ausführen:
+### Einführung in die Fish Shell
+
+Die Fish Shell unterscheidet sich von anderen Shells durch ihre benutzerfreundliche Syntax. Sie verwendet beispielsweise keine Semikolons oder geschweifte Klammern, um Befehle zu trennen oder zu gruppieren. Stattdessen werden Befehle durch Zeilenumbrüche getrennt und Variablen werden durch ein Dollarzeichen ($) gekennzeichnet.
+
+Ein Beispiel für einen einfachen Befehl in der Fish Shell:
 
 ```Fish Shell
-# Fügen Sie den folgenden Code in "hallo.sh" ein:
-echo "Hallo Welt!"
-
-# Speichern Sie die Datei und wechseln Sie zurück in die Shell
-# Führen Sie das Skript aus:
-./hallo.sh
-# Output: Hallo Welt!
+echo "Hallo Welt"
 ```
 
-Und schon haben Sie erfolgreich Ihr erstes Fish Shell-Skript erstellt!
+Die Ausgabe dieses Befehls ist:
 
-## Deep Dive
+```Fish Shell
+Hallo Welt
+```
 
-Um noch tiefer in die Fish Shell einzusteigen, können Sie die offizielle Dokumentation lesen oder mit dem Befehl `help` in der Shell Hilfe zu bestimmten Themen erhalten. Sie können auch benutzerdefinierte Funktionen erstellen, Alias-Befehle definieren und vieles mehr. Die Fish Shell hat eine große und aktive Community, die Ihnen bei Fragen und Problemen gerne zur Seite steht.
+### Verwendung von Variablen
+
+Variablen in der Fish Shell werden ohne das Schlüsselwort "export" verwendet. Sie können einfach durch ein Gleichheitszeichen (=) zugewiesen werden.
+
+Ein Beispiel einer Variablenzuweisung und ihrer Verwendung in einem Befehl:
+
+```Fish Shell
+name = "Max"
+echo "Hallo $name"
+```
+
+Die Ausgabe dieses Befehls ist:
+
+```Fish Shell
+Hallo Max
+```
+
+## Tief tauchen
+
+Die Fish Shell bietet viele weitere Funktionen, die dir dabei helfen können, ein neues Projekt zu starten. Beispielsweise kannst du mit der History-Funktion deine vorherigen Befehle durchsuchen und ausführen, indem du die Pfeiltasten nach oben und unten verwendest. Die Fish Shell bietet auch eine Autovervollständigungsfunktion, die dir bei der Eingabe von Befehlen und Dateinamen helfen kann.
+
+Eine detaillierte Dokumentation über alle Funktionen und Konzepte der Fish Shell findest du unter [https://fishshell.com/docs/](https://fishshell.com/docs/).
 
 ## Siehe auch
 
-- [Offizielle Fish Shell Dokumentation](https://fishshell.com/docs/current/)
-- [Fish Shell Tutorial auf Deutsch](https://fishshell.readthedocs.io/de/latest/tutorial.html)
-- [Fish Shell auf GitHub](https://github.com/fish-shell/fish-shell)
+- [https://fishshell.com/](https://fishshell.com/)
+- [https://fishshell.com/docs/](https://fishshell.com/docs/)
+- [https://fishshell.com/tutorial/](https://fishshell.com/tutorial/)

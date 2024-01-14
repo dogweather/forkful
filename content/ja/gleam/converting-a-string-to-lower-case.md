@@ -1,37 +1,39 @@
 ---
 title:                "Gleam: 「文字列を小文字に変換する」"
+simple_title:         "「文字列を小文字に変換する」"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-人々はなぜ文字列を小文字に変換することを行うのか、その理由はなんでしょうか。一言で説明すると、小文字に変換することで文字列をより柔軟に扱うことができるようになります。
+#【なぜ】
+文字列を小文字に変換することについての理由を1-2文で説明します。
 
-## 方法
-以下のようなGleamのコードを使って、文字列を小文字に変換する方法を示します。
+文字列を小文字に変換することは、プログラマーにとって非常に便利な機能です。例えば、ユーザーからの入力を正規化するためや、大文字小文字を区別せずに文字列を比較するためなど、さまざまなシナリオで利用されます。
+
+#【方法】
+以下の「```Gleam ...```」コードブロックを参考に、文字列を小文字に変換する方法を学んでみましょう。
 
 ```Gleam
-let string = "Hello World"
-let lower_string = String.to_lower_case(string)
+fn main() {
+    let str = "Hello World";
+    let lower = str.to_lower_case();
+    io.println(lower);
+}
 ```
 
-上記のコードを実行すると、`lower_string`には"hello world"という文字列が格納されます。これにより、大文字や小文字の違いを気にしなくても文字列を比較することができるようになります。
+上記のコードを実行すると、`hello world`という出力が得られます。
 
-## ディープダイブ
-文字列を小文字に変換する方法をより詳しく説明します。まず、Gleamの標準ライブラリに含まれる`String`モジュールには、`to_lower_case`以外にも文字列を操作するための便利な関数があります。例えば、`contains`関数を使うと任意の文字列が他の文字列に含まれているかどうかを判定することができます。また、`starts_with`や`ends_with`といった関数を使うことで、文字列が特定の文字列で始まるか終わるかを簡単にチェックすることができます。
+#【深堀り】
+文字列を小文字に変換するには、Gleamに組み込まれた`to_lower_case()`関数を使用します。この関数は、文字列を小文字に変換して、新しい文字列を返します。元の文字列そのものを変更するわけではありません。
 
-さらに、日本語のようにUnicode文字がたくさん含まれる文字列でも、`to_lower_case`関数を使うことで正しく小文字に変換することができます。これはGleamがUnicodeをサポートしているためです。
+また、Gleamでは日本語のようなマルチバイト文字もサポートされています。そのため、日本語の文字列を小文字に変換することも可能です。
 
-## それでは次の記事をどうぞ
-これらの記事も合わせてお読みください。
+#【See Also】
+- [Gleam公式ドキュメント](https://gleam.run/)
+- [Gleamのマルチバイト文字のサポートについて](https://gleam.run/documentation#multibyte-strings)
 
-- [Gleamの公式ドキュメント](https://gleam.run/)
-- [Gleamで文字列を操作する方法](https://gleam.run/articles/strings.html)
-- [Gleamで文字列をフォーマットする方法](https://gleam.run/articles/printf.html)
-
-## 参考リンク
-- [GleamのGitHubリポジトリ](https://github.com/gleam-lang/gleam)
-- [Unicodeについての詳細な説明](https://unicode.org/)
+以上で文字列を小文字に変換する方法を学びました。Gleamに慣れることで、より効率的なプログラミングができるようになるでしょう。ぜひ、Gleamを活用してみてください。

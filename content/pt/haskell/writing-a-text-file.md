@@ -1,43 +1,49 @@
 ---
 title:                "Haskell: Escrevendo um arquivo de texto"
+simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que escrever um arquivo de texto em Haskell?
 
-Escrever um arquivo de texto é uma tarefa comum na programação, principalmente em Haskell. Isso porque os arquivos de texto são uma forma simples e eficiente de armazenar e manipular dados em programas.
+Escrever um arquivo de texto é uma tarefa comum em programação e pode ser especialmente útil em Haskell. Pode ser uma boa ideia escrever um arquivo de texto para armazenar dados ou resultados de um programa.
 
-## Como Fazer
+## Como fazer
 
-Para escrever um arquivo de texto em Haskell, primeiro precisamos importar o módulo `System.IO`, que nos fornecerá as funções necessárias. Em seguida, usamos a função `openFile` para abrir um arquivo e especificamos o caminho, o modo de manipulação e o nome da ação que será realizada. Por exemplo:
-
-```Haskell
-file <- openFile "meuarquivo.txt" WriteMode
-```
-
-Agora, podemos usar a função `hPutStrLn` para escrever uma linha inteira no nosso arquivo:
+Para escrever um arquivo de texto em Haskell, primeiro é preciso importar o módulo `System.IO`. Em seguida, é necessário abrir um arquivo usando a função `openFile`. Veja um exemplo abaixo:
 
 ```Haskell
-hPutStrLn file "Este é um exemplo de texto"
+import System.IO
+
+main = do
+  file <- openFile "meu_arquivo.txt" WriteMode
+  hPutStrLn file "Este é um exemplo de texto que será escrito no arquivo."
+  hClose file
 ```
 
-Para escrever múltiplas linhas, podemos usar a função `hPutStr` e incluir caracteres de nova linha `\n` no final de cada linha. E, por fim, para fechar o arquivo, usamos a função `hClose`:
-
-```Haskell
-hClose file
-```
+No exemplo acima, `meu_arquivo.txt` será criado ou, se já existir, será sobrescrito. A função `hPutStrLn` escreve uma linha de texto no arquivo, seguida pela a função `hClose` para fechar o arquivo.
 
 ## Mergulho Profundo
 
-Além das funções mencionadas acima, o módulo `System.IO` também nos fornece outras ferramentas para trabalhar com arquivos. Podemos usar a função `hPutStr` para escrever uma string inteira, a função `hPutChar` para escrever um único caractere, e a função `hFlush` para descarregar qualquer dado que ainda não tenha sido gravado no arquivo.
+Escrever um arquivo de texto também pode ser feito utilizando a função `withFile`, que gerencia automaticamente a abertura e fechamento do arquivo. Além disso, é possível utilizar a notação `writeFile` para escrever todo o conteúdo de uma vez, ao invés de linha por linha.
 
-Também podemos especificar diferentes modos de manipulação ao abrir o arquivo, como `WriteMode` para criar um novo arquivo ou sobrescrever um existente, `AppendMode` para adicionar conteúdo ao final de um arquivo e `ReadMode` para ler um arquivo existente.
+```Haskell
+import System.IO
 
-## Veja Também
+main = do
+  withFile "meu_arquivo.txt" WriteMode (\file -> do
+    hPutStrLn file "Este é um exemplo de texto que será escrito no arquivo."
+    hPutStrLn file "Esta é outra linha escrita utilizando a notação writeFile."
+    )
+```
 
-- [Documentação do módulo `System.IO`](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
-- [Exemplos de escrita de arquivos em Haskell](https://wiki.haskell.org/File_manipulation)
+## Veja também
+
+- [Guia de Estilo de Código Haskell](https://github.com/tibbe/haskell-style-guide/blob/master/haskell-style.md)
+- [Tutorial de Programação Haskell](https://www.haskell.org/tutorial/index.html)
+- [Documentação do Módulo System.IO](https://www.haskell.org/platform/doc/2014.2.0.0/ghc-doc/libraries/base-4.7.0.2/System-IO.html)

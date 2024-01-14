@@ -1,45 +1,61 @@
 ---
 title:                "Bash recipe: Concatenating strings"
+simple_title:         "Concatenating strings"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-Have you ever needed to combine multiple strings together in your Bash script? Concatenating strings is a useful skill to have when working with text data or building dynamic outputs. 
+## Why
 
-## How To 
-Using the `echo` command with the `-e` flag, we can combine strings by simply separating them with a space.
-```Bash
-echo -e "Hello" "World"
+Concatenating strings is a common task in Bash programming, and is used to combine multiple strings into a single, longer string. This can be useful for tasks such as creating dynamic file names, constructing URLs, or displaying information to the user.
+
+## How To
+
+To concatenate strings in Bash, we use the `printf` command, which allows us to format and print strings in a variety of ways. Let's look at some examples to see how it works.
+
 ```
-This will output `Hello World`. Another way to concatenate strings is by using the `+` operator. 
-```Bash
-str1="Hello"
-str2="World"
-echo $str1+$str2
+Bash code: printf "Hello %s, welcome to my blog!" "readers"
+Output: Hello readers, welcome to my blog!
 ```
-This will output `Hello+World`. Note that the `+` operator does not add a space between the two strings. 
-To add a space, we can use the `printf` command with the `%s` format specifier for strings and the `\n` escape sequence for a newline character. 
-```Bash
-printf "%s %s \n" $str1 $str2
+
+In this example, we are using `printf` to output the string "Hello readers, welcome to my blog!" by combining the string "Hello" with the string "readers" using the `%s` formatting specifier.
+
+We can also concatenate multiple strings together by using multiple `%s` specifiers and providing a corresponding string for each one.
+
 ```
-This will output:
+Bash code: printf "%s is learning %s programming." "I" "Bash"
+Output: I am learning Bash programming.
 ```
-Hello World 
+
+In addition to using `printf`, we can also use the `+=` operator to concatenate strings. This is often used within a loop or function to add strings together and store them in a variable.
+
 ```
+Bash code: greeting="Welcome "
+    greeting+="to my blog!"
+    echo $greeting
+Output: Welcome to my blog!
+```
+
 ## Deep Dive
-Behind the scenes, when we concatenate strings using the `-e` flag, Bash performs word splitting on the string arguments and prints them with spaces in between. For example, in the first `echo` command, Bash sees the two strings as separate arguments, and since the `echo` command automatically adds a space between arguments, we get the combined output of `Hello World`. 
-When using the `+` operator, Bash simply performs string concatenation, resulting in `Hello+World`. To add a space, we need to use the `printf` command and specify the desired format.
-Moreover, in Bash, we can also use variable assignment operators to add strings together. These operators include `+=` for concatenation, `~=` for pattern matching, and `=~` for regular expressions. 
 
-Just like with any other programming language, it is important to keep in mind that when concatenating strings, we need to take into consideration the type and formatting of our strings to ensure the desired output. 
+When concatenating strings, it is important to pay attention to whitespace and other characters, as they can affect the output. For example, if we use `+=` without adding a space between the two strings, it will result in a single word without a space in between.
+
+Additionally, we can use `printf` to add formatting elements such as new lines and tabs to our concatenated strings. This can be helpful when creating more complex and visually appealing outputs.
+
+```
+Bash code: printf "Hello %s,\n\tWelcome to my blog!" "readers"
+Output: Hello readers,
+        Welcome to my blog!
+```
+
+It is also worth mentioning that we can concatenate not only strings, but also variables, numbers, and other data types. This makes it a versatile tool for building dynamic outputs in our Bash scripts.
 
 ## See Also
-- [Bash Guide for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Advanced Bash-Scripting Guide](http://linuxreviews.org/Bash_Guide_for_Beginners)
-- [Bash String Manipulation](https://linuxhint.com/bash_string_manipulation/)
 
-Concatenating strings in Bash is a simple and powerful tool that can enhance your scripting capabilities. With a few different methods to choose from, you can easily combine strings to create the dynamic outputs you need. Stay curious and keep exploring the world of Bash programming!
+- [Bash Reference Manual: printf](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
+- [Unix & Linux Stack Exchange: How to concatenate strings in Bash?](https://unix.stackexchange.com/questions/71614/how-to-concatenate-two-strings-together-in-sh)
+- [Bash Beginners Guide: Concatenating](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_02.html)

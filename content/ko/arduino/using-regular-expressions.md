@@ -1,46 +1,50 @@
 ---
-title:                "Arduino: 정규 표현식 사용하기"
+title:                "Arduino: 정규 표현식 사용하기."
+simple_title:         "정규 표현식 사용하기."
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-왜 누군가 정규 표현식을 사용하는 것에 참여할까요? 정규 표현식은 문자열에서 특정 패턴을 찾고 추출할 수 있는 강력한 도구입니다. 따라서 Arduino 프로그래밍에서도 매우 유용하게 사용될 수 있습니다.
 
-## 방법
-Arduino에서 정규 표현식을 사용하려면 `Regex` 라이브러리를 설치해야 합니다. 이 라이브러리는 `re` 라이브러리와 비슷한 함수를 제공하여 문자열에서 패턴을 찾고 추출할 수 있도록 합니다.
+왜 우리는 정규 표현식을 사용할까요? 정규 표현식은 사용자가 입력한 캐릭터 패턴을 매칭하기 위해 사용됩니다. 이는 입력 데이터가 원하는 패턴에 맞는지를 검증하는 데 사용될 수 있습니다. 예를 들어, 서식을 철자와 특수문자로 구성된 이메일 주소의 경우 정규 표현식을 사용하면 이메일 주소가 유효한 형식인지를 쉽게 확인할 수 있습니다.
 
-```arduino
-#include <Regex.h>
+## 사용 방법
 
-String pattern = "hello (.*), my name is (.*)";
-String message = "Hello John, my name is Jane";
+정규 표현식을 사용하는 가장 간단한 방법은 `matches()` 함수를 사용하는 것입니다. 아두이노에서는 `matches()` 함수를 사용하여 입력된 문자열이 정규 표현식과 일치하는지를 확인할 수 있습니다. 해당 함수는 결과값으로 `true` 또는 `false`를 반환합니다. 아래 예제 코드를 참고해보세요.
 
-Regex regex(pattern);
-MatchState match;
-
-regex.match(message, match);
-
-// 매칭된 결과를 출력합니다.
-Serial.println(match.getMatch(0)); // "hello John, my name is Jane"
-Serial.println(match.getMatch(1)); // "John"
-Serial.println(match.getMatch(2)); // "Jane"
+```Arduino
+String input = "25 로봇";
+// 로봇이라는 단어를 포함하고 있는지 확인
+if (input.matches(".*로봇.*")) {
+  Serial.println("이 문자열은 로봇을 포함합니다.");
+}
 ```
 
-위 코드에서는 `hello (.*), my name is (.*)`라는 패턴을 정의하고, `hello John, my name is Jane`라는 문자열에서 해당 패턴을 찾아 매칭된 결과를 출력하는 예제를 보여줍니다.
+위 예제 코드에서는 `"25 로봇"`이라는 문자열이 정규 표현식 `.*로봇.*`와 일치하기 때문에 `Serial.println` 함수가 실행될 것입니다.
 
-## 깊이 더 들어가기
-정규 표현식은 아주 유연하게 사용할 수 있습니다. 예를 들어, `.*`는 어떤 문자열이든지 매칭시키는 와일드카드 연산자입니다. 이 와일드카드를 사용하여 문자열 내에서 패턴을 추출하거나 치환하는 작업을 할 수 있습니다. 또한 `()`를 사용하여 해당 부분을 그룹으로 묶어 추출할 수도 있습니다.
+## 자세히 알아보기
 
-정규 표현식에서 더 복잡한 패턴을 사용하려면 메타 문자(meta characters)를 사용해야 합니다. 예를 들어, `.`는 아무 문자를 매칭시키는 와일드카드이지만 `\.`과 같이 백슬래시를 붙여주면 실제 점을 매칭시키게 됩니다.
+정규 표현식을 사용하여 좀 더 복잡한 문자열 처리를 할 수 있습니다. 영어로 된 이메일 주소를 입력 받아 한글 도메인을 가지고 있는지를 판단하는 예제를 살펴보겠습니다.
 
-더 자세한 내용은 Arduino의 공식 문서에서 `Regex` 라이브러리에 대해 알아보세요.
+```Arduino
+String input = "example@아두이노.한국";
+// 한글 도메인을 포함하고 있는지 확인
+if (input.matches(".*@(([ㄱ-ㅎ가-힣])+)[.](([ㄱ-ㅎ가-힣])+)$")) {
+  Serial.println("이메일 주소에 한글 도메인이 포함되어 있습니다.");
+}
+```
 
-## 관련 링크
-- [Regex 라이브러리 문서](https://www.arduino.cc/reference/en/libraries/regex/)
+위 예제에서는 `@` 기준으로 분리된 이메일 주소의 도메인 부분을 정규 표현식을 사용하여 한글로 구성되어 있는지를 판단하고 있습니다. `"아두이노.한국"`이라는 도메인이 한글로 구성되어 있기 때문에 `Serial.println` 함수가 실행될 것입니다.
+
+## 관련 정보
+
+위에서 살펴본 예제 외에도 다양한 방법으로 정규 표현식을 활용할 수 있습니다. 아래 링크를 통해 더 많은 정보를 얻어보세요.
+
+- [아두이노 공식 문서](https://www.arduino.cc/reference/en/language/functions/communication/matches/)
 - [정규 표현식 기초](https://regexone.com/)
-- [정규 표현식 연습 사이트](https://regexr.com/)
-- [정규 표현식 빠르게 배우기](https://www.codecademy.com/learn/learn-regular-expressions)
+- [정규 표현식 게임](https://regexcrossword.com/)

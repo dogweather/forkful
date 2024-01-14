@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Leggere gli argomenti della riga di comando"
+title:                "PHP: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/reading-command-line-arguments.md"
 ---
 
@@ -9,79 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Spesso ci troviamo ad avere la necessità di passare informazioni al nostro programma PHP in modo dinamico. Una delle soluzioni più comuni è l'utilizzo dei cosiddetti "command line arguments", ovvero dei parametri passati al programma direttamente dalla linea di comando. In questo post vedremo come leggere e utilizzare questi parametri all'interno del nostro codice PHP.
+Gli argomenti della riga di comando sono uno strumento importante per un programmatore PHP, in quanto consentono di passare informazioni al programma durante l'esecuzione. Imparare come leggere gli argomenti della riga di comando può aiutare a creare applicazioni più flessibili e interattive.
 
-## Come Fare
+## Come fare
 
-Per prima cosa, dobbiamo capire come leggere e accedere ai command line arguments all'interno del nostro script PHP. Per farlo, dobbiamo utilizzare la funzione `$_SERVER['argv']`, che ci restituirà un array contenente tutti i parametri passati al nostro programma. Vediamo un esempio pratico:
+Per leggere gli argomenti della riga di comando in PHP, è necessario utilizzare la funzione `getopt()`. Questa funzione accetta due argomenti: una stringa contenente le opzioni accettate e un array contenente i valori degli argomenti passati. Vediamo un esempio:
 
-```PHP
+```
 <?php
-// codice per leggere e stampare i command line arguments
-$arguments = $_SERVER['argv'];
+// Esempio di utilizzo della funzione getopt()
+$options = getopt("a:b:");
+var_dump($options);
+```
 
-// stampa il numero totale di argomenti passati
-echo "Numero totale di argomenti: " . count($arguments) . "\n";
+Se questo programma viene eseguito da riga di comando con l'opzione "-a valore1 -b valore2", verrà restituita la seguente informazione:
 
-// stampa tutti gli argomenti passati
-foreach ($arguments as $arg) {
-    echo $arg . "\n";
+```
+array(2) {
+  ["a"]=>
+  string(7) "valore1"
+  ["b"]=>
+  string(7) "valore2"
 }
 ```
 
-Supponiamo ora di eseguire il nostro script da linea di comando, passando alcuni parametri:
+È possibile accedere ai valori degli argomenti utilizzando la loro chiave nell'array restituito dalla funzione. Se ad esempio vogliamo ottenere il valore dell'opzione "a" nel nostro esempio, possiamo utilizzare `$options["a"]`.
 
-```bash
-$ php script.php arg1 arg2 arg3
+## Deep Dive
+
+Vediamo ora qualche esempio più complesso per capire meglio come funzionano gli argomenti della riga di comando in PHP. Innanzitutto, la stringa contenente le opzioni accettate può essere modificata in modo da specificare quali opzioni sono obbligatorie o impostare valori di default. Possiamo anche utilizzare un carattere "!" per indicare che l'opzione non richiede un valore.
+
 ```
-
-L'output del nostro script sarà il seguente:
-
-```bash
-Numero totale di argomenti: 4
-script.php
-arg1
-arg2
-arg3
-```
-
-Come possiamo notare, il primo elemento dell'array `$_SERVER['argv']` è sempre il nome del nostro script, mentre gli argomenti passati seguono subito dopo.
-
-Oltre a leggere i command line arguments, possiamo anche gestire specifici parametri passati all'interno del nostro script. Ad esempio, supponiamo di dover aggiungere un parametro opzionale che ci permetta di stampare l'argomento passato dopo di esso:
-
-```PHP
 <?php
-// codice per gestire un parametro opzionale
-$arguments = $_SERVER['argv'];
+// Esempio di utilizzo della funzione getopt() con opzioni obbligatorie
+$options = getopt("a:!b:c:", ["a:", "b:", "c:"]);
+var_dump($options);
+```
 
-// se il secondo argomento è '--print', stampa il terzo argomento
-if ($arguments[1] == '--print') {
-    echo "Argomento passato: " . $arguments[2];
-} else {
-    echo "Nessun parametro opzionale è stato passato.";
+Se ad esempio eseguiamo questo programma con le opzioni "-a valore1 -c valore2", avremo come risultato:
+
+```
+array(2) {
+  ["a"]=>
+  string(7) "valore1"
+  ["c"]=>
+  string(7) "valore2"
 }
 ```
 
-Ora, se eseguiamo il nostro script utilizzando il parametro `--print`:
+In caso di opzioni obbligatorie mancanti, la funzione `getopt()` restituirà un errore.
 
-```bash
-$ php script.php arg1 --print arg2
-```
+## Vedi anche
 
-L'output sarà il seguente:
-
-```bash
-Argomento passato: arg2
-```
-
-## Approfondimento
-
-Oltre ai metodi descritti precedentemente, esistono anche altre soluzioni per leggere e gestire i command line arguments all'interno di un programma PHP. Ad esempio, possiamo utilizzare la libreria `Symfony Console`, che ci fornisce una serie di strumenti per gestire in modo più avanzato i parametri passati da linea di comando.
-
-Inoltre, non dimentichiamo che i command line arguments possono anche essere utilizzati per specificare delle opzioni o delle flag all'interno del nostro script, che ci permettono di personalizzare il suo comportamento in base agli input passati.
-
-## Vedi Anche
-
-- [Utilizzo della funzione `$_SERVER['argv']` in PHP](https://www.php.net/manual/en/reserved.variables.argv.php)
-- [Symfony Console: Gestire input da linea di comando in PHP](https://symfony.com/doc/current/components/console.html)
-- [Passaggio di parametri da linea di comando con PHP](https://www.php.net/manual/en/features.commandline.php)
+- [Documentazione ufficiale di PHP su getopt()](https://www.php.net/manual/en/function.getopt.php)
+- [Tutorial su come leggere argomenti della riga di comando in PHP](https://www.tutorialspoint.com/php/php_command_line.htm)
+- [Esempi pratici di utilizzo di getopt()](https://php.developreference.com/article/22298628/PHP+How+to+use+getopt%28%29)

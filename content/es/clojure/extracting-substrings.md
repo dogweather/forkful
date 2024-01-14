@@ -1,49 +1,58 @@
 ---
 title:                "Clojure: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué extraer subcadenas en Clojure
+## Por qué
 
-En la programación, a menudo nos encontramos con la necesidad de extraer una parte de una cadena o un texto para realizar ciertas operaciones. En Clojure, la extracción de subcadenas nos permite manipular y trabajar con estos fragmentos de texto de manera eficiente.
+Extraer subcadenas de texto es una habilidad esencial para trabajar con cadenas de caracteres en Clojure. Ya sea para manipular datos o para realizar operaciones de búsqueda, conocer cómo extraer subcadenas puede ser muy útil en la programación.
 
 ## Cómo hacerlo
 
-Extraer subcadenas en Clojure es bastante sencillo y se puede realizar de varias maneras. La forma más básica es utilizar la función `subs`, que toma como parámetros una cadena, el índice de inicio y el índice final de la subcadena que queremos extraer.
+Para extraer una subcadena de una cadena de texto en Clojure, puedes utilizar la función `subs`. Por ejemplo:
 
 ```Clojure
-(def cadena "Hola mundo")
-(subs cadena 0 4)
+(def texto "Hola mundo")
+(subs texto 1 4)
 ```
-*Salida: Hola*
 
-También podemos utilizar la función `substring`, que tiene una sintaxis similar a `subs` pero nos permite omitir el índice final si queremos extraer desde el inicio hasta el final de la cadena.
+Este código devolverá la subcadena "ola" al especificar un índice de inicio de 1 (iniciando desde el segundo carácter) y un índice de fin de 4 (no incluyendo el cuarto carácter).
+
+También puedes utilizar la función `substring` para lograr el mismo resultado:
 
 ```Clojure
-(def cadena "Hola mundo")
-(substring cadena 5)
+(substring texto 1 4)
 ```
-*Salida: mundo*
 
-Para realizar extracciones más complejas, podemos utilizar expresiones regulares con la función `re-find`. Esta función toma como parámetros una expresión regular y una cadena, y devolverá la primera coincidencia encontrada en la cadena.
+Sin embargo, `substring` es más eficiente que `subs` ya que no realiza ninguna copia de la cadena original, sino que comparte la misma cadena en memoria.
+
+Si deseas extraer una subcadena desde un índice específico hasta el final de la cadena, puedes omitir el segundo parámetro en ambas funciones:
 
 ```Clojure
-(def cadena "Hola mundo")
-(re-find #"mundo" cadena)
+(subs texto 5) ; devolverá "mundo"
+(substring texto 5) ; también devolverá "mundo"
 ```
-*Salida: mundo*
 
 ## Profundizando
 
-La extracción de subcadenas es una herramienta muy útil en Clojure, ya que nos permite trabajar con fragmentos de texto de manera eficiente y sencilla. Además de las funciones mencionadas anteriormente, también podemos utilizar las funciones `subs`, `substring` y `re-find` junto con otras funciones de manipulación de cadenas en combinaciones más complejas para obtener resultados aún más precisos.
+Cuando se trata de extraer subcadenas, es importante tener en cuenta que los índices en Clojure comienzan desde 0. Esto puede ser confuso para aquellos que están acostumbrados a otros lenguajes de programación en los que los índices comienzan desde 1.
 
-Otra opción es utilizar la librería `clojure.string`, que contiene diversas funciones para trabajar con cadenas, incluyendo la función `replace`, que nos permite reemplazar fragmentos de texto en una cadena con otro texto.
+Además, si el índice de fin es mayor que la longitud de la cadena, se devolverá una subcadena que va desde el índice de inicio hasta el final de la cadena. Por ejemplo:
 
-## Véase también
+```Clojure
+(subs texto 0 500) ; devolverá la cadena completa "Hola mundo"
+```
 
-- [Documentación de Clojure sobre la extracción de subcadenas](https://clojure.org/reference/strings)
-- [Tutorial sobre expresiones regulares en Clojure](https://clojure.org/guides/regular_expressions)
+Por último, también puedes utilizar números negativos como índices en `substring` para contar desde el final de la cadena. Un índice de -1 indicaría el último carácter de la cadena.
+
+## Ver también
+
+- [Documentación de Clojure: Función subs](https://clojuredocs.org/clojure.core/subs)
+- [Documentación de Clojure: Función substring](https://clojuredocs.org/clojure.core/substring)
+- [Tutorial de Clojure: Manipulación de cadenas](https://clojure.org/guides/strings)

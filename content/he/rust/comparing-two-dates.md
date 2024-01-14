@@ -1,43 +1,49 @@
 ---
 title:                "Rust: השוואת שתי תאריכים"
+simple_title:         "השוואת שתי תאריכים"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+## למה?
 
-קישור חזק בין שתי תאריכים הוא חיוני עבור תכנות פונקציות על תאריכים מסוימים. השוואה בין שני תאריכים עלולה להיות אתגר מתמיד, והשתמשות בכלי יעיל כמו Rust עשויה לפתור בעיות מאתגרות זאת.
+כשמתחילים לכתוב קוד ב-Rust, עשויים להתעניין בהשוואת תאריכים. הבנת כיצד לעבוד עם תאריכים בקוד יכולה להקל על התכנות היום יום ולאפשר לנו לכתוב קוד יעיל יותר. למה לא נראה כיצד ניתן לבצע השוואת תאריכים בקוד Rust.
 
-## כיצד לעשות זאת
+## כיצד לבצע השוואת תאריכים ב-Rust
 
-עבור לאורך דוגמאות קוד שלך ופלט תוצאות תוך שימוש בבלוקי קוד "```Rust ... ```". קוד זה יראה כך:
+ניתן לבצע השוואת תאריכים בקוד Rust באמצעות הספרייה `chrono`. נחלק את התהליך לשני שלבים: יצירת תאריך עם הפונקציה `chrono::DateTime::parse_from_str()` והשוואת שני תאריכים עם הפונקציה `DateTime::cmp()`.
 
-```Rust
-fn main() {
-    let date1 = "2021-04-05";
-    let date2 = "2019-12-15";
-    let result = date1 > date2;
-    println!("The result of comparing date1 and date2 is: {}", result);
+```
+use chrono::DateTime;
+use chrono::offset::{ Local, TimeZone };
+
+let date_string = "2020-10-15 12:00:00";
+let date = DateTime::parse_from_str(date_string, "%Y-%m-%d %H:%M:%S").unwrap();
+
+let now = Local::now();
+match date.cmp(&now) {
+    std::cmp::Ordering::Less => println!("התאריך עבר"),
+    std::cmp::Ordering::Equal => println!("היום הוא התאריך!"),
+    std::cmp::Ordering::Greater => println!("התאריך הצפוי מתקרב"),
 }
 ```
 
-מגיע עם הפלט הבא:
+פלט:
 
 ```
-The result of comparing date1 and date2 is: true
+התאריך הצפוי מתקרב
 ```
 
-בקוד למעלה, אנו משווים שני תאריכים ומדפיסים את התוצאה. בכך אנו מראים את יכולת Rust להתמודד עם שני תאריכים תחת מבנה תאים ביעילות.
+## צפייה עמוקה
 
-## חקירה עמוקה
-
-השוואה בין שני תאריכים בעזרת Rust מתבצעת על ידי האצה והמרה של התאריך למספר שלם ואז השוואה של המספרים. המספרים ימי השנה היחודיים שעברו מתאריך ההתחלה של Unix, שהוא 1 בינואר 1970. ככל שמספר הימים היחודיים גדל, כך גדלת תאריך השנה הממוממשת, ובכך גם הניסוח הייחודי להשוואה של תאריכים בשפת Rust.
+כדי לעבוד עם תאריכים מורחבים יותר כמו שנים בלבד או דיווחי שעון, ניתן להתאים את הפונקציות `chrono::DateTime::parse_from_str()` ו- `DateTime::cmp()` לצרכים שלנו. ניתן גם לבדוק את תקינות התאריכים עם הפונקציה `DateTime::naive_local()`.
 
 ## ראה גם
 
-- [רשמי Rust עמותה](https://rust-lang.org)
-- [חוברת המדריך עבור לאמן שלתוכניות Rust מסובבות תאריכים](https://doc.rust-lang.org/rust-by-example/primitives/date.html)
-- [הוראות לקוד Rust עבור השוואת תאריכים ממשהו שלך](https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html)
+- [המדריך הרשמי של chrono](https://docs.rs/chrono/0.4.19/chrono/index.html)
+- [וידאו לימודי על לומדת השוואת תאריכים ב-Rust עם `chrono`](https://www.youtube.com/watch?v=JZBwy48-IhE)
+- [דוגמאות לעבודה עם תאריכים בקוד Rust](https://github.com/ramsayleung/rust-date-time-examples)

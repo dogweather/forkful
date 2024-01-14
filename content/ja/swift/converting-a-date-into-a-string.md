@@ -1,7 +1,9 @@
 ---
-title:                "Swift: 「日付を文字列に変換する」"
+title:                "Swift: 日付を文字列に変換する"
+simple_title:         "日付を文字列に変換する"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/converting-a-date-into-a-string.md"
 ---
 
@@ -9,23 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-日付を文字列に変換するメリットは、日付をより視覚的に分かりやすい形式で表示することができることです。また、データベースやサーバーに保存する際にも、文字列形式の方が扱いやすい場合があります。
+プログラマーであるなら、日付を文字列に変換する必要があるかもしれません。日付を特定の形式で表示したい、データベースに保存するために文字列に変換したい、などの理由が考えられます。
 
 ## 方法
 
+日付を文字列に変換するには、以下のようなコードを使用します。
+
 ```Swift
 let date = Date() // 現在の日付を取得
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy/MM/dd" // 任意のフォーマットを設定
-let dateString = dateFormatter.string(from: date) // 日付を文字列に変換
-print(dateString) // 出力結果：2021/09/16
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy/MM/dd" // 出力する日付のフォーマットを設定
+let dateString = formatter.string(from: date) // 文字列に変換
+print(dateString) // 出力: "2020/07/09"
 ```
+
+上記の例では、DateFormatterクラスを使用して日付を文字列に変換しています。`dateFormat`プロパティを設定することで、出力する日付のフォーマットを指定することができます。より詳細なフォーマットについては、下の"深堀り"セクションをご覧ください。
 
 ## 深堀り
 
-日付を文字列に変換する際には、フォーマットを適切に設定することが重要です。Swiftでは`DateFormatter`というクラスを使用して、日付のフォーマットを指定することができます。上記の例では`"yyyy/MM/dd"`というフォーマットを設定しましたが、これを変更することでさまざまな形式の文字列を作ることができます。詳細なフォーマットの指定方法については、公式ドキュメントを参照してください。
+日付をフォーマットする際に使用できる代表的な文字列をいくつか紹介します。
 
-## 参考
+- `yyyy`: 4桁の年 (例: "2020")
+- `MM`: 2桁の月 (例: "07")
+- `dd`: 2桁の日 (例: "09")
+- `h`: 12時間制の時 (例: "9")
+- `hh`: 12時間制の時 (例: "09")
+- `H`: 24時間制の時 (例: "19")
+- `HH`: 24時間制の時 (例: "19")
+- `m`: 分 (例: "5")
+- `mm`: 分 (例: "05")
+- `a`: a.m./p.m.を表す (例: "a.m.")
+- `E`: 曜日 (例: "木曜日")
 
-- [Apple Developer Documentation - DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [How to convert a date to a different format in Swift?](https://www.hackingwithswift.com/example-code/system/how-to-convert-a-date-to-a-different-format-using-dateformatter)
+詳細なフォーマットについては、[Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns)を参照してください。
+
+## また見る
+
+- [DateFormatter Class Reference](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Unicode Technical Standard #35](https://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns)

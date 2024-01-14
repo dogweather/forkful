@@ -1,40 +1,43 @@
 ---
-title:                "Elm: Konvertering av en streng til små bokstaver"
+title:                "Elm: Omgjøring av en streng til små bokstaver"
+simple_title:         "Omgjøring av en streng til små bokstaver"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å konvertere en streng til små bokstaver kan være nyttig når du ønsker å sammenligne tekst på en enkel måte. Dette er spesielt nyttig når du arbeider med søkefunksjoner eller når du vil søke i en tekstfil eller database.
 
-Når vi jobber med tekstbehandling i programvare, kan det være nødvendig å konvertere strenger til små bokstaver. Dette kan være nyttig for å sammenligne strenger eller for en bedre brukeropplevelse. Elm har en innebygd funksjon for å gjøre dette, og i denne bloggposten skal vi se på hvordan den fungerer.
-
-## Hvordan
-
-For å konvertere en streng til små bokstaver i Elm, kan vi bruke funksjonen `String.toLower`. Her er et eksempel på hvordan det kan gjøres:
+## Hvordan gjøre det
+For å konvertere en streng til små bokstaver i Elm, kan vi bruke funksjonen `String.toLower`. La oss se på et eksempel:
 
 ```Elm
-import String
-
-stringToConvert = "ELM Erin"
-convertedString = String.toLower stringToConvert
-
+stringToLower : String -> String
+stringToLower string =
+  String.toLower string
 ```
 
-Den første linjen importerer `String` modulen, som gir oss tilgang til `String.toLower` funksjonen. Deretter lager vi en variabel `stringToConvert` med en verdi. I neste linje bruker vi `String.toLower` til å konvertere variabelen til små bokstaver og lagrer den i en ny variabel `convertedString`. Når vi kjører koden, vil `convertedString` bli `"elm erin"`.
+Her har vi en funksjon som tar inn en streng og bruker `String.toLower` for å returnere samme streng i små bokstaver. La oss nå prøve å kjøre denne funksjonen med noen eksempler og se på resultatet:
 
-Dette er nyttig når vi for eksempel må sammenligne to strenger og vil ignorere forskjeller i store og små bokstaver. Vi kan også bruke dette til å formatere input fra brukeren til et konsistent format.
+```Elm
+stringToLower "HEI"
+-- gir som output "hei"
 
-## Dykk dypere
+stringToLower "Elm programmering"
+-- gir som output "elm programmering"
+```
 
-Det er verdt å merke seg at `String.toLower` funksjonen kun konverterer bokstaver i det engelske alfabetet til små bokstaver. Eventuelle bokstaver med aksenter eller spesielle tegn vil forbli uendret. Det er også verdt å merke seg at funksjonen ikke endrer originalstrengen, men heller returnerer en ny konvertert versjon.
+Som du kan se, så har funksjonen vår konvertert alle bokstavene til små bokstaver.
 
-I tillegg til `String.toLower` finnes det også en tilsvarende `String.uppercase` funksjon for å konvertere til store bokstaver.
+## Dypdykk
+Det er verdt å merke seg at denne funksjonen kan håndtere ikke bare engelske bokstaver, men også andre språk som bruker diakritiske tegn. Det betyr at den også vil konvertere for eksempel "å" til "a" eller "ø" til "o". Dette er en viktig egenskap å være klar over når du jobber med flerspråklige applikasjoner.
+
+En annen ting å huske på er at funksjonen `String.toLower` vil returnere en ny streng i små bokstaver, men den vil ikke endre den opprinnelige strengen. Dette betyr at hvis du ønsker å konvertere en streng til små bokstaver og deretter bruke den i en sammenligning, så må du sørge for å lagre resultatet av funksjonen i en ny variabel.
 
 ## Se også
-
-- [Elm Docs - String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Elm Docs - toLower](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
-- [Elm Docs - uppercase](https://package.elm-lang.org/packages/elm/core/latest/String#uppercase)
+- Offisiell dokumentasjon for `String.toLower` i Elm: https://package.elm-lang.org/packages/elm/core/latest/String#toLower
+- En guide til Elm programmering på norsk: https://lamstack.nu/elm/guide/

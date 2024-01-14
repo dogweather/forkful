@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Перетворення дати у рядок"
+title:                "TypeScript: Перетворення дати в рядок"
+simple_title:         "Перетворення дати в рядок"
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/converting-a-date-into-a-string.md"
 ---
 
@@ -9,57 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-В першу чергу, конвертація дати в рядок є важливим процесом для програмістів, що працюють з TypeScript. Рядок дати може бути необхідним для подальших операцій в програмі, таких як збереження, виведення на екран, передача на сервер тощо.
+Конвертування дати в рядок є важливою задачею для багатьох програмістів. Це дозволяє приводити дані до читабельного формату, що забезпечує більш зручне використання та обробку дат у програмах.
 
-## Як це зробити
+## Як
 
-Для початку, ми повинні створити змінну з типом Date, яка буде містити поточну дату і час:
-
-```TypeScript
-const currentDate: Date = new Date();
-```
-
-Далі, ми можемо використовувати методи Date для отримання окремих частин дати, таких як день, місяць та рік:
+Для конвертування дати в рядок використовуються методи, доступні в класі `Date`. Наприклад, для отримання рядка, що містить дату та час у зазначеному форматі, можна використовувати метод `toLocaleString()`.
 
 ```TypeScript
-const day: number = currentDate.getDate();
-const month: number = currentDate.getMonth();
-const year: number = currentDate.getFullYear();
+const date = new Date(); // створюємо об'єкт дати
+const stringDate = date.toLocaleString(); // отримуємо рядок у форматі "mm/dd/yyyy, hh:mm:ss am/pm"
+console.log(stringDate); // виводимо результат у консоль
 ```
 
-Для перетворення цих чисел у рядок, ми можемо використовувати функцію `toString()`:
+Ви також можете використовувати методи `getFullYear()`, `getMonth()`, `getDate()` та інші, щоб отримати окремі значення року, місяця, дня тощо. Детальніше про ці методи можна дізнатися у [документації](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date).
 
-```TypeScript
-const dateString: string = day.toString() + "/" + month.toString() + "/" + year.toString();
-```
+Зверніть увагу, що методи `toLocaleString()`, `getFullYear()` та інші можуть приймати аргументи для встановлення бажаного формату та мови. Наприклад, `date.toLocaleString("uk-UA", {weekday: "long"})` поверне день тижня у форматі "п'ятниця".
 
-У кінці, ми отримаємо рядок, який містить дату у форматі "день/місяць/рік".
+## Deep Dive
 
-Нижче наведений вихід програми для поточної дати:
+Конвертування дати в рядок може бути складнішою задачею за перший погляд. Деякі складнощі можуть виникнути при використанні різних мов та різних форматів дат. Також важливо пам'ятати про різницю між локальними та глобальними часовими зонами.
 
-```TypeScript
-console.log(dateString);
-// 15/3/2021
-```
-
-## Глибше дослідження
-
-Окрім методів, що використовуються в прикладі вище, TypeScript має ще декілька корисних функцій для роботи з датами.
-
-Наприклад, метод `toLocaleDateString()` дозволяє виводити дату у вигляді, придатному для користувача, враховуючи регіональні налаштування:
-
-```TypeScript
-const options: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-const localeDateString: string = currentDate.toLocaleDateString('uk-UK', options);
-
-console.log(localeDateString);
-// понеділок, 15 березня 2021 р.
-```
-
-Крім того, TypeScript має вбудований тип `Date`, який містить потужні методи для роботи з датою і часом. Детальніше про цей тип можна дізнатися у [документації](https://www.typescriptlang.org/docs/handbook/utility-types.html#date).
+Щоб уникнути проблем з конвертацією дат, бажано використовувати сторонні бібліотеки, які вже мають вбудовані функції конвертування дат у рядки для різних мов та форматів. Наприклад, такою бібліотекою є [moment.js](https://momentjs.com/). Вона також має багато корисних функцій для роботи з датами.
 
 ## Дивіться також
 
-- [Керування датою та часом в TypeScript](https://www.typescriptlang.org/docs/handbook/datetime.html)
-- [Робота з рядками в TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [Методи роботи з датою в TypeScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Документація з роботи з датами в TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#better-support-for-readonly-arrays-and-tuples)
+- [Стаття про роботу з датами в JavaScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/Date)
+- [Бібліотека moment.js](https://momentjs.com/)

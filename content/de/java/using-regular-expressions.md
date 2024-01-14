@@ -1,7 +1,9 @@
 ---
-title:                "Java: Verwendung von regulären Ausdrücken"
+title:                "Java: Verwenden von regulären Ausdrücken"
+simple_title:         "Verwenden von regulären Ausdrücken"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/using-regular-expressions.md"
 ---
 
@@ -9,48 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Reguläre Ausdrücke sind ein mächtiges Werkzeug in der Java Programmierung, das dir dabei helfen kann, komplexe Textmuster zu erkennen und zu bearbeiten. Mit regulären Ausdrücken kannst du zum Beispiel Email-Adressen, Telefonnummern oder URLs aus einem Text extrahieren oder bestimmte Wörter oder Zeichenfolgen in einem Text ersetzen. Sie können sich als äußerst nützlich erweisen, wenn du mit großen Datenmengen oder der Verarbeitung von Benutzereingaben in deiner Anwendung arbeitest. In diesem Blog-Beitrag lernst du, wie du reguläre Ausdrücke in Java verwendest und wie sie dir bei der Lösung verschiedener Problemstellungen helfen können.
+Regex oder reguläre Ausdrücke sind ein wichtiges Werkzeug für Java-Programmierer, um Textmuster zu suchen und zu manipulieren. Sie können verwendet werden, um komplexe Such- und Ersetzungsaufgaben zu erledigen, insbesondere wenn es um große Datenmengen geht. Mit regulären Ausdrücken können Sie Ihr Programm effizienter und flexibler gestalten.
 
-## Wie benutzt man reguläre Ausdrücke in Java
+## Wie man es benutzt
 
-Um reguläre Ausdrücke in Java verwenden zu können, musst du die Klasse ```java.util.regex.Pattern``` und ```java.util.regex.Matcher``` importieren. Dann kannst du mit dem Pattern-Objekt einen regulären Ausdruck erstellen, der eine bestimmte Zeichenfolge beschreibt, nach der gesucht werden soll. Beispielsweise könnte dein regulärer Ausdruck so aussehen:
-
-```Java
-Pattern pattern = Pattern.compile("Hello [A-Za-z]+");
-```
-
-Dieser reguläre Ausdruck würde nach einer Zeichenfolge suchen, die mit "Hello" beginnt und danach beliebige Buchstaben von A bis Z oder von a bis z enthält. Dann kannst du mit dem Matcher-Objekt dein reguläres Ausdruck auf einen bestimmten Text anwenden, um zu überprüfen, ob es eine Übereinstimmung gibt.
+Um reguläre Ausdrücke in Java zu verwenden, müssen Sie zunächst die "java.util.regex" Bibliothek importieren. Dann können Sie die Methode "matches()" oder "find()" verwenden, um ein Muster in einer Zeichenkette zu finden. Hier ist ein Beispiel, um nach einer bestimmten Anzahl von Ziffern in einem String zu suchen und sie auszugeben:
 
 ```Java
-String text = "Hello John";
+String text = "1234abcdefg";
+Pattern pattern = Pattern.compile("\\d{4}"); // gibt ein Muster von 4 Ziffern an
 Matcher matcher = pattern.matcher(text);
-
-if (matcher.find()) {
-  System.out.println("Es gibt eine Übereinstimmung!");
+while (matcher.find()) {
+    System.out.println(matcher.group()); // Ausgabe: 1234
 }
 ```
 
-In diesem Beispiel würde die Ausgabe "Es gibt eine Übereinstimmung!" erscheinen, da der Text "Hello John" den regulären Ausdruck erfüllt. Zusätzlich kannst du mit regulären Ausdrücken auch Teile des Textes extrahieren, indem du in deinem regulären Ausdruck Gruppierungen mit runden Klammern verwendest. Diese werden dann in der Reihenfolge, in der sie im regulären Ausdruck aufgeführt sind, als Matches zurückgegeben.
+Sie können auch reguläre Ausdrücke verwenden, um Muster zu ersetzen oder Teile einer Zeichenkette zu extrahieren. Hier ist ein Beispiel, um alle Vokale in einem String durch "x" zu ersetzen:
 
 ```Java
-Pattern pattern = Pattern.compile("Hello ([a-zA-Z]+)");
-String text = "Hello John";
-Matcher matcher = pattern.matcher(text);
-
-if (matcher.find()) {
-  String name = matcher.group(1);
-  System.out.println("Hallo " + name + "!");
-}
+String text = "Hello World";
+String result = text.replaceAll("[aeiou]", "x");
+System.out.println(result); // Ausgabe: Hxllx Wxrld
 ```
-
-In diesem Fall würde die Ausgabe "Hallo John!" erscheinen, da der Name "John" in der ersten Gruppierung des regulären Ausdrucks steht.
 
 ## Tiefergehende Informationen
 
-Reguläre Ausdrücke können sehr komplex werden und umfassen viele verschiedene Operatoren und Syntaxregeln. Um alle Möglichkeiten von regulären Ausdrücken in Java zu verstehen, empfehle ich dir, die offizielle Java-Dokumentation zur ```java.util.regex``` Klasse zu lesen. Darin findest du ausführliche Erklärungen zu allen relevanten Klassen und Methoden und kannst deine Kenntnisse weiter vertiefen.
+Reguläre Ausdrücke unterstützen verschiedene Metazeichen und spezielle Zeichenfolgen, die es Ihnen ermöglichen, spezifische Muster zu identifizieren. Einige nützliche Metazeichen sind:
+
+- **.**: Steht für jedes einzelne Zeichen
+- **\d**: Steht für eine einzelne Ziffer
+- **\w**: Steht für ein alphanumerisches Zeichen
+- **\s**: Steht für ein Leerzeichen oder eine Tabstopps
+- **^**: Steht für den Anfang einer Zeichenkette
+- **$**: Steht für das Ende einer Zeichenkette
+
+Sie können auch Zusatzfunktionen wie Gruppierungen, Quantifizierer und Alternativen verwenden, um komplexe Muster zu erstellen. Es gibt viele Online-Ressourcen und Tutorials, die Ihnen bei der Erstellung und Überprüfung von regulären Ausdrücken helfen können.
 
 ## Siehe auch
 
-- [Java-Dokumentation zur ```java.util.regex``` Klasse](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
-- [Tutorial zu regulären Ausdrücken in Java von Javatpoint](https://www.javatpoint.com/java-regex)
-- [Online RegEx Tester zum Ausprobieren von regulären Ausdrücken](https://regex101.com/)
+- [Java-Dokumentation zur Regex-Bibliothek](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
+- [Regex-Tutorial von Codecademy](https://www.codecademy.com/learn/learn-regex)
+- [Regex Tester](https://regexr.com/)

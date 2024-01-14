@@ -1,34 +1,51 @@
 ---
 title:                "Clojure: Começando um novo projeto"
+simple_title:         "Começando um novo projeto"
 programming_language: "Clojure"
-category:             "Getting Started"
+category:             "Clojure"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que iniciar um novo projeto em Clojure?
+# Por que iniciar um novo projeto em Clojure?
 
-Se você é um programador à procura de uma linguagem versátil e funcional, Clojure pode ser uma ótima escolha para iniciar um projeto. Com sua sintaxe simples e poderosas ferramentas de manipulação de dados, Clojure pode ajudar a agilizar e simplificar o processo de desenvolvimento de software.
+Iniciar um novo projeto em Clojure pode ser uma decisão sábia para qualquer programador que busca uma linguagem de programação moderna e poderosa. Com sua sintaxe simples e funcional, Clojure permite que desenvolvedores criem aplicativos robustos e escaláveis de forma eficiente.
 
-## Como começar
+# Como começar em Clojure?
+
+Começar um novo projeto em Clojure é fácil e rápido. Basta seguir os seguintes passos:
+
+1. Instale o Java Development Kit (JDK).
+2. Instale o Leiningen, uma ferramenta de construção de projetos em Clojure.
+3. Crie um novo projeto com o comando ```lein new app nome-do-projeto```.
+4. Abra o arquivo ```project.clj```, que contém as dependências do seu projeto.
+5. Adicione as dependências desejadas e execute o comando ```lein deps``` para baixá-las.
+6. Escreva seu código Clojure em arquivos com extensão ```.clj```.
+7. Para executar o projeto, use o comando ```lein run```.
+
+### Exemplo:
 
 ```Clojure
-(defn somar [a b]
-    (+ a b))
+(ns meu-projeto.core)
+(defn saudacao [nome]
+  (println (str "Olá " nome)))
 
-(somar 5 7)
-; Output: 12
+(saudacao "Usuário") ; imprime "Olá Usuário" no terminal
 ```
 
-Para começar a programar em Clojure, você precisa ter o ambiente de desenvolvimento configurado em seu computador. Isso inclui a instalação do Java Development Kit (JDK) e do Clojure. Depois disso, você pode usar ferramentas como o Leiningen para gerenciar suas dependências e criar projetos.
+# Mergulhando mais fundo em iniciar um novo projeto
 
-## Aprofundando-se
+Ao iniciar um novo projeto em Clojure, é importante considerar algumas coisas:
 
-Ao iniciar um novo projeto em Clojure, é importante entender alguns conceitos fundamentais, como imutabilidade, funções de alta ordem e programação funcional em geral. Também é útil conhecer as ferramentas disponíveis para a manipulação de dados, como a biblioteca core, que oferece funções poderosas como `map`, `filter` e `reduce`.
+- Clojure é uma linguagem que roda sobre a JVM, então é importante ter algum conhecimento de Java.
+- A comunidade Clojure é muito ativa, então sempre há suporte e recursos disponíveis.
+- Utilizar a funcionalidade pura do Clojure é uma das melhores maneiras de obter benefícios do uso dessa linguagem.
+- Para projetos maiores e mais complexos, é recomendável utilizar um editor de código ou uma IDE específica para Clojure, como o Cursive ou o Calva.
 
-## Veja também
+# Veja também
 
-- [Clojure - Site Oficial](https://clojure.org/)
-- [Clojure Brasil](https://clojure.com.br/)
-- [Clojure Cookbook - Livro de receitas para Clojure](https://github.com/clojure-cookbook/clojure-cookbook)
+- [Documentação oficial do Clojure](https://clojure.org/)
+- [Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook)
+- [Clojure for the Brave and True](https://www.braveclojure.com/)

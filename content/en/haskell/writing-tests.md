@@ -1,43 +1,80 @@
 ---
 title:                "Haskell recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-As developers, we often spend countless hours creating complex code to solve problems. But how do we make sure that our code is actually solving those problems correctly? That’s where writing tests comes in. By writing tests, we can ensure that our code is functioning as expected and can easily catch any bugs that may arise as we make changes. This saves time and avoids potential headaches in the future.
+# Why Write Tests?
+As programmers, our main goal is to create functional and reliable code. But how do we ensure that our code works as intended? This is where writing tests comes in. 
 
-## How To
-Writing tests in Haskell is quite straightforward. Let’s take a look at an example:
+Tests are a crucial part of the development process as they help us detect and prevent bugs, verify the functionality of our code, and improve the overall quality of our software. They also serve as documentation for our code, making it easier for others to understand and maintain.
 
+# How To Write Tests in Haskell
+Writing tests in Haskell is made easy with the help of the HUnit library. In this tutorial, we will go through the process of creating and running tests using the HUnit framework.
+
+To get started, we need to import the necessary modules from the HUnit library:
+```Haskell
+import Test.HUnit
 ```
-haskell
--- This is a function that takes in two numbers and returns their sum.
-sum :: Int -> Int -> Int
-sum a b = a + b
+Next, we can define our test cases using the `TestCase` and `TestList` functions:
+```Haskell
+testAddition :: Test
+testAddition = TestCase (assertEqual "1 + 1 should equal 2" 2 (1+1))
 
--- We can write a test for this function using the HUnit library.
-sumTest :: Test
-sumTest = TestCase $ assertEqual "Sum of 2 and 3 should be 5" (sum 2 3) 5
+testSubtraction :: Test
+testSubtraction = TestCase (assertEqual "5 - 3 should equal 2" 2 (5-3))
 
--- We can then run this test using the `runTestTT` function.
-runTestTT sumTest
+testMultiplication :: Test
+testMultiplication = TestCase (assertEqual "2 * 3 should equal 6" 6 (2*3))
+
+testDivision :: Test
+testDivision = TestCase (assertEqual "6 / 3 should equal 2" 2 (6/3))
+
+testCases :: Test
+testCases = TestList [testAddition, testSubtraction, testMultiplication, testDivision]
 ```
 
-The output of this test should be `Cases: 1 Tried: 1 Errors: 0 Failures: 0`, indicating that our test passed with flying colors. Let’s break down this code:
+We can then run our test cases using the `runTestTT` function and view the results:
+```Haskell
+main :: IO ()
+main = do
+    runTestTT testCases
+```
 
-- Line 1 declares a function named `sum` that takes in two `Int` parameters and returns their sum.
-- Line 5 creates a test named `sumTest` using the `TestCase` function from the HUnit library.
-- Line 6 uses the `assertEqual` function to compare the expected value (5) with the actual value of calling `sum` with the parameters 2 and 3. If these values do not match, the test will fail.
-- Finally, on line 9 we run the test using the `runTestTT` function, which will display the results in the console.
+The output should look like this:
+```
+Cases: 4  Tried: 4  Errors: 0  Failures: 0
+Cases: 4  Tried: 4  Errors: 0  Failures: 0
+Cases: 4  Tried: 4  Errors: 0  Failures: 0
+Cases: 4  Tried: 4  Errors: 0  Failures: 0
+Cases: 4  Tried: 4  Errors: 0  Failures: 0
+  Cases: 4  Tried: 4  Errors: 0  Failures: 0
+  Cases: 4  Tried: 4  Errors: 0  Failures: 0
 
-## Deep Dive
-As we can see, writing tests in Haskell is quite simple. However, it’s important to note that tests should cover various scenarios and edge cases to ensure that our code is robust. We can also use the `QuickCheck` library to generate random inputs and verify that our code works for a range of values. In addition, we can use `QuickCheck` to test properties of our code by specifying their expected behaviors. By writing thorough tests, we can be confident in the functionality and reliability of our code.
+Cases: 4  Tried: 4  Errors: 0  Failures: 0
+```
 
-## See Also
+These results tell us that all of our test cases have passed, and our code is functioning as intended. If there were any errors or failures, the output would show them in detail.
+
+# Deep Dive into Writing Tests
+Now that we have gone through the basic steps of writing and running tests, let's go deeper and look at some best practices for writing tests in Haskell.
+
+1. Use descriptive test names: Clear and descriptive test names can make it easier to understand what each test case is checking for and what its expected result is.
+
+2. Use different types of tests: While unit tests are essential, it's also important to also include integration and end-to-end tests to cover different aspects of your code.
+
+3. Test edge cases and unexpected inputs: Don't just test the typical cases, but also include tests for edge cases and invalid inputs to ensure that your code can handle all possible scenarios.
+
+4. Keep tests independent and order-independent: Each test case should be able to run independently without depending on the results of other tests. It's also important to run tests in a random order to catch any potential issues with test dependence.
+
+5. Continuously update and maintain tests: As your code evolves, make sure to update your tests to reflect any changes. This ensures that your tests stay relevant and effective.
+
+# See Also
 - [HUnit documentation](https://hackage.haskell.org/package/HUnit)
-- [QuickCheck documentation](https://hackage.haskell.org/package/QuickCheck)
-- [How to write good tests in Haskell](https://lexi-lambda.github.io/blog/2018/02/10/an-opinionated-guide-to-haskell-in-2018/#writing-good-unit-tests)
+- [Best practices for unit testing in Haskell](https://www.fpcomplete.com/blog/2017/10/unit-testing-haskell-best-practices/)
+- [Test-driven development (TDD) in Haskell](https://medium.com/@vaibhavsagar/test-driven-development-in-haskell-6b56622d7e4f)

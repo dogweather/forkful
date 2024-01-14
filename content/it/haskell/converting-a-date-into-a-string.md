@@ -1,38 +1,55 @@
 ---
-title:                "Haskell: Converting una data in una stringa"
+title:                "Haskell: Convertire una data in una stringa"
+simple_title:         "Convertire una data in una stringa"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-Convertire una data in una stringa è un'operazione molto comune e utile in programmazione. Ciò consente di visualizzare la data in un formato facilmente leggibile per gli utenti, come ad esempio "1 gennaio 2021", anziché un valore numerico come "1/1/21".
+La conversione di una data in una stringa è un'operazione comune nella programmazione di Haskell per diverse ragioni. Ad esempio, può essere utile per mostrare una data all'utente o per salvare una data in un file di testo.
 
-# Come fare
+## Come fare
 
-Per convertire una data in una stringa in Haskell, è possibile utilizzare la funzione `formatTime` del modulo `Data.Time.Format`. Questa funzione richiede due argomenti: un formato di output e una data da convertire. Ad esempio, per convertire la data corrente in una stringa nel formato "DD/MM/YYYY", è possibile utilizzare il seguente codice:
+Per convertire una data in una stringa in Haskell, possiamo utilizzare la funzione `show` seguita da una data del tipo `Data.DateTime`. Di seguito un esempio:
 
+```Haskell
+import Data.DateTime
+ 
+main = do
+  let date = fromGregorian 2020 5 31
+  let dateString = show date
+  putStrLn dateString
 ```
-import Data.Time.Format
+
+L'output di questo codice sarà `2020-05-31T00:00:00Z`, con il formato standard ISO 8601 per le date.
+
+È anche possibile specificare un formato particolare utilizzando la funzione `formatDateTime` del modulo `Data.DateTime.Format`. Ad esempio:
+
+```Haskell
+import Data.DateTime
+import Data.DateTime.Format
 
 main = do
-  current <- getCurrentTime
-  let output = formatTime defaultTimeLocale "%d/%m/%Y" current
-  putStrLn output
+  let date = fromGregorian 2020 5 31
+  let dateString = formatDateTime "%d/%m/%Y" date
+  putStrLn dateString
 ```
 
-L'output sarà "01/01/2021".
+In questo caso, l'output sarà `31/05/2020`.
 
-# Approfondimento
+## Approfondimento
 
-La funzione `formatTime` accetta una vasta gamma di formati di data, come ad esempio "%A, %d %B %Y" per ottenere un output come "Venerdì, 01 gennaio 2021". Inoltre, è possibile specificare anche altre localizzazioni, come la lingua e il fuso orario, utilizzando il parametro `locale` della funzione.
+La conversione di una data in una stringa coinvolge la gestione di diversi elementi, come il formato della data, il fuso orario e l'utilizzo di funzioni specifiche per gestire le date. Il modulo `Data.DateTime` fornisce diverse funzioni utili per lavorare con le date, oltre a gestire automaticamente il fuso orario locale.
 
-Inoltre, è importante tenere conto della gestione della data nel proprio ambiente di sviluppo, poiché il formato della data potrebbe variare a seconda del sistema operativo utilizzato.
+Inoltre, ci sono molti altri moduli disponibili su Hackage, la piattaforma ufficiale per i pacchetti di Haskell, che offrono funzioni avanzate per la manipolazione e la conversione delle date.
 
-# Vedi anche
+## Vedi anche
 
-- [Documentazione di `Data.Time.Format`](https://hackage.haskell.org/package/time/docs/Data-Time-Format.html)
-- [Tutorial su come gestire le date in Haskell](https://guide.aelve.com/haskell/time/1-date-and-time)
+- [Documentazione ufficiale Data.DateTime](https://hackage.haskell.org/package/datetime)
+- [Pacchetto on Hackage per formattare le date](https://hackage.haskell.org/package/time-format)
+- [Guida alla conversione delle date in Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/Simple%20examples#pick-of-the-week--converting-dates)

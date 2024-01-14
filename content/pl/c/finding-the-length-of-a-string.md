@@ -1,19 +1,21 @@
 ---
 title:                "C: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego znalezienie długości ciągu jest ważne w C?
+## Dlaczego
 
-Znalezienie długości ciągu (lub inaczej mówiąc, liczby znaków znajdujących się w danym ciągu) jest podstawową operacją w wielu językach programowania, w tym w C. Jest to często używane podczas manipulacji ciągami tekstu, takimi jak wyświetlanie, porównywanie lub kopiowanie. W tym artykule dowiesz się, jak wykonać to zadanie w C.
+Długość ciągu znaków jest jedną z podstawowych operacji w C, która jest niezbędna do zrozumienia dla każdego programisty. Pozwala nam ona określić ilość znaków w danym ciągu, co jest niezbędne do wielu zadań, takich jak kopiowanie, łączenie lub weryfikacja tekstu. Dlatego też, poznając sposoby na znajdowanie długości ciągu znaków, staje się nam dostępnych wiele nowych możliwości programistycznych.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Najprostszym sposobem na znalezienie długości ciągu jest użycie funkcji **strlen()** z biblioteki string.h. Przyjmuje ona jako argument ciąg znaków i zwraca liczbę znaków w tym ciągu. Przykładowy kod wyglądałby następująco:
+Istnieje kilka sposobów na znalezienie długości ciągu znaków w języku C. Jednym z najprostszych sposobów jest użycie funkcji `strlen()` z biblioteki standardowej `string.h`. Funkcja ta przyjmuje jako argument wskaźnik na ciąg znaków i zwraca jego długość jako liczbę całkowitą. Poniżej znajduje się przykładowy kod wykorzystujący tę funkcję:
 
 ```C
 #include <stdio.h>
@@ -21,51 +23,42 @@ Najprostszym sposobem na znalezienie długości ciągu jest użycie funkcji **st
 
 int main()
 {
-    char str[] = "Witaj świecie!";
-    int len = strlen(str);
-
-    printf("Długość ciągu '%s' to %d", str, len);
+    char exampleString[] = "Przykładowy tekst";
+    printf("Długość ciągu znaków wynosi: %d", strlen(exampleString));
+    return 0;
 }
 ```
 
-**Output:**
+Output:
+`Długość ciągu znaków wynosi: 18`
 
-```
-Długość ciągu 'Witaj świecie!' to 14
-```
-
-Możesz również ręcznie policzyć długość ciągu, korzystając z pętli **while** i zwiększając licznik z każdym kolejnym znakiem, dopóki nie napotkasz znaku końca ciągu **\0**. Przykładowy kod wyglądałby tak:
+Innym sposobem na znalezienie długości ciągu jest użycie pętli `while` w połączeniu z funkcją `sizeof()`. Poniższy kod pokazuje jak można to zrobić:
 
 ```C
 #include <stdio.h>
 
 int main()
 {
-    char str[] = "Cześć!";
+    char exampleString[] = "Przykładowy tekst";
     int i = 0;
-    while (str[i] != '\0')
+    while(exampleString[i] != '\0')
     {
         i++;
     }
-
-    printf("Długość ciągu '%s' to %d", str, i);
+    printf("Długość ciągu znaków wynosi: %d", i);
+    return 0;
 }
 ```
 
-**Output:**
+Output:
+`Długość ciągu znaków wynosi: 18`
 
-```
-Długość ciągu 'Cześć!' to 6
-```
+## Wnikliwa analiza
 
-## Głębszy przegląd
+Warto zauważyć, że funkcja `strlen()` liczy znaki od pierwszego aż do znaku końca ciągu, który jest oznaczony przez specjalny znak `\0`. Dzięki temu, możemy umieścić wiele znaków w jednej tablicy, a funkcja ta i tak poprawnie obliczy długość ciągu. Ponadto, pętla `while` w połączeniu z funkcją `sizeof()` sprawdzają każdy kolejny bajt aż do napotkania znaku `\0`, co w praktyce jest równoznaczne ze zliczeniem wszystkich znaków.
 
-Znajomość długości ciągu jest bardzo ważna przy manipulacji napisami w C. Musisz pamiętać, że dla funkcji **strlen()**, sama długość znaków ma znaczenie, a nie długość tablicy przechowującej ciąg. Na przykład, jeśli stworzysz tablicę o rozmiarze 10 znaków i zainicjujesz ją jako "Cześć!", funkcja **strlen()** zwróci 6, ponieważ są to tylko znaki widoczne, reszta tablicy jest uzupełniona zerami. 
+## Zobacz również
 
-Pamiętaj również, że znak końca ciągu **\0** jest liczbą 0, więc jeśli zmodyfikujesz go na inną liczbę, funkcja **strlen()** zwróci błędne wyniki. 
-
-## Zobacz także
-
-- [Podstawowe operacje na napisach w C](https://www.programiz.com/c-programming/c-strings)
-- [Dokumentacja funkcji strlen()](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
-- [Inne funkcje z biblioteki string.h](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- Dokumentacja funkcji `strlen()` na stronie [cplusplus.com](https://www.cplusplus.com/reference/cstring/strlen/)
+- Wideo tutorial o znajdowaniu długości ciągu znaków w C na kanale [Programiz](https://www.programiz.com/c-programming/c-strings-length) 
+- Przykładowe zadanie dotyczące znajdowania długości ciągu znaków na [HackerRank](https://www.hackerrank.com/challenges/strlen-in-c/problem)

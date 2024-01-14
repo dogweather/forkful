@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Lire un fichier texte"
+title:                "Clojure: Lecture d'un fichier texte."
+simple_title:         "Lecture d'un fichier texte."
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/reading-a-text-file.md"
 ---
 
@@ -9,55 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un programmeur en herbe ou un passionné de programmation, vous avez probablement entendu parler de Clojure. C'est un langage de programmation fonctionnel qui est de plus en plus populaire pour ses performances, sa concision et sa capacité à fonctionner sur des machines virtuelles Java. L'une des tâches les plus courantes en programmation est la manipulation de fichiers texte. Et c'est exactement ce que nous allons aborder dans cet article - comment lire un fichier texte en utilisant Clojure.
+La lecture de fichiers texte est une étape cruciale dans de nombreux programmes, permettant de manipuler et de traiter des données externes. Comprendre comment lire des fichiers texte en Clojure peut vous aider à créer des applications plus complètes et plus efficaces.
 
 ## Comment faire
 
-Tout d'abord, nous devons créer un fichier texte pour pouvoir le lire avec Clojure. Pour cela, créez un fichier nommé "exemple.txt" et ajoutez-y du contenu. Voici un exemple :
+La première étape pour lire un fichier texte en Clojure est d'ouvrir le fichier à l'aide de la fonction `with-open`. Cette fonction prend deux arguments : le chemin d'accès au fichier et un nom de variable que vous utiliserez pour référencer le fichier ouvert.
 
 ```Clojure
-Ceci est un exemple de fichier texte.
-
-Il contient plusieurs lignes de texte que nous allons lire avec Clojure.
+(with-open [fichier (io/reader "chemin/vers/le/fichier.txt")]
+  ;; Vous pouvez maintenant exécuter des opérations sur le fichier ici
+  )
 ```
 
-Maintenant, nous pouvons commencer à écrire notre code Clojure pour lire ce fichier. Tout d'abord, nous devons ouvrir le fichier en utilisant la fonction "with-open". Cela permet de s'assurer que le fichier est correctement fermé après utilisation. Nous spécifions également le chemin du fichier en utilisant le préfixe "file":
+Ensuite, vous pouvez utiliser la fonction `line-seq` pour lire le contenu du fichier ligne par ligne dans une séquence. Vous pouvez également utiliser la fonction `read-line` pour lire une seule ligne à la fois.
 
 ```Clojure
-(with-open [f (file "exemple.txt")]
-  ;; du code sera ajouté ici
-)
+(with-open [fichier (io/reader "chemin/vers/le/fichier.txt")]
+  (doseq [ligne (line-seq fichier)]
+    ;; Faire quelque chose avec chaque ligne ici
+    ))
 ```
 
-Maintenant que nous avons ouvert le fichier, nous pouvons utiliser la fonction "read-line" pour lire chaque ligne du fichier. Ensuite, nous pouvons imprimer chaque ligne en utilisant la fonction "println".
+Il est également possible de spécifier l'encodage du fichier en ajoutant un troisième argument à `io/reader`.
 
 ```Clojure
-(with-open [f (file "exemple.txt")]
-  (loop [line (read-line f)]
-    (when line
-      (println line)
-      (recur (read-line f)))))
+(io/reader "chemin/vers/le/fichier.txt" "utf-8")
 ```
 
-Si nous exécutons ce code, nous devrions voir la sortie suivante dans notre terminal :
+## Plongée en profondeur
 
-```
-Ceci est un exemple de fichier texte.
-Il contient plusieurs lignes de texte que nous allons lire avec Clojure.
-```
+Lorsque vous lisez un fichier texte en Clojure, il est important de prendre en compte l'encodage du fichier afin de vous assurer que le texte est correctement interprété. Dans certains cas, il peut être nécessaire de convertir l'encodage du fichier en utilisant la fonction `clojure.string/encoding`.
 
-## Deep Dive
-
-Maintenant que vous savez comment lire un fichier texte en utilisant Clojure, voyons en quoi cela est utile. La manipulation de fichiers texte est souvent nécessaire pour traiter des données provenant de différentes sources, telles que des fichiers de log, des fichiers CSV ou même des fichiers de configuration.
-
-Clojure offre également des fonctions plus avancées pour lire et écrire des fichiers, telles que "slurp" pour lire le contenu d'un fichier en une seule fois, ou "spit" pour écrire des données dans un fichier.
+Il est également possible de lire des fichiers compressés en utilisant la fonction `gzip-reader` ou `bzip2-reader` à la place de `io/reader`.
 
 ## Voir aussi
 
-Pour en savoir plus sur la manipulation de fichiers en utilisant Clojure, vous pouvez consulter les ressources suivantes :
-
-- La documentation officielle de Clojure sur la manipulation de fichiers : https://clojuredocs.org/clojure.java.io/file
-- Un tutoriel sur la lecture et l'écriture de fichiers en Clojure : https://www.braveclojure.com/files/
-- Un article sur la manipulation de fichiers CSV en utilisant Clojure : https://www.ianlewis.org/en/reading-and-writing-csv-files-using-clojure
-
-Maintenant que vous avez une meilleure compréhension de la lecture de fichiers texte en utilisant Clojure, vous pouvez l'appliquer à vos propres projets et explorer davantage les possibilités offertes par ce langage de programmation fonctionnel moderne. Bonne lecture !
+- [Documentation de Clojure sur la lecture de fichiers](https://clojure.org/reference/io)
+- [Article sur la manipulation des fichiers en Clojure](https://oli.me.uk/2011/01/06/reading-a-file-in-clojure/)
+- [Exemples de code pour la lecture de fichiers en Clojure](https://gist.github.com/karianna/647202)

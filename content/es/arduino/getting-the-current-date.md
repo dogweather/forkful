@@ -1,68 +1,71 @@
 ---
-title:                "Arduino: Obtener la fecha actual."
+title:                "Arduino: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por qué
+## Por qué
 
-¿Alguna vez has querido que tu proyecto de Arduino muestre la fecha y hora actual? Quizás quieres crear un reloj digital o simplemente quieres saber cuánto tiempo ha pasado desde tu último proyecto. Sea cual sea la razón, obtener la fecha y hora actual es una habilidad útil para cualquier programador de Arduino.
+Algunas veces, en nuestros proyectos de Arduino, necesitamos obtener la fecha actual. Puede ser para mostrarla en una pantalla LCD o para tomar decisiones basadas en la fecha. Aprender cómo obtener la fecha actual nos permite agregar funcionalidades interesantes a nuestros proyectos.
 
-##Cómo hacerlo
+## Cómo hacerlo
 
-Para obtener la fecha y hora actual en Arduino, debemos utilizar la librería "Time.h". Primero, debemos incluir la librería en nuestro código:
+Para obtener la fecha actual en Arduino, vamos a utilizar la librería "RTClib". Esta librería nos permite conectarnos a un módulo RTC (Real Time Clock) y obtener la fecha y hora en tiempo real.
 
-```Arduino
-#include <Time.h>
+Primero, necesitamos incluir la librería en nuestro código:
+
+```
+#include <RTClib.h>
 ```
 
-Luego, debemos inicializar una variable del tipo "tmElements_t" que utilizará la librería para almacenar la fecha y hora:
+Luego, declaramos un objeto de tipo "RTC_DS1307" que será el encargado de comunicarse con nuestro módulo RTC:
 
-```Arduino
-tmElements_t tiempo;
+```
+RTC_DS1307 rtc;
 ```
 
-Ahora, podemos utilizar la función "now()" para obtener la fecha y hora actual y almacenarla en nuestra variable "tiempo":
+Antes de utilizar el objeto, debemos inicializarlo en el setup() de nuestro código:
 
-```Arduino
-tiempo = now();
+```
+void setup() {
+  rtc.begin();
+}
 ```
 
-Para imprimir la fecha y hora en el monitor serie, utilizamos las funciones "year()", "month()", "day()", "hour()", "minute()" y "second()" de la librería, de la siguiente manera:
+Ahora, podemos obtener la fecha actual usando el método "now()" del objeto rtc. Este método nos devuelve un objeto "DateTime" que podemos almacenar en una variable y utilizar sus métodos para obtener la información deseada:
 
-```Arduino
-Serial.print(year(tiempo)); // imprime el año actual
+```
+DateTime now = rtc.now();
+int dia = now.day();
+int mes = now.month();
+int año = now.year();
+```
+
+Podemos imprimir la fecha en un formato legible para el usuario utilizando el siguiente código:
+
+```
+Serial.print(dia);
 Serial.print("/");
-Serial.print(month(tiempo)); // imprime el mes actual
+Serial.print(mes);
 Serial.print("/");
-Serial.print(day(tiempo)); // imprime el día actual
-
-Serial.print(" ");
-
-Serial.print(hour(tiempo)); // imprime la hora actual
-Serial.print(":");
-Serial.print(minute(tiempo)); // imprime el minuto actual
-Serial.print(":");
-Serial.print(second(tiempo)); // imprime el segundo actual
+Serial.println(año);
 ```
 
-La salida en el monitor serie debería verse así:
+Con esto, ya hemos obtenido la fecha actual en nuestro código de Arduino.
 
-```
-2021/09/03 12:30:25
-```
+## Profundizando
 
-##Profundizando
+Si queremos aprender más sobre cómo funciona la obtención de la fecha actual en Arduino, podemos investigar sobre el formato de fecha utilizado por la librería RTClib y cómo se comunica con el módulo RTC a través del protocolo I2C.
 
-La función "now()" de la librería "Time.h" utiliza un reloj interno del Arduino y se actualiza cada segundo. Sin embargo, si necesitas una mayor precisión, puedes utilizar un módulo de tiempo real (RTC) externo que se conecta al Arduino a través de I2C.
+También podemos explorar otras librerías que nos permitan obtener la fecha utilizando diferentes métodos, como conectarse a un servidor de tiempo a través de internet.
 
-Además, la librería "Time.h" también tiene funciones para obtener la fecha y hora en formato Unix, o para convertir entre diferentes formatos de tiempo.
+## Ver también
 
-##Véase también
-
-- [Documentación de Time.h](https://www.arduino.cc/reference/en/libraries/time/)
-- [Tutorial sobre el uso de un módulo RTC con Arduino](https://www.youtube.com/watch?v=92AroynoCXc)
-- [Ejemplo de conversión de formato de tiempo en Arduino](https://lastminuteengineers.com/convert-time-date-to-timestamp-arduino-ide/)
+- [Librería RTClib](https://github.com/adafruit/RTClib)
+- [Tutorial de Arduino sobre trabajar con fechas y tiempos](https://www.arduino.cc/en/Tutorial/libraryExamples/Time)
+- [Información sobre el protocolo I2C](https://www.arduino.cc/en/reference/wire)

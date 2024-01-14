@@ -1,7 +1,9 @@
 ---
-title:                "Java: Skrive tester"
+title:                "Java: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/writing-tests.md"
 ---
 
@@ -9,42 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Vi vet alle hvor viktig det er å skrive god og feilfri kode når vi utvikler programvare. Men en like viktig del av utviklingsprosessen er å skrive tester for å sikre at koden vår fungerer som den skal. Tester hjelper oss med å oppdage og fikse feil før de kommer ut til sluttbrukeren, og bidrar til å skape mer robuste og pålitelige programmer. I denne bloggposten kommer vi til å se på hvorfor det er viktig å skrive tester i Java-programmering.
+Å skrive tester er en avgjørende del av Java-programmering som kan bidra til å forbedre koden din og sikre at den fungerer som den skal. Tester er også nyttige for å finne og fikse feil i koden din, noe som kan spare deg for mye hodepine i det lange løp.
 
 ## Hvordan
 
-Skriving av tester kan virke som en tidkrevende prosess, men det er absolutt verdt innsatsen i det lange løp. La oss se på et enkelt eksempel for å demonstrere hvordan tester kan bidra til å forbedre koden vår. Vi skal lage en enkel kalkulator som kan legge sammen to tall og returnere resultatet. Her er koden vår:
+For å skrive tester i Java, må du følge disse trinnene:
 
-```java
-public static int add(int a, int b){
-  return a + b;
-}
-```
+1. Definer et nytt testklasse ved å bruke `@Test`-annotasjonen.
+2. Sett opp data eller objekter som skal testes.
+3. Lag en testmetode ved å bruke `@Test`-annotasjonen.
+4. Bruk `assert`-metoder til å bekrefte at den forventede utgangen er den samme som den faktiske utgangen.
 
-For å teste denne koden, må vi skrive noen tester som sjekker om add-metoden returnerer riktig resultat for forskjellige input-verdier. Her er et eksempel på en test:
+Et eksempel på en testklasse og testmetode kan se ut som dette:
 
-```java
+```Java
 @Test
-public void testAdd() {
-  int result = add(5, 10);
-  int expected = 15;
-  assertEquals(expected, result);
+public class CalculatorTest {
+  Calculator calculator = new Calculator();
+  
+  @Test
+  public void testAddition() {
+    int result = calculator.add(2, 2);
+    assert result == 4;
+  }
 }
 ```
+I dette eksempelet opprettes det en testklasse kalt `CalculatorTest` som tester om `add`-metoden i `Calculator`-klassen fungerer som den skal. I testmetoden brukes `assert`-metoden for å bekrefte at resultatet av addisjonen er 4, som er det forventede resultatet.
 
-Vi kjører testen og ser at den passerer, alt fungerer som forventet. Men hva hvis vi hadde glemt å ta hensyn til negativ input? Ved å skrive flere tester, for eksempel en for negativ input, kan vi oppdage og fikse denne feilen før den skaper problemer i produksjon.
+Det finnes også flere rammeverk som kan hjelpe deg med å skrive og kjøre tester, som for eksempel JUnit og TestNG.
 
-## Dypdykk
+## Deep Dive
 
-Det finnes ulike typer tester i Java-programmering, som enhetstester, integrasjonstester og akseptansetester. Enhets- og integrasjonstester blir vanligvis skrevet av utviklere, mens akseptansetester blir skrevet av personer utenfor utviklingsteamet. Enhets- og integrasjonstester er viktig for å sikre at koden vår fungerer som den skal, mens akseptansetester hjelper oss med å sikre at applikasjonen tilfredsstiller krav fra brukerne.
+Når du skriver tester, er det viktig å huske på at de skal være enkle å forstå og vedlikeholde. Det betyr at du bør unngå å skrive for mange tester for én funksjon, og heller fokusere på å skrive effektive tester som dekker forskjellige scenarioer.
 
-Når du skriver tester, er det viktig å ha god dekning av koden din. Det betyr å sørge for at alle kodegrenene dine blir testet, og at du tester ulike inngangsverdier. Ved å ha god testdekning, sikrer du deg at din kode fungerer som forventet og at eventuelle feil blir oppdaget og fikset.
+I tillegg er det lurt å inkludere både suksesscenarioer og feilscenarioer i testene dine. Dette vil bidra til å avdekke eventuelle feil og sørge for at koden din er robust og pålitelig.
 
-En annen viktig faktor for å skrive gode tester er å velge et godt rammeverk. Det finnes ulike testrammeverk tilgjengelig for Java-programmering, som JUnit og TestNG. Disse rammeverkene gjør det enklere å skrive og kjøre tester, og gir deg nyttig informasjon om testresultatene.
+En annen viktig ting å huske på er at tester skal være uavhengige av hverandre. Det betyr at en test ikke skal være avhengig av resultatet av en annen test. Dette sikrer at testene dine gir nøyaktige resultater og at eventuelle feil ikke påvirker andre tester.
 
-## Se Også
+## Se også
 
-- [Java Testing Tutorial: How to Write Unit Tests With JUnit](https://www.baeldung.com/junit-test-classes)
-- [Introduction to Test-Driven Development (TDD) in Java](https://stackify.com/test-driven-development-tdd-java/)
-- [Testing Java Applications with TestNG](https://www.baeldung.com/spring-mvc-test-with-testng)
-- [Effective Test Coverage: What It Is and How to Measure It](https://dzone.com/articles/effective-test-coverage-what-it-and-how-to-measure)
+- [JUnit Tutorial](https://www.petrikainulainen.net/programming/testing/junit-5-tutorial-writing-our-first-test-class/)
+- [TestNG Documentation](https://testng.org/doc/)
+- [TDD vs BDD: What's the difference?](https://www.altexsoft.com/blog/testing-tdd-vs-bdd/)

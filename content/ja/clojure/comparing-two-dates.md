@@ -1,64 +1,57 @@
 ---
-title:                "Clojure: 二つの日付の比較"
+title:                "Clojure: 2つの日付の比較"
+simple_title:         "2つの日付の比較"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+こんにちは、みなさん。今日は、 Clojure プログラミング言語についてのブログ投稿をお届けします。今回のテーマは「日付の比較」です。
 
-Clojureを使う人々は、日常生活やビジネス上ではよく日付を比較する必要があります。日付を比較することで、ブログ投稿の順序を決めたり、データの古さをチェックしたりできます。
+## Why
+日付の比較を行う理由は、日々の生活において非常に重要です。例えば、特定の日付にイベントを予定したり、過去の日付と現在の日付を比較したりする必要があったりします。Clojure は日付の比較を行うためのさまざまな方法を提供しており、便利な機能です。
 
-## 使い方
-
-比較するための2つの日付を `LocalDate` データ型として取得します。
-
-```Clojure
-(def today (java.time.LocalDate/now)) 
-;; 現在の日付を取得
-
-(def tomorrow (.plusDays today 1))
-;; 現在の日付から1日後の日付を取得
-```
-
-比較する際には、`<`、`>`、`=` 演算子を使用します。
+## How To
+Clojure で日付の比較を行うには、まずは `clojure.java-time` ライブラリをプロジェクトに追加する必要があります。そして、比較したい二つの日付を `java.time.LocalDate` オブジェクトに変換します。
 
 ```Clojure
-(println (< today tomorrow))
-;; 結果: true
+(require '[clojure.java-time :as t])
 
-(println (> today tomorrow))
-;; 結果: false
+(def date1 (t/to-local-date "2020-05-15"))
+(def date2 (t/to-local-date "2020-05-20"))
 
-(println (= today today))
-;; 結果: true
 ```
 
-`Range` を使用することで、指定した範囲内の日付を取得できます。
+比較したい日付が正しいデータ型になったら、`java.time.LocalDate/compareTo` 関数を使用して比較を行うことができます。この関数は、二つの日付を比較し、数値を返します。もし、date1 が date2 よりも過去の日付であれば、-1 を、同じ日付であれば 0 を、過去であれば 1 を返します。
 
 ```Clojure
-(def date-range (range today tomorrow))
-(println date-range)
-;; 結果: (#object[java.time.LocalDate "2021-09-04"]
-         #object[java.time.LocalDate "2021-09-05"])
+;; 日付が同じ場合
+(.compareTo date1 date2) ;=> 0
+
+;; date1 が過去の日付の場合
+(.compareTo date1 date2) ;=> -1
+
+;; date2 が過去の日付の場合
+(.compareTo date1 date2) ;=> 1
 ```
 
-複数の日付を比較する場合は、`every?` 関数を使用します。
+また、日付を文字列として比較することもできます。その場合、`java.time.LocalDate/parse` 関数を使用して、文字列から `java.time.LocalDate` オブジェクトを作成します。
 
 ```Clojure
-(def dates (list today tomorrow))
-(println (every? #(> % today) dates))
-;; 結果: false
+(def date3 (t/parse "2020-05-10"))
+(def date4 (t/parse "2020-05-15"))
+
+;; date3 が過去の日付の場合
+(.compareTo date3 date4) ;=> -1
 ```
 
-## 深堀り
+## Deep Dive
+日付の比較にはさまざまなケースがあります。もし、今回紹介した方法でうまくいかない場合は、`java.time.LocalDate/equals` 関数を使用して、二つの日付が同じかどうかを確認することができます。また、日付の年や月、日にちを個別に比較するためには、`java.time.LocalDate/getYear`、`java.time.LocalDate/getMonth`、`java.time.LocalDate/getDayOfMonth` 関数を使用することもできます。
 
-Clojureでは、日付を比較する方法は他にもたくさんあります。例えば、`compare` 関数を使用する方法や、`predicate` を使ったフィルタリングなどです。また、もし日付が文字列型であれば、`parse` を使って日付型に変換することもできます。
-
-## 参考記事
-
-- [Clojure Docs: LocalDate](https://clojuredocs.org/clojure.java-time/local-date)
-- [Clojure Date/Time Library](https://github.com/clj-time/clj-time)
-- [A comprehensive guide to working with dates and times in Clojure](https://clojureverse.org/t/a-comprehensive-guide-to-working-with-dates-and-times-in-clojure/3155)
+## See Also
+- [clojure.java-time ライブラリ](https://clojure.github.io/java-time/)
+- [Java Time API ドキュメント](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Java 8 日付と時刻 API を Clojure で使う](https://qiita.com/totemcaf/items/edc35d20f9cb0476ec69)

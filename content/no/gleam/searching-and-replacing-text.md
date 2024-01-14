@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Søking og erstatning av tekst"
+title:                "Gleam: Søking og bytte av tekst"
+simple_title:         "Søking og bytte av tekst"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/searching-and-replacing-text.md"
 ---
 
@@ -9,44 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Vi har alle vært der - å skrive store stykker med kode bare for å innse at vi må endre en enkelt tekststreng. Enten det er en stavefeil eller en endring i programvaren, kan det være en tidkrevende oppgave å manuelt bytte ut alle forekomster av tekststrengen. Heldigvis gjør Gleam det enkelt å søke og erstatte tekst i koden din, slik at du kan spare tid og unngå unødvendig frustrasjon.
+Ved å søke og erstatte tekst i kode, kan du spare mye tid og redusere sjansene for feil. Det er en enkel og effektiv måte å endre flere linjer med kode på samtidig.
 
 ## Slik gjør du det
 
-Det er to hovedfunksjoner i Gleam som lar deg søke og erstatte tekst: `gsub` og `gsub_all`. Begge funksjonene tar inn en tekststreng du ønsker å bytte ut, og en ny tekststreng som skal erstatte den gamle.
-
-La oss si at du ønsker å bytte ut alle forekomster av ordet "katt" med ordet "hund" i følgende tekststreng:
-
-```
-Gleam, språket som får deg til å føle at du kan kode som en katt.
-```
-
-Du kan bruke `gsub` for å bytte ut den første forekomsten av "katt":
+For å søke og erstatte tekst i Gleam, bruker du funksjonen `replace` sammen med et regulært uttrykk. Her er et eksempel på hvordan du kan søke etter alle forekomster av "hello" og erstatte det med "hei".
 
 ```Gleam
-gsub("katt", "hund", "Gleam, språket som får deg til å føle at du kan kode som en katt.")
+let nyTekst = replace("hello", ~flags=~global, "hei", "hello world")
 ```
 
-Outputen blir: `Gleam, språket som får deg til å føle at du kan kode som en hund.`
+Dette koden vil gi deg outputen "hei world", hvor "hello" er erstattet med "hei". Som du kan se, bruker vi `replace` funksjonen sammen med flagget `~global` for å sikre at alle forekomster av "hello" blir erstattet. Du kan også bruke et regulært uttrykk i stedet for å erstatte en konkret tekststreng.
 
-Hvis du ønsker å bytte ut alle forekomster av "katt", kan du bruke `gsub_all`:
+## Gå dypere
+
+I Gleam kan du også bruke en callback-funksjon i `replace` for mer avanserte søk og erstatninger. Dette gjør det mulig å gjøre forskjellige operasjoner avhengig av teksten som blir funnet. Her er et eksempel på en callback-funksjon som tar i mot en tekststreng og returnerer en verdi basert på den:
 
 ```Gleam
-gsub_all("katt", "hund", "Gleam, språket som får deg til å føle at du kan kode som en katt.")
+let callback = fn
+  (tekst) ->
+    let verdi = // gjør noe med tekststrengen
+    verdi
+
+let nyTekst = replace("hello", ~flags=~global, callback, "hello world")
 ```
 
-Outputen blir: `Gleam, språket som får deg til å føle at du kan kode som en hund.`
-
-En annen nyttig funksjon er `gsub_all_cases`, som gjør det samme som `gsub_all`, men tar inn et `"ignore_ces"` argument som ignorerer forskjeller i store og små bokstaver. Dette betyr at både "katt" og "KATT" vil bli byttet ut med "hund".
-
-## Dypdykk
-
-Under panseret bruker Gleam NIF-er for å kalle på funksjoner i Erlangs `:string`-modul, som håndterer tekstmanipulering. Dette øker hastigheten på `gsub` og `gsub_all` sammenlignet med å skrive tilsvarende funksjoner i ren Gleam-kode.
-
-En annen interessant detalj er at Gleam har støtte for regexp (regular expressions) ved hjelp av `Regex`-modulen. Dette gir større fleksibilitet når du skal søke og erstatte tekst.
+Som du kan se, kan du bruke callback-funksjonen til å gjøre forskjellige operasjoner basert på teksten som blir funnet. Dette gir deg en mer fleksibel og kraftig måte å søke og erstatte tekst på i koden din.
 
 ## Se også
 
-- Offisiell Gleam-nettside: https://gleam.run/
-- Dokumentasjon om tekstmanipulering i Gleam: https://gleam.run/manual/strings.html
-- Gleam på GitHub: https://github.com/gleam-lang/gleam
+- [Gleam dokumentasjon](https://gleam.run/book/stdlib.html#replace)
+- [Regulære uttrykk i Gleam](https://gleam.run/book/types.html#regexp)

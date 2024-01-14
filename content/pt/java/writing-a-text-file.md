@@ -1,50 +1,69 @@
 ---
 title:                "Java: Escrevendo um arquivo de texto"
+simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto em Java?
+## Por que
 
-Escrever um arquivo de texto pode ser necessário em diversas situações. Pode ser para armazenar dados importantes, gerar relatórios ou salvar informações para serem utilizadas posteriormente. Através da programação em Java, é possível criar e manipular arquivos de texto de forma muito fácil e eficiente.
+Escrever um arquivo de texto pode parecer uma tarefa simples e básica, mas é uma habilidade essencial para programadores Java. Através da escrita de arquivos de texto, é possível armazenar e manipular dados importantes, como configurações de aplicativos, registros de atividades e muito mais. Além disso, a escrita de arquivos pode ser útil para gerar relatórios ou exportar dados para outros programas.
 
-## Como fazer isso em Java
+## Como fazer
 
-Para começar a escrever um arquivo de texto em Java, é necessário importar a classe `java.io.FileWriter` e tratar as possíveis exceções que possam ocorrer durante o processo de escrita do arquivo. Veja um exemplo de código abaixo:
+Aqui está um exemplo de como escrever um arquivo de texto em Java:
 
-``` Java 
-import java.io.FileWriter;
+```Java
+import java.io.*;
 
-public class EscreverArquivo {
-    public static void main(String[] args) {
-        try {
-            // cria um objeto FileWriter apontando para o arquivo de destino
-            FileWriter arquivo = new FileWriter("meuarquivo.txt");
-            // escreve no arquivo utilizando o método write()
-            arquivo.write("Este é um texto que será escrito no arquivo.");
-            // fecha o arquivo
-            arquivo.close();
-            System.out.println("Arquivo salvo com sucesso!");
-        } catch (IOException e) {
-            System.out.println("Ocorreu um erro ao escrever o arquivo: " + e.getMessage());
-        }
+public class EscrevendoArquivo {
+  public static void main(String[] args) {
+    try {
+      // cria um objeto para escrever no arquivo
+      FileWriter fw = new FileWriter("meu_arquivo.txt");
+      // escreve uma string no arquivo
+      fw.write("Este é meu primeiro arquivo de texto!");
+      // fecha o objeto FileWriter
+      fw.close();
+      // exibe uma mensagem de sucesso
+      System.out.println("Arquivo de texto criado com sucesso!");
+      
+      // lê o arquivo criado
+      FileReader fr = new FileReader("meu_arquivo.txt");
+      // cria um objeto BufferedReader para ler linhas do arquivo
+      BufferedReader br = new BufferedReader(fr);
+      // variável para armazenar cada linha lida do arquivo
+      String linha = "";
+      // loop para ler e exibir todas as linhas do arquivo
+      while ((linha = br.readLine()) != null) {
+        System.out.println(linha);
+      }
+      // fecha o objeto BufferedReader
+      br.close();
+    } catch (IOException e) {
+      // caso ocorra um erro ao escrever ou ler o arquivo
+      e.printStackTrace();
     }
+  }
 }
 ```
 
-Após a execução deste código, será gerado um arquivo chamado "meuarquivo.txt" com o texto "Este é um texto que será escrito no arquivo." dentro dele. É importante notar que, caso o arquivo já exista, o conteúdo anterior será sobrescrito.
+A saída deste código será um arquivo de texto chamado "meu_arquivo.txt" com o conteúdo "Este é meu primeiro arquivo de texto!" e a frase será exibida no console.
 
-## Mergulho profundo
+## Aprofundando
 
-A classe `FileWriter` possui diversos métodos que podem ser utilizados para escrever em um arquivo de texto. Além do `write()` utilizado no exemplo acima, também é possível utilizar o método `append()` para adicionar conteúdo ao final do arquivo. Outra opção é utilizar a classe `BufferedWriter` em conjunto com o `FileWriter`, que fornece métodos mais eficientes para escrita de arquivos.
+Ao escrever um arquivo de texto em Java, é importante lembrar que cada caractere é armazenado em sua representação ASCII. Ou seja, caracteres especiais, como acentos e símbolos, podem não ser exibidos corretamente em outras aplicações.
 
-É importante lembrar que, ao escrever em um arquivo de texto, é necessário definir o formato correto para salvar os caracteres. Por padrão, o Java utiliza o formato UTF-8, mas caso seja necessário, é possível alterar para outros formatos, como ANSI ou UTF-16. Para isso, basta utilizar o construtor do `FileWriter` que aceita um parâmetro do tipo `Charset` para definir o formato desejado.
+Além disso, é fundamental fechar corretamente o objeto FileWriter após escrever no arquivo, pois isso garante que os dados sejam armazenados de forma correta e que o recurso de gravação seja liberado para outros processos.
+
+Outra dica importante é utilizar a classe BufferedWriter ao invés do FileWriter, pois isso pode melhorar a performance ao escrever grandes quantidades de dados em arquivos.
 
 ## Veja também
 
-- [Guia de Programação em Java: Leitura e Escrita de Arquivos](https://www.devmedia.com.br/guia/java-escrita-de-arquivos/39622)
-- [Documentação da classe FileWriter do Java](https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html)
-- [Documentação da classe Charset do Java](https://docs.oracle.com/javase/7/docs/api/java/nio/charset/Charset.html)
+- [Documentação oficial do Java sobre escrita de arquivos](https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html)
+- [Tutorial sobre leitura e escrita de arquivos em Java](https://www.tutorialspoint.com/java/java_files_io.htm)
+- [Guia completo para leitura e escrita de arquivos em Java](https://www.baeldung.com/java-write-to-file)

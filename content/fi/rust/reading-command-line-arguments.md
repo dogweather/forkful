@@ -1,48 +1,53 @@
 ---
-title:                "Rust: Lukeminen komentorivin argumenteista"
+title:                "Rust: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-On monia syitä, miksi haluat lukea komentorivin argumentteja Rust-ohjelmassa. Esimerkiksi, voit käyttää niitä ohjelman alkuperäisten asetusten määrittämiseen tai käyttäjän syötteen käsittelyyn.
+Monet ohjelmat tarvitsevat syöttötietoja, ja komentoriviparametrit ovat yksi tapa saada nämä tiedot ohjelmaan. Rustissa on hyvä tapa lukea komentoriviparametreja, joka on helppo oppia ja mahdollistaa monenlaisten syöttötietojen käsittelyn.
 
-## Miten
-
-Rust tarjoaa `std::env`-moduulin, jonka avulla voit käsitellä komentorivin argumentteja. Käytämme `args()`-funktiota, joka palauttaa `Args`-iteraattorin. Tämän iterattorin avulla voit käydä läpi kaikki annetut argumentit.
+## Kuinka?
+ 
+Lue komentoriviparametrit kätevällä `clap`-kirjastolla:
 
 ```Rust
-use std::env; // Tarvitaan 'env'-moduulin käyttämiseksi
+extern crate clap;  // Lisätään riippuvuus
+
+use clap::Arg;  // Otetaan käyttöön Arg-tyyppi
 
 fn main() {
-    // Tallennetaan args()-funktion palauttama iterattori
-    let args: Vec<String> = env::args().collect();
+    let matches = clap::App::new("Ohjelman nimi")
+                          .version("1.0")
+                          .author("Tekijän nimi <tekijan@email.com>")
+                          .about("Ohjelmakuvaus")
+                          .arg(Arg::with_name("parametri")
+                               .short("p")
+                               .long("parametri")
+                               .takes_value(true)
+                               .help("Parametrin tarkempi kuvaus"))
+                          .get_matches();
 
-    // Käydään läpi kaikki annetut argumentit ja tulostetaan ne
-    for arg in args.iter() {
-        println!("{}", arg);
+    if let Some(parametri) = matches.value_of("parametri") {
+        println!("Annettu parametri: {}", parametri);
     }
 }
 ```
 
-Ajettuna komennolla `./hello hello world`, ohjelma tulostaa seuraavan:
-
-```bash
-hello
-hello
-world
-```
+Kun ajamme ohjelman komentorivillä esimerkiksi `ohjelma -p testi`, tulostuu `Annettu parametri: testi`.
 
 ## Syvempi sukellus
 
-`std::env`-moduuli tarjoaa myös muita käteviä toimintoja, kuten `current_exe()`, joka palauttaa polun nykyiseen suoritettavaan tiedostoon, tai `var_os()`, joka palauttaa ympäristömuuttujan arvon `OsString`-muodossa.
+Komentoriviparametrien lukeminen ei välttämättä ole tarpeen jokaiselle ohjelmalle, mutta se on hyödyllinen taito hallita Rust-ohjelmoinnissa. `clap`-kirjasto tarjoaa paljon muitakin mahdollisuuksia, kuten parametrien pakollisuuden määrittämisen ja erilaisten arvojen sallimisen. Lisäksi voit lukea komentoriviparametrit eri tavoin, kuten `ArgMatches`-rakenteen avulla.
 
 ## Katso myös
 
-- [Rustin opas syötteiden käsittelyyn](https://doc.rust-lang.org/std/env/index.html)
-- [env-moduulin dokumentaatio](https://doc.rust-lang.org/std/env/index.html)
-- [Rust-ohjelmointikielen virallinen verkkosivusto](https://www.rust-lang.org/fi/)
+- [clap-kirjaston dokumentaatio](https://docs.rs/clap/)
+- [Rustin opas komentoriviparametreille](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)
+- [Komentoriviparametrien käyttöön sovellettava esimerkkikoodi](https://github.com/clap-rs/clap/blob/master/examples/)

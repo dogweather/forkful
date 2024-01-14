@@ -1,42 +1,57 @@
 ---
-title:                "TypeScript: Escribiendo en el error estándar"
+title:                "TypeScript: Escribiendo al error estándar"
+simple_title:         "Escribiendo al error estándar"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir a la salida de error estándar
+## Por qué escribir a estándar error en TypeScript
 
-Si eres un programador de TypeScript, es probable que hayas escuchado sobre la salida de error estándar. Pero, ¿por qué deberías preocuparte por escribir a ella? La respuesta es simple: cuando se ejecuta un programa, a menudo puede producir errores o mensajes de advertencia. Escribir a la salida de error estándar permite mostrar estos mensajes a los usuarios o a otros programadores, lo que puede ser útil para el diagnóstico y la solución de problemas.
+Escribir a estándar error es una habilidad importante en cualquier lenguaje de programación, ya que nos permite mostrar información de errores y depuración durante la ejecución de nuestro código. En TypeScript, esta práctica es especialmente útil debido a su naturaleza tipada y orientada a objetos.
 
 ## Cómo hacerlo
 
-Para escribir a la salida de error estándar en TypeScript, puedes utilizar el método `console.error`. Por ejemplo:
+Para escribir a estándar error en TypeScript, podemos utilizar la función `console.error()` seguida del mensaje que deseamos imprimir. Por ejemplo, si queremos mostrar un mensaje de error en nuestra consola, podríamos escribir lo siguiente:
 
 ```TypeScript
-console.error("¡Hola a todos!");
+console.error("¡Ups! Algo salió mal.")
 ```
 
-Este código escribirá el mensaje "¡Hola a todos!" en la salida de error estándar. También puedes pasar múltiples argumentos al método `console.error` y estos se mostrarán en la misma línea. Por ejemplo:
+Al ejecutar este código, veremos en nuestra consola el siguiente resultado:
+
+![Ejemplo de mensaje de error en consola](https://i.imgur.com/aAKKVX1.png)
+
+También podemos incluir variables en nuestro mensaje de error para tener una mayor comprensión de la situación. Por ejemplo:
 
 ```TypeScript
-console.error("Error:", 404, "Página no encontrada");
+const numeroDeDocumento: number = 12345;
+console.error(`El número de documento ${numeroDeDocumento} no es válido.`);
 ```
 
-El resultado sería `Error: 404 Página no encontrada`.
+Al ejecutar este código, obtendremos el siguiente resultado:
 
-## Profundizando
+![Ejemplo de mensaje de error con variable en consola](https://i.imgur.com/kTEvZIx.png)
 
-La diferencia entre la salida estándar y la salida de error estándar radica en su uso. La salida estándar, que se escribe utilizando el método `console.log`, se usa para mensajes de información y detalles del programa, mientras que la salida de error estándar se utiliza para mensajes de advertencia o errores. Además, la salida de error estándar generalmente se muestra en rojo, lo que la hace más visible y fácil de identificar.
+## Un vistazo más profundo
 
-También es importante tener en cuenta que, a diferencia de la salida estándar, la salida de error estándar no se ve afectada por la redirección de salida en el terminal. Esto significa que incluso si rediriges la salida estándar a un archivo o a otro lugar, los mensajes que se escriben a través de la salida de error estándar siempre se mostrarán en la terminal.
+Además de simplemente mostrar mensajes de error en nuestra consola, también podemos utilizar la función `console.error()` para mostrar información detallada sobre el estado de nuestro código. Por ejemplo, podemos imprimir el contenido de una variable para comprobar su valor en un determinado momento:
+
+```TypeScript
+const numeros: number[] = [1, 2, 3, 4];
+console.error(`El valor de la variable 'numeros' es: ${numeros}`);
+```
+
+Este código resultará en el siguiente resultado en consola:
+
+![Ejemplo de impresión de contenido de variable en consola](https://i.imgur.com/CtXZweQ.png)
+
+Ver la información de depuración en nuestra consola puede ser extremadamente útil en la fase de desarrollo de nuestro proyecto, ya que nos permite examinar el valor de nuestras variables y validar si nuestro código está funcionando correctamente.
 
 ## Ver también
 
-- [Documentación de TypeScript sobre la salida de error estándar](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html#error-handling-in-the-compiler)
-- [Documentación oficial de Node.js sobre la salida estándar y de error](https://nodejs.org/api/process.html#process_process_stdout)
-- [Artículo sobre la diferencia entre la salida estándar y la salida de error estándar](https://linuxhandbook.com/standard-output-vs-standard-error/)
-
-¡Con estos conocimientos, ya estás listo para escribir a la salida de error estándar en tus programas de TypeScript! Recuerda siempre revisar la documentación oficial y buscar más información si lo necesitas. ¡Happy coding!
+- [Documentación oficial de TypeScript sobre `console.error()`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-3.html)
+- [Artículo del blog: "Debugging en TypeScript: estrategias y mejores prácticas"] (https://blog.logrocket.com/debugging-typescript-strategies-and-best-practices/)

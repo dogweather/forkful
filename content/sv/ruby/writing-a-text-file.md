@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Att skriva en textfil"
+title:                "Ruby: Skriva en textfil"
+simple_title:         "Skriva en textfil"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/writing-a-text-file.md"
 ---
 
@@ -9,33 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva en textfil är en grundläggande färdighet för alla programmerare, oavsett vilket språk man använder. Textfiler används för att lagra och hantera data som ska läsas, bearbetas eller skrivas ut. Detta är särskilt viktigt i Ruby-programmering eftersom språket är känt för sin förmåga att hantera textfiler effektivt.
+Att skriva en textfil kan vara en viktig del av programmering med Ruby. Det tillåter dig att spara och lagra information som kan användas senare i ditt program. Det är också ett sätt att organisera och strukturera din kod på ett effektivt sätt.
 
-## Så här gör du
+## Hur man gör det
 
-För att skriva en textfil i Ruby behöver du först öppna en ny fil med hjälp av File-klassen. Sedan kan du använda olika File-metoder för att skriva och manipulera filen. Här är en enkel kodexempel som skapar en fil, skriver in några rader av text och stänger filen:
+Det första steget är att öppna en ny fil i ditt Ruby-exempel. Du kan använda antingen nano, emacs eller vilken textredigerare du föredrar. Sedan använder du `.rb`-filändelsen för att berätta för ditt system att filen är en Ruby-fil.
 
-````Ruby
-# Öppna en ny fil med namnet "textfil.txt"
-File.open("textfil.txt", "w") do |fil|
-    # Skriv in lite text
-    fil.puts "Detta är en textfil"
-    fil.puts "Här är en annan rad av text"
-    # Stäng filen
-    fil.close
+```
+nano filnamn.rb
+```
+```
+emacs filnamn.rb
+```
+
+Sedan är det dags att börja skriva din kod inuti filen. Se till att använda korrekta syntax och hålla din kod organiserad med indragningar och kommentarer. Här är ett enkelt exempel på hur du kan skriva en textfil med hjälp av Ruby-kod:
+
+```
+# Skapar en fil med namnet "exempeltextfil.txt" och öppnar den för skrivning
+File.open("exempeltextfil.txt", "w") do |fil|
+    fil.puts "Det här är en exempeltext"
+    fil.puts "Skapad med hjälp av Ruby-kod"
+    fil.puts "Kan användas för att lagra och organisera data"
 end
-````
 
-När du kör denna kod kommer en ny fil med namnet "textfil.txt" att skapas, och de två raderna av text kommer att skrivas in i filen. Du kan också läsa och manipulera redan befintliga textfiler på liknande sätt genom att använda olika File-metoder.
+# Stänger filen
+fil.close
+```
+
+När din kod är klar och sparad kan du köra den genom att skriva `ruby filnamn.rb` i terminalen. Detta kommer att skapa din textfil och fylla den med den data du specificerade i koden. Du kan sedan öppna filen och se resultatet.
 
 ## Djupdykning
 
-I Ruby har textfilerna rikligt med inbyggda metoder som gör det lätt att hantera dem. Du kan använda .read-metoden för att läsa innehållet i en fil, .delete för att ta bort en fil eller .rename för att byta namn på en fil. Det finns också speciella metoder som .each_line som låter dig läsa en fil rad för rad, eller .getc som läser en fil tecken för tecken.
+Det finns olika metoder och funktioner som kan användas när man skriver en textfil med Ruby. Till exempel kan du använda `.each`-metoden för att lägga till flera rader med data i filen. Du kan också använda `.read`-funktionen för att läsa data från en befintlig textfil.
 
-En av de mer avancerade funktionerna är möjligheten att skicka ett block till File.open-metoden. Detta låter dig skriva kod utanför blocket och automatiskt stänga filen när blocket är färdigt, vilket eliminerar behovet av att manuellt stänga filen.
+Det är också viktigt att förstå att när du skapar en fil med hjälp av Ruby-kod kommer den att placeras i den aktuella arbetsmappen. Om du vill skapa filen i en specifik mapp kan du ange den exakta sökvägen när du skriver `File.open()`.
 
-## Se också
+## Se även
 
-- [Learn Ruby the Hard Way: Files](https://learnrubythehardway.org/book/ex16.html)
-- [Ruby File Class Documentation](https://ruby-doc.org/core-2.5.1/File.html)
-- [RubyFile.open Documentation](https://ruby-doc.org/core-2.5.1/File.html#method-c-open)
+* [Ruby File-klassen Dokumentation](https://ruby-doc.org/core-2.6/File.html)
+* [Grundläggande filhantering i Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)

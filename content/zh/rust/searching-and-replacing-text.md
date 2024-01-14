@@ -1,51 +1,42 @@
 ---
 title:                "Rust: 搜索和替换文本"
+simple_title:         "搜索和替换文本"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么使用Rust进行搜索和替换文本
+# 为什么这么做？
 
-如果您正在寻找一种高效、安全并且易于维护的编程语言来搜索和替换文本，那么Rust是一个非常不错的选择。Rust具有强大的模式匹配能力和高性能的特性，使得它成为一个理想的工具来处理文本操作。
+当我们在编写程序时，常常会遇到需要搜索并替换文本的情况。这可以帮助我们快速地更改大量的文本，从而提高我们的工作效率。使用Rust编程语言，我们可以轻松地进行搜索和替换文本的操作，并且没有性能损失。
 
-## 如何做到
+## 如何做？
 
-首先，您需要在您的Rust项目中导入 `regex` 模块： 
+要在Rust中进行搜索和替换文本，我们首先需要导入标准库中的 " regex " 模块。接下来，我们使用 " re_replace " 函数来指定我们想要查找和替换的文本。最后，我们将原始文本和替换后的文本传递给 "replace_all" 函数，并将结果打印出来。
 
 ```Rust
-extern crate regex; 
-use regex::Regex; 
+use regex::re_replace;
+
+let original_text = "Hello world!";
+let new_text = re_replace("world", "Rust", original_text);
+println!("{}", new_text); // Output: "Hello Rust!"
 ```
 
-然后，使用 `Regex::new()` 函数来创建一个正则表达式模式，并使用 `replace_all()` 函数来替换文本。下面是一个简单的例子： 
+## 深入讨论
 
-```Rust
-let re = Regex::new(r"Hello");
-let text = "Hello World!";
-let replaced_text = re.replace_all(text, "Hi");
-println!("{}", replaced_text); // 输出: Hi World!
-``` 
+Rust中的正则表达式模块使用的是 "PCRE" 引擎，这是一种高性能的正则表达式引擎。在替换文本时，它只会在真正需要的情况下分配内存，从而保证了程序的高效率。此外，Rust还提供了诸如 "replace_first" 和 "split" 等其他与搜索和替换相关的函数，使得我们可以更灵活地处理文本。
 
-您也可以使用正则表达式来匹配多个模式，并且可以使用捕获组来动态替换文本。通过使用 `captures()` 函数和 `replace_all()` 函数，可以轻松地实现这一点。下面是一个示例代码：
+## 参考链接
 
-```Rust
-let re = Regex::new(r"(\w+) (\w+)"); 
-let text = "John Smith";
-let replaced_text = re.replace_all(text, "$2,$1");
-println!("{}", replaced_text); // 输出: Smith,John
-``` 
+- [Rust标准库官方文档](https://doc.rust-lang.org/std/)
+- [官方正则表达式文档](https://doc.rust-lang.org/regex/regex/index.html)
+- [Rust编程语言官方网站](https://www.rust-lang.org/)
 
-## 深入探讨
+# 查看也看看
 
-在Rust中，正则表达式使用标准库中的 `Regex` 结构体来表示，并提供了许多方便的函数和方法来执行搜索和替换操作。除了上面提到的 `replace_all()` 函数外，还有其他可以使用的函数如 `replace()` 和 `split()`。您可以在Rust的官方文档中了解更多关于正则表达式的详细信息。
-
-此外，Rust还提供了一些宏来简化正则表达式的编写和使用。例如，`regex!` 宏可以让您直接在编译时编写正则表达式，从而提高了性能。值得一提的是，Rust的 `regex` 模块是由标准库提供的，并且无需额外安装就可以使用。
-
-# 参考链接
-
-- [Rust正则表达式文档](https://doc.rust-lang.org/regex/regex/index.html)
-- [Rust标准库文档](https://doc.rust-lang.org/std/)
-- [Rust正则表达式教程](https://www.tutorialspoint.com/rust/rust_regular_expressions.htm)
+- [Rust语言基础教程](https://www.runoob.com/w3cnote/rust-basic-grammar.html)
+- [如何在Rust中编写高性能代码](https://blog.rust-lang.org/4ghann/2016/08/01/how-to-write-highly-performant-Rust-code.html)
+- [使用Rust进行系统编程的经验](https://blog.rust-lang.org/ogbonna/2015/05/07/experience-building-systems-programming-languages-using-Rust.html)

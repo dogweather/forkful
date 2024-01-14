@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Merkkijonon suurennus"
+title:                "Ruby: Merkkijonon isoiksi kirjoittaminen"
+simple_title:         "Merkkijonon isoiksi kirjoittaminen"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/capitalizing-a-string.md"
 ---
 
@@ -9,32 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Käytettäessä ohjelmointikieltä Ruby, saatat jossain vaiheessa törmätä tarpeeseen muuttaa merkkijono, eli string, isoiksi kirjaimiksi. Tässä blogikirjoituksessa kerromme, miksi tähän voisi olla tarvetta ja miten se tehdään.
+Jokainen ohjelmaaja käyttää erilaisia metodeja ja toimintoja päivittäin, ja joukossa on myös sellaisia, joita hän ei välttämättä ole käyttänyt aikaisemmin. Yksi tällainen on "capitalize" eli merkkijonon isoiksi kirjaimiksi muuntaminen. Tässä blogikirjoituksessa sukellamme syvälle ja tarkastelemme, miksi ja miten tätä metodia käytetään Ruby-ohjelmoinnissa.
 
-## Miten tehdä
+## Miten
 
-Merkkijonon isoiksi kirjaimiksi muuttamiseen on Rubyssa käytettävissä valmis metodi nimeltään .capitalize. Seuraavassa esimerkissä käytämme sitä yhdessä muuttujan kanssa:
-
-```Ruby
-nimi = "mikko"
-p nimi.capitalize
-```
-Tulosteena saamme "Mikko", jossa nimen alkukirjain on muuttunut isoksi.
-
-Toinen tapa muuttaa merkkijono isoihin kirjaimiin on käyttää .upcase-metodia. Se muuttaa kaikki merkit isoksi kirjaimiksi, eikä pelkästään alkukirjainta:
+Käytä tätä yksinkertaista koodinpätkää muuttaaksesi merkkijonon isommiksi kirjaimiksi:
 
 ```Ruby
-nimi = "mikko"
-p nimi.upcase
+word = "ruby"
+print word.capitalize
 ```
-Tulosteena saamme "MIKKO".
 
-## Syvällinen sukellus
+Koodin tulos tulisi olla "Ruby". Voit myös käyttää capitalize-metodia suoraan merkkijonoon, kuten esimerkissä alla:
 
-Rubyssa on monia eri tapoja muuttaa merkkijonon kuin merkkijonon isoksi. Esimerkiksi .capitalize!-metodi muuttaa muuttujan arvon pysyvästi isoksi kirjaimeksi. On myös mahdollista käyttää Regexiä, eli säännöllisiä lausekkeita, merkkijonon muuttamiseen isoksi.
+```Ruby
+print "ruby".capitalize
+```
+
+Kumpikin koodinpätkä tuottaa saman tuloksen, joten olet vapaa valitsemaan, kumpaa haluat käyttää. On myös hyvä huomata, että capitalize-metodin avulla voit muuntaa myös vain tietyn osan merkkijonosta, kuten esimerkissä alla:
+
+```Ruby
+phrase = "hello world"
+print phrase.capitalize
+```
+
+Koodin tulos olisi "Hello world". Huomaatko eron? Vain ensimmäinen sana muuttuu isommiksi kirjaimiksi.
+
+## Syvemmälle
+
+Miten sitten tämä capitalize-metodi toimii? Se käyttää Unicode Standardin määrittelemää sääntöjä muuttaakseen merkkijonon ensimmäisen kirjaimen isommaksi. On myös tärkeä muistaa, että capitalize-metodi ei muuta muita kirjaimia kuin ensimmäisen. Esimerkiksi sana "Ruby" pysyy samana, koska kaikki kirjaimet ovat jo isolla.
+
+On myös hyvä huomata, että capitalize-metodi toimii vain kirjaimilla, ei esimerkiksi numeroilla tai välimerkeillä. Tämä johtuu siitä, että näillä ei ole isoja ja pieniä versioita kuten kirjaimilla.
 
 ## Katso myös
 
-- https://www.rubyguides.com/2019/04/ruby-string-methods/
-- https://apidock.com/ruby/String/capitalize
-- http://ruby-doc.org/core-2.6.3/String.html#method-i-capitalize
+- Ruby:n virallinen capitalize-dokumentaatio: https://ruby-doc.org/core-2.7.2/String.html#method-i-capitalize
+- Selkeä opas capitalize-metodin käyttöön: https://www.rubyguides.com/2019/11/ruby-string-capitalize/
+- Unicode Standardin määritelmät: https://www.unicode.org/standard/standard.html

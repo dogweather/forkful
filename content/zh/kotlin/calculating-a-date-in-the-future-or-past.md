@@ -1,40 +1,70 @@
 ---
 title:                "Kotlin: 计算未来或过去的日期"
+simple_title:         "计算未来或过去的日期"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+---
 
-计算过去或未来的日期可能是在编程中经常遇到的问题。这可能是因为需要显示某个事件的开始日期，或者需要计算未来一周的日期。不管是什么原因，计算日期的能力对于程序员来说都是一个很有用的技能。
+# 为什么计算未来和过去的日期
 
-## 如何
+在数码时代，计算日期似乎是一件很简单的事情，只需要一个日历或者手表就可以知道今天的日期。但是，有时候我们需要知道未来或者过去的某个日期，比如明年的生日是星期几，或者过去某个特殊的日子是几年前的今天。这就是为什么我们需要学习如何使用代码来计算未来和过去的日期。
+
+## 如何进行计算
+
+使用Kotlin编程语言可以轻松地计算未来和过去的日期。下面是一些示例代码和计算结果，让我们一起来看一下吧！
 
 ```Kotlin
-fun calculateDate(days: Int): String {
-    // 获取当前日期
-    val currentDate = LocalDate.now()
-    // 使用plusDays方法计算未来或过去的日期
-    val futureOrPastDate = currentDate.plusDays(days)
-    // 格式化日期为"年-月-日"的形式
-    val formattedDate = futureOrPastDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
-    // 返回最终的日期字符串
-    return formattedDate
-}
 
-// 调用函数并打印结果
-println("未来两天的日期为：" + calculateDate(2))
-println("过去一周的日期为：" + calculateDate(-7))
+// 导入相关的包
+import java.time.LocalDate
+
+// 创建一个今天的日期对象
+val today: LocalDate = LocalDate.now()
+println("今天的日期是：$today")
+
+// 计算未来的日期，比如明年的生日是星期几
+val futureDate: LocalDate = today.plusYears(1).withMonth(7).withDayOfMonth(20)
+println("明年的生日是：$futureDate，是星期：${futureDate.dayOfWeek}")
+
+// 计算过去的某个日期，比如几年前的今天是星期几
+val pastDate: LocalDate = today.minusYears(7)
+println("7年前的今天是：$pastDate，是星期：${pastDate.dayOfWeek}")
+
 ```
 
-## 深入探讨
+输出结果：
 
-在Kotlin中，我们可以使用Java 8中的日期和时间API来帮助我们计算日期。首先，我们使用`LocalDate.now()`来获取当前日期。然后，使用`plusDays()`方法来计算未来或过去的日期，我们可以通过传入正数来获得未来的日期，或者传入负数来获得过去的日期。最后，使用`DateTimeFormatter`来格式化日期为我们想要的形式。
+```
+今天的日期是：2021-07-20
+明年的生日是：2022-07-20，是星期：Wednesday
+7年前的今天是：2014-07-20，是星期：Sunday
+```
+
+通过调用`plusYears()`和`minusYears()`方法，我们可以将日期向前或者向后移动指定的年份。使用`withMonth()`和`withDayOfMonth()`方法，我们可以设置月份和日期，同时保持年份不变。
+
+## 深入了解计算日期
+
+计算日期涉及到不同的概念，比如日期的格式、时区和闰年的计算。使用Kotlin的内置日期和时间API，可以轻松处理这些概念。
+
+Kotlin使用ISO-8601标准来表示日期和时间，这个标准保证了日期和时间的唯一性。在上面的示例代码中，我们可以看到输出结果中日期的格式就是ISO标准。
+
+Kotlin的日期和时间API还提供了各种方法来处理时区的问题，比如`withZone()`和`atOffset()`方法。这些方法可以根据所在的时区来调整日期和时间，确保正确的计算结果。
+
+另外，Kotlin也考虑了闰年的计算问题，它提供了`isLeapYear()`方法来判断指定的年份是否是闰年。这样在计算日期时，就不用考虑复杂的闰年规则。
+
+## 参考文章
+
+- [Kotlin官方文档-日期和时间API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
+- [使用Kotlin计算未来和过去的日期](https://codelabs.developers.google.com/codelabs/java-different-timezone/#1)
+- [了解ISO-8601日期和时间格式](https://www.iso.org/iso-8601-date-and-time-format.html)
 
 ## 参考链接
 
-- [Kotlin Date and Time API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/)
-- [Java 8日期和时间API教程](https://www.baeldung.com/java-8-date-time-intro)
+- [了解Kotlin的日期和时间API](https://zhuanlan.zhihu.com/p/145543055)
+- [Kotlin教程-日期和时间](https://www.runoob.com/kotlin/kotlin-date-time.html)

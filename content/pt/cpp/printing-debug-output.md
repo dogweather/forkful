@@ -1,57 +1,43 @@
 ---
 title:                "C++: Imprimindo saída de depuração"
+simple_title:         "Imprimindo saída de depuração"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que?
+## Por que
 
-Uma ferramenta muito útil para os programadores é a impressão de saída de depuração, também conhecida como "print debugging". Isso significa imprimir informações específicas do código durante o processo de execução, permitindo que os desenvolvedores entendam melhor o que está acontecendo em seus programas. Se você é novo na programação ou quer melhorar suas habilidades, a impressão de saída de depuração pode ser uma excelente técnica para adicionar ao seu arsenal de solução de problemas.
+Há muitas maneiras de acompanhar e depurar o seu código em C++, mas a impressão de saída de depuração é uma das mais populares. Isso permite que os desenvolvedores vejam informações sobre como o programa está executando e identifiquem possíveis problemas.
 
-##Como Fazer
+## Como fazer
 
-Aqui estão alguns exemplos de como imprimir saída de depuração em C++:
+Para imprimir saída de depuração em seu código C++, você pode usar a função "cout" da biblioteca "iostream". Basta incluir a linha "#include <iostream>" no início do seu código e, em seguida, usar o operador de inserção "<<" para imprimir as informações desejadas. Aqui está um exemplo simples:
 
-```C++
-// Imprime o valor de uma variável inteira
-int num = 10; 
-std::cout << "O valor de num é: " << num << std::endl;
+```
+#include <iostream>
+using namespace std;
 
-// Imprime uma mensagem de erro
-std::cerr << "Erro ao executar o programa." << std::endl;
-
-// Imprime o conteúdo de um vetor
-std::vector<int> vetor = {1, 2, 3, 4, 5};
-std::cout << "O vetor contém os seguintes elementos: ";
-for(int i = 0; i < vetor.size(); i++){
-  std::cout << vetor[i] << " ";
+int main() {
+    int a = 5;
+    int b = 10;
+    cout << "A soma de " << a << " e " << b << " é " << (a+b) << endl;
+    return 0;
 }
-std::cout << std::endl;
 ```
 
-A saída desses exemplos seria:
+Este código imprimirá a frase "A soma de 5 e 10 é 15" na saída do console. Você também pode imprimir informações de variáveis ​​e usar formatação de saída, como o número de casas decimais a serem mostradas. Para obter mais detalhes sobre como imprimir saída de depuração em C++, consulte este [artigo](https://www.tutorialspoint.com/cplusplus/cpp_debugging.htm) ou este [guia](http://www.cplusplus.com/reference/iostream/cout/).
 
-```
-O valor de num é: 10
-Erro ao executar o programa.
-O vetor contém os seguintes elementos: 1 2 3 4 5
-```
+## Mergulho profundo
 
-Isso pode parecer simples, mas a impressão de saída de depuração pode ser muito útil quando você está lidando com códigos mais complexos e quer entender como algumas variáveis estão mudando durante a execução do programa.
+Além de simplesmente imprimir informações durante a depuração, a saída do console também pode ser útil para rastrear o fluxo de um programa e identificar possíveis erros. Por exemplo, você pode imprimir mensagens em diferentes partes do código para ver onde o programa está executando e verificar os valores das variáveis ​​em cada etapa.
 
-##Profundando
+Outra vantagem da impressão de saída de depuração é poder deixar o código "comentado" sem realmente usar comentários. Isso pode ser especialmente útil para identificar linhas específicas de código que podem estar causando problemas.
 
-Embora a impressão de saída de depuração seja uma técnica simples, ela pode ser muito útil em situações específicas. Por exemplo, quando você está trabalhando com loops e quer verificar se a condição do loop está sendo realizada corretamente, você pode imprimir o valor de cada variável envolvida para garantir que não haja erros.
+## Veja também
 
-Além disso, a impressão de saída de depuração é uma alternativa quando você não tem uma ferramenta de depuração adequada disponível. Em vez de interromper o processo de execução em um ponto específico do seu código, você pode simplesmente imprimir as informações de depuração e, em seguida, comentá-las ou removê-las depois que o problema for resolvido.
-
-##Veja também
-
-Aqui estão alguns artigos relacionados que podem ser úteis para aprimorar suas habilidades de depuração em C++:
-
-- [10 dicas para depuração de código em C++](https://www.guru99.com/c-plus-plus-debugging-example.html)
-- [Depuração eficiente usando GDB](https://www.thegeekstuff.com/2010/03/debug-c-program-using-gdb/)
-- [Técnicas de depuração para programadores iniciantes em C++](https://www.learncpp.com/cpp-tutorial/67-chapter-10-debugging-challenges/)
+- [Tutorial de Impressão de Saída de Depuração em C++](https://www.tutorialspoint.com/cplusplus/cpp_debugging.htm)
+- [Referência da função "cout" em C++](http://www.cplusplus.com/reference/iostream/cout/)

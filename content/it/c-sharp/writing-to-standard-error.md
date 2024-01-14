@@ -1,7 +1,9 @@
 ---
-title:                "C#: Scrivere sull'errore standard"
+title:                "C#: Scrivere su standard error"
+simple_title:         "Scrivere su standard error"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/writing-to-standard-error.md"
 ---
 
@@ -9,47 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scrivere sulla standard error è un'azione utile per identificare e risolvere gli errori nei programm, in quanto consente di visualizzare messaggi di errore specifici e dettagliati durante l'esecuzione del codice.
+Scrivere al standard error è un processo essenziale per qualsiasi programmatore in C#. Questa semplice pratica aiuta a gestire gli errori in modo più efficiente e a migliorare la qualità del nostro codice.
 
 ## Come fare
 
-Per scrivere sulla standard error in C#, è necessario utilizzare il metodo `Console.Error.WriteLine()`. Ecco un esempio di codice:
+Per scrivere al standard error in C#, possiamo utilizzare il metodo Console.Error.WriteLine(), che accetta una stringa come argomento e la scrive al standard error. Ecco un esempio di codice:
 
 ```C#
-try 
-{
-    // Codice che potrebbe generare un errore
-}
-catch (Exception ex) 
-{
-    Console.Error.WriteLine("Errore: " + ex.Message);
-}
+string errorMessage = "Errore di connessione al database";
+Console.Error.WriteLine(errorMessage);
 ```
 
-Nell'esempio sopra, il messaggio di errore viene scritto sulla standard error utilizzando il metodo `WriteLine()` della classe `Console`, specificando il testo desiderato tra parentesi.
-
-L'output del codice potrebbe essere qualcosa del genere:
+L'output di questo codice sarà il seguente:
 
 ```
-Errore: Impossibile trovare il file specificato.
+Errore di connessione al database
+```
+
+Possiamo anche utilizzare il metodo Console.Error.Write() se desideriamo scrivere soltanto una parte della stringa al standard error, senza andare a capo. Ad esempio:
+
+```C#
+string errorType = "Errore critico: ";
+string errorMessage = "Impossibile accedere al file di configurazione";
+Console.Error.Write(errorType);
+Console.Error.WriteLine(errorMessage);
+```
+
+L'output di questo codice sarà:
+
+```
+Errore critico: Impossibile accedere al file di configurazione
 ```
 
 ## Approfondimento
 
-Scrivere sulla standard error è particolarmente utile quando si lavora con applicazioni console, in quanto consente di visualizzare messaggi di errore direttamente sulla console senza dover interrompere l'esecuzione del codice. Inoltre, è possibile stilizzare il testo dei messaggi di errore utilizzando sequenze di escape speciali in modo da renderli più facilmente leggibili.
+Scrivere al standard error è particolarmente utile quando si tratta di gestire gli errori in modo efficace. Quando un'applicazione viene eseguita, il suo output viene di solito scritto al standard output, mentre gli errori vengono scritti al standard error. In questo modo, possiamo facilmente individuare e gestire gli errori separandoli dal resto dell'output.
 
-Ecco un esempio di come utilizzare le sequenze di escape per impostare il colore rosso per un messaggio di errore:
-
-```C#
-Console.Error.WriteLine("\u001b[31mErrore: Impossibile trovare il file specificato.\u001b[0m");
-```
-
-L'\u001b [31m all'inizio del messaggio specifica il colore rosso, mentre l'\u001b [0m alla fine della sequenza ripristina il colore di default della console.
-
-Utilizzando queste sequenze, è anche possibile impostare lo sfondo, lo stile del testo e altro ancora.
+Inoltre, scrivere al standard error ci consente di utilizzare strumenti come il debuggger per visualizzare gli errori mentre il programma viene eseguito, semplificando il processo di troubleshooting.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Microsoft su Console.Error](https://docs.microsoft.com/it-it/dotnet/api/system.console.error)
-- [Articolo su C# in Italiano](https://www.csharp-italia.it/csharp/)
-- [Tutorial su sequenze di escape](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters)
+- [Documentazione Microsoft su Console.Error.WriteLine()](https://docs.microsoft.com/en-us/dotnet/api/system.console.error.writeline?view=net-5.0)
+- [Tutorial su come gestire gli errori in C#](https://www.c-sharpcorner.com/UploadFile/1d42da/error-handling-in-C-Sharp/)

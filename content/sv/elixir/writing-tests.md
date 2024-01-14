@@ -1,40 +1,52 @@
 ---
 title:                "Elixir: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att skriva tester är en viktig del av utvecklingsprocessen och kan hjälpa till att säkerställa att din kod fungerar som den ska. Genom att skriva tester kan du upptäcka buggar och förhindra felaktig funktionalitet, vilket sparar tid och pengar på lång sikt.
 
-Att skriva tester kan verka tidskrävande och överflödigt för många programmerare, men det är faktiskt en viktig del av utvecklingsprocessen. Tester hjälper till att hitta och förebygga buggar, vilket sparar tid och möjligtvis frustration längre fram i utvecklingen. Det säkerställer även att koden fungerar som den ska och ger en ökad tilltro till slutprodukten.
+## Hur man gör det
+För att skriva tester i Elixir kan du använda ramverket ExUnit. Det är enkelt att komma igång med och ger en mängd olika funktioner för att testa din kod.
 
-## Hur man skriver tester i Elixir
+Att skriva ett test i Elixir är enkelt. Du behöver bara skapa en ny fil med namnet "test.exs" och sedan definiera dina tester i en "test" funktion inuti ett "ExUnit.Case" block. Här är ett exempel på hur du kan testa en enkel funktion som adderar två tal:
 
-För att skriva tester i Elixir använder man sig av ett inbyggt ramverk vid namn ExUnit. Detta tillhandahåller en mängd olika funktioner och assertioner för att testa olika aspekter av koden. Ett enkelt testfall skulle kunna se ut såhär:
-
-```elixir
-defmodule MyModuleTest do
-  use ExUnit.Case
-
-  test "addition test" do
-    result = MyModule.add(2, 3)
-    assert result == 5
+```Elixir
+defmodule Calculator do
+  def add(x, y) do
+    x + y
   end
 end
 
+defmodule CalculatorTest do
+  use ExUnit.Case
+  test "adds two numbers" do
+    result = Calculator.add(2, 3)
+    assert result == 5
+  end
+end
 ```
 
-I detta exempel har vi skapat ett testfall med namnet "addition test" som kallar på en funktion i vårt modul "MyModule" och förväntar oss att få ett resultat på 5. Om testet går igenom, så betyder det att vår funktion fungerar som den ska. Om det däremot skulle returnera ett annat resultat, så skulle testet misslyckas och vi skulle behöva gå tillbaka och titta på vår kod för att identifiera problemet.
+När du kör detta test med kommandot "mix test" kommer du att se att det passerar eftersom resultatet är lika med förväntat resultat. Om någonting ändras i koden och testet inte längre passerar, kommer du att få ett varningsmeddelande och veta att något behöver åtgärdas.
 
-## Djupdykning i att skriva tester
+Du kan också använda "assert_raise" funktionen för att testa om en viss exception utlöses av din kod. Detta kan vara användbart för att säkerställa att felaktig input hanteras korrekt.
 
-När man skriver tester är det viktigt att täcka så många fall som möjligt för att säkerställa att koden fungerar som den ska. Det är även bra att inkludera edge-cases, alltså situationer som kan vara ovanliga men ändå måste tas hänsyn till. Det finns även möjlighet att skriva tester för asynkrona funktioner, använda mocks och stubs för att simulera externa anrop, och mycket mer. Det finns en mängd olika resurser tillgängliga för att hjälpa dig att blir en expert på testning i Elixir.
+## Djupdykning
+Att skriva tester i Elixir är inte bara en bra vana, det är också en del av språkets filosofi. Eftersom Elixir är ett språk som bygger på funktionell programmering, finns det en hög sannolikhet att det mesta av din kod kommer att bestå av funktioner. Genom att skriva tester för dina funktioner kan du säkerställa att de fungerar korrekt och att ditt program beter sig som det bör.
+
+Elixir uppmuntrar också till att skriva tester för ditt program "från början", vilket betyder att du skriver tester när du skriver din kod istället för att lägga till tester senare. Detta hjälper till att förebygga fel och gör det lättare att hitta och fixa eventuella problem senare.
+
+Ett annat viktigt koncept att förstå när det gäller att skriva tester i Elixir är "mocking". Detta betyder att du kan simulera vissa delar av din kod för att testa olika scenarier utan att faktiskt köra hela programmet.
 
 ## Se även
+Här är några resurser för dig som vill lära dig mer om att skriva tester i Elixir:
 
-- Officiell ExUnit dokumentation (https://hexdocs.pm/ex_unit/)
-- Elixir Skolan (https://elixirschool.com/sv/lessons/basics/testing/)
-- Test Driven Elixir (https://pragprog.com/book/lmelixir/test-driven-elixir)
+- [ExUnit dokumentation](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Elixir School - Skriv tester](https://elixirschool.com/sv/lessons/advanced/testing/)
+- [Elixir funktionell tester med meckning](https://medium.com/@thejakeobrien/functional-testing-in-elixir-with-mocking-371e2f7662f0)

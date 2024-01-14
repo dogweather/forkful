@@ -1,49 +1,39 @@
 ---
-title:                "Ruby: Uttrekking av delstrenger"
+title:                "Ruby: Ekstrahering av delstrenger"
+simple_title:         "Ekstrahering av delstrenger"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Hvis du noen gang har jobbet med tekstbehandling i Ruby, har du sannsynligvis kommet over behovet for å hente ut deler av en tekststreng. Dette kan være for å formatere data, lage variabler eller behandle informasjon på en mer effektiv måte. Uansett årsak, er det nyttig å vite hvordan man skal trekke ut substrings i Ruby. 
 
-Å ekstrahere substringer, eller deler av tekst, er en viktig del av programmering som kan hjelpe deg med å manipulere data på en mer effektiv måte. Enten det er å finne og erstatte bestemte deler av en tekst eller å hente ut spesifikke informasjon fra en større datamengde, kan ekstrahering av substringer bidra til å forenkle koden din og gjøre den mer lesbar.
-
-# Hvordan gjøre det
-
-For å ekstrahere substringer i Ruby, bruker vi metoden `slice` eller dens alias `[]`. Dette er en såkalt "mutator"-metode, som betyr at den endrer den originale teksten. La oss si at vi for eksempel har en tekst som sier "Hei, mitt navn er Ruby", og vi ønsker å ekstrahere bare ordet "Ruby". Vi kan gjøre det ved hjelp av følgende kode:
+## Hvordan
+Det er flere måter å ekstrahere substrings i Ruby, men de mest vanlige metodene er `slice`, `substring` og `scan`. La oss se på noen eksempler på hvordan disse metodene fungerer og hva slags utgang de produserer. 
 
 ```Ruby
-tekst = "Hei, mitt navn er Ruby"
-puts tekst.slice(18..-1)
-# output: Ruby
-```
+sentence = "Å programmere i Ruby er gøy!"
+puts sentence.slice(2, 9) # Output: # "programmere"
+puts sentence.substring(3, 5) # Output: "program"
+puts sentence.scan(/^[^\s]+/) # Output: ["Å"]
+``` 
 
-Vi bruker `slice`-metoden og gir den en parameter som sier hvilken del av teksten vi vil ha ut. I dette tilfellet vil `18..-1` hente ut alt fra og med det 18. tegnet (R) til slutten av teksten. Alternativt kunne vi også brukt `[]`-metoden på følgende måte:
+For å bruke `slice`-metoden trenger vi å kjenne posisjonen til start- og sluttsymbolet for substringsen vi vil hente ut. I eksempelet ovenfor bruker vi `2` som startposisjon og `9` som sluttposisjon for å hente ut ordet "programmere". 
 
-```Ruby
-tekst = "Hei, mitt navn er Ruby"
-puts tekst[18..-1]
-# output: Ruby
-```
+For `substring`-metoden må vi også spesifisere start- og sluttposisjoner, men i dette tilfellet må vi også angi hvor mange tegn vi vil hente ut. I eksempelet ovenfor angir vi at vi vil ha ut 5 tegn fra og med tredje posisjon, som gir oss substringen "program". 
 
-Dette er det samme som å bruke `slice`, ettersom `[]` er en alias for `slice`. Vi kan også bruke `[]`-metoden for å hente ut et bestemt antall tegn fra et gitt startpunkt:
+Til slutt har vi metoden `scan`, som lar oss hente ut substrings basert på et mønster. I dette tilfellet ønsker vi å hente ut ordet som kommer før det første mellomrommet i setningen. Ved å bruke et regulært uttrykk, som i eksempelet ovenfor, kan vi lett hente ut "Å" som første ord i setningen. 
 
-```Ruby
-tekst = "Hei, mitt navn er Ruby"
-puts tekst[18, 4]
-# output: Ruby
-```
+## Deep Dive
+Det er viktig å merke seg at de ulike metodene for å ekstrahere substrings i Ruby kan ha forskjellige utgangspunkt for start- og sluttposisjoner. For eksempel bruker `substring`-metoden tegnnummer som utgangspunkt, mens `slice`-metoden bruker indekser fra `0`. Dette kan føre til uventede utganger hvis man ikke er klar over forskjellene. 
 
-I dette tilfellet spesifiserer vi at vi vil hente ut 4 tegn fra og med det 18. tegnet. Ved å kombinere `slice`- eller `[]`-metoden med andre metoder som `gsub` og `chomp`, kan vi også manipulere tekst og erstatte substringer med annen informasjon.
+Et annet viktig punkt å merke seg er at begge metodene kan utvides ved å bruke åpne intervall, for eksempel `y..-1`, som betyr "fra og med y til slutten av strengen". Dette gjør disse metodene svært fleksible og nyttige for å håndtere variabel data. 
 
-# Dykk ned i detaljene
-
-Ruby har også muligheten til å ekstrahere substringer ved hjelp av Regular Expressions, som er en mer avansert metode for å søke og manipulere tekst. Dette åpner for større fleksibilitet og muligheter når det gjelder å finne og erstatte spesifikke deler av en tekst. Det er også lurt å være oppmerksom på utfordringer som kan oppstå hvis vi prøver å ekstrahere substringer fra tekster som inneholder ulike tegnsett.
-
-# Se også
-
-- [Ruby dokumentasjon om `slice` og `[]`](https://ruby-doc.org/core-3.0.2/String.html#method-i-5B-5D)
-- [Ruby Regular Expressions](https://ruby-doc.org/core-3.0.2/Regexp.html)
+## Se Også
+- [Ruby String class documentation](https://ruby-doc.org/core-2.7.2/String.html)
+- [Ruby String#slice method documentation](https://ruby-doc.org/core-2.7.2/String.html#method-i-slice)
+- [Ruby String#substring method documentation](https://ruby-doc.org/core-2.7.2/String.html#method-i-substring)

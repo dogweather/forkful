@@ -1,19 +1,30 @@
 ---
-title:                "Kotlin: Uuden projektin aloittaminen"
+title:                "Kotlin: Aloittamassa uutta projektia."
+simple_title:         "Aloittamassa uutta projektia."
 programming_language: "Kotlin"
-category:             "Getting Started"
+category:             "Kotlin"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi aloittaa uusi projekti?
+## Miksi
 
-Aloittaminen uuden ohjelmointiprojektin voi tuntua pelottavalta, mutta se tarjoaa monia mahdollisuuksia. Uusi projekti voi auttaa sinua oppimaan uusia taitoja ja tekemään jotain mielenkiintoista. Lisäksi se voi olla loistava tapa ilmaista luovuuttasi ja toteuttaa omia ideoitasi.
+Miksi ihmiset haluavat aloittaa uuden ohjelmointiprojektin? Usein se johtuu siitä, että heillä on idea, jota haluavat toteuttaa tai he haluavat oppia uutta ohjelmointikieltä tai tekniikkaa. On myös mahdollista, että he haluavat luoda jotain hyödyllistä itselleen tai toisilleen.
 
-# Miten aloittaa uusi projekti Kotlinilla?
+## Kuinka
 
-Aloittaminen uuden projekti Kotlinilla on helppoa ja hauskaa. Voit käyttää seuraavia ohjeita päästäksesi alkuun:
+Kun aloitat uuden Kotlin-projektin, ensimmäinen askel on asentaa Kotlin-ympäristö ja luoda projekti kansioon, johon haluat tallentaa koodisi. Voit tehdä tämän käyttämällä seuraavia komentoja:
+
+```Kotlin
+sudo apt-get update
+sudo apt-get install kotlin
+mkdir project-folder
+cd project-folder
+```
+
+Seuraavaksi voit aloittaa koodin kirjoittamisen. Tämä on yksinkertainen ohjelma, joka tulostaa "Hei maailma!" komentoriville:
 
 ```Kotlin
 fun main() {
@@ -21,20 +32,25 @@ fun main() {
 }
 ```
 
-Tämä yksinkertainen koodinpätkä tulostaa konsoliin "Hei maailma!".
+Voit ajaa tämän koodin käyttämällä seuraavaa komentoa:
 
-Muutaman perusasioiden lisäksi tarvitset myös Kotlin-kehitysympäristön, esimerkiksi Android Studiossa. Ohjelmointikielenä Kotlin on Java-yhteensopiva, joten voit myös tutustua Java-esimerkkeihin saadaksesi lisää ideoita ja inspiraatiota.
+```Kotlin
+kotlinc program.kt -include-runtime -d program.jar
+java -jar program.jar
+```
 
-# Syvempi sukellus aloittamiseen uuden projektin kanssa
+Tämän pitäisi tulostaa "Hei maailma!" komentoriville.
 
-Ennen kuin aloitat uuden projektin, on hyvä ottaa huomioon muutamia asioita. Ensinnäkin, päätä mikä tulee olemaan projektille tarkoitus; onko se vain harjoitus, vai onko sinulla tavoitteena julkaista se? Tämä auttaa sinua asettamaan tavoitteita ja suunnittelemaan projektin etenemistä.
+## Syventävä sukellus
 
-Toiseksi, valitse projektillesi tarkoituksenmukainen rakenne ja organisointitapa. Tämä auttaa sinua pitämään koodisi selkeänä ja helposti ymmärrettävänä.
+Kun aloitat uuden Kotlin-projektin, on tärkeää harkita, mitä koodeja tarvitset ja kuinka järjestät projektisi. Ensinnäkin, sinun on luotava `build.gradle`-tiedosto, johon voit lisätä tarvittavat riippuvuudet ja asetukset. Sinun pitäisi myös harkita projektisi rakennetta, jotta koodisi olisi helpompi ylläpitää ja laajentaa.
 
-Kannattaa myös luoda projektillesi git-repositorio ja tehdä säännöllisiä committeja, jotta voit palata takaisin aiempiin versioihin tarvittaessa.
+Kotlinin hyvä puoli on, että se on yhteensopiva Java-koodin kanssa, mikä tarkoittaa, että voit käyttää Java-kirjastoja ja työkaluja projekteissasi. Voit myös käyttää Kotlinin sisäistä työkalua, `kotlinc`, joka antaa sinun kääntää koodisi ilman, että tarvitset muita työkaluja tai kirjastoja.
 
-# Katso myös
+## Katso myös
 
-- [Java-esimerkkejä Kotlinin kanssa](https://kotlinlang.org/docs/tutorials/basic-syntax.html)
-- [Kotlinin viralliset verkkosivut](https://kotlinlang.org/)
-- [Ohjepankki Kotlinille](https://kotlinlang.org/docs/reference/)
+Suosittelemme seuraavia resursseja, jos haluat oppia lisää Kotlin-ohjelmoinnista:
+
+- [Kotlinin virallinen verkkosivusto](https://kotlinlang.org/)
+- [JetBrainsin Kotlin Bootcamp -kurssi](https://www.jetbrains.com/help/education/kotlin-bootcamp.html)
+- [Kotlinin Slack-yhteisö](https://kotlinlang.slack.com/)

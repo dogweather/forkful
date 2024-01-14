@@ -1,7 +1,9 @@
 ---
 title:                "C++ recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/reading-command-line-arguments.md"
 ---
 
@@ -9,63 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In the world of software development, being able to read and parse command line arguments is an essential skill. It allows for easy customization and flexibility, and can even be the difference between a user-friendly program and a frustrating one. In this blog post, we will take a deep dive into reading command line arguments in C++, and why it is a valuable skill to have.
+Have you ever seen a program with multiple options that can be specified when running it from the command line? Have you ever wondered how these options are read and processed? In this blog post, we will explore the world of reading command line arguments in C++.
 
 ## How To
 
-Reading command line arguments in C++ is a fairly straightforward process. To get started, we need to include the <iostream> and <string> libraries.
+Reading command line arguments in C++ is a simple and useful skill to have. Let's say we want to create a program that can take in a user's name and age as command line arguments, and then print out a personalized message. To do this, we first need to include the "iostream" and "string" libraries. Then, we can use the "int main(int argc, char* argv[])" function to read the arguments passed in from the command line.
 
-```
+Next, we can use the "argc" and "argv" variables to access the arguments. "argc" holds the number of arguments entered, while "argv" is an array that holds each argument as a C-style string. So, in our example, if the user enters "John 25" as command line arguments, "argc" will have a value of 3 and "argv" will contain the strings "John" and "25" in the first and second indexes respectively.
+
+Now, let's see the code in action:
+
+```C++
 #include <iostream>
 #include <string>
-```
 
-Next, we declare our main method with two parameters, argc and argv. These parameters will hold the number of arguments and the actual arguments, respectively.
+int main(int argc, char* argv[]) {
+  // We check to make sure there are enough arguments
+  if (argc < 3) {
+    std::cout << "Not enough arguments were provided!" << std::endl;
+    return 0;
+  }
 
-```
-int main(int argc, char* argv[])
-```
+  // Accessing the arguments
+  std::string name = argv[1];
+  std::string age = argv[2];
 
-To read and process the arguments, we can use a for loop. The variable i will start at 1, as the first argument (argv[0]) will always be the name of our program. We can then use the std::string type to store each argument for further manipulation.
+  // Printing out the personalized message
+  std::cout << "Hello " << name << "! You are " << age << " years old." << std::endl;
 
-```
-for(int i = 1; i < argc; i++){
-    std::string arg = argv[i];
-    // do something with the argument
+  return 0;
 }
 ```
 
-Now, let's say we have a program called "greeting" and we want to take in two arguments - a name and a message. Our command line would look something like this:
+**Output:**
 
 ```
-./greeting John Hello
-```
-
-With our for loop, we can store these arguments and print them out using the std::cout function.
-
-```
-for(int i = 1; i < argc; i++){
-    std::string arg = argv[i];
-    std::cout << arg << " ";
-}
-```
-
-This would result in an output of:
-
-```
-John Hello
+$ ./program John 25
+Hello John! You are 25 years old.
 ```
 
 ## Deep Dive
 
-There are many other functionalities and techniques that can be used when reading command line arguments in C++. One useful function is the std::stoi() function, which can convert a string argument to an integer. This is especially helpful if your program requires numerical input from the user.
+One thing to note is that command line arguments are always read in as strings. This means that if we want to use the arguments as other data types, such as integers or booleans, we need to do some conversion. For example, to convert the "age" argument to an integer, we can use the "stoi()" function from the "string" library. Similarly, we can use the "stof()" function to convert the argument to a float and "stod()" to convert it to a double.
 
-Additionally, you can use the argc and argv parameters in other areas of your program, such as error handling or conditional statements. By understanding the basics of reading command line arguments, you can incorporate them into your code in creative and efficient ways.
+Another useful tip is to use "getopt" to handle more complex command line options, such as options with values or options that can be used multiple times. "getopt" is a library that allows us to handle command line options in a more structured and organized way, making our code easier to read and maintain.
 
 ## See Also
 
-- [C++ Command Line Arguments](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [The Beginner's Guide to Command Line Arguments in C++](https://www.educba.com/command-line-arguments-in-cpp/)
-- [std::stoi() function](https://www.cplusplus.com/reference/string/stoi/)
-
-By mastering the skill of reading command line arguments in C++, you can enhance the functionality and user experience of your programs. With these coding examples and tips, you can get started on your journey to becoming a command line argument expert. Happy coding!
+- [The Basics of Command Line Arguments in C++ (GeeksforGeeks)](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Converting Strings to Numbers in C++ (Stack Overflow)](https://stackoverflow.com/questions/42388464/converting-string-to-int-in-c)
+- [Using getopt in C++ (Linux Journal)](https://www.linuxjournal.com/article/5481)

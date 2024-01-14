@@ -1,7 +1,9 @@
 ---
-title:                "Go: Laczenie stringow"
+title:                "Go: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/concatenating-strings.md"
 ---
 
@@ -9,48 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Concatenation jest jedną z podstawowych operacji w programowaniu. W języku Go, łączenie ciągów (ang. strings) jest bardzo proste i wydajne. W tym artykule dowiesz się dlaczego warto użyć tej operacji oraz jak wykorzystać ją w swoich projektach.
+Połączenie ciągów znaków jest niezbędną czynnością podczas pisania programów, szczególnie jeśli pracujesz z tekstem. Przydatne jest w tworzeniu pełnych wiadomości, formatowania dokumentów i wielu innych zastosowań. W tym artykule dowiesz się, jak połączyć ciągi znaków w języku Go.
 
 ## Jak to zrobić
 
-Aby skonkatenować (połączyć) dwa ciągi tekstowe w języku Go, możemy skorzystać z operatora `+` lub funkcji `fmt.Sprint()`.
+Poniższy kod przedstawia proste przykłady tworzenia i łączenia ciągów znaków w języku Go:
 
 ```Go
-str1 := "Hello"
-str2 := "World"
+package main
 
-// Użycie operatora +
-result := str1 + " " + str2
+import "fmt"
 
-// Użycie funkcji fmt.Sprint()
-result := fmt.Sprint(str1, " ", str2)
+func main() {
+    // Tworzenie dwóch ciągów znaków
+    message1 := "Hello "
+    message2 := "world!"
 
-fmt.Println(result)
-// Output: Hello World
+    // Połączenie ciągów znaków za pomocą operatora "+"
+    fullMessage := message1 + message2
+    fmt.Println(fullMessage) // Wyjście: Hello world!
+
+    // Połączenie ciągów znaków za pomocą funkcji "Join" z pakietu "strings"
+    import "strings"
+    result := strings.Join([]string{message1, message2}, " ")
+    fmt.Println(result) // Wyjście: Hello world!
+}
 ```
 
-Możemy również skorzystać z funkcji `strings.Join()`, która pozwala na połączenie wielu ciągów w jednym wywołaniu.
+Możesz również łączyć więcej niż dwa ciągi za pomocą funkcji "Join". W takim przypadku, ciągi muszą być podane w tablicy, a separator znajdujący się po ostatnim ciągu zostanie użyty do połączenia całej tablicy.
 
 ```Go
-str1 := "Go"
-str2 := "Programming"
-str3 := "Language"
+package main
 
-// Użycie funkcji strings.Join()
-result := strings.Join([]string{str1, str2, str3}, " ")
+import "fmt"
 
-fmt.Println(result)
-// Output: Go Programming Language
+func main() {
+    // Tworzenie trzech ciągów znaków
+    message1 := "Programming"
+    message2 := "is"
+    message3 := "fun!"
+
+    // Połączenie trzech ciągów za pomocą funkcji "Join"
+    import "strings"
+    result := strings.Join([]string{message1, message2, message3}, " ")
+    fmt.Println(result) // Wyjście: Programming is fun!
+}
 ```
 
 ## Deep Dive
 
-W języku Go, operacja concatenacji jest bardzo wydajna dzięki temu, że ciągi są niemutowalne (niezmienne) i wewnętrznie reprezentowane jako tablice bajtów. Dzięki temu unikamy potrzeby tworzenia nowych ciągów przy każdej operacji concatenacji.
-
-Istnieje również wiele funkcji w pakiecie `strings`, które pozwalają na manipulację i porównywanie ciągów tekstowych, co sprawia, że język Go jest bardzo przyjazny dla programistów pracujących z tekstami.
+Istnieją różne sposoby łączenia ciągów znaków w języku Go. Jednak najważniejszym punktem jest zapewnienie, że wszystkie połączone ciągi są typu "string". W przeciwnym razie, nie będą one mogły być dodane za pomocą operatora "+" lub użyte w funkcji "Join". Warto również zauważyć, że operacja łączenia ciągów jest wykonywana w czasie rzeczywistym i może wpływać na wydajność Twojego programu w zależności od ilości i długości łączonych ciągów.
 
 ## Zobacz również
 
-- [Dokumentacja języka Go](https://golang.org/doc/)
-- [Tutorial: Rozpoczęcie pracy z językiem Go](https://www.digitalocean.com/community/tutorials/how-to-install-go-and-set-up-a-local-programming-environment-on-ubuntu-18-04)
-- [Oficjalny blog języka Go](https://blog.golang.org/)
+- Dokumentacja Go: https://golang.org/doc/
+- Przewodnik po języku Go: https://tour.golang.org/list
+- Wideo o połączeniach w języku Go: https://www.youtube.com/watch?v=eKnYdNRU3sQ

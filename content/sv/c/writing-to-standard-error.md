@@ -1,60 +1,41 @@
 ---
-title:                "C: Skriva till standard error"
+title:                "C: Skriva till standard fel"
+simple_title:         "Skriva till standard fel"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Skriva till standardfel kan verka som ett enkelt koncept, men varför skulle någon vilja göra det? Det finns faktiskt flera användbara anledningar till att kunna skriva till standardfel i dina C-program.
+Att skriva till standard error är ett viktigt koncept i C-programmering eftersom det ger möjlighet att skicka felmeddelanden och annan debugging-information direkt till användaren. Detta är särskilt användbart i större projekt där det finns flera delar av koden som behöver kommunicera med varandra.
 
-## Hur man gör det
+# Hur man gör
 
-Att skriva till standardfel i C är faktiskt ganska enkelt. Du behöver bara använda funktionen "fprintf" och ange "stderr" som den första parameteren. Här är ett exempel:
-
-```C
-fprintf(stderr, "Det här är ett felmeddelande\n");
-```
-
-Detta kommer att skriva ut texten "Det här är ett felmeddelande" till standardfelkanalen. Du kan också använda "fputs" för att skriva en befintlig sträng till standardfel:
+För att skriva till standard error i C använder man funktionen `fprintf()` tillsammans med `stderr` som första argument. Här är ett enkelt exempel som skickar ett felmeddelande till standard error:
 
 ```C
-char* error = "Ett annat felmeddelande";
-fputs(error, stderr);
+fprintf(stderr, "Ett fel har inträffat\n");
 ```
 
-Du kan också kombinera användningen av "fprintf" och "fputs" för att skriva ut mer detaljerade felmeddelanden. Här är ett exempel på hur du kan använda båda funktionerna tillsammans:
+När man använder `fprintf()` behöver man också specificera vilken typ av information man vill skicka, vilket görs genom att lägga till formatsträngar efter felmeddelandet. Till exempel, om man vill skriva ut värdet av en variabel `x` kan man göra så här:
 
 ```C
-fprintf(stderr, "Ett allvarligt fel inträffade: ");
-fputs(error, stderr);
+fprintf(stderr, "Värdet av x är: %d\n", x);
 ```
 
-Detta kommer att skriva ut "Ett allvarligt fel inträffade: Ett annat felmeddelande" till standardfelkanalen.
+Man kan också använda `stderr` för att skriva ut andra typer av information, som till exempel varningar eller debugging-information. Det är också möjligt att kombinera `fprintf()` med `printf()` för att skriva till både standard output och standard error samtidigt.
 
-En annan användbar funktion för att skriva till standardfel är "perror", som automatiskt skriver ut en felbeskrivning baserad på det senaste felmeddelandet som lagras i "errno" -variabeln. Här är ett exempel på hur du kan använda "perror":
+# Djupdykning
 
-```C
-fp = fopen("saknad_fil.txt", "r");
-if (fp == NULL) {
-	perror("Det gick inte att öppna filen");
-	exit(1);
-}
-```
+I C-programmering finns det två standardströmmar som används för att kommunicera med användaren: standard input (`stdin`) och standard output (`stdout`). Standard input är där användaren skickar in information till programmet, medan standard output är där programmet skriver ut resultatet. Standard error (`stderr`) används för att skriva ut felmeddelanden och annan debugging-information.
 
-Om filen "saknad_fil.txt" inte kan öppnas, kommer "perror" att skriva ut "Det gick inte att öppna filen: Filen eller katalogen finns inte" till standardfelkanalen.
+Det är viktigt att skilja mellan `stdout` och `stderr` eftersom vissa program, som till exempel kommandoraden på en dator, skickar standard output till användarens skärm medan standard error skickas till en loggfil som användaren inte kan se. Detta betyder att det är lämpligt att använda `stderr` för viktig information som användaren behöver se direkt.
 
-## Djupare dykning
+# Se även
 
-Genom att skriva till standardfel kan du enkelt skapa mer informativa och användbara felmeddelanden i dina C-program. Genom att kombinera "fprintf", "fputs" och "perror" kan du skapa anpassade felmeddelanden som hjälper dig att spåra och lösa problem i ditt program.
-
-Det är också viktigt att notera att "stderr" i princip är en filhante som representerar standardfelkanalen. Det betyder att du kan använda alla funktioner som du skulle använda för att skriva till en vanlig fil, som t.ex. "fprintf", "fputs" och "fwrite", för att skriva till standardfel.
-
-## Se även
-
-- [C programmets officiella dokumentation på stderr](https://www.programiz.com/c-programming/library-function/stdio.h/stderr)
-- [En översikt över hur du hanterar fel i C-program](https://www.tutorialspoint.com/cprogramming/c_error_handling.htm)
-- [Ett praktiskt exempel på hur du kan använda "stderr" i C](https://www.geeksforgeeks.org/standard-error-streams-in-c/)
+- [Wikipedia - Standard streams](https://sv.wikipedia.org/wiki/Standardstr%C3%B6m)
+- [Stack Overflow - Difference between printf and fprintf in C](https://stackoverflow.com/questions/9332816/difference-between-printf-and-fprintf-in-c)

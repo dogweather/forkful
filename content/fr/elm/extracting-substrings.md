@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Extraire des sous-chaînes"
+title:                "Elm: Extraction de sous-chaînes"
+simple_title:         "Extraction de sous-chaînes"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/extracting-substrings.md"
 ---
 
@@ -9,45 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'extraction de sous-chaînes peut sembler être une tâche mineure en programmation Elm, mais elle peut en réalité être très utile dans de nombreuses situations. Cela peut vous aider à manipuler des chaînes de caractères plus facilement, à remplacer des éléments spécifiques ou à effectuer des opérations de validation complexe.
+L'extraction de sous-chaînes est une tâche courante en programmation Elm, et c'est un outil puissant à ajouter à votre boîte à outils de développeur. Que vous travailliez sur un projet de traitement de texte ou sur un programme de traitement de données, savoir comment extraire des sous-chaînes dans Elm peut être très utile.
 
 ## Comment faire
 
-Il existe plusieurs façons d'extraire des sous-chaînes en Elm, mais la méthode la plus courante est d'utiliser la fonction `String.slice`. Voici un exemple :
+Pour extraire des sous-chaînes en Elm, nous allons utiliser la fonction `substring` qui se trouve dans le module `String`. Cette fonction prend en argument une chaîne de caractères et deux indices, représentant respectivement le début et la fin de la sous-chaîne que vous souhaitez extraire. Voici un exemple de code Elm qui illustre l'utilisation de `substring` :
 
 ```Elm
-myString = "Technologie Elm"
-substring = String.slice 11 14 myString
+import String
+
+exemple = "Bonjour Elm"
+
+sousChaine = String.substring 7 11 exemple
+
+-- "Elm" sera la valeur retournée par sousChaine
 ```
 
-Cet exemple extrait les caractères de la position 11 à 14 dans la chaîne `myString`, ce qui donne comme résultat la sous-chaîne "Elm".
+Comme vous pouvez le voir dans cet exemple, nous avons d'abord importé le module `String`, puis nous avons créé une variable contenant notre chaîne de caractères. Ensuite, en utilisant `substring`, nous avons extrait la sous-chaîne "Elm" en utilisant les indices 7 et 11 pour spécifier les caractères que nous voulions. Vous pouvez également utiliser des variables pour ces indices, tant qu'elles sont de type `Int`.
 
-Il est également possible d'utiliser les fonctions `String.take` et `String.drop` pour extraire une partie spécifique d'une chaîne. Par exemple :
+## Plongée en profondeur
 
-```Elm
-myString = "Coding est amusant"
-firstFiveCharacters = String.take 5 myString
-```
+Il est important de noter que les indices donnés à la fonction `substring` doivent être valides. Cela signifie qu'ils doivent être compris entre 0 et la longueur de la chaîne de caractères moins 1. Si les indices donnés ne sont pas valides, la fonction retournera une erreur. De plus, `substring` ne modifie pas la chaîne de caractères d'origine, elle en renvoie simplement une nouvelle.
 
-Cela créera une nouvelle chaîne contenant les cinq premiers caractères de `myString` : "Coding".
-
-## Plongée profonde
-
-L'une des fonctionnalités les plus intéressantes de l'extraction de sous-chaînes en Elm est qu'elle peut également être utilisée avec des tableaux. Par exemple, si vous avez un tableau de chaînes de caractères et que vous souhaitez extraire une sous-chaîne spécifique de chaque élément, vous pouvez utiliser la fonction `List.map` combinée à `String.slice`. Voici un exemple :
-
-```Elm
-array = ["Je suis heureux", "Faire du sport", "Programmer est amusant"]
-updatedArray = List.map (\string -> String.slice 0 7 string ) array
-```
-
-Cet exemple utilisera `String.slice` pour extraire les sept premiers caractères de chaque élément du tableau `array`. Le résultat sera un nouveau tableau contenant les éléments suivants : ["Je suis", "Faire du", "Program"].
+Il est également possible d'utiliser un indice négatif pour le début de la sous-chaîne. Dans ce cas, l'index sera compté à partir de la fin de la chaîne de caractères. Par exemple, `-2` serait l'avant-dernier caractère de la chaîne. Cela peut être très utile si vous avez besoin d'extraire une sous-chaîne à partir d'une position inconnue dans la chaîne de caractères.
 
 ## Voir aussi
 
-Pour en savoir plus sur les fonctions de manipulation de chaînes en Elm, vous pouvez consulter la documentation officielle : https://guide.elm-lang.org/appendix/strings.html
-
-Vous pouvez également découvrir d'autres astuces de programmation Elm sur les blogs et sites suivants :
-
-- https://medium.com/codeurs-de-louest/comment-devenir-un-expert-en-programmation-en-elm-c8f5501c3dba
-- https://freecontent.manning.com/composing-functions-in-elm/
-- https://medium.com/the-z/mise-en-place-et-structures-de-projet-elm-b4196c80b564
+Pour en savoir plus sur les fonctions de manipulation de chaînes en Elm, consultez la documentation officielle du module `String` : https://package.elm-lang.org/packages/elm/core/latest/String

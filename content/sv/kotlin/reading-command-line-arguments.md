@@ -1,40 +1,56 @@
 ---
 title:                "Kotlin: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-#Varför
-Det finns många olika användningsområden för kommandoradsargument i Kotlin, till exempel att ge programmet användarinput eller för att styra vilken del av programmet som ska köras. Läs vidare för att lära dig hur du kan utnyttja kommandoradsargument i dina Kotlin-program.
+## Varför
 
-#Så här gör du
-För att läsa in kommandoradsargument i Kotlin behöver du först importera paketet "args" som ger dig tillgång till kommandoradsargumenten. Sedan kan du använda en for-loop för att iterera genom argumenten och utföra önskade åtgärder. Här är ett exempel på hur du kan skriva ut alla argumenten på skärmen:
+Det finns många anledningar till att läsa kommandoradsargument när man programmerar i Kotlin. Genom att följa dessa tips kan du utöka funktionaliteten hos dina program och skapa mer flexibla och anpassningsbara lösningar.
+
+## Så här
+
+Att läsa kommandoradsargument i Kotlin är relativt enkelt. Först behöver du importera "args" från Kotlin.system.biblioteket. Sedan kan du använda "args" variabeln för att läsa in argumenten och utföra önskade operationer. Nedan är ett exempel på hur man läser in kommandoradsargument och skriver ut dem:
 
 ```Kotlin
-import kotlin.system.exitProcess // används för att avsluta programmet
+import kotlin.system.*
 
 fun main(args: Array<String>) {
-    for (arg in args) {
+    println("Det här programmet tar emot följande argument:")
+    for(arg in args) {
         println(arg)
     }
-    exitProcess(0)
 }
 ```
 
-Om användaren till exempel har kört programmet med kommandoradsargumenten "Hello" och "World", kommer följande att skrivas ut:
+Om du kör detta program i en kommandofönster och till exempel matar in "Kotlin är fantastiskt", kommer du att få utskriften:
 
 ```
-Hello
-World
+Det här programmet tar emot följande argument:
+Kotlin
+är
+fantastiskt
 ```
 
-#Djupdykning
-Utöver att läsa in kommandoradsargument som strängar, kan du även omvandla dem till andra datatyper om det behövs. Till exempel kan du använda funktionen .toInt() för att omvandla en kommandoradssträng till en heltalsvariabel. Det finns även andra användbara funktioner och metoder du kan utforska för att anpassa användarinput med hjälp av kommandoradsargument.
+Som du kan se är det väldigt enkelt att läsa in kommandoradsargument och använda dem i ditt program. Du kan också använda olika metoder och funktioner för att behandla argumenten på olika sätt, beroende på vad du behöver.
 
-#Se även
-- [Kotlin documentation on command line arguments](https://kotlinlang.org/docs/command-line.html)
-- [Tutorial on how to use command line arguments in Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_command_line.htm)
-- [Video tutorial on command line arguments in Kotlin](https://www.youtube.com/watch?v=QE3LNU029n8)
+## Djupdykning
+
+När du läser in kommandoradsargument, är det viktigt att förstå hur argumenten ska skrivas och hur de tas emot av ditt program. Argumenten bör skrivas i form av en sträng, med varje argument åtskilt av ett mellanslag. Det är också möjligt att skicka in flera argument genom att separera dem med mellanslag.
+
+Det är också värt att nämna att kommunikationen mellan ditt program och kommandofönstret är asynkron, vilket betyder att ditt program måste hålla reda på eventuella fördröjningar i inmatningen.
+
+För att undvika problem med felaktiga argument som skriver över varandra, bör du alltid använda "trim()" metoden för trimning av argumentsträngar.
+
+## Se även
+
+Här är några användbara länkar där du kan läsa mer om hur man läser och hanterar kommandoradsargument i Kotlin:
+
+- [Dokumentation för argv i Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-argv/index.html)
+- [3 enkla sätt att läsa in kommandoradsargument i Kotlin](https://www.sitereq.com/post/kotlin-read-command-line-arguments)
+- [Kommandoradsargument och flaggor i Kotlin](https://kotlinexpertise.com/command-line-arguments-kotlin/)

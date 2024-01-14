@@ -1,56 +1,67 @@
 ---
 title:                "Go: Jämförande av två datum"
+simple_title:         "Jämförande av två datum"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Om du är ny inom programmering och precis har börjat lära dig Go, kan du undra varför det är viktigt att kunna jämföra två datum i ett program. Att kunna hantera datum och tid är en viktig del av många applikationer och det är därför viktigt att ha en god förståelse för hur man jämför och arbetar med datum i Go.
+Att jämföra två datum är en vanlig uppgift inom programmering, särskilt när man arbetar med tid och datum i sina projekt. Genom att jämföra två datum kan man till exempel se om en händelse har inträffat före eller efter ett visst datum, eller om det har gått en viss tid sedan ett specifikt datum. I denna bloggpost kommer vi att gå igenom hur man kan jämföra två datum i Go-programmeringsspråket.
 
-# Hur man gör det
+## Hur man gör
 
-För att jämföra två datum i Go kan du använda funktionen `Before` eller `After` från paketet `time`. Dessa funktioner tar två datum som argument och returnerar en boolean som indikerar om det första datumet är före eller efter det andra. Här är ett exempel på hur man skulle använda dessa funktioner:
+Det första vi behöver göra är att importera Go's tidspaket, som innehåller funktioner för att hantera tid och datum. Sedan kan vi använda funktionen `After` för att jämföra två datum. Låt oss säga att vi har två variabler som innehåller datum i Go's tidslayout:
 
+```Go
+import "time"
+
+datum1 := "2020-01-01"
+datum2 := "2020-02-01"
+
+t1, _ := time.Parse("2006-01-02", datum1)
+t2, _ := time.Parse("2006-01-02", datum2)
 ```
-Go func main() {
-    firstDate := time.Date(2021, time.July, 15, 0, 0, 0, 0, time.UTC)
-    secondDate := time.Date(2021, time.July, 20, 0, 0, 0, 0, time.UTC)
 
-    if firstDate.Before(secondDate) {
-        fmt.Println("Första datumet är före det andra")
-    } else {
-        fmt.Println("Andra datumet är före det första")
-    }
+I detta fall kan vi använda `After`-funktionen för att se om `datum2` inträffade efter `datum1`:
+
+```Go
+if t2.After(t1) {
+    fmt.Printf("%s är senare än %s", datum2, datum1)
 }
 ```
 
-I detta exempel skapar vi två datum med funktionen `Date` från paketet `time` och sedan använder vi `Before` för att jämföra dem. Eftersom första datumet är tidigare än det andra, kommer utskriften att vara "Första datumet är före det andra". Du kan också använda `After` funktionen på samma sätt för att jämföra två datum.
+Vi kan också använda `Before`-funktionen för att se om ett datum inträffade före ett annat. Dessutom kan vi använda `Equal`-funktionen för att kontrollera om två datum är samma.
 
-# Djupdykning
+## Djupdykning
 
-Om du vill ha en mer detaljerad jämförelse av två datum kan du också använda funktionen `Equal` från paketet `time`. Detta jämför båda datumets år, månad och dag och returnerar en boolean som indikerar om de är lika. Här är ett exempel på hur man skulle använda den:
+När vi arbetar med tid och datum måste vi också tänka på tidszoner och hur de påverkar jämförelser av datum. I Go's tidspaket finns det en funktion som heter `Location` som gör det möjligt för oss att ändra tidszonen på ett datum. Till exempel, om vi vill jämföra två datum i olika tidszoner, kan vi använda följande kod:
 
-```
-Go func main() {
-    firstDate := time.Date(2021, time.July, 15, 0, 0, 0, 0, time.UTC)
-    secondDate := time.Date(2021, time.July, 15, 0, 0, 0, 0, time.UTC)
+```Go
+datum1 := "2020-01-01 15:00:00"
+datum2 := "2020-01-02 03:00:00"
 
-    if firstDate.Equal(secondDate) {
-        fmt.Println("Båda datumen är samma")
-    } else {
-        fmt.Println("Datumen är inte samma")
-    }
+loc1, _ := time.LoadLocation("Europe/Stockholm")
+loc2, _ := time.LoadLocation("Australia/Sydney")
+
+t1, _ := time.ParseInLocation("2006-01-02 15:04:05", datum1, loc1)
+t2, _ := time.ParseInLocation("2006-01-02 15:04:05", datum2, loc2)
+
+if t2.After(t1) {
+    fmt.Printf("%s är senare än %s", datum2, datum1)
 }
 ```
 
-I detta exempel kommer utskriften att vara "Båda datumen är samma" eftersom både år, månad och dag är samma för båda datumen.
+Som vi kan se i detta exempel, använder vi `LoadLocation`-funktionen för att ladda in de olika tidszonerna och sedan `ParseInLocation`-funktionen för att konvertera datumen i respektive tidszon innan vi jämför dem.
 
-# Se också
+## Se även
 
-- [Golang Time Package Documentation](https://pkg.go.dev/time)
-- [A Guide to Implementing Time and Date in Go](https://blog.golang.org/examples-time)
-- [Understanding Date and Time in Go](https://www.calhoun.io/working-with-date-and-time-in-go/)
+Här är några länkar till Go's dokumentation som kan vara till hjälp när du jämför datum:
+
+- [Go Tidspaket dokumentation](https://golang.org/pkg/time)
+- [Go Tidslayouter](https://yourbasic.org/golang/format-parse-string-time-date-example)
+- [Go Tidszoner](https://golang.org/pkg/time/#LoadLocation)

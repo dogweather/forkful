@@ -1,51 +1,37 @@
 ---
-title:                "Javascript: Scrivere su errori standard"
+title:                "Javascript: Scrivere su errore standard"
+simple_title:         "Scrivere su errore standard"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere su standard error in Javascript
+## Perché
 
-Scrivere su standard error è importante nella programmazione in Javascript perché consente ai programmatori di individuare e gestire gli errori che possono verificarsi durante l'esecuzione del codice. Questo può aiutare a garantire che il programma funzioni correttamente e a identificare e risolvere eventuali problemi di codice.
+Scrivere su standard error è un'importante abilità per i programmatori che vogliono diagnosticare e risolvere problemi nel loro codice. Questo processo permette di identificare gli errori e testare il funzionamento del programma in modo più dettagliato.
 
-## Come Farlo
+## Come fare
 
-Per scrivere su standard error in Javascript, è necessario utilizzare la funzione `console.error()` e passare il messaggio di errore come parametro. Ad esempio:
+Per scrivere su standard error in Javascript, è necessario utilizzare il metodo `console.error()` e passare come parametro l'oggetto che si desidera visualizzare. Ad esempio: 
 
-```Javascript
-console.error("Errore durante l'esecuzione del codice");
+```Javascript 
+let nome = "Mario"
+console.error("Il nome è: " + nome); 
 ```
 
-Questo scriverà il messaggio di errore nella console del browser o nell'ambiente di sviluppo. Inoltre, è possibile specificare più parametri separandoli da virgole:
-
-```Javascript
-console.error("Errore", myVariable);
-```
-
-In questo modo, il valore della variabile `myVariable` verrà visualizzato insieme al messaggio di errore.
+In questo caso, quando il programma viene eseguito, verrà mostrato l'errore "Il nome è: Mario" nella console degli errori.
 
 ## Approfondimento
 
-Scrivere su standard error è particolarmente utile nella gestione di errori all'interno di una try/catch block. In questa struttura, il codice viene eseguito normalmente, ma se si verifica un errore, viene catturato e può essere gestito all'interno del blocco catch. Ad esempio:
+Scrivere su standard error è utile perché consente di distinguere tra i messaggi di errore e i messaggi di output normali nella console del browser. Inoltre, è possibile specificare uno o più oggetti come parametri per fornire informazioni più dettagliate sull'errore. Ciò è particolarmente utile durante il debugging del codice.
 
-```Javascript
-try {
-  // Codice che può generare un errore
-} catch (error) {
-  console.error("Errore durante l'esecuzione del codice", error);
-}
-```
+## Vedi anche
 
-In questo modo, è possibile identificare quale errore è stato generato e gestirlo in modo appropriato.
+Ecco alcuni link utili per saperne di più su come scrivere su standard error in Javascript:
 
-È anche possibile utilizzare il metodo `console.trace()` per visualizzare l'intero stack trace dell'errore, che fornisce informazioni più dettagliate sulle chiamate di funzione e sulle variabili coinvolte nell'errore.
-
-## Vedi Anche
-
-- [Documentazione di console.error() in Javascript](https://developer.mozilla.org/it/docs/Web/API/Console/error)
-- [Gestione degli errori in Javascript: Come e perché farlo](https://blog.bitsrc.io/handle-errors-in-javascript-73dd4a6c89e8)
-- [Come utilizzare il blocco try/catch in Javascript](https://www.freecodecamp.org/news/javascript-try-catch-statement-example-how-to-handle-errors-in-javascript/)
-- [Console.log() vs Console.error() in Javascript](https://dev.to/asyraf/console-log-vs-console-error-in-javascript-1om9)
+- [Documentazione ufficiale di console.error()](https://developer.mozilla.org/it/docs/Web/API/Console/error)
+- [Errore standard vs output standard](https://stackoverflow.com/questions/26349440/difference-between-standard-error-and-standard-output)
+- [Come utilizzare la console degli errori in Chrome](https://developers.google.com/web/tools/chrome-devtools/console/errors)

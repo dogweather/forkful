@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Kapitalisering av en streng"
+title:                "Kotlin: Store bokstaver i en streng"
+simple_title:         "Store bokstaver i en streng"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/capitalizing-a-string.md"
 ---
 
@@ -9,38 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Noen ganger, når du arbeider med tekststrenger i Kotlin, kan du ønske å kapitalisere en streng. Dette kan være nyttig hvis du for eksempel ønsker å gjøre en tittel mer visuelt tiltalende eller hvis du trenger å sikre deg at en brukers input er i riktig format. Heldigvis er dette enkelt å gjøre ved hjelp av innebygde funksjoner i Kotlin-språket!
+Har du noen gang ønsket å gjøre en streng mer leselig eller merkbar i koden din? Da kan det å bruke funksjonen for å kapitalisere en streng i Kotlin være løsningen! Ved å kapitalisere en streng, vil den første bokstaven i hvert ord bli stor.
 
-## Slik gjør du det
+## Hvordan
 
-For å kapitalisere en streng i Kotlin, kan du bruke funksjonen `capitalize()` som er tilgjengelig på enhver streng. La oss se på et eksempel:
-
-```Kotlin
-val navn = "per"
-println(navn.capitalize()) // Output: Per
-```
-
-Som du kan se, vil funksjonen `capitalize()` gjøre om den første bokstaven i strengen til en stor bokstav. Men hva gjør du hvis du ønsker å kapitalisere alle ord i en setning? Da kan du bruke funksjonen `capitalizeWords()`. La oss ta en titt på et annet eksempel:
+Det å kapitalisere en streng i Kotlin er lett og enkelt. Først må vi importere følgende pakke:
 
 ```Kotlin
-val setning = "dette er en setning."
-println(setning.capitalizeWords()) // Output: Dette Er En Setning.
+import kotlinx.coroutines.*
 ```
 
-Som du kan se, vil nå alle de første bokstavene i hvert ord bli kapitalisert. Det er også verdt å merke seg at `capitalize()` og `capitalizeWords()` begge har overbelastede funksjoner som lar deg angi hvilken språkkode som skal brukes for å håndtere forskjellige språk.
+Deretter kan vi bruke funksjonen `capitalize()` på en hvilken som helst streng:
+
+```Kotlin
+val tekst = "dette er en eksempeltekst"
+println(tekst.capitalize())
+
+// Output: Dette er en eksempeltekst
+```
+
+Vi kan også kapitalisere bare den første bokstaven i en streng ved å bruke funksjonen `capitalizeFirst()`:
+
+```Kotlin
+val navn = "olav"
+println(navn.capitalizeFirst())
+
+// Output: Olav
+```
+
+Hvis vi ønsker å kapitalisere en streng uavhengig av stor eller små bokstaver, kan vi bruke funksjonen `capitalizeWords()`:
+
+```Kotlin
+val tall = "eNToMMEr218TaLL"
+println(tall.capitalizeWords())
+
+// Output: Entommertall 218tall
+```
 
 ## Dypdykk
 
-Nå som du vet hvordan du kapitaliserer en streng, la oss dykke litt dypere inn i hvordan denne funksjonen faktisk fungerer. Når du kaller `capitalize()` på en streng, konverterer Kotlin den internt til en `StringBuilder` og bruker deretter funksjonen `setCharAt()` for å endre den første bokstaven til en stor bokstav.
+Det å kapitalisere en streng kan være nyttig i mange forskjellige situasjoner. For eksempel, hvis du jobber med et program som tar inn brukerinput, kan det være lurt å kapitalisere inputen før den lagres eller brukes videre for å sikre at den er formatert på en konsistent måte. Det kan også være nyttig for å gjøre tekst mer leselig eller for å skille viktige ord eller navn i en streng.
 
-I tillegg er det viktig å merke seg at både `capitalize()` og `capitalizeWords()` returnerer en ny streng i stedet for å endre den opprinnelige strengen. Dette er fordi strenger er uforanderlige (immutable) i Kotlin-språket.
+En annen nyttig funksjon i Kotlin er `decapitalize()`, som gjør om første bokstav i en streng fra stor til liten. Dette kan være nyttig hvis du ønsker å formatere en streng til små bokstaver for å holde konsistens i koden din.
 
-## Se Også
+## Se også
 
-Hvis du ønsker å lære mer om hvordan du arbeider med strenger i Kotlin, kan du sjekke ut disse ressursene:
-
-- [Offisiell Kotlin-dokumentasjon om strenger](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Kotlin Strings Cheat Sheet](https://blog.kotlin-academy.com/kotlin-string-cheat-sheet-22d766f9868d)
-- [Kotlin Strings Tutorial](https://www.tutorialkart.com/kotlin/kotlin-strings/)
-
-Lykke til med kapitaliseringen av strenger i Kotlin!
+- [String kapitalisering i Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+- [Standard bibliotek for Kotlin strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/)
+- [Kotlin referansedokumentasjon](https://kotlinlang.org/docs/reference/)

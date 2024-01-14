@@ -1,54 +1,56 @@
 ---
-title:                "PHP: Drukowanie wyjścia debugowania"
+title:                "PHP: Generowanie wyjścia debugowania"
+simple_title:         "Generowanie wyjścia debugowania"
 programming_language: "PHP"
-category:             "Testing and Debugging"
+category:             "PHP"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Debugowanie jest nieodłączną częścią procesu programowania. Codziennie stajemy przed wyzwaniami, które wymagają znalezienia błędów w naszym kodzie. Jednym z najczęstszych sposobów na rozwiązanie tego problemu jest wypisywanie informacji o stanie naszego programu w poszczególnych miejscach. Dzięki temu możemy śledzić, jakie wartości przyjmują poszczególne zmienne i w przypadku wystąpienia błędu znacznie łatwiej znajdziemy jego przyczynę. W tym wpisie pokażę Wam jak w prosty sposób wypisać informacje o działaniu naszego kodu za pomocą funkcji "echo" w języku PHP.
+Czasami, podczas pisania kodu w PHP, może się zdarzyć, że napotkasz błąd lub problem, który nie jest łatwy do zlokalizowania. Wtedy przydatne może być używanie debugowania, czyli drukowanie informacji o działaniu programu, aby móc zdiagnozować problem.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby wypisać informacje o stanie naszego programu, możemy wykorzystać funkcję "echo" w języku PHP. Poniżej przedstawiam przykładowy kod:
+Istnieją różne sposoby na drukowanie debug outputu w PHP, w tym:
+- Słowo kluczowe `echo` - pozwala wyświetlić wartość zmiennej lub tekstu na stronie internetowej.
+- Funkcja `print_r()` - przydatna w przypadku drukowania wielowymiarowych tablic lub obiektów.
+- Funkcja `var_dump()` - wyświetla szczegółowe informacje o zmiennych, w tym typ, rozmiar i wartość.
 
-```PHP
-// Definiujemy zmienną z wartością 5
-$liczba = 5;
-
-// Wypisujemy wartość zmiennej za pomocą funkcji "echo"
-echo $liczba;
-
-// Wypisujemy tekst wraz z wartością zmiennej
-echo "Wartość zmiennej to: " . $liczba;
-```
-
-W powyższym przykładzie w pierwszej linii definiujemy zmienną "$liczba" i przypisujemy jej wartość 5. Następnie w linii drugiej wypisujemy wartość tej zmiennej za pomocą funkcji "echo". W ostatniej linii wypisujemy tekst wraz z wartością zmiennej, wykorzystując operator kropki do połączenia tekstu i zmiennej.
-
-Możemy również wypisywać wartości złożonych zmiennych, takich jak tablice czy obiekty. Poniżej przedstawiam przykładowy kod z wykorzystaniem tablicy:
+Przykładowy kod wykorzystujący te funkcje wyglądałby następująco:
 
 ```PHP
-// Definiujemy tablicę z kilkoma wartościami
-$imiona = ["Maria", "Jan", "Anna"];
+$variable = "Hello world!";
+echo $variable;
+// Wyświetli: Hello world!
 
-// Przechodzimy przez elementy tablicy i wypisujemy je za pomocą pętli "foreach"
-foreach($imiona as $imie){
-    echo $imie . " ";
-}
+$array = array("apple", "banana", "orange");
+print_r($array);
+/*
+Wyświetli:
+Array (
+    [0] => apple
+    [1] => banana
+    [2] => orange
+)
+*/
+
+$number = 123;
+var_dump($number);
+// Wyświetli: int(123)
 ```
 
-## Wnikliwe badanie
+## Deep Dive
 
-Wypisywanie informacji o stanie naszego programu za pomocą funkcji "echo" może być bardzo pomocne, jednak nie jest to zawsze najlepsze rozwiązanie. W przypadku większych projektów zaleca się wykorzystanie specjalnych narzędzi do debugowania, takich jak Xdebug czy PhpStorm Debugger. Pozwalają one na dokładniejsze śledzenie i analizowanie działania aplikacji.
+Wykorzystanie debugowania jest szczególnie przydatne w przypadku większych projektów, gdzie napotkane błędy mogą być trudne do zlokalizowania. Dzięki drukowaniu debug outputu możesz dokładnie prześledzić poziom wykonania kodu i znaleźć miejsce, w którym problem się pojawia.
 
-## Zobacz również
+Pamiętaj jednak, żeby nie pozostawiać wydruków debug outputu w kodzie produkcyjnym, ponieważ mogą one ujawniać poufne informacje i spowolnić działanie strony.
 
-Jeśli jesteś zainteresowany/a tematem debugowania w języku PHP, polecam zapoznać się z poniższymi artykułami:
+## Zobacz także
 
-- [Debugowanie kodu PHP za pomocą narzędzia Xdebug](https://www.dobreprogramy.pl/pawel/Debugowanie-kodu-PHP-za-pomoca-narzedzia-Xdebug,104006.html)
-- [Narzędzie do debugowania PhpStorm Debugger](https://www.jetbrains.com/help/phpstorm/debugging-php-applications.html)
-- [Techniki debugowania w języku PHP](https://kursownik.pl/rozwoj/techniki-debugowania-w-php/)
-- [6 przydatnych narzędzi do debugowania PHP](https://www.phpbuilder.com/articles/6-useful-php-debugging-tools)
+- [PHP Debugging Techniques](https://www.php.net/manual/en/debugger.php)
+- [Debugging PHP with Xdebug](https://medium.com/the-andela-way/debugging-php-applications-the-smarter-way-using-xdebug-2a84f139c447)
+- [Using Debugging Tools in PHPStorm](https://www.jetbrains.com/help/phpstorm/debugging-with-phpstorm.html)

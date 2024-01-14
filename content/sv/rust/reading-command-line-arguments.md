@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Läsning av kommandoradsargument"
+title:                "Rust: Läsa kommandoradsargument"
+simple_title:         "Läsa kommandoradsargument"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/reading-command-line-arguments.md"
 ---
 
@@ -9,54 +11,92 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att läsa in kommandoradsargument är en viktig del av programmeringsprocessen för många som använder sig av Rust. Det ger möjlighet att dynamiskt ändra programbeteendet utan att behöva ändra källkoden. Läs vidare för att ta reda på hur du kan implementera detta i dina egna projekt.
+Att läsa kommando radargument är en viktig del av att skriva effektiva Rust-program. Genom att kunna läsa argument från terminalen kan du skapa program som är mer anpassningsbara för användaren.
 
-## Hur man gör
+## Så här
 
-För att läsa in kommandoradsargument i din Rust-kod behöver du först importera biblioteket `std::env` genom att lägga till följande kod i början av din fil:
+Att läsa kommando radargument i Rust är enkelt och kan göras med hjälp av standard biblioteket. Här är ett exempel på hur du kan läsa ett argument som representerar en filnamn och skriva ut det till terminalen:
 
 ```Rust
 use std::env;
-```
 
-Sedan kan du använda funktionen `args()` inom `env`-biblioteket för att få en vektor med alla kommandoradsargument som skickats till ditt program. Här är ett exempel på hur du kan skriva ut argumenten till konsolen:
-
-```Rust
 fn main() {
     let args: Vec<String> = env::args().collect();
-
-    // Skriver ut argumenten till konsolen
-    println!("Kommandoradsargument: {:?}", args);
+    // args[0] är alltid programnamnet
+    // args[1] är första argumentet som användaren anger
+    println!("Du har angett filnamnet: {}", args[1]);
 }
 ```
 
-Om du till exempel kör detta program med kommandot `rustc hello.rs Hej Världen` så kommer det att skriva ut `Kommandoradsargument: ["Hej", "Världen"]` till konsolen.
+Om du kör detta program med kommandot `cargo run filnamn.txt`, kommer följande att skrivas ut i terminalen:
 
-## Djupdykning
+```
+Du har angett filnamnet: filnamn.txt
+```
 
-Det finns många olika sätt att hantera kommandoradsargument i Rust, men en vanlig teknik är att använda match uttryck för att hantera olika fall beroende på antal och innehåll av argument. Här är ett annat exempel som visar hur detta kan implementeras:
+Du kan också använda en `match`-sats för att hantera olika scenario och argument. Till exempel, om du endast vill att programmet ska köras om användaren anger ett argument kan du göra följande:
 
 ```Rust
+use std::env;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
-
-    // Match uttryck för att hantera olika fall
     match args.len() {
-        // Om inga argument skickas till programmet
-        1 => println!("Inga argument skickades."),
-        // Om ett argument skickas till programmet
-        2 => println!("Bara ett argument skickades: {}", args[1]),
-        // Om flera argument skickas till programmet
-        _ => println!("Flera argument skickades: {:?}", &args[1..]),
+        // För många argument, avbryt programmet
+        1 => println!("Ange ett filnamn för att köra programmet."),
+        // Endast ett argument anges, fortsätt med programmet
+        2 => {
+            println!("Du har angett filnamnet: {}", args[1]);
+            // Din kod här
+        }
+        // Fler än två argument, avbryt programmet
+        _ => println!("Endast ett argument kan anges."),
     }
 }
 ```
 
-Om du till exempel kör programmet med kommandot `rustc hello.rs Hej Världen` så kommer det att skriva ut `Flera argument skickades: ["Hej", "Världen"]`.
+## Djupdykning
+
+Om du vill läsa flera argument eller vill hantera argument med olika typer, kan du använda `clap`-paketet. Det ger en enkel och konfigurerbar lösning för att läsa kommando radargument.
+
+För att installera `clap`, lägg till följande i din `Cargo.toml`-fil:
+
+```toml
+[dependencies]
+clap = "2.33.0"
+```
+
+Du kan sedan läsa kommando radargument på följande sätt:
+
+```Rust
+use clap::{App, Arg};
+
+fn main() {
+    // Skapa en ny app med hjälp av clap
+    let matches = App::new("Min Rust-applikation")
+        .version("1.0")
+        .author("Ditt namn")
+        .about("Ett program för att läsa kommando radargument.")
+        // Lägg till de argument som ditt program behöver
+        .arg(
+            Arg::with_name("filnamn")
+                .long("fil")
+                .required(true)
+                .takes_value(true),
+        )
+        .get_matches();
+
+    // Hämta värdet för argumentet "filnamn"
+    let filnamn = matches.value_of("filnamn").unwrap();
+
+    println!("Du har angett filnamnet: {}", filnamn);
+}
+```
 
 ## Se även
 
-* [Officiell dokumentation för kommandoradsargument i Rust](https://doc.rust-lang.org/std/env/index.html)
-* [En tutorial om hur man hanterar kommandoradsargument i Rust](https://dev.to/devsyntax/handling-command-line-arguments-in-rust-9gf)
+[Bryce Mankin's blogg om kommando radargument i Rust](https://blog.burntsushi.net/rust-cli-framework-design/)
 
-Tack för att du läste! Hoppas detta hjälper dig att hantera kommandoradsargument på ett smidigt sätt i dina Rust-projekt.
+[Rust dokumentation för att läsa miljövariabler](https://doc.rust-lang.org/std/env/fn.var.html)
+
+[Kompletta handledningar för att läsa från kommando raden i andra programmeringsspråk](https://ss64.com/bash/syntax-cmdline.html)

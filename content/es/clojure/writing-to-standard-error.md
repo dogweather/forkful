@@ -1,58 +1,42 @@
 ---
 title:                "Clojure: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué escribir al error estándar en Clojure
+## Por qué
 
-Escribir al error estándar es una práctica común en la programación en Clojure. Al hacerlo, podemos dejar mensajes de error o información de depuración en la consola, lo que nos ayuda a identificar y solucionar problemas en nuestro código.
+Escribir a la salida de error estándar (standard error) es una herramienta útil para los programadores en Clojure. Nos permite imprimir información de depuración en tiempo de ejecución y mostrar errores que pueden ser cruciales para el correcto funcionamiento de nuestras aplicaciones.
 
 ## Cómo hacerlo
 
-Para escribir al error estándar en Clojure, utilizamos la función `prn`, que imprimirá una línea de texto seguida de una nueva línea en la consola. Podemos pasar cualquier tipo de dato a esta función, desde un string hasta una lista. Por ejemplo:
-
-```Clojure 
-(prn "Este es un mensaje de error")
-;; resultado: "Este es un mensaje de error"
-
-(prn [1 2 3 4])
-;; resultado: [1 2 3 4]
-```
-
-También podemos utilizar la función `println` para escribir al error estándar, que funciona de manera similar a `prn`, pero agrega un espacio entre los elementos impresos.
+Para escribir a la salida de error estándar en Clojure, se utiliza la función `println` junto con `System/err`. Aquí un ejemplo sencillo:
 
 ```Clojure
-(println "Este es un mensaje" "de varias palabras")
-;; resultado: Este es un mensaje de varias palabras
+(println "Este es un mensaje de error" System/err)
 ```
+
+El resultado de ejecutar este código sería:
+
+```Clojure
+Este es un mensaje de error
+nil
+```
+
+Podemos ver que el mensaje se imprime en rojo, lo que indica que es un mensaje de error. También es importante mencionar que la palabra `nil` se imprime después del mensaje, esto se debe a que `println` siempre devuelve `nil` después de imprimir su argumento.
 
 ## Profundizando
 
-Además de `prn` y `println`, también podemos escribir al error estándar utilizando la función `eprintln`, que funciona igual que `println` pero agrega el prefijo "error" en la consola. Otra opción es utilizar la función `printf`, que nos permite formatear el texto que se imprime en la consola.
+Existen diferentes formas de escribir a la salida de error estándar en Clojure, una de ellas es utilizando la macro `println`, que nos permite imprimir múltiples argumentos separados por espacios. Otra opción es utilizar la función `format` que nos permite crear mensajes personalizados utilizando patrones de formato.
 
-```Clojure
-(eprintln "Este es un mensaje" "de error")
-;; resultado: error Este es un mensaje de error
+También es importante mencionar que la salida de error estándar es diferente de la salida estándar (standard output) en Clojure. Mientras que la salida estándar se utiliza para imprimir información relevante al usuario, la salida de error estándar es específica para mensajes de error y depuración.
 
-(printf "Este es un número: %d" 5)
-;; resultado: Este es un número: 5
-```
+## Ver también
 
-También podemos usar `with-out-str` para capturar el texto impreso en la consola en una variable, en lugar de imprimirlo directamente.
-
-```Clojure
-(def error (with-out-str (prn "Este es un mensaje de error")))
-;; resultado: nil
-
-(println error)
-;; resultado: Este es un mensaje de error
-```
-
-# Ver también
-
-- Documentación oficial de Clojure sobre `prn`: https://clojuredocs.org/clojure.core/prn
-- Información sobre `with-out-str`: https://clojuredocs.org/clojure.core/with-out-str
+- [Documentación oficial de Clojure](https://clojure.org/)
+- [Cómo imprimir a la salida de error en Clojure](https://stackoverflow.com/questions/8122002/how-do-i-print-to-standard-error-in-clojure)

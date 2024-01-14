@@ -1,36 +1,32 @@
 ---
 title:                "Arduino: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
-문자열 연결(concatenating strings)을 사용하는 이유는 여러 개의 문자열을 하나의 문자열로 결합하여 보다 복잡한 프로그래밍을 가능하게 하기 위해서입니다.
+## 왜?
+여러분은 아두이노 프로그래밍을 할 때 문자열을 합쳐야 할 때가 있습니다. 예를 들어, 센서에서 수집한 데이터를 문자열로 출력하거나, 사용자와의 인터랙션을 위해 텍스트를 생성하는 경우 등이 있을 수 있습니다. 문자열을 합치면 더 간편하고 효율적으로 코딩할 수 있습니다.
 
 ## 어떻게?
-Arduino에서 문자열을 연결하는 방법은 매우 간단합니다. 아래 예시를 참고해보세요. 
+우선 아두이노 보드와 시리얼 통신을 위해 컴퓨터에 코드를 업로드합니다. 그 다음, concatenate라고 불리는 함수를 사용하여 두 개의 문자열을 합쳐보겠습니다. 여러분은 아래 예시 코드를 따라해보면서 쉽게 연습할 수 있습니다. 
 
 ```Arduino
-String firstName = "Erica";
-String lastName = "Park";
-String fullName = firstName + " " + lastName;
-Serial.println(fullName);
+String hello = "Hello";
+String name = "World";
+String message = hello + " " + name; // "Hello World"
 ```
 
-위 코드는 "Erica Park"을 출력합니다. 여기서는 세 가지 문자열을 `+` 연산자를 사용하여 연결했습니다. 문자열을 연결할 때는 항상 "+" 연산자를 사용해야합니다.
+위 코드에서는 먼저 `hello`라는 변수에 "Hello"라는 값을, `name`이라는 변수에는 "World"라는 값을 할당했습니다. 그리고 이 두 변수를 `+` 기호로 연결하여 `message`라는 변수에 저장했습니다. 이제 `Serial.println()` 함수를 사용하여 `message`를 시리얼 모니터에 출력하면 "Hello World"라는 결과값이 나올 것입니다. 
 
-## 딥 다이브
-문자열을 연결하는 방법은 매우 간단하지만, 연산량에 대해서는 주의해야합니다. 문자열을 연결할 때마다 새로운 문자열 객체가 생성되기 때문에 메모리 사용량이 증가할 수 있습니다. 따라서 많은 문자열을 연결하는 경우, 메모리 관리에 유의해야 합니다.
+## 깊이 들어가기
+위 예시에서 보듯이 거의 모든 문자열 연산에는 `+` 연산자가 사용됩니다. 이 `+` 연산자를 사용하여 문자열을 합칠 수 있지만, 다른 방식으로 합치는 것도 가능합니다. 예를 들어, `String.concat()` 함수를 사용하면 특정 문자열 뒤에 다른 문자열을 붙일 수 있습니다. 또는 `String +=`와 같이 `+=` 연산자를 사용해서도 문자열을 합칠 수 있습니다. 이들 함수와 연산자를 조합하여 여러분들만의 편리한 방식으로 문자열을 연결해보세요!
 
-## 또 다른 참고 자료
-- [Arduino String 클래스에 대한 더 자세한 정보](http://arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [String 연산자에 대한 추가적인 정보](http://arduino.cc/reference/en/language/variables/data-types/string/operators/)
-- [문자열 함수에 대한 설명서](http://arduino.cc/en/reference/string/functions)
-
-# 자료 참고
-- [Arduino String 클래스에 대한 더 자세한 정보](http://arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [문자열 함수에 대한 설명서](http://arduino.cc/en/reference/string/functions)
-- [Arduino String 연산자에 대한 추가적인 정보](http://arduino.cc/reference/en/language/variables/data-types/string/operators/)
+## 관련 정보
+- [Arduino 공식 사이트](https://www.arduino.cc/)
+- [Arduino 문자열 연산 관련 문서](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+- [String 메서드와 활용법](https://www.arduino.cc/en/Reference/StringObject)

@@ -1,46 +1,35 @@
 ---
 title:                "Haskell: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは、Haskellプログラミングブログの読者の皆さん。今日の記事では、私たちが一緒に文字列を連結する方法についてお話しします。なぜ文字列を連結する必要があるのか、どのようにしてコードを記述するか、さらに深く掘り下げてみましょう。
+## なぜ
+文字列を結合することに対して、なぜ私たちは関わる必要があるのか。この記事ではその理由を紹介します。
 
-## Why
-
-文字列を連結することは、複数のテキストデータを一つの文字列にまとめるために必要です。例えば、ユーザーに入力してもらった名前と苗字を組み合わせて、挨拶のメッセージを作成する際に使用することができます。また、データベースから取得した情報を文字列として表示する際にも必要です。
-
-## How To
-
-文字列を連結するためには、Haskellの```++```演算子を使用します。例えば、以下のようにコードを記述することで文字列を連結することができます。
+## 方法
+文字列を結合する方法について、コーディング例とサンプルの出力を示します。"```Haskell ... ```"コードブロック内に記載されます。
 
 ```Haskell
-main :: IO ()
-main = do
-  let name = "太郎"
-  let last_name = "山田"
-  putStrLn ("こんにちは、" ++ name ++ last_name ++ "さん！")
+concatenateStrings :: String -> String -> String
+-- concatenateStrings関数は2つの文字列を結合し、新しい文字列を作成します
+concatenateStrings str1 str2 = str1 ++ str2
+
+-- 例1:
+concatenateStrings "Hello " "World!" -- 出力: "Hello World!"
+
+-- 例2:
+concatenateStrings "今日は" "いい天気ですね。" -- 出力: "今日はいい天気ですね。"
 ```
 
-上記のコードでは、先ほどの例で述べたように名前と苗字を連結して挨拶のメッセージを作成し、```putStrLn```関数を使用して表示しています。実行結果は以下のようになります。
+## ディープダイブ
+文字列を結合するには、Haskellには2つの主要な方法があります。1つは `++` 演算子を用いて文字列を結合する方法です。もう一つは `concat` 関数を用いて文字列を結合する方法です。しかし、 `concat` 関数を用いる場合は文字列のリストが必要です。
 
-```
-こんにちは、太郎山田さん！
-```
-
-## Deep Dive
-
-Haskellでは、文字列は文字型のリストとして扱われます。つまり、```String```は```[Char]```と同じ意味になります。そのため、文字列を連結するには、実際にはリスト同士を結合していることになります。
-
-Haskellでは、文字列をリストとして扱うために便利な関数や演算子が用意されています。例えば、```show```関数を使用することで、数値や文字を文字列に変換することができます。また、```++```演算子の代わりに```concat```関数を使用することで、複数のリストを一つに結合することもできます。
-
-さらに、Haskellでは文字列を連結する方法の他にも、文字列の一部を取得したり、置換したりする方法も提供されています。これらの機能を組み合わせることで、より複雑な文字列操作が可能になります。
-
-See Also
-
-- [Haskell 公式チュートリアル](https://www.haskell.org/tutorial/)
-- [HaskellWiki の文字列操作のページ](https://wiki.haskell.org/String_operations)
-- [Real World Haskell の文字列操作のセクション](http://book.realworldhaskell.org/read/strings.html)
+## See Also
+- Data.Listモジュール (https://www.haskell.org/tutorial/characters.html)
+- Stringモジュール (https://www.haskell.org/tutorial/strings.html)

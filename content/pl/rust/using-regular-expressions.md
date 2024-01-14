@@ -1,49 +1,52 @@
 ---
 title:                "Rust: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
+Regularne wyrażenia, w skrócie zwane "regex", są powszechnym i potężnym narzędziem w programowaniu. Pozwalają one na szybkie i precyzyjne przeszukiwanie oraz manipulowanie tekstem. W tym artykule dowiecie się, dlaczego warto używać regexów w swoich programach.
 
-Regular expressions, or "wyrażenia regularne" in Polish, are an essential tool for any programmer looking to manipulate and extract information from strings of text. Whether you're building a parser, validating user input, or performing data analysis, regular expressions can help you efficiently search for and extract patterns within strings. They may seem daunting at first, but with a little practice, you'll find them to be a powerful and indispensable tool in your programming arsenal.
+## Jak to zrobić
+Aby użyć regularnych wyrażeń w języku Rust, należy zaimportować bibliotekę ```regex```. Poniżej przedstawione są przykłady kodu, które demonstrują podstawowe funkcjonalności regexów:
 
-## Jak
-
-Użycie regular expressions w języku Rust jest proste i intuicyjne. Po prostu importuj "regex" moduł i zastosuj metodę "Regex::new" do stworzenia wyrażenia regularnego. Następnie użyj metody "find" do znalezienia dopasowań w danym tekście. Przykładowy kod poniżej pokazuje jak wykorzystać regular expressions do znalezienia numeru telefonu w danym ciągu znaków:
-
-```Rust
+```
 use regex::Regex;
 
-fn main() {
-    let re = Regex::new(r"[\d]{3}-[\d]{3}-[\d]{3}").unwrap();
-    let text = "To jest mój numer telefonu: 123-456-789.";
-    let phone_number = re.find(text);
+// Tworzenie nowego wyrażenia regularnego
+let re = Regex::new(r"ab+c").unwrap();
 
-    match phone_number {
-        Some(number) => println!("Znaleziony numer telefonu: {}", number.as_str()),
-        None => println!("Nie znaleziono numeru telefonu."),
-    }
+// Sprawdzanie czy dany tekst pasuje do wzorca
+assert_eq!(re.is_match("ac"), false);
+assert_eq!(re.is_match("abbbc"), true);
+
+// Wyszukiwanie dopasowań w tekście
+let text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+let matches = re.find_iter(text);
+for mat in matches {
+    println!("Dopasowanie znalezione na pozycji: {}", mat.start());
 }
 ```
 
-Po uruchomieniu powyższego kodu, otrzymamy następujący wynik:
+Powyższy kod znajduje dopasowania stringa "ab+b" w tekście i wyświetla ich pozycje. Więcej informacji na temat różnych metod i opcji regularnych wyrażeń w Rust można znaleźć w oficjalnej dokumentacji libray ```regex```.
 
-```Rust
-Znaleziony numer telefonu: 123-456-789
-```
+## Głębszy zanurzony
 
-Jak widać, używając wyrażeń regularnych, możemy szybko i precyzyjnie znaleźć potrzebne nam informacje w tekście.
+Regularne wyrażenia są wyjątkowo użyteczne przy przetwarzaniu tekstu, szczególnie gdy próbujemy wyodrębnić konkretne informacje lub zmienić strukturę tekstu. Z ich pomocą możemy wykonać wiele zadań, takich jak:
 
-## Deep Dive
+- Sprawdzenie czy adres email jest poprawnie sformatowany
+- Wyodrębnienie numeru telefonu z danego tekstu
+- Zastąpienie niepoprawnych znaków w tekście
+- Analiza składniowa złożonych plików tekstowych
 
-Jeśli chcesz jeszcze bardziej zgłębić temat wyrażeń regularnych w języku Rust, istnieje wiele zaawansowanych funkcji, takich jak grupowanie, dopasowanie warunkowe czy wyrażenia regularne z załącznikami. Możesz również używać wyrażeń regularnych w celu podzielania lub zamiany tekstu. Aby dowiedzieć się więcej, zapoznaj się z dokumentacją języka Rust dotyczącą wyrażeń regularnych oraz z innych dostępnych źródeł.
+Warto pamiętać, że regexy mogą być trudne do zrozumienia i wymagają praktyki, aby je opanować. Dlatego, warto poświęcić czas na naukę ich obsługi, ponieważ mogą one znacznie ułatwić pracę podczas tworzenia programów.
 
 ## Zobacz również
-
-- Dokumentacja języka Rust dotycząca modułu regex: https://docs.rs/regex/1.4.2/regex/
-- Poradnik wyrażeń regularnych w języku Rust: https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html
-- Kompletny przewodnik po wyrażeniach regularnych: https://www.regular-expressions.info/
+- [Dokumentacja biblioteki regex w języku Rust](https://docs.rs/regex/1.4.2/regex/)
+- [Oficjalna strona języka Rust](https://www.rust-lang.org/en-US/)
+- [Poradnik dla początkujących w języku Rust](https://doc.rust-lang.org/book/)

@@ -1,7 +1,9 @@
 ---
-title:                "C++: Usuwanie znaków pasujących do wzoru"
+title:                "C++: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,44 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Usuwanie znaków dopasowujących się do wzorca jest powszechnym wyzwaniem w programowaniu. Może być ono wykorzystane w wielu różnych sytuacjach, na przykład w celu usunięcia niechcianych znaków z tekstu lub w celu przetworzenia danych wejściowych.
+Czasami w programowaniu jest konieczne usunięcie znaków pasujących do określonego wzorca. To może być część procesu weryfikacji wprowadzonych danych lub po prostu czyszczenie tekstu z niechcianych elementów. W tym blogu pokażemy, jak to zrobić w języku programowania C++.
 
 ## Jak to zrobić
 
-Język C++ oferuje wiele różnych sposobów na usuwanie znaków dopasowujących się do wzorca. Jednym z nich jest użycie biblioteki standardowej "string" oraz funkcji "erase", która pozwala na usuwanie wybranych znaków z ciągu znaków. Poniżej znajduje się przykładowy kod, który pokazuje, jak można to zrobić:
+Aby usunąć znaki pasujące do danego wzorca, musimy skorzystać z funkcji `std::regex_replace()` z biblioteki `<regex>`. Funkcja ta wymaga trzech argumentów - tekstu, w którym chcemy dokonać zmian, wzorca do znalezienia oraz ciągu znaków, na który chcemy je zmienić.
 
 ```C++
 #include <iostream>
-#include <string>
+#include <regex>
+using namespace std;
 
 int main() {
-  // Przykładowy tekst z niechcianymi znakami
-  std::string tekst = "To@jest%przykładowy&tekst#z niechcianymi znakami";
-  
-  // Usunięcie wszystkich znaków specjalnych
-  for (int i = 0; i < tekst.length(); i++) {
-    if (!isalpha(tekst[i])) { // Sprawdzenie, czy znak nie jest literą
-      tekst.erase(i, 1); // Usunięcie znaku z tekstu
-      i--; // Zmniejszenie indeksu, aby nie pominąć kolejnego znaku
-    }
-  }
-  
-  // Wyświetlenie przetworzonego tekstu
-  std::cout << tekst << std::endl;
-  
-  return 0;
-}
+   string text = "Hello 123 World!";
 
-// Output:
-// Tojestprzykładowytekstzniechcianymiznakami
+   // usuwanie wszystkich cyfr z tekstu
+   string pattern = "\\d";
+   string replaced = regex_replace(text, regex(pattern), "");
+
+   cout << replaced << endl;
+   // wyświetli "Hello World!"
+
+   return 0;
+}
 ```
 
-## Zagłębienie
+W powyższym przykładzie, najpierw definiujemy zmienną `text` z tekstem, który chcemy zmodyfikować. Następnie tworzymy zmienną `pattern`, która reprezentuje wzorzec, w tym przypadku `\d`, który oznacza wszystkie cyfry. Wreszcie, wywołujemy funkcję `regex_replace()` z podanymi argumentami i wypisujemy zmodyfikowany tekst na ekranie.
 
-Istnieje wiele innych metod usuwania znaków dopasowujących się do wzorca, takich jak wykorzystanie wyrażeń regularnych lub funkcji z biblioteki "algorithm". Dzięki temu można w łatwy sposób dostosować kod do indywidualnych potrzeb.
+## Deep Dive
+
+Funkcja `std::regex_replace()` jest bardzo przydatna do usuwania znaków pasujących do określonych wzorców, ale warto zauważyć, że jej wykorzystanie może mieć wpływ na wydajność naszego programu. W niektórych przypadkach, lepszą opcją może być użycie funkcji `std::replace_if()` lub `std::remove_if()` z biblioteki `<algorithm>`. 
+
+`std::remove_if()` działa na kontenerach, takich jak `std::string` lub `std::vector`, a jego zadaniem jest przeniesienie wszystkich elementów spełniających podany warunek na koniec kontenera. Następnie, możemy usunąć te elementy z kontenera za pomocą funkcji `erase()`.
+
+```C++
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+   string text = "Hello 123 World!";
+
+   // usuwanie wszystkich cyfr z tekstu
+   text.erase(remove_if(text.begin(), text.end(), ::isdigit), text.end());
+
+   cout << text << endl;
+   // wyświetli "Hello World!"
+
+   return 0;
+}
+```
+
+Warto również zwrócić uwagę na wyrażenia regularne używane w funkcji `std::regex_replace()`. Są one bardzo potężnym narzędziem, pozwalającym na precyzyjne wyszukiwanie i modyfikację tekstu. Wymagają jednak pewnego stopnia znajomości, aby móc je skutecznie wykorzystać. 
 
 ## Zobacz również
 
-- [Dokumentacja C++ o funkcji erase](https://www.cplusplus.com/reference/string/string/erase/)
-- [Poradnik o wyrażeniach regularnych w C++](https://www.geeksforgeeks.org/regular-expression-in-c/)
-- [Tutorial o funkcjach z biblioteki algorithm w języku C++](https://www.geeksforgeeks.org/algorithms-library-c-stl/)
+- [Podstawy programowania w C++](https://www.tutorialspoint.com/cplusplus/index.htm)
+- [Dokumentacja funkcji `std::regex_replace()`](https://en.cppreference.com/w/cpp/string/regex/replace)

@@ -1,46 +1,48 @@
 ---
-title:                "Fish Shell: Skriva en textfil"
+title:                "Fish Shell: Att skriva en textfil"
+simple_title:         "Att skriva en textfil"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att skriva en textfil med hjälp av Fish Shell är ett kraftfullt verktyg för att automatisera och effektivisera uppgifter inom programmering. Det utför en mängd olika funktioner såsom att spara, läsa och manipulera data. Att lära sig hur man skriver en textfil är en viktig färdighet för alla som arbetar inom programmering, oavsett vilket språk de använder.
+Att kunna skriva en textfil är en viktig färdighet för varje programmerare. Genom att kunna skapa och redigera textfiler kan man enkelt konfigurera och anpassa sin Fish Shell-upplevelse.
 
 ## Hur man gör det
+Det första steget för att skriva en textfil är att öppna din Textredigerare. I Fish Shell kan du enkelt öppna din standardtextredigerare genom att skriva `fish_config` i din terminal. Detta öppnar Fish Shell-konfigurationsfilen i din standardtextredigerare.
 
-Att skriva en textfil med Fish Shell är enkelt och kräver bara några enkla kommandon. Först och främst behöver du öppna Fish Shell i ditt terminalfönster. Sedan kan du skriva följande kommando för att skapa en textfil:
+För att skapa en ny textfil, använd följande kommando i din terminal:
 
-```fish
-echo "Det här är en textfil som jag skriver med hjälp av Fish Shell" > textfil.txt
+```Fish Shell
+touch filename.txt
 ```
 
-Detta kommando skapar en textfil med namnet "textfil.txt" som du kan redigera och använda. För att läsa innehållet i filen, kan du använda kommandot "cat":
+Detta skapar en tom textfil med namnet "filename.txt" i din nuvarande mapp. Om du vill redigera innehållet i textfilen, skriv `fish_config` i din terminal igen för att öppna den i din textredigerare.
 
-```fish
-cat textfil.txt
+För att lägga till text i din fil, använd `echo` kommandot följt av det du vill lägga till i citationstecken. Till exempel:
+
+```
+echo "Detta är en textfil skapad med hjälp av Fish Shell" >> filename.txt
 ```
 
-Detta kommer att visa innehållet i textfilen i terminalfönstret. Du kan också lägga till mer text till filen med hjälp av kommandot "echo" igen:
+Detta lägger till den givna texten i slutet av din fil. Du kan också använda `cat` kommandot för att skriva innehållet i en befintlig fil. Till exempel:
 
-```fish
-echo "Här lägger jag till mer text till min textfil" >> textfil.txt
+```
+cat hello.txt >> filename.txt
 ```
 
-Genom att använda pil-tangenterna på ditt tangentbord kan du navigera bland den tidigare inlagda texten och redigera den. När du är klar med din textfil, kan du stänga den genom att trycka på "ctrl + D" tangentbordsgenvägen.
+Detta lägger till innehållet i "hello.txt" i slutet av "filename.txt" filen. Du kan också redigera innehållet i din textfil genom att enkelt ändra texten i din textredigerare.
 
 ## Djupdykning
+När du skriver en textfil är det viktigt att känna till några viktiga begrepp. En textfil består av en sekvens av tecken som kan läsas och redigeras av en textredigerare. Varje rad i en textfil slutar med ett radbrytningstecken (newline), vilket talar om för textredigeraren att gå till nästa rad.
 
-Nu när du vet hur du kan skapa och redigera en textfil med Fish Shell, kan du utforska fler funktioner och möjligheter. Genom att använda olika kommandon såsom "grep" och "sed" kan du göra mer avancerade manipulationer av din textfil och dess innehåll.
-
-För att lära dig mer om dessa kommandon och andra användbara funktioner inom Fish Shell, kan du besöka Fish Shell:s officiella dokumentation (https://fishshell.com/docs/). Där hittar du omfattande information och exempel för att hjälpa dig bli mer bekant med detta kraftfulla verktyg.
+En textfil kan också innehålla teckenkodningar som bestämmer hur tecknen ska tolkas och visas. Det är viktigt att vara medveten om teckenkodningarna när du redigerar och använder textfiler.
 
 ## Se även
-
-- Fish Shell officiell dokumentation: https://fishshell.com/docs/
-- Fish Shell GitHub repository: https://github.com/fish-shell/fish-shell
-- En tutorial för att lära sig Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- [Fish Shell's dokumentation](https://fishshell.com/docs/current/index.html)
+- [En guide för att skapa och redigera textfiler](https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management)
+- [En tutorial om textredigerare i Linux](https://www.hostinger.com/tutorials/linux-text-editors)

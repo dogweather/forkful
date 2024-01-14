@@ -1,47 +1,69 @@
 ---
-title:                "Elixir: Regular expressionien käyttö"
+title:                "Elixir: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttäisit säännöllisiä lausekkeita Elixir-ohjelmoinnissa?
+## Miksi käyttää säännöllisiä lausekkeita Elixir-ohjelmoinnissa?
 
-Säännölliset lausekkeet ovat voimakas työkalu, jota Elixir-ohjelmoijat voivat käyttää datan käsittelyyn ja muokkaamiseen. Niitä voidaan käyttää esimerkiksi merkkijonojen hakuun ja korvaamiseen, datan validointiin ja parsimiseen. Säännöllisillä lausekkeilla voi olla suuri vaikutus koodin tehokkuuteen ja luettavuuteen.
+Säännölliset lausekkeet ovat tehokas tapa käsitellä tekstinmuokkausta ja hakua Elixir-ohjelmoinnissa. Niiden avulla voit hakea, korvata ja muokata tekstidataa erittäin tarkasti ja nopeasti. Ne ovat myös erittäin hyödyllisiä, kun työskentelet tietokannoissa ja käsittelet syötteitä järjestelmästä. 
 
-## Miten säännöllisiä lausekkeita käytetään Elixirissä?
+## Kuinka käyttää säännöllisiä lausekkeita Elixirissä?
 
-Käytämme säännöllisiä lausekkeita "Regex" -moduulin kautta, joka sisältää valmiita toimintoja säännöllisten lausekkeiden käsittelyyn. Voimme myös luoda omia säännöllisiä lausekkeita "Regex" -kääreellä.
-
-```Elixir
-Regex.match?(~/hello/, "hello") # Palauttaa true
-Regex.replace(~r/world/, "hello world", "elixir") # Palauttaa "hello elixir"
-```
-
-## Syvällisempi sukellus säännöllisten lausekkeiden käyttöön
-
-Säännöllisiä lausekkeita voidaan käyttää monella eri tavalla Elixirissä. Yksi hyödyllisimistä tavoista on merkkijonojen haku ja korvaaminen. Esimerkiksi voimme käyttää säännöllisiä lausekkeita tarkistaaksemme, onko tietty sana tai merkkijono annetussa tekstissä.
+Elixir tarjoaa vahvan regex-moduulin, joka sisältää paljon hyödyllisiä työkaluja säännöllisten lausekkeiden käsittelemiseen. Voit käyttää regex-moduulia importtaamalla sen koodissa:
 
 ```Elixir
-Regex.match?(~r/elixir/, "I love Elixir!") # Palauttaa true
+import Regex
 ```
 
-Voimme myös käyttää säännöllisiä lausekkeita datan parsimiseen ja validointiin. Esimerkiksi voimme tarkistaa, onko annettu merkkijono kelvollinen sähköpostiosoite käyttämällä säännöllistä lauseketta.
+### Yksinkertainen haku
+
+Yksinkertaisin tapa käyttää säännöllisiä lausekkeita on hakea tiettyä merkkijonoa tekstistä. Tämä voidaan tehdä käyttämällä `=~` -operaattoria yhdessä halutun merkkijonon kanssa.
 
 ```Elixir
-Regex.match?(~r/@/, "example@email.com") # Palauttaa true
+regex = ~r/world/
+text = "Hello world!"
+
+Regex.match?(regex, text) #=> true
 ```
 
-Lisäksi voimme käyttää säännöllisiä lausekkeita tehokkaasti tiedonetsintään. Voimme esimerkiksi etsiä kaikki numerot annetusta merkkijonosta käyttämällä säännöllistä lauseketta.
+### Korvaaminen
+
+Regex-moduulilla voit myös korvata osan tekstistä toisella merkkijonolla. Tämä voidaan tehdä käyttämällä `replace` -funktiota ja antamalla halutut merkkijonot korvausparametreiksi.
 
 ```Elixir
-Regex.scan(~r/\d+/, "There are 5 apples and 10 oranges") # Palauttaa ["5", "10"]
+regex = ~r/world/
+text = "Hello world!"
+
+Regex.replace(regex, text, "Universe") #=> "Hello Universe!"
 ```
+
+Kaikki tapaukset hoidetaan oletusarvoisesti, mutta voit myös käyttää vaihtoparametriä rajoittamaan korvausten määrää.
+
+### Tarkempi haku
+
+Regex-moduulilla voit myös tehdä tarkempaa hakuja käyttämällä säännöllisiä ilmauksia. Esimerkiksi, jos haluat hakea tekstistä kaikki numerot, voit käyttää ilmausta `~r/\d+/`, joka tarkoittaa kaikkia numeroita sisältäviä jonoja.
+
+```Elixir
+regex = ~r/\d+/
+text = "Today's date is 20.1.2021"
+
+Regex.scan(regex, text) #=> ["20", "1", "2021"]
+```
+
+Voit myös antaa aloitus- ja lopetusindeksit haun rajaukselle, jos haluat hakea vain osan tekstistä.
+
+## Syvällinen tarkastelu
+
+Säännölliset lausekkeet voivat olla monimutkaisia ja vaikeita ymmärtää aluksi, mutta niitä käyttämällä voit saavuttaa tehokkaan tekstien käsittelyn Elixirissä. On suositeltavaa tutustua regex-moduulin dokumentaatioon ja harjoitella erilaisia säännöllisiä ilmauksia.
 
 ## Katso myös
 
-- [Elixir-kirjaston "Regex" virallinen dokumentaatio](https://hexdocs.pm/elixir/Regex.html)
-- [Säännöllisten lausekkeiden perusteet Elixirissä](https://www.tutorialspoint.com/elixir/elixir_regular_expressions.htm)
-- [Säännöllisten lausekkeiden hyödyntäminen Elixiriin liittyvissä tehtävissä](https://medium.com/@josevalim/matching-hl7-messages-with-elixir-7b220559f5e6)
+- [Elixirin virallinen regex-dokumentaatio](https://hexdocs.pm/elixir/Regex.html)
+- [Regular Expressions 101 - Työkalu säännöllisten ilmausten testaamiseen](https://regex101.com/)
+- [Regexper - Graafinen työkalu säännöllisten ilmausten esittämiseen](https://regexper.com/)

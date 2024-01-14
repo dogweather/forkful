@@ -1,57 +1,69 @@
 ---
-title:                "Go: Lesing av kommandolinjeargumenter"
+title:                "Go: Lese argumenter fra kommandolinjen"
+simple_title:         "Lese argumenter fra kommandolinjen"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Kommando linje argumenter er en viktig del av Go-programmering, da de lar deg lese og behandle brukerinput i form av argumenter når du kjører et program. Dette kan være nyttig for å tilpasse programmet basert på brukerens behov, eller for å jobbe med store datasett som kan være vanskelige å hardkode. Ved å lære hvordan du leser kommandolinjeargumenter, vil du utvide dine Go-programmeringsevner og få en bedre forståelse av hvordan du kan samhandle med brukeren.
+Hvorfor skulle noen ønske å lese kommandolinjeargumenter i et Go-program? Det kan være flere grunner til dette. Kanskje du vil lage et program som kan ta ulike typer input fra brukeren, eller kanskje du vil lage et program som kan håndtere ulike kommandoer fra en terminal. Uansett årsak, å lære å lese kommandolinjeargumenter vil være nyttig for enhver Go-utvikler.
 
-# Hvordan
+## Slik gjør du det
 
-For å lese kommandolinjeargumenter i Go, kan du bruke standardpakken `flag`. Først må du importere pakken ved å legge til `import "flag"` øverst i filen din.
+For å lese kommandolinjeargumenter i et Go-program, må du først importere `os`- og `flag`-pakken. Deretter kan du bruke `os.Args` for å få en liste over alle argumentene som er gitt til programmet. Du kan også bruke `flag`-pakken for å definere spesifikke flagg og behandle dem i koden din.
 
-Deretter må du definere flaggene du vil lese ved hjelp av `flag` pakken. For eksempel, hvis du vil lese en streng som brukeren skriver inn som et argument, kan du bruke følgende kode:
+La oss se på et eksempel:
 
 ```Go
-var inputStr string
-flag.StringVar(&inputStr, "input", "", "Tekst som skal behandles")
-flag.Parse()
+package main
+
+import (
+	"flag"
+	"fmt"
+	"os"
+)
+
+func main() {
+	// Definerer flagg ved hjelp av flag-pakken
+	languages := flag.String("languages", "Go", "a comma-separated list of programming languages")
+
+	// Parsing av flagg
+	flag.Parse()
+
+	// Henter argumenter fra os.Args
+	args := os.Args[1:]
+
+	// Printer ut argumentene gitt til programmet
+	fmt.Println("Argumenter:", args)
+
+	// Printer ut verdiene til flaggene
+	fmt.Println("Språk:", *languages)
+}
 ```
 
-Den første linjen definerer en variabel `inputStr` som vil lagre brukerens input. Deretter bruker vi `StringVar` -funksjonen fra `flag` -pakken for å definere et flagg med navnet "input". Dette flagget vil være av typen `string` og vil holde verdien som brukeren angir. Den siste parameteren forklarer hva flagget er for, slik at brukeren vet hvilken input som forventes.
-
-Til slutt bruker vi `flag.Parse()` for å faktisk lese og lagre argumentene som er angitt når programmet kjører.
-
-Du kan da bruke den lagrede variabelen `inputStr` til å behandle brukerens input, for eksempel å skrive den til konsollen eller bruke den til å utføre en funksjon i programmet ditt.
-
-For å teste dette eksemplet kan du kjøre følgende kommando i terminalen:
+Hvis du kjører dette programmet fra terminalen med argumenter og flagg, vil du få følgende utskrift:
 
 ```bash
-go run main.go -input "Hei fra kommandolinjen"
+$ go run main.go hello world -languages=Java,Python
+Argumenter: [hello world]
+Språk: Java,Python
 ```
 
-Dette vil skrive ut "Hei fra kommandolinjen" som brukerens input til konsollen.
+Som du kan se, vil argumentene vi gir til programmet være tilgjengelige i `os.Args`. I tillegg kan vi bruke flaggene vi har definert i programmet vårt ved å bruke `flag`-pakken.
 
-# Dypdykk
+## Dykk dypere
 
-I tillegg til å lese enkeltverdide argumenter, kan du også bruke `flag` -pakken til å lese flagger som er satt til å være av type `bool`. For eksempel kan du ha et flagg som sier om brukeren vil inkludere tall i inputen sin eller ikke. Dette kan enkelt gjøres ved å legge til følgende kode:
+For å lære mer om å lese kommandolinjeargumenter i Go, kan du se nærmere på `os.Args` og `flag`-pakken. `os.Args` gir også tilgang til andre nyttige funksjoner for å håndtere kommandolinjeinput, som for eksempel `os.Args[0]` som gir navnet på det kjørbare filen.
 
-```Go
-var useNumbers bool
-flag.BoolVar(&useNumbers, "numbers", false, "Bruk tall i input")
-```
+I tillegg kan du også utforske mer avanserte konsepter som å bruke subkommandoer med `flag`-pakken for å håndtere komplekse kommandoer og argumenter.
 
-Her definerer vi en variabel `useNumbers` av typen `bool` og et flagg med navnet "numbers". Standardverdien er satt til `false` og ved å endre dette til `true` når flagget angis, vil programmet oppføre seg annerledes når det leser brukerens input. For eksempel kan du sjekke om flagget er satt til `true` og deretter konvertere inputen til tall hvis det er nødvendig.
+## Se også
 
-Det er også verdt å merke seg at `flag` -pakken støtter å lese flere argumenter med samme navn, slik at du kan ha flere argumenter med samme inputflagg. Dette kan være nyttig hvis du for eksempel vil lese en liste over tall som brukeren angir.
-
-# Se også
-
-- https://yourbasic.org/golang/command-line-flags/ 
-- https://gobyexample.com/command-line-arguments 
-- https://golang.org/pkg/flag/
+- [Go's Official Documentation on `os` Package](https://golang.org/pkg/os/)
+- [Go's Official Documentation on `flag` Package](https://golang.org/pkg/flag/)
+- [Command Line Input in Go Tutorial](https://gobyexample.com/command-line-arguments)

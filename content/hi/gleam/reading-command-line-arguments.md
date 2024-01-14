@@ -1,51 +1,39 @@
 ---
-title:                "Gleam: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
+title:                "Gleam: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन विश्लेषण"
+simple_title:         "कम्प्यूटर प्रोग्रामिंग में कमांड लाइन विश्लेषण"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
-कुछ समझोगे तो समझेंगे
+# क्यों
+कॉमांड लाइन या CLI (command line interface) आर्ग्युमेंट पढ़ना वह एक बहुत महत्वपूर्ण कार्य है जो हर एक डेवलपर को सीखना चाहिए। इसका उपयोग अपने प्रोग्राम को पूर्णता से प्रोराम्भित करने के लिए नहीं किया जा सकता है। आर्ग्युमेंट पढ़ना आपको अपने प्रोग्राम में उपयुक्त डेटा और पैरामीटर्स का उपयोग करने में मदद करता है।
 
-## कैसे करे
-command line arguments बनाओ लेकिन कैसे. नीचे दी गयी कोडिंग उदाहरण और सैंपल output देखो "```Gleam ...```" कूट्स में:
+# कैसे करें
+आप अपने Gleam प्रोग्राम में CLI आर्ग्युमेंट पढ़ने के लिए `gleam.args` मॉड्यूल का उपयोग कर सकते हैं। इस मॉड्यूल में कई फंक्शन हैं जिनके माध्यम से आप आर्ग्युमेंट प्राप्त कर सकते हैं और उन्हें प्रोग्राम में प्रयोग कर सकते हैं। नीचे दिए गए उदाहरण में हम दो आर्ग्युमेंट्स ले रहे हैं `--name` और `--age` और उन्हें प्रोग्राम में प्रिंट कर रहे हैं।
 
 ```Gleam
-import gleam/io
+// आपको आर्ग्युमेंट प्राप्त करने के लिए केवल फंक्शन नाम को इम्पोर्ट करना होगा
+import gleam.args
 
 fn main() {
-  // अगर कोई भी command line arguments दिये गए हैं, उन्हें देखा जायेगा
-  // लेकिन अगर कोई खाली h तब संदेश देखो
-  case io.args() {
-    // io.args() में से पहला हटाओ क्योंकि ये फ़ाइल नाम हो सकता है
-    [_, h | _] -> io.println("हेलो " ++ h)
-    _ -> io.println("हेलो world")
-  }
+  // "gleam.args.get()" फंक्शन के माध्यम से आप आर्ग्युमेंट प्राप्त कर सकते हैं
+  let name = gleam.args.get("name")
+  let age = gleam.args.get("age")
+
+  // प्राप्त आर्ग्युमेंट्स को प्रिंट करें
+  io.format("{name} is {age} years old!")
 }
 ```
 
-यदि आप इसको compile और run करते हैं, तो आप नीचे के सैंपल output को देखेंगे:
+जब आप इस प्रोग्राम को रन करेंगे और उसमें आर्ग्युमेंट्स के साथ `--name John --age 30` का माध्यम उपयोग करेंगे तो आपको निम्नलिखित आउटपुट मिलेगा।
 
-```
-$ gleam run hello_world.gleam
-अगर आप hello_world.gleam नाम के फ़ाइल को compile और run करते हैं
-
-hello world
-
-$ gleam run hello_world.gleam Sebastian
-यदि आप अपना खुदका नाम देते हैं
-
-hello Sebastian
+```Gleam
+John is 30 years old!
 ```
 
-## डीप डाइव
-command line arguments पाठ्यक्रम के साथ दिए गए स्वरूप को अन्य तरीके से प्रदर्शित करता है जो आपको इससे ज्यादा बुनियादी जानकारी प्रदान करता है। आप इसे परिवर्तित कर सकते हैं और इस कार्यों को अनिवार्य रूप से, उदाहरण के लिए, सुनिश्चित कर सकते हैं कि किस command line argument आपको कौन से कार्यों के साथ जुड़े हैं।
-
-आप हमारे [documentation](https://gleam.run/book/tutorials/command_line_arguments.html) पर जा कर गहराई से command line arguments के बारे में पढ़ सकते हैं।
-
-## देखिये
-[मार्कडाउन और ग्लीम](https://gleam.run/book/tutorials/documentation.html)
-[ग्लीम से सीखिए प्रोग्रामिंग](https://gleam.run/book/)
+# गहराई से जानें
+CLI आर्ग्युमें

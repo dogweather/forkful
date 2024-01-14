@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Skriva till standardfel"
+title:                "PHP: Skrivning till standardfel"
+simple_title:         "Skrivning till standardfel"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/writing-to-standard-error.md"
 ---
 
@@ -9,26 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva till standard error i PHP är ett viktigt koncept som många nybörjare kanske inte förstår direkt. Detta blogginlägg kommer att gå igenom varför det är viktigt att kunna skriva till standard error och hur man gör det på rätt sätt.
+Att skriva till standard error är en viktig del av PHP-programmering. Det låter utvecklare utöva felsökning och diagnostisera problem som kan uppstå i koden. Det är också ett bra sätt att spåra meddelanden och händelser under körningen av en applikation.
 
 ## Hur man gör
 
-Att skriva till standard error i PHP är relativt enkelt. För att skriva ett felmeddelande till standard error kan du använda funktionen "fwrite" tillsammans med standard error-konstanten "STDERR", som ser ut så här: 
-
-```PHP
-fwrite(STDERR, "Detta är ett felmeddelande!");
+För att skriva till standard error i PHP, använd funktionen `fwrite()` och ge som första argument `STDERR`. Detta ser till att meddelandet skrivs till standard error istället för standard output.
 ```
-
-Detta kommer att skriva ut meddelandet "Detta är ett felmeddelande!" till standard error. Om du vill läsa mer om standard error-konstanten kan du läsa dokumentationen [här](https://www.php.net/manual/en/wrappers.php.php).
+PHP
+fwrite(STDERR, "Detta är ett felmeddelande");
+```
+Detta kommer att skriva ut "Detta är ett felmeddelande" till standard error.
+```
+PHP
+php your_script.php 2> error_log.txt
+```
+Genom att ange `2> error_log.txt` som en del av kommandot kommer alla felmeddelanden att skrivas till en fil istället för att skrivas ut till terminalen.
 
 ## Djupdykning
 
-Ett vanligt misstag som nybörjare gör när de skriver till standard error är att blanda ihop det med standard output. Det är viktigt att förstå skillnaden mellan de två. Standard output används för att skriva ut information som användaren behöver se, medan standard error används för att skriva ut felmeddelanden som systemet behöver se.
+Genom att använda `fwrite()` och `STDERR` på lämpliga ställen i koden kan vi få en bättre förståelse för eventuella problem som applikationen kan stöta på vid körning. Detta är särskilt användbart när man arbetar med stora och komplexa kodbaser.
 
-En annan viktig sak att tänka på är att stänga standard error efter att du är klar med att skriva till det. Du kan göra detta genom att använda funktionen "fclose" tillsammans med standard error-konstanten "STDERR". Detta förhindrar läckor och håller din kod ren.
+Ett annat sätt att skriva till standard error är att använda funktionen `error_log()`. Detta låter utvecklare skriva till en specifik loggfil och ange loggnivån för meddelandet. Detta är särskilt användbart för att sortera och filtrera olika typer av felmeddelanden.
 
-## Se även
+## Se också
 
- - [PHP manual för fwrite](https://www.php.net/manual/en/function.fwrite.php)
- - [PHP manual för fclose](https://www.php.net/manual/en/function.fclose.php)
- - [PHP manual för standard error-konstanten](https://www.php.net/manual/en/wrappers.php.php)
+- [PHP dokumentation om fwrite()](https://www.php.net/manual/en/function.fwrite.php)
+- [PHP dokumentation om error_log()](https://www.php.net/manual/en/function.error-log.php)

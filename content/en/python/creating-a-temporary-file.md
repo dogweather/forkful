@@ -1,45 +1,69 @@
 ---
 title:                "Python recipe: Creating a temporary file"
+simple_title:         "Creating a temporary file"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Create Temporary Files?
+## Why
+Temporary files are an essential part of programming in Python. They allow us to store temporary data or perform operations on files without creating permanent clutter on our systems. They are especially useful in situations where we need to create, modify, or process a large number of files quickly.
 
-In Python programming, temporary files are used to store data temporarily during a program's execution. This is especially useful when dealing with large amounts of data or when the data needs to be stored temporarily before being manipulated or saved in a more permanent location. Creating temporary files can also help with organizing and managing data within a program.
-
-## How To Create a Temporary File in Python
-
-To create a temporary file in Python, we can use the `tempfile` module. First, we need to import the module by adding `import tempfile` at the top of our code. Then, we can use the `tempfile.NamedTemporaryFile()` function to create a temporary file. Let's take a look at an example:
+## How To
+Creating a temporary file in Python is a simple process. We can use the `tempfile` module, specifically the `mkstemp()` function, to create a temporary file object.
 
 ```Python
 import tempfile
 
-# Create a temporary file named "temp.txt" and open it for writing
-with tempfile.NamedTemporaryFile(suffix=".txt", delete=False) as temp:
-    # Write some data to the temporary file
-    temp.write(b"Hello, World!")
+# Create a temporary file object
+temp_file = tempfile.mkstemp()
 
-    # Print the temporary file's name
-    print(temp.name)
+# Print the name of the temporary file
+print(temp_file[1])
 
-# The temporary file will be automatically deleted once the `with` block ends
+# Output: /var/folders/0j/kf7dj5322p7fsl_0bd8t81z00000gn/T/tmp582l6um0
+
+# Write data to the temporary file
+with open(temp_file[1], 'w') as f:
+  f.write("This is a temporary file.")
+
+# Read and print the contents of the temporary file
+with open(temp_file[1], 'r') as f:
+  print(f.read())
+
+# Output: This is a temporary file.
 ```
 
-In this example, we import the `tempfile` module and use the `NamedTemporaryFile()` function to create a temporary file named "temp.txt". We specify the `.txt` suffix and set the `delete` parameter to `False`, meaning the file will not be automatically deleted after use. Then, we use the `write()` function to add some data to the file and use the `name` attribute to print out the temporary file's name. Finally, the file will be automatically deleted once the `with` block ends.
+## Deep Dive
+When we use the `mkstemp()` function, we get a tuple containing two elements - a file descriptor and the absolute path to the temporary file. We can use the `fdopen()` function to convert the file descriptor to a file object and perform operations like reading and writing to the file.
 
-## Deep Dive into Creating Temporary Files
+Temporary files created using `mkstemp()` are not automatically deleted. We need to manually delete them using the `remove()` function from the `os` module or the `unlink()` function from the `pathlib` module.
 
-When creating temporary files in Python, it's important to understand how they are handled by the operating system. Depending on the operating system, temporary files may be stored in different locations and have different naming conventions. However, the `tempfile` module handles all of these differences for us, making it easy to create temporary files that are compatible with any operating system.
+```Python
+import tempfile
+import os
+from pathlib import Path
 
-One thing to note is that temporary files should always be closed and deleted after use to free up system resources. The `tempfile` module makes this process seamless by providing the `TemporaryFile` and `NamedTemporaryFile` classes, which automatically close and delete the file when the program exits or when the `with` block ends.
+# Create a temporary file object
+temp_file = tempfile.mkstemp()
+
+# Convert the file descriptor to a file object
+file_object = os.fdopen(temp_file[0])
+
+# Write data to the temporary file
+file_object.write("This is a temporary file.")
+
+# Delete the temporary file
+os.remove(temp_file[1])
+
+# Or using pathlib
+Path(temp_file[1]).unlink()
+```
 
 ## See Also
-
-- [The Python `tempfile` Module](https://docs.python.org/3/library/tempfile.html)
-- [Real Python: Working with Temporary Files and Directories](https://realpython.com/working-with-temporary-files-in-python/)
-
-By using temporary files in our Python programs, we can easily manage and manipulate data without cluttering up our code or leaving large amounts of data in memory. The `tempfile` module provides a simple and efficient way to create, use, and delete temporary files. Happy coding!
+- [Python Docs - tempfile](https://docs.python.org/3/library/tempfile.html)
+- [GeeksforGeeks - Temporary Files in Python](https://www.geeksforgeeks.org/temporary-files-python/)
+- [RealPython - Working with Temporary Files in Python](https://realpython.com/working-with-temporary-files-in-python/)

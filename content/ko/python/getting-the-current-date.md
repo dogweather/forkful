@@ -1,67 +1,68 @@
 ---
-title:                "Python: 현재 날짜 가져오기"
+title:                "Python: 현재 날짜를 얻는 방법"
+simple_title:         "현재 날짜를 얻는 방법"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+1. 제목: 현재 날짜를 얻는 이유
 
-현재 날짜를 가져오는 것은 프로그래밍 작업에서 일상적인 작업입니다. 현재 날짜를 파악하면 날짜와 시간을 계산하거나 다양한 용도로 사용할 수 있습니다.
+최신 프로그래밍 언어 중 하나인 파이썬에서 현재 날짜를 가져오는 방법을 배우기 전에 이것이 왜 유용한지 알아보겠습니다. 현재 날짜는 많은 애플리케이션에서 중요한 정보입니다. 예를 들어, 특정 이벤트가 발생한 날짜를 기록하거나 파일을 저장할 때 현재 날짜를 파일 이름으로 사용하는 등 다양한 용도로 사용될 수 있습니다.
+
+이 기능은 정확성과 간편성을 제공하기 때문에 파이썬에서 제공하는 다양한 기능 중 하나입니다.
 
 ## 어떻게
 
-파이썬의 "datetime" 모듈은 현재 날짜와 시간을 가져오는 기능을 제공합니다. 아래의 코드 블록에서는 현재 날짜와 시간을 출력하는 방법을 보여줍니다.
+이제 파이썬을 사용하여 현재 날짜를 가져오는 방법에 대해 알아보겠습니다.
 
-```python
-from datetime import datetime
-
-# 현재 시간 출력
-current_time = datetime.now()
-print("현재 시간:", current_time)
-
-# 오늘의 날짜 출력
-current_date = datetime.now().date()
-print("오늘의 날짜:", current_date)
+```Python
+# 현재 날짜를 가져오는 모듈을 불러옵니다
+import datetime
+# 현재 날짜를 가져와 변수에 저장합니다 
+current_date = datetime.date.today()
+# 현재 날짜를 출력합니다 
+print(current_date)
 ```
 
-위의 코드에서 "datetime.now()" 메소드는 현재 날짜와 시간을 가져옵니다. 또한 ".date()" 메소드를 사용하여 날짜만 따로 출력할 수 있습니다. 이와 같은 기능을 활용하면 프로그램에서 필요한 현재 날짜와 시간을 쉽게 얻을 수 있습니다.
+위 코드를 실행하면 다음과 같은 결과가 나옵니다.
 
-## 딥 다이브
+현재 날짜를 가져오는 모듈을 불러옵니다
+import datetime
+# 현재 날짜를 가져와 변수에 저장합니다 
+current_date = datetime.date.today()
+# 현재 날짜를 출력합니다
+print(current_date)
 
-"datetime" 모듈은 날짜와 시간을 다루는 다양한 기능을 제공합니다. 이러한 기능 중 일부를 소개해보겠습니다.
+2021-07-30
 
-### 날짜 포맷 지정
+위 코드에서 ```datetime``` 모듈을 사용하여 현재 날짜를 가져오고 이를 ```current_date``` 변수에 저장하였습니다. 그리고 이를 출력하여 현재 날짜를 확인할 수 있습니다.
 
-"strftime()" 메소드를 사용하면 날짜와 시간의 출력 형식을 지정할 수 있습니다. 아래의 코드는 오늘의 날짜를 연월일 시분초로 포맷하여 출력하는 예시입니다.
+시간 정보까지 필요한 경우, 다음과 같이 수정하여 사용할 수 있습니다.
 
-```python
-from datetime import datetime
-
-current_date = datetime.now().strftime("%Y년 %m월 %d일 %H시 %M분 %S초")
-print("오늘의 날짜:", current_date)
+```Python
+# 현재 날짜와 시간을 출력하는 모듈을 불러옵니다
+import datetime
+# 현재 날짜와 시간을 변수에 저장합니다
+current_datetime = datetime.datetime.now()
+# 현재 날짜와 시간을 출력합니다
+print(current_datetime)
 ```
 
-출력 결과: "2021년 10월 06일 15시 30분 20초"
+위 코드를 실행하면 다음과 같은 결과가 나옵니다.
 
-### 날짜 계산
+2021-07-30 10:30:00.558455
 
-"timedelta" 객체를 사용하면 날짜와 시간에 대한 계산을 수행할 수 있습니다. 아래의 코드는 현재 날짜에서 30일 후의 날짜를 계산하는 예시입니다.
+## 더 깊은 알아보기
 
-```python
-from datetime import datetime, timedelta
+파이썬에서 날짜와 관련된 함수를 자세히 살펴보면 파이썬의 ```date``` 객체가 날짜와 관련된 작업을 수행하는 데 더 적합하다는 것을 알 수 있습니다. 이는 다양한 연산이 가능하며, 날짜 간의 계산, 파싱 및 출력에 효율적입니다.
 
-current_date = datetime.now()
-future_date = current_date + timedelta(days=30)
-print("30일 후의 날짜:", future_date)
-```
+파이썬에서 날짜와 관련된 더 많은 정보를 알고 싶다면 [파이썬 공식 문서](https://docs.python.org/3/library/datetime.html)를 참조하시기 바랍니다.
 
-출력 결과: "30일 후의 날짜: 2021-11-05 15:30:20.465703"
+## 관련 링크
 
-## 관련 자료
-
-- [Python datetime 모듈 공식 문서](https://docs.python.org/3.8/library/datetime.html)
-- [datetime 모듈을 사용한 날짜/시간 처리 기능 예제](https://soooprmx.com/?p=4493)
-- [파이썬으로 현재 날짜 확인하는 다양한 방법](https://umbum.dev/256)
+- [다른 프로그래밍 언어에서 현재 날짜를 가져오는 방법](https://www.w3schools.com/jsref/jsref_getdate.asp)
+- [파이썬에서 현재 시간을 가져오는 다른 방법](https://www.programiz.com/python-programming/datetime/current-datetime)

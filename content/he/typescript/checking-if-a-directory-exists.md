@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: לבדיקת קיום תיקייה"
+title:                "TypeScript: בדיקת קיום תיקייה"
+simple_title:         "בדיקת קיום תיקייה"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/typescript/checking-if-a-directory-exists.md"
 ---
 
@@ -9,32 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-לבדוק אם תיקייה קיימת במחשב שלך יכול להיות חשוב במצבים שונים בתכנות. לדוגמה, אם אתה עובד עם קבצים או מחלקת מידע ואתה רוצה לוודא שהתיקייה שבה הם נמצאים קיימת לפני שאתה ממשיך עם התהליך האחרון שלך. זה עשוי למנוע מך להתחיל תהליכים שלא יעבדו או ליצור את התיקייה אם לא נמצאת.
+במאמר זה, נטען לכם ראיונות מאויב ישירות מתמונות דיקרטוריות קיימות בהשתמש בטווח `fs.exists`. זו יכולת ייחודית שיכולה להיות מועילה כאשר בונים אתרים או יישומי דפדפן.
 
-## כיצד לעשות זאת 
+## איך לבדוק אם קיים דירקטוריה
 
-הנה דוגמא קטנה של פונקציה שתבדוק אם תיקייה קיימת באמצעות TypeScript:
+ניתן לבדוק אם קיימת דירקטוריה על ידי שימוש בפונקציה `fs.exists` בתוך קוד TypeScript. להלן דוגמא של קוד לבדיקת קיומו של דירקטוריה:
 
-```typescript
-const fs = require('fs');
+```TypeScript
+import * as fs from 'fs';
 
-function checkDirectory(path: string): boolean {
-    return fs.existsSync(path);
-}
+// שם הקובץ או הנתיב של הדירקטוריה שברצונכם לבדוק את קיומה
+const directory = 'images';
 
-console.log(checkDirectory('/Users/Desktop/Data')); // Output: true
-console.log(checkDirectory('/Users/Desktop/Nonexistent')); // Output: false
+fs.exists(directory, (exists: boolean) => {
+  if (exists) {
+    console.log(`הדירקטוריה ${directory} קיימת.`);
+  } else {
+    console.log(`הדירקטוריה ${directory} אינה קיימת.`);
+  }
+});
+
+// פלט: הדירקטוריה images קיימת.
 ```
 
-כאן אנו משתמשים בפונקציה `existsSync` של החבילה `fs` של Node.js כדי לבדוק אם תיקייה קיימת. הפונקציה מחזירה boolean שמציין האם התיקייה קיימת או לא. אנו מנסים לבדוק את תיקיית `Data` ותיקיית `Nonexistent` בהתאמה ומקבלים את הפלט הרצוי.
+כאמור, באמצעות הפונקציה `fs.exists` ניתן לבדוק באופן יעיל אם דירקטוריה מסוימת קיימת או לא.
 
-## מערכת נשיאה
+## מעמקים
 
-כדי לעבוד עם תיקיות בכיתוב צוקלצורה היטב אתה צריך להבין כיצד המערכת הפעילה מתייחסת לתיקיות. כאשר אתה מבקש מאת המערכת לבדוק אם תיקייה קיימת, היא תבדוק את התיקייה הנתונה ואת מיקומה בהתאם לנתיב הנתון. אם התיקייה נמצאת במיקום מסוים במחשב שלך, היא תחזיר `true` ואם לא, היא תחזיר `false`.
+הפונקציה `fs.exists` מוגדרת כפונקציה סינכרונית, כך שתכלול תפקידים כמו פתיחת קובצים וסגירתם, ההקמה והנתיב היחיד יהיו שמורים. פונקציה זו מקבלת כקלט נתיב לקובץ או לדירקטוריה ופונקציית ההתאמה, ומחזירה את המשתנה `בוליאני` שמציין את הקיום או החסרון של הנתיב המבוקש.
 
-בנוסף, כדי לבדוק תיקייה מסוימת או אפילו קבצים במיקום מסוים, עליך להיות זכאי לגישה לאותן תיקיות ולקבצים.
+## ראו גם
 
-## ראה גם
-
-- [Node.js fs documentation](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
-- [TypeScript documentation](https://www.typescriptlang
+- https://nodejs.org/api/fs.html#fs_fs_exists_path_callback
+- https://www.typescriptlang.org/docs/handbook/2/typescript-in-5-minutes.html

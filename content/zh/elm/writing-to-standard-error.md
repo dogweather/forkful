@@ -1,46 +1,60 @@
 ---
 title:                "Elm: 编写标准错误"
+simple_title:         "编写标准错误"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-代码调试室：如何使用Elm编写标准错误日志
+# 为什么要写标准错误（Standard Error）
 
-## 为什么
+写作标准错误（Standard Error）是 Elm 程序员中频繁使用的一种技术，它允许程序将错误信息打印到控制台。这样做可以帮助程序员更容易地调试和修复代码中的错误。
 
-当我们进行编程时，难免会遇到错误。使用标准错误日志可以让我们更容易地调试代码，找到出错的地方。它可以帮助我们更快地发现问题并进行修复，节省时间和精力。
+## 如何编写标准错误
 
-## 如何
+要在 Elm 中编写标准错误，我们可以使用 `Debug.crash` 函数来实现。如下所示：
 
-为了开始使用Elm编写标准错误日志，我们首先需要了解如何生成错误日志。下面是一个简单的代码示例，演示如何使用Elm编写标准错误日志：
+``` Elm
+import Debug exposing (crash)
+import Maybe exposing (Maybe(..))
 
-```Elm
--- 定义函数
-add : Int -> Int -> Int
-add x y = 
-    x + y
--- 调用函数
-add 5 4
--- 输出“9”到控制台
-Debug.log "结果：" (add 5 4)
--- 输出错误日志到控制台
-Debug.crash "请检查代码，发现了一个错误！"
+divide : Float -> Float -> Maybe Float
+divide x y =
+    if y == 0 then
+        Nothing
+    else
+        Just (x / y)
+
+safeDivide : Float -> Float -> Float
+safeDivide x y =
+    case divide x y of
+        Just result ->
+            result
+
+        Nothing ->
+            crash "除数不能为 0"
+
+-- Output: 除数不能为 0
 ```
 
-运行这段代码，你会在控制台上看到两个输出。第一个输出是函数的结果，第二个输出是错误日志。通过这个简单的示例，我们可以明白生成标准错误日志的方法。
+在这个例子中，我们使用 `Debug.crash` 函数来打印错误信息，当 `divide` 函数返回 `Nothing` 的时候，表示程序发生错误，我们将错误信息传递给 `crash` 函数进行打印。
 
-## 深入挖掘
+## 深入了解标准错误
 
-除了基本的使用方法，Elm还提供了一些额外的功能来帮助我们更有效地调试代码。比如，我们可以在Debug.crash函数中传入一个字符串，来帮助我们定位错误。这样，在控制台上输出错误日志时，我们可以看到自己定义的提示信息，从而更容易定位问题。
+标准错误是一种常用的调试方法，但是在 Elm 中，它并不是一个良好的实践。这是因为 Elm 代码应该是可靠的，而不应该发生任何错误。如果出现错误，我们应该尽可能地避免它们，而不是简单地打印错误信息。
 
-此外，Elm还提供了一些其他的调试函数，可以帮助我们查看变量的值、打印出函数的调用堆栈等功能，都有助于我们更快速地发现问题。
+另一种避免使用标准错误的方法是使用 `Maybe` 或 `Result` 类型来处理可能出现的错误情况。例如，在上面的例子中，我们可以使用 `Maybe` 类型来处理除数为 0 的情况，而不是直接使用 `Debug.crash` 函数。
 
-总的来说，使用标准错误日志可以大大提高我们的调试效率，让我们更快速地修复代码中的错误。同时，Elm提供的额外功能也让我们可以更加轻松地调试复杂的代码。
+# 参考资料
 
-## 参考文章
+- [Debug - Elm documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Maybe - Elm documentation](https://package.elm-lang.org/packages/elm/core/latest/Maybe)
+- [Result - Elm documentation](https://package.elm-lang.org/packages/elm/core/latest/Result)
 
-- [Elm官方文档-调试技巧](https://guide.elm-lang.org/debugging/tips.html)
-- [Elm中文文档-调试代码](https://elm-china.org/t/topic/440)
+# 查看也可以 (See Also)
+
+- [错误处理 - Elm 网站](https://elm-lang.org/docs/error-handling)
+- [Debugging - Elm 网站](https://elm-lang.org/docs/debugging)

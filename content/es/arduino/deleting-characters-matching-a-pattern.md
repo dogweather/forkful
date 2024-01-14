@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Eliminando caracteres que coinciden con un patrón"
+title:                "Arduino: Borrando caracteres que coinciden con un patrón"
+simple_title:         "Borrando caracteres que coinciden con un patrón"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,100 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Eliminar caracteres que coinciden con un patrón puede ser útil en situaciones donde queremos limpiar o manipular datos almacenados en variables, como por ejemplo, eliminar espacios en blanco o símbolos no deseados. También puede ayudar a mejorar el rendimiento de nuestro código al reducir la cantidad de datos con los que tiene que trabajar.
+Si estás buscando una forma rápida de eliminar caracteres que coincidan con un patrón en tu código de Arduino, estás en el lugar correcto. En este artículo, te mostraremos cómo hacerlo de manera sencilla y efectiva.
 
-## Cómo
+## Cómo hacerlo
 
-Para eliminar caracteres que coinciden con un patrón en Arduino, podemos utilizar la función `remove_if()` de la librería `String`. Esta función toma dos argumentos: una función o expresión lambda que define el patrón a buscar, y la variable en la que se realizarán los cambios. Aquí hay un ejemplo de cómo podemos usarlo para eliminar todos los espacios en blanco de una cadena:
-
-```Arduino
-#include <String.h>
-
-void setup() {
-  Serial.begin(9600);
-  String text = "Esto es un ejemplo de texto con espacios en blanco.";
-  Serial.println(text);
-  text.remove_if([](char c){return c == ' ';}); //lambda que busca espacios en blanco
-  Serial.println(text);
-}
-
-void loop() {
-
-}
-```
-
-El resultado de este código sería:
-
-```
-Esto es un ejemplo de texto con espacios en blanco.
-Esto es unejemplodetextoconespaciosenblanco.
-```
-
-También podemos utilizar la función `replace()` de la misma librería para reemplazar caracteres específicos en una cadena. Aquí hay un ejemplo de cómo podríamos usarlo para reemplazar todos los números con un asterisco:
+Para eliminar caracteres que coincidan con un patrón en Arduino, puedes utilizar la función `removeChars()` y especificar el patrón que deseas eliminar en la entrada. Por ejemplo, si quieres eliminar todos los caracteres que sean vocales, puedes utilizar el siguiente código:
 
 ```Arduino
-#include <String.h>
-
 void setup() {
-  Serial.begin(9600);
-  String text = "1, 2, 3, 4 y 5.";
-  Serial.println(text);
-  text.replace("1", "*");
-  text.replace("2", "*");
-  text.replace("3", "*");
-  text.replace("4", "*");
-  text.replace("5", "*");
-  Serial.println(text);
+  String texto = "Hola mundo";
+  removeChars(texto, "aeiou"); // Elimina las vocales del texto
+  Serial.println(texto);
 }
 
-void loop() {
-
+void removeChars(String &texto, String pattern) {
+  for (int i = 0; i < pattern.length(); i++) {
+    texto.replace(pattern[i], "");
+  }
 }
 ```
 
-El resultado sería:
+La salida en el monitor serie será "Hl mnd" ya que todas las vocales han sido eliminadas del texto original. Puedes modificar la función `removeChars()` para que se ajuste a tus necesidades, como eliminar números o símbolos específicos.
 
-```
-1, 2, 3, 4 y 5.
-*, *, *, * y *.
-```
+## Inmersión profunda
 
-Es importante tener en cuenta que estas funciones solo se aplican a cadenas de caracteres, no a variables de otros tipos. Y si queremos aplicar cambios a una cadena existente, debemos almacenar el resultado en una nueva variable.
+Además de la función `removeChars()`, hay otras formas de eliminar caracteres que coincidan con un patrón en Arduino. Una opción es utilizar la librería `StringRemove`, que te permite eliminar caracteres en una cadena de forma similar a la función `removeChars()`. Otra forma es utilizar expresiones regulares con la librería `Regexp`, que te permite buscar y reemplazar patrones en cadenas de texto.
 
-## Profundizando
-
-Si queremos tener un control más preciso sobre qué caracteres queremos eliminar o reemplazar, podemos utilizar expresiones regulares con la librería `Regex`. Estas expresiones nos permiten buscar patrones específicos en una cadena, como por ejemplo, todos los números o letras mayúsculas. Aquí hay un ejemplo sencillo de cómo podríamos utilizar una expresión regular para buscar y eliminar todos los caracteres no numéricos en una cadena:
-
-```Arduino
-#include <String.h>
-#include <regex.h>
-
-void setup() {
-  Serial.begin(9600);
-  String text = "Texto con números 1, 2 y 3.";
-  Serial.println(text);
-  regex_t regex; //creamos la expresión regular
-  int regcomp_result = regcomp(&regex, "[^0-9]+", REG_EXTENDED);
-  text.remove_if([&regex](char c){return regexec(&regex, &c, 0, NULL, 0) == 0;}); //lambda que busca caracteres no numéricos
-  Serial.println(text);
-}
-
-void loop() {
-
-}
-```
-
-El resultado sería:
-
-```
-Texto con números 1, 2 y 3.
-123.
-```
-
-Para aprender más sobre expresiones regulares y cómo utilizarlas en Arduino, te recomendamos revisar la documentación oficial y buscar ejemplos en línea.
+También es importante tener en cuenta que, si tu Arduino cuenta con poca memoria, es posible que tengas problemas al utilizar cadenas de texto largas y funciones de eliminación de caracteres. En este caso, es recomendable encontrar una alternativa utilizando arreglos de caracteres o limitar el uso de cadenas de texto en tu código.
 
 ## Ver también
 
-- [Documentación de la función `remove_if()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/remove_if/)
-- [Documentación de la función `replace()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-- [Documentación de la librería `Regex`](https://github.com/nickgammon/Regex)
+- [Librería StringRemove](https://playground.arduino.cc/Code/StringRemove/)
+- [Librería Regexp](https://playground.arduino.cc/Code/Regexp/)
+- [Expresiones regulares en Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+
+¡Esperamos que este artículo te haya sido útil para aprender a eliminar caracteres que coincidan con un patrón en Arduino! ¡Feliz programación!

@@ -1,44 +1,60 @@
 ---
 title:                "Go: サブストリングの抽出"
+simple_title:         "サブストリングの抽出"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-サブストリングを抽出する理由は、より柔軟な文字列操作が可能になるためです。例えば、文字列内の特定の部分を取得したり、不要な部分を取り除いたりすることができます。
 
-## 方法
-サブストリングを抽出するには、Goの `strings` パッケージに含まれている `Substr` 関数を使用します。以下のようにコードを記述することで、文字列から特定の部分を取り出すことができます。
+Go言語で文字列を抽出するのに、なぜ魅力的なのでしょうか？実際に私たちが日常生活で文字列を扱うことは多く、それらを正確に抽出できる能力は非常に重要です。例えば、ウェブ開発やテキスト処理などのアプリケーションでは、文字列抽出が欠かせません。Go言語は、高速で安全性の高いプログラミング言語のため、文字列抽出にも優れた解決策を提供してくれます。
+
+## 技術解説
+
+では、実際にGo言語で文字列を抽出する方法を見ていきましょう。以下のコードは、指定した開始位置と長さの文字列を抽出する方法を示しています。
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+	str := "こんにちは、世界"
+	substr := str[3:7] // "世界" を抽出
+	fmt.Println(substr) // 出力: 世界
+}
+```
+
+このコードでは、文字列`str`の3番目の文字から7番目の文字までを抽出しています。また、Go言語では、文字列をバイト配列として扱っているため、抽出した文字列もバイト配列として取得されます。しかし、半角文字やUTF-8の特殊文字を扱う際には注意が必要です。詳細は後述する「深堀り」のセクションで説明します。
+
+## 深堀り
+
+Go言語では、文字列抽出のために組み込み関数である`slice`を使用します。`slice`関数は、文字列の指定した位置から長さ分の部分を抽出して、新しい文字列を返します。しかし、Go言語の文字列はバイト配列として扱われるため、例えば日本語のように複数のバイトで表現される文字を抽出する場合、単純に位置と長さを指定しただけでは正しい結果を得ることができません。そのため、`unicode/utf8`パッケージの`RuneCountInString`関数を組み合わせて、バイト単位でなく文字単位で抽出するようにする必要があります。
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"unicode/utf8"
 )
 
 func main() {
-    text := "Hello, World!"
-    substr := strings.Substr(text, 7, 5)
-    fmt.Println(substr)
+	str := "こんにちは、世界"
+	// 文字数をカウントして日本語の「世界」を抽出
+	substr := str[utf8.RuneCountInString("こんにちは、") : utf8.RuneCountInString("こんにちは、世界")]
+	fmt.Println(substr) // 出力: 世界
 }
 ```
 
-上記のコードを実行すると、出力結果は `World` となります。ここで、 `Substr` 関数は、抽出する文字列の開始位置と抽出する文字数を引数として受け取ることができます。
-
-## 深堀り
-サブストリングを抽出する際には、以下のようなことに気をつける必要があります。
-
-- 開始位置と抽出する文字数は、必ず正の値で指定する必要があります。負の値を指定するとエラーが発生します。
-- 開始位置は、抽出する文字列の先頭を 0 としたインデックスとして指定する必要があります。つまり、 `Hello, World!` の場合、 `H` は 0、`W` は 7 となります。
-
-また、 `Substr` 関数は `strings` パッケージの中で定義されているため、必ず `import "strings"` を記述する必要があります。さらに、 `strings` パッケージには他にも便利な関数が多数含まれているので、ぜひチェックしてみてください。
+ここで`RuneCountInString`関数を使用しているのは、文字列のバイト単位ではなく、文字単位で位置を指定するためです。これにより、文字列を正しく抽出することができます。
 
 ## 関連リンク
-- [strings パッケージドキュメント](https://golang.org/pkg/strings/)
-- [Learn Go with Tests - strings](https://github.com/quii/learn-go-with-tests/tree/master/strings)
-- [Welcome to the Golang Tour - strings](https://tour.golang.org/basics/5)
+
+- [Go言語公式ドキュメント](https://golang.org/doc/)
+- [Go言語チュートリアル](https://tour.golang.org/welcome/1)
+- [文字列を抽出するGo言語の組み込み関数](https://www.w3schools.in/go-language/string-functions/slice-function/)

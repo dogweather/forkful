@@ -1,51 +1,44 @@
 ---
-title:                "Elixir: Escribiendo tests"
+title:                "Elixir: Escribiendo Pruebas"
+simple_title:         "Escribiendo Pruebas"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué escribir pruebas en Elixir
 
-Una parte importante de la programación en Elixir es escribir pruebas (tests) para nuestro código. Estas pruebas nos ayudan a asegurarnos de que nuestro código hace lo que queremos que haga y continua haciendo lo mismo a medida que lo actualizamos. También permiten a otros desarrolladores entender nuestro código y realizar cambios con confianza.
+Escribir pruebas es una práctica esencial en el mundo de la programación, ya que nos permite asegurar que nuestro código funciona correctamente y detectar posibles errores antes de que lleguen a producción. En Elixir, esta práctica es aún más importante debido a su fuerte énfasis en la concurrencia y la tolerancia a fallos.
 
-## Cómo hacerlo
+## Cómo escribir pruebas en Elixir
 
-Para empezar a escribir pruebas en Elixir, necesitamos utilizar el módulo "ExUnit". Podemos crear un archivo de pruebas con la extensión `.exs` y requerir el módulo ExUnit de la siguiente manera:
+Para escribir pruebas en Elixir, utilizamos el módulo `ExUnit`. Primero, necesitamos definir un módulo de pruebas con el prefijo `Test` y luego utilizar la macro `test` para crear una prueba. Por ejemplo:
 
-```
-# importa el módulo ExUnit
-import ExUnit
-
-# define un módulo de pruebas
-defmodule MiPrueba do
-
-  # especifica que mi módulo usa el módulo ExUnit
+```Elixir
+defmodule MathTest do
   use ExUnit.Case
 
-  # nuestra primer prueba
-  test "mi prueba de suma" do
-    # assert asegura que 2 + 2 sea igual a 4
-    assert 2 + 2 == 4
+  test "sumar números" do
+    assert 1 + 1 == 2
   end
 end
 ```
 
-Una vez que hemos escrito nuestras pruebas, podemos ejecutarlas utilizando el comando `mix test`. Si todo funciona correctamente, deberíamos ver un resultado similar a esto:
+Aquí, estamos definiendo un módulo de pruebas llamado `MathTest` y creando una prueba que verifica que la suma de `1` y `1` es igual a `2`.
 
-```
-Finished in 0.04 seconds
-1 test, 0 failures
-```
+Para ejecutar nuestras pruebas, podemos utilizar el comando `mix test` en la terminal. Esto ejecutará todas las pruebas en nuestro proyecto y nos mostrará los resultados.
 
-## Profundizando
+## Profundizando en la escritura de pruebas
 
-Existen varias formas de profundizar en la escritura de pruebas en Elixir, incluyendo la utilización de mocks y stubs para simular ciertos comportamientos en nuestras pruebas. También podemos utilizar ExUnit para realizar pruebas de rendimiento y pruebas de propiedades. Es importante explorar estas opciones y descubrir cómo se pueden aplicar a nuestro propio código.
+Las pruebas en Elixir pueden ser mucho más complejas que verificar simples operaciones matemáticas. Podemos utilizar patrones de concurrencia y mockear funciones en nuestras pruebas. Además, existen diferentes tipos de aserciones que podemos utilizar para verificar diferentes aspectos de nuestra aplicación.
+
+Es importante tener en cuenta que las pruebas no solo deben enfocarse en verificar que el código funciona, sino también en cubrir diferentes casos y detectar posibles excepciones.
 
 ## Ver también
 
-- [Documentación de ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Elixir School - Pruebas y ExUnit](https://elixirschool.com/es/lessons/basics/testing/)
-- [Mocking en Elixir usando Mox](https://blog.appsignal.com/2018/07/03/elixir-mocking-with-mox-and-pattern-matching.html)
+- [Elixir School: Testing](https://elixirschool.com/es/lessons/basics/testing/)
+- [Documentación oficial de ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Elixir para todos: Pruebas unitarias con ExUnit](https://elixirparatodos.com/pruebas-unitarias-exunit/)

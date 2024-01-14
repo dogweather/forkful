@@ -1,7 +1,9 @@
 ---
-title:                "Go: 그것은 문자열 대문자로 만들기라는 기사 제목입니다."
+title:                "Go: 문자열의 대문자화"
+simple_title:         "문자열의 대문자화"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/capitalizing-a-string.md"
 ---
 
@@ -9,55 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-문자열을 대문자로 바꾸는 것에 대해 나는 왜 말할까요? 이것은 기초적이면서도 유용한 프로그래밍 스킬입니다. 예를 들어, 사용자로부터 받은 입력 값을 대문자로 바꾸어서 데이터의 일관성을 유지할 수 있습니다. 또는 출력 결과를 보기 좋게 만들기 위해서도 사용할 수 있습니다.
+Go 언어를 사용해 문자열을 대문자로 바꾸려는 이유는 다양합니다. 예를 들면 사용자의 입력이나 파일 이름을 대문자로 통일하기 위해서, 또는 출력이나 비교를 위해 대문자로 바꾸는 등의 다양한 이유가 있을 수 있습니다. 
 
-## 하는 방법
-
-이제 실제 코드 예제를 살펴보겠습니다. Go 언어에서 문자열을 대문자로 바꾸기 위해서는 `strings` 패키지의 `ToUpper` 메서드를 사용합니다.
+## 하는 법
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
+func uppercase(str string) string {
+	return strings.ToUpper(str)
+}
+
 func main() {
-    str := "hello, world!"
-    fmt.Println(strings.ToUpper(str))
+	input := "hello go"
+	
+	output := uppercase(input)
+	fmt.Println(output)
 }
 ```
 
-위 코드를 실행하면 `HELLO, WORLD!`가 출력됩니다.
+출력 결과: HELLO GO 
 
-## 깊게 파고들기
+위의 예제에서는 `strings` 패키지의 `ToUpper` 함수를 사용하여 문자열을 대문자로 바꾸는 방법을 보여줍니다. 이 외에도 `strings` 패키지에는 문자열을 소문자로 바꾸는 함수인 `ToLower`도 있습니다. 또는 `bytes` 패키지의 `ToUpper`와 `ToLower` 함수는 문자열 대신 바이트 슬라이스를 대상으로 동작하므로 더 빠를 수 있습니다. 
 
-하지만 문자열의 길이가 길어지면 매번 `strings.ToUpper`를 사용하는 것은 번거롭습니다. 이럴 때는 `bytes` 패키지를 사용해보세요. `bytes` 패키지는 문자열을 바이트 단위로 쪼개서 처리할 수 있는 기능을 제공합니다. 따라서 `ToUpper`와 같이 모든 문자를 대문자로 바꾸는 작업보다는 빠른 처리가 가능합니다.
+## 딥 다이브
 
-```Go
-package main
+문자열을 대문자로 바꾸기 위해서는 문자 조작에 대한 이해가 필요합니다. Go 언어는 문자 하나를 유니코드 코드 포인트로 다룹니다. 즉, 문자 하나에 해당하는 코드 값이 할당되며 이를 통해 대소문자를 구분할 수 있습니다. 대문자는 유니코드 코드 포인트 값이 작은 숫자로 할당되어 있기 때문에 `ToLower` 함수를 사용하면 소문자로 바꿀 수 있습니다. 
 
-import (
-    "bytes"
-    "fmt"
-)
+하지만 한글의 경우에는 조금 다릅니다. 한글은 합성 문자로 이루어져 있으며 하나의 음절을 표현하기 위해 여러 개의 코드 포인트가 필요합니다. 따라서 `ToLower` 함수를 사용하면 의도하지 않은 결과가 나올 수 있습니다. 이러한 경우에는 유니코드 표준에서 제공하는 관련 함수를 사용하거나 다른 라이브러리를 사용하는 것이 좋습니다. 
 
-func main() {
-    str := "hello, world!"
-    upperByte := bytes.ToUpper([]byte(str))
-    fmt.Println(string(upperByte))
-}
-```
+## 참고
 
-`ToUpper`를 사용한 코드보다 더 빠르게 실행될 것입니다. 하지만 문자열 중간에 대문자가 들어가 있는 경우에는 주의해야 합니다.
-
-## 참고 사항
-
-* [Go 공식 문서 - strings 패키지](https://golang.org/pkg/strings/)
-* [Go 공식 문서 - bytes 패키지](https://golang.org/pkg/bytes/)
-* [Go 언어로 문자열 조작하기 (Korean)](https://codingbot.net/golang/202)
-
-## 관련 링크
-
-* [Go 언어로 문자열을 대문자로 바꾸는 방법 (Korean)](https://streamkong.tistory.com/entry/Go-%EC%9E%85%EB%A0%A5-%EB%B0%9B%EC%9D%80-%EB%AC%B8%EC%9E%90%EC%97%90%EC%84%9C-%EB%8C%80%EB%AC%B8%EC%9E%90-%EC%B6%94%EB%9D%BC-%EB%B0%8F-%EB%AA%A8%EA%B8%B0%ED%99%94%ED%95%98%EA%B8%B0)
+- [Go 언어 공식 문서](https://golang.org/pkg/strings/#ToUpper)
+- [유니코드 표준](https://unicode.org/)
+- [Go 언어 문자열 조작 라이브러리 - GoKo](https://github.com/verizip/goko)

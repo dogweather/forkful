@@ -1,52 +1,60 @@
 ---
-title:                "TypeScript: La lecture des arguments de ligne de commande"
+title:                "TypeScript: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
-Il peut être utile de comprendre comment lire les arguments de ligne de commande lors de la programmation en TypeScript. Cela permettra de traiter avec succès les entrées utilisateur et de créer des applications plus efficaces.
+## Pourquoi
 
-# Comment Faire
-Lire les arguments de ligne de commande en TypeScript est très simple. Tout d'abord, importez le module "process" dans votre fichier TypeScript en ajoutant cette ligne en haut de votre fichier : 
+Nous avons tous déjà utilisé des applications en ligne de commande et nous avons peut-être remarqué que certaines peuvent prendre des entrées en ligne de commande, couramment appelées arguments. Les arguments en ligne de commande permettent à l'utilisateur de fournir des informations ou des instructions à une application lors de son exécution. Dans ce billet, nous allons discuter de la lecture des arguments en ligne de commande en utilisant TypeScript et de leur importance dans la création d'applications.
 
-```TypeScript
-import process = require('process');
-```
+## Comment faire
 
-Ensuite, vous pouvez accéder à la liste des arguments de ligne de commande en utilisant la propriété "argv" du module process. Voici un exemple de code pour imprimer tous les arguments de ligne de commande et leur index :
+Pour lire les arguments en ligne de commande en TypeScript, nous pouvons utiliser l'objet `process` qui est disponible dans Node.js. Nous pouvons accéder à cet objet en important `process` dans notre fichier TypeScript. Voici un exemple de code montrant comment lire le premier argument en ligne de commande passé à notre application :
 
 ```TypeScript
-for (let i = 0; i < process.argv.length; i++) {
-    console.log(`Argument ${i}: ${process.argv[i]}`);
-}
+import process from 'process';
+
+const firstArgument = process.argv[2];
+console.log(`Argument en ligne de commande : ${firstArgument}`);
 ```
 
-Si vous exécutez ce code avec la commande "node file.ts arg1 arg2", la sortie sera la suivante :
+Si nous exécutons cette application avec la commande `node index.js hello`, nous obtiendrons la sortie suivante :
 
 ```
-Argument 0: node
-Argument 1: file.ts
-Argument 2: arg1
-Argument 3: arg2
+Argument en ligne de commande : hello
 ```
 
-Vous pouvez également utiliser la méthode "slice" pour ignorer les deux premiers arguments ("node" et le nom du fichier) et n'afficher que les arguments fournis par l'utilisateur :
+Nous pouvons également lire plusieurs arguments en utilisant une boucle `for` :
 
 ```TypeScript
+import process from 'process';
+
 for (let i = 2; i < process.argv.length; i++) {
-    console.log(`Argument ${i - 2}: ${process.argv[i]}`);
+  console.log(`Argument ${i - 1} : ${process.argv[i]}`);
 }
 ```
 
-# Plongée Profonde
-Le module "process" offre également d'autres propriétés et méthodes utiles pour travailler avec les arguments de ligne de commande. Par exemple, vous pouvez utiliser "process.cwd()" pour obtenir le dossier de travail en cours, ou "process.env" pour accéder aux variables d'environnement du système.
+Si nous exécutons cette application avec la commande `node index.js foo bar baz`, nous obtiendrons la sortie suivante :
 
-Pour les applications complexes, vous pouvez également utiliser des packages externes comme "commander" ou "yargs" pour gérer les arguments de ligne de commande de manière plus structurée et flexible.
+```
+Argument 1 : foo
+Argument 2 : bar
+Argument 3 : baz
+```
 
-# Voir Aussi
-- Documentation officielle de process.argv en Node.js : https://nodejs.org/api/process.html#process_process_argv
-- Exemple de code pour lire les arguments de ligne de commande en TypeScript : https://github.com/torokmark/node-typescript-cli-boilerplate/blob/master/src/utils/cli.ts
+## Profonde plongée
+
+Maintenant que nous savons comment lire les arguments en ligne de commande en utilisant TypeScript, il est important de comprendre comment ils peuvent être utiles dans nos applications. Les arguments en ligne de commande peuvent être utilisés pour fournir des options ou des paramètres à notre application, tels que spécifier un fichier d'entrée ou de sortie, un mode de fonctionnement ou encore des informations d'identification.
+
+Nous pouvons également utiliser des bibliothèques telles que `yargs` pour traiter et valider les arguments en ligne de commande de manière plus structurée et intuitive.
+
+## Voir aussi
+
+- [Documentation de `process` dans Node.js](https://nodejs.org/dist/latest-v14.x/docs/api/process.html)
+- [Documentation de `yargs`](https://github.com/yargs/yargs)

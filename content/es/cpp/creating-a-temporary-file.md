@@ -1,48 +1,50 @@
 ---
 title:                "C++: Creando un archivo temporal"
+simple_title:         "Creando un archivo temporal"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué crear un archivo temporal?
+##Por qué
 
-Crear un archivo temporal es una práctica común en la programación para almacenar datos temporales o para realizar operaciones específicas que requieren un archivo temporal como intermediario. Puede ser útil para ahorrar espacio en el sistema o para evitar sobrecargar el disco duro con archivos que ya no son necesarios.
+Crear un archivo temporal puede ser una tarea común en la programación. Puede ser utilizado para almacenar datos temporales, hacer pruebas o incluso como parte de una solución más compleja. ¡Aprende cómo crear archivos temporales con C++!
 
-## ¿Cómo crear un archivo temporal en C ++?
+##Cómo hacerlo
 
-Para crear un archivo temporal en C ++, podemos seguir estos pasos:
+La creación de un archivo temporal en C++ es posible utilizando la biblioteca estándar `<fstream>`. Primero, debes incluir esta biblioteca en tu código. Luego, puedes usar la función `tmpnam()` para generar un nombre único para tu archivo temporal. Aquí hay un ejemplo de cómo crear y escribir en un archivo temporal:
 
 ```C++
-#include <fstream> // librería para trabajar con archivos
-#include <cstdlib> // librería para generar números aleatorios
-using namespace std;
+#include <iostream>
+#include <fstream>
 
 int main() {
-  // generamos un nombre de archivo único utilizando un número aleatorio
-  int randNum = rand() % 10000; // generamos un número aleatorio entre 0 y 9999
-  string fileName = "temp" + to_string(randNum) + ".temp"; // concatenamos el nombre con el número
-  // abrimos el archivo en modo escritura
-  ofstream temp(fileName);
-  // escribimos datos en el archivo
-  temp << "¡Hola desde mi archivo temporal!";
-  // cerramos el archivo
-  temp.close();
+    char filename[L_tmpnam]; // crea un array con el tamaño del nombre del archivo temporal
+    tmpnam(filename); // genera el nombre del archivo temporal
 
-  return 0;
+    std::ofstream archivo; // crea un objeto ofstream
+    archivo.open(filename); // abre el archivo temporal
+    archivo << "Este es un archivo temporal generado en C++"; // escribe en el archivo
+    archivo.close(); // cierra el archivo
+
+    return 0;
 }
 ```
 
-Una vez que ejecutamos el programa, se creará un archivo temporal con un nombre único, en este caso "temp6759.temp". Al abrir el archivo, veremos que contiene el mensaje "¡Hola desde mi archivo temporal!".
+El resultado de este código será un archivo llamado "tmp.XXXXXX" (las "X" representan números y/o letras aleatorias). Si lo abres, verás el texto que hemos escrito en él.
 
-## Profundizando en la creación de archivos temporales
+##Profundizando
 
-Existen varias formas de crear archivos temporales en C ++, pero también es importante destacar que no es una práctica recomendable para almacenar datos sensibles o importantes, ya que estos archivos pueden ser eliminados por el sistema en cualquier momento. Además, es importante asegurarse de que el archivo temporal se elimine correctamente después de su uso para no dejar residuos innecesarios en el sistema.
+Si quieres tener más control sobre tu archivo temporal, puedes utilizar la función `tmpfile()` en lugar de `tmpnam()`. Esta función creará un archivo y te proporcionará un puntero al mismo, lo que te permitirá leer y escribir en él. Además, puedes utilizar la función `remove()` para eliminar el archivo temporal cuando ya no sea necesario.
 
-## Ver también
+¡Ahora estás listo para empezar a utilizar archivos temporales en tus proyectos de C++!
 
-- [Cómo abrir y leer un archivo en C++](https://www.programiz.com/cpp-programming/file-handling)
-- [Documentación oficial de la librería `<fstream>` en C++](https://www.cplusplus.com/reference/fstream/)
-- [Cómo trabajar con archivos en C++](https://www.geeksforgeeks.org/file-handling-c-classes/)
+##Ver también
+
+- [Documentación sobre la biblioteca estándar de C++](https://www.cplusplus.com/)
+- [Más información sobre la función `tmpnam()`](https://www.cplusplus.com/reference/cstdio/tmpnam/)
+- [Más información sobre la función `tmpfile()`](https://www.cplusplus.com/reference/cstdio/tmpfile/)
+- [Más información sobre la función `remove()`](https://www.cplusplus.com/reference/cstdio/remove/)

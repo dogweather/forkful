@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Stor bokstavering av en sträng"
+title:                "Bash: Att omvandla en textsträng till versalisering"
+simple_title:         "Att omvandla en textsträng till versalisering"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/capitalizing-a-string.md"
 ---
 
@@ -9,34 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kapitalisera en sträng i Bash är en vanlig uppgift som kan vara användbar i många olika situationer. Det kan till exempel användas för att formatera användarnamn eller data som ska visas på skärmen.
+Att kunna konvertera en sträng till versaler (stora bokstäver) är en viktig teknik inom Bash programmering. Det kan användas för att förbättra utdata, filtrera data eller för att göra det enklare att jämföra strängar. Här är hur du kan göra det.
 
-## Hur man gör det
+## Hur man
 
-För att kapitalisera en sträng i Bash kan du använda kommandot "tr" tillsammans med en sekvens av mallar och bytesvärden. I följande kodblock ser vi hur man kapitaliserar alla bokstäver i en sträng:
-
-```Bash
-str="hej allihopa!"
-str_caps=$(echo "$str" | tr "[:lower:]" "[:upper:]")
-echo "$str_caps" # Resultat: HEJ ALLIHOPA!
-```
-
-Om du vill kapitalisera endast den första bokstaven i en sträng, använder du följande:
+För att göra detta i Bash, behöver vi först definiera en variabel med en sträng och sedan applicera en inbyggd funktion för att konvertera den till versaler. Här är ett exempel på kod som visar detta i åtgärd: 
 
 ```Bash
-str="hej allihopa!"
-first_cap=$(echo "${str^}")
-echo "$first_cap" # Resultat: Hej allihopa!
+sträng="hej, världen!"
+echo ${sträng^^}
 ```
+
+Det första steget är att definiera variabeln "sträng" med vår önskade text, "hej, världen!". Sedan använder vi operatorn "^^" för att konvertera hela strängen till versaler. Utan att behöva förklara logiken bakom det, kommer utdata att vara "HEJ, VÄRLDEN!". 
+
+Ett annat sätt att konvertera är att använda key viable "tr" och dess byte funktion. Exempel:
+
+```Bash
+sträng="hej, världen!"
+echo $sträng | tr '[a-z]' '[A-Z]'
+```
+
+Eftersom "tr" byte funktion byter ut alla små bokstäver till stora, måste vi bara ange vilka intervall av bokstäver som behöver ändras. I vårt exempel anger vi '[a-z]' och '[A-Z]' för att byta ut alla små bokstäver till stora bokstäver. 
 
 ## Djupdykning
 
-Förutom de grundläggande kommandona "tr" och "^" för kapitalisering av strängar finns det många andra sätt att åstadkomma samma sak i Bash. Du kan till exempel använda funktionen "printf" med mallar eller skriva en egen Bash-funktion för att hantera hanteringen av strängen.
+Nu när vi har förstått hur man konverterar en hel sträng till versaler, låt oss ta en djupare titt på hur detta fungerar bakom kulisserna. Bash har ett inbyggt set av funktioner för behandling av strängar, från att hitta och ersätta till att konvertera versaler. Att byta ut en sträng till versaler är en del av detta set och kallas "case modification". 
 
-Att kapitalisera en sträng kan också vara en del av en större uppgift, som att sortera en lista av namn i alfabetisk ordning eller att konvertera text till titelstil. Det är viktigt att förstå olika metoder för att kapitalisera strängar för att effektivt kunna lösa sådana uppgifter.
+Vi kan också konvertera första bokstaven i varje ord till versaler genom att använda "^^" operatorn tillsammans med "capitalize" funktionen. Exempel: 
+
+```Bash
+sträng="hej, världen!"
+echo ${sträng^}
+```
+
+I detta exempel använder vi "^^" för att byta ut den första bokstaven till versaler, vilket resulterar i "Hej, världen!". Det är också möjligt att använda "^^" tillsammans med "capitalize" funktionen för att konvertera alla ord i en sträng till versaler. Exempel: 
+
+```Bash
+sträng="hej, världen!"
+echo ${sträng^^*}
+```
+
+Denna gång använder vi "^^*" för att konvertera alla ord till versaler, vilket ger oss utdata "HEJ, VÄRLDEN!".
 
 ## Se även
 
-- [Bash Manual - Kapitel 9: Kommandon för strängmanipulering](www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.htlm#Shell-Parameter-Expansion)
-- [Linuxize - How to capitalize first letter of a string in Bash](www.linuxize.com/post/how-to-capitalize-first-letter-of-a-string-in-bash/)
-- [Bash Hackers Wiki - String operations](http://wiki.bash-hackers.org/syntax/operations/string)
+Vill du lära dig mer om Bash programmering och dess funktioner för strängbehandling? Kolla in dessa resurser för att fördjupa din kunskap: 
+
+- [Officiell Bash dokumentation](https://www.gnu.org/software/bash/manual/html_node/index.html)
+- [Bash Guide for Beginners (engelska)](https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+- [Bash Scripting Tutorial (engelska)](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Bash Hackers Wiki (engelska)](https://wiki.bash-hackers.org/start)
+- [Bash Tips & Tricks (engelska)](https://www.shell-tips.com/bash/)

@@ -1,7 +1,9 @@
 ---
 title:                "Haskell recipe: Reading a text file"
+simple_title:         "Reading a text file"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/reading-a-text-file.md"
 ---
 
@@ -9,47 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Text files are a common way to store and share simple data. Reading text files in Haskell allows us to access this data and use it in our programs. Whether you need to process user input, read in data from a file, or analyze a log file, knowing how to read text files in Haskell is a useful skill to have.
+Text files are a common way of storing data, and as a Haskell programmer, knowing how to read and manipulate them is a useful skill to have. Whether you're working with large datasets or just need to parse some simple text files, understanding how to read text files in Haskell can greatly improve your productivity.
 
 ## How To
 
-Reading a text file in Haskell is a straightforward process. First, we need to import the necessary module, `System.IO`, which contains the `readFile` function. This function takes the file path as its argument and returns a *lazy* string, which we can then process as needed.
-
-Let's look at an example where we want to read a text file named `input.txt` and print its contents to the console:
+Reading a text file in Haskell is a straightforward process that involves a few simple steps. First, we need to import the necessary libraries:
 
 ```Haskell
 import System.IO
-
-main :: IO ()
-main = do
-    file <- readFile "input.txt"
-    putStrLn file
+import Data.List
 ```
 
-In the above code, we use the `readFile` function to read the contents of the file into the `file` variable. After that, we use the `putStrLn` function to print the contents of the file to the console. By using a *lazy* string, the entire file is not read into memory at once, allowing us to process large files without any performance issues.
-
-We can also manipulate the contents of the file before printing it out. For example, if we wanted to count the number of words in the file, we could modify our code as follows:
+Next, we need to declare a file handle using the `openFile` function. This function takes in two parameters: the path to the file and a `ReadMode` flag indicating that we want to read the file.
 
 ```Haskell
-import System.IO
-
-main :: IO ()
-main = do
-    file <- readFile "input.txt"
-    let wordCount = length $ words file
-    putStrLn $ "The file contains " ++ show wordCount ++ " words."
+fileHandle <- openFile "example.txt" ReadMode
 ```
 
-In this code, we use the `length` and `words` functions to count the number of words in the file. Using the `show` function, we can convert the result into a string and print it out along with a custom message.
+Once we have our file handle, we can use the `hGetContents` function to read the contents of the file. This function returns a lazy stream of characters, which we can transform into a list of lines using the `lines` function.
+
+```Haskell
+fileContents <- hGetContents fileHandle
+let lines = lines fileContents
+```
+
+We can then print out each line of the file using the `putStrLn` function.
+
+```Haskell
+mapM_ putStrLn lines
+```
+
+And that's it! We have successfully read a text file in Haskell.
 
 ## Deep Dive
 
-Behind the scenes, the `readFile` function in the `System.IO` module uses the `openFile` function from the same module to open the file and create a handle. This handle is used to read in the file's contents, which are then returned as a string.
+When reading text files in Haskell, there are a few important things to keep in mind. First, lazy evaluation can be very useful when working with large files. By using the `hGetContents` function, we only read in as much of the file as needed, instead of loading the entire contents into memory.
 
-It's worth noting that reading in a file using this method doesn't guarantee that the file will be closed after it's been read. It's advisable to use the `withFile` function, also in the `System.IO` module, which ensures that the file is closed after it's been used.
+Another aspect to consider is error handling. The `openFile` function can throw an exception if the file does not exist or if it cannot be opened for some reason. It's important to handle these exceptions properly, either by using the `try` function or by explicitly handling the possible error cases.
+
+Lastly, using the `ByteString` library can greatly improve the efficiency of reading text files. This library provides a more efficient way of handling large amounts of data, which can be especially useful when working with large text files.
 
 ## See Also
-
-- [Haskell documentation on `System.IO` module](https://hackage.haskell.org/package/base/docs/System-IO.html)
-- [Tutorial on reading and writing files in Haskell](https://www.tutorialspoint.com/haskell/haskell_file_io.htm)
-- [Haskell Wiki page on file I/O](https://wiki.haskell.org/File_manipulation)
+- [Haskell IO documentation](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [Haskell ByteString documentation](https://hackage.haskell.org/package/bytestring/docs/Data-ByteString.html#t:ByteString)

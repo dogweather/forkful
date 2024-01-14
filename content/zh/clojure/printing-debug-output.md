@@ -1,30 +1,36 @@
 ---
 title:                "Clojure: 打印调试输出"
+simple_title:         "打印调试输出"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要打印调试输出？
+##为什么
 
-在编写Clojure程序时，经常会遇到需要查看程序运行过程中的变量值或代码执行情况的情况。这时候，打印调试输出就是一种非常有效的方法。通过打印输出，我们可以更容易地理解程序的运行与逻辑，从而更快地解决问题。
+当我们在编写Clojure程序时，我们经常需要打印出一些调试信息来帮助我们理解程序的运行情况。这些信息可以帮助我们查找错误和调试代码，从而提高代码的质量和可靠性。
 
-## 如何打印调试输出？
-```Clojure
-(defn print-debug [x] "```" (println "调试输出：" x) "```")
+##如何
+
+在Clojure中，我们可以使用`println`函数来打印调试信息。下面是一个简单的示例：
+
 ```
-这是一个简单的打印调试输出的函数，将待调试的变量作为参数传入，然后使用`println`函数打印输出。比如我们有一个变量x，需要查看其值，可以使用`(print-debug x)`来进行打印输出。输出的结果将会在控制台上显示出来。
+Clojure
+(defn add [a b]
+  (println "正在计算 " a " + " b)
+  (+ a b))
+```
 
-## 深入了解打印调试输出
+当我们调用这个函数时，它会打印出类似于`正在计算 3 + 5`的信息，让我们知道程序正在执行加法运算。我们还可以使用`format`函数来格式化打印的信息，使其更易读。
 
-除了简单地打印变量值，我们还可以使用Clojure的内置函数`pr-str`来将变量转换成字符串再打印输出。这样可以获得更详细的信息，比如变量的类型和内部结构。而使用`pprint`函数则可以进行更美观的输出格式。
+##深入了解
 
-需要注意的是，打印调试输出可以帮助我们快速定位问题，但是过多的打印输出会影响程序性能。因此，在调试结束后，记得将打印输出代码删除或注释掉。
+除了使用`println`和`format`函数，我们还可以使用各种其他方法来打印调试信息。例如，我们可以使用`clojure.tools.logging`库来记录信息，并在日志文件中查看它们。我们还可以使用`clojure.repl`库中的`pst`函数来打印出函数调用栈，帮助我们找到错误的位置。
 
-## 另请参阅
+##看看这些
 
-- [Clojure调试方法](https://clojure.org/guides/debugging)
-- [辅助调试的Clojure工具](https://lispcast.com/simple-debugging-tools-in-clojure/)
-- [Clojure调试技巧](https://blog.klipse.tech/clojure/2016/06/10/clojure-debugging.html)
+- [Clojure.tools.logging文档](https://clojuredocs.org/clojure.tools.logging)
+- [Clojure.repl文档](https://clojuredocs.org/clojure.repl)

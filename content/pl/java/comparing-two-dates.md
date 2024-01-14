@@ -1,7 +1,9 @@
 ---
 title:                "Java: Porównywanie dwóch dat"
+simple_title:         "Porównywanie dwóch dat"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/comparing-two-dates.md"
 ---
 
@@ -9,52 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Porównywanie dat jest kluczowym aspectem wielu aplikacji Java. Może być wykorzystane w celu porównania dat bieżących z datami w przeszłości lub przyszłości, określenia różnicy czasu lub ustalenia, który z dwóch wydarzeń miało miejsce wcześniej. Jest to przydatne w wielu przypadkach, szczególnie w systemach rezerwacji, zarządzaniu projektami lub różnego rodzaju harmonogramach.
+W dzisiejszym wpisie dokonamy głębokiego zanurzenia w porównywaniu dwóch dat w języku Java. Zobaczymy, dlaczego jest to ważne i jak można to osiągnąć. Włączcie swoje komputery i przygotujcie się do programowania!
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby porównać dwie daty w języku Java, należy użyć metody `compareTo()` klasy `java.util.Date`. Należy pamiętać, że ta metoda porównuje daty z uwzględnieniem czasu, dlatego może zwrócić wartość różną od zera, nawet jeśli daty są identyczne, ale zawierają różne wloty czasowe.
+Powodem, dla którego porównywanie dat jest ważne w programowaniu, jest to, że często musimy wykonywać pewne operacje na danych, które są datami. Na przykład, możemy chcieć sprawdzić, który z dwóch wydarzeń nastąpił wcześniej, lub porównać daty w celu ustalenia, czy dana data jest w wyznaczonym przedziale czasowym. W języku Java istnieje wiele sposobów na porównywanie dat, ale skupimy się na dwóch najpopularniejszych metodach - za pomocą metod "compareTo" i "equals". 
 
-Przykład kodu:
+```Java
+import java.time.LocalDate; // importujemy klasę LocalDate z pakietu java.time
 
-```java
-import java.util.Date;
+// tworzymy dwie zmienne typu LocalDate, reprezentujące dwie różne daty
+LocalDate data1 = LocalDate.of(2021, 3, 26);
+LocalDate data2 = LocalDate.of(2021, 3, 29);
 
-public class DateComparison {
-    public static void main(String[] args) {
-        // tworzenie dwóch dat
-        Date date1 = new Date(121, 6, 4); // 4 lipca 2021
-        Date date2 = new Date(120, 6, 4); // 4 lipca 2020
-        
-        // porównywanie dat
-        int result = date1.compareTo(date2);
-        
-        // wypisanie wyniku
-        if (result > 0) {
-            System.out.println("Data1 jest późniejsza od daty2.");
-        } else if (result == 0) {
-            System.out.println("Obie daty są identyczne.");
-        } else {
-            System.out.println("Data2 jest późniejsza od daty1.");
-        }
-    }
+// porównujemy daty za pomocą metody "compareTo"
+int wynik = data1.compareTo(data2);
+if(wynik < 0) {
+  System.out.println(data1 + " jest wcześniej niż " + data2); // zostanie wyświetlony napis "2021-03-26 jest wcześniej niż 2021-03-29"
+} else if(wynik == 0) {
+  System.out.println(data1 + " jest równa " + data2); // zostanie wyświetlony napis "2021-03-26 jest równa 2021-03-29"
+} else {
+  System.out.println(data1 + " jest później niż " + data2); // zostanie wyświetlony napis "2021-03-26 jest później niż 2021-03-29"
+}
+
+// porównujemy daty za pomocą metody "equals"
+if(data1.equals(data2)) {
+  System.out.println(data1 + " jest równa " + data2); // nie zostanie wyświetlony, ponieważ daty są różne
+} else {
+  System.out.println(data1 + " jest różna od " + data2); // zostanie wyświetlony napis "2021-03-26 jest różna od 2021-03-29"
 }
 ```
 
-Przykładowy wynik:
+## Głębsza Stosowność
 
-```
-Data1 jest późniejsza od daty2.
-```
-
-## Głębsze zagadnienia
-
-Warto pamiętać, że w Javie istnieją również klasy `LocalDate`, `LocalDateTime` i `LocalTime`, które umożliwiają porównywanie dat bez uwzględniania czasu oraz obsługę dat i czasów w różnych strefach czasowych.
-
-Należy również zwrócić uwagę na możliwość użycia metody `equals()` do porównywania dat w Javie. Metoda ta porównuje daty bez uwzględniania czasu, więc jest to przydatne, jeśli interesuje nas porównanie samej daty, a nie uwzględnienie czasu.
+W języku Java daty są reprezentowane przez klasy LocalDate, LocalTime lub LocalDateTime, zależnie od tego, czy chcemy przechowywać tylko datę, czas lub oba. Te klasy mają bogatą funkcjonalność, która pozwala na wykonywanie różnych operacji na datach, w tym porównywanie ich. Warto przeczytać dokładną dokumentację tych klas, aby dowiedzieć się więcej o wszystkich dostępnych metodach.
 
 ## Zobacz również
 
-- [Dokumentacja klasy Date w języku Java](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Porównywanie dat w języku Java - przykłady](https://www.tutorialspoint.com/java/util/date_compareto.htm)
-- [Jak porównywać daty w Javie](https://www.baeldung.com/java-date-compare)
+- [Dokumentacja klasy LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
+- [Dokumentacja klasy LocalTime](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalTime.html)
+- [Dokumentacja klasy LocalDateTime](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDateTime.html)

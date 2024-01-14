@@ -1,68 +1,61 @@
 ---
 title:                "Python: Kahden päivämäärän vertailu"
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kahta päivämäärää?
+## Miksi
 
-Päivämäärien vertaaminen on tärkeä taito useissa Pythonin ohjelmoinnin sovelluksissa. Se voi auttaa sinua tarkistamaan, ovatko kaksi päivämäärää samat tai järjestyksessä. Se voi myös auttaa sinua laskemaan aikaa kahden päivämäärän välillä. Päivämäärien vertaaminen on hyödyllistä esimerkiksi projektinhallinnassa, kun haluat tarkistaa, onko tehtävä tehty ennen tiettyä päivämäärää.
+Tulee tilanteita, jolloin meidän täytyy vertailla kahta eri päivämäärää. Tämä voi olla hyödyllistä esimerkiksi, kun haluamme tarkistaa onko tietyn tapahtuman päivämäärä aiemmin vai myöhemmin kuin toinen tapahtuma. Pythonilla tämä on helppoa toteuttaa ja se voi säästää aikaa ja vaivaa manuaalisen vertailun sijaan.
 
-## Kuinka verrata kahta päivämäärää?
+## Miten
 
-Päivämäärien vertaaminen Pythonissa on yksinkertaista ja helppoa. Voit käyttää sisäänrakennettua `datetime`-kirjastoa ja sen `date`-objektia vertailemaan päivämääriä.
+Pythonilla on valmiina muutamia käteviä funktioita, jotka helpottavat päivämäärien vertailua. Ensimmäinen näistä on `datetime` moduuli, joka sisältää `date` luokan. Tämän luokan avulla voimme luoda päivämääriä ja suorittaa vertailuja niiden välillä.
 
 ```Python
-from datetime import date
+# Tuodaan datetime moduuli
+import datetime
 
-# Luodaan kaksi päivämäärää
-pvm1 = date(2020, 1, 1)
-pvm2 = date(2020, 1, 15)
+# Luodaan kaksi eri päivämäärää: ensimmäinen maaliskuun 1. ja toinen huhtikuun 1.
+date1 = datetime.date(2021, 3, 1)
+date2 = datetime.date(2021, 4, 1)
 
-# Vertaillaan päivämääriä
-if pvm1 < pvm2:
-    print("Päivämäärä 1 on ennen päivämäärää 2")
-elif pvm1 == pvm2:
-    print("Päivämäärät ovat samat")
+# Vertaillaan päivämääriä ja tulostetaan tulos
+if date1 < date2:
+    print("Ensimmäinen päivämäärä on aiempi kuin toinen.")
+elif date1 > date2:
+    print("Ensimmäinen päivämäärä on myöhäisempi kuin toinen.")
 else:
-    print("Päivämäärä 2 on ennen päivämäärää 1")
+    print("Päivämäärät ovat samat.")
+# Output: Ensimmäinen päivämäärä on aiempi kuin toinen.
 ```
 
-Output:
-```
-Päivämäärä 1 on ennen päivämäärää 2
-```
-
-Voit myös käyttää `timedelta`-objektia laskemaan aikaa kahden päivämäärän välillä.
+Toinen tapa vertailla päivämääriä on käyttää `timedelta`-luokkaa, jolla voidaan laskea aikaa kahden päivämäärän välillä. Tämä voi olla hyödyllistä esimerkiksi jos haluamme tarkistaa kuinka monta päivää on jäljellä tiettyyn tapahtumaan.
 
 ```Python
-from datetime import date, timedelta
+# Luodaan kaksi eri päivämäärää: tänään ja tuleva syntymäpäivä
+today = datetime.date.today()
+birthday = datetime.date(2021, 10, 14)
 
-# Luodaan kaksi päivämäärää
-pvm1 = date(2020, 1, 1)
-pvm2 = date(2020, 1, 15)
-
-# Lasketaan päivien välinen ero
-ero = pvm2 - pvm1
-
-print("Päivien ero:", ero.days)
+# Lasketaan aika niiden välillä ja tulostetaan tulos
+time_remaining = birthday - today
+print("Syntymäpäivään on jäljellä", time_remaining.days, "päivää.")
+# Output: Syntymäpäivään on jäljellä 180 päivää.
 ```
 
-Output:
-```
-Päivien ero: 14
-```
+## Syvemmälle
 
-## Syvempi sukellus päivämäärien vertailuun
+Vertaillessamme kahta päivämäärää on tärkeää tietää, että päivämäärät voidaan vertailla vain samassa muodossa. Esimerkiksi, jos haluamme vertailla päivämäärää ja aikaa, meidän täytyy muuttaa ne ensin samassa muodossa oleviksi.
 
-Kun vertaat kahta päivämäärää Pythonissa, on tärkeää huomata, että `date`-objektin tulee olla sama muoto molemmissa päivämäärissä. Tämä tarkoittaa, että päivämäärät tulee olla syötetty samassa järjestyksessä, vuosi-kuukausi-päivä.
-
-Voit myös käyttää `datetime`-objektia, joka sisältää päivän ja ajan tiedot, vertailemaan päivämääriä. Voit lukea lisää `datetime`-objektista Pythonin dokumentaatiosta.
+Lisäksi `datetime` moduuli sisältää erilaisia funktioita, joilla voi muokata ja työskennellä päivämäärien kanssa. Näitä ovat esimerkiksi `strftime()`-funktio, jolla voidaan muuttaa päivämäärän esitystapaa sekä `timedelta()`-funktio, jolla voidaan lisätä tai vähentää aikaa päivämääriin.
 
 ## Katso myös
 
-- [Pythonin datetime-kirjaston dokumentaatio](https://docs.python.org/3/library/datetime.html)
-- [Pythonin timedelta-kirjaston dokumentaatio](https://docs.python.org/3/library/datetime.html#timedelta-objects)
+- [Pythonin virallinen dokumentaatio](https://docs.python.org/fi/3/library/datetime.html)
+- [Tutoriaali päivämäärien käsittelystä Pythonilla](https://realpython.com/python-datetime/)
+- [Päivämäärien vertailun esimerkkikoodeja](https://www.geeksforgeeks.org/comparing-dates-python/)

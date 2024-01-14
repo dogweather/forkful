@@ -1,37 +1,54 @@
 ---
 title:                "Haskell: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Haskell"
-category:             "Getting Started"
+category:             "Haskell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Starte et nytt prosjekt kan virke som en overveldende oppgave, men det kan også være en spennende og givende opplevelse. Ved å lære Haskell og utvikle dine egne prosjekter, vil du få en dypere forståelse for funksjonell programmering og kunne utvide dine programmeringsferdigheter.
+Å starte et nytt programmeringsprosjekt kan være en spennende og kreativ måte å utvikle ferdigheter innenfor Haskell på. Ved å starte et nytt prosjekt, kan man utfordre seg selv og lære nye ting, samtidig som man får praktisk erfaring med å bruke språket.
 
 ## Hvordan
+Når man skal starte et nytt Haskell-prosjekt, er det viktig å ha en klar plan og struktur på plass. Dette vil gjøre det enklere å utvikle og vedlikeholde koden senere. Her er noen tips og eksempler på hvordan man kan gå frem:
 
-For å starte et nytt Haskell-prosjekt, må du først sørge for at du har installert GHC (Glasgow Haskell Compiler) og Cabal (et bygg- og pakkesystem for Haskell). Deretter kan du opprette et nytt prosjekt ved å følge disse trinnene:
+- Definer formål og målsetninger for prosjektet
+- Lag en oversikt over de ulike delene av koden og hvordan de skal samarbeide
+- Bruk funksjoner og moduler for å organisere koden og gjøre den mer lesbar
+- Test ut koden ved å kjøre eksempler og se etter eventuelle feil
 
-1. Åpne et terminalvindu og naviger til en mappe der du ønsker å lagre prosjektet ditt.
-2. Skriv følgende kommando for å opprette en ny mappe for prosjektet ditt: ```mkdir project-name```
-3. Gå inn i den nye mappen ved å skrive: ```cd project-name```
-4. Skriv kommandoen ```cabal init``` for å opprette en ny konfigurasjonsfil for prosjektet ditt.
-5. Deretter vil du bli bedt om å svare på noen spørsmål om prosjektet ditt, som navn, forfatter, beskrivelse osv. Du kan også la noen felter være tomme og gå videre til neste trinn.
-6. Dette vil opprette en mappestruktur for prosjektet ditt og en cabal fil som holder konfigurasjonsinformasjonen din.
+Et eksempel på hvordan man kan organisere koden i et Haskell-prosjekt:
 
-Etter at du har satt opp prosjektet ditt, kan du begynne å kode i Haskell ved å åpne filen som heter ```Main.hs``` i ```app```-mappen. Du kan også legge til avhengigheter til prosjektet ditt ved å redigere cabal-filen og deretter kjøre ```cabal install``` i terminalen for å installere dem.
+```Haskell
+module Main where
 
-## Dykk dypere
+-- Importerer nødvendige moduler
+import Math
+import String
+import Input
 
-Når du har satt opp prosjektet ditt, kan du begynne å utforske ulike biblioteker og funksjoner i Haskell for å bygge et mer komplekst program. Du kan også bruke konseptene du har lært i kurs eller på nettet til å skrive mer effektiv kode og implementere nye funksjoner.
+-- Hovedfunksjonen
+main :: IO ()
+main = do
+  -- Henter input fra bruker
+  input <- getInput
+  -- Beregner gjennomsnittet av tallene
+  let average = calculateAverage input
+  -- Skriver ut resultatet
+  putStrLn ("Gjennomsnittet er: " ++ show average)
+```
 
-Det er også viktig å huske på å organisere koden din på en strukturert og lesbar måte. Dette vil ikke bare gjøre det enklere for deg å implementere nye funksjoner, men det vil også gjøre koden din mer vedlikeholdsvennlig og forståelig for andre.
+I dette eksempelet bruker vi funksjoner som er definert i modulene "Math", "String" og "Input", og organiserer koden i en hovedfunksjon som henter input fra brukeren, beregner gjennomsnittet og skriver ut resultatet.
 
-## Se også
+## Dypdykk
+Når man starter et nytt prosjekt, er det viktig å ha en god struktur på plass, men det er også viktig å være åpen for endringer underveis. Noen ganger kan det være nødvendig å gjøre endringer i koden for å forbedre ytelse eller funksjonalitet. Det kan også være lurt å ta seg tid til å lese gjennom dokumentasjonen for Haskell og lære mer om avanserte funksjoner og konsepter.
 
-- [Offisiell Haskell-hjemmeside](https://www.haskell.org/)
-- [Haskell Tutorial for Beginners](https://www.tutorialspoint.com/haskell/index.htm)
-- [Haskell Programming From First Principles](https://haskellbook.com/)
+Et tips for å få en god start på et nytt prosjekt er å ta i bruk eksisterende biblioteker og rammeverk. Dette kan spare tid og krefter, samtidig som man lærer hvordan man kan bruke dem i sine egne prosjekter.
+
+## Se Også
+- [Haskell Dokumentasjon](https://haskell.org/documentation)
+- [Haskell Bibliotekarkiv](https://hackage.haskell.org)
+- [Haskell Rammeverk](https://www.haskell.org/platform/#using-cabal-install)

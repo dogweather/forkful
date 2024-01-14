@@ -1,43 +1,55 @@
 ---
-title:                "Clojure: Generierung von Zufallszahlen"
+title:                "Clojure: Zufällige Zahlen generieren"
+simple_title:         "Zufällige Zahlen generieren"
 programming_language: "Clojure"
-category:             "Numbers"
+category:             "Clojure"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Warum sollte man sich überhaupt mit der Generierung von Zufallszahlen beschäftigen? Nun, in der Programmierung kann diese Fähigkeit sehr nützlich sein, z.B. für Simulationen, Spiele, kryptographische Anwendungen oder auch nur zum Testen von Funktionen.
+Das Generieren von zufälligen Zahlen ist in der Programmierung oft nützlich, zum Beispiel für die Erstellung von Tests oder Simulationen.
 
-# Wie geht das?
+## Wie geht das?
 
-Um in Clojure Zufallszahlen zu generieren, gibt es mehrere Möglichkeiten. Eine einfache Methode ist die Verwendung der `rand`-Funktion, die eine Zufallszahl zwischen 0 und 1 zurückgibt. Beispiel:
-
-```Clojure
-(rand) ; Output: 0.8477345227
-```
-
-Möchte man eine Zufallszahl innerhalb eines bestimmten Bereichs erhalten, kann man die `rand-int`-Funktion verwenden. Diese nimmt zwei Argumente entgegen, den unteren und den oberen Grenzwert. Beispiel:
+Verwenden Sie die eingebaute Funktion `rand` in Clojure, um eine zufällige Gleitkommazahl zwischen 0 und 1 zu generieren.
 
 ```Clojure
-(rand-int 1 10) ; Output: 7
+(rand) ; Output: 0.487736238491231
 ```
 
-Man kann auch eine Liste von Zufallszahlen mit der `repeatedly`-Funktion generieren, indem man ihr als Argument die Anzahl der gewünschten Werte sowie eine Funktion übergibt, die Zufallszahlen erzeugt. Beispiel:
+Sie können auch `rand-int` verwenden, um eine zufällige Ganzzahl innerhalb eines bestimmten Bereichs zu generieren.
 
 ```Clojure
-(repeatedly 5 rand) ; Output: (0.627081839 0.3325115686 0.9662961649 0.47983 0.9021066034)
+(rand-int 10) ; Output: 4
+(rand-int 1 10) ; Output: 9
 ```
 
-# Tiefer eintauchen
+Wenn Sie mehr Kontrolle über die zufällige Sequenz benötigen, können Sie mit `set!` und `seed` eine benutzerdefinierte Seed-Zahl festlegen.
 
-Die `rand`-Funktion verwendet einen Pseudo-Zufallszahlengenerator, der auf dem Mersenne-Twister-Algorithmus basiert. Das bedeutet, dass die generierten Zahlen nicht wirklich zufällig sind, sondern auf einer vorhersehbaren Berechnung basieren. Wenn man absolute Zufälligkeit benötigt, sollte man daher einen externen Zufallszahlengenerator verwenden.
+```Clojure
+(set! *random-seed* 12345)
+(rand) ; Output: 0.0735208995776269
+(rand-int 10) ; Output: 5
+```
 
-Es ist auch möglich, den Zufallszahlengenerator zu initialisieren, um immer die gleiche Sequenz von Zahlen zu erhalten. Dafür kann man die `seed`-Funktion verwenden und ihr einen beliebigen Wert übergeben.
+## Tief eintauchen
 
-# Siehe auch
+Hinter den Kulissen verwendet Clojure die `java.util.Random` Klasse, um zufällige Zahlen zu generieren. Dadurch können Sie auch Methoden dieser Klasse verwenden, z.B. `nextInt` oder `nextDouble`.
 
-- Clojure Dokumentation zu Zufallszahlen: https://clojuredocs.org/clojure.core/rand
-- Island of Clojure Artikel über Zufallszahlen: http://www.islandofclojure.com/clojure-random-numbers/
+```Clojure
+(-> (java.util.Random.)
+    (.nextInt 100)) ; Output: 42 
+```
+
+Wenn Sie wirklich tiefer in die Welt der Pseudozufallszahlengeneratoren eintauchen möchten, empfehle ich Ihnen, sich mit der mathematischen Theorie hinter ihnen zu beschäftigen. Clojure bietet auch das `core.memoize` Paket, das Funktionen speichert und dazu verwendet, bereits berechnete zufällige Zahlen erneut zu verwenden.
+
+## Siehe auch
+
+- [Dokumentation zu `rand` und `rand-int`](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand)
+- [Clojure Seeds - Eine ausführliche Erklärung](https://clojuredocs.org/clojure.core/seed)
+- [Details zur `java.util.Random` Klasse](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [`core.memoize` Dokumentation](https://clojure.github.io/core.memoize/)

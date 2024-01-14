@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Wyświetlanie danych debugowania"
+title:                "Gleam: Wyświetlanie wyników debugowania"
+simple_title:         "Wyświetlanie wyników debugowania"
 programming_language: "Gleam"
-category:             "Testing and Debugging"
+category:             "Gleam"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/printing-debug-output.md"
 ---
 
@@ -9,44 +11,82 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dlaczego ktoś miałby chcieć wyświetlać debugowanie wyjścia? Istnieją wiele powodów, dla których wyświetlanie danych debugowania może być przydatne podczas pisania kodu w języku programowania Gleam. Na przykład, może pomóc zidentyfikować błędy lub dowiedzieć się więcej o działaniu programu.
+Wiele razy przy pisaniu kodu w języku Gleam napotkasz sytuacje, w których nie jesteś pewien, co właściwie dzieje się w Twoim programie. Często wyświetlanie informacji i wyników podczas debugowania może bardzo pomóc w zrozumieniu działania kodu. W tym krótkim artykule dowiesz się, dlaczego jest to przydatne i jak to zrobić.
 
 ## Jak to zrobić
 
-Aby wyświetlić debugowanie wyjścia w języku Gleam, użyj funkcji `debug!`. Przykładowy kod wyglądałby tak:
+Gleam posiada prostą i skuteczną metodę na wyświetlanie debug outputu. Wystarczy użyć funkcji `debug!()` aby wyświetlić żądaną informację. Poniżej znajduje się przykładowy kod, który demonstruje to w praktyce:
 
 ```Gleam
-import gleam/debug
-
-let number = 42
-debug!(number) // wyświetli 42 w konsoli
-
-let name = "John"
-debug!(name) // wyświetli "John" w konsoli
+pub fn main() {
+  let num = 5
+  debug!(num)
+}
 ```
 
-Korzystanie z tej funkcji jest proste i pomocne przy sprawdzaniu wartości zmiennych podczas pracy nad kodem.
+Rezultatem tego kodu będzie wyświetlenie wartości zmiennej `num` w konsoli:
 
-## Dogłębna analiza
+```
+5
+```
 
-Funkcja `debug!` może również przyjmować więcej niż jedną wartość do wyświetlenia. Na przykład:
+Możesz również wyświetlać dowolne wyrażenia lub wartości zmiennych:
 
 ```Gleam
-import gleam/debug
-
-let age = 24
-let name = "Jane"
-debug!(name, age) // wyświetli "Jane" i 24 w konsoli
+pub fn main() {
+  let name = "John"
+  let age = 25
+  debug!("Imię: " ++ name ++ ", Wiek: " ++ age)
+  debug!(age + 5)
+}
 ```
 
-Warto również pamiętać, że funkcja ta nie jest dostępna w kodzie produkcyjnym i należy ją usunąć przed udostępnieniem programu na serwerze lub publicznie.
+Na konsoli pojawią się następujące wyjścia:
+
+```
+Imię: John, Wiek: 25
+30
+```
+
+## Deep Dive
+
+Istnieje również możliwość wyświetlania danych typu `Record` i `Tuple`. Są one wyświetlane w formacie `Tuple` i posiadają swoją własną unikalną składnię. W przykładzie poniżej `Person` jest rekordem posiadającym pola `name` i `age`:
+
+```Gleam
+pub fn main() {
+  let person = {
+    name: "Adam",
+    age: 30
+  }
+  debug!(person)
+}
+```
+
+Wyjściem na konsoli będzie:
+
+```
+{"Adam", 30}
+```
+
+Jeśli chcesz wyświetlić konkretny element w krotce lub rekordzie, możesz użyć `.N` za pomocą którego określisz, który element chcesz wyświetlić (N jest od 0 do końca). Poniżej przykład:
+
+```Gleam
+pub fn main() {
+  let person = {
+    name: "Adam",
+    age: 30
+  }
+  debug!(person.0)
+}
+```
+
+Konsola wyświetli:
+
+```
+{"Adam"}
+```
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o języku programowania Gleam i jego możliwościach, zajrzyj na poniższe linki:
-
 - Oficjalna dokumentacja Gleam: https://gleam.run/
-- Repozytorium Gleam na GitHubie: https://github.com/gleam-lang/gleam
-- Społeczność Gleam na Discordzie: https://discord.gg/gleam
-
-Mamy nadzieję, że ten artykuł był pomocny i pomoże Ci w dalszej nauce Gleam!
+- Wprowadzenie do Gleam: https://gleam.run/book/introduction.html

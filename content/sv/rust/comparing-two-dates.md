@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Jämföring av två datum"
+title:                "Rust: Jämföra två datum"
+simple_title:         "Jämföra två datum"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/comparing-two-dates.md"
 ---
 
@@ -9,38 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I vardagen sätter vi ofta in och jämför olika datum, från att planera möten till att lägga in deadlines i vår kalender. Men ibland kan det vara en utmaning att jämföra datum i våra program, speciellt om vi använder olika format eller om vi behöver hantera olika tidszoner. Det är här som Rust kommer in i bilden och erbjuder en robust lösning för att jämföra datum på ett enkelt och effektivt sätt.
+Om du någonsin har behövt jämföra två datum i ditt program eller applikation, är detta blogginlägg för dig! Att kunna jämföra datum effektivt är en viktig del av programmering och i denna artikel kommer vi att titta på hur man gör det på ett enkelt och effektivt sätt med hjälp av Rust.
 
-## Så här gör du
+## Hur man gör
 
-För att jämföra två datum i Rust kan du använda "Ord" traiten, som finns tillgänglig för alla standarddatumstyper. Detta gör det möjligt att jämföra två datum med hjälp av jämförelseoperatorer som "<" eller "==". Låt oss ta en titt på ett exempel:
+Att jämföra två datum i Rust är ganska enkelt med hjälp av biblioteket "chrono". Först måste vi importera biblioteket i vår kod:
 
 ```Rust
-use std::cmp::Ordering;
-use std::time::SystemTime;
-
-fn main() {
-    let date1 = SystemTime::now();
-    let date2 = date1 + Duration::from_secs(3600); // date2 kommer att vara ett datum som ligger en timme efter date1
-    
-    match date1.cmp(&date2) {
-        Ordering::Less => println!("date1 är tidigare än date2"),
-        Ordering::Greater => println!("date1 är senare än date2"),
-        Ordering::Equal => println!("date1 är samma som date2"),
-    }
-}
+extern crate chrono;
+use chrono::{Datelike, NaiveDate};
 ```
 
-I detta exempel skapar vi två datum genom att använda SystemTime-typen. Vi använder sedan "cmp" funktionen tillsammans med "Ord" traiten för att jämföra de två datumen och utskriva resultatet baserat på ordningen.
+Sedan kan vi skapa två datum som vi vill jämföra:
+
+```Rust
+let date1 = NaiveDate::from_ymd(2021, 1, 1);
+let date2 = NaiveDate::from_ymd(2020, 12, 31);
+```
+
+Nu kan vi använda funktionen "cmp" för att jämföra de två datumen och få tillbaka resultatet som en "std::cmp::Ordering" enum:
+
+```Rust
+let result = date1.cmp(&date2);
+println!("Resultat: {:?}", result);
+```
+
+Om de två datumen är lika kommer resultatet att vara "Equal". Om det första datumet är tidigare än det andra kommer resultatet att vara "Less" och om det första datumet är senare kommer resultatet att vara "Greater".
 
 ## Djupdykning
 
-När vi jämför två datum är det viktigt att förstå att jämförelsen görs baserat på vanlig tid eller "UTC" (Coordinated Universal Time). Om du behöver jämföra datum med olika tidszoner kan du använda "OffsetDateTime" typen från "chrono" biblioteket för att inkludera tidszoninformation i dina datum.
+Vad händer egentligen bakom kulisserna när vi jämför två datum i Rust? Chrono-biblioteket konverterar datumen till en "NaiveDateTime" som består av antal sekunder sedan 1970-01-01 00:00:00 UTC. Sedan utförs jämförelsen baserad på detta antal sekunder.
 
-Utöver detta kan du också använda olika funktioner för att manipulera datum, som "add" för att lägga till en viss tidsperiod till ett datum eller "subtract" för att dra ifrån en tidsperiod från ett datum.
+Det är också viktigt att notera att "cmp" för närvarande inte stödjer att jämföra två datum med olika tidszoner. Detta kan dock lösas genom att först konvertera datumen till samma tidszon.
 
 ## Se även
 
-* [Rust dokumentation för Ord traiten](https://doc.rust-lang.org/std/cmp/trait.Ord.html)
-* [Chrono biblioteket för hantering av datum i Rust](https://docs.rs/chrono/0.4.19/chrono/)
-* [Jämförelse av datum på ett effektivt sätt med Rust](https://www.lpalmieri.com/posts/2021-01-23-rust-datetime-comparison/)
+- Chrono Documentation: https://docs.rs/chrono/0.4.19/chrono/
+- Rust Standard Library Documentation: https://doc.rust-lang.org/std/

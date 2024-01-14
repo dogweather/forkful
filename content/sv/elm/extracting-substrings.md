@@ -1,44 +1,36 @@
 ---
-title:                "Elm: Utvinning av delsträngar"
+title:                "Elm: Extrahera substrängar"
+simple_title:         "Extrahera substrängar"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att utvinna substrängar är en vanlig uppgift inom programmering, och det kan vara användbart i många olika situationer. En vanlig anledning är att man vill manipulera en endast del av en sträng, istället för hela strängen. Det kan också användas för att söka efter specifika ord eller uttryck inom en sträng.
+I denna bloggpost kommer vi att diskutera hur man extraherar substrängar i Elm. Substrängar är delar av en större sträng som kan vara användbara i olika situationer, till exempel när man vill manipulera text eller söka efter specifika ord eller fraser. Genom att använda sig av substrängar kan du skriva effektivare och mer dynamisk kod.
 
-## Hur man gör
-Ett enkelt sätt att extrahera substrängar i Elm är att använda funktionen 'String.slice'. Denna funktion tar emot en startposition och en slutposition, och returnerar den del av strängen som är mellan dessa positioner. Till exempel:
-
-```Elm
-String.slice 2 5 "Hej alla Elm utvecklare" 
-```
-
-Detta skulle returnera substrängen "j al". 
-
-För att extrahera en del av en sträng baserat på ett specifikt ord eller uttryck kan man istället använda funktionen 'String.dropLeft' eller 'String.dropRight'. Dessa funktioner tar emot en sträng och en annan sträng som sökord, och returnerar den del av strängen som kommer efter eller före sökordet. Till exempel:
+## Så här gör man
+För att extrahera substrängar i Elm kan du använda funktionen `String.slice start end string`. Den här funktionen tar tre argument: `start` som är indexet där du vill börja extrahera, `end` som är indexet där du vill sluta extrahera och `string` som är den ursprungliga strängen. Ett exempel på hur man kan använda denna funktion är:
 
 ```Elm
-String.dropLeft "Hej alla Elm utvecklare" "all"
+String.slice 5 10 "Hello World"
 ```
 
-Detta skulle returnera substrängen "a Elm utvecklare".
+Output: `" World"`
+
+I det här fallet skulle substrängen `" World"` extraheras från den större strängen `"Hello World"`.
 
 ## Djupdykning
-När man använder funktionen 'String.slice', är det viktigt att komma ihåg att start- och slutpositioner är indexbaserade. Detta betyder att den första positionen i en sträng är index 0, och den sista positionen är index (längden på strängen - 1). Om man anger en start- eller slutposition som är utanför dessa gränser, kommer funktionen att returnera en tom sträng.
+När du extraherar substrängar i Elm är det viktigt att tänka på indexeringen. Det första tecknet i en sträng har index 0, vilket innebär att det andra tecknet har index 1, och så vidare. Om du vill extrahera de första fem tecknen i en sträng skulle `start` vara 0 och `end` skulle vara 5.
 
-Man kan också använda funktionerna 'String.take' och 'String.drop' för att extrahera en del av en sträng baserat på en bestämd längd istället för en position. Dessa funktioner tar emot en startposition och sedan ett antal tecken som ska tas eller tas bort. Till exempel:
+En annan viktig sak att notera är att `end` är exklusivt, vilket innebär att det kommer att inkludera tecknet på indexet `end-1`. Till exempel, om `end` är 8, kommer det åttonde tecknet att ingå i substrängen. Det är därför som i vårt exempel tidigare extraherade vi tecknen på index 5 till 9, men eftersom 9 är exklusivt inkluderar det tecknet på index 8, vilket ger oss en total på 5 tecken.
 
-```Elm
-String.take 3 "Hej alla" 
-```
-
-Detta skulle returnera substrängen "Hej".
+Det finns också andra funktioner som kan hjälpa dig att manipulera substrängar, till exempel `String.take` och `String.drop`, som tar ett argument för antalet tecknen som du vill ta eller släppa från början av en sträng. Det finns också andra funktioner som hjälper till med sökning och ersättning av text.
 
 ## Se även
-- [Officiell dokumentation för stränghantering i Elm](https://package.elm-lang.org/packages/elm/core/latest)
-- [En guide för att arbeta med strängar i Elm](https://medium.com/@TylersGit/introduction-to-strings-in-elm-120f27df8f9c)
-- [En samling av olika kodexempel för att arbeta med strängar i Elm](https://www.programming-idioms.org/idiom/67/substring/439/elm)
+- Officiell dokumentation för Elm's `String` modul: https://package.elm-lang.org/packages/elm/core/latest/String
+- En guide för att arbeta med strängar i Elm: https://guide.elm-lang.org/strings/
+- En interaktiv lektion om strängmanipulering i Elm: https://elmprogramming.com/string-manipulation-in-elm.html

@@ -1,82 +1,72 @@
 ---
 title:                "Swift: Imprimindo saída de depuração"
+simple_title:         "Imprimindo saída de depuração"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+Convertendo uma Visão Geral sobre Saída de Debug em Swift
 
-A programação pode ser uma tarefa desafiadora e, às vezes, pode ser difícil identificar onde um erro está ocorrendo. É aí que o recurso de impressão de saída de depuração se torna extremamente útil. Com ele, podemos visualizar informações importantes durante a execução do código, facilitando a identificação de possíveis problemas.
+## Por que?
 
-## Como Fazer
+Se você é um desenvolvedor Swift experiente ou está começando a aprender a linguagem, provavelmente já ouviu falar sobre a importância de imprimir saída de debug em seu código. Mas por que isso é necessário?
 
-Para imprimir saída de depuração em Swift, usamos a função `print()`. Essa função pode receber como parâmetro diferentes tipos de dados, como strings, números, booleanos e até mesmo objetos. Veja um exemplo abaixo:
+Imprimir saída de debug é uma técnica essencial para entender como seu código está sendo executado. Isso permite que você veja os valores das variáveis ​​e os resultados das operações em tempo real, facilitando a detecção de erros e a solução de problemas em seu código. Além disso, a saída de debug pode ser útil para entender o fluxo de execução do seu código, especialmente em projetos complexos.
 
-```Swift
-let nome = "João"
-let idade = 28
-let altura = 1.75
-print("O nome do usuário é \(nome), sua idade é \(idade) e sua altura é \(altura)m.")
-```
+## Como Fazer?
 
-A saída dessa função seria: `O nome do usuário é João, sua idade é 28 e sua altura é 1.75m.`
-
-Além disso, também podemos utilizar a função `debugPrint()` para imprimir informações extras, como a representação literal de objetos. Por exemplo:
+Em Swift, a impressão de saída de debug é feita com o uso da função `print()`, que aceita um ou mais argumentos e os exibe no console de depuração. Aqui está um exemplo simples:
 
 ```Swift
-class Carro {
-   var marca: String
-   var modelo: String
-   init(marca: String, modelo: String) {
-       self.marca = marca
-       self.modelo = modelo
-   }
-}
+var nome = "João"
+var idade = 30
 
-let carro1 = Carro(marca: "Fiat", modelo: "Uno")
-debugPrint(carro1)
+print(nome, idade)
+
+Output: João 30
 ```
 
-A saída dessa função seria: `Carro(marca: "Fiat", modelo: "Uno")`, mostrando a representação literal do objeto `carro1`.
+Note que os valores das variáveis ​​são impressos no console na mesma ordem em que foram passados ​​para a função `print()`.
 
-## Mais Profundo
-
-Além das funções `print()` e `debugPrint()`, também podemos utilizar a função `dump()` para imprimir a quantidade exata de informações de um objeto. Essa função é útil quando precisamos analisar um objeto mais complexo e obter uma visão detalhada de seus valores e propriedades. Por exemplo:
+Você também pode utilizar a interpolação de strings para imprimir o valor de uma variável dentro de uma string. Por exemplo:
 
 ```Swift
-struct Pessoa {
-   var nome: String
-   var idade: Int
-   var endereço: Endereço
-}
-struct Endereço {
-   var rua: String
-   var número: Int
-   var cidade: String
-}
+var nome = "Maria"
+var idade = 25
 
-let pessoa1 = Pessoa(nome: "Maria", idade: 35, endereço: Endereço(rua: "Rua A", número: 123, cidade: "São Paulo"))
-dump(pessoa1)
+print("Olá, meu nome é \(nome) e eu tenho \(idade) anos.")
+
+Output: Olá, meu nome é Maria e eu tenho 25 anos.
 ```
 
-A saída dessa função seria:
+Além disso, a função `print()` também aceita argumentos opcionais, como `separator` e `terminator`, que podem ser úteis para formatar a saída de debug. Por exemplo:
 
-```
-▿ Pessoa
-   - nome: "Maria"
-   - idade: 35
-   ▿ endereço: Endereço
-      - rua: "Rua A"
-      - número: 123
-      - cidade: "São Paulo"
+```Swift
+var nome = "Pedro"
+var idade = 35
+
+print(nome, idade, separator: " - ", terminator: "!")
+// O separador será aplicado entre os argumentos e o terminador será exibido no final da saída.
+
+Output: Pedro - 35!
 ```
 
-Essa função nos dá uma visão mais profunda dos valores e propriedades do objeto `pessoa1`, facilitando a análise de informações complexas.
+## Mergulho Profundo
+
+Agora que você sabe como imprimir saída de debug em Swift, vale a pena lembrar que essa técnica pode ser aplicada não apenas em variáveis, mas também em expressões e resultados de chamadas de função. Além disso, você pode utilizar a função `dump()` para imprimir informações detalhadas sobre um objeto específico.
+
+Também é importante lembrar que a saída de debug é útil durante o processo de desenvolvimento, mas não deve ser deixada em seu código final. Certifique-se de removê-la antes de fazer o build de sua aplicação.
 
 ## Veja Também
 
-- [Documentação oficial do `print()` em Swift](https://developer.apple.com/documentation/swift/string/3127549-print)
-- [Documentação oficial do `dump()` em Swift](https://developer.apple.com/documentation/swift/swift_standard_library/debugging_and_logging/dump)
+Para mais informações sobre saída de debug em Swift, confira os links abaixo:
+
+[Documentação oficial do Swift: Depuração e Saída de Debug](https://docs.swift.org/swift-book/LanguageGuide/Debugging.html)
+
+[Vídeo Tutorial: Depuração de Código Swift](https://www.youtube.com/watch?v=5Lbi-mqqcd8)
+
+[Tutorial: Depuração de Erros em Swift com Xcode](https://agostini.tech/2018/11/12/depuracao-erros-swift-xcode/)

@@ -1,75 +1,60 @@
 ---
 title:                "Gleam recipe: Reading a text file"
+simple_title:         "Reading a text file"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Do you ever find yourself needing to read data from a text file in your programming projects? Maybe you're working with large datasets or parsing configuration files. Whatever the reason may be, understanding how to read a text file in Gleam can greatly benefit your code. In this blog post, we will explore how to do just that.
+When working with data in programming, it is often necessary to read information from a text file. This can be useful for importing data, manipulating it, and then exporting it back into a file. In this blog post, we will explore how to use Gleam to efficiently read a text file and extract the information we need.
 
 ## How To
+To read a text file in Gleam, we first need to import the standard library's `file` module. We can then use the `read_file` function to read the contents of a file into a string.
 
-To read a text file in Gleam, we will be using the `File` module from the standard library. First, we need to import the module and define the path to our text file.
+```Gleam
+import file
 
-```
-import File
-
-let filepath = "./data.txt"
-```
-
-Next, we can use the `File.open` function to open the file and return a `File.FileDescriptor` value. This value represents the open file and allows us to read its contents.
-
-```
-let file_descriptor = File.open(filepath)
+let contents = file.read_file("my_file.txt")
 ```
 
-Now that we have our file open, we can read its contents using the `File.read` function. This function takes in the file descriptor and the number of bytes to read as arguments.
+We can also specify the encoding of the file using the optional `encoding` argument. By default, `read_file` uses UTF-8 encoding.
 
-```
-let num_bytes = 1024
-let file_contents = File.read(file_descriptor, num_bytes)
-```
+Once we have the contents of the file, we can use Gleam's `strings` module to split the string into lines. This will give us a list containing each line of the file as a separate string.
 
-Finally, we can close the file using the `File.close` function to free up any resources it may have been using.
+```Gleam
+import file
+import strings
 
-```
-File.close(file_descriptor)
-```
-
-Let's put it all together and see the output of our code.
-
-```
-import File
-
-let filepath = "./data.txt"
-let file_descriptor = File.open(filepath)
-let num_bytes = 1024
-let file_contents = File.read(file_descriptor, num_bytes)
-File.close(file_descriptor)
+let contents = file.read_file("my_file.txt")
+let lines = strings.lines(contents)
 ```
 
-Output:
+We can then loop through the lines and perform any necessary manipulation or extraction of data.
 
-```
-<<70,105,114,115,116,32,76,105,110...>>
+```Gleam
+for line in lines {
+  // Do something with the line
+}
 ```
 
-The output may look a bit strange, but it is simply a binary representation of the first 1024 bytes of our text file. We can convert it to a string using the `String.from_bytes` function to get a more readable output.
+To output the results, we can use the `io` module's `println` function.
+
+```Gleam
+import io
+
+io.println("Line: " ++ line)
+```
 
 ## Deep Dive
+When reading a text file, it's important to understand the potential issues that may arise. One common issue is handling different line endings, such as `\n` (Unix) or `\r\n` (Windows). Gleam's `file` and `strings` modules handle this automatically, allowing you to work with the lines regardless of the line ending used in the file.
 
-Reading a text file using the `File` module may seem simple, but there are a few things to keep in mind. First, when using the `File.read` function, it is important to specify the number of bytes to read. If you do not specify a value, it will try to read the entire contents of the file, which may lead to memory issues for large files.
-
-Secondly, the `File.FileDescriptor` value returned by the `File.open` function can also be used to write to a file using the `File.write` function. This can be helpful when working with configuration files or writing data to a new file.
-
-Additionally, the `File` module offers functions for working with files in different encodings, such as UTF-8 and UTF-16. Make sure to use the appropriate encoding when working with files to avoid unexpected characters or errors.
+Another consideration is memory usage, especially when working with large files. Gleam's `file` module uses lazy evaluation, which means lines are only read from the file as needed. This can help prevent memory overflow when dealing with large files.
 
 ## See Also
-
-- [Gleam File Module Documentation](https://gleam.run/modules/standard_library/file/)
-- [Gleam String Module Documentation](https://gleam.run/modules/standard_library/string/)
-- [Gleam Binary Module Documentation](https://gleam.run/modules/standard_library/binary/)
+- Gleam documentation for [`file`](https://gleam.run/documentation/standard-library/file)
+- Gleam documentation for [`strings`](https://gleam.run/documentation/standard-library/strings)
+- Gleam documentation for [`io`](https://gleam.run/documentation/standard-library/io)

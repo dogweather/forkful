@@ -1,53 +1,61 @@
 ---
 title:                "Rust: Å lese en tekstfil"
+simple_title:         "Å lese en tekstfil"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+#Hvorfor
 
-Hvis du er en programmerer eller bare nysgjerrig på Rust-programmeringsspråket, kan du lure på hvorfor du skal lese en tekstfil. Å lese en tekstfil er en vanlig oppgave i både personlige og profesjonelle programmer. Ved å lære hvordan du leser en tekstfil i Rust, kan du utvide dine programmeringsferdigheter og også lære om hvordan Rust håndterer data.
+Å lese fra en tekstfil er en vanlig oppgave for mange programmer, spesielt når man jobber med data. I denne bloggposten skal vi utforske hvordan vi kan lese en tekstfil ved hjelp av programmeringsspråket Rust.
 
-## Hvordan lese en tekstfil i Rust
+#Slik gjør du det
 
-For å lese en tekstfil i Rust, må du først opprette en ny fil og lagre den med en `.rs` filtype. Deretter kan du bruke `std::fs::File` biblioteket for å åpne filen og lagre den i en variabel:
+Først må vi importere biblioteket "std::fs" for å få tilgang til filsystemfunksjoner. Deretter kan vi bruke funksjonen "std::fs::File::open()" for å åpne en tekstfil. Hvis filen ikke finnes, vil dette føre til en feil som vi må håndtere.
 
 ```Rust
-let fil = std::fs::File::open("path/to/file.txt").expect("Kunne ikke åpne filen!");
+use std::fs;
+
+let file = match fs::File::open("min_tekstfil.txt") {
+    Ok(f) => f,
+    Err(e) => panic!("Kunne ikke åpne filen: {}", e),
+};
 ```
 
-En gang åpnet, kan du bruke `std::io::BufReader` for å lese filen linje for linje:
+Nå kan vi lese innholdet i filen ved å bruke funksjonen "std::io::Read::read_to_string()" og lagre det i en variabel. Denne funksjonen tar inn en referanse til filen vår og en mutabel streng som vi kan lagre innholdet i.
 
 ```Rust
-let fil = std::fs::File::open("path/to/file.txt").expect("Kunne ikke åpne filen!");
-let leser = std::io::BufReader::new(fil);
-```
+use std::io::Read;
 
-Nå kan du bruke en `for`-løkke for å iterere over hver linje og skrive den ut til konsollen:
-
-```Rust
-for linje in leser.lines() {
-    println!("{}", linje.unwrap());
+let mut tekst = String::new();
+match file.read_to_string(&mut tekst) {
+    Ok(_) => (),
+    Err(e) => panic!("Kunne ikke lese filen: {}", e),
 }
 ```
 
-Dette vil skrive ut hver linje i filen til konsollen. Du kan også bruke ulike biblioteker for å behandle tekstfilen på forskjellige måter, for eksempel å finne bestemte ord eller analyse av data.
+Til slutt kan vi skrive ut innholdet i filen ved å bruke "println!" -makroen.
 
-## Dykk dypere
+```Rust
+println!("Innholdet i tekstfilen er:\n{}", tekst);
+```
 
-Å lese en tekstfil kan virke som en enkel oppgave, men det er faktisk mye som skjer under overflaten. For eksempel, hva skjer hvis filen ikke finnes eller hvis det oppstår en feil under lesingen? I Rust, er det viktig å håndtere disse potensielle feilene ved å bruke `Result`-typen og de innebygde `match`-uttrykkene.
+Dette vil gi følgende utskrift:
 
-Det er også verdt å merke seg at Rust bruker UTF-8 som standard for tekstfiler, så hvis du har en tekstfil med et annet tegnsett, må du bruke spesielle funksjoner for å håndtere dette.
+```
+Innholdet i tekstfilen er:
+Hei! Dette er en testfil.
+```
 
-## Se også
+#Dykk dypere
 
-Har du lyst til å utvide kunnskapen din om Rust-programmering? Sjekk ut disse ressursene:
+På samme måte som å lese fra en fil, kan vi også skrive til en fil ved hjelp av funksjonen "std::fs::File::create()". Vi kan også bruke strukturen "std::path::Path" for å håndtere filstier på en mer robust måte.
 
-- Offisiell Rust dokumentasjon: https://www.rust-lang.org/no/learn
-- Rust tutorials og kurs: https://www.rust-lang.org/no/learn
-- Rust fellesskap: https://www.rust-lang.org/no/community
+#Se også
 
-Lykke til med din Rust-programmeringsreise! Husk at å lese en tekstfil bare er en liten del av alt som Rust har å tilby.
+- Rust dokumentasjon for filbehandling: https://doc.rust-lang.org/std/fs/
+- En tutorial om hvordan å lese og skrive filer i Rust: https://www.tutorialspoint.com/rust/rust_file_io.htm

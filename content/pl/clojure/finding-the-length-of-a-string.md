@@ -1,38 +1,35 @@
 ---
 title:                "Clojure: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Zdarza się, że w trakcie programowania musimy znaleźć długość tekstu, który został przekazany do naszej funkcji. Może to być potrzebne do obliczeń lub do wyświetlenia informacji użytkownikowi. W tym artykule dowiesz się, jak w języku Clojure obliczyć długość tekstu.
+Dlaczego chcielibyśmy dowiedzieć się długości ciągu znaków? Jest to przydatne w wielu przypadkach, na przykład w walidacji danych wejściowych lub w implementacji algorytmów szukania wzorca.
 
 ## Jak to zrobić?
 
+Możemy użyć wbudowanej funkcji "count", która zwraca liczbę elementów w sekwencji lub kolekcji. W przypadku ciągu znaków, jest to po prostu jego długość.
 
 ```Clojure
-(def tekst "Cześć!")
-(count tekst) ; zwróci długość tekstu, w tym przypadku 6
-
-(def imię "Anna")
-(count imię) ; zwróci długość tekstu, czyli 4
-
-;; Możemy także przekazać długi tekst bezpośrednio do funkcji count
-(count "To jest długi tekst.") ; zwróci 21
+(count "Hello world") ; Output: 11
+(count "こんにちは") ; Output: 5
 ```
 
-Aby obliczyć długość tekstu, używamy wbudowanej funkcji `count`, która zwraca liczbę znaków w danym tekście. Możemy przekazać do niej zarówno zmienną ze zdefiniowanym tekstem, jak i wprowadzić tekst bezpośrednio w funkcji.
+## Głębszy zanurzenie
 
-## Deep Dive
+Warto zauważyć, że funkcja "count" nie tylko działa na ciągach znaków, ale również na innych kolekcjach, takich jak listy, wektory czy mapy.
 
-Funkcja `count` zwraca liczbę znaków w danym tekście. W przypadku, gdy dany tekst jest pusty, funkcja zwróci 0. Możemy także użyć tej funkcji do obliczenia długości kolekcji, takiej jak lista czy wektor. Wtedy zwróci ona liczbę elementów w danej kolekcji.
+Ponadto, większość funkcji w Clojure jest "leniwa", co oznacza, że nie wykonują swojej operacji, dopóki nie są wymagane. W przypadku funkcji "count", może to oznaczać wywołanie jej na ogromnej sekwencji lub kolekcji, bez konieczności obliczania wszystkich jej elementów.
 
 ## Zobacz także
 
-- Dokumentacja funkcji `count`: https://clojuredocs.org/clojure.core/count
-- Inne przydatne funkcje do pracy z tekstem w Clojure: https://www.luminusweb.net/docs/strings.md
-- Szybki przewodnik po języku Clojure: https://clojure.org/guides/getting_started
+- https://clojuredocs.org/clojure.core/count
+- https://clojure.org/about/sequences
+- https://clojure.org/guides/learn/functions

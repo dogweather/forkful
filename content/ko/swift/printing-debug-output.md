@@ -1,7 +1,9 @@
 ---
-title:                "Swift: 디버그 출력 출력하기"
+title:                "Swift: 디버그 출력 출력"
+simple_title:         "디버그 출력 출력"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/printing-debug-output.md"
 ---
 
@@ -9,52 +11,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-디버그 출력을 활용하는 이유는 무엇일까? 살펴보면 디버그 출력은 프로그래머가 코드를 디버깅하는 동안 유용한 정보를 제공해줍니다. 이를 통해 코드의 흐름을 따라가고 값을 추적하며 버그를 찾을 수 있습니다. 따라서 디버그 출력은 중요한 프로그래밍 도구입니다.
+디버그 출력문을 사용하는 이유는 프로그래밍 중에 코드의 실행 상태를 확인하기 위해서입니다.
 
-## 하는 방법
-
-디버그 출력을 프로그래밍에 어떻게 활용할 수 있을까요? 아래의 Swift 코드 예제를 통해 살펴보겠습니다.
+## 사용 방법
 
 ```Swift
-// 디버그 출력 메시지를 출력하는 함수
-func printDebugMessage(_ message: String) {
-    print("디버그 출력:", message)
-}
-
-// 함수 호출 시 디버그 출력
-printDebugMessage("안녕하세요?")
-
-// 변수의 값 출력
-let num = 5
-printDebugMessage("변수 num의 값은 \(num)입니다.")
-
-// 조건문에서 디버그 출력
-if num % 2 == 0 {
-    printDebugMessage("변수 num은 짝수입니다.")
-} else {
-    printDebugMessage("변수 num은 홀수입니다.")
-}
+// 출력문을 위한 변수 설정
+var debugOutput = "디버그 출력문 테스트입니다."
+// print 함수를 사용하여 변수의 값을 출력
+print(debugOutput)
 ```
 
-위 코드를 실행하면 다음과 같은 출력을 볼 수 있습니다.
+출력 결과:
 
 ```
-디버그 출력: 안녕하세요?
-디버그 출력: 변수 num의 값은 5입니다.
-디버그 출력: 변수 num은 홀수입니다.
+디버그 출력문 테스트입니다.
 ```
 
-디버그 출력은 위처럼 함수 내에서 직접 작성하거나, 변수의 값을 확인하는 등 다양한 상황에서 활용할 수 있습니다. 디버그 출력 메시지를 적절하고 유용하게 활용하면 코드의 디버깅이 훨씬 수월해집니다.
+만약 여러 개의 변수의 값을 함께 출력하고 싶다면, 쉼표로 변수를 구분하여 넣어줄 수도 있습니다.
 
-## 깊이 있는 내용
+```Swift
+var name = "홍길동"
+var age = 27
+print("이름:", name, "나이:", age)
+```
 
-디버그 출력에는 여러 가지 디테일한 내용이 있지만, 가장 중요한 것은 적절한 위치에서 디버그 출력을 실행하는 것입니다. 예를 들어, 코드의 어떤 부분에서 오류가 발생하는지 확인하고 싶다면 디버그 출력을 해당 부분 전후에 작성하여 어떤 값을 받았는지 확인할 수 있습니다. 또한 여러 줄의 디버그 출력을 작성하면서 코드의 각 부분에서 어떤 일이 일어나는지를 한눈에 파악할 수 있습니다.
+출력 결과:
 
-디버그 출력을 활용할 때 주의해야 할 점은 너무 많은 출력을 만들어내지 않도록 하는 것입니다. 디버그 출력이 너무 많이 나오면 오히려 코드의 가독성이 떨어지고 디버깅이 복잡해질 수 있습니다. 따라서 필요한 정보만 적절하게 출력하는 것이 중요합니다.
+```
+이름: 홍길동 나이: 27
+```
 
-## 관련 자료
+## 딥 다이브
 
-- [Apple 공식 문서 - 디버깅 기법](https://developer.apple.com/documentation/swift/debugging_techniques)
-- [Ray Wenderlich - 디버깅 요령](https://www.raywenderlich.com/4885-debugging-tips-and-tricks)
-- [Hacking with Swift - 디버깅 메뉴얼](https://www.hackingwithswift.com/example-code/debugging/a-swift-5-debugging-cheat-sheet-for-xcode-11-4)
-- [Swift.org - 디버깅 가이드](https://swift.org/blog/debugging-in-swift/)
+디버그 출력문의 더 깊은 이해를 위해 `debugPrint()` 함수를 사용해보겠습니다. 이 함수는 보다 자세한 정보를 제공해주는데, 변수의 데이터 타입과 값을 함께 출력해줍니다.
+
+```Swift
+let number = 10
+debugPrint(number)
+```
+
+출력 결과:
+
+```
+10
+```
+
+또한 `debugPrint()` 함수는 인자로 `separator`와 `terminator`를 설정할 수 있습니다. `separator`는 각 변수의 값 사이에 들어갈 문자를 정의하는데, 기본값은 공백입니다. `terminator`는 출력 후 마지막에 추가될 문자를 정의하는데, 기본값은 개행 `\n`입니다.
+
+```Swift
+let firstName = "John"
+let lastName = "Smith"
+debugPrint(firstName, lastName, separator: "-", terminator: "!")
+```
+
+출력 결과:
+
+```
+John-Smith!
+```
+
+## 참고
+
+- [Swift Programming Language - Debugging](https://docs.swift.org/swift-book/LanguageGuide/Debugging.html)
+- [NSHipster - Printing Debug Output in Swift](https://nshipster.com/print-debug-output/)
+
+## 더 알아보기
+
+디버그 출력문의 효율적인 사용을 위해 다음과 같은 기능들도 함께 알아보세요!
+
+- 조건부 디버그 출력문(`debugPrintif()`)
+- 디버그 출력문 레벨 설정(`#if DEBUG`)

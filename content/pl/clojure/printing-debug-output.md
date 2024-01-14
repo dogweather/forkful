@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Wyświetlanie wyników debugowania"
+title:                "Clojure: Drukowanie wyników debugowania"
+simple_title:         "Drukowanie wyników debugowania"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/printing-debug-output.md"
 ---
 
@@ -9,75 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wyświetlanie informacji debugujących jest kluczowym narzędziem dla programistów w celu zrozumienia działania ich kodu i znajdowania błędów. Jest to niezbędne dla skutecznego rozwiązywania problemów w aplikacjach i ułatwia proces debugowania.
+Nie ma nic bardziej frustrującego niż próba znalezienia błędu w swoim kodzie. Często musimy wyświetlić wartości zmiennych w różnych częściach funkcji, aby zrozumieć, co się dzieje. W takich sytuacjach bardzo przydatne jest umiejętne korzystanie z drukowania informacji debugowania.
 
 ## Jak to zrobić
 
-W Clojure istnieje kilka sposobów na wyświetlanie informacji debugujących. Jednym z najprostszych jest użycie funkcji `println`, która wypisze podane wartości do standardowego wyjścia.
+Drukowanie informacji debugowania w Clojure jest bardzo proste. Wystarczy użyć funkcji ```println``` lub ```prn```, a następnie umieścić w niej wartości zmiennych, które chcemy wyświetlić. Na przykład:
 
 ```Clojure
-(println "Hello World!")
+(def x 5)
+(def y 10)
+
+(println "Wartość x to:" x)
+(println "Wartość y to:" y)
+
+; Output:
+; Wartość x to: 5
+; Wartość y to: 10
 ```
 
-Output:
-```
-Hello World!
-```
-
-Można również użyć funkcji `prn`, która wypisze podane wartości w formie drukowalnej. Jest to pomocne w przypadku wyświetlania złożonych struktur danych.
-
-```Clojure
-(prn {:name "John" :age 30})
-```
-
-Output:
-```
-{:name "John", :age 30}
-```
-
-Jeśli potrzebujemy wyświetlić informacje debugujące bezpośrednio w kodzie, możemy użyć makra `println` lub `prn`.
+Możemy również użyć funkcji ```prn```, która wyświetli wartości w bardziej czytelny sposób:
 
 ```Clojure
-(defn add [x y]
-  (println "Adding" x "and" y)
-  (+ x y))
+(prn "Wartość x to:" x)
+(prn "Wartość y to:" y)
+
+; Output:
+; "Wartość x to:" 5
+; "Wartość y to:" 10
 ```
 
-Output:
-```
-Adding 2 and 3
-```
+## Głębsze zagłębienie
 
-## Głębsza analiza
+Drukowanie informacji debugowania w Clojure może być również niezwykle pomocne podczas testowania kodu. Możemy umieścić drukowanie w różnych miejscach naszego kodu, aby śledzić wartości zmiennych w różnych punktach wykonania. Możemy też umieścić warunki, które będą wyświetlać informacje tylko wtedy, gdy spełnione zostaną odpowiednie warunki.
 
-Ponieważ wyświetlanie informacji debugujących jest nieodłączną częścią procesu programowania, warto nauczyć się bardziej zaawansowanych technik w Clojure. Możemy na przykład użyć funkcji `str`, która pozwala na wyświetlenie różnych wartości w formie jednego stringa.
-
-```Clojure
-(str "The answer is" 42)
-```
-
-Output:
-```
-"The answer is 42"
-```
-
-Możemy również wypisać wartości w formacie CSV za pomocą funkcji `clojure.string/join`.
+Na przykład, możemy wyświetlić wartości tylko wtedy, gdy jesteśmy w środowisku deweloperskim, a nie w produkcji:
 
 ```Clojure
-(require '[clojure.string :as str])
-(def data [1 2 3])
-(str/join "," data)
+(def environment "developers")
+
+(if (= environment "developers")
+  (println "Wartość x to:" x)
+  (println "Jesteś w środowisku produkcji, więc nie możesz drukować wartości."))
 ```
 
-Output:
-```
-"1,2,3"
-```
+Możemy również wyświetlić informację tylko wtedy, gdy wartość zmiennej przekracza pewną wartość:
+
+```Clojure
+(def x 20)
+
+(if (> x 10)
+  (prn "Wartość x przekroczyła 10!")
+  (println "Wartość x jest mniejsza niż 10."))
+``` 
 
 ## Zobacz także
 
-- [Dokumentacja Clojure](https://clojuredocs.org/)
-
-- [10 sposobów na debuggerowanie w Clojure](https://lispcast.com/debugging-clojure/)
-
-- [Jak pisać czytelny kod w Clojure](https://purelyfunctional.tv/guide/clojure-style-guide/)
+- [Oficjalna dokumentacja Clojure](https://clojure.org/)
+- [Blog Clojure](https://blog.clojure.org/)
+- [Repozytorium Clojure na GitHubie](https://github.com/clojure)

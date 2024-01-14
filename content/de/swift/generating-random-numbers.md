@@ -1,49 +1,51 @@
 ---
 title:                "Swift: Zufallszahlen erzeugen"
+simple_title:         "Zufallszahlen erzeugen"
 programming_language: "Swift"
-category:             "Numbers"
+category:             "Swift"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-#
-Warum: Warum Sie sich mit der Generierung von Zufallszahlen beschäftigen sollten
+# Warum
 
-Das Generieren von Zufallszahlen kann in der Programmierung eine wichtige Rolle spielen, zum Beispiel bei der Gestaltung von Spielen oder bei der Erstellung von Testdaten. Es kann auch hilfreich sein, um bestimmte Algorithmen wie den Monte-Carlo-Algorithmus zu implementieren. In diesem Blogbeitrag werden wir uns ansehen, wie man mit Swift randomisierte Zahlen erstellt.
+In der Welt der Programmierung gibt es immer wieder Aufgaben, die zufällige Zahlen erfordern, sei es für die Simulation von Spielen oder für die Erzeugung von Passwörtern. In diesem Blogbeitrag werden wir uns daher damit beschäftigen, wie man in Swift Zufallszahlen generieren kann.
 
-## Wie man in Swift Zufallszahlen generiert
+# Wie geht man vor?
 
-Um in Swift Zufallszahlen zu generieren, gibt es mehrere Möglichkeiten. Eine einfache Möglichkeit ist die Verwendung der `arc4random_uniform()`-Funktion, die eine zufällige Ganzzahl im Bereich von 0 bis zu einem angegebenen Maximum zurückgibt. Hier ist ein Beispiel, wie man diese Funktion in Swift verwendet:
-
-```Swift
-let randomNum = arc4random_uniform(10)
-print(randomNum) // Beispiel-Ausgabe: 7
-```
-
-Eine weitere Option ist die Verwendung der `random()`-Funktion, die eine zufällige Gleitkommazahl zwischen 0 und 1 zurückgibt. Hier ist ein Beispiel, wie man diese Funktion verwendet:
+Um in Swift Zufallszahlen zu generieren, gibt es verschiedene Möglichkeiten. Eine einfache Methode ist die Verwendung der `random()` Funktion. Diese gibt eine zufällige Zahl zwischen 0 und 1 zurück. Hier ein Beispiel:
 
 ```Swift
-let randomNum = Double.random(in: 0...1)
-print(randomNum) // Beispiel-Ausgabe: 0.758979373
+let randomNumber = random()
+print(randomNumber) // Output: 0.713523
 ```
 
-Andere hilfreiche Funktionen sind `arc4random()` für die Generierung von zufälligen Ganzzahlen und `randomElement()` für die Auswahl eines zufälligen Elements aus einer Sammlung.
+Wenn man eine zufällige ganze Zahl braucht, kann man die `Int` Methode verwenden. Diese nimmt als Parameter einen Bereich an, aus dem die Zufallszahl gezogen werden kann. Im folgenden Beispiel wird eine zufällige Zahl zwischen 1 und 10 generiert:
 
-Es gibt auch Möglichkeiten, die Randomisierung in Swift noch weiter zu verfeinern, z.B. durch die Verwendung von Seeds, die die generierten Zufallszahlen beeinflussen.
+```Swift
+let randomInt = Int.random(in: 1...10)
+print(randomInt) // Output: 7
+```
 
-## Tiefere Einblicke in die Generierung von Zufallszahlen
+Wenn man eine zufällige Zahl mit Nachkommastellen braucht, kann man die `Double` Methode nutzen. Diese funktioniert ähnlich wie die `Int` Methode, nimmt jedoch einen `Double` als Parameter an. Im folgenden Beispiel wird eine zufällige Zahl zwischen 1 und 100 mit zwei Nachkommastellen generiert:
 
-Wenn Sie tiefer in die Generierung von Zufallszahlen in Swift eintauchen möchten, gibt es einige interessante Aspekte zu beachten. Zum Beispiel ist es wichtig zu wissen, dass in Swift standardmäßig die Mersenne-Twister-Algorithmus-Implementierung zur Erzeugung von Zufallszahlen verwendet wird. Dies garantiert eine gleichmäßigere Verteilung der Zahlen im Vergleich zu anderen Algorithmen.
+```Swift
+let randomDouble = Double.random(in: 1...100)
+print(randomDouble) // Output: 75.82
+```
 
-Es gibt auch verschiedene Optionen für die Genauigkeit der generierten Zufallszahlen. Zum Beispiel können Sie mit `random()` nicht nur Zahlen im Bereich von 0 bis 1, sondern auch im Bereich von -1 bis 1 mit Gleitkommagenauigkeit generieren.
+# Tiefergehende Informationen
 
-Eine andere wichtige Überlegung ist die Verwendung von Zufallszahlen in sicherheitsrelevanten Anwendungen. In solchen Fällen sollten Sie prüfen, ob die verwendeten Zufallszahlengeneratoren kryptografisch sicher sind.
+Die in Swift verwendeten Methoden für die Generierung von Zufallszahlen basieren auf der "Mersenne Twister" Algorithmus. Dieser Algorithmus sorgt dafür, dass die generierten Zahlen wirklich zufällig sind und nicht durch eine gewisse Sequenz vorhersehbar werden.
 
-## Siehe auch
+Wenn man mehr Kontrolle über die Generierung von Zufallszahlen haben möchte, gibt es in Swift auch die Möglichkeit, die Klasse `RandomNumberGenerator` zu verwenden. Mit dieser können eigene Algorithmen zur Generierung von Zufallszahlen implementiert werden.
 
-[Die offizielle Dokumentation zu randomisierten Zahlen in Swift](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID340)
+# Siehe auch
 
-[Ein Tutorial zur Verwendung von Zufallszahlen in Swift](https://www.swiftbysundell.com/tips/random-numbers/)
+[Mersenne Twister Algorithmus](https://de.wikipedia.org/wiki/Mersenne-Twister)
 
-[Weitere Infos über den Mersenne-Twister-Algorithmus](https://en.wikipedia.org/wiki/Mersenne_Twister)
+[Offizielle Dokumentation zu Random in Swift](https://developer.apple.com/documentation/swift/random)
+
+[Swift Tutorial: Zufallszahlen generieren](https://www.raywenderlich.com/17483599-swift-tutorial-random-numbers)

@@ -1,7 +1,9 @@
 ---
-title:                "C: Tekstitiedoston kirjoittaminen"
+title:                "C: Tiedoston kirjoittaminen"
+simple_title:         "Tiedoston kirjoittaminen"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/writing-a-text-file.md"
 ---
 
@@ -9,70 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tekstitiedostojen kirjoittaminen ohjelmoidessa on olennainen taito, joka auttaa sinua tallentamaan ja jakamaan tietoa ohjelmistojen kanssa. Se on myös yksi perusteellisista taidoista oppia C-ohjelmointia.
+Tekstitiedostojen kirjoittaminen on tärkeä osa C-ohjelmointia, sillä se mahdollistaa tiedon tallentamisen ja jakamisen eri ohjelmien välillä. Näin ollen se on välttämätöntä monimutkaisempien ohjelmien luomisessa ja datan hallinnassa.
 
-## Kuinka
+## Miten
 
-Käytä "fopen()" -toimintoa luomaan tiedostonimikkeen ja avataksesi tiedoston. Käytä sitten "fprintf()" -toimintoa kirjoittaaksesi haluamasi sisällön tiedostoon. Lopuksi, muista sulkea tiedosto "fclose()" -toiminnolla.
+Tekstitiedoston kirjoittaminen C-kielellä on suhteellisen yksinkertaista. Ensiksi avataan tiedosto käyttäen `fopen()` funktiota ja määritellään sille kirjoitusmuoto. Tämän jälkeen käytetään `fprintf()` funktiota kirjoittamaan halutut tiedot tiedostoon ja lopuksi tiedosto suljetaan `fclose()` funktiolla. Alla on esimerkki:
 
-```
+```C
 #include <stdio.h>
 
 int main() {
-    // Luo tiedostonimike ja avaa tiedosto "example.txt" kirjoittamista varten
-    FILE *tiedosto = fopen("example.txt", "w");
-    
-    // Kirjoita teksti tiedostoon käyttäen fprintf-toimintoa
-    fprintf(tiedosto, "Tämä on esimerkki tekstistä, joka kirjoitetaan tiedostoon\n");
-    
-    // Sulje tiedosto
-    fclose(tiedosto);
-    
+    FILE *tiedosto;
+    tiedosto = fopen("teksti.txt", "w"); //Avataan tiedosto kirjoitusmuodossa
+    fprintf(tiedosto, "Hei, tämä on teksti tiedostossa\n"); //Kirjoitetaan teksti tiedostoon
+    fclose(tiedosto); //Suljetaan tiedosto
     return 0;
 }
-
 ```
 
-Tulostus tiedostoon olisi seuraavanlainen:
+Tämän koodin suorittamisen jälkeen ohjelma luo `teksti.txt` tiedoston, jossa on kirjoitettu "Hei, tämä on teksti tiedostossa". On kuitenkin tärkeää huomata, että jos tiedosto on jo olemassa, tämä koodi kirjoittaa sen päälle. Mikäli haluat lisätä tekstiä olemassa olevaan tiedostoon, voit käyttää `a` sijasta `w` määrityksessä, mikä avaa tiedoston lisäysmuodossa.
 
-Tämä on esimerkki tekstistä, joka kirjoitetaan tiedostoon
+## Syväsukellus
 
-## Syvällinen sukellus
+Tekstitiedoston kirjoittaminen voidaan tehdä myös hieman monimutkaisemmalla tavalla hyödyntämällä `fprintf()` funktion muotoiluja. Tämän avulla voit muun muassa määrittää tietyn tiedon tulostamisen tietyn kohdan tiedostoon. Alla on esimerkki:
 
-Kun luot tekstityyliä, voit käyttää erilaisia muotoiluja ja erityismerkkejä tekstiisi. Voit myös lukea tiedostosta käyttäen "fscanf()" -toimintoa ja jopa poistaa tiedosto "remove()" -toiminnolla.
-
-```
+```C
 #include <stdio.h>
 
 int main() {
-    // Luo tiedostonimike ja avaa tiedosto "example.txt" lukemista varten
-    FILE *tiedosto = fopen("example.txt", "r");
-    
-    // Määritä muuttuja "teksti" ja lue teksti tiedostosta
-    char teksti[50];
-    fscanf(tiedosto, "%s", teksti);
-    
-    // Tulosta teksti konsoliin
-    printf("Tiedostosta luettu teksti on: %s\n", teksti);
-    
-    // Sulje tiedosto
+    FILE *tiedosto;
+    int i = 5;
+    float f = 3.14;
+    tiedosto = fopen("teksti.txt", "w");
+    fprintf(tiedosto, "Kokonaisluku: %d, Desimaaliluku: %f", i, f);
     fclose(tiedosto);
-    
-    // Poista tiedosto "example.txt"
-    remove("example.txt");
-    
     return 0;
 }
-
 ```
 
-Tulostus olisi seuraavanlainen:
-
-Tiedostosta luettu teksti on: Tämä
+Tämän koodin suorittamisen jälkeen tiedostoon tulostuu "Kokonaisluku: 5, Desimaaliluku: 3.14". Voit myös määrittää muotoilun eri paikoissa tiedostossa käyttämällä `%m$n` muotoiluja, jossa `m` tarkoittaa tietojen määrää ja `n` kohdan numeroa. Esimerkiksi `%1$d` tarkoittaa ensimmäistä kokonaislukua tulostettavien tietojen joukossa. Tämä voi olla hyödyllistä esimerkiksi CSV-tiedostojen luomisessa.
 
 ## Katso myös
 
-- [fopen() käyttö C-kielen tekstityylissä](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- [fprintf() käyttö C-kielen tekstityylissä](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [Esimerkki tiedostojen lukemisesta ja kirjoittamisesta C-kielellä](https://www.programiz.com/c-programming/c-file-input-output)
-- [Tutustu Markdown-kieleen, jota käytetään tämän blogin kirjoittamiseen](https://www.markdownguide.org/)
+- C-tiedoston käsittely: https://users.cs.cf.ac.uk/Dave.Marshall/C/node22.html
+- C stdio.h kirjasto: https://www.tutorialspoint.com/c_standard_library/stdio_h.htm
+- Esimerkkejä tiedostojen kirjoittamisesta C-kielellä: https://www.programiz.com/c-programming/c-file-input-output

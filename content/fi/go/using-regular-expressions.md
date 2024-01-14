@@ -1,51 +1,56 @@
 ---
 title:                "Go: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttäisit säännöllisiä lausekkeita Go-ohjelmoinnissa?
+## Miksi käyttää säännöllisiä lausekkeita?
 
-Säännölliset lausekkeet ovat voimakas työkalu, jota voit käyttää Go-ohjelmointikielen avulla tietojen etsimiseen, korvaamiseen ja muokkaamiseen. Ne auttavat sinua löytämään ja käsittelemään tietoa, joka ei ole suoraan määritelty tai ei noudata tiettyä muotoa. 
+Säännölliset lausekkeet ovat hyödyllinen työkalu Go-ohjelmoinnissa, sillä ne mahdollistavat tietyn tekstin tai merkkijonon etsimisen ja muokkaamisen halutulla tavalla. Esimerkiksi jos tarvitset ohjelmassasi tietynlaista merkkijonoa, voit käyttää säännöllisiä lausekkeita sen löytämiseen ja käsittelyyn.
 
-## Kuinka käyttää säännöllisiä lausekkeita Go-ohjelmoinnissa?
+## Miten käyttää säännöllisiä lausekkeita Go:lla?
 
-Ensinnäkin, sinun täytyy tuoda "regexp" kirjasto käyttämällä `import`-lauseketta. Sen jälkeen voit luoda uuden regexp-olion käyttämällä `regexp.Compile()`-funktiota ja määrittämällä haluamasi säännöllisen lausekkeen sisälle. Katso esimerkkiä alla olevassa koodilohkossa:
+Käytännössä säännöllisiä lausekkeita käytetään Go-ohjelmissa usein string-paketin Regexp-tyypin avulla. Alla on esimerkki koodista, joka hakee listasta kaikki merkkijonot, jotka sisältävät numeron:
 
-```Go
-import "regexp"
+```
+Go
+package main
+
+import (
+	"fmt"
+	"regexp"
+)
 
 func main() {
-  // Luo uusi regexp-olio määrittelemällä säännöllinen lauseke
-  re := regexp.Compile("a[bc]+d")
+	merkkijonolista := []string{"Merkkijono1", "Merkkijono2", "Merkkijono3 123", "Merkkijono4"}
 
-  // Testaa lauseketta merkkijonossa
-  testi := re.MatchString("abbbbbcd")
-  fmt.Println(testi) // Tulostaa true
+	regex, _ := regexp.Compile("\\d+")
+
+	for _, merkkijono := range merkkijonolista {
+		if regex.MatchString(merkkijono) {
+			fmt.Println(merkkijono)
+		}
+	}
 }
 ```
 
-Aina kun haluat etsiä tai korvata merkkijonossa, voit käyttää `re.FindString()` tai `re.ReplaceAllString()` -funktiota. Katso alla olevaa esimerkkiä:
+Tämä koodi tuottaa seuraavanlaisen tulosteen:
 
-```Go
-import "regexp"
-
-fmt.Println(re.FindString("aeiou")) // Tulostaa "a"
-fmt.Println(re.ReplaceAllString("aeiou", "X")) // Tulostaa "Xeiou"
+```
+Merkkijono3 123
 ```
 
-## Syvään sukellus säännöllisiin lausekkeisiin
+Ensimmäisellä rivillä tuodaan käyttöön tarvittavat paketit ja muuttujat, jotka alustetaan toisella rivillä. Kolmannella rivillä säännöllinen lauseke tallennetaan muuttujaan käyttämällä Regexp.Compile-funktiota. Neljännellä ja viidennellä rivillä käydään läpi merkkijonolista for-silmukalla ja tarkistetaan jokainen merkkijono säännöllisen lausekkeen avulla. Jos merkkijono sisältää numeron, se tulostetaan.
 
-Säännölliset lausekkeet noudattavat tiukkoja sääntöjä ja muotoja, joten niiden käyttöön tutustuminen voi vaatia vähän opiskelua. Tässä muutamia hyödyllisiä linkkejä, jotka auttavat sinua ymmärtämään lisää säännöllisistä lausekkeista ja niiden käytöstä Go-ohjelmoinnissa:
+## Syvempää tietoa säännöllisten lausekkeiden käytöstä Go-ohjelmissa
 
-- [Go:n virallinen dokumentaatio säännöllisistä lausekkeista](https://golang.org/pkg/regexp/)
-- [Go:n regex-tutoriaali](https://www.golang-book.com/books/intro/10)
-- [Go:n regex-sanakirja](https://regex101.com/library/)
+On hyvä tiedostaa, että säännölliset lausekkeet toimivat tietyllä tavalla ja niiden käytön oppiminen vaatii hieman harjoittelua ja perehtymistä aiheeseen. Voit esimerkiksi käyttää online-sivustoja, kuten RegExr, harjoitellaksesi säännöllisten lausekkeiden luomista ja testaamista. Go:n string-paketin dokumentaatio sisältää myös tarkempia tietoja säännöllisten lausekkeiden käytöstä.
 
 ## Katso myös
-
-- [Go:n virallinen sivusto](https://golang.org/)
-- [Go:n opetusohjelmat ja resurssit](https://austingwalters.com/go-learn-go/)
+- Go string-paketin dokumentaatio: https://golang.org/pkg/strings/
+- RegExr: https://regexr.com/

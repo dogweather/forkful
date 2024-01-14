@@ -1,38 +1,56 @@
 ---
-title:                "PHP: Textsuche und -ersetzung"
+title:                "PHP: Suchen und Ersetzen von Text."
+simple_title:         "Suchen und Ersetzen von Text."
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Suchen und Ersetzen von Text ist eine grundlegende Funktion in der Programmierung. Es ermöglicht es uns, schnell und effizient große Mengen an Text zu bearbeiten und anzupassen. Wenn du nach Möglichkeiten suchst, deine Textbearbeitungsprozesse zu optimieren, ist das Erlernen dieser Fähigkeit definitiv die Mühe wert.
 
-## Wie geht's
-Das Suchen und Ersetzen von Text in PHP ist relativ einfach. Alles, was du brauchst, ist die Funktion `str_replace()`, die dafür entworfen wurde, einen bestimmten Text in einem anderen Text zu suchen und ihn durch einen neuen Text zu ersetzen. Schauen wir uns ein Beispiel an:
+Das Suchen und Ersetzen von Text ist eine der grundlegenden Funktionen in der Programmierung. Es ermöglicht uns, schnell und effizient bestimmte Zeichenketten in unseren Codes zu ändern oder zu aktualisieren. In diesem Blog-Beitrag werden wir uns genauer damit beschäftigen, warum dies eine wichtige Fähigkeit beim Programmieren ist und wie man es einfach umsetzen kann.
+
+## Wie man Text in PHP sucht und ersetzt
+
+Um Text in PHP zu suchen und zu ersetzen, verwenden wir die Funktion `str_replace()`. Sie hat drei Parameter: den zu suchenden Text, den Text, mit dem er ersetzt werden soll, und den Text, in dem gesucht werden soll. Wir können auch ein Array als Parameter angeben, um mehrere Suchbegriffe zu ersetzen. Hier ist ein Beispiel-Code:
 
 ```PHP
-$original_text = "Heute ist ein schöner Tag.";
-$new_text = str_replace("schöner", "perfekter", $original_text);
-echo $new_text;
+$original_text = "Hallo, Welt!";
+$neuer_text = str_replace("Welt", "PHP-Community", $original_text);
+echo $neuer_text;
 ```
 
-Die Ausgabe wäre:
+Die Ausgabe wird sein:
 
 ```
-Heute ist ein perfekter Tag.
+Hallo, PHP-Community!
 ```
 
-In diesem Beispiel haben wir den Text "schöner" durch "perfekter" ersetzt und die veränderte Version des Textes ausgegeben. Du kannst auch mehrere Such- und Ersetzungspaare angeben, um komplexe Textänderungen durchzuführen.
+Wir können auch die Funktion `str_ireplace()` verwenden, um die Groß-/Kleinschreibung der Suchbegriffe zu ignorieren. Diese Funktion funktioniert genauso wie `str_replace()`, aber sie ist nicht empfindlich hinsichtlich Groß-/Kleinschreibung. Hier ist ein Beispiel:
+
+```PHP
+$original_text = "Hallo, Welt!";
+$neuer_text = str_ireplace("welt", "PHP-Community", $original_text);
+echo $neuer_text;
+```
+
+Die Ausgabe wird ebenfalls sein:
+
+```
+Hallo, PHP-Community!
+```
 
 ## Tiefere Einblicke
-Die `str_replace()` Funktion unterstützt auch den Einsatz von Arrays, wodurch du mehrere Such- und Ersetzungspaare auf einmal angeben kannst. Außerdem gibt es eine Vielzahl von Optionen, um die Suche und das Ersetzen anzupassen, z.B. die Groß-/Kleinschreibung zu ignorieren oder nur ganze Wörter zu ersetzen.
 
-Eine weitere hilfreiche Funktion ist `preg_replace()`, die reguläre Ausdrücke unterstützt und somit noch leistungsfähiger ist bei der Suche und dem Ersatz von Text.
+Es gibt verschiedene Fälle, in denen wir das Suchen und Ersetzen von Texten nutzen können. Zum Beispiel können wir es verwenden, um Benutzereingaben in einer Form zu überprüfen oder um Platzhalter in Vorlagen zu ersetzen. Wir können auch reguläre Ausdrücke verwenden, um Text mit komplexeren Mustern zu suchen und zu ersetzen. Es gibt viele Möglichkeiten, diese Funktion zu nutzen, und es ist ein grundlegender Teil der effektiven Textverarbeitung in der Programmierung.
 
 ## Siehe auch
-- PHP-Handbuch zu `str_replace()`: https://www.php.net/manual/de/function.str-replace.php
-- PHP-Handbuch zu `preg_replace()`: https://www.php.net/manual/de/function.preg-replace.php
-- Reguläre Ausdrücke in PHP: https://www.php.net/manual/en/pcre.pattern.php
+
+Hier sind einige hilfreiche Ressourcen, die Sie bei Ihrem Lernprozess unterstützen können:
+
+- [PHP-Dokumentation für str_replace()](https://www.php.net/manual/de/function.str-replace.php)
+- [PHP-Dokumentation für str_ireplace()](https://www.php.net/manual/de/function.str-ireplace.php)
+- [Reguläre Ausdrücke in PHP](https://www.geeksforgeeks.org/regular-expressions-in-php/)

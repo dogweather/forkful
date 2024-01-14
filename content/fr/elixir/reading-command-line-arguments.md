@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Lecture des arguments de ligne de commande"
+title:                "Elixir: La lecture des arguments de ligne de commande"
+simple_title:         "La lecture des arguments de ligne de commande"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/reading-command-line-arguments.md"
 ---
 
@@ -9,72 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Lorsque vous écrivez du code Elixir, il est important de savoir comment lire les arguments de ligne de commande. Cela peut sembler être une petite fonctionnalité, mais cela peut entraîner une grande amélioration de votre expérience de programmation en rendant votre code plus flexible et en vous permettant de le personnaliser en fonction de différentes entrées.
+Les arguments de ligne de commande sont un élément essentiel de la programmation en Elixir. Dans cet article, nous allons explorer pourquoi la lecture des arguments de ligne de commande est importante et comment le faire efficacement.
 
 ## Comment faire
 
-Pour lire les arguments de ligne de commande en Elixir, nous pouvons utiliser la fonction `System.argv/0`. Cette fonction renverra une liste de tous les arguments passés lors de l'exécution de notre programme. Voyons cela en action avec un exemple de code :
+La lecture des arguments de ligne de commande en Elixir est un processus simple et rapide. Tout d'abord, nous devons inclure le module `OptionParser` dans notre code :
 
 ```Elixir
-# Définir une fonction pour afficher les arguments
-def print_args do
-  # En utilisant la fonction System.argv/0 pour obtenir la liste d'arguments
-  args = System.argv()
-  # Afficher chaque argument un par un
-  Enum.each(args, fn arg ->
-      IO.puts(arg)
-  end)
-end
-
-# Appeler notre fonction
-print_args()
+import OptionParser
 ```
 
-Supposons que nous enregistrions ce code dans un fichier `args.exs`. Nous pouvons alors l'exécuter en utilisant la commande suivante dans notre terminal :
-
-```
-elixir args.exs argument1 argument2 argument3
-```
-Et voici la sortie que nous obtiendrons :
-
-```
-$ elixir args.exs argument1 argument2 argument3
-
-argument1
-argument2
-argument3
-```
-
-Nous pouvons également utiliser `System.argv/1` pour obtenir un argument spécifique en fonction de son index dans la liste. Par exemple, si nous voulons obtenir seulement le deuxième argument, nous pouvons utiliser `System.argv(1)`, car les indices de liste commencent à partir de 0. Voici un autre exemple de code :
+Ensuite, nous pouvons définir nos options et spécifier les valeurs attendues :
 
 ```Elixir
-def print_second_arg do
-  # En utilisant la fonction System.argv/1 pour obtenir le deuxième argument
-  second_arg = System.argv(1)
-  # Afficher le deuxième argument
-  IO.puts(second_arg)
-end
-
-print_second_arg()
+OptionParser.parse(
+  [ "-f", "--file NAME", :string ],
+  [ "-v", "--verbose", :boolean ],
+  [ "-h", "--help" ]
+)
 ```
 
-Et voici la sortie correspondante :
+Dans cet exemple, nous définissons trois options : `--file` pour spécifier le nom du fichier, `--verbose` pour activer le mode bavard et `--help` pour afficher l'aide. Nous pouvons également définir une liste d'options par défaut à utiliser si aucun argument n'est fourni.
 
+Ensuite, nous pouvons récupérer les arguments en utilisant la fonction `parse` de `OptionParser` :
+
+```Elixir
+{ arguments, options } = OptionParser.parse!(System.argv)
 ```
-$ elixir args.exs argument1 argument2 argument3
 
-argument2
-```
+Nous pouvons ensuite accéder aux valeurs des arguments grâce à `options` ou `arguments` en fonction de notre implémentation.
 
-## Plongée en profondeur
+## Deep Dive
 
-Il est également important de noter qu'il existe des bibliothèques externes en Elixir qui peuvent vous aider à gérer les arguments de ligne de commande de manière plus avancée. Par exemple, la bibliothèque `Jason` permet de lire facilement les arguments passés sous forme de fichiers JSON.
+La raison pour laquelle la lecture des arguments de ligne de commande est importante en Elixir est qu'elle nous permet de fournir des options à notre programme au moment de l'exécution. Cela signifie que nous pouvons personnaliser le comportement de notre programme en fonction des données fournies par l'utilisateur.
 
-De plus, Elixir permet également de définir des options d'exécution personnalisées en utilisant le module `OptionParser`. Cela peut être utile pour créer des programmes plus complexes avec plusieurs fonctionnalités.
+De plus, la lecture des arguments de ligne de commande est un moyen efficace de traiter les arguments de manière structurée. Grâce à `OptionParser`, nous pouvons spécifier le type de données attendu pour chaque option, ce qui facilite la manipulation des arguments dans notre code.
 
 ## Voir aussi
 
-- [Documentation Elixir officielle sur System.argv/0](https://hexdocs.pm/elixir/System.html#argv/0)
-- [Documentation Elixir officielle sur System.argv/1](https://hexdocs.pm/elixir/System.html#argv/1)
-- [Bibliothèque Jason pour gérer les arguments JSON en Elixir](https://github.com/michalmuskala/jason)
-- [Module OptionParser en Elixir](https://hexdocs.pm/elixir/OptionParser.html)
+- [Documentation d'OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+- [Blog post sur la manipulation des arguments de ligne de commande en Elixir](https://www.pluralsight.com/guides/handling-command-line-options-elixir)
+
+Merci d'avoir lu ! N'hésitez pas à explorer d'autres fonctionnalités d'Elixir pour améliorer votre expérience de programmation.

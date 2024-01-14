@@ -1,48 +1,36 @@
 ---
 title:                "Bash: 標準エラーへの書き込み"
+simple_title:         "標準エラーへの書き込み"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-標準エラーに書き込むことについて、なぜそうするのかを説明します。
 
-デバッグやトラブルシューティングの際に、標準エラーに出力を書き込むことで、プログラムの実行結果を把握することができます。これにより、エラーの原因やプログラムの実行状況をより詳しく確認することができます。
+書き込みを用いてエラーを記録することは、プログラミングで必要不可欠です。エラーは障害の発生を示し、デバッグの手掛かりを与えます。標準エラーに書き込むことで、プログラマーはエラーをさらに詳しく把握できるようになります。
 
-## 使い方
-標準エラーに書き込む方法について、簡単なコーディング例と出力を表示します。
+## 方法
 
-```Bash
-#! /bin/bash
-ls
-echo "This is a test" >&2
-```
-
-上記のコードを実行すると、標準エラーに "This is a test" というメッセージが表示されます。エラーが発生した場合でも、標準出力ではなく標準エラーにメッセージが書き込まれることが確認できます。
-
-## 深く掘り下げる
-標準エラーへの書き込みは、プログラミングにおいて非常に重要です。特に、大規模なプログラムのデバッグや、ログファイルの作成に役立ちます。また、リダイレクトやパイプを使用することで、標準エラーの出力を他のプログラムに渡すことができます。
-
-さらに、標準エラーにはパイプラインの迂回が可能な "2>" 演算子があります。これにより、標準エラーをファイルに書き込むことができます。例えば、以下のようにコマンドを実行すると、標準エラーの出力を "error.log" ファイルに保存することができます。
+標準エラーに書き込むには、単純なコンソールログメッセージを標準エラーにリダイレクトする必要があります。以下の例をご覧ください。
 
 ```Bash
-command 2> error.log
+echo "Error: Something went wrong" >&2
 ```
 
-これにより、実行中のエラーを後で確認することができます。
+このコマンドは、エラーメッセージを標準エラーに書き込みます。`>&2`は、リダイレクトを行うための記号です。
 
-## ぜひ参考にしてください
-- [Linuxコマンドラインの標準出力と標準エラーについて](https://techacademy.jp/magazine/8180)
-- [Bashの基礎知識～標準出力と標準エラーの使い分けについて～](https://qiita.com/t_nakayama0714/items/e0bbf6dac1ba29cf5f2e)
-- [シェルスクリプトβ: 5.3. リダイレクション](https://shellscript.sunone.me/redirection.html#stderr)
-- [リダイレクションとパイプ](https://www.atmarkit.co.jp/ait/articles/1405/22/news041.html)
+## 詳細を調べる
 
-# 参考
+標準エラーに書き込むことは、標準出力に書き込むこととは異なります。標準出力は通常、プログラムの正常な実行結果を出力するために使用されます。一方、標準エラーはエラーを記録するために使用されます。したがって、標準エラーやリダイレクトについて深く知ることは、プログラミングにおいて非常に重要です。
 
-## 関連リンク
-- [Markdown入門](https://www.markdown.jp/)
-- [Bash入門](https://qiita.com/RyochanUedasan/items/53a9070a708ead53e529)
-- [演算子一覧](https://www.atmarkit.co.jp/ait/articles/1410/31/news072.html)
+この記事では、Bashコマンドを使用して標準エラーに書き込む方法を学びました。コンソールログメッセージを標準エラーにリダイレクトすることで、プログラマーはより詳細なエラー情報を取得できるようになります。さらに、標準エラーと標準出力の違いについても理解しました。
+
+## 関連情報
+
+- [Linuxで標準エラーに書き込む方法](https://www.cyberciti.biz/faq/how-to-redirect-output-and-errors-to-devnull/)
+- [Bashのリダイレクトについての詳細](https://www.tutorialspoint.com/unix/unix-io-redirections.htm)
+- [標準エラーに関する基本的な知識](https://www.computerhope.com/unix/bash/echo.htm)

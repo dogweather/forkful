@@ -1,44 +1,64 @@
 ---
-title:                "Java: Konvertere en dato til en streng."
+title:                "Java: Konvertering av en dato til en streng"
+simple_title:         "Konvertering av en dato til en streng"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Mange ganger i et program, vil du trenge å konvertere en dato til en streng. Dette er spesielt nyttig når du vil vise en dato i et mer leselig format for brukeren. Å kunne konvertere en dato til en streng er en nyttig ferdighet å ha i Java-programmering.
 
-Konvertering av datoer til strenger er en vanlig oppgave i Java-programmering, spesielt når man jobber med brukergrensesnitt eller databaser. Å konvertere en dato til en streng gjør det lettere å vise den i en spesifikk format eller lagre den i en database. Det kan også være nyttig når man ønsker å sammenligne datoer eller utføre visse operasjoner på dem.
-
-## Hvordan
-
-For å konvertere en dato til en streng i Java, kan vi bruke klassen `SimpleDateFormat`. La oss se på et eksempel:
+## Hvordan gjøre det
+Å konvertere en dato til en streng i Java er ganske enkelt. Du kan bruke SimpleDateFormat-klassen for å formatere datoen i ønsket format. Her er et eksempel på hvordan du kan konvertere en dato til en streng:
 
 ```Java
-// Opprett en ny instans av SimpleDateFormat med ønsket format
-SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-// Definer en dato som skal konverteres
-Date date = new Date();
-// Bruk format-metoden for å konvertere datoen til en streng
-String dateString = sdf.format(date);
-// Skriv ut den konverterte strengen
-System.out.println(dateString);
+Date dato = new Date();
+SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+String datoSomStreng = formatter.format(dato);
+System.out.println(datoSomStreng);
 ```
+**Output: 25.03.2020**
 
-I dette eksempelet bruker vi formatet "dd.MM.yyyy", som viser datoen i formatet "dag.måned.år". Resultatet av dette vil være en streng lik "18.05.2020".
+I dette eksempelet har vi brukt SimpleDateFormat til å formatere datoen som en streng i "dd.MM.yyyy" format. Du kan endre formateringen ved å endre formatet i parentesen. Her er noen eksempler på ulike formater og deres tilhørende output.
 
-Vi kan også bruke `SimpleDateFormat` til å konvertere datoen til andre formater, som for eksempel "yyyy-MM-dd" for å få datoen i formatet "år-måned-dag". Det er også mulig å legge til klokkeslett og tidssone i formatet hvis nødvendig.
+```Java
+SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+```
+**Output: 03/25/2020**
 
-En annen måte å konvertere en dato til en streng på er å bruke `DateTimeFormatter` fra Java 8 og senere. Dette er en mer moderne og fleksibel måte å håndtere datoer og formater på.
+```Java
+SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+```
+**Output: 2020-03-25**
+
+Som du kan se, kan du formatere datoen på forskjellige måter ved å endre formatet i SimpleDateFormat. Dette gjør det enkelt å tilpasse datoen til dine spesifikke behov.
 
 ## Dypdykk
+Når du bruker SimpleDateFormat, er det viktig å være oppmerksom på noen av formatalternativene som er tilgjengelige. For eksempel bruker "M" for måned stor bokstav, mens "m" for bruker små bokstaver. Dette er fordi "M" brukes for å representere en numerisk måned, mens "m" brukes for en tekstlig måned. Hvis du bruker feil bokstav, vil du få feil output.
 
-Når vi konverterer en dato til en streng, kan det også være viktig å ta hensyn til lokaliseringsinnstillinger. Dette betyr at datoen vil bli formatert annerledes avhengig av det språket og landet som brukes. I Java kan vi bruke `Locale`-klassen for å spesifisere ønsket språk og land når vi konverterer datoen.
+I tillegg er det verdt å merke seg at du kan legge til andre bokstaver eller tegn i formatteringsstrengen for å få ønsket output. For eksempel, hvis du vil inkludere dag i uken i output, kan du legge til "EEE" i formatteringsstrengen. Her er noen eksempler:
 
-Det er også viktig å være bevisst på at datoen kan bli påvirket av tidssoner og sommertid. For å unngå feil i datoformatet bør man alltid spesifisere en tidssone når man konverterer en dato til en streng.
+```Java
+SimpleDateFormat formatter = new SimpleDateFormat("EEE, MM/dd/yyyy");
+```
+**Output: Wed, 03/25/2020** (hvis datoen er en onsdag)
 
-## Se også
-- [Oracle Dokumentasjon for SimpleDateFormat] (https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Java 8 DateTimeFormatter tutorial] (https://www.baeldung.com/java-8-date-time-intro)
-- [Locale-klassen] (https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)
+```Java
+SimpleDateFormat formatter = new SimpleDateFormat("EEE, dd.MM.yyyy");
+```
+**Output: Wed, 25.03.2020** (hvis datoen er en onsdag)
+
+Videre kan du også angi et bestemt språk for dager og måneder ved å bruke Locale-klassen. For eksempel, hvis du vil at datoene skal vises på norsk, kan du bruke følgende kode:
+
+```Java
+SimpleDateFormat formatter = new SimpleDateFormat("EEE, dd. MMMM yyyy", new Locale("nb", "NO"));
+```
+**Output: Wed, 25. mars 2020** (hvis datoen er en onsdag)
+
+## Se Også
+- [Java SimpleDateFormat Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+- [Locale-klassen Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)

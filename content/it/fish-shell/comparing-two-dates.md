@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Confronto tra due date"
+simple_title:         "Confronto tra due date"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/comparing-two-dates.md"
 ---
 
@@ -9,37 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Confrontare due date può essere una necessità comune quando si programma in Fish Shell. Ad esempio, si potrebbe voler verificare se una determinata data è successiva a un'altra, o se sono identiche. In questo articolo, impareremo come confrontare due date in modo efficiente utilizzando il Fish Shell.
+Comparare due date può essere molto utile quando si lavora con dati temporali, sia per scopi di analisi che di gestione di progetti. Con il Fish Shell è possibile utilizzare alcuni semplici comandi per realizzare questa operazione in modo efficiente ed accurato.
 
 ## Come fare
 
-Per confrontare due date in Fish Shell, possiamo utilizzare la funzione integrata `and` seguita dai parametri `I` e `I`. Questi parametri rappresentano rispettivamente la prima e la seconda data da confrontare. Ad esempio, se vogliamo confrontare le date ''15 settembre 2021'' e ''20 settembre 2021'', il codice sarebbe il seguente:
+Per iniziare, assicurati di avere installato il Fish Shell sul tuo sistema. Una volta fatto ciò, puoi usare il comando `date` per visualizzare la data e l'ora attuali. Ad esempio:
+
+```Fish Shell
+echo (date)
+```
+
+Questo restituirà un output simile a questo:
 
 ```
-and (date -f %d-%m-%Y 15-09-2021) (date -f %d-%m-%Y 20-09-2021)
-
+gio lug  8 09:45:12 CEST 2021
 ```
 
-Quando eseguiamo questo comando, otteniamo un valore booleano come risultato. Se la prima data è precedente alla seconda, il risultato sarà `true`, altrimenti sarà `false`.
+Per confrontare due date, puoi utilizzare il comando `strftime` insieme al formato desiderato delle date. Ecco un esempio:
 
-Possiamo anche utilizzare i parametri `I` e `I` in combinazione con altre funzioni per eseguire confronti più specifici. Ad esempio, possiamo utilizzare la funzione integrata `>`, `<` o `=` per verificare se una data è successiva, precedente o uguale a un'altra. Ecco un esempio di codice che utilizza questi operatori:
+```Fish Shell
+set data1 (date +%Y%m%d) #imposta la prima data
+set data2 (date +%Y%m%d -d "tomorrow") #imposta la seconda data come domani
+```
+
+Puoi quindi utilizzare il comando `test` per confrontare le due date. Ad esempio:
+
+```Fish Shell
+if test $data1 -gt $data2
+    echo "La prima data è successiva alla seconda data"
+else if test $data1 -lt $data2
+    echo "La prima data è precedente alla seconda data"
+else
+    echo "Le due date sono uguali"
+end
+```
+
+Questo restituirà un output simile a questo:
 
 ```
-# Verifica se la prima data è successiva alla seconda
-and (date -f %d-%m-%Y 20-09-2021) > (date -f %d-%m-%Y 15-09-2021)
-
-# Verifica se la prima data è precedente alla seconda
-and (date -f %d-%m-%Y 15-09-2021) < (date -f %d-%m-%Y 20-09-2021)
-
-# Verifica se le due date sono identiche
-and (date -f %d-%m-%Y 20-09-2021) = (date -f %d-%m-%Y 20-09-2021)
+La prima data è precedente alla seconda data
 ```
 
 ## Approfondimento
 
-Il Fish Shell offre molte altre funzioni e opzioni per confrontare date in modo più approfondito. Per ulteriori informazioni, si consiglia di consultare la documentazione ufficiale di Fish Shell o la pagina manuale del comando `date`.
+Il formato utilizzato con il comando `date` è basato sulle specifiche di POSIX e può essere personalizzato in base alle proprie esigenze. Ad esempio, `%Y` rappresenta l'anno a quattro cifre, `%m` rappresenta il mese con due cifre e `%d` rappresenta il giorno con due cifre. Per maggiori informazioni sulle specifiche dei comandi, puoi consultare la documentazione ufficiale del Fish Shell.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/)
-- [Pagina manuale del comando `date`](https://fishshell.com/docs/current/index.html#date)
+- [Documentazione ufficiale del Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutorial sulle date in Fish Shell](https://www.howtogeek.com/522837/how-to-use-the-linux-date-command-to-track-time/)
+- [Formato delle date in Fish Shell](https://fishshell.com/docs/current/index.html#strftime-time)

@@ -1,58 +1,43 @@
 ---
 title:                "Java recipe: Writing to standard error"
+simple_title:         "Writing to standard error"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-When developing Java programs, it is important to have a way to handle error and exception messages. Writing to standard error allows developers to display more detailed and specific error messages to help with troubleshooting and debugging. It is also a common practice to write to standard error when dealing with server or console applications.
+Have you ever encountered an error in your Java program and wondered how to properly deal with it? Or do you want to improve the organization and debugging process of your code? Writing to standard error is a useful technique that can help you achieve these goals.
 
 ## How To
-
-Writing to standard error in Java is a simple process. First, import the necessary packages:
-
-```Java
-import java.io.FileOutputStream;
-import java.io.PrintStream;
-```
-
-Then, create a PrintStream object that points to the standard error output stream:
+In Java, writing to standard error is accomplished by using the `System.err` output stream. Here's a simple code snippet that demonstrates this:
 
 ```Java
-PrintStream err = System.err;
+System.err.println("This is an error message");
 ```
 
-After that, you can use the `println` method to write your error message:
+This will print the message "This is an error message" to the standard error output. This output stream is separate from the standard output stream (accessed by `System.out`) and is typically used for error messages and other non-standard output.
+
+To add more context to your error messages, you can use the `System.err.printf()` method, which allows you to format your error messages similar to how you would format strings with `String.format()`. Here's an example:
 
 ```Java
-err.println("Error: File not found.");
+int num = 10;
+System.err.printf("Error: The value of num is %d", num);
 ```
 
-This will print the message to the standard error output. You can also use the `printf` method to format the message:
-
-```Java
-err.printf("Error: Invalid input '%s' on line %d.", userInput, lineNum);
-```
-
-The above code will print a formatted error message with the user's input and the line number where the error occurred.
+This will output "Error: The value of num is 10" to the standard error output.
 
 ## Deep Dive
+Perhaps you're wondering why we can't just use `System.out` for error messages as well. This is because `System.out` is buffered, meaning that the messages will not be immediately displayed. On the other hand, `System.err` is not buffered, making it the ideal output stream for displaying error messages that need to be seen immediately.
 
-Standard error is a separate output stream from standard output (`System.out`) and is used specifically for error and exception messages. It is useful to separate error messages from regular program output so that they can be easily identified and handled accordingly.
+Another advantage of writing to standard error is when dealing with multiple threads. Since `System.err` is not buffered, it can handle multiple threads trying to write to it at the same time without any issues.
 
-In addition, developers can redirect the standard error stream to a file instead of the console by using the `setErr` method:
-
-```Java
-System.setErr(new PrintStream(new FileOutputStream("error.log")));
-```
-
-This will direct all error messages to the specified file, allowing for easier tracking and analysis of errors in a production environment.
+Just like regular streams, you can also redirect standard error output by using `System.setErr()`. This can be helpful when you want to save all your error messages to a file for later analysis.
 
 ## See Also
-- [Java PrintStream Documentation](https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html)
-- [Java System class Documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html)
-- [Understanding Error Messages in Java](https://www.baeldung.com/java-error-messages)
+- [Java System Class](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [Java PrintStream Class](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
+- [Java String.format() Method](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-)

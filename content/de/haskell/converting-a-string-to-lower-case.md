@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Umwandlung eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,35 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Konvertieren von Strings in Kleinbuchstaben kann hilfreich sein, um die Vergleichbarkeit von Strings zu verbessern oder um sicherzustellen, dass sie in einem bestimmten Format vorliegen. In Haskell kann dies auf verschiedene Arten erreicht werden.
+Die Konvertierung von Strings zu Kleinbuchstaben ist ein häufiges Problem in der Programmierung. Durch das Konvertieren von Strings zu Kleinbuchstaben können wir sicherstellen, dass unsere Eingaben einheitlich sind und wir mögliche Fehler vermeiden können.
 
-## Wie
+## Wie man es macht
 
-Das Umwandeln von Strings in Kleinbuchstaben ist in Haskell mit der Funktion `toLower` aus dem Modul `Data.Char` möglich. Diese Funktion akzeptiert einen Charakter als Argument und gibt den entsprechenden Kleinbuchstaben zurück.
+Das Konvertieren von Strings zu Kleinbuchstaben ist in Haskell einfach. Wir verwenden einfach die `map` Funktion, um über jeden Buchstaben im String zu iterieren und ihn in einen Kleinbuchstaben zu konvertieren.
 
 ```Haskell
-import Data.Char
-toLower 'H'
--- Ausgabe: 'h'
-toLower 'a'
--- Ausgabe: 'a'
-toLower '7'
--- Ausgabe: '7'
+-- Wir definieren eine Funktion, die einen String nimmt und ihn in Kleinbuchstaben konvertiert
+toLower :: String -> String
+-- Wir benutzen map, um über jeden Buchstaben zu iterieren und ihn mit `toLower` zu konvertieren
+toLower str = map toLower str
 ```
 
-Eine andere Möglichkeit ist die Verwendung der Funktion `map`, um `toLower` auf jeden Charakter im String anzuwenden.
+Nun können wir unsere Funktion mit einem beliebigen String aufrufen und das Ergebnis sehen:
 
 ```Haskell
-import Data.Char
-map toLower "HALLO"
+-- Beispiel: Konvertierung des Strings "HALLO" zu Kleinbuchstaben
+toLower "HALLO"
 -- Ausgabe: "hallo"
 ```
 
-## Deep Dive
+## Tiefer Einblick
 
-Die Funktion `toLower` verwendet die unterliegende [Unicode-Tabelle](https://unicode-table.com/en/) und berücksichtigt somit auch Sonderzeichen und Akzente. Dies ist besonders wichtig, wenn Strings aus verschiedenen Sprachen verarbeitet werden. Es ist auch möglich, eigene Funktionen zur Konvertierung von Groß- zu Kleinbuchstaben zu definieren, z.B. um bestimmte diakritische Zeichen zu berücksichtigen.
+Der Grund für die Benutzung von `map` bei der Konvertierung von Strings zu Kleinbuchstaben ist, dass es sich bei Strings in Haskell um Listen von Charakteren handelt. Daher ist es einfach, über jeden Buchstaben in einem String zu iterieren und ihn zu konvertieren.
+
+Eine weitere Möglichkeit, Strings zu Kleinbuchstaben zu konvertieren, besteht darin, die `toLower` Funktion aus dem `Data.Char` Modul zu importieren und sie für jeden Charakter im String anzuwenden. Dies kann jedoch etwas umständlicher sein.
 
 ## Siehe auch
 
-- [Haskell Dokumentation zu toLower](https://www.haskell.org/onlinereport/standard-prelude.html#html-decimal)
-- [Blogpost zu Unicode und Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/type-safe-string-manipulation)
+- [`map` Dokumentation in der Haskell-Dokumentation](https://www.haskell.org/hoogle/?hoogle=map)
+- [Ein Tutorial für Haskell-Einsteiger](https://wiki.haskell.org/Haskell_in_5_minutes)
+- [Offizielle Dokumentation für `Data.Char` Modul](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)

@@ -1,75 +1,35 @@
 ---
 title:                "Kotlin: 임시 파일 만들기"
+simple_title:         "임시 파일 만들기"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 만들까요?
+## 왜
 
-임시 파일을 생성하는 이유는 다양합니다. 먼저, 프로그래밍을 하다 보면 임시 파일이 필요한 순간이 자주 생기기 때문에 필수적인 작업이 됩니다. 또한, 임시 파일은 프로그램에서 사용자의 개인적인 정보를 저장할 때 유용하게 사용될 수 있습니다. 그리고 임시 파일은 중요한 파일이 아닌 일시적인 데이터를 저장할 때 좋은 방법이 될 수 있습니다. 
+왜 임시 파일을 생성하는 것에 참여해야 하는지 궁금하지 않으신가요? 임시 파일이란 메모리에 저장된 데이터를 디스크에 저장하기 위한 임시적인 파일을 의미합니다. 임시 파일은 우리의 작업에 도움이 되는 중요한 역할을 합니다.
 
-# 만드는 방법은?
+## 방법
 
-코틀린에서 임시 파일을 만드는 방법은 간단합니다. 먼저, 주어진 파일 이름과 확장자를 가진 임시 파일을 만들고 싶은 경우에는 `createTempFile()` 함수를 사용하면 됩니다. 다음은 이 함수를 이용하여 임시 파일을 생성하는 예시 코드입니다.
-
-```Kotlin
-// 파일 이름과 확장자를 지정하여 임시 파일 생성
-val tempFile = createTempFile("temp", ".txt")
-
-// 임시 파일의 경로 출력
-println(tempFile.absolutePath)
-
-// 임시 파일 삭제
-tempFile.delete()
+```Kotlin 
+val tempFile = File.createTempFile("prefix", "suffix")
+println("임시 파일의 경로: " + tempFile.absolutePath)
 ```
 
-위 코드의 실행 결과는 다음과 같습니다.
+위 코드는 우리가 임시 파일을 생성하는 가장 간단한 방법입니다. `createTempFile` 함수는 `prefix`와 `suffix`로 설정된 파일 이름을 갖는 임시 파일을 생성합니다. `prefix`는 파일 이름의 앞에 붙는 문자열이며 `suffix`는 파일 이름의 뒤에 붙는 문자열입니다. 그리고 `absolutePath`는 파일의 절대 경로를 반환합니다.
 
-```console
-C:/Users/User/AppData/local/temp/temp282875078667436377.txt
-```
+## 딥 다이브
 
-코드를 실행할 때마다 임시 파일의 이름이 달라질 수 있습니다. 이를 방지하기 위해 `createTempFile()` 함수 대신 `createTempFile(prefix: String, suffix: String, directory: File)` 함수를 사용하여 임시 파일을 생성할 수 있습니다. 이 함수는 파일 이름에 접두사와 접미사를 지정할 수 있고, 원하는 디렉토리에 임시 파일을 생성할 수 있도록 지정할 수 있습니다.
+임시 파일을 생성하는 과정은 약간 복잡합니다. 먼저, 우리는 `File.createTempFile` 함수를 호출하여 `File` 객체를 얻습니다. 그 다음, 우리는 `createTempFile` 함수를 호출할 때 우리가 원하는 파일 이름을 지정해야 합니다. 이는 우리가 원하는 모든 파일 이름을 사용할 수 있는 임시 파일을 생성하는 것을 가능하게 합니다. 
 
-아래는 `createTempFile()` 함수를 사용하여 이름과 확장자를 지정하지 않고 임시 파일을 생성하는 예시 코드입니다.
+임시 파일은 우리의 작업에 도움을 주는데, 때로는 우리가 특정 작업을 수행하기 위해 반복적으로 임시 파일을 생성해야 할 수도 있습니다. 이런 경우, 우리는 `File.deleteOnExit` 함수를 사용하여 프로그램이 종료될 때 임시 파일을 자동으로 삭제할 수 있도록 할 수 있습니다.
 
-```Kotlin
-// 임시 파일 생성
-val tempFile = createTempFile()
+## 더보기
 
-// 임시 파일의 경로 출력
-println(tempFile.absolutePath)
-
-// 임시 파일 삭제
-tempFile.delete()
-```
-
-위 코드의 실행 결과는 다음과 같습니다.
-
-```console
-C:/Users/User/AppData/local/temp/tmp4793270537837907704.tmp
-```
-
-# 딥다이브
-
-임시 파일을 생성하는 더 많은 옵션과 기능을 알고 싶다면 `createTempFile` 함수의 문서를 참고해야 합니다. 이 함수는 여러 매개변수를 받을 수 있고, 자세한 설명과 예시를 함께 제공합니다. 
-
-아래는 `createTempFile` 함수의 매개변수 목록입니다.
-
-- `prefix`: 임시 파일 이름의 접두사를 지정합니다. 기본값은 `tmp`입니다.
-- `suffix`: 임시 파일 이름의 접미사를 지정합니다. 기본값은 `.tmp`입니다.
-- `directory`: 임시 파일을 생성할 디렉토리를 지정합니다. 기본값은 `java.io.tmpdir` 시스템 속성에 의해 결정됩니다.
-- `attributes`: 생성된 임시 파일의 속성을 지정합니다. 속성은 `arrayOf()` 함수를 이용하여 여러 개 지정할 수 있습니다.
-
-# 더 알아보기
-
-다른 코틀린 프로그래밍에 유용한 팁과 기능을 알고 싶다면 아래 링크를 참고해 보세요.
-
-## 더 알아보기
-
-- [코틀린 공식 문서](https://kotlinlang.org/docs/home.html)
-- [코틀린 알고리즘 문제 풀이](https://www.hyperskill.org/learn/step/3871)
-- [코틀린 고급 개발자
+- [Kotlin 공식 문서](https://kotlinlang.org/docs/reference/)
+- [나동빈님의 코틀린 강좌](https://ndb796.tistory.com/358)
+- [백기선님의 코틀린 스프링 부트 강의](https://www.inflearn.com/course/%EC%BD%94%ED%8B%80%EB%A6%B0-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8#description)

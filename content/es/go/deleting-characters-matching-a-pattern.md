@@ -1,19 +1,21 @@
 ---
-title:                "Go: Borrando caracteres que coinciden con un patrón"
+title:                "Go: Eliminar caracteres que coinciden con un patrón."
+simple_title:         "Eliminar caracteres que coinciden con un patrón."
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué eliminar caracteres que coincidan con un patrón?
+## Por qué
 
-A veces, en programación, necesitamos eliminar caracteres específicos de una cadena de texto que coincidan con un cierto patrón. Por ejemplo, puede que queramos eliminar todos los dígitos de una cadena de números o eliminar todos los caracteres no alfanuméricos de una cadena. En este blog post, aprenderemos cómo hacerlo en el lenguaje de programación Go.
+La eliminación de caracteres que coinciden con un patrón es una tarea común en la programación. Puede ser útil para limpiar una cadena de texto antes de realizar operaciones adicionales en ella. En esta publicación de blog, aprenderemos cómo hacerlo utilizando el lenguaje de programación Go.
 
 ## Cómo hacerlo
 
-La forma más simple de eliminar caracteres que coincidan con un patrón en Go es utilizando el paquete `strings` y su función `ReplaceAll`. Esta función toma tres parámetros: la cadena original, el patrón a eliminar y la cadena vacía. A continuación, un ejemplo de cómo eliminar todos los dígitos de una cadena:
+La eliminación de caracteres en Go es posible gracias al paquete "strings". Dentro de este paquete, hay una función llamada "ReplaceAll" que elimina todos los caracteres que coinciden con un patrón especificado en una cadena de texto. Veamos un ejemplo de cómo se utiliza esta función:
 
 ```Go
 package main
@@ -24,52 +26,26 @@ import (
 )
 
 func main() {
-    cadena := "H0l4 Mund0"
-    cadena = strings.ReplaceAll(cadena, "0", "")
-    cadena = strings.ReplaceAll(cadena, "4", "")
-    fmt.Println(cadena)
+    text := "¡Hola, Go es increíble Go!"
+    newText := strings.ReplaceAll(text, "Go", "")
+    fmt.Println(newText)
 }
 ```
 
-La salida de este ejemplo sería:
+En este ejemplo, tenemos una cadena de texto con dos repeticiones de la palabra "Go". La función "ReplaceAll" eliminará ambas repeticiones y nos devolverá la cadena de texto original sin esas palabras. La salida de este código sería:
 
 ```
-Hl Mund
+¡Hola, es increíble!
 ```
 
-También podemos utilizar expresiones regulares para eliminar patrones más complejos. El paquete `regexp` nos permite utilizar expresiones regulares en Go. A continuación, un ejemplo de cómo eliminar todos los caracteres no alfanuméricos de una cadena:
+## Profundizando
 
-```Go
-package main
+La función "ReplaceAll" es útil para la eliminación de caracteres, pero también existen otras funciones en el paquete "strings" que pueden ser utilizadas para este propósito. Por ejemplo, "Trim" elimina los caracteres especificados del principio y el final de una cadena de texto. "TrimLeft" y "TrimRight" hacen lo mismo, pero solo eliminan los caracteres del lado izquierdo o derecho de la cadena.
 
-import (
-    "fmt"
-    "regexp"
-)
-
-func main() {
-    cadena := "¡¡H0l4 MUNDO!!"
-    regex := regexp.MustCompile("[^a-zA-Z0-9]+")
-    cadena = regex.ReplaceAllString(cadena, "")
-    fmt.Println(cadena)
-}
-```
-
-La salida de este ejemplo sería:
-
-```
-H0l4MUNDO
-```
-
-## Inmersión profunda
-
-En la sección anterior, solo vimos ejemplos básicos de cómo eliminar caracteres que coincidan con un patrón en Go. Pero el paquete `strings` y el paquete `regexp` tienen muchas más funciones útiles para manejar y manipular cadenas de texto. También hay otros paquetes que pueden ayudarnos a eliminar caracteres según un patrón determinado, como `strconv` (para manipular cadenas numéricas) y `unicode` (para manipular caracteres Unicode).
-
-Es importante tener en cuenta que, al eliminar caracteres de una cadena, no estamos modificando la cadena original. En cambio, estamos creando una nueva cadena con los cambios aplicados. Esto se debe a que las cadenas son inmutables en Go (no pueden ser modificadas).
+También es posible utilizar expresiones regulares para eliminar caracteres que coinciden con un patrón específico. Para hacerlo, podemos importar el paquete "regexp" y utilizar la función "ReplaceAllString" para reemplazar los caracteres coincidentes con una expresión regular. Este enfoque es útil si necesitamos eliminar caracteres más complejos de una cadena de texto.
 
 ## Ver también
 
-- [Paquete strings en la documentación de Go](https://golang.org/pkg/strings/)
-- [Paquete regexp en la documentación de Go](https://golang.org/pkg/regexp/)
-- [Paquete strconv en la documentación de Go](https://golang.org/pkg/strconv/)
-- [Paquete unicode en la documentación de Go](https://golang.org/pkg/unicode/)
+- Documentación oficial sobre el paquete "strings" en Go: https://golang.org/pkg/strings/
+- Ejemplos de uso de expresiones regulares en Go: https://gobyexample.com/regular-expressions
+- Una guía paso a paso sobre cómo utilizar la función "ReplaceAll" en Go: https://www.dotnetperls.com/replace-go

@@ -1,68 +1,50 @@
 ---
 title:                "Fish Shell: 比较两个日期"
+simple_title:         "比较两个日期"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要比较两个日期？
+## 为什么
 
-在编程中，我们经常需要比较两个日期来判断时间先后顺序或者计算时间间隔。比如在日程管理应用中，我们可能需要检查某个事件是否已经过去或者计算两个事件之间的天数。使用Fish Shell可以轻松地比较两个日期并获得想要的结果。
+在编程过程中，经常需要比较两个日期。比如，判断用户注册的时间是否超过了一周，或者两个事件发生的先后顺序。使用Fish Shell可以轻松地比较两个日期，省去手动计算的繁琐步骤。
 
-## 如何比较两个日期？
+## 怎么做
 
-比较两个日期的最基本的方法是使用date命令。以下是一个示例代码，演示如何比较两个日期是否相等：
+使用Fish Shell中的`date`命令可以获取当前日期，格式为`YYYY-MM-DD`。比如，要比较是否超过一周，可以先设置一个变量为今天的日期，然后使用`date`命令减去一周的时间间隔，最后再和某个指定日期进行比较。
 
-```Fish Shell
-set date1 2019-10-23
-set date2 2019-11-15
+例如，假设今天是2021年10月1日，想要判断用户注册的日期是否在9月24日之后，可以使用以下代码：
 
-if [ "$date1" = "$date2" ]
-    echo "日期相等！"
-else
-    echo "日期不相等"
-end
+```
+set today (date +%Y-%m-%d)
+    if test $today > (date -d "-1 week" +%Y-%m-%d)
+        echo "注册日期在9月24日之后"
+    else
+        echo "注册日期在9月24日之前"
+    end
 ```
 
-运行以上代码，结果为“日期不相等”。如果想要更加灵活地比较日期，可以使用date命令的`-s`选项来将日期转换为可比较的格式。比如：
+上述代码中，`date +%Y-%m-%d`可以获取当前日期，而`(date -d "-1 week" +%Y-%m-%d)`则是获取一周前的日期。通过比较这两个日期，就可以得出结论。
 
-```Fish Shell
-set date1 (date -s "2019-10-23" +%s)
-set date2 (date -s "2019-11-15" +%s)
+## 深入了解
 
-if [ "$date1" -eq "$date2" ]
-    echo "日期相等！"
-else
-    echo "日期不相等"
-end
-```
+除了使用`date`命令外，Fish Shell还提供了其他比较日期的方法。例如，可以使用`set -l date1 2021-10-01`和`set -l date2 2021-09-30`来定义两个指定的日期变量，然后通过比较这两个变量的时间戳来判断先后顺序。
 
-运行以上代码，结果为“日期不相等”。这是因为date命令的`-s`选项将日期转换为Unix时间戳，可以更容易地比较大小。
+另外，Fish Shell还支持使用`strftime`函数来将日期格式化为指定的格式。例如，`strftime "%Y/%m/%d" 2021-10-01`会将日期转换为`2021/10/01`的格式。
 
-## 深入了解比较日期
+## 了解更多
 
-除了基本的比较方法，Fish Shell还提供了内置的math命令来进行日期运算。比如，想要计算两个日期之间的天数差，可以使用以下代码：
-
-```Fish Shell
-set date1 (date -s "2019-10-23" +'%Y%m%d')
-set date2 (date -s "2019-11-15" +'%Y%m%d')
-
-math $date2 - $date1
-```
-
-运行以上代码，结果为23，表示两个日期相差23天。同时，Fish Shell还提供了方便的日期格式化选项，可以将日期输出为不同的格式。
-
-# 参考链接
+如果想要深入了解Fish Shell的日期比较功能，可以查阅官方文档和网上的教程。下面是一些相关链接：
 
 - [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [如何在Fish Shell中比较两个日期](https://zhuanlan.zhihu.com/p/112704479)
-- [Fish Shell的日期处理指南](https://devhints.io/fish-shell-dates)
-- [Date命令的手册页面](https://linux.die.net/man/1/date)
+- [Fish Shell日期比较教程](https://fishshell.com/docs/current/tutorial.html#using-the-date-command)
+- [Linux命令大全-date命令](https://www.linuxcool.com/datecommand.html)
 
-# 参见
+## 参考文献
 
-- [Fish Shell高级编程指南](https://medium.com/@jorgegsc007/a-definitive-guide-to-fish-shell-scripting-f295713cef59)
-- [Shell编程入门](https://www.runoob.com/linux/linux-shell.html)
-- [Shell语言编程基础知识](https://www.ibm.com/developerworks/cn/linux/l-shell/)
+- [Advanced Unix Date Time Conversion in Fish Shell](https://blog.sethbergman.com/advanced-unix-date-time-conversion-in-fish-shell/)
+- [Fish Shell date and time manipulation techniques](https://www.codeisland.org/2019/fish-shell-date-time-manipulation-techniques/)

@@ -1,48 +1,61 @@
 ---
-title:                "Ruby: Ausgabe von Debug-Informationen drucken"
+title:                "Ruby: Ausgabe von Debug-Informationen"
+simple_title:         "Ausgabe von Debug-Informationen"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum?
+# Warum
 
-Debugging ist ein wichtiger Teil der Programmierung und das Einbinden von Debug-Ausgaben in den Code kann dabei sehr hilfreich sein. Es ermöglicht uns, den Programmablauf zu verfolgen und zu verstehen, was im Hintergrund passiert. Dadurch können wir Fehler schneller finden und beheben.
+Das Drucken von Debug-Ausgaben ist ein wesentlicher Bestandteil des Programmierens, da es dabei hilft, Fehler in unserem Code zu finden und zu beheben. Debugging kann oft zeitaufwendig sein, aber mit dem Drucken von Debug-Ausgaben können wir den Prozess beschleunigen und unsere Codequalität verbessern.
 
-## Wie macht man das?
+# Wie man das macht
 
-Um Debug-Ausgaben in Ruby zu erstellen, können wir die `puts` Methode verwenden. Diese gibt den angegebenen String im Terminal aus. Zum Beispiel:
+Um Debug-Ausgaben in Ruby zu drucken, können wir die `puts` Funktion verwenden. Hier ist ein einfaches Beispiel:
 
-```ruby
-puts "Hallo, Welt!"
+```Ruby
+def add(a, b)
+  sum = a + b
+  puts "Die Summe von #{a} und #{b} ist #{sum}."
+  return sum
+end
+
+add(3, 5)
 ```
 
-Die Ausgabe des obigen Codes wird `Hallo, Welt!` sein. Dies kann uns dabei helfen, bestimmte Variablen oder Werte im Programmablauf zu überwachen.
+Die Ausgabe dieses Codes wird folgendes sein:
 
-## Tiefer in die Materie eintauchen
-
-Neben `puts` gibt es auch die `p` Methode, die den Wert einer Variablen und deren Datenstruktur ausgibt. Zum Beispiel:
-
-```ruby
-name = "Max"
-p name
+```Ruby
+Die Summe von 3 und 5 ist 8.
 ```
 
-Die Ausgabe wird `Max` inklusive der Anführungszeichen sein, was uns zeigt, dass es sich um einen String handelt. Dies kann uns dabei helfen, Variablen mit komplexen Datentypen wie Arrays oder Hashes besser zu verstehen.
+Wir können auch Variablen oder einzelne Werte drucken, um den Wert zu überprüfen. Hier ist ein weiteres Beispiel:
 
-Es ist auch möglich, die `puts` oder `p` Methode mit dem `inspect` Befehl zu verwenden, um die Ausgabe noch detaillierter zu gestalten. Hier ist ein Beispiel, bei dem wir das `inspect` verwendet haben:
-
-```ruby
-array = [1, 2, 3]
-puts array.inspect
+```Ruby
+x = 10
+puts x
 ```
 
-Die Ausgabe wird `[1, 2, 3]` sein, was uns zeigt, dass es sich um ein Array handelt. Wenn wir jedoch die `p` Methode verwendet hätten, wäre die Ausgabe ` [1, 2, 3]` inklusive der eckigen Klammern und Kommas gewesen.
+Die Ausgabe dieses Codes wird `10` sein.
 
-## Siehe auch
+# Tieferer Einblick
 
-- [Ruby-Dokumentation zu puts](https://ruby-doc.org/core-2.7.3/Kernel.html#method-i-puts)
-- [Ruby-Dokumentation zu p](https://ruby-doc.org/core-2.7.3/Kernel.html#method-i-p)
-- [Ruby-Dokumentation zu inspect](https://ruby-doc.org/core-2.7.3/Object.html#method-i-inspect)
+Neben der Verwendung von `puts` gibt es auch andere Methoden, um Debug-Ausgaben in Ruby zu drucken. Eine weitere Möglichkeit ist die Verwendung von `p`, die die Ausgabe formatiert und auch den Datentyp anzeigt. Zum Beispiel:
+
+```Ruby
+x = 10
+p x
+```
+
+Die Ausgabe dieses Codes wird `10` und `Integer` sein.
+
+Es gibt auch Debugger-Tools wie `byebug` oder `pry`, die es uns ermöglichen, Schritt für Schritt durch unseren Code zu gehen und die Werte der Variablen zu überprüfen. Diese Tools sind besonders hilfreich bei der Fehlerbehebung von komplexen Programmen.
+
+# Siehe auch
+
+- [Ruby-Dokumentation zu `puts`](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-puts)
+- [Artikel über Debugging in Ruby](https://medium.com/@byrningtyger/ruby-debugging-in-practice-2f9dbdef244d)

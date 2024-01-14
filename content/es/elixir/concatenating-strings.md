@@ -1,76 +1,53 @@
 ---
-title:                "Elixir: Concatenando strings"
+title:                "Elixir: Uniendo cadenas"
+simple_title:         "Uniendo cadenas"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué unir cadenas de texto en Elixir
 
-La concatenación de cadenas es una técnica esencial en la programación en Elixir. Permite combinar varias cadenas de texto en una sola, lo que resulta muy útil para crear mensajes o imprimir información en la pantalla. Además, es una habilidad fundamental para trabajar con bases de datos y formatear datos de manera adecuada.
+Unir o concatenar cadenas de texto es una tarea común en cualquier lenguaje de programación. En Elixir, es un proceso sencillo y eficiente que nos permite manejar y manipular cadenas de manera más dinámica.
 
 ## Cómo hacerlo
 
-La concatenación de cadenas en Elixir se realiza utilizando el operador `<>`. Veamos un ejemplo:
+Para unir cadenas en Elixir, utilizamos el operador de concatenación `<>` entre los dos strings que queremos unir. Por ejemplo:
 
 ```Elixir
 nombre = "Juan"
-apellido = "González"
-saludo = "¡Hola, " <> nombre <> " " <> apellido <> "!"
-IO.puts(saludo)
-```
-Output:
-```
-¡Hola, Juan González!
+apellido = "Pérez"
+nombre_completo = nombre <> " " <> apellido
 ```
 
-También es posible concatenar más de dos cadenas a la vez, simplemente encadenando más operadores `<>`. Por ejemplo:
+En este ejemplo, utilizamos el operador `<>` para unir las variables `nombre` y `apellido` con un espacio en medio. El resultado final será la variable `nombre_completo` con el valor "Juan Pérez".
+
+Otra forma de concatenar cadenas en Elixir es utilizando la función `String.concat/2`, que acepta una lista de cadenas y las une en una sola. Por ejemplo:
 
 ```Elixir
-inicio = "Hoy es"
-dia = "lunes"
-fin = "y hace sol."
-frase = inicio <> " " <> dia <> " " <> fin
-IO.puts(frase)
-```
-Output:
-```
-Hoy es lunes y hace sol.
+frase = String.concat(["Elixir", "es", "un", "lenguaje", "fácil", "y", "poderoso"])
 ```
 
-Aunque el operador `<>` es el más común para la concatenación de cadenas en Elixir, también existe la función `String.concat/2` que realiza la misma operación. Su uso es el siguiente:
+El resultado de este ejemplo será la variable `frase` con el valor "Elixir es un lenguaje fácil y poderoso".
+
+## Profundizando en la concatenación de cadenas
+
+Es importante tener en cuenta que en Elixir, las cadenas de texto son inmutables, lo que significa que no se pueden modificar directamente. Por lo tanto, al unir cadenas estamos creando una nueva cadena en lugar de modificar la existente.
+
+Además, es importante mencionar que también podemos unir cadenas con valores numéricos, ya que Elixir es un lenguaje dinámico. Por ejemplo:
 
 ```Elixir
-mensaje = String.concat(["¡", "Hola", " ", "mundo", "!"])
-IO.puts(mensaje)
-```
-Output:
-```
-¡Hola mundo!
+numero = 5
+resultado = "El número es" <> numero
 ```
 
-## Profundizando
+En este caso, el resultado final será la cadena "El número es 5", ya que el operador `<>` también funciona con diferentes tipos de datos.
 
-Es importante mencionar que la concatenación de cadenas en Elixir es muy eficiente. A diferencia de otros lenguajes, no se crea una nueva cadena cada vez que se realiza una concatenación. En su lugar, se utilizan referencias a las cadenas originales para crear una única cadena final. Esto significa que el proceso es más rápido y eficiente en términos de memoria.
+# Ver también
 
-Por otro lado, también es posible utilizar la interpolación de cadenas en lugar de la concatenación. Esto permite insertar variables directamente en una cadena utilizando el símbolo `#{}`. Veamos un ejemplo:
-
-```Elixir
-fruta = "manzana"
-color = "roja"
-respuesta = "¿Cuál es tu fruta favorita?"
-IO.puts("Mi fruta favorita es la #{fruta} #{color}, ¿qué tal la tuya?")
-IO.puts("Por cierto, #{respuesta}")
-```
-Output:
-```
-Mi fruta favorita es la manzana roja, ¿qué tal la tuya?
-Por cierto, ¿Cuál es tu fruta favorita?
-```
-
-## Ver también
-
-- [Documentación oficial de Elixir sobre la concatenación de cadenas](https://elixir-lang.org/getting-started/string-interpolation-and-matching.html#string-interpolation)
-- [Elixir School: Strings](https://elixirschool.com/es/lessons/basics/strings/)
+- [Documentación oficial de Elixir sobre strings](https://hexdocs.pm/elixir/String.html)
+- [Ejercicios prácticos con cadenas de texto en Elixir](https://medium.com/@andreamiranda/5-ejercicios-practicos-con-cadenas-de-texto-en-elixir-ff66269673ae)
+- [Artículo sobre los operadores en Elixir](https://medium.com/@lucasvmiguel/entendiendo-los-operadores-en-elixir-b66a3947a125)

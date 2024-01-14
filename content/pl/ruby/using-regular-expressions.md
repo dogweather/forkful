@@ -1,60 +1,50 @@
 ---
 title:                "Ruby: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego korzystać z wyrażeń regularnych?
+## Dlaczego
 
-Wyrażenia regularne są niezwykle przydatnym i potężnym narzędziem w programowaniu w Ruby. Służą one do znajdowania i manipulowania tekstem, co może znacznie ułatwić pracę z danymi w aplikacjach. W tym artykule przekażemy Ci podstawową wiedzę na temat korzystania z wyrażeń regularnych w Ruby, abyś mógł z powodzeniem stosować je w swoich projektach.
+Regular expressions są bardzo przydatnym narzędziem w programowaniu. Pozwalają nam na szybkie i efektywne przeszukiwanie i manipulowanie tekstami, co jest niezbędne w wielu projektach. Dlatego warto nauczyć się jak ich używać.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby rozpocząć używanie wyrażeń regularnych w Ruby, musimy najpierw zaimportować odpowiedni moduł. W tym celu użyjemy polecenia `require 'regexp'`. Następnie możemy zadeklarować wyrażenie regularne, np. `pattern = /raz/`, które oznacza, że szukamy tekstu, który zawiera słowo "raz".
+Do wykorzystania regular expressions w Ruby musimy najpierw zaimportować bibliotekę "re" za pomocą komendy `require 're'`. Zanim zaczniemy używać regular expressions, musimy także przypisać wartość do zmiennej, która będzie przechowywała nasz tekst. 
 
-Teraz możemy wykorzystać różne metody na obiekcie wyrażenia regularnego, aby przeprowadzić operacje na tekście. Na przykład, możemy użyć metody `match` do sprawdzenia, czy w danym tekście znajduje się dopasowanie do wzorca, czyli naszego wyrażenia regularnego. Oto przykład kodu:
-
-```Ruby
-require 'regexp'
-
-text = "Jest raz, bywa dwa razy, ale nigdy trzy razy"
-
-pattern = /raz/
-
-puts text.match(pattern)
-```
-
-Output: `raz`
-
-Możemy także użyć metody `scan`, aby znaleźć wszystkie dopasowania naszego wyrażenia regularnego w tekście. Oto przykład:
+Przykładowo, jeśli chcemy znaleźć w tekście wszystkie wystąpienia słowa "Ruby", możemy użyć metody `scan` w następujący sposób:
 
 ```Ruby
-require 'regexp'
-
-text = "Dodaj +2, odejmij -1"
-
-pattern = /\+\d|-1/
-
-puts text.scan(pattern)
+text = "Kurczę, ale lubię programować w Ruby!"
+puts text.scan(/Ruby/)
 ```
 
-Output: `+2, -1`
+Wynikiem działania tego kodu będzie wypisanie słowa "Ruby" z tekstu, ponieważ w kodzie wyrażenie regularne zostało umieszczone w odwrotnych ukośnikach, co oznacza, że szukamy dokładnego dopasowania z tekstem. 
 
-Ten prosty przykład pokazuje, jak wyrażenia regularne mogą być przydatne w prostych operacjach matematycznych.
+Możemy także wykorzystać wyrażenie regularne do zastąpienia fragmentów tekstu. Na przykład, jeśli chcemy zamienić wszystkie liczby w tekście na słowo "liczba", możemy użyć metody `gsub`:
 
-## Pogłębiona eksploracja
+```Ruby
+text = "Witam, dzisiaj jest 4 października."
+puts text.gsub(/\d+/, 'liczba')
+```
 
-Wyrażenia regularne oferują ogromne możliwości i ich pełen zakres funkcji jest nieco zaawansowany dla początkujących użytkowników. Jeśli chcesz dowiedzieć się więcej na temat korzystania z wyrażeń regularnych w Ruby, polecamy sprawdzić dokumentację oraz samodzielnie eksperymentować. Poniżej przedstawiamy kilka przydatnych linków:
+Wynikiem będzie "Witam, dzisiaj jest liczba października.", ponieważ `\d+` oznacza "jedna lub więcej cyfr" i zostaje zastąpiony słowem "liczba". 
 
-- [Dokumentacja Ruby o wyrażeniach regularnych](https://ruby-doc.org/core-3.0.0/Regexp.html)
-- [Interaktywny tutorial wyrażeń regularnych w Ruby](https://rubular.com/)
-- [Artykuł "Wyrażenia regularne w Ruby na przykładach"](https://geek.justjoin.it/wyrazenia-regularne-ruby-przyklady/) (po polsku)
+## Deep Dive
+
+W wyrażeniach regularnych można wykorzystać wiele różnych symboli i operatorów, które pozwalają nam na bardziej precyzyjne wyszukiwanie tekstu. Na przykład, `.` oznacza "dowolny znak", `[]` pozwala na zdefiniowanie listy dopuszczalnych znaków, a `+` oznacza "jedno lub więcej wystąpień poprzedniego znaku". 
+
+Istnieją także specjalne znaki, takie jak `\w` (dowolne litery, cyfry i znak podkreślenia), `\s` (białe znaki), oraz `\d` (cyfry). Możliwe jest także wykorzystanie operatorów logicznych, takich jak `|` (alternatywa) czy `^` (negacja). 
+
+Dzięki znajomości tych symboli i operatorów, możemy tworzyć wyrażenia regularne, które dokładnie odpowiadają naszym potrzebom i przyspieszą naszą pracę.
 
 ## Zobacz także
 
-- [Kurs Ruby na Udemy](https://www.udemy.com/course/the-complete-ruby-programmer-course/?referralCode=4AAC0095AB1D9986A073)
-- [Książka "Kurs programowania w języku Ruby"](https://helion.pl/ksiazki/kurs-programowania-w-jezyku-ruby-jayant-sharma,jpruby.htm) (po polsku)
-- [Strona internetowa ruby-lang.org](https://www.ruby-lang.org/)
+- [Dokumentacja Ruby o regular expressions](https://ruby-doc.org/core-2.7.1/Regexp.html)
+- [Interaktywny kurs wyrażeń regularnych](https://regexone.com/)
+- [Artykuł o wyrażeniach regularnych na blogu ThoughtBot](https://thoughtbot.com/blog/going-steady-with-regular-expressions)

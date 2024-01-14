@@ -1,7 +1,9 @@
 ---
-title:                "C#: Das Schreiben einer Textdatei"
+title:                "C#: Eine Textdatei schreiben"
+simple_title:         "Eine Textdatei schreiben"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/writing-a-text-file.md"
 ---
 
@@ -9,51 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Schreiben von Textdateien ist eine grundlegende Fähigkeit für alle, die C# programmieren. Mit Textdateien können Sie Daten speichern, die vom Benutzer eingegeben wurden, Ergebnisse von Berechnungen ausgeben und vieles mehr. Es ist auch eine effektive Möglichkeit, Informationen zu speichern, ohne eine komplexe Datenbank einzurichten.
+Das Schreiben von Textdateien ist eine der grundlegendsten Aufgaben beim Programmieren. Es ermöglicht es uns, Informationen dauerhaft zu speichern und später wieder darauf zuzugreifen. Das kann hilfreich sein, um Benutzereingaben zu speichern, Protokolle zu erstellen oder eine Schnittstelle zu anderen Programmen herzustellen.
 
-## Wie man es macht
+## Wie geht man vor
 
-Um eine Textdatei in C# zu schreiben, müssen Sie zunächst die `StreamWriter` -Klasse verwenden. Beginnen Sie mit der Erstellung einer Instanz der `StreamWriter` -Klasse und übergeben Sie als Parameter den Namen und den Speicherort der zu erstellenden Textdatei.
-
-```C#
-StreamWriter writer = new StreamWriter(@"C:\beispieltextdatei.txt");
-```
-
-Anschließend können Sie die `Write` oder `WriteLine` Methode verwenden, um Daten in die Textdatei zu schreiben. Die `WriteLine` Methode fügt automatisch einen Zeilenumbruch hinzu, während die `Write` Methode dies nicht tut.
+Das Erstellen einer Textdatei ist in C# relativ einfach. Zunächst benötigen wir eine Dateiklasse, wie zum Beispiel `StreamWriter`, um die Datei zu öffnen und mit dem Schreiben zu beginnen. Wir können dann die Methode `WriteLine()` verwenden, um Text in die Datei zu schreiben. Zum Beispiel:
 
 ```C#
-writer.WriteLine("Dies ist ein Beispieltext.");
-writer.Write("Dies ist ein weiterer Text ohne Zeilenumbruch.");
+using System.IO;
+
+StreamWriter datei = new StreamWriter("meineDatei.txt");
+datei.WriteLine("Hallo, Welt!");
+datei.Close();
 ```
 
-Schließlich müssen Sie den `StreamWriter` schließen, um sicherzustellen, dass alle Daten erfolgreich in die Textdatei geschrieben wurden.
+Dieses Codebeispiel erstellt eine neue Textdatei namens "meineDatei.txt" und schreibt den Text "Hallo, Welt!" hinein. Beachten Sie, dass wir am Ende die Datei mit `Close()` schließen, um sicherzustellen, dass alle Daten gespeichert werden.
+
+Um weitere Textzeilen hinzuzufügen, können wir einfach die Methode `WriteLine()` erneut verwenden. Wenn wir jedoch einfach `Write()` verwenden, wird kein Zeilenumbruch hinzugefügt, so dass der Text an der gleichen Stelle fortgesetzt wird. Zum Beispiel:
 
 ```C#
-writer.Close();
+datei.WriteLine("Das ist die zweite Zeile.");
+datei.WriteLine("Und das ist die dritte Zeile.");
+datei.Write("Diese Zeile wird an die dritte Zeile angehängt.");
+datei.Close();
 ```
 
-Das obige Beispiel erstellt eine neue Textdatei und überschreibt alle vorhandenen Daten. Wenn Sie Daten an eine vorhandene Textdatei anhängen möchten, können Sie die `Append` Methode verwenden.
-
-```C#
-StreamWriter writer = new StreamWriter(@"C:\beispieltextdatei.txt", append: true);
-```
-
-Eine vollständige Anleitung zum Lesen und Schreiben von Textdateien in C# finden Sie in der offiziellen Microsoft-Dokumentation: [Lesen und Schreiben von Text in einer Datei](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file).
+Dieses Beispiel erstellt eine Textdatei mit insgesamt drei Zeilen: "Das ist die zweite Zeile.", "Und das ist die dritte Zeile." und "Diese Zeile wird an die dritte Zeile angehängt."
 
 ## Tiefere Einblicke
 
-Um eine bessere Kontrolle über das Schreiben von Textdateien zu haben, können Sie auch die `File` Klasse verwenden, um direkt auf die Datei zuzugreifen, anstatt eine Instanz der `StreamWriter` Klasse zu erstellen. Dies gibt Ihnen mehr Flexibilität bei der Verwendung von Dateipfaden und beim Lesen und Schreiben von Dateien.
+Manchmal müssen wir möglicherweise viele Daten in eine Textdatei schreiben. In diesem Fall können wir die Methode `Write()` oder `WriteLine()` in einer Schleife verwenden, um effizient Daten zu speichern. Wir können auch die Formatierung nutzen, um die Datei übersichtlicher zu gestalten. Zum Beispiel:
 
 ```C#
-string path = @"C:\beispieltextdatei.txt";
-File.WriteAllText(path, "Dieser Text wird in die Datei geschrieben.");
+for (int i = 1; i <= 10; i++)
+{
+    datei.WriteLine("Zahl " + i + ": " + i * i);
+}
 ```
 
-Wenn Sie eine vorhandene Datei anpassen und bestimmte Daten ändern möchten, bietet die `File` Klasse auch Methoden zum Ersetzen von Text in einer Datei.
+Dieses Beispiel schreibt die Zahlen von 1 bis 10 in die Datei, gefolgt von deren Quadraten. Wir können auch die Methode `WriteFormat()` verwenden, um die Ausgabe zu formatieren und das Hinzufügen von Variablen zu vermeiden. Zum Beispiel:
 
-Eine vollständige Dokumentation mit weiteren Beispielen finden Sie hier: [System.IO.File Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.io.file).
+```C#
+for (int i = 1; i <= 10; i++)
+{
+    datei.WriteFormat("Zahl {0}: {1}", i, i * i);
+    //Das gleiche wie "Zahl " + i + ": " + i * i
+}
+```
+
+Letztendlich ist das Schreiben von Textdateien in C# eine wichtige Fähigkeit, die uns dabei hilft, unsere Programme an die Bedürfnisse unserer Nutzer anzupassen.
 
 ## Siehe auch
 
-- [Lesen und Schreiben von Text in einer Datei](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
-- [System.IO.File Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.io.file)
+- [Lesen von Textdateien in C#](https://www.digitalocean.com/community/tutorials/how-to-read-and-write-to-text-files-in-cpt)
+- [C# Dokumentation](https://docs.microsoft.com/de-de/dotnet/csharp/)

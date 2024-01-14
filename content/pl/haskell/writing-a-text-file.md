@@ -1,68 +1,39 @@
 ---
-title:                "Haskell: Pisanie pliku tekstowego"
+title:                "Haskell: Tworzenie pliku tekstowego"
+simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego pisanie pliku tekstowego jest ważne
+## Dlaczego
 
-Pisanie plików tekstowych jest niezbędnym elementem programowania w Haskellu. Pozwala ono na zapisywanie danych w trwałej postaci, co jest niezwykle przydatne w różnego rodzaju aplikacjach. Poniżej przedstawione zostaną przykłady, jak można pisać pliki tekstowe w Haskellu oraz jak to zrobić w sposób bardziej zaawansowany.
+Pisanie tekstowych plików jest nieodłączną częścią wielu projektów programistycznych. Może to pomóc w przechowywaniu danych, tworzeniu plików konfiguracyjnych lub generowaniu raportów. W języku Haskell, istnieje wiele sposobów na tworzenie i manipulowanie plikami tekstowymi, dlatego warto poznać podstawy tego procesu.
 
 ## Jak to zrobić
 
-Pierwszym krokiem jest importowanie modułu `System.IO`, który umożliwia operacje na plikach. Następnie, do stworzenia pliku tekstowego potrzebujemy funkcji `openFile` z dwoma argumentami: ścieżką do pliku oraz tryb otwarcia, który w tym przypadku będzie `WriteMode`:
+Tworzenie i zapisywanie plików tekstowych w Haskell jest stosunkowo proste, ponieważ język ten posiada wbudowane funkcje do obsługi operacji na plikach. Aby utworzyć nowy plik, należy użyć funkcji "openFile" z biblioteki "System.IO". Przykładowy kod wyglądałby następująco:
 
 ```Haskell
 import System.IO
 
 main = do
-    let fileName = "moj_plik.txt"
-    handle <- openFile fileName WriteMode
+    handle <- openFile "hello.txt" WriteMode
+    hPutStrLn handle "Witaj, świecie!"
+    hClose handle
 ```
 
-Następnym krokiem będzie użycie funkcji `hPutStr` lub `hPutStrLn` do zapisu danych do pliku. Możemy zapisać pojedynczą linijkę tekstu lub cały napis:
+W powyższym przykładzie, używamy funkcji "openFile" do utworzenia nowego pliku o nazwie "hello.txt" i trybie zapisu. Następnie, za pomocą funkcji "hPutStrLn" zapisujemy do pliku tekst "Witaj, świecie!". Na koniec, używamy funkcji "hClose" aby zamknąć plik. W ten sam sposób można również wczytać dane z pliku za pomocą funkcji "hGetLine" lub "hGetContents".
 
-```Haskell
-hPutStr handle "To jest mój pierwszy plik tekstowy."
-hPutStrLn handle "Kolejna linijka tekstu."
-```
+## Wszystko to i więcej
 
-Ostatnim ważnym krokiem jest zamknięcie pliku za pomocą funkcji `hClose`:
+Ponadto, język Haskell oferuje wiele zaawansowanych funkcji do manipulowania plikami tekstowymi, takich jak zmienianie rozmiaru, usuwanie oraz przesuwanie wskaznika do odczytu/zapisu. Warto również wiedzieć o różnych trybach otwierania pliku, takich jak "ReadMode", "AppendMode" czy "ReadWriteMode". Dokładne informacje na ten temat można znaleźć w dokumentacji języka Haskell.
 
-```Haskell
-hClose handle
-```
+## Zobacz również
 
-Po wykonaniu tych kroków, plik tekstowy zostanie utworzony i zapisany w wybranej lokalizacji. Możemy także użyć funkcji `withFile`, która otwiera plik, wykonuje operacje na nim i automatycznie go zamyka:
-
-```Haskell
-import System.IO
-
-main = do
-    let fileName = "moj_plik.txt"
-    withFile fileName WriteMode (\handle -> do
-        hPutStr handle "To jest mój pierwszy plik tekstowy."
-        hPutStrLn handle "Kolejna linijka tekstu."
-    )
-```
-
-## Głębsza analiza
-
-W przypadku gdy chcemy w trakcie działania programu dodać kolejne dane do pliku tekstowego, musimy użyć trybu `AppendMode`:
-
-```Haskell
-withFile fileName AppendMode (\handle -> do
-    hPutStr handle "Nowe dane do pliku."
-    hPutStrLn handle "Kolejna linijka tekstu."
-)
-```
-
-Możemy także używać funkcji `hGetContents` oraz `hGetLine`, które pozwalają na odczytywanie danych z pliku tekstowego.
-
-## Zobacz także
-
-- [Dokumentacja modułu System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Tutorial w języku polskim o operacjach na plikach w Haskellu](https://www.ziemniak.ovh/?cat=oprogramowanie&subcat=informacje&art=2015-11-22-haskell-operacje-na-plikach)
+- [Oficjalna dokumentacja języka Haskell](https://www.haskell.org/documentation/)
+- [Poradnik dla początkujących w języku Haskell](https://wiki.haskell.org/Tutorials/Programming_Haskell)
+- [Kurs programowania w języku Haskell](https://www.edx.org/course/introduction-to-functional-programming-2)

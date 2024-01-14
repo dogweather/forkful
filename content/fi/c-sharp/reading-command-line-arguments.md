@@ -1,57 +1,52 @@
 ---
 title:                "C#: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi lukea komentorivivaihtoehtoja
+## Miksi
+Onko sinulla koskaan ollut tarvetta lukea komentoriviparametreja C# -ohjelmassa? Tässä blogikirjoituksessa näytämme, miten se tehdään.
 
-Komentorivivaihtoehtojen lukeminen on tärkeä taito C#-ohjelmoijille, sillä se mahdollistaa ohjelmien dynaamisen toiminnan ja antaa käyttäjille mahdollisuuden muokata ohjelman toimintoja. Tämä on erityisen tärkeää, kun halutaan tehdä monipuolisempia ja interaktiivisempia sovelluksia.
-
-## Näin luet komentorivivaihtoehtoja
-
-Komentorivivaihtoehtojen lukeminen C#-ohjelmassa on helppoa. Komentoriviparametrit tallentuvat ohjelman suorittamisen yhteydessä string-taulukkoon (```string[]```). Ne voi käsitellä ```foreach```-silmukalla tai indeksien avulla.
-
-Esimerkiksi seuraavassa koodissa luetaan komentoriviparametrit ja tulostetaan ne yksi kerrallaan:
-
+## Kuinka
 ```C#
-foreach (string arg in args)
+using System;
+
+class CommandArgsExample
 {
-  Console.WriteLine(arg);
+  static void Main(string[] args)
+  {
+    // Tulostaa komentoriviparametrit
+    foreach (string arg in args)
+    {
+      Console.WriteLine(arg);
+    }
+  }
 }
 ```
 
-Jos haluamme, että ohjelma tulostaa viestin, jos parametreja ei anneta, voimme käyttää ```Length```-ominaisuutta tarkastellaksemme taulukon koon:
+Kun suoritat tämän esimerkkikoodin komentoriviltä, tulostuu komentoriviparametrit ja niiden arvot.
+
+```
+> dotnet CommandArgsExample.dll hello world
+hello
+world
+```
+
+## Syvällinen sukellus
+Kommentoimme koodin selittääksemme, mitä siinä tapahtuu. Komentoriviparametri voidaan lukea myös suoraan tietyssä indeksissä, jos tiedetään sen paikka:
 
 ```C#
-if (args.Length == 0)
-{
-  Console.WriteLine("Komentoriviparametreja ei annettu.");
-}
+// Tulostaa toisen komentoriviparametrin
+Console.WriteLine(args[1]);
 ```
 
-## Syvempää tietoa komentorivivaihtoehtojen lukemisesta
-
-Komentoriviparametreilla voidaan myös antaa ohjelmalle erilaisia toimintoja ja arvoja. Esimerkiksi ohjelmaa voi ajaa seuraavasti:
-
-```
-dotnet ohjelma.exe -tulosta tiedosto.txt
-```
-
-Tässä tapauksessa ohjelma tulostaa tiedoston ```tiedosto.txt``` sisällön. Tämä tapahtuu, koska komentoriviparametreissa määritelty ```-tulosta``` kertoo ohjelmalle, mitä sen tulee tehdä, ja ```tiedosto.txt``` on tässä tapauksessa parametrin arvo.
-
-Komentoriviparametreja voi myös antaa ohjelmalle haluamassaan järjestyksessä. Esimerkiksi edellisen komennon tulostus voitaisiin määritellä myös näin:
-
-```
-dotnet ohjelma.exe tiedosto.txt -tulosta
-```
-
-Syvempi ymmärrys komentorivivaihtoehtojen lukemisesta auttaa rakentamaan monipuolisempia ja käyttäjäystävällisempiä sovelluksia.
+Tämä on erityisen hyödyllistä, jos ohjelmallesi on pakko antaa tiettyjä parametreja ja haluat varmistaa, että ne annetaan oikeassa järjestyksessä.
 
 ## Katso myös
-
-- [Microsoftin ohjeet komentorivivaihtoehtojen lukemiseen](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [Stack Overflow: How to read command line arguments in C#](https://stackoverflow.com/questions/1365407/how-to-read-command-line-arguments-in-c-sharp)
+- [Microsoftin C# -dokumentaatio komentoriviparametrien lukemisesta](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [Stack Overflow -vastaus C# -komentoriviparametrien lukemisesta](https://stackoverflow.com/questions/5598462/how-to-read-command-line-arguments-in-c-sharp)

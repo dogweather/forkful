@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Lancer un nouveau projet"
+title:                "Elixir: Commencer un nouveau projet"
+simple_title:         "Commencer un nouveau projet"
 programming_language: "Elixir"
-category:             "Getting Started"
+category:             "Elixir"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/starting-a-new-project.md"
 ---
 
@@ -9,46 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il y a de nombreuses raisons pour lesquelles quelqu'un pourrait vouloir se lancer dans un nouveau projet de programmation en Elixir. Peut-être que vous cherchez à apprendre un nouveau langage de programmation ou à étendre vos compétences en programmation fonctionnelle. Ou peut-être que vous êtes simplement attiré par toutes les fonctionnalités intéressantes et dynamiques qu'Elixir a à offrir. Quelle que soit votre motivation, vous ne serez pas déçu d'explorer le monde de la programmation en Elixir.
+Avant de commencer un nouveau projet, il est important de comprendre pourquoi vous voulez vous lancer dans ce projet. Peut-être avez-vous une idée géniale que vous voulez concrétiser en utilisant Elixir? Ou peut-être voulez-vous simplement apprendre un nouveau langage de programmation pour élargir vos compétences? Quelle que soit la raison, il est important de connaître votre motivation avant de vous plonger dans un nouveau projet.
 
 ## Comment faire
 
-Pour commencer votre nouveau projet en Elixir, suivez ces étapes simples :
+Pour commencer un nouveau projet en Elixir, il y a quelques étapes à suivre. Tout d'abord, vous devez installer Elixir sur votre machine. Ensuite, vous pouvez créer un nouveau dossier pour votre projet et initialiser un nouveau projet Elixir en utilisant la commande ```mix new nom_du_projet```. Cela va générer une structure de dossier de base pour votre projet Elixir.
 
-```Elixir
-# Créer un nouveau fichier de projet
-mix new mon_projet
-
-# Entrer dans le dossier du projet
-cd mon_projet
-
-# Ouvrir le fichier d'application principal en utilisant Atom par exemple
-atom lib/mon_projet.ex
+Ensuite, vous pouvez écrire du code dans vos fichiers .ex pour implémenter votre projet. Voici un exemple simple de la fonction hello world en Elixir:
 ```
-
-Maintenant que vous avez créé votre projet, il est temps d'écrire votre premier code en Elixir. Voici un exemple de fonction qui prend en compte un nombre et retourne son double :
-
-```Elixir
-defmodule MonProjet do
-  def double(n) do
-    n * 2
+defmodule HelloWorld do
+  def hello do
+    IO.puts "Bonjour le monde!"
   end
 end
-
-MonProjet.double(5)
-
-# Output : 10
 ```
 
-Vous pouvez également utiliser le mode interactif Elixir (en entrant la commande `iex` dans votre terminal) pour expérimenter avec du code en temps réel.
+Pour exécuter ce code, vous pouvez utiliser la commande ```mix run le_nom_du_fichier.ex```, qui affichera "Bonjour le monde!" dans votre terminal.
 
-## Plongée en profondeur
+## Approfondissement
 
-Lorsque vous démarrez un nouveau projet en Elixir, il est important de comprendre quelques concepts clés tels que les modules, les fonctions, les types de données et les structures de contrôle. Vous devrez également apprendre à utiliser les nombreuses bibliothèques et frameworks disponibles pour Elixir, tels que Phoenix pour le développement d'applications web. Mais ne vous inquiétez pas, il y a une abondance de ressources en ligne pour vous aider à apprendre et à maîtriser Elixir.
+Pour aller plus loin dans la création d'un nouveau projet en Elixir, il est utile de comprendre la structure de dossier générée par la commande ```mix new```. Vous pouvez également apprendre les bases de la syntaxe Elixir et des concepts tels que les modules, les fonctions et les listes. N'oubliez pas de consulter la documentation officielle d'Elixir pour en apprendre davantage sur les fonctionnalités avancées et les bonnes pratiques de codage.
 
 ## Voir aussi
 
-- [Site officiel d'Elixir](https://elixir-lang.org/)
-- [Documentation Elixir](https://hexdocs.pm/elixir/)
-- [Codecademy : Apprenez Elixir](https://www.codecademy.com/learn/learn-elixir)
-- [Elixir Forum (Forum de discussion sur Elixir)](https://elixirforum.com/)
+Maintenant que vous savez comment démarrer un nouveau projet en Elixir, voici quelques ressources utiles pour approfondir vos connaissances:
+
+- [Documentation officielle Elixir] (https://elixir-lang.org/docs.html)
+- [Guide de style Elixir] (https://github.com/christopheradams/elixir_style_guide)
+- [Apprendre Elixir en 10 minutes] (https://learnxinyminutes.com/docs/fr-fr/elixir-fr/)
+- [Communauté Elixir sur Reddit] (https://www.reddit.com/r/elixir/)

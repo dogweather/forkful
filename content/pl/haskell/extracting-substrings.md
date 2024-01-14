@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Wycinanie podciągów"
+title:                "Haskell: Wyodrębnianie podciągów"
+simple_title:         "Wyodrębnianie podciągów"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/extracting-substrings.md"
 ---
 
@@ -9,46 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Extrakcja podciągów jest jedną z podstawowych operacji w programowaniu. Pozwala na wycinanie fragmentów tekstu, co może być przydatne w różnych zastosowaniach. Przeczytaj ten artykuł, aby dowiedzieć się dlaczego warto poznać tę technikę w języku Haskell.
+Extrakcja podciągów jest ważną umiejętnością w programowaniu, która pozwala nam na wydobycie tylko tych części tekstu, które nas interesują. Jest to niezbędne w różnych sytuacjach, na przykład przy przetwarzaniu i analizie danych tekstowych.
 
 ## Jak to zrobić
 
-Extrakcja podciągów w Haskell jest bardzo prosta dzięki funkcji `take` i `drop`, które przyjmują odpowiednio ilość elementów do wycięcia z początku i końca listy.
-
 ```Haskell
-take 3 "abcdefg" -- zwraca "abc"
-drop 2 "12345" -- zwraca "345"
+-- Definiowanie przykładowego tekstu
+tekst = "Cześć! Nazywam się Kasia i jestem programistką."
+
+-- Wydobycie pierwszych 5 liter
+take 5 tekst
+-- Output: "Cześć"
+
+-- Wydobycie ostatnich 10 liter
+drop (length tekst - 10) tekst
+-- Output: "jestem programistką."
 ```
 
-Możemy też wykorzystać `take` i `drop` jako argumenty funkcji `splitAt`, aby podzielić listę na dwie części.
+Okazuje się, że istnieje wiele przydatnych funkcji w Haskellu, które pozwalają nam na ekstrakcję podciągów w różnych sposób. Na przykład funkcja `take` pozwala nam na wydobycie określonej liczby elementów na początku tekstu, podczas gdy `drop` pozwala na wydobycie na końcu tekstu. Aby uzyskać dłuższy podciąg, możemy także połączyć te dwie funkcje w jednym wywołaniu.
+
+## Głębsza analiza
+
+Za pomocą funkcji `take` i `drop` możemy wydobyć tylko określony fragment tekstu, ale co jeśli chcemy wyodrębnić część tekstu na podstawie warunków? W tym przypadku możemy skorzystać z funkcji `takeWhile` i `dropWhile`, które pozwalają nam na wydobycie podciągu aż do momentu, gdy warunek zostanie spełniony.
 
 ```Haskell
-splitAt 4 "Haskellers" -- zwraca ("Hask", "ellers")
+-- Definiowanie przykładowego tekstu
+tekst = "Dzisiaj jest ładna, słoneczna pogoda."
+
+-- Wydobycie wszystkich słów po słowie "jest"
+dropWhile (/= "jest") (words tekst)
+-- Output: ["jest", "ładna", "słoneczna", "pogoda."]
 ```
 
-Aby wyciąć podciąg o konkretnej długości z dowolnego miejsca w tekście, możemy wykorzystać funkcję `substr` z biblioteki `Text`.
+W ten sposób możemy bardzo precyzyjnie wyodrębnić tylko potrzebne nam fragmenty tekstu.
 
-```Haskell
-import Data.Text (substr)
+## Zobacz także
 
-substr 4 6 "Hello World!" -- zwraca "o Worl"
-```
-
-Jeśli potrzebujemy wyciąć podciąg o wybranym początku i końcu, możemy skorzystać z funkcji `dropWhile` i `takeWhile`.
-
-```Haskell
-takeWhile (/= 'c') "abcde" -- zwraca "ab"
-dropWhile (/= 'c') "abcde" -- zwraca "cde"
-```
-
-## Głębszy zanurzenie
-
-Operacje na listach w Haskell są wyjątkowo wydajne, dlatego funkcje `take` i `drop` oraz ich pochodne działają szybko nawet na bardzo długich listach. Wykorzystanie funkcji z biblioteki `Text` może być korzystne, gdy chcemy wyciąć podciąg z bardzo dużego tekstu.
-
-Ponadto, funkcje te mogą być wykorzystywane w wielu różnych kontekstach. Na przykład, wykorzystując `take` i `drop`, możemy implementować tzw. "paginację" w aplikacjach internetowych, aby wyświetlać tylko określoną część zawartości na stronie.
-
-## Zobacz też
-
-- Dokumentacja funkcji `take` i `drop`: https://hackage.haskell.org/package/base/docs/Prelude.html#v:take
-- Biblioteka `Text`: https://hackage.haskell.org/package/text/docs/Data-Text.html
-- Przykładowa implementacja paginacji w aplikacji internetowej: https://github.com/jirutka/gitter-paginate/blob/master/src/Gitter/Paginate.hs
+- [Dokumentacja Haskell](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#g:20)
+- [Tutorial: Podstawy Haskell](https://learnhaskell.com/)

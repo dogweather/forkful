@@ -1,64 +1,66 @@
 ---
 title:                "Elixir recipe: Starting a new project"
+simple_title:         "Starting a new project"
 programming_language: "Elixir"
-category:             "Getting Started"
+category:             "Elixir"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why Start a New Project in Elixir?
+## Why
 
-Starting a new project in Elixir can be a great choice for many developers. Elixir is a functional, dynamic and highly scalable language, making it a powerful tool for building applications of all sizes. It also has a robust and growing community, providing a wealth of resources and support for developers. So if you're looking to build a robust and efficient application, Elixir may be just the right choice for you.
+When starting a new project, it's important to choose the right programming language. Elixir, a functional programming language built on top of the Erlang VM, offers a unique set of features that make it an ideal choice for web development, networking, and distributed systems. In this blog post, we'll explore why Elixir is a great choice for your next project.
 
-# How To Start a New Project in Elixir
+## How To
 
-To start a new project in Elixir, you'll need to have Elixir and its build tool, Mix, installed on your system. Once they are installed, follow these simple steps:
+To get started with Elixir, you'll need to have Elixir and the Erlang VM installed on your machine. Once you have that set up, you can create a new project by running the following command in your terminal:
 
-1. Create a new project directory: `mix new my_project`
-
-2. Change into the project directory: `cd my_project`
-
-3. Generate an Elixir script: `mix new --app my_app`
-
-4. Navigate to the app directory: `cd apps/my_app`
-
-5. Run the test suite: `mix test`
-
-6. Build the application: `mix compile`
-
-7. Run the application: `mix run --no-halt`
-
-These steps will get you started with a basic Elixir project. You can then proceed to add more functionality and build on top of this initial structure.
-
-```Elixir
-# Basic Elixir script
-defmodule MyApp do
-  def hello do
-    IO.puts "Hello world!"
-  end
-end
-
-MyApp.hello()
-
-# Output: Hello world!
+```
+mix new my_project
 ```
 
-# Deep Dive into Starting a New Project in Elixir
+This will create a new project folder with all the necessary files and configurations. Let's take a closer look at some of these files and how they are used in an Elixir project.
 
-When starting a new project in Elixir, it's important to understand the principles of functional programming. This means writing code that is immutable, meaning that variables cannot be changed after they are assigned. This may seem restrictive, but it actually promotes better and more reliable code.
+### The Mix file
 
-It's also worth noting that Elixir has a built-in package manager, Hex, which allows for easy installation and management of dependencies. This allows for a more streamlined and efficient development process.
+The Mix file is where you can define your project dependencies, tasks, and other configurations. Let's say we want to add the `httpoison` library to our project. We can do so by adding the following line to the `deps` function in the Mix file:
 
-Another key feature of Elixir is its ability to run multiple processes and manage them using the actor model. This makes Elixir ideal for building highly concurrent and distributed applications.
+```
+{:httpoison, "~> 1.6"}
+```
 
-# See Also
+After saving the file, we can run `mix deps.get` in our terminal to download and install the new dependency. This allows us to use functions from the `httpoison` library in our project.
 
-Here are some useful resources for learning more about starting a new project in Elixir:
+### The Lib folder
 
-- [Elixir official website](https://elixir-lang.org/)
-- [Elixir School](https://elixirschool.com/)
-- [Elixir Forum](https://elixirforum.com/)
-- [Awesome Elixir](https://github.com/h4cc/awesome-elixir)
+The Lib folder is where you will write most of your Elixir code. Let's say we want to create a function to make a GET request using `httpoison`. We can do so by creating a new file in the Lib folder and adding the following code:
 
-Start your Elixir journey today and see the amazing things you can build with this powerful language. Happy coding!
+```
+def make_get_request(url) do
+  HTTPoison.get(url)
+end
+```
+
+We can then use this function in other files in our project. For example, let's say we want to make a GET request to `https://example.com` in our `my_project.ex` file. We can do so by calling our function with the desired URL:
+
+```
+result = make_get_request("https://example.com")
+```
+
+### Running the project
+
+To run our project, we can use `mix run` in our terminal. This will start our project and run any code in our `main` function. Alternatively, we can use `iex -S mix` to start an interactive Elixir shell and run our project from there.
+
+## Deep Dive
+
+One of the reasons Elixir is a great choice for projects is because of its focus on concurrency and fault-tolerance. Elixir uses lightweight processes, also known as "actors", to handle parallel computations. These processes communicate with each other through message passing, allowing for a highly scalable and fault-tolerant system.
+
+Elixir also has a robust set of tools for building distributed systems. The `mix` tool, which we used earlier, provides tasks for creating and managing clusters of Elixir nodes. This allows you to distribute your workload across multiple nodes, making it easier to scale your application as needed.
+
+## See Also
+
+- Official Elixir website: https://elixir-lang.org/
+- Elixir documentation: https://hexdocs.pm/elixir/
+- Elixir Forum: https://elixirforum.com/

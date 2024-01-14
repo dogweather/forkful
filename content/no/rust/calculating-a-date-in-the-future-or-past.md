@@ -1,58 +1,60 @@
 ---
-title:                "Rust: Beregning av en dato i fremtiden eller fortiden"
+title:                "Rust: Beregning av datoer i fremtiden eller fortiden"
+simple_title:         "Beregning av datoer i fremtiden eller fortiden"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge hendelser eller få oversikt over tidligere hendelser. Det kan også være en god måte å øve på å bruke Rust-programmeringsspråket på.
+# Hvorfor
+Rust er et kraftig programmeringsspråk som har blitt stadig mer populært blant utviklere. En av grunnene til dette er det store utvalget av verktøy og biblioteker som kan hjelpe deg å løse ulike utfordringer. I denne bloggposten skal vi se nærmere på hvordan man kan benytte Rust til å beregne en dato i fremtiden eller fortiden.
 
-## Slik Gjør du Det
-For å beregne en dato i Rust, kan du bruke biblioteket "chrono". Først må du legge til dette biblioteket i prosjektet ditt ved å legge til følgende linje i "Cargo.toml" filen:
+# Hvordan
+For å komme i gang med å beregne datoer i Rust, må vi først importere biblioteket "chrono" som lar oss jobbe med datoer og tider. Deretter kan vi benytte oss av funksjoner som f.eks. "Local::today()" og "Local::now()" for å få tak i informasjon om dagens dato og tid.
 
+```Rust
+use chrono::{ Local, Datelike, Timelike };
+
+let today = Local::today(); // Dagens dato
+let now = Local::now(); // Klokken nå
+
+println!("Dagens dato er {} {}, {}", today.month(), today.day(), today.year());
+println!("Klokken er nå {}:{}:{}", now.hour(), now.minute(), now.second());
 ```
-[dependencies]
-chrono = "0.4"
-```
 
-Deretter kan du importere biblioteket i Rust-filen din ved å legge til følgende linje øverst i filen din:
+For å beregne en dato i fremtiden eller fortiden kan vi bruke funksjonen "with_year()" for å spesifisere et år, og deretter "with_month()" og "with_day()" for å spesifisere en måned og dag.
 
-```
-use chrono::{NaiveDate, Datelike, Timelike, Weekday, NaiveDateTime};
-```
+```Rust
+use chrono::NaiveDate; // Importerer NaiveDate for å kunne konvertere fra dato til dato
+use chrono::Duration; // Importerer Duration for å kunne håndtere tidsintervall
 
-La oss si at vi vil beregne datoen 100 dager fra i dag. Først må vi opprette en variabel som representerer i dag ved hjelp av "Local" funksjonen fra "chrono" biblioteket:
-
-```
 let today = Local::today();
+let future = today.with_year(2020).with_month(5).with_day(10); // Ny dato i fremtiden
+
+let difference = future.signed_duration_since(today); // Henter tidsintervall mellom dagens dato og fremtidsdato
+let days = difference.num_days(); // Konverterer til antall dager
+
+println!("Det er {} dager igjen til {} {}, {}.", days, future.month(), future.day(), future.year());
 ```
 
-Deretter kan vi bruke "checked_add_signed" funksjonen fra "Secs" strukturen for å legge til 100 dager på dagens dato:
+# Dypdykk
+Det som er spesielt nyttig med "chrono" biblioteket er at det støtter ulike typer datoer og tider, som f.eks. lokale og globale datoer, UTC og ISO datoer. Dette gjør det enkelt å skrive kode som kan håndtere ulike tidssoner og kulturer.
 
-```
-let future_date = today.checked_add_signed(chrono::Duration::days(100));
-```
+En annen nyttig funksjon i "chrono" biblioteket er muligheten til å formatere datoer og tider. Dette kan gjøres ved hjelp av funksjonen "format()" og angivelse av ønsket format. Dette kan være nyttig hvis man ønsker å vise datoer og tider på en spesifikk måte for brukeren.
 
-Til slutt kan du skrive ut datoen på et lesbart format ved å bruke "format" funksjonen:
+```Rust
+use chrono::format::{ StrftimeItems }; // Importerer StrftimeItems for å kunne formatere datoer og tider
 
-```
-println!("100 dager fra i dag vil være {}", future_date.format("%A, %e %B %Y"));
-```
+let now = Local::now();
+let formatted_date = now.format("%H:%M, %e %B %Y").to_string(); // Formatterer til ønsket format
 
-Dette vil resultere i følgende utdat:
-
-```
-100 dager fra i dag vil være Saturday, 10 September 2022
+println!("Klokken er nå {}.", formatted_date);
 ```
 
-Du kan også beregne en dato i fortiden ved å bruke "checked_sub_signed" funksjonen og trekke fra et antall dager i stedet for å legge til. Du kan leke rundt med bokstavene i "format" funksjonen for å få ønsket utdataformat.
-
-## Dypdykk
-For å forstå bedre hvordan "chrono" biblioteket fungerer, kan du utforske dokumentasjonen og se på koden til de forskjellige funksjonene. Du kan også se nærmere på hvordan datoer og tider representeres i "chrono" ved å bruke de forskjellige strukturene som "NaiveDate", "NaiveDateTime" og "Secs".
-
-## Se Også
-- [chrono dokumentasjon](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust programmeringsspråk](https://www.rust-lang.org/no)
+# Se Også
+- [Rust Dokumentasjon](https://doc.rust-lang.org/)
+- [Chrono Bibliotek](https://docs.rs/chrono/0.4.11/chrono/)
+- [Offisiell Rust Forum](https://users.rust-lang.org/)

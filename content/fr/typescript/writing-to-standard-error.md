@@ -1,50 +1,48 @@
 ---
-title:                "TypeScript: Écrire vers l'erreur standard"
+title:                "TypeScript: Ecrire vers l'erreur standard"
+simple_title:         "Ecrire vers l'erreur standard"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire vers l'erreur standard en TypeScript ?
+## Pourquoi
 
-Ecrire vers l'erreur standard, ou "stdout" en anglais, est une pratique courante dans le monde de la programmation. Cela permet d'afficher des messages d'erreur ou des informations de débogage directement dans la console de l'utilisateur. En utilisant TypeScript, cette pratique peut être encore plus efficace grâce à la forte typage et à la vérification des types statique, qui permettent de détecter plus facilement les erreurs de programmation.
+Ecrire vers la sortie d'erreur standard est une pratique courante en programmation TypeScript. Cela permet de gérer et de signaler les erreurs à l'utilisateur de manière claire et concise. Dans cet article, nous allons vous expliquer comment procéder pour écrire vers la sortie d'erreur standard et approfondir cette technique.
 
-## Comment faire ?
+## Comment faire
 
-Pour commencer, il faut importer le module "process" dans votre fichier TypeScript :
-
-```TypeScript
-import * as process from 'process';
-```
-
-Ensuite, vous pouvez utiliser la fonction "process.stderr.write" pour écrire un message vers l'erreur standard. Voici un exemple simple :
-
-```TypeScript 
-process.stderr.write("Une erreur est survenue !");
-```
-
-Vous pouvez également utiliser des variables dans votre message, en les encadrant par des backticks :
+Pour écrire vers la sortie d'erreur standard en TypeScript, utilisez simplement la méthode `console.error()` en lui passant en argument le message que vous souhaitez afficher. Par exemple :
 
 ```TypeScript
-const count = 5;
-process.stderr.write(`Il y a ${count} erreurs.`);
+console.error("Une erreur est survenue !");
 ```
 
-Le résultat obtenu dans la console sera : "Une erreur est survenue ! Il y a 5 erreurs.".
+Cela affichera sur la sortie d'erreur standard le message "Une erreur est survenue !". Vous pouvez également inclure des variables ou des expressions dans le message en les entourant de `${}`.
 
-## Zoom sur l'écriture vers l'erreur standard
+```TypeScript
+const nom = "Jean";
+const age = 32;
 
-En utilisant la fonction "process.stderr.write", vous avez la possibilité d'ajouter des options supplémentaires pour personnaliser l'affichage de vos messages. Voici les options disponibles :
+console.error(`${nom} a ${age} ans.`);
+```
 
-- "encoding" : spécifie l'encodage des données à écrire. Par défaut, c'est l'encodage du terminal qui est utilisé.
-- "fd" : l'identifiant du fichier dans lequel écrire. Par défaut, c'est l'erreur standard.
-- "allowHalfOpen" : si vrai, la file d'attente d'écriture ne se ferme pas automatiquement après l'écriture du message. Par défaut, c'est faux.
-- "mode" : si "allowHalfOpen" est vrai, mode spécifie le mode de fichier à utiliser lors de l'ouverture automatique du fichier. Par défaut, c'est "0o666" en écriture.
+Cela affichera sur la sortie d'erreur standard le message "Jean a 32 ans.".
+
+## Plongée en profondeur
+
+Il est important de noter que la sortie d'erreur standard est destinée à afficher des messages d'erreur et de débogage à l'utilisateur. Elle ne doit pas être utilisée pour afficher des informations sensibles ou confidentielles, car ces messages peuvent être visibles par d'autres utilisateurs ou sauvegardés dans des fichiers de log.
+
+De plus, vous pouvez également personnaliser la sortie d'erreur standard en utilisant différentes couleurs ou en ajoutant des informations supplémentaires, telles que la date et l'heure de l'erreur. Pour cela, vous pouvez utiliser des modules externes tels que "chalk" ou "log4js".
 
 ## Voir aussi
 
-- [Documentation officielle de process module en Node.js (en anglais)](https://nodejs.org/api/process.html)
-- [Documentation officielle de TypeScript (en français)](https://www.typescriptlang.org/docs/)
-- [Tutoriel sur les fonctions en TypeScript (en français)](https://www.tutorialsteacher.com/typescript/typescript-functions)
+Pour en savoir plus sur la gestion des erreurs en TypeScript, vous pouvez consulter les liens suivants :
+
+- [Gestion des erreurs en TypeScript](https://typescript.developpez.com/tutoriels/typescript/gestion-erreur/)
+- [Utiliser la méthode console.error() en TypeScript](https://www.tutorialspoint.com/typescript/typescript_console.htm)
+- [Module chalk pour personnaliser la sortie d'erreur standard](https://www.npmjs.com/package/chalk)
+- [Module log4js pour une meilleure gestion des logs en TypeScript](https://www.npmjs.com/package/log4js)

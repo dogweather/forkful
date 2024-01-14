@@ -1,7 +1,9 @@
 ---
-title:                "C: Convertir une chaîne en minuscule"
+title:                "C: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,40 +11,92 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il y a plusieurs raisons pour lesquelles vous pourriez avoir besoin de convertir une chaîne de caractères en minuscule en programmation en C. Cela peut être utile pour comparer des chaînes de caractères sans se soucier de la casse, ou pour assurer une entrée utilisateur uniforme avant de la traiter dans votre programme.
+Dans la programmation, il est souvent nécessaire de convertir une chaîne de caractères en lettres minuscules. Cela peut être utile pour comparer des chaînes de manière insensible à la casse ou pour l'affichage de données dans un format uniforme. Dans cet article, nous allons plonger dans la façon de le faire en utilisant le langage de programmation C.
 
 ## Comment faire
 
-Heureusement, la bibliothèque standard du langage C fournit une fonction simple pour convertir une chaîne de caractères en minuscule : `tolower()`. Voici un exemple de code qui utilise cette fonction pour convertir une chaîne de caractères en minuscule et l'afficher :
+Tout d'abord, nous devons comprendre comment les caractères sont représentés en C. Les caractères sont stockés comme des nombres entiers, avec chaque caractère ayant une valeur spécifique. Les lettres minuscules ont des valeurs plus élevées que les lettres majuscules, ce qui signifie que pour convertir une lettre majuscule en minuscule, nous devons simplement ajouter un nombre spécifique à sa valeur. Par exemple, pour convertir la lettre 'A' en 'a', nous devons ajouter 32 à sa valeur. Voici un exemple de code en utilisant cette méthode :
 
 ```C
 #include <stdio.h>
-#include <ctype.h>
 
 int main() {
-  char str[] = "Bonjour, je suis une CHAÎNE de CARACTÈRES";
 
-  for (int i = 0; str[i]; i++) {
-    putchar(tolower(str[i]));
-  }
+  char lettre = 'A';
+  lettre = lettre + 32;
+  printf("%c", lettre);
+  // Output : a
 
   return 0;
 }
 ```
 
-La sortie de ce code serait `bonjour, je suis une chaîne de caractères`.
+Maintenant que nous comprenons la méthodologie de base, nous pouvons écrire une fonction qui prend une chaîne de caractères et la convertit en lettres minuscules en utilisant une boucle pour parcourir chaque caractère et en utilisant la méthode mentionnée ci-dessus pour chaque lettre. Voici un exemple complet de code :
 
-## Plongée plus profonde
+```C
+#include <stdio.h>
+#include <string.h>
 
-Si vous voulez en savoir plus sur le processus de conversion des caractères en minuscule, voici quelques points à garder à l'esprit :
+void lowerCase(char str[]) {
 
-- La fonction `tolower()` utilise la table ASCII pour déterminer la valeur de chaque caractère. Si un caractère n'a pas de casse (comme un chiffre ou un symbole), il reste inchangé.
-- Il existe également une fonction `toupper()` pour convertir une chaîne de caractères en majuscules.
-- Si vous traitez des caractères non-ASCII, il est possible que `tolower()` ne fonctionne pas correctement. Dans ce cas, vous devriez envisager d'utiliser une bibliothèque de manipulation de chaînes de caractères spécifique à votre langage.
-- Enfin, gardez à l'esprit que `tolower()` modifie la chaîne de caractères d'origine, vous devriez donc créer une copie si vous avez besoin de conserver la chaîne de caractères d'origine.
+  int i;
+
+  for (i = 0; str[i] != '\0'; i++) {
+    if (str[i] >= 'A' && str[i] <= 'Z') {
+      str[i] = str[i] + 32;
+    }
+  }
+
+}
+
+int main() {
+
+  char str[] = "Chaîne de Caractères";
+  printf("Avant la conversion : %s \n", str);
+
+  lowerCase(str);
+  printf("Après la conversion : %s \n", str);
+  // Output : Après la conversion : chaîne de caractères
+
+  return 0;
+}
+```
+
+## Plongée profonde
+
+Il y a une autre façon de convertir une chaîne de caractères en lettres minuscules en utilisant la fonction `tolower()` définie dans la bibliothèque `ctype.h`. Cette fonction prend un caractère en argument et renvoie sa version en minuscules. En utilisant un pointeur, nous pouvons appliquer cette fonction à chaque caractère de la chaîne, comme suit :
+
+```C
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void lowerCase(char str[]) {
+
+  char *ptr;
+  for (ptr = str; *ptr != '\0'; ptr++) {
+    *ptr = tolower(*ptr);
+  }
+
+}
+
+int main() {
+
+  char str[] = "Chaîne de Caractères";
+  printf("Avant la conversion : %s \n", str);
+
+  lowerCase(str);
+  printf("Après la conversion : %s \n", str);
+  // Output : Après la conversion : chaîne de caractères
+
+  return 0;
+}
+```
+
+Cette seconde méthode peut sembler plus élégante et concise, mais elle peut être moins efficace en termes de performances. Il est donc important de peser le pour et le contre et de choisir la méthode qui convient le mieux à votre programme.
 
 ## Voir aussi
 
-- [Documentation de la fonction `tolower()` en français](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
-- [Article sur la manipulation de chaînes de caractères en C](https://www.geeksforgeeks.org/string-manipulations-in-c-with-examples/)
-- [Exemples de code pour la conversion en minuscule dans différents langages](https://rosettacode.org/wiki/Change_character_case#C)
+- [Documentation sur la fonction `tolower()` en C](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
+- [Tutoriel sur les chaînes de caractères en langage C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+- [Exemples de code pour la manipulation de chaînes de caractères en C](https://www.programiz.com/c-programming/examples/string)

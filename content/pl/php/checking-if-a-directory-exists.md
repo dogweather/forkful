@@ -1,7 +1,9 @@
 ---
 title:                "PHP: Sprawdzanie czy istnieje katalog"
+simple_title:         "Sprawdzanie czy istnieje katalog"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/checking-if-a-directory-exists.md"
 ---
 
@@ -9,30 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą PHP i regularnie pracujesz z plikami, na pewno zdarzyło ci się kiedyś potrzebować sprawdzenia, czy dany katalog istnieje. Dlatego dzisiaj przyjrzymy się, jak to zrobić w php.
+Jeśli programujesz w PHP, z pewnością spotkałeś się z sytuacją, w której potrzebujesz sprawdzić czy dany katalog istnieje. W tym wpisie dowiesz się, dlaczego jest to niezbędne oraz jak to zrobić.
 
 ## Jak to zrobić
 
-Sprawdzenie, czy katalog istnieje, można wykonać za pomocą funkcji `is_dir()`. Przyjmuje ona jako argument nazwę katalogu i zwraca `true`, jeśli istnieje, lub `false`, jeśli nie istnieje. Oto prosty przykład kodu:
+Sprawdzenie istnienia katalogu jest bardzo proste w PHP. Wystarczy skorzystać z funkcji `is_dir()`, która zwraca wartość logiczną `true` lub `false` w zależności od tego, czy katalog istnieje czy nie. Przykładowy kod wyglądałby następująco:
 
 ```PHP
-if (is_dir("nazwa_katalogu")) {
-    echo "Katalog istnieje.";
-}else{
+$directory = "/sciezka/do/katalogu";
+ 
+if (is_dir($directory)) {
+    echo "Katalog istnieje!";
+} else {
     echo "Katalog nie istnieje.";
 }
 ```
 
-## Wgląd w głębię
+Przykładowy output dla istniejącego katalogu wyglądałby tak:
 
-Funkcja `is_dir()` wykorzystuje strumienie (streams) PHP, aby przetestować, czy katalog istnieje. Przed wykonaniem funkcji, najpierw odbywa się próba otwarcia katalogu w strumieniu, a następnie sprawdzenie, czy nie wystąpiły błędy. Jeśli funkcja zwraca `true`, oznacza to, że strumień został pomyślnie otwarty, co oznacza, że katalog istnieje.
+```
+Katalog istnieje!
+```
 
-Ponadto, funkcja `is_dir()` nie tylko sprawdza, czy podany katalog istnieje, ale także, czy jest to katalog. Jeśli podana nazwa odnosi się do pliku, a nie katalogu, funkcja zwróci `false`.
+W przypadku nieistniejącego katalogu output będzie wyglądał następująco:
+
+```
+Katalog nie istnieje.
+```
+
+## Deep Dive
+
+Funkcja `is_dir()` korzysta z systemowego wywołania `stat()` w celu sprawdzenia czy dana ścieżka jest katalogiem. Dzięki temu nie musimy sami przeszukiwać struktury systemu plików, co znacznie przyspiesza proces. Warto również zwrócić uwagę na różnicę między `is_dir()` a `file_exists()`, która również sprawdza istnienie danego pliku lub katalogu, jednak może być nieco wolniejsza w niektórych przypadkach.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o pracy z plikami w PHP, zapoznaj się z poniższymi artykułami:
+Jeśli chcesz dowiedzieć się więcej na temat operacji na katalogach w PHP, polecam zapoznać się również z poniższymi artykułami:
 
-- [Otwieranie plików w PHP](https://pl.wikibooks.org/wiki/PHP/Czytanie_i_pisanie_plik%C3%B3w)
-- [Tworzenie i usuwanie katalogów w PHP](https://www.php.net/manual/en/function.mkdir.php)
-- [Podstawy manipulacji plikami w PHP](https://www.php.net/manual/en/function.file.php#refsect1-function.file-examples)
+- [How to Create a Directory in PHP](https://www.codeofaninja.com/2017/02/php-create-directory.html)
+- [How to Remove a Directory in PHP](https://www.codeofaninja.com/2017/04/php-remove-directory.html)
+- [PHP Manual: is_dir() function](https://www.php.net/manual/en/function.is-dir.php)

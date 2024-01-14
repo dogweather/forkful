@@ -1,7 +1,9 @@
 ---
 title:                "Bash: Création d'un fichier temporaire"
+simple_title:         "Création d'un fichier temporaire"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/creating-a-temporary-file.md"
 ---
 
@@ -9,34 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Créer un fichier temporaire peut sembler être une petite tâche sans grande importance, mais en réalité, c'est un outil très utile en programmation Bash. Que vous ayez besoin de stocker temporairement des données, de gérer des fichiers temporaires ou de réaliser des opérations complexes, les fichiers temporaires peuvent faciliter votre vie en tant que développeur.
+Si vous êtes un programmeur Bash, vous avez probablement entendu parler de la création de fichiers temporaires dans vos scripts. Mais pourquoi dépenser du temps et de l'énergie à créer ces fichiers temporaires ? La réponse est simple : les fichiers temporaires sont utiles pour stocker des données temporaires qui ne sont pas nécessaires après l'exécution d'un programme.
 
 ## Comment faire
 
-Il existe plusieurs façons de créer un fichier temporaire en Bash. Voici deux exemples couramment utilisés :
+Il existe différentes façons de créer un fichier temporaire en utilisant Bash. Voici deux exemples de code qui vous permettront de créer un fichier temporaire et d'y stocker des données :
 
-```Bash
-# Exemple 1 : Utilisation de la commande "touch" pour créer un fichier vide temporaire
-touch temp_file.txt
-# Vous pouvez ensuite utiliser cette variable pour effectuer une opération quelconque
-echo "Bonjour" > temp_file.txt
+```
+#!/bin/bash
 
-# Exemple 2 : Utilisation de la variable système "TMPDIR" pour créer un fichier temporaire
-tmp_file=$(mktemp $TMPDIR/temp_file.XXXXXX)
-# La variable "tmp_file" contiendra le chemin vers le fichier temporaire créé
-echo "Bonjour" > $tmp_file
+# Créer un fichier temporaire en utilisant la commande mktemp
+tempfile=$(mktemp)
+
+# Écrire du texte dans le fichier temporaire
+echo "Ceci est un exemple de texte" >> $tempfile
+
+# Afficher le contenu du fichier temporaire
+cat $tempfile
+
+# Supprimer le fichier temporaire à la fin du script
+rm $tempfile
+
 ```
 
-Vous pouvez également spécifier un préfixe pour le nom du fichier temporaire en utilisant l'option "-p" avec la commande "mktemp".
+```
+#!/bin/bash
+
+# Créer un fichier temporaire en utilisant la commande touch
+tempfile=$(mktemp)
+
+# Écrire du texte dans le fichier temporaire en utilisant des redirections
+echo "Ceci est un autre exemple de texte" > $tempfile
+
+# Afficher le contenu du fichier temporaire en utilisant la commande cat
+cat $tempfile
+
+# Supprimer le fichier temporaire à la fin du script
+rm $tempfile
+
+```
+
+L'échantillon de code ci-dessus utilise la commande `mktemp` pour créer un fichier temporaire avec un nom unique et la commande `touch` pour créer un fichier vide. Ensuite, du texte est écrit dans le fichier temporaire en utilisant un opérateur de redirection, comme `>>` ou `>`. Enfin, le contenu du fichier temporaire est affiché à l'aide de la commande `cat` et le fichier est supprimé à la fin du script.
 
 ## Plongée en profondeur
 
-La création d'un fichier temporaire peut sembler simple, mais il y a plusieurs choses à prendre en compte pour éviter les problèmes potentiels. Par exemple, assurez-vous que le fichier temporaire est sécurisé en définissant correctement les droits d'accès. Vous devriez également vérifier si le fichier temporaire existe déjà avant de le créer pour éviter d'écraser un fichier existant. De plus, il est important de supprimer le fichier temporaire une fois que vous avez fini de l'utiliser pour éviter d'encombrer votre espace de stockage.
+La création de fichiers temporaires peut sembler simple, mais il y a quelques choses à garder à l'esprit lorsque vous utilisez cette technique dans vos scripts Bash. Tout d'abord, il est important de noter que les fichiers temporaires ne sont pas supprimés automatiquement après l'exécution d'un programme. Vous devrez utiliser la commande `rm` pour les supprimer vous-même.
+
+Deuxièmement, vous pouvez spécifier un modèle pour le nom de votre fichier temporaire en utilisant l'option `-t` avec la commande `mktemp`. Cela peut être utile si vous avez besoin de créer plusieurs fichiers temporaires dans un même script et que vous souhaitez les différencier facilement.
+
+Enfin, il est important de prendre des précautions supplémentaires si vous stockez des informations sensibles dans les fichiers temporaires. Vous devez vous assurer de les supprimer correctement et de ne pas les laisser traîner sur votre système une fois qu'ils ne sont plus nécessaires.
 
 ## Voir aussi
 
-- [Guide Bash complet en français](http://www.mygsm.fr/formation/guide-complet-bash-linux.php)
-- [Introduction à la programmation Bash](https://zestedesavoir.com/tutoriels/337/introduction-a-la-programmation-bash/)
-- [Documentation officielle de Bash](https://www.gnu.org/software/bash/manual/)
-
-**Bash est un langage de script polyvalent et puissant, et la création de fichiers temporaires peut être une étape importante dans de nombreux projets. En comprenant comment créer et gérer correctement des fichiers temporaires en Bash, vous pourrez améliorer vos compétences en programmation et faciliter votre travail quotidien. Essayez les exemples ci-dessus et voyez par vous-même à quel point les fichiers temporaires peuvent être pratiques !**
+- [Documentation de la commande mktemp (en anglais)](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)
+- [Documentation de la commande touch (en anglais)](https://www.gnu.org/software/coreutils/manual/html_node/touch-invocation.html)
+- [Guide sur l'utilisation de fichiers temporaires en Bash (en anglais)](https://blog.finxter.com/create-temporary-files-python/)

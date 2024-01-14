@@ -1,40 +1,44 @@
 ---
-title:                "Ruby: Escrita de testes"
+title:                "Ruby: Escrevendo testes"
+simple_title:         "Escrevendo testes"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Ruby?
+## Porquê
 
-Escrever testes é uma prática fundamental para garantir que o seu código em Ruby funcione corretamente. Além disso, testes bem escritos ajudam a identificar erros e bugs no código, facilitando a manutenção do mesmo no longo prazo.
+Escrever testes é uma prática essencial no desenvolvimento de software. Isso ajuda a garantir que o código escrito está funcionando corretamente e ajuda a evitar bugs e erros no futuro. Além disso, é uma forma de manter um alto padrão de qualidade em seu código.
 
-## Como escrever testes em Ruby
+## Como fazer
 
-Para escrever testes em Ruby, é necessário usar uma ferramenta de teste como o RSpec. Primeiro, instale o RSpec na sua máquina usando o comando `gem install rspec`. Em seguida, crie um arquivo de teste com a extensão `.spec.rb` e adicione os seguintes códigos:
+Para escrever testes em Ruby, existem algumas ferramentas populares, como RSpec ou MiniTest. Você pode começar instalando uma delas e adicionando-a ao seu projeto. 
 
-```Ruby
-# arquivo de teste
-require "rspec"
+Uma vez que você tenha escolhido sua ferramenta de teste favorita, é hora de começar a escrever seus primeiros testes. Aqui está um exemplo de um teste básico utilizando o MiniTest:
 
-describe "Calculadora" do
-  it "deve somar dois números corretamente" do
-    resultado = 2 + 2
-    expect(resultado).to eq(4)
-  end 
-end
+```
+require "minitest/autorun"
+
+class CalculadoraTeste < Minitest::Test
+  def test_soma
+    assert_equal 8, 5 + 3
+  end
+end 
 ```
 
-Para rodar o teste, basta ir até o terminal e digitar `rspec nome_do_arquivo.spec.rb`. Você verá uma mensagem de sucesso caso o teste passe ou uma mensagem de erro caso o teste falhe.
+Neste exemplo, estamos testando se a soma de 5 e 3 é igual a 8. O método `assert_equal` compara o primeiro parâmetro com o segundo e, se eles forem iguais, o teste é considerado bem-sucedido. Este é apenas um exemplo simples, mas você pode escrever testes mais complexos para garantir que seu código esteja funcionando corretamente.
 
-## Profundidade nos testes em Ruby
+## Mergulho profundo
 
-Existem diversas maneiras de escrever testes em Ruby, é importante encontrar a que se adapta melhor ao tipo de aplicação que está sendo testada. Alguns conceitos importantes a se conhecer sobre testes em Ruby incluem doubles, stubs e mocks. Além disso, é sempre recomendado cobrir o máximo possível do código com testes, incluindo casos de borda e erros.
+Ao escrever testes, é importante lembrar que eles devem ser específicos e focados apenas em testar uma pequena parte do seu código. Isso garante que seus testes sejam mais fáceis de entender e manter. Além disso, é importante testar tanto os casos de sucesso quanto os casos de falha, a fim de garantir que seu código lide corretamente com possíveis problemas.
+
+Além disso, você pode utilizar mocks e stubs em seus testes para simular dados ou comportamentos específicos e garantir que seu código está lidando com eles corretamente.
 
 ## Veja também
 
-- [Documentação do RSpec](https://rspec.info/documentation/)
-- [Tudo o que você precisa saber sobre testes em Ruby](https://rubygarage.org/blog/how-to-test-ruby)
-- [10 bons motivos para escrever testes em Ruby](https://www.sitepoint.com/10-reasons-to-test-your-ruby-code/)
+- [RSpec Documentation](https://rspec.info/documentation/)
+- [MiniTest Introduction](https://github.com/seattlerb/minitest#minitest--ruby-test-framework)
+- [Mocks & Stubs in Testing](https://semaphoreci.com/community/tutorials/mocks-and-stubs-in-ruby-unit-tests)

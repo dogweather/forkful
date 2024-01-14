@@ -1,7 +1,9 @@
 ---
-title:                "Swift: स्ट्रिंग्स को जोड़ना"
+title:                "Swift: स्ट्रिंग्स को सम्मिलित करना"
+simple_title:         "स्ट्रिंग्स को सम्मिलित करना"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/concatenating-strings.md"
 ---
 
@@ -9,26 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-स्ट्रिंग को जोड़ने में इंजीनियरिंग होती है क्योंकि यह एक स्ट्रिंग के असामान्य संख्या जो तीसरे पक्ष के पर्यायों के साथ भिन्न होने की संभावना है। स्विफ्ट प्रोग्रामिंग भाषा एक संकल्प पर आधारित भाषा है जिसमें आप किसी भी हिस्से को संख्या बना सकते हैं। आप इस कारण से संग्रहित स्ट्रिंग का स्वतंत्र घोषणा स्ट्रिंग के साथ भिन्न नहीं हो सकते हैं
+आधुनिक प्रोग्रामिंग में स्ट्रिंग्स (strings) अभिव्यक्ति (expression) के लिए बहुत महत्वपूर्ण होते हैं। स्ट्रिंग्स को जोड़ने के द्वारा हम अपनी प्रोग्रामिंग को और भी प्रभावी बना सकते हैं।
 
-## कैसे करें
+## कैसे
 
 ```Swift
-let firstName = "विश्वपवन"
-let lastName = "कुमार"
+let firstName = "अमित"
+let lastName = "शर्मा"
 let fullName = firstName + " " + lastName
+print(fullName)
 
-print(fullName) // विश्वपवन कुमार
+//OUTPUT: अमित शर्मा
 ```
+
+स्ट्रिंग्स को जोड़ने के लिए हम "+" ऑपरेटर का उपयोग कर सकते हैं। यह ऑपरेटर आपको दो स्ट्रिंग्स को एक साथ जोड़ने की अनुमति देता है। आप अपनी मुख्य स्ट्रिंग को लंबाई की ओर बढ़ाने के लिए वांछित संख्या के साथ अन्य स्ट्रिंग्स को जोड़ सकते हैं। भीतरी रूप से, Swift इसे Autoclosure के साथ जोड़ने का विशेष तरीका देता है।
 
 ## गहराई में जाएं
 
-स्ट्रिंग को जोड़ने के लिए, हम एक अलग स्ट्रिंग को दूसरे स्ट्रिंग के साथ जोड़ सकते हैं, जिसमें हम जोड़ने के साथ एक ‘एकत्रित’ ऑपरेटर का उपयोग करते हैं। यहां, हमारे पास दो स्ट्रिंग हैं जो एक साथ जोड़ने का स्वरूप बनते हैं। इस तरह से, हम आप उन्हें एक साथ जोड़ सकते हैं और आपका नतीजे में नया स्ट्रिंग विश्लेषण करेंगे। नया स्ट्रिंग अनुत्पाद स्विफ्ट प्रोग्रामिंग के लिए तैयार हो जाएगा।
+जब हम स्ट्रिंग्स को जोड़ते हैं, तो Swift इसे एक अलग स्ट्रिंग (string) के रूप में नहीं बनाता है। यह बस दो स्ट्रिंग्स को उत्पन्न करता है और एक साथ जोड़ता है। इसलिए, आपको ध्यान देना होगा कि स्ट्रिंग्स को जोड़ने से पहले आपको उन्हें अलग-अलग भेजना होगा।
 
-## देखो की
+इसके अतिरिक्त, आप दो प्रकार के स्ट्रिंग्स को एक साथ जोड़ सकते हैं- StringBuffer और StringInterpolation का उपयोग करके। हालांकि, यह हमारे ट्यूटोरियल के बाहर हैं, लेकिन आप उन्हें अधिक शोध कर सकते हैं।
 
-ऐसा करने के लिए अधिक उदाहरण हासिल करने के लिए, नीचे दी गई लिंक्स की जांच करें:
+## देखें भी
 
-- [Swift Strings and Characters - Apple Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Concatenating strings in Swift - Paul Hudson](https://www.hackingwithswift.com/example-code/strings/how-to-concatenate-strings-in-swift)
-- [Concatenating String and Characters - Kunal Kapadia](https://kunalkapadia.github.io/swift/strings/characters/2016/02/14/concatenating-strings-and-characters-in-swift.html)
+- [Swift ऑफिशियल वेबसाइट](https://swift.org/)
+- [Swift स्ट्रिंग्स के साथ ब

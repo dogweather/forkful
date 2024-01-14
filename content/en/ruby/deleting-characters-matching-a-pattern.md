@@ -1,7 +1,9 @@
 ---
 title:                "Ruby recipe: Deleting characters matching a pattern"
+simple_title:         "Deleting characters matching a pattern"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,35 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever come across a situation where you needed to remove certain characters from a string in your Ruby code? Maybe you were trying to clean up user input or extract only certain data from a larger string. Well, the good news is that Ruby has a built-in method that makes this task much simpler - `String#delete`.
+Sometimes in programming, we encounter situations where we need to modify or clean up our data. One common task is to delete characters that match a certain pattern. This can be useful in tasks such as data cleaning, text manipulation, or string parsing. In Ruby, there are several ways to accomplish this task, and in this blog post, we will explore the different methods for deleting characters matching a pattern.
 
 ## How To
 
-To delete characters matching a pattern from a string, all you need to do is call the `delete` method on a string and pass in the pattern you want to delete as an argument. Let's see some examples:
+First, let's clarify what we mean by "matching a pattern". In Ruby, we can use regular expressions (regex) to define a pattern of characters to match. So, when we say "characters matching a pattern", we are talking about a string of characters that follow a specific format.
 
-````Ruby
-# Delete the letter 'a' from a string
-"Hello, my name is Amanda".delete("a")
-# => "Hello, my nme is Amand"
+To delete characters matching a pattern, we can use the `gsub` method. This method stands for "global substitution", meaning it will replace all instances of the pattern in a string. The syntax for this method is as follows:
 
-# Delete all numbers from a string
-"My phone number is 555-123-4567".delete("0-9")
-# => "My phone number is -"
+```ruby
+str.gsub(pattern, replacement)
+```
 
-# Delete all vowels from a string
-"I love Ruby programming!".delete("aeiou")
-# => "l v Rby prgrmmng!"
-````
-As you can see, the `delete` method removes all occurrences of the characters or ranges you specify from the string. You can also pass in multiple arguments to delete multiple patterns at once.
+Let's say we have a string that contains a mix of letters and numbers, and we want to remove all the numbers from it. We can do this using regex and the `gsub` method:
+
+```ruby
+str = "a1b2c3d4e5"
+str.gsub(/\d+/, '')
+```
+
+In this example, we used the regex pattern `\d+` to match one or more digits, and we replaced them with an empty string, effectively deleting them from the original string. The output of this code will be:
+
+```ruby
+"abcde"
+```
+
+Another way to delete characters matching a pattern is by using the `tr` method. This method stands for "translate", and it replaces characters in a string based on a mapping of characters. The syntax for this method is as follows:
+
+```ruby
+str.tr(old_chars, new_chars)
+```
+
+Similar to the `gsub` method, we can use regex to define a pattern for the `tr` method. For example, to remove all numbers from a string, we can do the following:
+
+```ruby
+str = "a1b2c3d4e5"
+str.tr("0-9", '')
+```
+
+In this code, we used the regex pattern `0-9` to match all digits, and we replaced them with an empty string. The output of this code will be the same as the previous example:
+
+```ruby
+"abcde"
+```
 
 ## Deep Dive
 
-Under the hood, the `delete` method uses the `tr` method to perform the deletion. `tr` stands for "translate" and it works by replacing any characters that match the first argument with the corresponding characters in the second argument. So in our examples above, the first argument is the pattern we want to delete and the second argument is an empty string since we don't want to replace it with anything.
+Now that we have covered the basics of how to delete characters matching a pattern, let's take a deeper look at regex and how we can use it to define more complex patterns. As mentioned earlier, regex is a powerful tool for matching patterns in strings and is widely used in many programming languages.
 
-It's worth noting that `delete` is not the same as `gsub` or `tr_s`. `gsub` will replace the deleted characters with an empty string while `tr_s` will condense multiple consecutive deleted characters into a single instance.
+Regex patterns are defined within a pair of forward slashes, and we can use different modifiers to modify our pattern. For example, the `+` modifier means "one or more", the `*` modifier means "zero or more", and the `?` modifier means "zero or one". We can also use square brackets to specify a range of characters. For example, `[a-z]` means all lowercase letters, and `[0-9]` means all digits.
+
+Furthermore, we can use the `|` operator to specify alternatives. For example, `(a|b)` means either "a" or "b", and `(abc|def)` means either "abc" or "def". The `^` and `$` symbols represent the start and end of strings, respectively. So, `^a` means the string starts with "a", and `b$` means the string ends with "b".
+
+There are many more regex modifiers and symbols that we can use to create complex patterns. If you want to learn more, there are plenty of resources available online.
 
 ## See Also
 
-- [Official Ruby documentation for String#delete](https://ruby-doc.org/core-2.5.1/String.html#method-i-delete)
-- [Difference between delete and delete_suffix in Ruby](https://stackoverflow.com/questions/45666252/difference-between-delete-and-delete-suffix-in-ruby)
-- [Ruby Monk tutorial on the `delete` method](https://rubymonk.com/learning/books/1-ruby-primer/chapters/8-strings/lessons/39-string-tricks)
+- [Ruby Documentation on Regular Expressions](https://ruby-doc.org/core-2.7.1/Regexp.html)
+- [Regular Expressions Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/ruby)
+- [Tutorial on Using Regular Expressions in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)

@@ -1,83 +1,69 @@
 ---
-title:                "C: Création d'un fichier temporaire"
+title:                "C: Créer un fichier temporaire"
+simple_title:         "Créer un fichier temporaire"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi 
+## Pourquoi
 
-La création de fichiers temporaires est une technique couramment utilisée en programmation C pour stocker des données temporaires en mémoire. Cela peut être utile pour des tâches telles que la manipulation de fichiers, le stockage de données en cas de panne de système ou l'exécution de programmes nécessitant des fichiers temporaires.
+La création de fichiers temporaires est souvent nécessaire en programmation pour stocker des données temporaires ou pour éviter d'écraser des fichiers existants. Cela peut également être utile pour des applications telles que la gestion des caches et des journaux.
 
-# Comment faire
+## Comment faire
 
-Pour créer un fichier temporaire en C, nous pouvons utiliser la fonction `tmpfile ()` qui est disponible dans la bibliothèque standard `stdio.h`. Cette fonction prend en paramètres le nom du fichier et le mode d'ouverture, et retourne un pointeur vers le fichier temporaire créé.
+Voici un exemple simple de code en C pour créer un fichier temporaire :
 
 ```
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-int main () {
-    FILE *fp;
-    char data[50] = "Hello world!";
+int main()
+{
+    // Définition du nom du fichier temporaire
+    char *filename = "tempfile.txt";
 
-    fp = tmpfile();
-    if (fp == NULL) {
-        perror("Impossible de créer un fichier temporaire");
-        return 1;
+    // Création du fichier temporaire en mode écriture
+    FILE *fp = fopen(filename, "w");
+
+    // Vérification si la création s'est bien déroulée
+    if (fp == NULL)
+    {
+        printf("Impossible de créer le fichier temporaire !");
+        exit(1);
     }
 
-    fputs(data, fp);
+    // Écriture de données dans le fichier temporaire
+    fprintf(fp, "Ceci est un fichier temporaire créé en utilisant le langage C.");
+
+    // Fermeture du fichier
     fclose(fp);
-    
-    return 0;
-}
-```
 
-Dans cet exemple, nous avons créé un fichier temporaire et y avons écrit la chaîne "Hello world!". Ensuite, nous avons fermé le fichier en appelant la fonction `fclose()`.
-
-Lorsque vous utilisez des fichiers temporaires, il est important de les supprimer après utilisation pour éviter l'encombrement de votre système avec des fichiers inutiles. Pour ce faire, vous pouvez utiliser la fonction `remove()` avec le nom du fichier temporaire en paramètre.
-
-```
-#include <stdio.h>
-
-int main () {
-    FILE *fp;
-    char data[50] = "Bonjour le monde!";
-
-    fp = tmpfile ();
-    if (fp == NULL) {
-        perror("Impossible de créer un fichier temporaire");
-        return 1;
-    }
-
-    fputs(data, fp);
-    fclose(fp);
-    remove("tmpfile");
-    
-    return 0;
-}
-```
-
-# Plongée en profondeur
-
-Outre la fonction `tmpfile ()`, il existe également la fonction `tmpnam ()` qui peut être utilisée pour générer un nom de fichier temporaire unique. Cette fonction retourne une chaîne de caractères contenant le chemin du fichier temporaire.
-
-```
-#include <stdio.h>
-
-int main () {
-    char temp_file_name[L_tmpnam];
-    tmpnam(temp_file_name);
-    printf("Le nom du fichier temporaire est %s\n", temp_file_name);
+    // Affichage d'un message de succès
+    printf("Le fichier temporaire a été créé avec succès !");
 
     return 0;
 }
 ```
 
-# Voir aussi
+Ci-dessous, vous trouverez un exemple de sortie pour ce code :
 
-- [Guide de programmation C en Français](https://www.programiz.com/c-programming)
-- [Documentation sur les fonctions de la bibliothèque standard de C](https://www.cplusplus.com/reference/cstdio/)
-- [Guide complet sur la manipulation de fichiers en C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+```
+Le fichier temporaire a été créé avec succès !
+```
+
+## Plongée en profondeur
+
+En utilisant la fonction `fopen()` pour créer un fichier temporaire, celui-ci sera automatiquement supprimé une fois que le programme se terminera. Cela peut être modifié en utilisant la fonction `tmpfile()` qui crée également un fichier temporaire mais qui est géré par le système d'exploitation plutôt que par le programme lui-même.
+
+De plus, il peut être utile de spécifier un répertoire spécifique pour stocker les fichiers temporaires, ce qui peut être fait en utilisant la fonction `mktemp()`.
+
+## Voir aussi
+
+- [Guide complet sur les fichiers en C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [Documentation officielle sur les fonctions de création de fichiers en C](https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html)
+- [Exemples de code pour la manipulation de fichiers temporaires en C](https://www.geeksforgeeks.org/generating-random-number-range-c/)

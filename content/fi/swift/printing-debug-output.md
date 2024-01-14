@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Tulostaminen vianetsintä tulos"
+title:                "Swift: Virheenkorjaustulosteen tulostaminen"
+simple_title:         "Virheenkorjaustulosteen tulostaminen"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/printing-debug-output.md"
 ---
 
@@ -9,57 +11,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi tulostuksia vianmääritykseen on tärkeä osa Swift-ohjelmointia?
+Jokainen koodari tietää, että debug-kehitys on oleellinen osa ohjelmointia. Mutta miksi tulostaisimme debug-tietoa? Se on hyvä tapa tarkistaa, mitä ohjelma on tekemässä ja löytää mahdolliset virheet.
 
-On monia syitä, miksi tulostuksia vianmääritykseen käytetään ohjelmoijien keskuudessa. Se voi auttaa selvittämään virheitä, jäljittämään ohjelman suoritusjärjestystä ja varmistamaan, että koodissa ei ole käyttäjälle näkymättömiä ongelmia. Lisäksi se voi auttaa ymmärtämään paremmin ohjelman toimintaa ja suorituskykyä.
+## Kuinka tehdä
 
-## Miten
+Tulostaessa debug-tietoa Swift-ohjelmassasi, sinun tulee käyttää print()-funktiota. Alla on muutama esimerkki, miten voit tulostaa erilaisia tietotyyppejä:
 
-Tässä esimerkissä näytämme, miten voit käyttää tulostuksia vianmääritykseen Swift-ohjelmassa.
+```Swift
+let name = "Matti"
+print("Hei "+name+", tervetuloa!")
 
-```
-Swift.print("Tämä on tulostus vianmääritykseen.")
-```
-
-Tulostus voi sisältää myös muuttujien arvoja, jotta voit seurata niiden arvojen muutoksia ohjelman suorituksen aikana.
-
-```
-var nimi = "Matti"
-var ikä = 35
-Swift.print("Hei, olen \(nimi) ja olen \(ikä) vuotta vanha.")
+let age = 25
+print("Olet "+String(age)+" vuotta vanha.")
 ```
 
-Esimerkkituloste:
+Tulostaa seuraavan:
 
 ```
-Hei, olen Matti ja olen 35 vuotta vanha.
+Hei Matti, tervetuloa!
+Olet 25 vuotta vanha.
 ```
 
-Voit myös käyttää määriteltyjä funktioita ja niiden tulostuksia vianmääritykseen.
+Voit myös tulostaa muuttujien arvot array- ja dictionary-tyyppisille muuttujille:
 
-```
-func lasku(_ x: Int, _ y: Int) -> Int {
-    return x + y
+```Swift
+let fruits = ["omena", "banaani", "appelsiini"]
+print("Suosikkifruittisi ovat:")
+for fruit in fruits {
+    print("- "+fruit)
 }
 
-Swift.print(lasku(5, 3))
+let person = ["nimi": "Emma", "ikä": 30]
+print("Hän on "+person["name"]+" ja hän on "+String(person["age"])+" vuotta vanha.")
 ```
 
-Esimerkkituloste:
+Tulostaa seuraavan:
 
 ```
-8
+Suosikkifruittisi ovat:
+- omena
+- banaani
+- appelsiini
+Hän on Emma ja hän on 30 vuotta vanha.
 ```
 
-## Syvemmälle
+Voit myös tulostaa erilaisia tietotyyppejä yhdessä, esimerkiksi:
 
-Tulostuksilla vianmääritykseen on mahdollista tehdä paljon muutakin kuin vain tulostaa tietoa konsoliin. Voit esimerkiksi kirjoittaa tulostuksia tiedostoon tai siirtää ne muihin ohjelman osiin, kuten virheenkäsittelyyn. Lisäksi voit käyttää erilaisia tulostusmetodeja, kuten `debugPrint` ja `dump`, jotka tarjoavat lisää tietoa tyypinmäärityksestä ja rakenteesta.
+```Swift
+let isTall = true
+let height = 180.5
+print("Oletko pitkä? "+String(isTall))
+print("Kuinka pitkä olet? "+String(height)+" cm.")
+```
 
-Tulostuksia vianmääritykseen voi myös käyttää ohjelmien optimointiin ja suorituskyvyn parantamiseen. Voit esimerkiksi testata erilaisia koodikingasrakenteita ja verrata niiden suoritusaikoja tulostuksien avulla.
+Tulostaa seuraavan:
+
+```
+Oletko pitkä? true
+Kuinka pitkä olet? 180.5 cm.
+```
+
+## Syvempi sukellus
+
+Print() toiminto hyödyllinen debug-tulostuksessa, mutta sitä ei tulisi käyttää lopullisessa koodissa. Sen sijaan voit käyttää esimerkiksi debuggeria tai logeja.
+
+On myös hyvä huomata, että tulostettavat tiedot voivat aiheuttaa tietoturvariskejä, mikäli sovellus käsittelee arkaluonteista tietoa. Siksi on tärkeää olla varovainen, mitä tietoja tulostaa konsoliin.
 
 ## Katso myös
 
-- [Swiftin virallinen dokumentaatio](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
-- [Swiftin debugPrint-metodi ja sen käyttö](https://developer.apple.com/documentation/swift/1541053-debugprint)
-- [Swiftin dump-metodi ja sen käyttö](https://developer.apple.com/documentation/swift/1541123-dump)
-- [Ohjelmien optimointi Swiftissä](https://www.raywenderlich.com/1415826-optimizing-swift-performance)
+- [Swiftin virallinen dokumentaatio print()-funktiosta](https://developer.apple.com/documentation/swift/1541053-print)
+- [Debug-tulostusten parhaat käytännöt Swiftissä](https://medium.com/@financiermathieu/best-practices-for-debugging-in-swift-4289d5d4d8e5)

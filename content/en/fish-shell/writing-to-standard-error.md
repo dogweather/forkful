@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell recipe: Writing to standard error"
+simple_title:         "Writing to standard error"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/writing-to-standard-error.md"
 ---
 
@@ -9,45 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a Fish Shell programmer, you may wonder why you would want to write to standard error. Writing to standard error allows you to display error messages or other relevant information to the user, which can be helpful for debugging and troubleshooting your code.
+Writing to standard error, also known as stderr, can be useful for debugging and troubleshooting in Fish Shell programs. By directing error messages to stderr instead of stdout, the user will be able to easily identify and fix any issues that may occur during execution.
 
 ## How To
 
-To write to standard error in Fish Shell, you can use the `echo` command with the `-e` and `-o` options. The `-e` option enables interpretation of backslash escapes, while the `-o` option specifies the output destination as standard error. Here's an example:
+To write to stderr in Fish Shell, you can use the `echo` command with the `-e` flag and specify the output to be directed to stderr using the `&2` symbol. For example:
 
-```Fish Shell
-echo -e "This is an error message" >&2
+```
+echo -e "An error occurred" &2
 ```
 
-The `>&2` at the end redirects the output to standard error, as indicated by the `2` after the `&` symbol. This will print the message "This is an error message" to the standard error stream.
+This will print the message "An error occurred" to the stderr stream. You can also use the `>&2` redirect operator to send any output from a command directly to stderr. For example:
 
-You can also write to standard error using the `printf` command. Here's an example:
-
-```Fish Shell
-printf "%s\n" "This is an error message" >&2
+```
+ls -l bad_file.txt >&2
 ```
 
-This will produce the same output as the `echo` command. However, `printf` provides more formatting options, such as specifying the data type and using placeholders for variables.
+This will print the output of `ls -l` to the stderr stream if the file "bad_file.txt" does not exist.
 
 ## Deep Dive
 
-In Fish Shell, standard error is represented by the file descriptor `2`. This file descriptor is used to handle any error messages or other output that should not be sent to the standard output. By default, both standard error and standard output are displayed in the terminal, but you can redirect them to different locations if needed.
+When writing to standard error, it is important to understand the difference between stderr and stdout. While stdout is used for regular standard output, stderr is specifically designated for error messages. This separation allows for a clear distinction between regular program output and error messages, making debugging easier.
 
-For example, you can redirect standard error to a file for later review:
+By default, if a program does not explicitly write to stderr, any error messages will be displayed on the stdout stream. This can sometimes make error messages difficult to spot, as they may be mixed in with regular program output. However, by explicitly writing to stderr, you can ensure that error messages are clearly separated from regular output.
 
-```Fish Shell
-echo "This is an error message" >> error.log
-```
-
-Or you can use a pipe to redirect standard error to the standard input of another command:
-
-```Fish Shell
-ls -l | grep "file" 2>&1
-```
-
-In this case, the `2>&1` redirects the standard error to the same destination as the standard output, which is the `grep` command. This can be useful for filtering out specific errors or displaying them in a different context.
+Another useful tip is to use the `set -x` command to enable debugging output. This will automatically print each command as it is executed, including any output to stderr. This can be helpful in identifying the exact cause of any errors in your code.
 
 ## See Also
-- [Writing to Standard Error in Bash](https://www.shell-tips.com/bash/write-to-stderr/)
-- [Fish Shell Documentation - Standard Error](https://fishshell.com/docs/current/tutorial.html#standard-error)
-- [Understanding Standard Input, Output, and Error](https://www.howtogeek.com/435903/what-are-stdin-stdout-and-stderr-on-linux/)
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html) - Official documentation for Fish Shell, including detailed information on writing to standard error.
+- [Bash vs Fish: Which Shell is Better?](https://www.devdungeon.com/content/bash-vs-fish) - A comparison of Bash and Fish Shell, including their differences in handling standard error.

@@ -1,50 +1,59 @@
 ---
-title:                "Rust: Escribir em erros padrão"
+title:                "Rust: Escrevendo para o erro padrão"
+simple_title:         "Escrevendo para o erro padrão"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para a saída de erro padrão em Rust?
+## Por que escrever para o erro padrão?
 
-Se você é um programador Rust, provavelmente já ouviu falar sobre a importância de escrever para a saída de erro padrão. Mas você pode estar se perguntando: por que é tão importante? A resposta é simples: escrever para a saída de erro padrão é uma forma eficaz de lidar com erros e depurar seu código.
+Escrever para o erro padrão é uma prática comum no desenvolvimento de software, especialmente em linguagens de programação como Rust. Ao direcionar a saída do programa para o erro padrão, é possível identificar e corrigir possíveis erros e bugs de forma mais eficiente. Além disso, essa abordagem pode ser útil para fins de depuração e testes.
 
-## Como fazer?
+## Como fazer
 
-Escrever para a saída de erro padrão em Rust é muito simples e direto. Você só precisa usar a macro "eprintln!" para imprimir seu erro na saída de erro padrão. Esta é a forma básica de fazer isso:
+Para escrever para o erro padrão em Rust, basta usar a macro ```eprintln!``` seguida da mensagem que você deseja exibir. Por exemplo:
 
 ```Rust
+eprintln!("Erro: Valor inválido!");
+```
+
+Isso irá imprimir a mensagem "Erro: Valor inválido!" no terminal.
+
+Outra opção é usar a função ```write!```, que permite escrever para qualquer fluxo de saída, incluindo o erro padrão. Por exemplo:
+
+```Rust
+use std::io::Write;
+
 fn main() {
-  if 1 + 1 == 3 {
-    eprintln!("Algo de errado não está certo!");
-  }
+    let mut err = std::io::stderr();
+    write!(err, "Erro: Valor inválido!");
 }
 ```
 
-Agora, se você quer ser mais específico e adicionar informações adicionais ao seu erro, você pode usar a macro "format!" dentro da macro "eprintln!". Por exemplo:
+No entanto, a opção mais comumente utilizada é a primeira, com a macro ```eprintln!```.
+
+## Mergulho Profundo
+
+Ao usar a macro ```eprintln!```, a mensagem será formatada antes de ser exibida no terminal. Isso significa que você pode passar argumentos para a macro e utilizar formatação de strings, como em ```println!```. Por exemplo:
 
 ```Rust
-fn main() {
-  let num1 = 1;
-  let num2 = 0;
-  if num2 == 0 {
-    eprintln!("Erro: Divisão por zero! Números fornecidos: {} e {}", num1, num2);
-  }
-}
+let num = 42;
+eprintln!("O número {} é o significado da vida!", num);
 ```
 
-## Profundidade
+Além disso, também é possível direcionar a saída de erro para uma variável, usando a função ```format!```. Por exemplo:
 
-Agora que você sabe como escrever para a saída de erro padrão em Rust, vamos dar uma olhada mais profunda no porquê de ser tão importante. A saída de erro padrão é especialmente útil quando você está lidando com erros imprevisíveis ou difíceis de rastrear. Ao escrever para a saída de erro padrão, você pode ver exatamente o que aconteceu quando o erro ocorreu e seguir o rastro até sua origem. Isso economiza muito tempo e esforço na depuração de código.
-
-Outra vantagem de escrever para a saída de erro padrão é que você pode usar essa informação para melhorar ainda mais seu código. Ao identificar e corrigir erros, você pode construir um código mais confiável e robusto.
+```Rust
+let mut err = String::new();
+eprintln!(err, "Erro: {} não é um valor válido!", num);
+```
 
 ## Veja também
 
-Para saber mais sobre a escrita para a saída de erro padrão em Rust, confira os seguintes links:
-
-- https://www.rust-lang.org/learn (em inglês)
-- https://doc.rust-lang.org/book/ (em inglês)
-- https://pt.wikipedia.org/wiki/Rust_(linguagem_de_programa%C3%A7%C3%A3o) (em português)
+- Documentação oficial do Rust para a macro ```eprintln!```: https://doc.rust-lang.org/std/macro.eprintln.html
+- Blog post sobre como usar macros em Rust: https://blog.rust-lang.org/2017/11/14/Rust-1.22.html#eprintln-and-elog
+- Vídeo tutorial sobre como escrever para o erro padrão em Rust: https://www.youtube.com/watch?v=juBoiohU9p0

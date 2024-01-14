@@ -1,38 +1,49 @@
 ---
-title:                "Bash: Utilizando expressões regulares"
+title:                "Bash: Usando expressões regulares"
+simple_title:         "Usando expressões regulares"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar expressões regulares?
+## Por que usar Expressões Regulares em Programação Bash?
 
-Expressões regulares são uma forma eficiente e poderosa de fazer correspondências de padrões em textos. Elas são amplamente utilizadas em programação e podem ajudar a simplificar tarefas que envolvem processamento de texto. Além disso, são uma habilidade útil para quem trabalha com dados e precisa extrair informações específicas de grandes quantidades de informações.
+Expressões regulares, também conhecidas como regex, são uma poderosa ferramenta para manipular texto em programação Bash. Com elas, é possível buscar por padrões específicos em um conjunto de caracteres, substituir partes de um texto e validar entradas do usuário. Isso torna as expressões regulares uma ferramenta essencial para aqueles que trabalham com processamento de texto em seus scripts Bash.
 
-## Como usar expressões regulares em Bash
+## Como usar Expressões Regulares em Bash
 
-Para usar expressões regulares no Bash, é necessário usar o comando `grep`. Ele é responsável por buscar padrões em textos e retornar as linhas que correspondem a esses padrões. 
+Para utilizar expressões regulares em Bash, é necessário utilizar o comando `grep`. Este comando é responsável por buscar por padrões em um texto e imprimir as linhas que os correspondem. Vamos ver um exemplo de como utilizá-lo:
 
-Por exemplo, se quisermos encontrar todas as palavras que terminam com "ção" em um arquivo de texto, podemos usar o seguinte comando:
+```Bash
+texto="Este texto contém palavras aleatórias como bananas, maçãs e laranjas"
+echo "$texto" | grep "maçãs"
+```
 
-```bash 
-grep -E '\w+ção\b' texto.txt
-``` 
+Nesse exemplo, a variável `texto` contém uma string que possui as palavras "bananas", "maçãs" e "laranjas". Ao utilizarmos o comando `echo` e o pipe `|` para enviar esse texto para o comando `grep`, especificamos que queremos buscar pelo padrão "maçãs". O output desse comando é a linha que contém essa palavra, ou seja, "Este texto contém palavras aleatórias como bananas, **maçãs** e laranjas".
 
-O `-E` indica que estamos usando expressões regulares estendidas e o `\b` representa um limite de palavra. O resultado será uma lista das palavras encontradas no arquivo que terminam com "ção".
+Podemos utilizar expressões regulares mais complexas para buscar por padrões mais específicos. Por exemplo, se quisermos buscar por palavras que comecem com a letra "b", podemos utilizar o seguinte comando:
 
-## Aprofundando-se em expressões regulares
+```Bash
+echo "$texto" | grep "\bb"
+```
 
-Em Bash, é possível usar algumas opções para especificar o tipo de busca que queremos fazer com expressões regulares. Por exemplo, o `grep` possui opções como `-i` para ignorar maiúsculas e minúsculas, `-v` para encontrar linhas que não correspondem ao padrão e `-n` para mostrar o número da linha em que o padrão foi encontrado.
+Aqui, o metacaractere `\b` indica que queremos buscar palavras que comecem com a letra "b". O resultado desse comando seria a linha "texto contém palavras aleatórias como **bananas**, maçãs e laranjas".
 
-Além disso, é possível combinar expressões regulares com outros comandos no Bash, como usar pipes (`|`) com o `sort` para classificar os resultados encontrados pelo `grep`.
+Além do comando `grep`, também é possível utilizar expressões regulares com o comando `sed`, que é responsável por substituir partes de um texto. Combinar esses comandos com expressões regulares pode facilitar muito a manipulação de textos em seus scripts Bash.
 
-Para aprender mais sobre expressões regulares em Bash, recomenda-se a leitura da documentação oficial do `grep` e a prática de diferentes exemplos.
+## Mergulhando Fundo nas Expressões Regulares
 
-## Veja também
+As expressões regulares em Bash seguem a mesma lógica utilizada em outras linguagens de programação e sistemas operacionais. Elas incluem metacaracteres para representar diferentes tipos de caracteres e quantificadores para especificar a quantidade de ocorrências de um padrão.
 
-- Documentação oficial do `grep` (https://www.gnu.org/software/grep/manual/grep.html)
-- Tutorial de expressões regulares em Bash (https://www.digitalocean.com/community/tutorials/using-grep-regularexpressions-to-search-for-text-patterns-in-linux)
-- Cheat sheet de expressões regulares (https://www.rexegg.com/regex-quickstart.html)
+Por exemplo, se quisermos buscar por um número de telefone no formato XXXX-XXXX, podemos utilizar o seguinte padrão: `\d{4}-\d{4}`. Nesse caso, o metacaractere `\d` representa qualquer dígito de 0 a 9, e o quantificador `{4}` especifica que queremos exatamente 4 dígitos.
+
+Existem muitos metacaracteres e quantificadores diferentes que podem ser utilizados em expressões regulares. É importante estudar e praticar para dominar o uso dessas ferramentas e ser capaz de resolver problemas complexos em seus scripts Bash.
+
+## Veja Também
+
+- [Manual do Bash sobre Expressões Regulares](https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html)
+- [Tutorial de Expressões Regulares no Bash](https://linuxize.com/post/regular-expressions-in-bash/)
+- [Exemplos de uso de Expressões Regulares em Bash](https://www.thegeekstuff.com/2009/10/unix-linux-sed-tutorial-how-to-execute-multiple-sed-commands/)

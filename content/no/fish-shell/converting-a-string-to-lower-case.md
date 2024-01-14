@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,27 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor skulle noen ønske å konvertere en streng til små bokstaver? Vel, det kan være en nyttig funksjon å ha i ditt programmeringsverktøy. Kanskje du ønsker å lage et program som automatisk konverterer innkommende brukerinput til små bokstaver, eller kanskje du trenger å sammenligne tekststrenger som ikke er nøyaktig t idsnev. Uansett årsak, så er det enkelt å gjøre med Fish Shell.
+Det er mange grunner til hvorfor man kanskje vil konvertere en streng til små bokstaver i Fish Shell-programmering. En av de vanligste grunnene er å sikre konsistent datainnsamling eller sammenligning, siden strenger med forskjellige store og små bokstaver kan føre til uforutsette problemer.
 
-## Hvordan man gjør det
+## Hvordan
 
-For å konvertere en streng til små bokstaver i Fish Shell, kan du bruke kommandoen `string tolower`. For eksempel:
+For å konvertere en streng til små bokstaver i Fish Shell, kan du bruke kommandoen "string tolower" etterfulgt av strengen du vil konvertere. Her er et eksempel på hvordan dette kan se ut i praksis:
 
+```Fish Shell
+string tolower "HeI på DeG"
 ```
-Fish Shell: string tolower "FISH SHELL"
-fish shell
+
+Dette vil gi følgende utdata:
+
+```Fish Shell
+hei på deg
 ```
 
-Som du kan se, konverteres strengen "FISH SHELL" til "fish shell". Dette gjøres ved å bruke det innebygde funksjonskallet `tolower` som endrer hver bokstav i strengen til små bokstaver.
+Som du kan se, har strengen nå blitt konvertert til kun små bokstaver. Om du ønsker å lagre dette i en variabel for senere bruk, kan du enkelt gjøre det på følgende måte:
+
+```Fish Shell
+set lower_string (string tolower "HeI på DeG")
+```
 
 ## Dypdykk
 
-En interessant ting å merke seg er at `string tolower` også kan håndtere ikke-ASCII bokstaver, som å, ø og å. Dette gjør det til et kraftig verktøy i situasjoner der du trenger å håndtere forskjellige språk og tegnsett.
+Å konvertere en streng til små bokstaver kan virke som en enkel oppgave, men det er faktisk en del underliggende prosesser som skjer i bakgrunnen. Når du bruker kommandoen "string tolower" i Fish Shell, bruker den faktisk en funksjon kalt "tolower" som er en del av standardbiblioteket til Fish Shell.
 
-En annen ting å huske på er at `string tolower` bare endrer de bokstavene som allerede er i små bokstaver. Hvis strengen inneholder store bokstaver, tall eller spesialtegn, vil de ikke bli endret. Du kan også bruke `string toupper` for å konvertere en streng til store bokstaver.
+Denne funksjonen tar inn en streng og bruker en algoritme for å analysere hvert enkelt tegn og sjekke om det er en stor bokstav. Hvis det er det, blir det konvertert til en tilsvarende liten bokstav og returnert som utdata. Ved hjelp av denne funksjonen kan du konvertere strenger av forskjellige språk, uansett tegnsett.
 
 ## Se også
 
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/string.html#tolower)
-- [Konverter en streng til små bokstaver i Python](https://www.programiz.com/python-programming/methods/string/lower)
-- [UTF-8 og Unicode forklart](https://www.utf8.no)
+- [Fish Shell-dokumentasjon om strenger](https://fishshell.com/docs/current/index.html#strings)
+- [Fish Shell GitHub-repository](https://github.com/fish-shell/fish-shell)
+- [Tutorial for å komme i gang med Fish Shell](https://fishshell.com/docs/current/tutorial.html)

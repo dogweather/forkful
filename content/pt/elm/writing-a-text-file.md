@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Escrevendo um arquivo de texto"
+simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/writing-a-text-file.md"
 ---
 
@@ -9,45 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que escrever um arquivo de texto em Elm?
 
-Se você é um programador em potencial ou já trabalha com linguagem de programação, é importante considerar o uso do Elm. Escrever um arquivo de texto em Elm pode ser um processo simples e eficaz para criar e organizar informações em um formato legível por máquina.
+Há muitas razões pelas quais alguém pode querer escrever um arquivo de texto em Elm. Uma das principais vantagens de fazer isso é permitir que suas informações estejam acessíveis e legíveis para outras pessoas, independentemente do sistema operacional em que estão trabalhando. Além disso, escrever um arquivo de texto em Elm permite que você mantenha um registro organizado de seu código, tornando mais fácil o compartilhamento e colaboração com outros programadores.
 
-## Como escrever um arquivo de texto em Elm
+## Como fazer
 
-Para escrever um arquivo de texto em Elm, você precisará seguir alguns passos simples:
+Para escrever um arquivo de texto em Elm, você pode seguir alguns passos simples:
 
-1. Crie uma função `criarArquivo` que aceite uma string como parâmetro.
-2. Use a função `writeString` para escrever a string em um arquivo.
-3. Defina o nome e local do arquivo usando a função `name` e `directory`.
-4. Chame a função `criarArquivo` passando a string desejada como argumento.
+1. Comece importando o módulo `File` em seu programa Elm: `import File`.
 
-Aqui está um exemplo de código em Elm para criar um arquivo de texto e escrever a string "Olá, mundo!" nele:
+2. Em seguida, crie uma função que irá lidar com a escrita do arquivo. Você pode chamá-la de `writeFile` ou qualquer outro nome que faça sentido para o seu projeto.
+
+3. Dentro desta função, utilize a função `writeText` do módulo `File`. Esta função leva dois argumentos: o caminho do arquivo onde você deseja escrever e o conteúdo que deseja escrever. Por exemplo: `File.writeText "meuarquivo.txt" "Olá mundo!"`.
+
+4. Em seguida, você precisa criar uma variável que irá armazenar o resultado da função `writeText`. Por exemplo: `let result = File.writeText "meuarquivo.txt" "Olá mundo!"`.
+
+5. Finalmente, você pode utilizar a função `File.file` para acessar os dados resultantes e, se necessário, tratá-los ou exibi-los de alguma forma específica.
+
+Aqui está um exemplo completo de como pode ser o código para escrever um arquivo de texto em Elm:
 
 ```Elm
 import File
-import Task exposing (Task)
-import Task exposing (andThen)
 
-criarArquivo : String -> Task x ()
-criarArquivo text =
-    File.write (File.name "arquivo.txt" (File.directory "./arquivos")) text
+(writeFile : String -> String -> Task x String)
+writeFile path content =
+    let
+        result =
+            File.writeText path content
+    in
+    Task.perform
+        (\_ -> "Sucesso!")
+        (\_ -> result)
 
-main : Task x ()
-main =
-    criarArquivo "Olá, mundo!"
+File.file "meuarquivo.txt"
+    |> Result.map (\content -> "Conteúdo gravado: " ++ content)
+    |> toString
+    |> Debug.log "Resultado" -- imprime o resultado no console do navegador
 ```
 
-Este código criará o arquivo "arquivo.txt" no diretório "arquivos" e escreverá a string nele. Você pode verificar o arquivo criado e confirmar que a string foi gravada corretamente.
+Como você pode ver neste exemplo, é possível usar a função `Task` para lidar com operações de E/S assíncronas como a escrita de arquivos.
 
-## Profundidade no processo de escrita de um arquivo de texto em Elm
+## Aprofundando um pouco mais
 
-Escrever um arquivo de texto em Elm é uma operação de entrada e saída (I/O), o que significa que você precisa considerar alguns aspectos ao lidar com ela. Por exemplo, a função `File.write` retorna uma tarefa (task), que é uma operação assíncrona. Como resultado, você precisa lidar com o fluxo de controle através de funções `andThen` e `catch`.
+Além de simplesmente escrever um arquivo de texto com conteúdo estático, é possível também criar uma função que leia dados dinamicamente e os escreva em um arquivo. Para isso, você pode utilizar a função `toString` para converter seus dados em uma string e passá-la como parâmetro para a função `writeText`.
 
-Além disso, você pode tornar o processo de escrita de um arquivo mais complexo, modificando o código para permitir a escrita de mais de uma string em diferentes arquivos. Isso requer uma abordagem de programação mais avançada, mas é possível graças ao tipo de dado `File.Handle`.
+Você também pode explorar outras funções do módulo `File`, como `readText` e `appendText`, para ler e adicionar conteúdo a um arquivo existente.
+
+Lembre-se de que é importante tratar os erros em suas operações de E/S, por isso, é recomendável utilizar funções como `Task.andThen` e `Task.onError` para lidar com possíveis falhas.
 
 ## Veja também
 
-Aqui estão alguns links úteis para aprender mais sobre escrever arquivos de texto em Elm:
+- [Documentação sobre o módulo `File` em Elm](https://package.elm-lang.org/packages/elm/file/latest/File)
+- [Exemplos de uso do módulo `File` em Elm](https://github.com/elm/file/tree/master/examples)
+- [Guia para escrever e ler arquivos em Elm](https://medium.com/@MaiaMcCormick/elm-file-systems-parsing-and-writing-d998f92a5028)
 
-- Documentação oficial do Elm: https://guide.elm-lang.org/
-- Perguntas frequentes sobre Elm: https://elmprogramming.com/faq
-- Comunidade de programação Elm: https://discourse.elm-lang.org/
+Escrever um arquivo de texto em Elm não é uma tarefa complexa, mas pode ser muito útil em diversos projetos. Experimente utilizar a função `writeText` e suas variações em seus próprios programas e veja como pode facilitar o compartilhamento e organização de dados em seu código.

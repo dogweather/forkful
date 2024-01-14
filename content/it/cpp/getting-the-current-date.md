@@ -1,48 +1,56 @@
 ---
-title:                "C++: Ottenere la data corrente"
+title:                "C++: Ottenerere la data corrente."
+simple_title:         "Ottenerere la data corrente."
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+# Perché
 
-Imparare come ottenere la data corrente è fondamentale per qualsiasi programmatore C++. Essendo una delle lingue di programmazione più popolari al mondo, è importante avere familiarità con le funzionalità di base come questa.
+La data corrente è un elemento fondamentale in molti programmi, sia per scopi di registrazione che per la gestione di processi. Imparare a ottenere la data corrente è essenziale per essere in grado di sviluppare applicazioni efficienti e funzionali.
 
 ## Come Fare
 
-Per ottenere la data corrente in C++, dobbiamo usare la libreria `ctime` e la funzione `time()` per ottenere l'ora corrente in secondi dall'1 gennaio 1970. Quindi, utilizzando `localtime()` possiamo convertire questa informazione in una struttura `tm` contenente la data e l'ora attuali. Ecco un esempio di codice che otterrà e stamperà la data corrente:
+Per ottenere la data corrente in un programma C++, è necessario includere la libreria "ctime". Questa libreria contiene le funzioni necessarie per lavorare con date e orari. L'esempio seguente mostra come ottenere la data corrente e stamparla a schermo:
 
 ```C++
 #include <iostream>
 #include <ctime>
 
-int main() {
-    // Ottenere l'ora corrente come intero
-    time_t current_time = time(0);
+int main () {
+    // Otteniamo la data corrente
+    time_t now = time(0);
 
-    // Convertire l'ora in una struttura tm
-    tm *now = localtime(&current_time);
+    // Convertiamo la data in una stringa leggibile
+    char* data = ctime(&now);
 
-    // Stampare la data corrente utilizzando le funzioni della struttura tm
-    std::cout << "Data corrente: " << now->tm_mday << "/" << now->tm_mon + 1 << "/" << now->tm_year + 1900 << std::endl;
+    // Stampiamo la data a schermo
+    std::cout << "La data corrente è: " << data << std::endl;
+
+    return 0;
 }
 ```
 
-Output:
+L'output di questo codice sarà qualcosa del tipo:
 
 ```
-Data corrente: 27/11/2021
+La data corrente è: Sun Feb 16 12:31:33 2020
 ```
+
+È importante notare che la data ottenuta è formattata in base alle impostazioni locali del computer, quindi potrebbe essere diversa in base alla lingua o alla posizione geografica.
 
 ## Approfondimento
 
-È importante notare che la funzione `localtime()` utilizza il fuso orario del sistema in cui viene eseguita, quindi la data corrente potrebbe variare se si esegue il programma in un computer con fuso orario diverso. Inoltre, la struttura `tm` ha diverse funzioni utili per ottenere l'ora o eventuali altre informazioni sulla data corrente.
+Oltre alla funzione "ctime" mostrata nell'esempio sopra, la libreria "ctime" contiene altre utili funzioni per manipolare date e orari. Ad esempio, la funzione "localtime" permette di ottenere la data e l'orario correnti in base al fuso orario locale. Inoltre, con la funzione "strftime" è possibile formattare la data in modi diversi, specificando una stringa di formato.
 
-## Vedi Anche
+Una nota importante da tenere a mente è che le funzioni della libreria "ctime" operano sull'orario del sistema, quindi è importante assicurarsi che l'orario del computer sia corretto per ottenere risultati precisi.
 
-- [Documentazione ufficiale di C++ per la libreria ctime](https://en.cppreference.com/w/cpp/header/ctime)
-- [Tutorial su come utilizzare la libreria ctime in C++](https://www.programiz.com/cpp-programming/library-function/ctime)
-- [Guida su come utilizzare le funzioni della struttura tm in C++](https://www.geeksforgeeks.org/c-real-numbers-and-date-time-functions-examples-of-clock-function-localtime-and-time/)
+# Vedi Anche
+
+- [Documentazione ufficiale di ctime](https://en.cppreference.com/w/cpp/chrono/c/ctime)
+- [Tutorial su come utilizzare le funzioni di data e orario in C++](https://www.learncpp.com/cpp-tutorial/88-date-and-time-part-ii-c-server-side/)
+- [Esempi di utilizzo di "getTime" in C++](https://www.geeksforgeeks.org/working-with-date-and-time-in-cpp/)

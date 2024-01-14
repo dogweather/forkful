@@ -1,42 +1,40 @@
 ---
-title:                "Haskell: Fjerning av tegn som matcher et mønster"
+title:                "Haskell: Sletting av karakterer som matcher et mønster"
+simple_title:         "Sletting av karakterer som matcher et mønster"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+I de fleste programmeringsspråk, inkludert Haskell, er det en vanlig utfordring å håndtere uønskede tegn i tekststrenger. Det kan være alt fra blanke mellomrom til spesielle tegn som forstyrrer korrekt utførelse av koden. I dette blogginnlegget skal vi se på hvordan vi kan slette tegn som matcher et gitt mønster i en tekststreng.
 
-Å slette tegn som matcher et mønster kan være nyttig når du ønsker å filtrere ut uønskede tegn i en tekststreng. Dette kan for eksempel være nyttig når du jobber med dataanalyse eller tekstbehandling.
-
-## Hvordan gjøre det
-
-Det finnes flere måter å slette tegn som matcher et mønster på i Haskell. Du kan bruke funksjonen `filter` til å filtrere ut tegn basert på et gitt kriterium. For eksempel, hvis du vil slette alle tall fra en tekststreng, kan du bruke følgende kode:
+## Hvordan
+For å demonstrere hvordan vi kan slette uønskede tegn i Haskell, skal vi bruke funksjonen `deleteBy` fra standardbiblioteket `Data.List`. Denne funksjonen tar inn en predikatfunksjon som bestemmer hvilke elementer som skal slettes. La oss se på et eksempel der vi ønsker å slette alle blanke mellomrom i en tekststreng:
 
 ```Haskell
-filter (\x -> not $ isDigit x) "He1llo Wor2ld!" -- output: "Hello World!"
+import Data.List (deleteBy)
+
+main = do
+    let s = "Hei alle sammen!"
+    let pattern = (== ' ')
+    let cleanString = deleteBy pattern s
+    putStrLn cleanString
 ```
 
-Her bruker vi funksjonen `filter` sammen med en anonym funksjon som sjekker om hvert tegn ikke er et tall ved hjelp av funksjonen `isDigit` fra standardbiblioteket `Data.Char`. Vi bruker også funksjonen `not` for å invertere resultatet, slik at `filter` returnerer alle tegn som ikke er tall.
+Output: "Heiallesammen!"
 
-En annen måte å gjøre det på er å bruke funksjonen `delete` fra `Data.List`-biblioteket. Denne funksjonen tar inn et tegn og en tekststreng, og sletter alle forekomster av det gitte tegnet fra teksten. For eksempel:
-
-```Haskell
-delete 'l' "Hello World!" -- output: "Heo Word!"
-```
-
-Husk at disse eksemplene kun er ment som illustrasjoner, og du kan tilpasse koden etter behov, avhengig av hvilke tegn du ønsker å slette og hvordan.
+I dette eksempelet bruker vi funksjonen `deleteBy` sammen med et predikat som tar inn et tegn og returnerer `True` hvis tegnet er et tomt mellomrom. Siden vi ønsker å slette alle blanke mellomrom, bruker vi funksjonen `==` til å sammenligne tegnet med mellomromstegnet `' '`. Deretter kan vi enkelt skrive ut resultatet ved hjelp av `putStrLn`-funksjonen.
 
 ## Dypdykk
+For å forstå hvordan `deleteBy`-funksjonen fungerer, må vi se nærmere på dens signatur: `deleteBy :: (a -> a -> Bool) -> a -> [a] -> [a]`. Her ser vi at den tar inn en funksjon som sammenligner to verdier og returnerer en `Bool`, en verdi av typen `a` og en liste av verdier av typen `a`. Funktionen går gjennom listens elementer og bruker den gitte funksjonen til å bestemme hvilke elementer som skal slettes. Deretter returneres en ny liste uten disse elementene.
 
-For å forstå hvordan disse funksjonene fungerer, kan det være nyttig å se nærmere på hvordan de er implementert. `filter`-funksjonen bruker en teknikk som kalles rekursjon, som går ut på å bruke en funksjon på et mindre og mindre sett av data til den når et basistilfelle og returnerer et resultat. I tilfellet med å slette tegn som matcher et mønster, vil funksjonen kalle seg selv på hvert tegn i teksten og returnere en ny tekststreng uten de uønskede tegnene.
-
-`delete`-funksjonen bruker en litt annen tilnærming og starter med å sjekke om det første tegnet i teksten matcher det gitte tegnet. Hvis det gjør det, returneres resten av teksten uten det første tegnet. Hvis det første tegnet ikke matcher, kaller funksjonen seg selv på resten av teksten og returnerer resultatet med det første tegnet lagt tilbake.
+Et annet viktig aspekt å merke seg er at funksjonen `deleteBy` har en generell signatur som gjør at den kan brukes til å slette elementer i alle typer lister, ikke bare tekststrenger. Dette gjør den veldig fleksibel og nyttig i mange ulike situasjoner.
 
 ## Se også
-
-- [Filtering in Haskell](https://wiki.haskell.org/Filtering)
-- [Delete function in Haskell](https://www.geeksforgeeks.org/haskell-delete-function/)
-- [Data.List documentation](https://www.haskell.org/hoogle/?hoogle=Data.List#v:delete)
+- [Haskell Dokumentasjon - Data.List](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)
+- [Haskell Programmering - Functors, Applicatives og Monads](https://dottyjournal.github.io/haskell-functors-applicatives-monads/)
+- [Funksjonell Programmering med Haskell](https://www.itavisen.no/2019/11/15/funksjonell-programmering-med-haskell/)

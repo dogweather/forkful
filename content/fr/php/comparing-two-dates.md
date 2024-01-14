@@ -1,77 +1,52 @@
 ---
 title:                "PHP: Comparaison de deux dates"
+simple_title:         "Comparaison de deux dates"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi Comparer Deux Dates en PHP?
+Pourquoi : La comparaison de deux dates est une tâche courante en programmation, en particulier lorsqu'il s'agit de gérer des données temporelles dans une application. Cet article vous montrera comment faire en PHP.
 
-Comparer deux dates est une tâche courante en programmation, particulièrement en PHP. Cela peut être utile pour vérifier si une date se situe avant ou après une autre, ou encore pour calculer la différence entre deux dates. Cela peut également être nécessaire pour effectuer des tâches telles que la gestion d'abonnements ou la planification d'événements. Dans cet article, nous allons explorer comment comparer deux dates en utilisant PHP.
-
-## Comment Faire?
-
-La première étape pour comparer deux dates en PHP est de s'assurer qu'elles sont toutes les deux dans un format valide. Pour cela, nous pouvons utiliser la fonction `strtotime()` qui convertit une chaîne de caractères en timestamp. Voici un exemple de code:
+Comment faire : Tout d'abord, il est important de noter que les dates en PHP sont représentées par des objets de type DateTime. Ainsi, pour comparer deux dates, vous pouvez utiliser les méthodes suivantes :
 
 ```PHP
-$date1 = "15-07-2020";
-$date2 = "20-07-2020";
+$date1 = new DateTime('2021-05-20');
+$date2 = new DateTime('2021-06-25');
 
-$timestamp1 = strtotime($date1);
-$timestamp2 = strtotime($date2);
-
-if ($timestamp1 < $timestamp2) {
-  echo "$date1 se situe avant $date2";
-} else if ($timestamp1 > $timestamp2) {
-  echo "$date1 se situe après $date2";
-} else {
-  echo "Les deux dates sont égales";
-}
-```
-**Output:** 15-07-2020 se situe avant 20-07-2020
-
-Ici, nous avons utilisé la fonction `strtotime()` pour convertir les deux dates en timestamps, puis nous avons comparé les timestamps avec l'opérateur de comparaison `<` et `>`.
-
-Il est important de noter que cette méthode ne fonctionnera que si les deux dates sont dans le même format. Nous pouvons également utiliser la classe `DateTime` pour manipuler les dates et les comparer dans différents formats.
-
-Voici un exemple utilisant la classe `DateTime` pour comparer des dates dans un format différent:
-
-```PHP
-$date1 = new DateTime("15 juillet 2020");
-$date2 = new DateTime("July 20, 2020");
-
+// Comparaison de la date
 if ($date1 < $date2) {
-  echo $date1->format("d/m/Y") . " se situe avant " . $date2->format("d/m/Y");
-} else if ($date1 > $date2) {
-  echo $date1->format("d/m/Y") . " se situe après " . $date2->format("d/m/Y");
+    echo 'La date 1 est antérieure à la date 2';
+} elseif ($date1 > $date2) {
+    echo 'La date 1 est postérieure à la date 2';
 } else {
-  echo "Les deux dates sont égales";
+    echo 'Les dates sont identiques';
 }
+
+// Calcul du nombre de jours entre les deux dates
+$interval = $date1->diff($date2);
+echo 'Il y a ' . $interval->format('%a') . ' jours entre les deux dates.';
 ```
-**Output:** 15/07/2020 se situe avant 20/07/2020
 
-Cette méthode fonctionne en utilisant la fonction `format()` pour spécifier le format souhaité pour l'affichage de la date.
-
-## Plongeons Plus Profondément
-
-Il est également possible de comparer des dates en utilisant les méthodes de la classe `DateTime`. Par exemple, nous pouvons utiliser `diff()` pour calculer la différence entre deux dates:
-
-```PHP
-$date1 = new DateTime("15 juillet 2020");
-$date2 = new DateTime("July 20, 2020");
-
-$diff = $date1->diff($date2);
-
-echo "Il y a " . $diff->days . " jours de différence entre les deux dates.";
+Output :
 ```
-**Output:** Il y a 5 jours de différence entre les deux dates.
+La date 1 est antérieure à la date 2
+Il y a 36 jours entre les deux dates.
+```
 
-La classe `DateTime` offre également d'autres méthodes utiles pour comparer des dates telles que `modify()`, `add()` et `sub()`. N'hésitez pas à explorer ces méthodes pour une utilisation plus avancée dans vos projets.
+Deep Dive : Pour aller plus loin dans la comparaison de dates, vous pouvez également utiliser les méthodes suivantes :
 
-## Voir Aussi
+- isEqual() : permet de vérifier si deux dates sont identiques.
+- isBefore() et isAfter() : permettent de vérifier si une date est antérieure ou postérieure à une autre date.
+- modify() : permet de modifier une date en ajoutant ou en soustrayant une certaine période (jours, mois, heures, etc.).
 
-- [Documentation officielle de PHP sur la gestion de dates](https://www.php.net/manual/fr/datetime.formats.php)
-- [Tutorial PHP sur la classe DateTime](https://www.tutorialspoint.com/php/php_date_time.htm)
-- [Exemple de projet utilisant la classe DateTime pour comparer des dates](https://www.code-wall.com/showthread.php?t=1061)
+En gardant ces méthodes à l'esprit, vous pourrez gérer efficacement les données temporelles dans vos projets PHP.
+
+See Also : Pour plus d'informations sur la manipulation de dates en PHP, vous pouvez consulter les ressources suivantes :
+
+- Documentation officielle de PHP : https://www.php.net/manual/fr/datetime.formats.php
+- Tutoriel sur le travail avec les dates en PHP : https://www.php.net/manual/fr/datetime.formats.php
+- Librairie Carbon pour manipuler facilement les dates en PHP : https://carbon.nesbot.com/

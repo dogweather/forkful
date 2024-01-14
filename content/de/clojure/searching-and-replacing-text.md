@@ -1,41 +1,49 @@
 ---
 title:                "Clojure: Suchen und Ersetzen von Text"
+simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Suchen und Ersetzen von Text ist ein häufiges Problem, dem man beim Programmieren begegnet. In diesem Blogbeitrag werden wir uns ansehen, wie man dieses Problem in Clojure lösen kann.
+In der heutigen digitalen Welt ist es oft notwendig, große Mengen von Text zu bearbeiten und zu ändern. Das kann von der einfachen Korrektur von Rechtschreibfehlern bis hin zur komplexen Manipulation von Datenbanken reichen. Zum Glück bietet Clojure eine einfache und elegante Möglichkeit, Textsuche und -ersetzung durchzuführen.
 
-## Anleitung
+# Wie man python-zu-clojure nutzt
 
-Um Text in Clojure zu suchen und zu ersetzen, können wir die Funktion `clojure.string/replace` verwenden. Hier ist ein Beispiel, wie man alle Vokale in einem String durch Sternchen ersetzen kann:
-
-```Clojure
-(def text "Hallo Welt")
-(clojure.string/replace text #"[aeiou]" "*")
-```
-Dieser Code gibt `"H*ll* W*lt"` als Output zurück.
-
-Um alle Vorkommen eines Wortes in einem String zu ersetzen, können wir folgenden Code verwenden:
+Die Suche und Ersetzung in Clojure erfolgt über die Funktion `clojure.string/replace`, die eine Zeichenkette, ein Muster und einen Ersatz als Argumente akzeptiert. Hier ist ein Beispiel, um alle Vorkommen von "Hund" durch "Katze" in einem Satz zu ersetzen:
 
 ```Clojure
-(def text "Ich mag Äpfel, aber keine Bananen")
-(clojure.string/replace text #"Äpfel" "Birnen")
+(clojure.string/replace "Ich mag Hunde." #"Hund" "Katze")
 ```
-Dies gibt `"Ich mag Birnen, aber keine Bananen"` zurück.
 
-## Tiefentauchen
+Die Ausgabe wäre: "Ich mag Katzen."
 
-`clojure.string/replace` akzeptiert reguläre Ausdrücke als Suchmuster. Dadurch können wir komplexere Such- und Ersetzungsoperationen durchführen. Außerdem gibt es auch die Funktion `clojure.string/replace-first`, die nur das erste Vorkommen des Suchmusters ersetzt.
+Man kann auch reguläre Ausdrücke verwenden, um komplexere Suchmuster anzugeben. Zum Beispiel kann man alle Zahlen in einer Zeichenkette durch Sternchen ersetzen:
 
-Eine andere nützliche Funktion ist `clojure.string/replace-first-regular`, die ähnlich wie `clojure.string/replace` funktioniert, aber reguläre Ausdrücke verwendet.
+```Clojure
+(clojure.string/replace "Die Antwort auf alle Fragen ist 42." #"\d+" "*")
+```
 
-## Siehe auch
+Die Ausgabe wäre: "Die Antwort auf alle Fragen ist *."
 
-- [Dokumentation zu clojure.string/replace](https://clojuredocs.org/clojure.string/replace)
-- [Dokumentation zu regulären Ausdrücken in Clojure](https://clojuredocs.org/clojure.core/re-seq)
+# Tiefes Tauchen
+
+Clojure bietet auch die Funktion `clojure.string/replace-first`, die nur das erste Vorkommen des Musters ersetzt. Außerdem gibt es `clojure.string/replace-last`, um nur das letzte Vorkommen zu ersetzen, sowie `clojure.string/replace-nth`, um ein bestimmtes Vorkommen basierend auf seiner Position in der Zeichenkette zu ersetzen.
+
+Ein weiteres nützliches Feature ist die Möglichkeit, eine Funktion als Ersatz zu verwenden. Diese Funktion erhält das gefundene Muster als Argument und kann dann eine Ersatzzeichenkette zurückgeben. So kann man beispielsweise alle Wörter in einer Zeichenkette in Großbuchstaben konvertieren:
+
+```Clojure
+(clojure.string/replace "Ich liebe es, Clojure zu programmieren." #"\w+" clojure.string/upper-case)
+```
+
+Die Ausgabe wäre: "ICH LIEBE ES, CLOJURE ZU PROGRAMMIEREN."
+
+# Siehe auch
+
+* [Clojure String Dokumentation](https://clojuredocs.org/clojure.string/replace)
+* [Reguläre Ausdrücke in Clojure](https://clojure.org/guides/regular_expressions)

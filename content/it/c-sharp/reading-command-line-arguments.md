@@ -1,57 +1,97 @@
 ---
-title:                "C#: Lettura degli argomenti della linea di comando"
+title:                "C#: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché leggere gli argomenti della riga di comando?
+## Perché
+Molti programmatori possono essere tentati di saltare la lettura degli argomenti della riga di comando quando scrivono un programma, ma in realtà è un'importante abilità da avere sotto mano. La lettura degli argomenti della riga di comando consente di rendere il programma più flessibile, in quanto gli utenti possono passare facilmente informazioni al programma senza dover modificare il codice sorgente.
 
-Leggere gli argomenti della riga di comando è un'abilità fondamentale per molti programmatori C#. Questa abilità consente di rendere i tuoi programmi più dinamici e personalizzabili in base alle esigenze degli utenti. Inoltre, l'avere familiarità con la lettura degli argomenti della riga di comando può semplificare il processo di debugging e testing dei tuoi programmi.
-
-## Come leggere gli argomenti della riga di comando in C#
-
-Ecco un esempio di codice su come leggere gli argomenti della riga di comando utilizzando la classe "Environment" in C#:
+## Come
+Per leggere gli argomenti della riga di comando in C#, è necessario utilizzare il metodo `Main()` della classe `Program` che si trova nel file di avvio del programma. Utilizzando il parametro `string[] args`, è possibile accedere agli argomenti passati durante l'esecuzione del programma. Esempio di codice:
 
 ```C#
-using System;
-
-class Program
+static void Main(string[] args)
 {
-    static void Main(string[] args)
+    // Controlla se ci sono almeno 2 argomenti passati
+    if (args.Length >= 2)
     {
-        // stampa il numero totale di argomenti passati alla riga di comando
-        Console.WriteLine("Numero di argomenti: {0}", args.Length);
-
-        // itera attraverso ogni argomento e stampa il suo valore
-        for (int i = 0; i < args.Length; i++)
-        {
-            Console.WriteLine("Argomento {0}: {1}", i + 1, args[i]);
-        }
+        // Stampa il primo e il secondo argomento passato
+        Console.WriteLine($"Primo argomento: {args[0]}");
+        Console.WriteLine($"Secondo argomento: {args[1]}");
     }
 }
 ```
 
-Esempio di output quando si esegue il programma con gli argomenti "hello" e "world":
+Esempio di output dalla riga di comando:
 
-```bash
-> C# CommandLineArguments.exe hello world
-Numero di argomenti: 2
-Argomento 1: hello
-Argomento 2: world
+```
+> dotnet myProgram.cs arg1 arg2
+Primo argomento: arg1
+Secondo argomento: arg2
 ```
 
-È importante notare che gli argomenti della riga di comando verranno passati al programma in forma di stringhe. Questo significa che dovrai conversione a un tipo di dati specifico se desideri utilizzare l'argomento in operazioni matematiche o di altro tipo.
+## Deep Dive
+La classe `Program` può anche essere configurata per accettare opzioni da riga di comando utilizzando la libreria `Microsoft.Extensions.CommandLineUtils`. Questo consente di definire opzioni e argomenti con valori predefiniti, gestire errori di input e altro ancora. Esempio di codice:
 
-## Approfondimenti sulla lettura degli argomenti della riga di comando
+```C#
+static int Main(string[] args)
+{
+    // Configurare la classe CommandLineApplication
+    CommandLineApplication commandLineApp = new CommandLineApplication();
 
-Oltre all'utilizzo della classe "Environment" come mostrato nell'esempio precedente, esiste un altro modo per leggere gli argomenti della riga di comando in C#. Puoi utilizzare la classe "CommandLine" nella libreria "System.CommandLine" per gestire in modo più efficiente gli argomenti passati alla riga di comando. Questa classe ti offre funzionalità come la possibilità di specificare opzioni e parametri richiesti, nonché la possibilità di definire delle descrizioni per gli argomenti.
+    // Definire uno o più opzioni e argomenti
+    var option = commandLineApp.Option("-u|--username <USERNAME>", "Nome utente", CommandOptionType.SingleValue);
+    var argument = commandLineApp.Argument("password", "Password", multipleValues: true);
 
-Per approfondire ulteriormente sulla lettura degli argomenti della riga di comando in C#, puoi consultare la documentazione ufficiale di Microsoft e provare a implementare esempi più complessi utilizzando la classe "CommandLine".
+    // Opzione predefinita se l'opzione non viene specificata
+    option.ShowInHelpText = true;
 
-## Vedi anche
+    // Gestisco gli errori di input
+    commandLineApp.OnValidationError((exception) => {
+        Console.WriteLine($"Errore: {exception.Message}");
+        commandLineApp.ShowHelp();
+        Environment.Exit(1);
+    });
 
-- [Documentazione ufficiale di Microsoft sulla lettura degli argomenti della riga di comando in C#](https://docs.microsoft.com/it-it/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [Esempio di utilizzo della classe "CommandLine" per la lettura degli argomenti della riga di comando in C#](https://www.c-sharpcorner.com/article/command-line-argument-parser-using-system-commandline-in-net-core/)
+    // Eseguire l'applicazione dei comandi
+    commandLineApp.Execute(args);
+
+    // Utilizzare l'opzione e l'argomento nella logica del programma
+    if (!string.IsNullOrEmpty(option.Value()))
+    {
+        Console.WriteLine($"Username: {option.Value()}");
+    }
+    if (!argument.Values.Any())
+    {
+        Console.WriteLine("Password non specificata");
+        return 1; // Codice di errore
+    }
+    foreach (var password in argument.Values)
+    {
+        Console.WriteLine($"Password: {password}");
+    }
+
+    return 0; // Successo
+}
+```
+
+Esempio di output dalla riga di comando:
+
+```
+> dotnet myProgram.cs --username user123 pass1 pass2 pass3
+Username: user123
+Password: pass1
+Password: pass2
+Password: pass3
+```
+
+## Guarda anche
+- [Microsoft Documentation on Command Line Arguments](https://docs.microsoft.com/en-us/dotnet/core/extensions/command-line-args)
+- [Example of Command Line Arguments in C#](https://www.c-sharpcorner.com/article/command-line-args-in-c-sharp/)
+- [Handling Command Line Arguments in C#](https://www.meziantou.net/command-line-parsing.htm)

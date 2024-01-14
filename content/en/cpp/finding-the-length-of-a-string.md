@@ -1,17 +1,21 @@
 ---
 title:                "C++ recipe: Finding the length of a string"
+simple_title:         "Finding the length of a string"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-As a beginner in C++ programming, one of the most fundamental concepts that you should understand is finding the length of a string. This is a crucial skill that is used in many different applications, from simple string manipulations to more complex algorithms. In this blog post, we will explore why it is important to know how to find the length of a string and how it can be done efficiently.
+
+Have you ever wondered how a computer is able to determine the length of a string? You might have encountered this problem while working on a programming project or while debugging a code. Understanding how to find the length of a string is a basic but essential skill in programming, especially in languages like C++.
 
 ## How To
-To find the length of a string in C++, we can use the built-in function `strlen()`. This function takes in a string as its parameter and returns the length of that string. Here is an example of how we can use this function in our code:
+
+Finding the length of a string in C++ is a straightforward process. The standard library function used for this purpose is the `strlen()` function. It takes a null-terminated string as an argument and returns the length of the string. Let's take a look at an example:
 
 ```C++
 #include <iostream>
@@ -21,19 +25,18 @@ using namespace std;
 
 int main() {
     char str[] = "Hello World!";
-    int length = strlen(str);
-    cout << "The length of the string is: " << length << endl;
-    
+    int len = strlen(str);
+
+    cout << "The length of the string is: " << len << endl;
     return 0;
 }
 ```
 
-**Output:**
-```
-The length of the string is: 12
-```
+Output: The length of the string is: 12
 
-We can also use a for loop to manually count the number of characters in a string until we encounter the null character, which marks the end of the string. Here is an example of how we can do this:
+In this code, we first declare a character array `str` and initialize it with the string "Hello World!". Then, we use the `strlen()` function to determine the length of the string and store it in the variable `len`. Finally, we print out the result using the `cout` statement.
+
+Another way to find the length of a string is by using a loop and counting the number of characters in the string until the null character `\0` is encountered. This method is useful when dealing with strings that have varying lengths or when working with custom functions. Here is an example:
 
 ```C++
 #include <iostream>
@@ -41,30 +44,30 @@ We can also use a for loop to manually count the number of characters in a strin
 using namespace std;
 
 int main() {
-    char str[] = "Hello World!";
-    int length = 0;
-    
-    for (int i = 0; str[i] != '\0'; i++) {
-        length++;
+    char str[] = "Programming";
+    int len = 0;
+
+    while (str[len] != '\0') {
+        len++;
     }
-    
-    cout << "The length of the string is: " << length << endl;
-    
+
+    cout << "The length of the string is: " << len << endl;
     return 0;
 }
 ```
 
-**Output:**
-```
-The length of the string is: 12
-```
+Output: The length of the string is: 11
+
+In this code, we declare a character array `str` and initialize it with the string "Programming". Then, we use a `while` loop to loop through the string and count the number of characters until the null character is encountered. The variable `len` is incremented by 1 for each character, giving us the length of the string.
 
 ## Deep Dive
-When we use the `strlen()` function, it internally uses a pointer that starts from the beginning of the string and iterates through it until it reaches the null character. This makes it a faster and more efficient way of finding the length of a string compared to using a for loop. However, it is important to note that the `strlen()` function returns the length of the string up until the null character, so if our string contains special characters or symbols, it may not give an accurate length.
 
-It is also worth mentioning that `strlen()` belongs to the `cstring` library, so we need to include that in our code in order to use this function.
+Now that we know how to find the length of a string, let's take a deeper look at the `strlen()` function. This function is defined in the header file `<cstring>` and is used to determine the length of a null-terminated string. It works by counting the number of characters in the string until the null character is encountered. The complexity of this function is O(n) where n is the number of characters in the string.
+
+It is important to note that the `strlen()` function does not count the null character as part of the string's length. For example, in the code `char str[] = "Hello";`, the length of the string returned by `strlen()` would be 5, not 6. This is because the null character is added automatically at the end of the string by the compiler.
 
 ## See Also
-- [String.h reference](https://www.cplusplus.com/reference/cstring/)
-- [C++ documentation](https://en.cppreference.com/w/cpp)
-- [Learning C++: A Step-by-Step Guide](https://www.educative.io/blog/learning-cpp-a-step-by-step-guide)
+
+- [C++ Strings](https://www.geeksforgeeks.org/c-string-class-and-its-applications/)
+- [C++ Standard Library](https://www.learncpp.com/cpp-tutorial/the-standard-c-library/)
+- [Character Arrays in C++](https://www.tutorialspoint.com/cplusplus/cpp_arrays.htm)

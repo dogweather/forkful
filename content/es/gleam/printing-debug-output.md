@@ -1,43 +1,51 @@
 ---
-title:                "Gleam: Impresión de salida de depuración"
+title:                "Gleam: Impresión de resultados de depuración"
+simple_title:         "Impresión de resultados de depuración"
 programming_language: "Gleam"
-category:             "Testing and Debugging"
+category:             "Gleam"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué imprimir mensajes de depuración en Gleam?
+## Por qué imprimir la salida de depuración es importante en Gleam
 
-Imprimir mensajes de depuración es una técnica comúnmente utilizada en la programación para verificar el comportamiento de un programa en tiempo de ejecución. En Gleam, esta práctica es especialmente útil debido a la naturaleza funcional del lenguaje.
+Imprimir la salida de depuración es una técnica común utilizada por los programadores para identificar errores en su código. En Gleam, esta práctica puede ayudarnos a comprender mejor cómo funciona nuestro programa y a encontrar posibles problemas que necesiten ser resueltos.
 
-## Cómo imprimir mensajes de depuración en Gleam
+## Cómo imprimir la salida de depuración en Gleam
 
-Para imprimir mensajes de depuración en Gleam, podemos utilizar la función `debug!`, que acepta una cadena como argumento. Veamos un ejemplo:
-
-```Gleam
-let nombre = "María"
-debug!("El nombre es: {}", [nombre])
-```
-
-Esto imprimirá en la consola el mensaje "El nombre es: María". También podemos imprimir valores de variables utilizando la cadena de formato `{}` y la lista de argumentos correspondientes. Por ejemplo:
+Para imprimir la salida de depuración en Gleam, podemos utilizar la función `io.debug()` y pasarle como argumento el valor que deseamos imprimir. Por ejemplo:
 
 ```Gleam
-let x = 5
-let y = 10
-debug!("La suma de x e y es: {}", [x + y])
+fn main() {
+    let num = 10
+    io.debug("El valor de num es: ", num)
+}
 ```
 
-Esto imprimirá en la consola "La suma de x e y es: 15".
+La salida de este código sería: `El valor de num es: 10`.
 
-## Profundizando en la impresión de mensajes de depuración
+También podemos imprimir múltiples valores separándolos por comas dentro de la función `io.debug()`, como en el siguiente ejemplo:
 
-Además de utilizar la función `debug!`, también podemos configurar el nivel de depuración en Gleam para imprimir mensajes en diferentes momentos durante la ejecución del programa. Esto puede ser útil para identificar errores o problemas en un código complejo. Otra técnica útil es utilizar `println!`, que imprime mensajes en la consola sin interrupciones de formato.
+```Gleam
+fn main() {
+    let name = "Juan"
+    let age = 30
+    io.debug("Hola, mi nombre es: ", name, "y tengo ", age, "años.")
+}
+```
 
-En resumen, imprimir mensajes de depuración en Gleam puede facilitar el proceso de desarrollo y depuración de programas. Sin embargo, es importante tener en cuenta que estos mensajes deben ser eliminados antes de enviar el código a producción.
+La salida sería: `Hola, mi nombre es: Juan y tengo 30 años.` Este es solo un ejemplo simple, pero podemos utilizar la función `io.debug()` de diversas maneras dependiendo de nuestras necesidades de depuración.
+
+## Profundizando en la impresión de salida de depuración en Gleam
+
+Aunque imprimir la salida de depuración puede ser una herramienta útil, es importante no abusar de ella y asegurarse de eliminar todas las llamadas a la función `io.debug()` antes de publicar nuestro código en producción. También podemos utilizarla para imprimir la traza de una función, lo que nos permite seguir su ejecución y detectar posibles errores.
+
+Otra forma interesante de utilizar `io.debug()` es imprimir valores de tipos de datos complejos, como registros o tuplas, lo que nos permite examinar su contenido y entender mejor cómo se están manipulando en nuestro programa.
 
 ## Ver también
 
-- Documentación de Gleam: https://gleam.run/
-- Ejemplos de código de Gleam: https://github.com/gleam-lang
-- Guía de depuración en Gleam: https://gleam.run/book/tour/getting-started.html#debugging
+- Documentación de la función `io.debug()` en la página oficial de Gleam: https://gleam.run/modules/gleam_io/#debug
+- Ejemplos de depuración con Gleam: https://gleam.run/examples/debugging/
+- Otros consejos para la depuración en Gleam: https://medium.com/the-gleam-programming-language/tips-for-debugging-in-gleam-6cd78b3c47b7

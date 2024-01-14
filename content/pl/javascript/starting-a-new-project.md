@@ -1,86 +1,54 @@
 ---
-title:                "Javascript: Zaczynając nowy projekt"
+title:                "Javascript: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Javascript"
-category:             "Getting Started"
+category:             "Javascript"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego zacząć nowy projekt?
+## Dlaczego
 
-Nie ma nic bardziej satysfakcjonującego dla programisty niż zaczęcie nowego projektu. Jest to szansa na wykorzystanie wiedzy i umiejętności w praktyce oraz stworzenie czegoś nowego i użytecznego. Przeczytaj dalszą część, aby dowiedzieć się jak rozpocząć nowy projekt w języku Javascript.
+Czy kiedykolwiek miałeś pomysł na interesujący projekt, ale nie wiedziałeś, jak go zrealizować? W tym artykule dowiesz się, dlaczego warto zacząć nowy projekt w Javascript i jak się za to zabrać.
 
-## Jak to zrobić?
+## Jak To Zrobić
 
-### Tworzenie podstawowego pliku HTML
-
-Na początku potrzebujemy pustego pliku HTML, który będzie podstawą dla naszego projektu. W tym celu otwórz swoje ulubione IDE (np. Visual Studio Code) i utwórz plik o nazwie "index.html". Następnie wpisz poniższy kod:
+Jeśli chcesz zacząć nowy projekt w Javascript, musisz najpierw mieć podstawową wiedzę o programowaniu w tym języku. Poniżej prezentujemy kilka prostych przykładów kodu, które mogą Ci się przydać.
 
 ```Javascript
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Mój projekt</title>
-</head>
-<body>
-    <h1>Witaj, świecie!</h1>
-</body>
-</html>
+// Deklaracja i inicjalizacja zmiennej
+var x = 5;
+
+// Pętla for
+for (var i = 0; i < 10; i++) {
+  console.log("Iteracja numer " + i);
+}
+
+// Funkcja zwracająca sumę dwóch liczb
+function dodaj(a, b) {
+  var suma = a + b;
+  return suma;
+}
+
+// Użycie funkcji
+var wynik = dodaj(2, 3);
+console.log(wynik); // Output: 5
 ```
 
-### Dodawanie arkusza stylów CSS
+Możesz także skorzystać z wielu dostępnych bibliotek i frameworków, takich jak React czy Angular, aby ułatwić sobie pracę.
 
-Jeśli chcesz dodać trochę stylu do swojego projektu, możesz stworzyć nowy plik CSS o nazwie "style.css". Następnie w pliku "index.html" należy dodać odwołanie do tego pliku używając tagu ```<link>```, jak pokazano poniżej:
+## Deep Dive
 
-```Javascript
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Mój projekt</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Witaj, świecie!</h1>
-</body>
-</html>
-```
+Początki nowego projektu mogą być nieco przytłaczające, ale pamiętaj, że każdy programista miał kiedyś ten sam problem. Warto poświęcić trochę czasu na zapoznanie się z dokumentacją i przykładami kodu, aby lepiej zrozumieć, jak działa Javascript. Dobrym pomysłem jest także wykorzystanie narzędzi, takich jak Stack Overflow czy GitHub, aby uzyskać pomoc i porady od innych programistów.
 
-### Dodawanie kodu Javascript
-
-Jeśli chcesz dodać interaktywność do swojego projektu, możesz użyć języka Javascript. W pliku "index.html" możesz dodać tag ```<script>``` i umieścić w nim kod Javascript, jak poniżej:
-
-```Javascript
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <title>Mój projekt</title>
-</head>
-<body>
-    <h1>Witaj, świecie!</h1>
-    <script>
-        let name = "Jan";
-        console.log("Cześć, " + name + "!");
-    </script>
-</body>
-</html>
-```
-
-### Podgląd wyniku
-
-Aby zobaczyć efekt swojego kodu, możesz otworzyć plik "index.html" w przeglądarce internetowej. Powinna się otworzyć strona z napisem "Witaj, świecie!" oraz wyświetlić w konsoli przeglądarki wiadomość "Cześć, Jan!".
-
-## Dogłębne wgląd
-
-* Warto zacząć od zaplanowania swojego projektu i ustalenia celów, które chcesz osiągnąć.
-* Niezbędne jest zrozumienie podstaw języka Javascript, takich jak zmienne, funkcje czy pętle.
-* Wykorzystanie bibliotek i frameworków może znacznie ułatwić pracę z językiem Javascript.
+Pamiętaj także o pisaniu czytelnego i dobrze strukturyzowanego kodu, aby ułatwić sobie późniejsze prace nad projektem. Regularne testowanie i debugowanie są również niezbędne, aby uniknąć błędów i poprawić wydajność aplikacji.
 
 ## Zobacz także
 
-* [Wprowadzenie do języka Javascript](https://developer.mozilla.org/pl/docs/Wprowadzenie_do_języka_JavaScript)
-* [Początek z JavaScript](https://www.w3schools.com/js/)
-* [10 kroków do rozpoczęcia nauki języka JavaScript](https://medium.com/@ibejalon/how-to-start-learning-javascript-in-10-basic-steps-bfa632f4c06)
+- [Podstawy programowania w Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
+- [Przykłady projektów w Javascript](https://github.com/trending/javascript)
+- [Najpopularniejsze biblioteki i frameworki w Javascript](https://2019.stateofjs.com/)
+- [Społeczność programistów Javascript na Stack Overflow](https://stackoverflow.com/questions/tagged/javascript)
+- [Kursy i tutoriale na temat Javascript](https://www.codecademy.com/learn/introduction-to-javascript)

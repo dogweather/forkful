@@ -1,42 +1,46 @@
 ---
-title:                "Kotlin: Å konvertere en dato til en streng"
+title:                "Kotlin: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor 
-Å konvertere en dato til en streng kan være nyttig når du jobber med å formatere eller lagre datoer i en lesevennlig form. Denne funksjonen gjør det også enklere å arbeide med datoer som skal sendes eller mottas via et API.
+# Hvorfor
+Datoer er et viktig konsept i programmering. Noen ganger vil du trenge å konvertere en dato til en tekststreng for å kunne vise den til brukeren eller lagre den i en database. I denne bloggposten vil jeg gå gjennom hvordan du kan konvertere en dato til en streng ved hjelp av Kotlin.
 
-## Hvordan 
-For å konvertere en dato til en streng i Kotlin, kan du bruke funksjonen `format` fra `SimpleDateFormat`-klassen. Her er et eksempel på hvordan du kan gjøre det: 
+# Hvordan gjøre det
+Det første du må gjøre er å importere `java.text.SimpleDateFormat` biblioteket. Dette vil gi deg alle verktøyene du trenger for å konvertere datoer til strenger. Deretter kan du bruke `SimpleDateFormat` klassen og dens metoder til å formatere og konvertere datoen.
 
-```Kotlin 
-val dato = Date()
-val formatter = SimpleDateFormat("dd/MM/yyyy")
-val strengDato = formatter.format(dato)
-println(strengDato) // Output: 10/03/2021
+```Kotlin
+import java.text.SimpleDateFormat
+
+val dato = Date() // Opprette et Date objekt med nåværende dato
+val formatter = SimpleDateFormat("dd.MM.yyyy") // Angi ønsket format
+val datoTekst = formatter.format(dato) // Konvertere dato til en streng
+
+println(datoTekst) // Output: 05.09.2021
 ```
 
-Her bruker vi `format`-funksjonen til å konvertere dagens dato til en streng i formatet dd/MM/yyyy. På denne måten kan du tilpasse det til dine spesifikke behov og få en streng med ønsket datoformat. 
+I eksempelet over oppretter vi først et `Date` objekt med nåværende dato. Deretter oppretter vi et `SimpleDateFormat` objekt og angir ønsket format for datostringen vår. Til slutt bruker vi `format()` metoden for å konvertere datoen til en streng.
 
-## Dypdykk 
-For de som er interessert i mer avansert konvertering av datoer til strenger, kan du også bruke `DateTimeFormatter`-klassen fra Java Time API. Dette gir deg mer fleksibilitet i å formatere datoer og tilbyr flere alternativer og konfigurasjoner. Her er et eksempel på hvordan du kan bruke denne klassen:
+# Dypdykk
+Du kan også tilpasse formatet for datoen din ved å bruke forskjellige symboler i `SimpleDateFormat` klassen. For eksempel kan du legge til årstall med fire sifre ved å bruke `yyyy` i stedet for `yy`. Her er noen vanlige symboler som du kan bruke:
 
-```Kotlin 
-val dato = LocalDate.parse("2021-03-10")
-val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
-val strengDato = dato.format(formatter)
-println(strengDato) // Output: 10.03.2021
-```
+| Symbol | Beskrivelse           | Eksempel     |
+| ------ | --------------------- | ------------ |
+| d      | Dag i måneden         | 5            |
+| dd     | Dag i måneden (to siffer) | 05           |
+| M      | Måned i året          | 9            |
+| MM     | Måned i året (to siffer) | 09           |
+| yy     | Årstall (to siffer)   | 21           |
+| yyyy   | Årstall (fire siffer) | 2021         |
 
-I dette tilfellet bruker vi `ofPattern`-funksjonen til å definere det ønskede datoformatet og deretter konverterer vi datoen til en streng ved hjelp av `format`-funksjonen.
+For en full liste over symboler og deres bruk, anbefaler jeg å sjekke ut dokumentasjonen til `SimpleDateFormat` klassen.
 
-## Se også
-- [Kotlin dokumentasjon om dato og tid](https://kotlinlang.org/docs/datetime.html)
-- [Java Time API Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html)
-- [Kotlin Stringformatdokumentasjon](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/java.text.-string.html-format/)
-
-Takk for at du leste! Vi håper denne artikkelen hjelper deg med å konvertere datoer til strenger i Kotlin på en enkel og effektiv måte. Lykke til med programmeringen din!
+# Se også
+- [JavaDoc til SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+- [Kotlin offisiell dokumentasjon](https://kotlinlang.org/docs/home.html)

@@ -1,79 +1,66 @@
 ---
 title:                "Rust: Debug-Ausgabe drucken"
+simple_title:         "Debug-Ausgabe drucken"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+#Warum
 
-Das Drucken von Debug-Ausgaben kann nützlich sein, um Fehler in Ihrer Rust-Codebasis zu finden und zu beheben. Es ermöglicht Ihnen, Informationen über den Zustand Ihrer Variablen und Datenstrukturen während der Ausführung Ihres Programms zu erhalten, was insbesondere bei komplexeren Anwendungen sehr hilfreich sein kann.
+Es gibt viele Gründe, warum Entwickler:innen Debug-Ausgaben verwenden. Hier sind einige davon:
 
-# Wie
+- Debug-Ausgaben können helfen, Fehler in Code zu finden und zu beheben.
+- Sie können auch bei der Entwicklung neuer Funktionen nützlich sein, um den Ablauf des Programms zu überprüfen.
+- Durch das Ausgeben von Daten können komplexe Algorithmen oder komplexe Logikschleifen besser verstanden werden.
+- Und nicht zuletzt können Debug-Ausgaben auch einfach Spaß machen und die Entwicklung unterhaltsamer gestalten.
 
-Um Debug-Ausgaben in Rust zu drucken, können Sie die `println!`-Makro verwenden. In den folgenden Beispielen werden wir eine einfache Variable `name` erstellen und sie dann mithilfe der `println!`-Makro debuggen. Die Debug-Ausgabe wird auf der Konsole gedruckt, wenn Sie das Programm ausführen.
+#Wie geht das
 
-```Rust
-let name = "Max Mustermann";
-println!("Name: {}", name);
-```
-
-Dies wird die Ausgabe `Name: Max Mustermann` auf der Konsole drucken.
-
-Sie können auch mehrere Variablen in einem `println!`-Aufruf debuggen, indem Sie sie durch ein Komma trennen.
+Um Debug-Ausgaben in Rust zu machen, verwenden wir die `println!`-Macro. Es funktioniert ähnlich wie die `printf`-Funktion in C, aber mit Rust-spezifischen Syntax. Hier ist ein einfaches Beispiel:
 
 ```Rust
-let age = 30;
-let profession = "Softwareentwickler";
-println!("Alter: {}, Beruf: {}", age, profession);
+let name = "Max";
+println!("Hello, {}!", name);
 ```
 
-Dies wird die Ausgabe `Alter: 30, Beruf: Softwareentwickler` erzeugen.
+Die Ausgabe wird folgendermaßen aussehen:
 
-Eine weitere nützliche Methode zum Drucken von Debug-Ausgaben ist `dbg!`, die sowohl den Wert einer Variablen als auch den Namen der Variablen druckt.
+```
+Hello, Max!
+```
+
+Der Text innerhalb der geschweiften Klammern `{}` wird durch den Wert der entsprechenden Variable ersetzt. Dies ist ähnlich wie die Platzhalter in `printf`. 
+
+Aber was ist, wenn wir mehrere Variablen ausgeben wollen? Kein Problem, wir können einfach mehrere `{}`-Platzhalter verwenden:
 
 ```Rust
-let city = "Berlin";
-dbg!(city);
+let name = "Max";
+let age = 25;
+println!("Hello, my name is {} and I am {} years old.", name, age);
 ```
 
-Dies wird die Ausgabe `city = "Berlin"` erzeugen.
+Die Ausgabe wäre dann:
 
-# Deep Dive
-
-Es gibt verschiedene Möglichkeiten, wie Sie die `println!`- und `dbg!`-Makros verwenden können, um Debug-Ausgaben zu drucken. Eine davon ist die Verwendung von Formatierungsplatzhaltern, die es Ihnen ermöglichen, formatierte Zeichenketten und Werte auszugeben.
-
-```Rust
-let age = 30;
-let profession = "Softwareentwickler";
-println!("Ich bin {} Jahre alt und mein Beruf ist {}", age, profession);
+```
+Hello, my name is Max and I am 25 years old.
 ```
 
-Dies wird die Ausgabe `Ich bin 30 Jahre alt und mein Beruf ist Softwareentwickler` erzeugen.
+Es gibt jedoch auch fortgeschrittenere Möglichkeiten der Ausgabe, wie z.B. die Verwendung von Formatierungsanweisungen oder das Ausgeben von Datenstrukturen. Wenn du mehr darüber erfahren möchtest, schau dir unbedingt die Rust-Dokumentation zu `println!` an.
 
-Sie können auch verwendete Variablen mit einem Debug-Formatierungsplatzhalter drucken, indem Sie `:?` anstelle von `{}` verwenden.
+#Tiefere Einblicke
 
-```Rust
-let numbers = vec![1, 2, 3];
-println!("Zahlen: {:?}", numbers);
-```
+Es gibt auch andere Wege, um Debug-Ausgaben zu machen, z.B. die `eprintln!`-Macro, die für Fehler- oder Warnungsmeldungen verwendet werden kann. Außerdem gibt es die Möglichkeit, Debug-Ausgaben nur in bestimmten Entwicklungsumgebungen wie z.B. während des Testens auszuführen, indem man eine Bedingung für die Ausführung der `println!`-Statements hinzufügt.
 
-Dies wird die Ausgabe `Zahlen: [1, 2, 3]` erzeugen.
+Eine andere interessante Möglichkeit sind benutzerdefinierte Ausgaben mittels der `Debug`-Trait. Damit können benutzerdefinierte Datenstrukturen oder -typen auf ihre eigene spezifische Weise ausgegeben werden. Dies ist besonders nützlich, wenn es um komplexe Datenstrukturen geht, die nicht einfach mit `println!` ausgegeben werden können.
 
-Es ist auch möglich, weitere Argumente an die `println!`- und `dbg!`-Makros zu übergeben, wie zum Beispiel mathematische Ausdrücke oder Funktionen.
+#Siehe auch
 
-```Rust
-let x = 5;
-let y = 10;
-println!("x + y = {}", x + y);
-```
+- [Rust-Dokumentation zu `println!`](https://doc.rust-lang.org/std/macro.println.html)
+- [Offizielles Rust-Tutorial](https://doc.rust-lang.org/book/)
+- [Rust-Tricks: Debug-Ausgaben](https://www.rust-lang.org/learn/tricks/debugging-output)
 
-Dies wird die Ausgabe `x + y = 15` erzeugen.
-
-# Siehe auch
-
-- [Die Rust Dokumentation zu Debug-Ausgaben](https://doc.rust-lang.org/std/macro.dbg.html)
-- [Ein Tutorial zu Debugging in Rust](https://dev.to/lampewebdev/debugging-rust-code-with-println-dbgrumen-2ldo)
-- [Der offizielle Rust Discord-Server für Hilfestellung und Diskussionen](https://discord.gg/rust-lang)
+Danke fürs Lesen und viel Spaß beim Debuggen mit Rust!

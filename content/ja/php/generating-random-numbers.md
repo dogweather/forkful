@@ -1,30 +1,43 @@
 ---
-title:                "PHP: ランダムな数値を生成する"
+title:                "PHP: ランダムナンバーの生成"
+simple_title:         "ランダムナンバーの生成"
 programming_language: "PHP"
-category:             "Numbers"
+category:             "PHP"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-乱数を生成することに取り組む理由は、様々です。たとえば、ゲームや乱数を必要とするアルゴリズムを作る場合には、ランダムな値を生成する必要があります。また、アプリケーションのプライバシーやセキュリティのテストを行う際にも、乱数を使うことがあります。 
+## なぜ？
+ランダムな数字を生成することのメリットは何でしょうか？プログラマーの皆さんは普段、どのようにランダムな数字を利用しているのでしょうか？今回は、PHPでランダムな数字を生成する方法についてお話しします。
 
-## 作り方
-乱数を生成する方法はいくつかありますが、PHPには標準的な乱数生成関数が用意されています。以下のように、random_int関数を使うことで、指定された範囲内の整数値を生成することができます。
-
+## 方法
+PHPでは、rand()関数やmt_rand()関数を使用してランダムな数字を生成することができます。例えば、
 ```PHP
-<?php
-$random_number = random_int(1, 100); 
-echo $random_number;
+$random_number = rand(1, 10);
 ```
+このように書くと、1から10までのランダムな数字を$random_numberに代入することができます。
 
-この例では、1から100の範囲内でランダムな整数値を生成し、その値を出力しています。実行すると、毎回異なる値が出力されることがわかります。また、random_int関数の代わりに、mt_randやrandといった関数を使うこともできます。
+また、mt_rand()関数では、より高度な乱数を生成することができます。例えば、
+```PHP
+$random_number = mt_rand(100, 1000);
+```
+このように書くと、100から1000までのランダムな数字を$random_numberに代入することができます。
 
-## 深堀り
-乱数生成は、コンピューターにおいて完全にランダムな値を生成することは不可能です。そのため、乱数生成アルゴリズムでは、擬似乱数を生成します。これは、ランダムな値を生成するための一連の計算式やルールのことです。PHPにおける乱数生成関数は、独自の乱数生成アルゴリズムを使用しています。また、アルゴリズムの妥当性やセキュリティ上の問題については、常に議論の的となっています。
+さらに、PHPではrandom_int()関数を使用することで、よりセキュアなランダムな数字を生成することができます。例えば、
+```PHP
+$random_number = random_int(1, 10);
+```
+このように書くと、1から10までのランダムな数字を$random_numberに代入することができます。
 
-## 併せて参照してほしい記事
-- [PHPマニュアル：random_int](https://www.php.net/manual/ja/function.random-int.php)
-- [乱数の基礎知識｜プログラマーなら知っておきたいランダム性，偶然性](https://thinkit.co.jp/article/12504)
-- [乱数“エンジン”の違いによるセキュリティ上の考慮](https://www.atmarkit.co.jp/ait/articles/1410/02/news139.html)
+## ディープダイブ
+PHPにおけるランダムな数字の生成には、様々な方法があります。また、乱数生成にはさまざまなアルゴリズムが利用されています。例えば、メルセンヌ・ツイスターやXorshiftなどがあります。プログラマーの皆さんは、自分のプロジェクトに適した乱数生成の方法を選択することができるように、これらのアルゴリズムについても理解しておくことが重要です。
+
+## その他
+次に紹介する記事も参考にしてみてください。
+
+- [PHP: rand - Manual](https://www.php.net/manual/en/function.rand.php)
+- [PHP: mt_rand - Manual](https://www.php.net/manual/en/function.mt-rand.php)
+- [PHP: random_int - Manual](https://www.php.net/manual/en/function.random-int.php)
+- [Random number generation - Wikipedia](https://en.wikipedia.org/wiki/Random_number_generation)

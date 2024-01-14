@@ -1,7 +1,9 @@
 ---
 title:                "Haskell recipe: Deleting characters matching a pattern"
+simple_title:         "Deleting characters matching a pattern"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,47 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Sometimes when writing code, we may encounter situations where we need to delete certain characters from a string that match a specific pattern. This could be to clean up user input, remove unnecessary characters, or simply to reformat the string for better processing. In such cases, knowing how to delete characters matching a pattern in Haskell can come in handy.
+Sometimes, when working with strings in Haskell, we may encounter the need to remove certain characters that match a specific pattern. This could be for various reasons, such as cleaning up data or formatting a string in a specific way.
 
 ## How To
-
-To delete characters matching a pattern in Haskell, we can use the `filter` function along with a predicate function that checks for the pattern. Here's an example of a function that removes all the vowels from a given string:
-
-```Haskell
-removeVowels :: String -> String
-removeVowels str = filter (\c -> not (c `elem` "aeiouAEIOU")) str
-```
-
-In the above function, we use the `filter` function to check each character in the string against a predicate function that checks if the character is a vowel or not. If it's not a vowel, the character is included in the output string, effectively removing all the vowels.
-
-Let's see this in action:
+To delete characters matching a pattern in Haskell, we can use the `filter` function and a lambda expression to create a predicate that will remove the desired characters. For example, to remove all vowels from a string, we can use the following code:
 
 ```Haskell
-removeVowels "Hello, world!" -- Output: "Hll, wrld!"
+let str = "Hello world!"
+let result = filter (\x -> not (x `elem` "aeiou")) str
 ```
 
-We can also use more complex pattern matching expressions in the predicate function to remove specific characters or sequences. For example, let's say we want to remove all the special characters from a string, leaving only alphabets and numbers. We can use the `isAlphaNum` function from the `Data.Char` module along with `filter`:
+The `filter` function takes in a predicate and a list, and returns a new list with only the elements that satisfy the predicate. In this case, our predicate checks if the current character is not included in the string "aeiou".
 
-```Haskell
-import Data.Char (isAlphaNum)
-
-removeSpecial :: String -> String
-removeSpecial str = filter isAlphaNum str
-```
-Here, we use the `isAlphaNum` function as a predicate to check if each character is an alphabet or a number. Any character that doesn't match this pattern is filtered out, leaving us with only alphabets and numbers in the output string.
-
-```Haskell
-removeSpecial "Hello, world!" -- Output: "Helloworld"
-```
+The output of this code would be: "Hll wrld!". We can see that all vowels have been removed from the original string.
 
 ## Deep Dive
+The `filter` function is a higher-order function in Haskell. This means that it takes in a function as its argument. In the example above, the lambda expression `(\x -> not (x `elem` "aeiou"))` is the function that is passed to `filter`.
 
-The `filter` function works by taking a predicate function and a list, and returning a list with only those elements that satisfy the predicate. In our examples, we used `filter` with the `String` type, but it can be used with any list-like data structure in Haskell, such as `Data.IntMap`.
+The function we pass to `filter` must have a type of `a -> Bool`, where `a` is the type of elements in the list. In our case, the type of characters in the string is `Char`, so our function has a type of `Char -> Bool`.
 
-Additionally, we can also use the `delete` function from the `Data.List` module to specifically delete a single element from a list by comparing it with a given value. This can be useful if we know exactly which character(s) we want to delete.
+By using a lambda expression, we can create a predicate on the spot without having to define a separate function. This makes our code more concise and readable.
 
 ## See Also
-
-- [Haskell filter function documentation](https://www.haskell.org/onlinereport/haskell2010/haskellch9.html#x16-1780009)
-- [Data.Char module documentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
-- [Data.List module documentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html)
+- [Haskell filter function documentation](https://hackage.haskell.org/package/base/docs/Prelude.html#v:filter)
+- [Lambda expressions in Haskell](https://en.wikibooks.org/wiki/Haskell/Lambda_expressions)
+- [Higher-order functions in Haskell](https://en.wikibooks.org/wiki/Haskell/Higher-order_functions)

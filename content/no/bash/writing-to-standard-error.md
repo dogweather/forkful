@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Skriver til standardfeil"
+title:                "Bash: Å skrive til standardfeil"
+simple_title:         "Å skrive til standardfeil"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/writing-to-standard-error.md"
 ---
 
@@ -9,49 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor skulle du skrive til standardfeil i Bash-programmering? Det kan være et nyttig verktøy for å kommunisere informasjon og feilmeldinger til brukere og utviklere. Ved å skrive til standardfeil kan du sørge for at viktig informasjon blir kommunisert, selv om det oppstår feil i programmet ditt.
+Å skrive til standardfeil i Bash-programmering kan være en nyttig måte å håndtere feil og informasjon på. Ved å sende ut feilmeldinger og annen informasjon til standardfeilen, kan du enkelt fange og håndtere disse dataene i ditt program.
 
-## Hvordan
+## Slik gjør du det
 
-For å skrive til standardfeil i Bash-bruker vi kommandoen `echo` etterfulgt av teksten vi ønsker å skrive ut:
+For å skrive til standardfeil i Bash kan du bruke kommandoen `2>&1`. Dette betyr at du sender det som normalt ville gått til standard feil (2) til standard ut (1). Her er et eksempel:
 
-```bash
-echo "Dette er en feilmelding" 1>&2
-```
-
-Her vil `1>&2` dirigere utdaten vår til standardfeil i stedet for standard output. Dette er viktig for å sikre at meldingen blir vist som en feilmelding og ikke som vanlig tekst.
-
-La oss se et eksempel på hvordan dette fungerer i et Bash-skript:
-
-```bash
+```Bash
 #!/bin/bash
-# Dette er et enkelt skript som sjekker om et filnavn er en gyldig fil
-if [ -e "$1" ]; then
-  echo "Filen eksisterer"
-else
-  echo "Filen eksisterer ikke" 1>&2 # Her bruker vi standardfeil for å kommunisere feilen
-fi
+echo “Denne teksten vil bli sendt til standardfeil” 1>&2
+```
+Dette vil sende teksten "Denne teksten vil bli sendt til standardfeil" til standardfeilen i stedet for standarduttaket. Merk at tallet for standard feil er 2, mens standard ut er 1.
+
+Du kan også bruke `>&` for å kombinere standard feil og standard ut i en linje. For eksempel:
+
+```Bash
+#!/bin/bash
+echo “Denne teksten vil bli sendt til både standardfeil og standard ut” >&2
 ```
 
-La oss prøve å kjøre skriptet med et gyldig filnavn og et ugyldig filnavn:
+Hvis du vil sende en feilmelding til standardfeil, kan du bruke `2>/dev/null`. Dette vil sende feilmeldingen til standardfeilen, men samtidig ignorere den ved hjelp av `/dev/null`-kommandoen.
 
-```bash
-$ ./sjekk_filen.sh fil.txt
-Filen eksisterer
+## Dykk dypere
 
-$ ./sjekk_filen.sh fil2.txt
-Filen eksisterer ikke
-```
+Når du skriver til standardfeil, er det viktig å merke seg at dataene som blir sendt dit er non-buffered. Dette betyr at de blir sendt umiddelbart til standardfeilen, i motsetning til standard ut som kan lagres i en buffer og sendes senere. Det kan lønne seg å bruke `tee`-kommandoen for å lagre dataene til en fil hvis du ønsker å beholde dem for senere bruk.
 
-Som du ser, vil meldingen for ugyldig fil bli vist som en feilmelding, noe som gjør det enklere å identifisere og håndtere feilen.
-
-## Deep Dive
-
-Det finnes en annen måte å skrive til standardfeil på, nemlig ved å bruke `printf`-kommandoen i stedet for `echo`. Forskjellen mellom de to er at `echo` automatisk legger til en ny linje på slutten av utdaten, mens `printf` ikke gjør det. Dette kan være nyttig hvis du ønsker å kontrollere formateringen av teksten din, spesielt hvis du skal skrive ut tall eller variabler.
-
-En annen ting å være klar over er at du kan dirigere utdaten din til både standardfeil og standard output ved å bruke `1>&2`. Dette kan være nyttig hvis du ønsker å vise en feilmelding samtidig som du fortsetter å skrive til standard output.
+Det er også viktig å håndtere feil riktig når du sender dem til standardfeil. Sørg for at du bruker riktig exit-kode og gir tydelige og informative feilmeldinger for å hjelpe deg med å feilsøke programmet ditt.
 
 ## Se også
 
-- [Offisiell dokumentasjon for `echo` og `printf` i GNU Bash](https://www.gnu.org/software/bash/manual/html_node/Echoing.html)
-- [Eksempelskript for å illustrere bruk av standardfeil i Bash-programmering](https://github.com/bkuhlmann/bbk-examples/tree/master/bash/standard-error)
+- [Bash scripting tutorial på Devhints](https://devhints.io/bash)
+- [Offisiell Bash dokumentasjon](https://www.gnu.org/software/bash/manual/bash.html)
+- [Kjøring av Bash-kommandoer fra standard ut](https://wiki.bash-hackers.org/howto/redirection_tutorial)

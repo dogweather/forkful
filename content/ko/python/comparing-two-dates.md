@@ -1,54 +1,46 @@
 ---
 title:                "Python: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
+## Why
 
-두 날짜를 비교하는것에 참여할 이유는 무엇일까요? Python 프로그래밍에서 날짜 비교가 왜 필요한지 이해하고 싶을 수 있습니다. 두 날짜를 비교해야 하는 이유는 여러가지 있을 수 있지만, 가장 일반적인 이유는 특정 날짜를 기준으로 다른 날짜가 더 늦거나 이를 기록하는 것입니다. 이를 통해 이벤트의 발생 순서를 파악하거나 지난 날짜와 최신 날짜의 차이를 계산할 수 있습니다. 
+날짜 비교는 데이터 처리에서 매우 중요한 기능입니다. 특히 세계 곳곳에서 사용되는 프로그래밍 언어인 파이썬에서는 날짜와 시간을 다루는 다양한 기능들이 제공되는데, 이 중 날짜를 비교하는 기능은 더욱 유용하게 사용될 수 있습니다.
 
-# 방법
+## How To
 
-Python에서 두 날짜를 비교하는 방법은 다양하지만, 가장 간단한 방법은 datetime 모듈을 사용하는 것입니다. 다음은 두 개의 날짜를 비교하는 예시 코드입니다.
+비교하고 싶은 두 날짜를 파이썬의 datetime 객체로 만들고, 이를 통해 비교 연산을 수행할 수 있습니다. 아래 코드는 두 날짜가 같은지, 또는 첫 번째 날짜가 두 번째 날짜보다 이후인지를 비교하는 예시입니다.
 
 ```Python
 from datetime import datetime
 
-# 두 날짜를 변수에 할당
-date1 = datetime(2021, 5, 5)
-date2 = datetime(2021, 5, 10)
+date1 = datetime(2021, 3, 15)
+date2 = datetime(2021, 4, 5)
 
-# 비교 연산자를 사용하여 두 날짜를 비교
+# 두 날짜가 같은지 비교
+if date1 == date2:
+    print("두 날짜가 같습니다.")
+
+# 첫 번째 날짜가 두 번째 날짜보다 이후인지 비교
 if date1 > date2:
-    print("date1이 더 늦은 날짜입니다.")
-elif date1 < date2:
-    print("date2가 더 늦은 날짜입니다.")
-else:
-    print("두 날짜는 같은 날짜입니다.")
-    
-# Output: date2가 더 늦은 날짜입니다.
+    print("첫 번째 날짜가 두 번째 날짜보다 이후입니다.")
 ```
 
-위 예시 코드에서는 두 날짜를 비교하여 더 늦은 날짜를 출력하는 간단한 비교 연산을 수행합니다. datetime 모듈에는 여러 다른 함수와 비교 연산이 있으므로, 찾아보고 싶은 경우 공식 문서를 확인해보세요.
+위 코드를 실행하면 "첫 번째 날짜가 두 번째 날짜보다 이후입니다."라는 출력 결과를 얻게 됩니다.
 
-# 딥 다이브
+## Deep Dive
 
-더 깊이 들어가서 두 날짜를 비교하는 방법에 대해 알아보겠습니다. 날짜를 비교하는 경우에는 날짜와 시간을 포함하여 비교해야 할 수도 있습니다. 이 경우, 비교 연산자만으로는 충분하지 않고 다른 함수를 사용해야 할 수 있습니다. 또한, 날짜를 비교할 때 우리가 원하는 형식에 따라 코드를 조금 수정해야 할 수도 있습니다. 더 많은 정보를 알고 싶은 경우에는 Python의 날짜 및 시간 관련 철학적 지점을 포함하는 PEP 495를 참조하세요.
+날짜를 비교할 때는 반드시 시간까지 함께 비교하는 것이 중요합니다. 만약 두 날짜가 같은 날짜지만 시간이 다를 경우, 같은 날짜로 간주되지 않고 비교 연산이 다른 결과를 도출할 수 있습니다. 따라서 날짜뿐만 아니라 시간도 잘 고려하여 비교하도록 주의해야 합니다.
 
-# 관련 자료들
+또한, 날짜 비교에서 자주 사용되는 라이브러리 중 하나인 `dateutil`을 활용하면 더욱 간편한 날짜 비교 기능을 제공할 수 있습니다. `dateutil`을 사용하면 특정 날짜의 차이를 계산하거나, 날짜 사이의 거리를 구하는 등 다양한 기능들을 제공합니다.
 
-## 참고 자료
+## See Also
 
-- [Python datetime 모듈 문서](https://docs.python.org/ko/3/library/datetime.html)
-- [Python 날짜 비교 예제 코드](https://www.tutorialspoint.com/compare-two-dates-in-python)
-- [PEP 495 - Python 3.6 문서](https://www.python.org/dev/peps/pep-0495/)
-
-## 추가 자료
-
-- [Python datetime 모듈의 튜토리얼](https://realpython.com/python-datetime/)
-- [Python 날짜 및 시간 관련 팁과 트릭](https://towardsdatascience.com/work-with-dates-like-a-pro-in-python-8ff19878e9d9)
-- [Python datetime 모듈에서 날짜 비교하기](https://www.geeksforgeeks.org/python-compare-two-dates/)
+- 파이썬 공식 문서: https://docs.python.org/ko/3/library/datetime.html
+- dateutil 공식 사이트: https://dateutil.readthedocs.io/en/stable/

@@ -1,41 +1,33 @@
 ---
-title:                "Clojure: Skapa en tillfällig fil"
+title:                "Clojure: Skapa en temporär fil"
+simple_title:         "Skapa en temporär fil"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
+Att skapa en tillfällig fil är en användbar funktion i Clojure för att temporärt lagra data eller resultat från en process. Det kan vara särskilt användbart när man arbetar med större datamängder eller i situationer där man inte vill permanent spara data.
 
-Skapandet av temporära filer är vanligt inom programmering eftersom det ofta är nödvändigt att lagra eller manipulera tillfälliga data under körningstiden. Det kan också vara användbart för att testa och felsöka kod utan att påverka den befintliga filstrukturen.
-
-## Hur man gör det
-
-För att skapa en temporär fil i Clojure använder man funktionen `with-open`, som tar emot en file handle som argument och ser till att filen stängs efter användning. Sedan kan man använda funktionen `clojure.java.io/file` för att skapa en ny fil och välja dess namn och placering.
+## Hur man gör
+För att skapa en tillfällig fil i Clojure kan man använda sig av den inbyggda funktionen "with-tempfile". Den tar två parametrar, en prefix för filnamnet och ett suffix som anger filtypen. Här är ett exempel på hur man kan skapa en tillfällig fil och skriva lite data till den:
 
 ```Clojure
-(with-open [temp-file (clojure.java.io/file "C:/temp/" "tempfile.txt")]
-  (println "Min temporära fil: " (.getName temp-file))
-  (.deleteOnExit temp-file)) ; filen raderas automatiskt vid avslutad körning
+(with-tempfile "mittprefix" ".txt"
+  (spit "Det här är mitt tillfälliga filinnehåll" %))
 ```
 
-Detta kommer att skapa en temporär fil med namnet "tempfile.txt" i mappen "C:/temp" och sedan skriva ut filnamnet. Funktionen `deleteOnExit` ser till att filen raderas när programmet avslutas.
+I detta exempel kommer en fil med namnet "mittprefix[random-nummer].txt" att skapas och innehålla texten "Det här är mitt tillfälliga filinnehåll". Det tillfälliga filobjektet returneras av funktionen och kan sedan användas för att läsa och bearbeta filen vidare.
 
-## Djupdykning
+## Deep Dive
+Förutom att använda "with-tempfile" finns det även andra bibliotek i Clojure som erbjuder mer avancerade funktioner för att skapa tillfälliga filer. Ett exempel är "java.io.File/createTempFile", som ger möjlighet att ställa in parametrar som filens plats, namn och filtyp.
 
-För mer avancerad hantering av temporära filer kan man använda sig av `java.io.File` klassen och dess metoder, som till exempel `isDirectory` och `listFiles` för att undersöka och hantera filer på olika sätt.
+När man skapar en tillfällig fil är det också viktigt att tänka på säkerheten. Det finns alltid en risk att temporära filer kan läsas eller ändras av obehöriga användare. För att undvika detta kan man använda sig av säkrare sätt att skapa och hantera filer, som till exempel "java.nio.file.Files/createTempFile".
 
-Man kan också skapa en temporär fil som endast ska existera under körningstiden genom att använda `java.io.File.createTempFile` funktionen, som automatiskt skapar en fil med ett unikt namn och lägger till ett prefix och suffix.
-
-```Clojure
-(with-open [temp-file (java.io.File/createTempFile "prefix_" "_suffix")]
-  (println "Min temporära fil: " (.getName temp-file))
-  (.deleteOnExit temp-file))
-```
-
-## Se även
-
-- [Clojure.io API documentation](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Java File API documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html#createTempFile(java.lang.String,java.lang.String,java.nio.file.attribute.FileAttribute...))
+# Se även
+- [Clojuredocs - with-tempfile](https://clojuredocs.org/clojure.core/with-tempfile)
+- [JavaDocs - java.io.File/createTempFile](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
+- [JavaDocs - java.nio.file.Files/createTempFile](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#createTempFile-java.lang.String-java.lang.String-java.nio.file.attribute.FileAttribute...-)

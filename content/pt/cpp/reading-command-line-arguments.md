@@ -1,60 +1,62 @@
 ---
 title:                "C++: Lendo argumentos da linha de comando"
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que ler argumentos da linha de comando é importante para programadores C++
+## Por que ler argumentos da linha de comando?
 
-Quando se trata de programação C++, saber como ler e utilizar argumentos de linha de comando é uma habilidade essencial. Isso permite que os programadores criem programas mais versáteis e interativos, além de facilitar a integração com outros sistemas e ferramentas. Neste post, vamos mergulhar nesse tópico e abordar como ler argumentos de linha de comando no C++.
+Ler argumentos da linha de comando é uma habilidade fundamental para qualquer programador em C++. Com ela, é possível interagir com o usuário e criar programas mais dinâmicos e flexíveis. Além disso, a leitura de argumentos da linha de comando permite que o usuário passe informações essenciais para a execução do programa, como arquivos de entrada e configurações específicas.
 
-## Como ler argumentos de linha de comando em C++
+## Como Fazer
 
-Existem várias maneiras de ler argumentos de linha de comando em C++, mas vamos nos concentrar no método mais simples e popular. Primeiramente, é necessário incluir a biblioteca <iostream> para permitir a entrada e saída de dados, e a biblioteca <cstdlib> para acessar a função de conversão de texto para números:
-
-```C++
-#include <iostream>
-#include <cstdlib>
-```
-
-Em seguida, é preciso declarar a função main, que é o ponto de entrada do programa. A função main também recebe dois parâmetros: argc, que é o número de argumentos passados pela linha de comando, e argv, que é um vetor que contém esses argumentos. 
+Ler argumentos da linha de comando em C++ é bastante simples e pode ser feito usando a função `main()`. Basta declarar os parâmetros `argc` e `argv` que representam, respectivamente, o número de argumentos passados e um vetor que armazena os argumentos em strings.
 
 ```C++
-int main(int argc, char* argv[]){
-    //Código do programa vai aqui
+int main(int argc, char *argv[]) {
+    // código para processar os argumentos aqui
+    return 0;
 }
 ```
 
-Para acessar os argumentos individualmente, basta utilizar o vetor argv[], passando o índice do argumento desejado. Por exemplo, para imprimir no console o primeiro argumento passado, podemos fazer o seguinte:
+Agora, é possível acessar cada argumento passado pelo usuário através do vetor `argv` e executar as ações desejadas. Por exemplo, se o usuário passar o argumento "-h" para exibir a ajuda do programa, podemos fazer:
 
 ```C++
-std::cout << argv[0] << std::endl;
-```
-
-É importante lembrar que o primeiro elemento do vetor é sempre o nome do programa, seguido dos argumentos passados.
-
-Para converter o argumento de texto para um número inteiro, podemos utilizar a função std::atoi() da biblioteca <cstdlib>. Por exemplo, se o segundo argumento for um número inteiro, podemos armazená-lo em uma variável do tipo int da seguinte forma:
-
-```C++
-int num = std::atoi(argv[1]);
-```
-
-## Profundidade na leitura de argumentos de linha de comando
-
-Além de acessar argumentos individuais, também é possível percorrer todos os argumentos em um loop. Isso pode ser útil quando o número de argumentos é variável ou quando precisamos realizar a mesma operação em todos eles.
-
-```C++
-for(int i = 0; i < argc; i++){
-    //Acessar e utilizar os argumentos aqui
+if (strcmp(argv[1], "-h") == 0) {
+    cout << "Este programa realiza operações matemáticas." << endl;
+    cout << "Opções disponíveis: " << endl;
+    cout << "-s : calcular soma" << endl;
+    cout << "-m : calcular multiplicação" << endl;
+    cout << "-p : calcular potência" << endl;
 }
 ```
 
-Também é importante lembrar que os argumentos passados pela linha de comando são lidos como texto, então é necessário fazer as devidas conversões para utilizar como números ou outros tipos de dados.
+A saída do programa seria:
 
-## Veja também
+```
+$ ./calculadora -h
+Este programa realiza operações matemáticas.
+Opções disponíveis:
+-s : calcular soma
+-m : calcular multiplicação
+-p : calcular potência
+```
 
-- [Tutorial de C++ da W3Schools](https://www.w3schools.com/cpp)
-- [Documentação da função std::atoi()](https://www.cplusplus.com/reference/cstdlib/atoi/)
+## Aprofundando-se
+
+Além dos argumentos que o usuário pode passar, também existem argumentos obrigatórios que precisam ser tratados pelo programa. Para isso, é necessário verificar se o número de argumentos `argc` é maior ou igual ao número mínimo esperado e, caso contrário, informar ao usuário que algo está faltando.
+
+Outro ponto importante é considerar possíveis erros de digitação ou entrada incorreta de informações pelo usuário. Para isso, é recomendado o uso de validação e tratamento de exceções para garantir que o programa não tenha falhas inesperadas.
+
+Além disso, é importante entender a diferença entre argumentos de linha de comando com e sem opção. Argumentos com opção são aqueles que possuem um valor associado, como por exemplo o argumento `-n 10` em que 10 é o valor da opção `n`. Já argumentos sem opção são apenas marcadores que indicam a execução de uma determinada tarefa.
+
+## Ver também
+
+- [Tutorial de command line arguments em C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Documentação sobre a função main() em C++](https://www.cplusplus.com/articles/yAqpX9L8/)
+- [Exemplos de uso de argumentos da linha de comando em C++](https://www.techiedelight.com/command-line-arguments-cpp/)

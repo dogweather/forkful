@@ -1,57 +1,44 @@
 ---
-title:                "TypeScript: Scrittura su errore standard"
+title:                "TypeScript: Scrivere su standard error"
+simple_title:         "Scrivere su standard error"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Scrivere su standard error è utile per rendere il codice più robusto e per gestire gli errori in modo più efficace. Quando i programmatori sono consapevoli di dove e come si verificano gli errori, possono risolverli in modo più efficiente.
 
-## Come Scrivere su Standard Error
-Scrivere su standard error è semplice usando il TypeScript. Basta seguire i seguenti passaggi:
+Scrivere su standard error è un'azione utilizzata frequentemente dai programmatori quando si riscontrano errori durante l'esecuzione del codice. Ciò permette di ottenere informazioni dettagliate sulle cause dell'errore e facilita la fase di debugging.
 
-1. Prima, dobbiamo importare il modulo `process` nel nostro file TS:
+## Come fare
 
-```TypeScript
-import * as process from 'process';
-```
-
-2. Poi, possiamo accedere all'oggetto `process.stderr` e utilizzare il metodo `write` per scrivere sullo standard error:
+Per scrivere su standard error usando TypeScript, è sufficiente utilizzare la funzione `console.error()` passando come parametro il messaggio di errore da visualizzare. Esempio:
 
 ```TypeScript
-process.stderr.write("Questo è un messaggio di errore!");
+console.error("Errore: non è stato possibile effettuare l'operazione.")
 ```
-3. È possibile usare anche il metodo `write` per scrivere su standard error in qualsiasi punto del codice, anche durante la gestione degli errori:
+
+Questo mostrerà il messaggio "Errore: non è stato possibile effettuare l'operazione." sull'output dello standard error.
+
+## Approfondimento
+
+Scrivere su standard error può essere utile anche per gestire le eccezioni all'interno del codice. Con l'uso della keyword `throw` è possibile sollevare manualmente un'eccezione e visualizzarne il messaggio di errore su standard error. Ad esempio:
 
 ```TypeScript
 try {
-  // codice che può generare un errore
-} catch(error) {
-  process.stderr.write("Errore durante l'esecuzione del codice");
+  // codice che potrebbe sollevare un'eccezione
+} catch (error) {
+  console.error("Errore durante l'esecuzione: " + error.message);
 }
 ```
 
-Ecco un esempio di output:
+Questa è solo una delle tante possibilità di utilizzo di `console.error()` per il debugging e la gestione degli errori nel codice TypeScript.
 
-```TypeScript
-import * as process from 'process';
+## Vedi anche
 
-process.stderr.write("Questo è un messaggio di errore!");
-```
-
-```
-Questo è un messaggio di errore!
-```
-
-## Deep Dive
-Scrivere su standard error è importante quando si cerca di individuare e risolvere gli errori nel nostro codice. Molti ambienti di esecuzione permettono agli sviluppatori di leggere i messaggi di errore da standard error, il che rende più facile individuare e risolvere i problemi.
-
-Inoltre, scrivere su standard error ci dà la possibilità di gestire gli errori in modo più efficace, fornendo un messaggio di output chiaro e specifico sull'errore che si è verificato.
-
-## Vedi Anche
-- [Documentazione del processo di Node.js](https://nodejs.org/dist/latest-v14.x/docs/api/process.html)
-- [Gestione degli errori in TypeScript](https://github.com/Microsoft/TypeScript/wiki/%CA%61pierrorset)
-- [Standard output vs standard error](https://stackoverflow.com/questions/2990414/standard-output-vs-standard-error)
+- [Documentazione ufficiale di `console.error()` in TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-5.html#the-console-object)
+- [Articolo su come gestire errori in TypeScript](https://dev.to/holyspecter/debugging-in-typescript-how-to-handle-errors-in-clean-way)
+- [Altri metodi per il debugging di errori in TypeScript](https://blog.bitsrc.io/10-practices-for-handling-exceptions-in-javascript-9ad5f7bd564e)

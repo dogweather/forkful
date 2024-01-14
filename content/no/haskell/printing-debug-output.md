@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Utskrift av feilsøkingsutdata"
+title:                "Haskell: Utskrift av feilsøkingsmeldinger"
+simple_title:         "Utskrift av feilsøkingsmeldinger"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/printing-debug-output.md"
 ---
 
@@ -9,62 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Vi har alle vært der - prøver å løse en feil i koden vår, men støter på en murvegg. Vi prøver å lese koden og forstå hva som skjer, men ingenting virker galt. Det er her debugging kommer inn i bildet. Den enkleste måten å få en bedre forståelse av hva som skjer i koden vår er å legge inn debug utskrifter, som printer verdiene av variabler og uttrykk. Dette kan hjelpe oss med å finne feil og forbedre vår generelle forståelse av koden.
+Å skrive kode kan være både givende og frustrerende. Noen ganger kan det være vanskelig å forstå hvorfor noe ikke fungerer som forventet. Her kommer print-debugging til redning! Ved å printe ut variabler og verdier i koden vår, kan vi få en dypere forståelse av hva som faktisk skjer og feilaktig.
 
-## Hvordan
-
-For å skrive ut debug-utskrifter i Haskell, bruker vi funksjonen `putStrLn`. Vi kan inkludere denne funksjonen i hvilken som helst del av koden vår, og den vil skrive ut en string på konsollen når programmet kjører. La oss ta en titt på et eksempel:
+## Hvordan gjøre det
 
 ```Haskell
-main :: IO ()
 main = do
-  let tall = 42
-  putStrLn ("Tallet er: " ++ show tall)
+  let navn = "Ola"
+  let alder = 25
+  print ("Hei " ++ navn ++ "! Du er " ++ show alder ++ " år gammel.")
 ```
 
-I dette eksempelet lager vi en variabel `tall` med verdien `42`. Vi bruker deretter `putStrLn` til å skrive ut en string som inkluderer verdien av `tall`. Når vi kjører programmet, blir følgende skrevet ut på konsollen:
+Dette vil skrive ut:
 
 ```
-Tallet er: 42
+Hei Ola! Du er 25 år gammel.
 ```
 
-Vi kan også legge til flere debug-utskrifter for å se verdien av flere variabler og uttrykk. For å gjøre dette, må vi bare legge til flere `putStrLn`-kall i koden vår. Det kan også være nyttig å inkludere en beskrivende tekst for å vite hva som blir skrevet ut.
-
-```Haskell
-main :: IO ()
-main = do
-  let tall1 = 12
-      tall2 = 30
-  putStrLn "Debug-utskrifter:"
-  putStrLn ("Tall 1: " ++ show tall1)
-  putStrLn ("Tall 2: " ++ show tall2)
-  putStrLn ("Summen av tall 1 og tall 2: " ++ show (tall1 + tall2))
-```
-
-Dette vil resultere i følgende utskrift:
-
-```
-Debug-utskrifter:
-Tall 1: 12
-Tall 2: 30
-Summen av tall 1 og tall 2: 42
-```
+I dette enkle eksempelet kan vi se at vi har en string variabel som heter "navn" og en integer variabel som heter "alder". Ved å bruke print-funksjonen, kan vi kombinere disse to variablene og skrive ut en melding som inkluderer begge. Dette er spesielt nyttig for å sjekke om variabler har riktig verdi og om koden vår kjører som den skal.
 
 ## Dypdykk
 
-Det er viktig å merke seg at debugging ikke er en erstatning for god koding. Det er bare et nyttig verktøy for å hjelpe oss med å forstå hva som skjer bak kulissene i koden vår. Det er også viktig å huske å fjerne alle debug-utskrifter før du deployer koden din til produksjon.
+Når vi printer ut informasjon i koden vår, kan det hjelpe oss med å identifisere feil og løse dem raskere. Det er viktig å bare printe ut de variablene og verdiene som er relevante for problemet vi prøver å løse. Å printe for mye informasjon kan gjøre koden vår rotete og vanskeligere å feilsøke.
 
-En annen nyttig funksjon for debugging i Haskell er `trace`. Denne funksjonen tar en string og et uttrykk som argumenter, og evaluerer uttrykket mens den skriver ut stringen på konsollen. La oss se på et eksempel:
-
-```Haskell
-sum :: Num a => [a] -> a
-sum []     = 0
-sum (x:xs) = trace ("Legger til " ++ show x) x + sum xs
-```
-
-Her bruker vi funksjonen `trace` for å skrive ut en string som forteller oss hva som blir lagt til i summen hver gang funksjonen blir kalt. Dette kan være spesielt nyttig når du jobber med rekursive funksjoner.
+Vi kan også bruke print-funksjonen for å forstå hva som skjer i løkkestyrte eller rekursive funksjoner. Ved å printe ut verdier i hver iterasjon, kan vi se hvordan variablene endrer seg og forstå logikken bak koden vår bedre.
 
 ## Se også
 
-- [Debugging i Haskell (engelsk)](https://wiki.haskell.org/Debugging)
-- [Feilsøkingstips for Haskell (engelsk)](https://www.yesodweb.com/blog/2012/01/tips-for-debugging-haskell)
+- [Debugging in Haskell](https://wiki.haskell.org/Debugging)
+- [Printing and Formatting Output in Haskell](https://www.cs.nott.ac.uk/~gmh/book.html)
+- [Tips for Effective Debugging in Haskell](https://dev.to/m1ghtym0/useful-tips-for-effective-debugging-in-haskell-390a)

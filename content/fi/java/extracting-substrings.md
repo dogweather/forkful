@@ -1,38 +1,48 @@
 ---
-title:                "Java: Alimerkkijonojen erottaminen"
+title:                "Java: Palaavien alimerkkien erottaminen"
+simple_title:         "Palaavien alimerkkien erottaminen"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Substringien erottaminen on tärkeä osa Java-ohjelmointia ja tarjoaa monia hyödyllisiä toimintoja, kuten merkkijonojen käsittelyä ja manipulointia sekä tiedon hakua tietyistä osista merkkijonoja. Tällä blogipostauksella haluamme antaa sinulle hyödyllisiä vinkkejä ja esimerkkejä siitä, miten voit käyttää substringien erotusominaisuuksia Java-ohjelmissasi.
+# Miksi: Miksi kannattaisi tutustua alakierteisiin?
 
-## Miten
-Substringien erottaminen Java-ohjelmassa on helppoa. Sinun tarvitsee vain käyttää String-luokan substring-metodia ja määrittää haluamasi aloituskohdat ja lopetuskohdat. Seuraavassa esimerkissä näet, miten voit erottaa osamerkkijonon alkuperäisestä merkkijonosta:
+Alakierteiden eli alaryhmien erotteleminen merkkijonosta voi olla hyödyllistä monessa eri tilanteessa. Esimerkiksi jos haluat tarkistaa, esiintyykö tietty sana merkkijonossa, tai jos haluat muuttaa tiettyään osaa merkkijonosta toiseksi. Alakierreiden hyödyntäminen voi myös tehdä koodista lyhyemmän ja helpommin ymmärrettävän.
 
-```Java
-String originalString = "Tervetuloa Java-maailmaan!";
-String substring = originalString.substring(13);
-System.out.println(substring); // Tulostaa "Java-maailmaan!"
-```
-
-Voit myös määrittää aloitus- ja lopetusindeksit, jotta voit valita haluamasi osan merkkijonosta. Seuraavassa esimerkissä erottamme sanan "Java" alkuperäisestä merkkijonosta:
+# Miten: Esimerkkejä alakierteiden hyödyntämisestä Java-kielellä.
 
 ```Java
-String originalString = "Tervetuloa Java-maailmaan!";
-String substring = originalString.substring(13, 17);
-System.out.println(substring); // Tulostaa "Java"
+String teksti = "Tervetuloa Suomeen!";
+String alakierte1 = teksti.substring(0, 9); // "Tervetulo"
+String alakierte2 = teksti.substring(10); // "Suomeen!"
+System.out.println(alakierte1);
+System.out.println(alakierte2);
 ```
 
-## Syväsukellus
-Halutessasi voit myös käyttää String-luokan erilaisia substring-metodeja, kuten subSequence(), indexOf() ja lastIndexOf(). Nämä metodit tarjoavat erilaisia tapoja erottaa merkkijonoja ja voit valita niistä parhaiten tarpeisiisi sopivan.
+Yllä olevassa esimerkissä käytetään merkkijonon `substring()` -metodia, joka ottaa parametreikseen alku- ja loppuindeksin. Tämän avulla voidaan erottaa alkuperäisestä merkkijonosta haluttu alakierte. Toinen parametri on valinnainen, ja mikäli se jätetään pois, otetaan alakierteenä kaikki merkit annetusta indeksistä eteenpäin.
 
-On myös tärkeää huomata, että substringit ovat muuttumattomia, eli ne eivät muuta alkuperäistä merkkijonoa, vaan palauttavat uuden merkkijonon.
+```Java
+String sana = "koodaus";
+String ensimmainenKirjain = sana.substring(0, 1); // "k"
+String kaikkiMuutKirjaimet = sana.substring(1); // "oodaus"
+System.out.println(ensimmainenKirjain);
+System.out.println(kaikkiMuutKirjaimet);
+```
 
-## Katso myös
-- [Java String-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Substringien käyttö String-luokassa](https://www.w3schools.com/java/java_strings_substrings.asp)
-- [Substringit ja StringBuilder-luokka](https://www.baeldung.com/java-substring)
+Toisessa esimerkissä haluamme erottaa sana `koodaus` kahteen alakierteeseen: ensimmmäiseen kirjaimeen ja kaikkiin muihin kirjaimiin. Huomaa, että indeksit alkavat aina nollasta, joten kirjain `k` on indeksillä 0.
+
+# Syvempää tietoa alakierteistä
+
+Alakierteiden hyödyntäminen on yksi tapa käsitellä merkkijonoja Java-ohjelmoinnissa. Metodia `substring()` voi käyttää myös monilla muilla tavoilla, kuten esimerkiksi antamalla parametrina vain yhden indeksin, jolloin halutuksi alakierteeksi tulee kaikki merkit kyseisestä indeksistä eteenpäin. Voidaan myös määrittää negatiivisia indeksejä, jotka aloittavat laskemisen merkkijonon lopusta.
+
+Alakierteitä voidaan myös yhdistää muihin merkkijonon manipulointimetodeihin, kuten `concat()`, `replace()` ja `charAt()`. Niiden avulla voidaan luoda monimutkaisempia alakierteitä ja muokata niitä halutulla tavalla.
+
+# Katso myös
+
+- Java String -dokumentaatio: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html
+- Metodi `substring()` -esimerkit: https://www.w3schools.com/java/ref_string_substring.asp
+- "Mikä ihmeen alakierte?" -blogipostaus: https://javafm.fi/posts/alakierte/

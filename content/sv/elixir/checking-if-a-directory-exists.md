@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/checking-if-a-directory-exists.md"
 ---
 
@@ -9,60 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Även om Elixir är ett robust och pålitligt programmeringsspråk, är det alltid viktigt att kontrollera om en mapp eller katalog finns innan du försöker skriva eller läsa filer i den. Att göra detta kan hjälpa till att undvika oväntade fel och felaktiga resultat i dina program. I denna blogginlägg kommer vi att titta på hur man kan kontrollera om en mapp finns i Elixir.
+Att kolla om en mapp existerar är en viktig del av filhantering i Elixir. Det är särskilt användbart när man bygger skalbara applikationer där filer och mappar behöver skapas eller manipuleras dynamiskt.
 
-## Hur man gör det
+## Hur man gör
 
-Att kontrollera om en mapp finns i Elixir är enkelt med hjälp av den inbyggda funktionen `File.dir?/1`. Denna funktion tar en sökväg som argument och returnerar `true` om mappen finns och `false` om den inte gör det.
-
+För att kontrollera om en mapp existerar i Elixir använder man sig av funktionen `File.dir?`. Den tar in en sökväg som argument och returnerar en boolean, `true` om mappen finns och `false` om den inte gör det.
 ```Elixir
-iex> File.dir?("./mapp")
-true
-
-iex> File.dir?("./okänd_mapp")
-false
+path = "/Users/username/documents"
+File.dir?(path)
+#=> true
 ```
 
-För att göra saker ännu enklare kan vi använda Operatören `&&` för att kombinera denna funktion med `File.exists?/1`, som kontrollerar om en fil eller mapp finns. På så sätt kan vi kontrollera både existensen av mappen och att det faktiskt är en mapp.
-
+För att hantera eventuella fel och undvika krascher kan man även använda funktionen `File.stat?` som gör en liknande kontroll men returnerar `:error` om det uppstår ett fel.
 ```Elixir
-iex> File.exists?("./mapp") && File.dir?("./mapp")
-true
-
-iex> File.exists?("./fil") && File.dir?("./fil")
-false
+path = "/Users/username/missing_folder"
+File.stat?(path)
+#=> :error
 ```
 
-Nu kan vi enkelt använda denna metod för att kontrollera om en mapp finns innan vi försöker manipulera den i vårt program.
+## Fördjupning
 
-## Djupdykning
+Det är viktigt att notera att dessa funktioner endast kontrollerar om mappen existerar, inte om den är tillgänglig eller åtkomlig. Om man vill kontrollera om man har rättigheter att läsa, skriva eller ta bort en mapp, behöver man använda andra metoder som till exempel att använda `File.readable?`, `File.writable?` eller `File.executable?`.
 
-Det är värt att notera att `File.exists?/1` och `File.dir?/1` endast returnerar `true` om det objekt som kontrolleras exakt matchar sökvägen. Det innebär att om du till exempel använder en relativ sökväg kommer funktionerna att returnera `false` eftersom sökvägen inte matchar exakt.
-
-Det är också möjligt att använda `File.cwd/0` för att hämta den aktuella arbetskatalogen och sedan använda `Path.join/2` för att bygga en giltig sökväg att kontrollera.
-
-```Elixir
-iex> File.cwd
-"/hem/användarnamn/projekt"
-
-iex> path = Path.join(File.cwd, "mapp")
-"/hem/användarnamn/projekt/mapp"
-
-iex> File.dir?(path)
-true
-```
-
-Du kan också använda funktionen `Path.expand/2` för att översätta förkortningar som `~` till en fullständig sökväg.
-
-```Elixir
-iex> Path.expand("~/mapp")
-"/hem/användarnamn/mapp"
-```
-
-Med hjälp av dessa funktioner och metoder kan du enkelt kontrollera om en mapp finns i Elixir och undvika potentiella fel i ditt program.
+Det är även möjligt att använda sig av reguljära uttryckningar för att göra mer avancerade koll av sökvägar och mappar. Detta kan vara användbart om man till exempel vill kontrollera om en mapp är en undermapp till en annan mapp.
 
 ## Se även
 
-- [Elixir Dokumentation: File.mod(metadata)] (https://hexdocs.pm/elixir/File.html#has_dir/1)
-- [Elixir Dokumentation: Path.join(path1, path2)] (https://hexdocs.pm/elixir/Path.html#join/2)
-- [Elixir Dokumentation: Path.expand(path, base)] (https://hexdocs.pm/elixir/Path.html#expand/2)
+- [Elixir Dokumentation: File.dir?](https://hexdocs.pm/elixir/File.html#dir?/1)
+- [Elixir Dokumentation: File.stat?](https://hexdocs.pm/elixir/File.html#stat?/1)
+- [Elixir Dokumentation: File.readable?](https://hexdocs.pm/elixir/File.html#readable?/1)
+- [Elixir Dokumentation: File.writable?](https://hexdocs.pm/elixir/File.html#writable?/1)
+- [Elixir Dokumentation: File.executable?](https://hexdocs.pm/elixir/File.html#executable?/1)

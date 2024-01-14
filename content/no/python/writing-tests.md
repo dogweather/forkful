@@ -1,7 +1,9 @@
 ---
-title:                "Python: Skrive tester"
+title:                "Python: Å skrive tester"
+simple_title:         "Å skrive tester"
 programming_language: "Python"
-category:             "Testing and Debugging"
+category:             "Python"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/writing-tests.md"
 ---
 
@@ -9,32 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive tester er en viktig del av å utvikle programmer i Python. Tester sikrer at koden fungerer som den skal og bidrar til å redusere feil og problemer i programvaren din.
+Når vi skriver kode, er det viktig å sikre at den fungerer som den skal og at den ikke bryter når vi legger til nye funksjoner eller gjør endringer. For å være trygg på at koden vår fungerer, er det essensielt å skrive tester. Tester lar oss kjøre gjennom scenarier og sjekke om koden vår faktisk gjør det den er ment å gjøre.
 
-## Hvordan
+## Hvordan skrive tester i Python
 
-Det å skrive tester kan virke som en skremmende oppgave, spesielt for nybegynnere i Python. Men det er faktisk ganske enkelt å komme i gang. La oss se på et eksempel:
+For å skrive tester i Python, må du først importere "unittest" biblioteket. Deretter må du opprette en klasse som arver fra "unittest.TestCase". Innenfor denne klassen kan du definere ulike tester ved å bruke funksjonen "def test_metode_navn(self)". Inne i denne funksjonen kan du sjekke om de forventede resultatene samsvarer med de faktiske resultatene ved hjelp av assert-setninger.
 
+```Python
+import unittest
+
+class TestKalkulator(unittest.TestCase):
+
+    def test_addisjon(self):
+        resultat = 1 + 2
+        self.assertEqual(resultat, 3)
 ```
-def multiply(x, y):
-    return x * y
 
-def test_multiply():
-    assert multiply(3, 4) == 12
-    assert multiply(2, 5) == 10
-    assert multiply(-1, 8) == -8
-```
+I dette eksempelet sjekker vi om resultatet av 1 + 2 faktisk er 3. Hvis ikke, vil testen feile og vi vet at det er noe galt med vår addisjonsfunksjon.
 
-I dette eksempelet har vi en enkel funksjon som multipliserer to tall, og en testfunksjon som sjekker om funksjonen returnerer riktig svar. Vi bruker `assert` for å sjekke om koden fungerer som forventet. Hvis alle testene passerer, vil vi få en "OK" -melding, men hvis en test feiler, vil vi få en feilmelding som indikerer hvilken test som feilet og hva den forventede verdien var.
+## Dypdykk i testing
 
-## Deep Dive
-
-Når vi skriver tester, er det viktig å tenke på alle mulige scenarier og sørge for at koden vår håndterer dem på en riktig måte. Dette innebærer å teste for både korrekte og ugyldige inputverdier, samt kantsituasjoner. Å ha gode tester kan også gjøre det enklere å finne og rette feil i koden, siden vi må forstå hvordan koden fungerer for å kunne skrive effektive tester.
-
-Det finnes flere forskjellige testrammeverk som kan hjelpe deg med å skrive tester i Python, for eksempel `unittest` og `pytest`. Det kan være lurt å undersøke og prøve ut forskjellige rammeverk for å finne det som fungerer best for deg og prosjektet ditt.
+Når du skriver tester, er det viktig å dekke alle scenarier og hjørnetilfeller for å sikre at koden din er robust. Du kan også bruke "mocking" for å teste funksjoner som er avhengige av eksterne ressurser eller nettverkskall. Det er også en god praksis å organisere tester i forskjellige filer og å kjøre dem automatisk før du publiserer koden din til produksjon.
 
 ## Se også
 
-- [Python unittest-dokumentasjon](https://docs.python.org/3/library/unittest.html)
-- [Python pytest-dokumentasjon](https://docs.pytest.org/en/stable/)
-- [En komplett guide til testdrevet utvikling i Python](https://medium.com/@andy-shea/an-ultimate-guide-to-test-driven-development-in-python-14fb874e6e74)
+- [The Hitchhiker's Guide to Python Testing](https://docs.python-guide.org/writing/tests/)
+- [Unittest Dokumentasjon](https://docs.python.org/3/library/unittest.html)
+- [Testing in Python](https://realpython.com/python-testing/)

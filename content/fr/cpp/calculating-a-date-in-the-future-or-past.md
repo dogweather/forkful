@@ -1,7 +1,9 @@
 ---
-title:                "C++: Calculer une date dans le futur ou le passé."
+title:                "C++: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,54 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La programmation est un outil incroyablement utile dans de nombreux domaines, y compris le suivi des dates et le calcul de dates futures ou antérieures. Cela peut être particulièrement utile lors de la planification d'événements ou de tâches à long terme.
+Il y a de nombreuses raisons pour lesquelles on souhaiterait calculer une date dans le futur ou dans le passé en programmation C++. Peut-être que vous travaillez sur une application de calendrier ou une fonctionnalité de rappel, ou peut-être que vous construisez un programme pour gérer des rendez-vous ou des échéances. Quelle que soit la raison, il peut être utile de savoir comment réaliser cette tâche en programmation.
 
-## Comment Faire
+## Comment faire
 
-Pour calculer une date dans le futur ou le passé en utilisant C++, nous pouvons utiliser la bibliothèque standard <code>ctime</code> et la fonction <code>mktime()</code>. Jetons un coup d'oeil à un exemple de code pour calculer une date dans le futur:
+La méthode la plus simple pour calculer une date dans le futur ou dans le passé en C++ est d'utiliser la structure de données `std::tm` et la fonction `std::mktime()`. Voici un exemple de code montrant comment calculer une date dans 7 jours à partir d'aujourd'hui :
 
 ```C++
 #include <iostream>
+#include <iomanip>
 #include <ctime>
 
-int main() {
-    // Obtenez la date actuelle
-    time_t now;
-    time(&now);
-    
-    // Structure tm pour stocker la date et le temps
-    tm *date = localtime(&now);
-    
-    // Ajouter 3 mois à la date actuelle
-    date->tm_mon += 3;
-    
-    // Convertir en nouveau timestamp
-    time_t future = mktime(date);
-    
-    // Afficher la date dans le futur
-    std::cout << "La date dans 3 mois sera le " <<
-    asctime(localtime(&future));
-    
+int main()
+{
+    // Obtenir la date et l'heure actuelles
+    std::time_t now = std::time(nullptr);
+    // Convertir en structure tm
+    std::tm *crtm = std::localtime(&now);
+    // Ajouter 7 jours à la date actuelle
+    crtm->tm_mday += 7;
+    // Convertir la structure tm en temps
+    std::time_t future = std::mktime(crtm);
+    // Afficher la date dans un format plus lisible
+    std::cout << "La date dans 7 jours sera : " << std::put_time(crtm, "%m/%d/%Y") << std::endl;
     return 0;
 }
 ```
 
-La sortie de ce code sera:
+Output :
 
 ```
-La date dans 3 mois sera le Thu Jul 01 00:00:00 2021
+La date dans 7 jours sera : 08/26/2021
 ```
 
-Pour calculer une date dans le passé, il suffit de soustraire un certain nombre de jours, mois ou années à la date actuelle.
+Il est important de noter que le calcul de la date dans le passé fonctionne de la même manière, il suffit de soustraire le nombre de jours souhaité de la date actuelle au lieu de l'ajouter.
 
-## Plongée Profonde
+## Plongée en profondeur
 
-La fonction <code>mktime()</code> utilise le type <code>time_t</code> qui représente le temps écoulé depuis minuit du 1er janvier 1970. Cela signifie que pour calculer une date dans le futur ou le passé, nous devons d'abord obtenir la date actuelle en tant que <code>time_t</code> et l'ajuster en conséquence.
+Bien qu'utiliser la structure de données `std::tm` et la fonction `std::mktime()` soit la méthode la plus simple pour calculer une date dans le futur ou dans le passé, il existe d'autres solutions possibles. Par exemple, vous pouvez également utiliser la bibliothèque `boost::date_time` ou la bibliothèque de dates C++11 pour effectuer ces calculs. Ces bibliothèques offrent une syntaxe plus intuitive et des fonctionnalités supplémentaires, comme la prise en compte automatique des années bissextiles.
 
-De plus, la fonction <code>localtime()</code> convertit le <code>time_t</code> en une structure <code>tm</code>, qui stocke des informations telles que le jour, le mois, l'année, etc. Nous pouvons ainsi facilement modifier ces valeurs pour calculer une date future ou passée.
+## Voir aussi
 
-## Voir Aussi
-
-- Documentation sur la bibliothèque <code>ctime</code>
-- Tutoriel sur la manipulation des dates en C++
-- Cours sur la programmation en C++: Les Dates
+- [Documentation sur la structure `std::tm` et la fonction `std::mktime()`](https://www.cplusplus.com/reference/ctime/mktime/)
+- [Bibliothèque boost::date_time](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)
+- [Bibliothèque de dates C++11](https://en.cppreference.com/w/cpp/chrono)

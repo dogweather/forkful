@@ -1,41 +1,31 @@
 ---
 title:                "Swift: テキストの検索と置換"
+simple_title:         "テキストの検索と置換"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜ
-テキストを検索して置換するのにどうしてSwiftプログラミングを使うのか、その理由をご紹介します。
+## なぜ
+テキストの検索と置換に取り組む理由は、プログラミングにおいて非常に重要なスキルだからです。例えば、大規模なコードベースで同じ変数名を一括で変更したい場合や、特定の単語を一括で置換したい場合など、様々な理由で検索と置換を行う必要があります。
 
-テキストを検索して置換することは、プログラミングにおいて非常に重要な機能です。例えば、大量のテキストデータの中から特定の文字列を見つけて修正する場合、手作業では非常に手間がかかります。しかし、Swiftプログラミングを使えば簡単に自動化することができます。この機能を活用すれば、より効率的に作業を行うことができます。
-
-##方法
-テキストの検索と置換をするには、Stringクラスの`replacingOccurrences(of:with:)`メソッドを使用します。以下の例をご覧ください。
+## 方法
+Swiftでは、 `replacingOccurrences(of:with:)` メソッドを使用することで簡単にテキストの検索と置換を行うことができます。このメソッドは、検索したい文字列を `of` パラメータに、置換したい文字列を `with` パラメータに渡すことで使用することができます。例えば、以下のようにコードを書くことで文字列内の `Hello` を `こんにちは` に置換することができます。
 
 ```Swift
-let originalText = "今日はいい天気です。"
-let newText = originalText.replacingOccurrences(of: "いい", with: "最高")
+let string = "Hello, World!"
+let replacedString = string.replacingOccurrences(of: "Hello", with: "こんにちは")
 
-print(newText)
+print(replacedString)  // "こんにちは, World!"
 ```
 
-このコードを実行すると、次のような出力が得られます。
+## ディープダイブ
+さらに、 `replacingOccurrences(of:with:)` メソッドでは、第3引数として `options` パラメータを使用することで検索の方法を指定することができます。例えば、 `caseInsensitive` を指定することで大文字と小文字を区別せずに検索を行うことができます。また、 `regex` を指定することで正規表現を使用した検索を行うこともできます。詳細な情報は公式ドキュメントを参照してください。
 
-```
-今日は最高天気です。
-```
-
-ここでは、`originalText`という文字列を`replacingOccurrences(of:with:)`メソッドを使って「いい」を「最高」に置換しています。
-
-##深堀り
-`replacingOccurrences(of:with:)`メソッドは、指定した文字列を全て置換します。しかし、この方法では、大文字と小文字を区別することができません。その場合は、`replacingOccurrences(of:with:options:)`メソッドを使い、`options`パラメータに`.caseInsensitive`を指定することで、大文字と小文字を区別しない置換を行うことができます。
-
-また、正規表現を使って複雑なパターンの置換も可能です。`replacingOccurrences(of:with:options:range:locale:)`メソッドを使い、`locale`パラメータに`nil`を指定し、`options`パラメータに`.regularExpression`を指定することで、正規表現を使った置換を行うことができます。
-
-##参考リンク
-- [Swift String Cheat Sheet](https://iosdevcenters.blogspot.com/2018/11/swift-string-cheat-sheet.html)
-- [Apple Developer Documentation: String](https://developer.apple.com/documentation/swift/string)
-- [Swift Regular Expressions](https://www.hackingwithswift.com/articles/108/swift-regular-expressions-cheat-sheet)
+## 併せて読みたい
+- [Swift公式ドキュメント - replacingOccurrences(of:with:options:)](https://developer.apple.com/documentation/foundation/nsstring/1409535-replacingoccurrences)
+- [Swiftでテキストの検索と置換を行う方法](https://qiita.com/i_saint/items/36b5594ba0b0deeeb947)
+- [Swiftで正規表現を使ってテキストを検索・置換する方法](https://qiita.com/motokiee/items/ff0e77708454f319ccba)

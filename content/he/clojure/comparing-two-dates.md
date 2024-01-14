@@ -1,41 +1,46 @@
 ---
 title:                "Clojure: השוואת שתי תאריכים"
+simple_title:         "השוואת שתי תאריכים"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
-שפת התכנות Clojure מציעה דרך יעילה ופשוטה להשוות שתי תאריכים. כתיבת קוד להשוואת תאריכים עשויה להיות טריקייה ומורכבת בשפות תכנות אחרות, אך Clojure מציגה פתרון יעיל וקריא לבעיה זו.
+## מדוע
 
-## איך לעשות זאת
+השוואת שתי תאריכים היא מתוך רצונך להשוות אירועים, לימים מפורטים או לבדיקת גיל. ישנם מספר סיבות למה זה יכול להיות שימושי בתכנות בקלות, והכי חשוב - מבלי להתעטף בקורות גלישה בגיאוגרפיות.
+
+## איך
+
+כאשר מדברים על השוואת תאריכים בקלות בשפת Clojure, ישנם מספר אפשרויות שיכולים לעזור לך להשוות שתי תאריכים בצורה ברורה ויעילה. הנה כמה דוגמאות לקוד ופלט המדגימים את השימוש במספר פונקציות של Clojure עבור השוואת תאריכים:
+
 ```Clojure
-(require '[clojure.java-time :as t])
+;; התאריך הנוכחי
+(def date1 (java.time.LocalDate/now))
 
-(def date1 (t/local-date 2021 4 1))
-(def date2 (t/local-date 2021 8 15))
+;; תאריך עתידי ב-3 חודשים
+(def date2 (java.time.LocalDate/now).plusMonths(3))
 
-(t/before? date1 date2) ; => true
-(t/after? date1 date2) ; => false
-(t/minus date2 (t/period 3 :months)) ; => #object[java.time.LocalDate 0x25bfb09c "2021-05-15"]
-(t/equals? date1 date2) ; => false
-(t/days-between date1 date2) ; => 136
+;; השוואה בין התאריכים לפי סדר כרונולוגי
+(println (compare date1 date2)) ; 1
+
+;; השוואה בין התאריכים לפי אזור הזמן שלהם
+(println (compare date1 date2 java.time.zone.ZoneId/systemDefault)) ; 1
+
+;; הדפסת המרחק בין שני התאריכים בימים
+(println (Math/abs (.getDays (java.time.temporal.ChronoUnit/DAYS.between date1 date2)))) ; 90
+
 ```
 
-קוד זה מדגים את השימוש בספריית clojure.java-time כדי להשוות שתי תאריכים, להחיל מגבלות על תחום התאריכים ולמצוא את הימים הממוצעים ביניהם. הנה קצת משתנה למיתוג הם לחץ לעזור לך להתרגל לקוד Clojure:
+## צלילת עמוקה
 
-- ````Clojure
-  (t/period 3 :months) ; => #object[java.time.Period 0x138c7da5 "P3M"]
-  ````
-- ````Clojure
-  (t/plus date1 (t/new-duration 8 :days)) ; => #object[java.time.LocalDate 0x1f5e7b19 "2021-04-09"]
-  ````
-
-## חפירה עמוקה
-כמו כל פעולה בשפת Clojure, גם השוואת תאריכים מבוססת על פעולות על צמתי הנתונים. תחילה, ניתן ליצור תאריכים מסוג LocalDate באמצעות הפונקציה t/local-date ולבצע פעולות יישומיות עליהם עם הפונקציות המקומיות של ספריית java.time. ניתן גם להשתמש בספריית clojure.java-time כדי לגשת לפונקציות נוספות כמו השוואה, יצירת תאריך חדש עם הוספת זמן נוסף או צמתי הנתונים כדי למצוא את הימים בין התאריכים.
+בשפת Clojure ישנן מספר פונקציות מובנות שיכולות לעזור לך לבצע השוואה בין תאריכים בצורה מדויקת ומדוייקת יותר. פונקציות כמו `compare` ו- `between` מקלות על משימה זו ומאפשרות לך להתאים את האלגוריתם לצרכים המדויקים שלך.
 
 ## ראה גם
-- [ספריית clojure.java-time](https://clojure.github.io/java-time/)
-- [מדריך לפתרונות של תאריכים
+
+- [מדריך לפונקציות זמן בשפת Clojure](https://clojuredocs.org/clojure.java-time)
+- [השוואת שני תאריכים במדריך זמן ב-Python](https://realpython.com/comparing-python-dates/)
+- [מידע נוסף על פונקציות זמן בשפת Clojure](https://www.clojure.org/guides/dates)

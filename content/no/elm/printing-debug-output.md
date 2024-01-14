@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Utskrift av feilsøkingsutdata"
+simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Elm"
-category:             "Testing and Debugging"
+category:             "Elm"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/printing-debug-output.md"
 ---
 
@@ -9,32 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor skulle noen ønske å printe ut feilsøkingsinformasjon? Det er fordi feil og problemer er en uunngåelig del av programmering. Ved å skrive ut feilsøkingsinformasjon kan du enklere identifisere og løse eventuelle problemer i koden din.
+Hvis du noen gang har programmert i Elm, har du kanskje støtt på behovet for å feilsøke og finne ut hva som skjer under kjøring av koden din. Det er derfor å oversette og utskrive debugging-informasjon til konsollen kan være en nyttig og effektiv måte å løse problemer på.
 
-## Slik gjør du
+## Hvordan
 
-For å printe ut debug-utdata i Elm kan du bruke funksjonen `Debug.log` som tar inn en melding og en verdi som skal printes ut. Her er et eksempel:
+Det å skrive ut debug output i Elm er en enkel prosess. Først må du importere `Debug` modulen i koden din:
 
 ```Elm
 import Debug exposing (log)
-
-main =
-    let
-        sum = 2 + 2
-    in
-    Debug.log "Summen er" sum
 ```
 
-Dette vil printe ut følgende i konsollen: `Summen er 4`.
+Deretter kan du bruke `log` funksjonen til å skrive ut hvilken som helst verdi til konsollen:
 
-Det er også mulig å printe ut mer komplekse strukturer som lister og tupler ved å bruke funksjonen `Debug.toString` på verdien du ønsker å printe ut.
+```Elm
+log "Hei!"  -- Skriver ut "Hei!"
+```
 
-## Dykk dypere
+Du kan også skrive ut mer komplekse verdier, som lister eller rekursiv datastrukturer:
 
-Å printe ut debug-utdata kan være nyttig i ulike situasjoner. Du kan for eksempel bruke det til å se hva som blir lagret i variabler, eller for å sjekke om en funksjon returnerer det forventede resultatet. Det er også mulig å aktivere debug-utskrift for hele applikasjonen ved å bruke `Debug.watch` eller `Debug.todo` funksjonene.
+```Elm
+let navn = "John"
+let alder = 30
+let kjæledyr = ["Katt", "Hund"]
+let person = { navn = navn, alder = alder, kjæledyr = kjæledyr }
+
+log person  -- Skriver ut "{ navn = "John", alder = 30, kjæledyr = ["Katt", "Hund"] }"
+```
+
+Å skrive ut verdier til konsollen kan være spesielt nyttig når du jobber med løkker eller funksjoner, da det lar deg se verdien til variabler i forskjellige stadier av koden din.
+
+## Deep Dive
+
+Når du skriver ut debug output, kan du også spesifisere en "tag" som det første argumentet for `log` funksjonen. Dette kan være nyttig når du trenger å skille mellom forskjellige utskrifter.
+
+```Elm
+log "Tag" "Verdi" -- Skriver ut "Tag: Verdi"
+```
+
+I tillegg, i noen situasjoner, kan det å bruke `toString` funksjonen på en verdi være mer nyttig enn å bruke `log`. Dette vil konvertere verdiene til en lesbar streng, og kan hjelpe deg med å finne ut hva som skjer i forskjellige deler av koden din.
 
 ## Se også
 
-* [Elm Official Guide - Debugging](https://guide.elm-lang.org/debugging/)
-* [Elm Guide - Debug Output](https://elm-lang.org/debugging#debug-output)
-* [Elm Packages - Debug](https://package.elm-lang.org/packages/elm-lang/core/latest/Debug)
+- [Elm docs: Debug module](https://package.elm-lang.org/packages/elm/core/latest/Debug)
+- [Elm docs: toString function](https://package.elm-lang.org/packages/elm/core/latest/String#toString)

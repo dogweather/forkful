@@ -1,73 +1,48 @@
 ---
-title:                "Java: Lecture des arguments de la ligne de commande"
+title:                "Java: Lire les arguments de la ligne de commande"
+simple_title:         "Lire les arguments de la ligne de commande"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Les arguments de ligne de commande sont un élément essentiel de la programmation Java. Ils permettent aux utilisateurs d'entrer des valeurs ou des instructions spécifiques lorsqu'ils exécutent un programme en ligne de commande. Comprendre comment lire et utiliser ces arguments est donc crucial pour tout programmeur Java.
+Les arguments de ligne de commande sont des éléments essentiels pour tout programmeur Java. C'est un moyen pratique de personnaliser l'exécution d'un programme en fournissant des valeurs spécifiques au démarrage. Dans cet article, nous allons plonger dans les raisons pour lesquelles il est important de savoir lire les arguments de ligne de commande.
 
-## Comment faire
+# Comment faire
 
-La lecture des arguments de ligne de commande peut sembler intimidante au premier abord, mais c'est en fait un processus relativement simple. Voici un exemple de code Java pour lire et afficher un argument de ligne de commande :
+Tout d'abord, nous devons être familiers avec la méthode `main()` en Java, qui est la première méthode à être exécutée lorsqu'un programme démarre. Cette méthode prend un tableau de chaînes, qui sont les arguments de ligne de commande, en tant que paramètre. Pour récupérer ces arguments, nous pouvons utiliser la boucle `for` suivante :
 
 ```Java
-public class CommandLineArguments {
-    public static void main(String[] args) {
-        if (args.length > 0) {
-            System.out.println("Le premier argument est : " + args[0]);
-        }
+public static void main(String[] args) {
+    // Boucle pour parcourir les arguments
+    for (String arg : args) {
+        System.out.println(arg);
     }
 }
 ```
 
-En supposant que le programme soit enregistré sous le nom "CommandLineArguments.java", vous pouvez l'exécuter en entrant la commande suivante dans le terminal :
+Imaginons que nous exécutons notre programme avec les arguments "Bonjour" et "monde". La sortie sera :
 
 ```
-java CommandLineArguments Bonjour
+Bonjour
+monde
 ```
 
-Cela devrait produire l'output suivant :
+Nous pouvons également convertir ces arguments en entiers ou en d'autres types de données selon nos besoins, en utilisant simplement les méthodes correspondantes telles que `Integer.parseInt()`.
 
-```
-Le premier argument est : Bonjour
-```
+# Plongée en profondeur
 
-Comme vous pouvez le voir, l'argument "Bonjour" a été passé au programme et affiché à l'écran.
+Il est important de savoir lire les arguments de ligne de commande car cela nous donne une plus grande flexibilité dans l'exécution de nos programmes. Nous pouvons les utiliser pour fournir des paramètres de configuration, des entrées utilisateur ou d'autres informations dynamiques nécessaires à l'exécution de notre programme. Cela rend notre code plus dynamique et plus personnalisable.
 
-## Plongée en profondeur
+Il est également utile de savoir comment envoyer des arguments de ligne de commande en utilisant l'invite de commandes ou l'environnement de développement intégré que nous utilisons. Cela nous permet de déboguer plus facilement notre code en fournissant des valeurs spécifiques pour tester différents scénarios.
 
-Il est important de noter que les arguments de ligne de commande sont stockés en tant que chaînes de caractères (strings) dans un tableau (array) appelé "args". Vous pouvez accéder à des arguments spécifiques en utilisant leur index dans le tableau, comme dans l'exemple précédent.
+# Voir aussi
 
-De plus, vous pouvez également spécifier le nombre et le type d'arguments que votre programme attend en utilisant les annotations "@Paramètres" et "@Principe" dans la méthode "main". Par exemple :
-
-```Java
-public class CommandLineArguments {
-    public static void main(String[] @Principe({"int1, int2"}) args) {
-        int sum = Integer.parseInt(args[0]) + Integer.parseInt(args[1]);
-        System.out.println("La somme des deux arguments est : " + sum);
-    }
-}
-```
-
-Et en exécutant la commande suivante :
-
-```
-java CommandLineArguments 5 10
-```
-
-Vous obtenez l'output suivant :
-
-```
-La somme des deux arguments est : 15
-```
-
-## Voir aussi
-
-- [Comment accéder aux arguments de ligne de commande en Java](https://www.digitalocean.com/community/tutorials/how-to-access-command-line-arguments-in-java)
-- [Guide de démarrage rapide pour la programmation Java](https://www.oracle.com/technetwork/java/javase/overview/getstartedjava-138618.html)
-- [Documentation officielle de Java](https://docs.oracle.com/en/java/)
+- [Documentation officielle Java sur la méthode `main()`](https://docs.oracle.com/javase/tutorial/getStarted/application/index.html)
+- [Tutoriel sur la lecture des arguments de ligne de commande en Java](https://www.tutorialspoint.com/java/java_command_line_arguments.htm)
+- [Autre exemple d'utilisation des arguments de ligne de commande en Java](https://www.baeldung.com/java-command-line-arguments)

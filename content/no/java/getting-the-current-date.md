@@ -1,7 +1,9 @@
 ---
-title:                "Java: Å få gjeldende dato"
+title:                "Java: Å få den nåværende datoen"
+simple_title:         "Å få den nåværende datoen"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/getting-the-current-date.md"
 ---
 
@@ -9,39 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det er mange grunner til å ville få tak i dagens dato i et Java-program. Kanskje du ønsker å vise datoen til brukeren, eller kanskje du trenger å lagre den som en del av programmet ditt. Uansett, å vite hvordan du kan hente den nåværende datoen er en viktig ferdighet for enhver Java-programmerer.
+Har du noen gang lurt på hvordan du kan få den nåværende datoen i Java-programmering? Det kan virke som en enkel oppgave, men det kan være nyttig i mange programmeringsprosjekter. I denne bloggposten skal vi se nærmere på hvorfor og hvordan du kan få den nåværende datoen i Java.
 
 ## Slik gjør du det
 
-Det finnes flere måter å få tak i dagens dato i Java, men den mest vanlige og enkleste er å bruke Java's `Date`-klasse og dens `getDate()`-metode. Her er en enkel kode som viser hvordan du kan bruke denne metoden for å få tak i dagens dato og skrive den ut til konsollen:
+Først og fremst trenger du å importere "java.util.Date" pakken i Java-koden din. Deretter kan du bruke Date klassen for å få den nåværende datoen. Her er et enkelt eksempel på hvordan du kan gjøre det:
 
 ```Java
 import java.util.Date;
 
-public class DagensDato {
-    public static void main(String[] args) {
-        Date date = new Date(); // Oppretter et nytt Date-objekt som representerer nåværende dato og tid
-        int dag = date.getDate(); // Henter ut datoen fra Date-objektet
-        System.out.println("Dagens dato er: " + dag);
-    }
+public class CurrentDateExample {
+   public static void main(String[] args) {
+      Date currentDate = new Date();
+      System.out.println("Den nåværende datoen er: " + currentDate);
+   }
 }
 ```
 
-Når du kjører dette programmet, vil du få følgende utskrift på konsollen:
+Når programmet kjøres, vil det vise følgende output:
 
 ```
-Dagens dato er: 10
+Den nåværende datoen er: Fri Sep 03 14:20:57 CEST 2021
 ```
 
-Som du ser, hentes datoen ut som et heltall. Hvis du ønsker å få tak i måned og år i tillegg, kan du bruke `getMonth()` og `getYear()` metoder på samme måte som `getDate()`.
-Det finnes også andre nyttige klasser og metoder for å jobbe med datoer i Java, som `Calendar`-klassen og dens `getTime()`-metode. Utforske disse ville være en god øvelse for å lære mer om hvordan Java håndterer datoer på en effektiv og nøyaktig måte.
+Som du kan se, vises datoen automatisk i en spesifikk format. Hvis du ønsker å endre formatet, kan du bruke SimpleDateFormat klassen. Her er et eksempel på hvordan du kan gjøre det:
+
+```Java
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+public class CurrentDateExample {
+   public static void main(String[] args) {
+      Date currentDate = new Date();
+      SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
+      System.out.println("Den nåværende datoen er: " + formatter.format(currentDate));
+   }
+}
+```
+
+Output vil se slik ut:
+
+```
+Den nåværende datoen er: 03/09/2021
+```
+
+Du kan også bruke andre formateringsalternativer for å få datoen til å vises slik du ønsker det.
 
 ## Dypdykk
 
-Når du bruker `Date`-klassen for å få tak i dagens dato, er det viktig å være klar over at denne klassen faktisk representerer en spesifikk dato og tidspunkt, ikke bare en dato. Det betyr at hvis du ønsker å få tak i dagens dato, vil du også få med tiden på dagen da du hentet den ut. Dette kan være nyttig i noen tilfeller, men hvis du bare trenger datoen, kan det være lurt å bruke `Calendar`-klassen i stedet for å unngå noen uønskede overraskelser.
+Nå som du vet hvordan du kan få den nåværende datoen i Java, kan det være nyttig å vite litt mer om hvordan datoen blir hentet. Når du bruker Date klassen, blir datoen hentet fra systemklokken på datamaskinen din. Dette betyr at datoen kan variere avhengig av tidssonen og klokkeslettet på datamaskinen din. Det kan også være lurt å håndtere eventuelle unntak som kan oppstå når man prøver å få datoen, som for eksempel hvis det er problemer med systemklokken.
 
 ## Se også
 
-- [Oracle Java: Date Class](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Oracle Java: Calendar Class](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [GeeksforGeeks: Get Current Date and Time in Java](https://www.geeksforgeeks.org/get-current-date-and-time-in-java/)
+- [W3Schools - Java Date Class](https://www.w3schools.com/java/java_date.asp)
+- [Oracle - Java SimpleDateFormat Class](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+- [GeeksforGeeks - Getting current date and time in Java](https://www.geeksforgeeks.org/get-current-date-and-time-in-java/)

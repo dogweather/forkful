@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Procurando e substituindo texto"
+title:                "Gleam: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/searching-and-replacing-text.md"
 ---
 
@@ -9,50 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Muitas vezes, ao escrever código, é necessário fazer alterações em um grande número de linhas de texto. Isso pode ser tedioso e demorado se feito manualmente. Por isso, é importante saber como usar a função de busca e substituição de texto em programação. Com ela, é possível automatizar essa tarefa e economizar tempo e esforço.
+Você já se deparou com um texto longo que precisava ser alterado? Ou talvez você esteja trabalhando em um projeto com vários arquivos e precisa mudar uma palavra em todos eles? A busca e substituição de texto pode ser uma tarefa tediosa e demorada, mas com o Gleam, você pode simplificá-la!
 
-## Como Fazer
+## Como fazer
 
-Usando a linguagem de programação Gleam, podemos realizar busca e substituição de texto de forma fácil e eficiente. Primeiro, precisamos importar o módulo "gleam/string" para ter acesso às funções necessárias.
+Para realizar uma busca e substituição de texto com o Gleam, siga os seguintes passos:
 
-```
-import gleam/string
-```
-
-Em seguida, podemos usar a função `replace` para substituir uma determinada parte do texto por outra. Por exemplo, se quisermos trocar todas as letras "a" por "e" em uma frase, podemos fazer da seguinte forma:
+1. Importe o módulo `gleam/string`.
+2. Utilize a função `replace` para especificar o texto que deseja substituir e qual será o novo texto.
+3. Utilize a função `replace_all` para realizar a substituição em todas as ocorrências do texto especificado.
 
 ```
-let nova_frase = gleam/string.replace("Esta é uma frase", "a", "e")
-```
+Gleam import gleam/string
 
-O resultado será a nova frase "Este é ume frase". Além disso, podemos usar a função `replace_all` para substituir todas as ocorrências do padrão de busca no texto.
-
-```
-let novo_texto = gleam/string.replace_all("abacaxi é uma fruta", "a", "o")
-```
-
-O resultado será "obocoxi é umo fruto".
-
-Outra função útil é a `replace_regex`, que permite usar expressões regulares para encontrar e substituir padrões específicos em um texto.
+let texto = "Gleam é uma linguagem de programação moderna."
+let novo_texto = replace(texto, "Gleam", "Elixir")
+let texto_final = replace_all(novo_texto, "linguagem", "plataforma")
 
 ```
-let nova_frase = gleam/string.replace_regex("Hoje é sexta-feira", ~"[aeiou]", "", ~global=true)
-```
 
-Neste exemplo, usamos uma expressão regular para remover todas as vogais da frase. O resultado será "Hj s sxtr-fir".
+A saída do código acima será: `Elixir é uma plataforma de programação moderna.`
 
-## Profundidade
+Note que a função `replace_all` substitui todas as ocorrências do texto especificado, enquanto a função `replace` substitui apenas a primeira ocorrência.
 
-Além das funções básicas de busca e substituição de texto, a linguagem Gleam também possui recursos avançados para manipulação de strings. É possível, por exemplo, ignorar maiúsculas e minúsculas ao realizar a substituição, usando a função `replace_case_insensitive`. Também é possível especificar o número máximo de substituições a serem feitas com a função `replace_limit`.
+## Deep Dive
 
-Para substituições mais complexas, podemos usar a função `replace_fold`, que permite passar uma função de junção personalizada para decidir como os resultados substituídos serão combinados.
+Há muitos outros recursos na biblioteca `gleam/string` que podem ser utilizados para realizar uma busca e substituição de texto eficiente. Algumas delas incluem:
 
-Outra função útil é a `replace_slice`, que permite substituir apenas uma parte específica do texto, definindo um intervalo de início e fim.
+- Funções para ignorar letras maiúsculas/minúsculas: `replace_ignore_case` e `replace_all_ignore_case`.
+- Função para substituir texto em uma posição específica: `replace_at`.
+- Função para substituir texto com base em um padrão: `replace_regex`.
 
-Com essas funções, é possível realizar alterações precisas e detalhadas em textos grandes e complicados.
+Familiarizar-se com essas funções pode facilitar ainda mais a sua vida ao realizar uma busca e substituição de texto com o Gleam.
 
-## Veja Também
+## Veja também
 
-- Documentação do módulo Gleam String: https://gleam.run/modules/gleam/string.html
-- Tutorial de expressões regulares em Gleam: https://gleam.run/articles/regex.html
-- Exemplos de uso da função `replace` em Gleam: https://github.com/gleam-lang/gleam_stdlib/blob/master/lib/gleam/string/replace.gleam
+- Documentação oficial do Gleam sobre a biblioteca `gleam/string`: https://gleam.run/packages/gleam/string
+- Tutorial sobre como utilizar a biblioteca `gleam/string`: https://bloggleam.com/replace-text-with-gleam-string-library/

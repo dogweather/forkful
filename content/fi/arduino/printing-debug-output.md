@@ -1,57 +1,55 @@
 ---
-title:                "Arduino: Virheenjäljitystulostuksen tulostaminen"
+title:                "Arduino: Tulostus virheenkorjauskäyttöliittymän avulla"
+simple_title:         "Tulostus virheenkorjauskäyttöliittymän avulla"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Onko Arduino-ohjelmoinnissa turhauttavaa, kun et saa selville miksi koodi ei toimi? Tulostaminen debug-tietoa voi auttaa sinua löytämään ongelmia ja korjaamaan ne nopeammin.
+### Miksi
 
-## Miten tehdä
-Arduino-koodissa, voit käyttää `Serial.println()` -funktiota tulostaa debug-tietoa. Esimerkki:
+Miksi tulostaa virheenkorjaustulosteita Arduinon ohjelmoinnissa? Debug-tulosteet ovat tärkeitä ohjelman toiminnan ymmärtämiseksi ja ongelmien selvittämiseksi. Ne auttavat ohjelmoijaa havaitsemaan virheitä ja korjaamaan niitä nopeasti, jolloin ohjelman kehittäminen ja testaaminen on helpompaa.
 
-```Arduino
-void setup() {
-  pinMode(13, OUTPUT);
-  Serial.begin(9600);
+### Kuinka
+
+Debug-tulosteiden tulostamiseen Arduino-ohjelmassa voi käyttää Serial.println()-funktiota, joka tulostaa halutun viestin sarjaportin kautta. Tämä voidaan tehdä esimerkiksi seuraavalla koodilla:
+
+```
+Arduino.setup(){
+    Serial.begin(9600); // alustetaan sarjaportti
 }
 
-void loop() {
-  digitalWrite(13, HIGH);
-  Serial.println("LED vilkkuu nopeasti");
-  delay(1000);
-  digitalWrite(13, LOW);
-  Serial.println("LED ei vilku");
-  delay(1000);
+void loop(){
+    Serial.println("Ohjelma käynnistyi."); // tulostetaan viesti sarjaporttiin
+    // muu koodi
 }
 ```
-Output:
+
+Tämä koodi tulostaa tekstin "Ohjelma käynnistyi." sarjaporttiin ja se voidaan lukea esimerkiksi Arduino IDE:n sarjaportti-ikkunasta. Debug-tulosteiden avulla voidaan myös näyttää muuttujien arvoja, kuten esimerkiksi:
 
 ```
-LED vilkkuu nopeasti
-LED ei vilku
+int myNumber = 25; // määritetään muuttuja
+
+void loop(){
+    Serial.print("Muuttujan arvo on: "); // tulostetaan ensin merkkijono
+    Serial.println(myNumber); // sitten muuttujan arvo
+    // muu koodi
+}
 ```
 
-Voit myös käyttää `Serial.print()` ja `Serial.write()` -funktioita tulostamaan muuttujia ja merkkijonoja. Esimerkki:
+Tämä koodi tulostaisi sarjaporttiin tekstin "Muuttujan arvo on: 25". Näin debug-tulosteiden avulla voidaan tarkastella ohjelman sisäistä tilaa ja havaita mahdollisia virheitä.
 
-```Arduino
-int luku = 10;
-Serial.print("Luku: ");
-Serial.println(luku);
-```
-Output:
+### Syvempää tietoa
 
-```
-Luku: 10
-```
+Debug-tulosteiden käyttö ei rajoitu vain sarjaporttiin tulostamiseen. Niitä voidaan myös lähettää esimerkiksi Bluetooth- tai Wi-Fi-moduulin kautta, jolloin tulosteet voidaan lukea esimerkiksi älypuhelinsovelluksesta. Lisäksi tulosteisiin voidaan lisätä erilaisia merkkijonoja ja muuttujia käyttämällä erilaisia tulostofunktioita, kuten esimerkiksi Serial.printf(), joka hyödyntää C-kielen vakiotoimintoja.
 
-## Syvemmälle
-Voit käyttää myös `Serial.begin()` -funktiota määrittämään oikea baud rate debug-tulostukseen, mikä voi auttaa nopeuttamaan tiedonsiirtoa. Voit myös lisätä `Serial.flush()` -funktion tulostamaan kaiken odottavan datan ennen kuin jatkat koodia.
+On myös tärkeää huomata, että debug-tulosteet voivat hidastaa ohjelman suorituskykyä, joten ne kannattaa poistaa lopullisesta koodista. Tähän voidaan käyttää esimerkiksi ehtolauseita, jotka tarkastavat, onko ohjelma käynnissä kehitys- vai lopullisessa käyttötarkoituksessa.
 
-## Katso myös
-- [Serial println() reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Debugging in Arduino with Serial Monitor](https://create.arduino.cc/projecthub/Arduino_Genuino/debugging-arduino-with-serial-monitor-84b113?ref=tag&ref_id=debugging&offset=0)
-- [Print debugging in Arduino](https://medium.com/@plipr/how-i-survived-to-my-first-project-with-arduino-part-3-print-debugging-d67b1e6ddbd7)
+### Katso myös
+
+- [Arduino Serial.println()-funktio](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Arduino Serial.printf() -funktio](https://www.arduino.cc/reference/en/language/functions/communication/serial/printf/)
+- [Arduino-kehittäjien yhteisö](https://forum.arduino.cc/)

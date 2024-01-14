@@ -1,7 +1,9 @@
 ---
-title:                "Go: Druck von Fehlerausgaben"
+title:                "Go: Fehlerausgabe drucken"
+simple_title:         "Fehlerausgabe drucken"
 programming_language: "Go"
-category:             "Testing and Debugging"
+category:             "Go"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/printing-debug-output.md"
 ---
 
@@ -9,37 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn man Software entwickelt, kommt man oft an den Punkt, an dem man das Verhalten des Programms verstehen muss. Hierfür ist das Ausgeben von Debug-Ausgaben ein unverzichtbares Werkzeug. Es ermöglicht uns, den Programmablauf zu verfolgen und mögliche Fehler zu finden.
+Debug-Output ist ein unverzichtbares Werkzeug beim Entwickeln von Software. Es ermöglicht uns, den Verlauf und die Ergebnisse unseres Codes zu überprüfen und eventuelle Fehler zu finden. Es hilft uns auch, unsere Gedanken und Entscheidungen während des Entwicklungsprozesses zu dokumentieren.
 
-## Wie geht man vor
+## Wie man Debug-Output in Go verwendet
 
-Das Ausgeben von Debug-Ausgaben ist in Go mit der Funktion `fmt.Println()` sehr einfach. Diese Funktion gibt einen übergebenen String und die Werte von Variablen in der Konsole aus. Hier ein Beispiel:
+Um Debug-Output in Go zu verwenden, müssen wir zunächst die "fmt" Standardbibliothek importieren. Dann können wir die Funktionen "Print" oder "Printf" verwenden, um unsere Ausgaben auf der Konsole anzuzeigen. Hier ist ein einfaches Beispiel:
 
 ```Go
-// Variablen mit Werten belegen
-name := "Franz"
-age := 32
+package main
 
-// Ausgabe mit fmt.Println()
-fmt.Println("Name:", name)
-fmt.Println("Alter:", age)
+import "fmt"
+
+func main() {
+  name := "Maria"
+  fmt.Print("Hello, ")
+  fmt.Printf("%s!", name)
+}
 ```
 
-Die Ausgabe würde folgendermaßen aussehen:
+Die Ausgabe dieses Codes wäre "Hello, Maria!". Wir können auch Variablen und Werte angeben, die wir überwachen möchten, indem wir Platzhalter verwenden. Zum Beispiel:
 
+```Go
+package main
+
+import "fmt"
+
+func main() {
+  num := 5
+  fmt.Printf("The value of num is %d", num)
+}
 ```
-Name: Franz
-Alter: 32
-```
 
-Neben `fmt.Println()` gibt es auch noch andere Funktionen wie `fmt.Printf()` für formatierte Ausgaben oder `fmt.Errorf()` für Fehlermeldungen. Es lohnt sich, die Dokumentation von Go genauer zu studieren, um die passende Debugging-Funktion zu finden.
+Die Ausgabe wäre "The value of num is 5". Durch die Verwendung von Debug-Output können wir überprüfen, ob unsere Variablen die erwarteten Werte haben und somit unsere Annahmen über unser Programm bestätigen oder korrigieren.
 
-## Tiefergehende Informationen
+## Tiefere Einblicke
 
-Neben den Standardfunktionen bietet Go auch die Möglichkeit, eigene Funktionalitäten für das Debugging zu implementieren. Mit dem Paket `log` können eigene Logger erstellt werden, die genau angeben, wo die Ausgaben herkommen. Außerdem gibt es das Paket `debug/trace`, welches es ermöglicht, den Programmablauf schrittweise zu verfolgen.
+Neben "Print" und "Printf" gibt es in Go noch andere nützliche Funktionen für Debug-Output, wie zum Beispiel "Println", "Sprint", "Sprintf" und "Fprintf". Diese Funktionen sind alle in der "fmt" Bibliothek enthalten und haben jeweils leicht unterschiedliche Verwendungszwecke. Es ist wichtig zu beachten, dass der Einsatz dieser Funktionen bei der Performance unserer Anwendung eine Rolle spielen kann, insbesondere wenn sie in Schleifen verwendet werden. Daher sollte Debug-Output nur in Entwicklungsphasen verwendet werden und vor der Veröffentlichung entfernt werden.
 
 ## Siehe auch
 
-- [Go Dokumentation zu Debugging](https://golang.org/pkg/debug/)
-- [Einführung in das Debuggen mit Go](https://medium.com/@ashtaag/debugging-go-applications-92298601b28c)
-- [Wie man effektiv Debug-Ausgaben nutzt](https://blog.gopheracademy.com/advent-2014/rewriting-log-functions/)
+Hier sind einige Links zu weiteren Informationen über Debug-Output in Go:
+
+- [Offizielle Dokumentation zu fmt](https://golang.org/pkg/fmt/)
+- [Ein Artikel über Debugging in Go von The Go Blog](https://blog.golang.org/debugging-go-code-with-panicwrap)
+- [Stack Overflow Diskussion über die Verwendung von Debug-Ausgaben in Go](https://stackoverflow.com/questions/12746321/how-to-get-printf-behaviour-in-go)
+- [Offizielles GitHub-Repository für das Go-Projekt](https://github.com/golang/go)
+
+Wir hoffen, dass Ihnen dieser Artikel einen guten Überblick darüber gegeben hat, wie Sie Debug-Output in Go verwenden können. Viel Spaß beim Codieren!

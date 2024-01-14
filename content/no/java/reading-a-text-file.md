@@ -1,7 +1,9 @@
 ---
-title:                "Java: Lesing av en tekstfil"
+title:                "Java: Å lese en tekstfil"
+simple_title:         "Å lese en tekstfil"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/reading-a-text-file.md"
 ---
 
@@ -9,56 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-I denne bloggposten skal vi se på hvordan man kan lese en tekstfil ved hjelp av Java-programmering. Å lese en tekstfil kan være nyttig for å hente data fra en ekstern fil, for eksempel en database eller en loggfil. Det kan også være nyttig for å automatisere visse oppgaver, som for eksempel å importere data til et annet program.
+Hvis du vil jobbe med tekstfiler i Java, må du lære å lese dem først. Å lese tekstfiler er en viktig ferdighet som kan hjelpe deg med å behandle og manipulere data på en effektiv måte. Dette kan være nyttig for de som jobber med store mengder data eller som ønsker å automatisere repetitive oppgaver.
 
 ## Hvordan
 
-For å lese en tekstfil i Java, må vi først opprette en File-objekt og knytte den til filen vi ønsker å lese. Dette gjør vi ved å bruke File-klassen og spesifisere filens navn og plassering som parameter.
+For å lese en tekstfil i Java, må du først opprette et FileReader-objekt og et BufferedReader-objekt. Deretter kan du bruke metoden readLine() for å lese linje for linje fra filen og lagre den i en variabel. Her er et eksempel på hvordan du kan lese en tekstfil og skrive ut innholdet:
 
 ```Java
-File fil = new File("tekstfil.txt");
-```
-
-Deretter trenger vi en Scanner-objekt for å kunne lese innholdet i tekstfilen. Vi kan opprette dette objektet ved å bruke constructoren til Scanner-klassen og sende inn File-objektet vårt som parameter.
-
-```Java
-Scanner scanner = new Scanner(fil);
-```
-
-Nå kan vi bruke Scanner-objektet til å lese linje for linje i tekstfilen ved hjelp av en while-løkke. Vi kan også bruke hasNext() og next() metoder for å lese innholdet av filen til vi når slutten av filen.
-
-```Java
-while (scanner.hasNext()) {
-  String linje = scanner.next();
-  System.out.println(linje);
+FileReader fileReader = new FileReader("tekstfil.txt");
+BufferedReader bufferedReader = new BufferedReader(fileReader);
+String line = bufferedReader.readLine();
+while (line != null) {
+    System.out.println(line);
+    line = bufferedReader.readLine();
 }
+bufferedReader.close();
 ```
 
-Det er også mulig å lese hele filen på en gang ved å bruke nextLine() metoden.
+Når du kjører koden over, vil det skrives ut innholdet i tekstfilen linje for linje.
 
-```Java
-String allText = scanner.nextLine();
-System.out.println(allText);
-```
+## Deep Dive
 
-Etter at vi er ferdig med å lese filen, må vi lukke Scanner-objektet for å frigjøre ressurser.
+Det er viktig å huske på at når du leser en tekstfil i Java, vil det returneres en String som må behandles videre. Dette betyr at du kan bruke alle metoder som er tilgjengelige for Strings, for eksempel split() for å dele opp teksten etter bestemte tegn.
 
-```Java
-scanner.close();
-```
+Det er også viktig å være klar over forskjellen på en relative og absolutt filsti når du leser tekstfiler i Java. En relativ filsti vil referere til en fil som ligger i samme mappe som Java-filen som leser den, mens en absolutt filsti vil referere til en fil uavhengig av plasseringen til Java-filen. Vær nøye med å angi riktig filsti for å unngå feil.
 
-Etter at vi har lukket Scanner-objektet, kan vi jobbe med innholdet fra tekstfilen videre.
+## Se Også
 
-## Dypdykk
-
-Det finnes flere metoder for å lese en tekstfil i Java, som for eksempel FileReader og BufferedReader. Disse kan være nyttige dersom man ønsker å lese en fil med spesielle egenskaper eller hvis man trenger å lese innholdet i filen på en spesifikk måte.
-
-Det kan også være lurt å inkludere feilhåndtering når man leser en tekstfil, for å unngå uventede feil eller kræsj i programmet. Dette kan gjøres ved å bruke try-catch blokker eller ved å bruke throws-klausul i metoden som leser filen.
-
-En annen måte å håndtere tekstfiler på er å bruke FileWriter og BufferedWriter for å skrive til filen. Dette kan være nyttig hvis man ønsker å legge til ny informasjon i en eksisterende fil, eller skrive ut data fra et program og lagre det i en fil.
-
-## Se også
-
-- [Filbehandling i Java](https://www.w3schools.com/java/java_files.asp)
-- [Java Scanner-klassen](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
-- [Java FileWriter og BufferedWriter](https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html)
+- [Java FileReader Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html)
+- [Java BufferedReader Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
+- [Java String Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)

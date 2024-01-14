@@ -1,53 +1,49 @@
 ---
 title:                "Haskell: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Nia idziemy pisać o kodowaniu w języku Haskell. Zakres tego wpisu będzie skupiał się na czytaniu plików tekstowych i dlaczego jest to ważna umiejętność w programowaniu.
+# Dlaczego
 
-## Dlaczego
+W dzisiejszych czasach programowanie jest niezwykle ważną umiejętnością, a jednym z najpopularniejszych języków programowania jest Haskell. W tym języku można napisać wydajny i elegancki kod, który jest również łatwy w utrzymaniu. Jednym z ciekawych zastosowań języka Haskell jest odczytywanie plików tekstowych. W tym artykule spróbujemy przybliżyć, dlaczego czytanie pliku tekstowego może być przydatnym umiejętnością dla każdego programisty.
 
-Czytanie plików tekstowych jest częstym zadaniem w programowaniu, ponieważ pozwala nam na łatwe i szybkie przetwarzanie oraz analizę dużej ilości danych. Ponadto, umiejętność czytania i zapisywania plików jest niezbędna w wielu projektach.
+# Jak to zrobić
 
-## Jak to zrobić
-
-Przykładowym sposobem na odczytywanie plików tekstowych w Haskell jest użycie funkcji `readFile`, która przyjmuje jako argument ścieżkę do pliku i zwraca jego zawartość w postaci tekstu. Poniżej przedstawiamy prosty przykład użycia tej funkcji:
+Aby odczytać plik tekstowy w Haskell, możemy użyć funkcji `readFile` z modułu `System.IO`. Przyjmuję ona argument w postaci ścieżki do pliku i zwraca jego zawartość w postaci napisu.
 
 ```Haskell
-fileContent <- readFile "plik.txt"
+import System.IO
+
+main = do
+  content <- readFile "plik.txt"
+  putStrLn content
 ```
 
-Aby następnie móc przetwarzać i manipulować odczytanymi danymi, konieczne jest przekształcenie ich z postaci tekstu na odpowiedni typ danych. W tym celu możemy wykorzystać funkcję `lines`, która podzieli tekst na pojedyncze wiersze, lub funkcję `words`, która podzieli tekst na pojedyncze słowa. Poniżej znajdują się przykładowe definicje tych funkcji oraz sposób ich zastosowania:
+W powyższym przykładzie używamy również funkcji `putStrLn` do wyświetlenia zawartości pliku na ekranie.
+
+# Deep Dive
+
+Kiedy już nauczymy się odczytywać pliki tekstowe, możemy zacząć eksperymentować z różnymi metodami przetwarzania ich zawartości. Dzięki użyciu funkcji `lines` możemy podzielić odczytaną zawartość na pojedyncze linie, a następnie wykorzystać inne funkcje do ich dalszej obróbki. Przykładowo, możemy policzyć ilość linii w pliku przy użyciu funkcji `length`.
 
 ```Haskell
-lines :: String -> [String]
-words :: String -> [String]
+import System.IO
 
--- Przykład użycia:
-let lines = lines "Ten tekst zostanie podzielony na\nwiersze"
-let words = words "Ten tekst zostanie podzielony na pojedyncze słowa"
+main = do
+  content <- readFile "plik.txt"
+  let linesNumber = length (lines content)
+  putStrLn ("Liczba linii w pliku to: " ++ show linesNumber)
 ```
 
-## Głębsza analiza
+Dodatkowo, możemy użyć funkcji `words`, aby podzielić zawartość pliku na pojedyncze słowa, co może być przydatne przy przetwarzaniu tekstu.
 
-Podczas czytania plików tekstowych, często zdarza się, że musimy przetwarzać jedynie wybrane linie lub słowa. Wtedy przydatna może okazać się funkcja `filter`, która pozwala na wybranie konkretnych elementów z listy lub tekst. Oto kilka przykładowych zastosowań tej funkcji:
+# Zobacz również
 
-```Haskell
-filter :: (a -> Bool) -> [a] -> [a]
-
--- Przykład 1: Wybranie tylko liczb całkowitych:
-let oddNumbers = filter (\x -> x `mod` 2 == 1) [1,2,3,4,5] -- [1,3,5]
-
--- Przykład 2: Wybranie tylko linii zaczynających się od określonego słowa:
-let linesWithPrefix = filter (\x -> head x == "Haskell") ["Haskell jest fajny", "Haskell to język programowania", "Java to też fajny język"] -- ["Haskell jest fajny", "Haskell to język programowania"]
-```
-
-## Zobacz też
-
-- [Dokumentacja funkcji `readFile` w języku Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:readFile)
-- [Przykłady użycia funkcji `readFile` i `lines`](https://github.com/sdiehl/write-you-a-haskell/blob/master/chapter-9/files/ex.hs)
-- [Więcej informacji o funkcjach `filter`, `lines` i `words`](https://www.haskell.org/onlinereport/standard-prelude.html)
+- [Dokumentacja języka Haskell](https://www.haskell.org/documentation/)
+- [Inne przydatne przykłady kodu w Haskellu](https://www.haskell.org/documentation#cookbook)
+- [Przykładowe projekty w Haskellu](https://github.com/topics/haskell)

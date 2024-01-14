@@ -1,54 +1,49 @@
 ---
 title:                "Python: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+##Por que converter uma string em letras minúsculas?
 
-Converter uma string em caixa baixa (lower case) é uma tarefa comum em programação e pode ser útil em várias situações, como comparar strings sem levar em consideração a diferença entre maiúsculas e minúsculas.
+Muitas vezes, ao manipular strings em Python, é necessário padronizar o formato para facilitar a comparação e o processamento dos dados. Converter uma string para letras minúsculas pode ser útil para garantir que todas as letras sejam tratadas da mesma forma, independentemente de estarem em maiúsculas ou minúsculas.
 
-## Como fazer
+##Como fazer?
 
-Para converter uma string em caixa baixa, podemos usar o método `lower()` em Python. Veja um exemplo abaixo:
+Para converter uma string para letras minúsculas em Python, podemos usar o método `lower()`. Veja um exemplo de código abaixo:
 
-```python
-# Definir uma string
-texto = "Olá, MUNDO!"
-
-# Converter para caixa baixa
-texto = texto.lower()
-
-# Imprimir o resultado
-print(texto)
+```Python
+texto = "PYTHON É DIVERTIDO!"
+print(texto.lower())
 ```
 
-**Saída:**
+O resultado deste código seria `python é divertido!`. Note que todas as letras foram convertidas para minúsculas.
 
-```python
-olá, mundo!
+Podemos também aplicar o método `lower()` em uma variável que já contém uma string, como no exemplo abaixo:
+
+```Python
+nome = "JOÃO"
+nome = nome.lower()
+print(nome)
 ```
 
-## Mergulho Profundo
+Neste caso, a variável `nome` teria como valor `joão` após a conversão para letras minúsculas.
 
-Ao usar o método `lower()`, é importante notar que ele retorna uma nova string convertida, mas não altera a string original. Por exemplo:
+##Aprofundando-se
 
-```python
-texto = "Esse TEXTO vai ser CONVERtido"
+Além do método `lower()`, também é possível utilizar a função `casefold()` para converter uma string para letras minúsculas em Python. A principal diferença entre os dois é que `casefold()` leva em consideração caracteres acentuados e de outras línguas, enquanto `lower()` não os altera.
 
-texto_convertido = texto.lower()
+Também é importante mencionar que a conversão para letras minúsculas em Python respeita as regras de acentuação e capitalização da língua em que o código está sendo executado. Ou seja, se o seu sistema estiver configurado para português, a conversão para minúsculas também será feita de acordo com as regras do português.
 
-print(texto) # Saída: Esse TEXTO vai ser CONVERtido
-print(texto_convertido) # Saída: esse texto vai ser convertido
-```
+##Veja também
 
-Além disso, o método `lower()` é sensível a localização (locale) e pode retornar resultados diferentes dependendo do idioma definido no seu sistema operacional. Por exemplo, em português, a letra "ç" é equivalente a "c" em caixa baixa, mas em inglês não é. Isso pode causar resultados inesperados em algumas situações.
+A seguir, estão alguns links úteis para aprender mais sobre a conversão de strings em Python:
 
-## Veja também
-
-- [Documentação do método `lower()` em Python](https://docs.python.org/3/library/stdtypes.html#str.lower)
-- [Tutorial: Manipulação de strings em Python](https://www.python.org/dev/peps/pep-0616/)
-- [Vídeo-aula: Python Strings and String Functions](https://www.youtube.com/watch?v=-uzs433zJTo)
+- Documentação oficial do Python sobre o método `lower()`: https://docs.python.org/3/library/stdtypes.html#str.lower
+- Documentação oficial do Python sobre a função `casefold()`: https://docs.python.org/3/library/stdtypes.html#str.casefold
+- Artigo do site Real Python sobre métodos de manipulação de strings em Python: https://realpython.com/python-strings/

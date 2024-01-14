@@ -1,53 +1,38 @@
 ---
-title:                "Gleam: Kontrollera om en katalog finns"
+title:                "Gleam: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kontrollera om en mapp finns är en vanlig uppgift vid programmering. Oavsett om du behöver skapa en ny mapp eller bara vill kontrollera om en viss mapp redan finns, är det viktigt att veta hur man effektivt kan utföra detta i Gleam.
+I den här bloggposten kommer vi att titta på hur man kontrollerar om en mapp existerar i Gleam-programmeringsspråket. Detta är en viktig färdighet för att hantera filer och organisera ditt program.
 
 ## Hur man gör
-För att kontrollera om en mapp finns i Gleam, kan du använda funktionen `File.exists?`. Den tar en sökväg (path) som argument och returnerar en `Bool` som indikerar om sökvägen leder till en mapp eller inte. Om sökvägen är giltig men inte leder till en mapp, kommer funktionen returnera `false`.
+För att kontrollera om en mapp existerar i Gleam, använder vi funktionen `Filesystem.directory_exists?` som tillhandahålls av den inbyggda `Filesystem`-modulen. Vi behöver först importera modulen i vårt program med `import Filesystem`, och sedan kan vi använda funktionen enligt följande exempel:
 
 ```Gleam
-// Skapa en sökväg till en mapp
-let path = File.join(["mapp1", "mapp2"])
+let directory_name = "min_mapp"
 
-// Kontrollera om mappen finns
-let exists = File.exists?(path)
-
-if exists {
-    // Om mappen finns, skriv ut ett meddelande
-    io.println("Mappen finns redan!")
+if Filesystem.directory_exists?(directory_name) {
+    // Kod som ska utföra om mappen existerar
 } else {
-    // Om mappen inte finns, skapa den
-    File.mkdir(path)
+    // Kod som ska utföras om mappen inte existerar
 }
 ```
 
-Om vi skulle köra koden ovan och mappen `mapp1/mapp2` redan finns, skulle konsolen skriva ut `Mappen finns redan!`. Om mappen inte finns, skulle den skapas och konsolen skulle inte ge något meddelande.
+Om `directory_name`-mappen existerar kommer det första blocket av kod att utföras, och om den inte existerar kommer det andra blocket att utföras. Det är viktigt att notera att `Filesystem.directory_exists?` funktionen endast accepterar strängar som argument, så se till att konvertera eventuella andra datatyper till strängar innan du kör funktionen.
 
-## Fördjupning
-När vi använder funktionen `File.exists?` i Gleam, använder vi oss faktiskt av en annan funktion vid namn `std.fs.exists`. Denna funktion är en inbyggd funktion i Gleam-kärnmodulen `std.fs` och är ansvarig för att kontrollera om en fil eller mapp finns. Koden nedan är ett exempel på hur `std.fs.exists` fungerar i bakgrunden.
+## Djupdykning
+När vi använder `Filesystem.directory_exists?` funktionen, så använder vi systemets filsystemgränssnitt för att kontrollera om den angivna mappen existerar. Om du kör detta på en Linux-baserad maskin kommer den att använda `stat`-systemanropet, medan den på en Windows-maskin kommer att använda `GetFileAttributesW`-systemanropet.
 
-```Gleam
-pub fn exists(path: String) -> Bool {
-    match File.metadata(path) {
-        Ok(metadata) -> Ok(match metadata.type() {
-            File.Type.Directory -> true
-            _ -> false
-        })
-        Err(_) -> false
-    }
-}
-```
-
-Som vi kan se, undersöker denna funktion metadata för sökvägen och returnerar `true` om det är en mapp. Detta används sedan i `File.exists?` för att ge tillbaka resultatet. Det är viktigt att notera att denna process kan variera beroende på vilket operativsystem och filsystem man använder.
+Det är också viktigt att notera att `Filesystem.directory_exists?` endast kontrollerar exakt mappen i den sökvägen som du anger. Om du till exempel anger `min_mapp/undermapp` som sökväg, kommer funktionen att returnera `false` om `min_mapp` inte existerar, även om `undermapp` existerar där. För att kontrollera om undermappen existerar, skulle du behöva köra funktionen med `min_mapp` som argument.
 
 ## Se även
-- [std.fs.exists documentation](https://gleam.run/modules/std/fs.html#fn-exists)
-- [Gleam tutorial on file and directory manipulation](https://gleam.run/book/tutorials/files.html)
+- Gleam Filesystem Modulen: https://gleam.run/modules/gleam_io
+- Linux `stat` systemanrop: https://man7.org/linux/man-pages/man2/stat.2.html
+- Windows `GetFileAttributesW` systemanrop: https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesw

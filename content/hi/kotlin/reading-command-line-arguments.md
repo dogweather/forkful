@@ -1,35 +1,45 @@
 ---
-title:                "Kotlin: कम्प्यूटर प्रोग्रामिंग पर आधारित लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना"
+title:                "Kotlin: कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना।"
+simple_title:         "कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट्स को पढ़ना।"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+# Kyu
 
-यदि आप किसी कोड फ़ाइल को चलाते हैं, तो उसमें कॉमांड लाइन आर्ग्यूमेंट्स बहुत उपयोगी हो सकते हैं। इस ब्लॉग पोस्ट में, हम कोटलिन में कॉमांड लाइन आर्ग्यूमेंट्स को कैसे पढ़ें और उनका उपयोग कैसे करें इसके बारे में जानेंगे।
+Command line arguments hamare Kotlin programs ke liye ek bahut hi zaroori feature hai. Isse hum apne program ko dynamic bana sakte hai aur user se input le sakte hai. Agar aap apne Kotlin programming skills ko improve karna chahte hai, to command line arguments padhna aapke liye bahut helpful hoga.
 
-## कैसे करे 
+# Kaise
 
-आप इस लेख में कोटलिन में कमांड लाइन आर्ग्यूमेंट्स पढ़ने के लिए एक विशेष फंक्शन `main` का इस्तेमाल कर सकते हैं। यहां हम एक उदाहरण देखेंगे जो कॉमांड लाइन आर्ग्यूमेंट्स को पढ़कर स्क्रीन पर प्रिंट करता है:
+Command line arguments ko read karne ke liye hum `args` array ka use karte hai, jisme program ke arguments stored hote hai. Chaliye ek example dekhte hai:
 
 ```Kotlin
 fun main(args: Array<String>) {
-    // यदि कोई आर्ग्यूमेंट्स होंगे, तो उन्हें प्रिंट करें
-    if (args.size > 0) {
-        println("कॉमांड लाइन आर्ग्यूमेंट्स:")
-        for (arg in args) {
-            println(arg)
-        }
-    } else {
-        // यदि कोई आर्ग्यूमेंट्स नहीं हैं, तो संदेश प्रिंट करें
-        println("कोई आर्ग्यूमेंट्स नहीं मिले।")
-    }
+    println("Welcome ${args[0]}!")
 }
 ```
 
-इस कोड को कॉम्पाइल करें और इसे कमांड लाइन से चलाएँ। यदि आप कोई आर्ग्यूमेंट्स देंगे, तो उन्हें प्रिंट किया जाएगा। यदि आप बिना आर्ग्यूमेंट्स के चलाएंगे, तो प्रिंट होने के बजाय एक संदेश स्क्रीन पर प्रदर्शित होगा।
+Is code mein humne bas ek argument ko print kiya hai, lekin aap isse further expand kar sakte hai apne requirements ke according. Agar aap multiple arguments hai, toh aap `args.size` property ka use karke unhe loop mein bhi access kar sakte hai.
 
-आप इस फोर्मैट में कितने भी आर्ग्यूमेंट्स प्रदान कर सकते हैं, चाहे वे स्ट्रिंग्स हों या अन्य डेटा टाइप के हों। आप उन्हें विभिन
+# Deep Dive
+
+Command line arguments mein hum usually user input ko ek string ki form mein lete hai. Isliye, inhe typecast karna necessary ho sakta hai. Agar aap chahte hai ki user apne input ko numbers ki form mein de, toh aap `toInt()` ya `toDouble()` methods ka use kar sakte hai.
+
+```Kotlin
+fun main(args: Array<String>) {
+    val num1 = args[0].toInt()
+    val num2 = args[1].toInt()
+    // perform calculations
+}
+```
+
+Agar aapke program mein sensitive information input kiya jata hai, toh aap `readLine()` ka use karke user se input le sakte hai. Isse information safe rehti hai aur command line arguments ki tarah visible nahi hoti.
+
+# Dekhiye Bhi
+
+- [Basics of Kotlin Programming](https://medium.com/@vicboma1/basic-kotlin-command-line-arguments-accepting-6109a46d39df)
+- [Official Kotlin Documentation for Command Line Arguments](https://kotlinlang.org/docs/tutorials/command-line.html#command-line-arguments)

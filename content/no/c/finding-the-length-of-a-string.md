@@ -1,52 +1,50 @@
 ---
-title:                "C: Finn lengden av en streng"
+title:                "C: Å finne lengden av en streng"
+simple_title:         "Å finne lengden av en streng"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
-Å finne lengden på en streng er en grunnleggende oppgave som ofte blir brukt i programmering. Det kan være nyttig å kjenne lengden på en streng når du for eksempel skal foreta en søkoperasjon eller når du trenger å begrense en brukers inndata.
+# Hvorfor
 
-##Slik gjør du det
-Det finnes flere måter å finne lengden på en streng på i C-programmering, og her skal vi vise deg to eksempler. Først må du inkludere <string.h> biblioteket for å kunne bruke funksjonene som trengs.
+Å finne lengden på en tekststreng er en viktig del av programmering. Det tillater deg å behandle og manipulere tekst på en mer effektiv måte, og det er en grunnleggende ferdighet som alle programvareutviklere burde mestre. Så uavhengig av om du er en nybegynner eller en erfaren programmerer, er det viktig å forstå hvordan man finner lengden på en tekststreng.
+
+# Hvordan
+
+For å finne lengden på en tekststreng i C, bruker vi funksjonen `strlen()`. Denne funksjonen finnes i standard library for C, `string.h`. La oss se på et eksempel på hvordan man bruker denne funksjonen:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-  // Definer en streng
-  char str[] = "Dette er en streng";
-
-  // Eksempel 1: bruk av strlen() funksjonen
+int main ()
+{
+  char str[20] = "Hei, dette er en tekststreng";
   int lengde = strlen(str);
-  printf("Lengden på strengen er: %d\n", lengde);
-
-  // Eksempel 2: bruk av sizeof() operatøren
-  int lengde2 = sizeof(str) / sizeof(str[0]) - 1;
-  printf("Lengden på strengen er: %d\n", lengde2);
-
+  printf("Lengden på teksten er %d", lengde);
+  
   return 0;
 }
 ```
-**Utskrift:**
+Output:
+```
+Lengden på teksten er 28
+```
 
-Lengden på strengen er: 19
+Vi starter med å inkludere `string.h` i koden vår for å ha tilgang til `strlen()`-funksjonen. Deretter deklarerer vi en variabel `str` som inneholder teksten vi ønsker å finne lengden på. Vi bruker deretter `strlen()`-funksjonen på `str` og lagrer resultatet i variabelen `lengde`. Til slutt skriver vi ut resultatet ved hjelp av `printf()`-funksjonen.
 
-Lengden på strengen er: 19
+# Dypdykk
 
-Som du kan se, kan du bruke enten strlen() funksjonen eller sizeof() operatøren for å finne lengden på en streng. Mens strlen() funksjonen returnerer antall tegn i en streng, returnerer sizeof() operatøren størrelsen på en variabel, som inkluderer \0 (null karakter) som blir brukt for å avslutte en streng.
+Nå som vi har sett på en enkel måte å finne lengden på en tekststreng på, kan vi se litt nærmere på hvordan `strlen()`-funksjonen fungerer. Først og fremst, så er det viktig å huske at `strlen()` teller antall tegn i en tekststreng, ikke nødvendigvis antall ord. Dette betyr at den vil inkludere mellomrom og andre spesialtegn i beregningen. 
 
-##Dypdykk
-En vanlig misforståelse når man skal finne lengden på en streng er å tro at det er det samme som størrelsen på en array. Dette er ikke tilfelle, ettersom størrelsen på en array inkluderer også plass til \0 (null karakter) mens lengden på en streng er antall tegn før \0.
+En annen ting å merke seg er at `strlen()` returnerer en `int`-verdi, som betyr at den har en grense på maksimalt antall tegn som kan telle. Dette kan være et problem hvis du trenger å finne lengden på en veldig lang tekststreng. I disse tilfellene, kan du bruke funksjonen `strlen_s()` som tar i bruk et større datatyper for å håndtere større verdier. 
 
-Det er også viktig å merke seg at lengden på en streng ikke inkluderer selve \0 karakteren. For eksempel, en streng med ordet "Hei" vil ha en lengde på 3 siden det er tre tegn (H, e, i), men størrelsen på en array med denne strengen vil være 4, inkludert \0.
+# Se også
 
-Når det gjelder funksjonen strlen(), så itererer den gjennom hele strengen til den når \0 karakteren og returnerer antall tegn den har iterert gjennom. Mens den er enklere å bruke, kan den være litt tregere enn å bruke sizeof() operatøren siden den faktisk må gå gjennom strengen.
-
-##Se også
-- [Offisiell dokumentasjon for strlen() funksjonen](https://www.cplusplus.com/reference/cstring/strlen/) (engelsk)
-- [Offisiell dokumentasjon for sizeof() operatøren](https://www.cplusplus.com/reference/clibrary/cstring/strlen/) (engelsk)
+- [Hva er en streng i C](https://www.programiz.com/c-programming/c-strings)
+- [Bruk av `string.h` library](https://www.geeksforgeeks.org/string-h-header-file-functions-c/)
+- [En utfyllende guide til `strlen()`-funksjonen](https://www.geeksforgeeks.org/strlen-function-in-c/)

@@ -1,65 +1,46 @@
 ---
-title:                "Clojure: 连接字符串"
+title:                "Clojure: 字符串拼接"
+simple_title:         "字符串拼接"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 # 为什么
+字符串拼接是编程中常用的技巧，它能够将多个字符串连接在一起，形成一个新的字符串。这在处理文本和输出信息时非常有用。在Clojure中，我们可以通过一些简单的方法来实现字符串拼接，让我们来看看如何做到这一点。
 
-在编程语言中，字符串拼接是一种常见的操作。它允许我们将多个字符串连接起来，创建出一个新的字符串。当我们需要在程序中动态生成文本时，字符串拼接是非常有用的。比如说，在网站开发中，我们经常需要根据用户的输入动态地生成欢迎信息或者错误提示。通过字符串拼接，我们能够轻松地将变量和文字组合成一个完整的字符串，从而创建出自定义的消息。因此，掌握字符串拼接技巧是非常重要的，让我们一起来看看如何使用Clojure语言来实现字符串拼接吧！
-
-# 如何
-
-字符串拼接在Clojure中非常简单，我们可以使用`str`函数来实现。让我们来看一个例子：
-
-```clojure
-(def name "小红")
-(def age 25)
-(def message (str "你好，我是" name "，今年" age "岁了。"))
-(println message)
+## 如何
+在Clojure中，字符串拼接的最基本方法是使用`str`函数。这个函数接受任意数量的参数，并将它们连接成一个新的字符串。让我们来看一个简单的例子：
+```Clojure
+(str "Hello" " " "World") 
 ```
-
-运行这段代码，我们会得到如下输出：
-
+这将输出`Hello World`。我们也可以将变量包含在拼接中，如下所示：
+```Clojure
+(def name "John")
+(str "Hello" " " name) 
 ```
-你好，我是小红，今年25岁了。
+这将输出`Hello John`。如果需要，我们也可以在拼接中添加空格或其他字符来分隔字符串。
+
+另一种常用的拼接方法是使用`str-join`函数。这个函数接受两个参数：分隔符和一个字符串的集合，然后将集合中的字符串使用分隔符连接起来。例如：
+```Clojure
+(def fruits ["apple" "banana" "orange"])
+(str-join ", " fruits) 
 ```
-
-在这个例子中，我们首先定义了两个变量`name`和`age`，然后使用`str`函数将它们和文字一起拼接成一个新的字符串，并将结果赋值给`message`变量。最后，使用`println`函数来打印出这个新的字符串。可以看到，使用字符串拼接，我们能够动态地生成自定义的消息。
-
-另外，如果我们想要将多个字符串连接起来，也可以使用`join`函数。例如：
-
-```clojure
-(def fruits ["苹果" "香蕉" "橘子"])
-(def fruits-message (str "我喜欢吃" (join ", " fruits) "。"))
-(println fruits-message)
+这将输出`apple, banana, orange`。我们也可以通过添加条件来跳过某些字符串，如下所示：
+```Clojure
+(str-join ", " (filter even? [1 2 3 4 5])) 
 ```
+这将输出`2, 4`，因为`filter`函数将集合中的偶数过滤掉，然后再进行拼接。
 
-输出结果为：
+## 深入了解
+在Clojure中，字符串是不可变的数据类型，这意味着我们不能直接修改已有的字符串。因此，当我们进行字符串拼接时，实际上是在创建一个新的字符串，并将原有的字符串复制到新的字符串中。
 
-```
-我喜欢吃苹果, 香蕉, 橘子。
-```
+此外，字符串拼接的效率也值得考虑。在拼接大量字符串时，每次创建新的字符串会消耗更多的时间和内存。因此，我们可以考虑使用`string-builder`函数来提升性能。这个函数可以将多个字符串缓存起来，然后在需要时一次性拼接到一个新的字符串中。
 
-在这个例子中，我们定义了一个字符串数组`fruits`，然后使用`join`函数将其连接成一个以逗号和空格分隔的字符串，并将结果赋值给`fruits-message`变量。最后，将这个字符串打印出来。可以看到，通过使用`join`函数，我们可以更加灵活地拼接多个字符串。
-
-# 深入了解
-
-值得注意的是，Clojure中的字符串拼接是通过使用Java中的`StringBuilder`来实现的。同时，Clojure也提供了更高效的`str-builder`函数来进行字符串拼接。除了`str`和`join`函数，我们也可以使用`slurp`函数来从文件中读取字符串，并结合其他函数来进行拼接。
-
-此外，为了避免字符串操作导致性能问题，Clojure也提供了`clojure.string`命名空间来提供更高效的字符串处理函数。
-
-# 参考文献
-
-- [Clojure字符串文档](https://clojuredocs.org/clojure.core/str)
-- [官方Clojure字符串教程](https://clojure.org/guides/learn/strings)
-- [深入了解Clojure字符串处理](https://clojure.org/guides/string_manipulation)
-
-## 参见
-
-- [为什么学习Clojure是一个很好的选择](https://www.imooc.com/article/45182)
-- [使用Clojure创建自定义函数的简介](https://www.youdaxue.com/wiki/02369476-6916-11e5-bdb6-00163e008baa.html) 
-- [Clojure语言中的数据类型介绍](https://blog.csdn.net/liuxiao723846/article/details/42648989)
+# 参考链接
+- [Clojure字符串函数官方文档](https://clojuredocs.org/clojure.string)
+- [Clojure字符串拼接方法](https://stackify.com/clojure-string-join-concat/)
+- [Clojure字符串拼接的性能优化技巧](http://blog.rancher.com/clojure-performance-tuning-for-string-concatenation/)

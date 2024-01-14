@@ -1,7 +1,9 @@
 ---
-title:                "C: Sattumanvaraisten numeroiden luominen"
+title:                "C: Satunnaisten numeroiden generointi."
+simple_title:         "Satunnaisten numeroiden generointi."
 programming_language: "C"
-category:             "Numbers"
+category:             "C"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/generating-random-numbers.md"
 ---
 
@@ -9,11 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jos olet ohjelmointimaailmassa uusi, saatat ihmetellä, miksi kukaan haluaisi luoda satunnaisia numeroita C-ohjelmoinnissa. Satunnaislukugeneraattori on itse asiassa tärkeä osa monia ohjelmia ja pelejä, jotka perustuvat satunnaisuuteen. Esimerkkejä tällaisista sovelluksista ovat lottopelit, peliautomaatit, simulaatiot ja salausmenetelmät.
+Monissa ohjelmointitehtävissä, erityisesti kun kyseessä on pelit tai tietokonesimulaatiot, tarvitsemme satunnaisia lukuja. Näitä lukuja kutsutaan pseudosatunnaisiksi, koska ne eivät ole täysin satunnaisia, mutta ne voivat luoda tarvittavan simulaation tai tunnelman.
 
-## Miten
+## Kuinka
 
-C-kielellä satunnaislukujen luominen tapahtuu käyttämällä <stdlib.h> kirjastoa ja sen funktiota rand (). Tämä funktio tuottaa luvun väliltä 0 ja RAND_MAX - 1, joka voi vaihdella järjestelmän mukaan. Oikean satunnaisuuden varmistamiseksi on tärkeää kutsua funktiota srand () ensin, joka asettaa satunnaislukugeneraattorin alkutilaan.
+C-ohjelmointikielessä on sisäänrakennettu rand-funktio, joka tuottaa pseudosatunnaisen luvun. Sen käyttö on yksinkertaista:
 
 ```C
 #include <stdio.h>
@@ -21,15 +23,12 @@ C-kielellä satunnaislukujen luominen tapahtuu käyttämällä <stdlib.h> kirjas
 
 int main()
 {
-    // asetetaan satunnaislukugeneraattorin alkutila
-    srand(time(0));
+    // Tulostaa 10 satunnaista lukua väliltä 0-99
+    for (int i = 0; i < 10; i++)
+    {
+        printf("%d\n", rand() % 100); 
+    }
 
-    // tuotetaan satunnainen luku väliltä 0 ja 99
-    int random = rand() % 100;
-
-    // tulostetaan satunnainen luku
-    printf("Satunnainen luku väliltä 0 ja 99: %d \n", random);
-    
     return 0;
 }
 ```
@@ -37,17 +36,24 @@ int main()
 Esimerkkitulostus:
 
 ```
-Satunnainen luku väliltä 0 ja 99: 73
+36
+79
+50
+5
+21
+94
+87
+29
+12
+60
 ```
 
-## Syvällisempi tarkastelu
+## Syventymistä
 
-Satunnaislukugeneraattorit perustuvat usein matemaattisiin kaavoihin tai fyysisiin prosesseihin, kuten näytteenottoon ilmavirtauksista tai radiolähteistä. Ne pyrkivät tuottamaan lukuja, jotka ovat mahdollisimman satunnaisia ja toistumattomia. On kuitenkin tärkeää huomata, että luvut eivät ole täysin satunnaisia ja ennalta arvaamattomia, vaan niiden arvot perustuvat laskentamenetelmiin, jotka käsittelevät tietokoneella saatavilla olevia tietoja.
-
-On myös tärkeää huomata, että satunnaislukugeneraattorit eivät sovellu kryptografisiin tarkoituksiin, joissa tarvitaan erittäin satunnaista ja ennustamatonta lukujonoa. Tällaisiin tarkoituksiin tulisi käyttää kryptografista satunnaislukugeneraattoria.
+Rand-funktio käyttää taustallaan matemaattista algoritmia, joka luo näennäisesti satunnaisia numeroita. Tämä algoritmi perustuu usein johonkin muuttuvaan tietokoneen sisäiseen arvoon, kuten kellonaikaan, mikä tekee luvuista vaihtelevampia. Jotkin C-kirjastot, kuten <stdlib.h>, tarjoavat myös muita satunnaislukujen generaattoreita, joilla on erilaisia ominaisuuksia ja toimintatapoja.
 
 ## Katso myös
 
-- [Satunnainen luku C-ohjelmassa](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
-- [Satunnaislukugeneraattorien toimintaperiaatteet](https://en.wikipedia.org/wiki/Random_number_generation)
-- [Cryptographically secure random number generator in C](https://gist.github.com/rdb/8864666)
+- [C-kielen opas](https://www.c-howto.de/tutorial/einfuehrung/c/)
+- [C-koodiesimerkkejä](https://github.com/TheAlgorithms/C)
+- [C-kirjastot ja funktiot](https://en.cppreference.com/w/c/header)

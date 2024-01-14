@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Convertendo uma data em uma string"
+simple_title:         "Convertendo uma data em uma string"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/converting-a-date-into-a-string.md"
 ---
 
@@ -9,33 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que converter uma data em uma string?
 
-Converter uma data em uma string é uma tarefa comum que pode ser encontrada em muitos projetos de programação. É importante para os programadores serem capazes de entender como essa conversão funciona e como implementá-la corretamente em seus próprios programas escritos em Rust.
+Uma das tarefas mais comuns em programação de software é lidar com datas e horas. Às vezes, é necessário salvar essas informações em um formato de string legível para os usuários ou armazená-las em um banco de dados. Portanto, saber como converter uma data em uma string é uma habilidade fundamental para qualquer desenvolvedor.
 
-## Como fazer a conversão de uma data para uma string em Rust
+## Como fazer em Rust
 
-Para converter uma data em uma string em Rust, podemos usar a função `format!()` e especificar o formato desejado através de uma string de formatação. Por exemplo, para obter a data atual formatada como "DD/MM/AAAA", podemos fazer o seguinte:
+Em Rust, a biblioteca padrão fornece o módulo `chrono` para lidar com datas e horas. Para converter uma data em uma string, você precisa first importar o módulo `chrono` para o seu projeto. Em seguida, você pode usar o método `format` em um objeto `DateTime` para especificar o formato da string desejado.
 
-```Rust
-use std::time::{SystemTime, UNIX_EPOCH};
+```
+use chrono::prelude::*;
 
-let data_atual = SystemTime::now(); // Obtém a data atual
-let data_em_segundos = data_atual.duration_since(UNIX_EPOCH).expect("Erro ao converter para segundos"); // Converte a data em segundos
+fn main() {
+    // Obtém a data e hora atual
+    let now = Local::now();
 
-// Usa a função format!() para formatar a data em uma string
-let data_formatada = format!("{:0>2}/{}/{}", data_em_segundos.day(), data_em_segundos.month(), data_em_segundos.year());
-
-// Imprime a data formatada
-println!("{}", data_formatada); // Saída: 07/09/2021
+    // Converte a data em uma string no formato "dia/mês/ano"
+    let formatted_date = now.format("%d/%m/%Y").to_string();
+    println!("Data atual: {}", formatted_date);
+}
 ```
 
-## Explorando mais a fundo a conversão de data para string em Rust
+Este código irá produzir a seguinte saída:
 
-A função `format!()` é bastante poderosa e permite que os programadores especifiquem vários formatos e opções de formatação para diferentes tipos de dados, incluindo datas. É importante consultar a documentação oficial do Rust para entender completamente como essa função funciona e quais formatos estão disponíveis.
+```
+Data atual: 03/04/2021
+```
 
-Além disso, é importante considerar o uso do tipo de dados `chrono`, que é uma biblioteca de data/hora de terceiros que pode facilitar a conversão de datas e fornece mais opções de formatação do que a função `format!()` padrão.
+Outro formato comum é "mês/dia/ano". Para isso, basta alterar a string de formato para `"%m/%d/%Y"`.
+
+## Mergulho Profundo
+
+A biblioteca `chrono` em Rust possui uma ampla gama de métodos para formatar datas e horas de maneira precisa. Além dos formatos de data mostrados acima, você também pode especificar o horário e a diferença do fuso horário. Além disso, o módulo `chrono` também suporta a internacionalização, permitindo que você exiba datas em diferentes idiomas.
+
+No entanto, é importante lembrar de sempre tratar as datas e horas com cuidado em seu código, pois podem haver diferenças entre os sistemas operacionais e configurações de fuso horário.
 
 ## Veja também
 
-- [Documentação oficial do Rust sobre a função `format!()`](https://doc.rust-lang.org/std/macro.format.html)
-- [Documentação do tipo de dados `chrono`](https://docs.rs/chrono/0.4.19/chrono/)
-- [Tutorial sobre como converter uma data em uma string em Rust](https://www.techiediaries.com/rust-time-date-convert-string-example/) (em inglês)
+Aqui estão alguns recursos úteis para aprender mais sobre como trabalhar com datas e horas em Rust:
+
+- [Documentação oficial do módulo chrono](https://docs.rs/chrono/0.4.19/chrono/)
+- [Tutorial sobre manipulação de datas e horas em Rust](https://dev.to/davidedelpapa/managing-dates-and-times-in-rust--1l3l)
+- [Artigo sobre o módulo chrono e internacionalização](https://medium.com/@shaunmitchell_42620/working-with-dates-in-rust-using-chrono-and-chrono-tz-5664e17950a2)

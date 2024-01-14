@@ -1,42 +1,55 @@
 ---
 title:                "Rust: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar expressões regulares em Rust?
+# Por que usar expressões regulares em Rust?
 
-As expressões regulares são uma ferramenta poderosa e versátil para manipular texto em qualquer linguagem de programação, incluindo Rust. Com elas, é possível realizar tarefas como buscar e substituir padrões de texto, extrair informações de strings e validar dados de entrada. Além disso, o suporte nativo a expressões regulares em Rust torna seu uso eficiente e seguro.
+Expressões regulares são uma poderosa ferramenta para realizar buscas e manipulações em strings. Em Rust, elas são implementadas através do módulo `regex`, que oferece uma sintaxe amigável e eficiente para trabalhar com padrões de texto.
 
-## Como usar expressões regulares em Rust
+## Como utilizar expressões regulares em Rust
 
-Para utilizar expressões regulares em Rust, é necessário importar a biblioteca `regex` no seu código. Em seguida, é possível criar um objeto `Regex` com o padrão de regex desejado e aplicá-lo em uma string com o método `find()` ou `replace()`. Veja um exemplo abaixo:
-
+Para começar a utilizar expressões regulares em Rust, primeiro é necessário adicionar a dependência `regex` ao seu projeto através do gerenciador de pacotes `cargo`. Isso pode ser feito adicionando a seguinte linha ao seu arquivo `Cargo.toml`:
 ```Rust
-use regex::Regex;
-
-let re = Regex::new(r"(\d{2})/(\d{2})/(\d{4})").unwrap();
-let text = "Hoje é dia 30/06/2021".to_string();
-
-let new_text = re.replace(&text, "$2-$1-$3");
-// novo texto: Hoje é dia 06-30-2021
+[dependencies]
+regex = "1.4.2"
 ```
 
-Além disso, há diversos métodos e funcionalidades disponíveis na biblioteca `regex`, como a possibilidade de capturar grupos em uma expressão, buscar todas as ocorrências de um padrão em uma string e muito mais. É importante se familiarizar com esses recursos para aproveitar ao máximo o potencial das expressões regulares em Rust.
+Com isso, é possível começar a utilizar a sintaxe oferecida pelo módulo `regex`. Por exemplo, para verificar se uma string contém um determinado padrão, pode-se utilizar o método `is_match`, passando o padrão desejado como argumento:
+```Rust
+use regex::Regex; // Importa o módulo regex
 
-## Passe mais tempo se aprofundando em expressões regulares
+let re = Regex::new(r"hello \w+").unwrap(); // Cria uma expressão regular
+println!("Encontrou o padrão? {}", re.is_match("hello world")); // Imprime "true"
+```
 
-As expressões regulares podem parecer complicadas no início, mas com um pouco de prática e conhecimento, elas se tornam uma ferramenta valiosa em seu arsenal de programação. É interessante aprender mais sobre as convenções e sintaxe utilizadas em regex, além de explorar exemplos práticos para entender melhor como aplicá-las em diferentes situações. Alguns recursos úteis para se aprofundar nessa ferramenta são:
+Também é possível capturar partes específicas de uma string que correspondem a determinados padrões, utilizando as chamadas "capturas" (captures). Por exemplo:
+```Rust
+let re = Regex::new(r"(\w+), (\w+)").unwrap(); // Com esse padrão, é possível capturar duas palavras separadas por vírgula
+let text = "olá, mundo";
+let caps = re.captures(text).unwrap(); // Realiza a captura
 
-- O livro ["The Rust Regex Book"](https://danielkeep.github.io/practical-intro-to-regex/) contém explicações detalhadas e exemplos de uso de expressões regulares em Rust.
-- O site [Regex101](https://regex101.com/) permite testar e depurar suas expressões regulares em uma interface interativa.
-- A documentação oficial da biblioteca `regex` oferece uma visão geral das funcionalidades e métodos disponíveis.
+// Cada captura é acessível através do método "get()"
+println!("Capturou as palavras: {} e {}", caps.get(1).unwrap().as_str(), caps.get(2).unwrap().as_str());
+// Imprime "Capturou as palavras: olá e mundo"
+```
+
+## Mergulhando mais fundo em expressões regulares
+
+Embora o uso básico de expressões regulares em Rust seja bastante intuitivo, existem muitas outras funcionalidades e opções disponíveis no módulo `regex` que permitem realizar tarefas mais avançadas. Alguns desses recursos incluem:
+
+- Busca e substituição de padrões em strings com `replace`
+- Iteração sobre todas as correspondências de um padrão em uma string com `find_iter`
+- Utilização de classes de caracteres, como `\d` para representar dígitos numéricos, e quantificadores, como `+` para capturar uma ou mais ocorrências de um padrão
+
+Para aprender mais sobre todas as possibilidades oferecidas por expressões regulares em Rust, recomenda-se consultar a documentação oficial do módulo `regex` e praticar com exemplos de uso.
 
 ## Veja também
 
-- [Documentação da biblioteca regex em Rust](https://docs.rs/regex/latest/regex/)
-- [Exemplos de uso de expressões regulares em Rust](https://www.tutorialspoint.com/using-regular-expressions-in-a-rust-program)
-- [The Rust Book](https://doc.rust-lang.org/book/) para aprender mais sobre a linguagem de programação em si.
+- [Documentação oficial do módulo `regex`](https://docs.rs/regex/1.4.2/regex/)

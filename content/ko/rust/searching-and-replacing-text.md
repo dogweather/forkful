@@ -1,7 +1,9 @@
 ---
-title:                "Rust: 텍스트 검색 및 대체"
+title:                "Rust: 텍스트 검색 및 교체"
+simple_title:         "텍스트 검색 및 교체"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/searching-and-replacing-text.md"
 ---
 
@@ -9,47 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-만약 당신이 텍스트를 치환하는 작업을 할 때마다, 전통적인 텍스트 편집기를 사용해 오래 걸리고 지루한 작업을 하기 싫다면, Rust 언어를 사용하여 더 빠르고 효율적으로 작업할 수 있습니다.
+텍스트를 검색하고 치환하는 것의 이점은 많습니다. 이를 통해 프로그래머들은 특정한 부분이나 패턴을 쉽게 수정하고 변경할 수 있습니다. 또한 불필요한 반복 작업을 줄여서 시간과 노력을 절약할 수 있습니다.
 
 ## 하는 법
 
-```Rust
-let input_text = "Hello, Rust!";
-let mut output_text = String::new();
+Rust는 강력한 문자열 처리 기능을 제공합니다. 검색과 치환은 이 중 하나일 뿐이며, 이를 효율적으로 이용하기 위해서는 문자열 슬라이싱, 벡터, 반복자와 같은 기본 개념에 대한 이해가 필요합니다. 아래는 간단한 예제 코드와 그에 대한 출력 결과입니다.
 
-for character in input_text.chars() {
-    match character {
-        'a' => output_text.push('b'),
-        'e' => output_text.push('f'),
-        'i' => output_text.push('j'),
-        'o' => output_text.push('p'),
-        'u' => output_text.push('v'),
-        _ => output_text.push(character),
-    }
+```Rust
+// 문자열 선언
+let s = "Hello, Rust!";
+
+// 검색하기
+let index = s.find("Rust");
+match index {
+    Some(i) => println!("Found Rust at index {}", i),
+    None => println!("Could not find Rust"),
 }
-println!("{}", output_text);
+
+// 치환하기
+let new_s = s.replace("Hello", "Hi");
+println!("New string: {}", new_s);
 ```
 
-**출력:** Jemmo, Suvu!
+출력 결과:
 
-위의 코드는 간단한 예제이지만, 당신이 텍스트를 치환할 때 기본적인 아이디어를 보여줍니다. 문자 하나하나를 순회하면서, 우리는 치환 매칭을 할 수 있고, 매칭되는 문자를 판별해서 새로운 문자로 대체합니다. 이것이 우리가 텍스트를 치환하는 중요한 부분입니다.
-
-## 딥 다이브
-
-우리가 보았던 예제는 간단하지만, 실제로 우리는 조금 더 복잡한 경우에 직면할 수 있습니다. 예를 들어, 우리가 특정한 단어만 치환하고 싶은 상황이라면 어떻게 해야할까요? 이때는 `replace` 메서드를 사용할 수 있습니다.
-
-```Rust
-let input_text = "Hello, Rust! I love Rust!";
-let output_text = input_text.replace("Rust", "Python");
-println!("{}", output_text);
+```
+Found Rust at index 7
+New string: Hi, Rust!
 ```
 
-**출력:** Hello, Python! I love Python!
+## 깊게 들어가기
 
-`replace` 메서드는 문자열에서 특정한 부분을 찾아서 원하는 새로운 문자열로 바꾸는 기능을 합니다. 이러한 강력한 기능을 잘 활용하면, 우리는 더욱 복잡한 텍스트 치환 작업을 할 수 있습니다.
+Rust의 문자열은 모두 UTF-8 인코딩을 따르므로, 다양한 언어의 문자를 포함하고 있을 수 있습니다. 따라서 문자열 검색과 치환 시에는 반드시 인코딩을 고려해야 합니다. 또한 Rust의 `format!` 매크로를 이용하면 더 복잡한 문자열 패턴을 쉽게 생성할 수 있습니다. 더 깊이 알아보려면 Rust 공식 문서에서 문자열 관련 기능을 자세히 살펴보시기 바랍니다.
 
-## See Also
+## 더 보기
 
-- [The Rust Programming Language](https://www.rust-lang.org/)
-- [Rust String Documentation](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Rust Tutorial: Strings](https://stevedonovan.github.io/rust-gentle-intro/2-structs-enums-lifetimes.html#strings)
+- [Rust 공식 문서 - 문자열](https://doc.rust-lang.org/std/string/) 
+- [Rust 표준 라이브러리 문서 - 문자열 검색과 치환](https://doc.rust-lang.org/std/string/#searching-and-replacing)
+
+[참고 자료_공식 문서_다음이름 바꿔보기]
+Rust는 문자열 처리를 위해 다양한 함수와 메서드를 제공하며, 이를 적재적소에 잘 활용하면 코드의 가독성과 유지보수성을 높일 수 있습니다. 이번 포스트를 통해 검색과 치환에 대해 조금 더 알게 되었길 바랍니다. 감사합니다!
+
+## 관련 링크
+
+- [Rust 공식 웹사이트](https://www.rust-lang.org/)
+- [Rust 커뮤니티 포럼](https://users.rust-lang.org/)
+- [Rust 공식 블로그](https://blog.rust-lang.org/)

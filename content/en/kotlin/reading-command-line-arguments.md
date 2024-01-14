@@ -1,48 +1,59 @@
 ---
 title:                "Kotlin recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Reading command line arguments can be a useful skill for any programmer, as it allows for more flexibility and customization when running a program. By learning how to read command line arguments, you can create more user-friendly programs and solutions that can handle a variety of inputs.
+
+If you are new to Kotlin, you may have heard about command line arguments but aren't quite sure what they are or why they are important. Simply put, command line arguments allow you to pass data to your program when it is executed. This can be extremely useful when you want to customize the behavior of your program without having to constantly modify the code.
 
 ## How To
-To read command line arguments in Kotlin, we can use the `args` variable that is automatically available in our program. This variable contains an array of strings, where each element represents a command line argument passed in when the program is run. Let's take a look at an example:
 
-```kotlin
+To read command line arguments in Kotlin, we use the `args` parameter in the `main()` function. This parameter is an array of strings that contains the arguments passed when the program is executed.
+
+Let's take a look at a simple example:
+
+```Kotlin
 fun main(args: Array<String>) {
-   println("Hello, " + args[0] + "!")
+    println("The following arguments were passed:")
+    for (arg in args) {
+        println(arg)
+    }
 }
 ```
 
-In this code, we are using the `args` variable to access the first command line argument passed in when running the program. We can then use this argument to customize the output of our program, as shown in the `println` statement.
-
-To run this program, we would use the following command in the terminal:
+If we execute this program with the command `kotlin Main.kt argument1 argument2`, the output would be:
 
 ```
-kotlin MyProgram.kt World
+The following arguments were passed:
+argument1
+argument2
 ```
 
-The output would be:
+As you can see, the arguments are stored in the `args` array and can be accessed using a for loop.
 
-```
-Hello, World!
-```
-
-If no command line arguments are provided, the `args` variable will simply be an empty array.
+You can also access individual arguments directly using their index in the array, for example `args[0]` would give you the first argument in the array.
 
 ## Deep Dive
-Apart from accessing command line arguments using the `args` variable, Kotlin also provides a `CommandLine` class that can be used for more advanced command line operations. This class allows for parsing and handling of different types of arguments, such as flags, options, and positional arguments.
 
-To use this class, we first create a `CommandLine` object by passing in the `args` array to its constructor. We can then use methods like `getOptionValue()` and `hasOption()` to retrieve and check for specific arguments. We can also set default values for arguments, and even create custom help messages for our program.
+Command line arguments in Kotlin are not limited to just single words or numbers. You can also pass in strings or even multiple values by separating them with spaces.
 
-To learn more about the `CommandLine` class and its capabilities, refer to the official Kotlin documentation [here](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-command-line/).
+Additionally, you can use flags or options to pass in specific parameters. These are typically preceded by a hyphen, such as `-username` or `-port`.
+
+Keep in mind that the order of the arguments matters. For example, if you were expecting a string for the first argument and an integer for the second, make sure you pass them in that order when executing the program.
 
 ## See Also
-- [Kotlin documentation on command line arguments](https://kotlinlang.org/docs/reference/command-line.html)
-- [Article on creating a command line program with Kotlin](https://medium.com/@pedrobgs/create-a-basic-command-line-tool-with-kotlin-104a0863a81c)
-- [Tutorial on building a command line game using Kotlin](https://auth0.com/blog/command-line-programs-in-kotlin/)
+
+For more information on command line arguments in Kotlin, check out the following resources:
+
+- [Official Kotlin documentation on command line arguments](https://kotlinlang.org/docs/tutorials/command-line.html)
+- [Tutorial on using command line arguments in Kotlin](https://www.tutorialkart.com/kotlin/command-line-arguments-kotlin/)
+- [Video tutorial on reading command line arguments in Kotlin](https://www.youtube.com/watch?v=eoy5EXKSGvw)
+
+Happy coding!

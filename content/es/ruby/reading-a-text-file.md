@@ -1,54 +1,49 @@
 ---
 title:                "Ruby: Leyendo un archivo de texto"
+simple_title:         "Leyendo un archivo de texto"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## ¿Por qué deberías leer un archivo de texto?
 
-Muchas veces en la programación, necesitamos leer archivos de texto para manipular datos o realizar operaciones específicas. Aprender cómo leer y manipular estos archivos puede ser una habilidad muy útil en el desarrollo de aplicaciones y scripts con Ruby.
+Leer un archivo de texto es una habilidad esencial para cualquier programador de Ruby. Puede ayudarte a procesar grandes cantidades de datos y a automatizar tareas en tus proyectos. Además, leer un archivo de texto es una parte fundamental de la programación en general, por lo que es importante tener conocimientos sobre ello.
 
-## Como hacerlo
+## Cómo leer un archivo de texto en Ruby
 
-Para leer un archivo de texto en Ruby, primero debemos abrirlo usando el método `File.open()`. Dentro de los paréntesis, indicamos el nombre del archivo y el modo de lectura que deseamos utilizar. Por ejemplo, si queremos leer un archivo llamado "datos.txt", podríamos usar el siguiente código:
+Para comenzar, necesitamos crear un objeto de archivo usando el método `File.open ()`. Luego, podemos usar el método `readlines()` para leer todas las líneas del archivo y almacenarlas en una variable. Por ejemplo:
 
 ```Ruby
-archivo = File.open("datos.txt", "r")
+archive = File.open("mi_archivo.txt")
+lines = archive.readlines()
+puts lines
 ```
 
-El modo de lectura "r" nos permite leer el archivo sin modificarlo. Ahora que tenemos el archivo abierto, podemos comenzar a manipularlo. Para leer el contenido del archivo línea por línea, podemos utilizar el método `each_line` de la siguiente manera:
+Esto imprimirá todas las líneas de texto del archivo "mi_archivo.txt" en la consola. También podemos usar un bloque de código para evitar tener que cerrar manualmente el archivo:
 
 ```Ruby
-archivo.each_line do |linea|
-  puts linea
+File.open("mi_archivo.txt") do |archive|
+  lines = archive.readlines()
+  puts lines
 end
 ```
 
-Este código imprimirá cada línea del archivo en la consola. También podemos guardar el contenido del archivo en una variable y manipularlo como un arreglo:
+## Inmersión profunda en la lectura de archivos de texto
 
-```Ruby
-contenido = archivo.readlines
-```
+En Ruby, podemos utilizar diferentes métodos para leer archivos de texto según nuestras necesidades. Por ejemplo, el método `read()` nos permite leer todo el contenido del archivo como una sola cadena de texto. El método `gets()` nos permite leer una línea del archivo cada vez que se llama.
 
-Ahora podemos usar métodos como `split` o `gsub` para separar o reemplazar el contenido de cada línea según sea necesario.
+Además, podemos especificar el modo de apertura del archivo, como "r" para lectura o "w" para escritura. También podemos utilizar el método `close()` para cerrar el archivo una vez que hayamos terminado de trabajar con él.
 
-Al finalizar, siempre debemos cerrar el archivo usando el método `close` para liberar los recursos del sistema:
+Es importante señalar que cuando leemos un archivo de texto en Ruby, el texto se guarda en forma de matriz, con cada línea del archivo como un elemento de la matriz.
 
-```Ruby
-archivo.close
-```
-
-## Profundizando
-
-Ruby ofrece una gran variedad de métodos para leer y manipular archivos de texto. Por ejemplo, podemos usar métodos como `read`, `getc` o `readchar` para leer el archivo byte por byte. También podemos elegir el modo de lectura "w" para abrir un archivo en modo escritura y sobrescribir su contenido.
-
-Además, Ruby nos permite leer archivos comprimidos usando la gema `zlib`, y archivos CSV usando la gema `csv`.
+Ahora que conocemos los conceptos básicos de la lectura de archivos de texto en Ruby, podemos explorar más funciones y métodos para manipular y trabajar con el contenido del archivo.
 
 ## Ver también
 
-- Documentación oficial de Ruby sobre lectura de archivos: https://ruby-doc.org/core-2.7.1/File.html
-- Gema zlib: https://rubygems.org/gems/zlib/versions/0.2.11
-- Gema CSV: https://rubygems.org/gems/csv/versions/3.1.9
+- [Documentación oficial de Ruby sobre archivos](https://ruby-doc.org/core-3.0.2/File.html)
+- [Tutorial de Ruby para leer y escribir archivos](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
+- [Puesta en marcha de la manipulación de archivos en Ruby](https://hackernoon.com/working-with-files-in-ruby-ce188dd7f15a)

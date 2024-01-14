@@ -1,19 +1,19 @@
 ---
-title:                "Go: Läsning av en textfil"
+title:                "Go: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Det är ofta nödvändigt att läsa in data från en textfil för att kunna utföra olika operationer i ett program. Det kan till exempel vara för att bearbeta stora mängder data eller för att kunna presentera information till användaren.
 
-Att läsa en textfil kan vara ett användbart verktyg för att hantera data och information. Det kan också vara en viktig del av många Go-programmerares arbetsflöde. I denna bloggpost kommer vi att utforska hur man kan läsa en textfil med hjälp av Go-programmeringsspråket.
-
-## Hur man gör det
-
-Först och främst behöver vi importera paketet "os" för att kunna hantera filer i Go. Sedan kan vi öppna en textfil med hjälp av "Open" funktionen från paketet "os", som tar två argument - filnamn och önskat läge.
+## Hur man gör
+För att läsa in en textfil i Go behöver vi först öppna filen med hjälp av funktionen `Open()` från paketet `os`. Vi behöver även ett `Scanner`-objekt för att kunna läsa in rad för rad från filen. Sedan kan vi använda en `for`-loop för att läsa in alla rader och utföra önskade operationer.
 
 ```Go
 package main
@@ -21,47 +21,85 @@ package main
 import (
     "fmt"
     "os"
+    "bufio"
 )
 
 func main() {
-    // öppna textfilen med läget "r" (för läsning)
-    file, err := os.Open("textfil.txt")
-    // kontrollera om det uppstod ett fel
+    // Öppna filen för läsning
+    file, err := os.Open("data.txt")
     if err != nil {
-        fmt.Println(err)
+        fmt.Println("Kunde inte öppna filen:", err)
         return
     }
-    // stäng filen vid slutet av funktionen
     defer file.Close()
 
-    // läs innehållet i filen en rad i taget
+    // Skapa en ny Scanner för att läsa in filen
     scanner := bufio.NewScanner(file)
+
+    // Läs in varje rad och skriv ut den till konsolen
     for scanner.Scan() {
-        // skriv ut varje rad i filen
         fmt.Println(scanner.Text())
     }
 
-    // kontrollera om det uppstod ett fel under skanningen
+    // Kontrollera eventuella fel under inläsning
     if err := scanner.Err(); err != nil {
-        fmt.Println(err)
+        fmt.Println("Kunde inte läsa filen:", err)
         return
     }
 }
-```
 
-Om vi använder en textfil med innehållet "Hej världen!", kommer outputen att bli:
-
-```
-Hej världen!
+// Output:
+// Rad 1
+// Rad 2
+// Rad 3
+// Rad 4
 ```
 
 ## Djupdykning
+För att kunna läsa in mer komplexa textfiler, som till exempel CSV-filer, kan det vara bra att använda sig av paketet `encoding/csv`. Genom att definiera lämpliga fält och inställningar kan vi sedan enkelt läsa in och manipulera data från filen.
 
-För att läsa en fil från en annan källa än filsystemet, som exempelvis en HTTP-förfrågan, kan vi använda "NewReader" funktionen från "bufio" paketet istället för "os.Open". Vi kan också använda "ReadAll" funktionen för att läsa in hela filen på en gång, istället för att läsa en rad i taget.
+```Go
+package main
 
-För att hantera stora filer kan vi använda "Reader" och "Writer" från "io" paketet för att göra läsningen och skrivningen mer effektiv.
+import (
+    "fmt"
+    "os"
+    "encoding/csv"
+)
+
+func main() {
+    // Öppna filen för läsning
+    file, err := os.Open("data.csv")
+    if err != nil {
+        fmt.Println("Kunde inte öppna filen:", err)
+        return
+    }
+    defer file.Close()
+
+    // Skapa en ny Reader för att läsa in filen
+    reader := csv.NewReader(file)
+
+    // Läs in alla rader och skriv ut dem till konsolen
+    records, err := reader.ReadAll()
+    if err != nil {
+        fmt.Println("Kunde inte läsa filen:", err)
+        return
+    }
+
+    for _, record := range records {
+        for _, field := range record {
+            fmt.Print(field, " ")
+        }
+        fmt.Println()
+    }
+}
+
+// Output:
+// Kolumn 1 Kolumn 2 Kolumn 3
+// Kolumn 4 Kolumn 5 Kolumn 6
+```
 
 ## Se även
-
-- [Officiell Go-dokumentation för filhantering](https://golang.org/pkg/os/)
-- [Go By Example - Filhantering](https://gobyexample.com/reading-files)
+- Go Dokumentation: https://golang.org/doc/
+- Gophercises: https://gophercises.com/
+- The Go Blog: https://blog.golang.org/

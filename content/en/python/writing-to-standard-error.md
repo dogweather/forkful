@@ -1,48 +1,46 @@
 ---
 title:                "Python recipe: Writing to standard error"
+simple_title:         "Writing to standard error"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Writing to standard error is an important aspect of Python programming. It allows the program to output error messages and other relevant information to the user instead of just terminating the program. This can help with debugging and providing a better user experience.
+Writing to standard error is a useful practice for Python programmers as it allows for better error handling and debugging in their code. It provides a separate stream for error messages, keeping them separate from regular output.
 
 ## How To
+To write to standard error in Python, we can use the `sys` module and its `stderr` attribute. First, we need to import the `sys` module into our code:
 
-To write to standard error in Python, we use the `sys` module and its `stderr` attribute. We can use the `write()` method to write our desired message, and then use `flush()` to ensure it is immediately displayed to the user.
-
-```
+```Python
 import sys
-sys.stderr.write("This is an error message.\n")
-sys.stderr.flush()
 ```
 
-The output of this code would be:
+Next, we can use the `write()` function on the `stderr` attribute to print our error message:
 
-```
-This is an error message.
+```Python
+sys.stderr.write("An error has occurred!")
 ```
 
-We can also use the `print()` function with the `file` parameter set to `sys.stderr` to achieve the same result. 
+This will print the error message to the standard error stream. We can also include any additional information we want in our error message:
 
+```Python
+sys.stderr.write("An error has occurred: {}".format(error))
 ```
-print("This is another error message.", file=sys.stderr)
-```
+
+In the above example, we are using the `format()` method to include the specific error that occurred in our error message. It is important to note that the `write()` function requires a string as its argument, so we must convert any non-string values using the `str()` function.
 
 ## Deep Dive
+Standard error is part of a concept known as standard streams, which are used for input and output in a program. In Python, there are three standard streams: standard input (stdin), standard output (stdout), and standard error (stderr). These streams allow for the separation and organization of different types of data.
 
-Writing to standard error allows us to differentiate between normal output and error messages. This way, we can provide specific instructions or information for the user to handle the error. It also helps with debugging, as we can view the error messages without interrupting the normal flow of the program.
-
-We can also customize the error messages by including variables or other information in the message. This can provide more context for the error and help with troubleshooting.
-
-It is important to note that writing to standard error does not mean the program has terminated. The user can still interact with the program after viewing the error message. This makes it a more user-friendly approach compared to just terminating the program without any explanation.
+When writing to standard error, it is important to consider the format of the error message. It should be clear and concise, providing relevant information to assist with debugging. Additionally, we can use the `sys.exc_info()` function to get more detailed information about the specific error that occurred. This can be helpful in identifying the root cause of the error and making necessary changes to our code.
 
 ## See Also
+- Official Python Documentation on `sys.stderr`: https://docs.python.org/3/library/sys.html#sys.stderr
+- Tutorial on Standard Streams: https://realpython.com/lessons/standard-input-and-output-stdin-stdout-stderr-python/
+- Article on Error Handling in Python: https://www.pythonforbeginners.com/error-handling/exception-handling-in-python/
 
-- [Python `sys` module documentation](https://docs.python.org/3/library/sys.html)
-- [Python `print()` function documentation](https://docs.python.org/3/library/functions.html#print)
-- [Debugging in Python: Tips and Tricks](https://realpython.com/python-debugging-tips-tricks/)
+Writing to standard error may seem like a small detail, but it can greatly improve the functionality and readability of our code. So the next time you encounter an error in your Python program, remember to use `sys.stderr` and provide clear and informative error messages. Happy coding!

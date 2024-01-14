@@ -1,42 +1,51 @@
 ---
 title:                "Java: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-A concatenação de strings é uma técnica essencial para muitos programadores Java. Com ela, é possível combinar pedaços de texto para criar strings mais complexas e úteis. Mas por que é tão importante dominar essa habilidade? Continue lendo para descobrir!
+## Por que concatenar strings?
 
-## Como Fazer
-Para concatenar strings em Java, usamos o operador "+" ou o método concat(). Vejamos alguns exemplos:
+Concatenar strings é uma habilidade importante para programadores de Java, pois permite a combinação de várias strings em uma única string. Isso pode ser útil em situações em que você precisa criar uma string mais complexa, como na criação de mensagens de saída para o usuário ou na construção de consultas de banco de dados.
 
-``` Java
-String nome = "João";
+## Como fazer
+
+Para concatenar strings em Java, usamos o operador de adição (+) para combinar duas ou mais strings em uma única string. Vamos dar uma olhada em um exemplo:
+
+```java
+String nome = "Maria";
 String sobrenome = "Silva";
-String nomeCompleto = nome + sobrenome; // output: JoãoSilva
-String nomeFinal = nome.concat(" ").concat(sobrenome); // output: João Silva
+String nomeCompleto = nome + " " + sobrenome;
+System.out.println(nomeCompleto);
 ```
 
-Podemos usar também o método StringBuilder para criar strings mutáveis e concatená-las de forma eficiente:
+Nesse exemplo, temos três strings separadas: "Maria", "Silva" e o resultado da concatenação, "Maria Silva". Observamos que usamos o operador de adição entre as strings e também adicionamos um espaço em branco entre o nome e o sobrenome.
 
-``` Java
-StringBuilder frase = new StringBuilder("Eu ").append("amo ").append("programar.");
-// output: Eu amo programar.
+Podemos também usar a classe `StringBuilder` para concatenar strings de maneira mais eficiente, especialmente se estivermos trabalhando com um grande número de strings.
+
+```java
+StringBuilder sb = new StringBuilder();
+sb.append("Hello");
+sb.append(" ");
+sb.append("World");
+String resultado = sb.toString();
+System.out.println(resultado);
 ```
 
-Não se esqueça de usar o método trim() para remover espaços desnecessários ao concatenar strings que contenham espaços.
+Nesse exemplo, primeiro criamos uma instância de `StringBuilder` e depois usamos o método `append()` para adicionar cada string e, finalmente, usamos o método `toString()` para obter a string completa.
 
-## Profundidade de Campo
-Embora possa parecer simples, a concatenação de strings envolve alguns conceitos importantes. Por exemplo, quando usamos o operador "+", estamos na verdade criando um novo objeto String a partir dos objetos que estamos concatenando. Isso pode ser custoso em termos de desempenho, por isso é recomendado usar o método concat() ou o StringBuilder.
+## Mergulho profundo
 
-Também é importante lembrar que a ordem de concatenação é importante. Se precisarmos concatenar muitas strings, é mais eficiente usar o método append() do StringBuilder, uma vez que o Java cria um novo objeto String a cada vez que usamos o operador "+".
+É importante notar que ao concatenar strings, uma nova string é criada a cada iteração, o que pode afetar o desempenho do seu programa se estivermos trabalhando com muitas strings. Portanto, é recomendado o uso de `StringBuilder`, pois ele manipula as strings em sua forma mutável, o que é mais eficiente.
 
-Entender esses detalhes e aplicar as melhores práticas pode otimizar o desempenho do seu código e tornar a concatenação de strings mais eficiente.
+Além disso, é possível utilizar o método `concat()` da classe `String` para concatenar duas strings, mas devemos lembrar que esse método cria uma nova instância de `String` a cada iteração e, portanto, é menos eficiente do que o uso do operador de adição ou `StringBuilder`.
 
-## Veja Também
-- [Documentação oficial do Java sobre concatenação de strings](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
-- [Guia completo sobre a classe StringBuilder](https://www.javatpoint.com/stringbuilder-class)
-- [Vídeo tutorial sobre concatenação de strings em Java](https://www.youtube.com/watch?v=0pTz1Q_G1Ds)
+## Veja também
+- Documentação oficial do Java sobre a classe `StringBuilder`: https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
+- Explicação detalhada sobre concatenação de strings em Java: https://www.geeksforgeeks.org/java-string-concatenation/
+- Tutorial em vídeo sobre uso da classe `StringBuilder`: https://www.youtube.com/watch?v=CvzKxFE0tIk

@@ -1,37 +1,48 @@
 ---
 title:                "PHP: 编写文本文件"
+simple_title:         "编写文本文件"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么会有人编写文本文件？编写文本文件可以让程序员们记录他们的想法、代码和数据。这样做可以方便他们查阅之前的工作，并且也是进行版本控制的一种方式。
+# 为什么要编写文本文件
+  编写文本文件对于一个程序员来说可能是一个非常常见的任务，但是为什么我们要花时间和精力来编写它呢？原因有很多。首先，文本文件是用来存储和传输文本信息的最简单的方法。它是一种通用的格式，可以被几乎所有的程序和操作系统所支持。此外，文本文件也非常容易被程序读取和修改，因此它们在编程中扮演着非常重要的角色。
 
-如何：编写文本文件并不复杂。使用PHP的file_put_contents()函数可以实现。例如，要创建一个名为“example.txt”的文本文件并写入一些内容，只需在代码中添加以下内容：
-
-```PHP
-$file = "example.txt";
-$content = "这是一个示例文本。";
-file_put_contents($file, $content);
-```
-运行这段代码后，就会在同一目录下创建一个名为“example.txt”的文本文件，并将“这是一个示例文本。”写入其中。
-
-深入了解：除了使用file_put_contents()函数外，还可以使用fopen()和fwrite()函数来编写文本文件。首先，使用fopen()函数打开一个文件，然后使用fwrite()函数将内容写入文件中。最后，使用fclose()函数关闭文件。以下是一个示例代码：
+# 如何编写文本文件
+  使用PHP编写文本文件也是非常简单的。以下是一个简单的例子，演示了如何使用PHP将一些文本写入到一个叫做“text.txt”的文件中：
 
 ```PHP
-$file = fopen("example.txt", "w");
-$content = "这是一个示例文本。";
-fwrite($file, $content);
-fclose($file);
+<?php
+  // 打开一个文件，如果不存在则创建一个
+  $file = fopen("text.txt","w+") or die("无法打开文件！");
+
+  // 向文件中写入一些文本
+  $text = "这是一个文本文件，使用PHP编写的。";
+  fwrite($file, $text);
+
+  // 关闭文件
+  fclose($file);
+
+  // 打开文件，读取其中的内容并输出到浏览器
+  $file = fopen("text.txt","r") or die("无法打开文件！");
+  echo fread($file,filesize("text.txt"));
+  fclose($file);
+?>
 ```
 
-查看相关文档：你可以通过阅读PHP官方文档来了解更多有关文本文件的操作方法。另外，你也可以通过以下链接找到一些有用的教程和指南：
+  运行以上代码后，你将在同级目录下找到一个名为“text.txt”的文件，并且它将包含我们所写入的文本。
 
-- [PHP官方文档](https://www.php.net/manual/en/function.file-put-contents.php)
-- [W3Schools PHP文件操作教程](https://www.w3schools.com/php/php_file.asp)
-- [PHP文件操作指南](https://www.php.net/manual/zh/function.fopen.php)
-- [PHP Filesystem Tutorial](https://www.codecademy.com/learn/learn-php/modules/learn-php-modules-iterators-no-loops/cheatsheet)
+# 深入了解文本文件写入
+  当我们使用PHP编写文本文件时，需要注意一些重要的事项。首先，我们需要使用正确的权限来打开和访问文件。通常情况下，如果我们想要修改一个文件，我们需要使用“w+”模式来打开它，如果只是想读取文件，则可以使用“r”模式。其次，我们需要使用适当的编码来保存我们的文本文件，以便它能够被其他程序正确地识别和读取。最后，我们也可以使用PHP中提供的一些更高级的函数来操作文本文件，例如可以通过指定偏移量来定位和截取文件中的内容。
 
-查看其他相关文章：你也许会对其他与编程相关的主题感兴趣。在[我的博客](https://www.example.com)上，你可以找到更多有用的文章和教程。感谢阅读！
+# 参考链接
+* [PHP文本文件写入教程（英文）](https://www.tutorialspoint.com/php/php_files.htm)
+* [PHP文件操作函数（英文）](https://www.php.net/manual/en/ref.filesystem.php)
+* [关于文本编码的介绍（英文）](https://www.w3schools.com/php/php_file_create.asp)
+* [PHP文本文件读取和截取（英文）](https://www.roseindia.net/tutorial/php/phpreadandtrim.html)
+
+# 参考链接

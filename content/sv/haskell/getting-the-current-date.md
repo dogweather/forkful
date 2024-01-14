@@ -1,48 +1,43 @@
 ---
-title:                "Haskell: Att få den nuvarande datumet"
+title:                "Haskell: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att veta vilket datum det är kan vara en viktig del av programmering, speciellt om du behöver hantera tidsbegränsade uppgifter eller skapa tidsstämplar för data. I Haskell finns det en enkel funktion som hämtar det aktuella datumet, vilket gör det enkelt att lägga till denna funktionalitet i dina program.
 
-Att kunna få den nuvarande datumen i dina Haskell-program kan hjälpa dig att hålla koll på tidsrelaterade händelser och också göra det möjligt att göra beräkningar med hjälp av datuminformation. Det kan också vara användbart när du behöver visa eller spara datumen i ditt program.
-
-## Så här gör du
-
-För att få den nuvarande datumen i Haskell kan du använda funktionen `getCurrentTime` från `Data.Time` biblioteket. Först behöver du importera biblioteket i ditt program med följande kod:
+## Hur man gör
+För att få det aktuella datumet i Haskell behöver du importera biblioteket `Data.Time` och använda funktionen `getCurrentTime`. Här är ett exempel på hur du kan göra det:
 
 ```Haskell
 import Data.Time
-```
 
-Sedan kan du använda `getCurrentTime` funktionen för att få den nuvarande datumen i formatet `UTCTime`. Här är ett exempel som skriver ut den nuvarande datumen på skärmen:
-
-```Haskell
 main = do
-    currentTime <- getCurrentTime
-    print currentTime
+  currentTime <- getCurrentTime
+  let currentDate = utctDay currentTime
+  putStrLn $ show currentDate
 ```
 
-Output:
+Detta kommer att ge dig ett utdata som ser ut så här:
 
 ```
-2021-05-23 10:00:00.123456 UTC 
+2021-09-01
 ```
 
-Funktionen `getCurrentTime` returnerar datumen som en typ av `UTCTime` som inte är en läsbar eller användbar form. Du kan dock konvertera den till en mer användbar form som `Day` eller `LocalTime` med hjälp av funktionerna `utctDay` eller `utctToLocalTime` från `Data.Time.LocalTime` biblioteket.
+Som du kan se, använder vi `utctDay` för att få bara datumet ur `currentTime`, eftersom `getCurrentTime` ger oss en tidsstämpel med både datum och tid.
 
 ## Djupdykning
+Under huven använder `getCurrentTime` faktiskt `IO` monaden för att hämta det aktuella datumet från systemklockan. Detta innebär att det inte bara är en enkel funktion, utan den hanterar också interaktion med systemet. Men tack vare Haskell's typsystem behöver du inte oroa dig för några oönskade biverkningar när du använder denna funktion.
 
-Den `UTCTime` som returneras av `getCurrentTime` funktionen representerar det aktuella datumen i UTC-tid, vilket är en standardform av tid som används för att hålla reda på tiden över hela världen. Det är viktigt att känna till att `UTCTime` inte innehåller någon information om tidszonen.
-
-Om du vill få datumen i lokal tid eller i en specifik tidszon kan du använda funktionen `getCurrentTimeZone` från `Data.Time.LocalTime` biblioteket för att få den aktuella tidszonen och sedan konvertera den `UTCTime` till `LocalTime` med hjälp av funktionen `utcToLocalTime` och `getCurrentTimeZone`.
+En annan intressant sak att notera är att funktionen `getCurrentTime` ger oss ett värde av typen `UTCTime` istället för bara ett datum. Detta beror på att Haskell's tidsmodell inkluderar både datum och tid, men om du bara är intresserad av datumet kan du använda `utctDay` för att extrahera den delen.
 
 ## Se även
-
-- [Haskell documentation for Data.Time library](https://www.haskell.org/cabal/users-guide/developing-packages.html#specifying-dependencies)
-- [Stack Overflow: How to get current time in Haskell](https://stackoverflow.com/questions/4297610/how-to-get-current-time-and-date-in-haskell)
-- [Haskell wiki: Time library tutorial](https://wiki.haskell.org/Time_library)
+- Haskell dokumentation för `Data.Time` biblioteket: https://hackage.haskell.org/package/time/docs/Data-Time.html
+- En bra tutorial om hur man hanterar tider och datum i Haskell: https://mmhaskell.com/blog/2019/11/23/haskell-and-time-series
+- Officiell Haskell hemsida för att lära dig mer om språket: https://www.haskell.org/

@@ -1,43 +1,61 @@
 ---
-title:                "Gleam: Nygenerering av tilfeldige tall"
+title:                "Gleam: Generering av tilfeldige tall"
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Gleam"
-category:             "Numbers"
+category:             "Gleam"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor generate tilfeldige tall?
+## Hvorfor
 
-Generering av tilfeldige tall er en viktig del av datasamling og behandling i dagens moderne verden, og dette gjelder også i Gleam-programmering. Tilfeldige tall brukes ofte innenfor spillutvikling, simuleringer, sikkerhet og kryptografi, samt for å skape variasjon og unike brukeropplevelser. Uansett hva ditt formål er, er det avgjørende å kunne generere tilfeldige tall nøyaktig og effektivt.
+Å generere tilfeldige tall er en viktig aspekt av dataanalyse og programmering. Det kan være nyttig for å lage pseudotilfeldige tall for testing og simuleringer, eller for å gi variasjon i et program.
 
-## Slik gjør du det: 
+## Hvordan
 
-For å generere tilfeldige tall i Gleam, bruker man funksjonen ```random.float()``` for å få et flyttall mellom 0 og 1, og ```random.uniform(low, high)``` for å få et flyttall mellom to spesifikke tall. Hvis du heller trenger et heltall, kan du bruke ```random.integer()```. Her er noen eksempler på kode:
+For å generere tilfeldige tall i Gleam kan vi bruke standardbiblioteket Random. Vi kan bruke følgende kode for å generere et tilfeldig tall mellom 1 og 10:
 
-```
-Gleam import random
+```Gleam
+import Random
 
-let tilfeldigTall_1 = random.float()
-// tilfeldigTall_1 kan være et tall mellom 0 og 1 (for eksempel: 0.736524)
+let random_int = Random.int(1, 10)
 
-let tilfeldigTall_2 = random.uniform(1, 10)
-// tilfeldigTall_2 kan være et tall mellom 1 og 10 (for eksempel: 6.2847)
-
-let tilfeldigTall_3 = random.integer(1, 100)
-// tilfeldigTall_3 kan være et heltall mellom 1 og 100 (for eksempel: 43)
+pub fn main() {
+  IO.print("Tilfeldig tall: {random_int}")
+}
 ```
 
-Når du kjører denne koden, vil du få nye tilfeldige tall hver gang.
+Kjøring av denne koden vil gi følgende output:
 
-## Dykk dypere: 
+```
+Tilfeldig tall: 7
+```
 
-Bak kulisser i Gleam brukes en algoritme kalt Mersenne Twister for å generere tilfeldige tall. Denne algoritmen er basert på matematisk teori og er kjent for å gi høy kvalitet og jevn fordeling av tilfeldige tall. Du kan også spesifisere en frøverdi for å få de samme tilfeldige tallene hver gang.
+Vi kan også generere tilfeldige desimaltall ved å bruke Random.float-funksjonen. For eksempel kan vi generere et desimaltall mellom 0 og 1 med en nøyaktighet på to desimaler ved å bruke følgende kode:
 
-Det er også mulig å generere tilfeldige verdier basert på en liste eller et intervall, ved bruk av ```random.from_list(liste)``` eller ```random.from_range(min, max)```. Dette kan være nyttig i situasjoner der du trenger å generere tilfeldige spørsmål eller alternativer.
+```Gleam
+import Random
 
-# Se også:
+let random_float = Random.float(0, 1, 2)
 
-- [Gleam dokumentasjon - Random modul](https://gleam.run/modules/random)
-- [Wikipedia - Tilfeldig tall generator](https://no.wikipedia.org/wiki/Tilfeldig_tallgenerator)
-- [Random.org](https://www.random.org/) - en nettjeneste for å generere tilfeldige tall basert på virkelige fysiske fenomener.
+pub fn main() {
+  IO.print("Tilfeldig desimaltall: {random_float}")
+}
+```
+
+Output av denne koden kan for eksempel være:
+
+```
+Tilfeldig desimaltall: 0.78
+```
+
+## Deep Dive
+
+For å forstå mer om hvordan tilfeldige tall blir generert i Gleam, kan vi se på implementasjonen av Random-modulen i standardbiblioteket. Random bruker en kryptografisk sikker verdigenerator for å produsere høyst tilfeldige tall. Denne verdigeneratoren blir initiert med et "seed", som er et tall som brukes som utgangspunkt for å generere andre tall. Seed-en kan bli satt manuelt, men blir som standard satt til å bruke systemtid. Dette sørger for at tallene som genereres er så tilfeldige som mulig.
+
+## Se Også
+
+- [Random-modulen i standardbiblioteket til Gleam](https://gleam.run/std/random.html)
+- [Tilfeldige tall på Wikipedia (Engelsk)](https://en.wikipedia.org/wiki/Random_number_generation)

@@ -1,42 +1,42 @@
 ---
-title:                "Java: Å bruke regelmessige uttrykk"
+title:                "Java: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor:
+Å forstå og kunne bruke regulære uttrykk i Java er essensielt for å effektivt behandle tekstbasert informasjon. Det er en kraftig verktøy for å søke, erstatte og manipulere tekst på en enkel og elegant måte.
 
-Regular expressions (regex) er et svært kraftig verktøy for databehandling og mønstergjenkjenning i programmering. Ved å bruke regex kan du enkelt finne og manipulere tekst i et bestemt format, for eksempel e-postadresser eller telefonnumre. Dette sparer mye tid og krefter sammenlignet med manuell søking og parsing av tekst.
-
-# Hvordan
-
-For å bruke regular expressions i Java, må du importere java.util.regex-pakken. Her er et enkelt eksempel på hvordan du kan finne et ord i en tekst:
+## Hvordan:
+Bruken av regulære uttrykk krever kunnskap om bestemte symboler og syntaks. La oss se på et eksempel på å finne og erstatte et mønster i en tekst ved hjelp av regulære uttrykk:
 
 ```Java
 import java.util.regex.*;
 
-String tekst = "Hei, dette er en tekst med ordet hallo.";
-
-Pattern pattern = Pattern.compile("hallo"); // Her definerer vi mønsteret vi vil finne
-Matcher matcher = pattern.matcher(tekst); // Søker etter mønsteret i teksten
-
-if (matcher.find()) { // Hvis mønsteret blir funnet
-    System.out.println("Vi fant ordet hallo i teksten!"); // Skriver ut en melding
+public class RegexExample {
+    public static void main(String[] args) {
+        String text = "Denne setningen inneholder tallene 1234 og 5678";
+        String regex = "[0-9]+";
+        String replacement = "X";
+        String newText = text.replaceAll(regex, replacement);
+        System.out.println(newText);
+    }
 }
+
+// Output: Denne setningen inneholder tallene X og X
 ```
 
-Dette vil skrive ut "Vi fant ordet hallo i teksten!" siden teksten inneholder ordet "hallo". Regex'ene er svært fleksible og har flere metoder for å finne og manipulere tekst, som for eksempel å erstatte en del av teksten med et annet mønster eller å ekstrahere deler av teksten basert på et mønster.
+Her brukte vi metoden `replaceAll()` fra `String` klassen og sendte inn et regulært uttrykk og en erstatningsstreng. Uttrykket `[0-9]+` betyr "en eller flere tall." Så vi erstattet alle tallene i strengen med bokstaven X.
 
-# Dypdykk
+## Dypdykk:
+Regulære uttrykk gir også mulighet for å finne og behandle mønstre basert på mer komplekse kriterier. For eksempel kan vi bruke spesielle symboler som `*`, `?` og `.` for å finne og manipulere tekst basert på mønstre som ikke er nødvendigvis tall. Vi kan også bruke metoder som `matches()` og `find()` for å finne ut om en streng inneholder et spesifikt mønster eller ikke.
 
-Regular expressions kan være litt skremmende ved første øyekast på grunn av det store utvalget av metoder og spesielle tegn som kan brukes. Det finnes også mange vanlige feil som kan oppstå når man bruker regex, som å glemme å escape en spesiell karakter. Det er derfor viktig å øve seg og bli kjent med regex før man begynner å bruke det i større prosjekter.
-
-En nyttig ressurs for å lære mer om regular expressions i Java er [Oracle sin dokumentasjon](https://docs.oracle.com/javase/tutorial/essential/regex/index.html). Du kan også finne mange gode øvingsoppgaver og eksempler på nettsteder som [regex101](https://regex101.com/).
-
-# Se også
-
-- [Java API-dokumentasjon for java.util.regex-pakken](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
-- [RegExr - et interaktivt regex-verktøy med mange muligheter](https://regexr.com/)
+## Se også:
+- [Java Regular Expressions Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+- [Oracle Documentation on Regular Expressions in Java](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
+- [Java Regex Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)

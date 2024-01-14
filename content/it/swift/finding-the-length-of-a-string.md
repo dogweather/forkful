@@ -1,64 +1,36 @@
 ---
-title:                "Swift: Trovare la lunghezza di una stringa"
+title:                "Swift: Trova la lunghezza di una stringa"
+simple_title:         "Trova la lunghezza di una stringa"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché 
+## Perché
 
-Trovare la lunghezza di una stringa è una delle operazioni di base che ogni programmatore deve essere in grado di fare. È utile per molte cose, come la validazione dei dati inseriti dagli utenti o la manipolazione di stringhe in una determinata funzione. In questo articolo, esploreremo come trovare la lunghezza di una stringa utilizzando il linguaggio di programmazione Swift.
+Trovare la lunghezza di una stringa è un'operazione comune e fondamentale nella programmazione Swift. Conoscere la lunghezza di una stringa può essere utile in una varietà di situazioni, come la validazione degli input degli utenti o la manipolazione dei dati.
 
-## Come fare
+## Come
 
-Per trovare la lunghezza di una stringa in Swift, utilizzeremo il metodo `count`, che restituisce il numero di caratteri all'interno della stringa. Ad esempio:
-
-```Swift
-let stringa = "Ciao!"
-print(stringa.count)
-```
-
-L'output di questo codice sarà 5, poiché la stringa è composta da 5 caratteri (C, i, a, o, !). Possiamo anche utilizzare il metodo `count` su stringhe vuote o stringhe contenenti soltanto spazi bianchi, ottenendo sempre un risultato pari a 0.
+Per trovare la lunghezza di una stringa in Swift, puoi utilizzare il metodo `count` della classe `String`. Di seguito è riportato un esempio di come utilizzare questo metodo:
 
 ```Swift
-let stringaVuota = ""
-let stringaSpazi = "        "
-print(stringaVuota.count) // Output: 0
-print(stringaSpazi.count) // Output: 0
+let stringa = "Ciao mondo"
+let lunghezza = stringa.count
+print(lunghezza) // output: 10
 ```
 
-È importante notare che questo metodo conta anche gli emoji come un unico carattere, indipendentemente dal numero di code units utilizzate per rappresentarli. Ad esempio, il seguente codice restituirà 1 come output, nonostante l'emoji sia composto da 2 caratteri:
-
-```Swift
-let emoji = "😊"
-print(emoji.count) // Output: 1
-```
-
-Invece, se vogliamo contare il numero di code units, possiamo utilizzare il metodo `unicodeScalars.count` nella seguente maniera:
-
-```Swift
-print(emoji.unicodeScalars.count) // Output: 2
-```
+In questo esempio, abbiamo definito una variabile `stringa` che contiene la stringa "Ciao mondo". Utilizzando il metodo `count`, possiamo ottenere la lunghezza di questa stringa e assegnarla alla variabile `lunghezza`. Infine, possiamo stampare il valore di `lunghezza` e ottenere l'output "10", che è la lunghezza della stringa "Ciao mondo".
 
 ## Deep Dive
 
-Come accennato in precedenza, il metodo `count` conta gli emoji come un unico carattere, anche se possono essere composti da più di una code unit. Questo perché Swift utilizza il formato di codifica UTF-8 per rappresentare le stringhe, il che significa che ogni carattere può essere rappresentato da qualunque numero di code units. Questo può portare a situazioni in cui la lunghezza di una stringa può essere diversa da ciò che ci aspettiamo.
+Esistono diverse altre opzioni per trovare la lunghezza di una stringa in Swift, come il metodo `characters.count` e la proprietà `length`. Inoltre, è importante ricordare che la lunghezza di una stringa può variare a seconda del tipo di carattere utilizzato, poiché alcuni caratteri occupano più di un byte di memoria. Per ulteriori informazioni sulla gestione delle stringhe in Swift, puoi consultare la documentazione ufficiale di Apple.
 
-Un altro aspetto importante da considerare è il fatto che alcuni caratteri, come ad esempio le lettere accentate, vengono rappresentati in UTF-8 utilizzando più di una code unit. Pertanto, quando utilizziamo il metodo `count` su una stringa contenente tali caratteri, otterremo un risultato diverso dal numero di caratteri effettivi all'interno della stringa. Ad esempio:
+## Vedi anche
 
-```Swift
-let frase = "Ciao a tutti!"
-print(frase.count) // Output: 14
-```
-
-Anche se la frase contiene 12 caratteri, la presenza della lettera "à" comporta l'utilizzo di una code unit in più, aumentando la lunghezza totale a 14.
-
-In caso di necessità, possiamo controllare la lunghezza di una stringa in base al numero di caratteri effettivi utilizzando il metodo `characters.count`, che elimina le code units aggiuntive utilizzate per rappresentare alcuni caratteri speciali.
-
-## Vedere anche
-
-- [Official Documentation for String.count in Swift](https://developer.apple.com/documentation/swift/string/2999974-count)
-- [Swift Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Working with Strings in Swift](https://www.hackingwithswift.com/sixty/2/1/working-with-strings-in-swift)
+- [Documentazione Apple su Stringhe](https://developer.apple.com/documentation/swift/string)
+- [Tutorial su Stringhe in Swift](https://www.raywenderlich.com/ios/learn-swift-4-string-cheat-sheet)
+- [Domande frequenti sulla lunghezza delle stringhe in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-measure-the-length-of-a-string)

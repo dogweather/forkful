@@ -1,7 +1,9 @@
 ---
 title:                "Kotlin: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/using-regular-expressions.md"
 ---
 
@@ -9,50 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Har du noen gang skrevet en lang og komplisert kode for å finne et spesifikt mønster i en streng? Vel, da vil du sannsynligvis dra nytte av å bruke regulære uttrykk. Ved å bruke regulære uttrykk kan du enkelt søke etter mønstre i en streng, noe som gjør koden din mer effektiv og lesbar.
+Å bruke regulære uttrykk kan bidra til å gjøre programmering mer effektivt og mindre tidkrevende. Ved å bruke regulære uttrykk kan vi enklere søke og manipulere tekster basert på mønstre, istedenfor å måtte bruke lange og komplekse kodeblokker for å oppnå det samme resultatet.
 
 ## Hvordan
 
-For å bruke regulære uttrykk i Kotlin, må du først importere Regex-biblioteket ved å legge til denne kodelinjen øverst i filen din:
+For å bruke regulære uttrykk i Kotlin, kan vi bruke den innebygde klassen `Regex`. For å søke etter et bestemt mønster i en tekst, kan vi bruke funksjonen `find()` og for å erstatte et mønster med en annen tekst, kan vi bruke `replace()`.
+
+Eksempel:
 
 ```Kotlin
-import kotlin.text.Regex
+
+val tekst = "Hei! Jeg elsker å kode i Kotlin"
+val mønster = Regex("kode")
+val funnet = mønster.find(tekst)
+println(funnet?.value) // vil skrive ut "kode"
+
+val erstattettekst = mønster.replace(tekst, "programmere")
+println(erstattettekst) // vil skrive ut "Hei! Jeg elsker å programmere i Kotlin"
 ```
-
-Deretter kan du bruke Regex-klassen til å opprette et regulært uttrykk ved å bruke metoden `Regex(pattern: String)`. Her er et eksempel:
-
-```Kotlin
-val regex = Regex("[A-Za-z]+")
-```
-
-I dette eksemplet lager vi et regulært uttrykk som matcher en kombinasjon av store og små bokstaver i en streng. Nå kan vi bruke dette uttrykket til å søke etter mønstre i en annen streng ved hjelp av `find()`-metoden:
-
-```Kotlin
-val string = "Dette er en tekst med noen ord."
-val match = regex.find(string)
-```
-
-Dette vil returnere et `MatchResult?`-objekt som inneholder informasjon om den første forekomsten av mønsteret i strengen. For å få tilgang til selve teksten, kan du bruke `value`-egenskapen:
-
-```Kotlin
-match?.value // Dette vil returnere "Dette"
-```
-
-Du kan også bruke `findall()`-metoden for å få en liste over alle forekomster av mønsteret i strengen.
-
 ## Dypdykk
 
-Regulære uttrykk kan være ganske komplekse, og det er umulig å dekke alt i denne korte artikkelen. Men her er noen tips for å hjelpe deg i gang:
+Regulære uttrykk har et rikt utvalg av metoder og operatører som kan hjelpe oss med å søke og manipulere tekster på en enkel og effektiv måte. Noen av de vanligste inkluderer:
 
-- Bruk `.` for å matche et hvilket som helst tegn.
-- Bruk `*` og `+` for å matche tegn som forekommer 0 eller flere ganger, eller 1 eller flere ganger.
-- Bruk `[]` for å matche et hvilket som helst tegn som er inkludert i parentesene.
-- Kombiner disse symbolene for å lage mer komplekse mønstre.
+- `find()`: brukes til å finne et mønster i en tekst og returnerer det første treffet.
+- `findAll()`: brukes til å finne alle treff på et gitt mønster i en tekst og returnerer en liste over alle treffene.
+- `replace()`: brukes til å erstatte et mønster med en annen tekst.
+- `split()`: brukes til å dele en tekst basert på et gitt mønster og returnerer en liste over de delte delene.
 
-Det er også viktig å merke seg at regulære uttrykk er casesensitive, så vær forsiktig med hvordan du bruker store og små bokstaver.
+For mer informasjon om hvordan du bruker regulære uttrykk i Kotlin, kan du se dokumentasjonen på Kotlin-streams [her](https://kotlinlang.org/docs/sequences.html#regular-expressions).
 
-## Se Også
+## Se også
 
-- [Kotlin Regular Expressions Guide](https://kotlinlang.org/docs/regular-expressions.html)
-- [Regex Tester](https://regex101.com/) (for å teste ut regulære uttrykk)
-- [Tutorial for Using Regular Expressions in Kotlin](https://www.javacodegeeks.com/2018/07/regular-expressions-kotlin-usage-guide-tutorial.html)
+[Offisiell Kotlin-dokumentasjon](https://kotlinlang.org/docs/reference/regular-expressions.html)
+[Tutorial: Bruke regulære uttrykk i Kotlin](https://www.baeldung.com/kotlin-regex)

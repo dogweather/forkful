@@ -1,40 +1,40 @@
 ---
-title:                "Fish Shell: Utiliser des expressions régulières"
+title:                "Fish Shell: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+#Pourquoi
 
-Si vous travaillez avec des chaînes de caractères dans votre code, il est probable que vous ayez rencontré des situations où vous deviez trouver et manipuler des motifs spécifiques dans ces chaînes. Les expressions régulières peuvent être un outil puissant pour accomplir cette tâche.
+L'expression régulière peut sembler intimidante pour les débutants en programmation, mais elle peut grandement faciliter la manipulation de chaînes de caractères. En utilisant l'expression régulière dans Fish Shell, vous pouvez rechercher, extraire et remplacer des motifs de texte spécifiques, ce qui vous permet de gagner du temps et d'automatiser certaines tâches.
 
-## Comment faire
+#Comment faire
 
-Les expressions régulières sont des séquences spéciales de caractères qui représentent des modèles que l'on veut trouver dans une chaîne de caractères. Dans Fish Shell, vous pouvez utiliser les expressions régulières en utilisant la commande "grep".
+```Fish Shell
+#Rechercher un mot spécifique dans une chaîne de caractères
+set string "Bonjour le monde!"
+echo $string | grep 'Bonjour'
 
-Par exemple, si vous voulez trouver toutes les occurrences de "fish" dans une chaîne, vous pouvez utiliser la commande suivante :
-
-```
-Fish Shell grep "fish" texte.txt
-```
-
-Cela recherchera et affichera toutes les lignes de "texte.txt" qui contiennent le mot "fish". Vous pouvez également utiliser des symboles spéciaux comme "*" pour représenter plusieurs caractères ou "?" pour représenter un seul caractère.
-
-## Plongée profonde
-
-En plus d'utiliser les expressions régulières pour trouver des motifs spécifiques, vous pouvez également les utiliser pour remplacer ou modifier des parties de chaînes de caractères. Par exemple, si vous voulez remplacer toutes les occurrences de "fish" par "shell" dans une chaîne, vous pouvez utiliser la commande "sed" avec une expression régulière :
-
-```
-Fish Shell sed -i "s/fish/shell/g" texte.txt
+#Remplacer un motif de texte par un autre
+set string "Bonjour le monde!"
+echo $string | sed 's/Bonjour/Hello/'
 ```
 
-Cela remplacera toutes les occurrences de "fish" par "shell" dans "texte.txt". Vous pouvez également combiner plusieurs expressions régulières pour créer des motifs plus complexes pour vos recherches et remplacements.
+Dans cet exemple, nous définissons une variable "string" avec la valeur "Bonjour le monde!". En utilisant la commande "grep", nous pouvons rechercher le mot "Bonjour" dans notre chaîne de caractères et l'afficher en sortie. Ensuite, en utilisant la commande "sed", nous pouvons remplacer "Bonjour" par "Hello" dans notre chaîne de caractères et l'afficher en sortie.
 
-## Voir aussi
+#Plongée en profondeur
 
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutoriel d'expressions régulières en français](https://openclassrooms.com/fr/courses/1567291-programmez-en-oriente-objet-en-php/1567593-les-expressions-regulieres)
-- [Documentation officielle de grep](https://www.gnu.org/software/grep/manual/grep.html)
+Les expressions régulières dans Fish Shell sont basées sur le moteur d'expressions régulières de Perl. Cela signifie qu'il existe une grande variété de motifs de recherche et de remplacement que vous pouvez utiliser, tels que les métacaractères, les quantificateurs et les classes de caractères.
+
+Il est également possible de créer des expressions régulières avancées en combinant plusieurs motifs de recherche ou en utilisant des fonctions intégrées à Fish Shell telles que "string match".
+
+#Voir aussi
+
+- [Documentation Fish Shell sur les expressions régulières] (https://fishshell.com/docs/current/index.html#regular-expressions)
+- [Tutoriel sur les expressions régulières pour débutants] (https://regexone.com/)
+- [Cheat sheet pour les expressions régulières en Fish Shell] (https://cheatography.com/fish-shell/cheat-sheets/regular-expressions-in-fish-shell/)

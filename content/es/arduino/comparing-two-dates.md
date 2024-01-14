@@ -1,49 +1,46 @@
 ---
 title:                "Arduino: Comparando dos fechas"
+simple_title:         "Comparando dos fechas"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-La comparación de dos fechas es una habilidad útil en la programación, ya que nos permite realizar acciones basadas en la fecha actual o calcular la diferencia entre dos fechas. Esto puede ser útil en proyectos como sistemas de registro de tiempo o recordatorios de eventos.
+## ¿Por qué comparar dos fechas en Arduino?
+
+Comparar dos fechas puede ser útil en varios proyectos de Arduino, como por ejemplo en un controlador de riego que necesita saber si ha pasado determinado tiempo desde la última vez que se regó una planta. También puede ser útil en proyectos que necesiten activar ciertas funciones en fechas específicas, como por ejemplo un calendario con recordatorios.
 
 ## Cómo hacerlo
-Para comparar dos fechas en Arduino, primero debemos crear dos objetos del tipo `DateTime`. Estos objetos contienen la información de la fecha y hora actual. Luego, podemos utilizar los métodos `year()`, `month()`, `day()`, `hour()` y `minute()` para obtener las diferentes partes de la fecha y compararlas.
+
+Para comparar dos fechas en Arduino, necesitaremos utilizar las funciones proporcionadas por la librería "DateTime". Esta librería permite crear objetos de tipo "DateTime" que podemos utilizar para almacenar y comparar fechas. En el código a continuación, crearemos dos objetos de tipo "DateTime" y utilizaremos el operador "==" para comparar si son iguales. En este ejemplo, imprimiremos "Son iguales" si las fechas son iguales, y "Son diferentes" si no lo son.
 
 ```Arduino
-DateTime fecha1 = DateTime(2021, 8, 15, 18, 30); // Crear objeto DateTime con fecha y hora específicas
-DateTime fecha2 = DateTime(); // Crear objeto DateTime con la fecha y hora actual
+#include <DateTime.h>
 
-// Obtener la diferencia entre los años de las dos fechas
-int diferenciaAnios = fecha1.year() - fecha2.year();
+DateTime fecha1 = DateTime(2021, 10, 5);
+DateTime fecha2 = DateTime(2021, 10, 5);
 
-// Obtener la diferencia entre los meses de las dos fechas
-int diferenciaMeses = fecha1.month() - fecha2.month();
+if (fecha1 == fecha2) {
+  Serial.println("Son iguales");
+} else {
+  Serial.println("Son diferentes");
+}
 
-// Obtener la diferencia entre los días de las dos fechas
-int diferenciaDias = fecha1.day() - fecha2.day();
-
-// Imprimir la diferencia entre las dos fechas
-Serial.print("La diferencia entre las dos fechas es: ");
-Serial.print(diferenciaAnios);
-Serial.print(" años, ");
-Serial.print(diferenciaMeses);
-Serial.print(" meses y ");
-Serial.print(diferenciaDias);
-Serial.println(" días.");
 ```
 
-El resultado en el monitor serial sería: `La diferencia entre las dos fechas es: 0 años, 0 meses y -2 días.` Esto nos indica que la segunda fecha es dos días antes que la primera.
+Si subimos este código al Arduino y abrimos el monitor serial, veremos que imprime "Son iguales", ya que ambas fechas son 5 de octubre de 2021.
 
-## Profundizando
-La comparación de fechas puede ser más compleja si queremos tener en cuenta otros factores como años bisiestos o zonas horarias. Para lidiar con años bisiestos, podemos utilizar el método `isLeapYear()` para verificar si un año es bisiesto y ajustar la diferencia de días en consecuencia.
+## Profundizando en la comparación de fechas
 
-Además, es importante tener en cuenta que los objetos `DateTime` en Arduino utilizan la zona horaria GMT (Greenwich Mean Time). Por lo tanto, si estamos en una zona horaria diferente, debemos ajustar las fechas y horas en consecuencia antes de realizar la comparación.
+Para poder comparar fechas de manera efectiva, es importante tener en cuenta que el formato de fecha utilizado por la librería "DateTime" es el siguiente: año/mes/día. Esto significa que si queremos comparar fechas anteriores al año 2000, debemos especificar el año con cuatro dígitos.
+
+Además, también es importante tener en cuenta que la hora y los segundos no afectan a la comparación de fechas. Esto significa que si tenemos dos fechas con el mismo día, mes y año, pero con horas y/o segundos diferentes, el resultado de la comparación seguirá siendo "Son iguales".
 
 ## Ver también
-- Documentación oficial de la librería DateTime: https://github.com/PaulStoffregen/DateTime
-- Ejemplos de uso de DateTime en proyectos de Arduino: https://create.arduino.cc/projecthub/projects/tags/date-time
-- Tutorial sobre la comparación de fechas en Arduino: https://www.electroschematics.com/comparing-dates-and-time-with-arduino/
+
+- [Documentación de la librería "DateTime" en Arduino](https://www.arduino.cc/reference/es/libraries/datetime/)
+- [Ejemplos de uso de la librería "DateTime" en Arduino](https://www.arduino.cc/en/Tutorial/DateTimeComparison)
+- [Tutoriales sobre proyectos de Arduino con control de fechas](https://randomnerdtutorials.com/tag/date-and-time/)

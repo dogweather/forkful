@@ -1,29 +1,46 @@
 ---
 title:                "Javascript: अस्थायी फाइल बनाना"
+simple_title:         "अस्थायी फाइल बनाना"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-**क्यों:** टेम्पररी फाइल बनाने का काम ज़्यादातर उन स्थितियों में किया जाता है जब विशेष डाटा या फंक्शन को प्रोग्राम में अस्थाई तौर पर संग्रहीत करने की जरूरत होती है।
+"Kyu: Temporary File create karne ka kya fayda hai?"
 
-**कैसे करें:** टेम्पररी फाइल बनाने के लिए आपको `fs` नामक मॉड्यूल का उपयोग करना होगा। यहाँ प्रोग्राम में एक सादे से उदाहरण दिया गया है:
+Temporary files, jaise ki naam se bhi pata chalta hai, kuch samay ke liye hi bante hai aur unka upyog baad mein khatam ho jata hai. Temporary files create karne ka sabse bada karan hai memory management. Jab hum koi bada kaam karte hai, jaise ki photo editing ya video editing, toh hume temporary files ka use karke apni memory ko conserve karna padhta hai. Isse humare computer ki performance aur speed mein bhi behad farak padhta hai.
+
+"Kaise Kare: Temporary File ka upyog kaise kare?"
+
+Temporary files ko create aur access karne ke liye hum Javascript language ka use kar sakte hai. Niche diye gaye code block mein diye gaye code se aap asani se temporary file ko create aur access kar sakte hai. 
 
 ```Javascript
-const fs = require('fs');
-fs.writeFile('temp_file.txt', 'यह एक टेस्ट फ़ाइल है।', (err) => {
-  if (err) throw err;
-  console.log('टेम्पररी फ़ाइल बनाई गई है।');
-});
+//Temporary file create karna
+var fs = require('fs'); // 'fs' module ko import karna
+var tempFile = fs.createWriteStream('temporaryfile.txt'); //'temporaryfile.txt' naam ka file create karna
+tempFile.write('Yeh temporary file hai.'); //file mein text likhna
+//Temporary file access karna
+var tempFile = fs.readFileSync('temporaryfile.txt').toString(); //'temporaryfile.txt' file ko padhkar string mein convert karna
+console.log(tempFile); //file mein likhe gaye text ko console mein print karna
 ```
 
-यदि आप फ़ाइल में डेटा को अपडेट करना चाहते हैं तो आप `fs.appendFile()` का उपयोग कर सकते हैं। अधिक जानकारी के लिए आप `fs` मॉड्यूल की आधिकारिक दस्तावेज़ीकरण की जाँच कर सकते हैं।
+Output: ```Yeh temporary file hai.```
 
-**डीप डाइव:** टेम्पररी फाइल बनाने के बारे में अधिक जानकारी के लिए, आप इन फाइलों को कहाँ स्थानांतरित किया जाता है या किस प्रकार के नाम और पर्मिशन उन्हें दिए जाते हैं आदि के बारे में भी सीख सकते हैं। ये फाइलें अस्थाई होती हैं और जब आप काम समाप्त हो जाता है तो इन्हें हटा दिया जाता है। प्रोग्रामर्स अक्सर टेम्पररी फाइलों को डीबग करने में भी उपयोग करते हैं।
+"Khwabon ki Khaatir: Temporary Files par gehri jankari"
 
-##See Also
+Temporary files ko create karne ke liye do tarah ke functions hote hai: ```createWriteStream()``` aur ```createReadStream()```. ```createWriteStream()``` function hume temporary file ko write karne ki permission deta hai jabki ```createReadStream()``` function hume temporary file ko read karne ki permission deta hai. Temporary files ko create karne ke baad hume unhe delete kar dena zaruri hai. Iske liye hum ```fs.unlinkSync()``` function ka use kar sakte hai. 
 
-- [फल-फूलों का सहारा: Node.js मॉड्यूल और उनका प्रयोग](https://medium.com/@devnoor/node-js-module-explained-callbacks-and-async-ab8d37b7e860)
-- [टेम्पररी फाइल के लिए fs मॉड्यूल की
+Temporary files create karne mein hume ```fs.writeFile()``` function bhi use kar sakte hai. Isme hum parameter ke taur par ek callback function pass karte hai jo temporary file create karne ke baad execute hota hai. 
+
+Jaise ki temporary files ka istemal memory management ke liye hota hai, isse humara computer ya device faster aur efficient ho jata hai. Lekin agar hum temporary files ko sahi se manage na karein toh yeh hamare computer ke liye samasyao ka karan bhi ban sakte hai.
+
+Ab aap temporary files ke bare mein gehri jankari rakhte hai aur unhe create aur access kar sakte hai.
+
+"See Also:"
+
+- [Javascript File System Module Documentation](https://nodejs.org/api/fs.html)
+- [How to Manage Temporary Files in Nodejs](https://medium.com/@kevinhsueh/how-to-manage-temporary-files-in-nodejs-9125b551ed68)
+- [Why Temporary Files are Important for Memory Management](https://www.techpakistan.org/2018/05/05/temporary-files-importance-for-memory-management/)

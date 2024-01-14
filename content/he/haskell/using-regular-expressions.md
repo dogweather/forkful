@@ -1,36 +1,34 @@
 ---
 title:                "Haskell: שימוש בביטויים רגילים"
+simple_title:         "שימוש בביטויים רגילים"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-כתיבת פתרונות בתסריטים רגילים או Regular Expressions היא כלי חזק ומועיל לפתירת בעיות במידע טקסטואלי. יישומים שונים משתמשים בביטויים אלה בכדי למצוא, להחליף או לאתחל מחרוזות מסוימות בתוך מידע גדול ומגוון.
+מהי מניפולציית ביטויים רגילים (`regular expressions`) ולמה כדאי להשתמש בהן? מניפולציית ביטויים רגילים היא כלי חזק ומאוד נפוץ בתכנות, המשמש לחיפוש וסינון טקסט באופן מתוחכם. השימוש במניפולציית ביטויים רגילים עזר לי אישית בפתרון הרבה בעיות בתכנות ולכן אני ממליץ לאפשרויות בחיפוש טקסט.
 
-# איך לעשות זאת
+## איך לעשות זאת?
 
-באמצעות שפת התכנות Haskell ניתן ליצור באופן פשטני ביטויים רגילים כדי לבצע חיפושים והחלפות בטקסט. למשל, ניתן להשתמש בפונקציות כמו `match` ו- `substitute` כדי למצוא או להחליף מחרוזות מסוימות בתוך מחרוזת אחת או יותר. הנה דוגמא להעברת המחרוזת "Hello" ל-"Goodbye" באמצעות Regular Expression:
-
+נתחיל בקצת התמונת הכוללת ואחר כך נשים לב לדבר קצת יותר בעומק. נתחיל בהסבר מהו פונקציית הבנייה `\[\^\w].` המשמשת למציאת כל מילה המתחילה עם אות לא-של ספריתי: 
 ```Haskell
-import Text.Regex.Posix
-
-main = do
-    let myString = "Hello, my friend!"
-    let newString = subRegex (mkRegex "Hello") myString "Goodbye"
-    putStrLn newString
+Prelude> let str = "Hello מה נשמע"
+Prelude> str 
+"Hello מה נשמע"
+Prelude> :t str
+str :: [Char]
+Prelude> let pattern = "\\B[^\w]."
+Prelude> str =~ pattern :: Bool
+True
 ```
-פלט: Goodbye, my friend!
 
-# מעמד עמוק
+בקוד הנ"ל אנו משתמשים בפונקציה `=~` כדי לבדוק אם המחרוזת `str` מכילה את המניפולצייה שכתבנו בעזרת המשתנה `pattern`. כפי שאנו רואים, המניפולצייה מתאימה למילה "מה" המתחילה עם רווח לפני. ניתן גם להשתמש במניפולצייה זו עם יותר מקודמות ומצבי פיצ'רים שונים בגדלי המחרוזת המצויים בפתחים והסופיים של הערכים.
 
-השתמשו בכלי החזק הזה בקשר עם פתרונות ניתוח והחלפת תבניות על קבצי טקסט מורכבים יותר. באמצעות פתרונות שנכתבו בשפת Haskell, אפשר לפתור בעיות רבות בכתיבה וניתוח של נתונים טקסטואליים מגוונים. היכולת לבצע חיפושים והחלפות בקבצים גדולים מאפשרת עיבוד מהיר יותר ויעילות יותר של המידע.
+## חפירה עמוקה
 
-# ראו גם
-
-- [רקורסיה ב-Haskell](https://www.geeksforgeeks.org/recursion-in-haskell/)
-- [מדריך לכתיבת פתרונות בתסריטים רגילים בשפת Haskell](https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex-Base.html)
-- [ניתוח טקסט בHaskell](https://www.stackbuilders.com/tutorials/haskell/parsing-numeric-expressions-using-parsing-combinators-in-haskell/)
+מניפולציית ביטויים רגילים היא כלי אישי נהדר ומאוד מומלץ להכין תוכנה שנייה ביותר תרחישי פראינל תחנתטית. היא מאפיינת כל מלוטשיות מלאה של השפה ותמיד תמצא כתרבות בינלוא פרוייקטים משונתים. חלק מסגנון התוכנה הוא יכ

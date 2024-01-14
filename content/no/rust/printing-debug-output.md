@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Utskrift av feilsøkingsutdata"
+title:                "Rust: Utskrift av feilutdata"
+simple_title:         "Utskrift av feilutdata"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/printing-debug-output.md"
 ---
 
@@ -9,62 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å printe ut feilsøkingsutskrift er en viktig del av programmering. Det lar deg se hva som skjer i koden din og finne ut av eventuelle feil eller problemer som oppstår. Dette kan spare deg for mye tid og frustrasjon når du jobber med større og mer komplekse prosjekter.
+Det å printe ut debug-utdata er en viktig del av enhver programmeringsprosess. Det lar deg se hvordan koden din fungerer, feilsøke eventuelle problemer og forbedre ytelsen. Derfor er det viktig å ha god forståelse av hvordan du gjør dette i Rust.
 
 ## Hvordan
 
-Det er ganske enkelt å printe ut feilsøkingsutskrift i Rust ved hjelp av makroen "println!". Denne makroen tar imot en streng som argument og skriver det ut på skjermen. Her er et eksempel på hvordan du kan bruke den i koden din:
+Så hvordan printer du ut debug-utdata i Rust? La oss se på et enkelt eksempel:
+
+```Rust 
+fn main() {
+    let num1 = 10;
+    println!("Dette er verdien til num1: {}", num1);
+}
+```
+
+I dette eksempelet bruker vi `println!` macroen til å printe ut verdien til variabelen `num1`. Macroer i Rust er en kraftig måte å generere kode på, og `println!` gjør det enkelt å printe ut tekst og verdier i konsollen.
+
+Du kan også bruke `format!` macroen for å lage en tekststreng med verdier, og deretter printe denne.
 
 ```Rust
-let navn = "Per";
-let alder = 30;
+fn main() {
+    let num1 = 10;
+    let num2 = 5;
+    let string = format!("Summen av num1 og num2 er {}", num1 + num2);
 
-println!("Navnet mitt er {} og jeg er {} år gammel", navn, alder);
+    println!("{}", string);
+}
 ```
 
-Dette vil skrive ut følgende:
+Dette vil printe ut: "Summen av num1 og num2 er 15".
 
-```
-Navnet mitt er Per og jeg er 30 år gammel
-```
+Det er også mulig å bruke `eprint!` og `eprintln!` macroene for å printe ut debug-utdata til standard error i stedet for standard output.
 
-Du kan også bruke "format!"-makroen for å formatere output på en mer spesifikk måte. Denne makroen fungerer på samme måte som "println!"-makroen, med unntak av at den ikke skriver ut noe på skjermen. I stedet returnerer den en formatert streng som du kan skrive ut ved hjelp av "println!"-makroen. Her er et eksempel på hvordan du kan bruke den:
+## Deep Dive
 
-```Rust
-let tall = 10;
-let kvadrat = format!("{} * {} = {}", tall, tall, tall * tall);
+Nå som vi har sett på noen eksempler på hvordan du kan printe ut debug-utdata i Rust, la oss dykke litt dypere inn i konseptet.
 
-println!("{}", kvadrat);
-```
+En viktig ting å huske på er at Rust ikke tillater deg å printe ut data som ikke implementerer `std::fmt::Display` traiten. Dette betyr at du ikke kan printe ut f.eks. en struct uten å først implementere dette traitet for den.
 
-Dette vil skrive ut følgende:
+I tillegg til `println!` og `format!` macroene, har Rust også en `dbg!` macro som lar deg printe ut verdien til en variabel og samtidig returnere denne verdien. Dette kan være nyttig for debugging av komplekse kodebaser.
 
-```
-10 * 10 = 100
-```
+Du kan også bruke `dbg!` macroen til å printe ut informasjon om en variabel når du kjører koden med `cargo run --release`. Dette kan være nyttig for å sammenligne ytelsen til kode som kjøres i utviklingsmodus og produksjonsmodus.
 
-## Dypdykk
+## Se Også
 
-Mens "println!"-makroen er nyttig for å raskt å printe ut feilsøkingsutskrift, er det også noen andre måter å gjøre det på i Rust. En av disse er "dbg!"-makroen, som både skriver ut verdien og returnerer den. Dette er spesielt nyttig for å sjekke verdien av en variabel midt i en kjede av metoder eller funksjoner. Her er et eksempel på hvordan du kan bruke den:
-
-```Rust
-let tall = 10;
-let dobbelt = tall * 2;
-let kvadrat = dbg!(dobbelt * 2);
-
-println!("{}", kvadrat);
-```
-
-Dette vil skrive ut følgende:
-
-```
-20
-```
-
-I tillegg til å bruke makroer, kan du også bruke "eprintln!"-makroen for å skrive til standard feilstrøm, i stedet for standard utstrøm. Dette kan være nyttig når du vil skrive ut feilmeldinger eller andre typer output som skal skille seg fra vanlig output. Du kan også bruke "dbg!(""-makroen for å skrive feilsøkingsutskrift direkte til standard feilstrøm.
-
-## Se også
-
-- [Offisiell Rust dokumentasjon for feilsøkingsutskrift](https://doc.rust-lang.org/std/macro.println.html)
-- [Rust By Example - Printing output](https://doc.rust-lang.org/rust-by-example/hello/print.html)
-- [Rust Book - Printing output](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html#printing-values-with-println-and-string-interpolation)
+- [Rust By Example: Formatting](https://doc.rust-lang.org/stable/rust-by-example/hello/print/fmt.html)
+- [Rust Reference: Printing output](https://doc.rust-lang.org/reference/macros.html#printing)
+- [Rust Cookbook: Debugging and Logging](https://rust-lang-nursery.github.io/rust-cookbook/development_tools/debugging.html)

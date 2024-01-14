@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Skriving av tester"
+title:                "Clojure: Skriver tester"
+simple_title:         "Skriver tester"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/writing-tests.md"
 ---
 
@@ -9,34 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive tester er en viktig del av enhver programmerers verktøykasse. Det hjelper deg å oppdage feil tidligere, sikre at koden din fungerer som forventet og bidra til å opprettholde en sunn kodebase. Det er også en god praksis å skrive tester i et språk som Clojure, da det gjør det enklere å isolere og teste funksjonene dine.
+Testdrevet utvikling (TDD) er en utviklingsmetodikk som fokuserer på å skrive tester før selve implementeringen av koden. Dette kan virke motintuitivt, men det bidrar til å forbedre kvaliteten på koden og øker sannsynligheten for at koden fungerer som den skal.
 
 ## Hvordan
 
-For å skrive tester i Clojure, kan du bruke biblioteket ```clojure.test```. Først må du importere det i din Clojure-fil med ```(:require [clojure.test :refer :all])```. Deretter kan du definere en test ved å bruke makroen ```deftest```. For eksempel:
-
 ```Clojure
-(deftest addition-test
-  (is (= (+ 2 2) 4)))
+(defn add [a b]
+  (+ a b))
 ```
 
-Dette definerer en test med navnet "addition-test" som bruker funksjonen ```is``` til å sammenligne resultatet av ```(+ 2 2)``` med 4. For å kjøre denne testen, kan du bruke makroen ```run-tests```:
+Dette er et enkelt eksempel på en funksjon som legger sammen to tall i Clojure. For å skrive en test for denne funksjonen, kan vi bruke biblioteket `clojure.test` og definere en testfunksjon som sjekker om funksjonen returnerer riktig resultat:
 
 ```Clojure
-(run-tests)
+(require '[clojure.test :refer :all])
+
+(deftest test-addition
+  (is (= 3 (add 1 2))))
 ```
 
-Dette vil kjøre alle testene i filen din og gi deg resultatet. Hvis testen din lykkes, vil du se en melding som sier "Ran 1 test. All tests passed." Hvis testen din feiler, vil du få en feilmelding som gir deg informasjon om hvorfor testen ikke passerte.
+Når vi kjører denne testen, vil vi se at den passerer. Men hva skjer hvis vi endrer funksjonen slik at den returnerer feil resultat?
+
+```Clojure
+(defn add [a b]
+  (- a b))
+```
+
+Nå vil testen feile, og vi må rette opp i feilen før vi kan fortsette å utvikle koden vår. Dette viser hvorfor det er viktig å skrive tester før implementeringen av koden, slik at vi kan fange eventuelle feil tidlig og unngå å introdusere feil senere i utviklingsprosessen.
 
 ## Dypdykk
 
-Når du skriver tester, er det viktig å tenke på kanttilfeller. For eksempel kan du teste hva som skjer når du gir funksjonen din ugyldig input, eller når du prøver å dele på null. Dette vil bidra til å sikre at koden din håndterer disse tilfellene på en riktig måte.
+Å skrive gode tester kan ta tid og kreve mye tankearbeid, men det er vel verdt innsatsen. Det er viktig å tenke på kanttilfellene og sikre at alle mulige scenarioer er dekket av testene våre. Det kan også være lurt å bruke funksjonelle konstruksjoner som for eksempel generative testing for å øke testdekningen vår.
 
-Du kan også bruke funksjonen ```testing``` for å gruppere relaterte tester sammen. Dette gjør det enklere å organisere og lese testkoden din.
-
-Clojure har også andre nyttige testbiblioteker som ```clojure.test.check``` og ```midje```. Det kan være lurt å undersøke disse for å se om de passer bedre til dine spesifikke behov.
+Det kan også være en god idé å følge prinsipper som for eksempel "Arrange, Act, Assert" og "One Assertion Per Test" for å skrive mer strukturerte og lesbare tester.
 
 ## Se også
-- [Clojure Dokumentasjon for test](https://clojure.org/guides/learn/testing)
-- [En guide til Clojure test](https://www.vikingcodeschool.com/clojure/testing-clojure-code)
-- [Clojure.test API-dokumentasjon](https://clojuredocs.org/clojure.test)
+
+- [Clojure.test dokumentasjon](https://clojure.github.io/clojure/clojure.test-api.html)
+- [Clojure for the Brave and True](https://www.braveclojure.com/testing/)
+- [The Rationale Behind Test-Driven Development](https://www.thoughtworks.com/insights/blog/rationale-behind-test-driven-development)

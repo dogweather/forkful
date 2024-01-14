@@ -1,65 +1,44 @@
 ---
-title:                "Ruby: 开启一个新项目"
+title:                "Ruby: 开始一个新项目"
+simple_title:         "开始一个新项目"
 programming_language: "Ruby"
-category:             "Getting Started"
+category:             "Ruby"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么：在开始一个新项目时，人们为什么会参与其中？
 
-毋庸置疑，编程是当今世界中非常重要的技能之一。而学习一门编程语言，比如Ruby，就是掌握这项技能的第一步。开始一个新的项目，不仅能够帮助你提升编程能力，也能够锻炼你的解决问题的能力，为将来的职业发展打下良好的基础。
+在当今的世界，编程已经成为一个非常流行和有用的技能。通过使用Ruby语言，你可以创建出强大的应用程序和网站。开始一个新项目，可以帮助你学习和提升你的编程技能，同时也能创造出令人印象深刻的作品。 无论是为了个人学习还是职业发展，参与新项目都是值得的。
 
-## 如何
-
-编程并不是一件容易的事情，但是学习Ruby会让这一过程变得更加有趣。下面的代码示例和输出将展示如何使用Ruby来创建一个简单的计算器程序。
+如何开始：在Ruby语言中，你需要先定义一个类，也就是你想要创建的对象或类型。然后使用```Ruby...```语句创建类的实例，最后通过对象来调用该类的方法。例如：
 
 ```Ruby
-def calculator(num1, num2, operation)
-  if operation == "+"
-    return num1 + num2
-  elsif operation == "-"
-    return num1 - num2
-  elsif operation == "*"
-    return num1 * num2
-  elsif operation == "/"
-    return num1 / num2
-  else
-    return "Invalid operation!"
-  end
+class Dog
+    def initialize(name, breed)
+        @name = name
+        @breed = breed
+    end
+
+    def bark
+        puts "Woof! My name is #{@name} and I am a #{@breed}."
+    end
 end
 
-puts calculator(5, 3, "+")
-# Output: 8
-puts calculator(10, 2, "*")
-# Output: 20
-puts calculator(15, 5, "/")
-# Output: 3
-puts calculator(8, 4, "-")
-# Output: 4
-puts calculator(3, 4, "x")
-# Output: Invalid operation!
+my_dog = Dog.new("Buddy", "Golden Retriever")
+my_dog.bark
+# Output: Woof! My name is Buddy and I am a Golden Retriever.
 ```
 
-以上的代码使用条件语句来判断运算符，并根据运算符来执行相应的计算。通过这个简单的例子，你可以了解到Ruby的一些基本语法，也可以发挥想象力来创建更具挑战性的程序。
+深入了解：除了创建类和对象以及调用方法外，你还可以在Ruby中使用各种数据结构、循环和条件语句等来构建复杂的程序。此外，Ruby还具有丰富的第三方库，可以帮助你更高效地处理各种任务。在开始新项目的过程中，深入了解Ruby语言的各种功能和用法，可以帮助你更好地利用它来实现你的想法。
 
-## 深入探讨
+另请参阅：如果你想继续学习Ruby语言，这些教程和文章可能会对你有帮助：
 
-开始一个新的项目，需要考虑很多因素。首先，你需要明确项目的目的和目标。其次，你需要决定使用哪些工具和技术来完成项目。最后，你还需要制定一个计划和时间表，以便更好地组织和管理项目。
+- [Ruby 教程](https://www.runoob.com/ruby/ruby-tutorial.html)
+- [Ruby on Rails 教程](https://www.runoob.com/ruby/ruby-on-rails.html)
+- [RubyGems 官方文档](https://guides.rubygems.org/)
+- [Ruby中文社区](https://ruby-china.org/)
 
-同时，你也应该考虑与其他开发者合作，这样可以提高项目的效率和质量。你可以考虑使用版本控制系统，比如Git，来让团队成员协作开发。另外，也可以参考一些优秀的开源项目，学习他们的做法和经验。
-
-总之，开始一个新的项目需要仔细思考和计划，但是它也是一个学习和成长的过程。
-
-## 参考链接
-
-- [Learn Ruby in Y Minutes](https://learnxinyminutes.com/docs/zh-cn/ruby-cn/)
-- [Ruby 官方文档](https://ruby-china.github.io/rubydocs/) 
-- [Ruby on Rails 教程](https://railstutorial-china.org/ruby-on-rails-tutorial-4.0-cn/chapter1.html) 
-
-## 参考资料
-
-- [Ruby.org](https://www.ruby-lang.org/zh_cn/) 
-- [Ruby China 论坛](https://ruby-china.org/) 
-- [Git 官方文档](https://git-scm.com/book/zh/v2)
+希望你能通过这些资源开始你的Ruby编程之旅，快乐地写出优美的代码！

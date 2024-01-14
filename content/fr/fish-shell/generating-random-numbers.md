@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: La génération de nombres aléatoires"
+title:                "Fish Shell: Génération de nombres aléatoires"
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Fish Shell"
-category:             "Numbers"
+category:             "Fish Shell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/generating-random-numbers.md"
 ---
 
@@ -9,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Les nombres aléatoires sont une partie essentielle de la programmation. Ils sont utilisés pour générer des valeurs uniques, pour simuler des situations aléatoires et pour tester des algorithmes. Utiliser des nombres aléatoires de manière appropriée peut améliorer la performance et la précision de vos programmes.
+Générer des nombres aléatoires est une tâche courante dans la programmation, que ce soit pour créer des jeux, des simulations ou pour tester des applications. Dans cet article, nous allons découvrir comment le faire facilement en utilisant le shell Fish.
 
-## Comment Faire
+## Comment faire
 
-Générer des nombres aléatoires en utilisant Fish Shell est facile et rapide. Il vous suffit d'utiliser la fonction `rand` suivie du nombre maximum que vous souhaitez inclure dans la génération.
+Pour générer des nombres aléatoires dans Fish Shell, nous pouvons utiliser la commande ```math``` en combinaison avec la fonction ```rand()```. Voici un exemple de code pour générer un nombre aléatoire entre 1 et 100 :
 
-```Fish Shell
-echo (rand 10)
+```
+math rand -r '(1..100)' 
 ```
 
-L'exemple ci-dessus générera un nombre aléatoire entre 0 et 10. Vous pouvez également spécifier un nombre minimum en utilisant `--min` et un nombre maximum avec `--max`. Par exemple :
+Si vous exécutez cette commande plusieurs fois, vous remarquerez que le nombre généré change à chaque fois.
 
-```Fish Shell
-echo (rand --min 5 --max 15)
+Pour générer un nombre aléatoire avec une plage spécifique, vous pouvez utiliser la syntaxe ```(min..max)```. Par exemple, pour générer un nombre entre -10 et 10, vous pouvez utiliser cette commande :
+
+```
+math rand -r '(-10..10)' 
 ```
 
-Ce code générera un nombre aléatoire compris entre 5 et 15. Vous pouvez également spécifier une séquence de nombres possibles en utilisant `--seq`. Voici un exemple :
+Il est également possible de générer des nombres aléatoires avec des décimales en utilisant la syntaxe ```(min..max, step)```. Par exemple, pour générer un nombre avec une décimale entre 0 et 1, vous pouvez utiliser cette commande :
 
-```Fish Shell
-echo (rand --seq 1 2 3 4 5)
+```
+math rand -r '(0..1, .1)' 
 ```
 
-Cela générera un nombre aléatoire parmi ceux spécifiés dans la séquence, dans cet exemple: 1, 2, 3, 4 ou 5.
+## Plongée en profondeur
 
-## Plongée Profonde
+La commande ```math``` est en fait une interface pour accéder aux fonctions mathématiques du langage C. La fonction ```rand()``` en fait partie, et elle utilise un algorithme pour générer des nombres pseudo-aléatoires à partir d'une valeur de départ appelée "graine" (seed en anglais).
 
-La fonction `rand` utilise l'algorithme Xorshift pour générer des nombres aléatoires. Il utilise des opérations simples sur les bits pour générer des séquences de nombres pseudo-aléatoires, qui peuvent être calculées de manière très efficace. Cela rend l'utilisation de `rand` dans Fish Shell une méthode rapide et pratique pour générer des nombres aléatoires.
-
-Il est important de noter que les nombres générés par la fonction `rand` sont pseudo-aléatoires, ce qui signifie qu'ils suivent un modèle déterministe mais apparemment aléatoire. Si vous recherchez une génération de nombres plus aléatoire, vous devriez utiliser une librairie spécifique aux nombres aléatoires plutôt que la fonction `rand` de Fish Shell.
+La graine par défaut pour la fonction ```rand()``` est généralement basée sur l'horloge interne de l'ordinateur, ce qui signifie qu'elle change souvent. Cela explique pourquoi les nombres générés changent à chaque exécution.
 
 ## Voir aussi
 
-- Documentation Fish Shell sur `rand`: https://fishshell.com/docs/3.1/cmds/rand.html
-- Algorithme Xorshift: https://en.wikipedia.org/wiki/Xorshift
+- [Documentation sur la commande ```math```](https://fishshell.com/docs/current/cmds/math.html)
+- [Documentation sur la fonction ```rand()```](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
+- [Article sur la génération de nombres aléatoires en Shell Bash](https://www.linuxjournal.com/content/random-numbers-bash)

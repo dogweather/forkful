@@ -1,46 +1,48 @@
 ---
 title:                "Java: Lesen von Befehlszeilenargumenten"
+simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-In der Welt der Java Programmierung, kann es manchmal verwirrend sein, einige Konzepte und Techniken zu verstehen. Eine dieser Techniken ist das Lesen von Befehlszeilenargumenten. Doch warum sollten Sie sich damit beschäftigen? Einfach ausgedrückt, das Lesen von Befehlszeilenargumenten ermöglicht es Ihnen, Benutzereingaben zu akzeptieren und Ihr Programm entsprechend anzupassen. Es ist eine großartige Möglichkeit, Interaktivität in Ihre Anwendungen zu bringen und sie an verschiedene Bedürfnisse anzupassen. Aber wie genau macht man das? Lesen Sie weiter, um es herauszufinden!
+Warum sollte man sich mit dem Lesen von Kommandozeilenargumenten beschäftigen? Ganz einfach: Es ermöglicht die Interaktion mit einem Java Programm auf einer tieferen Ebene. Egal ob es darum geht, benutzerdefinierte Einstellungen zu steuern oder bestimmte Aktionen auszuführen, die Verwendung von Kommandozeilenargumenten kann sehr nützlich sein.
 
-# Wie geht das?
+## Wie geht's?
 
-Wie bei jeder Programmiersprache gibt es mehrere Wege, Befehlszeilenargumente in Java zu lesen. Wir werden hier die einfachste Methode betrachten, die "args" Methode. Diese Methode ist Teil der "main" Methode und wird automatisch ausgeführt, wenn das Programm gestartet wird. Um die Befehlszeilenargumente zu lesen, müssen Sie nur die "args" Variable in Ihrem Code verwenden. Ein einfaches Beispiel sieht wie folgt aus:
-
-```Java
-public class CommandLineArgsExample {
-    public static void main(String[] args) {
-        for (int i = 0; i < args.length; i++) {
-            System.out.println("Argument Nummer " + i + ": " + args[i]);
-        }
-    }    
-}
-```
-Mit diesem Code können Sie alle Befehlszeilenargumente ausgeben und deren Index anzeigen. Wenn Sie nun Ihr Programm ausführen und Befehlszeilenargumente angeben, werden diese zusammen mit dem entsprechenden Index in der Konsole ausgegeben. Zum Beispiel:
+Das Lesen von Kommandozeilenargumenten in Java ist eigentlich ganz einfach. Zunächst muss die `main()`-Methode des Programms wie folgt deklariert werden:
 
 ```Java
-java CommandLineArgsExample "Hallo" "Welt" "!" 
+public static void main(String[] args)
 ```
 
-Ausgabe: 
-Argument Nummer 0: Hallo
-Argument Nummer 1: Welt
-Argument Nummer 2: !
+Die `args` Variable enthält jetzt eine Liste der beim Programmstart übergebenen Argumente. Um auf diese zuzugreifen, können wir beispielsweise die `length`-Methode verwenden, um die Anzahl der Argumente zu ermitteln:
 
-# Tiefergehende Informationen
+```Java
+System.out.println("Anzahl der Argumente: " + args.length);
+```
 
-Nun, da Sie wissen, wie man Befehlszeilenargumente liest, gibt es noch einige weitere Details, die Sie beachten sollten. Zum Beispiel können Sie mithilfe von "String[] args" verschiedene Datentypen lesen, nicht nur Strings. Außerdem können Sie auch Optionen für die Befehlszeilenargumente definieren, um bestimmte Eingaben zu verlangen oder eine Standardoption festzulegen. Es gibt auch verschiedene Bibliotheken und Frameworks, die Ihnen helfen können, Befehlszeilenargumente einfacher zu verarbeiten. Auch hier ist die Erweiterungsmöglichkeit in Ihrem Code endlos. Am besten machen Sie sich mit der offiziellen Java Dokumentation vertraut, um alle Möglichkeiten zu erkunden.
+Um ein bestimmtes Argument auszuwählen, können wir die Index-Nummer verwenden. Beachten Sie, dass das erste Argument den Index 0 hat, das zweite den Index 1 usw. Zum Beispiel können wir das erste Argument ausgeben, indem wir `args[0]` verwenden:
 
-# Siehe auch
+```Java
+System.out.println("Erstes Argument: " + args[0]);
+```
 
-- [Oracle Offizielle Java Dokumentation](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Baeldung - Guide zu Befehlszeilenargumenten in Java](https://www.baeldung.com/java-command-line-arguments)
-- [DZone - Befehlszeilenargumente verstehen](https://dzone.com/articles/java-command-line-arguments-how-to-parse-and-use-th)
+## Tiefere Einblicke
+
+Natürlich gibt es noch viel mehr, was man mit Kommandozeilenargumenten machen kann. Zum Beispiel können wir die Argumente auch in andere Datentypen umwandeln, wie zum Beispiel in Integer oder Double.
+
+Ein weiterer wichtiger Aspekt ist die Verwendung von Optionen oder Flags in den Argumenten. Dies ermöglicht es uns, bestimmte Bedingungen abzufragen und entsprechend im Programmcode zu reagieren. Ein Beispiel hierfür wäre die Verwendung einer Option wie `-verbose`, um detailliertere Ausgaben im Programm einzuschalten.
+
+## Siehe auch
+
+Wenn Sie mehr über die Verwendung von Kommandozeilenargumenten in Java erfahren möchten, können Sie sich die folgenden Ressourcen ansehen:
+
+- [Oracle-Dokumentation zu Kommandozeilenargumenten](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Java - Lesen von Kommandozeilenargumenten](https://www.tutorialspoint.com/java/java_command_line_arguments.htm)
+- [Kommandozeilenargumente in Java verwenden](https://www.geeksforgeeks.org/command-line-arguments-in-java/)

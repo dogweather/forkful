@@ -1,54 +1,44 @@
 ---
 title:                "Python: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Python"
-category:             "Testing and Debugging"
+category:             "Python"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att skriva tester är en viktig del av att utveckla Python-program. Det hjälper till att upptäcka fel och buggar i koden, vilket resulterar i en mer robust och tillförlitlig produkt. Dessutom kan du spara tid genom att snabbt hitta problem som annars kan vara svåra och tidskrävande att lösa senare i utvecklingsprocessen.
+Att skriva tester är en viktig del av att utveckla mjukvara på ett pålitligt och effektivt sätt. Genom att testa koden kan vi säkerställa att den fungerar som den ska och undvika buggar och felaktigt beteende. Det hjälper också till att förbättra kvaliteten på koden och underlättar vid framtida uppgraderingar och förändringar.
 
-## Hur man gör
+# Hur man skriver tester
 
-För att skapa tester i Python behöver du en testningsramverk som pytest eller unittest. Låt oss ta ett enkelt exempel för att förstå hur du kan använda pytest för att skriva testfall.
+Att skriva tester är enkelt och kan göras genom att använda innebyggda testningsramar som pytest eller unittest. Det första steget är att definiera en funktion eller en metod som ska testas. Sedan kan du skapa en testfunktion som använder sig av assertions för att jämföra det förväntade resultatet med det faktiska resultatet av funktionen. Nedan följer ett exempel i Python:
 
-Först måste du definiera funktionen du vill testa. Till exempel, låt oss säga att vi har en funktion som adderar två tal:
+```
+def square(x):
+    return x * x
 
-```Python
-def add(x, y):
-    return x + y
+def test_square():
+    assert square(5) == 25
+    assert square(2) == 4
 ```
 
-Nu behöver vi skriva vårt testfall. Vi använder vanligtvis namnet på funktionen plus `_test` för vårt testfall namn och anger förväntat resultat. I vårt fall förväntar vi oss att funktionen ska returnera 5 när vi ger den numren 2 och 3:
+I detta exempel definierar vi en funktion som beräknar kvadraten av ett tal och sedan skapar vi två testfall med hjälp av assertions. Om de påstådda resultaten matchar de faktiska resultaten kommer testet att passera, annars kommer det att misslyckas och indikera att något behöver fixas.
 
-```Python
-def test_add():
-    assert add(2, 3) == 5
-```
+# Fördjupning
 
-Slutligen, för att köra testet, navigera till mappen där din testfil finns och kör följande kommando i terminalen:
+Att skriva tester kan verka onödigt och tidsödande, men det sparar tid och frustration i det långa loppet. Genom att ha en ordentlig testningsprocess på plats kan vi undvika att upptäcka buggar när de redan har blivit en del av produktionskoden. Det är också bra att testa olika gränssnitt, användardata och olika användarscenarier för att säkerställa att koden fungerar för alla potentiella situationer.
 
-```Python
-pytest test_file.py
-```
+# Se även
 
-Om allt går som det ska, bör du se ett grönt resultat som indikerar att testet lyckades.
+Här är några relevanta länkar som kan hjälpa dig att lära dig mer om att skriva tester i Python:
 
-## Djupgående
+- [Pytest tutorial på svenska](https://medium.com/@eliasfikse/simple-unit-testing-with-pytest-a-step-by-step-tutorial-ebdb77a78815)
+- [Unittest dokumentation](https://docs.python.org/3/library/unittest.html)
+- [TDD (test-driven development) i Python](https://realpython.com/python-testing/#test-driven-development-tdd)
+- [10 fördelar med att skriva tester i Python](https://hackernoon.com/10-reasons-why-you-should-write-tests-in-python-2d452a670bbd)
 
-Att skriva tester kan verka tidskrävande och onödigt i början, men det kommer att spara dig tid och huvudvärk i det långa loppet. Genom att noggrant testa din kod, kan du fånga fel innan de når produktion och undvika att störa användarnas upplevelse.
-
-När du skriver tester bör du överväga att täcka alla aspekter av din kod och kontrollera för olika scenarier. Det är också en bra idé att skriva tester för specifika delar av koden när de förändras, så du kan snabbt identifiera och åtgärda eventuella problem som kan uppstå.
-
-## Se även
-
-Här är några användbara länkar för att lära dig mer om att skriva tester i Python:
-
-- [Dokumentation för Pytest](https://docs.pytest.org/en/latest/)
-- [Dokumentation för Unittest](https://docs.python.org/3/library/unittest.html)
-- [En guide till enhetstestning i Python](https://realpython.com/python-testing/)
-
-Lycka till med att skriva tester för dina Python-program!
+Vi hoppas att denna artikel har gett dig en bättre förståelse för hur och varför man bör skriva tester i Python. Lycka till med ditt testande!

@@ -1,74 +1,46 @@
 ---
 title:                "Elixir: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum?
 
-In der Welt des Programmierens gibt es oft den Mythos, dass Tests eine lästige und zeitaufwendige Aufgabe sind, die keinen wirklichen Nutzen bringt. Doch tatsächlich sind Tests ein unverzichtbarer Bestandteil der Entwicklung eines zuverlässigen und fehlerfreien Codes. In diesem Blog-Beitrag werden wir uns genauer ansehen, warum das Schreiben von Tests in Elixir so wichtig ist.
+Tests sind ein unerlässlicher Bestandteil der Softwareentwicklung und können dabei helfen, Fehler frühzeitig zu erkennen und die Qualität des Codes zu verbessern. Durch das Schreiben von Tests kann man sicherstellen, dass die Funktionen eines Programms wie erwartet arbeiten und dass Änderungen keine unerwünschten Nebenwirkungen haben. In diesem Blogpost werden wir uns anschauen, wie man Tests in Elixir schreibt und warum es wichtig ist, dies in seinen Entwicklungsprozess einzubinden.
 
-## Wie geht das?
+## Wie funktionieren Tests in Elixir?
 
-Die Erstellung von Tests in Elixir ist einfach und kann mithilfe des `ExUnit`-Frameworks durchgeführt werden. Um einen Test zu schreiben, müssen wir zuerst unsere Funktion definieren, die wir testen möchten. Nehmen wir zum Beispiel diese Funktion, die die ersten beiden Elemente einer Liste zurückgibt:
+In Elixir gibt es das eingebaute Testing-Framework ExUnit, welches uns beim Schreiben von Tests unterstützt. Zunächst müssen wir unsere Testdateien im Ordner "test" speichern und mit der Erweiterung ".exs" versehen. Um eine Testdatei zu erstellen, können wir entweder das Kommandozeilen-Tool "mix" verwenden oder wir können sie manuell erstellen.
 
-```Elixir
-defmodule Math do
-  def first_two(list) do
-    Enum.take(list, 2)
-  end
-end
-```
-
-Um diesen Code zu testen, können wir Folgendes tun:
+Das Grundgerüst einer Testdatei in Elixir sieht wie folgt aus:
 
 ```Elixir
-defmodule MathTest do
+defmodule Test do
   use ExUnit.Case
 
-  test "returns the first two elements of a list" do
-    assert Math.first_two([1, 2, 3]) == [1, 2]
+  test "beispiel test" do
+    assert 1 + 1 == 2
   end
 end
 ```
 
-Wenn wir nun den Test ausführen, werden wir eine erfolgreiche Ausgabe sehen, da unsere Funktion wie erwartet funktioniert:
+Hier haben wir eine Testklasse erstellt und eine Testfunktion hinzugefügt, in der wir unsere Assertion schreiben. Mit `assert` vergleichen wir, ob der Ausdruck auf der linken Seite gleich dem auf der rechten Seite ist. Wenn dies der Fall ist, wird der Test als erfolgreich angesehen. Andernfalls wird er als fehlgeschlagen markiert.
 
-```
-$ mix test
+Um unsere Tests auszuführen, können wir das Kommando `mix test` verwenden. Dabei werden alle Testdateien im "test"-Ordner ausgeführt und die Ergebnisse werden in der Konsole angezeigt.
 
-Compiling 2 files (.ex)
-..
+## Tieferer Einblick in Teststrukturen
 
-Finished in 0.1 seconds
-2 tests, 0 failures
-```
+ExUnit bietet noch viele weitere Möglichkeiten, um unsere Tests zu strukturieren und zu organisieren. Zum Beispiel können wir unsere Tests in Kontexte gruppieren, um einzelne Teile unserer Anwendung zu testen. Wir können auch Setup- und Teardown-Funktionen verwenden, um vor und nach jedem Test bestimmte Aktionen auszuführen. Es gibt auch die Möglichkeit, Testdaten zu generieren und Mocks zu verwenden, um komplexere Testszenarien abzudecken.
 
-Ein weiteres nützliches Feature von `ExUnit` ist die Möglichkeit, bestimmte Fälle zu überprüfen, z. B. das Handling von Fehlern. Wir können dies tun, indem wir assertions verwenden, die auf Fehlern prüfen, wie z. B. `assert_raise`:
-
-```Elixir
-test "returns an error if list is empty" do
-  assert_raise FunctionClauseError, fn -> Math.first_two([]) end
-end
-```
-
-Nun, da wir wissen, wie man Tests schreibt, lassen Sie uns einen genaueren Blick darauf werfen, warum es so wichtig ist, dies zu tun.
-
-## Tiefes Eintauchen
-
-Tests sind aus mehreren Gründen wichtig. Zunächst ermöglichen sie uns, die Qualität unseres Codes zu gewährleisten, indem sie seine Funktionalität überprüfen. Indem wir einzelne Funktionen testen, können wir Fehler und Lücken in unserem Code aufdecken, bevor sie zu Problemen führen.
-
-Tests helfen auch dabei, Vertrauen in unseren Code aufzubauen. Wenn wir wissen, dass unsere Tests erfolgreich sind, können wir sicher sein, dass unser Code wie erwartet funktioniert und dass wir Änderungen vornehmen können, ohne dass der Code instabil wird.
-
-Darüber hinaus sind Tests unerlässlich, um die Skalierbarkeit unseres Codes zu gewährleisten. Da Elixir eine funktionale Programmiersprache ist, kann unser Code problemlos auf mehreren Prozessoren und Rechnern ausgeführt werden. Durch das Schreiben von Tests können wir überprüfen, ob unser Code auch bei höherer Last einwandfrei funktioniert.
-
-Schließlich helfen Tests dabei, unseren Code zu dokumentieren und zu verstehen. Indem wir Tests schreiben, veranschaulichen wir, wie unser Code verwendet werden sollte und können dies als Referenz für zukünftige Entwickler verwenden.
+Es ist wichtig, sich mit den verschiedenen Funktionen und Möglichkeiten von ExUnit vertraut zu machen, um effektive und robuste Tests zu schreiben.
 
 ## Siehe auch
 
-- [Offizielle Elixir-Dokumentation zu Testen](https://hexdocs.pm/elixir/ex_unit.html)
-- [Übersicht über Testen in Elixir von thoughtbot](https://thoughtbot.com/blog/elixir-for-programmers-testing)
-- [Einführung in Testen in Elixir von Andrea Leopardi](https://andrearichiardi.com/blog/posts/test-driven-development-with-elixir/)
+- Offizielle Dokumentation zu ExUnit: https://hexdocs.pm/ex_unit/ExUnit.html
+- "Why Testing Matters" von José Valim: https://blog.plataformatec.com.br/2015/10/why-testing-matters/
+- "Unit Testing in Elixir with ExUnit" von Gábor Szabó: https://pragprog.com/book/lmelixir/unit-testing-with-elixir

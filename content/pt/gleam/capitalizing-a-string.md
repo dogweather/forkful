@@ -1,32 +1,47 @@
 ---
 title:                "Gleam: Maiúsculas em uma string"
+simple_title:         "Maiúsculas em uma string"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
 
-Às vezes, em programação, precisamos manipular strings de diversas maneiras. Uma dessas maneiras é capitalizar uma string, ou seja, transformar todas as letras em maiúsculas. Mas por que alguém faria isso? Bem, dependendo da aplicação que está sendo desenvolvida, pode ser necessário garantir que as letras sejam consistentes em toda a string, ou simplesmente por preferência estética.
+Capitalizar uma string é necessário em alguns casos, como por exemplo, em formulários onde é importante que os dados estejam padronizados ou em títulos de página.
 
-## Como fazer:
+## Como Fazer
 
-Vamos ver como capitalizar uma string em Gleam. Primeiro, precisamos importar o módulo "String" e, em seguida, usar a função "to_uppercase" que recebe a string que queremos capitalizar como parâmetro:
+Para capitalizar uma string em Gleam, nós utilizamos a função `String.capitalize/1`. Veja o exemplo abaixo:
 
-```Gleam
-import String
-
-String.to_uppercase("ola mundo")   # Retorna "OLA MUNDO"
+```
+Gleam> String.capitalize("gleam programming")
+"Gleam programming"
 ```
 
-Como mostrado no exemplo acima, toda a string "ola mundo" foi transformada em letras maiúsculas.
+Neste exemplo, a nossa string "gleam programming" foi capitalizada e agora está retornando "Gleam programming". Outra forma de capitalizar uma string é utilizar o operador `^`, como mostrado no exemplo abaixo:
 
-## Profundidade:
+```
+Gleam> "gleam programming" ^cap
+"Gleam programming"
+```
 
-Mas como isso funciona por trás dos panos? Basicamente, a função "to_uppercase" itera sobre cada caractere da string e, se for uma letra minúscula, a transforma em maiúscula. Se não for uma letra, retorna o próprio caractere. Por exemplo, "ola mundo" se tornaria "OLA MUNDO". Além disso, é importante saber que a função retorna uma nova string, ou seja, a string original não é modificada.
+Este operador utiliza a primeira letra da string como "cabeçalho" e capitaliza a mesma.
 
-## Veja também:
+## Deep Dive
 
-- [Documentação oficial do módulo String](https://gleam.run/modules/string/)
+Ao capitalizar uma string em Gleam, é importante notar que a função `String.capitalize/1` é case-sensitive. Isso significa que se a primeira letra da string já estiver em maiúsculo, a função não irá alterar a string. Além disso, quando a string contém acentos, a função também não irá alterar a letra acentuada. Por exemplo:
+
+```
+Gleam> String.capitalize("árvore")
+"Árvore"
+```
+
+## Veja Também
+
+- Função String.capitalize/1 (https://gleam.run/modules/string.html#capitalize)
+- Operador `^` (https://gleam.run/guides/expressions.html#prefix-operators)
+- Outras funções relacionadas à manipulação de strings (https://gleam.run/modules/string.html)

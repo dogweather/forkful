@@ -1,38 +1,84 @@
 ---
-title:                "Javascript: 标准错误输出的编写"
+title:                "Javascript: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么要将代码写入标准错误输出？这是因为标准错误是一个可以帮助我们在调试代码时发现错误信息的重要工具。当我们在编写代码时遇到错误时，它可以给出有用的提示，帮助我们修复问题。
+# 为什么要记录错误信息
 
-如何：要将代码写入标准错误输出，我们可以使用console.error()方法。这个方法可以接收任意数量的参数，然后将它们的值转换为字符串，并将它们写入标准错误输出。下面是一个示例代码：
+当我们编写代码时，难免会遇到错误。尤其是在大型项目中，出现bug会耗费大量的时间去定位和解决。这时候，记录错误信息就变得非常重要。通过记录错误信息，我们可以快速地定位和解决bug，提高代码质量和效率。
+
+# 如何记录错误信息
+
+在Javascript中，我们可以使用console.error()方法来向标准错误流写入错误信息。例如：
 
 ```Javascript
-console.error("这是一个错误消息");
+console.error("发生了一个错误");
 ```
 
-这段代码会将错误消息写入标准错误输出，并在控制台中显示出来。下面是示例输出：
+输出结果为：
 
+```Javascript
+发生了一个错误
 ```
-这是一个错误消息
+
+我们也可以在错误信息中添加变量，来更详细地描述错误的来源。例如：
+
+```Javascript
+let number = 5;
+console.error(`无效的数字：${number}`);
 ```
 
-深入了解：除了使用console.error()方法，我们也可以通过重定向标准错误输出来将代码写入特定的日志文件中。这样可以让我们更方便地追踪程序运行时的错误信息，并对其进行分析和处理。同时，我们也可以通过使用异常处理来捕获和处理代码中的错误，这样可以让我们有更多的控制权来处理错误信息。
+输出结果为：
 
-另外，我们还可以使用Node.js中的process.stderr来直接写入标准错误输出。这样可以让我们在Node.js环境下更灵活地控制错误输出的内容和格式。
+```Javascript
+无效的数字：5
+```
 
-不管是使用哪种方法，写入标准错误输出都是帮助我们在调试代码时不可或缺的工具。通过合理地利用它，我们可以更快地发现和解决代码中的错误，从而提高我们的开发效率。
+# 深入了解错误信息记录
 
-参考链接：
+除了使用console.error()方法外，我们还可以使用try-catch语句来捕获和处理错误。例如：
 
-- [《Node.js调试技巧：写入标准错误输出来捕获错误信息》](https://www.sitepoint.com/nodejs-debugging-techniques-stderr/)
+```Javascript
+try{
+    // 需要执行的代码
+}catch(error){
+    console.error(error);
+}
+```
 
-- [《使用Node.js的process.stderr写入标准错误输出》](https://www.tutorialspoint.com/nodejs/nodejs_process.htm)
+这样的话，即使发生了错误，程序也不会终止运行，而是会在catch语句中输出错误信息。
 
-见此亦可参考：
+另外，我们还可以自定义错误，并使用throw语句抛出错误。例如：
 
-- [《如何利用控制台工具来调试JavaScript代码》](https://www.educative.io/blog/javascript-debugging-console-tutorial)
+```Javascript
+function multiply(a, b){
+    if(typeof(a) !== "number" || typeof(b) !== "number"){
+        throw new Error("输入的参数必须是数字");
+    }else{
+        return a * b;
+    }
+}
+
+// 使用示例
+console.log(multiply(2, "3")); // 抛出错误："输入的参数必须是数字"
+```
+
+通过自定义错误，我们可以更清晰地指明错误的类型和来源。
+
+# 参考链接
+
+- [Javascript错误处理](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/What_went_wrong)
+- [深入理解try-catch语句](https://www.w3schools.com/js/js_errors.asp)
+- [自定义错误](https://www.w3schools.com/js/js_error.asp)
+
+# 参见
+
+- [Javascript基础语法介绍](https://www.runoob.com/js/js-tutorial.html)
+- [学习Javascript的5个技巧](https://www.runoob.com/w3cnote/5-tips-for-learning-javascript.html)
+- [Markdown教程](https://www.runoob.com/markdown/md-tutorial.html)

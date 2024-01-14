@@ -1,42 +1,66 @@
 ---
 title:                "Rust: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Czy kiedykolwiek chciałeś/chciałaś przeczytać plik tekstowy w swoim programie Rust? Może chcesz stworzyć aplikację do przetwarzania tekstu lub analizy danych. Ten artykuł pokaże Ci, jak to zrobić w prosty sposób.
 
-## Jak to zrobić
-Aby przeczytać plik tekstowy w Rust, możesz użyć wbudowanej biblioteki `std::fs`. Najpierw musisz otworzyć plik przy użyciu funkcji `File::open()` i przekazać jako argument ścieżkę pliku. Następnie możesz odczytać zawartość pliku przy użyciu metody `read_to_string()` i zapisać ją do zmiennej. Poniżej znajdziesz przykładowy kod:
+Czy kiedykolwiek zastanawiałeś się, jak programy komputerowe są w stanie czytać pliki tekstowe? W tym krótkim wpisie przeczytasz o tym, dlaczego warto poznać koncepcję czytania plików tekstowych w języku Rust.
+
+## Jak to zrobić?
+
+Poniżej przedstawiamy prosty przykład kodu w języku Rust, który umożliwia odczytanie pliku tekstowego i wyświetlenie jego zawartości w konsoli.
 
 ```Rust
-use std::fs;
-use std::io::Read;
+use std::fs::File;
+use std::io::prelude::*;
 
 fn main() {
-    let file_name = "sample.txt";
-    let mut file = fs::File::open(file_name).expect("Błąd podczas otwierania pliku");
+    // Otwórz plik tekstowy
+    let mut file = File::open("plik.txt").expect("Nie można otworzyć pliku.");
+
+    // Utwórz bufor do odczytania pliku
     let mut contents = String::new();
-    file.read_to_string(&mut contents).expect("Błąd podczas czytania pliku");
+
+    // Odczytaj zawartość pliku do bufora
+    file.read_to_string(&mut contents).expect("Nie można odczytać pliku.");
+
+    // Wyświetl zawartość pliku w konsoli
     println!("{}", contents);
 }
 ```
 
-Wyjście dla pliku `sample.txt` zawierającego tekst "Cześć, jestem przykładowym tekstem" będzie wyglądać następująco:
+Przykładowy plik "plik.txt" może zawierać taką treść:
 
 ```
-Cześć, jestem przykładowym tekstem
+Witaj, świecie!
 ```
 
-## Głębszy zanurzenie
-Metoda `read_to_string()` jest przydatna, ale może być niewydajna dla dużych plików. Istnieje też wiele innych metod odczytu plików, takich jak `read()` i `lines()`, które pozwalają na bardziej elastyczne i wydajne przetwarzanie plików tekstowych. Możesz również użyć biblioteki zewnętrznej, takiej jak `csv` lub `regex`, aby przetworzyć dane odczytane z pliku.
+A po uruchomieniu kodu, powinniśmy zobaczyć taki output w konsoli:
+
+```
+Witaj, świecie!
+```
+
+## Głębsza analiza
+
+Teraz skupimy się na wyjaśnieniu niektórych kluczowych elementów z przykładowego kodu. W pierwszej linijce wykorzystujemy moduł `fs` z biblioteki standardowej Rusta, aby zaimportować funkcję `File`, która pozwala na otwieranie plików. Następnie, w trzeciej linijce, używamy funkcji `expect` w celu obsłużenia błędów - w przypadku, gdy nie uda się otworzyć pliku, program zwróci nam wiadomość `Nie można otworzyć pliku.`
+
+W linijce piątej tworzymy bufor danych, który zostanie wykorzystany do przechowywania zawartości pliku. Następnie, w szóstej linijce wywołujemy funkcję `read_to_string`, która odczytuje zawartość pliku i zapisuje ją do bufora. W przypadku, gdy wystąpi błąd podczas odczytywania, program zwróci nam wiadomość `Nie można odczytać pliku.`
+
+Na koniec, w linii ósmej, wyświetlamy zawartość bufora w konsoli za pomocą funkcji `println!`, która jest częścią makra standardowego.
 
 ## Zobacz również
-- Dokumentacja Rust na temat czytania plików: https://doc.rust-lang.org/std/fs/struct.File.html
-- Przykładowe programy demonstrujące czytanie plików w Rust: https://github.com/pretzelhammer/rust-blog/blob/master/posts/reading-files-in-rust.md
-- Biblioteka `csv` dla przetwarzania plików CSV w Rust: https://docs.rs/csv/1.1.1/csv/
-- Biblioteka `regex` dla przetwarzania tekstu przy użyciu wyrażeń regularnych w Rust: https://docs.rs/regex/1.0.3/regex/
+
+Jeśli chcesz dowiedzieć się więcej o programowaniu w języku Rust, warto przejrzeć inne wpisy na naszym blogu oraz odwiedzić następujące strony:
+
+- [Oficjalna strona języka Rust](https://www.rust-lang.org/)
+- [Dokumentacja Rusta](https://doc.rust-lang.org/book/)
+- [Rust by Example - przykłady kodu w języku Rust](https://doc.rust-lang.org/stable/rust-by-example/)
+- [Reddit Rust - popularne forum dla społeczności języka Rust](https://www.reddit.com/r/rust/)

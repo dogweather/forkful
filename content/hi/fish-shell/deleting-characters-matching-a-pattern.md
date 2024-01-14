@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: पैटर्न से मिलते हुए अक्षरों को हटाना"
+title:                "Fish Shell: पैटर्न से मेल खाते अक्षरों को हटाना"
+simple_title:         "पैटर्न से मेल खाते अक्षरों को हटाना"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,41 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-गर आप एक प्रोग्रामर हैं और आपको किसी भी टेक्स्ट फाइल में से पिछले छठ अक्षर हटाने की आवश्यकता है, तो आपको फिश शैल में यह कार्य करना चाहिए। यह आपको समय और प्रयास की बचत करने और सही दोस्तों की ओर से सही काम करने की सुविधा देता है।
+अपने स्क्रिप्ट में सलाह चाहिए होने के कारण, आपको सक्रियता से समझना होगा कि पैटर्न से मेल खाने वाले अक्षर को हटाना क्यों जरूरी है।
 
 ## कैसे करें
 
-```Fish Shell
-# टेक्स्ट फाइल बनाएं।
-echo "मेरा नाम है जॉन डोए" > file.txt
-
-# छठ अक्षर निकालें।
-sed 's/..$//' file.txt
-
-# उपरोक्त उत्पादन देखें।
-मेरा नाम है जॉन
-
-```
-
-आप दुसरी प्रकार से भी इस काम को कर सकते हैं।
+अब, हम फिश शेल में चल रहे हैं क्मांड लाइन एप्लिकेशन है, हम पैटर्न से मेल खाने वाले अक्षर को हटाने के लिए इसका उपयोग कैसे कर सकते हैं। नीचे उदाहरण में, हम एक सरल स्ट्रिंग "Hello World!" को देखेंगे जिसमें से हम अक्षर 'o' को हटाना चाहते हैं।
 
 ```Fish Shell
-# टेक्स्ट फाइल से प्रिंट करें।
-cat file.txt
-
-# अंतिम छठ अक्षर को हटाएं।
-truncate -s -1 file.txt
-
-# उपरोक्त उत्पादन देखें।
-मेरा नाम है जॉन
-
+set input "Hello World!"
+echo $input | sed 's/o//g'
 ```
 
-## डीप डाइव निकालने वाले अक्षर
+आउटपुट:
 
-छठ अक्षर हटाने के लिए यूनिकोड कोड नंबर को अगले आठ-अक्षरों के साथ बदलना पड़ता है। हालांकि फिश शैल में, आप सीधे स्ट्रिंग फॉर्मेट प्रयोग कर सकते हैं। यह बहुत सुविधाजनक है, क्योंकि आप इसे अन्य आवश्यकताओं के साथ साझा कर सकते हैं और हजारों निरंतर पार्ट्नर बना सकते हैं।
+```Fish Shell
+Hell Wrld!
+```
 
-## देखें भी
+## गहराई में जाएं
 
-- [SED द्वारा छठ अक्षरों को निकालना](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
-- [फिश शैल पर सीखें](https://fishshell.com/docs/current/tutorial.html)
+जब आप पर अधिक स्वाधीनता चाहते हैं और अपने स्क्रिप्ट में इस प्रकार के ऑपरेशन को अन्य कमांडों के साथ कंबाइन करना चाहते हैं तो के बारे में और अधिक गहराई से जानना होगा। आप अन्य कमांडों को पैटर्न से मेल खाने वाले अक्षरों को हटाने के लिए उपयोग कर सकते हैं। आप अपने स्क्रिप्ट में नीचे दिए गए लिंक्स से अधिक जानकारी पा सकते हैं।
+
+## इसके अलावा देखें
+
+- [Sed Command in Linux](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
+- [Using Sed in Scripts](https://www.linode.com/docs/tools-reference/tools/introduction-to-sed-commans/)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/tutorial.html)

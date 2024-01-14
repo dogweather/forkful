@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Alimerkkien eristäminen"
+title:                "PHP: Alirivien poimiminen"
+simple_title:         "Alirivien poimiminen"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/extracting-substrings.md"
 ---
 
@@ -9,36 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Subtringejen erottelu on tärkeä taito jokaiselle PHP-ohjelmoijalle. Se auttaa käsittelemään tekstejä ja muuttamaan niitä tarpeen mukaan. Tämä taito on erityisen hyödyllinen esimerkiksi, kun haluat käsitellä käyttäjien syöttämiä lomakkeiden arvoja tai hakea tietoja tietokannasta.
+Substringien louhinta on erittäin hyödyllistä, kun haluat käsitellä ja manipuloida merkkijonoja PHP:ssä. Se voi auttaa sinua saamaan tarkemman otannan tiedoista tai suodattamaan haluamasi tiedot tietokannassa.
 
-## Kuinka
+## Miten tehdä
 
-PHP tarjoaa muutamia erilaisia toimintoja, joiden avulla voit erottaa substringejä. Yksi yksinkertaisimmista tavoista on käyttää ```substr()```-funktiota, joka ottaa parametreiksi alkuperäisen merkkijonon sekä aloitus- ja lopetuskohdat. Seuraava esimerkki näyttää, kuinka voit käyttää tätä funktiota:
-
-```PHP
-$string = "Tämä on esimerkkimerkkijono";
-// Eronnetaan ensimmäinen sana
-$substring = substr($string, 0, 4);
-echo $substring; // Tulostaa "Tämä"
-```
-
-Toinen hyödyllinen tapa erottaa substringejä on käyttää ```explode()```-funktiota, joka erottaa merkkijonon halutun merkin tai merkkijonon kohdalta. Tämä on hyödyllinen esimerkiksi, kun haluat erottaa sanat välimerkkien kohdalta. Esimerkiksi:
+PHP:ssä substringien louhinta voidaan tehdä useilla eri tavoilla, mutta yksi yleisimmistä on käyttää `substr()` -funktiota. Voit käyttää sitä seuraavalla tavalla:
 
 ```PHP
-$string = "Tämä, on, erilainen, merkkijono";
-$pieces = explode(",", $string);
-print_r($pieces); // Tulostaa "Array ( [0] => Tämä [1] => on [2] => erilainen [3] => merkkijono )"
+$string = "Tämä on esimerkkilause.";
+// Louhitaan ensimmäinen 8 merkkiä
+$louhittu = substr($string, 0, 8);
+// Tulostetaan tulos
+echo $louhittu; //Tämä on
 ```
 
-## Syvällisempi sukellus
+`substr()` -funktio ottaa kolme parametria: alkuperäinen merkkijono, aloitusindeksi ja haluttu pituus. Tämä tarkoittaa, että voit louhia merkkijonosta haluamasi määrän merkkejä haluamastasi kohdasta.
 
-Tämän lisäksi PHP:llä on myös muita toimintoja, kuten ```mb_substr()```, joka toimii samalla tavalla kuin ```substr()```, mutta se ottaa huomioon myös monikieliset merkkijonot. Voit myös käyttää ```preg_match()```-funktiota regexin avulla erottamaan halutut substringit merkkijonosta.
+Voit myös käyttää `mb_substr()` -funktiota, jota suositellaan käytettäväksi UTF-8 -merkkikoodauksen kanssa, jotta vältetään mahdolliset ongelmat monibyte -merkkien kanssa. Se toimii samalla tavalla kuin `substr()`, mutta se huomioi merkistön monimutkaisuuden.
 
-On myös tärkeää huomata, että merkkijonot kerätään PHP:ssä alkiopohjaisiin taulukoihin, mikä voi tehdä niiden käsittelystä helpompaa joissain tilanteissa. Esimerkiksi, jos haluat muuttaa tiettyjä sanoja merkkijonossa, voit ensin erottaa merkkijonon sanoiksi ```explode()```-funktiolla ja sitten tehdä muutoksia taulukon alkioiden avulla.
+## Syvempi sukellus
+
+PHP tarjoaa myös muita tapoja louhia substringeja, kuten `str_replace()` ja `preg_replace()` -funktiot. Näiden avulla voit louhia ja korvata tiettyjä merkkejä tai osia merkkijonosta.
+
+On tärkeää huomata, että substringien louhinta voi olla tehokas, mutta se voi myös hidastaa suorituskykyä ja aiheuttaa turhia kustannuksia. Varmista siis aina, että käytät sitä oikeissa tilanteissa ja optimoit koodisi asianmukaisesti.
 
 ## Katso myös
 
-- [PHP manual - substr()](https://www.php.net/manual/en/function.substr.php)
-- [PHP manual - explode()](https://www.php.net/manual/en/function.explode.php)
-- [PHP manual - mb_substr()](https://www.php.net/manual/en/function.mb-substr.php)
-- [PHP manual - preg_match()](https://www.php.net/manual/en/function.preg-match.php)
+- PHP:n `substr()` -dokumentaatio: https://www.php.net/manual/en/function.substr.php
+- `mb_substr()` vs `substr()`: https://stackoverflow.com/questions/6684776/use-of-mb-substr-in-php
+- `str_replace()` dokumentaatio: https://www.php.net/manual/en/function.str-replace.php
+- `preg_replace()` dokumentaatio: https://www.php.net/manual/en/function.preg-replace.php

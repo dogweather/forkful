@@ -1,40 +1,75 @@
 ---
 title:                "Bash: Tiedoston kirjoittaminen"
+simple_title:         "Tiedoston kirjoittaminen"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa Bash-koodia?
+## Miksi
 
-Bash on komentokehotteen ohjelmointikieli, jota käytetään usein Linux- ja Unix-järjestelmissä. Kirjoittamalla tekstitiedostoja Bashilla voit automatisoida tietokoneesi toimintoja ja tehdä monimutkaisistakin tehtävistä yksinkertaisempia. Tämä säästää aikaa ja vaivaa!
+Bash-ohjelmointi on tärkeä taito, joka voi auttaa helpottamaan monia arkipäivän tehtäviä. Yksi näistä tehtävistä on tekstitiedoston kirjoittaminen. Tässä blogikirjoituksessa käymme läpi, miksi tekstitiedoston kirjoittaminen kannattaa ja miten se onnistuu Bash-ohjelmoinnilla.
 
-## Miten kirjoittaa tekstitiedostoja Bashilla?
+## Miten
 
-Bash-ohjelmointikielen kirjoittaminen on helppoa. Aloita kirjoittamalla "```Bash" ja jatka sen jälkeen koodin rivillä. Lopeta koodinpätkä kirjoittamalla "```". Esimerkiksi voit luoda uuden tiedoston Bashin avulla käyttämällä "```Bash touch uusi_tiedosto.txt ```". Tämän jälkeen voit listata uuden tiedoston sisällön käyttämällä "```Bash ls -l uusi_tiedosto.txt ```". Komento "ls" tarkoittaa listaa ja "l" flagi näyttää lisätiedot tiedostosta.
+Bash-ohjelmoinnissa tekstitiedoston kirjoittaminen on helppoa ja nopeaa. Voit luoda uuden tiedoston tai päivittää olemassa olevaa tiedostoa käyttämällä `touch` tai `echo` komentoja. Esimerkiksi:
 
-Output:
 ```
--rw-r--r--  1 username groupname      0 Dec 31 12:00 uusi_tiedosto.txt
+# Luo uusi tiedosto nimeltä testi.txt
+touch testi.txt
+
+# Lisää teksti tiedostoon käyttämällä echo-komentoa
+echo "Tämä on testiä" >> testi.txt
+```
+Tämän jälkeen voit tarkistaa tiedoston sisällön käyttämällä `cat` komentoa:
+
+```
+# Tulosta tiedoston sisältö konsoliin
+cat testi.txt
+
+Tämä on testiä
 ```
 
-Haluatko lisätä sisältöä uuteen tiedostoon? Voit tehdä sen käyttämällä "```Bash echo "Tämä on uuden tiedoston sisältö" >> uusi_tiedosto.txt ```". Tässä komennossa "echo" tulostaa halutun tekstin ja ">>" lisää sen uuden tiedoston loppuun.
+Käytä `>`-merkkiä, jos haluat ylikirjoittaa olemassa olevan tiedoston sisällön:
 
-Output:
 ```
--rw-r--r--  1 username groupname     26 Jan  1 12:00 uusi_tiedosto.txt
+# Korvaa tiedoston sisältö uudella tekstillä
+echo "Uusi sisältö" > testi.txt
 ```
 
-## Syvenny Bash-tekstitiedostojen kirjoittamiseen
+## Syvemmälle
 
-Bash-koodin avulla voit tehdä paljon enemmän kuin vain luoda ja muokata tekstitiedostoja. Voit esimerkiksi kirjoittaa skriptejä, jotka ajavat useita komentoja peräkkäin tai jopa ajastaa tietyt toiminnot tietokoneellesi. Voit myös käyttää muuttujia Bashissa helpottaaksesi koodin uudelleenkäyttöä ja tehdä siitä joustavamman.
+Bash-ohjelmoinnissa on mahdollista myös lisätä muuttujia ja käyttää for-silmukoita tekstitiedoston kirjoittamisessa. Esimerkiksi voit kirjoittaa tiedostoon oven numerot käyttämällä for-silmukkaa:
 
-Bash-kieltä käytettäessä on tärkeää muistaa, että se on herkkä välilyönneille ja erikoismerkeille. Jos esimerkiksi luot uuden tiedoston komennolla "```Bash touch uusi tiedosto.txt ```", komento ei toimi, koska siinä on välilyöntejä tiedoston nimen välissä. Sen sijaan voit käyttää alaviivoja tai sisäänrajauksia, kuten "uusi_tiedosto.txt" tai "uusi\ tiedosto.txt".
+```
+# Luo uusi tiedosto nimeltä ovet.txt
+touch ovet.txt
+
+# Luo muuttuja, jossa on ovi numerot 1-5
+ovet="1 2 3 4 5"
+
+# Käytä for-silmukkaa tulostamaan muuttujan arvot ja lisää ne tiedostoon
+for ovi in $ovet
+do
+  echo "Ovi $ovi" >> ovet.txt
+done
+```
+
+Tiedoston sisältö näyttää nyt tältä:
+
+```
+Ovi 1
+Ovi 2
+Ovi 3
+Ovi 4
+Ovi 5
+```
 
 ## Katso myös
 
-- [Bashin perusteet](https://linuxjourney.com/lesson/bash-basics)
-- [Linuxin komentorivin käyttöohje](https://linux.die.net/man/)
-- [Bash-opasjaksoja](https://www.shellscript.sh/index.html)
+- [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial)
+- [Muokkaa tekstiä Bash-ohjelmoinnilla](https://www.computerhope.com/unix/bash/echo.htm)
+- [Bash ohjelmointiopas](https://www.gnu.org/software/bash/manual/html_node/Bash-Programmable-Completion.html)

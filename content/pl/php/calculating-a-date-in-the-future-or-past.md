@@ -1,49 +1,42 @@
 ---
 title:                "PHP: Obliczanie daty w przyszłości lub przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Czemu
 
-Obliczanie dat w przyszłości lub przeszłości może być niezbędne w wielu projektach programistycznych. Może to być potrzebne do wyświetlania ważnych wydarzeń lub terminów, planowania zadań lub wyliczania wieku. Dzięki PHP i jego funkcjom związanym z datami, obliczanie dat staje się łatwe i wygodne.
+Obliczanie daty w przyszłości lub w przeszłości jest często niezbędne w programowaniu PHP, ponieważ pozwala na dynamiczne określanie czasu w aplikacjach internetowych. Może być przydatne, na przykład w przypadku generowania faktur, harmonogramowania zadań lub wyświetlania powiadomień.
 
 ## Jak to zrobić
 
-Aby obliczyć datę w przyszłości lub przeszłości, możemy skorzystać z funkcji "strtotime()" w PHP. Przykładowy kod wyglądałby następująco:
+```PHP
+$dni = 7;
+$data = date('Y-m-d', strtotime("+$dni days"));
+echo "Za $dni dni będzie $data";
+```
+W powyższym przykładzie użyto funkcji `date()` i `strtotime()` do wyliczenia daty, która jest dniem z przeszłości lub przyszłości w stosunku do bieżącej daty. Następnie wyświetlono wynik w formacie `YYYY-MM-DD`, ale można dostosować to według własnych preferencji.
 
 ```PHP
-$date = strtotime("+1 week"); // dodanie tygodnia do aktualnej daty
-echo date("Y-m-d", $date); // wyświetli 2021-10-14
+$rok = 2021;
+$miesiac = 12;
+$data = date('Y-m-d', strtotime("$rok-$miesiac-01"));
+echo "Pierwszy dzień miesiąca $miesiac w roku $rok to $data";
 ```
+W powyższym przykładzie wykorzystano zmienne, aby obliczyć pierwszy dzień wybranego miesiąca i roku. Można również dodawać lub odejmować dni, tygodnie, miesiące i lata do daty i określać konkretne dni tygodnia, na których chcemy otrzymać wynik.
 
-Możemy również wykorzystać funkcję "mktime()" do utworzenia daty na podstawie podanych argumentów, takich jak rok, miesiąc i dzień.
+## Wnikliwa analiza
 
-```PHP
-$date = mktime(0, 0, 0, 12, 25, 2021); // utworzenie daty: 25 grudnia 2021
-echo date("l", $date); // wyświetli Saturday
-```
+Przy obliczaniu dat w przyszłości lub przeszłości należy pamiętać o różnych formatach dat i ustawieniach strefy czasowej. Należy również zwrócić uwagę na to, czy dany rok jest przestępny lub czy dany miesiąc ma 30 czy 31 dni. W przypadku wystąpienia problemów z obliczeniami dat, warto skorzystać z dostępnych bibliotek PHP, takich jak `DateTime` lub `Carbon`, które ułatwiają pracę z datami.
 
-Możemy także użyć funkcji "date_diff()", aby obliczyć różnicę między dwoma datami. Przykładowy kod wyglądałby tak:
+## Zobacz również
 
-```PHP
-$firstDate = date_create("2021-01-01");
-$secondDate = date_create("2021-12-31");
-$diff = date_diff($firstDate, $secondDate);
-echo $diff->format("%R%a days"); // wyświetli +364 days
-```
-
-## Deep Dive
-
-W PHP mamy do dyspozycji wiele funkcji związanych z datami, takich jak "strtotime()", "mktime()", "date()", "date_create()" czy "date_diff()". Są one bardzo przydatne w obliczaniu dat w przyszłości lub przeszłości, a także wyświetlaniu lub formatowaniu dat w różny sposób.
-
-Ważną rzeczą, na którą należy zwrócić uwagę, jest użycie odpowiednich formatów daty lub czasu. W przeciwnym razie mogą pojawić się nieoczekiwane rezultaty lub błędy w kodzie. Dobrą praktyką jest także użycie funkcji "setlocale()" do ustawienia odpowiedniej lokalizacji, szczególnie jeśli wyświetlamy daty w innym języku niż angielski.
-
-## Zobacz także
-
-- Oficjalna dokumentacja PHP dotycząca funkcji związanych z datami: [https://www.php.net/manual/en/ref.datetime.php](https://www.php.net/manual/en/ref.datetime.php)
-- Przewodnik po funkcjach związanych z datami w PHP: [https://www.w3schools.com/php/php_date.asp](https://www.w3schools.com/php/php_date.asp)
-- Przydatny poradnik dotyczący dat w PHP: [https://www.geeksforgeeks.org/dates-and-time-in-php/](https://www.geeksforgeeks.org/dates-and-time-in-php/)
+- [Dokumentacja PHP o funkcji date()](http://php.net/manual/en/function.date.php)
+- [Dokumentacja PHP o funkcji strtotime()](https://www.php.net/manual/en/function.strtotime.php)
+- [Biblioteka DateTime w PHP](https://www.php.net/manual/en/class.datetime.php)
+- [Biblioteka Carbon w PHP](https://carbon.nesbot.com/)

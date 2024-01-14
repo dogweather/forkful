@@ -1,76 +1,55 @@
 ---
-title:                "Bash: Unindo strings"
+title:                "Bash: Unir cadeias de caracteres"
+simple_title:         "Unir cadeias de caracteres"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que concatenar strings em Bash?
+## Por que
 
-A concatenação de strings é um conceito importante em linguagens de programação, incluindo o Bash. Ela é usada para unir duas ou mais strings em uma única sequência de caracteres. Isso pode ser útil em diferentes situações, como ao formar nomes de arquivos, criar saídas personalizadas ou construir comandos mais complexos.
+Concatenar strings é uma técnica fundamental em programação, especialmente na linguagem Bash. Isso permite que você junte várias strings em uma única, criando uma nova string personalizada de acordo com a sua necessidade.
 
-## Como fazer a concatenação de strings em Bash
+## Como Fazer
 
-Para concatenar strings em Bash, usamos o operador `+` ou simplesmente colocamos as strings juntas dentro de aspas duplas. Vamos dar uma olhada em alguns exemplos para entender melhor.
-
-Em primeiro lugar, podemos usar o operador `+` para concatenar duas ou mais strings. Por exemplo:
+Existem algumas maneiras de concatenar strings em Bash. Aqui estão três métodos comuns usando aspas duplas, aspas simples e sem aspas:
 
 ```Bash
-primeiro_nome="João"
-ultimo_nome="Silva"
-nome_completo=$primeiro_nome+$ultimo_nome
-echo $nome_completo
-```
-
-A saída será `JoãoSilva`, pois o operador `+` simplesmente une as strings sem adicionar nenhum espaço entre elas. Para adicionar um espaço, podemos usar a concatenação de strings com aspas duplas:
-
-```Bash
-saudacao="Olá"
+# Usando aspas duplas
 nome="Maria"
-saudacao_nome=$saudacao" "$nome
-echo $saudacao_nome
-```
-
-A saída será `Olá Maria`, pois usamos aspas duplas para incluir um espaço entre as duas strings.
-
-Podemos também concatenar variáveis com valores numéricos:
-
-```Bash
-numero1=10
-numero2=5
-soma="A soma dos números é: "$numero1+$numero2
-echo $soma
-```
-
-A saída será `A soma dos números é: 15`, pois o operador `+` também pode ser usado para somar valores numéricos.
-
-## Aprofundando na concatenação de strings em Bash
-
-O operador `+` não é o único método para concatenar strings em Bash. Podemos também usar o comando `printf` para criar strings formatadas.
-
-```Bash
-primeiro_nome="Ana"
-ultimo_nome="Santos"
-printf "Seu nome completo é: %s %s\n" $primeiro_nome $ultimo_nome
-```
-
-A saída será `Seu nome completo é: Ana Santos`, pois usamos a formatação `%s` para indicar a posição das duas variáveis em nossa string.
-
-Além disso, é importante lembrar que a ordem da concatenação afeta o resultado. Por exemplo:
-
-```Bash
-nome="Pedro"
 sobrenome="Silva"
-nome_completo=$sobrenome", "$nome
-echo $nome_completo
+nome_completo="$nome $sobrenome"
+echo "Seu nome completo é $nome_completo"
+
+# Saída: Seu nome completo é Maria Silva
+
+# Usando aspas simples
+nome="João"
+sobrenome="Sousa"
+nome_completo='$nome $sobrenome'
+echo "Seu nome completo é $nome_completo"
+
+# Saída: Seu nome completo é $nome $sobrenome
+
+# Sem usar aspas
+nome="Pedro"
+sobrenome="Almeida"
+nome_completo=$nome$sobrenome
+echo "Seu nome completo é $nome_completo"
+
+# Saída: Seu nome completo é PedroAlmeida
 ```
 
-A saída será `Silva, Pedro`, pois invertemos a ordem da concatenação colocando o sobrenome antes do nome.
+## Deep Dive
 
-## Veja também
+Concatenar strings é uma operação simples em Bash, mas você pode enfrentar alguns desafios ao lidar com caracteres especiais, como espaços ou aspas. Nesses casos, é necessário usar aspas para garantir que as strings sejam interpretadas corretamente.
 
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
-- [Tutorial de Bash no DevMedia](https://www.devmedia.com.br/tutoriais/bash/)
-- [Tutorial de Bash na Udemy](https://www.udemy.com/topic/bash-scripting/)
+Além disso, é importante lembrar que strings são imutáveis em Bash, o que significa que não é possível alterar uma string já definida. Portanto, sempre que precisar concatenar strings, você deve criar uma nova variável para armazenar o resultado.
+
+## Veja Também
+
+- [Documentação do Bash sobre Strings](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)
+- [Mais exemplos de concatenação de strings em Bash](https://stackoverflow.com/questions/4181703/how-to-concatenate-string-variables-in-bash)

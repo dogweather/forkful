@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Die aktuelle Datum ermitteln"
+title:                "Clojure: Die aktuelle Datumsangabe erhalten"
+simple_title:         "Die aktuelle Datumsangabe erhalten"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/getting-the-current-date.md"
 ---
 
@@ -9,39 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das aktuelle Datum ist ein wesentlicher Bestandteil der meisten Anwendungen, sei es für die Anzeige von Timern oder für die Verwaltung von Terminen. Deshalb ist es wichtig zu wissen, wie man in Clojure das aktuelle Datum abrufen kann.
+In der heutigen Zeit ist es wichtig, dass wir wissen, an welchem Datum wir uns befinden. Ob es darum geht, einen Termin zu planen oder die Fälligkeit einer Rechnung zu überprüfen, das aktuelle Datum ist eine wesentliche Information. In diesem Blog-Beitrag werden wir uns ansehen, wie wir mit Clojure das aktuelle Datum abrufen können.
 
-## Wie geht das?
+## Wie Funktioniert Es
 
-In Clojure gibt es eine spezielle Funktion namens `java.util.Date`, welche das aktuelle Datum und die aktuelle Uhrzeit zurückgibt. Diese Funktion muss importiert werden, bevor sie verwendet werden kann. Schauen wir uns ein Beispiel an:
-
-```Clojure
-(ns my-app.core
-  (:import [java.util Date]))
-  
-(defn get-current-date []
-  (let [current-date (Date.)]
-    (println "Das aktuelle Datum ist:" (.toString current-date))))
-```
-
-Der obige Code importiert die `java.util.Date` Funktion und definiert dann eine Funktion `get-current-date`, die das aktuelle Datum abruft und ausgibt. Führt man diesen Code aus, wird die aktuelle Datum und Zeit im Format `yyyy-mm-dd hh:mm:ss` ausgegeben.
-
-## Tiefergehend
-
-Es gibt noch einige andere Möglichkeiten, um das aktuelle Datum in Clojure abzurufen. Eine davon ist die Verwendung der `java.time.LocalDateTime` Funktion, die in Java 8 eingeführt wurde. Diese Funktion bietet mehr Flexibilität beim Arbeiten mit Datum und Zeit. Hier ist ein Beispiel:
+Um das aktuelle Datum in Clojure abzurufen, können wir die Funktion `now` aus der Bibliothek `clojure.java-time` verwenden. Diese Funktion gibt ein `java.time.LocalDate`-Objekt zurück, welches das Datum in Form von Tag, Monat und Jahr enthält.
 
 ```Clojure
-(ns my-app.core
-  (:import [java.time LocalDateTime]))
-  
-(defn get-current-date []
-  (let [current-date (LocalDateTime/now)]
-    (println "Das aktuelle Datum ist:" (.toString current-date))))
+(ns blog-post.core
+  (:require [java-time :refer [now]]))
+
+(println (now))
 ```
 
-Dieser Code importiert die `java.time.LocalDateTime` Funktion und ruft dann die `now` Funktion auf, um das aktuelle Datum und die Zeit zurückzugeben. Auch hier wird das Datum im Format `yyyy-mm-dd hh:mm:ss` ausgegeben.
+Dieser Code gibt uns das aktuelle Datum in der folgenden Form zurück: `#<LocalDate 2021-10-20>`
 
-## Siehe auch
+Mithilfe der Funktionen `get-day-of-month`, `get-month` und `get-year` können wir das Datum aufschlüsseln und konkret ausgeben:
 
-- [Clojure-Dokumentation zu `java.util.Date`](https://clojuredocs.org/clojure.java.api#clojure.java.api/clojure.lang.IDeref/javagive) 
-- [Java-Dokumentation zu `java.time.LocalDateTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+```Clojure
+(ns blog-post.core
+  (:require [java-time :refer [now get-day-of-month get-month get-year]]))
+
+(def datum (now))
+(println (str "Heute ist der " (get-day-of-month datum) "." (get-month datum) "." (get-year datum)))
+```
+
+Das Ergebnis wäre dann: `Heute ist der 20.10.2021`.
+
+## Tiefere Einblicke
+
+Für diejenigen, die etwas tiefer in das Thema einsteigen möchten, hier ein paar weitere Infos: `clojure.java-time` baut auf der Java-Bibliothek `java.time` auf, welche im Jahr 2014 in Java 8 eingeführt wurde. Diese bietet eine umfangreiche Unterstützung für das Arbeiten mit Datum und Uhrzeit. Mehr Informationen zu `java.time` findet ihr [hier] (https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html).
+
+## Siehe Auch
+
+- [Offizielle Clojure-Website] (https://clojure.org/)
+- [Dokumentation zu clojure.java-time] (https://cljdoc.org/d/java-time/java-time/1.0.0/api/clojure.java-time)
+- [Clojure-Community-Forum auf Reddit] (https://www.reddit.com/r/Clojure/)

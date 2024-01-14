@@ -1,7 +1,9 @@
 ---
 title:                "C#: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,41 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Usein ohjelmoinnissa tarvitaan tapoja muuttaa tekstiä eri muotoihin ja yksi näistä muodoista on pienet kirjaimet. Pienen kirjaimen muotoilua käytetään esimerkiksi silloin kun vertaillaan sanoja tai halutaan saada yhtenäinen muoto tekstin käsittelyä varten. Tässä blogikirjoituksessa tutustumme siihen, kuinka muuttaa merkkijono pieniksi kirjaimiksi käyttäen C#-ohjelmointikieltä.
+Miksi haluaisit muuttaa merkkijonon pienaakkosiksi? Pienaakkosten käyttö mahdollistaa tekstin yhdenmukaistamisen ja helpottaa vertailua muihin merkkijonoihin.
 
-## Kuinka
+## Kuinka tehdä se
 
-Jos haluat muuttaa merkkijonon pieniksi kirjaimiksi C#-ohjelmassa, sinun tarvitsee käyttää String.ToLower() metodia. Alla on esimerkki koodista, jossa teksti muutetaan pieniksi kirjaimiksi ja tulostetaan konsoliin:
-
-```C#
-string teksti = "TÄMÄ ON ESIMERKKI";
-string pienilläKirjaimilla = teksti.ToLower();
-Console.WriteLine(pienilläKirjaimilla);
-```
-
-Tulos:
-```
-tämä on esimerkki
-```
-
-Kuten näemme esimerkistä, String.ToLower() metodi muuttaa kaikki isot kirjaimet pieniksi kirjaimiksi. Metodia voidaan käyttää myös yksittäisille merkeille, esimerkiksi jos haluaisimme muuttaa vain ensimmäisen kirjaimen pieneksi:
+Käytä C# -ohjelmointikielen string-luokan ToLower-metodia muuttaaksesi merkkijonon pienaakkosiksi. Tässä on esimerkki ja siihen liittyvä tulostus:
 
 ```C#
-string teksti = "TÄMÄ ON UUSI MERKKIJONO";
-char ensimmäinenKirjain = char.ToLower(teksti[0]);
-Console.WriteLine(ensimmäinenKirjain + teksti.Substring(1));
+String str = "PÄIVÄN SÄÄ ON AURINKOINEN";
+String lowerStr = str.ToLower();
+
+Console.WriteLine(lowerStr);
 ```
 
-Tulos:
+Tämän koodin tulos on:
+
 ```
-tÄMÄ ON UUSI MERKKIJONO
+päivän sää on aurinkoinen
 ```
 
-## Syvällinen sukellus
+## Syvällinen katsaus
 
-Miten sitten tämä pieniksi muuttaminen tapahtuu taustalla? C#-kielen String-luokka tarjoaa String.ToLower() metodin, jolloin metodi ottaa vastaan alkuperäisen merkkijonon ja palauttaa uuden merkkijonon, jossa kaikki isot kirjaimet on muutettu pieniksi. Merkkijonon muokkaaminen tapahtuu käyttäen Unicode Standardin String.ToLowerInvariant() metodia, jolloin kaikki kirjaimet on järjestetty Unicode Standardin mukaisesti.
+Kun käytät ToLower-metodia muuttaaksesi merkkijonon pienaakkosiksi, C# käyttää käyttöjärjestelmän oletusarvoista kielimuunnosta. Tämä tarkoittaa sitä, että tulokseksi saattaa tulla merkkijono, joka ei ole odotetussa muodossa. Voit lisätä koodiisi kieliuudelleenmäärityksen, joka varmistaa, että merkkijonon pienaakkoset ovat oikeassa muodossa.
 
 ## Katso myös
 
-- [C# String.ToLower() metodi](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
-- [Unicode Standard](https://unicode.org/standard/standard.html)
+- [C# string-luokka](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0)
+- [C# string-luokan ToLower-metodin dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-5.0)
+- [Kielimuunnoksen määrittäminen C#:ssa](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=net-5.0)

@@ -1,43 +1,67 @@
 ---
-title:                "Go: Pisanie do standardowego błędu"
+title:                "Go: Pisanie do standardowego wyjścia błędu"
+simple_title:         "Pisanie do standardowego wyjścia błędu"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać do standardowego wyjścia błędu w języku Go?
+## Dlaczego
 
-Jedną z najważniejszych części programowania jest odpowiednie obsługiwanie błędów. W języku Go istnieje standardowe wyjście błędu, które jest idealnym narzędziem do informowania użytkownika o błędach w trakcie działania programu. Pisanie do standardowego wyjścia błędu jest prostym i skutecznym sposobem na zarządzanie błędami, dlatego powinno być wykorzystywane przez każdego programistę w języku Go.
+Pisanie do standardowego błędu jest niezwykle przydatną umiejętnością w programowaniu w języku Go. Pozwala to na monitorowanie i debugowanie naszych programów, a także na wyświetlanie komunikatów błędów w konsoli. W tym artykule dowiesz się, jak łatwo i efektywnie pisać do standardowego błędu w języku Go.
 
-## Jak pisać do standardowego wyjścia błędu w języku Go?
+## Jak To Zrobić
 
-Aby pisać do standardowego wyjścia błędu w języku Go, należy użyć funkcji `fmt.Fprintf`. Przykładowy kod wraz z wyjściem wygląda następująco:
+Pisanie do standardowego błędu w języku Go jest bardzo proste, ponieważ istnieje wbudowany pakiet "errors", który zawiera funkcję "New" do tworzenia nowych błędów oraz funkcję "Print" do pisania do standardowego błędu. Przykładowy kod wyglądałby tak:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "os"
+	"errors"
+	"fmt"
 )
 
 func main() {
-    fmt.Fprintf(os.Stderr, "To jest błąd.\n")
+	err := errors.New("To jest przykładowy błąd")
+	fmt.Print(err)
 }
 ```
 
-Wywołanie `fmt.Fprintf` z argumentem `os.Stderr` sprawia, że napis zostanie wypisany do standardowego wyjścia błędu zamiast do standardowego wyjścia. Dzięki temu, użytkownik będzie miał informację o wystąpionym błędzie. 
+Po uruchomieniu tego programu, zobaczymy komunikat "To jest przykładowy błąd" w konsoli. Możemy także użyć funkcji "fprint" do pisania do standardowego błędu wraz z dodatkowymi informacjami, na przykład:
 
-## Deep Dive: Głębsze informacje o pisaniu do standardowego wyjścia błędu w języku Go
+```Go
+package main
 
-W języku Go istnieje jeszcze jedna funkcja do pisania do standardowego wyjścia błędu - `fmt.Errorf`. Różnica między `fmt.Fprintf` a `fmt.Errorf` polega na tym, że `fmt.Errorf` zwraca `error`, a `fmt.Fprintf` tylko wypisuje napis do standardowego wyjścia błędu. Ponadto, `fmt.Errorf` przyjmuje argumenty w sposób podobny do funkcji `fmt.Sprintf`.
+import (
+	"fmt"
+	"os"
+)
 
-Korzystanie z funkcji `fmt.Errorf` jest szczególnie przydatne w przypadkach, gdy potrzebujemy zwrócić błąd z funkcji, a jednocześnie poinformować o nim użytkownika.
+func main() {
+	name := "Jan"
+	err := fmt.Errorf("Witaj, %s, to jest przykładowy błąd", name)
+	fmt.Fprintln(os.Stderr, err)
+}
+```
 
-## Zobacz również
+W wyniku otrzymamy komunikat "Witaj, Jan, to jest przykładowy błąd" w konsoli.
 
-- Dokumentacja języka Go na temat pisania do standardowego wyjścia błędu: https://golang.org/pkg/fmt/#Fprintf
-- Dalsze materiały na temat obsługi błędów w języku Go: https://blog.golang.org/error-handling-and-go
-- Przydatne porady na temat pisania czytelnej i efektywnej obsługi błędów w języku Go: https://blog.golang.org/errors-are-values
+## Deep Dive
+
+Pisanie do standardowego błędu może być bardziej zaawansowane niż proste wyświetlanie komunikatów błędów. Pakiet "errors" pozwala na tworzenie bardziej szczegółowych błędów z kontekstem, co ułatwia debugowanie i udzielanie informacji o błędzie użytkownikom.
+
+Polecamy zapoznać się z dokumentacją pakietu "errors" oraz przeczytać artykuły o pisanie do standardowego błędu w języku Go, aby poznać więcej technik i narzędzi do efektywnego pisania i zarządzania błędami.
+
+## Zobacz Również
+
+- [Dokumentacja pakietu "errors"][1]
+- [Artykuł na temat zarządzania błędami w języku Go][2]
+- [Przykładowe techniki debugowania w języku Go][3]
+
+[1]: https://golang.org/pkg/errors/
+[2]: https://blog.golang.org/error-handling-and-go
+[3]: https://blog.golang.org/defer-panic-and-recover

@@ -1,30 +1,46 @@
 ---
 title:                "Haskell: Merkkijonon pituuden löytäminen"
+simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Stringin pituuden etsiminen voi olla hyödyllistä, kun haluat tarkistaa tekstin pituuden esimerkiksi lukeaksesi user inputtia tai tulostaa merkkijonon alueen.
+
+Miksi joku haluaisi selvittää merkkijonon pituuden? Pituuden selvittäminen voi olla hyödyllistä esimerkiksi kirjoittaessaan tekstipohjaista sovellusta, jossa tarkkaillaan syötteiden pituutta tai analysoitaessa tekstidataa.
 
 ## Miten
-```Haskell
-pituus:: String -> Int
-pituus s = length s
 
-pituus "Hei maailma" 
--- Palauttaa 11
+Merkkijonon pituuden selvittäminen Haskell-kielen avulla on helppoa. Käytännössä tarvitset vain yhden funktion, nimeltään "length".
+
+```Haskell
+length "Tämä on esimerkkiteksti." 
 ```
 
-Voit käyttää `length` funktiota saadaksesi merkkijonon pituuden. Tämä funktio ottaa argumentiksi merkkijonon ja palauttaa sen pituuden kokonaislukuna.
+```
+25
+```
+Funktion "length" oletusarvo on laskeminen merkkien määrä, mutta voit myös käyttää sitä muiden tietotyyppien, kuten listojen, pituuden laskemiseen.
 
-## Syvällisesti
-Stringin pituus lasketaan siirtämällä jokainen merkki merkkijonossa yksi kerrallaan ja lisäämällä laskuri, joka pitää kirjaa merkkien määrästä. Tätä prosessia jatketaan kunnes merkkijono on käyty läpi ja laskuri on saavuttanut merkkijonon pituuden. Tämä tapahtuu rekursiivisesti eli funktio kutsuu itseään kunnes laskuri on valmis.
+```Haskell
+length [1, 2, 3, 4, 5]
+```
+
+```
+5
+```
+
+## Syvällinen tarkastelu
+
+Haskellissa merkkijonot ovat omia tietotyyppejä, mutta ne voivat myös olla listoja merkeistä. Tämä johtaa siihen, että funktion "length" kautta myös merkkijonon pituus lasketaan listan pituutena.
+
+Tämän lisäksi Haskellissa on myös muita tapoja lukea merkkijonon pituutta, kuten käyttämällä funktiota "fst" ja "snd" tupleille, joissa ensimmäinen alkio on merkkijono ja toinen on sen pituus.
 
 ## Katso myös
-- [Haskellin standardikirjaston dokumentaatio `length` funktiosta](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:length)
-- [Artikkeli Haskellin rekursiivisesta laskennasta](https://en.wikibooks.org/wiki/Haskell/Recursion)
-- [Lyhyt esimerkki Rekursiosta](https://www.haskell.org/tutorial/functions.html#functions-and-pattern-matching)
+
+- [Haskellin dokumentaatio merkkijonojen käsittelystä](https://www.haskell.org/onlinereport/string.html)
+- [Haskellin opetusohjelma "Learn You a Haskell"](http://learnyouahaskell.com/starting-out#im-a-list-comprehension)

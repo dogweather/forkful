@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Tiedoston lukeminen"
+title:                "Rust: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/reading-a-text-file.md"
 ---
 
@@ -9,68 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monet ihmiset aloittavat ohjelmoinnin Rust-kielenä nykyään, mutta millainen on tekstintiedoston luku ja miksi se on tärkeää? Tässä blogikirjoituksessa kerromme tarkemmin siitä, miksi siihen kannattaa perehtyä.
+Miksi teksti tiedoston lukeminen on tärkeää Rust ohjelmoinnissa? Se on hyödyllistä silloin kun haluat lukea tiedostosta tietoja ja käsitellä niitä ohjelmassasi.
 
 ## Miten
 
-Koodin lukeminen tekstitiedostosta Rustilla on melko yksinkertaista ja vaivatonta. Alla esittelemme muutaman esimerkin, joiden avulla voit aloittaa.
+Koodiesimerkit ja tulosteesimerkit "```Rust ...```" koodilohkoissa auttavat lukijaa ymmärtämään, miten voit lukea teksti tiedostoja Rust ohjelmoinnissa. 
 
 ```Rust
-use std::fs::File;
-use std::io::prelude::*;
 
-fn main() {
-    // Avataan tiedosto ja luetaan sen sisältö merkkijonoksi
-    let mut file = File::open("tekstitiedosto.txt").expect("Tiedoston lukeminen epäonnistui");
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).expect("Tiedoston lukeminen epäonnistui");
+// avaa tiedosto tekstin lukemista varten
+let tiedosto = std::fs::File::open(“tiedostonimi.txt”)?;
 
-    // Tulostetaan tiedoston sisältö
-    println!("{}", contents);
+// luo muuttuja, johon tallennetaan tiedoston sisältö
+let sisalto = std::io::BufReader::new(&tiedosto);
+
+// käy läpi tiedoston sisältö rivi kerrallaan
+for rivi_tulos in sisalto.lines() {
+    let rivi = rivi_tulos?;
+    println!("{}", rivi);
 }
-```
-
-### Esimerkkituloste:
 
 ```
-Tämä on esimerkki tekstistä
-joka on tallennettu tekstitiedostoon.
-```
 
-Voit myös lukea tiedostoa rivi kerrallaan käyttämällä `BufReader`-luokkaa:
+Tulosteesimerkissä käydään läpi tiedoston sisältö rivi kerrallaan ja jokainen rivi tulostetaan konsoliin. Voit myös käsitellä tiedoston sisältöä haluamallasi tavalla, esimerkiksi tallentaa se listaan tai käyttää tietoja johonkin laskutoimitukseen.
 
-```Rust
-use std::fs::File;
-use std::io::{BufRead, BufReader};
+## Syvemmälle
 
-fn main() {
-    // Avataan tiedosto ja luodaan BufReader-olio
-    let file = File::open("tekstitiedosto.txt").expect("Tiedoston lukeminen epäonnistui");
-    let reader = BufReader::new(file);
-
-    // Käydään läpi tiedoston rivit ja tulostetaan ne
-    for line in reader.lines() {
-        println!("{}", line.expect("Tiedoston lukeminen epäonnistui"));
-    }
-}
-```
-
-### Esimerkkituloste:
-
-```
-Tämä on esimerkki tekstistä
-joka on tallennettu tekstitiedostoon.
-```
-
-## Syventävä sukellus
-
-Tekstitiedostojen lukeminen on tärkeä osa ohjelmointia ja sitä käytetään usein esimerkiksi tietokantojen ja käyttäjän antamien syötteiden käsittelyssä. Rust tarjoaa hyödyllisiä työkaluja, kuten `File`- ja `BufReader`-luokat, jotka helpottavat tiedoston lukemista ja käsittelemistä.
-
-On myös tärkeää huomata, että tiedoston käsittely voi joskus aiheuttaa ohjelmassa virheitä. Siksi on hyvä käyttää `expect`-metodin sijaan esimerkiksi `match`-lauseketta, jotta ohjelma osaa käsitellä mahdolliset virhetilanteet.
+Rustilla on monia eri tapoja lukea teksti tiedostoja, kuten käytetty esimerkissä oleva `std::fs` ja `std::io` moduulit. Voit myös käyttää `std::fs::read_to_string` metodia, joka lukee koko tiedoston sisällön yhtenä merkkijonona, tai `std::io::Read` traitia, jota käytetään lukemaan dataa bittien muodossa.
 
 ## Katso myös
 
-- [Rust-ohjelmointikielen virallinen verkkosivusto](https://www.rust-lang.org/fi)
-- [Rust-opetusohjelmat](https://doc.rust-lang.org/book/)
-- [Tiedoston lukeminen Rustilla-ohjeet](https://doc.rust-lang.org/std/fs/struct.File.html#method.read_to_string)
-- [BufReader-luokan dokumentaatio](https://doc.rust-lang.org/std/io/struct.BufReader.html)
+- [Rust ohjelmointikielen virallinen kotisivu](https://www.rust-lang.org/fi)
+- [Rust oppaan lukeminen tiedostosta](https://doc.rust-lang.org/book/ch12-02-reading-a-file.html)
+- [Rust standardikirjaston dokumentaatio](https://doc.rust-lang.org/std/index.html)

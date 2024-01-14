@@ -1,35 +1,42 @@
 ---
 title:                "Elm: Création d'un fichier temporaire"
+simple_title:         "Création d'un fichier temporaire"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi créer des fichiers temporaires en Elm?
+# Pourquoi
 
-Créer des fichiers temporaires peut sembler être une tâche inutile, mais elle peut en fait être très utile lors de la programmation en Elm. Que ce soit pour stocker des données temporaires ou pour éviter de surcharger votre système de fichiers avec des fichiers inutiles, apprendre à créer des fichiers temporaires en Elm peut vous être très pratique.
+La création de fichiers temporaires est une tâche importante en programmation, que ce soit pour stocker temporairement des données ou pour effectuer des opérations sur des fichiers volumineux. Dans cet article, nous allons explorer comment créer des fichiers temporaires en utilisant la langage de programmation Elm.
 
-## Comment créer des fichiers temporaires en Elm
+# Comment faire
 
-Il existe plusieurs façons de créer des fichiers temporaires en Elm, mais voici l'une des méthodes les plus simples. Tout d'abord, nous devons importer la bibliothèque `File` qui nous permettra de travailler avec des fichiers en Elm. Ensuite, nous pouvons utiliser la fonction `createTemp` pour créer un fichier temporaire avec un nom aléatoire.
+Pour créer un fichier temporaire en Elm, nous allons utiliser la fonction `File.temp`. Cette fonction prend en argument le chemin d'accès au fichier temporaire et le contenu que vous souhaitez y écrire. Voici un exemple de code :
 
 ```Elm
-import File
-file : File
-file = File.createTemp ()
+file : String
+file = "/mon/chemin/fichier/temporaire"
+
+contenu : String
+contenu = "Ceci est un contenu temporaire"
+
+_ = File.temp file contenu
 ```
 
-Cela créera un fichier temporaire dans le dossier de votre projet avec un nom aléatoire, tel que "temp1234". Vous pouvez alors utiliser ce fichier pour stocker des données ou effectuer d'autres opérations.
+En exécutant ce code, un nouveau fichier temporaire sera créé dans le chemin spécifié et le contenu sera écrit à l'intérieur de celui-ci. Vous pouvez également spécifier des options supplémentaires telles que les droits d'accès du fichier ou sa position dans le système de fichiers.
 
-## Plongée en profondeur
+# Plongée en profondeur
 
-Bien que la méthode ci-dessus soit simple et pratique, il est important de comprendre le processus de création d'un fichier temporaire en Elm. Lorsque nous utilisons la fonction `createTemp`, un nom aléatoire est généré et le fichier est créé dans le dossier de notre projet. Cependant, le fichier n'existe pas réellement tant que nous n'avons pas écrit de données à l'intérieur. Cela signifie que si vous essayez de lire le contenu du fichier avant d'y avoir écrit, vous obtiendrez une erreur.
+La fonction `File.temp` utilise une autre fonction appelée `File.openTempFile`. Cette fonction prend en argument un gestionnaire de fichiers et renvoie un chemin d'accès au fichier temporaire créé. En utilisant cette fonction, vous pouvez avoir plus de contrôle sur la façon dont le fichier temporaire est créé et géré.
 
-Il est également important de noter que les fichiers temporaires créés de cette manière seront automatiquement supprimés lors de la fermeture de votre application ou lorsque le Garbage Collector sera appelé.
+Cependant, il est important de noter que les fichiers temporaires sont automatiquement supprimés une fois que votre programme a fini de s'exécuter. Donc, si vous avez besoin de conserver les données du fichier temporaire pendant une période plus longue, vous devrez enregistrer le fichier dans un emplacement permanent avant que le programme ne se termine.
 
-## Voir aussi
+# Voir aussi
 
-- Documentation sur la bibliothèque `File`: https://package.elm-lang.org/packages/elm/core/latest/File
-- Exemples de code pour créer des fichiers temporaires: https://github.com/elm/random/blob/master/examples/temp_file.elm
+- [Documentation officielle Elm - File](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Tutoriel sur la manipulation de fichiers en Elm](https://dev.to/baransu/file-listing-and-manipulation-in-elm-43ja)
+- [Article sur la gestion des fichiers temporaires en Elm](https://medium.com/swlh/temporary-files-management-in-elm-47edb9509201)

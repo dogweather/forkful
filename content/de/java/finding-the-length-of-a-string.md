@@ -1,7 +1,9 @@
 ---
 title:                "Java: Die Länge eines Strings finden"
+simple_title:         "Die Länge eines Strings finden"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/finding-the-length-of-a-string.md"
 ---
 
@@ -9,28 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Warum
 
-Warum sollte man sich damit beschäftigen, die Länge eines Strings zu finden? Die Antwort ist einfach: In der Welt der Programmierung gibt es eine Vielzahl an Anwendungsfällen, in denen man die Länge eines Strings benötigt. Zum Beispiel kann es hilfreich sein, die maximale Anzahl an Zeichen in einem Feld oder Textfeld zu begrenzen oder die Eingabe des Nutzers auf eine bestimmte Länge zu überprüfen.
+Das Finden der Länge eines Strings ist ein grundlegender Teil der Java-Programmierung, da es uns ermöglicht, die Größe eines Strings zu ermitteln und ihn entsprechend zu manipulieren.
 
-# Wie man die Länge eines Strings in Java findet
+# Wie man das macht
 
-Um die Länge eines Strings in Java zu finden, gibt es eine eingebaute Methode namens "length()". Diese Methode gibt die Anzahl der Zeichen in einem String zurück. Schauen wir uns ein Beispiel an:
+Um die Länge eines Strings in Java zu finden, gibt es eine eingebaute Methode namens `length()`, die auf jedem String-Objekt aufgerufen werden kann. Diese Methode gibt einen ganzzahligen Wert zurück, der die Anzahl der Zeichen im String repräsentiert.
 
 ```Java
-String text = "Hallo Welt!";
-int length = text.length();
-System.out.println("Die Länge des Strings beträgt: " + length);
+String name = "Katharina";
+int length = name.length();
+System.out.println(length);
 ```
 
-Die Ausgabe dieses Codes wird sein: "Die Länge des Strings beträgt: 12". Bitte beachte, dass Leerzeichen ebenfalls als Zeichen gezählt werden.
+**Output:** 10
 
-# Tiefergehende Informationen
+In diesem Beispiel verwenden wir die `length()` Methode, um die Länge des Strings "Katharina" zu finden und sie dann mit `System.out.println()` auszugeben.
 
-Die Methode "length()" verwendet intern einen sogenannten "String-Buffer", um die Länge des Strings zu berechnen. Ein "String-Buffer" ist ein Datenstruktur, die flexibel die Größe eines Strings ändern kann. Dies ermöglicht es der Methode, die Länge eines Strings in O(1) Zeit (konstante Zeit) zu berechnen, unabhängig von der Länge des Strings.
+# Tiefere Einblicke
 
-In Java gibt es auch die Möglichkeit, mit dem ASCII-Code zu arbeiten, um die Länge eines Strings zu bestimmen. Der ASCII-Code ist ein numerisches Codeschema, das jedem Zeichen in der Tastatur eine Zahl zuweist. Die ASCII-Werte der einzelnen Zeichen in einem String werden summiert, um die Länge des Strings zu bestimmen. Dies ist jedoch ein etwas komplexerer Ansatz und wird in den meisten Fällen nicht benötigt.
+Intern funktioniert die `length()` Methode, indem sie den internen `char` Array des Strings durchläuft und die Anzahl der vorhandenen Zeichen zählt. Es wird empfohlen, diese Methode zu verwenden, um die Länge eines Strings zu ermitteln, anstatt manuell durch den String zu iterieren.
+
+Ein wichtiger Punkt zu beachten ist, dass die `length()` Methode die Leerzeichen im String als Zeichen mitzählt. Zum Beispiel hat der String "Hallo Welt" eine Länge von 11, da das Leerzeichen auch als ein Zeichen gezählt wird.
 
 # Siehe auch
 
-- [Java String documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-- [ASCII code](https://www.ascii-code.com/)
-- [Java built-in methods](https://docs.oracle.com/javase/tutorial/java/data/builtinclasses.html) (auf Deutsch)
+- [Java String class documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [Java String length() method documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#length())

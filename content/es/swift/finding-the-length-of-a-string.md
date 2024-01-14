@@ -1,50 +1,68 @@
 ---
 title:                "Swift: Encontrando la longitud de una cadena"
+simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías encontrar la longitud de una cadena?
+## Por qué
 
-En programación, a menudo necesitas trabajar con cadenas de texto. Una operación muy común es encontrar la longitud de una cadena, es decir, cuántos caracteres contiene. Esto es útil para tareas como validar inputs de usuario, contar palabras en un párrafo o simplemente para saber cuánto espacio ocupará una cadena en memoria. En esta publicación, aprenderás cómo hacerlo en Swift.
+En la programación Swift, conocer la longitud de una cadena puede ser útil para realizar diversas tareas, como validar entradas de usuario o manipular cadenas para mostrar información específica. Afortunadamente, encontrar la longitud de una cadena es un proceso sencillo que te permitirá mejorar tus habilidades de programación en Swift.
 
 ## Cómo hacerlo
 
-Para encontrar la longitud de una cadena en Swift, podemos usar la propiedad `count` en una instancia de `String`. Por ejemplo:
+Para encontrar la longitud de una cadena en Swift, simplemente utilizamos el método `count` en la cadena. A continuación se muestra un ejemplo de cómo encontrar la longitud de la cadena "Hola mundo":
 
 ```Swift
-let string = "¡Hola, mundo!"
-let length = string.count
-print(length) // Output: 13
+let cadena = "Hola mundo"
+print(cadena.count)
+// Output: 10
 ```
 
-En este ejemplo, creamos una cadena con el saludo clásico "¡Hola, mundo!" y luego usamos `count` para obtener su longitud, que es 13.
+En este ejemplo, el método `count` devuelve el número de caracteres de la cadena, incluyendo los espacios en blanco.
 
-También podemos encontrar la longitud de una cadena utilizando el método `countElements()`, como se muestra a continuación:
+Otra forma de encontrar la longitud de una cadena es mediante el uso del operador `count` en la cadena, como se muestra a continuación:
 
 ```Swift
-let anotherString = "Este texto tiene 7 palabras."
-let length = countElements(anotherString)
-print(length) // Output: 30
+let cadena = "¡Hola!"
+print(cadena.count)
+// Output: 6
 ```
 
-En este caso, usamos una función de Swift para encontrar la longitud de la cadena, que también incluye los espacios y signos de puntuación.
+Como se puede observar, el método `count` también funciona en cadenas que incluyen caracteres especiales.
 
 ## Profundizando
 
-Ahora que sabemos cómo encontrar la longitud de una cadena, veamos algunos detalles más sobre este proceso. En Swift, cada carácter en una cadena, incluidos los emojis, se considera un elemento y, por lo tanto, se cuentan en la longitud de la misma.
+Aunque el método `count` es el más comúnmente utilizado para encontrar la longitud de una cadena, también existen otras opciones como el método `characters` y el operador `isEmpty`.
 
-Es importante tener en cuenta que en Swift, los emojis se pueden mostrar como uno o varios caracteres, dependiendo del sistema operativo y la fuente utilizada. Por lo tanto, la edad de una cadena que contiene emojis puede variar dependiendo del contexto en el que se muestre.
+El método `characters` devuelve una colección de caracteres de la cadena, lo que nos permite realizar operaciones adicionales. A continuación se muestra un ejemplo de cómo utilizar este método:
 
-Además, mientras que en Swift 2.0 y versiones anteriores, `countElements()` también incluía los espacios en blanco en su recuento, en versiones más recientes solo cuenta los caracteres visibles. Por lo tanto, si necesitas contar los espacios en blanco, deberás usar la propiedad `count`.
+```Swift
+let cadena = "Hola"
+print(cadena.characters.count)
+// Output: 4
+```
 
-## Ver también 
+Por otro lado, el operador `isEmpty` nos permite comprobar si la cadena está vacía o no. En el siguiente ejemplo, utilizamos este operador para imprimir un mensaje si la cadena está vacía:
 
-- [String en la documentación de Swift](https://developer.apple.com/documentation/swift/string)
-- [Swift String Tutorial: Manejo de cadenas en Swift](https://www.raywenderlich.com/860-swift-string-tutorial-managing-strings-in-swift)
-- [Estructuras de datos básicas de Swift](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html#//apple_ref/doc/uid/TP40014097-CH8-ID106)
+```Swift
+let cadena = ""
+if cadena.isEmpty {
+    print("La cadena está vacía.")
+} else {
+    print("La longitud de la cadena es: \(cadena.count)")
+}
+// Output: La cadena está vacía.
+```
 
-¡Gracias por leer y feliz codificación en Swift!
+Recuerda que siempre puedes consultar la documentación oficial de Swift para obtener más información sobre estos y otros métodos para encontrar la longitud de una cadena.
+
+## Ver también
+
+- [Documentación oficial de Swift](https://developer.apple.com/documentation/swift)
+- [Tutorial de Swift para principiantes](https://www.raywenderlich.com/5996-swift-tutorial-for-beginners)
+- [Ejemplos de código para Swift](https://github.com/apple/swift/tree/master/samples)

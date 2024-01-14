@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Att hämta aktuellt datum"
+title:                "Rust: Att få den aktuella datumet"
+simple_title:         "Att få den aktuella datumet"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/getting-the-current-date.md"
 ---
 
@@ -9,57 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna hämta och använda dagens datum är en viktig del av många programmeringsprojekt. Det kan hjälpa dig att spåra tidsbaserade händelser, beräkna åldrar eller helt enkelt visa dagens datum för användaren. I denna bloggpost kommer jag att visa dig hur du kan göra det med hjälp av Rust.
+Att kunna få den aktuella datumet är en viktig del av många olika program som utvecklas i Rust. Det kan användas för att hålla reda på tidsstämplar, planera framtida händelser eller helt enkelt för att visa aktuell tid på en användargränssnitt. Oavsett vad ditt projekt behöver, är det viktigt att veta hur man får tag på den aktuella datumet i Rust.
 
 ## Så här gör du
 
-För att hämta dagens datum i Rust behöver vi använda ett bibliotek som heter `chrono`. Detta bibliotek tillhandahåller ett antal funktioner för att arbeta med datum och tid i Rust. För att börja använda `chrono` behöver vi först lägga till det i vår `Cargo.toml` fil:
+För att få tag på den aktuella datumet i Rust, används den inbyggda standardbiblioteket `chrono`. Genom att importera detta bibliotek kan vi enkelt skapa ett datum-objekt och få access till dess egenskaper.
 
-```
-[dependencies]
-chrono = "0.4.19"
-```
+```Rust
+use chrono::{Local, DateTime};
 
-Efter att ha uppdaterat vår `Cargo.toml` fil kan vi importera `chrono` till vårt projekt:
+let nu = Local::now(); // skapar ett DateTime objekt för nuvarande tid
+let year = nu.year(); // hämtar året från objektet
+let month = nu.month(); // hämtar månaden från objektet
+let day = nu.day(); // hämtar dagen från objektet
 
-```
-use chrono::prelude::*;
-```
-
-Nu är vi redo att använda `chrono`. Vi kan hämta dagens datum genom att skapa ett `Date` objekt och sedan använda funktionen `today()`:
-
-```
-let today = Local::today();
-println!("Dagens datum är: {}", today);
+println!("Idag är det {}-{}-{}", day, month, year); // skriver ut "Idag är det 8-12-2021"
 ```
 
-Vi kan också ange ett specifikt datum genom att använda funktionen `ymd()` som tar tre argument - år, månad och dag:
-
-```
-let specific_date = Local.ymd(2021, 10, 31);
-```
-
-Observera att `Local` är en del av `chrono` som representerar det lokala lagsystemet för datum och tid.
+I exemplet används `Local::now()` för att skapa ett `DateTime` objekt för nuvarande tid baserat på den lokala tidszonen. Sedan kan olika metoder användas för att få tag på specifika egenskaper hos datumen, såsom år, månad och dag.
 
 ## Djupdykning
 
-Nu när vi vet hur man hämtar dagens datum, låt oss titta på några andra funktioner som `chrono` erbjuder. Vi kan till exempel ta reda på vilken veckodag det är genom att använda `.weekday()` funktionen:
+Den aktuella datumet kan också hämtas genom att använda operativsystemets systemklocka. För att göra det, används funktionen `SystemTime::now()` från standardbiblioteket `std::time`. Detta ger en `SystemTime` objekt, som sedan kan konverteras till ett `DateTime` objekt genom att använda metoden `DateTime::from()` från `chrono`.
 
-```
-let weekday = today.weekday();
-println!("Det är {} idag!", weekday);
+```Rust
+use std::time::SystemTime;
+use chrono::{Local, DateTime};
+
+let now = SystemTime::now();
+let now_dt: DateTime<Local> = DateTime::from(now); // konverterar till DateTime objekt
+
+let hour = now_dt.hour(); // hämtar timmen från objektet
+
+println!("Klockan är just nu {}.", hour); // skriver ut "Klockan är just nu 13."
 ```
 
-Vi kan också formatera datumet på olika sätt genom att använda `.format()` funktionen. Till exempel kan vi formatera det som "dag/månad/år" genom att använda `"%e/%m/%Y"`:
-
-```
-let formatted_date = today.format("%e/%m/%Y");
-println!("Datumet i dagens format är: {}", formatted_date);
-```
-
-Detta är bara några exempel på vad som är möjligt med `chrono`. Jag rekommenderar att du utforskar dokumentationen för att lära dig mer om hur du kan arbeta med datum och tid i Rust.
+Genom att använda `SystemTime` kan vi också göra mer avancerade operationer, såsom att jämföra datum från olika tidszoner eller skapa specifika datum för framtida händelser.
 
 ## Se även
 
-- [Chrono dokumentation](https://docs.rs/chrono)
-- [Rustlings: Chrono](https://github.com/rust-lang/rustlings/blob/main/exercises/chrono/chrono.rs)
+* [Chrono dokumentation](https://docs.rs/chrono)
+* [Rust's standardbibliotek dokumentation](https://doc.rust-lang.org/std/index.html)

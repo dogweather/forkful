@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Conversion d'une date en chaîne de caractères"
+title:                "Elixir: Transformer une date en chaîne de caractères."
+simple_title:         "Transformer une date en chaîne de caractères."
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/converting-a-date-into-a-string.md"
 ---
 
@@ -9,36 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Convertissez une date en chaîne de caractères peut sembler un concept simple mais c'est en fait une tâche importante en programmation. La conversion de données en différents formats est courante dans les applications et la manipulation de dates est un élément essentiel dans de nombreux programmes. Dans cet article, nous allons découvrir comment convertir une date en chaîne de caractères en utilisant le langage de programmation Elixir.
+La conversion d'une date en chaîne de caractères est un concept clé en programmation Elixir. Cela permet de manipuler facilement et d'afficher des dates dans un format compréhensible pour les utilisateurs. Dans cet article, nous allons découvrir pourquoi et comment convertir une date en chaîne de caractères en utilisant Elixir.
 
 ## Comment faire
 
-Pour convertir une date en chaîne de caractères en Elixir, nous pouvons utiliser la fonction `~D`, qui accepte une date dans le format ISO et renvoie une chaîne de caractères. Voici un exemple:
+Il existe plusieurs façons de convertir une date en chaîne de caractères en Elixir. Voici un exemple de code utilisant la fonction `date.to_string/2` :
 
 ```Elixir
-~D[2020-12-25]
+date = ~D[2021-05-01] # Définit une date au format ISO
+formatted_date = date.to_string({:short, :numeric}) # Convertit la date en chaîne de caractères
+IO.puts formatted_date
 ```
 
-Cela renverra la chaîne de caractères "2020-12-25". Nous pouvons également ajouter un format d'affichage personnalisé en utilisant la fonction `~D[f <<format>>]`. Voici un exemple avec le format "MM/DD/YY":
+Le code ci-dessus va afficher la date sous la forme `05/01/2021`. Vous pouvez également personnaliser le format de la date en utilisant les options `:short`, `:medium`, `:long` ou `:iso` ainsi que les options `:numeric` ou `:verbose` pour afficher des nombres ou des mots.
+
+Vous pouvez aussi utiliser la fonction `Date.to_iso8601/1` pour convertir une date en chaîne de caractères conforme au standard ISO 8601 :
 
 ```Elixir
-~D[f "MM/DD/YY"][2020-12-25]
+date = ~D[2021-05-01]
+ISO_date = Date.to_iso8601(date)
+IO.puts ISO_date
 ```
 
-Cela renverra la chaîne de caractères "12/25/20". Nous pouvons également formater les dates avec l'heure en utilisant la fonction `~N`, qui suit la même logique. Voici un exemple:
+Le code ci-dessus va afficher la date sous la forme `2021-05-01`.
+
+## Plongée en profondeur
+
+En plus des fonctions mentionnées ci-dessus, Elixir offre également la possibilité de manipuler des dates en utilisant le module `Calendar`. Ce module fournit un ensemble de fonctions puissantes pour gérer les dates, y compris la conversion en chaîne de caractères.
+
+Par exemple, vous pouvez utiliser la fonction `~D` pour convertir une date au format ISO en utilisant les paramètres de votre choix :
 
 ```Elixir
-~N[f "MM/DD/YY hh:mm:ss"][2020-12-25 23:59:59]
+date = ~D[2021-05-01]
+formatted_date = "~D/%d-%m-%Y" |> String.replace(~r/\//, "-") |> Calendar.strftime(date)
+IO.puts formatted_date
 ```
 
-Cela renverra la chaîne de caractères "12/25/20 23:59:59".
+Le code ci-dessus va afficher la date sous la forme `01-05-2021`. Vous pouvez également utiliser la fonction `~U` pour convertir une date avec une heure spécifique :
 
-## Plongée profonde
+```Elixir
+date = ~U[2021-05-01 15:30:00]
+formatted_date = "~U/%Y-%m-%dT%H:%M:%S%z" |> Calendar.strftime(date)
+IO.puts formatted_date
+```
 
-En utilisant la fonction `~D[f <<format>>]`, nous pouvons y inclure des options pour la langue et les fuseaux horaires. Cela peut être utile lors de la conversion de dates pour différentes régions ou cultures. De plus, il est important de noter que lorsque nous convertissons des dates en chaînes de caractères, nous perdons les informations sur les fuseaux horaires. Si nous avons besoin de garder cette information, nous pouvons utiliser la bibliothèque `Tzdata` pour travailler avec les fuseaux horaires en Elixir.
+Le code ci-dessus va afficher la date sous la forme `2021-05-01T15:30:00+00:00`.
 
 ## Voir aussi
 
-- [Documentation officielle d'Elixir sur les chaînes de caractères](https://elixir-lang.org/getting-started/strings-and-binaries.html)
-- [Documentation officielle d'Elixir sur les dates](https://hexdocs.pm/elixir/DateTime.html)
-- [Documentation officielle d'Elixir sur la bibliothèque Tzdata](https://hexdocs.pm/tzdata/readme.html)
+- [Documentation officielle Elixir pour le module Calendar](https://hexdocs.pm/elixir/Calendar.html)
+- [Article "7 astuces pour travailler avec les dates en Elixir"](https://medium.com/@leovillani/7-astuces-pour-travailler-avec-les-dates-en-elixir-444b786174bd)
+- [Blog de la communauté Elixir en français](https://elixir-fr.com)

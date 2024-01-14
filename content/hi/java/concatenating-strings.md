@@ -1,32 +1,43 @@
 ---
-title:                "Java: स्ट्रिंग्स को जोड़ना"
+title:                "Java: स्ट्रिंग जोड़ना"
+simple_title:         "स्ट्रिंग जोड़ना"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Ab aap soch rahe honge ki kya zaroorat hai string concatenation ki? Suniye, string concatenation ek important concept hai Java programming mein. Isse aap apne code mein alag-alag strings ko ek saath jod sakte hain aur usme se ek naya string bana sakte hain. Aaiye ab jaane ki kaise.
 
-कई बार हमें स्ट्रिंग्स कोडिंग में अलग-अलग भागों में विभाजित करना पड़ता है और उन्हें एक ही स्ट्रिंग में जोड़ना होता है। इससे हमारे कोड में सुधार हो सकते हैं और स्ट्रिंग में उपयोग्य परिवर्तन किया जा सकता है। स्ट्रिंग कोडिंग में कंकटनेट करना एक उपयोगी कौशल है जो हर जावा प्रोग्रामर को आनी चाहिए।
+## Kaise Karein
+String concatenation karne ke liye aapko 2 methods ka use karna hoga - "+" ya "concat()". Neeche diye gaye example mein aap dekh sakte hain ki kaise aap in methods ka use karke strings ko ek saath jod sakte hain.
 
-## कैसे करें
+```Java
+// Use of "+" method
+String str1 = "Hello";
+String str2 = "World";
+String str3 = str1 + " " + str2;
+System.out.println(str3); // Output: Hello World
 
-\`\`\`Java
-// एक साधारण स्ट्रिंग बनाना
-String name = "जॉन डो";
-String greeting = "नमस्ते, ";
+// Use of "concat()" method
+String str1 = "She";
+String str2 = "is";
+String str3 = "beautiful";
+String str4 = str1.concat(" ").concat(str2).concat(" ").concat(str3);
+System.out.println(str4); // Output: She is beautiful
+```
 
-// स्ट्रिंग्स को कंकटनेट कर उसका लिए वर्तमानीकरण करना
-String message = greeting + name + "! मेरा नाम है अलिसा।";
+## Gehraai Mein Jaya
+String concatenation ke alawa bhi kuch important points hain jinhe aapko jaanna zaroori hai. Sabse pehle, agar aap digits ko string mein add karna chahte hain, toh aapko unhe pehle string mein convert karna hoga. Uske baad aap inhe concatenate kar sakte hain. Dusra important point hai ki string concatenation ek efficient process nahi hai, isliye agar aap bahut saare strings ko concatenate karte hain, toh performance mein thoda impact pad sakta hai.
 
-// आउटपुट: नमस्ते, जॉन डो! मेरा नाम है अलिसा।
-System.out.println(message);
-\`\`\`
+## Dekhiye Bhi
+Agar aapko Java programming ki aur bhi concepts jaanne hain, toh aap in links ko dekh sakte hain:
 
-ऊपर कोड में, हमने दो स्ट्रिंग्स को कंकटनेट किया है और उसको एक नए स्ट्रिंग में वर्तमानीकृत किया है। इससे नया स्ट्रिंग हमारे टेक्स्ट स्ट्रिंग में विभाजन कर सकता है और हमें उपयोग्य परिवर्तन करने में आसानी होती है।
+- ["Java Strings" by W3Schools](https://www.w3schools.com/java/java_strings.asp)
+- ["String Concatenation in Java" by GeeksforGeeks](https://www.geeksforgeeks.org/string-concatenation-in-java/)
+- ["All About Strings in Java" by Oracle](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
 
-## गहराई से जानें
-
-स्ट्रिंग कंकटनेटेशन के साथ खेलना सिर्फ साधारण कोडिंग से आगे बढ़ने का एक तरीका है। हम इस्तेमाल कर सकते हैं `+=` सिन्टैक्स अपरेटर को हमे दो स्ट्रिंग्स को जोड़ने अस्ली स्ट्रिंग में। इससे हमारी रिकॉर्ड में भी स्ट्रिंग कंकटनेट करने की जोड़ कर सकते हैं। अंत में, यह एक महत्वपूर्ण उपकरण है जो हमें कोडिंग म
+Happy coding!

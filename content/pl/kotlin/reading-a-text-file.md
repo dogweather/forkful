@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Czytanie pliku tekstowego"
+title:                "Kotlin: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/reading-a-text-file.md"
 ---
 
@@ -9,36 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czytanie plików tekstowych jest częstym zadaniem w programowaniu. Jest to niezbędne, gdy chcemy przetworzyć duże ilości informacji zapisanych w pliku lub gdy musimy wczytywać dane w określonym formacie. W tym artykule dowiesz się, jak w łatwy sposób przeczytać plik tekstowy w języku Kotlin.
+Czy kiedykolwiek próbowałeś przeczytać dane z pliku tekstowego w swoim programie Kotlin? Jeśli tak, to wiesz, że jest to ważny proces w wielu projektach programistycznych. W tym wpisie dowiecie się dlaczego jest to niezbędne oraz jak łatwo i szybko tego dokonać.
 
 ## Jak to zrobić
 
-Do wczytania pliku tekstowego w Kotlinie wykorzystamy funkcję `readText()` i podamy jako argument ścieżkę do pliku, który chcemy przeczytać. Na przykład:
+Czy masz już przygotowany plik tekstowy z danymi? Jeśli tak, wystarczy, że utworzysz nowy projekt Kotlin i dodasz go do swojego kodu. Następnie, wykorzystując funkcję `readText()` i podając ścieżkę do swojego pliku, możesz odczytać jego zawartość. 
 
 ```Kotlin
-val tekst = File("moj_plik.txt").readText()
-println(tekst)
+val file = File("sciezka/do/pliku.txt")
+val content = file.readText()
+println(content)
 ```
 
-Powyższy kod otwiera plik tekstowy o nazwie "moj_plik.txt" i wczytuje jego zawartość do zmiennej tekstowej. Następnie wypisuje ten tekst w konsoli. 
-
-Możemy również wykorzystać pętlę `forEachLine` do wczytywania plików tekstowych wiersz po wierszu. W tym przypadku musimy użyć obiektu `BufferedReader`, który umożliwi nam wczytywanie wierszy z pliku. Przykładowy kod może wyglądać tak:
+Możesz również użyć funkcji `forEachLine()` do odczytania danych po linii. 
 
 ```Kotlin
-val reader = BufferedReader(FileReader("moj_plik.txt"))
-reader.forEachLine { wiersz ->
-    println(wiersz)
+val file = File("sciezka/do/pliku.txt")
+file.forEachLine { line ->
+    println(line)
 }
 ```
 
-## Dogłębna analiza
+Możesz wykorzystać również funkcję `useLines()` aby odczytać dane w postaci strumienia.
 
-W przypadku wczytywania plików tekstowych w Kotlinie musimy uważać na obsługę błędów. Warto dodać obsługę wyjątków, na przykład gdy plik, który chcemy wczytać nie istnieje lub występują problemy z dostępem do niego. Możemy wykorzystać konstrukcję try-catch, aby obsłużyć ewentualne błędy.
+```Kotlin
+val file = File("sciezka/do/pliku.txt")
+file.useLines { lines ->
+    lines.forEach {
+        println(it)
+    }
+}
+```
 
-Pamiętaj również, aby w odpowiedniej chwili zamknąć obiekty `File` i `BufferedReader` przy pomocy metody `close()`.
+W przypadku konieczności odczytania pliku w postaci bajtowej, możesz skorzystać z funkcji `readBytes()`.
 
-## Zobacz również 
+```Kotlin
+val file = File("sciezka/do/pliku.txt")
+val bytes = file.readBytes()
+println(bytes.contentToString())
+```
 
-- [Dokumentacja Kotlina na temat operacji na plikach](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/-file/)
-- [Poradnik na YouTube o wczytywaniu plików tekstowych w Kotlinie](https://www.youtube.com/watch?v=7fsWZoVLAuY)
-- [Przykłady kodu z wykorzystaniem operacji na plikach tekstowych w Kotlinie](https://gist.github.com/urbanrolewski/282eedf78d54d22514e996600c9f3213)
+## Głębszy wgląd 
+
+Oprócz wymienionych powyżej metod, istnieje wiele innych sposobów odczytu danych z pliku tekstowego w języku Kotlin. Możesz również skorzystać z pomocniczych bibliotek lub własnych funkcji, jeśli potrzebujesz przetworzyć dane w specyficzny sposób.
+
+Pamiętaj, że przy odczycie pliku tekstowego, istotne jest także odpowiednie zarządzanie wyjątkami oraz pamięcią. W przypadku pracy z większymi plikami, możesz również skorzystać z technik odczytu danych w kawałkach, aby uniknąć problemów z wydajnością.
+
+## Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej o pracy z plikami tekstowymi w Kotlinie, możesz skorzystać z poniższych linków:
+
+- [Dokumentacja Kotlina - Odczytywanie i zapisywanie plików](https://kotlinlang.org/docs/tutorials/kotlin-for-py/read-write-files.html)
+- [Poradnik do pracy z plikami w Kotlinie](https://www.programiz.com/kotlin-programming/file)
+- [Tutorial odczytu danych z pliku w Kotlinie](https://www.tutorialkart.com/kotlin/read-file-in-kotlin/)
+
+Mam nadzieję, że ten wpis był dla Ciebie pomocny i rozjaśnił kwestie odczytywania danych z plików tekstowych w języku Kotlin. Powodzenia w Twoim programistycznym procesie!

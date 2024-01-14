@@ -1,7 +1,9 @@
 ---
 title:                "Python: Génération de nombres aléatoires"
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Python"
-category:             "Numbers"
+category:             "Python"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/generating-random-numbers.md"
 ---
 
@@ -9,36 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La génération de nombres aléatoires est une compétence importante pour tout programmeur Python. Elle permet de générer des jeux de données, de tester des fonctions et de simuler des situations aléatoires pour les programmes.
+Vous êtes peut-être en train de vous demander pourquoi générer des nombres aléatoires est une compétence utile en programmation. Eh bien, il existe de nombreuses raisons pour lesquelles vous pourriez avoir besoin de générer des nombres aléatoires dans votre code. Par exemple, les jeux utilisent souvent des nombres aléatoires pour créer des situations différentes à chaque fois que vous jouez. Ou bien, vous pourriez avoir besoin de générer des données de test pour vos applications. Quelle que soit la raison, la génération de nombres aléatoires est une compétence importante à avoir dans votre boîte à outils de programmation.
 
 ## Comment faire
 
-Pour générer des nombres aléatoires en Python, vous pouvez utiliser la bibliothèque "random" intégrée. Voici un exemple de code qui génère 5 nombres aléatoires entre 1 et 10 :
+Voici un exemple de code Python simple pour générer un nombre aléatoire entre 1 et 10 :
 
 ```Python
 import random
-for i in range(5):
-  print(random.randint(1,10))
+
+nombre_aleatoire = random.randint(1, 10)
+print(nombre_aleatoire)
 ```
 
-La sortie de ce code pourrait ressembler à ceci :
-
-```
-4
-9
-2
-8
-3
-```
+Cela générera un nombre aléatoire chaque fois que vous exécutez le code. Vous pouvez également utiliser des fonctions comme `random.randrange()` ou `random.uniform()` pour générer des nombres aléatoires dans des plages spécifiques ou avec une précision décimale.
 
 ## Plongée en profondeur
 
-Le module "random" en Python propose de nombreuses fonctions utiles pour générer des nombres aléatoires. En plus de "randint", il existe également "randrange" pour générer des nombres aléatoires avec un pas donné, "uniform" pour générer un nombre aléatoire à virgule entre deux valeurs et "choice" pour choisir un élément aléatoire dans une liste.
-
-Vous pouvez également utiliser la fonction "seed" pour initialiser la séquence de nombres aléatoires et ainsi obtenir des résultats reproductibles. Ceci est particulièrement utile pour le débogage et la reproductibilité des résultats.
+Maintenant que vous savez comment générer des nombres aléatoires en Python, vous pourriez vous demander comment cela fonctionne réellement. En termes simples, les ordinateurs ne peuvent pas générer de véritables nombres aléatoires. Au lieu de cela, ils utilisent des algorithmes pour produire des nombres qui apparaissent aléatoires. Ces algorithmes se basent sur une "graine" initiale, qui est un nombre de départ à partir duquel les nombres aléatoires sont générés. Si vous utilisez la même graine, vous obtiendrez toujours la même série de nombres aléatoires.
 
 ## Voir aussi
 
-- [Documentation de la bibliothèque random en Python](https://docs.python.org/fr/3/library/random.html)
-- [Tutorial sur la génération de nombres aléatoires en Python](https://www.tutorialspoint.com/python/python_random_numbers.htm)
-- [Article sur l'utilisation de nombres aléatoires en simulation informatique](https://fr.wikipedia.org/wiki/Nombres_al%C3%A9atoires_en_simulation_informatique)
+- [La documentation officielle de Python pour la génération de nombres aléatoires](https://docs.python.org/fr/3/library/random.html)
+- [Un tutoriel sur la génération de nombres aléatoires en Python](https://realpython.com/python-random/)
+- [Les risques de sécurité associés à la génération de nombres aléatoires](https://www.owasp.org/index.php/Randomness_and_Security)

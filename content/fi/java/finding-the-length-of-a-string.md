@@ -1,43 +1,43 @@
 ---
-title:                "Java: Merkkijonon pituuden löytäminen"
+title:                "Java: Merkkijonon pituuden etsiminen"
+simple_title:         "Merkkijonon pituuden etsiminen"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Miksi haluaisit löytää merkkijonon pituuden? Monissa ohjelmointitehtävissä on tarpeen tietää merkkijonon pituus, jotta sen käsittely olisi mahdollista. Merkkijonon pituuden etsiminen on siis tärkeä taito, jota jokaisen Java-ohjelmoijan tulisi hallita.
+Tervetuloa lukemaan ensimmäistä blogikirjoitustani Java-ohjelmoinnista! Tämän kirjoituksen aiheena on merkkijonon pituuden laskeminen, eli kuinka monta merkkiä merkkijonossa on. Tämä taito on olennainen Java-ohjelmoijalle, ja se auttaa sinua työskentelemään merkkijonojen kanssa tehokkaasti.
 
-## Miten?
+## Kuinka tehdä
 
-Käyttämällä Javan String-luokan length-metodia voit löytää helposti merkkijonon pituuden. Alla on esimerkki koodista ja siihen liittyvä tulostus:
+Java tarjoaa meille valmiin metodin, jolla voimme helposti laskea merkkijonon pituuden. Tämän metodin nimi on `.length()` ja se palauttaa kokonaislukuarvon merkkijonon pituudesta. Katsotaanpa esimerkiksi miten tämä toimii käytännössä:
 
-```Java
-// Luo muuttuja merkkijonolle ja sijoittaa siihen teksti "Hei"
-String merkkijono = "Hei";
-
-// Käytä length-metodia saadaksesi merkkijonon pituuden ja tallenna se muuttujaan
-int pituus = merkkijono.length();
-
-// Tulosta tulos
-System.out.println("Merkkijonon pituus on: " + pituus);
-
-// Tulostus: "Merkkijonon pituus on: 3"
+```java
+public static void main(String[] args) {
+	String s = "Tervetuloa";
+	System.out.println("Merkkijonon pituus on: " + s.length());
+}
+```
+**Output:**
+```
+Merkkijonon pituus on: 10
 ```
 
-## Syventyvä tarkastelu
+Hienoa, näemme että merkkijonon `.length()` metodi palauttaa oikean tuloksen! Huomaa, että kun tulostamme merkkijonon pituuden, meidän tulee käyttää sulkumerkkejä `()` metodin lopussa osoittamaan että kyseessä on metodi.
 
-Merkkijonojen pituuden laskeminen perustuu niiden sisältämiin merkkeihin. Javan String-luokka tallentaa merkkijonot merkkijonotaulukkona, jota kutsutaan myös merkkipuskuriksi. Tämän taulukon avulla ohjelma pystyy laskemaan merkkijonon pituuden length-metodin avulla.
+## Syväsukellus
 
-Oletusarvoisesti String-luokka käyttää UTF-16-koodausta, jossa jokainen kirjain tai merkki vie 16 bittiä muistissa. Tästä johtuen myös merkkijonon pituus lasketaan merkkijonotaulukon pituudeksi.
+Monilla muilla ohjelmointikielillä merkkijonon pituuden laskeminen tapahtuu eri tavalla, esimerkiksi C-kielelle löytyy oma funktio `.strlen()`. Java-ohjelmointikielen suosio on kasvanut pitkälti sen vuoksi, että se tarjoaa selkeämmän ja yksinkertaisemman tavan käsitellä mm. merkkijonoja.
 
-On myös tärkeää huomata, että length-metodi palauttaa merkkijonon todellisen pituuden, eli ilman mahdollisia tyhjiä välilyöntejä.
+Merkkijonojen pituuden laskeminen on tärkeä taito ohjelmoinnissa, sillä se auttaa meitä esimerkiksi tarkistamaan että käyttäjän antama syöte on oikean mittainen ja samalla se voi auttaa meitä käsittelemään merkkijonoja tarkemmin. Jos olet kiinnostunut oppimaan lisää merkkijonojen käsittelystä Java-ohjelmoinnissa, suosittelen tutustumaan Java-kirjaston `String` luokkaan.
 
 ## Katso myös
 
-- [Javan String-luokka ja sen toiminnot (Tietokoneturvallisuus-opas)](https://tietokoneturvallisuus.fi/ohjeet/java-string/)
-- [Merkkijonon käsittely Javassa (Tietokone osaamista.io)](https://www.tietokoneosaamista.io/merkkijonojava/ominaisuudet/)
-- [Java String-luokan JavaDoc (Oracle)](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java String-luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Lyhyt oppimäärä Java-ohjelmointiin](https://www.tutorialspoint.com/java/index.htm)
+- [Java Tutorials - String Methods](https://www.javatpoint.com/string-methods)

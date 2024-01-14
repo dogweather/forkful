@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/extracting-substrings.md"
 ---
 
@@ -9,39 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La manipolazione delle stringhe è una parte essenziale della programmazione estrarre delle sottostringhe può essere utile in molti casi, ad esempio per ottenere informazioni specifiche da un input o per formattare il testo in modo più leggibile.
+Estrarre una sottostringa da una stringa più grande può sembrare un'operazione semplice, ma può essere molto utile per gestire e manipolare dati in modo più efficiente. Inoltre, l'estrazione di sottostringhe è un concetto fondamentale nella programmazione e nella manipolazione di stringhe, quindi è importante saperlo fare.
 
 ## Come fare
 
-Per estrarre sottostringhe in Haskell, abbiamo a disposizione la funzione `take` che restituisce i primi n caratteri di una stringa e la funzione `drop` che invece elimina i primi n caratteri. Ad esempio:
+Estrarre una sottostringa è un'operazione che può essere eseguita in vari modi in Haskell. Vedremo alcuni esempi con il codice e il risultato di output.
 
 ```Haskell
--- Esempio di utilizzo di take
-take 3 "Ciao a tutti" 
--- Output: "Cia"
+-- Utilizzando la funzione take
+take 5 "Ciao a tutti" -- Output: "Ciao "
 
--- Esempio di utilizzo di drop
-drop 7 "Ciao a tutti" 
--- Output: "tutti"
+-- Utilizzando la funzione drop
+drop 5 "Ciao a tutti" -- Output: "a tutti"
+
+-- Utilizzando la funzione takeWhile
+takeWhile (/= ' ') "Ciao a tutti" -- Output: "Ciao"
+
+-- Utilizzando la funzione dropWhile
+dropWhile (/= 'l') "Ciao a tutti" -- Output: "l a tutti"
+
+-- Utilizzando l'operatore di slicing !
+"Ciao a tutti" ! 6 -- Output: "t"
+
+-- Utilizzando la funzione substring del pacchetto text
+T.take 5 "Ciao a tutti" -- Output: "Ciao "
 ```
 
-Possiamo anche utilizzare la funzione `takeWhile` per estrarre i caratteri fino a quando una certa condizione non viene più verificata, come ad esempio:
-
-```Haskell
--- Esempio di utilizzo di takeWhile
-takeWhile (/=' ') "Ciao a tutti"
--- Output: "Ciao"
-```
-
-Inoltre, possiamo combinare queste funzioni per ottenere sottostringhe di diversa lunghezza e con condizioni specifiche.
+Come possiamo vedere, ci sono diverse funzioni disponibili per estrarre sottostringhe in Haskell. La scelta dipenderà dalle nostre esigenze e dalla situazione in cui ci troviamo.
 
 ## Approfondimento
 
-In Haskell, le stringhe sono trattate come liste di caratteri, quindi possiamo utilizzare le stesse funzioni per manipolarle. Inoltre, esistono anche funzioni specifiche come `substring` che ci permettono di estrarre una sottostringa partendo da una determinata posizione e di una determinata lunghezza.
+Oltre alle funzioni che abbiamo visto sopra, ci sono anche altre considerazioni da tenere in mente quando si lavora con le sottostringhe in Haskell.
 
-Inoltre, è importante prestare attenzione alla gestione degli errori quando si estraggono substranghe, poiché se la sottostringa richiesta è più lunga della stringa originale, si potrebbe verificare un errore di indice fuori dai limiti.
+Ad esempio, è importante prestare attenzione alla gestione delle eccezioni in caso di stringhe vuote o di indici non validi. Inoltre, è fondamentale comprendere il concetto di "slice inclusivo" e "slice esclusivo", ovvero se il carattere di arrivo è incluso o meno nella sottostringa estratta.
+
+Inoltre, l'utilizzo di pacchetti come text o bytestring può portare a un'efficienza maggiore nell'estrazione di sottostringhe, soprattutto con stringhe molto grandi.
 
 ## Vedi anche
 
-- [Haskell String Functions](https://www.tutorialspoint.com/haskell/haskell_string_functions.htm)
-- [Haskell Strings](https://wiki.haskell.org/Strings)
+- [Documentazione di Haskell sulle stringhe](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-String.html)
+- [Pacchetto text su Hackage](https://hackage.haskell.org/package/text)
+- [Guida alla programmazione funzionale con Haskell](https://learnyouahaskell.com/chapters)

@@ -1,7 +1,9 @@
 ---
 title:                "Java: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,37 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-なぜ文字列を小文字に変換する必要があるのかと思うかもしれません。それは、入力された文字列が大文字や混在文字であっても、データを比較や操作する際に統一性を保つために必要です。
+プログラミングにおいて文字列を小文字に変換することのメリットは、文字列の一致を確認する際に大文字と小文字を区別しなくても良い点にあります。また、ソートや検索の処理を行う際にも、文字列を小文字に変換することでより簡単に処理することができます。
 
 ## 方法
 
-まず、文字列を入力する変数を作成します。
+文字列を小文字に変換する方法は、Javaプログラムで```toLowerCase()```メソッドを使用することです。以下の例を参考にしてください。
 
-```Java 
-String input = "Hello World";
+```Java
+String str = "Hello World";
+String lowerCaseStr = str.toLowerCase();
+
+System.out.println(lowerCaseStr);
 ```
 
-次に、input変数を小文字に変換するメソッドを使用します。
+このコードを実行すると、出力は以下のようになります。
 
-```Java 
-String output = input.toLowerCase();
-System.out.println(output);
+```Java
+hello world
 ```
-
-出力は、`hello world`となります。
 
 ## 深堀り
 
-文字列を小文字に変換するメソッドは、`toLowerCase()`です。このメソッドは、文字列をすべて小文字に変換し、新しい文字列として戻り値を返します。元の文字列は変更されません。
+文字列を小文字に変換するために使用される```toLowerCase()```メソッドは、Stringクラスに定義されています。そのため、Stringクラスを継承したクラスであれば、どのようなクラスでもこのメソッドを使用することができます。
 
-ただし、このメソッドは英字のみに対応しています。日本語のようなマルチバイト文字では、期待通りの動作をしないことがあります。その場合は、`toLowerCase(Locale.JAPANESE)`のように、指定のロケールを使用してください。
+また、英語以外の言語でも同じように動作します。つまり、日本語の文字列を小文字に変換する際にも同じメソッドを使用することができます。
 
-## 参考文献
+## See Also
 
-- [Java String toLowerCase() Method](https://www.w3schools.com/java/ref_string_tolowercase.asp)
-- [Java マルチバイト文字とロケール](https://docs.oracle.com/javase/jp/6/api/java/util/Locale.html)
-
-## 参考になるリンク
-
-- [Markdownファイルを作成する方法](https://ja.wikipedia.org/wiki/Markdown)
-- [Javaの文字列操作について学ぶ](https://www.geeksforgeeks.org/string-class-in-java/)
+- [Java Stringクラス](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java toLowerCase()メソッドのドキュメンテーション](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+- [Javaの基本教程(英語)](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/index.html)

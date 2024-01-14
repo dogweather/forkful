@@ -1,74 +1,42 @@
 ---
-title:                "Clojure: テキストファイルを作成する"
+title:                "Clojure: テキストファイルの作成"
+simple_title:         "テキストファイルの作成"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ？
 
-テキストファイルを書く理由は多々ありますが、主な目的はデータの保存や共有です。また、プログラミング言語によってはテキストファイルを読み書きすることができるため、プログラミングの学習や演習にも役立ちます。
+テキストファイルを書くメリットは何でしょうか？テキストファイルはシンプルで、様々なプログラミング言語で読み書きが可能です。また、プログラムやデータの保存や共有にも便利です。
 
-## 作り方
-
-まずはClojureをインストールし、ローカルにテキストファイルを作成します。その後、以下のようなコードを入力し、ファイルにテキストを書き込みます。
+# 書き方
 
 ```Clojure
-(with-open [file (java.io.FileWriter. "sample.txt")]
-  (.write file "Hello World")
-  (.write file "This is a sample text file"))
+;;テキストファイルを作成する
+;;ファイル名は「sample.txt」とします
+(with-open [file (clojure.java.io/writer "sample.txt")]
+  (.write file "こんにちは、世界！"))
+
+;;ファイルの内容を読み込む
+(with-open [file (clojure.java.io/reader "sample.txt")]
+  (println (.readLine file)))
+
+;;出力
+;;こんにちは、世界！
 ```
 
-そして、ファイルを閉じるために以下のコードを追加します。
+# 詳しい解説
 
-```Clojure
-(.close file)
-```
+テキストファイルを作成する際には、`with-open`マクロを使用してファイルを開き、`clojure.java.io/writer`関数を使用してテキストを書き込みます。同様に、`with-open`マクロと`clojure.java.io/reader`関数を使用してファイルを開き、ファイルの内容を読み込むことができます。
 
-実行すると、"sample.txt"という名前のファイルが作成され、その中には「Hello World This is a sample text file」というテキストが記載されます。これで、テキストファイルの作成が完了しました。
+また、テキストファイルの作成には、他にも`spit`関数や`slurp`関数などの便利な関数があります。詳しくは公式ドキュメントをご確認ください。
 
-## ディープダイブ
+# 参考リンク
 
-Clojureでは、より複雑なテキストファイルの作成や編集も可能です。例えば、以下のコードを使用すると、カンマ区切りのデータを含むCSVファイルを作成することができます。
-
-```Clojure
-(with-open [file (java.io.FileWriter. "data.csv")]
-  (.write file "Name,Age,Country")
-  (.newLine file)
-  (.write file "John,25,USA")
-  (.newLine file)
-  (.write file "Lisa,30,Japan")
-  (.newLine file)
-  (.write file "Mark,28,UK"))
-```
-
-このコードを実行すると、"data.csv"というファイルが作成され、以下のような内容が記載されます。
-
-```
-Name,Age,Country
-John,25,USA
-Lisa,30,Japan
-Mark,28,UK
-```
-
-また、既存のテキストファイルを読み込み、編集することもできます。以下のコードでは、"sample.txt"というファイルを読み込んで、最後に行を追加しています。
-
-```Clojure
-(with-open [file (java.io.FileReader. "sample.txt")]
-  (let [lines (line-seq file)]
-    (doall (take (- (count lines) 1) lines))
-    (.write file "This is an additional line")
-    (.newLine file)
-    (.write file (last lines))))
-```
-
-実行すると、"sample.txt"には元々の内容に加えて「This is an additional line」という行が追加されます。
-
-## はてな見る
-
-- [Clojure公式サイト](https://clojure.org/)
-- [Clojureドキュメント](https://clojure.org/documentation)
-- [ClojureでCSVファイルを作成する方法](https://www.freecodecamp.org/news/easiest-way-to-create-and-split-a-csv-file/comment-page-1/)
-- [Clojureでテキストファイルを編集する方法](https://clojuredocs.org/clojure.core/with-open)
+- Clojure 公式ドキュメント: https://clojure.org/
+- "テキストファイルの作成方法" (TechAcademy): https://www.tech- academy.jp/magazine/21662
+- "Clojure でテキストファイルの読み書き" (Qiita): https://qiita.com/uchan_nos/items/e482124d49042a17555c

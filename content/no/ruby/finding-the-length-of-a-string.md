@@ -1,35 +1,50 @@
 ---
 title:                "Ruby: Å finne lengden av en streng"
+simple_title:         "Å finne lengden av en streng"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor?
-Hvorfor skulle noen ønske å finne lengden på en streng? Vel, det er en viktig del av programmering! Å kunne få tilgang til lengden på en streng er nyttig når man skal manipulere tekst eller håndtere brukerinndata. Det er også en grunnleggende ferdighet som alle programmerere bør ha.
+##Hvorfor
 
-## Hvordan gjør man det?
-I Ruby er det enkelt å finne lengden på en streng. Alt du trenger å gjøre er å bruke metoden `length` på strengen din. La oss si at vi har strengen "Hei, verden!" og vil finne lengden på den. Dette er hvordan vi gjør det i Ruby:
+Det er en vanlig oppgave i programmering å finne lengden på en tekststreng. Dette kan være nyttig når du arbeider med tekstbehandling, eller hvis du trenger å begrense eller manipulere en tekststreng. I denne bloggposten skal vi se på hvordan du enkelt kan finne lengden på en tekststreng i Ruby.
 
-```Ruby
-streng = "Hei, verden!"
-puts streng.length
+##Slik Gjør Du
+
+For å finne lengden på en tekststreng i Ruby kan du bruke metoden `length`, som returnerer antall tegn i strengen. La oss se på et eksempel:
+
+```ruby
+tekst = "Hei, jeg heter Ruby!"
+puts tekst.length
+```
+Dette vil gi følgende utskrift:
+```
+18
+```
+Hvis du vil finne lengden på en tekststreng som er skrevet inn av brukeren, kan du bruke metoden `gets` og kombinere den med `length`. Se på dette eksempelet, der vi ber brukeren om å skrive inn navnet sitt og deretter finner lengden på strengen:
+```ruby
+puts "Skriv inn ditt navn:"
+navn = gets.chomp
+puts "Ditt navn har #{navn.length} bokstaver."
+```
+Hvis brukeren skriver inn "Hanne", vil utskriften bli:
+```
+Ditt navn har 5 bokstaver.
 ```
 
-Outputen fra dette vil være:
+##Dypdykk
 
-```Ruby
-13
-```
+For å forstå hvordan `length`-metoden fungerer, er det nyttig med en dypere forståelse av hvordan Ruby behandler tekststrenger. For det første, i Ruby er tekststrenger objekter og har derfor ulike egenskaper og metoder som kan brukes på dem. Metoden `length` er en av disse metodene.
 
-Det betyr at strengen vår består av 13 tegn, inkludert mellomrom og tegnsetting. En annen måte å finne lengden på en streng er ved å bruke metoden `size`. Begge metodene fungerer på samme måte og gir samme resultat.
+Når du kaller `length` på en tekststreng, teller Ruby antall tegn i strengen og returnerer dette tallet. Det er viktig å huske at mellomrom også regnes med som et tegn, i tillegg til bokstaver og spesialtegn.
 
-## Dykk dypere
-Nå som du vet hvordan du finner lengden på en streng, la oss ta en rask titt på hva som egentlig skjer bak kulissene. Når vi kaller på `length` eller `size` metoden på en streng, så teller Ruby antallet tegn i strengen og returnerer dette som et heltall. Dette betyr at metoden `length` eller `size` kan brukes på alle typer objekter, ikke bare strenger.
+Det finnes også andre metoder for å finne lengden på en tekststreng i Ruby, som for eksempel `size`og `count`. Disse gjør i utgangspunktet det samme som `length`, men det kan være nyttig å utforske dem nærmere for å finne ut hva som passer best i ulike situasjoner.
 
-## Se også
-- [Ruby Strings](https://www.rubyguides.com/2019/12/ruby-strings/)
-- [Ruby String Class](https://ruby-doc.org/core-2.7.0/String.html)
-- [Learn Ruby - Strings](https://www.learnruby.org/en/strings)
+##Se Også
+
+* [Ruby dokumentasjon for String-class](https://ruby-doc.org/core-2.7.0/String.html)
+* [RubyGuides - String Length](https://www.rubyguides.com/ruby-string-length/)

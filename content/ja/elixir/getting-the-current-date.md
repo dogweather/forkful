@@ -1,48 +1,44 @@
 ---
 title:                "Elixir: 「現在の日付を取得する」"
+simple_title:         "「現在の日付を取得する」"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-現在の日付を取得する理由は何でしょうか？Elixirのプログラミング言語では、日付や時刻を取得するために便利な機能がたくさんあります。例えば、データベースにタイムスタンプを記録する必要がある場合や、特定の操作を実行するために特定の日時を取得する必要がある場合などに、日付を取得する必要が出てきます。
+日付を取得することの意義は、多くのプログラミングタスクにおいて必要不可欠です。例えば、販売アプリケーションでは注文日を追跡するために日付が必要です。また、課金システムでは有効期限の計算に日付が重要です。Elixirを学ぶ上で、日付を取得する方法は非常に重要です。
 
 ## 方法
 
-では、実際にElixirで現在の日付を取得する方法を見ていきましょう。以下のコード例を参考にしてください。
+日付を取得する最も簡単な方法は、`Date.utc_today()`関数を使用することです。この関数は、現在の日付をUTCフォーマットで返します。例えば、以下のコードを実行すると、現在の日付が`{:ok, #Date<2020-10-15>}`というタプルの形式で返されます。
 
 ```Elixir
 Date.utc_today()
-#=> ~D[2021-09-27]
 ```
 
-このように、`Date.utc_today()`という関数を使うことで、今日の日付を取得することができます。デフォルトでは、UTC時間を基準として日付を取得するため、必要に応じてローカルのタイムゾーンに変換する必要があります。また、引数として`TimeZone`を渡すことで、特定のタイムゾーンに変換することも可能です。
+また、特定のタイムゾーンで日付を取得する場合は、`Date.now()`関数を使用することもできます。以下のコードでは、日本時間での現在の日付を取得しています。
 
 ```Elixir
-Date.utc_today("Asia/Tokyo")
-#=> #<DateTime(2021-09-27T00:00:00+09:00 Asia/Tokyo JST)>
+tz = Timezone.get("Asia/Tokyo")
+Date.now(tz)
 ```
 
-さらに、日付や時間の特定の部分を取得したい場合には、`Calendar.DateTime`モジュールを使います。
+さらに、日付や時刻のフォーマットを変更する必要がある場合は、`DateTime.to_string()`関数を使用することができます。以下のコードでは、現在の日付をyyyy-MM-ddの形式で文字列として返しています。
 
 ```Elixir
-Calendar.DateTime.now("Asia/Tokyo")
-#=> #<DateTime(2021-09-27T08:44:25+09:00 Asia/Tokyo JST)>
+DateTime.to_string(Date.utc_today(), "yyyy-MM-dd")
 ```
 
-## 深堀り
+## ディープダイブ
+Elixirでは、日付を取得する方法についてさらに深く学ぶことができます。例えば、Elixirの標準ライブラリには`Calendar`モジュールがあり、日付の演算を行うための多くの関数が用意されています。また、`Timex`ライブラリを使用することで、より高度な日付と時刻の操作が可能になります。
 
-日付を取得する際、UTC時間を基準としていることについてもう少し詳しく見てみましょう。UTCとは、協定世界時(グリニッジ標準時)のことで、全てのタイムゾーンの基準となる時間です。この基準となる時刻を使うことで、世界中での時間を統一することができます。
+さらに、Elixirの`DateTime`モジュールは、日付や時刻だけでなく、タイムゾーンや曜日などの様々な情報を含んでいます。これにより、より詳細な日付の操作や表示が可能になります。
 
-Elixirでは、`Date.utc_today()`の他にも、`Date.utc_now()`や`Date.utc_today_leap_seconds()`など、さまざまなUTC関連の関数が用意されています。また、`Calendar.ISO`モジュールを使うことで、ISO 8601形式で日付を取得することもできます。
-
-## 他に見るべきもの
-
-- [Elixirの日付と時刻について](https://hexdocs.pm/elixir/Date.html)
-- [ElixirのUTC関連関数について](https://hexdocs.pm/elixir/Date.html#utc-functions)
-- [ElixirのCalendar.DateTimeモジュールについて](https://hexdocs.pm/elixir/Calendar.DateTime.html)
-- [ISO 8601形式について](https://www.iso.org/iso-8601-date-and-time-format.html)
+## See Also
+- [Elixir公式ドキュメント](https://elixir-lang.org/getting-started/basic-types.html#dates-and-times)
+- [Elixirのタイムゾーンおよび時刻操作のためのライブラリ - Timex](https://github.com/bitwalker/timex)
+- [TDさんのElixirハンズオン冊子](https://elixir-hands-on.github.io/slides/4-date-time.html)

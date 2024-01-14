@@ -1,49 +1,58 @@
 ---
-title:                "Rust: Ricerca e sostituzione di testo"
+title:                "Rust: Sostituzione e ricerca di testo"
+simple_title:         "Sostituzione e ricerca di testo"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-Il testo è un elemento fondamentale nella programmazione, ed è spesso necessario modificarlo per adattarlo alle esigenze del nostro codice. La Rust offre strumenti potenti per la ricerca e la sostituzione del testo, rendendo questo compito semplice ed efficiente.
+La ricerca e la sostituzione di testo è un'operazione comune quando si lavora con programmi informatici. Con Rust, un linguaggio di programmazione moderno e sicuro, è possibile eseguire facilmente questa operazione in modo efficiente e sicuro.
 
-# Come fare
+## Come fare
 
-Per eseguire una ricerca e sostituzione del testo in Rust, possiamo utilizzare il metodo `replace()` della struttura `String`. Questo metodo accetta due parametri: il testo da cercare e il testo con cui sostituirlo. Ecco un esempio di come utilizzarlo:
+Per eseguire la ricerca e la sostituzione di testo in Rust, è necessario utilizzare il metodo `replace` della libreria standard `String`:
 
-```Rust
-let text = "Questo è un esempio di testo.";
-let new_text = text.replace("esempio", "esempio modificato");
-println!("{}", new_text);
+```
+Rust let frase = "Ciao amici, benvenuti nel mio blog!";
+let nuova_frase = frase.replace("amici", "lettori");
 ```
 
-Questo codice stamperà "Questo è un esempio modificato di testo." come output. Possiamo anche utilizzare il metodo `replace()` su una `String` immutabile, in questo caso verrà restituita una nuova `String` con il testo modificato.
+In questo esempio, stiamo sostituendo la parola "amici" con "lettori" nella stringa `frase`. Il risultato ottenuto sarà "Ciao lettori, benvenuti nel mio blog!".
 
-È inoltre possibile utilizzare il metodo `replace()` con espressioni regolari per eseguire ricerche più avanzate. Per farlo, dobbiamo importare il modulo `regex` e utilizzare il metodo `replace_all()` invece di `replace()`:
+Inoltre, è possibile specificare una keyword "n" per sostituire solo la prima n occorrenza della parola cercata:
 
-```Rust
-use regex::Regex;
-
-let text = "Una chiave non è solo una chiave.";
-let re = Regex::new("chiave").unwrap();
-let new_text = re.replace_all(text, "parola");
-println!("{}", new_text);
+```
+Rust let parola = "Rust è fantastico e potente";
+let nuova_parola = parola.replace("fantastico", "eccezionale", 1);
 ```
 
-Questo codice stamperà "Una parola non è solo una parola." come output, poiché il metodo `replace_all()` sostituisce tutte le occorrenze del testo che corrispondono all'espressione regolare.
+In questo caso, stiamo sostituendo solo la prima occorrenza della parola "fantastico" con "eccezionale". Il risultato sarà "Rust è eccezionale e potente".
 
-# Approfondimento
+## Approfondimento
 
-Il metodo `replace()` della struttura `String` implementa il trait `Replace`, che è anche implementato per altri tipi come `&str` e `&mut str`. Ciò significa che possiamo utilizzare il metodo `replace()` su qualunque tipo che implementi questo trait, semplificando il nostro codice e rendendolo più flessibile.
+Per effettuare una ricerca e sostituzione di testo più avanzata in Rust, è possibile utilizzare l'API Regex. Con l'uso delle espressioni regolari, è possibile specificare pattern più complessi da cercare e sostituire.
 
-Un altro approfondimento interessante è l'utilizzo di iteratori e il metodo `fold()` della struttura `String` per eseguire ricerche e sostituzioni su grandi quantità di testo in modo efficiente.
+Ad esempio, il codice seguente sostituisce tutte le lettere minuscole con lettere maiuscole in una stringa:
 
-# Vedi anche
+```
+Rust use regex::Regex;
 
-- Documentazione ufficiale della Rust sul metodo `replace()`: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
-- Documentazione ufficiale della Rust sul modulo `regex`: https://doc.rust-lang.org/regex/regex/index.html
-- Guida introduttiva alla regex in Rust: https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html
+let regex = Regex::new(r"[a-z]").unwrap();
+let testo = "ciao a tutti!";
+let risultato = regex.replace_all(testo, |caps| {
+    caps[0].to_uppercase()
+});
+
+```
+
+Il risultato sarà "CIAO A TUTTI!"
+
+## Vedi anche
+
+- [Documentazione della libreria standard di Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [API Regex per Rust](https://docs.rs/regex/1.4.5/regex/)

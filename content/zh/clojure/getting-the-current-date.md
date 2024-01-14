@@ -1,50 +1,58 @@
 ---
 title:                "Clojure: 获取当前日期"
+simple_title:         "获取当前日期"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么：获取当前日期的重要性
+# 为什么要获取当前日期？
 
-在进行编程时，我们经常需要使用日期作为程序的一部分。这可以是为了显示当前日期，或者计算某个特定日期与当前日期之间的差距。获取当前日期对于准确地记录时间和日期非常重要。
+获取当前日期在Clojure编程中是非常常见的操作。通过获取当前日期，我们可以在程序中实现时间相关的功能，比如记录数据更新的时间，或者定时执行某些任务等。 
 
-## 如何：Clojure中获取当前日期的方法
+## 如何实现？
 
-在Clojure中，获取当前日期的最简单方法是使用系统库中的`(java.util.Date.)`函数。这会返回一个表示当前日期和时间的对象。我们可以将其存储在一个变量中，然后在需要的情况下格式化成我们想要的日期格式。
+在Clojure中，有多种方法可以获取当前日期。下面将通过代码示例来介绍其中的两种方法。
 
+### 方法一：使用 `clj-time` 库
+
+首先，我们需要导入 `clj-time` 库：
 ```Clojure
-(def current-date (java.util.Date.))
+(ns my-namespace
+  (:require [clj-time.core :refer [now]]))
 ```
 
-如果我们想要获得一个特定的日期（例如2021年1月1日），我们可以使用`(java.util.Date. 2021 1 1)`的方式来设置日期参数。同样，我们可以将其存储在一个变量中以便后续使用。
-
+然后，就可以使用 `now` 函数来获取当前日期对象：
 ```Clojure
-(def specific-date (java.util.Date. 2021 1 1))
+(def current-date (now))
 ```
 
-如果我们想要将日期格式化成字符串，我们可以使用Java库中的SimpleDateFormat函数，它可以让我们根据我们想要的格式将日期对象转换为字符串。在下面的代码中，我们将日期格式化为"dd.MM.yyyy"的格式。
+最后，我们可以使用 `clj-time` 提供的各种函数来对日期对象进行操作，比如获取年、月、日等信息，或者进行日期的加减运算。
 
+### 方法二：使用 `java.time` 库
+
+`java.time` 是 Java 8 中引入的日期和时间 API，我们可以通过Clojure与Java的互操作性来使用它。
+
+首先，需要导入 `java.time.LocalDate` 类：
 ```Clojure
-(def formatted-date (.format (java.text.SimpleDateFormat. "dd.MM.yyyy") current-date))
+(import java.time.LocalDate)
 ```
 
+然后，我们可以直接调用 `LocalDate` 的静态方法来获取当前日期对象：
 ```Clojure
-(def formatted-specific-date (.format (java.text.SimpleDateFormat. "dd.MM.yyyy") specific-date))
+(def current-date (LocalDate/now))
 ```
 
-这会得到"12.12.2021"和"01.01.2021"两个字符串，分别表示当前日期和特定日期。
+最后，我们可以使用 `LocalDate` 提供的各种方法来对日期对象进行操作，比如获取年、月、日等信息，或者进行日期的加减运算。
 
-## 深入：关于获取当前日期的更多信息
+## 深入探讨
 
-获取当前日期看似简单，但实际上涉及到许多概念。在计算机中，时间通常以从某个特定时间（称为“纪元”）开始经过的秒数来表示。而日期则是基于一定的日历规则来计算的。了解这些概念可以帮助我们更好地处理日期和时间。
+无论是使用 `clj-time` 还是 `java.time`，都是通过调用Java类的静态方法来获取当前日期。在Java中，可以通过 `Clock` 类来获取当前时间，而这也是 `clj-time` 库的内部实现。另外，值得一提的是，在Clojure中，我们也可以自己实现一个 `now` 函数来获取当前日期，比如通过调用 `System/currentTimeMillis` 方法来返回当前毫秒数，再通过 `java.time.Instant` 类来将毫秒数转换为日期对象。不管使用哪种方法，最终都是在获取系统时间并做适当的处理来得到当前日期。
 
-另外，在计算机系统中，日期和时间并非总是准确的，可能会受到时区、夏令时和计算机时钟本身的影响。因此，在处理日期和时间时，需要小心处理各种边界情况。
+# 参考链接
 
-## 参考资料
-
-- [Java SimpleDateFormat文档](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Clojure官方网站](https://clojure.org/)
-- [关于日期和时间的计算机概念](https://www.epochconverter.com/)
+- [clj-time 文档](https://cljdoc.org/d/clj-time/clj-time/0.14.4/doc/readme)
+- [java.time 文档](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

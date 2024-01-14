@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Å finne lengden av en streng"
+title:                "Haskell: Å finne lengden til en streng"
+simple_title:         "Å finne lengden til en streng"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/finding-the-length-of-a-string.md"
 ---
 
@@ -9,38 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å finne lengden på en streng kan virke som en enkel oppgave, men det er en viktig del av å lære å programmere i Haskell. Ved å kunne beregne lengden på en streng, kan du manipulere og analysere tekstdokumenter eller brukerinput på en effektiv måte. Dette gjør det til en viktig ferdighet å ha for enhver Haskell-utvikler.
+Haskell er et funksjonelt programmeringsspråk som er kjent for å være elegant, effektivt og robust. En av de grunnleggende funksjonene i Haskell er evnen til å finne lengden på en streng - en handling som kan være nyttig i mange tilfeller. Enten du er en nybegynner eller en erfaren Haskell-programmerer, kan du lære hvordan du finner lengden på en streng og ta dine programmeringsferdigheter til neste nivå.
 
-## Hvordan gjøre det
+## Hvordan
 
-Det er flere måter å finne lengden på en streng i Haskell, men den mest vanlige er å bruke funksjonen "length". Her er et enkelt eksempel på hvordan du kan bruke denne funksjonen i Haskell:
+Haskell tilbyr en rask og enkel måte å finne lengden på en streng gjennom bruk av funksjonen `length`. La oss se på et eksempel på hvordan dette kan gjøres i Haskell:
 
 ```Haskell
-length "Hei, verden!"
-```
-Output vil være:
+Prelude> length "Hei, verden!"
 
-```
 13
 ```
 
-Som du kan se, er det så enkelt som å bare skrive strengen du vil beregne lengden på som et argument til funksjonen "length".
+I dette eksemplet bruker vi funksjonen `length` sammen med en streng "Hei, verden!" og får som resultat lengden på 13. Denne funksjonen kan også brukes på lister, og vil returnere antall elementer i listen.
 
-## Dykk dypere
+## Dykk ned
 
-Nå som du vet hvordan du finner lengden på en streng i Haskell, la oss se på noen viktige ting å huske på.
+For de som er interessert i å lære mer om hvordan Haskell beregner lengden på en streng, kan vi se på implementeringen av `length`-funksjonen i Haskell. Denne funksjonen er skrevet på en rekursiv måte, som betyr at den gjentas til den når en base case hvor den returnerer lengden på strengen.
 
-- Funksjonen "length" fungerer ikke bare for strenger, men også for lister og andre Haskell-datatyper.
-- Den kan også brukes på uendelige lister, men vær obs på at det kan føre til uendelig kjøretid om du ikke bruker riktig logikk.
-- Hvis du vil konvertere en streng til en liste av bokstaver, kan du bruke funksjonen "words".
-- Det finnes også en rekke andre funksjoner relatert til lengden på en streng, for eksempel "null" som sjekker om en streng er tom og "elemIndex" som finner posisjonen til en spesifikk bokstav.
+```Haskell
+length :: [a] -> Int
+length [] = 0
+length (x:xs) = 1 + length xs 
+```
 
-Med denne kunnskapen kan du nå utforske mer avanserte måter å finne lengden på en streng i Haskell på og bli en mer effektiv utvikler.
+I denne implementeringen, skiller vi mellom to tilfeller: når den tomme listen blir passert inn, returnerer den 0 siden tomme lister har en lengde på 0. I det andre tilfellet, hvor det er en ikke-tom liste, fjerner vi først det første elementet og regner én ekstra lengde for resten av listen.
 
 ## Se også
 
-- Offisiell Haskell-dokumentasjon for "length": https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:length
-- Enkel guide til å finne lengden på en streng i Haskell: https://stackoverflow.com/questions/6761277/how-do-i-find-the-length-of-a-string
-- Flere eksempler på bruk av "length" og andre funksjoner relatert til lengden på en streng: https://www.tutorialspoint.com/finding-the-length-of-a-string-in-haskell
+For å lære mer om Haskell og dets funksjoner, sjekk ut disse nyttige ressursene:
 
-Lykke til med å finne lengden på strenger i Haskell!
+- [Haskell for nybegynnere](https://learnxinyminutes.com/docs/no-no/haskell-no/)
+- [Offisiell Haskell-dokumentasjon](https://www.haskell.org/documentation/)
+- [Haskell-læringssamfunn](https://www.reddit.com/r/haskell/)

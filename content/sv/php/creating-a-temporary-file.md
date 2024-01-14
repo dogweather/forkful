@@ -1,44 +1,41 @@
 ---
 title:                "PHP: Skapa en temporär fil"
+simple_title:         "Skapa en temporär fil"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
+Temporary files är en viktig del av webbutveckling, speciellt när det kommer till att hantera data och filer på en server. Det är ett användbart verktyg för att temporärt lagra data eller för att utföra vissa operationer på filer innan de permanent sparas eller raderas. I denna bloggpost kommer vi att titta närmare på varför och hur man skapar temporära filer i PHP.
 
-Att skapa en temporär fil kan vara användbart i många olika situationer inom PHP-programmering. Det kan till exempel vara användbart när du vill ha en tillfällig plats att lagra data under en session eller när du behöver hämta en extern fil för behandling.
-
-## Så här gör du
-
-Här är ett enkelt exempel på hur du kan skapa en temporär fil i PHP:
+# Så här gör du
+För att skapa en temporär fil i PHP använder man funktionen `tempnam()` som tar två parametrar - sökvägen där filen ska skapas och prefixet för filen. Om du lämnar sökvägen tom kommer filen att skapas i systemets default temporary directory. Om du vill kontrollera om filen skapades korrekt kan du använda `file_exists()` funktionen. Nedan följer ett exempel på hur man skapar en temporär fil i PHP.
 
 ```PHP
-// Skapa en ny temporär fil
-$tempFile = tmpfile();
+$temp_file = tempnam('/tmp', 'tmp_');
 
-// Skriv till filen
-fwrite($tempFile, "Det här är ett exempel på innehållet i den temporära filen.");
-
-// Visa sökvägen till den temporära filen
-echo "Sökvägen till den temporära filen är: " . stream_get_meta_data($tempFile)['uri'];
-
-// Stäng filen
-fclose($tempFile);
+if (file_exists($temp_file)) {
+  echo "Temporär fil skapad: $temp_file";
+}
 ```
 
-När du kör detta kodexempel bör du få ut en sökväg till den temporära filen, till exempel: "/tmp/phpBp1FVU". Det är viktigt att komma ihåg att den temporära filen automatiskt kommer att tas bort när scriptet avslutas eller när filen stängs. Om du vill behålla den temporära filen under en längre tid måste du använda `sys_get_temp_dir()`-funktionen för att få sökvägen till det temporära mappen och därefter ändra filnamnet till något unikt.
+Output:
+```
+Temporär fil skapad: /tmp/tmp_a1b2c3
+```
 
-## På djupet
+# Djupdykning
+När en temporär fil skapas kan det vara användbart att specificera en unik prefix för filen för att undvika namnkollisioner med andra temporära filer som skapas på servern. Det är också viktigt att ta bort den temporära filen när den inte längre behövs för att undvika onödig användning av systemresurser. Detta kan göras med funktionen `unlink()` efter att du har utfört de nödvändiga operationerna på filen.
 
-När du använder `tmpfile()`-funktionen i PHP för att skapa en temporär fil, kommer filen att skapas i den temporära katalogen på servern. Detta kan variera beroende på vilket operativsystem och vilken server du använder. Om du vill ha mer kontroll över var filen ska skapas kan du istället använda `tmpnam()`-funktionen och ange en önskad sökväg.
+Det finns också andra användbara funktioner för att hantera temporära filer i PHP, som `sys_get_temp_dir()` för att hämta sökvägen till det temporära direktoriet som systemet använder och `tempfile()` för att snabbt skapa en temporär fil utan att behöva ange sökväg och prefix.
 
-Det är också viktigt att komma ihåg att storleken på en temporär fil är begränsad av det tillgängliga utrymmet på servern. Om du behöver skapa en temporär fil som är större än detta, kan du använda `ftruncate()`-funktionen för att öka filens storlek.
-
-## Se även
-
-- [PHP: tmpfile() function](https://www.php.net/manual/en/function.tmpfile.php)
-- [PHP: tmpnam() function](https://www.php.net/manual/en/function.tmpnam.php)
-- [PHP: ftruncate() function](https://www.php.net/manual/en/function.ftruncate.php)
+# Se även
+- *PHP tempnam* - PHP.net (https://www.php.net/manual/en/function.tempnam.php)
+- *PHP file_exists* - PHP.net (https://www.php.net/manual/en/function.file-exists.php)
+- *PHP unlink* - PHP.net (https://www.php.net/manual/en/function.unlink.php)
+- *PHP sys_get_temp_dir* - PHP.net (https://www.php.net/manual/en/function.sys-get-temp-dir.php)
+- *PHP tempfile* - PHP.net (https://www.php.net/manual/en/function.tempfile.php)

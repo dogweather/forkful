@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Ekstrakcja podciągów"
+title:                "Elixir: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/extracting-substrings.md"
 ---
 
@@ -9,57 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wyciąganie podciągów jest jedną z najczęściej używanych funkcji w programowaniu w Elixirze. Pozwala nam na wybieranie części ciągu znaków ze zmiennej lub arytmetycznej i używanie ich w różnych celach. W tym przewodniku omówimy, dlaczego jest to ważne i jak to zrobić w Elixirze.
+Czy kiedykolwiek zdarzyło Ci się potrzebować wyodrębnić część tekstu z większego ciągu znaków? W takich sytuacjach, funkcja wyodrębniająca substring będzie Twoim najlepszym przyjacielem. W tym artykule dowiesz się, dlaczego warto nauczyć się korzystać z tej funkcji w języku Elixir.
 
 ## Jak to zrobić
 
-Poniżej przedstawiamy przykłady kodu, które pokazują jak wyciągać podciągi w Elixirze. Kod jest zawarty w blokach ```Elixir ... ``` dla łatwej lektury. Przetestuj każdy przykład w swoim środowisku, aby zobaczyć, jak działa w praktyce.
-
-### Wyciąganie podciągu ze zmiennej
+Aby wyodrębnić substring z tekstu, możesz użyć wbudowanej funkcji `String.slice/3`. W pierwszym argumencie podajemy tekst, z którego chcemy wyodrębnić substring, w drugim określamy początkowy indeks, a w trzecim końcowy indeks. Przykładowy kod wyglądałby następująco:
 
 ```Elixir
-str = "Witaj świecie!"
-IO.puts(String.slice(str, 0, 5))
+text = "Hej, to jest przykładowy tekst"
+subtext = String.slice(text, 7, 15)
+IO.puts(subtext) #=> "to jest"
 ```
 
-Ten przykład pokazuje jak używać funkcji `String.slice` do wyciągania podciągu ze zmiennej `str`. Wynik powyższego kodu będzie wyglądał następująco:
-
-```
-Witaj
-```
-
-### Wyciąganie podciągu za pomocą indeksów
+Możemy również podać ujemne indeksy, co oznacza liczenie od końca tekstu. Na przykład, `-1` oznacza ostatni znak, `-2` przedostatni itd. Przykładowy kod wyglądałby następująco:
 
 ```Elixir
-str = "Elixir jest super!"
-IO.puts(String.slice(str, 7..12))
+text = "Hej, to jest przykładowy tekst"
+subtext = String.slice(text, 7, -5)
+IO.puts(subtext) #=> "to jest przykładowy"
 ```
 
-Ten przykład pokazuje, jak możesz użyć zakresów indeksów, aby wyciągnąć określony podciąg ze zmiennej `str`. Wynik tego kodu będzie wyglądał tak:
-
-```
-jest s
-```
-
-### Wyciąganie podciągu z wykorzystaniem wyrażenia regularnego
+Jeśli nie podamy trzeciego argumentu, funkcja `String.slice/3` wyodrębni tekst od podanego indeksu do końca tekstu. Natomiast jeśli podamy tylko pierwszy argument, zostanie zwrócony cały tekst. Przykładowy kod wyglądałby następująco:
 
 ```Elixir
-str = "Jestem super programistą w Elixirze!"
-IO.puts(str |> String.split(" ") |> Enum.find(&match?(&1, ~r/.+programistą/)))
+text = "Hej, to jest przykładowy tekst"
+subtext = String.slice(text, 7)
+IO.puts(subtext) #=> "to jest przykładowy tekst"
 ```
 
-Ten przykład pokazuje, jak użyć wyrażenia regularnego do wyszukania podciągu w zmiennej `str`. Wynik powyższego kodu będzie wyglądał następująco:
+## Głębsze zagłębienie
 
-```
-super programistą
-```
+Funkcja `String.slice/3` jest często wykorzystywana do przetwarzania tekstu w aplikacjach internetowych, np. do wyświetlania krótszych wersji tytułów lub opisów artykułów. Możemy również wykorzystać ją do prostego filtrowania tekstu czy też do sprawdzania zawartości konkretnych znaków.
 
-## Deep Dive
+## Zobacz także
 
-Wyciąganie podciągów jest możliwe dzięki funkcji `String.slice` oraz wyrażeniom regularnym. Funkcja `String.slice` przyjmuje dwa argumenty: zmienną, z której chcemy wyciągnąć podciąg, oraz indeks początkowy i końcowy, który określa, które znaki w zmiennej będą uwzględnione w podciągu. Wyrażenia regularne, takie jak `~r/.+programistą/`, są wyrażeniami, które pozwalają na bardziej precyzyjne określenie, jakiego podciągu szukamy w zmiennej.
-
-## Zobacz również
-
-- [Dokumentacja Elixir - String.slice](https://hexdocs.pm/elixir/String.html#slice/3)
-- [Wyrażenia regularne w Elixirze](https://elixirschool.com/pl/lessons/advanced/pattern-matching/#-regular-expressions)
-- [Przewodnik po Elixirze na NaszKod.pl](https://naszkod.pl/2017-03/Elixir-przewodnik-jak-dziala-jak-naprawic)
+- [Dokumentacja Elixir](https://hexdocs.pm/elixir/String.html#slice/3)
+- [Przykłady zastosowań slices](https://dev.to/franzejr/using-elixir-s-string-slice-3-function-5666)

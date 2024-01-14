@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Att hitta längden på en sträng"
+simple_title:         "Att hitta längden på en sträng"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/finding-the-length-of-a-string.md"
 ---
 
@@ -9,35 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att hitta längden på en sträng är en grundläggande uppgift som kan vara användbar i en mängd olika scenarier när du programmerar med Elixir. Det kan hjälpa dig att manipulera strängar, kontrollera indata och utföra andra operationer som kräver kunskap om strängens längd. Det är också en bra övning för att bygga upp din förståelse för grundläggande Elixir-funktioner och syntax.
+Att hitta längden på en sträng är en grundläggande del av programmering och kan vara användbart för att hantera och manipulera textdata. I denna bloggpost kommer vi att titta på hur man enkelt kan göra detta med hjälp av Elixir.
 
 ## Så här gör du
 
-För att hitta längden på en sträng i Elixir, används funktionen `String.length/1`. Denna funktion tar en sträng som inmatning och returnerar dess längd som ett heltal. Se nedan för ett exempel på hur detta kan se ut i Elixir:
+För att hitta längden på en sträng i Elixir, kan du använda funktionen `String.length()`. Den tar en sträng som inmatning och returnerar antalet tecken i strängen.
 
 ```Elixir
-string = "Hej världen!"
-String.length(string)
+iex> String.length("Hej!")
+3
+iex> String.length("32b karaktärer")
+14
 ```
 
-Detta skulle ge följande utmatning:
+Som du kan se från exemplet ovan, tar funktionen hänsyn till alla tecken i strängen, inklusive mellanslag och specialtecken.
+
+För att inkludera mellanslag och specialtecken som en faktor i längden, kan du använda `byte_size()` funktionen istället.
 
 ```Elixir
-12
+iex> byte_size("Hej!")
+4
+iex> byte_size("32b karaktärer")
+16
 ```
 
-Som du kan se beräknar funktionen `String.length/1` längden på strängen genom att räkna antalet tecken, inklusive mellanslag och skiljetecken. Detta betyder att den inte bara tar hänsyn till bokstäverna, utan också till alla andra tecken som är en del av strängen.
-
-Nu när du vet hur man använder funktionen `String.length/1`, kan du experimentera med den på olika sätt och kombinera den med andra Elixir-funktioner för att uppnå olika resultat.
+Den här funktionen returnerar antalet byte som används för strängens koder. För de flesta skriftsystem, kommer byte_size() att returnera samma värde som String.length(). Men om du arbetar med unicode eller olika språk, kan det vara viktigt att använda `byte_size()` för att få en exakt längd.
 
 ## Djupdykning
 
-En intressant sak att notera är att Elixir har flera inbyggda funktioner för att hantera strängar, inklusive `String.length/1` som vi har sett ovan. Men det finns också andra sätt att hitta längden på en sträng i Elixir. Till exempel kan du använda mönstermatchning och rekursion för att skapa en egen funktion som räknar tecken i en sträng.
+Det kan vara intressant att veta hur Elixir hanterar strängar under huven för att förstå varför vi använder `String.length()` och `byte_size()`. Elixir strängar representeras som en lista av heltal som motsvarar koder för varje tecken. Detta innebär att längden på en sträng är lika med antalet element i listan.
 
-Det finns också vissa viktiga skillnader att vara medveten om när man hanterar strängar i Elixir jämfört med andra programmeringsspråk. Till exempel är strängar i Elixir inte muterbara, vilket innebär att de inte kan ändras direkt. Istället måste du använda funktioner som `String.replace/3` för att göra ändringar i en sträng.
+```Elixir
+iex> "Hej!" |> String.to_charlist
+[72, 101, 106, 33]
+```
 
-## Se också
+Funktionen `String.to_charlist` konverterar vår sträng till en lista av heltal, där varje heltal representerar ett teckens kod.
 
-- [Elixir String Module](https://hexdocs.pm/elixir/String.html)
-- [Elixir String Functions Cheat Sheet](https://devhints.io/elixir-strings)
-- [Elixir Strings Tutorial](https://elixirschool.com/sv/lessons/basics/strings/)
+För att räkna antalet element i en lista kan du använda `Enum.count()` funktionen.
+
+```Elixir
+iex> [72, 101, 106, 33] |> Enum.count()
+4
+```
+
+Nu vet du hur Elixir räknar längden på en sträng och hur du kan använda funktionerna `String.length()` och `byte_size()` för att få längden baserat på ditt användningsfall.
+
+## Se även
+
+- [Elixir dokumentation för String module](https://hexdocs.pm/elixir/String.html)
+- [Elixir dokumentation för Enum module](https://hexdocs.pm/elixir/Enum.html)
+- [Elixir skolan: Data typer](https://elixirschool.com/en/lessons/basics/basics/data-types/)

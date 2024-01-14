@@ -1,68 +1,76 @@
 ---
-title:                "Haskell: 文字列の切り出し"
+title:                "Haskell: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+## Why
 
-文字列から部分文字列を抽出することは、Haskellプログラミングにおいて重要なタスクの一つです。例えば、文字列から特定の単語を抽出したり、特定の文字列に対する処理を行ったりする際に使用されます。この記事では、Haskellにおける部分文字列の抽出について解説します。
+## なぜ
+
+文字列を抽出することに取り組む必要があるのでしょうか？Haskellで文字列を効率的に処理する方法を探るために、文字列の抽出について考えてみましょう。
+
+あなたのプログラムが文字列を処理する必要がある場合、文字列の一部分だけを取り出したいことがよくあります。例えば、ログから特定の情報を抽出する場合や、ユーザーが入力した文字列から特定のパターンを見つけたい場合です。このような場合、文字列を抽出することで処理をより簡単に行うことができます。
+
+## How To
 
 ## 方法
 
-まず、部分文字列を抽出するためには、`take`関数や`drop`関数を使用します。例えば、`take 5 "Hello World"`を実行すると、結果として"Hello"という部分文字列が抽出されます。また、`drop 5 "Hello World"`を実行すると、結果として" World"という部分文字列が抽出されます。
+Haskellでは、`!`演算子を使って文字列を抽出することができます。これらの演算子は、ある文字列を切り取って新しい文字列を作る方法を提供します。
+
+例えば、`take`関数を使って文字列の最初の3文字を抽出するコードを見てみましょう。
 
 ```Haskell
-take 5 "Hello World" -- "Hello"
-drop 5 "Hello World" -- " World"
+take 3 "Hello World"
 ```
 
-さらに、`splitAt`関数を使用することで、任意の位置で文字列を分割することができます。例えば、`splitAt 5 "Hello World"`を実行すると、結果として("Hello", "World")というタプルが返されます。
+このコードは以下のような結果を出力します。
+
+```
+"Hel"
+```
+
+同様に、`drop`関数を使うことで文字列の最初の3文字以外を抽出することができます。
 
 ```Haskell
-splitAt 5 "Hello World" -- ("Hello", "World")
+drop 3 "Hello World"
 ```
 
-さらに、`words`関数を使用することで、文字列をスペースで分割し、部分文字列のリストを取得することができます。また、`unwords`関数を使用することで、リストをスペースで結合して文字列に変換することもできます。
+このコードは以下のような結果を出力します。
+
+```
+"lo World"
+```
+
+また、特定のパターンを持つ文字列を抽出する場合には、`filter`関数を使うことができます。以下は、「a」を含む文字列を抽出する例です。
 
 ```Haskell
-words "Hello World" -- ["Hello", "World"]
-unwords ["Hello", "World"] -- "Hello World"
+filter (\x -> 'a' `elem` x) ["apple", "banana", "cherry"]
 ```
 
-## ディープダイブ
+このコードは以下のような結果を出力します。
 
-部分文字列を抽出する際には、パターンマッチングやリスト内包表記を使用することもできます。例えば、特定の文字列が含まれる部分文字列を抽出する方法は以下のようになります。
-
-```Haskell
--- パターンマッチングを使用した場合
-extractSubstrings :: String -> [String]
-extractSubstrings "" = []
-extractSubstrings str@(c:cs)
-  | "H" `isPrefixOf` str = "H" : extractSubstrings cs -- "H"が先頭にある場合
-  | "ello" `isPrefixOf` str = "ello" : extractSubstrings cs -- "ello"が先頭にある場合
-  | otherwise = extractSubstrings cs -- 上記のどれにも当てはまらない場合
-
--- リスト内包表記を使用した場合
-extractSubstrings :: String -> [String]
-extractSubstrings str = [x | x <- ["H", "ello"], x `isPrefixOf` str]
+```
+["apple", "banana"]
 ```
 
-また、正規表現を使用することで、より柔軟なパターンマッチングを行うこともできます。
+## Deep Dive
 
-```Haskell
-import Text.Regex.Posix
+## 詳細を掘り下げる
 
-extractSubstrings :: String -> [String]
-extractSubstrings str = getAllTextMatches (str =~ "a*b" :: AllTextMatches [] String)
-```
+文字列の抽出には、上記で紹介した方法以外にも様々な方法があります。例えば、`split`関数を使うことで文字列を分割することができます。また、正規表現を使ってより複雑なパターンを抽出することもできます。
 
-## 参考
+Haskellでは、文字列を扱うためのさまざまなライブラリが提供されています。これらのライブラリを使うことで、より高度な文字列操作を行うことができます。
 
-- [Haskellで文字列を扱うための関数一覧](https://qiita.com/yuta-ushijima/items/409d9d3b8556dd482e4c)
-- [Haskellの正規表現ライブラリRegexの基本](http://blog.masuidrive.jp/2012/05/haskellregex.html)
-- [Haskell wiki: Take and Drop](https://wiki.haskell.org/Take_and_drop)
-- [Haskell wiki: List comprehensions](https://wiki.haskell.org/List_comprehension)
+## See Also
+
+## 関連リンク
+
+- [Haskellで文字列処理を行う方法 (Qiita)](https://qiita.com/Sorarinu/items/02be9ec0d5ad718edcfc)
+- [Haskell String Module (Hackage)](https://hackage.haskell.org/package/base/docs/Data-String.html)
+- [正規表現を使った文字列の処理 (Qiita)](https://qiita.com/sano-jin/items/a953b686ea42a38e2b1a)

@@ -1,52 +1,60 @@
 ---
 title:                "PHP: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego potrzebujemy aktualnej daty?
 
-Jeśli kodujesz w PHP, prawdopodobnie masz do czynienia z danymi datowymi. Często musimy używać bieżącej daty w naszych aplikacjach, na przykład do wyświetlania świeżych treści lub do ustawiania terminów ważności. W tym artykule dowiesz się, jak w prosty sposób pobrać aktualną datę w języku PHP.
+Aktualna data jest bardzo ważna w programowaniu. Pozwala nam na śledzenie czasu wykonywania naszych skryptów oraz na wyświetlanie aktualnej daty w aplikacjach. Ponadto, wiele funkcji programistycznych wymaga dostępu do bieżącego czasu, aby wykonać swoje zadania. Dlatego, dowiadując się jak pobrać aktualną datę w PHP, możemy ulepszyć nasze umiejętności programistyczne.
 
-## Jak to zrobić
+# Jak pobrać aktualną datę w PHP?
 
-Jest kilka sposobów na uzyskanie bieżącej daty w PHP. Najpopularniejsze metody to użycie funkcji `date()` oraz obiektu `DateTime`. Oba te sposoby są bardzo proste i szybkie w implementacji.
+Aby pobrać aktualną datę w PHP, musimy użyć funkcji `date()`. Jest to wbudowana funkcja w PHP, która zwraca bieżącą datę i czas zgodnie z wybranym formatem.
 
+### Przykład:
 ```PHP
-// Użycie funkcji date()
-$currentDate = date('Y-m-d');
-echo $currentDate; // Output: 2021-09-06
-
-// Użycie obiektu DateTime
-$dateTime = new DateTime();
-$currentDate = $dateTime->format('Y-m-d');
-echo $currentDate; // Output: 2021-09-06
+$date = date("Y-m-d");
+echo $date;
 ```
 
-Obydwie metody zwracają aktualną datę w formacie `YYYY-MM-DD`, który jest powszechnie używany w bazach danych, dzięki czemu można bez problemu porównywać i sortować daty.
-
-## Głębszy zanurzenie
-
-Jeśli chcesz uzyskać większą kontrolę nad formatem daty lub dodać informacje o czasie, możesz poszerzyć swoją wiedzę o funkcji `date()` lub obiekcie `DateTime`. Możesz również skorzystać z innych przydatnych funkcji, takich jak `strtotime()`, która pozwala na konwersję daty w postaci tekstowej na datę typu Unix Timestamp, czyli liczbę sekund, która minęła od 1 stycznia 1970 roku.
-
-```PHP
-// Użycie funkcji date() z dodatkowymi parametrami
-$currentDate = date('d-m-Y H:i:s'); // Data i czas
-echo $currentDate; // Output: 06-09-2021 14:25:00
-
-// Użycie funkcji strtotime()
-$dateString = 'next Monday'; // Następny poniedziałek
-$nextMonday = strtotime($dateString);
-echo date('d-m-Y', $nextMonday); // Output: 13-09-2021
+### Output:
+```
+2021-03-25
 ```
 
-W przypadku obiektu `DateTime` możesz korzystać z różnych metod, takich jak `add()`, `sub()`, `diff()`, które pozwalają na dodawanie, odejmowanie i porównywanie dat.
+Funkcja `date()` pobiera dwa argumenty: format daty i opcjonalnie, timestamp. Jeśli nie podamy drugiego argumentu, funkcja automatycznie pobierze bieżącą datę i czas. W powyższym przykładzie, użyliśmy formatu `Y-m-d`, który zwraca rok, miesiąc i dzień.
 
-## Zobacz też
+Możemy również użyć innych specjalnych znaków formatujących, aby wyświetlić bardziej szczegółowe informacje o dacie i czasie. Na przykład, `d` oznacza dzień, `m` miesiąc, `Y` rok, a `H:i:s` godzina:minuta:sekunda.
 
-- [Dokumentacja funkcji `date()` w języku PHP](https://www.php.net/manual/en/function.date.php)
-- [Dokumentacja klasy `DateTime` w języku PHP](https://www.php.net/manual/en/class.datetime.php)
-- [Artykuł na temat dat i czasu w języku PHP](https://www.digitalocean.com/community/tutorials/how-to-work-with-date-and-time-in-php)
+# Dogłębny przegląd
+
+W funkcji `date()` możemy również wybrać inny argument, timestamp, aby wyświetlić datę i czas w momencie innym niż bieżący. Timestamp jest liczbą reprezentującą ilość sekund, która upłynęła od 1 stycznia 1970 roku. Możemy go uzyskać używając funkcji `time()`.
+
+### Przykład:
+```PHP
+$date = date("Y-m-d H:i:s", time() - 3600); //pobiera datę i czas z godzinę wcześniej
+echo $date;
+```
+
+### Output:
+```
+2021-03-25 16:30:00
+```
+
+Możemy również wyświetlić datę i czas w różnych strefach czasowych, ustawiając odpowiednią strefę czasową w funkcji `date_default_timezone_set()`. Dzięki temu, możemy dostosować wyświetlanie daty i czasu do potrzeb naszej aplikacji.
+
+# Zobacz również
+
+Jeśli chcesz dowiedzieć się więcej o funkcji `date()` w PHP, warto zajrzeć na te strony:
+
+- [Oficjalna dokumentacja PHP o funkcji date()](https://www.php.net/manual/en/function.date.php)
+- [W3Schools - Tutorial on PHP Date and Time](https://www.w3schools.com/php/php_date.asp)
+- [PHP Date Time Functions - GeeksforGeeks](https://www.geeksforgeeks.org/php-date-time-functions/)
+
+Dziękujemy za przeczytanie naszego wpisu na temat pobierania aktualnej daty w PHP. Mamy nadzieję, że teraz wiesz, jak wykorzystać tę funkcję w swoim kodzie i zwiększyć swoje umiejętności programistyczne. Do zobaczenia w kolejnych artykułach!

@@ -1,49 +1,54 @@
 ---
 title:                "Python: Stampa dell'output di debug"
+simple_title:         "Stampa dell'output di debug"
 programming_language: "Python"
-category:             "Testing and Debugging"
+category:             "Python"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Perché dovremmo preoccuparci di stampare l'output di debug durante la programmazione? La risposta è semplice: per semplificarci il processo di identificazione e correzione degli errori durante lo sviluppo del nostro codice.
 
-## Come
-Per stampare l'output di debug in Python, possiamo utilizzare la funzione `print()` e passare come argomento le variabili o i valori che vogliamo visualizzare. Ad esempio:
+Stampare output di debug è una pratica molto importante nel processo di sviluppo di un programma. Aiuta a identificare e risolvere eventuali errori o bug nel codice, rendendo il processo di debugging più efficiente e accurato.
 
-```Python
-x = 5
-y = "Hello"
-print("Il valore di x è", x, "e il valore di y è", y)
-```
+## Come fare
 
-Questo produrrà un output simile a:
+Per stampare output di debug in Python, è possibile utilizzare il metodo `print()` oppure il modulo `logging`. Vediamo un esempio di utilizzo di entrambi:
 
 ```
-Il valore di x è 5 e il valore di y è Hello
+# Utilizzo del metodo print()
+numero = 7
+print("Il numero è:", numero)
+```
+Output:
+```
+Il numero è: 7
 ```
 
-Inoltre, possiamo utilizzare il metodo `format()` per formattare meglio l'output, specificando il tipo di dato che vogliamo stampare. Ad esempio:
-
-```Python
-x = 1.2345
-print("Il valore di x è {:.2f}".format(x))
+```
+# Utilizzo del modulo logging
+import logging
+logging.basicConfig(level=logging.DEBUG)
+numero = 7
+logging.debug("Il numero è: %d", numero)
+```
+Output:
+```
+DEBUG:root:Il numero è: 7
 ```
 
-Questo produrrà un output simile a:
+In entrambi i casi, l'output di debug verrà visualizzato nella console o nel file di log a seconda delle impostazioni.
 
-```
-Il valore di x è 1.23
-```
+## Approfondimento
 
-## Deep Dive
-Stampare l'output di debug può diventare molto utile durante lo sviluppo di codice più complesso, poiché ci permette di avere una visione più chiara su ciò che accade all'interno del nostro programma. Possiamo anche utilizzare la funzione `dir()` per visualizzare tutti gli attributi disponibili di una classe o di un oggetto.
+Stampare output di debug può essere utile non solo per identificare errori, ma anche per comprendere meglio il funzionamento del codice. Si consiglia di utilizzare il metodo `print()` inizialmente per accertarsi di avere la giusta logica nel codice e successivamente passare al modulo `logging` per avere un controllo più dettagliato e strutturato dell'output di debug.
 
-Inoltre, è possibile utilizzare la libreria `logging` per una gestione più avanzata dell'output di debug, includendo informazioni come il livello di gravità dell'errore o la data e ora in cui si è verificato.
+Inoltre, è possibile utilizzare stringhe di formattazione come `%s` o `%d` per visualizzare variabili di diversi tipi di dati nell'output di debug.
 
 ## Vedi anche
-- [Documentazione di Python su debug](https://docs.python.org/3/library/debug.html)
-- [Tutorial su come utilizzare la funzione `print()`](https://realpython.com/python-print/)
-- [Guida alla libreria `logging` in Python](https://realpython.com/python-logging/)
+
+- [Python Documentazione ufficiale su print()](https://docs.python.org/3/library/functions.html#print)
+- [Python Documentazione ufficiale su logging](https://docs.python.org/3/library/logging.html)
+- [Python Guida al debugging](https://realpython.com/python-debugging-pdb/)

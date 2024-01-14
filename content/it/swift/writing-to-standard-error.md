@@ -1,28 +1,29 @@
 ---
 title:                "Swift: Scrittura su standard error"
+simple_title:         "Scrittura su standard error"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
-Scrivere su standard error è un utile strumento per la gestione degli errori e il debug durante la programmazione in Swift.
+# Perché scrivere sullo standard error in Swift
+In Swift, scrivere sullo standard error significa stampare messaggi di errore o di avviso durante l'esecuzione del programma. Questo è utile per monitorare il comportamento del programma e individuare eventuali problemi.
 
-## Come Fare
-Per scrivere su standard error in Swift, è possibile utilizzare il metodo di stampa `print(_:to:)`, specificando come secondo parametro l'output desiderato, ad esempio `standardError`. Esempio:
+## Come scrivere sullo standard error in Swift
+Per scrivere sullo standard error in Swift, è necessario utilizzare il comando `print()` con l'argomento`to:`, specificando `error` come destinazione. Esempio:
 
 ```Swift
-print("Errore: Array vuoto", to: &standardError)
-
-// Output: Errore: Array vuoto
+print("Messaggio di errore", to: &errorStream)
 ```
 
-## Approfondimento
-Scrivere su standard error è particolarmente utile quando si vuole visualizzare degli errori o degli avvisi in modo diverso rispetto alla stampa standard su console. Inoltre, il contenuto scritto su standard error viene visualizzato in modalità di "non buffering", quindi viene mostrato immediatamente senza attendere la chiusura del programma.
+Questo stamperà il messaggio di errore sullo standard error.
 
-## Vedi Anche
-- [Documentazione Apple su standard error in Swift](https://developer.apple.com/documentation/swift/standarderror)
-- [Articolo Medium su come gestire gli errori in Swift](https://medium.com/@analogbird/error-handling-in-swift-99b0137b4d05)
-- [Tutorial su debug e gestione errori in Swift](https://codewithchris.com/swift-error-handling/)
+## Approfondimento su scrivere sullo standard error in Swift
+Scrivere sullo standard error è una pratica comune nella programmazione e può essere utile in diverse situazioni. Ad esempio, durante il debugging, può aiutare a identificare l'origine di un errore. Inoltre, in un'applicazione sviluppata per la console, scrivere sullo standard error consente di visualizzare i messaggi di errore sui file di log.
+
+# Vedi anche
+- [Apple Developer Documentation - Print](https://developer.apple.com/documentation/swift/1541053-print)
+- [Stack Overflow - Writing to standard error in Swift](https://stackoverflow.com/questions/33456542/writing-to-standard-error-in-swift)

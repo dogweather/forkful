@@ -1,43 +1,72 @@
 ---
 title:                "Python: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Pythonilla ohjelmointia opettavat artikkelit usein sisältävät ohjeita, joiden avulla voit syöttää erilaisia arvoja koodiisi. Tiedät ehkä jo, miten syötät arvoja suoraan koodiin, mutta oletko koskaan miettinyt, miten voit syöttää arvoja koodiisi käyttämällä komentoriviparametrejä? Tässä blogikirjoituksessa opetan sinulle, miksi ja miten kannattaa lukea komentoriviparametreja Pythonissa.
 
-## Kuinka
-Pythonissa on sisäänrakennettu kirjasto, joka mahdollistaa komentoriviparametrien lukemisen. Tämä kirjasto on nimeltään "argparse". Alla olevassa esimerkissä näytän, kuinka voit lukea komentoriviparametreja ja käsitellä niitä yksinkertaisessa ohjelmassa.
+Komentoriviparametrit ovat tärkeä osa Python-ohjelmointia ja niiden ymmärtäminen voi auttaa sinua tekemään ohjelmistostasi joustavampaa ja monipuolisempaa.
+
+## Miten
+
+Komentoriviparametrit annetaan Python-ohjelmalle, kun sitä suoritetaan terminaalissa. Ne ovat erittäin hyödyllisiä, kun haluat muuttaa ohjelman käyttäytymistä ilman, että joudut muokkaamaan itse ohjelmakoodia.
+
+Esimerkiksi voit luoda ohjelman, joka laskee kahden luvun summan, ja antaa käyttäjän valita kummankin luvun komentoriviparametreilla. Alla on esimerkki koodista ja sen tulostuksesta:
+
+```Python 
+import sys
+
+number1 = int(sys.argv[1])
+number2 = int(sys.argv[2])
+
+sum = number1 + number2
+print("Summa: ", sum)
+
+```
+
+Kun suoritat tämän ohjelman terminaalissa antamalla kaksi lukua, näet napakan summatulosteen.
+
+```
+$ python summa.py 5 3
+Summa: 8
+```
+
+Voit myös antaa ohjelmalle vaihtoehtoja, jotka muuttavat sen toimintaa. Esimerkiksi voit lisätä "-t" vaihtoehdon, joka tulostaa kertotaulun sijasta kertotaulun kertomalla tulon.
 
 ```Python
-import argparse
+import sys
 
-parser = argparse.ArgumentParser()
-parser.add_argument("--nimi", help="Anna nimesi")
-parser.add_argument("--paiva", help="Anna syntymäpäiväsi")
+number1 = int(sys.argv[2])
+number2 = int(sys.argv[3])
 
-args = parser.parse_args()
-
-print("Hei {}, syntymäpäiväsi on {}".format(args.nimi, args.paiva))
+if sys.argv[1] == "-t":
+    product = number1 * number2
+else:
+    product = number1 * number2
+    print("Kertotaulu: ", sys.argv[1], "x", sys.argv[2], "=", product)
 ```
 
-Jos suoritat tämän koodin komentoriviltä antamalla "--nimi" ja "--paiva" komentoriviparametrit, voit nähdä, miten ne otetaan vastaan ja tulostetaan näytölle.
+Tässä esimerkissä käytämme "sys.argv" muuttujaa tarkistamaan, mitä vaihtoehtoa käyttäjä on antanut. Suorittamalla tämän ohjelman seuraavalla tavalla, näet erilaisen tulosteen:
 
-```sh
-python ohjelma.py --nimi Liisa --paiva 5.10.
-Hei Liisa, syntymäpäiväsi on 5.10.
+```
+$ python kertotaulu.py -t 5 3
+Kertolasku: 5 x 3 = 15
 ```
 
-Voit myös lisätä komentoriviparametreihin muita ominaisuuksia, kuten oletusarvoja, mahdollisia arvoja ja lyhyempiä vaihtoehtoja. Näitä ominaisuuksia voit tutkia lisää Pythonin argparse-dokumentaatiosta.
+## Syvempi sukellus
 
-## Syvällinen tarkastelu
-Nyt kun olet oppinut perusteet komentoriviparametrien lukemiseen Pythonissa, voit syventyä vieläkin enemmän. Huomaat ehkä, että saman ohjelman voi tehdä myös ilman "argparse"-kirjastoa ja lukemalla parametrit suoraan "sys.argv"-muuttujasta. Syvällisempi tarkastelu auttaa sinua ymmärtämään, miksi "argparse"-kirjastoa kannattaa käyttää ja mitä muita etuja se tarjoaa.
+Komentoriviparametrit tarjoavat paljon mahdollisuuksia ja niitä voi käyttää monella eri tavalla ohjelman kehityksessä. Voit esimerkiksi antaa käyttäjälle mahdollisuuden valita tiedosto, johon ohjelman tuloksia tallennetaan, tai lisätä väliaikaisia parametreja, jotka muuttavat ohjelman suoritusta.
+
+Komentoriviparametrit toimivat komentorivin ja ohjelman välillä, joten niitä voidaan käyttää myös Skripteissä, joita suoritetaan käyttöjärjestelmän sisällä.
 
 ## Katso myös
-- [Pythonin argparse-dokumentaatio](https://docs.python.org/3/library/argparse.html)
-- [Johdatus Pythoniin - Komentoriviparametrit](https://www.learnpython.org/en/Command_Line_Arguments)
-- [Pythonin sisäänrakennetun "sys" -moduulin dokumentaatio](https://docs.python.org/3/library/sys.html)
+
+- [Pythonin virallinen dokumentaatio komentoriviparametreista] (https://docs.python.org/3/library/sys.html#sys.argv)
+- [RealPythonin opas komentoriviparametrien käyttöön] (https://realpython.com/python-command-line-arguments/)
+- [Keskustelu Stack Overflowissa komentoriviparametrien käyttöönotosta Pythonissa] (https://stackoverflow.com/questions/11210104/how-can-i-read-command-line-arguments-in-python)

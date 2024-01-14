@@ -1,41 +1,46 @@
 ---
-title:                "C: Escribir a error estándar"
+title:                "C: Escribir en el error estándar"
+simple_title:         "Escribir en el error estándar"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir a la salida de error en C
+## Por qué
 
-Escribir a la salida de error en C es una práctica común en la programación, especialmente en aplicaciones grandes y complejas. Esto se debe a que es una forma eficaz de detectar y solucionar errores en el código.
+Muchas veces cuando codificamos en C, es posible que nos encontremos con errores que nos impiden que nuestro programa funcione correctamente. Al escribir a la salida estándar, estos errores se pueden mostrar en la pantalla, pero ¿qué pasa si queremos ver los errores en un archivo de registro? Esta es la razón por la que escribir a la salida de error es muy importante en la programación en C.
 
 ## Cómo hacerlo
 
-Para escribir a la salida de error en C, se utiliza la función `fprintf()` y se le pasa `stderr` como primer argumento. `stderr` es un archivo especial que se utiliza para mostrar mensajes de error. A continuación, se muestra un ejemplo de cómo imprimir un mensaje de error en la salida de error:
+Para escribir a la salida de error en C, utilizamos la función `fprintf()` y especificamos la salida estándar de error con el identificador `stderr`. Veamos un ejemplo:
 
-```
-#include <stdio.h>
-
-int main()
-{
-    fprintf(stderr, "¡Error! No se pudo abrir el archivo.");
-    return 0;
-}
+```C
+fprintf(stderr, "Este es un error: %d\n", error_code);
 ```
 
-La función `fprintf()` acepta varios argumentos, pero en este caso, solo se utiliza el argumento de cadena de formato para especificar el mensaje de error. También se puede utilizar `printf()` para escribir a la salida de error, pero se recomienda utilizar `fprintf()` ya que está específicamente diseñado para escribir en archivos.
+En este código, estamos usando `fprintf()` para escribir a la salida de error y estamos mostrando el valor de la variable `error_code` con el formato `%d`, que en este caso es un número entero.
 
-La salida de error se mostrará en la consola en caso de que se ejecute el programa desde la línea de comandos. En caso contrario, el mensaje de error se guardará en un archivo de registro.
+Ahora, para ver el resultado de este código, necesitamos ejecutar nuestro programa en la línea de comandos y redirigir la salida de error a un archivo de registro. Esto se hace añadiendo `2>` al final del comando de ejecución, junto con el nombre del archivo de registro. Por ejemplo:
+
+```bash
+./programa 2> registro.txt
+```
+
+Esto enviará todos los errores a un archivo llamado "registro.txt" en lugar de mostrarlos en la pantalla.
 
 ## Profundizando
 
-Además de imprimir mensajes de error, también se pueden utilizar los códigos de retorno para indicar el tipo de error que se ha producido. Por ejemplo, se puede utilizar el código de retorno 1 para indicar que no se pudo abrir un archivo y el código de retorno 2 para indicar que se ha producido un error en la lectura del archivo.
+Cuando escribimos a la salida de error en C, es importante tener en cuenta que no se debe confundir con la salida estándar. Es necesario especificar específicamente `stderr` para asegurarse de que los errores se envíen a la salida de error en lugar de a la salida estándar.
 
-También se pueden utilizar estructuras de control para imprimir mensajes de error específicos en función del tipo de error detectado. Por ejemplo, se puede utilizar la estructura `if-else` para imprimir un mensaje de error diferente si se produce un error de lectura o un error de escritura en un archivo.
+También es importante recordar que cuando se redirige la salida de error a un archivo de registro, esto solo afecta a los errores. La salida estándar seguirá mostrando los resultados en la pantalla. Por lo tanto, es posible que aún necesite usar `printf()` para mostrar información importante en la pantalla para el usuario.
+
+En resumen, escribir a la salida de error en C nos permite registrar y controlar los errores en nuestro programa de manera más eficiente, lo que es esencial para el desarrollo y depuración de software.
 
 ## Ver también
 
-- Documentación de fprintf: https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm
-- Códigos de retorno: https://www.tutorialspoint.com/cprogramming/c_functions_exit.htm
+- [Documentación de `fprintf()`(https://www.ibm.com/docs/en/zos/2.2.0?topic=functions-fprintf-write-formatted-data-stream) - para obtener más información sobre cómo utilizar esta función en C.
+- [Tutorial de redirección de salida estándar y estándar de error](https://www.cyberciti.biz/faq/redirecting-stderr-to-stdout/) - si desea aprender más sobre la redirección de la salida en la línea de comandos.
+- [Depuración de programas en C en Linux](https://www.thegeekstuff.com/2010/03/debug-c-program-using-gdb/) - para obtener ayuda sobre cómo solucionar los errores en su código.

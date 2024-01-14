@@ -1,48 +1,91 @@
 ---
 title:                "Haskell recipe: Using regular expressions"
+simple_title:         "Using regular expressions"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Regular expressions are powerful tools used in programming to search, match, and manipulate strings of text. They allow us to quickly and efficiently perform tasks such as validating user input, extracting information from files, and formatting data. Using regular expressions can save time and effort when working with text data, making them a valuable skill for any programmer.
+## Why Regular Expressions are Useful in Haskell Programming
 
-## How To
-Using regular expressions in Haskell is simple and straightforward. First, we need to import the `Text.Regex` library, which provides functions for working with regular expressions. Then, we can use the `=~` operator to apply a regular expression to a string and return a Boolean value if it matches.
+Regular expressions are powerful tools that allow for efficient string manipulation and pattern matching in Haskell. They provide a concise and flexible way to search for and manipulate text in a given dataset.
 
-Let's take a look at a simple example. Suppose we have a string `myString = "Hello, world!"` and we want to check if it contains the word "world". We can use the following code:
+## How To Use Regular Expressions in Haskell
 
-```Haskell
-import Text.Regex
-
-myString = "Hello, world!"
-
-print (myString =~ "world" :: Bool)
-```
-
-The output of this code would be `True`, since the regex found a match for "world" in the string. We can also use regular expressions to extract information from a string using the `=~` operator with capture groups. For example, if we have a string `address = "123 Main St, Anytown, USA"`, we can use the following code to extract the street number and name:
+Before we dive into coding examples, it's important to note that in Haskell, regular expressions are implemented using the `Text.Regex` library. This library provides functions that allow us to create and match regular expressions. Let's take a look at some examples of how to use regular expressions in Haskell:
 
 ```Haskell
 import Text.Regex
-
-address = "123 Main St, Anytown, USA"
-
-print (address =~ "([0-9]+) (.*)" :: (String, String))
 ```
 
-The first element of the tuple returned by `=~` will be the entire match, while the second element will be the first capture group (in this case, the street number). We can also use capture groups to replace text in a string using the `subRegex` function.
+### Creating Regular Expressions
 
-## Deep Dive
-Haskell's `Text.Regex` library provides many useful functions for working with regular expressions. Some key functions to keep in mind are `matchRegex`, which returns a list of all matches for a given pattern, and `splitRegex`, which splits a string into a list based on a delimiter specified by a regular expression.
+To create a regular expression in Haskell, we use the `mkRegex` function and pass in a string representation of the regex. For example, we could create a regex to match any word that starts with "hello" by using the following code:
 
-Additionally, we can use special characters in our regular expressions to specify patterns, such as `*` for zero or more repetitions, `+` for one or more repetitions, and `?` for zero or one repetitions. We can also use character sets, such as `[a-z]` to specify any lowercase letter, and `\d` to specify any digit.
+```Haskell
+helloRegex = mkRegex "^hello\\w+"
+```
 
-It's important to note that regular expressions can be powerful, but they can also be complex and difficult to read. It's always a good idea to test your regular expressions thoroughly and use comments to explain their purpose.
+### Matching Regular Expressions
+
+After creating a regex, we can use the `matchRegex` function to match it against a given string. This function returns a `Maybe (String, String, String)` where the first element is the full match, the second element is the substring that matched the regex, and the third element is the remaining string.
+
+Let's see an example of how this would work:
+
+```Haskell
+-- We will be using this string for all our examples
+testString = "hello world, my name is Jane."
+
+-- Match the regex against our test string
+-- Note that we need to import the Maybe module
+regexMatch = matchRegex helloRegex testString
+-- Output: Just ("hello world", "hello", " world, my name is Jane.")
+
+-- Match the regex again to get the substring that matched
+matchedSubstring = maybe "" (\(_, m, _) -> m) regexMatch
+-- Output: "hello world"
+
+-- Match the regex again to get the remaining string
+remainingString = maybe "" (\(_, _, r) -> r) regexMatch
+-- Output: " world, my name is Jane."
+```
+
+### Using Regular Expressions with Functions
+
+We can also use regular expressions within higher-order functions such as `filter` and `map`. For example, let's say we have a list of names and we want to filter out all the names that start with the letter "J". We can do this using a regular expression and the `filter` function:
+
+```Haskell
+namesList = ["John", "Jane", "Mary", "Jenna"]
+-- Create a regex to match names starting with "J"
+jNamesRegex = mkRegex "^J"
+-- Use this regex with the filter function
+filteredNames = filter (isJust . matchRegex jNamesRegex) namesList
+-- Output: ["John", "Jane", "Jenna"]
+```
+
+## Deep Dive into Regular Expressions
+
+Regular expressions are made up of a combination of special characters and normal characters that define a pattern to match against a string. Here are some of the most commonly used special characters in regular expressions:
+
+- `^` Matches the beginning of a string
+- `$` Matches the end of a string
+- `.` Matches any single character
+- `*` Matches zero or more occurrences of the previous character
+- `+` Matches one or more occurrences of the previous character
+- `?` Matches zero or one occurrence of the previous character
+- `[ ]` Matches any character within the brackets
+- `[^ ]` Matches any character not within the brackets
+- `\d` Matches a single digit
+- `\w` Matches a single word character (letters, numbers, underscore)
+- `\s` Matches a single whitespace character
+
+For a more comprehensive guide on using regular expressions in Haskell, check out the [Haskell Wiki](https://wiki.haskell.org/Regular_expressions).
 
 ## See Also
-- Official Haskell Documentation for Regular Expressions: https://wiki.haskell.org/Regular_expressions
-- Regex Tutorial for Beginners: https://www.regular-expressions.info/tutorial.html
-- Regex Cheatsheet: https://www.rexegg.com/regex-quickstart.html
+
+- [Hackage documentation for Text.Regex](http://hackage.haskell.org/package/regex/docs/Text-Regex.html)
+- [Regex tutorial by Learn You a Haskell](http://learnyouahaskell.com/starting-out#regular-expressions)
+- [Introduction to Regular Expressions in Haskell](https://dzone.com/articles/haskell-first-experiment-regular-expressions)

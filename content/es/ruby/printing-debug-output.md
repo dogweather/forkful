@@ -1,44 +1,82 @@
 ---
-title:                "Ruby: Impresión de salida de depuración"
+title:                "Ruby: Imprimiendo salidas de depuración"
+simple_title:         "Imprimiendo salidas de depuración"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-¿Alguna vez te has preguntado por qué necesitamos imprimir el resultado de depuración en nuestros programas de Ruby? Aunque pueda parecer una tarea trivial, la impresión de resultados de depuración es una herramienta crucial para entender y solucionar errores en nuestro código.
+
+Imprimir la salida de depuración es una técnica útil en programación que permite identificar y solucionar problemas en el código. Al mostrar información detallada sobre el estado de nuestro programa en diferentes puntos de ejecución, podemos entender mejor lo que está sucediendo y encontrar dónde se encuentran los errores.
 
 ## Cómo hacerlo
-Para imprimir resultados de depuración en Ruby, utilizamos el método `puts`, que nos permite imprimir una cadena de texto hacia la consola. Por ejemplo:
+
+Para imprimir la salida de depuración en Ruby, utilizamos el método `puts` seguido de la información que queremos mostrar entre paréntesis. Por ejemplo:
 
 ```Ruby
-puts "¡Hola Mundo!"
-```
-El resultado de esta línea de código sería:
-```
-¡Hola Mundo!
+variable = "Hola mundo"
+puts "El valor de la variable es: #{variable}"
 ```
 
-Ahora que sabemos cómo imprimir una cadena de texto, podemos utilizarlo para imprimir el contenido de variables y objetos en nuestro programa. Por ejemplo:
+Esto imprimirá la siguiente línea en la consola:
+
+```
+El valor de la variable es: Hola mundo
+```
+
+También podemos imprimir el valor de una variable sin necesidad de utilizar la interpolación de cadenas, simplemente pasando el nombre de la variable al método `puts`:
+
 ```Ruby
-nombre = "Juan"
-edad = 25
-puts "El nombre es #{nombre} y la edad es #{edad} años."
-```
-El resultado de este código sería:
-```
-El nombre es Juan y la edad es 25 años.
+variable = "Hola mundo"
+puts variable
 ```
 
-## Profundizando
-La impresión de resultados de depuración puede ser útil para entender el flujo de nuestro programa y detectar posibles errores. Sin embargo, también es importante saber cuándo y cómo utilizarla de manera efectiva. Imprimir demasiados resultados de depuración puede sobrecargar la consola y dificultar la lectura del código. Por otro lado, no imprimir suficientes resultados podría ocultar errores potenciales que podrían ser detectados de manera más eficiente con la impresión de resultados de depuración.
+Ambos métodos son útiles para imprimir el valor de una variable en un momento determinado del programa y ver si coincide con lo que esperábamos.
 
-Además, si necesitas imprimir resultados de depuración en varias partes de tu código, es posible que desees utilizar una librería o gem específica para ello, como `pry` o `byebug`.
+Otra forma de imprimir la salida de depuración es utilizando el método `p`, que también nos mostrará el tipo de dato de la variable además de su valor. Por ejemplo:
 
-## Ver también
-- [Documentación de Ruby sobre el método `puts`](https://ruby-doc.org/core-3.0.0/IO.html#method-i-puts)
-- [Tutorial sobre cómo depurar programas en Ruby](https://www.rubyguides.com/2019/06/ruby-debug-environments/)
-- [Gem `pry` para imprimir resultados de depuración](https://github.com/pry/pry)
-- [Gem `byebug` para imprimir resultados de depuración y hacer debugging interactivo](https://github.com/deivid-rodriguez/byebug)
+```Ruby
+numero = 42
+p numero
+```
+
+La consola imprimirá:
+
+```
+42
+```
+
+## Deep Dive
+
+Además de mostrar información sobre variables, también podemos usar la salida de depuración para comprobar si se ejecutan ciertas condiciones o bucles. Por ejemplo:
+
+```Ruby
+numeros = [1, 2, 3, 4, 5]
+numeros.each do |numero|
+  if numero.even?
+    puts "#{numero} es par"
+  else
+    puts "#{numero} es impar"
+  end
+end
+```
+
+Este código imprimirá en la consola si cada número del array es par o impar, lo que nos ayuda a verificar si nuestro código funciona correctamente.
+
+También podemos imprimir la salida de depuración a un archivo en lugar de la consola para revisarla más tarde. Para ello, utilizamos el método `File.open` y especificamos el nombre del archivo en el que queremos escribir. Por ejemplo:
+
+```Ruby
+File.open("output.txt", "w") do |file|
+  file.puts "Esta línea se escribirá en el archivo"
+end
+```
+
+## Vea también
+
+- [Documentación de Ruby sobre el método `puts`](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-puts)
+- [Documentación de Ruby sobre el método `p`](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-p)
+- [Artículo sobre depuración en Ruby](https://www.rubyguides.com/2019/09/ruby-debugging/)

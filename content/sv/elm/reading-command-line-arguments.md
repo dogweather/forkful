@@ -1,58 +1,54 @@
 ---
 title:                "Elm: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför läsa kommandoradsargument i Elm?
+# Varför
 
-När man skriver program i Elm är det ofta viktigt att kunna läsa in data från användaren. Ett sätt att göra det är genom att läsa kommandoradsargument. Detta gör det möjligt att anpassa programmet och ge det olika beteenden baserat på vad användaren anger vid start. I denna blogginlägg ska vi titta på hur man kan läsa kommandoradsargument i Elm och även ge en djupare förståelse för konceptet.
+Att läsa in kommandoradsargument är en viktig del av programmering, särskilt i funktionella programmeringsspråk som Elm. Det hjälper dig att skapa mer flexibla och anpassningsbara program som kan hantera olika inmatningar.
 
-## Så här gör du
+# Så här gör du
 
-För att läsa kommandoradsargument i Elm behöver du importera paketet "elm-community/html-extra" som tillhandahåller ett modul för att hantera kommandoradsargument. Sedan kan du använda funktionen "Html.Attributes.get" för att hämta de argument som skickas med när programmet körs.
+För att läsa in kommandoradsargument i Elm behöver du använda en modul som heter `Platform.Cmd` och dess `args` funktion. Här är ett exempel på hur du kan göra det:
 
-```Elm
-import Html.Extra exposing (CommandLineArgs)
-import Html.Attributes
+```
+elm package install elm/core
+```
 
-main : Program CommandLineArgs
+```elm
+module Main exposing (..)
+
+import Platform.Cmd exposing (args)
+
 main =
-    Html.program
-        { init = init
-        , view = view
-        , update = update
-        , subscriptions = subscriptions
-        }
+    Cmd.map handleArgs args
+
+handleArgs : List String -> Maybe String
+handleArgs args =
+    case List.head args of
+        Just arg ->
+            Just ("Det första argumentet är: " ++ arg)
+
+        Nothing ->
+            Nothing
 ```
 
-För att läsa ett specifikt argument kan vi använda funktionen "Html.Attributes.get" tillsammans med namnet på argumentet som en sträng. Om vi till exempel vill läsa argumentet "mode" som anger vilket läge programmet ska köras i, kan vi göra så här:
+I det här exemplet använder vi `Cmd.map` för att applicera vår `handleArgs` funktion på de argument som vi får från `args`. Funktionen `handleArgs` tar emot en lista med strängar och returnerar det första argumentet som en `Maybe String`. Om inga argument finns returneras `Nothing`.
 
-```Elm
-init : CommandLineArgs -> ( Model, Cmd Msg )
-init args =
-    let
-        mode =
-            Html.Attributes.get "mode" args |> Maybe.withDefault "default"
-    in
-    ( { model | mode = mode }, Cmd.none )
-```
+Om du kompilerar och kör programmet med ett argument, till exempel `elm-make Main.elm --output main.js`, så kommer du att få följande output: `Det första argumentet är: Main.elm`.
 
-När programmet körs kan vi nu skicka med argument "mode" som t.ex. "prod" eller "dev" för att bestämma vilket beteende programmet ska ha.
+# Djupdykning
 
-## Djupdykning
+Det finns flera olika sätt att läsa in och hantera kommandoradsargument i Elm, beroende på dina specifika behov. En alternativ metod är att använda paketet `elm-community/argv`, som erbjuder mer avancerade funktioner för att hantera argument.
 
-Kommandoradsargument kan vara mycket användbara när man utvecklar program i Elm. De ger möjlighet att anpassa programmet utan att behöva ändra koden. Det kan vara användbart i tester, debugging eller för att ge programmet olika beteenden beroende på var det körs.
+Det är också viktigt att tänka på att kommandoradsargument endast fungerar för program som körs i en terminal eller kommandoradsgränssnitt, och kan inte användas för webbapplikationer.
 
-Det är också möjligt att läsa flera argument samtidigt genom att använda funktionen "Html.Attributes.getAll". Denna funktion returnerar alla argument som skickas med och spara dem i en lista.
-
-En sak att tänka på är att kommandoradsargument endast fungerar när programmet körs i en webbläsare. Om du vill läsa argument när programmet körs utanför en webbläsare, måste du hitta en annan lösning, t.ex. att läsa från en textfil.
-
-## Se även
-
-- Elm Community HTML Extra - https://package.elm-lang.org/packages/elm-community/html-extra/latest/
-- Elm Documentation: CommandLineArgs - https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd#CommandLineArgs
-- Codecademy: Command Line Arguments in Elm - https://www.codecademy.com/articles/command-line-arguments-in-elm
+# Se också
+- [Elm Dokumentation: Platform.Cmd.args](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd#args)
+- [Elm-paketet "elm-community/argv"](https://package.elm-lang.org/packages/elm-community/argv/latest/)

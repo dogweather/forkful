@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Отримання поточної дати"
+simple_title:         "Отримання поточної дати"
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/getting-the-current-date.md"
 ---
 
@@ -9,28 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Отримання поточної дати є важливою частиною багатьох програм, які ми використовуємо щодня. Незалежно від того, чи це веб-додаток, мобільний додаток або навіть годинник на нашому смартфоні, ми часто потребуємо знати поточний час і дату. У цьому блозі ми розглянемо, як отримати поточну дату в TypeScript та чому це корисно знати.
+Програмування є надзвичайно корисним навичкою, особливо в сучасному технологічному світі. У цій статті ми розглянемо одну з основних задач - отримання поточної дати. Давайте почнемо!
 
 ## Як
 
-Отримання поточної дати в TypeScript є простим завданням за допомогою вбудованого об'єкта Date. Ось приклад коду, який допоможе вам отримати поточну дату у форматі день/місяць/рік:
+Існує декілька способів отримати поточну дату в TypeScript. Перший спосіб - використання вбудованого об'єкта Date. Наприклад, якщо ви хочете отримати сьогоднішню дату, ви можете скористатися кодом:
 
 ```TypeScript
-let currentDate = new Date();
-let day = currentDate.getDate();
-let month = currentDate.getMonth() + 1;
-let year = currentDate.getFullYear();
-console.log(`${day}/${month}/${year}`); 
+const today = new Date();
+console.log(today);
 ```
 
-Цей код створює новий об'єкт Date з поточною датою і потім отримує окремі значення для дня, місяця та року. Наступним кроком є використання цих значень для форматування поточної дати у зручному для вас форматі.
+Ви отримаєте вихідний результат у вигляді:
 
-## Глибинний аналіз
+```javascript
+2019-11-08T08:00:00.000Z
+```
 
-Об'єкт Date в TypeScript має багато інших корисних методів та властивостей, які можуть бути корисними при роботі з датами. Наприклад, метод `getDay()` повертає номер дня тижня (від 0 до 6), а `getTime()` повертате кількість мілісекунд, які пройшли з 1 січня 1970 року. Ви можете детальніше дослідити це об'єкт і його можливості в [офіційній документації](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date).
+Ви також можете отримати окремі частини дати, наприклад, день, місяць або рік:
+
+```TypeScript
+const year = today.getFullYear();
+const month = today.getMonth(); // Повертає 0 для січня, 1 для лютого і т.д.
+const day = today.getDate();
+console.log(`${day}/${month + 1}/${year}`);
+```
+
+Результат буде виглядати наступним чином:
+
+```javascript
+8/11/2019
+```
+
+Ще один спосіб отримати дату - використання бібліотеки Moment.js. Вона надає зручні інструменти для роботи з датами в TypeScript. Встановити її можна за допомогою наступної команди:
+
+```bash
+npm install moment --save
+```
+
+Після цього, ви можете використовувати бібліотеку за допомогою такого коду:
+
+```TypeScript
+import moment from "moment";
+const today = moment();
+console.log(today.format("DD/MM/YYYY"));
+```
+
+Результат буде аналогічний попередньому прикладу.
+
+## Глибокий занурення
+
+Якщо ви хочете дізнатися більше про отримання дати в TypeScript, рекомендую переглянути документацію до бібліотеки Moment.js. Також ви можете прочитати про роботу з датами в стандартній бібліотеці JavaScript.
 
 ## Дивіться також
 
-- [JavaScript Date об'єкт](https://www.w3schools.com/js/js_dates.asp)
-- [Використання дат в TypeScript](https://www.techiediaries.com/date-timestamp-todays-date-typescript-javascript/)
-- [Обробка дати в TypeScript](https://www.typescriptlang.org/docs/handbook/dates-and-times.html)
+- [Документація Moment.js](https://momentjs.com/docs/)
+- [Робота з датами в JavaScript](https://www.w3schools.com/js/js_dates.asp)

@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Generera slumpmässiga tal"
+title:                "Haskell: Generering av slumpmässiga tal"
+simple_title:         "Generering av slumpmässiga tal"
 programming_language: "Haskell"
-category:             "Numbers"
+category:             "Haskell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/generating-random-numbers.md"
 ---
 
@@ -9,59 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att använda slumpmässiga nummer i programmering kan vara användbart för att skapa mångsidiga och intressanta algoritmer, simuleringar och spel.
+Många programmerare väljer att använda slumpmässigt genererade nummer för att skapa variation och osäkerhet i sina program. Det är en vanlig teknik inom spelutveckling, simuleringar och kryptering.
 
-## Hur man gör det
+## Så här gör du
 
-Att generera slumpmässiga nummer i Haskell är relativt enkelt. Det första steget är att inkludera "System.Random" modulen i ditt program. Sedan kan du använda funktionen "getStdRandom" för att få ett slumpmässigt nummer inom ett givet intervall.
+För att generera slumpmässiga nummer i Haskell, behöver du importera modulen "Random". Sedan kan du använda funktioner som "randomR" för att generera ett slumpmässigt nummer inom ett visst intervall eller "randomIO" för ett slumpmässigt nummer utanför ett intervall.
 
 ```Haskell
 import System.Random
 
-randomNum :: IO Int
-randomNum = getStdRandom (randomR (1,10)) -- genererar ett slumpmässigt heltal mellan 1 och 10
+-- Genererar ett slumpmässigt heltal mellan 1 och 10
+randomR (1,10) :: IO Int
 
-main = do
-    num <- randomNum
-    print num -- utskrift: ett slumpmässigt nummer mellan 1 och 10
+-- Genererar ett slumpmässigt flyttal mellan 0 och 1
+randomIO :: IO Float
 ```
 
-Om du vill generera ett slumpmässigt flyttal istället för ett heltal, kan du använda "randomRIO" funktionen istället för "getStdRandom".
+Det är också möjligt att generera en lista av slumpmässiga nummer med hjälp av funktionen "randoms". Denna funktion tar också en slumpmässig generator som input och genererar en oändlig lista av slumpmässiga nummer.
 
 ```Haskell
 import System.Random
 
-randomFloat :: IO Float
-randomFloat = randomRIO (1.0, 100.0) -- genererar ett slumpmässigt flyttal mellan 1.0 och 100.0
-
-main = do
-    num <- randomFloat
-    print num -- utskrift: ett slumpmässigt flyttal mellan 1.0 och 100.0
+-- Genererar en oändlig lista av slumpmässiga heltal mellan 1 och 10
+randoms (mkStdGen 42) :: [Int]
 ```
 
 ## Djupdykning
 
-Att generera slumpmässiga nummer i Haskell använder sig av en generering av sanna slumpmässiga nummer baserade på en seed (frö). En seed är ett startvärde för algoritmen som används för att generera slumpmässiga nummer. På så sätt kan funktionerna "getStdRandom" och "randomRIO" garantera att de genererar sanna slumpmässiga nummer.
+Bakom kulisserna använder Haskell en teknik som kallas "pseudo-random number generation". Det innebär att den slumpmässiga generatorn faktiskt inte är helt slumpmässig, utan baseras på en startblandning av nummer som sedan utvecklas med hjälp av en matematisk algoritm.
 
-Om du vill använda samma seed för att alltid generera samma serie av slumpmässiga nummer, kan du använda "setStdGen" funktionen tillsammans med "mkStdGen" för att skapa en seed baserad på ett specifikt heltal.
+Det finns också möjlighet att använda en "slumpmässig seed" för att kontrollera vilken blandning av nummer som genererar genom att ange en startpunkt för den slumpmässiga generatorn.
 
-```Haskell
-import System.Random
-
-randomList :: IO [Int]
-randomList = do
-    gen <- getStdGen
-    let (num, newGen) = randomR (0,10) gen
-    setStdGen (mkStdGen 42) -- seeden 42 ger alltid samma serie av nummer
-    return (take 10 (randomRs (1,10) newGen))
-
-main = do
-    numList <- randomList
-    print numList -- utskrift: [7,2,6,10,7,2,3,6,8,2]
-```
+Slumpmässiga nummer som genereras i Haskell är också "pure", vilket betyder att de inte påverkas av omgivningen eller andra faktorer. Detta gör dem lämpliga för tester och för att upprepa samma händelser i ett program.
 
 ## Se även
 
-- [Haskell Random Library](https://hackage.haskell.org/package/random-1.2.0/docs/System-Random.html)
-- [Slumpmässiga tal i Haskell](https://www.geeksforgeeks.org/random-numbers-in-haskell/)
-- [Haskell-Communityn på Stack Overflow](https://stackoverflow.com/questions/tagged/haskell)
+- [Haskell Random module documentation](https://hackage.haskell.org/package/random-1.2.0/docs/System-Random.html)
+- [A Gentle Introduction to Haskell - Randomness](https://www.haskell.org/tutorial/randomness.html)
+- [Learn You a Haskell for Great Good! - Randomness](http://learnyouahaskell.com/input-and-output#randomness)

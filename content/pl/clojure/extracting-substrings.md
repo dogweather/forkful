@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Wycinanie podciągów"
+title:                "Clojure: Wyodrębnianie podciągów"
+simple_title:         "Wyodrębnianie podciągów"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/extracting-substrings.md"
 ---
 
@@ -9,34 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wyciąganie podciągów (lub części ciągów) jest nieodłączną częścią wielu zadań programistycznych. Może to być konieczne, gdy chcemy przetworzyć dłuższe ciągi znaków, aby uzyskać tylko pewne wybrane wartości. Na przykład, gdy chcemy wyodrębnić numer telefonu lub adres e-mail z dłuższego tekstu. Clojure posiada wiele funkcji, które ułatwiają nam to zadanie.
+W tym artykule dowiesz się, dlaczego warto używać funkcji do wyodrębniania podciągów w języku Clojure. Poznasz także sposoby, aby to zrobić oraz głębsze informacje na ten temat.
 
 ## Jak to zrobić
 
-Aby wyodrębnić podciągi w Clojure, musimy skorzystać z funkcji `subs` lub `substring`. Obie funkcje przyjmują dwa argumenty: ciąg znaków oraz indeksy określające początek i koniec wyciąganego podciągu. Przykładowo, gdy chcemy uzyskać podciąg z ciągu "Hello World!" zaczynający się od indeksu 2 i kończący na indeksie 6, musimy wpisać:
+Do wyodrębniania podciągów w języku Clojure można użyć funkcji `subseq` lub `substring`. Oba te funkcje przyjmują jako argumenty oryginalny ciąg znaków oraz indeksy, które określają, które części ciągu chcemy wyodrębnić.
 
 ```Clojure
-(subs "Hello World!" 2 6)
+(def s "Hello world")
+
+(subseq s 0 5)
+; Output: Hello
+
+(substring s 6)
+; Output: world
 ```
 
-Dzięki temu otrzymamy wartość "llo W".
-
-Możemy również wykorzystać funkcję `split` do rozdzielenia ciągu na podciągi za pomocą określonego separatora. Na przykład, gdy chcemy rozdzielić adres e-mail na część przed "@" i część po "@", możemy wykorzystać funkcję `split`, wpisując:
+Pamiętaj, że indeksy zaczynają się od zera. Możesz również wykorzystać ujemne indeksy, aby wyodrębnić podciągi od końca ciągu.
 
 ```Clojure
-(split "example@example.com" #"\@")
+(subseq s 0 -1)
+; Output: Hello worl
+
+(substring s 0 -1)
+; Output: Hello world
 ```
 
-Jako oddzielacz używamy tu wyrażenia regularnego, które jest ujęte w "#". Dzięki temu otrzymamy dwa podciągi: "example" oraz "example.com".
+Funkcja `subseq` zwraca Ciąg znaków, podczas gdy funkcja `substring` zwraca Ciąg znaków. Oznacza to, że wynik z `subseq` można przekazać do innych funkcji, które przyjmują Ciągi znaków jako argumenty.
 
-## Głębszy zanurzenie
+Jeśli chcesz wyodrębnić podciąg z jednego znaku, możesz użyć funkcji `nth`.
 
-Funkcje `subs` i `substring` są bardzo podobne, jednak różnią się w kwestii indeksów. Funkcja `subs` przyjmuje indeksy początkowe i końcowe włącznie, natomiast funkcja `substring` przyjmuje indeks początkowy włącznie, a indeks końcowy jest wyłączony. Może to wprowadzać nieco nieoczekiwane wyniki, dlatego ważne jest zawsze uważnie czytać dokumentację funkcji.
+```Clojure
+(nth "abcde" 2)
+; Output: c
+```
 
-Clojure posiada także wiele innych funkcji do operacji na ciągach, takich jak `take` czy `drop`, które mogą również być wykorzystane do wyodrębniania podciągów.
+Możesz również użyć funkcji `join` w połączeniu z `subseq` lub `substring`, aby połączyć wyodrębnione podciągi w jeden Ciąg znaków.
 
-## Zobacz również
+## Głębsze informacje
 
-- Dokumentacja funkcji `subs` i `substring`: https://clojuredocs.org/clojure.core/substring
-- Dokumentacja funkcji `split`: https://clojuredocs.org/clojure.string/split
-- Więcej funkcji do operacji na ciągach w Clojure: https://www.braveclojure.com/core-functions-in-depth/#Functions_for_Working_with_Clojure_St
+Podczas wyodrębniania podciągów, warto pamiętać, że indeksy są włączane do wyniku. Oznacza to, że podany ostatni indeks jest włączony w wyodrębniony podciąg.
+
+Możesz również wykorzystać dostępne funkcje `reverse` i `join` do odwrócenia i ponownego połączenia Ciągów znaków.
+
+## Zobacz także
+
+- Oficjalna dokumentacja Clojure dla funkcji `subseq`: https://clojuredocs.org/clojure.core/subseq
+- Oficjalna dokumentacja Clojure dla funkcji `substring`: https://clojuredocs.org/clojure.core/substring
+- Poradnik na temat wyodrębniania podciągów w języku Clojure: https://www.braveclojure.com/strings/

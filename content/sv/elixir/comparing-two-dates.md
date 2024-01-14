@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Jämföra två datum"
+title:                "Elixir: Jämförande av två datum"
+simple_title:         "Jämförande av två datum"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/comparing-two-dates.md"
 ---
 
@@ -9,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att jämföra två datum i Elixir kan vara en användbar funktion för att hantera och organisera data som relaterar till tid. Det kan hjälpa till att identifiera mönster, skapa tidslinjer och filtrera data baserat på datum.
+Att jämföra två datum är en viktig färdighet inom programmering och kan hjälpa till att avgöra rätt ordning för händelser eller beräkna åldern på något. I denna bloggpost kommer vi att gå igenom hur man kan jämföra två datum i Elixir och utforska djupare i konceptet.
 
-## Så här gör du
+## Hur man gör det
 
-För att jämföra två datum i Elixir kan du använda funktionen `Date.compare/2`. Detta kommer att ta två datum som argument och returnera en av tre möjliga svarsalternativ: `:before`, `:equal` eller `:after`. Låt oss titta på ett enkelt exempel:
+För att jämföra två datum används funktionen `Date.compare/2` i Elixir. Det första argumentet är det första datumet som ska jämföras och det andra argumentet är det andra datumet. I exemplet nedan jämför vi två datum och skriver ut resultatet:
 
-```elixir
-# Skapar två datumobjekt
-date1 = Date.new(2020, 8, 1)
-date2 = Date.new(2020, 8, 15)
+```Elixir
+date1 = Date.new(2021, 10, 15)
+date2 = Date.new(2021, 9, 15)
 
-# Jämför de två datumobjekten
-Date.compare(date1, date2) #=> :before
+IO.puts "Resultatet av jämförelsen är #{Date.compare(date1, date2)}"
 ```
 
-I detta exempel är `date1` tidigare än `date2` vilket ger oss `:before` som svar. Här är några andra möjliga kombinationer av resultat:
+Output:
 
-```elixir
-Date.compare(date2, date1) #=> :after
-Date.compare(date1, date1) #=> :equal
+```
+Resultatet av jämförelsen är :gt
 ```
 
-Funktionen `Date.compare/2` tar också hänsyn till skottår och månadslängd, vilket gör den tillförlitlig för alla typer av datum.
+Funktionen `Date.compare/2` returnerar en atom som representerar resultatet av jämförelsen. Här är en lista över de olika värden som kan returneras:
+
+- `:lt` - Det första datumet är mindre än det andra
+- `:eq` - Båda datumen är lika
+- `:gt` - Det första datumet är större än det andra
 
 ## Djupdykning
 
-I bakgrunden använder `Date.compare/2` funktionen `Calendar.Date.compare/2`, vilket ger oss en mer detaljerad insikt i hur jämförelsen faktiskt sker. `Calendar.Date.compare/2` använder sig av en algoritm som jämför året, månaden och dagen i respektive datum och returnerar ett av fem möjliga svar: `:before`, `:equal`, `:after`, `:ends_before` eller `:ends_after`.
+För att förstå hur `Date.compare/2` fungerar, behöver vi först förstå hur datum representeras i Elixir. I Elixir finns det två typer av datum: `Date` och `DateTime`. `DateTime` innehåller både datum och tid medan `Date` bara innehåller datumet.
 
-`ends_before` och `ends_after` är resultat som bara kan erhållas när skillnaden mellan årets skottår och resterande dagar i månaden är 7 dagar eller mindre. Dessa resultat indikerar att ett datum är före eller efter ett annat datum på grund av skottår.
+När vi jämför två datum i Elixir jämförs de som tuples med tre värden: år, månad och dag. Det är därför `Date.compare/2` returnerar antingen `:lt`, `:eq` eller `:gt` beroende på vilket datum som är större i varje värde.
+
+Det är också värt att nämna att `Date`-modulen innehåller andra användbara funktioner för att jämföra datum, som `Date.before?/2` och `Date.after?/2` som returnerar en boolean baserat på jämförelsen.
 
 ## Se även
 
-- [Date.compare/2 Documentation](https://hexdocs.pm/elixir/Date.html#compare/2)
-- [Calendar.Date.compare/2 Documentation](https://hexdocs.pm/elixir/Calendar.Date.html#compare/2)
-- [Elixir Date and Time Functions](https://dev.to/owensullivan/elixir-date-and-time-functions-1ped)
-- [Elixir Date Module Overview](https://hackernoon.com/a-clean-elixir-date-module-rph-43c8f9cb542)
+- [Date-modulen i Elixir dokumentationen](https://hexdocs.pm/elixir/Date.html)
+- [Elixir Programming Language - Officiell hemsida](https://elixir-lang.org/)

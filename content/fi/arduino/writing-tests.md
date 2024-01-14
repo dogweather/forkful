@@ -1,45 +1,75 @@
 ---
 title:                "Arduino: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Testien kirjoittaminen on tärkeä osa Arduino-ohjelmoinnin prosessia. Ne auttavat varmistamaan koodin toimivuuden ja vähentävät mahdollisten bugien määrää ohjelmassa.
 
-## Miten
+Testien kirjoittaminen on välttämätöntä Arduino-ohjelmoinnissa varmistaaksemme, että koodimme toimii odotetulla tavalla ja välttääksemme mahdolliset virheet ja ongelmat käytössä. Testien avulla voimme myös helpottaa koodin muokkaamista ja ylläpitämistä tulevaisuudessa.
+
+## Kuinka tehdä
+
+Kirjoittamalla testit koodiimme, voimme varmistaa sen toimivuuden ja välttää mahdolliset virheet. Tässä on esimerkki testien kirjoittamisesta Arduino-koodissamme:
+
 ```Arduino
-#include <Arduino.h>
-#include <unity.h>
+#include <gtest/gtest.h>
 
-int add(int x, int y) {
-  return x + y;
+// Testikoodi, joka testaa loop-funktion toimivuuden
+void loopTest() {
+  // alustetaan tarvittavat muuttujat
+  int x = 10;
+  int y = x + 5;
+  
+  // testataan x- ja y-muuttujien arvoja
+  EXPECT_EQ(x, 10);
+  EXPECT_EQ(y, 15);
+  
+  // odotetaan muutama millisekuntia ennen seuraavaa testiä
+  delay(10);
 }
 
-void test_add() {
-  TEST_ASSERT_EQUAL(5, add(2, 3));
-}
-
+// Testien suoritus
 void setup() {
-  UNITY_BEGIN();
-  RUN_TEST(test_add);
-  UNITY_END();
+  // Kutsutaan GTest-teekin alustusfunktiota
+  testing::InitGoogleTest();
 }
 
-void loop() {}
+void loop() {
+  // Suoritetaan testi
+  loopTest();
+  
+  // Ajetaan GTest-teekin funkio, joka suorittaa testit
+  RUN_ALL_TESTS();
+}
+
 ```
 
-### Selitys
-Ensimmäisessä rivissä tuodaan tarvittavat kirjastot testien käyttöä varten. Seuraavaksi luodaan funktio, joka toimii testattavana koodina. Tässä esimerkissä funktio `add` laskee kahden luvun summan ja palauttaa sen arvon. Sitten luodaan testifunktio, joka kutsuu `TEST_ASSERT_EQUAL` funktiota. Tämä funktio vertaa kahden parametrina annetun arvon samuutta ja tulostaa testeihin liittyvän informaation tarvittaessa. Lopuksi, setup funktiossa aloitetaan Unity-testiä kutsuen `UNITY_BEGIN()` funktiota, suoritetaan testifunktio kopkaamalla `RUN_TEST()` funktiota ja lopetetaan suoritus `UNITY_END()` funktion avulla.
+Tulostus:
 
-## Syvemmälle
-Testien kirjoittaminen on hyödyllistä, kun halutaan tehdä kattavaa ja laadukasta koodia. Ne auttavat tekemään koodin toimivuudesta luotettavaa ja havaitsemaan mahdolliset virheet ennen kuin ne tulevat ongelmaksi käytettäessä oikeassa ympäristössä. Näiden etujen lisäksi testien kirjoittaminen voi nopeuttaa kehitysprosessia, sillä testien avulla voidaan nopeasti tarkistaa ohjelman toimivuus ja korjata mahdolliset ongelmat ennen kuin ne aiheuttavat suurempia ongelmia. Toisin sanoen, testien kirjoittaminen auttaa parantamaan ohjelman yleistä laatua ja vähentämään kehitykseen liittyviä riskejä.
+```
+[Test Output]
+[==========] Running 1 test cases.
+[----------] Global test environment set-up.
+[----------] 1 tests from LoopTest
+[ RUN ] LoopTest.TestLoop
+[ OK ] TestLoop.TestLoop (1 ms total, 1 ms single)
+[----------] 1 tests from TestLoop (1 ms total)
+[----------] Global test environment tear-down
+[==========] 1 test cases run. (1 ms total)
+
+```
+
+## Syvällisempi sukellus
+
+Testien kirjoittaminen ei ole vaikeaa ja se tuo paljon hyötyä koodiimme. Testien avulla voimme varmistaa koodimme toimivuuden erilaisissa tilanteissa ja välttää mahdolliset virheet. Testien kirjoittamiseen on myös olemassa erilaisia kirjastoja ja työkaluja, kuten GTest, jotka voivat helpottaa testien luomista ja suorittamista.
 
 ## Katso myös
-- [Unity - Arduino ohjelmointi ja yksikkötestaus](https://docs.unity3d.com/560/Documentation/Manual/testing-arduino-artifacts.html)
-- [Arduino testiversio](https://github.com/adafruit/arduino-test-suite)
-- [Arduino yksikkötestaus - kattavat ohjeet](https://www.arduino.cc/en/Guide/UnitTesting)
-- [Junit - yksikkötestaus Java-sovelluksissa](https://junit.org/junit5/docs/current/user-guide/)
+
+- [Arduino Test Library](https://www.arduino.cc/reference/en/libraries/testlibrary/)
+- [SimpleArduinoUnitTest](https://github.com/bitlash/SimpleArduinoUnitTest)

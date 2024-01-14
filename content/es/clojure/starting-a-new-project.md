@@ -1,40 +1,57 @@
 ---
-title:                "Clojure: Iniciando un nuevo proyecto"
+title:                "Clojure: Comenzando un nuevo proyecto"
+simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Clojure"
-category:             "Getting Started"
+category:             "Clojure"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué
+## Por qué
 
-Iniciar un nuevo proyecto en Clojure puede ser una excelente manera de aprender un nuevo lenguaje de programación, ampliar tus habilidades o crear una aplicación útil para ti o para otros.
+Comenzar un nuevo proyecto en Clojure puede ser una excelente manera de expandir tus habilidades de programación y explorar un lenguaje de programación funcional dinámico. Además, Clojure es famoso por su capacidad para manejar grandes conjuntos de datos y su interoperabilidad con Java, lo que lo convierte en una opción popular para proyectos de ciencia de datos.
 
-# Cómo hacerlo
+## Cómo hacerlo
 
-Para comenzar un nuevo proyecto en Clojure, sigue estos sencillos pasos:
+Para comenzar un nuevo proyecto en Clojure, necesitarás tener instalado el entorno de desarrollo de Clojure (Clojure development environment) y un editor de texto. Una opción popular es usar Leiningen, que funciona como un administrador de paquetes y un generador de proyectos para Clojure.
+
+Una vez que hayas instalado Leiningen, puedes crear un nuevo proyecto con el siguiente comando:
+
+`lein new [nombre del proyecto]`
+
+Esto creará una estructura básica de archivos para tu proyecto, incluyendo un archivo "project.clj" que contiene las dependencias y configuraciones de tu proyecto.
+
+Para escribir código en tu proyecto, simplemente abre el archivo "src/[nombre del proyecto]/core.clj" en tu editor de texto y comienza a escribir en el lenguaje Clojure. Por ejemplo, puedes escribir una función que calcule la suma de dos números:
 
 ```Clojure
-(defn mi-función [parametros]
-  "Código de mi-función")
+(defn sumar [a b] 
+  (+ a b))
+
+;;Llamar a la función
+(sumar 5 10) ;;Output: 15
 ```
 
-El código anterior define una función básica en Clojure. También puedes probarlo en la consola de Clojure:
+Ahora, podemos usar las funciones del lenguaje Clojure para crear una lista de números y luego sumarlos utilizando nuestra función "sumar":
 
+```Clojure
+(def numeros [1 2 3 4 5])
+
+(reduce sumar numeros) ;;Output: 15
 ```
-Clojure => (mi-función "Hola Mundo!")
-"Hola Mundo!"
-```
 
-Este es solo un ejemplo simple de cómo se puede programar en Clojure. Puedes explorar más sobre los conceptos básicos de Clojure en línea o a través de tutoriales interactivos.
+## Profundizando
 
-# Profundizando
+Al comenzar un nuevo proyecto en Clojure, es importante familiarizarse con la sintaxis del lenguaje y los conceptos básicos de la programación funcional. También es útil conocer las características específicas de Clojure, como sus estructuras de datos inmutables y su gestión de concurrencia.
 
-Ahora que ya sabes cómo comenzar un nuevo proyecto en Clojure, es importante profundizar en algunos aspectos clave. Primero, asegúrate de tener un IDE adecuado para Clojure, como Cursive o Emacs. Luego, investiga sobre las distintas estructuras de datos y cómo se pueden utilizar en Clojure. También es importante aprender cómo manejar errores y excepciones en tu código.
+Además, Clojure cuenta con una amplia comunidad de usuarios y una gran cantidad de recursos disponibles en línea. Puedes unirte a grupos de usuarios, foros y conferencias para aprender más sobre el lenguaje y obtener ayuda si tienes alguna pregunta o problema en tu proyecto.
 
-# Ver también
+No tengas miedo de experimentar con diferentes aspectos de Clojure y seguir aprendiendo a través de la documentación y la práctica. ¡Pronto te sentirás cómodo y seguro en tu nuevo proyecto en Clojure!
 
-- [Documentación oficial de Clojure](https://clojure.org).
-- [Tutorial interactivo de Clojure](https://www.4clojure.com).
-- [Cursive - Plugin de Clojure para IntelliJ](https://cursive-ide.com).
+## Ver también
+
+- [Documentación oficial de Clojure](https://clojure.org/documentation)
+- [Leiningen](https://leiningen.org/)
+- [Foro oficial de Clojure](https://ask.clojure.org/)
+- [Comunidad Clojure en Reddit](https://www.reddit.com/r/Clojure/)

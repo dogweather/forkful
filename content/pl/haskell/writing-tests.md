@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/writing-tests.md"
 ---
 
@@ -9,35 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie testów jest nieodłączną częścią procesu tworzenia oprogramowania. Pozwala ono sprawdzić czy kod działa poprawnie, weryfikuje jego funkcjonalności oraz pozwala na szybkie wykrycie ewentualnych błędów. Jest to nie tylko narzędzie ułatwiające pracę programistów, ale również zapewnia bezpieczeństwo i jakość produktu końcowego.
+Testowanie jest kluczowym elementem w programowaniu, ponieważ pozwala nam upewnić się, że nasz kod działa zgodnie z oczekiwaniami. Dzięki testom możemy również zapewnić niezawodność i jakość naszego kodu.
 
 ## Jak to zrobić
 
-Sprawne i efektywne pisanie testów w Haskellu może wydawać się trudne, ale w rzeczywistości jest to prostsze niż się wydaje. Właśnie dlatego postanowiliśmy stworzyć ten krótki poradnik, który pomoże Ci wdrożyć testy do swojego projektu.
+Pierwszym krokiem w tworzeniu testów jest zaimportowanie modułu `Test.HUnit`:
 
 ```Haskell
--- Przykładowy test funkcji dodawania
-addTwoNumbers :: Int -> Int -> Int
-addTwoNumbers a b = a + b
-
-main :: IO ()
-main = do
-  -- Wywołanie funkcji addTwoNumbers z parametrami 2 i 3
-  let result = addTwoNumbers 2 3
-  -- Sprawdzenie czy wynik jest równy oczekiwanemu
-  if result == 5
-    then putStrLn "Test zakończony pomyślnie!"
-    else putStrLn "Test nie powiódł się."
+import Test.HUnit
 ```
 
-W powyższym przykładzie widzimy jak w prosty sposób tworzyć testy w Haskellu. Korzystając z funkcji `main` oraz konstrukcji `if-else`, możemy weryfikować czy nasze funkcje zwracają poprawne wyniki.
+Następnie możemy zacząć pisać nasze testy wykorzystując funkcję `TestCase`, która ma dwa parametry: nazwę testu i sam test.
 
-## Deep Dive
+```Haskell
+test1 = TestCase "Dodawanie liczb całkowitych" $ assertEqual "Wynik powinien być równy 10" (2+3) 5
+```
 
-Aby pisać jeszcze lepsze testy w Haskellu, warto poznać niektóre z dostępnych bibliotek, takich jak HUnit czy QuickCheck. Biblioteka HUnit pozwala na pisanie testów jednostkowych, gdzie z kolei QuickCheck pozwala na generowanie i testowanie danych. Warto również zaznajomić się z pojęciem TDD (Test Driven Development), czyli tworzenia testów przed implementacją kodu.
+Następnie możemy utworzyć listę zawierającą wszystkie nasze testy i wywołać funkcję `runTestTT`, aby uruchomić je wszystkie:
 
-## Zobacz także
+```Haskell
+testy = [test1, test2, test3]
+runTestTT (TestList testy)
+```
 
-- [Poradnik dla początkujących w języku Haskell](https://www.tomaszdrazil.com.pl/tworzenie-gry-w-haskellu-wstep/)
-- [Dokumentacja biblioteki HUnit](https://hackage.haskell.org/package/HUnit)
-- [Dokumentacja biblioteki QuickCheck](https://hackage.haskell.org/package/QuickCheck)
+Jeśli nasze testy przejdą, otrzymamy komunikat `OK`, jeśli nie otrzymamy informacji o niepowodzeniu.
+
+## Dogłębna analiza
+
+Ważne jest, aby pisać testy, które pokrywają wszystkie możliwe scenariusze. Możemy również wykorzystać moduł `QuickCheck` do testowania dowolnych danych wejściowych. Aby skorzystać z `QuickCheck`, musimy najpierw zaimportować odpowiedni moduł:
+
+```Haskell
+import Test.QuickCheck
+```
+
+Następnie definiujemy funkcję testującą z wykorzystaniem `quickCheck`:
+
+```Haskell
+sprawdzDzialanie :: Int -> Int -> Bool
+sprawdzDzialanie x y = x * y == y * x
+```
+
+Teraz możemy wywołać `quickCheck` na naszej funkcji, aby przetestować ją z losowo wybranymi parametrami i sprawdzić, czy zawsze zwraca ona oczekiwany wynik:
+
+```Haskell
+quickCheck sprawdzDzialanie
+```
+
+## Zobacz też
+
+- [Dokumentacja modułu `Test.HUnit`](https://hackage.haskell.org/package/HUnit)
+- [Dokumentacja modułu `Test.QuickCheck`](https://hackage.haskell.org/package/QuickCheck)

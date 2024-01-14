@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Tiedoston lukeminen"
+title:                "Clojure: Tiedostotekstin lukeminen"
+simple_title:         "Tiedostotekstin lukeminen"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/reading-a-text-file.md"
 ---
 
@@ -9,43 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi lukisi tiedostoa? Tämä on hyvä kysymys, ja vastaus on monimuotoinen. Tiedostojen lukeminen on olennainen osa ohjelmointia ja se voi auttaa meitä tekemään monia erilaisia ​​tehtäviä. Olipa kyseessä sitten tietokannan tietojen lajittelu, tekstin analysointi tai vain yksinkertainen tiedon lukeminen, tiedostojen lukeminen on tärkeä taito jokaiselle Clojure-ohjelmoijalle.
+Usein ohjelmointitehtävissä kohtaat tarpeen lukea tekstiä sisältävä tiedosto ohjelman käsittelyä varten. Tämä blogikirjoitus antaa sinulle tarvittavat tiedot käsitellä tekstiä Clojure-ohjelmointikielellä.
 
-## Miten
+## Kuinka
 
-Joten miten sitten lukea tiedosto Clojurella? Pidätkö varmasti seuraavasta yksinkertaisesta esimerkistä:
+Käytä Clojuren standardikirjastosta löytyvää `clojure.java.io`-kirjastoa tekstitiedoston lukemiseen. Käytä `slurp`-funktiota ja anna polku tekstiä sisältävään tiedostoon parametrina.
 
 ```Clojure
-(def file (slurp "tiedostonimi.txt"))
-(println file)
+(require '[clojure.java.io :as io])
+
+(slurp "tiedostonimi.txt")
 ```
 
-Tässä koodissa käytämme slurp-funktiota, joka lukee tiedoston merkkijonona ja tallentaa sen "file" -muuttujaan. Sitten voimme tulostaa "file" -muuttujan sisällön käyttämällä println-funktiota. 
-
-Esimerkiksi jos tiedostossa olisi seuraava teksti:
+Tämä palauttaa tekstiä sisältävän tiedoston sisällön merkkijonona.
 
 ```
-Tämä on esimerkki tiedostosta
-jota haluamme lukea
-```
-
-Tulostus olisi:
-
-```
-Tämä on esimerkki tiedostosta
-jota haluamme lukea
+Hello World!
+Tämä on esimerkki tekstiä sisältävästä tiedostosta.
 ```
 
 ## Syventävä sukellus
 
-Jotta ymmärtäisimme paremmin, kuinka tiedostonlukeminen toimii Clojurella, on hyödyllistä tietää muutama asia. Ensinnäkin, slurp-funktio lukee tiedoston sisällön kokonaisuudessaan ja tallentaa sen merkkijonona muuttujaan. Tämä tarkoittaa, että tiedoston luku voi olla hidasta, jos tiedosto on suuri. 
+Voit myös käyttää `with-open`-lauseketta yhdessä `reader`-funktion kanssa lukeaksesi tiedoston rivi kerrallaan.
 
-Toiseksi, slurp-funktio olettaa, että tiedoston koodaus on UTF-8. Jos käytät erilaista koodausta, voit määrittää sen slurpin valinnaiseen toiseen parametriin.
+```Clojure
+(with-open [reader (io/reader "tiedostonimi.txt")]
+  (doseq [line (line-seq reader)]
+    (println line)))
+```
 
-Lisäksi voi olla hyödyllistä käsitellä tiedostoa rivi kerrallaan käyttämällä esimerkiksi 'with-open'-rakenne, joka sulkee tiedoston automaattisesti kun lukeminen on valmis. 
+Tämä tulostaisi tekstin tiedoston sisällön rivit erikseen.
+
+```
+Hello World!
+Tämä on esimerkki tekstiä sisältävästä tiedostosta.
+```
 
 ## Katso myös
 
-- [Clojure-kirjaston tiedostojen käsittely](https://clojure.org/reference/io) 
-- [Slurp-dokumentaatio](https://clojuredocs.org/clojure.core/slurp) 
-- [Clojure-koodin lähde](https://github.com/clojure/clojure/blob/master/src/clj/clojure/core.clj#L5977)
+- [clojure.java.io - ClojureDocs](https://clojuredocs.org/clojure.java.io)
+- [Text Files in Clojure - Clojure for the Brave and True](https://www.braveclojure.com/working-with-text-files/)

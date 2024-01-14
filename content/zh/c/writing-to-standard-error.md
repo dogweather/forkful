@@ -1,54 +1,38 @@
 ---
-title:                "C: 向標準錯誤輸出"
+title:                "C: 向标准错误写入"
+simple_title:         "向标准错误写入"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-你为什么要向标准错误编写
+## 为什么会写到标准错误
 
-## 为什么
+在编程中，我们经常需要输出信息到控制台来帮助我们了解程序的运行情况。但是有时候，我们需要更详细的信息，比如错误信息，这时候就需要将信息输出到标准错误。这能帮助我们更快地定位和解决程序中的错误。
 
-写入标准错误是C程序中一种重要的技术。当程序需要向用户显示错误或调试信息时，这种写入形式非常有用。通过向标准错误编写，我们可以确保这些信息会显示在用户的屏幕上，而不会干扰到程序的正常输出。
+## 如何写到标准错误
 
-## 如何进行
-
-为了向标准错误编写，我们需要使用`fprintf`函数，并将标准错误流`stderr`作为参数。以下是一个简单的示例代码，演示如何向标准错误编写一条消息：
+要将信息写到标准错误，我们需要使用标准库函数`fprintf()`，它的参数包括文件指针和要输出的信息。下面是一个简单的例子：
 
 ```C
-fprintf(stderr, "这是一条错误信息\n");
+#include <stdio.h>
+
+int main() {
+    fprintf(stderr, "这是一条错误信息");
+    return 0;
+}
 ```
 
-运行此程序会将消息打印到屏幕上，类似于这样：
+运行上面的代码，我们就可以在控制台看到输出的错误信息`这是一条错误信息`。
 
-```
-这是一条错误信息
-```
+## 深入了解写到标准错误
 
-我们还可以使用格式化字符串来添加变量或表达式的值。例如，下面的代码会在错误信息中显示文件名、行号以及一个变量的值：
-
-```C
-fprintf(stderr, "文件 %s 中的第 %d 行出现错误。变量值为：%d\n", __FILE__, __LINE__, some_variable);
-```
-
-输出效果如下：
-
-```
-文件 main.c 中的第 10 行出现错误。变量值为：42
-```
-
-## 深入了解
-
-除了使用`fprintf`函数，我们还可以使用`fputc`和`fputs`等函数向标准错误编写。同时，C语言为我们提供了一些方便的宏定义，例如`__FILE__`和`__LINE__`，可以帮助我们打印出当前文件名和行号。此外，在多线程程序中，我们需要注意确保多个线程不会同时向标准错误编写，否则可能会导致信息的混乱。
-
-## 参考链接
-
-- [C语言手册 - fprintf函数](https://www.runoob.com/cprogramming/c-function-fprintf.html)
-- [C语言手册 - 标准错误流](https://www.runoob.com/cprogramming/c-standard-error.html)
-- [C语言手册 - 多线程编程](https://www.runoob.com/cprogramming/c-multithreading.html)
+标准错误实际上是一个文件指针，即`stderr`。在大多数操作系统中，它默认指向控制台。除了使用`fprintf()`，我们还可以使用`fprintf()`函数的变体`fputs()`来输出字符串到标准错误。在调试程序时，我们可以使用`perror()`函数来输出系统错误信息，它会自动将错误信息和对应的错误码输出到标准错误。
 
 ## 另请参阅
 
-[C语言基础知识](https://www.runoob.com/cprogramming/c-tutorial.html)
+- [fprintf() 官方文档](https://www.cplusplus.com/reference/cstdio/fprintf/)
+- [perror() 官方文档](https://www.cplusplus.com/reference/cstdio/perror/)

@@ -1,72 +1,49 @@
 ---
-title:                "Java: 테스트 작성"
+title:                "Java: 테스트 작성하기"
+simple_title:         "테스트 작성하기"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 테스트를 작성해야 할까요?
 
-코드 테스트를 작성하는 이유는 소프트웨어 개발에서 무언가를 작성할 때 그것이 잘 작동하는지 확인하기 위해서입니다. 테스트는 소스 코드의 신뢰성을 높이고 버그를 방지하는 데에 매우 중요합니다.
+테스트는 코드의 안정성과 신뢰성을 검증하는 데에 필수적입니다. 테스트를 작성하면 코드에서 발생할 수 있는 버그들을 미리 발견하여 실제 작동 시 문제가 되지 않도록 예방할 수 있습니다.
 
-## 방법
-
-테스트를 작성하는 것은 다음과 같은 단계를 따릅니다:
-
-1. **테스트 되어야 할 코드 코드의 단위나 기능을 정의하기:** 이 단계에서 우리는 테스트를 작성할 대상을 결정합니다.
-
-2. **사용할 테스트 프레임워크 선택하기:** 자바에서는 다양한 테스트 프레임워크가 있지만, JUnit이 가장 널리 사용되고 있습니다.
-
-3. **테스트 클래스 만들기:** 이제 우리는 테스트 클래스를 만들고, 필요한 의존성을 임포트합니다.
-
-4. **테스트 메서드 작성하기:** 테스트 대상의 각 기능마다 테스트 메서드를 작성합니다. 이 과정에서 예상되는 출력값과 실제 출력값을 비교하여 테스트를 수행합니다.
-
-5. **개별 테스트 실행하기:** 마지막으로, 작성한 테스트 클래스를 실행하여 각 기능이 잘 작동하는지 확인합니다. 만약 오류가 발생하면, 코드를 수정하고 다시 테스트를 실행합니다.
-
-아래는 자바로 만든 간단한 계산기의 테스트 예제입니다:
+## 어떻게 작성하나요?
 
 ```Java
-import org.junit.Test;
-import static org.junit.Assert.*;
-
-public class CalculatorTest {
-
-    Calculator calc = new Calculator();
-
-    @Test
-    public void testAdd() {
-        assertEquals(4, calc.add(2, 2));
+// 예시 코드
+public class Calculator{
+    public int add(int a, int b){
+        return a + b;
     }
+}
 
-    @Test
-    public void testSubtract() {
-        assertEquals(2, calc.subtract(4, 2));
-    }
-
-    @Test
-    public void testMultiply() {
-        assertEquals(8, calc.multiply(4, 2));
-    }
-
-    @Test
-    public void testDivide() {
-        assertEquals(2, calc.divide(4, 2));
-    }
+// 테스트 코드
+@Test
+public void testAdd(){
+    Calculator calculator = new Calculator();
+    int result = calculator.add(3,5);
+    assertEquals(8, result);
 }
 ```
 
-위 예제에서는 JUnit 프레임워크를 사용하여 Calculator 클래스의 각 기능에 대한 테스트를 생성하고 실행하는 방법을 보여줍니다.
+위의 예시 코드와 테스트 코드를 보면, `Calculator` 클래스의 `add()` 메소드를 테스트하는 코드를 작성하고 있습니다. `add()` 메소드가 제대로 작동하는지를 확인하기 위해 `assertEquals()` 메소드를 사용하여 예상 값과 실제 값을 비교하고 있습니다.
 
-## 깊이 파보기
+이처럼 간단한 예시 코드를 기반으로 테스트 코드를 작성하면 됩니다. 테스트 코드를 작성하는 것이 귀찮거나 시간이 많이 걸릴 수도 있지만, 이렇게 작성한 테스트 코드는 나중에 버그를 찾거나 코드를 수정할 때 큰 도움이 될 것입니다.
 
-코드 테스트를 작성할 때, 주의해야 할 몇 가지 중요한 요소가 있습니다. 첫째, 각 테스트는 독립적으로 실행되어야 합니다. 즉, 하나의 테스트 실패가 다른 테스트에 영향을 미쳐서는 안 됩니다. 둘째, 모든 코드를 테스트하는 것은 불가능하기 때문에, 우리는 중요한 부분을 테스트하는 데 집중해야 합니다. 세번째, 테스트는 자주 실행되고 업데이트되어야 하며, 개발 과정에서 코드와 함께 유지되어야 합니다.
+## 더 깊게 알아보기
 
-자바에서는 코드 테스트를 작성하기 위해 JUnit 이외에도 TestNG, Mockito와 같은 다른 프레임워크를 사용할 수 있습니다. 깊이 파보기를 통해 다른 프레임워크를 알아보고, 적절한 프레임워크를 선택하여 사용하는 것이 중요합니다.
+테스트 코드를 작성할 때, `assert` 메소드들을 이해하고 사용하는 것이 중요합니다. `assertEquals()` 외에도 `assertNotEquals()`, `assertTrue()`, `assertFalse()` 등 다양한 메소드가 있으며, 어떤 상황에 어떤 메소드를 사용해야 하는지를 잘 파악해야 합니다.
+
+또한, 테스트를 작성할 때는 모든 가능한 경우를 고려해야 합니다. 예를 들어, 위의 예시에서는 양의 정수를 더하는 경우만을 테스트하고 있기 때문에 음의 정수나 0을 더하는 경우에 대한 테스트도 추가로 작성하는 것이 좋습니다.
 
 ## 관련 자료
 
-- JUnit: https://junit.org/junit4/
-- TestNG: https://testng.org/doc/
-- Mockito: https://site.mockito.org/
+- [JUnit5 공식 문서](https://junit.org/junit5/docs/current/user-guide/#writing-tests-assertions)
+- [마크다운(Markdown) 정리](https://gist.github.com/ihoneymon/652be052a0727ad59601)
+- [Java 예외 처리하기](https://brunch.co.kr/@alden/1)

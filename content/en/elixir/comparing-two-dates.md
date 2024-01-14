@@ -1,61 +1,65 @@
 ---
 title:                "Elixir recipe: Comparing two dates"
+simple_title:         "Comparing two dates"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Comparing two dates is a common task in programming, especially in applications dealing with time and scheduling. It allows for determining the relationships between dates, such as if one date is before, after, or equal to another date. In Elixir, there are built-in functions that make date comparison quick and easy.
+Date comparisons are a common task in programming, especially when dealing with time-sensitive data or events. In the Elixir programming language, there are various methods for comparing two dates. Understanding how to properly compare dates can help ensure accurate and efficient code.
 
 ## How To
+In Elixir, dates are represented as tuples in the format `{year, month, day}`. To compare two dates, we can use the `:calendar.compare/2` function.
 
-To compare two dates in Elixir, we can use the `:calendar.compare` function. This function takes two dates as arguments and returns an atom representing the relationship between the dates. Let's take a look at some code examples to see how this works.
+```
+Elixir
+date1 = {2021, 10, 15}
+date2 = {2021, 10, 25}
 
-```elixir
-# Comparing two dates using the `:calendar.compare` function
-date_1 = ~D[2021-01-01] # January 1st, 2021
-date_2 = ~D[2021-02-15] # February 15th, 2021
-
-:calendar.compare(date_1, date_2) # returns :lt (less than)
+:calendar.compare(date1, date2)
 ```
 
-In the above example, we have two dates, `date_1` and `date_2`, and we use the `:calendar.compare` function to compare them. The function returns the atom `:lt` which stands for "less than". This indicates that `date_1` comes before `date_2`.
+The output of this comparison will be `-1`, `0`, or `1`, indicating if `date1` is before, equal to, or after `date2`, respectively.
 
-We can also use the `:calendar.compare` function to check if two dates are equal.
+We can also use the `:calendar.datetime_to_gregorian_seconds/1` function to convert a date tuple into seconds, making it easier to compare two dates.
 
-```elixir
-# Comparing two equal dates using the `:calendar.compare` function
-date_1 = ~D[2020-12-25]
-date_2 = ~D[2020-12-25]
+```
+Elixir
+date1 = {2021, 10, 15}
+date2 = {2021, 10, 25}
 
-:calendar.compare(date_1, date_2) # returns :eq (equal)
+seconds1 = :calendar.datetime_to_gregorian_seconds(date1)
+seconds2 = :calendar.datetime_to_gregorian_seconds(date2)
+
+if seconds1 < seconds2 do
+  IO.puts "date1 is before date2"
+elsif seconds1 > seconds2 do
+  IO.puts "date1 is after date2"
+else
+  IO.puts "date1 is equal to date2"
+end
 ```
 
-As expected, the function returns the atom `:eq` indicating that the dates are equal.
-
-If we want to check if one date comes after another, we can use the `:calendar.compare` function along with the `:gt` (greater than) atom.
-
-```elixir
-# Comparing two dates where one is greater than the other
-date_1 = ~D[2021-03-01] # March 1st, 2021
-date_2 = ~D[2021-02-15] # February 15th, 2021
-
-:calendar.compare(date_1, date_2) # returns :gt (greater than)
-```
-
-In the above example, the function returns the atom `:gt`, indicating that `date_1` comes after `date_2`.
+The output of this code will be "date1 is before date2".
 
 ## Deep Dive
+When comparing dates, it is important to consider time zones and daylight saving time. Elixir's `:calendar` module provides functions for dealing with these complexities.
 
-Behind the scenes, the `:calendar.compare` function uses the `:erlang.compare` function. This function takes two arguments and returns `-1` (if the first argument is less than the second), `0` (if the arguments are equal), or `1` (if the first argument is greater than the second).
+For example, the `:calendar.local_time_to_universal_time` function converts a datetime tuple into a standardized universal time. This ensures that date comparisons are accurate regardless of time zone differences.
 
-Elixir converts the atoms returned by `:erlang.compare` into more meaningful atoms like `:lt`, `:eq`, and `:gt`. This makes the code more readable and easier to understand.
+```
+Elixir
+local_time = {2021, 10, 31, 1, 30, 0}
+
+universal_time = :calendar.local_time_to_universal_time(local_time)
+```
+
+The output of this code will vary depending on the local time zone, but the resulting `universal_time` will be adjusted accordingly.
 
 ## See Also
-
-- [Elixir Documentation on Date and Time](https://hexdocs.pm/elixir/Calendar.html)
-- [Elixir Documentation on Comparisons](https://hexdocs.pm/elixir/Kernel.html#==/2)
+- Elixir documentation on date comparisons: https://hexdocs.pm/elixir/Calendar.html#compare/2
+- Elixir date and time functions: https://hexdocs.pm/elixir/Calendar.html#module-date-and-time-functions

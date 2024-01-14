@@ -1,46 +1,41 @@
 ---
 title:                "Swift: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi Écrire des Tests en Swift
+## Pourquoi
 
-Si vous êtes développeur Swift, vous avez sûrement entendu parler de l'importance d'écrire des tests pour votre code. Mais pourquoi est-ce si important ? Eh bien, cela peut sembler fastidieux et chronophage, mais en réalité, écrire des tests peut vous faire gagner du temps et de l'argent à long terme. En plus de cela, cela vous donne plus de confiance dans votre code et assure sa stabilité à mesure que votre application continue d'évoluer. Dans cet article, nous allons vous expliquer comment écrire des tests en Swift et pourquoi c'est si important.
+Dans le monde de la programmation, écrire des tests est devenu une pratique essentielle pour garantir la qualité et la stabilité du code. En utilisant Swift, nous pouvons facilement écrire des tests pour nos applications iOS ou macOS.
 
-# Comment Écrire des Tests en Swift
+## Comment faire
 
-Pour écrire des tests en Swift, nous allons utiliser le framework de tests intégré appelé "XCTest". Ce framework fournit des outils pour créer et exécuter des tests unitaires, d'intégration et d'interface utilisateur. Voyons un exemple simple de test de fonction en utilisant XCTest.
+Pour écrire des tests en Swift, nous pouvons utiliser le framework XCTest intégré dans Xcode. Jetons un coup d'œil à un exemple de code pour tester une fonction de calcul de moyenne :
 
 ```
-Swift func addition(a: Int, b: Int) -> Int {
-  return a + b
-}
+Swift func calculateAverage(numbers: [Int]) -> Double { // fonction pour calculer la moyenne let sum = numbers.reduce(0, +) // somme des nombres dans le tableau return Double(sum) / Double(numbers.count) // calcul de la moyenne }
 
-class TestAddition: XCTestCase {
-  func testAddition() {
-    let result = addition(a: 5, b: 10)
-    XCTAssertEqual(result, 15, "La fonction addition ne fonctionne pas correctement")
-  }
-}
-
-// Output:
-// Test Suite 'TestAddition' passed at ... 
-//   Executed 1 test, with 0 failures
 ```
 
-Dans cet exemple, nous avons créé une fonction d'addition et un test pour vérifier si elle renvoie la bonne valeur. En utilisant la méthode `XCTAssertEqual`, nous pouvons comparer le résultat de notre fonction avec la valeur attendue. Si le résultat est différent, le test échouera et nous recevrons un message d'erreur indiquant que notre fonction ne fonctionne pas comme prévu.
+```
+XCTest // test unitaire pour la fonction de calcul de moyenne func testCalculateAverage() { let numbers = [5, 10, 15] // tableau de nombres let average = calculateAverage(numbers: numbers) // appel de la fonction XCTAssertEqual(average, 10, "La moyenne doit être égale à 10") // vérification de l'égalité } ```` 
 
-# Plongée Profonde
+Le résultat de ce test sera "Réussi", car la moyenne calculée est effectivement égale à 10.
 
-Maintenant que nous avons vu un exemple simple, il est important de comprendre comment écrire des tests efficaces. Tout d'abord, il est important de couvrir tous les scénarios possibles, y compris les cas de bord et les erreurs. Vous pouvez également utiliser des données fictives pour simuler différentes situations et vous assurer que votre code gère correctement toutes les données. Enfin, il est important de garder vos tests à jour au fur et à mesure que votre code évolue, afin de détecter les éventuels problèmes dès qu'ils se produisent.
+## Plongée profonde
 
-# Voir aussi
-- [Documentation Apple sur XCTest](https://developer.apple.com/documentation/xctest)
-- [Tutoriel pour écrire des tests en Swift](https://www.hackingwithswift.com/quick-start/unit-testing)
-- [Guide pour écrire des tests efficaces en Swift](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
+Lorsque nous écrivons des tests en Swift, il est important de suivre les principes du "test-driven development" (TDD) : écrire d'abord les tests avant le code lui-même. Cela nous permet de mieux comprendre les fonctionnalités à implémenter et de nous assurer que notre code est testable et flexible.
 
-En écrivant des tests pour votre code en Swift, vous pouvez vous assurer que votre application fonctionne comme prévu et éviter les bugs et les erreurs coûteuses à long terme. Bien que cela puisse sembler un peu intimidant au début, cela en vaut la peine pour la stabilité et la fiabilité de votre code. N'hésitez pas à explorer davantage le framework XCTest et à ajouter des tests à votre code Swift.
+De plus, il est important de couvrir tous les cas possibles dans nos tests, y compris les cas d'erreurs et les cas de bords. En utilisant des techniques telles que les mocks et les fakes, nous pouvons également tester des parties spécifiques de notre code, sans avoir à exécuter l'application entière.
+
+## Voir aussi
+
+- [Documentation XCTest](https://developer.apple.com/documentation/xctest)
+- [Introduction au Test-Driven Development](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
+- [Test Doubles in Swift: Mocks, Stubs, Fakes, Spies and Dummies](https://matteomanferdini.com/test-doubles-swift-mocks-stubs/)
+- [Introduction à Xcode pour les tests unitaires en Swift](https://medium.com/xcblog/xcode-tdd-swift-unit-tests-3d164f3e3ca4)

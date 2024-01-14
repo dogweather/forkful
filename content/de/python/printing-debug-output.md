@@ -1,7 +1,9 @@
 ---
-title:                "Python: Ausgabe von Debugging-Informationen"
+title:                "Python: Fehlersuchausgabe drucken"
+simple_title:         "Fehlersuchausgabe drucken"
 programming_language: "Python"
-category:             "Testing and Debugging"
+category:             "Python"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/printing-debug-output.md"
 ---
 
@@ -9,68 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Drucken von Debug-Ausgaben kann eine nützliche Methode sein, um Fehler in Ihrem Code zu finden. Durch das Hinzufügen von zusätzlichen Ausgaben können Sie den Verlauf der Ausführung Ihres Programms verfolgen und potenzielle Probleme identifizieren.
+Debugging ist ein wichtiger Teil des Programmierens und Debugging Output zu drucken ist eine nützliche Methode für Entwickler, um Fehler in ihrem Code zu finden und zu beheben. Durch das Ausdrucken von Debug Output können Sie den Zustand Ihres Programms zu bestimmten Zeitpunkten im Code überprüfen und sehen, ob die erwarteten Werte oder Variablenwerte richtig gesetzt werden. Dies kann dabei helfen, mögliche Fehlerquellen zu identifizieren und somit die Effizienz bei der Fehlersuche zu erhöhen.
 
-## Wie man es macht
+## Wie
 
-Um Debug-Ausgaben in Python zu erstellen, verwenden Sie die `print()` Funktion. Hier ist ein Beispiel, wie Sie es in Ihrem Code verwenden können:
+```python
+# Beispiel einer einfachen Funktion zum Drucken von Debug Output
+def square(x):
+    """Berechnet das Quadrat einer Zahl und gibt den Schritt im Debug Output aus"""
+    print("Debug Output: Schritt 1 - Funktionsaufruf square(", x, ")")
+    result = x * x
+    print("Debug Output: Schritt 2 - Berechnung des Quadrats von", x, ": ", result)
+    return result
 
-```Python
-# Beispiel für Debug-Ausgabe
-name = "Max Mustermann"
-print("Der Name ist: " + name)
+# Beispielaufruf der Funktion
+print(square(5))
 ```
 
-Dies würde die folgende Ausgabe erzeugen:
+Der obige Code zeigt eine einfache Funktion, die das Quadrat einer Zahl berechnet und dabei den Debug Output verwendet. Durch das Drucken der Schritte innerhalb der Funktion können wir den Wert jeder Variablen überprüfen und sehen, wie sich dieser im Laufe des Programms ändert. Das kann besonders hilfreich sein, wenn die Funktion komplexer wird oder sich die Variablenwerte während der Ausführung ändern können.
 
-`Der Name ist: Max Mustermann`
+## Deep Dive
 
-Sie können auch Variablen oder Ausdrücke in der `print()` Funktion verwenden, um deren Werte auszugeben. Zum Beispiel:
+Das Drucken von Debug Output ist eine effektive Methode, um den Ablauf des Codes zu verfolgen und potenzielle Fehler zu finden. Es kann jedoch auch zu einer Überflutung des Output-Fensters führen, wenn man alles ausdruckt. Deshalb ist es wichtig, die Ausgabe auf wichtige Informationen zu beschränken und gezielt zu wählen, welche Variablen oder Werte ausgegeben werden sollen. Auch das Formatieren der Ausgabe kann dabei helfen, den Debug Output übersichtlich und leichter lesbar zu gestalten.
 
-```Python
-# Beispiel für die Verwendung von Variablen in Debug-Ausgabe
-jahr = 2021
-print("Das aktuelle Jahr ist: ", jahr)
-```
+Eine weitere Möglichkeit ist die Verwendung von Debuggern, die es ermöglichen, Schritt für Schritt durch den Code zu gehen und den aktuellen Wert jeder Variablen zu überprüfen. Dies kann besonders hilfreich sein, wenn es darum geht, komplexe Fehler zu finden oder das Verhalten einer Funktion zu untersuchen.
 
-Dies würde die folgende Ausgabe erzeugen:
-
-`Das aktuelle Jahr ist: 2021`
-
-## Tiefere Einblicke
-
-Wenn Sie weitere Informationen in Ihre Debug-Ausgaben einbinden möchten, können Sie formatierte Zeichenfolgen verwenden. Diese ermöglichen es Ihnen, Variablenwerte in einen String einzufügen. Zum Beispiel:
-
-```Python
-# Beispiel für die Verwendung von formatierten Zeichenfolgen
-name = "Marie"
-alter = 25
-
-print("Mein Name ist {} und ich bin {} Jahre alt".format(name, alter))
-```
-
-Dies würde die folgende Ausgabe erzeugen:
-
-`Mein Name ist Marie und ich bin 25 Jahre alt`
-
-Sie können auch benannte Platzhalter verwenden, um den Code lesbarer zu machen. Zum Beispiel:
-
-```Python
-# Beispiel für die Verwendung von benannten Platzhaltern
-name = "Müller"
-alter = 35
-
-print("Mein Name ist {name} und ich bin {age} Jahre alt".format(name=name, age=alter))
-```
-
-Dies würde die folgende Ausgabe erzeugen:
-
-`Mein Name ist Müller und ich bin 35 Jahre alt`
+Insgesamt kann das Drucken von Debug Output eine wertvolle Ergänzung bei der Fehlersuche sein und sollte von Entwicklern in Betracht gezogen werden.
 
 ## Siehe auch
 
-Weitere Informationen zur `print()` Funktion und Debugging-Techniken finden Sie in den folgenden Ressourcen:
-
-- [Die offizielle Python-Dokumentation zur print() Funktion](https://docs.python.org/de/3/library/functions.html#print)
-- [Ein Tutorial zur Verwendung von Debug-Ausgaben in Python](https://realpython.com/python-debugging-pdb/)
-- [Tipps zum Debuggen von Python-Code](https://www.instructure.com/canvas/resources/guides/how-advise-students-debugging-python)
+- [Python Debugger Tutorial auf Real Python](https://realpython.com/python-debugging-pdb/)
+- [Debugging in Python with Print Statements auf Medium](https://medium.com/@aedigital/debugging-in-python-with-print-statements-75581f2690af)
+- [Python Debugging With 'print' Statements auf YouTube](https://www.youtube.com/watch?v=gKVHnBl-Wr0)

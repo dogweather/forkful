@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Beräkna ett datum i framtiden eller det förflutna"
+title:                "Gleam: Beräkning av ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller det förflutna"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,38 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Det finns många olika situationer där det kan vara användbart att räkna ut en datum i framtiden eller tidigare. Till exempel kan det vara för att planera ett evenemang, boka en resa eller hålla koll på en viktig deadline.
+Enkelte gånger behöver vi kunna beräkna datum i framtiden eller i det förflutna i vår programkod. Detta kan vara för att schemalägga händelser eller för att jämföra tidsintervall. Med hjälp av Gleam kan vi enkelt utföra dessa beräkningar.
 
 ## Hur man gör
 
-För att beräkna en datum i framtiden eller tidigare i Gleam, kan du använda funktionen `add_days`. Du behöver bara ange det datum som du vill utgå ifrån och antalet dagar som du vill lägga till eller subtrahera.
+För att beräkna ett datum i framtiden eller förflutna i Gleam, behöver vi använda funktionen `Date.add` i standardbiblioteket `gleam/time`.
+
+För att beräkna ett datum i framtiden, behöver vi ange ett initialt datum och ett antal dagar som vi vill lägga till. Till exempel, om vi vill beräkna datumet fyra dagar efter 1:a januari 2020, kan vi använda följande kod:
 
 ```Gleam
-let datum = Date.from_y_m_d(2020, 7, 20)
-let nytt_datum = Date.add_days(datum, 10)
+import gleam/time.{Date}
 
-IO.println(nytt_datum)
+let starting_date = Date.from_iso8601("2020-01-01")
+let future_date = Date.add(starting_date, 4)
 ```
-Output: 2020-07-30
 
-För att subtrahera dagar istället, använd ett negativt tal för antalet dagar.
+Detsamma gäller om vi vill beräkna ett datum i förflutna, men istället för att lägga till dagar så subtraherar vi dem. Till exempel, om vi vill beräkna datumet tre dagar innan 1:a januari 2020:
 
 ```Gleam
-let datum = Date.from_y_m_d(2020, 7, 20)
-let nytt_datum = Date.add_days(datum, -5)
+import gleam/time.{Date}
 
-IO.println(nytt_datum)
+let starting_date = Date.from_iso8601("2020-01-01")
+let past_date = Date.add(starting_date, -3)
 ```
-Output: 2020-07-15
+
+Funktionen `Date.add` returnerar ett nytt `Date`-objekt med det beräknade datumet. Detta gör att vi enkelt kan använda det för att jämföra med andra datum eller utföra andra operationer.
 
 ## Djupdykning
 
-För att få ut mer exakta datum kan du använda funktionen `add_time` istället för `add_days`. Denna funktion tar också hänsyn till tid på dagen, vilket kan vara användbart i vissa situationer.
+För att förstå hur Gleam beräknar datum i förflutna eller framtiden, behöver vi veta hur `Date`-objektet representerar datum. Varje `Date` har en årtal, månad och dag attribut, som sedan omvandlas till det mest använda formatet ISO 8601. När vi använder `Date.add` funktionen, så adderar eller subtraherar vi bara det angivna antalet dagar från det givna datumet.
 
-Det är också möjligt att räkna ut en datum i framtiden eller tidigare baserat på en veckodag istället för antalet dagar. Till exempel kan du räkna ut nästa torsdag eller förra måndagen.
+Det viktigaste att komma ihåg är att Gleam inte hanterar skottår eller andra komplexa kalenderregler. Om det är nödvändigt, så kan vi implementera vår egen logik för att hantera dessa speciella fall.
 
-## Se också
+## Se även
 
-- [Gleam dokumentation om Datatyper](https://gleam.run/dokumentation/standardbibliotek/datatyper#date)
-- [En introduktion till Gleam](https://medium.com/@alfredwesterveld/en-introduktion-till-gleam-f81d6e79c9c9)
-- [Gleam Bytecode-översikt](https://gleam.run/dokumentation/bytemodule_format#datum-typen)
+- [Dokumentation för gleam/time](https://gleam.run/modules/gleam/time/latest/)
+- [ISO 8601 standard](https://www.iso.org/iso-8601-date-and-time-format.html) för datum och tid representation

@@ -1,51 +1,54 @@
 ---
 title:                "Java: יצירת קובץ זמני"
+simple_title:         "יצירת קובץ זמני"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+## מדוע
 
-יצירת קובץ זמני היא תהליך חשוב ונפוץ בתכנות בג'אווה. קבצים זמניים משמשים למגוון רחב של מטרות, כגון כתיבת נתונים מתוך התכנית, קריאת נתונים לאחר מכן, יצירת זיכרונות מזמינים, ועוד. ברגע שתלמדו איך ליצור קובץ זמני, תפתחו עוד דלת ליצור יישומים מתקדמים יותר בג'אווה.
+הפוסט הזה מיועד למתכנתים בשפת ג'אווה העוסקים ביצירת קבצים זמניים. כאן יש לכם את הסיבות הגורמות ליצירת קובץ זמני ותיאור כיצד לעשות זאת בקלות ובפשטות.
 
-## איך ליצור קובץ זמני בג'אווה
+## איך לעשות זאת
 
-כדי ליצור קובץ זמני בג'אווה, ניתן להשתמש במחלקה המובנית "File" ולהשתמש בשיטה "createTempFile". להלן דוגמא של קוד ליצירת קובץ זמני בג'אווה והדפסת הנתונים בתוכו:
+השימוש בקבצים זמניים יכול להיות מאוד שימושי במגוון מצבים. בקבצים זמניים אפשר לשמור נתונים זמניים שלא נשמרים לצמיתות ולשנותם במהירות, או להתאים את הקוד הולם שלכם בכדי לטפל באירועים כמו כן. תמצאו כאן קוד דוגמא ופלט ואת הדרך ליצירת קובץ זמני.
 
 ```Java
-// ייבוא חבילת המחלקה File
 import java.io.File;
-// ייבוא החבילה המכילה את השכבת הדפדפן
-import java.nio.file.FileSystem;
+import java.io.IOException;
 
-// בניית המחלקה עם שם ראשי "CreateTempFile"
-public class CreateTempFile{
-    // נקבע את הראשיות של המחלקה
+public class TemporaryFileExample {
+
     public static void main(String[] args) {
-        try{
-            // יצירת קובץ זמני בהתאם לשם וסיומת שכבר הוגדרו
-            File tempFile = File.createTempFile("myfile", ".txt");
-            // כתיבת המחרוזת המוגדרת לתוך הקובץ הזמני
-            FileSystem.write("תוכן הקובץ הזמני");
-            // הדפסת הנתונים מתוך הקובץ
-            System.out.println("נתונים מתוך הקובץ הזמני: " + tempFile.getContent());
-        }
-        catch(Exception e){
-            System.out.println("התרחשה שגיאה ביצירת הקובץ");
-        }
-    }
-}
-```
+        try {
+            // יצירת קובץ זמני עם פקודה שתפלאן מחדש את הקובץ תמיד. כדי להתאים את התבנית
+            // בפקד ל-File.createTempFile, כדי ליצור קובץ זמני עם הסיומת הזאת.
+            File temp = File.createTempFile("tempfile", ".txt");
 
-הפלט המתוחזק יהיה:
+            // נדמיין כאן כדי לייצג את הנתונים שאנו רוצים לשמור בקובץ הזמני.
+            String data = "מידע זה מיוצג בקובץ זמני.";
 
-```
-נתונים מתוך הקובץ הזמני: תוכן הקובץ הזמני
-```
+            // עכשיו נכתוב את הטקסט לקובץ הזמני.
+            FileWriter writer = new FileWriter(temp);
+            writer.write(data);
+            writer.close();
 
-## נכנסים לעומק
+            // כאן נדפיס את הנתונים מהקובץ הזמני שיצרנו. מיוצג עם פקודת println בכדי להדפיס
+            // את התוכן לכונסומט.
 
-על מנת להבין את תהליך יצירת קובץ זמני בג'אווה, כדאי להבין כי הקבצים הזמניים נוצרים בכתובת ה־"tmp"
+            // כיוון שאנו משתמשים בקובץ זמני, התכנית תימחק באופן אוטומטי אחרי הביצוע.
+            FileReader reader = new FileReader(temp);
+            BufferedReader br = new BufferedReader(reader);
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+            reader.close();
+
+            // בסיום נמחק את הקובץ הזמני.
+            if (temp.delete()) {
+                System.out.println("קובץ

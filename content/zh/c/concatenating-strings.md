@@ -1,51 +1,56 @@
 ---
-title:                "C: 连接字符串"
+title:                "C: 串联字符串"
+simple_title:         "串联字符串"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么：字符串连接的重要性
 
-字符串连接是编程中非常常见的操作之一。它允许我们将多个字符串组合成一个更长的字符串，从而方便地处理文本数据。无论是在编写网页还是处理大量文本数据时，字符串连接都是必不可少的。
+Strings（字符串）是计算机编程中不可或缺的数据类型，它们表示文本或字符序列。在许多情况下，我们需要将多个字符串连接成一个更大的字符串。这可以通过一个称为“字符串连接”的操作来实现。字符串连接在许多实际的应用中都有很大的作用，因此学习如何实现它是很有必要的。
 
-## 如何操作
+## 如何实现字符串连接
 
-C语言中的字符串连接可以通过使用`strcat()`函数来实现。这个函数需要两个参数，分别是要连接的字符串和要被连接的字符串。代码示例：
-
-```C
-char string1[20] = "Hello";
-char string2[20] = " World!";
-strcat(string1, string2);
-printf("%s", string1);
-```
-
-输出将会是`Hello World!`。在这个示例中，我们将`string2`连接到了`string1`，并通过`printf`函数打印出来。
-
-## 深入了解
-
-在C语言中，字符串是一串连续的字符数组，最后以空字符`\0`结尾。因此，当我们使用`strcat()`函数时，它会首先寻找第一个字符串的`\0`，然后将第二个字符串从该位置开始复制到第一个字符串的末尾。这意味着第一个字符串的大小必须足够大，以容纳第二个字符串的字符。
-
-另外，C语言中还有另一种字符串连接的方法，那就是使用`sprintf()`函数。这个函数可以将格式化的字符串输出到一个字符数组中，从而实现字符串连接的功能。代码示例：
+我们可以使用C语言中的一个重要函数`strcat()`来实现字符串连接。这个函数需要两个参数，第一个参数是要连接的目标字符串，第二个参数是要添加到目标字符串后面的字符串。下面是一个简单的例子：
 
 ```C
-char string1[20] = "Hello";
-char string2[20] = " World!";
-sprintf(string1, "%s%s", string1, string2);
-printf("%s", string1);
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+    char str1[20] = "Hello"; 
+    char str2[20] = "World";
+
+    // 使用strcat()函数连接两个字符串
+    strcat(str1, str2);
+
+    // 打印结果
+    printf("连接后的字符串是: %s", str1);
+
+    return 0;
+}
 ```
 
-输出将会是`Hello World!`。在这个示例中，我们使用`sprintf()`函数将`string2`连接到了`string1`，并使用`printf()`函数打印出来。
+**输出：** 连接后的字符串是： HelloWorld
 
-## 参考文献
+从上面的代码可以看出，我们首先声明两个字符串变量`str1`和`str2`，然后使用`strcat()`函数将`str2`连接到`str1`的末尾。最后，我们打印出连接后的结果。
 
-- 文章： [C语言字符串操作](https://www.runoob.com/cprogramming/c-standard-library-string-h.html)
-- 文章： [C语言格式化输出](https://www.runoob.com/cprogramming/c-function-sprintf.html)
-- 文章： [C语言标准库函数strcat()](https://www.runoob.com/cprogramming/c-standard-library-string-strcat.html)
+## 深入了解字符串连接
 
-##参见
+除了`strcat()`函数外，C语言中还有一个`strncat()`函数可以实现字符串连接。它与`strcat()`函数的不同之处在于，我们可以指定要连接的字符串的长度。这有助于避免出现字符串溢出的情况，从而提高程序的安全性。下面是`strncat()`函数的语法：
 
--  [C语言字符串操作函数](https://zh.wikipedia.org/wiki/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E5%87%BD%E6%95%B0)
-- [C语言格式化输出](https://zh.wikipedia.org/wiki/%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA%E5%87%BD%E6%95%B0)
+`char *strncat(char *str1, const char *str2, size_t count)`
+
+其中，`count`参数表示要连接的`str2`字符串的长度。我们还可以使用`strncpy()`函数来将字符串复制到目标字符串中，然后使用`strcat()`函数将两个字符串连接起来。
+
+# 同类文章参考
+
+1. [C语言教程 - 字符串连接](https://www.runoob.com/cprogramming/c-function-strcat.html)
+2. [C语言教程 - 字符串函数](https://www.runoob.com/cprogramming/c-standard-library-string-h.html)
+3. [C语言字符串连接实现原理及注意事项](https://blog.csdn.net/u010103202/article/details/80330164)
+4. [C语言函数： strcat()与strncat()函数的使用](https://www.cnblogs.com/mengyangyao/p/9240980.html)

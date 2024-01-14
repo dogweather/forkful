@@ -1,62 +1,56 @@
 ---
-title:                "C: Escribiendo pruebas"
+title:                "C: Redacción de pruebas"
+simple_title:         "Redacción de pruebas"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué escribir pruebas en tus programas de C?
+## Por qué escribir pruebas en C
 
-Antes de profundizar en cómo escribir pruebas en tus programas de C, es importante entender por qué es una práctica valiosa. Las pruebas son una parte esencial del desarrollo de software ya que ayudan a identificar y corregir errores antes de que el programa se lance a producción. Además, escribir pruebas te permite tener un mayor control sobre el funcionamiento de tu código y asegurarte de que sigue funcionando correctamente conforme se van realizando cambios.
+Escribir pruebas en C puede parecer una tarea tediosa, pero en realidad es una práctica muy valiosa para cualquier programador. Las pruebas no solo ayudan a detectar errores en nuestro código, sino que también nos brindan una mayor confianza en nuestros programas. ¡Sigue leyendo para descubrir cómo escribir pruebas en C!
 
 ## Cómo escribir pruebas en C
 
-Para escribir pruebas en tus programas de C, necesitarás usar una librería de pruebas como [CUnit](http://cunit.sourceforge.net/) o [Check](https://libcheck.github.io/check/). Estas librerías te proporcionarán funciones y macros específicas para realizar diferentes tipos de pruebas.
+Escribir pruebas en C puede ser bastante sencillo una vez que conoces algunos conceptos básicos. En general, hay dos tipos de pruebas que puedes escribir: pruebas unitarias y pruebas de integración.
 
-Veamos un ejemplo de cómo escribir una prueba sencilla usando la librería CUnit:
+Las pruebas unitarias se centran en probar pequeñas partes de código, como funciones o módulos específicos. Para escribir una prueba unitaria en C, necesitas incluir la biblioteca estándar de aserciones `assert.h`. Aquí hay un ejemplo de una función `sumar` que toma dos números enteros como parámetros y devuelve su suma:
 
-```C
-#include <CUnit/CUnit.h>
+```
+#include <stdio.h>
+#include <assert.h>
 
-void test_suma() {
-  int a = 5;
-  int b = 10;
-  int resultado = a + b;
-  CU_ASSERT_EQUAL(resultado, 15);
+int sumar(int x, int y) {
+  return x + y;
 }
 
 int main() {
-  CU_initialize_registry();
-  CU_pSuite suite = CU_add_suite("Suite de pruebas", NULL, NULL);
-  CU_add_test(suite, "Prueba de suma", test_suma);
-  CU_basic_run_tests();
-  CU_cleanup_registry();
+  assert(sumar(2, 3) == 5);
   return 0;
 }
 ```
 
-En este ejemplo, estamos definiendo una función de prueba llamada `test_suma()` que verifica si la suma de dos números es igual al resultado esperado. Luego, en la función `main()`, inicializamos el registro de pruebas, creamos una suite de pruebas y agregamos nuestra función `test_suma()` a la suite. Finalmente, llamamos a `CU_basic_run_tests()` para ejecutar todas las pruebas y cerramos el registro con `CU_cleanup_registry()`.
+Este es solo un ejemplo simple, pero muestra cómo puedes usar `assert` para verificar que la función `sumar` funcione correctamente. Si la afirmación falla, significa que hay un error en la función.
 
-Una vez que nuestra prueba se ejecute, la salida debería ser la siguiente:
+Por otro lado, las pruebas de integración se enfocan en probar cómo diferentes partes de nuestro código interactúan entre sí. Por ejemplo, puedes escribir una prueba de integración para probar cómo una función que utiliza datos de un archivo funciona correctamente. Para esto, puedes usar la biblioteca `CUnit`, que proporciona herramientas para escribir y ejecutar pruebas de integración.
 
-```
-Suite de pruebas
-| Prueba de suma: Success
-| 1 tests passed.
-```
+Ahora que conoces los conceptos básicos, ¡es hora de profundizar!
 
-## Profundizando en la escritura de pruebas
+## Profundizando en la escritura de pruebas en C
 
-Existen diferentes tipos de pruebas que puedes escribir en tus programas de C, como pruebas unitarias, de integración y de regresión. Cada tipo de prueba tiene su propósito y te ayuda a garantizar que tu código funcione como se espera.
+Al escribir pruebas en C, es importante tener en cuenta algunas buenas prácticas. Primero, asegúrate de que tus pruebas sean independientes y no dependan de otras pruebas. También es importante probar diferentes escenarios y casos límite para asegurarte de que tu código funcione de manera confiable.
 
-Una recomendación importante es que escribas pruebas desde el principio del desarrollo del programa y las vayas actualizando conforme se realicen cambios en el código. De esta manera, tendrás una base sólida de pruebas que te darán confianza en el funcionamiento de tu programa.
+Además, puedes utilizar herramientas de generación de informes para obtener una vista más clara de tus pruebas y sus resultados. Por ejemplo, `gcov` es una herramienta que puede ayudarte a identificar partes de tu código que no están siendo probadas.
 
-Otro aspecto a tener en cuenta es la cobertura de las pruebas, es decir, qué porcentaje de tu código está siendo probado. Es importante tener una cobertura de pruebas lo más completa posible para asegurarnos de que todas las posibles ramas y casos de uso en nuestro código están siendo probados.
+También es importante recordar que las pruebas no son una solución milagrosa para evitar errores en el código. Aunque son muy útiles, no garantizan que tu programa no tenga errores. Por lo tanto, es importante seguir escribiendo código de alta calidad y utilizar las pruebas como una herramienta adicional para asegurarse de que nuestro código sea robusto.
 
-# Ver también
+## Vea También
 
-- [The Art of Unit Testing in C](https://www.freertos.org/Documentation/FreeRTOS_Support_Forum_Archive/April_2016/freertos_The-art-of-unit-testing-in-C-4sf28og7.html)
-- [Writing tests for C projects with CppUTest](https://medium.com/@michaelchenyf/writing-tests-for-c-projects-with-cpputest-fd94597900dd)
-- [Continuous Integration in C using GitHub Actions](https://dev.to/xintrea/c-continuous-integration-with-github-actions-42a2)
+- [Tutorial de CUnit](https://github.com/zenscience/ZenUnit/wiki/Tutorial:-Getting-started-with-CUnit)
+- [Introducción a `gcov`](https://www.thegeekstuff.com/2012/07/gcov-gcc/)
+- [Documenta tu código con pruebas en C](https://www.javaworld.com/article/2077443/document-your-code-with-tests-using-shallow-tests.html)
+
+¡Con estas herramientas y conceptos en mente, estás listo para comenzar a escribir tus propias pruebas en C! ¡No tengas miedo de probar tu propio código y mejorar la calidad de tus programas! ¡Hasta la próxima!

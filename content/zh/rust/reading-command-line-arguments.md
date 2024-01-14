@@ -1,75 +1,44 @@
 ---
-title:                "Rust: 读取命令行参数"
+title:                "Rust: 从命令行阅读参数"
+simple_title:         "从命令行阅读参数"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-Mandarin: ## 为什么
+# 为什么要阅读命令行参数
 
-为什么读取命令行参数很重要？命令行参数是Rust编程中必要的一部分，它可以让你的程序更加灵活和智能。通过读取用户输入的命令行参数，你可以处理不同的情况，并且根据不同的参数来执行不同的操作。这让你的程序拥有更多的功能和选择。
+阅读命令行参数是编程中一项非常有用的技能。它允许你的程序在运行时从命令行接收输入，从而使程序更加灵活和可配置。不仅如此，学习如何读取命令行参数也是提高你的编程技能的重要一步。
 
-Mandarin: ## 如何做到
+# 如何读取命令行参数
 
-要在Rust中读取命令行参数，你需要使用标准库中的Args模块。下面是一个简单的例子来展示如何读取命令行参数：
-
-```Rust
-use std::env;
-
-fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    println!("第一个参数: {}", args[0]);
-
-    for argument in args.iter().skip(1) {
-        println!("命令行参数: {}", argument);
-    }
-}
-```
-
-这个例子中，我们首先导入了标准库中的`env`模块，并使用`args()`方法来获取所有的命令行参数。然后，我们使用`collect()`方法将这些参数转换成字符串的向量，并使用`[0]`来获取第一个参数，也就是程序的名称。接着，我们使用`iter()`方法和`skip()`函数来遍历剩下的参数，并逐个打印出来。
-
-Mandarin: ## 深入了解
-
-当我们需要读取特定的命令行参数时，可以使用`matches()`方法来匹配参数的值。下面是一个例子：
+为了读取命令行参数，我们需要在程序中使用标准库中的args()函数。它会返回一个包含所有传递给程序的命令行参数的迭代器。让我们来看一个简单的例子：
 
 ```Rust
 use std::env;
-
+ 
 fn main() {
     let args: Vec<String> = env::args().collect();
-
-    let name = args[1].clone();
-
-    if let Some(argument) = args.get(2) {
-        if argument == "--age" {
-            println!("你好，{}！你今年多大了？", name);
-        } else {
-            println!("你好，{}！", name);
-        }
-    } else {
-        println!("你好，{}！", name);
-    }
+    println!("{:?}", args);
 }
 ```
 
-在这个例子中，我们假设程序的第一个参数是用户的名字，第二个参数是选项`--age`。我们使用`clone()`方法来获取第一个参数的值，并使用`get()`方法来获取第二个参数的值。如果第二个参数是`--age`，则程序会打印出问候语和询问年龄，否则只会打印出问候语。
+以上代码会打印出一个包含所有命令行参数的向量。如果我们在命令行中输入 `program arg1 arg2`，那么输出会是 `["program", "arg1", "arg2"]`。这样，我们就可以方便地访问命令行参数了。
 
-Mandarin: ## 参考资料
+# 深入了解命令行参数
 
-如果你想要深入了解如何读取命令行参数，可以参考以下资料：
+在上一节，我们只是简单地打印出了命令行参数。但实际上，我们还可以做更多的事情。比如，我们可以使用标准库中的其他函数来解析命令行参数，或者根据不同的参数执行不同的逻辑。此外，还可以通过文档来了解更多关于命令行参数的细节，比如在哪些情况下参数可能会被忽略，如何处理不正确的参数等等。
 
-- [Rust标准库官方文档-Args模块](https://doc.rust-lang.org/std/env/struct.Args.html)
-- [使用structopt库来解析命令行参数](https://blog.mozilla.org/press-entrepreneurship/2013/11/01/rust-enums-and-command-line-parsers/)
+# 参考资料
 
-Mandarin: ## 参见
+- [Rust标准库文档 - env::args()函数](https://doc.rust-lang.org/std/env/fn.args.html)
+- [Mozilla开发者网络 - 命令行参数](https://developer.mozilla.org/zh-CN/docs/Cross-Platform/CommandLine/Arguments)
+- [Rust by Example - 命令行参数](https://rustbyexample.com/std_misc/arg.html)
 
-如果你对Rust编程感兴趣，可以参考以下链接来学习更多：
+# 参见
 
-- [Rust官方网站](https://www.rust-lang.org/zh-CN/)
-- [Rust中文社区](https://rust.cc/)
-- [Rust编程语言教程](https://kaisery.github.io/trpl-zh-cn/)
-
-希望这篇文章可以帮助你了解如何在Rust中读取命令行参数，并为你的编程旅程提供帮助。谢谢阅读！
+- [Rust学习资源汇总](https://github.com/rust-lang-cn/rust-learning)
+- [Rust语言官方网站](https://www.rust-lang.org/)

@@ -1,60 +1,59 @@
 ---
-title:                "Haskell: Excluindo caracteres que correspondem a um padrão."
+title:                "Haskell: Excluir caracteres que correspondam a um padrão."
+simple_title:         "Excluir caracteres que correspondam a um padrão."
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que deletar caracteres que correspondem a um padrão?
 
-Ao trabalhar com programação em Haskell, é comum precisarmos manipular strings de texto. No entanto, muitas vezes nos deparamos com a necessidade de remover certos caracteres que seguem um determinado padrão. Mas por que isso é necessário? Isso pode acontecer, por exemplo, quando estamos realizando análise de dados e queremos remover caracteres especiais de um conjunto de strings. Ou ainda, quando trabalhamos com entrada de usuários e queremos garantir que apenas caracteres válidos sejam aceitos. Em resumo, a remoção de caracteres que correspondem a um padrão é importante para garantir a integridade dos dados e facilitar seu processamento.
+Existem várias razões pelas quais você pode querer deletar caracteres que correspondem a um padrão em um programa em Haskell. Pode ser parte de um processo de limpeza de dados ou para simplificar strings antes de processá-las. Independentemente do motivo, saber como fazer isso pode economizar muito tempo e esforço.
 
-## Como Fazer
+## Como fazer?
 
-O Haskell possui diversas funções para manipulação de strings, entre elas a `delete`. Esta função recebe como parâmetros um caractere e uma string e retorna uma nova string com todas as ocorrências do caractere removidas. Por exemplo, se quisermos remover todos os caracteres "a" de uma string, podemos usar a seguinte expressão:
-
-```Haskell
-delete 'a' "banana"
-```
-
-O resultado será a string "bnan".
-
-Para remover todos os caracteres que correspondem a um padrão, podemos usar a função `filter`. Esta função recebe como parâmetros uma função de teste e uma lista de elementos. Ela retorna uma nova lista com apenas os elementos que passam no teste da função. No caso de trabalharmos com strings, podemos usar a função `notElem` para verificar se um determinado caractere não faz parte de uma lista de caracteres. Por exemplo, se quisermos remover todas as vogais de uma string, podemos usar a seguinte expressão:
+A primeira coisa que precisamos entender é a função `filter`, que é usada para filtrar uma lista de acordo com um predicado. Vamos criar uma pequena lista de caracteres e filtrar apenas aqueles que correspondem ao nosso padrão.
 
 ```Haskell
-filter (`notElem` "aeiou") "banana"
+listaCaracteres = "abc123ABC456"
+caracteresFiltrados = filter (`elem` "123") listaCaracteres
 ```
 
-O resultado será a string "bnn".
+Neste exemplo, estamos usando a função `filter` com o predicado `(`elem` "123")`, que verifica se o caractere está presente na string "123". O resultado será "123456".
 
-## Mergulho Profundo
-
-Vale ressaltar que a função `delete` é uma função de ordem superior, ou seja, ela recebe como parâmetro outra função. Isso significa que podemos criar funções mais complexas passando-as como argumento para a função `delete`. Por exemplo, podemos criar uma função que remove todos os caracteres que não são números de uma string:
+No entanto, se quisermos excluir os caracteres que correspondem ao nosso padrão, podemos usar a função `delete` da biblioteca Data.List, que remove a primeira ocorrência de um elemento em uma lista.
 
 ```Haskell
-removeNaoNumeros xs = filter (`notElem` "1234567890") xs
+import Data.list
+listaCaracteres = "abc123ABC456"
+caracteresDeletados = delete '2' listaCaracteres
 ```
 
-Podemos usar essa função junto com a função `delete` para remover apenas os números de uma string:
+O resultado será "abc13ABC456", já que o primeiro "2" encontrado na lista foi removido.
+
+## Aprofundando
+
+Agora que sabemos como usar a função `delete`, podemos usá-la para criar uma função mais geral que deleta todos os caracteres que correspondem a um padrão em uma string.
 
 ```Haskell
-delete (removeNaoNumeros) "abc123def456"
+deletePattern :: [Char] -> String -> String
+deletePattern [] s = s
+deletePattern (x:xs) s = delete x (deletePattern xs s)
 ```
 
-O resultado será a string "abcdef".
-
-Além disso, podemos usar a função `map` em conjunto com a função `delete` para aplicar uma transformação em cada elemento da string antes de removê-los. Por exemplo, se quisermos substituir todos os números por asteriscos, podemos usar a função `map` para substituir cada dígito por um asterisco e depois usar a função `delete` para remover todos os asteriscos da string resultante:
+Esta função é recursiva e usa a função `delete` para excluir cada caractere da lista de padrões da string. Por exemplo, se quisermos excluir todos os caracteres numéricos de uma string, podemos fazer o seguinte:
 
 ```Haskell
-delete (map (\x -> '*') "abc123def456")
+deleteNumeros = deletePattern "0123456789"
 ```
 
-O resultado será a string "abcdef".
+Esta função pode ser facilmente adaptada para excluir caracteres especiais ou qualquer outro padrão desejado.
 
-## Veja Também
+## Veja também
 
-- [Documentação da função `delete` no Hackage](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:delete)
-- [Documentação da função `filter` no Hackage](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:filter)
-- [Documentação da função `map` no Hackage](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)
+- [Documentação oficial da função `filter`](https://www.haskell.org/hoogle/?hoogle=filter)
+- [Documentação oficial da função `delete`](https://www.haskell.org/hoogle/?hoogle=delete)
+- [Tutorial do Learn You a Haskell for Great Good sobre listas](http://learnyouahaskell.com/starting-out#lists)

@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Stor bokstav i en streng"
+title:                "PHP: Store bokstaver i en streng"
+simple_title:         "Store bokstaver i en streng"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/capitalizing-a-string.md"
 ---
 
@@ -9,41 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-I denne blogginnlegget skal vi se nærmere på hvordan du kan konvertere små bokstaver til store bokstaver i PHP, også kjent som å "capitalize" en streng. Dette er en vanlig oppgave når du jobber med tekstbehandling og formatering av tekst, så det er nyttig å vite hvordan man gjør det i PHP.
+I denne blogginnlegget vil vi gå gjennom hvordan du kan kapitalisere en streng i PHP. Dette kan være nyttig i tilfeller der du vil endre hvordan ord eller setninger ser ut, enten det er for å gjøre teksten mer lesbar eller for å følge et spesifikt format.
 
-## Hvordan
+## Slik gjør du det
 
-For å gjøre dette i PHP, kan du bruke funksjonen `strtoupper()` som tar et argument (en streng) og returnerer en ny streng med alle bokstavene i store bokstaver. La oss se på et eksempel:
-
-```PHP
-$string = "hei alle sammen!";
-$capitalized_string = strtoupper($string);
-echo $capitalized_string;
-```
-Output:
-`HEI ALLE SAMMEN!`
-
-Som du ser, blir alle bokstavene i strengen forandret til store bokstaver ved hjelp av `strtoupper()` funksjonen.
-
-Hvis du vil at kun den første bokstaven i strengen skal være stor, kan du bruke funksjonen `ucfirst()` i tillegg til `strtoupper()`:
+For å kapitalisere en streng i PHP, kan du bruke funksjonen `ucfirst()`. Denne funksjonen vil gjøre første bokstav i strengen stor, mens resten av strengen blir gjort til små bokstaver. Her er et eksempel:
 
 ```PHP
-$string = "hei alle sammen!";
-$capitalized_string = ucfirst(strtolower($string));
-echo $capitalized_string;
+$streng = "dette er en tekst";
+$kapitalisert = ucfirst($streng);
+echo $kapitalisert; // Dette er en tekst
 ```
-Output:
-`Hei alle sammen!`
 
-I dette eksempelet brukte vi også `strtolower()` funksjonen for å gjøre alle bokstavene små før vi brukte `ucfirst()` for å gjøre den første bokstaven stor.
+Som du kan se, blir den første bokstaven i teksten gjort stor, mens resten av teksten forblir i små bokstaver.
 
-## Deep Dive
+For å kapitalisere alle ordene i en streng, kan du bruke funksjonen `ucwords()`. Denne funksjonen gjør første bokstav i hvert ord stor, mens resten av bokstavene forblir små. Her er et eksempel:
 
-Hvis du vil forstå mer om hvordan `strtoupper()` og `ucfirst()` funksjonene fungerer, kan vi ta en titt på det underliggende konseptet - ASCII-kodene til bokstavene. I ASCII-tabellen er det et nummer tilordnet til hver bokstav, og denne verdien avgjør om bokstaven er stor eller liten. For eksempel er "a" representert av tallet 97 og "A" av tallet 65.
+```PHP
+$streng = "dette er en tekst";
+$kapitalisert = ucwords($streng);
+echo $kapitalisert; // Dette Er En Tekst
+```
 
-Når du bruker `strtoupper()` funksjonen, kan du tenke på det som å "øke" ASCII-koden til hver bokstav med 32, slik at små bokstaver blir til store bokstaver. På samme måte, når du bruker `ucfirst()` funksjonen, øker den ASCII-koden til den første bokstaven i strengen med 32, mens resten av bokstavene forblir uendret.
+I dette tilfellet blir første bokstav i hvert ord gjort stor, mens resten av bokstavene blir gjort små.
+
+## Dypdykk
+
+Det finnes også andre måter å kapitalisere en streng på i PHP, men bruk av `ucfirst()` og `ucwords()` er de mest vanlige metodene. Det er også viktig å merke seg at disse funksjonene tar hensyn til språkinnstillinger, så bokstaver som "æ", "ø" og "å" vil bli behandlet riktig.
+
+Det kan også være nyttig å vite om funksjonen `mb_convert_case()`, som lar deg konvertere strenger til forskjellige typer casing, inkludert stor forbokstav, små bokstaver og omvendt casing. Du kan lese mer om denne funksjonen og hvordan du bruker den ved å sjekke ut PHP-dokumentasjonen [her](https://www.php.net/manual/en/function.mb-convert-case.php).
 
 ## Se også
 
-- [PHP string funksjoner](https://www.php.net/manual/en/ref.strings.php)
-- [ASCII-kode og ASCII-tabellen](https://www.ascii-code.com/)
+- [PHP dokumentasjon for `ucfirst()`](https://www.php.net/manual/en/function.ucfirst.php)
+- [PHP dokumentasjon for `ucwords()`](https://www.php.net/manual/en/function.ucwords.php)
+- [PHP dokumentasjon for `mb_convert_case()`](https://www.php.net/manual/en/function.mb-convert-case.php)

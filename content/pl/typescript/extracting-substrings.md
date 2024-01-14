@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Wycinanie podciągów"
+title:                "TypeScript: Ekstrakcja podciągów"
+simple_title:         "Ekstrakcja podciągów"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/extracting-substrings.md"
 ---
 
@@ -9,40 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Ekstrakcja podciągów jest często używanym i bardzo przydatnym narzędziem w programowaniu. Jest to proces wydobycia fragmentów tekstu lub ciągów znaków z łańcucha znaków. Czasami jest to konieczne do zastosowania w celu uzyskania odpowiednich danych lub do przeprowadzenia różnego rodzaju operacji na tekście.
+W dzisiejszym poście porozmawiamy o wydobywaniu podłańcuchów w języku TypeScript. Jest to bardzo przydatna umiejętność, która pozwala na wybieranie i przetwarzanie konkretnych części tekstu. Czy kiedykolwiek zastanawiałeś się, jak programy potrafią wyciągnąć z tekstu takie informacje jak numer telefonu czy adres email? Okazuje się, że odpowiedzią na to pytanie jest wykorzystywanie funkcji do wydobywania podłańcuchów.
 
 ## Jak to zrobić
 
-Aby wykorzystać ekstrakcję podciągów w TypeScript, należy użyć metody `substring (beginIndex, endIndex)`, gdzie `beginIndex` jest indeksem pierwszego znaku w podciągu, a `endIndex`(opcjonalny) określa indeks ostatniego znaku w podciągu. Przykładowe użycie wyglądałoby następująco:
+Aby wydobywać podłańcuchy w języku TypeScript, należy użyć funkcji `substring()` lub `slice()`. Obie te metody pozwalają na wybieranie określonej części stringa na podstawie indeksów. Przykładowo, jeśli mamy tekst "Hello World!", to chcąc wydobyć tylko słowo "World", możemy użyć funkcji `substring(6,11)`, gdzie pierwszy argument oznacza indeks początkowy, a drugi indeks końcowy (indeksy są numerowane od zera). Możemy również wykorzystać funkcję `slice()` w podobny sposób.
 
 ```TypeScript
-let str: string = "Programowanie jest super";
-let subStr: string = text.substring(6, 15);
-console.log(subStr); // "owanie jest"
+const text: string = "Hello World!";
+const substring: string = text.substring(6,11);
+console.log(substring); // Output: World
 ```
 
-Można również użyć metody `slice (beginIndex, endIndex)`, która działa tak samo jak `substring`, ale `endIndex` jest opcjonalny i jeśli nie jest podany, wyodrębnia wszystkie znaki od `beginIndex` do końca łańcucha. Przykładowe użycie wyglądałoby następująco:
+Możemy również wykorzystać te funkcje do wydobywania podłańcuchów zmiennych przechowujących informacje, takich jak numery telefonów czy adresy email.
 
 ```TypeScript
-let str: string = "Programowanie jest super";
-let subStr: string = text.slice(6);
-console.log(subStr); // "owanie jest super"
+const phoneNumber: string = "+48 123 456 789";
+const extractedNumber: string = phoneNumber.slice(4,16);
+console.log(extractedNumber); // Output: 123 456 789
+
+const email: string = "example@mail.com";
+const extractedDomain: string = email.substring(8,14);
+console.log(extractedDomain); // Output: mail
 ```
 
-Możliwe jest również wykorzystanie funkcji `substr (beginIndex, length)`, która określa indeks pierwszego znaku w ekstrahowanym podciągu i jego długość. Przykładowe użycie wyglądałoby następująco:
+## Deep Dive
 
-```TypeScript
-let str: string = "Programowanie jest super";
-let subStr: string = text.substr(14, 5);
-console.log(subStr); // "super"
-```
+Funkcje `substring()` i `slice()` mają kilka różnic, które może być warto poznać. Pierwsza z nich dotyczy sposobu określenia indeksów. W przypadku funkcji `substring()` podanie indeksu końcowego nie jest wymagane, ponieważ jeśli go nie podamy, zostanie pobrana cała część aranżenu stringa od podanego indeksu początkowego do samego końca. Natomiast funkcja `slice()` wymaga podania indeksu końcowego, jednakże możemy podać ujemną wartość, co spowoduje, że indeks będzie odliczany od końca stringa. Przykładowo, ujemny indeks `-5` oznacza "5 pozycji do końca".
 
-## Głębszy zanurzenie
+Druga różnica dotyczy sposobu obsługi ujemnych indeksów. W przypadku `substring()` ujemny indeks jest zamieniany na 0, więc oznacza on po prostu pierwszą pozycję w stringu. Natomiast w `slice()` ujemny indeks jest traktowany jako `string.length + ujemny indeks`, czyli na przykład `-5` w stringu "Hello" będzie oznaczać indeks 0.
 
-Podczas ekstrakcji podciągów należy pamiętać o kilku rzeczach. Po pierwsze, indeksy znaków zawsze zaczynają się od 0, więc pierwszy znak ma indeks 0, drugi ma indeks 1, itd. Po drugie, jeśli podamy indeks większy niż długość łańcucha, zostanie wyodrębniony pusty podciąg. Po trzecie, jeśli podamy niepoprawny indeks (np. wartość ujemna), zostanie zwrócony pusty łańcuch.
+## Zobacz też
 
-## Zobacz również
+- Dokumentacja funkcji `substring()`: https://www.typescriptlang.org/docs/handbook/strings.html#substring
+- Dokumentacja funkcji `slice()`: https://www.typescriptlang.org/docs/handbook/strings.html#slice
+- Przykładowe zadania z wykorzystaniem extractSubstring: https://www.typescriptlang.org/docs/handbook/strings.html#coding-examples-substring
 
-- [Dokumentacja dla metody substring](https://www.typescriptlang.org/docs/handbook/strings.html#substring)
-- [Dokumentacja dla metody slice](https://www.typescriptlang.org/docs/handbook/strings.html#slice)
-- [Dokumentacja dla funkcji substr](https://www.typescriptlang.org/docs/handbook/strings.html#substr)
+Dzięki wykorzystaniu funkcji `substring()` i `slice()` możemy łatwo i szybko wydobywać interesujące nas podłańcuchy z tekstu. Będzie to bardzo przydatne w różnego rodzaju programach, gdzie potrzebujemy przetwarzać i analizować tekst w celu wyłuskania konkretnych informacji. Mam nadzieję, że ten wpis był

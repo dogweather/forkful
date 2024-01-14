@@ -1,56 +1,62 @@
 ---
-title:                "C: Production de nombres aléatoires"
+title:                "C: La génération de nombres aléatoires"
+simple_title:         "La génération de nombres aléatoires"
 programming_language: "C"
-category:             "Numbers"
+category:             "C"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La génération de nombres aléatoires est un élément fondamental de la programmation, que ce soit pour les jeux, les simulations ou les tests. Elle permet d'introduire une certaine imprévisibilité dans le code, ce qui peut être utile pour tester sa robustesse ou simuler des scénarios réalistes.
+Si vous êtes intéressé par la programmation en C, il est toujours bon d'apprendre de nouvelles compétences pour ajouter à votre boîte à outils. L'une de ces compétences utiles est la génération de nombres aléatoires avec le langage de programmation C. La capacité de générer des nombres aléatoires peut être utile dans de nombreux domaines, tels que la simulation de jeux, le chiffrement de données ou la vérification de performances d'algorithmes.
 
-# Comment faire
+## Comment faire
 
-En langage C, la génération de nombres aléatoires se fait à l'aide de la fonction `rand()` de la bibliothèque standard `stdlib.h`. Pour l'utiliser, il suffit de l'appeler et de stocker le résultat dans une variable. Voici un exemple de code générant 10 nombres aléatoires entre 0 et 99 :
+Pour générer des nombres aléatoires en C, nous utilisons la fonction ```rand()``` du standard C library. Cette fonction renvoie un nombre entier aléatoire entre 0 et ```RAND_MAX```, une constante définie dans la bibliothèque. Cependant, pour obtenir des nombres aléatoires dans une plage différente, nous pouvons utiliser la formule suivante :
+
+```C
+// Génère un nombre aléatoire entre min (inclus) et max (exclus)
+int rand_num = (rand() % (max - min)) + min;
+```
+
+Voyons maintenant un exemple pratique de cette fonction en action :
 
 ```C
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-  int i;
-  
-  // initialisation de la graine aléatoire à partir de l'horloge du système
-  srand(time(NULL));
-  
-  // boucle de 10 itérations
-  for (i = 0; i < 10; i++) {
-      int nombre = rand() % 100; // on utilise le modulo pour limiter le nombre à 99
-      printf("%d ", nombre);
-  }
-  
-  return 0;
+int main()
+{
+    int min = 1, max = 100;
+    int rand_num = (rand() % (max - min)) + min;
+
+    printf("Le nombre aléatoire est : %d", rand_num);
+
+    return 0;
 }
 ```
 
-Lorsqu'on exécute ce code, on obtient une série de nombres aléatoires à chaque exécution :
+Voici un exemple de sortie possible :
 
 ```
-29 74 57 41 12 66 73 80 68 36 
+Le nombre aléatoire est : 74
 ```
 
-# Plongée en profondeur
+## Profonde plongée
 
-Les nombres générés par la fonction `rand()` ne sont pas vraiment aléatoires, ils sont en réalité calculés à partir d'une graine (seed) qui peut être déterminée à l'avance si aucun changement n'est apporté. Cela peut créer des patterns prévisibles si le code est exécuté plusieurs fois.
+Alors, comment ```rand()``` génère-t-elle ces nombres aléatoires ? En réalité, elle utilise un algorithme appelé "algorithme congruentiel linéaire". Cet algorithme utilise une formule mathématique pour produire des nombres pseudo-aléatoires, ce qui signifie qu'ils ne sont pas vraiment aléatoires mais apparaissent aléatoires pour un observateur externe. La formule exacte utilisée par ```rand()``` diffère selon les implémentations, mais elle suit généralement cette formule :
 
-Pour résoudre ce problème, il est recommandé de modifier la graine à chaque exécution en utilisant une valeur imprévisible, comme l'horloge du système comme dans l'exemple précédent. On peut également utiliser la fonction `srand()` pour définir manuellement une graine aléatoire.
+```
+Xn+1 = (a * Xn + c) % m
+```
 
-De plus, la fonction `rand()` n'est pas considérée comme étant vraiment aléatoire car elle suit une séquence prévisible. Pour obtenir de vrais nombres aléatoires, il est nécessaire d'utiliser des générateurs de nombres pseudo-aléatoires plus complexes, comme la fonction `random()` de la bibliothèque `unistd.h`.
+où ```a, c, m``` sont des constantes et ```Xn``` est le nombre précédent de la séquence. Pour en savoir plus sur le fonctionnement de cet algorithme, voici une explication détaillée (en anglais) : [https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/)
 
-# Voir aussi
+## Voir aussi
 
-- [Documentation officielle de la fonction `rand()`](https://linux.die.net/man/3/rand)
-- [Exemples de génération de nombres aléatoires en langage C](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
-- [Différences entre nombres pseudo-aléatoires et vrais nombres aléatoires](https://www.geeksforgeeks.org/difference-between-pseudo-random-and-true-random-number/)
+- [https://www.programiz.com/c-programming/library-function/stdlib.h/rand](https://www.programiz.com/c-programming/library-function/stdlib.h/rand)
+- [https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
+- [https://www.oreilly.com/library/view/c-in-a/0596006977/re141.html](https://www.oreilly.com/library/view/c-in-a/0596006977/re141.html)

@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: קבלת התאריך הנוכחי"
+title:                "Elixir: לשיגור תאריך נוכחי"
+simple_title:         "לשיגור תאריך נוכחי"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/getting-the-current-date.md"
 ---
 
@@ -9,33 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-כתיבת קודים בשפת אליקסיר יכולה להיות מאתגרת ומרתקת. אחת מהפעולות הקריטיות שהיא עושה זאת היא לקבוע תאריך נוכחי. התאריך הנוכחי הוא חלק חשוב מכל יישום, מאחר שהוא ניתן לשימוש לפעילויות מגוונות כמו יצירת דוחות, ניהול לוחות זמנים ועוד. בכתבה זו נלמד כיצד לקבל תאריך נוכחי באמצעות אליקסיר.
+בעולם התכנות, תמיד חשוב להיות מכירים בשימוש בתאריך הנוכחי. התאריך הנוכחי מועיל במגוון רחב של מטרות, כגון התייחסות לזמן במשחקים או ביישומי תוכנה, הדגמת תאריך בצורה חכמה למשתמשים או פשוט לשימוש אישי.
 
 ## איך לעשות זאת
 
-```elixir
-DateTime.utc_now()
-```
-הפעולה utc_now מחזירה את התאריך הנוכחי על פי התקן זמן העולמי (UTC). ניתן להשתמש בפונקציית to_string כדי להציג אותו בפורמט יותר נוח עבורנו.
-
-```elixir
-DateTime.utc_now()
-|> to_string()
-```
-הוצאה תיצוב של הקוד הקודם תחזיר:
+ראשית, נטען את המודול `Calendar` של Elixir:
 
 ```
-"2021-08-29 12:15:00.000000Z"
+Elixir
+iex> require Calendar
 ```
 
+כעת, נשתמש בפונקציה `local_time` כדי לקבל את התאריך הנוכחי לפי האיזור הזמן המקומי שלנו:
 
-## לְכַדְּבֵר עַמוק יוֹתֵר
+```
+Elixir
+iex> Calendar.local_time
+```
 
-כדי להבין את הפעולה utc_now ניתן להתעמק קצת יותר. באליקסיר קיימים מספר סוגי תאריכים: DateTime, NaiveDateTime ו Date. DateTime הוא סוג תאריך מקובץ שמכיל גם מידע על זמן ומיקום גיאוגרפי. NaiveDateTime הוא סוג תאריך המכיל רק מידע על התאריך והשעה בלי מידע על זמן ומיקום גיאוגרפי. Date הוא סוג תאריך המכיל רק מידע על התאריך ללא מידע על זמן ומיקום גיאוגרפי.
+אם נרצה לקבל את התאריך באיזור זמן אחר, נוכל להשתמש בפונקציה `convert_time`:
 
-שני הפעולות הבאות בראש דרגת סוג התאריך אשר ניתן לו לפעול על ידי הפונקציה utc_now: DateTime ו NaiveDateTime. כאשר נשתמש ב utf_now כוהצאת תאריך בפורמט נכון.
+```
+Elixir
+iex> Calendar.convert_time(Calendar.local_time, "UTC")
+```
+
+ניתן גם לבחור להציג את התאריך בפורמט מסוים, כך:
+
+```
+Elixir
+iex> Calendar.local_time
+~U[2019-05-08 16:20:45]
+```
+
+## לעמוד על התהליך
+
+כאשר אנו משתמשים בפונקציות כמו `local_time` ו-`convert_time`, אנו בעצם מפעילים תהליך מתוחכם של חישוב תאריך ושעה בהתאם לאיזור הזמן ולפורמט שציינו. כל החישובים מתבצעים בתוך המודול `Calendar` של Elixir, המעניק לנו גם אפשרויות נוספות כמו חישוב התאריך הנוכחי בלי פירוט לשניות או מיליוניות שנייה, או תמיכה בערכי time zones נוספים.
 
 ## ראה גם
 
-- [Timex אינספורקס] (https://hexdocs.pm/timex/Timex.html)
-- [תא
+- [Elixir Calendar documentation](https://hexdocs.pm/elixir/Calendar.html)
+- [UTC vs. GMT: What's the Difference?](https://www.timeanddate.com/time/zones/utc-gmt-difference.html)
+- [Unix Time: What Is It and Why Should I Care?](https://www.unixtimestamp.com/)

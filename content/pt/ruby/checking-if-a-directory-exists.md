@@ -1,38 +1,54 @@
 ---
-title:                "Ruby: Verificando se um diretório existe."
+title:                "Ruby: Verificando se um diretório existe"
+simple_title:         "Verificando se um diretório existe"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que verificar se um diretório existe
 
-Se você está aprendendo a programar em Ruby ou já tem experiência com a linguagem, provavelmente em algum momento precisou verificar se um diretório existe ou não. Esta é uma tarefa comum no desenvolvimento de software e pode ser útil em diversas situações. Neste artigo, vamos abordar o porquê de se verificar a existência de um diretório e como fazer isso em Ruby.
+Verificar se um diretório existe pode ser uma tarefa importante em alguns projetos de programação Ruby. Isso pode ser necessário para garantir que um determinado diretório exista antes de tentar ler ou gravar arquivos nele. Também pode ser usado para verificar se um diretório foi criado corretamente durante a execução de um programa.
 
 ## Como fazer
 
-Em Ruby, a maneira mais simples de verificar se um diretório existe é utilizando o método `Dir.exist?()` seguido do caminho do diretório que deseja verificar. Por exemplo, se você deseja checar se o diretório `documents` existe em seu sistema, pode utilizar o seguinte código:
+Para verificar se um diretório existe em Ruby, podemos usar o método `Dir.exist?`. Este método retorna um valor booleano (verdadeiro ou falso) com base na existência do diretório especificado.
 
-```Ruby
-Dir.exist?("documents")
+Vamos ver um exemplo de como usar o método `Dir.exist?` em um código Ruby:
+
+```ruby
+if Dir.exist?("/caminho/para/diretorio")
+  puts "O diretório existe!"
+else
+  puts "O diretório não existe."
+end
 ```
 
-Este método retorna `true` se o diretório existir e `false` caso contrário. Você também pode utilizar a forma abreviada `Dir.exists?()`.
+A saída deste código será `O diretório existe!`, isso significa que o diretório especificado existe. Se o caminho do diretório estiver incorreto, a saída será `O diretório não existe.`.
 
-## Deep Dive
+Outra forma de verificar a existência de um diretório é usar o operador de negação `!` em conjunto com o método `Dir.exist?`:
 
-Ao usar o método `Dir.exist?`, é importante ter em mente que ele retornará `true` mesmo se o caminho especificado não for um diretório, mas sim um arquivo. Isso ocorre pois ambos são considerados objetos de `Dir` em Ruby. Se você precisa ter certeza de que o caminho é um diretório e não um arquivo, pode utilizar o método `File.directory?()` em conjunto com `Dir.exist?()`, como mostrado no exemplo abaixo:
-
-```Ruby
-File.directory?("documents") && Dir.exist?("documents")
+```ruby
+unless !Dir.exist?("/caminho/para/diretorio")
+  puts "O diretório existe!"
+else
+  puts "O diretório não existe."
+end
 ```
 
-Outra forma de verificar a existência de um diretório é utilizando o método `File.exist?()`, que também pode ser usado para checar se um caminho leva a um arquivo ou diretório. No entanto, este método funciona apenas com caminhos absolutos, enquanto `Dir.exist?()` pode ser usado com caminhos relativos.
+Novamente, a saída será `O diretório existe!` se o diretório existir e `O diretório não existe.` se não existir.
+
+## Profundidade
+
+Você pode estar se perguntando como o método `Dir.exist?` funciona por trás dos panos. Na verdade, ele é uma simples verificação do sistema de arquivos do seu computador. Se o caminho especificado for encontrado, ele retornará verdadeiro, caso contrário, retornará falso.
+
+Outra opção é usar o método `File.exist?` que funciona da mesma forma, mas pode ser usado para verificar a existência de um arquivo ao invés de um diretório.
 
 ## Veja também
 
-- [Documentação da classe Dir em Ruby](https://ruby-doc.org/core/Dir.html)
-- [Documentação da classe File em Ruby](https://ruby-doc.org/core/File.html)
-- [Tutorial sobre diretórios em Ruby](https://www.rubyguides.com/2018/07/ruby-dir/)
+- [Documentação oficial do Ruby sobre o método Dir.exist?](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F)
+- [Exemplo de verificação de diretório em Ruby](https://www.geeksforgeeks.org/ruby-check-if-the-dictionary-is-empty-or-not/)
+- [Guia completo sobre diretórios em Ruby](https://www.rubyguides.com/2017/08/ruby-directory/)

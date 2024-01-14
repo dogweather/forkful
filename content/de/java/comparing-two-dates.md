@@ -1,54 +1,48 @@
 ---
-title:                "Java: Vergleich von zwei Daten"
+title:                "Java: Vergleich von zwei Datum"
+simple_title:         "Vergleich von zwei Datum"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Es ist oft unerlässlich, zwei Daten in der Java-Programmierung zu vergleichen, besonders wenn es um die Überprüfung von Eingaben oder die Sortierung von Daten geht. Das Vergleichen von Daten kann dabei helfen, die Logik und Funktionalität in Ihrem Programm zu verbessern und Fehler zu vermeiden.
+Das Vergleichen von zwei Daten ist ein häufiges Szenario in der Java-Programmierung. Es kann verwendet werden, um zu überprüfen, ob eine bestimmte Aktion bereits ausgeführt wurde oder um zu bestimmen, welches Datum früher oder später ist.
 
-## Wie man zwei Daten vergleicht
+# Wie
 
-In Java gibt es verschiedene Möglichkeiten, um zwei Daten zu vergleichen. Eine Möglichkeit ist die Verwendung der "compareTo" Methode, die für alle Datentypen verfügbar ist, die das Interface "Comparable" implementieren. Diese Methode vergleicht zwei Daten und gibt entweder einen positiven, negativen oder Null-Wert zurück, je nachdem ob das erste Daten größer, kleiner oder gleich dem zweiten Datum ist.
-
-Beispiel:
+Um zwei Daten in Java zu vergleichen, können wir die Klasse "Date" verwenden und die Methode "compareTo()". Diese Methode gibt entweder einen positiven, negativen oder neutralen Wert zurück, abhängig davon, ob das erste Datum vor, nach oder gleich dem zweiten Datum ist.
 
 ```Java
-String date1 = "12/01/2020";
-String date2 = "12/05/2020";
+// Beispiel zur Verwendung von compareTo() für Datum
+Date date1 = new Date(2020, 10, 15); // 15. Oktober 2020
+Date date2 = new Date(2020, 9, 20); // 20. September 2020
 
 int result = date1.compareTo(date2);
-System.out.println(result);
+
+if (result < 0) {
+    System.out.println("Date 1 ist vor Date 2");
+} else if (result > 0) {
+    System.out.println("Date 1 ist nach Date 2");
+} else {
+    System.out.println("Date 1 und Date 2 sind gleich");
+}
+
+// Output: Date 1 ist nach Date 2
 ```
 
-Dieser Code würde einen negativen Wert zurückgeben, da "date1" vor "date2" liegt. Wenn die Daten gleich sind, gibt die "compareTo" Methode einen Wert von Null zurück.
+# Deep Dive
 
-Eine weitere Möglichkeit ist die Verwendung der "before" und "after" Methoden der "Date" Klasse. Diese Methoden vergleichen direkt zwei Daten und geben einen Boolean-Wert zurück, der angibt, ob das erste Datum vor oder nach dem zweiten Datum liegt.
+Bei der Verwendung der Methode "compareTo()" gibt es einige wichtige Dinge zu beachten. Zunächst muss eines der beiden Daten vor dem Vergleich mit der Methode "before()" oder "after()" auf Gleichheit überprüft werden. Andernfalls kann es zu ungenauen Vergleichen kommen, da die Methode "compareTo()" auf die Millisekunde genau vergleicht.
 
-Beispiel:
+Ein weiterer wichtiger Punkt ist, dass die Klasse "Date" veraltet ist und durch die neuen Klassen "LocalDate", "LocalTime" und "LocalDateTime" in der Java 8 API ersetzt wurde. Diese Klassen bieten bessere Methoden zur Vergleichung von Daten und Zeiten.
 
-```Java
-Date date1 = new Date(2020, 01, 12);
-Date date2 = new Date(2020, 05, 12);
+# Siehe auch
 
-boolean isBefore = date1.before(date2);
-System.out.println(isBefore);
-```
-
-Dieser Code würde "true" zurückgeben, da "date1" vor "date2" liegt.
-
-## Tiefere Einblicke
-
-Bei der Verwendung der "compareTo" Methode ist es wichtig zu beachten, dass die Ergebnisse vom Datentyp abhängen. Wenn Sie beispielsweise String-Werte vergleichen, werden die Ergebnisse alphabetisch angeordnet sein, während numerische Werte entsprechend ihrer Größe verglichen werden.
-
-Auch bei der Verwendung der "Date" Klasse gibt es einige Dinge zu beachten. Beim Vergleichen von zwei Daten müssen Sie sicherstellen, dass die Daten auf dieselbe Weise initialisiert werden, da die Standardeinstellung für das Jahr in Java 1900 ist. Wenn Sie auch die Zeit in Ihrem Vergleich berücksichtigen möchten, können Sie die "getTime" Methode verwenden, um die Millisekunden seit Januar 1970 zu erhalten und diese zu vergleichen.
-
-## Siehe auch
-
-- [Oracle Dokumentation zu compareTo](https://docs.oracle.com/javase/7/docs/api/java/lang/Comparable.html)
-- [Beispiele für das Vergleichen von Daten in Java](https://www.geeksforgeeks.org/comparing-dates-java/)
-- [Java Date Klasse](https://www.tutorialspoint.com/java/java_date_time.htm)
+- [Java Date compareTo() Dokumentation](https://docs.oracle.com/javase/7/docs/api/java/util/Date.html#compareTo(java.util.Date))
+- [Java 8 API Dokumentation](https://docs.oracle.com/javase/8/docs/api/)
+- [Vergleich der neuen Date/Time API mit der Date-Klasse](https://docs.oracle.com/javase/tutorial/datetime/overview/legacydatetime.html)

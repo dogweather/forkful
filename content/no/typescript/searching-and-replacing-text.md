@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Søking og erstatning av tekst"
+title:                "TypeScript: Søke og erstatte tekst"
+simple_title:         "Søke og erstatte tekst"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/searching-and-replacing-text.md"
 ---
 
@@ -9,48 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å søke og erstatte tekst er en viktig del av programmering, spesielt når man jobber med større mengder av kode. Dette gjøres for å effektivisere arbeidsprosessen og sikre at kodebasen er konsistent og feilfri.
+Å søke og erstatte tekst er en vanlig oppgave for utviklere, enten det er for å endre variabelnavn, legge til funksjonalitet eller rette opp skrivefeil. Ved å bruke TypeScript kan du enkelt utføre denne oppgaven på en effektiv måte. I denne bloggposten vil vi forklare hvorfor det er viktig å kunne søke og erstatte tekst, og hvordan du kan gjøre det på en enkel måte.
 
 ## Hvordan
 
-Det finnes flere forskjellige måter å søke og erstatte tekst på i TypeScript. Her er et enkelt eksempel på hvordan man kan bruke metoden `replace` for å erstatte all forekomst av et spesifikt ord i en tekststreng:
+For å søke og erstatte tekst i TypeScript, kan du bruke metoden `replace()` som tar to parametere: søketeksten og erstatningsteksten. La oss si at du ønsker å bytte ut alle forekomster av ordet "hallo" med "hei" i en tekststreng:
 
 ```TypeScript
-let tekst = "Hei alle sammen! Jeg heter Maria og jeg er veldig glad i å programmere."
-
-// Erstatter "Maria" med "Markus"
-let erstattetTekst = tekst.replace("Maria", "Markus");
-console.log(erstattetTekst);
-
-// Output: Hei alle sammen! Jeg heter Markus og jeg er veldig glad i å programmere.
-```
-
-I dette eksempelet ser vi at metoden `replace` tar inn to argumenter, det første er teksten som skal erstattes, mens det andre er teksten som skal erstatte den originale teksten. Slik kan man enkelt og effektivt endre tekst i en variabel.
-
-Det er også mulig å bruke såkalte regulære uttrykk i TypeScript for å gjøre mer avanserte søk og erstattninger. Her er et eksempel på en regex som erstatter alle tall i en tekststreng med ordet "nummer":
-
-```TypeScript
-let tallTekst = "Dette er tekst med tall: 123 456 789";
-
-// Regex som erstatter tall med ordet "nummer"
-let nyTekst = tallTekst.replace(/[0-9]+/g, "nummer");
+let tekst = "Hei, hvordan har du det? Hallo til deg også!";
+let nyTekst = tekst.replace("hallo", "hei");
 console.log(nyTekst);
-
-// Output: Dette er tekst med tall: nummer nummer nummer
 ```
 
-Med regex kan man utnytte jokertegn og spesifikke kriterier for å søke og erstatte mer presist.
+Output:
+
+```
+Hei, hvordan har du det? Hei til deg også!
+```
+
+Som du kan se, erstattet `replace()` alle forekomster av "hallo" med "hei". Du kan også bruke regulære uttrykk for å søke og erstatte tekst i TypeScript, ved å gi en `RegExp` som første parameter. For eksempel, hvis du ønsker å bytte ut alle tall i en tekststreng med "X", kan du bruke følgende kode:
+
+```TypeScript
+let tallTekst = "1, 2, 3, 4, 5";
+let nyTekst = tallTekst.replace(/\d/g, "X");
+console.log(nyTekst);
+```
+
+Output:
+
+```
+X, X, X, X, X
+```
+
+Dette erstatter alle tall (representert av `\d` i regulære uttrykk) med "X". Du kan også bruke flere flagg sammen med regulære uttrykk, for eksempel `i` for å ignorere store og små bokstaver.
 
 ## Dypdykk
 
-Det er viktig å være oppmerksom på at metoden `replace` i TypeScript bare erstatter den første forekomsten av teksten i en streng, med mindre man bruker regulære uttrykk med flagget "g" for globalt søk.
-
-Det finnes også flere string-metoder i TypeScript som kan være nyttige i søke- og erstattingsprosessen, som for eksempel `split` og `substr`.
-
-Det er også verdt å nevne at TypeScript har full støtte for Unicode, så man kan søke og erstatte teksten uavhengig av hvilket språk eller tegnsett det er skrevet på.
+Når du bruker `replace()` i TypeScript, returnerer metoden en ny tekststreng og endrer ikke den opprinnelige. Dette kan være nyttig hvis du ønsker å beholde originalteksten og gjøre endringer i en kopi. Du kan også bruke `replace()` inne i en løkke for å erstatte forskjellige tekster basert på visse kriterier. Det er også viktig å være klar over at `replace()` bare erstatter den første forekomsten av teksten hvis du ikke bruker et regulært uttrykk med `g`-flagget.
 
 ## Se også
 
-- [String.prototype.replace - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [RegExp - TypeScript Deep Dive](https://basarat.gitbook.io/typescript/type-system/regular-expression)
-- [String - TypeScript Docs](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [Grundig guide til regulære uttrykk i TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
+- [Eksempler på søk og erstatting i TypeScript](https://www.tutorialspoint.com/typescript/typescript_string_replace.htm)
+- [Md5-kryptering med TypeScript](https://www.npmjs.com/package/md5-typescript)

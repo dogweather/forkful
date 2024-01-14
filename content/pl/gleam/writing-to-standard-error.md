@@ -1,7 +1,9 @@
 ---
 title:                "Gleam: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/writing-to-standard-error.md"
 ---
 
@@ -9,28 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Gleam jest językiem programowania, który staje się coraz bardziej popularny. Jedną z jego wielkich zalet jest umożliwienie programistom zapisywania informacji i błędów do standardowego wyjścia błędów. W tym poście dowiesz się, dlaczego warto korzystać z tego mechanizmu.
+Dlaczego każdy programista powinien wiedzieć, jak pisać do standardowego błędu? Dla większości osób kodowanie to tylko tworzenie programów, ale często zapominamy o tym, że debugowanie jest równie ważne jak pisanie kodu. Pisanie do standardowego błędu może pomóc nam w identyfikacji i rozwiązywaniu problemów, co przekłada się na lepszą jakość naszego oprogramowania.
 
 ## Jak to zrobić
 
-Aby pisać do standardowego wyjścia błędów w Gleam, wystarczy użyć funkcji `stderr()` wewnątrz bloku `try...catch`. Można również ustawić różne poziomy błędów, np. `error` lub `warning`, aby dostosować zapisywanie do swoich preferencji.
+Aby napisać do standardowego błędu w Gleam, możemy skorzystać z wbudowanej funkcji `error/1`. Przykładowy kod wyglądałby następująco:
 
 ```Gleam
-try {
-  // kod, który może wygenerować błąd
-} catch(err) {
-  stderr("Błąd: {}", [err])
+fn divide(dividend, divisor) {
+    if divisor == 0 {
+        error("Nie można dzielić przez zero")
+    } else {
+        dividend / divisor
+    }
 }
+
+// Wywołanie funkcji z błędnymi argumentami
+divide(10, 0)
 ```
 
-W powyższym przykładzie używamy funkcji `stderr()` wraz z argumentem `[err]`, aby przekazać informacje o błędzie do standardowego wyjścia.
+W rezultacie powyższego kodu, w oknie konsoli zobaczymy wiadomość "Nie można dzielić przez zero". Jest to bardzo przydatne, gdy używamy zewnętrznych bibliotek czy operujemy na wartościach, które mogą być nieprawidłowe lub nieobsługiwane przez nasz kod.
 
-## Głębszy zanurk
+## Głębszy zanurzenie
 
-Istnieje wiele powodów, dla których warto pisać do standardowego wyjścia błędów w Gleam. Może pomóc w monitorowaniu i debugowaniu aplikacji, a także ułatwić szybkie znalezienie problemów i błędów w kodzie. Dodatkowo, zapisywanie błędów do standardowego wyjścia umożliwia wykrywanie potencjalnych problemów i ostrzeżenia już na etapie pisania kodu.
+Pisanie do standardowego błędu może także pomóc nam w debagowaniu naszego kodu. Wystarczy umieścić wywołania funkcji `error/1` w różnych miejscach naszego kodu, aby sprawdzić, jakie wartości przechodzą przez nasze funkcje i gdzie może występować problem. Dzięki temu możemy łatwiej zlokalizować błąd i rozwiązać go.
 
 ## Zobacz również
 
-- [Dokumentacja Gleam](https://gleam.run)
-- [Przykładowy projekt w Gleam](https://github.com/gleam-lang/gleam_stdlib)
-- [Blog o Gleam](https://gleam-lang.org/blog/)
+- [Dokumentacja Gleam o funkcjach obsługi błędów](https://gleam.run/book/tour/error-handling.html)
+- [Oficjalna strona języka Gleam](https://gleam.run/)
+- [Poradnik dla początkujących w Gleam](https://gleam.run/book/introduction.html)

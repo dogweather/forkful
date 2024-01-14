@@ -1,55 +1,46 @@
 ---
-title:                "Arduino: 「テキストファイルの書き方」"
+title:                "Arduino: テキストファイルの書き方"
+simple_title:         "テキストファイルの書き方"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは、Arduinoプログラミングの愛好家の皆さん！今回は、テキストファイルを書くための方法についてお話ししようと思います。
+## なぜ
+テキストファイルを作成するのには、さまざまな目的があります。例えば、センサーから収集したデータを保存するため、またはプロジェクトの進捗を記録するために使われることがあります。Arduinoを使ってテキストファイルを作成することによって、データや情報を簡単に保存し、後で見返すことができます。
 
-## Why
+## 作り方
+テキストファイルを作成するには、Serialモニターを利用します。まず、```Serial.begin(9600)```を使用してシリアル通信を開始し、次にファイルを作成するための準備をします。例えば、```File dataFile = SD.open("data.txt", FILE_WRITE)```のようにコードを書きます。そして、```dataFile.println()```を使用してデータをファイルに書き込みます。ファイルを閉じるには、```dataFile.close()```を使用します。下記のコードは、温度データを取得し、テキストファイルに書き込む例です。
 
-テキストファイルは、データを保存したり情報を共有するために非常に便利な方法です。あなたのArduinoプロジェクトでも、センサーデータや設定情報などをテキストファイルとして保存できます。また、テキストファイルを読み取ることで、機能的なアプリケーションを作成することもできます。
+```
+void setup()
+{
+  Serial.begin(9600);
+  if(!SD.begin())
+  {
+    Serial.println("SDカードの初期化に失敗しました。");
+    return;
+  }
+  Serial.println("SDカードの初期化に成功しました。");
+}
 
-## How To
-
-テキストファイルを書くためには、まず`SD`ライブラリを使用する必要があります。次のようにライブラリをインクルードします。
-
-```Arduino
-#include <SD.h>
+void loop()
+{
+  float temperature = analogRead(A0) * 0.488;
+  File dataFile = SD.open("temperatures.txt", FILE_WRITE);
+  dataFile.println(temperature);
+  dataFile.close();
+  delay(1000);
+}
 ```
 
-次に、SDカードを初期化し、テキストファイルを作成します。
+上記のコードを実行すると、SDカードに```temperatures.txt```という名前のテキストファイルが作成され、温度データが1秒ごとに書き込まれます。ファイルを開いてみると、データが正しく保存されていることが確認できます。
 
-```Arduino
-SD.begin(10); // 10はSDカードのCSピン番号
-File myFile = SD.open("myFile.txt", FILE_WRITE); // "myFile.txt"はファイル名, FILE_WRITEは書き込むモード
-```
+## ディープダイブ
+テキストファイルを作成するには、SDライブラリを使用します。SDライブラリには、SDカードへのアクセスを支援するさまざまな機能が備わっています。テキストファイルを作成する前に、まずSDカードを初期化する必要があります。```SD.begin()```を使用して初期化し、成功するとSDカードの使用準備が完了します。また、SDカードにデータを書き込む前に、ファイルが既に存在するかどうかを確認することも重要です。既にファイルが存在する場合は、ファイルが上書きされてしまう可能性があります。そのため、```SD.exists("data.txt")```を使用してファイルが既に存在する場合は、新しく作成するファイルの名前を変更するようにコードを書くことができます。
 
-テキストファイルを書き込むには、`File`オブジェクトの`print()`や`println()`メソッドを使用します。例えば、次のように文字列をファイルに書き込むことができます。
-
-```Arduino
-String message = "Hello world!";
-myFile.println(message);
-```
-
-書き込みが終わったら、ファイルを閉じてSDカードから取り外します。
-
-```Arduino
-myFile.close();
-SD.remove("myFile.txt");
-SD.end();
-```
-
-これで、テキストファイルを作成・書き込み・保存することができます。
-
-## Deep Dive
-
-テキストファイルを作成する際には、`SD.open()`メソッドの第二引数に書き込みモードだけでなく読み取りモードも指定することができます。また、`File`オブジェクトの`read()`や`available()`メソッドを使用してファイルからデータを読み取ることもできます。詳細な情報は、[公式ドキュメント](https://www.arduino.cc/reference/en/libraries/sd/)をご覧ください。
-
-See Also
-
-- [Arduino SD Library Reference](https://www.arduino.cc/reference/en/libraries/sd/)
-- [Arduino SD Card Tutorial for Beginners](https://randomnerdtutorials.com/complete-guide-for-ultrasonic-sensor-hc-sr04/)
+## はてな
+もしもArduinoでテキストファイルを作成する際にエラーが発生した場合は、SDカードが正しく接続されているかどうかを確認することが重要です。また、```Serial.println()```を使用して、エラーメッセージをシリアルモニターに表示することで、どこでエラーが発生しているかを確認することもできます。さらに、テキストファイル以外にも、CSVファイルやJSONファイルなどさまざまな形式でデータを保存すること

@@ -1,37 +1,42 @@
 ---
-title:                "C#: 텍스트 검색 및 대체하기"
+title:                "C#: 텍스트 검색 및 교체"
+simple_title:         "텍스트 검색 및 교체"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-텍스트 검색 및 바꾸기를 하는 이유는 매우 간단합니다. 우리는 프로그래밍에서 자주 사용하는 특정한 단어나 구문을 쉽게 바꿀 수 있기 때문입니다. 이를테면, 우리가 제품에서 브랜드 이름을 바꾸거나, 오타를 수정하거나, 또는 특정한 포맷의 데이터를 다른 포맷으로 변환할 때 사용할 수 있습니다. 쉽게 말하면, 텍스트 검색 및 바꾸기는 매우 유용하고 강력한 도구입니다.
+## 왜: 
 
-## 방법
-텍스트 검색 및 바꾸기를 코딩으로 해결하는 방법은 여러 가지가 있지만, 이번 글에서는 C#에서 가장 일반적으로 사용하는 방법을 소개하고자 합니다. 먼저, 우리는 `Regex.Replace()` 함수를 사용하여 특정한 텍스트 패턴을 찾아서 다른 텍스트 패턴으로 바꿀 수 있습니다. 이 함수는 `Regex` 라이브러리에서 제공되며, 정규 표현식을 사용하여 매우 강력한 검색 기능을 제공합니다. 예를 들어, 우리가 문자열에서 모든 숫자를 찾아서 `#` 문자로 바꾸고 싶다고 합시다. 그러면 우리는 다음과 같은 코드를 사용할 수 있습니다.
+텍스트를 찾고 바꾸는 작업을 수행하는 이유는 무엇일까요? 많은 프로그래머들은 소프트웨어를 개발하다보면 다양한 이유로 텍스트를 수정해야 할 때가 있습니다. 예를 들어, 코드에서 일부 단어를 바꾸거나 사용자 입력값을 정제할 때 등 많은 경우에 텍스트를 검색하고 바꾸어야 할 수 있습니다.
 
-```C#
-using System.Text.RegularExpressions;
-
-string content = "123 Love Programming";
-string replaced = Regex.Replace(content, "[0-9]", "#");
-Console.WriteLine(replaced); // 결과: ### Love Programming
-```
-
-위의 예제에서 우리는 `Regex.Replace()` 함수에 문자열에서 숫자를 찾는 정규 표현식 `[0-9]`과 바꿀 문자 `#`를 전달합니다. 이렇게 하면 숫자가 모두 `#`으로 바뀌게 됩니다.
-
-또 다른 방법으로는, 우리는 `String.Replace()` 함수를 사용할 수도 있습니다. 이 함수는 정확한 문자열을 찾아서 다른 문자열로 바꿀 수 있습니다. 예를 들어, 우리가 위의 예제에서 `123`을 찾아서 `OneTwoThree`로 바꾸고 싶다고 합시다. 그러면 우리는 다음과 같은 코드를 사용할 수 있습니다.
+## 어떻게:
 
 ```C#
-string replaced = content.Replace("123", "OneTwoThree");
-Console.WriteLine(replaced); // 결과: OneTwoThree Love Programming
+// 문자열 선언
+string str = "안녕하세요, 친구들! 오늘은 코딩을 배워보겠습니다.";
+Console.WriteLine("원본 문자열: " + str);
+
+// "안녕하세요"를 "Hello"로 바꾸기
+str = str.Replace("안녕하세요", "Hello");
+Console.WriteLine("변경된 문자열: " + str);
+
+// "배워보겠습니다"를 "learning"으로 바꾸기
+str = str.Replace("배워보겠습니다", "learning");
+Console.WriteLine("최종 문자열: " + str);
 ```
-위의 예제에서 우리는 `String.Replace()` 함수에 찾을 문자열과 바꿀 문자열을 전달하여 `123`을 `OneTwoThree`로 바꾸게 됩니다.
 
-## 깊이있게 들어가기
-텍스트 검색 및 바꾸기를 더욱 깊이있게 들어가보겠습니다. 우리는 지금까지 간단한 예제를 살펴보았지만, 실제로는 정규 표현식을 사용하여 매우 복잡한 텍스트 패턴도 찾고 바꿀 수 있습니다. 정규 표현식은 텍스트 검색 및 바꾸기를 더욱 강력하게 만들어주는 도구입니다. 이를테면, 우리는 이메일 주소를 검색하여 모두 `hidden`으로 바꾸거나, 주민등록번호를 검색하여 다른 포맷으로 바꾸는 등의 작업도 가능합니다.
+위의 예시 코드를 보면, `Replace()` 메소드를 이용하여 텍스트를 쉽게 찾고 바꿀 수 있습니다. 첫 번째 인자에는 바꿀 문자열을, 두 번째 인자에는 새로운 문자열을 넣어주면 됩니다. 이 외에도 `Regex` 클래스를 이용하여 더욱 복잡한 패턴의 텍스트를 검색하고 바꿀 수 있습니다.
 
-또한, 우리는 텍스트를 바꿀 때 대소문자를 구분하지 않아도 됩니다. `Regex.Replace()` 함수와 `String
+## 딥 다이브:
+
+텍스트를 찾고 바꾸는 작업은 간단해 보일 수 있지만, 프로그래머들은 이 작업에서 여러 가지 유용한 팁을 알아두면 좋습니다. 예를 들어, `Replace()` 메소드는 대소문자를 구분하므로 반드시 확인하고 사용해야 합니다. 또한, `Regex` 클래스를 이용할 때 정규식 패턴을 제대로 작성하는 것이 중요합니다.
+
+## 참고 프로그램:
+
+- [C# Replace() 메소드 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.replace?view=netframework-4.8)
+- [C# Regex 클래스 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.text.regularexpressions.regex?view=netframework-4.8)
+- [C# 문자열 관련 문서](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/strings/)

@@ -1,33 +1,42 @@
 ---
-title:                "Arduino: Escribiendo a error estándar"
+title:                "Arduino: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir a la salida de error estándar en Arduino
+## ¿Por qué escribir a la salida de error estándar en Arduino?
 
-Si eres nuevo en la programación de Arduino, es posible que hayas escuchado sobre la salida de error estándar, también conocida como "stderr". Pero, ¿por qué deberías preocuparte por ello? La respuesta es simple: escribir a la salida de error estándar es una forma útil de depurar y solucionar problemas en tu código.
+Escribir a la salida de error estándar puede ser útil al momento de depurar y encontrar errores en nuestro código de Arduino. Al mostrar los errores en tiempo real, podemos identificar y corregir problemas de manera más eficiente.
 
-## Cómo escribir a la salida de error estándar en Arduino
+## Cómo escribir a la salida de error estándar
 
-Para escribir a la salida de error estándar en Arduino, puedes utilizar la función "Serial.println()" y especificar "Serial", "USB" o "stderr" como parámetro. Aquí hay un ejemplo de cómo hacerlo:
+Para escribir a la salida de error estándar en Arduino, primero debemos incluir la biblioteca "Serial.h". Luego, podemos utilizar la función "Serial.println()" para imprimir nuestro mensaje en la salida de error estándar. Por ejemplo:
 
 ```Arduino
-Serial.println("¡Este es un mensaje de error!");
+#include <Serial.h>
+
+void setup() {
+  // Iniciamos la comunicación serial a 9600 baudios
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Mostramos un mensaje de error en la salida estándar
+  Serial.println("¡Se ha producido un error!");
+}
 ```
+La consola de Arduino nos mostrará el mensaje "¡Se ha producido un error!" cada vez que se ejecute el bucle "loop()".
 
-La salida de este código se enviará a tu consola de depuración o entorno de desarrollo integrado, lo que te permitirá ver los mensajes de error mientras ejecutas tu código.
+## Profundizando en la salida de error estándar
 
-## Profundizando en la escritura a la salida de error estándar
-
-Escribir a la salida de error estándar es especialmente útil en situaciones en las que no se puede utilizar la salida serial, como en casos de errores en tiempo de ejecución. También puede ser útil cuando se necesita depurar múltiples líneas de código y la salida serial se llena con demasiada información.
-
-Recuerda que escribir a la salida de error estándar no es la única forma de depurar y solucionar problemas en tu código de Arduino. Siempre es una buena práctica utilizar diferentes herramientas y métodos para garantizar la eficiencia y funcionalidad de tu código.
+La salida de error estándar en Arduino utiliza la comunicación serial para enviar mensajes a la consola. Esto nos permite imprimir mensajes de error en tiempo real mientras nuestro código se está ejecutando. Además, podemos utilizar diferentes funciones de la biblioteca "Serial.h" para formatear nuestros mensajes y mostrar información adicional, como el valor de variables o la hora en la que ocurrió el error.
 
 ## Ver también
-- [Documentación oficial de Arduino sobre la función Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Artículo sobre la depuración en Arduino](https://www.open-electronics.org/debugging-arduino-projects/)
-- [Otra forma de depurar en Arduino: el LED de depuración](https://create.arduino.cc/projecthub/AnirbanS2297/debugging-arduino-projects-enhanced-version-07a62f)
+
+- [Documentación de Serial en Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Tutorial: Depuración con la salida de error estándar en Arduino](https://www.instructables.com/id/Arduino-Debugging-with-the-Standard-Error-Output-C/)

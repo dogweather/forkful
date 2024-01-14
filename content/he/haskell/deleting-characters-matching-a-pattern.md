@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: מחיקת תווים התואמים דפוס"
+simple_title:         "מחיקת תווים התואמים דפוס"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,29 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-בבלוג התכנות שלנו היום נדבר על נושא מעניין - מחיקת תווים התואמים לתבנית בשפת הפקודה הפנימית הסקל. אלו הם פעולות שימושיות לשלוט על מחרוזות ולהוציא מידע מתוכן. אז למה לנו למחוק תווים לפי תבנית? המסלול הברור ביותר הוא להרחיב על כך עם דוגמאות פשוטות כדי שתבינו מדוע זה רלוונטי לכם.
+מחיקת תווים המתאימים לתבנית עלולה להיות שימושית במגוון מצבים, כדוגמת ניקוי נתונים סביב אותה תבנית או טיפול במחרוזת שמכילה תווים מיותרים.
 
-## שיטה
+## כיצד לעשות זאת
 
-תחילה, ניצור פונקציה פשוטה שתיקח טקסט כקלט ותבדוק אם הוא מכיל תווים התואמים לתבנית מסוימת. ההתאמה מתבצעת באמצעות פונקציית `isPrefixOf` המשווה תת-מחרוזת לתבנית נתונה. אם ההתאמה מתקיימת, אז נשתמש בפונקציית `drop` כדי למחוק את התווים התואמים מהמחרוזת המקורית. לדוגמה:
+למחוק תווים המתאימים לתבנית בשפת Haskell ניתן להשתמש בפונקציית `filter`, המקבלת פונקציה תנאי ורשימה ומחזירה רשימה חדשה עם האיברים שעונים על התנאי. לדוגמה, נגדיר פונקציה שמקבלת מחרוזת ומחזירה את המחרוזת ללא תווים שגדולים מאו או קטנים מאו:
 
-```Haskell
-deleteMatching :: String -> String
-deleteMatching str =
-  if "Hello" `isPrefixOf` str
-  then drop (length "Hello") str
-  else str
-```
+````Haskell
+deleteChars :: String -> String
+deleteChars str = filter (not . (\x -> x == 'a' || x == 'A')) str
+````
+כעת נבצע מספר בדיקות ונראה את הפלט:
 
-כעת, נרחיב על הפונקציה כדי שתחזיר את המחרוזת המקורית בלי לכלול את התבנית שמתאימה. נשתמש בפונקציית `splitAt` כדי לחלק את המחרוזת לשני חלקים - הראשון תמיד יכיל את התבנית המתאימה, והחלק השני יכיל כל התווים הנותרים. לדוגמה:
+````Haskell
+deleteChars "Hello World!" -- "Hello World!"
+deleteChars "aBcDeFgHi" -- "BcDeFgHi"
+deleteChars "abcdefgh" -- "abcdefgh"
+````
 
-```Haskell
-deleteMatching :: String -> String
-deleteMatching str =
-  let (matched, rest) = splitAt (length "Hello) str
-  in if "Hello" `isPrefixOf` str
-  then deleteMatching rest
-  else matched ++ deleteMatching rest
-```
+## טפס עמוק
 
-בנוסף, אם אנחנו רוצים לשנות את התבנית באמצעות משתנה, ניצור פונקציה המקבלת את התבנית כפרמטר ומשתמשת בו במקום הטקסט הקבוע. הטקסט הזה יכול להיות כל דבר - משתנה, מחרוזת או אפ
+בטפס זה ראינו כיצד ניתן למחוק תווים המתאימים לתבנית בשפת Haskell באמצעות פונקציית `filter`. ניתן להשתמש בפונקציות נוספות כגון `map` ו- `foldr` כדי לבצע פעולות נוספות ומתקדמות על המחרוזת. כמו כן, ניתן להשתמש בביטויים רגולריים כדי למחוק תווים לפי תבניות מתוחכמות יותר.
+
+## ראו גם
+
+- [מדריך מפורט על פונקציית `filter` ב-Haskell](https://www.haskell.org/tutorial/functions.html#filter)
+- [מדריך לביטויים רגולריים ב-Haskell](http://blog.danieljanus.pl/2012/06/07/regular-expresions-in-haskell/)
+- [מידע נוסף על טיפול במחרוזות בשפת Haskell](https://wiki.haskell.org/Strings)

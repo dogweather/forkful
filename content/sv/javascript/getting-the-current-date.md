@@ -1,49 +1,55 @@
 ---
-title:                "Javascript: Få den aktuella datuminformationen"
+title:                "Javascript: Att få den aktuella datumen"
+simple_title:         "Att få den aktuella datumen"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Det är vanligt att behöva få tag på dagens datum när man programmerar i JavaScript. Det kan till exempel vara för att visa dagens datum på en hemsida eller för att beräkna hur lång tid en viss process har tagit. Genom att lära sig hur man hämtar dagens datum i JavaScript kan du lägga till en användbar funktion till dina projekt.
+Att få den aktuella datumen är en viktig del av programmering i Javascript. Det finns många användbara applikationer som kräver att du kan hämta och använda datumet, till exempel för att skapa tidstämplar eller visa för användaren när en viss händelse inträffade.
 
 ## Hur man gör
+För att få den aktuella datumen i Javascript finns det flera olika metoder att använda. En enkel och vanlig metod är att använda `Date()`-funktionen. Den här funktionen returnerar ett objekt som innehåller den aktuella datumen och tiden.
 
-För att få tag på dagens datum i JavaScript kan du använda dig av Date-objektet. Genom att anropa Date-konstruktorn utan några parametrar får du ett objekt som representerar dagens datum och tid. Du kan sedan använda olika metoder för att hämta specifika delar av datumet.
+```Javascript
+const datum = new Date();
+console.log(datum);
 
-```javascript
-let dagensDatum = new Date();
-console.log(dagensDatum);
-// Output: Sat Apr 24 2021 14:32:16 GMT+0200 (Central European Summer Time)
+// Output: Thu Mar 11 2021 10:20:27 GMT+0100 (Central European Standard Time)
+```
 
-// Hämta dagens datum
-let dag = dagensDatum.getDate();
-console.log(dag);
-// Output: 24
+För att få mer specifika delar av datumet, använder du de inbyggda metoder som finns tillgängliga för `Date`-objektet. Till exempel kan du hämta året med `getFullYear()`, månaden med `getMonth()`, och dagen med `getDay()`.
 
-// Hämta månad
-let månad = dagensDatum.getMonth() + 1; // Månader är index-baserade, därför lägger vi till 1
-console.log(månad);
-// Output: 4
+```Javascript
+const datum = new Date();
+const år = datum.getFullYear();
+const månad = datum.getMonth();
+const dag = datum.getDay();
+console.log(`${år}-${månad}-${dag}`);
 
-// Hämta år
-let år = dagensDatum.getFullYear();
-console.log(år);
-// Output: 2021
+// Output: 2021-3-4
 ```
 
 ## Djupdykning
+För att vara mer exakt när det gäller tid och datum kan du använda `Intl`-objektet i Javascript. Detta objekt ger en mängd olika metoder som gör det möjligt att få den aktuella tiden och datumet baserat på det lokala språket och formatet.
 
-Det finns många olika metoder och egenskaper som du kan använda för att hämta information om dagens datum i JavaScript. Förutom de som nämndes ovan finns det bland annat också metoder för att hämta dagens veckodag, timme och minut. Du kan också läsa på om hur man formaterar datumet på olika sätt beroende på dina behov.
+Ett exempel på detta är `toLocaleDateString()` som returnerar det lokala datumet i ett specifikt format enligt användarens inställningar.
 
-Det är också viktigt att komma ihåg att datum skiljer sig åt beroende på vilken tidszon du befinner dig i. Därför kan det vara bra att använda sig av bibliotek som Moment.js för att få mer precisa resultat.
+```Javascript
+const datum = new Date();
+const lokalDatum = datum.toLocaleDateString();
+console.log(lokalDatum);
 
-## Se även
+// Output: 4/3/2021 (för en användare i USA)
+```
 
-- [Date](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
-- [Date Formatting in Javascript - Ultimate Guide](https://programmingwithmosh.com/javascript/date-formatting-javascript/)
+Det finns också möjlighet att använda `toLocaleTimeString()` för att få den lokala tiden i det önskade formatet, och även `toLocaleString()` för att få både datum och tid tillsammans.
+
+## Se också
+* [MDN web docs - Date](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Date)
+* [MDN web docs - Intl](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/Intl)
+* [W3Schools - JavaScript Date Objekt](https://www.w3schools.com/jsref/jsref_obj_date.asp)

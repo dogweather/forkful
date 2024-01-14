@@ -1,44 +1,36 @@
 ---
-title:                "Fish Shell: Lesing av kommandolinje-argumenter"
+title:                "Fish Shell: Lesing av kommandolinjeargumenter"
+simple_title:         "Lesing av kommandolinjeargumenter"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Hvis du er en programmerer eller dataentusiast, er sjansen stor for at du allerede kjenner til viktigheten av å kunne håndtere kommandolinjeargumenter. Dette er en viktig del av å kunne effektivt jobbe med Fish Shell og andre programmeringsspråk på en rask og enkel måte.
 
-Lurer du på hvorfor du bør lære deg å lese kommandolinje-argumenter i Fish Shell? Det kan være en svært nyttig ferdighet når du jobber med kommandolinje-programmer, og kan hjelpe deg med å automatisere og effektivisere oppgaver.
+## Hvordan
+```Fish Shell``` er et populært verktøy som brukes til å håndtere kommandolinjeargumenter. Den har et enkelt syntaks som gjør det mulig å lese og behandle argumenter på en intuitiv måte. Under er et enkelt eksempel på hvordan du kan lese og vise en kommandolinjeargument:
 
-## Slik gjør du det
+```
+# Leser det første argumentet som ble gitt til Fish Shell
+set argument $argv[1]
 
-Det er enkelt å lese kommandolinje-argumenter i Fish Shell. Alt du trenger å gjøre er å bruke innebygde kommandoer som "argv" og "$argv". La oss se på et eksempel:
-
-```Fish Shell
-$ fish script.sh argument1 argument2
+# Skriver ut argumentet til skjermen
+echo "Argumentet ditt er: $argument"
 ```
 
-For å lese disse argumentene i Fish Shell, kan du bruke følgende kommandoer:
-
-```Fish Shell
-echo $argv[1]
-```
-
-Denne koden vil gi deg output av "argument1" i dette tilfellet. Hvis du ønsker å hente ut alle argumentene, kan du bruke følgende kode:
-
-```Fish Shell
-echo $argv
-```
-
-Dette vil gi deg output av "argument1 argument2", som er alle kommandolinje-argumentene som ble gitt til scriptet ditt.
+Om du for eksempel kjører dette skriptet med kommandoen ```fish mittskript.fish hello```, vil du få følgende output: ```Argumentet ditt er: hello```.
 
 ## Dykk dypere
+Det er flere muligheter når det kommer til å lese kommandolinjeargumenter i Fish Shell. Du kan for eksempel bruke kommandoen ```switch``` for å sjekke om et bestemt argument er gitt eller ikke, og deretter utføre forskjellige handlinger basert på dette. Det er også mulig å bruke flags og options, som gir enda mer fleksibilitet når det gjelder å håndtere argumenter.
 
-Nå som vi har sett på det grunnleggende, kan vi ta en dypere titt på å lese kommandolinje-argumenter i Fish Shell. Det finnes flere måter å lese og behandle argumenter på, som for eksempel å bruke "for"-løkker og "switch"-kommandoer. Det er også viktig å huske på at kommandolinje-argumenter kan være nyttige for å gi input til skriptet ditt, for eksempel ved å angi en filsti som argument.
+Det er også verdt å merke seg at Fish Shell har innebygde variabler som kan gi nyttig informasjon om argumentene som blir gitt til programmet ditt. Dette inkluderer for eksempel ```$argv``` som inneholder alle argumentene og ```$argc``` som inneholder antall argumenter som er gitt.
 
 ## Se også
-
-- [Offisiell dokumentasjon for Fish Shell](https://fishshell.com/docs/current/)
-- [En guide for grunnleggende Fish Shell kommandoer](https://fishshell.com/docs/current/tutorial.html)
-- [En introduksjon til kommandolinjen for nybegynnere](https://skillcrush.com/blog/command-line-basics/)
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/argv.html)
+- [Tutorial: Using Command-Line Arguments in Fish Shell](https://dzone.com/articles/using-command-line-arguments-in-fish-shell)
+- [Advanced Fish Shell Tips and Tricks](https://medium.com/@ruturajv/advanced-fish-shell-tips-and-tricks-7b34426a2f48)

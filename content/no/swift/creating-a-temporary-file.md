@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Å opprette en midlertidig fil"
+title:                "Swift: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/creating-a-temporary-file.md"
 ---
 
@@ -9,35 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å lage midlertidige filer kan være et nyttig verktøy i Swift-programmering. Disse filene lar deg midlertidig lagre data eller informasjon mens du kjører koden din, og sletter deretter filen når den ikke lenger er nødvendig. Dette kan være spesielt nyttig når du arbeider med store mengder data eller trenger å lagre informasjon som bare er nødvendig for en kort periode.
+Å lage midlertidige filer er en vanlig praksis i programmmering for å midlertidig lagre data eller informasjon. Dette kan være nyttig når du trenger å teste koden din eller utføre en midlertidig oppgave.
 
 ## Hvordan
 
-For å opprette en midlertidig fil i Swift, kan du bruke "FileManager" -klassen og dens "createFile" -metode. Her er et eksempel på hvordan du oppretter en midlertidig tekstfil og legger til noe tekst i den:
+For å lage en midlertidig fil i Swift, kan du bruke `FileManager`-klassen og dens `createFile`-metode. Her er et eksempel på hvordan du kan opprette en midlertidig fil:
 
 ```Swift
-let tempFile = FileManager.default.temporaryDirectory.appendingPathComponent("mittMidlertidigeProsjekt.txt")
+let fileManager = FileManager.default
+let temporaryDir = NSTemporaryDirectory()
+let temporaryFile = temporaryDir.appending("myTempFile.txt")
 
-do {
-    try "Dette er mitt midlertidige prosjekt!".write(to: tempFile, atomically: true, encoding: .utf8)
-    print("Midlertidig fil opprettet")
-    print("Innholdet i filen er:")
-    print(try String(contentsOf: tempFile))
-} catch {
-    print("Kunne ikke opprette midlertidig fil: \(error)")
+if fileManager.createFile(atPath: temporaryFile, contents: nil, attributes: nil) {
+    print("Midlertidig fil opprettet!")
+} else {
+    print("Noe gikk galt under opprettelsen av den midlertidige filen.")
 }
 ```
 
-Dette eksemplet bruker "tempDirectory" -egenskapen til "FileManager" -klassen, som vil opprette filen i et midlertidig katalog på datamaskinen din. Deretter bruker den "write" -metoden for å legge til teksten i filen, og deretter skriver ut filen innholdet ved hjelp av "contentsOf" -metoden.
+I dette eksempelet bruker vi `NSTemporaryDirectory()` for å få den midlertidige mappen på enheten vår, og vi oppretter en sti til vår midlertidige fil ved å kombinere stien med filnavnet vi ønsker. Deretter bruker vi `createFile`-metoden for å faktisk lage filen, og sjekker om det var vellykket. Hvis alt gikk som planlagt, skal vi få en bekreftelse i terminalen.
 
 ## Dypdykk
 
-Når du oppretter en midlertidig fil, bør du også sørge for å slette den når den ikke lenger er nødvendig. Dette kan gjøres ved hjelp av "removeItem" -metoden til "FileManager" -klassen. Det er også viktig å merke seg at disse midlertidige filene bare er ment for midlertidig lagring og bør ikke brukes som en permanent lagringsløsning.
+Nå som vi har sett på et enkelt eksempel på hvordan vi kan opprette en midlertidig fil, la oss ta en nærmere titt på hva som skjer bak kulissene. Når vi kaller `createFile`, vil det automatisk opprette en tom fil på den angitte plasseringen. Hvis vi ønsker å legge til innhold i filen vår, kan vi gjøre det ved å spesifisere `contents`-parameteren med ønsket data i form av en `Data`-objekt.
 
-En annen nyttig funksjon når du jobber med midlertidige filer er "URLSession" -klassen. Denne klassen lar deg laste ned data og lagre den i en midlertidig fil før du bruker den videre i koden din.
+En annen viktig ting å merke seg er at når appen vår avsluttes, vil alle midlertidige filer som er opprettet ved hjelp av `createFile` bli automatisk slettet. Dette er fordi disse filene befinner seg i en spesiell midlertidig mappe på enheten vår.
 
-## Se Også
+## Se også
 
-- [FileManager dokumentasjon](https://developer.apple.com/documentation/foundation/filemanager)
-- [URLSession dokumentasjon](https://developer.apple.com/documentation/foundation/urlsession)
-- [Swift koden for dette eksemplet](https://github.com/apple/swift/blob/master/test/stdlib/FileManager.swift)
+Her er noen nyttige ressurser for å lære mer om å lage midlertidige filer i Swift:
+
+- [Apple Documentation - FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Apple Developer Video - Temporary Files](https://developer.apple.com/videos/play/wwdc2020/10111/)
+- [Hvordan lage midlertidige filer i Swift](https://www.appcoda.com/temporary-files-swift/)

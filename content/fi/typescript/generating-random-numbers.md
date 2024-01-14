@@ -1,27 +1,32 @@
 ---
-title:                "TypeScript: Sattumanvaraisten numeroiden luominen"
+title:                "TypeScript: Satunnaisten lukujen generointi"
+simple_title:         "Satunnaisten lukujen generointi"
 programming_language: "TypeScript"
-category:             "Numbers"
+category:             "TypeScript"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Monissa JavaScript-projekteissa tarvitaan satunnaislukujen generointia erilaisiin tarkoituksiin, kuten pelimekaniikkaan, tietojen analysointiin tai yksinkertaisesti satunnaisen sisällön tuottamiseen. TypeScriptin avulla tämä on helppoa ja nopeaa toteuttaa.
+# Miksi käyttää satunnaislukugenerointia TypeScriptissä
+Satunnaislukujen generointi on tärkeä osa ohjelmointia monissa sovelluksissa, kuten pelit, simulaatiot ja salausmenetelmät. Satunnaislukujen avulla voidaan luoda ennustamattomia tapahtumia ja tehdä mahdottomia tehtäviä, jotka vaativat sattumanvaraisuutta. TypeScript tarjoaa helpon tavan generoida satunnaislukuja, joka on olennainen taito jokaiselle ohjelmoijalle.
 
-## Kuinka Tehdä
-Satunnaislukujen generoiminen TypeScriptissä onnistuu käyttämällä `Math.random()` -funktiota, joka palauttaa aina luvun väliltä 0-1. Tämä luku kerrotaan halutulla alueella ja pyöristetään, jotta saadaan haluttu lukuväli. Esimerkiksi, jos haluamme generoida kokonaislukuja väliltä 1-10, voimme käyttää seuraavaa koodia:
+## Näin generoit satunnaislukuja TypeScriptissä
+Satunnaislukujen generoimiseksi TypeScriptissä voit käyttää Math-luokkaa, joka tarjoaa valmiita metodeja satunnaislukujen luomiseen. Esimerkiksi voit käyttää Math.random() -metodia, joka palauttaa desimaaliluvun välillä 0-1. Voit myös käyttää Math.floor() ja Math.ceil() -metodeita pyöristämään luku haluamaasi muotoon. Seuraava esimerkki näyttää, miten generoida satunnaisluku väliltä 1-10 ja tulostaa se konsoliin:
 
 ```TypeScript
-const randomNumber: number = Math.round(Math.random() * 9 + 1);
-console.log(randomNumber); // Tulos voi olla esimerkiksi 4
+const randomNum = Math.floor(Math.random() * 10) + 1;
+console.log(randomNum);
 ```
 
-## Syvempi Sukellus
-Satunnaislukujen generoiminen perustuu algoritmeihin, joita käytetään luvun laskemiseen ja jakamiseen. Vaikka `Math.random()` käyttääkin monimutkaisia algoritmeja, se ei kuitenkaan pysty tuottamaan täysin satunnaista lukua. Tässä tapauksessa usein käytetään ulkoisia tekijöitä, kuten ajan funktionaalista riippuvuutta, paremman satunnaisuuden saavuttamiseksi.
+Tämä koodi käyttää Math.random() -metodia luomaan desimaaliluvun väliltä 0-1 ja sitten Math.floor() -metodia pyöristämään sen alaspäin lähimpään kokonaislukuun. Seuraavaksi se lisää 1 luvun loppuun, jotta saadaan haluttu väli väliltä 1-10. Lopuksi tulostetaan satunnaisluku konsoliin.
+
+## Syventyvä sukellus satunnaislukujen generointiin
+Vaikka Math-luokka tarjoaa käteviä metodeja satunnaislukujen generointiin, niillä on omat rajoituksensa. Esimerkiksi, jos haluat generoida satunnaisen kokonaisluvun tietyltä väliltä, sinun täytyy käyttää erilaisia kaavoja ja metodeja päästäksesi haluttuun lopputulokseen. Voit myös käyttää algoritmeja, kuten Mersenne Twister, jotka tuottavat sattumanvaraisempia lukuja kuin Math-luokan valmiit metodit.
+
+On myös hyvä huomata, että satunnaislukujen generoiminen on mahdotonta ilman ulkopuolista lähdettä, kuten ympäristön kohinaa tai tietokoneen kelloa. Tämä tarkoittaa, että vaikka satunnaislukuja voidaan pitää "sattumanvaraisina", ne ovat itse asiassa ennalta määrättyjä ja jäljitettäviä. Satunnaislukujen käyttöä salauksessa tuleekin harkita tarkkaan.
 
 ## Katso myös
-- [Math.random() dokumentaatio](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [JavaScript Random Numbers](https://www.w3schools.com/js/js_random.asp)
-- [Generating random numbers in TypeScript](https://www.typescriptlang.org/docs/handbook/2/type-system.html#example-1)
+- [Math-luokan dokumentaatio TypeScriptissä](https://www.typescriptlang.org/docs/handbook/stdlib.html#math)
+- [Mersenne Twister -algoritmi](https://en.wikipedia.org/wiki/Mersenne_Twister)

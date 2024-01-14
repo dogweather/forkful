@@ -1,61 +1,42 @@
 ---
-title:                "Rust: Skapa en tillfällig fil"
+title:                "Rust: Skapa en temporär fil"
+simple_title:         "Skapa en temporär fil"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+I många programmeringsprojekt är det nödvändigt att skapa temporära filer för att hantera dataåtkomst eller för att testa funktioner. Att lära sig hur man skapar temporära filer med Rust är ett användbart verktyg för programmerare som arbetar med filer och datahantering. 
 
-I den här bloggposten ska vi prata om hur man skapar en temporär fil i Rust, och varför man kanske skulle vilja göra det. Att skapa en temporär fil är användbart när man behöver hålla någon form av data lagrad under en kort period av tid, innan den sedan försvinner. Det kan också vara användbart för debugging och testning av kod, då man inte vill skriva över eller förstöra eventuella befintliga filer.
-
-## Hur man gör
-
-För att skapa en temporär fil i Rust, kan vi använda oss av standardbibliotekets funktioner. Vi börjar med att importera nödvändiga bibliotek för att kunna skapa filen:
+## Så här gör man
+Att skapa en temporär fil med Rust är enkelt. Du behöver bara använda standardbibliotekets "tempfile" modul och dess "named_tempfile" funktion. Nedan finns ett exempel på hur du skapar en temporär fil och skriver data till den: 
 
 ```Rust
 use std::fs::File;
 use std::io::prelude::*;
+use tempfile::NamedTempFile;
+
+fn main() {
+    let mut temp_file = NamedTempFile::new().unwrap(); // skapar en temporär fil
+    write!(temp_file, "Hej världen!"); // skriver data till filen
+    println!("Skapade {} som innehåller: ", temp_file.path().display());
+}
 ```
 
-Sedan kan vi använda oss av funktionen "create" från "File" för att skapa vår temporära fil:
-
-```Rust
-let mut temp_file = File::create("tempfile.txt").expect("Kunde inte skapa temporär fil");
+Output:
+```
+Skapade /tmp/temp-file-testxr7XL5kbJm6k som innehåller:
 ```
 
-Här skapar vi en variabel "temp_file" som håller filen vi skapar, och användet av "mut" gör att vi kan skriva till filen senare. "expect" är en funktion som kan användas för att hantera felmeddelanden, och här anger vi att om det inte går att skapa filen, så ska ett felmeddelande visas.
-
-Nu kan vi skriva något till vår temporära fil, till exempel:
-
-```Rust
-temp_file.write_all(b"Hej världen!").expect("Kunde inte skriva till filen");
-```
-
-Här skriver vi texten "Hej världen!" till filen. Genom att använda "b" före texten, talar vi om att det är en serie av bytes som ska skrivas. Nu när vi skrivit till filen kan vi stänga den:
-
-```Rust
-temp_file.flush().expect("Kunde inte stänga filen");
-```
-
-Efter att filen är stängd, kan vi sedan ta bort den med hjälp av "remove" funktionen från "std::fs" biblioteket:
-
-```Rust
-std::fs::remove_file("tempfile.txt").expect("Kunde inte ta bort filen");
-```
+Det är viktigt att notera att temp_file.path() returnerar den faktiska sökvägen till den skapade filen. Nu kan du använda filen i ditt program och sedan ta bort den när den inte längre behövs. 
 
 ## Djupdykning
+När vi skapar en temporär fil använder vi faktiskt Linux-kärnan som skapar en unik fil för oss. Standardbibliotekets "tempfile" modul tar hand om allt detta åt oss. Det är också möjligt att skapa en unik fil baserat på ett prefix och en suffix som du kan lägga till som argument för NamedTempFile::new() funktionen. Slutresultatet blir en temporär fil med en unik filnamn som är svårt att duplicera. 
 
-När man skapar en temporär fil, sparas den i operativsystemets "temporary directory" som vanligtvis raderas automatiskt när datorn stängs av. Detta innebär att vi som programmerare inte behöver oroa oss för att hålla koll på och ta bort filen själva.
-
-Det kan också vara viktigt att notera att om man behöver använda filen under en längre period, så är en temporär fil kanske inte den lämpligaste lösningen. I så fall bör man använda sig av en permanent fil istället.
-
-## Se också
-
-Här är några användbara länkar för att lära dig mer om hur man skapar temporära filer i Rust:
-
-- [Rust documentation: Using temporary files](https://doc.rust-lang.org/std/fs/tempfile/fn.NamedTempFile.html)
-- [Rust by Example: File Manipulation](https://doc.rust-lang.org/rust-by-example/std_misc/file.html)
-- [Rust Cookbook: Creating Temporary Files](https://rust-lang-nursery.github.io/rust-cookbook/file/temporary.html)
+## Se även
+- [Rust standardbibliotekets "tempfile" modul](https://doc.rust-lang.org/std/io/struct.TempFile.html)
+- [Officiell dokumentation för tempfile biblioteket](https://docs.rs/tempfile/3.1.0/tempfile/)

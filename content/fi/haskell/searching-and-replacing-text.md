@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/searching-and-replacing-text.md"
 ---
 
@@ -9,33 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa ohjelmointiprojekteissa joudutaan käsittelemään suuria määriä tekstiä. Olipa kyseessä sitten tiedostojen käsittely tai tietokantojen hakeminen, tekstin hakeminen ja korvaaminen on usein välttämätöntä. Haskell-ohjelmointikieli tarjoaa helpon ja tehokkaan tavan tehdä tätä, mikä tekee siitä suosikin monien kehittäjien keskuudessa.
+Miksi haluaisit etsiä ja korvata tekstiä Haskell-ohjelmoinnissa? Joskus sinun täytyy muuttaa useita samanlaisia merkkijonoja yhdellä kertaa, kuten vaihtaessasi nimen projektissa tai korvatessasi oikeassa taulukossa olevat tiedot testituloksilla.
 
-## Kuinka tehdä
+## Kuinka
 
-Haskellissa tekstin hakeminen ja korvaaminen tapahtuu ```substitute```-funktion avulla. Tämän funktion ensimmäinen parametri on haettava teksti ja toinen parametri on korvaava teksti. Alla on esimerkki, jossa korvaamme kaikki esiintymät merkkijonossa "Hello" merkkijonalla "Hei".
-
-```Haskell
-substitute "Hello" "Hei" "Hello World!" 
-```
-
-Tämä tuottaa tuloksen ```Hei World!```, mikä vastaa odotuksiamme.
-
-Jotta voimme käsitellä suurempaa määrää tekstiä, voimme käyttää ```replace```-funktiota, joka korvaa kaikki esiintymät haetusta tekstistä korvaavalla tekstillä. Tämä on hyödyllistä, kun meillä on esimerkiksi suuri tiedosto, jonka haluamme käsitellä.
+Helpoin tapa etsiä ja korvata tekstiä on käyttää `replace` -funktiota `Data.Text` -moduulista. Voit käyttää sitä seuraavasti:
 
 ```Haskell
-replace "Hello" "Hei" "Hello World! Hello Universe!"
+import qualified Data.Text as T
+
+replace "Haskell" "Rust" (T.pack "Opi Haskell:sta") 
 ```
 
-Tuloksena saamme ```Hei World! Hei Universe!``` mikä osoittaa, että molemmat esiintymät "Hello" on korvattu "Hei".
+Tämä tuottaa tuloksen `"Opi Rust:sta"`. Huomaa, että käytimme `T.pack` -funktiota muuntaaksemme tekstiä `Data.Text` -tyyppisiksi.
 
-## Syvällinen sukellus
+Voit myös käyttää säännöllisiä lausekkeita hakemaan ja korvaamaan tekstiä seuraavasti:
 
-```substitute```- ja ```replace```-funktioiden lisäksi Haskell tarjoaa muita tapoja käsitellä tekstiä. Näitä ovat muun muassa ```strip```, joka poistaa merkit tekstin alusta ja lopusta, ```split```, joka jakaa tekstin listaksi merkkijonoja annetun erotinmerkin avulla, ja ```join```, joka yhdistää listan merkkijonomuotoon.
+```Haskell
+import qualified Data.Text as T
+import Text.Regex.PCRE.Text (sub, gsub)
 
-Useimmissa projekteissa nämä perusfunktiot riittävät tekstin käsittelyyn, mutta Haskellilla on myös mahdollista luoda omia, räätälöityjä toimintoja tarpeen mukaan.
+sub "a[bc]+" (const "def") (T.pack "aaabbb") -- "def"
+gsub "[0-9]+" "x" (T.pack "1 2 3 4 5") -- "x x x x x"
+```
+
+Tässä `sub` -funktio korvaa ensimmäisen esiintymän annetulla merkkijonolla ja `gsub` -funktio korvaa kaikki esiintymät. Huomaa, että `Regex.PCRE.Text` -moduulissa on myös `subCapture` ja `gsubCapture` -funktiot, jotka tallentavat vastaavat kaapit uudelleenkirjoitettuun merkkijonoon.
+
+## Syvemmälle
+
+`Data.Text` -moduulilla on monia muita hyödyllisiä toimintoja, kuten `strip`, `words` ja `lines`, jotka voivat auttaa tekstien käsittelyssä. Voit myös käyttää `Data.ByteString` -moduulia, jos haluat tehdä toimintoja suorituskykyisemmin.
+
+Katso dokumentaatiosta lisää `Data.Text` -ja `Data.ByteString` -toiminnoista sekä `Regex.PCRE.Text` -moduulin säännöllisten lausekkeiden funktioista.
 
 ## Katso myös
 
-- [Haskellin dokumentaatio tekstinkäsittelyfunktioista](https://www.haskell.org/hoogle/?hoogle=Text+-%3E+Text+-%3E+Text)
-- [Haskellin tekstinkäsittely- ja merkkchaini-ohjelmointi](http://book.realworldhaskell.org/read/text-processing-and-regular-expressions.html)
+- [Haskellin dokumentaatio](https://www.haskell.org/documentation/)
+- [Haskell-opetusohjelma](https://haskell.tips/)
+- [Haskellin yhteisöfoorumi](https://discourse.haskell.org/)

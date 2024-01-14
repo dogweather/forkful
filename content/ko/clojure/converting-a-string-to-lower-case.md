@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: 대소문자로 변환하기"
+title:                "Clojure: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,50 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-문자열을 소문자로 변환하는 작업은 프로그래밍에서 매우 일반적인 작업입니다. 이 작업은 대소문자를 구분하지 않는 검색, 비교, 정렬 등에서 유용하게 사용될 수 있습니다.
+문자열을 소문자로 변환하는 작업을 맡게 될 이유는 간단합니다. 프로그래밍에서는 일반적으로 문자열을 소문자로 사용하기 때문입니다. 예를 들어, 입력한 문자열과 비교할 때 대소문자를 구분하지 않고 비교하고 싶을 때, 소문자로 변환한 뒤 비교하면 더 쉽고 간편합니다.
 
-## 방법
+## 하기
 
-Clojure에서는 `lower-case` 함수를 사용하여 문자열을 소문자로 변환할 수 있습니다. 예를 들어, 다음과 같이 작성할 수 있습니다.
-
-```Clojure
-(lower-case "HELLO WORLD")
-```
-
-이 코드를 실행하면 다음과 같은 결과가 나옵니다.
+문자열을 소문자로 변환하는 방법은 매우 쉽습니다. 다음 코드 예제를 참고해주세요:
 
 ```Clojure
-"hello world"
+(defn to-lower [input-str]
+  (clojure.string/lower-case input-str))
+
+(to-lower "HELLO WORLD!") ; 출력 결과: "hello world!"
 ```
 
-또는 `reduce` 함수를 사용하여 문자열의 각 문자를 소문자로 변환할 수도 있습니다.
+위의 코드 예제에서는 `defn` 키워드를 사용하여 `to-lower`라는 함수를 정의하고, `clojure.string/lower-case` 함수를 사용하여 입력된 문자열을 소문자로 변환하였습니다. 이렇게 간단하게 문자열을 소문자로 변환할 수 있습니다.
 
-```Clojure
-(reduce str (map #(Character/toLowerCase %) "HELLO WORLD"))
-```
+## 깊게 살펴보기
 
-이 코드를 실행하면 다음과 같은 결과가 나옵니다.
+문자열을 소문자로 변환하는 작업은 `to-lower` 함수를 사용하여 간단하게 수행할 수 있지만, 실제로는 더 많은 작업을 수행하게 됩니다. 예를 들어, 한글 문자열은 ASCII 문자와 다른 문자셋을 사용하기 때문에, 영어와 한글을 모두 소문자로 변환하기 위해서는 추가적인 작업이 필요합니다. 또한, Unicode나 UTF-8 문자열을 소문자로 변환할 때도 주의해야 합니다. 따라서, 프로젝트에 따라 적합한 문자열 변환 함수를 선택하는 것이 중요합니다.
 
-```Clojure
-"hello world"
-```
+## 참고
 
-## 깊이 탐구
-
-`lower-case` 함수는 주어진 문자열을 소문자로 변환한 새로운 문자열을 반환합니다. 따라서 원본 문자열은 수정되지 않습니다. 이는 성능 면에서 유리하지만, 원본 문자열을 수정하고 싶은 경우에는 `clojure.string` 네임스페이스의 `lower-case!` 함수를 사용할 수 있습니다.
-
-또한 `reduce` 함수를 사용하여 문자열의 각 문자를 소문자로 변환하는 방법은 성능 면에서 조금 더 비효율적일 수 있습니다. 이를 해결하기 위해서는 `clojure.string` 네임스페이스의 `lower-case` 함수를 사용하는 것이 좋습니다.
-
-## 참고 자료
-
-[String functions in Clojure](https://clojuredocs.org/clojure.string/lower-case)
-
-[Clojure String API](https://clojure.github.io/clojure/string-api.html)
-
-## 참고자료
-
-[Clojure에서 문자열을 소문자로 변환하는 방법 | 학원돌이의 블로그](https://blog.vanmoof.kr/entry/Clojure%EC%97%90%EC%84%9C-%EB%AC%B8%EC%9E%90%EC%97%90%EC%84%9C-%EC%86%8C%EB%AC%B8%EC%9E%90%EB%A1%9C-%EB%B3%80%ED%99%98%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95)
-
-[Clojure에서 대소문자 변환하기 | Heesob의 블로그](https://blog.naver.com/hshsh567/221295662541)
-
-[Clojure 문자열 다루기 | Nacyot의 프로그래밍 일기](http://blog.nacyot.com/articles/2015-02-12-clojure-string-pattern-match/)
+- [Clojure 공식 문서 - 문자열 변환 함수](https://clojure.org/reference/strings#_lowercase_normalization)
+- [Clojure Cookbook - 문자열을 소문자로 변환하기](https://clojure-cookbook.com/strings/capitalizers)
+- [Stack Overflow - Clojure에서 문자열 대소문자 변환하기](https://stackoverflow.com/questions/737293/uncommon-clojure-convert-string-to-lower-upper-camel-case)

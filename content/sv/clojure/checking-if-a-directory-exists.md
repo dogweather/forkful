@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Kontrollera om en mapp existerar"
+title:                "Clojure: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/checking-if-a-directory-exists.md"
 ---
 
@@ -9,37 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kontrollera om en mapp existerar är en viktig del av Clojure-programmering eftersom det ger dig möjligheten att utföra specifika åtgärder baserat på mappens befintlighet. Detta är särskilt användbart i situationer där du behöver interagera med filsystemet.
+Att kontrollera om en katalog finns är en viktig del av programmering, eftersom det låter oss säkerställa att vår kod fungerar korrekt och att alla nödvändiga resurser finns tillgängliga. I denna bloggpost kommer vi att utforska hur man gör detta i Clojure och varför det är en viktig del av utvecklingsprocessen.
 
-## Hur man gör det
+## Så här gör du
 
-För att kontrollera om en mapp existerar i Clojure, kan du använda funktionen ```clojure.java.io/file```. Med denna funktion kan du skapa en instans av en mapp och sedan använda ```.exists``` för att kontrollera om den faktiskt existerar.
+Det finns flera sätt att kontrollera om en katalog finns i Clojure. Ett enkelt sätt är att använda funktionen `file-seq`, som kommer att returnera en sekvens av filer och kataloger i en given sökväg. Om en katalog finns kommer den att vara en del av denna sekvens.
 
 ```Clojure
-(def directory (clojure.java.io/file "sökväg/till/mappen"))
+(def dir-path "testdir")
 
-(directory.exists)
+(file-seq dir-path)
 
-=> true
+; => ("testdir/file1.txt" "testdir/file2.txt" "testdir/subdir1" "testdir/subdir2")
 ```
 
-Om mappen inte existerar kommer funktionen ```directory.exists``` att returnera ```false```.
+Vi kan också använda funktionen `file?` för att kontrollera om en given sökväg är en fil eller en katalog. Om sökvägen är en katalog kommer funktionen att returnera `true`.
+
+```Clojure
+(def dir-path "testdir")
+
+(file? dir-path)
+
+; => true
+```
+
+Om du vill kontrollera om en katalog finns på en specifik sökväg, kan du använda funktionen `exists?`, som returnerar `true` om sökvägen existerar och annars `false`.
+
+```Clojure
+(def dir-path "testdir")
+
+(exists? dir-path)
+
+; => true
+```
 
 ## Djupdykning
 
-När du använder ```clojure.java.io/file``` för att skapa en instans av en mapp, kan du faktiskt passa in flera argument. Dessa argument kan inkludera en referens till en annan mapp, en URI eller en URL. Du kan också ange flera argument som leder till en specifik mapp eller fil.
-
-En annan användbar funktion är ```directory?``` som kan användas för att kontrollera om en viss fil är en mapp eller inte.
-
-```Clojure
-(directory?)
-
-=> true
-```
-
-En annan intressant funktion är ```resolve-path``` som kan användas för att få den fullständiga sökvägen till en mapp eller fil. Detta kan vara särskilt användbart när du behöver skapa en mapp eller fil på en specifik plats.
+Att kontrollera om en katalog finns är en viktig del av säkerställande att vår kod fungerar som den ska. Det kan spara oss mycket tid och frustration genom att upptäcka eventuella problem tidigt i utvecklingsprocessen. Vi kan också använda dessa funktioner för att skapa nya kataloger om de inte redan finns, vilket kan vara användbart när man skapar strukturer för filer och kataloger.
 
 ## Se även
 
-- [Clojure Dokumentation](https://clojure.org/guides/learn/syntax)
-- [Clojure Verktyg för Fil- och Mappinteraktion](https://clojure.github.io/java.io/)
+- Clojure API-dokumentation för `file-seq`: https://clojuredocs.org/clojure.java.io/file-seq
+- Clojure API-dokumentation för `file?`: https://clojuredocs.org/clojure.java.io/file_q
+- Clojure API-dokumentation för `exists?`: https://clojuredocs.org/clojure.java.io/exists_q

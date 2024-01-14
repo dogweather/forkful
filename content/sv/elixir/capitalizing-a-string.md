@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Att göra en sträng stor bokstav"
+title:                "Elixir: Att skriva ut en textsträng i versaler"
+simple_title:         "Att skriva ut en textsträng i versaler"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/capitalizing-a-string.md"
 ---
 
@@ -9,28 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Om du är ny inom programmering, har du kanske hört talas om "capitalizing a string" men inte riktigt förstått vad det betyder eller varför det är viktigt. Om du använder Elixir, kan det verka som ett Ytligt koncept, men det är faktiskt en viktig del av att hantera textsträngar i ditt program. Låt oss utforska varför det är relevant och hur du kan göra det i Elixir.
+Att kunna konvertera en sträng till kapitaliserad form, det vill säga där alla ord börjar med versaler, är en användbar funktion inom Elixir-programmering. Det gör det enklare att hantera data och presentera den på ett snyggt sätt för användaren.
 
-## Hur man gör
+## Hur man gör det
 
-Först måste vi förstå vad det innebär att "capitalize a string". Programmerspråk följer ofta strikta regler för hur data ska formateras, och detta gäller även för textsträngar. När en sträng är "capitalized", betyder det att den första bokstaven i varje ord är en stor bokstav, medan resten av bokstäverna är små. Detta är viktigt för att göra texten mer läsbar och enhetlig.
-
-För att göra detta i Elixir, kan du använda funktionen `String.capitalize/1`, som tar in en sträng som argument och returnerar den med den första bokstaven i varje ord som en stor bokstav. Se ett exempel nedan:
+För att konvertera en sträng till kapitaliserad form i Elixir, kan man använda sig av funktionen `String.capitalize/1`. Detta gör att det första tecknet i strängen blir en versal och alla andra tecken blir gemena. Till exempel:
 
 ```Elixir
-String.capitalize("hej alla") #=> "Hej Alla"
+iex> String.capitalize("hej världen")
+"Hej världen"
 ```
 
-Som du kan se, är "h" i "hej" och "a" i "alla" nu kapitaliserade. Detta gör det lättare att läsa och ser mer professionellt ut. Om du vill capitalizera hela strängen, oavsett separation mellan ord, kan du använda `String.upcase/1` och `String.downcase/1` för att göra alla bokstäver stora respektive små.
+Om man möter på en sträng som redan är kapitaliserad eller där varje ord börjar med en versal, kommer funktionen inte att ändra något. Detta kan vara till nytta när man vill hantera olika typer av data.
+
+För att kapitalisera varje ord i en sträng, kan man använda funktionen `String.capitalize/2` och ange värdet `:first` för det andra argumentet. Detta kommer att göra att alla ord i strängen börjar med en versal. Till exempel:
+
+```Elixir
+iex> String.capitalize("hej världen", :first)
+"Hej Världen"
+```
 
 ## Djupdykning
 
-En intressant sak att notera är att `String.capitalize/1` också tar hänsyn till specifika tecken i andra språk. Till exempel, om du har en sträng på svenska som börjar med "ö", kommer det att capitalizera som "Ö". Detta bevisar att Elixir är ett mycket mångsidigt och internationellt programmeringsspråk.
+Elixir är baserat på funktionell programmering, vilket innebär att funktioner är första klassens medborgare. Detta innebär att de kan användas som variabler, skickas som argument till andra funktioner och returneras. Detta är vad som händer när vi anropar `String.capitalize/1` och `String.capitalize/2`. Funktionen `capitalize` är bara en av många inbyggda funktioner som gör det möjligt för oss att hantera strängar på olika sätt.
 
-Det är också viktigt att nämna att funktionen `String.capitalize/1` returnerar en kopia av den ursprungliga strängen, och ändrar inte den ursprungliga strukturen. Detta är en viktig aspekt att förstå när du arbetar med textsträngar i Elixir.
+En intressant aspekt hos `String.capitalize/2` är att den kan anpassas genom att ange en språkkod som tredje argument. Detta gör att funktionen kan hantera språkspecifika regler för kapitalisering. Till exempel:
 
-## Se även
+```Elixir
+iex> String.capitalize("django reinhardt", :first, :fr)
+"Django Reinhardt"
+```
 
-- Officiell Elixir-dokumentation för `String.capitalize/1`: https://hexdocs.pm/elixir/String.html#capitalize/1
-- Tutorial om att arbeta med textsträngar i Elixir: https://elixircasts.io/working-with-strings-in-elixir
-- Översikt över Elixir-programmeringsspråket: https://elixir-lang.org/
+## Se också
+
+Här är några användbara länkar till mer information om Elixir-programmering och hantering av strängar:
+
+- [Elixir Programming Language](https://elixir-lang.org/)
+- [String.capitalize/1](https://hexdocs.pm/elixir/String.html#module-capitalize)
+- [String.capitalize/2](https://hexdocs.pm/elixir/String.html#module-capitalize-2)
+- [Funktionell programmering](https://en.wikipedia.org/wiki/Functional_programming)

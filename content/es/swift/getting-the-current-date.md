@@ -1,53 +1,51 @@
 ---
-title:                "Swift: Obteniendo la fecha actual."
+title:                "Swift: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-##¿Por qué deberías obtener la fecha actual?
+## Por qué obtener la fecha actual es importante en Swift
 
-Obtener la fecha actual es una tarea común en la programación, ya que puede ser útil para rastrear la hora y fecha en que ocurrió un evento o para mostrar información actualizada en una aplicación. En Swift, hay varias formas de obtener la fecha actual, lo que nos brinda flexibilidad en cómo la podemos usar en nuestras aplicaciones.
+Obtener la fecha actual puede ser muy útil en el desarrollo de aplicaciones en Swift. Puede ser utilizado para saber cuándo se creó o modificó un archivo, para mostrar la fecha en una interfaz de usuario, o para realizar cálculos basados en la fecha. En este artículo, exploraremos cómo obtener la fecha actual en Swift y cómo puedes aprovechar esta funcionalidad en tus propias aplicaciones.
 
-##Cómo hacerlo:
+## Cómo hacerlo en Swift
 
-Para obtener la fecha actual en Swift, podemos utilizar la estructura `Date` y su método `init()`. Este método devuelve un objeto `Date` con la fecha y hora actuales. Veamos un ejemplo de cómo podemos obtener la fecha y hora actual y mostrarla en la consola:
+Para obtener la fecha actual en Swift, puedes utilizar la clase `Date` y el formato ISO 8601. El código se verá así:
 
 ```Swift
-let currentDate = Date()
-
+let date = Date()
+let formatter = ISO8601DateFormatter()
+let currentDate = formatter.string(from: date)
 print(currentDate)
 ```
 
-Salida:
->2021-08-10 15:27:59 +0000
+El resultado de este código será la fecha y hora actual en formato ISO 8601, que se verá así: `2020-08-20T10:30:05-05:00`. Este formato es útil ya que es ampliamente utilizado y fácil de convertir a otros formatos si es necesario.
 
-También podemos personalizar el formato en el que se muestra la fecha y hora utilizando la clase `DateFormatter`. Este permite especificar un formato específico para mostrar la fecha y hora actual. Por ejemplo, si queremos mostrar solo la hora y los minutos, podemos usar el siguiente código:
+Una vez que tengas la fecha actual en una variable, puedes realizar diferentes operaciones como compararla con otra fecha, sumar o restar días, o mostrar solo la fecha o la hora. A continuación, se muestra un ejemplo de cómo obtener solo la fecha actual en formato `dd/MM/yyyy`:
 
 ```Swift
+let date = Date()
 let formatter = DateFormatter()
-formatter.dateFormat = "HH:mm"
-
-let currentTime = formatter.string(from: Date())
-
-print(currentTime)
+formatter.dateFormat = "dd/MM/yyyy"
+let currentDate = formatter.string(from: date)
+print(currentDate)
 ```
 
-Salida:
->15:30
+El resultado de este código será la fecha actual en formato `dd/MM/yyyy`, que se verá así: `20/08/2020`.
 
-##Profundizando:
+## Profundizando en obtener la fecha actual
 
-La estructura `Date` en Swift es en realidad un alias para `DateInterval`, que representa un intervalo de tiempo entre dos fechas. También podemos usar la clase `Calendar` para realizar operaciones con fechas, como calcular la diferencia de tiempo entre dos fechas o agregar o restar un cierto número de días a una fecha.
+En Swift, la clase `Date` es en realidad un alias para la estructura de `Foundation.Date`. Esta estructura representa un solo punto en el tiempo y se basa en una marca de tiempo en segundos. Esto significa que cuando obtienes la fecha actual, obtienes un objeto que contiene información sobre la fecha y hora en ese momento exacto.
 
-Además, si trabajamos con diferentes zonas horarias, podemos utilizar la clase `TimeZone` para ajustar la fecha y hora según la zona horaria especificada.
+Si quieres obtener la fecha actual en una zona horaria específica, puedes utilizar la propiedad `timeZone` de `DateFormatter` y proporcionar la zona horaria como un parámetro. También puedes utilizar el método `setTimeZone` de `DateFormatter` para cambiar la zona horaria después de haber definido el formato de fecha.
 
-Es importante tener en cuenta que la fecha y hora actual se basa en el dispositivo en el que se está ejecutando la aplicación, por lo que puede variar dependiendo de la ubicación del dispositivo y la hora establecida en el sistema.
+## Ver también
 
-##Ver también:
-
-- La documentación oficial de Apple sobre la estructura `Date` en Swift: https://developer.apple.com/documentation/foundation/date
-- Un tutorial sobre cómo trabajar con fechas y horas en Swift: https://www.hackingwithswift.com/articles/117/the-ultimate-guide-to-date-and-time-programming-with-swift
-- Un video tutorial en español sobre cómo obtener la fecha actual en Swift: https://www.youtube.com/watch?v=zQwHE5y5vfg
+- [Documentación de Apple sobre la clase `Date`](https://developer.apple.com/documentation/foundation/date)
+- [Documentación de Apple sobre el formato ISO 8601](https://developer.apple.com/documentation/foundation/iso8601dateformatter)
+- [Guía de fecha y hora en Swift](https://www.hackingwithswift.com/articles/117/the-ultimate-guide-to-date-and-time-programming-with-swift)

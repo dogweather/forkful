@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Skriving av tester"
+title:                "Bash: Skriver tester"
+simple_title:         "Skriver tester"
 programming_language: "Bash"
-category:             "Testing and Debugging"
+category:             "Bash"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/writing-tests.md"
 ---
 
@@ -9,32 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive tester i Bash-programmering er en viktig del av å utvikle pålitelig og feilfri kode. Tester bidrar til å identifisere og rette opp i eventuelle feil eller mangler i koden, noe som resulterer i bedre og mer stabil programvare. Det kan virke som en ekstra arbeidsbyrde, men langsiktig vil det spare deg for mye tid og frustrasjon.
+Å skrive tester er en viktig del av å være en god Bash-programmerer. Med tester kan du sikre at koden din gjør det den skal, og at eventuelle endringer ikke fører til uønskede resultater. Tester gir også en dokumentasjon av koden din som andre utviklere kan se på og forstå raskt. Det kan også være en fin måte å organisere og strukturere koden din på.
 
 ## Hvordan gjøre det
 
-Bash er et populært skriptspråk som brukes i mange Linux-distribusjoner og for administrasjon av servere. Skriving av tester i Bash utføres ved hjelp av [[Bats (Bash Automated Testing System)|https://github.com/sstephenson/bats]], et testverktøy spesielt utviklet for Bash-skript. La oss se på et eksempel på hvordan du kan skrive en test for en enkel funksjon som legger sammen to tall:
+For å skrive tester i Bash, kan du bruke kommandoen `test` eller `[`. Disse kommandoene sammenlikner en variabel eller et uttrykk med en forventet verdi, og returnerer sann eller usann.
 
-```
-load 'support.bash' #definerer hjelpefunksjoner og bytter til testmappen
+Et enkelt eksempel på en test kan være å sjekke om en variabel er lik en spesifikk verdi:
 
-@test "Legg sammen to tall" {
-  run sum 5 5 # kjører funksjonen sum med argumentene 5 og 5
-  assert_output "10" # resultatet bør være 10
-}
+```Bash 
+var="hello"
+if [ "$var" == "hello" ]; then
+  echo "Variabelen er lik 'hello'"
+else
+  echo "Variabelen er ikke lik 'hello'"
+fi
 ```
-Koden over definerer en test som sjekker om funksjonen "sum" returnerer riktig resultat når den får inn to tall som argumenter. Bats vil da kjøre koden og sjekke om resultatet stemmer med forventet output. Om ikke, vil testen feile og du vil få beskjed om at det er en bug som må fikses.
+
+Dette vil gi ut følgende resultat:
+
+```Bash 
+Variabelen er lik 'hello'
+```
+
+Du kan også bruke tester til å sjekke om en fil eksisterer, eller om den inneholder spesifikke data. For eksempel:
+
+```Bash 
+if [ -f "fil.txt" ]; then
+  echo "Filen eksisterer"
+else
+  echo "Filen eksisterer ikke"
+fi
+```
+
+Dette vil sjekke om filen "fil.txt" eksisterer i samme mappe som skriptet, og gi ut en melding basert på resultatet.
 
 ## Dypdykk
 
-Et godt skrevet testtilfelle bør være enkelt og tydelig, og bør alltid følge "Arrange, Act, Assert"-mønsteret. Dette betyr at testen bør først forberede miljøet (arrange), deretter kjøre koden som skal testes (act), og til slutt sjekke om resultatet stemmer overens med forventet output (assert).
+Å skrive tester i Bash kan virke enkelt, men det er viktig å tenke på at de må være presise og dekke ulike situasjoner. Det kan være lurt å dele testene dine opp i mindre grupper basert på forskjellig funksjonalitet eller deler av koden. Det kan også være lurt å bruke variabler for å gjøre testene mer fleksible og enklere å vedlikeholde.
 
-I tillegg er det viktig å skrive flere tester for å sikre at koden fungerer i ulike situasjoner, som for eksempel når ugyldige argumenter blir gitt eller når funksjonen kalles flere ganger.
-
-En annen nyttig funksjon i Bats er muligheten til å gruppere sammen flere tester innenfor samme "describe" blokk, noe som gjør det enklere å organisere og forstå testene.
+Du kan også bruke konstruksjoner som `if`, `elif` og `else` for å lage mer komplekse tester og håndtere ulike scenarioer. Det kan også være nyttig å bruke `-eq`, `-gt`, `-lt` og andre sammenlikningsoperatører for å sjekke tallbaserte verdier.
 
 ## Se også
 
-- [[Bats dokumentasjon|https://github.com/sstephenson/bats/blob/master/docs/01.writing-tests.md#assertions]]
-- [[The Art of Command Line|https://github.com/jlevy/the-art-of-command-line#automation-and-overcoming-internal-resistance]]
-- [[Bash-bibliotek med nyttige testfunksjoner|https://github.com/lehmannro/assert.sh]]
+- [The Bash Manual](https://www.gnu.org/software/bash/manual/) - offisiell dokumentasjon for Bash
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/) - en nybegynnerguide til Bash-programmering
+- [Bash Shell Scripting Tutorial](https://bash.cyberciti.biz/guide/Main_Page) - en omfattende guide til Bash-skripting

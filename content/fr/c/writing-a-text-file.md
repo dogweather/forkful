@@ -1,7 +1,9 @@
 ---
-title:                "C: Écrire un fichier texte"
+title:                "C: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/writing-a-text-file.md"
 ---
 
@@ -9,43 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Ecrire un programme en langage C est une compétence essentielle dans le monde de la programmation. Un des aspects les plus utiles de la programmation en C est la capacité de créer et de manipuler des fichiers textes. Dans cet article, nous allons explorer pourquoi il est important de savoir écrire un fichier texte en langage C.
+Si vous êtes un programmeur en herbe ou même un vétéran de la programmation, vous avez peut-être entendu parler de la création de fichiers texte en C. Mais pourquoi quelqu'un voudrait-il écrire un fichier texte en premier lieu?
+
+Eh bien, la réponse est simple - les fichiers texte sont l'un des moyens les plus simples et les plus polyvalents de stocker et de manipuler des données dans un programme. Ils sont également compatibles avec la plupart des langages de programmation et faciles à manipuler pour les utilisateurs finaux.
 
 ## Comment faire
 
-Le processus d'écriture d'un fichier texte en C peut sembler intimidant au début, mais il est en réalité assez simple. Tout d'abord, vous devez inclure la bibliothèque "stdio.h" dans votre programme pour pouvoir utiliser les fonctions d'entrée/sortie standard. Ensuite, vous devez ouvrir le fichier en utilisant la fonction fopen() en spécifiant le nom du fichier et le mode d'ouverture ("w" pour écrire). En utilisant la fonction fprintf(), vous pouvez écrire du texte dans le fichier. Enfin, n'oubliez pas de fermer le fichier en utilisant la fonction fclose() lorsque vous avez terminé.
+Écrire un fichier texte en C est assez simple et peut être fait avec quelques lignes de code. Consultez l'exemple ci-dessous:
 
-Voici un exemple de code pour écrire un fichier texte en C :
+```C 
+#include <stdio.h> //Inclure la bibliothèque standard d'E/S
 
-```C
-#include <stdio.h>
+int main() {
 
-int main(void) {
-    // Ouvrir le fichier en mode écriture
-    FILE *fichier = fopen("mon_fichier.txt", "w");
+    FILE *fichier; //Déclarer un pointeur de fichier
+    fichier = fopen("monfichier.txt", "w"); //Ouvrir le fichier en mode écriture
 
-    // Ecrire du texte dans le fichier
-    fprintf(fichier, "Bonjour le monde !");
+    //Écrire du texte dans le fichier
+    fprintf(fichier, "Ceci est un fichier texte créé en utilisant C");
 
-    // Fermer le fichier
+    //Fermer le fichier
     fclose(fichier);
 
     return 0;
 }
 ```
 
-En exécutant ce code, un fichier texte appelé "mon_fichier.txt" sera créé dans le même répertoire que votre programme, contenant le texte "Bonjour le monde !".
+Lorsque vous exécutez le code ci-dessus, il créera un fichier texte nommé "monfichier.txt" et y écrira la phrase "Ceci est un fichier texte créé en utilisant C". Vous pouvez également utiliser la fonction `fputc()` pour écrire un seul caractère et `fputs()` pour écrire une chaîne de caractères dans le fichier.
 
 ## Plongée en profondeur
 
-Maintenant que nous avons vu comment écrire un fichier texte en C, voyons pourquoi cette compétence est importante. Tout d'abord, en écrivant un fichier texte, vous pouvez stocker des informations de manière permanente. Ceci est utile pour les programmes qui doivent stocker des données, telles que des scores de jeu ou des bases de données. De plus, cela permet de créer des fichiers pour partager des données avec d'autres programmes ou utilisateurs.
+Maintenant que vous savez comment écrire un fichier texte en utilisant C, il est important de comprendre comment cela fonctionne réellement. Lorsque vous ouvrez un fichier en mode écriture, l'ordinateur alloue un bloc d'espace pour que vous puissiez écrire vos données. Toutes les données écrites dans le fichier seront stockées dans ce bloc jusqu'à ce que le fichier soit fermé. Si vous écrivez une quantité de données plus grande que l'espace alloué, les données supplémentaires seront perdues.
 
-Il est également important de savoir comment écrire un fichier texte en C pour pouvoir lire des fichiers. En utilisant les fonctions d'entrée/sortie standard, vous pouvez facilement lire le contenu d'un fichier texte, ce qui permet à votre programme d'utiliser ces données pour effectuer des tâches spécifiques.
-
-Il est à noter que la manipulation de fichiers texte en C peut être plus complexe si vous avez besoin de lire ou d'écrire des données structurées, telles que des nombres ou des chaînes de caractères. Dans ce cas, vous devrez utiliser des fonctions telles que fscanf() pour lire les données d'un fichier et fprintf() pour les écrire.
+Il est également important de mentionner que vous pouvez également lire à partir d'un fichier texte en utilisant C en utilisant la fonction `fgetc()` pour lire un seul caractère et `fgets()` pour lire une ligne de texte. Vous pouvez également utiliser la fonction `fscanf()` pour formater la lecture des données à partir du fichier.
 
 ## Voir aussi
 
-- [Introduction à la programmation en C](https://fr.wikipedia.org/wiki/Programmation_en_C)
-- [Fonctions d'entrée/sortie en C](https://www.programiz.com/c-programming/c-input-output)
-- [Tutoriel sur la création et la lecture de fichiers en C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [Guide pratique pour créer, lire et écrire un fichier texte en C] (https://www.geeksforgeeks.org/basics-file-handling-c/#:~:text=%20%201.,Noter%20que%20tout%20fichier%20est%20cr%C3%A9%C3%A9%20en%20tant%20que%20%20%E2%80%9Cfichier.%E2%80%9D%20%20More%20)
+
+- [Tutoriel sur les fichiers en C] (https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+
+- [Documentation C pour les opérations sur les fichiers] (https://www.cplusplus.com/reference/cstdio/)
+
+Maintenant que vous savez comment écrire un fichier texte en C, vous pouvez commencer à l'utiliser dans vos projets et vous familiariser avec toutes les fonctions et méthodes disponibles pour manipuler les fichiers. Bonne programmation!

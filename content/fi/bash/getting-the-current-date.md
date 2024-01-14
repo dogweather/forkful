@@ -1,68 +1,57 @@
 ---
-title:                "Bash: Päivämäärän hankkiminen tietokoneohjelmoinnissa"
+title:                "Bash: Päivämäärän hakeminen"
+simple_title:         "Päivämäärän hakeminen"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Bash-ohjelmointi on monipuolista ja sen avulla voi tehdä monia käteviä asioita, kuten esimerkiksi hakea tietoja internetistä tai käsitellä tekstitiedostoja. Yksi hyödyllinen toiminto, jota Bashilla voi tehdä, on nykyisen päivämäärän hakeminen. Tässä blogikirjoituksessa käymme läpi, kuinka tämä onnistuu.
+## Miksi Päivämäärää Kannattaa Hakea
 
-## Näin teet sen
-Ensiksi, avaa Bash terminaali ja kirjoita seuraava komento:
+Haluatko lisätä päivämäärämerkinnän skriptiisi? Ehkä haluat luoda tiedoston, jossa sen luomispäivä on määritetty automaattisesti? Tai ehkä haluat vain tietää tarkalleen, milloin tietty komento suoritettiin. Riippumatta syystä, Bashilla on helppo tapa saada nykyinen päivämäärä ja aika.
+
+## Kuinka Hakea Nykyinen Päivämäärä
+
+On olemassa useita tapoja saada nykyinen päivämäärä Bashissa. Ensimmäinen ja yksinkertaisin tapa on käyttää komentoa `date` ja sen erilaisia vaihtoehtoja.
 
 ```Bash
 date
 ```
 
-Tämä komento tulostaa nykyisen päivämäärän ja kellonajan seuraavassa muodossa:
+Tämä tulostaa nykyisen päivämäärän ja ajan, muodossa `Mon Jan 18 11:46:32 UTC 2021`.
+
+Jos haluat päivämäärän tietyssä muodossa, voit käyttää `date` komentoa ja määrittää sen formaatin `+` -merkillä.
 
 ```Bash
-ma marrask.  4 20:35:30 EET 2019
+date +"%d.%m.%Y"
 ```
 
-Voit myös valita minkä muodossa haluat tulostetun päivämäärän lisäämällä erilaisia argumentteja komentoon. Esimerkiksi, jos haluat tulostaa pelkän päivämäärän numeroina, voit käyttää seuraava komento:
+Tämä tulostaa nykyisen päivämäärän muodossa `18.01.2021`.
+
+Voit myös käyttää `date` komentoa erilaisilla vaihtoehdoilla saadaksesi tiettyjä tietoja, kuten vain päivämäärä tai aika.
 
 ```Bash
-date +%m%d%Y
+date +"%A" # Tulostaa nykyisen päivän, esimerkiksi "Maanantai"
+date +"%R" # Tulostaa nykyisen ajan formaatissa HH:MM, esimerkiksi "11:46"
 ```
 
-Se tuottaa tuloksen seuraavassa muodossa:
+## Syvempi Sukellus
+
+`date` komennolla on monia vaihtoehtoja, joita voit käyttää saadaksesi erilaisia tietoja nykyisestä päivämäärästä ja ajasta. Voit tutustua kaikkiin saatavilla oleviin vaihtoehtoihin Bashin manuaalisivulla `man date`.
+
+Voit myös käyttää `date` komentoa muuttujien määrittämiseen ja tallentamaan päivämäärän tai ajan johonkin muuhun komentoon tai skriptiin.
 
 ```Bash
-11042019
+CURRENT_DATE=$(date +"%m-%d-%Y")
+echo "Tämän päivän päivämäärä on $CURRENT_DATE"
 ```
 
-Voit myös muokata päivämäärän ja kellonajan asetuksia komennolla. Esimerkiksi, jos haluat näyttää vain vuoden, voit käyttää seuraavaa komentoa:
+Tämä tallentaa muuttujaan `CURRENT_DATE` nykyisen päivämäärän muodossa `01-18-2021` ja tulostaa sen `echo` komennolla.
 
-```Bash
-date +%Y
-```
+## Katso Myös
 
-Tämä tulostaa seuraavasti:
-
-```Bash
-2019
-```
-
-## Syvemmälle asiaan
-Voit lisätä myös muita komentoja päivämääräkomennon kanssa, jotta saat tarkempia tietoja. Esimerkiksi, jos haluat tarkistaa, mikä viikonpäivä on, voit lisätä komennon loppuun " +%A" ja se tulostaa viikonpäivän koko nimellä.
-
-```Bash
-date +%A
-```
-
-Tämä tulostaa esimerkiksi seuraavasti:
-
-```Bash
-maanantai
-```
-
-Lisäksi, voit lisätä komennon loppuun myös muita muotoiluja, kuten päivän lyhentyneet nimet (%a), kuukauden numero (%m) tai kellonajan erilaiset formaatit. Käytössä on paljon erilaisia vaihtoehtoja, joten kannattaa kokeilla ja löytää itselleen sopiva tapa tulostaa päivämäärät.
-
-## Katso myös
-- [Bash Commands Cheat Sheet](https://devhints.io/bash)
-- [Bash Scripting Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Bash Date command documentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Bashin manuaalisivu](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bashin muuttujat](https://www.pluralsight.com/blog/it-ops/linux-basics-when-to-use-environment-variables-vs-shell-variables)

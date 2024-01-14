@@ -1,35 +1,37 @@
 ---
 title:                "Javascript: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi käsitellä komentoriviparametreja?
+## Miksi
+Miksi lukisit komentorivin argumentteja Javascript-ohjelmointikielellä? Komentorivin argumentit ovat hyödyllinen tapa lukea ja välittää tietoa ohjelmalle suoraan komentoriviltä. Tämä voi olla hyödyllistä, kun haluat mukauttaa ohjelmasi toimintaa tai suorittaa erilaisia tehtäviä komentoriviltä käsin.
 
-Komentoriviparametrit ovat tärkeä osa Javascript-ohjelmointia, sillä ne antavat käyttäjille mahdollisuuden antaa lisäargumentteja koodille. Tämä mahdollistaa ohjelmien räätälöinnin ja käyttökokemuksen parantamisen.
+## Miten
+Komentorivin argumentit voidaan lukea ja käsitellä helposti Javascriptillä. Seuraavassa esimerkissä käymme läpi, kuinka voit lukea käyttäjän antaman komentorivin argumentin ja tulostaa sen konsoliin:
 
-Kuinka käsitellä komentoriviparametreja:
+```Javascript
+// Luodaan muuttuja, johon tallennetaan ensimmäinen komentorivin argumentti
+let argumentti = process.argv[2];
 
-```javascript
-// Esimerkki koodista
-// Tämä koodi tulostaa komentoriviltä annetun argumentin
-let parametri = process.argv[2];
-console.log(`Käyttäjän antama parametri: ${parametri}`);
+// Tulostetaan vastaus konsoliin
+console.log("Käyttäjä antoi komentorivin argumentin: " + argumentti);
+
+// Komentorivillä syötetään esimerkiksi "node ohjelma.js Hello World"
+// Tulostus: "Käyttäjä antoi komentorivin argumentin: Hello World"
 ```
 
-Kun ohjelma suoritetaan komentoriviltä komennolla "node ohjelma.js argumentti", tulostuu seuraava:
-```
-Käyttäjän antama parametri: argumentti
-```
+Käyttämällä `process.argv` -oliota voit lukea kaikki komentorivin argumentit ja käsitellä niitä haluamallasi tavalla. Argumentit luetaan aina taulukkona, joten voit käyttää esimerkiksi `for`-silmukkaa niiden läpikäymiseen.
 
-Syötettyä parametria voi käyttää koodissa esimerkiksi ehtolausekkeessa tai laskutoimituksissa. Parametrien käsittely avaa mahdollisuuden luoda monipuolisempia ja interaktiivisempia ohjelmia.
-
-Syrjäytys:
-
-Komentoriviparametrit ovat käytännöllisiä työkaluja, mutta koodin lukuisien parametrien käsittely voi näyttäytyä haastavalta. On tärkeää ymmärtää, että prosessi.argv-taulukko sisältää myös muita objekteja, kuten tiedoston nimen ja suorituskerrat. Koodin suunnittelussa onkin hyvä pohtia, miten prosessi.argv-taulukkoa voidaan hyödyntää tehokkaimmin.
+## Syvemmälle
+Komentorivin argumentteja voidaan käyttää monipuolisesti ohjelmissa. Voit esimerkiksi muuttaa ohjelman toimintaa eri argumenttien perusteella tai välittää tietoa eri moduuleille ohjelman sisällä. On tärkeää muistaa, että komentorivin argumentit ovat aina merkkijonoja, joten tarvittaessa ne pitää muuttaa muuhun muotoon, esimerkiksi numeroksi, ennen käyttöä.
 
 ## Katso myös
-- [MDN: Command line arguments](https://developer.mozilla.org/fi/docs/Web/API/CommandLine)
+- [process.argv dokumentaatio (englanniksi)](https://nodejs.org/dist/latest-v12.x/docs/api/process.html#process_process_argv)
+- [Node.js ohjeet komentorivin argumenttien lukemiseen (englanniksi)](https://nodejs.dev/learn/nodejs-accept-arguments-from-the-command-line)
+- [Komentorivin argumenttien hyödyntäminen Node.js:ssä (suomeksi)](https://code.visualstudio.com/docs/nodejs/nodejs-tutorial#_arguments)

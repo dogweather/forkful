@@ -1,41 +1,41 @@
 ---
 title:                "Swift: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför##
 
-Att skriva till standard error i Swift kan vara en användbar teknik för att felmeddelanden och varningar ska synas på ett tydligt sätt. Detta gör det möjligt för utvecklare att snabbt felsöka och förbättra sin kod.
+När du skriver Swift-kod, är det viktigt att veta hur man använder standardfelutmatning för att felsöka och förbättra din kod. Genom att skriva till standardfelutmatning kan du se specifika felmeddelanden och veta var i koden problemet uppstår.
 
-## Hur man gör det
+##Så här gör du##
 
-Det finns flera sätt att skriva till standard error i Swift, men ett enkelt sätt är att använda funktionen `fputs()`. Nedan följer ett exempel på hur man kan använda funktionen för att skriva ett felmeddelande:
-
-```Swift
-if num1 > num2 {
-    fputs("Nummer 1 är större än nummer 2", stderr)
-}
-```
-
-Detta kommer att skriva ut felet till standard error istället för standard output. Det är också möjligt att använda `print()`-funktionen och ange målet för utskriften som standard error genom att ange parametern `to:`:
+För att skriva till standardfelutmatning kan du använda Swifts globala funktion "print" med parametern "to:". Som standard skrivs utskriften till standardutmatningen, men genom att ange "standardError" som parametern "to:" kan du skriva till standardfelutmatning istället.
 
 ```Swift
-if num1 > 10 {
-    print("Numret är större än 10", to: &stderr)
-}
+print("Detta är ett felmeddelande", to: &standardError)
 ```
 
-## Fördjupning
+När du kör koden ovan kommer utskriften att skrivas till standardfelutmatning istället för standardutmatning. Du kan också inkludera variabler eller andra värden i utskriften för att få mer specifik information.
 
-Att skriva till standard error är en bra teknik för att separera felmeddelanden från vanlig output. Det är också möjligt att använda `FileHandle`-klassen för att skriva till en specifik fil istället för standard error. Denna klass är användbar om man vill samla alla felmeddelanden i en särskild loggfil.
+```Swift
+let num = 10
+print("Värdet är \(num)", to: &standardError)
+```
 
-En annan fördel med att skriva till standard error är att utskriften inte buffras, vilket betyder att alla felmeddelanden kommer att visas direkt när de uppstår. Detta är mycket användbart vid felsökning och kan spara tid när man letar efter fel i koden.
+##Djupdykning##
 
-## Se också
+Att kunna använda standardfelutmatning är ett viktigt verktyg för felsökning, särskilt när det gäller utveckling av större projekt med många olika delar. Genom att skriva till standardfelutmatning kan du snabbt hitta och korrigera fel i din kod, vilket sparar tid och frustration i långa loppet.
 
-- [Swift dokumentation: Writing to Standard Error](https://developer.apple.com/documentation/swift/filehandle/1410773-init)
-- [How to use fputs() for printing to standard error in Swift?](https://stackoverflow.com/questions/40559724/how-to-use-fputs-for-printing-to-standard-error-in-swift)
+Att inkludera variabler och värden i utskriften gör det också enklare att förstå vad som går fel och var i koden problemet finns. Du kan också använda Swifts "assert" funktion för att skriva till standardfelutmatning när ett villkor inte uppfylls, vilket kan hjälpa dig att hitta och åtgärda problem i din kod.
+
+##Se även##
+
+- [Swifts officiella dokumentation om standardutmatning](https://developer.apple.com/documentation/swift/standarderror)
+- [En guide till att använda Swifts "print" funktion](https://www.hackingwithswift.com/example-code/language/how-to-send-text-to-the-console-using-swift)
+- [Detaljerad information om Swifts "assert" funktion](https://www.swiftbysundell.com/basics/asserting-in-swift/)

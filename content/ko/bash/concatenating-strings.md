@@ -1,42 +1,82 @@
 ---
 title:                "Bash: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 
 
-웹 개발이나 데이터 처리를 하는 동안, 때때로 우리는 문자열을 합치는 것이 필요합니다. 예를 들어, 여러 개의 변수를 조합하여 하나의 문장을 만들거나, 사용자의 입력값으로 동적으로 문자열을 생성하는 경우 등에 사용될 수 있습니다. 문자열 연결(concatenation)은 소프트웨어 개발에 있어서 매우 유용한 기능 중 하나입니다.
+문자열을 연결하는 것이 유용한 이유는 여러 개의 독립적인 문자열을 하나의 문자열로 합칠 수 있기 때문입니다. 이는 데이터 처리나 문자열 조작을 할 때 편리한 방법입니다. 
 
-## 사용 방법
+## 방법 
 
 ```Bash
-# 변수를 활용한 문자열 연결
-name="John"
-age=25
-echo "제 이름은 $name이며, 나이는 $age살입니다."
-# 출력 결과: 제 이름은 John이며, 나이는 25살입니다.
+# 변수에 문자열 할당
+first_name="John"
+last_name="Smith"
 
-# 사용자의 입력값으로 동적으로 문자열 연결
-echo "당신의 이름은 무엇인가요?"
-read name
-echo "안녕하세요, $name님! 반가워요."
-# 출력 결과: 당신의 이름은 무엇인가요?
-#           (사용자가 입력한 이름)님! 반가워요.
+# 문자열 연결
+full_name="$first_name $last_name"
+
+# 출력
+echo $full_name
 ```
 
-위 코드에서 `echo` 명령어를 사용하여 문자열을 출력하면서, 변수를 활용하여 문자열을 연결할 수 있습니다. 또한 사용자의 입력값을 `read` 명령어로 받아와서 동적으로 문자열을 생성할 수도 있습니다. Bash 스크립트에서는 쉽게 문자열을 조합하여 원하는 형태의 결과물을 출력할 수 있습니다.
+출력:
+```
+John Smith
+```
 
-## 딥 다이브
+## 깊게 들어가기 
 
-Bash 스크립트에서 문자열 연결을 할 때, 주의할 점이 있습니다. 바로 띄어쓰기와 따옴표의 사용입니다. 예를 들어 위에서 살펴본 코드에서 `"제 이름은 $name이며, 나이는 $age살입니다."` 부분에서 변수를 표현하기 위해 `${변수명}`과 같은 형태를 사용하였습니다. 이렇게 해주지 않으면 Bash는 `$name이`라는 하나의 변수를 인식하고 이는 정의되지 않은 변수이기 때문에 원하는 결과를 얻을 수 없습니다.
+문자열을 연결할 때는 변수를 사용하거나 문자열을 따옴표로 묶어야 합니다. 그렇지 않으면 Bash는 각각의 문자열로 인식하여 원하는 결과를 얻을 수 없습니다. 또한 변수를 사용할 때는 `$` 기호를 붙여야 합니다. 
 
-또한 따옴표의 사용도 중요합니다. 위 코드 예시에서 나오듯이, 따옴표 내부에서 변수를 사용하여 문자열을 연결한 경우에는 따옴표를 쓰지 않아도 원하는 형태의 결과가 나오지만, 따옴표를 생략하면 변수를 인식하지 못하고 단순 문자열로 인식할 수 있다는 점을 기억해야 합니다.
+예를 들어, 다음과 같은 코드를 작성했을 때 
 
-## 관련 링크 보기
+```
+# 변수에 할당한 숫자 더하기
+num1=10
+num2=20
+result=num1 + num2
 
-- [Bash 공식 문서](https://www.gnu.org/software/bash/manual/bash.html)
-- [Linux 운영체제에서의 문자열 연결 가능한 다양한 방법](https://tecadmin.net/concatenate-strings-in-linux/)
+# 출력
+echo $result
+```
+
+출력은 다음과 같이 나올 것입니다. 
+
+```
+num1 + num2
+```
+
+이는 변수가 문자열로 연결되었기 때문입니다. 따라서 올바른 코드는 다음과 같이 작성되어야 합니다.
+
+```
+# 변수에 할당한 숫자 더하기
+num1=10
+num2=20
+result=$((num1 + num2)) # 변수 뒤에 $ 기호 빠짐
+
+# 출력
+echo $result
+```
+
+출력:
+```
+30
+```
+
+## 관련 링크 
+
+- [Bash 문자열 연산자](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
+- [Bash 쉘 스크립팅 가이드](https://www.linuxfordevices.com/tutorials/bash-scripting-guide)
+- [Bash 공식 문서](https://www.gnu.org/software/bash/manual/bash.html) 
+
+## 참고하기 
+
+위에서 언급한 것처럼, Bash에서 문자열을 연결할 때는 변수를 사용하거나 따옴표를 사용해야 합니다. 그렇지 않으면 제대로 된 결과를 얻을 수 없습니다. 매우 중요한 지식이므로,Bash 프로그래밍을 할 때 항상 기억하고 적용해야 합니다.

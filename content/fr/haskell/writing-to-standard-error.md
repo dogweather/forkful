@@ -1,52 +1,39 @@
 ---
-title:                "Haskell: Écrire vers l'erreur standard"
+title:                "Haskell: Écrire vers les erreurs standard"
+simple_title:         "Écrire vers les erreurs standard"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire vers l'erreur standard en Haskell?
+## Pourquoi
 
-Écrire vers l'erreur standard en Haskell peut être utile pour afficher des messages d'erreur ou de débogage dans la console, plutôt que dans la sortie standard où ils peuvent aller inaperçus.
+Êtes-vous frustré lorsqu'un programme plante et que vous ne savez pas pourquoi? En utilisant la fonction `hPutStrLn stderr`, vous pouvez facilement écrire des messages d'erreur pour aider à déboguer votre code Haskell.
 
-## Comment procéder?
+## Comment faire
 
-Voici un exemple de code Haskell montrant comment écrire vers l'erreur standard en utilisant la bibliothèque `System.IO`:
-
-```Haskell
-import System.IO
-
-main = do
-   hPutStrLn stderr "Ceci est un message d'erreur."
-```
-
-Lorsque nous exécutons ce code, le message d'erreur sera affiché dans la console au lieu d'être redirigé vers la sortie standard. Voici l'exemple de sortie que nous obtiendrons:
-
-```
-Ceci est un message d'erreur.
-```
-
-## Plongeons plus en profondeur
-
-Il est également possible de personnaliser le message d'erreur en utilisant des formats de chaîne et en passant des variables en tant qu'arguments de la fonction `hPutStrLn`. Voici un exemple de code pour illustrer cela:
+Utiliser `hPutStrLn stderr` pour écrire un message sur la sortie standard d'erreur est simple. Voici un exemple de code pour illustrer son utilisation:
 
 ```Haskell
 import System.IO
 
 main = do
-   let num = 42
-   hPutStrLn stderr $ "Le nombre " ++ show num ++ " est un élément essentiel pour la réponse ultime de l'univers."
+  hPutStrLn stderr "Ce message s'affichera sur la sortie standard d'erreur"
 ```
 
-Dans cet exemple, nous utilisons la fonction `show` pour convertir la variable `num` de type `Int` en une chaîne de caractères afin de concaténer correctement notre message. Voici à quoi ressemblera la sortie:
+Lorsque vous exécutez ce code, le message sera affiché sur la sortie standard d'erreur plutôt que sur la sortie standard normale. Cela permet de distinguer les erreurs des autres sorties de votre programme.
 
-```
-Le nombre 42 est un élément essentiel pour la réponse ultime de l'univers.
-```
+## Plongée en profondeur
 
-# Voir aussi
+La fonction `hPutStrLn` appartient au module `System.IO`, qui fournit des fonctions pour les entrées/sorties dans Haskell. Elle prend deux paramètres: le premier est le fichier sur lequel écrire (ici, `stderr` pour la sortie standard d'erreur) et le second est le message à écrire.
 
-- [Documentation sur la bibliothèque System.IO en Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Tutoriel Haskell pour débutants](https://www.tutorialspoint.com/haskell/index.htm)
+Il est important de noter que `stderr` est un flux non-tamponné, ce qui signifie que les messages seront affichés immédiatement, sans attente de la fin de l'exécution du programme. Cela peut être utile pour déboguer les problèmes qui se produisent pendant l'exécution du code.
+
+## Voir aussi
+
+- [Documentation officielle de `System.IO`](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
+- [Tutoriel sur la gestion des erreurs en Haskell](https://www.vex.net/~trebla/haskell/error_handling.xhtml)
+- [Didacticiel interactif pour apprendre Haskell](https://learnyouahaskell.com/)

@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Att skriva till standardfel"
+title:                "TypeScript: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/writing-to-standard-error.md"
 ---
 
@@ -9,28 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva till standardfelflödet kan vara en användbar funktion i dina TypeScript-program. Genom att skriva till standardfelflödet kan du visa meddelanden i terminalen som kan hjälpa dig att felsöka och förbättra din kod.
+Att skriva till standard error i TypeScript kan vara användbart för att fånga och hantera felmeddelanden i koden. Genom att skriva till standard error kan du också logga information som är viktig för felhantering och felsökning.
 
-## Så här gör du
+## Hur man gör det
 
-För att skriva till standardfelflödet i dina TypeScript-program kan du använda ```console.error()```-funktionen. Här är ett enkelt exempel:
+För att skriva till standard error i TypeScript kan du använda console.error() funktionen. Till exempel:
 
 ```TypeScript
-let num: number = 10;
-if (num > 5) {
-  console.error("Numret är större än 5!");
-}
+let message:string = "Ett fel inträffade!";
+console.error(message);
 ```
 
-När detta kodblock körs kommer meddelandet "Numret är större än 5!" att skrivas till standardfelflödet i terminalen.
+Detta kommer att skriva ut meddelandet "Ett fel inträffade!" i standard error-fönstret.
 
 ## Djupdykning
 
-När du använder ```console.error()``` är det viktigt att ha i åtanke att det inte bara är avsett för felmeddelanden. Det kan också vara ett bra sätt att visa viktiga meddelanden eller för att markera särskilda händelser i ditt program.
+När ett fel inträffar i din kod, skickar TypeScript automatiskt felmeddelandet till konsolen. Men genom att skriva till standard error kan du styra var felmeddelandet ska visas och även formatera det på ett lämpligt sätt. Detta gör det möjligt för dig att dedikera en specifik del av din kod för att hantera fel och ge mer användbar information till användaren om vad som gick fel.
 
-Det är också värt att nämna att det finns andra sätt att skriva till standardfelflödet, som till exempel att använda ```process.stderr.write()```. Det är dock viktigt att förstå skillnaderna mellan dessa olika metoder och välja den som bäst passar ditt syfte.
+En annan användbar funktion är console.assert(). Detta låter dig kontrollera ett villkor och skriva till standard error om villkoret inte är uppfyllt. Exempel:
+
+```TypeScript
+let nummer:number = 5;
+console.assert(nummer < 0, "Numret måste vara negativt för den här koden att fungera!");
+```
+
+Om numret är positivt kommer felmeddelandet att skrivas ut i standard error-fönstret.
 
 ## Se även
 
-- [Official TypeScript Documentation - Console](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-5.html#new-features)
-- [MDN Web Docs - Console](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+- [Node.js process.stderr](https://nodejs.org/api/process.html#process_process_stderr) - dokumentation för Node.js process.stderr modulen, som används för att skriva till standard error i Node.js.
+- [MDN Console API](https://developer.mozilla.org/en-US/docs/Web/API/Console) - information om Console API, som innehåller funktioner som console.error() och console.assert().
+- [Dev.to artikel om att skriva till standard error i TypeScript](https://dev.to/suyash/how-to-write-to-standard-error-in-typescript-38el) - en detaljerad guide om hur man skriver till standard error i TypeScript.

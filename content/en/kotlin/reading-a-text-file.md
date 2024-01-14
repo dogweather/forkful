@@ -1,62 +1,90 @@
 ---
 title:                "Kotlin recipe: Reading a text file"
+simple_title:         "Reading a text file"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Engage in Reading a Text File
+## Why
 
-When working with data and information in a program, it is often necessary to read data from a text file. This allows for easier manipulation and organization of the data within the code, making it an essential skill for any programmer. In this blog post, we will explore how to read a text file in Kotlin to enhance your programming skills.
+Reading a text file is a common and important task in any programming language. Whether you're trying to retrieve data from a file or process a large dataset, knowing how to read a text file is a valuable skill for any programmer. In this blog post, we'll explore how to read a text file using Kotlin programming language.
 
-## How To: Reading a Text File in Kotlin
+## How To
 
-### Step 1: Importing Necessary Packages
+To read a text file in Kotlin, we first need to create a file object that represents our text file. We can do this using the `File` class from the standard library.
 
-To read a text file in Kotlin, we first need to import the necessary packages. This can be done using the following code:
-```Kotlin
-import java.io.File
+```
+val file = File("file.txt")
 ```
 
-This allows us to use built-in functions from the Java `io` package to read and manipulate files.
+Next, we need to create a `Scanner` object that will allow us to read the contents of the file.
 
-### Step 2: Creating a File Object
-
-Next, we need to create a File object representing the text file we want to read. This can be done using the following code:
-```Kotlin
-val file = File("example.txt")
+```
+val scanner = Scanner(file)
 ```
 
-In this example, `example.txt` is the name of the text file we want to read. Make sure to provide the correct file path if the file is not in the same directory as your program.
+Now, we can use the `while` loop to read each line of the file until we reach the end of the file.
 
-### Step 3: Reading the File
-
-Now that we have our File object, we can start reading the contents of the file. This can be done using the `readText()` function, as shown below:
-```Kotlin
-val text = file.readText()
+```
+while(scanner.hasNextLine()) {
+    println(scanner.nextLine())
+}
 ```
 
-This will store the contents of the text file into a string variable named `text` for further manipulation.
+This code will print out each line of the file to the console. We can also store the lines in a list or perform any other operations on each line.
 
-### Step 4: Printing Output
-
-To verify that the file has been successfully read, we can print the contents of the `text` variable using the `println()` function:
-```Kotlin
-println(text)
+```
+val lines = mutableListOf<String>()
+while(scanner.hasNextLine()) {
+    lines.add(scanner.nextLine())
+}
 ```
 
-This will print the entire text file in the console.
+Alternatively, we can use the `useLines` function to read the file and perform operations on each line in a functional way.
+
+```
+val lines = file.useLines { lines -> lines.toList() }
+```
+
+Additionally, Kotlin provides the `readLines` function to read all the lines of a file at once and store them in a list.
+
+```
+val lines = file.readLines()
+```
 
 ## Deep Dive
 
-There are other ways to read a text file in Kotlin, such as using streams or buffered readers. These methods allow for more control over the reading process and are useful for handling larger or more complex files. It is important to research and understand these methods in order to efficiently work with text files in your programs.
+When reading a text file, it's important to consider things like encoding and handling of line endings. By default, the `Scanner` object uses the system's default encoding. However, we can specify the encoding explicitly by passing it as a parameter.
+
+```
+val scanner = Scanner(file, Charset.forName("UTF-8"))
+```
+
+Kotlin also provides ways to handle different line endings, such as `useDelimiter` function to set a specific delimiter for the lines or `nextLine` function with a specified delimiter to read until that delimiter is found.
+
+```
+scanner.useDelimiter(",")
+while(scanner.hasNextLine()) {
+    println(scanner.nextLine())
+}
+```
+
+Additionally, we can use `forEachLine` function to iterate over each line of the file and perform operations on it.
+
+```
+file.forEachLine { line ->
+    println(line)
+}
+```
 
 ## See Also
 
-- [Kotlin File I/O Tutorial](https://kotlinlang.org/docs/tutorials/kotlin-for-py/io.html#reading-files)
-- [Java IO Package Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/package-summary.html)
-- [Kotlin Streams and Buffered Readers Tutorial](https://www.geeksforgeeks.org/reading-a-file-in-kotlin/)
+Here are some additional resources to help you dive deeper into reading text files in Kotlin:
 
-Reading a text file is a fundamental skill for any programmer, and with the power and flexibility of Kotlin, it can be easily implemented. With the knowledge gained from this blog post, you can now confidently read and manipulate text files in your Kotlin programs. Happy coding!
+- [Kotlin IO Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-file/)
+- [Kotlin Collections](https://kotlinlang.org/docs/reference/collections-overview.html)
+- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)

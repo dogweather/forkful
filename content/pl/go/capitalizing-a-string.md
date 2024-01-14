@@ -1,7 +1,9 @@
 ---
-title:                "Go: Zakładanie wielkich liter w ciągu znaków"
+title:                "Go: Zmiana formatowania ciągu znaków"
+simple_title:         "Zmiana formatowania ciągu znaków"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/capitalizing-a-string.md"
 ---
 
@@ -9,13 +11,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Mimo że wydaje się to nieistotne, kapitalizowanie łańcucha znaków jest często niezbędne w programowaniu. W tym artykule dowiesz się, dlaczego warto nauczyć się tego prostego zabiegu.
+Witajcie polscy programiści! Jeśli regularnie pracujecie z językiem Go, zapewne spotkaliście się z potrzebą zmiany wielkości liter w napisach. W tym wpisie opowiem Wam dlaczego to jest ważne i jak można to zrobić w prosty sposób.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-```Go 
-// Podstawowa funkcja w Go do kapitalizowania łańcuchów znaków jest strings.ToUpper()
+W języku Go zmiana wielkości liter jest możliwa dzięki użyciu funkcji `strings.Title()` i `strings.ToUpper()`. Dzięki nim możemy zamienić pierwszą literę lub wszystkie litery w wybranym napisie na wielkie. Oto kilka przykładów:
 
+```Go
 package main
 
 import (
@@ -24,43 +26,53 @@ import (
 )
 
 func main() {
-    myString := "hello world"
-    fmt.Println(strings.ToUpper(myString))
-}
+    input := "witajcie polscy programiści"
+    fmt.Println(strings.Title(input))
 
-// Outputs: HELLO WORLD
+    input = "Go to jest super język"
+    fmt.Println(strings.ToUpper(input))
+}
 ```
 
-> W powyższym przykładzie użyliśmy funkcji `strings.ToUpper()` aby przekształcić łańcuch znaków "hello world" na "HELLO WORLD". Jest to najprostszy sposób na kapitalizowanie łańcuchów znaków w Go.
+Output:
 
-Można także użyć biblioteki "unicode" do złożonych operacji na tekstach. W poniższym przykładzie wykorzystamy funkcję `Title` aby zmienić pierwsze litery wyrazów na wielkie.
+```
+Witajcie Polscy Programiści
+GO TO JEST SUPER JĘZYK
+```
+
+Jak widać, zmiana wielkości liter jest bardzo prosta i nie wymaga wielu linii kodu.
+
+## Deep Dive
+
+W języku Go możemy zmieniać wielkość liter nie tylko w całych napisach, ale także w pojedynczych literach. Możemy to zrobić dzięki użyciu typu `rune`, który reprezentuje pojedynczą literkę wewnętrznie jako liczbę. Dzięki temu możemy wykonywać różne operacje na literach, np. zmienić tylko pierwszą literę na wielką. Przykład:
 
 ```Go
 package main
 
-import (
-    "fmt"
-    "unicode"
-)
+import "fmt"
 
 func main() {
-    myString := "this is a sentence"
-    fmt.Println(unicode.ToTitle(myString))
-}
+    letter := 'a'
+    fmt.Printf("Pierwsza litera: %c\n", letter)
 
-// Outputs: This Is A Sentence
+    // zamiana na wielkie litery
+    letter -= 32
+    fmt.Printf("Pierwsza litera: %c", letter)
+}
 ```
 
-## Wchodzimy w szczegóły
+Output:
 
-Kapitalizowanie łańcuchów znaków może wydawać się prostym zadaniem, ale w niektórych przypadkach może być bardziej skomplikowane. Na przykład, warto zwrócić uwagę na kulturowe różnice w stosowaniu wielkich liter, zwłaszcza w językach, gdzie nie ma tradycji kapitalizowania wyrazów na początku zdania.
+```
+Pierwsza litera: a
+Pierwsza litera: A
+```
 
-Innym wyzwaniem może być kapitalizowanie akronimów lub skrótów, gdzie nie wszystkie litery są zawsze zapisywane wielkimi literami.
+Warto także pamiętać, że w języku Go litery są reprezentowane przy użyciu kodu Unicode, dzięki czemu możemy pracować z różnymi alfabetami.
 
 ## Zobacz także
 
-- Dokumentacja funkcji `strings.ToUpper()` w Go: https://golang.org/pkg/strings/#ToUpper
-- Przykłady użycia funkcji `strings.Title()` w Go: https://gobyexample.com/string-functions
-- Informacje o użyciu biblioteki `unicode` w Go: https://blog.golang.org/strings
-
-Dziękujemy za przeczytanie tego artykułu. Mamy nadzieję, że teraz lepiej rozumiesz dlaczego i jak kapitalizować łańcuchy znaków w języku Go. Pamiętaj, że ta umiejętność może okazać się bardzo przydatna w Twoich przyszłych projektach!
+- Dokumentacja języka Go: https://golang.org/doc/
+- Przewodnik po zmianie wielkości liter w Go: https://gobyexample.com/string-functions
+- Opis typu `rune`: https://golang.org/ref/spec#Rune_literals

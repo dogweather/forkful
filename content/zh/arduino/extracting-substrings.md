@@ -1,58 +1,50 @@
 ---
 title:                "Arduino: 提取子字符串"
+simple_title:         "提取子字符串"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-请感兴趣的编程爱好者阅读！
+# 为什么
 
-## 为什么要提取子字符串？
+在编程中，经常会遇到需要从一个字符串中提取特定的部分的情况。这可以帮助我们更有效地处理数据和优化程序。在 Arduino 编程中，提取子字符串也是一个常见的需求，这是为什么学习这个技术是非常重要的。
 
-在编写代码时，我们经常需要从一个字符串中提取特定的部分。这可能是因为我们需要对单个字符进行操作，或者我们需要将字符串拆分为更小的部分进行处理。无论什么原因，提取子字符串是一个非常常见的操作，它可以帮助我们更有效地处理字符串数据。
+# 如何做
 
-## 如何提取子字符串？
-
-对于Arduino来说，提取子字符串并不难。我们可以使用内置的substring()函数来实现这一点。接下来让我们来看一个简单的示例。
-
-```Arduino
-// 定义一个字符串
-String sentence = "I love to code with Arduino!";
-
-// 提取第一个字母
-String firstLetter = sentence.substring(0, 1);
-
-// 提取"love"这个单词
-String word = sentence.substring(2, 6);
-```
-
-在上面的代码中，我们首先定义了一个字符串变量，其中包含一句话。然后，使用substring()函数，我们可以提取字符串的某个部分。该函数接受两个参数，第一个参数是要提取的起始位置，第二个参数是要提取的结束位置（不包括该位置的字符）。因此，我们可以通过改变这两个参数的值来提取不同的部分。
-
-让我们来看看上面代码的输出：
+在 Arduino 中，提取子字符串可以通过使用 `substring()` 函数来实现。这个函数需要两个参数：起始索引和结束索引。下面是一个示例代码，展示如何提取一个字符串中的子字符串并输出结果。
 
 ```
-firstLetter = "I"
-word = "love"
+Arduino String str = "Hello World!";
+
+String newStr = str.substring(0, 5);
+
+Serial.println(newStr); // 输出 "Hello"
 ```
 
-正如你所看到的，我们通过提取子字符串，成功把字符串分成了更小的部分。现在你可以根据自己的需要，使用substring()函数来提取任何想要的部分。
+上面的代码中，我们定义了一个字符串 `str`，然后使用 `substring()` 函数提取了索引为 0 到 5 的子字符串，并将结果赋值给 `newStr`。最后，我们使用 `Serial` 对象打印了新的子字符串。
 
-## 深入了解提取子字符串
+另外，我们也可以使用 `indexOf()` 函数来找到子字符串的起始索引，然后再将它作为 `substring()` 函数的参数。下面是一个示例代码，展示如何从一个较长的字符串中提取一个单词并输出结果。
 
-如果你想进一步了解如何在Arduino中提取子字符串，你可以研究一下substring()函数的工作原理。它实际上是通过使用两个指针来定位起始位置和结束位置，然后返回这之间的部分字符串。因此，当你使用这个函数时，可以更好地理解它的工作原理。
+```
+Arduino String sentence = "I love coding with Arduino!";
 
-另外，你还可以尝试使用其他字符串操作函数，如indexOf()和lastIndexOf()来提取子字符串。它们也可以帮助你在处理字符串时更高效地提取特定部分。
+int loveIndex = sentence.indexOf("love"); // 找到 "love" 单词的起始索引
 
-## 参考链接
+String love = sentence.substring(loveIndex, loveIndex+4); // 提取 "love" 单词并赋值给新的字符串变量
 
-- [Arduino字符串函数](https://www.arduino.cc/reference/zh/language/variables/data-types/string/functions/substring/)
-- [Arduino字符串教程](https://www.arduino.cc/en/Tutorial/StringSubstring)
-- [substring()函数用法示例](https://lastminuteengineers.com/arduino-strings-substring-indexof-lastindexof/)
+Serial.println(love); // 输出 "love"
+```
 
-## 也可以看看这些
+# 深入了解
 
-- [如何在Arduino中使用字符串变量](https://www.arduino.cc/en/Tutorial/StringConstructors)
-- [字符串操作函数参考指南](https://www.arduino.cc/reference/zh/language/variables/data-types/string/functions/)
-- [处理字符串的常见错误和解决方案](https://www.arduino.cc/en/Tutorial/StringConstructors)
+除了上面介绍的基本用法，还有一些其他方法可以用来提取子字符串，比如使用正则表达式、循环结构等。此外，我们还可以通过修改指针来实现提取子字符串的目的。这些方法需要更深入的了解和编程技巧，但是它们可以帮助我们更灵活地提取任何想要的子字符串。
+
+# 查看更多
+
+- 经典 Arduino 参考手册中的 [substring()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/) 函数文档
+- [C++ String 类参考手册](http://www.cplusplus.com/reference/string/string/substring/)
+- [正则表达式入门教程](https://www.runoob.com/regexp/regexp-tutorial.html)

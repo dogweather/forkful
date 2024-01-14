@@ -1,58 +1,46 @@
 ---
 title:                "Elixir: 패턴과 일치하는 문자 삭제하기"
+simple_title:         "패턴과 일치하는 문자 삭제하기"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-주어진 패턴과 일치하는 문자를 삭제하는 작업을 수행하는 이유는 여러 가지가 있을 수 있습니다. 예를 들어, 특정 문자열에서 불필요한 공백을 제거하거나, 특정 패턴을 가진 단어를 필터링하는 등의 작업을 수행할 수 있습니다. 이러한 작업을 통해 코드의 가독성을 높이거나, 데이터 정제 작업을 수행할 수 있습니다.
+이 글에서, 우리는 엘릭서 프로그래밍 언어에서 문자열 패턴을 지우는 방법을 살펴보겠습니다. 이 작업을 왜 하는지에 대해서 간단히 알아보겠습니다.
 
-## 방법
+# 방법
 
-우선, `Regex` 모듈을 사용하여 문자열에서 패턴을 찾은 후, `String.replace/3` 함수를 사용하여 해당 패턴과 일치하는 문자를 삭제할 수 있습니다. 아래는 간단한 예시 코드입니다.
+우리는 우선 문자열 내에서 원하는 패턴을 검색하고, 그 패턴과 일치하는 문자를 모두 지우는 함수를 만들어볼 것입니다. 이를 위해 `Regex` 모듈을 사용할 것입니다.
 
-```elixir
-input = "Hello! 안녕하세요!"
-pattern = ~r/[!#?]/  # 입력된 문자열에서 !, #, ? 문자를 찾습니다.
-output = String.replace(input, pattern, "")  # 입력된 문자열에서 발견된 패턴과 일치하는 문자를 제거합니다.
-# 출력: "Hello 안녕하세요"
+```Elixir
+# 패턴과 일치하는 문자를 지우는 함수
+def delete_pattern(string, pattern) do
+  # 패턴과 일치하는 문자를 검색
+  matches = Regex.scan(%r/#{pattern}/, string)
+  # 일치하는 문자를 지움
+  string |> String.replace_pattern(%r/#{pattern}/, "")
+end
+
+# 예시
+puts delete_pattern("Hello World!", "l") # Heo Word!
 ```
 
-또 다른 방법으로는 `String.replace/4` 함수를 사용하는 것입니다. 이 함수는 검색 패턴과 일치하는 모든 문자열을 찾아서 특정 문자열로 대체할 수 있습니다. 예를 들어, 아래 코드에서는 입력된 문자열에서 모든 숫자를 "X"로 대체합니다.
+# 깊게 살펴보기
 
-```elixir
-input = "12345"
-pattern = ~r/\d/  # 입력된 문자열에서 숫자를 찾습니다.
-output = String.replace(input, pattern, "X")  # 숫자를 "X"로 대체합니다.
-# 출력: "XXXXX"
-```
+`Regex` 모듈을 사용하여 문자열 내에서 패턴을 지우는 방법을 살펴보았습니다. 이를 좀 더 깊게 들어가보겠습니다.
 
-## 딥 다이브
+먼저 `Regex.scan` 함수는 두 개의 인자를 받습니다. 첫 번째 인자는 패턴을 나타내는 `regex`이고, 두 번째 인자는 검색할 문자열입니다. 이 함수는 일치하는 패턴이 발견되면 해당 패턴을 리스트로 반환합니다. 따라서 `matches`변수에 일치하는 패턴을 저장하게 됩니다.
 
-이제 좀 더 깊게 알아보도록 하겠습니다. `Regex` 모듈의 `replace/3` 함수는 입력된 문자열에서 검색 패턴과 일치하는 첫 번째 문자만을 대체합니다. 따라서 입력된 문자열에 동일한 패턴이 여러 개 있다면, 사용자가 원하는 대로 대체 되지 않을 수 있습니다. 이에 대한 예외 처리를 해주는 것이 좋습니다.
+다음으로 `String.replace_pattern` 함수는 세 개의 인자를 받습니다. 첫 번째 인자는 문자열 자체이고, 두 번째 인자는 바꿀 패턴을 나타내는 `regex`이고, 세 번째 인자는 새로 바꿀 문자열입니다. 이 함수는 첫 번째 인자인 문자열에서 두 번째 인자인 패턴과 일치하는 문자를 세 번째 인자인 문자열로 바꿔줍니다.
 
-또한, 입력된 문자열이 아스키 문자열이 아닌 경우도 예외 처리를 해주어야 합니다. 이는 문자열의 인코딩과 관련이 있습니다. 예를 들어, 한글이 포함된 문자열을 변경하는 경우 아래와 같은 에러가 발생할 수 있습니다.
+따라서 위 예시에서는 `"Hello World!"`라는 문자열에서 `"l"`이라는 패턴과 일치하는 모든 문자를 `""`로 바꿔주었습니다. 따라서 출력 결과는 "eHoo Word!"가 됩니다.
 
-```
-** (ArgumentError) argument error
-    :erlang.binary_to_list("안")
-```
+# 참고 문서
 
-따라서 문자열의 인코딩을 명시적으로 지정해주어야 합니다. 예를 들어, 위의 예제 코드를 아래와 같이 수정할 수 있습니다.
-
-```elixir
-input = "Hello 안녕하세요!"
-pattern = ~r/[!#?]/  # 입력된 문자열에서 !, #, ? 문자를 찾습니다.
-output = String.replace(input, pattern, "", [encoding: :utf8])  # 입력된 문자열에서 발견된 패턴과 일치하는 문자를 제거합니다.
-# 출력: "Hello 안녕하세요"
-```
-
-## 참고
-
-- [`Regex` 모듈 공식 문서](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir School: Pattern Matching](https://elixirschool.com/lessons/basics/pattern-matching/)
-- [Learn Elixir: Regular Expressions](https://www.learnelixir.tv/lessons/basics-regular-expressions)
+- [Elixir Regex 모듈 공식 문서](https://hexdocs.pm/elixir/Regex.html)
+- [Mastering Elixir Regex - Elixir virtuoso](https://blog.openstrapping.org/2017/09/08/mastering-elixir-regex/)

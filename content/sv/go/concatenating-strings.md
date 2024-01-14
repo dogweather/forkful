@@ -1,66 +1,50 @@
 ---
-title:                "Go: Sammanfogning av strängar"
+title:                "Go: Sammansättning av textsträngar"
+simple_title:         "Sammansättning av textsträngar"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att sammanfoga eller sammanslå strängar är en vanlig operation som används i många programmeringsspråk, inklusive Go. Detta gör det möjligt att skapa dynamiska och anpassningsbara strängar som kan användas för att manipulera och visa data på ett effektivt sätt.
 
-## Hur man gör
-För att sammanfoga strängar i Go behövs endast ett par enkla steg. Först måste du definiera de strängar som du vill sammanfoga och tilldela dem till variabler. Sedan kan du använda "+" operatorn för att kombinera strängarna och skapa en ny sträng. Se nedan för ett exempel:
+Att sammanfoga eller "concatenate" strängar är en vanlig uppgift inom programmering, och är särskilt användbart när vi vill skapa en längre text eller ett meddelande genom att kombinera flera olika delar av information. I Go-språket finns det flera sätt att utföra denna uppgift, vilket gör det till en fördelaktig kunskap för alla Go-programmerare.
 
-```Go
-// Definiera variabler
-förnamn := "Anna"
-efternamn := "Andersson"
+## Hur man gör det
 
-// Slå ihop strängarna
-fulltNamn := förnamn + " " + efternamn
-
-// Skriv ut resultatet
-fmt.Println(fulltNamn)
-```
-Output: Anna Andersson
-
-Du kan också använda en funktion som heter "Sprintf" för att sammanfoga strängar. Detta kan vara användbart om du vill ange ett specifikt format för resultatet. Exempelvis:
+Först och främst måste vi förstå att en sträng i Go är en samling av tecken eller bytes. Vi kan skapa en sträng genom att använda enkla citattecken runt vår text, till exempel "Hej" eller 'Det här är en sträng'. För att sammanfoga två strängar tillsammans används '+' operatorn, som i följande exempel:
 
 ```Go
-// Definiera variabler
-ålder := 25
-höjd := 170.2
-
-// Slå ihop strängar med hjälp av Sprintf
-info := fmt.Sprintf("Ålder: %d, Längd: %.1f cm", ålder, höjd)
-
-// Skriv ut resultatet
-fmt.Println(info)
+fname := "John"
+lname := "Smith"
+fullname := fname + " " + lname
+fmt.Println(fullname)
 ```
-Output: Ålder: 25, Längd: 170.2 cm
+Output: John Smith
 
-Det är också möjligt att sammanfoga flera strängar samtidigt genom att använda en variabel av typen "[]string" och sedan använda "Join" funktionen. Exempelvis:
+Som du kan se i exemplet ovan, har vi definierat två variabler - "fname" och "lname" - som innehåller de två delarna av namnet. Genom att använda '+' operatörn har vi sedan skapat en ny variabel "fullname" som är en kombination av de två strängarna och utskrivit den. Genom att lägga till ett mellanslag mellan de två variablerna skapar vi en mellanrum eller ett "whitespace" mellan de två orden när de sammanfogas.
 
-```Go
-// Definiera en variabel av typen []string
-favoritFrukter := []string{"Äpple", "Banan", "Apelsin"}
-
-// Slå ihop strängar med hjälp av Join
-strängar := strings.Join(favoritFrukter, ", ")
-
-// Skriv ut resultatet
-fmt.Println(strängar)
-```
-Output: Äpple, Banan, Apelsin
+Det finns också andra sätt att sammanfoga strängar i Go, som att använda metoden "Join" från "strings" paketet eller "Sprintf" från "fmt" paketet. Det är viktigt att notera att strängar i Go är oföränderliga, vilket betyder att när en sträng väl har deklarerats, kan den inte ändras. Därför skapas i själva verket en ny sträng varje gång vi sammanfogar två strängar.
 
 ## Djupdykning
-I Go, som i många andra språk, är strängar inte föränderliga (immutable), vilket betyder att de inte kan ändras när de väl är skapade. Så när du "slår ihop" strängar, skapar du faktiskt en helt ny sträng som är en kombination av de ursprungliga strängarna.
 
-Något annat att vara medveten om är att sammanfogning av strängar kan påverka prestandan om det görs i en loop eller i stora mängder. Detta beror på att en ny sträng måste skapas varje gång operationen utförs, vilket kan leda till onödigt minnesanvändning.
+Det finns flera andra aspekter att överväga när man sammanfogar strängar i Go. Till exempel, om vi sammanfogar flera strängar i en loop, såsom:
+
+```Go
+result := ""
+for i := 1; i < 5; i++ {
+  result += "num" + strconv.Itoa(i)
+}
+```
+I det här exemplet, eftersom strängar är oföränderliga, skapas en ny sträng för varje iteration av loopen, vilket kan bli ineffektivt för större strängar eller långa loopar. För att hantera detta, kan vi använda metoden "Join" från "strings" paketet, vilket kan hjälpa till att förbättra prestandan och minimera användningen av minne och CPU-tid.
+
+En annan aspekt att tänka på när man sammanfogar strängar är Unicode. Go hanterar Unicode på ett mycket effektivt sätt, men det kan orsaka problem när man sammanfogar strängar från olika källor, som till exempel från en databas eller från användarinput. Det är viktigt att se till att de olika strängarna är kodade på ett enhetligt sätt för att undvika problem med teckenkodning.
 
 ## Se också
-- Officiell Go Dokumentation: https://golang.org/doc/effective_go.html#strings 
-- Sammanfoga strängar med Sprintf: https://golang.org/pkg/fmt/#Sprintf 
-- Sammanfoga strängar med Join: https://golang.org/pkg/strings/#Join
+
+* [Go Dokumentation om stränghantering](https://golang.org/pkg/strings/)
+* [Effektiv Go: Strängmanipulering](https://golang.org/doc/effective_go.html#string_manipulation)
+* [Golang – Strängar](https://riptutorial.com/go/topic/2861/strings)

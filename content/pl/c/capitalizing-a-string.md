@@ -1,45 +1,72 @@
 ---
-title:                "C: Zapisywanie ciągu wielkimi literami"
+title:                "C: Zmiana pierwszej litery na wielką w ciągu znaków."
+simple_title:         "Zmiana pierwszej litery na wielką w ciągu znaków."
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Wiele razy podczas pisania kodu w języku C musimy zmieniać pojawiające się w nim napisy. Jeden z przykładów może być zmiana pierwszej litery w wyrazie na wielką, co jest przydatne w celu prawidłowego formatowania tekstu. W tym blogu omówimy jak zmienić pierwszą literę napisu na wielką w języku C.
+Witajcie programiści! Jeśli jesteście zainteresowani poznaniem sposobu na wielką literę w stringu w języku C, to dobrym miejscem jest ten blog post. Kapitalizacja stringów jest niezwykle przydatna w wielu sytuacjach, na przykład w tworzeniu użytkowników do systemu czy tworzeniu nazw plików. Jest to również ważna umiejętność do posiadania przy pisaniu kodów klienckich dla systemów operacyjnych lub aplikacji internetowych.
 
-# Jak to zrobić
+## Jak To Zrobić
 
-Aby zmienić pierwszą literę w wyrazie na wielką w języku C, musimy użyć pętli `for` w celu przejścia przez cały napis. Następnie używamy funkcji `toupper()` w celu zmiany pierwszej litery na wielką. Poniżej znajduje się przykładowy kod:
+Zanim przejdziemy do kodów, powinniśmy wiedzieć, że istnieją dwa sposoby na wielką literę w stringu w języku C. Pierwszym sposobem jest użycie funkcji `toupper()` z biblioteki `ctype.h`, która zmienia wszystkie litery w stringu na ich odpowiednik w wielkich literach. Drugim sposobem jest ręczne zmienianie każdej litery na wielką literę, wykorzystując wiedzę o kodach ASCII. Oto przykładowy kod dla obu metod:
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
 int main() {
-  char word[] = "programowanie";
-  int length = sizeof(word) / sizeof(word[0]);
-
-  for(int i = 0; i < length; i++) {
-    word[i] = toupper(word[i]);
-  }
-
-  printf("%s", word);
-  
-  return 0;
+    // przykładowy string do kapitalizacji
+    char str[] = "hej, to jest przykładowy string";
+    
+    // użycie funkcji toupper()
+    int i = 0;
+    while(str[i]) {
+        str[i] = toupper(str[i]);
+        i++;
+    }
+    printf("Wielki liter: %s\n", str);
+    
+    // ręczna kapitalizacja
+    i = 0;
+    while(str[i]) {
+        // sprawdzenie czy litera jest mała, czyli w zakresie ASCII od 97 do 122
+        if(str[i] >= 'a' && str[i] <= 'z') {
+            // odejmowanie 32 od kodu ASCII dla zmiany na wielką literę
+            str[i] = str[i] - 32;
+        }
+        i++;
+    }
+    printf("Wielki liter: %s\n", str);
+    
+    return 0;
 }
 ```
+**Output:**
 
-Po uruchomieniu powyższego kodu otrzymamy wyjście "PROGRAMOWANIE", gdzie pierwsza litera została zmieniona na wielką.
+```
+Wielki liter: HEJ, TO JEST PRZYKLADOWY STRING
+Wielki liter: HEJ, TO JEST PRZYKLADOWY STRING
+```
+Jak widać, oba sposoby dają ten sam wynik. Możesz wybrać którąkolwiek z nich, w zależności od Twoich preferencji.
 
-# Głębsza analiza
 
-Funkcja `toupper()` jest dostępna w bibliotece `ctype.h` i służy do zmiany litery na jej odpowiednik wielką. Jest to przydatne narzędzie szczególnie podczas pracy z tekstem i jego formatowaniem. Pamiętajmy, że funkcja ta działa tylko na pojedynczej literze, więc aby zmienić cały napis, musimy użyć pętli `for`. W powyższym przykładzie używamy również funkcji `sizeof()` w celu określenia długości napisu, ponieważ jest to uniwersalny sposób na operacje na tablicach w języku C.
+## Deep Dive
 
-# Zobacz także
+Jeśli chcesz dowiedzieć się więcej o kapitalizacji stringów w języku C, istnieje kilka ważnych rzeczy, które należy wziąć pod uwagę. Po pierwsze, pamiętaj, że w języku C nie ma typu danych "string", więc musisz używać tablic znaków do przechowywania danych tekstowych. Aby uniknąć błędów, upewnij się, że rozmiar tablicy jest większy niż liczba znaków w stringu. Drugim ważnym aspektem jest fakt, że znaki specjalne, takie jak `?`, `&`, `%`, mogą wpłynąć na wynik kapitalizacji i należy z nimi uważać. Wreszcie, pamiętaj, aby zamknąć string znakiem null (`'\0'`) na końcu, aby oznaczyć jego koniec.
 
-- [Dokumentacja funkcji toupper() w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
-- [Przydatne funkcje do pracy z tekstem w języku C](http://www.math.bas.bg/~iad/programs/c.functions.html)
+## Zobacz też
+
+Jeśli chcesz pogłębić swoją wiedzę na temat języka C, oto kilka przydatnych linków:
+
+- [Podstawy języka C](https://www.tutorialspoint.com/cprogramming/index.htm)
+- [Kurs języka C na Codecademy](https://www.codecademy.com/learn/learn-c)
+- [Oficjalna dokumentacja języka C](https://en.cppreference.com/w/c)
+
+Dziękuję za przeczytanie mojego blog posta. Mam nadzieję, że był on dla Ciebie pomocny. Do zobaczenia w następnym wpis

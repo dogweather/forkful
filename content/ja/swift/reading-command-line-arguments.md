@@ -1,39 +1,71 @@
 ---
-title:                "Swift: コンピュータープログラミングにおける「コマンドライン引数の読み込み」"
+title:                "Swift: コンピュータプログラミングにおける記事のタイトル：コマンドライン引数の読み込み"
+simple_title:         "コンピュータプログラミングにおける記事のタイトル：コマンドライン引数の読み込み"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜコマンドライン引数を読む必要があるのか
+## なぜ
 
-コマンドライン引数を読むことは、プログラミングにおいて非常に重要な役割を果たします。コマンドライン引数はプログラムに外部から情報を与えることができるため、柔軟性が向上します。例えば、プログラムを起動時にファイル名やオプションを指定することで、同じプログラムでも異なるファイルや設定を使用することができるようになります。
+コマンドライン引数を読み取ることの重要性は？
 
-# 読み取り方
+プログラムを実行する際に、ユーザーがコマンドライン引数を使用することで、プログラムにさまざまなパラメーターを渡すことができます。このように、プログラムの動作をユーザーが制御できることができるため、コマンドライン引数の読み取りは非常に重要です。
 
-コマンドライン引数を読み取るには、`CommandLine.arguments`という配列を使用します。この配列には起動時に指定された全ての引数が含まれています。以下のようなコードを使用することで、引数を取得することができます。
+## 手順
+
+コマンドライン引数を読み取るためのSwiftのコーディング例と、サンプルの出力を以下のコードブロックでご紹介します。
 
 ```Swift
-let arguments = CommandLine.arguments
-print("起動時の引数: \(arguments)")
+// 引数が入力されているかどうかを確認
+if CommandLine.arguments.count > 1 {
+    // 最初の引数を取得
+    let firstArgument = CommandLine.arguments[1]
+    
+    // 引数がInt型に変換可能かどうかをチェック
+    if let number = Int(firstArgument) {
+        // 引数が数字だった場合の処理
+        print("数字が入力されました！\(number)")
+    } else {
+        // 引数が数字以外だった場合の処理
+        print("数字以外が入力されました！")
+    }
+} else {
+    // 引数が入力されていない場合の処理
+    print("引数が入力されていません。")
+}
 ```
 
-もし、ファイル名やオプションを指定してプログラムを実行した場合、上記のコードは以下のような出力を示します。
+サンプル入力と出力：
 
 ```
-起動時の引数: ["プログラム名", "ファイル名", "-v"]
+$ swift test.swift 10
+数字が入力されました！10
+
+$ swift test.swift hello
+数字以外が入力されました！
+
+$ swift test.swift
+引数が入力されていません。
 ```
 
-# さらに深く
+## 詳細
 
-コマンドライン引数には、多くの情報が含まれています。例えば、`CommandLine.arguments`の最初の要素には実行しているプログラムの名前が含まれています。また、特定のオプションが指定されているかどうかをチェックすることもできます。さらに、引数には文字列だけでなく、整数や浮動小数点数などのデータも含まれることがあります。
+さらに深くコマンドライン引数を理解するために、以下の情報をご紹介します。
 
-コマンドライン引数を利用することで、プログラムの柔軟性を高めることができるだけでなく、より多様な情報を取得することができます。是非、コマンドライン引数の使用方法を覚えて、あなたのプログラムに応用してください！
+### コマンドライン引数とは
 
-# 参考リンク
+コマンドライン引数とは、プログラムを実行する際に、プログラムに渡すことができる文字列や数字などのパラメーターです。通常、プログラムを実行する際には、アプリケーション名の後にスペースを入れてパラメーターを入力します。
 
-- [Apple Developer Documentation: CommandLine](https://developer.apple.com/documentation/swift/commandline)
-- [Learn Swift: Working with Command-line Arguments](https://www.learnswiftonline.com/getting-started/working-with-command-line-arguments/)
-- [Swifty Command Line Arguments Handling](https://medium.com/@marcosantadev/swifty-command-line-arguments-handling-a8420ebe95e1)
+### コマンドライン引数の取得方法
+
+Swiftでは、`CommandLine`クラスを使用してコマンドライン引数を取得することができます。このクラスには、プログラムの実行時に渡された引数の数や値を取得するメソッドや変数が用意されています。
+
+## See Also
+
+- [Swift 公式ドキュメント](https://developer.apple.com/documentation/swift/)
+- [CommandLine - Swift Standard Library](https://developer.apple.com/documentation/foundation/commandline)
+- [Swift コマンドライン引数の取得方法](https://code.i-harness.com/ja/q/286531)

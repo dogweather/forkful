@@ -1,62 +1,61 @@
 ---
 title:                "Arduino: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは、Arduinoファンの皆さん！今日は、ある特定のパターンにマッチする文字を削除する方法についてお話しします。Arduinoプログラミングが大好きなあなたにとって、より効率的なコーディング方法を見つけることは、とても重要なことですよね！そのために、今回は"deleted_charatecrs_matching_pattern"というテーマについて深堀りしていきましょう。
+## なぜ
 
-## Why
-ある特定のパターンにマッチする文字を削除することは、コーディングの際にとても便利なテクニックです。例えば、不要な空白文字を削除したり、特定の文字列を整形したりする際に活用することができます。また、メモリーの節約にもつながるので、プログラムの最適化にも役立ちます。
+Arduinoプログラミングでは、テキストデータを処理する際に特定のパターンに一致する文字を削除する必要がある場合があります。これは、データの整理や統計処理を行う際に便利な方法です。
 
-## How To
-まずは、"deleted_characters_matching_pattern"を実現するためのコード例をご紹介します。以下のコードは、文字列から"#"を検索し、該当する文字を削除するプログラムです。
+## 方法
 
-```Arduino
-// 文字列を定義
-String text = "Hello#World";
-
-// "#"を検索し、該当する文字を削除
-text.remove('#');
-
-// 結果をシリアルモニタに出力
-Serial.println(text);
-
-// 出力結果：HelloWorld
-```
-
-上記のように、まずはString型の変数に文字列を定義し、その中からremove()関数を使って特定の文字を削除します。その後、シリアルモニタに出力することで、削除後の文字列を確認することができます。
-
-次に、"deleted_characters_matching_pattern"を使って不要な空白文字を削除する例を紹介します。
+Arduinoのプログラムで文字を削除する方法はいくつかあります。最も基本的な方法は、文字列を一つずつチェックし、パターンに一致する場合は空白文字または空の文字列に置き換えることです。以下の例を参考にしてください。
 
 ```Arduino
-// 文字列を定義
-String text = "Hello       World";
+// テキストデータの文字列を定義 
+String text = "Arduinoは楽しい!";
 
-// 空白文字を検索し、該当する文字を削除
-text.remove(' ');
+// 文字列を削除したいパターンを定義 
+String pattern = "楽しい";
 
-// 結果をシリアルモニタに出力
-Serial.println(text);
+// 文字列からパターンに一致する文字を削除する 
+text.replace(pattern, "");
 
-// 出力結果：HelloWorld
+// 出力 
+Arduinoは!
 ```
 
-同様に、削除したい文字を指定することで、不要な空白文字を簡単に削除することができます。
+複雑なパターンを扱う場合は、正規表現を使用することもできます。正規表現を使用すると、パターンに一致する文字を簡単に置き換えることができます。以下の例を参考にしてください。
 
-## Deep Dive
-"deleted_characters_matching_pattern"を使う際に覚えておきたいポイントは、remove()関数は最初にマッチした文字しか削除しないということです。つまり、同じ文字が複数回出現した場合でも、最初に出現した文字だけが削除されます。
+```Arduino
+// テキストデータの文字列を定義 
+String text = "1234 5678 9101112";
 
-また、remove()関数はマッチした文字を削除した後、元の文字列を再構築することで処理を行っています。そのため、大量の文字を削除する際にはメモリーの消費量に注意する必要があります。
+// 文字列から数字のみを除外する 
+text.replaceAll("[0-9]", "");
 
-## See Also
-この記事を読んで、"deleted_characters_matching_pattern"の応用方法や設計などについて深く学びたい方は、以下のリンクをご参考にしてみてください。
+// 出力 
+ 
+```
 
-- [Arduino Reference - String](https://www.arduino.cc/reference/jp/language/variables/data-types/stringobject/)
-- [Arduino String Data Functions](https://www.arduino.cc/en/Tutorial/StringConstructors)
-- [Arduino Cookbook - Appendix A](https://www.oreilly.com/library/view/arduino-cookbook-2nd/9781449305611/)
+## 深堀り
 
-今回は"deleted_characters_matching_pattern"という便利なテクニックについてご紹介しました。ぜひ、
+Text.replace()やreplaceAll()は、ArduinoのStringオブジェクトが持つ便利なメソッドですが、文字列を一つずつ処理するため、大きなデータを処理する場合は効率が悪くなる可能性があります。そのため、より高速な処理が必要な場合は、C言語の標準ライブラリであるstring.hを使用する方法もあります。
+
+例えば、Arduinoのプログラムで使用できるstrtok()関数は、指定したデリミタ文字に基づいて文字列を分割することができます。これを使用すると、文字列を一度に一部ずつ処理することができるため、より高速な削除処理が可能になります。
+
+## おわりに
+
+今回はArduinoプログラミングで文字を削除する方法について紹介しました。それぞれの方法には長所と短所がありますが、自分のプロジェクトに最適な方法を選択してみてください。
+
+## 関連リンク
+
+- [Stringオブジェクトのドキュメント](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [正規表現のチュートリアル](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [string.hのドキュメント](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

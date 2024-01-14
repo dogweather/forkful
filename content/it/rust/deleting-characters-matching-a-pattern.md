@@ -1,43 +1,41 @@
 ---
-title:                "Rust: Eliminazione di caratteri che corrispondono a uno schema"
+title:                "Rust: Eliminazione di caratteri corrispondenti a un modello"
+simple_title:         "Eliminazione di caratteri corrispondenti a un modello"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-Cancellare i caratteri corrispondenti a un modello in Rust
-
-Rust è un linguaggio di programmazione moderno e sempre più popolare grazie alla sua sicurezza e prestazioni. Una delle funzionalità interessanti di Rust è la possibilità di cancellare i caratteri corrispondenti a un modello, che può essere utile in diverse situazioni.
-
 ## Perché
 
-Ci sono molte situazioni in cui potresti voler cancellare i caratteri corrispondenti a un modello in Rust. Ad esempio, potresti avere una stringa contenente informazioni non necessarie, come spazi bianchi o caratteri speciali, e vuoi rimuoverli per avere una stringa più pulita. Oppure potresti avere una stringa formattata in modo errato che desideri correggere. Con la cancellazione dei caratteri corrispondenti a un modello, puoi automatizzare questo processo e risparmiare tempo e fatica.
+Ci sono molte ragioni per cui potresti voler eliminare caratteri corrispondenti a un determinato pattern in un programma Rust. Ad esempio, potresti voler pulire input utente che contiene caratteri indesiderati o rimuovere del testo superfluo da una stringa. In questo post, esploreremo come farlo utilizzando il linguaggio di programmazione Rust.
 
 ## Come Fare
 
-Per cancellare i caratteri corrispondenti a un modello in Rust, puoi utilizzare il metodo `replace_all` della classe `Regex`. Innanzitutto, è necessario importare la classe `Regex` dalla libreria standard di Rust tramite l'istruzione `use std::regex::Regex;`.
+Per eliminare caratteri corrispondenti a un pattern in Rust, possiamo utilizzare il metodo `replace` nella libreria standard `String`. Questo metodo richiede due argomenti: il pattern da cercare e il testo con cui sostituire il pattern. Ad esempio, se volessimo eliminare tutti gli spazi bianchi da una stringa, possiamo fare così:
 
-Successivamente, puoi definire una stringa su cui lavorare e il modello da usare per trovare i caratteri da eliminare. Ad esempio, supponiamo di avere una stringa che rappresenta un URL contenente una query string con parametri e vogliamo rimuovere i parametri "page" e "size". La stringa potrebbe essere qualcosa del genere: `https://www.example.com/?page=1&size=10`.
+```Rust
+let mut stringa = String::from("Questo è un esempio.");
+stringa.replace(" ", ""); // Elimina gli spazi bianchi
+println!("{}", stringa); // Output: "Questoèunesempio."
+```
+In questo esempio, stiamo eliminando tutti gli spazi bianchi dalla stringa utilizzando il metodo `replace`. Possiamo anche utilizzare espressioni regolari per trovare pattern più specifici e sostituirli con del testo diverso. Ad esempio, se vogliamo eliminare tutte le vocali da una stringa, possiamo farlo in questo modo:
 
-Per cercare e rimuovere i parametri, possiamo utilizzare il seguente codice:
-
-```rust
-let re = Regex::new(r"page=1|size=10").unwrap();
-let new_url = re.replace_all(url, "");
+```Rust
+let mut stringa = String::from("Questa è un'altra prova.");
+stringa.replace("[aeiou]", ""); // Sostituisce tutte le vocali con una stringa vuota
+println!("{}", stringa); // Output: "Qst 'n ltr prvv."
 ```
 
-In questo esempio, stiamo usando una espressione regolare per cercare i caratteri corrispondenti al modello "page=1|size=10" nella nostra stringa "url". Il metodo `replace_all` sostituirà ogni corrispondenza trovata con una stringa vuota, eliminandola dalla stringa.
+## Approfondimento
 
-L'output finale sarà una nuova stringa con l'URL pulito: `https://www.example.com/?`
-
-## Approfondimenti
-
-La cancellazione dei caratteri corrispondenti a un modello è solo una delle tante funzionalità interessanti di Rust. Se vuoi approfondire la conoscenza di questo linguaggio, puoi consultare la documentazione ufficiale su [rust-lang.org](https://www.rust-lang.org/), partecipare alla comunità di Rust su [rust-lang.it](https://www.rust-lang.it/) o esplorare altri articoli su Rust sul mio blog.
+La libreria standard `String` offre diversi metodi che possono essere utili per eliminare caratteri corrispondenti a un pattern. Oltre a `replace`, possiamo utilizzare anche `remove` per eliminare un carattere specifico, `retain` per mantenere solo dei caratteri che corrispondono a un pattern e `trim` per eliminare caratteri di spazio bianco all'inizio e alla fine di una stringa. Inoltre, possiamo combinare diversi metodi per ottenere il risultato desiderato.
 
 ## Vedi Anche
 
-- Documentazione ufficiale di Rust: [https://www.rust-lang.org/](https://www.rust-lang.org/)
-- Comunità di Rust in Italia: [https://www.rust-lang.it/](https://www.rust-lang.it/)
-- Altri articoli su Rust nel mio blog: [https://www.example.com/blog/](https://www.example.com/blog/)
+- Documentazione ufficiale di Rust per la libreria `String`: https://doc.rust-lang.org/std/string/struct.String.html
+- Tutorial introduttivo su Rust: https://www.rust-lang.org/learn/get-started
+- Mastering Rust: A Comprehensive Guide to the Rust Programming Language: https://www.packtpub.com/product/mastering-rust-second-edition/9781789346574

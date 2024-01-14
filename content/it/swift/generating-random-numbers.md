@@ -1,7 +1,9 @@
 ---
 title:                "Swift: Generazione di numeri casuali"
+simple_title:         "Generazione di numeri casuali"
 programming_language: "Swift"
-category:             "Numbers"
+category:             "Swift"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/generating-random-numbers.md"
 ---
 
@@ -9,39 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Generare numeri casuali è un'attività molto comune nella programmazione e può essere utile in una varietà di situazioni. Ad esempio, può essere utilizzato per creare password casuali, per generare dati di prova durante lo sviluppo di software o per creare una sfida in un gioco.
+Generare numeri casuali è spesso utile in programmazione per creare scenari di gioco, testare algoritmi o semplicemente per fornire una variazione di dati in un programma.
 
-## Come
+## Come fare
 
-Per generare numeri casuali in Swift, è possibile utilizzare la funzione `arc4random_uniform()`. Questa funzione accetta un parametro che rappresenta il limite superiore dei numeri da generare e restituisce un numero casuale compreso tra 0 e il limite fornito.
+La generazione di numeri casuali in Swift è semplice grazie alla funzione `arc4random_uniform`, che restituisce un numero intero casuale compreso tra 0 e il valore specificato come parametro. Vediamo un esempio:
 
-```
-Swift
-let randomNum = arc4random_uniform(10)
-print(randomNum) // Output: 3 (può variare in base al caso)
-```
-
-Se si desidera includere anche numeri negativi, è possibile utilizzare la funzione `Int.random(in:lowerBound:upperBound:)`. Questa funzione accetta un parametro che rappresenta il limite inferiore e un parametro che rappresenta il limite superiore dei numeri da generare e restituisce un numero casuale compreso tra questi due limiti.
-
-```
-Swift
-let randomNum = Int.random(in: -50...50)
-print(randomNum) // Output: -27 (può variare in base al caso)
+```Swift
+let randomNum = arc4random_uniform(100) // Restituisce un numero casuale tra 0 e 99
+print(randomNum) // Output: 35
 ```
 
-## Deep Dive
+Possiamo anche generare un numero casuale compreso tra due valori specificati utilizzando la funzione `arc4random` e l'operatore modulo (%). Ad esempio, se vogliamo un numero casuale tra 50 e 100:
 
-È importante notare che, a differenza di altri linguaggi di programmazione, Swift non fornisce una funzione per generare numeri casuali con virgola mobile. Tuttavia, è possibile ottenere lo stesso risultato moltiplicando il numero casualo intero generato dalle funzioni sopra menzionate per un valore decimale.
-
-```
-Swift
-let randomDecimal = Double(arc4random_uniform(100)) / 10.0
-print(randomDecimal) // Output: 8.7 (può variare in base al caso)
+```Swift
+let randomNum = 50 + arc4random() % 51 // Restituisce un numero casuale tra 50 e 100
+print(randomNum) // Output: 87
 ```
 
-Inoltre, se si necessita di una maggiore precisione nella generazione di numeri casuali, è possibile utilizzare la libreria `GameplayKit` di Apple, che offre una varietà di funzioni per la generazione di numeri casuali più avanzata.
+È inoltre possibile generare numeri casuali di tipo `Double` utilizzando la funzione `Double(arc4random())` e specificando il range desiderato.  Ad esempio, se vogliamo un numero casuale tra 0 e 1:
+
+```Swift
+let randomDouble = Double(arc4random()) / Double(UInt32.max)
+print(randomDouble) // Output: 0.3215643
+```
+
+## Approfondimento
+
+Se vogliamo generare numeri casuali in un intervallo specificato, possiamo utilizzare la funzione `random(in:)` disponibile a partire da Swift 4.2. Ad esempio, se vogliamo un numero casuale tra 10 e 20:
+
+```Swift
+let randomNum = Int.random(in: 10...20)
+print(randomNum) // Output: 15
+```
+
+Inoltre, è possibile utilizzare la libreria Foundation per generare numeri casuali di tipo `Float`, `CGFloat` e `CGFloat80` tramite la funzione `arc4random_uniform`.
 
 ## Vedi anche
 
-- [Documentazione Swift: Generazione di numeri casuali](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID337)
-- [Tutorial di Ray Wenderlich: Generazione di numeri casuali in Swift](https://www.raywenderlich.com/5497-random-numbers-in-swift)
+- [Documentazione ufficiale di Swift su generazione di numeri casuali](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID334)

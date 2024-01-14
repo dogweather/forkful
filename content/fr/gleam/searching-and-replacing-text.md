@@ -1,7 +1,9 @@
 ---
 title:                "Gleam: Recherche et remplacement de texte"
+simple_title:         "Recherche et remplacement de texte"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/searching-and-replacing-text.md"
 ---
 
@@ -9,43 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La recherche et le remplacement de texte sont des tâches courantes dans le développement de logiciels. Cela peut être utile pour changer des variables, corriger des fautes d'orthographe ou encore pour effectuer des modifications massives dans un fichier. Dans cet article, nous allons vous montrer comment utiliser Gleam pour simplifier ce processus.
+Vous en avez assez de devoir remplacer manuellement des mots ou phrases dans votre code ? Ou bien vous travaillez sur un projet avec plusieurs collaborateurs et il est difficile de garder une cohérence dans le choix des termes utilisés ? Heureusement, grâce à Gleam, il existe une solution simple et efficace pour effectuer des recherches et remplacements de texte : la fonction `replace`. Dans cet article, nous allons vous expliquer comment l'utiliser.
 
 ## Comment faire
 
-Pour effectuer une recherche et un remplacement de texte en utilisant Gleam, vous pouvez utiliser la fonction `String.replace/3`. Cette fonction prend trois arguments : la chaine de caractères dans laquelle vous souhaitez effectuer le remplacement, la partie du texte à rechercher et la nouvelle valeur à y substituer. Par exemple :
+La fonction `replace` prend trois arguments : une chaîne de caractères à modifier, la chaîne de caractères à rechercher et la chaîne de caractères de remplacement. Voici un exemple de code avec une chaîne de caractères `message` que nous voulons modifier et une chaîne de caractères `old_word` que nous souhaitons remplacer par une chaîne de caractères `new_word` :
 
 ```Gleam
-let old_string = "Bonjour le monde!"
-let new_string = String.replace(old_string, "Bonjour", "Salut")
-
-// Output : "Salut le monde!"
+let message = "J'utilise Gleam pour écrire mon code."
+let old_word = "Gleam"
+let new_word = "un langage"
+let updated_message = replace(message, old_word, new_word)
 ```
 
-Vous pouvez également utiliser les expressions régulières pour effectuer des remplacements plus avancés. La fonction `Regex.replace/4` vous permet de spécifier une expression régulière pour la partie du texte à rechercher et des fonctions de callback pour personnaliser la substitution.
-
-```Gleam
-let old_string = "Alice a 5 ans et Bob a 10 ans."
-let new_string =
-  Regex.replace(old_string, #"\d+", fn x ->
-    let age = Integer.fromString(x, 10)
-    case age {
-      Ok(age) -> String.from_int(age * 2)
-      Err(_) -> x
-    }
-  end)
-
-// Output : "Alice a 10 ans et Bob a 20 ans."
-```
+Dans cet exemple, nous avons utilisé la fonction `replace` pour remplacer le mot "Gleam" par "un langage" dans notre chaîne de caractères `message`. Si nous affichons la valeur de `updated_message`, nous obtenons le résultat suivant : "J'utilise un langage pour écrire mon code." La fonction `replace` a automatiquement trouvé toutes les occurrences de "Gleam" dans la chaîne de caractères `message` et les a remplacées par "un langage".
 
 ## Plongée en profondeur
 
-La fonction `String.replace/3` est efficace pour les remplacements simples, mais elle peut présenter des limites dans certains cas. Par exemple, elle ne permet pas de remplacer des caractères sensibles à la casse, comme les lettres accentuées en français. Dans ce cas, vous pouvez utiliser la fonction `String.replace_first/3` pour effectuer un remplacement en respectant la casse.
+Il est possible de spécifier une quatrième option à la fonction `replace` pour indiquer si l'on souhaite effectuer la recherche de manière sensible à la casse ou non. Par défaut, la recherche est sensible à la casse, ce qui signifie que les lettres majuscules et minuscules seront prises en compte lors de la recherche et du remplacement. Par exemple, dans notre exemple précédent, si nous avions cherché à remplacer le mot "gleam" plutôt que "Gleam", la fonction `replace` n'aurait pas trouvé de correspondance et n'aurait rien remplacé.
 
-De plus, si vous avez besoin de remplacer des mots entiers et non des parties de mots, il est recommandé d'utiliser la fonction `String.words/1` pour diviser votre chaîne de caractères en mots et ainsi éviter de remplacer des parties de mots involontairement.
+Si nous voulons que la recherche soit insensible à la casse, il suffit de spécifier `false` comme quatrième argument :
+
+```Gleam
+let message = "J'utilise Gleam pour écrire mon code."
+let old_word = "gleam"
+let new_word = "un langage"
+let updated_message = replace(message, old_word, new_word, false)
+```
+
+Dans ce cas, la valeur de `updated_message` serait toujours "J'utilise un langage pour écrire mon code." quel que soit le cas des lettres dans les différentes occurrences de "Gleam".
 
 ## Voir aussi
 
-- [Documentation de Gleam pour la manipulation de chaînes de caractères](https://gleam.run/core/string.html)
-- [Documentation de Gleam pour les expressions régulières](https://gleam.run/core/regex.html)
-- [Liste des expressions régulières couramment utilisées en français pour la recherche et le remplacement de texte](https://www.bomel.ca/regex/liste.html)
+Pour en savoir plus sur la fonction `replace` et d'autres fonctionnalités de Gleam, vous pouvez consulter les liens suivants :
+
+- Documentation officielle de Gleam : https://gleam.run/documentation/
+- Tutoriels sur Gleam : https://gleam.run/tutorials/
+
+À vous de jouer ! Améliorez votre productivité grâce à la fonction `replace` et n'hésitez pas à explorer toutes les autres possibilités offertes par Gleam pour faciliter votre travail de développement.

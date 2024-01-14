@@ -1,57 +1,54 @@
 ---
 title:                "Swift: 读取命令行参数"
+simple_title:         "读取命令行参数"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么：读取命令行参数对于Swift编程人员非常重要，因为它可以让他们轻松地从命令行接收输入并根据不同的参数执行不同的操作。
 
-阅读命令行参数对于开发Swift应用程序时是一个非常有用的技巧。通过阅读命令行参数，您可以控制您的应用程序的行为，并根据用户的输入做出相应的响应。无论您是开发游戏、工具、还是其他类型的Swift应用程序，阅读命令行参数都会带来很多方便和便利。
-
-## 如何
-
-首先，您需要使用Swift的CommandLine类来读取命令行参数。然后，您可以使用该类的实例来访问传递给您的应用程序的所有命令行参数。让我们来看看一个简单的示例代码：
+如何：下面是一个简单的示例，展示如何读取命令行参数并根据参数输出不同的内容。
 
 ```Swift
-import Foundation
+let arguments = CommandLine.arguments
 
-let commandLine = CommandLine.arguments
-// 命令行参数的第一个元素是应用程序的名称，所以我们从第二个元素开始遍历
-for argument in commandLine.dropFirst() {
-  print(argument)
+//检查是否有参数
+if arguments.count > 1 {
+    //使用第一个参数作为输入值
+    let input = arguments[1]
+    
+    //根据输入值输出不同的内容
+    switch input {
+        case "1":
+            print("这是第一个参数")
+        case "2":
+            print("这是第二个参数")
+        default:
+            print("未知参数")
+    }
+} else {
+    print("请输入一个参数")
 }
 ```
 
-如果您在命令行运行以上代码，并通过空格分隔多个参数传递给您的应用程序，例如`swift readCommandLineArguments.swift hello world`，您将会在控制台看到输出为：
+输出：
 
-```
-hello 
-world
-```
+如果在命令行输入`swift run 1`，则输出为`这是第一个参数`；如果输入`swift run 2`，则输出为`这是第二个参数`。
 
-您也可以使用CommandLine类来检查特定的命令行参数是否被传递。例如，如果您想要检查用户是否传递了`--verbose`参数，您可以使用`commandLine.contains("--verbose")`来检查。这在开发需要不同的调试模式的应用程序时非常有用。
+深入探究：当在命令行输入参数时，Swift会将这些参数存储在`CommandLine`类的静态属性`arguments`中。使用`arguments`数组可以轻松地读取和操作命令行参数。除了使用`CommandLine`类，还可以使用`ProcessInfo`类来读取命令行参数。
 
-## 深入挖掘
+参考链接：
 
-在阅读命令行参数时，需要注意以下几点：
+- [Swift - Command Line Args Using CommandLine.arguments](https://www.tutorialspoint.com/swift_programming/swift_command_line_args.htm)
+- [Command Line Applications](https://developer.apple.com/library/archive/documentation/CommandLine/Conceptual/CommandLine.pdf)
 
-- 您可以使用`commandLine.dropFirst()`来避免遍历应用程序名称。
-- 根据需要，您可以将命令行参数转换为其他类型，例如字符串转换为整数或布尔值。
-- 如果您需要使用命令行参数作为文件路径或其他类似的输入，建议使用`URL(fileURLWithPath:argument)`来转换参数为正确的格式。
+请参考：
 
-通过深入挖掘CommandLine类的文档，您可以发现更多有用的方法来处理命令行参数。掌握这项技能将为您的Swift应用程序开发带来更多灵活性。
+参考链接（See Also）：
 
-## 参考文献
-
-- [Swift官方文档 - CommandLine](https://developer.apple.com/documentation/foundation/commandline)
-- [Swift编程指南 - 输入输出](https://www.cnswift.org/optionals)
-- [简单教程：使用Swift读取命令行参数](https://www.hackingwithswift.com/articles/110/how-to-read-command-line-arguments-using-swig)
-
-## 参见
-
-- [Swift命令行工具开发教程](https://www.raywenderlich.com/1568956-swift-command-line-tool-tutorial-for-beginners)
-- [用Swift构建命令行应用程序](https://www.avanderlee.com/swift/command-line-tool/)
-- [如何用Swift编写一个简单的命令行应用程序](https://zonneveld.dev/build-a-command-line-application-in-swift/)
+- [Swift Package Manager - Command Line Interface](https://swift.org/package-manager/#command-line-interface)
+- [Swift Argument Parser library](https://github.com/apple/swift-argument-parser)

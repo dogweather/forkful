@@ -1,30 +1,58 @@
 ---
-title:                "Arduino: डायरेक्टरी मौजूद है या नहीं जांचना"
+title:                "Arduino: क्या एक निर्देशिका मौजूद है की जांच"
+simple_title:         "क्या एक निर्देशिका मौजूद है की जांच"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-जरूरत क्यों: डाइरेक्ट्री मौजूद है या नहीं उसकी जाँच करने में कैसे मदद करता है?
+## Kyon
 
-जब हम Arduino पर प्रोग्रामिंग करते हैं, तो अक्सर हमें सर्वर, सेंसर या अन्य उपकरण जैसे डाइरेक्ट्री के भीतर डेटा संग्रह करने की आवश्यकता होती है। लेकिन इससे पहले हमें यह जानना जरुरी होता है कि क्या डाइरेक्ट्री पहले से मौजूद है या नहीं। इसलिए, हमें डाइरेक्ट्री की जांच करने के लिए कोड लिखने की आवश्यकता होती है।
+Arduino ke sath programming karne ke dauran, kabhi kabhi aapko check karna padega ki kya ek directory hai ya nahi. Directory, ya folder, humare code ke liye important hota hai kyunki isme hum apne files ko organize karte hain. Isliye, ek directory ki upasthiti ko check karna zaroori hai taaki hum sahi tarah se apne files ko access kar sakein.
+
+## Kaise Karein
 
 ```Arduino
-if(SD.exists("testing folder")){
-  Serial.println("Directory exists.");
-}
-else{
-  Serial.println("Directory does not exist.");
+#include <SD.h> // library ko import karein
+
+if (SD.exists("/folder")) { // directory ki upasthiti ko check karein
+  Serial.println("Directory exists!"); // agar directory maujood hai toh serial monitor par message print karein
 }
 ```
+Output:
+```
+Directory exists!
+```
 
-जब आप यह कोड अपने अर्दुइनो बोर्ड पर अपलोड करेंगे और अपने सीरियल मॉनिटर पर देखेंगे, तो आपको "Directory exists" या "Directory does not exist" जैसा मैसेज दिखेगा। यह पता चल जाएगा कि आपकी डाइरेक्ट्री मौजूद है या नहीं।
+Is coding example mein humne `SD.exists()` function ka upyog kiya hai, jo ek boolean value return karta hai, yaani true ya false. Yadi directory maujood hai toh true return hoga aur hum message print karenge, warna false return hoga aur kuch nahi hoga.
 
-गहराई में जाएं:
-क्या आपको पता है कि कई बार हमने अपनी डाइरेक्ट्री में फ़ाइलें जोड़ी होती हैं और उन्हें जब हम अपनी कोड से हटाने की कोशिश करते हैं, तो वे हमारे उपकरण में और गलत फ़ाइलें ऊपर ऊपर डाउनलोड होने लगती हैं? इस समस्या को दूर करने के लिए, हमें अपनी डाइरेक्ट्री में फ़ाइलें जोड़ने से पहले उन्हें जांचने की आवश्यकता होती है। इससे हमें सही फाइलों को ही अपने उपकरण में डाउनलोड करने की अनुमति मिलती है।
+Hum bhi `SD.mkdir()` function ka upyog karke ek naya directory create kar sakte hain, jaisa ki neeche coding example mein dikhaya gaya hai:
 
 ```Arduino
-if(!SD.exists("test file")){
-  File dataFile = SD.open("test file", FILE
+#include <SD.h> // library ko import karein
+
+if (!SD.exists("/folder")) { // agar directory nahi hai toh
+  if (SD.mkdir("/folder")) { // directory create karein
+    Serial.println("Directory created!"); // aur message print karein
+  }
+}
+```
+Output:
+```
+Directory created!
+```
+
+## Gehri Khudaai
+
+Directory ki upasthiti ko check karna kai situations mein zaroori ho sakta hai. Jaise, agar hume kisi specific file ko read ya write karna hai toh hume pahle directory ki upasthiti ko check karna padega. Iske alawa, hum bhi `SD.remove()` function ka upyog karke directory ko delete kar sakte hain. Is tarah se, directory ki upasthiti ko check karna bahut zaroori ho sakta hai humare Arduino project ke liye.
+
+## Dekhiye Bhi
+
+Agar aapko aur jaankari chahiye directory ko check karne aur manipulate karne ke baare mein, toh neeche diye gaye resources ko dekhein:
+
+- [Arduino SD library reference](https://www.arduino.cc/en/Reference/SD)
+- [How to create and delete folders with Arduino SD library](https://randomnerdtutorials.com/arduino-sd-card-how-to-create-and-delete-files/)
+- [Beginner's guide to Arduino](https://learn.sparkfun.com/tutorials/sik-experiment-guide-for-arduino---v32) (Hindi translation available on the site)

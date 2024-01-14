@@ -1,35 +1,51 @@
 ---
-title:                "Swift: Eliminando caracteres que coincidan con un patrón"
+title:                "Swift: Borrando caracteres que coinciden con un patrón"
+simple_title:         "Borrando caracteres que coinciden con un patrón"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Porqué
+## Por qué
 
-A menudo, al trabajar con cadenas de texto, es necesario eliminar ciertos caracteres que están presentes en un patrón específico. Esto puede ser por razones de formateo o por necesidad de limpiar los datos antes de usarlos. Afortunadamente, Swift nos ofrece una forma sencilla de hacerlo: eliminando caracteres que coinciden con un patrón dado.
+A veces, al escribir un programa en Swift, nos podemos encontrar con la necesidad de eliminar ciertos caracteres que coinciden con un patrón específico. Esto puede ser útil en diferentes situaciones, como por ejemplo, limpiar una cadena de texto antes de utilizarla en una aplicación.
 
-# Cómo Hacerlo
+## Cómo hacerlo
 
-Para eliminar caracteres que coinciden con un patrón en Swift, podemos utilizar la función `replacingOccurrences(of:with:)`. Esta función toma dos argumentos: el patrón que queremos buscar y el valor con el que queremos reemplazarlo. Por ejemplo, si queremos eliminar todas las vocales de una cadena de texto, podemos usar esta función de la siguiente manera:
+Para eliminar caracteres que coinciden con un patrón en Swift, podemos utilizar la función `replacingOccurrences(of:with:)`. Esta función toma dos parámetros: el patrón que queremos buscar y el carácter con el que queremos reemplazarlo.
 
+Por ejemplo, si queremos eliminar todos los números de una cadena de texto, podemos utilizar la siguiente línea de código:
+
+```Swift
+let texto = "3 manzanas y 4 naranjas"
+let textoSinNumeros = texto.replacingOccurrences(of: "[0-9]", with: "", options: .regularExpression)
+print(textoSinNumeros) // "manzanas y naranjas"
 ```
-let texto = "Hola, cómo estás?"
-let textoSinVocales = texto.replacingOccurrences(of: "[aeiou]", with: "", options: .regularExpression)
-print(textoSinVocales)
+
+En este ejemplo, estamos utilizando una expresión regular para buscar todos los números del 0 al 9 en la cadena de texto y reemplazarlos por una cadena vacía.
+
+También podemos utilizar la función `filter` de Swift para eliminar caracteres que coinciden con un patrón. Esta función acepta un bloque de código que especifica las condiciones que deben cumplir los caracteres para ser eliminados.
+
+Por ejemplo, si queremos eliminar todas las mayúsculas de una cadena de texto, podemos utilizar el siguiente código:
+
+```Swift
+let texto = "Hola Mundo"
+let textoSinMayusculas = texto.filter { !($0.isUppercase) }
+print(textoSinMayusculas) // "la undo"
 ```
-Este código imprimirá "Hl, cm stás?" ya que todas las vocales han sido eliminadas. 
 
-# Profundizando
+En este caso, estamos utilizando el método `filter` para recorrer cada carácter de la cadena de texto y eliminar aquellos que sean mayúsculas.
 
-La función `replacingOccurrences(of:with:)` también acepta la opción `.regularExpression` que nos permite utilizar expresiones regulares para encontrar el patrón que queremos eliminar. Las expresiones regulares son patrones de búsqueda flexibles y potentes que nos permiten encontrar y manipular cadenas de texto de manera eficiente.
+## Profundizando
 
-Además, esta función también tiene una variante que elimina el patrón de manera recursiva, es decir, si el patrón se encuentra dentro de la cadena de texto varias veces, todas las instancias del patrón serán eliminadas. Para utilizar esta variante, solo debemos agregar la opción `.replaceAll` al llamar a la función.
+La eliminación de caracteres que coinciden con un patrón puede ser muy útil en situaciones en las que necesitamos limpiar datos antes de utilizarlos en nuestra aplicación. Por ejemplo, podemos utilizarlo para validar correos electrónicos, nombres de usuario o contraseñas. También puede ser útil para eliminar caracteres no deseados de una cadena de texto, como emojis o símbolos extraños.
 
-# Ver También
+Es importante tener en cuenta que, al utilizar expresiones regulares, debemos asegurarnos de que el patrón que estamos buscando es específico y no coincida con más caracteres de los deseados. De lo contrario, podríamos eliminar información importante de nuestra cadena de texto.
 
-- Documentación oficial de Swift sobre la función `replacingOccurrences(of:with:)`: https://developer.apple.com/documentation/swift/string/2894561-replacingoccurrences
-- Tutorial sobre expresiones regulares en Swift: https://www.raywenderlich.com/1584835-regular-expressions-in-swift-tutorial-getting-started
-- Swift by Sundell: Eliminar todas las ocurrencias de un patrón en una cadena de texto: https://www.swiftbysundell.com/articles/removing-all-occurences-of-a-pattern-from-a-string/
+## Ver también
+
+- [Documentación oficial de Swift - Función replacingOccurrences](https://developer.apple.com/documentation/foundation/nsstring/1411946-replacingoccurrences)
+- [Documentación oficial de Swift - Método filter](https://developer.apple.com/documentation/swift/array/3018285-filter)

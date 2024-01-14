@@ -1,55 +1,62 @@
 ---
-title:                "Clojure: Unterstrings extrahieren"
+title:                "Clojure: Extrahieren von Teichen"
+simple_title:         "Extrahieren von Teichen"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Extrahieren von Teilstrings kann eine nützliche Funktion in der Programmierung sein, um spezifische Informationen aus einem größeren String herauszufiltern. Dies kann hilfreich sein, wenn man beispielsweise eine Benutzereingabe analysiert oder bestimmte Daten aus einem Textdokument auslesen möchte.
 
-## Anleitung
-Die folgenden Codebeispiele zeigen, wie man mithilfe von Clojure Teilstrings extrahieren kann. Zunächst müssen wir die Funktion "subs" verwenden, die einen Teil eines Strings zurückgibt, basierend auf einem start- und end-Parameter. In diesem Beispiel extrahieren wir die ersten zwei Buchstaben aus dem String "Hallo".
+Das Extrahieren von Teilstrings kann nützlich sein, wenn Sie einen Text bearbeiten möchten und nur bestimmte Abschnitte davon benötigen.
 
-```Clojure
-(subs "Hallo" 0 2)
-```
+## Wie geht das?
 
-Output:
-```Clojure
-"Ha"
-```
+Das Extrahieren von Teilstrings ist in Clojure sehr einfach. Sie können die `subs`-Funktion verwenden, um einen Teil eines Strings basierend auf einer gegebenen Startposition und Länge zu extrahieren.
 
-Man kann auch negative Indizes verwenden, um vom Ende des Strings aus zu zählen. In diesem Beispiel extrahieren wir den letzten Buchstaben aus dem String "Guten Tag".
+Ein Beispiel:
 
 ```Clojure
-(subs "Guten Tag" -1)
+(def text "Hallo, wie geht es dir?")
+
+(subs text 0 5)
 ```
 
-Output:
+Das obige Beispiel würde den Teilstring "Hallo" aus dem ursprünglichen Text extrahieren und folgende Ausgabe liefern:
+
+`Hallo`
+
+Sie können auch die `subs`-Funktion mit negativen Indizes verwenden, um Teilstrings vom Ende des Textes aus zu extrahieren. Zum Beispiel, um die letzten 3 Zeichen des Textes auszugeben, könnten Sie Folgendes tun:
+
 ```Clojure
-"g"
+(subs text -3)
 ```
 
-Mithilfe des "re-find" Befehls können wir auch mithilfe von regulären Ausdrücken Teilstrings extrahieren. In diesem Beispiel extrahieren wir alle Zahlen aus dem String "123abc456xyz".
+Die Ausgabe wäre dann:
+
+`dir`
+
+## Tiefer gehende Informationen
+
+Sie können auch einen Schritt weiter gehen und Teilstrings basierend auf regulären Ausdrücken extrahieren. Hierfür können Sie die `re-find`-Funktion verwenden, die einen regulären Ausdruck auf einen String anwendet und den ersten Treffer als Teilstring zurückgibt.
+
+Ein Beispiel:
 
 ```Clojure
-(re-find #"\d+" "123abc456xyz")
+(def text "Ich liebe Clojure!")
+
+(re-find #"[a-z]+" text)
 ```
 
-Output:
-```Clojure
-"123" "456"
-```
+Dies würde den ersten Teilstring aus dem ursprünglichen String extrahieren, der aus mindestens einem Kleinbuchstaben besteht, und folgende Ausgabe liefern:
 
-## Tiefere Einblicke
-Es gibt zahlreiche Anwendungen für das Extrahieren von Teilstrings in der Programmierung. Zum Beispiel kann man damit auch komplexe Muster in Strings suchen und ersetzen, oder Daten aus Dateinamen auslesen.
-
-Eine wichtige Sache, die man beim Extrahieren von Teilstrings beachten sollte, ist, dass die Indexierung in Clojure bei 0 beginnt. Das bedeutet, dass der erste Buchstabe im String den Index 0 hat und nicht 1, wie man es vielleicht gewohnt ist.
+`ich`
 
 ## Siehe auch
-- [Offizielle Clojure Dokumentation zu subs](https://clojuredocs.org/clojure.core/subs)
-- [Clojure String Manipulation Tutorial von Clojure for the Brave and True](https://www.braveclojure.com/working-with-strings/)
-- [Regex Tutorial von Regular-Expressions.info](https://www.regular-expressions.info/tutorial.html)
+
+- [Clojure Dokumentation zu `subs`](https://clojuredocs.org/clojure.core/subs)
+- [Clojure Dokumentation zu `re-find`](https://clojuredocs.org/clojure.core/re-find)
+- [Reguläre Ausdrücke in Clojure](https://clojure.org/reference/regular_expressions)

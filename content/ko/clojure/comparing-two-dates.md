@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/comparing-two-dates.md"
 ---
 
@@ -9,50 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-날짜를 비교하고자 하는 이유는 데이터 분석이나 예약 시스템 등 여러 가지 프로그래밍 작업에서 필요할 수 있기 때문입니다.
+홀리데이 계획설양을 위해 두 날짜를 비교하는 일이 자주 있습니다. Clojure를 사용하면 이 작업을 간단하게 처리할 수 있습니다.
 
-## 방법
+## 어떻게
 
-Clojure에서 두 날짜를 비교하는 방법은 간단합니다. 먼저 `clojure.java-time` 라이브러리를 가져옵니다. 그 후에 두 개의 날짜를 `cljcod.Date` 객체로 변환합니다. 마지막으로 `clojure.java-time.before?` 함수를 사용하여 두 날짜를 비교할 수 있습니다.
-
-```Clojure
-(require '[java-time :as t])
-
-;; 2020년 5월 10일과 2020년 5월 15일을 비교하는 예제입니다.
-(def date1 (t/date 2020 5 10))
-(def date2 (t/date 2020 5 15))
-
-;; date1이 date2보다 이전인지 비교합니다.
-(print (t/before? date1 date2))
-
-;; 결과: true
-```
-
-## 깊게 파헤치기
-
-날짜를 비교할 때에는 두 날짜의 시간대도 고려해야 합니다. `clojure.java-time.before?` 함수는 기본적으로 Unix Epoch과의 비교를 하기 때문에, 시간대가 다른 두 날짜를 비교할 때는 부정확한 결과가 나올 수 있습니다. 이를 방지하기 위해서는 `ZoneId` 객체를 사용하여 해당 날짜의 시간대를 지정해주어야 합니다.
-
-`clojure.java-time` 라이브러리는 `ZoneId` 객체를 다루는 `t/time-zone` 함수를 제공합니다.
+먼저 `clj-time` 라이브러리를 `project.clj` 파일의 `:dependencies` 부분에 추가해주세요.
 
 ```Clojure
-(def seoul-zone (t/time-zone "Asia/Seoul"))
-
-;; 2020년 5월 10일과 2020년 5월 10일 12시를 비교하는 예제입니다.
-(def date1 (t/date 2020 5 10))
-(def date2 (t/local-date-time 2020 5 10 12))
-(def date3 (t/zoned-date-time date2 seoul-zone))
-
-;; date1이 date2보다 이전인지 비교합니다.
-(print (t/before? date1 date2))
-
-;; 결과: false
-
-;; date1이 date3보다 이전인지 비교합니다.
-(print (t/before? date1 date3))
-
-;; 결과: true
+:dependencies [[clj-time "0.15.2"]]
 ```
 
-## 더 알아보기
+그리고나서 `clj-time`의 `time` 네임스페이스를 추가해줍니다.
 
-- `clojure.java-time` 라이브러리 공식 문서 (https://cljdoc.org/d/java-time/java-time/0.3.2/doc/readme)
+```Clojure
+(ns your-namespace
+  (:require [clj-time.core :as time]))
+```
+
+이제 두 날짜를 생성하고 비교하는 예제를 살펴봅시다.
+
+```Clojure
+(def date1 (time/date 2021 1 1))
+(def date2 (time/date 2021 2 1))
+
+(println (time/compare date1 date2))
+;; 결과: -1 (-1은 date1이 date2보다 이전임을 나타냅니다.)
+```
+
+또 다른 예제로는 두 날짜가 같은지 비교하는 방법입니다.
+
+```Clojure
+(def date1 (time/date 2020 12 31))
+(def date2 (time/date 2021 1 1))
+
+(println (time/same? date1 date2))
+;; 결과: false (두 날짜가 다름을 나타냅니다.)
+```
+
+이렇게 간단하게 두 날짜를 비교할 수 있습니다!
+
+## 깊이 파헤치기
+
+`clj-time` 라이브러리는 Joda-Time의 Clojure 포팅판입니다. 따라서 Joda-Time의 모든 기능을 활용할 수 있습니다. 또한 `clj-time`은 Clojure의 함수형 프로그래밍 스타일을 지키기 때문에 이전날짜/다음날짜를 구하는 등의 기능도 쉽게 사용할 수 있습니다. 자세한 내용은 [공식 문서](https://github.com/clj-time/clj-time)를 참조하세요.
+
+## 참고자료
+
+- [Clojure 공식 사이트](https://clojure.org/)
+- [Joda-Time 공식 사이트](https://www.joda.org/joda-time/)
+- [Clj-time 라이브러리 문서](https://github.com/clj-time/clj-time)

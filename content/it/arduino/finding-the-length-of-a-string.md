@@ -1,34 +1,54 @@
 ---
-title:                "Arduino: Trovare la lunghezza di una stringa"
+title:                "Arduino: Trovare la lunghezza di una stringa."
+simple_title:         "Trovare la lunghezza di una stringa."
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Cosa ti spinge a voler conoscere la lunghezza di una stringa nel tuo programma Arduino? Forse vuoi verificare la correttezza dei tuoi input o semplicemente gestire meglio la memoria disponibile sul tuo dispositivo. Qualunque sia la tua motivazione, il seguente tutorial ti guiderà attraverso il processo di trovare la lunghezza di una stringa in modo semplice ed efficiente.
+
+Ci sono molte volte in cui avremmo bisogno di conoscere la lunghezza di una stringa in Arduino, come per esempio nell'analisi di un input da un sensore o nel salvataggio di dati in un array. Conoscere la lunghezza della stringa ci consente di gestire al meglio i nostri dati e creare codice più efficiente.
 
 ## Come fare
-Innanzitutto, è necessario comprendere cosa si intende per "lunghezza di una stringa". In informatica, una stringa è semplicemente un insieme di caratteri, come lettere o numeri, messi insieme in un certo ordine. La lunghezza di una stringa si riferisce quindi al numero di caratteri presenti in essa.
 
-Per trovare la lunghezza di una stringa nel tuo codice Arduino, puoi utilizzare la funzione `strlen()`. Questa funzione accetta un parametro di tipo `char`, che rappresenta la stringa di cui vuoi trovare la lunghezza, e restituisce un valore di tipo `size_t`, che indica il numero di caratteri nella stringa.
-
-Di seguito è riportato un esempio di codice che utilizza la funzione `strlen()` per trovare la lunghezza di una stringa e poi stamparla sul monitor seriale:
+Calcolare la lunghezza di una stringa è un'operazione abbastanza semplice in linguaggio C e quindi anche in Arduino. Iniziamo creando una nuova variabile di tipo `char` che conterrà la nostra stringa e assegniamole il valore desiderato:
 
 ```Arduino
-char myString[] = "Hello World";
-int length = strlen(myString);
-Serial.println(length); // stampa "11"
+char miaStringa[] = "Ciao mondo!";
 ```
 
-In questo esempio, abbiamo dichiarato una variabile di tipo `char` chiamata `myString` e gli abbiamo assegnato il valore della nostra stringa "Hello World". Poi abbiamo utilizzato la funzione `strlen()` per assegnare il valore della lunghezza della stringa alla variabile `length`. Infine, abbiamo utilizzato la funzione `Serial.println()` per stampare il valore di `length` sul monitor seriale.
+Una volta definita la nostra stringa, possiamo utilizzare la funzione `strlen()` per ottenere la sua lunghezza:
+
+```Arduino
+int lunghezza = strlen(miaStringa);
+Serial.println(lunghezza); // output: 11
+```
+
+Come possiamo vedere, la funzione `strlen()` restituisce un valore intero che rappresenta la lunghezza della stringa in caratteri. Ovviamente, questo valore può variare a seconda della lunghezza della stringa che abbiamo definito.
 
 ## Approfondimento
-Se vuoi approfondire ulteriormente come funziona la funzione `strlen()`, puoi dare un'occhiata all'implementazione di questa funzione nella libreria standard di C. Inoltre, puoi anche trovare altre funzioni utili per la manipolazione delle stringhe nella libreria `string.h`, come ad esempio `strcpy()` per copiare le stringhe o `strcat()` per concatenarle.
+
+Se vogliamo capire meglio come funziona la funzione `strlen()` e come possiamo utilizzare al meglio questa conoscenza, possiamo analizzare il suo codice sorgente. La funzione `strlen()` fa parte della libreria standard del linguaggio C e la sua definizione è la seguente:
+
+```Arduino
+size_t strlen(const char* str) {
+    const char* s;
+    for (s = str; *s; ++s);
+    return(s - str);
+}
+```
+
+In termini semplici, questa funzione scandisce ogni carattere della stringa finché non trova un carattere nullo `\0`, che indica la fine della stringa. A questo punto, la funzione restituisce la differenza tra la posizione corrente e quella iniziale, ovvero la lunghezza della stringa.
+
+Utilizzando questa conoscenza, possiamo creare delle varianti della funzione `strlen()` che, ad esempio, restituiscono il numero di vocali o di consonanti presenti nella stringa.
 
 ## Vedi anche
-- [Documentazione della funzione `strlen()` su arduino.cc](https://www.arduino.cc/reference/it/language/functions/string-manipulation/strlen/)
-- [Tutorial su come utilizzare le stringhe in Arduino](https://www.elegoo.com/blogs/arduino-projects/arduino-projects-basics-string-manipulation)
-- [Documentazione della libreria `string.h` su cplusplus.com](https://www.cplusplus.com/reference/cstring/)
+
+- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/strlen/)
+- [Guida alla programmazione in linguaggio C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+- [Esempi di utilizzo della funzione `strlen()`](https://www.geeksforgeeks.org/strlen-function-in-c/)
+- [Approfondimento sulla manipolazione delle stringhe in Arduino](https://www.arduino.cc/en/Tutorial/StringLengthTrim)

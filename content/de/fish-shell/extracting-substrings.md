@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Substrings extrahieren"
+title:                "Fish Shell: Untersuchen von Teilzeichenketten"
+simple_title:         "Untersuchen von Teilzeichenketten"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/extracting-substrings.md"
 ---
 
@@ -9,26 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Substring-Extraktion, auch bekannt als Teilzeichenfolgenextraktion, ist ein nützliches Werkzeug, um bestimmte Teile einer Zeichenfolge zu isolieren. Dies kann hilfreich sein, wenn man zum Beispiel nur die ersten 5 Zeichen einer ID-Nummer benötigt oder bestimmte Wörter aus einem längeren Text herausfiltern möchte.
+Du fragst dich vielleicht, warum es wichtig ist, Substrings zu extrahieren, wenn du Fish Shell benutzt. Die einfache Antwort ist, dass es dir helfen kann, bestimmte Teile von einem längeren Text zu isolieren oder zu entfernen. Das kann besonders hilfreich sein, wenn du mit großen Datenmengen arbeitest oder wenn du bestimmte Zeichenfolgen aus einer Ausgabe entfernen musst.
 
-##Wie funktioniert es
+## Wie geht das?
 
-Um Substrings in der Fish Shell zu extrahieren, gibt es verschiedene Möglichkeiten. Eine davon ist die Verwendung des `string` Befehls. Hier ist ein Beispiel, um die ersten 3 Zeichen einer Zeichenfolge zu extrahieren und sie dann in Großbuchstaben auszugeben:
+Um Substrings in Fish Shell zu extrahieren, kannst du den Befehl `string match` verwenden. Du musst dabei zwei Argumente angeben: die Zeichenfolge, aus der du den Substring extrahieren möchtest, und das Muster, das du verwenden willst, um den Substring zu identifizieren.
 
 ```Fish Shell
-set text "Hallo Welt"
-string sub $text 0 3 | string upper
+set string "Hallo Welt"
+string match Welt $string
 ```
-Die Ausgabe wäre `HAL`.
 
-## Tiefer tauchen
+Das obige Beispiel wird den Substring "Welt" aus der Zeichenfolge "Hallo Welt" extrahieren und diese Ausgabe zurückgeben:
 
-Um tiefer in die Substring-Extraktion einzutauchen, gibt es mehrere Parameter, die man verwenden kann. Zum Beispiel kann mit dem `length` Parameter die Anzahl der extrahierten Zeichen festgelegt werden. Mit dem `start` Parameter kann man angeben, ab welchem Index in der Zeichenfolge die Extraktion beginnen soll.
+```Fish Shell
+Welt
+```
 
-Zusätzlich gibt es auch die Möglichkeit, negative Zahlen für den `start` Parameter zu verwenden. Dies bedeutet, dass die Extraktion von rechts beginnt und nicht von links.
+Du kannst auch Platzhalter verwenden, um mehrere Zeichenfolgen mit ähnlichen Mustern zu identifizieren. Zum Beispiel können die Platzhalter `?` und `*` verwendet werden, um einzelne bzw. beliebig viele Zeichen zu repräsentieren.
 
-##Siehe auch
+```Fish Shell
+string match Ha?e $string
+```
 
-- Fish Shell-Dokumentation zu `string` Befehl
-- Ein Tutorial zur Verwendung von Substrings in Fish Shell
-- Eine Liste von weiteren nützlichen Befehlen in der Fish Shell
+Dieses Beispiel wird den Substring "Hall" aus der Zeichenfolge "Hallo Welt" extrahieren.
+
+## Tiefergehende Infos
+
+Abgesehen von einfachen Platzhaltern, kannst du mit dem Befehl `string match` auch reguläre Ausdrücke verwenden, um Substrings zu extrahieren. Reguläre Ausdrücke bieten eine flexiblere und leistungsstärkere Möglichkeit, Muster zu definieren und Substrings zu identifizieren.
+
+Mit `string match -r` kannst du reguläre Ausdrücke in deinem Suchmuster verwenden. Zum Beispiel kannst du damit alle Wörter in einer Zeichenfolge extrahieren, die mit dem Buchstaben "a" beginnen.
+
+```Fish Shell
+set string "Alles anfangen macht Spaß"
+string match -r a\w+ $string
+```
+
+Dieses Beispiel wird folgendes ausgeben:
+
+```Fish Shell
+Alles
+anfangen
+aus
+Spaß
+```
+
+## Siehe auch
+
+- [Fish Shell Dokumentation zu string match](https://fishshell.com/docs/current/cmds/string-match.html)
+- [Reguläre Ausdrücke in Fish Shell](https://fishshell.com/docs/current/tutorial.html#tutorial-tut7)
+- [Einführung zu regulären Ausdrücken](https://www.regular-expressions.info/tutorial.html)

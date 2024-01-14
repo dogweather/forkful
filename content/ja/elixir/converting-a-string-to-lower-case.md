@@ -1,46 +1,46 @@
 ---
-title:                "Elixir: 文字列を小文字に変換する"
+title:                "Elixir: 「文字列を小文字に変換する」"
+simple_title:         "「文字列を小文字に変換する」"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+Elixirプログラミングをする理由 - なぜ文字列を小文字に変換するか
 
-文字列を小文字に変換するのにかかる時間をかける価値はありますか？
+Elixirは強力なプログラミング言語であり、多くの組み込み関数があります。中でも、文字列を扱うための機能が充実しています。文字列を小文字に変換することは、文章の整形や比較検索などに役立ちます。例えば、ユーザーが入力した文字列を全て小文字に統一することで、データの整合性を保つことができます。このように、Elixirで文字列を小文字に変換することは、より効率的なプログラミングを実現するために役立つのです。
 
-文字列を小文字に変換することには様々な理由があります。例えば、検索や比較を行う場合、文字列の大文字と小文字を区別することは大きな違いを生み出すことがあります。また、データベースに格納する際に全ての文字列を小文字に統一することで、一貫性を保つことができます。
+Elixirで文字列を小文字に変換する方法
 
-## 方法
-
-Elixirでは、`String.downcase/1`関数を使用することで簡単に文字列を小文字に変換することができます。以下の例をご覧ください。
+Elixirでは、文字列を小文字に変換するための組み込み関数であるString.downcase/1を使用します。下記のコードを参考にしてください。
 
 ```Elixir
-iex> String.downcase("HELLO")
-"hello"
+text = "Hello, World!"
+
+String.downcase(text)
 ```
 
-また、文字列の一部を小文字に変換する場合は、`String.replace/3`関数を使用することもできます。
+出力結果：
 
-```Elixir
-iex> String.replace("Hello World!", "World", String.downcase("World"))
-"Hello world!"
-```
+"hello, world!"
 
-## 深堀り
 
-`String.downcase/1`関数は、文字列を小文字に変換する際にASCIIの範囲内の文字のみを対象にします。これはElixirの文字列がUTF-8で表現されているためです。しかし、日本語の文字を小文字に変換する場合は、`String.downcase/2`関数を使用して、任意のUnicodeのマップを渡すことができます。
+このように簡単に文字列を小文字に変換することができます。また、String.downcase/1は文字列以外のデータ型も受け入れることができ、その際には自動的に文字列に変換してくれます。例えば、数値を渡した場合は文字列に変換して小文字に変換することができます。
 
-```Elixir
-iex> String.downcase("こんにちは", "ja")
-"こんにちは"
-```
+さらに、String.downcase/1にはオプションの引数があり、文字列内に含まれる特定の言語や文字セットに対応した変換も行うことができます。詳細はElixirの公式ドキュメントを参照してください。
 
-## 参考リンク
+文字列を小文字に変換する深層
 
-- [Elixir公式ドキュメント - String.downcase/1](https://hexdocs.pm/elixir/String.html#downcase/1)
-- [Elixir公式ドキュメント - String.replace/3](https://hexdocs.pm/elixir/String.html#replace/3)
-- [ASCIIとUnicodeの違いについて](https://qiita.com/chihiro/items/5b934f5ee0ca7863ab94)
-- [UTF-8とは何か？](https://qiita.com/osocorporation/items/3bd0844fe2e793bdf349)
+文字列を小文字に変換する際には、Unicodeという仕組みが重要な役割を果たしています。Unicodeは、国際的に使われるさまざまな文字セットを統一的に扱うための規格です。Elixirでは、Unicodeに準拠しているため、文字列を小文字に変換する際にも正確な変換が行われるのです。
+
+See Also
+参考リンク：
+
+- Elixir公式ドキュメント：
+https://hexdocs.pm/elixir/String.html#downcase/1
+
+- Unicodeの詳細について：
+https://unicode.org/charts/

@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Znajdowanie długości ciągu znaków"
+title:                "Rust: Znajdowanie długości ciągu znaków."
+simple_title:         "Znajdowanie długości ciągu znaków."
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/finding-the-length-of-a-string.md"
 ---
 
@@ -9,38 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą lub chcesz zostać jednym, prawdopodobnie już słyszałeś o Rust - nowoczesnym, szybkim i niezawodnym języku programowania. Jedną z wielu zalet tego języka jest to, że jest on bardzo efektywny w zarządzaniu pamięcią. W tym szkoleniu przeanalizujemy, jak znaleźć długość łańcucha znaków w Rust i jak możesz wykorzystać tę wiedzę w swoich projektach.
+Długość ciągu znaków jest często ważnym elementem w programowaniu. Znajomość długości ciągu może pomóc w działaniach takich jak porównywanie, sortowanie i wyciąganie podciągów. W tym artykule dowiesz się, jak znaleźć długość ciągu w języku Rust.
 
 ## Jak to zrobić
 
-Aby znaleźć długość łańcucha znaków w Rust, musimy wykorzystać metodę `len()` dla typu `String`. Wywołanie tej metody zwróci liczbę znaków w danym łańcuchu. Oto przykładowy kod:
+Aby uzyskać długość ciągu w języku Rust, możemy skorzystać z metody `len()`, która jest dostępna dla typu `String`. Poniżej znajduje się przykładowy kod wykorzystujący tę metodę:
 
 ```Rust
-let s = String::from("Cześć, jestem tekstem!");
-let len = s.len();
-println!("Długość łańcucha: {}", len);
+let tekst = String::from("To jest przykładowy ciąg.");
+let dlugosc = tekst.len();
+println!("Długość ciągu wynosi: {} znaków", dlugosc);
 ```
 
-Output: `Długość łańcucha: 21`
+Output:
 
-Możesz także wykorzystać metodę `len()` dla typu `str`, który jest częścią Rustowego typu `&str`, który reprezentuje łańcuchy znaków stałych. Przykładowy kod:
+```
+Długość ciągu wynosi: 27 znaków
+```
+
+Możemy również wykorzystać metodę `chars()` w połączeniu z `count()` aby uzyskać liczbę znaków w ciągu:
 
 ```Rust
-let s = "Witaj, świecie!";
-let len = s.len();
-println!("Długość łańcucha: {}", len);
+let tekst = String::from("To jest przykładowy ciąg.");
+let dlugosc = tekst.chars().count();
+println!("Długość ciągu wynosi: {} znaków", dlugosc);
 ```
 
-Output: `Długość łańcucha: 15`
+Output:
 
-## Głębszy przegląd
+```
+Długość ciągu wynosi: 27 znaków
+```
 
-Warto zauważyć, że metoda `len()` dla typu `String` zwraca liczbę bajtów, a nie liczbę znaków. W niektórych językach, taka jak Java czy C#, długość łańcucha jest zwracana jako liczba znaków. W Rust, dlatego że łańcuchy znaków są kodowane przy użyciu UTF-8, nie ma gwarancji, że jedna litera odpowiada jednej wartości bajtowej. Może to prowadzić do nieoczekiwanych wyników. Dlatego zawsze warto sprawdzić, czy długość łańcucha jest zgodna z oczekiwaniami.
+## Głębszy wgląd
 
-## Zobacz także
+W języku Rust długość ciągu jest przechowywana jako liczba bajtów, a nie liczba znaków. Dzieje się tak, ponieważ Rust używa kodowania UTF-8, które może mieć różną długość dla różnych znaków. Dlatego, jeśli chcemy uzyskać liczbę znaków w ciągu, powinniśmy użyć metody `chars()` w połączeniu z `count()`, jak pokazano w sekcji "Jak to zrobić".
 
-Jeśli chcesz dowiedzieć się więcej o pracowaniu z łańcuchami znaków w Rust, zapoznaj się z oficjalną dokumentacją: [https://doc.rust-lang.org/std/string](https://doc.rust-lang.org/std/string)
+## Zobacz też
 
-Jeśli chcesz dowiedzieć się więcej o języku Rust, zapraszamy na stronę: [http://rust-lang.org/](http://rust-lang.org/)
+- [Dokumentacja Rust - String](https://doc.rust-lang.org/std/string/struct.String.html)
+- [The Rust Programming Language - Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
 
-Jeśli potrzebujesz pomocy lub chcesz podzielić się swoimi doświadczeniami z innymi programistami Rust, dołącz do społeczności na forum: [https://users.rust-lang.org/](https://users.rust-lang.org/)
+Dziękujemy za przeczytanie tego artykułu. Mamy nadzieję, że teraz wiesz, jak znaleźć długość ciągu w języku Rust. Do zobaczenia w następnym artykule!

@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/extracting-substrings.md"
 ---
 
@@ -9,58 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Extraer subcadenas puede ser una tarea útil en la programación de Arduino. Puede permitirnos manipular y trabajar con partes específicas de un texto, lo cual puede ser útil en diversas aplicaciones como, por ejemplo, en la manipulación de datos o en la creación de interfaces de usuario.
+Si estás interesado en aprender a programar con Arduino, seguramente ya has notado la enorme cantidad de posibilidades que ofrece esta plataforma. Y una de las funcionalidades más útiles para manipular cadenas de texto es la extracción de subcadenas. En este artículo, te explicaremos por qué es importante aprender a hacerlo y cómo puedes hacerlo tú mismo.
 
-## Cómo
+## Cómo hacerlo
 
-Para extraer subcadenas en Arduino, podemos utilizar la función `substring()` que nos permite especificar qué parte de una cadena queremos obtener. Veamos un ejemplo:
-
-```Arduino
-String frase = "¡Hola a todos!";
-String saludo = frase.substring(0, 4);
-Serial.println(saludo);
-```
-
-Este código imprimirá "¡Hola" en el monitor serial, ya que especificamos que queremos obtener los caracteres desde la posición 0 hasta la 4 de la cadena `frase`. Nota que la posición 0 es el primer caracter de la cadena, mientras que la posición 4 es el quinto caracter.
-
-También podemos utilizar la función `indexOf()` para obtener la posición de un determinado caracter en una cadena. Por ejemplo:
+Para extraer una subcadena de una cadena de texto en Arduino, utilizaremos la función `substring()`. Primero, definiremos la cadena de texto completa y luego usaremos esta función para especificar la posición de inicio y la longitud de la subcadena que deseamos extraer.
 
 ```Arduino
-String frase = "¡Hola a todos!";
-int pos = frase.indexOf('a');
-Serial.println(pos);
+// Definir la cadena de texto completa
+String texto = "¡Hola mundo!";
+
+// Extraer la subcadena "mundo" a partir del cuarto carácter (índice 3) y de longitud 5
+String subcadena = texto.substring(3, 5);
+
+// Imprimir la subcadena en el monitor serie
+Serial.println(subcadena);
+
+// Resultado: mundo
 ```
 
-Este código imprimirá 6, ya que la primera posición en la que se encuentra la letra "a" en la cadena `frase` es en la posición 6.
+Puedes personalizar la posición de inicio y la longitud de la subcadena según tus necesidades, lo que te permite manipular y utilizar cadenas de texto de manera más eficiente en tu programa de Arduino.
 
-## Deep Dive
+## Profundizando
 
-La función `substring()` también nos permite obtener una subcadena a partir de una posición inicial hasta el final de la cadena. Por ejemplo:
+Ahora que sabes cómo extraer subcadenas en Arduino, es importante que entiendas cómo funciona esta función y cómo puedes utilizarla en situaciones más complejas. La función `substring()` toma dos parámetros: la posición de inicio y la longitud de la subcadena. Sin embargo, si solo especificamos la posición de inicio, la subcadena resultante incluirá todos los caracteres restantes de la cadena original.
 
-```Arduino
-String juan = "Juan Pérez";
-String apellido = juan.substring(5);
-Serial.println(apellido);
-```
+También puedes utilizar variables en lugar de números específicos para indicar la posición y la longitud. Esto te permite crear programas dinámicos que pueden manipular diferentes cadenas de texto sin tener que cambiar manualmente los valores.
 
-Este código imprimirá "Pérez", ya que especificamos que queremos obtener todos los caracteres a partir de la posición 5 hasta el final de la cadena `juan`.
+## Ver también
 
-Otra función útil es `substring()` junto con `indexOf()` para obtener una subcadena entre dos caracteres específicos. Por ejemplo:
-
-```Arduino
-String frase = "Siempre positivo";
-String palabra = frase.substring(frase.indexOf("pos"), frase.indexOf("pos") + 6);
-Serial.println(palabra);
-```
-
-Este código imprimirá "positivo", ya que especificamos que queremos obtener todos los caracteres desde la palabra "pos" hasta los siguientes 6 caracteres después de esta palabra.
-
-## Ver además
-
-Aquí hay algunos enlaces útiles para seguir aprendiendo sobre cómo extraer subcadenas en Arduino:
-
-- [Documentación de la función `substring()` en la referencia de Arduino](https://www.arduino.cc/reference/es/language/variables/data-types/string/functions/substring/)
-- [Tutorial de Arduino sobre cómo manipular cadenas de texto](https://www.arduino.cc/en/Tutorial/StringLength)
-- [Video tutorial sobre cómo extraer subcadenas en Arduino](https://www.youtube.com/watch?v=XsuM4GQtJoo)
-
-¡Ahora ya tienes las herramientas para empezar a jugar con subcadenas en tus proyectos de Arduino! Recuerda siempre probar y experimentar con diferentes casos para familiarizarte con estas funciones. ¡Diviértete programando!
+- [Tutorial de Arduino para principiantes](https://www.arduino.cc/en/Guide/HomePage)
+- [Documentación oficial de la función `substring()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- [Ejemplos de proyectos de Arduino](https://create.arduino.cc/projecthub/projects/tags/arduino)

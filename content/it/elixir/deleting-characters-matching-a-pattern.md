@@ -1,47 +1,42 @@
 ---
-title:                "Elixir: Eliminazione di caratteri corrispondenti a un modello"
+title:                "Elixir: Eliminare i caratteri corrispondenti a un modello"
+simple_title:         "Eliminare i caratteri corrispondenti a un modello"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+##Perché
+Eliminare i caratteri che corrispondono a un determinato modello può essere molto utile per pulire e organizzare il proprio codice, soprattutto quando si lavora su progetti di grandi dimensioni. Inoltre, può essere una tecnica efficace per risolvere problemi specifici all'interno di un programma.
 
-Nella programmazione Elixir, è spesso necessario manipolare le stringhe e i caratteri al loro interno. Una delle operazioni comuni che si possono svolgere è la cancellazione dei caratteri corrispondenti a un determinato modello. In questo articolo vedremo come farlo utilizzando Elixir.
-
-## Come
-
-Per eliminare i caratteri corrispondenti a un modello, utilizzeremo la funzione `String.replace` di Elixir. Questa funzione richiede tre argomenti: la stringa di input, il modello da cercare e il nuovo valore da sostituire al modello.
-
-Ad esempio, se abbiamo una stringa "ciao mondo" e vogliamo eliminare tutte le vocali, possiamo utilizzare il seguente codice:
+##Come fare
+Per eliminare i caratteri che corrispondono a un modello in Elixir, possiamo utilizzare la funzione `String.replace/4` che prende quattro argomenti: la stringa da cui eliminare i caratteri, il modello da cercare, la stringa di sostituzione e il numero massimo di elementi da sostituire. Di seguito un esempio di come utilizzare questa funzione:
 
 ```Elixir
-stringa = "ciao mondo"
-String.replace(stringa, ~r/[aeiou]/, "")
+iex> stringa = "Ciao mondo, benvenuto!"
+"Ciao mondo, benvenuto!"
+iex> String.replace(stringa, "o", "")           
+"Cia mond, benvenut!"
 ```
+Come possiamo notare, tutti i caratteri "o" sono stati eliminati dalla stringa originale.
 
-L'output di questo codice sarà "c mnrd".
-
-Possiamo anche specificare una stringa vuota come terzo argomento per semplicemente eliminare i caratteri corrispondenti al modello senza sostituirli con altro.
+Possiamo anche utilizzare espressioni regolari per creare modelli più complessi da utilizzare nella funzione `String.replace/4`. Ad esempio, se vogliamo eliminare tutte le vocali dalla stringa, possiamo utilizzare `[^aeiou]` come modello, che indica "tutto tranne le vocali". Ecco un esempio di come utilizzare questa espressione regolare:
 
 ```Elixir
-stringa = "ciao mondo"
-String.replace(stringa, ~r/[aeiou]/, "")
+iex> stringa = "Ciao mondo, benvenuto!"
+"Ciao mondo, benvenuto!"
+iex> String.replace(stringa, ~r/[^aeiou]/, "")   
+"iao oo, eeuo!"
 ```
 
-L'output di questo codice sarà "c md".
+## Approfondimento
+La funzione `String.replace/4` utilizza l'algoritmo di ricerca e sostituzione di Boyer-Moore per trovare e sostituire i caratteri corrispondenti al modello. Questo algoritmo è molto veloce e efficiente, rendendo l'operazione di eliminazione dei caratteri molto rapida anche su stringhe di grandi dimensioni.
 
-## Deep Dive
-
-La funzione `String.replace` utilizza le espressioni regolari per trovare i caratteri corrispondenti al modello. Le espressioni regolari sono un potente strumento per la manipolazione delle stringhe e la loro sintassi è simile a quella di altri linguaggi di programmazione.
-
-È importante notare che la funzione `String.replace` è case-sensitive, quindi se vogliamo eliminare tutti i caratteri "a" indipendentemente dal loro caso, dobbiamo utilizzare una espressione regolare che include entrambe le opzioni. Ad esempio, `~r/[aA]/` eliminerà sia le "a" minuscole che le "A" maiuscole.
-
-Oltre alla funzione `String.replace`, Elixir offre anche altre funzioni per manipolare le stringhe, come ad esempio `String.trim` per eliminare gli spazi bianchi all'inizio e alla fine di una stringa o `String.split` per dividerla in una lista basandosi su un separatore.
+Inoltre, è importante notare che la funzione `String.replace/4` restituisce una nuova stringa anziché modificare la stringa originale. Questo è importante da considerare quando si lavora con stringhe immutabili in Elixir.
 
 ## Vedi anche
-
-- [Documentazione di `String.replace`](https://hexdocs.pm/elixir/String.html#replace/3)
-- [Introduzione alle espressioni regolari in Elixir](https://elixirschool.com/it/lessons/basics/pattern-matching/#regular-expressions)
+- [Elixir String.replace documentation](https://hexdocs.pm/elixir/String.html#replace/4)
+- [Boyer-Moore pattern matching algorithm](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm)

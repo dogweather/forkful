@@ -1,39 +1,49 @@
 ---
 title:                "Elm: 获取当前日期"
+simple_title:         "获取当前日期"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要获取当前日期
 
-在编写任何类型的程序时，获取当前日期是一个非常常见的需求。无论是日程安排、定时任务还是文件命名，都需要使用到当前日期。因此，学习如何在Elm中获取当前日期是非常必要的。
+在编程中，经常需要获取当前的日期和时间。这可以用于生成日志、跟踪事件、或者简单地显示给用户，以便他们知道当前的日期和时间。在 Elm 中，获取当前日期可以通过使用内置的 `Time` 模块来实现。
 
-## 如何操作
+# 如何实现获取当前日期
 
-在Elm中，我们可以使用内置的`Time`包来获取当前日期。下面是一个简单的例子，展示如何获得当前日期并将其打印输出：
+为了获取当前的日期，我们首先需要导入 `Time` 模块。然后，我们可以使用 `Time.now` 函数来获取当前的日期和时间。下面是一个简单的示例代码：
 
-```Elm
+```elm
 import Time exposing (now)
-import Date exposing (fromTime, Day)
 
-main =
-    now
-        |> fromTime
-        |> Day.format { year = Day.number, month = Day.twoDigits, day = Day.twoDigits }
-        |> Debug.log "当前日期为："
+date = now
 ```
 
-运行以上代码，将会得到类似于`当前日期为：2021-07-07`的输出结果。首先，我们导入了`Time`和`Date`包，然后使用`now`函数来获取当前时间，再通过`fromTime`函数将时间转换为日期对象。最后，使用`Day.format`函数来将日期对象格式化为我们想要的形式，并将输出结果打印到控制台。
+`date` 变量现在将包含一个被称为 `Time.Posix` 的数据结构，它包含当前日期和时间的所有信息。所以，如果我们想要只获取日期部分，我们可以使用 `Time.Posix.toDate` 函数。下面是一个完整的代码示例，展示如何获取当前日期的字符串格式：
 
-## 深入了解
+```elm
+import Time exposing (now)
+import Time exposing (Posix, toDate)
+import Time.Format exposing (format)
 
-除了上述的方法外，我们还可以使用更多的函数来获取更加精确的时间信息。比如，`Time.nowInUtc`函数可以返回当前时间的UTC格式，`Time.inSeconds`函数可以将时间转换为秒数，`Time.every`函数可以设置定时任务，等等。想要深入了解可以查阅[官方文档](https://package.elm-lang.org/packages/elm/time/latest/)。
+date = now
+        |> Posix.toDate
+        |> format "%Y-%m-%d"
+```
 
-## 参考资料
+最终，`date` 变量将包含一个格式为 `YYYY-MM-DD` 的字符串，表示当前日期。如果我们想要获取当前时间，我们可以使用 `Time.Format` 模块来格式化 `Time.Posix` 数据结构中的时间部分。
 
-- [Elm官方文档](https://package.elm-lang.org/packages/elm/time/latest/)
-- [使用 Elm 进行 Web 编程](https://elmprogramming.com/)
-- [Learn Elm in Y minutes](https://learnxinyminutes.com/docs/zh-cn/elm-zh/)
+# 深入了解获取当前日期
+
+在 Elm 中，日期和时间是不可变的数据类型。这意味着我们无法修改它们，只能通过操作函数来获取不同形式的日期和时间。在 `Time` 模块中，还有其他一些函数可以用来获取时区和夏令时信息，以及计算日期和时间之间的差值。
+
+# 参考链接
+
+- Elm 官方文档：https://elm-lang.org/docs
+- `Time` 模块文档：https://package.elm-lang.org/packages/elm/time/latest/
+- Elm 社区论坛：https://discourse.elm-lang.org/
+- Elm 中文社区：https://elm-china.org/

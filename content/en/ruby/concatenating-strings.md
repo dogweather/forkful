@@ -1,7 +1,9 @@
 ---
 title:                "Ruby recipe: Concatenating strings"
+simple_title:         "Concatenating strings"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/concatenating-strings.md"
 ---
 
@@ -9,44 +11,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In the world of programming, string manipulation is a common task that we encounter. Whether it's for displaying a message to the user or creating dynamic content, combining strings is a fundamental skill to have. In Ruby, there are various ways to concatenate strings, making it a versatile and useful tool for developers.
+In any programming language, string manipulation is a crucial skill to have. Whether you're building a website, creating a game, or simply trying to organize data, being able to combine strings together can make your life a whole lot easier. In this blog post, we'll be focusing specifically on concatenating strings in Ruby - a simple yet powerful concept that every Ruby programmer should know.
 
 ## How To
 
-Concatenating strings in Ruby is a simple and straightforward process. The most commonly used method is the `+` operator, which allows us to join two or more strings together. Let's take a look at an example:
+Concatenating strings in Ruby is as simple as using the `+` operator. Let's take a look at a basic example:
 
 ```Ruby
-first_name = "John"
-last_name = "Smith"
-full_name = first_name + " " + last_name
-puts full_name #=> "John Smith"
-```
-
-In this example, we declared two variables `first_name` and `last_name` that contain the corresponding strings. We then used the `+` operator to concatenate the strings and assigned it to a new variable `full_name`. Finally, we printed the `full_name` variable to the console, which outputs the concatenated string "John Smith".
-
-Another way to concatenate strings in Ruby is by using the `<<` operator, which is also known as the concatenation assignment operator. This operator modifies the string directly, making it a more efficient approach. Let's see an example:
-
-```Ruby
+name = "John"
 greeting = "Hello"
-greeting << " "
-greeting << "World"
-puts greeting #=> "Hello World"
+
+puts greeting + " " + name
+# Output: Hello John
 ```
 
-In this example, we started with the `greeting` variable containing the string "Hello". Then, we used the `<<` operator to append the space and the word "World" to the string, resulting in the output "Hello World".
+In this example, we have two separate strings - `name` and `greeting` - and we combine them using the `+` operator. We also add a space in between the two strings to make the output more readable.
 
-There are also other methods that can be used for concatenating strings, such as the `concat()` and `prepend()` methods. It's important to note that the best method to use for concatenating strings depends on the specific task at hand.
+You can also use the `concat` method in Ruby to concatenate strings. Here's an example:
+
+```Ruby
+message = "I love"
+message.concat(" Ruby!")
+
+puts message
+# Output: I love Ruby!
+```
+
+As you can see, the `concat` method modifies the original string and adds the specified string to the end.
+
+Concatenation can also be done with variables that are not just strings. For example:
+
+```Ruby
+age = 25
+message = "I am " + age.to_s + " years old."
+
+puts message
+# Output: I am 25 years old.
+```
+
+In this case, we converted the `age` variable to a string using the `to_s` method before concatenating it with the other strings.
 
 ## Deep Dive
 
-Behind the scenes, concatenating strings in Ruby involves creating a new string object that contains the combined strings. This is why it's important to be mindful of memory usage when concatenating large strings. 
+Under the hood, concatenating strings in Ruby involves creating a new string that is a combination of two or more existing strings. This can be seen in the examples above where we used the `+` operator or the `concat` method. However, it's important to note that strings in Ruby are immutable, meaning they cannot be changed once they are created. This is why when we use concatenation, a new string is created instead of changing the original ones.
 
-In addition, it's worth mentioning that Ruby's `+` operator is actually an alias for the `concat()` method. This means that using the `+` operator behind the scenes calls the `concat()` method, making it a matter of personal preference as to which method to use. 
+It's also worth mentioning that there is a more efficient way of concatenating strings in Ruby - using the `<<` operator. Let's take a look at an example:
 
-In contrast, the `<<` operator modifies the existing string object directly, making it a more efficient approach in terms of memory usage. However, it's important to note that it can have unintended consequences if used incorrectly, such as altering the original string unintentionally.
+```Ruby
+name = "John"
+greeting = "Hello"
+
+greeting << " " << name
+
+puts greeting
+# Output: Hello John
+```
+
+In this case, the original `greeting` string is modified instead of creating a new one. This makes the `<<` operator a better choice for concatenation when performance is a concern.
 
 ## See Also
 
-- [Ruby String Concatenation](https://www.rubyguides.com/ruby-tutorial/ruby-string-concatenation/)
-- [Ruby String Concatenation | Ruby Tutorial](https://www.youtube.com/watch?v=m1w4HjMXUbE)
-- [Understanding string concatenation in Ruby](https://dev.to/fakorede/understanding-string-concatenation-in-ruby-4kdn)
+Here are some additional resources to help you learn more about concatenating strings in Ruby:
+
+- [Ruby Documentation on String Concatenation](https://ruby-doc.org/core-3.0.2/String.html#method-i-2B)
+- [RubyMonk Tutorial on String Concatenation](https://rubymonk.com/learning/books/1-ruby-primer/chapters/3-strings/lessons/22-string-concatenation)
+- [RubyGuides Article on String Concatenation](https://www.rubyguides.com/2019/10/ruby-string-concatenation/)
+
+Happy coding!

@@ -1,33 +1,42 @@
 ---
-title:                "Haskell: उप-स्ट्रिग्स निकालना"
+title:                "Haskell: सबस्ट्रिंग निकालना"
+simple_title:         "सबस्ट्रिंग निकालना"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
-क्या आपने कभी हास्केल प्रोग्रामिंग में उप-स्ट्रिंग्स को निकालने के बारे में सुना है? यदि हां, तो आप शायद जानते हों कि यह कैसे काम करता है और यह आपके कोड को क्यों और सुगम बना सकता है। लेकिन अगर आप इसके बारे में नए हैं, तो आप सही जगह पर हैं! इस ब्लॉग पोस्ट में हम आपको हास्केल में उप-स्ट्रिंग्स को प्राप्त करने के तरीके बताएंगे।
+## Kyon
 
-## कैसे करें
-आप उप-स्ट्रिंग्स को हास्केल में बहुत ही आसानी से प्राप्त कर सकते हैं। आपको सिर्फ दो चीजें करनी होंगी - स्ट्रिंग और इंडेक्स का हर्नियो निर्धारित करना। हम नीचे दो उदाहरण देखेंगे जो आपको समझने में मदद करेंगे।
+Substring extraction ek kaafi aasan aur uttam tarika hai jo aapke kaam ko saral aur sahi banata hai. Iska upyog bahut se programming tasks mein ho sakta hai jaise ki string manipulation, data cleaning aur aisi anya kaam.
 
-```Haskell
-main = do
-  let str = "हास्केल प्रोग्रामिंग"
-  let index = 2
-  putStrLn $ take index str
-```
-
-उपरोक्त कोड को आप स्वयं चला कर देख सकते हैं। यह हमारी लंबाई वाली स्ट्रिंग से प्रथम दो अक्षर निकालता है और हमारे स्क्रीन पर इसे प्रिंट करता है। इससे हमारा आउटपुट `हा` होगा।
+## Kaise Karein
 
 ```Haskell
+-- Substring ko start aur end index se extract karna
+substring :: Int -> Int -> [a] -> [a]
+substring start end list = take (end - start + 1) (drop start list)
+
+-- Example
 main = do
-  let str = "Haskell Programming"
-  let start = 5
-  let end = 13
-  putStrLn $ take (end - start + 1) (drop start str)
+  let str = "Haskell is amazing"
+  let result = substring 8 13 str
+  print result
 ```
 
-यहां, हमने `take` और `drop` दोनों का उपयोग किया है। `take` हमें एक शुरुआत के स्थान से एक स्पष्ट अंति स्थान तक सेट ऑफ़ चर्यों दे रहा है, जहां `end` शामिल है, स्टार्ट पर दोनों समझों और ़हां से रुको। हमारा आउटपु सम्पूर्ण शब्द `Programming` ह
+Is code ko run karne par aapko `is ama` ka output milega. Isi tarah aap apne code mein alag-alag starting aur ending index ka upyog karke alag alag substrings extract kar sakte hain.
+
+## Gehri Jhaank
+
+Substring extraction ke peeche kaaran hai ki humara samay aur mehnat bachta hai. Ek baar hume substrings ki prakriya samajh aa jaati hai, tab hum bahut se alag alag aur kaam ke tarike dhoondh sakte hain jisse hum apne code ko aur bhi efficient banate hain.
+
+Iske saath hi, substring extraction ek bahut hi flexible process hai jisme hume shuru aur ant ke index ke alawa aur bhi bahut se chunne ke options hote hain jaise ki specific words, characters ya patterns ko bhi extract kar sakte hain.
+
+## Dekhein Bhi
+
+- [Haskell Strings](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-String.html)
+- [Substring Functions in Haskell](https://www.geeksforgeeks.org/haskell-substring-functions/)
+- [A Beginner's Guide to Substrings in Haskell](https://www.codewars.com/kata/a-beginners-guide-to-substrings-in-haskell)

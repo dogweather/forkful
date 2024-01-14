@@ -1,57 +1,60 @@
 ---
 title:                "PHP: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "PHP"
-category:             "Getting Started"
+category:             "PHP"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi aloittaa uusi projekti
 
-Miksi aloittaisi uuden projektin? On monia eri syitä miksi aloittaa uusi projekti. Ehkä haluat kehittää uusia taitoja tai kokeilla uusia tekniikoita, tai ehkä haluat ratkaista jonkin tietyn ongelman. Projektien aloittaminen voi myös olla hauskaa ja haastavaa!
+On monia syitä miksi aloittaa uusi ohjelmistoprojekti. Ehkä haluat oppia uutta ohjelmointikieltä tai luoda jotain uutta ja ainutlaatuista. Ehkä haluat ratkaista jonkin ongelman, jolle ei ole olemassa valmista ratkaisua. Tai ehkä vain haluat haastaa itsesi ja parantaa ohjelmointitaitojasi. Riippumatta syystä, aloittaminen uusi projekti voi olla hauskaa ja palkitsevaa.
 
-## Miten
+## Kuinka aloittaa uusi projekti
 
-Aloitetaan uusi projekti! Käytämme PHP-kieltä tässä esimerkissä, mutta voit soveltaa samanlaisia periaatteita muihinkin ohjelmointikieliin. Alla on muutamia koodinpätkiä, jotka auttavat sinua aloittamaan uuden projektin.
+Jos olet päättänyt aloittaa uuden PHP-projektin, tässä on muutama esimerkki kuinka aloittaa.
+
+### 1. Luo uusi tiedostorakenne
+
+Hyvä tapa aloittaa uusi projektisi on luoda standardisoitu tiedostorakenne. Tämä helpottaa projektin hallintaa ja ylläpitoa. Tässä on esimerkki tiedostorakenteesta, jota voit käyttää:
+
+    project-name/
+    ├── css/
+        └── style.css
+    ├── js/
+        └── script.js
+    ├── images/
+    ├── includes/
+    │   ├── header.php
+    │   └── footer.php
+    ├── index.php
+    └── README.md
+
+Täällä `css` -hakemistoon voit tallentaa kaikki tyylitiedostot, `js` -hakemistoon kaikki JavaScript-tiedostot ja `includes` -hakemistoon kaikki muut tiedostot, kuten header- ja footer-tiedostot.
+
+### 2. Kirjoita ensimmäinen PHP-koodirivisi
+
+Nyt kun olet luonut tiedostorakenteen, voit aloittaa koodaamisen. Tässä on yksinkertainen esimerkki, jossa käytät PHP:ä tulostamaan "Hello World!"-viestin:
 
 ```PHP
-// Määritetään muuttuja
-$nimi = "Matti";
-
-// Tulostetaan tervehdys
-echo "Hei, " . $nimi . "!"; 
+<? php
+echo "Hello World!";
 ```
 
-Tämä koodi tulostaa "Hei, Matti!" näytölle. Voit muokata muuttujaa ja tekstiä haluamallasi tavalla. Seuraavaksi katsotaan miten voimme aloittaa uuden projektin hieman monimutkaisemman esimerkin avulla.
+Kun suoritat tämän koodin, näet tulosteen "Hello World!" selaimessa.
 
-```PHP
-// Luodaan funktio
-function laskeKeskiarvo($luku1, $luku2) {
-  // Lasketaan keskiarvo
-  $keskiarvo = ($luku1 + $luku2) / 2;
-  // Tulostetaan tulos
-  echo "Keskiarvo on: " . $keskiarvo;
-}
+## Syvennä uuden projektin aloittamista
 
-// Kutsutaan funktiota
-laskeKeskiarvo(10, 5); 
-```
+Jos haluat oppia lisää uuden projektin aloittamisesta PHP:llä, tässä on muutamia hyödyllisiä resursseja, jotka voit tarkistaa:
 
-Tämä koodi laskee kahden luvun keskiarvon ja tulostaa sen näytölle. Voit muuttaa funktiokutsua ja syötteitä haluamallasi tavalla. Nyt olet valmis aloittamaan ja kokeilemaan omia ideoitasi uusissa projekteissa!
-
-## Syvemmälle
-
-Projektin aloittaminen voi olla jännittävä mutta myös haastavaa. On tärkeää tehdä lähtösuunnitelma ja miettiä mitä tavoitteita haluat saavuttaa projektillasi. Muista myös dokumentoida koodiasi ja pitää se selkeänä ja järjestäytyneenä.
-
-Voit myös hyödyntää avoimen lähdekoodin projekteja ja kirjastoja kuten Composeria ja GitHubia. Ne voivat auttaa sinua luomaan uusia ominaisuuksia ja vähentämään koodin määrää, mikä säästää aikaa ja vaivaa.
-
-Muista myös, että projektista oppii enemmän laittamalla sen testiin. Kokeile tehdä erilaisia ratkaisuja ja ota vastaan palautetta muilta kehittäjiltä. Jatka oppimista ja kehittymistä uusien projektien ja haasteiden parissa!
+- [PHP:n virallinen dokumentaatio](https://www.php.net/docs.php) tarjoaa kattavan oppaan PHP:n asentamiseen ja käyttöön.
+- [W3Schools](https://www.w3schools.com/php/) on hyvä resurssi PHP-koodin oppimiseen esimerkkien ja harjoitusten avulla.
+- [PHP.net -foorumi](https://www.php.net/forums/) on hyvä paikka kysyä apua PHP-ohjelmointiin liittyvissä ongelmissa ja oppia muilta asiantuntijoilta.
 
 ## Katso myös
 
-- [PHP.net](https://www.php.net)
-- [Composer](https://getcomposer.org/)
-- [GitHub](https://github.com/)
-
-Projektien aloittaminen voi olla hauskaa ja palkitsevaa. Muista pitää mielessäsi tavoitteet ja tavoitteiden saavuttaminen saattaa tuntua entistäkin mielekkäämmältä. Onnea uusien projektien aloittamiseen ja nauti matkasta kohti parempaa koodia!
+- [PHP: Ohjelmointikieli aloittelijoille](https://www.codinginfinite.com/php-kurssi-aloittelijoille/) - opas PHP:n perusteisiin.
+- [Tyovalineet](https://fi.wikipedia.org/wiki/Ty%C3%B6kalut) - lisää hyödyllisiä työkaluja ja resursseja ohjelmointiin.

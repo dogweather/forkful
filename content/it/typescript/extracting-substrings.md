@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/typescript/extracting-substrings.md"
 ---
 
@@ -9,45 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-L'estrazione di sottostringhe è una pratica comune nella programmazione TypeScript utilizzata per ottenere una parte specifica di una stringa più lunga. Questo può essere utile per manipolare e ottenere informazioni specifiche da una stringa, come ad esempio i caratteri in una posizione particolare o un numero di caratteri preciso. In questo articolo, esploreremo come e perché utilizzare la funzione di estrazione delle sottostringhe in TypeScript.
+Molte volte, nel processo di sviluppo di un'applicazione TypeScript, potremmo avere la necessità di estrarre una parte di una stringa e utilizzarla per diverse operazioni. Ciò potrebbe essere necessario per manipolare i dati in un formato specifico o per validare l'input dell'utente. In questo articolo scopriremo il motivo per cui è importante imparare a estrarre sottostringhe e come farlo correttamente in TypeScript.
 
-## Come Fare
+## Come fare
 
-Per estrarre una sottostringa da una stringa più grande, possiamo utilizzare il metodo `substring()` di TypeScript. Ecco un semplice esempio:
+Per estrarre una sottostringa da una stringa in TypeScript, possiamo utilizzare il metodo `substring()` o l'operatore `slice()`.
 
-```TypeScript
-let str: string = "Ciao mondo!";
-let substr: string = str.substring(0, 4);
-console.log(substr);
-```
-
-In questo esempio, abbiamo una stringa di testo "Ciao mondo!" e utilizziamo il metodo `substring()` per estrarre i primi 4 caratteri, ovvero "Ciao". Questo perché il parametro `0` indica da quale posizione iniziare l'estrazione, mentre il parametro `4` indica quanti caratteri vogliamo estrarre.
-
-Il metodo `substring()` è molto flessibile e offre diverse opzioni per l'estrazione di sottostringhe. Possiamo utilizzare anche due parametri, dove il primo indica la posizione di inizio e il secondo la posizione finale per estrarre la sottostringa. Vediamo un altro esempio:
+Esempio utilizzando `substring()`:
 
 ```TypeScript
-let str: string = "Ciao amici!";
-let substr: string = str.substring(5, 11);
-console.log(substr);
+let stringa = "Questo è un esempio di stringa.";
+
+console.log(stringa.substring(6, 14)); //stampa "è un esempio"
 ```
 
-In questo caso, stiamo estraendo la sottostringa "amici" a partire dalla posizione 5 (inclusa) fino alla posizione finale 11 (esclusa).
-
-Possiamo anche utilizzare il metodo `substring()` per estrarre una sottostringa a partire dalla fine di una stringa utilizzando numeri negativi. Ad esempio:
+Esempio utilizzando `slice()`:
 
 ```TypeScript
-let str: string = "Buongiorno";
-let substr: string = str.substring(-5);
-console.log(substr);
+let stringa = "Questo è un esempio di stringa.";
+
+console.log(stringa.slice(6, 14)); //stampa "è un esempio"
 ```
 
-In questo esempio, il parametro `-5` indica che vogliamo estrarre una sottostringa di lunghezza 5 a partire dalla fine della stringa, ottenendo come risultato "giorno".
+Entrambi i metodi richiedono come argomenti l'indice di partenza e l'indice di fine della sottostringa desiderata. È importante notare che il primo indice è incluso nella sottostringa, mentre il secondo no.
+
+Inoltre, possiamo utilizzare anche l'indice negativo per indicare la posizione dall'ultima lettera della stringa. Ad esempio, `-1` rappresenta l'ultima lettera della stringa, `-2` la penultima e così via.
+
+```TypeScript
+let stringa = "Questo è un esempio di stringa.";
+
+console.log(stringa.substring(-13, -5)); //stampa "è un esempio"
+```
+
+```TypeScript
+let stringa = "Questo è un esempio di stringa.";
+
+console.log(stringa.slice(-13, -5)); //stampa "è un esempio"
+```
+
+Questi metodi possono essere utili anche per sostituire una parte di una stringa con un'altra sottostringa, semplicemente utilizzando il metodo `replace()`.
+
+```TypeScript
+let stringa = "Questo è un esempio di stringa.";
+
+console.log(stringa.replace("è un esempio", "è una stringa diversa")); 
+//stampa "Questo è una stringa diversa di stringa."
+```
 
 ## Approfondimento
 
-Oltre al metodo `substring()`, TypeScript offre anche altre funzioni per l'estrazione di sottostringhe, come `slice()`, `substr()` e `substring()`. Ognuna di queste funzioni ha delle differenze nella loro implementazione ed è importante comprendere le loro peculiarità per scegliere quella più adatta al nostro scopo. Inoltre, è sempre consigliabile effettuare controlli sulle posizioni e sulle lunghezze delle stringhe per evitare errori di compilazione.
+L'estrazione di sottostringhe può essere ulteriormente personalizzata utilizzando la regola di espressione regolare `substr()`. Questa regola accetta anche un terzo parametro, rappresentante la lunghezza della sottostringa desiderata.
 
-## Vedi Anche
+```TypeScript
+let stringa = "Questo è un esempio di stringa.";
 
-- [Documentazione ufficiale di TypeScript sulle sottostringhe](https://www.typescriptlang.org/docs/handbook/strings.html#substring-and-substr)
-- [Esempi di estrazione di sottostringhe in TypeScript](https://www.tutorialspoint.com/typescript/typescript_strings.htm)
+console.log(stringa.substr(6, 8)); //stampa "è un ese"
+```
+
+Questa regola può essere utile se conosciamo la posizione esatta dell'ultima lettera della sottostringa invece che la posizione di fine.
+
+## Vedi anche
+
+- [Documentazione ufficiale di TypeScript su substring() e slice()](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-subtypes)
+- [Guida completa su espressioni regolari in TypeScript](https://www.sitepoint.com/expressions-regular-typescript/)
+- [Utilizzo di substring, slice e substr per manipolare le stringhe in JavaScript](https://www.javascriptinplainenglish.com/extract-substring-javascript/)

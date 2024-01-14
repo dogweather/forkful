@@ -1,38 +1,48 @@
 ---
-title:                "Fish Shell: 正規表現の使用方法"
+title:                "Fish Shell: 正規表現を使う"
+simple_title:         "正規表現を使う"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+# なぜRegular Expressionsを使うのか
 
-正規表現を使用する理由は、文字列内で特定のパターンを検索や抽出する必要がある場合に非常に便利です。例えば、電話番号やメールアドレスのような特定のフォーマットに従う文字列を検索する時に、正規表現を使用することでより簡単に見つけることができます。
+正規表現は、文字列のパターンマッチングや検索に便利なツールです。特定の文字列を含む行や、特定の文字パターンを満たす文字列を簡単に検索することができます。
 
 ## 使い方
 
-正規表現は、Fish Shellの「grep」ツールを使用して簡単に実行することができます。例えば、電話番号を含む文字列を検索する場合、次のようなコマンドを実行します。
+まずは、Fish Shellで正規表現を使用する方法をご紹介します。以下のコードブロック内で、文字列パターンと検索するテキストを指定することで、簡単に文字列を検索することができます。
 
 ```Fish Shell
-grep -o "[0-9]{3}-[0-9]{4}-[0-9]{4}" text.txt
+grep "文字列パターン" テキストファイル
 ```
 
-上記のコマンドでは、ファイル「text.txt」内で「000-0000-0000」の形式に従う電話番号を検索し、それを表示します。
-
-## 深堀り
-
-正規表現をより詳しく学ぶには、様々なパターンを使用して実際にコードを書いてみるようにしましょう。例えば、文字列内で特定の文字「abc」の前にある文字を抽出したい場合、次のようなコマンドを使用できます。
+例えば、Fish Shellの設定ファイルである「config.fish」内の「alias」を検索する場合、以下のようにコマンドを実行することができます。
 
 ```Fish Shell
-grep -o ".abc" text.txt
+grep "alias" config.fish
 ```
 
-ここで使用されている「.」は任意の文字を表し、「abc」は特定の文字列を表します。これにより、文字列内にある「abc」の前にある文字が抽出されます。
+これにより、「config.fish」内で「alias」が含まれる行が表示されます。
+
+## ディープダイブ
+
+正規表現は、文字列のパターンマッチングだけではなく、より高度な検索や文字列の置換にも使用することができます。
+
+例えば、以下のようにコマンドを実行することで、単語「apples」を「oranges」に置換することができます。
+
+```Fish Shell
+sed -i "s/apples/oranges/g" テキストファイル
+```
+
+また、正規表現のパターンマッチングには、さまざまな構文やメタ文字を使用することができます。詳細な使用方法は、正規表現のドキュメントを参照してください。
 
 ## 参考リンク
 
-[Fish Shellの正規表現についてのドキュメント](https://fishshell.com/docs/current/cmds/grep.html)
-
-[正規表現を使ったパターンマッチングのチュートリアル](https://qiita.com/horikeso/items/e5c6d53f4cbb11d52732)
+- [Fish Shellで正規表現を使用する方法](https://fishshell.com/docs/current/cmds/grep.html)
+- [正規表現のドキュメント](https://www.regexp.jp/)
+- [Fish Shellの設定ファイルの検索に便利な正規表現の使用方法](https://fishshell.com/docs/current/cmds/sed.html)

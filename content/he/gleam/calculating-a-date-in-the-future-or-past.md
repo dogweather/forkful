@@ -1,7 +1,9 @@
 ---
 title:                "Gleam: חישוב תאריך בעתיד או בעבר"
+simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,30 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-כשמדובר בחישוב תאריך בעתיד או בעבר, יכול להיות שימושי לעשות זאת בכדי לתכנן אירוע או לקבל תאריך מדויק של אירוע שכבר קרה.
+בעולם התכנות ישנם רבים מאוד מטרות שניתן להשיג באמצעות תכנות בשפות שונות. בין אם אתם מחפשים להגדיר תאריך עתידי לתוכנית שלכם או פשוט מחפשים להחזיר תאריך מהעבר, חישוב תאריך באמצעות השפה החדשה גלים יכול להיות כלי יעיל וקל לתפעול כאשר מדובר במתמטיקה מתקדמת.
 
-## כיצד לבצע
+## כיצד לעשות זאת
 
-מתן תאריך בעתיד או בעבר בשפת גלים נעשה באמצעות הפונקציה `Date.calculate/3`. ניתן לפרט את התאריך האיתנו, יחידת הזמן (ימים, שבועות, חודשים וכו') והמספר המבוקש. לדוגמה:
-
-```Gleam
-let start_date = Date.create(2021, 6, 1)
-let future_date = Date.calculate(start_date, WeekUnits, 2)
-let past_date = Date.calculate(start_date, MonthUnits, -1)
-```
-
-תוצאה:
+הנה דוגמא פשוטה של קוד שניתן להשתמש בו כדי לחשב תאריך עתידי או מהעבר באמצעות גלים:
 
 ```Gleam
-future_date = {2021, 6, 15}
-past_date = {2021, 4, 1}
+import Calendar.Date
+
+let future_date = Date.add(Calendar.Date.now(), days = 100) 
+// מוסיף 100 ימים לתאריך הנוכחי ומחזיר תאריך חדש
 ```
 
-## עוד על חישוב תאריך בעתיד או בעבר
+הנה דוגמא נוספת של חישוב תאריך מהעבר באמצעות גלים:
 
-כאשר משתמשים בפונקציה `Date.calculate/3`, חשוב לזכור שיחידת הזמן שנבחרה תשפיע על התוצאה הסופית. כמו כן, יש לקחת בחשבון גם מה יהיו התאריכים האחראיים לכל יחידת זמן כדי לאתר את התאריך הנדרש.
+```Gleam
+import Calendar.Date
 
-## ראה גם
+let past_date = Date.subtract(Calendar.Date.now(), years = 2) 
+// מחסיר 2 שנים מהתאריך הנוכחי ומחזיר תאריך חדש
+```
 
-- התיעוד הרשמי של פונקציית `Date.calculate/3` בשפת גלים: https://gleam.run/docs/standard-library/date.html#calculate
-- כיצד להשתמש בפונקציה `Date.create/3` כדי ליצור תאריך: https://gleam.run/docs/standard-library/date.html#create
+## היכן לעמוד
+
+כדי להבין באופן מלא כיצד פעולת חישוב תאריך באמצעות גלים עובדת, עלינו להעמיק קצת בנושא. ישנן כמה טכניקות שונות ניתן להשתמש בהן כדי לחשב תאריכים, וכל אחת מהן יכולה להיות מועילה למטרות שונות. למשל, השתמשנו בפונקציות `add` ו-`subtract`, אך ניתן גם להשתמש בפונקציות נוספות כמו `set` ו-`shift` כדי להתאים את התאריך לצורך שלנו. בקיצור, ישנן הרבה אפשרויות ויותר אתם מתאמנים עם גלים, יותר נוח יהיה לכם לחשב ולעבד תאריכים.
+
+## ראו גם
+
+- [מדריך לתכנות בשפת גלים](https://gleam.run/documentation/guide)
+- [תיעוד לשפת גל

@@ -1,70 +1,55 @@
 ---
 title:                "PHP: 编写测试"
+simple_title:         "编写测试"
 programming_language: "PHP"
-category:             "Testing and Debugging"
+category:             "PHP"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么编写测试
+##为什么写测试？
 
-编写测试是保证代码质量的重要步骤。它可以降低代码出错的风险，并确保代码在多次修改后仍然正常运行。通过编写测试，开发人员可以更快地发现和解决错误，从而提高代码的可靠性和可维护性。
+写测试是一种非常有效的方式来确保你的代码质量和稳定性。通过编写测试，您可以及早发现并解决潜在的bug和错误，从而节省时间和精力。此外，测试还可以帮助您更好地理解您的代码，从而改善您的编程技能。
 
-## 如何编写测试
+##如何写测试？
 
-编写测试的第一步是学习如何使用PHP的内置测试框架PHPUnit。它提供了各种类型的断言，可以用来测试代码的各种方面，如变量值、函数返回值等。
+首先，您需要了解如何使用PHP的内置单元测试框架PHPUnit。您可以通过使用[Composer](https://getcomposer.org/)来轻松安装PHPUnit。然后，您可以创建一个名为`MyClassTest`的测试类，并使用`PHPUnit\Framework\TestCase`类作为父类。
 
-下面是一个使用PHPUnit编写测试的示例：
-
-```PHP
-<?php
-declare(strict_types=1);
-
-use PHPUnit\Framework\TestCase;
-
-class CalculatorTest extends TestCase
+```php
+class MyClassTest extends PHPUnit\Framework\TestCase
 {
-    protected $calculator;
-
-    protected function setUp(): void
-    {
-        $this->calculator = new Calculator();
-    }
-
-    public function testAdd(): void
-    {
-        $result = $this->calculator->add(2, 4);
-        $this->assertEquals(6, $result);
-    }
-}
-
-class Calculator
-{
-    public function add(int $a, int $b): int
-    {
-        return $a + $b;
-    }
+    // 此处编写您的测试方法
 }
 ```
 
-这个例子测试了一个简单的加法运算，使用`assertEquals()`断言来比较实际结果和预期结果。如果运行测试时发现结果不一致，测试将失败并提供详细的错误信息。
+接下来，您可以使用`assert`函数来编写具体的断言。断言是测试结果是否符合期望的判断条件。例如，如果您的测试目的是测试一个函数是否返回正确的结果，您可以使用`assertEquals`断言来判断函数的返回值与预期值是否相等。
 
-## 深入了解编写测试
+```php
+public function testCalculateSum()
+{
+    $result = calculateSum(2, 3);
+    $this->assertEquals(5, $result);
+}
+```
 
-除了使用断言来测试代码的结果，还可以使用PHPUnit的其他功能来测试异常、比较复杂的操作等。还可以使用数据提供器来测试多个输入值的情况，以确保代码在各种情况下都能正确运行。
+最后，您可以使用`PHPUnit`命令来运行您的测试，并查看测试结果。
 
-此外，编写测试还有许多其他好处，如提高代码的可读性和可维护性，促进团队合作，以及帮助学习和理解新的代码等。
+```sh
+phpunit MyTest.php
+```
 
-## 参考链接
+如果所有测试通过，则表示您的代码稳定，如果有测试失败，则表示您的代码中存在一些问题需要修复。
 
-- [PHPUnit官方文档](https://phpunit.de/)
-- [使用PHPUnit进行测试的最佳实践](https://dev.to/david_markarian/unit-testing-with-phpunit-best-practice-part-1-1peg)
-- [编写测试的重要性](https://www.neoteric.eu/blog/why-writing-unit-tests)
-- [PHPUnit在GitHub上的存储库](https://github.com/sebastianbergmann/phpunit)
+##深入探讨写测试
 
-## 另请参阅
+写测试的最大好处之一是能够发现潜在的bug和错误。通过编写更多的测试用例，您可以更全面地测试您的代码，从而提高代码的质量和鲁棒性。此外，编写测试还可以帮助您尽早发现和解决代码中的问题，从而节省后期调试问题的时间和精力。
 
-- [使用PHPUnit测试PHP应用程序](https://dzone.com/articles/testing-your-php-applications-with-phpunit)
-- [TDD是什么？](https://www.sitepoint.com/test-driven-development-in-php/)
-- [如何为PHP项目编写良好的测试](https://www.toptal.com/php/qa-automated-testing-for-php)
+但是，编写测试并不仅仅是为了检查代码是否能正常运行，它还可以帮助您更好地理解您的代码。通过编写测试用例，您可以更深入地了解您的代码逻辑，从而提升您的编程技能和理解能力。此外，测试还可以作为您的代码文档，让其他人更容易理解和使用您的代码。
+
+##另请参阅
+
+- [PHPUnit官方文档](https://phpunit.readthedocs.io/)
+- [PHPUnit Composer包](https://packagist.org/packages/phpunit/phpunit)
+- [PHPUnit入门教程](https://www.phpunit.de/getting-started/phpunit-8.html)

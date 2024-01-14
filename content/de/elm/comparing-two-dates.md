@@ -1,43 +1,49 @@
 ---
 title:                "Elm: Vergleich von zwei Daten"
+simple_title:         "Vergleich von zwei Daten"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Wenn Sie gerade erst anfangen, mit Elm zu programmieren, fragen Sie sich vielleicht, warum Sie sich die Zeit nehmen sollten, zwei Daten zu vergleichen. Der Vergleich von Daten kann sehr hilfreich sein, um Zeitstempel zu verarbeiten oder um zu überprüfen, ob ein Datum in einem bestimmten Zeitraum liegt. Lesen Sie weiter, um zu erfahren, wie Sie dies mit Elm ganz einfach machen können.
 
-## Wie geht's
-Um zwei Daten in Elm zu vergleichen, können Sie die Funktion `compare` aus dem Kernmodul `Basics` verwenden. Diese Funktion nimmt zwei Werte und gibt einen von drei möglichen Werten zurück: `LT`, `EQ` oder `GT`, je nachdem, ob der erste Wert kleiner, gleich oder größer als der zweite Wert ist.
+Das Vergleichen von zwei Daten kann in der Programmierung oft eine wichtige Aufgabe sein. Es ermöglicht es uns, bestimmte Aktionen basierend auf dem Datum auszuführen oder zu bestimmen, welches von zwei Daten das neueste ist.
+
+## Wie man es macht
+
+Es gibt verschiedene Möglichkeiten, um in Elm zwei Daten zu vergleichen. Eine einfache Möglichkeit besteht darin, die Funktion`Date.compare` zu verwenden. Hier ist ein Beispiel, um zu überprüfen, ob ein Datum vor einem anderen Datum liegt:
 
 ```Elm
-compare "2020-05-01" "2020-04-01" == GT
+firstDate : Date
+firstDate =
+    Date.fromYearMonthDay 2021 05 15
 
-compare "2020-01-01 00:00:00" "2020-01-01 12:00:00" == LT
+secondDate : Date
+secondDate =
+    Date.fromYearMonthDay 2021 06 01
+
+Date.compare firstDate secondDate == Date.Less
 ```
 
-In diesen Beispielen vergleichen wir zwei Strings, die Datumsangaben darstellen. Beachten Sie, dass es wichtig ist, dass die Daten im gleichen Format dargestellt werden, damit der Vergleich korrekt ausgeführt werden kann.
+In diesem Beispiel werden die Variablen `firstDate`und `secondDate`erstellt und mithilfe von `Date.fromYearMonthDay` mit einem konkreten Datum belegt. Dann wird die Funktion `Date.compare` aufgerufen und die beiden Daten als Argumente übergeben. Das Ergebnis wird mit der Konstanten `Date.Less` verglichen, die angibt, dass das erste Datum vor dem zweiten Datum liegt.
 
-## Tiefentauchen
-Die Funktion `compare` mag auf den ersten Blick einfach erscheinen, aber es lohnt sich, tiefer in die Details einzutauchen. Zum Beispiel können wir `compare` nicht nur für den Vergleich von Daten nutzen, sondern auch für die Vergleich von anderen Werten wie Zahlen und Zeichenketten.
+Es ist auch möglich, Daten anhand ihrer numerischen Werte zu vergleichen. Hierbei ist jedoch zu beachten, dass das Datum im Format `JJJJ-MM-TT` vorliegen muss. Zum Beispiel:
 
-``` Elm
-compare 5 10 == LT
+```Elm
+Date.fromString "2021-05-15" == Date.fromString "2021-06-01"
 
-compare "apple" "banana" == LT
+> True
 ```
 
-Eine weitere wichtige Sache zu beachten ist, dass der Vergleich auch hierarchisch funktioniert. Wenn wir zum Beispiel zwei Daten vergleichen, die unterschiedliche Granularitäten haben, wird die höhere Granularität (z.B. Monat) als wichtiger betrachtet als die niedrigere Granularität (z.B. Tag).
+## Tiefergehende Informationen
 
-``` Elm
-compare "2020-01-01" "2020-01-01 12:00:00" == EQ
-```
-
-Schließlich ist es auch wichtig zu beachten, dass der Vergleich von Daten standardmäßig vom ältesten bis zum neuesten Datum funktioniert. Wenn Sie dies ändern möchten, können Sie einen Custom Comparator verwenden.
+Um eine genauere Vergleichsmöglichkeit zu haben, ist es hilfreich, die Funktion`Data.Monkey`zu verwenden. Diese Funktion bietet die Möglichkeit, zwei Daten miteinander zu addieren oder subtrahieren und das Resultat als Anzahl der Tage, Monate oder Jahre auszugeben. Dadurch ist es möglich, den genauen Unterschied zwischen zwei Daten zu ermitteln und basierend darauf eine Entscheidung zu treffen.
 
 ## Siehe auch
-- Elm Offizielle Dokumentation zu `compare`: https://package.elm-lang.org/packages/elm/core/latest/Basics#compare
-- Elm Comparators Paket: https://package.elm-lang.org/packages/elm/core/latest/Basics#comparing
+
+- [Date.compare Documentation](https://package.elm-lang.org/packages/elm/time/latest/Date#compare)
+- [Data.Monkey Documentation](https://package.elm-lang.org/packages/elm/core/latest/Data-Monkey)

@@ -1,49 +1,50 @@
 ---
 title:                "Clojure: Escrevendo testes"
+simple_title:         "Escrevendo testes"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante para o seu código
+## Por que escrever testes em Clojure?
 
-Escrever testes é uma parte crucial do processo de desenvolvimento de software. É uma maneira de garantir que o seu código está funcionando corretamente e que qualquer mudança que você fizer não terá um impacto negativo em outras partes do seu programa. Além disso, testes bem escritos ajudam a manter o código organizado e facilitam o processo de depuração.
+Testes são fundamentais para garantir a qualidade e a funcionalidade do seu código em Clojure. Eles permitem que você verifique se o seu código está produzindo os resultados esperados e ajuda a detectar erros antes que eles se tornem um problema maior.
 
 ## Como escrever testes em Clojure
 
-A linguagem de programação Clojure possui uma estrutura de testes integrada, chamada `clojure.test`, que permite escrever testes de maneira eficiente e eficaz. Veja um exemplo de como escrever um teste simples para uma função que retorna o dobro de um número:
+Para escrever testes em Clojure, é necessário utilizar a biblioteca de testes integrada, chamada clojure.test. Vamos ver um exemplo de como testar uma função simples que soma dois números:
 
 ```Clojure
-(ns testing.core-test
-  (:require [clojure.test :refer :all] [testing.core :refer :all]))
+(ns meuprojeto.teste
+  (:require [clojure.test :refer :all]))
 
-(deftest double-test
-  (is (= 4 (double 2))))
+(defn soma [x y]
+  (+ x y))
+
+(deftest teste-soma
+  (testing "Teste simples de adição"
+    (is (= 10 (soma 5 5)))))
+
+(run-tests)
 ```
-Neste exemplo, criamos um teste chamado `double-test` que verifica se a função `double` retorna o dobro de um número. Em seguida, usamos a função `is` para comparar o resultado da função com o valor esperado.
 
-Para executar este teste, basta rodar o seguinte comando no terminal:
+Neste exemplo, estamos importando a biblioteca de testes e criando uma função de soma simples. Em seguida, criamos um teste utilizando a função `deftest` e dentro dela utilizamos a função `is` para verificar se o resultado da soma é igual a 10. Por fim, utilizamos a função `run-tests` para executar o teste.
 
-```
-lein test
-```
-
-Isso irá executar todos os testes presentes no seu projeto e fornecerá um relatório de resultados.
+Ao rodar este teste, esperamos que o resultado seja positivo, já que 5 + 5 é igual a 10. Caso haja algum erro no código da função `soma`, o teste irá falhar e nos informar o que deu errado. Com isso, podemos corrigir o código e garantir que ele esteja funcionando corretamente.
 
 ## Aprofundando nos testes em Clojure
 
-Além de simplesmente verificar se uma função retorna o resultado correto, é importante também considerar alguns outros aspectos ao escrever testes em Clojure. Por exemplo, ao testar funções que lidam com diferentes tipos de dados, é importante testar cada tipo de dado separadamente. Além disso, você também pode usar a função `throws` para verificar se uma função lança uma exceção quando esperado.
+Além da função `is`, existem outras funções úteis para escrever testes em Clojure, como `are` e `are-not` para verificar múltiplos casos de teste, `throws?` para testar se uma função está lançando uma exceção e `every` para verificar se uma determinada condição é verdadeira para todos os elementos de uma coleção.
 
-É recomendável escrever testes para cada função e não apenas para um caso de uso específico. Desta forma, você pode garantir que qualquer alteração feita no seu código não quebre outras partes que dependem dela.
+Além disso, é possível utilizar a macro `testing` para criar testes mais complexos e utilizar descrições mais detalhadas para cada caso de teste. Também é importante ter em mente que os testes devem ser escritos antes do código e sempre devem ser mantidos atualizados conforme o código é alterado.
 
 ## Veja também
 
-Aqui estão alguns recursos extras para ajudar você a se aprofundar no mundo dos testes em Clojure:
+- [Documentação oficial da biblioteca clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
+- [Tutorial de testes em Clojure da plataforma ClojureBridge](https://github.com/ClojureBridge/curriculum/tree/master/testing)
+- [Tutorial de testes em Clojure do site Clojure for the Brave and True](https://www.braveclojure.com/testing/)
 
-- [Documentação oficial de `clojure.test`](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Curso de Clojure: Testes e Debugging (em inglês)](https://www.braveclojure.com/testing/)
-- [Como escrever testes de unidade em Clojure (em inglês)](https://medium.com/cljdoc/how-to-write-clojure-unit-tests-5ae2f64ab3da)
-
-Espero que este artigo tenha sido útil para você começar a escrever testes em Clojure. Testes não só ajudam no processo de desenvolvimento, mas também garantem que o seu código seja mais confiável e de alta qualidade. Então, não se esqueça de incluí-los em seu fluxo de trabalho de programação!
+Esperamos que este artigo tenha sido útil para entender a importância e como escrever testes em Clojure. Utilize-os em seus projetos para ter mais segurança e confiabilidade no seu código. Happy coding!

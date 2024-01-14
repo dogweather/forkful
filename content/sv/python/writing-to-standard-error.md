@@ -1,44 +1,45 @@
 ---
-title:                "Python: Skriva till standardfel"
+title:                "Python: Skrivande till standardfel"
+simple_title:         "Skrivande till standardfel"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför skriva till standardfel?
 
-Att skriva till standard error är en viktig del av programmering eftersom det låter utvecklare upptäcka och hantera fel i sina program. Detta är avgörande för att skapa stabil och pålitlig kod.
+Att skriva till standardfel är ett viktigt koncept inom programmering. Det tillåter oss att enkelt kommunicera och identifiera eventuella fel eller problem som uppstår när vi kör vårt program. Det är ett sätt att läsa och förstå programfunktioner och avlusningsmeddelanden. Det är också en vanlig praxis inom felsökning, vilket gör det till en viktig färdighet att behärska för alla som vill bli duktiga programmerare.
 
-## Hur man gör
+## Så här gör du
 
-Skrivande till standard error i Python är enkelt. Det kan göras med hjälp av funktionen "print" och genom att ange "file=sys.stderr". Här är ett enkelt exempel:
+För att skriva till standardfel kan du använda funktionen "print()" i Python. Du kan till exempel skriva ut ett enkelt meddelande som "print("Hej, detta är ett standardfelmeddelande!") och det skulle skrivas ut i ditt program.
+
+```Python
+print("Hej, detta är ett standardfelmeddelande!")
+```
+Output: Hej, detta är ett standardfelmeddelande!
+
+För att skriva ut ett felmeddelande kan du använda "sys.stderr.write()" funktionen och ange ditt meddelande som en parameter. Detta ser ut som följer:
 
 ```Python
 import sys
-
-# Skriv ut felmeddelande till standard error med funktionen "print"
-print("Det här är ett felmeddelande!", file=sys.stderr)
-
-# Skriv ut en varaibel till standard error
-x = "Det här är ett annat felmeddelande!"
-print(x, file=sys.stderr)
+sys.stderr.write("Detta är ett felmeddelande!")
 ```
+Output: Detta är ett felmeddelande!
 
-Detta kommer att skriva ut felmeddelandet till standard error, vilket gör att det blir synligt för utvecklaren att se och ta itu med. Output av ovanstående kod skulle se ut så här:
+Det är också möjligt att skriva till standardfel i en CSV-fil för att läsa när du använder "csv.writer()" funktionen. Detta används ofta inom datahantering och analys. Det finns många olika sätt att använda skrivning till standardfel beroende på dina behov och program.
 
-```
-Det här är ett felmeddelande!
-Det här är ett annat felmeddelande!
-```
+## En djupdykning
 
-## Djupdykning
+En intressant aspekt av skrivning till standardfel är att det också kan användas för att läsa in data till ditt program genom att läsa från standardingången. Det kan vara till stor hjälp när man vill läsa in data från en fil eller användarinput. Detta kallas också för pipelining och kan användas för att strömlinjeforma din kod och göra den mer effektiv.
 
-Att skriva till standard error är vanligt i felhantering och debugging. Genom att skriva felmeddelanden till standard error istället för standard output (som används för vanliga print-satser) kan utvecklaren enkelt se vilka delar av koden som orsakar problem och åtgärda dem. Detta är särskilt användbart när man arbetar med större och mer komplexa kodbaser.
+En annan viktig användning av skrivning till standardfel är för loggning. Genom att skriva ut felmeddelanden och annan information kan vi enkelt diagnostisera och åtgärda eventuella fel i vårt program. Det bidrar också till att göra koden mer öppen och läsbar för andra utvecklare som kan behöva felsöka problem i framtiden.
 
 ## Se även
 
-- [Officiell Python-dokumentation för sys-modulen](https://docs.python.org/3/library/sys.html)
-- [En guide till felhantering i Python](https://realpython.com/python-exceptions/)
-- [Hur man använder try och except-satser i Python](https://www.datacamp.com/community/tutorials/exception-handling-python)
+- [Python dokumentation för print()](https://docs.python.org/sv/3/library/functions.html#print)
+- [Python dokumentation för sys.stderr.write()](https://docs.python.org/sv/3/library/sys.html#sys.stderr)
+- [CSV skrivning i Python](https://realpython.com/python-csv/)

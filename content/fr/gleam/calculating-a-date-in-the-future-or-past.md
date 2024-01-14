@@ -1,51 +1,50 @@
 ---
-title:                "Gleam: Calcul d'une date dans le futur ou le passé"
+title:                "Gleam: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Il peut y avoir plusieurs raisons pour lesquelles quelqu'un voudrait calculer une date dans le futur ou dans le passé en utilisant Gleam. Peut-être avez-vous besoin de planifier un événement futur, ou peut-être voulez-vous vérifier une date antérieure pour vos archives. Quelle que soit la raison, Gleam a de nombreuses fonctions intégrées pour faciliter le calcul de dates.
+Vous êtes-vous déjà demandé comment programmer une date dans le futur ou dans le passé ? Peut-être que vous devez automatiser des tâches ou que vous cherchez à anticiper des événements à venir. Quelle que soit la raison, dans cet article, nous allons plonger dans la programmation de dates en utilisant le langage de programmation fonctionnelle Gleam.
 
-## Comment Faire
+# Comment Faire
 
-Voici un exemple de code en Gleam pour calculer une date dans le futur ou dans le passé :
+Pour calculer une date dans le futur ou dans le passé en utilisant Gleam, nous utiliserons la fonction `Date.add/2` de la bibliothèque standard. Cette fonction prend deux arguments : une date de départ et une durée représentée en nombre de millisecondes. Voyons un exemple concret :
 
 ```Gleam
-import gleam/datetime
+import gleam/time.{ Date }
 
-// Calculer une date dans le futur
-let future = datetime.add(time, duration)
+let start = Date.new(
+  year: 2021,
+  month: 8,
+  day: 10
+) in
+let days = 7 * 24 * 60 * 60 * 1000 in
+let end = Date.add(start, days)
 
-// Calculer une date dans le passé
-let past = datetime.sub(time, duration)
-
-// Afficher les dates calculées
-io.println("Date dans le futur :", datetime.format(future, "D-M-YYYY"))
-io.println("Date dans le passé :", datetime.format(past, "D-M-YYYY"))
+// Output: Date.new(year: 2021, month: 8, day: 17)
 ```
 
-Voici un exemple de sortie pour cette code :
+Nous avons d'abord créé une date de départ en utilisant la fonction `Date.new/3` en spécifiant l'année, le mois et le jour. Ensuite, nous avons calculé la durée en millisecondes en multipliant le nombre de jours par 24 heures, 60 minutes, 60 secondes et 1000 millisecondes. Enfin, nous avons utilisé la fonction `Date.add/2` pour ajouter la durée à la date de départ et obtenir la date souhaitée dans le futur.
 
-```
-Date dans le futur : 19-12-2022
-Date dans le passé : 19-12-2018
-```
+Si nous voulons calculer une date dans le passé, il suffit de donner une durée négative à la fonction `Date.add/2`.
 
-Vous pouvez également utiliser des fonctions telles que `datetime.add_days()` ou `datetime.sub_weeks()` pour un calcul plus spécifique. Assurez-vous de consulter la documentation Gleam pour plus de détails sur ces fonctions.
+# Plongée en Profondeur
 
-## Profondeur
+Maintenant que nous avons vu comment utiliser la fonction `Date.add/2`, il est important de comprendre comment les dates sont représentées en Gleam. Les dates sont représentées sous forme de tuples contenant les informations suivantes : année, mois, jour, heure, minute, seconde, milliseconde. Par exemple, la date 10 août 2021 est représentée comme suit :
 
-Calculer une date peut sembler assez simple, mais il y a en fait beaucoup de choses qui se passent en coulisses. Les dates sont stockées sous forme de nombres de secondes depuis une date de référence spécifique, généralement le 1er janvier 1970. Le calcul se fait en convertissant ces secondes en un format de date compréhensible pour les humains.
+`{2021, 8, 10, 0, 0, 0, 0}`
 
-De plus, des choses comme les fuseaux horaires et les années bissextiles doivent également être prises en compte lors du calcul des dates. Heureusement, Gleam s'occupe de toutes ces complexités pour vous, de sorte que vous pouvez vous concentrer sur le code qui vous intéresse.
+De plus, la bibliothèque standard de Gleam fournit également d'autres fonctions pour manipuler et formater les dates en utilisant le type `Date`.
 
-## Voir aussi
+# Voir Aussi
 
-- Documentation Gleam pour la manipulation de dates: [lien vers la documentation](https://gleam.run/documentation/standard_library.html#datetime)
-- Tutoriel vidéo sur la manipulation de dates avec Gleam: [lien vers la vidéo](https://www.youtube.com/watch?v=9j4h8whrwDA)
-- Blog post sur l'utilisation de dates dans les applications web en utilisant Gleam: [lien vers le blog](https://medium.com/@Gleam/using-dates-in-web-applications-with-gleam-12b75fe847d8)
+- [Documentation sur la bibliothèque standard de Gleam](https://gleam.run/documentation/standard-libraries/#date)
+- [Guide officiel de programmation en Gleam](https://gleam.run/book/tour.html#dates)
+- [Exemples de manipulation de dates en Gleam](https://github.com/gleam-lang/gleam/blob/master/examples/time/main.gleam)

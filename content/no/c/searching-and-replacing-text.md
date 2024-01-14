@@ -1,7 +1,9 @@
 ---
-title:                "C: Søking og bytting av tekst"
+title:                "C: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/searching-and-replacing-text.md"
 ---
 
@@ -9,48 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å søke og erstatte tekst er en vanlig oppgave i programmeringsverdenen. Dette kan være nyttig for å gjøre større endringer i en kodebase eller for å fikse mindre feil. Uansett hva årsaken er, er det viktig å forstå hvordan man gjør dette riktig for å unngå feil og ineffektivitet.
+Enten du er en erfaren programmerer eller en nybegynner, er det en viktig ferdighet å kunne søke og erstatte tekst i et program. Dette kan bidra til å effektivisere koden din og gjøre den mer lesbar. Det kan også hjelpe deg å unngå feil og spare verdifull tid når du arbeider med store mengder med tekst.
 
 ## Hvordan gjøre det
 
-I C-programmering er det flere måter å søke og erstatte tekst på. En enkel måte er å bruke en innebygd funksjon som `str_replace()`. Denne funksjonen tar inn tre parametere: strengen du vil søke i, teksten du vil erstatte og teksten du vil erstatte den med. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+Å søke og erstatte tekst i et C-program er en relativt enkel oppgave. Det første du må gjøre er å åpne tekstredigeringsverktøyet du bruker til å kode i C. Deretter kan du bruke funksjonen "Find and Replace" som vanligvis finnes under "Edit" i verktøylinjen. Alternativt kan du også bruke hurtigtasten "Ctrl+F" for å åpne et dialogvindu hvor du kan søke og erstatte tekst.
+
+Her er et eksempel på kode som viser hvordan du kan søke etter et bestemt ord og erstatte det med et annet:
 
 ```C
 #include <stdio.h>
-#include <string.h>
 
 int main() {
-    char tekst[] = "Dette er en tekst.";
-    char ny_tekst[] = str_replace(tekst, "en", "to");
-    printf("%s\n", ny_tekst);
-    return 0;
+   char string[] = "Hei alle sammen!";
+   char *search = "Hei";
+   char *replace = "Hallo";
+   char *result;
+
+   printf("Original streng: %s\n", string);
+
+   result = str_replace(string, search, replace);
+
+   printf("Ny streng: %s\n", result);
+
+   return 0;
 }
 ```
 
-Dette eksemplet vil erstatte alle forekomster av "en" med "to" og skrive ut den nye teksten: "Dette er to tekst." Du kan også bruke `str_replace()` til å erstatte et tegn med et annet tegn, for eksempel:
-
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char tekst[] = "Hello World!";
-    char ny_tekst[] = str_replace(tekst, "!", "?");
-    printf("%s\n", ny_tekst);
-    return 0;
-}
-```
-
-Denne koden vil erstatte utropstegnet med et spørsmålstegn og skrive ut den nye teksten: "Hello World?"
+Koden over bruker string-funksjonen `str_replace` for å erstatte alle forekomster av "Hei" med "Hallo". Dette viser seg i den endelige utskriften som blir "Hallo alle sammen!".
 
 ## Dypdykk
 
-Selv om `str_replace()` er en enkel og effektiv måte å søke og erstatte tekst på, er det viktig å være oppmerksom på noen potensielle problemer. For det første, hvis du ønsker å erstatte en stor del av teksten din, kan denne funksjonen være svært ineffektiv fordi den bare erstatter ett tegn om gangen. Det er også verdt å merke seg at `str_replace()` er casesensitiv, så det vil ikke erstatte "Hello" med "hello" i eksemplene ovenfor.
+Selv om det å søke og erstatte tekst i C-kode kan virke som en enkel oppgave, kan det også være noen fallgruver man bør være klar over. For eksempel kan det å søke og erstatte en del av koden din føre til uforutsette endringer og feil. Det er derfor viktig å være nøye med å søke etter nøyaktig det du vil erstatte, og å fokusere på de riktige delene av koden.
 
-Hvis du ønsker mer kontroll over søking og erstatting av tekst, kan du også bruke `strstr()` og `strtok()` funksjoner i C. Disse funksjonene lar deg søke etter en spesifikk del av teksten og deretter erstatte den med en annen tekst. De kan også brukes til å erstatte alle forekomster av en streng i teksten.
+En annen utfordring er å sørge for at erstattet tekst passer riktig inn i koden din, slik at syntaksen forblir korrekt. Det er også viktig å være nøye med å bruke riktig formatering, for eksempel å sørge for at inndentasjon og parenteser er riktig satt opp.
 
 ## Se også
 
-- [C-programmering grunnleggende](https://www.ntnu.no/wiki/display/itsk/C+programmering+grunnleggende)
-- [Offisiell dokumentasjon for str_replace-funksjonen](https://www.tutorialspoint.com/c_standard_library/c_function_str_replace.htm)
-- [Eksempler på strstr og strtok-funksjoner](https://www.programiz.com/c-programming/library-function/string.h/strstr)
+- [Tutorial: How to Search and Replace Text in C Code](https://www.codementor.io/@aboutint/string-replace-tutorial-for-beginners-19o7g92qw0)
+- [C Programming Language – Standard Library Functions](https://www.tutorialspoint.com/c_standard_library/index.htm)
+- [The C Programming Language, 2nd Edition by Brian W. Kernighan and Dennis M. Ritchie](https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628)

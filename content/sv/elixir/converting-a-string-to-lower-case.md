@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Omvandling av en sträng till gemener"
+title:                "Elixir: Omvandla en sträng till små bokstäver"
+simple_title:         "Omvandla en sträng till små bokstäver"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,31 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Det finns många tillfällen när du som programmerare kan behöva konvertera en sträng (engelska: string) till små bokstäver. Detta kan vara för att enhetligt formatera inmatade data, jämföra strängar utan att ta hänsyn till versaler eller för att undvika fel när du använder en funktion som kräver små bokstäver. Oavsett vad anledningen är, är det användbart att veta hur man på ett enkelt sätt kan göra detta i Elixir.
+Elixir är ett populärt programspråk som baseras på funktionsprogrammering. Det har enkla syntax, bra prestanda, och stöd för parallellt och distribuerat arbete. En av dess många inbyggda funktioner är möjligheten att konvertera en sträng till små bokstäver, vilket kan vara användbart i många olika situationer.
 
-## Så här gör du
+## Hur man gör
 
-Konvertering av strängar till små bokstäver är väldigt enkelt i Elixir tack vare funktionen `String.downcase/1`. Denna funktion tar in en sträng som argument och returnerar en ny sträng med alla bokstäver i små bokstäver. 
+För att konvertera en sträng till små bokstäver i Elixir kan du använda funktionen `String.downcase`. Detta kommer att ändra alla bokstäver i strängen till deras motsvarande små bokstäver. Se nedan för ett exempel:
 
-```Elixir
-iex> String.downcase("HEJ DET HÄR ÄR EN STRÄNG")
-"hej det här är en sträng"
+```elixir
+sträng = "HEJ VÄRLDEN"
+puts String.downcase(sträng)
 ```
 
-En annan sätt är att använda operatorn `<>`(engelska: string concatenation) tillsammans med `String.upcase/1` och `String.downcase/1` för att byta ut alla versaler till små bokstäver och sammanfoga dem med en tom sträng. 
-
-```Elixir
-iex> "Hej, " <> String.downcase("DET HÄR ÄR EN STRÄNG")
-"Hej, det här är en sträng"
+Detta kommer att producera följande output:
+```elixir
+hej världen
 ```
 
 ## Djupdykning
 
-När Elixir bearbetar strängar använder det Unicode-tecken (engelska: Unicode) som standard. Detta betyder att det finns support för flera olika språk och teckenuppsättningar inbyggt i språket. När man konverterar en sträng till små bokstäver tar funktionen `String.downcase/1` hänsyn till denna språksupport och konverterar även eventuella specialtecken till små bokstäver. Detta är användbart om du behöver hantera flerspråkiga applikationer.
+När du använder funktionen `String.downcase`, finns det några saker att tänka på. För det första är det viktigt att notera att denna funktion endast fungerar med ASCII-karakterer. Om du har strängar med icke-ASCII-karakterer, måste du använda funktionen `String.downcase_utf8` istället.
 
-En annan användbar funktion för konvertering av strängar är `String.ascii_downcase/1` som endast konverterar bokstäverna a-z och A-Z till små bokstäver. Detta kan vara användbart vid jämförelser där du endast vill ta hänsyn till grundläggande engelska bokstäver.
+För det andra är det viktigt att notera att funktionen `String.downcase` returnerar en ny sträng istället för bara att modifiera originalsträngen. Detta innebär att du behöver tilldela resultatet av funktionen till en variabel om du vill använda den nya strängen.
+
+Slutligen, det kan vara användbart att veta att det finns en motsvarande funktion `String.upcase` som konverterar en sträng till stora bokstäver.
 
 ## Se även
 
-- Dokumentation för funktionen `String.downcase/1`: https://hexdocs.pm/elixir/String.html
-- Utforskning av Unicode i Elixir: https://elixir-lang.org/getting-started/unicode-charlists-and-code-points.html
+- [Elixir String modul](https://hexdocs.pm/elixir/String.html)
+- [Funktionsprogrammering med Elixir](https://medium.com/the-elixir-hub/functional-programming-with-elixir-c253093775d9)

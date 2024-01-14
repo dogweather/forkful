@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Kirjoittaminen standardivirheelle"
+title:                "Javascript: Tietokoneohjelmoinnin artikkeli: Standardivirheen kirjoittaminen"
+simple_title:         "Tietokoneohjelmoinnin artikkeli: Standardivirheen kirjoittaminen"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-to-standard-error.md"
 ---
 
@@ -9,54 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittaminen standardivirheeseen on tärkeä taito, jonka jokaisen ohjelmoijan tulisi omaksua. Se auttaa tunnistamaan ja korjaamaan virheitä, jotka eivät muuten tulisi ilmi tavallisista tulostuksista.
+On monia syitä, miksi ohjelmoijat päätyvät kirjoittamaan standard error -virheviestejä. Yksi tärkeimmistä on löytää ja korjata mahdollisia virheitä koodissa, mikä auttaa varmistamaan ohjelman toiminnan ja tehokkuuden.
 
-## Kuinka
+## Miten
 
-Koodatessa on käytännöllistä tietää, kuinka kirjoittaa virheitä standardivirheeseen, jotta ne voidaan tunnistaa ja korjata mahdollisimman nopeasti. Selvennyksen vuoksi esittelemme tässä muutamia esimerkkejä, joiden avulla voit oppia tätä taitoa.
+Voit kirjoittaa standard error -virheviestejä käyttämällä ```console.error()``` -funktiota. Tämä ottaa vastaan ​​yksi parametrin, joka on viesti, jonka haluat näyttää. Voit myös käyttää ```console.debug()``` -funktiota, joka on tarkoitettu ohjelmoijille näyttämään tarkempia virheviestejä.
 
-``` Javascript
-// Esimerkki 1
-console.error("Tässä on virhe!");
+Esimerkiksi, jos haluat näyttää virheviestin käyttäjälle, voit käyttää seuraavaa koodia: 
 
-/*
-Tulostaa seuraavan virheen standardivirheeseen:
-"Console error: Tässä on virhe!"
-*/
-
-// Esimerkki 2
-let numero = "kolme";
-
-if (isNaN(numero)) {
-  console.error(`${numero} ei ole numero.`);
-}
-
-/*
-Tulostaa seuraavan virheen standardivirheeseen:
-"Console error: kolme ei ole numero."
-*/
-
-// Esimerkki 3
-function tarkistaSalasana(salasana) {
-  if (salasana.length < 8) {
-    console.error("Salasanan tulee olla vähintään 8 merkkiä pitkä.");
-  }
-}
-
-tarkistaSalasana("salasana");
-
-/*
-Tulostaa seuraavan virheen standardivirheeseen:
-"Console error: Salasanan tulee olla vähintään 8 merkkiä pitkä."
-*/
+```Javascript 
+console.error("Valitettavasti jotain meni pieleen. Yritä uudelleen myöhemmin.");
 ```
 
-## Syventyvä tarkastelu
+Tämä koodi näyttäisi seuraavan virheviestin: "Valitettavasti jotain meni pieleen. Yritä uudelleen myöhemmin." 
 
-Kirjoittaminen standardivirheeseen on tärkeä taito, jota tulisi harjoitella säännöllisesti. Se auttaa löytämään ja korjaamaan virheitä koodista, jotta se toimisi mahdollisimman sujuvasti. Lisäksi voit kirjoittaa haluamasi viestin standardivirheeseen, jolloin se voi toimia muistutuksena tulevia korjauksia varten. On myös tärkeää muistaa, että hyvä ohjelmointitaito sisältää myös virheiden tunnistamisen ja niiden korjaamisen.
+Voit myös lisätä muuttujien arvoja virheviestiin käyttämällä merkintöjä, kuten ```${variableName}```. Tämä auttaa sinua tarkemmin selvittämään, mikä aiheutti virheen.
+
+## Syvällisempi tarkastelu
+
+Kirjoittaminen standard error -virheviestejä on tärkeä osa ohjelmointia ja auttaa sinua kehittämään parempia ohjelmia. Virheviestit auttavat sinua tunnistamaan ja korjaamaan koodin ongelmakohtia, mikä tekee ohjelmistostasi tehokkaamman ja luotettavamman. On myös tärkeää ottaa huomioon kohdeyleisösi ja käyttää selkeitä ja informatiivisia viestejä, jotta käyttäjät ymmärtävät helposti, mitä on tapahtunut ja miten virhe voidaan korjata.
 
 ## Katso myös
 
-- [MDN Web Docs: console.error()](https://developer.mozilla.org/fi/docs/Web/API/Console/error)
-- [W3Schools: JavaScript Errors - Throw and Try to Catch](https://www.w3schools.com/js/js_errors.asp)
-- [FreeCodeCamp: Introduction to errors in JavaScript](https://www.freecodecamp.org/news/introduction-to-errors-in-javascript/)
+- [Mozilla Developer Network - Selaimen konsoli](https://developer.mozilla.org/fi/docs/Web/API/Console)
+- [W3Schools - Console.error()](https://www.w3schools.com/jsref/met_console_error.asp)
+- [JavaScript.info - The console object](https://javascript.info/browser-console)
+- [Stack Overflow - How to write errors to standard error in JavaScript?](https://stackoverflow.com/questions/51813820/how-to-write-errors-to-standard-error-in-javascript)

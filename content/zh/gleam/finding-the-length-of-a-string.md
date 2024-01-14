@@ -1,53 +1,41 @@
 ---
-title:                "Gleam: 计算字符串的长度"
+title:                "Gleam: 找到字符串的长度"
+simple_title:         "找到字符串的长度"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：只需1-2句话就可以解释*为什么*会有人参与查找字符串的长度。
+## 为什么: 
+找出字符串的长度似乎是一个简单的任务，但在编程中，这项任务却具有关键性的作用。因为字符串是我们日常生活中最常用的数据类型之一，了解如何获取其长度将有助于我们更好地处理和操作字符串，从而提高编程效率。
 
-字怎么写：在“```Gleam ... ```”代码块内编写示例代码和样本输出。
+## 怎么做: 
+下面我们将介绍如何用Gleam编程语言来找出字符串的长度。首先，我们需要定义一个字符串变量，比如说"Hello, world!"，然后使用Gleam的`String.length`函数来获取其长度。在下面的代码示例中，我们使用`io.format`函数来输出结果，你也可以根据自己的需求来处理结果。
+```Gleam
+import gleam/io
 
-深入研究：关于查找字符串长度的更深层信息。
-
-查看：Markdown标题为“另请参阅”（翻译为中文），后跟链接列表。
-
-## 为什么
-
-寻找字符串长度可能是编程中经常遇到的任务之一。无论是验证用户输入的正确性，还是处理大量文本数据，都需要知道字符串的长度。因此，掌握如何找到字符串长度是必不可少的技能。
-
-## 怎么写
-
-要编写代码来找到字符串的长度，我们可以使用Gleam编程语言提供的内置函数。例如，我们可以使用“str.len”来查找字符串的长度，并将其存储在变量中，然后输出这个变量，如下所示：
-
+fn main() { 
+  let str = "Hello, world!" 
+  let len = String.length(str) 
+  io.format("The length of '{}' is {}", [str, len]) 
+}
 ```
-Gleam
+输出结果为：`The length of 'Hello, world!' is 13`。
 
-let string = "Hello, world!"
-let length = str.len(string)
-// 输出：13
-```
+## 深入探讨:
+在Gleam中，字符串长度的计算使用字节长度来衡量。这意味着，无论字符串中包含什么字符，每个字符都会被计算为一个字节。但要注意，对于非ASCII字符（例如中文），一个字符可能由多个字节组成，因此其长度也会随之增加。
 
-我们也可以将字符串长度的结果直接打印出来，而无需使用额外的变量。以下是一个完整的示例代码：
+此外，在Gleam中，我们也可以使用`String.codepoint_count`函数来获取字符串中的字符数量，而不是字节长度。这对于处理多语言的文本会更加准确。
 
-```
-Gleam
+总的来说，无论是使用`String.length`还是`String.codepoint_count`函数，都能有效地找出字符串的长度，让我们能够更好地处理和操作字符串数据。
 
-let string = "This is a longer string."
-io.print("The length of the string is ", str.len(string))
-// 输出：The length of the string is 25
-```
+## 看看这些:
+- [Gleam字符串文档](https://gleam.run/core/string.html)
+- [Gleam文档](https://gleam.run/)
+- [Gleam官方教程](https://gleam.run/getting-started/index.html)
 
-## 深入研究
-
-要理解找到字符串长度的原理，我们需要了解字符串是如何在计算机内存中存储的。每个字符都以数字的形式被存储，这个数字对应着字符的ASCII码。因此，我们可以通过计算出字符串中字符的数量来找到字符串的长度。
-
-另外，还需要注意的一点是，当我们在编写代码中使用字符串时，它们实际上是一个数组，因为它们由一系列的字符组成。因此，我们也可以使用数组的方法来找到字符串的长度。
-
-## 另请参阅
-
-- [Gleam官方网站](https://gleam.run/)
-- [Gleam中文文档](https://gleam.run/zh-cn/docs/)
+## 参考:
+[Gleam编程语言](https://gleam.run/) - 一种新兴的函数式编程语言，旨在帮助开发人员构建可维护和可扩展的系统。

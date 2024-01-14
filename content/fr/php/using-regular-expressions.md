@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Utiliser des expressions régulières"
+title:                "PHP: Utiliser les expressions régulières"
+simple_title:         "Utiliser les expressions régulières"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/using-regular-expressions.md"
 ---
 
@@ -9,26 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Les expressions régulières sont des outils utiles pour trouver des motifs dans une chaîne de caractères. Elles peuvent être utilisées pour valider des entrées utilisateur, filtrer des données ou encore pour extraire des informations spécifiques d'un texte. En utilisant des expressions régulières, les programmeurs peuvent économiser beaucoup de temps lors de la manipulation de données.
+Vous êtes peut-être déjà familiarisé avec les chaînes de caractères en PHP, mais saviez-vous qu'il existe un moyen plus efficace de rechercher et manipuler ces chaînes? Les expressions régulières, également connues sous le nom de regex, sont un outil puissant pour rechercher des motifs dans les chaînes de caractères. Dans cet article, nous allons explorer pourquoi les regex sont utiles et comment les utiliser dans vos projets PHP.
 
 ## Comment faire
 
-Pour utiliser des expressions régulières en PHP, vous pouvez utiliser la fonction `preg_match()`. Par exemple, si vous souhaitez trouver tous les numéros de téléphone dans une chaîne de caractères, vous pouvez utiliser l'expression régulière suivante :
+Pour utiliser les expressions régulières en PHP, vous devez d'abord créer un modèle qui spécifie le motif à rechercher. Par exemple, si vous souhaitez trouver tous les numéros de téléphone dans une chaîne, vous pouvez utiliser le modèle suivant: ```PHP /[0-9]{3}-[0-9]{3}-[0-9]{4}/ ``` Ce modèle spécifie que la chaîne doit contenir 3 chiffres, suivis d'un tiret, puis 3 autres chiffres, et enfin 4 chiffres supplémentaires.
+
+Maintenant que vous avez un modèle, vous pouvez l'utiliser avec la fonction PHP ```preg_match()```. Cette fonction prend deux arguments: le modèle et la chaîne dans laquelle vous souhaitez rechercher. Si des correspondances sont trouvées, elles seront stockées dans un tableau. Voici un exemple de code:
 
 ```PHP
-preg_match("/[0-9]{3}-[0-9]{3}-[0-9]{4}/", $texte, $resultats);
+<?php
+$chaine = "Mon numéro de téléphone est 123-456-7890.";
+$modele = "/[0-9]{3}-[0-9]{3}-[0-9]{4}/";
+preg_match($modele, $chaine, $correspondances);
+print_r($correspondances);
+?>
 ```
 
-Cela va rechercher tous les numéros de téléphone sous le format `xxx-xxx-xxxx` dans la variable `$texte` et stocker les résultats dans le tableau `$resultats`. Vous pouvez ensuite utiliser ces résultats dans votre code pour effectuer différentes actions.
+Le code ci-dessus devrait produire la sortie suivante:
 
-## Plongée en profondeur
+```
+Array
+(
+    [0] => 123-456-7890
+)
+```
 
-Les expressions régulières peuvent sembler complexes au premier abord, mais elles peuvent être très puissantes une fois que vous avez maîtrisé leur utilisation. En plus des caractères basiques pour matcher des chiffres ou des lettres, des symboles spéciaux comme `?`, `+` ou `*` peuvent être utilisés pour identifier des motifs plus complexes. De plus, les expressions régulières peuvent utiliser des groupes de capture qui vous permettent de récupérer des sous-parties spécifiques d'un texte.
+Vous pouvez également utiliser les expressions régulières pour remplacer des parties d'une chaîne de caractères. Par exemple, si vous voulez remplacer tous les tirets dans un numéro de téléphone par des espaces, vous pouvez utiliser la fonction PHP ```preg_replace()```:
 
-Il est important de noter que les performances peuvent être un problème lors de l'utilisation d'expressions régulières, en particulier si vous travaillez avec de gros volumes de données. Il est donc important de bien optimiser vos expressions régulières pour éviter tout ralentissement de votre programme.
+```PHP
+<?php
+$chaine = "Mon numéro de téléphone est 123-456-7890.";
+$modele = "/[0-9]{3}-[0-9]{3}-[0-9]{4}/";
+$nouvelle_chaine = preg_replace($modele, "123 456 7890", $chaine);
+echo $nouvelle_chaine;
+?>
+```
+
+Le code ci-dessus devrait produire la sortie suivante:
+
+```
+Mon numéro de téléphone est 123 456 7890.
+```
+
+## Plongeon en profondeur
+
+Les expressions régulières peuvent sembler intimidantes au début, mais une fois que vous les avez maîtrisées, elles peuvent grandement améliorer vos compétences en programmation. Une chose importante à noter est que les expressions régulières peuvent être spécifiques à un langage de programmation, vous devez donc vous assurer d'utiliser la syntaxe correcte pour PHP. De plus, il peut être utile d'utiliser des sites tels que [Regex101](https://regex101.com/) pour tester vos modèles avant de les utiliser dans votre code.
+
+Un autre avantage des regex est qu'ils sont très rapides pour traiter de grandes quantités de données. Si vous avez un projet qui nécessite la recherche et la manipulation de chaînes de caractères, utiliser des expressions régulières pourrait vous faire gagner un temps précieux.
+
+Enfin, il existe de nombreuses ressources en ligne, telles que des tutoriels et des forums, pour vous aider à apprendre et à perfectionner vos compétences en expressions régulières. Alors n'hésitez pas à plonger en profondeur et à découvrir tout ce que les regex ont à offrir!
 
 ## Voir aussi
 
-- [Documentation officielle de la fonction preg_match en PHP](https://www.php.net/manual/fr/function.preg-match.php)
-- [Tutoriel sur les expressions régulières en PHP](https://www.tutorialspoint.com/php/php_regular_expression.htm)
-- [Expressions régulières : un outil puissant en programmation](https://www.poeme-oslo.com/ressources/guides/are/expressions-regulieres/)
+- [Documentation officielle de PHP sur les expressions régulières](https://www.php.net/manual/fr/reference.pcre.pattern.syntax.php)
+- [Tutoriel vidéo sur les expressions régulières en PHP](https://www.youtube.com/watch?v=r_6I6m2F7hk)
+- [Regex101 - Tester et expérimenter avec des modèles regex en ligne](https://regex101.com/)

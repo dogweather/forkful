@@ -1,45 +1,62 @@
 ---
 title:                "C#: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "C#"
-category:             "Getting Started"
+category:             "C#"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å starte et nytt programmeringsprosjekt kan virke overveldende, men det kan også være en spennende og givende opplevelse. Ved å lage ditt eget program, kan du uttrykke kreativitet og løse problemer på en unik måte. Det er også en flott mulighet til å lære nye programmeringsspråk og teknikker.
+Hvorfor skulle du ønske å starte et nytt program? Det kan være flere grunner, men det er vanligvis for å løse et problem eller forbedre en eksisterende prosess. Det kan også bare være for moro skyld og for å lære noe nytt!
 
-## Hvordan
+# Slik gjør du det
 
-For å starte et nytt prosjekt i C#, må du først installere Visual Studio, et integrert utviklingsmiljø (IDE) som lar deg skrive og kjøre C#-kode. Deretter kan du følge disse enkle trinnene for å lage ditt første C#-program:
+Hvis du ønsker å starte et nytt C# program, er det noen enkle trinn du kan følge. Først må du sørge for at du har riktig utviklingsmiljø og verktøy på plass. Deretter kan du følge disse stegene:
 
-* Åpne Visual Studio og velg "Create a new project".
-* Velg C# som programmeringsspråk og en passende prosjektsjablon. En "Console Application" er et godt valg for nybegynnere.
-* Gi prosjektet ditt et navn og velg en plassering å lagre det.
-* Klikk på "Create" og Visual Studio vil generere en fil med C#-kode som automatisk åpnes for deg.
-* Bruk "Console.WriteLine()" til å skrive ut en melding i kommandolinjen din.
-* Klikk på "Start" eller trykk F5 for å kjøre programmet og se din melding i konsollen.
+1. Start med å åpne Visual Studio og velg "New Project" (nytt prosjekt).
+
+2. Velg "Console Application" (konsollapplikasjon) fra listen over maler.
+
+3. Gi prosjektet ditt et navn og velg plasseringen hvor du vil lagre det.
+
+4. Når prosjektet er opprettet, vil du se en main-metode som er den første koden som blir kjørt når programmet starter.
+
+5. Nå kan du begynne å skrive koden din! Her er et eksempel på hvordan en veldig enkel konsollapplikasjon kan se ut:
 
 ```C#
-Console.WriteLine("Hei, verden!");
+using System;
+
+namespace MinFørsteApplikasjon
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hei, verden!");
+            Console.ReadLine();
+        }
+    }
+}
 ```
 
-Output:
-```
-Hei, verden!
-```
+6. Etter at du har skrevet koden din, kan du trykke på "Start" -knappen for å utføre programmet ditt og se resultatet i konsollen.
 
-Du kan også legge til variabler, løkker og betingede uttrykk for å gjøre programmet ditt mer avansert og interaktivt. Utforsk ulike ressurser og øv deg for å bli en bedre C#-utvikler.
+# Dykk dypere
 
-## Dykk dypere
+Å starte et nytt prosjekt kan virke skremmende, spesielt hvis du er ny på programmering eller C#. Men det er viktig å huske på at det finnes et stort samfunn av utviklere der ute som er villige til å hjelpe og støtte deg. Her er noen tips for å hjelpe deg å starte:
 
-Når du er komfortabel med å lage enkle C#-programmer, kan du begynne å utforske ulike konsepter som objektorientert programmering, grensesnitt og databehandling. Ikke vær redd for å eksperimentere og spørre om hjelp fra mer erfarne utviklere. Det finnes også en rekke ressurser på nett som kan hjelpe deg med å lære mer om C# og utvikle dine ferdigheter.
+- Utforsk ulike ressurser på nettet, som nettsider, blogger og videoer, for å lære mer om C# og hvordan du kan bruke det til å lage programmer.
+- Bli med i programmeringsforum eller grupper på sosiale medier for å få svar på spørsmål og få råd fra erfarne utviklere.
+- Del prosjektet ditt med andre og be om tilbakemeldinger for å forbedre det og lære nye triks og teknikker.
 
-## Se også
+Å starte et nytt prosjekt krever mot og utholdenhet, men med riktig støtte og ressurser kan du oppnå mye og lære mye underveis.
 
-* [Microsoft Visual Studio](https://visualstudio.microsoft.com/no/) - IDE for å utvikle C#-programmer.
-* [C# Programming Guide](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/) - Offisiell veiledning for å lære C#-programmering.
-* [Codecademy](https://www.codecademy.com/learn/learn-c-sharp) - Interaktiv læringsplattform for C# og andre programmeringsspråk.
-* [Reddit r/csharp](https://www.reddit.com/r/csharp/) - Et online fellesskap for C#-utviklere.
+# Se også
+
+- [Intro til C#](https://www.microsoft.com/net/learn/languages/csharp)
+- [C# programmeringsveiledning](https://docs.microsoft.com/nb-no/dotnet/csharp/programming-guide/)
+- [GitHub's samfunn av C# utviklere](https://github.com/dotnet/csharplang/discussions)

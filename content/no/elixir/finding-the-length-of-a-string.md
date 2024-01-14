@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Å finne lengden av en streng"
+title:                "Elixir: Å finne lengden på en streng"
+simple_title:         "Å finne lengden på en streng"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/finding-the-length-of-a-string.md"
 ---
 
@@ -9,32 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du har jobbet med Elixir-programmeringsspråket, har du sikkert kommet over et viktig konsept - strenger (strings). Strenger er ganske enkelt en samling av alfanumeriske tegn som er brukt til å representere tekstdata. Men hvorfor er det viktig å finne lengden på en streng? Vel, i mange tilfeller må vi håndtere ulike typer data og å vite lengden på en streng kan være nyttig for å håndtere og manipulere dataene på en effektiv måte.
+Å finne lengden av en streng er en grunnleggende og vanlig oppgave i mange programmeringsspråk. Dette er nyttig når du jobber med tekstbehandling, dataanalyse eller bare trenger å vite hvor mange tegn som er i en tekststreng.
 
-## Hvordan du finner lengden på en streng
+## Slik gjør du det
 
-Det er ganske enkelt å finne lengden på en streng i Elixir. Vi kan bruke den innebygde funksjonen `String.length()` til å finne antallet tegn i en streng. La oss se på et eksempel på hvordan dette fungerer:
+For å finne lengden på en streng i Elixir, kan du bruke den innebygde funksjonen `String.length()`. Denne funksjonen tar inn en streng som argument og returnerer antall tegn i strengen.
 
-```
-Elixir String.length("Hei, verden!")
-```
-
-Dette vil gi oss følgende utgang:
-
-```
-12
+```Elixir
+iex> String.length("Hei, dette er en test")
+19
 ```
 
-Som du kan se, teller funksjonen antallet tegn i strengen, inkludert mellomrom og spesialtegn.
+Som du ser, returnerer `String.length()` verdien 19 fordi strengen består av 19 tegn. Det er viktig å merke seg at mellomrom og spesialtegn også telles som tegn.
 
-## Dypdykk
+Når vi bruker denne funksjonen, må vi passe på å ikke bruke en variabel som ikke er en streng som argument. Hvis vi for eksempel prøver å passe inn et tall i `String.length()`, vil vi få en feilmelding.
 
-Lengden på en streng kan også påvirkes av hvilket tegnsett som brukes. For eksempel, hvis du arbeider med tegnsettet UTF-8, vil funksjonen `String.length()` telle antallet tegn som brukes i UTF-8-delingen av strengen, og ikke det faktiske antallet tegn som vises i strengen.
+```Elixir
+iex> String.length(123)
+** (ArgumentError) argument error
+```
 
-Hvis du vil finne den faktiske lengden på en streng med UTF-8-tegn, kan du bruke funksjonen `String.codepoints()`. Denne funksjonen konverterer strengen til en liste av koder for hvert tegn, og vi kan deretter bruke `Enum.count()` til å telle antallet koder og dermed finne den faktiske lengden på strengen.
+For å unngå dette, kan vi sikre at vi bare bruker strengvariabler som argument.
+
+## Dykk dypere
+
+Elixir er et funksjonelt programmeringsspråk, noe som betyr at funksjoner er sentralt og kan betraktes som verdifulle ressurser. Det er derfor viktig å vite hvordan de fungerer og hvordan de kan brukes for å optimalisere koden din.
+
+Når du bruker `String.length()`, må du vite at funksjonen egentlig bare teller antall bytes i en streng. Dette kan føre til uventede resultater hvis du håndterer flerspråklige tegn eller emojis som bruker flere bytes.
+
+For å unngå dette, kan du bruke funksjonen `String.codepoints()` som splitter strengen i en liste av unicode-tegn. Deretter kan du bruke `Enum.count()` til å telle antall elementer i denne listen.
+
+```Elixir
+iex> "Hello, world!" |> String.codepoints() |> Enum.count()
+13
+```
 
 ## Se også
 
-- [Offisiell Elixir dokumentasjon for String](https://hexdocs.pm/elixir/String.html)
-- [Antall tegn i en streng i Elixir](https://www.geeksforgeeks.org/number-of-characters-in-a-string-in-elixir/)
-- [Manipulering av strenger i Elixir](https://medium.com/@ryo810/blog-%EF%BC%9A-string-%E3%82%B9%E3%83%88%E3%83%AA%E3%83%B3%E3%82%B0%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E6%89%B1%E3%81%86%E6%96%B9%E6%B3%95%E3%81%BE%E3%81%A8%E3%82%81-6be77a935200)
+- [Offisiell Elixir dokumentasjon om `String.length()`](https://hexdocs.pm/elixir/String.html#length/1)
+- [Offisiell Elixir dokumentasjon om `String.codepoints()`](https://hexdocs.pm/elixir/String.html#codepoints/1)
+- [Offisiell Elixir dokumentasjon om `Enum.count()`](https://hexdocs.pm/elixir/Enum.html#count/1)

@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Extrahieren von Teilstrings"
+title:                "Rust: Unterstrings extrahieren"
+simple_title:         "Unterstrings extrahieren"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/extracting-substrings.md"
 ---
 
@@ -9,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In Rust sind Strings standardmäßig immutable, was bedeutet, dass sie nach der Initialisierung nicht mehr verändert werden können. Aber manchmal möchten wir vielleicht nur einen Teil eines Strings nutzen, anstatt den ganzen String zu durchlaufen. Hier kommt das Extrahieren von Substrings ins Spiel.
+In der heutigen Welt der Softwareentwicklung gibt es unzählige Programmiersprachen zur Auswahl. Eine der neueren Sprachen, die jedoch schnell an Popularität gewinnt, ist Rust. Rust ist eine performante und sichere Systemsprache, die dafür bekannt ist, fehleranfällige Programme zu vermeiden. Eines der nützlichen Features von Rust ist die Möglichkeit, Substrings aus Strings zu extrahieren. Aber warum sollte man das überhaupt tun?
+
+Die Extraktion von Substrings ist eine häufige Aufgabe in der Programmierung. Sie kann nützlich sein, um Teile eines Strings zu isolieren, um sie weiter zu verarbeiten oder zu überprüfen. Dies kann besonders hilfreich sein, wenn man mit Benutzer*innen-Eingaben interagiert oder bestimmte Muster in einem Text finden möchte.
 
 ## Wie geht das?
 
-Um Substrings in Rust zu extrahieren, können wir die `substring` Methode verwenden. Diese Methode nimmt zwei Parameter an: den Startindex (inklusiv) und den Endindex (exklusiv) des Substrings. Schauen wir uns ein Beispiel an:
+Um Substrings in Rust zu extrahieren, gibt es zwei Hauptmethoden: die `slice`-Methode und die `split`-Methode. Die `slice`-Methode ermöglicht es uns, einen Teil eines Strings basierend auf der Anzahl der Zeichen zu extrahieren, während die `split`-Methode es uns ermöglicht, einen String anhand eines bestimmten Zeichens oder Musters in mehrere Substrings aufzuteilen.
+
+Schauen wir uns einige Beispiele an:
 
 ```Rust
-let string = "Hallo, Welt!";
-let substring = string.substring(6, 10);
-
-println!("{}", substring);
+let text = "Dies ist ein Beispieltext.";
+// Verwende die slice-Methode, um die ersten 4 Zeichen zu extrahieren
+let first_four = &text[0..4]; // "Dies"
+// Verwende die split-Methode, um den Text in mehrere Substrings aufzuteilen
+let substrings = text.split(" "); // ["Dies", "ist", "ein", "Beispieltext."]
 ```
 
-In diesem Beispiel wird der Substring von Index 6 (inklusiv) bis Index 10 (exklusiv), also "Welt", extrahiert und ausgegeben. Der resultierende Output wäre also "Welt".
+Wie im Beispiel zu sehen ist, können wir mit der `slice`-Methode einen Teil eines Strings auswählen, indem wir den Index des ersten und letzten Zeichens angeben, und mit der `split`-Methode den Text anhand des Leerzeichens in mehrere Substrings aufteilen.
 
-## Tieferer Einblick
+Es ist auch möglich, einigen Zusatzfunktionen wie `trim` oder `to_lowercase` anzuwenden, um den extrahierten Substring weiter anzupassen.
 
-Das Extrahieren von Substrings in Rust kann auch mit Hilfe von Slices erfolgen. Slices sind Teilbereiche eines Arrays oder Vectors, die sich im Speicher auf einen bestimmten Abschnitt beziehen. Um einen Slice zu erstellen, verwenden wir die Syntax `&String[startindex..endindex]`.
+## Tiefer ins Detail gehen
 
-Wir können auch negative Indizes verwenden, um von rechts nach links zu zählen, wobei -1 dem letzten Index entspricht. Wenn wir einen Slice mit negativem Startindex erstellen, zählt Rust von hinten und extrahiert den Teil ab dem angegebenen Index bis zum Ende des Strings.
+Die `slice`- und `split`-Methoden sind die grundlegenden Methoden zum Extrahieren von Substrings in Rust. Es gibt jedoch auch weitere Funktionen und Bibliotheken, die es einem ermöglichen, komplexere Substrings-Extraktionen durchzuführen.
 
-```Rust
-let string = "Hallo, Welt!";
-let substring = &string[6..];
+Eine dieser Bibliotheken ist `regex`, mit der man mithilfe von regulären Ausdrücken genau bestimmte Patterns in einem Text finden kann. Eine andere nützliche Funktion ist die `chars`-Methode, mit der man auf einzelne Zeichen eines Strings zugreifen kann.
 
-println!("{}", substring);
-```
-
-Dieses Beispiel würde den Substring "Welt!" extrahieren und ausgeben.
+Es ist wichtig zu beachten, dass die Extraktion von Substrings in Rust im Gegensatz zu anderen Sprachen, wie z.B. Java oder Python, etwas anders funktioniert. Durch die Verwendung von Borrowing und Slices kann es zu keinen unerwarteten Seiteneffekten oder Performanceproblemen kommen.
 
 ## Siehe auch
 
-- [Rust Dokumentation über Strings](https://doc.rust-lang.org/std/string/index.html)
-- [Tutorial zu Slices in Rust](https://doc.rust-lang.org/book/ch04-03-slices.html)
+- [Rust-Dokumentation über Strings](https://doc.rust-lang.org/std/string/index.html)
+- [Offizielle Rust-Website](https://www.rust-lang.org/)
+- [Einführung in Rust](https://www.rust-lang.org/learn)

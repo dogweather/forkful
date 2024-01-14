@@ -1,45 +1,53 @@
 ---
-title:                "Haskell: पैटर्न को मिलते हुए अक्षरों को हटाना"
+title:                "Haskell: पैटर्न के समान अक्षरों को हटाना"
+simple_title:         "पैटर्न के समान अक्षरों को हटाना"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## इसे क्यों करें
-कभी-कभी हमें एक पैटर्न से मिलती हुई वेरियेबल्स को हटाने की आवश्यकता होती है जो हमें अपने हास्केल प्रोग्राम में नहीं चाहिए। ऐसे मामलों में, हम अपने कोड से विशेष चरित्रों को हटा सकते हैं।
+Haskell में कैसे समान पैटर्न को मैचिंग करने वाले अक्षरों को हटाना
 
-## कैसे करें
-हम एक सरल हास्केल फ़ंक्शन का उपयोग करके स्ट्रिंग से पैटर्न मिलते हुए चरित्रों को हटा सकते हैं।
+## क्यों
 
-```Haskell
-deleteChars :: String -> String -> String
-deleteChars pattern str = filter (\c -> notElem c pattern) str
-```
+कभी-कभी हमें अपने डेटा से प्रतीक को हटाने की जरूरत होती है, जैसे कि अपने एक टेक्स्ट स्ट्रिंग से सभी नंबर्स हटाने की जरूरत हो सकती है। हैस्केल में, हम विशेष पैटर्न मैचिंग या रिग्यूलर एक्सप्रेशन का उपयोग करके इसे आसानी से कर सकते हैं।
 
-आप इस फ़ंक्शन का उपयोग इस प्रकार कर सकते हैं:
+## कैसे
+
+हम अपनी स्ट्रिंग को बहुत सारे तरीकों से मैच कर सकते हैं। सबसे आसान तरीका है `filter` फ़ंक्शन का उपयोग करना। नीचे दिए गए कोड ब्लॉक में, हम `filter` का उपयोग करके स्ट्रिंग से सभी अक्षर हटा रहे हैं जो एक से निकले हुए हैं।
 
 ```Haskell
-deleteChars "aeiou" "programming" -- OUTPUT: "prgrmmng"
+removeDuplicates :: String -> String
+removeDuplicates str = filter (\x -> x /= head str) str
 ```
 
-## गहरी खुराक
-पैटर्न मिलते हुए चरित्रों को हटाने की प्रक्रिया वास्तव में बहुत सरल है। हम स्ट्रिंग पर `filter` फ़ंक्शन का उपयोग करके ऐसा कर सकते हैं। लेकिन अधिक समझने के लिए, हम एक दोस्त फ़ंक्शन का उपयोग कर सकते हैं जो `elem` फ़ंक्शन के ठीक विपरीत है।
+इसका आउटपुट निम्न रहेगा:
 
 ```Haskell
-notElem :: (Eq a) => a -> [a] -> Bool
-notElem _ [] = True
-notElem x (y:ys)
-  | x == y = False
-  | otherwise = notElem x ys
+removeDuplicates "abbcdd"
+"ac"
 ```
 
-यह फ़ंक्शन दी गई स्ट्रिंग से अनुपस्थित चरित्र को हटाता है। अब हमारी `deleteChars` फ़ंक्शन देखते हैं:
+## गहराई में जाएं
+
+हैस्केल में, हम `filter` के अलावा भी अन्य तरीकों से स्ट्रिंग मैच कर सकते हैं। एक अन्य तरीका है `map` फ़ंक्शन का उपयोग करना जिससे कि हम स्ट्रिंग को बदल सकते हैं।
 
 ```Haskell
-deleteChars :: String -> String -> String
-deleteChars pattern str = filter (\c -> notElem c pattern) str
+removeLowerCase :: String -> String
+removeLowerCase str = map (\x -> if isLower x then ' ' else x) str
 ```
 
-यहां हमारे फ़ंक्शन को पैरामीटर के रूप में दो स्ट्रिंग पास किए गए हैं। पहला स्ट्रिंग हमारा पैटर्न है जिसे हम अपने चरित्रों से हटाना चाहते हैं। और दूसरा स्ट्रिंग हमारा मूल स्ट्रिंग है जिसमे हम चरित्रों को ढूंढें
+इसका आउटपुट निम्न रहेगा:
+
+```Haskell
+removeLowerCase "Haskell"
+"H "
+```
+
+## देखें भी
+
+- [Haskell विकिपीडिया पृष्ठ](https://hi.wikipedia.org/wiki/%E0%A4%B9%E0%A5%87%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A5%87%E0%A4%B2)
+- [Haskell फंक्शनल प्रोग्रामिंग कोडिंग विकीबुक](https://hi.wikibooks.org/wiki/Haskell_%E0%A4%AB%E0%A5%82%E0%A4%82%E0%A4%95%E0%A5%8D%E0%A4%B8%E0%A4%A8%E0%A4%B

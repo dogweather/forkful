@@ -1,63 +1,80 @@
 ---
 title:                "Swift recipe: Using regular expressions"
+simple_title:         "Using regular expressions"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Regular expressions are powerful tools that allow developers to search, extract, and manipulate text based on patterns. These patterns can range from simple characters to complex sequences, providing a versatile approach to working with textual data. If you want to take your Swift programming skills to the next level and make your code more efficient, then learning how to use regular expressions is a must.
+Regular expressions are a powerful tool in any programmer's arsenal. They allow us to easily search, match, and manipulate text based on specific patterns. Whether you're working on a simple project or a complex one, regular expressions can save you time and effort by automating text processing tasks. In this blog post, we'll dive into the world of regular expressions and explore how they can enhance your Swift programming skills.
 
 ## How To
 
-Using regular expressions in Swift involves importing the Foundation framework and utilizing the `NSRegularExpression` class. Let's take a look at a simple example that extracts all email addresses from a given string:
+To use regular expressions in Swift, we'll need to import the `Foundation` framework which includes the `NSRegularExpression` class. Let's take a look at a simple example of how to use regular expressions to match a phone number pattern.
 
-```
+```Swift
 import Foundation
 
-let inputString = "My email is johnappleseed@example.com and my friend's email is janedoe@example.com"
+let phoneNumber = "123-456-7890"
 
 do {
-    let regex = try NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}", options: .caseInsensitive)
-
-    let matches = regex.matches(in: inputString, options: [], range: NSRange(location: 0, length: inputString.utf16.count))
-
-    for match in matches {
-        let email = (inputString as NSString).substring(with: match.range)
-        print(email)
+    let regex = try NSRegularExpression(pattern: "^\\d{3}-\\d{3}-\\d{4}$", options: .anchorsMatchLines)
+    let matches = regex.matches(in: phoneNumber, options: [], range: NSRange(location: 0, length: phoneNumber.utf16.count))
+    
+    if matches.count > 0 {
+        print("Valid phone number!")
+    } else {
+        print("Invalid phone number.")
     }
-} catch {
-    print("Regex error: \(error.localizedDescription)")
+} catch let error {
+    print("Invalid regex: \(error.localizedDescription)")
 }
-
-// Output: johnappleseed@example.com
-// Output: janedoe@example.com
 ```
 
-In this example, we are searching for strings that match the pattern of an email address and extracting them from our input string. The `\` character is used for escaping characters that have special meaning in regular expressions. In this case, we are escaping the `.` character to ensure it is interpreted as a literal period. The `+` and `{}` symbols indicate that the preceding character must occur one or more times, and the `caseInsensitive` option allows for case-insensitive matching.
+Here, we use the `NSRegularExpression` class to define a pattern that consists of three sets of three digits separated by hyphens. The `^` and `$` symbols represent the beginning and end of the string, respectively. We also specify the `anchorsMatchLines` option to limit the match to the beginning and end of the string. Running this code will print "Valid phone number!" since the given string matches our regex pattern.
+
+But how do we extract the actual phone number from the string? For that, we can use capture groups, which are defined by parentheses in the regex pattern. Let's modify our code to extract the phone number from a string that contains not only the number but also the name of the owner.
+
+```Swift
+let text = "John's phone number is 123-456-7890"
+
+do {
+    let regex = try NSRegularExpression(pattern: "([A-Za-z]+)'s phone number is (\\d{3}-\\d{3}-\\d{4})", options: .caseInsensitive)
+    let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
+    
+    if let match = matches.first {
+        let nameRange = match.range(at: 1)
+        let numberRange = match.range(at: 2)
+        
+        if let name = text.substring(with: nameRange), let number = text.substring(with: numberRange) {
+            print("\(name) has the phone number \(number)")
+        }
+    }
+} catch let error {
+    print("Invalid regex: \(error.localizedDescription)")
+}
+```
+
+In this example, we use `range(at:)` to retrieve the ranges of the capture groups, and then use `substring(with:)` to extract the matched strings. We can also specify the case-insensitive option to be able to match names in different cases. Running this code will print "John has the phone number 123-456-7890."
 
 ## Deep Dive
 
-Regular expressions offer a wide range of flexibility with their patterns and options, allowing for efficient string manipulation and data extraction. It's essential to understand the various special characters and their meanings to fully utilize this tool. Here are some commonly used characters and their meanings:
+Regular expressions can be used for much more than just string matching. They also have the power to replace, split, and even validate complex patterns. The regex syntax may seem intimidating at first, but with some practice and the help of online resources such as [Regex101](https://regex101.com/) and [Regexr](https://regexr.com/), you'll be able to master it in no time.
 
-- `.`: Matches any character except a line break.
-- `+`: Matches one or more occurrences of the preceding character.
-- `*`: Matches zero or more occurrences of the preceding character.
-- `?`: Makes the preceding character optional (zero or one occurrence).
-- `^`: Matches the beginning of a line.
-- `$`: Matches the end of a line.
-- `[]`: Matches any character within the brackets.
-- `[^]`: Matches any character not within the brackets.
-- `|`: Matches either the expression preceding or following the symbol.
-- `()`: Creates a capture group for extracting specific parts of the matched string.
+Some helpful tips when using regular expressions in Swift:
 
-For more in-depth information about regular expressions, you can refer to the official documentation or other resources listed below.
+- Use `try?` when creating the `NSRegularExpression` object to handle any potential errors.
+- Use the `options` parameter in `matches(in:options:range:)` to specify additional matching behaviors, such as ignoring case sensitivity.
+- Use capture groups and named capture groups to extract specific parts of a matched string.
+- Use `replaceMatches(in:options:range:withTemplate:)` to replace text based on a regex pattern.
+- Use `components(separatedBy:)` with a regex pattern to split a string into an array.
+- Experiment with different regex patterns to find the most efficient one for your particular use case.
 
 ## See Also
-
-- [Official Swift Documentation on Regular Expressions](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Regexr - Online Regular Expression Tester](https://regexr.com/)
-- [Regular Expressions in Swift by Hacking with Swift](https://www.hackingwithswift.com/articles/108/regular-expressions-in-swift)
+- [NSRegularExpression Class Reference](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Regex101](https://regex101.com/)
+- [Regexr](https://regexr.com/)

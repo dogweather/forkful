@@ -1,49 +1,56 @@
 ---
 title:                "Bash: Verificando se um diretório existe"
+simple_title:         "Verificando se um diretório existe"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+##Porque
 
-Ao escrever scripts em Bash, muitas vezes precisamos verificar se um diretório existe antes de executar determinadas ações. Isso pode ser útil para evitar erros e garantir que o script funcione corretamente.
+Se você é um programador iniciante ou até mesmo experiente, pode se deparar com a necessidade de verificar se um diretório específico existe. Ao fazer isso, você pode economizar tempo e evitar quaisquer erros causados pela tentativa de acessar um diretório inexistente. Com o Bash, há uma maneira fácil de verificar se um diretório existe antes de executar seu código. Neste artigo, vamos dar um mergulho profundo nesse processo e ajudá-lo a entender por que isso é importante.
 
-## Como fazer
+## Como Fazer
 
-Verificar a existência de um diretório em Bash é simples e pode ser feito utilizando o comando `test` seguido da opção `-d` para indicar que queremos verificar a existência de um diretório e, em seguida, o caminho para o diretório que desejamos verificar. Por exemplo:
+Existem duas maneiras comuns de verificar se um diretório existe com Bash: usando o comando `ls` ou o comando `test`. Aqui está um exemplo de cada:
 
-``` Bash
-test -d /home/user/diretorio
-```
-
-O comando acima irá retornar um código de saída `0` se o diretório existir e um código `1` caso contrário. Para tornar o processo mais amigável, você pode adicionar um `if` statement para realizar as ações desejadas com base no resultado do comando. Veja um exemplo de como isso pode ser feito:
-
-``` Bash
-if test -d /home/user/diretorio; then
-    echo "O diretório existe!"
+```Bash
+if ls ~/meu-diretorio > /dev/null 2>&1; then
+  echo "O diretório existe!"
 else
-    echo "O diretório não existe."
+  echo "O diretório não existe."
 fi
 ```
 
-Você também pode usar o operador de lógica `&&` para executar comandos somente se o diretório existir, por exemplo:
-
-``` Bash
-test -d /home/user/diretorio && echo "O diretório existe!"
+```Bash
+if test -d ~/meu-diretorio; then
+  echo "O diretório existe!"
+else
+  echo "O diretório não existe."
+fi
 ```
 
-Outra opção é usar o comando `mkdir` com a opção `-p` para criar o diretório se ele não existir, evitando assim a necessidade de verificar sua existência antes de cria-lo.
+Vamos quebrar esses comandos para entender o que está acontecendo. Primeiro, ambos os comandos usam a condicional `if` para determinar se o diretório existe ou não. Em seguida, temos o comando `ls` seguido de `~/meu-diretorio`. Isso tentará listar o conteúdo do diretório, mas especificamos que a saída seja redirecionada para o arquivo `/dev/null` e quaisquer erros sejam redirecionados para o mesmo local. Isso significa que não veremos nenhuma saída ou erro no terminal quando o comando for executado. Se o comando for bem-sucedido, isso significa que o diretório existe e a mensagem "O diretório existe!" será exibida. Caso contrário, a mensagem "O diretório não existe." será exibida. 
 
-## Deep Dive
+No segundo exemplo, usamos o comando `test` com a opção `-d`, que verifica se o caminho especificado é um diretório. Neste caso, o caminho é `~/meu-diretorio`. Se o teste for verdadeiro, a mensagem "O diretório existe!" será exibida. Caso contrário, a mensagem "O diretório não existe." será exibida.
 
-O comando `test` é na verdade um alias para o comando `[`, que é um programa externo. Isso significa que também podemos utilizar o comando `[` para verificar a existência de um diretório. Ambos os comandos funcionam da mesma maneira e possuem opções similares, portanto é uma questão de preferência pessoal qual utilizar.
+Agora que você sabe como verificar se um diretório existe com Bash, vamos dar um mergulho mais profundo para entender melhor por que esse processo é importante.
 
-É importante ressaltar que a verificação da existência de um diretório não é feita apenas para tornar o código mais elegante, mas também para garantir a segurança do programa. Por exemplo, se você estiver usando o comando `rm -rf $PATH`, sem verificar antes a existência do diretório, poderá apagar acidentalmente todos os arquivos do sistema.
+## Mergulho Profundo
 
-## Veja também
+Ao verificar se um diretório existe antes de executar seu código, você pode evitar erros e problemas em sua aplicação. Se o diretório não existir e seu código tentar acessá-lo, isso pode resultar em um erro que interrompa a execução do programa. Isso pode ser especialmente problemático se o diretório for necessário para o funcionamento correto do seu código.
 
-- [Documentação do comando `test` (em inglês)](https://linux.die.net/man/1/test)
-- [Documentação do comando `mkdir` (em inglês)](https://linux.die.net/man/1/mkdir)
+Além disso, verificar a existência de um diretório também pode ser útil para lidar com opções ou caminhos de diretórios fornecidos pelo usuário. Se um usuário fornecer um caminho inválido ou inexistente, seu código pode lidar com isso de forma adequada ao verificar primeiro se o diretório existe.
+
+É importante notar que, embora o `test` e o `ls` sejam os métodos mais comuns para verificar a existência de um diretório, existem outras maneiras de realizar essa tarefa, como usando o comando `find` ou `stat`. Cada método pode ter suas próprias vantagens ou desvantagens, portanto, é sempre bom estar ciente de suas opções e escolher o melhor método para a sua situação específica.
+
+## See Also
+
+Aqui estão alguns links úteis para ajudá-lo a continuar explorando o processo de verificação de existência de diretório com Bash:
+
+- [Documentação Bash do Linux](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
+- [Bash Beginner's Guide](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+- [Existe um diretório?](https://www.cyberciti.biz/tips/find-out-if-directory-exists.html)

@@ -1,7 +1,9 @@
 ---
-title:                "Go: Beregning av en dato i fremtiden eller fortiden."
+title:                "Go: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,52 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å kunne beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge eller analysere tidsrelaterte oppgaver. Med Go-programmeringsspråket kan du enkelt lage et program som kan utføre disse beregningene for deg.
+Har du noen gang lurt på hvordan du kan beregne en dato i fremtiden eller fortiden i Go-programmering? Å kunne beregne datoer kan være veldig nyttig når du skal planlegge fremtidige hendelser eller håndtere historiske data. Les videre for å lære mer om dette nyttige konseptet!
 
 ## Hvordan
 
-For å beregne en dato i fremtiden eller fortiden, kan du bruke Go sin "time" pakke. Først må du importere denne pakken ved å inkludere "time" i import-setningen.
+For å beregne en dato i fremtiden eller fortiden i Go, trenger vi å bruke tids- og dato-pakken. Vi kan starte ved å importere pakken og deretter bruke "Now ()" -funksjonen for å få nåværende tid og dato i form av en "tids" -variabel, som vi kan bruke til å generere fremtidige eller fortidige datoer.
 
 ```Go
-import "time"
+import "tid"
+[date] := tid.Nå ()
 ```
 
-For å beregne en dato i fremtiden, kan du bruke funksjonen "AddDate" og gi den et time.Time-objekt som input, sammen med antall år, måneder og dager du ønsker å legge til. For eksempel, hvis du vil finne datoen 2 år, 6 måneder og 10 dager fra nå, kan du bruke følgende kode:
+For å beregne en dato i fremtiden, kan vi bruke "AddDate" -funksjonen og gi den antall år, måneder og dager vi ønsker å legge til i nåværende dato. Det samme gjelder for å beregne en dato i fortiden, bare må vi bruke "Sub" -funksjonen i stedet.
 
 ```Go
-now := time.Now()
-futureDate := now.AddDate(2, 6, 10)
-fmt.Println(futureDate)
+// Beregne dato i fremtiden
+fremtidigDato := date.AddDate (år, måned, dag)
+
+// Beregne dato i fortiden
+fortidigDato := date.Sub (år, måned, dag)
 ```
 
-Dette vil gi følgende output:
-
-```text
-2023-04-14 13:45:57.2913995 +0300 +03 m=+95295504.792243019
-```
-
-På samme måte kan du beregne en dato i fortiden ved å bruke negative tall som input til "AddDate" funksjonen. For å finne datoen 5 måneder og 15 dager tilbake i tid fra nå, kan du bruke følgende kode:
+La oss ta en titt på noen eksempler og resultatet de vil gi:
 
 ```Go
-now := time.Now()
-pastDate := now.AddDate(0, -5, -15)
-fmt.Println(pastDate)
+// Beregne dato i fremtiden: 1 år, 2 måneder og 3 dager
+fmt.Println (futureDate) // 2022-08-21
+
+// Beregne dato i fortiden: 1 år, 2 måneder og 3 dager
+fmt.Println (pastDate) // 2018-04-17
 ```
 
-Dette vil gi følgende output:
+Som du kan se, gir "AddDate" og "Sub" -funksjonene oss nøyaktige datoer basert på antall år, måneder og dager vi ønsker å legge til eller trekke fra.
 
-```text
-2020-10-30 13:46:11.1126119 +0200 CET m=+95295780.613456519
-```
+## Dypdykk
 
-## Dykk Dypere
+For å gå enda dypere inn i dette emnet, kan vi også bruke "Date" og "Time" -strukturer til å spesifisere en bestemt dato og klokkeslett, og deretter bruke "Add" og "Subtract" -funksjonene for å generere en ny dato basert på denne. Dette gir oss enda større nøyaktighet og kontroll når vi beregner datoer i fremtiden eller fortiden.
 
-En viktig ting å huske på når du beregner datoer i Go, er at funksjonene for å legge til eller trekke fra datoer tar hensyn til skuddår og korrekt håndtering av datoer som faller utenfor en måned. Dette gjør Go til et pålitelig valg for nøyaktige dato beregninger.
+Se også:
 
-Det er også verdt å merke seg at "AddDate" funksjonen vil returnere en ny time.Time-objekt i stedet for å endre den originale. Dette sikrer at du ikke utilsiktet endrer eller overskriver verdier i dine eksisterende time.Time-objekter.
+- [Golang tid og dato pakke dokumentasjon](https://golang.org/pkg/time/)
+- [Beregne dato i fremtiden i Go]( https://www.geeksforgeeks.org/how-to-calculate-future-dates-in-golang/)
+- [Go-tutorial for å beregne datoer](https://golangbot.com/dates-and-timestamps/)
 
-## Se Også
+## Se også
 
-- [Go time-pakken dokumentasjon](https://golang.org/pkg/time/)
-- [Stack Overflow: How to calculate a date in the future or past in Go](https://stackoverflow.com/questions/30254716/how-to-calculate-a-date-in-the-past-or-future-without-leap-years-and-not-timestamp)
-- [Medium: Working with dates and times in Go](https://medium.com/@freshwebio/working-with-dates-and-times-in-golang-ccfc82027d7d)
+Vi håper denne artikkelen hjalp deg med å lære hvordan du enkelt kan beregne datoer i fremtiden eller fortiden i Go-programmering. Sørg for å sjekke ut lenkene ovenfor for mer detaljert informasjon og eksempler. Lykke til med å bruke dette konseptet i dine egne prosjekter!

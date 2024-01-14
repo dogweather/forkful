@@ -1,63 +1,37 @@
 ---
-title:                "Fish Shell: Capitalizando uma string"
+title:                "Fish Shell: Maiúsculas em uma string"
+simple_title:         "Maiúsculas em uma string"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que utilizar o Fish Shell para capitalizar uma string?
+## Por que usar o Fish Shell para capitalizar strings?
 
-Capitalizar uma string pode ser uma tarefa bastante comum ao trabalhar com dados ou strings de entrada. Ao utilizar o Fish Shell, podemos facilmente capitalizar strings com apenas algumas linhas de código, o que economiza tempo e esforço.
+Capitalize strings é uma ação muito comum na programação, seja para padronizar a escrita de informações ou melhorar a usabilidade de um programa. No entanto, fazer isso manualmente pode ser demorado e suscetível a erros. É aí que o Fish Shell pode ser útil.
 
-## Como fazer:
+## Como capitalizar uma string usando o Fish Shell
 
-```Fish Shell
-set texto "exemplo de string"
-echo $texto | string capitalize
-```
-
-Este pequeno bloco de código demonstra como podemos capitalizar uma string utilizando o comando "string capitalize" no Fish Shell. Basta definir a string que desejamos capitalizar em uma variável e, em seguida, utilizar o comando "echo" junto com a variável e o comando "string capitalize".
-
-O resultado do código acima será a seguinte saída:
-
-```
-Exemplo de string
-```
-
-Este é apenas um exemplo básico de como capitalizar uma string utilizando o Fish Shell. É importante notar que podemos usar esse comando com qualquer tipo de string, independentemente do tamanho ou quantidade de palavras.
-
-## Aprofundando:
-
-Ao utilizar o comando "string capitalize" no Fish Shell, além de capitalizar a primeira letra de cada palavra, também podemos especificar uma opção para capitalizar apenas a primeira letra de uma string. Isso pode ser útil ao trabalhar com títulos ou nomes próprios.
+É muito fácil capitalizar uma string usando o Fish Shell. Basta seguir os seguintes passos:
 
 ```Fish Shell
-set texto "exemplo de string"
-echo $texto | string capitalize -l
+set texto "exemplo"  # Define a string que será capitalizada
+echo $texto | string capitalize # Utiliza o comando "capitalize" do Fish Shell
 ```
 
-No código acima, a opção "-l" é utilizada para especificar que queremos capitalizar apenas a primeira letra da string. O resultado será:
+O resultado será a string "Exemplo" impressa na tela. Caso queira salvar o novo valor da string na variável "texto", basta usar "set texto (string capitalize $texto)".
 
-```
-Exemplo de string
-```
+## Profundidade na capitalização de strings
 
-Podemos, ainda, utilizar a opção "-a" para capitalizar todas as letras da string, ao invés de apenas a primeira letra de cada palavra.
+O comando "string capitalize" do Fish Shell utiliza algumas regras simples para capitalizar uma string. Ele irá transformar a primeira letra em maiúscula e as restantes em minúsculas. No entanto, é importante notar que esse comando modifica a própria string, ou seja, ela não será mais igual à original.
 
-```
-set texto "exemplo de string"
-echo $texto | string capitalize -a
-```
+Além disso, o Fish Shell possui outros comandos úteis para capitalizar strings, como "string capitalize-words" (que capitaliza cada palavra em uma string) e "string capitalize-sentence" (que capitaliza a primeira letra de cada frase em uma string).
 
-A saída será:
+## Veja também
 
-```
-Exemplo De String
-```
-
-## Veja também:
-
-- [Documentação oficial do Fish Shell - String Manipulation](https://fishshell.com/docs/current/commands.html#string-manipulation)
-- [Curso de Fish Shell para iniciantes](https://www.udemy.com/course/fish-shell-linux/)
-- [Aprenda a usar o Fish Shell como um profissional](https://egghead.io/courses/preparing-for-the-fish-shell)
+- [Documentação do Fish Shell](https://fishshell.com/docs/current/)
+- [Lista de comandos do Fish Shell](https://fishshell.com/docs/current/commands.html)
+- [Exemplos de uso do comando "string capitalize"](https://fishshell.com/docs/current/cmds/string-capitalize.html)

@@ -1,52 +1,60 @@
 ---
 title:                "Rust: Escrevendo testes"
+simple_title:         "Escrevendo testes"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que escrever testes em Rust é importante?
+## Por que escrever testes em Rust?
 
-Testes são parte essencial do processo de desenvolvimento de software, e isso não é diferente quando se trata de programação em Rust. Escrever testes pode ajudar a garantir que seu código está funcionando corretamente e evitar possíveis bugs antes mesmo deles acontecerem. Além disso, testes também podem servir como documentação do seu código, facilitando a compreensão para outros desenvolvedores.
+Escrever testes em Rust é uma prática importante que pode trazer muitos benefícios para o desenvolvedor e para o projeto em si. Testes garantem a qualidade e funcionalidade do código, reduzem a ocorrência de bugs e permitem uma manutenção mais fácil e rápida. Além disso, escrever testes pode acelerar o processo de desenvolvimento, já que o código é testado automaticamente.
 
 ## Como escrever testes em Rust
 
-Em Rust, os testes são escritos usando o módulo `test` e a macro `#[test]`. Veja um exemplo de como escrever um teste simples para uma função que verifica se um número é par:
+Para escrever testes em Rust, é preciso utilizar a biblioteca de testes padrão do Rust, a "std::test". Esta biblioteca fornece uma série de macros que permitem definir funções de teste, benchmarks e asserções.
 
-```rust
+### Exemplos de código:
+
+```Rust
+// Importando a biblioteca de testes
+use std::test;
+
+// Definindo uma função de teste
 #[test]
-fn test_par() {
-    assert!(is_par(2));
-    assert!(!is_par(3));
+fn test_addition() {
+    let result = add(2, 3);
+    assert_eq!(result, 5);
 }
-```
-O primeiro passo é importar o módulo `test` com `use std::test`. Em seguida, usamos a macro `#[test]` antes da função de teste. Dentro do teste, usamos a macro `assert!` para verificar se a função `is_par` retorna o resultado esperado. Se a asserção falhar, o teste irá ser marcado como falho.
 
-Além disso, também é possível usar a macro `assert_eq!` para verificar a igualdade de valores e `assert_ne!` para verificar a diferença entre eles.
-
-## Aprofundando nos testes
-
-Em Rust, também é possível escrever testes que verificam se um código produz um erro esperado. Isso é feito usando a macro `should_panic` antes da função de teste. Veja um exemplo:
-
-```rust
-#[test]
-#[should_panic]
-fn test_divisao_por_zero() {
-    println!("{}", 10 / 0);
+// Definindo uma função de benchmark
+#[bench]
+fn bench_addition(b: &mut Bencher) {
+    b.iter(|| add(2, 3));
 }
 ```
 
-Além disso, também é possível testar o desempenho do seu código usando a macro `#[bench]`. Isso ajuda a identificar partes do seu código que podem afetar o desempenho geral do seu programa.
+A saída do teste seria:
 
-Outra alternativa é usar a biblioteca `quickcheck` para gerar dados de teste aleatórios e verificar se o seu código funciona para uma variedade de casos.
+```
+running 2 tests
+test test_addition ... ok
+test bench_addition ... bench:          10 ns/iter (+/- 2)
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
+```
+
+## Mergulho profundo
+
+Para escrever testes efetivos em Rust, é importante entender os conceitos de assertivas (assertions) e testes automatizados. Assertivas são declarações que devem ser verdadeiras para o teste passar. Já os testes automatizados são codificados para serem executados automaticamente, o que torna a tarefa de testar o código mais fácil e precisa.
+
+Além disso, é importante saber como estruturar os testes de forma organizada e como utilizar as diferentes macros da biblioteca std::test, como a `assert!()`, `assert_eq!()` e `assert_ne!()`.
 
 ## Veja também
 
-- [Documentação oficial do módulo `test` em Rust](https://doc.rust-lang.org/std/test/index.html)
-- [Rust by Example: Testes](https://doc.rust-lang.org/rust-by-example/testing.html)
-- [The Rust Book: Testes automatizados](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [QuickCheck: Uma biblioteca para propriedade baseada em testes](https://crates.io/crates/quickcheck)
-
-Escrever testes em Rust é uma prática importante para garantir a qualidade do seu código. Além disso, usar as ferramentas e bibliotecas disponíveis pode facilitar o processo de teste e melhorar a qualidade do seu código. Certifique-se de sempre escrever testes para o seu código e refatorá-los conforme necessário para manter a qualidade do seu software.
+- [Documentação oficial de testes em Rust](https://doc.rust-lang.org/std/test/)
+- [Artigo sobre testes em Rust no blog da Rust Brasil](https://www.rust-lang-br.org/2019/04/24/testes-em-rust.html)
+- [Vídeo sobre testes em Rust no canal do Rust Brazil](https://youtu.be/KlLwB-w2YyQ)

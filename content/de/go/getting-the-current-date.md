@@ -1,7 +1,9 @@
 ---
-title:                "Go: Das aktuelle Datum abrufen."
+title:                "Go: Das aktuelle Datum erhalten"
+simple_title:         "Das aktuelle Datum erhalten"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/getting-the-current-date.md"
 ---
 
@@ -9,69 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Abrufen des aktuellen Datums und der Uhrzeit ist eine häufige Aufgabe bei der Entwicklung von Anwendungen. Es ist wichtig, da viele Anwendungen abhängig von der aktuellen Zeit Informationen anzeigen oder speichern müssen, wie z.B. die letzten Änderungen, Erstellung oder Aktualisierung von Daten.
+Das Abrufen des aktuellen Datums ist eine häufige Aufgabe beim Programmieren. Es kann genutzt werden, um Berichte zu erstellen, Kalenderfunktionen zu implementieren oder einfach um das aktuelle Datum in einer Anwendung anzuzeigen.
 
-## Wie man das aktuelle Datum in Go bekommt
+## Wie geht's
 
-Um das aktuelle Datum und die Uhrzeit in Go zu erhalten, müssen wir die `time` Bibliothek importieren und die `Now()` Funktion aufrufen. Diese Funktion gibt ein `time.Time` Objekt zurück, das das aktuelle Datum und die Uhrzeit repräsentiert.
+Um das aktuelle Datum in Go zu bekommen, können wir die Funktion `Now()` aus dem Package `time` nutzen.
 
-````Go
-package main
+```
+Go now := time.Now()
+fmt.Println(now)
+```
 
-import (
-	"fmt"
-	"time"
-)
+Dieser Code gibt das aktuelle Datum und die Uhrzeit in der Ausgabe aus.
 
-func main() {
-	current := time.Now()
-	fmt.Println("Das aktuelle Datum und Uhrzeit ist:", current)
-}
-````
-Die Ausgabe dieses Codes wäre ähnlich wie folgt: `Das aktuelle Datum und Uhrzeit ist: 2021-05-03 18:30:00 +0000 UTC`
+```
+Output:
+2021-10-12 15:30:00
+```
 
-Wir können auch nur das Datum oder die Uhrzeit separat abrufen, indem wir die entsprechenden Funktionen verwenden:
+Um das Datum in einem bestimmten Format anzuzeigen, können wir die `Format()` Funktion verwenden. Hier ist ein Beispiel, das das Datum im Format "02.01.2006" (Tag.Monat.Jahr) ausgibt.
 
-````Go
-package main
+```
+Go now := time.Now()
+fmt.Println(now.Format("02.01.2006"))
+```
 
-import (
-	"fmt"
-	"time"
-)
+Dieser Code gibt das aktuelle Datum in der Ausgabe aus:
 
-func main() {
-	currentDate := time.Now().Date()
-	currentTime := time.Now().Time()
-	fmt.Println("Heute ist der", currentDate, "und es ist", currentTime)
-}
-````
-
-Die Ausgabe wäre in diesem Fall: `Heute ist der 2021-05-03 und es ist 18:30:00 +0000 UTC`
+```
+Output:
+12.10.2021
+```
 
 ## Tiefergehende Informationen
 
-Es ist wichtig zu wissen, dass das aktuelle Datum und die Uhrzeit von vielen Faktoren beeinflusst werden kann, wie z.B. der Zeitzone und dem Standort des Systems. Daher kann es hilfreich sein, sich mit der Dokumentation von `time.Now()` vertraut zu machen, um sicherzustellen, dass die Zeitangabe korrekt ist.
+Die Funktion `Now()` gibt das Datum und die Uhrzeit in der Zeitzone zurück, in der das Programm gerade ausgeführt wird. Wenn wir das Datum in einer anderen Zeitzone abrufen möchten, können wir das `Time` Objekt mit der Funktion `In()` auf die gewünschte Zeitzone konvertieren. Zum Beispiel:
 
-Eine weitere wichtige Methode in der `time` Bibliothek ist `Format()`, die es uns ermöglicht, das Datum und die Uhrzeit in einem bestimmten Format auszugeben. Zum Beispiel:
+```
+Go now := time.Now()
+nyTimeZone, _ := time.LoadLocation("America/New_York")
+nyTime := now.In(nyTimeZone)
+fmt.Println(nyTime.Format("02.01.2006"))
+```
 
-````Go
-package main
+Dieses Beispiel gibt das aktuelle Datum in New York aus, unabhängig davon, wo das Programm ausgeführt wird.
 
-import (
-	"fmt"
-	"time"
-)
+Es ist auch möglich, bestimmte Datumsangaben wie Tage, Monate oder Jahre hinzuzufügen oder zu subtrahieren. Dafür können wir die Funktionen `Add()` oder `Sub()` verwenden. Beispiel:
 
-func main() {
-	current := time.Now()
-	formatted := current.Format("02.01.2006 15:04")
-	fmt.Println("Das aktuelle Datum und die Uhrzeit in deutschem Format ist:", formatted)
-}
-````
-Die Ausgabe wäre in diesem Fall: `Das aktuelle Datum und die Uhrzeit in deutschem Format ist: 03.05.2021 18:30`
+```
+Go now := time.Now()
+inTwoDays := now.AddDate(0, 0, 2)
+fmt.Println(inTwoDays.Format("02.01.2006"))
+```
+
+Dieser Code gibt das Datum aus, welches zwei Tage in der Zukunft liegt.
 
 ## Siehe auch
 
-- [Dokumentation von time.Now()](https://golang.org/pkg/time/#Now)
-- [Go Zeitpakete von A bis Z](https://www.alexedwards.net/blog/an-overview-of-go-date-and-time-packages)
+- Offizielle Dokumentation zu `time`: https://golang.org/pkg/time/
+- Tutorial zu Datum und Zeit in Go: https://tutorialedge.net/golang/go-date-time-tutorial/
+- Zeitzone Paket `time/location`: https://pkg.go.dev/time/location

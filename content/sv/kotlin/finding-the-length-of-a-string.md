@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Hitta längden av en sträng"
+title:                "Kotlin: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/finding-the-length-of-a-string.md"
 ---
 
@@ -9,36 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna hitta längden av en sträng är en viktig funktion som är avgörande för många program och applikationer. Det hjälper till att effektivisera och förbättra hanteringen av textdata, vilket är avgörande för många programmerares arbete.
+Att kunna hitta längden på en sträng är en vanlig åtgärd som utförs inom programmering. Det är en grundläggande färdighet som alla programmerare bör kunna, eftersom den är användbar i många olika situationer. I denna bloggpost kommer vi att titta närmare på varför det är viktigt att kunna hitta längden på en sträng, och hur man gör det med hjälp av Kotlin.
 
 ## Hur man gör det
 
+För att hitta längden på en sträng i Kotlin kan man använda sig av funktionen "length". Den här funktionen används för att räkna antalet tecken i en sträng. Här nedan ser du ett exempel på hur man kan använda sig av funktionen "length" för att hitta längden på en sträng:
+
 ```Kotlin
-// Skapa en variabel som innehåller en sträng
-var str: String = "Hej, hur mår du?"
+val sträng = "Hejsan!"
 
-// Använd funktionen length för att få längden av strängen
-var length: Int = str.length
-
-// Skriv ut resultatet
-print(length)
-
+println(sträng.length)    // Output: 7
 ```
 
-Output: 15
+Som du kan se i exemplet ovan så använder vi variabeln "sträng" för att lagra vår sträng. Sedan använder vi funktionen "length" för att hitta längden på strängen och skriver ut den med hjälp av "println" funktionen. Genom att köra koden kommer vi få ut värdet "7", vilket är antalet tecken i strängen "Hejsan!".
 
-Som vi kan se i exemplet ovan används funktionen "length" för att få längden av en sträng. Detta är en funktion som finns tillgänglig i Kotlin Standardbibliotek, så du behöver inte skriva kod från grunden.
+Man kan även använda sig av funktionen "length" för att hitta längden på en variabel som innehåller en sträng. Här nedan ser du ett annat exempel där vi skapar en variabel "namn" med värdet "Johan":
+
+```Kotlin
+val namn = "Johan"
+
+println(namn.length)    // Output: 5
+```
+
+Som du kan se i exemplet ovan så kommer funktionen "length" att räkna antalet tecken i variabeln "namn", vilket i det här fallet är 5.
 
 ## Djupdykning
 
-Det finns flera sätt att hitta längden av en sträng i Kotlin. En annan vanlig metod som också finns tillgänglig i Standardbiblioteket är "count()". Den används på samma sätt som "length", men räknar antalet tecken istället för att ge den faktiska längden.
+Nu när vi vet hur man använder funktionen "length" för att hitta längden på en sträng, låt oss titta på vad som faktiskt händer bakom kulisserna. När man anropar funktionen "length" på en sträng, så kommer den att returnera ett heltal som motsvarar antalet tecken i strängen. Detta innebär att om man skriver ut uttrycket "sträng.length" så kommer man att få ut ett heltal.
 
-En annan viktig aspekt att notera är att i Kotlin anses strängar vara immutabla, vilket betyder att de inte kan ändras. Därför är funktionen "length" och "count" båda snabba, eftersom de endast behöver räkna och inte behöver ändra den ursprungliga strängen.
+Det är viktigt att komma ihåg att funktionen "length" inte räknar med mellanslag eller andra tomma tecken. Den räknar enbart de faktiska tecknen i strängen.
 
 ## Se även
 
-- [Kotlin Standardbibliotek](https://kotlinlang.org/api/latest/jvm/stdlib/)
-
-- [Kotlin Text Utilities](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/#length)
-
-- [Kotlin String Extensions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/#length)
+- [Kotlins dokumentation om strängar](https://kotlinlang.org/docs/basic-types.html#strings)
+- [En interaktiv guide till Kotlin](https://play.kotlinlang.org/byExample/overview)
+- [Kotlin kurs för nybörjare](https://www.udemy.com/course/kotlin-for-android-beginners/?referralCode=34881341C719119E43C2)

@@ -1,53 +1,55 @@
 ---
-title:                "TypeScript: Schreiben auf Standardfehler"
+title:                "TypeScript: Schreiben in die Standardfehlerausgabe"
+simple_title:         "Schreiben in die Standardfehlerausgabe"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Es gibt viele Gründe, warum ein Entwickler möglicherweise auf die Standardfehlerausgabe (standard error) zugreifen muss. Zum Beispiel kann es hilfreich sein, um Fehlermeldungen oder Debugging-Informationen auszugeben, die nicht auf der Standardausgabe (standard output) erscheinen sollen. Es kann auch nützlich sein, um spezielle Benachrichtigungen oder Warnungen auszugeben, die in einem separaten Stream dargestellt werden sollen.
 
-## Wie geht man vor
-Um auf die Standardfehlerausgabe zuzugreifen, kann man in TypeScript die Konsole (console) Objekt verwenden. Hier ist ein Beispiel, wie man eine Fehlermeldung auf die Standardfehlerausgabe ausgibt:
+In vielen Programmiersprachen gibt es die Möglichkeit, Fehler und andere Informationen auf der Konsole auszugeben. Dies kann für Entwickler:innen sehr nützlich sein, um Fehler zu finden und zu beheben. Doch warum sollte man speziell in TypeScript auf die Standardfehlerausgabe zurückgreifen?
 
-```TypeScript
-console.error("Es ist ein Fehler aufgetreten.");
-```
+Die Antwort liegt in der Typensicherheit von TypeScript. Da TypeScript statisch typisiert ist, können viele Fehler bereits während des Schreibens des Codes erkannt werden. Jedoch gibt es auch Fälle, in denen der Code trotz Typenüberprüfung eine Fehlermeldung ausgibt. In diesen Fällen kann das Schreiben auf die Standardfehlerausgabe helfen, um die Ursache des Fehlers zu finden.
 
-Dies wird eine rote Fehlermeldung in der Konsole anzeigen. Um eine Warnung auszugeben, können Sie "console.warn" anstelle von "console.error" verwenden. Hier ist ein Beispiel:
+## Wie geht das?
 
-```TypeScript
-console.warn("Achtung: Eine wichtige Funktion wird in Kürze entfernt.");
-```
-
-Dies wird eine gelbe Warnung in der Konsole anzeigen. Man kann auch beliebige Objekte oder Variablen in den Befehlen angeben, um erweiterte Informationen auszugeben. Zum Beispiel:
+Um in TypeScript auf die Standardfehlerausgabe zu schreiben, gibt es die Funktion `console.error()`. Diese kann mit einer beliebigen Nachricht als Parameter aufgerufen werden. Hier ein Beispiel:
 
 ```TypeScript
 const name = "Max";
-console.error(`Der Name ${name} ist ungültig.`);
+console.error("Hello " + name + ", there is a problem with your code.")
 ```
 
-Dies wird eine Fehlermeldung mit dem spezifischen Namen ausgeben.
+Das obige Beispiel würde folgende Ausgabe erzeugen:
 
-## Tiefere Einblicke
-Die Standardfehlerausgabe kann auch in Kombination mit Try-Catch-Blöcken verwendet werden, um Fehler in einer Anwendung zu erfassen und auszugeben. Zum Beispiel:
+```
+Hello Max, there is a problem with your code.
+```
+
+Wenn der Code jedoch ausführlich ist und das Finden des Fehlers erschwert, kann es hilfreich sein, zusätzliche Informationen in die Meldung einzufügen. Dafür bietet TypeScript die Template-Strings-Syntax an, bei der Variablen direkt in einen String eingefügt werden können. Hier ein Beispiel:
 
 ```TypeScript
-try {
-    // Hier steht der Code, der möglicherweise einen Fehler verursachen kann
-} catch (error) {
-    console.error("Es ist ein Fehler aufgetreten: ", error);
-}
+const name = "Max";
+const lineNumber = 10;
+console.error(`Hello ${name}, there is a problem with your code on line ${lineNumber}.`)
 ```
 
-Dies kann hilfreich sein, um Probleme in einer Anwendung zu erkennen und beheben zu können.
+Die Ausgabe sieht dann so aus:
+
+```
+Hello Max, there is a problem with your code on line 10.
+```
+
+## Deep Dive
+
+Wenn man tiefer in das Thema eintaucht, wird man feststellen, dass die Standardfehlerausgabe in TypeScript noch weitaus mehr Möglichkeiten bietet. Mit den sogenannten Decorators können bestimmte Funktionen oder Klassen direkt mit einer Error-Handler-Funktion versehen werden. Diese wird bei einem auftretenden Fehler automatisch aufgerufen und kann so zur Fehlerbehandlung genutzt werden. Eine ausführliche Anleitung dazu kann man in der [offiziellen TypeScript Dokumentation](https://www.typescriptlang.org/docs/handbook/decorators.html#adding-an-error-handler) finden.
 
 ## Siehe auch
-- [Offizielle TypeScript Dokumentation über die Konsole](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-3.html)
-- [Artikel über den Unterschied zwischen Standardausgabe und Standardfehlerausgabe](https://www.lifewire.com/what-are-stdin-stdout-and-stderr-2626133)
-- [Beispielprojekt mit der Verwendung der Standardfehlerausgabe in TypeScript](https://github.com/example-project)
 
-Vielen Dank, dass Sie diesen Artikel über das Schreiben zur Standardfehlerausgabe in TypeScript gelesen haben. Wir hoffen, dass es Ihnen geholfen hat, besser zu verstehen, wie Sie diese Funktion in Ihren Projekten nutzen können. Bis zum nächsten Mal!
+- [Offizielle TypeScript Dokumentation](https://www.typescriptlang.org/docs)
+- [Beispiel für die Verwendung von `console.error()` in TypeScript](https://www.codegrepper.com/code-examples/typescript/typescript+console.error)
+- [Einführung in Decorators in TypeScript](https://www.sitepoint.com/javascript-decorators-what-they-are/)

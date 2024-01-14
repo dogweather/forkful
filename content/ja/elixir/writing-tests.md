@@ -1,40 +1,57 @@
 ---
-title:                "Elixir: テストを書く"
+title:                "Elixir: テストの書き方"
+simple_title:         "テストの書き方"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+Elixirでテストを書くことの重要性
 
-なぜあなたは Elixir でテストを書くことに専念すべきか？
+## なぜテストを書くのか
 
-テストはソフトウェア開発での重要なステップです。テストを書くことで、コードが期待通りに機能するかどうかを確認することができます。また、テストを書くことでコードの品質を向上させ、バグを未然に防止することができます。
+プログラマーにとって、バグのない安定したコードを書くことは非常に重要です。テストを書くことによって、バグを早期に発見し、コードの信頼性を高めることができます。また、新しい機能を追加した際に既存のコードが壊れていないかを確認することもできます。
 
-## 書き方
+## テストの書き方
 
-下のコードブロックを参考に、Elixir でテストを書く方法を学びましょう。
+テストは `ExUnit` フレームワークを使って書きます。書き方はとても簡単です。まずはテストを実行したいモジュールをインポートします。
 
 ```Elixir
-# テストモジュールの定義
-defmodule CalculatorTest do
-  use ExUnit.Case # ExUnit を使用することで、テストを実行することができます。
+# test/test_module.exs
+defmodule TestModuleTest do
+  use ExUnit.Case
 
-  # テストケースを定義
-  test "addition" do
-    assert Calculator.add(2, 3) == 5 # 2+3=5であることを確認
+  import TestModule
+end
+```
+
+次に、`ExUnit` のマクロを使ってテストケースを定義します。
+
+```Elixir
+# test/test_module.exs
+defmodule TestModuleTest do
+  use ExUnit.Case
+
+  import TestModule
+
+  # テストケース名は "test_" で始める必要があります
+  test "test_function/2 が適切な結果を返すこと" do
+    assert test_function(2, 3) == 5
   end
 end
 ```
 
-上記の例では、Calculator モジュールの add 関数をテストしています。テストケースは `test` マクロを使用して定義し、`assert` マクロを使用して期待する結果を確認します。テストを実行するには、`mix test` コマンドを使用します。
+最後に、コンソールから `mix test` コマンドを実行することで、テストを実行することができます。
 
-## 深堀り
+## テストの詳細
 
-テストを書く際には、コードカバレッジが重要です。コードカバレッジとは、テストによってカバーされるコードの割合のことです。高いコードカバレッジを達成することで、コードの信頼性を向上させることができます。また、テストダブル（モックやスタブなど）を使用することで、外部の依存関係を再現し、より完全なテストを行うことができます。
+テストを書く際には、コードカバレッジを意識することも重要です。コードカバレッジとは、テストがどれだけコードを網羅しているかを表す指標です。また、ユニットテストだけでなく、統合テストも書くことで、システム全体の信頼性をより高めることができます。
 
 ## 関連リンク
-[ExUnitドキュメント](https://hexdocs.pm/ex_unit/ExUnit.html)  
-[Elixirテスト入門](http://elixir-examples.github.io/creating-tests/)
+
+- [ExUnit ドキュメント](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Elixir チュートリアル](https://elixir-lang.org/getting-started/introduction.html)
+- [Elixir School](https://elixirschool.com/ja/)

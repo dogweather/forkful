@@ -1,7 +1,9 @@
 ---
-title:                "C#: Konwertowanie daty na ciąg znaków"
+title:                "C#: Konwersja daty do ciągu znaków"
+simple_title:         "Konwersja daty do ciągu znaków"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/converting-a-date-into-a-string.md"
 ---
 
@@ -9,28 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja daty na ciąg znaków jest częstym zadaniem w programowaniu, szczególnie w języku C#. Pozwala ona na wyświetlenie daty w czytelnej formie dla użytkownika, na przykład w formie tekstowej w interfejsie użytkownika programu. W tym artykule dowiesz się jak dokonać tej konwersji w C#, oraz przeczytasz o kilku ciekawych szczegółach z nią związanych.
+Jeśli pracujesz z datami w programowaniu C#, może zdarzyć się, że będziesz musiał przekonwertować datę na ciąg znaków. Możesz zastanawiać się, po co to robić, skoro przecież istnieją specjalne typy dla dat. Cóż, na przykład, jeśli chcesz wyświetlić datę w czytelnej formie dla użytkownika lub zapisać ją do pliku, konwersja na ciąg znaków będzie konieczna.
 
 ## Jak to zrobić
 
-Aby konwertować datę na ciąg znaków, możemy skorzystać z poniższego kodu:
+Aby przekonwertować datę na ciąg znaków w programie C#, możesz użyć metody `ToString()` z obiektu `DateTime`. Przykładowo, jeśli chcesz wyświetlić obecną datę w formacie "dzień.miesiąc.rok", możesz to zrobić tak:
 
-```c#
-DateTime date = DateTime.Now; //Tworzymy zmienną zawierającą aktualną datę
-string stringDate = date.ToString("dd-MM-yyyy"); //Wywołujemy metodę ToString(), podając jako argument format daty, w którym chcemy ją wyświetlić
-Console.WriteLine(stringDate); //Wypisujemy wynik w konsoli
+```C#
+DateTime dzisiaj = DateTime.Now;
+string data = dzisiaj.ToString("dd.MM.yyyy");
+Console.WriteLine(data);
 ```
 
-Powyższy kod utworzy zmienną `stringDate`, która będzie zawierać bieżącą datę w formacie *DD-MM-RRRR*, na przykład *12-08-2021*. Możemy dowolnie zmieniać format daty, używając różnych kombinacji liter, na przykład *MM/dd/RRRR* (08/12/2021) lub *RRRR/MM/dd* (2021/08/12).
+Wyjście na ekranie zostanie wyświetlone jako "30.10.2021".
 
-## Mocniejsze zagłębienie
+Możesz również podać różne formaty daty w metodzie `ToString()` (np. "dd/MM/yyyy" lub "MM-dd-yyyy"), aby dostosować wyjście do swoich potrzeb. W dokumencie dokumentacji Microsoft możesz znaleźć pełną listę dostępnych formatów.
 
-Podczas konwertowania daty na ciąg znaków, warto wiedzieć o kilku ciekawych szczegółach. Po pierwsze, możemy użyć metody `.ToString()` nie tylko na zmiennych typu `DateTime`, ale również na innych typach, takich jak `int` czy `double`. Po drugie, możemy użyć specjalnych znaków, takich jak `"/"` czy `"-"`, aby podzielić datę na poszczególne części, takie jak dzień, miesiąc, rok itp.
+## Deep Dive
 
-Jednym z bardziej zaawansowanych zastosowań konwersji daty na ciąg znaków jest porównywanie dat. Dzięki konwersji na taki sam format (na przykład *DD-MM-RRRR*), możemy łatwo porównywać daty jako ciągi znaków, używając standardowych operatorów porównania (`<`, `>`, `==` itp.).
+Warto również wspomnieć, że oprócz metody `ToString()`, istnieje również odwrotna metoda `Parse()`, która pozwala na przekonwertowanie ciągu znaków na obiekt `DateTime`. Podobnie jak w przypadku metody `ToString()`, możesz określić format ciągu znaków, aby dopasować go do daty, którą chcesz otrzymać.
+
+W przypadku, gdy masz do czynienia z datami w różnych strefach czasowych, pomocne może być użycie opcji `ToString()` lub `Parse()` z wykorzystaniem obiektu `CultureInfo`, który pozwala na sprecyzowanie preferowanego języka i kultury.
 
 ## Zobacz również
 
-- [Dokumentacja Microsoft na temat konwersji daty na ciąg znaków](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/custom-date-and-time-format-strings)
-- [Przewodnik po formatach dat w C#](https://csharp.today/przewodnik-po-formatach-dat-w-c/)
-- [Przydatne triki i wskazówki programistyczne w C#](https://jaksiemasz.com/6-przydatnych-trikow-w-c-sharp/)
+- [DateTime.ToString() metoda (Microsoft Docs)](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.tostring)
+- [DateTime.Parse() metoda (Microsoft Docs)](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parse)
+- [DateTime.ParseExact() metoda (Microsoft Docs)](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parseexact)
+- [CultureInfo klasa (Microsoft Docs)](https://docs.microsoft.com/pl-pl/dotnet/api/system.globalization.cultureinfo)

@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Schreiben in die Standardfehlerausgabe"
+title:                "Bash: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/writing-to-standard-error.md"
 ---
 
@@ -9,32 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Beim Programmieren mit Bash kann es immer mal wieder vorkommen, dass man auf Fehler stößt. Doch wie kann man diese Fehler effektiv verfolgen und beheben? Genau dafür ist es wichtig zu wissen, wie man in Bash zu Standard Error schreiben kann.
+Wer gerne mit Bash programmiert, wird wissen, dass ein wichtiger Bestandteil des Debugging-Prozesses das Schreiben von Fehlern in den Standard Error ist. In diesem Beitrag werden wir uns genauer damit auseinandersetzen, warum und wie man effektiv auf den Standard Error schreiben sollte.
 
-## Wie geht das?
+## Wie
 
-Das Schreiben zu Standard Error in Bash ist ganz einfach. Man verwendet dafür einfach den Befehl `>&2`, gefolgt von dem Text oder der Fehlermeldung, die man ausgeben möchte. Ein Beispiel sieht wie folgt aus:
+Um auf den Standard Error zu schreiben, gibt es in Bash verschiedene Möglichkeiten. Eine davon ist die Verwendung der `echo`-Funktion und die Weiterleitung des Outputs an den Standard Error mit dem `>&2`-Operator. Hier ist ein Beispielcode:
 
-```Bash
-echo "Dies ist eine Fehlermeldung" >&2
+```
+echo "Fehler: Benutzername nicht gefunden" >&2
 ```
 
-Dieser Befehl wird den Text "Dies ist eine Fehlermeldung" direkt zu Standard Error schreiben.
+Dieser Code schreibt den angegebenen Text direkt in den Standard Error, was hilfreich sein kann, um Fehlermeldungen zu generieren.
 
-## Tieferes Eintauchen
+Man kann auch die `printf`-Funktion verwenden, um formatierte Texte in den Standard Error zu schreiben. Hier ist ein Beispielcode:
 
-Standard Error ist ein wichtiger Teil des Programmierens in Bash, da es hilft, Fehler schnell zu erkennen und zu beheben. Wussten Sie, dass Standard Error auch dazu verwendet werden kann, um unterschiedliche Ausgabefarben in der Terminal zu setzen? Hier ist ein Beispiel:
-
-```Bash
-echo -e "\033[31mDies ist eine rote Fehlermeldung\033[0m" >&2
+```
+printf "Kritischer Fehler: %s ist nicht verfügbar\n" "$DATEI" >&2
 ```
 
-Dieser Befehl wird den Text "Dies ist eine rote Fehlermeldung" in roter Farbe zu Standard Error schreiben. Die Farbcodes können je nach Bedarf angepasst werden.
+Dieser Code schreibt den formatierten Text, der den Namen der fehlenden Datei enthält, in den Standard Error.
+
+## Tieferer Einblick
+
+Das Schreiben von Fehlern in den Standard Error ist wichtig, weil es eine klare Trennung zwischen Standard Output (das in der Regel für die Ausgabe von Ergebnissen verwendet wird) und Standard Error (das für Fehlermeldungen und Warnungen verwendet wird) ermöglicht. Dies erleichtert das Debugging und die Fehlerbehandlung, da die Fehlermeldungen getrennt von anderen Ausgaben angezeigt werden und somit leichter zu finden sind.
+
+Man kann auch den Inhalt des Standard Error in eine Datei umleiten, um ihn später zu überprüfen oder zu analysieren. Dazu kann man den `2>`-Operator verwenden. Hier ein Beispielcode:
+
+```
+./mein_script.sh 2> fehlerprotokoll.txt
+```
+
+Dieser Code führt das Skript `mein_script.sh` aus und leitet alle Ausgaben des Standard Error in die Datei `fehlerprotokoll.txt`.
 
 ## Siehe auch
 
-- Bash-Scripting für Anfänger: https://www.linuxcommand.org/lc3_wss0010.php
-- Fehlerbehandlung in Bash: https://wiki.bash-hackers.org/syntax/shellvars#special_variables
-- Farben in Bash-Terminal setzen: https://misc.flogisoft.com/bash/tip_colors_and_formatting
-
-Ich hoffe, dieser Artikel hat Ihnen geholfen, das Schreiben zu Standard Error in Bash besser zu verstehen. Happy Coding!
+- [Bash-Dokumentation zu Standard Error](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)

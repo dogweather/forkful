@@ -1,49 +1,60 @@
 ---
 title:                "Bash: Generering av tilfeldige tall"
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Bash"
-category:             "Numbers"
+category:             "Bash"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å generere tilfeldige tall er en viktig del av bash-programmering. Det kan være nyttig for å lage en tilfeldig spillfunksjon eller for å skape variasjon i et dataprogram. I denne bloggposten vil vi gå gjennom hvordan man kan generere tilfeldige tall i bash, og dykke dypere inn i konseptet bak dette.
+Å generere tilfeldige tall er en vanlig oppgave når du arbeider med Bash programmering. Det kan være nyttig for å skape unike identifikatorer, teste tilfeldige scenarier eller simulere tilfeldige hendelser. Uansett formål, gir Bash et enkelt og pålitelig måte å generere tilfeldige tall på.
 
-## Hvordan lage tilfeldige tall i bash
+# Hvordan
 
-For å generere tilfeldige tall i bash, kan du bruke kommandoen "RANDOM". Her er et eksempel på hvordan dette kan gjøres:
+Det første trinnet er å bruke `$$` variabelen til å få tak i prosessidentifikatoren (PID) for den nåværende Bash-prosessen. Dette er en tallverdi som endres hver gang Bash kjører et nytt program. Vi kan bruke dette tallet som en "frø" for å få forskjellige tall hver gang vi kjører programmet.
 
-```Bash
-#!/bin/bash
-echo "Det tilfeldige tallet mitt er $((RANDOM%100))"
 ```
-Dette vil generere et tilfeldig tall mellom 0 og 99 hver gang du kjører skriptet.
-
-Du kan også bruke "shuf" kommandoen for å generere tilfeldige tall fra en gitt liste. For eksempel:
-
-```Bash
-#!/bin/bash
-numbers=(1 2 3 4 5 6 7 8 9)
-echo "Det tilfeldige tallet mitt er $(shuf -n 1 <<< "${numbers[@]}")"
+Bash
+echo $$
 ```
-Dette vil velge et tilfeldig tall fra listen og skrive det ut. Du kan også bruke "shuf" til å generere tilfeldige tall innenfor en gitt rekkevidde ved å bruke flagget "-i". For eksempel:
+> Output: 29586
 
-```Bash
-#!/bin/bash
-echo "Det tilfeldige tallet mitt er $(shuf -i 10-20 -n 1)"
+For å generere et tilfeldig tall, kan vi bruke `RANDOM` variabelen som genererer et tilfeldig tall mellom 0 og 32767 hver gang den brukes.
+
 ```
-Dette vil generere et tilfeldig tall mellom 10 og 20.
+Bash
+echo $RANDOM
+```
+> Output: 29201
 
-## Dypdykk
+Vi kan kombinere disse to variablene for å generere større tilfeldige tall.
 
-Når vi bruker kommandoen "RANDOM" eller "shuf" for å generere tilfeldige tall, er det viktig å huske at disse tallene ikke er helt tilfeldige. De er basert på en algoritme som genererer tall basert på et "frø" nummer, som er et tall som systemet velger. Dette betyr at hvis du for eksempel genererer et tilfeldig tall med "RANDOM" og deretter genererer et nytt tall i samme skript, vil det andre tallet være basert på det første tallet som et "frø". For å endre dette, kan du bruke kommandoen "RANDOM=$$".
+```
+Bash
+echo $(($$+$RANDOM))
+```
+> Output: 60765
 
-Det er også viktig å merke seg at "RANDOM" bare genererer tilfeldige tall mellom 0 og 32767. Hvis du trenger større tall, kan du bruke "shuf" kommandoen som nevnt tidligere.
+Vi kan også bruke `shuf` kommandoen til å generere tilfeldige tall innenfor et bestemt område. I eksempelet nedenfor genererer vi ett tilfeldig tall mellom 1 og 100.
 
-## Se også
+```
+Bash
+shuf -i 1-100 -n 1
+```
+> Output: 73
 
-- [Bash dokumentasjon om "RANDOM" kommandoen](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
-- [Bash dokumentasjon om "shuf" kommandoen](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
-- [En dypere forklaring av tilfeldige tallgeneratorer](https://www.computerworld.com/article/3589113/what-are-random-numbers-and-how-do-we-get-them-2.html)
+# Dykk dypere
+
+I Bash, er tilfeldige tall generert ved hjelp av en pseudorandom generator. Dette betyr at tallene er basert på en bestemt matematisk formel og er ikke helt tilfeldige.
+
+Hvis du vil bruke tilgangen `RANDOM` variabel til å generere en sekvens av tilfeldige tall, kan du bruke `srand()` og `rand()` funksjoner. Dette lar deg gi en "frø" verdi og kontrollere sekvensen av tall som blir generert.
+
+# Se også
+
+- [Bash dokumentasjon: RANDOM](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html#index-RANDOM)
+- [Artikkel: Generer tilfeldige tall i Bash](https://www.baeldung.com/linux/bash-generate-random-number)
+- [Artikkel: Bash tilfeldige tall-triks](https://linuxhandbook.com/bash-random-number/)

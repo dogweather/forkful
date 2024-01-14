@@ -1,63 +1,53 @@
 ---
-title:                "Bash: Écrire des tests"
+title:                "Bash: Écriture de tests"
+simple_title:         "Écriture de tests"
 programming_language: "Bash"
-category:             "Testing and Debugging"
+category:             "Bash"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire des tests en Bash
+## Pourquoi
 
-Ecrire des tests pour votre code Bash peut sembler fastidieux, mais cela peut être très bénéfique à long terme. Les tests vous aident à détecter et à corriger les erreurs de manière proactive, ce qui peut vous faire économiser du temps et des maux de tête dans le futur. De plus, ils vous permettent de vous assurer que votre code fonctionne correctement avant de le déployer en production.
+Vous êtes peut-être un développeur qui se demande pourquoi il est important d'écrire des tests dans votre code Bash. Les tests sont en fait très utiles car ils permettent de s'assurer que votre code fonctionne correctement et qu'il continue de fonctionner correctement même après des modifications ultérieures. Ils peuvent également aider à détecter et à résoudre les erreurs plus rapidement, ce qui vous fait gagner du temps et de l'énergie.
 
 ## Comment faire
 
-Pour écrire des tests en Bash, vous pouvez utiliser l'utilitaire de test intégré appelé `bashunit`. Cet outil vous permet de créer des tests automatisés pour votre code sans avoir à installer d'autres dépendances.
-
-Voici un exemple simple de test de la fonction `addition` qui prend deux paramètres et renvoie leur somme :
+Pour écrire des tests dans votre code Bash, vous pouvez utiliser le programme de test intégré appelé <code>test</code>. Ce programme permet de vérifier une condition et de renvoyer un code de sortie en conséquence (<code>0</code> si la condition est vraie et <code>1</code> si elle est fausse). Voici un exemple de test simple dans un fichier nommé <code>mon_script.sh</code> :
 
 ```Bash
-#!/bin/bash
+# Define variable
+a=10
 
-# Importez la bibliothèque bashunit
-source bashunit.sh
+# Test for variable value
+test $a -eq 10
 
-# Définissez votre fonction à tester
-addition() {
-  echo $(( $1 + $2 ))
-}
-
-# Définissez votre cas de test en utilisant la syntaxe "assert equal"
-test_addition() {
-  assert_equal $(addition 2 3) 5 "La somme de 2 et 3 devrait être égale à 5"
-  assert_equal $(addition -1 5) 4 "La somme de -1 et 5 devrait être égale à 4"
-}
-
-# Lancez le test en utilisant la fonction "run_test"
-run_test test_addition
+# Check exit status
+if [ $? -eq 0 ]; then
+  echo "La variable a a une valeur de 10."
+else
+  echo "La variable a n'a pas une valeur de 10."
+fi
 ```
 
-En exécutant ce script, vous devriez obtenir une sortie similaire à celle-ci :
+En exécutant ce script, vous devriez voir la sortie suivante :
 
 ```
-# test_addition
-✔ La somme de 2 et 3 devrait être égale à 5
-✔ La somme de -1 et 5 devrait être égale à 4
-Vérifications exécutées : 2, réussites : 2
+La variable a a une valeur de 10.
 ```
 
-N'hésitez pas à expérimenter avec d'autres fonctions de test disponibles dans `bashunit`, telles que `assert_true`, `assert_false` ou `assert_command` pour tester la sortie d'une commande.
+Vous pouvez également utiliser le programme de test pour vérifier si des fichiers ou des dossiers existent, si des variables sont définies et bien d'autres choses encore. N'hésitez pas à consulter la documentation pour en savoir plus sur toutes les possibilités offertes par <code>test</code>.
 
-## Plongée profonde
+## Approfondissement
 
-Il existe également d'autres outils de test pour Bash, tels que `shunit2` ou `BATS`, qui offrent plus de fonctionnalités et de flexibilité. Cependant, l'utilitaire `bashunit` reste une option simple et efficace pour écrire des tests en Bash.
+En plus de <code>test</code>, il existe d'autres programmes de test tels que <code>[</code> (alias de <code>test</code>) et <code>[[</code>, qui ont des fonctionnalités supplémentaires. De plus, vous pouvez également utiliser des outils externes tels que <code>shunit2</code> pour écrire des tests plus avancés et des outils de génération de rapports comme <code>shellcheck</code> pour améliorer la qualité de votre code Bash.
 
-Il est important de noter que les tests ne doivent pas être considérés comme un remplacement des bonnes pratiques de codage. Il est toujours recommandé de suivre les normes de codage et de débogage pour éviter les erreurs.
+N'oubliez pas que les tests doivent être bien conçus et exhaustifs pour être vraiment efficaces. Il est également important de les effectuer régulièrement afin de détecter rapidement toute erreur éventuelle.
 
-# Voir aussi
+## Voir aussi
 
-- [bashunit sur GitHub](https://github.com/kward/shunit2)
-- [shunit2 - Tutoriel de mise en route](https://www.toptal.com/software/testing/shunit2-shell-testing-utility-tutorial)
-- [BATS - Site officiel](https://github.com/bats-core/bats-core)
-- [Introduction aux tests d'intégration avec BATS](https://medium.com/@dallasbille/introduction-to-integration-testing-with-bats-af9e5ba537e1)
+- [Documentation de test Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)
+- [Documentation de shunit2](https://github.com/kward/shunit2)
+- [Shellcheck](https://www.shellcheck.net/)

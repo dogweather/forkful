@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Skriver en tekstfil"
+title:                "Kotlin: Skrive en tekstfil"
+simple_title:         "Skrive en tekstfil"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/writing-a-text-file.md"
 ---
 
@@ -9,29 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det kan være mange gode grunner til å skrive en tekstfil i Kotlin. Kanskje ønsker du å lagre data på en måte som er enkel å lese og endre for deg selv eller andre programmere. Eller kanskje du bare vil øve deg på å bruke Kotlin til å håndtere filer. Uansett årsak, å kunne skrive til en tekstfil kan være en nyttig ferdighet å ha.
+Å skrive en tekstfil er en viktig del av å lære å programmere. Det er en grunnleggende ferdighet som vil tillate deg å lagre og organisere data på datamaskinen din. Uten det kan det være vanskelig å arbeide med større programmeringsprosjekter.
 
-## Hvordan
+## Slik gjør du det
 
-Skriving til en tekstfil i Kotlin kan gjøres ved å bruke et `FileWriter` objekt og en `write()` metode. Først må du opprette et `File` objekt som representerer tekstfilen du vil skrive til. Deretter kan du initialisere `FileWriter` objektet og bruke `write()` metoden til å skrive til filen. Her er et eksempel:
+For å skrive en tekstfil i Kotlin, må du først importere filsystemet biblioteket. Dette gjøres ved å legge til følgende kode i starten av filen:
 
 ```Kotlin
-val file = File("navn_pa_fil.txt") // opprett et File objekt for å representere filen
-val fileWriter = FileWriter(file) // initialiser FileWriter objektet
-fileWriter.write("Dette er en tekst som blir skrevet til filen.") // skriv til filen
-fileWriter.close() // lukk FileWriter objektet
+import java.io.File
 ```
 
-Når du kjører dette eksemplet, vil teksten bli skrevet til en fil med navn `navn_pa_fil.txt` som blir lagret i samme mappe som Kotlin-koden din.
+Deretter kan du bruke kodeblokken nedenfor for å opprette en tekstfil og skrive innhold i den:
 
-## Dypdykk
+```Kotlin
+// Opprett en fil
+val fil = File("minTekstfil.txt")
 
-Nå som du har lært å skrive en enkel tekstfil i Kotlin, kan du også utforske flere muligheter. For eksempel kan du bruke `BufferedWriter` og `println()` metoden til å skrive til filen, noe som kan gjøre koden din mer lesbar. Du kan også bruke `FileReader` og `BufferedReader` til å lese fra filer på en lignende måte.
+// Åpne filen for å skrive innhold
+fil.printWriter().use { skriver ->
+    skriver.println("Dette er en tekstfil skrevet i Kotlin!")
+}
+
+// Lukk filen
+fil.close()
+```
+
+Kjører denne koden vil opprette en ny tekstfil med navnet "minTekstfil.txt" og skrive teksten "Dette er en tekstfil skrevet i Kotlin!" i den. Du kan også endre teksten og navnet på filen etter behov.
+
+Det er viktig å huske på å lukke filen etter at du er ferdig med å bruke den ved hjelp av "close" funksjonen. Dette vil sørge for at eventuelle endringer blir lagret og at ressursene som brukes av filen blir frigjort.
+
+## Dykk dypere
+
+Når du arbeider med tekstfiler, er det nyttig å vite om forskjellige funksjoner som kan hjelpe deg med å jobbe med tekstinnhold. For eksempel kan du bruke "readText" funksjonen for å lese innholdet av en eksisterende tekstfil og lagre den som en mer String variabel. Du kan også bruke "delete" funksjonen for å slette en tekstfil hvis du ikke trenger den lenger.
+
+Hvis du ønsker å lese mer om arbeidet med tekstfiler i Kotlin, kan du sjekke ut offisiell dokumentasjon fra Kotlin eller søke etter veiledninger og ressurser på nettet.
 
 ## Se også
 
-For mer informasjon om å håndtere filer i Kotlin, kan du sjekke ut disse ressursene:
-
-- [Offisiell Kotlin dokumentasjon for filbehandling](https://kotlinlang.org/docs/reference/basic-types.html#classes-and-inheritance)
-- [Kotlin Filbehandler Tutorial](https://www.tutorialkart.com/kotlin/kotlin-read-write-plain-text-file/)
-- [Kotlin for Android: Filbehandling](https://www.raywenderlich.com/686603-android-file-management-with-kotlin)
+- [Offisiell Kotlin dokumentasjon for å jobbe med filer](https://kotlinlang.org/docs/reference/basic-types.html#strings)
+- [YouTube video tutorial om å skrive til tekstfiler i Kotlin](https://www.youtube.com/watch?v=seEkH3Z4VGI)
+- [Nettbasert tekstredigeringsverktøy for å øve på å skrive tekstfiler i Kotlin](https://play.kotlinlang.org/koans/overview)

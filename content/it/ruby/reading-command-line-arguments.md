@@ -1,40 +1,38 @@
 ---
-title:                "Ruby: Lettura degli argomenti della riga di comando"
+title:                "Ruby: Leggere gli argomenti della linea di comando"
+simple_title:         "Leggere gli argomenti della linea di comando"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché leggere gli argomenti della linea di comando 
+## Perché
 
-Leggere gli argomenti della linea di comando è un'abilità fondamentale per chiunque stia imparando a programmare in Ruby. Questa pratica consente a un programma di ricevere input dall'utente direttamente attraverso la riga di comando, rendendo il processo di esecuzione del codice più interattivo e flessibile.
+Scegliere di leggere gli argomenti dalla riga di comando è un'importante abilità per ogni programmatore Ruby. Questa funzione consente ai programmi di accettare input dall'utente durante il suo esecuzione, rendendolo più flessibile.
 
-## Come leggere gli argomenti della linea di comando
+## Come Farlo
 
-Per leggere gli argomenti della linea di comando in Ruby, è necessario utilizzare l'array `ARGV`, che viene automaticamente creato all'avvio del programma e contiene tutti gli argomenti inseriti dall'utente dopo il nome del file. Ad esempio, se vogliamo stampare il primo argomento inserito dall'utente, possiamo utilizzare il seguente codice:
+Per leggere gli argomenti dalla riga di comando in Ruby, si utilizza il modulo `ARGV`. Questo modulo fornisce un array contenente tutti gli argomenti forniti dall'utente al momento dell'esecuzione del programma. Ad esempio:
 
 ```Ruby
-puts ARGV[0]
+# Programma che saluta l'utente
+name = ARGV.first
+puts "Ciao, #{name}!"
 ```
 
-Se eseguiamo questo programma da riga di comando, ad esempio con il seguente comando:
+Se questo programma viene eseguito con il comando `ruby hello.rb Marco`, l'output sarà `Ciao, Marco!`.
 
-`ruby leggi_argomenti.rb primo_argomento secondo_argomento`
+## Approfondimento
 
-verrà stampato a schermo il seguente output:
+Sebbene il modulo `ARGV` sia semplice da usare, ci sono molti modi in cui si può gestire gli argomenti dalla riga di comando in Ruby. Ad esempio, si può specificare il numero minimo e massimo di argomenti che il programma deve accettare, o eseguire delle operazioni diverse in base al tipo di argomenti forniti. Inoltre, si può anche utilizzare opzioni per fornire informazioni aggiuntive, come nel caso di `--help` per stampare un messaggio di aiuto.
 
-`primo_argomento`
+Per ulteriori informazioni su come gestire gli argomenti dalla riga di comando in Ruby, si consiglia di visitare la documentazione ufficiale o di esplorare la vasta gamma di risorse online disponibili.
 
-## Approfondimenti sulla lettura degli argomenti della linea di comando
+## Vedi Anche
 
-Oltre all'utilizzo dell'array `ARGV`, esistono molte altre tecniche per leggere e gestire gli argomenti della linea di comando in Ruby. Ad esempio, possiamo utilizzare il metodo `shift` per eliminare il primo elemento dell'array `ARGV` e restituirlo come output, oppure possiamo utilizzare la gemma `optparse` per creare opzioni e argomenti più avanzati.
-
-La lettura degli argomenti della linea di comando può anche diventare più complessa quando si devono gestire tipi di dati diversi da semplici stringhe, ad esempio numeri o array. Per questo è importante approfondire i concetti di casting e parsing per assicurarsi che gli input inseriti dall'utente siano correttamente convertiti nei tipi di dati desiderati.
-
-## Vedi anche
-
-- [Documentazione ufficiale di Ruby sugli argomenti della linea di comando](https://ruby-doc.org/core-2.7.3/doc/ARGV.html)
-- [Tutorial su come leggere gli argomenti della linea di comando in Ruby](https://www.rubyguides.com/2018/12/ruby-command-line-arguments/)
-- [Gemma optparse per gestire opzioni e argomenti avanzati](https://rubygems.org/gems/optparse)
+- Documentazione ufficiale di Ruby: https://www.ruby-lang.org/en/documentation/
+- Tutorial su come gestire gli argomenti dalla riga di comando in Ruby: https://www.rubyguides.com/2018/12/ruby-command-line-arguments/
+- Una guida sull'uso delle opzioni per gli argomenti dalla riga di comando in Ruby: https://robots.thoughtbot.com/parsing-git-log-output-for-changelogs-in-rails

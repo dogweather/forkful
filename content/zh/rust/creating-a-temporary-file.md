@@ -1,66 +1,64 @@
 ---
-title:                "Rust: 创建临时文件"
+title:                "Rust: 创建一个临时文件"
+simple_title:         "创建一个临时文件"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要创建临时文件？
+Markdown 對初學者來說可能是一個陌生的術語，但它是一種非常實用的標記語言。它可以幫助我們創建格式良好的文本格式，例如在網站上撰寫網誌或開發文檔。Rust 是一種新型的程式設計語言，它的語法和功能非常強大。在本次文章中，我將向大家介紹如何利用 Rust 創建臨時文件，並提供一些深入的資訊。
 
-创建临时文件是在软件开发中经常遇到的一个任务。当我们需要在程序中存储一些临时数据时，临时文件是非常有用的。它们可以帮助我们在程序运行过程中保留一些临时数据，而不必占用大量的系统内存。
+## 為什麼要創建臨時文件？
 
-## 创建临时文件的方法
+在程式設計中，有時候我們需要創建臨時文件來存儲一些臨時的資料，例如在處理大量數據時，我們可能需要將一部分數據暫時寫入一個臨時文件中，並在之後再進行處理。這樣可以避免占用太多內存，同時也可以方便我們對數據進行處理和操作。Rust 提供了一種簡單而且安全的方法來創建臨時文件，讓我們來看看具體的操作步驟。
 
-在Rust中，我们可以使用标准库中的`tempfile`模块来创建临时文件。
+## 如何使用 Rust 創建臨時文件
 
-首先，导入`tempfile`模块：
+首先，我們需要引入標準庫中的 "fs" 模塊，這個模塊中包含了創建臨時文件的相關函數。接下來，我們可以使用 ```std::fs::File::create``` 這個函數來創建一個臨時文件，並指定文件的名稱和路徑。
 
-```Rust
-use tempfile;
+```
+use std::fs::File;
+
+let temp_file = File::create("/tmp/temp.txt");
+
+if let Ok(file) = temp_file {
+    println!("Successfully created temporary file.");
+    // 後續操作...
+} else {
+    println!("Failed to create temporary file.");
+}
 ```
 
-然后，使用`NamedTempFile`结构体来创建一个临时文件：
+如上所示，我們可以使用 ```if let``` 語法來處理可能的錯誤情況。接下來，我們可以對創建的臨時文件進行相應的操作，例如寫入或讀取數據，最後需要手動刪除臨時文件以釋放空間。
 
-```Rust
-let temp_file = tempfile::NamedTempFile::new().expect("Failed to create temp file");
+## 深入了解創建臨時文件
+
+除了上面的方法之外，Rust 還提供了一種更加靈活的方式來創建臨時文件，即使用 ```std::env::temp_dir``` 函數來獲取系統的臨時文件夾路徑，然後結合隨機數來創建一個唯一的臨時文件名稱。這樣可以避免文件名重複的問題，同時也更加安全可靠。
+
+```
+use std::fs::File;
+use std::path::PathBuf;
+use std::env;
+
+let temp_dir = env::temp_dir();
+let mut temp_file = PathBuf::from(temp_dir);
+temp_file.push("temp.txt");
+
+let temp_file = File::create(temp_file);
+
+if let Ok(file) = temp_file {
+    println!("Successfully created temporary file.");
+    // 後續操作...
+} else {
+    println!("Failed to create temporary file.");
+}
 ```
 
-我们可以通过`write`方法来向临时文件中写入数据：
+值得注意的是，根據標準庫文檔的描述，使用這種方式創建的臨時文件，當程序結束後會自動刪除，因此無需手動處理。
 
-```Rust
-use std::io::Write;
+## 參考資料
 
-temp_file.write(b"Hello, world!");
-```
-
-如果我们想要读取文件中的数据，可以使用`read_to_string`方法：
-
-```Rust
-let mut file_content = String::new();
-temp_file.read_to_string(&mut file_content).expect("Failed to read file");
-
-println!("{}", file_content); // output: Hello, world!
-```
-
-最后，我们可以在程序结束后使用`close`方法来删除临时文件：
-
-```Rust
-temp_file.close().expect("Failed to close temp file");
-```
-
-## 深入了解临时文件
-
-创建临时文件的方法实际上是利用了操作系统的机制。每当我们创建一个临时文件时，操作系统会在临时文件夹中为我们分配一个唯一的文件名，并将此文件标记为临时文件。当我们使用`close`方法来关闭临时文件时，操作系统会自动将其删除。这种方式可以确保我们的程序在运行结束后不会留下无用的临时文件。
-
-## 参考链接
-
-- [Rust官方文档-创建临时文件](https://doc.rust-lang.org/std/fs/tempfile/struct.NamedTempFile.html)
-- [Rust编程语言教程-创建和使用临时文件](https://docs.microsoft.com/en-us/windows/win32/fileio/creating-and-using-temporary-files)
-- [Rust编程基础-临时文件的创建和使用](https://www.tutorialspoint.com/rust/rust_temporary_files.htm)
-
-## 参见
-
-- [Rust官方文档](https://www.rust-lang.org/)
-- [Rust中文社区](https://rust.love/zh-CN/)
+- [Rust 標準庫文檔](https://doc.r

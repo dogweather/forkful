@@ -1,7 +1,9 @@
 ---
 title:                "Go: Convertendo uma data em uma string"
+simple_title:         "Convertendo uma data em uma string"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/converting-a-date-into-a-string.md"
 ---
 
@@ -9,11 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Ao trabalhar com datas em um programa em Go, é comum a necessidade de converter uma data em uma string. Isso pode ser útil, por exemplo, para exibir datas em um formato específico ou para enviar dados para um banco de dados que aceita apenas strings. Neste post, vamos explorar como realizar essa conversão em Go.
+Hoje vamos falar sobre a conversão de uma data em uma string no Go. Esta é uma tarefa comum em muitos projetos de programação e entender esse processo pode ajudar a melhorar suas habilidades de programação em Go.
 
-## Como fazer
+## Como Fazer
 
-Converter uma data em uma string em Go é bastante simples. A linguagem já possui uma função nativa para isso, chamada `Format()`, que permite especificar o formato da data desejada. Veja um exemplo de código:
+Vamos começar com uma data básica no formato `date.Month Dia, Ano` e mostrar como podemos convertê-la em uma string. Usando a função `fmt.Sprintf`, podemos formatar a data para atingir o nosso objetivo:
 
 ```Go
 package main
@@ -24,50 +26,24 @@ import (
 )
 
 func main() {
-    // Obtendo a data atual
-    date := time.Now()
-
-    // Convertendo a data em uma string com o formato "DD/MM/AAAA"
-    dateString := date.Format("02/01/2006")
-
-    // Imprimindo a string resultante
-    fmt.Println(dateString)
+    data := time.Date(2020, time.September, 30, 0, 0, 0, 0, time.UTC)
+    dataStr := fmt.Sprintf("%s %d, %d", data.Month(), data.Day(), data.Year())
+    fmt.Println(dataStr)
 }
 ```
 
-Ao executar este código, o valor impresso será a data atual no formato "DD/MM/AAAA". Vale ressaltar que o formato utilizado na função `Format()` segue algumas convenções específicas. Por exemplo, "02" representa o dia, "01" o mês e "2006" o ano. É importante consultar a documentação oficial para ter uma lista completa de todos os formatos disponíveis.
+Se rodarmos esse código, a saída será `setembro 30, 2020`, que é exatamente o que queríamos. A função `fmt.Sprintf` nos permite usar verbos para formatar os valores passados, como por exemplo `%s` para uma string, `%d` para um inteiro e `%v` para um valor qualquer.
 
-## Deep Dive
+## Mergulho Profundo
 
-Além da função `Format()`, existem outras formas de converter uma data em uma string em Go. Uma delas é utilizando a biblioteca `strconv`, que oferece a função `AppendTime()` para essa finalidade. Esta função possui três argumentos: um slice de bytes para armazenar o resultado, o formato da data e a data em si. Veja um exemplo de código:
+Em Go, existem diferentes maneiras de formatar uma data para string, cada uma com suas próprias vantagens e desvantagens. Se quisermos incluir informações como o dia da semana ou o fuso horário na string, podemos usar a função `Format` do pacote `time`.
 
-```Go
-package main
+Além disso, devemos ter em mente que a conversão de uma data em uma string também depende do formato do idioma em que estamos trabalhando. O pacote `time` inclui recursos para fazer isso de forma fácil e eficiente.
 
-import (
-    "fmt"
-    "strconv"
-    "time"
-)
+Para mais informações sobre como formatar datas em Go, recomendamos conferir a documentação oficial do pacote `time` e também explorar alguns exemplos na internet.
 
-func main() {
-    // Obtendo a data atual
-    date := time.Now()
+## Veja Também
 
-    // Criando um slice de bytes para armazenar o resultado
-    var buffer []byte
-
-    // Convertendo a data em uma string com o formato "YYYY-MM-DD"
-    buffer = date.AppendFormat(buffer, "2006-01-02")
-
-    // Imprimindo a string resultante
-    fmt.Println(string(buffer))
-}
-```
-
-A saída deste código será exatamente o mesmo que o exemplo anterior. No entanto, utilizando a função `AppendFormat()` é possível customizar ainda mais o resultado, como por exemplo, adicionar informações sobre o fuso horário ou o dia da semana.
-
-## Veja também
-
-- [Documentação oficial de strings em Go](https://golang.org/pkg/strconv/)
-- [Documentação oficial de datas em Go](https://golang.org/pkg/time/)
+- [Documentação do Pacote Time em Go](https://pkg.go.dev/time)
+- [Exemplo de Formatação de Data em Go](https://www.w3schools.in/go/date-time-format/)
+- [Tutorial de Formatação de Data em Go](https://golangbyexample.com/go-date-format/)

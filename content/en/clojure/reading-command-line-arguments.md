@@ -1,51 +1,74 @@
 ---
 title:                "Clojure recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-If you're a developer working with Clojure, you may already be familiar with the power and flexibility of the language. But what about when it comes to handling command line arguments? Understanding how to read and use these arguments can greatly enhance your programming skills and make your applications more versatile. In this blog post, we'll dive into the world of command line arguments in Clojure and explore why they are important for any developer.
+As a beginner in Clojure programming, you may wonder why it is important to know how to read command line arguments. Well, the ability to read and handle command line arguments is crucial for creating versatile and interactive programs. Think of it as the equivalent of a user interface for command line applications. Without it, your program may be limited in its functionality and user-friendliness. So if you want to take your Clojure programming skills to the next level, learning how to read command line arguments is a must!
 
 ## How To
 
-Reading command line arguments in Clojure is a straightforward process. First, you'll need to import the `clojure.java.io` and `clojure.string` libraries. Then, you can use the `command-line-args` function to retrieve a list of all the command line arguments passed in when your program is executed. Let's take a look at an example:
+Reading command line arguments in Clojure is a straightforward process. First, you need to declare the `cmd-args` parameter in your `fn` as shown below:
 
 ```Clojure
-(require '[clojure.java.io :as io])
-(import 'java.io.File)
-(use '[clojure.string :only [join]])
+(defn my-program [cmd-args] 
+	...
+)
 
-(def input-file (File. (first (command-line-args))))
-(def lines (io/reader input-file))
-(def content (join ", " (line-seq lines)))
-(println content)
 ```
 
-In this example, we first import the necessary libraries and then use `command-line-args` to retrieve the first argument, which will be the input file that we want to read. We then use `io/reader` to convert the file into a sequence of lines, and finally use `join` to combine the lines into a single string. Finally, we print out the content of the file.
+Then, you can use the `slurp` function to read the command line arguments into a variable, for example `input`:
 
-If we execute this program with the command `java -cp "myprogram.jar" input.txt`, we will see the contents of the input file printed out to the console.
+```Clojure
+(defn my-program [cmd-args] 
+	(let [input (slurp cmd-args)])
+	...
+)
+
+```
+
+Now, you can use `println` to display the arguments or perform any other necessary operations. Let's say you run your program with the command line arguments `1 2 3`, the output would be:
+
+```Clojure
+1
+2
+3
+```
 
 ## Deep Dive
 
-Now that we've gone over the basics of reading command line arguments in Clojure, let's take a deeper dive into how these arguments are actually passed in and how we can access them.
+The `slurp` function not only reads the command line arguments, but it also converts them into a String type. This can be limiting when you want to work with different data types. To overcome this, you can use the `clojure.edn` library to convert the arguments into Clojure data structures. Here's an example:
 
-When running a program from the command line, arguments are passed in after the program name. This is known as the "args" vector. For example, if we run `java -cp "myprogram.jar" input.txt`, the args vector will contain `["input.txt"]`. We can access these arguments using the `command-line-args` function as shown in the example above.
+```Clojure
+(require '[clojure.edn :as edn])
 
-It is important to note that command line arguments are always passed in as strings. So if you want to use the arguments as numbers or booleans, you will need to convert them using functions such as `Integer/parseInt` or `Boolean/parseBoolean`.
+(defn my-program [cmd-args] 
+	(let [input (-> cmd-args 
+               slurp 
+               edn/read-string
+           )]
+	...
+)
 
-Additionally, we can pass in multiple arguments separated by spaces. These arguments will then be stored in the args vector as separate strings, allowing us to access and use them individually in our program.
+```
+
+Now, if you run your program with the command line arguments `[1 2 3]`, the output would be:
+
+```Clojure
+[1 2 3]
+```
 
 ## See Also
 
-Now that you have a better understanding of how to read command line arguments in Clojure, here are some additional resources that you may find helpful:
+To further enhance your Clojure programming skills, check out these resources:
 
-- [ClojureDocs: command-line-args function](https://clojuredocs.org/clojure.java.io/command-line-args)
-- [Official Clojure documentation on I/O](https://clojure.org/reference/io)
-- [Article on manipulating strings in Clojure](https://www.baeldung.com/clojure-string-manipulation)
-
-Happy coding!
+- Official Clojure docs on reading command line arguments: https://clojure.org/reference/other_functions#_command_line_args
+- A tutorial on reading command line arguments in Clojure: https://oli.me.uk/2013/06/09/easy-command-line-arguments-for-clojure/
+- Clojure cheat sheet for a quick reference: https://clojure.org/api/cheatsheet

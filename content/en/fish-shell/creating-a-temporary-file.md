@@ -1,40 +1,47 @@
 ---
 title:                "Fish Shell recipe: Creating a temporary file"
+simple_title:         "Creating a temporary file"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
+## Why
 
-Creating temporary files in programming is a common task that allows for efficient and organized data management. Temporary files are used to store data temporarily during the execution of a program, and they are automatically deleted once the program has finished running. This helps avoid clutter and frees up space on the system.
+Creating temporary files in programming can be a useful tool for many tasks. It allows for storing and manipulating data without permanently affecting the original files. This can be helpful for tasks such as data processing, file management, or debugging.
 
-##How To
+## How To
 
-To create a temporary file in Fish Shell, we will be using the `mktemp` command. This command generates a unique and secure filename that can be used for our temporary file.
+To create a temporary file using Fish Shell, we can use the `mktemp` command. This command generates a unique temporary file name and creates an empty file with that name. Let's take a look at an example:
 
 ```
-Fish Shell
-
-set TEMP_FILE (mktemp)
-echo "Hello world!" > $TEMP_FILE
-cat $TEMP_FILE 
+Fish Shell  >> mktemp -p ~/Desktop
+~/Desktop/tmp.2piW7Exq
 ```
 
-Running the above code will create a temporary file named "tmp.XXXXXX" and write the text "Hello world!" into it. The `TEMP_FILE` variable is set to the filename of the temporary file, and we can use it to perform operations on the file, such as reading or writing data.
+In this example, we used the `-p` flag to specify the directory where we want the temporary file to be created. If no directory is specified, the temporary file will be created in the system's default temporary directory.
 
-##Deep Dive
+We can also use the `mktemp` command to create multiple temporary files at once by specifying the number of files we want to create. For example, if we want to create three files, we can use the following command:
 
-When creating a temporary file, it is important to consider security and preventing potential conflicts with other temporary files. The `mktemp` command in Fish Shell uses the `mkstemp()` function in C, which creates a file with a unique name and sets the appropriate permissions to ensure that only the user has access to the file.
+```
+Fish Shell >> mktemp -p ~/Documents -t mytempfile_ -n 3
+~/Documents/mytempfile_1
+~/Documents/mytempfile_2
+~/Documents/mytempfile_3
+```
 
-It is also possible to create a temporary file with a specific prefix or suffix, using the `-p` and `-s` options respectively. This can be helpful when organizing and identifying temporary files in a busy system.
+In this example, we used the `-t` flag to specify the prefix of the temporary file name and the `-n` flag to specify the number of files to create.
 
-Additionally, we can use the `trap` command in Fish Shell to automatically delete the temporary file once the program finishes running. This can be achieved by setting up a trap command with the `EXIT` signal, which will execute a given command when the program exits.
+## Deep Dive
 
-##See Also
+Behind the scenes, the `mktemp` command uses the `mkstemp` function from the C standard library to create the temporary files. This function creates a file with a randomly generated name that is hardcoded to be 6 characters long. If the name is already taken, it will keep generating different names until it finds an available one.
 
-- Fish Shell built-in commands: https://fishshell.com/docs/current/index.html#builtin-commands
-- `mktemp` command documentation: https://fishshell.com/docs/current/cmds/mktemp.html
-- `mkstemp()` function: https://linux.die.net/man/3/mkstemp
+Once the file is created, the `mktemp` command outputs the full path to the file. This allows us to easily use the temporary file in our scripts or programs.
+
+## See Also
+
+- Official Fish Shell documentation for `mktemp` command: https://fishshell.com/docs/current/cmds/mktemp.html
+- Learn more about the `mkstemp` function in C: https://man7.org/linux/man-pages/man3/mkstemp.3.html

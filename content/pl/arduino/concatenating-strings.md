@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Konkatenacja ciągów znaków"
+title:                "Arduino: Konkatenacja łańcuchów"
+simple_title:         "Konkatenacja łańcuchów"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/concatenating-strings.md"
 ---
 
@@ -9,38 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Istnieje wiele powodów, dla których programiści używają konkatynacji ciągów w Arduino. Jednym z głównych powodów jest możliwość łączenia różnych zmiennych i danych w jedną dłuższą wartość. Jest to przydatne w przypadku wyświetlania informacji lub tworzenia dynamicznych wiadomości.
+W programowaniu z użyciem Arduino, łączenie lub łączenie ciągów jest częstym zadaniem. Jest to przydatne w celu łączenia różnych znaków lub wartości liczbowych w jeden ciąg, który można wykorzystać do wyświetlenia danych lub przekazania ich do innego urządzenia. W tym artykule dowiecie się, jak w prosty sposób wykonywać tę operację i jak możecie ją wykorzystać w swoich projektach.
 
 ## Jak to zrobić
 
-Aby skonkatenować ciągi w Arduino, możesz użyć operatora "+" lub funkcji `strcat()`. Oto przykładowy kod:
+Aby skonkatenować ciągi w Arduino, używamy funkcji `strcat()` lub operatora `+`. Na przykład:
 
 ```Arduino
-// deklaracja zmiennych
-String imie = "Maria";
-String nazwisko = "Kowalska";
-String pelneImie;
-
-// użycie operatora "+"
-pelneImie = imie + " " + nazwisko;
-
-// wykorzystanie funkcji strcat()
-strcat(pelneImie, " ");
-strcat(pelneImie, nazwisko);
-
-// wypisanie wyników
-Serial.println(pelneImie); // wyświetli "Maria Kowalska"
+ char ciag1[] = "Hello";
+ char ciag2[] = "world!";
+ 
+ strcat(ciag1, ciag2);
+ 
+ Serial.println(ciag1);
 ```
 
-W przypadku użycia operatora "+" zaleca się używanie typu danych `String`, a w przypadku funkcji `strcat()` - tablicy znaków. 
+W powyższym przykładzie używamy funkcji `strcat()` do połączenia dwóch ciągów w jeden. Połączyliśmy "Hello" i "world!" w "Hello world!" i wyświetliliśmy go za pomocą funkcji `Serial.println()`.
 
-## Głębszy wgląd
+Możemy również użyć operatora `+` do skonkatenowania ciągów:
 
-Podczas konkatynacji ciągów, Arduino tworzy nowy ciąg przez połączenie istniejących ciągów. W przypadku użycia operatora "+", stosowane jest wygodne przeciążanie operatora, co pozwala na konkatynację różnych typów danych, nie tylko ciągów.
+```Arduino
+char ciag1[] = "Lubię";
+char ciag2[] = "Arduino";
 
-Natomiast funkcja `strcat()` jest nieco bardziej złożona, ponieważ wymaga podania adresu końcowego ciągu, do którego ma zostać dodany kolejny ciąg. Dlatego ważne jest, aby upewnić się, że ciąg, do którego jest dodawany kolejny ciąg, ma wystarczającą ilość pamięci zaalokowanej na potrzeby połączenia.
+Serial.println(ciag1 + " " + ciag2);
+```
+
+W wyniku tego kodu otrzymamy ciąg "Lubię Arduino".
+
+## Głębsza analiza
+
+Podczas korzystania z funkcji `strcat()` lub operatora `+` należy pamiętać o kilku ważnych aspektach. Po pierwsze, musimy łączyć tylko ciągi tego samego typu, na przykład tylko `char`, a nie `char` i `int`. Po drugie, należy zapewnić wystarczającą ilość pamięci dla skonkatenowanego ciągu. Jeśli pamięci nie będzie wystarczająco, może dojść do błędu lub niepożądanego rezultatu.
 
 ## Zobacz także
 
-- Dokumentacja Arduino dotycząca konkatynacji ciągów: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/strcat/
-- Przykładowe projekty wykorzystujące konkatynację ciągów w Arduino: https://www.arduino.cc/search?q=String+concatenation
+- [Funkcja strcat() w dokumentacji Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/strcat/)
+- [Operator + w dokumentacji Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/operator-plus/)
+- [Przykładowe projekty z użyciem łączenia ciągów w Arduino](https://create.arduino.cc/projecthub/tags/string+concatenation)

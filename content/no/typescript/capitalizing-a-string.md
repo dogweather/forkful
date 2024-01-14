@@ -1,49 +1,55 @@
 ---
-title:                "TypeScript: Stor bokstavering av en streng"
+title:                "TypeScript: Store bokstaver i en tekststreng"
+simple_title:         "Store bokstaver i en tekststreng"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor: 
+## Hvorfor
 
-I mange programmeringsspråk, inkludert TypeScript, kan det være nødvendig å konvertere en streng til store bokstaver. Dette kan være nyttig for å opprettholde konsistens i formatering eller for å søke og sammenligne tekst på en mer pålitelig måte. I denne artikkelen skal vi utforske hvordan man kan kapitalisere en streng i TypeScript.
+Å konvertere tekst til store bokstaver eller "kapitalisering" kan være viktig for å få en mer lesbar og konsistent kode. Dette kan forbedre lesbarheten og forståelsen av koden, spesielt for større prosjekter.
 
-## Hvordan:
-
-Det finnes flere måter å kapitalisere en streng i TypeScript på. La oss se på et eksempel:
+## Hvordan
 
 ```TypeScript
-let string = "hei alle sammen!";
-console.log(string.toUpperCase());
-```
-
-Dette vil resultere i følgende utskrift: "HEI ALLE SAMMEN!" Her bruker vi metoden `toUpperCase()` for å konvertere strengen til store bokstaver.
-
-En annen måte å kapitalisere en streng på er å bruke en `for`-løkke og `toUpperCase()`-metoden på hvert enkelt tegn i strengen. Dette kan være nyttig hvis du ønsker å gjøre andre manipulasjoner på hvert tegn før du konverterer det.
-
-```TypeScript
-let string = "hei alle sammen!";
-let capitalizedString = "";
-
-for (let i = 0; i < string.length; i++) {
-  capitalizedString += string[i].toUpperCase();
+function capitalizeString(input: string): string {
+  return input.toUpperCase(); // Eksempel på hvordan man enkelt kan konvertere en tekststreng til store bokstaver
 }
 
-console.log(capitalizedString);
-```
+console.log(capitalizeString("heisann")); // Output: HEISANN
+``` 
 
-Dette vil resultere i samme utskrift som det første eksempelet.
+En annen måte å kapitalisere en tekst på er ved å bruke metoden `replace` sammen med et regulært uttrykk, som gjør det mulig å kapitalisere bare den første bokstaven i en tekststreng:
 
-## Mer om å kapitalisere en streng:
+```TypeScript
+function capitalizeFirstLetter(input: string): string {
+  return input.replace(/^\w/, (c) => c.toUpperCase()); // Finner første bokstav og kapitaliserer den
+}
 
-Det er viktig å merke seg at `toUpperCase()`-metoden ikke bare konverterer bokstaver fra små til store, men også fra et ikke-alfabetisk tegn til et alfabetisk tegn. For eksempel, hvis vi har strengen "h3i!", vil `toUpperCase()`-metoden konvertere dette til "H3I!".
+console.log(capitalizeFirstLetter("verden")); // Output: Verden
+``` 
 
-En annen metode som kan brukes for å kapitalisere en streng er `toLocaleUpperCase()`. Denne metoden tar hensyn til land-innstillinger og kan være mer nøyaktig for enkelte språk. For eksempel, hvis du har en spansk tekst og ønsker å kapitalisere den etter spansk grammatikk, kan du bruke `toLocaleUpperCase()`-metoden.
+Hvis du har en tekststreng med flere ord, kan du også bruke metoden `split` for å splitte teksten ved mellomrom og deretter bruke `map` for å kapitalisere hvert ord:
 
-## Se også:
+```TypeScript
+function capitalizeWords(input: string): string {
+  return input.split(" ").map(w => w ? w[0].toUpperCase() + w.substr(1).toLowerCase() : w).join(" "); // Kapitaliserer hver enkelt ord
+}
 
-- [TypeScript offisiell dokumentasjon om strenger] (https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [Metodebibliotek for JavaScript strenger] (https://www.w3schools.com/js/js_string_methods.asp)
+console.log(capitalizeWords("hei, hvordan går det?")); // Output: Hei, Hvordan Går Det?
+``` 
+
+## Dypdykk
+
+I tillegg til å kapitalisere en hel tekststreng eller enkelte bokstaver, kan det også være nyttig å kunne ignorere og beholde spesifikke ord eller akronymer. Dette kan gjøres ved å bruke metoden `replace` sammen med et regex uttrykk som tar hensyn til disse ordene.
+
+En annen ting å huske på er at i noen tilfeller kan ikke alle ord eller bokstaver kapitaliseres likt. For eksempel skal ikke forkortelser som "US" eller "UK" kapitaliseres som "Us" eller "Uk". Derfor kan du bruke en liste over slike unntak og sjekke om ordet er en del av den før du kapitaliserer det.
+
+## Se også
+
+- [JavaScript String Methods](https://www.w3schools.com/jsref/jsref_obj_string.asp)
+- [Regular Expressions Tutorial](https://www.w3schools.com/js/js_regexp.asp)

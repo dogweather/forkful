@@ -1,69 +1,42 @@
 ---
 title:                "Rust: מחיקת תווים התואמים לתבנית"
+simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה 
+# למה
 
-מחיקת תווים המתאימים לתבנית יכולה להיות כלי מועיל בתכנות בשפת ראסט. זה עשוי להיות על מנת לנקות טקסט תקליטור, לשנות סדר של תווים, או למצוא ולהסיר תווים חסרים בטקסט. 
+ישנם מצבים רבים שבהם נדרש למחוק תווים המתאימים לתבנית מסוימת בתכנות בשפת Rust. כתבה זו יכולה להעניק לך כלים והבנה כיצד לבצע פעולה זו בדרך הטובה ביותר.
 
-## איך לעשות 
+## כיצד לבצע פעולה זו
 
-תחילה, נצטרך לייבא את המודול המתאים לפעולת מחיקת תווים מתאימים לתבנית. נעשה זאת על ידי הוספת השורה הבאה לראש הקובץ: 
+כאשר מעוניינים למחוק תווים המתאימים לתבנית מסוימת, ניתן להשתמש בפונקציה "replace" של שפת Rust. לדוגמה, אם נרצה למחוק את כל התווים הלא נראים בשחורים בתמונה, נוכל להשתמש בקוד הבא בתוך ה"```Rust ... ```":
 
-```Rust 
-use regex::Regex; 
+```Rust
+let str = "Hello, world!";
+let new_str = str.replace("l", "");
+println!("{}", new_str); // Output: Heo, word!
 ```
 
-לאחר מכן, נגדיר את התבנית של התווים שנרצה למחוק. לדוגמה, אם נרצה למחוק את כל התווים הגדולים באותיות, נכתוב: 
+## להתעמק
 
-```Rust 
-let pattern = Regex::new("[A-Z]"); 
-``` 
+ניתן להשתמש גם בתנאים כדי לבצע פעולה זו על תווים מסוימים בלבד. לדוגמה, נוכל להשתמש בקוד הבא כדי למחוק רק את התווים "l" ו"o" מהתוכן:
 
-לבסוף, נשתמש בפקודה `replace_all` כדי למחוק את התווים המתאימים לתבנית: 
+```Rust
+let str = "Hello, world!";
+let new_str = str.replace(|c| match c {
+    'l' | 'o' => false,
+    _ => true,
+}, "");
+println!("{}", new_str); // Output: Hel, wrd!
+```
 
-```Rust 
-let result = pattern.replace_all("Hello World", ""); 
-``` 
+# ראה גם
 
-הנה כיצד הקוד השלם יראה עם כל השורות יחד: 
-
-```Rust 
-use regex::Regex; 
-
-fn main() {
-    let pattern = Regex::new("[A-Z]"); 
-    let result = pattern.replace_all("Hello World", ""); 
-    println!("{}", result); 
-}
-``` 
-
-והנה הפלט של קוד הפעולה: 
-
-``` 
-ello orld 
-``` 
-
-## יצירת תקנה חכמית (עומס) 
-
-כאשר משתמשים במודול Regex בפרויקט גדול יותר, ייתכן שנתקלו בבעיות עומס מתיחות. במצבים כאלה, כדאי ליצור תקנה חכמה במקום לאתחל את התבנית מחדש בכל פעם שאנו רוצים לבצע מחיקה מתאימה. תחת התקנה החכמה, נגדיר את התבנית כמשתנה גלובלי ונפעיל את הפעולה `replace_all` על המחרוזת הרצויה: 
-
-```Rust 
-use regex::Regex; 
-
-fn main() {
-    lazy_static! {
-        static ref PATTERN: Regex = Regex::new("[A-Z]").unwrap();
-    }
-
-    let result = PATTERN.replace_all("Hello World", "");
-    println!("{}", result);
-}
-``` 
-
-כעת, התבנית תימצא רק פעם אחת לכל
+- [מדריך רשמי על פעולה של הפונקציה "replace" בשפת Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [תצוגה לעומק על תנאים בשפת Rust](https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html#matching-with-partial-value-bindings)

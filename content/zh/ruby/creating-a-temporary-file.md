@@ -1,63 +1,40 @@
 ---
 title:                "Ruby: 创建临时文件"
+simple_title:         "创建临时文件"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么创建临时文件
+## 为什么
 
-首先，让我们来解释一下什么是临时文件。临时文件是一种用于暂时存储数据的文件，在程序运行结束后会自动被删除。那么为什么在编程中会需要使用临时文件呢？
+在编程中，有时我们需要暂时存储一些数据，但又不想将其永久保存。这时，使用临时文件是一个很好的选择。临时文件能够在我们不需要它们时自动被删除，从而节省存储空间。
 
-创建临时文件可以帮助我们在程序执行过程中保存一些临时性的数据，比如临时缓存数据或者中间处理结果。这可以避免占用过多的内存空间，提高程序的运行效率。同时，在多线程的情况下，每个线程都可以创建自己的临时文件，避免数据混乱的问题。
+## 如何
 
-# 如何创建临时文件
+创建临时文件非常简单，我们只需要使用Ruby的内置函数来实现。以下是一个小例子，演示了如何创建一个名为“temp.txt”的临时文件，并向其中写入一些数据。
 
-在Ruby中，我们可以使用`Tempfile`类来方便地创建临时文件。下面是一个简单的例子：
-
-```
+```Ruby
 require 'tempfile'
 
-# 创建临时文件
-my_tempfile = Tempfile.new('mytemp')
-
-# 向临时文件写入数据
-my_tempfile.puts "Hello World!"
-
-# 读取临时文件的内容
-puts my_tempfile.read # Output: Hello World!
-
-# 关闭临时文件
-my_tempfile.close
-
-# 删除临时文件
-my_tempfile.unlink
+temp_file = Tempfile.new('temp.txt') #创建一个名为temp.txt的临时文件
+temp_file.write("这是一个临时文件") #向临时文件中写入数据
+puts temp_file.path #输出临时文件的路径，可以发现它在系统默认的临时文件夹中
 ```
 
-在上面的代码中，我们首先引入`Tempfile`库，然后使用`Tempfile.new`方法创建了一个名为`mytemp`的临时文件。接着，我们向临时文件写入了一条数据，然后通过`read`方法来读取文件的内容。最后，我们使用`close`方法来关闭临时文件，使用`unlink`方法来删除临时文件。
+运行以上代码，我们可以看到输出的路径类似于“/var/folders/q1/zn209m595d71s6h42rlbkdj40000gn/T/temp20190319-7388-3qk99r.txt”。
 
-# 深入探讨创建临时文件
+## 深入探讨
 
-除了上面提到的使用`Tempfile`类来创建临时文件外，我们还可以通过指定文件夹路径来创建临时文件。比如：
+临时文件的创建实际上是利用了操作系统的机制。在创建临时文件时，Ruby会首先在操作系统的临时文件夹中创建一个随机的文件名，然后再在其中写入数据。在程序执行完毕后，临时文件会被自动删除。
 
-```
-tempdir = "/Users/username/Documents/tmp" # 这里的路径可以替换为你想要的任意路径
-my_tempfile = Tempfile.new('mytemp', tempdir)
-```
+当然，我们也可以手动删除临时文件，只需要调用`temp_file.unlink`即可。此外，我们还可以指定临时文件的存储路径，或者在创建临时文件时指定其打开模式、权限等。
 
-这样，我们就可以在指定的文件夹下创建临时文件，而不是创建在系统默认的临时文件夹下。
+## 参考链接
 
-此外，我们还可以通过设置`autoclose`参数来控制临时文件的关闭行为。如果设置为`true`，则在临时文件被删除时，同时也会自动关闭临时文件。如果设置为`false`，则需要手动调用`close`方法来关闭临时文件。
-
-# 参考链接
-
-- [Ruby文档：Tempfile类](https://ruby-doc.org/stdlib-3.0.0/libdoc/tempfile/rdoc/Tempfile.html)
-- [Ruby文档：File类](https://ruby-doc.org/core-3.0.1/File.html)
-- [Ruby中的Tempfile类](https://www.rubyguides.com/2015/05/temporary-files-ruby/)
-
-# 参见
-
-- [CSDN博客：如何在Ruby中创建临时文件](https://blog.csdn.net/cqdip/article/details/46809335)
-- [掘金博客：Ruby临时文件写入实现](https://juejin.im/post/5ba9c726e51d450e686ea20c)
+- [Ruby标准库文档 - Tempfile](https://ruby-doc.org/stdlib-2.6.1/libdoc/tempfile/rdoc/Tempfile.html)
+- [《Ruby基础教程》- 临时文件操作](http://www.w3cschool.cn/ruby/ruby-temporary-file.html)
+- [《Ruby编程语言》- 使用Tempfile类生成临时文件](https://ruby-china.org/topics/992)

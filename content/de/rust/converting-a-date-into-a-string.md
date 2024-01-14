@@ -1,44 +1,43 @@
 ---
-title:                "Rust: Umwandlung eines Datums in einen String"
+title:                "Rust: Ein Datum in einen String umwandeln"
+simple_title:         "Ein Datum in einen String umwandeln"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Konvertieren eines Datums in einen String ist eine häufige Aufgabe in der Programmierung, insbesondere wenn es um die Darstellung von Datumsangaben in einem benutzerfreundlichen Format geht. In Rust können wir diese Aufgabe effizient und fehlerfrei mit wenigen Zeilen Code erledigen. In diesem Blogpost werden wir uns genauer ansehen, wie wir diese Konvertierung durchführen können.
+Das Konvertieren von Datumswerten in Strings ist ein wichtiger Aspekt der Programmierung, vor allem wenn es darum geht, Daten auf eine für Benutzer lesbarere Weise darzustellen. In Rust bietet die Standardbibliothek einige nützliche Methoden, um diese Aufgabe zu bewältigen. In diesem Beitrag werden wir uns genauer ansehen, wie man ein Datum in einen String umwandelt und einige Tipps und Tricks dazu geben.
 
-## Wie geht das?
+## Wie man ein Datum in einen String umwandelt
 
-Um ein Datum in einen String zu konvertieren, müssen wir zunächst das Modul "DateTime" aus der externen Crate "chrono" importieren. Dann können wir die Funktion "format" verwenden, um das Datum in einem gewünschten Format auszugeben. Hier ist ein Beispielcode:
+Die Methode `.to_string` kann verwendet werden, um ein Datum in einen String umzuwandeln. Dazu muss jedoch zuerst das Datum in ein `DateTime `-Objekt umgewandelt werden. Das kann mithilfe der `chrono`-Bibliothek von Rust erfolgen. Betrachten wir folgendes Beispiel:
 
-```Rust
-use chrono::prelude::*;
+```rust
+extern crate chrono;
+
+use chrono:DateTime;
+use chrono::Utc;
 
 fn main() {
     let date = Utc::now();
-    let formatted_date = date.format("%d.%m.%Y").to_string();
-    println!("{}", formatted_date);
+    let datetime = DateTime::<Utc>::from(date);
+    let datestring = datetime.to_string();
+    println!("{}", datestring);
 }
 ```
-Dieser Code importiert das aktuelle Datum in UTC und gibt es im Format "Tag.Monat.Jahr" aus. Wir können das Format beliebig ändern, indem wir die spezifischen Zeichen wie "%d" für den Tag, "%m" für den Monat und "%Y" für das vollständige Jahr austauschen.
 
-Die Ausgabe wird in diesem Fall "10.08.2021" sein.
+Der Output dieses Codes wäre der folgende String: `2021-03-07 20:00:00 UTC`. Hier haben wir das aktuelle Datum mithilfe des `Utc::now`-Methodenaufrufs erhalten und es dann in ein `DateTime`-Objekt umgewandelt. Danach wurde die `.to_string`-Methode aufgerufen, um das Datum in einen String zu konvertieren. Dieser String kann dann für verschiedene Zwecke verwendet werden, wie zum Beispiel die Anzeige auf einer Benutzeroberfläche.
 
-## Tief eintauchen
+## Tiefergehende Informationen zum Konvertieren von Datum in ein String
 
-Wenn wir genauer hinschauen, stellen wir fest, dass die Funktion "format" eine Instanz der DateTime-Struktur erwartet, die in diesem Fall das aktuelle Datum und die Zeit in UTC darstellt. Diese Struktur bietet viele Methoden, um das Datum und die Zeit an unsere Bedürfnisse anzupassen. Wir können auch andere Datums- und Zeitformate verwenden, wie z.B. "Local" für das aktuelle Datum und die Zeit in der aktuellen Zeitzone.
-
-Es ist auch wichtig zu beachten, dass die Funktion "format" eine Reihe von Konfigurationsmöglichkeiten bietet, um das Ausgabeformat weiter anzupassen. Wir können z.B. die Sprache, das Zeitzonenformat und die Anzeige des Tages der Woche hinzufügen.
-
-Mit diesen Möglichkeiten können wir sicherstellen, dass das konvertierte Datum in unserem Programm genau so dargestellt wird, wie wir es möchten.
+Das oben gezeigte Beispiel ist nur eine einfache Möglichkeit, ein Datum in einen String umzuwandeln. In der `chrono`-Bibliothek gibt es einige weitere nützliche Methoden, um die Konvertierung zu erleichtern. Zum Beispiel kann die `format`-Methode verwendet werden, um das Datum in einem bestimmten Format darzustellen. Außerdem bietet Rust auch die Möglichkeit, benutzerdefinierte Formate zu erstellen. Weitere Informationen dazu können in der Dokumentation zur `chrono`-Bibliothek gefunden werden.
 
 ## Siehe auch
 
-- Die offizielle Dokumentation von Rust für das Modul "DateTime" in der Crate "chrono": https://docs.rs/chrono/0.4.19/chrono/
-- Weitere Beispiele und Erklärungen zur Konvertierung von Datum in einen String in Rust: https://www.educative.io/blog/rust-date-time-tutorial
-
-Vielen Dank fürs Lesen und viel Spaß beim Programmieren mit Rust!
+- [Rust Standardbibliothek](https://doc.rust-lang.org/std/)
+- [Chrono-Dokumentation](https://docs.rs/chrono/0.4.19/chrono/)

@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Kirjoittaminen standardivirheeseen."
+title:                "Ruby: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-to-standard-error.md"
 ---
 
@@ -9,46 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Ohjelmointi ei aina mene suunnitellusti ja usein törmäämme virheisiin koodin suorituksen aikana. Kirjoittamalla virheviestejä standardivirheeseen voimme auttaa itseämme ja muita koodarinä hyödyntämään näitä virheviestejä ja selventämään ongelman syitä ja ratkaisuja.
+Kirjoittaminen standardivirheeseen voi tuntua turhalta askelta, sillä se ei näy lopullisessa ohjelmassa. Kuitenkin, jos haluat seurata tai havaita mahdollisia virheitä, niin kirjoittaminen standardivirheeseen on erittäin hyödyllinen tapa saada selville, mitä ohjelmassa tapahtuu.
 
-## Kuinka
+## Miten
 
-Yksi tapa kirjoittaa standardivirheeseen on käyttämällä Rubyn sisäänrakennettua `warn`-metodia. Tämä metodi ottaa vastaan merkkijonon, joka tulostetaan standardivirheeseen. Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluamme testata, mikä kohta koodissa aiheuttaa ongelman.
-
-```Ruby
-5 / 0 # tulostaa virheen " ZeroDivisionError: divided by 0" standardilähtöön
-warn "Tarkista jakajaksi laittamasi luku!" # tulostaa viestin standardivirheeseen
-```
-
-Voimme myös tallentaa virheviestin muuttujaan ja tulostaa sen standardivirheeseen, mikäli haluamme lisätä siihen enemmän tietoa ongelman syystä. Esimerkiksi:
+Seuraavassa esimerkissä näytämme, miten kirjoitat standardivirheeseen Ruby-ohjelmassa. Voit käyttää `puts`-metodia kirjoittamaan tekstiä standardilähtöön, mutta jos haluat kirjoittaa virheilmoituksia, käytä `STDERR.puts`-metodia.
 
 ```Ruby
 begin
+  # Tätä koodia yritetään suorittaa
   5 / 0
-rescue ZeroDivisionError => e
-  message = "Tarkista jakajaksi laittamasi luku! Virhe: #{ex.message}"
-  warn message # tulostaa virheen "Tarkista jakajaksi laittamasi luku! Virhe: divided by 0" standardilähtöön
+rescue
+  # Jos virhe tapahtuu, kirjoitetaan virheilmoitus standardivirheeseen
+  STDERR.puts "Virhe: Et voi jakaa nollalla."
 end
+```
+
+Tämän ohjelman tulos näyttää seuraavalta:
+
+```
+Virhe: Et voi jakaa nollalla.
 ```
 
 ## Syvemmälle
 
-Virheiden kirjoittaminen standardivirheeseen voi auttaa myös debuggaamisessa eli ongelman etsimisessä. Voimme esimerkiksi tulostaa muuttujan arvon standardivirheeseen, jolloin näemme helpommin, missä vaiheessa koodissa on ongelma. Esimerkiksi:
+Kun käytät `STDERR.puts`-metodia, voit myös antaa sille useita argumentteja. Tällöin ne tulostetaan standardivirheenä yksi kerrallaan.
 
 ```Ruby
-i = 10
-j = 0
-begin
-  result = i / j
-rescue ZeroDivisionError => e
-  message = "Jakojäännös on #{i % j}, ei voida jakaa #{i} luvulla #{j}."
-  warn message # tulostaa virheen "Jakojäännös on 0, ei voida jakaa 10 luvulla 0." standardilähtöön
+# Kirjoitetaan standardivirheeseen useita viestejä
+STDERR.puts "Tämä on ensimmäinen virhe."
+STDERR.puts "Tämä on toinen virhe."
+STDERR.puts "Tämä on kolmas virhe."
+```
+
+Tämän ohjelman tulos näyttää seuraavalta:
+
+```
+Tämä on ensimmäinen virhe.
+Tämä on toinen virhe.
+Tämä on kolmas virhe.
+```
+
+Voit myös käyttää `STDERR.print`-metodia, jos haluat tulostaa kaiken samalle riville. Tässä esimerkissä käytämme `STDERR.print`-metodia tulostamaan kymmenen peräkkäistä numeroa.
+
+```Ruby
+# Tulostetaan numerot 1-10 standardivirheeseen ilman rivinvaihtoa
+(1..10).each do |i|
+  STDERR.print "#{i} "
 end
 ```
 
-Virheiden kirjoittaminen standardivirheeseen voi myös auttaa meitä parantamaan koodin laatua ja estämään tulevia virheitä. Kun tiedostamme, millaisia virheitä koodissa voi ilmetä, voimme ennakoida niitä ja lisätä turvaehdotuksia tai virheviestejä, jotka auttavat meitä tai muita kehittäjiä ratkaisemaan ongelman nopeammin.
+Tämän ohjelman tulos näyttää seuraavalta:
+
+```
+1 2 3 4 5 6 7 8 9 10
+```
 
 ## Katso myös
 
-- Rubyn virheenkäsittelydokumentaatio: https://ruby-doc.org/core-2.7.1/Exception.html
-- Rubyn virheviestit standardivirheessä: https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-warn
+- [STDERR luokka Ruby-ohjelmointikielen virallisessa dokumentaatiossa](https://ruby-doc.org/core-3.0.1/STDERR.html)
+- [Ruby-tietokirja: Tulostaminen standardivirheeseen](http://rubylearning.com/satishtalim/writing-to-standard-error/)

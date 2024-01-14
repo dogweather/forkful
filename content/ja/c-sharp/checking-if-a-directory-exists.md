@@ -1,55 +1,42 @@
 ---
-title:                "C#: ディレクトリが存在するかどうかをチェックする"
+title:                "C#: ディレクトリが存在するかどうかを確認する"
+simple_title:         "ディレクトリが存在するかどうかを確認する"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-ディレクトリが存在するかどうかを確認することの理由は、ファイル操作を行う際にプログラマーが誤ったディレクトリにアクセスしてしまうことを防ぐためです。
+## なぜ
 
-## How To
-まずは、システムにアクセスしてディレクトリが存在するかどうかを確認するために、DirectoryクラスのExistsメソッドを使用します。下記のように記述します。
+ディレクトリが存在するかどうかをチェックすることの重要性を、わずか1-2文で説明すると、あなたのプログラムがディレクトリが存在しない場合に、予期せぬエラーが発生する可能性があるためです。
+
+## 方法
+
+ディレクトリの存在をチェックするには、C#の "Directory.Exists()" メソッドを使用します。以下の例では、"Documents" という名前のディレクトリが存在するかどうかをチェックしています。
 
 ```C#
-if (Directory.Exists(@"C:\Users\Username\Documents"))
+if(Directory.Exists("Documents"))
 {
-    Console.WriteLine("The directory exists.");
+    Console.WriteLine("Documentsディレクトリが存在します。");
 }
 else
 {
-    Console.WriteLine("The directory does not exist.");
+    Console.WriteLine("Documentsディレクトリが存在しません。");
 }
+
+// 出力: Documentsディレクトリが存在します。
 ```
 
-出力例：
-```
-The directory exists.
-```
+ディレクトリが存在しない場合、"else"ブロックのコードが実行されます。
 
-もしも存在しないディレクトリを指定した場合は、以下のような出力になります。
+## ディープダイブ
 
-```C#
-if (Directory.Exists(@"C:\Users\Username\Downloads"))
-{
-    Console.WriteLine("The directory exists.");
-}
-else
-{
-    Console.WriteLine("The directory does not exist.");
-}
-```
+ディレクトリの存在をチェックする方法は非常にシンプルですが、内部ではどのように動作しているのでしょうか？実際には、"Directory.Exists()" メソッドは "GetFileAttributesW()" Win32 APIを使用しています。このAPIは、指定されたパスに対する属性を取得するために使用されます。ディレクトリの存在を確認するために使用するには、ファイルの属性の値が "FILE_ATTRIBUTE_DIRECTORY" であるかどうかを確認します。
 
-出力例：
-```
-The directory does not exist.
-```
+## 関連リンク
 
-## Deep Dive
-Directory.Existsメソッドは、指定したディレクトリの存在を確認するためにシステムにアクセスします。このメソッドを使用することで、ディレクトリを作成したり削除したりする前に、事前に存在を確認することができます。また、ディレクトリが存在しない場合は例外をスローするため、エラーハンドリングの必要があります。
-
-## See Also
-- [Directory.Exists Method (System.IO)](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=netcore-3.1)
-- [Directoryクラス (System.IO)](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.directory?view=netcore-3.1)
+- [C#ドキュメント: Directory.Exists(Method)](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- [Win32 APIドキュメント: GetFileAttributesW(Method)](https://docs.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-getfileattributesw)

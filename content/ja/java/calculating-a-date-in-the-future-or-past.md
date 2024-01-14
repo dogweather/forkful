@@ -1,54 +1,51 @@
 ---
-title:                "Java: 「未来または過去の日付を計算する」"
+title:                "Java: 未来または過去の日付を計算する"
+simple_title:         "未来または過去の日付を計算する"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-日本語訳： なぜ今、未来や過去の日付を計算する必要があるのでしょうか？
+## なぜ
+日付を計算することの利点は、将来または過去の特定の日付をすばやく特定できることです。
 
-## How To
-日本語訳：```Java ... ```コードブロック内のコーディング例とサンプル出力。
-
-未来の日付を計算する場合、```LocalDate```クラスを使用して以下のように実装することができます。
+## 方法
+日付を計算する方法は次のようになります。まず、Calendarクラスを使用してインスタンスを作成し、そのインスタンスに日付の情報をセットします。その後、そのインスタンスを使用して、簡単な計算を行うことによって、特定の日付を取得することができます。以下のコードを参考にしてください。
 
 ```Java
-// 今日の日付を取得
-LocalDate today = LocalDate.now();
+// Calendarクラスを使用してインスタンスを作成
+Calendar calendar = Calendar.getInstance();
+// 日付の情報をセット
+int year = 2021;
+int month = Calendar.JULY; //7月を表す
+int day = 24;
+calendar.set(year, month, day);
 
-// 5日後の日付を計算
-LocalDate fiveDaysLater = today.plusDays(5);
-
-// 結果を出力
-System.out.println("5 days later: " + fiveDaysLater);
-```
-
-これにより、今日の日付から5日後の日付が計算され、コンソール上に表示されます。
-
-過去の日付を計算する場合も同様に、```minusDays()```メソッドを使用して計算することができます。
-
-```Java
-// 今日の日付を取得
-LocalDate today = LocalDate.now();
-
-// 5日前の日付を計算
-LocalDate fiveDaysAgo = today.minusDays(5);
+// 特定の日付を取得
+int futureDate = 30;
+calendar.add(Calendar.DATE, futureDate); // 30日後の日付を取得
+int pastDate = -15;
+calendar.add(Calendar.DATE, pastDate); // 15日前の日付を取得
 
 // 結果を出力
-System.out.println("5 days ago: " + fiveDaysAgo);
+System.out.println("特定の日付の30日後：" + calendar.getTime());
+System.out.println("特定の日付の15日前：" + calendar.getTime());
 ```
 
-## Deep Dive
-日本語訳：未来や過去の日付を計算するためには、Java 8以降で導入された```java.time```パッケージを使用することが推奨されます。このパッケージには、日付や時間を管理するための便利なクラスやメソッドが含まれており、少ないコード量で簡単に日付計算を行うことができます。
+以下のような出力が得られます。
 
-また、日付を計算する際には、タイムゾーンやロケールの設定にも注意が必要です。これらの設定を正しく行わないと、意図しない結果が得られる可能性があります。
+```shell
+特定の日付の30日後：Tue Aug 24 00:00:00 JST 2021 
+特定の日付の15日前：Wed Jul 07 00:00:00 JST 2021
+```
+
+## ディープダイブ 
+日付を計算するために使用される主なクラスは、Calendarクラスです。このクラスは抽象クラスであり、システムが動作しているローカルタイムゾーンに基づいたカレンダーを表します。そのため、使用するコンピューターのタイムゾーンに応じて結果が異なる可能性があります。また、Calendarクラスには、DATEやMONTHなど、日付や月を表す定数がありますので、使用する際には参照すると便利です。
 
 ## See Also
-日本語訳：参考リンク
-
-- [Java 8で導入されたjava.timeパッケージの公式ドキュメント](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Javaの日付操作に関するチートシート](https://www.baeldung.com/java-date-time)
-- [タイムゾーンとロケールの設定についての説明](https://stackify.com/preparing-for-multi-region-deployments-java-time-zone/)
+- [Java公式ドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/util/Calendar.html)
+- [Calendarクラスを使用した日付計算のサンプルコード](https://www.java67.com/2015/06/how-to-calculate-add-subtract-days-in-date-java-example.html)
+- [Javaの日付を操作する方法](https://www.geeksforgeeks.org/how-to-add-days-to-a-date-in-java/)

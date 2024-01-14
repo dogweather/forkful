@@ -1,64 +1,57 @@
 ---
 title:                "Arduino: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att kontrollera om en mapp finns är en viktig del av programmering, speciellt när du arbetar med hårdvara som en Arduino. Genom att kontrollera om en mapp existerar kan du effektivt hantera och organisera dina data och filer.
+"## Varför"
 
-## Hur man gör
-Att kontrollera om en mapp finns i Arduino kräver användning av ett bibliotek som heter `SD`. Detta bibliotek tillåter dig att hantera SD-kortet som är anslutet till din Arduino och ger dig tillgång till filerna och mapparna på det.
+Att kontrollera om en mapp existerar är ett viktigt steg i programmeringen av Arduino. Genom att vara säker på att en mapp finns kan du undvika felaktiga instruktioner och upprätthålla en smidig och effektiv kod.
 
-Här är ett enkelt exempel på hur du kan använda `SD.exists()`-funktionen för att kontrollera om mappen "Data" finns på ditt SD-kort:
+"## Hur man gör det"
+
+Kontrollera om en mapp existerar på Arduino är enkelt och kan göras med hjälp av funktionen "exists()" i File-klassen. Här är ett exempel på kod som visar hur man gör det:
 
 ```Arduino
-#include <SD.h>
-
+#include <SPI.h>
+#include <FS.h>
+  
 void setup() {
-  if (SD.exists("Data")) {
-    Serial.println("Mappen Data finns.");
-  } else {
-    Serial.println("Mappen Data finns inte.");
+  Serial.begin(9600); // Öppna en kommunikationslinje med datorn
+  while (!Serial) { } // Vänta tills kommunikationslinjen är öppen
+  // Börja berätta för användaren vad som händer
+  Serial.println("Kontrollera om mappen 'data' existerar...");
+  // Anropa "exists()" metoden för att kontrollera om mappen existerar
+  if(SPIFFS.exists("/data")){
+    // Om mappen existerar, skriv ut ett meddelande
+    Serial.println("Mappen 'data' existerar!");
+  }
+  else{
+    // Om mappen inte existerar, skriv ut ett meddelande
+    Serial.println("Kunde inte hitta mappen 'data'...");
   }
 }
 
-void loop () {
-
+void loop() {
+  // Inget behöver göras här, all kod körs i setup() funktionen
 }
 ```
 
-Om mappen "Data" existerar så kommer texten "Mappen Data finns." att skrivas ut i seriell monitor, annars kommer "Mappen Data finns inte." att skrivas ut.
+För att kunna köra denna kod behöver du installera SPIFFS-biblioteket på din Arduino. Mer information om hur du gör det hittar du här: [https://www.arduino.cc/en/Reference/FS](https://www.arduino.cc/en/Reference/FS)
 
-Du kan också använda `SD.isDirectory()`-funktionen för att kontrollera om en fil är en mapp eller inte. Här är ett exempel:
+## Djupdykning
 
-```Arduino
-#include <SD.h>
+När du använder "exists()" funktionen för att kontrollera om en mapp existerar, behöver du inkludera "/"-tecknet i början av mappens namn. Detta beror på att det är den fullständiga sökvägen som funktionen kontrollerar, inte enbart mappens namn.
 
-void setup() {
-  if (SD.isDirectory("Data")) {
-    Serial.println("Filen Data är en mapp.");
-  } else {
-    Serial.println("Filen Data är inte en mapp.");
-  }
-}
+En annan viktig aspekt att tänka på är att "exists()" funktionen bara kontrollerar om en mapp existerar och inte om den är tillgänglig för skrivning. Om du behöver kontrollera det senare, kan du använda "open()" funktionen som också ingår i File-klassen.
 
-void loop () {
+## Se även
 
-}
-```
+För mer information om File-klassen och dess olika funktioner, rekommenderar vi att du tittar på Arduino officiella referensguide: [https://www.arduino.cc/reference/en/](https://www.arduino.cc/reference/en/)
 
-I detta exempel kommer "Filen Data är en mapp." att skrivas ut eftersom vi använder `SD.isDirectory()`-funktionen för att kontrollera en mapp.
-
-## Djupdyka
-När du använder `SD.exists()`-funktionen för att kontrollera en mapp, så kommer funktionen att söka igenom både filer och mappar. Detta innebär att om du till exempel har en fil som heter "Data" på ditt SD-kort, så kommer `SD.exists("Data")` att returnera `true` även om det inte är en mapp.
-
-Det är också viktigt att komma ihåg att SD-kortets filsystem är FAT16 eller FAT32, vilket betyder att mappnamn är begränsade till åtta tecken plus en trebokstavlig filändelse. Detta kan leda till problem om du har flera mappar med samma första åtta tecken.
-
-## Se också
-- [SD Library](https://www.arduino.cc/en/reference/SD)
-- [TutorialsPoint - Arduino SD Library](https://www.tutorialspoint.com/arduino/arduino_sd_card.htm)
-- [How to Use an SD Card with Arduino](https://create.arduino.cc/projecthub/Arduino_Genuino/how-to-use-an-sd-card-with-an-arduino-e0a901)
+Om du vill lära dig mer om hur du använder SPIFFS på Arduino, kan du hitta mer resurser och guider här: [https://www.arduino.cc/en/Reference/FS#installation](https://www.arduino.cc/en/Reference/FS#installation)

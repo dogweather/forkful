@@ -1,46 +1,57 @@
 ---
-title:                "Go: String in Großbuchstaben umwandeln"
+title:                "Go: Eine Zeichenkette großschreiben"
+simple_title:         "Eine Zeichenkette großschreiben"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+In der Programmierung gibt es oft die Notwendigkeit, Strings großzuschreiben. Dies kann zum Beispiel bei der Benutzereingabe oder beim Formatieren von Texten notwendig sein. In diesem Blog-Beitrag werden wir uns ansehen, wie man Strings in Go großschreibt und warum es wichtig sein kann.
 
-Warum sollte man sich in Go mit dem Großschreiben von Zeichenketten beschäftigen? Nun, diese Funktion ist oft in der Softwareentwicklung erforderlich, beispielsweise beim Validieren von Benutzereingaben oder beim Erstellen von Datenbankabfragen.
-
-## Wie man es macht
-
-Um eine Zeichenkette in Go zu versalzen, gibt es mehrere Möglichkeiten. Eine einfache Möglichkeit ist die Verwendung der `strings` Bibliothek und der `ToUpper()` Funktion, wie im folgenden Beispiel gezeigt:
+## Wie geht das
+In Go gibt es eine eingebaute Funktion namens "Capital" , die uns dabei hilft, Strings zu großzuschreiben. Sie akzeptiert einen String als Parameter und gibt den großgeschriebenen String zurück. Hier ist ein Beispielcode, der dies zeigt:
 
 ```Go
-import "strings"
+package main
 
-fmt.Println(strings.ToUpper("hallo dort")) // Ausgabe: HALLO DORT
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	message := "hallo welt!"
+	fmt.Println(strings.Title(message))
+}
 ```
 
-Eine weitere Möglichkeit ist die Verwendung von Regex-Ausdrücken mit Hilfe der `regexp` Bibliothek:
+Die Ausgabe dieses Codes wird "Hallo Welt!" sein. Wie Sie sehen können, wird die Funktion Title() von der Standardbibliothek "strings" aufgerufen.
+
+## Tiefentauchen
+Man kann auch einen eigenen Algorithmus schreiben, um Strings in Go großzuschreiben. Hier ist ein Beispiel, das Buchstaben für Buchstaben durchläuft und sie in Großbuchstaben umwandelt:
 
 ```Go
-import "regexp"
+func capitalize(str string) string {
+	var upperCaseStr string
+	for _, ch := range str {
+		upperCaseCh := strings.ToUpper(string(ch))
+		upperCaseStr += upperCaseCh
+	}
+	return upperCaseStr
+}
 
-// Muster, um nur die ersten beiden Buchstaben einer Zeichenkette zu großschreiben
-pattern := regexp.MustCompile(`^([a-z]{2})`)
-fmt.Println(pattern.ReplaceAllStringFunc("hallo dort", strings.ToUpper)) // Ausgabe: HALlo dort
+func main() {
+	message := "hallo welt!"
+	fmt.Println(capitalize(message))
+}
 ```
-
-Wie man sehen kann, gibt es verschiedene Wege, um eine Zeichenkette in Go zu versalzen. Die Wahl hängt davon ab, in welchem Kontext und welcher Komplexität die Funktion verwendet werden soll.
-
-## Tiefen-Tauchgang
-
-Wenn es um das Versalzen von Zeichenketten in Go geht, ist es wichtig zu wissen, dass Go standardmäßig UTF-8 verwendet. Das bedeutet, dass Zeichenketten auch Unicode-Zeichen enthalten können, die gegebenenfalls beim Versalzen berücksichtigt werden müssen.
-
-Eine andere wichtige Sache ist die Leistung. Wenn es in einem Programm erforderlich ist, viele Zeichenketten zu versalzen, kann es sinnvoll sein, einen schnelleren Ansatz zu wählen, z.B. durch Direktzugriff auf die Bytes der Zeichenkette anstatt auf String-Funktionen zurückzugreifen.
+Die Ausgabe dieses Codes wird wiederum "HALLO WELT!" sein. Beachten Sie, dass diese Methode nicht alle Sprachzeichen korrekt großschreibt und daher nicht universell anwendbar ist.
 
 ## Siehe auch
-
-- [Offizielle Dokumentation zu `strings` in Go](https://pkg.go.dev/strings)
-- [Offizielle Dokumentation zu `regexp` in Go](https://pkg.go.dev/regexp)
-- [Tutorial über Unicode in Go](https://www.calhoun.io/unicode-tutorial-in-go/)
+- [Go String Dokumentation](https://golang.org/pkg/strings/#Title)
+- [Converting string to uppercase in Go](https://golangdocs.com/convert-string-to-uppercase-in-golang)
+- [8 Neat Tricks with Go Strings](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)

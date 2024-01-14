@@ -1,48 +1,65 @@
 ---
-title:                "C++: Joustenavien merkkijonojen yhdistäminen"
+title:                "C++: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi yhdistää merkkijonoja? 
 
-Stringien yhdistäminen on tärkeä osa ohjelmointia, sillä se mahdollistaa eri palasien yhdistämisen yhdeksi kokonaisuudeksi. Tämä on erityisen hyödyllistä, kun halutaan luoda dynaamisia viestejä tai käsitellä muuttuvia tietoja.
+Merkkijonot ovat tärkeitä tietorakenteita ohjelmointikielenä riippumatta. Ne koostuvat peräkkäisistä merkeistä, kuten kirjaimista, numeroista ja erikoismerkeistä, jotka muodostavat sanoja ja lauseita. Merkkijonojen yhdistäminen on tärkeä taito, jota tarvitaan usein ohjelmoinnissa, sillä se mahdollistaa monipuoliset ja dynaamiset tietorakenteet. Se on myös tehokas ja helppo tapa luoda uusia merkkijonoja tarvittaessa.
 
-## Kuinka
+## Miten yhdistää merkkijonoja? 
 
-Stringien yhdistäminen onnistuu C++ -ohjelmointikielellä käyttämällä + operaattoria. Esimerkiksi:
-
-```C++
-std::string nimi = "Matti";
-std:string tervehdys = "Hei " + nimi;
-std::cout << tervehdys; // tulostaa "Hei Matti"
-```
-
-Tässä esimerkissä ensimmäisellä rivillä luodaan muuttuja nimelle ja annetaan sille arvoksi "Matti". Toisella rivillä luodaan muuttuja tervehdykselle ja yhdistetään siihen edellisellä rivillä luotu nimi käyttäen + operaattoria. Lopuksi tulostetaan tervehdys STDIN-rajapinnan avulla.
-
-Toinen tapa yhdistää stringejä on käyttää std::stringstream -luokkaa ja sen append() -funktiota. Esimerkiksi:
+Merkkijonojen yhdistäminen voidaan tehdä monella eri tavalla C++ -ohjelmointikielessä. Yksi tapa on käyttää operaattoria "+", joka yhdistää kaksi merkkijonoa toisiinsa. Toinen tapa on käyttää string-luokan append-funktiota, joka lisää uuden merkkijonon loppuun. Katso esimerkkikoodia ja tulosteita alla olevissa koodeissa.
 
 ```C++
-#include <sstream>
-// ...
-std::stringstream ss;
-ss << "Tilisi numero on " << 123456789;
-std::string lopputulos = ss.str();
-std::cout << lopputulos; // tulostaa "Tilisi numero on 123456789"
+// Käytetään "+" operaattoria yhdistämään merkkijonoja
+#include <iostream>
+using namespace std;
+
+int main() {
+  string s1 = "Hei";
+  string s2 = "maailma";
+  
+  string yhdistetty = s1 + " " + s2; 
+  
+  cout << yhdistetty << endl; // Tulostaa "Hei maailma"
+  
+  return 0;
+}
 ```
 
-Tässä esimerkissä luodaan ensin stringstream objekti ja sen jälkeen käytetään sen append() -funktiota lisäämään halutut stringit siihen. Lopuksi stringstreamin sisältö muunnetaan string-muotoon ja tulostetaan STDIN-rajapinnan avulla.
+```C++
+// Käytetään string-luokan append-funktiota
+#include <iostream>
+using namespace std;
 
-## Syvemmälle
+int main() {
+  string s1 = "Hei";
+  string s2 = "maailma";
+  
+  s1.append(" ");
+  s1.append(s2);
+  
+  cout << s1 << endl; // Tulostaa "Hei maailma"
+  
+  return 0;
+}
+```
 
-Stringien yhdistämisessä on hyvä huomioida muutamia asioita. Ensinnäkin, yhdistämiseen käytettävät stringit kannattaa tarkistaa ennen yhdistämistä, jotta vältyttäisiin mahdollisilta virheiltä. Lisäksi muista, että yhdistämisen jälkeen alkuperäiset stringit eivät muutu, vaan yhdistetty tulos tallennetaan uuteen muuttujaan.
+## Syvempi sukellus yhdistämiseen 
 
-Myös muistinhallinta on tärkeää, sillä liian suurten stringien yhdistäminen saattaa aiheuttaa ohjelman kaatumisen. Tästä syystä on tärkeää tarkistaa tarvittaessa stringien kapasiteetti ja tehdä tarvittaessa muistiallokointi ennen yhdistämistä.
+Merkkijonojen yhdistäminen voi olla tehokasta myös silloin, kun käsitellään suuria tietomääriä. Esimerkiksi, jos haluat tulostaa kaikki listalla olevat henkilöt yhtenä merkkijonona, voit käyttää yhdistämistä sen sijaan, että tulostaisit ne yksittäisinä merkkijonoina.
 
-## Katso myös
+Voit myös yhdistää merkkijonoja muiden tietotyyppien kanssa. Voit esimerkiksi muuntaa luvut merkkijonoiksi ja yhdistää ne toisiinsa. Merkkijonojen yhdistämistä voidaan myös tehdä dynaamisesti käyttäen silmukkaa, jossa lisätään jokainen merkkijono tietorakenteeseen ja lopuksi tulostetaan yhdistetty merkkijono.
 
-- C++ -kielen virallisilta sivuilta löytyy lisätietoa stringien käsittelystä: https://isocpp.org/wiki/faq/strings
-- Stringien yhdistämiseen liittyviä vinkkejä löytyy myös Stack Overflow -sivustolta: https://stackoverflow.com/questions/1760045/c-stdstring-concatenation
+## Katso myös 
+
+- [http://www.cplusplus.com/reference/string/string/append/](http://www.cplusplus.com/reference/string/string/append/)
+- [http://www.cplusplus.com/reference/string/operators/](http://www.cplusplus.com/reference/string/operators/)
+- [https://www.tutorialspoint.com/cplusplus/cpp_strings.htm](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)

@@ -1,42 +1,38 @@
 ---
-title:                "Java: Utskrift av feilsøkingsutdata"
+title:                "Java: Utskrift av feilsøkingsmeldinger"
+simple_title:         "Utskrift av feilsøkingsmeldinger"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor?
+##Hvorfor
+Java-programmering innebærer vanligvis å løse komplekse problemer og feilsøke koden din er en viktig del av prosessen. Å trykke debug-utgang er en effektiv måte å identifisere feil og forstå hvordan koden din kjører.
 
-Før du begynner å skrive kode, tenk på hvorfor du ønsker å skrive den. Hvorfor skulle du bry deg om å inkludere utskrift av feil i koden din? Det kan virke unødvendig, men det er faktisk en viktig del av utviklingsprosessen. Ved å inkludere utskrift av feil, kan du enkelt diagnostisere og løse problemer i koden din.
+##Slik gjør du det
+Debug-utgang kan enkelt oppnås ved å bruke Java's "System.out.println()" -funksjon. La oss si at vi har en enkel variabel definert som "int num = 5;" og vi ønsker å skrive ut verdien av variabelen vår. Dette kan gjøres ved å skrive "System.out.println(num);" og når vi kjører koden, vil outputet vårt være "5" i konsollen.
 
-## Slik gjør du det
-
-Det er enkelt å inkludere utskrift av feil i Java-koden din. Alt du trenger å gjøre er å bruke metoden `System.out.println()` for å skrive ut en beskjed til konsollen. La oss se på et eksempel:
+En annen nyttig funksjon er "System.out.printf()", som lar deg formatere utdataen i konsollen din. For eksempel kan du skrive "System.out.printf("Variabelen vår er %d", num);" og utdataen vil være "Variabelen vår er 5" i stedet for bare tallet 5.
 
 ```Java
-int x = 5;
-int y = 0;
-int result = x / y;
-System.out.println("Resultat: " + result);
+int num = 5;
+
+//Skriver ut verdien av variabelen
+System.out.println(num);
+
+//Formatterer utdatoen med printf
+System.out.printf("Variabelen vår er %d", num);
 ```
 
-I dette tilfellet vil det oppstå en feil siden vi prøver å dele med 0. Ved å inkludere utskrift av `result`-variabelen, kan vi se at feilene kommer fra der og enkelt rette dem.
+##Dypdykk
+Å trykke utdebug-utgang er spesielt nyttig når man ønsker å sjekke verdien av variabler og forstå hvordan koden din kjører gjennom ulike deler av programmet. Det er også nyttig når man ønsker å finne og fikse feil i koden.
 
-## Dypdykk
+En annen måte å bruke utdebug-utgang på er å legge til egendefinerte meldinger for å forstå hva som skjer i koden din. For eksempel kan du skrive "System.out.println("Øker variabelen vår med 1.");" for å vite når og hvor variabelen din øker med 1.
 
-Når det gjelder utskrift av feil, er det forskjellige metoder du kan bruke for å få mer spesifikk informasjon. På denne måten kan du finne ut mer om hvor og når feilen skjer. Her er noen nyttige metoder:
-
-- `System.out.println()` - for å skrive ut generell informasjon
-- `System.err.println()` - for å skrive ut feilmeldinger
-- `System.out.printf()` - for å printe formatering
-- `System.out.format()` - for å printe formatering
-
-Ved bruk av disse metodene og å inkludere variabler i utskriften din, kan du få en dypere forståelse av feilene i koden din.
-
-## Se også
-
-- [How to Use Debugging Techniques in Java](https://www.informit.com/articles/article.aspx?p=1946058)
-- [Debugging in Java](https://www.baeldung.com/java-debugging)
-- [Debug Your Java Code With Eclipse](https://www.codejava.net/ides/eclipse/how-to-debug-java-code-in-eclipse)
+##Se også
+- [Java's offisielle dokumentasjon om debugging](https://docs.oracle.com/javase/7/docs/technotes/guides/jpda/)
+- [10 debugging tips for Java-utviklere](https://www.javacodegeeks.com/2017/09/10-debugging-tips-java-developers.html)
+- [Feilsøking i Java - Feilsøking for nybegynnere](https://stackify.com/guide-java-debugging-tips/)

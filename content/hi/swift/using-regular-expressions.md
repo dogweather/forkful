@@ -1,37 +1,40 @@
 ---
-title:                "Swift: विन्यस्त अभिव्यंजनों का प्रयोग करना"
+title:                "Swift: नियमित अभिव्यक्तियों का उपयोग"
+simple_title:         "नियमित अभिव्यक्तियों का उपयोग"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+**## क्यों**
 
-आज के डिजिटल दुनिया में, हर प्रोग्रामर को भी कुछ न भी करे, उन्हें खुद को रेगुलर एक्सप्रेशन्स का सामना जरूर करना पड़ता है। इससे कोडिंग प्रक्रिया आसान होने के साथ-साथ उनके प्रोग्राम्स का परफॉर्मेंस भी बढ़ जाता है।
+रेगुलर एक्सप्रेशन का प्रयोग Swift में किसी भी पाठ या डेटा का संशोधन करने के लिए किया जाता है। यह एक शक्तिशाली, सुजाव दिया गया उपकरण है जो लंबित पाठ और शब्दों को खोजने और संशोधित करने में मदद करता है।
 
-## कैसे
+**## कैसे करें**
+
+रेगुलर एक्सप्रेशन को Swift में उपयोग करने के लिए, हम `NSRegularExpression` और `NSPredicate` क्लास का उपयोग कर सकते हैं। नीचे दिए गए उदाहरण में, हम एक पाठ से सटीक टाइमस्टाम्प को खोजने के लिए एक रेगुलर एक्सप्रेशन का उपयोग करते हैं। फिर, हम इसे एक स्ट्रिंग में परिवर्तित करते हैं और उसका उपयोग करके उपयुक्त स्क्रीन के फार्मेट में सटीक तारीख को प्रदर्शित करते हैं।
 
 ```Swift
-let regex = try! NSRegularExpression(pattern: "a|e|i|o|u")
-let input = "Hello, Swift!"
-let matches = regex.matches(in: input, range: NSRange(input.startIndex..., in: input))
-for match in matches {
-    let matchRange = match.range
-    if let range = Range(matchRange, in: input) {
-        print(input[range])
-    }
-}
+let regex = try! NSRegularExpression(pattern: "\\d{10}")
+let string = "Created at 1565586482"
+let timestamp = Int(regex.stringByReplacingMatches(in: string, options: [], range: NSMakeRange(0, string.count), withTemplate: ""))
+let time = Date(timeIntervalSince1970: TimeInterval(timestamp!))
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "dd MMM yyyy"
+let formattedDate = dateFormatter.string(from: time)
+print(formattedDate)
+
+// Output: 12 Aug 2019
 ```
 
-यह कोड हमें "Hello, Swift!" रास्ता में से गए वर्णों को दिखाएगा। हम चाहें तो उनको अन्य वर्णों से भी बदल सकते हैं।
+**## गहराई में जाएं**
 
-## गहराई से जानकारी
+इस उदाहरण में, हमने एक रेगुलर एक्सप्रेशन का उपयोग करके बहुत ही उपयोगी तारीख कार्यों के विषय में सीखा है। रेगुलर एक्सप्रेशन सीखना थोड़ा मुश्किल हो सकता है, लेकिन यह लायक है। आप इसके माध्यम से एक बार ज्ञात करने के बाद अधिक से अधिक समय बचा सकते हैं और उपयोगी कार्यों को संपादित और स्थायी बना सकते हैं।
 
-रेगुलर एक्सप्रेशन्स एक पावरफुल और विस्तृत उपकरण हो सकते हैं। यदि आपको कोई भी डिजाइन डेटो या पैटर्न ढूंढना हो तो इससे सहायता ले सकते हैं। इसके अलावा, आप सीख सकते हैं कि किस तरह से अलग-अलग मेटाचिंग और ग्रूपिंग विकल्प काम करते हैं। आप स्ट्रिंग में परिवर्तन करने के लिए भी इसका उपयोग कर सकते हैं।
+**## देखें भी**
 
-## देखें भी
-
-- [NSRegularExpression कक्षा डॉक्यूमेंटेशन](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Swift कोर्स - रेगुलर एक्सप्रेशन्स से काम करना सिखे](https://www.udemy.com/course/swift-regular-expressions/)
+- [Swift Regular Expressions Tutorial](https://www.raywenderlich.com/3016-regular-expressions-tutorial-getting-started)
+- [NSRegularExpression Documentation

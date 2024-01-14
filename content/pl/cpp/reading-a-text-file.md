@@ -1,69 +1,94 @@
 ---
 title:                "C++: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego czytanie pliku tekstowego jest ważne
+## Dlaczego
 
-Czytanie pliku tekstowego może być istotnym elementem w programowaniu w języku C++. Pliki tekstowe są szeroko wykorzystywane w aplikacjach do przechowywania danych, dlatego ważne jest umiejętne czytanie i przetwarzanie takiego typu plików. W tym artykule dowiesz się, dlaczego warto się nauczyć czytać pliki tekstowe w C++ oraz jak to zrobić.
+Czy zdarzyło Ci się kiedyś chcieć przeczytać dane z pliku tekstowego w swoim programie w C++, ale nie wiedziałeś, jak to zrobić? Lub czy potrzebowałeś informacji z pliku tekstowego, ale nie wiesz jak to zaimplementować? W tym artykule dowiesz się, jak w prosty sposób odczytać dane z pliku tekstowego w C++.
 
-## Jak czytać plik tekstowy w C++
+## Jak to zrobić
 
-Aby móc czytać plik tekstowy w C++, musimy najpierw otworzyć go przy użyciu obiektu typu `ifstream`. Dzięki temu skorzystamy z funkcjonalności klasy `ifstream`, która pozwala na odczytywanie danych z pliku. Następnie konieczne jest sprawdzenie, czy plik został poprawnie otwarty, co możemy zrobić korzystając z metody `is_open()`. Jeśli plik został otwarty, możemy przystąpić do czytania zawartości. Poniżej znajduje się przykład kodu w języku C++, który pokazuje jak to zrobić:
-
+W C++ istnieje kilka sposobów na odczytanie danych z pliku tekstowego. Jedną z najprostszych i najpopularniejszych metod jest użycie obiektu typu `ifstream` z biblioteki `fstream`. Aby tego dokonać, musimy najpierw utworzyć obiekt `ifstream` i otworzyć nasz plik tekstowy przy użyciu metody `open()`. Następnie możemy wykorzystać pętlę `while` do odczytania wszystkich linii z pliku. 
 ```C++
 #include <iostream>
 #include <fstream>
+using namespace std;
 
-int main()
-{
-    // otwarcie pliku przy użyciu obiektu ifstream
-    std::ifstream input;
-    input.open("plik.txt");
-
-    // sprawdzenie czy plik został otwarty
-    if (input.is_open())
-    {
-        // deklaracja zmiennej, do której będziemy zapisywać dane z pliku
-        std::string line;
-
-        // czytanie pliku linia po linii, aż do końca
-        while (std::getline(input, line))
-        {
-            // wyświetlanie zawartości linii na ekranie
-            std::cout << line << std::endl;
-        }
-
-        // zamknięcie pliku po zakończeniu czytania
-        input.close();
+int main() {
+    // tworzymy obiekt ifstream
+    ifstream plik;
+    // otwieramy plik tekstowy
+    plik.open("tekst.txt");
+    // sprawdzamy, czy plik został otwarty poprawnie
+    if(!plik) {
+        cerr << "Nie udało się otworzyć pliku!" << endl;
+        return 1;
     }
-    else // jeśli plik nie został otwarty poprawnie
-    {
-        std::cout << "Nie udało się otworzyć pliku." << std::endl;
+    // zmienna do przechowywania odczytanych linii
+    string linia;
+    // odczytujemy dane za pomocą pętli while
+    while(getline(plik, linia)) { 
+        cout << linia << endl;
     }
-
+    // zamykamy plik po zakończeniu odczytywania
+    plik.close();
+    
     return 0;
 }
 ```
+Przykładowy plik tekstowy `tekst.txt`:
+```
+To jest pierwsza linia tekstu.
+To jest druga linia tekstu.
+A to jest trzecia i ostatnia linia tekstu.
+```
+Przykładowy wynik działania programu:
+```
+To jest pierwsza linia tekstu.
+To jest druga linia tekstu.
+A to jest trzecia i ostatnia linia tekstu.
+```
+Żeby jeszcze bardziej ułatwić sobie pracę, możemy wykorzystać także funkcję `get()` do odczytania poszczególnych znaków z pliku. W tym przypadku, musimy wykorzystać pętlę `while` i warunek `eof()` do sprawdzenia, czy przeczytaliśmy już cały plik.
+```C++
+#include <iostream>
+#include <fstream>
+using namespace std;
 
-Wynikiem działania tego programu będzie wyświetlenie zawartości pliku tekstowego na ekranie. Warto zauważyć, że czytanie pliku odbywa się linia po linii, dzięki użyciu funkcji `getline()`.
+int main() {
+    // tworzymy obiekt ifstream
+    ifstream plik;
+    // otwieramy plik tekstowy
+    plik.open("tekst.txt");
+    // sprawdzamy, czy plik został otwarty poprawnie
+    if(!plik) {
+        cerr << "Nie udało się otworzyć pliku!" << endl;
+        return 1;
+    }
+    // zmienna do przechowywania odczytanego znaku
+    char znak;
+    // odczytujemy znaki za pomocą pętli while
+    while(plik.get(znak) && !plik.eof()) { 
+        cout << znak;
+    }
+    // zamykamy plik po zakończeniu odczytywania
+    plik.close();
+    return 0;
+}
+```
+Przykładowy wynik działania programu:
+```
+To jest pierwsza linia tekstu.
+To jest druga linia tekstu.
+A to jest trzecia i ostatnia linia tekstu.
+```
 
-## Głębszy wgląd w czytanie pliku tekstowego
+## Deep Dive
 
-Podczas czytania pliku tekstowego w C++, możemy skorzystać z różnych funkcji i metod do przetwarzania danych. Między innymi możemy wykorzystać funkcje do konwersji danych na inne typy, np. `stoi()` do zamiany tekstu na liczbę całkowitą. Warto również pamiętać o zarządzaniu pamięcią i zamykaniu pliku po zakończeniu czytania, aby uniknąć potencjalnych problemów.
-
-W przypadku gdy plik zawiera dane w formacie innym niż tekstowy, możliwe jest wykorzystanie innych klas, takich jak `ifstream` czy `ofstream`, aby czytać i zapisywać dane binarne. Jest to jednak bardziej zaawansowany temat, który wymaga dodatkowej wiedzy i doświadczenia.
-
-## Zobacz także
-
-Jeśli chcesz pogłębić swoją wiedzę na temat czytania pliku tekstowego w C++, polecamy zapoznanie się z poniższymi źródłami:
-
-- [Dokumentacja języka C++](https://en.cppreference.com/w/cpp/io/basic_ifstream)
-- [Samouczek C++](https://www.learncpp.com/cpp-tutorial/186-basic-file-io/)
-- [Przykładowy kod na Githubie](https://github.com/subhamsoni94/File-handling-using-Cpp)
-
-Dziękujemy za przeczytanie naszego arty
+Oprócz metod `getline()` i `get()`, istnieje jeszcze wiele innych sposobów na odczytanie danych z pliku tekstowego w C++. Możemy także wykorzystać pętle `for`, łączenie znaków do stringa lub funkcję `read()` z biblioteki `istream`. Dodatkowo, istnieją również różne flagi, które można

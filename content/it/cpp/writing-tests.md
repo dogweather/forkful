@@ -1,42 +1,59 @@
 ---
 title:                "C++: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-Ciao a tutti, benvenuti al nostro blog sulle programmazioni in C++! Oggi parleremo di una pratica molto importante nella programmazione: la scrittura dei test.
-
 ## Perché
 
-Forse vi starete chiedendo perché sia così importante scrivere i test per il nostro codice. La risposta è semplice: i test assicurano che il nostro codice funzioni correttamente. Inoltre, ci aiutano a identificare eventuali bug o errori nel codice in modo tempestivo, evitando di dover fare debugging o di rilasciare un prodotto difettoso.
+Scrivere test può sembrare un lavoro noioso o ridondante per molti programmatori, ma è un passaggio fondamentale per garantire la qualità del codice. Con i test, si può facilmente individuare e correggere eventuali errori e bug, evitando così problemi futuri e risparmiando tempo e risorse.
 
-## Come procedere
+## Come Fare
 
-Per iniziare a scrivere i test, dobbiamo prima importare la libreria "gtest" nel nostro progetto. Successivamente, creeremo una classe di test che conterrà una serie di asserzioni. In questo esempio, testeremo una funzione che prende in input due numeri e verifica se il primo è maggiore del secondo.
+In questo articolo, vedremo come scrivere test in C++ utilizzando l'approccio di TDD (Test-driven development), in cui si scrivono i test prima di scrivere il codice effettivo. Iniziamo con un semplice esempio di una funzione che calcola la somma di due numeri interi:
 
 ```C++
-#include <gtest/gtest.h>
-
-TEST(MyTest, GreaterThan) {
-    int a = 5;
-    int b = 3;
-    EXPECT_GT(a, b); // asserzione che verifica se a è maggiore di b
+// Funzione che calcola la somma di due numeri interi
+int somma(int a, int b) {
+    return a + b;
 }
 ```
 
-Una volta scritti i test, possiamo eseguirli ed ottenere l'output dei risultati. Nel nostro esempio, dovremmo ottenere un risultato positivo poiché 5 è effettivamente maggiore di 3.
+Per testare questa funzione, creeremo un file "test.cpp" e inizieremo scrivendo il nostro primo test:
+
+```C++
+// Includiamo la libreria di test
+#include <cassert>
+// Include la nostra funzione da testare
+#include "funzioni.h"
+
+// Testiamo la funzione somma con due numeri positivi
+void testSommaPositivi() {
+    assert(somma(3, 5) == 8);
+}
+
+int main() {
+    // Chiamiamo la funzione di test
+    testSommaPositivi();
+    return 0;
+}
+
+```
+
+In questo esempio, abbiamo utilizzato la libreria di test "cassert" per verificare che il risultato della funzione sia uguale a 8 quando sommiamo 3 e 5. In questo modo, possiamo avere la sicurezza che la nostra funzione funzioni correttamente.
 
 ## Approfondimento
 
-Scrivere i test è importante non solo per garantire il corretto funzionamento del nostro codice, ma anche per rendere il processo di debugging più semplice e veloce. Inoltre, i test possono essere utilizzati durante il processo di sviluppo per verificare ogni nuova aggiunta o modifica di codice.
+Scrivere test significa anche adottare un design del codice migliore, perché si è costretti a pensare anticipatamente ai possibili input e output della nostra funzione. Inoltre, è un'ottima pratica per evitare il "codice spaghetti" e rendere il codice più facile da mantenere e modificare.
 
-Assicurarsi di scrivere test accurati e ben strutturati richiede tempo e un'attenta pianificazione. Tuttavia, il tempo e lo sforzo investiti si ripagano nel lungo periodo, quando il nostro codice risulterà più stabile e affidabile.
+Inoltre, esistono diversi tipi di test che possono essere scritti, come i test di unità che testano singole porzioni di codice o i test di integrazione che verificano il funzionamento delle diverse componenti del sistema. Non esistono regole fisse su come e quanto testare, ma è importante trovare un equilibrio tra la quantità di test scritti e il tempo necessario per scriverli.
 
-## Vedi anche
-
-- [Guida di Google C++ Test](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)
-- [Tutorial di C++ Testing](https://www.tutorialspoint.com/cplusplus/cpp_testing.htm)
-- [Classi di test in C++](https://en.wikibooks.org/wiki/C%2B%2B_Programming/Unit_testing)
+## Vedi Anche
+- [Introduzione a TDD in C++](https://www.freecodecamp.org/news/tdd-for-beginners-getting-started-with-test-driven-development-in-c/)
+- [Tutorial su Come Scrivere Test in C++](https://www.cosmocode.de/en/blog/solving-real-world-problems-with-tdd-in-c/)
+- [Manuale di Riferimento per la Libreria di Test "cassert"](https://www.cplusplus.com/reference/cassert/)

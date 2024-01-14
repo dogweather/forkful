@@ -1,7 +1,9 @@
 ---
 title:                "Python: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,39 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu spotykamy się z koniecznością zmiany tekstu na małe litery. Może to być potrzebne do porównania ciągów znaków, ujednolicenia danych lub wygodniejszego wyświetlania tekstu w aplikacji. W tym artykule dowiecie się jak w prosty sposób przekonwertować string na małe litery za pomocą języka Python.
+Konwertowanie ciągu znaków na małe litery jest częstym wyzwaniem w programowaniu. Odpowiednie formatowanie tekstu jest niezbędne w celu poprawnego wyświetlania danych i ułatwienia użytkownikowi korzystania z aplikacji. W tym artykule dowiesz się dlaczego warto przeprowadzić taką konwersję oraz jak to zrobić w języku Python.
 
 ## Jak to zrobić
 
-Przekonwertowanie tekstu na małe litery w języku Python jest bardzo prostym procesem. Wystarczy użyć metody `lower()` na obiekcie typu string, która zwróci nowy string złożony z małych liter.
+Istnieją różne metody konwertowania ciągu znaków na małe litery w Pythonie. Jedną z nich jest użycie wbudowanej funkcji `lower()`, która zwraca kopię ciągu znaków ze wszystkimi literami zapisanymi małymi literami. Przykładowe użycie tej funkcji wyglądałoby następująco:
 
-```.py
-string = "PROGRAMOWANIE W PYTHONIE"
-print(string.lower())
-# Output: programowanie w pythonie
+```Python
+text = "PROGRAMOWANIE W PYTHONIE"
+print(text.lower())
+```
+Output: 
+
+`programowanie w pythonie`
+
+Można również skorzystać z metody `casefold()` która jest jeszcze bardziej uniwersalna, ponieważ konwertuje wszystkie znaki o nieznanej wielkości na małe. Przykładowe użycie tej metody wyglądałoby w ten sposób:
+
+```Python
+text = "KOTŁY I FASOLESZ"
+print(text.casefold())
 ```
 
-Możemy także użyć tej metody na zmiennych typu string, co pozwala na dowolne manipulacje z tekstem w programie. Przetestujmy to na przykładzie poniższego kodu:
+Output: 
 
-```.py
-tekst1 = "HeLLo WoRLD"
-tekst2 = "H3LL0 W0RLD"
-print(tekst1.lower())
-print(tekst2.lower())
-# Output: hello world
-#         h3ll0 w0rld
-```
+`kotły i fasolesz`
 
-Jak widać, metoda `lower()` automatycznie konwertuje wszystkie znaki na małe litery, niezależnie od tego czy są one literami czy cyframi.
+## Głębsze zagadnienia
 
-## Deep Dive
+Każda z tych metod może być użyta w różnych przypadkach. Metoda `lower()` jest często wybierana do konwersji tekstu, który ma być wyświetlony na ekranie dla użytkownika. Z kolei `casefold()` jest zalecana do porównywania tekstów w celu znalezienia różnic bez względu na wielkość liter.
 
-Funkcja `lower()` działa w oparciu o tzw. tabela ASCII, która określa wartości numeryczne dla poszczególnych znaków. Każda litera posiada swoją unikalną wartość, a w przypadku liter z alfabetów nielatynoamerykańskich również mogą występować różnice w kodowaniu.
-
-Innym ważnym aspektem jest fakt, że metoda `lower()` nie zmienia oryginalnego stringa, a jedynie zwraca nowy z konwersją. Dlatego też ważne jest, aby przypisać nowy string do zmiennej, aby móc dalej pracować na przekonwertowanym tekście.
+Istnieją również inne metody konwertowania ciągu znaków na małe litery, takie jak `swapcase()`, która zamienia wszystkie litery w ciągu odwrotnym nizielobojowe lub `capitalize()`, która zmienia pierwszą literę na dużą. Wybór odpowiedniej metody zależy od konkretnego przypadku i potrzeb użytkownika.
 
 ## Zobacz także
 
-- [Tutorial: Ściągawka Python](https://www.python.org/about/gettingstarted/)
-- [Dokumentacja języka Python](https://docs.python.org/3/)
-- [Kurs programowania w Pythonie na Codecademy](https://www.codecademy.com/learn/learn-python)
+Jeśli chcesz dowiedzieć się więcej na temat operacji na ciągach znaków w języku Python, zerknij na poniższe materiały:
+
+- Samouczek Python: [Operacje na ciągach znaków](https://www.python.org/dev/peps/pep-0008/)
+- Wbudowane funkcje tekstowe w Pythonie: [Dokumentacja Python](https://docs.python.org/3/library/string.html)
+- Inne artykuły na naszym blogu: [Python.pl](https://python.pl/blog/)

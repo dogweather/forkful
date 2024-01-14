@@ -1,48 +1,70 @@
 ---
-title:                "C: Uniendo cadenas de texto"
+title:                "C: Concatenando cadenas"
+simple_title:         "Concatenando cadenas"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-En programación, a menudo necesitamos combinar varias cadenas de texto juntas para formar una sola cadena más grande. Esto se conoce como concatenación de cadenas y es una habilidad esencial para cualquier programador en C. Al dominar la concatenación de cadenas, podrás crear mensajes personalizados, formularios dinámicos y mucho más.
+
+Concatenar cadenas de caracteres es una tarea común en la programación en C. Esta técnica se utiliza para unir dos o más cadenas en una sola, lo que resulta útil para crear mensajes de salida personalizados o para manipular datos de texto. En este artículo, aprenderemos cómo concatenar cadenas de caracteres en el lenguaje de programación C y profundizaremos en cómo funciona esta operación.
 
 ## Cómo hacerlo
-En C, podemos concatenar cadenas utilizando la función `strcat()`. Esta función toma dos cadenas como argumentos y une la segunda cadena al final de la primera. Aquí hay un ejemplo de cómo usarlo:
+
+La concatenación de cadenas de caracteres se realiza mediante el uso de la función `strcat()` en C. Esta función toma dos cadenas de caracteres como argumentos y une la segunda cadena al final de la primera, sobrescribiendo el `\0` que indica el final de la primera cadena. A continuación, se muestra un ejemplo de código que concatena dos cadenas y muestra el resultado:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char nombre[] = "Juan";
-    char apellido[] = "Perez";
-    char nombre_completo[50];
-    strcpy(nombre_completo, nombre); // Copiamos 'nombre' a 'nombre_completo'
-    strcat(nombre_completo, " "); // Añadimos un espacio en blanco
-    strcat(nombre_completo, apellido); // Concatenamos 'apellido'
-    printf("Tu nombre completo es: %s", nombre_completo); // Imprimimos la cadena resultante
-    return 0;
+  char str1[20] = "¡Hola, ";
+  char str2[] = "mundo!";
+  
+  strcat(str1, str2);
+  printf("%s", str1);
+  
+  return 0;
 }
-```
-**Output:**
-```
-Tu nombre completo es: Juan Perez
+
+// Output: ¡Hola, mundo!
 ```
 
-¡Fácil, verdad? También podemos usar la función `strncat()` para concatenar una cierta cantidad de caracteres de la segunda cadena. Consulta la [documentación oficial](http://www.cplusplus.com/reference/cstring/strcat/) para más detalles y opciones.
+Como se puede ver en el ejemplo, la función `strcat()` no solo une las cadenas, sino que también actualiza la cadena original para incluir el contenido de la segunda cadena. De esta manera, la cadena final incluye ambos textos.
+
+También podemos usar la función `strncat()` para concatenar una cantidad específica de caracteres de la segunda cadena a la primera. Esta función toma un tercer argumento que indica la cantidad de caracteres que desea unir. A continuación, se muestra un ejemplo de código que utiliza `strncat()` para unir solo los dos primeros caracteres de la segunda cadena a la primera cadena:
+
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char str1[20] = "¡Hola, ";
+  char str2[] = "mundo!";
+  
+  strncat(str1, str2, 2);
+  printf("%s", str1);
+  
+  return 0;
+}
+
+// Output: ¡Hola, mu
+```
 
 ## Profundizando
-Es importante tener en cuenta que a diferencia de otros lenguajes de programación, en C no existe una función integrada para concatenar cadenas. Por lo tanto, debemos utilizar funciones como `strcat()` y `strcpy()` para lograrlo. Además, es importante asegurarse de que la cadena resultante tenga suficiente espacio para contener ambas cadenas. Si no, pueden ocurrir errores inesperados.
 
-Otro aspecto importante es que las cadenas en C son en realidad arreglos de caracteres, por lo que la concatenación realmente implica la manipulación de estos arreglos. Esto significa que debes prestar atención a la dirección de memoria en la que estás concatenando y asegurarte de no sobrescribir otros datos importantes.
+Además de las funciones `strcat()` y `strncat()`, también es importante tener en cuenta la función `strcpy()`. Esta función se utiliza para copiar una cadena a otra. Al igual que `strcat()`, puede sobrescribir la cadena original, por lo que es importante tener en cuenta la longitud de la cadena de destino y prevenir errores de desbordamiento.
 
-Por último, pero no menos importante, es importante tener en cuenta el rendimiento al concatenar cadenas en C. Si necesitas hacer muchas concatenaciones en un programa, puede ser más eficiente usar una biblioteca de cadenas como `string.h` y sus funciones integradas como `sprintf()`.
+También es importante tener en cuenta que la función `strcat()` solo funciona con cadenas que terminan con el carácter nulo `\0`. Si no es así, puede provocar comportamientos no deseados y errores en el programa.
+
+Otra técnica común para concatenar cadenas es el uso del operador `+` con cadenas. Sin embargo, esto no es posible en C, ya que no es compatible con la sobrecarga de operadores. En su lugar, se debe utilizar la función `strcat()` para unir cadenas de caracteres.
 
 ## Ver también
-- [Documentación oficial de strcat()](http://www.cplusplus.com/reference/cstring/strcat/)
-- [Otras funciones de cadena en C](http://www.cplusplus.com/reference/cstring/)
-- [Cómo evitar errores comunes al concatenar cadenas en C](https://stackify.com/common-c-string-functions/)
+
+- [Documentación de la función `strcat()` en C](https://www.geeksforgeeks.org/strcat-function-in-c/)
+- [Ejemplos de concatenación de cadenas en C](https://www.tutorialspoint.com/c_standard_library/c_function_strcat.htm)
+- [Tutorial de la función `strncat()` en C](https://www.programiz.com/c-programming/library-function/string.h/strncat)

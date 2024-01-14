@@ -1,7 +1,9 @@
 ---
-title:                "C#: Att ta bort tecken som matchar ett mönster"
+title:                "C#: Radera tecken som matchar ett mönster"
+simple_title:         "Radera tecken som matchar ett mönster"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,30 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Ibland i vår kod behöver vi ta bort karaktärer som matchar ett specifikt mönster. Det kan vara för att rensa data eller för att manipulera strängar. Att kunna ta bort dessa karaktärer är en användbar färdighet för programmerare.
+Att ta bort tecken som matchar ett visst mönster är en vanlig åtgärd inom programmering. Det kan vara användbart för att rensa data eller för att manipulera strängar på ett specifikt sätt.
 
-## Hur man gör
+## Så här gör du
 
-Först måste vi definiera det mönster vi vill matcha med hjälp av ett reguljärt uttryck. Detta kan göras med hjälp av klassen `Regex` i .NET-ramverket. Sedan använder vi `Regex.Replace()` metoden för att ersätta alla matchande karaktärer med en tom sträng.
+För att ta bort tecken som matchar ett mönster i C# kan du använda metoden `Regex.Replace()`. Här är ett enkelt exempel på hur du kan använda den:
 
 ```C#
-string str = "Hej123Världen";
-string pattern = "[0-9]"; // ta bort alla siffror
-string result = Regex.Replace(str, pattern, ""); //resultatet blir "HejVärlden"
+string text = "Bananer är gula men blåbär är blå.";
+string mönster = "[blå|gul]a";
+string resultat = Regex.Replace(text, mönster, "");
+Console.WriteLine(resultat);
 ```
 
-För att ta bort specifika karaktärer kan vi använda `[ ]` för att ange vilka karaktärer som ska tas bort, till exempel `[aeiou]` för att ta bort vokaler eller `[,.]` för att ta bort kommatecken och punkter.
+I detta exempel använder vi ett reguljärt uttryck för att ta bort alla ord som slutar på "a" och har antingen "blå" eller "gul" i början. Output blir: "är men är".
 
-Vi kan också använda `^` för att ta bort alla karaktärer som inte matchar vårt mönster. Till exempel `[0-9^]` kommer att ta bort alla karaktärer utom siffror.
+Du kan också använda `Regex.Replace()` för att ta bort alla tecken som inte matchar ett visst mönster. Här är ett exempel på hur du kan göra det:
+
+```C#
+string text = "12345abcde";
+string mönster = "[^1-5]+";
+string resultat = Regex.Replace(text, mönster, "");
+Console.WriteLine(resultat);
+```
+
+I detta exempel tar vi bort alla tecken som inte är siffror mellan 1 och 5. Output blir: "12345".
 
 ## Djupdykning
 
-När vi använder reguljära uttryck för att ta bort karaktärer i C# är det viktigt att förstå hur det fungerar under huven. Reguljära uttryck används för att söka efter mönster i textsträngar och kan även användas för att utföra andra strängoperationer, som att ersätta, splitta eller extrahera delar av en sträng.
+För att förstå hur `Regex.Replace()` fungerar är det viktigt att förstå reguljära uttryck. Ett reguljärt uttryck (eller regex) är en sträng som beskriver ett mönster som vi vill matcha. Genom att kombinera tecken och speciella teckenkoder kan vi skapa komplexa mönster som hjälper oss att manipulera strängar.
 
-För att förstå mer om reguljära uttryck och dess syntax, rekommenderar vi att du läser Microsofts dokumentation om [regular expressions in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions).
+För att lära dig mer om reguljära uttryck och `Regex.Replace()`-metoden, kan du kolla in följande resurser:
+
+- [Regex Tutorial (på svenska)](https://codecademy.com/learn/learn-regex)
+- [C# Regex Klass (på svenska)](https://docs.microsoft.com/sv-se/dotnet/standard/base-types/regular-expression-language-quick-reference)
 
 ## Se även
 
-* [Microsofts dokumentation om regular expressions i C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
-* [Tutorial om reguljära uttryck i C#](https://www.c-sharpcorner.com/article/regular-expression-using-c-sharp/)
-* [Online verktyg för att testa reguljära uttryck](https://regexr.com/)
+- [C# String Manipulation (på svenska)](https://www.java.com/sv/download/faq/programming.shtml)
+- [Regex Cheat Sheet (på svenska)](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [RegExr - Online Regex Tester (på svenska)](https://regexr.com/)

@@ -1,40 +1,48 @@
 ---
 title:                "C#: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "C#"
-category:             "Getting Started"
+category:             "C#"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+##Warum
 
-Es gibt viele Gründe, warum man sich entscheidet, ein neues Programmierprojekt zu starten. Vielleicht möchtest du eine Idee in die Realität umsetzen, neue Fähigkeiten erlernen oder einfach nur Spaß haben. Unabhängig vom Grund, ein neues Projekt zu starten, gibt es einige wichtige Schritte zu beachten, um sicherzustellen, dass dein Projekt erfolgreich ist.
+Es gibt viele Gründe, ein neues Projekt zu starten. Vielleicht wollen Sie Ihre Programmierfähigkeiten verbessern oder einfach eine neue Herausforderung angehen. Egal aus welchem Grund, das Erstellen eines neuen Projekts kann sehr lohnend sein.
 
-## Wie man anfängt
+##Wie startet man ein neues Projekt mit C#?
 
-Der erste Schritt bei der Erstellung eines neuen C# Projekts besteht darin, eine leere Lösung in deiner bevorzugten Entwicklungsumgebung zu erstellen. In Visual Studio kannst du dies tun, indem du auf "Datei" klickst, dann auf "Neu" und schließlich auf "Projekt". Wähle "Leere Lösung" unter "Andere Projekttypen" aus und benenne sie. Nun musst du eine Klasse hinzufügen, um mit dem Codieren zu beginnen. Verwende dazu den folgenden Code-Block:
+Um ein neues Projekt mit C# zu starten, müssen Sie zunächst eine integrierte Entwicklungsumgebung (IDE) wie Visual Studio herunterladen. Sobald Sie die IDE installiert haben, können Sie ein neues Projekt erstellen und mit dem Codieren beginnen.
+
+Hier ist ein Beispiel für das Erstellen einer einfachen "Hallo Welt"-Anwendung:
 
 ```C#
-class Program
+using System;
+namespace HelloWorld
 {
-    static void Main(string[] args)
+    class Program
     {
-        //Hier kannst du deinen Code schreiben
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hallo Welt!");
+        }
     }
 }
 ```
 
-Dieser Code erstellt eine neue Klasse mit einer Main-Methode, die das Ausführungspunkt deines Programms ist. Jetzt kannst du deinen Code schreiben und ausführen, um zu sehen, wie dein Programm funktioniert.
+Wenn Sie dieses Programm ausführen, sollten Sie die Ausgabe "Hallo Welt!" sehen.
 
-## Tiefergehende Informationen
+##Tiefergehende Informationen über das Starten eines neuen Projekts
 
-Während es wichtig ist, dein Projekt mit einer leeren Lösung zu starten, gibt es weitere wichtige Aspekte zu beachten. Bevor du mit dem Codieren beginnst, solltest du überlegen, welche Ziele du mit deinem Projekt erreichen möchtest und welche Funktionalitäten es haben sollte. Eine sorgfältige Planung kann dir helfen, Fehler zu vermeiden und dein Projekt effizienter zu gestalten.
+Bevor Sie mit dem Codieren beginnen, ist es wichtig, eine klare Vorstellung davon zu haben, was Sie mit Ihrem neuen Projekt erreichen wollen. Definieren Sie die Ziele und Funktionen Ihres Projekts, um sicherzustellen, dass Sie auf dem richtigen Weg bleiben.
 
-Außerdem ist es wichtig, effektive Codierungspraktiken zu verwenden, wie beispielsweise das Verwenden von Kommentaren, um deinen Code leichter lesbar zu machen, und das Testen deines Codes, um sicherzustellen, dass es wie erwartet funktioniert.
+Eine weitere wichtige Überlegung ist die Struktur Ihres Projekts. Verwenden Sie möglicherweise Patterns oder Prinzipien wie MVC (Model-View-Controller) oder SOLID (Single-Responsibility-Principle, Open-Closed-Principle, Liskov-Substitution-Principle, Interface-Segregation-Principle, Dependency-Inversion-Principle), um eine gut organisierte und leicht wartbare Codebasis zu schaffen.
 
-## Siehe auch
+##Siehe auch
 
-- [Visual Studio herunterladen](https://visualstudio.microsoft.com/de/downloads/)
-- [C# Tutorials auf YouTube](https://www.youtube.com/playlist?list=PLAEznvCEjdL1wRT0H1Wo5_OgC4Zo25g-1)
-- [Microsoft C# Dokumentation](https://docs.microsoft.com/de-de/dotnet/csharp/)
+- Visual Studio herunterladen: https://visualstudio.microsoft.com/de/
+- Einführung in C#: https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/
+- Einführung in die Objektorientierte Programmierung mit C#: https://docs.microsoft.com/de-de/dotnet/csharp/tutorials/intro-to-csharp/

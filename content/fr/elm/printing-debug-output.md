@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Imprimer le débogage du code"
+title:                "Elm: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Elm"
-category:             "Testing and Debugging"
+category:             "Elm"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/printing-debug-output.md"
 ---
 
@@ -9,44 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'impression de données de débogage peut sembler fastidieuse et inutile au premier abord, mais c'est en réalité un outil précieux pour comprendre le fonctionnement de votre code. En imprimant des valeurs spécifiques à des moments précis de l'exécution, vous pouvez facilement repérer les erreurs et les problèmes potentiels dans votre programme.
+Lorsque vous programmez en Elm, il peut être extrêmement utile de pouvoir afficher des informations de débogage pour comprendre le comportement de votre code. Cela vous permet de déterminer les erreurs et de mieux comprendre les valeurs de vos variables.
 
 ## Comment faire
 
-Pour imprimer des données de débogage en Elm, vous pouvez utiliser la fonction `Debug.log`. Cette fonction prend deux arguments : une chaîne de texte pour décrire la valeur que vous voulez imprimer, et la valeur elle-même. Voici un exemple :
+Pour afficher des informations de débogage en Elm, il suffit d'utiliser la fonction `Debug.log` et de lui passer une chaîne de caractères ainsi que la valeur que vous souhaitez afficher. Par exemple :
 
 ```Elm
-monChiffre = 42
-Debug.log "Mon chiffre préféré :" monChiffre
--- Résultat dans la console : Mon chiffre préféré : 42
+monMessage = Debug.log "Voici mon message de débogage !" "Valeur à afficher"
 ```
-
-Vous pouvez également imprimer des valeurs plus complexes, comme des listes ou des enregistrements :
-
-```Elm
-maListe = [1, 2, 3]
-Debug.log "Ma liste de nombres :" maListe
--- Résultat dans la console : Ma liste de nombres : [1, 2, 3]
-
-monEnregistrement = { name = "Alice", age = 25 }
-Debug.log "Mon enregistrement :" monEnregistrement
--- Résultat dans la console : Mon enregistrement : { name = "Alice", age = 25 }
-```
+Cela affichera dans votre Console de débogage le message "Voici mon message de débogage ! : Valeur à afficher". Cela peut également être utile lorsque vous voulez suivre une variable tout au long de votre code et voir comment elle change.
 
 ## Plongée en profondeur
 
-Pour des données de débogage plus avancées, vous pouvez utiliser la fonction `Debug.toString`. Cette fonction prend simplement une valeur en entrée et renvoie sa représentation sous forme de chaîne de texte.
+La fonction `Debug.log` n'est disponible que lorsque vous compilez en mode de développement. Cela signifie qu'elle n'affectera pas votre code en production et ne sera pas visible par les utilisateurs finaux.
 
-Vous pouvez également utiliser la fonction `Debug.todo` pour créer un rappel pour vous-même de revenir et de traiter une partie de votre code plus tard. Par exemple :
-
-```Elm
-maListe = [1, 2, 3]
-maListeInverse = List.reverse maListe |> Debug.todo "Gérer les cas où la liste est vide"
-```
+Il est également important de noter que l'utilisation excessive de la fonction `Debug.log` peut ralentir votre code. Il est donc préférable de l'utiliser avec parcimonie et de la supprimer une fois le débogage terminé.
 
 ## Voir aussi
 
-Pour en savoir plus sur l'impression de données de débogage en Elm, consultez les ressources suivantes :
+Si vous voulez en savoir plus sur l'utilisation de la fonction `Debug.log` en Elm, vous pouvez consulter les liens suivants :
 
-- La documentation officielle d'Elm sur `Debug` : https://package.elm-lang.org/packages/elm/core/latest/Debug
-- Un article de blog sur l'impression de données de débogage en Elm : https://dennisreimann.de/articles/elm-debugging.html
+- Documentation officielle sur la fonction Debug.log
+- Article de blog sur les bonnes pratiques pour l'utilisation de la fonction Debug.log
+
+N'oubliez pas que l'affichage de messages de débogage peut grandement faciliter votre processus de développement et vous faire gagner du temps en résolvant les erreurs plus rapidement. Alors n'hésitez pas à utiliser cette fonctionnalité utile en Elm !

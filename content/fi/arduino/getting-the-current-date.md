@@ -1,70 +1,67 @@
 ---
-title:                "Arduino: Nykyisen päivämäärän saaminen"
+title:                "Arduino: Päivämäärän hakeminen"
+simple_title:         "Päivämäärän hakeminen"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi: Miksi haluaisit saada nykyisen päivämäärän Arduinossa?
 
-Arduino on monipuolinen ja suosittu ohjelmointialusta, joka tarjoaa mahdollisuuksia monenlaisiin projekteihin. Yksi tärkeä osa Arduino-ohjelmointia on päästä käsiksi nykyiseen päivämäärään ja kellonaikaan. Tässä blogikirjoituksessa käymme läpi, miten voit saada Arduino-laitteen näyttämään nykyisen päivämäärän ja kellonajan.
+Jokaisessa projektissa, jossa käytetään Arduinoa, on tärkeää tietää nykyinen päivämäärä ja aika. Tämä voi olla hyödyllistä esimerkiksi tiedostojen tallentamisessa, tapahtumien ajoittamisessa tai mittauksien aikaleimoissa. Tässä blogikirjoituksessa käsittelemme, miten voit saada nykyisen päivämäärän Arduinossa ja miten voit käyttää sitä projekteissasi.
 
-## Miten
+## Kuinka: Näin saat nykyisen päivämäärän Arduinossa
 
-Saadaksesi nykyisen päivämäärän ja kellonajan Arduino-laitteelle, sinun tulee ensin asettaa RTC (Real-Time Clock) moduuli. RTC-moduulit ovat pieniä piirejä, jotka pitävät sisällään tarkan kellon, jota voidaan käyttää nykyisen päivämäärän ja kellonajan näyttämiseen. Useimmissa tapauksissa RTC-moduuleja käytetään ulkoisena laitteena, joka liitetään Arduinoon.
+Nykyisen päivämäärän saamiseksi Arduinossa tarvitsemme RTC (Real-Time Clock) -moduulin, joka pitää sisällään kellon sekä kalenterin. Tässä esimerkissä käytämme DS3231 RTC -moduulia, mutta voit käyttää myös muita RTC-malleja, kunhan varmistat, että ne ovat yhteensopivia Arduinon kanssa.
 
-Alla olevassa koodiesimerkissä näytetään, miten voit asettaa RTC-moduulin ja saada sieltä nykyisen päivämäärän Arduino-laitteelle:
+Ensin liitä RTC-moduulin vinottaiset nastat VCC, GND, SDA ja SCL vastaavasti Arduinon 5V, GND, A4 ja A5 nastoihin. Tämän jälkeen voit käyttää tähän blogikirjoitukseen liitettyjä esimerkkikoodeja saadaksesi nykyisen päivämäärän näkyviin Serial monitorissa.
 
 ```Arduino
 #include <Wire.h>
-#include <RTClib.h>
+#include "RTClib.h"
 
-RTC_DS1307 rtc;
+RTC_DS3231 rtc;
 
-void setup() {
+void setup () {
   Serial.begin(9600);
   Wire.begin();
   rtc.begin();
-
-  // Asetetaan RTC-moduuli nykyiseen päivämäärään ja kellonaikaan
-  // Tässä esimerkissä asetetaan 7. maaliskuuta 2021 kello 12.00
-  rtc.adjust(DateTime(2021, 3, 7, 12, 0, 0));
 }
 
-void loop() {
-  // Luodaan DateTime -muuttuja ja tallennetaan siihen nykyinen aika RTC-moduulista
+void printCurrentDate() {
   DateTime now = rtc.now();
+  Serial.print(now.day());
+  Serial.print('.');
+  Serial.print(now.month());
+  Serial.print('.');
+  Serial.print(now.year());
+}
 
-  // Tulostetaan päivämäärä ja kellonaika sarjamonitoriin
-  Serial.print(now.year(), DEC);
-  Serial.print('/');
-  Serial.print(now.month(), DEC);
-  Serial.print('/');
-  Serial.print(now.day(), DEC);
-  Serial.print(" ");
-  Serial.print(now.hour(), DEC);
-  Serial.print(':');
-  Serial.print(now.minute(), DEC);
-  Serial.print(':');
-  Serial.print(now.second(), DEC);
-  Serial.println();
-
+void loop () {
+  printCurrentDate();
   delay(1000);
 }
 ```
 
-Kun koodi on ladattu ja Arduino on kytketty RTC-moduuliin, sarjamonitori näyttää nykyisen päivämäärän ja kellonajan. Käyttämällä tätä tietoa voit esimerkiksi ohjelmoida Arduino-laitteen suorittamaan tiettyjä toimintoja tiettyinä aikoina päivästä.
+Esimerkkikoodi käyttää RTClib-kirjastoa, joka helpottaa RTC-moduulin käyttämistä Arduinossa. Koodissa luodaan instanssi rtc ja käynnistetään se setup-funktiossa. Loop-funktiossa tulostetaan nykyinen päivämäärä Serial monitoriin. Runsaalla delay-funktioilla voit säätää, kuinka usein nykyinen päivämäärä tulostetaan.
 
-## Syvällinen sukellus
+## Syventävä sukellus: Lisätietoja nykyisen päivämäärän saamisesta
 
-RTC-moduuleilla on usein omat akut, jotka pitävät kellon käynnissä, vaikka Arduino laitetaan pois päältä. Tämä tarkoittaa, että RTC-moduuli pysyy ajan tasalla myös silloin, kun Arduino ei ole kytkettynä virtalähteeseen.
+Nykyisen päivämäärän saamisessa käytetään RTC-moduulia, joka tarjoaa tarkemman kellon ja kalenterin kuin Arduinon sisäinen kellomoduuli. RTC-moduulissa on oma virtalähteensä, joten se jatkaa toimintaansa myös, kun Arduinon virran irroittaa.
 
-On kuitenkin tärkeää huomata, että RTC-moduulien tarkkuus voi vaihdella ja ajan kulumista on syytä tarkkailla ja tarvittaessa korjata käyttämällä esimerkiksi Internetin aikapalveluja.
+RTClib-kirjaston lisäksi on olemassa muita kirjastoja, kuten TimeLib ja RTCZero, joilla nykyisen päivämäärän saaminen onnistuu. Nämä kirjastot tarjoavat erilaisia toimintoja ja voit valita niistä sinulle sopivan vaihtoehdon.
 
-## Katso myös
+# Katso myös
 
-- RTCmoduulin tarkka asettaminen: https://forum.arduino.cc/index.php?topic=126397.0
-- RTCmoduulin käyttöohje: https://www.arduino.cc/en/Reference/RTC
-- RealTime PCLibrary: https://github.com/adafruit/RTClib
+- [DS3231 RTC-moduulin käyttö Arduinossa](https://www.instructables.com/id/Arduino-RTC-DS3231/)
+
+- [RTClib-kirjaston esimerkkikoodit](https://github.com/adafruit/RTClib)
+
+- [TimeLib-kirjaston dokumentaatio](https://github.com/PaulStoffregen/Time)
+
+- [RTCZero-kirjaston esimerkkikoodit](https://www.arduino.cc/en/Reference/RTCZero)
+
+*Katri Saarela*

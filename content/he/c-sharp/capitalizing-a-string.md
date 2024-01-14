@@ -1,47 +1,38 @@
 ---
-title:                "C#: כתיבת מחרוזת באותיות גדולות"
+title:                "C#: מיזוג מחרוזת לאותיות רישיות"
+simple_title:         "מיזוג מחרוזת לאותיות רישיות"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+# למה:
 
-ישנם מספר סיבות לכך שבתכנות בשפת C# ייתכן שנאלץ לשנות את האות הראשונה של מחרוזת לאות גדולה. אחת הסיבות הנפוצות היא לצורך הצגת מידע בצורה מלאה ומותאמת לקריאה למשתמשים.
+להגדיל את הערך שנמצא בתוך מחרוזת היא פעולה מצוינת לכל מי שמעוניין לנהל ולנתח מחרוזות בתוך קוד תכנותי בשפת סי-שארף.
 
-## איך לעשות זאת
+# איך לעשות:
 
-כדי להחליף את האות הראשונה של מחרוזת לאות גדולה בשפת C# ניתן להשתמש בפונקציה "ToUpper". הנה דוגמה קוד להמחשת השימוש בפונקציה זו:
-
-```C#
-string name = "john";
-Console.WriteLine(name.ToUpper());
-```
-
-תוצאה:
-```C#
-JOHN
-```
-
-במקרים בהם ברצוננו להחליף את האות הראשונה של כל מילה במחרוזת, ניתן להשתמש גם בפונקציה "ToTitleCase". הנה דוגמה לשימוש בפונקציה זו:
+שימו לב שפעולת "ToUpper" תופעל רק על התו הראשון שבין הסימנים ההפרדה. לכן עליכם לבצע המרה אחרת על כל תו שנמצא בכל מחרוזת. לדוגמה:
 
 ```C#
-string sentence = "hello world";
-Console.WriteLine(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(sentence));
+string str = "this is a string";
+string result = "";
+foreach (char c in str)
+{
+  result += c.ToString().ToUpper();
+}
+
+// output: "THIS IS A STRING"
 ```
 
-תוצאה:
-```C#
-Hello World
-```
+# מעמקים:
 
-## חקירה מעמיקה
+ישנן פתרונות נוספים להגדלת מחרוזות, וכן שימוש בפונקציות מובנות יותר בשפת סי-שארף כמו "ToUpperInvariant", "ToUpperInvariant", ו-"TextInfo.ToTitleCase". כמו כן, כדאי לבדוק מהי ההשפעה של השימוש בתווים בעלי גודל אותו הבגרלת "IgnoreCase" או טיפולים נוספים במחרוזות.
 
-אם נרצה לעשות עבודה נוספת על המחרוזת, ניתן להשתמש במספר פונקציות נוספות כמו "Insert", "Replace" ו-"Remove". למשל, נהיה יכולים להחליף את התו הראשון של מחרוזת בעזרת הפונקציה "Replace" ולהוסיף תו או מחרוזת נוספת בתחילתה באמצעות הפונקציה "Insert".
+# ראו גם:
 
-## ראה גם
-
-- [מדריך לפורמטים של מחרוזות בשפת C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/formatting-types)
-- [תיעוד פונקציות המחרוזות בשפת C#](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.7.2)
+- [תיעוד על אופציות הגדלת מחרוזות בשפת סי-שארף](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netcore-3.1)
+- [מאמר בנושא טיפול במחרוזות בשפת סי-שארף](https://www.codeproject.com/Articles/404815/String-Handling-in-Csharp)

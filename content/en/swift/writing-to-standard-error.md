@@ -1,7 +1,9 @@
 ---
 title:                "Swift recipe: Writing to standard error"
+simple_title:         "Writing to standard error"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/writing-to-standard-error.md"
 ---
 
@@ -9,29 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-When writing code in Swift, it is important to be aware of different methods of handling and displaying errors. One common way to do this is by writing to standard error, which allows for separate handling and formatting of errors compared to regular print statements.
+In Swift, writing to standard error can be a useful tool for debugging and troubleshooting your code. It allows you to print out error messages and other information while your program is running, which can help you identify and fix any issues.
 
 ## How To
 
-To write to standard error in Swift, we can use the `FileHandle.standardError` method. This method returns a `FileHandle` object that represents the standard error file descriptor. We can then use this object to write our error message using the `.write()` method, along with the `data(using:)` method to convert our string into `Data` format.
+To write to standard error in Swift, you can use the `print()` function and specify `StandardError` as the `terminator` parameter. Here's an example of how you can do this:
 
 ```Swift
-let myErrorMessage = "Uh oh, something went wrong!"
-let data = myErrorMessage.data(using: .utf8)
-FileHandle.standardError.write(data!)
+print("This is an error message", terminator: .standardError)
 ```
 
-The output of this code would be the `myErrorMessage` string being displayed in the console with a red font, indicating it is an error message.
+This will print out the message "This is an error message" to your console's standard error stream.
+
+You can also use the `fputs()` function to write to standard error. Here's an example:
+
+```Swift
+fputs("This is an error message", stderr)
+```
+
+This will have the same effect as using the `print()` function.
 
 ## Deep Dive
 
-Writing to standard error may seem like a small aspect of Swift programming, but it can be extremely useful when handling different types of errors. By using standard error, we are able to differentiate between regular print statements and error messages, making it easier to debug our code.
+In Swift, the standard error stream is represented by `FileHandle.standardError`. This is a `FileHandle` object that allows you to read from and write to the standard error stream. You can use methods such as `readDataToEndOfFile()` and `write(_:)` to interact with this stream.
 
-Additionally, by writing to standard error, we are following best practices and adhering to established conventions in the Swift community. This helps to maintain consistency and readability in our code.
+It's important to note that writing to standard error does not automatically terminate your program, unlike writing to standard output. This means that you can write multiple error messages throughout your program without interrupting its execution.
 
 ## See Also
 
-For more information on writing to standard error in Swift, check out these resources:
-
-- [Swift Standard Library Documentation](https://developer.apple.com/documentation/swift/filehandle)
-- [Swift Style Guide](https://github.com/raywenderlich/swift-style-guide#standard-library)
+- [Apple Developer Documentation on Standard Error](https://developer.apple.com/documentation/foundation/filehandle/standarderror)
+- [Swift Programming Language Guide on Printing to Standard Error Stream](https://docs.swift.org/swift-book/LanguageGuide/Printing.html#ID390)
+- [Stack Overflow Q&A on using Standard Error in Swift](https://stackoverflow.com/questions/26198526/swift-print-to-stderr)

@@ -1,56 +1,48 @@
 ---
-title:                "Javascript: Calculando una fecha en el futuro o en el pasado."
+title:                "Javascript: Calculando una fecha en el futuro o pasado"
+simple_title:         "Calculando una fecha en el futuro o pasado"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## Por qué
 
-Calcular una fecha en el futuro o en el pasado puede ser útil para planificar eventos o realizar tareas programadas en una aplicación. Además, puede ser necesario en casos específicos donde se requiere conocer la fecha exacta en que ocurrió o sucederá algo.
+El cálculo de fechas en el futuro o pasado es una habilidad útil en la programación ya que permite realizar tareas como programar eventos o crear recordatorios. En Javascript, esta tarea se puede realizar de manera sencilla utilizando ciertas funciones y métodos.
 
-## ¿Cómo?
+## Cómo hacerlo
 
-Para calcular una fecha en el futuro o en el pasado en Javascript, se pueden utilizar los métodos `setDate()` y `getDate()` del objeto `Date`. Estos métodos permiten establecer y obtener el día del mes de una fecha determinada.
+Para calcular una fecha en el futuro o pasado, primero debemos definir la fecha base de la cual queremos partir. En este caso, utilizaremos la función incorporada `new Date()`, que crea una instancia de un objeto con la fecha actual. A continuación, podemos utilizar los métodos `setFullYear()` para establecer el año, `setMonth()` para el mes y `setDate()` para el día en la fecha base. 
 
-Por ejemplo, si queremos obtener la fecha de un evento que ocurrirá en 3 meses, podemos utilizar el siguiente código:
-
-```Javascript
-let fecha = new Date(); //fecha actual
-fecha.setMonth(fecha.getMonth() + 3); //añadimos 3 meses
-```
-
-La nueva fecha será establecida en 3 meses a partir de la fecha actual.
-
-También es posible calcular una fecha en el pasado, utilizando el método `setDate()` de la siguiente manera:
+Por ejemplo, si queremos calcular la fecha de un mes después a partir de hoy, podemos usar el método `setMonth()` para agregar 1 al mes actual:
 
 ```Javascript
-let fecha = new Date(); //fecha actual
-fecha.setDate(fecha.getDate() - 10); //restamos 10 días
+var hoy = new Date(); //Fecha actual
+hoy.setMonth(hoy.getMonth() + 1); //Sumamos 1 al mes actual
+console.log(hoy); // Output: Wed Sep 29 2021
 ```
 
-De esta forma, obtendremos la fecha que ocurrió hace 10 días.
+De manera similar, si queremos calcular la fecha de un año atrás a partir de hoy, podemos usar el método `setFullYear()` para restar 1 al año actual:
+
+```Javascript
+var hoy = new Date(); //Fecha actual
+hoy.setFullYear(hoy.getFullYear() - 1); //Restamos 1 al año actual
+console.log(hoy); // Output: Mon Aug 30 2020
+```
 
 ## Profundizando
 
-Para un cálculo más preciso, es importante tener en cuenta que no todos los meses tienen la misma cantidad de días. Por lo tanto, es necesario tomar en cuenta el año y el mes al realizar el cálculo.
+Además de los métodos mencionados, también podemos utilizar `setDate()` para cambiar el día en una fecha, `setHours()` para cambiar las horas y `setMinutes()` para cambiar los minutos. Estos métodos pueden ser combinados para obtener una fecha precisa en el futuro o pasado.
 
-Por ejemplo, si queremos obtener la fecha de dentro de 5 meses, pero queremos que el resultado sea en un año diferente, podemos utilizar el siguiente código:
+También es importante mencionar la función `getTime()`, que devuelve el tiempo en milisegundos desde enero de 1970. Esto puede ser útil para realizar cálculos de fechas en milisegundos y luego convertirlos a una fecha legible.
 
-```Javascript
-let fecha = new Date(); //fecha actual
-let año = fecha.getFullYear() + 1; //obtenemos el año actual y le sumamos 1
-let mes = fecha.getMonth() + 5; //obtenemos el mes actual y le sumamos 5
-fecha.setFullYear(año); //establecemos el nuevo año
-fecha.setMonth(mes); //establecemos el nuevo mes
-```
-
-De esta forma, obtendremos la fecha exacta dentro de 5 meses en el próximo año.
+Por último, es importante tener en cuenta que los valores pasados a estos métodos deben ser números enteros. Si se pasan valores decimales, se redondearán al número entero más cercano.
 
 ## Ver también
 
-- [Documentación de Date en Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date)
-- [Ejemplos de cálculos de fechas en Javascript](https://www.w3schools.com/js/js_dates.asp)
-- [Más información sobre fechas en Javascript](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript)
+- [Documentación de Date en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Tutoriales de Javascript en Platzi](https://platzi.com/tutoriales/javascript/)
+- [Date en Javascript: Cómo manipular fechas y horas](https://www.adictosaltrabajo.com/2012/09/14/date-en-javascript-como-manipular-fechas-y-horas/)

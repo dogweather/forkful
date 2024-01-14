@@ -1,52 +1,67 @@
 ---
 title:                "Elm: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ現在の日付を取得する必要があるのか？
+## なぜ
 
-プログラミングにおいて、特定のタスクを実行する際には、時には現在の日付が必要になることがあります。例えば、予定やイベントを作成するとき、あるいはユーザーが最後にアクションを起こした日付を記録したいときなどがあります。そのような場合、現在の日付を取得することは非常に便利です。
+日付を取得する理由は何でしょうか？ Elmプログラミングをする上で、現在の日付を取得する必要がある場合があります。たとえば、ブログ記事の投稿日を表示したり、期限を設定するアプリケーションを作成する際には、現在の日付を取得する必要があります。
 
 ## 方法
 
-Elmで現在の日付を取得する方法はとても簡単です。```Date```モジュールを使用するだけで、現在の日付を取得できます。
+現在の日付を取得するためには、 `Date` モジュールを使用します。まず、 `Date.now` 関数を使って現在のタイムスタンプを取得します。次に、 `Date.fromTime` 関数を使ってタイムスタンプを日付に変換します。
 
-```elm
-import Date exposing (Date)
-import Time exposing (Posix)
+```Elm
+import Date
 
--- 現在の日付を取得
-currentDate : Date
-currentDate =
-  Time.posixToMillis Posix.now |> Date.fromMillisSinceEpoch
+timestamp = Date.now
+currentDate = Date.fromTime timestamp
 ```
 
-以上のコードを実行すると、現在の日付が```currentDate```に格納されます。
+上記のコードを実行すると、 `currentDate` の値は以下のようになります。
 
-また、特定の形式で日付を取得することも可能です。例えば、年、月、日のそれぞれの数値を取得したい場合は以下のようにコードを変更することができます。
-
-```elm
-import Date exposing (Date)
-import Time exposing (Posix)
-
--- 現在の日付を取得
-currentDate : ( Int, Int, Int )
-currentDate =
-  Time.posixToMillis Posix.now |> Date.fromMillisSinceEpoch |> Date.toGregorian
+```Elm
+"2021-07-16"
 ```
 
-上記のコードを実行すると、現在の年、月、日がそれぞれの数値として取得されます。
+日付フォーマットをカスタマイズしたい場合は、`Date.Format` モジュールを使用することもできます。例えば、以下のように日付のフォーマットを指定することができます。
+
+```Elm
+import Date
+import Date.Format exposing (custom)
+
+timestamp = Date.now
+formattedDate = Date.Format.custom "YYYY.MM.dd" timestamp
+```
+
+上記のコードを実行すると、 `formattedDate` の値は以下のようになります。
+
+```Elm
+"2021.07.16"
+```
 
 ## ディープダイブ
 
-現在の日付を取得する際には、夏時間やタイムゾーンなど、さまざまな影響要因があります。そのため、取得した日付が正確であることを保証するためにはいくつかの追加処理が必要になります。詳しい情報は[公式ドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Time)を参照することをおすすめします。
+日付を取得する際には、タイムゾーンの考慮も重要です。 `Date` モジュールを使用する場合は、タイムゾーンに関する設定を行うことができます。また、 `Date.fromTimezone` 関数を使って、指定したタイムゾーンを考慮した日付を取得することもできます。
 
-## 関連情報
+```Elm
+import Date
+import Date.Timezone exposing (timezone)
 
-- [Elm公式ドキュメント](https://guide.elm-lang.org/)
-- [楽しく学べる Elm 入門 - Qiita](https://qiita.com/ci7lus/items/9f70a6224e68ee3c7abc)
-- [Elmってなんだ？ - Qiita](https://qiita.com/janus_wel/items/0c986741dcdd118f5f6b)
+japanTimezone =  timezone 9 0
+timestamp = Date.now
+japanDate = Date.fromTimezone japanTimezone timestamp
+```
+
+## 参考リンク
+
+- [Elm Dateモジュールドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Date)
+- [Elm Date.Timezoneモジュールドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Date-Timezone)
+- [Elm Date.Formatモジュールドキュメント](https://package.elm-lang.org/packages/elm/time/latest/Date-Format)
+- [TsuruokaDai/elm-jstz](https://github.com/TsuruokaDai/elm-jstz)

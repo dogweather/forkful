@@ -1,47 +1,85 @@
 ---
-title:                "Bash: Convertendo uma string para minúsculo"
+title:                "Bash: Convertendo uma string para minúsculas."
+simple_title:         "Convertendo uma string para minúsculas."
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que Converter uma String para Minúsculas em Bash?
 
-Ao escrever um programa em Bash, muitas vezes é necessário manipular strings. Uma das tarefas comuns é converter uma string para letras minúsculas. Isso pode ser útil para comparar strings, validar entradas de usuários ou simplesmente para fins estéticos.
+Às vezes, precisamos trabalhar com strings em nosso código Bash e pode ser útil convertê-las para minúsculas. Isso pode ser útil para comparações de strings, formatação de entrada do usuário ou para garantir que o texto esteja padronizado.
 
 ## Como Fazer
 
-Converter uma string para letras minúsculas é uma tarefa simples em Bash. Tudo que você precisa é usar o comando `tr` com o argumento `-s`, que irá substituir as letras maiúsculas por letras minúsculas.
+Para converter uma string para minúsculas em Bash, podemos usar o comando `tr` em conjunto com as opções `-d` e `-s`.
 
-```Bash
-STRING="Exemplo De String"
-echo $STRING | tr -s '[:upper:]' '[:lower:]'
+```
+#!/bin/bash
+
+# Definir a string inicial
+string="EXEMPLO DE STRING EM MAIÚSCULAS"
+
+# Usar tr para converter para minúsculas e armazenar em uma nova variável
+nova_string=$(echo "$string" | tr 'A-Z' 'a-z')
+
+# Imprimir a nova string
+echo "Nova string em minúsculas: $nova_string"
+
+# Saída:
+# Nova string em minúsculas: exemplo de string em maiúsculas
 ```
 
-O comando acima irá imprimir "exemplo de string". O argumento `-s` é usado para garantir que apenas uma única instância de cada letra seja exibida, evitando a repetição de letras em sequência.
+Nesse exemplo, primeiro definimos uma variável com a string em maiúsculas. Em seguida, usamos o comando `tr` para substituir todos os caracteres em maiúsculas por caracteres em minúsculas e armazenamos o resultado em uma nova variável. Por fim, imprimimos a nova string.
 
-Você também pode salvar o resultado em uma nova variável, assim como em qualquer outra manipulação de strings em Bash.
+Também é possível usar o comando `sed` para converter uma string para minúsculas.
 
-```Bash
-LOWER_CASE_STRING=$(echo $STRING | tr -s '[:upper:]' '[:lower:]')
+```
+#!/bin/bash
 
-echo $LOWER_CASE_STRING
+# Definir a string inicial
+string="EXEMPLO DE STRING EM MAIÚSCULAS"
+
+# Armazenar a string em uma nova variável e usar sed para converter para minúsculas
+nova_string=$(echo "$string" | sed 's/./\L&/g')
+
+# Imprimir a nova string
+echo "Nova string em minúsculas: $nova_string"
+
+# Saída:
+# Nova string em minúsculas: exemplo de string em maiúsculas
 ```
 
-O resultado será "exemplo de string" novamente, mas agora em uma nova variável.
+Nesse exemplo, primeiro armazenamos a string em uma nova variável e, em seguida, usamos o `sed` para substituir cada caractere pela respectiva letra minúscula. O resultado é armazenado novamente na mesma variável e impresso.
 
-## Mergulho Profundo
+## Explorando Mais a Conversão de Strings para Minúsculas em Bash
 
-Para entender melhor a lógica por trás da conversão de string para letras minúsculas em Bash, é importante entender como funciona o comando `tr`. Este comando é usado para traduzir ou excluir caracteres de uma entrada padrão ou de um arquivo. O argumento `-s` usado no exemplo acima significa "squeeze" e garante que apenas uma única instância de cada letra seja exibida.
+Uma das principais diferenças entre o uso de `tr` e `sed` para essa tarefa é que o `tr` converte todos os caracteres em maiúsculas, enquanto o `sed` mantém os caracteres não alfanuméricos na mesma forma. Além disso, podemos usar o comando `awk` para converter apenas a primeira letra de cada palavra em maiúscula, mantendo o resto em minúsculas.
 
-Além disso, os argumentos `[:upper:]` e `[:lower:]` são usados para especificar quais letras serão substituídas. O `[:upper:]` indica todas as letras maiúsculas e o `[:lower:]` indica todas as letras minúsculas. Portanto, o comando `tr -s '[:upper:]' '[:lower:]'` basicamente substitui todas as letras maiúsculas por letras minúsculas na entrada.
+```
+#!/bin/bash
+
+# Definir a string inicial
+string="EXEMPLO DE STRING EM MAIÚSCULAS PARA TESTAR O AWK"
+
+# Usar awk para converter a primeira letra de cada palavra em maiúscula e armazenar em uma nova variável
+nova_string=$(echo "$string" | awk '{for(i=1;i<=NF;i++)sub(".", substr(tolower($i),1,1), $i); print}')
+
+# Imprimir a nova string
+echo "Nova string em maiúsculas: $nova_string"
+
+# Saída:
+# Nova string em maiúsculas: Exemplo De String Em Maiúsculas Para Testar O Awk
+```
+
+Nesse exemplo, usamos o `awk` para percorrer cada palavra da string e, em seguida, substituímos a primeira letra por sua versão em minúsculas. O resultado é armazenado em uma nova variável e impresso.
 
 ## Veja Também
 
-Existem muitas outras formas de manipular strings em Bash, como remover caracteres especiais ou substituir caracteres específicos. Para mais informações, confira os seguintes links:
-
-- [Documentação do comando `tr`](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
-- [Tutorial sobre manipulação de strings em Bash](https://www.gnu.org/software/bash/manual/html_node/String-Manipulations.html)
-- [Listas de caracteres acessíveis ao `tr`](https://www.gnu.org/software/coreutils/manual/html_node/The-character-classes-alnum_002c-alpha_002c-etc.html)
+- [Manual do Bash](https://www.gnu.org/software/bash/manual/)
+- [Documentação do tr](https://man7.org/linux/man-pages/man1/tr.1.html)
+- [Documentação do sed](https://man7.org/linux/man-pages/man1/sed.1.html)
+- [Documentação do awk](https://man7.org/linux/man-pages/man1/awk.1.html)

@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Jämföra två datum"
+title:                "Arduino: Jämförande av två datum"
+simple_title:         "Jämförande av två datum"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/comparing-two-dates.md"
 ---
 
@@ -9,41 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att jämföra två datum kan vara användbart i många olika situationer. Det kan till exempel användas för att beräkna hur många dagar det är mellan två specifika datum eller för att kontrollera om ett visst datum har passerat.
+Att jämföra två datum kan vara användbart i många olika situationer, till exempel för att se hur lång tid som gått mellan två händelser eller för att beräkna ålder. Med Arduino-programmering har du möjlighet att enkelt utföra sådana jämförelser och få ut relevant information.
 
-## Så här gör du
+## Hur man gör
 
-För att jämföra två datum i Arduino kan du använda funktionen `compare()` som finns tillgänglig i Arduino Date and Time Library. Den tar in två argument, vilka ska vara av typen `DateTime` och jämför dem med varandra. Om det första datumet är tidigare än det andra kommer funktionen att returnera ett negativt tal, om de är lika kommer den att returnera 0 och om det första datumet är senare än det andra kommer den att returnera ett positivt tal.
+För att jämföra två datum i Arduino behöver du först definiera de två datum som ska jämföras. Detta görs genom att skapa två "Date" objekt som representerar de två olika tidpunkterna. Till exempel:
 
-Ett exempel på hur du kan använda `compare()`-funktionen i en kod är:
+```Arduino 
+Date tidpunkt1 = Date(2020, 1, 1);
+Date tidpunkt2 = Date(2021, 5, 20);
+```
 
-```Arduino
-#include <DateTime.h>
+För att sedan jämföra dessa två datum finns det flera olika inbyggda funktioner att använda sig av. Här är ett exempel på hur man kan jämföra om det första datumet är efter det andra:
 
-void setup() {
-  DateTime date1(2021, 9, 18); // första datumet
-  DateTime date2(2021, 9, 25); // andra datumet
-  int comparison = compare(date1, date2);
-  Serial.println(comparison); // utskrift: -7
-}
-
-void loop() {
-
+```Arduino 
+if (tidpunkt1 > tidpunkt2) {
+    Serial.println("Tidpunkt 1 är senare än tidpunkt 2");
 }
 ```
 
-I detta exempel jämförs hur många dagar det är mellan de två datumen, och eftersom `date1` är tidigare än `date2` returneras ett negativt tal som visar skillnaden mellan dem.
+Du kan också jämföra om det första datumet är lika med det andra, eller om det är före det andra datumet. Det finns även möjlighet att jämföra exakt tidpunkter, till exempel om de båda inträffar på samma dag, månad och år.
 
 ## Djupdykning
 
-När du jämför datum i Arduino är det viktigt att hålla koll på vilken tidzon du befinner dig i, eftersom datumet kan skilja sig beroende på detta. Det finns också olika formateringar av datum, såsom månad/dag/år eller dag/månad/år, vilket kan påverka resultatet av jämförelsen.
+När man jämför två datum är det viktigt att komma ihåg att en dag egentligen är ett antal sekunder (eller millisekunder) som har passerat sedan en viss starttidpunkt, vanligtvis 1 januari 1970. Detta kallas för en "epoch" och är en standardiserad tidpunkt som används inom många olika programmeringsspråk.
 
-Det är också värt att notera att Arduino Date and Time Library endast kan hantera datum från år 2000 och framåt. Om du behöver hantera datum före 2000 kan du behöva använda en annan bibliotek.
+När du definierar dina "Date" objekt i Arduino så kan du välja om du vill ange tiden i millisekunder eller i sekunder. Detta kan vara viktigt att tänka på om du jämför datum från olika källor, eftersom en millisekund kan göra skillnad i en jämförelse.
 
 ## Se även
 
-Här är några användbara länkar för mer information om att jämföra datum i Arduino:
-
-- [Referens för `compare()`-funktionen](https://github.com/PaulStoffregen/Time/blob/master/DateTime.h)
-- [Dokumentation för Arduino Date and Time Library](https://github.com/PaulStoffregen/Time)
-- [Tutorial om datum och tid i Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/DateTime)
+- [Date referens](https://www.arduino.cc/reference/en/language/functions/time/date/)
+- [Epoch-tid](https://en.wikipedia.org/wiki/Unix_time)

@@ -1,42 +1,37 @@
 ---
-title:                "Swift: חישוב תאריך בעתיד או בעבר"
+title:                "Swift: חישוב תאריך בעתיד או בעבר בתכנות מחשבים"
+simple_title:         "חישוב תאריך בעתיד או בעבר בתכנות מחשבים"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+##למה
+ישנם מספר סיבות שעשויות לגרום למפתחי אפליקציות לרצות לחשב תאריכים בעתיד או בעבר. לדוגמה, הפתרון שלנו יכול לעזור ליצור ליישנים או להגדיר כיפים ותאריכים של יומות הולדת או אירועים מיוחדים.
 
-מחשבון תאריכים יכול להיות כלי מועיל בתכנות ב-Swift. הוא מאפשר לנו לחשב את התאריך בעתיד או בעבר בקלות ובפשטות באמצעות קוד. ניתן להשתמש בו בשוני מצבים, כגון ייצור מועד לאירוע חשוב או חישוב התאריך של תוקף תעודה.
+##איך לעשות זאת
+כדי לחשב תאריכים בעתיד או בעבר, יש להשתמש במחלקת `Date` ובאופרטורים המתאימים כמו `add` ו-`subtract`. לדוגמה, ננסה לחשב את התאריך של 100 ימים אחרי התאריך הנוכחי:
 
-## איך לעשות את זה
-
-קוד נוסף לדוגמה שיועיל בחישוב תאריך בעתיד או בעבר:
-
-```Swift
-// חישוב תאריך בעתיד - מספר ימים להוסיף
+```
 let today = Date()
-let futureDate = Calendar.current.date(byAdding: .day, value: 7, to: today)
-print(futureDate) // תאריך של שבוע מהיום בעתיד
+let futureDate = today.addingTimeInterval(60*60*24*100)
+print(today) // יום נוכחי
+print(futureDate) // תאריך של 100 ימים בעתיד
 ```
 
-```Swift
-// חישוב תאריך בעבר - מספר ימים להפחית
-let today = Date()
-let pastDate = Calendar.current.date(byAdding: .day, value: -7, to: today)
-print(pastDate) // תאריך של שבוע קודם מהיום בעבר
+ניתן גם לחשב תאריכים בעבר באותו הדרך, רק עלינו לחישב את הזמן המועבר מאז תאריך ספציפי ולהשתמש באופרטור `subtract`. לדוגמה, נחשב את התאריך של 30 ימים לפני תאריך מסוים:
+
+```
+let specificDate = Date(timeIntervalSinceReferenceDate: -10000)
+let pastDate = specificDate.subtractingTimeInterval(60*60*24*30)
+print(specificDate) // תאריך ספציפי
+print(pastDate) // תאריך של 30 ימים בעבר
 ```
 
-## חפירה עמוקה
+תוכלו גם להתאים את הפונקציות הללו לטווחים זמן רחבים יותר כדי לחשב תאריכים בשנים, חודשים או שעות נוספים.
 
-בנוסף לחישוב תאריכים בעתיד ובעבר, ניתן להשתמש בקוד כדי לבצע פעולות מתקדמות יותר עם תאריכים. למשל, ניתן לחשב את תאריך הנוכחי על פי תבנית מסוימת, להשוות בין תאריכים שונים ולייצר טקסט בפורמט של תאריך. ישנן גם פונקציות נוספות כמו חישוב תאריך לפי שעה והמרת תאריך למחרוזת.
-
-# ראו גם
-
-כדי לקבל מידע נוסף על חישוב תאריכים ב-Swift, ניתן לקרוא את המסמכים הבאים:
-
-- [מסמך רשמי על תאריכים ושעות ב-Swift](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html)
-- [מאמר בבלוג על תאריכים ב-Swift](https://www.appcoda.com/swift-date-tutorial/)
-- [דוגמאות נוספות לחישוב תאריכים ב-Swift](https://www.hackingwithswift.com/articles/86/how-to-work-with-dates-and-times-in-swift)
+##דיב דייב
+כדי להבין את תהליך החישוב של תאריכים בעתיד או בעבר, עלינו להבין את הקבוצות שמשתמשות בתוכנית שלנו. למשל, אנחנו יכולים להשתמש ב-`DateFormatter` כדי להציג את התוצאה בפורמט שלנו ולהשתמש בהם כדי לייצר אינטראקציית משתמש מעניינת יותר. נתייחס גם לכך שקיימים כמה פרמטרים שחשוב לדעת כדי להשתמש במחל

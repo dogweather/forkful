@@ -1,37 +1,43 @@
 ---
-title:                "Gleam: Att hitta längden på en sträng."
+title:                "Gleam: Att hitta längden av en sträng"
+simple_title:         "Att hitta längden av en sträng"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kunna hitta längden på en sträng är en viktig och grundläggande färdighet inom programmering. Det kan hjälpa till att optimera kod och lösa komplexa problem.
+
+Så varför skulle man vilja engagera sig i att hitta längden på en sträng? Det kan verka som en enkel uppgift, men i verkligheten kan det vara mycket användbart i många programmeringssituationer. Att kunna bestämma längden på en sträng är viktigt för att hantera textdata och för att genomföra olika algoritmer som kräver specificerade teckenmängder.
 
 ## Hur man gör det
-För att hitta längden på en sträng i Gleam, kan du använda funktionen ```String.length()``` som returnerar antalet tecken i en given sträng. Här är ett enkelt exempel:
+
+För att hitta längden på en sträng i Gleam, kan du använda den inbyggda funktionen ```Gleam.length(sträng)```. Det första steget är att skapa en variabel som lagrar strängen du vill undersöka. Sedan kan du använda funktionen ```length``` och ange strängen som argument.
 
 ```Gleam
-let str = "Hej, detta är en exempelsträng!"
-let length = String.length(str)
-io.format("Längden på strängen är: {}", [length])
+fn hitta_längd(sträng) {
+    längd = Gleam.length(sträng)
+    IO.print("Längden på " ++ sträng ++ " är " ++ Gleam.toString(length) ++ " tecken.")
+}
+
+hitta_längd("Hej världen")
 ```
 
-Output:
-```
-Längden på strängen är: 30
-```
-
-Du kan också använda en loop för att iterera över varje tecken i strängen och öka en räknare för varje tecken tills du når slutet av strängen. Detta kan vara en användbar metod om du behöver göra ytterligare beräkningar eller manipulation på varje tecken.
+Output: "Längden på Hej världen är 11 tecken."
 
 ## Djupdykning
-I Gleam är strängar representerade som listor av Unicode-tecken. Detta innebär att längden på en sträng kan beräknas genom att räkna antalet element i denna lista.
 
-En annan intressant aspekt är att Gleam tillåter dig att använda öppna typer, vilket innebär att du kan ha en funktion som tar emot en sträng utan att specificera längden på strängen i förväg. Istället kommer längden att bestämmas vid kompilering baserat på input som matas in i funktionen.
+Det finns en hel del bakom kulisserna när det gäller att hitta längden på en sträng. I de flesta fall behöver programmerare inte oroa sig för dessa detaljer, men det finns några saker som är värda att nämna.
+
+Först och främst kräver funktionen ```length``` att strängen som matas in är en Unicode-sträng. Om den inte är det, kommer funktionen att returnera en felmeddelande. Detta beror på att Unicode-tecken kan vara mer än 1 byte långa, vilket påverkar längden på en sträng. Detta är speciellt viktigt att tänka på när man arbetar med flerspråkiga eller multibyte-teckenkoder.
+
+Det är också värt att nämna att funktionen inte räknar antalet ord i en sträng, utan bara antalet tecken. Så om du vill räkna antalet ord i en mening, måste du först dela upp strängen med hjälp av mellanslag eller andra tecken och sedan räkna längden på den resulterande lista.
 
 ## Se även
-- [Gleam - Officiell webbplats (på engelska)](https://gleam.run/)
-- [Gleam på GitHub (på engelska)](https://github.com/gleam-lang/gleam)
-- [Officiell Gleam-dokumentation (på engelska)](https://gleam.run/book/)
+
+- Gleams officiella dokumentation om inbyggda funktioner: https://gleam.run/documentation/stdlib.html#length
+- En utförlig förklaring av Unicode och multibyte-teckenkoder: https://www.utf8-chartable.de/
+- En tutorial om hur man hanterar textdata i Gleam: https://gleam.run/tutorials/strings.html

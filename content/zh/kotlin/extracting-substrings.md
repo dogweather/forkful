@@ -1,64 +1,68 @@
 ---
 title:                "Kotlin: 提取子字符串"
+simple_title:         "提取子字符串"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要提取子字符串？
+# 为什么
 
-在编程中，我们经常需要从一个较长的字符串中提取出我们想要的部分。这就是提取子字符串的作用。通过提取子字符串，我们可以更方便地处理数据和字符串，使得代码更加简洁高效。
+在编程过程中，有时候我们需要从一个字符串中提取出部分内容进行处理。比如，我们可能需要从一个网址中获取域名，或者从一个文本消息中提取出特定关键词。在这种情况下，提取子串是非常有用的。让我们来看看如何在Kotlin中提取子串吧！
 
-## 如何做到提取子字符串
+## 如何做
 
-在Kotlin中，提取子字符串有多种方法。对于普通字符串，我们可以使用 `substring()` 方法来提取指定范围内的子字符串。例如，我们有一个字符串 `val str = "Hello World"`，我们想要提取出 `World` 部分，可以这样写：
-
-```Kotlin
-val str = "Hello World"
-val substring = str.substring(6)
-print(substring) // Output: World
-```
-
-除了`substring()`方法，我们还可以使用 `slice()` 方法来提取指定的字符索引位置。例如，我们想要提取 `World` 这个单词，可以这样写：
+提取子串的方法非常简单。我们可以使用 `substring()` 函数来实现。这个函数有两个参数，第一个参数是起始索引，第二个参数是结束索引（可选）。以下是一个示例，展示如何从一个字符串中提取出前五个字符：
 
 ```Kotlin
-val str = "Hello World"
-val substring = str.slice(6..10)
-print(substring) // Output: World
+val str = "Hello World!"
+val result = str.substring(0, 5)
+println(result) // 输出 "Hello"
 ```
 
-当然，我们也可以使用正则表达式来提取符合特定规则的子字符串。例如，我们想要从一串不规则的文本中提取出所有的邮箱地址，可以这样写：
+我们还可以使用负数作为索引，来从后往前提取子串。例如，如果我们想从一个字符串中提取出最后五个字符，可以这样做：
 
 ```Kotlin
-val emailRegex = Regex("[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-z]{2,}")
-val str = "Contact me at john.doe@example.com or jane.doe@example.com"
-val emails = emailRegex.findAll(str).map { it.value }.toList()
-print(emails) // Output: [john.doe@example, jane.doe@example.com]
+val str = "Hello World!"
+val result = str.substring(str.length - 5)
+println(result) // 输出 "World"
 ```
 
-## 深入了解提取子字符串
+值得注意的是，`substring()` 函数并不会修改原始字符串，而是返回一个新的字符串作为结果。因此，如果我们想要修改原始字符串的话，可以使用 `replaceRange()` 函数来替换指定索引范围内的字符。
 
-除了上述提到的方法，Kotlin还提供了其他一些提取子字符串的方法，比如 `drop()`、`take()`、`substringBefore()`、`substringAfter()`等。每种方法都有不同的用途，在编写代码时可以灵活运用。
+## 深入了解
 
-此外，Kotlin中还有一个很方便的内置类 `StringTokenizer`，可以帮助我们更快速地提取子字符串。通过指定分隔符，我们可以轻松地将一个长字符串拆分成多个子字符串。例如，我们想要提取出 `Hello` 和 `World` 这两个单词，可以这样写：
+除了 `substring()` 函数，Kotlin还提供了其他几个方法来提取子串：
 
-```Kotlin
-val str = "Hello World"
-val tokens = StringTokenizer(str, " ")
-print(tokens.nextToken()) // Output: Hello
-print(tokens.nextToken()) // Output: World
-```
+- `subSequence()`：和 `substring()` 函数类似，但是返回一个 `CharSequence` 类型的结果，可以自动转换为字符串。
+- `slice()`：从一个字符串集合中提取出指定索引的子串，并返回一个新的字符串集合作为结果。
+- `take()` 和 `drop()`：从一个字符串中提取出指定数量的字符，分别返回前N个字符或后N个字符作为结果。
+- `split()`：将一个字符串根据指定的分隔符分割成多个子串，并返回一个包含分割结果的字符串数组。
 
-## 参考链接
+还有一点需要注意的是，Kotlin中的字符串索引是从0开始的，这和一些其他编程语言有所不同。
 
-- [Kotlin字符串处理](https://www.kotlincn.net/docs/reference/strings.html)
-- [Kotlin字符串操作](https://www.tutorialspoint.com/kotlin/kotlin_strings.htm)
-- [Kotlin入门系列之字符串处理](https://zhuanlan.zhihu.com/p/34373278)
+## 参考资料
 
-## 相关阅读 (See Also)
+- [Kotlin Strings](https://kotlinlang.org/docs/basic-types.html#strings)
+- [Kotlin String Operations](https://www.baeldung.com/kotlin/string-operations)
+- [Kotlin Examples – substring()](https://beginnersbook.com/2019/02/kotlin-string-substring()/)
+- [Kotlin String slicing and manipulating using built-in functions](https://medium.com/@anilshanbhag3/kotlin-basic-concepts-string-methods-and-data-types-df854bd85fc8)
 
-- [Kotlin入门系列之提取子字符串](https://zhuanlan.zhihu.com/p/34313831)
-- [Kotlin文本处理实用工具库](https://blog.csdn.net/u013140070/article/details/77814926)
-- [Kotlin正则表达式基础教程](https://www.jianshu.com/p/b0663a7a0a65)
+# 参考链接
+
+- [Kotlin官方文档](https://kotlinlang.org/docs/)
+- [Kotlin for Android Developers](https://antonioleiva.com/kotlin-android-developers-book/)
+
+# 请看
+
+本文介绍了在Kotlin中提取子串的方法，包括如何使用 `substring()` 函数以及其他相关的方法。希望这篇文章能帮助你更好地理解Kotlin字符串的处理方法。如果你想继续学习Kotlin，可以参考上面的参考资料或者浏览其他相关的链接。谢谢阅读！
+
+
+# 参见
+
+- [Kotlin基础 - Kotlin Playground](https://play.kotlinlang.org/byExample/overview)
+- [Kotlin教程 - Runoob](https://www.runoob.com/kotlin/kotlin-basic-syntax.html)
+- [Kotlin入门指南 - Tutorialspoint](https://www.tutorialspoint.com/kotlin/index.htm)

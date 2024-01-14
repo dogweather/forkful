@@ -1,38 +1,59 @@
 ---
-title:                "C#: अस्थायी फाइल बनाना"
+title:                "C#: एक अस्थायी फ़ाइल बनाना"
+simple_title:         "एक अस्थायी फ़ाइल बनाना"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+# क्यों
+कभी-कभी हमें अपने काम के लिए अस्थायी फ़ाइलों की आवश्यकता होती है जो बाद में हमें नहीं चाहिए। इसलिए, हम अस्थायी फ़ाइलें बनाते हैं जो काम के बाद स्वचालित रूप से हटा दी जाती हैं। यह हमारे प्रोग्राम को सुधारने और बग्स को ठीक करने के लिए मदद करता है।
 
-एक अस्थायी फ़ाइल बनाने में लोगों का आदेश क्यों हो सकता है, उसके बारे में कुछ उपयोगी सूचनाएँ हैं।
-
-## कैसे
-
-अस्थायी फ़ाइल बनाने के लिए, हम `Path.GetTempFileName()` फ़ंक्शन का उपयोग कर सकते हैं, जो फ़ाइल नाम और पथ दोनों को वापस करता है। नीचे दिये गए कोड ब्लॉक एक उदाहरण प्रदान करते हैं:
+# कैसे करें
+इस उदाहरण में, हम "C: \ Users \ username \ AppData \ Local \ Temp" फ़ोल्डर में अस्थायी फ़ाइल बनाने के लिए C# का उपयोग करते हुए कोड का उदाहरण देखेंगे।
 
 ```C#
-string tempFilePath = Path.GetTempFileName();
-Console.WriteLine("Temporary file created: " + tempFilePath);
+using System;
+using System.IO;
 
-// Output: Temporary file created: C:\Users\Username\AppData\Local\Temp\af7a28ba.tmp
+namespace TemporaryFiles
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string tempFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Temp");
+            string tempFileName = "tempfile.txt";
+            string tempFilePath = Path.Combine(tempFolderPath, tempFileName);
+
+            try
+            {
+                using (FileStream fs = File.Create(tempFilePath))
+                {
+                    Console.WriteLine("फ़ाइल स्थानांतरित हो गई है।");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("एक समस्या हुई थी - " + ex.Message);
+            }
+        }
+    }
+}
 ```
 
-यदि आप अपनी स्वयं की अस्थायी फ़ाइल बनाना चाहते हैं, तो आप निम्नलिखित कोड का उपयोग कर सकते हैं:
+**आउटपुट:**
 
-```C#
-string tempFileName = "myTemporaryFile.txt";
-string tempFilePath = Path.Combine(Path.GetTempPath(), tempFileName); // combining temp path and file name
-File.Create(tempFilePath); // creates a new temporary file with specified file name
-Console.WriteLine("Temporary file created: " + tempFileName);
-
-// Output: Temporary file created: myTemporaryFile.txt
+```
+फ़ाइल स्थानांतरित हो गई है।
 ```
 
-## घोर तौर पर पता करें
+# गहराई में गंभीर
+अस्थायी फ़ाइलें हमें टेम्पोरेरी डेटा और भी अनेक कार्यों के लिए उपयोगी साबित हो सकती हैं। हालांकि, अस्थायी फ़ाइलें न केवल सुधार के लिए होती हैं बल्कि वे सेवा निर्देशिका में मैन्युअल रूप से बनाए गए अनुकूलन अनुरोधों को पूरा करने के लिए भी उपयोगी साबित हो सकती हैं। अस्थायी फ़ाइलें डाटा प्रवाह को बढ़ावा देती हैं और समय की बचत करती हैं।
 
-स्वयं की अस्थायी फ़ाइल बनाने के लिए, आपको ध्यान देने की जरूरत है कि आपको निर्दिष्ट गति के साथ फ़ाइल नाम देना होगा ताकि वह दो उपलब्ध फ़ाइलों के बीच अलग हो सकें। आपको हर बार वही गति या उससे अधिक वाली को उपयोग करना होगा जो प्रत्येक प्रक्रिया में अलग हो सकेगी। इसके अलावा, अस्थायी फ़ाइलें प्रत्येक समय ट्रिगर होने या पूरा प्रक्रिया के साथ सही समय पर हटाई जाने के लिए निर्दिष्ट किए गए नहीं होती हैं। प्रकार सार्वजनिक और प्रत्येक कर्म द्वारा समय सीमा का उपयोग किए बिना अस्थायी फ़ाइलों को हटाने के लिए ज
+# देखें भी
+- https://docs.microsoft.com/en-us/dotnet/api/system.io.file.create?view=netframework-4.8
+- https://www.c-sharpcorner

@@ -1,7 +1,9 @@
 ---
 title:                "Go: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/checking-if-a-directory-exists.md"
 ---
 
@@ -9,40 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kontrollera om en mapp finns kan vara en viktig del av en Go-programmerares arbetsflöde. Det kan hjälpa till att säkerställa att nödvändiga filer och mappar finns på plats innan programmet börjar köra.
+Har du någonsin behövt kolla om en viss mapp eller katalog finns på din dator? Det kan vara till hjälp när du behöver hantera filer eller göra systemuppgraderingar som kräver denna information. Go-språket erbjuder en enkel och effektiv metod för att kontrollera om en mapp eller katalog existerar. I den här blogginlägget ska vi gå igenom varför detta är användbart och hur man gör det på ett effektivt sätt.
 
-## Hur man gör det
+## Hur man gör
 
-Att kontrollera om en mapp finns är enkelt med hjälp av Go:s `os` paket. Här är ett exempel på hur man kan göra det:
+För att kontrollera om en mapp eller katalog existerar i Go-språket, använder vi funktionen `os.Stat` tillsammans med path/filepath-paketet. Detta kommer att ge oss information om sökvägen som vi anger, inklusive om den är en mapp eller katalog. Nedan är ett exempel på kod som visar detta:
 
 ```Go
 package main
+
 import (
-  "fmt"
-  "os"
+	"fmt"
+	"os"
+	"path/filepath"
 )
+
 func main() {
-  folder := "/Users/User/Documents"
-  if _, err := os.Stat(folder); !os.IsNotExist(err) {
-    fmt.Printf("Mappen %s finns redan. \n", folder)
-  } else {
-    fmt.Println("Mappen finns inte.")
-  }
+	path := "/Users/johndoe/Documents"
+
+	// Kontrollera om sökvägen existerar
+	if _, err := os.Stat(path); err != nil {
+		// Om fel, skriv ut felmeddelande
+		fmt.Println("Kunde inte hitta mappen eller katalogen.")
+	} else {
+		// Om ingen fel, skriv ut meddelande om att sökvägen existerar
+		fmt.Println("Mappen eller katalogen finns.")
+	}
 }
 ```
-Resultatet av detta program kommer att vara antingen "Mappen finns inte." eller "Mappen /Users/User/Documents finns redan." beroende på om mappen finns eller inte.
 
-## Deep Dive
+Detta kodexempel använder `if`-satsen för att kontrollera om det finns något fel när vi anropar `os.Stat` med vår sökväg. Om det inte finns något fel, betyder det att sökvägen existerar och vi skriver ut ett meddelande om det.
 
-För att förstå hur denna kod fungerar kan det vara bra att veta vad varje steg gör. Först importeras paketen `fmt` och `os` som behövs för att skriva ut information och använda funktionerna i `os` paketet.
+## Djupdykning
 
-Nästa steg är att ange sökvägen till mappen som ska kontrolleras i variabeln `folder`. Sedan används `os.Stat()` funktionen för att hämta information om filen eller mappen som specificerats av sökvägen i `folder` variabeln. Om mappen inte finns kommer `os.Stat()` att returnera ett fel. I detta fall kan vi använda `os.IsNotExist()` funktionen för att avgöra om felet betyder att mappen inte finns eller om det är ett annat fel.
-
-Om `os.IsNotExist()` returnerar `true`, med andra ord om mappen inte finns, kommer vi att skriva ut "Mappen finns inte." med hjälp av `fmt.Println()` funktionen. Om mappen finns kommer `os.IsNotExist()` att returnera `false` och `else` satsen kommer att köra, där vi skriver ut att mappen redan finns.
+Djupdykningen i detta ämne handlar om förståelsen av funktionen `os.Stat` och hur det hjälper till att kontrollera om en sökväg existerar. `os.Stat` returnerar ett `FileInfo`-objekt som innehåller all information om sökvägen som vi behöver kontrollera. Det ger också möjlighet att få åtkomst till filens storlek, ägarinformation, ändringsdatum och mycket mer. Detta gör det till ett kraftfullt verktyg för filhantering i Go-språket.
 
 ## Se även
 
-- [Go's os-paket](https://golang.org/pkg/os/)
-- [How to check if a file or directory exists in Go](https://www.golangprograms.com/check-file-or-folder-exists-or-not.html)
-- [Using the Go File System to Check for Directory Existence](https://www.digitalocean.com/community/tutorials/using-the-go-file-system-to-check-for-directory-existence)
-- [Kontrollera om en mapp finns i Golang](https://daily.dev/blog/how-to-check-if-a-directory-exists-in-golang)
+- [Go-paketet os](https://golang.org/pkg/os)
+- [Funktionen os.Stat](https://golang.org/pkg/os/#Stat)
+- [Path/filepath-paketet](https://golang.org/pkg/path/filepath)
+- [FileInfo-objekthandling i Go](https://medium.com/@ankushagarwal/fileinfo-object-handling-in-golang-9edcddb60ba)
+- [En guide till filhantering i Go](https://www.golangprograms.com/go-language/golang-file-directory-examples.html)

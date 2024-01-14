@@ -1,59 +1,40 @@
 ---
-title:                "C: 部分列を抽出する"
+title:                "C: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜサブストリングを抽出するのか
+## なぜ
 
-サブストリングを抽出するとは、文字列の一部分を取り出すことです。これには多くの理由があります。例えば、大きな文字列から必要な情報だけを取り出したい場合や、文字列を特定のパターンで分割したい場合などです。
+文字列から部分文字列を抽出することの利点について紹介します。
 
-## 抽出方法
+## 技術情報
 
-C言語では、サブストリングを抽出するための便利な関数が用意されています。例えば、```strncat()```を使うことで、任意の長さのサブストリングを取得することができます。以下にサンプルコードを示します。
+抽出したい文字列のインデックスを指定することで、`substr()`関数を使用して部分文字列を簡単に取得できます。例えば、以下のコードを使用すると、文字列の4文字目から6文字目までの部分文字列を取得することができます。
 
-```
-#include <stdio.h>
-#include <string.h>
+```C
+char str[] = "こんにちは、世界！";
+char sub[4];
 
-int main() {
-  char str1[50] = "Hello";
-  char str2[50] = "World";
-  char result[50];
+// 4文字目から6文字目までの部分文字列を取得
+substr(sub, str, 4, 6);
 
-  // strncatを使用して、str1から最初の3文字を抽出
-  strncat(result, str1, 3);
-  printf("Result: %s\n", result);
-
-  // 文字列の連結を行い、resultに格納
-  strncat(result, str2, 3);
-  printf("Result: %s\n", result);
-
-  return 0;
-}
+// 出力は「んにち」となります
+printf("%s",sub);
 ```
 
-上記のコードを実行すると、以下のような出力が得られます。
+## 深堀り
 
-```
-Result: Hel
-Result: HelWor
-```
+文字列の部分文字列を抽出する方法について少し詳しく説明します。`substr()`関数は、指定されたインデックスから指定された長さだけ文字列を切り出します。また、C言語では、文字列を格納するバッファーの最後に`'\0'`という終端文字を加える必要があります。
 
-このように、```strncat()```を使用することで、必要なサブストリングを取得することができます。
+文字列の長さを取得するには、`strlen()`関数を使用します。この関数は、渡された文字列の長さをバイト単位で返します。つまり、日本語の文字は2バイト分なので、文字列の長さからも部分文字列を正確に抽出することができます。
 
-## 詳しい解説
+## 参考資料
 
-サブストリングを抽出する方法は、文字列処理において非常に重要です。C言語では、文字列操作に関する様々な関数が提供されていますが、サブストリングを抽出するためには特に注意が必要です。文字列の長さや文字の種類によって、適切な関数を選択する必要があります。
-
-また、サブストリングを抽出する際には、メモリ管理にも注意が必要です。サブストリングを取得するためには、必要な長さだけのメモリを確保する必要があります。その際には、配列の長さと確保するメモリの長さが一致するようにすることが重要です。
-
-# 参考リンク
-
-- [C言語でのサブストリングの抽出方法](https://www.studytonight.com/c/substring-manipulation-in-c.php)
-- [String Functions in C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Understanding String Manipulation in C](https://www.techiedelight.com/string-manipulation-in-c/)
-- [C言語入門をしよう](https://www.code4startup.com/article/c-for-beginners)
+[substr()関数の使用方法](https://www.programiz.com/c-programming/library-function/string.h/substr)  
+[`strlen()`関数についての詳細情報](https://www.geeksforgeeks.org/strlen-function-in-c/)

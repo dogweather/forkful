@@ -1,60 +1,41 @@
 ---
-title:                "Gleam: Obtendo a data atual"
+title:                "Gleam: Obtendo a data atual."
+simple_title:         "Obtendo a data atual."
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que precisamos da data atual em programação?
+# Por que utilizar o Gleam para obter a data atual?
 
-Pensar em códigos e algoritmos é como construir uma máquina do tempo. Para garantir que essa máquina funcione corretamente, precisamos de um elemento fundamental: a data atual. Sem ela, nossos códigos não saberiam o momento em que estão sendo executados, tornando-os menos eficientes ou até mesmo inúteis. Neste artigo, vamos explorar como obter a data atual usando Gleam e como isso pode ser útil em nossos projetos de programação.
+Quando se trata de programação, há muitas tarefas comuns que precisam ser realizadas repetidamente. Uma dessas tarefas é obter a data atual. A utilização do Gleam pode facilitar essa tarefa e economizar tempo e esforço. Vamos ver como fazer isso!
 
-## Como obter a data atual com Gleam
+## Como fazer
 
-Em Gleam, há uma função específica para obter a data atual: `Time.now()`. Essa função retorna um valor do tipo `Time`, que contém informações sobre a data e hora atuais. Para utilizar essa função, primeiro precisamos importar o módulo `gleam/time` em nosso código:
-
-```Gleam
-import gleam/time
-
-pub fn main() {
-  let current_date = gleam/time.now()
-  io.println(date)
-}
-```
-
-Ao executar esse código, veremos o seguinte resultado:
-
-```
-1956-01-31 23:00:00 UTC
-```
-
-Podemos também formatar a data para que ela seja mostrada de maneira mais amigável, utilizando a função `gleam/time.format()` e passando o formato desejado como parâmetro:
+Para obter a data atual utilizando o Gleam, podemos usar a função `Date.now()` que retorna o número de milissegundos desde 1º de janeiro de 1970. Podemos então converter esse valor em formato de data e hora usando a função `Date.from_milliseconds()`.
 
 ```Gleam
-pub fn main() {
-  let current_date = gleam/time.now() |> gleam/time.format("%d/%m/%Y - %H:%M:%S")
-  io.println(date)
-}
+let milliseconds = Date.now()
+let current_date = Date.from_milliseconds(milliseconds)
+
+IO.println("Data atual:", Date.format(current_date, "%d/%m/%Y"))
+IO.println("Hora atual:", Date.format(current_date, "%H:%M:%S"))
 ```
 
-O código acima irá retornar a data atual no formato "DD/MM/AAAA - HH:MM:SS", por exemplo:
+O código acima irá imprimir a data e hora atual no formato "dd/mm/yyyy" e "hh:mm:ss", respectivamente.
 
-```
-31/01/2021 - 18:30:00
-```
+## Mergulho Profundo
 
-Isso pode ser útil para mostrar a data em diferentes idiomas ou formatos, de acordo com as necessidades do nosso projeto.
+Como mencionado anteriormente, `Date.now()` retorna o número de milissegundos desde 1º de janeiro de 1970. Isso é conhecido como um "timestamp" e é uma forma comum de representar datas em programação. No Gleam, podemos trabalhar facilmente com timestamps usando a estrutura `Date`.
 
-## Uma análise mais profunda sobre a obtenção da data atual
+A estrutura `Date` possui vários campos úteis, como `year`, `month`, `day`, `hour`, `minute` e `second`, que podem ser acessados individualmente. Além disso, também há funções para comparar datas, adicionar ou subtrair dias, horas, minutos ou segundos e muito mais.
 
-Ao utilizar a função `Time.now()` em Gleam, estamos na verdade chamando a função `os:timestamp()` do sistema operacional, que nos retorna a data e hora atual do servidor em que nosso código está sendo executado. Isso significa que, se nosso servidor estiver em um fuso horário diferente do nosso, a data retornada também será diferente. Por isso, é importante estar ciente dessas diferenças ao utilizar essa função.
+Usar a estrutura `Date` ao invés de simplesmente converter o timestamp em data e hora torna o código mais legível e permite mais flexibilidade ao trabalhar com datas.
 
-Além disso, a função `os:timestamp()` retorna a data e hora em um formato específico, geralmente no formato de segundos desde 1º de janeiro de 1970, conhecido como Unix Epoch Time. Por isso, a utilização da função `gleam/time.format()` é essencial para formatar a data para um formato mais legível e compreensível.
+# Veja também
 
-## Veja também
-
-- [Documentação oficial do módulo `gleam/time`](https://gleam.run/modules/gleam_stdlib/time.html)
-- [Artigo sobre o funcionamento do Unix Epoch Time](https://www.unixtimestamp.com/)
-- [Tutorial sobre a formatação de datas no Gleam](https://medium.com/gleam-lang/how-to-format-dates-in-gleam-94f1dae14165)
+- Documentação oficial do Gleam: https://gleam.run/documentation/
+- Gleam no GitHub: https://github.com/gleam-lang/gleam

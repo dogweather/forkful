@@ -1,97 +1,77 @@
 ---
-title:                "Rust: Merkkijonon isokirjaimiseksi muuttaminen"
+title:                "Rust: Nauhoitteiden suurentaminen"
+simple_title:         "Nauhoitteiden suurentaminen"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää Rustia merkkijonon muuttamiseksi ja yleistä tietoa Rustista
- 
-Rust on uusi ja innovatiivinen ohjelmointikieli, joka tarjoaa huomattavia parannuksia perinteisiin ohjelmointikieliin verrattuna. Yksi kätevimmistä tavoista käyttää Rustia on merkkijonon muuntaminen, joka voidaan suorittaa hyvin tehokkaasti ja turvallisesti. Tässä blogikirjoituksessa käymme läpi, miten voit käyttää Rustia merkkijonon muuttamiseen ja miksi se on niin hyödyllistä.
+# Miksi Käyttää Rust-ohjelmointikieltä: Merkkijonon suurennuksen perusteet
 
-## Miten käyttää Rustia merkkijonon muuttamiseen
+Rust on nykyaikainen ja nopeasti kasvava ohjelmointikieli, joka tarjoaa tehokkaan vaihtoehdon C- ja C++-kielille. Se on tullut suosituksi erityisesti sen vahvan tyypityksen, turvallisuuden ja suorituskyvyn vuoksi. Yksi Rustin kätevistä ominaisuuksista on sen kyky käsitellä merkkijonoja helposti ja tehokkaasti. Tässä blogikirjoituksessa opit, miten pääset alkuun merkkijonojen suurennuksen kanssa Rustissa.
 
-Rust tarjoaa useita sisäänrakennettuja työkaluja merkkijonon muuntamiseen, mukaan lukien `to_lowercase()`, `to_uppercase()` ja `capitalize()` -toiminnot. Alla on esimerkkikoodi, joka näyttää kuinka käyttää `capitalize()` -funktiota muuttamaan merkkijono ensimmäinen kirjain isolla kirjaimella.
+## Kuinka Suurentaa Merkkijono Rust-ohjelmoinnissa
 
-```Rust
-fn main() {
-    let text = "hello world";
-    let capitalized_text = text.capitalize();
-
-    println!("{}", text);
-    println!("{}", capitalized_text);
-}
-```
-
-Tulostus on seuraava:
-
-```
-hello world
-Hello world
-```
-
-Voit myös käyttää `to_lowercase()` ja `to_uppercase()` funktioita muuttaaksesi merkkijonon kaikki kirjaimet pieniksi tai isoiksi. Alla on esimerkki:
+Rustissa on sisäänrakennettu toiminto merkkijonon suurentamiseen, nimeltään `to_uppercase()`. Tämä toiminto ottaa merkkijonon vastaan parametrina ja palauttaa uuden merkkijonon, jossa kaikki kirjaimet on muutettu isoiksi. Seuraa alla olevia esimerkkejä ja niiden tulostusta ymmärtääksesi paremmin, kuinka `to_uppercase()` toimii.
 
 ```Rust
-fn main() {
-    let text = "HELLO world";
-    let lowercase_text = text.to_lowercase();
-    let uppercase_text = text.to_uppercase();
+let lowercase_string = "Hei, maailma!";
 
-    println!("{}", text);
-    println!("{}", lowercase_text);
-    println!("{}", uppercase_text);
-}
+// Käytetään to_uppercase() toimintoa suurentamaan merkkijono
+let uppercase_string = lowercase_string.to_uppercase();
+
+println!("Alkuperäinen merkkijono: {}", lowercase_string);
+println!("Suurennettu merkkijono: {}", uppercase_string);
 ```
 
-Tulostus on seuraava:
+Tämä koodi tulostaa seuraavan:
 
+```txt
+Alkuperäinen merkkijono: Hei, maailma!
+Suurennettu merkkijono: HEI, MAAILMA!
 ```
-HELLO world
-hello world
-HELLO WORLD
-```
 
-Nämä funktiot toimivat myös Unicode-merkkijonoilla, mikä tekee niistä hyvin monipuolisia työkaluja merkkijonon muuttamiseen.
-
-## Syventävä sukellus merkkijonon muuttamiseen Rustissa
-
-Rustilla on monia sisäänrakennettuja työkaluja merkkijonojen muuttamiseen, mutta voit myös luoda omia toimintoja käyttäen `chars()` -funktiota. Alla on esimerkki, joka muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi omalla toiminnolla.
+Voit myös käyttää `to_uppercase()` toimintoa merkkijonon osien suurentamiseen, jos haluat. Seuraavassa esimerkissä käytetään merkkijonolukua ja `to_uppercase()` toimintoa muuttamaan vain ensimmäinen kirjain isoksi.
 
 ```Rust
-fn capitalize_first_letter(text: &str) -> String {
-    let mut characters = text.chars();
+let lowercase_string = "tervetuloa";
 
-    match characters.next() {
-        None => String::new(),
-        Some(first_char) => first_char.to_uppercase()
-                               .chain(characters)
-                               .collect(),
-    }
-}
+// Käytetään to_uppercase() toimintoa suurentamaan vain ensimmäinen kirjain
+let uppercase_string = lowercase_string[..1].to_uppercase() + &lowercase_string[1..];
 
-fn main() {
-    let text = "hello world";
-    let capitalized_text = capitalize_first_letter(text);
-
-    println!("{}", text);
-    println!("{}", capitalized_text);
-}
+println!("Alkuperäinen merkkijono: {}", lowercase_string);
+println!("Suurennettu merkkijono: {}", uppercase_string);
 ```
 
-Tulostus on seuraava:
+Tulostus on seuraavanlainen:
 
+```txt
+Alkuperäinen merkkijono: tervetuloa
+Suurennettu merkkijono: Tervetuloa
 ```
-hello world
-Hello world
+
+## Syvemmälle Merkkijonon Suurentamiseen
+
+Merkkijonon suurentamisesta on hyötyä monissa erilaisissa tilanteissa, kuten käyttäjältä syötettyjen tietojen validoinnissa, tekstipohjaisissa sovelluksissa ja jopa yksinkertaisesti tietojen muokkaamisessa. On kuitenkin tärkeää huomata, että `to_uppercase()` toiminto ei muuta alkuperäistä merkkijonoa, vaan luo uuden suurennetun version. Jos haluat muuttaa alkuperäistä merkkijonoa suuriksi kirjaimiksi pysyvästi, voit käyttää `.to_uppercase()` metodin sijasta `make_ascii_uppercase()` metodia.
+
+```Rust
+let mut lowercase_string = String::from("kissa");
+
+// Käytetään make_ascii_uppercase() metodia muuttamaan alkuperäinen merkkijono
+lowercase_string.make_ascii_uppercase();
+
+println!("Alkuperäinen merkkijono: {}", lowercase_string);
 ```
 
-Tässä esimerkissä `to_uppercase()` toimii ensin ensimmäisellä kirjaimella ja `chain()` yhdistää sen loput kirjaimet takaisin alkuperäiseen merkkijonoon.
+Tämä tulostaa:
 
-## Katso myös
+```txt
+Alkuperäinen merkkijono: KISSA
+```
 
-- [Rust-ohjelmointikielen virallinen verkkosivusto](https://www.rust-lang.org/fi/)
-- [Rust-ohjelmointikielen opetusohjelmat](https://doc.rust-lang.org/book/title-page.html)
-- [Merkkijonojen käsittely Rustissa](https://www.rust-lang.org/fi/learn/tracks/string-essentials)
+## Katso Myös
+
+- [Rustin virallinen opas](https://doc

@@ -1,53 +1,45 @@
 ---
-title:                "Gleam: 내용 cmdline 인수 읽기"
+title:                "Gleam: 컴퓨터 프로그래밍에서 명령줄 인수 읽기"
+simple_title:         "컴퓨터 프로그래밍에서 명령줄 인수 읽기"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+Gleam 프로그래밍 블로그 포스트 - 커맨드 라인 인자를 읽는 방법
 
-많은 프로그래밍 언어들은 프로그램을 실행할 때 커맨드 라인에 입력된 인자들을 읽어와서 실행을 조정할 수 있도록 해줍니다. 그렇기 때문에 이번 블로그는 Gleam에서 커맨드 라인 인자를 어떻게 읽어오는지 알려드릴 것입니다.
+## 왜?
+커맨드 라인 인자를 읽는 것은 프로그램 실행 시 사용자에게 선택권을 주는 중요한 요소입니다. 이를 통해 사용자는 프로그램이 어떻게 동작하는지에 대한 조절을 할 수 있고, 프로그램의 실행을 더욱 유연하게 커스터마이즈할 수 있습니다.
 
-## 어떻게
-
-아래 코드 블록은 Gleam에서 커맨드 라인 인자를 읽어오는 방법을 보여줍니다. 이 코드를 실행할 경우, 터미널에서 입력한 숫자만큼 "Hello Gleam!" 메시지를 출력할 것입니다.
+## 어떻게?
+아래의 코드 예시를 통해 Gleam에서 커맨드 라인 인자를 읽는 방법을 살펴보세요.
 
 ```Gleam
-fn main(args) {
-  // args의 타입은 [String],
-  // 커맨드 라인 인자들의 리스트를 뜻합니다.
-  let args_count = length(args)
-  let num = String.to_integer(list.hd(args))
-  for _ in 0..num {
-    // for문 안의 코드들은 num만큼 반복됩니다.
-    // args_count를 이용해서 프로그램이 몇 개의 인자를 받았는지 확인할 수 있습니다.
-    let message = "Hello Gleam!"
-    // println!는 Gleam에서 지원하는 출력 함수로,
-    // message 변수의 값을 터미널에 출력합니다.
-    println!(message)
-  }
+extern fn main(args) {
+    case args {
+        [] -> println("인자 없음")
+        [a] -> println("하나의 인자만 사용: {}", a)
+        [a, b] -> println("두 개의 인자 사용: {} {}", a, b)
+        [a, ..rest] -> println("하나 이상의 인자 사용: {} {}", a, rest)
+    }
 }
 ```
 
-코드를 실행하기 전, 터미널에서 아래와 같이 커맨드 라인 인자를 추가해줘야 합니다.
+위 예시에서는 `args`라는 이름의 매개변수를 사용하여 커맨드 라인 인자를 받아와서 처리하는 방법을 알려주고 있습니다. `fn` 키워드를 사용하여 외부 함수를 정의하고, `main`이라는 함수 이름을 지정하여 커맨드 라인 인자를 받아오고 처리하는 코드를 작성하고 있습니다. `fn` 키워드 뒤에 오는 `main` 함수의 괄호 안에는 `args`라는 매개변수가 지정되어 있습니다. 이는 받아온 커맨드 라인 인자를 담을 변수입니다.
 
-```bash
-gleam run main.gleam 5
-```
+위 코드 예시에서는 `case`를 통해 여러 경우에 대한 처리 방법이 지정되어 있습니다. 인자가 없는 경우에는 `"인자 없음"`이라는 문자열을 출력하고, 하나의 인자만 있는 경우에는 해당 인자를 출력하고 있습니다. 또한 두 개의 인자가 있는 경우와 하나 이상의 인자가 있는 경우에 대해서도 각각의 상황에 맞는 처리 방법을 지정하고 있습니다.
 
-위의 코드를 실행하면 "Hello Gleam!" 메시지가 5번 출력될 것입니다. 여러분도 위의 예제 코드를 바탕으로 커맨드 라인 인자를 읽어오는 방법을 익혀보세요!
+이처럼 `case`를 사용하여 여러 경우의 수를 고려하여 커맨드 라인 인자를 처리할 수 있습니다.
 
 ## 딥 다이브
+커맨드 라인 인자를 처리하는 더 깊은 내용을 알고 싶다면, Gleam 공식 문서에서 제공하는 [커맨드 라인 인자 읽기](https://gleam.run/book/tour/command_line_arguments.html) 페이지를 참고하세요. 이 페이지에서는 Gleam에서 커맨드 라인 인자를 어떻게 읽고 처리하는지에 대한 더 자세한 설명과 예시 코드를 제공하고 있습니다.
 
-Gleam에서 커맨드 라인 인자를 읽어오기 위해 사용할 수 있는 라이브러리가 정말 다양합니다. 각 라이브러리는 각자의 장단점을 가지고 있기 때문에, 프로젝트에 맞는 가장 적합한 라이브러리를 골라 사용하는 것이 중요합니다. 자세한 내용은 아래의 "관련 링크"를 참고해주세요!
+## 이외의 정보
+다른 Gleam 관련 정보를 알고 싶다면, 아래의 링크들을 참고해보세요.
 
-## 관련 링크
-
-- [Gleam 공식 문서 - Reading Command Line Arguments](https://gleam.run/getting-started/reading-command-line-arguments/)
-- [Gleam 라이브러리 - gleam/cli](https://github.com/gleam-lang/cli)
-- [Gleam 라이브러리 - gleam/inquisitor](https://github.com/gleam-lang/inquisitor)
-
-감사합니다!
+- [Gleam 공식 홈페이지](https://gleam.run)
+- [Gleam 공식 문서](https://gleam.run/book)
+- [Gleam GitHub 저장소](https://github.com/gleam-lang/gleam)

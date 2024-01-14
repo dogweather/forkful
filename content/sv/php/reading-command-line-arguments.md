@@ -1,42 +1,49 @@
 ---
-title:                "PHP: Läsning av kommandoradargument"
+title:                "PHP: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför 
-Att kunna läsa in kommandoradsargument är en praktisk och användbar färdighet för alla PHP-programmerare. Genom att kunna hantera input från kommandoraden kan du skapa dynamiska och interaktiva applikationer som kan ta emot användarinput och utföra olika funktioner baserat på det. Det är också ett sätt att automatisera uppgifter och göra dem snabbare och enklare att utföra.
+## Varför
+Att läsa och förstå kommandoradsargument kan vara en viktig del av programmering i PHP. Det gör det möjligt att interagera med användare och ta emot inmatning på ett dynamiskt sätt.
 
-## Hur man gör det 
-För att läsa in kommandoradsargument i PHP, används en inbyggd funktion `getopt()`. Den här funktionen tar två argument, det första är en sträng med de olika argumenten som ska läsas in och det andra är en array som lagrar de olika argumentvärdena. Nedan finns ett exempel på hur du kan använda `getopt()`.
+## Hur man gör
+För att läsa kommandoradsargument i PHP kan man använda sig av funktionen ```getopt()```. Detta gör det möjligt att definiera vilka argument som ska läsas och på vilket sätt de ska hanteras. Ett exempel på hur man kan använda funktionen i praktiken:
 
-```PHP
-$arguments = getopt("u:p:h"); 
 ```
+<?php
 
-I detta exempel anger vi att vi vill läsa in argumenten `u`, `p` och `h` från kommandoraden. Om vi till exempel kör vårt script med följande kommandorad:
+// Definiera vilka argument som ska läsas och deras format
+$options = getopt("f:l:");
 
-```bash
-php script.php -u admin -p password -h
+// Hämta argumenten och spara dem till variabler
+$firstName = $options['f'];
+$lastName = $options['l'];
+
+// Skriv ut en hälsning baserat på argumenten som har skickats in
+echo "Hej " . $firstName . " " . $lastName . "! Välkommen till min blogg!";
 ```
-
-Då kommer `$arguments` att ha följande värden:
-
-```PHP
-$arguments['u'] = 'admin';
-$arguments['p'] = 'password';
-$arguments['h'] = true;
+Om man nu kör detta skript i terminalen med argumenten ```-f Peter -l Parker```, så kommer följande text att skrivas ut i terminalen:
 ```
+Hej Peter Parker! Välkommen till min blogg!
+```
+Detta är ett enkelt exempel på hur man kan läsa och använda kommandoradsargument i PHP. Man kan också definiera olika flaggor för att hantera olika typer av argument och säkerställa att de uppfyller vissa krav. För mer information om hur man använder ```getopt()```, se PHP:s dokumentation.
 
-Som du kan se så lagras varje argument som en nyckel i arrayen och värdet är det värde som angivits i kommandoraden. Om argumentet inte har ett värde (som i fallet med `h` i vårt exempel), lagras värdet som `true`.
+## Utforska vidare
+Att läsa kommandoradsargument kan vara användbart i många olika situationer, som att skapa en kommandoradsapplikation, hantera olika användaruppgifter eller automatiskt köra scripts med olika argument. För att lära dig mer om hur man kan använda kommandoradsargument i PHP, kolla in några av följande länkar:
 
-## Djupdykning 
-Förutom `getopt()` finns det andra sätt att läsa in kommandoradsargument i PHP, såsom `$_SERVER['argv']`. Det finns också många olika bibliotek och paket som erbjuder mer avancerade funktioner för att hantera kommandoradsläsning i PHP. Det är viktigt att du väljer en metod som passar bäst för ditt specifika projekt och behov.
+- [PHP:getopt](https://www.php.net/manual/en/function.getenv.php)
+- [PHP: Command Line Usage](https://www.php.net/manual/en/features.commandline.usage.php)
+- [PHP: Command Line Interface](https://www.php.net/manual/en/features.commandline.php)
 
-## Se också 
-- [PHP Manual - Getopt](https://www.php.net/manual/en/function.getopt.php)
-- [PHP Command-line Usage](https://www.php.net/manual/en/features.commandline.usage.php)
-- [GetOpt PHP Library](https://github.com/getopt-php/getopt-php)
+## Se även
+Här är några andra användbara resurser för att utforska mer om PHP-programmering:
+
+- [PHP-dokumentation](https://www.php.net/manual/en/)
+- [W3Schools PHP Tutorial](https://www.w3schools.com/php/)
+- [PHP Programmering på YouTube](https://www.youtube.com/watch?v=KX5H9FoTkrA)

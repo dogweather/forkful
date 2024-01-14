@@ -1,41 +1,42 @@
 ---
-title:                "Ruby: Skrivning till standardfel"
+title:                "Ruby: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att skriva till standardfel är en viktig uppgift för en Ruby-programmerare. Det ger möjlighet att visa användbara felmeddelanden och felhantering för att förbättra programmet.
 
-Att skriva till standardfel är en viktig del av att skriva effektiv kod i Ruby. Genom att skicka felmeddelanden till standardfel istället för standardutmatningen kan du se till att din kod fungerar korrekt och tydligt identifiera eventuella problem. Läs vidare för att lära dig hur du kan använda denna teknik i din Ruby programmering.
-
-## Så här gör du
-
-Att skriva till standardfel i Ruby är enkelt och kräver bara några få rader kod. Om du vill skicka ett felmeddelande till standardfel använder du metoden `warn` och skickar meddelandet som ett argument. Nedan visas ett exempel på hur du kan använda `warn` för att skriva ut ett felmeddelande till standardfel.
+## Hur man gör
+Det enklaste sättet att skriva till standardfel är genom att använda puts-metoden med en sträng som argument. Till exempel:
 
 ```Ruby
-# Exempel på hur man skriver till standardfel
-warn "Det här är ett felmeddelande"
+puts "Ett fel har inträffat."
 ```
 
-När du kör detta program kommer du att se att meddelandet skrivs ut i rött och föregås av ordet "WARNING". Detta gör det tydligt för användaren att det finns ett problem som behöver lösas.
+Detta kommer att skriva ut "Ett fel har inträffat." som standardfelmeddelande.
+
+En annan användbar metod för att skriva till standardfel är through "STDERR.puts". Till skillnad från puts-metoden som skriver till standardutmatning, skriver STDERR.puts till standardfelutmatning. Till exempel:
+
+```Ruby
+STDERR.puts "Detta är ett fel."
+```
+
+Output av detta kommer att visas som "Detta är ett fel." i standardfelutmatning.
 
 ## Djupdykning
+När man skriver till standardfel finns det några viktiga saker att tänka på:
 
-Att skriva till standardfel är en av de många sätt att hantera fel i Ruby. Det ger möjlighet att fånga mindre allvarliga fel och ge användaren information om vad som kan ha gått snett i koden.
-
-En annan viktig aspekt med att skriva till standardfel är att det inte stoppar programkörningen, vilket kan vara användbart om man vill fortsätta köra programmet trots ett fel. Detta gör det också lättare att hitta och åtgärda problemen i koden.
-
-Det är också värt att notera att du kan skicka alla typer av objekt till `warn` metoden, inte bara strängar. Detta gör det möjligt att skicka mer komplexa felmeddelanden med information om variabler eller andra delar av koden som kan hjälpa till med felsökning.
+1. Ha alltid med relevant information i ditt felmeddelande, som kan hjälpa till att hitta och lösa problemet.
+2. Det är viktigt att hålla standardfelutmatningen tydlig och läsbar, så undvik att överbelasta den med onödig information.
+3. Ha en strukturerad metod för att hantera fel, inklusive felhantering och undantagshantering, för att göra ditt program robust och lättare att underhålla.
 
 ## Se även
-
-Här är några användbara länkar för att lära dig mer om att skriva till standardfel i Ruby:
-
-- [Ruby dokumentation om warn metoden](https://ruby-doc.org/core-3.0.2/Kernel.html#method-i-warn)
-- [RubyGuides artikel om hantering av fel i Ruby](https://www.rubyguides.com/2019/01/ruby-exception-handling/)
-- [Ruby on Rails Guides om diagnostiska verktyg i Rails](https://guides.rubyonrails.org/debugging_rails_applications.html#diagnostic-tools)
-
-Med dessa resurser vid din sida kan du bli en expert på att skriva till standardfel och förbättra din förmåga att hantera fel i din kod. Lycka till med din Ruby programmering!
+- [Documenting Ruby Code with YARD](https://dzone.com/articles/documenting-ruby-code-with-yard)
+- [Debugging Ruby with Pry](https://www.sitepoint.com/debugging-ruby-with-pry/)
+- [Handling Errors in Ruby](https://www.rubyguides.com/2019/05/exception-handling-in-ruby/)

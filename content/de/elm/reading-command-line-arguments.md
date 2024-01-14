@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Lesen von Befehlszeilenargumenten"
+simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/reading-command-line-arguments.md"
 ---
 
@@ -9,60 +11,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Lesen von Befehlszeilenargumenten ist ein wichtiger Teil der Programmierung in Elm. Es ermöglicht es dir, auf die Eingaben deiner Benutzer zu reagieren und interaktive Programme zu erstellen. In diesem Blog-Beitrag werden wir uns genauer mit diesem Thema befassen und lernen, wie man Befehlszeilenargumente liest.
+Das Lesen von Befehlszeilenargumenten kann für Elm-Entwickler*innen sehr hilfreich sein, um flexiblere und anpassungsfähigere Programme zu erstellen. Es ermöglicht die Verwendung von externen Eingaben zur Steuerung des Programms während der Laufzeit.
 
-## Wie geht man vor
+## Wie geht's
 
-Um Befehlszeilenargumente zu lesen, müssen wir zuerst ein Modul importieren, das uns hilft, auf die Argumente zuzugreifen:
+Um Befehlszeilenargumente in Elm zu lesen, können wir die `Platform.Cmd`-Bibliothek verwenden. Zuerst müssen wir sie importieren:
 
 ```Elm
-import Basics exposing (..)
-import Platform.Cmd exposing (args)
+import Platform.Cmd exposing (Cmd)
 ```
 
-Als nächstes können wir die Funktion `elmApp` verwenden, um die Argumente als Liste von Zeichenketten zu erhalten. Diese Funktion erwartet, dass wir ihr ein Mapping übergeben, welches die Argumente verarbeitet. Hier ist ein einfaches Beispiel:
+Dann können wir die Funktion `Platform.Cmd.args` verwenden, die eine `List String` zurückgibt. Diese Liste enthält alle Befehlszeilenargumente, die beim Ausführen des Programms angegeben wurden. Hier ist ein Beispielcode, der die Argumente ausgibt:
 
 ```Elm
+main : program
 main =
-  elmApp processArgs
+    Platform.worker
+        { init = init
+        , update = update
+        , view = view
+        , subscriptions = \model -> Sub.none
+        }
 
-processArgs arguments =
-  case arguments of
-    [] -> Text.color Text.red <| Text.fromString "Keine Argumente angegeben!"
-    _ -> Text.fromString "Argumente erhalten!"
+init : () -> ( model, Cmd msg )
+init _ =
+    ( ()
+    , Platform.Cmd.none
+    )
+
+update : msg -> model -> ( model, Cmd msg )
+update _ model =
+    ( model
+    , Platform.Cmd.none
+    )
+
+view : model -> Html msg
+view model =
+    Html.text (List.toString (Platform.Cmd.args model))
 ```
 
-In diesem Beispiel verwenden wir das `elmApp`-Mapping, um auf alle Argumente zuzugreifen und sie dann mit einem einfachen Musterabgleich zu verarbeiten. Wenn keine Argumente angegeben werden, wird eine Meldung in roter Farbe angezeigt, ansonsten wird einfach bestätigt, dass die Argumente erhalten wurden.
+Wenn wir unser Programm mit Befehlszeilenargumenten ausführen, zum Beispiel `elm make Main.elm -- --name John`, wird das Ergebnis `["--name", "John"]` sein.
 
-## Tiefer eintauchen
+## Tiefer Einblick
 
-Das `args`-Modul bietet mehrere Funktionen, die uns dabei helfen, die Befehlszeilenargumente weiter zu verarbeiten. Beispielsweise können wir die Funktion `getAt` verwenden, um ein bestimmtes Argument auszuwählen oder die Funktion `length` verwenden, um die Anzahl der Argumente zu ermitteln.
+Es gibt auch die Möglichkeit, ein Flag für ein einzelnes Argument festzulegen, indem wir `Platform.Cmd.Arg String` verwenden. Hier ist ein Beispielcode, der das erste Befehlszeilenargument als Namen verwendet und es zusammen mit einer Standardnachricht in der HTML-Ausgabe anzeigt:
 
 ```Elm
-main =
-  elmApp processArgs
+view : model -> Html msg
+view model =
+    let
+        name = case Platform.Cmd.arg 0 model of
+            Platform.Cmd.Arg arg ->
+                arg
 
-processArgs arguments =
-  if length arguments > 2 then
-    let 
-      firstArg = getAt 0 arguments
-      secondArg = getAt 1 arguments
-      thirdArg = getAt 2 arguments
+            Platform.Cmd.NoArg ->
+                "World"
     in
-      Text.concat [ Text.fromString "Die ersten drei Argumente sind: "
-                  , firstArg
-                  , Text.fromString ", "
-                  , secondArg
-                  , Text.fromString " und "
-                  , thirdArg
-                  ]
-  else
-    Text.fromString "Nicht genug Argumente angegeben!"
+        Html.text ("Hello " ++ name)
 ```
 
-In diesem Beispiel nutzen wir `length` und `getAt`, um die ersten drei Argumente aus der Liste auszuwählen und sie dann in einer zusammengefügten Zeichenkette anzuzeigen.
+Wenn wir das Programm ohne Argumente ausführen, wird die Ausgabe `Hello World` sein. Wenn wir jedoch ein Argument angeben, z.B. `elm make Main.elm --name John`, wird es als `Hello John` angezeigt.
 
 ## Siehe auch
 
-- [Dokumentation zum Platform.Cmd-Modul](https://package.elm-lang.org/packages/elm-lang/core/5.1.1/Platform-Cmd)
-- [Codebeispiel zum Lesen von Befehlszeilenargumenten](https://github.com/elm-lang/core/blob/master/tests/Platform/Platform/Platform/Command.elm)
+- [Dokumentation zur Platform.Cmd-Bibliothek](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd)
+- [GitHub-Repository von Elm](https://github.com/elm/compiler)

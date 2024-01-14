@@ -1,7 +1,9 @@
 ---
 title:                "Java: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/finding-the-length-of-a-string.md"
 ---
 
@@ -9,49 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami, podczas pisania programów w Javie, musimy mieć możliwość obliczenia długości tekstu, który użytkownik wprowadzi do naszej aplikacji. Może być to przydatne w przypadku walidacji danych lub oddzielania słów w zdaniach. W tym artykule omówimy, jak obliczyć długość łańcucha znaków za pomocą Java.
+Każdego dnia korzystamy z różnych funkcji w języku programowania Java, ale nie zawsze zastanawiamy się dlaczego są one istotne. Jedną z takich funkcji jest znajdowanie długości napisu. Dlaczego jest to ważne? Dzięki temu możemy w łatwy sposób określić ilość znaków w danym napisie, co może być bardzo przydatne przy tworzeniu aplikacji lub gier. W tym artykule dowiesz się jak to zrobić oraz dlaczego warto.
 
 ## Jak to zrobić
 
-Aby obliczyć długość łańcucha znaków, możemy użyć metody `length()` z klasy `String`. Przykładowy kod wyglądałby następująco:
+Znajdowanie długości napisu w języku Java jest bardzo proste i wymaga tylko kilku linijek kodu. W tej sekcji pokażę Ci przykładowe rozwiązania wraz z wynikami.
 
 ```Java
-String text = "To jest przykładowy tekst.";
-int length = text.length();
-System.out.println("Długość tekstu wynosi: " + length);
+// Zadeklarowanie napisu
+String napis = "Cześć, tutaj piszę pierwszy blog post!";
+
+// Użycie metody length() na obiekcie String
+System.out.println("Długość napisu wynosi: " + napis.length());
+
+// Wynik: Długość napisu wynosi: 37
 ```
 
-Powyższy kod utworzy zmienną `text`, która przechowuje nasz tekst, następnie wywoła metodę `length()` na tej zmiennej i przypisze wynik do zmiennej `length`. Na koniec wyświetli wynik w konsoli.
+Jak widać, używając metody `length()` na obiekcie typu `String`, otrzymujemy liczbę będącą długością tego napisu. Pamiętaj również, że liczymy każdy znak w tym napisie, włączając w to spacje i znaki specjalne.
 
-Możemy również obliczyć długość tekstu bez przypisywania jej do zmiennej, za pomocą dowolnej zmiennej typu `String`, np.:
+Możemy również wykorzystać pętle, aby policzyć długość napisu i wyświetlić wynik dla każdego znaku oddzielnie.
 
 ```Java
-System.out.println("Długość tekstu: " + "To jest inny tekst.".length());
+// Zadeklarowanie napisu
+String napis = "Hello there!";
+
+// Użycie pętli for do policzenia długości
+for (int i = 0; i < napis.length(); i++) {
+    System.out.println("Długość znaku " + (i+1) + " to " + napis.charAt(i));
+}
+
+// Wynik:
+// Długość znaku 1 to H
+// Długość znaku 2 to e
+// Długość znaku 3 to l
+// Długość znaku 4 to l
+// Długość znaku 5 to o
+// Długość znaku 6 to
+// Długość znaku 7 to t
+// Długość znaku 8 to h
+// Długość znaku 9 to e
+// Długość znaku 10 to r
+// Długość znaku 11 to e
+// Długość znaku 12 to !
 ```
 
-Wynikiem tego kodu będzie wyświetlenie w konsoli "Długość tekstu: 17".
+## Deep Dive
 
-Możemy również sprawdzić długość tekstu wprowadzonego przez użytkownika podczas działania programu, na przykład:
+W przypadku większych napisów, często przydatne jest określenie długości tylko fragmentu tego napisu. W tym celu możemy użyć metody `substring()`.
 
 ```Java
-Scanner scanner = new Scanner(System.in);
-System.out.print("Wprowadź dowolny tekst: ");
-String userInput = scanner.nextLine();
-System.out.println("Długość tekstu: " + userInput.length());
+// Zadeklarowanie napisu
+String napis = "Lorem ipsum dolor sit amet";
+
+// Użycie metody substring()
+System.out.println("Fragment napisu: " + napis.substring(0, 5));
+
+// Wynik: Fragment napisu: Lorem
 ```
 
-W tym przypadku, program zapyta użytkownika o wprowadzenie tekstu, a następnie wyświetli jego długość.
-
-## Pogłębione zagadnienia
-
-Podczas obliczania długości tekstu warto zwrócić uwagę na kilka rzeczy. Po pierwsze, długość tekstu jest mierzona w liczbie znaków, nie w słowach. Oznacza to, że spacja jest również traktowana jako znak i jest wliczana w długość.
-
-Po drugie, metoda `length()` nie może być wywoływana na wartościach null, w przeciwnym razie spowoduje to wystąpienie błędu.
-
-Warto również zauważyć, że metoda `length()` jest często wykorzystywana do iterowania przez wszystkie znaki w tekście przy użyciu pętli for lub while.
+W powyższym przykładzie, jako pierwszy argument metody `substring()` podajemy indeks, od którego chcemy zacząć, a jako drugi argument indeks końcowy (nie włączając tego indeksu). W ten sposób możemy uzyskać dowolny fragment napisu, który nas interesuje.
 
 ## Zobacz również
 
-* [Jak porównywać napisy w Java](https://www.samouczekprogramisty.pl/porownywanie-napisow-w-javie/)
-* [Jak zwracać podciągi (substring) w Java](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
-* [Metody klasy String w Javie](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- Dokumentacja Oracle: [String class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- Poradnik Java: [Jak znaleźć długość napisu w Javie](https://jakaprogramowac.pl/jak-znalezc-dlugosc-napisu-w-javie/)

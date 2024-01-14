@@ -1,50 +1,71 @@
 ---
-title:                "Rust: Obliczanie daty w przyszłości lub przeszłości"
+title:                "Rust: Obliczanie daty w przyszłości lub przeszłości."
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości."
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego?
+## Dlaczego
 
-Obliczanie daty w przyszłości lub w przeszłości może być niezwykle przydatne w codziennej pracy programisty. Możemy wykorzystać to do planowania działań lub tworzenia aplikacji, które wymagają danych z odległych dat.
+Zastanawiałeś się kiedyś jak obliczyć datę w przyszłości lub przeszłości? Może jesteś programistą, który chce stworzyć aplikację, która będzie wyswietlała datę z wybranego przez użytkownika dnia? W tym artykule dowiesz się jak to zrobić w języku Rust!
 
-# Jak to zrobić?
+## Jak To Zrobić
+
+Pierwszą rzeczą, którą musisz zrobić, to zaimportować bibliotekę czasu do swojego projektu. Możesz to zrobić za pomocą następującego kodu:
 
 ```Rust
-use chrono::{NaiveDate, Duration};
-
-fn main() {
-    // Tworzona jest obecna data za pomocą Struktury NaiveDateTime
-    let current_date = NaiveDate::from_ymd(2021, 10, 10);
-
-    // Obliczanie daty w przyszłości za pomocą metody `add(Duration)`
-    let future_date = current_date.add(Duration::days(30));
-
-    // Obliczanie daty w przeszłości za pomocą metody `sub(Duration)`
-    let past_date = current_date.sub(Duration::days(30));
-
-    // Wyświetlenie wyników
-    println!("Obecna data: {}", current_date);
-    println!("Data w przyszłości: {}", future_date);
-    println!("Data w przeszłości: {}", past_date);
-}
+use std::time::Duration;
 ```
 
+Następnie, możesz użyć funkcji `elapsed()` w celu obliczenia odstępu czasu między dwoma określonymi punktami czasowymi. W poniższym przykładzie, obliczymy odstęp czasu od momentu uruchomienia programu do teraz:
+
+```Rust
+use std::time::Instant;
+
+let start = Instant::now();
+
+// some code...
+
+let end = Instant::now();
+
+let elapsed = end.elapsed();
+
+println!("Od momentu uruchomienia minęło {:?}.", elapsed);
 ```
-Obecna data: 2021-10-10
-Data w przyszłości: 2021-11-09
-Data w przeszłości: 2021-09-10
+
+Output:
+
+```
+Od momentu uruchomienia minęło 2.496927ms.
 ```
 
-# Głębsze zanurzenie
+Możesz również obliczyć datę w przyszłości lub przeszłości, dodając lub odejmując odpowiednią ilość czasu od obecnej daty. W poniższym przykładzie, dodamy 1 dzień do obecnej daty:
 
-W języku Rust możemy wykorzystać bibliotekę `chrono`, która zapewnia nam wiele przydatnych narzędzi do zarządzania datami i godzinami. Metoda `add()` oraz `sub()` umożliwiają nam proste i intuicyjne obliczanie dat w przyszłości lub przeszłości za pomocą określonej liczby dni, miesięcy lub lat. Możemy również wykorzystać bardziej zaawansowane metody, takie jak `add_signed()` lub `subtract_signed()`, aby uwzględnić zmiany w strefach czasowych. Biblioteka `chrono` jest również w stanie obsłużyć daty z dokładnością do milisekund oraz wykonywać operacje matematyczne na nich.
+```Rust
+use std::time::SystemTime;
 
-# Zobacz również
+let now = SystemTime::now();
 
-- Dokumentacja biblioteki `chrono`: https://docs.rs/chrono/
-- Przykładowe rozwiązania wykorzystujące obliczanie dat w przyszłości i przeszłości: https://blog.jeckel.se/2017/06/rust-chrono-date-and-time-calculations/
-- "Zarządzanie dniami, godzinami i strefami czasowymi w języku Rust": https://www.paddingleft.com/articles/2019/03/31/managing-dates-time-zones-rust.html
+let one_day = now + Duration::from_secs(60 * 60 * 24);
+
+println!("Data za 1 dzień będzie następująca: {:?}", one_day);
+```
+
+Output:
+
+```
+Data za 1 dzień będzie następująca: 2019-10-29 17:00:26.897347211 +0200.
+```
+
+## Deep Dive
+
+Jeśli chcesz dowiedzieć się więcej o obliczaniu daty w przyszłości lub przeszłości w języku Rust, możesz zapoznać się z dokumentacją biblioteki czasu oraz przestudiować przykłady kodu dostępne na stronie Rust Playground.
+
+## Zobacz Również
+
+- [Dokumentacja biblioteki czasu w Rust](https://doc.rust-lang.org/std/time/index.html)
+- [Przykłady kodu w Rust Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=1e8cfd8f11ef3d3c73c1b1fa1d239307)

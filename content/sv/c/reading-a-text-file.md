@@ -1,65 +1,50 @@
 ---
 title:                "C: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att läsa en textfil är en vanlig uppgift för programmerare och användbar för många olika ändamål. Det kan vara att läsa in användardata, behandla stora mängder information eller bara skapa en textbaserad applikation. Oavsett vad anledningen är, kan det vara en användbar kunskap för programmerare att veta.
 
-## Hur man gör
-För att läsa en textfil i C, behöver du först öppna filen med hjälp av ```fopen()``` funktionen. Du behöver också ange om du vill läsa, skriva eller lägga till i filen. Om du bara vill läsa innehållet i filen, kan du använda läget "r". Sedan använder du ```fscanf()``` för att läsa innehållet rad för rad tills du når slutet av filen.
+Att läsa en textfil i C-programmering kan vara en användbar färdighet att ha eftersom det låter dig läsa data från en extern källa och använda den i ditt program.
 
-```c
-#include <stdio.h>
+## Så här gör du
 
-int main(void)
-{
-    FILE *fp; //variabel för att hålla filreferensen 
-    char buffer[255]; //för att hålla en rad text från filen
+Att läsa en textfil i C-programmering kräver bara några få enkla steg. Först måste du öppna filen med fopen() funktionen och förse den med filens namn och "r" -läget för att ange att filen ska läsas. 
 
-    fp = fopen("textfil.txt", "r"); //öppna filen i läge "r"
+```C
 
-    if (fp == NULL) //om filen inte kan öppnas, avbryt programmet
-    {
-        printf("Filen kunde inte öppnas.");
-        return 1;
-    }
+FILE *fp;
+fp = fopen("textfil.txt", "r");
 
-    while (fscanf(fp, "%s", buffer) != EOF) //loopa tills slutet av filen är nått med hjälp av fscanf
-    {
-        printf("%s\n", buffer); //skriv ut innehållet från raden i filen
-    }
-
-    fclose(fp); //stäng filen när du är klar
-
-    return 0;
-}
 ```
 
-Om du till exempel har en textfil som innehåller:
+Nästa steg är att använda en loop för att läsa in filens innehåll rad för rad med hjälp av fgets() funktionen tills du når slutet av filen. Du kan sedan skriva ut varje rad till konsolen eller använda den för att utföra en viss uppgift.
 
-> Hej
-> Världen 
-> Detta är en textfil
+```C
 
-Så kommer utmatningen att bli:
+char line[100];
 
-> Hej
-> Världen
-> Detta
-> är
-> en
-> textfil
+while(fgets(line, sizeof(line), fp)) {
+    // Gör något med "line"
+}
+
+```
 
 ## Djupdykning
-När du läser en textfil i C, kan du också hantera specialtecken som radbrytningar och mellanslag genom att använda ```fgets()``` och ```sscanf()``` istället för ```fscanf()```. Du kan också använda ```fprintf()``` för att skriva till en textfil.
 
-Det är också viktigt att kontrollera om filen öppnas korrekt genom att använda en if-sats. Om filen inte kan öppnas, så bör programmet avslutas för att undvika eventuella felmeddelanden eller felaktig datainsamling.
+Att läsa en textfil kan också innebära att hantera eventuella fel som kan uppstå under processen. Det är viktigt att kontrollera om filen är riktig öppen innan du börjar läsa den och att stänga filen när du är klar med hjälp av fclose() funktionen.
+
+Det kan också vara användbart att känna till olika sätt att läsa en textfil, till exempel att läsa in hela filen på en gång med hjälp av "fread()", eller att läsa in en viss mängd tecken från filen med hjälp av "fgetc()". Det är också möjligt att läsa in andra typer av filer än textfiler, som binärdata.
 
 ## Se även
-- [C File Input/Output](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [C String Functions](https://www.programiz.com/c-programming/library-function/string.h)
+
+För mer information om hur man läser en textfil i C-programmering, kolla in följande resurser:
+
+- [C Programming File Handling](https://www.tutorialspoint.com/cprogramming/c_file_io.html)
+- [C Graphics Tutorial](https://www.programiz.com/c-programming/c-graphics-programming)

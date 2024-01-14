@@ -1,42 +1,46 @@
 ---
-title:                "Bash: Extraction de sous-chaines"
+title:                "Bash: Extraction de sous-chaînes"
+simple_title:         "Extraction de sous-chaînes"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-Extrayer des sous-chaînes de caractères est une compétence utile à connaître pour tout programmeur Bash. Cela vous permet de manipuler et de modifier efficacement des chaînes de caractères, ce qui peut être utile pour diverses tâches de programmation.
+Le processus d'extraction de sous-chaînes, également appelé "substring", est une tâche courante lors de la programmation en Bash. Il s'agit essentiellement de prendre une partie d'une chaîne de caractères plus longue et de la stocker en tant que nouvelle variable, ce qui peut être très utile pour manipuler et analyser des données.
 
 ## Comment faire
 
-Pour extraire une sous-chaîne de caractères dans Bash, vous pouvez utiliser la commande `cut`. Par exemple, si vous avez une chaîne de caractères "Bonjour le monde", et que vous voulez extraire "le monde", vous pouvez utiliser la commande suivante :
+Pour extraire une sous-chaîne en Bash, vous pouvez utiliser la syntaxe suivante :
 
 ```Bash
-echo "Bonjour le monde" | cut -d' ' -f2-
+var="ma chaîne de caractères"
+echo ${var:3:5}
 ```
+Ce qui va afficher "châin" en sortie, car cela commence à la position 3 de la chaîne et prend 5 caractères.
 
-Cela utilise le délimiteur d'espace pour séparer la chaîne en deux parties, puis utilise le sélecteur `-f2-` pour sélectionner la deuxième partie jusqu'à la fin.
-
-Vous pouvez également utiliser des expressions régulières pour extraire des sous-chaînes de manière plus précise. Par exemple, si vous voulez extraire tous les chiffres d'une chaîne de caractères, vous pouvez utiliser la commande suivante :
+Vous pouvez également utiliser des variables pour spécifier la position de départ et la longueur de la sous-chaîne, comme ceci :
 
 ```Bash
-echo "J'ai 5 pommes" | grep -o '[0-9]*'
+start=3
+length=5
+echo ${var:start:length}
 ```
 
-Cela sélectionnera et affichera uniquement les chiffres de la chaîne "5". 
+## Plongée en profondeur
 
-## Plongeon profond
+Il existe plusieurs variations de la syntaxe d'extraction de sous-chaîne en Bash, qui offrent différents niveaux de flexibilité dans la sélection de la partie de la chaîne souhaitée. Par exemple, vous pouvez utiliser des nombres négatifs pour compter à partir de la fin de la chaîne ou utiliser des expressions régulières pour extraire des motifs spécifiques.
 
-Il existe de nombreuses autres façons d'extraire des sous-chaînes de caractères en utilisant Bash. Vous pouvez utiliser des commandes telles que `sed`, `awk`, `grep` et même des boucles et des conditions pour filtrer et manipuler des chaînes de caractères.
-
-Il est également important de noter que Bash dispose d'un support natif pour les tableaux de chaînes de caractères, ce qui facilite la manipulation de sous-chaînes de caractères dans des scripts Bash plus complexes.
+De plus, l'extraction de sous-chaîne peut également être combinée avec d'autres opérations Bash telles que les boucles et les conditions pour automatiser davantage le processus et le rendre encore plus puissant.
 
 ## Voir aussi
 
-- [Documentaion Bash sur la commande "cut"](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
-- [Tutoriel sur les expressions régulières en Bash](https://www.tldp.org/LDP/abs/html/regexp.html)
-- [Guide complet sur l'utilisation des tableaux en Bash](https://www.linuxjournal.com/content/bash-arrays)
+- [La documentation officielle de Bash](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [Un guide détaillé sur l'extraction de sous-chaîne en Bash](https://www.tldp.org/LDP/abs/html/string-manipulation.html#SUBSTRREF)
+- [Un tutoriel vidéo sur l'utilisation des expressions régulières pour extraire des sous-chaînes](https://www.youtube.com/watch?v=SvDQlk BIjI)
+
+Merci d'avoir lu ! À la prochaine fois !

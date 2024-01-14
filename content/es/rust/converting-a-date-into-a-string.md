@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Convirtiendo una fecha en una cadena"
+title:                "Rust: Convirtiendo una fecha en una cadena."
+simple_title:         "Convirtiendo una fecha en una cadena."
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/converting-a-date-into-a-string.md"
 ---
 
@@ -9,59 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-La conversión de una fecha en una cadena de texto es una tarea común en la programación. Puede ser necesario para su uso en informes, interfaces de usuario, o simplemente para una mejor visualización de la información en la terminal. En Rust, podemos hacer esta conversión de manera eficiente y precisa utilizando sus poderosas funciones integradas.
+La conversión de una fecha en una cadena de texto es una tarea común en el desarrollo de aplicaciones. Puede ser necesario mostrar una fecha en un formato específico o almacenarla en una base de datos. En este artículo, exploraremos cómo realizar esta conversión utilizando Rust.
 
 ## Cómo hacerlo
 
-En Rust, podemos convertir una fecha en una cadena de texto utilizando el método `format` de la estructura `DateTime`. Aquí hay un ejemplo básico:
+Para convertir una fecha en una cadena de texto en Rust, primero necesitamos importar el módulo `chrono` que proporciona herramientas para trabajar con fechas y horas.
 
 ```Rust
-use chrono::prelude::*;
-
-fn main() {
-    let date = Utc::now();
-    let formatted_date = date.format("%Y-%m-%d").to_string();
-    println!("{}", formatted_date);
-}
+use chrono::{DateTime, Local, TimeZone, NaiveDate, format::strftime};
 ```
-El código anterior utiliza la librería `chrono` para obtener la fecha y hora actual en UTC, y luego utiliza el método `format` para formatearla como una cadena de texto en el formato `AAAA-MM-DD`.
 
-Podemos personalizar el formato de la cadena de texto al pasar diferentes argumentos al método `format`, como se muestra en el siguiente ejemplo:
+A continuación, necesitamos crear una instancia de `DateTime` con la fecha que queremos convertir. Esto se puede hacer utilizando el método `now()` para obtener la fecha y hora actual o creando una nueva instancia con `DateTime::new()` pasando los valores de año, mes, día, hora, minuto y segundo.
 
 ```Rust
-use chrono::prelude::*;
-
-fn main() {
-    let date = Utc::now();
-    let formatted_date = date.format("%A, %d. %B %Y").to_string();
-    println!("{}", formatted_date);
-}
+let today = Local::now();
+let date = DateTime::new(2021, 10, 5, 8, 30, 0);
 ```
 
-Este código producirá una cadena de texto que muestra el día de la semana, el día del mes, el nombre del mes y el año, como por ejemplo: "Monday, 02. August 2021".
+Una vez que tenemos nuestra fecha, podemos utilizar el método `format()` para especificar el formato de salida. Por ejemplo, si queremos obtener la fecha en formato `d/m/Y` (día/mes/año), podemos hacer lo siguiente:
+
+```Rust
+let formatted_date = date.format("%d/%m/%Y").to_string();
+println!("{}", formatted_date); // Output: 05/10/2021
+```
+
+También podemos obtener la fecha en formato ISO utilizando el método `to_rfc3339()`.
+
+```Rust
+let iso_date = date.to_rfc3339();
+println!("{}", iso_date); // Output: 2021-10-05T08:30:00+00:00
+```
+
+Sin embargo, si queremos un formato personalizado, podemos utilizar el método `strftime()` y pasar el formato deseado. Por ejemplo, si queremos obtener la fecha en formato `D de MMMM de YYYY` (día de mes de año), podemos hacer lo siguiente:
+
+```Rust
+let custom_date = date.strftime("%e de %B de %Y").unwrap();
+println!("{}", custom_date); // Output: 5 de octubre de 2021
+```
 
 ## Profundizando
 
-Para una mayor personalización, podemos utilizar la macro `format!` en lugar del método `format` para convertir una fecha en una cadena de texto. La macro `format!` nos permite incluir múltiples variables en una sola cadena de texto, como se muestra en el siguiente ejemplo:
+La biblioteca `chrono` en realidad utiliza el tipo de datos `NaiveDateTime`, que representa una fecha y hora sin información de zona horaria. Esto permite trabajar con fechas y horas en diferentes formatos y zonas horarias.
 
-```Rust
-use chrono::prelude::*;
+Para obtener más información sobre cómo utilizar `chrono` y sus diferentes métodos de formato de fecha, se recomienda consultar su documentación oficial.
 
-fn main() {
-    let date = Utc::now();
-    let month_num = date.format("%m").to_string();
-    let month = match month_num.parse::<i32>() {
-        Ok(num) => num,
-        Err(_) => 1,
-    };
-    let formatted_date = format!("Hoy es {} de {_mes_actual}", date.day(), _mes_actual = month);
-    println!("{}", formatted_date);
-}
-```
+## Ver también
 
-En este ejemplo, además de obtener el día de la fecha actual, también utilizamos la macro `format!` para obtener el número del mes y luego lo convertimos en un nombre de mes utilizando un "match".
-
-## Ver También
-- Documentación de Rust sobre fechas y horas: https://doc.rust-lang.org/std/time/
-- Librería chrono para manipular fechas en Rust: https://github.com/chronotope/chrono
-- Tutorial sobre formateo de fechas y horas en Rust: https://www.educative.io/blog/how-to-format-date-and-time-in-rust
+- [Documentación de Chrono](https://docs.rs/chrono/latest/chrono/)
+- [Conversión de fechas en Rust](https://docs.rs/chrono/0.4.19/chrono/duration/struct.Duration.html) (en inglés)
+- [Manipulación de fechas en Rust: un tutorial práctico](https://dzone.com/articles/date-and-time-manipulation-in-rust-a-practical-gu) (en inglés)

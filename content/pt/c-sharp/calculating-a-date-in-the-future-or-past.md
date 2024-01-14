@@ -1,58 +1,68 @@
 ---
 title:                "C#: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Porquê
+## Por que
 
-Às vezes, precisamos saber que dia da semana será daqui a um mês ou em qual data caia o Natal no próximo ano. Ou talvez, precisamos calcular quantos dias se passaram desde o nosso aniversário até hoje. Nesses casos, é útil saber como calcular uma data no futuro ou no passado usando programação. Isso nos poupa tempo e evita erros manuais.
+Calcular uma data no futuro ou no passado pode ser útil em várias situações, como programar lembretes, agendamentos ou para obter informações em relatórios. Além disso, é uma habilidade importante para ter em sua caixa de ferramentas de programação.
 
-# Como Fazer
+## Como Fazer
 
-Para calcular uma data no futuro ou no passado, primeiro precisamos criar uma instância da classe `DateTime`. Vamos criar uma variável `dataAtual`, que irá armazenar a data de hoje:
+Para calcular uma data no futuro ou no passado em C#, temos que seguir alguns passos simples:
 
-```C#
-DateTime dataAtual = DateTime.Today;
-```
-
-Agora, suponha que queremos saber qual será a data daqui a 10 dias. Podemos usar o método `AddDays` para somar 10 dias à nossa data atual:
+1. Primeiro, precisamos criar uma instância da classe `DateTime` com a data atual como base. Isso pode ser feito da seguinte maneira:
 
 ```C#
-DateTime dataNoFuturo = dataAtual.AddDays(10);
+DateTime dataAtual = DateTime.Now;
 ```
 
-Da mesma forma, se quisermos saber qual foi a data 20 dias atrás, podemos usar o método `AddDays` novamente, desta vez com um valor negativo:
+2. Depois, podemos usar o método `Add()` para adicionar ou subtrair um determinado número de dias, meses ou anos da data atual. Por exemplo, para calcular uma data 30 dias no futuro, podemos fazer o seguinte:
 
 ```C#
-DateTime dataNoPassado = dataAtual.AddDays(-20);
+DateTime dataFutura = dataAtual.Add(new TimeSpan(30, 0, 0, 0));
 ```
 
-Além disso, também podemos usar os métodos `AddMonths` e `AddYears` para calcular datas em um futuro ou passado mais distante. Por exemplo, para saber qual será a data daqui a 6 meses, podemos fazer:
+3. Também é possível ajustar a data baseada em unidades menores, como horas, minutos e segundos. Por exemplo, para calcular uma data 12 horas e 30 minutos no passado, podemos usar o seguinte código:
 
 ```C#
-DateTime dataNoFuturoLongoPrazo = dataAtual.AddMonths(6);
+DateTime dataPassada = dataAtual.Subtract(new TimeSpan(0, 12, 30, 0));
 ```
 
-E, para saber qual data cai daqui a 3 anos, podemos fazer:
+4. Por fim, podemos imprimir os resultados utilizando o método `ToString()` e especificando o formato de data desejado. Por exemplo:
 
 ```C#
-DateTime dataNoFuturoExtremo = dataAtual.AddYears(3);
+Console.WriteLine(dataFutura.ToString("dd/MM/yyyy"));
+Console.WriteLine(dataPassada.ToString("HH:mm:ss"));
 ```
 
-Ao executar o código acima, obteremos as datas corretas no futuro ou no passado, dependendo da operação realizada.
+Isso irá resultar em uma saída como esta:
 
-# Profundidade
+```
+03/01/2020
+14:30:00
+```
 
-O cálculo de datas no futuro ou no passado é possível graças ao fato de que a classe `DateTime` possui métodos para adicionar e subtrair dias, meses e anos. Além disso, também podemos obter informações detalhadas sobre uma data, como dia da semana, dia do ano e até mesmo a diferença em dias entre duas datas.
+## Deep Dive
 
-Para saber mais sobre as funcionalidades da classe `DateTime`, consulte a documentação oficial da Microsoft: https://docs.microsoft.com/pt-br/dotnet/api/system.datetime?view=net-5.0
+Além do método `Add()` e `Subtract()` que vimos anteriormente, existem outros recursos que podem ser úteis para calcular datas no futuro ou no passado em C#. Vamos ver alguns deles:
 
-# Veja Também
+- É possível utilizar a classe `TimeSpan` para especificar o intervalo de tempo que queremos adicionar ou subtrair. Por exemplo, podemos passar um parâmetro `TimeSpan.FromDays()` para adicionar ou subtrair dias, `TimeSpan.FromHours()` para horas, etc.
 
-- https://docs.microsoft.com/pt-br/dotnet/api/system.datetime.adddays?view=net-5.0
-- https://www.c-sharpcorner.com/blogs/add-days-to-date-in-c-sharp1
-- https://www.devmedia.com.br/trabalhando-com-datas-no-csharp/22297
+- Também podemos utilizar o método `AddDays()`, `AddHours()`, etc. diretamente na instância da classe `DateTime` para evitar a criação de um objeto `TimeSpan`. Por exemplo, `dataAtual.AddDays(5)` irá adicionar 5 dias à data atual.
+
+- Para obter o dia da semana de uma data calculada, podemos usar o método `DayOfWeek` da classe `DateTime`.
+
+- Por fim, é importante lembrar que o formato de data pode variar de acordo com a cultura e o idioma do sistema operacional em que o código está sendo executado. Por isso, é recomendado utilizar o método `ToString()` com um especificador de formato para garantir a consistência dos resultados.
+
+## Veja Também
+
+- [Documentação oficial do .NET sobre a classe `DateTime`](https://docs.microsoft.com/pt-br/dotnet/api/system.datetime)
+- [Tutorial sobre o método `Add()` e `Subtract()` em C#](https://www.educative.io/edpresso/how-to-add-and-subtract-dates-in-c-sharp)
+- [Guia completo sobre formatação de datas em C#](https://www.c-sharpcorner.com/article/date-and-time-format-in-c-sharp/)

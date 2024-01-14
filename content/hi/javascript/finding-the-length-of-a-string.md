@@ -1,38 +1,38 @@
 ---
 title:                "Javascript: स्ट्रिंग की लंबाई का पता लगाना"
+simple_title:         "स्ट्रिंग की लंबाई का पता लगाना"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Kyun
-Agar aap ek Hindi programmer ho toh aapko shayad string ki length ko nikalna ke bare mein jaankari honi chahiye. String ka length nikalna bahut zaroori hai kyunki isse aap apne code mein string ko sahi tarah se use kar sakte ho aur uske saath alag alag operations perform kar sakte ho.
+## क्यों
 
-# Kaise Karein
-```Javascript
-let string = "Namaste";
-console.log(string.length); // Output: 7
+कुछ लोगों को शायद लगे कि जावास्क्रिप्ट में स्ट्रिंग की लंबाई का निर्धारण करना उपयोग का नहीं है। लेकिन इसके पीछे कई उपयोग हो सकते हैं, जैसे कि टेक्स्ट को crop करना, रेडिंग फाइल्स से डेटा को फाइल के साथ कम्पेयर करना और भी बहुत कुछ। इसलिए, इस लेख में हम जानेंगे कि जावास्क्रिप्ट में स्ट्रिंग की लंबाई का कैसे निर्धारित किया जा सकता है।
+
+## कैसे करें
+
+पहले, हमें एक मानचित्रिक स्थान में स्ट्रिंग भेजनी होगी। उदाहरण के लिए, हमारे पास एक टेक्स्ट स्ट्रिंग है "मेरा Blog"। हम चाहते हैं कि हम इस स्ट्रिंग की लंबाई को निर्धारित करें।
+
+```
+Javascript
+let blogText = "मेरा Blog";
 ```
 
-Is code block mein humne ek string variable banaya hai aur uska length property use karke uski length nikali hai. Is tarah se aap kisi bhi string ka length aasani se nikal sakte ho.
+अब हम इस स्ट्रिंग के लंबाई को निर्धारित करने के लिए लेकिन उसको कैसे करें इसके बारे में सोच सकते हैं। इसके लिए हम "length" विशेषता का उपयोग कर सकते हैं। यह हमें स्ट्रिंग की लंबाई को निर्दिष्ट करने की अनुमति देता है।
 
-```Javascript
-let emptyString = "";
-console.log(emptyString.length); // Output: 0
+```
+Javascript
+let blogLength = blogText.length;
+
+console.log(blogLength); // Output: 10
 ```
 
-Agar aap ek empty string ka length nikalna chahte ho toh yeh bhi possible hai. Empty string ka length 0 hota hai.
+हम देख सकते हैं कि हमारी स्ट्रिंग "मेरा Blog" की लंबाई 10 है।
 
-# Gehri Jhaank
-String ka length nikalne ke liye, Javascript mein hum `.length` property ka use karte hain. Asal mein yeh ek special property nahi hai, balki yeh `.length` ki jagah `.length()` function ke roop mein bhi likha jaa sakta hai. Lekin, Javascript mein yeh already ek built-in property ke roop mein available hai, isliye hum aksar isse property ke tarah hi likhte hain.
+## गहराई में जाएं
 
-Iske alawa, Javascript mein `.length` property string ke saath hi nahi balki arrays aur objects ke saath bhi use kiya jaa sakta hai. Arrays aur objects ka length unme present elements ya properties ki sankhya ko bataata hai. Isse aap arrays aur objects ko sahi tarah se manipulate kar sakte ho.
-
-# Dekhiye Bhi
-Agar aapko Javascript ke aur bhi concepts aur functions ke bare mein jaanna hai toh aap in links ko check kar sakte hain:
-
-- [String Methods in Javascript (Hindi)](https://developer.mozilla.org/hi/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [Arrays in Javascript (Hindi)](https://www.geeksforgeeks.org/javascript-array/)
-- [Objects in Javascript (Hindi)](https://www.studytonight.com/javascript/objects-in-javascript.php)
+स्ट्रिंग की लंबाई के बारे में और गहराई से जानने के लिए, हमें जानना होगा कि स्ट्रिंग को कैसे काम करता है। स्ट्रिंग एक तार रूप में स्टोर होती है जिसमें हर एक अक्षर को एक नंबर के रूप में स्टोर किया जाता है। जब हम

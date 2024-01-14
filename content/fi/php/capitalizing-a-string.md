@@ -1,47 +1,41 @@
 ---
-title:                "PHP: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+title:                "PHP: Merkkijonon kirjoittaminen isoilla kirjaimilla"
+simple_title:         "Merkkijonon kirjoittaminen isoilla kirjaimilla"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Miksi joku haluaisi muuttaa merkkijonon ensimmäisen kirjaimen isoksi? Tällainen toiminto voi olla hyödyllinen esimerkiksi tietokantaohjelmoinnissa tai käyttäjän antamien tietojen validoinnissa.
+On monia syitä, miksi voit joutua käyttämään PHP:ta merkkijonon kapitalisointiin. Yleisin syy on merkkijonon esittäminen isolla alkukirjaimella, mikä voi olla tarpeen esimerkiksi nimien tai otsikoiden kohdalla.
 
-## Kuinka?
+## Miten
 
-Haluamme käyttää PHP-komentoa "ucfirst" muuttaaksemme merkkijonon ensimmäisen kirjaimen isoksi. Tässä esimerkki:
-
-```PHP
-$input = "moi maailma!";
-echo ucfirst($input);
-```
-
-Tulos olisi "Moi maailma!". Voit myös käyttää samaa toimintoa merkkijonon keskellä, esimerkiksi:
+Merkkijonon kapitalisointi ei ole vaikeaa PHP:ssa. Se voidaan tehdä yksinkertaisesti käyttämällä built-in funktiota `ucfirst()` tai `ucwords()`. Tässä on esimerkki kultakin:
 
 ```PHP
-$input = "hyvää iltaa!";
-echo ucfirst($input);
+$merkkijono = "tämä on esimerkki merkkijonosta";
+
+// Kapitalisoidaan ensimmäinen kirjain
+echo ucfirst($merkkijono); // Tulostaa "Tämä on esimerkki merkkijonosta"
+
+// Kapitalisoidaan jokainen sanan ensimmäinen kirjain
+echo ucwords($merkkijono); // Tulostaa "Tämä On Esimerkki Merkkijonosta"
 ```
 
-Tulos olisi "Hyvää iltaa!".
+Huomaa, että `ucfirst()` kapitalisoi vain merkkijonon ensimmäisen kirjaimen, kun taas `ucwords()` kapitalisoi jokaisen sanan ensimmäisen kirjaimen. Voit myös tehdä oman funktion, joka käyttää `mb_convert_case()` funktiota, jotta saavutetaan parempi tuki monikielisille merkkijonoille.
 
-## Syvemmällä tasolla
+## Syventävä tieto
 
-"ucfirst" toiminto ei ole rajoitettu vain ensimmäisen kirjaimen muuttamiseen, vaan voit myös muuttaa merkkijonon toisen tai vaikka viimeisen kirjaimen isoksi käyttämällä toista PHP-komentoa, "ucwords". Esimerkiksi:
+Merkkijonon kapitalisointi voi olla hieman haasteellista, kun otetaan huomioon kielen monimuotoisuus. Joissain kielissä kuten saksassa ja venäjässä käytetään erilaisia kirjaimia kuin englannissa. Tämä tarkoittaa, että `ucfirst()` ja `ucwords()` eivät välttämättä toimi toivotulla tavalla kaikilla kielillä.
 
-```PHP
-$input = "tämä on esimerkki!";
-echo ucwords($input);
-```
-
-Tulos olisi "Tämä On Esimerkki!". Tämän toiminnon avulla voit helposti muokata merkkijonoja haluamallasi tavalla.
+Myös merkkijonojen kanssa, joissa on joitain erikoismerkkejä tai akronyymejä voi olla haastavaa saavuttaa haluttu kapitalisointi. Tästä syystä on tärkeää ymmärtää merkkijonon rakennetta ja tarvittaessa luoda oma funktio, joka käsittelee merkkijonoja kunkin kielen ja rakenteen mukaan.
 
 ## Katso myös
 
-- [PHP:n virallinen dokumentaatio](https://www.php.net/manual/en/function.ucfirst.php)
-- [PHP.net:n esimerkit](https://www.php.net/manual/en/function.ucfirst.php#example-454)
-- [W3Schoolsin opas](https://www.w3schools.com/php/func_string_ucfirst.asp)
+- PHP:n virallinen dokumentaatio `ucfirst()` ja `ucwords()` funktioista: https://www.php.net/manual/en/function.ucfirst.php, https://www.php.net/manual/en/function.ucwords.php
+- PHP:n virallinen dokumentaatio `mb_convert_case()` funktiosta: https://www.php.net/manual/en/function.mb-convert-case.php

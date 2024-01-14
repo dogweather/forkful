@@ -1,34 +1,36 @@
 ---
-title:                "PHP: Regular expressionsin käyttäminen"
+title:                "PHP: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää regexp:iä
-Regulaarisia lausekkeita käytetään useissa eri ohjelmointikielissä, kuten PHP:ssä, tiedon etsimiseen ja muokkaamiseen tekstissä. Ne ovat hyödyllisiä esimerkiksi tietokantojen tiedonhaussa ja datan validoinnissa. Regexp-osaamisella pystyy myös lyhentämään monimutkaisia koodinpätkiä yhteen kohtaan.
+## Miksi
 
-## Kuinka käyttää regexp:iä
-Regexp-ominaisuus on sisäänrakennettu PHP:hen ja sen käyttö on varsin helppoa. Alla on esimerkki tekstiin X haluamamme muutoksen tekemisestä, jotta se vastaa haluttua formaattia.
+Regular expressions, eli säännölliset lausekkeet, ovat tärkeä osa PHP-ohjelmointia. Niiden avulla voit hakea, vertailla ja muokata merkkijonoja monimutkaisia sääntöjä noudattaen. Tämä tekee koodistasi tehokkaampaa ja joustavampaa.
 
-```PHP
-//Ennen:
-$text = 'Tervehesti foorumille!';
+## Miten
 
-//Haluttu muotoilu:
-$text = 'Tervehdys, foorumille!';
+Regular expressionit kirjoitetaan yleensä merkkijonona, joka koostuu erilaisista symboleista ja erikoismerkeistä. Niiden avulla voit hakea haluamaasi merkkijonoa, esimerkiksi tietynlaista sähköpostiosoitetta tai URL-osoitetta.
 
-//Regexp:
-preg_replace('/Tervehesti/', 'Tervehdys,', $text);
-```
+Käytännössä regular expressionin luominen alkaa aina merkkijonosta ```/```, joka ilmaisee säännöllisen lausekkeen alun ja lopun. Sen jälkeen voit lisätä haluamasi säännöt välilyöntien avulla. Esimerkiksi, jos haluaisit hakea kaikki 10-numeroiset puhelinnumerot, voit käyttää seuraavaa regular expressionia: ```/\d{10}/```. Tämä tarkoittaa, että haluat hakea kaikki merkkijonot, jotka koostuvat 10 numerosta.
 
-Esimerkin PHP-koodissa käytetään `preg_replace()` funktiota muuttamaan tekstissä X sijaitseva sana "Tervehesti" toiseen muotoon. Regexp-osaaja ottaa huomioon kirjoitusvirheet ja muut mahdolliset vaihtoehdot, jotka vastaavat haluttua muotoilua. Regexp:ille luonteenomaisesti backslash-merkki `\` johtaa ohjausmerkintää ja `/`-merkit ovat käytössä regexpien alku- ja loppumääritteissä.
+Voit myös käyttää erilaisia erikoismerkkejä, kuten ```*``` tai ```+```, joilla voit ilmaista esimerkiksi, että haluat hakea useampia samanlaisia merkkejä tai merkkijonoja. Lisäksi voit käyttää myös sulkumerkkejä ```()``` ryhmitelläksesi sääntöjä.
 
-## Syvemmälle regexp:iin
-Regulaariset lausekkeet koostuvat erilaisista elementeistä, joista jokaisella on oma roolinsa. Niiden käytössä tärkeää on myös ymmärtää erilaiset speksit, kuten säännölliset lausekkeet (regex), POSIX-säännölliset lausekkeet ja ereg:s. Ohjetta kannattaa tutkia tarkemmin PHP:n virallisilta sivuilta.
+## Syvempi sukellus
+
+Regular expressioneita voi käyttää monella eri tavalla. Voit esimerkiksi tarkistaa, että käyttäjän syöttämä sähköpostiosoite on oikeassa muodossa tai hakea kaikki tietokannasta tietynlaiset tiedot.
+
+PHP:ssa on myös valmiita funktioita, kuten ```preg_match()``` tai ```preg_replace()```, joilla voit käyttää regular expressioneita helposti osana koodiasi. Näiden funktioiden avulla voit esimerkiksi tarkistaa, että annettu syöte vastaa haluttua muotoa tai korvata osan merkkijonosta toisella.
+
+On tärkeää muistaa, että regular expressionien luominen ja käyttäminen voi tuntua aluksi vaikealta ja haastavalta. Mutta harjoitus tekee mestarin ja kun opit perusteet, huomaat pian kuinka hyödyllisiä ne ovat koodissasi.
 
 ## Katso myös
-- [PHP: preg_replace funktion dokumentaatio](https://www.php.net/manual/en/function.preg-replace.php)
-- [PHP:n viralliset sivut](https://www.php.net/)
+
+- [PHP:n virallinen ohjeistus regular expressioneista](https://www.php.net/manual/en/book.pcre.php)
+- [Regular expression cheat sheet](https://www.rexegg.com/regex-quickstart.html)
+- [O'Reilly:n kirja "Mastering Regular Expressions"](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)

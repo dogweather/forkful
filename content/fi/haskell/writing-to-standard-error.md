@@ -1,38 +1,77 @@
 ---
-title:                "Haskell: Kirjoittaminen standardivirheeseen"
+title:                "Haskell: Tiedostoon standardivirheen kirjoittaminen"
+simple_title:         "Tiedostoon standardivirheen kirjoittaminen"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi kirjoittaa standardivirheeseen?
+## Miksi kirjoittaa standardivirtaan
 
-Kirjoittaminen standardivirheeseen on tärkeä osa Haskell-ohjelmointia. Se antaa mahdollisuuden näyttää käyttäjälle virheilmoituksia ja suorituksen aikana tapahtuvia ilmoituksia, jotka auttavat tunnistamaan ja korjaamaan mahdolliset ongelmat ohjelmassa.
+Kirjoittaminen standardivirtaan on tärkeä osa Haskell-ohjelmointia, jota jokaisen kehittäjän tulisi osata. Se mahdollistaa virheiden ja toimintatietojen näyttämisen suoraan terminaaliin, mikä helpottaa ohjelman käytettävyyttä ja korjaamista.
 
-## Kuinka kirjoittaa standardivirheeseen
+## Miten kirjoittaa standardivirtaan
 
-Haskellissa standardivirheeseen kirjoittaminen tapahtuu käyttämällä funktiota `hPutStrLn` ja tuoden sisään `stderr` -moduulin. Alla on yksinkertainen esimerkki ohjelmasta, joka kirjoittaa "Hei maailma!" standardivirheeseen.
+Kirjoittaminen standardivirtaan on helppoa Haskellissa. Käytä `System.IO` -moduulia ja `stderr` -funktiota tulostamaan haluamasi viesti. Esimerkiksi:
 
 ```Haskell
 import System.IO
 
-main :: IO ()
 main = do
-    hPutStrLn stderr "Hei maailma!"
+    hPutStrLn stderr "Tervetuloa Haskell-maailmaan!"
 ```
 
-Tämän ohjelman tulosteessa näkyy "Hei maailma!" standardivirheessä.
+Voit myös ottaa käyttöön `Control.Monad` -moduulin avulla virhekäsittelyn ja tulostaa virheviestisi `stderr`-virtaan käyttäen `when`-funktiota. Esimerkiksi:
 
-## Syvempää tietoa standardivirheeseen kirjoittamisesta
+```Haskell
+import System.IO
+import Control.Monad
 
-On hyvä huomioida, että standardivirheessä kirjoittaminen on yleensä kätevämpi tapa käsitellä virheitä ja poikkeuksia kuin standarditulosteen käyttäminen. Tämä johtuu siitä, että standardivirheen sisältö ei sekoitu varsinaisen tulosteen kanssa ja se pysyy käytettävissä koko ohjelman suorituksen ajan.
+main = do
+    let x = 10
+    when (x <= 0) $ hPutStrLn stderr "Virhe: x ei voi olla negatiivinen!"
+```
 
-Kaikkien Haskell-ohjelmien tulisi ottaa huomioon mahdolliset virhetilanteet ja ilmoittaa niistä käyttäjälle standardivirheen avulla. Siten käyttäjä saa tietoa mahdollisista ongelmista ja osaa korjata ne tarvittaessa.
+Näiden esimerkkien tulostus näyttäisi tältä:
 
-# Katso myös
+```shell
+Tervetuloa Haskell-maailmaan!
+```
+tai
 
-- [Haskellin virallinen dokumentaatio standardivirheen käytöstä](https://www.haskell.org/documentation/library/base-4.15.0.0/System-IO.html#v:hPutStrLn)
-- [Haskellin virallinen dokumentaatio virheenhallinnasta ja poikkeusten käsittelystä](https://wiki.haskell.org/Error_codes)
-- [Hyödyllisiä vinkkejä standardivirheen käyttöön Haskellissa](https://www.stackbuilders.com/blog/exception-handling-pattern-haskell)
+```shell
+Virhe: x ei voi olla negatiivinen!
+```
+
+Ei ole käytännöllistä kirjoittaa kaikkia virheviestejä `stdout`-virtaan, sillä silloin ne sekoittuisivat ohjelman normaalin tulostuksen kanssa. Siksi on tärkeää käyttää `stderr`-virtaa virheiden ja toimintatietojen näyttämiseen.
+
+## Syventävä tieto kirjoittamisesta standardivirtaan
+
+On hyvä käytäntö kirjoittaa siististi jäsenneltyjä ja informatiivisia virheviestejä, jotka auttavat käyttäjää ymmärtämään ongelman ja korjaamaan sen. Voit myös halutessasi käyttää `hPrintf`-funktiota muotoilun helpottamiseksi. Esimerkiksi:
+
+```Haskell
+import System.IO
+import Text.Printf
+
+main = do
+    let x = 5
+    let y = 0
+    when (y == 0) $ hPrintf stderr "Virhe: %d ei voi olla jakajan arvo!" y
+```
+
+Tämä tulostaisi seuraavan virheilmoituksen:
+
+```shell
+Virhe: 0 ei voi olla jakajan arvo!
+```
+
+Nyt kun tiedät, kuinka kirjoittaa standardivirtaan, voit parantaa ohjelmasi käytettävyyttä ja helpottaa sen virheiden korjaamista.
+
+## Katso myös
+
+- [Haskell-dokumentaatio - System.IO-moduuli](https://www.haskell.org/onlinereport/io.html#etag-haskell-document-filtering-data)
+- [Haskell-dokumentaatio - Text.Printf-moduuli](https://www.haskell.org/onlinereport/standard-prelude.html#t%3APrintfType)
+- [Haskell Wikibooks - Virhekäsittelystä](https://en.wikibooks.org/wiki/Haskell/Error_handling)

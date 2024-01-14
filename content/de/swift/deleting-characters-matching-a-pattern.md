@@ -1,44 +1,51 @@
 ---
-title:                "Swift: Übereinstimmende Zeichen löschen"
+title:                "Swift: Das Löschen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Das Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in verschiedenen Situationen nützlich sein. Zum Beispiel könnten Sie in einem String alle Zahlen entfernen, um nur die Buchstaben zu behalten. Oder Sie möchten bestimmte Sonderzeichen aus einem Text entfernen, um ihn für eine bestimmte Verarbeitung vorzubereiten. Die Löschung von Zeichen entsprechend einem Muster kann auch dazu beitragen, eine effizientere Suche in einem String oder einer Datenstruktur durchzuführen.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann eine sehr nützliche Funktion sein, um unerwünschte Daten aus einer Zeichenfolge zu entfernen. Zum Beispiel können HTML-Tags aus einer Webseite entfernt werden, um nur den reinen Text zu behalten.
 
-## Wie
+# Wie man es macht
 
-Um Zeichen in Swift zu löschen, die einem bestimmten Muster entsprechen, gibt es verschiedene Ansätze. Hier sind zwei Beispiele:
+Die Swift-Programmiersprache bietet verschiedene Möglichkeiten, um Zeichenfolgen zu durchsuchen und bestimmte Zeichen oder Muster zu löschen.
 
-### Beispiel 1: Löschen aller Zahlen aus einem String
-
-```Swift
-let string = "Ich bin 25 Jahre alt"
-let numbersSet = CharacterSet.decimalDigits // Definiert ein Set von Zahlen
-let result = string.components(separatedBy: numbersSet).joined() // Entfernt alle Zahlen aus dem String und fügt die verbleibenden Teile wieder zusammen
-print(result) // Ausgabe: Ich bin Jahre alt
-```
-
-### Beispiel 2: Löschen von Sonderzeichen aus einem String
+Eine einfache Möglichkeit ist die Verwendung des `replacingOccurrences`-Methode, die Teil der `String`-Klasse ist. Diese Methode nimmt zwei Parameter an: den zu suchenden String und den String, der anstelle davon gesetzt werden soll. Nehmen wir an, wir möchten alle Vokale aus einer Zeichenfolge entfernen. Der folgende Code zeigt, wie wir diese Methode verwenden können:
 
 ```Swift
-let string = "Willkommen in unserem Blog! :)"
-let punctuationSet = CharacterSet.punctuationCharacters // Definiert ein Set von Sonderzeichen
-let result = string.trimmingCharacters(in: punctuationSet) // Entfernt alle Sonderzeichen am Anfang und am Ende des Strings
-print(result) // Ausgabe: Willkommen in unserem Blog
+let string = "Guten Morgen"
+let modifiedString = string.replacingOccurrences(of: "[AEIOUaeiou]", with: "", options: .regularExpression)
+print(modifiedString) // Gtn Mrngn
 ```
 
-## Deep Dive
+Wie wir sehen können, haben wir die Vokale durch einen leeren String ersetzt, was sie praktisch gelöscht hat.
 
-Für eine detailliertere Erklärung darüber, wie das Löschen von Zeichen entsprechend einem Muster in Swift funktioniert, kann die offizielle Dokumentation von Apple hilfreich sein. Dort werden verschiedene Methoden und Klassen zur Verfügung gestellt, die bei der Verarbeitung und Manipulation von Strings helfen.
+Eine weitere Möglichkeit ist die Verwendung von Regular Expressions. Diese bieten eine leistungsstarke Möglichkeit, Muster in einer Zeichenfolge zu identifizieren und zu manipulieren. Hier ist ein Beispiel, wie wir Regular Expressions verwenden können, um Telefonnummern aus einer Zeichenfolge zu entfernen:
 
-## Siehe auch
+```Swift
+let string = "Meine Telefonnummer ist 012-345-6789. Bitte rufen Sie mich an."
+let regex = try! NSRegularExpression(pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}", options: .caseInsensitive)
+let modifiedString = regex.stringByReplacingMatches(in: string, options: [], range: NSRange(0..<string.utf16.count), withTemplate: "")
+print(modifiedString) // Meine Telefonnummer ist . Bitte rufen Sie mich an.
+```
 
-- [Offizielle Dokumentation von Apple zu Strings in Swift](https://developer.apple.com/documentation/foundation/string)
-- [Tutorial zum Verarbeiten von Strings mit Swift](https://www.raywenderlich.com/165761/swift-tutorial-strings-in-swift-4)
-- [Tutorial zur Verwendung von CharacterSets in Swift](https://www.hackingwithswift.com/articles/190/how-to-use-nscharacterset-to-split-up-a-string)
+Hier haben wir ein Muster definiert, das einer typischen Telefonnummer entspricht (in diesem Fall "012-345-6789") und es durch einen leeren String ersetzt.
+
+# Tiefer eintauchen
+
+Das Löschen von Zeichen oder Mustern aus einer Zeichenfolge ist nur eine Möglichkeit, sie zu bearbeiten. Es gibt viele weitere nützliche Funktionen, die Ihnen helfen können, bestimmte Daten aus einer Zeichenfolge zu extrahieren oder zu manipulieren.
+
+Sie können auch mehr über Regular Expressions lernen, um komplexere Muster zu identifizieren und zu manipulieren. Die Verwendung von Libraries wie `NSRegularExpression` und `CharacterSet` kann auch sehr hilfreich sein.
+
+# Siehe auch
+
+- [Swift Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [NSRegularExpression Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [CharacterSet Documentation](https://developer.apple.com/documentation/foundation/characterset)

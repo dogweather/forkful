@@ -1,65 +1,44 @@
 ---
 title:                "Kotlin: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué: Extractar Subcadenas en Kotlin
+## Por qué
 
-Muchos se preguntarán por qué es importante o necesario extraer subcadenas en Kotlin. La respuesta es simple: la manipulación de cadenas de texto es una tarea común en la programación y, en muchas ocasiones, necesitamos acceder a una parte específica de una cadena para realizar ciertas operaciones. La extracción de subcadenas nos permite hacer esto de manera sencilla y eficiente.
+Extraer substrings es una técnica valiosa en programación que nos permite extraer secciones específicas de una cadena de texto. Esto puede ser útil en situaciones en las que solo necesitemos una parte de la información contenida en una cadena, como por ejemplo, un número de teléfono o una fecha.
 
-## Cómo hacerlo en Kotlin
+## Cómo hacerlo
 
-Para extraer una subcadena en Kotlin, podemos utilizar el método `substring()` de la clase `String`. Este método toma dos parámetros: el índice inicial y el índice final de la subcadena que queremos extraer.
-
-```Kotlin
-val frase = "Hola Mundo!"
-val subcadena = frase.substring(0, 4)
-
-println(subcadena) // Output: "Hola"
-```
-
-En el ejemplo anterior, utilizamos el índice 0 como inicio y el índice 4 como final, lo que nos permitió extraer la subcadena "Hola" de la frase "Hola Mundo!".
-
-También podemos utilizar `substring()` con un solo parámetro, que representa el índice inicial de la subcadena. En este caso, la subcadena se extraerá desde ese índice hasta el final de la cadena.
+Para extraer substrings en Kotlin, podemos utilizar el método `substring()` en una cadena de texto. El método toma dos parámetros: el índice de inicio y el índice de fin de la sección que queremos extraer. Por ejemplo, si queremos obtener los primeros cinco caracteres de una cadena, podemos hacer lo siguiente:
 
 ```Kotlin
-val frase = "Hola Mundo!"
-val subcadena = frase.substring(5)
-
-println(subcadena) // Output: "Mundo!"
+val texto = "¡Hola amigos!"
+val subtexto = texto.substring(0, 5)
+println(subtexto) // imprimirá "¡Hola"
 ```
 
-## Profundizando en la extracción de subcadenas
-
-Además de los parámetros básicos, el método `substring()` también nos permite trabajar con índices negativos. Esto significa que podemos contar los índices desde el final de la cadena en lugar del principio.
+También podemos utilizar índices negativos para empezar a contar desde el final de la cadena. Por ejemplo, si queremos obtener los últimos siete caracteres de una cadena, podemos hacer lo siguiente:
 
 ```Kotlin
-val frase = "Hola Mundo!"
-val subcadena = frase.substring(0, -1)
-
-println(subcadena) // Output: "Hola Mundo"
+val texto = "¡Hola amigos!"
+val subtexto = texto.substring(texto.length - 7, texto.length)
+println(subtexto) // imprimirá "amigos!"
 ```
 
-En este ejemplo, utilizamos -1 como índice final, lo que nos permite extraer la subcadena "Hola Mundo" sin incluir el último carácter "!".
+## Profundizando
 
-También podemos utilizar `substring()` para extraer subcadenas de un tamaño específico a partir de un índice. Para ello, simplemente agregamos el número de caracteres que queremos extraer como tercer parámetro.
+Al utilizar el método `substring()` en una cadena, debemos tener en cuenta que el índice de inicio es inclusivo, mientras que el índice de fin es exclusivo. Esto significa que el carácter en el índice de inicio será incluido en el substring, pero el carácter en el índice de fin no.
 
-```Kotlin
-val frase = "Hola Mundo!"
-val subcadena = frase.substring(2, 6)
-
-println(subcadena) // Output: "la M"
-```
-
-En este caso, hemos incluido solo los caracteres del índice 2 al 6, lo que nos ha dado como resultado la subcadena "la M".
+También podemos utilizar otros métodos relacionados como `substringBefore()` y `substringAfter()` para extraer substrings basados en un determinado carácter o cadena de texto.
 
 ## Ver también
 
-- Documentación oficial de Kotlin sobre el método `substring()`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/substring.html
-- Tutorial de extracción de subcadenas en Kotlin: https://danilonovais.com.br/substring-kotlin/
-
-¡Ahora estás listo para comenzar a extraer subcadenas en tus proyectos de Kotlin! Recuerda que esta es solo una de las muchas operaciones que puedes hacer con cadenas de texto en este lenguaje de programación. ¡Sigue explorando y descubrirás muchas más funcionalidades interesantes!
+- [Documentación oficial de Kotlin sobre extracción de substrings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/substring.html)
+- [Tutorial de extracción de substrings en Kotlin](https://www.petanikode.com/kotlin-substring/)
+- [Ejemplos y explicaciones de extracción de substrings en Kotlin](https://www.programiz.com/kotlin-programming/substring)

@@ -1,39 +1,49 @@
 ---
-title:                "Ruby: 스트링 연결하기"
+title:                "Ruby: 문자열 합치기"
+simple_title:         "문자열 합치기"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 문자열 연결이 중요한가요?
+## 왜
 
-우리의 일상 생활에서 문자열 연결은 매우 중요한 작업입니다. 우리가 사용하는 소프트웨어나 앱에서 메세지를 보내거나 출력할 때, 여러 개의 단어나 문장을 하나로 합치는 일은 빈번하게 발생합니다. 따라서 문자열 연결은 프로그래밍에서 매우 유용하고 필수적인 작업입니다.
+문자열을 연결하는 이유는 문자열 데이터를 조합하여 더 긴 문자열을 만들어야 할 때 유용하기 때문입니다.
 
-## 어떻게 하나요?
+여러 개의 단어를 하나의 문장으로 만들거나 변수와 문자열을 함께 출력해야 할 때, 이 기능을 사용하면 코드를 간결하게 유지할 수 있습니다.
 
-Ruby에서 문자열 연결을 하기 위해서는 "+" 기호를 사용합니다. 예를 들어, "Hello"와 "World"라는 두 개의 문자열을 연결하고 싶을 때는 아래와 같이 쓸 수 있습니다.
-
-```Ruby
-puts "Hello" + "World"
-```
-
-위의 코드는 "HelloWorld"라는 문자열을 출력합니다.
-
-## 깊이 파헤쳐보기
-
-Ruby에서 문자열을 연결할 때는 다른 언어들과는 다르게 "String Interpolation"이라는 기능을 사용할 수 있습니다. 이 기능은 문자열 내부에 변수나 식을 넣어서 사용할 수 있게 해줍니다. 예를 들어, 아래의 코드를 살펴보세요.
+## 사용 방법
 
 ```Ruby
-name = "John"
-puts "Hello, my name is #{name}"
+puts "Hello " + "world"
+# 출력: Hello world
 ```
 
-위의 코드는 "Hello, my name is John"이라는 문자열을 출력합니다. 우리는 변수 name의 값을 문자열 내부에서 사용했습니다. 이렇듯 "String Interpolation"은 문자열을 더 유연하게 다룰 수 있도록 도와주는 중요한 기능입니다.
+여기서 `+` 연산자를 사용하여 `"Hello "`와 `"world"` 두 개의 문자열을 하나의 문자열로 연결합니다.
 
-# See Also
+```Ruby
+name = "Ruby"
+puts "I love " + name + " programming!"
+# 출력: I love Ruby programming!
+```
 
-- [Ruby 문자열 연결 방법](https://www.rubyguides.com/2019/09/ruby-string-concatenation/)
-- [Ruby 문자열 보간법](https://blog.appsignal.com/2019/01/24/ruby-magic-string-interpolation.html)
-- [Ruby 문자열 연결 실습](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-strings/cheatsheet)
+변수와 문자열을 함께 사용할 수도 있습니다. 위 예시에서는 변수 `name`에 저장된 문자열인 `"Ruby"`와 함께 출력하고 싶은 문장을 연결해 출력합니다.
+
+## 깊은 곳 들어가기
+
+문자열을 연결하는 데에는 여러 가지 방법이 있습니다. 위의 예시에서는 `+` 연산자를 사용하였지만, `<<` 연산자나 `concat` 메소드를 사용할 수도 있습니다.
+
+`+` 연산자는 새로운 문자열을 만들기 때문에, 연결할 데이터의 크기가 커지면 성능에 영향을 줄 수 있습니다. 반면 `<<` 연산자나 `concat` 메소드는 기존의 문자열에 데이터를 추가하기 때문에 성능 면에서 이점을 가질 수 있습니다.
+
+하지만, 실제로는 이러한 성능의 차이는 거의 무시할 수준이기 때문에 보다 가독성있고 간단한 코드를 작성하기 위해서는 `+` 연산자를 사용하는 것을 권장합니다.
+
+## 참고
+
+[Ruby 문자열 연산자](https://ruby-doc.org/core-2.6.3/String.html#method-i-2B)
+
+[Ruby 메소드 - concat](https://ruby-doc.org/core-2.6.3/String.html#method-i-concat)
+
+[Ruby 첫걸음 - 문자열](https://rubykoans.com/)

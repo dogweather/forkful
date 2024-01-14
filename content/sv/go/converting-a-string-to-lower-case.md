@@ -1,43 +1,73 @@
 ---
-title:                "Go: Konvertera en sträng till gemener"
+title:                "Go: Omvandling av en sträng till små bokstäver"
+simple_title:         "Omvandling av en sträng till små bokstäver"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att konvertera en sträng till små bokstäver är en vanlig uppgift vid utveckling av program på olika programmeringsspråk. Det kan användas för att standardisera inmatade användardata eller jämföra strängar utan att behöva ta hänsyn till skillnader i bokstavsstorlek.
 
-## Hur man gör
+Att konvertera en sträng till små bokstäver kan vara ett vanligt problem för programmerare, särskilt när man hanterar användarinput. Detta kan hjälpa till att säkerställa att jämförelser eller validering av inmatad data blir mer korrekt och enhetlig.
+
+## Så här gör du
+
+För att konvertera en sträng till små bokstäver i Go, kan du använda den inbyggda funktionen "ToLower" från paketet "strings". Här är ett enkelt exempel:
+
 ```Go
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    // Definiera en sträng att konvertera
-    str := "HeLLo wOrld"
-
-    // Använd strings.ToLower() funktionen för att konvertera till små bokstäver
-    lower := strings.ToLower(str)
-
-    // Skriv ut resultatet
-    fmt.Println(lower)
-
-    // Output: hello world
+	str := "HEJ VAD HETER DU?"
+	fmt.Println(strings.ToLower(str))
 }
+
 ```
 
-## Djupdykning
-Anledningen till att vi använder "strings.ToLower()" i exemplet ovan är för att det är den mest effektiva och tillförlitliga metoden för att konvertera strängar till små bokstäver på Go. Metoden hanterar även specialtecken och diakritiska tecken i andra språk, vilket är viktigt för globala applikationer.
+Detta program kommer att skriva ut "hej vad heter du?" som output. Som du kan se använde vi bara "strings.ToLower" för att konvertera vår sträng.
 
-Det är också värt att nämna att metoden returnerar en ny sträng istället för att ändra den existerande strängen. Detta är en viktig del av Go's designfilosofi där det anses vara mindre felbenäget att återanvända existerande variabler istället för att modifiera dem direkt.
+Om du vill göra en mer avancerad konvertering, kan du också använda "strings.Map" funktionen från samma paket. Här är ett exempel där vi konverterar varje vokal i en sträng till en stor bokstav:
+
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "hej vad heter du?"
+	fmt.Println(strings.Map(func(r rune) rune {
+		if strings.Contains("aeiouy", string(r)) {
+			return r - 32 //konvertera till stor bokstav
+		}
+		return r
+	}, str))
+}
+
+```
+
+Output: "Hej Vad HETEr dU?" I detta exempel använde vi funktionen "strings.Contains" för att kontrollera om tecknet är en vokal, sedan återvände vi en modifierad version av strängen.
+
+## Djupdykning
+
+När det gäller att konvertera en sträng till små bokstäver kan det finnas vissa fall där standardfunktionerna inte fungerar som förväntat. Det kan bero på språk-kodning, speciella tecken eller annat. I sådana fall kan det vara bra att använda "strings.ToLowerSpecial" eller "strings.MapUnicode" för att hantera konverteringen på ett annat sätt.
+
+En annan viktig aspekt att tänka på är hur konverteringen av tecken sker. I Go, som stöder Unicode-tecken, bör man vara medveten om att konvertering kan ändra antalet tecken i en sträng, beroende på vilka tecken som finns i den. Detta kan vara viktigt vid behandling av användardata, särskilt om längden av strängen är avgörande.
 
 ## Se även
-- [Strings Package i Go](https://golang.org/pkg/strings/)
-- [Strings.ToLower() funktionen i Go](https://golang.org/pkg/strings/#ToLower)
+
+- [Go strings-paketet](https://golang.org/pkg/strings/)
+- [Go strings.Map-funktionen](https://golang.org/pkg/strings/#Map)
+- [Go Unicode-support](https://blog.golang.org/strings)
+
+Tack för att du läste! Hoppas att denna guide har varit till hjälp i ditt arbete med att konvertera strängar till små bokstäver i Go. Lycka till med dina framtida projekt!

@@ -1,49 +1,50 @@
 ---
-title:                "C++: Lesen von Befehlszeilenargumenten"
+title:                "C++: Lesen von Befehlszeilenargumente"
+simple_title:         "Lesen von Befehlszeilenargumente"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Beim Programmieren in C++ gibt es viele verschiedene Möglichkeiten, Werte in ein Programm zu übergeben. Eine der einfachsten und effizientesten Methoden ist die Verwendung von Kommandozeilenargumenten. Durch das Einfügen von Argumenten bei der Ausführung des Programms können wir bestimmte Werte an das Programm übergeben, ohne den Code jedes Mal ändern zu müssen. Nun fragen Sie sich vielleicht, wie man Kommandozeilenargumente in C++ liest und verwendet. In diesem Blogbeitrag werden wir darüber sprechen.
+Als Entwickler ist es oft notwendig, Benutzereingaben über die Kommandozeile zu lesen und zu verarbeiten. Dies kann zum Beispiel bei der Erstellung von Skripten oder der Entwicklung von Anwendungen nützlich sein. In diesem Blog-Beitrag werden wir uns damit beschäftigen, wie man Befehlszeilenargumente mit C++ einliest und verarbeitet.
 
-# Wie man Kommandozeilenargumente in C++ liest
+## So geht's
 
-Die Verwendung von Kommandozeilenargumenten in C++ ist sehr einfach. Alles, was wir tun müssen, ist, die  Argumente während der Programmausführung in das 'main()' Funktion aufzurufen. Hier ist ein Beispiel, wie Sie Ihr Programm in der Kommandozeile ausführen können, um 3 Argumente zu übergeben:
-
-```C++
-./programm argument1 argument2 argument3
-```
-
-Wenn wir nun die Argumente in unserem Code verwenden möchten, müssen wir sie in unserem 'main()' Funktion definieren. Dies kann durch Hinzufügen von zwei Parametern 'int argc' und 'char* argv[]' geschehen:
+Um Befehlszeilenargumente in C++ zu lesen, können wir uns folgender Methode bedienen:
 
 ```C++
+#include <iostream>
+using namespace std;
+
 int main(int argc, char* argv[])
+{
+    // argc enthält die Anzahl der Argumente
+    // argv enthält ein Array von Argumenten-Strings
+
+    // Beispiel: Ausgabe der Befehlszeilenargumente
+    for(int i = 0; i < argc; i++)
+    {
+        cout << argv[i] << endl;
+    }
+
+    return 0;
+}
 ```
 
-Jetzt können wir auf die Argumente zugreifen, indem wir auf das 'argv[]' Array zugreifen, das alle übergebenen Argumente enthält.
+Dieses Beispiel zeigt wie wir die Argumente in der Kommandozeile auslesen und ausgeben können. Dabei muss beachtet werden, dass das erste Argument (Index 0) immer der Name des Programms selbst ist. Die restlichen Argumente können je nach Bedarf genutzt werden.
 
-```C++
-argv[0] // Programmname (hier "programm")
-argv[1] // erstes Argument (hier "argument1")
-argv[2] // zweites Argument (hier "argument2")
-argv[3] // drittes Argument (hier "argument3")
-```
+## Tiefer Einblick
 
-# Tiefere Einblicke
+Betrachten wir nun genauer, was in unserem Beispielcode passiert. Die Funktion `main()` ist der Einstiegspunkt unseres Programms. Sie erwartet als Parameter `argc`, welches die Anzahl der Argumente enthält, und `argv`, welches ein Array von Argumenten-Strings ist. In unserem Beispiel nutzen wir dann eine for-Schleife, um durch dieses Array zu iterieren und die einzelnen Argumente auszugeben.
 
-Die Verwendung von Kommandozeilenargumenten ist nicht auf einfache Werte wie Strings oder Zahlen beschränkt. Wir können auch komplexe Datenstrukturen wie Arrays oder Strukturen als Argumente übergeben. Außerdem können wir optional Argumente definieren, indem wir sie in eckigen Klammern in der Programmausführung angeben. Wenn Sie mehr über die Verwendung von Kommandozeilenargumenten in C++ erfahren möchten, können Sie sich diese Ressourcen ansehen:
+Es gibt viele weitere Möglichkeiten, Befehlszeilenargumente zu verarbeiten. Zum Beispiel könnten wir bestimmte Argumente auswerten und je nach Eingabe verschiedene Aktionen ausführen. Hier sind der Kreativität keine Grenzen gesetzt.
 
-- [C++ Dokumentation - Kommandozeilenargumente](https://docs.microsoft.com/en-us/cpp/cpp/main-function-command-line-args?view=msvc-160)
-- [GeeksforGeeks - Working with Command Line Arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [Programiz - Command Line Arguments in C++](https://www.programiz.com/cpp-programming/command-line-arguments)
+## Siehe auch
 
-# Siehe auch
-
-- [C++ Grundlagen für Anfänger](https://www.learn-c.org/)
-- [C++ Referenzhandbuch](https://en.cppreference.com/w/)
-- [Gute Programmiergewohnheiten und Richtlinien](https://www.freecodecamp.org/news/the-good-programmer-checklist-3f0584075ba2/)
+- [C++ Dokumentation: Befehlszeilenargumente lesen](https://www.cplusplus.com/articles/DEN36Up4/)
+- [GeeksforGeeks: Befehlszeilenargumente in C++ lesen](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)

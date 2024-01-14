@@ -1,44 +1,61 @@
 ---
 title:                "Javascript: Utilizando expresiones regulares"
+simple_title:         "Utilizando expresiones regulares"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué utilizar expresiones regulares?
+## Por qué usar expresiones regulares
 
-Las expresiones regulares son una herramienta poderosa en la programación que te permiten buscar y manipular texto de manera efectiva. Son especialmente útiles cuando tienes que trabajar con grandes cantidades de texto o realizar acciones específicas en un conjunto de datos. Con el aprendizaje de expresiones regulares, podrás hacer tus programas más eficientes y precisos.
+Las expresiones regulares son una herramienta muy útil para programar en Javascript ya que permiten buscar y manipular cadenas de texto de una manera muy precisa. Con regular expressions, puedes ahorrar tiempo y esfuerzo al realizar tareas como validar formularios, extraer información específica de un texto o buscar patrones dentro de una cadena. ¡Incluso puedes utilizarlas para hacer web scraping! En esta guía te explicaremos cómo utilizarlas paso a paso.
 
 ## Cómo utilizar expresiones regulares
 
-Las expresiones regulares se escriben entre dos barras (//) y pueden incluir caracteres especiales para buscar patrones en el texto. Por ejemplo, si quieres encontrar todos los correos electrónicos en un texto, puedes utilizar la siguiente expresión regular:
+Las expresiones regulares en Javascript se escriben entre dos barras inclinadas, por ejemplo: ```/patrón/```. Puedes utilizar diferentes patrones y métodos para buscar, reemplazar o extraer partes de una cadena. A continuación, te mostraremos algunos ejemplos de código:
+
+- **Buscar una palabra en una cadena de texto**
 
 ```Javascript
-/[\w\.]+@[\w\.]+/g
+let texto = "Las expresiones regulares son muy útiles para programar en Javascript";
+let patron = /expresiones regulares/;
+console.log(patron.test(texto)); // Output: true
 ```
 
-Esto buscará todas las combinaciones de letras, números y puntos seguidos de un símbolo "@" y otra combinación de letras, números y puntos. La "g" al final de la expresión indica que la búsqueda debe ser global, es decir, para todo el texto.
+- **Extraer un número de una cadena de texto**
 
-Otro uso común de las expresiones regulares es para validar datos de entrada en un formulario. Puedes utilizar una expresión regular para asegurarte de que un campo de correo electrónico, número de teléfono o código postal tenga el formato correcto antes de enviarlo.
+```Javascript
+let texto = "El número de teléfono de María es 555-123-4567";
+let patron = /\d{3}-\d{3}-\d{4}/;
+console.log(texto.match(patron)); // Output: 555-123-4567
+```
+
+- **Reemplazar una palabra en una cadena de texto**
+
+```Javascript
+let texto = "Javascript es un lenguaje de programación muy popular";
+let patron = /Javascript/;
+console.log(texto.replace(patron, "Python")); // Output: Python es un lenguaje de programación muy popular
+```
 
 ## Profundizando en el uso de expresiones regulares
 
-Las expresiones regulares pueden parecer un poco intimidantes al principio, pero a medida que las vayas utilizando, te darás cuenta de su gran utilidad. Además de los caracteres especiales, también puedes utilizar cuantificadores para buscar patrones repetitivos, como "+" para indicar una o más repeticiones y "*" para indicar cero o más repeticiones.
+Existen diferentes patrones y métodos que puedes utilizar en tu código para aprovechar al máximo las expresiones regulares. Algunos de ellos son:
 
-También puedes utilizar grupos en tus expresiones regulares para buscar patrones específicos dentro de una cadena de texto. Por ejemplo, para buscar los números de teléfono en un texto en el formato (123) 456-7890, puedes utilizar la siguiente expresión regular:
+- **Método ```test()```**: Este método verifica si un patrón se encuentra en una cadena de texto y devuelve un valor booleano (true o false).
+- **Método ```match()```**: Devuelve todas las coincidencias de un patrón en una cadena de texto.
+- **Método ```replace()```**: Reemplaza una parte de una cadena de texto que coincide con un patrón por otra cadena o valor.
+- **Métodos de búsqueda avanzada**: Puedes utilizar símbolos especiales y cuantificadores para buscar patrones más complejos, como por ejemplo, buscar una o más letras consecutivas, buscar una cantidad específica de dígitos o buscar patrones en una posición específica dentro de una cadena.
 
-```Javascript
-/(\d{3}) \d{3}-\d{4}/g
-```
-
-El primer paréntesis indica que solo quieres buscar los tres primeros dígitos y el resto de la expresión busca el formato restante. Los resultados se devolverán en grupos para que puedas acceder a cada parte del número de teléfono.
+Con un poco de práctica y conocimiento de los diferentes métodos y patrones disponibles, podrás utilizar expresiones regulares de manera eficiente en tus proyectos de Javascript.
 
 ## Ver también
 
-Si quieres seguir aprendiendo sobre expresiones regulares, aquí te dejamos algunos recursos interesantes:
+- [Documentación de expresiones regulares en Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Tutorial de expresiones regulares en Javascript](https://www.w3schools.com/js/js_regexp.asp)
+- [Ejemplos prácticos de expresiones regulares en Javascript](https://www.freecodecamp.org/news/the-30-minute-regex-tutorial-in-es6/)
 
-- [Documentación sobre expresiones regulares de Mozilla](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Tutorial interactivo de expresiones regulares en Codecademy](https://www.codecademy.com/courses/web-beginner-en-bH5s3/0/1)
-- [Expresiones regulares en 30 minutos en RegexOne (en inglés)](https://regexone.com/)
+¡Esperamos que esta guía te haya ayudado a entender mejor cómo utilizar expresiones regulares en tus proyectos de Javascript! Recuerda que la práctica hace al maestro, así que no dudes en seguir explorando y experimentando con esta poderosa herramienta. ¡Hasta la próxima!

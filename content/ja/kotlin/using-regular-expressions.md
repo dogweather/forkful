@@ -1,59 +1,45 @@
 ---
-title:                "Kotlin: 正規表現の使用方法"
+title:                "Kotlin: 正規表現を使用する"
+simple_title:         "正規表現を使用する"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜRegular Expressionsを使うのか
-
-Regular Expressions（正規表現）は、文字列のパターンを検索したり、置換したりするための強力なツールです。例えば、メールアドレスや電話番号など、特定のフォーマットに従う文字列を抽出したい場合や、大量のテキストデータから特定のキーワードを見つけたい場合に便利です。
+正規表現はコンピューター上でパターンマッチングを行うための強力なツールです。文字列パターンを比較や検索する際に、時間や手間を節約することができます。
 
 ## 使い方
+下記のように、Kotlinのコードブロックで実際のプログラミング例と出力を示します。
 
-### パターンの検索
-
-以下のように`Regex()`を使い、検索したい文字列のパターンを指定することで、正規表現を作成することができます。
 ```Kotlin
-val regex = Regex("pattern")
+// 入力文字列
+val input = "こんにちは、私はコーディです。"
+
+// "コーディ"というパターンを正規表現で検索し、見つかった場合は出力する
+val pattern = Regex("コーディ")
+val result = pattern.find(input)
+println("パターンにマッチする文字列は ${result?.value} です。")
+
+// "私[はが]"というパターンを正規表現で置換し、出力する
+val replaced = input.replace(Regex("私[はが]"), "僕")
+println("置換後の文字列は $replaced です。")
 ```
-作成した正規表現を使い、文字列から特定のパターンを検索することができます。例えば、以下のようにメールアドレスを検索することができます。
-```Kotlin
-val emailRegex = Regex("[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+")
-val text = "私のメールアドレスはexample@example.comです。"
-val matchResult = emailRegex.find(text)
-println(matchResult?.value) // output: example@example.com
+
+出力は次のようになります。
+
 ```
-
-### パターンの置換
-
-すでに作成した正規表現を使い、文字列内の特定のパターンを置換することもできます。例えば、以下のように電話番号を置換することができます。
-```Kotlin
-val phoneNumberRegex = Regex("\\d{3}-\\d{4}-\\d{4}")
-val text = "私の電話番号は123-4567-8901です。"
-val replacedText = phoneNumberRegex.replace(text, "000-0000-0000")
-println(replacedText) // output: 私の電話番号は000-0000-0000です。
+パターンにマッチする文字列は コーディ です。
+置換後の文字列は こんにちは、僕はコーディです。 です。
 ```
 
 ## 深堀り
+正規表現は様々な文字列操作で便利に使われます。例えば、文字列内の特定の単語の出現をカウントすることや、特定の形式に整形することができます。また、文字列のバリデーションやURLの抽出などにも用いることができます。正規表現を熟知することで、より効率的なプログラミングが可能になります。
 
-### 特殊文字
-
-正規表現の中には、特殊な意味を持つ文字があります。例えば、`.`はどんな文字にもマッチするワイルドカードとして使われます。また、`+`は直前の文字が1回以上繰り返されることを表します。これらの特殊文字を使いこなすことで、より複雑なパターンを検索したり置換したりすることができます。
-
-### バックスラッシュ
-
-正規表現の中には`\`を使うことができますが、Kotlinではエスケープシーケンスとして扱われます。そのため、バックスラッシュを使う場合は、2つ並べる必要があります。例えば、`\d`は数字にマッチするという意味ですが、そのまま文字列として表現する場合は`\\d`となります。
-
-### n個の文字にマッチ
-
-正規表現の中には、特定の文字がn個繰り返されることを表すことができます。例えば、`{n}`を使い、数字が3回繰り返されることを表すには、`\\d{3}`という表現を使います。
-
-## おすすめリンク
-
-### [Kotlin公式ドキュメント - Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text.-regex/index.html)
-KotlinのRegexクラスの公式ドキュメントです。より詳細な使い方やメソッドの説明を確認できます。
-
-### [正規表現チュ
+## さらに見る
+- [Kotlin公式ドキュメント: 正規表現](https://kotlinlang.org/docs/regular-expressions.html)
+- [入門正規表現](https://codezine.jp/article/detail/11191)
+- [正規表現のデバッグ方法](https://uhyohyo.net/software/regex/regex_debugging.html)

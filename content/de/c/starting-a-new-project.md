@@ -1,7 +1,9 @@
 ---
 title:                "C: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "C"
-category:             "Getting Started"
+category:             "C"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/starting-a-new-project.md"
 ---
 
@@ -9,31 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn Sie ein Programmierer sind, kann es viele Gründe geben, ein neues Projekt zu starten. Möglicherweise möchten Sie eine bestimmte Funktionalität implementieren, eine neue Programmiersprache lernen oder einfach nur aus Spaß programmieren. Egal aus welchem ​​Grund, ein neues Projekt zu beginnen kann aufregend sein und Sie können viel lernen.
+Es gibt viele Gründe, ein neues Projekt zu starten. Vielleicht möchtest du deine Programmierfähigkeiten weiterentwickeln und etwas Neues lernen. Oder vielleicht hast du eine großartige Idee für eine Anwendung, die es so noch nicht gibt. Egal aus welchem Grund, das Schreiben von Code kann eine lohnende und unterhaltsame Erfahrung sein.
 
-## Wie starte ich ein neues Projekt in C
+## Wie geht man vor
 
-Um ein neues Projekt in C zu starten, müssen Sie zunächst einen Compiler installieren. Der beliebteste C-Compiler ist GNU Compiler Collection (GCC). Nachdem Sie den Compiler installiert haben, können Sie eine Textdatei erstellen und Ihren Code schreiben. Zum Beispiel:
+Um ein neues C-Programm zu erstellen, musst du zunächst eine Umgebung einrichten, um darin zu programmieren. Dazu gehört das Installieren eines C-Compilers, der die Code-Zeilen in ausführbare Befehle übersetzt. Eine beliebte Option ist der GCC (GNU Compiler Collection). Du kannst ihn kostenlos aus dem Internet herunterladen.
 
-\`\`\`C
+Sobald deine Umgebung eingerichtet ist, kannst du mit dem Schreiben deines Codes beginnen. Hier ist ein einfaches Beispiel, um dir den Einstieg zu erleichtern:
+
+```C
 #include <stdio.h>
 
-int main() {
-    printf("Hallo Welt!");
+int main()
+{
+    printf("Hallo, Welt! \n");
     return 0;
 }
-\`\`\`
+```
 
-Dies ist ein einfaches Beispiel, das "Hallo Welt!" auf der Konsole ausgibt. Sie können verschiedene Funktionalitäten und Algorithmen nach Belieben erkunden und implementieren.
+In diesem Beispiel verwenden wir die ´printf´ Funktion, um den Text "Hallo, Welt!" auf dem Bildschirm auszugeben. Der Befehl ´return 0;´ beendet das Programm und signalisiert, dass alles erfolgreich gelaufen ist. Wenn du dieses Programm kompilierst und ausführst, solltest du die Ausgabe "Hallo, Welt!" in deinem Terminal sehen.
 
-## Tiefere Einblicke
+## Tiefergehende Informationen
 
-Bevor Sie mit dem Codieren beginnen, ist es wichtig, ein gutes Verständnis der Grundlagen von C zu haben. Dazu gehört das Beherrschen von Variablen, Bedingungen, Schleifen und Funktionen. Auch das Verständnis von Pointern ist unerlässlich für die Programmierung in C. Sie sollten auch die grundlegenden Datenstrukturen und Algorithmen kennen, um wirklich effektive Programme schreiben zu können.
+Bevor du in die Entwicklung deines Projekts eintauchst, solltest du dir Gedanken über die Architektur machen. Welche Funktionen brauchst du? Welche Datenstrukturen werden benötigt? Wie sieht der Ablauf des Programms aus?
 
-Ein weiterer wichtiger Aspekt ist das Schreiben von sauberem und gut strukturiertem Code. Dies erleichtert das Lesen und Verstehen Ihres Codes für andere Entwickler und macht es einfacher, Fehler zu finden.
+Es ist auch wichtig, sauberen und gut dokumentierten Code zu schreiben, damit andere Entwickler dein Projekt leichter verstehen und daran arbeiten können. Verwende sinnvolle Variablennamen und kommentiere deinen Code, um zu erklären, was er tut.
+
+Während du an deinem Projekt arbeitest, wirst du wahrscheinlich auf Probleme stoßen. Das ist völlig normal und gehört zum Entwicklungsprozess dazu. Wenn du nicht weiterkommst, kannst du immer im Internet nach Lösungen suchen oder dich an Communities wie Stack Overflow wenden, um Unterstützung zu erhalten.
 
 ## Siehe auch
 
-- Beginner's Guide to C Programming: https://geeksforgeeks.org/c-programming-language/
-- C Tutorials von Tutorialspoint: https://www.tutorialspoint.com/cprogramming/index.htm
-- GCC Compiler herunterladen: https://gcc.gnu.org/
+- [GCC herunterladen](https://gcc.gnu.org/install/)
+- [C-Programmierung lernen](https://www.learn-c.org/)
+- [Stack Overflow](https://stackoverflow.com/)

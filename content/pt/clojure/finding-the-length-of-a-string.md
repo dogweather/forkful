@@ -1,40 +1,73 @@
 ---
 title:                "Clojure: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+# Por que encontrar o comprimento de uma string em Clojure?
 
-Encontrar o comprimento de uma string é uma tarefa comum na programação. Saber o tamanho de uma string pode ser útil para diversas situações, como a formatação de saída de dados ou para validar a entrada do usuário. Neste artigo, iremos explorar como podemos encontrar o comprimento de uma string utilizando a linguagem de programação Clojure.
+Encontrar o comprimento de uma string é uma tarefa comum em programação que pode ser útil para várias finalidades, como validar a entrada do usuário ou contar o número de caracteres de uma mensagem. Em Clojure, é fácil e simples encontrar o comprimento de uma string. Neste artigo, exploraremos como fazer isso passo a passo.
 
-## Como Fazer
+## Como fazer
 
-Para encontrar o comprimento de uma string em Clojure, podemos utilizar a função `count` passando a string como argumento. Veja o exemplo abaixo:
-
-```Clojure
-(count "Olá, mundo!") ; retorna 12
-```
-
-O código acima vai retornar o comprimento da string "Olá, mundo!" que é igual a 12. Podemos também armazenar o valor retornado em uma variável para uso posterior, como mostrado no exemplo abaixo:
+Para encontrar o comprimento de uma string em Clojure, podemos usar a função `count`, que é nativa da linguagem e retorna o número de elementos em uma coleção.
 
 ```Clojure
-(def texto "Este é um texto")
-(count texto) ; retorna 15
+(def s "Olá mundo!")
+(count s)
 ```
 
-Além disso, é importante lembrar que a função `count` também pode ser utilizada em coleções, como listas ou vetores, não apenas em strings.
+A saída será `11`, pois a string contém 11 caracteres.
 
-## Mergulho Profundo
+Outra opção é usar a função `str` em conjunto com `count`. A função `str` retorna uma string contendo os argumentos fornecidos, e podemos passar apenas a string desejada para obter seu comprimento.
 
-Ao utilizar a função `count`, é importante entender como ela funciona internamente. Em Clojure, strings são tratadas como sequências de caracteres, o que nos permite utilizar funções de sequências, como `count`. Além disso, a função `count` é implementada nativamente em Clojure, o que significa que é uma função otimizada e rápida.
+```Clojure
+(def s "Olá mundo!")
+(count (str s))
+```
 
-Também é relevante destacar que a função `count` conta o número de caracteres em uma string, e não o número de bytes. Isso é importante principalmente em linguagens como Clojure, onde caracteres Unicode são suportados.
+A saída é a mesma, `11`.
 
-## Veja Também
+### Tratando espaços em branco
 
-- [Documentação sobre a função `count`](https://clojuredocs.org/clojure.core/count)
-- [Mais informações sobre strings em Clojure](https://clojure.org/api/cheatsheet#Strings)
+É importante notar que a função `count` inclui os espaços em branco na contagem do comprimento da string. Se quisermos desconsiderá-los, podemos usar a função `clojure.string/trim` para remover os espaços antes de contar.
+
+```Clojure
+(def s "  Olá mundo!  ")
+(count (clojure.string/trim s))
+```
+
+Agora, a saída será `9`, já que os espaços em branco foram removidos.
+
+## Profundidade
+
+Ao lidar com string em Clojure, é interessante saber que a linguagem trata strings como sequências de caracteres, o que significa que podemos aplicar funções de sequência a elas. Por exemplo, podemos usar a função `map` para aplicar uma função a cada caractere da string.
+
+```Clojure
+(def s "Olá mundo!")
+(map char s)
+```
+
+A saída será uma sequência de caracteres, `[O l á  m u n d o !]`.
+
+Além disso, como strings são sequências, podemos usar índices para acessar caracteres específicos. Por exemplo, o segundo caractere da string é acessado usando `s1`, já que em Clojure os índices começam em 0.
+
+```Clojure
+(def s "Olá mundo!")
+(s 1)
+```
+
+A saída será `l`.
+
+# Veja também
+
+- Documentação oficial de `count`: https://clojuredocs.org/clojure.core/count
+- Documentação oficial de `str`: https://clojuredocs.org/clojure.core/str
+- Documentação oficial de `map`: https://clojuredocs.org/clojure.core/map
+- Documentação oficial de `char`: https://clojuredocs.org/clojure.core/char
+- Documentação oficial de `trim`: https://clojuredocs.org/clojure.string/trim

@@ -1,62 +1,49 @@
 ---
-title:                "PHP: Generera slumpmässiga nummer"
+title:                "PHP: Generering av slumpmässiga tal"
+simple_title:         "Generering av slumpmässiga tal"
 programming_language: "PHP"
-category:             "Numbers"
+category:             "PHP"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att generera slumpmässiga nummer är en viktig del av många PHP-program. Om du behöver skapa en unik identifierare, en slumpmässig sekvens i ett spel eller helt enkelt behöver slumpmässiga värden för testning av ditt program, kan du använda PHP:s inbyggda funktioner för att generera dessa nummer.
+Varför: Att generera slumpmässiga nummer kan vara användbart för många olika ändamål inom PHP-programmering, såsom att skapa unika användar-ID:n eller att simulera slumpmässiga händelser.
 
-## Så här gör du
-För att generera slumpmässiga nummer i PHP använder du funktionen `rand (int $min, int $max)`. Detta genererar ett nummer mellan `$min` och `$max`. Låt oss se några exempel:
+Hur man gör det: Det finns flera olika metoder för att generera slumpmässiga nummer i PHP. En enkel metod är att använda funktionen "mt_rand()", vilket står för "Mersenne Twister Random". Den här funktionen tar två argument, det lägsta och högsta värdet som du vill ha för ditt slumpmässiga nummer. Låt oss titta på ett exempel:
 
 ```PHP
-echo rand(10, 20);
-// Output: Slumpmässigt nummer mellan 10 och 20
-
-echo rand(0, 100);
-// Output: Slumpmässigt nummer mellan 0 och 100
-
-echo rand(5, 5);
-// Output: 5 - eftersom det är det minsta och största värdet som anges
+//generera ett slumpmässigt nummer mellan 1 och 10
+$random_number = mt_rand(1, 10);
+echo $random_number; // kommer att visa ett slumpmässigt nummer mellan 1 och 10 varje gång koden körs
 ```
 
-Du kan också använda `mt_rand ()` -funktionen, vilket genererar pseudoslumpmässiga nummer och anses vara snabbare än `rand ()`. Syntaxen är densamma som för `rand ()`:
+En annan metod är att använda funktionen "rand()", som tar ett lägsta och högsta värde som argument och genererar ett slumpmässigt nummer mellan dessa värden. Här är ett exempel:
 
 ```PHP
-echo mt_rand(100, 1000);
-// Output: Slumpmässigt nummer mellan 100 och 1000
+//generera ett slumpmässigt nummer mellan 5 och 15
+$random_number = rand(5, 15);
+echo $random_number; // kommer att visa ett slumpmässigt nummer mellan 5 och 15 varje gång koden körs
 ```
 
-För att generera slumpmässiga decimaltal kan du använda `mt_rand ()` tillsammans med `round ()`:
+Du kan också använda funktionen "array_rand()" för att slumpmässigt välja ett element från en array. Till exempel:
 
 ```PHP
-echo round(mt_rand(10, 20) / 10, 1);
-// Output: Slumpmässigt decimaltal mellan 1.0 och 2.0 med en decimal
-
-echo round(mt_rand(-50, 50) / 10, 1);
-// Output: Slumpmässigt decimaltal mellan -5.0 och 5.0 med en decimal
+//definiera en array med olika namn
+$names = array("Lisa", "Olle", "Anna", "Johan", "Eva");
+//generera ett slumpmässigt nummer för att välja ett namn från arrayen
+$random_number = array_rand($names);
+echo $names[$random_number]; // kommer att visa ett av namnen i $names-arrayen varje gång koden körs
 ```
 
-## Djupdykning
-Bakom kulisserna använder PHP en algoritm för att generera slumpmässiga nummer baserat på en så kallad "seed", som är en startpunkt för algoritmen. Om du inte anger en seed för `mt_rand ()` kommer den att generera en slumpmässig seed varje gång den körs, vilket resulterar i olika nummer varje gång. Om du vill få samma slumpmässiga nummer varje gång kan du använda `mt_srand ()` för att ställa in en seed.
+Djupdykning: Bakom kulisserna använder PHP "srand()" -funktionen som sållar och startar Mersenne Twister-algoritmen för att generera slumpmässiga nummer. Det finns också möjlighet att ge ett "frö" som argument till "srand()" -funktionen för att få samma slumpmässiga nummer varje gång koden körs. Om du till exempel använder funktionen "mt_rand()" flera gånger i ditt program och vill ha samma nummer varje gång, kan du sätta en "srand()" -funktion vid programmet början och ge den samma "frö" som argument varje gång. Detta kan vara användbart för tester eller debugging.
 
-```PHP
-mt_srand(42); // Ställ in seeden på 42
-echo mt_rand();
-// Output: 1592183196 - samma nummer genereras varje gång
+Se också: För mer information om att generera slumpmässiga nummer i PHP, kolla in följande resurser:
 
-mt_srand(42); // Ställ in seeden till samma värde igen
-echo mt_rand();
-// Output: 235713604 - genererar fortfarande det samma numret
-```
+- PHP-dokumentationen för "mt_rand()" - https://www.php.net/manual/en/function.mt-rand.php
+- En tutorial om att skapa slumpmässiga nummer i PHP - https://www.w3schools.com/php/func_math_mt_rand.asp
+- Forumdiskussion om att använda "srand()" och "mt_rand()" tillsammans - https://stackoverflow.com/questions/33844912/php-mt-rand-generates-the-same-sequence-of-random-numbers
+- En förklaring av Mersenne Twister-algoritmen - https://en.wikipedia.org/wiki/Mersenne_Twister
 
-Du kan också använda `mt_getrandmax ()` för att få det maximala värdet som kan genereras med `mt_rand ()` på din server.
-
-## Se även
-- [Generera slumpmässiga strängar i PHP](link1)
-- [Användbara inbyggda funktioner i PHP](link2)
-- [GitHub: PHP mt_rand ()](link3)
+Se även: För andra blogginlägg om PHP-programmering, ta en titt på våra andra artiklar på vår hemsida.

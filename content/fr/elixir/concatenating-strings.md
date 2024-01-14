@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Concaténer des chaînes de caractères"
+title:                "Elixir: Assembler des chaînes de caractères"
+simple_title:         "Assembler des chaînes de caractères"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/concatenating-strings.md"
 ---
 
@@ -9,33 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'une des tâches les plus courantes dans la programmation est la concaténation de chaînes de caractères. Il s'agit simplement de combiner plusieurs chaînes pour en former une seule. Mais pourquoi cela est-il important en Elixir ?
+La concaténation de chaînes de caractères est une tâche courante en programmation et peut être utile dans de nombreux cas, tels que la création de messages personnalisés, la manipulation de données ou la construction de requêtes HTTP. Cela permet également de rendre votre code plus lisible en évitant les lignes excessivement longues.
 
-## Comment faire
+## Comment
 
-La concaténation de chaînes en Elixir est très simple et peut être réalisée de différentes manières. Regardons quelques exemples :
+Voici quelques exemples de code en Elixir pour concaténer des chaînes de caractères :
 
-```
-# Utilisation de l'opérateur `<>`
-"Elixir" <> " est génial" # donnera "Elixir est génial"
-
-# Utilisation de la fonction `String.concat()`
-String.concat(["Hello", " ", "World"]) # donnera "Hello World"
-
-# Utilisation du pipe operator `|>`
-"Bonjour" |> String.replace("Bonjour", "Hello") # donnera "Hello"
+```Elixir
+"Bonjour" <> " " <> "tout le monde" #=> "Bonjour tout le monde"
+"J'ai " <> "2" <> " pommes" #=> "J'ai 2 pommes"
+[1, 2, 3] |> Enum.join("-") #=> "1-2-3"
 ```
 
-Comme vous pouvez le voir, Elixir offre différentes solutions pour la concaténation de chaînes, c'est à vous de choisir celle qui convient le mieux à votre style de code.
+Les opérateurs `<>` et `|>` peuvent être utilisés pour concaténer des chaînes de caractères de manière simple et efficace. Il est également possible d'utiliser la fonction `String.concat/2` en passant une liste de chaînes de caractères à concaténer.
+
+```Elixir
+String.concat(["Bonjour", " ", "tout le monde"]) #=> "Bonjour tout le monde"
+```
 
 ## Plongée en profondeur
 
-La concaténation de chaînes en Elixir peut sembler simple, mais il est important de comprendre comment cela fonctionne en interne. En fait, Elixir utilise des tuples pour stocker les chaînes de caractères, ce qui signifie que chaque fois que nous concaténons des chaînes, le programme crée un nouveau tuple avec la chaîne combinée à l'intérieur. Cela peut affecter les performances dans les cas où nous concaténons de grandes quantités de chaînes.
+Lorsque vous concaténez des chaînes de caractères, gardez à l'esprit que cela peut être une opération coûteuse en termes de performances, surtout si vous concaténez de grandes quantités de données. En effet, à chaque fois que vous concaténez une chaîne, une nouvelle chaîne est créée en mémoire, ce qui peut être gênant si vous répétez l'opération plusieurs fois.
 
-Heureusement, Elixir offre une solution pour améliorer les performances en utilisant la fonction `String.Chars.concat()` qui prend en charge la concaténation de plusieurs chaînes sans créer de nouveaux tuples. Cela peut être particulièrement utile si vous travaillez avec des bases de données et que vous devez concaténer plusieurs valeurs avant de les insérer dans une requête SQL.
+Pour éviter cela, il est recommandé d'utiliser des listes de chaînes de caractères plutôt que des chaînes à concaténer. Ensuite, vous pouvez utiliser la fonction `Enum.join/2` pour les fusionner en une seule chaîne. Par exemple :
+
+```Elixir
+"My " <> "real" <> " " <> "name" #=> "My real name"
+["My", "real", "name"] |> Enum.join(" ") #=> "My real name"
+```
 
 ## Voir aussi
 
-- [La documentation officielle sur la concaténation de chaînes en Elixir](https://hexdocs.pm/elixir/String.html#concatenation)
-- [Un article sur les meilleures pratiques en matière de concaténation de chaînes en Elixir](https://alex-min.fr/elixir-string-concatenation/)
-- [Un tutoriel vidéo sur la manipulation de chaînes en Elixir](https://www.youtube.com/watch?v=amX5LOUOm1k)
+- [Documentation Elixir sur la concaténation de chaînes](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html#string-interpolation)
+- [Article sur les bonnes pratiques de performance en Elixir](https://codeburst.io/performance-tips-in-elixir-6f52b748ff35)
+- [Vidéo explicative sur la concaténation en Elixir](https://www.youtube.com/watch?v=I7Yd2ROufQo&t=304s)

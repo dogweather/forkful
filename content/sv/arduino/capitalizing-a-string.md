@@ -1,49 +1,65 @@
 ---
-title:                "Arduino: Kapitalisering av en sträng"
+title:                "Arduino: Att stora en sträng"
+simple_title:         "Att stora en sträng"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-I den här bloggposten kommer vi att titta på hur du kan använda Arduino för att omvandla en sträng till versaler. Detta kan vara bra för många olika projekt, inklusive skyltar, namnbrickor eller andra liknande applikationer.
+Att använda sig av en Arduino för att programmera kan verka som ett komplicerat och överväldigande projekt, men det kan faktiskt vara riktigt roligt och enkelt att lära sig. Ett av de enklaste projekten som man kan börja med är att lära sig hur man kapslar in en sträng med hjälp av en Arduino.
 
-##Såhär gör du
+## Så här gör du
 
-Det finns flera olika sätt att omvandla en sträng till versaler med hjälp av Arduino. Ett enkelt sätt är att använda den inbyggda funktionen `toUpperCase()` som finns tillgänglig för strängar. Här är ett exempel på kod som visar hur du kan använda denna funktion:
+Först måste vi inkludera Arduinos <string.h> bibliotek för att kunna använda oss av funktionen för att kapsla in en sträng. Vi definierar sedan en ny variabel, låt oss kalla den "text", och tilldelar det en tidigare deklarerad sträng.
 
-```Arduino
-String str = "Hej Världen!";
-String strVersaler = str.toUpperCase();
-Serial.println(strVersaler);
-```
+````Arduino
+#include <string.h> // inkluderar <string.h>
 
-Detta kommer att skriva ut "HEJ VÄRLDEN!" på seriellmonitorn.
-
-En annan metod är att använda en loop för att gå igenom varje tecken i strängen och omvandla det till versaler. Här är ett exempel på kod som gör detta:
-
-```Arduino
-String str = "Hej Världen!";
-String strVersaler = "";
-
-for (int i = 0; i < str.length(); i++) {
-  strVersaler += toupper(str.charAt(i));
+void setup() {
+  String text = "hej!"; // definierar och tilldelar en sträng, i detta fall "hej!"
+  Serial.begin(9600); // startar seriell kommunikation på hastigheten 9600
+  Serial.println(text.capitalize()); // anropar funktionen capitalize på textvariabeln och skriver ut det i seriell monitor
 }
-Serial.println(strVersaler);
+
+void loop() {
+  // inget görs här eftersom vi bara vill köra denna kod en gång i "setup"-funktionen
+}
+````
+
+Output i seriell monitor:
+
+```
+Hej!
 ```
 
-Detta kommer att åstadkomma samma resultat som det första exemplet.
+Som du kan se har strängen "hej!" nu blivit kapslad i versaler. Detta kan vara användbart när man vill se till att en sträng är konsekvent formaterad oavsett vilka bokstäver som matas in.
 
-##Djupdykning 
+## Djupdykning
 
-För de som är intresserade av hur detta fungerar kan vi titta lite djupare på den inbyggda funktionen `toUpperCase()` som användes i det första exemplet. Funktionen är en del av objektet `String` och kallas med ett punkt mellanrum efter strängen som ska omvandlas. Funktionen använder sig av ASCII-koden för att identifiera och omvandla varje tecken till versaler.
+För att förstå hur funktionen capitalize fungerar behöver vi titta närmare på koden i <string.h> biblioteket. Där kan vi hitta den här funktionen, som använder sig av en "for loop" och "toupper" funktionen för att omvandla varje enskild bokstav till dess lämpliga versal. Funktionen tar även hänsyn till specialtecken som t ex å, ä och ö.
 
-I det andra exemplet används en loop för att iterera genom varje tecken i strängen. Inuti loopen används `toupper()` som är en inbyggd funktion i Arduino som omvandlar ett tecken till versaler baserat på dess ASCII-värde. Detta läggs sedan till i en ny sträng och skrivs ut när loopen är klar.
+````Arduino
+String String::capitalize()
+{
+  String retval = *this;
+  for (uint16_t i = 0; i < retval.length(); i++) {
+    if ((i == 0) || (retval[i - 1] == '.') || (retval[i - 1] == '!') || (retval[i - 1] == '?')) {
+      retval[i] = toupper(retval[i]);
+    }
+  }
+  return retval;
+}
+````
 
-##Se även
+Det är alltså en ganska enkel, men användbar funktion för att kapsla in en sträng i versaler.
 
-- [Arduino Reference: String toUpperCase()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)
-- [ASCII Table](https://www.ascii-code.com/)
+## Se även
+
+- <https://www.arduino.cc/reference/en/language/variables/data-types/string/>
+- <https://www.geeksforgeeks.org/capitalizing-first-letter-of-a-string-in-javascript/>
+- <https://docs.python.org/3/library/stdtypes.html#str.capitalize>

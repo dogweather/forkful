@@ -1,41 +1,44 @@
 ---
-title:                "Bash: Finne lengden til en streng"
+title:                "Bash: Å finne lengden av en streng"
+simple_title:         "Å finne lengden av en streng"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Å finne lengden på en streng er en essensiell oppgave i Bash-programmering. Det lar oss beregne og manipulere data på en effektiv måte. Denne blogginnlegget vil vise deg hvordan du kan gjøre det på en enkel måte.
+## Hvorfor
+
+Det å finne lengden på en tekststreng er en vanlig oppgave innen Bash-programmering. Det kan være nyttig når vi ønsker å behandle forskjellige tekststrenger på en effektiv måte, for eksempel ved å sortere dem eller søke gjennom dem. Ved å lære å finne lengden på en tekststreng i Bash, vil du ha et viktig verktøy i verktøykassen din for å håndtere tekstbehandling.
 
 ## Hvordan
-Du kan finne lengden på en streng ved å bruke `echo`, `wc` og `cut` kommandoene i Bash. Her er et eksempel på en kode som finner lengden på en streng og lagrer den i en variabel:
+
+For å finne lengden på en tekststreng i Bash, kan vi bruke kommandoen `expr length`, etterfulgt av selve tekststrengen innenfor gåseøyne. La oss se på et eksempel:
 
 ```Bash
-string="Dette er en teststreng"
-len=$(echo -n "$string" | wc -c | cut -d' ' -f1)
-echo "Lengden på strengen er $len"
+str="Hei, verden!"
+echo "Lengden på tekststrengen er: `expr length "$str"`"
 ```
 
-Output:
-```
-Lengden på strengen er 20
-```
-
-La oss se på hva som skjer her. Først definerer vi en variabel `string` som inneholder en teststreng. Deretter bruker vi `echo` kommandoen sammen med `-n` flagget for å utelate linjeskift og `wc` kommandoen for å telle antall tegn i strengen. Til slutt bruker vi `cut` kommandoen for å få tak i det første feltet som er lengden på strengen, og lagrer denne verdien i en variabel `len`. Til slutt, bruker vi `echo` kommandoen igjen for å skrive ut lengden på strengen.
-
-Dette er bare én måte å finne lengden på en streng på, det finnes mange andre metoder avhengig av hva slags oppgave du jobber med. Her er et annet eksempel på hvordan du kan bruke `awk` kommandoen for å finne lengden på en streng:
-
-```Bash
-len=$(echo "$string" | awk '{print length}')
-```
+Dette vil gi følgende output: `Lengden på tekststrengen er: 12`. Denne kommandoen teller også mellomrom og spesialtegn, så vær oppmerksom på dette når du bruker den.
 
 ## Dypdykk
-Hvis du vil dykke dypere inn i dette emnet, er det viktig å forstå hva som skjer "under panseret" når du bruker kommandoene vi har nevnt. Når du bruker `echo` kommandoen med `-n` flagget, forteller du den å ikke legge til et linjeskift på slutten av utputen. Dette er viktig fordi `wc` kommandoen teller linjeskift som tegn. `wc` kommandoen står for "word count" og den returnerer antall linjer, ord og tegn i en fil eller standard input. Ved å bruke `cut` kommandoen med `-d` flagget kan du spesifisere hvilket tegn som skal brukes som deleparameter, i vårt tilfelle er dette et mellomrom (som er standardverdien). Når du angir `-f` flagget kan du spesifisere hvilket felt du ønsker å få tak i, ettersom `wc` kommandoen returnerer flere felt.
+
+Det er viktig å merke seg at `expr length` kun fungerer for å finne lengden på en enkelt tekststreng. Hvis du ønsker å finne lengden på en liste av tekststrenger, kan du bruke `wc` kommandoen i kombinasjon med en `here string` som inneholder alle tekststrengene. En `here string` er en spesiell type input hvor tekststrenger er separert av linjeskift. La oss se på et eksempel:
+
+```Bash
+str1="En"
+str2="to"
+str3="tre"
+echo -e "$str1\n$str2\n$str3" | wc -c
+```
+
+Dette vil gi følgende output: `10`. `wc -c` teller antall tegn i inputen, som i dette tilfellet er `1`, `2`, `3` og to ekstra linjeskift. Ved å trekke fra disse to ekstra tegnene fra resultatet, vil vi få den totale lengden på de tre tekststrengene.
 
 ## Se også
-* [Bash Cheatsheet in Norwegian](https://gist.github.com/esphen/4985bcabe5a2dbd4b582)
-* [Bash scripting for beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-* [Bash Scripting Tutorial - Explain Shell](https://explainshell.com/explain?cmd=echo+-n+%22hello+world%22+%7C+wc+-c+%7C+cut+-d%27+%27+-f1%0D%0A)
+
+- [Bash - Hvordan bruke variabelverdi i en annen variabel](https://www.davidkonsumerer.no/bash-hvordan-bruke-variabelverdi-i-en-annen-variabel/)
+- [Bash User Guide - Text Processing](https://tiswww.case.edu/php/chet/bash/bashref.html#Text-Processing)
+- [Bash man-siden for `expr`](https://www.man7.org/linux/man-pages/man1/expr.1.html)

@@ -1,39 +1,41 @@
 ---
-title:                "Clojure: Suppression de caractères correspondants à un motif"
+title:                "Clojure: Suppression de caractères correspondant à un motif"
+simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-Parfois, dans nos programmes Clojure, nous avons besoin de supprimer des caractères spécifiques d'une chaîne de caractères ou d'une séquence. Cela peut être pour des raisons de nettoyage des données, de manipulation de texte ou pour tout autre besoin spécifique. Heureusement, Clojure offre des fonctionnalités puissantes pour effectuer cette tâche facilement.
+Supprimer des caractères correspondant à un motif peut être utile lors de la manipulation de chaînes de caractères dans un programme Clojure. Cela peut nous permettre de supprimer des informations inutiles ou indésirables d'une chaîne de caractères afin de faciliter son utilisation.
 
 ## Comment faire
-
-Supprimer des caractères correspondant à un modèle en Clojure peut être réalisé en utilisant la fonction `clojure.string/replace` avec une expression régulière. Par exemple, si nous voulons supprimer tous les chiffres d'une chaîne de caractères, nous pourrions utiliser l'expression régulière `#"[0-9]"` et la passer à la fonction `replace` comme ceci :
+Voici un exemple de code en Clojure pour supprimer toutes les voyelles d'une chaîne de caractères :
 
 ```Clojure
-(clojure.string/replace "Bonjour123" #"[0-9]" "")
+(defn supprimer-voyelles [chaine]
+  (clojure.string/replace chaine #"a|e|i|o|u" ""))
+  
+(supprimer-voyelles "Bonjour") ;; Output: "Bnjr"
 ```
 
-Cela renverra une chaîne de caractères contenant uniquement "Bonjour". Nous pouvons également utiliser cette méthode avec des séquences comme des listes ou des vecteurs. Par exemple, si nous avons une liste contenant des noms de personnes avec des chiffres, nous pouvons utiliser la même expression régulière pour supprimer les chiffres de tous les noms de la liste :
+Nous pouvons également utiliser des fonctions plus avancées pour supprimer des caractères selon des règles précises. Par exemple, la fonction `filter` peut être utilisée pour supprimer tous les caractères qui ne sont pas des lettres de la chaîne de caractères :
 
 ```Clojure
-(defn remove-digits [names]
-  (map #(clojure.string/replace % #"[0-9]" "") names))
-
-(remove-digits ["Sarah123" "John456" "Lisa789"])
-;; Output: ("Sarah" "John" "Lisa")
+(defn supprimer-non-lettres [chaine]
+  (clojure.string/replace (filter #(Character/isLetter %) chaine) #"[^a-zA-Z]" ""))
+  
+(supprimer-non-lettres "123abc$%&") ;; Output: "abc"
 ```
 
 ## Plongée en profondeur
+La fonction `replace` utilisée dans les exemples ci-dessus peut prendre en paramètre un motif régulier pour supprimer des caractères selon un modèle précis. Nous pouvons utiliser différents motifs réguliers pour cibler différents types de caractères à supprimer. Par exemple, `#"[0-9]"` supprimerait tous les chiffres et `#"[^a-zA-Z]"` supprimerait tous les caractères qui ne sont pas des lettres. 
 
-Maintenant que nous avons vu comment supprimer des caractères correspondant à un modèle en Clojure, nous pouvons également utiliser des expressions régulières plus complexes avec la fonction `replace`. Par exemple, si nous voulons supprimer tous les caractères spéciaux d'une chaîne de caractères, nous pouvons utiliser l'expression régulière `#"[^a-zA-Z0-9]"` qui supprimera tous les caractères sauf les lettres et les chiffres. De plus, la fonction `replace` peut également prendre une lambda fonction en deuxième argument pour un remplacement plus avancé.
+Il est important de noter que ces fonctions ne modifient pas la chaîne de caractères d'origine, mais renvoient une nouvelle chaîne modifiée. Il est donc recommandé de stocker le résultat dans une variable si nous voulons utiliser la chaîne modifiée dans notre programme.
 
 ## Voir aussi
-
-- Documentation officielle de la fonction `clojure.string/replace` : https://clojuredocs.org/clojure.string/replace
-- Tutoriel sur les expressions régulières en Clojure : https://clojure.org/reference/regular_expressions
+- [Documentation officielle sur les chaînes de caractères en Clojure](https://clojure.org/reference/strings)
+- [Site de référence pour les motifs réguliers en Clojure](https://regexone.com/references/clojure)

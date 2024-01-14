@@ -1,46 +1,46 @@
 ---
 title:                "Rust: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hva er bruken av regulære uttrykk i Rust?
+## Hvorfor
+Regular expressions er et kraftig verktøy for strukturert tekstbehandling. Enten du leter etter bestemte ord eller mønster i store mengder tekst, kan regular expressions hjelpe deg med å finne og manipulere informasjonen du trenger.
 
-Regulære uttrykk, også kjent som regex, er et viktig verktøy for å behandle og manipulere tekststrenger i programmering. De kan brukes til å finne og erstatte bestemte mønstre i en tekststreng, og kan derfor være svært nyttige for datamanipulasjon og tekstbehandling. I Rust, et moderne og effektivt programmeringsspråk, er regex en innebygd del av standardbiblioteket, noe som gjør det enkelt å bruke og integrere i dine programmer.
-
-## Slik bruker du regex i Rust
-
-For å bruke regex i Rust, må du først importere biblioteket ved å legge til `use regex::Regex;` øverst i filen din. Deretter kan du definere et regex-objekt ved hjelp av `Regex::new("mønster")`, der "mønster" er mønsteret du vil finne i teksten. For eksempel vil `Regex::new("rust")` finne alle forekomster av ordet "rust" i en tekststreng.
+## Slik gjør du det
+For å bruke regular expressions i Rust, må du først importere "regex" biblioteket. Deretter kan du opprette et nytt Regex-objekt og bruke forskjellige metoder som "find" og "captures" for å finne og manipulere tekst. Her er et eksempel på hvordan du kan bruke regular expressions for å finne og erstatte et ord i en tekst:
 
 ```Rust
 use regex::Regex;
 
-fn main() {
-    let text = "Rust er et fantastisk programmeringsspråk!";
-    let regex = Regex::new("rust").unwrap();
-    println!("{:?}", regex.find(text));
-}
+// Opprett et nytt Regex-objekt med ønsket mønster
+let re = Regex::new(r"\b(heisann)\b").unwrap();
+
+// Definer teksten som skal sjekkes
+let text = "Heisann! Hvordan går det?";
+
+// Bruk metoden "replace_all" for å erstatte "heisann" med "hallo"
+let result = re.replace_all(text, "hallo");
+
+// Skriv ut det nye resultatet
+println!("{}", result); // Hallo! Hvordan går det?
 ```
 
-Dette vil skrive ut `Some(Match { start: 0, end: 4 })` som indikerer at ordet "Rust" ble funnet i teksten, og hvilken indeks det starter og slutter på.
+I dette eksempelet bruker vi mønsteret "\b(heisann)\b" for å finne ordet "heisann" kun når det står som et eget ord, og ikke som en del av et større ord. Dette er et enkelt eksempel, men med regular expressions kan du lage mer komplekse mønstre for å finne og manipulere tekst på ulike måter.
 
-## Dypdykk i regex-funksjonalitet
+## Dypdykk
+Regular expressions støtter også metakarakterer, som gir deg enda mer kraft til å finne spesifikk tekst. For eksempel kan du bruke "+" for å finne ett eller flere forekomster av et tegn eller gruppe av tegn, "*" for å finne null eller flere forekomster, og "?" for å finne null eller én forekomst. Dette kan være nyttig når du skal finne tekst som varierer i format eller lengde.
 
-Regex i Rust har et bredt spekter av funksjoner og operasjoner som kan hjelpe deg med å manipulere tekststrenger på en effektiv måte. Her er noen eksempler:
+Det finnes også mange forskjellige metoder du kan bruke sammen med Regex-objekter, for eksempel "is_match" for å sjekke om et mønster finnes i en tekst, eller "captures_iter" for å iterere gjennom alle forekomster av et mønster. Det er også mulig å bruke flags for å utføre søk og erstatninger med forskjellige innstillinger, som å ignorere store og små bokstaver.
 
-- `is_match()` - returnerer en boolsk verdi som indikerer om et mønster ble funnet i teksten
-- `find()` - returnerer en struct med informasjon om den første forekomsten av mønsteret
-- `split()` - deler teksten basert på et mønster og returnerer en iterator over delene
-- `replace()` - erstatter deler av tekststrengen basert på et mønster
-- og mange flere!
-
-For å lære mer om regex i Rust, kan du utforske dokumentasjonen og prøve ut forskjellige eksempler i dine egne programmer.
+Hvis du ønsker å lære mer om regular expressions i Rust, kan du sjekke ut dokumentasjonen for "regex" biblioteket, eller se på forskjellige eksempler og artikler på nettet. Å forstå hvordan regular expressions fungerer og å bli fortrolig med bruken av dem, kan gjøre tekstbehandling i Rust mye mer effektivt og elegant.
 
 ## Se også
-
-- [Offisiell Rust dokumentasjon for Regex](https://doc.rust-lang.org/regex/regex/index.html)
-- [Rust Cookbook: Bruke Regex](https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html)
-- [Regex tutorial på Rust Programming Language Forum](https://users.rust-lang.org/t/a-regex-tutorial-regular-expressions-in-rust/2162)
+- [Rust "regex" bibliotek dokumentasjon](https://docs.rs/regex)
+- [Offisiell Rust nettside](https://www.rust-lang.org/)
+- [Tutorial: Regex in Rust, a simple tutorial](https://sjollis.com/2020/06/17/regex-in-rust-a-simple-tutorial/)

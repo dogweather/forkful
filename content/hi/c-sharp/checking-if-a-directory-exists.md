@@ -1,7 +1,9 @@
 ---
-title:                "C#: डायरेक्टरी मौजूद है कि नहीं पता करना"
+title:                "C#: डायरेक्टरी का अस्तित्व जांच करना"
+simple_title:         "डायरेक्टरी का अस्तित्व जांच करना"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c-sharp/checking-if-a-directory-exists.md"
 ---
 
@@ -9,35 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-कोई भी बहुत सारे उद्देश्यों के लिए अपने कंप्यूटर पर फ़ोल्डर या डायरेक्ट्री बनाता है। चाहे वह फाइलों को संग्रहित करने के लिए हो, फाइलों को सॉर्ट करने के लिए हो या अन्य किसी कोड को इस्तेमाल करने के लिए हो। इसलिए, जब हम अपना कोड लिखते हैं, हमें यह पता होना आवश्यक है कि डायरेक्ट्री का विरामांक मौजूद है या नहीं।
+डायरेक्टरी मौजूद है की जांच कर न सिर्फ अपने कोड को सुरक्षित बनाने में मदद करता है, बल्कि यह भी जानने में मदद करता है कि आपके प्रोग्राम के साथ कौनसी फ़ोल्डर तक पहुंच सकते हैं।
 
-## कैसे करें
+## कैसे
 
-आप अपने C# कोड में ```Directory.Exists()``` फ़ंक्शन का इस्तेमाल करके सरलता से एक डायरेक्ट्री के मौजूद होने को जांच सकते हैं। नीचे कोड ब्लॉक में हम एक उदाहरण देखेंगे:
+एक डायरेक्टरी की उपस्थिति को जांचने के लिए, आपको `Directory.Exists()` मेथड को उपयोग करना होगा। नीचे दिए गए कोड ब्लॉक में आप इसका उदाहरण देख सकते हैं:
 
 ```C#
-using System;
-using System.IO;
-
-namespace DirectoryExistsExample
+if (Directory.Exists(@"C:\Users\John\Documents"))
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // अगर MyFolder नामक एक डायरेक्ट्री मौजूद है तो true लौग किए जाएंगे
-            bool directoryExists = Directory.Exists("MyFolder");
-            Console.WriteLine(directoryExists);
-            // अगर MyFolder नामक एक डायरेक्ट्री मौजूद नहीं है तो false लौग किए जाएंगे
-            directoryExists = Directory.Exists("NonexistentFolder");
-            Console.WriteLine(directoryExists);
-        }
-    }
+    Console.WriteLine("The directory exists!");
 }
 ```
 
-जैसा कि आप अंतरिक्ष से लक्ष्य जोड़ सकते हैं कि हम डायरेक्ट्री नाम को किस भांति से पास कर सकते हैं या ```Directory.Exists()``` फ़ंक्शन द्वारा उसे कैसे जांचा जाता है। आप यह भी देख सकते हैं कि किस नाम की डायरेक्ट्री कोड स्टैटमेंट का उपयोग करके बनाई गई है।
+जब आप इस कोड ब्लॉक को अपने कंप्यूटर पर चलाएंगे, तो यदि फ़ोल्डर मौजूद होगा, तो आपको निम्न आउटपुट मिलेगा:
 
-## गहराई में
+`The directory exists!`
 
-हमारे पास कई तरीके हैं डायरेक्ट्री की मौजूदगी की जांच करने के लिए, जैसे कि Directory.GetFiles(), Directory.GetDirectories(), और Directory.EnumerateDirectories()। ये सभी फ
+## गहराई में प्रवेश करें
+
+डायरेक्टरी की उपस्थिति की जांच के पीछे के हरे भाग में, कई विभिन्न प्रकार के कारण हो सकते हैं। ये कारण अनेक तरह के हो सकते हैं, जैसे कि फ़ाइल पाठ में त्रुटि या फ़ोल्डर की सेवा के लिए अनुमति न होना। आप `Directory.Exists()` मेथड को उपयोग करने से पहले इन सभी कारणों को ध्यान में रख सकते हैं। इसके अलावा, आप फ़ोल्डर की शक्ति को दोबारा हासिल करने के लिए `Directory.GetAccessControl()` मेथड को उपयोग कर सकते हैं।
+
+## देखें भी
+
+- [C# में फ़ाइलें और डायरेक्टरियों को पढ़ें](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-iterate-through-a-directory-tree)
+- [C# में डायरेक्टरी बनाएं और हटाएं](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-create-and-delete-a-directory)
+- [C# में फ़ाइलों और फ़ोल्डरों को कै

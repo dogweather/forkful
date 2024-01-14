@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Tworzenie pliku tymczasowego"
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/creating-a-temporary-file.md"
 ---
 
@@ -9,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Tworzenie plików tymczasowych jest często nieuniknionym etapem w pisaniu skryptów w języku Fish Shell. Ma to wiele zastosowań, na przykład przechowywanie danych tymczasowych lub tymczasowe zapisywanie wyników obliczeń.
+Tworzenie tymczasowych plików jest powszechną praktyką w programowaniu. Często jest to niezbędne, gdy potrzebujemy tymczasowych danych lub plików, które nie są potrzebne po zakończeniu działania programu.
 
 ## Jak to zrobić
 
-Aby utworzyć tymczasowy plik w języku Fish Shell, możemy wykorzystać polecenie `mktemp`. Przykładowy kod wyglądałby następująco:
+Tworzenie tymczasowych plików jest bardzo proste w Fish Shell. Możemy użyć wbudowanej funkcji `mktemp`, która automatycznie generuje unikalną nazwę dla naszego pliku tymczasowego.
 
 ```Fish Shell
-# Tworzy plik tymczasowy o nazwie example.txt
-mktemp example.txt
+set tempfile (mktemp)
+echo "To jest tymczasowy plik" > $tempfile
+cat $tempfile
 ```
 
-Możemy także użyć opcji `-t`, aby ustawić prefiks nazwy pliku tymczasowego, na przykład:
+W powyższym przykładzie tworzymy zmienną `tempfile` i przypisujemy jej wartość zwróconą przez funkcję `mktemp`. Następnie do naszego pliku tymczasowego zapisujemy przykładowy tekst i wyświetlamy go na konsoli za pomocą komendy `cat`.
+
+Możemy również ustalić konkretną nazwę dla naszego pliku tymczasowego, jeśli chcemy. W tym celu możemy wykorzystać opcję `-p` funkcji `mktemp`.
 
 ```Fish Shell
-# Tworzy plik tymczasowy o nazwie temp_XXX.txt
-mktemp -t temp_XXX.txt
+set tempfile (mktemp -p data)
+echo "To jest tymczasowy plik w folderze data" > $tempfile
+cat $tempfile
 ```
 
-Możemy również określić ścieżkę do której ma zostać zapisany plik tymczasowy za pomocą opcji `-p`, na przykład:
+W ten sposób plik zostanie automatycznie stworzony w określonym przez nas folderze.
 
-```Fish Shell
-# Tworzy plik tymczasowy o nazwie example.txt w katalogu /tmp
-mktemp -p /tmp example.txt
-```
+## Przeanalizujmy to dokładniej
 
-## Deep Dive
+Tworząc tymczasowe pliki w ten sposób, musimy pamiętać, że zostaną one automatycznie usunięte po zakończeniu działania programu. Jeśli chcemy zachować plik, musimy go przenieść lub skopiować w innej części skryptu.
 
-Podczas gdy polecenie `mktemp` pozwala nam na szybkie utworzenie pliku tymczasowego, istnieje wiele innych sposobów na obsługę manipulacji i zarządzania tymczasowymi plikami w języku Fish Shell. Na przykład, możemy wykorzystać zmienne `TMPDIR` lub `PWD` do ustalenia katalogu, w którym ma zostać utworzony plik tymczasowy lub nadanie mu wyjątkowych uprawnień za pomocą polecenia `chmod`.
+Istnieją również inne metody tworzenia tymczasowych plików w Fish Shell, na przykład za pomocą funkcji `mktemp -s` lub `mktemp -t`. Możemy również użyć polecenia `touch`, aby utworzyć pusty plik tymczasowy.
 
 ## Zobacz również
 
-- Dokumentacja języka Fish Shell: https://fishshell.com/docs/current/index.html
-- Przewodnik po pisaniu skryptów w języku Fish Shell: https://fishshell.com/docs/current/tutorial.html
-- Lista przydatnych poleceń w języku Fish Shell: https://fishshell.com/docs/current/commands.html
+- Dokumentacja funkcji `mktemp` w Fish Shell: https://fishshell.com/docs/current/cmds/mktemp.html
+- Wprowadzenie do podstaw programowania w Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Przykłady i dalsze zastosowania tworzenia tymczasowych plików w Fish Shell: https://www.davidbegin.com/create-temporary-files-and-directories-in-fish-shell/

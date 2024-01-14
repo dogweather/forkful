@@ -1,57 +1,42 @@
 ---
-title:                "C++: Läsning av kommandoradsargument"
+title:                "C++: Läsa kommandoradsargument"
+simple_title:         "Läsa kommandoradsargument"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför läsa kommandoargument?
 
-Kommandoradsargument, även kallade "command line arguments" på engelska, är en viktig del av C++ programmering. Genom att läsa och använda kommandoradsargument kan du skapa mer flexibla och anpassningsbara program som kan ta emot olika indata från användaren.
+Att kunna läsa kommandoargument är en viktig del av att kunna skriva effektiva program. Det gör det möjligt för programmet att ta emot input från användaren och göra anpassade handlingar baserade på den inputen.
 
-## Hur man gör det
+## Så här gör du
 
-Att läsa kommandoradsargument är faktiskt ganska enkelt i C++. Allt du behöver göra är att använda den inbyggda "main" funktionen och dess "argc" och "argv" parametrar. Här är ett exempel på hur du kan göra det:
+För att läsa kommandoargument i C++, behöver du först importera biblioteket "iostream" och deklarera "int main" funktionen. Sedan kan du använda "int argc" och "char* argv[]" parametrar för att ta emot argumenten från kommandoraden.
 
 ```C++
 #include <iostream>
 
-int main(int argc, char *argv[]) {
-  for (int i = 0; i < argc; i++) {
-    std::cout << "Argument " << i + 1 << ": " << argv[i] << std::endl;
-  }
-  return 0;
+int main(int argc, char* argv[]) {
+    // Här kan du utföra dina handlingar baserat på argumenten
+    // Till exempel, för att skriva ut det första argumentet:
+    std::cout << argv[0] << std::endl;
+
+    return 0;
 }
 ```
 
-I detta exempel skriver vi ut alla kommandoradsargument som användaren matar in. "argc" parametern håller antalet argument som skickas till programmet och "argv" parametern innehåller själva argumenten som en vektor av strängar. Genom att använda en "for" loop kan vi gå igenom alla argument och skriva ut dem.
-
-Om vi skulle köra detta program med följande kommandon i kommandoraden:
-
-```
-./program argument1 argument2 argument3
-```
-
-Så kommer outputen att se ut så här:
-
-```
-Argument 1: ./program
-Argument 2: argument1
-Argument 3: argument2
-Argument 4: argument3
-```
-
-Som du kan se inkluderas även programmet självt som det första argumentet.
+Om du kör detta program och anger "hello" som argument från kommandoraden, så kommer programmet att skriva ut "hello" som output.
 
 ## Djupdykning
 
-Förutom att bara skriva ut kommandoradsargumenten kan du också använda dem för att göra din kod mer dynamisk och anpassningsbar. Genom att läsa in olika argument kan du till exempel ändra programmets beteende eller utföra olika uppgifter baserat på användarens indata.
-
-Du kan också använda externa bibliotek som "boost program_options" för att göra hantering av kommandoradsargumenten ännu enklare och mer strukturerad.
+En intressant egenskap hos kommandoargument är möjligheten att läsa in argumenten som nummer istället för strängar. Detta görs genom att konvertera "argv[]" till "int" eller "double". Detta öppnar upp för olika användningsområden, som till exempel att göra matematiska beräkningar baserat på input från användaren.
 
 ## Se även
 
-- [cppreference - Argumente från kommandoraden](https://en.cppreference.com/w/cpp/language/main_function)
-- [Boost Program_options guide (på engelska)](https://www.boost.org/doc/libs/1_74_0/doc/html/program_options.html)
+- [C++ - Kommandoargument ](https://www.w3schools.com/cpp/cpp_command_line.asp)
+- [Kommandoargument i C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Argument med kommandoraden i C++](https://www.cplusplus.com/articles/DEN36Up4/)

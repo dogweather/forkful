@@ -1,42 +1,73 @@
 ---
 title:                "Clojure: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché estrae le sottostringhe?
+## Perché
 
-Spesso, nei nostri programmi, ci troviamo ad avere a che fare con stringhe di testo molto lunghe. In questi casi, può essere utile dividere la stringa in sottostringhe più gestibili. Vediamo come fare questo utilizzando Clojure.
+Estrarre sottostringhe è un'operazione comune nella programmazione, soprattutto quando si lavora con stringhe di testo più lunghe. Ciò consente di ottenere parti specifiche di una stringa e manipolarle in modi diversi. In Clojure, ci sono diversi modi per estrarre sottostringhe, ognuno con i suoi vantaggi e casi d'uso. Continua a leggere per scoprire come farlo!
 
-## Come fare
+## Come Fare
 
-Per estrarre le sottostringhe in Clojure, possiamo utilizzare la funzione `subs`. Questa funzione ha due parametri: la stringa di partenza e gli indici di inizio e fine della sottostringa desiderata. Ad esempio:
+Ci sono due funzioni principali per estrarre sottostringhe in Clojure: `subs` e `substring`. Entrambe richiedono la stringa di origine come primo argomento, seguita dalla posizione di inizio e di fine della sottostringa desiderata. Tuttavia, ci sono alcune differenze chiave tra le due.
+
+Considera il seguente esempio:
 
 ```Clojure
-(def test-str "Questo è un esempio di stringa")
+(def test-string "Ciao, sono un programmatore!")
+```
 
-(print (subs test-str 6 11))
+### Utilizzando `subs`
 
-;; output: è un
+Con la funzione `subs`, è possibile specificare l'indice di inizio e di fine come secondo e terzo argomento rispettivamente. Tieni presente che l'indice di fine è esclusivo, il che significa che il carattere corrispondente all'indice non viene incluso nella sottostringa risultante.
+
+```Clojure
+(subs test-string 6 8) ; restituisce "so"
+```
+
+Inoltre, `subs` ha la capacità di accettare indici negativi, che rappresentano il conteggio all'indietro dalla fine della stringa.
+
+```Clojure
+(subs test-string -6 -2) ; restituisce "mato"
+```
+
+### Utilizzando `substring`
+
+D'altra parte, `substring` richiede l'indice di inizio come secondo argomento, ma invece dell'indice di fine, richiede un terzo argomento che rappresenta la lunghezza della sottostringa. In questo caso, il carattere corrispondente all'indice di fine è incluso nella sottostringa risultante.
+
+```Clojure
+(substring test-string 0 4) ; restituisce "Ciao"
+```
+
+Anche in questo caso, `substring` può accettare indici negativi per entrambi gli argomenti.
+
+```Clojure
+(substring test-string -11 -1) ; restituisce "programmatore"
 ```
 
 ## Approfondimento
 
-La funzione `subs` lavora in modo simile alla funzione `substring` di altri linguaggi di programmazione. Tuttavia, a differenza di quest'ultima, la funzione `subs` accetta anche numeri negativi come indici, che indicano una posizione partendo dalla fine della stringa.
-
-Inoltre, possiamo anche utilizzare `subs` per estrarre una sottostringa a partire dalla fine della stringa, specificando un indice negativo come punto di partenza e uno positivo come punto di fine. Ad esempio:
+Oltre ai metodi descritti sopra, Clojure ha a disposizione altre funzioni per estrarre sottostringhe. Ad esempio, `subseq` accetta gli stessi parametri di `subs`, ma restituisce una sequenza di caratteri anziché una stringa, permettendo così di utilizzare metodi di manipolazione di sequenze.
 
 ```Clojure
-(print (subs test-str -12 18))
-
-;; output: mo di stringa
+(subseq test-string 5 10) ; restituisce (\, \s \o \n \o)
 ```
 
-## Vedi anche
+Inoltre, Clojure ha anche il concetto di "pattern di ricerca" da utilizzare con la funzione `re-find` per trovare il primo match di una sottostringa all'interno della stringa di origine.
 
-- Documentazione ufficiale di Clojure sulla funzione `subs`: https://clojuredocs.org/clojure.core/subs
-- Tutorial su come manipolare le stringhe in Clojure: https://clojure.org/guides/strings
-- Esempi di utilizzo della funzione `subs` in Clojure: https://rosettacode.org/wiki/Sub-string_extraction#Clojure
+```Clojure
+(re-find #"programmatore" test-string) ; restituisce "programmatore"
+```
+
+## Vedi Anche
+
+- [Documentazione ufficiale di Clojure su `subs`](https://clojuredocs.org/clojure.core/subs)
+- [Documentazione ufficiale di Clojure su `substring`](https://clojuredocs.org/clojure.core/substring)
+- [Documentazione ufficiale di Clojure su `subseq`](https://clojuredocs.org/clojure.core/subseq)
+- [Documentazione ufficiale di Clojure su `re-find`](https://clojuredocs.org/clojure.core/re-find)

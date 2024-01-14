@@ -1,7 +1,9 @@
 ---
-title:                "Go: Kombinering av strenger"
+title:                "Go: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/concatenating-strings.md"
 ---
 
@@ -9,94 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-I mange programmeringsspråk kan man bruke en operatør, som for eksempel "+" for å kombinere to strenger. I Go, må man bruke funksjonen "Concat" for å gjøre det samme. Hvorfor skulle man velge å bruke denne funksjonen i stedet for en enkel operatør? Fordi det å bruke "Concat" kan ha noen fordeler som vi skal se nærmere på under.
+Å sette sammen strenger, også kalt concatenation, er en viktig del av å programmere i Go. Ved å kombinere forskjellige strenger, kan du lage mer komplekse tekster som er nyttige for å lage brukervennlige grensesnitt, generere rapporter eller utføre andre operasjoner i programmet ditt.
 
-## Hvordan
+## Slik gjør du det
 
-Golang tilbyr flere måter å kombinere strenger på, men vi skal fokusere på én spesifik metode: ved hjelp av "Concat" funksjonen. Det første vi må gjøre er å importere "strings" pakken:
+Den enkleste måten å sette sammen to strenger på i Go er ved å bruke operatoren "+" mellom dem. La oss se på et enkelt eksempel:
 
-```
-import "strings"
-```
+```Go
+str1 := "Hei"
+str2 := "verden!"
 
-Så kan vi bruke "Concat" funksjonen som følger:
+resultat := str1 + str2
 
-```
-resultat := strings.Concat("Hei", "verden!")
-fmt.Println(resultat)
+fmt.Println(resultat) // Output: Hei verden!
 ```
 
-Output:
+Som du ser, blir de to strengene satt sammen til en enkelt streng, og resultatet skrives ut på skjermen. Husk at når du bruker "+", må begge operandene være av typen string. Ellers vil du få en feilmelding.
 
-```
-Hei verden!
-```
+Du kan også sette sammen flere strenger ved å bruke funksjonen "fmt.Sprint". Dette er spesielt nyttig når du vil kombinere strenger med andre data, for eksempel tall eller variabler. Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
-Som du kan se, tar "Concat" to strenger som parametere og returnerer en ny streng som er en kombinasjon av de to.
+```Go
+alder := 30
 
-Vi kan også bruke "Concat" til å kombinere flere strenger på en enkelt linje:
+resultat := fmt.Sprint("Jeg er", alder, "år gammel.")
 
-```
-resultat := strings.Concat("Hvordan går ", "det ", "i ", "dag?")
-fmt.Println(resultat)
+fmt.Println(resultat) // Output: Jeg er 30 år gammel.
 ```
 
-Output:
+En annen måte å sette sammen strenger på er ved å bruke funksjonen "strings.Join". Denne funksjonen tar inn en liste med strenger og en separator som argumenter, og setter sammen strengene med separator mellom dem. La oss se på et eksempel:
 
-```
-Hvordan går det i dag?
-```
+```Go
+navn := []string{"Marius", "Johansen"}
 
-Det er også verdt å merke seg at "Concat" funksjonen også kan ta imot variadic argumenter, noe som betyr at vi kan gi den et ubegrenset antall strenger å kombinere, for eksempel:
+resultat := strings.Join(navn, " ")
 
-```
-resultat := strings.Concat("Velkommen", "til", "Go", "programmering", "!")
-fmt.Println(resultat)
-```
-
-Output:
-
-```
-Velkommen til Go programmering!
+fmt.Println(resultat) // Output: Marius Johansen
 ```
 
 ## Dypdykk
 
-I tillegg til å kombinere strenger, kan "Concat" funksjonen også brukes til å legge til et mellomrom mellom hver streng. For å gjøre dette, kan vi bruke "Join" funksjonen som er en del av "strings" pakken.
+Når du jobber med concatenation i Go, er det viktig å huske på at strenger er uforanderlige, det betyr at de ikke kan endres etter at de er opprettet. Dette betyr at hver gang du bruker en concatenation operasjon, opprettes det en helt ny streng i minnet. Dette kan føre til dårlig ytelse hvis du gjør det mange ganger i løpet av programmet ditt. For å unngå dette, kan du bruke "strings.Builder" for å bygge en streng gradvis uten å opprette nye strenger hver gang.
 
-La oss bruke følgende eksempel:
-
-```
-strenger := []string{"Dette", "er", "en", "setning."}
-resultat := strings.Join(strenger, " ")
-fmt.Println(resultat)
-```
-
-Output:
-
-```
-Dette er en setning.
-```
-
-Vi kan også bruke "Concat" og "Join" funksjonene sammen for å legge til en prefiks eller suffiks til en streng. For eksempel:
-
-```
-streng := "Golang"
-streng = strings.Concat("Velkommen til ", streng)
-streng = strings.Join([]string{streng, "!"}, "")
-fmt.Println(streng)
-```
-
-Output:
-
-```
-Velkommen til Golang!
-```
-
-Som du kan se, kan "Concat" og "Join" funksjonene være nyttige verktøy i Go-programmering når det kommer til å kombinere og manipulere strenger.
+En annen ting å huske på er at Go bruker UTF-8 som standard for strenger, så hvis du jobber med språk som bruker spesielle tegn, må du være oppmerksom på dette når du setter sammen strenger.
 
 ## Se også
 
-- https://golang.org/pkg/strings/#Concat
-- https://golang.org/pkg/strings/#Join
-- https://gobyexample.com/string-concatenation
+- https://gobyexample.com/string-concatenation 
+- https://golang.org/pkg/fmt/#Sprint 
+- https://golang.org/pkg/strings/#Join 
+- https://blog.golang.org/strings

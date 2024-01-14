@@ -1,57 +1,55 @@
 ---
-title:                "Python: Generering av slumpmässiga tal"
+title:                "Python: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Python"
-category:             "Numbers"
+category:             "Python"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-Varför generate random numbers
+## Varför
+Att generera slumpmässiga nummer är ett viktigt koncept inom programmering. Det kan användas för att skapa olika användarscenarion, skapa slumpmässiga spel eller för att testa kod.
 
-Att generera slumpmässiga nummer är ett vanligt koncept inom programmering, särskilt inom dataanalys och simuleringar. Det kan hjälpa till att skapa orealistiska data och scenarier för att testa programmets hållbarhet och förutsäga olika möjliga resultat.
-
-Hur man gör det
-
+## Hur man genererar slumpmässiga nummer i Python
+Generera slumpmässiga heltal mellan 0 och 10:
 ```Python
 import random
-#Genererar ett slumpmässigt nummer mellan 1 och 10
-random_nummer = random.randint(1, 10)
-print(random_nummer)
-#Output: 7
+print(random.randint(0, 10))
 ```
 
-I koden ovan har vi använt funktionen "randint" från modulen "random" för att generera en slumpmässig integer mellan 1 och 10. Detta är bara ett enkelt exempel på hur man kan använda random-nummer i sitt program, men det finns många fler sätt att göra det på.
-
-En annan vanlig funktion för att generera slumpmässiga nummer är "random.random", som genererar ett decimaltal mellan 0 och 1. Detta kan vara användbart vid simuleringar där man behöver en variabel som är kontinuerlig istället för diskret. Se nedan för ett exempel:
-
+Generera slumpmässiga decimaltal mellan 0 och 1:
 ```Python
 import random
-#Genererar ett decimaltal mellan 0 och 1
-random_nummer = random.random()
-print(random_nummer)
-#Output: 0.543217
+print(random.uniform(0, 1))
 ```
 
-Man kan också använda sig av listor för att ange ett visst utbud av nummer som man vill generera slumpmässigt från. Se nedan för exempel:
-
+Generera slumpmässiga tecken från en lista:
 ```Python
 import random
-#Skapar en lista med fem olika tal
-tal_lista = [1, 4, 7, 11, 23]
-#Genererar ett slumpmässigt tal från listan ovan
-random_nummer = random.choice(tal_lista)
-print(random_nummer)
-#Output: 7
+lista = ['a', 'b', 'c', 'd']
+print(random.choice(lista))
 ```
 
-Djupdykning
+Skapa en lista med slumpmässiga heltal:
+```Python
+import random
+lista = random.sample(range(100), 10)
+print(lista)
+```
 
-Att generera slumpmässiga nummer är inte så slumpmässigt som man kanske tror. Inom programmering används ofta något som kallas en "pseudo-random number generator" (PRNG) för att skapa dessa nummer. Det är en algoritm som genererar sekvenser av nummer som kan uppfattas som slumpmässiga, men i själva verket är de baserade på en startpunkt eller "seed". Om samma seed används kommer sekvensen av nummer alltid att vara densamma.
+Output:
+```
+[47, 10, 73, 31, 82, 95, 56, 20, 38, 98]
+```
 
-Detta kan vara användbart vid testning av program, men om man vill ha riktigt slumpmässiga nummer måste man använda sig av yttre faktorer, som processors hastighet eller användarens muspekare, för att skapa seed-värden.
+## Djupdykning
+Det finns flera olika sätt att generera slumpmässiga nummer i Python. Det vanligaste är att använda modulen "random" som innehåller olika metoder för att skapa slumpmässiga värden. Det finns också möjlighet att använda andra moduler som "numpy" och "scipy" för mer avancerade funktioner.
 
-Se även
+När man genererar slumpmässiga nummer är det viktigt att förstå att de egentligen inte är helt slumpmässiga utan genereras efter en algoritm. Det är därför viktigt att välja en lämplig metod beroende på vad syftet är med de slumpmässiga numren.
 
-- Dokumentation för random-modulen i Python: https://docs.python.org/3/library/random.html
-- En förklaring av hur PRNG fungerar: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+## Se även
+- [Dokumentation för modulen "random" i Python](https://docs.python.org/3/library/random.html)
+- [Tutorial för att generera slumpmässiga nummer i Python](https://medium.com/@meghamohan/everything-you-need-to-know-about-random-module-in-python-d7b738138b11)
+- [Mer avancerade metoder för att generera slumpmässiga nummer med numpy](https://www.numpy.org/devdocs/reference/random/index.html)

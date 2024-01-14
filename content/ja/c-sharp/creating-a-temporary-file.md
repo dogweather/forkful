@@ -1,52 +1,50 @@
 ---
-title:                "C#: 一時ファイルの作成 (Ichi ji fairu no sakusei)"
+title:                "C#: 一時ファイルの作成"
+simple_title:         "一時ファイルの作成"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-一時ファイルを作成する理由は、データの一時的な保管や処理に便利であるためです。
+プログラミングをしているときに、たまにテンポラリーファイルを作成することがあります。テンポラリーファイルは一時的にデータを保存するために使用されますが、その目的やメリットについてはあまり知られていません。そこで今回は、なぜテンポラリーファイルを作成するのかについてご説明します。
 
 ## 作り方
+テンポラリーファイルを作成するには、まず```System.IO```名前空間を使用する必要があります。以下のように、一時的にファイルを作成するためのメソッドを用意しました。
 
 ```C#
-using System;
-using System.IO;
-
-namespace CreateTempFile
+// テンポラリーファイルを作成するメソッド
+public static void CreateTempFile()
 {
-    class Program
+    // ファイルの一時的な名前を作成する
+    string tempFileName = Path.GetTempFileName();
+
+    // テンポラリーファイルを開く
+    using (FileStream fs = File.Open(tempFileName, FileMode.OpenOrCreate))
     {
-        static void Main(string[] args)
-        {
-            // ランダムなファイル名を生成
-            string fileName = Path.GetRandomFileName();
-            // AppDataフォルダに一時ファイルを作成
-            string filePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), fileName);
-            // ファイルを作成し、書き込む
-            File.Create(filePath).Close();
-            File.WriteAllText(filePath, "これは一時ファイルです。");
-            // ファイルのパスと中身を出力
-            Console.WriteLine($"一時ファイルが作成されました：{filePath}\n中身：{File.ReadAllText(filePath)}");
-        }
+        // ファイルに書き込む
+        byte[] byteData = Encoding.UTF8.GetBytes("Hello world!");
+        fs.Write(byteData, 0, byteData.Length);
     }
+
+    // テンポラリーファイルを閉じる
+    File.Delete(tempFileName);
 }
 ```
 
-```
-一時ファイルが作成されました：C:\Users\ユーザー名\AppData\Roaming\ak32c433.etw
-中身：これは一時ファイルです。
-```
+このように、```Path.GetTempFileName()```メソッドを使用することで一時的なファイル名を取得し、```File.Open()```メソッドを使用することでファイルを開き、必要な処理を行うことができます。
+
+また、テンポラリーファイルを削除する際は、```File.Delete()```メソッドを使用することで簡単に削除することができます。
 
 ## 深堀り
+テンポラリーファイルを作成する際には、ファイルを作成するだけでなく、同時にファイルを削除する必要があります。これは、プログラムが終了する際に不要なファイルが残らないようにするためです。また、オペレーティングシステムは時間の経過とともにテンポラリーファイルを自動的に削除することがあります。
 
-一時ファイルは、プログラムの実行中に必要なデータを一時的に保存するために使用されます。例えば、大量のデータを処理する際には、一時ファイルを作成してそこにデータを保存し、処理が終わった後に削除することでメモリを節約することができます。また、一時ファイルを使用することで、複数回繰り返し処理を行う場合でも、毎回新しいファイルが作成されるためデータが混ざることがなく、安全に処理を行うことができます。
+さらに、テンポラリーファイルは一時的にデータを保存するだけでなく、メモリの使用量を抑えるためにも使用されます。一時的に利用するデータは、メモリよりもファイルに保存する方が効率的であり、テンポラリーファイルはそのような用途にも利用されます。
 
-## 参考リンク
-
-- [C#でファイルを作成する方法](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/file-system/how-to-create-a-file)
-- [C#で一時ファイルを利用する方法](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/file-system/how-to-create-a-temporary-file)
+## 他に見る
+* [一時ファイルを使うときの注意点 (Microsoft Docs)](https://docs.microsoft.com/ja-jp/dotnet/standard/io/ux-design/temporary-files)
+* [C#でファイル操作を行う (TechAcademy Magazine)](https://techacademy.jp/magazine/29517)
+* [C#で文字列をバイト配列として扱う (C# 公式ドキュメント)](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/arrays/single-dimensional-arrays#string-byte-arrays)

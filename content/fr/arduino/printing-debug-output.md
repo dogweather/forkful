@@ -1,36 +1,33 @@
 ---
-title:                "Arduino: Afficher la sortie de débogage"
+title:                "Arduino: Affichage des sorties de débogage"
+simple_title:         "Affichage des sorties de débogage"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi 
+Pourquoi quelqu'un se lancerait-il dans l'impression de messages de débogage ? 
 
-Lorsque vous codez avec Arduino pour vos projets électroniques, il est crucial de pouvoir comprendre ce qui se passe dans votre code. C'est ici que l'impression de sortie de débogage intervient. Cela vous permet d'afficher des informations utiles sur votre code en temps réel, ce qui vous aide à identifier les erreurs et à améliorer vos performances.
+Lorsque vous travaillez sur un projet Arduino, il est souvent utile de pouvoir suivre votre code et de comprendre ce qui se passe en utilisant des messages de débogage. Ces messages peuvent vous aider à identifier et à résoudre les erreurs dans votre code, ce qui est essentiel pour un fonctionnement efficace de votre projet.
 
-## Comment faire
+# Comment Faire 
+Pour imprimer des messages de débogage dans votre code Arduino, vous pouvez utiliser la fonction `Serial.print()`. Cette fonction prend en paramètre la valeur que vous souhaitez afficher et l'envoie à l'ordinateur par le port série. Vous pouvez également utiliser `Serial.println()` pour ajouter un retour à la ligne à la fin de votre message.
 
-Pour imprimer des informations de débogage sur votre code Arduino, il vous suffit d'utiliser la fonction `Serial.print()`. Cette fonction prend en argument une valeur, une chaîne de caractères ou une variable et l'imprime sur le moniteur série. Voici un exemple de code :
-
-```Arduino
-int x = 10;
-Serial.print("La valeur de x est : ");
-Serial.print(x);
+```
+ArduinoSerial.print("Valeur : ");
+ArduinoSerial.println(valeur);
 ```
 
-En téléversant ce code sur votre carte Arduino et en ouvrant le moniteur série, vous verrez s'afficher : "La valeur de x est : 10". Vous pouvez utiliser également la fonction `Serial.println()` pour ajouter un saut de ligne après l'impression de la valeur.
+Dans l'exemple ci-dessus, nous utilisons `Serial.print()` pour afficher le texte "Valeur : " et `Serial.println()` pour afficher la valeur de la variable `valeur`. Lorsque vous téléversez votre code sur votre carte Arduino, vous pourrez alors voir ces messages de débogage dans la console série de l'IDE Arduino.
 
-## Plongée en profondeur
+# Plongée en Profondeur 
+Lorsque vous utilisez des messages de débogage, il est important de garder à l'esprit quelques bonnes pratiques. Tout d'abord, évitez d'imprimer trop de messages de débogage, cela peut ralentir votre code et utiliser trop de mémoire. Ensuite, vous pouvez utiliser `Serial.begin()` pour initialiser la communication série avec un débit spécifique, ceci peut être utile si vous rencontrez des problèmes avec des connexions plus lentes. De plus, vous pouvez utiliser des commandes conditionnelles pour n'afficher que certains messages de débogage lorsque vous le souhaitez.
 
-Pour une utilisation plus avancée de la fonction `Serial.print()`, vous pouvez spécifier la base numérique de la valeur à imprimer. Par exemple, en utilisant `Serial.print(x, BIN)`, la valeur sera imprimée en binaire. Vous pouvez également utiliser `Serial.printf()` pour formater l'impression selon un modèle spécifique.
-
-Enfin, il est important de procéder à l'impression de débogage avec parcimonie, en n'imprimant que les informations pertinentes. Cela vous aidera à garder votre code propre et à éviter de surcharger le moniteur série.
-
-## Voir aussi
-
-- [Documentation officielle de la fonction Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- [Tuto Arduino : l'impression de débogage](https://www.arduino.cc/en/Tutorial/SerialPrint)
-- [Comment déboguer votre code Arduino avec l'impression de débogage](https://www.makerguides.com/arduino-serial-print-debugging/)
+# Voir Aussi
+- Tutoriel officiel d'Arduino sur la communication série : https://www.arduino.cc/en/Tutorial/Serial
+- Article sur les bonnes pratiques pour l'utilisation des messages de débogage : https://www.instructables.com/id/Debugging-on-Arduino-great-practices
+- Bibliothèque de débogage Arduino SerialDebug : https://github.com/JoaoLopesF/Arduino-SerialDebug

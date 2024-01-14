@@ -1,50 +1,86 @@
 ---
-title:                "C++: Convertir una cadena en mayúsculas"
+title:                "C++: Capitalizando una cadena"
+simple_title:         "Capitalizando una cadena"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué capitalizar una cadena?
+## Por qué
 
-Cuando trabajamos con cadenas de caracteres en nuestros programas, a menudo nos encontramos con la necesidad de capitalizarlas, es decir, cambiar la primera letra de cada palabra a mayúscula. Esto puede ser útil para fines de presentación, para asegurarse de que los nombres propios se vean correctamente o para seguir un formato específico. Afortunadamente, en C++, hay una forma sencilla de realizar esta tarea utilizando algunas funciones de la biblioteca estándar.
+Cuando se trabaja con cadenas de texto, a veces es necesario cambiar el formato de las mismas para que luzcan más legibles. En este caso, capitalizar una cadena puede ser útil para resaltar ciertas palabras o mejorar la presentación de datos en una interfaz de usuario.
 
 ## Cómo hacerlo
 
-Para capitalizar una cadena en C++, utilizamos las funciones `toupper()` y `tolower()`, que nos permiten convertir caracteres a mayúsculas o minúsculas respectivamente. A continuación, se muestra un ejemplo de cómo podemos utilizar estas funciones para capitalizar una cadena de caracteres:
+En lenguaje de programación C++, hay varias formas de capitalizar una cadena. Una de las más sencillas es utilizando la función `toupper()` de la librería `cctype`. Esta función convierte todos los caracteres de una cadena a mayúsculas.
+
+```C++
+#include <iostream>
+#include <cstring>
+#include <cctype>
+
+int main() {
+  char str[] = "Hola, mundo!";
+  
+  std::cout << "Cadena original: " << str << std::endl;
+  
+  // Convertir todo a mayúsculas
+  for (int i = 0; i < strlen(str); i++) {
+    str[i] = toupper(str[i]);
+  }
+  
+  std::cout << "Cadena capitalizada: " << str << std::endl;
+  
+  return 0;
+}
+```
+
+**Output:**
+
+`Cadena original: Hola, mundo!`
+
+`Cadena capitalizada: HOLA, MUNDO!`
+
+Otra forma de realizar esta tarea es utilizando la función `transform()` de la librería `algorithm`. Esta función permite aplicar una transformación a cada elemento de un rango dado, utilizando una función especificada. En este caso, podemos utilizar la función `toupper()` para convertir cada caracter a mayúscula.
 
 ```C++
 #include <iostream>
 #include <string>
-
-using namespace std;
-
-string capitalize(string str) { // Función que capitaliza una cadena
-    for (int i = 0; i < str.length(); i++) { // Recorremos la cadena
-        if (i == 0) // Si es la primera letra
-            str[i] = toupper(str[i]); // La convertimos a mayúscula
-        else if (str[i - 1] == ' ') // Si la letra anterior fue un espacio
-            str[i] = toupper(str[i]); // Convertimos la actual a mayúscula
-        // En caso contrario, no hacemos cambios
-    }
-    return str; // Retornamos la cadena ya capitalizada
-}
+#include <algorithm>
+#include <cctype>
 
 int main() {
-    string str = "hola mundo"; // Cadena original
-    string capitalized = capitalize(str); // Cadena capitalizada
-    cout << capitalized << endl; // Imprimimos: Hola Mundo
-    return 0;
+  std::string str = "Hola, mundo!";
+  
+  std::cout << "Cadena original: " << str << std::endl;
+  
+  // Convertir todo a mayúsculas
+  std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+  
+  std::cout << "Cadena capitalizada: " << str << std::endl;
+  
+  return 0;
 }
 ```
 
+**Output:**
+
+`Cadena original: Hola, mundo!`
+
+`Cadena capitalizada: HOLA, MUNDO!`
+
 ## Profundizando
 
-Este ejemplo es solo una forma de capitalizar una cadena y puede ser mejorado. Por ejemplo, podríamos tener una función que reciba una cadena y un carácter como parámetros, y capitalice la primera letra de cada palabra que comience con ese carácter. También podríamos tomar en cuenta las excepciones, como las palabras en mayúsculas o la primera letra de una oración. Depende de nuestros requisitos y del nivel de complejidad que queramos agregar a la función.
+Además de las formas mencionadas anteriormente, también es posible crear una función propia para capitalizar una cadena. Esta función podría tomar en cuenta ciertas excepciones, como por ejemplo palabras que deben permanecer en minúsculas (como artículos o preposiciones).
+
+También es importante tener en cuenta que al utilizar `toupper()`, solo se convierten los caracteres en función del alfabeto inglés. Si necesitamos capitalizar cadenas con caracteres especiales o caracteres de otros idiomas, deberemos utilizar otras funciones como `std::locale::toupper()`.
 
 ## Ver también
 
-- [toupper() en cplusplus.com](http://www.cplusplus.com/reference/cctype/toupper/)
-- [tolower() en cplusplus.com](http://www.cplusplus.com/reference/cctype/tolower/)
+- Referencia de la librería `cctype` en C++: https://en.cppreference.com/w/cpp/string/byte
+- Tutorial de la librería `algorithm` en C++: https://www.geeksforgeeks.org/the-transform-function-in-c-stl/
+- Referencia de la función `toupper()` en C++: https://www.cplusplus.com/reference/cctype/toupper/
+- Documentación sobre la función `transform()` en C++: https://en.cppreference.com/w/cpp/algorithm/transform

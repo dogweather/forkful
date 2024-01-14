@@ -1,59 +1,55 @@
 ---
-title:                "Arduino: Konwertowanie daty na ciąg znaków"
+title:                "Arduino: Konwersja daty na ciąg znaków."
+simple_title:         "Konwersja daty na ciąg znaków."
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego 
+Dlaczego konwersja daty na ciąg znaków jest ważna w programowaniu Arduino?
 
-Jeśli pracujesz z Arduino, chcesz być w stanie wyświetlać daty w swoich projektach. Konwertowanie daty na ciąg znaków jest niezbędne do wyświetlenia jej na ekranie lub przesłania przez komunikację szeregową.
+Konwersja daty na ciąg znaków jest ważnym elementem w programowaniu Arduino, ponieważ pozwala nam wyświetlać aktualną datę lub czas na ekranie LCD, wykorzystując tylko jeden wiersz kodu. Jest to przydatne w projektach związanych z pomiarami czasu lub wyświetlaniem informacji o dacie.
 
 ## Jak to zrobić?
 
-Aby przekonwertować datę na ciąg znaków, musisz użyć funkcji `sprintf()`. Poniżej przedstawiono przykładowy kod i wynik wyjściowy:
+Aby skonwertować datę na ciąg znaków w programie Arduino, należy użyć funkcji `sprintf()` z biblioteki `time.h`. Przykładowy kod wyglądałby następująco:
 
 ```Arduino
-#include <Time.h>
+#include <time.h> // dołączamy bibliotekę time.h
 
 void setup() {
-  // Inicjalizacja połączenia szeregowego
-  Serial.begin(9600);
-
-  // Ustawienie czasu
-  setTime(11, 30, 0, 12, 7, 2021); // godzina, minuty, sekundy, dzień, miesiąc, rok
-
-  // Konwersja daty na ciąg znaków
-  char data[11];
-  sprintf(data, "%02d/%02d/%04d", day(), month(), year());
-
-  // Wyświetlenie wyniku w monitorze szeregowym
-  Serial.println(data);
+  // ustawiamy czas realny RTC
+  // tutaj można również ustalić aktualną datę lub czas przy pomocy innych funkcji biblioteki time.h
 }
 
 void loop() {
-  // Pętla główna
+  // tworzymy tablicę znaków, w której będzie przechowywany ciąg znaków daty
+  char date_string[11]; // 11 znaków, ponieważ datę będziemy wyświetlać w formacie DD.MM.RRRR
+
+  // pobieramy aktualną datę z RTC i konwertujemy ją na ciąg znaków
+  sprintf(date_string, "%02d.%02d.%04d", day(), month(), year()); // dokładna składnia formatu można znaleźć w dokumentacji funkcji sprintf()
+
+  // wyświetlamy datę na ekranie, na przykład na LCD
+  lcd.print(date_string);
+
+  // możemy również przypisać ciąg znaków daty do zmiennej i wykorzystać go w innej części kodu
+  String currentDate = date_string;
 }
 ```
 
-Wynik:
+Powyższy kod wyświetli aktualną datę, pobraną z RTC, w formacie DD.MM.RRRR. Możemy oczywiście dostosować ten format do swoich potrzeb, wyświetlając również godzinę lub wyświetlając datę w innym formacie.
 
-```
-12/07/2021
-```
+## Głębszy zanurzenie
 
-W powyższym przykładzie użyliśmy funkcji `sprintf()` do sformatowania daty z obiektu `Time` na ciąg znaków i przypisaliśmy go do `char` o nazwie `data`. Następnie wyświetliliśmy ten ciąg w monitorze szeregowym za pomocą funkcji `Serial.println()`.
+Funkcja `sprintf()` jest bardzo wszechstronna i można jej używać do konwertowania różnych zmiennych na ciągi znaków o dowolnym formacie. Możemy używać jej również do konwertowania innych wartości związanych z datą, na przykład miesiąca lub dnia tygodnia.
 
-## Deep Dive
+Do konwersji formatu daty możemy również wykorzystać funkcje biblioteki `TimeLib.h`, takie jak `hour()` czy `minute()`. W ten sposób możemy stworzyć bardziej zaawansowane wyświetlanie aktualnego czasu na ekranie LCD lub w innych częściach kodu.
 
-Funkcja `sprintf()` jest częścią biblioteki `stdio.h` i używana jest do formatowania ciągów znaków. W przykładzie powyżej użyta została instrukcja formatowania `%02d/%02d/%04d`, która oznacza, że pierwsza liczba będzie wyświetlana na dwa miejsca, a jeśli będzie krótsza, to będzie uzupełniona zerami (np. 1 stanie się 01). Ten sam format jest stosowany dla kolejnych liczb (miesiąc i rok) i dodatkowo dla roku używamy `%04d`, aby zawsze mieć cztery cyfry.
+## Zobacz również
 
-Poza tym formatem, istnieje wiele innych instrukcji, które mogą być użyte w funkcji `sprintf()`. Możesz przeczytać więcej na ten temat w [dokumentacji](https://www.cplusplus.com/reference/cstdio/printf/) języka C++.
-
-## Zobacz także
-
-- [Dokumentacja biblioteki Time](https://www.arduino.cc/en/reference/time)
-- [Przewodnik po funkcji sprintf()](https://www.cplusplus.com/reference/cstdio/printf/) (język C++)
-- [Rozszerzenie funkcji sprintf() dla Arduino](https://github.com/krzychb/Extsprintf)
+- [Dokumentacja funkcji `sprintf()`](https://www.cplusplus.com/reference/cstdio/sprintf/)
+- [Dokumentacja biblioteki `Time.h`](https://www.arduino.cc/en/Reference/Time)

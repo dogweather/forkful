@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Écrire vers l'erreur standard"
+simple_title:         "Écrire vers l'erreur standard"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/writing-to-standard-error.md"
 ---
 
@@ -9,25 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'écriture sur la sortie standard d'erreur, également appelée stderr, peut être utile lors du débogage de programmes. Elle permet aux développeurs de suivre les erreurs et les problèmes de leur code en temps réel. Cela peut également aider à identifier les parties du code qui nécessitent une attention particulière.
+Ecrire sur la sortie d'erreur standard (standard error) peut sembler effrayant au premier abord, mais c'est en fait un concept très utile à comprendre pour tout programmeur Clojure. Cet article explique pourquoi et comment utiliser la sortie d'erreur standard dans votre code Clojure.
 
-## Comment faire
+## Comment Faire
 
-Dans Clojure, l'écriture sur stderr peut être réalisée avec la fonction `println` combinée avec la fonction `System/err`. Par exemple, pour imprimer un message sur stderr, nous pouvons utiliser le code suivant :
+Utiliser la sortie d'erreur standard n'est pas aussi complexe qu'il n'y paraît. Tout d'abord, il faut comprendre la différence entre la sortie standard (standard output) et la sortie d'erreur standard. La sortie standard est utilisée pour afficher les résultats et les informations de votre programme, tandis que la sortie d'erreur standard est utilisée pour afficher les erreurs et les avertissements.
+
+Pour écrire sur la sortie d'erreur standard, vous pouvez utiliser la fonction `System/err.println`. Voici un exemple de code avec sa sortie correspondante :
 
 ```Clojure
-(println "Il y a une erreur dans le code." (System/err))
+(System/err.println "Il y a une erreur!")
 ```
 
-Ce code imprimera le message "Il y a une erreur dans le code." suivi de la sortie standard d'erreur. En utilisant cette méthode, nous pouvons facilement suivre les erreurs et les problèmes dans notre code.
+```
+Il y a une erreur!
+```
 
-## Plongée en profondeur
+Comme vous pouvez le voir, la phrase "Il y a une erreur!" est affichée sur la sortie d'erreur standard. Vous pouvez également utiliser la macro `println` pour écrire sur la sortie d'erreur standard :
 
-Il est important de noter que l'écriture sur la sortie standard d'erreur ne doit être utilisée que pour le débogage et le suivi des erreurs. Elle ne doit pas être utilisée comme moyen de communication avec l'utilisateur final. Pour cela, nous devons utiliser la sortie standard, également appelée stdout.
+```Clojure
+(println System/err "Il y a une erreur!")
+```
 
-De plus, il est possible d'utiliser la fonction `System/err` pour gérer les exceptions dans notre code. Par exemple, nous pouvons utiliser `System/err` pour imprimer une trace d'erreur personnalisée si une exception est levée dans notre code.
+## Plongée Profonde
 
-## Voir aussi
+Bien que l'utilisation de la sortie d'erreur standard puisse sembler assez simple, il y a des nuances à prendre en compte. Tout d'abord, vous pouvez rediriger la sortie d'erreur standard vers un fichier en utilisant la commande `clojure.core/with-out-str`. Cela peut être utile lorsque vous voulez enregistrer les erreurs et les avertissements dans un journal.
 
-- [Documentation officielle de Clojure sur la sortie standard d'erreur](https://clojuredocs.org/clojure.core/printerr)
-- [Article sur la gestion des erreurs en Clojure](https://purelyfunctional.tv/article/handling-errors-in-clojure/)
+De plus, vous pouvez personnaliser le format dans lequel les erreurs et les avertissements sont affichés en utilisant la macro `with-err-str`. Cela peut être utile lorsque vous voulez capturer les erreurs et les traiter d'une manière spécifique.
+
+## Voir Aussi
+
+- [Documentation officielle de Clojure sur la sortie d'erreur standard](https://clojure.org/reference/repl_and_main#_redirects_and_output_capture)
+- [Article de blog sur l'utilisation de la sortie d'erreur standard en Clojure](https://clojuredocs.org/clojure.core/with-out-str)
+- [Vidéo explicative sur la sortie d'erreur standard en Clojure](https://www.youtube.com/watch?v=jmQjUepBUmg)

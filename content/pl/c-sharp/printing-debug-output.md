@@ -1,73 +1,39 @@
 ---
-title:                "C#: Wydrukowanie wyników debugowania"
+title:                "C#: Wyświetlanie danych debugowania"
+simple_title:         "Wyświetlanie danych debugowania"
 programming_language: "C#"
-category:             "Testing and Debugging"
+category:             "C#"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto drukować informacje debugujące w programowaniu?
 
-Często podczas pisania programów w C#, napotykamy się na różne problemy i błędy. Wtedy niezwykle przydatne jest wypisywanie informacji debugowania. To pozwala nam na śledzenie przebiegu programu i zlokalizowanie potencjalnych problemów. W tym artykule opiszemy dlaczego warto korzystać z drukowania danych debugowania i w jaki sposób to zrobić.
+Wiele osób może zastanawiać się, po co w ogóle drukować informacje debugujące w swoim kodzie. Jednakże, jest to bardzo przydatne narzędzie, które może ułatwić nam znalezienie i naprawienie błędów w programie. Dzięki temu, możemy oszczędzić sobie dużo czasu i stresu związanego z debugowaniem naszych projektów.
 
-## Jak
+## Jak to zrobić?
 
-Aby wypisywać dane debugowania w C#, należy skorzystać z metody `Console.WriteLine()`. Przyjmujemy do niej argumenty, które chcemy wyświetlić, rozdzielając je przecinkami. 
-
-```C#
-int age = 25;
-string name = "Anna";
-
-// Wyświetlenie danych debugowania
-Console.WriteLine("Wiek: " + age + ", Imię: " + name);
-
-/* Output:
-Wiek: 25, Imię: Anna
-*/
-```
-
-Możemy także korzystać z zapisu interpolowanego, dodając znak dolara przed cudzysłowem i umieszczając w nim zmienną w klamrach. Ta metoda jest szczególnie przydatna przy wyświetlaniu większej ilości zmiennych.
+Aby wypisać informacje debugujące w C#, musimy skorzystać z metody `Console.WriteLine()` lub `Debug.WriteLine()`. Przykładowy kod wyglądałby następująco:
 
 ```C#
-int age = 25;
-string name = "Anna";
-
-// Wyświetlenie danych debugowania
-Console.WriteLine($"Wiek: {age}, Imię: {name}");
-
-/* Output:
-Wiek: 25, Imię: Anna
-*/
+Console.WriteLine("Debug output"); //wypisuje informację na konsoli
+Debug.WriteLine("Debug output"); //wypisuje informację w oknie Output w środowisku programistycznym
 ```
 
-Dodatkowo, jeśli chcemy wypisać wartość zmiennej w systemowym formacie, możemy użyć metody `ToString()` z opcjonalną specyfikacją formatowania.
+Po użyciu tych metod, otrzymamy informację debugującą w formie tekstu, która pomoże nam zrozumieć działanie naszego kodu.
 
-```C#
-decimal price = 12.34M;
+## Głębsza analiza drukowania informacji debugujących
 
-// Wyświetlenie danych debugowania z użyciem specyfikacji formatowania
-Console.WriteLine("Cena: " + price.ToString("C")); // formatowanie jako waluta
-Console.WriteLine("Cena: " + price.ToString("N2")); // 2 miejsca po przecinku
+Ponieważ metody `Console.WriteLine()` i `Debug.WriteLine()` są tak popularne i powszechnie stosowane, warto poznać ich dodatkowe funkcjonalności. Na przykład, możemy użyć specjalnych znaków specjalnych, takich jak `\n` aby dodawać odstępy czy też `\t` aby wypisać tekst wraz z wcięciem. Możemy również użyć warunków `if` do kontroli wyświetlania informacji debugujących tylko w określonych sytuacjach.
 
-/* Output:
-Cena: $12.34
-Cena: 12.34
-*/
-```
+## Zobacz również
 
-## Deep Dive
+[Oficjalna dokumentacja C# o debugowaniu](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/debugging/)
 
-Drukowanie danych debugowania jest nie tylko przydatne w odnajdywaniu błędów, ale także w monitorowaniu programu podczas jego działania. Możemy wyświetlać wartości zmiennych w różnych punktach programu, aby upewnić się, że wszystko przebiega zgodnie z oczekiwaniami.
+[Poradnik od Microsoft na temat wykorzystania informacji debugujących](https://docs.microsoft.com/pl-pl/dotnet/framework/debug-trace-profile/writing-to-the-output-window)
 
-Dodatkowo, w przypadku użycia kodu wielowątkowego, drukowanie danych debugowania może stanowić nieocenione narzędzie do śledzenia przebiegu różnych wątków i wykrywania ewentualnych problemów z synchronizacją.
+[Przykładowe użycie informacji debugujących w C#](https://www.tutorialsteacher.com/csharp/csharp-debugging)
 
-Podczas pisania kodu, warto także wypisywać informacje o fakcie wykonania konkretnych funkcji czy metod. Dzięki temu możemy śledzić, które części programu zostały już wykonane, a które jeszcze nie.
-
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o drukowaniu danych debugowania w C#, polecamy przeczytać poniższe artykuły:
-
-- [Debugowanie aplikacji .NET Core z Visual Studio Code](https://docs.microsoft.com/pl-pl/dotnet/core/tutorials/debugging-with-visual-studio-code)
-- [Drukowanie danych debugowania w programie Visual Studio](https://docs.microsoft.com/pl-pl/visualstudio/debugger/how-to-use-the-debugger-window?view=vs-2019)
-- [Używanie polecenia Debug.WriteLine w aplikacjach .NET](https://docs.microsoft.com/pl-pl/dotnet/api/system.diagnostics.debug.writeline?view=net-5.0)
+[Artykuł o korzyściach z wykorzystania informacji debugujących w programowaniu](https://blog.devteam.space/the-importance-of-debugging-in-software-development-1ccd3c8f7526)

@@ -1,43 +1,44 @@
 ---
-title:                "Swift: Finne lengden av en streng"
+title:                "Swift: Å finne lengden på en streng"
+simple_title:         "Å finne lengden på en streng"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å finne lengden på en streng er en viktig del av Swift programmering. Dette kan være nyttig når du jobber med tekstbehandling, formatering og manipulering av data. Ved å lære hvordan man finner lengden på en streng, kan du forbedre dine ferdigheter som Swift-utvikler og gjøre koden din mer effektiv.
+Å finne lengden på en streng er en vanlig oppgave i programmering, og kan være nyttig for å håndtere tekstbaserte data og utføre forskjellige operasjoner på dem.
 
-## Hvordan
+# Slik gjør du det
 
-Det finnes forskjellige måter å finne lengden på en streng i Swift på. La oss se på noen eksempler nedenfor:
+For å finne lengden på en streng i Swift, kan du bruke den innebygde funksjonen `count`, som returnerer antall tegn i strengen. For eksempel:
 
-```Swift
+```swift
 let tekst = "Hei, verden!"
-print("Lengden på strengen er \(tekst.count)") 
+let lengde = tekst.count
+print(lengde)
 ```
 
-Dette vil skrive ut "Lengden på strengen er 13". Som du kan se, bruker vi `count` metoden for å finne antall tegn i strengen.
+Dette vil produsere følgende utdata i konsollen:
 
-Du kan også bruke `String`-konstruktøren til å finne lengden på en streng ved å konvertere den til et `String`-objekt og deretter bruke metoden `count`:
-
-```Swift
-let streng = "Dette er en streng"
-let lengde = String(streng).count 
-print("Lengden på strengen er \(lengde)") 
+```
+13
 ```
 
-Dette vil også gi deg samme resultat.
+Som du kan se, teller funksjonen også mellomrom og spesialtegn som del av strengens lengde.
 
-## Dypdykk
+# Dypdykk
 
-Når man jobber med internasjonalisering og l10n (lokaliserings) i Swift, er det viktig å være klar over at lengden på en streng kan variere avhengig av språk. Dette skyldes at noen språk bruker flere tegn enn andre for å danne ord og setninger. Derfor er det viktig å bruke metoden `count` i stedet for `characters.count` for å få en nøyaktig lengde på en streng.
+Det er viktig å merke seg at `count`-funksjonen returnerer en `Int`-verdi, som kun kan håndtere strenger med en størrelse på opptil 2,147,483,647 tegn. Dette er imidlertid sjelden et problem i praksis, da en streng med en slik lengde ville være veldig vanskelig å håndtere.
 
-## Se også
+Det finnes også andre måter å finne lengden på en streng, som for eksempel å bruke en løkke og telle antall tegn manuelt. Men dette er en mer tungvint og mindre effektiv metode.
 
-- [Offisiell Swift dokumentasjon om lengden på strenger](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID291)
-- [Enkel introduksjon til Swift-programmering på norsk](https://www.appcoda.com/swift-programmering/)
-- [Lær Swift med interaktive øvelser](https://www.hackingwithswift.com/100)
+# Se også
+
+- [String og Characters i Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Introduksjon til Swift-programmering](https://developer.apple.com/swift/blog/?id=2)
+- [Offisiell Swift-dokumentasjon](https://docs.swift.org/)

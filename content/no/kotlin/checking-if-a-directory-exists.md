@@ -1,51 +1,72 @@
 ---
 title:                "Kotlin: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvorfor bør man sjekke om en mappe eksisterer i Kotlin-kode? Vel, det kan være flere årsaker til dette. For det første kan det hjelpe deg med å kontrollere at du ikke prøver å åpne eller opprette en mappe som allerede finnes, som kan føre til feil i koden din. Det kan også gi deg muligheten til å ta ulike handlinger avhengig av om mappen eksisterer eller ikke, for eksempel å opprette den hvis den ikke finnes, eller å gi brukeren en feilmelding hvis den ikke eksisterer.
+Lurer du på om en mappe eksisterer i ditt Kotlin-program? Det kan være viktig å vite for å sikre at dine filbehandlingsfunksjoner fungerer riktig. I denne bloggposten skal vi se nærmere på hvordan du kan sjekke om en mappe eksisterer i Kotlin-programmering.
 
-## Slik gjør du det
-Det er flere måter å sjekke om en mappe eksisterer i Kotlin-kode. Her er to forskjellige metoder som du kan bruke:
-
-```Kotlin
-// Metode 1: Bruke innebygde funksjoner
-val mappenavn = "minMappe"
-val finnesMappen = File(mappenavn).exists() // returnerer en Boolean verdi
-
-if(finnesMappen) {
-    println("Mappen $mappenavn finnes allerede.")
-} else {
-    println("Mappen $mappenavn eksisterer ikke.")
-}
-
-```
+## Hvordan
+Først må vi importere nødvendige pakker:
 
 ```Kotlin
-// Metode 2: Bruke Paths-klassen
-val mappenavn = "minMappe"
-val mappeSti = Paths.get(mappenavn)
-val finnesMappen = Files.exists(mappeSti) // returnerer en Boolean verdi
-
-if(finnesMappen) {
-    println("Mappen $mappenavn finnes allerede.")
-} else {
-    println("Mappen $mappenavn eksisterer ikke.")
-}
-
+import java.io.File
+import java.io.IOException
 ```
 
-Som du kan se i eksemplene over, bruker både metode 1 og 2 innebygde funksjoner for å kontrollere om mappen eksisterer. Metode 2 legger også til et ekstra trinn ved å bruke Paths-klassen for å få tak i mappenavnet i form av en sti. Begge metodene vil returnere en Boolean verdi som enten er true eller false, avhengig av om mappen eksisterer eller ikke.
+Deretter kan vi bruke metoden `exists()` fra `File`-klassen til å sjekke om en mappe er tilstede. Her er et eksempel:
 
-## Dykk dypere
-Hvis du ønsker å dykke dypere inn i konseptet med å sjekke om en mappe eksisterer, kan du også utforske andre metoder og funksjoner som kan bidra til å gjøre koden din mer robust og nøyaktig. Noen eksempler på dette kan være å sjekke om mappen er skrivbar, om den inneholder visse filer eller undermapper, og mer.
+```Kotlin
+fun sjekkMappe(mappenavn: String) {
+    val mappe = File(mappenavn)
+    if(mappe.exists()){
+        println("Mappen $mappenavn eksisterer.")
+    }else{
+        println("Mappen $mappenavn eksisterer ikke.")
+    }
+}
+
+sjekkMappe("dokumenter")
+```
+
+Dette vil resultere i følgende utskrift dersom mappen `dokumenter` eksisterer:
+
+```
+Mappen dokumenter eksisterer.
+```
+
+Eller dersom mappen ikke eksisterer:
+
+```
+Mappen dokumenter eksisterer ikke.
+```
+
+## Deep Dive
+Det finnes flere ulike metoder for å sjekke om en mappe eksisterer i Kotlin. I tillegg til `exists()` kan vi også bruke `isDirectory()` som returnerer en boolsk verdi basert på om mappen er en gyldig mappe eller ikke.
+
+```Kotlin
+if(mappe.isDirectory()){
+    // gjør noe
+}
+```
+
+Det er viktig å håndtere mulige feil som kan oppstå når man sjekker for eksisterende mapper. For eksempel kan det være at det ikke er tilgang til en mappe eller at den ikke finnes i det hele tatt. Derfor bør man alltid wrappe sjekken i en `try-catch`-blokk.
+
+```Kotlin
+try {
+    // sjekk for eksisterende mapper her
+} catch(e: IOException){
+    println("En feil oppstod under sjekken: ${e.message}")
+}
+```
 
 ## Se også
-- [Kotlin Docs: Checking file and directory existence](https://kotlinlang.org/docs/working-with-files.html#checking-file-and-directory-existence)
-- [Kotlin Docs: Paths](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.nio.-paths/index.html)
-- [Java Docs: java.io.File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Java - How to check if a directory exists](https://www.baeldung.com/java-check-directory-exists)
+- [Kotlin - File Handling](https://www.geeksforgeeks.org/kotlin-file-handling/)
+- [Kotlin - Exception Handling](https://www.tutorialspoint.com/kotlin/kotlin_exception_handling.htm)

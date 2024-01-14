@@ -1,48 +1,48 @@
 ---
-title:                "Gleam: Tworzenie testów"
+title:                "Gleam: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "Gleam"
-category:             "Testing and Debugging"
+category:             "Gleam"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego 
-Wiele osób zapomina, że pisanie testów jest równie ważne jak pisanie samego kodu. Dzięki testom można upewnić się, że nasze funkcje działają poprawnie i nie powodują błędów. Ponadto, testy pomagają w szybszym wykrywaniu i naprawianiu ewentualnych problemów. W tym wpisie pokażemy, jak napisać testy za pomocą języka Gleam.
+## Dlaczego pisanie testów jest ważne?
 
-## Jak To Zrobić
-Najpierw musimy zaimportować "gleam/testing" bibliotekę, która umożliwi nam tworzenie testów. Następnie, możemy rozpocząć pisanie testów za pomocą funkcji "test", która przyjmuje dwa argumenty - nazwę testu i kod do wykonania.
+Pisanie testów jest nieodłączną częścią procesu programowania i pomaga nam zapewnić, że nasz kod działa poprawnie. Poprzez pisanie testów, jesteśmy w stanie wykryć błędy i problemy w naszym kodzie jeszcze przed jego przetestowaniem przez użytkowników. Jest to nie tylko efektywny sposób na poprawianie błędów, ale także pomaga nam utrzymać nasz kod w dobrej jakości.
 
-```Gleam
-import gleam/testing
+## Jak pisać testy w Gleam?
 
-test("Check if string is uppercase", fn () {
-  assert_eq("GLEAM", String.to_upper("gleam"))
-})
-```
-
-W powyższym przykładzie, tworzymy test, który sprawdza czy dana funkcja rzeczywiście zmienia tekst na duże litery. Jeśli test zwróci błąd, to znaczy, że nasza funkcja nie działa poprawnie.
-
-Jeśli chcemy przetestować funkcję z niektórymi warunkami, możemy użyć funkcji "test_data", która przyjmuje trzy argumenty - nazwę testu, dane wejściowe oraz kod do wykonania.
+Dzięki językowi programowania Gleam i jego zestawowi wbudowanych funkcji testerskich, pisanie testów jest proste i przyjemne. Poniżej przedstawimy kilka przykładów testów napisanych w Gleam oraz oczekiwane wyjście dla każdego z nich.
 
 ```Gleam
-import gleam/testing
+test "Dodawanie dwóch liczb powinno zwrócić prawidłowy wynik" {
+    let wynik = 2 + 3
+    expect(wynik) |> to_equal(5)
+}
 
-test_data("Check if string contains given character", [
-  ('hello', 'e'),
-  ('world', 'r')
-], fn (input, expected) {
-  assert(input != expected, String.index_of(input, expected))
-})
+test "Dzielenie przez zero powinno zwrócić błąd" {
+    let wynik = 4 / 0
+    expect(wynik) |> to_equal(Error)
+}
 ```
 
-W tym przykładzie, testujemy funkcję, która sprawdza czy dany znak znajduje się w tekście. Dzięki temu, możemy przetestować kilka wariantów i upewnić się, że nasza funkcja działa poprawnie.
+W powyższych przykładach mamy testuje dodawanie dwóch liczb oraz dzielenie przez zero. Dzięki użyciu funkcji `expect` i operatora `|>`, możemy wyrazić nasze oczekiwania co do wyników naszych obliczeń. Jeśli test jest zaliczony, otrzymamy informację o tym, że test przebiegł pomyślnie. Jeśli jednak test jest niezaliczony, otrzymamy informację o błędzie oraz szczegóły, które pomogą nam znaleźć i naprawić błąd.
 
-## Deep Dive
-Pisanie testów jest ważnym elementem tworzenia oprogramowania. Dzięki testom, możemy sprawdzić poprawność działania naszych funkcji i szybciej wykrywać ewentualne problemy. W języku Gleam, dostępne są różne funkcje do tworzenia testów, co pozwala na precyzyjne i dokładne testowanie kodu.
+## Wnikliwsze spojrzenie na pisanie testów
 
-## Zobacz również
-- [Dokumentacja gleam/testing](https://gleam.run/articles/testing)
-- [Przykładowe projekty w języku Gleam](https://github.com/search?q=language%3Agleam)
-- [Czym jest język Gleam?](https://gleam.run/)
-- [Podstawy programowania w języku Gleam](https://gleam.run/articles/basics)
+Pisanie testów jest nie tylko kwestią pokrycia kodu testami, ale także wykorzystania odpowiednich technik i strategii. Dzięki temu możemy stworzyć bardziej skuteczne i kompleksowe testy, które zapewnią nam pewność co do działania naszego kodu. Poniżej przedstawiamy kilka przydatnych artykułów na temat pisanie testów w Gleam:
+
+- [Dokumentacja Gleam o pisaniu testów](https://gleam.run/book/tour/tests.html)
+- [Blog Gleam: "Pięć sposobów na udane testowanie w Gleam"](https://gleam.run/blog/testing.html)
+- [Artykuł "Test Driven Development w Gleam"](https://mokscy.name/test-driven-development-with-gleam/)
+
+## Zobacz także
+
+- [Dokumentacja Gleam](https://gleam.run/)
+- [Blog Gleam](https://gleam.run/blog/)
+- [Repozytorium Gleam na GitHubie](https://github.com/gleam-lang/gleam)
+
+Dzięki tym wskazówkom i narzędziom, pisanie testów w Gleam będzie prostsze i skuteczniejsze, co pozwoli nam uniknąć błędów i utrzymać nasz kod w dobrej jakości. Zachęcamy do korzystania z testów w trakcie procesu pisania kodu i dzięki temu budować lepsze i bardziej niezawodne aplikacje.

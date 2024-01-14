@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: 创建临时文件"
+title:                "Clojure: 生成一个临时文件"
+simple_title:         "生成一个临时文件"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/creating-a-temporary-file.md"
 ---
 
@@ -9,42 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-临时文件是一个有用的工具，可以在程序运行时创建和使用。它可以帮助我们存储临时数据，比如说在处理大型文件时，我们可以将数据暂时存储在临时文件中，以免占用过多的内存。临时文件也可以用于测试和调试，方便我们追踪程序运行过程中的变化。
+临时文件是许多编程中常见的概念，它能帮助我们在程序运行的过程中存储临时数据或保存中间结果。它们的创建和使用经常是编程过程中必不可少的一部分，让我们来看看如何在Clojure中创建临时文件吧！
 
-## 如何使用
+## 如何
 
-使用Clojure来创建临时文件非常简单。我们可以使用Clojure内置的`with-open`函数，它能够自动关闭我们创建的临时文件。
+在Clojure中，我们可以使用`with-open`函数来创建一个临时文件。下面是一个简单的示例代码：
 
 ```Clojure
-(with-open [temp-file (java.io.File/createTempFile "prefix" ".txt")]
-  ;; 这里可以对临时文件做一些操作，比如写入数据
-  (clojure.string/write "Hello World!" temp-file))
-
-;; 当`with-open`代码块执行完毕后，临时文件会自动被关闭和删除
+(with-open [^java.io.File file (java.io.File/createTempFile "temp" nil)]
+    (println "临时文件的路径是：" (.getAbsolutePath file)))
 ```
 
-我们也可以使用Java的`File`类来创建临时文件。
+运行上面的代码会得到如下的输出：
 
-```Clojure
-(let [temp-file (java.io.File/createTempFile "prefix" ".txt")]
-  ;; 这里可以对临时文件做一些操作
-  (clojure.string/write "Hello World!" temp-file)
-  ;; 如果不手动删除临时文件，那么它会在程序退出时被自动删除
-  (.deleteOnExit temp-file))
+```
+临时文件的路径是：/tmp/temp325132361647186075.tmp
 ```
 
 ## 深入探讨
 
-在Clojure中，我们可以使用`clojure.java.io/file`函数来创建`java.io.File`对象来表示一个文件。然后使用File类的`createTempFile`方法来创建临时文件。该方法接受两个参数，第一个是临时文件的前缀，第二个是临时文件的后缀。临时文件的名称会根据系统默认的命名规则生成。
+上面的示例代码中，我们使用了`createTempFile`函数来创建一个以"temp"开头的临时文件，并且不指定后缀名，所以系统会自动生成唯一的后缀。在`with-open`中，我们将临时文件赋值给一个变量`file`，然后可以通过该变量来访问临时文件的路径和其他属性。`with-open`函数会确保在执行完后关闭临时文件，这样就不用手动清理临时文件了。
 
-临时文件默认是存在于操作系统的默认临时文件目录中的，可以通过调用`java.io.File/setDefaultTempFile`来修改默认的临时文件目录。
+除了使用`with-open`，我们还可以使用`File`类的`deleteOnExit`函数来在程序退出时自动删除临时文件，避免在程序运行过程中临时文件没有被手动删除的情况。
 
-## 参考资料
+## 参考链接
 
-- [Clojure函数库文档](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file)
-- [Java 8 API 概览：File类](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Clojure编程视频教程](https://www.youtube.com/watch?v=qYmvzxlN438)
+- [Java官方文档：createTempFile函数](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
+
+## 参考文章
+
+欢迎阅读我们其他关于Clojure编程的博客文章：
+
+- [Clojure中原生JSON解析与封装](http://www.example.com)
+- [使用Clojure创建RESTful API](http://www.example.com)
 
 ## 参见
 
-[Java 临时文件和目录](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-)
+- [Java官方文档：createTempFile函数](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-java.io.File-)
+- [Clojure官方文档：with-open函数](https://clojuredocs.org/clojure.core/with-open)

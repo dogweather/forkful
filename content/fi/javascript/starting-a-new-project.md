@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Javascript"
-category:             "Getting Started"
+category:             "Javascript"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/starting-a-new-project.md"
 ---
 
@@ -9,40 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Miksi
 
-On monia syitä, miksi aloittaa uusi projekti ohjelmoinnin parissa. Se voi olla esimerkiksi intohimon kohteen tai uuden haasteen etsimistä. Riippumatta syystä, uuden projektin aloittaminen voi olla jännittävää ja palkitsevaa.
+On monia syitä, miksi joku voisi aloittaa uuden ohjelmointiprojektin. Ehkä haluat kehittää uuden sovelluksen, ratkaista ongelman tai oppia uutta ohjelmointikieltä. Jokainen projekti tarjoaa mahdollisuuden oppia uutta ja kehittää taitojasi, joten se on aina kannattavaa.
 
-# Miten aloittaa
+## Kuinka
 
-Ennen uuden projektin aloittamista on tärkeää suunnitella ja valmistautua hyvin. Tässä on muutama esimerkki askel askeleelta ohjeita, jotka auttavat sinut alkuun uuden projektin kanssa.
-
-1. Valitse ohjelmointikieli: Aloita valitsemalla ohjelmointikieli, joka sopii projektisi tarkoitukseen ja johon hallitset jo perusteet.
-
-2. Kirjoita suunnitelma: Tee suunnitelma projektistasi, joka sisältää tavoitteesi, aikataulun ja resurssit.
-
-3. Asenna kehitysympäristö: Asenna ohjelmointiympäristö, joka sisältää tarvittavat työkalut ja kirjastot projektisi kehittämiseen.
-
-4. Aloita koodaaminen: Kun olet suunnitellut ja asentanut tarvittavat työkalut, voit aloittaa koodaamisen projektisi ensimmäisessä vaiheessa.
-
-Seuraavassa esimerkissä on yksinkertainen koodinpätkä, joka tulostaa tervehdyksen selaimen konsoliin:
+Aloittaessasi uuden ohjelmointiprojektin Javascriptillä, on tärkeää aloittaa perusteista ja ymmärtää kielen perusominaisuudet. Esimerkiksi, Javascriptilla voit määrittää muuttujia ja käyttää niitä ohjelmassa. Koodiesimerkiksi näyttää tältä:
 
 ```Javascript
-console.log("Hei, maailma!");
+// Luodaan muuttujia
+let nimi = "Jenni";
+let ika = 25;
+
+// Tulostetaan muuttujien arvot
+console.log("Hei, nimeni on " + nimi + " ja olen " + ika + "-vuotias.");
 ```
 
-Suoritettaessa tämä koodi tulostaa "Hei, maailma!" konsoliin. Huomaa, että tämä on vain yksinkertainen esimerkki ja voit luoda paljon monimutkaisempia ohjelmia käyttämällä erilaisia ohjelmointikieliä ja työkaluja.
+Tulostaa tämä koodi seuraavan viestin:
 
-# Syvennystä
+> Hei, nimeni on Jenni ja olen 25-vuotias.
 
-Uuden projektin aloittaminen vaatii paljon työtä ja ponnisteluja. On tärkeää pysyä motivoituneena ja uskoa omaan kykyynsä. Tässä muutama lisävinkki auttamaan sinua aloittamaan uuden projektin.
+Muuttujien lisäksi Javascriptilla voit myös käyttää ehtolauseita ja silmukoita ohjelman loogisuuden hallitsemiseksi. Koodiesimerkiksi näyttää tältä:
 
-1. Opiskele jatkuvasti: Ohjelmoinnin alalla on aina jotain uutta opittavaa. Pidä itsesi ajan tasalla uusimmista teknologioista ja työkaluista jatkuvasti oppimalla.
+```Javascript
+// Tarkistetaan onko käyttäjä täysi-ikäinen
+if(ika > 18) {
+  console.log("Sinä olet täysi-ikäinen.");
+} else {
+  console.log("Sinä et ole täysi-ikäinen.");
+}
 
-2. Löydä vertaistukea: Liity ohjelmointiyhteisöön tai löydä itsellesi ohjelmointikumppani, jonka kanssa voit työskennellä ja oppia toisiltasi.
+// Tulostetaan numerot 1-10 käyttäen silmukkaa
+for(let i = 1; i <= 10; i++) {
+  console.log(i);
+}
+```
 
-3. Pidä taukoja: Muista levätä ja ottaa taukoja uuden projektin työskentelyn välissä. Tämä auttaa sinua pysymään energisenä ja vähentämään stressiä.
+Tulostaa tämä koodi seuraavan viestin:
+
+> Sinä olet täysi-ikäinen.
+>
+> 1
+> 2
+> 3
+> 4
+> 5
+> 6
+> 7
+> 8
+> 9
+> 10
+
+## Syvä sukellus
+
+Kun aloitat uuden ohjelmointiprojektin, on tärkeää suunnitella hyvin ja tutkia erilaisia ratkaisuja ennen varsinaisen koodin kirjoittamista. Muista myös kommentoida koodiasi, jotta voit helposti palata siihen myöhemmin ja ymmärtää, mitä olet tehnyt.
+
+Voit myös hyödyntää valmiiksi olemassa olevia kirjastoja ja työkaluja helpottaaksesi ohjelmointityötäsi. Esimerkiksi React ja Angular ovat suosittuja Javascript-kirjastoja, jotka helpottavat verkkosovellusten kehittämistä.
+
+Lisäksi on tärkeää muistaa testata ja korjata mahdolliset virheet ennen kuin julkaiset lopullisen tuotteen. Hyvä työnkulku ja testaus auttavat sinua välttämään ongelmia tulevaisuudessa.
 
 # Katso myös
 
-- [Projektinhallinnan perusteet ohjelmoinnissa](https://www.codecademy.com/learn/paths/full-stack-engineer-career-path/tracks/fscp-setting-up-your-dev-environment/modules/fecp-learn-the-command-line-portfolio/articles/setting-up-your-development-environment)
-- [Kuinka pysyä motivoituneena ohjelmoinnissa](https://medium.com/swlh/how-to-stay-motivated-while-learning-to-code-766a930d19ea)
-- [Mistä aloittaa uuden projektin suunnittelu](https://www.lifewire.com/ways-to-prepare-for-a-programming-project-2373475?t=121105)
+- Javascriptin virallinen dokumentaatio (https://developer.mozilla.org/fi/docs/Web/JavaScript)
+- W3Schools Javascript-opetusohjelma (https://www.w3schools.com/js/default.asp)
+- React (https://reactjs.org/)
+- Angular (https://angular.io/)

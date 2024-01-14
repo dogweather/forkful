@@ -1,39 +1,42 @@
 ---
 title:                "Elm: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Elm"
-category:             "Getting Started"
+category:             "Elm"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-Hast du schon mal darüber nachgedacht, eine neue Programmiersprache auszuprobieren? Elm könnte die Antwort sein! Mit ihren funktionellen Eigenschaften und der Fokussierung auf fehlerfreie Code-Erstellung bietet sie eine spannende Alternative zu den klassischen Programmiersprachen. In diesem Blogpost werden wir uns näher mit dem Einstieg in Elm beschäftigen und dir einen Einblick in seine Funktionalität geben.
+## Warum
 
-# So geht's
-Um eine neue Elm-Projekt zu starten, brauchst du zunächst den Elm-Compiler. Diesen kannst du dir auf der offiziellen Webseite herunterladen. Nach der Installation kannst du ein neues Projektverzeichnis erstellen und darin eine *Main.elm* Datei anlegen. Nun kannst du mit dem Programmieren beginnen!
+Warum sollte man sich auf ein neues Elm Projekt einlassen? Nun, Elm ist eine funktionale, statisch typisierte Sprache, die es ermöglicht, robuste und fehlerfreie Webanwendungen zu entwickeln. Mit seiner hilfreichen Compiler-Unterstützung und seiner klaren Syntax ist Elm eine großartige Wahl für Entwickler, die sauberen und skalierbaren Code schätzen.
 
-Hier ist ein einfaches Beispiel für eine Funktion, die die Summe zweier Zahlen berechnet und ausgibt:
+## Wie es geht
 
-```elm
-summe z1 z2 = z1 + z2
+Um ein neues Elm Projekt zu starten, müssen Sie zunächst die Elm-Toolchain auf Ihrem Computer installieren. Sie können dies über den Befehl ```npm install -g elm``` in der Kommandozeile tun. Sobald die Installation abgeschlossen ist, können Sie ein neues Verzeichnis für Ihr Projekt erstellen und in der Kommandozeile ```elm init``` eingeben. Daraufhin wird Elm eine grundlegende Projektstruktur erstellen, die Sie für Ihre Anwendung nutzen können.
 
+Lassen Sie uns nun einen einfachen "Hello World" Beispielcode schreiben. Öffnen Sie dazu Ihre Lieblings-IDE und erstellen Sie eine neue Datei mit dem Namen "Main.elm".
+
+```
+module Main exposing (..)
+
+import Html exposing (text)
+
+main : Html msg
 main =
-    let
-        ersteZahl = 5
-        zweiteZahl = 10
-    in
-    Debug.log "Die Summe ist: " (summe ersteZahl zweiteZahl)
+    text "Hello, World!"
 ```
 
-Wie du sehen kannst, werden die möglichen Ausgaben in Elm mit der Funktion *Debug.log* angezeigt. Diese Funktion ist nur in der Entwicklungsumgebung möglich und wird später automatisch entfernt.
+Wenn Sie jetzt in der Kommandozeile ```elm reactor``` eingeben und auf die generierte URL in Ihrem Browser zugreifen, sollten Sie die Ausgabe "Hello World" sehen.
 
-# Tiefer tauchen
-Wenn du tiefer in die Welt von Elm eintauchen möchtest, kannst du dir die offizielle Dokumentation auf der Webseite ansehen. Dort findest du viele nützliche Informationen zu den Funktionen und Eigenschaften von Elm. Es gibt auch eine aktive Community, in der du Hilfe und Unterstützung von anderen Entwicklern bekommen kannst.
+## Tiefer tauchen
 
-Außerdem empfehlen wir dir, Elm in kleinen Projekten auszuprobieren, um dich mit der Syntax und den Funktionen vertraut zu machen. Eine gute Möglichkeit dafür ist das "Elm Architecture Tutorial", das dir Schritt für Schritt zeigt, wie du eine einfache ToDo-Liste mit Elm erstellen kannst.
+Wenn Sie Ihr Elm-Projekt in eine produktionsreife Anwendung verwandeln möchten, gibt es einige bewährte Methoden, die Sie befolgen können. Zum Beispiel empfehlen erfahrene Elm-Entwickler, die Entwicklung mit einem "Model-View-Update" Ansatz zu beginnen, um komplexe Anwendungen besser zu strukturieren. Außerdem können Sie von der Verwendung von Elm-Paketen profitieren, die Ihnen bereits implementierte Funktionen und UI-Komponenten bieten.
 
-# Siehe auch
-- [Offizielle Elm Webseite](https://elm-lang.org/)
-- [Elm Dokumentation und Community](https://guide.elm-lang.org/)
-- [Elm Architecture Tutorial](https://www.elm-tutorial.org/)
+## Siehe auch
+
+- Offizielle Elm-Website: [https://elm-lang.org/](https://elm-lang.org/)
+- Elm-Paketverzeichnis: [https://package.elm-lang.org/](https://package.elm-lang.org/)
+- Elm-Community-Foren: [https://discourse.elm-lang.org/](https://discourse.elm-lang.org/)

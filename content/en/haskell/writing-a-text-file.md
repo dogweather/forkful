@@ -1,43 +1,58 @@
 ---
 title:                "Haskell recipe: Writing a text file"
+simple_title:         "Writing a text file"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Writing a text file in Haskell may seem like a simple task, but it can actually have many practical uses. From creating simple documentation to storing data in a format that can be easily read and manipulated, understanding how to write a text file in Haskell can greatly expand your programming capabilities.
+Before we dive into the details of how to write a text file in Haskell, let's first understand why one would engage in doing so. Writing a text file allows you to store, organize, and manipulate data in a structured format. This can be useful for a variety of purposes such as data analysis, creating configuration files, or even writing a basic report.
 
 ## How To
-
-To write a text file in Haskell, we will be using the `writeFile` function from the `System.IO` library. First, we need to open a new file or overwrite an existing one using the `openFile` function. Then, we can use the `writeFile` function to actually write the data to the file. Here is an example of how it looks in code:
+To write a text file in Haskell, we first need to import the `System.IO` module. This module provides functions for performing input and output operations. Next, we use the `openFile` function to open a file in write mode, which creates a new file if it doesn't exist or overwrites the existing file. Here is an example code snippet:
 
 ```Haskell
 import System.IO
 
 main = do
-  let fileName = "newfile.txt" -- name of the file we want to create
-  handle <- openFile fileName WriteMode -- open the file in WriteMode
-  writeFile handle "This is a new text file!" -- write the data to the file
-  hClose handle -- close the file handle
+    file <- openFile "output.txt" WriteMode
+    hPutStrLn file "This is a sample line."
+    hPutStrLn file "This is another line."
+    hClose file
 ```
 
-In the above code, we first import the necessary library and then use the `openFile` function to create a file named "newfile.txt" in WriteMode. Then, we use the `writeFile` function to write the data "This is a new text file!" to the file. Finally, we close the file handle using the `hClose` function.
+In this code, we create a new file named "output.txt" and write two lines of text to it using the `hPutStrLn` function. Lastly, we close the file using the `hClose` function. If we run this code, a new file named "output.txt" will be created in the same directory as the Haskell file, and it will contain the following lines:
 
-Running this code will create a new text file named "newfile.txt" with the content "This is a new text file!". You can also use string interpolation to write dynamic data to the file, such as variables or functions.
+```
+This is a sample line.
+This is another line.
+```
+
+Alternatively, we can use the `withFile` function, which takes care of opening and closing the file for us. Here is an example of how it can be used:
+
+```Haskell
+import System.IO
+
+main = do
+    withFile "output.txt" WriteMode $ \file -> do
+        hPutStrLn file "This is a sample line."
+        hPutStrLn file "This is another line."
+```
 
 ## Deep Dive
+Now, let's take a deeper look at the `withFile` function. It takes three arguments: the file path, the file mode, and a function that takes a `Handle` as a parameter. The `Handle` is used to perform operations on the file, such as reading or writing. In the example above, we used the `WriteMode` to specify that we want to write to the file. Other modes include `ReadMode` for reading from a file and `AppendMode` for appending to an existing file. 
 
-Now that we know the basic steps for writing a text file in Haskell, let's dive deeper into the `writeFile` function. This function takes in two parameters - the file handle and the data to be written. It automatically converts the data to a string and writes it to the file, making it convenient and efficient for writing text files.
+The `Handle` also has two important functions: `hGetContents` and `hPutStrLn`. The `hGetContents` function reads the entire file and returns its contents as a `String`. The `hPutStrLn` function takes a `Handle` and a `String` and writes the string to the file, followed by a newline character. 
 
-However, it's important to note that the data must be a string in order for the function to work. If you want to write other data types, you will need to convert them to strings first. Additionally, you can also use the `appendFile` function to add new data to an existing text file without overwriting its contents.
+In addition, the `hClose` function is used to close the file and flush any buffered output. This is important to ensure that all the data has been written to the file before it is closed.
 
 ## See Also
-- [Haskell Wiki on File IO](https://wiki.haskell.org/IO/File_IO)
-- [Official Documentation for System.IO Library](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
-- [A Beginner's Guide to Haskell IO](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/10_IO)
+For more information on writing text files in Haskell, check out these resources:
 
-Writing a text file in Haskell may seem daunting at first, but with the knowledge of these basic concepts and functions, you can easily create and manipulate text files to enhance your programming projects. Happy coding!
+- [Haskell I/O](https://www.haskell.org/tutorial/io.html)
+- [File Handling in Haskell](https://www.tutorialspoint.com/haskell/haskell_file_handling.htm)
+- [Real World Haskell: File IO](http://book.realworldhaskell.org/read/io.html)

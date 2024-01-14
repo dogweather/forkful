@@ -1,7 +1,9 @@
 ---
-title:                "C: Alimerkkijonojen erottaminen"
+title:                "C: Alialaisten erottaminen."
+simple_title:         "Alialaisten erottaminen."
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/extracting-substrings.md"
 ---
 
@@ -9,39 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Substringien erottaminen on olennainen osa monien ohjelmien kehitystä, sillä se tarjoaa mahdollisuuden käsitellä ja manipuloida tekstipohjaisia tietoja. Tämä tekniikka voi olla hyödyllinen esimerkiksi tietojen käsittelyssä, tiedostojen luomisessa tai jopa tekstianimaatioissa.
+On monia erilaisia käyttötarkoituksia, jotka voivat tarvita merkkijonojen pilkkomista tai alimerkkijonon irrottamista tietyistä merkkijonoista. Tämä voi sisältää esimerkiksi tietokantaoperaatioita, tekstinkäsittelyä tai käyttäjän syötteen validointia.
 
-## Miten tehdä
+## Miten
 
-Substringien erottaminen on melko yksinkertaista C-ohjelmointikielessä, ja siihen tarvitaan vain muutama perustoiminto. Esimerkiksi, jos haluamme tulostaa merkkijonon viisi ensimmäistä merkkiä, voimme käyttää funktiota `strncpy()` seuraavasti:
+Merkkijonon alimerkkiä voidaan irrottaa käyttämällä C-kielen `strncpy()` -funktiota. Seuraavassa esimerkissä irrotamme alimerkkijonon "World" merkkijonosta "Hello World" ja tulostamme sen konsoliin.
 
-``` C
-#include <stdio.h>
-#include <string.h>
+```C
+include <stdio.h>
+include <string.h>
 
 int main() {
-   char string[20] = "Tervetuloa";
-   char substring[6];
 
-   strncpy(substring, string, 5);
-   substring[5] = '\0';
+    // Alkuperäinen merkkijono
+    char string[] = "Hello World";
+    // Alustetaan muuttujat uutta merkkijonoa varten
+    char substring[6];
+    int start = 6; // Indeksi, josta aloitetaan alimerkkijonon irrottaminen
+    int length = 5; // Alimerkkijonon pituus
 
-   printf("Substring: %s\n", substring);
+    // Käytetään strncpy() funktiota alimerkkijonon irrottamiseen
+    strncpy(substring, string + start, length); // substring = "World"
+    // Lisätään loppuun C-merkkijonon päättävä nolla
+    substring[length] = '\0';
 
-   return 0;
+    // Tulostetaan alimerkkijono konsoliin
+    printf("%s", substring);
+
+    return 0;
 }
 ```
 
-Tämä koodi tulostaa "Terve" ja osoittaa, kuinka voimme käyttää `strncpy()` -funktiota yksinkertaisen substringin tarkkailuun.
+Tämän koodin antama tulos on "World".
 
-## Syvällisempi tarkastelu
+## Syvällinen tarkastelu
 
-Monet C-kirjastot tarjoavat joukon toimintoja, jotka helpottavat substringien erottamista ja käsittelyä. Esimerkiksi `strstr()`-funktio löytää ensimmäisen esiintymän tiettynä merkkijonona ja `strchr()`-funktio löytää ensimmäisen esiintymän tiettynä merkkinä.
-
-On myös tärkeää muistaa, että C-kielessä merkkijonot voidaan käsitellä merkkijonomuuttujina (char arrays) tai osoittimina (pointers). Tämä tarkoittaa, että voimme käyttää erilaisia käytäntöjä substringien erottamisessa, kuten merkkijonojen käsittelemistä tai osoittimien käyttöä.
+Mikäli alimerkkijonon pituus ei ole tiedossa etukäteen, voimme käyttää C-kielen `strlen()` -funktiota sen määrittämiseen. `strncpy()`-funktion sijaan voimme myös käyttää `memcpy()`-funktiota, joka toimii samalla tavalla. Tärkeää on myös varmistaa, että lopulliseen merkkijonoon lisätään C-merkkijonon päättävä nolla `'\0'`, jotta se pysyy kelvollisena C-merkkijonona.
 
 ## Katso myös
 
-- [C-kielen virallinen dokumentaatio](https://en.cppreference.com/w/c)
-- [Monipuolinen opas C-ohjelmointikieleen](https://www.geeksforgeeks.org/c-programming-language/)
-- [Substringien erottamisen perusteet Javascriptissä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [strncpy() oheinen dokumentaatio C-programmointikielen virallisessa referenssissä](https://devdocs.io/c/string/byte/strncpy)
+- [memcpy() oheinen dokumentaatio C-programmointikielen virallisessa referenssissä](https://devdocs.io/c/string/byte/memcpy)
+- [strlen() oheinen dokumentaatio C-programmointikielen virallisessa referenssissä](https://devdocs.io/c/string/byte/strlen)

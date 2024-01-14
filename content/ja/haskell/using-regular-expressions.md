@@ -1,61 +1,42 @@
 ---
-title:                "Haskell: 正規表現の使用"
+title:                "Haskell: 正規表現を使用する"
+simple_title:         "正規表現を使用する"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ正規表現を使うのか
+## なぜ
 
-正規表現はコンピューターやプログラミングにおいて、パターンマッチングや文字列検索、置換などの作業を行う際に非常に便利です。正規表現を使用することで、手作業で行うよりも素早く正確な結果を得ることができます。
+正規表現は、文字列を検索、置換、パターンマッチングするための強力なツールです。Haskellでは、正規表現を使用することで、より複雑な処理を簡単に行うことができます。これは非常に便利なプログラミングツールであり、多くの場面で活用されています。
 
-## 正規表現の使い方
+## 使い方
 
-正規表現を使うには、まずはじめにGHCのパッケージマネージャーであるCabalをインストールします。次に、Haskellのコード内で正規表現を使うためにはregex-compatパッケージをインストールする必要があります。
-
-```Haskell
-cabal update
-cabal install regex-compat
-```
-
-インストールが完了したら、以下のようにコード内で正規表現を使うことができます。
+正規表現を使うには、まず`Text.Regex.Posix`モジュールをインポートする必要があります。次に、`=~`演算子を使用して文字列の中から特定のパターンを検索することができます。以下は、`Hello`という文字列から`Hell`というパターンを検索するコード例です。
 
 ```Haskell
-import Text.Regex
+import Text.Regex.Posix
 
--- 文字列をマッチングさせるための正規表現パターンを定義
-pattern :: Regex
-pattern = mkRegex "hello[0-9]+"
-
--- マッチする文字列を取得し、リストとして返す関数
-matchString :: String -> [String]
-matchString str = getAllTextMatches (str =~ pattern)
-
-main :: IO ()
 main = do
-  let result = matchString "hello123 world hello456"
-  putStrLn $ show result -- ["hello123", "hello456"]
+    let helloString = "Hello"
+    if helloString =~ "Hell"
+        then putStrLn "パターンが見つかりました！"
+        else putStrLn "パターンは見つかりませんでした。"
 ```
 
-上記の例では、"hello"の後に数字が続く文字列を正規表現パターンとして定義し、そのパターンとマッチする部分をリストとして取得しています。
+上記のコードの出力は、`パターンが見つかりました！`となります。
 
-## 正規表現の詳細
+## 深堀り
 
-正規表現を使う際には、パターンの中で特別な意味を持つ文字や文字クラスがあります。例えば、"?"や"*"などの特殊文字があり、これらはエスケープする必要があります。また、正規表現には"|"を使うことで複数のパターンをマッチングさせることもできます。
+正規表現は、検索パターンを表す文字列の特定の形式を使用します。これにより、より高度な検索が可能になります。例えば、`Hello`という文字列から`Hello`という単語を見つけるのではなく、`Hello`から始まる単語を見つけたい場合は、`Hello`の後に` .*`を追加することで、`Hello`という単語の後ろに何らかの文字が続く場合もすべてを検索することができます。
 
-さらに、マッチング対象となる文字列をグループ分けすることで、後からそのグループを取得することもできます。例えば、"hello([0-9]+)world"のように定義することで、"hello"と"world"の間の数字だけを取得することができます。
+また、正規表現の中に`()`を使用することで、グループ化を行うことができます。これにより、特定の部分のみを抽出することができます。
 
-正規表現の詳細については、以下のリンクを参考にしてください。
+正規表現の書き方は難しく感じるかもしれませんが、実際にコーディングをしていくうちに理解が深まっていきます。練習を重ねることで、より複雑な正規表現もスムーズに書くことができるようになります。
 
-## 関連情報
-
-- [Haskell正規表現チュートリアル](https://qiita.com/7shi/items/145f123961b073be3a6f)
-- [正規表現の基礎知識](https://www.atmarkit.co.jp/ait/articles/2103/10/news015.html)
-- [正規表現プログラミング](https://www.geocities.jp/m_hiroi/func/prog/re.html)
-
-## 参考
-
-- [Cabal](https://www.haskell.org/cabal/)
-- [regex-compatパッケージのドキュメント](https://hackage.haskell.org/package/regex-compat-0.95.2/docs/Text-Regex-Compat.html)
+## See Also
+- [Haskell正規表現チュートリアル](https://qiita.com/7shi/items/145f123a7faf7fbdd3aa)
+- [正規表現の基礎知識 - Qiita](https://qiita.com/jnchito/items/893c887fbf19e17d3ff9)

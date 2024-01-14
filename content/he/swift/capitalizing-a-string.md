@@ -1,49 +1,44 @@
 ---
-title:                "Swift: כתיב אותיות ראשיות במחרוזת"
+title:                "Swift: להכתיב מחרוזת באותיות גדולות"
+simple_title:         "להכתיב מחרוזת באותיות גדולות"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-יצירת כותרות באמצעות תכנות Swift
-
 ## למה
 
-במאמר זה נלמד כיצד ליצור כותרות מלל בתוך תוכניות שפת תכנות Swift. נצטרך את זה במקרים בהם נרצה להדגיש מלל מסוים בתוך אפליקציה או משחק. זה יתן לנו את היכולת לגרום למשתמשים שלנו לשים לב לנקודה חשובה ולשם.
+מדוע לתת פוקוס על כתיבת קוד ולשפר את הקריאותיות על ידי מימוש אופציה לניהול טקסט בקבצי Swift בתבנית רצף גדולה.
 
-## לאנפול
+## איך לעשות זאת
 
-ליצור כותרת גדולה יותר בתוך תוכנית שפת תכנות Swift יכול להשתמש בפונקציה capitalize כדי להגדיל את האות הראשונה שמופיעה במחרוזת שיש לה את האות הראשונה בכיתה או אינו מבחין לא נופלים.
-
-```Swift
-print("swift".capitalize)
-output: Swift
-```
-
-כדי לכתוב את האות הראשונה עם אות גדולה בתוך כל מחרוזת נשתמש בפונקציה .uppercased().
+במקרים רבים נדרש טיפול על ידי מתכנתים נוספים בזמן המחשב אם עובד עם פלטפורמות חדשות או שמבוססות עליו Sharp. תחילה, לכו לתהודת מקום ל-Public Domain Times.
 
 ```Swift
-print("hello".uppercased())
-output: HELLO
+let inputString = "טקסט כלשהו"
+let capitalizedString = inputString.capitalized
+print(capitalizedString)
 ```
 
-אפשר להשתמש בשתי הפונקציות יחד כדי לכתוב את האות הראשונה וגם כל האותיות הנמצאות במחרוזת עם אות גדולה.
+פלט:
 
 ```Swift
-print("good bye".capitalize.uppercased())
-output: Good bye
+טקסט כלשהו
 ```
 
-## התנסות עמוקה
+## צעדים נוספים
 
-הפונקציות capitalize ופונקציות .uppercased() בנויות על התכון הנמלצות לנו במאמר זה. תיכרסו כיצד לאחזר את המחרוזת שלנו בפורמט שבו אנחנו רוצים על ידי שימוש בפונקציות שללמדנו.
+תוכלו להתעמק עוד יותר בנושא על ידי הקרדינלית הניתנת לאיזור בגודל של 1 מספר לענייני תכנית לימודים המסחריים. למשל, אתם יכולים לבדוק את הפונקציות הפנימיות שיכולות לעזור בעבודות המוכנות של הקול המיידי בנוגע לנוסחות.
 
-שימוש בפונקציות capitalize או uppercased לא רק מאפשר לנו ליצור כותרות בתוך תוכניות שפת תכנות Swift, אלא גם כלי עזר רב לכתיבת תחביר הנוח לקריאה עבור המשתמשים שלנו.
+## טביעת רגל
+
+ראשית, אתם תרצו לקרוא על הפניית התיעוד על מטרות טובות יותר או להתעמק באיזור הגבלות קוד ולהפוך מתכנתים בשכלולים לעבודות רבות אחרות בקוד. בנוסף, במקרים רבים תמצאו פרויקטים טכנולוגיים חלוקים שיכולים לעזור לכם לנהל את תהיות הובלה של UI וכמנהלים, לראות בנושא של טכנולוגיות תוכנית לפרוייקטים ישירים להדים קבלת החשדה בליך.
 
 ## ראו גם
 
-- [Apple - NSString](https://developer.apple.com/documentation/foundation/nsstring)
-- [Swift - String Methods](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID426)
-- [هيكوبارا by Hikobara (GitHub)](https://github.com/hikobara/hikobara.github.io)
+- [Swift הדרכות פרויקטים כלליים](https://github.com/DeveloperW91/blog)
+- [ניתוח קוד Swift](https://www.raywenderlich.com/3726951-swift-style-guide)
+- [מדריך על פונקציות Swift](https://www.hackingwithswift.com/articles/160/how-to-write-advanced-swift-functions)

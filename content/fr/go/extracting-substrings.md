@@ -1,58 +1,62 @@
 ---
 title:                "Go: Extraction de sous-chaînes"
+simple_title:         "Extraction de sous-chaînes"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-L'extraction de sous-chaînes est une pratique courante dans la programmation Go. Elle permet de sélectionner et de manipuler des parties spécifiques d'une chaîne de caractères, ce qui peut être très utile pour traiter des données en entrée ou pour afficher des informations ciblées à l'utilisateur.
+Dans la programmation Go, il est parfois nécessaire d'extraire une partie spécifique d'une chaîne de caractères, également appelée "substring". Cela peut être utile pour diverses raisons, telles que la manipulation de données ou la recherche de motifs dans une chaîne. Dans cet article, nous explorerons comment extraire des substrings en utilisant Go.
 
 ## Comment faire
+Pour extraire une substring en utilisant Go, nous pouvons utiliser la fonction `Substring()` de la bibliothèque standard `Strings`. Voici un exemple de code montrant comment extraire une portion de chaîne à partir de la position 3 jusqu'à la fin :
 
-Pour extraire une sous-chaîne en Go, nous utilisons la fonction `Substring` en spécifiant l'index de début et la longueur de la sous-chaîne souhaitée. Voici un exemple de code avec une chaîne de caractères et son résultat :
-
-```
 ```Go
-texte := "Bonjour les amis"
-sous_chaine := texte[7:11]
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    str := "Hello world"
+    sub := strings.SubString(str, 3, len(str))
+    fmt.Println(sub)
+}
+
 ```
+La sortie de ce code sera "lo world". Nous spécifions la chaîne d'origine en premier paramètre, suivi de l'index de départ et de l'index de fin pour la substring que nous voulons extraire. Nous pouvons également utiliser des nombres négatifs pour compter à partir de la fin de la chaîne.
 
-Résultat: "les"
+Voici un autre exemple montrant comment extraire une partie de la chaîne à partir de l'index de début jusqu'à une longueur spécifique :
 
-Nous pouvons également extraire une sous-chaîne à partir d'une position spécifique jusqu'à la fin d'une chaîne en n'omettant pas le deuxième argument :
-
-```
 ```Go
-texte := "Bonjour les amis"
-sous_chaine := texte[7:]
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    str := "Bonjour le monde"
+    sub := strings.SubString(str, 8, 3)
+    fmt.Println(sub)
+}
+
 ```
+La sortie sera "le". Nous spécifions également la chaîne d'origine en premier paramètre, suivi de l'index de départ et de la longueur de la substring que nous voulons extraire.
 
-Résultat: "les amis"
+## Deep Dive
+Il est important de noter que les indices utilisés pour extraire des substrings en Go sont basés sur les octets et non sur les caractères. Cela signifie que si notre chaîne contient des caractères codés sur plusieurs octets, les index peuvent ne pas correspondre à la position visible du caractère dans la chaîne.
 
-Cela peut également fonctionner dans le sens inverse en spécifiant uniquement la longueur de la sous-chaîne souhaitée :
-
-```
-```Go
-texte := "Bonjour les amis"
-sous_chaine := texte[:7]
-```
-
-Résultat: "Bonjour"
-
-## Plongée en profondeur
-
-La fonction `Substring` utilise des indices 0-based, c'est-à-dire que le premier caractère de la chaîne a un index de 0. De plus, il est important de noter que les indices sont inclusifs pour le premier argument, mais exclusifs pour le deuxième argument.
-
-En utilisant des indices négatifs, nous pouvons également extraire une sous-chaîne à partir de la fin d'une chaîne. Par exemple, la sous-chaîne obtenue en utilisant `texte[:3]` sera équivalente à `texte[:-3]`, car il s'agit des 3 premiers caractères de la chaîne.
-
-Il est également possible d'utiliser la fonction `strings.Index` pour trouver l'index d'un caractère spécifique et l'utiliser ensuite comme argument pour `Substring`.
+En utilisant la fonction `Substring()` de la bibliothèque standard, nous pouvons également extraire des sous-chaînes à partir d'une chaîne en utilisant des expressions régulières. Cela peut être utile pour extraire des motifs spécifiques dans une chaîne de caractères.
 
 ## Voir aussi
-
-- [Documentation officielle de la fonction `Substring` en Go](https://golang.org/pkg/strings/#Substring)
-- [Exemples d'utilisation de la fonction `Substring` en Go](https://gobyexample.com/substrings)
-- [Tutoriel sur les chaînes de caractères en Go](https://www.tutorialspoint.com/go/go_string_functions.htm)
+- [Documentation officielle de la fonction `Substring()`](https://golang.org/pkg/strings/#Substring)
+- [Un tutoriel sur l'utilisation des expressions régulières en Go](https://blog.alexellis.io/golang-writing-unit-tests/)
+- [Un guide sur la manipulation de chaînes en Go](https://tutorialedge.net/golang/working-with-strings-in-go/)

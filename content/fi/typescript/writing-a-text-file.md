@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Tiedoston kirjoittaminen"
+title:                "TypeScript: Tiedostoon kirjoittaminen"
+simple_title:         "Tiedostoon kirjoittaminen"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/writing-a-text-file.md"
 ---
 
@@ -9,35 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittamista käytetään usein tiedon tallentamiseen pysyvästi ja helppoon jakamiseen muiden kanssa.
+Tekstitiedostojen kirjoittaminen saattaa vaikuttaa yksinkertaiselta tehtävältä, mutta se on tärkeä osa ohjelmointia. Tekstitiedostoilla voidaan tallentaa tietoa, jota voidaan käyttää myöhemmin tai jakaa muiden ohjelmien kanssa.
 
 ## Miten
 
-Yksinkertaisin tapa kirjoittaa tekstitiedosto TypeScriptilla on käyttää `fs.writeFile()`-funktiota. Se ottaa ensimmäisenä parametrinaan halutun tiedoston nimen, toisena parametrinaan tekstisisältö ja kolmantena parametrina virheenkäsittelyfunktion.
+Käyttämällä TypeScriptia voi helposti kirjoittaa tekstitiedostoja. Ensimmäiseksi on luotava muuttuja, joka sisältää tiedoston nimen ja polun. Tämän jälkeen käytetään writeFile-funktiota, joka ottaa parametreinaan tiedoston nimen, sisällön ja mahdolliset asetukset. Katso esimerkkikoodi alla:
 
 ```TypeScript
-import * as fs from 'fs';
+const tiedostoNimi = "esimerkki.txt";
+const sisalto = "Tämä on esimerkki tekstitiedostosta.";
 
-fs.writeFile('tekstitiedosto.txt', 'Tämä on tekstisisältöä.', (err) => {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('Tekstitiedosto on kirjoitettu onnistuneesti.');
-  }
+writeFile(tiedostoNimi, sisalto, (err) => {
+    if (err) {
+        console.log("Virhe tiedoston kirjoittamisessa: " + err);
+    } else {
+        console.log("Tiedosto kirjoitettu onnistuneesti!");
+    }
 });
 ```
 
-Tulostus koodin suorituksen jälkeen:
-
-`Tekstitiedosto on kirjoitettu onnistuneesti.`
+Tämän jälkeen ohjelma luo tiedoston nimeltä "esimerkki.txt" ja kirjoittaa siihen sisällöksi "Tämä on esimerkki tekstitiedostosta.". Voit tarkistaa tiedoston sisällön avaamalla sen esimerkiksi tekstieditorilla.
 
 ## Syventävä sukellus
 
-Voit myös käyttää `fs.writeFileSync()`-funktiota, joka toimii samalla tavalla kuin `writeFile()`-funktio, mutta se ei ota vastaan virheenkäsittelyfunktiota. Tämän sijaan se heittää virheen suoraan, jos sellainen tapahtuu.
-
-Voit myös lisätä tekstisisällön kirjoittamisen lisäksi muita toimintoja, kuten esimerkiksi tiedoston lukemisen ja sisällön lisäämisen olemassa olevaan tiedostoon. Kannattaa tutustua Node.js:n `fs`-moduulin dokumentaatioon löytääksesi lisää mahdollisia toimintoja.
+Tiedoston kirjoittaminen sisältää muutakin kuin pelkän sisällön luomisen. writeFile-funktion parametreilla voi määrittää myös tiedostolle enkoodauksen tai käyttää writeFileSynch-funktiota, joka kirjoittaa tiedoston synkronisesti eikä tarvitse callback-funktiota. Jokaisella kielellä on omat ominaisuutensa tiedon tallentamisessa ja jakamisessa, joten on hyvä tutustua TypeScriptin dokumentaatioon lisätietojen saamiseksi.
 
 ## Katso myös
 
-- Node.js vakiomoduuli `fs`: https://nodejs.org/api/fs.html
-- `fs-extra`-moduuli: https://www.npmjs.com/package/fs-extra
+- [TypeScriptin dokumentaatio](https://www.typescriptlang.org/docs/)
+- [FS-moduuli Node.js:ssa](https://nodejs.org/api/fs.html)

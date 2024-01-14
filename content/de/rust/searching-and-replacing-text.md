@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Suchen und Ersetzen von Text"
+title:                "Rust: Textsuche und Ersetzung"
+simple_title:         "Textsuche und Ersetzung"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/searching-and-replacing-text.md"
 ---
 
@@ -9,42 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Ersetzen von Text in Code kann zeitaufwändig und mühsam sein, besonders wenn es in großen Dateien oder Projekten durchgeführt werden muss. Mit Rust gibt es jedoch Möglichkeiten, diese Aufgabe effizient zu bewältigen. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie man Text in Rust sucht und ersetzt.
+Der Textersetzung von Dateien ist eine häufige Aufgabe für Programmierer. Es kann nützlich sein, um Fehler in Code zu beheben, oder um große Textblöcke auf einmal zu ändern. Mit Rust gibt es eine effektive Möglichkeit, Text effizient zu suchen und zu ersetzen.
 
-## Wie es geht
+## Wie geht man vor
 
-Die Programmiersprache Rust bietet eine Vielzahl von Tools und Funktionen, die uns dabei helfen können, Text schnell und genau zu suchen und zu ersetzen. Um einen Text innerhalb einer Datei oder eines Strings zu finden, können wir die Funktion `find()` verwenden:
+Um Text in Rust zu suchen und zu ersetzen, gibt es verschiedene Methoden. Eine Möglichkeit ist die Verwendung der Standardbibliothek "std::fs", um eine Datei zu öffnen und den Inhalt zu lesen. Dann kann man die Methode "replace" nutzen, um einen bestimmten Text durch einen anderen zu ersetzen.
 
-```
-Rust
-let s = "Hallo Welt";
-let found = s.find("Welt");
-```
-
-In diesem Beispiel suchen wir nach dem Substring "Welt" in der Variable `s`. Die Funktion `find()` gibt den Index des ersten gefundenen Vorkommens zurück. In diesem Fall wäre das Ergebnis 6, da "Welt" an sechster Stelle in "Hallo Welt" liegt.
-
-Um Text in einer Datei zu ersetzen, müssen wir zuerst die Datei öffnen und den Inhalt in einen String laden. Dann können wir die Funktion `replace()` verwenden, um den gewünschten Text zu ersetzen:
-
-```
-Rust
-let mut file = std::fs::File::open("meine_datei.txt").expect("Datei nicht gefunden");
+```Rust
+use std::fs;
+let mut file = fs::File::open("beispiel.txt").expect("Datei konnte nicht geöffnet werden");
 let mut inhalt = String::new();
-file.read_to_string(&mut inhalt).expect("Inhalt konnte nicht geladen werden");
+file.read_to_string(&mut inhalt).expect("Fehler beim Lesen der Datei");
+
 let neuer_inhalt = inhalt.replace("alt", "neu");
 ```
 
-In diesem Beispiel wird "alt" durch "neu" ersetzt und der veränderte Inhalt in der Variablen `neuer_inhalt` gespeichert.
+Mit diesem Codeblock wird der Text "alt" durch "neu" ersetzt und der neue Inhalt in der Variable "neuer_inhalt" gespeichert. Dann kann man den geänderten Inhalt einfach in eine Datei schreiben.
 
-## Tiefer Einblick
+## Tiefere Einblicke
 
-Neben den oben genannten Funktionen gibt es noch viele weitere Möglichkeiten, Text in Rust zu suchen und zu ersetzen. Zum Beispiel können wir mit regulären Ausdrücken arbeiten, um bestimmte Muster zu finden und zu ersetzen. Wir können auch Optionen angeben, wie z.B. die Groß- und Kleinschreibung zu ignorieren oder nur das erste Vorkommen zu ersetzen.
+Das Ersetzen von Text in Rust kann auch mit Hilfe der Bibliothek "regex" durchgeführt werden. Diese ermöglicht die Verwendung von regulären Ausdrücken, um den zu ersetzenden Text zu definieren. Zudem bietet sie weitere Optionen, wie z.B. die Berücksichtigung von Groß- und Kleinschreibung oder die Verwendung von Variablen in dem zu ersetzenden Text.
 
-Es ist auch wichtig zu beachten, dass Text in Rust standardmäßig als UTF-8 behandelt wird. Wenn wir also Text in einer anderen Kodierung suchen oder ersetzen möchten, müssen wir dies explizit angeben.
+```Rust
+use regex::Regex;
+let re = Regex::new(r"example").unwrap();
+let neuer_inhalt = re.replace_all(&inhalt, "neues Beispiel");
+```
 
-Insgesamt bietet Rust leistungsstarke Tools, um Text zu suchen und zu ersetzen. Mit etwas Übung können wir diese Tools effektiv einsetzen, um unsere Arbeit schneller und effizienter zu erledigen.
+Mit diesem Beispiel wird jeder Text, der "example" enthält, durch "neues Beispiel" ersetzt. Die Bibliothek "regex" bietet viele verschiedene Funktionen und Optionen, um Text in Rust zu manipulieren.
 
 ## Siehe auch
 
-- Rust Dokumentation zu der Funktion `find()`: https://doc.rust-lang.org/std/primitive.str.html#method.find
-- Rust Dokumentation zu der Funktion `replace()`: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
-- Tutorial für reguläre Ausdrücke in Rust: https://rustrocks.com/rust/regex-rust-for-beginners/
+- [Dokumentation zu "std::fs" in Rust](https://doc.rust-lang.org/std/fs/)
+- [Dokumentation zu der Bibliothek "regex" in Rust](https://docs.rs/regex/*/regex/index.html)

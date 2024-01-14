@@ -1,38 +1,48 @@
 ---
 title:                "Fish Shell: Mallia vastaavien merkkien poistaminen"
+simple_title:         "Mallia vastaavien merkkien poistaminen"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi Poistaa Merkkejä, Joita Vastaavat Kaavat?
+## Miksi
 
-Merkkejä vastaavien kaavojen poistaminen on hyödyllistä, kun haluat puhdistaa tietoja tai suodattaa tiettyjä merkkijonoja. Tämä voi myös auttaa muokkaamaan tai parantamaan koodia.
+Yksi yleinen ohjelmoinnin tehtävä on poistaa tietyllä kaavalla vastaavat merkit tekstistä. Tämä voi olla hyödyllistä, kun halutaan nopeasti muokata tai puhdistaa tietoja.
 
-# Kuinka Tehdä Se?
+## Miten
 
-```Fish Shell ``` tarjoaa käteviä keinoja poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Alla on joitakin esimerkkejä: 
+Fish Shellilla tämä tehtävä onnistuu helposti käyttämällä `sed`-komentoa yhdessä regex-säännön kanssa. Tässä esimerkki, jossa poistetaan kaikki numerot ja välilyönnit merkkijonosta:
+
+````Fish Shell
+echo "123 is 456 my 789 number" | sed 's/[[:digit:][:space:]]//g'
+````
+
+Tämä tuottaa seuraavan tulosteen:
 
 ```
-rm *\.txt
+is my number
 ```
 
-Tämä poistaa kaikki .txt-tiedostot hakemistosta. Voit myös käyttää säännöllisiä lausekkeita poistaaksesi tiettyjä merkkejä, kuten seuraavassa esimerkissä:
+Vaihtoehtoisesti voit myös käyttää `tr`-komennon avulla poistamaan halutut merkit:
 
-```
-rm (echo abc | sed 's/b/#/')
-```
-Tämä poistaisi merkin "b" ja korvaisi sen merkillä "#" merkkijonossa "abc".
+````Fish Shell
+echo "123 is 456 my 789 number" | tr -d '[0-9[:space:]]'
+````
 
-# Syvemmälle Aiheeseen
+Tämä tuottaa saman tuloksen kuin edellinen esimerkki.
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä poistettaessa merkkejä, jotka vastaavat tiettyä kaavaa. Voit käyttää myös muita komentoja, kuten ```grep``` ja ```sed```, löytääksesi ja muokataksesi haluamiasi merkkijonoja. 
+## Syvällinen tarkastelu
 
-# Katso Myös
+Tässä syvällisempiä tietoja regex-säännöistä ja niiden käytöstä Fish Shellissa.
 
-- https://fishshell.com/docs/current/commands.html#rm
-- https://fishshell.com/docs/current/commands.html#sed
-- https://fishshell.com/docs/current/commands.html#grep
-- https://fishshell.com/docs/current/commands.html#regex
+Regex on lyhenne sanoista regular expression, eli suomeksi säännöllinen lauseke. Se on merkkijono, joka määrittelee tietyn kaavan, jota vastaavat merkit poistetaan tai korvataan annetusta tekstistä. Fish Shellissa voi käyttää useita erilaisia regex-sääntöjä, joilla voi poistaa erilaisia merkkejä tai merkkiyhdistelmiä, kuten numeroita, välilyöntejä, kirjaimia tai erikoismerkkejä.
+
+## Katso myös
+
+- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html#regex)
+- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+- [Säännöllisten lausekkeiden opas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

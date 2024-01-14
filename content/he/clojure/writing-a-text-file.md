@@ -1,37 +1,50 @@
 ---
 title:                "Clojure: כתיבת קובץ טקסט"
+simple_title:         "כתיבת קובץ טקסט"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+## למה
 
-ישנם מספר סיבות לכתיבת קובץ טקסט בשפת Clojure. הן כוללות שיתוף קוד עם מפתחים אחרים, פיתוח ויעול תהליך העבודה ויצירת קוד נקי וקל לתחזוקה. כתיבת קובץ טקסט מאפשרת גם שימוש בכלים טכניים נוספים כגון Git ודפדפנים כדי לעבוד בצורה יעילה יותר עם הקוד שלכם.
+כתיבת קובץ טקסט בקלוז'רה היא דרך יעילה וייצוגית ליצירת קוד ולתיעודו. בדף זה תלמדו איך לכתוב קובץ טקסט מתוך קוד קלוז'ר.
 
-# איך לעשות זאת
-
-לכתיבת קובץ טקסט בשפת Clojure ישנם אפשרויות רבות. ניתן להשתמש בתוכנות כגון VS Code, Atom או IntelliJ בשילוב עם התוסף המתאים לשפת Clojure. כדי לכתוב קוד בשפת Clojure, פשוט ייעד את הקובץ והתחל לכתוב בשפה שנבחרה. להלן דוגמאות של קוד ופלט המתארים כיצד לכתוב קובץ טקסט בשפת Clojure:
+## איך לעשות זאת
 
 ```Clojure
-;; פלט: Hello World!
-(print "Hello World!") 
+  (defn write-file [file-name text]
+    "A function that takes in a file name and text as parameters and writes the text into the file. Returns true if successful, false if not."
+    (try
+      (with-open [writer (clojure.java.io/writer file-name :append true)]
+        (.write writer text))
+        true
+      (catch Exception e
+        (println "Error:" (.getMessage e))
+        false)))
 ```
+
+כתיבת פונקציה בשם "write-file" שמקבלת שם קובץ וטקסט כפרמטרים ומכתיבה את הטקסט לקובץ. הפונקציה מחזירה אמת אם התהליך הצליח או שקר אם נכשל. יש כאן שימוש ב-"try-catch" בכדי לטפל בשגיאות אם ישנן.
 
 ```Clojure
-;; פלט: 10
-(println (+ 5 5))
+  (def file-name "my-file.txt")
+  (def text "קוד קלוז'רה הוא שפה פונקציונלית ידידותית ויעילה")
+  (write-file file-name text)
 ```
 
-# כיול עמוק
+הקוד הנ"ל ייכתב לקובץ בשם "my-file.txt" ויכיל את הטקסט "קוד קלוז'רה הוא שפה פונקציונלית ידידותית ויעילה". אם הפונקציה תצליח, תודפס אמת בטרמינל, ואם כן, אז יש לאחזר משתנה בכל עת שתרצו להשתמש בלולאות.
 
-כתיבת קובץ טקסט בשפת Clojure מאפשרת תכונות רבות נוספות כמו יצירת פונקציות, בניית משתנים ועבודה עם מבני נתונים. נהוג להשתמש במבנה השפה S-expressions כדי לבצע מטרות אלו בצורה ברורה וקלה לקריאה. אם אתם מתחילים ללמוד בשפת Clojure, כתיבת קובץ טקסט יכולה לסייע לכם להבין את המבנה התחבירי של השפה ולהתאים אותו להכיל את הקוד שלכם.
+## Deep Dive
 
-# ראו גם
+כאשר מבינים איך לכתוב קוד קלוז'רה, יתכן שתרצו לדעת עוד פרטים על כתיבת קבנךבך טקסט. הנה מספר משאבים שיכולים לעזור לכם ללמוד עוד:
 
-למידע נוסף על שפת Clojure וכתיבת קבצים טקסט בה, הסתכלו על הקישורים הבאים:
+- [ספר המדריך הרשמי של קלוז'רה](https://clojure.org/guides/getting_started)
+- [אתר הקהילה של קלוז'רה בעברית](https://he.cljdoc.org/)
+- [מדריך לכתיבת קוד יעיל וברור בקלוז'רה](https://purelyfunctional.tv/guide/reduce-side-effects-with-clojure/) 
 
-- [מדריך לשפת Clojure](https://learnxinyminutes.com/docs/clojure/)
-- [כתיבת קבצי
+## ראו גם
+
+- [פונקציות ב

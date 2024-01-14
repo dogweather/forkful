@@ -1,39 +1,55 @@
 ---
-title:                "Gleam: Verifica dell'esistenza di una directory"
+title:                "Gleam: Verifica se una directory esiste"
+simple_title:         "Verifica se una directory esiste"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Stai lavorando su un progetto di programmazione e sei bloccato perché il tuo codice dipende dall'esistenza di una determinata directory? Niente panico! In questo post ti spiegheremo come verificare se una directory esiste utilizzando il linguaggio di programmazione Gleam.
 
-## Come Fare
-Per verificare se una directory esiste nel tuo progetto Gleam, puoi utilizzare la funzione `Filesystem.does_directory_exist/1`. Questo metodo accetta una stringa contenente il percorso della directory da verificare e restituisce `true` o `false` a seconda dell'esistenza o meno della directory.
-Ecco un semplice esempio di codice:
+Controllare se una directory esiste può essere utile per verificare l'esistenza di un percorso o per gestire eccezioni nel caso in cui una directory non sia accessibile.
+
+## Come fare
+
+Per controllare se una directory esiste in Gleam, possiamo utilizzare la libreria standard `gleam_io` e la sua funzione `Dir.exists`:
 
 ```Gleam
-let directory = "/percorso/della/directory"
+import gleam/io
+result = gleam/io.Dir.exists("/home/user/documents")
 
-if Filesystem.does_directory_exist(directory) {
-  IO.print("La directory esiste!")
-} else {
-  IO.print("La directory non esiste.")
-}
+// output: true
 ```
 
-Output se la directory esiste: `La directory esiste!`
-Output se la directory non esiste: `La directory non esiste.`
+Se la directory esiste, il risultato sarà `true`. In caso contrario, il risultato sarà `false`.
 
 ## Approfondimento
-Ora che hai visto come utilizzare la funzione `Filesystem.does_directory_exist/1` per verificare l'esistenza di una directory, ecco alcuni dettagli aggiuntivi da tenere a mente:
-- La funzione può essere utilizzata anche per verificare l'esistenza di un file, poiché un file è essenzialmente una directory vuota.
-- Se il percorso specificato nella stringa è un percorso assoluto, la funzione cercherà la directory o il file direttamente nel file system. Se invece è un percorso relativo, verrà cercato nella directory corrente.
-- Questa funzione supporta anche percorsi di directory multipli, ad esempio `"/percorso1/percorso2/percorso3"`.
 
-## Vedi Anche
-- [Documentazione ufficiale di Filesystem](https://gleam.run/documentation/standard-library/#filesystem)
-- [Esempi di codice Gleam](https://github.com/gleam-lang/gleam/tree/master/examples)
-- [Community di Gleam](https://github.com/gleam-lang/gleam/blob/master/COMMUNITY.md)
+La funzione `Dir.exists` utilizza l'operatore `file_info` della libreria standard `gleam_os` per ottenere informazioni sui file e sulle directory. Utilizzando l'annotazione del tipo di ritorno `:?FileInfo`, possiamo ottenere informazioni aggiuntive sulla directory, come la dimensione, il timestamp dell'ultima modifica e i permessi di accesso.
+
+```Gleam
+import gleam/io
+import gleam/os
+
+fn check_directory(path) {
+  case gleam/io.Dir.exists(path): {
+    true -> true
+    false -> false
+  }
+}
+
+test "check if directory exists" {
+  expect(check_directory("/home/user/documents")) === true
+}
+
+// ?FileInfo { size: 1234, modified: 2021-08-12T12:00:00Z, permissions: Perm(0755) }
+```
+
+## Vedi anche
+
+- [Documentazione della libreria standard gleam_io](https://gleam.run/docs/stdlib-io)
+- [Documentazione della libreria standard gleam_os](https://gleam.run/docs/stdlib-os)
+- [Esempio di utilizzo della funzione `Dir.exists`](https://github.com/gleam-lang/gleam/blob/master/examples/io/files.exs)

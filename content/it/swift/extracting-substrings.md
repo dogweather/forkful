@@ -1,28 +1,47 @@
 ---
 title:                "Swift: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
-Estrarre sottostringhe è una pratica utile nella programmazione Swift perché ti permette di manipolare e ottenere solo una parte di una stringa più grande, rendendo il codice più leggibile e efficiente.
+# Perché
 
-## Come fare
-Per estrarre una sottostringa in Swift, utilizzare il metodo `substring(from:)` o `substring(to:)` a seconda che si voglia ottenere una sottostringa a partire dall'inizio o dalla fine della stringa originale. Ad esempio:
-```Swift
-let stringa = "Ciao a tutti!"
-let sottostringa = stringa.substring(from: 5)
-print(sottostringa)
-// Output: a tutti!
+La funzione di estrazione delle sottostringhe è molto utile nel processo di manipolazione delle stringhe in Swift. Ti permette di estrarre una parte specifica di una stringa, rendendo più facile e veloce l'accesso ai dati di cui hai bisogno.
+
+# Come utilizzarla
+
+Per utilizzare la funzione di estrazione delle sottostringhe in Swift, segui questi semplici passaggi:
+
+1. Definisci la tua stringa originale:
 ```
-In questo esempio, la sottostringa ottenuta inizia dalla quinta posizione della stringa originale, "a tutti!".
+let stringa = "Benvenuti alla nostra lezione di programmazione in Swift!"
+```
 
-## Approfondimento
-Ci sono molti altri modi per estrarre sottostringhe in Swift, come utilizzando il metodo `substring(with:)` per ottenere una sottostringa in base a un intervallo di posizioni, o utilizzando la notazione del "closed range" per ottenere una sottostringa di lunghezza specifica. Inoltre, è anche possibile utilizzare espressioni regolari per estrarre sottostringhe basate su determinati pattern all'interno di una stringa.
+2. Utilizza il metodo `index` per selezionare gli indici di inizio e fine della tua sottostringa:
+```
+let inizio = stringa.index(stringa.startIndex, offsetBy: 11) // 11 è l'indice del carattere "n" di "nostra"
+let fine = stringa.index(stringa.endIndex, offsetBy: -8) // -8 fa riferimento agli ultimi 8 caratteri della stringa
+```
 
-## Vedi anche
-- [Documentazione Apple su metodi di estrazione delle sottostringhe](https://developer.apple.com/documentation/swift/string/3018574-substring)
-- [Tutorial su espressioni regolari in Swift](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
+3. Utilizza il metodo `substring` per estrarre la sottostringa:
+```
+let sottostringa = stringa.substring(with: inizio..<fine)
+```
+
+Nel nostro esempio, la sottostringa estratta sarebbe "nostra lezione di programmazione".
+
+# Approfondimento
+
+La funzione di estrazione delle sottostringhe in Swift è molto flessibile e ti consente di utilizzare vari metodi per selezionare gli indici di inizio e fine della tua sottostringa. Puoi utilizzare il metodo `prefix` per estrarre una sottostringa dalla posizione iniziale fino ad un certo numero di caratteri, o il metodo `suffix` per estrarre una sottostringa dalla posizione finale fino ad un certo numero di caratteri.
+
+Inoltre, puoi anche combinare il metodo `substring` con altri metodi di manipolazione delle stringhe in Swift, come `replacingOccurrences` per sostituire determinati caratteri nella sottostringa estratta.
+
+# Vedi anche
+
+- [Documentazione su stringhe in Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Esempi di codice per l'estrazione delle sottostringhe in Swift](https://www.hackingwithswift.com/syntax-guide/strings-and-characters/extracting-parts-of-a-string)

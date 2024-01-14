@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: Alimerkkijonojen erottaminen"
+simple_title:         "Alimerkkijonojen erottaminen"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/extracting-substrings.md"
 ---
 
@@ -9,49 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Substringien erottamisella on monia hyödyllisiä sovelluksia Arduino-ohjelmoinnissa. Esimerkiksi voit käyttää substringeja käsittelemään tekstin syötteitä, kirjoittamaan parempaa käyttöliittymää ja muokkaamaan datan tallennusta. Jatka lukemista ja opi, kuinka voit hyötyä substringien käytöstä omassa projektissasi.
+Arduino-ohjelmointi ei ole aina helppoa, mutta käyttämällä substringien louhimista voit helposti hallita merkkijonoja ja tehdä monimutkaisemmat tehtävät yksinkertaisiksi. Joten miksi et hyödyntäisi tätä hyödyllistä toimintoa?
 
 ## Kuinka
 
-Substringien erottaminen Arduino-ohjelmoinnissa on helppoa käyttämällä sisäistä `substring()` funktiota. Tämä funktio ottaa parametreina merkkijonon alkupaikan, loppupaikan ja tarvittaessa päämerkin. Tässä esimerkissä otamme toisen ja neljännen merkin 'Arduino' merkkijonosta ja tulostamme sen sarjaanliitetyssä muodossa.
+Substringien louhiminen Arduinossa on yksinkertaista ja nopeaa. Käytämme tätä kätevää toimintoa merkkijonoissa, kun meidän on esimerkiksi otettava tietty osa merkkijonosta ja käsiteltävä sitä erikseen.
 
-```Arduino
-String nimi = "Arduino";
-String alikirjain = nimi.substring(1,4);
-Serial.println(alikirjain);
+```
+Arduino String merkkijono = "Hei, olen Arduino!";
+String osa1 = merkkijono.substring(1); // palauttaa "ei, olen Arduino!"
+String osa2 = merkkijono.substring(4, 7); // palauttaa "olen"
 ```
 
-Tulostus: `rdu`
+## Syvemmälle
 
-On tärkeää huomata, että merkkijonon indeksointi alkaa aina nollasta. Joten ensimmäinen merkki on indeksillä 0 ja viimeinen merkki on pituuden vähennettynä yhdellä.
+Substringien louhinta perustuu kahteen parametriin: aloituskohdan indeksiin ja mahdolliseen lopetuskohdan indeksiin. Ensimmäinen parametri on pakollinen ja se määrittää kohdan, josta haluat aloittaa louhimisen. Toinen parametri on valinnainen ja se määrittää kohdan, josta haluat lopettaa louhimisen. Jos toista parametria ei anneta, substring louhitaan loppuun saakka.
 
-Päämerkin asettaminen on valinnainen ja oletusarvoisesti se on tyhjä merkki. Tässä esimerkissä otamme kolmannen merkin 'Arduino' merkkijonosta ja käytämme pilkkua päämerkkinä.
-
-```Arduino
-String nimi = "Arduino";
-String alikirjain = nimi.substring(2, ',');
-Serial.println(alikirjain);
-```
-
-Tulostus: `d`
-
-## Syvällinen sukellus
-
-Substringien avulla voit myös luoda uusia merkkijonoja ja tallentaa ne muuttujina. Tässä esimerkissä luomme uuden merkkijonon `nimi2` käyttämällä `substring()` funktiota yhdistämällä `nimi` ja `alikirjain` merkkijonot.
-
-```Arduino
-String nimi = "Arduino";
-String alikirjain = nimi.substring(1,4);
-String nimi2 = nimi + alikirjain;
-Serial.println(nimi2);
-```
-
-Tulostus: `Arduirdu`
-
-Myös `substring()` funktiolla voi käsitellä erilaisia syötteitä, kuten käyttäjän syöttämiä tietoja tai sarjaväylän lukemia arvoja. Voit myös yhdistää useita `substring()` funktioita luomaan monimutkaisempia merkkijonoja.
+`substring()`-funktion käyttö tulee erittäin hyödylliseksi, kun haluat esimerkiksi ottaa osan käyttäjän syöttämästä merkkijonosta tai tarkistaa, onko tietty sana tai lause osa merkkijonoa.
 
 ## Katso myös
 
-- [String luokan dokumentaatio](https://www.arduino.cc/reference/en/language/variables/data-types/stringfunctions/substring/)
-- [Esimerkkikoodi String luokalle](https://www.arduino.cc/en/Tutorial/StringConstructors)
-- [Selitys merkkijonon indeksoinnista](https://www.arduino.cc/en/Reference/StringIndexof)
+- [Arduino String.substring() reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- [Arduino String.charAt() blogikirjoitus](https://www.arduino.cc/en/Tutorial/StringCharAt)
+- [Arduino perusteet -blogi](https://www.arduino.cc/en/Tutorial/Foundations)

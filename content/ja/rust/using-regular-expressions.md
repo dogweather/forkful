@@ -1,7 +1,9 @@
 ---
-title:                "Rust: 正規表現の利用方法"
+title:                "Rust: 正規表現を使用する"
+simple_title:         "正規表現を使用する"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/using-regular-expressions.md"
 ---
 
@@ -9,56 +11,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-正規表現を使用する理由を簡単に説明します。正規表現は、文字列のパターンを検索、抽出、置換するために使用される強力なツールです。
+正規表現を使用する理由は、テキストデータ内の特定のパターンを検索したり置換したりするために便利です。また、データ検証やフォーマットの検証など、さまざまな用途に使用することができます。
 
 ## 使い方
 
-正規表現はRustの標準ライブラリであるregexクレートを使用して実装することができます。以下のコード例では、文字列の中から特定のパターンにマッチする文字列を検索し、抽出する方法を示します。
+正規表現を使用するには、まずはRustの"regex"クレートをインストールする必要があります。コマンドラインで以下のように入力します。
 
-```Rust
+```
+cargo install regex
+```
+
+次に、作業ディレクトリに移動し、"main.rs"という新しいファイルを作成します。そして、以下のようなコードを書きます。
+
+```rust
+// 必要なモジュールのインポート
 use regex::Regex;
 
 fn main() {
-    // 例: 電話番号の抽出
-    let re = Regex::new(r"\d{3}-\d{4}-\d{4}").unwrap(); // マッチするパターンを定義
-    let text = "私の電話番号は012-3456-7890です"; // 検索対象の文字列
-    for caps in re.captures_iter(text) { // マッチした文字列をイテレーターで取得
-        println!("電話番号が見つかりました: {}", caps.get(0).unwrap().as_str());
+    // 正規表現のパターンを定義
+    let pattern = Regex::new(r"Rust").unwrap();
+
+    // 検索対象のデータを定義
+    let data = "Hello, I love Rust programming language!";
+
+    // マッチする部分を全て取得する
+    let matches = pattern.find_iter(data);
+
+    // マッチした部分を表示する
+    for mat in matches {
+        println!("Found match: {}", mat.as_str());
     }
+
+    // マッチした部分を"Java"に置換する
+    let replaced_data = pattern.replace_all(data, "Java");
+    
+    // 置換後のデータを表示する
+    println!("Replaced data: {}", replaced_data);
 }
 ```
 
-上記のコードは次のような出力を生成します。
+上のコードを実行すると、以下のような出力が得られます。
 
-```Rust
-電話番号が見つかりました: 012-3456-7890
+```
+Found match: Rust
+Replaced data: Hello, I love Java programming language!
 ```
 
-さらに、正規表現によって文字列を置換することもできます。次のコードでは電話番号をマスキングして出力します。
+このように、正規表現を使用することで、様々な応用が可能です。
 
-```Rust
-use regex::Regex;
+## ディープダイブ
 
-fn main() {
-    // 例: 電話番号のマスキング
-    let re = Regex::new(r"\d{3}-\d{4}-\d{4}").unwrap(); // マッチするパターンを定義
-    let text = "私の電話番号は012-3456-7890です"; // 検索対象の文字列
-    let masked = re.replace_all(text, "XXX-XXXX-XXXX"); // マッチした文字列を置換
-    println!("{}", masked); // 出力: 私の電話番号はXXX-XXXX-XXXXです
-}
-```
+正規表現を使用する際には、いくつかのパターンや特殊文字に注意する必要があります。
 
-## 深堀り
+まず、`r`を前置することで、文字列を生のまま取得することができます。これを使用することで、エスケープ文字の処理を簡略化することができます。
 
-正規表現は文字列のパターンマッチングを行うため、特定の行為に特化した独自の言語機能を提供します。Rustでは、regexクレートを使用することで、シンプルかつ効率的な正規表現を実装することができます。
+また、`?`, `+`, `*`などの特殊文字を使用することで、パターンのマッチングをさらに強化することができます。これらの文字は、それぞれ直前の検索対象が1回、1回以上、0回以上の繰り返しであることを意味します。
 
-## 参考リンク
+さらに、キャプチャーグループを作成することで、マッチした部分を後から取り出すことができます。例えば、`r"(?P<year>\d{4})-(?P<month>\d{2})-(?P<day>\d{2})"`というパターンを使用すると、"2021-01-01"という文字列から年、月、日をそれぞれ抽出することができます。
 
-- [Rustの正規表現チュートリアル](https://github.com/rust-lang/regex/blob/master/examples/tutorial.md)
-- [Rust crate: regex](https://crates.io/crates/regex)
-- [正規表現速習講座](https://www.javadrive.jp/regex/index1.html)
+正規表現を使用する際には、公式ドキュメントを参考にして、様々なパターンを試してみることをおすすめします。
 
-## さらに見る
+## 他に見るもの
 
-- [Rustの文字列操作ガイド](https://doc.rust-lang.org/book/ch08-03-hash-maps.html#summary)
-- [Rustの標準ライブラリリファレンス](https://doc.rust-lang.org/std/str/index.html)
+- [Rustで正規表現を使用する方法](https://doc.rust-lang.org/std/vec/struct.Vec.html)
+- [正規表現クイックチュートリアル](https://qwtel.com/posts/software/regular-expressions/)
+- [正規表現のパターン検索コレクション](https://github.com/rust-lang/regex/blob/master/examples/search.rs

@@ -1,45 +1,51 @@
 ---
 title:                "Javascript: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma string para letras minúsculas
+# Por que converter uma string para minúsculas?
 
-Ao trabalhar com textos em Javascript, é comum que seja necessário converter uma string para letras minúsculas. Isso pode ser útil para realizar comparações, tornar o texto mais legível ou simplesmente seguir convenções de nomenclatura. Neste artigo, vamos explorar como realizar essa conversão e entender melhor sua importância.
+Quando se trabalha com programação, é comum manipularmos strings (cadeias de caracteres). Em alguns casos, é necessário que essas strings estejam em minúsculo, seja para facilitar a comparação de textos ou para uma melhor formatação de saída. Por isso, a conversão de uma string para minúscula é um recurso importante para os desenvolvedores.
 
-## Como fazer a conversão
+## Como fazer a conversão em Javascript
 
-Para converter uma string para letras minúsculas em Javascript, podemos utilizar o método `toLowerCase()` que está presente no objeto String. Este método retorna uma nova string com todas as letras em minúsculo, mantendo o texto original inalterado. Veja abaixo um exemplo de como utilizá-lo:
+Existem diversas formas de se converter uma string para minúsculas em Javascript. Vamos mostrar algumas das mais comuns utilizando os métodos `toLowerCase()` e `toLocaleLowerCase()`.
 
-```Javascript
-let meuTexto = "Olá, Mundo!";
-let textoMinusculo = meuTexto.toLowerCase();
-console.log(textoMinusculo); // saída: "olá, mundo!"
-```
+### Utilizando o método `toLowerCase()`
 
-Como podemos ver no código acima, o método `toLowerCase()` pode ser chamado diretamente através da variável que armazena nossa string. Isso torna a conversão muito simples e direta.
-
-Outra forma de realizar a conversão é através do uso de expressões regulares. Por exemplo, podemos utilizar a função `replace()` para substituir todas as letras maiúsculas por suas versões minúsculas. Veja:
+O método `toLowerCase()` converte todos os caracteres de uma string em letras minúsculas. Veja o exemplo abaixo:
 
 ```Javascript
-let meuTexto = "Olá, Mundo!";
-let textoMinusculo = meuTexto.replace(/[A-Z]/g, (letraMaiuscula) => letraMaiuscula.toLowerCase());
-console.log(textoMinusculo); // saída: "olá, mundo!"
+const texto = "CONVERSAO DE TEXTO"
+const textoEmMinusculo = texto.toLowerCase()
+console.log(textoEmMinusculo) // saída: conversao de texto
 ```
 
-Neste caso, utilizamos uma expressão regular para encontrar todas as letras maiúsculas na nossa string e substituí-las pelo seu equivalente em minúsculo. A função `replace()` recebe como parâmetro a expressão regular e uma função que irá retornar o valor de substituição.
+### Utilizando o método `toLocaleLowerCase()`
 
-## Aprofundando na conversão
+O método `toLocaleLowerCase()` também converte os caracteres de uma string em minúsculas, mas leva em consideração a localidade do sistema. Isso significa que a conversão pode variar de acordo com o idioma utilizado no navegador. Veja o exemplo abaixo:
 
-É importante lembrar que a conversão para letras minúsculas no Javascript leva em consideração o padrão Unicode. Isso significa que alguns caracteres especiais de outros idiomas podem ter seu comportamento alterado durante a conversão. Por exemplo, em certos idiomas a letra "I" não possui um equivalente em minúsculo, portanto, ela não será convertida corretamente. É importante ter isso em mente ao lidar com diferentes idiomas em suas aplicações.
+```Javascript
+const texto = "ção é uma vogal"
+const textoEmMinusculo = texto.toLocaleLowerCase()
+console.log(textoEmMinusculo) // saída: ção é uma vogal (no navegador em português)
+console.log(textoEmMinusculo) // saída: c~ao é uma vogal (no navegador em espanhol)
+```
 
-Além disso, vale ressaltar que o método `toLowerCase()` não altera a string original, mas sim cria uma nova string com o resultado da conversão. Isso garante que o texto original não seja modificado e possa ser utilizado em outras partes do código como necessário.
+## Aprofundando no assunto
 
-## Veja também
+O Javascript possui um objeto chamado `String`, que contém diversos métodos para manipulação de strings. O método `toLowerCase()` é apenas um deles. Além disso, é possível realizar a conversão de minúsculas para maiúsculas utilizando os métodos `toUpperCase()` e `toLocaleUpperCase()`, respectivamente.
 
-- Documentação oficial do método `toLowerCase()` (em inglês): https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
-- Expressões regulares em Javascript (em português): https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions
+É importante lembrar que a conversão de uma string para minúsculas não altera o valor da variável original, apenas retorna uma nova string convertida. Ou seja, caso seja necessário utilizar a string em minúsculo, é importante armazenar o resultado em uma nova variável.
+
+# Veja também
+
+- [Documentação oficial do método `toLowerCase()` (em inglês)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Documentação oficial do método `toLocaleLowerCase()` (em inglês)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
+- [Outros métodos do objeto `String` (em inglês)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)

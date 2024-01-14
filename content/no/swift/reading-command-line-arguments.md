@@ -1,33 +1,42 @@
 ---
-title:                "Swift: Å lese kommandolinje-argumenter"
+title:                "Swift: Lesing av kommandolinje-argumenter"
+simple_title:         "Lesing av kommandolinje-argumenter"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Hvorfor lese kommandolinjeargumenter? Det kan være nyttig når du ønsker å gi input til et program ved å bruke kommandolinjen istedenfor å endre koden manuelt.
+## Hvorfor
+Hvis du er en utvikler som ønsker å lage et program som kan kommunisere og ta imot input fra brukeren gjennom terminalen, er det viktig å kunne lese kommandolinjeargumenter. Dette vil tillate deg å utvide funksjonaliteten til programmet ditt og gjøre det mer interaktivt.
 
-# Hvordan
-For å lese kommandolinjeargumenter i Swift, kan du bruke følgende kode:
-```Swift
-let args = CommandLine.arguments
-// args er en array med alle kommandolinjeargumentene
-```
+## Slik gjør du det
+For å kunne lese kommandolinjeargumenter må du først importere Foundation-biblioteket. Deretter kan du bruke funksjonen `CommandLine.arguments` for å få tilgang til alle argumentene som ble sendt med ved oppstart av programmet. Her er et eksempel på hvordan du kan skrive ut argumentene og antall argumenter i terminalen:
 
-Hvis du ønsker å ta ut et spesifikt argument, kan du bruke indeksering:
-```Swift
-let firstArg = args[0]
-// Dette vil gi deg det første argumentet som ble gitt ved kjøring av programmet
-```
+````Swift
+import Foundation
 
-Du kan også sjekke antall argumenter ved hjelp av `args.count` og bruke en for-løkke for å behandle alle argumentene.
+let arguments = CommandLine.arguments
+print("Her er argumentene som ble sendt med: \(arguments)")
+print("Antall argumenter: \(arguments.count)")
+````
 
-# Deep Dive
-Hvis du vil ha mer inngående informasjon om kommandolinjeargumenter, kan du utforske `CommandLine`-strukturen i Swift. Denne strukturen gir deg blant annet tilgang til programnavnet (`CommandLine.arguments[0]`), muligheten til å legge til egne argumenter og å lese miljøvariabler.
+Dette vil gi følgende output i terminalen:
 
-# Se Også 
-- [Swift offisiell dokumentasjon om CommandLine](https://developer.apple.com/documentation/foundation/commandline)
-- [Tutorial om lesing av kommandolinjeargumenter i Swift](https://www.educative.io/edpresso/how-to-read-command-line-arguments-in-swift)
+````Console
+Her er argumentene som ble sendt med: ["programnavn", "argument1", "argument2"]
+Antall argumenter: 3
+````
+Det er også mulig å få tilgang til individuelle argumenter ved å bruke indeksering. For eksempel, hvis du vil få tak i det første argumentet, kan du bruke `CommandLine.arguments[1]`.
+
+## Dypdykk
+Det er flere teknikker for å lese og behandle kommandolinjeargumenter mer avansert. En av disse er å bruke argumentflagg, også kjent som "options". Dette lar deg spesifisere en spesiell handling eller funksjon for programmet ditt basert på hvilke flagg som blir sendt med som argumenter. For å gjøre dette må du bruke `CommandLine.Option` og `CommandLine.OptionSet` fra Foundation-biblioteket.
+
+Et annet viktig konsept er å validere argumentene du mottar. Dette er spesielt viktig hvis du trenger å behandle sensitiv informasjon gjennom kommandolinjen. Ved å bruke `CommandLine.CommandLineError` fra Foundation-biblioteket, kan du håndtere eventuelle ugyldige input og gi tilbakemelding til brukeren.
+
+## Se også
+- [Apple Documentation: CommandLine](https://developer.apple.com/documentation/foundation/commandline)
+- [Swift by Sundell: Working with the Swift command line](https://www.swiftbysundell.com/posts/working-with-the-swift-command-line)
+- [Hacking with Swift: Command line arguments](https://www.hackingwithswift.com/articles/162/command-line-arguments-in-swift)

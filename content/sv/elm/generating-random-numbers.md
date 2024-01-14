@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Generering av slumpmässiga nummer"
+simple_title:         "Generering av slumpmässiga nummer"
 programming_language: "Elm"
-category:             "Numbers"
+category:             "Elm"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/generating-random-numbers.md"
 ---
 
@@ -9,36 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att generera slumpmässiga nummer är en viktig del av många program, från spel till dataanalys. Med Elm kan du enkelt skapa en tillförlitlig och slumpmässig algoritm för att skapa dessa nummer.
+Att generera slumpmässiga nummer i Elm kan vara användbart för olika ändamål, som att skapa slumpmässiga spel eller testa olika algoritmer. Det kan också vara ett bra sätt att utöka ens kunskap om Elm-programmering.
 
-## Hur Man Gör
+## Hur man genererar slumpmässiga nummer i Elm
 
-Först importera "Random" paketet i din fil och sedan använda funktionen "generate" för att skapa ett slumpmässigt nummer. Här är ett exempel på hur du kan skapa ett slumpmässigt heltal mellan 1 och 10:
+Vi kan använda funktionen `Random.generate` tillsammans med `Random.int` för att generera ett slumpmässigt heltal inom en given gräns. Se nedan för ett exempel på hur detta kan se ut i Elm:
 
+```Elm
+import Random
+
+Random.generate randomNumber (Random.int 1 10)
+
+randomNumber num =
+    Debug.log "Slumpmässigt nummer:" num
 ```
-Elm.Random.generate randomInt 1 10
+Detta kodblock kommer att generera ett slumpmässigt nummer mellan 1 och 10 och skriva ut det i konsolen. Om du kör koden högre upp under en kort period kommer du att se olika slumpmässiga nummer visas varje gång. Det är det som är så kul med slumpmässiga nummer!
 
-randomInt: Int
+För att använda `Random.generate` för att generera ett slumpmässigt nummer av en annan typ, som en flyttal eller en lista, kan du använda `Random.float` respektive `Random.list`. Det finns också andra funktioner i Random-modulen som du kan utforska för att skapa ännu mer avancerad slumpmässighet.
+
+## Djupdykning i slumpmässiga nummer
+
+Bakom kulisserna använder `Random.generate` faktiskt följande typ av funktion:
+
+```Elm
+Random.generate : (a -> msg) -> Generator a -> Cmd msg
 ```
 
-För att få ett annat slumpmässigt nummer, kan du skapa en ny funktion och använda den för att generera ett annat tal. Till exempel:
+Funktionen tar ett argument som specificerar vilken typ av värden som ska genereras, en generator (en typ som används för att producera slumpmässiga värden) och returnerar en `Cmd msg`, som är en Elm-kommando som kan utföras för att generera ett slumpmässigt nummer. Denna process kallas för "lättelsen" ("lifting" på engelska) av genereringen av värden.
 
-```
-generateRandomNumber: Int
-generateRandomNumber =
-    Elm.Random.generate anotherRandomInt 1 100
+Det finns även andra funktioner i Random-modulen som kan användas tillsammans med `Random.generate`, till exempel `Random.generateList`, som genererar en lista av slumpmässiga värden baserat på en given generator.
 
-anotherRandomInt: Int
-```
+## Se också
 
-## Djupdykning
-
-När du skapar ett slumpmässigt tal, genererar Elm det baserat på en seed (frö) som används för att skapa en pseudo-slumpmässig sekvens. Det är viktigt att förstå att fröet måste vara unikt för att få olika slumpmässiga nummer. Om du använder samma frö flera gånger, kommer du att få samma sekvens av slumpmässiga nummer.
-
-Du kan också använda funktionen "step" för att skapa ett steg i din sekvens av slumpmässiga nummer. Detta kan vara användbart för spel eller simuleringar där du vill ha en förutsägbar sekvens av slumpmässiga händelser.
-
-## Se Också
-
-- [Elm Documentation for Random](https://package.elm-lang.org/packages/elm/random/latest/)
-- [MDN Web Docs - Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Wikipedia - Pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+- [Elm Random-biblioteket](https://package.elm-lang.org/packages/elm/random/latest/)
+- [Elm Random-exempel](https://github.com/elm/random/tree/master/examples)
+- [Officiell Elm-dokumentation om Random](https://guide.elm-lang.org/effects/random.html)

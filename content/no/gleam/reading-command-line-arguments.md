@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Lesing av kommandolinjeargumenter"
+title:                "Gleam: Lese kommandolinje argumenter"
+simple_title:         "Lese kommandolinje argumenter"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/reading-command-line-arguments.md"
 ---
 
@@ -9,48 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Dersom du ønsker å gjøre din Gleam-programmering mer dynamisk og interaktiv, kan det være lurt å lære hvordan å lese kommandolinjeargumenter. Dette vil tillate deg å få input fra brukeren mens programmet kjører, slik at du kan tilpasse resultatene etter deres preferanser.
+Har du noen gang lurt på hvorfor du skulle bry deg med å lese kommandolinjeargumenter i programmene dine? Vel, i denne bloggposten skal vi se nærmere på hvorfor dette er et viktig konsept i Gleam-programmering.
 
-## Hvordan Du Gjør Det
+## Hvordan
 
-Å lese kommandolinjeargumenter i Gleam er enkelt og greit. Først må du importere `gleam/os/args` modulen, som tillater deg å få tilgang til argumentene gitt av brukeren. Deretter kan du bruke funksjonen `args` for å hente en liste over argumentene og deres verdier:
+Å lese kommandolinjeargumenter i Gleam er en enkel prosess som gir stor fleksibilitet til programmene dine. La oss ta en titt på et eksempel:
 
-```
-Gleam-importert modul gleam/gleam/record
+```Gleam
+import gleam/io
 
-fun main(args) {
-  let opts = args
+// Leser inn et kommandolinjeargument og skriver ut det til konsollen
+fn main(args) {
+  let argument = get_argument(args)
+  io.print(argument)
+}
 
-  devast resultatet erer = if opts. lengde> 0 tå
-
-  let navn = opts [0]
-  
-  let (opções) ulike delene af
-    bruk saken(_, x) ->
-      lask på x
-
-  x ->
-
-    ukjent
+// Funksjon som henter ut det første kommandolinjeargumentet
+fn get_argument(args) {
+  case args {
+    [arg | _] -> arg
+    _ -> ""
   }
-
-  tacticul resultatet erer = rustlele på navn {
-    Ok (verdi) -> "Hei" ++ verdi ++ "!"
-    Error (_) -> "Beklager, jeg vet ikke hvem du er :("
-  }
-
-  voyage:-> (_, [navn]) -> resultatet erer
 }
 ```
 
-Dette eksemplet vil lese det første argumentet, antatt å være brukerens navn, og deretter velge en passende melding basert på om dette argumentet ble gitt eller ikke. Du kan også legge til flere argumenter i listen `opts` og bruke en `case` uttalelse til å behandle hver av dem individuelt.
+Når du kjører dette programmet med følgende kommandolinje:
+
+```bash
+gleam run my_program.gleam my_argument
+```
+
+Vil konsollen skrive ut "my_argument". Her henter vi ut det første argumentet som ble gitt med ved kjøring av programmet, men du kan også endre koden for å lese inn et spesifikt argument basert på posisjon.
 
 ## Dypdykk
 
-Nå som du har lært å lese kommandolinjeargumenter, kan du utforske flere avanserte funksjoner for å gjøre din Gleam-programmering enda mer dynamisk. Du kan for eksempel bruke modulen `gleam/os/env` for å lese miljøvariabler eller bruke `gleam/os/pipe` for å kommunisere med andre prosesser. Bruken av disse modulene åpner opp for enda flere muligheter for interaksjon med brukeren og manipulering av data.
+Nå som du vet hvordan du leser kommandolinjeargumenter i Gleam, la oss se på noen grunner til hvorfor dette kan være nyttig. Først og fremst kan det være en måte å gi foretrukne instillinger eller parametere til programmene dine uten å måtte endre selve koden. Dette gjør det enkelt å tilpasse og gjenbruke samme program til ulike formål.
 
-## Se Også
+Et annet scenario kan være når du ønsker å kjøre mange ulike tester eller tjenester med samme kodebase, men med ulike innstillinger. Ved å lese kommandolinjeargumenter kan du enkelt endre disse innstillingene uten å måtte endre koden hver gang.
 
-- [Gleam Docs: Args](https://gleam.run/documentation/stdlib/args/)
-- [Gleam Docs: Env](https://gleam.run/documentation/stdlib/env/)
-- [Gleam Docs: Pipe](https://gleam.run/documentation/stdlib/pipe/)
+## Se også
+
+- [Offisiell Gleam dokumentasjon](https://gleam.run/)
+- [Gleam kommandolinjeverktøy](https://github.com/gleam-lang/gleam/blob/master/README.md)
+- [Bruk av kommandolinjeargumenter i andre programmeringsspråk](https://www.sitepoint.com/bash-command-line-arguments/)

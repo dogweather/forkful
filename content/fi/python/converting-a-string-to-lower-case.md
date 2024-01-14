@@ -1,34 +1,55 @@
 ---
 title:                "Python: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Miksi kannattaisi muuntaa merkkijono pieniksi kirjaimiksi?
 
-## Kuinka
-```Python
-# Luodaan esimerkki merkkijono
-teksti = "Tämä On Esimerkki"
+Useimmissa ohjelmointikielissä on toiminto muuttaa merkkijono pieniksi kirjaimiksi. Tämä on kätevä toiminto, jos haluat vertailla merkkijonoja ilman, että niiden kirjainkoko vaikuttaa vertailuun. Esimerkiksi tietokantaohjelmissa tai tekstinkäsittelyssä tämä toiminto on erittäin hyödyllinen.
 
-# Muutetaan teksti pieniksi kirjaimiksi
-pieniksi_kirjaimiksi = teksti.lower()
+## Miten
 
-# Tulostetaan muunnettu merkkijono
-print(pieniksi_kirjaimiksi)
+Käytännössä merkkijonon muuttaminen pieniksi kirjaimiksi Pythonissa on erittäin helppoa. Tässä on muutama esimerkki ja niiden tulosteet:
 
-# Output:
-# tämä on esimerkki
+```
+Python
+sana = "TÄMÄ ON MERKKIJONON MUUTTAMINEN PIENIKSI KIRJAIMIKSI"
+print(sana.lower())
 ```
 
-## Syvällinen sukellus
-Merkkijonon muuntaminen pieniksi kirjaimiksi on hyödyllinen toiminto, erityisesti silloin kun vertailuja tehdään merkkijonojen välillä. Pieniksi muunnetut merkkijonot ovat helpommin vertailtavissa ja näin ollen tiedon löytäminen ja koodin suoritus nopeutuu. Tämä toiminto on myös hyödyllinen, mikäli halutaan varmistaa, että käyttäjän syöttämät merkit ovat yhtenäisessä muodossa.
+Tuloste: "tämä on merkkijonon muuttaminen pieniksi kirjaimiksi"
+
+```
+Python
+lause = "Tämä on esimerkki lauseesta"
+print(lause.lower())
+```
+
+Tuloste: "tämä on esimerkki lauseesta"
+
+```
+Python
+teksti = "123456789"
+print(teksti.lower())
+```
+
+Tuloste: "123456789"
+
+Kuten näet, funktion käyttäminen ei ole riippuvainen merkkijonon pituudesta tai sen sisällöstä. Se muuttaa vain kaikki kirjaimet pieniksi.
+
+## Syvä sukellus
+
+Tarkemmin sanottuna funktion `lower()` toiminta riippuu käytetystä kielestä. Esimerkiksi suomen kielessä ei ole eroa isoilla ja pienillä kirjaimilla, joten funktion `lower()` käyttö ei ole tarpeellista. 
+
+Toinen tärkeä seikka on, että `lower()` ei muuta merkkijonoa pysyvästi. Se palauttaa uuden merkkijonon, jossa kaikki kirjaimet ovat pieniä. Tämä tarkoittaa sitä, että alkuperäinen merkkijono säilyy muuttumattomana, ellei siihen tehdä uutta muutosta.
 
 ## Katso myös
-- [Pythonin string -moduulin dokumentaatio](https://docs.python.org/3/library/string.html)
-- [Miten vertailla merkkijonoja Pythonissa](https://www.freecodecamp.org/news/how-to-compare-strings-in-python/)
-- [Kuinka muuntaa merkkijonoja eri kielille Pythonissa](https://stackoverflow.com/questions/39104063/python-convert-string-to-another-language)
+
+- Pythonin dokumentaatio: https://docs.python.org/3/library/stdtypes.html#str.lower
+- Stack Overflow: https://stackoverflow.com/questions/6797984/how-to-convert-string-to-lowercase-in-python

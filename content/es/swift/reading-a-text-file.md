@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Leyendo un archivo de texto"
+title:                "Swift: Leyendo un archivo de texto."
+simple_title:         "Leyendo un archivo de texto."
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/reading-a-text-file.md"
 ---
 
@@ -9,35 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Por qué leer un archivo de texto?
 
-Leer un archivo de texto es una habilidad esencial en el desarrollo de aplicaciones. Permite a los programadores trabajar con grandes cantidades de datos de manera más eficiente y procesar información estructurada en sus aplicaciones. Además, los archivos de texto son una forma universal de almacenar y compartir datos, lo que los convierte en una herramienta útil para colaborar con otros desarrolladores.
+Los archivos de texto son una forma común de almacenar información en un dispositivo. Al aprender a leer y manipular estos archivos, los programadores pueden crear aplicaciones más versátiles y eficientes.
 
 ## Cómo hacerlo
 
-La lectura de un archivo de texto en Swift es un proceso sencillo. Primero, debemos crear una instancia de la clase `FileManager` para manejar la interacción con nuestro sistema de archivos. Luego, utilizamos el método `contents(atPath:)` para obtener los datos del archivo y el método `String(data:encoding:)` para convertir esos datos en una cadena de texto legible. ¡Veamos un ejemplo!
+Para leer un archivo de texto en Swift, primero debes crear una instancia de `FileManager` y obtener el `URL` del archivo que deseas leer. Luego, puedes usar el método `contents(atPath:)` del `FileManager` para leer el contenido del archivo en forma de `Data`.
 
-```Swift
-let fileManager = FileManager.default //Instanciamos FileManager
+```
+let fileManager = FileManager.default
+let url = URL(fileURLWithPath: "ruta_del_archivo/texto.txt")
 
-// Obtenemos el archivo de texto en la ruta específica
-guard let fileData = fileManager.contents(atPath: "/Users/Usuario/Documentos/miArchivo.txt") else { 
-    print("No se pudo obtener el archivo")
-    return
+if let archivo = fileManager.contents(atPath: url.path) {
+    // Hacer algo con el contenido del archivo
+} else {
+    // Manejar el error si el archivo no se puede leer
 }
-
-// Convertimos los datos en una cadena de texto usando UTF-8 como codificación
-let stringData = String(data: fileData, encoding: .utf8)
-print(stringData)
 ```
 
-Si nuestro archivo de texto tiene una estructura diferente, es posible que necesitemos utilizar el método `components(separatedBy:)` para dividirlo en partes más pequeñas y luego trabajar con esas partes por separado.
+Otra forma de leer un archivo de texto es utilizando `String` y su método `init(contentsOfFile:)`. Este método convertirá automáticamente el contenido del archivo en forma de `String`.
+
+```
+if let texto = String(contentsOfFile: "ruta_del_archivo/texto.txt") {
+    // Hacer algo con el texto del archivo
+} else {
+    // Manejar el error si el archivo no se puede leer
+}
+```
 
 ## Profundizando
 
-Algunas veces, puede que necesitemos realizar operaciones más complejas con un archivo de texto. Por ejemplo, podemos querer leer solo una parte específica del archivo, como una línea o un párrafo en particular. Para esto, podemos utilizar el método `components(separatedBy:)` junto con el método `subscript()` de las cadenas de texto para acceder a la parte deseada.
+Hay muchas formas de leer y manipular archivos de texto en Swift, incluyendo la lectura línea por línea utilizando el método `components(separatedBy:)`, el uso de `Codable` para leer y escribir en formato JSON, y la lectura de archivos CSV utilizando librerías externas.
 
-También es importante mencionar que siempre debemos asegurarnos de manejar adecuadamente los posibles errores que puedan ocurrir al intentar leer un archivo de texto, como puede ser que el archivo no exista en la ruta especificada.
+Además, es importante recordar cerrar el archivo después de leerlo para evitar posibles errores o conflictos. Puedes hacer esto utilizando el método `close()` después de terminar de leer los datos.
+
+```
+archivo.close()
+```
 
 ## Ver también
 
-- [Documentación de FileManager](https://developer.apple.com/documentation/foundation/filemanager)
-- [Tutorial de Swift: leer y escribir archivos](https://www.hackingwithswift.com/read/contents/contentsfilemanager)
+- [Apple Developer Documentation: FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+- [Apple Developer Documentation: String](https://developer.apple.com/documentation/swift/string)
+- [Swift.org: Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

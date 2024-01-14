@@ -1,58 +1,45 @@
 ---
 title:                "C++: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum Tests schreiben?
 
-Testen ist ein wesentlicher Bestandteil der Softwareentwicklung, da es sicherstellt, dass der Code korrekt und zuverlässig funktioniert. Durch das Schreiben von Tests können potenzielle Fehler erkannt und behoben werden, bevor die Software in die Produktion geht, was Zeit und Ressourcen sparen kann. Es ist daher wichtig, diese Praktik zu beherrschen und in jedes Softwareprojekt zu integrieren.
+Tests sind ein wichtiger Bestandteil des Softwareentwicklungsprozesses und haben viele Vorteile. Durch das Schreiben von Tests kann man sicherstellen, dass der Code korrekt funktioniert und Bugs frühzeitig erkannt werden. Außerdem ermöglichen Tests Entwicklern, Änderungen am Code vorzunehmen, ohne die Funktionalität der Software zu beeinträchtigen. Das spart Zeit und Ressourcen und sorgt für eine höhere Qualität des Codes. In diesem Blogbeitrag werden wir uns genauer mit dem Schreiben von Tests in C++ befassen.
 
-## Wie man Tests schreibt
+## Wie man Tests in C++ schreibt
 
-Das Schreiben von Tests kann mit Hilfe von Frameworks wie dem C++ Unit Test Framework oder dem Google Test Framework durchgeführt werden. Hier ist ein Beispiel für eine Testklasse, die mithilfe des Google Test Frameworks geschrieben wurde:
+Um Tests in C++ zu schreiben, benötigt man eine Test-Framework-Software wie zum Beispiel Google Test oder Catch2. Diese bieten Möglichkeiten, Tests zu erstellen und auszuführen. Hier ist ein einfaches Beispiel für einen Test mit Google Test:
 
 ```C++
 #include <gtest/gtest.h>
 
-// Definition der Testklasse
-class SampleTest : public ::testing::Test {
-protected:
-
-  // Vorbereitung von Testdaten oder Zuständen
-  void SetUp() override {}
-
-  // Aufraeumen nach dem Test
-  void TearDown() override {}
-};
-
-// Testfunktion
-TEST_F(SampleTest, TestErfolg) {
-  EXPECT_EQ(2 + 2, 4);
+TEST(Math, Addition) {
+  EXPECT_EQ(2+2, 4);
 }
 
-TEST_F(SampleTest, TestFehlschlag) {
-  EXPECT_EQ(2 + 2, 5);
-}
-
-// Start des Tests
-int main(int argc, char* argv[]) {
-  ::testing::InitGoogleTest(&argc, argv);
+int main(int argc, char** argv) {
+  testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }
 ```
 
-Das obige Beispiel zeigt die grundlegenden Strukturen von Unit Tests. Die Testklasse erbt von der Basisklasse "testing::Test" und hat Funktionen für die Testvorbereitung und das Aufräumen. Jede Testfunktion innerhalb der Klasse wird mit dem Makro "TEST_F" deklariert, gefolgt vom Namen der Klasse und dem Testnamen. Innerhalb der Testfunktion werden Assertions verwendet, um das erwartete Verhalten des Codes zu überprüfen. Wenn alle Tests erfolgreich sind, gibt der letzte Teil des Codes (die "main"-Funktion) eine "0" zurück und zeigt somit an, dass alle Tests erfolgreich waren.
+In diesem Beispiel testen wir die Addition von zwei Zahlen und erwarten, dass das Ergebnis 4 ist. Wenn der Test erfolgreich ist, wird "OK" ausgegeben, andernfalls wird eine Fehlermeldung angezeigt.
 
-## Tiefere Einblicke
+## Tieferer Einblick ins Schreiben von Tests
 
-Beim Schreiben von Tests gibt es verschiedene Konzepte und Techniken, die berücksichtigt werden sollten. Dazu gehören zum Beispiel die Verwendung von Test-Driven Development (TDD) und die Erstellung von "testbaren" Code. Darüber hinaus ist es wichtig, zu verstehen, wie man effektive Testfälle erstellt und wie man Fehlermeldungen interpretiert, um Fehler schnell und effizient zu beheben.
+Beim Schreiben von Tests ist es wichtig, verschiedene Testfälle zu berücksichtigen und sicherzustellen, dass alle möglichen Szenarien getestet werden. Außerdem sollten die Tests einfach verständlich und wartbar sein, damit sie von anderen Entwicklern leicht überprüft und aktualisiert werden können. Es ist auch ratsam, Tests automatisiert auszuführen, um sicherzustellen, dass sie bei jeder Änderung am Code durchgeführt werden und die Software immer korrekt bleibt.
+
+Eine wichtige Strategie beim Schreiben von Tests ist die "Red-Green-Refactor"-Methode. Zuerst schreibt man einen Test, der fehlschlägt (rot), dann schreibt man den Code, der den Test bestehen lässt (grün) und anschließend optimiert man den Code, um sicherzustellen, dass er effizient und gut strukturiert ist (Refaktor).
 
 ## Siehe auch
 
-- [C++ Unit Test Framework](https://github.com/cpp-testing/Catch2)
-- [Google Test Framework](https://github.com/google/googletest)
-- [Test-Driven Development (TDD)](https://de.wikipedia.org/wiki/Testgetriebene_Entwicklung)
+* [Google Test Dokumentation](https://github.com/google/googletest/blob/master/googletest/docs/)
+* [Catch2 Tutorial](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md)
+* [Effektive Tests schreiben in C++](https://accu.org/index.php/journals/2566)

@@ -1,7 +1,9 @@
 ---
-title:                "C#: Großschreibung eines Strings"
+title:                "C#: Großschreibung einer Zeichenkette"
+simple_title:         "Großschreibung einer Zeichenkette"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/capitalizing-a-string.md"
 ---
 
@@ -9,35 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man sich die Mühe machen, einen String in C# zu capitalisieren? Nun, es gibt viele Situationen, in denen man einen String in einer bestimmten Formatierung benötigt, sei es für die Benutzeroberfläche einer Anwendung oder für bestimmte Datenbank-Abfragen. Durch die Großschreibung kann man auch die Lesbarkeit und Verständlichkeit von Strings verbessern.
+In der Welt der Programmierung gibt es immer wieder Aufgaben, die anfangs scheinbar simpel und unkompliziert erscheinen, sich aber bei genauerem Hinsehen als komplex herausstellen. Eine dieser vermeintlich einfachen Aufgaben ist das Großschreiben eines Strings. Warum sollte man sich überhaupt die Mühe machen, einen String zu capitalisieren? Die Antwort ist einfach: um die Lesbarkeit und Übersichtlichkeit von Texten zu verbessern.
 
-## Wie
+## Wie geht das?
 
-Das Capitalizing eines Strings in C# ist relativ einfach. Man kann dafür entweder die char-Array Methode oder die String-Format Methode verwenden.
+In C# gibt es eine eingebaute Funktion, die das Großschreiben eines Strings übernimmt. Diese Funktion heißt "ToUpper" und wird in der folgenden Codezeile verwendet:
 
-### Char-Array Methode
-
-```
-string myString = "Hallo Welt";
-char[] charArray = myString.ToCharArray(); 
-charArray[0] = char.ToUpper(charArray[0]);
-myString = new string(charArray);
-Console.WriteLine(myString); //Output: "Hallo Welt"
+```C#
+string text = "hallo welt";
+string capitalizedText = text.ToUpper();
 ```
 
-### String-Format Methode
+Die Ausgabe des obigen Codes wäre "HALLO WELT". Wie man sieht, wandelt die Funktion "ToUpper" alle Buchstaben des Strings in Großbuchstaben um. Eine alternative Methode, um einen String zu capitalisieren, ist der Einsatz von Schleifen und bedingten Anweisungen. Hier ein Beispiel:
 
+```C#
+string text = "hallo welt";
+string capitalizedText = "";
+
+foreach (char c in text)
+{
+    if (Char.IsLower(c))
+    {
+        capitalizedText += char.ToUpper(c);
+    }
+    else
+    {
+        capitalizedText += c;
+    }
+}
+
+Console.WriteLine(capitalizedText);
 ```
-string myString = "Hallo Welt";
-myString = string.Format("{0}{1}", myString[0].ToString().ToUpper(), myString.Substring(1));
-Console.WriteLine(myString); //Output: "Hallo Welt"
-```
 
-## Deep Dive
+Dieses Beispiel nutzt die Methode "IsLower" aus der Klasse "Char", um zu überprüfen, ob ein Buchstabe kleingeschrieben ist. Ist dies der Fall, wird der Buchstabe in Großbuchstaben umgewandelt und der neuen Variable "capitalizedText" hinzugefügt. Ist der Buchstabe bereits großgeschrieben, wird er einfach übernommen. Die Ausgabe ist in beiden Fällen wieder "HALLO WELT".
 
-Bei genauerem Hinsehen lässt sich feststellen, dass der Code für das Capitalizing eines Strings manchmal auch von der Sprache der Anwendung abhängig sein kann. In manchen Sprachen unterscheiden sich die Groß- und Kleinschreibung von Buchstaben sehr stark und es kann komplexere Logik benötigt werden, um den String richtig zu capitalisieren. Auch innerhalb der verschiedenen .NET Frameworks gibt es Unterschiede, wie das Capitalizing funktioniert. Daher ist es wichtig, den Kontext zu berücksichtigen, in dem der String verwendet wird.
+## Tiefergehende Informationen
+
+Das Capitalisieren von Strings mag auf den ersten Blick einfach erscheinen, aber es gibt einige Dinge zu beachten. Zum Beispiel kann die Methode "ToUpper" nicht mit Akzenten oder besonderen Zeichen umgehen, wodurch diese verloren gehen würden. Auch die Verwendung von Unicode-Zeichen kann zu Problemen führen. Deshalb ist es wichtig, sich vorher genau zu überlegen, welche Methode für das Capitalisieren eines Strings am besten geeignet ist.
 
 ## Siehe auch
 
-- Wie man einen String in C# trimmt: https://www.c-sharpcorner.com/article/how-to-trim-a-string-in-c-sharp/
-- Die offizielle .NET Dokumentation zum String Capitalizing: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/capitalizing-a-string
+- [Microsoft Dokumentation zur Methode "ToUpper"](https://docs.microsoft.com/de-de/dotnet/api/system.string.toupper?view=net-5.0)
+- [C# Programmier-Tutorial auf Deutsch](https://csharpindepth.com/de/Articles)

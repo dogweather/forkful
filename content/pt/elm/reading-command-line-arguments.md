@@ -1,71 +1,70 @@
 ---
-title:                "Elm: Lendo argumentos da linha de comando."
+title:                "Elm: Lendo argumentos da linha de comando"
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos de linha de comando em Elm?
+# Por que ler argumentos da linha de comando em Elm?
 
-O Elm é uma linguagem de programação funcional pura e fortemente tipada, projetada para criar incríveis interfaces de usuário web. Muitas vezes, precisamos fazer com que nossos programas sejam interativos, permitindo que os usuários forneçam informações específicas ao executá-los. Para isso, é necessário ler argumentos da linha de comando. Nesta postagem, vamos discutir por que é importante saber como ler argumentos de linha de comando em Elm e como podemos fazer isso.
+Se você é um programador Elm, pode se perguntar por que precisaria ler argumentos da linha de comando. A verdade é que, às vezes, pode ser útil na criação de programas interativos ou para obter informações de entrada do usuário em uma aplicação web. Por isso, é importante saber como ler argumentos da linha de comando em Elm.
 
-## Como fazer?
+## Como fazer
 
-Em Elm, podemos ler argumentos de linha de comando usando o módulo `Platform.Cmd`. Ele contém a função `Cmd.map` que permite manipular comandos e definir uma função para lidar com os argumentos da linha de comando. Vamos ver um exemplo simples de como podemos ler argumentos da linha de comando e imprimir o primeiro argumento na tela.
+Em Elm, ler argumentos da linha de comando é bem simples. Tudo o que você precisa fazer é importar o módulo `Platform` e utilizar a função `Args.fromList`. Vamos ver um exemplo de código:
 
-```elm
-import Platform.Cmd exposing (Cmd)
-import Task exposing (..)
-import Task.Cmd exposing (Cmd, Program)
+```Elm
+import Platform
+import Html exposing (text)
 
-type Msg
-  = Argument String
-
-main : Program Never Model Msg
 main =
-  Platform.worker
+  Platform.program
     { init = init
     , update = update
     , subscriptions = subscriptions
+    , view = view
     }
 
-init : (Model, Cmd Msg)
-init =
-  ((), Cmd.map Argument Platform.Cmd.args)
+init flags =
+  let
+    args =
+      Args.fromList flags.arguments
+  in
+  ( Model args, Cmd.none )
 
-update : Msg -> Model -> (Model, Cmd Msg)
+type alias Model =
+  { args : Args.Arguments }
+
+type Msg
+  = NoOp
+
 update msg model =
   case msg of
-    Argument arg ->
-      (model, Task.attempt (always (Cmd.none)) (Task.succeed (Debug.log "Argumento: " arg)))
+    NoOp ->
+      ( model, Cmd.none )
 
-subscriptions : model -> Sub Msg
-subscriptions model =
+view model =
+  text ("Argumentos: " ++ toString model.args)
+
+subscriptions _ =
   Sub.none
 ```
 
-Quando executamos o programa acima com o seguinte comando na linha de comando:
+Neste exemplo, criamos uma aplicação basic que exibe os argumentos da linha de comando na tela utilizando a função `toString`. Para testar, você pode executar o comando `elm make Main.elm` no terminal e passar os argumentos desejados usando a flag `--`. Por exemplo, `elm make Main.elm -- --nome=fulano` irá exibir "Argumentos: nome=fulano" na tela.
 
-```
-elm reactor ./Main.elm --hello
-```
+## Aprofundando
 
-A saída será a seguinte:
+Ao utilizar a função `Args.fromList`, você pode passar uma lista de strings para criar um `Arguments`, que contém os argumentos da linha de comando. Além disso, também é possível acessar argumentos específicos utilizando a função `get` e passando o índice desejado. Por exemplo, `model.args.get 0` irá retornar o primeiro argumento passado.
 
-```
-Argumento: hello
-```
+Outra função útil é o `getWithDefault`, que permite definir um valor padrão caso o argumento não seja encontrado. Por exemplo, `model.args.getWithDefault "nome" "Anônimo"` irá retornar o valor do argumento "nome" ou "Anônimo" caso o argumento não exista.
 
-## Mergulho profundo
+A leitura de argumentos da linha de comando em Elm pode ser particularmente útil na construção de aplicações mais complexas, como jogos ou aplicativos de linha de comando. Com essa funcionalidade, é possível obter informações do usuário sem a necessidade de formulários ou outros meios de entrada.
 
-Além do exemplo simples dado acima, o módulo `Platform.Cmd` também oferece outras funções úteis para lidar com argumentos da linha de comando, como `Platform.Cmd2.map2` e `Platform.Cmd3.map3` para lidar com dois ou três argumentos, respectivamente. Também podemos usar o pacote `elm-community/elm-args-parser` para uma maneira mais avançada de analisar argumentos da linha de comando em Elm.
+# Veja também
 
-Além disso, é importante lembrar que as funções no módulo `Platform.Cmd` são puras, o que significa que elas não executam efeitos colaterais. Em vez disso, elas retornam um comando que será executado pelo mecanismo de efeito colateral do Elm. Portanto, é importante entender como os comandos funcionam e como eles se integram ao modelo de gerenciamento de estado do Elm.
-
-## Veja também
-
-- Documentação oficial do módulo `Platform.Cmd`: https://package.elm-lang.org/packages/elm/browser/latest/Platform-Cmd
-- Pacote `elm-community/elm-args-parser`: https://package.elm-lang.org/packages/elm-community/elm-args-parser/latest/
-- Documentação oficial sobre efeitos colaterais em Elm: https://guide.elm-lang.org/effects/
+- [Documentação do módulo Platform.Args](https://package.elm-lang.org/packages/elm/core/latest/Platform-Args)
+- [Tutorial sobre leitura de argumentos da linha de comando em Elm](https://medium.com/@dmorosinotto/reading-command-line-arguments-in-elm-622f1ba637e5)

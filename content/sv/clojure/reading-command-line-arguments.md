@@ -1,48 +1,41 @@
 ---
 title:                "Clojure: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
+Att kunna läsa kommandoradsargument är en värdefull färdighet för varje programmerare. Det ger dig möjlighet att interagera direkt med dina program på ett snabbt och effektivt sätt.
 
-Att läsa in kommandoradsargument är ett vanligt scenario när man bygger program som behöver ta emot användarinput. I denna bloggpost kommer vi att utforska hur man kan läsa in och hantera kommandoradsargument i Clojure.
-
-## Så här gör du
-
-För att läsa in kommandoradsargument i Clojure kan du använda funktionen `*command-line-args*`. Denna funktion returnerar en vektor av strängar som representerar de argument som skickats till programmet. Låt oss titta på ett exempel:
+##Hur man gör
+För att läsa kommandoradsargument i Clojure kan du använda funktionen `clojure.core/command-line-args`. Här är ett exempel på hur du kan använda den:
 
 ```Clojure
-(defn print-args []
-  (println "Antal argument:" (count *command-line-args*))
-  (println "Argument:" *command-line-args*))
-```
-Om vi kör denna funktion med argumenten "hej" och "världen" i terminalen:
-
-```
-clojure -m program hej världen
+(def args (command-line-args))
+(println "De givna argumenten var: " args)
 ```
 
-så kommer vi att få följande output:
+Om vi kör detta program med följande kommandoradsargument:
 
-```
-Antal argument: 2
-Argument: ["hej" "världen"]
-```
+`$ clojure args-test.clj argument1 argument2`
 
-Detta visar hur funktionen `*command-line-args*` returnerar en vektor med de inmatade argumenten. Nu kan du använda denna vektor för att dynamiskt behandla och använda argumenten i ditt program.
+Så kommer utmatningen att vara:
 
-## Uppforska djupare
+`De givna argumenten var: ["argument1" "argument2"]`
 
-Det finns många olika sätt att hantera kommandoradsargument i Clojure, och det är viktigt att utforska de olika möjligheterna för att hitta den bästa lösningen för ditt projekt. Du kan till exempel använda funktionen`clojure.string/split` för att dela upp argumenten eller använda bibliotek som `clj-argparser` för mer avancerad argumenthantering. Utforska och experimentera för att hitta den lösning som passar dig bäst.
+Som du kan se har variabeln `args` nu de givna argumenten som en lista. Du kan sedan använda dessa argument i ditt program för att exempelvis välja en specifik handling baserad på dem.
 
-## Se även
+##Djupdykning
+Det finns en mängd olika sätt att läsa kommandoradsargument i Clojure, och det beror på hur du vill hantera och använda dem i ditt program. En populär metod är att använda biblioteket `tools.cli`, vilket ger dig mer flexibilitet och möjlighet att definiera hur argumenten ska tolkas och användas.
 
-- [Clojure API-dokumentation för *command-line-args*](https://clojuredocs.org/clojure.core/*command-line-args*)
-- [Clj-argparser](https://github.com/zcaudate/clj-argparser)
-- [Officiell Clojure Tutorial](https://clojure.org/guides/getting_started)
+Det finns också möjlighet att använda `clojure.core/env` för att läsa in miljövariabler från kommandoraden.
 
-**Detta var allt för denna bloggpost! Hoppas det har varit användbart för dig när du arbetar med kommandoradsargument i Clojure. Lycka till!**
+##Se även
+- <https://clojuredocs.org/clojure.core/command-line-args>
+- <https://github.com/clojure/tools.cli>
+- <https://clojuredocs.org/clojure.core/env>

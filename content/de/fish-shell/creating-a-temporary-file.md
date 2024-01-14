@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Erstellen einer temporären Datei"
+simple_title:         "Erstellen einer temporären Datei"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/creating-a-temporary-file.md"
 ---
 
@@ -9,29 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Es gibt viele Gründe, warum Sie möglicherweise temporäre Dateien in Ihrer Fish Shell-Programmierung erstellen müssen. Eine häufige Verwendung ist beispielsweise das Speichern von Zwischenergebnissen, die während der Ausführung Ihres Skripts benötigt werden. Temporäre Dateien können auch dazu dienen, Platz auf Ihrer Festplatte zu sparen, da sie automatisch gelöscht werden, sobald sie nicht mehr benötigt werden.
+Das Erstellen von temporären Dateien ist oft eine nützliche Technik beim Programmieren. Zum Beispiel können temporäre Dateien verwendet werden, um Zwischenergebnisse zu speichern oder um Dateien für einen bestimmten Zweck zu erstellen, ohne den ursprünglichen Code zu ändern.
 
-## So geht's
+## Wie man eine temporäre Datei erstellt
 
-Um eine temporäre Datei in Fish Shell zu erstellen, können Sie den `mktemp` Befehl verwenden. Dieser Befehl generiert eine eindeutige, zufällig benannte Datei in Ihrem temporären Ordner. Sie können dann mit der Datei wie mit jeder anderen Datei arbeiten. Im folgenden Beispiel erstellen wir eine temporäre Datei, schreiben etwas Text in sie und geben den Inhalt aus:
+Das Erstellen einer temporären Datei ist mit Fish Shell sehr einfach. Verwende einfach den Befehl `mktemp` gefolgt von einem gewünschten Dateinamen oder Muster. Hier ist ein Beispiel:
 
+```Fish Shell
+mktemp temp_file_XXX.txt
 ```
-Fish Shell Code:
-set tempdatei (mktemp)
-echo "Hallo Welt!" > $tempdatei
-cat $tempdatei
 
-Ausgabe:
-Hallo Welt!
+Dieser Befehl wird eine temporäre Datei mit dem Namen "temp_file_XXX.txt" erstellen, wobei die XXX durch eine zufällige Zeichenfolge ersetzt werden. Du kannst auch ein bestimmtes Muster angeben, indem du das Zeichen "X" mit anderen Zeichen ersetzt. Zum Beispiel:
+
+```Fish Shell
+mktemp temp_file_XXXX.txt
 ```
-Wie Sie sehen können, können Sie auf die temporäre Datei mit der Variable `$tempdatei` zugreifen.
 
-## Tiefer Einblick
+Diese Methode wird eine temporäre Datei mit vier zufälligen Zeichen zwischen "temp_file_" und ".txt" erstellen.
 
-Wenn Sie genauer verstehen möchten, wie das Erstellen von temporären Dateien in Fish Shell funktioniert, können Sie sich die `mktemp` Dokumentation ansehen. Dort finden Sie detaillierte Informationen über die verschiedenen Optionen und Verwendungsmöglichkeiten dieses Befehls.
+## Tiefer eintauchen
+
+Das Erstellen einer temporären Datei mit Fish Shell ermöglicht es dir auch, verschiedene Optionen zu definieren, wie zum Beispiel das Erstellen einer temporären Verzeichnisstruktur oder das Ändern des Präfixes der zufälligen Zeichenfolge. Weitere Informationen findest du in der Fish Shell Dokumentation.
 
 ## Siehe auch
 
-- Fish Shell Dokumentation zu `mktemp`: https://fishshell.com/docs/current/index.html#command-mktemp
-- Weitere Möglichkeiten, temporäre Dateien in Fish Shell zu erstellen: https://fishshell.com/docs/current/commands.html#tempfile
-- Beispielprojekt für die Verwendung von temporären Dateien in Fish Shell: https://github.com/johndoe/fish-shell-tempfile-demo
+- Fish Shell Dokumentation: https://fishshell.com/docs/current/index.html
+- Einführung in die Programmierung mit Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Praktische Tipps und Tricks für Fish Shell: https://fishshell.com/docs/current/index.html#tips-and-tricks

@@ -1,74 +1,58 @@
 ---
 title:                "Swift: Utilizando expresiones regulares"
+simple_title:         "Utilizando expresiones regulares"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué utilizar Expresiones Regulares en Swift
+## Por qué usar expresiones regulares en Swift
 
-Las expresiones regulares son una herramienta útil en cualquier lenguaje de programación, incluyendo Swift. Te permiten buscar y manipular patrones de texto de manera eficiente, ahorrándote tiempo y esfuerzo en tareas repetitivas. Sigue leyendo para descubrir cómo utilizarlas en tus proyectos en Swift.
+Las expresiones regulares son una herramienta útil para trabajar con patrones de texto en Swift. Permiten buscar, reemplazar y extraer información específica dentro de un bloque de texto. En este artículo, exploraremos cómo usar expresiones regulares en Swift y profundizaremos en su funcionalidad.
 
-## Cómo utilizar Expresiones Regulares en Swift
+## Cómo usar expresiones regulares en Swift
 
-Para utilizar expresiones regulares en Swift, primero debes importar la librería `Foundation` en tu código.
+Para trabajar con expresiones regulares en Swift, necesitaremos importar el framework `Foundation`. Luego, podemos utilizar la clase `NSRegularExpression` para crear una expresión regular y el método `matches(in:options:range:)` para buscar coincidencias en un texto determinado.
+
+Veamos un ejemplo de código para buscar correos electrónicos en un texto:
 
 ```Swift
 import Foundation
+
+let texto = "¡Hola! Mi dirección de correo electrónico es ejemplo@email.com. ¿Cuál es la tuya?"
+let expresionRegular = try! NSRegularExpression(pattern: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}", options: .caseInsensitive)
+let coincidencias = expresionRegular.matches(in: texto, options: [], range: NSMakeRange(0, texto.utf16.count))
+
+print(coincidencias) // [16..<33]
 ```
 
-Luego, puedes crear una instancia de `NSRegularExpression`, pasando como parámetro la expresión regular que deseas utilizar.
+En este ejemplo, la expresión regular utilizada buscará un patrón de texto que sea parecido a una dirección de correo electrónico. La variable `coincidencias` nos devolverá un rango en el que se encuentra la coincidencia dentro del texto. En este caso, el rango es desde el índice 16 hasta el 33, lo que nos indica que encontró la dirección de correo electrónico en esa posición.
 
-```Swift
-let regex = try! NSRegularExpression(pattern: "[0-9]+")
-```
+Podemos utilizar este mismo método para buscar otros patrones de texto, como números de teléfono, direcciones, nombres, entre otros. Solo necesitaremos modificar la expresión regular para que coincida con el patrón deseado.
 
-En este ejemplo, estamos creando una expresión regular que busca cualquier cadena de números en un texto.
+## Profundizando en el uso de expresiones regulares en Swift
 
-Ahora, podemos utilizar este objeto `regex` para buscar coincidencias en una cadena de texto específica. Por ejemplo, si tenemos la siguiente cadena:
+Mientras más conocimiento tengamos sobre las expresiones regulares, más precisas y específicas podrán ser nuestras búsquedas. Algunos de los conceptos que debemos conocer para utilizar adecuadamente las expresiones regulares son:
 
-```Swift
-let text = "Hola, mi número de teléfono es 1234567890"
-```
+- **Caracteres comodín:** los comodines nos permiten buscar patrones de texto específicos. Por ejemplo, el punto (`.`) es un comodín que representa cualquier carácter, mientras que el asterisco (`*`) representa cero o más ocurrencias del carácter anterior.
+- **Grupos de caracteres:** los grupos de caracteres nos permiten definir un conjunto de caracteres que queremos buscar. Por ejemplo, `[a-z]` buscará cualquier carácter entre la `a` y la `z`.
+- **Cuantificadores:** los cuantificadores nos permiten especificar la cantidad de ocurrencias del patrón que queremos buscar. Por ejemplo, `{3}` buscará exactamente tres ocurrencias del patrón anterior.
+- **Modificadores:** los modificadores nos permiten especificar opciones adicionales para nuestra búsqueda, como ignorar mayúsculas y minúsculas o buscar en varias líneas.
 
-Podemos utilizar la función `matches(in:options:range:)` de nuestro objeto `regex` para buscar coincidencias en el rango de texto que queremos.
+Es importante aprender sobre estos y otros conceptos de expresiones regulares para poder utilizarlas de manera efectiva en nuestro código de Swift.
 
-```Swift
-let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
-```
+## Consulta estos recursos para aprender más sobre expresiones regulares en Swift
 
-En este caso, estamos buscando coincidencias en toda la cadena de texto `text`. La función nos devolverá un array de objetos `NSTextCheckingResult` que contienen información sobre las coincidencias encontradas.
+Si deseas profundizar aún más en el uso de expresiones regulares en Swift, te recomendamos consultar estos recursos:
 
-Por ejemplo, si queremos imprimir todas las coincidencias encontradas en la consola, podemos utilizar un bucle `for` para recorrer el array de coincidencias:
-
-```Swift
-for match in matches {
-    let matchRange = match.range
-    let matchString = (text as NSString).substring(with: matchRange)
-    print(matchString)
-}
-```
-
-En este caso, el output impreso en la consola sería:
-
-```
-1234567890
-```
-
-## Un vistazo más profundo a las Expresiones Regulares en Swift
-
-Existen varias funciones y métodos que puedes utilizar al trabajar con expresiones regulares en Swift. Por ejemplo, también puedes utilizar la función `numberOfMatches(in:options:range:)` para obtener el número de coincidencias encontradas en un rango de texto determinado.
-
-Además, puedes utilizar diversos caracteres especiales en tus expresiones regulares, como `^` para buscar coincidencias al inicio de una cadena, o `$` para buscar coincidencias al final.
-
-También puedes utilizar paréntesis para agrupar partes de tu expresión regular y utilizarlas en conjunto con otros caracteres especiales como `+` o `*`.
-
-Para profundizar más en el uso de expresiones regulares en Swift, te recomendamos revisar la documentación oficial de Apple sobre la clase `NSRegularExpression` y experimentar con diferentes patrones y cadenas de texto.
+- [Documentación oficial de Apple sobre expresiones regulares en Swift](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Tutorial de Ray Wenderlich sobre expresiones regulares en Swift](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial)
+- [Guía completa de expresiones regulares en Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID307)
 
 ## Ver también
 
-- [Documentación oficial de Swift sobre `NSRegularExpression`](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Tutorial de uso de expresiones regulares en Swift](https://www.raywenderlich.com/825807-swift-regular-expressions-tutorial-cheat-sheet)
-- [Cheat sheet con los caracteres especiales más comunes en expresiones regulares](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [Tutorial de Markdown para principiantes](https://www.makeuseof.com/tag/markdown-how-to-write-for-the-web/)
+- [Documentación oficial de Markdown](https://www.markdownguide.org/)

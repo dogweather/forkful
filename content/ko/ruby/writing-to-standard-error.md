@@ -1,47 +1,51 @@
 ---
-title:                "Ruby: 표준 에러에 쓰는 방법"
+title:                "Ruby: 표준 오류에 쓰는 방법"
+simple_title:         "표준 오류에 쓰는 방법"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜 ? 
+표준 오류를 쓰기 위해 노력하는 이유는 무엇인가요? 
 
-표준 오류에 쓰기에 참여하는 이유는 코드 디버깅과 에러 관리를 더욱 쉽고 효율적으로 하기 위해서입니다. 표준 오류는 프로그래밍에서 발생하는 에러 메시지들이 모여있는 곳이며, 이를 활용하면 프로그램의 동작을 더 잘 이해할 수 있습니다.
+표준 오류는 개발자에게 중요한 디버깅 정보를 제공하기 때문에, 디버깅 과정에서 유용합니다. 만약 코드가 예상대로 작동하지 않는다면, 표준 오류는 해당 문제를 진단하고 해결하는데 도움이 될 수 있습니다.
 
-## 어떻게
-
-코드에서 표준 오류에 쓰는 방법은 간단합니다. `puts` 메소드 대신 `warn` 메소드를 사용하여 코드를 작성하면 됩니다. 다음은 간단한 예제 코드와 그에 따른 출력 결과입니다.
-
+## 사용 방법
+표준 오류를 쓰는 방법은 간단합니다. `STDERR` 객체를 사용해서 오류 메시지를 출력하면 됩니다. 다음과 같은 예제 코드를 살펴보세요:
 ```Ruby
-# 예제 코드
-def divide(num1, num2)
-  if num2 == 0
-    warn "Cannot divide by zero"
-  else
-    puts "Result: #{num1 / num2}"
-  end
+def divide(x, y)
+    if y == 0
+        STDERR.puts "나누는 수는 0이 될 수 없습니다."
+        return nil
+    end
+    return x / y
 end
 
-# 호출
-divide(10, 2)
-divide(10, 0)
+puts divide(8, 2)
+puts divide(10, 0)
 ```
 
-```Shell
-# 출력 결과
-Result: 5
-Cannot divide by zero
+위의 코드는 `divide` 함수를 정의하고, 만약 나누는 수로 0이 들어온다면, 표준 오류를 사용하여 오류 메시지를 출력하는 예제입니다. 이 코드를 실행하면 다음과 같은 출력을 볼 수 있습니다:
 ```
+4
+나누는 수는 0이 될 수 없습니다.
+```
+첫 번째 줄에서는 정상적으로 나눗셈 결과가 출력되지만, 두 번째 줄에서는 `nil` 값을 반환하고 오류 메시지가 출력됩니다. 
 
-## 깊이 있는 탐구
+## 더 깊게 들어가기
+표준 오류를 쓰는 또 다른 방법으로 `raise` 키워드를 사용하는 것이 있습니다. `raise`는 오류를 일부로 발생시키는 것으로, 디버깅을 위해 코드에서 에러를 일으킬 때 유용합니다. 다음과 같이 사용할 수 있습니다:
+```Ruby
+num = 10
+if num > 5
+    raise "숫자가 너무 큽니다."
+end
+```
+위의 예제에서는 만약 `num` 변수에 할당된 값이 5보다 크면, `"숫자가 너무 큽니다."`라는 오류를 일으킵니다. 이렇게 하면 디버깅 과정에서 어떤 부분에서 문제가 발생하는지 쉽게 찾을 수 있습니다.
 
-표준 오류에 쓰는 것은 간단하지만, 실제로는 많은 기능을 가지고 있습니다. 예를 들어, `warn` 메소드는 에러 메시지 뿐만 아니라 경고 메시지도 출력할 수 있으며, `STDERR.puts`를 사용하면 한 줄씩 메시지를 출력할 수 있습니다. 또한 `STDERR.reopen`을 이용하여 표준 오류를 다른 파일로 바꿀 수도 있습니다.
-
-# 참고
-
-- [Ruby 문서: Kernel 모듈](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-warn)
-- [슈퍼에밈의 블로그: 모르면 죽는다?! Ruby 슈피처들의 10가지 "음모"에 대해서](https://blog.superepsilon.com/2014/06/20/consipiracy_ruby_10_things_for_survive/)
-- [마이크로소프트 개발자 블로그: STDOUT, STDERR, and sdtin (정복하기)](https://devblogs.microsoft.com/commandline/understanding-stdout-stderr-and-stdin/)
+## See Also
+- [Ruby의 표준 라이브러리 문서:실행 중 오류 발생시키기](https://ruby-doc.org/core-3.0.2/Kernel.html#method-i-raise)
+- [Debugging in Ruby](https://www.sitepoint.com/debugging-ruby-101/)

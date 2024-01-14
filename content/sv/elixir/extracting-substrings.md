@@ -1,42 +1,43 @@
 ---
-title:                "Elixir: Extrahering av substringar"
+title:                "Elixir: Extrahera substrängar"
+simple_title:         "Extrahera substrängar"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-I Elixir-programmering finns det många olika verktyg som kan hjälpa dig att hantera strängar på ett effektivt sätt. Ett av dessa verktyg är möjligheten att extrahera substrängar från en befintlig sträng. Genom att använda denna funktion kan du enkelt plocka ut specifika delar av en sträng och använda dem för dina egna ändamål.
+Att extrahera substrängar i Elixir kan vara användbart för att manipulera textsträngar eller jämföra dem med andra strängar. Det kan också hjälpa till att söka efter specifika mönster eller ord inuti en längre sträng.
 
-## Hur man gör det
+## Så här gör du
 
-Det finns två olika sätt att extrahera substrängar i Elixir. Det första sättet är att använda sig av funktionen `String.slice/3` som tar emot tre argument: den befintliga strängen, startindexet och slutindexet. Här är ett enkelt exempel på hur du skulle kunna använda denna funktion:
-
-```Elixir
-iex> String.slice("Hej världen!", 4, 10)
-"världen"
-```
-
-Som du kan se så returnerar funktionen en ny sträng som består av tecken från den ursprungliga strängen från och med startindexet till och med slutindexet.
-
-Det andra sättet att extrahera substrängar är genom att använda `String.slice/2` som bara tar emot två argument: den befintliga strängen och startindexet. I detta fall kommer funktionen att returnera alla tecken från startindexet till slutet av strängen.
+För att extrahera en substräng från en textsträng i Elixir kan du använda funktionen `String.slice/3` eller `String.substr/2`. Här är ett exempel på hur du kan använda dessa funktioner:
 
 ```Elixir
-iex> String.slice("Jag älskar Elixir!", 9)
-"Elixir!"
+textsträng = "Elixir är ett roligt programspråk!"
+
+String.slice(textsträng, 0, 6)
+#Output: "Elixir"
+
+String.substr(textsträng, 11, 6)
+#Output: "roligt"
 ```
 
-## Djupdykning
+Funktionen `String.slice/3` tar tre argument: textsträngen, startpositionen och längden på den önskade substrängen. Funktionen `String.substr/2` tar två argument: textsträngen och positionen där substrängen ska börja.
 
-En viktig sak att hålla i åtanke när du extraherar substrängar är vilket indexsystem som Elixir använder sig av. I Elixir börjar indexeringen av strängar alltid från 0 istället för 1. Detta betyder att i den första koden vi visade skulle "H" i "Hej världen" ha index 0, "e" skulle ha index 1 och så vidare.
+## Fördjupning
 
-Det är också värt att notera att båda funktionerna returnerar en ny sträng, vilket innebär att den ursprungliga strängen inte förändras. Detta är viktigt att komma ihåg om du vill använda substrängen för att modifiera den befintliga strängen.
+För att förstå hur dessa funktioner fungerar djupare är det viktigt att förstå skillnaden mellan `String`-modulen och `Binary`-modulen i Elixir. `String` representerar textsträngar medan `Binary` representerar binära data. En textsträng kan omvandlas till en binär datastruktur med hjälp av funktionen `to_string/1`.
+
+När substrängar extraheras från en binär datastruktur konverteras de automatiskt till textsträngar av Elixir. Detta kan leda till förvirring om man inte förstår skillnaden mellan `String` och `Binary`-modulerna. Därför är det viktigt att vara medveten om denna skillnad när du arbetar med substrängar i Elixir.
 
 ## Se också
 
-- [Elixir String-dokumentation](https://hexdocs.pm/elixir/String.html)
-- [Elixir String-moduler](https://elixir-lang.org/docs/master/String.html#content)
-- [Elixir String manipulation tutorials](https://elixirschool.com/en/lessons/basics/string/)
+- (Elixir - String)[https://hexdocs.pm/elixir/String.html]
+- (Elixir - Binary)[https://hexdocs.pm/elixir/Binary.html]
+- (Elixir School - Strings)[https://elixirschool.com/en/lessons/basics/basics/#strings]
+- (Elixir School - Binaries)[https://elixirschool.com/en/lessons/basics/basics/#binaries]

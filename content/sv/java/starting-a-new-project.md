@@ -1,46 +1,44 @@
 ---
 title:                "Java: Att börja ett nytt projekt"
+simple_title:         "Att börja ett nytt projekt"
 programming_language: "Java"
-category:             "Getting Started"
+category:             "Java"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Att starta ett nytt projekt kan verka överväldigande och kräva mycket arbete, men det kan också vara en spännande och givande utmaning. Genom att skapa ett nytt projekt kan du utveckla dina programmeringskunskaper och lära dig nya tekniker. Det är också ett bra sätt att utmana dig själv och sätta dina färdigheter på prov.
+Att starta ett nytt programmeringsprojekt kan vara ett spännande och utmanande äventyr. Genom att skapa något nytt kan du utveckla dina färdigheter, lösa problem och lära dig nya tekniker. Oavsett om du är en erfaren utvecklare eller en nybörjare, kan det vara givande att utmana dig själv och skapa något från grunden.
 
-## Så här gör du
+# Hur man gör
 
-För att starta ett nytt Java-projekt behöver du först installera Java Development Kit (JDK) på din dator. Sedan kan du använda en integrerad utvecklingsmiljö (IDE) för att skriva och köra dina Java-program. Ett av de mest populära IDE:erna är Eclipse, men det finns också andra alternativ som IntelliJ IDEA och NetBeans.
+Att starta ett nytt Java-projekt är inte så svårt som det kan verka. Det första steget är att installera en Java-utvecklingsmiljö på din dator. Det finns olika alternativ att välja mellan, såsom IntelliJ, Eclipse och NetBeans. Sedan kan du öppna en kodredigerare och börja skriva din kod.
 
-När du öppnar ditt IDE kan du börja med att skapa ett nytt Java-projekt. Du kommer att bli ombedd att ge projektet ett namn och välja en plats för det på din dator. När projektet är skapat kan du börja skriva din kod.
-
-Här är ett enkelt exempel på hur du kan skriva och köra en "Hello World!" -applikation i Java:
+Här är ett exempel på en enkel Java-kod, som skriver ut "Hej världen!" till terminalen:
 
 ```Java
-public class Main {
+public class HejVarlden {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println("Hej världen!");
     }
 }
 ```
 
-Detta enkla program kommer att skriva ut "Hello World!" i terminalen när det körs. Genom att experimentera med olika kodblock och syntax kan du lära dig mer om hur Java fungerar och utveckla din förmåga att skriva effektiv och läsbar kod.
+När du har skrivit din kod kan du kompilera den och köra den. Om allt går som det ska, kommer du att se "Hej världen!" som utskrift.
 
-## Djupdykning
+# Djupdykning
 
-Att starta ett nytt projekt är inte bara att skapa en fil och skriva kod. Det kräver också planering och organisation för att säkerställa att ditt projekt är strukturerat och lätt att underhålla.
+Att starta ett nytt projekt handlar inte bara om att skriva kod. Det är också viktigt att planera och organisera ditt projekt på ett strukturerat sätt. Det kan innebära att skapa en bra filstruktur, använda versionshanteringssystem som Git och skapa dokumentation för din kod.
 
-En viktig del av att starta ett nytt projekt är att välja en lämplig design och arkitektur. Det finns flera mönster och principer inom mjukvaruutveckling som kan hjälpa dig att bygga en robust och skalbar applikation. Till exempel kan du använda Model-View-Controller (MVC) -mönstret för att separera presentationen, logiken och datan i din applikation.
+Det är också viktigt att ha en bra förståelse för de olika koncepten och verktygen som du använder i ditt projekt. Du kan behöva lära dig mer om objektorienterad programmering, datastrukturer, felsökning och andra viktiga ämnen. Genom att göra en djupdykning i dessa områden kan du skapa ett starkare och mer hållbart projekt.
 
-Det är också viktigt att ha en välstrukturerad filstruktur och välja lämpliga paketnamn för dina klasser. Detta gör det enklare att navigera och hålla ordning på din kod.
+# Se även
 
-Slutligen är det alltid bra att använda versionshantering för ditt projekt för att spåra förändringar och möjliggöra samarbete med andra utvecklare.
+Här är några användbara länkar för att fördjupa dig mer i Java-programmering:
 
-## Se även
-
-- [Java Tutorials](https://www.java.com/en/java-tutorials/)
-- [IDE: Eller integrerad utvecklingsmiljö](https://www.jetbrains.com/sv-de/idea/)
-- [Versionshantering med Git](https://git-scm.com/)
+- [Java Tutorials](https://docs.oracle.com/javase/tutorial/)
+- [Java Docs](https://docs.oracle.com/javase/8/docs/)
+- [Codecademy Java kurs](https://www.codecademy.com/learn/learn-java)

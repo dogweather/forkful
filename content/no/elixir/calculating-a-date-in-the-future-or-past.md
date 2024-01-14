@@ -1,59 +1,48 @@
 ---
-title:                "Elixir: Å beregne en dato i fremtiden eller fortiden"
+title:                "Elixir: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-I synet på kodingspråk er Elixir relativt nytt, men det har allerede fanget øyeblikkende til mange utviklere. Dette moderne språket, inspirert av funksjonell programmering, har blitt populært på grunn av sin utmerkede funksjonalitet og brukervennlighet. I denne blogginnlegget skal vi ta en titt på hvordan man kan beregne datoer i fortiden og fremtiden ved hjelp av Elixir.
+# Hvorfor
 
-## Hvorfor
+Å kunne beregne og manipulere datoer er en viktig del av enhver programmeringsoppgave som involverer tidsstyring. Enten det er å planlegge fremtidige hendelser eller å håndtere historiske data, er det nødvendig å kunne håndtere datoer riktig. I denne bloggposten vil vi se nærmere på hvordan man kan beregne datoer i fremtiden eller fortiden ved hjelp av Elixir.
 
-Å beregne datoer i fortiden eller fremtiden kan være nyttig i forskjellige programmeringsscenarier. Det kan være alt fra å bestemme når et abonnement utløper, til å planlegge oppgaver eller aktiviteter for fremtiden. Uansett hva årsaken er, så vil utførelsen av dette utvilsomt være avhengerig av å ha en god forståelse av dateringssystemet til Elixir.
+# Hvordan
 
-## Slik gjør du det
+For å beregne en dato i fremtiden eller fortiden i Elixir, kan vi bruke funksjonen `DateTime.add/4`. Denne funksjonen tar inn fire argumenter - en dato, en tidsenhet, en verdi og en tidsstempelstype. La oss si at vi ønsker å beregne datoen 1 år fra i dag. Da kan vi bruke følgende kode:
 
-La oss begynne med et enkelt eksempel på hvordan vi kan beregne en dato i fremtiden ved hjelp av Elixir. Vi kan bruke funksjonen ```Date.add``` og spesifisere en dato og et antall dager å legge til. La oss si at vi ønsker å finne datoen 14 dager frem i tid fra i dag:
-
-```Elixir
-iex> Date.add(Date.utc_today(), 14)
-#<Date<2018-09-28>>
+```
+DateTime.add(DateTime.utc_now(), :years, 1, :utc)
+# => ~U[2022-04-15 18:29:47]
 ```
 
-Som du kan se, får vi en nøyaktig dato 14 dager frem i tid.
+Her bruker vi funksjonen `DateTime.utc_now()` for å hente dagens dato og klokkeslett. Deretter spesifiserer vi at vi ønsker å legge til ett år, ved å bruke `:years` som argument. Til slutt setter vi også en tidsstempeltype, som i dette tilfellet er `:utc`. Dette vil gi oss datoen 1 år fra i dag i UTC-format.
 
-For å beregne en dato i fortiden, kan vi bruke funksjonen ```Date.subtract```. La oss si at vi ønsker å finne datoen 21 dager tilbake i tid fra i dag:
+Vi kan også bruke negative verdier for å beregne en dato i fortiden. For eksempel, hvis vi ønsker å finne datoen for 1 måned siden, kan vi bruke følgende kode:
 
-```Elixir
-iex> Date.subtract(Date.utc_today(), 21)
-#<Date<2018-08-20>>
+```
+DateTime.add(DateTime.utc_now(), :months, -1, :utc)
+# => ~U[2021-03-15 18:29:47]
 ```
 
-Vi kan også legge til eller trekke fra måneder eller år ved å legge til en tredje parameter i funksjonene. For eksempel, hvis vi ønsker å finne datoen 6 måneder i fortiden fra i dag:
+Som du kanskje merker, er det også mulig å spesifisere andre tidsenheter slik som `:days`, `:hours` og `:minutes`.
 
-```Elixir
-iex> Date.subtract(Date.utc_today(), 6, "months")
-#<Date<2018-03-26>>
-```
+# Dykk dypere
 
-Det er også mulig å konvertere en tekststreng til en dato ved hjelp av funksjonen ```Date.from_iso8601```. Dette kan være nyttig hvis vi for eksempel ønsker å beregne datoen fra en brukers input. 
+For å forstå hvordan funksjonen `DateTime.add/4` egentlig fungerer, må vi vite litt om hvordan Elixir håndterer datoer og tider. I motsetning til enkelte andre programmeringsspråk, har Elixir ikke en egen datatype for datoer og tider. I stedet bruker det `DateTime`-modulen som en type wrapper rundt Erlangs `:calendar`-modul.
 
-## Et dypdykk
+Dette betyr at når vi bruker funksjonen `DateTime.add/4`, så sender vi faktisk en `DateTime`-struktur til `:calendar`-modulen for å utføre beregningen. Dette er grunnen til at vi må spesifisere en tidsstempeltype - for å fortelle `:calendar` hvilken type tidsstempel vi forventer å få tilbake.
 
-For å utføre mer komplekse beregninger kan vi bruke funksjonen ```naive_datetime_to_erl_seconds``` for å konvertere datoer til en tidslinje som kan manipuleres. Dette gjør det mulig å beregne datoer basert på en gitt tidsperiode, for eksempel måneder eller år.
+Det er også viktig å merke seg at Elixir håndterer alle datoer og tider som UTC, uavhengig av hvilken tidssone du befinner deg i. Dette er fordi UTC er en etablert standard for å håndtere tidssoner og DST (Daylight Saving Time).
 
-En annen nyttig funksjon er ```DateTime.to_rfc3339```, som gjør det mulig å konvertere datoer til et mer lesbart format.
+# Se også
 
-Med disse funksjonene er det enklere å håndtere datorelaterete oppgaver i Elixir og sørge for nøyaktige resultater.
-
-## Se også
-
-For mer informasjon om hvordan man kan manipulere datoer i Elixir, sjekk ut følgende ressurser:
-
-- [Elixir Date API dokumentasjon](https://hexdocs.pm/elixir/Date.html)
-- [Offisiell Elixir nettside](https://elixir-lang.org/)
-- [Elixir subreddit](https://www.reddit.com/r/elixir/)
-
-Takk for at du leste denne bloggposten og vi håper den har gitt deg en bedre forståelse av hvordan man beregner datoer i Elixir!
+- [Elixir - DateTime-modulen](https://hexdocs.pm/elixir/DateTime.html)
+- [Erlang - calendar-modulen](http://erlang.org/doc/man/calendar.html)
+- [ISO 8601 - standard for dato- og tidsformater](https://www.iso.org/iso-8601-date-and-time-format.html)

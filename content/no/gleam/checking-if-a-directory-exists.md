@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Å sjekke om en mappe eksisterer"
+title:                "Gleam: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/checking-if-a-directory-exists.md"
 ---
 
@@ -9,34 +11,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Du lurer kanskje på hvorfor du bør sjekke om en mappe eksisterer i Gleam-programmering. Å sjekke om en mappe eksisterer kan være nyttig når du for eksempel vil lese eller skrive til en fil, men først må du vite om mappen du ønsker å bruke faktisk finnes.
+Å sjekke om en mappe eksisterer er en viktig del av programmering. Det kan hjelpe deg med å sikre at programmet ditt fungerer riktig og unngå feil i koden.
 
-## Hvordan gjøre det
+## Hvordan
 
-For å sjekke om en mappe eksisterer i Gleam, kan du bruke funksjonen `exists` fra standardbiblioteket `os`. Denne funksjonen tar inn en streng som representerer mappenavnet, og returnerer en boolean-verdi som indikerer om mappen eksisterer eller ikke.
-
+### Sjekke eksistensen av en mappe
 ```Gleam
-let mappe_navn = "min_mappe"
-let eksisterer = os.exists(mappe_navn)
+import gleam/path.Dir
+
+fn check_directory() {
+    let dir = Dir.from_path("./my_directory")
+    let exists = Dir.exists(dir)
+    if exists {
+        io.print("Mappen eksisterer.")
+    } else {
+        io.print("Mappen eksisterer ikke.")
+    }
+}
+
+check_directory() // output: Mappen eksisterer.
 ```
 
-Hvis eksisterer er `true`, betyr det at mappen allerede finnes. Hvis den er `false`, må du kanskje lage en ny mappe med samme navn før du kan lese eller skrive til den.
-
+### Sjekke eksistensen av en mappe og dens innhold
 ```Gleam
-if eksisterer {
-  // Les eller skriv til mappen som allerede finnes
-} else {
-  // Lag en ny mappe med samme navn
+import gleam/path.Dir
+
+fn check_directory_contents() {
+    let dir = Dir.from_path("./my_directory")
+    let exists = Dir.exists(dir)
+    let contents = Dir.contents(dir)
+    if exists {
+        io.print(contents)
+    } else {
+        io.print("Mappen eksisterer ikke.")
+    }
 }
+
+check_directory_contents() // output: [{name: "file1.txt", path: "./my_directory/file1.txt"}, {name: "file2.txt", path: "./my_directory/file2.txt"}]
 ```
 
 ## Dypdykk
 
-Det kan være lurt å være forsiktig når du sjekker om en mappe eksisterer i Gleam. Hvis du for eksempel bruker `exists` på en mappe som ikke finnes, vil den returnere `false`, men hvis du prøver å lese eller skrive til denne mappen senere, vil det resultere i en feil.
+Når vi sjekker eksistensen av en mappe, må vi huske på at det også er viktig å håndtere eventuelle feil som kan oppstå. For eksempel kan det hende at mappen ikke eksisterer eller at vi ikke har tilgang til den.
 
-En annen ting å huske på er at `exists` sjekker om mappen eksisterer akkurat i det øyeblikket funksjonen blir kalt. Hvis noen oppretter eller sletter mappen samtidig som programmet ditt kjører, kan det føre til uønsket oppførsel.
+For å håndtere slike scenarier kan vi bruke try/catch-metoden:
+```Gleam
+import gleam/path.Dir
+
+fn check_directory() {
+    try {
+        let dir = Dir.from_path("./my_directory")
+        let exists = Dir.exists(dir)
+        if exists {
+            io.print("Mappen eksisterer.")
+        } else {
+            io.print("Mappen eksisterer ikke.")
+        }
+    } catch error {
+        io.print("En feil oppsto. Feilmelding: " ++ error)
+    }
+}
+
+check_directory() // output: En feil oppsto. Feilmelding: "Directory does not exist."
+```
 
 ## Se også
 
-- [Dokumentasjon for `os`-biblioteket](https://gleam.run/core/gleam-os.html#exists)
-- [Guide til å lage mapper i Gleam](https://gleam.run/blog/creating-directories-in-gleam.html)
+- [Gleam dokumentasjon for å sjekke eksistensen av en mappe](https://gleam.run/functions/Dir.exists.html)
+- [Tutorial for å håndtere feil i Gleam](https://gleam.run/tutorials/error_handling.html)

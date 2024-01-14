@@ -1,39 +1,38 @@
 ---
 title:                "Bash: Escrevendo para o erro padrão"
+simple_title:         "Escrevendo para o erro padrão"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão?
+# Por que escrever para o erro padrão no Bash
 
-Escrever para o erro padrão, também conhecido como stderr, é uma técnica importante na programação Bash. Quando um programa é executado, ele pode gerar mensagens de erro e aviso. Ao escrevê-las para o erro padrão, essas mensagens podem ser facilmente identificadas e tratadas pelo usuário.
+Se você já programou em Bash, provavelmente já se deparou com o uso do comando "echo" para imprimir mensagens na tela. No entanto, nem sempre queremos que essas mensagens sejam impressas no terminal padrão. É aqui que entra o uso de escrever para o erro padrão, permitindo que mensagens importantes sejam exibidas durante a execução do programa, mesmo se a saída padrão estiver sendo redirecionada ou suprimida.
 
-## Como fazer?
+## Como fazer
 
-Para escrever mensagens para o erro padrão em Bash, usamos o comando `>&2`, seguido pela mensagem que desejamos exibir. Por exemplo, no seguinte código, estamos tentando excluir um arquivo que não existe e escrevemos a mensagem de erro para o erro padrão:
-
-```Bash
-rm arquivo_que_nao_existe >&2
-```
-
-O usuário verá a seguinte saída:
+A forma mais comum de escrever para o erro padrão em Bash é utilizando o comando ">&2" após a mensagem que se deseja imprimir. Por exemplo, se quisermos imprimir uma mensagem de erro, podemos usar o seguinte código:
 
 ```Bash
-rm: não foi possível remover 'arquivo_que_nao_existe': Arquivo ou diretório não encontrado
+echo "Erro: o arquivo não pode ser encontrado!" >&2
 ```
 
-Podemos usar essa técnica para fornecer informações úteis ao usuário, como instruções para corrigir o erro, ou até mesmo informar sobre o status de execução do programa.
+Isso garantirá que a mensagem seja impressa no erro padrão, tornando-a mais visível e garantindo que o usuário a veja, independente da saída padrão.
 
-## Mergulho profundo
+## Deep Dive
 
-Quando escrevemos para o erro padrão, podemos especificar o número do descritor de arquivo para onde a mensagem será redirecionada. Por padrão, o descritor `2` é usado, mas podemos alterar isso para enviar a mensagem para outros locais. Isso é especialmente útil quando estamos lidando com a saída de diferentes comandos e queremos que as mensagens de erro sejam redirecionadas para locais específicos.
+Para entender melhor como funciona a escrita para o erro padrão no Bash, precisamos primeiro entender um pouco sobre os descritores de arquivo. Todo arquivo aberto em um sistema operacional possui um número exclusivo associado a ele, chamado de descritor de arquivo. O descritor de arquivo 1 é o padrão para a saída do terminal, enquanto o descritor de arquivo 2 é o padrão para o erro padrão.
 
-Outra dica importante é usar o comando `exit` em conjunto com o redirecionamento para o erro padrão. Ao receber uma mensagem de erro, podemos usar o comando `exit 1` para sair do programa imediatamente. Isso é útil porque geralmente queremos que o programa pare de ser executado se encontrarmos um erro.
+Ao usar o comando ">&2", estamos redirecionando a saída para o descritor de arquivo 2, ou seja, o erro padrão. Isso garante que a mensagem seja tratada como um erro pelo Bash e seja impressa no terminal, mesmo que a saída padrão esteja sendo redirecionada ou suprimida.
+
+Além disso, é importante lembrar que o Bash possui um comando "exec" que pode mudar os descritores de arquivo e permitir que a saída padrão seja redirecionada para o erro padrão e vice-versa. Isso pode ser útil em casos específicos, mas requer cuidado ao ser utilizado.
 
 ## Veja também
 
-- [Redirecionamento de saídas em Bash](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [Como e por que redirecionar saída de erros no Bash?](https://www.digitalocean.com/community/tutorials/how-and-why-to-redirect-stderr-and-stdout-in-bash)
+- Guia de redirecionamento de saída e erro em Bash: https://linuxhint.com/bash_output_redirection_guide/
+- Compreendendo o comando "exec" em Bash: https://www.shell-tips.com/bash/exec/
+- Documentação oficial do Bash (em português): https://www.gnu.org/software/bash/manual/html_node/index.html#Top

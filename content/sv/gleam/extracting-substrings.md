@@ -1,53 +1,48 @@
 ---
-title:                "Gleam: Extrahera delsträngar"
+title:                "Gleam: Extrahera subträngningar"
+simple_title:         "Extrahera subträngningar"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att extrahera delsträngar är en viktig del av programmering eftersom det låter oss ta en del av en större sträng och använda den separat. Det kan vara särskilt användbart när vi behöver söka, sortera eller manipulera data.
 
-## Så här gör du
-För att extrahera delsträngar i Gleam, kan vi använda funktionen `String.slice()`, som tar två argument - startindex och slutindex - och returnerar den del av strängen mellan de två indexen.
+Att extrahera delsträngar är en viktig del av programmering eftersom det låter dig manipulera och arbeta med text på ett mer effektivt sätt. Genom att bara välja de delar av en sträng som du behöver kan du spara tid och resurser i din kod.
 
-```Gleam
-// Skapa en sträng
-let namn = "Emilia Andersson"
+## Hur man gör det
 
-// Extrahera förnamnet
-let förnamn = String.slice(namn, 0, 6)
+För att extrahera en delsträng från en huvudsträng i Gleam, använder man funktionerna `String.slice` och `String.slice_unchecked`. Dessa funktioner tar emot tre parametrar: huvudsträngen, startpositionen och slutpositionen för den önskade delsträngen.
 
-// Extrahera efternamnet
-let efternamn = String.slice(namn, 7, 16)
+Exempelvis, om vi har en sträng "Hello World" och vill extrahera "World" från den, skulle vi använda `String.slice` och definiera startpositionen som 6 (index börjar från 0) och slutpositionen som 10. Kodexemplet nedan visar hur detta skulle se ut i Gleam:
 
-// Skriv ut resultatet
-IO.print("Förnamn: ".sperate(forname)) // "Emilia"
-IO.print("Efternamn: ".sperate(efternamn)) // "Andersson"
+```
+Gleam
+import String
+
+let huvudsträng: String = "Hello World"
+let delsträng: String = String.slice(huvudsträng, 6, 10)
+
+assert delsträng == "World"
 ```
 
-I det här exemplet har vi använt index för att extrahera för- och efternamn från en längre sträng. Det är viktigt att notera att indexet börjar på 0, så index 0-5 representerar förnamnet och index 7-15 representerar efternamnet.
+I detta exempel använder vi `assert` för att kontrollera att den extraherade delsträngen faktiskt är det vi förväntade oss.
 
 ## Djupdykning
-Förutom att använda `String.slice()` kan vi också använda andra metoder för att få önskade delsträngar. En sådan metod är `String.split()`, som låter oss dela upp en sträng baserat på ett visst tecken eller teckenföljd och returnera en lista med de olika delarna.
 
-```Gleam
-// Skapa en sträng
-let telefonnummer = "08-123-456"
+Det finns flera olika scenarier där man kan behöva extrahera delsträngar, och därför finns det flera olika sätt att använda funktionerna `String.slice` och `String.slice_unchecked`.
 
-// Dela upp strängen på "-"
-let delar = String.split(telnr, "-")
+Om du vet att huvudsträngen alltid kommer att ha en viss längd, kan du använda `String.slice_unchecked` för att undvika att programmet kraschar om positionerna är utanför huvudsträngen. Denna funktion är snabbare eftersom den inte behöver göra några säkerhetskontroller.
 
-// Skriv ut resultatet
-IO.print("Riktnummer: ".separate(delar[0])) // "08"
-IO.print("Första numrerna: ".separate(delar[1])) // "123"
-IO.print("Sista numrerna: ".separate(delar[2])) // "456"
-```
-
-Genom att använda `String.split()` kan vi enkelt extrahera delar av ett telefonnummer, även om vi inte vet hur många eller vilka tecken som används som skiljetecken.
+Om du vill extrahera en del av en sträng baserat på ett villkor, som t.ex. om strängen innehåller ett visst tecken eller ord, kan du använda funktionerna `String.contains` och `String.find` för att hitta positionen och sedan använda `String.slice` för att extrahera den önskade delsträngen.
 
 ## Se även
-- [Gleam Dokumentation om Extraktion av Substrängar](https://gleam.run/documentation/stdlib/string.html#slice)
-- [Gleam Dokumentation om Delning av Strängar](https://gleam.run/documentation/stdlib/string.html#split)
+
+Här är några användbara länkar för att lära dig mer om hur man extraherar delsträngar i Gleam:
+
+- [Gleams dokumentation om strängmanipulering](https://gleam.run/books/tutorial/text_manipulation.html)
+- [Officiell Gleam-läroplan](https://gleam.run/books/education/index.html)
+- [Kodexempel för strängmanipulering i Gleam](https://github.com/gleam-lang/gleam/blob/master/lib/std/string.gleam)

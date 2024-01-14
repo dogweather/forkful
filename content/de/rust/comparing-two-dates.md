@@ -1,60 +1,42 @@
 ---
-title:                "Rust: Vergleich zweier Daten"
+title:                "Rust: Vergleich von zwei Daten."
+simple_title:         "Vergleich von zwei Daten."
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+##Warum
 
-Die Vergleichung von zwei Daten mag auf den ersten Blick vielleicht nicht besonders aufregend klingen, aber es ist ein grundlegender Aspekt der Datumsmanipulation in der Programmierung. Ob Sie nun eine Kalenderfunktion für eine Anwendung erstellen oder Daten filtern möchten, die Verwendung von Vergleichsoperatoren für Daten ist unerlässlich. In diesem Blog-Beitrag werden wir uns ansehen, wie man in Rust zwei Daten vergleichen kann und warum dies von Bedeutung ist.
+In der Programmierung gibt es oft die Notwendigkeit, zwei Termine miteinander zu vergleichen. Sei es für die Organisation von Ereignissen oder die Überprüfung von gültigen Daten, das Vergleichen von Daten ist ein wichtiger Teil der Entwicklung. In Rust gibt es verschiedene Methoden, um zwei Termine zu vergleichen, und in diesem Blogpost schauen wir uns genauer an, wie dies gemacht werden kann.
 
-## Wie Geht Man Vor
+##Wie es geht
 
-Um zwei Daten in Rust zu vergleichen, werden wir die eingebauten Vergleichsoperatoren verwenden, wie zum Beispiel `==` (gleich), `!=` (ungleich), `<` (kleiner als), `>` (größer als), `<=` (kleiner oder gleich) und `>=` (größer oder gleich). Nehmen wir als Beispiel zwei Variablen mit Datumsangaben:
+In Rust können wir zwei Termine auf verschiedene Arten vergleichen. Eine davon ist die Verwendung der Bibliothek "chrono". Diese Bibliothek bietet eine Vielzahl von Funktionen und Methoden zum Arbeiten mit Datum und Zeit. Schauen wir uns ein einfaches Beispiel an, wie das Vergleichen von zwei Daten unter Verwendung dieser Bibliothek gemacht werden kann:
 
-```
-let date_1 = "2021-01-20";
-let date_2 = "2021-01-25";
-```
+```Rust 
+use chrono::{Utc, TimeZone};
 
-Um diese beiden Daten zu vergleichen, können wir die oben genannten Vergleichsoperatoren verwenden:
-
-```
-println!("Ist date_1 gleich date_2? {}", date_1 == date_2); // false
-println!("Ist date_1 ungleich date_2? {}", date_1 != date_2); // true
-println!("Ist date_1 größer als date_2? {}", date_1 > date_2); // false
-println!("Ist date_1 kleiner oder gleich date_2? {}", date_1 <= date_2); // true
+let date_1 = Utc.ymd(2021, 10, 1);
+let date_2 = Utc.ymd(2021, 9, 30);
+println!("{}", date_1 > date_2);
 ```
 
-Wie Sie sehen, können wir mit diesen einfachen Vergleichsoperatoren schnell und einfach zwei Daten vergleichen. Es ist wichtig zu beachten, dass die verwendeten Datumsformate übereinstimmen sollten, da es sonst zu unerwarteten Ergebnissen kommen kann.
+In diesem Beispiel importieren wir die "chrono" Bibliothek und erstellen dann zwei Termine, die wir vergleichen möchten. Wir verwenden die Funktion "Utc.ymd" und geben das Jahr, den Monat und den Tag an, um das Datum zu erstellen. Anschließend vergleichen wir die beiden Termine miteinander und geben das Ergebnis "true" oder "false" aus.
 
-## Tiefer Eintauchen
+Es gibt auch andere Bibliotheken, die ähnliche Funktionen zur Verfügung stellen, wie z.B. "time" oder "date_time". Es ist wichtig, die Dokumentation dieser Bibliotheken zu lesen, um herauszufinden, welche für Ihr Projekt am besten geeignet ist.
 
-Obwohl die oben genannten Vergleichsoperatoren gut geeignet sind, gibt es bestimmte Situationen, in denen eine tiefere Auseinandersetzung mit der Vergleichung von Daten erforderlich sein kann. Zum Beispiel kann es vorkommen, dass wir das Datum in ein bestimmtes Format konvertieren müssen, bevor wir es vergleichen können. Dafür können wir die in Rust eingebaute `DateTime`-Bibliothek verwenden. Hier ist ein Beispiel, wie wir ein Datum von einem String in ein `DateTime`-Objekt konvertieren können:
+##Tiefere Einblicke
 
-```
-use std::str::FromStr;
-use chrono::{DateTime, Utc, TimeZone};
+Beim Vergleichen von Daten ist es wichtig zu verstehen, welcher Datentyp verwendet wird. In Rust gibt es den Datentyp "DateTime", der sowohl Datum als auch Uhrzeit enthält und daher präziser ist als der Datentyp "Date". Beim Vergleichen von Datum und Uhrzeit ist es wichtig, die Zeitzone zu berücksichtigen, da sich diese je nach Ort und Anwendung unterscheiden kann.
 
-let date_1 = DateTime::from_str("2021-01-20 00:00:00").unwrap();
-let date_2 = DateTime::from_str("2021-01-25 00:00:00").unwrap();
-```
+Es gibt auch verschiedene Arten, wie zwei Termine miteinander verglichen werden können, z.B. ob das Datum der gleiche Tag, Monat oder Jahr ist, oder sogar die Differenz in Stunden oder Minuten. Es ist wichtig, die Anforderungen Ihres Projekts genau zu verstehen, um die beste Methode zum Vergleichen von Daten anzuwenden.
 
-Nun können wir diese beiden Daten mit den oben genannten Vergleichsoperatoren vergleichen, da sie beide im gleichen Format vorliegen. Allerdings müssen wir nun auch die Zeitzone berücksichtigen, da `DateTime` standardmäßig in UTC arbeitet. Hier ist ein Beispiel für den Vergleich unter Berücksichtigung der Zeitzone:
+##Siehe auch
 
-```
-let date_2_with_timezone = Utc.from_local_datetime(&date_2.naive_local()).unwrap();
-
-println!("Ist date_1 größer als date_2? {}", date_1 > date_2_with_timezone); // false
-```
-
-Nun erhalten wir das korrekte Ergebnis, da wir die Zeitzone berücksichtigt haben.
-
-# Siehe Auch
-
-- [Rust Dokumentation über Vergleichsoperatoren](https://doc.rust-lang.org/std/cmp/trait.PartialOrd.html)
-- [Chrono Dokumentation zur Datumsmanipulation in Rust](https://docs.rs/chrono/0.4.19/chrono/)
-- [Rust Playground zum Ausprobieren](https://play.rust-lang.org/)
+- [Die "chrono" Dokumentation](https://docs.rs/chrono/)
+- [Die "time" Bibliothek](https://docs.rs/time/)
+- [Die "date_time" Bibliothek](https://docs.rs/date_time/)

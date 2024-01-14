@@ -1,34 +1,43 @@
 ---
-title:                "Elixir: Skapa för standardfel"
+title:                "Elixir: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför skriva till standardfel i Elixir?
 
-Att skriva till standarderror är en viktig del av debugging i din Elixir-kod. Genom att skriva felmeddelanden till standarderror får du en bättre förståelse för vad som orsakar problem i din kod.
+Att skriva till standardfel i Elixir kan vara en användbar teknik för att felsöka dina program och förbättra användarupplevelsen. Genom att skriva till standardfel kan du fånga specifika felmeddelanden och logga dem för senare analys. Detta kan hjälpa dig att förbättra stabiliteten och tillförlitligheten hos dina program.
 
-## Hur man gör
+## Så här gör du
 
-För att skriva till standarderror i din Elixir-kod, använder du funktionen `IO.puts/2`. Det första argumentet är felmeddelandet du vill skriva och det andra argumentet är `:stderr`, som är en atom som talar om att du vill skriva till standarderror istället för standardoutput. Här är ett exempel på hur du skulle använda denna funktion:
+För att skriva till standardfel i Elixir behöver du använda modulen `Logger` och dess funktion `error/1`. Du kan sedan skicka in ditt felmeddelande som en sträng till denna funktion för att logga det till standardfel.
 
-```Elixir
-IO.puts("Detta är ett felmeddelande", :stderr)
+Här är ett exempel på hur du kan logga ett felmeddelande från en `try/catch`-block i ett Elixir-program:
+
+```elixir
+try do
+  # kod som kan orsaka fel
+catch
+  exception ->
+    Logger.error("Ett fel har inträffat: #{exception}")
+end
 ```
 
-Detta skulle skriva ut "Detta är ett felmeddelande" till standarderror.
+Detta kommer att skriva ut felmeddelandet till standardfel och du kan sedan använda detta för att söka efter problem och förbättra ditt program.
 
 ## Djupdykning
 
-När du skriver till standarderror, är det viktigt att ha i åtanke att ett felmeddelande bara är en bit av information för att hjälpa dig att felsöka din kod. Det är fortfarande ditt ansvar att analysera och förstå varför ett fel uppstår och hur man kan fixa det.
+Att skriva till standardfel i Elixir har flera fördelar. För det första kan du fånga specifika fel och använda dem för att förbättra dina program. Detta gör det också lättare att felsöka problem och hitta buggar i din kod. Dessutom kan du använda loggade felmeddelanden för att analysera prestanda och användarbeteende.
 
-Det kan också vara användbart att använda loggningsverktyget i Elixir, Logger, för att skriva till både standardoutput och standarderror, beroende på typen av information du vill ha. Du kan läsa mer om Logger i Elixirs dokumentation.
+En annan fördel med att skriva till standardfel är att det ger dig möjlighet att hantera fel på ett mer flexibelt sätt. Du kan till exempel ställa in loggningsnivån för dina felmeddelanden baserat på miljövariabler eller andra faktorer. Detta gör det möjligt att undvika att skriva ut känslig information till standardfel i produktion.
 
 ## Se även
 
-- [Elixir IO-documentation](https://hexdocs.pm/elixir/IO.html)
-- [Elixir Logger-dokumentation](https://hexdocs.pm/logger/Logger.html)
-- [Elixir-standardbiblioteket](https://hexdocs.pm/elixir/stdlib.html)
+- [Dokumentation för `Logger`-modulen i Elixir](https://hexdocs.pm/elixir/Logger.html)
+- [Elixir Programming Language](https://elixir-lang.org/)
+- [Officiellt Elixir Forum för diskussioner och frågor](https://elixirforum.com/)

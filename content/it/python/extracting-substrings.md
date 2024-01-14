@@ -1,7 +1,9 @@
 ---
 title:                "Python: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/extracting-substrings.md"
 ---
 
@@ -9,51 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se sei un programmatore Python, probabilmente hai familiarità con il concetto di stringhe, ovvero una sequenza di caratteri. Ma a volte può essere necessario estrarre una parte specifica di una stringa, chiamata sottosequenza o sottotesto. In questo articolo, esploreremo come eseguire questa operazione utilizzando il linguaggio di programmazione Python.
+Spesso quando programmiamo in Python, ci troviamo a lavorare con stringhe di testo diverse e dobbiamo svolgere delle operazioni su di esse. Una di queste operazioni comuni è l'estrazione di sottostringhe, ovvero una piccola parte di una stringa più grande. Anche se potrebbe sembrare una cosa semplice, l'estrazione delle sottostringhe può essere molto utile in diverse situazioni.
 
-## Come fare
+## Come Farlo
 
-Per estrarre una sottosequenza da una stringa in Python, possiamo utilizzare il "slicing" o l'indicizzazione delle stringhe. Slicing significa tagliare una parte di una stringa in base alla sua posizione nella sequenza. Ad esempio, se abbiamo una stringa "Python", possiamo estrarre la sottosequenza "yth" utilizzando `[1:4]`. Questo indicatore di posizione ci dice di iniziare dall'indice 1 (che rappresenta il carattere "y") e di terminare all'indice 4 (che rappresenta l'ultimo carattere "n" escluso).
+Per estrarre una sottostringa in Python, dobbiamo utilizzare il metodo ```.slice()```. Questo metodo accetta due parametri, il primo è l'indice iniziale della sottostringa e il secondo è l'indice finale. Vediamo un esempio di come utilizzare questo metodo per estrarre la sottostringa "mondo" dalla stringa "Ciao mondo!".
 
-Vediamo un esempio in codice:
+```Python
+stringa = "Ciao mondo!"
+sottostringa = stringa[5:10]
 
-```python
-stringa = "Python"
-sottosequenza = stringa[1:4]
-print(sottosequenza)
-
-# Output: yth
+print(sottostringa)
 ```
 
-Inoltre, possiamo anche specificare la lunghezza del passo di slicing, ovvero quanti elementi vengono saltati durante il processo di estrazione. Ad esempio, se vogliamo estrarre ogni secondo carattere della stringa "Python", possiamo usare `[::2]` come segue:
+Output: mondo
 
-```python
-stringa = "Python"
-sottosequenza = stringa[::2]
-print(sottosequenza)
+Nell'esempio sopra, abbiamo utilizzato gli indici 5 e 10 per indicare rispettivamente l'inizio e la fine della sottostringa "mondo". Possiamo anche utilizzare numeri negativi per gli indici, in modo che possiamo indicare la sottostringa dall'ultima lettera della stringa. Ad esempio, se vogliamo estrarre la sottostringa "mondo" dalla fine della stringa sopra, possiamo scrivere:
 
-# Output: Pto
+```Python
+stringa = "Ciao mondo!"
+sottostringa = stringa[-5:-1]
+
+print(sottostringa)
 ```
 
-Oltre all'utilizzo di uno slicing manuale, Python ci offre anche il metodo `slice()` che possiamo utilizzare per creare un oggetto di slice e applicarlo alla nostra stringa. Esempio:
+Output: mondo
 
-```python
-stringa = "Python"
-oggetto_slice = slice(1, 4) # Uguale a [1:4]
-sottosequenza = stringa[oggetto_slice]
-print(sottosequenza)
+Oltre all'utilizzo di indici per estrarre sottostringhe, possiamo anche utilizzare il metodo ```.split()``` per dividere una stringa in una lista di sottostringhe utilizzando un delimitatore specificato. Ad esempio, se vogliamo dividere la stringa "Ciao mondo!" in due sottostringhe utilizzando lo spazio come delimitatore, possiamo scrivere:
 
-# Output: yth
+```Python
+stringa = "Ciao mondo!"
+sottostringhe = stringa.split(" ")
+
+print(sottostringhe)
 ```
+
+Output: ["Ciao", "mondo!"]
 
 ## Approfondimento
 
-Ora che abbiamo capito come estrarre le sottosequenze dalle stringhe, vediamo alcune applicazioni pratiche. Ad esempio, possiamo utilizzare questo concetto per rimuovere i caratteri non desiderati da una stringa. Invece di utilizzare il metodo `replace()` che sostituisce i caratteri specificati con una stringa vuota, possiamo usare il slicing per rimuovere una porzione di caratteri.
+Oltre ai metodi sopra descritti, esistono anche altre funzioni utili per l'estrazione di sottostringhe in Python. Una di queste è il metodo ```.find()```, che ci permette di trovare la posizione di una sottostringa all'interno di una stringa. Vediamo un esempio di utilizzo:
 
-Oltre a ciò, possiamo anche utilizzare il slicing per verificare se una stringa è palindroma. Un palindromo è una parola o una frase che si legge uguale da sinistra a destra e da destra a sinistra. Ad esempio, "radar" è un palindromo. Utilizzando il slicing, possiamo confrontare la stringa originale con la sua versione invertita e verificare se sono uguali.
+```Python
+stringa = "Ciao mondo!"
+posizione = stringa.find("mondo")
 
-## Vedi anche
+print(posizione)
+```
 
-- [Documentazione ufficiale di Python su slicing](https://docs.python.org/3/library/functions.html#slice)
-- [Esempi di slicing in Python](https://www.programiz.com/python-programming/methods/string/slice) 
-- [Tutorial su come invertire una stringa in Python utilizzando slicing](https://www.askpython.com/python/string/reverse-string-python-using-slice)
+Output: 5
+
+Inoltre, possiamo utilizzare anche le espressioni regolari con il modulo ```re``` per trovare estrarre sottostringhe in base a un modello specificato.
+
+## Vedi Anche
+
+- Documentazione ufficiale di Python sull'estrazione di sottostringhe: https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+- Tutorial su come utilizzare le espressioni regolari in Python: https://realpython.com/regex-python/
+- Un'utile guida su come utilizzare gli indici per manipolare stringhe in Python: https://www.digitalocean.com/community/tutorials/how-to-index-and-slice-strings-in-python-3-it

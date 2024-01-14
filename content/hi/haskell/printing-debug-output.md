@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: डिबग आउटपुट प्रिंट करना"
+title:                "Haskell: प्रिंटिंग डीबग आउटपुट"
+simple_title:         "प्रिंटिंग डीबग आउटपुट"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/printing-debug-output.md"
 ---
 
@@ -9,31 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-कोडिंग में डीबग आउटपुट को प्रिंट करने का काम काफी महत्वपूर्ण है। यह आपको अपने कोड को समझने और समस्याओं को सुलझाने में मदद कर सकता है। 
+डिबग आउटपुट प्रिंट करना हमारे ऐप्लिकेशन को डिबग करने का एक आसान तरीका है। यह हमेशा मददगार होता है जब हमें कोड में गड़बड़ी का पता लगाना होता है। डिबग आउटपुट हमें बेहतर समझने और ठीक करने में मदद करता है। 
 
 ## कैसे करें
 
-हैस्केल में डीबग आउटपुट प्रिंट करने के लिए, आप निम्न उदाहरण द्वारा इसको कैसे करें जान सकते हैं:
-
 ```Haskell
+-- यह उदाहरण आपको संख्याओं को जोड़ने का कोड दिखाता है
+main :: IO ()
 main = do
-  putStrLn "Hello, world!"
-  putStrLn "Debug output: 123"
+  let x = 5
+  let y = 10
+  putStrLn("x का मान:" ++ show x)
+  putStrLn("y का मान:" ++ show y)
+  putStrLn("जोड़:" ++ show (x + y))
 ```
 
-इसका आउटपुट निम्न प्रकार होगा:
 ```
-Hello, world!
-Debug output: 123
+x का मान: 5
+y का मान: 10
+जोड़: 15
 ```
 
-## गहराई में जाएं
+उपरोक्त उदाहरण में, हमने आउटपुट में विभिन्न संख्याओं का मान प्रिंट किया है जो हमने अपने प्रोग्राम में डिबग करने के लिए उपयोग किया है। हमने `show` फंक्शन का उपयोग करके हमारे मानों को स्ट्रिंग में रूपांतरित किया है जिससे हम उसे `putStrLn` फंक्शन के साथ उपयोग कर सकें। 
 
-डीबग आउटपुट प्रिंट करने के लिए आप सीधे `putStrLn` का उपयोग कर सकते हैं या फिर स्ट्रिंग संयोजन के माध्यम से इसे भी कर सकते हैं। आप संदर्भ के रूप में अपने स्किलेल और डीबग आउटपुट के स्तर के अनुसार उपयोग कर सकते हैं। 
+## गहराई से जाएं
+
+डिबग आउटपुट का उपयोग करना कोड में समस्याओं का पता लगाने के लिए बहुत ही उपयोगी होता है। यह हमें अपने कोड को समझने के लिए मदद करता है और सही समाधान प्राप्त करने में मदद करता है। डिबग आउटपुट का उपयोग करना आसान है और हमेशा एक बेहतर सुराग देता है। 
 
 ## देखें भी
 
-- [Haskell में फंक्शन्स को परीक्षण कैसे करें](https://www.haskelltutorials.in/haskell-tutorial/debugging-functions-testing-in-haskell)
-- [Haskell में गार्ड और गार्ड्स कैसे काम करते हैं](https://www.haskelltutorials.in/haskell-tutorial/guards-and-guards-in-haskell)
-- [Haskell के ऑनलाइन कोड कंपाइलर का उपयोग कैसे करें](https://www.haskelltutorials.in/haskell-tutorial/using-online-code-compiler-in-haskell)
-- [Haskell के बेसिकस क्या होते हैं](https://www.haskelltutorials.in/haskell-tutorial/what-are-basics-in-haskell)
+- [Haskell के साथ मज़ेदार कोडिंग के टिप्स](https://www.geeksforgeeks.org/tips-for-fast-coding-with-haskell/)
+- [Haskell डिबगिंग की पूरी गाइड](https://dev.to/hansus/haskell-debugging-the-complete-guide-53ef)

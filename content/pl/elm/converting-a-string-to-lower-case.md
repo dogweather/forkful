@@ -1,48 +1,53 @@
 ---
 title:                "Elm: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-### Dlaczego
+## Dlaczego
 
-Programowanie funkcyjne jest jednym z najbardziej popularnych podejść do pisania kodu w dzisiejszych czasach i Elm jest jednym z najciekawszych języków funkcyjnych na rynku. Konwersja ciągu znaków na małe litery jest jednym z podstawowych zadań, które mogą być użyteczne w wielu różnych aplikacjach. W tym artykule przyjrzymy się, jak to zrobić w Elm.
+Konwersja tekstu na małe litery może być bardzo przydatna w wielu przypadkach, na przykład w filtracji i sortowaniu danych, porównywaniu ciągów znaków, czy w procesie walidacji danych. W tym blogu dowiesz się jak w prosty sposób przekonwertować dowolny ciąg znaków na małe litery w języku Elm.
 
-### Jak to zrobić
+## Jak to zrobić
 
-```Elm
--- Kod przybliżony, jako że zależny od źródła danych!
+Do konwertowania tekstu na małe litery w Elmie używamy wbudowanej funkcji `String.toLower`, która przyjmuje jako argument ciąg znaków i zwraca nowy ciąg znaków w formacie małych liter.
 
-import Html exposing (text)
+```elm
+import String exposing (toLower)
 
-inputText : String
-inputText = "ELM JEST ZAJEBISTY!"
+name = "JAN"
+lowerCaseName = toLower name
 
-outputText : String
-outputText =
-    String.toLower inputText
-
-main =
-    text outputText
+-- Output
+lowerCaseName = "jan"
 ```
 
-```Elm
--- Output: elm jest zajebisty!
+Funkcja `toLower` jest bardzo prosta w użyciu i idealnie sprawdza się w większości przypadków. Możemy ją również wykorzystać do konwertowania ciągów znaków pobieranych z pola input w formularzach oraz do pracy z danymi pobieranymi z zewnętrznych źródeł.
+
+## Deep Dive
+
+W niektórych przypadkach konwertowanie tekstu na małe litery może wymagać więcej uwagi. Na przykład, w języku polskim niektóre znaki diakrytyczne takie jak "ą" czy "ó" nie mają swoich odpowiedników w formacie małych liter. Dlatego w celu poprawnej konwersji tekstu zawierającego takie znaki, musimy najpierw wykorzystać funkcję `toLower` a następnie zastosować funkcję `String.normalize` aby zamienić polskie znaki na ich odpowiedniki w formacie małych liter.
+
+```elm
+import String exposing (toLower, normalize)
+
+name = "Łukasz"
+lowerCaseName = toLower name
+normalizedName = normalize lowerCaseName
+
+-- Output
+normalizedName = "łukasz"
 ```
 
-W powyższym przykładzie, za pomocą funkcji `toLower` z pakietu `String`, przekształcamy string "ELM JEST ZAJEBISTY!" na "elm jest zajebisty!". Funkcja ta jest bardzo prosta do użycia i nie wymaga dodatkowych argumentów. Można ją zastosować w różnych kontekstach, na przykład do przetwarzania danych wejściowych od użytkownika lub do formatowania tekstu w aplikacji.
+Zazwyczaj jednak nie musimy się martwić o ten szczegół, ponieważ najczęściej używane znaki diakrytyczne w języku polskim są obsługiwane przez funkcję `toLower`.
 
-### Głębsze zagadnienia
+## Zobacz również
 
-Konwersja ciągu znaków na małe litery w Elm jest możliwa dzięki temu, że jest to język silnie typowany. Komunikacja z użytkownikiem odbywa się przez model, a nie przez bezpośrednie modyfikacje DOM. Dzięki temu, operacje na stringach stają się bezpieczniejsze i łatwiejsze. Co więcej, Elm umożliwia nam wykorzystanie najlepszych praktyk funkcjonalnego programowania, co czyni kod bardziej czytelnym i skalowalnym.
-
-### Zobacz również:
-
-- https://guide.elm-lang.org/effects/random.html
-- https://www.elm-tutorial.org/pl/
-- http://onlinekeystore.net/blogList?language=Elm&blogid=8901
-
-Dzięki tym linkom będziecie mogli zapoznać się z innymi przydatnymi funkcjami Elm oraz poszerzyć swoją wiedzę na temat tego ciekawego języka. Mam nadzieję, że ten artykuł był dla was pomocny i zachęcił was do dalszej eksploracji Elm. Do zobaczenia!
+- Dokumentacja Elm: [String.toLower](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+- Dokumentacja Elm: [String.normalize](https://package.elm-lang.org/packages/elm/core/latest/String#normalize)
+- Poradnik Elm po polsku: [Programowanie funkcyjne w Elmie](https://programowanie.elm.pl/)

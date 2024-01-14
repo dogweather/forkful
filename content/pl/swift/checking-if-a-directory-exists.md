@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Sprawdzanie, czy istnieje katalog"
+title:                "Swift: Sprawdzanie czy istnieje katalog"
+simple_title:         "Sprawdzanie czy istnieje katalog"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/checking-if-a-directory-exists.md"
 ---
 
@@ -9,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Sprawdzenie, czy katalog istnieje, jest niezbędnym krokiem w wielu projektach programistycznych. Może to pomóc w uniknięciu błędów, które mogą wystąpić, gdy próbujemy korzystać z nieistniejącego katalogu. W tym wpisie dowiesz się, dlaczego warto znać ten podstawowy krok w programowaniu w języku Swift.
+Sprawdzanie istnienia katalogu może być ważnym elementem w procesie programowania aplikacji. Pozwala to na dynamiczne dostosowywanie działań w zależności od obecności lub braku określonego katalogu. Jest to szczególnie przydatne, gdy aplikacja ma dużo plików i katalogów, a programista chce zapewnić, że wszystko działa poprawnie.
 
 ## Jak to zrobić
 
-Aby sprawdzić, czy dany katalog istnieje, możesz użyć metody "fileExists" na obiekcie FileManager. Przykładowy kod wyglądałby następująco:
+Aby sprawdzić czy katalog istnieje, można skorzystać z metody `FileManager.default.fileExists(atPath: )`. Poniżej znajduje się przykładowy kod, który pokazuje jak można wykorzystać tę metodę:
 
 ```Swift
 let fileManager = FileManager.default
-let directoryURL = URL(fileURLWithPath: "/Users/janek/Desktop") // podaj ścieżkę do katalogu, który chcesz sprawdzić
+let path = "/Users/John/Documents/Projects"
 var isDirectory: ObjCBool = false
 
-if fileManager.fileExists(atPath: directoryURL.path, isDirectory: &isDirectory) {
+if fileManager.fileExists(atPath: path, isDirectory: &isDirectory) {
     if isDirectory.boolValue {
-        print("Katalog istnieje")
+        print("Katalog istnieje.")
     } else {
-        print("To nie jest katalog")
+        print("To nie jest katalog.")
     }
 } else {
-    print("Katalog nie istnieje")
+    print("Katalog nie istnieje.")
 }
 ```
 
-Wywołanie tej metody zwraca wartość logiczną, która informuje nas o tym, czy katalog istnieje. Możemy także użyć parametru "isDirectory", aby sprawdzić, czy dana ścieżka jest faktycznie katalogiem czy też plikiem.
+Powyższy kod sprawdzi czy w podanym ścieżce znajduje się istniejący katalog i w zależności od tego wyświetli odpowiedni komunikat. Warto również zwrócić uwagę na wykorzystanie zmiennej `isDirectory` typu `ObjCBool`, która pozwala na rozróżnienie między plikiem a katalogiem.
 
-## Głębsze zagłębienie
+## Wnikliwa analiza
 
-Sprawdzanie, czy katalog istnieje, może być także pomocne w procesie tworzenia aplikacji, które wymagają dostępu do określonych katalogów. Na przykład, jeśli tworzysz aplikację do przechowywania zdjęć, musisz mieć dostęp do katalogu zdjęć użytkownika. Dzięki wykorzystaniu metody "fileExists", możesz upewnić się, że aplikacja jest w stanie odnaleźć i uzyskać dostęp do tego katalogu.
+Metoda `fileExists(atPath: )` wykorzystuje podstawową klasę `FileManager`, która jest odpowiedzialna za zarządzanie plikami i katalogami w systemie. W przypadku sprawdzania istnienia katalogu, metoda ta przekazuje informacje o tym, czy w podanej ścieżce znajduje się katalog czy nie, poprzez argument `isDirectory` typu `ObjCBool`. Dodatkowo, jeśli jest to katalog, można użyć innych metod z tej klasy do dalszego wykonywania operacji na nim.
 
-Inną przydatną metodą związaną z tym tematem jest "createDirectory", która pozwala na tworzenie nowych katalogów w wybranym miejscu. Jest to szczególnie użyteczne, jeśli musisz stworzyć nowy katalog dla swojej aplikacji lub zapisać dane użytkownika w wybranym katalogu.
+## Zobacz również
 
-## Zobacz też
+Jeśli chcesz dowiedzieć się więcej o wykorzystywaniu klas i metod w języku Swift, zapoznaj się z następującymi linkami:
 
-- [Dokumentacja Apple na temat zarządzania plikami](https://developer.apple.com/documentation/foundation/file_management)
-- [Przykładowy projekt z wykorzystaniem operacji na plikach w języku Swift](https://github.com/marekuliasz/FileManagerExample)
+- [Dokumentacja oficjalna języka Swift](https://docs.swift.org/swift-book/)
+- [Udemy - Szybkie wprowadzenie do programowania w języku Swift](https://www.udemy.com/course/szybkie-wprowadzenie-do-programowania-w-jezyku-swift/)
+- [Książka "Swift 5 - zbiór przepisów"](https://helion.pl/ksiazki/swift-5-zbior-przepisow-poznaj-tajniki-jezyka-swift-marcin-krzyzanowski,dswfif.htm)

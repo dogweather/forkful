@@ -1,46 +1,48 @@
 ---
 title:                "PHP: Söka och ersätta text"
+simple_title:         "Söka och ersätta text"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att söka och ersätta text är en grundläggande uppgift inom programmering, oavsett vilket språk du arbetar med. Genom att använda en kombination av sök- och ersättningsfunktioner kan du effektivt bearbeta stora mängder text för att uppnå önskat resultat.
+
+Att söka och ersätta text är en vanlig uppgift inom programmering och kan vara till nytta för många olika ändamål. Det kan inkludera att byta ut felaktig eller föråldrad information, formatera text på ett enhetligt sätt eller göra omfattande ändringar i en stor textmängd.
 
 ## Hur man gör det
-Att söka och ersätta text i PHP är enkelt och det finns flera olika sätt att göra det på. Det vanligaste sättet är genom att använda str_replace() funktionen. Här är ett exempel:
+
+Det finns flera sätt att söka och ersätta text i PHP, men en av de enklaste metoderna är att använda en inbyggd funktion som heter `str_replace()`. Den tar tre parametrar: sökordet som ska ersättas, det nya ordet som ska sättas in samt texten som ska ändras.
 
 ```PHP
-$str = "Hej, jag heter Johan.";
-echo str_replace("Johan", "Lisa", $str);
+$text = "Hej världen!";
+$ny_text = str_replace("världen", "världen av programmering", $text);
+echo $ny_text;
 ```
 
-Output:
+Koden ovan kommer att ge följande utmatning: `Hej världen av programmering!` Ett annat sätt är att använda reguljära uttryck, vilket ger mer flexibilitet och möjlighet att söka efter mönster istället för en specifik textsträng.
 
-Hej, jag heter Lisa.
+```PHP
+$text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+$ny_text = preg_replace("/[a-z]/", "X", $text);
+echo $ny_text;
+```
 
-Förutom str_replace() finns det också andra funktioner som kan användas för att söka och ersätta text, till exempel preg_replace() för att använda reguljära uttryck.
+Koden ovan kommer att ersätta alla små bokstäver i texten med stora bokstäver, vilket ger följande utmatning: `XXXXXX XXXXX XXXXX XXX XXXXXXXXXXXXXX XXXXXXXXXXX XXXXX.` Det finns även andra funktioner som `str_ireplace()` som är antingen skiftlägeskänslig eller inte, beroende på behovet.
 
 ## Djupdykning
-Om du vill ha mer kontroll över sök- och ersättningsprocessen kan du använda en mer komplex funktion som substr_replace(). Denna funktion låter dig ange en specifik del av texten som ska ersättas, istället för hela strängen. Här är ett exempel som använder substr_replace() för att ersätta det andra ordet i en sträng:
+
+Att söka och ersätta text innebär inte bara byte av ord, utan kan också användas för att manipulera och hantera text på olika sätt. Det kan inkludera att ta bort eller lägga till tecken, använda reguljära uttryck för att söka efter mönster eller till och med utföra flera ersättningar i en text på samma gång.
+
+En annan användbar funktion är `strtr()`, som erbjuder möjligheten att byta ut flera ord samtidigt enligt ett angivet mönster och ersättning. Till exempel:
 
 ```PHP
-$str = "Jag älskar att programera.";
-echo substr_replace($str, "andas", 9, 12);
+$text = "Jag tycker om äpplen och bananer.";
+$ny_text = strtr($text, ["äpplen" => "päron", "bananer" => "apelsiner"]);
+echo $ny_text;
 ```
 
-Output:
-
-Jag älskar att andas.
-
-Det är också viktigt att notera att sök- och ersättningsfunktionerna är "case sensitive" vilket betyder att de skiljer mellan stora och små bokstäver. Om du vill att din sökning och ersättning ska vara oberoende av detta kan du använda funktionen str_ireplace() istället.
-
-## Se även
-Här är några användbara resurser för dig som vill lära dig mer om hur man söker och ersätter text i PHP:
-
-- [PHP manual](https://www.php.net/manual/en/function.str-replace.php)
-- [W3Schools tutorial](https://www.w3schools.com/php/func_string_str_replace.asp)
-- [Tutorialspoint guide](https://www.tutorialspoint.com/php/php_regular_expression.htm)
+Koden ovan kommer att ge följande utmatning: `Jag tycker om päron och apelsiner.` Det finns också många olika PHP-funktioner och bibliotek som kan hjälpa till med mer avancerad textmanipulering, som tex

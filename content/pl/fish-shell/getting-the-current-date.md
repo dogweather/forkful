@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Uzyskiwanie bieżącej daty"
+title:                "Fish Shell: Pobranie bieżącej daty"
+simple_title:         "Pobranie bieżącej daty"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/getting-the-current-date.md"
 ---
 
@@ -9,42 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami w programowaniu potrzebujemy aktualnej daty. Może to być przydatne na przykład do wyświetlania daty ostatniej aktualizacji strony lub do generowania plików z nazwami zawierającymi datę. Dzięki językowi Fish Shell można to łatwo osiągnąć.
+W dzisiejszym wpisie omówimy jedną z podstawowych rzeczy, jaką każdy programista powinien znać: pobieranie bieżącej daty. Bez względu na to, czy piszesz skrypty w systemie Linux czy kodujesz aplikacje na platformie MacOS, dostęp do bieżącej daty jest ważnym elementem w wielu zastosowaniach. Sprawdźmy więc, jak w prosty sposób uzyskać bieżącą datę za pomocą języka Fish Shell.
 
-## Jak zrobić
-
-Podstawowym poleceniem w Fish Shell do uzyskania aktualnej daty jest `date`. Polecenie to może być użyte w różnych formatach, na przykład:
+## Jak To Zrobić
 
 ```Fish Shell
-date +"%d/%m/%Y"
+echo (date +"%d-%m-%Y")
 ```
-W wyniku powyższego polecenia otrzymamy datę w formacie DD/MM/RRRR, na przykład: 03/05/2021.
 
-Możemy także wyświetlić tylko rok lub miesiąc, wykorzystując odpowiednie formatowanie, na przykład:
+Powyższa komenda pokaże nam bieżącą datę w formacie dzień-miesiąc-rok. Możemy też użyć innych opcji formatowania, np. ```%A``` dla wyświetlenia dnia tygodnia lub ```%H:%M:%S``` dla godziny, minuty i sekundy. Aby poznać wszystkie dostępne opcje, warto zajrzeć do dokumentacji języka Fish Shell.
+
+Możemy także zapisywać bieżącą datę do zmiennej i wykorzystywać ją w dalszej części skryptu:
 
 ```Fish Shell
-date +"%Y" # wyświetli aktualny rok
-date +"%b" # wyświetli skrócony nazwę aktualnego miesiąca (np. Jan, Feb, Mar)
-```
-Dzięki temu poleceniu możemy dostosować format daty do swoich potrzeb.
-
-## Głębszy zanurzenie
-
-Funkcja `date` w Fish Shell jest oparta na standardowym poleceniu `date` w systemie Unix. Oznacza to, że możemy wykorzystać wszystkie opcje dostępne w normalnej komendzie `date`. Na przykład możemy ustawić datę na inną niż aktualna, używając opcji `-s`, na przykład:
-
-```Fish Shell
-date -s "15 APR 2021" # ustawi datę na 15 kwietnia 2021
-```
-Możemy także wyłączyć automatyczne przesunięcie letniego czasu użytkując opcji `-u`, na przykład:
-
-```Fish Shell
-date -u +"%H:%M:%S" # wyświetli aktualny czas bez przesunięcia letniego
+set current_date (date +"%d-%m-%Y")
+echo "Dziś mamy: $current_date!"
 ```
 
-W ten sposób możemy bardziej zaawansowanie manipulować datą w systemie, wykorzystując możliwości standardowego polecenia `date`.
+Powyższy kod zapisze bieżącą datę do zmiennej i wyświetli ją wraz z informacją "Dziś mamy: ".
 
-## Zobacz także
+## W Głąb Tematu
 
-- Dokumentacja Fish Shell: https://fishshell.com/docs/current/
-- Poradnik dotyczący wykorzystania polecenia `date`: https://www.computerhope.com/unix/date.htm
-- Wszystkie dostępne formaty daty w poleceniu `date`: https://man7.org/linux/man-pages/man1/date.1.html
+Aby lepiej zrozumieć, jak działa pobieranie bieżącej daty w Fish Shell, warto wspomnieć o podstawowych pojęciach, które są zaangażowane w ten proces. Po pierwsze, wykorzystujemy komendę ```date```, która jest odpowiedzialna za wyświetlanie lub modyfikację daty. Następnie wykorzystujemy opcję ```+%d-%m-%Y```, która określa, w jakim formacie ma zostać wyświetlona data. Pozostałe opcje są równie proste do zrozumienia i można z łatwością dostosować je do swoich potrzeb.
+
+## Zobacz Również
+
+Jeśli chcesz dowiedzieć się więcej o języku Fish Shell i jego możliwościach, warto zajrzeć do oficjalnej dokumentacji https://fishshell.com/docs/current/index.html lub przetestować inne funkcje dostępne w tym języku, np. pobieranie informacji o czasie czy wykorzystanie zmiennych środowiskowych. Dodatkowo, jeśli chcesz poznać inne języki programowania, które również mają wbudowane funkcje do pobierania daty, zapraszamy do lektury naszych innych artykułów.
+
+Dzięki prostym komendom w języku Fish Shell możemy szybko i wygodnie uzyskać bieżącą datę w formacie, który najlepiej odpowiada naszym potrzebom. Mamy nadzieję, że ten wpis okazał się dla Ciebie przydatny i pomoże w dalszej pracy z Fish Shell. Do zobaczenia!

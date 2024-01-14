@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Suchen und Ersetzen von Text"
+simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/searching-and-replacing-text.md"
 ---
 
@@ -9,39 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Suchen und Ersetzen von Text ist eine grundlegende Fähigkeit für jeden Programmierer. Es ermöglicht uns, schnell und effizient Teile von Text zu ändern, ohne den gesamten Text manuell durchsuchen zu müssen. Mit Haskell können wir diese Aufgabe noch einfacher und präziser lösen.
+Viele Programmiererinnen und Programmierer müssen Texte in ihrem Code ändern - sei es, um einen Tippfehler zu korrigieren oder um ein bestimmtes Wort oder eine Zeichenfolge durch eine andere zu ersetzen. In Haskell gibt es einige einfache und effektive Möglichkeiten, um ein solches Suchen und Ersetzen von Text durchzuführen.
 
-## Wie es geht
+## Wie geht's
 
-Das Suchen und Ersetzen von Text in Haskell ist mit der Funktion `substitute` aus dem Modul `Text.Regex` möglich. Diese Funktion akzeptiert einen regulären Ausdruck und zwei Texte als Parameter und ersetzt alle Vorkommen des regulären Ausdrucks im ersten Text durch den zweiten Text.
-
-Ein einfaches Beispiel könnte so aussehen:
+Um Text in Haskell zu suchen und zu ersetzen, gibt es drei Hauptfunktionen: `words`, `unwords` und `replace`. Diese können in Kombination verwendet werden, um gewünschte Ergebnisse zu erzielen.
 
 ```Haskell
-import Text.Regex (substitute)
+-- Beispiel-Liste von Wörtern
+list = ["Hallo", "Welt", "Hallo", "Haskell"]
 
-main = do
-  let text = "Hallo, mein Name ist Max"
-  let newText = substitute "(\\w+)" "\\1!" text
-  print newText
+-- `words` wandelt einen String in eine Liste von Wörtern um
+words "Hallo Welt" == ["Hallo", "Welt"]
 
--- Ausgabe: "Hallo!, mein Name!, ist Max!"
+-- `unwords` wiederum fügt eine Liste von Wörtern zu einem String zusammen
+unwords list == "Hallo Welt Hallo Haskell"
+
+-- `replace` ersetzt ein bestimmtes Wort oder eine Zeichenfolge in einem String durch eine andere
+replace "Haskell" "Programming" "Hallo Welt Hallo Haskell" == "Hallo Welt Hallo Programming"
 ```
 
-In diesem Beispiel wird die Funktion `substitute` verwendet, um alle Wörter im Text durch das gleiche Wort mit einem Ausrufezeichen zu ersetzen. Der reguläre Ausdruck `(\w+)` steht für ein oder mehrere Buchstaben, während `\1` das erste Vorkommen des regulären Ausdrucks beinhaltet.
+Ein Beispiel, um einen Tippfehler in einem String zu korrigieren, sieht folgendermaßen aus:
 
-Natürlich können wir auch komplexere reguläre Ausdrücke verwenden, um bestimmte Muster im Text zu finden und zu ersetzen. Hier sind einige nützliche Ressourcen zum Lernen von regulären Ausdrücken:
+```Haskell
+incorrect = "Guten Nur"
 
-- [Reguläre Ausdrücke Tutorial auf regexone.com](https://regexone.com/)
-- [Dokumentation von `Text.Regex`](https://hackage.haskell.org/package/regex)
+correct = replace "Nur" "Tag" incorrect
 
-## Tiefergehende Informationen
+-- Output:
+correct == "Guten Tag"
+```
 
-Die `substitute` Funktion ist nur eine von vielen nützlichen Funktionen im `Text.Regex` Modul. Wir können auch die `subRegex` Funktion verwenden, um alle Vorkommen des regulären Ausdrucks im Text durch ein Ergebnis einer berechneten Funktion zu ersetzen. Oder wir können die `matchRegex` Funktion verwenden, um alle Vorkommen des regulären Ausdrucks in eine Liste von Treffern zu extrahieren.
+## Tief eintauchen
 
-Es gibt auch viele andere nützliche Funktionen und Optionen für die Arbeit mit regulären Ausdrücken in Haskell. Wenn du tiefer in dieses Thema einsteigen möchtest, solltest du unbedingt die oben genannten Ressourcen durchgehen und weitere Recherche betreiben.
+Die `replace` Funktion ist der Kern des Suchens und Ersetzens von Text in Haskell. Sie akzeptiert drei Argumente: Die zu ersetzende Zeichenfolge, die neue Zeichenfolge und der String, in dem dies geschehen soll. Diese Funktion kann auch verschachtelt werden, um mehrere Ersetzungen auf einmal vorzunehmen.
+
+```Haskell
+-- Beispiel einer verschachtelten `replace` Funktion
+replace "Hallo" "Hi" . replace "Haskell" "Programming" $ "Hallo Welt Hallo Haskell"
+
+-- Output:
+"Hi Welt Hi Programming"
+```
+
+Es ist auch möglich, die `replace` Funktion mit regulären Ausdrücken aus dem `Text.Regex` Modul zu kombinieren, um komplexere Such- und Ersetzungsvorgänge durchzuführen.
 
 ## Siehe auch
 
-- [Haskell-Regular Expressions - ein Tutorial](https://www.st.cs.uni-saarland.de/edu/seminare/2005/advanced-fp/docs/haskell-regexp.pdf)
-- [Reguläre Ausdrücke in Haskell](https://wiki.haskell.org/Regular_expressions)
+- [Haskell-Dokumentation zu `replace`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:replace)
+- [Tutorial zu regulären Ausdrücken in Haskell](https://wiki.haskell.org/Regular_expressions)
+- [Beispiele für das Suchen und Ersetzen von Text in Haskell](https://www.codewars.com/kata/search-and-replace/train/haskell)

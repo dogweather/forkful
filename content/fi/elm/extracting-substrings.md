@@ -1,51 +1,78 @@
 ---
-title:                "Elm: Alimerkkijonojen erottaminen"
+title:                "Elm: Palojen erottaminen"
+simple_title:         "Palojen erottaminen"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi tutkia osajonon poimimista
-Kun käsittelet suuria määriä tekstiä, voi joskus olla tarpeen poimia siitä tiettyjä osajonoja. Tämä voi esimerkiksi auttaa tietokantojen suodattamisessa tai käyttäjän syötteiden validoinnissa.
+## Miksi
 
-## Kuinka: Esimerkkejä osajonojen poimimisesta Elm-ohjelmassa
-```Elm
-import String
+Miksi kukaan haluaisi erottaa alastringeja Elm-ohjelmoinnilla? Yksi syy voi olla, että sinulla on merkkijono, jossa on tiettyä tietoa, mutta tarvitset vain osan siitä. Tällöin substringsien erottaminen voi olla tehokas tapa saada tarvitsemasi tieto nopeasti ja helposti käytettäväksi.
 
-teksti = "Tämä on esimerkkiteksti Elm-ohjelmassa"
+## Kuinka
 
-osajono = String.slice 10 18 teksti
-
-main = 
-    text osajono
-
--- Output:
--- "on esimerk"
-``` 
-
-Voit myös käyttää `String.split` funktiota, joka pilkkoo merkkijonon tietyistä erotinpisteistä ja palauttaa listan osajonoja. Seuraavassa esimerkissä pilkotaan syöte välilyönnin kohdalta ja palautetaan vain ensimmäinen osajono.
+### Esimerkki 1
 
 ```Elm
-import String
+import String exposing (..)
 
-syote = "Kissa koira lehmä hevonen"
+merkkijono = "Tämä on esimerkki merkkijonosta"
 
-osat = String.split " " syote
-
-ekaOsajono = List.head osat
-
-main =
-    text ekaOsajono
-
--- Output:
--- "Kissa"
+substring 5 7 merkkijono
 ```
 
-## Syvempi sukellus: Lisätietoja osajonojen poimimisesta
-`String.slice` ja `String.split` ovat hyödyllisiä funktioita osajonojen poimimiseen, mutta niiden käyttö vaatii ymmärrystä syötteiden ja erotinpisteiden välisen suhteen sekä merkkijonon käsittelyn perusteista. On myös tärkeää huomioida merkkijonon indeksien laskenta ja tyhjien osajonojen käsittely.
+Tuloste: `"on"`
+
+### Esimerkki 2
+
+```Elm
+import String exposing (..)
+
+merkkijono = "Tämä on toinen esimerkki"
+
+substring 8 (length merkkijono) merkkijono
+```
+
+Tuloste: `"toinen esimerkki"`
+
+Merkkien lukujärjestys alkaa aina nollasta, joten ensimmäinen merkki on 0, toinen 1 ja niin edelleen. Yllä esitetyissä esimerkeissä ensimmäisenä parametrina annettu luku kertoo, mistä kohdasta alkaen substring otetaan, ja toinen parametri kertoo, kuinka monta merkkiä substringiin sisällytetään. Parametrina voi myös käyttää `length`-funktiota, jolloin substringin loppukohdaksi tulee merkkijonon pituus.
+
+### Esimerkki 3
+
+```Elm
+import String exposing (..)
+
+merkkijono = "Tämä on kolmas esimerkki"
+
+(sld merkkijono) (sld merkkijono + 3) merkkijono
+```
+
+Tuloste: `"on kolmas esimerkki"`
+
+`substring`-funktion sijaan voit myös käyttää funktiota `sld`, joka ottaa parametrikseen alkuindeksin ja loppuindeksin substringille. Tällöin ei tarvitse ensin laskea merkkijonon pituutta, vaan voit kertoa sld-funktiolle suoraan, millä indekseillä haluat substringin alkavan ja loppuvan.
+
+## Syvemmälle
+
+Substringsien erottaminen on hyödyllinen taito, mutta se voi myös olla haastavaa, jos haluat esimerkiksi ottaa substringin tietystä sanojen välisestä välilyönnistä tai muusta merkistä. Tällöin voit käyttää `split`-funktiota, joka jakaa merkkijonon haluamasi merkin tai merkkijonon kohdalta ja palauttaa listan eri substringeistä.
+
+Esimerkiksi, jos haluat erottaa merkkijonon `"Tämä on esimerkki"` välilyönnin kohdalta, voit tehdä sen seuraavasti:
+
+```Elm
+import String exposing (..)
+
+merkkijono = "Tämä on esimerkki"
+
+split " " merkkijono
+```
+
+Tuloste: `["Tämä", "on", "esimerkki"]`
+
+Voit myös yhdistellä `substring`- ja `split`-toimintoja tarpeesi mukaan, jolloin voit esimerkiksi ottaa substringin tietyn sanan välisestä välilyönnistä.
 
 ## Katso myös
-- [Elm:n virallinen dokumentaatio merkkijonojen käsittelystä](https://elm-lang.org/docs/from-javascript-strings)
-- [Merkkijonojen pilkkomisen teoriatausta](https://en.wikipedia.org/wiki/String_(computer_science)#General_delimited_formats)
+
+- Elm:n virallinen dokumentaatio String-moduulin funktioista: https://package.elm-lang.org/packages/elm/core/latest/String

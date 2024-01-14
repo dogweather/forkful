@@ -1,50 +1,54 @@
 ---
-title:                "Ruby: Tarkistaako hakemisto on olemassa"
+title:                "Ruby: Tarkistetaan tiedoston olemassaolo"
+simple_title:         "Tarkistetaan tiedoston olemassaolo"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi tarkistaa, jos hakemistoa on olemassa
 
-On monia syitä miksi voit haluta tarkistaa, onko kansio olemassa. Yksi yleisin syy on, jos haluat varmistaa, että tietty kansio on luotu ennen kuin suoritat tietyn toiminnon.
+On hyvä tapa tarkistaa, onko hakemisto olemassa ennen kuin yrität suorittaa toimia sen kanssa. Tämä auttaa välttämään virheitä ja mahdollistaa sujuvamman suorituksen.
 
-## Kuinka tarkistaa kansion olemassaolo
-
-Rubyssa voit helposti tarkistaa kansion olemassaolon käyttämällä `File.exist?` -metodia. Tämä metodi ottaa parametrina kansion polun ja palauttaa totuusarvon sen perusteella, löytyykö kyseinen kansio vai ei. Tässä on yksinkertainen esimerkki:
+## Miten tarkistaa, jos hakemisto on olemassa
 
 ```Ruby
-if File.exist?("kansio/nimi")
-  puts "Kansio on olemassa"
+if File.directory?("/hakemisto") # Tarkistaa, onko hakemisto olemassa
+ puts "Hakemisto on olemassa"
 else
-  puts "Kansiota ei löydy"
+ puts "Hakemistoa ei ole olemassa"
 end
 ```
+Tämä yksinkertainen koodinpätkä käyttää Ruby-metodia nimeltä `directory?` tarkistaakseen, onko hakemisto olemassa. Metodi palauttaa totuusarvon (true/false) ja sen avulla voit suorittaa halutut toimet sen mukaan. Jos hakemisto on olemassa, koodi tulostaa `Hakemisto on olemassa`, muuten se tulostaa `Hakemistoa ei ole olemassa`.
 
-Jos `File.exist?` palauttaa `true`, tulostetaan "Kansio on olemassa". Muussa tapauksessa tulostetaan "Kansiota ei löydy".
+## Syvällinen katsaus hakemiston tarkistamiseen
 
-## Syvempi sukellus
+Hakemiston olemassaolon tarkistaminen on tärkeä osa ohjelmointia, etenkin tiedostojen ja hakemistojen käsittelyssä. Ruby-metodi `directory?` on luotettava keino tarkistaa hakemiston olemassaolo ja sillä on myös muita hyödyllisiä sovelluksia.
 
-`File.exist?` -metodi todella tarkistaa, onko tiedosto tai kansio nimeltään samanlainen kuin argumentti. Jos haluat tarkistaa, että kansio on olemassa, mutta sinulla ei ole tarkkaa nimeä, voit käyttää `Dir.exist?` -metodia. Tämä metodi tarkistaa, onko olemassa olevat objektit kansiossa nimetty saman yleisen kaavan mukaan. Esimerkiksi: `Dir.exist?("kansio/*")` palauttaa `true` jos kansiossa on vähintään yksi tiedosto tai kansio.
-
-Kun tarkistat kansion olemassaolon, voit myös käyttää `begin/rescue` -rakennetta käsitelläksesi mahdollisia virheitä. Tämä auttaa välttämään ohjelman kaatumisen, jos esimerkiksi kansio on poistettu samalla kun yrität tarkistaa sen olemassaolon. Tässä on esimerkki:
+Voit myös käyttää `File.exist?` -metodia tarkistaaksesi yleisesti tiedostojen ja hakemistojen olemassaolon Rubyssä.
 
 ```Ruby
-begin
-  if Dir.exist?("kansio/*")
-    puts "Jokin kansiossa on olemassa"
-  else
-    puts "Kansiota ei löydy"
-  end
-rescue
-  puts "Virhe tarkistaessa kansion olemassaoloa"
+if File.exist?("/tiedosto.txt") # Tarkistaa, onko tiedosto olemassa
+ puts "Tiedosto on olemassa"
+else
+ puts "Tiedostoa ei ole olemassa"
+end
+```
+Lisäksi voit tarkistaa, onko hakemiston sisällä tiettyä tiedostoa tai hakemistoa käyttämällä `File.exist?`- ja `File.join` -metodeja yhdessä. `join`-metodi yhdistää tiedoston / hakemiston nimen ja hakemistopolun luodaksesi kokonaisen polun.
+
+```Ruby
+if File.exist?(File.join("/documents", "raportti.pdf")) # Tarkistaa, onko tiedosto "raportti.pdf" olemassa "documents"-hakemistossa
+ puts "Raportti on olemassa"
+else
+ puts "Raporttia ei ole olemassa"
 end
 ```
 
-## Katso myös
+# Katso myös
 
-- Rubyn `File`-luokan dokumentaatio: https://ruby-doc.org/core-2.7.2/File.html
-- Rubyn `Dir`-luokan dokumentaatio: https://ruby-doc.org/core-2.7.2/Dir.html
-- Rubyn virallinen opas: https://www.ruby-lang.org/fi/documentation/
+- [ruby-doc.org/core-2.6/File.html](https://ruby-doc.org/core-2.6/File.html)
+- [ruby-doc.org/core-2.6/FileTest.html#method-c-directory-3F](https://ruby-doc.org/core-2.6/FileTest.html#method-c-directory-3F)
+- [ruby-doc.org/core-2.6/FileTest.html#method-c-exist-3F](https://ruby-doc.org/core-2.6/FileTest.html#method-c-exist-3F)

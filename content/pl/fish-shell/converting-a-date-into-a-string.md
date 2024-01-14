@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Konwertowanie daty na łańcuch znaków."
+title:                "Fish Shell: Konwertowanie daty na ciąg znaków"
+simple_title:         "Konwertowanie daty na ciąg znaków"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/converting-a-date-into-a-string.md"
 ---
 
@@ -9,37 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Każdy programista wie, że praca z danymi czasowymi jest nieodłącznym elementem wielu projektów. Często konieczne jest konwertowanie daty na ciąg znaków, aby móc wyświetlić ją czy zapisać w odpowiednim formacie. W tym artykule opiszemy jak przekonwertować datę w języku Fish Shell oraz podzielimy się cennymi wskazówkami, które ułatwią Ci pracę z tym zadaniem.
+Czasami w programowaniu musimy przekształcać daty w ciągi znaków. Może to być potrzebne, aby wyświetlić datę w odpowiednim formacie lub aby dokonać porównania z innymi datami w formie ciągu znaków. W tym blogu dowiecie się, jak można to zrobić w języku Fish Shell.
 
 ## Jak to zrobić
 
-Do przekonwertowania daty na ciąg znaków w języku Fish Shell możemy wykorzystać funkcję `date` oraz operator `strftime`. Przykładowy kod wyglądałby następująco:
+Aby przekształcić datę w ciąg znaków w języku Fish Shell, musimy użyć polecenia `date`. Przykładowe użycie polecenia wygląda następująco:
 
 ```Fish Shell
-set my_date (date)
-set my_string $my_date.strftime("%d/%m/%Y")
-echo $my_string
+date "+%Y-%m-%d"
 ```
 
-W powyższym przykładzie używamy funkcji `date`, aby pobrać aktualną datę i zapisujemy ją w zmiennej `my_date`. Następnie korzystając z operatora `strftime` przekonwertowujemy tę datę na ciąg znaków w wybranym przez nas formacie. W ostatnim kroku wyświetlamy ten ciąg za pomocą funkcji `echo`.
+Output:
+```2000-05-28```
 
-Poniżej znajduje się lista kilku przydatnych formatów, które możemy wykorzystać przy konwersji daty na ciąg znaków:
+Możemy również użyć polecenia `strftime` aby określić niestandardowy format daty. Przykładowe użycie wygląda tak:
 
-- `%d` - dzień miesiąca w formacie dziesiętnym (np. 01, 02, 03)
-- `%m` - miesiąc w formacie dziesiętnym (np. 01, 02, 03)
-- `%Y` - rok w formacie czterocyfrowym (np. 2021)
-- `%H` - godzina w formacie 24-godzinnym (np. 13, 14, 15)
-- `%M` - minuta w formacie dziesiętnym (np. 01, 02, 03)
-- `%S` - sekunda w formacie dziesiętnym (np. 01, 02, 03)
+```Fish Shell
+strftime "%d %b %Y" (date -d "10 days ago")
+```
+
+Output:
+```18 Sep 2021```
+
+Pamiętajmy, że wiele innych poleceń w języku Fish Shell może przyjmować datę jako argument i zwrócić ją w formie ciągu znaków.
 
 ## Deep Dive
 
-Funkcja `date` w języku Fish Shell może przyjąć również inne parametry, które pozwolą nam dostosować sposób wyświetlania daty. Dokładną dokumentację tych parametrów można znaleźć w oficjalnej dokumentacji Fish Shell.
+Podczas przekształcania daty w ciąg znaków warto zwrócić uwagę na kilka ważnych rzeczy. Po pierwsze, powinniśmy zawsze uwzględnić strefę czasową lub użyć polecenia `date -u` aby uzyskać czas w uniwersalnej strefie czasowej.
 
-Warto również zwrócić uwagę, że operator `strftime` jest dostępny nie tylko przy konwertowaniu daty, ale również przy konwertowaniu innych wartości, takich jak np. czas ostatniej modyfikacji pliku. Możliwości wykorzystania tego operatora są więc bardzo szerokie.
+Kolejną ważną rzeczą jest obsługa różnych formatów daty, które mogą występować w różnych systemach lub lokalizacjach. Używając polecenia `strftime` możemy określić dowolny niestandardowy format, który jest łatwy do odczytania dla użytkownika.
+
+Podczas przekształcania daty w ciąg znaków należy również pamiętać o wyświetlaniu jej w odpowiedniej strefie czasowej dla naszych użytkowników lub zamieniać strefę czasową na czytelny dla nich format.
 
 ## Zobacz również
 
-- Dokumentacja devdocs.io
-- Oficjalna dokumentacja Fish Shell
-- Artykuł na blogu Fish Shell o funkcji `date` i operatorze `strftime` (w języku angielskim)
+- Dokumentacja Fish Shell: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
+- Przekształcanie daty i czasu w języku Fish Shell: [https://fishshell.com/docs/current/cmds/date.html](https://fishshell.com/docs/current/cmds/date.html)
+- Przykłady użycia polecenia `strftime`: [https://fishshell.com/docs/current/cmds/strftime.html](https://fishshell.com/docs/current/cmds/strftime.html)

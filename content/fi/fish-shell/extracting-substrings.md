@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Alimerkkijonojen erottaminen"
+title:                "Fish Shell: Alirivien erottelu"
+simple_title:         "Alirivien erottelu"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/extracting-substrings.md"
 ---
 
@@ -9,34 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluat erottaa alijonoja Fish Shell -ohjelmointikielen avulla? Yksinkertaisesti sanottuna, se on erittäin kätevä tapa työstää merkkijonoja ja pystyt käyttämään erilaisia tapoja manipuloida niitä.
+Oletko koskaan halunnut ottaa tietyn osan merkkijonosta ja käyttää sitä erillisenä muuttujana? Tai ehkä haluat vain muokata merkkijonoa tiettynä osana. Tässä blogikirjoituksessa käymme läpi, kuinka voit tehdä näin käyttämällä Fish Shellin ominaisuutta virkkeitä, eli Substring Extractingia.
 
-## Miten
+## Kuinka
 
-Fish Shellilla on helppo erottaa alijonoja. Se tehdään `string` komennolla, jossa annetaan haluttu merkkijono ja sen jälkeen väleinä yksittäisiä merkkejä tai merkkijonoja, jotka haluat erottaa alkuperäisestä merkkijonosta.
+Koodinäytteet ja esimerkkilähtö "```Fish Shell ...```" koodilohkoissa.
 
-```Fish Shell
-string="Tämä on esimerkki merkkijonosta"
-echo $string[5,-1] # Tulostaa "on esimerkki merkkijonosta"
-echo $string[1,3] # Tulostaa "Täm"
+### Yksinkertainen esimerkki
+
+Oletetaan, että meillä on merkkijono "Tämä on esimerkki". Voimme käyttää seuraavaa komentoa, joka ottaa substrängin "esimerkki" ja sijoittaa sen muuttujaan "näyte".
+
+```
+set näyte "Tämä on esimerkki"[9..16]
 ```
 
-Substrnign erottamista voidaan käyttää myös esimerkiksi muuttamaan olemassa olevaa merkkijonoa. Alla olevassa esimerkissä poistetaan välilyönnit merkkijonon alusta ja lopusta käyttäen `sub` komentoa.
+Käyttäen näytettä tulostamme sen konsolille seuraavalla komennolla:
 
-```Fish Shell
-string=" Hei, tämä on teksti "
-echo $string # Tulostaa "Hei, tämä on teksti"
-sub "^[ ]*" "" $string; string=$REPLY
-sub "[ ]*$" "" $string; string=$REPLY
-echo $string # Tulostaa "Hei, tämä on teksti"
+```
+echo $näyte
 ```
 
-## Syvällinen sukellus
+Tämä tulostaa "esimerkki".
 
-Fish Shellin `string` komento tukee myös monia muita hyödyllisiä toimintoja, kuten merkkijonon jakamista eri osiin käyttäen esimerkiksi `cut` tai `split` komentoja. Lisäksi voit käyttää regular expressioneita erottamaan alijonoja haluamallasi tavalla.
+### Käyttäen muuttujaa
+
+Voimme myös käyttää muuttujaa substrängin määrittämiseen komennon aikana. Esimerkiksi, jos haluamme ottaa merkkijonon viimeisen neljän merkin ja sijoittaa ne uuteen muuttujaan "loppu", voisimme käyttää seuraavaa komentoa:
+
+```
+set alkuperäinen "Fish Shell on upea."
+set loppu $alkuperäinen[-4..-1]
+```
+
+Yllä oleva koodi luo uuden muuttujan "loppu" arvolla "pea.". Voimme sitten tulostaa tämän muuttujan konsolille käyttämällä echo-komentoa.
+
+```
+echo $loppu
+```
+
+Tämä tulostaa "pea.".
+
+## Syväsukellus
+
+Fish Shellin Substring Extracting on todella kätevä työkalu, jos haluat leikata tai käyttää osia merkkijonosta erillisenä muuttujana. Voit myös yhdistellä erilaisia komentoja tai käyttää muuttujia määrittämään substrängin.
+
+Voit esimerkiksi ottaa merkkijonosta tiettyjä sanoja ja muokata niitä käyttämällä tekstinkäsittelykomentoja, kuten sed ja awk.
 
 ## Katso myös
 
-- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Fish Shellin syvällisempi opas](https://fishshell.com/docs/current/tutorial.html)
-- [Merkkistringien muokkaaminen Fish Shellillä](https://medium.com/noob-programming/%C3%A4lykk%C3%A4%C3%A4sti-merkkijonojen-k%C3%A4sittely-ohjelmallasi-fish-shellill%C3%A4-sa1i-o1k-a1e66c6abad0)
+- [Fish Shellin virpukot](https://fishshell.com/docs/current/tutorial.html#tut_home)
+- [Substring Extracting -opas](https://fishshell.com/docs/current/index.html#substring-extracting)

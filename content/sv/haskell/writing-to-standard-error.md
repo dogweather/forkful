@@ -1,41 +1,47 @@
 ---
-title:                "Haskell: Skrivande till standardfel"
+title:                "Haskell: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför skriva till standard error i Haskell
 
-Att skriva till standard error är ett viktigt verktyg för att diagnostisera och felsöka programmeringsfel. Det gör det möjligt för oss att skriva ut meddelanden som visar var i koden ett fel uppstod och vilken typ av fel det är. Detta hjälper oss att förbättra våra program och undvika potentiella buggar.
+Att skriva till standard error är ett viktigt koncept inom Haskell-programmering och kan vara till nytta i många olika situationer. Oavsett om du vill felsöka ditt program eller skriva ut användbar information till användaren, så är skrivning till standard error ett värdefullt verktyg som alla bör ha i sin verktygslåda.
 
-## Hur man gör det
+## Så här gör du
 
-För att skriva till standard error i Haskell kan du använda funktionen `hPutStrLn` från `System.IO`-modulen. Den tar som argument standard error-ström (`stderr`) och en sträng som ska skrivas ut. Här är ett enkelt exempel:
+Skrivning till standard error i Haskell är enkelt och kan utföras med hjälp av funktionen "hPutStrLn" från modulen "System.IO". Här är ett exempel på hur du kan skriva till standard error:
 
 ```Haskell
 import System.IO
 
+main :: IO ()
 main = do
-    hPutStrLn stderr "Detta är ett meddelande till standard error."
+  hPutStrLn stderr "Detta är ett felmeddelande."
+  hPutStrLn stderr "Försök igen."
 ```
 
-Detta kommer att skriva ut "Detta är ett meddelande till standard error." till standard error-strömmen när programmet körs. Notera att du också kan använda `hPutStr` för att skriva ut en sträng utan ett nyradstecken.
+När du kör detta program kommer det att skriva ut de två meddelandena till standard error, vilket vanligtvis visas i terminalen eller kommandotolken.
 
-Du kan också använda `putStrLn` och `putStr` för att skriva ut till standard output (`stdout`). Skillnaden är att `stdout` är den vanliga utmatningsströmmen medan `stderr` är avsett för felmeddelanden. Genom att skriva till rätt ström kan du se till att dina meddelanden visas på rätt ställe och inte blandas ihop med programutmatningen.
+## Djupdykning
 
-## Deep Dive
+Att skriva till standard error kan vara särskilt användbart när du vill separera olika typer av utskrifter. Till exempel kan du använda "hPutStrLn" för att skriva felmeddelanden till standard error och "putStrLn" för att skriva vanliga meddelanden till standard out. På så sätt kan du enkelt skilja mellan dem och veta var du ska leta när du felsöker ditt program.
 
-Standard error-strömmen är en del av tre standardströmmar i ett Haskell-program: `stdin` för inmatning, `stdout` för utmatning och `stderr` för felmeddelanden. Det är viktigt att förstå skillnaden mellan dessa strömmar och när det är lämpligt att använda dem.
+Standard out, eller "stdout", är vanligtvis där alla utskrifter hamnar som standard i Haskell-program. Detta innefattar även användarens input om du använder "getLine" funktionen. Genom att istället skriva till standard error kan du säkerställa att ditt felmeddelande inte blandas med ditt programs vanliga utskrifter.
 
-När du kör ett Haskell-program från terminalen är `stdout` standardutmatningen och `stderr` standardfelmeddelanden. Detta innebär att alla meddelanden som skrivs till `stdout` kommer att visas i terminalen, medan meddelanden som skrivs till `stderr` kommer att visas som röda felmeddelanden. Detta gör det enkelt för användare att skilja mellan programutmatning och felmeddelanden.
-
-Att använda funktionerna i `System.IO`-modulen ger dig också kontroll över vilken ström du skriver till och var du skriver den. Det finns tillfällen när det är bättre att skriva till `stdout` istället för `stderr`, till exempel när du skriver ut information om hur programmet kör. Detta kan göra din programutmatning mer lättläst och lätt att följa.
+Även om vi här har använt funktionen "hPutStrLn" för att skriva till standard error, så finns det flera andra funktioner som kan användas för att uppnå samma resultat. Det är bara en fråga om personlig preferens och vad som passar bäst för ditt program.
 
 ## Se även
 
-- [Haskell IO](https://wiki.haskell.org/IO)
-- [Haskell Standard I/O](https://www.haskell.org/tutorial/io.html)
-- [System.IO modulen](https://hackage.haskell.org/package/base/docs/System-IO.html)
+Här är några andra användbara resurser för att lära dig mer om att skriva till standard error i Haskell:
+
+- [Official Haskell documentation on "System.IO" module](https://hackage.haskell.org/package/base/docs/System-IO.html)
+- [Haskell wiki page on "Streams"](https://wiki.haskell.org/Streams)
+- [Tutorialspoint article on "Haskell Files and I/O"](https://www.tutorialspoint.com/haskell/haskell_files_io.htm)
+
+Med dessa resurser och förmågan att skriva till standard error i din verktygslåda, kommer du att kunna skriva robusta och felsökande Haskell-program som är både lättlästa och användarvänliga. Lycka till!

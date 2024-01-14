@@ -1,60 +1,55 @@
 ---
-title:                "C: 正規表現を使用する"
+title:                "C: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ正規表現を使うのか
 
-正規表現を使用する理由は様々ですが、主な目的は文字列のパターンを簡単に検索・置換することです。これにより、プログラミングの効率性が向上し、複雑な操作を簡単に行うことができます。
+正規表現は、文字列を効率的に検索や比較するためのツールです。複雑なパターンを持つテキストを処理する際に非常に便利です。
 
 ## 使い方
 
-正規表現を使用するためには、まず```#include <regex.h>```を宣言する必要があります。次に、パターンの作成とコンパイルを行います。例えば、任意の数字にマッチするパターンを作成する場合、```regex_t pattern;```のように変数を宣言し、```regcomp(&pattern, "[0-9]", 0);```でコンパイルします。その後、マッチさせたい文字列を```regexec(&pattern, "sample123", 0, NULL, 0)```のように記述します。この場合、```"sample123"```は上記のパターンにマッチしているので、処理が成功し、```REG_NOMATCH```のようなエラーコードが返されることはありません。
+正規表現を使うためには、まず `regex.h` ヘッダーファイルをインクルードする必要があります。次に、`regex_t` データ型を定義し、正規表現をコンパイルします。最後に、`regexec()` 関数を使って文字列とマッチするかどうかを確認します。
 
-```
+```C
 #include <stdio.h>
 #include <regex.h>
 
-int main()
-{
-    regex_t pattern;
-    int result;
-    char *str = "sample123";
+int main() {
+    regex_t regex;
+    regcomp(&regex, "test", 0);
 
-    result = regcomp(&pattern, "[0-9]", 0);
+    char* string = "This is a test string";
+    int result = regexec(&regex, string, 0, NULL, 0);
 
-    if (result == 0)
-    {
-        result = regexec(&pattern, str, 0, NULL, 0);
-
-        if (result == 0)
-        {
-            printf("%sはマッチしています。\n", str);
-        }
-        else if (result == REG_NOMATCH)
-        {
-            printf("%sはマッチしていません。\n", str);
-        }
+    if (result == 0) {
+        printf("String contains 'test'\n");
+    } else {
+        printf("String does not contain 'test'\n");
     }
+
+    regfree(&regex);
 
     return 0;
 }
 ```
-実行結果：
-```
-sample123はマッチしています。
-```
 
-## 深く掘り下げる
+上記のコードは、文字列 `This is a test string` にパターン `test` が含まれているかどうかをチェックしています。`regexec()` 関数の戻り値が 0 の場合、文字列にマッチすると判断され、それ以外の場合はマッチしないと判断されます。
 
-正規表現をより効率的に利用するためには、パターンの作成にあたっては「量指定子」の使用や「キャプチャグループ」の活用などに注目する必要があります。また、エスケープシーケンスや後方参照などの様々な機能もありますので、正規表現の詳細を学ぶことが重要です。
+## 深堀り
 
-## 参考記事
+正規表現には、様々な特殊文字があります。例えば、`^` は文字列の先頭を表し、`$` は文字列の末尾を表します。また、`[]` で囲われた文字列パターンは、そのいずれかの文字にマッチすることを示します。
 
-- [正規表現入門 - Qiita](https://qiita.com/jnchito/items/893c887fbf19e17d3ff9)
-- [Cで正規表現利用 - 日々の記録](http://ushitora.net/archives/910)
-- [C言語で正規表現を使う方法 - HELLO IT LAB](https://hello-itlab.com/c-2102)
+正規表現は非常に強力なツールですが、パターンを正しく記述することが重要です。間違ったパターンで正規表現を使用すると、思わぬバグや予期しない結果が生じる可能性があります。より詳細な情報は、[ドキュメンテーション](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)を参照することをおすすめします。
+
+## 参考リンク
+
+- [正規表現チュートリアル](https://qiita.com/jnchito/items/893c887fbf19e17d3ff9)
+- [正規表現の基礎](https://techacademy.jp/magazine/16081)
+- [GNU C Libraryドキュメンテーション](https://www.gnu.org/software/libc/manual/html_node/index.html#Top)

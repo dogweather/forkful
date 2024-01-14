@@ -1,34 +1,55 @@
 ---
 title:                "PHP: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi yhdistää merkkijonoja?
+## Miksi
 
-Yhdistämisen string-merkkijonon avulla voit yhdistää useita merkkijonoja yhteen ja luoda uuden merkkijonon. Tämä voi olla erittäin hyödyllistä esimerkiksi, kun haluat muodostaa dynaamisen lauseen tai tekstin, joka sisältää muuttujia.
+Stringien yhdistäminen on tärkeä osa PHP-ohjelmointia, ja se auttaa luomaan dynaamisia ja joustavia sovelluksia. Stringien yhdistäminen antaa mahdollisuuden yhdistää erilaisia tietoja ja muuttujia yhteen ja luoda näin monipuolisia sisältöjä.
 
-# Miten: Näin yhdistät merkkijonoja PHP:llä
+## Miten tehdä
 
-Yhdistäminen merkkijonoja PHP:llä on helppoa käyttämällä "." -merkkiä. Tämä merkki toimii yhdistäjänä eri merkkijonojen välillä ja luo uuden merkkijonon. Katsotaanpa esimerkki:
+Stringien yhdistäminen tapahtuu PHP:ssa käyttäen pistettä ".". Seuraavassa esimerkissä meillä on muuttuja "etunimi" ja "sukunimi", ja haluamme yhdistää ne yhdeksi stringiksi:
 
 ```PHP
 $etunimi = "Matti";
 $sukunimi = "Meikäläinen";
-$kokonimi = $etunimi . " " . $sukunimi;
-echo $kokonimi;
+echo $etunimi . " " . $sukunimi;
 ```
 
-Tämä koodinpätkä luo uuden merkkijonon "$kokonimi", jossa yhdistyy aiemmin määritetyt "$etunimi" ja "$sukunimi". Tulosteena saadaan siis "Matti Meikäläinen".
+Tulostus:
 
-# Syvemmälle: Tietoa merkkijonojen yhdistämisestä
+```
+Matti Meikäläinen
+```
 
-Merkkijonojen yhdistäminen voi olla erittäin hyödyllistä myös, kun haluat muotoilla ja jäsentää tulostettavaa tekstiä. Voit esimerkiksi yhdistää eri muuttujia ja tekstinpätkiä välilyönnillä tai muilla merkeillä, jotta saat luotua selkeämmän ja luettavamman tuloksen. Lisäksi voit käyttää muita PHP:n merkkijonojen manipulointifunktioita, kuten "str_replace" tai "substr", yhdessä yhdistämisen kanssa saadaksesi haluamasi tuloksen.
+Voimme myös yhdistää useita muuttujia yhteen ja sisällyttää välissä haluamamme teksti, kuten seuraavassa esimerkissä:
 
-# Katso myös
+```PHP
+$ika = 42;
+echo "Olen " . $ika . " vuotta vanha.";
+```
 
-- [PHP:n merkkijonojen yhdistäminen](https://www.php.net/manual/en/language.operators.string.php)
-- [PHP:n merkkijonojen manipulointifunktiot](https://www.php.net/manual/en/ref.strings.php)
+Tulostus:
+
+```
+Olen 42 vuotta vanha.
+```
+
+## Syvemmälle
+
+Stringien yhdistämisellä on monia käyttötarkoituksia. Sitä voi käyttää esimerkiksi dynaamisten sivujen luomiseen, joissa haluamme yhdistää tietokannasta haetut tiedot HTML:ään. Stringien yhdistäminen on myös välttämätöntä, kun haluamme luoda linkkejä tai polkuja tiedostojen välillä.
+
+On hyvä muistaa, että stringien yhdistäminen voi olla tehoton tapa luoda isoja ja monimutkaisia stringeja. Tällöin kannattaa harkita käytettävän PHP:n sulkemista, joka on nopeampi ja tehokkaampi tapa yhdistää merkkijonoja.
+
+## Katso myös
+
+- [PHP.net: Tietojen yhdistäminen (String Concatenation)](https://www.php.net/manual/en/language.operators.string.php)
+- [W3Schools: PHP stringien yhdistäminen](https://www.w3schools.com/php/php_operators.asp)
+- [Codeacademy: Stringien yhdistäminen](https://www.codecademy.com/learn/learn-php/modules/learn-php-strings/cheatsheet)

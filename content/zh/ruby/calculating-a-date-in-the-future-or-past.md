@@ -1,69 +1,46 @@
 ---
-title:                "Ruby: 未来或过去计算日期"
+title:                "Ruby: 计算未来或过去的日期"
+simple_title:         "计算未来或过去的日期"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
+计算未来或过去的日期是日常编程中经常遇到的需求。例如，你可能需要创建一个日程提醒功能，或者对未来的某个时间点进行计算。通过使用Ruby中提供的日期计算方法，可以轻松地实现这些需求。
 
-计算未来或过去日期似乎是一个古老的编程问题，但它仍然是一个实用的技巧。无论是在编写日历应用程序还是在处理付款截止日期，计算日期是非常常见的需求。使用Ruby编程语言，我们可以轻松地解决这个问题。
+## 如何使用
+要计算一个日期，首先需要使用Ruby的`Date`类。这个类包含着很多方法来处理日期，在这篇文章中，我们会使用其中的`advance`方法来计算日期。下面是一个例子，我们要计算明天的日期：
 
-## 怎样做
-
-要计算未来或过去的日期，我们需要使用Ruby的`Date`类。首先，我们需要创建一个日期对象，指定日期的年份、月份和日。例如，如果我们想要计算5天后的日期，我们可以使用以下代码：
-
-```Ruby
+```ruby
 require 'date'
 
-today = Date.today # 获取今天日期
-future_date = today + 5 # 计算5天后的日期
+today = Date.today
+tomorrow = today.advance(days: 1)
 
-puts future_date # 输出：2019-12-31
+puts tomorrow # Output: 2021-09-23
 ```
 
-温馨提示：`Date.today`方法用于获取当前日期。您也可以使用`Date.new(年份, 月份, 日)`方法手动创建日期对象。
+我们可以看到，通过使用`advance`方法和指定要向前移动的天数，就可以得到明天的日期。同理，我们也可以向后移动日期，只需要将`days`改为`-1`即可。
 
-如果我们想要计算过去的日期，同样可以使用`-`运算符，例如：
+## 深入了解
+除了使用`advance`方法，Ruby还提供了其他方法来计算日期。例如，我们可以使用`next_week`方法来得到下周的日期，或者使用`month`方法来得到当前日期所在月份的第一天。此外，我们还可以使用日期字符串来创建一个特定的日期，例如：
 
-```Ruby
+```ruby
 require 'date'
 
-today = Date.today # 获取今天日期
-past_date = today - 10 # 计算10天前的日期
-
-puts past_date # 输出：2019-12-16
+new_year = Date.parse("2022-01-01")
+puts new_year # Output: 2022-01-01
 ```
 
-我们也可以使用其他方法来计算日期，例如`next_day`、`prev_day`、`next_month`等等。更多关于`Date`类的方法可以查阅官方文档。
+除了以上提到的方法，Ruby还提供了许多其他有用的方法来处理日期，可以根据实际需求进行选择使用。
 
-## 深入探讨
+## 见下链接
+如果您想更深入了解Ruby中日期计算的相关方法，可以参考下面的链接：
 
-使用Ruby计算日期还有更多有趣的用途，例如计算两个日期之间的天数：
-
-```Ruby
-require 'date'
-
-future_date = Date.new(2020, 1, 10) # 创建一个未来日期对象
-today = Date.today # 获取今天日期
-
-days_remaining = (future_date - today).to_i # 计算剩余天数
-
-puts days_remaining # 输出：11
-```
-
-您也可以使用`Date`类的`parse`方法来将日期字符串转换为日期对象，例如：
-
-```Ruby
-require 'date'
-
-future_date = Date.parse("2020-01-10") # 将日期字符串转换为日期对象
-```
-
-## 参考资料
-
-- 官方文档：https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html
-- 计算日期间隔：https://knavitkumar.blogspot.com/2018/06/ruby-date-manipulation-calculating-date.html
-- 使用`differnce`方法计算日期间隔：https://mathewsanders.com/sandbox/ormin-ruby-journey/ruby-tips-7-date-difference-in-days/
+- [Ruby文档中的日期计算方法](https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html)
+- [一篇详细的日期计算教程](https://www.rubyguides.com/2015/10/ruby-date-time/)
+- [Ruby中日期字符串的用法](https://www.rubyguides.com/2015/09/ruby-date-format/)

@@ -1,41 +1,55 @@
 ---
-title:                "Fish Shell: Extraindo subtrings"
+title:                "Fish Shell: Extraindo Substrings"
+simple_title:         "Extraindo Substrings"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que extrair substrings com Fish Shell?
+## Por que
 
-Se você é um programador iniciante ou experiente, sempre haverá situações em que você precisará extrair uma parte de uma string maior para realizar uma tarefa específica. Felizmente, com o Fish Shell, você pode fazer isso facilmente usando a função `string sub`.
+Extrair substrings pode ser útil para usuários do Fish Shell que querem manipular e trabalhar com parte específicas de uma string. Com o uso dessa funcionalidade, é possível automatizar tarefas que envolvem o manuseio de informações de texto, tornando o trabalho mais eficiente e fácil.
 
-## Como fazer?
+## Como Fazer
 
-Para extrair uma substring usando o Fish Shell, é necessário seguir alguns passos simples. Primeiramente, você precisa ter a string original e também saber a posição inicial e final da substring que deseja extrair. Em seguida, pode usar a função `string sub` para realizar a extração. Veja o exemplo abaixo:
+Extrair substrings no Fish Shell é bastante simples. Primeiramente, é necessário ter uma string que contenha a informação desejada. Esta string pode ser armazenada em uma variável ou inserida diretamente no comando. Em seguida, utilizamos o comando `substr` seguido de um intervalo de índices. Por exemplo:
 
-```Fish Shell
-set minha_string "Olá, mundo!"
-echo (string sub $minha_string 5 10)
+```
+set string "Hello World!"
+echo (string (substr $string 0 5))
 ```
 
-Esse código irá extrair a substring "mundo" da string original e imprimirá no terminal. Note que a contagem de posição começa em 1, então a posição inicial é 5 e a posição final é 10.
+Neste exemplo, o comando `substr` extrairá os cinco primeiros caracteres da string e o comando `echo` exibirá o resultado no terminal, mostrando "Hello".
 
-O código acima irá produzir a seguinte saída:
+Também é possível utilizar operadores de comparação nos intervalos de índices, como no exemplo abaixo:
 
-```Shell
-mundo
+```
+set string "Hello World!"
+echo (string (substr $string (- (count $string) 1) (count $string)))
 ```
 
-Além disso, você também pode usar a função `string length` para determinar o tamanho total da string original, facilitando a definição da posição final da substring.
+Neste caso, o comando `substr` extrairá somente o último caractere da string e o comando `echo` exibirá o resultado, mostrando o ponto de exclamação.
 
-## Explorando mais a fundo
+## Deep Dive
 
-A função `string sub` também possui opções adicionais para manipular o tamanho da substring extraída. Por exemplo, você pode definir um tamanho máximo para a substring, que será ignorado caso a string original seja menor. Também é possível definir um tamanho negativo, que irá contar a partir do final da string original. Para saber mais sobre essas opções e outras funções de manipulação de strings disponíveis no Fish Shell, consulte a documentação oficial.
+O comando `substr` pode ser utilizado com diversos intervalos de índices, como em um laço `for` por exemplo. É importante lembrar que o primeiro índice é sempre 0 e o último índice é o total de caracteres na string menos 1, já que os caracteres são contados a partir do 0.
 
-# Veja também
+Também é possível utilizar uma variável no lugar do índice final, permitindo flexibilidade e dinamismo no código. Por exemplo:
 
-- [Documentação oficial do Fish Shell para a função `string sub`](https://fishshell.com/docs/current/cmds/string_sub.html)
-- [Tutorial sobre manipulação de strings com o Fish Shell](https://towardsdatascience.com/using-loops-and-string-functions-to-print-out-the-meaning-of-life-6aafeccc093d)
-- [Outras funções úteis do Fish Shell para manipulação de strings](https://linuxhint.com/6-useful-fish-shell-string-operations/)
+```
+set beginning 3
+set end 7
+set string "Hello World!"
+echo (string (substr $string $beginning $end))
+```
+
+Neste exemplo, o comando `substr` extrairá a string "lo Wo" e o comando `echo` a exibirá no terminal.
+
+## Veja Também
+
+- [Documentação do Fish Shell sobre o comando `substr`](https://fishshell.com/docs/current/cmds/substr.html)
+- [Tutorial sobre manipulação de strings no Fish Shell](https://blog.sanctum.geek.nz/manipulating-strings-using-fish-shell/)
+- [Exemplos de uso do comando `substr`](https://fishshell.com/docs/current/tutorial.html#tut_substrings)

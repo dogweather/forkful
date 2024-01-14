@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Wyszukiwanie i zastępowanie tekstu"
+title:                "Kotlin: Wyszukiwanie i zastępowanie tekstu."
+simple_title:         "Wyszukiwanie i zastępowanie tekstu."
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/searching-and-replacing-text.md"
 ---
 
@@ -9,38 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Każdy programista wie, że czasem konieczne jest przeszukiwanie i zastępowanie tekstu w plikach. Może to wynikać z konieczności dostosowania kodu do nowych wymagań lub po prostu z uwzględnienia błędów. W tym artykule dowiesz się, jak w prosty sposób wykonać te operacje dzięki językowi Kotlin.
+W dzisiejszych czasach programowanie jest jedną z najważniejszych umiejętności, a znajomość różnych języków programowania jest niezbędna do sukcesu. Jednym z najpopularniejszych języków programowania jest Kotlin, który oferuje wiele przydatnych funkcji, w tym funkcje do wyszukiwania i zamiany tekstu. W tym artykule dowiesz się, dlaczego ta funkcja jest tak przydatna i jak jej używać.
 
 ## Jak to zrobić
 
-W języku Kotlin istnieją dwa sposoby na przeszukiwanie i zastępowanie tekstu: z użyciem funkcji `replace` lub biblioteki Regex. W obu przypadkach użyjemy metody `replace`:
+Aby przeprowadzić wyszukiwanie i zamianę tekstu w biedronce, musimy użyć dwóch funkcji: `replace()` i `replaceFirst()`.
 
-```
-Kotlin
-val text = "Hello World!"
-val newText = text.replace("World", "Kotlin")
-println(newText) // Output: Hello Kotlin!
-```
-
-Pierwszym argumentem metody `replace` jest tekst, którego szukamy, a drugi to tekst, którym chcemy go zastąpić. W powyższym przykładzie zmieniliśmy "World" na "Kotlin" i wypisaliśmy wynik na ekran. Proste, prawda?
-
-Jednak jeśli chcesz przeszukiwać tekst z użyciem wyrażeń regularnych (regular expressions), musisz skorzystać z biblioteki Regex:
-
-```
-Kotlin
-val text = "Ten artykuł jest napisany w języku Java."
-val pattern = "Java".toRegex()
-val newText = pattern.replace(text, "Kotlin")
-println(newText) // Output: Ten artykuł jest napisany w języku Kotlin.
+```Kotlin
+fun main() {
+    val text = "Jestem biedronką"
+    println(text.replace("biedronką", "motylem"))
+    println(text.replaceFirst("j", "M"))
+}
 ```
 
-W tym przypadku szukamy słowa "Java" w tekście za pomocą metody `toRegex()` i zastępujemy je napisem "Kotlin". Wyjściowy tekst zawiera już zmienione słowo.
+**Output:**
+```
+Jestem motylem
+Mestem biedronką
+```
 
-## Deep Dive
+Funkcja `replace()` znajduje wszystkie wystąpienia podanego tekstu i zastępuje je nowym tekstem. Natomiast funkcja `replaceFirst()` tylko pierwsze wystąpienie podanego tekstu. Obie funkcje zwracają nowy łańcuch znaków, więc musimy go wyświetlić za pomocą funkcji `println()`.
 
-Biblioteka Regex w języku Kotlin oferuje wiele funkcji, które pozwalają na dokładne przeszukiwanie i manipulację tekstem z użyciem wyrażeń regularnych. Na przykład, możesz zastąpić wszystkie wystąpienia danego wyrażenia lub wyciągać z tekstu określone fragmenty z użyciem metody `replace` i grup wyrażeń (groups). Jeśli chcesz zgłębić temat, polecam zapoznać się z dokumentacją biblioteki Regex w oficjalnej dokumentacji Kotlin.
+## Głębsze zagłębienie
 
-## Zobacz też
+Funkcje `replace()` i `replaceFirst()` umożliwiają również wyrażenia regularne, co czyni je jeszcze bardziej wszechstronnymi. Możemy na przykład zastosować wyrażenie regularne, aby znaleźć wszystkie litery w tekście i zamienić je na wielkie litery.
 
-- [Dokumentacja biblioteki Regex w Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [Wyrażenia regularne w języku Kotlin](https://kotlinlang.org/docs/reference/regular-sequences.html)
+```Kotlin
+fun main() {
+    val text = "Jestem biedronką"
+    println(text.replace(Regex("[a-z]"), { it.value.toUpperCase() }))
+}
+```
+
+**Output:**
+```
+JESTEM BIEDRONKĄ
+```
+
+Inną przydatną funkcją jest `replaceAfter()`, która umożliwia zamianę tekstu po określonym ciągu znaków. Na przykład, jeśli chcemy zamienić słowo "biedronką" na "jeżem", ale tylko po słowie "jestem", możemy to zrobić w ten sposób:
+
+```Kotlin
+fun main() {
+    val text = "Jestem biedronką, jestem szczęśliwy"
+    println(text.replaceAfter("jestem", "jeżem"))
+}
+```
+
+**Output:**
+```
+Jestem jeżem, jestem szczęśliwy
+```
+
+Pamiętaj, że w przypadku braku dopasowania, funkcje `replace()` i `replaceAfter()` zwrócą po prostu niezmieniony łańcuch znaków.
+
+## Zobacz również
+
+- [Kotlin funkcje tekstowe](https://kotlinlang.org/docs/reference/strings.html#string-manipulation) 
+- [Tutorial: Wprowadzenie do wyrażeń regularnych w Kotlin](https://www.kotlindevelopment.com/introduction-regex-kotlin/)

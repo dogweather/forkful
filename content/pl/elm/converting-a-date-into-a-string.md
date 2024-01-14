@@ -1,51 +1,44 @@
 ---
 title:                "Elm: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-W tym krótkim wpisie dowiesz się, jak w języku Elm konwertować datę na ciąg znaków. Jeśli programujesz w Elm, prawdopodobnie napotkałeś tę sytuację wcześniej i szukasz sposobu, aby to zrobić szybko i skutecznie. Przeczytaj dalej, aby dowiedzieć się, jak to zrobić!
+Zamiana daty na ciąg znaków może wydawać się prosta, jednak w programowaniu może być przydatna w wielu sytuacjach. Na przykład, gdy chcemy wyświetlić datę użytkownikowi w czytelny sposób lub zapisać ją w odpowiednim formacie do bazy danych.
 
-## Jak Konwertować Datę na Ciąg Znaków
+## Jak to zrobić
 
-Konwertowanie daty na ciąg znaków może być przydatne w wielu sytuacjach, szczególnie przy pracy z formularzami lub wyświetlaniem dat w czytelny i spójny sposób. Wystarczy wykorzystać funkcję `toString`, aby to osiągnąć. Sprawdź poniższy przykład kodu:
+```elm
+import Date exposing (Date)
+import Date.Format as Format
 
-```Elm
-import Date exposing (Day, Month, Year, Date)
-import Date.Format exposing (format)
-import Time exposing (millisecond)
+-- Przykładowa data
+exampleDate = Date.fromParts 2021 12 31
 
-date : Date
-date = Date.fromCalendarDate { day = 25, month = December, year = 2021 }
+-- Zamiana na ciąg znaków w formacie "DD.MM.YYYY"
+Format.format "DD.MM.YYYY" exampleDate
+-- Wynik: "31.12.2021"
 
-toStringDate : String
-toStringDate = Date.toString "dd.MM.yyyy" (round (millisecond date))
-
+-- Zamiana na ciąg znaków w formacie "MM/DD/YYYY"
+Format.format "MM/DD/YYYY" exampleDate
+-- Wynik: "12/31/2021"
 ```
 
-W tym przykładzie użyto funkcji `fromCalendarDate` aby utworzyć obiekt daty, który następnie przekazano jako argument do funkcji `toString`. Drugim argumentem jest format, w jakim chcemy wyświetlić datę. W tym przypadku użyliśmy formatu "dd.MM.yyyy". Ważne jest również zaokrąglanie liczby milisekund, aby uniknąć błędów konwersji.
+Możemy wykorzystać funkcję `Date.fromParts` aby utworzyć datę z wybranych części (rok, miesiąc, dzień), a następnie użyć funkcji `Format.format` aby określić pożądany format wynikowego ciągu znaków. 
 
-Po wykonaniu powyższego kodu, zmienna `toStringDate` będzie miała wartość "25.12.2021". Proste, prawda?
+## Głębsza analiza
 
-## Głębszy Wgląd
+W Elm, formatowanie daty jest możliwe dzięki modułowi `Date.Format` oraz funkcji `format`, która przyjmuje dwie wartości - format i obiekt daty. Format jest ciągiem znaków zawierającym symbole reprezentujące różne części daty (np. DD - dzień, MM - miesiąc, YYYY - rok), natomiast obiekt daty jest tworzony przy użyciu funkcji `Date.fromParts`, która przyjmuje rok, miesiąc i dzień jako argumenty.
 
-Funkcja `toString` ma również inne możliwości konwersji daty. Możesz użyć znaczników, aby wyświetlić różne formaty daty lub czasu. Na przykład:
-
-- "hh:mm" wyświetli czas w formacie 24-godzinnym z dokładnością do minuty.
-- "hh:mm:ss a" wyświetli czas 12-godzinny z dokładnością do sekundy i informacją o pory dnia (AM/PM).
-- "HH:mm:ss.SSS" wyświetli czas w formacie 24-godzinnym z dokładnością do milisekundy.
-
-Możesz również wyświetlić informacje o dacie, takie jak dzień tygodnia czy numer tygodnia w roku. Więcej szczegółów na temat dostępnych znaczników znajdziesz w [dokumentacji Elm](https://package.elm-lang.org/packages/elm/time/latest/Time#format).
+Istnieje wiele różnych formatów daty, dlatego warto zapoznać się z dokumentacją dotyczącą `Date.Format` aby poznać wszystkie dostępne symbole i możliwości formatowania daty.
 
 ## Zobacz też
-
-- [Dokumentacja Elm - moduł Date](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Dokumentacja Elm - moduł Time](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Elm Weekly - polskie wydanie newslettera o języku Elm](http://elmweekly.pl/?#)
-
-Nadzieję, że ten wpis okazał się dla Ciebie przydatny. Jeśli chcesz dowiedzieć się więcej o języku Elm, polecamy zajrzeć do powyższych źródeł oraz do polskiego wydania newslettera Elm Weekly. Happy coding!
+- Dokumentacja `Date.Format`: https://package.elm-lang.org/packages/elm-lang/core/latest/Date-Format
+- Dokumentacja `Date`: https://package.elm-lang.org/packages/elm-lang/core/latest/Date

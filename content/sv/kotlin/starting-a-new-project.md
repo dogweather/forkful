@@ -1,36 +1,42 @@
 ---
-title:                "Kotlin: Att påbörja ett nytt projekt"
+title:                "Kotlin: Att börja ett nytt projekt"
+simple_title:         "Att börja ett nytt projekt"
 programming_language: "Kotlin"
-category:             "Getting Started"
+category:             "Kotlin"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Det kan finnas många anledningar till varför man vill engagera sig i att starta ett nytt projekt. Det kan vara för att utveckla en ny idé, förbättra en befintlig lösning eller helt enkelt för att lära sig något nytt. Oavsett anledning så kan Kotlin vara ett utmärkt verktyg för att förverkliga projektet.
 
-## Så här gör du
-För att komma igång med Kotlin kan du följa dessa enkla steg:
+Att starta ett nytt programmeringsprojekt kan vara spännande och givande. Det ger möjlighet att utveckla nya färdigheter, bidra till samhället och uppnå personliga mål.
+
+## Hur man gör
+
+För att starta ett nytt Kotlin-projekt behöver du först installera Kotlin och en lämplig kodredigerare, till exempel IntelliJ IDEA eller Android Studio. När du har fått dessa på plats kan du skapa en ny Kotlin-fil genom att öppna din kodredigerare och välja "New Project". Ge sedan ditt projekt ett lämpligt namn och välj "Kotlin" som språk. Du kommer då kunna börja skriva din kod.
 
 ```Kotlin
 fun main() {
-  println("Hej världen!")
+    println("Hej världen!")
 }
 ```
 
-Detta enkla program skriver ut strängen "Hej världen!" i konsolen. Det visar hur lätt det är att komma igång med Kotlin. Du kan även använda Kotlin i webbutveckling, mobilapplikationer och mycket mer. Det finns också många resurser online som kan hjälpa dig att lära dig mer om språket.
+Koden ovan visar en enkel "Hej världen!"-applikation i Kotlin. Genom att köra detta får du som output "Hej världen!" i din terminal eller konsol.
 
 ## Djupdykning
-När du väl har bekantat dig med Kotlin kan det vara bra att fördjupa sig i grundläggande koncept som variabler, funktioner, klasser och objekt. Ett annat viktigt koncept är null-säkerhet, vilket är en av Kotlin's största fördelar. Detta innebär att du undviker krascher och felmeddelanden som kan uppstå när du arbetar med null-värden i ditt program.
 
-Kotlin erbjuder också möjligheter att använda funktionell programmering, vilket kan ge en mer elegant och lättläst kod. Ett annat användbart verktyg är utökningar, som låter dig lägga till nya funktioner till standardklasser utan att behöva ändra dess kod.
+Innan du börjar koda i ditt nya projekt är det viktigt att du först har en klar förståelse för dina mål och krav. Det är också bra att ha en plan för hur du vill organisera din kod och eventuellt identifiera potentiella problem som kan uppstå längs vägen. Det är också viktigt att undersöka vilka verktyg och bibliotek som finns tillgängliga för att underlätta utvecklingen i Kotlin.
+
+När du väl har en bra grund kan du börja koda din applikation. Tänk på att följa god kodningspraxis och dokumentera din kod för att underlätta för dig själv och andra som ska bidra till projektet.
 
 ## Se även
-- [Officiell Kotlin hemsida](https://kotlinlang.org/)
-- [Kotlin för nybörjare](https://www.programiz.com/kotlin)
-- [Kotlin och Android utveckling](https://developer.android.com/kotlin)
-- [Kotlin standardbiblioteket](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)
-- [Kotlin funktionell programmering](https://proandroiddev.com/from-event-driven-to-functional-programming-with-kotlin-part-i-f01b189a2d)
 
-Genom att följa dessa tips och fortsätta utforska Kotlin kan du skapa fantastiska projekt och ta din programmeringsfärdighet till nästa nivå. Lycka till!
+Här är några användbara resurser för dig som vill lära dig mer om att starta ett nytt Kotlin-projekt:
+
+- [Kotlins officiella hemsida](https://kotlinlang.org/) - här hittar du dokumentation, guider och språkreferenser.
+- [IntelliJ IDEA](https://www.jetbrains.com/idea/) - en populär kodredigerare för Kotlin och andra programmeringsspråk.
+- [Android Studio](https://developer.android.com/studio) - en annan populär kodredigerare för Kotlin som är särskilt inriktad på Android-utveckling.
+
+Lycka till med ditt nya projekt!

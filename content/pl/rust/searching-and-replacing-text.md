@@ -1,68 +1,55 @@
 ---
-title:                "Rust: Wyszukiwanie i zamienianie tekstu"
+title:                "Rust: Wyszukiwanie i zamiana tekstu"
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto poszukiwać i zamieniać tekst w programowaniu Rust?
 
-Wybranie i zamiana tekstu jest jednym z najczęstszych zadań wykonywanych przez programistów. Może to być wymagane podczas refaktoryzacji kodu, zmiany nazw zmiennych lub funkcji, lub po prostu poprawenia literówek w plikach źródłowych. W tym poście dowiecie się, jak w prosty sposób zamieniać tekst w języku Rust.
+Poszukiwanie i zamienianie tekstu jest nieodłączną częścią procesu programowania w języku Rust. Pozwala nam to na szybkie i skuteczne zarządzanie tym, co wyświetla się w naszych programach, bez potrzeby ciągłego ręcznego edytowania plików. W tym artykule przedstawimy prosty sposób, w jaki możesz wykorzystać tę funkcję w swoim kodzie Rust.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-W języku Rust istnieje wiele różnych sposobów na wybranie i zamianę tekstu, ale najprostszym i najczęściej używanym jest użycie metody `replace()` dostępnej dla typu `String`. Przypomnijmy sobie podstawowe zasady działania tej metody za pomocą poniższego przykładu:
+Aby zacząć poszukiwanie i zamienianie tekstu w Rust, musimy użyć metody `replace()` z biblioteki standardowej `std::string`. Przykład kodu znajduje się poniżej:
 
 ```Rust
 let text = "Witaj, świecie!";
-let new_text = text.replace("świecie", "Ruscie");
+let new_text = text.replace("Witaj", "Cześć");
 println!("{}", new_text);
-
-// Output: Witaj, Ruscie!
 ```
 
-W tym przypadku wywołujemy metodę `replace()` na zmiennej `text`, przekazując jako pierwszy argument tekst, który chcemy zamienić, a jako drugi - tekst, na który chcemy go zamienić. Następnie, za pomocą funkcji `println!()`, wypisujemy wynik.
-
-Ale co jeśli chcielibyśmy dokonać zamiany jednocześnie na różnych fragmentach tekstu? W takim przypadku możemy skorzystać z metody `replace_range()`, która pozwala nam podać wybrany zakres tekstu do zamiany. Przykład wyglądałby następująco:
+Po uruchomieniu powyższego kodu, wyjściem będzie "Cześć, świecie!". Możemy również użyć wzorców w celu dokładniejszego określenia, co chcemy zamienić. Na przykład, możemy zmienić tylko pierwsze wystąpienie słowa "świecie" na "uniwersum":
 
 ```Rust
-let mut text = String::from("Witaj, świecie!");
-text.replace_range(7.., "bezpieczny");
-println!("{}", text);
-
-// Output: Witaj, bezpieczny!
+let new_text = text.replace("świecie", "uniwersum");
+println!("{}", new_text);
 ```
 
-W tym przypadku wykorzystujemy metodę `replace_range()` na zmiennej `text`, przekazując jako pierwszy argument początkowy indeks, od którego chcemy dokonać zamiany, a jako drugi - tekst, który chcemy wstawić. Ponadto, ustawiamy zmienną `text` jako mutowalną, aby móc dokonać zmiany na jej wartości.
+W tym przypadku wyjściem będzie "Witaj, uniwersum!".
 
-## Przypadki specjalne
+## Wszystko, co musisz wiedzieć o poszukiwaniu i zamienianiu tekstu
 
-Co w sytuacji, gdy chcemy dokonać zamiany tekstu, ale nie chcemy uwzględniać wielkości liter? Tutaj przydatna okaże się metoda `replace()` wraz z funkcją `to_lowercase()`, która zmienia wszystkie litery w tekście na małe. Przykładowy kod wyglądałby tak:
+Funkcja `replace()` w języku Rust jest nie tylko przydatna w prostych przypadkach jak powyżej. Może być również wykorzystana do bardziej zaawansowanych operacji na tekście. Na przykład, możemy zastosować ją do dokładniejszej zmiany formatowania. Przykładowo, możemy zmienić wszystkie wielkie litery na małe, a jednocześnie pozostawić tylko pierwszą literę z dużą:
 
 ```Rust
-let text = "HELLO, WORLD!";
-let new_text = text.replace("hello", "cześć");
+let text = "PROGRAMOWANIE uczy pokory";
+let new_text = text.replace("PROGRAMOWANIE", "programowania");
 println!("{}", new_text);
-
-// Output: HELLO, WORLD!
 ```
 
-W tym przypadku wprowadzone zmiany nie zostaną uwzględnione, ponieważ tekst `"hello"` i `"HELLO,"` różnią się wielkością liter. Aby to zmienić, możemy wykorzystać kombinację tych dwóch metod:
+W wyniku otrzymamy "Programowania uczy pokory". 
 
-```Rust
-let text = "HELLO, WORLD!";
-let new_text = text.to_lowercase().replace("hello", "cześć");
-println!("{}", new_text);
+## Odkryj więcej możliwości
 
-// Output: cześć, WORLD!
-```
+Funkcja `replace()` to tylko jedna z wielu dostępnych opcji do wyszukiwania i zamieniania tekstu w języku Rust. Mocne wsparcie dla operacji na tekście jest kluczowe w wielu aspektach programowania, dlatego zachęcamy do dalszego eksplorowania i wykorzystywania tej funkcji w swoich projektach. 
 
-Teraz tekst zostanie poprawnie zamieniony, bez względu na wielkość liter.
+# Zobacz również
 
-## Deep Dive
-
-Dzięki bibliotece standardowej języka Rust, możemy dokonać zamiany tekstu w sposób wygodny i prosty. Warto jednak pamiętać, że biblioteka ta nie jest przeznaczona do zaawansowanych operacji na tekście i nie jest zalecana do zastosowań, gdzie dużo danych wymaga szybkiego przetwarzania.
-
-Jeśli potrzebujemy bardziej zaawansowanych funkcji, warto zwrócić uwagę na biblioteki takie jak `regex` lub `strsim`, które zawierają dodatkowe metody do manipulacji tek
+- Dokumentacja Rust: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
+- Stack Overflow: https://stackoverflow.com/questions/28392008/how-can-i-replace-a-substring-inside-a-string
+- Ruszaj w świat Rust: https://www.rust-lang.org/learn

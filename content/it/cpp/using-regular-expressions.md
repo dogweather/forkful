@@ -1,50 +1,72 @@
 ---
-title:                "C++: Utilizzo delle espressioni regolari"
+title:                "C++: Utilizzare le espressioni regolari"
+simple_title:         "Utilizzare le espressioni regolari"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-Perché utilizzare le espressioni regolari in C++?
+Ciao amici programmatori!
 
-Le espressioni regolari sono uno strumento potente e versatile che può essere utilizzato in molte applicazioni di programmazione, compresa quella in C++. Con le espressioni regolari, è possibile cercare, sostituire e manipolare testi in modo molto preciso e dinamico. Se stai lavorando con un grande volume di dati o hai bisogno di analizzare testi in modo efficiente, le espressioni regolari possono essere uno strumento estremamente utile da utilizzare.
+Siete alla ricerca di un modo per semplificare la ricerca e la manipolazione di testo all'interno dei vostri programmi? Allora state leggendo l'articolo giusto! Parleremo delle espressioni regolari, un potente strumento utilizzato nella programmazione per riconoscere e manipolare pattern all'interno di una stringa di testo. Continuate a leggere per scoprire il perché, il come e una panoramica più dettagliata sull'utilizzo delle espressioni regolari in C++.
 
-Come utilizzare le espressioni regolari in C++?
+## Perché
 
-Per utilizzare le espressioni regolari in C++, è necessario inclusere la libreria <regex> nel tuo codice. Successivamente, puoi utilizzare le funzioni e le espressioni regolari definite nella libreria per cercare, sostituire o manipolare il testo desiderato. Vediamo un esempio semplice di come utilizzare le espressioni regolari per trovare e sostituire parole all'interno di una stringa:
+Le espressioni regolari sono uno strumento fondamentale per semplificare la gestione del testo all'interno dei nostri programmi. Grazie ad esse, possiamo trovare e manipolare porzioni di testo in modo molto preciso e veloce. Questo è particolarmente utile quando si lavora con grandi quantità di dati o quando si deve scrivere codice efficiente e performante.
+
+## Come utilizzare le espressioni regolari in C++
+
+Per utilizzare le espressioni regolari in C++, è necessario utilizzare la libreria standard `regex`. Questa libreria offre una serie di funzioni e metodi per creare, analizzare e manipolare espressioni regolari. Vediamo un esempio di codice che utilizza espressioni regolari per trovare una parola all'interno di una stringa:
+
+```C++
+#include <iostream>
+#include <regex> // includiamo la libreria regex
+
+using namespace std;
+
+int main() {
+    string testo = "Ciao amici programmatori!";
+    regex espressione("amici"); // creiamo una nuova espressione regolare
+    smatch risultati; // crea un oggetto di tipo smatch per immagazzinare i risultati
+
+    if (regex_search(testo, risultati, espressione)) { // utilizziamo la funzione regex_search per trovare la parola "amici"
+        cout << "Parola trovata: " << risultati[0] << endl; // stampiamo il risultato
+    } else {
+        cout << "Parola non trovata." << endl;
+    }
+
+    return 0;
+}
+```
+
+L'output di questo codice sarà: `Parola trovata: amici`. Come possiamo vedere, le espressioni regolari ci hanno permesso di trovare la parola "amici" all'interno della stringa di testo in modo molto semplice e veloce.
+
+## Approfondimento sulle espressioni regolari
+
+Le espressioni regolari non sono solo utili per trovare parole specifiche all'interno di una stringa, ma possono anche essere utilizzate per validare formati di dati, sostituire porzioni di testo e molto altro. La loro sintassi può sembrare complicata all'inizio, ma una volta imparate alcune regole fondamentali, diventano uno strumento estremamente potente.
+
+Le espressioni regolari sono una combinazione di caratteri che rappresentano un particolare pattern di testo da cercare. Ad esempio, il carattere `\d` indica qualsiasi cifra da 0 a 9, mentre il carattere `.` indica qualsiasi carattere singolo. Utilizzando una combinazione di questi caratteri, possiamo creare espressioni regolari per trovare numeri di telefono, indirizzi email, codici postali e molto altro ancora.
+
+Una delle funzioni più utilizzate delle espressioni regolari è la sostituzione di porzioni di testo. Ad esempio, se volessimo sostituire tutte le vocali di una stringa con asterischi, possiamo utilizzare il seguente codice:
 
 ```C++
 #include <iostream>
 #include <regex>
 
+using namespace std;
+
 int main() {
-    //Definiamo una stringa di testo
-    std::string testo = "Ciao a tutti, mi chiamo Mario e vi saluto!";
+    string testo = "Ciao amici programmatori!";
+    regex espressione("[aeiou]"); // tutti i caratteri "a", "e", "i", "o" o "u"
+    string risultato = regex_replace(testo, espressione, "*"); // la funzione regex_replace sostituisce i caratteri trovati con "*"
 
-    //Definiamo un'espressione regolare per trovare la parola "Mario"
-    std::regex espressione("(Mario)");
-
-    //Sostituiamo la parola trovata con "Luigi"
-    std::string nuovo_testo = std::regex_replace(testo, espressione, "Luigi");
-
-    //Stampiamo il nuovo testo
-    std::cout << nuovo_testo << std::endl;
+    cout << risultato << endl; // output: "C**o *m*c* pr*gr*mm*t*r*" 
 
     return 0;
 }
 ```
-Output:
-> Ciao a tutti, mi chiamo Luigi e vi saluto!
 
-In questo semplice esempio, abbiamo utilizzato le funzioni `regex` e `regex_replace` per cercare la parola "Mario" all'interno della stringa e sostituirla con "Luigi". Ma le espressioni regolari offrono molte più possibilità, come ad esempio utilizzare i quantificatori per cercare più istanze di una parola o utilizzare le espressioni regolari per validare l'input dell'utente. Con un po' di pratica, potrai utilizzare le espressioni regolari in molte situazioni diverse.
-
-Esplorazione approfondita sulle espressioni regolari
-
-Le espressioni regolari possono sembrare un po' complicate all'inizio, ma una volta compreso il loro funzionamento, possono essere un potente strumento per la manipolazione dei testi. Ci sono molti tutorial e risorse disponibili online per aiutarti a comprendere meglio come utilizzare le espressioni regolari in C++. Ad esempio, puoi fare riferimento alla documentazione ufficiale di C++ sulla libreria <regex> o seguire esercizi pratici su siti di programmazione. Inoltre, puoi sperimentare con espressioni regolari diverse per acquisire maggiore familiarità con il loro funzionamento.
-
-Vedi anche
-- Documentazione ufficiale di C++ sulla libreria <regex>: https://www.cplusplus.com/reference/regex/
-- Tutorial su espressioni regolari in C++: https://www.tutorialspoint.com/cplusplus/cpp_regular_expressions.htm
-- Esercizi pratici su espressioni regolari in C++: https://www.hackerrank.com/domains/regex/posix-regex/faq
+Come abbiamo visto, le espressioni regolari possono essere utilizzate in una varietà di mod

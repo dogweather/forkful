@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: Capitalizando una cadena"
+simple_title:         "Capitalizando una cadena"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/capitalizing-a-string.md"
 ---
 
@@ -9,45 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-En la programación, a veces es necesario capitalizar una cadena de texto, es decir, convertir todas las letras minúsculas a mayúsculas. Puede ser útil al trabajar con bases de datos o al mostrar información en una pantalla LCD.
+Muchas veces, al trabajar con strings en Arduino, nos encontramos en la necesidad de capitalizar ciertas palabras para que se muestren de manera correcta en nuestras pantallas LCD o en otros dispositivos. Esto puede ser especialmente útil cuando queremos mostrar títulos o nombres de manera estética y profesional. En este artículo, aprenderemos cómo capitalizar un string en Arduino para mejorar la presentación de nuestros proyectos.
 
 ## Cómo hacerlo
 
-Para capitalizar una cadena de texto en Arduino, podemos utilizar la función `toUpperCase()`. Esta función toma una letra como parámetro y devuelve la misma letra en mayúscula. Podemos utilizarla en un bucle `for` para recorrer cada letra de la cadena y aplicarla a una nueva cadena modificada, que será nuestra cadena capitalizada.
+Existen varias formas de capitalizar un string en Arduino. A continuación, mostraremos dos ejemplos:
 
-```Arduino
-// Ejemplo de capitalización de una cadena de texto
-String cadena = "hola mundo";
-String cadenaCapitalizada = "";
-for (int i = 0; i < cadena.length(); i++) {
-    char letra = cadena.charAt(i); // Obtener cada letra de la cadena
-    letra = toupper(letra); // Convertir la letra a mayúscula
-    cadenaCapitalizada += letra; // Agregar la letra a la nueva cadena
-}
-Serial.println(cadenaCapitalizada); // Imprimir la cadena capitalizada: HOLA MUNDO
 ```
+Arduino String texto = "hola mundo";
+texto.toUpperCase();
+```
+
+Este código, utilizando el método `toUpperCase()`, convertirá todo el string `texto` a mayúsculas y mostrará en pantalla "HOLA MUNDO".
+
+```
+Arduino String texto = "hola mundo";
+texto.replace(0,1,"H");
+```
+
+En este segundo ejemplo, utilizamos el método `replace()` para reemplazar el primer carácter del string por la letra "H". Esto también producirá la salida "Hola mundo".
+
+Estos son solo dos ejemplos, pero hay muchas otras formas de capitalizar un string en Arduino. ¡Pruébalo tú mismo y encuentra la que mejor se adapte a tus necesidades!
 
 ## Profundizando
 
-Si queremos ser más eficientes, podemos evitar el uso de un bucle `for` utilizando el método `toUpperCase()` directamente en la cadena original. También podemos mejorar nuestra función para que pueda manejar letras con tildes o caracteres especiales. Esto se puede lograr utilizando un mapa de caracteres, donde se especifica la equivalencia entre cada letra minúscula y su versión mayúscula correspondiente.
+Si quieres saber más sobre cómo funcionan estos métodos, es importante entender que en Arduino, los strings son en realidad objetos de la clase `String`. Esto significa que podemos utilizar otros métodos de la clase para manipular nuestros strings. Por ejemplo, también podríamos utilizar el método `charAt()` y `setChar()` para cambiar caracteres específicos dentro del string. Además, existen librerías específicas que pueden ayudarnos a capitalizar strings de una manera más avanzada, como por ejemplo [StringCase.h](https://github.com/casey/ArduinoStringObject) o [TextManipulator.h](https://github.com/boyska/TextManipulator).
 
-```Arduino
-// Ejemplo mejorado de capitalización de una cadena de texto
-String cadena = "Hóla, ¿cómo estáś?";
-String cadenaCapitalizada = "";
-for (int i = 0; i < cadena.length(); i++) {
-    char letra = cadena.charAt(i);
-    letra = toupper(letra);
-    // Comprobar si la letra original tenía un equivalente mayúscula en el mapa
-    if (mapaDeCaracteres[letra]) {
-        letra = mapaDeCaracteres[letra]; // Asignar la equivalencia correspondiente
-    }
-    cadenaCapitalizada += letra;
-}
-Serial.println(cadenaCapitalizada); // Imprimir la cadena capitalizada: HÓLA, ¿CÓMO ESTÁŚ?
-```
+En resumen, hay múltiples opciones para capitalizar un string en Arduino y la elección dependerá de tus necesidades y conocimientos sobre programación. Sin embargo, con estas herramientas y librerías, es posible lograr un resultado profesional y atractivo en tus proyectos.
 
 ## Ver también
 
-- [Ejemplos de caracteres UTF-8 en Arduino](https://www.arduino.cc/en/Tutorial/Utf8ascii)
-- [Referencia de la función `toUpperCase()`](https://www.arduino.cc/reference/en/language/functions/characters/touppercase/)
+- [String Manipulation in Arduino](https://www.arduino.cc/en/Tutorial/StringObject)
+- [String Functions in Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+- [Arduino String Class](https://www.arduino.cc/en/Reference/StringObject)
+- [TextManipulator.h library on Github](https://github.com/boyska/TextManipulator)
+- [StringCase.h library on Github](https://github.com/casey/ArduinoStringObject)

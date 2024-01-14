@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Å lese en tekstfil"
+title:                "Gleam: Lesing av en tekstfil"
+simple_title:         "Lesing av en tekstfil"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/reading-a-text-file.md"
 ---
 
@@ -9,37 +11,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Velkommen! Visste du at å lese en tekstfil kan være en grunnleggende kode-oppførsel i enhver programmeringsverden? Det kan hjelpe deg å få tilgang til eller behandle informasjon som er lagret i en fil, for eksempel konfigurasjonsfiler eller datafiler. Uansett om du er nybegynner eller en erfaren Gleam-programmerer, er det viktig å forstå hvordan du kan lese en tekstfil for å kunne utnytte Gleam-potensialet fullt ut.
+Å lese en tekstfil kan være en viktig del av programmering, spesielt når du jobber med store datamengder eller trenger å hente innhold fra en ekstern kilde. Det kan spare deg for mye tid og krefter ved å automatisere lesingen av filer i kode.
 
-## Hvordan
+## Hvordan Gjøre Det
 
-For å lese en tekstfil i Gleam, følg disse trinnene:
-
-1. Åpne tekstfilen ved hjelp av en filbehandler eller en terminal.
-2. Merk deg filplasseringen og filnavnet.
-3. Åpne en teksteditor og skriv følgende kode:
+Med Gleam programmeringsspråk, kan du enkelt lese en tekstfil ved hjelp av "File" biblioteket. Først må du importere dette biblioteket ved å skrive:
 
 ```Gleam
-let tekstfil = std.io.file.read("stiftplassering/filnavn.txt")
+import gleam/file
 ```
 
-4. Erstatt `stiftplassering` og `filnavn` med den faktiske fila du vil lese.
-5. Kjør koden og sjekk resultatet.
+Deretter kan du åpne en tekstfil ved å bruke "file.open" funksjonen og oppgi banen til filen som et argument. For eksempel:
 
-Koden over bruker `std.io.file.read`-funksjonen til å lese filen og lagre innholdet i en variabel kalt `tekstfil`. Du kan da bruke variabelen til å manipulere eller bruke dataene som er lagret i filen.
+```Gleam
+file.open("minfil.txt")
+```
+
+Dette vil returnere en filobjekt som du kan bruke til å lese og manipulere innholdet i filen. Du kan bruke funksjonen "file.read" for å lese hele innholdet i filen, eller "file.read_lines" for å lese linje for linje.
+
+For å demonstrere dette i praksis, la oss si at vi har en tekstfil med navnet "greeting.txt" som inneholder følgende tekst:
+
+```
+Hei! Velkommen til min blogg.
+```
+
+Vi kan da lese innholdet i denne filen og skrive det ut ved hjelp av følgende kode:
+
+```Gleam
+let file = file.open("greeting.txt")
+let content = file.read_lines()
+```
+
+Dette vil returnere en liste med en eneste verdi, nemlig linjen som vi leste fra filen. For å skrive ut denne linjen, kan du bruke "io.format" funksjonen som følger:
+
+```Gleam
+let file = file.open("greeting.txt")
+let content = file.read_lines()
+io.format("Here is the content of greeting.txt: {}", [content])
+```
+
+Dette vil skrive ut følgende output:
+
+```
+Here is the content of greeting.txt: Hei! Velkommen til min blogg.
+```
 
 ## Dypdykk
 
-Å lese en tekstfil kan være enkel, men det er viktig å forstå noen av begrensningene og mulighetene.
+Det er også mulig å lese en tekstfil rad for rad og utføre forskjellige operasjoner på hvert avsnitt. Dette kan være nyttig når du for eksempel ønsker å gjøre noe spesifikt med hver linje i en CSV-fil eller et loggfil.
 
-En begrensning er at Gleam ikke støtter direkte lesing av binære filer. Dette betyr at hvis tekstfilen din inneholder binær data, slik som bilder eller lydfiler, må du bruke et annet bibliotek eller åpne filen i en binær modus for å kunne lese den.
+For å lese filen rad for rad, kan du bruke "file.each_line" funksjonen og en lambda-funksjon. For eksempel:
 
-På den annen side er det noen nyttige funksjoner du kan bruke når du leser en tekstfil i Gleam. For eksempel kan du bruke `std.string.split`-funksjonen til å dele innholdet i filen basert på en separator. Dette er nyttig når du har strukturert data i filen og ønsker å behandle dem enkeltvis.
+```Gleam
+let file = file.open("navn.txt")
 
-Husk at du også kan kombinere å lese en tekstfil med andre Gleam-funksjoner for å skape mer avansert funksjonalitet.
+file.each_line(fn line -> {
+  io.format("Hei, {}! Velkommen til min blogg.", [line])
+})
+```
 
-## Se også
+Dette vil skrive ut følgende for hver linje i filen:
 
-- [std.io.file modul](https://gleam.run/docs/standard-library/io#file-module)
-- [std.string modul](https://gleam.run/docs/standard-library/string)
-- [Gleam Community forum](https://community.gleam.run)
+```
+Hei, Ane! Velkommen til min blogg.
+Hei, Markus! Velkommen til min blogg.
+Hei, Emilie! Velkommen til min blogg.
+```
+
+## Se Også
+
+- [Gleam File Bibliotek](https://gleam.run/documentation/standard-library/file)
+- [Offisiell Gleam Dokumentasjon](https://gleam.run/documentation/)

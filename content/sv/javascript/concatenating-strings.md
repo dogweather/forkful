@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Sammanfogar strängar"
+title:                "Javascript: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/concatenating-strings.md"
 ---
 
@@ -9,56 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Om du är ny inom programmering, kan begrepp som "concatenating strings" verka förvirrande och obekväma. Men oroa dig inte för mycket, för det är faktiskt en mycket användbar teknik inom Javascript. Att konkatenera strängar låter dig kombinera flera textsträngar för att skapa en enda sträng som kan användas i din kod. Det är särskilt användbart när du behöver skapa dynamiska meddelanden eller textsträngar som innehåller variabler.
+Utbildning i programmering är ett viktigt verktyg i dagens digitala samhälle. Och en av de grundläggande principerna i de flesta språk är sammansättning av strängar (concatenation) vilket är en viktig del av att kunna skapa dynamiska och anpassningsbara program.
 
 ## Hur man gör
 
-För att konkatenera strängar i Javascript använder du operatorn "+" mellan strängarna du vill slå samman. Låt oss säga att du vill skriva ut en hälsning till användaren med deras namn. Här är ett exempel på hur du kan göra det:
+Det finns flera olika sätt att sammansätta strängar i JavaScript. Det enklaste sättet är att använda en plusoperator (+) för att lägga till en sträng på slutet av en annan sträng. Till exempel:
 
-```javascript
-// Definiera variabeln "name"
-var name = "Alice";
-
-// Skapa en hälsning med namnet
-var greeting = "Hej " + name + "!" ;
-
-// Skriv ut resultatet
-console.log(greeting);
+```Javascript
+let namn = "Sara";
+console.log("Hej " + namn);
 ```
 
-I detta exempel använder vi "+" för att kombinera tre strängar (Hej, Alice och !) till en enda sträng (Hej Alice!). I konsolen kommer du att se resultatet: "Hej Alice!".
+Output: Hej Sara
 
-Du kan också konkatenera strängar med hjälp av variabler som innehåller nummer eller booleska värden. I så fall konverteras dessa värden till strängar innan de kombineras med resten av strängarna. Här är ett annat exempel:
+En annan metod är att använda metoden .concat(), vilket låter dig lägga till flera strängar i en enda operation. Till exempel:
 
-```javascript
-var num = 10;
-var message = "Jag har " + num + " äpplen.";
-
-console.log(message);
+```Javascript
+let förnamn = "Sara";
+let efternamn = "Lindgren";
+console.log(förnamn.concat(" ", efternamn));
 ```
 
-I detta exempel kommer variabeln "num" att omvandlas till strängen "10" innan den kombineras med resten av strängen. Resultatet i konsolen blir: "Jag har 10 äpplen."
+Output: Sara Lindgren
 
-## Djupdykning
+## Fördjupning
 
-I Javascript kan du också använda metoden "concat()" för att kombinera flera strängar. Istället för att använda "+" operatorn använder du metoden på en av strängarna och lägger till de andra strängarna som argument. Här är ett exempel:
+Det finns en annan viktig aspekt när det gäller sammansättning av strängar, nämligen effektivitet. När man sammansätter flera strängar är det viktigt att använda den mest effektiva metoden för att undvika onödig prestandaförlust. I JavaScript är det bättre att använda metoden .join() istället för en loop när man sammansätter ett stort antal strängar. Till exempel:
 
-```javascript
-var str1 = "Hello ";
-var str2 = "world";
-
-// Använda concat() metoden på str1
-var str3 = str1.concat(str2, "!");
-
-console.log(str3);
+```Javascript
+let ord = ["Hej", "på", "dig", "världen"];
+console.log(ord.join(" "));
 ```
 
-I detta exempel använder vi concat() metoden på str1 och lägger till str2 och "!" som argument. Resultatet blir samma som om vi hade använt "+" operatorn.
+Output: Hej på dig världen
 
-Det finns också andra metoder som kan användas för att manipulera strängar, såsom "slice()" och "substring()" som kan användas för att välja en del av en sträng att konkatenera. Det är viktigt att notera att strängar är oföränderliga i Javascript, vilket betyder att de inte kan ändras. När du manipulerar en sträng, kommer en ny sträng att skapas istället. Detta är anledningen till att det är viktigt att förstå hur konkatenering fungerar och att använda lämpliga metoder för att behålla önskat resultat.
+En annan aspekt att tänka på är att sammansättning av strängar kan vara sårbar för säkerhetsproblem, särskilt om man hanterar användardata. Det är därför viktigt att vara medveten om sådana risker och implementera säkra hanteringsmetoder för att undvika potentiella hot.
 
 ## Se även
 
-- [W3Schools - Concatenating strings in Javascript](https://www.w3schools.com/js/js_string_concat.asp)
-- [MDN Web Docs - Working with strings in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [Stack Overflow - What is the best way to concatenate strings in Javascript?](https://stackoverflow.com/questions/5612787/what-is-the-best-way-to-concatenate-strings-in-javascript)
+- [MDN Web Docs: String.prototype.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [MDN Web Docs: Array.prototype.join()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+- [OWASP: Input Validation Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html)

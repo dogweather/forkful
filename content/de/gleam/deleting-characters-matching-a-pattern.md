@@ -1,66 +1,41 @@
 ---
-title:                "Gleam: Löschen von Zeichen, die einem Muster entsprechen."
+title:                "Gleam: Löschen von Zeichen, die einem bestimmten Muster entsprechen"
+simple_title:         "Löschen von Zeichen, die einem bestimmten Muster entsprechen"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist ein häufig verwendetes Verfahren in der Programmierung, um unerwünschte Zeichen automatisch zu entfernen und die Daten bereinigt zu halten.
+Oftmals müssen Programmiererinnen und Programmierer Zeichen aus einem String löschen, die einer bestimmten Vorlage entsprechen. Dies kann aus verschiedenen Gründen erforderlich sein, wie zum Beispiel das Entfernen von Leerzeichen, Sonderzeichen oder Formatierungen. Mit Gleam ist dies einfach und schnell zu erledigen, daher zeigen wir in diesem Blogpost, wie es geht.
 
-## Wie geht man vor?
+## Wie man Zeichen einer bestimmten Vorlage löscht
 
-Zunächst müssen wir in Gleam ein geeignetes Modul importieren:
-
-```Gleam
-import regex
-```
-
-Als nächstes definieren wir das Pattern, nach dem wir suchen wollen, und speichern es in einer Variable:
+Das Löschen von Zeichen einer bestimmten Vorlage in Gleam ist sehr einfach und erfordert nur wenige Zeilen Code. Zunächst müssen wir jedoch das Modul `String` importieren, um auf die nötigen Funktionen zugreifen zu können.
 
 ```Gleam
-let pattern = "{:digit:}"
+import gleam/string
+
+chars_to_delete = ".,!? "
+original_string = "Hello, world!"
+output = string.remove(original_string, |c| c in chars_to_delete)
+
+gleam => "Hello world"
 ```
 
-In diesem Fall entspricht das Pattern allen numerischen Zeichen.
+In diesem Beispiel verwenden wir die Funktion `string.remove`, die zwei Parameter erwartet: den ursprünglichen String und eine Funktion, die bestimmt, welche Zeichen gelöscht werden sollen. In unserem Fall übergeben wir eine Funktion, die prüft, ob das aktuelle Zeichen in `chars_to_delete` enthalten ist. Das Ergebnis ist ein neuer String ohne die gelöschten Zeichen.
 
-Nun können wir eine Funktion erstellen, die das Löschen der Zeichen durchführt:
+## Tiefergehende Informationen
 
-```Gleam
-fn delete_characters(string) {
-  let matches = regex.find_all(pattern, string)
-  let new_string = string
-  for match in matches {
-    new_string = regex.replace_all(match, "", new_string)
-  }
-  new_string
-}
-```
+Es gibt verschiedene Möglichkeiten, um Zeichen in Gleam zu löschen. Eine davon ist die Verwendung der Funktion `string.filter`, die ähnlich wie `string.remove` funktioniert, jedoch ein Ergebnis zurückgibt, das nur die übrig gebliebenen Zeichen enthält. Diese Funktion ist besonders nützlich, wenn man bestimmte Zeichen ersetzen oder durch andere ersetzen möchte.
 
-Hier nutzen wir die Funktion `find_all` aus dem importierten Modul `regex`, um alle Zeichen zu finden, die dem Pattern entsprechen. Danach durchlaufen wir jede Übereinstimmung und nutzen die Funktion `replace_all`, um die Zeichen durch leere Strings zu ersetzen. Schließlich geben wir den bereinigten String zurück.
-
-Um zu sehen, wie die Funktion in der Praxis funktioniert, können wir sie auf einen beliebigen String anwenden und den output ausgeben:
-
-```Gleam
-let my_string = "Hal1l2o 3W4e5l6t7"
-delete_characters(my_string)
-
->>> "Hallo Welt"
-```
-
-## Tiefergehende Infos
-
-Das Löschen von Zeichen kann auch in komplexeren Szenarien hilfreich sein. Zum Beispiel könnten wir ein Pattern definieren, das auf alle Leerzeichen, Tabs und Zeilenumbrüche reagiert und somit einen String bereinigt.
-
-Außerdem kann es in manchen Fällen hilfreich sein, die gelöschten Zeichen durch andere zu ersetzen, anstatt sie einfach zu entfernen. Dafür können wir die Funktion `replace_all` entsprechend anpassen.
-
-In der Gleam-Dokumentation sind weitere Beispiele und Funktionen für das Löschen von Zeichen mit Pattern zu finden.
+Eine weitere Möglichkeit ist die Verwendung von regulären Ausdrücken, die in Gleam mithilfe des Moduls `Regex` verwendet werden können. Mit regulären Ausdrücken können komplexere Muster definiert werden, nach denen Zeichen gelöscht werden können.
 
 ## Siehe auch
 
-- https://gleam.run/modules/regex#find_all
-- https://gleam.run/modules/regex#replace_all
-- https://gleam.run/docs/regular-expressions
+- Offizielle Gleam Dokumentation zu `string` Modul: https://gleam.run/docs/stdlib/string/
+- Einführung in reguläre Ausdrücke in Gleam: https://dev.to/gbili/gleam-and-regular-expressions-1h9p

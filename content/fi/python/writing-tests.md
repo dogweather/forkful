@@ -1,46 +1,50 @@
 ---
-title:                "Python: Testausten kirjoittaminen"
+title:                "Python: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Python"
-category:             "Testing and Debugging"
+category:             "Python"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi kirjoittaa testeja Pythonilla?
 
-Koodin testaaminen on tärkeä osa Python-ohjelmointia, sillä se varmistaa, että koodisi toimii odotetulla tavalla ja vältät virheiden aiheuttamat ongelmat tulevaisuudessa.
+On monia syitä, miksi kirjoittaa testeja Pythonilla. Yksi tärkeimmistä on varmistaa, että koodi toimii odotetusti ja pysyy virheettömänä jopa muutosten ja päivitysten jälkeen. Lisäksi testien avulla voidaan nopeasti havaita ja korjata mahdolliset bugsit tai ongelmat koodissa.
 
-## Miten
+## Kuinka kirjoittaa testeja Pythonilla
 
-Testien kirjoittaminen Pythonilla on helppoa käyttäen sisäänrakennettuna unittest-kirjastoa. Seuraavassa on esimerkki yksinkertaisesta testistä, joka tarkistaa, että annettu funktio palauttaa oikean tuloksen:
+Pythonilla testien kirjoittaminen on helppoa ja suoraviivaista. Yksi yleisesti käytetty kirjasto testeihin on unittest, joka tarjoaa monipuoliset ominaisuudet testejen kirjoittamiseen ja suorittamiseen.
+
+Seuraavassa on esimerkki yksinkertaisesta testistä, joka tarkistaa, onko kahden luvun summa oikein:
 
 ```Python
 import unittest
 
-def summa(a, b):
-    return a + b
+def summa(x, y):
+    return x + y
 
-class TestFunktio(unittest.TestCase):
+class TestSumma(unittest.TestCase):
 
     def test_summa(self):
-        tulos = summa(2, 3)
-        self.assertEqual(tulos, 5)
+        tulos = summa(3, 5)
+        self.assertEqual(tulos, 8)
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-Tämä testi tarkistaa, että funktio `summa` palauttaa odotetun tuloksen (5) syötteillä 2 ja 3. `assertEqual`-funktio vertaa kahta arvoa ja testi läpäisee, jos ne ovat yhtäsuuret.
+Koodin suorittamisen jälkeen näemme, että testi on läpäisty, koska kahden luvun summa oli odotetusti 8. Jos koodiin tehdään muutoksia ja testi epäonnistuu, voimme nopeasti havaita virheen ja korjata sen ennen kuin se aiheuttaa ongelmia.
 
-## Syvempi sukellus
+## Syvennys testeihin kirjoittamiseen
 
-Testien kirjoittamisen edut eivät rajoitu vain virheiden välttämiseen. Hyvin kirjoitetut testit toimivat myös dokumentaationa ja auttavat ylläpitämään koodin laadukkuutta. Ne myös mahdollistavat koodin refaktoroinnin, eli sen optimoinnin ja parantamisen ilman pelkoa siitä, että jotain menee rikki.
+Testien kirjoittaminen voi tuntua aikaa vievältä, mutta se säästää paljon vaivaa ja aikaa pitkällä aikavälillä. On myös hyvä noudattaa testien kirjoittamista ensin -periaatetta, eli kirjoittaa testit ennen varsinaista koodia. Tämä auttaa varmistamaan, että koodi suorittaa halutun toiminnon ja että kaikki reunaehtojen ja virhetilanteiden käsittely on huomioitu.
 
-Yksi tärkeä asia testaamisessa on testien kattavuus eli se, kuinka monta toimintoa tai koodiriviä testit kattavat. Hyväntekeväisyysjärjestö Unicefin testikattavuuden tavoite on yli 80%, mikä on hyvä tavoite myös omassa koodissasi.
+Lisäksi testejä kannattaa kirjoittaa mahdollisimman laajasti erilaisille syötteille ja reunaehtoihin, jotta kattavuus olisi mahdollisimman korkea. Testien suorittaminen säännöllisesti myös varmistaa, että koodi pysyy virheettömänä muutosten ja päivitysten jälkeen.
 
-## Katso myös
+# Katso myös
 
-- [Unite-testauksen virallinen dokumentaatio](https://docs.python.org/3/library/unittest.html)
-- [Hyvät käytännöt testien kirjoittamisessa](https://www.python.org/dev/peps/pep-0008/#testing)
-- [Verrannollinen testaus ja sen käyttö Pythonissa](https://www.geeksforgeeks.org/comparative-testing-in-python/)
+- [UnitTest-dokumentaatio](https://docs.python.org/3/library/unittest.html)
+- [Python-testin kirjoittaminen 60 sekunnissa](https://www.freecodecamp.org/news/unit-testing-python-tutorial/)
+- [Test-Driven Development (TDD)](https://codeburst.io/understanding-test-driven-development-behavior-driven-development-using-unit-tests-f6e82441099b)

@@ -1,49 +1,50 @@
 ---
-title:                "Fish Shell: Jonojen yhdistäminen"
+title:                "Fish Shell: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi: Merkkijonojen yhdistämisen tärkeys
 
-Miksi haluat yhdistää merkkijonoja koodissasi? Yhdistämällä merkkijonoja voit luoda dynaamisia ja muokattavia tekstejä, mikä on erityisen hyödyllistä esimerkiksi käyttäjien syötteiden käsittelyssä tai käyttöliittymän muokkaamisessa.
+Merkkijonojen yhdistäminen on yksi perustavanlaatuisimmista ohjelmoinnin käsitteistä. Se on tärkeä taito, jota tarvitaan lähes kaikissa ohjelmointitehtävissä. Merkkijonojen yhdistäminen mahdollistaa erilaisten tekstin palojen yhdistämisen yhdeksi kokonaisuudeksi, mikä tarjoaa mahdollisuuksia monipuolisen ja dynaamisen ohjelman luomiseen.
 
-## Miten
+## Miten: Esimerkkejä merkkijonojen yhdistämisestä Fish Shellissä
 
-```Fish Shell``` tarjoaa monia eri tapoja yhdistää merkkijonoja. Seuraavassa esimerkissä käytämme ```echo```-komennon yhteydessä ```&```-operaattoria yhdistämään kaksi stringiä:
-
-```
-echo "Tervetuloa " & "Finnish Reader"
-```
-
-Tämän tuloksena saamme:
+Merkkijonojen yhdistäminen Fish Shellissä on hyvin yksinkertaista ja helppoa. Voit yhdistää merkkijonoja käyttämällä plus-merkkiä (+) tai käyttämällä omaa `string` komentoa. Alla on kaksi esimerkkiä, jotka näyttävät miten tämä tapahtuu.
 
 ```
-Tervetuloa Finnish Reader
+Fish Shell esimerkki 1:
+
+set firstname "Matti"
+set lastname "Meikäläinen"
+
+echo "Tervehdys, " $firstname " " $lastname
+
+Tuloste: Tervehdys, Matti Meikäläinen
 ```
 
-Toinen tapa yhdistää merkkijonoja on käyttää ```string replace``` -komentoa. Tässä esimerkissä korvaamme ensimmäisen merkkijonon toisella merkkijonolla:
-
 ```
-set stringi "Fish Shell on paras"
-string replace "paras" "mahtava" $stringi
-```
+Fish Shell esimerkki 2:
 
-Tulokseksi saamme:
+string join ", " "Fish Shell", "ohjelmointi", "on", "hauskaa!"
 
-```
-Fish Shell on mahtava
+Tuloste: Fish Shell, ohjelmointi, on, hauskaa!
 ```
 
-## Syvempi sukellus
+Kuten näet, merkkijonojen yhdistäminen on hyvin yksinkertaista ja voit käyttää sitä erilaisissa ympäristöissä ja erilaisilla syntakseilla.
 
-Fish Shellin ```string```-moduuli tarjoaa myös muita käteviä työkaluja merkkijonojen käsittelyyn, kuten ```split```, ```trim```, ```length``` ja ```reverse```. Voit tutustua näihin tarkemmin esimerkiksi Fish Shellin dokumentaatiosta.
+## Syventävä tieto: Merkkijonojen yhdistämisestä Fish Shellissä
+
+Fish Shell tarjoaa erilaisia tapoja yhdistää merkkijonoja, kuten jo aiemmin mainittu plus-merkki ja oma `string` komento. Lisäksi voit käyttää `printf` komentoa, joka mahdollistaa monimutkaisempien merkkijonojen muotoilun. Voit myös käyttää `string` komentoa yhdistämään merkkijonoja käyttäen välimerkkejä, kuten pilkku (" , ") tai välilyönti (" ") erottimina.
+
+Merkkijonojen yhdistäminen voi myös olla hyödyllistä, kun haluat generoida käyttäjälle laskuja, luoda dynaamisia otsikoita tai luoda yhteenvetoja suurista tietomääristä. Se on myös hyödyllistä, kun käsittelet käyttäjän syötteitä ja haluat luoda kokonaisia lauseita käyttäen erilaisia muuttujia.
 
 ## Katso myös
-
-- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/cmds/string.html)
-- [Fish Shell - opas aloittelijoille](https://www.freecodecamp.org/news/the-beginners-guide-to-fish-shell-c37c3a7c726/)
-- [Fish Shell - merkkijonojen yhdistäminen](https://www.linux.com/training-tutorials/learn-to-combine-strings-using-fish-shell/)
+- [Fish Shellin viralliset dokumentaatiot](https://fishshell.com/docs/current/index.html)
+- [Fish Shellin GitHub-sivu](https://github.com/fish-shell/fish-shell)
+- [Merkkijonojen yhdistäminen muissa ohjelmointikielissä](https://www.programiz.com/python-programming/methods/string/join)

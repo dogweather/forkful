@@ -1,7 +1,9 @@
 ---
 title:                "Python recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "Python"
-category:             "Testing and Debugging"
+category:             "Python"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/writing-tests.md"
 ---
 
@@ -9,55 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a programmer, writing tests may seem like an additional task on top of writing code. However, investing time in writing tests can actually save time and effort in the long run. It ensures that your code works as expected and helps catch bugs early on, making it an essential part of the development process.
+Writing tests is an essential practice for any programmer, whether you are a beginner or an experienced developer. Tests help ensure the functionality and quality of your code, making it easier to catch and fix errors before they become bigger problems. In the long run, writing tests can save you time and headaches, as well as improve the overall performance of your code.
 
 ## How To
 
-Writing tests in Python is fairly simple and can be done using the built-in `unittest` module. Let's take a look at an example of writing a test for a function that adds two numbers:
+To begin writing tests in Python, you will first need to import the built-in `unittest` module. This module provides tools for constructing and running tests, and organizing them into test cases and test suites. Let's take a look at a simple example:
 
-```python
-# Import the `unittest` module
+```Python
 import unittest
 
-# Define a function to be tested
-def add_numbers(x, y):
-    return x + y
+# define a function to test
+def square(x):
+    return x ** 2
 
-# Create a class for testing our function
-class TestAddNumbers(unittest.TestCase):
-    # Create a test method
-    def test_add_numbers(self):
-        result = add_numbers(5, 10)
-        # Assert if the result is equal to the expected output
-        self.assertEqual(result, 15)
-
-# Run the tests
-unittest.main()
+# create a test case
+class SquareTest(unittest.TestCase):
+    
+    # add test methods
+    def test_square_positive(self):
+        self.assertEqual(square(5), 25)
+        
+    def test_square_negative(self):
+        self.assertEqual(square(-10), 100)
+        
+# run the tests
+if __name__ == '__main__':
+    unittest.main()
 ```
 
-Output:
-```
-..
-----------------------------------------------------------------------
-Ran 2 tests in 0.000s
+In this example, we have defined a function to test, `square()`, and created a test case called `SquareTest`. Within the `SquareTest` class, we have added two test methods, `test_square_positive` and `test_square_negative`, using the `assertEqual()` method to check if the output of `square()` matches the expected result. Finally, we run the tests using the `unittest.main()` function.
 
-OK
-```
-
-In the code block above, we first import the `unittest` module. Then we define the function `add_numbers` that takes in two numbers and returns their sum. Next, we create a class `TestAddNumbers` that inherits from `unittest.TestCase`. This allows us to use built-in methods such as `assertEqual()` to check if the result of our function is equal to the expected output. Finally, we run our test using `unittest.main()`.
-
-Writing tests for more complex functions follows a similar structure. You can also use different `assert` methods such as `assertTrue()` or `assertFalse()` depending on the purpose of your test.
+To run this code, save it as a Python file and execute it in your terminal. You should see two green dots, indicating that both tests have passed. Congratulations, you have written your first tests in Python!
 
 ## Deep Dive
 
-When writing tests, it's important to keep in mind the various cases your code may encounter. This includes testing for different input values, edge cases, and even errors or exceptions. Writing tests for these cases can help ensure that your code is robust and can handle unexpected situations.
+One of the key benefits of writing tests is being able to easily test and maintain your code as it evolves. With the `unittest` module, you can easily add new test cases and test methods to cover different scenarios and edge cases. Use the `assert` methods to check for expected behaviors, and use the `setUp()` method to prepare any data or resources needed for your tests.
 
-Another important practice is to write tests along with your code. This means that for every function or feature you add, you also write a test for it. This ensures that your tests are always up-to-date and reflects any changes made to your code.
-
-It's also worth mentioning that there are other Python testing frameworks available such as `pytest` or `nose`. These offer additional features and a different syntax compared to `unittest`, so it's worth exploring and finding the one that works best for you and your team.
+In addition, you can also use test coverage tools, such as `coverage.py`, to measure the effectiveness of your tests and identify areas of your code that may need additional testing. This deeper analysis can help improve the overall quality and reliability of your program.
 
 ## See Also
 
-- [Python's official unittest documentation](https://docs.python.org/3/library/unittest.html)
-- [A detailed guide to writing tests in Python](https://realpython.com/python-testing/)
-- [Comparing different Python testing frameworks](https://medium.com/nuances-of-programming/comparing-python-testing-frameworks-unittest-vs-pytest-eafd3928db7c)
+- [Official Python documentation for unittest](https://docs.python.org/3/library/unittest.html)
+- [PyCharm tutorial on testing in Python](https://www.jetbrains.com/help/pycharm/testing-your-first-python-application.html)
+- [Coverage.py user guide](https://coverage.readthedocs.io/en/coverage-5.3.1/)
+
+By incorporating tests into your coding workflow, you can improve your code quality, catch errors early on, and ultimately become a more efficient and effective programmer. Happy testing!

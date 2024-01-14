@@ -1,7 +1,9 @@
 ---
-title:                "C++: Suppression de caractères correspondant à un modèle"
+title:                "C++: Suppression de caractères correspondant à un motif"
+simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,39 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Supprimer des caractères correspondant à un modèle peut être utile dans de nombreux cas en programmation C++. Par exemple, cela peut être nécessaire lors du traitement de données utilisateur ou pour nettoyer des chaînes de caractères avant de les utiliser dans des opérations plus complexes.
+Si vous travaillez avec du texte dans un programme C++, il est probable que vous ayez besoin de supprimer certains caractères qui correspondent à un motif spécifique. Que vous souhaitiez nettoyer les données ou effectuer des modifications dans une chaîne de caractères, savoir comment supprimer des caractères correspondants peut être très utile.
 
-## Comment faire
+## Comment le faire
 
-Pour supprimer des caractères correspondant à un modèle, il faut utiliser la fonction `erase` de la classe `std::string`. Cette fonction prend en paramètres l'index de départ et le nombre de caractères à supprimer. Nous pouvons combiner cette fonction avec `find` pour trouver l'index à partir duquel supprimer les caractères correspondants à notre modèle. Voici un exemple de code :
+Pour supprimer des caractères correspondants à un motif donné en C++, vous pouvez utiliser la fonction de bibliothèque standard `remove_if`. Cette fonction prend deux arguments: un itérateur de début et un itérateur de fin, qui délimitent la plage de la chaîne de caractères que vous souhaitez modifier. Dans le même temps, vous devez également fournir une fonction prédicat en tant que troisième argument, qui spécifie les caractères que vous souhaitez supprimer.
+
+Voici un exemple de code montrant comment utiliser la fonction `remove_if` pour supprimer tous les caractères numériques d'une chaîne de caractères:
+
+```C++
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    string str = "1a2b3c4d";
+    str.erase(remove_if(str.begin(), 
+                         str.end(), 
+                         [](char c) { return isdigit(c); }), 
+                         str.end());
+    cout << str << endl;
+    return 0;
+}
+```
+
+La sortie de ce code sera `abcd`, la chaîne de caractères finale sans les caractères numériques.
+
+## Plongée en profondeur
+
+S'il y a plusieurs occurrences du motif dans la chaîne de caractères, `remove_if` ne supprimera que le premier et laissera les autres. Si vous souhaitez supprimer toutes les occurrences, vous pouvez utiliser la fonction `std::erase`. Voici un exemple:
 
 ```C++
 #include <iostream>
 #include <string>
 
+using namespace std;
+
 int main() {
-    std::string texte = "Bonjour tout le monde !";
-    std::string modele = "tou";
-
-    int index = texte.find(modele); // Trouve l'index à partir duquel supprimer les caractères
-    texte.erase(index, modele.size()); // Supprime les caractères correspondant au modèle
-    std::cout << texte << std::endl;
-
+    string str = "apple, banana, cherry";
+    const string pattern = ", ";
+    while (str.find(pattern) != string::npos) {
+        str.erase(str.find(pattern), pattern.size());
+    }
+    cout << str << endl;
     return 0;
 }
 ```
 
-L'output sera :
+La sortie de ce code sera `applebanana, cherry`, la chaîne de caractères finale sans la virgule et l'espace.
 
-```
-Bonjour le monde !
-```
+## Voir aussi
 
-## Plongée en profondeur
-
-Il est important de noter que la fonction `erase` modifie directement la chaîne de caractères sur laquelle elle est appliquée. Cela signifie que la chaîne d'origine sera modifiée après l'appel à la fonction `erase`. Il est également possible de combiner `erase` avec d'autres fonctions de la classe `std::string` pour effectuer des actions plus complexes. Par exemple, nous pouvons utiliser `substr` pour supprimer une partie spécifique d'une chaîne de caractères en utilisant un modèle.
-
-## Voyez aussi
-
-- [Documentation sur la fonction `erase`](https://www.cplusplus.com/reference/string/string/erase/)
-- [Documentation sur la fonction `substr`](https://www.cplusplus.com/reference/string/string/substr/)
+- [La documentation de remove_if en C++](https://en.cppreference.com/w/cpp/algorithm/remove)
+- [Le tutoriel sur les itérateurs en C++](https://www.cplusplus.com/doc/tutorial/iterators/)

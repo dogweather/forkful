@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Escrevendo um arquivo de texto"
+simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/writing-a-text-file.md"
 ---
 
@@ -9,32 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que escrever um arquivo de texto em Rust?
 
-Escrever um arquivo de texto pode ser uma tarefa comum para muitos programadores, mas por que optar por fazê-lo em Rust? Existem várias razões que tornam o Rust uma excelente opção para essa tarefa. Primeiramente, a linguagem foi projetada para ser rápida e eficiente, o que significa que a criação de um arquivo de texto será realizada de maneira eficiente. Além disso, o Rust oferece diversas ferramentas para lidar com erros e garantir uma programação segura. E por fim, mas não menos importante, o Rust possui uma comunidade ativa e em constante crescimento, o que significa que existem muitos recursos disponíveis para ajudar na criação de um arquivo de texto.
+Escrever um arquivo de texto pode ser uma tarefa simples, mas ao realizar em Rust, aproveitamos todas as vantagens de uma linguagem de programação moderna e de alto desempenho. Além disso, ao escrever um arquivo de texto em Rust, podemos utilizar os recursos da linguagem para tornar nosso código mais eficiente e seguro.
 
-## Como escrever um arquivo de texto em Rust?
+## Como fazer:
 
-Escrever um arquivo de texto em Rust é relativamente simples. Primeiro, é preciso importar o módulo `std::fs`, que fornece as ferramentas necessárias para operações de sistema de arquivos. Em seguida, podemos usar a função `write` para criar um novo arquivo com o nome e conteúdo que desejamos. Veja um exemplo abaixo:
+Para escrever um arquivo de texto em Rust, utilizamos o pacote `std::fs`, que nos permite acessar e manipular arquivos. Primeiro, precisamos importar o pacote em nosso código:
+
+```Rust
+use std::fs::File;
+```
+
+Em seguida, podemos criar um novo arquivo de texto utilizando a função `File::create()` e passando o nome do arquivo como parâmetro. Por exemplo, se quisermos criar um arquivo chamado "meu_arquivo.txt", o código ficaria assim:
+
+```Rust
+let arquivo = File::create("meu_arquivo.txt").expect("Erro ao criar arquivo!");
+```
+
+Após criar o arquivo, podemos escrever conteúdo nele utilizando o método `write_all()` e passando uma string com o conteúdo desejado como parâmetro. Por exemplo:
+
+```Rust
+arquivo.write_all(b"Olá, mundo!").expect("Erro ao escrever no arquivo!");
+```
+
+Também podemos utilizar a função `File::open()` para abrir um arquivo já existente e escrever nele. E para garantir que o arquivo seja fechado corretamente ao final do nosso código, podemos utilizar o método `drop()`:
+
+```Rust
+let arquivo = File::open("arquivo.txt").expect("Erro ao abrir arquivo!");
+// Escreve "Texto de exemplo" no arquivo
+arquivo.write_all(b"Texto de exemplo").expect("Erro ao escrever no arquivo!");
+drop(arquivo);
+```
+
+## Mergulho profundo:
+
+Ao escrever um arquivo de texto em Rust, também podemos utilizar a estrutura `BufWriter` para melhorar o desempenho do nosso código. Essa estrutura armazena os dados em um buffer antes de escrevê-los no arquivo, evitando muitas chamadas ao sistema operacional. Por exemplo:
 
 ```Rust
 use std::fs::File;
 use std::io::Write;
+use std::io::BufWriter;
 
-fn main() {
-    let mut file = File::create("arquivo.txt").expect("Não foi possível criar o arquivo!");
-    file.write_all(b"Olá, mundo!").expect("Não foi possível escrever no arquivo!");
-}
+let arquivo = File::create("arquivo.txt").expect("Erro ao criar arquivo!");
+// Cria um BufWriter, passando uma referência para o arquivo e o tamanho do buffer
+let mut escritor = BufWriter::new(arquivo, 1024);
+// Escreve "Texto de exemplo" no arquivo
+escritor.write_all(b"Texto de exemplo").expect("Erro ao escrever no arquivo!");
+// Descarrega todos os dados pendentes no buffer antes de fechar o arquivo
+escritor.flush().expect("Erro ao descarregar dados do buffer!");
 ```
 
-Neste exemplo, estamos criando o arquivo `arquivo.txt` e o preenchendo com o texto "Olá, mundo!". O comando `expect` é usado para lidar com possíveis erros de criação ou escrita do arquivo. É importante ressaltar que a função `write_all` sobrescreve todo o conteúdo existente no arquivo, caso ele já exista. 
+Com isso, podemos observar uma melhoria significativa no desempenho ao escrever no arquivo.
 
-## Uma análise mais profunda sobre a escrita de arquivos de texto em Rust
+## Veja também:
 
-Além da função `write`, existem outras maneiras de escrever em arquivos de texto em Rust. Por exemplo, a função `write_fmt` permite formatar o texto antes de escrevê-lo no arquivo. Além disso, é possível usar a macro `writeln!` para facilitar a escrita de texto separado por linhas. Outro ponto importante a ser destacado é que, para escrever em um arquivo, é necessário abri-lo em modo de escrita, utilizando `File::open` ou `File::open_exclusive`.
-
-É importante lembrar também que, ao finalizar a operação de escrita em um arquivo, é necessário usar a função `flush` ou `sync_all` para garantir que todas as alterações sejam salvas antes que o arquivo seja fechado.
-
-## Veja também
-
-- [Documentação oficial do módulo std::fs em Rust](https://doc.rust-lang.org/std/fs/index.html)
-- [Tutorial sobre operações de sistema de arquivos em Rust](https://dev.to/deciduously/socket-to-file-17bo)
-- [Exemplos de escrita em arquivos em Rust](https://www.educative.io/courses/learn-rust-from-scratch/XLJ9V2pLD9j)
+- [Documentação oficial: std::fs](https://doc.rust-lang.org/std/fs/index.html)
+- [Tutorial de Rust: Trabalhando com arquivos](https://www.rustbrasil.com/comecando-com-rust/trabalhando-com-arquivos/)
+- [Artigo: Manipulando arquivos em Rust](https://medium.com/@joseanimacoes/programa%C3%A7%C3%A3o-em-rust-manipulando-arquivos-1d5143a501e9)

@@ -1,82 +1,67 @@
 ---
-title:                "Javascript: Das aktuelle Datum erhalten"
+title:                "Javascript: Das Abrufen des aktuellen Datums"
+simple_title:         "Das Abrufen des aktuellen Datums"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Viele Anwendungen erfordern es, das aktuelle Datum und die aktuelle Uhrzeit auszugeben. Es kann für eine bestimmte Funktionalität, wie zum Beispiel eine Erinnerungsfunktion, benötigt werden, oder einfach nur als Information für den Nutzer angezeigt werden. In diesem Blog-Beitrag werden wir uns anschauen, wie wir mithilfe von Javascript das aktuelle Datum auf einfache Weise erhalten können.
+Die aktuelle Datum und Uhrzeit sind in der Webentwicklung eine häufig verwendete Funktion. Sie wird verwendet, um dynamische Inhalte wie Benutzeranmeldungen, Chatunterhaltungen und Nachrichten zu stempeln. Das Abrufen des aktuellen Datums ist auch wichtig, um geplante Aufgaben wie Benachrichtigungen oder Updates durchzuführen. In diesem Blogbeitrag werden wir uns anschauen, wie man mit Javascript das aktuelle Datum abrufen kann.
 
-## Wie es geht
+# Wie es geht
 
-Die aktuelle Datum und Uhrzeit können in Javascript mit der `Date()` Methode abgerufen werden. Wir können sie in einer Variablen speichern, um sie später zu verwenden oder direkt als Ausgabe nutzen.
+### Verwendung von Date()
 
-```Javascript
-let currentDate = new Date();
-console.log(currentDate);
-```
-
-Die Ausgabe wird in der Konsole folgendermaßen aussehen:
-
-```
-Fri Jul 23 2021 17:50:46 GMT+0200 (Central European Summer Time)
-```
-
-Dies gibt uns das aktuelle Datum, die Uhrzeit und die Zeitzone an. Aber was ist, wenn wir nur das Datum oder die Uhrzeit benötigen?
-
-Um nur das aktuelle Datum zu erhalten, können wir die `getDate()` Methode verwenden, die uns den Tag des Monats als Zahl zurückgibt:
+Javascript bietet die Date() -Funktion, um das aktuelle Datum und die Uhrzeit zu erhalten. Dies funktioniert, indem ein neues Date-Objekt erstellt wird und dann die Methoden getDate(), getMonth(), getFullYear() usw. verwendet werden, um die Nummern für Datum, Monat und Jahr zu erhalten. Hier ist ein Beispiel:
 
 ```Javascript
-let currentDate = new Date();
-let day = currentDate.getDate();
-console.log(day);
+let datum = new Date();
+let tag = datum.getDate();
+let monat = datum.getMonth() + 1; // Monate beginnen bei 0, daher muss 1 addiert werden
+let jahr = datum.getFullYear();
+
+console.log(`Heute ist der ${tag}.${monat}.${jahr}.`);
+// Ausgabe: Heute ist der 25.12.2020.
 ```
 
-Dies gibt uns als Ausgabe den aktuellen Tag des Monats, zum Beispiel 23. Um zusätzlich den Monat und das Jahr zu bekommen, können wir die `getMonth()` und `getFullYear()` Methoden verwenden:
+### Verwendung von toLocaleDateString()
+
+Eine andere Möglichkeit, das aktuelle Datum in einem bestimmten Format zu erhalten, ist die Verwendung der toLocaleDateString() -Funktion. Diese Funktion konvertiert das Datum in ein lesbares Format basierend auf den Browsereinstellungen des Benutzers. Hier ist ein Beispiel:
 
 ```Javascript
-let currentDate = new Date();
-let month = currentDate.getMonth() + 1; // Die Monate starten bei 0, daher muss 1 addiert werden
-let year = currentDate.getFullYear();
-console.log(day + "." + month + "." + year);
+let datum = new Date();
+let heute = datum.toLocaleDateString();
+
+console.log(`Heute ist der ${heute}.`);
+// Ausgabe: Heute ist der 25.12.2020.
 ```
 
-Die Ausgabe wird nun wie folgt aussehen:
+### Verwendung von Moment.js
 
-```
-23.7.2021
-```
-
-Um nur die aktuelle Uhrzeit zu erhalten, können wir die `getHours()`, `getMinutes()` und `getSeconds()` Methoden nutzen:
+Moment.js ist eine beliebte Bibliothek für das Arbeiten mit Datum und Uhrzeit in Javascript. Um es zu verwenden, muss es zuerst eingebunden werden. Anschließend können Sie die Funktionen von Moment.js verwenden, um das aktuelle Datum und die Uhrzeit zu erhalten und sie in verschiedenen Formaten anzuzeigen. Hier ist ein Beispiel:
 
 ```Javascript
-let currentDate = new Date();
-let hours = currentDate.getHours();
-let minutes = currentDate.getMinutes();
-let seconds = currentDate.getSeconds();
-console.log(hours + ":" + minutes + ":" + seconds);
+let moment = require('moment'); // Moment.js einbinden
+let jetzt = moment();
+
+console.log(`Es ist ${jetzt.format("MMMM Do YYYY, h:mm:ss a")}.`);
+// Ausgabe: Es ist December 25th 2020, 12:00:00 am.
 ```
 
-Dies wird uns die aktuelle Uhrzeit im Format Stunden:Minuten:Sekunden zurückgegeben.
+# Tief eintauchen
 
-## Tiefentauchgang
+Es gibt noch viele weitere Funktionen und Methoden, mit denen Sie das aktuelle Datum und die Uhrzeit in Javascript abrufen können. Hier sind einige zusätzliche Ressourcen, die Sie erkunden können:
 
-Wenn wir uns die Ausgabe des `console.log()` genauer ansehen, fällt auf, dass es sich um einen sogenannten Timestamp handelt. Dies ist eine Zahl, die angibt, wie viele Millisekunden seit dem 1. Januar 1970 vergangen sind. Wir können diesen Timestamp auch direkt ausgeben, indem wir die `getTime()` Methode verwenden:
+- [MDN Dokumentation über die Date()-Funktion](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [MDN Dokumentation über die toLocaleDateString()-Funktion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+- [Moment.js Dokumentation](https://momentjs.com/)
 
-```Javascript
-let currentDate = new Date();
-let timestamp = currentDate.getTime();
-console.log(timestamp);
-```
+# Siehe auch
 
-Die Ausgabe wird nun eine lange Zahl sein, zum Beispiel 1627051101584. Dies kann nützlich sein, um verschiedene Zeitberechnungen durchzuführen.
-
-## Siehe auch
-
-- [MDN Web Docs - Date()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools - JavaScript Date() Method](https://www.w3schools.com/jsref/jsref_date.asp)
-- [Date and Time in Javascript](https://www.toptal.com/software/definitive-guide-to-datetime-manipulation)
+- [Wie man mit Javascript Arrays arbeitet](https://www.example.com/artikel/javascript-arrays)
+- [Die Grundlagen der Datenvalidierung in Javascript](https://www.example.com/artikel/datenvalidierung-javascript)

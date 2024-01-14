@@ -1,37 +1,68 @@
 ---
 title:                "Swift: Читання текстового файлу"
+simple_title:         "Читання текстового файлу"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/swift/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому 
-Чи коли-небудь ви хотіли прочитати вміст текстового файлу за допомогою Свіфт, але не знали з чого почати? Розуміння того, як працює читання текстових файлів може допомогти вам ефективно працювати з даними та зробити ваш код більш універсальним.
+## Чому
+
+У цій статті ми розглянемо те, як читати текстовий файл за допомогою Swift. Якщо ви хочете дізнатися, як зчитувати дані з текстового файлу, ця стаття для вас!
 
 ## Як
-Відкривши текстовий файл в Свіфт, вам буде необхідно використати клас `FileHandle`, який надає функціональність для читання та запису даних. Спочатку, ви повинні відкрити файл за допомогою методу `init(forReadingFrom: URL)`, передавши шлях до вашого файлу. Далі, використовуючи метод `readData(ofLength: Int)`, ви можете прочитати бажану кількість байтів з файлу. Наприклад:
+
+Щоб зчитати текстовий файл за допомогою Swift, нам потрібно використовувати клас "FileManager". Спочатку нам потрібно отримати шлях до файлу:
 
 ```Swift
-let fileURL = URL(fileURLWithPath: "/path/to/file.txt")
-if let fileHandle = try? FileHandle(forReadingFrom: fileURL) {
-	let data = fileHandle.readData(ofLength: 10)
-	print(String(data: data, encoding: .utf8)) // буфер з першими 10 байтами з файлу (якщо вони існують)
-} else {
-	print("Не вдалося відкрити файл")
+let path = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("file.txt")
+```
+
+Потім ми можемо створити змінну типу "String", в яку будемо зберігати всі дані з файлу:
+
+```Swift
+var fileContent: String = ""
+```
+
+Тепер ми можемо використати метод "contents(atPath: String)", щоб отримати дані з нашого файлу:
+
+```Swift
+if let data = FileManager.default.contents(atPath: path.path) {
+    fileContent = String(data: data, encoding: .utf8) ?? ""
 }
 ```
 
-Важливо пам'ятати закрити файл, викликавши метод `closeFile()` для уникнення проблем з файловою системою вашої операційної системи.
+Цей метод повертає дані у вигляді "Data", тому нам потрібно перетворити їх у "String". Тепер ми можемо вивести отримані дані на екран:
 
-## Глибоке вивчення
-Якщо ви бажаєте більш детально ознайомитися з темою читання текстових файлів в Свіфт, ви можете обрати один з наступних варіантів:
+```Swift
+print("Зміст файлу:", fileContent)
+```
 
-- Для початківців: [Робота з файлами у Свіфт](https://www.hackingwithswift.com/read/6/4/reading-from-a-file)
-- Поглиблений підхід: [Робота зі збереженням даних у файловій системі](https://www.raywenderlich.com/501-intermediate-swift-tutorial-saving-data-with-file-manager)
-- Офіційна документація Свіфт: [Робота з файловими операціями](https://developer.apple.com/documentation/foundation/filemanager)
+Якщо наш файл містить наступний текст:
 
-## Дивіться також
-- [Опис класу FileHandle у документації Свіфт](https://developer.apple.com/documentation/foundation/filehandle)
-- [Офіційна документація з роботи зі збереженням даних в Свіфт](https://developer.apple.com/documentation/foundation/archives_and_serialization)
+```
+Привіт у всіх!
+Світ Swift чекає!
+```
+
+Ми отримаємо наступний вихід:
+
+```
+Зміст файлу: Привіт у всіх!
+Світ Swift чекає!
+```
+
+## Deep Dive
+
+Файли можуть містити багато різноманітної інформації, тому саме для цього Swift має багато функціональних можливостей для читання даних. Наприклад, якщо файл повертає дані у форматі "Data", ми можемо використати функції "JSONSerialization" для розшифрування цих даних у зрозумілий формат.
+
+Також можна використовувати різні методи для отримання конкретної інформації з файлу, наприклад, читати по рядках, визначати розмір файлу та багато іншого.
+
+## Дивитися також
+
+1. [Робота з файлами та каталогами в Swift](https://www.raywenderlich.com/7045-working-with-files-and-directories-in-swift)
+2. [Робота з JSON в Swift](https://medium.com/kinstate/how-to-parse-json-file-in-swift-5a37c25ba1f1)
+3. [Документація Apple про клас FileManager](https://developer.apple.com/documentation/foundation/filemanager)

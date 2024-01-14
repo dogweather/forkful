@@ -1,54 +1,45 @@
 ---
 title:                "Arduino recipe: Extracting substrings"
+simple_title:         "Extracting substrings"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever wanted to extract a specific section of text from a longer string? Perhaps you only need a certain section of a sensor reading or you want to parse through a long text message. Whatever your reason, being able to extract substrings in your Arduino programming can save you time and make your code more efficient.
+Substrings are a powerful feature in programming that allow us to extract smaller portions of a string, or a sequence of characters, from a larger string. This can be useful for tasks such as parsing data, manipulating text, or performing calculations. In Arduino programming, substrings can be particularly useful for working with sensor data or user input.
 
 ## How To
-
-In this tutorial, we will be using the substring() function in Arduino to extract portions of a string. Let's say we have a string that contains the temperature and humidity data from a sensor, separated by a comma. We want to extract just the temperature value and use it in our code.
-
-First, we will declare our string variable and assign it a value:
+To extract substrings in Arduino, we can use the `substring()` function. Let's look at an example where we have a string variable `message` with the value "Hello World!". We want to extract the substring "World" from this string and print it out.
 
 ```
-ArduinoString data = "25.4, 60";
+Arduino String message = "Hello World!"; 
+String substring = message.substring(6, 11); 
+Serial.print(substring);
 ```
 
-Next, we will use the substring() function to extract the temperature value. This function takes in two parameters - the starting index and the number of characters to extract.
+In this code, we first declare a String variable `message` with the value "Hello World!". Then, we create another String variable `substring` and use the `message.substring()` function to extract the characters from position 6 to 11. Note that the position numbering starts at 0, so the "W" in "World" is at position 6 and the "d" is at position 10. Finally, we print out the value of `substring` using the `Serial.print()` function.
 
-```
-int start = 0; //since our temperature value starts at index 0
-int length = data.indexOf(","); //we want everything before the comma
-int temperature = data.substring(start, length).toInt(); //converting the extracted string to an integer
-```
-
-We can now use the temperature value in our code. Here's a full example with the output:
-
-```
-ArduinoString data = "25.4, 60"; //declare and assign string variable
-int start = 0;
-int length = data.indexOf(",");
-int temperature = data.substring(start, length).toInt(); //extracting and converting to int
-Serial.println(temperature); //output: 25
-```
+When we run this code, the output will be "World" in the serial monitor. We have successfully extracted a substring from our original string!
 
 ## Deep Dive
+The `substring()` function takes two parameters: the starting position and the ending position of the substring. We can also include a third parameter for the length of the substring, but if we only specify the starting and ending positions, the function will return all characters between those two positions, including the character at the starting position but not including the character at the ending position.
 
-The substring() function in Arduino allows us to easily extract substrings from a longer string. It takes in two parameters - the starting index and the number of characters to extract. This makes it very versatile and allows us to customize our extractions based on our specific needs.
+Additionally, the `substring()` function can be used to extract a substring from an array of characters instead of a String variable. We simply need to pass the array name and the number of characters we want to extract as parameters, like this:
 
-It's important to note that the starting index is inclusive, meaning it will include the character at that index in the extraction. The ending index is exclusive, meaning it will not include the character at that index in the extraction.
+```
+char message[] = "Hello World!"; 
+String substring = message.substring(6, 11); 
+```
 
-Another useful function when extracting substrings is indexOf(). This function allows us to find the index of a specific character within a string. In our example, we used it to find the index of the comma separating the temperature and humidity values.
+Now, the `substring()` function will return the characters "World" from the array `message[]`.
 
 ## See Also
+To learn more about substrings in Arduino programming, check out these resources:
 
-- [Arduino substring() reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [Arduino indexOf() reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/)
-- [Tutorial: String manipulation in Arduino](https://www.arduino.cc/en/Tutorial/StringVariableTutorial)
+- [Arduino Reference for `substring()` function](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- [Tutorial on extracting substrings in Arduino](https://create.arduino.cc/projecthub/imad96/extracting-substrings-in-arduino-501140)
+- [Arduino String Manipulation Tutorial](https://www.youtube.com/watch?v=UEy-i7ZpLrA&t=3s)

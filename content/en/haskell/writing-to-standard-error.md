@@ -1,7 +1,9 @@
 ---
 title:                "Haskell recipe: Writing to standard error"
+simple_title:         "Writing to standard error"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/writing-to-standard-error.md"
 ---
 
@@ -9,71 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-When programming in Haskell, one may come across the need to write to standard error instead of standard output. This could be useful for debugging purposes or for displaying error messages to the user. In this blog post, we will explore how to write to standard error using Haskell.
+In the world of programming, debugging is an essential task that can often take up a significant amount of time. When writing code in Haskell, it's crucial to have effective error handling mechanisms in place to make debugging easier. One such mechanism is writing to standard error, which allows for more detailed error messages and easier debugging.
 
 ## How To
 
-To write to standard error in Haskell, we can use the `hPutStr` or `hPutStrLn` functions from the `System.IO` module. These functions take in a handle and a string as arguments.
-
-A handle represents a stream of data, and in this case, it represents standard error. We can use the `stderr` function to get the handle for standard error.
+To write to standard error in Haskell, we can use the `hPutStrLn` function from the `System.IO` module. This function takes in a `Handle` and a `String` and writes the string to the given handle. In the case of standard error, the handle can be accessed using `stderr`.
 
 Let's take a look at an example:
 
-```Haskell
+``` Haskell
 import System.IO (hPutStrLn, stderr)
 
-main :: IO ()
 main = do
-    hPutStrLn stderr "This will be written to standard error."
+    -- Some code that may potentially throw an error
+    result <- someFunction
+    case result of
+        Left err -> hPutStrLn stderr $ "An error occurred: " ++ err
+        Right val -> putStrLn "Everything is fine."
 ```
 
-Running this code will print the given string to the standard error stream. The output will look something like this:
+In this example, we have a `main` function where we are calling a function `someFunction` that can potentially throw an error. We use the `case` statement to handle the `Left` and `Right` cases, and in the `Left` case, we use `hPutStrLn` to write the error message to standard error. This way, we can get a detailed error message in case something goes wrong.
+
+The output of this program will depend on the result of `someFunction`, but in the case of an error, it will be something like this:
 
 ```
-This will be written to standard error.
-```
-
-We can also use the `hPutStr` function to write to standard error without adding a new line at the end of the string. Here's an example:
-
-```Haskell
-import System.IO (hPutStr, stderr)
-
-main :: IO ()
-main = do
-    hPutStr stderr "This will be written"
-    hPutStr stderr " to standard error."
-```
-
-The output of this code will be:
-
-```
-This will be written to standard error.
+An error occurred: Division by zero
 ```
 
 ## Deep Dive
 
-Under the hood, the `hPutStr` and `hPutStrLn` functions make use of buffers to improve performance. A buffer is a temporary storage area for data before it is written to a stream.
+When writing to standard error, it's essential to understand how it differs from writing to standard output. Standard output is usually used for printing regular program output, while standard error is reserved for error messages. By writing to standard error, we can ensure that our error messages are not mixed up with regular program output, making it easier to spot and debug errors.
 
-When we use the `hPutStr` or `hPutStrLn` functions, the string is first stored in a buffer and then written to standard error. This allows the program to write multiple strings to standard error without constantly accessing the actual stream.
-
-If we want to manually flush the buffer and force the program to write the contents to the stream, we can use the `hFlush` function. Here's an example:
-
-```Haskell
-import System.IO (hPutStrLn, hFlush, stderr)
-
-main :: IO ()
-main = do
-    hPutStrLn stderr "This will be written to standard error."
-    hFlush stderr
-    hPutStrLn stderr "This string will also be written to standard error."
-```
-
-The `hFlush` function clears the buffer for standard error, so when we use `hPutStrLn` again, the string will be written to standard error immediately instead of waiting for the buffer to fill up or for the program to end.
+Additionally, when writing to standard error, it's important to handle any exceptions that may occur to prevent the program from crashing. We can do this by using the `catch` function from the `Control.Exception` module. It takes in an `IO` action and a function that handles any exceptions that may occur.
 
 ## See Also
 
-Here are some other helpful resources for writing to standard error using Haskell:
-
-- [Haskell documentation for System.IO module](https://hackage.haskell.org/package/base/docs/System-IO.html)
-- [A tutorial on I/O in Haskell](https://www.haskelltutorial.com/io.html)
-- [A video tutorial on handling I/O in Haskell](https://www.youtube.com/watch?v=Vgu82wiiZ90)
+- [Haskell IO - Handle and HandleMode](https://www.tutorialspoint.com/haskell/haskell_io_handle_handlemode.htm)
+- [Learn You a Haskell - Input and Output](http://learnyouahaskell.com/input-and-output)
+- [Control.Exception - Hackage](https://hackage.haskell.org/package/base-4.14.0.0/docs/Control-Exception.html)

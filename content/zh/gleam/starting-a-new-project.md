@@ -1,58 +1,49 @@
 ---
-title:                "Gleam: 开始一个新项目"
+title:                "Gleam: 开始一个新项目 (Kāishǐ yī gè xīn xiàngmù)"
+simple_title:         "开始一个新项目 (Kāishǐ yī gè xīn xiàngmù)"
 programming_language: "Gleam"
-category:             "Getting Started"
+category:             "Gleam"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要开始一个新项目
+# 为什么要开始一个新项目？
 
-无论是为了个人兴趣还是为了商业目的，开始一个新项目都是非常令人兴奋的过程。通过使用Gleam编程语言，您可以轻松创建高性能和安全的软件，为您的项目增添更多乐趣。
+开始一个新项目可以带来许多好处。它可以是一个学习新技能的机会，也可以是实现自己想法的途径。无论是作为个人兴趣还是商业需求，开始一个新项目都能激发我们的创造力和发挥最大潜力。
 
-## 如何开始
+## 如何开始？
 
-```Gleam
-// 创建一个简单的“Hello, World!”程序
+首先，您需要安装Gleam编程语言。它是一个功能强大的静态类型语言，专门为分布式系统和并发编程设计。您可以在命令行中输入`brew install gleam`（适用于Mac用户）或`npm install -g gleam`（适用于Windows用户）来安装Gleam。
+
+接下来，让我们来看一个简单的例子。我们将创建一个打印“Hello, World！”的简单程序。
+
+```
+Gleam
 pub fn main() {
-  let greeting = "Hello, World!";
-  io.println(greeting);
+    io.print("Hello, World!")
 }
 ```
 
-此示例程序将打印出“Hello, World!”，这是一个简单但重要的开始。通过使用Gleam的强类型系统和模式匹配功能，您可以编写稳定且易于维护的代码。
+在上面的代码中，我们使用了Gleam内置的`io`模块，并调用了其中的`print`函数来打印我们想要输出的内容。要运行这段代码，您可以使用`gleam run hello_world.gleam`命令，将文件名替换为您自己的文件名。
 
-```Gleam
-// 使用模式匹配输出不同的问候语
-pub fn greet(lang) {
-  case lang {
-    "English" => "Hello!";
-    "Spanish" => "¡Hola!";
-    "Mandarin" => "你好！";
-    _ => "Hello!";
-  }
-}
-```
+## 深入探讨
 
-使用Gleam，您可以轻松地编写多语言应用程序，让您的项目更加多样化和全球化。
+当开始一个新项目时，这里有一些课题值得深入探讨。首先，您需要确定您的项目的目的和范围。这将帮助您选择合适的编程语言和工具。其次，您需要规划好项目的结构和架构，以便未来的扩展和维护。最后，您还需要学习如何使用不同的框架和库来实现您的想法。
 
-## 深入了解如何开始新项目
+另外，Gleam拥有活跃的社区，您可以通过加入Slack群组、参加线下活动和阅读官方文档来深入了解这门语言。您也可以参考一些开源项目的源代码，来学习如何在实践中使用Gleam。
 
-在开始一个新的Gleam项目之前，建议先学习其基本语法和概念。Gleam的官方网站提供了大量的教程和文档，帮助您快速入门。您也可以参考其他Gleam项目的代码，学习如何实现不同的功能。
+# 参考链接
 
-在开始编写代码之前，建议先思考项目的结构和架构。Gleam也提供了一些有用的工具，如构建工具和包管理器，帮助您更有效地管理项目。
+- [官方文档](https://gleam.run/)
+- [Gleam语言GitHub仓库](https://github.com/gleam-lang/gleam)
+- [Gleam语言Slack群组](https://join.slack.com/t/gleam-lang/shared_invite/zt-nzxcggv6-CXdP3CNvH4NlKxM66V_jBg)
+- [Gleam语言中文论坛](https://learn-gleam.cn/)
+- [一个使用Gleam开发的实际项目](https://github.com/gleam-lang/primal)
 
-## 参考链接
+# 参见
 
-了解更多关于Gleam编程语言的信息，请访问官方网站：[https://gleam.run/](https://gleam.run/)
-
-浏览其他Gleam项目的代码：[https://github.com/search?q=gleam](https://github.com/search?q=gleam)
-
-查看更多有关如何开始一个新项目的指南：[https://www.wikihow.com/Start-a-New-Project](https://www.wikihow.com/Start-a-New-Project)
-
-## 请参阅
-
-[查看有关Gleam语法和概念的更多指南](https://gleam.run/getting-started/)
-
-[了解如何使用Gleam构建可扩展的应用程序](https://www.planningwithkids.com/2021/02/18/how-to-scale-an-app-with-gleam/)
+- [如何学习编程语言？](https://learn-gleam.cn/t/wen-zhang-lian-jie/141)
+- [学习Gleam编程的7个建议](https://dev.to/gleamlang/7-tips-for-learning-gleam-programming-language-1abg)
+- [学习Gleam编程的10个免费资源](https://dev.to/gleamlang/10-free-resources-to-learn-gleam-programming-language-58jl)

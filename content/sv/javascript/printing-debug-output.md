@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/printing-debug-output.md"
 ---
 
@@ -9,40 +11,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I många programmeringsspråk finns det funktioner för att skriva ut debug-utdata till konsolen eller terminalen. Men varför skulle man ens vilja göra det? Svaret är enkelt: det är ett användbart verktyg för att felsöka och förstå koden man skriver. Genom att skriva ut olika värden under körningen av programmet kan man få en bättre förståelse för vad som händer i koden, hitta eventuella fel och se hur olika variabler förändras i realtid.
+Att skriva ut debuggning är en viktig del av att felsöka och förstå hur ens kod fungerar. Genom att skriva utvärdet av variabler och steg i koden kan du enkelt följa dess exekvering och upptäcka eventuella fel eller buggar. Det är en enkel men effektiv praxis som kan spara dig mycket tid och frustration i slutändan.
 
-## Hur man gör det
+## Hur man gör
 
-I Javascript finns det flera sätt att skriva ut debug-utdata. Det enklaste är att använda "console.log()" funktionen. Detta kommer att skriva ut värdet av en variabel eller ett meddelande till konsolen. Till exempel:
-
-```Javascript
-let num1 = 5;
-let num2 = 10;
-console.log(num1 + num2); // Output: 15
-```
-
-Man kan också använda "console.error()" för att markera viktiga fel som behöver uppmärksamhet eller "console.warn()" för att varna om något som kan orsaka problem. Om man vill visa ett objekt eller en array i konsolen kan man använda "console.dir()".
-
-En annan användbar funktion är "console.table()", som visar data i form av en tabell. Detta kan vara särskilt användbart för att visa objekt eller data med flera kolumner.
-
-## Deep Dive
-
-Förutom de grundläggande sätten att skriva ut debug-utdata finns det också andra sätt att anpassa utskriften. Man kan till exempel använda placeholders för att visa specifika värden vid olika tillfällen. Detta görs genom att använda "%" tecken i koden och sedan ange värdet efter en komma.
+För att skriva ut debug output i Javascript, kan du använda console.log() -funktionen. Detta skickar en sträng eller ett objekt till utmatningskonsolen, som du sedan kan se i din webbläsare eller i en separat utvecklarverktyg. Låt oss titta på ett exempel:
 
 ```Javascript
-let name = "Anna";
-let age = 25;
-console.log("%s är %d år gammal.", name, age); // Output: Anna är 25 år gammal.
+var name = "Sara";
+console.log("Hello " + name + "!");
 ```
 
-Det går också att använda "console.group()" och "console.groupEnd()" för att gruppera flera utskrifter tillsammans i konsolen. Detta kan vara användbart om man skriver ut flera värden för samma databasförfrågan eller funktion.
+Output:
 
-Slutligen kan man använda "console.time()" och "console.timeEnd()" för att mäta prestanda av kodstycken. Genom att omringa ett kodavsnitt med dessa funktioner kan man se hur lång tid det tar att köra och identifiera eventuella flaskhalsar i koden.
+```Javascript
+Hello Sara!
+```
+
+Som du kan se, skapade vi en variabel för namnet "Sara" och sedan skriva ut en hälsning med hjälp av den variabeln. Om du kör detta i din webbläsare eller utvecklarverktyg, kommer du att se "Hello Sara!" skrivet i konsolen. Det är ett mycket enkelt exempel, men det ger en bra översikt över hur du kan använda console.log() för att skriva ut debug output.
+
+Utöver att bara skriva ut en sträng, kan du också använda console.log() för att skriva ut objekt som du skapar. Till exempel kan du skriva ut ett objekt och se dess egenskaper och värden. Låt oss titta på ett till exempel:
+
+```Javascript
+var car = {
+    brand: "Volvo",
+    model: "V60",
+    year: 2015
+}
+console.log(car);
+```
+
+Output:
+
+```Javascript
+{ brand: "Volvo", model: "V60", year: 2015 }
+```
+
+Som du kan se, skrev vi bara ut hela objektet och det visar dess olika egenskaper och värden. Detta kan vara till stor hjälp när du behöver se vad som finns i dina objekt och hur de är strukturerade.
+
+## Djupdykning
+
+När det gäller att skriva ut debug output, finns det några saker att tänka på. Först och främst bör du vara försiktig med att använda console.log() för mycket i din produktionskod. För mycket utskrift kan sakta ner din applikation och göra det svårt att hitta viktig information.
+
+Det är också viktigt att vara medveten om att vissa webbläsare inte stöder console.log(). Om du vill vara säker på att din utskrift fungerar överallt, kan du använda ett bibliotek som log4javascript eller en polyfill för console.log().
+
+En annan bra praxis är att använda formatting tokens i din utskrift. Till exempel kan du inkludera variabler eller värden genom att använda %s eller %d tokens. Detta hjälper till att göra din utskrift mer läsbar och tydlig. Till exempel:
+
+```Javascript
+var name = "Sara";
+var age = 28;
+console.log("My name is %s and I am %d years old.", name, age);
+```
+
+Output:
+
+```Javascript
+My name is Sara and I am 28 years old.
+```
 
 ## Se även
 
-Här är några länkar som kan vara användbara för att lära sig mer om att skriva ut debug-utdata i Javascript:
-
-- [MDN dokumentation om console](https://developer.mozilla.org/sv-SE/docs/Web/API/console)
-- [10 sätt att använda console i en bättre programmeringsmiljö](https://dev.to/zackshapiro/10-ways-to-use-console-in-a-better-programming-environment-31ph)
-- [Debugging i Javascript for Nybörjare](https://www.educative.io/blog/javascript-debugging-for-beginners)
+- [MDN: console.log()](https://developer.mozilla.org/en-US/docs/Web/API/Console/log)
+- [Log4javascript](https://log4javascript.org/)
+- [Console.log() Polyfill](https://github.com/paulmillr/console-polyfill)

@@ -1,37 +1,51 @@
 ---
-title:                "Go: Unindo strings"
+title:                "Go: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que concatenar strings é importante no Go?
+## Por que concatenar strings em Go?
 
-Concatenar strings é uma habilidade essencial para qualquer programador Go. Com a capacidade de unir diferentes valores e variáveis em uma única string, podemos criar mensagens personalizadas e manipular dados de forma eficiente em nossos programas. Além disso, ao concatenar strings, podemos gerar relatórios e logs dinâmicos para melhorar a experiência do usuário.
+Concatenar strings é uma tarefa comum na programação e pode ser especialmente útil em situações em que precisamos combinar diferentes partes de texto em uma única string. Em Go, essa operação é realizada através do operador de adição `+` ou do pacote `strings` da biblioteca padrão.
 
-## Como fazer a concatenação de strings no Go?
+## Como fazer em Go
 
-A concatenação de strings no Go é simples e fácil de entender. Podemos usar o operador "+" para unir dois strings em um só. Por exemplo:
+Para concatenar strings em Go, podemos usar o operador `+` como mostrado no exemplo abaixo:
 
 ```Go
-nome := "João"
-sobrenome := "Silva"
-nomeCompleto := nome + sobrenome
-fmt.Println(nomeCompleto)
+texto1 := "Olá"
+texto2 := "mundo!"
+resultado := texto1 + " " + texto2
+fmt.Println(resultado)
+
+//Output: Olá mundo!
 ```
 
-Nesse código, criamos duas variáveis com os valores "João" e "Silva" e as concatenamos na variável "nomeCompleto". Ao imprimir essa variável, teremos "JoãoSilva" como resultado.
+Também podemos usar o pacote `strings` para realizar concatenação usando a função `Join`:
 
-## Uma visão mais profunda sobre a concatenação de strings
+```Go
+textos := []string{"Olá", "mundo!"}
+resultado := strings.Join(textos, " ")
+fmt.Println(resultado)
 
-Além do operador "+", também podemos usar a função "fmt.Sprintf" para formatar strings e concatenar valores. Essa função nos permite adicionar espaçamento, formatação e valores dinâmicos em nossas strings concatenadas. Podemos até mesmo usar técnicas de loop para concatenar múltiplas strings de forma eficiente.
+//Output: Olá mundo!
+```
 
-Outra técnica útil é o uso de buffers de bytes para lidar com grandes quantidades de dados e concatenar strings sem causar lentidão no programa. Além disso, é importante ter cuidado ao manipular strings que contêm caracteres especiais, pois eles podem afetar o resultado final da concatenação.
+## Mergulho profundo
+
+Ao concatenar strings usando o operador `+`, devemos ter cuidado com o desempenho do nosso código, pois essa operação cria uma nova string que contém as duas strings originais. Em situações em que precisamos concatenar muitas strings, isso pode levar a um aumento significativo no uso de memória e impactar o desempenho geral do programa.
+
+Uma forma mais eficiente de concatenar strings é usando o pacote `strings.Builder` da biblioteca padrão. Este tipo armazena as strings em um buffer e as concatena de forma mais otimizada, sem a necessidade de criar uma nova string a cada vez.
+
+Outro ponto importante a ser observado é que a concatenação de strings em Go é imutável, ou seja, as strings originais não são alteradas, apenas uma nova string é criada com o resultado da concatenação. Por isso, é importante sempre armazenar o resultado em uma nova variável ou usar o valor de retorno da função `Join`.
 
 ## Veja também
 
-- [Documentação oficial do Go sobre a concatenação de strings](https://golang.org/pkg/strings/#Join)
-- [Artigo sobre a concatenação de strings no Go da Pluralsight](https://www.pluralsight.com/guides/string-concatenation-in-golang)
-- [Exemplos de concatenação de strings no Go da Medium](https://medium.com/@AkyunaAkish/concatenating-strings-using-golang-fa2a44b3b653)
+- [Documentação oficial do pacote strings em Go](https://golang.org/pkg/strings/)
+- [Tutorial de strings em Go](https://www.calhoun.io/concatenating-and-building-strings-in-go/)
+- [Código fonte dos exemplos apresentados neste artigo](https://github.com/example/example)

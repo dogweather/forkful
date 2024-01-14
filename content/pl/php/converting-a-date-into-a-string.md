@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Konwersja daty na łańcuch znaków"
+title:                "PHP: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/converting-a-date-into-a-string.md"
 ---
 
@@ -9,48 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wiele osób ma potrzebę przekształcenia daty na ciąg znaków w trakcie programowania. Może to być wymagane, na przykład, do wyświetlenia daty w formacie zrozumiałym dla użytkownika lub do wprowadzenia daty w odpowiednim formacie do bazy danych. W tym artykule przedstawię Wam kilka sposobów na przekształcenie daty w ciąg znaków za pomocą PHP.
+Konwersja daty na ciąg znaków jest jednym z podstawowych zadań, z którymi spotyka się każdy programista PHP. Jest to niezbędne w celu wyświetlenia daty w czytelny sposób dla użytkowników czy też przechowywania jej w bazie danych. W tym krótkim artykule zobaczysz, jak w prosty sposób przekształcić datę w PHP w ciąg znaków.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-#### Metoda 1: Używanie funkcji `date()`
-
-```PHP
-// definicja zmiennej z datą
-$date = date('Y-m-d H:i:s');
-// wyświetlenie daty w formacie rrrr-mm-dd HH:MM:SS
-echo $date;
-// output: 2021-02-28 13:30:45
-```
-
-#### Metoda 2: Używanie funkcji `strftime()`
+Najprostszym sposobem na konwersję daty na ciąg znaków jest użycie funkcji `date()` wraz z odpowiednim formatem. Na przykład, jeśli chcemy wyświetlić datę w formacie "Dzień Tygodnia, Dzień Miesiąca Rok", możemy użyć następującego kodu:
 
 ```PHP
-// definicja zmiennej z datą
-$date = time();
-// wyświetlenie daty w formacie DD-MMM-RRRR
-echo strftime('%d-%b-%Y', $date);
-// output: 28-Feb-2021
+<?php
+$date = date('l, j F Y');
+echo $date; // Output: Środa, 15 Kwietnia 2020
+?>
 ```
 
-#### Metoda 3: Używanie obiektu `DateTime`
+Jak widać, formatowanie daty jest bardzo intuicyjne i pozwala na wyświetlenie jej w różnych formatach. Przykładowe formaty, które możesz wykorzystać, to: `l` - dzień tygodnia w formacie tekstowym, `j` - dzień miesiąca bez zera wiodącego, `F` - nazwa miesiąca w formacie tekstowym, `Y` - rok w formacie czterocyfrowym, itd. Pełną listę możliwych formatów można znaleźć w dokumentacji PHP.
 
-```PHP
-// definicja obiektu DateTime
-$date = new DateTime('2021-02-28');
-// wyświetlenie daty w formacie DD, MM RRRR
-echo $date->format('d, M Y');
-// output: 28, Feb 2021
-```
+## Głębszy wgląd
 
-## Deep Dive
+Konwersja daty na ciąg znaków może być nieco bardziej skomplikowana, jeśli chcemy ją dostosować do swoich potrzeb. Dlatego, jeśli potrzebujesz bardziej rozbudowanej konwersji, warto zapoznać się z funkcją `strftime()`, która pozwala na wykorzystanie zaawansowanych formatów i opcji. Możesz również użyć bibliotek zewnętrznych, takich jak Carbon, która udostępnia wiele przydatnych funkcji do pracy z datami w PHP.
 
-W powyższych przykładach użyliśmy różnych metod, aby przekształcić datę w ciąg znaków. Funkcja `date()` jest najprostszym sposobem na wyświetlenie aktualnej daty, jednak nie zapewnia ona wielu opcji formatowania. Funkcja `strftime()` jest bardziej zaawansowana, pozwala na wyświetlenie daty w różnych językach, jednak wymaga użycia odpowiednich znaków formatujących. Ostatnia metoda z użyciem obiektu `DateTime` jest najbardziej elastyczna, ponieważ pozwala na dostosowanie daty do naszych potrzeb za pomocą różnych metod i formatów.
+## Zobacz również
 
-W przypadku bardziej skomplikowanych operacji na datach, zaleca się zapoznanie się z dokumentacją PHP dotyczącą dat i czasu oraz z bibliotekami zewnętrznymi, takimi jak Carbon, która ułatwia manipulowanie datami i czasem.
-
-## Zobacz także
-
-- [Oficjalna dokumentacja PHP - Daty i Czas](https://www.php.net/manual/pl/datetime.html)
-- [Biblioteka Carbon](https://carbon.nesbot.com/)
-- [Porównanie różnych sposobów formatowania daty w PHP](https://www.inanimateobjects.com/2012/02/06/difference-between-phps-date-function-and-strftime-function/)
+- [Dokumentacja PHP na temat funkcji `date()`](https://www.php.net/manual/en/function.date.php)
+- [Dokumentacja PHP na temat funkcji `strftime()`](https://www.php.net/manual/en/function.strftime.php)
+- [Biblioteka Carbon do zarządzania datami w PHP](https://carbon.nesbot.com/)

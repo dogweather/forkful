@@ -1,7 +1,9 @@
 ---
 title:                "Bash: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/searching-and-replacing-text.md"
 ---
 
@@ -9,38 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att söka och ersätta text är en nödvändig färdighet när man programmerar i Bash. Det gör det möjligt för oss att effektivt ändra eller uppdatera stora mängder text på en gång.
+Det finns många anledningar till varför någon skulle vilja söka och ersätta text med hjälp av Bash-programmering. Kanske behöver du ändra namnen på filer eller uppdatera dokument med ny information? Oavsett anledningen kan sök- och ersättningsfunktionen i Bash vara ett mycket praktiskt verktyg för att effektivisera och automatisera uppgifter.
 
-## Hur man gör det
+## Hur man gör
 
-För att söka och ersätta text i Bash måste vi använda oss av kommandot `sed`. Nedan följer ett enkelt exempel på hur man kan ersätta alla förekomster av ordet "hej" med "tja" i en fil som heter `text.txt`:
-
-```Bash 
-sed 's/hej/tja/g' text.txt
-```
-
-I det här exemplet kommer varje förekomst av "hej" i `text.txt` att ersättas med "tja". Den modifierade texten skrivs ut i terminalen, men för att spara ändringarna i filen måste vi lägga till flaggan `-i`:
+För att utföra en sök- och ersättningsuppgift i Bash behöver du använda kommandot "sed", vilket står för "stream editor". Nedan följer ett enkelt exempel på hur du kan söka och ersätta ett ord i en fil:
 
 ```Bash
-sed -i 's/hej/tja/g' text.txt
+sed 's/gammalt_ord/nytt_ord/g' fil.txt 
 ```
 
-På så sätt kommer `sed` att modifiera filen direkt istället för att bara visa ändringarna i terminalen.
+Detta kommando kommer att söka efter alla instanser av "gammalt_ord" i filen "fil.txt" och ersätta dem med "nytt_ord". Det sista "g" står för "global" och innebär att alla instanser av det gamla ordet kommer att ersättas, inte bara den första.
+
+Om du vill att sök- och ersättningsuppgiften endast ska utföras på vissa rader i filen kan du använda flaggan "-e" för att specificera ett villkor. Till exempel:
+
+```Bash
+sed -e'/villkor/ s/gammalt_ord/nytt_ord/g' fil.txt
+```
+
+I detta fall kommer endast rader som uppfyller villkoret att sökas igenom och ersättningen utförs endast på dessa rader.
 
 ## Djupdykning
 
-Utöver den grundläggande syntaxen för att söka och ersätta text har `sed` flera andra funktioner som kan användas för att göra mer avancerade sökningar och ersättningar. Till exempel kan vi använda reguljära uttryck för att ersätta mer komplexa strängar.
+Det finns många olika användningsområden för sök- och ersättningsfunktionen i Bash. Det finns också flera olika flaggor och parametrar som du kan använda för att anpassa din sök- och ersättningsuppgift ytterligare. Till exempel kan du använda flaggan "-i" för att ignorera skillnader i bokstavsstorlek eller "-n" för att visa vilka rader som har matchats och ersatts.
 
-En annan användbar funktion är flaggan `-n`, som gör att endast de rader som matchar det sökta uttrycket skrivs ut. Till exempel, om vi bara vill se rader som innehåller ordet "hej" i en fil, kan vi använda oss av följande kod:
-
-```Bash
-sed -n '/hej/p' text.txt
-```
-
-Här kommer bara rader som innehåller "hej" att skrivas ut i terminalen.
+Du kan också använda regelbundna uttryck (regular expressions) för att söka och ersätta text i Bash. Detta öppnar upp för ännu fler möjligheter och komplexa sökningar. Genom att lära dig mer om regelbundna uttryck kan du göra dina sök- och ersättningsuppgifter ännu kraftfullare.
 
 ## Se även
 
-- [Bash Tutorial: Introduction to Searching and Replacing Text](https://www.grymoire.com/Unix/Search.html)
-- [Sed Command in Linux/Unix with Examples](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
-- [The Linux Documentation Project: Sed](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_01.html)
+För mer information om Bash-programmering och användning av "sed" för sök- och ersättningsuppgifter, se följande länkar:
+
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Sed - An Introduction and Tutorial](https://www.gnu.org/software/sed/manual/sed.html)
+- [Regular Expressions - The Basics](https://www.regular-expressions.info/tutorial.html)

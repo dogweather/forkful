@@ -1,58 +1,52 @@
 ---
 title:                "PHP: Extraction de sous-chaînes"
+simple_title:         "Extraction de sous-chaînes"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Vous vous êtes probablement déjà retrouvé dans une situation où vous aviez besoin de prendre une partie spécifique d'une chaîne de caractères. Peut-être que vous aviez besoin du nom de famille dans un formulaire, ou du numéro de téléphone dans une liste de contacts. Dans ces cas-là, l'extraction de sous-chaînes peut être très utile.
+Extraction de sous-chaînes en PHP peut sembler être une tâche simple, mais il peut être très utile dans de nombreuses situations. Par exemple, vous pouvez extraire une partie spécifique d'une chaîne de caractères pour l'utiliser comme identifiant unique ou pour effectuer des manipulations spécifiques sur ces données.
 
-# Comment faire
+## Comment faire
 
-Heureusement, PHP dispose d'une fonction très pratique pour extraire des sous-chaînes : `substr()`. Cette fonction prend trois paramètres : la chaîne de caractères originale, l'index de départ et la longueur de la sous-chaîne souhaitée.
-
-Voici un exemple concret :
+L'extraction de sous-chaînes en PHP peut être réalisée avec la fonction `substr ()` qui prend trois arguments : la chaîne d'origine, l'index de début et la longueur de la sous-chaîne souhaitée. Voici un exemple de code pour extraire les trois premiers caractères d'une chaîne :
 
 ```PHP
-$nom = "Dupont";
-
-// On utilise la fonction substr() pour extraire les deux premiers caractères
-$prenom = substr($nom, 0, 2); // $prenom vaut "Du"
-
-// On peut également extraire à partir de la fin de la chaîne en utilisant un indice négatif
-$numero = substr($nom, -3); // $numero vaut "ont"
+<?php
+$chaine = "Bonjour tout le monde";
+$sous_chaine = substr($chaine, 0, 3);
+echo $sous_chaine; // Résultat : "Bon"
+?>
 ```
 
-Il est également possible d'utiliser la fonction `mb_substr()` pour gérer correctement les caractères multi-octets, comme les caractères spéciaux français.
+Vous pouvez également utiliser des nombres négatifs pour extraire une partie de la fin de la chaîne. Par exemple, pour extraire les trois derniers caractères :
 
-# Plongée en profondeur
-
-La fonction `substr()` peut être utilisée de différentes manières en combinant les paramètres d'index et de longueur. Voici quelques cas d'utilisation courants :
-
-- Pour extraire une partie d'une URL, par exemple le nom de domaine :
 ```PHP
-$url = "https://example.com/nom-de-page.html";
-$domaine = substr($url, 8, 17); // $domaine vaut "example.com"
+$sous_chaine = substr($chaine, -3);
+echo $sous_chaine; // Résultat : "nde"
 ```
 
-- Pour récupérer une partie d'une chaîne à partir d'un point spécifique :
+Il est également possible d'utiliser la fonction `mb_substr ()` pour extraire des sous-chaînes contenant des caractères multibytes, comme les caractères accentués en français. Il suffit d'ajouter l'argument facultatif pour spécifier l'encodage. Par exemple :
+
 ```PHP
-$chaine = "Bonjour tout le monde !";
-$message = substr($chaine, 8); // $message vaut "tout le monde !"
+$sous_chaine = mb_substr($chaine, 0, 3, 'UTF-8');
+echo $sous_chaine; // Résultat : "Bon"
 ```
 
-- Pour extraire une sous-chaîne d'une longueur prédéfinie à partir d'une position aléatoire :
-```PHP
-$chaine = "Lorem ipsum dolor sit amet";
-$morceau = substr($chaine, rand(0, 15), 5); // $morceau vaut un morceau aléatoire de 5 caractères à partir de la 16ème position
-```
+## Plongée en profondeur
 
-# Voir aussi
+La fonction `substr ()` peut également être utilisée pour extraire une partie d'une chaîne en fonction d'un motif spécifique. Par exemple, si vous souhaitez extraire le nom d'une personne à partir d'une adresse e-mail, vous pouvez utiliser la fonction `strpos ()` pour trouver la position de l'arobase (@) et récupérer tous les caractères avant cette position.
 
-- [Documentation officielle de substr()](https://www.php.net/manual/fr/function.substr.php)
-- [Documentation officielle de mb_substr()](https://www.php.net/manual/fr/function.mb-substr.php)
-- [Fonctions de manipulation de chaînes en PHP](https://www.php.net/manual/fr/ref.strings.php)
+De plus, vous pouvez utiliser d'autres fonctions de traitement de chaîne telles que `explode ()` ou `preg_match ()` pour extraire des sous-chaînes plus complexes en fonction de critères spécifiques.
+
+## Voir aussi
+
+- [Documentation officielle de substr ()](https://www.php.net/manual/fr/function.substr.php)
+- [Exemples d'utilisation de la fonction substr ()](https://www.w3schools.com/php/func_string_substr.asp)
+- [Autres fonctions de traitement de chaîne en PHP](https://www.php.net/manual/fr/ref.strings.php)

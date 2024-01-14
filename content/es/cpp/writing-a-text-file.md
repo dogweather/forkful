@@ -1,46 +1,47 @@
 ---
-title:                "C++: Escribiendo un archivo de texto"
+title:                "C++: Escribir un archivo de texto"
+simple_title:         "Escribir un archivo de texto"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir un archivo de texto en C++
+## ¿Por qué escribir un archivo de texto en C++?
 
-Escribir un archivo de texto en C++ es una tarea común que se puede utilizar para diversas aplicaciones. Esto incluye guardar datos de una aplicación, crear archivos de configuración o incluso generar informes.
+Escribir un archivo de texto en C++ es una habilidad esencial para cualquier programador. Esto nos permite almacenar y acceder a datos importantes de forma organizada y legible. Además, puede ser utilizado en una variedad de aplicaciones, desde guardar registros de datos hasta crear archivos de configuración para programas.
 
 ## Cómo escribir un archivo de texto en C++
 
-Escribir un archivo de texto en C++ es un proceso sencillo que requiere de algunas técnicas básicas de programación. Primero, es necesario incluir la librería `fstream` para manejar archivos. Luego, se debe abrir el archivo deseado con la función `std::ofstream`, especificando el nombre y el modo de apertura (escritura en este caso). A continuación, se pueden escribir datos en el archivo utilizando el operador de flujo `<<`. Finalmente, se debe cerrar el archivo con la función `close()`, asegurándose de que todos los datos hayan sido escritos correctamente.
+Para escribir un archivo de texto en C++, primero necesitamos incluir la biblioteca de manejo de archivos `<fstream>`. A continuación, abrimos el archivo en el que queremos escribir utilizando el objeto `ofstream`, especificando el nombre del archivo y el modo de escritura. Luego, podemos escribir en el archivo utilizando el operador de inserción `<<` y cerrar el archivo cuando hayamos terminado. A continuación, se muestra un ejemplo de código para escribir una línea en un archivo de texto:
 
 ```C++
-#include <iostream>
 #include <fstream>
 
+using namespace std;
+
 int main() {
-    std::ofstream archivo("ejemplo.txt"); // Abre el archivo para escritura
-    archivo << "Este es un ejemplo de texto que será escrito en un archivo." << std::endl; // Escribe datos en el archivo
-    archivo.close(); // Cierra el archivo
+    ofstream archivo("ejemplo.txt"); // Se crea el archivo en modo escritura
+    archivo << "¡Hola mundo!"; // Escribimos en el archivo
+    archivo.close(); // Cerramos el archivo
     return 0;
 }
 ```
 
-El archivo resultante se verá así:
+Si ejecutamos este código, aparecerá un archivo llamado "ejemplo.txt" con el contenido "¡Hola mundo!".
 
-`ejemplo.txt`
-```
-Este es un ejemplo de texto que será escrito en un archivo.
-```
+## Profundización en la escritura de archivos de texto
 
-## Profundizando en la escritura de archivos de texto en C++
+Existen varias funciones y métodos que nos permiten tener un mayor control sobre la escritura de archivos de texto en C++. Por ejemplo, podemos utilizar el método `write` para escribir una cadena específica de caracteres en el archivo, o el método `put` para escribir un único carácter.
 
-Además de la técnica básica mencionada anteriormente, existen otras formas de escribir archivos de texto en C++. Por ejemplo, se puede utilizar la función `std::endl` para separar líneas en el archivo, o también se pueden escribir varios tipos de datos utilizando la sobrecarga del operador `<<`.
+Además, podemos utilizar distintos modos de apertura al crear el objeto `ofstream`. Por ejemplo, si utilizamos `ofstream archivo("ejemplo.txt", ios::app)`, el archivo se abrirá en modo de "agregar" en lugar de en modo de "escritura", lo que nos permitirá añadir contenido al final del archivo en lugar de sobrescribirlo.
 
-También es importante tener en cuenta el manejo de errores al escribir archivos. Es necesario comprobar si el archivo se ha abierto correctamente y si se han escrito todos los datos de manera exitosa.
+También podemos utilizar un bucle para escribir múltiples líneas o contenidos en un archivo de texto. Y, por supuesto, también podemos leer un archivo de texto utilizando la biblioteca `<fstream>` y el objeto `ifstream`.
 
 ## Ver también
-- [Página de la librería std::fstream en cplusplus.com](http://www.cplusplus.com/reference/fstream/)
-- [Tutorial de escritura de archivos de texto en C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [Ejemplos de escritura de archivos de texto en C++](https://www.programiz.com/cpp-programming/file-operation)
+
+- [Guía de referencia de C++ para abrir y escribir en archivos de texto](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+- [Documentación de la biblioteca <fstream> en C++](https://www.cplusplus.com/reference/fstream/)
+- [Ejemplos de escritura y lectura de archivos de texto en C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)

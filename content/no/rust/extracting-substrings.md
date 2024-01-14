@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Uttrekk av delstrenger"
+title:                "Rust: Ekstrahere substrings"
+simple_title:         "Ekstrahere substrings"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/extracting-substrings.md"
 ---
 
@@ -9,48 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Har du noen gang hatt behov for å hente ut deler av en tekststreng i et programmeringsprosjekt? Kanskje du trenger å filtrere ut bestemte ord eller bokstaver fra en lengre tekst? Da vil denne bloggposten om å ekstrahere delstrenger i Rust være noe for deg!
+Hvorfor ville noen ønske å utvinne substrings? Det er flere grunner til å gjøre dette i Rust. En av de vanligste grunnene er å manipulere tekststrenger mer effektivt og enkelt. Ved å utvinne substrings kan du få tilgang til og endre deler av en tekststreng uten å måtte kopiere hele strengen.
 
 ## Hvordan
 
-Ekstrahering av delstrenger er en grunnleggende funksjon i mange programmeringsspråk, og Rust er inget unntak. La oss se på et enkelt eksempel på hvordan du kan bruke dette i ditt eget program.
+For å utvinne substrings i Rust, kan du bruke "slice" -operatøren ([..]) eller metoden .split_at (). Her er et eksempel på å bruke slice-operatøren:
 
-```Rust
-let text = "Hei, dette er en tekststreng.";
-
-// Ekstraher en delstreng fra og med indeks 4 til og med indeks 14
-let substring = &text[4..15];
-
-println!("Utdrag av originalteksten: {}", substring);
+```rust
+let original = "Dette er en tekststreng";
+let substring = &original[6..13]; // "er en t"
 ```
 
-Dette vil skrive ut "dette er en" i konsollen, som er delen av tekststrengen som vi ekstraherte. En ting som er viktig å merke seg er at Rusts substring-ekstraksjon er null-indeksert, det vil si at det første tegnet i en tekststreng har indeks 0.
+Metoden .split_at () gjør det mulig å utvinne en tekststreng på et bestemt indeks:
 
-En annen måte å ekstrahere delstrenger på, er å bruke metoden `substring()` sammen med `find()`, som gir deg muligheten til å finne en spesifikk del av en tekst. Her er et eksempel på dette:
-
-```Rust
-let text = "Enkelt eksempel på ekstraksjon av en delstreng.";
-let keyword = "ekstraksjon";
-
-if let Some(index) = text.find(keyword) {
-    let substring = text.substring(index, index + keyword.len());
-
-    println!("Tekststrengen inneholder ordet \"{}\"", substring);
-} else {
-    println!("Ordet \"{}\" finnes ikke i tekststrengen.", keyword);
-}
+```rust
+let original = "Dette er en tekststreng";
+let (start, end) = original.split_at(9); // start = "Dette er ", end = "en tekststreng"
 ```
 
-Dette vil skrive ut "ordet "ekstraksjon" i konsollen. Her bruker vi metoden `find()` til å finne indeksen til det første tegnet i ordet "ekstraksjon", og deretter bruker vi `substring()` til å ekstrahere ordet og skrive det ut.
+## Deep Dive
 
-## Dypdykk
+Når du utvinner en substring i Rust, blir det opprettet en ny tekststreng som deler den samme minneplassen som den opprinnelige strengen. Dette betyr at å utvinne substringer er en effektiv måte å håndtere tekst på, da det ikke krever mer minne.
 
-I Rust er delstrenger representert som en `&str` type, som er en referanse til den originale tekststrengen. Dette betyr at delstrengen deler den samme dataen som den originale tekststrengen, noe som gjør ekstraksjon av delstrenger veldig effektivt og minnevennlig.
+En annen nyttig funksjon i Rust er .get () -metoden, som gjør det mulig å hente en enkelt karakter fra en tekststreng basert på indeksen:
 
-I tillegg til de nevnte metodene, finnes det også andre måter å ekstrahere delstrenger på i Rust. For eksempel kan du også bruke `chars()` og `split()` metoder for mer komplekse ekstraksjonsoperasjoner.
+```rust
+let original = "Dette er en tekststreng";
+let character = original.get(5); // character = Some('e')
+```
+
+Hvis indeksen overskrider lengden på tekststrengen, vil metoden returnere None. Dette gjør det også mulig å unngå feil som kan oppstå ved å bruke indeksering utenfor grensene til en streng.
 
 ## Se også
 
-- [Rust dokumentasjon om delstreg-ekstraksjon](https://doc.rust-lang.org/std/primitive.str.html#method.substring)
-- [Rust-by-example om delstreng-ekstraksjon](https://doc.rust-lang.org/stable/rust-by-example/std/str.html#substring)
-- [Offisiell Rust-nettside](https://www.rust-lang.org/)
+- Rust dokumentasjon om tekstmanipulering: https://doc.rust-lang.org/std/string/
+- Alternativer for tekstbehandlingsbiblioteker i Rust: https://github.com/brson/stdx/issues/2
+- Eksempelkode for å utvinne substringer i Rust: https://github.com/mkpankov/trade-server/blob/master/src/main.rs

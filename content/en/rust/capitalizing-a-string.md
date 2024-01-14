@@ -1,61 +1,50 @@
 ---
 title:                "Rust recipe: Capitalizing a string"
+simple_title:         "Capitalizing a string"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why Capitalize a String in Rust
 
-Have you ever needed to capitalize a string in Rust? Whether you're building a command-line tool or a web application, string manipulation is a common task in programming. In this blog post, we'll explore how to capitalize a string in Rust and why it might be useful.
+When working with strings in Rust, there may be situations where you need to capitalize a string, either for aesthetic purposes or to adhere to a specific output format. Luckily, Rust provides an easy and efficient way to capitalize a string, making it a valuable tool for any Rust programmer.
 
-## How To
+## How To Capitalize a String in Rust
 
-Coding Example:
+To capitalize a string in Rust, we will be using the `to_uppercase()` method from the `String` class. This method converts all characters in a string to uppercase, effectively capitalizing it. Let's take a look at an example:
 
-```Rust
-let my_string = "hello world";
-let capitalized_string = my_string.to_uppercase();
-println!("Capitalized string: {}", capitalized_string); 
+```rust
+let name = "john";
+let capitalized_name = name.to_uppercase();
+println!("Original name: {}", name); // prints "john"
+println!("Capitalized name: {}", capitalized_name); // prints "JOHN"
 ```
 
-Output:
+In this example, we create a string variable called `name` and assign it the value "john". We then use the `to_uppercase()` method to convert the string to uppercase and assign the result to a new variable `capitalized_name`. Finally, we print out both the original and capitalized versions of the string to see the difference.
 
-```
-Capitalized string: HELLO WORLD
-```
+This method can also be applied to string variables that are user input or read from external sources. Here's an example of capitalizing a user input:
 
-In Rust, we can use the `to_uppercase()` method to capitalize a string. This method returns a new string with all characters transformed to their uppercase equivalent. We can then print this new string or use it in further processing.
-
-However, this method only works for ASCII strings. If you want to capitalize a string with non-ASCII characters, you can use the `to_uppercase()` method from the `unicase` crate. This method handles Unicode characters and supports various languages.
-
-Coding Example:
-
-```Rust
-use unicase::UniCase;
-let my_string = "héllò wórld";
-let capitalized_string = UniCase::new(my_string).to_uppercase();
-println!("Capitalized string: {}", capitalized_string); 
+```rust
+use std::io;
+let mut input = String::new();
+println!("Enter a word:");
+io::stdin().read_line(&mut input).expect("Failed to read input");
+let capitalized_input = input.to_uppercase();
+println!("Capitalized input: {}", capitalized_input); // prints user input in all uppercase
 ```
 
-Output:
+In the above code, we use the `std::io` module to read a user input and store it in the `input` variable. We then use the `to_uppercase()` method to capitalize the input and print it out.
 
-```
-Capitalized string: HÉLLÒ WÓRLD
-```
+## Deep Dive into Capitalizing a String in Rust
 
-## Deep Dive
+Behind the scenes, the `to_uppercase()` method in Rust utilizes the Unicode Standard's case conversion rules. This means that it can correctly handle characters from different languages and scripts.
 
-In Rust, strings are encoded in UTF-8 by default. This means that each character may occupy more than one byte in memory. When using the `to_uppercase()` method, Rust converts each byte to its uppercase equivalent, which may lead to unexpected results for non-ASCII characters.
+Additionally, this method is available not just for the `String` class, but also for the `&str`, `&mut str`, and `StringView` types, making it a versatile tool for any situation.
 
-To understand how Rust handles Unicode characters, it's helpful to know about the `char` type. In Rust, a `char` is not equivalent to a byte. Instead, it represents a Unicode Scalar Value, which can be composed of one or more bytes. This means that a `char` can represent both ASCII and non-ASCII characters.
-
-When we use the `to_uppercase()` method, it iterates through each `char` in the string and converts it to its uppercase equivalent. This is why using this method with non-ASCII characters may result in incorrect output. By using the `to_uppercase()` method from the `unicase` crate, we can correctly handle Unicode characters.
-
-## See Also
-
-- Official Rust Documentation on Strings: https://doc.rust-lang.org/std/string/
-- `to_uppercase()` method in the Rust Standard Library: https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase
-- `to_uppercase()` method in the Unicase Crate: https://docs.rs/unicase/2.6.0/unicase/struct.CharIndices.html#method.to_uppercase
+See Also
+- Rust Strings: https://doc.rust-lang.org/std/string/struct.String.html
+- Rust Case Conversion Rules: https://unicode.org/reports/tr21/tr21-5.html#To_Lowercase_and_Uppercase

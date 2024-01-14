@@ -1,7 +1,9 @@
 ---
 title:                "Swift: 文字列の長さを見つける"
+simple_title:         "文字列の長さを見つける"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/finding-the-length-of-a-string.md"
 ---
 
@@ -9,32 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-文字列の長さを求めることに取り組む理由は、プログラムで文字列を正しく処理するために重要です。
+文字列の長さを取得することに取り組む理由は何でしょうか？簡単に1-2文で説明します。
 
-## 方法
+文字列を操作する必要がある場合、その文字列の長さを知ることは非常に重要です。例えば、ユーザーが入力した文字列が指定した長さよりも長い場合、その文字列を切り取る必要があるかもしれません。そのため、文字列の長さを取得できることは非常に便利な機能です。
 
-文字列の長さを求める方法は、Swiftの`count`メソッドを使用することです。例えば、次のように書きます。
+## ハウツー
+
+文字列の長さを取得する方法を実際のコード例とともに説明します。
 
 ```Swift
-let str = "こんにちは！"
+let str = "こんにちは！こんにちは！"
 print(str.count)
+// 出力：15
 ```
 
-このコードを実行すると、出力結果は`6`となります。何も考えずに単純に文字列の長さを数える方法とは異なり、`count`メソッドはUnicodeの規格に基づいて文字列の長さを求めます。
-
-文字列が空白である場合でも、`count`メソッドは`0`を返します。また、絵文字や結合文字など、一つの文字でも複数のコードポイントを持つ特殊な文字を含む場合でも、`count`メソッドは正しく文字列の長さを求めます。
+上記のコードでは、`count`を使用して文字列の長さを取得しています。このプロパティは、文字列に含まれる文字の数をカウントするために使用されます。
 
 ## ディープダイブ
 
-`count`メソッドは実際には`String`構造体が持つプロパティの一つであり、内部的には文字列をUnicodeの配列として扱います。そのため、文字列の長さを求める際には様々な注意点があります。
+より詳細な情報をお届けします。文字列の長さを取得する方法は、文字列の種類によって異なることがあります。例えば、日本語や絵文字のようなマルチバイト文字を含む文字列をカウントする場合、結果が異なる可能性があります。そのため、文字列の長さを取得する際は、文字のエンコーディングなども考慮する必要があります。
 
-例えば、文字列の長さを求める前に文字列のエンコーディングについて調べる必要があります。`count`メソッドはUnicodeの配列を数えるため、UTF-8のようなマルチバイト文字を含むエンコーディングでは、文字列の長さを正確に求めることができません。
+また、Swiftでは、文字列の長さを取得するために`count`の代わりに`lengthOfBytes(using:)`メソッドを使用することもできます。しかし、このメソッドはSwift 5.0以前の古いバージョンでのみ使用可能です。
 
-また、`count`メソッドは経験的にはO(n)の時間を要しますが、大きな文字列である場合にはnが増えるため計算量も増加していきます。そのため、文字列の長さを頻繁に求める処理を行う場合には、効率的なデータ構造を選択するなどの工夫が必要です。
+## もっと詳しく学ぶ
 
-## 参考
+- [Swift公式ドキュメント - Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [iOSアプリ開発の基礎：Swiftで文字列を操作する方法](https://dev.classmethod.jp/articles/swift-string-operation/)
 
-- [Swift Documentation: String.count](https://developer.apple.com/documentation/swift/string/2961464-count)
-- [SwiftDoc: Unicode](https://swiftdoc.org/v3.0/type/Unicode/)
-- [Hacking with Swift: How to count characters in a string using Unicode](https://www.hackingwithswift.com/example-code/strings/how-to-count-characters-in-a-string-using-unicode/)
-- [Unicode Technical Report 29: Text Boundaries](https://www.unicode.org/reports/tr29/)
+## 関連リンク
+
+- [Markdown 101 - Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+- [Learn the Basics of Swift in 10 Minutes](https://learnappmaking.com/learn-swift-for-beginners/)

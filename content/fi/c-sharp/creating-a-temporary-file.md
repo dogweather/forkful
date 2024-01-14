@@ -1,46 +1,34 @@
 ---
-title:                "C#: Väliaikaisen tiedoston luominen"
+title:                "C#: Luodaan väliaikainen tiedosto"
+simple_title:         "Luodaan väliaikainen tiedosto"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikainen tiedosto?
+## Miksi luoda väliaikaistiedosto?
 
-Joskus ohjelmoidessa saattaa ilmetä tarve luoda väliaikaisia tiedostoja. Näitä tiedostoja käytetään yleensä tallentamaan väliaikaisia tietoja tai luomaan väliaikainen kopio olemassa olevasta tiedostosta. Ne voivat myös tarjota kätevän tavan käsitellä ja hallita tietoja eri vaiheissa ohjelman suorittamista.
+Luodaan väliaikaistiedostoja usein silloin, kun tarvitaan tilapäistä tallennustilaa ohjelman suorituksen aikana. Tämä voi olla esimerkiksi tilanne, jossa ohjelman täytyy käsitellä suurta määrää dataa ja tarvitsee väliaikaisen tallennustilan sen väliaikaiseen käsittelyyn.
 
-## Kuinka luoda väliaikainen tiedosto C#:lla
+## Kuinka luoda väliaikaistiedosto C#:ssa
 
-Väliaikaisen tiedoston luominen C#:lla on helppoa ja tehokasta. Se voidaan tehdä käyttämällä .NET Frameworkin tarjoamaa `System.IO.Path` -luokkaa sekä `System.IO.File` ja `System.IO.FileStream` -luokkia. Alla on esimerkki C# -koodista, jossa luodaan väliaikainen tiedosto ja kirjoitetaan siihen tekstiä.
+Käyttämällä System.IO.Path.GetTempFileName () metodia, voimme helposti luoda väliaikaistiedoston C#:ssa. Alla näet esimerkin, miten tämä tehdään:
 
 ```C#
-// Luodaan väliaikainen tiedosto
-string tempFilePath = Path.GetTempFileName();
+string tempFile = Path.GetTempFileName();
 
-// Avataan tiedosto kirjoittamista varten
-using (FileStream fs = File.Open(tempFilePath, FileMode.Open))
-{
-    // Luodaan StreamWriter käyttämällä FileStreamia
-    using (StreamWriter writer = new StreamWriter(fs))
-    {
-        // Kirjoitetaan teksti tiedostoon
-        writer.WriteLine("Tämä on väliaikainen tiedosto.");
-    }
-}
-
+Console.WriteLine("Luotu väliaikaistiedosto: " + tempFile);
 ```
-Tämän koodin suorittamisen jälkeen näet uuden väliaikaisen tiedoston luoto hakemistossa. Voit myös lukea tiedoston sisällön samalla tavalla, kuin lukisit tavallista tiedostoa.
+Tämän koodin suorittamisen jälkeen näet konsolissa tulosteen, jossa kerrotaan luodun väliaikaistiedoston nimi.
 
-## Syvällinen sukellus väliaikaisen tiedoston luomiseen
+## Syvälle väliaikaistiedostojen luomiseen
 
-Väliaikaisen tiedoston luominen vaatii järjestelmän resursseja, joten ne olisi hyvä poistaa ohjelman suorituksen jälkeen. Tämä voidaan tehdä käyttämällä `File.Delete()` -metodia, mikä poistaa tiedoston. Jos väliaikainen tiedosto jää jotain kautta järjestelmään, sitä on mahdollista poistaa manuaalisesti myöhemmin.
+Väliaikaistiedostoja luodessa on tärkeää huomioida niiden oikea käyttö ja turvallisuus. Väliaikaistiedostot eivät nimittäin ole pysyviä, vaan ne poistetaan automaattisesti, kun ohjelma suljetaan. Tämän takia niiden käyttöön liittyy riskejä, joiden välttämiseksi kannattaa käyttää esimerkiksi using-lausetta varmistamaan tiedoston turvallinen poistaminen.
 
-Voit myös itse päättää, missä kansiossa väliaikaiset tiedostot luodaan käyttämällä `Path.GetTempPath()` -metodia. Tällä tavalla voit varmistaa, että tiedostot tallennetaan haluamaasi paikkaan.
+See Also:
 
-## Katso myös
-
-- [System.IO.Path-luokka (Microsoft)](https://docs.microsoft.com/fi-fi/dotnet/api/system.io.path)
-- [System.IO.File-luokka (Microsoft)](https://docs.microsoft.com/fi-fi/dotnet/api/system.io.file)
-- [System.IO.FileStream-luokka (Microsoft)](https://docs.microsoft.com/fi-fi/dotnet/api/system.io.filestream)
+- Microsoftin dokumetointi Path.GetTempFileName() -metodista: https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0
+- Blogiartikkeli väliaikaistiedostojen käytöstä: https://docs.microsoft.com/en-us/dotnet/standard/io/creating-temporary-files

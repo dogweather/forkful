@@ -1,56 +1,37 @@
 ---
 title:                "TypeScript: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o erro padrão?
+## Por que utilizar a escrita em stderr
 
-Escrever para o erro padrão pode ser uma técnica útil para depurar e identificar problemas em seu código TypeScript. Ao enviar informações de erro para o erro padrão, você pode obter uma visão mais clara de onde o problema está ocorrendo, o que pode facilitar a resolução de bugs.
+Escrever em stderr é uma prática comum na programação TypeScript. Isso porque, em determinadas situações, pode ser mais útil e eficiente enviar mensagens de erro para esse canal, ao invés da saída padrão. Isso permite que os desenvolvedores capturem e gerenciem esses erros de forma mais específica.
 
-## Como fazer:
+## Como fazer isso
 
-Para escrever para o erro padrão em TypeScript, você pode usar o método `console.error()`. Este método aceita como argumento a mensagem de erro que você deseja enviar para o erro padrão. Veja um exemplo abaixo:
-
-```TypeScript
-console.error("Um erro ocorreu! Verifique o código para identificar o problema.");
-```
-
-A saída do código acima seria algo como:
-
-`Um erro ocorreu! Verifique o código para identificar o problema.`
-
-Você também pode incluir variáveis ou outros valores em sua mensagem de erro, usando a sintaxe de string de modelo. Veja um exemplo abaixo:
+Para escrever em stderr em TypeScript, é necessário utilizar o objeto `process`. Primeiro, é preciso importar esse objeto através do módulo `node`. Em seguida, basta chamar a função `stderr.write()` e fornecer a mensagem que deseja enviar.
 
 ```TypeScript
-const numero = 10;
-console.error(`Erro! O número ${numero} não pode ser dividido por zero.`);
+import * as process from 'node';
+
+process.stderr.write("Mensagem de erro");
 ```
 
-A saída seria:
+Isso irá enviar a mensagem "Mensagem de erro" para o canal de erro. Além disso, é possível fornecer um callback para essa função, para tratar o erro ou realizar outras operações após o envio da mensagem.
 
-`Erro! O número 10 não pode ser dividido por zero.`
+## Mergulho profundo
 
-## Profundando mais:
+Ao escrever em stderr, é importante entender que esse canal é utilizado para mensagens de erro e é considerado uma saída não esperada. Portanto, é essencial garantir que essas mensagens sejam gerenciadas e tratadas corretamente durante o processo de desenvolvimento e de produção da aplicação.
 
-Além do método `console.error()`, o TypeScript também possui outras formas de lidar com erros e exceções. Você pode usar a declaração `try...catch` para capturar e tratar erros em seu código. Veja um exemplo abaixo:
+Além disso, é importante ter em mente que mensagens de erro em stderr só serão exibidas caso haja algum erro no código. Por isso, é necessário ter um bom entendimento de como gerenciar e tratar erros no TypeScript.
 
-```TypeScript
-try {
-  // código que pode gerar um erro
-} catch(error) {
-  // tratamento do erro
-  console.error(error); // envia o erro para o erro padrão
-}
-```
-
-Você também pode criar suas próprias classes de erro personalizadas para capturar e gerenciar erros específicos em seu código. Isso pode ser especialmente útil em projetos maiores e complexos.
-
-## Veja também:
-
-- [Documentação oficial do TypeScript sobre tratamento de erros](https://www.typescriptlang.org/docs/handbook/2/typescript-in-javascript#handling-errors)
-- [Artigo sobre tratamento de exceções em TypeScript](https://medium.com/@abhinavroshan/exception-handling-in-typescript-bf71262cfb36)
-- [Vídeo tutorial sobre como lidar com erros em TypeScript](https://www.youtube.com/watch?v=jnEAzUw0pJg)
+## Veja também
+- [Documentação oficial do TypeScript sobre o objeto `process`](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-8.html)
+- [Artigo sobre Error Handling em TypeScript](https://blog.logrocket.com/error-handling-in-typescript/)
+- [Curso gratuito de TypeScript](https://www.freecodecamp.org/news/learn-typescript-in-5-minutes-13eda868daeb/)

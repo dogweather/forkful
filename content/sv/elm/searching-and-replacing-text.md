@@ -1,44 +1,42 @@
 ---
-title:                "Elm: Söka och ersätta text"
+title:                "Elm: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-Att söka och byta ut text är en nödvändig del av programmering, särskilt vid utveckling av webbapplikationer. Genom att lära sig hur man gör det effektivt kan du spara tid och undvika felaktig eller ofullständig kod.
+Att söka och ersätta text i programmering kan verka som en enkel uppgift, men den kan faktiskt spara mycket tid och ansträngning. Med Elm, ett funktionellt programspråk designat för att skriva webbapplikationer, kan du enkelt söka och ersätta text i dina projekt.
 
-## Hur man gör det
+## Så här gör du
 
-För att söka och byta ut text i Elm behöver man först importera "Regex" modulen. Därefter kan man använda funktionen `replace` för att söka efter en viss textsträng och ersätta den med en annan. Här är ett exempel på hur man kan använda detta i en Elm-funktion:
-
-```Elm
-import Regex exposing (replace)
-
-replaceText : String -> String -> String -> String
-replaceText old new text =
-    replace (Regex.fromString old) (const new) text
-```
-
-Genom att anropa denna funktion och ange den textsträng du vill byta ut, den nya texten och den ursprungliga texten som ska ändras, kommer funktionen att returnera den ändrade texten. Till exempel, om du vill byta ut orden "Hej världen" med "Hej alla nyheter" i en textsträng, så kan du göra följande:
+För att söka och ersätta text i Elm, använd funktionen `String.replace`. Det accepterar tre argument: söksträngen, ersättningssträngen och den ursprungliga strängen. Här är ett exempel som ersätter alla förekomster av ordet "hej" med "tja" i en sträng:
 
 ```Elm
-replaceText "Hej världen" "Hej alla nyheter" "Hej världen, härliga nyheter!"
+sträng = "hej världen"
+nySträng = String.replace "hej" "tja" sträng
 ```
 
-Detta kommer att returnera textsträngen "Hej alla nyheter, härliga nyheter!" som resultat.
+Outputen blir "tja världen". Som du kan se ersattes alla förekomster av "hej" med "tja".
 
-## Djupdykning
+## Djupare dykning
 
-För att förstå mer avancerad sökning och ersättning av text i Elm, kan du utforska Regex-modulen närmare. Denna modul tillåter dig att använda reguljära uttryck för att matcha textsträngar, vilket ger dig mer kontroll över vilken text som bör bytas ut och hur den ska ändras.
+För mer avancerade operationer, erbjuder Elm en mäktig funktion som heter `String.replaceWith`. Den tar emot en funktion som bestämmer hur ersättningen ska göras vid varje matchning. Här är ett exempel som ersätter alla siffror i en sträng med "x":
 
-En annan användbar funktion för sökning och ersättning är `replaceAll`. Denna funktion fungerar på samma sätt som `replace`, men byter ut alla förekomster av den sökta texten istället för bara den första. Detta kan vara användbart om du vill göra flera ändringar i en textsträng.
+```Elm
+sträng = "123 abc 45"
+nySträng = String.replaceWith (\_ -> "x") Digit sträng
+```
 
-## Se också
+Outputen blir "xxx abc xx". Funktionen `\_ -> "x"` betyder att ersätt varje matchning med "x".
 
-- [Elm Regex dokumentation](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Reguljära uttryck för nybörjare](https://www.regexpal.com/?fam=107654)
-- [Elm officiella hemsida](https://elm-lang.org/)
+## Se även
+
+- Officiell dokumentation för `String.replace`: https://package.elm-lang.org/packages/elm/core/latest/String#replace
+- Dokumentation för `String.replaceWith`: https://package.elm-lang.org/packages/elm/core/latest/String#replaceWith
+- En handledning om hur man använder Elm för att bygga webbapplikationer: https://guide.elm-lang.org/

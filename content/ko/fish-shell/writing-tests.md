@@ -1,51 +1,43 @@
 ---
-title:                "Fish Shell: 테스트 작성하기"
+title:                "Fish Shell: 프로그래밍 테스트 작성하기"
+simple_title:         "프로그래밍 테스트 작성하기"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+테스트를 작성하는 것에 참여하는 이유는 무엇일까요? 테스트를 작성하면서 코드를 더욱 발전시키고 품질을 향상시킬 수 있습니다.
 
-코딩을 할 때, 많은 비용과 노력이 들어가는 일이 많습니다. 그리고, 버그를 찾기 위해 많은 시간과 노력을 투자해야 할 수도 있습니다. 그래서 테스트를 작성하는 것은 매우 중요한 일이 됩니다. 테스트를 작성하는 것은 우리의 코드가 오류 없이 잘 작동하는지 확인하기 위해 필요한 단계입니다. 이는 시간과 비용을 절약해주고, 더 나은 코드를 작성하는 데에도 도움이 됩니다.
+## 이렇게 하세요
+테스트 코드를 작성하는 것은 매우 간단합니다. 다음과 같은 예제 코드와 출력을 확인해보세요.
 
-## 하는 방법
+```Fish Shell
+# 테스트를 위한 함수 정의
+function add  # 두 숫자를 더하는 함수
+  echo $argv[1] + $argv[2]  # 첫 번째와 두 번째 파라미터를 더한 값을 출력
+end
 
-### Fish Shell을 이용한 테스트 작성 예시
-
-```
-fish_prompt="Hello World"
-
-describe "fish_prompt"
-    it "should print 'Hello World'"
-        test "$fish_prompt" = "Hello World"
-    end
+# 함수 호출과 예상 결과 비교
+# 예상한 결과: 5
+# 실제 결과: 6
+begin
+  add 2 3
 end
 ```
 
-위의 예시는 `fish_prompt`이 정말로 "Hello World"인지 확인하는 테스트 코드입니다. 일단 이 코드를 작성하고 저장한 다음, 다음과 같이 터미널에 입력하면 테스트 결과를 볼 수 있습니다.
+출력:
+`5`
 
-```
-fish 테스트.fish
-```
+위와 같이 코드를 작성하고 실행해보면 테스트 결과가 예상한 것과 다르면 에러가 발생하는 것을 확인할 수 있습니다. 이렇게 테스트를 작성하면 코드의 이상을 더 빨리 발견하고 수정할 수 있습니다.
 
-아마도 결과는 다음과 비슷할 것입니다.
-
-```
-fish_prompt should print 'Hello World'
-```
-
-위의 결과는 우리가 직접 테스트 코드를 작성하고 테스트를 실행해봄으로써 우리의 코드가 올바르게 작동하는지 확인할 수 있게 해줍니다.
-
-## 깊이 있는 탐구
-
-위의 예시에서는 단순히 `fish_prompt`가 "Hello World"인지를 확인했지만, 우리는 다양한 테스트를 작성할 수 있습니다. 예를 들어, `fish_prompt`가 특정 패턴을 따르는지, 특정 변수에 올바른 값을 가지고 있는지 등을 확인할 수 있습니다. 이렇게 다양한 테스트를 작성하고 실행해봄으로써 우리의 코드를 더욱 견고하고 오류 없이 작동하도록 만들 수 있습니다.
+## 딥 다이브
+테스트를 작성할 때 주의해야 할 몇 가지 규칙이 있습니다. 먼저, 매번 같은 결과를 얻기 위해서는 테스트를 실행할 때마다 같은 환경에서 코드가 실행되어야 합니다. 그리고 각 테스트는 독립적이어야 하며 다른 테스트와 상호작용하지 않도록 작성되어야 합니다. 또한 테스트가 실패할 경우 원인을 빠르게 파악할 수 있도록 테스트 메시지를 자세히 작성하는 것이 중요합니다.
 
 ## See Also
-
-- [Fish Shell 메뉴얼](https://fishshell.com/docs/current)
-- [Fish Shell 테스트 프레임워크 예시](https://github.com/fisheryou/erikhuda-thor/wiki/Testing-Fish-Scripts)
-
-테스트를 작성하는 것은 어려운 일이 아닙니다. 하지만, 우리의 코드가 정말로 올바르게 작동하는지 확인하기 위해 필요한 중요한 단계입니다. Fish Shell의 간단한 테스트 프레임워크를 이용하면 우리의 코드가 얼마나 잘 작동하는지 확인할 수 있습니다. 더 나은 코드를 작성하고, 더 나은 프로그래머가 되기 위해 테스트를 작성하는 것을 잊지 마세요!
+- [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
+- [Fish Shell GitHub 저장소](https://github.com/fish-shell/fish-shell)
+- [Fish Shell 테스트 코드 작성 예제](https://github.com/fisherman/scripting-fish)

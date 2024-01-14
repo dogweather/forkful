@@ -1,42 +1,47 @@
 ---
 title:                "Javascript: Criando um arquivo temporário"
+simple_title:         "Criando um arquivo temporário"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário?
+## Por que criar um arquivo temporário em Javascript?
 
-A criação de arquivos temporários é um processo comumente utilizado em programação para armazenar informações temporárias durante a execução de um programa. Isso pode ser útil para armazenar dados que não precisam de uma permanência prolongada e podem ser excluídos após o uso.
+Criar um arquivo temporário pode ser útil em diversas situações de programação, como por exemplo, para armazenar dados que serão usados temporariamente e não precisam ser mantidos permanentemente no computador.
 
 ## Como criar um arquivo temporário em Javascript
 
-A criação de um arquivo temporário em Javascript é feita utilizando a função ```fs.mktempsync()```. Essa função recebe dois parâmetros, o primeiro é o prefixo do nome do arquivo e o segundo é uma callback contendo o nome e o caminho do arquivo criado. Veja um exemplo abaixo:
+Para criar um arquivo temporário em Javascript, podemos utilizar a função `fs.mkstemp()` do módulo "fs" nativo do Node.js. Esta função recebe dois parâmetros: o prefixo do nome do arquivo temporário e uma função de callback que será executada após a criação do arquivo.
 
-```Javascript 
+```Javascript
 const fs = require('fs');
-const tempFile = fs.mktempsync('tempFile');
-console.log(tempFile.name); // nome do arquivo temporário
-console.log(tempFile.path); // caminho do arquivo criado
+
+// Criando um arquivo temporário com o prefixo "dados"
+fs.mkstemp('dados-', (error, file) => {
+   // Caso ocorra um erro na criação do arquivo, retornamos uma mensagem de erro
+   if (error) {
+      console.log(`Ocorreu um erro: ${error}`);
+   } else {
+      // Caso contrário, exibimos o nome do arquivo criado
+      console.log(`Arquivo temporário criado com sucesso: ${file}`);
+   }
+});
 ```
 
-Ao executar este código, um arquivo temporário será criado com um nome aleatório começando com o prefixo "tempFile" e sua localização será retornada através da callback.
+Ao executar este código, teremos um arquivo temporário criado com um nome aleatório, iniciando com o prefixo "dados-". Podemos utilizar este arquivo para armazenar os dados que precisamos temporariamente.
 
-## Aprofundando na criação de arquivos temporários
+## Aprofundando-se na criação de um arquivo temporário
 
-É importante lembrar que arquivos temporários são excluídos automaticamente após o término do programa em que foram criados. No entanto, para garantir que o arquivo seja excluído assim que não for mais necessário, é possível utilizar a função ```fs.unlinkSync()```. Essa função recebe como parâmetro o caminho do arquivo que deseja excluir, como no exemplo abaixo:
+Além da função `fs.mkstemp()`, o Node.js também possui outras formas de criar arquivos temporários, como o método `fs.createWriteStream()` e o módulo externo "temp". Cada uma dessas opções possui suas particularidades e pode ser mais adequada a determinadas situações.
 
-```Javascript 
-const fs = require('fs');
-fs.unlinkSync(tempFile.path); // excluindo o arquivo temporário criado anteriormente
-```
-
-Também é importante ter cuidado com o uso de arquivos temporários em ambientes de produção, pois eles podem acumular e prejudicar a performance do sistema. Por isso, é recomendável utilizar essa técnica apenas quando necessário e sempre garantir a exclusão dos arquivos após o uso.
+Além disso, cabe ressaltar que é importante remover o arquivo temporário após o uso, para evitar sobrecarga de espaço em disco ou possíveis erros na execução do código. Para isso, podemos utilizar a função `fs.unlink()` passando como parâmetro o nome do arquivo temporário criado.
 
 ## Veja também
 
-- [Documentação oficial do Node.js sobre a função ```fs.mktempsync()```](https://nodejs.org/api/fs.html#fs_fs_mkstemp_sync_prefix)
-- [Tutorial sobre a criação de arquivos temporários em diversas linguagens de programação](https://www.tutorialspoint.com/create-temporary-files-in-various-languages)
-- [Artigo sobre o uso de arquivos temporários em ambientes de produção](https://blog.rescale.com/performance-considerations-when-creating-a-temporary-file/)
+- Documentação oficial do Node.js sobre a função `fs.mkstemp()`: https://nodejs.org/api/fs.html#fs_fs_mkstemp_prefix_callback
+- Tutorial sobre como criar arquivos temporários em Javascript: https://www.geeksforgeeks.org/how-to-create-temporary-file-in-node-js/
+- Módulo "temp" do Node.js: https://www.npmjs.com/package/temp

@@ -1,7 +1,9 @@
 ---
-title:                "Go: 컴퓨터 프로그래밍: 커맨드 라인 인자 읽기"
+title:                "Go: 컴퓨터 프로그래밍을 위한 명령 줄 인수 읽기"
+simple_title:         "컴퓨터 프로그래밍을 위한 명령 줄 인수 읽기"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/reading-command-line-arguments.md"
 ---
 
@@ -9,36 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-Go 프로그래밍 언어를 사용할 때 가장 많이 사용되는 기능 중 하나는 커맨드 라인 인수를 읽는 것입니다. 이 기능을 사용하면 사용자는 프로그램 실행 시 인수를 제공할 수 있으며, 이를 통해 프로그램에 영향을 미칠 수 있습니다. 그래서 우리는 Go에서 커맨드 라인 인수를 읽는 방법에 대해 알아보겠습니다.
+Go 프로그래밍을 할 때, 명령줄 인수를 읽는 방법은 중요한 요소입니다. 명령줄 인수를 읽는 것은 프로그램의 실행 중에 사용자에게 입력을 받는다는 것을 의미합니다. 이것이 왜 필요한지 짧게 알아보겠습니다.
 
-## 우리가 어떻게 할까
+## 어떻게
 
-커맨드 라인 인수를 읽는 것은 아주 간단합니다. 사용자는 프로그램을 실행할 때 함께 제공하는 인수를 받아와서 사용할 수 있습니다. 예를 들어, 다음과 같이 프로그램을 실행하는 경우를 생각해보겠습니다.
-
-```
-go run main.go -input hello -output world
-```
-
-위 예시에서 `-input`과 `-output`은 각각 인수의 이름이며, `hello`와 `world`는 각 인수에 전달된 값입니다. 이를 Go 코드로 작성하면 다음과 같을 것입니다.
+Go에서 우리는 `os.Args`를 사용하여 명령줄 인수를 읽을 수 있습니다. 예를 들어, "hello.go"라는 파일을 실행할 때, 다음과 같은 명령줄 인수를 전달하면:
 
 ```
+go run hello.go first second third
+```
+
+이렇게 코드를 작성합니다:
+
+```Go
+package main
+
+import (
+    "fmt"
+    "os"
+)
+
 func main() {
-    input := flag.String("input", "", "input string")
-    output := flag.String("output", "", "output string")
-    flag.Parse()
-
-    fmt.Println(*input, *output)
+    args := os.Args[1:]
+    fmt.Println(args)
 }
 ```
 
-위 코드에서는 `flag` 패키지를 사용하여 인수를 읽고, `flag.String` 메서드를 통해 각 인수의 이름, 기본값, 및 사용법을 설정합니다. 그리고 `flag.Parse()`를 호출하여 인수를 해석해줍니다. 마지막으로 인수 값을 출력하는 예시를 추가했습니다.
+위의 코드를 실행하면, 다음과 같은 출력이 나옵니다:
 
-## 더 깊이 들어가기
+```
+[first second third]
+```
 
-Go에서 인수를 읽는 방법은 `flag` 패키지를 사용하는 것 외에도 `os.Args` 배열을 직접 접근하거나 `os.Args[1:]`를 사용하여 첫 번째 인수부터 끝까지 접근하는 방법도 있습니다. 또한 `flag` 패키지를 사용할 때 더 다양한 타입의 인수를 처리할 수 있으며, `flag` 패키지를 확장하여 사용자 정의 인수도 처리할 수 있습니다. 따라서 `flag` 패키지를 사용하는 방법을 익히는 것이 유용할 것입니다.
+위의 예제에서 `os.Args` 배열의 첫 번째 요소는 프로그램의 이름을 포함하지 않기 때문에 `args := os.Args[1:]`를 사용하여 프로그램의 이름을 제외하고 나머지 인수를 가져올 수 있습니다. 그리고 `fmt.Println()`을 사용하여 인수를 출력합니다.
+
+## 딥 다이브
+
+Go에서 명령줄 인수를 읽는 또 다른 방법은 `flag` 패키지를 사용하는 것입니다. 이 패키지는 훨씬 더 정교하게 명령줄 인수를 처리할 수 있습니다. 다양한 옵션 값을 설정하고 플래그를 통해 프로그램의 동작을 제어하는 것이 가능합니다. 코드를 보자면:
+
+```Go
+package main
+
+import (
+    "flag"
+    "fmt"
+)
+
+var name = flag.String("name", "defaultName", "Enter your name")
+
+func main() {
+    flag.Parse()
+    fmt.Println("Hello, " + *name)
+}
+```
+
+이 코드를 실행하면 `go run hello.go -name=John`을 통해 출력 결과로 "Hello, John"이 나옵니다.
 
 ## 참고
 
-- [Go 프로그래밍 튜토리얼](https://tour.golang.org/welcome)
-- [Go 공식 문서 - flag 패키지](https://golang.org/pkg/flag/)
-- [Go 공식 문서 - os 패키지](https://golang.org/pkg/os/)
+- [Go 문서: Command-line arguments](https://golang.org/doc/articles/wiki/#command-line-arguments)
+- [Go 패키지: flag](https://golang.org/pkg/flag/)
+- [타르탈렛리's 블로그: Go's flag package](https://www.calhoun.io/how-to-access-command-line-flags-in-go/)
+- [Why Go is better than cmd prompt](https://blog.logrocket.com/why-go-is-better-than-command-prompt-for-writing-cli-tools/)

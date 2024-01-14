@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Rechercher et remplacer du texte"
+title:                "Swift: Recherche et remplacement de texte"
+simple_title:         "Recherche et remplacement de texte"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/searching-and-replacing-text.md"
 ---
 
@@ -9,43 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur Swift, vous savez probablement que le processus de recherche et de remplacement de texte est une partie inévitable de notre travail. Que vous soyez en train de corriger une simple faute de frappe ou de modifier des milliers de lignes de code, savoir comment faire efficacement une recherche et un remplacement peut vous faire gagner beaucoup de temps et vous éviter bien des maux de tête.
+Si vous êtes un programmeur Swift, vous savez à quel point il est important de maintenir un code propre et organisé. Parfois, cela signifie devoir faire des recherches et des remplacements de texte dans votre code. Dans cet article, nous allons explorer comment faire cela en utilisant Swift.
 
 ## Comment faire
 
-Voici quelques exemples de code en Swift pour vous montrer comment vous pouvez effectuer une recherche et un remplacement de texte dans votre code :
+La première chose à faire pour rechercher et remplacer du texte est d'utiliser la méthode `replacingOccurrences(of:with:)` sur votre chaîne de caractères. Voici un exemple de code:
 
-```
-// Recherche et remplacement d'un certain mot dans une chaîne
-
-let originalString = "Bonjour le monde"
-let remplacéString = originalString.replacingOccurrences(of: "Bonjour", with: "Salut")
-
-print(remplacéString) // Sortie : Salut le monde
-
-
-// Remplacement de lettres spécifiques dans une chaîne
-
-let animal = "chat"
-
-if let replacedAnimal = animal.replacingOccurrences(of: "a", with: "e") {
-    print(replacedAnimal) // Sortie : chet
-}
-
+```Swift
+var string = "Bonjour le monde !"
+string = string.replacingOccurrences(of: "Bonjour", with: "Salut")
+print(string)
 ```
 
-Ces exemples montrent comment vous pouvez facilement remplacer du texte dans une chaîne en utilisant la méthode `replacingOccurences(of:)`. Cette méthode prend deux paramètres : le premier est le texte que vous souhaitez remplacer, et le deuxième est le texte avec lequel vous souhaitez le remplacer.
+La sortie de ce code sera `Salut le monde !`, car nous avons remplacé le mot "Bonjour" par "Salut". Vous pouvez également spécifier un nombre maximum de remplacements grâce à un troisième paramètre optionnel dans la méthode.
 
-Pour rechercher un texte spécifique, vous pouvez utiliser la méthode `range(of:)`, qui renvoie un `Range<String.Index>` contenant l'emplacement du texte recherché. Ensuite, vous pouvez utiliser cette information pour effectuer un remplacement si nécessaire.
+Outre la méthode `replacingOccurrences`, vous pouvez également utiliser la méthode `replacingOccurrences(of:with:options:range:)` pour avoir plus de contrôle sur la recherche et le remplacement. Cette méthode vous permet de spécifier des options telles que l'ignorance ou non de la casse, ainsi que de limiter la recherche à une certaine plage de caractères.
 
 ## Deep Dive
 
-Maintenant que vous savez comment faire une recherche et un remplacement de base dans Swift, il est important de comprendre comment cela fonctionne en profondeur. Tout d'abord, il est important de noter que les méthodes de recherche et de remplacement de texte en Swift sont sensibles à la casse. Cela signifie que "Hello" et "hello" seront considérés comme deux chaînes différentes. Si vous souhaitez effectuer une recherche et un remplacement sans tenir compte de la casse, vous pouvez utiliser la méthode `range(of:, options:)` et spécifier l'option `.caseInsensitive`.
+Lorsque vous effectuez un remplacement de texte en utilisant Swift, il est important de comprendre que cela se fait de manière non destructive, ce qui signifie que la chaîne de caractères d'origine ne sera pas modifiée. Au lieu de cela, un nouveau résultat sera créé et renvoyé.
 
-De plus, il est important de comprendre la différence entre les chaînes et leurs index en Swift. Les chaînes en Swift sont en fait des collections de caractères, et chaque caractère a un index qui correspond à sa position dans la chaîne. Les index d'une chaîne Swift sont de type `String.Index`, et ils peuvent être utilisés pour accéder à des caractères individuels ou pour déterminer l'emplacement d'un certain texte dans la chaîne.
+Vous pouvez également utiliser des expressions régulières pour rechercher et remplacer du texte en utilisant la bibliothèque `Foundation`. Il vous suffit de créer une expression régulière en utilisant la classe `NSRegularExpression`, puis de l'utiliser dans la méthode `replacingOccurrences(of:with:options:range:)`.
 
 ## Voir aussi
 
-- [Documentation officielle sur les méthodes de recherche et de remplacement de chaîne en Swift](https://developer.apple.com/documentation/foundation/nsstring/1411943-replacingoccurrences)
-- [Article sur l'utilisation des options de recherche et de remplacement de chaîne en Swift](https://www.hackingwithswift.com/example-code/strings/how-to-use-regular-expressions-to-find-and-replace-text)
-- [Guide complet sur les chaînes en Swift](https://www.swiftbysundell.com/posts/strings-in-swift-4)
+- Apple Swift documentation officielle pour `replacingOccurrences`: https://developer.apple.com/documentation/foundation/nsstring/1411943-replacingoccurrences
+- Tutoriel Apprenez Swift: Remplacer et modifier du texte: https://www.apprendre-swift.com/remplacer-modifier-texte/
+- Site Web officiel de Swift: https://swift.org/

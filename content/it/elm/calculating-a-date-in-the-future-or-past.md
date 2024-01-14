@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Calcolare una data nel futuro o nel passato"
+title:                "Elm: Calcolare una data nel futuro o nel passato."
+simple_title:         "Calcolare una data nel futuro o nel passato."
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,36 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Calcolare una data nel futuro o nel passato può essere utile in molte situazioni, come ad esempio la programmazione di eventi o la gestione di scadenze.
+Ci sono molte situazioni in cui potresti voler calcolare una data specifica in futuro o in passato. Ad esempio, potresti avere un programma di prenotazione che chiede all'utente di selezionare una data di partenza o di arrivo. O forse stai creando un calendario con un'opzione per spostare tra i mesi. In ogni caso, è importante comprendere come calcolare correttamente una data futura o passata in Elm.
 
 ## Come fare
 
-Per calcolare una data in Elm, esistono due opzioni: utilizzare la libreria "elm/time" o scrivere una funzione personalizzata. Se si sceglie di utilizzare la libreria, ecco un semplice esempio:
+Calcolare una data in Elm è abbastanza semplice e si può fare utilizzando alcune funzioni standard della libreria Time di Elm. Per calcolare una data futura o passata, è necessario utilizzare la funzione `add` che accetta tre argomenti: un intero che rappresenta l'ammontare di tempo da aggiungere o sottrarre, un intervallo di tempo (such as `millisecond`, `second`, `minute`, etc.), e una data base di riferimento. Ecco un esempio di codice che calcola la data di oggi più 5 giorni:
 
-```
+```Elm
 import Time exposing (..)
 
-addDays 7 (fromUtcTime 1593000000)
-
--- Output: 2020-06-29T00:00:00+00:00
+add 5 day (today)
 ```
 
-In questo esempio, stiamo aggiungendo 7 giorni alla data 1593000000, che corrisponde al primo luglio 2020. È possibile utilizzare le funzioni della libreria "elm/time" per aggiungere o sottrarre giorni, ore, minuti o secondi da una data specifica.
+L'output del codice sarà il seguente:
 
-Se si preferisce scrivere una funzione personalizzata, si può utilizzare la libreria "elm/time-extras" che offre funzioni più avanzate per il calcolo delle date. Ad esempio, la funzione `addDays` prende in input una data e il numero di giorni da aggiungere e restituisce la data modificata.
+```Elm
+Teak Time exposing (..)
+"2019-10-11"
+```
+
+Oltre alle funzioni `add` e `today`, la libreria Time di Elm offre molte altre funzioni utili per il calcolo di date e orari. È possibile esplorarle ulteriormente nella documentazione ufficiale di Elm.
 
 ## Approfondimento
 
-Per calcolare una data in futuro o nel passato, è importante considerare alcune cose. In primo luogo, bisogna essere consapevoli dei fusi orari e utilizzare le funzioni adeguate per convertire le date in formato UTC. Inoltre, bisogna considerare l'eventualità di avere un anno bisestile e gestire correttamente il cambio di anno durante il calcolo.
-
-Un altro aspetto importante è la gestione degli orari estivi e invernali, che possono influire sulla durata di un giorno. In questi casi, è necessario utilizzare funzioni più avanzate che tengano conto di queste variazioni per avere risultati precisi.
+Per calcolare una data futura o passata in modo più preciso e complesso, potresti voler prendere in considerazione anche i leap years, i fusi orari e i giorni festivi. In questo caso, potresti dover utilizzare una libreria esterna o scrivere il tuo codice personalizzato. Inoltre, ricorda che le date in Elm sono immutabili, il che significa che una volta create, non possono essere modificate. Sarà necessario quindi utilizzare le funzioni di creazione e manipolazione delle date per ottenere risultati più accurati.
 
 ## Vedi anche
 
-- [Documentazione della libreria "elm/time"](https://package.elm-lang.org/packages/elm/time/latest/)
-
-- [Documentazione della libreria "elm/time-extras"](https://package.elm-lang.org/packages/elm-explorations/time/latest/)
-
-- [Articolo sull'utilizzo dei fusi orari in Elm](https://thoughtbot.com/blog/working-with-time-and-time-zones-in-elm)
-
-- [Esempi di calcolo delle date in Elm](https://elmprogramming.com/elm-dates.html)
+- [Documentazione ufficiale di Elm su Date e Time](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Esempi di calcolo di date in Elm](https://www.itabari.com/elm/it/articles/visually-review-date-time-in-Elm.html)
+- [Il codice sorgente del progetto Elm](https://github.com/elm/compiler/blob/master/hints/date.md)

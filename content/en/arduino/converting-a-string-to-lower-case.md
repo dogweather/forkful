@@ -1,41 +1,43 @@
 ---
 title:                "Arduino recipe: Converting a string to lower case"
+simple_title:         "Converting a string to lower case"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Converting strings to lower case is a common task in programming, and it is essential to ensure consistency in data processing and comparison. Whether you are creating a chatbot or a data analysis tool, being able to convert strings to lower case can help in handling user input and handling data more efficiently.
+
+Arduino programming is a useful skill to have, especially for hobbyists and students interested in electronics and robotics. One particular task that may come up is converting a string to lower case. This can be useful for various purposes, such as data manipulation and comparison.
 
 ## How To
-To convert a string to lower case in Arduino, you can use the `toLowerCase()` function from the `String` library. This function takes a string as input and returns a new string with all characters converted to lower case.
 
-Here is an example code snippet for converting a string to lower case in Arduino:
+To convert a string to lower case in Arduino, you can use the `toLowerCase()` function. This function converts all the characters in a string to lower case and returns the updated string. Take a look at the following example:
 
-```
-ArduinoString str = "CONVERT TO LOWER CASE";
-ArduinoString lowercaseStr = str.toLowerCase();
-Serial.println(lowercaseStr);
+```Arduino 
+String myString = "Hello World";
+myString.toLowerCase();
 ```
 
-The expected output of this code would be:
+The output of this code would be `"hello world"`, with all the characters converted to lower case. You can also assign the converted string to a new variable, as shown below:
 
+```Arduino
+String myString = "Hello World";
+String lowercaseString = myString.toLowerCase();
 ```
-convert to lower case
-```
+
+The output of `lowercaseString` would be the same as before, "hello world". This is a simple yet useful function that can save you time and effort when working with strings in your Arduino projects.
 
 ## Deep Dive
-In Arduino, strings are objects of the `String` class and can be manipulated using various inbuilt functions. The `toLowerCase()` function is an example of such a function that helps in converting strings to lower case.
 
-Under the hood, the `toLowerCase()` function loops through each character of the string, checks its ASCII value, and converts it to its corresponding lower case character. This process continues until all characters in the string have been converted.
+If you're curious about how the `toLowerCase()` function works, it uses the ASCII (American Standard Code for Information Interchange) codes to convert the characters to lowercase. Each character has an assigned ASCII code, and converting to lowercase involves adding 32 to the ASCII code of uppercase letters. Other characters, such as numbers and symbols, remain unchanged.
 
-Keep in mind that the `toLowerCase()` function creates a new string and does not modify the original string. So, if you need to use the converted string later in your code, make sure to store it in a new variable.
+Additionally, you can also use the `toUpperCase()` function to convert a string to uppercase in Arduino using the same concept.
 
 ## See Also
-- [Arduino documentation for String.toLowerCase()](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/tolowercase/)
-- [Convert String to Lower Case in Arduino](https://howtomechatronics.com/tutorials/arduino/convert-string-to-lower-case-tutorial/)
 
-By using the `toLowerCase()` function, you can easily convert strings to lower case in your Arduino projects. This simple yet powerful function can save you time and effort in handling string data. Happy coding!
+- [Arduino Documentation on String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+- [ASCII Table](https://www.asciitable.com/)

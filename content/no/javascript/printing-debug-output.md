@@ -1,56 +1,90 @@
 ---
 title:                "Javascript: Utskrift av feilsøkingsutdata"
+simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
+## Hvorfor
 
-Det er alltid en god idé å inkludere debug-utdata når du utvikler programmering. Dette kan hjelpe deg med å identifisere feil og forstå hvordan koden din fungerer. Ved å skrive ut utdata, kan du raskt finne ut hvor koden din går galt og hvordan du kan løse det.
+Å printe ut feilsøkingsutdata kan være en nyttig praksis for å feilsøke og finne feil i koden din. Det kan hjelpe deg med å forstå hva som skjer under kjøringen av programmet ditt og finne ut hvor det kan være problemer.
 
-##Slik gjør du det
+## Hvordan
 
-Det er flere måter å skrive ut debug-utdata på, men den enkleste metoden er å bruke `console.log()` -funksjonen i JavaScript. Du kan legge til `console.log()` hvor som helst i koden din for å skrive ut variabler, meldinger eller andre viktige verdier.
-
-Her er et eksempel på hvordan du kan bruke `console.log()` for å skrive ut en melding og en variabel:
+For å printe ut feilsøkingsutdata i Javascript, kan du bruke `console.log()` funksjonen. Denne funksjonen vil skrive ut gitt data til utgangskonsollen i nettleseren din.
 
 ```Javascript
-let navn = "Maria";
-console.log("Hei, mitt navn er " + navn);
+let navn = "Sarah";
+let alder = 25;
+let yrke = "Webutvikler";
+console.log("Navn: " + navn);
+console.log("Alder: " + alder);
+console.log("Yrke: " + yrke);
 ```
 
-Dette vil skrive ut følgende melding i konsollen din:
+Dette vil resultere i følgende utdata i konsollen:
 
 ```
-Hei, mitt navn er Maria
+Navn: Sarah
+Alder: 25
+Yrke: Webutvikler
 ```
 
-Du kan også bruke `console.log()` for å inspisere objekter og arrays. Her er et annet eksempel:
+I tillegg til å skrive ut variabler, kan du også printe ut tekster eller til og med objekter:
 
 ```Javascript
-let fruits = ["eple", "banan", "jordbær"];
-console.log(fruits);
+console.log("Feilmelding: En ugyldig input ble oppdaget.");
+console.log({ navn: "John", alder: 28, yrke: "Designer" });
 ```
 
-Dette vil skrive ut hele `fruits` -arrayen i konsollen din:
+Dette vil resultere i:
 
 ```
-["eple", "banan", "jordbær"]
+Feilmelding: En ugyldig input ble oppdaget.
+{ navn: "John", alder: 28, yrke: "Designer" }
 ```
 
-##Dypere dykk
+## Dypdykk
 
-Nå som du har lært hvordan du skriver ut debug-utdata, kan det være nyttig å vite at det er flere måter å tilpasse og utnytte dette verktøyet på. For eksempel kan du bruke `console.time()` og `console.timeEnd()` for å måle hvor lang tid det tar for en bestemt del av koden din å kjøre. Du kan også bruke `console.table()` for å få en mer visuell og strukturert utskrift av arrays og objekter.
+Ved å bruke `console.log()` funksjonen, kan du også formatere utdataen din på en mer nyttig måte. For eksempel kan du bruke `%c` for å legge til farger og stil i teksten din:
 
-Det er også verdt å merke seg at du kan bruke `console.error()` for å skrive ut feilmeldinger og `console.warn()` for å vise advarsler. Dette kan være veldig nyttig når du jobber med større prosjekter og trenger å identifisere og håndtere feil raskt.
+```Javascript
+console.log("%cFeilmelding: En ugyldig input ble oppdaget.", "color: red; font-weight: bold");
+```
 
-##Se også
+Dette vil gi deg en mer iøynefallende feilmelding i konsollen din.
 
-- [Document Object Model (DOM)](https://www.w3schools.com/js/js_htmldom.asp)
-- [Vanlige feil i JavaScript](https://www.tutorialspoint.com/javascript/javascript_common_errors.htm)
-- [Debugging med Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/javascript/)
+En annen nyttig funksjon er `console.table()`, som lar deg skrive ut data i en tabellform:
 
-Takk for at du leste denne bloggposten om hvordan du kan skrive ut debug-utdata i JavaScript. Vi håper dette vil hjelpe deg med å bli en mer effektiv utvikler og identifisere feil raskere. Lykke til med kodene dine!
+```Javascript
+let brukere = [
+    { navn: "Lisa", alder: 32, yrke: "Lærer" },
+    { navn: "David", alder: 29, yrke: "Selger" },
+    { navn: "Maria", alder: 35, yrke: "Sykepleier" }
+];
+console.table(brukere);
+```
+
+Dette vil gi deg følgende utdata i konsollen din:
+
+```
+┌─────────┬───────┬─────────────┐
+│ (index) │ navn  │    Verdi    │
+├─────────┼───────┼─────────────┤
+│    0    │ 'Lisa'│ [object ...]│
+│    1    │ 'David' │ [object ...]│
+│    2    │ 'Maria' │ [object ...]│
+└─────────┴───────┴─────────────┘
+```
+
+Ved hjelp av disse funksjonene kan du enkelt få en bedre forståelse av hva som skjer under kjøringen av koden din og finne eventuelle feil eller problemer.
+
+## Se også
+
+- [Javascript konsole API-dokumentasjon](https://developer.mozilla.org/nb/docs/Web/API/Console)
+- [5 tips for effektiv feilsøking i Javascript](https://medium.com/swlh/5-tips-to-efficiently-debug-your-javascript-code-a11447b057dd)
+- [Debugging i Javascript](https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-with-the-built-in-debugger-and-chrome-devtools)

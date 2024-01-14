@@ -1,43 +1,75 @@
 ---
 title:                "C#: המרת מחרוזת לאותיות קטנות"
+simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+# למה
 
-למה צריך להמיר מחרוזת לאותיות קטנות?
+למה לחשוב על המרה של מחרוזת לאותיות קטנות? יתרונותיו הניכרים בהמשך המאמר ישוו לך את הטרח ללמוד על פונקציות מועילות כמו .ToLower() בשפת תכנות C#.
 
-## איך לבצע את התהליך
+# כיצד לבצע
 
-בכדי להמיר מחרוזת לאותיות קטנות בשפת סי שארפ, ניתן להשתמש בפעולת הפילוט המובנית ToString המאפשרת המרת נתונים לסוגים שונים. כדי להמיר מחרוזת לאותיות קטנות, נא להשתמש בפעולת הממשק ToLower הקיימת במחלקת String. נוכל להשתמש גם בפעולה ToLowerInvariant להמרת האותיות לתחתית מינוחית.
-
-```C#
-string myString = "HELLO WORLD";
-string newString = myString.ToLower();
-
-Console.WriteLine(newString); // Output: hello world
-```
-
-## לחקור עומק
-
-מה אם ברצוננו להמיר רק את חלק מהמחרוזת לאותיות קטנות? במקרה כזה, ניתן להשתמש בפעולת Substring כדי לחלק את המחרוזת לחלקים ולהמיר רק את החלק הרלוונטי לאותיות קטנות.
+הגעת למקום הנכון אם אתה מעוניין ללמוד כיצד להמיר מחרוזת לאותיות קטנות בשפת תכנות C#. נקדם לכוונה ונצג דוגמאות קוד כדי להבין טוב יותר.
 
 ```C#
-string myString = "HELLO WORLD";
-
-string firstPart = myString.Substring(0, 5); // "HELLO"
-string secondPart = myString.Substring(5); // " WORLD"
-
-string newString = firstPart + secondPart.ToLower();
-Console.WriteLine(newString); // Output: Hello world
+string phrase = "שלום לעולם!";
+string lowerPhrase = phrase.ToLower();
+Console.WriteLine(lowerPhrase);
 ```
 
-## ראה גם
+בתוצאה תקבל:
 
-- מדריך לתחביר הבסיסי של סי שארפ (https://www.codecademy.com/learn/learn-c-sharp)
-- הממשק String במסמך הרשמי של מייקרוסופט (https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netcore-3.1)
-- דוגמאות ופתרונות לתרגילים בנושא מחרוזות ב-C# (https://www.tutorialspoint.com/csharp/csharp_strings.htm)
+```
+שלום לעולם!
+```
+
+נוכל לראות שהמחרוזת המקורית נמצאת עכשיו באותיות קטנות. אם נספק מחרוזת עם אותיות קפיטליות, הפונקציה .ToLower() תבצע את הפעולה הנדרשת ותחזיר את המחרוזת באותיות קטנות.
+
+# טיפול מעמיק
+
+השתמשנו כאן בפונקציה פנימית של שפת תכנות C#, אבל כמו רוב הפונקציות הפנימיות, ניתן לכתוב גם פונקציה עצמאית להביצעת המשימה. הפונקציה הבאה תחלופה את כל האותיות הגדולות במחרוזת לאותיות קטנות:
+
+```C#
+public string ConvertToLower(string input)
+{
+    string output = "";
+    foreach (char letter in input)
+    {
+        output += char.ToLower(letter);
+    }
+    return output;
+}
+```
+
+אם נרצה, נוכל גם להפוך את הפונקציה לסטטי כדי שנוכל לקרוא לה תוך טעינת הקלאס שלנו.
+
+```C#
+public static class StringConverter
+{
+    public static string ConvertToLower(string input)
+    {
+        string output = "";
+        foreach (char letter in input)
+        {
+            output += char.ToLower(letter);
+        }
+        return output;
+    }
+}
+```
+
+עכשיו נוכל להשתמש בקלות בפונקציה הסטטית כאשר נרצה להמיר מחרוזת לאותיות קטנות:
+
+```C#
+string phrase = "שלום לעולם!";
+string lowerPhrase = StringConverter.ConvertToLower(phrase);
+Console.WriteLine(lowerPhrase);
+```
+
+כ

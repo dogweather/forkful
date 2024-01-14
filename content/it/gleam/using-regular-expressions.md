@@ -1,40 +1,52 @@
 ---
 title:                "Gleam: Utilizzo delle espressioni regolari"
+simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+##Perché
 
-Le espressioni regolari sono una potente funzionalità di programmazione che consentono di cercare e manipolare testo in modo efficiente. Sono ampiamente utilizzate per la validazione di input, la ricerca di pattern specifici e il filtraggio dei dati. Se sei uno sviluppatore che lavora con testo, le espressioni regolari possono semplificare e velocizzare il tuo lavoro.
+L'utilizzo delle espressioni regolari è essenziale per analizzare e manipolare i dati in modo efficiente nei programmi Gleam. Questo strumento permette di trovare pattern specifici all'interno di una stringa di testo, semplificando il processo di ricerca e sostituzione delle informazioni.
 
-## Come Utilizzarle
+##Come utilizzarle
 
-Per utilizzare le espressioni regolari in Gleam, è necessario importare il modulo `regex` utilizzando l'istruzione `import` seguita dal nome del modulo. Quindi puoi utilizzare diverse funzioni del modulo per creare ed eseguire le tue espressioni regolari.
-
-Ecco un semplice esempio di come trovare e stampare un pattern all'interno di una stringa utilizzando le espressioni regolari:
+Per utilizzare le espressioni regolari in Gleam, basta usare il modulo `Regex` e la sua funzione `match`. Ad esempio, per cercare una parola specifica in una stringa si può scrivere il seguente codice:
 
 ```Gleam
-import regex
+import Regex
 
-let pattern = regex.compile(`world`, "") // crea un'espressione regolare che cerca la parola "world"
-let match = pattern.find("Hello world!") // cerca il pattern nella stringa
-match.map(text => println(text)) // stampa il testo trovato, se presente
+let stringa = "Questo è un esempio di stringa"
+let parola_cercata = "esempio"
+
+let match = Regex.match(parola_cercata, stringa)
+
 ```
 
-L'output di questo codice sarà `world`, poiché è la parola che corrisponde al nostro pattern.
+Il risultato sarà un `Option` di tipo `Regex.Match`, che contiene informazioni sulla posizione della parola cercata all'interno della stringa di testo. Per ottenere il valore effettivo, si può utilizzare il pattern matching sul `Option`:
 
-È possibile utilizzare diverse opzioni per modificare il comportamento delle espressioni regolari, come ad esempio l'utilizzo di espressioni case-insensitive o l'uso di quantificatori per trovare più occorrenze di un pattern. Il modulo `regex` offre molte funzioni utili per gestire queste opzioni e creare espressioni regolari più sofisticate.
+```Gleam
+let stringa_trovata = match {
+    Just(trovato) -> stringa[trovato.offset..trovato.trailing]
+    _ -> "Parola non trovata"
+}
 
-## Approfondimenti
+```
 
-Per saperne di più sulle espressioni regolari in Gleam, è possibile consultare la documentazione ufficiale del modulo `regex` che include esempi di codice e spiegazioni dettagliate. Inoltre, è consigliabile esplorare e praticare con le espressioni regolari utilizzando quiz e tutorial online per migliorare la propria comprensione e padronanza di questa funzionalità.
+In questo modo, `stringa_trovata` conterrà la stringa "parola" che è stata cercata nella stringa originale.
 
-## Vedi Anche
+##Approfondimento
 
-- [Documentazione ufficiale del modulo `regex`](https://gleam.run/modules/regex)
-- [Esercizi e tutorial per espressioni regolari](https://regexone.com/)
-- [Quiz interattivo su espressioni regolari](https://regexcrossword.com/)
+Le espressioni regolari sono potenti, ma richiedono una certa conoscenza dei pattern e delle loro sintassi. Ad esempio, si possono utilizzare i caratteri speciali come `^` per indicare l'inizio della stringa e `$` per indicare la fine. Inoltre, è possibile specificare l'utilizzo di caratteri wildcards per trovare parole con varie forme o varianti, grazie all'utilizzo di simboli come `*` e `+`.
+
+Per una lista completa delle funzionalità delle espressioni regolari in Gleam, si consiglia di consultare la documentazione ufficiale.
+
+##Vedi anche
+
+- [Documentazione ufficiale di Gleam sulle espressioni regolari] (https://gleam.run/book/tour/regex.html)
+- [Tutorial su come utilizzare espressioni regolari in Gleam] (https://dev.to/lgg/using-regular-expressions-in-gleam-87k)
+- [Video su come utilizzare espressioni regolari in Gleam] (https://www.youtube.com/watch?v=Nn9ufoOE_CE)

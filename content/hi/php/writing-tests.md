@@ -1,72 +1,55 @@
 ---
-title:                "PHP: तेस्ट लिखना"
+title:                "PHP: लिखना परीक्षाएं"
+simple_title:         "लिखना परीक्षाएं"
 programming_language: "PHP"
-category:             "Testing and Debugging"
+category:             "PHP"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-"## क्यों"
-टेस्ट कस्टमर ध्यान रखना आपके कोड की साइन्टेक ल को विश्वसनीय बनाता है और बग्स को पकड़ने में सहायता करता है। टेस्ट लिखना आपके कोड की सत्यता को बढ़ाता है और दोगुना सुनिश्चित करता है कि आपकी वेब एप्प सुरक्षित रहती है।
+## क्यों
 
-"## कैसे करने के लिए"
-```PHP 
+क्या आपने कभी सोचा है कि आपका कोड सही से काम कर रहा है या नहीं? आपको हर बार अपने कोड में बदलाव करने से पहले उसे चेक करने की आवश्यकता होती है। यहाँ हमारी मदद करती है अपने एपीचीआई के साथ प्रभावी तरीके से काम करो।
+
+## कैसे करें
+
+```PHP
 <?php
-    // आपका कोड यहाँ लिखें
-    function add($num1, $num2){
-        return $num1 + $num2;
+use PHPUnit\Framework\TestCase;
+
+class MathTest extends TestCase
+{
+    // कतिेता के लिए गुणन करें
+    public function testMultiplication()
+    {
+        // थोड़े नमूने
+        $this->assertEquals(4, 2*2);
+        $this->assertEquals(12, 3*4);
+        $this->assertEquals(8, 4*2);
+        $this->assertEquals(20, 5*4);
     }
 
-    $result = add(2, 3);
-    echo $result; // Output: 5
+    // कतिेता के लिए विभाजन करें
+    public function testDivision()
+    {
+        $this->assertEquals(2, 4/2);
+        $this->assertEquals(3, 12/4);
+        $this->assertEquals(4, 16/4);
+    }
+}
 ?>
 ```
 
-ऑबजेक्ट ओरिएंटेड प्रोग्रामिंग में, हम महान और शानदार भारतीय शहर मुंबई से दो ऑबजेक्ट स्टार्ट बनाएँगे जो हमें टेस्ट करने में मदद करेंगे। यहाँ हम दो टेस्ट क्लास प्रस्तुत करेंगे: एक "स्टैक" और एक "कटा"। हम नोटसिल राखेंगे कि दोनों इन्हें स्टैक मैनेज़ करेंगे, जो कि एक चीज है जो फ़ोन्सदेसी (तालिबान) कोडतवा की सहायता से बनाई गई है।
+उपरोक्त कोड का उपयोग करके, हम गुणा और विभाजन के लिए अलग-अलग फंक्शन बनाते हैं और उन्हें चेक करते हैं। इससे हम अपने एपीचीआई से सुनिश्चित कर सकते हैं कि हमारा कोड सही से काम कर रहा है या नहीं।
 
-```PHP 
-<?php
-    // स्टैक क्लास
-    class Stack {
-        private $items;
+## गहराई से जाएं
 
-        public function __construct(){
-            $this->items = array();
-        }
+जब हम टेस्ट कोड लिखते हैं, तो हम अपने कोड के अलावा भी अपने महत्वपूर्ण मानदंडों को समझते हैं। इससे हमारे कोड में निरंतर सुधार होते हैं और हमें अपने प्रोजेक्ट को बेहतर बनाने के लिए आगे बढ़ने की प्रेरणा मिलती है। टेस्ट कोड आपके एपीचीआई को भी सुरक्षित बनाता है क्योंकि वो आपके मानदंडों का पालन करता है।
 
-        public function push($item){
-            array_push($this->items, $item);
-        }
+## देखें भी
 
-        public function pop(){
-            return array_pop($this->items);
-        }
-    }
-
-    // कटा क्लास
-    class Queue extends Stack{
-        public function enqueue($item){
-            $this->items[] = $item;
-        }
-
-        public function dequeue(){
-            return array_shift($this->items);
-        }
-    }
-
-    // लेट्स चलाना
-    $stack = new Stack();
-    $stack->push(10);
-    $stack->push(20);
-    echo $stack->pop(); // Output: 20
-
-    $queue = new Queue();
-    $queue->enqueue("abc");
-    $queue->enqueue("xyz");
-    echo $queue->dequeue(); // Output: abc
-?>
-```
-
-"## गहराई में जाएँ"
-टेस्ट कोडिंग का फैसला कोडिंग टेस्ट करेंगे कि हमारे पास अच्छी और सांप्रदायिक कोड या केवल काम करने वाला कोड या स्पेशल अपलोड
+- PHPUnit: https://phpunit.de/ 
+- इकाई टेस्ट के लिए PHPUnit शुरुआती गाइड: https://phpunit.readthedocs.io/en/9.1/index.html 
+- एपीचीआई औ

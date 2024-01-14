@@ -1,54 +1,42 @@
 ---
-title:                "Kotlin: 日付の取得方法"
+title:                "Kotlin: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-現在の日付を取得することに関わる理由を説明するための1〜2文です。
+
+現在の日付を取得する理由は、日々の生活やビジネスにおいて、正確な日付を把握することが重要だからです。プログラミングにおいても、特定のタスクを実行する際に現在の日付を使用することがあります。
 
 ## 方法
-「```Kotlin ...```」コードブロック内のコーディング例とサンプル出力を含みます。
+
+例えば、Kotlinを使って現在の日付を取得するには、以下のようにコードを書きます。
 
 ```Kotlin
+import java.time.LocalDate
+
 fun main() {
     // 現在の日付を取得する
-    val today = LocalDate.now()
-    // 年、月、日を表示する
-    println("今日の日付は ${today.year}年 ${today.monthValue}月 ${today.dayOfMonth}日 です。")
+    val currentDate = LocalDate.now() 
+    // 日付を表示する
+    println(currentDate)
 }
 ```
 
-**出力:**
-```
-今日の日付は 2021年 6月 20日 です。
-```
+実行すると、`2021-06-29`のような出力が得られます。
 
-## 詳細を深める
-現在の日付を取得する方法についての詳細な情報です。
+## 詳細
 
-### 日付オブジェクト
-日付を表すためには、Kotlinの`LocalDate`クラスを使用します。このクラスには、日付を操作するための便利なメソッドがたくさんあります。
+日付を取得する際には、Javaの`java.time`パッケージを使用することが推奨されています。Kotlinでは、`LocalDate`クラスを使用することで現在の日付を取得することができます。`LocalDate.now()`メソッドを使用することで、現在の日付を取得することができます。
 
-### フォーマット
-`LocalDate`クラスでは、日付を様々なフォーマットで表示することができます。例えば、日付を「YYYY/MM/DD」の形式で表示するには、`DateTimeFormatter`クラスを使用します。
+また、`LocalDate`クラスには、日付を操作するための様々なメソッドが用意されています。例えば、`plusDays()`を使用することで、指定した日数だけ日付を加算することができます。
 
-```Kotlin
-val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd")
-val today = LocalDate.now()
-// 日付を指定したフォーマットで表示する
-println("今日の日付は ${today.format(formatter)} です。")
-```
+## また見る
 
-**出力:**
-```
-今日の日付は 2021/06/20 です。
-```
-
-## 参考リンク
-- [Kotlinの日付と時刻](https://kotlinlang.org/docs/datetime.html)
-- [Java 8の日付と時刻APIの使用](https://www.oracle.com/java/technologies/javase8-64-bit-downloads.html)
-- [日付と時刻のフォーマットについてのチュートリアル](https://www.codevoila.com/post/85/java-working-with-datetime-type-formatting-datatime)
+- [Kotlin公式ドキュメント: `java.time`パッケージ](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time/)
+- [コーン日付操作についての記事](https://medium.com/@codemateinc/kotlin-time-manipulation-with-java-time-7d0a0fd1cb14)

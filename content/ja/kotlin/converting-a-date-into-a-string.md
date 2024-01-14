@@ -1,35 +1,43 @@
 ---
 title:                "Kotlin: 日付を文字列に変換する"
+simple_title:         "日付を文字列に変換する"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ日付を文字列に変換するのか
+## なぜ
 
-日付を文字列に変換すると、より読みやすく、わかりやすい形式になります。また、データベースやAPIなど、さまざまなシステムとのやり取りに便利です。
+日付を文字列に変換する理由はさまざまです。例えば、データベースに保存された日付をユーザーが読みやすい形式で表示するためや、日付を特定の形式でファイル名として使用するためなどです。
 
-## 日付を文字列に変換する方法
+## 方法
 
-```Kotlin
-val date = Date()
-val dateFormat = SimpleDateFormat("yyyy/MM/dd")
-val strDate = dateFormat.format(date)
-println(strDate) // 出力：2021/06/09
+```kotlin
+// 元の日付を作成
+val date = LocalDate.of(2021, 10, 31)
+
+// 日付を文字列に変換
+val formattedDate = date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"))
+
+// 出力：2021-10-31
+println(formattedDate)
 ```
 
-上記の例では、まずDateオブジェクトを作成し、次にSimpleDateFormatクラスを使用して指定の形式の文字列に変換しています。必要に応じて、任意の形式に変更することができます。
+日付を文字列に変換するには、まず`LocalDate`クラスを使用して日付を作成します。そして、`DateTimeFormatter`クラスを使用して任意の形式の文字列に変換します。`ofPattern`メソッドによってフォーマットを指定することができます。上記の例では、`yyyy-MM-dd`という形式で日付を表しています。
 
-## 日付を文字列に変換する際の詳細
+## 深堀り
 
-日付を文字列に変換する際には、日付のパターンを指定する必要があります。パターンは、年、月、日などの要素がどのように並ぶかを指定するものです。また、Dateオブジェクトを作成する際には、指定したパターンに沿った文字列を渡す必要があります。
+日付を文字列に変換する際、パターン文字列には様々なオプションがあります。例えば、`yy`を使用すると年を2桁で表すことができます。また、`MMM`を使用すると月を3文字の英語表記で表示することができます。詳しくは公式ドキュメントを参照してみてください。
 
-## この記事の他の関連情報
+## 参考リンク
 
-### 参考リンク
+- [Java 8日付と時間の新しいAPI](https://docs.oracle.com/javase/jp/8/docs/api/java/time/package-summary.html)
+- [DateTimeFormatterクラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [LocalDateクラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/time/LocalDate.html)
 
-- [Kotlin Date and Time utility functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.util.-date/index.html)
-- [Converting Date to String in Kotlin](https://www.javatpoint.com/kotlin-date-to-string)
-- [How to Convert String to Date in Kotlin](https://www.tutorialkart.com/kotlin/date/how-to-convert-string-to-date-in-kotlin/)
+## 参考に
+
+- [kotlin-japanese-translation-ja](https://github.com/kotlin-japanese-translation)

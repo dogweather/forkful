@@ -1,48 +1,58 @@
 ---
-title:                "Rust: Å generere tilfeldige tall"
+title:                "Rust: Generering av tilfeldige tall"
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Rust"
-category:             "Numbers"
+category:             "Rust"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Har du noen gang lurt på hva som skjer når du klikker på en knapp og et tilfeldig tall dukker opp? Eller kanskje du lurer på hvordan dataprogrammer genererer tilfeldige tall? Uansett hva som måtte være grunnen din for å lære å generere tilfeldige tall, så er du på rett sted! I denne bloggposten vil vi lære deg hvordan du kan generere tilfeldige tall ved hjelp av programmeringsspråket Rust. Det kan være nyttig i en rekke forskjellige situasjoner, enten det er i spillutvikling, simuleringer eller andre programmeringsprosjekter.
+Noen ganger i et programmeringsprosjekt trenger du å generere tilfeldige tall. Dette kan for eksempel være for å lage en simulator, lage spillmekanikker eller teste forskjellige algoritmer. I dette blogginnlegget skal vi se på hvordan man kan generere tilfeldige tall i Rust.
 
 ## Hvordan
+Først må vi legge til "rand" biblioteket i prosjektet vårt ved å legge til følgende linje i "Cargo.toml" filen:
 
-```rust
-fn main() {
-    // Importerer biblioteket "rand" som hjelper oss med å generere tilfeldige tall
-    use rand::Rng;
-
-    // Oppretter en variabel som vil inneholde det tilfeldige tallet
-    let mut rng = rand::thread_rng();
-
-    // Genererer et tilfeldig tall mellom 1 og 10
-    let random_number = rng.gen_range(1, 11);
-
-    // Skriver ut det genererte tallet
-    println!("Det tilfeldige tallet er: {}", random_number);
-}
+```Rust
+[dependencies]
+rand = "0.8.3" 
 ```
 
-Kodeeksempelet ovenfor viser hvordan du med hjelp av Rust kan generere et tilfeldig tall mellom 1 og 10. Først importerer vi biblioteket "rand" som inneholder funksjoner og metoder for å generere tilfeldige tall. Deretter oppretter vi en variabel "rng" som vil brukes til å kalle på disse funksjonene. Vi benytter deretter "gen_range" funksjonen for å generere et tall mellom 1 og 10, og deretter skriver vi det ut.
+Vi importerer så "rand" biblioteket i koden vår:
 
-Du kan også bruke andre funksjoner som "gen_bool" for å generere tilfeldige boolske verdier eller "gen_range_f64" for å generere desimaltall. Det finnes også andre måter å tilpasse og kontrollere genereringen av tilfeldige tall på, som for eksempel å spesifisere et seed eller å bruke en annen RNG (Random Number Generator). Utforsk gjerne dokumentasjonen til biblioteket "rand" for mer avanserte eksempler og muligheter.
+```Rust
+use rand::{Rng, thread_rng}; 
+```
+
+Nå kan vi bruke funksjonen "gen_range" fra "thread_rng" biblioteket for å generere et tilfeldig tall innenfor et bestemt område:
+
+```Rust
+let random_number = thread_rng().gen_range(1..11); //genererer et tall mellom 1 og 10
+println!("Det tilfeldige tallet er: {}", random_number); //output: "Det tilfeldige tallet er: 5" (kan variere)
+```
+
+Vi kan også generere et tilfeldig heltall innenfor et bestemt område ved hjelp av "gen_range" funksjonen:
+
+```Rust
+let random_integer = thread_rng().gen_range(1..11); //genererer et heltall mellom 1 og 10
+println!("Det tilfeldige heltallet er: {}", random_integer); //output: "Det tilfeldige heltallet er: 8" (kan variere)
+```
+
+Om du ønsker å generere et tilfeldig desimaltall, kan du bruke "gen_range" funksjonen og "uniform" metoden:
+
+```Rust
+let random_float = thread_rng().gen_range(0.0..1.0).uniform(); //genererer et desimaltall mellom 0 og 1
+println!("Det tilfeldige desimaltallet er: {}", random_float); //output: "Det tilfeldige desimaltallet er: 0.4531908443" (kan variere)
+```
 
 ## Deep Dive
+Bak kulissene bruker "thread_rng" funksjonen en PRNG (Pseudo Random Number Generator) for å generere tilfeldige tall. Dette betyr at tallene ikke er helt tilfeldige, men følger en matematisk algoritme for å oppnå tilfeldighet. PRNG kan også gjentas ved å bruke den samme startverdien, som er grunnen til at "thread_rng" funksjonen holder styr på en intern tilstand for å sikre unike tall.
 
-Mens det å generere tilfeldige tall kan virke enkelt i utgangspunktet, er det faktisk en mer kompleks prosess enn man kanskje skulle tro. Det involverer blant annet bruk av matematiske algoritmer, som er designet for å produsere tall som oppfører seg som tilfeldige tall. Dette er viktig for å sikre tilfeldigheten og fordelingen av tallene som blir generert.
+Om du ønsker mer avansert tilfeldighet, kan du bruke "EntropyRng" funksjonen fra "entropy_rng" biblioteket. Denne funksjonen genererer tilfeldige tall ved å bruke tilfeldige data fra datamaskinens operativsystem, slik at tallene er mer uforutsigbare og tilnærmet tilfeldige.
 
-Noen av de vanligste algoritmene brukt for å generere tilfeldige tall inkluderer "Linear Congruential Generator", "Mersenne Twister" og "Xorshift". Disse algoritmene har alle ulike egenskaper og fordeler, og det er derfor biblioteket "rand" i Rust bruker en kombinasjon av disse for å generere optimale tilfeldige tall.
-
-Det er også verdt å nevne at tilfeldige tall generert på en datamaskin faktisk ikke er 100% tilfeldige, da de er basert på en algoritme som i utgangspunktet er deterministisk. Det betyr at det samme seedet og de samme algoritmene vil føre til de samme tallene hver gang programmet kjøres. Dette er grunnen til at man vanligvis bruker et seed basert på tiden eller andre variabler for å skape en ilusjon av tilfeldighet.
-
-## Se også
-
-- [Rust dokumentasjon for tilfeldige tall](https://doc.rust-lang.org/stable/rust-by-example/rand.html)
-- [Offisiell dokumentasjon for biblioteket "rand"](https://docs.rs/rand/0.8.4/rand/)
-- [Sammenligning av ulike RNG-algoritmer](https://www.pcg-random.org/pdf/hmc-cs-2014-0905.pdf)
+## Se Også
+- [Rust dokumentasjon: Random library](https://doc.rust-lang.org/rand/index.html)
+- [GitHub: Rand library repository](https://github.com/rust-random/rand)
+- [Medium: Generating random numbers in Rust](https://medium.com/@stephengnl/generating-random-numbers-in-rust-97e667a1cae8)

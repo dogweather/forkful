@@ -1,7 +1,9 @@
 ---
-title:                "Java: Schreiben auf den Standardfehler"
+title:                "Java: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/writing-to-standard-error.md"
 ---
 
@@ -9,51 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Schreiben auf den Standardfehler kann sehr nützlich sein, um Fehler und Warnungen in einem Java-Programm zu erkennen. Es ermöglicht auch die schnelle Diagnose von Problemen während der Entwicklung oder beim Debuggen von Code.
+Beim Programmieren kommt es oft vor, dass Fehler auftreten. Diese können verschiedene Ursachen haben und sind manchmal schwer zu finden. Das Schreiben zu Standardfehler (STDERR) kann dabei helfen, diese Fehler schneller und effizienter zu erkennen.
 
-## Wie man es macht
+## Wie geht man vor?
 
-Das Schreiben auf den Standardfehler ist einfach und kann mit der Methode `System.err.println()` erreicht werden. Hier ist ein Beispiel, wie man einen String auf den Standardfehler schreibt:
-
-```Java
-System.err.println("Dies ist ein Beispiel");
-```
-
-Die Ausgabe wird dann auf der Konsole in roter Farbe angezeigt, um anzuzeigen, dass es sich um einen Fehler oder eine Warnung handelt. Hier ist ein Beispiel für die Ausgabe:
+Um zu Standardfehler zu schreiben, gibt es in Java die Methode `System.err.println()`. Diese Methode nimmt einen String als Parameter und gibt ihn auf dem Standardfehlerkanal aus. Zum Beispiel:
 
 ```Java
-Dies ist ein Beispiel
+System.err.println("Fehler: Division durch Null");
 ```
 
-## Tiefer Eintauchen
+Dies würde den String "Fehler: Division durch Null" auf dem Standardfehlerkanal ausgeben.
 
-Das Schreiben auf den Standardfehler ermöglicht es auch, zusätzliche Informationen wie den Stacktrace eines Fehlers oder die Zeitstempel auszugeben. Hier ist ein Beispiel, wie man dies erreichen kann:
+## Tiefergehende Informationen
 
-```Java
-try {
-    // Code ausführen, der einen Fehler verursacht
-} catch (Exception e) {
-    // Stacktrace auf den Standardfehler schreiben
-    e.printStackTrace(System.err);
+Beim Schreiben zu Standardfehler sollte man beachten, dass dies auf dem gleichen Kanal wie der Standardausgabekanal (STDOUT) geschieht. Das bedeutet, dass die Reihenfolge der Ausgaben nicht garantiert ist und es zu Interferenzen kommen kann. 
 
-    // Aktuelles Datum und Zeit auf den Standardfehler schreiben
-    System.err.println("Zeitpunkt des Fehlers: " + new Date());
-}
-```
-
-Die Ausgabe wird dann folgendermaßen aussehen:
-
-```Java
-java.lang.NullPointerException
-    at MyProgram.method(MyProgram.java:10)
-    at MyProgram.main(MyProgram.java:5)
-Zeitpunkt des Fehlers: Mon Sep 27 14:30:21 CEST 2021
-```
-
-Durch das Schreiben auf den Standardfehler wird die Fehlerbehandlung erleichtert und die Debugging-Zeit verkürzt.
+Außerdem ist es wichtig zu wissen, dass es auch möglich ist, zu Standardfehler zu lesen. Dafür gibt es die Methode `System.err.read()`, welche einen einzelnen Character aus dem Standardfehlerkanal liest. 
 
 ## Siehe auch
 
-- [Oracle Dokumentation zu System.out und System.err](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
-- [Artikel von Baeldung über das Schreiben auf den Standardfehler](https://www.baeldung.com/java-standard-error-output)
-- [Tutorial von Java Code Geeks zur Verwendung von System.err](https://www.javacodegeeks.com/2015/03/java-io-tutorial-4-3-what-when-and-how-to-use-system-err-for-logging.html)
+- [Standardfehlerkanal in Java](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err)
+- [Fehlerbehandlung in Java](https://www.tutorialspoint.com/java/java_exceptions.htm)
+- [Debugging in Java](https://www.javatpoint.com/debugging-in-java)

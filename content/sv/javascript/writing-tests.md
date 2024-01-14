@@ -1,54 +1,48 @@
 ---
 title:                "Javascript: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför skriva tester för Javascript-programmering?
+# Varför Skriva Tester?
 
-Att skriva tester är en viktig del av att utveckla säkra och pålitliga Javascript-program. Genom att skriva tester kan du upptäcka och åtgärda felaktig kod innan den når produktion, vilket minskar chanserna för att buggar upptäcks av användare.
+Att skriva tester är en viktig del av programvaruutveckling. Det hjälper till att säkerställa att koden är korrekt och fungerar som den ska. Genom att skriva tester kan du minimera buggar och fel i ditt program och förbättra dess övergripande kvalitet. Det är också ett bra sätt att spara tid och resurser i det långa loppet.
 
-## Så här skriver du tester i Javascript
+# Så här skriver du tester
 
-För att skriva tester för ditt Javascript-program använder du ett testramverk som till exempel Mocha eller Jasmine. Dessa ramverk gör det enkelt att definiera testfall och köra dem. Här är ett exempel på en enkel testfunktion som testar en funktion som lägger till två nummer:
+För att skriva tester i Javascript, är det viktigt att förstå begreppet enhetstestning. Enhetstester är små tester som fokuserar på att testa en enskild funktion eller metod i din kod. För att skriva enhetstester behöver du en testdrivrutin, som kan vara ett separat program eller en del av din programkod.
 
-```javascript
-// Importera assert-funktionen från testramverket
-const assert = require('assert');
+Här är ett exempel på hur du kan skriva ett enhetstest för funktionen "add" som adderar två tal:
 
-// Definiera testfunktionen
-describe('addNumbers()', () => {
-  it('should add two numbers correctly', () => {
-    // Deklarera testvariabler
-    const num1 = 4;
-    const num2 = 6;
+```Javascript
 
-    // Kalla på den funktion du vill testa
-    const result = addNumbers(num1, num2);
+function add(a, b) {
 
-    // Kontrollera att resultatet är korrekt
-    assert.equal(result, 10);
-  });
-});
+return a + b;
 
-// Den här funktionen är den som testfunktionen ovan testar
-function addNumbers(a, b) {
-  return a + b;
 }
+
+console.log(add(5, 7));
+
+// Output: 12
+
 ```
-Detta är bara ett enkelt exempel, men det visar grunderna för hur du kan skriva tester för din Javascript-kod.
 
-## Djupdykning i att skriva tester
+I exemplet ovan definieras funktionen "add" som lägger till två värden och returnerar resultatet. Sedan skrivs utdatan från funktionen ut i konsolen för att verifiera att funktionen fungerar som den ska.
 
-När du väl har förstått det grundläggande kan du gå djupare in i hur du kan skriva effektiva tester för ditt Javascript-program. Det är viktigt att täcka alla delar av koden och testa olika scenarier för att säkerställa robusthet och korrekthet. Du kan även lägga till olika testverktyg som täcker fler aspekter av din kod, till exempel täckningsverktyg för att mäta hur mycket av din kod som täcks av tester.
+# Djupdykning
 
-## Se även
+Förutom enhetstester finns det också integrationstester och funktionella tester som kan användas för att testa mer komplex kod. Integrationstester används för att testa hur flera komponenter i koden samverkar med varandra, medan funktionella tester testar det färdiga programmet för att se till att det uppfyller de önskade kraven.
 
-Här är några länkar som kan hjälpa dig att lära dig mer om att skriva tester för Javascript-programmering:
+När du skriver tester är det också viktigt att ha en bra täckningsgrad för att se till att alla delar av koden testas. Ett annat viktigt steg i testning är att kontinuerligt utföra regressionstester för att säkerställa att koden fortfarande fungerar som den ska även efter ändringar eller uppdateringar.
 
-- [Mocha](https://mochajs.org/)
-- [Jasmine](https://jasmine.github.io/)
-- [Täckningsverktyg för Javascript](https://www.npmjs.com/package/istanbul)
+# Se även
+
+- [Enhetstester i Javascript](https://developer.mozilla.org/sv/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Testing_JavaScript)
+- [Integrationstester vs. enhetstester](https://www.softwaretestinghelp.com/integration-testing-vs-unit-testing/)
+- [Så här skriver du effektiva tester med Mocha och Chai](https://mochajs.org/)

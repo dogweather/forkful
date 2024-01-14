@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Debug-Ausgabe drucken"
+title:                "TypeScript: Das Drucken von Debug-Ausgaben"
+simple_title:         "Das Drucken von Debug-Ausgaben"
 programming_language: "TypeScript"
-category:             "Testing and Debugging"
+category:             "TypeScript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/printing-debug-output.md"
 ---
 
@@ -9,56 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Debuggen ist ein wichtiger Teil des Entwicklungsprozesses und kann dazu beitragen, Fehler in unserem Code zu finden und zu beheben. Das Drucken von Debug-Ausgaben kann uns dabei helfen, die Abfolge von Ereignissen in unserem Programm zu verstehen und Fehler leichter zu erkennen.
+Debugging ist eine wichtige Aktivität beim Entwickeln von Software. Es hilft uns dabei, Fehler in unserem Code zu finden und zu beheben. Eine Methode, die dabei helfen kann, ist das Drucken von Debug-Ausgaben im laufenden Programm. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie wir dies in TypeScript umsetzen können.
 
-## Wie man Druckausgabe macht
+## Wie geht man vor?
 
-Um Debug-Ausgaben in TypeScript zu machen, können wir die `console.log()` Funktion verwenden. Zum Beispiel:
+Zunächst müssen wir sicherstellen, dass wir unser Programm im Debug-Modus ausführen. Dafür können wir entweder das entsprechende Flag beim Kompilieren setzen oder die debugging-funktion in unserer IDE aktivieren. Anschließend können wir in unserem Code Debug-Ausgaben über die `console.log()` Funktion erstellen.
+
+Angular: 
 
 ```TypeScript
-let num: number = 10;
-console.log(num);
-// Ausgabe: 10
+let name = "Lisa";
+console.log("Hello " + name + ", welcome to the blog!");
 ```
 
-Wir können auch mehrere Werte in einer Debug-Ausgabe drucken, indem wir sie durch Kommas trennen:
+Output:
 
-```TypeScript
-let num1: number = 10;
-let num2: number = 20;
-console.log(num1, num2);
-// Ausgabe: 10, 20
 ```
-
-Eine weitere nützliche Funktion ist `console.debug()`, die speziell für Debug-Ausgaben verwendet wird. Sie kann uns helfen, Informationen über das Programm auszugeben, ohne die Konsolenausgabe zu überladen. Zum Beispiel:
-
-```TypeScript
-let num1: number = 10;
-let num2: number = 20;
-console.debug("Die Summe von", num1, "und", num2, "ist", num1 + num2);
-// Ausgabe: DEBUG -> Die Summe von 10 und 20 ist 30
-```
-
-Wir können auch bedingte Debug-Ausgaben erstellen, die nur ausgeführt werden, wenn eine bestimmte Bedingung erfüllt ist. Hier ist ein Beispiel, in dem die Debug-Ausgabe nur gemacht wird, wenn `num > 10` ist:
-
-```TypeScript
-let num: number = 12;
-if (num > 10) {
-    console.log(num);
-    // Ausgabe: 12
-}
+Hello Lisa, welcome to the blog!
 ```
 
 ## Tiefergehende Informationen
 
-Debug-Ausgaben können besonders hilfreich sein, wenn wir mit komplexen Datenstrukturen oder Funktionsaufrufen arbeiten. Wir können sie verwenden, um zu überprüfen, ob unsere Daten die erwarteten Werte haben oder um zu sehen, in welchem Teil unserer Funktion ein Fehler auftritt.
-
-Außerdem können wir mithilfe von Debug-Ausgaben auch die Zeitdauer von bestimmten Operationen messen, um Engpässe in unserer Anwendung zu erkennen und zu optimieren.
-
-Es ist jedoch wichtig zu beachten, dass Debug-Ausgaben nur für den Entwicklungsprozess gedacht sind und in der endgültigen Version unseres Codes entfernt werden sollten.
+Neben der `console.log()` Funktion gibt es in TypeScript auch die Möglichkeit, spezielle Debug-Ausgaben mittels Annotationen hinzuzufügen. Dies kann beispielsweise in Kombination mit dem `@ts-ignore` Befehl genutzt werden, um bestimmte Codebereiche auszuschließen oder zu untersuchen. Eine weitere Alternative ist das Einbinden eines Debuggers, der es ermöglicht, Schritt für Schritt durch unseren Code zu gehen und Variablenwerte zu überprüfen.
 
 ## Siehe auch
 
-- [Console API Dokumentation (auf Englisch)](https://developer.mozilla.org/en-US/docs/Web/API/Console)
-- [How To: Debugging in TypeScript (auf Englisch)](https://blog.logrocket.com/typescript-debugging/)
-- [TypeScript: Debugging in VS Code (auf Englisch)](https://code.visualstudio.com/docs/typescript/typescript-debugging)
+- [Typescript Debugging in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/typescript-debugging)
+- [Debugging in Angular Using Chrome DevTools](https://angular.io/guide/debugging)
+- [Debugging in TypeScript with breakpoints](https://egghead.io/lessons/typescript-debugging-in-typescript-with-breakpoints)

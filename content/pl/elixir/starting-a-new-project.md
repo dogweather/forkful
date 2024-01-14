@@ -1,40 +1,59 @@
 ---
 title:                "Elixir: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Elixir"
-category:             "Getting Started"
+category:             "Elixir"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto rozpocząć nowy projekt w Elixir?
 
-Jeżeli masz ochotę rozpocząć nowy projekt, który będzie wykorzystywał technologię Elixir, to dobrze trafiłeś! Elixir jest językiem programowania stworzonym na podstawie Erlanga, co sprawia, że jest on niezwykle wydajny i skalowalny. Ponadto, posiada również przyjazny i elastyczny składnię, co czyni go idealnym wyborem dla wielu projektów.
+Rozpoczęcie nowego projektu w Elixir może być bardzo wartościowe dla programistów z różnych dziedzin. Elixir to funkcjonalny i produktywny język programowania, który jest oparty na erlangowych maszynach wirtualnych. Obecnie używany jest przez takie firmy jak WhatsApp, Pinterest i Discord. Jeśli szukasz nowego wyzwania lub chcesz rozpocząć swoją przygodę z Elixir, jest to doskonały moment, aby rozpocząć nowy projekt.
 
-## Jak to zrobić
+## Jak zacząć?
 
-Proces tworzenia nowego projektu w Elixirze jest bardzo prosty. Wykorzystajmy do tego narzędzie o nazwie Mix. Pierwszym krokiem jest zainstalowanie Elixir oraz Mix na Twoim komputerze. Następnie, w konsoli, przejdź do folderu, w którym chcesz umieścić swój projekt i wpisz komendę `mix new nazwa_projektu`. W ten sposób Mix stworzy szkielet Twojego nowego projektu. Możesz teraz przejść do tej lokalizacji i wyświetlić zawartość katalogu, aby zobaczyć, że zostały utworzone odpowiednie pliki i foldery. 
+Aby rozpocząć nowy projekt w Elixir, najpierw musisz mieć zainstalowany Elixir i Erlang na swoim komputerze. Możesz pobrać i zainstalować je z ich oficjalnych stron internetowych. Gdy już to zrobisz, możesz przejść do tworzenia swojego projektu.
 
-Teraz czas na pierwszy kod w naszym projekcie. Przejdź do pliku `lib/nazwa_projektu.ex` i spróbujmy utworzyć prostą funkcję, która wyświetli napis "Witaj, świecie!". Nasz kod będzie wyglądał następująco:
+Aby utworzyć nowy projekt, otwórz terminal i przejdź do wybranego przez siebie folderu. Następnie wpisz polecenie:
 
-```Elixir
-defmodule NazwaProjektu do
-  def witaj do
-    IO.puts "Witaj, świecie!"
-  end
-end
+```
+mix new nazwa_projektu
 ```
 
-Aby uruchomić ten kod, musimy przejść do konsoli i wpisać komendę `iex -S mix`, co spowoduje uruchomienie konsoli Elixir z naszym projektem. Następnie, możemy wywołać naszą funkcję używając jej nazwy oraz operatora `.`: `NazwaProjektu.witaj`. Po wykonaniu tej komendy, powinniśmy zobaczyć napis "Witaj, świecie!" w konsoli.
+Polecenie to utworzy nowy katalog z wszystkimi potrzebnymi plikami i konfiguracjami dla Twojego projektu. Następnie możesz przejść do swojego projektu, wpisując:
 
-## Głębszy zanurzenie
+```
+cd nazwa_projektu
+```
 
-Podczas tworzenia nowego projektu w Elixirze, warto poświęcić trochę czasu na zapoznanie się z narzędziem Mix oraz strukturą projektu. Możesz również zwrócić uwagę na plik `mix.exs`, który jest plikiem konfiguracyjnym dla Mix. W nim możesz zmienić ustawienia i dodawać zależności dla swojego projektu.
+W tym momencie możesz już rozpocząć kodowanie swojej aplikacji. Aby wyświetlić przykładowy tekst na ekranie, użyj następującego kodu:
 
-Pamiętaj również, aby zapoznać się z dokumentacją Elixira oraz dostępnymi bibliotekami, które mogą ułatwić Ci pracę nad projektem.
+```
+IO.puts "Witaj w Elixir!"
+```
 
-## Zobacz również
+Po zapisaniu i uruchomieniu pliku za pomocą komendy:
 
-- Dokumentacja Elixira: https://elixir-lang.org/docs.html
-- Biblioteka Phoenix: https://phoenixframework.org/
-- Oficjalny blog Elixira: https://elixir-lang.org/blog/
+```
+elixir nazwa_pliku.ex
+```
+
+Na ekranie powinien pojawić się tekst "Witaj w Elixir!". Teraz możesz dalej eksperymentować i tworzyć swoją własną aplikację w Elixir.
+
+## Deep Dive
+
+Kodowanie w Elixir jest wyjątkowo przyjemne dzięki jego wygodnej składni i możliwościom programowania w sposób funkcyjny. Jest bardzo ważne, aby skupić się na nauce podstaw języka, takich jak deklarowanie zmiennych, funkcje, listy i mapy.
+
+Ponadto, warto rozważyć wykorzystanie narzędzia Mix do zarządzania zależnościami w projekcie oraz do budowania i uruchamiania aplikacji.
+
+Ważną rzeczą jest także wykorzystanie dokumentacji Elixir i kontaktowanie się ze społecznością, która chętnie pomoże ci w rozwiązywaniu problemów i udzielaniu porad.
+
+## Zobacz także
+
+- [Oficjalna strona Elixir](https://elixir-lang.org/)
+- [Dokumentacja Elixir](https://hexdocs.pm/elixir/Kernel.html)
+- [Społeczność Elixir na Slacku](https://elixir-slackin.herokuapp.com/)
+- [Kurs Elixir na Codecademy](https://www.codecademy.com/learn/learn-elixir)

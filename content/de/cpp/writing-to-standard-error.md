@@ -1,7 +1,9 @@
 ---
-title:                "C++: Schreiben auf den Standardfehler"
+title:                "C++: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/writing-to-standard-error.md"
 ---
 
@@ -9,50 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wenn Sie jemals eine Fehlermeldung in der Kommandozeile gesehen haben, haben Sie auch schon einmal gesehen, wie eine Ausgabe auf den Standardfehlerstream geschrieben wird. Aber warum sollte man sich damit beschäftigen, Dinge auf den Standardfehlerstream zu schreiben? In diesem Artikel werde ich Ihnen genau das erklären.
+Es gibt viele Gründe, warum Programmierer von Zeit zu Zeit den Standardfehler (auch bekannt als "Standarderror" oder "stderr") in C++ nutzen. Einer der Hauptgründe ist, dass es ein effektives Werkzeug ist, um Fehlermeldungen und Warnungen während der Entwicklung zu debuggen. Das Senden von Text auf den Standardfehler ist auch nützlich, um bestimmte Informationen auf der Konsole zu protokollieren, ohne dass der Hauptprogrammablauf unterbrochen wird.
 
-## Wie es gemacht wird
-Um auf den Standardfehlerstream zu schreiben, müssen Sie die Standardbibliothek für Ein- und Ausgabe in C++ verwenden. Der folgende Code zeigt, wie Sie einen Text auf den Standardfehlerstream schreiben können:
+## Wie geht das
+
+Um Text auf den Standardfehler auszugeben, können Sie die Funktion `std::cerr` aus der Header-Datei `<iostream>` verwenden. Hier ist ein Beispiel:
+
 ```C++
 #include <iostream>
+
 int main() {
-  std::cerr << "Dieser Text wird auf den Standardfehlerstream geschrieben.";
-  return 0;
+    std::cerr << "Dies wird auf dem Standardfehler ausgegeben." << std::endl;
+    return 0;
 }
 ```
-Die Ausgabe sieht dann folgendermaßen aus:
-```
-Dieser Text wird auf den Standardfehlerstream geschrieben.
-```
-Wie Sie sehen, wird die Ausgabe auf der Konsole ausgegeben, aber sie wird in roter Schrift angezeigt, um anzuzeigen, dass es sich um eine Fehlermeldung handelt. Dies kann nützlich sein, um Fehler in einem Programm anzuzeigen oder um die Durchführung des Programms zu verfolgen.
+Das Ergebnis dieses Codes sollte folgendes auf der Konsole ausgeben:
 
-### Weitere Beispiele
+`Dies wird auf dem Standardfehler ausgegeben.`
 
-Sie können auch Variablen oder Berechnungen auf den Standardfehlerstream schreiben:
-```C++
-#include <iostream>
-int main() {
-  int zahl = 5;
-  std::cerr << "Die Zahl ist: " << zahl << ".";
-  return 0;
-}
-```
-Die Ausgabe lautet dann:
-```
-Die Zahl ist: 5.
-```
-Sie können auch andere Datentypen auf den Standardfehlerstream schreiben und sogar mehrere Ausgaben hintereinander vornehmen.
+Um effektiv mit dem Standardfehler zu arbeiten, ist es wichtig, sicherzustellen, dass Sie die richtigen Daten- und Fehlerbehandlungstechniken implementiert haben. Hier sind einige Tipps, die Sie beachten sollten:
 
-## Tiefergehende Informationen
+- Verwenden Sie `std::cerr` für Fehlermeldungen und Warnungen, die während der Entwicklung auf Fehler hinweisen können, während `std::cout` für die Ausgabe von normalen Ergebnissen verwendet werden sollte.
+- Vergessen Sie nicht, `std::endl` am Ende Ihres Textes auf dem Standardfehler auszugeben, um einen Zeilenumbruch hinzuzufügen.
+- Stellen Sie sicher, dass Sie den entsprechenden Header-Datei-Code `#include <iostream>` eingeben, bevor Sie den Standardfehler verwenden.
 
-Der ursprüngliche Zweck des Standardfehlerstreams war es, Fehlermeldungen auszugeben. Es ist jedoch auch nützlich, um Informationen oder Warnungen auszugeben, wenn Sie Ihr Programm ausführen. Sie können sogar eine Kombination aus Ausgaben auf den Standardfehlerstream und den Standardausgabestream verwenden, um verschiedene Arten von Informationen anzuzeigen.
+## Tiefer Einblick
 
-Eine andere nützliche Funktion des Standardfehlerstreams ist das Duplizieren auf die Standardausgabe. Dies kann hilfreich sein, wenn Sie auf eine Datei schreiben möchten, aber auch die Ausgabe auf dem Bildschirm sehen möchten.
+Der Standardfehler ist ein Objekt vom Typ `std::ostream`, genau wie `std::cout` und `std::cin`. Das bedeutet, dass Sie ihn ähnlich wie die anderen Streams behandeln können. Sie können beispielsweise den Operator `<<` verwenden, um Text auf den Standardfehler auszugeben, genau wie Sie es mit `std::cout` tun würden. Sie können auch die Methoden `.put()` und `.write()` verwenden, um einzelne Zeichen bzw. eine Sequenz von Zeichen auf den Standardfehler auszugeben.
 
-Insgesamt bietet der Standardfehlerstream eine einfache und nützliche Möglichkeit, Informationen und Fehlermeldungen in C++ zu verarbeiten.
+Es gibt auch viele erweiterte Funktionen, die Sie mit dem Standardfehler tun können, einschließlich der Verwendung verschiedener Manupulationsbefehle, die in der `<iomanip>` Header-Datei definiert sind.
 
 ## Siehe auch
 
-- [C++ Tutorial: Ein- und Ausgabe](https://www.cplusplus.com/doc/tutorial/basic_io/) 
-- [C++ Referenz: std::cerr](https://www.cplusplus.com/reference/iostream/cerr/) 
-- [GeeksforGeeks: Standard Error Stream in C++](https://www.geeksforgeeks.org/standard-error-stream-c/)
+- [C++: Einführung in die Standardbibliothek](https://www.cplusplus.com/doc/tutorial/iostream/)
+- [C++: Formatierung von Ausgabe mit `std::setw` und `std::setprecision`](https://www.cplusplus.com/reference/iomanip/)

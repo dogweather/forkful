@@ -1,38 +1,51 @@
 ---
-title:                "Javascript: ランダムな数を生成する"
+title:                "Javascript: ランダムな数値を生成する"
+simple_title:         "ランダムな数値を生成する"
 programming_language: "Javascript"
-category:             "Numbers"
+category:             "Javascript"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜランダムな数字を生成するのか
+## なぜランダムな数値を生成するのか
 
-ランダムな数字を生成することは、プログラミングの世界では非常によく使われるテクニックです。例えば、ランダムな数字を使用してゲームを作ったり、ランダムなテストデータを生成したりすることができます。さまざまな用途で活用される、便利な機能です。
+プログラミングにおいて、ランダムな数値を生成することは非常に重要です。例えば、ゲームのキャラクターの能力やアイテムの出現、ランダムなパスワードの作成など、さまざまな用途で使用されます。この記事では、JavaScriptを使ってランダムな数値を生成する方法を紹介します。
 
-## 生成方法
+## 方法
 
-ランダムな数字をJavascriptで生成するには、Mathオブジェクトの`random()`メソッドを使用します。下記のようにコードを記述することで、0から1の間のランダムな小数点数を得ることができます。
+JavaScriptでは、Mathオブジェクトのメソッドを使用することでランダムな数値を生成することができます。まずは、Math.random()メソッドを使用して0以上1未満のランダムな数値を生成してみましょう。
 
-```Javascript
-Math.random()
+```javascript
+const randomNum = Math.random();
+console.log(randomNum); // 0以上1未満のランダムな数値が出力される
 ```
 
-もし、1から10までのランダムな整数を生成したい場合は、`Math.floor()`メソッドを使い、以下のようにコードを記述します。
+さらに、Math.floor()メソッドを併用することで、整数の範囲でランダムな数値を生成することもできます。
 
-```Javascript
-Math.floor(Math.random() * 10) + 1
+```javascript
+const randomNum = Math.floor(Math.random() * 10) + 1;
+console.log(randomNum); // 1以上10未満のランダムな整数が出力される
 ```
 
-ここで、`Math.floor()`メソッドは小数点以下を切り捨てるために使用し、`Math.random()`メソッドに10を掛けることで、0から9までのランダムな小数点数を得ます。最後に1を足すことで、1から10までのランダムな整数を得ることができます。
+また、特定の範囲でランダムな数値を生成する場合は、Math.random()とMath.floor()を少し組み合わせる必要があります。例えば、1から100までのランダムな整数を生成したい場合は、以下のようにします。
 
-## 詳しく学ぶ
+```javascript
+const randomNum = Math.floor(Math.random() * 100) + 1;
+console.log(randomNum); // 1以上100未満のランダムな整数が出力される
+```
 
-ランダムな数字を生成する方法は以上ですが、もっと詳しく学びたい方には、乱数生成アルゴリズムや擬似乱数生成器などの概念を学ぶことをお勧めします。また、乱数がどのようにコンピュータによって生成されるか、乱数の使用にあたっての注意点なども学ぶことができます。
+## 深堀り
 
-## さらに見る
+実際にJavaScript内でランダムな数値を生成する場合、Math.random()メソッドを使用するのは一般的です。これは、単純に乱数を生成するために使用されるからです。しかし、実際には完全にランダムな数値を生成することはできません。なぜなら、Math.random()メソッドは計算方法に基づいてランダムな数値を生成するため、実際には予測可能なパターンで数値が出力されてしまうからです。
 
-- [Mathオブジェクト - MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math)
-- [乱数生成アルゴリズム - Wikipedia](https://ja.wikipedia.org/wiki/%E4%B9%B1%E6%95%B0%E7%94%9F%E6%88%90%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0)
-- [乱数生成器の仕組みと擬似乱数 - Qiita](https://qiita.com/kotakato/items/ccae16902c075d53b5d1)
+このような問題を解決する方法として、「疑似乱数生成アルゴリズム」があります。これは、さまざまな入力値を使用して乱数を生成することで、よりランダムな数値を得ることができる方法です。しかし、これも完全にランダムな数値を生成するわけではありません。
+
+ランダムな数値を生成する方法については、数学的およびコンピュータサイエンスの分野でさまざまな研究が行われており、さらに多くの方法が提案されています。しかし、現状のところ、以上の方法が最も一般的であり、多くの場合十分なランダム性を持つことができます。
+
+## また見る
+
+- [JavaScriptでの乱数生成の方法](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [疑似乱数生成アルゴリズムについての説明](https://computer.howstuffworks.com/question6971.htm)
+- [乱数生成についての数学的アプローチ](https://www.geeksforgeeks.org/generating-random-number-uniformly-distributed-in-a-given-range/)

@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: テストの書き方"
+title:                "Arduino: テスト作成"
+simple_title:         "テスト作成"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/writing-tests.md"
 ---
 
@@ -9,53 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜテストを書くのか
 
-プログラミングをする際に、テストを書くことは非常に重要です。テストを書くことで、自分のコードが意図通りに動作するかどうかを確認することができます。また、将来的にコードを変更したり、修正したりする際にも、テストがあることで安心して変更することができます。これにより、バグを防ぐことができます。
+プログラミングを行う上で、最も重要なことの一つはテストを書くことです。テストを書くことにより、コードのバグやエラーを事前に発見し、プログラムのバグを最小限に抑えることができます。テストを書くことは、より安定したコードを作成するために必要不可欠です。
 
 ## テストの書き方
 
-テストを書くには、Arduinoのテストライブラリを使用します。テストライブラリを使うと、簡単にテストコードを書き始めることができます。以下のコードを参考にしてください。
+テストを書くためには、Arduinoの`~できる...()`メソッドを使用します。テストコードは通常、実際のコードファイルの下に置かれます。以下の例では、簡単なデジタル入力のテストを行うためのコードを示します。
 
 ```Arduino
-#include <ArduinoUnit.h> // テストライブラリをインポート
+// テスト対象のファイルをインクルードする
+#include "DigitalInput.cpp"
 
-// テスト対象の関数
-int addNumbers(int a, int b) {
-  return a + b;
-}
+// テスト対象のオブジェクトを作成する
+DigitalInput input;
 
-// テストケース
-test(addNumbers) {
-  int result = addNumbers(3, 5);
-  assertEqual(result, 8); // 結果が予想通りの値かどうかをチェック
-}
-
+// setup()関数は一度実行されるが、テストの実行前に完了する必要がある
 void setup() {
-  // シリアルモニターを初期化
-  Serial.begin(9600);
-  // テストを実行
-  Test::run();
+    input.~できるisEnabled()~ を 使う(); // isEnabled() メソッドのテスト
 }
 
+//テストの実行
 void loop() {
-  // 何もしない
+    // テストの定義
+    if (input.~できるread()~ が true) {
+        // テストが成功した場合に表示されるボード上のLED
+        digitalWrite(LED_BUILTIN, HIGH);
+    }
 }
 ```
 
-上記のコードでは、テストライブラリをインポートし、テスト対象の関数を定義しました。その後、テストケースを作成し、テストライブラリの`assertEqual`関数を使用して、結果が予想通りの値かどうかをチェックしています。最後に、`Test::run()`関数を呼び出し、テストを実行しています。
+この例では、DigitalInputクラスが正常に機能しているかをテストしています。Arduinoの`digitalRead()`メソッドを使用して、LEDが点灯するかどうかを確認します。テストは通常、テストコード内で必要なアサーション（assertion）を定義し、そのアサーションが満たされるかどうかを確認します。サンプルコード内の`isEnabled()`メソッドと`read()`メソッドがそれぞれ検証されています。
 
-## テストの詳細
+## テストの深堀り
 
-テストを書く際には、いくつかのポイントに気をつける必要があります。
+テスト駆動開発（TDD）では、テストを書くことが先行してプログラミングが行われます。最初にテストを書き、そのテストに満たすコードを実装することで、より高品質なコードを作成することができます。また、テストはコードをリファクタリングする際にも役立ちます。リファクタリングによってコードが壊れる可能性があるため、テストを実行することでコードの予期しない動作を検出することができます。
 
-- テストケースは、関数ごとに作成する。
-- `assertEqual`関数を使用して、結果が予想通りの値かどうかをチェックする。
-- テストケースの名称は、関数名と同じにする。
-- `Test::run()`関数を呼び出すことで、テストを実行する。
-
-これらのポイントを守ることで、テストコードを効率的かつ正確に書くことができます。
+もう一つの重要なポイントは、プログラムの保守性です。新しい開発者がコードを引き継いだ場合、テストを確認することでコードの動作を理解しやすくなります。また、将来的にコードを拡張する場合も、テストがあることでコードが意図通りに機能することが保証されます。
 
 ## 関連リンク
 
-- [Arduinoのテストライブラリ - 公式ドキュメント](https://www.arduino.cc/reference/en/libraries/arduinounit/)
-- [Arduinoユニットテストの例 - Hackster.io](https://www.hackster.io/eduinozero/arduino-unit-testing-examples-db657d)
-- [TDDとは - Wikipedia](https://ja.wikipedia.org/wiki/%E6%8E%A8%E6%93%8E%E9%A7%86%E5%8B%95%E9%96%8B%E7%99%BA)
+- [Arduinoの公式ドキュメント](https://www.arduino.cc/reference/en/)
+- [簡単にArduinoボタンをテストする](https://create.arduino.cc/projecthub/daniss99/digital-input-test-for-arduino-2d7886)

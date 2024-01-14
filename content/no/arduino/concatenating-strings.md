@@ -1,46 +1,63 @@
 ---
-title:                "Arduino: Sammenslåing av tekststrenger"
+title:                "Arduino: Kombinering av strenger"
+simple_title:         "Kombinering av strenger"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det å sette sammen tekststrenger er en nyttig ferdighet når du jobber med Arduino-programmering. Ved å kombinere flere strenger kan du lage mer dynamiske og tilpassede utskrifter og brukerinteraksjoner. 
+# Hvorfor
 
-## Hvordan gjøre det
-For å sette sammen tekststrenger i Arduino, kan du bruke funksjonen `strcat()`. Denne funksjonen tar to eller flere strenger som argumenter og kombinerer dem til én streng. Her er et eksempel på hvordan du kan bruke `strcat()`:
+Mange ganger i Arduino programmering, vil du trenge å kombinere flere tekststrenger sammen for å skape en komplett utgang. Dette kalles "concatenation" og er en nyttig teknikk for å lage dynamiske meldinger og datautgang. Så hvis du vil ta dine Arduino prosjekter til neste nivå, er det viktig å lære hvordan du kan gjøre dette.
 
-```Arduino 
-char navn[20] = "Hilde";
-char alder[3] = "25";
+# How To
 
-strcat(navn, " er ");
-strcat(navn, alder);
-strcat(navn, " år gammel.");
-
-Serial.println(navn);
-```
-
-Dette vil resultere i en utskrift av `Hilde er 25 år gammel.` på serieporten. Det er viktig å merke seg at `strcat()` funksjonen endrer den første strengen, så det er nødvendig å bruke en midlertidig streng når du kombinerer mer enn to strenger. 
-
-## Dypdykk
-I tillegg til `strcat()`, er det andre måter å sette sammen strenger på i Arduino. Du kan for eksempel bruke `sprintf()` funksjonen, som lar deg inkludere variabler og konstanter i strengen. Her er et eksempel på hvordan du kan bruke `sprintf()`:
+Kodingen for å kombinere strenger i Arduino er veldig enkel. Først må du definere to tekststrenger som du vil kombinere, for eksempel:
 
 ```Arduino
-int tall = 10;
-
-char tekst[20];
-sprintf(tekst, "Tallet er: %d", tall);
-
-Serial.println(tekst);
+String navn = "Arne";
+String beskjed = "Velkommen til mitt prosjekt!";
 ```
 
-Dette vil resultere i en utskrift av `Tallet er: 10` på serieporten. `sprintf()` funksjonen gir deg også muligheten til å kontrollere antall siffer som skal inkluderes, og hvor de skal plasseres i strengen. 
+Deretter kan du kombinere dem ved hjelp av "+" -operatøren og lagre det kombinerte resultatet i en ny variabel som denne:
 
-## Se også
-- [Official Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Arduino String concatenation tutorial](https://www.arduino.cc/en/Tutorial/StringAppendOperator)
-- [sprintf() function documentation](https://www.cplusplus.com/reference/cstdio/sprintf/)
+```Arduino
+String fullBeskjed = navn + beskjed;
+```
+
+Du kan også legge til flere strenger ved å fortsette å bruke "+" -operatøren, for eksempel:
+
+```Arduino
+String tid = "Klokken er nå: ";
+int klokkeslett = 15;
+fullBeskjed = tid + klokkeslett + "åtte" + "på kvelden";
+```
+
+Til slutt, kan du skrive ut den kombinerte strengen ved hjelp av `Serial.println()` -funksjonen:
+
+```Arduino
+Serial.println(fullBeskjed);
+```
+
+Outputen vil da være:
+
+```Arduino
+Klokken er nå: 15:08 på kvelden
+```
+
+# Deep Dive
+
+Nå som du vet hvordan du kan kombinere strenger i Arduino, er det viktig å forstå noen av begrensningene. Først er det viktig å merke seg at det bare er mulig å kombinere datatyper av samme type. For eksempel kan du ikke kombinere en `String` og en `int`, men du kan konvertere tallet til en tekststreng før du kombinerer dem.
+
+I tillegg er det viktig å være oppmerksom på minnebruken når du kombinerer strenger. Hver gang du kombinerer to strenger, blir en ny strengobjekt opprettet i minnet. Dette kan forårsake problemer hvis du kombinerer veldig lange strenger eller hvis du kombinerer strenger i en løkke som kjører mange ganger.
+
+Et annet viktig poeng å huske på er at `String` -klassen i Arduino ikke støtter alle funksjoner som finnes i standard C ++ -biblioteker. Så hvis du prøver å bruke en funksjon som ikke er tilgjengelig i `String` -klassen, kan du få en feilmelding.
+
+# Se også
+
+- [Arduino String klasse referanse](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [W3Schools om string concatenation i Arduino](https://www.w3schools.com/java/java_strings_concatenation.asp)
+- [Arduino Forum om string concatenation og minnebruk](https://forum.arduino.cc/index.php?topic=93164.0)

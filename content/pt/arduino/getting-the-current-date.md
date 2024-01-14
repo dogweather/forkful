@@ -1,62 +1,58 @@
 ---
 title:                "Arduino: Obtendo a data atual."
+simple_title:         "Obtendo a data atual."
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual?
+## Por que obter a data atual é útil para programar com Arduino?
 
-Você já teve a necessidade de saber a data atual em um projeto de Arduino? Talvez você queira criar um sistema de controle de acesso baseado no dia da semana ou exibir a data em um display LCD. Independentemente do motivo, obter a data atual pode ser uma tarefa útil e relativamente simples de programar em Arduino.
+Existem muitas aplicações interessantes que podem se beneficiar da obtenção da data atual em um programa Arduino. Por exemplo, você pode criar um conjunto de luzes que são ativadas em feriados específicos, usar a data atual como um parâmetro para determinadas ações ou até mesmo criar um relógio que se ajusta automaticamente ao horário de verão e ao horário de inverno.
 
-## Como obter a data atual no Arduino
+## Como obter a data atual com Arduino
 
-Para obter a data atual em seu projeto de Arduino, você precisará utilizar a biblioteca "RTClib". Esta biblioteca permite que o Arduino se conecte a um circuito de tempo real (RTC) para obter a data e hora atual. 
+Para obter a data atual em um programa Arduino, você precisará usar a biblioteca "DS1307RTC". Certifique-se de baixar a biblioteca e adicioná-la ao seu ambiente Arduino antes de começar.
 
-Primeiro, vamos importar a biblioteca "RTClib" para o nosso projeto, o que pode ser feito adicionando o seguinte código no início do seu sketch:
+Aqui está um exemplo de código simples que usa a biblioteca para obter a data atual e imprimi-la no monitor serial:
 
-```Arduino
-#include <RTClib.h>
-```
+```arduino
+#include <DS1307RTC.h> // inclui a biblioteca DS1307RTC
 
-Em seguida, vamos declarar uma variável do tipo RTC_DS1307, que é o tipo de RTC mais comum:
-
-```Arduino
-RTC_DS1307 rtc;
-```
-
-Agora precisamos inicializar o RTC no setup() do nosso sketch. Para fazer isso, podemos usar o método begin(), que verifica se o RTC está funcionando corretamente. Se estiver tudo bem, ele irá retornar "true" e, caso contrário, irá retornar "false". Por exemplo:
-
-```Arduino
 void setup() {
-  rtc.begin();
+  Serial.begin(9600); // inicia a comunicação serial
+  setSyncProvider(RTC.get); // obtém os dados de data e hora do chip DS1307RTC
+}
 
-  if (!rtc.begin()) {
-    Serial.println("RTC não está funcionando!");
-    while (1);
+void loop() {
+  tmElements_t tm; // cria uma variável para armazenar os elementos da data
+  if (RTC.read(tm)) { // verifica se a data foi lida com sucesso
+    // imprimi a data no formato dia/mês/ano
+    Serial.print(tm.Day);
+    Serial.print("/");
+    Serial.print(tm.Month);
+    Serial.print("/");
+    Serial.println(tm.Year + 1970); // o valor retornado é desde 1970
   }
+  delay(1000); // espera um segundo antes de verificar novamente
 }
 ```
 
-Após a inicialização, podemos utilizar o método now() para obter a data e hora atuais. Este método retorna um objeto do tipo DateTime que possui métodos úteis para acessar os diferentes componentes da data e hora. Por exemplo, para obter o ano:
+No código acima, usamos a função `RTC.read()` para obter os dados da data e hora do chip DS1307RTC e armazená-los em uma variável `tmElements_t`. Em seguida, imprimimos os elementos individuais da data no monitor serial.
 
-```Arduino
-DateTime now = rtc.now();
-int ano = now.year();
-```
+Agora, quando você carregar este código em seu Arduino e abrir o monitor serial, você verá a data atual sendo impressa no formato dia/mês/ano.
 
-Agora você pode utilizar as informações de data e hora em seu projeto como desejar!
+## Mergulho Profundo: Mais informações sobre a obtenção da data atual com Arduino
 
-## Mergulho Profundo
+A biblioteca "DS1307RTC" também oferece outras funções úteis para lidar com a data e hora, como definir a data e hora, verificar se o horário de verão está ativo e até mesmo utilizar o chip DS1307 como um relógio de alarme.
 
-Caso queira explorar mais recursos da biblioteca "RTClib", você pode verificar a documentação oficial no GitHub (https://github.com/adafruit/RTClib). Lá você encontrará informações sobre como configurar um RTC, como modificar a data e hora e muito mais.
+Se você quiser saber mais sobre como usar essas funções, confira a documentação oficial da biblioteca DS1307RTC.
 
-## Ver também
+## Veja também
 
-- [Documentação oficial da biblioteca RTClib](https://github.com/adafruit/RTClib)
-- [Tutorial em vídeo sobre como obter a data atual em Arduino](https://www.youtube.com/watch?v=j1_BlIYOxgQ)
-- [Projeto de controle de acesso utilizando a data atual em Arduino](https://create.arduino.cc/projecthub/Richard7i/arduino-controle-de-acesso-usando-lcd-rtc-y-arduino-uno-e1674d)
-
-Espero que este artigo tenha sido útil para você. Agora você pode facilmente obter a data atual em qualquer projeto de Arduino que precisar. Experimente e divirta-se criando!
+- [Tutorial da biblioteca DS1307RTC](https://github.com/PaulStoffregen/DS1307RTC)
+- [Referência da biblioteca DS1307RTC](https://www.arduino.cc/en/reference/ds1307rtc)
+- [Guia de Início Rápido do chip DS1307](https://www.adafruit.com/product/264)

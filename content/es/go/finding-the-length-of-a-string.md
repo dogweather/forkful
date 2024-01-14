@@ -1,52 +1,54 @@
 ---
 title:                "Go: Encontrando la longitud de una cadena"
+simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por qué
+## ¿Por qué?
 
-La longitud de una cadena, o string, es una medida importante para cualquier programa de programación Go. Saber la longitud de una cadena es útil para realizar operaciones como la manipulación de textos y la comparación de términos. Además, conocer la longitud de una cadena puede ser útil en programas que requieren un límite de caracteres para la entrada del usuario.
+Cada programador ha encontrado la situación en la que necesita conocer la longitud de una cadena de texto. Ya sea para validar un input del usuario, realizar operaciones específicas o simplemente para tener una mejor comprensión de los datos con los que se está trabajando. En este artículo, exploraremos cómo encontrar la longitud de una cadena en el lenguaje de programación Go.
 
-Puede ser tentador simplemente adivinar la longitud de una cadena, pero eso no siempre es una opción confiable. Además, está la posibilidad de que se introduzcan strings vacíos, lo que podría dar lugar a errores. Por lo tanto, es importante saber cómo encontrar la longitud de una cadena en Go.
+## Cómo hacerlo
 
-##Cómo hacerlo
-
-En Go, la función `len` se utiliza para encontrar la longitud de una cadena. Esta función toma una cadena como argumento y devuelve la cantidad de caracteres que contiene. Veamos un ejemplo de cómo usarlo:
+Para encontrar la longitud de una cadena en Go, podemos utilizar la función `len()` que acepta un argumento de tipo `string` y devuelve el número de caracteres en la cadena. Veamos un ejemplo:
 
 ```Go
-cadena := "¡Hola, mundo!"
+cadena := "¡Hola Mundo!"
 longitud := len(cadena)
-fmt.Println(longitud)
 
-// Output: 13
+fmt.Println(longitud) // Output: 12
 ```
 
-En este ejemplo, creamos una variable `cadena` que contiene la frase "¡Hola, mundo!", y luego usamos la función `len` para encontrar su longitud. La salida en la consola será 13, ya que la frase contiene 13 caracteres, incluyendo los espacios y la coma.
+En este ejemplo, definimos una variable `cadena` con una frase y luego usamos la función `len()` para guardar la longitud de la cadena en una variable `longitud`. Al imprimir esta variable, obtenemos el resultado de 12, que es el número de caracteres en la cadena "¡Hola Mundo!".
 
-También podemos usar la función `len` para encontrar la longitud de una variable numérica convertida a String. Por ejemplo:
+También podemos utilizar la función `len()` directamente en un input del usuario para validar su longitud. Por ejemplo, si queremos asegurarnos que el nombre ingresado por el usuario no excede cierta cantidad de caracteres, podemos hacer lo siguiente:
 
 ```Go
-numero := 12345
-longitud := len(strconv.Itoa(numero))
-fmt.Println(longitud)
+fmt.Println("Ingrese su nombre:")
+nombre := ""
 
-// Output: 5
+for len(nombre) > 20 {
+	fmt.Println("Su nombre es demasiado largo. Inténtelo nuevamente.")
+	nombre = ""
+	fmt.Scan(&nombre)
+}
+
+fmt.Println("¡Hola", nombre, "bienvenido!")
 ```
 
-Aquí, usamos la función `strconv.Itoa` para convertir el número 12345 a string y luego usamos `len` para encontrar su longitud, que en este caso es 5.
+En este caso, utilizamos un loop `for` para pedirle al usuario que ingrese su nombre hasta que la longitud de la cadena no sea mayor a 20 caracteres. Si el usuario ingresa un nombre más largo, el loop se repetirá hasta que ingrese un nombre válido.
 
-##Profundizando
+## Profundizando
 
-La función `len` en Go es capaz de encontrar la longitud de una variedad de tipos de datos, no solo de cadenas. Puede encontrar la longitud de un array, slice, map o channel, siempre que sea un tipo de dato "indexable". Esto significa que se puede iterar sobre él y acceder a elementos individuales.
+Mientras que la función `len()` de Go es bastante sencilla y útil para encontrar la longitud de una cadena, es importante tener en cuenta que en Go, una cadena no es simplemente un arreglo de caracteres. En realidad, una cadena es un tipo de dato complejo que consta de un código de bytes y un número de caracteres. Por lo tanto, si necesitas conocer el número de bytes de una cadena en lugar de su número de caracteres, puedes utilizar la función `utf8.RuneCountInString()`. Esta función cuenta el número de caracteres UTF-8 en una cadena y no solo el número de bytes como lo hace la función `len()`.
 
-Además, es importante tener en cuenta que la función `len` solo devuelve la cantidad de elementos indexables en una variable. Por ejemplo, si tenemos una cadena con una palabra acentuada, como "café", `len` devolverá la longitud de 4 en lugar de 5. Esto se debe a que en Unicode, la "é" se considera un solo caractér y ocupa un solo espacio en la cadena.
+## Ver también
 
-##Vea también
-
-- [Documentación oficial de la función `len` en Go](https://golang.org/ref/spec#Length_and_capacity)
-- [Ejemplos prácticos de uso de `len` en Go](https://yourbasic.org/golang/len-capacity-slices/)
-- [Cómo encontrar la longitud de una cadena en otros lenguajes de programación](https://www.guru99.com/string-length.html)
+- [Documentación oficial de Go sobre la función `len()`](https://golang.org/pkg/builtin/#len)
+- [Documentación oficial de Go sobre la función `utf8.RuneCountInString()`](https://golang.org/pkg/unicode/utf8/#RuneCountInString)
+- [Tutorial de strings en Go](https://www.golangprograms.com/go-language/strings.html)

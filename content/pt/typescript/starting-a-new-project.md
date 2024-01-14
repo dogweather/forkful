@@ -1,63 +1,50 @@
 ---
 title:                "TypeScript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "TypeScript"
-category:             "Getting Started"
+category:             "TypeScript"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto?
+## Por que iniciar um novo projeto em TypeScript?
 
-Começar um novo projeto em TypeScript pode ser uma oportunidade emocionante para criar um software moderno e robusto. TypeScript é uma linguagem de programação que combina as características do JavaScript com recursos de tipagem estática, trazendo mais segurança e confiabilidade ao desenvolvimento de software. Ao iniciar um novo projeto em TypeScript, você poderá utilizar todo o potencial dessa linguagem para criar um código mais limpo e escalável.
+Iniciar um novo projeto em TypeScript pode ser benéfico por várias razões, incluindo a capacidade de escrever código mais limpo e organizado, a possibilidade de detectar erros durante a fase de desenvolvimento e a facilidade de integração com outras bibliotecas e frameworks JavaScript.
 
-## Como fazer isso:
+## Como começar
 
-Para começar um novo projeto em TypeScript, você precisará instalar o Node.js e o npm (gerenciador de pacotes do Node.js) em seu computador. Em seguida, abra o seu terminal e crie um novo diretório para o seu projeto.
+Para iniciar um novo projeto em TypeScript, siga estes passos simples:
 
-```
-mkdir meu-projeto-typescript
-cd meu-projeto-typescript
-```
+1. Instale o TypeScript em seu computador usando o gerenciador de pacotes de sua escolha (npm, Yarn, etc.).
 
-Em seguida, inicialize um novo pacote npm em seu diretório com o comando `npm init` e siga as instruções do prompt para criar um arquivo package.json. Isso irá gerenciar as dependências do seu projeto.
+2. Crie uma pasta para o seu projeto e navegue até ela no seu terminal.
 
-Agora, para adicionar o TypeScript ao seu projeto, basta instalar o pacote typescript como uma dependência de desenvolvimento usando o comando:
+3. Execute o seguinte comando para iniciar um novo projeto em TypeScript:
 
-```
-npm install --save-dev typescript
+```TypeScript
+    tsc --init
 ```
 
-Em seguida, crie um arquivo de configuração do TypeScript chamado `tsconfig.json` em seu diretório raiz com o seguinte conteúdo:
+Este comando irá criar um arquivo chamado `tsconfig.json` que contém as configurações básicas para o seu projeto em TypeScript.
 
-```
-{
-  "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true,
-    "esModuleInterop": true,
-    "strict": true
-  }
-}
-```
+4. Crie um arquivo `index.ts` dentro da sua pasta do projeto e comece a escrever seu código TypeScript!
 
-Agora, você pode começar a escrever seu código TypeScript no diretório `src` e o código compilado será gerado no diretório `dist` usando o comando `tsc`.
+## Investigação detalhada
 
-```
-tsc
-```
+Ao iniciar um novo projeto em TypeScript, é importante entender as configurações no arquivo `tsconfig.json` para personalizar o seu ambiente de desenvolvimento. Aqui estão algumas configurações importantes que você deve conhecer:
 
-## Profundidade:
+- `target`: esta configuração define qual versão do JavaScript será criada pelo compilador do TypeScript. A opção `es5` é recomendada para garantir uma ampla compatibilidade.
 
-A configuração `tsconfig.json` permite que você personalize as opções de compilação do TypeScript para o seu projeto. Existem várias opções disponíveis para você ajustar o comportamento do compilador, como a versão do JavaScript alvo, o modo de módulo, o mapa de origem e a verificação estrita do código. Você pode encontrar mais informações sobre essas opções na [documentação oficial do TypeScript](https://www.typescriptlang.org/docs/handbook/compiler-options.html).
+- `strict`: ao definir essa configuração como `true`, você habilitará todas as configurações estritas do TypeScript, o que ajudará a evitar erros comuns no código.
 
-Além disso, ao iniciar um novo projeto em TypeScript, é importante seguir as boas práticas de programação e manter um código limpo e organizado. Isso inclui o uso de interfaces, tipagem de dados adequada e comentários claros para facilitar a leitura e manutenção do código.
+- `outDir`: esta configuração define o diretório de saída para os arquivos JavaScript compilados. É recomendado criar uma pasta separada para os arquivos JavaScript compilados a fim de manter seu projeto organizado.
 
-## Veja também:
+Aprofundar-se mais nessas configurações e em outras pode ajudá-lo a otimizar seu ambiente de desenvolvimento em TypeScript.
 
-- [Guia oficial do TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
-- [Documentação do Node.js](https://nodejs.org/en/docs/)
-- [Documentação do npm](https://docs.npmjs.com/)
+## Veja também
+
+- [Documentação do TypeScript](https://www.typescriptlang.org/docs/)
+- [Tutorial do TypeScript para iniciantes](https://www.youtube.com/watch?v=BwuLxPH8IDs&ab_channel=CodelyTV)
+- [Curso de TypeScript da Udemy](https://www.udemy.com/course/typescript-pt/)

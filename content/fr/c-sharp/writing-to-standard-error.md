@@ -1,43 +1,47 @@
 ---
-title:                "C#: Écrire vers l'erreur standard"
+title:                "C#: Ecriture vers l'erreur standard"
+simple_title:         "Ecriture vers l'erreur standard"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire vers la sortie standard d'erreur en C# ?
+## Pourquoi
 
-Le processus de développement d'une application ou d'un logiciel peut être complexe et délicat. Cela implique souvent de trouver des bugs et des erreurs de code qui peuvent être difficiles à détecter. L'une des techniques les plus utiles pour le débogage est l'écriture vers la sortie standard d'erreur en utilisant le langage de programmation C#. Cela peut sembler un peu intimidant au début, mais une fois que vous aurez compris comment le faire, cela peut vous faire gagner un temps précieux lors du débogage de votre code.
+Ecrire vers la sortie d'erreur standard (standard error) est un élément essentiel de la programmation en C#. Cela permet aux développeurs de détecter et de résoudre les erreurs plus rapidement, améliorant ainsi la qualité globale du code.
 
-## Comment écrire vers la sortie standard d'erreur en C# ?
+## Comment Faire
 
-Pour écrire vers la sortie standard d'erreur en C#, vous pouvez utiliser la méthode Console.Error.WriteLine(). Voici un exemple de code pour afficher une erreur :
+Il existe plusieurs façons d'écrire vers la sortie d'erreur standard en C#, mais la méthode la plus courante est d'utiliser la méthode Console.Error.WriteLine(). Tout d'abord, il faut s'assurer que l'on importe l'espace de nom "System" en haut du fichier C#.
 
-```C#
-Console.Error.WriteLine("Une erreur est survenue : {0}", errorMessage);
-```
-
-Vous pouvez également utiliser la méthode Console.Error.Write() si vous souhaitez simplement écrire le message d'erreur sans sauter une ligne :
+Pour écrire un message d'erreur, on peut utiliser la syntaxe suivante:
 
 ```C#
-Console.Error.Write("Une erreur est survenue : ");
-Console.Error.Write(errorMessage);
+Console.Error.WriteLine("Erreur: Ceci est un message d'erreur.");
 ```
 
-Lorsque vous exécutez ce code, le message d'erreur sera affiché dans la sortie standard d'erreur au lieu de la sortie standard normale. Ainsi, il sera plus facile à repérer et à suivre lors du débogage de votre application.
+On peut également utiliser des variables et des chaînes de caractères pour personnaliser le message d'erreur et afficher des informations pertinentes pour le débogage du code:
 
-## Plongée approfondie dans l'écriture vers la sortie standard d'erreur en C#
+```C#
+int age = 25;
 
-Il y a quelques nuances à connaître lors de l'utilisation de l'écriture vers la sortie standard d'erreur en C#. Tout d'abord, la sortie standard d'erreur est différente de la sortie standard normale, qui est utilisée pour afficher les résultats de votre programme. La sortie standard d'erreur est souvent utilisée pour afficher des messages d'erreur, des avertissements ou des informations de débogage.
+Console.Error.WriteLine($"Erreur: L'âge {age} n'est pas valide.");
+```
 
-Deuxièmement, vous pouvez utiliser la classe Console.Error pour écrire directement vers la sortie standard d'erreur sans avoir à spécifier l'Error en utilisant Console.Out. Cela peut être utile si vous souhaitez écrire vers la sortie standard d'erreur à plusieurs endroits dans votre code.
+Ce qui affichera le message suivant dans la sortie d'erreur:
 
-Enfin, il est important de noter que vous pouvez également rediriger la sortie standard d'erreur vers un fichier texte en utilisant la commande '> ' lors de l'exécution de votre programme. Cela peut être utile si vous souhaitez enregistrer les messages d'erreur pendant que votre code s'exécute.
+> Erreur: L'âge 25 n'est pas valide.
 
-## Voir aussi
+## Plongée En Profondeur
 
-- [Documentation de Microsoft sur la classe Console.Error en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.console.error?view=net-5.0)
-- [Article sur la redirection de la sortie dans Console en C#](https://docs.microsoft.com/fr-fr/dotnet/standard/io/how-to-use-redirectstandarderror)
-- [Guide de débogage en C# de Microsoft](https://docs.microsoft.com/fr-fr/dotnet/standard/exceptions/how-to-use-the-try-catch-block-to-catch-exceptions)
+La méthode Console.Error.WriteLine() permet non seulement d'afficher des messages d'erreur, mais aussi d'autres types de données tels que des entiers, des booléens et des objets. Il est également possible d'utiliser Console.Error.Write() pour écrire sans saut de ligne.
+
+Il est également important de noter que les messages envoyés vers la sortie d'erreur standard sont affichés en rouge dans la console, ce qui les rend plus faciles à repérer parmi les autres messages.
+
+## Voir Aussi
+
+- [Documentation Microsoft sur Console.Error.WriteLine()](https://docs.microsoft.com/fr-fr/dotnet/api/system.console.error.writeline)
+- [Tutoriel sur le débogage en C# (en français)](https://openclassrooms.com/fr/courses/281893-apprenez-a-programmer-avec-c/281707-le-mode-debug)

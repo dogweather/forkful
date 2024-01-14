@@ -1,63 +1,57 @@
 ---
 title:                "Kotlin recipe: Checking if a directory exists"
+simple_title:         "Checking if a directory exists"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-As a programmer, it is important to ensure that our code is robust and can handle various scenarios. One such scenario is when we need to check if a directory exists before performing any operations on it. This helps us avoid errors and handle potential issues before they occur.
+When writing a Kotlin program, it is important to ensure that the program is able to handle all possible scenarios and inputs to avoid errors and crashes. One important scenario to consider is the existence of a directory that the program will be using. This is especially important if the program is performing file operations, as attempting to access a non-existent directory can cause the program to crash.
 
 ## How To
 
-To check if a directory exists in Kotlin, we can use the `exists()` function from the `java.io.File` class. Let's take a look at an example:
+To check if a directory exists in Kotlin, we can use the ```exists()``` method from the ```java.io.File``` class. Let's take a look at an example:
 
-````Kotlin
-
+```Kotlin
 import java.io.File
 
-fun main() {
+val directory = File("directory_path")
 
-    val directory = File("my_directory")
-
-    if(directory.exists()) {
-        println("Directory exists")
-    } else {
-        println("Directory does not exist")
-    }
+if (directory.exists()) {
+    println("The directory exists!")
+} else {
+    println("The directory does not exist.")
 }
-
-````
-
-In this code, we first create a `File` object that represents our directory. Then, we use the `exists()` function to check if it exists. Depending on the result, we print out a corresponding message.
-
-Running this code will give us the following output:
-
-```
-Directory does not exist
 ```
 
-Now, let's assume that the directory does exist. In that case, we will get this output:
+In this example, we first create a ```File``` object using the path to the directory we want to check. Then, we use the ```exists()``` method to check if the directory exists. If it does, we print a message confirming its existence. Otherwise, we print a message stating that the directory does not exist.
 
-```
-Directory exists
-```
+We can also check if a directory exists by using the ```isDirectory()``` method, which returns a boolean value indicating whether the file is a directory or not. Let's see this in action:
 
-It's as simple as that! We can also use the `exists()` function in combination with other file handling functions, to create, read, and perform other operations on a directory if it exists.
+```Kotlin
+import java.io.File
+
+val directory = File("directory_path")
+
+if (directory.isDirectory()) {
+    println("The path is a directory.")
+} else {
+    println("The path is not a directory.")
+}
+```
 
 ## Deep Dive
 
-Under the hood, the `exists()` function checks if the specified file or directory exists in the file system. It returns a boolean value, `true` if it exists and `false` if it does not. This function also takes into consideration permissions and other factors that may affect the accessibility of a file or directory.
+Under the hood, the ```exists()``` and ```isDirectory()``` methods use the ```java.io.File``` class, which provides a simple interface for working with files and directories in Java and Kotlin. The ```File``` class also provides methods for creating and deleting files and directories, as well as checking for other file attributes such as readability and writability.
 
-It is important to note that just because a directory exists, it does not necessarily mean that we have permission to access it. Therefore, it is a good practice to handle exceptions and errors while checking for a directory's existence.
+It is worth noting that the ```exists()``` and ```isDirectory()``` methods do not guarantee the existence or non-existence of a directory. This is because the directory may have been created or deleted by another process after the check was performed. Therefore, it is important to handle any possible exceptions that may occur if the directory does not exist, and to always double check for its existence before performing any file operations.
 
 ## See Also
 
-Here are a few links to resources you can refer to for further reading:
-
-- [Kotlin docs on java.io.File class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Official Android documentation on File handling](https://developer.android.com/training/data-storage/files)
-- [Stack Overflow thread on checking if a directory exists in Kotlin](https://stackoverflow.com/questions/12802926/java-checking-if-a-directory-exists-linux/git/61835246#61835246)
+- [Kotlin Documentation: java.io.File class](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html)
+- [Checking if a File or Directory exists in Kotlin](https://www.baeldung.com/kotlin/check-file-directory-exists)

@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/writing-to-standard-error.md"
 ---
 
@@ -9,42 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Escribir a la salida de error estándar (standard error) es una práctica común en la programación en Rust. Aunque puede parecer una tarea simple, entender por qué es importante y cómo hacerlo correctamente es fundamental para escribir un código limpio y eficiente.
+Escribir a la salida de error estándar (standard error) puede ser útil en situaciones en las que queramos mostrar mensajes de error o información de depuración en nuestra aplicación. También puede ser útil para capturar y registrar errores en tiempo de ejecución.
 
 ## Cómo hacerlo
 
-Para escribir a la salida de error estándar en Rust, podemos utilizar la macro `eprintln!` seguida del mensaje que queremos imprimir. Por ejemplo:
+Para escribir a la salida de error estándar en Rust, podemos utilizar la macro `eprintln!()`. Esta macro funciona de manera similar a `println!()` pero en lugar de imprimir en la salida estándar, imprime en la salida de error estándar.
+
+Veamos un ejemplo:
 
 ```Rust
-eprintln!("Este es un mensaje de error");
-```
-
-Esta macro imprimirá el mensaje en la pantalla, con un formato similar al siguiente:
-
-```sh
-error: Este es un mensaje de error
-```
-
-También podemos utilizar la macro `write!` para escribir a la salida de error en lugar de la salida estándar. Esta macro se utiliza de la misma forma que `eprintln!` pero debe ser seguida de un `stream` que represente la salida de error estándar. Por ejemplo:
-
-```Rust
-use std::io::Write;
-
 fn main() {
-    let mut stderr = std::io::stderr();
-    write!(&mut stderr, "Este es un mensaje de error").unwrap();
+    let age = 25;
+
+    eprintln!("La edad es: {}", age);
+}
+```
+**Salida:**
+```
+La edad es: 25
+```
+
+## Inmersión profunda
+
+En Rust, la salida de error estándar se representa como un objeto de tipo `io::Stderr`. Esto nos permite utilizar algunos métodos adicionales para formatear o escribir en la salida de error.
+
+Si queremos imprimir un mensaje de error personalizado, podemos utilizar el método `write()` en lugar de `eprintln!()`. Esto nos permitirá formatear el mensaje antes de escribirlo en la salida de error estándar.
+
+```Rust
+use std::io::{self, Write};
+
+fn main() -> io::Result<()> {
+    let file = std::fs::File::open("archivos.txt")?;
+
+    io::stdout().write(b"¡Archivo abierto correctamente!")?;
+
+    Ok(())
 }
 ```
 
-## Profundizando
-
-Cuando escribimos a la salida de error en Rust, estamos enviando mensajes a un `stream` diferente que el de la salida estándar. Esto significa que los mensajes de error se pueden mostrar en un orden diferente que el de la salida estándar. Además, también podemos utilizar la función `panic!` para imprimir mensajes en la salida de error antes de terminar la ejecución del programa.
-
-Otra ventaja de escribir a la salida de error es que podemos capturar estos mensajes y utilizarlos para realizar acciones específicas en nuestro código. Por ejemplo, si queremos imprimir un mensaje de error personalizado y luego terminar la ejecución del programa, podemos utilizar la macro `panic!` junto con la función `unwrap()` o `expect()`. Esto nos permite controlar cómo manejamos los errores en nuestro código y proporcionar una experiencia más amigable para el usuario.
+**Salida:**
+```
+¡Archivo abierto correctamente!
+```
 
 ## Ver también
 
-- Documentación de Rust sobre las macros `eprintln!` y `write!`: https://doc.rust-lang.org/std/macro.eprintln.html y https://doc.rust-lang.org/std/macro.write.html
-- Ejemplos de uso de la macro `panic!`: https://doc.rust-lang.org/std/macro.panic.html
-- Ejemplo de uso de la función `unwrap()`: https://doc.rust-lang.org/std/result/enum.Result.html#method.unwrap
-- Ejemplo de uso de la función `expect()`: https://doc.rust-lang.org/std/result/enum.Result.html#method.expect
+- [Documentación oficial de Rust sobre la macro `eprintln!()`](https://doc.rust-lang.org/std/macro.eprintln.html)
+- [Documentación oficial de Rust sobre la salida de error estándar](https://doc.rust-lang.org/std/io/struct.Stderr.html)

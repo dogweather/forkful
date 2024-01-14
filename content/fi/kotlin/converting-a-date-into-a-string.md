@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Päivämäärän muuttaminen merkkijonoksi"
+title:                "Kotlin: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/converting-a-date-into-a-string.md"
 ---
 
@@ -9,37 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kotlin-ohjelmointikieli tarjoaa monia hyödyllisiä ominaisuuksia, jotka tekevät siitä suositun kehittäjien keskuudessa. Yksi näistä ominaisuuksista on kyky muuttaa päivämäärä merkkijonoksi. Tämä on erittäin hyödyllinen toiminto monissa ohjelmointitehtävissä, kuten tietokannoissa tai käyttäjän syötteiden muokkaamisessa.
+Java-ohjelmointikielessä päivämäärän muuntaminen merkkijonoksi voi olla hankalaa ja vaivalloista. Onneksi Kotlin tarjoaa helpon ja tehokkaan tavan tehdä tämä prosessi sujuvaksi.
 
-## Kuinka tehdä se
+## Kuinka tehdä
 
-Tämän toiminnon suorittamiseksi tarvitsemme `DateFormat`-luokkaa, joka on osa Kotlinin `java.text`-kirjastoa. Tämä luokka tarjoaa useita eri toimintoja, jotka mahdollistavat päivämäärän muuntamisen merkkijonoksi sekä halutun muotoilun säätämisen.
+### Tapa 1 - `java.text.DateFormat`
 
-```
-Kotlin 
-// Luodaan uusi DateFormat-instanssi
-val dateFormat = DateFormat.getDateInstance(DateFormat.LONG, Locale.getDefault())
+Kotlinissa voimme käyttää Java-luokkaa `java.text.DateFormat` päivämäärän muuntamiseen merkkijonoksi. Ensiksi, importtaamme luokan:
 
-// Määritellään haluttu päivämäärä
-val calendar = Calendar.getInstance()
-calendar.set(Calendar.DAY_OF_MONTH, 12)
-calendar.set(Calendar.MONTH, 3)
-calendar.set(Calendar.YEAR, 2020)
-
-// Muunnetaan päivämäärä merkkijonoksi ja tulostetaan se
-val dateString = dateFormat.format(calendar.time)
-println(dateString)
-
-// Tulos: 12. huhtikuuta 2020
+```Kotlin
+import java.text.DateFormat
 ```
 
-## Syvällisempi katsaus
+Sitten, luomme `DateFormat` -olion halutulla alueellamme ja asetamme päivämäärämuotoilijan haluamaksemme. Esimerkiksi, jos haluamme päivämäärän muotoon "dd.MM.yyyy", käytämme seuraavaa koodia:
 
-`DateFormat`-luokan `getDateInstance()`-metodi mahdollistaa päivämäärän ja ajan muuttamisen halutulla tavalla. Voimme muuttaa päivämäärän ja ajan muotoa, kieltä ja jopa alueellisia asetuksia. Voimme myös käyttää muita `DateFormat`-metodeja, kuten `getDateTimeInstance()` tai `getTimeInstance()` päivämäärän ja ajan yhdistämiseksi tai vain ajan muuntamiseen.
+```Kotlin
+val dateFormat = DateFormat.getDateInstance(DateFormat.SHORT, Locale("fi", "FI"))
+dateFormat!!.applyPattern("dd.MM.yyyy")
+```
 
-On myös tärkeää huomata, että `DateFormat`-luokka käyttää Java-kirjastoa, joten voimme käyttää kaikkia Java-koodin ominaisuuksia, kuten `Locale.getDefault()`, jotta saamme käyttäjän alueellisen sijainnin oletusarvona.
+Viimeiseksi, käytämme `format` -metodia `dateFormat` -oliossamme muuntamaan päivämäärän merkkijonoksi:
+
+```Kotlin
+val date = Date()
+val dateAsString = dateFormat.format(date)
+println(dateAsString) // tulostaa esimerkiksi "24.03.2019"
+```
+
+### Tapa 2 - `java.time.format.DateTimeFormatter`
+
+Toinen tapa muuntaa päivämäärä merkkijonoksi on käyttämällä Java 8 `java.time` -pakettia ja sen luokkaa `java.time.format.DateTimeFormatter`. Tämä tapa on joustavampi ja tarjoaa erilaisia vaihtoehtoja päivämäärän muotoiluun. Esimerkiksi, voimme muuttaa päivämäärän muotoon "EEEE, d. MMMM yyyy", jossa näytetään myös viikonpäivä:
+
+```Kotlin
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+val formatter = DateTimeFormatter.ofPattern("EEEE, d. MMMM yyyy", Locale("fi", "FI"))
+val formattedDate = LocalDate.now().format(formatter)
+println(formattedDate) // tulostaa esimerkiksi "sunnuntai, 24. maaliskuuta 2019"
+```
+
+## Syväsukellus
+
+Kotlin tarjoaa myös omia päivämäärän muotoilutyökaluita kuten `kotlinx-datetime`, jolla voi käsitellä päivämääriä ja aikoja helpommin ja tehokkaammin. Tämä kirjasto on kuitenkin tarkoitettu enemmän Android-sovelluksille kuin yleiseen ohjelmointiin.
 
 ## Katso myös
 
-- [Java 8: n uudet päivämäärät ja kello API: t](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Kotlin language reference](https://kotlinlang.org/docs/reference/)
+- [Kotlinin dokumentaatio päivämäärän muotoilusta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-date-time/)
+- [Java 8 Java-ajan ja päivämäärän api](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

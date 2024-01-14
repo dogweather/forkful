@@ -1,7 +1,9 @@
 ---
 title:                "Rust: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/concatenating-strings.md"
 ---
 
@@ -9,48 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-文字列の連結を行う理由は、Rustでは複数の文字列を組み合わせて新しい文字列を作成する必要があるためです。これにより、より複雑な文字列を効率的に扱うことができます。
+文字列の連結に取り組む理由は、より効率的に文字列を処理するためです。Rustの文字列結合の方法を学ぶことで、コードのパフォーマンスを向上させることができます。
 
 ## 方法
 
-Rustでは、`+`演算子を使用して文字列を結合することができます。例えば、以下のように書くことができます。
-
 ```Rust
-let str1 = "Hello, ";
-let str2 = "world!";
-let combined_str = str1 + str2;
-println!(combined_str);
+let name = "山田";
+let age = 25;
+let greeting = format!("こんにちは、{}さん。あなたは{}歳です。", name, age);
+println!("{}", greeting);
 ```
 
-出力は次のようになります。
+この例では、`format!()`マクロを使用して文字列を連結し、`println!()`マクロを使用して文字列を出力しています。`format!()`を使用することで、複数の変数を含む文字列を作成できます。`println!()`を使用することで、作成した文字列をターミナルに表示することができます。
+
+出力結果:
 
 ```
-Hello, world!
+こんにちは、山田さん。あなたは25歳です。
 ```
 
-また、複数の文字列を結合する場合は、`format!`マクロを使用することもできます。例えば、以下のように書くことができます。
+## ディープダイブ
 
-```Rust
-let str1 = "Hello";
-let str2 = ", ";
-let str3 = "world!";
-let combined_str = format!("{}{}{}", str1, str2, str3);
-println!(combined_str);
-```
+`format!()`マクロは、文字列の連結に必要なメモリーの割り当てを最小限に抑えることができます。これは、文字列の連結が深いネストの場合でも同様です。また、`format!()`を使用することで、文字列のスライスを結合するよりも高速に処理することができます。
 
-出力は次のようになります。
+また、Rustでは`String`と`&str`の間での変換が自動的に行われるため、`String`を作成してから、さらに文字列を結合することもできます。
 
-```
-Hello, world!
-```
-
-## 深堀り
-
-文字列の結合に関する詳細な情報は、Rustのドキュメントを参照することができます。また、`str`型や`String`型のメソッドを使用することで、文字列をより細かく扱うこともできます。
-
-## 参考リンク
-
-- [The Rust Programming Language](https://www.rust-lang.org/ja)
-- [Rustドキュメント](https://doc.rust-lang.org/)
-- [str型](https://doc.rust-lang.org/std/primitive.str.html)
-- [String型](https://doc.rust-lang.org/std/string/struct.String.html)
+## See Also
+- [Rustの公式ドキュメント - String型](https://doc.rust-lang.org/std/string/index.html)
+- [Efficient String Concatenation in Rust](https://endler.dev/2017/string-concatenation-in-rust/)
+- [Rustで文字列の結合をする方法について見てみる](https://qiita.com/7shi/items/952d692e824d51eecfe1)

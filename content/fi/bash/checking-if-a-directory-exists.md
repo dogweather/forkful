@@ -1,43 +1,58 @@
 ---
-title:                "Bash: Tarkista onko hakemisto olemassa"
+title:                "Bash: Tarkistetaan, jos hakemisto on olemassa"
+simple_title:         "Tarkistetaan, jos hakemisto on olemassa"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Tarkista, onko hakemistoa olemassa
 
- Bash-ohjelmoinnissa on usein tarve tarkistaa, onko tietty hakemisto olemassa. Tässä blogikirjoituksessa kerromme, miksi tämä tarkistus on tärkeä osa ohjelmointia ja kuinka se tehdään helposti Bash-kielellä.
+Bash on yksi suosituimmista komentokehotteiden kielistä Linux- ja Unix-järjestelmissä. Se tarjoaa monia hyödyllisiä työkaluja, mukaan lukien mahdollisuuden tarkistaa, onko tietty hakemisto olemassa. Usein tämä voi olla tarpeellista, kun suoritetaan skriptejä tai ohjelmia, jotka vaativat tietyn hakemiston olemassaolon varmistamista ennen toiminnon suorittamista.
 
-## Kuinka tarkistaa hakemiston olemassaolo Bashilla
+## Miten tehdä se
 
-Hakemiston olemassaolon tarkistaminen Bashilla on helppoa käyttämällä `test`-komentoa yhdessä `-d`-valitsimen kanssa. Tämä tarkistaa, onko parametrina annettu polku olemassa ja onko kyseessä hakemisto.
+Tarkistaaksesi, onko hakemisto olemassa Bashissa, voit käyttää komentoa "test -d", jota seuraa hakemiston nimi, jonka haluat tarkistaa. Esimerkiksi, jos haluat tarkistaa, onko hakemisto nimeltä "asiakirjat" olemassa, käyttäisit seuraavaa komentoa:
 
 ```Bash
-if [ -d <hakemiston_polku> ]; then
-  echo "Hakemisto on olemassa."
+test -d asiakirjat
+```
+
+Tämä komento palauttaa arvon "true", jos hakemisto on olemassa, ja "false", jos hakemistoa ei löydy. Voit myös tallentaa tämän palautetun arvon muuttujaan ja käyttää sitä koodissasi jatkotoimia varten.
+
+Voit myös käyttää "if" -lauseketta:
+
+```Bash
+if test -d asiakirjat
+then
+	echo "Hakemisto on olemassa."
 else
-  echo "Hakemistoa ei löytynyt."
+	echo "Hakemistoa ei löydy."
 fi
 ```
 
-Komento palauttaa 0, jos hakemisto on olemassa, ja muun kuin 0, jos hakemistoa ei löydy. Voit myös tarkistaa hakemiston olemassaolon suoraan if-lausekkeen avulla:
-
-```Bash
-if [ -d <hakemiston_polku> ]; then
-  echo "Hakemisto on olemassa."
-fi
-```
+Tämä koodi tulostaa joko "Hakemisto on olemassa." tai "Hakemistoa ei löydy.", riippuen siitä, onko hakemisto olemassa vai ei.
 
 ## Syvempi sukellus
 
-Bashissa on myös muita tapoja tarkistaa hakemiston olemassaolo, kuten `ls`-komento yhdessä `-d`-valitsimen kanssa, joka listaa tiedoton tiedoston sijasta hakemistojen nimet. Voit myös käyttää `[[`-operaattoria, joka tukee säännöllisiä lausekkeita. Tarkemmat tiedot näistä vaihtoehdoista löydät Bashin dokumentaatiosta.
+Kun käytät komentoa "test -d" tarkistaaksesi hakemiston olemassaolon, se tarkistaa vain, onko hakemisto todella olemassa. Tämä ei kuitenkaan välttämättä tarkoita, että hakemisto on käytettävissä tai että siihen pääsee. Jos esimerkiksi käytät komentoa "test -d" ulkoisen tai irrotettavan levyn hakemistoon, se voi antaa arvon "true", vaikka levyä ei olisikaan kytketty tietokoneeseen.
 
-On myös tärkeää huomata, että hakemiston olemassaolon tarkistaminen ei takaa, että hakemisto on käytettävissä tai luku- ja kirjoituskelpoinen. Tämän vuoksi on suositeltavaa edelleen käyttää tarkistuksia ennen hakemiston käyttöä ohjelmassa.
+Tässä tapauksessa voit lisätä komennon "test -w" tarkistaaksesi, onko hakemistoon kirjoitusoikeudet. Käyttämällä näiden kahden komennon yhdistelmää voit varmistaa, että hakemisto on sekä olemassa että käytettävissä.
+
+```Bash
+if test -d asiakirjat && test -w asiakirjat
+then
+	echo "Voit käyttää hakemistoa."
+else
+	echo "Et voi käyttää hakemistoa."
+fi
+```
 
 ## Katso myös
-- [Bashin dokumentaatio](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Bash Scripting Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+
+- [Bash-komentoriviopas](https://www.linux.com/learn/learn-bash-command-line)
+- [Linuxin hakemistonhallinta](https://www.tecmint.com/linux-directory-structure-and-important-files-paths-explained/)
+- [Bash-skriptikirjasto](https://www.shellscript.sh/)

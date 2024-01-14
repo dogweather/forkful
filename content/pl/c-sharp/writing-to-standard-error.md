@@ -1,40 +1,56 @@
 ---
 title:                "C#: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać na błąd standardowy?
+## Dlaczego warto pisać do standardowego błędu?
 
-Pisanie informacji na błąd standardowy jest ważną częścią procesu programowania w języku C#. Wydaje się to być niepozornym krokiem, ale może bardzo ułatwić debugowanie i monitorowanie działania programu.
+Nierzadko w naszych programach pojawiają się błędy. Każdy programista wie, że ich poprawne zrozumienie i łatwe zlokalizowanie jest kluczowe w celu szybkiego i skutecznego rozwiązywania problemów. I właśnie dlatego warto wiedzieć, jak pisać do standardowego błędu w języku C#.
 
 ## Jak to zrobić?
 
-Język C# posiada prostą funkcję do wypisywania informacji na błąd standardowy - `Console.Error.WriteLine()`. Za pomocą tej funkcji możemy wyświetlić dowolną informację na konsoli błędów. Przyjrzyjmy się przykładowemu kodowi:
+Aby napisać do standardowego błędu w C#, należy użyć metody `Console.Error.WriteLine()`. Poniżej przedstawiam przykłady, jak można wykorzystać tę metodę do wypisywania błędów na konsoli:
 
 ```C#
-string name = "Jan";
-Console.Error.WriteLine("Witaj, " + name + "!");
+Console.Error.WriteLine("Podany plik nie istnieje!");
 ```
 
-Wyjście powyższego kodu będzie wyglądało następująco:
+W powyższym przykładzie wprowadzamy wiadomość błędu do metody `Console.Error.WriteLine()`, która następnie zostaje wypisana na standardowym błędzie. Aby umożliwić wyświetlanie liczby linii, w których występuje błąd, można wykorzystać obiekt `StackTrace`:
 
-`Witaj, Jan!`
+```C#
+try
+{
+    // kod, który może generować błąd
+}
+catch (Exception ex)
+{
+    Console.Error.WriteLine("Wystąpił błąd: " + ex.Message);
+    Console.Error.WriteLine("Liczba linii z błędem: " + ex.StackTrace);
+}
+```
 
-Pamiętajmy, że funkcja `Console.Error.WriteLine()` wymaga dodania znaku `+` pomiędzy tekstem a zmienną, aby wszystko zostało wyświetlone poprawnie.
+W powyższym przykładzie po wykryciu błędu w bloku `try`, zostaje on przechwycony i wypisany na standardowym błędzie, razem z informacją o liczbie linii, w których wystąpił błąd.
 
-## Głębszy wgląd
+## Głębsze zanurzenie
 
-Pisanie informacji na błąd standardowy jest szczególnie przydatne w sytuacjach, gdy musimy śledzić działanie naszego programu. Możemy wykorzystać tę funkcję do wyświetlania informacji o aktualnie przetwarzanych danych, bądź też do informowania o znalezionych błędach. Ponadto, możemy także przekierować konsolę błędów do pliku, co ułatwi nam analizowanie i debugowanie programu.
+Warto wiedzieć, że w języku C# można również przekierować standardowy błąd do pliku tekstowego. Należy wtedy wykorzystać metodę `SetError()` klasy `Console`:
 
-## Zobacz także
+```C#
+string path = "ErrorLog.txt";
+FileStream fs = new FileStream(path, FileMode.Create);
+Console.SetError(fs);
+```
 
-Jeśli chcesz dowiedzieć się więcej o pisaniu na błąd standardowy w języku C#, zapoznaj się z poniższymi materiałami:
+Powyższy przykład wykorzystuje obiekt `FileStream` do utworzenia pliku `ErrorLog.txt`, do którego następnie przekazujemy standardowy błąd.
 
-- [Konsola błędów w C# (Microsoft Docs)](https://docs.microsoft.com/pl-pl/dotnet/api/system.console.error)
-- [Tworzenie i zapisywanie do plików tekstowych w C# (C# Tutorials)](https://csharp.net-tutorials.com/intermediate/file-i-o/reading-and-writing/)
+## Zobacz też
 
-Miej na uwadze, że pisanie na błąd standardowy nie jest jedynym sposobem na wyświetlanie informacji w trakcie działania programu. Zawsze dobrym pomysłem jest skorzystanie z debugera, który pozwoli nam prześledzić dokładnie, co dzieje się w naszym kodzie.
+- Dokumentacja C# o metodzie `Console.Error.WriteLine()`: https://docs.microsoft.com/pl-pl/dotnet/api/system.console.error.writeline
+- Informacje o klasie `Console`: https://www.tutorialsteacher.com/csharp/csharp-console-application
+- Przykłady wykorzystania standardowego błędu w C#: https://www.c-sharpcorner.com/UploadFile/532fc7/handle-exception-using-custom-errors/

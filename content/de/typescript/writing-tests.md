@@ -1,52 +1,42 @@
 ---
 title:                "TypeScript: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "TypeScript"
-category:             "Testing and Debugging"
+category:             "TypeScript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum Tests schreiben?
+# Warum
 
-Tests sind ein wichtiger Bestandteil einer soliden Entwicklungsstrategie. Sie helfen dabei, Fehler frühzeitig zu erkennen, die Codequalität zu verbessern und das Vertrauen in die Funktionsweise der Anwendung zu stärken. Durch das Schreiben von Tests können Entwickler*innen auch sicherstellen, dass Änderungen oder Updates an der Anwendung keine unerwünschten Nebenwirkungen haben.
+Sind Sie bereit, Ihren TypeScript-Code auf die nächste Stufe zu bringen? Dann ist es Zeit, über Tests nachzudenken! Tests sind ein integraler Bestandteil der Softwareentwicklung und helfen dabei, Bugs frühzeitig zu entdecken und die Gesamtqualität des Codes zu verbessern. In diesem Blog-Beitrag erfahren Sie, warum es wichtig ist, Tests zu schreiben und wie Sie damit beginnen können.
 
-## Wie man Tests in TypeScript schreibt
+## Wie
 
-Um Tests in TypeScript zu schreiben, gibt es verschiedene Frameworks, wie z.B. Jest oder Mocha. In diesem Beispiel verwenden wir das populäre Test-Framework Jest.
-
-Zunächst müssen wir die Jest-Bibliothek in unserem Projekt installieren:
+Um in TypeScript Tests zu schreiben, nutzen wir das Framework Jest. Dieses Framework ermöglicht es uns, einfach zu implementierende und lesbare Tests zu schreiben. Schauen wir uns ein Beispiel an:
 
 ```TypeScript
-npm install jest --save-dev
-```
+import { sum } from './sum';
 
-Anschließend können wir unsere erste Test-Datei erstellen, z.B. "add.test.ts". In dieser Test-Datei importieren wir die Funktion, die wir testen möchten, und definieren dann unsere Testfälle:
-
-```TypeScript
-import { add } from "./math";
-
-test("addition of two numbers", () => {
-  expect(add(2, 4)).toBe(6);
-});
-
-test("addition of negative and positive numbers", () => {
-  expect(add(-5, 3)).toBe(-2);
+test('adds 1 + 2 to equal 3', () => {
+  expect(sum(1, 2)).toBe(3);
 });
 ```
 
-Wir verwenden die global verfügbare Funktion "test" von Jest, um unsere Tests zu definieren. In den Testfällen nutzen wir die "expect" Funktion, um das Verhalten unserer Funktion "add" zu überprüfen. In diesem Fall erwarten wir, dass die Addition von zwei Zahlen das erwartete Ergebnis zurückgibt.
+Hier importieren wir die Funktion "sum" aus unserem Code und definieren einen Test, der überprüft, ob das Ergebnis der Summe von 1 und 2 gleich 3 ist. Mit der "expect" Methode von Jest prüfen wir, ob das Ergebnis der Funktion tatsächlich dem erwarteten Wert entspricht. Wenn alle Tests erfolgreich sind, erhalten wir die Meldung "Test erfolgreich durchgeführt!".
 
-Um unsere Tests auszuführen, können wir einfach den Befehl "npm test" in der Kommandozeile ausführen. Jest wird dann automatisch alle Dateien mit ".test.ts" Endung ausführen und das Ergebnis ausgeben.
+## Deep Dive
 
-## Tieferer Einblick in das Schreiben von Tests
+Das Schreiben von Tests kann zunächst etwas zeitaufwendig erscheinen, aber es hat langfristig viele Vorteile. Durch das Schreiben von Tests können wir sicherstellen, dass unser Code fehlerfrei funktioniert und durch die Automatisierung der Tests sparen wir Zeit und Mühe. Zudem ermöglichen uns Tests, Änderungen am Code vorzunehmen, ohne dabei die Funktionalität zu beeinträchtigen.
 
-Es gibt verschiedene Arten von Tests, die man schreiben kann, wie z.B. Unit-Tests, Integrationstests oder End-to-End-Tests. Es ist wichtig, zu verstehen, welcher Testtyp für welche Teile der Anwendung am besten geeignet ist.
+Ein weiterer Vorteil von Tests ist die Dokumentation des Codes. Durch den Ausschnitt von Beispielen in den Tests können Entwickler schnell verstehen, wie die Funktionen und Module in Ihrem Code funktionieren und diese gezielt nutzen.
 
-Außerdem ist es hilfreich, sich mit Konzepten wie Mocking und Stubbing auseinanderzusetzen, um externe Abhängigkeiten bei Tests zu berücksichtigen. Eine gute Testabdeckung ist auch ein entscheidender Faktor in der Qualität und Stabilität einer Anwendung.
+## Siehe Auch
 
-## Siehe auch
+Hier finden Sie weitere Ressourcen, um tiefer in das Schreiben von Tests einzusteigen:
 
-- [Jest Dokumentation] (https://jestjs.io/docs/de/getting-started)
-- [Unit-Tests vs. Integrationstests] (https://www.geeksforgeeks.org/unit-vs-integration-vs-end-to-end-testing)
-- [Mocking vs. Stubbing] (https://www.baeldung.com/mockito-vs-easymock-vs-jmockit)
+- [Offizielle Jest Dokumentation](https://jestjs.io/docs/en/getting-started)
+- [Tutorial: Getting Started with Jest in TypeScript](https://medium.com/@hardikpthv/getting-started-with-jest-in-typescript-cc1de29cf8cb)
+- [Einsteiger-Guide zu TypeScript-Tests](https://blog.bitsrc.io/a-beginners-guide-to-unit-testing-with-typescript-and-jest-263f4bede623)

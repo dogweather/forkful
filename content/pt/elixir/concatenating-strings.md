@@ -1,60 +1,59 @@
 ---
-title:                "Elixir: Unindo cadeias de caracteres"
+title:                "Elixir: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que concatenar strings em Elixir?
+## Por que concatenar strings em Elixir? 
 
-A concatenação de strings é uma tarefa comum em qualquer linguagem de programação, e em Elixir não é diferente. Ao unir duas ou mais strings, podemos criar novas strings que podem ser usadas em diferentes partes do nosso código. Isso é útil ao criar mensagens de saída para o usuário, por exemplo. 
+Concatenar strings é uma prática comum em linguagens de programação, e o Elixir não é diferente. Ao unir duas ou mais strings, podemos criar uma nova string com informações combinadas de diferentes fontes, o que pode ser útil em diversas situações durante o desenvolvimento de um programa. Neste artigo, veremos como realizar concatenações de strings em Elixir e porque isso pode ser útil em sua jornada como desenvolvedor. 
 
-## Como fazer?
+## Como fazer em Elixir 
 
-Para concatenar strings em Elixir, podemos utilizar o operador `<>` ou a função `String.concat/2`. Vamos ver alguns exemplos utilizando o operador:
+A concatenação de strings é feita utilizando o operador `<>`, que une duas strings em uma nova string. Vejamos um exemplo simples: 
 
-```Elixir
-iex> "Hello " <> "world!"
-"Hello world!"
-iex> "Programming" <> " " <> "is fun!"
-"Programming is fun!"
+```Elixir 
+"Olá " <> "mundo!" 
 ```
 
-Podemos também usar a função `String.concat/2` da seguinte forma:
+O código acima resultará na saída `"Olá mundo!"`. O operador `<>` pode ser usado com variáveis, permitindo que combinemos informações de diferentes fontes em uma única string. Vejamos um exemplo mais complexo: 
 
-```Elixir
-iex> String.concat(["I ", "love ", "Elixir!"])
-"I love Elixir!"
+```Elixir 
+nome = "João" 
+sobrenome = "Silva" 
+
+"Seja bem-vindo, " <> nome <> " " <> sobrenome <> "!" 
 ```
 
-Observe que, neste caso, passamos uma lista contendo as strings que queremos concatenar. 
+Neste caso, a saída será `"Seja bem-vindo, João Silva!"`, mostrando como podemos utilizar variáveis em uma concatenação de strings. 
 
-## Deep Dive
+## Aprofundando 
 
-Internamente, Elixir converte todas as strings em binários antes de concatená-las. Isso significa que, se estivermos concatenando uma grande quantidade de strings, podemos ter problemas de desempenho devido à alocação de memória. Para evitar isso, podemos utilizar a função `StringBuilder.concat/1` do módulo `String` ou o operador `<<>>`.
+É importante lembrar que o uso excessivo de concatenções pode acarretar em problemas de performance, pois o Elixir irá criar uma nova string a cada concatenação. Por isso, é recomendado utilizar a função `Enum.join/2` quando precisamos unir muitas strings em uma única. 
 
-```Elixir
-iex> String.concat(["I ", "love ", "Elixir!"])
-"I love Elixir!"
-iex> "I " <> "love " <> "Elixir!"
-"I love Elixir!"
-iex> StringBuilder.concat(["I ", "love ", "Elixir!"])
-"I love Elixir!"
-iex> "I " << "love " << "Elixir!"
-"I love Elixir!"
+Além disso, é possível adicionar formatação e transformação de strings durante a concatenação utilizando o operador `<>`. Vejamos alguns exemplos: 
+
+```Elixir 
+"Preço: " <> 50 |> Integer.to_string <> " reais" 
 ```
 
-Além disso, se precisarmos concatenar muitas strings com a mesma estrutura, podemos utilizar List comprehensions ou a função `Enum.reduce/3`. Vamos ver um exemplo utilizando a função `Enum.reduce/3`:
+Nesta concatenação, a string `50` é convertida em um inteiro e adicionada à string `"Preço: "`, resultando em `"Preço: 50 reais"`. 
 
-```Elixir
-iex> Enum.reduce(1..10, fn (n, acc) -> acc <> "#{n} " end)
-"1 2 3 4 5 6 7 8 9 10 "
+```Elixir 
+"Texto em maiúsculo: " <> "olá" |> String.upcase 
 ```
 
-## Veja também
+Neste exemplo, a string `"olá"` é transformada em maiúsculas utilizando a função `String.upcase` e então concatenada com a string anterior, resultando em `"Texto em maiúsculo: OLÁ"`. 
 
-- [Documentação oficial sobre strings em Elixir](https://hexdocs.pm/elixir/String.html)
-- [Artigo sobre concatenação de strings em Elixir](https://medium.com/@glaucia86/concatenação-de-strings-em-elixir-31f7928c5a90)
-- [Vídeo explicando diferentes formas de concatenar strings em Elixir](https://www.youtube.com/watch?v=I9oKrCLugYc)
+## Veja também 
+
+- Documentação oficial sobre strings em Elixir: https://hexdocs.pm/elixir/String.html 
+- Artigo sobre o uso excessivo de concatenações em Elixir: https://www.cultureamp.com/engineering/elixir-string-performance-problem/ 
+- Vídeo explicando mais sobre concatenações em Elixir (em inglês): https://www.youtube.com/watch?v=ZmhwY7Z-YbA
+
+******

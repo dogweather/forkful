@@ -1,48 +1,78 @@
 ---
-title:                "C: Die Länge eines Strings finden"
+title:                "C: Die Länge einer Zeichenkette finden."
+simple_title:         "Die Länge einer Zeichenkette finden."
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-Die Länge einer Zeichenkette zu finden, ist eine grundlegende Aufgabe beim Programmieren. Es ermöglicht uns, dynamisch mit Zeichenketten umzugehen und sie in unserem Code effizient zu verarbeiten. In diesem Blogbeitrag gehen wir Schritt für Schritt durch, wie man die Länge einer Zeichenkette in der Programmiersprache C findet.
+## Warum
 
-# Wie geht man vor?
-Um die Länge einer Zeichenkette zu finden, müssen wir zunächst verstehen, wie Zeichenketten in C gespeichert werden. In C werden Zeichenketten als Arrays von einzelnen Zeichen dargestellt. Das bedeutet, dass wir die Länge der Zeichenkette anhand der Anzahl der gespeicherten Zeichen bestimmen können.
+Das Finden der Länge eines Strings ist eine grundlegende Aufgabe, die jeder C Programmierer wissen sollte. Es ermöglicht einem, die Anzahl der Zeichen in einem String zu ermitteln und somit effektivere und präzisere Code zu schreiben.
 
-```C
-char string[10] = "Hallo";
-```
+## Wie man die Länge eines Strings in C findet
 
-In diesem Beispiel haben wir eine Zeichenkette mit dem Inhalt "Hallo" erstellt. Die Länge dieser Zeichenkette ist 5, da sie 5 Zeichen enthält (inklusive des Null-Zeichens am Ende). Um die Länge einer Zeichenkette in C zu finden, können wir also einfach eine Schleife nutzen, die jedes Zeichen der Zeichenkette einzeln zählt.
+Es gibt mehrere Möglichkeiten, um die Länge eines Strings in C zu finden. Eine davon ist die Verwendung der Funktion `strlen()`, die in der Standard Library verfügbar ist. Diese Funktion nimmt einen String als Argument und gibt die Anzahl der Zeichen in dem String zurück.
+
+Ein Beispiel für die Verwendung von `strlen()`:
 
 ```C
-int string_laenge(char string[]) {
-    int counter = 0;
-    while (string[counter] != '\0') {
-        counter++;
-    }
-    return counter;
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+
+    char string[] = "Hallo!";
+    int length = strlen(string);
+    printf("Die Länge des Strings ist %d.\n", length);
+
+    return 0;
 }
 ```
 
-Diese Funktion nimmt eine Zeichenkette als Parameter und zählt mithilfe einer while-Schleife jedes Zeichen, bis das Null-Zeichen erreicht wird. Das Ergebnis ist die Länge der Zeichenkette.
+Die Ausgabe dieses Codes wäre:
 
-# Tiefer eintauchen
-Es gibt auch andere Möglichkeiten, die Länge einer Zeichenkette in C zu finden. Zum Beispiel können wir die Funktion `strlen()` aus der Standardbibliothek `string.h` nutzen. Diese Funktion gibt ebenfalls die Länge einer Zeichenkette zurück und ist eine optimierte Version von unserer selbst geschriebenen Funktion.
-
-```C
-#include <string.h>
-
-char string[10] = "Hallo";
-int laenge = strlen(string); // laenge ist jetzt 5
+```
+Die Länge des Strings ist 6.
 ```
 
-Es ist auch wichtig zu beachten, dass bei der Verwendung von Zeichenketten in C immer genügend Speicherplatz für das Null-Zeichen eingeplant werden muss. Wenn wir versuchen, mehr Zeichen in eine Zeichenkette zu schreiben als der reservierte Speicher zulässt, kann es zu unerwarteten Fehlern im Programm kommen.
+Eine andere Methode ist das Durchlaufen des Strings mit einer Schleife und Zählen der Anzahl der Zeichen. Dies kann nützlich sein, wenn Sie zusätzliche Bedingungen für die Länge des Strings haben möchten.
 
-# Siehe auch
-- [Die Funktion strlen() in der C-Dokumentation](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
-- [Arrays und Zeichenketten in C](https://www.programiz.com/c-programming/c-strings)
+Ein Beispiel für diese Methode:
+
+```C
+#include <stdio.h>
+
+int main() {
+
+    char string[] = "Guten Morgen!";
+    int length = 0;
+
+    while(string[length] != '\0') {
+        length++;
+    }
+
+    printf("Die Länge des Strings ist %d.\n", length);
+
+    return 0;
+}
+```
+
+Die Ausgabe würde hier auch 13 sein.
+
+## Tiefere Einblicke
+
+Es ist wichtig zu beachten, dass der Wert, den `strlen()` zurückgibt, die Anzahl der Zeichen ohne das Null-Terminator-Zeichen (`\0`) am Ende des Strings ist. Dieses Zeichen markiert das Ende des Strings, hat aber keine Auswirkungen auf die Anzahl der Zeichen im String.
+
+Es gibt auch Funktionen wie `strnlen()`, die eine maximale Anzahl von Zeichen angeben können, die in dem String gezählt werden sollen.
+
+Es ist wichtig, sicherzustellen, dass der angegebene String gültig ist, bevor Sie versuchen, die Länge zu finden, da dies zu unerwarteten Ergebnissen oder sogar zu Programmabstürzen führen kann.
+
+## Siehe auch
+
+- [Offizielle Dokumentation zu strlen()](https://www.cplusplus.com/reference/cstring/strlen/)
+- [Weitere Möglichkeiten, die Länge eines Strings in C zu finden](https://www.geeksforgeeks.org/program-find-length-string/)
+- [Eine kurze Einführung in C-Strings](https://www.freecodecamp.org/news/c-strings-beginners/)

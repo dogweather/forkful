@@ -1,45 +1,51 @@
 ---
 title:                "Javascript: Calcolare una data nel futuro o nel passato"
+simple_title:         "Calcolare una data nel futuro o nel passato"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perchè
 
-Calcolare le date nel futuro o nel passato è un'attività comune in programmazione, soprattutto quando si lavora con applicazioni che coinvolgono eventi specifici. Ad esempio, può essere utile sapere quando scade una promozione o quando una prenotazione diventa disponibile.
+Calcolare una data nel futuro o nel passato può essere utile in diverse situazioni, ad esempio per programmare un evento o per calcolare l'età di qualcuno.
 
-## Come fare
+## Come Fare
 
-Per calcolare una data nel futuro o nel passato, esistono diverse opzioni in Javascript. Una delle più comuni è utilizzare la libreria Moment.js, che fornisce una vasta gamma di funzioni per manipolare le date.
+La logica di base per calcolare una data nel futuro o nel passato è la stessa: bisogna prima ottenere la data attuale e poi aggiungere o sottrarre il numero di giorni, mesi o anni desiderato. Con Javascript, è possibile utilizzare l'oggetto Date e i suoi metodi per ottenere e manipolare date.
 
-Ecco un esempio di come utilizzare Moment.js per ottenere la data di domani:
+```
+// Ottenere la data attuale
+let today = new Date();
 
-```Javascript
-let domani = moment().add(1, 'days').format('LL');
-console.log(domani);
+// Aggiungere 7 giorni alla data attuale
+let futureDate = today.setDate(today.getDate() + 7);
+
+// Stampare il risultato in formato MM/GG/AAAA
+console.log(`${today.getMonth() + 1} / ${today.getDate()} / ${today.getFullYear()}`);
+// Output: 3 / 23 / 2020
 ```
 
-In questo esempio, abbiamo utilizzato la funzione `.add()` per aggiungere un giorno alla data corrente, e poi abbiamo utilizzato la funzione `.format()` per formattare la data nel formato "LL", che corrisponde a "MMMM DD, YYYY" (ad esempio, "June 27, 2021").
+Nell'esempio sopra, abbiamo utilizzato il metodo `setDate()` per impostare il giorno della data al valore della data attuale più 7 giorni. È importante notare che i mesi in Javascript vanno da 0 a 11, quindi abbiamo dovuto aggiungere 1 quando abbiamo stampato il mese.
 
-Ecco un altro esempio di come utilizzare Moment.js per ottenere la data di 3 mesi fa:
+È possibile utilizzare lo stesso approccio per sottrarre una quantità di giorni, mesi o anni dalla data attuale. Ad esempio, per ottenere la data di oggi 2 anni fa si potrebbe utilizzare il seguente codice:
 
-```Javascript
-let treMesiFa = moment().subtract(3, 'months').format('LL');
-console.log(treMesiFa);
 ```
-
-In questo caso, abbiamo utilizzato la funzione `.subtract()` per sottrarre 3 mesi dalla data corrente.
+let twoYearsAgo = today.setFullYear(today.getFullYear() - 2);
+console.log(`${today.getMonth() + 1} / ${today.getDate()} / ${today.getFullYear()}`);
+// Output: 3 / 23 / 2018
+```
 
 ## Approfondimento
 
-Per calcolare le date nel futuro o nel passato, è importante avere una buona comprensione del concetto di timestamp e di come i computer gestiscono le date. In Javascript, le date sono rappresentate da oggetti di tipo `Date`, che rappresentano i millisecondi trascorsi dal 1° gennaio 1970 a mezzanotte (UTC).
+L'oggetto Date in Javascript può sembrare complicato, ma è molto potente e versatile. Oltre ai metodi utilizzati nell'esempio sopra, ci sono molti altri che possono essere utili per calcolare date in modo più preciso. Ad esempio, il metodo `setMonth()` permette di impostare il mese di una data specifica.
 
-Quando si lavora con timestamp, è importante tenere presente che i calcoli vengono effettuati in base al fuso orario del computer in cui viene eseguito il codice. Quindi, se si sta lavorando con date e orari in più fusi orari, è necessario impostare il fuso orario corretto prima di effettuare i calcoli.
+Un altro modo per calcolare date nel futuro o nel passato è utilizzando la libreria Moment.js, che offre funzioni più avanzate e una sintassi più semplice per manipolare date e orari.
 
-## Vedi anche
+## Vedi Anche
 
-- [Documentazione di Moment.js](https://momentjs.com/)
-- [Manipolazione delle date con Moment.js](https://www.digitalocean.com/community/tutorials/how-to-work-with-dates-in-javascript-using-moment-js)
+- [Documentazione ufficiale di Javascript Date](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/) – libreria per la manipolazione delle date in Javascript

@@ -1,56 +1,48 @@
 ---
 title:                "C: 检查目录是否存在"
+simple_title:         "检查目录是否存在"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+#为什么
 
-在C语言编程中，我们经常需要检查某个目录是否存在。这可以帮助我们避免在程序中使用不存在的目录，从而导致运行错误。
+许多时候，在C编程中，我们需要检查一个目录是否存在。这通常是因为我们需要在程序中使用该目录，但不确定它是否存在。因此，学习如何检查目录是否存在是很有用的，可以帮助我们在程序中正确地处理这种情况。
 
-## 如何
+#如何编码
 
-检查目录是否存在可以使用C语言中的`opendir()`函数。下面是一个例子：
+为了检查目录是否存在，我们可以使用C语言中的“access”函数。该函数接受两个参数，第一个是目录的路径，第二个是要执行的操作。例如，我们可以使用“F_OK”来检查目录的存在性，如下所示：
 
-```
-#include <stdio.h>
-#include <stdlib.h>
-#include <dirent.h>
+```C
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <unistd.h> 
 
-int main()
-{
-    char *dir_path = "./my_directory"; // 需要检查的目录路径
-    DIR *dir = opendir(dir_path); // 打开目录
-    if (dir) // 如果成功打开目录，则目录存在
-    {
-        printf("Directory exists.\n");
-        closedir(dir); // 关闭目录
-    }
-    else // 否则，目录不存在
-    {
-        printf("Directory does not exist.\n");
-        exit(1);
-    }
-    return 0;
+int main() 
+{ 
+	if (access("/Users/MyDirectory", F_OK) != -1) 
+		printf("目录存在\n"); 
+	else
+		printf("目录不存在\n"); 
+	 
+	return 0; 
 }
 ```
 
-运行以上代码，如果`my_directory`目录存在，则会输出`Directory exists.`，如果目录不存在，则会输出`Directory does not exist.`。
+在上面的代码中，我们使用“access”函数来检查路径为“/Users/MyDirectory”的目录是否存在。如果存在，代码将打印“目录存在”，否则打印“目录不存在”。
 
-## 深入了解
+#深入了解
 
-`opendir()`函数使用`DIR`数据类型来表示一个打开的目录。它的返回值为`NULL`表示打开失败，也就是目录不存在。我们也可以使用`closedir()`函数来关闭已经打开的目录。
+“access”函数提供了很多不同的操作选项，例如“R_OK”用于检查目录是否可读，而“W_OK”用于检查目录是否可写。我们还可以使用“X_OK”来检查目录是否可执行。通过组合这些选项，我们可以针对不同的需求来检查目录的存在性。
 
-此外，我们也可以使用`access()`函数来检查文件或目录是否存在。它的第一个参数为文件或目录的路径，第二个参数为检查的权限，这里我们使用`F_OK`表示检查是否存在。如果返回值为0，则表示文件或目录存在，否则不存在。
+此外，我们还可以使用“stat”函数来检查目录是否存在。使用该函数，我们可以获取目录的详细信息，并检查其是否存在。但是，相比较“access”函数，使用“stat”函数稍微麻烦一些。
 
-## 参考资料
+#另请参阅
 
-- `opendir()`函数文档: https://www.cplusplus.com/reference/cstdio/opendir/
-- `access()`函数文档: https://www.cplusplus.com/reference/cstdio/access/
-
-## 参见
-
-- `readdir()`函数文档: https://www.cplusplus.com/reference/cstdio/readdir/ (用于读取目录内的文件)
+- [C语言教程](https://www.w3schools.in/c-tutorial/)
+- [使用C语言创建目录](https://www.geeksforgeeks.org/create-directoryfolder-cc-program/)
+- [C语言的文件操作](https://www.programiz.com/c-programming/c-file-input-output)

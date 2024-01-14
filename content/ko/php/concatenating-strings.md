@@ -1,59 +1,85 @@
 ---
-title:                "PHP: 문자열 연결하기"
+title:                "PHP: 문자열 연결"
+simple_title:         "문자열 연결"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 스트링 합성을 사용해야 할까요?
+제목: PHP 프로그래밍에서 문자열 연결의 중요성에 대해
 
-일반적으로 프로그래밍에서 스트링 합성은 컴퓨터가 문자열을 조합하여 새로운 문자열을 만들어내는 과정을 의미합니다. 이는 텍스트 처리 및 문자열 조작에 매우 유용하며, PHP에서도 이와 관련된 여러 기능을 제공합니다. 스트링 합성을 사용하면 프로그래머는 보다 간편하게 문자열을 다룰 수 있고 원하는 결과를 더 빠르게 얻을 수 있습니다.
+## 왜
+문자열 연결은 PHP 프로그래밍에서 중요한 역할을 합니다. 간단히 말해서, 문자열 연결이란 문자열을 조합하여 하나의 문자열로 만드는 과정을 말합니다. 이 과정은 코드를 간결하게 만들고, 데이터를 보다 효율적으로 처리할 수 있도록 도와줍니다. 따라서, 문자열 연결은 PHP 프로그래밍에서 필수적인 기술입니다.
 
-## 사용 방법
-
-스페이스를 추가하고 싶은 경우, 아래와 같이 `.` 연산자를 이용하여 두 개의 문자열을 합칠 수 있습니다.
-
-```PHP
-echo "안녕" . "하세요";
-```
-
-출력 결과는 `안녕하세요`가 됩니다. 또한, 변수와 문자열을 함께 사용할 수도 있습니다.
-```PHP
-$name = "철수";
-echo $name . "의 나이는 20살 입니다.";
-```
-
-위 코드의 출력 결과는 `철수의 나이는 20살 입니다`가 됩니다. 또한, PHP에서는 여러 문자열을 한 번에 합성하는 방법도 제공됩니다. 아래와 같이 `UseImplode()` 함수를 사용하여 배열의 문자열들을 합칠 수 있습니다.
+## 어떻게
+문자열 연결은 다양한 방식으로 구현할 수 있습니다. 가장 일반적인 방법은 '.' 기호를 사용하는 것입니다. 아래는 예시코드와 결과입니다.
 
 ```PHP
-$animals = array("고양이", "강아지", "토끼");
-echo implode(", ", $animals);
+$name = 'John';
+$hello = 'Hello, ';
+echo $hello . $name;
+
+// 출력결과: Hello, John
 ```
 
-출력 결과는 `고양이, 강아지, 토끼`가 됩니다. 또한, 문자열 안에 변수를 포함할 때는 다음과 같이 `{}`로 감싸야 합니다.
+또 다른 방법으로는 문자열 보간법(interpolation)을 사용하는 것입니다. 이는 문자열 안에 변수를 넣는 것을 말합니다. 아래는 예시코드와 결과입니다.
 
 ```PHP
-$weather = "흐림";
-echo "오늘 날씨는 {$weather}입니다.";
+$name = 'John';
+echo "Hello, $name";
+
+// 출력결과: Hello, John
 ```
 
-출력 결과는 `오늘 날씨는 흐림입니다.`가 됩니다.
-
-## 더 깊게 들어가보기
-
-PHP에서는 보다 복잡한 문자열 합성을 위해 `str_replace()` 함수를 제공합니다. 이 함수를 사용하면 문자열에서 특정 패턴을 찾아서 다른 패턴으로 바꿀 수 있습니다. 예를 들어, 다음과 같이 이름을 가진 사람에게 인사하는 메시지를 만들 수 있습니다.
+또한, 여러개의 문자열을 한번에 연결할 수도 있습니다. 아래는 예시코드와 결과입니다.
 
 ```PHP
-$name = "영희";
-$message = "안녕, {name}야. 뭐하고 지내?";
-$final_message = str_replace("{name}", $name, $message);
+$greeting = "Hello";
+$name = "John";
+$age = 25;
+echo "$greeting, my name is $name and I am $age years old.";
+
+// 출력결과: Hello, my name is John and I am 25 years old.
 ```
 
-위 예제에서 `str_replace()` 함수는 `$message` 변수에서 `{name}`이라는 패턴을 `$name` 변수의 값으로 바꾸어 `$final_message` 변수에 저장합니다. 출력 결과는 `안녕, 영희야. 뭐하고 지내?`가 됩니다.
+## 깊게 들어가기
+문자열 연결은 변수에 할당된 문자열을 연결하는 것뿐만 아니라, 함수나 조건문에서도 적용할 수 있습니다. 예를 들어, 아래는 조건문 안에서 문자열 연결을 사용한 예시입니다.
 
-# See Also
+```PHP
+$language = 'Korean';
 
-- [PHP 문자열 합성 관련 문서](https://www.php.net/manual/en/language.operators.string.php)
-- [PHP 문자열 함수들](https://www.php.net/manual/en/ref.strings.php)
+if ($language == 'Korean') {
+  $hello = '안녕하세요, ';
+} else {
+  $hello = 'Hello, ';
+}
+
+$name = 'John';
+
+echo $hello . $name;
+
+// 출력결과: 안녕하세요, John
+```
+
+또한 문자열 연결을 사용하면 변수 값을 동적으로 변화시킬 수도 있습니다. 예를 들어, 아래는 반복문 안에서 문자열 연결을 사용한 예시입니다.
+
+```PHP
+$result = '';
+
+for ($i = 0; $i < 5; $i++) {
+  $result .= $i;
+}
+
+echo $result;
+
+// 출력결과: 01234
+```
+
+## 관련정보
+문자열 연결에 대해 더 알아보고 싶다면 아래 링크들을 참고해보세요.
+
+- [PHP 문자열 연결 공식문서](https://www.php.net/manual/en/language.operators.string.php)
+- [PHP 문자열 보간법 공식문서](https://www.php.net/manual/en/language.types.string.php#language.types.string.parsing)

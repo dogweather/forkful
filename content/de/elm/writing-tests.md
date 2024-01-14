@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Tests schreiben"
+title:                "Elm: Test schreiben"
+simple_title:         "Test schreiben"
 programming_language: "Elm"
-category:             "Testing and Debugging"
+category:             "Elm"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/writing-tests.md"
 ---
 
@@ -9,67 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Tests sind ein wichtiger Bestandteil jeder Programmiersprache, einschließlich Elm. Sie dienen dazu, die Funktionalität von Code zu überprüfen und sicherzustellen, dass Änderungen oder Updates keine unerwarteten Nebenwirkungen haben. Durch das Schreiben von Tests erhältst du auch ein besseres Verständnis für den Code und kannst etwaige Fehler schneller erkennen und beheben.
+Wenn du noch nicht mit Elm programmiert hast, könnte dir das Schreiben von Tests vielleicht zunächst unnötig erscheinen. Aber Tests sind eine wichtige Methode, um sicherzustellen, dass dein Code richtig funktioniert und zuverlässig bleibt. Sie helfen auch dabei, Fehler schneller zu entdecken und zu beheben.
 
-## How To
+## So geht's
 
-Um Tests in Elm zu schreiben, benötigst du das Paket "elm-test". In deinem Terminal kannst du es mit dem folgenden Befehl installieren:
-
-```Elm
-elm install elm-explorations/test
-```
-
-Anschließend kannst du in deinem Projektordner eine Datei mit dem Namen "Tests.elm" erstellen, in der du deine Tests schreibst. Hier ein Beispiel für eine Funktion, die überprüft, ob eine Zahl gerade oder ungerade ist:
-
-```Elm
-module Tests exposing (..)
-
-import Test exposing (..)
-import Expect
-
-isEven : Int -> Bool
-isEven number =
-    number % 2 == 0
-
-suite : Test
-suite =
-    describe "Testing isEven"
-        [ test "Even numbers should return True" <|
-            \() ->
-                Expect.equal True (isEven 4)
-        , test "Odd numbers should return False" <|
-            \() ->
-                Expect.equal False (isEven 3)
-        ]
-
-main : Test
-main =
-    suite 
-```
-
-Der Output für diesen Test wäre:
+Zunächst musst du das `elm-test` Paket installieren, falls du es noch nicht hast. Dann kannst du Tests in einer separaten Datei schreiben oder sie direkt in deinem Hauptcode integrieren. Hier ein einfaches Beispiel:
 
 ```elm
-➜ elm-test
-Successfully generated 'elm-stuff/generated-code/elm-test/0.19.1/Tests.elm'.
+import Expect exposing (equal)
 
-elm-test 0.19.1
---------------
+add : Int -> Int -> Int
+add x y =
+  x + y
 
-Running 1 test. To reproduce these results, run: elm-test
+-- Testfunktion für die add-Funktion
+testAdd : Test
+testAdd =
+  describe "Testing the add function"
+    [ test "1 + 2 should equal 3" <|
+        \_ -> Expect.equal 3 (add 1 2)
+    ]
 
-TEST RUN PASSED
-
-Passed! [ 1 test, 0 failures ]
+-- Aufruf der Tests
+tests : Test
+tests =
+  describe "All tests"
+    [ testAdd
+    ]
 ```
 
-## Deep Dive
+Die `add` Funktion wird durch die `test` Funktion getestet, indem eine erwartete Ausgabe mit der tatsächlichen Ausgabe verglichen wird. Wenn alle Tests bestehen, erhältst du eine Erfolgsmeldung. Ansonsten wirst du über die fehlgeschlagenen Tests informiert und kannst entsprechend reagieren.
 
-Beim Schreiben von Tests gibt es einige wichtige Konzepte zu beachten. Ein guter Test sollte unabhängig, verständlich und präzise sein. Du solltest auch sicherstellen, dass deine Tests alle möglichen Ergebnisse abdecken und nicht nur die "happy paths". Eine weitere wichtige Sache ist es, die richtige Balance bei der Anzahl der Tests zu finden - zu wenige Tests können mögliche Fehler übersehen, aber zu viele können dazu führen, dass deine Tests unübersichtlich werden.
+## Tiefergehende Informationen
 
-Es ist auch wichtig zu beachten, dass Tests kein Ersatz für sorgfältiges Debugging sind. Sie sind dazu da, Fehler zu finden und nicht, um sicherzustellen, dass dein Code perfekt ist. Das Schreiben von Tests erhöht jedoch die Stabilität und Zuverlässigkeit deines Codes und ist daher eine wichtige Praxis in der Programmierung.
+Es gibt verschiedene Arten von Tests, die du schreiben kannst, wie z.B. Unit-Tests, Integrationstests oder End-to-End-Tests. Es kommt darauf an, welchen Teil deines Codes du testen möchtest und welches Ergebnis du erwartest. Es ist auch wichtig, zu verstehen, dass Tests kein Ersatz für sorgfältiges Programmieren sind – sie sollten zusätzlich dazu eingesetzt werden.
+
+Du kannst auch mit dem `elm-verify-examples` Paket Beispielcode in deine Dokumentation integrieren und diesen automatisch testen lassen. Dadurch sicherst du dir, dass dein Beispielcode immer aktuell und funktionsfähig ist.
 
 ## Siehe auch
 
-- [Offizielle Elm Dokumentation zum Testen](https://guide.elm-lang.org/testing/)
-- [Elm Unit Testing Library](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- Offizielle Dokumentation zu [Tests](https://guide.elm-lang.org/testing/)
+- Tutorial zum Schreiben von [Tests in Elm](https://www.elm-tutorial.org/de/08-full-form-app/10-testing.html)
+- Beispielprojekt mit [elm-test](https://github.com/laszlohordos/elm-test-example) und [elm-verify-examples](https://github.com/laszlohordos/elm-verify-examples-example)

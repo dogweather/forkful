@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/extracting-substrings.md"
 ---
 
@@ -9,38 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué extraer subcadenas en Ruby
 
-Extraer subcadenas es una habilidad crucial en la programación de Ruby que te permite manipular cadenas de texto de manera más eficiente y precisa. Ya sea que quieras buscar una palabra específica dentro de un texto o dividir una cadena en partes más pequeñas, saber cómo extraer subcadenas te ahorrará tiempo y errores en tu código.
+Extraer subcadenas, o partes de una cadena de texto, puede parecer una tarea simple en el lenguaje de programación Ruby. Sin embargo, comprender cómo y por qué extraer subcadenas puede ser útil en tus programas de Ruby puede mejorar tu flujo de trabajo y ayudarte a escribir código más eficiente. En esta publicación de blog, exploraremos el "por qué" y "cómo" de la extracción de subcadenas en Ruby, así como algunas reflexiones más profundas sobre este tema.
 
 ## Cómo hacerlo
 
-Para extraer subcadenas en Ruby, puedes utilizar el método `[]` o `slice()`. Estos métodos trabajan de manera similar, permitiéndote especificar el inicio y fin de la subcadena que deseas extraer.
+La forma más común de extraer subcadenas en Ruby es utilizando el método `slice` o su alias `[]`. Estos métodos toman dos argumentos: el índice inicial y el índice final de la subcadena que deseas extraer. Por ejemplo, si tenemos una cadena de texto "Hola mundo", podemos extraer la subcadena "mundo" usando `slice` de la siguiente manera:
 
-```
-texto = "Esto es una cadena de texto"
-texto[0..3] # salida: "Esto"
-texto.slice(5,2) # salida: "es"
+```Ruby
+"Hola mundo".slice(5, 4)
+# Output: "mundo"
 ```
 
-También puedes utilizar expresiones regulares para extraer patrones específicos en una cadena de texto. Por ejemplo, si quieres encontrar todas las palabras que contengan la letra "a", puedes utilizar el método `scan()` junto con una expresión regular.
+También puedes especificar un rango de índices para extraer una subcadena más grande, como en el siguiente ejemplo:
 
+```Ruby
+"Hola mundo".slice(2, 6)
+# Output: "la mund"
 ```
-texto = "La manzana es una fruta saludable"
-texto.scan(/[aA]\w+/) # salida: ["La", "manzana", "saludable"]
+
+Además, puedes utilizar números negativos para especificar índices a partir del final de la cadena. Por ejemplo, si queremos extraer la subcadena "Hola" de nuestro texto, podemos hacerlo de la siguiente manera:
+
+```Ruby
+"Hola mundo".slice(-10, 4)
+# Output: "Hola"
 ```
 
 ## Profundizando
 
-Es importante recordar que los índices en Ruby empiezan en 0, por lo que para extraer el primer carácter de una cadena de texto, debes utilizar el índice 0. Además, si no se especifica un índice final, el método `[]` tomará la subcadena desde el índice inicial hasta el final de la cadena.
+Ahora que sabes cómo extraer subcadenas usando `slice` en Ruby, es importante comprender cómo funcionan los índices que pasamos como argumentos. Por ejemplo, el primer argumento, el índice inicial, representa el primer carácter de la subcadena que deseas extraer. Si ese índice no existe en la cadena, el método devolverá `nil`. Además, si no se proporciona el segundo argumento, se utilizará el índice final por defecto, que será el último carácter de la cadena.
 
-```
-texto = "Hola Mundo!"
-texto[3] # salida: "a"
-texto[3..] # salida: "a Mundo!"
-```
-Puedes encontrar más información sobre cómo extraer subcadenas y todos los métodos disponibles en la documentación oficial de Ruby.
+También es importante tener en cuenta que los índices en Ruby comienzan en 0, lo que significa que si tienes una cadena de texto de 10 caracteres, el carácter en el índice 9 será el último en la cadena.
 
-## Ver También
+## Ver también
 
-- [Documentación oficial de Ruby sobre métodos de cadena](https://ruby-doc.org/core-2.7.1/String.html)
-- [Tutorial de extracción de subcadenas en Ruby](https://www.rubyguides.com/2019/10/ruby-substring/)
-- [Expresiones regulares en Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+Para obtener más información sobre la extracción de subcadenas en Ruby, consulta esta [guía](https://www.rubyguides.com/2019/01/ruby-substring/) o la [documentación oficial](https://ruby-doc.org/core-2.7.1/String.html#method-i-slice) de Ruby.
+
+Esperamos que esta publicación te haya ayudado a comprender mejor cómo y por qué extraer subcadenas en Ruby. ¡Prueba diferentes ejemplos y sácale el máximo provecho a este útil método en tus programas!

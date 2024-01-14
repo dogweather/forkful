@@ -1,38 +1,39 @@
 ---
 title:                "Bash: Sprawdzanie czy istnieje katalog"
+simple_title:         "Sprawdzanie czy istnieje katalog"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto sprawdzać, czy istnieje katalog?
+## Dlaczego
 
-Często w programowaniu bashowym konieczne jest sprawdzanie, czy dany katalog istnieje, zanim wykonamy na nim jakieś operacje. Jest to ważne, ponieważ unikamy w ten sposób błędów lub nadpisywania istniejących plików.
+Często w programowaniu zdarza się, że musimy sprawdzić, czy dany katalog istnieje. Może to być konieczne, gdy chcemy upewnić się, że nasz program będzie działał poprawnie lub gdy potrzebujemy określonej ścieżki do pliku. W tym artykule przedstawimy sposób, w jaki można to zrobić w języku Bash.
 
-# Jak to zrobić?
+## Jak to zrobić
 
-Do sprawdzenia istnienia katalogu używamy polecenia `test -d [katalog]`, które zwraca wartość `true` lub `false` w zależności od istnienia katalogu. Przykładowy kod wyglądałby następująco:
+Do sprawdzenia istnienia katalogu w Bash możemy wykorzystać komendę `test`. Przyjmie ona dwa argumenty: opcję `-d` oznaczającą, że chcemy sprawdzić czy dany element jest katalogiem oraz ścieżkę do danego elementu. Przykładowy kod wyglądałby następująco:
 
 ```Bash
-if [ test -d "moj_katalog" ]; then
+if test -d /ścieżka/do/katalogu
+then
   echo "Katalog istnieje."
 else
   echo "Katalog nie istnieje."
 fi
 ```
 
-W przypadku, gdy chcemy sprawdzić, czy katalog istnieje i jednocześnie jest pusty, możemy użyć polecenia `test -d [katalog] && test -z "$(ls -A [katalog])"`. Oznacza to, że najpierw sprawdzamy istnienie katalogu, a następnie - czy jest on pusty. Jeśli będzie wszystko w porządku, możemy wykonać na nim dowolne operacje.
+W powyższym przykładzie wykorzystujemy polecenie `echo`, które służy do wypisywania tekstu na ekranie. Możemy także wykorzystać instrukcję `if`, która sprawdzi, czy komenda `test` zwróciła wartość prawdy, czyli czy katalog istnieje. Wówczas wypiszemy odpowiedni komunikat.
 
-# Głębszy zanurzenie
+## Zagłębienie się
 
-Polecenie `test` jest alternatywą dla operatora warunkowego `[ ]` i jest często używane do sprawdzania różnych warunków w skryptach bash. Można użyć go również do sprawdzania istnienia innych elementów, takich jak pliki czy zmienne.
+Jeśli chcemy zagłębić się bardziej w temat sprawdzania istnienia katalogu w Bash, warto wspomnieć o innych możliwych opcjach dla komendy `test`. Oprócz `-d` możemy także użyć między innymi `-e`, sprawdzającej istnienie elementu niezależnie od jego typu, czy `-s`, która sprawdzi, czy element jest niepusty. Komenda `test` może też przyjąć więcej niż jeden argument, co pozwala na sprawdzenie istnienia kilku katalogów naraz.
 
-Przykładowo, aby sprawdzić, czy dany plik nie jest pusty, możemy użyć polecenia `test -s [plik]`, które zwróci `true` lub `false` w zależności od tego, czy plik jest niepusty. Możemy również użyć wielu operatorów logicznych, takich jak `&&` czy `||` w celu bardziej złożonych warunków.
+## Zobacz także
 
-# Zobacz również
-
-* [The Linux Command Line: A Complete Introduction](https://www.amazon.com/Linux-Command-Line-Complete-Introduction/dp/1593273894) - książka wprowadzająca w świat programowania w bashu
-* [Bash Scripting Tutorial](https://www.shellscript.sh/) - kurs programowania bashowego dla początkujących
-* [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/) - oficjalna dokumentacja języka bash
+- [Dokumentacja dla komendy test w Bash (ang.)](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)
+- [Poradnik GeekStuff o sprawdzaniu istnienia plików i katalogów w Bash (ang.)](https://www.geeksforgeeks.org/bash-test-whether-directory-exists/)
+- [Komenda test na stronie Linux.com (ang.)](https://www.linux.com/training-tutorials/painless-bash-testing-checking-file-and-directory-statistics-with-test/)

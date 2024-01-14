@@ -1,47 +1,40 @@
 ---
-title:                "Elixir: Kahden päivämäärän vertaaminen"
+title:                "Elixir: Kahden päivämäärän vertailu"
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi vertailla kahta päivämäärää?
-Vertaileminen on tärkeä osa ohjelmointia ja voi auttaa meitä ymmärtämään tapahtumien järjestystä tai määrittämään tietyn ajanjakson kulkemista. Käyttäen Elixirin Date-moodulia, voimme helposti vertailla kahta päivämäärää ja saada selville niiden suhteen toisiinsa. Tässä blogikirjoituksessa opimme miten se tehdään.
+## Miksi
 
-## Miten se tehdään
-MySQL-tietokannasta haetaan kaksi päivämäärää ja tallennetaan ne taulukkoon "dates". Sitten käytämme Elixirin Date-moodulia vertailemaan näitä kahta päivämäärää.
+Usein ohjelmoinnissa joudutaan vertaamaan kahta päivämäärää keskenään. Tämä voi olla tarpeellista esimerkiksi tietokantojen kyselyissä tai ajankohtaisten tapahtumien tarkastelussa. Elixirilla tämä on helppoa ja tehokasta toteuttaa, joten on hyvä oppia miten se tehdään.
 
-```
-# Elixir-koodiesimerkki:
-dates = [date1: ~D[2021-01-01], date2: ~D[2021-03-15]]
-date1_after_date2 = Date.compare(dates[:date1], dates[:date2])
-date2_after_date1 = Date.compare(dates[:date2], dates[:date1])
+## Kuinka tehdä
 
-# Tulos:
-date1_after_date2 = :greater
-date2_after_date1 = :less
-```
+Vertaamalla kahden päivämäärän välillä voimme saada selville kumpi niistä on aiempi, myöhempi tai ovatko ne samat. Elixirilla tämä onnistuu yksinkertaisesti käyttämällä Erlangin sisäänrakennettua `:calendar` moduulia ja sen funktiota `:calendar.compare/2`, joka vertailee kahta päivämäärää ja palauttaa tuloksen atomina.
 
-Voit myös käyttää Date.compare-tietokantatoimintoa suoraan kahden tietokantapäivämäärän välillä:
+```Elixir
+date_1 = {:calendar, {2020, 9, 1}}
+date_2 = {:calendar, {2020, 9, 15}}
 
-```
-# Elixir-koodiesimerkki:
-date1 = Ecto.DateTime.cast(timestamp1)
-date2 = Ecto.DateTime.cast(timestamp2)
-comparison = Date.compare(date1, date2)
-
-# Tulos:
-comparison = :equal
+:calendar.compare(date_1, date_2)
+# => :lt
 ```
 
-## Syvemmälle aiheeseen
-Elixirin Date-mooduli sisältää useita vertailuun liittyviä toimintoja. Voit käyttää Date.same?-toimintoa selvittääksesi ovatko kaksi päivämäärää samat ja Date.between?-toimintoa selvittääksesi, että onko tietty päivämäärä kahden annetun päivämäärän välissä. Voit myös käyttää Date.before?- ja Date.after?-toimintoja selvittääksesi mikä päivämäärä sijoittuu aikaisemmin tai myöhemmin kahdesta annetusta päivämäärästä.
+Esimerkissä luomme kaksi tuplia, jotka edustavat päivämääriä ja annamme ne funktiolle `:calendar.compare/2`. Funktion palauttama atomi kertoo meille, että ensimmäinen päivämäärä on edellä kuin toinen.
 
-Voit myös käyttää Date.diff-toimintoa saadaksesi tiedon kahden päivämäärän välisestä erosta päivinä, kuukausissa tai vuosissa. Tarkempien tietojen saamiseksi voit käyttää Date.diff-tietokantatoimintoa, joka palauttaa eron tietokantamuodossa.
+## Syvempi sukellus
+
+`:calendar` moduulilla on muitakin hyödyllisiä funktioita, joita voimme käyttää päivämäärien käsittelyssä. Esimerkiksi `:calendar.date_to_gregorian_days/1` muuntaa päivämäärän päiviksi vuoden alusta, jolloin voimme vertailla päiviä keskenään. `:calendar.is_leap_year/1` kertoo meille onko annettu vuosi karkausvuosi.
+
+Päivämäärien lisäksi Elixirilla on myös moduuli `DateTime`, joka tarjoaa laajempia ominaisuuksia päivämäärien ja aikaleimojen vertailuun. Lisäksi Elixir 1.9:n jälkeen on tullut mukaan uusi `Date` moduuli, joka tarjoaa lisää toimintoja päivämäärien kanssa työskentelyyn.
 
 ## Katso myös
-- Elixirin Date-moodulin dokumentaatio: https://hexdocs.pm/elixir/Date.html
-- Elixirin vertailutoiminnot: https://hexdocs.pm/elixir/master/comparisons.html
-- Elixir School: Elixirin opiskeluun tarkoitettu verkkosivusto: https://elixirschool.com/fi/
+
+- Elixirin virallinen dokumentaatio: [https://hexdocs.pm/elixir/Calendar.html](https://hexdocs.pm/elixir/Calendar.html)
+- Miksi ja miten käyttäisin Elixiria? [https://www.juusoalasuutari.fi/2017/07/10/elixir-miksi-ja-miten](https://www.juusoalasuutari.fi/2017/07/10/elixir-miksi-ja-miten)
+- Päivämäärien käsittelyn perusteet Elixirissä: [https://itnext.io/working-with-dates-in-elixir-7b1f1c222e3d](https://itnext.io/working-with-dates-in-elixir-7b1f1c222e3d)

@@ -1,45 +1,57 @@
 ---
 title:                "Swift: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att skriva tester är en viktig del av att utveckla pålitliga program. Tester hjälper till att upptäcka och förebygga buggar och felaktigheter i koden innan den når slutanvändare.
+## Varför skriva tester i Swift?
 
-## Så här gör du
-För att skriva tester i Swift behöver du först importera XCTest-frameworket. Sedan kan du skapa en testklass och definiera testfall med hjälp av metoden `func test()`. Inuti varje testfall kan du använda olika assertions för att verifiera att den testade koden uppför sig som förväntat. Här är ett enkelt exempel på en testklass som kontrollerar att en funktion returnerar det förväntade resultatet:
+Att skriva tester är en viktig del av utvecklingsprocessen för alla programmeringsspråk, och Swift är inget undantag. Att skriva tester hjälper dig att säkerställa att din kod fungerar korrekt och att upptäcka eventuella fel eller brister innan de når produktion. Det sparar dig tid, frustration och förbättrar den övergripande kvaliteten på din kod. Låt oss ta en titt på hur du kan börja skriva tester i Swift.
+
+## Hur man skriver tester i Swift
+
+För att skriva tester i Swift behöver du en ramverk som heter XCTest. Detta ramverk ingår som standard i Xcode, så det är bara att öppna ditt projekt och börja skriva tester. Låt oss titta på ett exempel för att förstå hur det fungerar.
 
 ```Swift
 import XCTest
 
-class MyTests: XCTestCase {
-    func testAddition() {
-        let result = addNumbers(a: 2, b: 5)
-        XCTAssertEqual(result, 7)
+class MineSweeperTests: XCTestCase {
+
+    func testMineHit() {
+        let game = MineSweeper()
+        game.mineHit(at: (2, 3))
+        XCTAssert(game.isGameOver)
     }
-}
 
-func addNumbers(a: Int, b: Int) -> Int {
-    return a + b
 }
-
-MyTests.defaultTestSuite.run()
 ```
 
-I det här exemplet importerar vi XCTest och skapar sedan en klass för våra tester. I testfallet `testAddition` anropar vi en funktion för att lägga ihop två tal och använder sedan `XCTAssertEqual` för att verifiera att det returnerade resultatet är 7. Slutligen kör vi alla testfall med `defaultTestSuite.run()`.
+I detta exempel har vi skrivit en testmetod med namnet "testMineHit" som skapar ett nytt spel och kallar på metoden "mineHit" som antas upptäcka en mina på en viss punkt på spelplanen. Vi använder sedan "XCTAssert" för att kontrollera om spelet är över efter att metoden har körts. Om så är fallet betyder det att minan faktiskt hittades och att spelet avslutades, vilket är vad vi förväntade oss.
 
-Det finns många olika assertions som du kan använda beroende på vad du behöver testa. Du kan läsa mer om dem i dokumentationen för XCTest.
+När du kör detta test från Xcode kommer det att rapportera om testet har passerat eller misslyckats. Om det misslyckas, kan du gå tillbaka och undersöka varför och göra eventuella ändringar i koden för att fixa problemet.
 
-## Djupdykning
-Det finns flera anledningar till varför det är viktigt att skriva tester för din kod. Förutom att upptäcka buggar tidigt och förebygga dem, kan tester också fungera som en form av dokumentation för din kod. Genom att skriva tester tvingas du också att tänka på olika scenarier och kan identifiera användningsfall som du kanske inte hade tänkt på annars.
+Det finns många fler metoder tillgängliga i XCTest för att testa olika aspekter av din kod, såsom att jämföra värden, kasta fel och hantera asynkrona processer. Utforska dessa metoder och lägg till fler tester för att täcka så många scenarier som möjligt.
 
-Att skriva tester hjälper också till att hålla din kod baserad på best practices och god kodstil. Ju mer du använder tester i din utvecklingsprocess, desto lättare blir det att upprätthålla kvaliteten på din kodbas.
+## Djupdykning i att skriva tester
 
-## Se även
-- [Apple Dokumentation - XCTest](https://developer.apple.com/documentation/xctest)
-- [Ray Wenderlich Tutorial on Unit Testing in Swift](https://www.raywenderlich.com/709-ios-unit-testing-and-ui-testing-tutorial)
-- [Swift by Sundell - Unit Testing](https://www.swiftbysundell.com/basics/unit-testing/)
+Att skriva effektiva tester handlar inte bara om att täcka så många kodvägar som möjligt, utan också om att skriva lättlästa och underhållbara tester. Här är några tips för att göra dina tester mer effektiva:
+
+- Använd enkelhet: Dina tester bör vara enkla och tydliga så att även andra utvecklare kan förstå dem.
+- Skriv klara och tydliga testnamn: Namnet på testet bör beskriva vad det testar och vad som förväntas hända.
+- Använd förväntade värden: Använd "XCTAssert" för att kontrollera om ett värde är det förväntade i stället för att jämföra hela utdata.
+- Använd olika scenarier: Försök att täcka så många olika scenarier som möjligt för att hitta buggar och förbättra kvaliteten på din kod.
+
+Det finns många resurser tillgängliga för att hjälpa dig att lära dig mer om att skriva tester och hur man skriver effektiva testärenden. Ta en titt på länkarna nedan för att börja din djupgående inlärningsresa.
+
+## Se också
+
+- [Apple - Testing with Xcode](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/chapters/01-introduction.html)
+- [Swift by Sundell - Testing in Swift: Getting Started](https://www.swiftbysundell.com/basics/testing/)
+- [Hacking with Swift - Testing your code with XCTest](https://www.hackingwithswift.com/example-code/testing/testing-your-code-with-xctest)
+
+Testning är en viktig del av att bli en bättre Swift-utvecklare och förbättra kvaliteten på din kod. Så se till att du

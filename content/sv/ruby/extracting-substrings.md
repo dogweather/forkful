@@ -1,51 +1,57 @@
 ---
 title:                "Ruby: Extrahering av delsträngar"
+simple_title:         "Extrahering av delsträngar"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att extrahera substrängar är en användbar funktion i Ruby som gör det möjligt att ta ut en del av en sträng baserat på ett visst index eller mönster. Detta kan vara användbart för att hantera data, söka igenom text eller göra kod bearbetningar.
 
-Ibland behöver vi arbeta med strängar i vårt Ruby-programmeringsprojekt. Ibland kan vi behöva ta ut en del av en sträng, också kallat en substring, för att manipulera eller jämföra den med en annan sträng. Att extrahera substrings är en användbar teknik som kan spara mycket tid och arbete. Det är också ett viktigt koncept att förstå för att kunna arbeta med strängar på ett effektivt sätt.
+## Så här gör du
+För att extrahera substrängar i Ruby, använder vi metoden `slice` eller dess aliase `[]`. Den tar in två argument - startindex och längden på substrängen. Här är ett exempel:
 
-## Såhär gör du
+```Ruby
+strang = "Hej! Det här är en textsträng."
 
-För att extrahera en substring från en sträng kan vi använda metoden `slice` eller `[index]` syntaxen.
+# Extrahera de första fyra tecknen
+puts strang[0, 4]
+# Output: Hej!
 
-```
-# Definiera en sträng för att arbeta med
-sträng = "Ruby är ett fantastiskt programmeringsspråk!"
-
-# Använda slice metoden för att extrahera en del av strängen
-sträng.slice(5, 15) # Returnerar "ett fantastiskt"
-
-# Använda [index] syntaxen för att extrahera en del av strängen
-sträng[20..-1] # Returnerar "fantastiskt programmeringsspråk!"
-```
-
-Vi kan också använda `match` metoden tillsammans med reguljära uttryck för att hitta en substring i en större sträng.
-
-```
-# Definiera en sträng för att arbeta med
-sträng = "Ruby är ett fantastiskt programmeringsspråk!"
-
-# Använda match metoden för att hitta en substring
-sträng.match(/fantastiskt/) # Returnerar en MatchData objektet för "fantastiskt"
+# Extrahera tecknen från och med index 6 till slutet av strängen
+puts strang[6..-1]
+# Output: Det här är en textsträng.
 ```
 
-Det är också viktigt att notera att Ruby har en inbyggd klass `StringScanner` som kan hjälpa till med mer avancerad substring extrahering. Genom att använda denna klass kan vi hitta och manipulera olika delar av en sträng baserat på angivna mönster.
+Vi kan också använda metoden `slice` med ett regex mönster för att extrahera substrängar baserat på ett visst mönster. Här är ett exempel på det:
+
+```Ruby
+num_strang = "123abc456def"
+
+# Extrahera alla tecken som är siffror
+puts num_strang[/\d+/]
+# Output: 123456
+```
 
 ## Djupdykning
+Förutom att extrahera substrängar baserat på index eller mönster, kan vi också använda metoden `slice` med block för att utföra avancerade manipulationer på en sträng. Detta låter oss göra saker som att byta ut delar av en sträng eller flytta tecken runt.
 
-När man extraherar substrings är det viktigt att förstå hur indexeringen av strängar fungerar i Ruby. Strängar i Ruby är noll-indexerade, vilket betyder att första tecknet i en sträng har index 0. Detta är viktigt att komma ihåg när vi använder `slice` metoden eller `[index]` syntaxen för att extrahera substrings.
+Här är ett exempel på hur vi kan använda block med `slice` för att byta ut tecken i en sträng med hjälp av `gsub`:
 
-Vi kan också använda metoden `split` för att dela en sträng i flera delar och sedan använda olika delar av den som substrings. Regular expressions är också ett kraftfullt verktyg när man arbetar med substrings, eftersom de låter oss hitta mönster i en sträng snabbt och enkelt.
+```Ruby
+strang = "Hej! Det här är en textsträng."
+
+# Byt ut alla 'e' med '3'
+puts strang.gsub(/e/, '3')
+# Output: H3j! D3t här är 3n t3xtsträng.
+```
+
+Detta är bara en av många möjligheter när det kommer till att extrahera substrängar. Var kreativ och experimentera för att se vad du kan åstadkomma!
 
 ## Se även
-
-- [Ruby dokumentationen för strängar](https://ruby-doc.org/core-2.7.2/String.html)
-- [Tutorial om att arbeta med strängar i Ruby](https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-ruby)
-- [Mer information om Ruby's StringScanner klass](https://ruby-doc.org/stdlib-2.7.2/libdoc/strscan/rdoc/StringScanner.html)
+- [Ruby's official documentation on strings](https://ruby-doc.org/core-2.7.0/String.html)
+- [Codecademy's tutorial on string methods in Ruby](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-methods/cheatsheet)

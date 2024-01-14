@@ -1,40 +1,54 @@
 ---
-title:                "Java: Generierung von Zufallszahlen"
+title:                "Java: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Java"
-category:             "Numbers"
+category:             "Java"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+##Warum
+Die Generierung von Zufallszahlen ist ein wichtiger Bestandteil der Programmierung. Mit Hilfe von Zufallszahlen können Programme zufällig erscheinende Ergebnisse liefern, die für viele Anwendungen wie z.B. Simulationen, Spiele oder Kryptographie von großer Bedeutung sind.
 
-Das Generieren von Zufallszahlen ist ein wichtiger Bestandteil beim Programmieren von Anwendungen, die auf zufällige Daten angewiesen sind, wie beispielsweise bei der Erstellung von Spielen oder bei statistischen Berechnungen.
-
-# Wie geht man vor
-
-Um Zufallszahlen in Java zu generieren, gibt es verschiedene Möglichkeiten. Eine einfache Möglichkeit ist die Verwendung der Klasse "Random", die bereits in der Java Standardbibliothek enthalten ist. Hier ein Beispiel:
+##Wie man Zufallszahlen in Java generiert
+Die Java Standardbibliothek bietet die Klasse "Random" an, die uns die Generierung von Zufallszahlen ermöglicht. Hier ist ein Beispielcode, der eine zufällige Ganzzahl zwischen 1 und 10 generiert:
 
 ```Java
-// Erzeugung eines Random-Objekts
 Random random = new Random();
-
-// Generieren einer Zufallszahl zwischen 0 und 10
-int number = random.nextInt(11);
-
-System.out.println(number); // Output: Eine zufällige Zahl zwischen 0 und 10
+int randomNumber = random.nextInt(10) + 1;
+System.out.println(randomNumber);
 ```
 
-Die Methode "nextInt" gibt eine Zufallszahl zwischen 0 und dem angegebenen Wert (in diesem Fall 10) zurück. Für weitere Möglichkeiten und detailliertere Erklärungen kann die offizielle Java-Dokumentation zur Klasse "Random" konsultiert werden.
+Dieser Code erzeugt eine Instanz der Klasse "Random" und verwendet dann die Methode "nextInt (int bound)", um eine Ganzzahl im angegebenen Bereich zu generieren. Beachten Sie, dass die Methode einen Wert zwischen 0 (einschließlich) und dem angegebenen Wert (ausschließlich) zurückgibt, daher wird hier 1 zum Ergebnis addiert. Das Ergebnis wird dann auf der Konsole ausgegeben.
 
-# Tiefere Einblicke
+Um eine Zufallszahl mit Dezimalstellen zu generieren, können wir die Methode "nextDouble()" verwenden:
 
-Das Generieren von Zufallszahlen ist ein komplexes Thema und es gibt viele Faktoren, die beachtet werden müssen, um wirklich zufällige Zahlen zu erhalten. Ein wichtiger Teil davon ist das sogenannte "Seed", also der Startpunkt für die Berechnung der Zufallszahlen. In Java kann dieser Seed durch den Konstruktor der Klasse "Random" übergeben werden. Wenn kein Seed angegeben wird, wird standardmäßig die aktuelle Systemzeit verwendet.
+```Java
+Random random = new Random();
+double randomDecimal = random.nextDouble();
+System.out.println(randomDecimal);
+```
 
-Darüber hinaus gibt es auch die Möglichkeit, benutzerdefinierte Algorithmen zur Erzeugung von Zufallszahlen zu implementieren. Dies ermöglicht eine noch bessere Kontrolle über die erzeugten Zufallszahlen, ist jedoch auch komplexer und erfordert tiefere Kenntnisse in der Mathematik und Informatik.
+Diese Methode gibt eine zufällige Dezimalzahl zwischen 0.0 (einschließlich) und 1.0 (ausschließlich) zurück.
 
-# Siehe auch
+##Tief eintauchen
+Beim Generieren von Zufallszahlen ist es wichtig, dass die Ergebnisse wirklich zufällig sind. Aber wie generiert Java eigentlich diese Zufallszahlen? Die Klasse "Random" verwendet einen sogenannten Pseudozufallszahlengenerator (Pseudo-Random Number Generator, PRNG) und ein sogenanntes Seed. Der Seed ist ein Startwert, der den PRNG initialisiert. Wenn jeder Seed nur einmal verwendet wird, können wir immer zufällige Ergebnisse erwarten.
 
-- [Offizielle Java-Dokumentation zur Klasse "Random"](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Artikel zum Thema Zufallszahlen in Java auf Baeldung.com](https://www.baeldung.com/java-generating-random-numbers)
-- [Stack Overflow Frage zu dem Seed-Parameter in der Random-Klasse](https://stackoverflow.com/questions/42025468/random-object-seed-parameter)
+Es ist jedoch wichtig zu beachten, dass die generierten Zahlen nicht wirklich zufällig sind. Sie werden durch mathematische Berechnungen basierend auf dem Seed generiert. Wenn wir also einen bestimmten Seed verwenden, werden wir jedes Mal die gleiche Folge von Zufallszahlen erhalten. Daher ist es wichtig, dass wir bei der Verwendung des PRNG darauf achten, dass der Seed immer unterschiedlich ist, um wirklich zufällige Ergebnisse zu erhalten.
+
+Hier ist ein Beispielcode, der ein zufälliges Element aus einer Liste auswählt und mithilfe des aktuellen Datums als Seed verwendet:
+
+```Java
+Random random = new Random(System.currentTimeMillis());
+String[] colors = {"Rot", "Blau", "Gelb", "Grün", "Orange", "Lila"};
+int randomIndex = random.nextInt(colors.length);
+System.out.println("Die Farbe des Tages ist " + colors[randomIndex]);
+```
+
+In diesem Beispiel wird das aktuelle Datum in Millisekunden als Seed verwendet, was bedeutet, dass der Seed jedes Mal, wenn das Programm ausgeführt wird, unterschiedlich ist. Auf diese Weise erhalten wir jedes Mal eine andere zufällige Farbe aus der Liste.
+
+##Siehe auch
+- [Java Dokumentation zu Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [Wikipedia Artikel über Pseudozufallszahlengeneratoren](https://de.wikipedia.org/wiki/Pseudozufallszahlengenerator)

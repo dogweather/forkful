@@ -1,67 +1,96 @@
 ---
-title:                "Ruby: Die aktuelle Datum erhalten"
+title:                "Ruby: Das Abrufen des aktuellen Datums"
+simple_title:         "Das Abrufen des aktuellen Datums"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
+## Warum
 
-Das aktuelle Datum ist eine wichtige Information in der Programmierung, da es für viele Anwendungsfälle benötigt wird, wie beispielsweise die Verwaltung von Zeitstempeln, die Berechnung von Vergangenheit oder Zukunft oder die Anzeige von aktuellen Daten in einer Anwendung.
+Die aktuelle Datum und Uhrzeit spielen eine wichtige Rolle in der Programmierung, sei es für die Erstellung von Zeitstempeln oder für die Berechnung von Ablaufdaten. Mit Ruby ist es ganz einfach, das aktuelle Datum und die Uhrzeit zu erhalten. Lesen Sie weiter, um zu erfahren, wie Sie dies in Ihrer Ruby-Codebasis umsetzen können.
 
-##Wie man das aktuelle Datum in Ruby erhält
+## Wie Geht's
 
-In Ruby gibt es verschiedene Methoden, um das aktuelle Datum zu erhalten. Eine Möglichkeit ist die Verwendung der `Date` Klasse.
+Um das aktuelle Datum zu erhalten, können Sie die Ruby Methode `Time.now` verwenden. Diese Methode gibt ein Objekt des Typs `Time` zurück, das das aktuelle Datum und die aktuelle Uhrzeit repräsentiert. Hier ist ein Beispielcode:
 
-```ruby
-heute = Date.today
-puts heute
-# Ausgabe: 2021-03-17
+```
+```Ruby
+# Erhalte das aktuelle Datum und die Uhrzeit
+current_time = Time.now 
+
+# Gib das Datum und die Uhrzeit im Standardformat aus
+puts current_time 
+```
+Ausgabe:
+`2021-06-15 14:30:00 +0300`
+
+Sie können auch bestimmte Teile des Datums oder der Uhrzeit extrahieren, indem Sie die entsprechenden Methoden anwenden. Hier sind einige Beispiele:
+
+```
+```Ruby
+current_time = Time.now 
+
+# Erhalte den Tag im Monat
+puts current_time.day 
+# Ausgabe: 15
+
+# Erhalte den Monat im Jahr
+puts current_time.month 
+# Ausgabe: 06
+
+# Erhalte die aktuelle Uhrzeit im 24-Stunden-Format
+puts current_time.hour 
+# Ausgabe: 14
 ```
 
-Eine weitere Möglichkeit besteht darin, `Time` zu verwenden, um das aktuelle Datum und die aktuelle Uhrzeit zu erhalten.
+## Tief Tauchen
 
-```ruby
-jetzt = Time.now
-puts jetzt
-# Ausgabe: 2021-03-17 11:30:00 +0100
+Das `Time` Objekt verfügt über viele hilfreiche Methoden für die Arbeit mit Datum und Uhrzeit. Sie können z.B. zwei `Time` Objekte miteinander vergleichen, um die Differenz zwischen ihnen zu berechnen. Hier ist ein Beispiel:
+
+```
+```Ruby
+# Erstelle zwei Zeit-Objekte
+time1 = Time.new(2021, 5, 10, 12, 00, 00)
+time2 = Time.new(2021, 6, 15, 14, 30, 00)
+
+# Berechne die Differenz in Sekunden
+difference = time2 - time1 
+
+# Konvertiere die Differenz in Tagen
+days = difference / (24 * 60 * 60)
+
+# Gib die Differenz in Tagen aus
+puts days 
+# Ausgabe: 36.0625
 ```
 
-Für eine genauere Steuerung des Datumsformats kann die `strftime` Methode verwendet werden.
+Sie können auch das aktuelle Datum und die Uhrzeit in einem bestimmten Format ausgeben, indem Sie die Methode `strftime` verwenden. Diese Methode nimmt ein String-Argument entgegen, das das gewünschte Format definiert. Hier sind einige Beispiele:
 
-```ruby
-puts jetzt.strftime("%d.%m.%Y %H:%M")
-# Ausgabe: 17.03.2021 11:30
+```
+```Ruby
+# Erhalte das aktuelle Datum und die Uhrzeit
+current_time = Time.now 
+
+# Gib das aktuelle Datum, die Uhrzeit und den Zeitzone im Format Tag Monat Jahr / Stunde:Minute aus
+puts current_time.strftime("%d %B %Y / %H:%M")
+# Ausgabe: 15 June 2021 / 14:30
+
+# Gib das aktuelle Datum und die Uhrzeit im Format Monat/Jahr aus
+puts current_time.strftime("%m/%y")
+# Ausgabe: 06/21
+
+# Gib das aktuelle Datum und die Uhrzeit im Unix-Zeitstempel-Format aus
+puts current_time.strftime("%s")
+# Ausgabe: 1623760200
 ```
 
-##Tiefere Einblicke
+## Siehe Auch
 
-Wenn wir uns das Datum genauer ansehen möchten, können wir uns verschiedene Eigenschaften wie den Tag, den Monat oder das Jahr ausgeben lassen.
+- [Ruby Time-Dokumentation] (https://ruby-doc.org/core-2.7.2/Time.html)
+- [Ruby strftime Methodendokumentation] (https://ruby-doc.org/core-2.7.2/Time.html#method-i-strftime)
 
-```ruby
-puts heute.day # Tag
-# Ausgabe: 17
-puts heute.month # Monat
-# Ausgabe: 3
-puts heute.year # Jahr
-# Ausgabe: 2021
-```
-
-Außerdem gibt es in Ruby auch die Möglichkeit, Datum-Berechnungen durchzuführen, wie zum Beispiel das Hinzufügen oder Subtrahieren von Tagen.
-
-```ruby
-puts heute + 7 # Eine Woche hinzufügen
-# Ausgabe: 2021-03-24
-puts heute - 3 # Drei Tage subtrahieren
-# Ausgabe: 2021-03-14
-```
-
-Für weitere Informationen zu den verschiedenen Methoden und Eigenschaften, die mit Datum und Zeit in Ruby verwendet werden können, empfehle ich die offizielle Dokumentation.
-
-##Siehe auch
-
-- [Offizielle Ruby Dokumentation zu Date und Time](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
-- [Artikel über Datum-Manipulation in Ruby](https://www.rubyguides.com/2019/02/ruby-date/)
-- [Video-Tutorial zur Verwendung von Date und Time in Ruby](https://www.youtube.com/watch?v=Q-1Geb8zEqk)
+Mit diesen Informationen sollten Sie nun in der Lage sein, das aktuelle Datum und die Uhrzeit in Ihrem Ruby-Code zu verwenden. Viel Spaß beim Programmieren!

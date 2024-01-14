@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Tekstitiedoston luominen"
+title:                "Elm: Tiedosto-ohjelman kirjoittaminen"
+simple_title:         "Tiedosto-ohjelman kirjoittaminen"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/writing-a-text-file.md"
 ---
 
@@ -9,30 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittaminen on yksi tärkeimmistä taidoista kun kyseessä on ohjelmointi. Kirjoittamalla tekstiä, voimme luoda ohjelmiamme, selittää niiden toimintaa, ja dokumentoida koodimme muille kehittäjille. Tämä on tärkeä askel jokaiselle ohjelmoinnista kiinnostuneelle henkilölle.
+Kirjoittamalla tekstiä tiedostoon, voit tallentaa tietoa pysyvästi ja jakaa sitä muiden kanssa. Tekstin kirjoittaminen on myös yksi perustaidoista Elm-ohjelmoinnissa ja auttaa sinua ilmaisemaan ideoitasi ja luomaan toimivia sovelluksia.
 
-## Miten
+## Miten tehdä
 
-Elm on ohjelmointikieli, joka tarjoaa helppokäyttöisen ja tehokkaan tavan kirjoittaa tekstiä. Tämän kielen avulla voit luoda tekstiä muutamalla rivillä koodia. Käytännössä kirjoittamisen aloittaminen Elmillä on yksinkertaista. Tässä esimerkki, jossa luodaan teksti-tiedosto ja tulostetaan se konsolille:
+Elm on funktionaalinen ohjelmointikieli, joten tekstin kirjoittaminen tapahtuu funktioiden avulla. Käytä funktiota `writeFile` ja anna sille parametriksi haluamasi tiedostonimi ja sen sisältö, kuten esimerkissä:
 
 ```Elm
-import Text
-
-teksti:string
-teksti = "Tämä on tekstiä."
-
-tiedosto = Text.encode  teksti
-Text.decode tiedosto
+writeFile "teksti.txt" "Tämä on tekstiä"
 ```
 
-Tulostus konsolissa olisi: "Tämä on tekstiä."
+Tämä luo tiedoston nimeltä "teksti.txt" ja tallentaa siihen tekstin "Tämä on tekstiä". Voit myös käyttää funktiota `appendFile` lisätäksesi tekstiä olemassa olevaan tiedostoon.
 
-## Syventävä sukellus
+## Syväsukellus
 
-Kirjoittamalla Elmillä voit tehdä muutakin kuin luoda yksinkertaisia teksti-tiedostoja. Voit myös manipuloida tekstiä erilaisilla funktiona kuten `Text.append` ja `Text.toUpper`. Lisäksi, Elm tarjoaa paljon muita hyödyllisiä toimintoja, joiden avulla voit käsitellä tekstiä haluamallasi tavalla. Kannattaa tutustua Elm:n dokumentaatioon saadaksesi lisätietoa.
+Tekstin tallentaminen tiedostoon on tärkeä osa monia Elm-sovelluksia, kuten esimerkiksi blogin kirjoittamista tai käyttäjätilastojen tallentamista. Voit myös käyttää tekstieditointitoimintoa `Element.textarea` luodaksesi sovelluksia, joissa käyttäjät voivat kirjoittaa ja tallentaa tekstiä.
 
 ## Katso myös
 
-- [Elm:n dokumentaatio](https://guide.elm-lang.org/)
-- [Elm:n tekstinkäsittelijä-funktiot](https://package.elm-lang.org/packages/elm/core/latest)
-- [Elm:n oppimateriaalit](https://elmprogramming.com/)
+- [Elm-kielen dokumentaatio](https://elm-lang.org/docs)
+- [Tekstin tallentaminen tiedostoon Elmissä](https://guide.elm-lang.org/fundamentals/text.html)
+- [Tekstieditointitoiminnon käyttäminen Elmissä](https://package.elm-lang.org/packages/elm/browser/latest/Browser#textarea)

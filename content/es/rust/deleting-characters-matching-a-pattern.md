@@ -1,60 +1,52 @@
 ---
-title:                "Rust: Borrando caracteres que coinciden con un patrón"
+title:                "Rust: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué eliminar caracteres que coinciden con un patrón?
 
-La eliminación de caracteres que coinciden con un patrón es una tarea común en la programación. Ya sea que estés trabajando con texto o datos, a veces es necesario eliminar ciertos caracteres que cumplan con ciertas condiciones. En este blog post, te mostraré cómo puedes hacerlo de manera eficiente en Rust.
+Eliminar caracteres que coinciden con un patrón es una tarea común en la programación. Esto puede ser útil cuando se trabaja con cadenas de texto que contienen información no deseada o caracteres innecesarios. En Rust, esta tarea se puede realizar de manera eficiente y fácil con el uso de ciertas funciones y métodos.
 
-## Cómo hacerlo
+## Cómo hacerlo en Rust
 
-Para eliminar caracteres que coinciden con un patrón, podemos utilizar el método `retain` en un `String` o un `Vec<char>`. Este método toma una función de cierre como argumento, que se ejecuta para cada caracter en la cadena o vector. Si la función de cierre devuelve `true`, el caracter se mantiene, de lo contrario, se elimina.
+Para eliminar caracteres que coinciden con un patrón en Rust, se pueden seguir los siguientes pasos:
 
-Veamos un ejemplo de cómo podemos utilizar este método:
+1. Definir una cadena de texto en la que se desea realizar la eliminación de caracteres.
+2. Utilizar la función `replace` para reemplazar los caracteres que coinciden con el patrón por una cadena vacía.
+3. Utilizar el método `trim` para eliminar cualquier espacio en blanco que quede después de la eliminación de los caracteres.
 
-```Rust
-let mut my_string = String::from("Hola mundo!");
-
-my_string.retain(|c| c != 'a' && c != '!' && c != ' ');
-
-println!("{}", my_string);
-
-// Output: Holmundo
-```
-
-En este ejemplo, utilizamos el método `retain` para eliminar todos los caracteres que no sean letras, exclamaciones o espacios. Esto nos deja con la cadena "Holmundo".
-
-También podemos usar expresiones regulares para definir nuestro patrón de caracteres a eliminar. Por ejemplo, si queremos eliminar todos los dígitos de una cadena, podemos hacer lo siguiente:
+Un ejemplo de código podría ser el siguiente:
 
 ```Rust
-use regex::Regex;
+let mut texto = "Hola, esto es un texto de ejemplo".to_string();
 
-let re = Regex::new(r"\d").unwrap();
+texto = texto.replace("o", "");
+texto = texto.trim();
 
-let mut my_string = String::from("123Hola456mundo789!");
-
-my_string.retain(|c| !re.is_match(&c.to_string()));
-
-println!("{}", my_string);
-
-// Output: Holamundo!
+println!("{}", texto);
 ```
 
-Aquí, primero importamos la biblioteca `regex` y creamos un objeto de expresión regular que coincide con cualquier dígito. Luego utilizamos este objeto en la función de cierre del método `retain` para eliminar todos los dígitos de la cadena.
+La salida del código anterior sería `Hl, est es un txt de ejempl`.
 
-## Profundizando
+Como se puede ver, se eliminaron todos los caracteres "o" y se eliminó el espacio en blanco al final. Este es solo un ejemplo básico, pero esta técnica se puede adaptar y utilizar en diversas situaciones.
 
-La eliminación de caracteres que coinciden con un patrón también se puede lograr utilizando herramientas como iteradores y filtros en Rust. Sin embargo, el método `retain` es una opción más eficiente, ya que evita crear una nueva cadena o vector y en su lugar, modifica directamente el original.
+## Profundizando en la eliminación de caracteres
 
-También es importante tener en cuenta que el método `retain` no solo se limita a eliminar caracteres, sino que también se puede utilizar para filtrar elementos en vectores.
+La eliminación de caracteres que coinciden con un patrón puede ser aún más compleja y avanzada en Rust. Existen funciones y métodos que permiten realizar esta tarea de manera más eficiente y con más opciones de personalización.
+
+Por ejemplo, se puede utilizar la función `regex` para realizar la eliminación de caracteres utilizando expresiones regulares, lo que brinda una mayor flexibilidad en la selección de los caracteres a eliminar. Además, el método `drain` permite eliminar caracteres de una cadena de texto sin tener que crear una nueva cadena.
+
+Explorar estas opciones puede ser beneficioso para aquellos que se dedican a la programación en Rust y necesitan utilizar esta técnica con mayor frecuencia.
 
 ## Ver también
 
-- [Documentación oficial de Rust sobre el método retain](https://doc.rust-lang.org/std/primitive.str.html#method.retain)
-
-- [Tutorial sobre expresiones regulares en Rust](https://www.adamcodes.io/blog/lets-learn-rust-regular-expressions)
+- [Documentación oficial de Rust sobre la función `replace`](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [Documentación oficial de Rust sobre el método `trim`](https://doc.rust-lang.org/std/string/struct.String.html#method.trim)
+- [Documentación oficial de Rust sobre la función `regex`](https://doc.rust-lang.org/regex/regex/index.html)
+- [Documentación oficial de Rust sobre el método `drain`](https://doc.rust-lang.org/std/string/struct.String.html#method.drain)

@@ -1,42 +1,46 @@
 ---
-title:                "Gleam: Das aktuelle Datum abrufen"
+title:                "Gleam: Das aktuelle Datum erhalten"
+simple_title:         "Das aktuelle Datum erhalten"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-In diesem Blogpost werden wir uns damit beschäftigen, wie man das aktuelle Datum mit der Programmiersprache Gleam abrufen kann. Aber warum sollte man überhaupt das aktuelle Datum abrufen wollen?
+Das Abrufen des aktuellen Datums kann eine nützliche Funktion in der Programmierung sein, um zeitabhängige Aktionen auszuführen, z. B. das Erstellen von täglichen Backups oder das Anzeigen des aktuellen Datums in einer Anwendung.
 
-Das aktuelle Datum kann in vielen Anwendungsfällen nützlich sein. Zum Beispiel wenn wir eine Anwendung haben, die abhängig vom Datum unterschiedliche Prozesse ausführen soll. Oder wenn wir einfach nur das Datum in unserem Programm anzeigen wollen. Mit Gleam ist es einfach, das aktuelle Datum zu bekommen und es für unsere Bedürfnisse zu nutzen.
+## How To
 
-# Wie geht das?
-
-Um das aktuelle Datum in Gleam abzurufen, müssen wir die Funktion `DateTime.now()` verwenden. Diese Funktion gibt uns ein Objekt vom Typ `DateTime` zurück, welches das aktuelle Datum und die aktuelle Uhrzeit enthält.
-
-Lassen Sie uns einen Blick auf ein einfaches Beispiel werfen:
+Die aktuelle Datums- und Uhrzeitfunktion ist in Gleam durch das `Calendar` Paket verfügbar. Sie kann einfach importiert werden, indem man `use Calendar` am Anfang des Codes hinzufügt. Dann kann das aktuelle Datum mit der `today` Funktion aufgerufen werden, die einen `Calendar.Date`-Datentyp zurückgibt.
 
 ```Gleam
-let current_date = DateTime.now()
-io.println("Das aktuelle Datum ist: #{current_date.date}")
+use Calendar
+
+let current_date = Calendar.today()
 ```
 
-Dieses Beispiel nutzt die Funktion `io.println()` um das aktuelle Datum auf der Konsole auszugeben. Dabei greifen wir auf das Feld `date` des `DateTime` Objekts zu, um nur das Datum ohne die Uhrzeit auszugeben.
+Um das aktuelle Datum in einem bestimmten Format zu erhalten, kann die `format` Funktion verwendet werden, die das Datum als Zeichenkette zurückgibt. Zum Beispiel:
 
-Das oben genannte Beispiel gibt zum Beispiel die Ausgabe `Das aktuelle Datum ist: 2020-06-23` aus.
+```Gleam
+let current_date_str = Calendar.format(current_date, "%Y-%m-%d")
+```
 
-# Tiefer Einblick
+Der obige Code würde das Datum im Format "Jahr-Monat-Tag" ausgeben, z. B. 2021-09-01.
 
-In Gleam wird das Datum im ISO-8601-Format gespeichert, was bedeutet, dass es folgendes Format hat: `YYYY-MM-DD`. Wenn wir also das aktuelle Datum abrufen, erhalten wir es im Format `YYYY-MM-DD` zurück. Wir können auch auf die Uhrzeit und andere Informationen wie Wochentag oder Zeitzone zugreifen, indem wir auf die entsprechenden Felder des `DateTime` Objekts zugreifen.
+Um auch die aktuelle Uhrzeit abzurufen, kann die `now` Funktion verwendet werden, die einen `Calendar.DateTime`-Datentyp zurückgibt. Dieser Datentyp kann dann ebenfalls mit der `format` Funktion in das gewünschte Format gebracht werden.
 
-Es gibt auch weitere Funktionen, die es uns erlauben, das aktuelle Datum auf verschiedene Weisen zu manipulieren, zum Beispiel `DateTime.add()` um Tage oder Monate hinzuzufügen oder `DateTime.diff()` um die Differenz zwischen zwei Daten zu berechnen.
+## Deep Dive
 
-In der offiziellen Dokumentation von Gleam können Sie weitere Informationen über die `DateTime` Struktur und ihre Funktionen finden.
+Die `Calendar` Bibliothek basiert auf dem `Erlang Calendar` Modul, was bedeutet, dass die Datums- und Uhrzeitmanipulation in Gleam auch die gleichen Funktionen bereitstellt wie in Erlang. Dies beinhaltet Funktionen wie zum Beispiel das Hinzufügen von Tagen zu einem Datum, das Vergleichen von Datumswerten und vieles mehr.
 
-# Siehe auch
+Eine Besonderheit von Gleam ist, dass Datumsangaben nicht veränderbar sind, d.h. die Funktionen, die sie manipulieren sollen, geben immer ein neues Datum zurück, anstatt das ursprüngliche zu ändern. Dies kann dazu beitragen, unerwartete Seiteneffekte zu vermeiden.
 
-- [Offizielle Gleam Dokumentation](https://gleam.run/documentation/)
-- [ISO-8601-Format](https://en.wikipedia.org/wiki/ISO_8601)
+## Siehe auch
+
+- [Gleam Dokumentation](https://gleam.run/)
+- [Erlang Calendar Modul](https://erlang.org/doc/man/calendar.html)
+- [Einführung in die Zeit- und Datumsmanipulation in Gleam](https://simplabs.com/blog/2021/03/16/exploring-time-date-manipulation-in-gleam)

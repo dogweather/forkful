@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Calculer une date dans le futur ou le passé."
+title:                "Rust: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,41 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Calendrier mathématique pourrait sembler être un sujet inutile, mais en réalité, c'est une compétence utile pour de nombreux programmes et services, notamment ceux qui impliquent des rappels, des deadlines ou des plannings. Apprendre à calculer une date dans le futur ou dans le passé en Rust peut donc être un moyen efficace d'améliorer vos compétences en programmation.
+Lorsque vous construisez des applications ou des sites Web, il y a souvent des scénarios où vous devez calculer une date dans le futur ou dans le passé. Cela peut être pour afficher une date d'expiration, planifier des événements ou simplement pour effectuer des opérations de temps. Dans cet article, nous allons explorer comment réaliser cela en utilisant le langage de programmation Rust.
 
 ## Comment faire
 
-Pour calculer une date dans le futur ou dans le passé en Rust, vous pouvez utiliser la bibliothèque "chrono". Tout d'abord, importez la bibliothèque en utilisant "extern crate" dans votre code :
+La première étape pour calculer une date dans le futur ou dans le passé est d'utiliser le type de données `chrono::DateTime` de Rust. Il s'agit d'une structure qui stocke une date et une heure précises. Ensuite, vous pouvez utiliser des méthodes telles que `add`et `subtract` pour ajouter ou soustraire une certaine durée de la date.
+
+Voici un exemple de code montrant comment calculer une date dans le futur de 30 jours à partir de la date actuelle :
 
 ```Rust
-extern crate chrono;
+use chrono::DateTime;
+use chrono::Duration;
+use chrono::Utc;
+    
+let now: DateTime<Utc> = Utc::now();
+let future_date: DateTime<Utc> = now.add(Duration::days(30));
 ```
+Le résultat sera une date dans le futur avec une différence de 30 jours par rapport à la date actuelle.
 
-Ensuite, vous pouvez utiliser la méthode "parse_from_str" et lui donner une chaîne de caractères qui représente une date au format ISO 8601 :
+De même, voici un exemple de code pour calculer une date dans le passé de 2 semaines à partir de la date actuelle :
 
 ```Rust
-use chrono::prelude::*;
-let date = NaiveDate::parse_from_str("2021-10-15", "%Y-%m-%d").unwrap();
+use chrono::DateTime;
+use chrono::Duration;
+use chrono::Utc;
+    
+let now: DateTime<Utc> = Utc::now();
+let past_date: DateTime<Utc> = now.subtract(Duration::weeks(2));
 ```
 
-Maintenant, vous pouvez utiliser la méthode "checked_add" ou "checked_sub" pour ajouter ou soustraire une certaine quantité de temps à la date d'origine :
-
-```Rust
-// Pour ajouter 3 jours à la date originale :
-let future = date.checked_add_signed(Duration::days(3)).unwrap();
-
-// Pour soustraire 6 mois à la date originale :
-let past = date.checked_sub_signed(Duration::days(6 * 30)).unwrap();
-```
+Le résultat sera une date dans le passé avec une différence de 2 semaines par rapport à la date actuelle.
 
 ## Plongée profonde
 
-Maintenant que vous savez comment utiliser la bibliothèque "chrono" pour calculer une date dans le futur ou dans le passé, il est important de comprendre exactement ce qui se passe en coulisses. En utilisant la méthode "parse_from_str", vous créez un objet "NaiveDate" qui représente une date sans prendre en compte les fuseaux horaires ou les calendriers. Cela permet d'effectuer facilement des calculs sans avoir à se soucier de ces éléments.
+Bien que les exemples ci-dessus montrent comment calculer une date dans le futur ou dans le passé en utilisant des durées spécifiques, il est également possible de le faire en utilisant des unités de temps plus précises telles que les secondes, les minutes ou les heures. Vous pouvez également combiner plusieurs unités de temps pour obtenir une durée plus précise. Cela peut être utile pour des tâches telles que le suivi du temps ou le calcul de délais de livraison.
 
-Ensuite, la méthode "checked_add" ou "checked_sub" utilise un objet "Duration" pour représenter la quantité de temps à ajouter ou à soustraire. Ce type de données est utilisé pour garantir que les opérations de calendrier sont toujours valides et ne produisent pas des dates impossibles (comme le 30 février).
+Vous pouvez également utiliser des méthodes telles que `with_UTC_offset` pour spécifier un décalage horaire spécifique, ou `with_timezone` pour définir un fuseau horaire différent de celui par défaut.
 
 ## Voir aussi
 
-- [Documentation officielle de la bibliothèque "chrono" pour Rust](https://docs.rs/chrono/latest/chrono/)
-- [Tutoriel sur la gestion des dates en Rust](https://opensource.com/article/19/4/working-dates-rust)
-- [Article sur l'utilisation de la bibliothèque "chrono" pour manipuler les fuseaux horaires en Rust](https://bytes.zone/posts/dates-and-times-rust/)
+- [Document officiel sur le type `chrono::DateTime`](https://docs.rs/chrono/0.4.13/chrono/struct.DateTime.html)
+- [Guide de la bibliothèque `chrono` pour le calcul du temps](https://docs.rs/chrono/0.4.13/chrono/trait.Sub.html)
+- [Exemples de code pour calculer des dates en utilisant Rust](https://github.com/chronotope/chrono/blob/master/examples/examples.rs)

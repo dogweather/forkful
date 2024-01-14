@@ -1,47 +1,51 @@
 ---
 title:                "Kotlin: Convirtiendo una cadena a minúsculas"
+simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué convertir una cadena a minúsculas?
 
-Si eres un programador en Kotlin, entonces probablemente estés familiarizado con el concepto de "cadena" (string). Las cadenas son un tipo de datos muy común y se utilizan en una variedad de aplicaciones. A veces, es posible que necesites convertir una cadena a minúsculas por razones de comparación o presentación. Este proceso puede ser útil en muchas situaciones, y en este artículo, exploraremos cómo convertir una cadena a minúsculas en Kotlin.
+Al programar en Kotlin, a menudo necesitamos realizar operaciones en cadenas de texto. Una de ellas es la conversión a minúsculas, lo que es útil para realizar búsquedas o comparaciones de texto sin importar mayúsculas o minúsculas. En este artículo aprenderemos cómo convertir una cadena a minúsculas en Kotlin.
 
 ## Cómo hacerlo
 
-Para convertir una cadena a minúsculas en Kotlin, podemos utilizar el método `toLowerCase()` de la clase `String`. Este método toma la cadena original y devuelve una nueva cadena con todos los caracteres en minúsculas. Veamos un ejemplo:
+La conversión a minúsculas en Kotlin es sencilla y se puede hacer de varias formas. A continuación, se presentan dos ejemplos utilizando dos métodos diferentes:
 
 ```Kotlin
-fun main() {
-    val cadena = "Hola Mundo!"
-    println(cadena.toLowerCase()) // salida: hola mundo!
-}
+// Ejemplo 1: utilizando el método toLowerCase()
+val cadena = "Hola Mundo"
+val cadenaMinusculas = cadena.toLowerCase()
+println(cadenaMinusculas)
+// Salida: hola mundo
 ```
 
-Como se puede ver, usamos el método `toLowerCase()` en la cadena original `'Hola Mundo!'` y obtuvimos la cadena en minúsculas `'hola mundo!'` como resultado. Este método es útil cuando necesitas comparar cadenas sin importar si están en mayúsculas o minúsculas, ya que el método `equals()` es sensible a mayúsculas y minúsculas.
+```Kotlin
+// Ejemplo 2: utilizando la función de extensión de Kotlin
+val frase = "Convertir ESTA cadena A MINÚSCULAS"
+val fraseMinusculas = frase.toLowerCase()
+println(fraseMinusculas)
+// Salida: convertir esta cadena a minúsculas
+```
+
+En el primer ejemplo, utilizamos el método `toLowerCase()` que pertenece a la clase `String` y devuelve una nueva cadena en minúsculas. En el segundo ejemplo, utilizamos la función de extensión `toLowerCase()` de Kotlin, que también devuelve una nueva cadena en minúsculas.
 
 ## Profundizando
 
-Además del método `toLowerCase()`, Kotlin también ofrece el método `toCharArray()` que convierte la cadena en un array de caracteres. Luego, podemos recorrer este array y convertir cada carácter a minúsculas utilizando la función `toLowerCase()` de la clase `Char`. Veamos un ejemplo:
+Además de los métodos y funciones de extensión mencionados anteriormente, hay otras formas de convertir una cadena a minúsculas en Kotlin. Por ejemplo, podemos utilizar regex o la biblioteca `java.util.Locale` para manejar caracteres especiales y emojis en la conversión.
 
-```Kotlin
-fun main() {
-    val cadena = "Hola Mundo!"
-    val array = cadena.toCharArray()
-    array.forEach { c -> print(c.toLowerCase()) } // salida: hola mundo!
-}
-```
+Otra cosa importante a tener en cuenta es que la conversión a minúsculas es sensible al idioma. Esto significa que la salida puede variar dependiendo del idioma del dispositivo o de la región donde se ejecute el código.
 
-Este enfoque es útil si necesitas hacer más manipulaciones con los caracteres individuales de la cadena.
+En resumen, la conversión a minúsculas en Kotlin es una tarea común al trabajar con cadenas de texto y hay varias formas de hacerlo. Es importante elegir la opción adecuada según nuestras necesidades y considerar el idioma y las particularidades del texto a tratar.
 
 ## Ver también
 
-Aquí hay algunos enlaces útiles que pueden ser de interés para ti:
-
-- [Documentación oficial de Kotlin sobre cadenas](https://kotlinlang.org/docs/reference/strings.html)
-- [Método `toLowerCase()` de la clase `String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
-- [Método `toCharArray()` de la clase `String`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-char-array.html)
+- [Método toLowerCase() en la documentación oficial de Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
+- [Funciones de extensión en la documentación oficial de Kotlin](https://kotlinlang.org/docs/reference/extensions.html)
+- [Ejemplos de expresiones regulares en Kotlin](https://www.baeldung.com/kotlin-regex)
+- [Clase Locale en la documentación de Java](https://docs.oracle.com/javase/7/docs/api/java/util/Locale.html)

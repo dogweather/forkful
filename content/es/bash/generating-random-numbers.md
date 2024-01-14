@@ -1,67 +1,97 @@
 ---
 title:                "Bash: Generando números aleatorios"
+simple_title:         "Generando números aleatorios"
 programming_language: "Bash"
-category:             "Numbers"
+category:             "Bash"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué generar números aleatorios en Bash?
+## ¿Por qué generar números aleatorios?
 
-Generar números aleatorios es una habilidad esencial en la programación de Bash. Al utilizar números aleatorios, podemos crear aplicaciones más dinámicas y divertidas, como juegos y sorteos. Además, también puede ser útil en la realización de pruebas y encriptación de datos sensibles. 
+Generar números aleatorios es una técnica comúnmente utilizada en la programación para realizar diferentes tareas, como simular eventos, generar claves de acceso seguras o crear juegos aleatorios. En esta publicación, aprenderemos cómo generar números aleatorios en Bash y profundizaremos en cómo funciona esta técnica.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo
 
-¡Es más fácil de lo que piensas! Bash tiene incorporado un comando para generar números aleatorios: `$RANDOM`. Este comando puede ser utilizado en cualquier parte de un script para generar un número aleatorio en un rango específico. Veamos un ejemplo:
+Para generar números aleatorios en Bash, utilizaremos el comando `shuf`. Este comando nos permite crear una secuencia aleatoria de números o líneas a partir de un archivo o de la entrada estándar. Veamos un ejemplo de cómo generar 5 números aleatorios del 1 al 10:
 
-```Bash
-#!/bin/bash
-
-# genera un número aleatorio entre 1 y 10
-echo "Tu número de la suerte es: $((RANDOM % 10 + 1))"
+```bash
+shuf -i 1-10 -n 5
+```
+Output:
+```
+8
+3
+2
+9
+6
 ```
 
-El comando `$RANDOM` devuelve un número aleatorio entre 0 y 32767, por lo que podemos utilizar la operación módulo `%` para obtener un número en un rango específico. En el ejemplo, agregamos 1 al resultado para asegurarnos de que el número generado no sea 0.
+También podemos utilizar el comando `seq` para generar una secuencia de números y luego utilizar `shuf` para mezclarlos de manera aleatoria:
 
-También podemos utilizar el comando `shuf` para generar una secuencia de números aleatorios. Este comando es más útil cuando necesitamos múltiples números aleatorios en un solo script. Veamos un ejemplo:
-
-```Bash
-#!/bin/bash
-
-# genera una secuencia de 5 números aleatorios en un rango del 1 al 20
-shuf -i 1-20 -n 5
+```bash
+shuf <(seq 1 10) -n 5
 ```
-La opción `-i` especifica el rango de números y la opción `-n` indica la cantidad de números que queremos generar.
+Output:
+```
+7
+2
+9
+5
+1
+```
+
+Otra opción es utilizar la variable de entorno `$RANDOM`, que genera un número aleatorio del 0 al 32767 cada vez que se llama:
+
+```bash
+echo $RANDOM
+```
+Output:
+```
+23765
+```
 
 ## Profundizando en la generación de números aleatorios
 
-Si queremos generar números aleatorios más complejos, podemos utilizar la herramienta `openssl` en Bash. Esta herramienta nos permite generar números pseudoaleatorios basados en algoritmos criptográficos seguros. Veamos un ejemplo:
+Es importante tener en cuenta que los números "aleatorios" generados por las computadoras no son realmente aleatorios, sino que se basan en algoritmos matemáticos que utilizan una semilla o "seed" para determinar el resultado. Por lo tanto, si utilizamos el mismo comando con la misma semilla, obtendremos el mismo resultado.
 
-```Bash
-#!/bin/bash
+Por defecto, `shuf` utiliza la variable de entorno `$RANDOM` como semilla, pero si queremos obtener números diferentes cada vez, podemos especificar una semilla diferente utilizando el parámetro `-i` seguido de un número. Por ejemplo:
 
-# genera un número aleatorio de 16 bytes
-openssl rand -hex 16
+```bash
+shuf -i 1-10 --random-source=/dev/random -n 5
+```
+Output:
+```
+7
+5
+1
+4
+9
 ```
 
-Podemos utilizar la opción `-hex` para obtener un número en formato hexadecimal, lo que lo hace más seguro para su uso en encriptación.
+También podemos generar números aleatorios con decimales utilizando el comando `awk`:
 
-Otra alternativa es utilizar la librería `urandom` en Bash. Esta es una fuente de números aleatorios de alta calidad que se basa en la actividad del sistema. Veamos un ejemplo:
-
-```Bash
-#!/bin/bash
-
-# genera un número aleatorio con la librería urandom
-dd if=/dev/urandom count=1 2> /dev/null | od -DAn
+```bash
+awk 'BEGIN{srand();print rand()}'
+```
+Output:
+```
+0.631997
 ```
 
-También podemos utilizar la opción `-b` para obtener el número aleatorio en un formato binario.
+Además de generar números aleatorios, también podemos generar caracteres aleatorios utilizando el comando `tr`, que nos permite convertir o eliminar caracteres en un archivo o en la entrada estándar.
+
+```bash
+cat /dev/urandom | tr -dc A-Za-z0-9 | head -c 10
+```
+Output:
+```
+m9s5ZlgwoK
+```
 
 ## Ver también
-
-- Documentación oficial de Bash sobre [generación de números aleatorios](https://www.gnu.org/software/bash/manual/html_node/Shell-Arithmetic.html#Shell-Arithmetic)
-- Tutorial sobre [programación en Bash](https://www.tutorialesprogramacionya.com/bashya/)
-- Generación de números aleatorios con la herramienta [shuf](https://shapeshed.com/unix-shuf/) en Unix. 
-
-¡Ahora estás listo para generar números aleatorios en tus scripts de Bash! Recuerda siempre compilar tu código y probarlo varias veces para asegurarte de que los números se generan de forma adecuada. ¡Diviértete experimentando con diferentes métodos de generación de números aleatorios en Bash!
+- [Guía de Bash para principiantes](https://ubuntu.com/tutorials/command-line-for-beginners#2-opening-a-terminal)
+- [Documentación de Bash en español](https://www.gnu.org/software/bash/manual/bash.html#Invoking-Bash)
+- [Generación de números aleatorios en Python](https://www.w3schools.com/python/ref_random_randint.asp)

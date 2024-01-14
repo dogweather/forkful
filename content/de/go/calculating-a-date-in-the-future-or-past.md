@@ -1,80 +1,41 @@
 ---
-title:                "Go: Berechnen eines Datums in der Zukunft oder Vergangenheit"
+title:                "Go: Berechnung eines Datums in der Zukunft oder Vergangenheit."
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit."
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Das Berechnen von Datumsangaben in der Zukunft oder Vergangenheit kann für verschiedene Anwendungen nützlich sein, wie zum Beispiel die Planung von Terminen oder das Verfolgen von Deadlines.
 
-Das Berechnen von Daten in der Zukunft oder Vergangenheit ist eine nützliche Fähigkeit beim Programmieren. Es ermöglicht es uns, datumsbezogene Funktionen in unsere Programme einzubauen, um beispielsweise zu überprüfen, ob ein bestimmtes Datum in der Zukunft liegt oder um zukünftige Termine zu planen.
-
-# Wie geht man vor
-
-Um ein zukünftiges Datum zu berechnen, können wir die Funktion `AddDate()` aus der Paket `time` verwenden. Hier ist ein Beispiel, wie wir das Datum für morgen berechnen können:
+## Wie man es macht
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die `time`-Package in Go verwenden. Um ein Beispiel zu sehen, schauen wir uns den folgenden Code an:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    // Das heutige Datum erhalten
-    heute := time.Now()
-
-    // Morgen berechnen
-    morgen := heute.AddDate(0, 0, 1)
-
-    // Output: YYYY-MM-DD
-    fmt.Println("Morgen ist", morgen.Format("2006-01-02"))
+	today := time.Now()
+	tenDaysLater := today.AddDate(0, 0, 10)
+	fmt.Println("In 10 Tagen ist der", tenDaysLater.Format("02.01.2006"))
 }
 ```
 
-Das Ergebnis ist:
+Die Ausgabe dieses Codes wäre: `In 10 Tagen ist der 20.10.2021`. Wir verwenden die Methode `AddDate()` um `tenDaysLater` zu berechnen, indem wir 0 Jahre und 0 Monate hinzufügen und 10 Tage hinzufügen. Wir können auch ein Datum in der Vergangenheit berechnen, indem wir negative Zahlen verwenden.
 
-```
-Morgen ist 2021-07-19
-```
+## Tiefere Einblicke
+Die `time`-Package bietet viele weitere Funktionen und Methoden, die beim Arbeiten mit Datumsangaben hilfreich sein können. Zum Beispiel können wir mit der `Parse()` Methode Datumsangaben in unterschiedlichen Formaten parsen oder mit der `Since()` Methode die Zeitdauer zwischen zwei Datumsangaben berechnen. Es lohnt sich, die Dokumentation der `time`-Package genauer anzusehen, um alle Möglichkeiten zu entdecken.
 
-Um ein vergangenes Datum zu berechnen, können wir `Sub()` verwenden. Hier ist ein Beispiel, wie wir das Datum vor einer Woche berechnen können:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "time"
-)
-
-func main() {
-    // Das heutige Datum erhalten
-    heute := time.Now()
-
-    // Vor einer Woche berechnen
-    vorWoche := heute.Sub(7 * 24 * time.Hour)
-
-    // Output: YYYY-MM-DD
-    fmt.Println("Vor einer Woche war es", vorWoche.Format("2006-01-02"))
-}
-```
-
-Das Ergebnis ist:
-
-```
-Vor einer Woche war es 2021-07-12
-```
-
-# Tiefere Einblicke
-
-Es gibt noch viele weitere Möglichkeiten, Daten in der Zukunft oder Vergangenheit zu berechnen. Mit den Funktionen `Add()` und `Sub()` können wir auch andere Zeiteinheiten wie z.B. Stunden oder Monate berücksichtigen. Es ist auch möglich, Datumsangaben mit dem Format `2006-01-02` zu verändern.
-
-# Siehe auch
-
-- [Offizielle Dokumentation für das Paket "time"](https://golang.org/pkg/time/)
-- [Go Tutorial: Datum und Zeit in Golang](https://tutorialedge.net/golang/go-date-time-tutorial/)
-- [Praktische Beispiele für die Arbeit mit Datum und Zeit in Go](https://gobyexample.com/time)
+## Siehe auch
+- [Go Zeitdokumentation] (https://golang.org/pkg/time/)
+- [Go Zeitberechnung Beispielcode] (https://gobyexample.com/time)
+- [Go Zeitparsing Beispielcode] (https://yourbasic.org/golang/parse-string-time-date-go/)

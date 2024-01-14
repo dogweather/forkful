@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Pobieranie aktualnej daty"
+title:                "Haskell: Pobieranie bieżącej daty"
+simple_title:         "Pobieranie bieżącej daty"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/getting-the-current-date.md"
 ---
 
@@ -9,38 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dzisiaj na tapecie mamy podstawy programowania w języku Haskell i dowiemy się, jak uzyskać aktualną datę w naszych programach. Ale dla niewtajemniczonych, pewnie zastanawiacie się dlaczego potrzebujemy aktualnej daty w naszym kodzie. Oto kilka powodów:
-
-- Możemy użyć aktualnej daty w naszych aplikacjach do śledzenia czasu wykonania operacji.
-- Może być przydatne w tworzeniu aplikacji bankowych lub innych związanych z finansami, gdzie ważne jest śledzenie daty transakcji.
-- Aktualna data może nam również pomóc w rozwiązywaniu problemów związanych z czasem w naszym kodzie.
+Dlaczego warto poznać bieżącą datę? W dzisiejszym wpisie na temat programowania w Haskellu przedstawimy Ci, jak w prosty sposób uzyskać aktualną datę w swoich programach. Poznasz przydatne funkcje i narzędzia, które przydadzą się w tworzeniu praktycznych aplikacji.
 
 ## Jak to zrobić
 
-Zanim przejdziemy do głębszej analizy, zobaczmy najpierw przykładowy kod w Haskell, który pomoże nam uzyskać aktualną datę. Wystarczy użyć funkcji `getCurrentTime` z modułu `Data.Time`.
+Wykorzystując język Haskell i bibliotekę "time", odczytanie bieżącej daty jest bardzo proste. Wystarczy użyć funkcji "getCurrentTime", która zwraca wartość typu "UTCTime". Oto przykładowy kod:
 
 ```Haskell
 import Data.Time
 
 main = do
-    now <- getCurrentTime
-    print now
+  czas <- getCurrentTime
+  print czas
 ```
 
-Output:
+Powyższy kod wyświetli aktualną datę i czas w formacie "YYYY-MM-DD hh:mm:ss". Jeśli chcesz wyświetlić tylko datę, możesz skorzystać z funkcji "utctDay" i przekazać jako argument otrzymaną wartość "UTCTime". Oto przykład:
+
+```Haskell
+import Data.Time
+
+main = do
+  czas <- getCurrentTime
+  let data = utctDay czas
+  print data
 ```
-2021-11-12 11:30:45.331621 UTC
+
+W tak prosty sposób możesz odczytać aktualną datę i wykorzystać ją do swoich potrzeb. Ale co jeśli chcesz wyświetlić datę w innym formacie? Wystarczy skorzystać z funkcji "formatTime", której pierwszym argumentem jest format daty, a drugim otrzymana wartość "UTCTime". Oto przykładowy kod, który wyświetli datę w formacie "DD-MM-YYYY":
+
+```Haskell
+import Data.Time
+import Data.Time.Format
+
+main = do
+  czas <- getCurrentTime
+  let data = formatTime defaultTimeLocale "%d-%m-%Y" czas
+  print data
 ```
 
-Powyższy kod wyświetli nam aktualną datę i czas w formacie `RRRR-MM-DD GG:MM:SS.ssssss UTC`. Możemy również wykorzystać różne funkcje z modułu `Data.Time.Format`, aby formatować datę w odpowiedni dla nas sposób.
+## Głębszy wgląd
 
-## Mocniejsze wiosło
+Zastanawiałeś się, jak dokładnie funkcja "getCurrentTime" odczytuje aktualną datę? W rzeczywistości, korzysta ona z systemowego zegara systemowego, a dokładniej z funkcji "gettimeofday" w systemach Unix i "GetSystemTime" w systemach Windows. Dzięki temu, data jest precyzyjna i zgodna z ustawieniami czasu na Twoim komputerze.
 
-Jeśli chcesz zgłębić temat i poznać więcej funkcji związanych z datami w Haskellu, polecam zapoznać się z dokumentacją pakietu `time` oraz `time-locale-compat`. Pakiet `time` zawiera moduły z funkcjami do zarządzania czasem, m.in. `Data.Time`, a `time-locale-compat` jest przydatny przy formatowaniu daty w różnych językach.
+## Zobacz także
 
-## Zobacz również
+Jeśli chcesz pogłębić swoją wiedzę na temat zarządzania czasem w Haskellu, polecamy Ci zapoznać się z dokumentacją biblioteki "time" oraz z innymi przydatnymi funkcjami, takimi jak "addUTCTime" czy "diffUTCTime". Możesz również poszukać ciekawych zadań do wykonania związanych z datami i czasem w języku Haskell. Poniżej znajdziesz kilka linków, które mogą Ci się przydać:
 
-- Dokumentacja pakietu `time`: [https://hackage.haskell.org/package/time](https://hackage.haskell.org/package/time)
-- Dokumentacja pakietu `time-locale-compat`: [https://hackage.haskell.org/package/time-locale-compat](https://hackage.haskell.org/package/time-locale-compat)
-
-Teraz już wiesz, jak uzyskać aktualną datę w swoich programach w języku Haskell. Mam nadzieję, że ten post był dla Ciebie pomocny!
+- [Dokumentacja biblioteki "time"](https://hackage.haskell.org/package/time)
+- [Przykładowe zadania związane z czasem w Haskellu](https://wiki.haskell.org/99_questions/Solutions/71_to_80)

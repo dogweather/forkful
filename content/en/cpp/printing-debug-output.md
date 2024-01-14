@@ -1,76 +1,59 @@
 ---
 title:                "C++ recipe: Printing debug output"
+simple_title:         "Printing debug output"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
+Debugging is an essential part of the software development process. It helps us identify and fix potential errors and issues in our code. One useful tool in the debugging process is printing debug output. It allows us to see the values of variables and the flow of our program, making it easier to pinpoint the source of a bug. In this blog post, we will explore the why and how of printing debug output in C++.
 
-Debugging is an essential part of the software development process. It helps us identify and fix errors and bugs in our code, ensuring our program runs smoothly and as intended. One useful technique for debugging is printing debug output, which allows us to see the values of variables and the flow of our program. This blog post will explore why printing debug output is important and how to do it in C++.
+## How To
 
-## How To 
-
-To print debug output in C++, we can use the `cout` function from the `iostream` library. Here is an example of how to use it:
-
-```C++
-#include <iostream>
-
-using namespace std;
-
-int main() {
-  int num1 = 5;
-  int num2 = 10;
-
-  cout << "The value of num1 is: " << num1 << endl;
-  cout << "The value of num2 is: " << num2 << endl;
-
-  return 0;
-}
-```
-
-This code will output the following text:
-
-```
-The value of num1 is: 5
-The value of num2 is: 10
-```
-
-We can also use the `cerr` function for error messages and the `clog` function for general program information. Here is an example:
+To print debug output in C++, we can use the `cout` statement from the standard library's `iostream` header. This statement allows us to display the value of a variable or a custom message on the console. Let's look at some examples:
 
 ```C++
 #include <iostream>
 
 using namespace std;
 
-int main() {
-  int num1 = 5;
-  int num2 = 0;
-
-  if(num2 == 0) {
-    cerr << "Cannot divide by 0!" << endl;
-  }
-
-  clog << "Program finished successfully." << endl;
-
-  return 0;
+int main(){
+  int number = 5;
+  cout << "The value of number is: " << number << endl; //output: The value of number is: 5
 }
 ```
 
-The `cerr` function will output the error message to the standard error stream and the `clog` function will output the success message to the standard log stream.
+In the above code, we use the `cout` statement to print the value of the `number` variable. We can also use multiple `cout` statements to print out different values or messages in a single line, as shown below:
+
+```C++
+#include <iostream>
+
+using namespace std;
+
+int main(){
+  int age = 25;
+  int weight = 150;
+  cout << "Age: " << age << ", Weight: " << weight << endl; //output: Age: 25, Weight: 150
+}
+```
+
+Additionally, we can use conditional statements and loops to control when and how often we print out debug output. This allows us to narrow down our focus on specific parts of our code and analyze them in more detail.
 
 ## Deep Dive
 
-Printing debug output is helpful in identifying where errors or bugs occur in our code. It allows us to see the values of variables at different points in our program and understand the flow of our program. We can also use it to track the execution of our code and find logical errors that may not be caught by the compiler.
+Printing debug output not only helps us identify and fix bugs, but it also provides insight into the flow of our program. By printing out the values of variables at various stages of our code, we can track the changes and better understand how our program is executing. This is especially useful for larger and more complex programs.
 
-In addition, printing debug output can also be useful for troubleshooting and debugging in larger and more complex programs. It allows us to narrow down the areas where the error may be occurring and make the debugging process more efficient.
+However, it is important to note that excessive use of debug output can clutter the console and make it difficult to spot important information. It is recommended to use it sparingly and strategically.
 
-However, it is important to note that debugging output should be used only for debugging purposes and should be removed in the final version of our code. Too much debug output can make our program slower and take up unnecessary space in our code.
+Another helpful tip is to add additional information to our debug output, such as the name of the variable, to make it easier to track and understand. This can be done by using the `endl` statement to add line breaks between outputs.
 
-## See Also 
+## See Also
 
-- [Debugging Techniques in C++](https://www.geeksforgeeks.org/debugging-techniques-in-cpp/)
-- [C++ Output Streams](http://www.cplusplus.com/reference/ostream/)
-- [Debugging C++ Programs with Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-cpp-applications-in-visual-studio?view=vs-2019)
+- [Debugging in C++](https://www.cplusplus.com/debugging/)
+- [Using cout for debugging](https://stackoverflow.com/questions/12796219/using-cout-for-debugging)
+
+Debugging is an essential skill for any programmer, and printing debug output is just one of the many tools we can use to make the process easier and more efficient. So next time you encounter a bug in your C++ program, don't forget to add some `cout` statements to help you out!

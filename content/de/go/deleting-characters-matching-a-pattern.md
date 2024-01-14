@@ -1,7 +1,9 @@
 ---
-title:                "Go: Löschen von Zeichen, die einem Muster entsprechen"
+title:                "Go: Löschen von Zeichen mit passendem Muster"
+simple_title:         "Löschen von Zeichen mit passendem Muster"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,41 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man sich die Mühe machen, Zeichen zu löschen, die einem bestimmten Muster entsprechen? Nun, manchmal müssen wir in unseren Programmen Daten bereinigen oder filtern, um sie in das gewünschte Format zu bringen. Das Entfernen von Zeichen nach einem bestimmten Muster kann uns dabei helfen, diesen Prozess effizienter und weniger fehleranfällig zu gestalten.
+Hast du dich je gefragt, wie du in Go programmieren kannst, um bestimmte Zeichenfolgen aus einem Text zu löschen? Vielleicht möchtest du unerwünschte Zeichen entfernen oder eine bestimmte Formatierung beibehalten. In diesem Blogpost zeige ich dir, wie du mit der `strings` Bibliothek in Go Zeichenmuster löschen kannst.
 
-## Wie geht das?
+## Wie
 
-```Go
+Um Zeichenmuster in Go zu löschen, verwendest du die `ReplaceAll` Funktion aus der `strings` Bibliothek. Diese Funktion akzeptiert drei Argumente: Die ursprüngliche Zeichenkette, das zu löschende Zeichenmuster und die Zeichenkette, die an dessen Stelle eingesetzt werden soll. Schauen wir uns ein Beispiel an:
+
+```
 package main
 
 import (
-	"fmt"
-	"regexp"
+    "fmt"
+    "strings"
 )
 
 func main() {
-	// erstellen Sie einen regulären Ausdruck, um Zeichen zu filtern
-	reg := regexp.MustCompile(`[aeiou]`)
-
-	// zu bereinigender Text
-	text := "Golang ist eine fantastische Programmiersprache!"
-
-	// verwenden Sie den regulären Ausdruck, um übereinstimmende Zeichen zu entfernen
-	result := reg.ReplaceAllString(text, "")
-
-	// Ausgabe des bereinigten Texts
-	fmt.Println(result)
+    text := "Hello World"
+    newText := strings.ReplaceAll(text, "o", "")
+    fmt.Println(newText) // Hey Wlrld
 }
 ```
 
-Das obige Beispiel zeigt, wie wir die `regexp`-Bibliothek in Go verwenden können, um Zeichen basierend auf einem Muster zu entfernen. In diesem Fall entfernen wir alle Vokale aus dem Text und geben dann das Ergebnis aus: "Glng st n fststsch Prgrmmrshr!".
+In diesem Beispiel wird jedes Vorkommen des Buchstabens "o" in der Zeichenkette "Hello World" durch ein leeres Feld ersetzt. Das Ergebnis ist "Hey Wlrld". Du kannst auch mehrere Zeichenmuster gleichzeitig löschen, indem du sie in einem Array an `ReplaceAll` übergibst.
 
-## Tiefer Einblick
+```
+strings.ReplaceAll(text, []string{"o", "l"}, "")
+// Das Ergebnis wäre "He Wrd"
+```
 
-Das obige Beispiel war recht einfach und basiert auf einem sehr grundlegenden regulären Ausdruck. Aber was ist, wenn wir komplexere Muster haben oder sogar dynamische Muster, die sich je nach Eingabe ändern? In solchen Fällen können wir die `regexp`-Bibliothek weiter erkunden und lernen, wie wir verschiedene Funktionen wie `FindAllString` oder `ReplaceAllFunc` verwenden können, um unsere Anforderungen zu erfüllen.
+## Deep Dive
+
+Die `ReplaceAll` Funktion sucht bei jedem Aufruf die gesamte Zeichenkette nach dem angegebenen Muster ab. Wenn du jedoch nur das erste Vorkommen eines Zeichenmusters löschen möchtest, kannst du die `Replace` Funktion verwenden. Diese Funktion hat die gleichen Argumente wie `ReplaceAll`, aber löscht nur das erste Vorkommen des Musters.
+
+Wenn du mehr Kontrolle über die zu löschenden Zeichenmuster haben möchtest, kannst du auch reguläre Ausdrücke mit der `Regexp` Bibliothek von Go verwenden. Diese ermöglicht es dir, komplexere Muster zu definieren und zu löschen. Ein Beispiel für das Verwenden von regulären Ausdrücken findest du in den "See Also" Links unten.
 
 ## Siehe auch
 
-- Offizielle `regexp`-Dokumentation von Go: https://golang.org/pkg/regexp/
-- Ein Go-Kurs über die Verwendung von regulären Ausdrücken: https://www.golang-book.com/books/intro/12
-- Einige hilfreiche Tipps und Tricks, wie man reguläre Ausdrücke in Go am besten nutzen kann: https://scene-si.org/2018/04/16/gos-regex-package-is-good-but-too-hard/
+- Offizielle Go Dokumentation zur `strings` Bibliothek (https://golang.org/pkg/strings/)
+- Beispiel für die Verwendung von regulären Ausdrücken in Go (https://gobyexample.com/regular-expressions)
+- Weitere nützliche Funktionen der `strings` Bibliothek (https://www.digitalocean.com/community/tutorials/golang-manipulating-strings)

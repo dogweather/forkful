@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Merkkijonon muuntaminen isoiksi kirjaimiksi"
+title:                "Gleam: Merkkijonon kiroitus"
+simple_title:         "Merkkijonon kiroitus"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/capitalizing-a-string.md"
 ---
 
@@ -9,33 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit käyttää Gleamia merkkijonojen muokkaamiseen? Esimerkiksi monissa ohjelmointiprojekteissa tarvitaan pientä mutta tärkeää ominaisuutta, kuten merkkijonojen muuttamista isoiksi kirjaimiksi.
+Yksinkertaisesti sanottuna, pientenkin tehtävien tehostaminen on tärkeää ohjelmoinnissa. Isossa koodipohjassa, kuten ohjelmistokehityksessä, jokainen pieni apu voi auttaa parantamaan kokonaisuutta. Onneksi Gleam-ohjelmointikielen avulla pystyt helposti kasvattamaan tehokkuutta kehitystyössäsi.
 
-## Kuinka
+## Miten
 
-Gleamilla tämän ominaisuuden toteuttaminen on erittäin helppoa. Käytä vain sisäänrakennettua `String.capitalize` -funktiota ja anna sille haluamasi merkkijono parametrina. Katso esimerkki alla olevista koodilohkoista ja tulos:
+Gleam-ohjelmointikielen avulla pystyt helposti muuttamaan merkkijonon ensimmäisen kirjaimen isoksi. Tämä toiminto on erityisen hyödyllinen, kun käsitellään käyttäjän antamia syötteitä, joissa kirjainkoko saattaa vaihdella.
 
-```Gleam
-let result = String.capitalize("hei")
-io.format("Tulos: {}", [result]) // Tulostaa "Tulos: Hei"
+```
+Gleam.say("kirjoita tähän joku sana")
+|> Gleam.String.capitalize
 ```
 
-Jos haluat muuttaa merkkijonon kaikki kirjaimet isoiksi, voit käyttää `String.to_uppercase` -funktiota. Esimerkki käyttäen Gleamin `List` -moduulin `map` -funktiota:
+Tässä yksinkertaisessa esimerkissä käyttäjän antama sana "kirjoita" muuttuu muotoon "Kirjoita", joka on yleisesti hyväksytty tapa kirjoittaa suomen kielessä. 
 
-```Gleam
-let string = "tämä on pienillä kirjaimilla"
-let uppercase_string = List.map(String.to_uppercase, String.to_list(string))
-let result = String.from_list(uppercase_string)
-io.format("Tulos: {}", [result]) // Tulostaa "Tulos: TÄMÄ ON PIENILLÄ KIRJAIMILLA"
+```
+[Output] "Kirjoita"
 ```
 
-## Syvällinen sukellus
+## Syvemmälle
 
-Miten Gleamin `String.capitalize` -funktio toimii taustalla? Se käyttää `String.to_uppercase` -funktiota muuttaakseen merkkijonon ensimmäisen kirjaimen isoksi ja jättää muut kirjaimet ennalleen.
-
-Lisäksi Gleam käyttää Unicode-standardia merkkijonojen käsittelyssä, joten se osaa käsitellä monia erikoismerkkejä ja erilaisia kirjoitusjärjestelmiä oikein.
+Gleam-ohjelmointikielen "capitalize" -funktio tekee taianomaisen asian taustalla. Se käyttää Unicode Standardin toiminnallisuutta, joka huolehtii kulttuuririippuvaisista merkkien suurennoksista. Tämä tarkoittaa, että funktion avulla pystyt käsittelemään kirjaimia kaikista kielistä oikein ja yhtenäisesti. 
 
 ## Katso myös
 
-- [Gleam string-moduuli](https://gleam.run/modules/string/)
-- [Gleam Unicode-tuki](https://gleam.run/learn/glossary/#unicode)
+- [Gleam-ohjelmointikielen dokumentaatio](https://gleam.run/documentation/)
+- [Unicode Standard](https://unicode.org/standard/standard.html)

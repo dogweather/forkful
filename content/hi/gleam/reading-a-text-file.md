@@ -1,24 +1,57 @@
 ---
-title:                "Gleam: एक पाठ फ़ाइल को पढ़ना"
+title:                "Gleam: एक पाठ फ़ाइल पढ़ना"
+simple_title:         "एक पाठ फ़ाइल पढ़ना"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
-ये पहला प्रश्न है जो हम में से हर एक को आता होगा - जब भी हम एक टेक्स्ट फ़ाइल पढ़ते हैं, हम क्यों उसे पढ़ते हैं? ठीक जैसे रोज खाना खाने के लिए हम खाना बनाते हैं, ठीक वैसे ही हम भी एक टेक्स्ट फ़ाइल पढ़ते हैं क्योंकि उसमें हमारे लिए जरूरी जानकारी हो सकती है जो हमें आगे बढ़ने में मदद कर सकती है। 
+# Kyun:
+Kisi ko ek text file ko padhne mein kyun ruchi hai, iske baare mein 1-2 vakyon mein vivaran diya gaya hai.
 
-## कैसे करें
-जब आप एक टेक्स्ट फ़ाइल को पढ़ने के बारे में सोचें, तो आपके दिमाग में सबसे पहले एक प्रश्न आता होगा - अपने कोड में कैसे इस्तेमाल करें? आपको आश्चर्य हो सकता है कि ये काफी आसान है - हम आपको उस तरीके से बताएंगे जो सबसे साधारण है। तो आप जान जाएंगे कि इसकी मदद से आप अपने टेक्स्ट फ़ाइल से प्रतिदिन उपयोगी डाटा देख सकते हैं।
+## Kaise Karein:
+"```Gleam ... ```" code blocks ke andar coding udaharan aur sample output. 
+Jaise ki hum sabhi jaante hain, text files humein data ko store karne aur access karne ka ek sadhan pradaan karte hain. Lekin kya aapne kabhi socha hai ki uss text file ke andar ka data kaise padha jaata hai? Aaj hum Gleam programming language ke madhyam se ye seekhenge.
+
+Sabse pehle, humein ek text file banani hogi jiska naam "sample.txt" hoga aur jo humaare current working directory (cwd) mein hoga. Iske liye hum "create_sample_txt" naam ka function bana sakte hain, jis mein hum ye code likh sakte hain:
 
 ```Gleam
-let file = File.read("sample.txt")
-case file {
-  File.Ok(content) -> IO.print("File content: #{content}")
-  File.Err(error) -> IO.print("Error: #{error}")
+fn create_sample_txt () {
+  let file = File.open("sample.txt", [:create])
+  file.write("This is a sample text file.")
+  file.close()
 }
 ```
 
-यहां हमने एक टेक्स्ट फ़ाइल को आसानी से पढ़ने के लिए Gleam का उपयोग किया है। इस संदर्भ में हम बादली भाषा जान सकते हैं जिसका नाम है ग्लीम। यह एक उच्चस्तरीय और नवीनतम कंपाइलर है जो अन्य भाषाओं को पूरी तरह से समर्थन करता है। आप ग्लीम को अपने प्रोजेक्ट में शामिल करके आसान रूप से डाटा पढ़ सकते हैं। इस तरह से इस स्वस्थ भाषा में कोडिंग और पढ़ने दोनों
+Iske baad hum ye function humaare main function mein call karenge, jiske liye hum ye code likh sakte hain:
+
+```Gleam
+fn main () {
+  create_sample_txt()
+}
+```
+
+Ye code humaare program ko compile aur execute karne se pehle humaare create_sample_txt() function ko call karega aur ye sample.txt file humaare cwd mein create karega. Ab hum ye file ke andar ka data kaise padh sakte hain, iske baare mein jaanenge.
+
+```Gleam
+fn main () {
+  let file = File.open("sample.txt", [:read])
+  let contents = file.read_to_string()
+  file.close()
+  Debug.print(contents)
+}
+```
+
+Is code mein humne file.open() function ka ek aur parameter [:read] pass kiya hai jisse ye specify ho jaata hai ki hum iss file ko read mode mein open karna chahte hain. Uske baad humne read_to_string() function ka use kiya hai jo humaare file ke andar ka data ek string mein return karega. Aur finally, humne debug.print() function ka use kiya hai string ko print karne ke liye. Ab humaare output mein "This is a sample text file." string dekh sakte hain.
+
+## Gehri Jhaank:
+Text file ko padhne ke liye humne file.open() function mein [:read] parameter ka use kiya, lekin iss parameter mein hum aur bhi options specify kar sakte hain jaise ki [:read, :write, :append] aur [:create]. Agar hum file ko sirf read mode mein open karna chahte hain toh [:read] hi specify karna hoga.
+
+Iske alawa, hum file.read() function ka bhi use kar sakte hain jiske alawa aur bhi options available hain jaise ki read_to_string(), read_to_bytes(), read_line(), etc. In functions mein se har ek ki apni alag syntax hoti hai, isliye jo bhi data hum file se read kar rahe hain, uske hisaab se hum sahi function ka use karna hoga.
+
+See Also:
+- [Gleam File Module Documentation](https://gleam.run/modules/file/)
+- [Introduction to Gleam Programming Language](https://gleam.run/getting-started/intro/)

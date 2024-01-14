@@ -1,54 +1,57 @@
 ---
-title:                "Elm: The date actual en la programación de ordenadores"
+title:                "Elm: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué obtener la fecha actual en Elm?
 
-¿Alguna vez has necesitado obtener la fecha actual en una aplicación Elm? Si es así, ¡has venido al lugar correcto! En este post, te enseñaremos cómo obtener la fecha actual en Elm de manera sencilla y eficiente.
+Obtener la fecha actual es una tarea común en la programación, ya sea para mostrarla al usuario o para realizar cálculos basados en la fecha. En Elm, existen diferentes formas y métodos para obtener la fecha actual, así que ¡vamos a explorarlas juntos!
 
-## Cómo hacerlo
+## Cómo obtener la fecha actual en Elm
 
-En Elm, podemos utilizar la función `Time.now` del paquete `elm/time` para obtener la fecha y hora actual en Unix timestamps. Luego, podemos convertir el timestamp a una fecha legible utilizando la función `Time.toYearMonthDay` y la función `Time.toHourMinuteSecond`. Veamos un ejemplo de código:
+La forma más sencilla de obtener la fecha actual en Elm es utilizando la función `Time.now` del paquete `elm/time`. Esta función devuelve un `Time` que representa el momento actual en el formato Unix. A continuación, un ejemplo de cómo usarla:
 
-```elm
+```
 import Time exposing (..)
 
-fechaActual : Task x (Int, Int, Int)
-fechaActual =
+getCurrentDate : Time
+getCurrentDate =
     Time.now
-        |> Task.map Time.posixToMillis
-        |> Task.andThen (\milisegundos -> Time.toYearMonthDay milisegundos |> Task.map .calendar)
+```
 
-horarioActual : Task x (Int, Int, Int)
-horarioActual =
+Podemos utilizar esta función en nuestro código para mostrar la fecha actual al usuario o para realizar cálculos basados en ella.
+
+Otra opción es utilizar las funciones `toTime` y `fromTime` del módulo `Date` del paquete `elm/time`. Estas funciones nos permiten convertir el formato Unix de la fecha actual en un objeto de tipo `Date`, que podemos manipular según nuestras necesidades. A continuación, un ejemplo de cómo usarlas:
+
+```
+import Time
+import Date exposing (..)
+
+getCurrentDate : Date
+getCurrentDate =
     Time.now
-        |> Task.map Time.posixToMillis
-        |> Task.andThen (\milisegundos -> Time.toHourMinuteSecond milisegundos |> Task.map .clock)
-
+        |> Time.toTime
+        |> fromTime
 ```
 
-En este código, primero importamos el módulo `Time` y luego utilizamos la función `now` para obtener un `Task` que contiene el timestamp actual en milisegundos. Luego, utilizamos la función `andThen` para aplicar dos funciones diferentes a ese `Task`: una para obtener la fecha y otra para obtener la hora. Por último, utilizamos la función `map` para acceder a los valores específicos de la fecha y hora (a través de los campos `calendar` y `clock`, respectivamente).
+Este objeto `Date` nos da acceso a diferentes funciones para obtener los componentes de la fecha, como el día, el mes, el año, etc.
 
-El resultado de este código sería algo como esto:
+## Profundizando en la obtención de la fecha actual en Elm
 
-```
-Fecha actual: (2021, 04, 23)
-Hora actual: (16, 30, 27)
-```
+Para poder utilizar la función `Time.now`, es necesario tener en cuenta que el resultado depende del momento en que se ejecuta la función. Esto significa que si llamamos a la función en diferentes momentos, obtendremos resultados diferentes.
 
-## Profundizando
+Además, el formato Unix de la fecha actual varía según la zona horaria en la que nos encontremos. Por lo tanto, es importante tener en cuenta esta diferencia al realizar cálculos o comparar fechas.
 
-Si te interesa saber más sobre cómo obtener la fecha actual en Elm, te recomendamos revisar la documentación del paquete `elm/time` donde encontrarás más información detallada sobre la función `now` y otras funciones relacionadas con el tiempo.
-
-¡Y eso es todo por hoy! Esperamos que este post te haya sido útil para aprender cómo obtener la fecha actual en Elm. ¡Hasta la próxima!
+Otro detalle a tener en cuenta es que las funciones `toTime` y `fromTime` pueden ser costosas en términos de rendimiento, por lo que es importante utilizarlas con cautela y optimizar su uso en nuestro código.
 
 ## Ver también
 
-- [Documentación del paquete `elm/time`](https://package.elm-lang.org/packages/elm/time/latest/) 
-- [Ejemplos de código en Elm](https://elm-lang.org/examples)
-- [Foro de Elm en español](https://discourse.elm-lang.org/c/internacional/espanol)
+- [Documentación de elm/time](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Cheat sheet de Elm](https://elm-lang.org/docs/elm-docs)
+- [Tutorial de Elm en español](https://desarrolloweb.com/articulos/tutorial-elm-basico.html)

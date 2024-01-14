@@ -1,7 +1,9 @@
 ---
 title:                "Swift: קריאת קובץ טקסט"
+simple_title:         "קריאת קובץ טקסט"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/reading-a-text-file.md"
 ---
 
@@ -9,39 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-קריאת קבצי טקסט היא חלק חשוב בתכנות בשפת Swift. בלי זה, לא ניתן לעבוד עם מידע טקסטואלי ולעבדו כמו שצריך. אם אתה מעוניין להתחיל עם תכנות Swift או שאתה רוצה לשפר את הכישורים שלך, למידת קריאת קבצי טקסט היא חיונית.
+מה הסיבה לקרוא קובץ טקסט? ניתן לקרוא קבצי טקסט כדי לקבל מידע מכתוביות בסרטים, לייצא נתונים לפורמטים שונים ועוד.
 
 ## כיצד לעשות זאת
 
-הנה דוגמא פשוטה לכתיבת קוד שמאפשר לך לקרוא קובץ טקסט ולהדפיס את התוכן שלו:
+```swift
+// פתיחת קובץ טקסט
+let fileURL = URL(fileURLWithPath: "file.txt")
 
-```Swift
+// קריאה של תוכן קובץ טקסט
 do {
-    // אתר קובץ
-    let fileURL = URL(fileURLWithPath: "file.txt")
-    
-    // נקרא את התוכן של הקובץ ונמיר אותו לסטרינג
-    let text = try String(contentsOf: fileURL)
-    
-    // הדפסת התוכן
-    print(text)
+    let text = try String(contentsOf: fileURL, encoding: .utf8)
+    print(text) // פלט הטקסט מהקובץ
 } catch {
-    // טיפול בשגיאות
-    print("לא ניתן לקרוא את הקובץ.")
+    print("שגיאה בקריאת הקובץ") 
+}
+
+// כתיבת נתונים לקובץ טקסט
+let text = "זהו טקסט לכתיבה לקובץ"
+do {
+    try text.write(to: fileURL, atomically: false, encoding: .utf8)
+} catch {
+    print("שגיאה בכתיבת הטקסט לקובץ")
 }
 ```
 
-### פלט
+## מעמקים
 
-```
-זהו קובץ טקסט פשוט.
-כאן אנחנו מדפיסים את התוכן שלו.
-```
+כדי לקרוא קובץ טקסט, ניתן להשתמש בפונקציות של המחלקה המובנית `String` וניתן לייצא נתונים לפורמטים שונים באמצעות המחלקה `Data`. ישנן גם ספריות נוספות כמו `FileKit` שעוזרות בקריאת וכתיבת קבצי טקסט בצורה נוחה יותר.
 
-כפי שאפשר לראות, כדי לקרוא קובץ טקסט ניתן להשתמש בפונקציות של Swift כמו URL ו- String. יש לכתוב את הקוד בתוך פקודת do-catch כדי לטפל באפשרות של שגיאה בזמן הרצה.
+## ראה גם
 
-## ייעול נקודתי
-
-כדי להקל על עבודה עם טקסט בתכנות בשפת Swift, קיימות טכניקות נקודתיות שיעזרו לך לסדר ולעבד את המידע בצורה יעילה יותר. ניתן להשתמש בפונקציות כמו components(separatedBy:), trimmingCharacters(in:) וכו' להפרדת הטקסט לפי תבניות שונות ולהסרה של תווים לא רצויים.
-
-למידע נוסף על טכניקות נקודתיות בשפת Swift, ניתן לקרוא את המדריך הבא: [נקודיות 101 ב-Swift](https://www.raywenderlich.com/
+- [מדריך על כתיבה וקריאת קבצי טקסט עם Swift](https://medium.com/flawless-app-stories/read-and-write-files-in-swift-a-users-tutorial-8ff0bcae4ed5)
+- [מסמך רשמי על המחלקה String ופונקציות קריאה וכתיבה](https://developer.apple.com/documentation/foundation/string)
+- [ספריית FileKit לקריאה וכתיבת קבצים בסגנון יותר אינטואיטיבי](https://github.com/nvzqz/FileKit)

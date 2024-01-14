@@ -1,37 +1,43 @@
 ---
-title:                "PHP: Das Lesen einer Textdatei"
+title:                "PHP: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-In der Welt der Programmierung gibt es unzählige Aufgaben, die erledigt werden müssen. Eine davon ist das Lesen von Textdateien. Dies kann aus verschiedenen Gründen notwendig sein, wie zum Beispiel das Verarbeiten von Benutzereingaben oder das Lesen von Konfigurationsdateien. In diesem Blog-Beitrag werden wir uns darauf konzentrieren, wie man eine Textdatei in PHP liest und welche Möglichkeiten es dabei gibt.
+Das Einlesen von Textdateien ist ein grundlegender Schritt in der Programmierung. Es ermöglicht uns, Daten aus externen Quellen in unser Programm zu integrieren und weiterzuverarbeiten. In diesem Blog-Beitrag werden wir zeigen, wie man dies in PHP erreichen kann.
 
-## Wie geht's?
+# Wie man Textdateien in PHP liest
 
-Um eine Textdatei in PHP zu lesen, gibt es verschiedene Funktionen, aber die grundlegende Methode ist die Verwendung der Funktion `file_get_contents()`. Diese Funktion liest den Inhalt einer Datei in einen String und gibt ihn zurück. Hier ist ein Beispielcode:
+Das Einlesen von Textdateien in PHP ist relativ einfach. Zunächst müssen wir die Datei öffnen und dann die Zeilen der Datei auslesen und in einer Variablen speichern. Dies kann mit der Funktion `file()` erreicht werden:
 
 ```PHP
-$text = file_get_contents("mein_text.txt");
-echo $text;
+$file = file("meine_datei.txt");
 ```
 
-Die Funktion `file_get_contents()` akzeptiert auch eine optionale Parameter, um den Lesevorgang zu steuern, wie zum Beispiel die Anzahl der zu lesenden Byte oder die Startposition im Dateiinhalt. Um mehr über diese Optionen zu erfahren, können Sie die Dokumentation von PHP zu Rate ziehen.
+Diese Funktion liest die gesamte Datei ein und gibt die Zeilen als Array zurück. Wir können jetzt durch dieses Array iterieren und die Daten weiterverarbeiten:
 
-Es gibt auch andere Funktionen, die verwendet werden können, um eine Textdatei in PHP zu lesen, wie zum Beispiel `fopen()` und `fgets()`. Diese können jedoch komplizierter sein, daher ist die Verwendung von `file_get_contents()` oft die einfachste Option.
+```PHP
+foreach($file as $line) {
+    echo $line . "<br>";
+}
+```
 
-## Tief in die Materie eintauchen
+In diesem Beispiel geben wir einfach jede Zeile der Datei aus. Natürlich kann man hier je nach Bedarf auch andere Aktionen durchführen, wie zum Beispiel das Speichern der Daten in einer Datenbank.
 
-Ein wichtiger Aspekt beim Lesen von Textdateien ist die Kodierung. Wenn die Datei in einer anderen Kodierung als der Standardsprache des Servers gespeichert wird, kann es zu Problemen beim Lesen der Datei kommen. In diesem Fall müssen Sie die Funktion `mb_convert_encoding()` verwenden, um den Dateiinhalt in die gewünschte Kodierung zu konvertieren.
+# Tiefergehende Informationen
 
-Eine weitere Sache, die Sie beim Lesen von Textdateien beachten sollten, sind Umbrüche. In Windows werden mithilfe des Zeichenkodes `"\r\n"` Umbrüche erzeugt, während in Linux und Mac OS `"\n"` verwendet wird. Wenn Sie sicherstellen möchten, dass Sie den Dateiinhalt richtig lesen, müssen Sie vielleicht die Funktion `str_replace()` verwenden, um diese Umbrüche zu vereinheitlichen.
+Es gibt verschiedene Funktionen in PHP, die beim Einlesen von Textdateien hilfreich sein können. Eine davon ist `fgets()`, welche eine Zeile aus der Datei ausliest und sie als String zurückgibt. Wir können auch die Position in der Datei mit der Funktion `ftell()` auslesen und mit `fseek()` zu einer bestimmten Position in der Datei springen.
 
-## Siehe auch
+Außerdem ist es wichtig, beim Einlesen von Textdateien auf die Dateicodierung zu achten, um Sonderzeichen richtig zu verarbeiten. In PHP gibt es dafür die Funktion `mb_convert_encoding()`, die die Codierung der Datei ändert.
 
-- [PHP: Lesen von Dateien](https://www.php.net/manual/de/function.file-get-contents.php)
-- [PHP: mb_convert_encoding() Funktion](https://www.php.net/manual/de/function.mb-convert-encoding.php)
-- [PHP: str_replace() Funktion](https://www.php.net/manual/de/function.str-replace.php)
+# Siehe auch
+
+- Offizielle Dokumentation zu Dateifunktionen in PHP: https://www.php.net/manual/de/ref.filesystem.php
+- Tutorial zum Einlesen von Textdateien in PHP: https://www.php-einfach.de/php-tutorial/ein-ausgabe-dateizugriffe/einlesen-textdateien/

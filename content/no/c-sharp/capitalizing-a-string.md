@@ -1,7 +1,9 @@
 ---
-title:                "C#: Stor bokstav i en streng"
+title:                "C#: Store bokstaver i en streng"
+simple_title:         "Store bokstaver i en streng"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/capitalizing-a-string.md"
 ---
 
@@ -9,36 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å kunne kapitalisere en streng, eller gjøre den om til store bokstaver, er en viktig ferdighet i programmering. Det kan være nyttig når du jobber med data eller skriver ut tekst på skjermen.
+Det å konvertere en streng til store bokstaver kan være en svært nyttig funksjon i mange programmeringssammenhenger. Det kan hjelpe med å gjøre data mer leselige og organiserte, og det kan også være en del av en større databehandling eller formateringsprosess.
 
 ## Hvordan
 
-Å kapitalisere en streng i C# er enkelt. Alt du trenger å gjøre er å bruke "ToUpper" metoden på strengen din. Se kodeblokken nedenfor for et eksempel:
+Å konvertere en streng til store bokstaver i C# er en enkel prosess som kan gjøres ved hjelp av en innebygd funksjon kalt "ToUpper()". Denne funksjonen tar inn en streng som argument og returnerer en kopi av strengen med alle bokstavene omgjort til store bokstaver. La oss se på et eksempel:
 
 ```C#
-string tekst = "dette er en test";
-string kapitalisertTekst = tekst.ToUpper();
-Console.WriteLine(kapitalisertTekst);
+string navn = "oskar";
+string storNavn = navn.ToUpper();
+Console.WriteLine(storNavn);
 ```
 
-Output:
-
-```
-DETTE ER EN TEST
-```
-
-Det er viktig å merke seg at "ToUpper" metoden vil ikke bare endre alle små bokstaver til store bokstaver, men den vil også ignorere alle tegn som ikke er bokstaver, som for eksempel tall eller spesialtegn.
+Dette koden vil skrive ut "OSKAR" til konsollen. Som du kan se, er det bare å kalle på funksjonen "ToUpper()" på strengen du ønsker å konvertere.
 
 ## Deep Dive
 
-Nå som du vet hvordan du kan kapitalisere en streng, la oss se på noen flere ting å huske på når du bruker denne metoden. For det første vil "ToUpper" metoden bare endre bokstavene til store bokstaver i følge standard ASCII-tabellen. Dette betyr at bokstaver fra andre språk, som for eksempel "å", "ø" og "æ", ikke vil bli endret til sine tilsvarende store bokstaver.
+For de som er interessert i å gå dypere inn i å konvertere strenger til store bokstaver, er det viktig å vite at denne funksjonen kun konverterer bokstaver som er en del av det engelske alfabetet. Dette betyr at bokstaver med aksenter eller andre spesielle symboler ikke vil bli omgjort, med mindre de er en del av det engelske alfabetet. Det er også verdt å merke seg at denne funksjonen ikke påvirker tall eller andre tegn i en streng.
 
-Hvis du trenger å kapitalisere en streng som inneholder disse bokstavene, kan du bruke "ToUpperInvariant" metoden i stedet. Dette vil bruke en annen regel for å endre bokstavene til store bokstaver, som vil ta hensyn til språket som brukes i operativsystemet ditt.
-
-En annen ting å huske på er at "ToUpper" metoden vil skape en ny streng, i stedet for å endre den eksisterende strengen. Dette betyr at hvis du vil lagre den kapitaliserte versjonen av strengen, må du tilordne den til en ny variabel.
+Det finnes også alternative måter å konvertere en streng til store bokstaver på i C#, som å bruke funksjonen "ToLower()" for å omgjøre alle bokstavene til små bokstaver. Det finnes også måter å gjøre dette på ved å bruke "CultureInfo" og "TextInfo" klassene for å håndtere spesifikke kulturavhengige konverteringer.
 
 ## Se Også
 
-- [string.ToUpper metode dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
-- [Hvordan formaterer du tekst i C#](https://www.codecademy.com/learn/learn-c-sharp/modules/learn-c-sharp-strings/cheatsheet)
-- [En guide til ASCII-tabellen](https://www.ascii-code.com/)
+For mer informasjon om konvertering av strenger i C#, kan du sjekke ut disse nyttige lenkene:
+
+- [Microsofts offisielle dokumentasjon om "ToUpper()" funksjonen](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
+- [En guide til kulturavhengig tekstbehandling i C#](https://www.c-sharpcorner.com/UploadFile/a74768/culture-dependent-text-info-functions/)
+- [En diskusjon om forskjellene mellom "ToUpper()" og "ToUpperInvariant()" funksjonene](https://stackoverflow.com/questions/4930859/difference-between-toupper-and-toupperinvariant-in-net)

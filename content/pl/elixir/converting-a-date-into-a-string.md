@@ -1,51 +1,48 @@
 ---
-title:                "Elixir: Konwertowanie daty na ciąg znaków"
+title:                "Elixir: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego Konwertować Datę na String?
+## Dlaczego
 
-Konwertowanie daty na string jest częstym zadaniem w programowaniu, szczególnie w Elixirze. Jest to przydatne, gdy chcemy wyświetlić datę w formacie, czytelnym dla ludzi, lub gdy potrzebujemy przekazać ją do innej funkcji lub systemu. W tym artykule dowiesz się, jak wykonać tę konwersję w Elixirze.
+Konwersja daty na ciąg znaków jest niezbędnym elementem w wielu programach Elixir. Dzięki temu można wyświetlić datę w czytelny sposób lub przekazać ją jako argument do innych funkcji. W tym wpisie dowiesz się, jak w prosty sposób przekonwertować datę na ciąg znaków w Elixir.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Możemy skorzystać z funkcji `to_string` wraz z biblioteką `Calendar` w celu konwersji daty na string. Oto przykład:
-
-```Elixir
-date = ~D[2021-10-15]
-Calendar.to_string(date, {:month, :day, :year})
-```
-
-Output: `"October 15, 2021"`
-
-Możemy także podać format daty jako drugi argument w funkcji `to_string`, na przykład:
+W celu przekonwertowania daty na ciąg znaków w Elixir, możemy skorzystać z funkcji `Calendar.strftime/2`. Przyjmuje ona dwa argumenty - format daty i wartość daty. Na przykład:
 
 ```Elixir
-date = ~D[2021-10-15]
-Calendar.to_string(date, "YYYY-MM-DD")
+date = {{2019, 10, 31}, {23, 59, 59}}
+Calendar.strftime(date, "%d-%m-%Y %H:%M:%S")
 ```
 
-Output: `"2021-10-15"`
+W wyniku otrzymamy następujący ciąg znaków:
 
-## Deep Dive
+`31-10-2019 23:59:59`
 
-Warto pamiętać, że w Elixirze daty są przechowywane jako tuplet danych `{:calendar, {year, month, day}}`. Dzięki temu możemy łatwo wydobyć poszczególne elementy daty i wykorzystać je w konwersji do stringa. Przykładowo:
+Możemy również wykorzystać funkcję `DateTime.to_iso8601/2`, która przekonwertuje datę do formatu ISO 8601. Przykładowe użycie:
 
 ```Elixir
-date = {Calendar.ISO, {2021, 10, 15}}
-"#{elem(date, 1)}-#{elem(date, 2)}-#{elem(date, 3)}"
+date = {{2020, 01, 01}, {12, 00, 00}}
+DateTime.to_iso8601(date, extended: true)
 ```
 
-Output: `"2021-10-15"`
+Otrzymamy wówczas taki ciąg znaków:
 
-Możemy także użyć funkcji `to_string` na poszczególnych elementach daty, na przykład `elem(date, 2) |> to_string` lub `elem(date, 3) |> to_string`.
+`2020-01-01T12:00:00+00:00`
 
-# Zobacz także
+## Głębszy zanurzenie
 
-- [Dokumentacja Elixir - Calendar](https://hexdocs.pm/elixir/Calendar.html)
-- [Poradnik Elixir School - Dates and Times](https://elixirschool.com/en/lessons/advanced/dates/)
-- [Konwersja daty na string w Elixirze - blog post (po angielsku)](https://blog.usejournal.com/how-to-convert-dates-to-strings-in-elixir-525f9e7c7a71)
+W przypadku funkcji `Calendar.strftime/2` możemy wykorzystać różne symbole, aby dostosować format daty do swoich potrzeb. Na przykład `%Y` oznacza rok w formacie czterocyfrowym, zaś `%y` - dwucyfrowym. Pełną listę symboli oraz ich opis możesz znaleźć w dokumentacji Elixir. W przypadku funkcji `DateTime.to_iso8601/2` możemy określić, czy chcemy wyświetlić czas w formacie rozszerzonym czy skróconym, a także ustawić strefę czasową.
+
+## Zobacz także
+
+- Dokumentacja Elixir na temat konwersji daty na ciąg znaków: https://hexdocs.pm/elixir/Calendar.html#strftime/2
+- Przykłady użycia funkcji `Calendar.strftime/2`: https://www.tutorialspoint.com/elixir/elixir_calendar_module.htm
+- Dokumentacja Elixir na temat konwersji daty do formatu ISO 8601: https://hexdocs.pm/elixir/DateTime.html#to_iso8601/2

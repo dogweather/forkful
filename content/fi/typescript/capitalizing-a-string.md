@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Merkkijonon suurennus"
+title:                "TypeScript: Merkkijonon päästäminen isoksi"
+simple_title:         "Merkkijonon päästäminen isoksi"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/capitalizing-a-string.md"
 ---
 
@@ -9,56 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä, miksi haluat muuttaa merkkijonon ensimmäisen kirjaimen isoiksi kirjaimiksi TypeScriptissä. Se voi auttaa tekstin luettavuudessa, noudattaa ohjelmointityyliäsi tai yksinkertaisesti näyttää ammattimaisemmalta.
+Miksi haluaisit muuttaa merkkijonon kirjainkoon ensimmäisen kirjaimen suureksi?
+
+Joissakin tapauksissa ohjelmoinnin prosessissa on tarpeen muuttaa merkkijonon kirjainkoko ensimmäisestä kirjaimesta suureksi. Tämä voi johtua esimerkiksi sisäänkirjautumisjärjestelmän vaatimuksesta tai käyttäjän nimien muotoilun odotuksista. Jatka lukemista oppiaksesi, kuinka tämä voidaan tehdä TypeScriptillä.
 
 ## Miten
 
-Voit muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi TypeScriptissä käyttämällä sisäänrakennettua.toUpperCase() -metodia. Seuraava koodiesimerkki näyttää, kuinka tämä tehdään:
-
 ```typescript
-let merkkijono = "tere" 
-console.log (["Uusi merkkijono: " + merkkijono[0].toUpperCase () + merkkijono.slice (1)]);
+// Luodaan muuttuja merkkijonolla
+let nimi: string = "mikko";
+
+// Muunna merkkijonon kirjainkoko suureksi
+let isoNimi = nimi.charAt(0).toUpperCase() // "M"
+
+// Yhdistä suuri kirjain ja alkuperäinen merkkijono
+let uusiNimi = isoNimi + nimi.slice(1); // "Mikko"
+
+// Tulostaa: "Mikko"
+console.log(uusiNimi);
 ```
 
-Tulostus olisi:
+Ensimmäisessä vaiheessa luomme muuttujan "nimi" ja määrittelemme sen arvoksi "mikko" merkkijonon. Sitten käytämme "charAt" -funktiota valitaksemme ensimmäisen kirjaimen ja muuttamaan sen kirjainkoko suureksi "toUpperCase" -funktiolla. Lopuksi yhdistämme suuren kirjaimen ja alkuperäisen merkkijonon käyttämällä "slice" -funktiota ja tulostamme uuden nimen konsoliin.
 
-```typescript
-Uusi merkkijono: Tere
-```
+## Syvemmälle
 
-Voit myös käyttää tätä metodia muille kirjaimille merkkijonon sisällä. Tässä esimerkki, joka muuttaa jokaisen sanan ensimmäisen kirjaimen isoksi kirjaimeksi:
-
-```typescript
-let tekstinMerkkijono = "terve maailma" 
-console.log (tekstinMerkkijono.split (''). map (sana => sana.charAt (0) .toUpperCase () + sana.slice (1). Join ('')));
-```
-
-Tulostus olisi:
-
-```typescript
-Terve Maailma
-```
-
-## Syvällinen sukellus
-
-Toinen tapa muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi on käyttää Regular Expressionsia. Voit luoda säännöllisen ilmauksen, joka tunnistaa ensimmäisen merkin ja korvaa sen isolla kirjaimella. Seuraavassa koodiesimerkissä käytetään replace-metodia ja säännöllistä lausetta vaihtamaan "h" isolla "H":lla:
-
-```typescript
-let säännöllinenLauseke = /(^h)/g 
-let merkkijono = "hei" 
-console.log (merkkijono.replace (säännöllinenLauseke, "H"));
-```
-
-Tulostus olisi:
-
-```typescript
-Hei
-```
-
-On tärkeää muistaa, että tällä tavalla et voi muuttaa kaikkia merkkejä isoksi kirjaimeksi, vain ensimmäisen merkin.
+Merkkijonon kirjainkoon muuttaminen on vain yksi tapa manipuloida merkkijonoja TypeScriptissä. Myös muut funktiot, kuten "toLowerCase" ja "replace", voivat olla hyödyllisiä merkkijonojen muotoilussa. TypeScriptillä on myös sisäänrakennettu rajapinta "String", jolla on monia hyödyllisiä toimintoja merkkijonojen käsittelemiseen.
 
 ## Katso myös
 
-- [toUpperCase ()](https://www.w3schools.com/jsref/jsref_touppercase.asp)
-- [replace ()](https://www.w3schools.com/jsref/jsref_replace.asp)
-- [Regular Expressions](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [TypeScriptin viralliset dokumentit merkkijonojen käsittelystä](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [MDN:n opas merkkijonon käsittelystä JavaScriptillä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)

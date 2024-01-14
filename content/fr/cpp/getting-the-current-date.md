@@ -1,7 +1,9 @@
 ---
 title:                "C++: Obtenir la date actuelle"
+simple_title:         "Obtenir la date actuelle"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/getting-the-current-date.md"
 ---
 
@@ -9,44 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Saviez-vous qu'il est possible d'obtenir la date actuelle en C++ ? Que ce soit pour programmer un système de rappel, afficher la date dans votre jeu vidéo ou simplement pour votre propre curiosité, connaître la date actuelle est un outil utile pour tout programmeur. Dans cet article, nous verrons comment obtenir la date actuelle en C++ et plongerons plus en profondeur dans ce sujet fascinant.
+Obtenir la date et l'heure actuelles est une tâche courante en programmation. Cela peut être utile pour enregistrer la date et l'heure d'un événement, pour générer des rapports ou simplement pour afficher l'heure actuelle sur un programme.
 
 ## Comment faire
 
-Pour obtenir la date actuelle en C++, nous utiliserons la bibliothèque standard <ctime>. Voici un exemple de code pour afficher la date actuelle :
+Il existe différentes façons d'obtenir la date et l'heure actuelles en C++. L'une des plus courantes est d'utiliser la fonction time() de la bibliothèque <ctime>. Cette fonction renvoie le nombre de secondes écoulées depuis le 1er janvier 1970, appelé le temps UNIX.
 
 ```C++
 #include <iostream>
 #include <ctime>
 
-int main() {
-    // Obtient l'heure actuelle en utilisant la bibliothèque <ctime>
-    std::time_t dateCourante = std::time(0);
+using namespace std;
 
-    // Convertit l'heure en format lisible
-    std::cout << "La date actuelle est : " << std::ctime(&dateCourante);
+int main() {
+    // obtenir le temps actuel
+    time_t now = time(0);
     
+    // convertir le temps actuel en une structure tm
+    tm *ltm = localtime(&now);
+    
+    // afficher la date et l'heure actuelles
+    cout << "Date et heure actuelles: " << ltm->tm_mday << "/" 
+        << ltm->tm_mon + 1 << "/" << ltm->tm_year + 1900 << " "
+        << ltm->tm_hour << ":" << ltm->tm_min << ":" << ltm->tm_sec << endl;
+        
     return 0;
 }
 ```
-### Explication :
 
-Dans cet exemple, nous utilisons la fonction <time> pour obtenir la date actuelle en utilisant la variable "dateCourante". Nous convertissons ensuite cette date en un format plus lisible en utilisant la fonction <ctime> et l'affichons à l'aide de la fonction "cout" de la bibliothèque <iostream>.
+La sortie sera quelque chose comme ceci : "Date et heure actuelles : 20/05/2021 14:30:00"
 
-Voici un exemple de sortie pour ce code :
+## Exploration approfondie
 
-```
-La date actuelle est : Thu Jun 03 16:07:19 2021
-```
+Pour le moment, nous avons seulement obtenu la date et l'heure actuelles sous forme de chaîne de caractères. Mais que se passe-t-il si nous voulons effectuer des calculs ou manipuler les éléments individuels de la date et de l'heure ?
 
-## Plongée en profondeur
-
-Maintenant que nous savons comment obtenir la date actuelle en C++, voyons en quoi consiste réellement cette date. En utilisant la bibliothèque <ctime>, nous pouvons également accéder à des fonctions plus précises pour obtenir l'heure, les minutes et les secondes. Nous pouvons également utiliser des fonctions pour comparer des dates, les convertir en différents fuseaux horaires et bien plus encore.
-
-Une autre chose intéressante à noter est que nous pouvons également modifier la date actuelle en utilisant la fonction <mktime>. Cela peut être utile pour créer un calendrier personnalisé ou pour tester des fonctionnalités basées sur la date dans un programme.
+Heureusement, la structure tm que nous avons utilisée dans l'exemple précédent contient toutes les informations nécessaires. Par exemple, ltm->tm_mday contient le jour du mois, ltm->tm_mon contient le mois et ainsi de suite. Vous pouvez utiliser ces informations pour effectuer des calculs ou pour créer un format de date personnalisé.
 
 ## Voir aussi
 
-- <a href="https://www.cplusplus.com/reference/ctime/" target="_blank">Documentation de la bibliothèque <ctime></a>
-- <a href="https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm" target="_blank">Guide sur la manipulation de la date et de l'heure en C++</a>
-- <a href="http://www.cplusplus.com/reference/ctime/mktime/" target="_blank">Fonction <mktime> de la bibliothèque <ctime></a>
+- [Documentation sur la fonction time()](https://www.cplusplus.com/reference/ctime/time/)
+- [Exemples de codes pour obtenir la date et l'heure actuelles en C++](https://www.w3schools.com/cpp/cpp_date.asp)

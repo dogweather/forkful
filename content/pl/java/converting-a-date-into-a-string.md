@@ -1,7 +1,9 @@
 ---
 title:                "Java: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/converting-a-date-into-a-string.md"
 ---
 
@@ -9,42 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami w programowaniu potrzebujemy konwertować datę na łańcuch znaków, aby móc wyświetlić ją użytkownikowi w czytelnej formie lub przekazać jako argument do innej funkcji. Jest to bardzo powszechne zadanie, dlatego w tym artykule opowiemy o tym, jak to zrobić w języku Java.
+Konwertowanie daty na ciąg znaków jest częstym zadaniem w programowaniu, szczególnie w aplikacjach związanych z zarządzaniem czasem i wymianą danych. Jest to przydatna umiejętność, która pozwala na wyświetlanie dat w różnych formatach lub przechowywanie ich w bazach danych.
 
 ## Jak to zrobić
 
-Konwersja daty na łańcuch znaków w Javie jest bardzo prosta i wymaga użycia klasy DateFormat oraz jej metody format. To pozwala na zdefiniowanie odpowiedniego formatu dla daty i przekonwertowanie jej do żądanej postaci. Poniżej znajduje się przykładowy kod w języku Java oraz jego wynik:
+Aby przekonwertować datę na ciąg znaków w języku Java, możemy skorzystać z metody `format()` klasy `SimpleDateFormat`. Poniżej przedstawiamy przykład kodu oraz wynik, który otrzymamy:
 
-```java
-import java.text.DateFormat;
+```Java
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class FormatowanieDaty {
-
-    public static void main(String[] args) {
-        Date data = new Date();
-        DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
-        
-        String dataJakoString = format.format(data);
-        
-        System.out.println(dataJakoString);
-    }
-}
+Date date = new Date();
+SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+String dateString = dateFormat.format(date);
+System.out.println(dateString);
 ```
 
-```
-07/08/2021
-```
+Output: 28/08/2021
 
-W powyższym przykładzie użyliśmy klasy SimpleDateFormat, aby określić format daty jako "dzień/miesiąc/rok" i przekonwertować bieżącą datę do łańcucha znaków.
+W powyższym przykładzie użyliśmy specyficznego formatu "dd/MM/yyyy", ale istnieje wiele innych opcji, takich jak "MM/dd/yyyy" czy "dd-MMM-yyyy", które pozwalają na wyświetlanie daty w różnych stylach.
 
 ## Deep Dive
 
-Jeśli chcesz dowiedzieć się więcej na temat konwertowania daty na łańcuch znaków w Javie, to polecamy zapoznać się z dokumentacją klasy DateFormat oraz jej różnych implementacji, takich jak SimpleDateFormat czy DateTimeFormatter. W niektórych przypadkach, konwersja daty może wymagać użycia również metody parse, która pozwala na przetworzenie łańcucha znaków w datę.
+Warto zauważyć, że metoda `format()` również może przyjmować obiekt `Date` jako argument, co umożliwia konwersję daty zapisanej w innym formacie. Ponadto, istnieje możliwość sformatowania daty z uwzględnieniem strefy czasowej czy ustawienia odpowiedniego języka dla miesięcy.
 
-## Zobacz również
+W celu uzyskania głębszego zrozumienia konwertowania daty na ciąg znaków, warto zapoznać się z dokumentacją Java oraz przećwiczyć różne przypadki w praktyce.
 
-- [JavaDocs: DateFormat (javadoc.io)](https://javadoc.io/doc/javax.xml.bind/jaxb-api/2.2.12/javax/xml/bind/DatatypeConverter.html)
-- [JavaDocs: SimpleDateFormat (javadoc.io)](https://javadoc.io/doc/java.base/java/text/SimpleDateFormat.html)
-- [JavaDocs: DateTimeFormatter (javadoc.io)](https://javadoc.io/doc/java.base/java/time/format/DateTimeFormatter.html)
+## Zobacz też
+
+- [Java Documentation](https://docs.oracle.com/javase/10/docs/api/java/text/SimpleDateFormat.html)
+- [Tutorial: Working with Dates in Java](https://www.baeldung.com/java-date-to-string-conversion)
+- [How to Convert Date to String in Java](https://www.javacodeexamples.com/convert-date-to-string-in-java/1364)

@@ -1,70 +1,65 @@
 ---
-title:                "Rust: Søking og bytting av tekst"
+title:                "Rust: Søke og erstatte tekst"
+simple_title:         "Søke og erstatte tekst"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+##Hvorfor
 
-Denne bloggposten tar for seg søke- og erstatningsfunksjonaliteten i Rust-programmeringsspråket. Dette er en viktig del av enhver programmeringsoppgave, og det er viktig å ha en god forståelse for hvordan det fungerer. Ved å lære hvordan man kan søke og erstatte tekst i Rust, vil du kunne gjøre endringer i kodebasen din mer effektivt og unngå feil.
+Når du jobber med programmering, kan du ofte komme over situasjoner der du må søke og erstatte bestemte tekster i koden din. Dette kan være en tidkrevende og kjedelig oppgave hvis du må gjøre det manuelt. Heldigvis er det en enkel og effektiv løsning for dette problemet i Rust programmeringsspråk.
 
-# Hvordan gjøre det
+##Slik gjør du det
 
-For å søke og erstatte tekst i Rust, kan du bruke funksjonene `replace` og `replace_all` tilgjengelig i standardbiblioteket. For å bruke disse funksjonene, må du først importere `std::string::String` og deretter bruke `replace` eller `replace_all` på en streng variabel. 
+I Rust har vi en innebygd funksjon som heter `replace`. Denne funksjonen lar deg søke etter et bestemt tekststykke og erstatte det med en annen tekst. For å bruke denne funksjonen, må du først importere `replace` funksjonen fra `std:: string` biblioteket. Deretter kan du bruke den i koden din som følger:
 
 ```Rust
-use std::string::String;
+use std::string::replace;
 
-fn main() {
-    let mut text = String::from("Hei, hvordan har du det?");
-    
-    // Erstatter den første forekomsten av "hei" med "hallo"
-    text = text.replace("hei", "hallo");
-    
-    // Erstatter alle forekomster av "o" med "a"
-    text = text.replace_all("o", "a");
-    
-    println!("{}", text);
-}
+let original_text = "Hei, dette er en tekststreng for eksempel";
+let ny_text = replace(original_text, "for eksempel", "for illustrasjon");
+
+println!("Original tekst: {}", original_text);
+println!("Ny tekst: {}", ny_text);
+
 ```
 
-Denne koden vil gi følgende utskrift:
+Når du kjører denne koden vil utgangen bli:
 
-`Hallo, hvrdan har du dat?`
+```
+Original tekst: Hei, dette er en tekststreng for eksempel
+Ny tekst: Hei, dette er en tekststreng for illustrasjon
+```
 
-Når du bruker `replace`-funksjonen, vil den bare erstatte den første forekomsten av den gitte teksten. Hvis du vil erstatte alle forekomster i en streng, må du bruke `replace_all`-funksjonen.
+Som du kan se, erstattet funksjonen `replace` den opprinnelige teksten med den nye teksten du angav. Du kan også bruke denne funksjonen på en variabel istedenfor en fast tekst.
 
-# Dykk dypere
+##Dypdykk
 
-I tillegg til å bruke `replace` og `replace_all` til å søke og erstatte tekst i en streng, kan du også bruke regulære uttrykk for å gjøre mer kompliserte søk og erstatninger. Regulære uttrykk er et kraftig verktøy som kan hjelpe deg med å finne mønstre i tekst og gjøre avanserte endringer i en streng.
-
-For å bruke regulære uttrykk i Rust, må du først importere `regex`-biblioteket. Deretter kan du bruke funksjonen `Regex::new` for å lage et regulært uttrykk, og `replace_all`-funksjonen for å bruke det på en streng.
+Hvis du ønsker å utføre mer avanserte søk og erstatningsoperasjoner, har Rust et annet alternativ som kan være nyttig for deg - `regex` biblioteket. Dette biblioteket lar deg bruke regulære uttrykk for å søke og erstatte tekst. For å bruke dette biblioteket, må du først importere det i koden din som følger:
 
 ```Rust
 use regex::Regex;
-
-fn main() {
-    let text = "Hei, mitt navn er Per. Jeg liker å kode i Rust";
-    
-    let re = Regex::new(r"i\sRust$").unwrap();
-    let new_text = re.replace_all(&text, " i Java").to_string();
-    
-    println!("{}", new_text);
-}
 ```
 
-Denne koden vil gi følgende utskrift:
+Deretter kan du bruke `Regex` struct for å konstruere et regulært uttrykk og deretter bruke `replace_all` metoden for å søke og erstatte teksten din. Et eksempel kan se slik ut:
 
-`Hei, mitt navn er Per. Jeg liker å kode i Java`
+```Rust
+let original_text = "Hei, dette er en tekststreng for eksempel";
+let regex = Regex::new(r"for eksempel").unwrap();
+let ny_text = regex.replace_all(&original_text, "for illustrasjon");
 
-I dette eksempelet brukte vi et regulært uttrykk til å finne og erstatte teksten "i Rust" med "i Java" på slutten av en streng.
+println!("Original tekst: {}", original_text);
+println!("Ny tekst: {}", ny_text);
+```
 
-# Se også
+Denne koden vil gi samme resultat som i forrige eksempel, men gir deg også muligheten til å utføre mer avanserte søk og erstatningsoperasjoner ved hjelp av regulære uttrykk.
 
-- Offisiell Rust-dokumentasjon for `replace` og `replace_all` funksjonene: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
-- Regex-dokumentasjon for Rust: https://docs.rs/regex/1.3.9/regex/
+##Se Også
 
-Takk for at du leste denne bloggposten om å søke og erstatte tekst i Rust. Forhåpentligvis har du nå fått en god forståelse for hvordan du kan bruke denne funksjonaliteten til å gjøre endringer i din egen Rust-kode. Lykke til videre med programmering i Rust!
+- [Rust Dokumentasjon om Søk og Erstatt Operasjoner](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [Regex Dokumentasjon for Rust](https://docs.rs/regex/1.4.2/regex/)
+- [En Gjennomgang av Regulære Uttrykk i Rust](https://medium.com/quick-code/regex-in-rust-4beb1b723e80)

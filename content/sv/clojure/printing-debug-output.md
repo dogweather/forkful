@@ -1,55 +1,33 @@
 ---
-title:                "Clojure: Utmatning av felsökningsresultat"
+title:                "Clojure: Utmatning av felsökningsdata"
+simple_title:         "Utmatning av felsökningsdata"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
+När man kodar i Clojure kan det ibland vara frustrerande när något inte går som man tänkt sig. Det är då vanligt att man vill felsöka och förstå vad som egentligen händer i koden. Här kommer det att visa sig hur utskrift av debug-information kan vara till stor hjälp.
 
-Att skriva ut debuggutdata är ett viktigt verktyg för att felsöka och förstå hur koden fungerar. Genom att skriva ut olika värden och variabler kan du se vilka värden som tilldelas och om de är korrekta. Detta hjälper till att lösa problem och förbättra koden.
-
-## Så här gör du
-
-För att skriva ut debuggutdata i Clojure, använder du funktionen `println`. Detta utskriftsverktyg tar emot en eller flera argument och skriver ut dem i terminalen.
+## Hur man gör
+För att skriva ut debug-information i Clojure används oftast funktionen `println`. Denna funktion tar emot en eller flera argument som den skriver ut till terminalen. Låt oss titta på ett exempel:
 
 ```Clojure
-(println "Detta är en testtext") ; Output: Detta är en testtext
+(def my-var 5)
+(println "Värdet av my-var är" my-var)
 ```
+Detta kommer att skriva ut "Värdet av my-var är 5" till terminalen. Genom att lägga till utskrifter som denna på olika ställen i koden kan man få en bättre förståelse för vad som händer och varför det inte fungerar som förväntat.
 
-Du kan också skriva ut flera värden samtidigt genom att lägga till dem som separata argument till `println`.
-
-```Clojure
-(def name "Alice")
-(def age 25)
-(println "Namn:" name "Ålder:" age) ; Output: Namn: Alice Ålder: 25
-```
-
-Du kan också använda funktionen `prn` för att skriva ut värden utan att lägga till en ny rad efter utskriften.
-
-```Clojure
-(prn "Detta är" "en testtext") ; Output: "Detta är" "en testtext"
-```
-
-## Djupdykning
-
-Det finns olika användbara tekniker för att använda `println` och `prn` för att skriva ut debuggutdata. En av dessa är att använda dem inuti en `let` sats för att skriva ut värden från en specifik del av koden.
-
-```Clojure
-(let [x 5 y 10]
-  (println "Summan av x och y är" (+ x y))) ; Output: Summan av x och y är 15
-```
-
-En annan användbar teknik är att använda `with-out-str` för att få utskriften som en sträng istället för att skriva direkt till terminalen. Detta kan vara särskilt användbart när du vill skriva ut värden från ett mer komplicerat datastrukturer som en vektor eller en hashmap.
-
-```Clojure
-(def my-vector [1 true "test"])
-(with-out-str (prn my-vector)) ; Output: "[1 true "test"]"
-```
+## På djupet
+Utöver enkla utskrifter med `println` finns det flera bibliotek och verktyg som kan hjälpa till med debugging i Clojure. Ett av dessa är [slingshot](https://github.com/scgilardi/slingshot), som ger möjlighet att skriva ut stack traces, vilket kan vara till stor hjälp för att lokalisera fel i koden. En annan användbar funktion är [clojure.inspector](https://clojure.github.io/tools.trace/api/clojure.inspector.html), som ger möjlighet att utforska och inspektera data strukturer i realtid.
 
 ## Se även
+- [The ClojureScript DynamicLoader](https://medium.com/tomterence/built-in-debugging-in-clojure-clojurescript-llvm-and-cljs-ed0fc7bf0c5f)
+- [Debugging symbols in Clojure](https://coderwall.com/p/e0ggbq/debugging-symbols-in-clojure)
 
-* [Official Clojure documentation for printing](https://clojuredocs.org/clojure.core/print)
-* [Tutorial: debugging in Clojure](https://purelyfunctional.tv/guide/debugging-in-clojure/)
+Se även
+- [The ClojureScript DynamicLoader](https://medium.com/tomterence/built-in-debugging-in-clojure-clojurescript-llvm-and-cljs-ed0fc7bf0c5f)
+- [Debugging symbols in Clojure](https://coderwall.com/p/e0ggbq/debugging-symbols-in-clojure)

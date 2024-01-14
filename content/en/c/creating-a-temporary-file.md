@@ -1,7 +1,9 @@
 ---
 title:                "C recipe: Creating a temporary file"
+simple_title:         "Creating a temporary file"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/creating-a-temporary-file.md"
 ---
 
@@ -9,62 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Creating temporary files is a useful technique in many programming scenarios. These files provide a temporary solution for tasks such as caching data, storing temporary results, or passing data between processes.
+Creating temporary files is a common practice in programming, especially in C. Temporary files serve as a placeholder for data that needs to be generated or modified during runtime. They are useful for storing intermediate results and can be deleted once they are no longer needed, making them a valuable tool for managing data in memory.
 
 ## How To
 
-To create a temporary file in C, we can use the `tmpfile()` function from the `stdio.h` library. This function takes no arguments and returns a pointer to a FILE object, which can then be used to read and write to the temporary file.
-
-Let's take a look at an example:
+To create a temporary file in C, you can use the `fopen()` function with the `"w+"` option. This option allows you to both write to and read from a file, making it perfect for temporary files. Let's take a look at an example:
 
 ```C
 #include <stdio.h>
 
 int main() {
+  FILE *fp; // declaring a variable for the file pointer
+  char buffer[50]; // creating a buffer to hold data
+  fp = fopen("temp.txt", "w+"); // opening a temporary file named "temp.txt" with the "w+" option
 
-    // create a temporary file
-    FILE *tempFile = tmpfile();
+  // writing data to the temporary file
+  fprintf(fp, "Hello world!\n");
+  fprintf(fp, "This is a temporary file example.\n");
 
-    // write data to the file
-    fprintf(tempFile, "This is some sample data\n");
+  // reading data from the temporary file
+  fseek(fp, 0, SEEK_SET); // resetting the file position indicator to the beginning
+  while (fgets(buffer, 50, fp) != NULL) {
+    printf("%s", buffer); // printing the data to the console
+  }
 
-    // read data from the file
-    rewind(tempFile);
-    char data[100];
-    fgets(data, 100, tempFile);
-    printf("%s", data);
-
-    // close the file
-    fclose(tempFile);
-
-    return 0;
+  fclose(fp); // closing the temporary file
+  return 0;
 }
 ```
 
-We start by including the `stdio.h` library, which contains the `tmpfile()` function. Then, we create a function called `main()` where all our code will be contained.
-
-Inside the `main()` function, we use the `tmpfile()` function to create a temporary file and assign the returned FILE pointer to the variable `tempFile`.
-
-Next, we use the `fprintf()` function to write some sample data to the file. We then use the `rewind()` function to set the file position indicator back to the beginning of the file. Finally, we use the `fgets()` function to read the data from the file and print it to the console.
-
-Once we are done using the temporary file, we can close it using the `fclose()` function. This will automatically delete the temporary file from the system.
-
-Running this program will output:
+This code creates a temporary file named "temp.txt" and writes two lines of text to it. Then, it reads and prints the data from the file. Finally, the temporary file is closed. Running this code will generate a file named "temp.txt" in the same directory as the program, with the following output when executed:
 
 ```
-This is some sample data
+Hello world!
+This is a temporary file example.
 ```
 
 ## Deep Dive
 
-Under the hood, the `tmpfile()` function creates a temporary file with a unique filename in the system's temporary directory. This directory can vary depending on the operating system, but it is usually located in the `/tmp` or `\temp` directory.
+Creating a temporary file may seem like a simple concept, but it involves a few important steps behind the scenes. When the `fopen()` function is called, the operating system allocates space in memory for the file. This space is managed by the file system and is typically located in the temporary directory of the system. Once the file is closed, the allocated space is freed up and can be used by other programs.
 
-It is important to note that temporary files created using the `tmpfile()` function will be automatically deleted when the program exits. This makes it a convenient way to create temporary files without having to worry about cleaning them up afterwards.
-
-However, there are situations where we may want to keep the temporary file even after the program has finished running. In those cases, we can use the `tmpnam()` function to create a temporary file with a unique filename and handle its deletion manually.
+One thing to keep in mind is that temporary files should not be used for sensitive or critical data, as they are not secure. Also, it is good practice to delete the temporary file once it is no longer needed, either manually or through the program.
 
 ## See Also
 
-- [Temporary File in C](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
-- [Creating and Using Temporary Files in C](https://www.geeksforgeeks.org/creating-using-temporary-files-c/)
-- [Temporary Directory in Different Operating Systems](https://en.wikipedia.org/wiki/Temporary_folder)
+For more information on creating and managing temporary files in C, check out these resources:
+
+- [The `fopen()` function](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [The `fprintf()` function](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
+- [The `fgets()` function](https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm)
+
+Now that you have a better understanding of how to create temporary files in C, you can start using them in your programs to manage data and improve performance. Happy coding!

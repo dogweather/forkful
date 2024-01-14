@@ -1,7 +1,9 @@
 ---
 title:                "Python: Usuwanie znaków odpowiadających wzorcowi"
+simple_title:         "Usuwanie znaków odpowiadających wzorcowi"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,38 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często zdarza się, że w trakcie programowania musimy poradzić sobie z nierządnie sformatowanymi danymi. Jeden ze sposobów na poradzenie sobie z takim problemem jest usuwanie znaków pasujących do pewnego wzorca. W tym artykule pokażę, jak to zrobić w języku Python.
+Operacja usuwania znaków, które pasują do wzorca, jest bardzo przydatna w wielu różnych sytuacjach. Może to pomóc w oczyszczaniu danych, w przetwarzaniu tekstu lub w innych zastosowaniach programistycznych. Kiedy tylko napotykasz potrzebę pozbycia się niepożądanych znaków, ta operacja jest dla Ciebie.
 
 ## Jak to zrobić
 
-Ten problem można rozwiązać za pomocą metody ```strip()``` w języku Python. Ta metoda usuwa wszystkie znaki, które pasują do podanego wzorca z końca lub początku stringa. Poniżej przedstawiam przykład, jak usunąć wszystkie znaki spacji z końca stringa:
+Kodowanie w Pythonie może wydawać się złożone, ale usuwanie znaków pasujących do wzorca jest bardzo proste i szybkie dzięki wbudowanej funkcji ```strip()```. Na przykład, aby usunąć wszystkie spacje z danego zdania, wystarczy użyć następującego kodu:
 
 ```Python
-text = "Przykładowy tekst do usunięcia "
-print(text.strip())
+sentence = "   To jest przykładowe zdanie   "
+
+print(sentence.strip())
 ```
 
-Output:
+To spowoduje wydrukowanie zdania bez spacji na początku i końcu:
+```
+To jest przykładowe zdanie
+```
 
-```Przykładowy tekst do usunięcia```
-
-Aby usunąć znaki pasujące do wzorca z dowolnego miejsca w stringu, należy użyć metody ```replace()```. Poniżej przedstawiam przykład, jak usunąć wszystkie litery 'a' z dowolnego miejsca w stringu:
+Ponadto, jeśli chcesz usunąć całe słowo lub frazę, używając funkcji ```replace()``` jest również bardzo proste. Na przykład, jeśli chcemy usunąć słowo "przykładowe" ze zdania, możemy użyć następującego kodu:
 
 ```Python
-text = "Przykładowy tekst do ususnięcia"
-print(text.replace('a', ''))
+sentence = "To jest przykładowe zdanie"
+
+print(sentence.replace("przykładowe ", ""))
 ```
 
-Output:
+Powyższy kod wydrukuje zdanie bez słowa "przykładowe":
+```
+To jest zdanie
+```
 
-```Przykłdowy tekst do uśnięci```
+## Głębszy zanurzenie
 
-## Głębszy rozkład
+W Pythonie istnieje wiele różnych metod usuwania znaków dopasowujących do wzorca, w tym również wyrażeń regularnych. Jest to bardziej zaawansowana technika, ale bardzo potężna i użyteczna. Wyrażenia regularne pozwalają na wykonywanie bardziej skomplikowanych operacji usuwania i manipulacji tekstem.
 
-Język Python oferuje wiele innych możliwości manipulacji stringami. Możesz również użyć operatorów logicznych, wyrażeń regularnych lub popularnej biblioteki ```re``` do usuwania znaków pasujących do określonego wzorca.
+Aby dowiedzieć się więcej o wyrażeniach regularnych w Pythonie, możesz zapoznać się z dokumentacją na temat modułu ```re```. Istnieje wiele tutoriali i narzędzi online, które pomogą Ci lepiej zrozumieć i wykorzystywać to narzędzie w swoim kodzie.
 
 ## Zobacz również
 
-[Zręczne dzielenie tekstu na fragmenty w Pythonie](https://www.programiz.com/python-programming/methods/string/split)
-[Pomocne funkcje do manipulowania stringami w języku Python](https://www.geeksforgeeks.org/python-output-formatting/)
-[Manipulacja stringami przy użyciu modułu ```re``` w języku Python](https://www.tutorialspoint.com/python/string_re_replace.htm)
+- [Dokumentacja Pythona](https://docs.python.org/pl/3/)
+- [Tutorial wyrażeń regularnych w Pythonie](https://docs.python.org/pl/3/library/re.html)
+- [Wideo o usuwaniu znaków w Pythonie](https://www.youtube.com/watch?v=5cvM-crlDvg)

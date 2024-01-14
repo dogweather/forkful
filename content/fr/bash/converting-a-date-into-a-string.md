@@ -1,52 +1,51 @@
 ---
 title:                "Bash: Conversion d'une date en chaîne de caractères"
+simple_title:         "Conversion d'une date en chaîne de caractères"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-La conversion d'une date en chaîne de caractères peut être utile dans de nombreuses situations, notamment pour afficher des informations de date dans un format spécifique ou pour faciliter la manipulation de dates dans un script Bash.
+Si vous êtes habitué à travailler avec des dates dans votre code Bash, vous savez sans doute à quel point il peut être frustrant de devoir manipuler ces données sous forme de chaînes de caractères. Heureusement, il existe des moyens simples de convertir une date en une chaîne de caractères pour faciliter la manipulation et l'affichage.
 
 ## Comment faire
-
-Pour convertir une date en chaîne de caractères en Bash, il existe plusieurs options. La méthode la plus courante est d'utiliser la commande `date` avec l'option `+%Y%m%d` pour obtenir la date au format AAAAMMJJ. Par exemple:
-
-```Bash
-date +%Y%m%d
-```
-
-Cela affichera la date actuelle au format AAAAMMJJ (ex: 20210304).
-
-Nous pouvons également utiliser l'option `+%Y %m %d` pour obtenir la date avec des espaces entre les éléments, ou l'option `+%D` pour le format MM/JJ/AAAA. Pour plus d'options de formatage de date, consultez la documentation de `date` en utilisant la commande `man date`.
-
-Une autre méthode consiste à utiliser l'outil de manipulation de dates `dateutils`, disponible sur la plupart des distributions Linux. Avec cet outil, nous pouvons spécifier le format de sortie souhaité en utilisant l'option `-i`, par exemple:
+Tout d'abord, vous devez déterminer le format de date que vous souhaitez utiliser dans votre chaîne de caractères. Par exemple, vous pouvez choisir d'afficher la date au format "jour/mois/année", "mois/jour/année" ou "année-mois-jour". Une fois que vous avez déterminé votre format, vous pouvez utiliser la commande `date` avec l'option `-d` pour spécifier la date que vous souhaitez convertir et l'option `+` pour indiquer le format de sortie.
 
 ```Bash
-dateutils.dconv -i "%Y%m%d" now
+date -d "12 Dec 2021" +"%d/%m/%Y"
 ```
+Sortie: 12/12/2021
 
-Cette commande affichera également la date actuelle au format AAAAMMJJ.
+Si vous souhaitez incorporer la date dans une chaîne de caractères plus complexe, vous pouvez utiliser la substitution de commandes avec la syntaxe `$(command)` pour inclure la sortie de la commande `date` dans votre chaîne. Par exemple, si vous voulez créer un fichier avec la date actuelle dans son nom, vous pouvez utiliser une commande comme celle-ci :
+
+```Bash
+touch "fichier_$(date +"%Y%m%d").txt"
+```
+Sortie: fichier_20211212.txt
+
+Vous pouvez également utiliser les commandes `cut` et `echo` pour manipuler la chaîne de sortie de la commande `date`. Par exemple, si vous souhaitez récupérer uniquement le mois et l'année actuels, vous pouvez utiliser cette commande :
+
+```Bash
+echo $(date +"%m-%Y" | cut -d'-' -f2)
+```
+Sortie: 12-2021
 
 ## Plongée en profondeur
+La commande `date` est basée sur le langage de programmation GNU C, qui utilise le concept de spécificateurs de conversion pour indiquer le format des dates. Les spécificateurs de conversion les plus couramment utilisés pour convertir une date en une chaîne de caractères sont :
 
-La conversion d'une date en chaîne de caractères peut sembler simple, mais il existe en réalité de nombreuses nuances et possibilités en fonction du langage de programmation et de la bibliothèque utilisée.
+- `%Y` : année sur quatre chiffres
+- `%m` : mois sur deux chiffres
+- `%d` : jour sur deux chiffres
+- `%H` : heure sur 24 heures sur deux chiffres
+- `%M` : minutes sur deux chiffres
+- `%S` : secondes sur deux chiffres
 
-En Bash, par exemple, nous pouvons également utiliser la commande `printf` pour formater une date spécifique. Par exemple:
-
-```Bash
-printf "%(%Y/%m/%d)T" 2020-12-31
-```
-
-Cette commande affichera la date spécifique au format AAAA/MM/JJ (ex: 2020/12/31). Nous pouvons également spécifier des variables pour les éléments de la date, comme l'année ou le mois, pour une plus grande flexibilité dans le formatage.
-
-Il est également possible de convertir la date en chaîne de caractères dans d'autres langages de programmation tels que Python, en utilisant des bibliothèques comme `datetime` ou `dateutil`.
+Vous pouvez utiliser ces spécificateurs de conversion dans n'importe quel ordre et avec des caractères supplémentaires pour créer un format de date personnalisé.
 
 ## Voir aussi
-
-- La documentation de `date` sur Unix.com
-- La documentation de `dateutils`
-- Les options de format de date dans Bash sur SS64.com
+- [Documentation sur la commande date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Guide sur les spécificateurs de conversion de date en C](https://www.gnu.org/software/libc/manual/html_node/Formatting-Data-Time-Strings.html)

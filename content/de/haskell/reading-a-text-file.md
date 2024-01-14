@@ -1,52 +1,56 @@
 ---
-title:                "Haskell: Eine Textdatei lesen"
+title:                "Haskell: Lesen einer Textdatei"
+simple_title:         "Lesen einer Textdatei"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 # Warum
-Manchmal müssen wir Programmierer Textdateien lesen und analysieren, sei es für die Verarbeitung von Benutzereingaben oder für die Datenanalyse. In diesem Blogpost werden wir uns ansehen, wie wir Textdateien in Haskell lesen können und warum es wichtig ist, diese Fähigkeit zu beherrschen.
+In der Welt der Programmierung gibt es oft Szenarien, in denen wir Textdateien analysieren oder bearbeiten müssen. In dieser Anleitung werden wir uns mit dem Lesen von Textdateien mit Haskell befassen und wie dies in unsere Programmierprojekte integriert werden kann. Wenn Sie also daran interessiert sind, mehr über das Lesen von Textdateien mit Haskell zu erfahren, sind Sie hier genau richtig!
 
-## Wie man Textdateien in Haskell liest
-Das Lesen von Textdateien in Haskell ist ein relativ einfacher Prozess, der mit wenigen Codezeilen erledigt werden kann. Zunächst müssen wir die "Data.Text" Bibliothek importieren, um die Textdatei zu lesen. Dann können wir die Funktion "readFile" verwenden, um die ganze Datei auf einmal zu lesen oder "readFileLines", um die Datei Zeile für Zeile zu lesen. Hier ist ein Beispiel, wie man eine Textdatei mit "readFile" liest:
-
-```Haskell
-import Data.Text (pack, unpack)
-
-main = do
-    content <- readFile "textdatei.txt"
-    putStrLn (unpack content)
-```
-
-Die Funktion "readFile" gibt einen "IO Text" Wert zurück, also müssen wir die Funktion "unpack" benutzen, um den Inhalt der Datei in einen String umzuwandeln. Dann können wir den Inhalt einfach mit "putStrLn" drucken. Wenn wir die Datei Zeile für Zeile lesen möchten, können wir "readFileLines" verwenden:
+# Wie man 
+In der Welt von Haskell gibt es mehrere Möglichkeiten, Textdateien zu lesen. Eine einfache Methode ist die Verwendung der `readFile` Funktion. Schauen wir uns ein Beispiel an, wie wir diese Funktion verwenden können:
 
 ```Haskell
-import Data.Text (unpack)
+import System.IO
 
 main = do
-    content <- readFileLines "textdatei.txt"
-    mapM_ (putStrLn . unpack) content
+    handle <- openFile "beispiel.txt" ReadMode
+    contents <- hGetContents handle
+    putStrLn contents
+    hClose handle
 ```
 
-Die Funktion "mapM_" wendet die Funktion "putStrLn" auf jede Zeile in der Textdatei an.
-
-## Tiefergehende Untersuchung
-Beim Lesen von Textdateien sollten wir auch auf die Dateicodierung achten. Standardmäßig wird ASCII als Codierung verwendet, aber in der Realität können Textdateien in verschiedenen Codierungen vorliegen. Um dies zu berücksichtigen, können wir die "Data.Text.IO" Bibliothek nutzen und die Funktion "readFileWith" implementieren, die die Dateicodierung sowie den Pfad der Textdatei als Parameter annimmt.
+Wenn wir diesen Code ausführen, wird der Text der Datei "beispiel.txt" in der Konsole ausgegeben. Wir können auch die `getContents` Funktion verwenden, um Text von der Standard-Eingabe zu lesen:
 
 ```Haskell
-import Data.Text.IO (readFileWith)
-import Data.Text.Encoding (decodeUtf8)
-
 main = do
-    content <- readFileWith decodeUtf8 "textdatei.txt"
-    putStrLn (unpack content)
+    putStrLn "Geben Sie einen Text ein:"
+    contents <- getContents
+    putStrLn contents
 ```
 
-Hier verwenden wir die "decodeUtf8" Funktion, um die Datei in UTF-8 zu decodieren, aber dies kann angepasst werden, je nachdem welche Codierung die Datei hat.
+Jetzt können wir Text von der Konsole eingeben und sehen, wie Haskell ihn ausgibt.
+
+# Tiefentauchen
+Jetzt, da wir einen grundlegenden Überblick über das Lesen von Textdateien in Haskell haben, können wir uns etwas tiefer damit beschäftigen. Neben `readFile` und `getContents` gibt es noch andere Funktionen, die uns beim Lesen von Textdateien helfen können. Eine davon ist die `lines` Funktion, die eine Textdatei in Zeilen aufteilt. Lassen Sie uns ein Beispiel sehen:
+
+```Haskell
+main = do
+    handle <- openFile "beispiel.txt" ReadMode
+    contents <- hGetContents handle
+    let linesOfFile = lines contents  -- Teilt die Textdatei in Zeilen auf
+    print linesOfFile
+    hClose handle
+```
+
+Ein weiterer nützlicher Aspekt beim Lesen von Textdateien in Haskell ist die Verwendung von `Text.IO` anstelle von `System.IO`. `Text.IO` bietet zusätzliche Funktionen für die Verarbeitung von Textdateien, wie z.B. die `hGetLine` Funktion, die eine Zeile aus einer Textdatei liest.
 
 # Siehe auch
-- [Haskell Dokumentation über das Lesen von Textdateien](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Text.html)
-- [Einführung in Haskell von einer deutschen Universität](https://github.com/Blaze2305/HaskellVorlesung/blob/master/slides/02-body.markdown#files)
+- [Offizielle Haskell-Dokumentation](https://www.haskell.org/documentation/)
+- [Tutorial: Textverarbeitung in Haskell](https://www.schoolofhaskell.com/user/commercial/content/text-processing-in-haskell)
+- [Eine praktische Einführung in Haskell](http://learnyouahaskell.com/chapters)

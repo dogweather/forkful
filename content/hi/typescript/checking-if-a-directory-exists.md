@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: डायरेक्ट्री मौजूद होने की जांच करें"
+title:                "TypeScript: डिरेक्टरी का अस्तित्व जांचें"
+simple_title:         "डिरेक्टरी का अस्तित्व जांचें"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/checking-if-a-directory-exists.md"
 ---
 
@@ -9,28 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-जब हम कोई नया प्रोजेक्ट शुरू करते हैं तो उसमें कई फोल्डर और फ़ाइलें बनाने पड़ते हैं। यदि हम उनमें से कोई फोल्डर या फ़ाइल भूल जाते हैं, तो हमारे प्रोजेक्ट को काम करने में कठिनाई आ सकती है। इसलिए हमें यह जांचने की ज़रूरत होती है कि क्या दिए गए डायरेक्टरी में हमारे द्वारा चाहे गए फोल्डर या फ़ाइलें मौजूद हैं या नहीं। यह जांच करने के लिए हम निम्नलिखित तरीकों का उपयोग कर सकते हैं। 
+सभी प्रोग्रामिंग प्रोजेक्ट में, एक डाइरेक्ट्री या फोल्डर की उपस्थिति की जांच बहुत महत्वपूर्ण हो सकती है। यदि हमें डाइरेक्ट्री के बारे में जानकारी है, तो हम उसमें फाइलें खोज सकते हैं और उन्हें प्रोसेस कर सकते हैं। इसलिए, डाइरेक्ट्री की जांच करने एक महत्वपूर्ण कार्य है और इस लेख में हम देखेंगे कि यह कैसे किया जाता है।
 
 ## कैसे करें
 
-```TypeScript
-// Importing the fs module
-import * as fs from 'fs';
-// Storing the directory path in a variable
-let directoryPath = 'C:/Users/User/Desktop/MyProject';
-// Checking if the directory exists
-if (fs.existsSync(directoryPath)) {
-  console.log('Directory exists');
-} else {
-  console.log('Directory does not exist');
-}
+अगर हम डाइरेक्ट्री कोई पथ पास करते हैं, तो हम इसकी उपस्थिति की जांच कर सकते हैं इसके लिए हम "fs.existSync()" फंक्शन का उपयोग कर सकते हैं। यह फंक्शन "true" या "false" के साथ एक बूलियन वापसी करेगा, जो बताएगा कि डाइरेक्ट्री मौजूद है या नहीं। नीचे एक उदाहरण दिया गया है:
 
-// Output if directory exists: Directory exists
-// Output if directory does not exist: Directory does not exist
+```TypeScript
+import fs from 'fs';
+
+const directory = '/Users/username/documents';
+
+if (fs.existsSync(directory)) {
+  console.log("The directory exists!");
+} else {
+  console.log("The directory does not exist.");
+}
 ```
 
-टाइपस्क्रिप्ट में डायरेक्टरी की जांच के लिए हमें `fs` मॉड्यूल का इंपोर्ट करना होता है। उसके बाद हमें जो डिरेक्टरी का पथ हमारे पास होता है, उसे एक वेरिएबल में स्टोर करना होता है। `existsSync()` फ़ंक्शन के द्वारा हम पथ के साथ `if` कंडीशन लगाकर डायरेक्टरी की जांच कर सकते हैं। अगर डायरेक्टरी मौजूद होती है तो `existsSync()` फ़ंक्शन `true` रिटर्न करेगी और हम `Directory exists` का आउटपुट प्रिंट करेंगे, जबकि अगर डायरेक्टरी मौजूद न होती होती है तो `existsSync()` फ़ंक्शन `false` रिटर्न करेगी और हम `Directory does not exist` का आउटपुट प्रिंट करेंगे। 
+आउटपुट:
 
-## गहराई में जाओ
+```TypeScript
+The directory exists!
+```
 
-टाइपस्क्रिप्ट में डायरेक्ट
+इस उदाहरण में, हमने "fs" मॉड्यूल को में "import" किया है और "fs.existsSync()" फंक्शन का उपयोग करके डाइरेक्ट्री की उपस्थिति की जांच की है। हमने इसके बाद संदेश दिया कि डाइरेक्ट्री मौजूद है या नहीं।
+
+## गहन अध्ययन
+
+इस अनुभाग में, हम गहन रूप से देखेंगे कि "fs.existsSync()" फंक्शन कैसे काम करता है। इस फंक्शन में हम पथ को पास करते हैं और फाइल सिस्टम के किसी भी स्तर पर इस पथ की उपस्थिति की जांच की जाती है। यदि डाइरेक

@@ -1,37 +1,47 @@
 ---
-title:                "Fish Shell: Imprimindo saída de depuração"
+title:                "Fish Shell: Exibindo saída de depuração"
+simple_title:         "Exibindo saída de depuração"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
-
-A impressão de saída de depuração é uma técnica fundamental para o desenvolvimento de software, pois permite que os programadores inspecionem o estado do programa em diferentes pontos de execução. Isso pode ser especialmente útil para identificar e corrigir erros.
+## Por que
+Printar saída de debug é uma ferramenta essencial para aqueles que programam em Fish Shell. Isso permite que você acompanhe o fluxo do seu código e identifique possíveis erros ou problemas de forma mais eficiente.
 
 ## Como fazer
+Para imprimir uma saída de debug em Fish Shell, você pode usar o comando `echo`. Por exemplo:
 
 ```Fish Shell
-# Utilizar o comando echo para imprimir uma mensagem de depuração
-echo "Executou até aqui!"
+echo "Debug message"
+```
+Isso imprimirá a mensagem "Debug message" na saída padrão. Você também pode usar variáveis ou comandos dentro do comando `echo` para imprimir informações específicas, como no exemplo abaixo:
 
-# Imprimir o conteúdo de uma variável
-set nome "Maria"
-echo "Olá, $nome! Seu saldo é de $saldo."
+```Fish Shell
+echo "Variável X: $x"
+echo "Data atual: (date)"
 ```
 
-A impressão de saída de depuração pode ser feita usando o comando `echo`, que imprimirá a mensagem especificada entre aspas. Também é possível imprimir o valor de uma variável usando a sintaxe `$variavel`. Isso pode ser útil para verificar o valor de variáveis em diferentes etapas do código.
+Além disso, você pode redirecionar a saída de debug para um arquivo para facilitar a organização e visualização dos resultados. Para isso, basta usar o operador `>` seguido do nome do arquivo desejado. Por exemplo:
 
-## Mergulho Profundo
+```Fish Shell
+echo "Debug output" > debug.log
+```
 
-Há muitas outras maneiras de imprimir saída de depuração no Fish Shell. O uso de `echo` é uma forma rápida e simples, mas também é possível formatar a saída com a função `printf`. Além disso, o Fish Shell oferece uma variedade de variáveis internas que podem ser usadas para imprimir informações úteis, como a hora atual ou o diretório atual do usuário.
+## Deep Dive
+Além do comando `echo`, o Fish Shell também possui outras opções para imprimir saída de debug. Um deles é o comando `printf`, que permite uma formatação mais complexa da saída. Por exemplo:
 
-Além disso, é possível redirecionar a saída de depuração para um arquivo usando o operador `>` seguido pelo nome do arquivo. Isso pode ser útil para salvar registros de saída de depuração para referência posterior.
+```Fish Shell
+set x "variável"
+printf "O valor da %s é %d" $x $x
+```
+
+Outra opção é usar o comando `fish_print`, que também permite uma formatação mais avançada e a impressão de cores e estilos na saída. Você pode encontrar mais informações sobre esses comandos e suas opções na documentação oficial do Fish Shell.
 
 ## Veja também
-
-- [Documentação do Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial de introdução ao Fish Shell](https://www.learnshell.org/en/Fish_Shell)
-- [Guia de uso do comando `echo`](https://linuxize.com/post/bash-echo-command/)
+- Documentação oficial do Fish Shell: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
+- Tutorial sobre `echo` e `printf` em Fish Shell: [https://hackertarget.com/linux-unix-printf-command-tutorial/](https://hackertarget.com/linux-unix-printf-command-tutorial/)
+- Tutorial avançado sobre saída de debug em Fish Shell: [https://ss64.com/fish/echo.html](https://ss64.com/fish/echo.html)

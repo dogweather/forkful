@@ -1,7 +1,9 @@
 ---
-title:                "C++: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "C++: Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Das Berechnen eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,70 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Berechnen von Datum in der Zukunft oder Vergangenheit kann in vielen Fällen hilfreich sein, zum Beispiel bei der Planung von Terminen oder der Verwaltung von Aufgaben. Mit C++ können wir dies auf effiziente Weise tun.
+In der Programmierung kann es nützlich sein, ein Datum in der Zukunft oder Vergangenheit zu berechnen, wenn zum Beispiel bestimmte Ereignisse auf einem bestimmten Datum stattfinden sollen.
 
 ## Wie geht das?
 
-Die Berechnung eines Datums in der Zukunft oder Vergangenheit erfordert zunächst die aktuelle Datumsangabe. Dazu können wir die in C++ eingebaute Funktion `time()` verwenden, die die Sekunden seit dem 1. Januar 1970 zurückgibt. Diese Werte können wir dann in ein `struct` umwandeln, um das Datum zu extrahieren. Zum Beispiel:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, kann die C++ Standardbibliotheksfunktion `std::chrono::system_clock::now()` verwendet werden. Diese Funktion gibt die aktuelle Systemzeit in Form eines Zeitpunktes zurück. 
 
 ```C++
 #include <iostream>
-#include <ctime>
+#include <chrono>
 
-int main()
-{
-    // Aktuelles Datum erhalten
-    time_t now = time(0);
+int main() {
+    // Erhalte die aktuelle Systemzeit
+    auto now = std::chrono::system_clock::now();
     
-    // In ein `struct` umwandeln
-    tm *local_time = localtime(&now);
-
-    // Das aktuelle Datum ausgeben
-    std::cout << "Aktuelles Datum: " << local_time->tm_mday << "/" 
-              << (local_time->tm_mon + 1) << "/" << (local_time->tm_year + 1900) << std::endl;
+    // Berechne ein Datum in der Zukunft (+30 Tage)
+    auto future = now + std::chrono::hours(24*30);
     
-    return 0;
+    // Berechne ein Datum in der Vergangenheit (-1 Jahr)
+    auto past = now - std::chrono::hours(24*365);
+    
+    // Gib die Ergebnisse aus
+    std::cout << "Aktuelles Datum: " << now << "\n";
+    std::cout << "Zukünftiges Datum: " << future << "\n";
+    std::cout << "Vergangenes Datum: " << past << "\n";
 }
 ```
 
-Die Ausgabe könnte wie folgt aussehen:
+Die Ausgabe sieht dann ungefähr so aus:
 
 ```
-Aktuelles Datum: 19/10/2021
+Aktuelles Datum: 1593181331s
+Zukünftiges Datum: 1595909331s
+Vergangenes Datum: 1561645331s
 ```
 
-Um nun ein zukünftiges Datum zu berechnen, können wir die Funktion `mktime()` verwenden, die aus einer `tm` Struktur ein Integer-Datum erstellt. Dazu müssen wir in unserem `struct` das gewünschte Datum ändern und dann `mktime()` aufrufen. Zum Beispiel, um 7 Tage in der Zukunft zu berechnen:
+Die Zahlen repräsentieren dabei die Anzahl an Sekunden seit dem 1. Januar 1970.
 
-```C++
-// Gewünschtes Datum ändern
-local_time->tm_mday += 7;
+## Tiefergehende Informationen
 
-// In ein Integer-Datum umwandeln
-time_t future_time = mktime(local_time);
-
-// Ausgeben
-std::cout << "Zukünftiges Datum: " << local_time->tm_mday << "/" 
-          << (local_time->tm_mon + 1) << "/" << (local_time->tm_year + 1900) << std::endl;
-```
-
-Die Ausgabe wäre:
-
-```
-Zukünftiges Datum: 26/10/2021
-```
-
-Um ein Datum in der Vergangenheit zu berechnen, können wir ähnlich vorgehen, indem wir das gewünschte Datum im `struct` ändern und dann `mktime()` aufrufen. Die Ausgabe könnte dann zum Beispiel so aussehen:
-
-```
-Gewünschtes Datum: 1/1/2021
-```
-
-## Tiefer eintauchen
-
-Es gibt weitere Möglichkeiten zur Manipulation von Datumsangaben in C++, wie zum Beispiel das Hinzufügen von Monaten oder Jahren, oder das Vergleichen von Datumsangaben. Es ist auch wichtig, die richtigen Datentypen zu verwenden, um mögliche Probleme mit Schaltjahren oder Datumsformaten zu vermeiden. Eine detaillierte Erklärung dieser Aspekte würde den Rahmen dieses Blog-Beitrags sprengen, aber es gibt zahlreiche Ressourcen im Internet, die detaillierte Erklärungen und Beispiele bieten.
+Die C++ Standardbibliothek bietet auch Funktionen wie `std::chrono::time_point` und `std::chrono::duration`, um genauer mit Zeit und Datum zu arbeiten. Außerdem gibt es auch die Möglichkeit, Daten in verschiedenen Zeitzonen zu berechnen, indem man die Funktion `std::chrono::time_point_cast` verwendet.
 
 ## Siehe auch
 
-- [C++ Zeit- und Datum-Funktionen](https://www.geeksforgeeks.org/c-work-time/) 
-- [Richtiger Umgang mit Datum und Uhrzeit in C++](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm) 
-- [C++ Datum und Uhrzeit Bibliothek](https://www.cplusplus.com/reference/ctime/)
+- Dokumentation von C++ Chrono: https://devdocs.io/cpp/header/chrono
+- Einrichten von Zeitzonen in C++: https://www.gormanalysis.com/blog/reading-and-writing-time-values-with-chrono/
+- Datum und Uhrzeit in C++: https://www.learncpp.com/cpp-tutorial/18-11-dates-and-times/

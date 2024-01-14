@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Att hämta aktuellt datum"
+title:                "Swift: Att få den aktuella datumet"
+simple_title:         "Att få den aktuella datumet"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/getting-the-current-date.md"
 ---
 
@@ -9,48 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna hämta och använda den aktuella datumet är en viktig del av många Swift-program. Det är användbart för att dynamiskt skapa datumbaserade funktioner och för att hålla koll på tidsreferenser i en applikation.
+Att kunna få den nuvarande datumen är en grundläggande funktion i många programmeringsspråk. I Swift använder vi Date-klassen för att göra detta möjligt. Det är viktigt att kunna få den nuvarande datumen för att kunna implementera funktioner som tidsstämplar och schema för att hålla koll på tid relaterade händelser. Det är också en viktig del av att kunna utföra datummanipulationer och tidsberäkningar.
 
-## Hur man gör
+## Så här
 
-För att hämta den nuvarande datumet i Swift, använder man sig av klassen Date och metoden Date().
+I Swift finns det flera sätt att få den nuvarande datumen, beroende på vad ditt specifika behov är.
 
-```Swift
-let nuvarandeDatum = Date()
-print(nuvarandeDatum)
-```
-
-Output: 2021-03-12 17:00:00 +0000
-
-I exemplet ovan skapar vi en konstant "nuvarandeDatum" som är av typen Date och tilldelar det värdet som returneras av metoden Date(). Sedan använder vi print() funktionen för att skriva ut värdet på skärmen.
-
-Om man vill göra en anpassning av hur datumet visas, kan man använda sig av DateFormatter klassen. Detta gör det möjligt att formatera datumet på olika sätt, till exempel som ett kort datum eller ett datum med veckodag.
+Först och främst, om du bara behöver den nuvarande datumen med tidszoninställningar och sekundsprecision, kan du helt enkelt använda Date-klassen och dess initieringsmetod, som visas nedan i Swift-kodblocket:
 
 ```Swift
-let nuvarandeDatum = Date()
-let formatter = DateFormatter()
-
-// För kort datumformat
-formatter.dateStyle = .short
-
-// För datum med veckodag
-formatter.dateStyle = .full
-
-print(formatter.string(from: nuvarandeDatum))
+let currentDate = Date()
+print(currentDate)
 ```
 
-Output för kort datumformat: 12/03/21
+Detta kommer att ge dig utmatningen av den nuvarande datumen i standard UTC-tidszon och i formatet "ÅÅÅÅ-MM-DD HH:MM:SS +TTTT" där "TTTT" representerar tidsskillnaden från UTC i timmar och minuter.
 
-Output för datum med veckodag: fredag 12 mars 2021
+Om du vill anpassa utmatningen, som att visa datumet i en annan tidszon eller ett annat format, kan du använda DateFormatter-klassen. I följande kodblock visas hur du kan få datumet i lokaltidszonen och i årtal, månad och dag format.
+
+```Swift
+let dateFormatter = DateFormatter()
+dateFormatter.timeZone = TimeZone.current
+dateFormatter.dateFormat = "yyyy-MM-dd"
+let today = Date()
+let localDate = dateFormatter.string(from: today)
+print(localDate)
+```
+
+Detta kommer att ge dig utmatningen av den nuvarande datumen i formatet "ÅÅÅÅ-MM-DD".
 
 ## Djupdykning
 
-Date klassen i Swift baseras på den C structen, time_t, som lagrar datumet och tiden i antalet sekunder sedan 1970-01-01 00:00:00 UTC. Detta är också känd som Unix-tiden. För att konvertera detta antal sekunder till ett datum, använder Swift en algoritm för att räkna ut det aktuella datumet baserat på antalet sekunder som har gått sedan dess.
-
-Man kan också använda sig av metoden timeIntervalSince1970() för att få antalet sekunder som har gått sedan 1970. Detta är en användbar metod för att beräkna skillnaden mellan två datum eller för att skapa en timestamp.
+De Date-klasser och initieringsmetoder som används för att få den nuvarande datumen är bara några av de funktioner som kan hjälpa dig att hantera datum och tid i Swift. Det finns andra klasser som Calendar och DateComponents som är användbara för att göra beräkningar och manipulationer på datumen. Du kan också utforska olika formateringsalternativ för datum och tid med DateFormatter-klassen.
 
 ## Se även
 
-- [Apple dokumentation för Date klassen](https://developer.apple.com/documentation/foundation/date)
-- [Guide till Swift Date and Time](https://www.iosapptemplates.com/blog/swift-programming/date-time)
-- [Att arbeta med datum i Swift](https://medium.com/swift-india/working-with-date-in-swift-ii-f9a968975220)
+- [Swift - Date Class Documentation](https://developer.apple.com/documentation/foundation/date)
+- [Swift - DateFormatter Class Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Swift - Calendar Class Documentation](https://developer.apple.com/documentation/foundation/calendar)
+- [Swift - DateComponents Class Documentation](https://developer.apple.com/documentation/foundation/datecomponents)

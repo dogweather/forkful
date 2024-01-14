@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Avviare un nuovo progetto"
+title:                "Javascript: Iniziare un nuovo progetto"
+simple_title:         "Iniziare un nuovo progetto"
 programming_language: "Javascript"
-category:             "Getting Started"
+category:             "Javascript"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/starting-a-new-project.md"
 ---
 
@@ -9,43 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-In questo articolo, parlerò di perché dovresti avventurarti in un nuovo progetto di programmazione in Javascript. Ci sono molte ragioni per cui potresti voler iniziare un nuovo progetto, come imparare una nuova tecnologia o creare un'applicazione utile per la tua vita quotidiana. Qualunque sia la tua motivazione, è importante capire il processo per iniziare correttamente.
+In questo articolo, vedremo come iniziare un nuovo progetto in Javascript. Se sei un programmatore che vuole imparare un nuovo linguaggio di programmazione, o se sei semplicemente appassionato di tecnologia, questo è un buon punto di partenza per te. Inizia a leggere per scoprire i passaggi fondamentali per dare il via al tuo progetto Javascript!
 
 ## Come fare
 
-Per iniziare, devi avere una conoscenza di base di Javascript e avere installato un editor di codice, come Visual Studio Code, sul tuo computer. Una volta fatto ciò, puoi seguire questi passaggi per iniziare il tuo nuovo progetto:
+Per iniziare un nuovo progetto in Javascript, è necessario seguire alcuni passaggi semplici. Ecco come procedere:
 
-1. Crea una cartella per il tuo progetto e dacci un nome significativo.
-2. All'interno della cartella, crea un nuovo file chiamato "index.html" e un altro chiamato "main.js".
-3. All'interno del file index.html, scrivi il seguente codice:
+1. **Decidi l'obiettivo del tuo progetto**: prima di iniziare a scrivere il codice, è importante avere un'idea chiara di ciò che si vuole ottenere con il progetto. Puoi chiederti: qual è l'obiettivo del mio progetto? A chi è rivolto? Come aiuterà gli utenti o risolverà un problema esistente?
 
-```Javascript
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Nuovo Progetto</title>
-  </head>
-  <body>
-    <script src="main.js"></script>
-  </body>
-</html>
-```
+2. **Studiare bene il linguaggio**: se sei nuovo al Javascript, è fondamentale studiare bene il linguaggio prima di iniziare il progetto. Leggi documentazione, guardare tutorial e sperimenta con piccoli esempi di codice.
 
-Questo codice crea una struttura base per la tua pagina web e collega il tuo file Javascript principale.
+3. **Prepara l'ambiente di sviluppo**: per scrivere e testare il tuo codice, hai bisogno di un ambiente di sviluppo. Puoi usare un editor di testo semplice come Blocco Note o un IDE più avanzato come Visual Studio Code.
 
-4. Ora puoi iniziare a scrivere il codice all'interno del file main.js per il tuo progetto.
-5. Non dimenticare di salvare regolarmente e di testare il tuo codice mentre vai avanti.
+4. **Inizia a scrivere il codice**: ora che hai un'idea chiara del tuo progetto e hai l'ambiente di sviluppo pronto, è il momento di iniziare a scrivere il codice. Puoi iniziare con un semplice "Hello World" per assicurarti che tutto funzioni correttamente.
 
-Questi sono solo alcuni passaggi di base per iniziare un nuovo progetto Javascript. Assicurati di seguire le migliori pratiche di scrittura del codice e di utilizzare strumenti di debugging per risolvere eventuali errori.
+5. **Testare e risolvere gli errori**: il debugging è una parte essenziale della scrittura del codice. Assicurati di testare il tuo codice man mano che vai avanti e correggi eventuali errori che potrebbero presentarsi.
 
-## Approfondimenti
+## Approfondimento
 
-Ci sono molti aspetti da considerare quando si inizia un nuovo progetto di programmazione. Ad esempio, puoi decidere se utilizzare una libreria esterna come jQuery o React per semplificare il tuo codice o se seguire uno stile di scrittura del codice specifico come ESLint. È anche importante avere una buona organizzazione dei file e delle cartelle del tuo progetto per mantenere il codice pulito e facilmente comprensibile.
+Oltre ai passaggi sopra descritti, ci sono alcune cose importanti da tenere a mente quando si inizia un nuovo progetto in Javascript:
 
-Inoltre, ricorda sempre di utilizzare fonti affidabili per risolvere eventuali dubbi o problemi che incontri durante lo sviluppo del tuo progetto. Ci sono molti tutorial e risorse online che possono aiutarti a superare gli ostacoli e migliorare le tue competenze di programmazione.
+- Usa buone pratiche di codifica, come nomi di variabili descrittivi e commenti appropriati. Ciò rende il tuo codice più leggibile e facile da comprendere per te e per altri che potrebbero dover lavorare sullo stesso progetto.
+
+- Fai uso di librerie e framework esistenti per semplificare il tuo lavoro. Ci sono molte soluzioni già disponibili che possono aiutarti a risparmiare tempo e fatica nella scrittura del codice.
+
+- Non aver paura di sbagliare e di imparare dai tuoi errori. Nessuno diventa un esperto in un nuovo linguaggio di programmazione da un giorno all'altro. Continua a metterti alla prova e a cercare di migliorare le tue capacità.
 
 ## Vedi anche
 
-- [Tutorial di Javascript su Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)
-- [Documentazione ufficiale di Javascript](https://developer.mozilla.org/it/docs/Web/JavaScript)
-- [ESLint: Guida completa all'uso](https://www.valentinog.com/blog/eslint/)
+- [Documentazione Javascript su MDN](https://developer.mozilla.org/it/docs/Web/JavaScript)
+- [Tutorial su Javascript di W3Schools](https://www.w3schools.com/js/)
+- [Visual Studio Code - Editor di codice](https://code.visualstudio.com/)

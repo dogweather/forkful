@@ -1,44 +1,43 @@
 ---
-title:                "Kotlin: Skriva till standardfel"
+title:                "Kotlin: Skrivande till standardfel"
+simple_title:         "Skrivande till standardfel"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att skriva till standardfel i Kotlin är ett viktigt verktyg för alla utvecklare. Genom att skriva till standardfel kan du notera och identifiera eventuella fel i din kod, vilket hjälper till att förbättra och felsöka dina program.
 
-Att skriva till standardfel, eller "standard error", är ett vanligt förekommande sätt att hantera fel i programmeringsspråket Kotlin. När du skriver till standardfel är det viktigt att förstå både varför och hur du ska göra det på rätt sätt. I denna bloggpost kommer vi att utforska varför man bör skriva till standardfel och ge steg-för-steg-instruktioner om hur du gör det.
-
-## Hur man gör det
-
-För att skriva till standardfel i Kotlin använder vi en funktion som heter "System.err.println()". Det är en inbyggd funktion som låter oss skriva ut ett meddelande till standardfel.
- 
-Ett enkelt exempel på detta är:
+## Så här gör du
+För att skriva till standardfel i Kotlin, använd följande kod:
 
 ```Kotlin
-System.err.println("Detta är ett felmeddelande")
+System.err.println("Detta är ett felmeddelande.") 
 ```
 
-Detta kommer att skriva ut meddelandet "Detta är ett felmeddelande" till standardfel. En annan viktig aspekt att tänka på är att detta uttryck inte bör kringgärdas av någon try/catch-block. Om vi exempelvis skriver:
+Detta kommer att skriva ut ett felmeddelande i konsolen istället för standardutmatningen. Du kan också använda `System.err` för att skriva till standardfel i try-catch-block eller i en egen funktion.
 
 ```Kotlin
 try {
-    System.err.println("Detta är ett felmeddelande")
+    //kod som kan orsaka fel
 } catch (e: Exception) {
-    println(e.message)
+    System.err.println("Detta är ett felmeddelande: ${e.message}")
 }
 ```
 
-Kommer inte meddelandet att skrivas ut till standardfel. Istället catch-blocket kommer att fånga felet och skriva ut det på konsolen.
- 
-## Utforska mer
+När du kör detta kommer felmeddelandet att skrivas ut i rött, vilket gör det lättare att identifiera och åtgärda eventuella problem.
 
-För att lära dig mer om att skriva till standardfel i Kotlin kan du kolla in dokumentationen på [Kotlins hemsida](https://kotlinlang.org/docs/tutorials/command-line.html#command-line-tools-and-runtime-options). Där hittar du till exempel mer information om hur du formaterar dina utskrifter och hur du hanterar olika typer av fel.
+## Djupdykning
+Skrivning till standardfel i Kotlin är inte bara användbart för att identifiera fel, det kan också vara en effektiv metod för att logga information om körningen av ditt program. Du kan till exempel skriva ut värdet på variabler eller andra relevanta uppgifter för att få en bättre förståelse för hur din kod fungerar.
+
+Du kan även använda bibliotek som "logback" för att hantera och skicka loggningsmeddelanden till olika källor, inklusive standardfel. Detta ger dig ännu mer kontroll över hur felmeddelanden hanteras och sparar tid när du behöver felsöka dina program.
 
 ## Se även
-
-- [KotlinDocumentation](https://kotlinlang.org/docs/tutorials/command-line.html#command-line-tools-and-runtime-options)
-- [KotlinForum](https://discuss.kotlinlang.org/c/libraries/frameworks-tools)
-- [KotlinGitHub](https://github.com/JetBrains/kotlin)
+För mer information om hur du använder standardfel i Kotlin, se följande länkar:
+- [Kotlin - Using the Standard Error Stream](https://kotlinlang.org/docs/tutorials/command-line.html#using-the-standard-error-stream)
+- [Baeldung - Kotlin IO: Standard Input-Output Streams](https://www.baeldung.com/kotlin-io-standard-input-output-streams)
+- [Documentation - logback](http://logback.qos.ch/documentation.html)

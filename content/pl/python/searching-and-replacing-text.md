@@ -1,7 +1,9 @@
 ---
-title:                "Python: Wyszukiwanie i zamienianie tekstu"
+title:                "Python: Wyszukiwanie i zmienianie tekstu"
+simple_title:         "Wyszukiwanie i zmienianie tekstu"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/searching-and-replacing-text.md"
 ---
 
@@ -9,39 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli pracujesz z dużymi ilościami tekstu, wiedza o wyszukiwaniu i zastępowaniu jest niezbędna w twoim arsenale programisty Pythona. Używanie funkcji wyszukiwania i zastępowania pozwala na szybką i efektywną zmianę tekstu, bez potrzeby ręcznego edytowania całego pliku.
+Często podczas pisania kodu zdarza się nam popełnić błędy lub skorzystać z innej nazwy dla zmiennej czy funkcji. W takich sytuacjach bardzo przydatne jest narzędzie do wyszukiwania i zamiany tekstu. Pozwala ono szybko i łatwo odnaleźć wszystkie wystąpienia danego fragmentu tekstu i zamienić je na żądany.
 
 ## Jak to zrobić
 
-W Pythonie, możesz użyć metody `.replace()` aby dokonać wyszukiwania i zastępowania tekstu. Jeśli na przykład chcesz zmienić wszystkie wystąpienia słowa "kot" na słowo "pies" w naszym tekście, możesz to zrobić w następujący sposób:
+Do wyszukiwania i zamiany tekstu w Pythonie możemy użyć wbudowanej metody `replace()`. Musimy podać dwa argumenty: tekst, który chcemy zamienić, oraz tekst, na który chcemy go zamienić. W poniższym przykładzie zamienimy wszystkie wystąpienia słowa "pies" na słowo "kot".
 
 ```Python
-text = "Lubię mojego kota, nazywa się Mruczek"
-new_text = text.replace("kot", "pies")
+text = "Mam dwa psy, pieska i suczkę."
+new_text = text.replace("pies", "kot")
 print(new_text)
 ```
-**Output:**
-```
-Lubię mojego psa, nazywa się Mruczek
-```
-Wywołanie metody `replace()` na zmiennej `text` spowoduje zamianę wszystkich wystąpień słowa "kot" na słowo "pies". Warto również zauważyć, że metoda ta zwraca nowy ciąg znaków, więc musimy przypisać tę nową wartość do zmiennej `new_text`.
 
-## Wszystkie aspekty poszukiwania i zastępowania tekstu
+Output:
+```
+Mam dwa koty, kotka i suczkę.
+```
 
-Podstawowa składnia metody `.replace()` jest następująca:
+Jeśli chcemy zamienić tylko część wystąpień, możemy podać dodatkowy argument `count`, określający ile razy zamiana ma zostać wykonana. W poniższym przykładzie zamienimy tylko pierwsze dwa wystąpienia słowa "pies" na słowo "kot".
 
 ```Python
-string.replace(old, new, count)
+text = "Mam dwa psy, pieska i suczkę."
+new_text = text.replace("pies", "kot", 2)
+print(new_text)
 ```
 
-- `string` to ciąg znaków, na którym chcemy wykonać wyszukiwanie i zastępowanie.
-- `old` to ciąg znaków, które chcemy znaleźć i zastąpić. Może to być pojedynczy znak, wyrażenie regularne lub inny ciąg znaków.
-- `new` to ciąg znaków, które chcemy wstawić w miejsce `old`.
-- `count` (opcjonalne) to liczba wystąpień `old`, które chcemy zamienić. Jeśli nie zostanie podane, wszystkie wystąpienia zostaną zastąpione.
+Output:
+```
+Mam dwa koty, kotka i suczkę.
+```
 
-Metoda ta jest również na tyle elastyczna, że pozwala na podmianę nie tylko pojedynczych znaków, ale także całych wyrażeń lub fragmentów tekstu. Aby dowiedzieć się więcej na temat wykorzystania wyrażeń regularnych w metodzie `.replace()`, zobacz ten artykuł [link do artykułu o wyrażeniach regularnych w Pythonie].
+## Głębszy zanurzenie
 
-## Zobacz również
+Metoda `replace()` działa tylko na pojedynczych zmiennych typu string. Jeśli chcemy wykonać zamianę w większej ilości plików, możemy skorzystać z pętli `for` i funkcji `glob` do odnalezienia odpowiednich plików.
 
-- [Dokumentacja Pythona - metoda replace()](https://docs.python.org/3/library/stdtypes.html#str.replace)
-- [Tutorial o wyrażeniach regularnych w Pythonie](https://www.programiz.com/python-programming/regex)
+```Python
+import glob
+
+for file in glob.glob("*.txt"):
+    with open(file, "r") as f:
+        text = f.read()
+        new_text = text.replace("pies", "kot")
+    with open(file, "w") as f:
+        f.write(new_text)
+```
+
+W powyższym przykładzie wszystkie pliki z rozszerzeniem ".txt" w bieżącym katalogu zostaną otwarte, a następnie wszystkie wystąpienia słowa "pies" zostaną zamienione na słowo "kot". Oryginalne pliki zostaną nadpisane nowym tekstem.
+
+## Zobacz także
+
+- [Oficjalna dokumentacja Pythona](https://docs.python.org/3.9/library/stdtypes.html#str.replace)
+- [Przewodnik po pakiecie glob](https://realpython.com/working-with-files-in-python/#the-glob-module)
+- [Przydatne metody dla typu string w Pythonie](https://www.programiz.com/python-programming/methods/string)

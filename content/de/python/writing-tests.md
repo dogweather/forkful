@@ -1,55 +1,55 @@
 ---
 title:                "Python: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "Python"
-category:             "Testing and Debugging"
+category:             "Python"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum Tests schreiben?
 
-Wenn man Python Programme schreibt, gibt es oft die Versuchung, direkt zum eigentlichen Programmcode überzugehen und die Tests auszulassen. Doch Testen ist ein wichtiger Teil des Entwicklungsprozesses und kann Zeit und Nerven sparen. In diesem Blogbeitrag erfahren Sie warum es sich lohnt, Tests in ihre Python Programme einzubauen.
+Tests sind ein wichtiger Bestandteil der Softwareentwicklung und ermöglichen es uns, unsere Programme auf mögliche Fehler zu überprüfen. Sie helfen uns, Sicherheit und Qualität in unseren Code zu bringen und erleichtern die Wartung und Erweiterung unserer Anwendungen. Ohne Tests können wir nie sicher sein, dass unser Code zuverlässig funktioniert. Daher ist es wichtig, Tests zu schreiben, um eine stabile und fehlerfreie Software zu erstellen.
 
-## So geht's
+## Wie schreibt man Tests?
 
-Um Tests in Python zu schreiben, gibt es verschiedene Tools wie zum Beispiel die Module `unittest` oder `pytest`. Hier ist ein einfaches Beispiel mit `unittest`:
+Das Schreiben von Tests in Python ist einfach und kann in wenigen Schritten durchgeführt werden. Zunächst müssen wir das Python-Modul `unittest` importieren, das uns die nötigen Werkzeuge zur Verfügung stellt, um Tests zu schreiben. Dann können wir unsere Tests in einer speziellen Testklasse schreiben, die von `unittest.TestCase` erbt. Innerhalb dieser Klasse können wir verschiedene Testmethoden definieren, die jeweils einen Teil unseres Codes überprüfen. Zum Beispiel könnte eine Testmethode überprüfen, ob eine bestimmte Funktion den erwarteten Wert zurückgibt.
 
-```python
+Hier ist ein einfaches Beispiel, wie wir mit `unittest` eine Funktion `add()` testen könnten:
+
+```Python
 import unittest
 
-def square(x):
-    return x ** 2
+def add(x, y):
+    return x + y
 
-class SquareTestCase(unittest.TestCase):
-
-    def test_square(self):
-        self.assertEqual(square(5), 25)
-
-    def test_negative(self):
-        self.assertEqual(square(-5), 25)
+class TestAddFunction(unittest.TestCase):
+    def test_positive_numbers(self):
+        result = add(2, 3)
+        self.assertEqual(result, 5)
+        
+    def test_negative_numbers(self):
+        result = add(-3, -5)
+        self.assertEqual(result, -8)
 ```
 
-Ausgeführt mit `python -m unittest -v` sollte dieses Skript zwei erfolgreiche Tests ausgeben:
+In diesem Beispiel haben wir eine Testklasse `TestAddFunction` erstellt, die zwei Testmethoden enthält. Die `test_positive_numbers()` Methode überprüft, ob die Funktion `add()` den korrekten Wert für positive Zahlen zurückgibt. Die `test_negative_numbers()` Methode überprüft das Verhalten für negative Zahlen. Wir verwenden die Methode `assertEqual()` um zu überprüfen, ob der erwartete Wert mit dem tatsächlichen Ergebnis übereinstimmt.
 
-```
-test_negative (__main__.SquareTestCase) ... ok
-test_square (__main__.SquareTestCase) ... ok
+Um unsere Tests auszuführen, können wir das `unittest`-Modul direkt ausführen oder eine Test Runner-Anwendung wie `pytest` verwenden. Wir erhalten dann eine Übersicht über alle durchgeführten Tests und ob sie erfolgreich waren.
 
-----------------------------------------------------------------------
-Ran 2 tests in 0.000s
+## Tiefergehende Informationen über das Schreiben von Tests
 
-OK
-```
+Es gibt verschiedene Arten von Tests, die wir in unserem Code schreiben können. Einige Beispiele sind Unittests, Integrationstests, Funktionstests oder Akzeptanztests. Jede dieser Testarten hat ihre eigene Bedeutung und wird in verschiedenen Entwicklungsphasen eingesetzt.
 
-## Tieferer Einblick
+Unittests sind in der Regel Tests auf niedrigstem Niveau, die einzelne Funktionen oder Methoden überprüfen. Integrationstests testen, wie verschiedene Komponenten zusammenarbeiten und kommunizieren. Funktionstests überprüfen die korrekte Ausführung einer bestimmten Funktion oder Aufgabe. Und Akzeptanztests überprüfen, ob die Anwendung den Anforderungen der Benutzer entspricht.
 
-Tests sind nicht nur hilfreich, um zu überprüfen, ob der Code richtig funktioniert. Sie können auch dazu beitragen, mögliche Fehlerquellen zu identifizieren und das Verständnis des Programms zu verbessern. Durch die gezielte Verwendung von `assert`-Statements können Sie genau festlegen, welche Bedingungen erfüllt sein müssen, um die Tests zu bestehen. Auch das Testen von komplexen Datenstrukturen wie Listen oder Dictionaries ist möglich.
+Beim Schreiben von Tests ist es wichtig, gut lesbaren und verständlichen Code zu schreiben. Achte darauf, aussagekräftige Namen für deine Tests zu verwenden und kommentiere ggf. komplexe Testabläufe, um anderen Entwicklern zu helfen, den Zweck des Tests zu verstehen.
 
-Um Tests in Ihre Entwicklung zu integrieren, ist es hilfreich, einen Test-Driven-Development Ansatz zu verfolgen. Das bedeutet, dass man zuerst die Tests schreibt und danach den Code, der diese Tests bestehen lässt. Dadurch haben Sie immer eine kontinuierliche Rückmeldung über den Zustand Ihres Codes und können Fehler schnell erkennen und beheben.
+Ein weiterer wichtiger Aspekt beim Testen ist die Testabdeckung. Dies beschreibt, wie viel unseres Codes durch Tests abgedeckt wird. Eine hohe Testabdeckung bedeutet, dass fast alle Teile unseres Codes mindestens einmal getestet wurden. Eine hohe Testabdeckung hilft uns, potenzielle Fehlerquellen ausfindig zu machen und unseren Code qualitativ hochwertiger zu machen.
 
 ## Siehe auch
 
-- [Python Documentation: unittest](https://docs.python.org/3/library/unittest.html)
-- [Python Testing with pytest](https://realpython.com/python-testing/)
-- [Test Driven Development (TDD): Beispiel in Python](https://www.tutorialspoint.com/test-driven-development-example-in-python)
+- [Python unittest Module](https://docs.python.org/3/library/unittest.html)
+- [pytest Test Runner](https://docs.pytest.org/en/stable/)

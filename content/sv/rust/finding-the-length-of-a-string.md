@@ -1,35 +1,36 @@
 ---
-title:                "Rust: Att hitta längden på en sträng"
+title:                "Rust: Avgöra längden på en sträng"
+simple_title:         "Avgöra längden på en sträng"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att kunna hitta längden på en sträng är en viktig del av programmering, oavsett vilket språk du använder. Det låter dig hantera textdata på ett effektivt sätt och utföra olika operationer.
 
-Att hitta längden på en sträng kanske verkar som en enkel uppgift, men i programmering kan det vara mycket viktigt. Det kan hjälpa till att göra vår kod effektivare och minska risken för buggar.
-
-## Så här gör du
-
-Att hitta längden på en sträng i Rust är enkelt. Vi kan använda standard biblioteket för Rust som heter "std" och dess "string" modul. Inuti den här modulen finns funktionen "len" som tar emot en sträng som parameter och returnerar dess längd.
+## Hur man gör
+För att hitta längden på en sträng i Rust, använder man sig av `len()` funktionen som finns tillgänglig inbyggt i språket. För att få reda på längden av en specifik sträng behöver du bara skriva `sträng.len()` i din kod, där "sträng" är namnet på den specifika strängen du vill undersöka. Kom ihåg att alltid deklarera och initiera strängen innan du använder `len()` funktionen på den.
 
 ```Rust
-let string = "Hej alla!"; // En sträng med längden av 9 tecken
-let length = std::string::len(string); // Returnerar 9 
+fn main() {
+    let str = "Hej från Sverige!";
+    println!("Längden på strängen är: {}", str.len());
+}
 ```
 
-Det är viktigt att komma ihåg att strängar är kodade som UTF-8 i Rust, vilket innebär att en enskild tecken kan bestå av flera bytes och kommer påverka längden av strängen.
+Output:
+```
+Längden på strängen är: 17
+```
 
 ## Djupdykning
-
-En intressant aspekt av att hitta längden på en sträng i Rust är att det faktiskt är en uppsättning av funktioner och inte bara en enda funktion. Förutom "len" finns det också "chars", "bytes" och "chars_len". Dessa funktioner returnerar längden av en sträng baserat på dess tecken, bytes eller unicode tecken.
-
-En annan viktig sak att notera är att längden av en sträng i Rust är en "usize" typ, vilket betyder att det är beroende av maskinens arkitektur och kan variera på 32- och 64-bitars system.
+I Rust är strängar en del av "Primitive Data Types" och är representerade som en serie av bytes. Det betyder att när du använder `len()` funktionen för att hitta längden på en sträng, så returnerar den faktiskt antalet bytes som strängen innehåller. Detta är viktigt att ha i åtanke eftersom olika tecken och symboler tar upp olika antal bytes i en sträng. Till exempel tar ett latinskt tecken upp ett byte, medan ett kinesiskt tecken tar upp tre bytes.
 
 ## Se även
-
-- [Officiell dokumentation för strängar i Rust](https://doc.rust-lang.org/std/string/index.html)
-- [En översikt över UTF-8 i Rust](https://rolisz.ro/2016/02/09/utf8-in-rust-a-brief-overview/)
-- [En djupdykning i Rusts "std" bibliotek](https://www.airpair.com/rust/posts/rust-standard-library-building-blocks)
+- [Officiell Rust dokumentation om strängar](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Enkelt exempel på att hitta längden på en sträng i Rust](https://www.tutorialspoint.com/rust/rust_strings.htm)
+- [Rust programmeringsguide för nybörjare](https://www.geeksforgeeks.org/rust-programming-language-introduction/)

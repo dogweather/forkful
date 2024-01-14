@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Zapisywanie wiersza z wielkiej litery"
+title:                "Arduino: Zapisywanie dużych liter w ciągu znaków"
+simple_title:         "Zapisywanie dużych liter w ciągu znaków"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/capitalizing-a-string.md"
 ---
 
@@ -9,27 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu, mamy do czynienia z różnymi typami danych, takimi jak napisy (stringi). Czasami, w celu czytelniejszego wyświetlenia danych lub ze względów estetycznych, chcemy aby wybrane napisy były w formie zaczynającej się z dużej litery. W takim przypadku, przydatnym narzędziem jest funkcja "capitalize", która pozwala na zmianę pierwszej litery napisu na dużą.
+Czasami w programowaniu musimy manipulować ciągami znaków, czyli sekwencjami liter i znaków. Jednym z zadań, które możemy wykonać na ciągach, jest zamiana pierwszej litery na wielką. To może być przydatne na przykład w pisaniu tytułów lub informacji o produkcie.
 
 ## Jak to zrobić
 
-Aby skorzystać z funkcji "capitalize" w Arduino, musimy najpierw zadeklarować zmienną typu "String" i przypisać do niej wybrany ciąg znaków. Następnie używamy funkcji "capitalize" do zmiany pierwszej litery napisu na dużą. Przykład zastosowania wygląda następująco:
+Aby skorzystać z funkcji do zamiany pierwszej litery na wielką w Arduino, musimy dodać bibliotekę <string.h>. Następnie możemy użyć funkcji ```capitalize()```, podając jako argument żądany ciąg znaków.
 
-```Arduino 
-String napis = "arduino";
-napis.capitalize();
+```Arduino
+#include <string.h>
+
+String tekst = "witaj świecie!";
+tekst.capitalize();
+Serial.println(tekst); // Output: Witaj świecie!
 ```
 
-Po wykonaniu powyższych instrukcji, zmienna "napis" będzie miała wartość "Arduino".
+## Głębsze zanurzenie
 
-## Głębszy zanurzenie
+Funkcja ```capitalize()``` w rzeczywistości zmienia tylko pierwszą literę ciągu na wielką. Jeśli chcemy zmienić wszystkie litery w ciągu na wielkie, możemy użyć funkcji ```toUpperCase()```.
 
-Oprócz funkcji "capitalize", istnieje również inna metoda na zmianę pierwszej litery napisu na dużą, która wymagało by wykorzystania funkcji "charAt" do dostępu do poszczególnych liter w napisie. Jednak ta metoda jest bardziej skomplikowana i wymaga większej ilości kodu.
+```Arduino
+tekst.toUpperCase();
+Serial.println(tekst); // Output: WITAJ ŚWIECIE!
+```
 
-Warto również zaznaczyć, że funkcja "capitalize" jest dostępna tylko dla zmiennej typu "String", a nie dla typów prostych, takich jak "int" czy "float".
+Funkcje ```capitalize()``` i ```toUpperCase()``` są dostępne również dla typu danych ```char```, a nie tylko dla typu ```String```. W przypadku ```char```, funkcje te zwrócą zmodyfikowany ciąg jako wynik.
 
 ## Zobacz również
 
-- Dokumentacja funkcji "capitalize": https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/capitalize/
-- Inne metody na manipulację napisami w Arduino: https://create.arduino.cc/projecthub/projects/tags/string
-- Dyskusja na forum Arduino na temat funkcji "capitalize":https://forum.arduino.cc/index.php?topic=548875.0
+- [Dokumentacja biblioteki <string.h> w Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/capitalize/)
+- [Przykładowy kod z zastosowaniem funkcji capitalize()](https://create.arduino.cc/projecthub/TopTechnologies/using-string-capitalize-function-8d2d78)
+- [Inne funkcje dostępne w bibliotece <string.h>](https://www.robotics.org.za/str.htm)

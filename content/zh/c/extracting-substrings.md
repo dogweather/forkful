@@ -1,57 +1,76 @@
 ---
-title:                "C: 提取子字串"
+title:                "C: 提取子字符串"
+simple_title:         "提取子字符串"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-#为什么：如何提取子字符串
+# 为什么要提取子字符串？
 
-在C编程中，经常需要处理字符串。有时候，我们可能只需要字符串中的一部分，而不是整个字符串。这时，提取子字符串就会变得非常有用。它可以帮助我们简化程序，提高效率。
+提取子字符串是一个常用的技术，在编程中经常会遇到这样的情况：我们需要从一个字符串中提取出特定的一部分，而不是使用整个字符串。比如，从一个完整的文件路径中获取文件名，从一个邮箱地址中提取用户名等等。这就是为什么能够熟练地提取子字符串是一个程序员必备的技能。
 
-##如何做：
+# 如何提取子字符串？
 
-下面是一个简单的示例代码，演示如何使用C语言提取子字符串。
+在C语言中，提取子字符串可以使用几个不同的方法。首先，我们需要使用字符串函数`strncpy()`来将字符串的一部分复制到一个新的字符数组中。例如，假设我们有一个字符串`str`，我们想从第5个字符开始复制4个字符到新数组`substr`中，代码如下：
 
 ```C
-#include<stdio.h>
-#include<string.h>
+char str[] = "Hello World";
+char substr[5];
 
-int main()
-{
-    char string[] = "Hello World!";
-    int length = strlen(string);
-    char substring[6];
+strncpy(substr, &str[4], 4);
+// 这里的`&str[4]`表示从第5个字符开始，`4`表示复制的字符数量，可以根据具体需求进行调整
 
-    // 提取子字符串
-    strncpy(substring, string+6, 5);
-
-    // 打印输出
-    printf("原始字符串: %s\n", string);
-    printf("提取的子字符串: %s\n", substring);
-    return 0;
-}
+printf("提取的子字符串为：%s\n", substr);
+// 输出：World
 ```
-运行结果：
+
+另一种方法是使用`strtok()`函数来将字符串按照指定的分隔符进行分割，然后取出需要的子字符串。例如，我们有一个字符串`str`，其中包含了若干个单词以空格分隔，我们想要提取出第二个单词，代码如下：
+
+```C
+char str[] = "Hello World Goodbye";
+char *token;
+
+// 第一次调用strtok()时，需要传入要分割的字符串和分隔符，随后每次调用时传入NULL
+token = strtok(str, " ");
+
+// 经过一次调用后，token指向第一个单词"Hello"
+// 继续传入NULL，返回的token指向第二个单词"World"
+token = strtok(NULL, " ");
+
+printf("提取的子字符串为：%s\n", token);
+// 输出：World
 ```
-原始字符串: Hello World!
-提取的子字符串: World
+
+还有一种方法是使用指针来直接指向字符串中的某一部分，然后使用`puts()`函数打印出来。例如，我们有一个字符串`str`，我们想要提取出第3个字符到第5个字符之间的子字符串，代码如下：
+
+```C
+char str[] = "Hello World";
+char *substr;
+
+substr = &str[2];
+// substr指向第3个字符"H"
+
+printf("提取的子字符串为：%.*s\n", 3, substr);
+// 输出：llo
 ```
-在上面的代码中，我们使用了`strncpy()`函数来提取子字符串。它的第一个参数是我们要存储子字符串的数组，第二个参数是原始字符串中要提取的子字符串的起始索引，第三个参数是要提取的子字符串的最大长度。
 
-##深入了解：
+需要注意的是，以上提取子字符串的方法都不会改变原始字符串，而是将提取的子字符串复制到新的字符串中，因此原始字符串的内容没有变化。
 
-在C语言中，提取子字符串的方法有很多种。除了`strncpy()`函数，还可以使用`strcpy()`、`strncpy_s()`等函数来完成。这些函数都属于C标准库中的字符串处理函数。
+# 深入了解提取子字符串
 
-当我们提取子字符串时，要注意以下几点：
-- 确保提取的子字符串长度不超过原始字符串的长度，否则可能会导致内存溢出。
-- 如果需要在提取的子字符串末尾添加`\0`字符来表示字符串的结尾，可以使用`strlen()`函数来确定需要提取的子字符串的长度。
+如果想要更加深入地了解提取子字符串的原理，可以深入研究C语言中字符串的内存表示方式。字符串实际上是一个字符数组，使用指针来指向字符串的首地址。因此，当我们提取子字符串时，实际上是在操作指针，将指针指向对应的位置。在内存中，字符串是连续存储的，因此提取子字符串时，只需要计算出起始位置和结束位置对应的指针即可。
 
-#见此：
+# 参考链接
 
-了解更多关于C语言提取子字符串的内容，请参考以下链接：
-- [C 库 - <string.h>](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [C语言字符串处理函数](https://www.runoob.com/cprogramming/c-standard-library-string-h.html)
-- [C中字符串处理函数的使用](https://www.jianshu.com/p/341bac3426eb)
+- [C语言字符串库函数](https://www.runoob.com/c-programming/c-standard-library-functions.html)
+- [指针和数组](https://www.runoob.com/cprogramming/c-pointers-arrays.html)
+- [C语言中的字符串与指针](https://www.jianshu.com/p/a6c7ac0865bb)
+
+# 查看也可
+
+- [如何处理C语言中的字符串](https://www.example.com/how-to-handle-strings-in-c)
+- [掌握C语言中常用的字符串处理技巧](https://www.example.com/master-common

@@ -1,50 +1,60 @@
 ---
-title:                "Gleam: ランダムな数を生成する"
+title:                "Gleam: ランダム数の生成"
+simple_title:         "ランダム数の生成"
 programming_language: "Gleam"
-category:             "Numbers"
+category:             "Gleam"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜランダムな数字を生成するのか
+## なぜ
+乱数を生成するのはなぜ重要なのでしょうか？乱数は、計算機科学やデータ分析で広く使用され、さまざまな問題やアルゴリズムを解決するために必要です。それでは、Gleamで乱数をどのように生成するか見ていきましょう。
 
-プログラミングでよく使われるランダムな数字の生成について説明します。ランダムな数字は、ゲームやアプリケーションの開発でよく使用されるため、知識を身に付けることは非常に重要です。
-
-# 方法
-
-Gleamプログラミング言語を使用してランダムな数字を生成する方法を紹介します。まず、```rand``関数を使用してランダムな数字を生成し、それを変数に代入します。
+## 生成方法
+乱数を生成するには、 `rand` モジュールを使用します。これには、 `random` 関数があります。この関数を使用すると、範囲内のランダムな整数を生成することができます。
 
 ```Gleam
-let random_number = rand()
+import rand
+
+// 0から10までのランダムな整数を生成
+let num = rand.random(0, 10)
+
+// 結果の出力
+io.format("生成された乱数は {}", [num])
 ```
 
-次に、生成されたランダムな数字を特定の範囲内で制限することもできます。例えば、1から10までのランダムな整数を生成するには、```rand_range```関数を使用します。
+結果は以下のようになります。
+
+```
+生成された乱数は 6
+```
+
+もし、浮動小数点数を生成したい場合は、 `random_float` 関数を使用します。
 
 ```Gleam
-let random_integer = rand_range(1, 10)
+import rand
+
+// 0から1の間の浮動小数点数を生成
+let num = rand.random_float()
+
+// 結果の出力
+io.format("生成された浮動小数点数は {}", [num])
 ```
 
-ランダムな数字を文字列として扱いたい場合は、```to_string```関数を使用します。
+結果は以下のようになります。
 
-```Gleam
-let random_string = to_string(rand())
+```
+生成された浮動小数点数は 0.283
 ```
 
-これらの例では、```rand```関数を使用しましたが、Gleamにはさまざまなランダムな数字を生成するための関数が用意されています。詳細については、公式ドキュメントを参照してください。
+## 深い掘り下げ
+Gleamでは、さまざまな種類の乱数を生成することができます。これらには、 `uuid` や `bytes` などがあります。また、 `random_seed` のような関数を使用することで、独自の乱数生成シードを指定することもできます。
 
-# ディープダイブ
+Gleam公式ドキュメントには、これらの関数や生成方法の詳細な情報が記載されています。詳しくは、公式ドキュメントを参照してください。
 
-ランダムな数字の生成には、偏りが生じる可能性があります。そのため、より公平なランダムな数字を生成するためには、より高度なアルゴリズムが必要となります。Gleamでは、これらのアルゴリズムを実装するためのモジュールが用意されています。例えば、```rand/pcg```モジュールや```rand/xoshiro```モジュールなどがあります。
-
-さらに、Gleamではパターンマッチングを使用して、生成されたランダムな数字が特定の条件を満たすかどうかを確認することもできます。
-
-# もっと詳しく
-
-Gleamを使用してランダムな数字を生成する方法やその他の高度な機能については、公式ドキュメントをご覧ください。
-
-# 他にも見てみる
-
-- Gleam公式ドキュメント：https://gleam.run/
-- Gleamランダムモジュール：https://docs.gleam.run/stdlib/rand
-- さまざまなランダムアルゴリズムの説明：https://en.wikipedia.org/wiki/List_of_random_number_generators
+## 参考リンク
+- [Gleam公式ドキュメント](https://gleam.run/documentation/)
+- [Gleam `rand`モジュールのGitHubリポジトリ](https://github.com/gleam-lang/rand)
+- [Gleamでの乱数の生成方法について](https://medium.com/@saradege/gleam-%E3%81%A7%E3%81%AE%E4%B9%B1%E6%95%B0%E3%81%AE%E7%94%9F%E6%88%90%E6%96%B9%E6%B3%95%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6-94a9a5ee306c)

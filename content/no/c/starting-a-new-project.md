@@ -1,7 +1,9 @@
 ---
 title:                "C: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "C"
-category:             "Getting Started"
+category:             "C"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/starting-a-new-project.md"
 ---
 
@@ -9,33 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Når man begynner med et nytt prosjekt, kan det føles overveldende og skremmende. Men det er også utrolig spennende! Å skrive kode og se det ta form og bli til et fungerende program er en utrolig tilfredsstillende opplevelse. Å starte et nytt prosjekt gir deg muligheten til å uttrykke din kreativitet og kanskje til og med løse problemer du har støtt på i hverdagen. Det er også en flott måte å lære nye språk og teknologier på. Så hvorfor ikke starte et nytt prosjekt?
+Å starte et nytt programmeringsprosjekt kan virke skremmende, men det er også en spennende og givende opplevelse. Gjennom å skape noe fra bunnen av, kan du utvikle dine programmeringsferdigheter og løse utfordringer på en kreativ måte. Ikke nøl med å starte et nytt prosjekt - du vil lære mye underveis!
 
 ## Slik gjør du det
 
-Når du starter et nytt prosjekt, er det viktig å ha en plan og følge noen grunnleggende steg. Det første du må gjøre er å velge et programmeringsspråk. I denne bloggposten skal vi fokusere på C-språket. Deretter bør du tenke på hvilket mål du har med prosjektet. Skal det være en enkel kalkulator eller et avansert spill? Neste steg er å planlegge strukturen til koden din og lage en liste over funksjonalitet prosjektet skal ha. Når planen er klar, kan du begynne å kode!
+Først og fremst må du ha en ide for ditt prosjekt. Dette kan være alt fra å utvikle et spill til å lage et program som automatiserer daglige oppgaver. Deretter må du velge et programmeringsspråk som passer for ditt prosjekt, og laste ned et egnet utviklingsmiljø. La oss se på et enkelt eksempel på hvordan du kan skrive et program i C som skriver ut "Hei verden!" til konsollen:
 
 ```C
 #include <stdio.h>
+
 int main() {
-   // Dette er en kommentar som ikke vil bli tolket av koden
-   // Koden begynner her
-   printf("Hei, verden!\n");
-   // Denne linjen skriver ut "Hei, verden!" til terminalen
-   return 0;
+    printf("Hei verden!");
+    return 0;
 }
 ```
+Dette programmet vil skrive ut teksten "Hei verden!" når det kjøres. Merk at vi bruker printf-funksjonen fra standardbiblioteket <stdio.h> for å skrive ut teksten på konsollen. Dette er bare et enkelt eksempel, men det viser hvordan du kan skrive og kjøre et grunnleggende program i C.
 
-En annen viktig del av å starte et nytt prosjekt er å teste koden din. Det er alltid lurt å starte med små tester for å forsikre deg om at koden fungerer som den skal. Etter hvert som prosjektet vokser, kan det være lurt å implementere automatiske tester for å sjekke at endringer ikke ødelegger eksisterende funksjonalitet.
+## Dypdykk
 
-## Dykk ned i det
+Når du starter et nytt prosjekt, er det viktig å ha en god struktur og organisasjon. Dette vil gjøre det enklere for deg å utvide og vedlikeholde koden senere. Det er også viktig å bruke kommentarer gjennom koden for å forklare hva hver del gjør, slik at det blir enklere å forstå for deg selv og eventuelle andre som skal jobbe med prosjektet i fremtiden.
 
-Å starte et nytt prosjekt er også en flott mulighet til å eksperimentere og lære nye ting. For eksempel kan du utforske ulike måter å implementere en funksjonalitet på, eller lære deg et nytt bibliotek eller rammeverk. Du kan også få inspirasjon fra andres kode ved å sjekke ut lignende prosjekter på nettet. Å lære underveis i et prosjekt er en flott måte å utvide og forbedre dine programmeringsferdigheter på.
+Videre er det viktig å teste koden din jevnlig for å sikre at den fungerer som den skal. Dette kan spare deg for mye tid og frustrasjon senere. Det er også en god idé å bruke versjonskontroll som for eksempel Git, slik at du kan holde oversikt over endringer og enkelt gå tilbake til tidligere versjoner om nødvendig.
 
-For å oppsummere, å starte et nytt prosjekt er en spennende og givende opplevelse. Det er en flott måte å uttrykke din kreativitet og lære nye ting på. Husk å ha en plan, test koden din og eksperimentere underveis. Og ikke vær redd for å be om hjelp eller inspirasjon fra andre programmerere. Lykke til med ditt neste prosjekt!
+En annen viktig del av å starte et nytt prosjekt er å lære nye konsepter og teknikker. Dette kan være gjennom å lese dokumentasjon, følge tutorials eller delta på hackathons og kodekonkurranser. Ikke vær redd for å utforske og prøve nye ting - det er slik du utvikler deg som programmerer!
 
 ## Se også
 
-* [C-programmering for nybegynnere](https://www.w3schools.in/c-tutorial/)
-* [The C Programming Language book](http://www.eecs.wsu.edu/~schneidj/avr-libc-user-manual/)
-* [Github: C-prosjekter for inspirasjon](https://github.com/topics/c)
+- [Hvordan velge riktig programmeringsspråk til ditt prosjekt](https://www.dagensit.no/2019/04/12/hvordan-velge-riktig-programmeringsspraak-til-ditt-prosjekt/)
+- [7 tips for å kickstarte et nytt programmeringsprosjekt](https://www.modernprogrammering.no/7-tips-for-a-kickstart-fet-nytt-programmeringprosjekt/)
+- [Git Tutorial for nybegynnere](https://www.git-tutorial.no/)

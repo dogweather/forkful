@@ -1,49 +1,46 @@
 ---
-title:                "Fish Shell: Att konvertera en sträng till små bokstäver"
+title:                "Fish Shell: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-Att konvertera en sträng till gemener (lower case) är en vanlig uppgift inom programmering. Detta kan vara användbart när man hanterar användarinput, jämför strängar eller för att upprätthålla en enhetlig formatering i ett program. I denna bloggpost kommer jag att visa dig hur du enkelt kan göra detta med hjälp av Fish Shell.
+Många programmeringsspråk erbjuder en enkel funktion för att konvertera en sträng till små bokstäver, och Fish Shell är inget undantag. Att kunna göra detta kan underlätta livet för programmerare genom att förenkla jämförelser och sökningar.
 
-## Så här gör du
+##Så här gör du
 
-För att konvertera en sträng till gemener i Fish Shell använder vi kommandot `string tolower`. Vi kan antingen använda detta direkt i vår terminal eller lägga till det i ett skript.
+För att konvertera en sträng till små bokstäver i Fish Shell, används kommandot `string tolower` följt av strängen som ska konverteras. Se ett exempel nedan:
 
 ```Fish Shell
-# Konvertera en sträng direkt i terminalen
-string tolower "HEJ" 
-# Resultat: hej
-
-# I ett skript
-#!/usr/local/bin/fish
-
-set str "VÄLKOMMEN"
-echo (string tolower $str) 
-# Resultat: välkommen
+string tolower "HEJ, VÄRLDEN!"
 ```
 
-Som du kan se i exemplet ovan används `string tolower` tillsammans med variabeln `str` för att hämta och konvertera värdet. Det resulterande värdet skrivs ut med hjälp av kommandot `echo`.
+Output: `hej, världen!`
 
-## Djupdykning 
+Det finns också möjlighet att använda flaggan `-v` för att visa resultaten på skärmen istället för att spara dem i en variabel. Se ett annat exempel nedan:
 
-En intressant detalj med `string tolower` är att den inte bara funktionerar på bokstäver inom det latinska alfabetet, utan även på specialtecken och diakritiska tecken. Detta betyder att du kan konvertera en sträng till gemener, oavsett vilket språk den är skriven på. Därför är det ett mycket användbart verktyg för internationell programmering.
+```Fish Shell
+set sträng "TESTA DETTA"
+string tolower -v $sträng
+```
 
-### Hur fungerar det?
+Output: `testa detta`
 
-Vad som faktiskt händer bakom kulisserna är att `string tolower` använder sig av den inbyggda funktionen `string` tillsammans med `tolower` som parameter. Detta returnerar en modifierad version av strängen med alla bokstäver omvandlade till gemener.
+##Djupdykning
 
-## Se också
+När man använder `string tolower` i Fish Shell händer det egentligen flera saker bakom kulisserna. Först och främst kontrolleras vilken typ av tecken som finns i strängen – om det är stora bokstäver, små bokstäver eller tecken som inte är bokstäver alls. Sedan konverteras alla stora bokstäver till små bokstäver och eventuella tecken som inte är bokstäver tas bort.
 
-För mer information om Fish Shell och dess kommandon, kolla in följande länkar:
+Det är också viktigt att notera att konvertering till små bokstäver är språkberoende. Det betyder att resultatet kan variera beroende på vilket språk som används.
 
-- [Officiell hemsida för Fish Shell](https://fishshell.com/)
-- [Fiskkommandon och syntax](https://fishshell.com/docs/current/index.html#buitlinf)
-- [Fish Shell på GitHub](https://github.com/fish-shell/fish-shell)
+##Se även
 
-Tack för att du läste! Hoppas du har fått en bättre förståelse för hur man konverterar en sträng till gemener med hjälp av Fish Shell.
+- [Fish Shell dokumentation om `string tolower`](https://fishshell.com/docs/current/commands.html#string-tolower)
+- [En jämförelse av strängfunktioner i olika programmeringsspråk](https://www.computerhope.com/jargon/s/string-functions.htm)
+
+Lycka till med dina Fish Shell-programmeringar! 🐟

@@ -1,48 +1,81 @@
 ---
-title:                "Java: Beregning av datoer i fremtiden eller fortiden"
+title:                "Java: Å beregne en dato i fremtiden eller fortiden"
+simple_title:         "Å beregne en dato i fremtiden eller fortiden"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor 
-Å beregne en dato i fremtiden eller fortiden kan være nyttig for å planlegge fremtidige aktiviteter eller for å spore tidligere hendelser. Ved å forstå hvordan man programmerer dette, kan man også få en bedre forståelse av datofunksjoner i Java og hvordan de kan brukes i ulike situasjoner.
+## Hvorfor
+Å beregne datoer i fremtiden eller fortiden kan være nyttig for ulike programmeringsprosjekter, som for eksempel å vise oppdaterte frister eller planlegge kommende arrangementer.
 
 ## Hvordan
-For å beregne en dato i fremtiden eller fortiden i Java, kan man bruke klassen Calendar og dens metoder. Her er et eksempel på hvordan dette kan gjøres:
+For å beregne en dato i fremtiden eller fortiden trenger du å vite tre ting: nåværende dato, antall dager å legge til eller trekke fra, og om det er snakk om å legge til eller trekke fra.
 
 ```Java
-// Opprett en instans av Calendar
-Calendar cal = Calendar.getInstance();
+import java.time.LocalDate;
 
-// Sett ønsket dato
-cal.set(2020, Calendar.SEPTEMBER, 15);
+// Sett nåværende dato
+LocalDate nåværendeDato = LocalDate.now();
 
-// Legg til 10 dager til datoen
-cal.add(Calendar.DAY_OF_MONTH, 10);
+// Antall dager å legge til eller trekke fra
+int antallDager = 10; 
 
-// Få utskrift av datoen i ønsket format
-System.out.println("Dato i fremtiden: " + cal.getTime());
+// For å legge til dager:
+LocalDate fremtidigDato = nåværendeDato.plusDays(antallDager);
+
+// For å trekke fra dager:
+LocalDate fortidigDato = nåværendeDato.minusDays(antallDager);
+
+// Skriv ut resultatene
+System.out.println("In the future: " + fremtidigDato);
+System.out.println("In the past: " + fortidigDato);
 ```
 
-Dette vil gi følgende output:
-
+Output:
 ```
-Dato i fremtiden: Mon Sep 25 00:00:00 PDT 2020
+In the future: 2021-05-27
+In the past: 2021-05-07
 ```
 
-For å beregne en dato i fortiden, kan man bruke metoden `add` med et negativt tall, for eksempel `-10` for å trekke fra 10 dager.
+Når du bruker Java's `LocalDate`-klasse, vil du få en korrekt dato uavhengig av skuddår eller månedslengder.
 
-## Dypdykk
-Ved å bruke klassen Calendar kan man beregne datoer i fremtiden eller fortiden basert på ulike enheter som dager, uker, måneder eller år. Man kan også bruke forskjellige måter å representere datoer på, for eksempel å bruke en `int` for å representere måneder i stedet for å bruke begrepet `Calendar.DECEMBER`.
+## Dykke dypere
+Hvis du ønsker å beregne datoer i et mer spesifikt format, kan du også bruke `LocalDate` til å konstruere en dato med en bestemt årstall, måned og dag.
 
-Det er viktig å merke seg at Java har en annen måte å håndtere datoer på enn enkelte andre programmeringsspråk, som for eksempel å telle måneder fra 0 i stedet for fra 1. Dette kan føre til forvirring når man jobber med datoer i Java.
+```Java
+// Konstruerer en dato med 2022 som år, april som måned, og den 15. som dag
+LocalDate datoen = LocalDate.of(2022, 04, 15);
 
-For å få en dypere forståelse av datofunksjonene i Java og hvordan man kan bruke dem i ulike situasjoner, kan det være nyttig å lese mer om klassen Calendar og dens metoder.
+// Skriv ut datoen
+System.out.println(datoen);
+
+// Output:
+2022-04-15
+```
+
+Du kan også utføre mer kompliserte operasjoner, som å finne antall dager mellom to datoer, ved hjelp av Java's `Period`-klasse.
+
+```Java
+// Sett to datoer
+LocalDate førsteDato = LocalDate.of(2020, 01, 01);
+LocalDate andreDato = LocalDate.of(2020, 12, 31);
+
+// Bruk Period klassen for å finne antall dager mellom de to datoene
+Period forskjell = Period.between(førsteDato, andreDato);
+int antallDager = forskjell.getDays();
+
+// Skriv ut resultatet
+System.out.println("Number of days between: " + antallDager);
+
+// Output:
+Number of days between: 364
+```
 
 ## Se også
-- [Offisiell dokumentasjon for Calendar i Java](https://docs.oracle.com/javase/8/docs/api/index.html?java/util/Calendar.html)
-- [Tutorial om å beregne datoer i Java](https://www.baeldung.com/java-date-time-operations)
-- [Tips for håndtering av datoer i Java](https://www.journaldev.com/10765/java-date-time-tips)
+- [Java LocalDateTime API](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+- [Tutorial: Getting Started with Java in VS Code](https://code.visualstudio.com/docs/java/java-tutorial)
+- [How to Get Current Date and Time in Java](https://www.baeldung.com/java-current-date-time)

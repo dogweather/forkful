@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Vergleich von zwei Daten"
+title:                "Haskell: Vergleich von zwei Datum"
+simple_title:         "Vergleich von zwei Datum"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/comparing-two-dates.md"
 ---
 
@@ -9,34 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In der Programmierung gibt es oft Situationen, in denen wir zwei verschiedene Daten vergleichen müssen. Zum Beispiel wenn wir prüfen wollen, ob ein bestimmtes Datum in der Zukunft oder Vergangenheit liegt oder wenn wir zwei Ereignisse zeitlich miteinander vergleichen möchten. In diesem Blogpost werden wir uns anschauen, wie wir in Haskell zwei Daten vergleichen können.
+Vergleich von zwei Daten? Warum sollte man das überhaupt tun? Nun, es gibt viele Anwendungen, bei denen man Datumsangaben vergleichen muss. Zum Beispiel in der Buchhaltung, bei der Verwaltung von Aufgaben oder Terminen, und sogar in der täglichen Planung. Daher ist es wichtig zu wissen, wie man zwei Daten in Haskell vergleichen kann.
 
-## Wie man zwei Daten in Haskell vergleicht
+## Wie Geht's
 
-Um zwei Daten in Haskell zu vergleichen, können wir die Funktion `compare` verwenden, die Teil der Standardbibliothek ist. Diese Funktion nimmt zwei Argumente vom selben Typ und gibt als Ergebnis eine `Ordering`-Value zurück, also entweder `LT` (kleiner), `EQ` (gleich) oder `GT` (größer). Schauen wir uns ein Beispiel an:
+Ein Vergleich von zwei Daten in Haskell kann auf verschiedene Arten durchgeführt werden. Eine Möglichkeit ist die Verwendung der Standardfunktion `compare`, die zwei Werte jedes Ordertyps vergleichen kann, einschließlich Daten.
+
+Das folgende Beispiel zeigt, wie man die `compare`-Funktion verwendet, um zwei Daten zu vergleichen und das Ergebnis als `Ordering`-Wert zurückzugeben:
 
 ```Haskell
--- Vergleich von Tagen
-compareDay :: Day -> Day -> Ordering
-compareDay day1 day2 = compare day1 day2
-
--- Beispielaufruf
--- 11. Mai 2021 und 25. Dezember 2021
-compareDay (fromGregorian 2021 5 11) (fromGregorian 2021 12 25)
--- Output: LT
+-- Vergleich von zwei Daten
+compareDates :: Date -> Date -> Ordering
+compareDates date1 date2 = compare date1 date2
 ```
 
-In diesem Beispiel vergleichen wir zwei `Day`-Werte, die wir mit der Funktion `fromGregorian` aus dem Modul `Data.Time.Calendar` erstellen. Wir sehen, dass der Output `LT` ist, da der 11. Mai vor dem 25. Dezember liegt.
+Die Rückgabewerte von `compare` können entweder `LT` (geringer), `GT` (größer) oder `EQ` (gleich) sein. Hier ist ein Beispiel für den Vergleich von zwei verschiedenen Daten mit dem obigen Code:
 
-Neben `Day`-Werten können wir auch andere Datentypen vergleichen, solange sie eine Instanz der Typklasse `Ord` sind. Das bedeutet, dass sie eine strikte totale Ordnung implementieren können.
+```Haskell
+-- Beispiel für den Vergleich von Daten
+>>> compareDates (Date 2020 1 1) (Date 2020 1 2)
+LT
+```
 
-## Tiefergehende Information
+In diesem Fall ist das erste Datum (1. Januar 2020) kleiner als das zweite Datum (2. Januar 2020).
 
-Die `compare`-Funktion nutzt die `Ord`-Instanz des zu vergleichenden Typs, um zu bestimmen, wie die Werte zueinander stehen. Bei `Day`-Werten wird zum Beispiel das Datum auf eine Zahl kodiert und dann verglichen. Aber auch bei anderen Datentypen kann die Implementierung von `Ord` je nach Typ unterschiedlich sein.
+## Tiefer Gehen
 
-Ein wichtiger Punkt beim Vergleichen von Daten ist auch, dass die Werte vom selben Typ sein müssen. Wenn wir versuchen, eine `String`-Value mit einer `Float`-Value zu vergleichen, bekommen wir einen Fehler, da diese Werte nicht vom selben Typ sind. Es ist daher wichtig, darauf zu achten, dass wir bei unserer Implementierung immer mit dem gleichen Typ von Werten arbeiten.
+Für einen genaueren Blick auf die Vergleichsfunktion von Daten in Haskell, kann man sich die Unterstützungsfunktionen `(<)` (kleiner als), `(>)` (größer als) und `(==)` (gleich) ansehen. Diese unterstützen den `compare`-Operator und ermöglichen es uns, die Definition der Vergleichsfunktion für Daten zu ändern. Zum Beispiel können wir die Datumsstruktur in eine Instanz der `Ord`-Klasse umwandeln und die Vergleichsfunktion basierend auf dem Julianischen Kalender definieren.
 
-## Siehe auch
+```Haskell
+-- Neue Definition von Date als Instanz von Ord
+instance Ord Date where
+  compare (Date y1 m1 d1) (Date y2 m2 d2)
+    | y1 > y2 = GT
+    | y1 < y2 = LT
+    | m1 > m2 = GT
+    | m1 < m2 = LT
+    | d1 > d2 = GT
+    | d1 < d2 = LT
+    | otherwise = EQ
+```
 
-- [Haskell Wikibook - Ord](https://en.wikibooks.org/wiki/Haskell/Ord)
-- [Haskell Docs - compare function](https://hackage.haskell.org/package/base-4.15.1.0/docs/Prelude.html#v:compare)
+Durch diese neue Definition werden zwei Daten nun basierend auf dem Jahr, dem Monat und dem Tag verglichen, anstatt auf der standardmäßigen lexikalischen Reihenfolge.
+
+## Siehe Auch
+
+- [Offizielle Dokumentation zu Daten in Haskell](https://www.haskell.org/onlinereport/lexemes.html#sect2.6)
+- [Weitere Beispiele und Erklärungen für die Verwendung von `compare` in Haskell](https://wiki.haskell.org/Ord)
+- [Informationen über den Julianischen Kalender](https://de.wikipedia.org/wiki/Julianischer_Kalender)

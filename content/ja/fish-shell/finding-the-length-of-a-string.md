@@ -1,40 +1,58 @@
 ---
 title:                "Fish Shell: 文字列の長さを見つける"
+simple_title:         "文字列の長さを見つける"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜ
+## Why
 
-文字列の長さを見つけることに取り組む理由は、それがプログラミングにおいて非常に重要なタスクであるからです。文字列の長さを知ることで、より効率的にデータを処理し、プログラムをより強力にすることができます。
+文字列の長さを見つけることの重要性は何でしょうか？プログラミングで文字列を扱うとき、その長さを知ることがとても役に立ちます。例えば、文字列の一部だけを取り出すためには、その長さを知る必要があります。また、文字列の比較や整形などにも必要になることがあります。今回は、Fish Shellを使って、文字列の長さを見つける方法をご紹介します。
 
-##やり方
+## How To
 
-```Fish Shell
-set text "今日はいい天気です。"
-echo (string length $text)
-```
-
-上記のコードを実行すると、文字列の長さが出力されます。例えば、「今日はいい天気です。」という文字列の長さは10となります。
+まずは、Fish Shellで簡単な文字列を定義してみましょう。
 
 ```Fish Shell
-set text "こんにちは！"
-echo (string length $text)
+set name "John"
 ```
 
-上記のコードでも同様に、文字列の長さが出力されます。このように、文字列の長さを取得するには、`string length`というコマンドを使用する必要があります。
+次に、`string length`コマンドを使用して、文字列の長さを見つけることができます。
 
-##深堀り
+```Fish Shell
+string length $name
+```
 
-文字列の長さを取得する方法は、コード例のように簡単ですが、実際にはどのように機能しているのでしょうか？Fish Shellでは、文字列の長さを取得するために`string length`という関数を使用しています。この関数は、与えられた文字列を分析し、その長さを数値で返します。
+これを実行すると、`4`という結果が返ってきます。つまり、`John`という文字列は4文字であることがわかります。
 
-また、Fish Shellでは、文字列の長さ以外にも様々な文字列関連の操作を行うことができます。例えば、特定の文字列を取得する`string sub`や、文字列の結合を行う`string join`など、様々なコマンドが用意されています。
+もう少し複雑な例を見てみましょう。以下のような文字列があったとします。
 
-##参考リンク
+```Fish Shell
+set message "こんにちは、私の名前は${name}です。"
+```
 
-- [Fish Shell Documentation: String Operations](https://fishshell.com/docs/current/cmds/string.html)
-- [Fish Shell Tutorial: Working with Strings](https://fishshell.com/docs/current/tutorial.html#working-with-strings)
-- [Fish Shell Cheatsheet: String Operations](https://fishshell.com/docs/current/tutorial.html#working-with-strings)
+この場合、`string length`コマンドを使用すると、変数`${name}`は上の例と同様に4文字としてカウントされます。しかし、実際の表示としては、`こんにちは、私の名前はJohnです。`となりますので、これを考慮して文字列の長さを見つける必要があります。
+
+そのために、`string replace`コマンドを使用して、変数を空白に置き換えます。
+
+```Fish Shell
+string replace $message ${name} ""
+```
+
+これにより、`こんにちは、私の名前はです。`という文字列が返ってきますので、最終的に`13`という長さがわかります。
+
+## Deep Dive
+
+Fish Shellでは、文字列の長さを見つけるためにも、より多くのコマンドを使用することができます。例えば、`string match`コマンドを使用すると、特定のパターンにマッチする文字列の長さを見つけることができます。また、正規表現を使うことで、より柔軟な文字列の操作が可能です。
+
+文字列の長さを見つける際には、様々なコマンドや技術を組み合わせて使うことで、より複雑な操作が可能になります。ぜひ、自分のプログラムに応用してみてください。
+
+## See Also
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/commands.html#string)
+- [Online Fish Shell tutorial](https://fishshell.com/docs/current/tutorial.html)
+- [Regular Expressions in Fish Shell](https://fishshell.com/docs/current/cmds/string.html#regular-expressions)

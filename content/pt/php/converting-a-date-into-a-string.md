@@ -1,58 +1,53 @@
 ---
 title:                "PHP: Convertendo uma data em uma string"
+simple_title:         "Convertendo uma data em uma string"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma data em uma string?
+## Por que
 
-Converter uma data em uma string é uma tarefa comum em programação PHP. Isso permite que as datas sejam formatadas de maneira legível para os usuários, além de serem armazenadas ou transmitidas de forma mais fácil. Neste post, iremos explorar como realizar essa conversão e também nos aprofundar nas diferentes opções disponíveis.
+Algumas vezes, em nossas aplicações PHP, precisamos exibir datas em um formato amigável para os usuários. Em vez de mostrar a data em um formato difícil de ler, podemos convertê-la em uma string mais compreensível. Neste artigo, vamos discutir como fazer isso em PHP.
 
-## Como fazer
+## Como Fazer
 
-Para converter uma data em uma string, podemos utilizar a função `date()` do PHP. Essa função recebe dois parâmetros: o primeiro é o formato da data que desejamos obter e o segundo é o valor da data que queremos converter.
+Para converter uma data em uma string, podemos usar a função `date()` do PHP. Esta função aceita dois parâmetros: o formato da data desejada e o valor da data que queremos converter. Aqui está uma forma simples de usar a função `date()` para exibir a data atual em um formato de string:
 
-Por exemplo, se quisermos obter a data atual no formato “Dia da semana, dia de mês de ano”, podemos utilizar o seguinte código:
-
-```
-PHP
-$date = date('l, j \d\e F \d\e Y');
-echo $date;
+```PHP
+echo date('d/m/Y');
 ```
 
-A saída desse código seria: “domingo, 22 de agosto de 2021”. O comando `\d\e` é utilizado para inserir o texto “de”, pois as letras “d” e “e” são caracteres especiais no formato de data do PHP.
+O código acima irá imprimir a data atual no formato DD/MM/AAAA. Mas e se quisermos exibir a data em um formato diferente? Felizmente, a função `date()` nos dá muitas opções para formatar nossas datas. Aqui estão alguns exemplos:
 
-Também é possível utilizar a função `strtotime()` para converter uma data específica em timestamp antes de passá-la como parâmetro para a função `date()`. Isso pode ser útil quando precisamos trabalhar com datas em diferentes formatos ou realizar cálculos com elas.
-
-```
-PHP
-$date = strtotime('2020-12-31');
-echo date('M d, Y', $date);
-```
-
-A saída desse código seria: “Dec 31, 2020”.
-
-## Aprofundando
-
-Além dos formatos de data pré-definidos do PHP, também é possível criar formatos personalizados utilizando os caracteres especiais disponíveis. Por exemplo, o caractere “m” representa o mês com dois dígitos e o “M” representa o mês com três letras.
-
-Também é possível passar um parâmetro opcional de idioma para a função `date()` e obter a data formatada de acordo com o idioma escolhido. Por padrão, o idioma será baseado nas configurações do servidor, mas podemos especificá-lo através do parâmetro `setlocale()`.
-
-```
-PHP
-setlocale(LC_TIME, 'pt_BR');
+```PHP
+// exibir a data no formato por extenso (dia, mês e ano)
 echo date('l, d \d\e F \d\e Y');
+
+// exibir a data e a hora no formato 12 horas com AM/PM
+echo date('d/m/Y h:i:s A');
 ```
 
-A saída seria “domingo, 22 de agosto de 2021” em português brasileiro.
+Podemos encontrar uma lista completa de caracteres de formato de data no manual do PHP.
 
-Lembrando que é importante sempre conferir a documentação oficial do PHP para verificar a lista completa de caracteres especiais disponíveis e suas diferentes opções.
+## Mergulho Profundo
+
+A função `date()` do PHP pode fazer muito mais do que apenas formatar datas em strings. Também podemos usar esta função para obter informações específicas sobre uma data, como o número do dia da semana ou o número do mês. Isso é especialmente útil ao trabalhar com datas em um sistema de reservas ou calendário.
+
+Por exemplo, se quisermos obter o número da semana a partir de uma data, podemos usar o caractere `W` na função `date()`. Este caractere retorna um número de 0 a 53, indicando qual semana do ano a data está localizada. Aqui está um exemplo:
+
+```PHP
+// obter o número da semana da data atual
+echo date('W');
+```
+
+Além disso, podemos usar a função `strtotime()` para converter um string em uma data no formato Unix, o qual é um formato de número de segundos desde a meia-noite do dia 1º de janeiro de 1970. Podemos, então, usar essa data Unix em conjunto com a função `date()` para formatá-la da maneira que desejarmos.
 
 ## Veja também
 
-- [Documentação oficial do PHP sobre a função date()](https://www.php.net/manual/pt_BR/function.date.php)
-- [Documentação oficial do PHP sobre a função strtotime()](https://www.php.net/manual/pt_BR/function.strtotime.php)
-- [Lista completa de caracteres especiais para formatar datas no PHP](https://www.php.net/manual/pt_BR/datetime.format.php)
+- [Manual do PHP sobre a função date()](https://www.php.net/manual/pt_BR/function.date.php)
+- [Lista de caracteres de formato de data do PHP](https://www.php.net/manual/pt_BR/function.date.php#refsect1-function.date-parameters)
+- [Manual do PHP sobre a função strtotime()](https://www.php.net/manual/pt_BR/function.strtotime.php)

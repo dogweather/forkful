@@ -1,7 +1,9 @@
 ---
 title:                "Swift: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,39 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Calcular datas no futuro ou no passado pode ser um problema comum para muitos programadores em Swift. Seja para agendar eventos ou gerar informações de data dinâmicas, entender como calcular datas pode ser útil em muitos projetos.
+Calcular datas no futuro ou passado é uma tarefa essencial em muitos aplicativos, seja para agendar eventos, criar lembretes ou realizar operações com base em datas específicas. Com as ferramentas certas, essa tarefa pode ser feita de forma rápida e eficiente em Swift.
 
-## Como Fazer
+## Como fazer
 
-Existem várias maneiras de calcular datas no Swift, dependendo de suas necessidades específicas. Aqui estão algumas opções que podem ajudá-lo a obter o resultado desejado:
+Para calcular uma data no futuro ou passado usando Swift, é necessário primeiro importar o framework "Foundation". Em seguida, é possível utilizar o tipo de dados `Date` para armazenar uma data e os métodos `addingTimeInterval` ou `addingDateComponents` para fazer os cálculos desejados.
 
-```Swift
-// Obtendo a data atual
-let currentDate = Date()
+### Exemplo 1: Calcular uma data no futuro ou passado em segundos
 
-// Adicionando 1 dia à data atual
-let futureDate = Calendar.current.date(byAdding: .day, value: 1, to: currentDate)
+```
+import Foundation
 
-// Subtraindo 1 semana da data atual
-let pastDate = Calendar.current.date(byAdding: .weekOfYear, value: -1, to: currentDate)
+let dataAtual = Date()
+let segundos = 3600 // 1 hora
 
-// Obtendo o dia, mês e ano de uma data específica
-let components = Calendar.current.dateComponents([.day, .month, .year], from: futureDate)
+let dataCalculada = dataAtual.addingTimeInterval(TimeInterval(segundos)) // Adiciona 1 hora à data atual
 
-// Personalizando um formato de data
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
-let formattedDate = dateFormatter.string(from: futureDate!)
+// Saída: 2021-07-16 22:30:00 +0000
+print(dataCalculada)
 ```
 
-Com esses exemplos, você pode personalizar suas próprias funções para calcular datas no seu projeto Swift.
+### Exemplo 2: Calcular uma data no futuro ou passado com base em componentes de data personalizados
 
-## Mergulho Profundo
+```
+import Foundation
 
-Ao calcular datas, é importante ter em mente a utilização do fuso horário correto, pois isso pode afetar os resultados. Além disso, a classe `Calendar` oferece muitas opções e métodos úteis para manipular datas, como adicionar ou subtrair valores específicos, extrair componentes, comparar datas, entre outros. É sempre bom revisar a documentação oficial da Apple para entender todas as possibilidades.
+let dataAtual = Date()
+var dataComponentes = DateComponents()
 
-## Veja Também
+dataComponentes.year = 2022
+dataComponentes.month = 12
+dataComponentes.day = 31
+dataComponentes.hour = 23
+dataComponentes.minute = 59
+dataComponentes.second = 59
 
-- [Documentação Oficial da Apple sobre a classe Calendar](https://developer.apple.com/documentation/foundation/calendar)
-- [Tutoriais sobre formatação de datas em Swift](https://www.hackingwithswift.com/example-code/system/how-to-format-dates-with-dateformatter)
-- [Funções personalizadas de cálculo de datas em Swift](https://www.hackingwithswift.com/example-code/language/how-to-write-the-result-of-your-function-to-the-screen)
+let dataCalculada = Calendar.current.date(byAdding: dataComponentes, to: dataAtual) // Adiciona os componentes à data atual
+
+// Saída: 2022-12-31 23:59:59 +0000
+print(dataCalculada)
+```
+
+## Mergulho profundo
+
+A classe `Calendar` oferece uma grande variedade de métodos que permitem um controle preciso sobre as datas, como a possibilidade de especificar diferentes calendários, fusos horários e até mesmo lidar com problemas de horário de verão. Além disso, o uso de componentes de data permite que o cálculo de datas leve em consideração diferentes unidades de tempo, como anos, meses e dias.
+
+## Veja também
+
+- [Documentação oficial do framework Foundation](https://developer.apple.com/documentation/foundation)
+- [Tutorial: Manipulação de datas em Swift](https://www.raywenderlich.com/3118345-date-manipulation-in-swift-explained-with-examples)
+- [Artigo: Recursos avançados de data e hora em Swift](https://medium.com/better-programming/swift-date-time-advanced-usage-and-issues-25b71954cde6)

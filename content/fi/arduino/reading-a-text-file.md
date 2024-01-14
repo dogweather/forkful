@@ -1,57 +1,140 @@
 ---
-title:                "Arduino: Tekstitiedoston lukeminen"
+title:                "Arduino: Tiedoston lukeminen"
+simple_title:         "Tiedoston lukeminen"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi: Why
-
-Miksi joku lukisi artikkelin tekstin lukemisesta Arduino-ohjelmoinnissa? Tämä artikkeli tarjoaa yksityiskohtaisia ​​ohjeita ja tietoa tekstin lukemisesta ja sen hyödyllisyydestä projektien toteuttamisessa.
-
 # Miksi
 
-Tekstin lukeminen on tärkeä osa monia Arduino-projekteja. Se mahdollistaa tiedon tallentamisen ja käyttämisen ulkoisessa tiedostossa, kuten SD-kortilla, ja luo näin monipuolisia ja monimutkaisia ​​sovelluksia.
+Tervetuloa lukemaan Arduino-ohjelmointi blogitekstiä, joka käsittelee tekstitiedoston lukemista! Tekstitiedostojen lukeminen voi olla hyödyllistä monista syistä, kuten tiedostojen tallentamisesta laitteeseen, datan keräämiseen tai jopa pelien tallentamiseen. Jatka lukemista, jos haluat oppia lisää.
 
-## How To
+# Kuinka
 
-Tekstin lukeminen Arduino-ohjelmoinnissa on helppoa. Käytännössä se sisältää kolme vaihetta: avaaminen, lukeminen ja sulkeminen. Alla on esimerkki Arduino-koodista, joka näyttää, kuinka voit lukea tekstitiedoston ja tulostaa sen sarjaväylälle:
+Tekstitiedoston lukeminen Arduinoilla on helppoa. Voit käyttää SD-korttia tai jopa ESP8266 WiFi-moduulia lukeaksesi tekstitiedostoja.
 
-```Arduino
+#### SD-Kortti:
+```
+#include <SPI.h>
+#include <SD.h>
+
+File tiedosto;
+
 void setup() {
-  // Avaaminen
-  Serial.begin(9600); // Määritetään sarjaväylä kommunikointia varten
-  File tiedosto = SD.open("tiedosto.txt"); // Avataan tiedosto
-  if (tiedosto) { // Jos tiedosto on avattu onnistuneesti
-    // Lukeminen
-    while (tiedosto.available()) { // Toistetaan niin kauan, kun tiedostossa on tavuja
-      char merkki = tiedosto.read(); // Luetaan seuraava merkki
-      Serial.print(merkki); // Tulostetaan merkki sarjaväylälle
-    }
-    // Sulkeminen
-    tiedosto.close(); // Suljetaan tiedosto
+  Serial.begin(9600);
+
+  // Asenna SD-kortti
+  if (!SD.begin(4)) {
+    Serial.println("SD-korttia ei löydetty");
+    while (1);
   }
+  Serial.println("SD-kortti löydetty");
+  
+  // Avaa tiedosto
+  tiedosto = SD.open("tiedosto.txt");
+  
+  // Tulosta tiedoston sisältö sarjamonitorille
+  while (tiedosto.available()) {
+    Serial.write(tiedosto.read());
+  }
+  
+  // Sulje tiedosto
+  tiedosto.close();
 }
 
 void loop() {
-  // Ei tehdä mitään loopissa
+
+}
+```
+Tämän koodin avulla voit lukea ja tulostaa tekstitiedoston sisällön sarjamonitorille.
+
+#### ESP8266 WiFi-moduuli:
+```
+#include <ESP8266WiFi.h>
+#include <WiFiClient.h>
+
+void setup() {
+  Serial.begin(9600);
+  
+  // Yhdistä WiFi-verkkoon
+  WiFi.begin("verkon_nimi", "salasana");
+  
+  // Odota yhdistämistä
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+  }
+  
+  Serial.println("Yhdistetty WiFi-verkkoon");
+  
+  // Luo WiFi-asiakas
+  WiFiClient asiakas;
+  
+  // Avaa yhteys palvelimeen
+  if (asiakas.connect("www.example.com", 80)) {
+    // Lähetä HTTP-pyyntö
+    asiakas.print("GET /tiedosto.txt HTTP/1.1\r\n");
+    asiakas.print("Host: www.example.com\r\n");
+    asiakas.print("Connection: close\r\n\r\n");
+    
+    // Lue vastaus
+    while (asiakas.available()) {
+      String rivi = asiakas.readStringUntil('\n');
+      Serial.println(rivi);
+    }
+  }
+  
+  // Sulje yhteys
+  asiakas.stop();
+}
+
+void loop() {
+
+}
+```
+Tämä koodi yhdistää WiFi-verkkoon ja lukee tekstitiedoston verkosta ja tulostaa sen sisällön sarjamonitorille.
+
+# Syväsukellus
+
+Tekstitiedoston lukeminen voi olla hieman monimutkaisempaa, jos siinä on erikoismerkkejä tai numerosarjoja. Voit kuitenkin käyttää esimerkiksi String-luokkaa tai strtok-funktiota selvittääksesi, miten käsitellä tiedoston sisältöä. Voit myös käyttää Serial.readStringUntil(f()-funktio päätymisen merkille.
+```
+#include <SPI.h>
+#include <SD.h>
+
+File tiedosto;
+
+void setup() {
+  Serial.begin(9600);
+
+  // Asenna SD-kortti
+  if (!SD.begin(4)) {
+    Serial.println("SD-korttia ei löydetty");
+    while (1);
+  }
+  Serial.println("SD-kortti löydetty");
+  
+  // Avaa tiedosto
+  tiedosto = SD.open("tiedosto.txt");
+  
+  // Lue tiedosto rivi kerrallaan ja tulosta sarjamonitorille.
+  while (tiedosto.available()) {
+    String rivi = tiedosto.readStringUntil('\n');
+    Serial.println(rivi);
+  }
+  
+  // Sulje tiedosto
+  tiedosto.close();
+}
+
+void loop() {
+
 }
 ```
 
-Tämä koodi olettaa, että SD-kortti on kytketty Arduinoon ja tiedosto.txt on tallennettu SD-kortille.
+# Katso myös
 
-Kun tiedostoa luetaan, merkit tulostetaan sarjaväylälle. Voit muokata koodia lisäämällä ehtoja, kuten tulostamalla vain tiettyjä merkkejä tai suorittamalla muita toimintoja tiedon perusteella.
-
-## Deep Dive
-
-Tekstin lukemiseen on useita erilaisia ​​tapoja Arduino-ohjelmoinnissa, mukaan lukien Serial, SD-kortti, EEPROM ja ulkoinen muisti. Jokaisessa on omat etunsa ja soveltamisalan, joten on tärkeää ymmärtää näiden eri vaihtoehtojen käyttömahdollisuudet ja rajoitukset.
-
-Lisäksi on hyödyllistä perehtyä tekstin lukemisen ja käsittelyn lisäksi myös sen tallentamiseen. Tekstin lukemisen lisäksi voit tallentaa sitä myös muuttujiin tai taulukoihin Arduino-muistissa. Tämä avaa mahdollisuuden luoda monimutkaisempia ja dynaamisempia sovelluksia.
-
-## Katso myös
-
-- [Arduino-tiedostonhallintaopas](https://www.arduino.cc/en/Tutorial/Files)
-- [SD-kortin käyttö Arduino-projekteissa](https://maker.pro/arduino/projects/how-to-use-an-sd-card-with-an-arduino)
-- [SD-kortin kirjoittaminen ja lukeminen](https://create.arduino.cc/projecthub/Xark/sd-card-howto-ec3c06)
+- [Arduino SD Library](https://www.arduino.cc/en/reference/SD)
+- [ESP8266WiFi Library](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266WiFi)

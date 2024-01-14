@@ -1,47 +1,45 @@
 ---
-title:                "Bash: Virheenjäljitystulostuksen tulostaminen"
+title:                "Bash: Tulostamalla debuggaustulosteita"
+simple_title:         "Tulostamalla debuggaustulosteita"
 programming_language: "Bash"
-category:             "Testing and Debugging"
+category:             "Bash"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi tulostaa virheenkorjaustiedot?
 
-Koodissa törmää usein ongelmiin, jotka vaativat tarkempaa tarkkailua. Debuggaamiseen käytetään usein print-lauseita, joiden avulla voidaan tulostaa tietoa ja seurata koodin suoritusta. Tämä on tärkeää, jotta voidaan havaita missä kohtaa koodi ehkä ei toimi oletetulla tavalla. Siksi debug-tulostus on tärkeä osa Bash-ohjelmointia.
+Virheenkorjaustietojen tulostaminen on tärkeä osa ohjelmointia ja auttaa kehittäjiä löytämään ja korjaamaan ohjelmien virheitä. Se voi myös auttaa ymmärtämään ohjelman suorituksen aikana tapahtuvia prosesseja ja löytämään mahdollisia optimointimahdollisuuksia.
 
-## Kuinka
+# Miten tulostaa virheenkorjaustiedot?
 
-Bash-koodissa voit tulostaa debug-tietoja käyttämällä komentoa "echo". Esimerkiksi:
-
-```Bash
-echo "Debug-tietoa tässä"
-```
-
-Tulostuksena näet "Debug-tietoa tässä". Voit myös tulostaa muuttujien arvoja laittamalla ne lainausmerkkien sisään:
+Virheenkorjaustietojen tulostaminen Bash-ohjelmassa on helppoa. Tulostus tapahtuu käyttämällä `echo`-komentoa ja lisäämällä siihen halutut muuttujat tai merkkijonot. Alla on esimerkkikoodi ja sen tulostama tulos:
 
 ```Bash
-muuttuja="Tämä on debug-tietoa"
-echo "Muuttujan arvo on: $muuttuja"
+#!/bin/bash
+nimi="Matti"
+lause="Terve $nimi, mitä kuuluu?"
+echo $lause
 ```
 
-Tulostuksena näet "Muuttujan arvo on: Tämä on debug-tietoa".
+Tämä koodi tulostaa seuraavan rivin:
 
-## Syväsukellus
-
-Debug-tulostuksen voi tehdä myös käyttämällä "-x" -valitsinta. Tämä vaihtoehto tulostaa jokaisen komennon ennen sen suorittamista ja sen jälkeen. Voit käyttää sitä esimerkiksi ajamalla skriptin seuraavasti:
-
-```Bash
-bash -x skripti.sh
+```
+Terve Matti, mitä kuuluu?
 ```
 
-Tällöin näet jokaisen komennon, jota skripti suorittaa, ja sen jälkeisen tulosteen.
+## Syvä sukellus
 
-Voit myös käyttää komentoa "set -x" asettaaksesi koodiin tietyn kohdan, jossa debug-tulostus alkaa ja "set +x" asettaaksesi kohdan, jossa se loppuu. Tämä voi olla hyödyllistä, jos haluat tarkastella vain tiettyä osaa koodista.
+Bashilla on mahdollista myös tulostaa virheenkorjaustietoja eri tasoisilla painikkeilla, kuten `-v` ja `-x`. Nämä painikkeet auttavat seuraamaan ohjelman suoritusta tarkemmin ja löytämään mahdollisia ongelmakohtia.
+
+On myös hyödyllistä lisätä `echo`-lauseita ohjelman eri osiin, jotta voidaan seurata suorituksen kulkua ja löytää mahdollisia virheitä tai pullonkauloja. Näitä lisäyksiä kutsutaan myös nimellä "debugging prints".
 
 ## Katso myös
 
-- [Bashin virallinen manuaali](https://www.gnu.org/software/bash/manual/bash.html)
-- [Debug-tulostuksen käyttämisen parhaat käytännöt](https://www.linuxjournal.com/content/bash-debugging-made-easy)
-- [Debug-tulostuksen käyttöönotto Bash-skripteissä](https://www.tecmint.com/debug-shell-scripts-linux/)
+Tässä muutamia hyödyllisiä linkkejä, jotka voivat auttaa sinua tulostamaan virheenkorjaustietoja Bash-ohjelmissasi:
+
+- [Bashin opas tulostamiseen](https://www.tutorialspoint.com/unix_commands/echo.htm)
+- [Tämä Stack Overflow-kysymys selittää, miten tulostaa painikkeiden avulla](https://stackoverflow.com/questions/1682661/how-can-i-echo-a-4-digit-code-in-a-while-loop-in-the-unix-shell)
+- [Debuggausvinkkejä Bash-ohjelmistoille](https://dev.to/tanwanimohit/debugging-tips-for-bash-programming-13lp)

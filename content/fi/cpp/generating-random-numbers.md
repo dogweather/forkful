@@ -1,43 +1,61 @@
 ---
-title:                "C++: Satunnaisten lukujen luominen"
+title:                "C++: Satunnaisten lukujen generointi."
+simple_title:         "Satunnaisten lukujen generointi."
 programming_language: "C++"
-category:             "Numbers"
+category:             "C++"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi: Satunnaislukujen tuottaminen ohjelmoinnissa
 
-Monilla ohjelmoijilla voi olla tarve generoida satunnaisia numeroita erilaisten sovellusten ja tehtävien parissa. Satunnaiset numerot voivat auttaa esimerkiksi simuloimaan tilanteita, laatimaan testidataa tai tarjoamaan vaihtelua pelissä.
+Ohjelmoinnissa saattaa usein olla tarve luoda satunnaisia lukuja tietylle välille tai tiettyä prosessia varten. Satunnaislukujen tuottamiseen on useita erilaisia menetelmiä, ja tässä blogikirjoituksessa tarkastellaan miten se tehdään C++-kielellä.
 
-## Kuinka
+## Kuinka: Koodiesimerkkejä ja tulosteita
 
-Satunnaisien numeroiden generointi onnistuu helposti C++:lla käyttämällä funktiota rand() ja siihen liittyvää siemensize seed. Ensiksi täytyy lisätä oma siemensize, esimerkiksi ajan mukaan, jotta satunnaisluvut vaihtuvat jokaisella ohjelman käynnistyksellä.
+Satunnaislukujen tuottaminen onnistuu C++:lla käyttämällä standardikirjaston <random> ja <iostream> -kirjastoja. Tässä esimerkissä luodaan neljä satunnaista kokonaislukua väliltä 1-10 ja tulostetaan ne näytölle.
 
-```
+```C++
 #include <iostream>
-#include <cstdlib> // rand()
-#include <time.h> // time()
+#include <random>
 
 int main()
 {
-    srand(time(NULL)); // lisätään siemensize
-
-    // generoidaan satunnainen numero väliltä 1-10
-    int satunnainenLuku = rand()%10 + 1;
-    std::cout << "Satunnainen luku väliltä 1-10: " << satunnainenLuku << std::endl;
-    return 0;
+  // Alustetaan satunnaisgeneraattori ja määritellään välit
+  std::random_device rd;  // käytetään laitteen luomaa satunnaislukua alustukseen
+  std::mt19937 gen(rd()); // käytetään Marsenne Twister -generaattoria
+  std::uniform_int_distribution<> dist(1, 10); // välit 1-10
+  
+  // Luodaan ja tulostetaan satunnaisluvut
+  std::cout << "Satunnaisluvut väliltä 1-10:" << std::endl;
+  for (int i = 0; i < 4; i++)
+  {
+    std::cout << dist(gen) << std::endl;
+  }
 }
 ```
 
-Tässä esimerkissä käytetään modulo-operaatiota, jotta luvut pysyvät halutulla välillä. Voit muuttaa välit haluamaksesi, esimerkiksi jos haluat satunnaisia desimaalilukuja, voit muuttaa koodia ja sen tulostusta vastaavasti.
+Tuloste:
+```
+Satunnaisluvut väliltä 1-10:
+6
+3
+8
+10
+```
 
-## Syvempi sukellus
+## Syventävä tieto satunnaisluvun tuottamisesta
 
-Edellä mainitun esimerkin lisäksi C++:lla on muitakin tapoja generoida satunnaisia lukuja, kuten esimerkiksi funktiot srand48() ja drand48(), jotka ovat tarkoitettu käytettäväksi desimaalilukujen kanssa. On myös huomioitava, että funktio rand() ei ole täysin satunnainen ja sen luvut voivat toistua pitkässä juoksussa. Jos tarvitset täysin satunnaisia lukuja, kannattaa tutustua esimerkiksi Boost-kirjaston random-toimintoihin.
+Satunnaislukujen tuottamiseen käytetyt generaattorit perustuvat matemaattisiin algoritmeihin, jotka tuottavat lukuja tiettyjen sääntöjen mukaisesti. Näitä algoritmeja pyritään valitsemaan siten, että ne tuottavat mahdollisimman satunnaisia lukuja.
+
+C++:ssa käytetään yleisesti Marsenne Twister -generaattoria (std::mt19937), sillä se on yksi tehokkaimmista ja tarkimmista generaattoreista. Sen sijaan juuri satunnaislukujen määrittelyyn käytetään uniform_int_distribution -luokkaa, joka varmistaa tasaisen jakauman halutulla välillä.
+
+On myös tärkeää huomata, että C++:n satunnaislukujen tuotto ei ole täysin satunnainen vaan pseudosatunnainen. Tämä tarkoittaa, että vaikka luvut tuntuisivatkin satunnaisten väliltä, ne tuotetaan kuitenkin tietyn algoritmin mukaisesti ja lopputulos on ennustettavissa.
 
 ## Katso myös
 
-- [C++ dokumentaatio satunnaisille luvuille](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [Boost-kirjaston random-toiminnot](https://www.boost.org/doc/libs/1_77_0/doc/html/random.html)
+- <a href="https://www.cplusplus.com/reference/random/">C++ reference - Satunnaislukukirjasto</a>
+- <a href="https://www.geeksforgeeks.org/generating-random-number-range-c/">Generating random number in a given range</a>
+- <a href="https://www.youtube.com/watch?v=3IfDt1n62Ps">Video: Generating Random Numbers in C++ (CppCon 2017)</a>

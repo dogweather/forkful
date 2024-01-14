@@ -1,46 +1,43 @@
 ---
-title:                "Elm: Das Lesen einer Textdatei"
+title:                "Elm: Eine Textdatei lesen."
+simple_title:         "Eine Textdatei lesen."
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Textdateien sind ein häufig verwendetes Dateiformat in der Programmierung und können hilfreich sein, um Daten zu speichern oder zu übertragen. In diesem Blogbeitrag werden wir uns damit beschäftigen, wie man Textdateien in Elm lesen kann.
+Das Lesen von Textdateien ist in der Programmierung ein wichtiger Schritt, um Daten zu importieren oder zu exportieren. Mit Elm können wir Textdateien ganz einfach und effizient verarbeiten. In diesem Blogpost erfährst du alles, was du wissen musst, um erfolgreich Textdateien in Elm zu lesen.
 
-# Wie geht man vor?
+## Wie geht's?
 
-Um eine Textdatei in Elm zu lesen, muss man zunächst die `File`-Library importieren. Dann kann man die Funktion `readFile`, die als Argument den Dateinamen erwartet, verwenden, um den Inhalt der Datei zu lesen. Im folgenden Beispiel lesen wir eine Datei namens "beispiel.txt" und geben den Inhalt über die Konsole aus.
+Um eine Textdatei in Elm zu lesen, müssen wir zuerst die Datei in einem bestimmten Format erstellen. Stell dir zum Beispiel vor, dass wir eine Liste von Namen in einer Datei namens "namen.txt" haben. Wir können diese Datei in Elm mit wenigen Zeilen Code lesen und die Namen in einer Liste speichern:
 
 ```Elm
-import File
+import Text
 
-File.readFile "beispiel.txt"
-    |> Task.attempt handleResult
-    
-handleResult : Result File.Error String -> Cmd msg
-handleResult result =
-    case result of
-        Ok content ->
-            (Debug.log "Dateiinhalt:" content)
-    
-        Err error ->
-            (Debug.log "Fehler beim Lesen der Datei:" error)
+main =
+  let
+    fileContents = Text.lines (Text.fromFile "namen.txt")
+    names = List.map Text.toUpper fileContents
+  in
+  Text.concat names
 ```
 
-Dieses Beispiel verwendet das `Debug`-Modul, um den Inhalt der Datei in der Konsole auszugeben. In der `handleResult`-Funktion wird zuerst überprüft, ob das Lesen der Datei erfolgreich war. Wenn ja, wird der Inhalt ausgegeben, ansonsten wird ein Fehler gemeldet.
+In diesem Beispiel nutzen wir die Text-Bibliothek von Elm, um die Datei zu lesen und die Namen in Großbuchstaben umzuwandeln. Mit `Text.lines` teilen wir die Datei in einzelne Zeilen auf und mit `Text.fromFile` lesen wir sie ein. Anschließend nutzen wir `List.map` um über die einzelnen Zeilen zu iterieren und sie mit `Text.toUpper` in Großbuchstaben umzuwandeln. Zum Schluss verbinden wir alle Einträge mit `Text.concat` und erhalten als Ausgabe alle Namen in Großbuchstaben.
 
-# Tiefgehende Informationen
+## Tiefergehende Informationen
 
-Das `File`-Modul bietet auch andere Funktionen, um mit Textdateien zu arbeiten, wie zum Beispiel `writeFile` zum Schreiben von Daten in eine Datei. Außerdem gibt es die Möglichkeit, mit Hilfe von Decodern und Encodern die Daten aus der Datei in anderer Form zu lesen oder zu schreiben.
+Um tiefer in das Thema des Lesens von Textdateien in Elm einzusteigen, empfehlen wir dir, dich mit der Text-Bibliothek von Elm vertraut zu machen. Dort findest du alle Funktionen, die du zum Lesen und Verarbeiten von Textdateien brauchst. Außerdem kannst du dich mit `Debug.log` und `Html.map` weiter damit beschäftigen, wie du die eingelesenen Daten in der Benutzeroberfläche darstellen kannst.
 
-Es ist auch wichtig zu beachten, dass das Bearbeiten von Dateien in Elm nicht direkt auf dem lokalen Computer des Benutzers erfolgt, sondern über die Web-APIs. Daher müssen die Dateien über einen Server bereitgestellt werden oder es muss die Erlaubnis des Benutzers eingeholt werden, um auf die Dateien auf seinem Gerät zuzugreifen.
+## Siehe auch
 
-# Siehe auch
+- [Elm Text Library](https://package.elm-lang.org/packages/elm/text/latest/Text)
+- [Debugging in Elm](https://guide.elm-lang.org/debugging/)
+- [Rendering in Elm](https://guide.elm-lang.org/effects/)
 
-- [Offizielle Dokumentation zum File-Modul in Elm](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Ein Einführungsartikel zu Elm](https://medium.com/swlh/an-introduction-to-elm-3c5b4275addc)
-- [Der offizielle Guide zu Elm](https://guide.elm-lang.org/)
+Vielen Dank fürs Lesen! Wir hoffen, dass dieser Blogpost dir geholfen hat, das Lesen von Textdateien in Elm besser zu verstehen. Happy coding!

@@ -1,110 +1,66 @@
 ---
 title:                "C: Skrive tester"
+simple_title:         "Skrive tester"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor?
 
-Å skrive tester for koden din kan virke som en ekstra byrde, men det er en viktig del av å utvikle kvalitetsprogrammer. Tester hjelper deg med å identifisere og fikse feil tidlig i utviklingsprosessen, noe som sparer deg for mye tid og stress på lang sikt. Så hvorfor skal man engasjere seg i å skrive tester? La oss se nærmere på det!
+Mange utviklere vurderer ofte å skrive tester som en "unødvendig" eller "ekstra" oppgave. De tror kanskje at de kunne bruke den tiden og energien til å skrive ny kode i stedet. Men i virkeligheten kan det å skrive tester ha mange fordeler for koden din. Det kan hjelpe deg med å identifisere og fikse feil tidlig i utviklingsprosessen, forbedre kodekvaliteten og gjøre debugging enklere. Ved å skrive tester viser du også at du bryr deg om å levere pålitelig og feilfri kode til dine brukere.
 
-## Hvordan
+# Hvordan?
 
-For å skrive tester må du først ha et godt utgangspunkt - en fungerende kode. La oss ta et enkelt eksempel på en funksjon for å regne ut fakultetet til et tall:
+Det er enkelt å komme i gang med å skrive tester i C-programmering. Her er et eksempel på hvordan du kan teste en enkel funksjon som legger sammen to tall og returnerer resultatet:
 
 ```C
 #include <stdio.h>
 
-// Funksjon for å regne ut fakultetet til et tall
-int factorial(int n)
-{
-    int result = 1;
-    for (int i = 1; i <= n; i++)
-    {
-        result *= i;
+// Funksjon for å legge sammen to tall
+int add(int num1, int num2) {
+    return num1 + num2;
+}
+
+// Testfunksjon for add() funksjonen
+void test_add() {
+    int result = add(5, 5);
+    if (result == 10) {
+        printf("Testen passerte!\n");
+    } else {
+        printf("Testen feilet. Forventet 10, fikk %d\n", result);
     }
-    return result;
 }
 
-// Hovedfunksjon
-int main()
-{
-    int n = 5;
-    int answer = factorial(n);
-    printf("Fakultetet av %d er %d\n", n, answer);
-    return 0;
-}
-```
-
-Når vi kjører koden vår, får vi følgende output:
-
-```
-Fakultetet av 5 er 120
-```
-
-Nå som vi vet at koden vår fungerer, kan vi begynne å skrive tester for den. For å gjøre dette, må vi bruke et testrammeverk som for eksempel [CUnit](http://cunit.sourceforge.net/). Her er et eksempel på en enkel test som sjekker om funksjonen vår returnerer riktig svar når vi gir den tallet 4 som argument:
-
-```C
-#include <CUnit/CUnit.h>
-#include <CUnit/Basic.h>
-
-// Testfunksjon
-void testFactorial()
-{
-    CU_ASSERT_EQUAL(factorial(4), 24); // Sjekker om svaret er 24
-}
-
-// Hovedfunksjon
-int main()
-{
-    // Initialiserer testmiljøet
-    CU_initialize_registry();
-
-    // Oppretter en ny test-suite
-    CU_pSuite suite = CU_add_suite("factorial_test_suite", NULL, NULL);
-
-    // Legger til testfunksjonen vår i test-suiten
-    CU_add_test(suite, "testFactorial", testFactorial);
-
-    // Kjører testene
-    CU_basic_run_tests();
-
-    // Rydder opp etter at testene er kjørt
-    CU_cleanup_registry();
+int main() {
+    // Kaller test_add() funksjonen
+    test_add();
 
     return 0;
 }
 ```
 
-Etter å ha kjørt testene, vil vi få følgende output:
+I dette eksempelet har vi en funksjon som legger sammen to tall, og en testfunksjon som kaller den og sjekker om resultatet er som forventet. Kompilering og kjøring av dette programmet vil gi følgende output:
 
 ```
-CUnit - A Unit testing framework for C - Version 2.1-3
-http://cunit.sourceforge.net/
-
-Suite: factorial_test_suite
-  Test: testFactorial ...passed
-
-Run Summary:    Type  Total    Ran Passed Failed Inactive
-              suites      1      1    n/a      0        0
-               tests      1      1      1      0        0
-             asserts      1      1      1      0      n/a
-
-Elapsed time =    0.000 seconds
+Testen passerte!
 ```
 
-Vi kan se at testen vår passerte, noe som betyr at funksjonen vår fungerer som den skal.
+Dette betyr at testen vår var vellykket og funksjonen vår fungerer som den skal.
 
-## Dypdykk
+# Dypdykk
 
-Å skrive tester kan også hjelpe deg med å forbedre koden din. Mens du skriver tester, må du tenke på alle mulige tilfeller som kan påvirke funksjonen din. Dette kan føre til at du skriver mer robust og feilsikker kode. I tillegg hjelper tester deg med å dokumentere koden din, siden du må gi klare og konsise forklaringer på hva hver test utfører.
+Det er viktig å huske på at tester bør være en integrert del av utviklingsprosessen. Det betyr at du bør skrive tester mens du koder, ikke etter at koden er ferdig. Dette vil hjelpe deg med å finne og fikse feil mens de fortsatt er ferske og enklere å løse.
 
-I tillegg til enhetstesting, kan det også være nyttig å implementere integrasjonstester og funksjonelle tester for å sikre at alle deler av koden din fungerer godt sammen og utfører de ønskede oppgavene.
+Det finnes også forskjellige typer tester som du kan skrive i C-programmering, som f.eks. enhetstester og integrasjonstester. Enhetstester tester individuelle funksjoner eller moduler, mens integrasjonstester tester hvordan disse funksjonene fungerer sammen. Det er viktig å finne en balanse og skrive tester for både små og store deler av koden din.
 
-## Se også
+Husk også på at selv om du skriver tester, betyr ikke det at koden din vil være feilfri. Tester kan bare hjelpe deg med å identifisere feil, men det er fortsatt viktig å ha god kvalitetskontroll og et godt øye for feil i koden din.
 
-- [CUnit dokumentasjon](http://cunit.sourceforge.net/doc/index.html)
-- [Introduksjon til enhetstesting i C](https://www.ibm.com/developerworks/rational/library/introduction-to-unit-testing-in-c-cplusplus
+# Se også
+
+- [Hvordan skrive effektiv og pålitelig kode i C](https://linktilside.com)
+- [10 tips for å forbedre din C-programmeringskunnskap](https://linktilside.com)
+- [En enkel veiledning til enhetstesting i C](https://linktilside.com)

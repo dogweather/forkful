@@ -1,40 +1,42 @@
 ---
-title:                "C#: Перевірка наявності каталогу"
+title:                "C#: Перевірка існування папки"
+simple_title:         "Перевірка існування папки"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
+## Почему
 
-Перевірка існування директорії важлива для розробки програм, які потребують доступу до файлів з певної директорії, або для виявлення помилок при запуску програми.
+Існування директорії може бути важливим кроком при роботі з файловою системою у вашому C# програмі. Це дозволяє перевірити наявність певної директорії перед тим, як продовжувати виконання програми.
 
 ## Як
 
-У C#, існує простий спосіб перевірити існування директорії - метод "Directory.Exists()". Для цього потрібно передати шлях до директорії як аргумент, і метод поверне булеве значення: "true", якщо директорія існує і "false", якщо директорія не існує.
+Для перевірки існування директорії у C#, використовується метод `Directory.Exists()`. Нижче наведений приклад коду, який перевіряє існування директорії "Documents" на робочому столі.
 
 ```C#
-using System.IO;
-
-string directoryPath = "C:\\Users\\User\\Documents\\MyDirectory";
-
-bool exists = Directory.Exists(directoryPath);
-
-Console.WriteLine("Does the directory exist? {0}", exists);
-
-// Output: Does the directory exist? True
+string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Documents";
+if (Directory.Exists(path))
+{
+    Console.WriteLine("Директорія Documents існує.");
+}
+else
+{
+    Console.WriteLine("Директорія Documents не існує.");
+}
 ```
 
-## Глибоке заглиблення
+Результатом такої програми буде виведення повідомлення "Директорія Documents існує." якщо директорія дійсно існує на вашому робочому столі. Інакше буде виведено повідомлення "Директорія Documents не існує."
 
-При перевірці існування директорії, важливо враховувати, що метод "Directory.Exists()" також буде повертати "true", якщо вказано шлях до файлу замість директорії. Тому перед використанням цього методу, необхідно перевірити, що це дійсно директорія, а не файл.
+## Глибший аналіз
 
-Крім того, метод "Directory.Exists()" перевіряє лише існування директорії і не враховує, чи користувач має доступ до цієї директорії. Тому, перед доступом до файлів з директорії, краще також перевірити права доступу за допомогою класу "DirectoryInfo" та методу "DirectoryInfo.GetAccessControl()".
+Під час перевірки існування директорії, метод `Directory.Exists()` шукає директорію за встановленим шляхом і повертає значення типу `bool` (true або false) в залежності від того, чи була директорія знайдена. Цей метод дуже корисний, коли ви маєте справу з багатьма директоріями і потребуєте впевнитися, що вони всі існують перед продовженням виконання програми.
 
-## Дивись Також
+## Дивіться також
 
-- [Документація Microsoft про перевірку існування директорії в C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
-- [Приклад перевірки чи існує директорія в C#](https://www.tutlane.com/tutorial/csharp/csharp-check-directory-exists)
-- [Тutorialspoint про перевірку директорії та її доступу в C#](https://www.tutorialspoint.com/check-if-a-directory-exists-in-c-sharp)
+- [Як створити директорію у C#](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-create-a-directory)
+- [Як перевірити, чи існує файл у C#](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-check-if-a-file-exists)
+- [Основи роботи з файлами та директоріями в C#](https://www.c-sharpcorner.com/UploadFile/mahesh/filesdirectoriesincsharp11262005035423AM/filesdirectoriesincsharp.aspx)

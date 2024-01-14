@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: :Søking og utskifting av tekst"
+title:                "Clojure: Søking og erstattning av tekst"
+simple_title:         "Søking og erstattning av tekst"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/searching-and-replacing-text.md"
 ---
 
@@ -9,33 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å søke og erstatte tekst er en viktig del av programmering, enten du trenger å korrigere feil eller gjøre større endringer i koden din. Det kan også være nyttig når du skal oversette en kodebase til et annet språk. Uansett årsak, så vil du lære hvordan man gjør det i Clojure!
+Mange av oss har sittet fast i en tekstbehandler og endret samme ord eller setning flere ganger i en lang tekst. Dette kan være tidkrevende og kjedelig arbeid. Ved å bruke Clojure, kan du enkelt automatisere dette ved å søke og erstatte tekst. Dette vil spare deg for mye tid og gjøre programmeringsoppgaver mer effektive.
 
-## Slik gjør du det
+## Hvordan
 
-For å søke og erstatte tekst i Clojure, kan du bruke funksjonen `replace`. Denne funksjonen tar inn tre argumenter: en streng (string) eller regex som skal søker etter, en streng som skal erstatte den søkte teksten, og til slutt en sekvens hvor du ønsker å utføre søket på. La oss si at vi ønsker å erstatte alle forekomster av "hallo" med "hei" i en liste:
-
-```Clojure
-(def liste ["hallo" "god morgen" "hallo" "hei" "hallo"])
-(replace #"hallo" "hei" liste)
-```
-
-Dette vil resultere i følgende output:
+For å søke og erstatte tekst i Clojure, kan du bruke funksjonen `clojure.string/replace`. Denne funksjonen tar tre argumenter: den opprinnelige teksten, søkeordet og erstatningsordet. La oss si at du ønsker å endre alle forekomster av "hallo" til "hei" i en tekst. Da kan du bruke følgende kode:
 
 ```Clojure
-["hei" "god morgen" "hei" "hei" "hei"]
+(clojure.string/replace "Hallo, verden!" "hallo" "hei")
 ```
 
-Som vist i eksempelet, kan du bruke et regulært uttrykk (regex) i søket ditt ved å bruke `#""` rundt teksten du søker etter. Dette kan være nyttig hvis du ønsker å gjøre mer komplekse søk.
+Dette vil returnere en ny tekst "Hei, verden!". Du kan også bruke regulære uttrykk i stedet for å spesifisere et enkelt søkeord. For eksempel:
+
+```Clojure
+(clojure.string/replace "123bogus45" #"[a-zA-Z]+" " ")
+```
+
+Dette vil fjerne alle bokstaver og returnere "123 45". Hvis du ønsker å erstatte teksten i en fil, kan du bruke `spit`-funksjonen til å skrive ut teksten til en ny fil. For eksempel:
+
+```Clojure
+(spit "ny_fil.txt" (clojure.string/replace "gammel_fil.txt" "hallo" "hei"))
+```
+
+Dette vil skrive den opprinnelige filen med alle forekomster av "hallo" erstattet med "hei".
 
 ## Dypdykk
 
-Det er verdt å merke seg at funksjonen `replace` ikke endrer på den opprinnelige sekvensen, men returnerer en ny sekvens med endringene. Hvis du ønsker å endre den opprinnelige sekvensen, kan du bruke funksjonen `replace!` i stedet.
+I tillegg til `replace`-funksjonen, har Clojure også funksjonen `replace-first` som erstatter den første forekomsten av et søkeord med et erstatningsord. Du kan også bruke `replace`-funksjonen med en funksjon som et argument for å tilpasse hvilken tekst som skal byttes ut. For eksempel:
 
-Det finnes også en annen funksjon kalt `replace-first` som, som navnet tilsier, kun erstatter den første forekomsten av teksten du søker etter. Den fungerer på samme måte som `replace` ellers.
+```Clojure
+(clojure.string/replace "1 2 3" #"[0-9]+"
+  (fn [m] (str (Integer/parseInt m) "stall")))
+```
 
-## Se også
+Dette vil returnere "1stall 2stall 3stall". Du kan også bruke `replace-first` med en funksjon på samme måte.
 
-- [`replace` dokumentasjon](https://clojuredocs.org/clojure.core/replace)
-- [Regulære uttrykk i Clojure](https://clojure.org/api/cheatsheet#regex)
-- [Andre Clojure funksjoner for tekstmanipulering](https://clojuredocs.org/clojure.string)
+## Se Også
+
+- [Clojure.org](https://clojure.org/)
+- [ClojureDocs](https://clojuredocs.org/)
+- [Regular Expressions i Clojure](https://clojure.org/guides/regular_expressions)

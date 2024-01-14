@@ -1,50 +1,40 @@
 ---
 title:                "Swift recipe: Getting the current date"
+simple_title:         "Getting the current date"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## WhyGetting the current date may not seem like the most exciting programming task, but it is a crucial aspect of many applications. Whether you need to display the date to the user, or use it for data tracking purposes, having the ability to accurately retrieve the current date is essential. ## How ToTo get the current date in Swift, we can use the built-in `Date()` function. First, we need to import the `Foundation` framework, which contains the `Date` class. Then, we can simply create a new instance of `Date` and use its `now` property to get the current date and time. Here's an example:
+## Why
+Have you ever needed to know the current date in your Swift programming? Whether it's for displaying the date in a user interface or for calculating time intervals, getting the current date is a valuable skill to have as a Swift programmer.
 
-```Swift
-import Foundation
-
+## How To
+To get the current date in Swift, we can use the `Date()` function. This returns the current date and time in our code. Let's take a look at a simple example:
+```
 let currentDate = Date()
 print(currentDate)
 ```
-
-This code will print out the current date and time in the following format:
-
-```Swift
-2021-04-01 12:00:00 +0000
+The output of this code would be the current date and time in your console. But what if you want to format the date in a specific way? We can use `DateFormatter` to do this. Let's say we want to display the date in the format: "Monday, September 13, 2021". Here's how we can do that:
 ```
-
-Note that the `now` property of `Date` returns a `Date` object in UTC time. If you want to display the date and time in a specific time zone, you can use the `Formatter` class to convert it. For example, if you want to display the current date in Eastern Standard Time, you can do the following:
-
-```Swift
-let easternFormatter = DateFormatter()
-easternFormatter.timeZone = TimeZone(identifier: "EST")
-easternFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-
-print(easternFormatter.string(from: currentDate))
+let formatter = DateFormatter()
+formatter.dateFormat = "EEEE, MMMM d, yyyy"
+let formattedDate = formatter.string(from: Date())
+print(formattedDate)
 ```
-
-This will print out the current date and time in Eastern Standard Time:
-
-```Swift
-2021-04-01 07:00:00
-```
+The output of this code would be the current date in the format we specified. You can also change the format to suit your needs, such as displaying just the day or just the month. Play around with the `dateFormat` property to see what works best for your project.
 
 ## Deep Dive
+`Date()` may seem simple on the surface, but there's actually a lot more going on under the hood. Swift uses a data type called `TimeInterval` to represent dates and times, which is the number of seconds since January 1, 2001 at 00:00:00 UTC. This is commonly referred to as the Unix timestamp. The `Date()` function converts this timestamp into a human-readable date and time.
 
-Behind the scenes, the `Date` class is simply a wrapper for an underlying `NSTimeInterval` value, which represents the number of seconds since January 1, 2001. The current date and time can be calculated by adding this value to the reference date of January 1, 2001. This may seem relatively simple, but there are many factors that go into accurately retrieving the current date and time, such as accounting for leap years and time zones.
-
-Additionally, the `Date` class also contains methods and properties for comparing dates, getting specific components (such as year, month, day, etc.), and performing arithmetic operations on dates.
+Another important thing to note is that the date and time returned by `Date()` is based on the current timezone of the device running the code. This means that the date and time could be different for someone in a different timezone.
 
 ## See Also
+Here are some links for more information about working with dates in Swift:
 
-- [Apple Developer Documentation: Date](https://developer.apple.com/documentation/foundation/date)
-- [raywenderlich.com tutorial: Working with Dates in Swift](https://www.raywenderlich.com/7673532-swift-date-cheat-sheet)
+- [Apple's documentation on `Date`](https://developer.apple.com/documentation/foundation/date)
+- [Working with Dates and Times in Swift - NSHipster](https://nshipster.com/date/)
+- [Formatting Dates in Swift using DateFormatter - Hacking with Swift](https://www.hackingwithswift.com/example-code/system/how-to-format-dates-inside-text-views)

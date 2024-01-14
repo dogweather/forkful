@@ -1,62 +1,53 @@
 ---
-title:                "Kotlin: コンピュータープログラミングの記事のタイトル: コマンドライン引数の読み取り"
+title:                "Kotlin: コンピュータープログラミングにおける「コマンドライン引数の読み取り」"
+simple_title:         "コンピュータープログラミングにおける「コマンドライン引数の読み取り」"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-プログラミングをしている人であれば、コマンドライン引数を読み込む必要があることがあります。例えば、プログラムを実行する際に、動作を変えるためのオプションを指定したり、外部から入力を受け取ったりする必要がある場合があります。
+##なぜ
 
-# ハウトゥー
-コマンドライン引数を読み込む方法は非常に簡単です。まずは、`args`という配列を作成します。この配列には、プログラムが実行された際に与えられた引数が格納されます。次に、`args`配列を使用して、引数を読み込むことができます。
+コマンドライン引数を読むことについて学びたい方のために、この記事を書きました！コマンドライン引数を読むことによって、プログラムをより動的に制御することができます。
 
-```
-Kotlin
+##やり方
+
+まず、コマンドライン引数を読むためには、 `main`関数の引数に`args`という名前の配列を追加します。
+
+```Kotlin 
 fun main(args: Array<String>) {
-    // 引数を表示する例
-    println(args[0])
+    // コマンドライン引数の数を入力します
+    println(args.size) 
 }
 ```
 
-もし、引数が複数ある場合は、インデックスを変えることで読み込むことができます。
+コマンドラインでプログラムを実行するとき、引数をスペースで区切って入力します。例えば、`kotlin program.kt arg1 arg2`のように入力すると、`args`配列には`"arg1"`と`"arg2"`という値が含まれます。
 
-```
-Kotlin
+もう少し複雑な例を見てみましょう。以下のようなプログラムを実行した場合、
+
+```Kotlin 
 fun main(args: Array<String>) {
-    // 第二引数を表示する例
-    println(args[1])
+  // 第1引数を整数に変換して`num`変数に代入します
+  var num = args[0].toInt() 
+  println(num + 5) // 結果は11になります
 }
 ```
 
-引数の数が可変の場合は、`for`ループを使用して全ての引数を取得することができます。
+`kotlin program.kt 6`と入力すると、結果は11になります。コマンドライン引数は文字列として渡されるため、数値として使用するには`toInt()`関数を使用して変換する必要があります。
 
-```
-Kotlin
-fun main(args: Array<String>) {
-    // 全ての引数を表示する例
-    for (i in 0 until args.size) {
-        println(args[i])
-    } 
-}
-```
+##ディープダイブ
 
-上記のコードを実行すると、プログラムが実行された際に与えられた全ての引数が表示されます。
+コマンドライン引数を読むときには、いくつかの注意点があります。まず、引数を指定しない場合、`args`配列は空になります。そのため、この場合はエラーハンドリングを行う必要があります。
 
-# ディープダイブ
-コマンドライン引数を使用する際に注意しなければならない点がいくつかあります。まず、引数が与えられなかった場合は、`args`配列のサイズは0になります。そのため、必ずサイズをチェックしてから引数を読み込むようにしましょう。
+また、引数が多すぎる場合も同様のエラーが発生します。そのため、`args`配列のサイズをチェックしてから使用するようにしましょう。
 
-次に、引数には文字列以外の型も入っている可能性があります。その場合は、`toInt()`や`toBoolean()`などの変換メソッドを使用して型を変換する必要があります。
+さらに、コマンドライン引数にはオプションを指定することもできます。例えば、`-f`というオプションを指定して、ファイルを作成するプログラムを考えてみましょう。この場合、`args`配列には`-f`という文字列を特定の位置に指定する必要があります。そのため、`args`配列の中身を順番にチェックして、必要なオプションが指定されているかどうかを確認する必要があります。
 
-また、コマンドライン引数にはオプションを指定することもできます。例えば、`--verbose`というオプションを指定することで、実行時に詳細なログを表示することができます。このようなオプションを取得するには、`startsWith()`メソッドを使用することで実現できます。
+##参考情報
 
-さらに、コマンドライン引数を扱うためのライブラリやフレームワークもあります。これらを使用することで、さらに柔軟で簡潔なコードを書くことができるようになります。
-
-# その他参考になるリンク
-- [Kotlinプログラミング言語公式サイト](https://kotlinlang.org/docs/reference/basic-syntax.html#command-line-arguments)
-- [Kotlinの「args」の意味と使い方](https://maku77.github.io/kotlin/basic/args.html)
-- [Kotlinの配列・リストをループして要素を取り出す](https://qiita.com/LeoAndo/items/af735d0a6ccc44e03e4a)
-- [Apache Commons CLI](https://github.com/apache/commons-cli)（コマンドライン引数を扱うためのライブラリ）
-- [JCommander](https://github.com
+- [Kotlin公式ドキュメントのコマンドライン引数の使用例](https://kotlinlang.org/docs/command-line.html#using-command-line-arguments)
+- [Kotlinプログラミング入門ブログ](https://kotlinlang.org/blog/kotlin-programming-intro-blog.html)
+- [JavaとKotlinを使い分ける](https://techblog.zozo.com/entry/use-java-class-with-kotlin-in-android-project)

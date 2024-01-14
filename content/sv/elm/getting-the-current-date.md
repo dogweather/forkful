@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Hämta aktuellt datum"
+title:                "Elm: Att få dagens datum"
+simple_title:         "Att få dagens datum"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/getting-the-current-date.md"
 ---
 
@@ -9,61 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att få den aktuella datumet är en vanlig uppgift i många program. Det kan användas för att visa tidsstämplar på inlägg, skapa kalendrar, eller helt enkelt för att hålla koll på dagens datum. I denna bloggpost kommer vi att titta på hur man enkelt kan få den aktuella datumet i Elm.
+Att kunna få den aktuella datumen är en viktig del av Elm programmering eftersom det ger en uppdaterad information till användare och tillåter applikationer att fungera korrekt baserat på tidsberoende funktioner.
 
-## Så här gör du
+## Hur man gör
 
-För att få den aktuella datumet i Elm använder vi funktionen `Date.now`, som returnerar ett datumobjekt. Vi kan sedan använda den inbyggda funktionen `toWeekday` för att få veckodagen och `toDay` för att få den aktuella dagen på månaden.
-
-```Elm
-import Time exposing (..)
-
-date : Time.Posix
-date =
-    Date.now
-
-weekday : Number
-weekday =
-    Date.toWeekday date
-
-day : Number
-day =
-    Date.toDay date
-```
-
-Om vi skulle köra detta skulle vi få en output som liknar detta:
+För att få den aktuella datumen i Elm, måste man först importera `Time` modulen. Sedan kan man använda `Time.now` funktionen för att få den aktuella datumen som en `Posix` värdering.
 
 ```Elm
-date: Time.Posix 1598774829847
-weekday: 3
-day: 29
+import Time
+
+currentDate : Time.Posix
+currentDate =
+  Time.now
 ```
 
-Som du kan se är `date` en Posix-värde, vilket är en vanlig representation av datum och tid i många programmeringsspråk. Vi kan använda den inbyggda funktionen `toString` för att konvertera det till ett mer läsbart format.
+För att sedan konvertera den värderingen till ett mer läsbart format, såsom dag, månad och år, kan man använda funktionen `Time.toDayDate` och ge den `currentDate` som ett argument.
 
 ```Elm
-import Time exposing (..)
-
-date : String
-date =
-    Date.toString date
+currentDayDate : Maybe (Int, Int, Int)
+currentDayDate =
+  Time.toDayDate currentDate
 ```
 
-Outputen skulle då se ut på följande sätt:
-
-```Elm
-date: String "Thu Aug 06 2020 22:13:49 GMT+0200 (Central European Standard Time)"
-```
+Outputen av `currentDayDate` skulle vara `Just (30, 11, 2021)`.
 
 ## Djupdykning
 
-En viktig sak att tänka på när man hanterar datum i Elm är att det stöder Internationalization and Localization (I18n). Det innebär att vi kan använda funktioner som `toStringWith`, `monthToString` och `dayOfWeekToString` för att konvertera datum- och tidsinformation till olika språk och format.
+`Time` modulen i Elm tillåter också hantering av tidszoner och formatering av datum för mer specifika behov. Genom att använda funktionen `Time.fromPosix` kan man få en `Time.Zone` värdering som kan användas för att anpassa datumen till en specifik tidszon.
 
-För att fördjupa oss ännu mer kan vi också utforska den inbyggda modulen `Time` som ger oss fler funktioner för att hantera datum och tid, som `nowInUtc` för att få den aktuella tiden i UTC och `fromCalendarDate` för att skapa ett datumobjekt baserat på år, månad och dag.
+```Elm
+import Time exposing (Zone, ZonedDateTime, fromPosix)
 
-## Se även
+currentTime : Time.ZonedDateTime
+currentTime =
+  fromPosix (Time.now) (Time.utc)
 
-- Elm's officiella dokumentation om Date: https://package.elm-lang.org/packages/elm/time/latest/Time#Date
-- Användning av Datum och Tid i Elm: https://www.elm-tutorial.org/en/04-managing-real-application/02-date-time.html 
-- Elm Spelprogrammering: Problemet med datum och tid: https://thoughtbot.com/blog/elm-gamedev-the-problem-with-time
-- Elm's dokumentation om Internationalization and Localization: https://package.elm-lang.org/packages/elm-lang/intl/latest/
+currentDate : String
+currentDate =
+  Time.format "%Y-%m-%d" currentTime (Time.fromZone (Zone.name currentTime))
+```
+
+Outputen av `currentDate` skulle vara i formatet `2021-11-30` och anpassad till den globala tidszonen.
+
+## Se också
+
+- [Elm Time modulen dokumentation](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Officiell Elm språk guide](https://guide.elm-lang.org/)
+- [Hur man hanterar tidszoner i Elm](https://medium.com/@ryuclarke/working-with-time-zones-in-elm-c7367f71bfb0)

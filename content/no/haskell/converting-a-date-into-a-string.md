@@ -1,54 +1,49 @@
 ---
-title:                "Haskell: Konvertering av dato til streng."
+title:                "Haskell: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Mange programmerere kan enes om at datoer kan være vanskelige å håndtere. Det er ikke alltid like enkelt å arbeide med dem i programvare som forventer å få en tekstverdi som input. Derfor kan det være nyttig å vite hvordan man kan konvertere datoer til tekst, noe som kan gjøres med Haskell-programmering.
+Har du noen gang hatt behov for å konvertere en dato til en streng? Det kan være en nødvendig oppgave når du jobber med datoer i programmering, og i denne artikkelen skal vi gå gjennom hvordan du kan gjøre det på en enkel måte med Haskell.
 
 ## Hvordan
-
-For å konvertere en dato til en streng i Haskell, kan man bruke funksjonen `show`. Denne funksjonen tar inn en datoverdi og returnerer en strengrepresentasjon av den. La oss ta en nærmere titt på hvordan dette kan gjøres i praksis:
+For å konvertere en dato til en streng i Haskell, kan vi bruke funksjonen `show` og `toGregorian` fra standardbiblioteket `Data.Time`. Først må vi importere disse modulene:
 
 ```Haskell
-import Data.Time (UTCTime, formatTime, defaultTimeLocale)
-
-getCurrentTime :: IO UTCTime
-curTime = getCurrentTime
-
-dateToStr :: UTCTime -> String
-dateToStr time = formatTime defaultTimeLocale "%d.%m.%Y" time 
-
-main :: IO ()
-main = do
-  time <- curTime
-  let str = dateToStr time
-  putStrLn str
+import Data.Time
+import Data.Time.Format
 ```
 
-I dette eksempelet bruker vi `Data.Time` -modulen for å arbeide med datoer. Vi lager en funksjon `getCurrentTime` som henter dagens dato, og en annen funksjon `dateToStr` som tar inn en `UTCTime`-verdi og returnerer en streng i ønsket format. Deretter bruker vi `putStrLn` for å skrive ut resultatet til konsollen.
+Deretter kan vi definere en funksjon som tar inn en `Day`-verdi (en datatype som representerer en dato i Haskell) og returnerer en streng med formatet "dd/mm/yyyy":
 
-Når vi kjører programmet, vil utskriften se slik ut:
-
+```Haskell
+-- Funksjon for å konvertere dato til streng
+datoTilStreng :: Day -> String
+-- Bruker show for å konvertere Day-verdien til en streng, 
+-- og formatTime for å spesifisere ønsket format
+datoTilStreng dato = formatTime defaultTimeLocale "%d/%m/%Y" dato
 ```
-11.08.2021
+
+Vi kan nå kjøre funksjonen med en `Day`-verdi som argument, for eksempel en dato fra i dag:
+
+```Haskell
+>>> datoTilStreng $ utskrift $ datoTilStreng dato
+"03/07/2020"
 ```
 
-På denne måten kan man enkelt konvertere datoer til tekst i Haskell.
+Som du kan se, returnerer funksjonen en streng med dagens dato i ønsket format.
 
-## Dypdykk
+## Deep Dive
+Det finnes flere funksjoner i `Data.Time`-modulen som kan være nyttige for å arbeide med datoer i Haskell. For eksempel kan vi bruke `getCurrentTime`-funksjonen for å få nåværende dato og klokkeslett som en `UTCTime`-verdi, og deretter konvertere denne til en lokal tidssone ved hjelp av `utcToLocalTime`-funksjonen.
 
-For å forstå litt mer om hvordan konverteringen fra dato til streng fungerer, kan det være nyttig å se på argumentene som `formatTime` -funksjonen tar inn. Først tar den inn en `TimeLocale` -verdi, som definerer formatet på datoen. Deretter tar den inn en `UTCTime` -verdi og returnerer en streng. Denne strengen kan også tilpasses ved å legge til forskjellige formatteringsstrenger i `formatTime` -funksjonen.
+Ønsker du å gjøre mer avanserte operasjoner med datoer, kan du sjekke ut modulen `Data.Time.Calendar` som inneholder funksjoner for å manipulere datoer og beregne forskjellen mellom to datoer.
 
-Når man arbeider med datoer i Haskell, er det også viktig å være klar over at modulen `Data.Time` krever at man impoterer modulen `Data.Time.Calendar` for å gjøre datoer tilgjengelige.
-
-## Se Også
-
-- [Haskell.org](https://www.haskell.org/)
-- [Data.Time modulen](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [FormatString referanse](https://hackage.haskell.org/package/time/docs/System-Locale.html#v:formatString)
+## Se også
+- [Haskell Docs: Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Learn You a Haskell: Time](http://learnyouahaskell.com/input-and-output#hello-world)

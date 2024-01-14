@@ -1,50 +1,52 @@
 ---
-title:                "Kotlin: 문자열 대문자로 변환"
+title:                "Kotlin: 문자열 대문자로 바꾸기"
+simple_title:         "문자열 대문자로 바꾸기"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 대문자로 바꾸는 것이 중요할까요?
+## 왜
 
-문자열을 대문자로 바꾸는 것은 매우 일반적인 작업입니다. 하지만 왜 이 작업이 중요한지 궁금해 하시는 분들도 있을 것입니다. 대문자로 바꿔야 하는 이유를 이해하면 더 효율적인 프로그래밍을 할 수 있을 것입니다.
+문자열을 대문자로 변환하는 것에 참여하는 이유는 무엇일까요? 이 글에서는 Kotlin을 사용하여 문자열을 대문자로 변환하는 방법과 그 깊은 이해를 알아보겠습니다.
 
-# 어떻게 하면 문자열을 대문자로 바꿀 수 있을까요?
+## 어떻게
 
-대문자로 바꾸는 것은 Kotlin 내장 함수인 `toUpperCase()`를 사용하면 간단히 할 수 있습니다. 아래 예제를 참고해보세요.
+우선, Kotlin에서 제공하는 내장 함수를 사용하여 쉽게 문자열을 대문자로 변환할 수 있습니다.
 
-```Kotlin
-val str = "kotlin programming"
-println(str.toUpperCase())
+```
+Kotlin val string = "hello world" 
+val capitalizedString = string.toUpperCase()
+println(capitalizedString)
 ```
 
-**출력: KOTLIN PROGRAMMING**
+이 코드를 실행하면 "HELLO WORLD"라는 결과가 출력됩니다.
 
-이 외에도 `replace()` 함수를 사용해 문자열 내에서 원하는 부분을 대체하여 대문자로 변경할 수도 있습니다.
+## 깊이 파헤치기
 
-```Kotlin
-val str = "Kotlin Programming is Fun"
-println(str.replace("Fun", "AWESOME").toUpperCase())
+하지만 문자열을 대문자로 변환하는 과정에서 내부적으로 어떤 일이 벌어지는지 알아보겠습니다. 문자열은 내부적으로 문자들의 배열로 표현됩니다. 따라서 대문자로 변환되는 과정에서도 원래의 문자열은 변하지 않고, 새로운 대문자 문자열이 생성됩니다.
+
+이를 더 쉽게 이해하기 위해 코드를 한 줄씩 분해해보겠습니다.
+
+```
+Kotlin val string = "hello world" // 입력된 소문자 문자열을 변수에 저장
+val characters = string.toCharArray() // 문자열을 문자들의 배열로 변환
+for (i in characters.indices) { // 문자 배열의 길이만큼 반복
+    val asciiValue = characters[i].toInt() // 각 문자를 아스키 코드 값으로 변환
+    if (asciiValue in 97..122) { // 아스키 코드 값이 소문자 범위에 해당하면 (97~122는 소문자 a~z)
+        characters[i] = (asciiValue - 32).toChar() // 아스키 코드 값 32를 빼서 대문자로 변환
+    }
+}
+val capitalizedString = String(characters) // 문자 배열을 다시 문자열로 변환
 ```
 
-**출력: KOTLIN PROGRAMMING IS AWESOME**
+이렇게 내부 과정을 살펴보면 대문자로 변환되는 과정이 좀 더 명확하게 이해될 수 있습니다.
 
-# 깊게 파고들어보기
+## 참고자료
 
-문자열을 대문자로 바꾸는 데에는 여러 가지 이유가 있을 수 있습니다. 예를 들어 데이터베이스에 저장된 값들이 모두 대문자로 통일되어 있어서 일관성을 유지해야 할 경우가 있습니다. 또는 사용자로부터 입력받은 문자열을 대문자로 바꾸어 데이터를 처리할 때도 있습니다. 또는 프로그램에서 특정 문자열을 검색하거나 비교할 때 대소문자를 구분하지 않기 위해 문자열을 대문자로 바꿔서 비교하는 것이 좋은 경우가 있습니다.
-
-또한 대문자로 바꾸는 것은 문자열을 깔끔하고 보기 좋게 만드는 데에도 도움이 됩니다. 이는 UI를 개발할 때나 로그를 출력할 때 유용하게 사용될 수 있습니다.
-
-# 더 자세한 정보는 없나요?
-
-더 많은 정보를 원하신다면 Kotlin 공식 문서에서 `toUpperCase()`와 `replace()` 함수를 찾아보세요. 아래 링크를 통해 바로 이동할 수 있습니다.
-
-- `toUpperCase()`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html
-- `replace()`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html
-
-# 관련 링크
-
-- Kotlin 공식 홈페이지: https://kotlinlang.org/
-- Kotlin 문서: https://kotlinlang.org/docs/home.html
+- [Kotlin String 클래스 공식문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/) 
+- [Kotlin에 대한 오늘의 퀵 트릭: 문자열에서 대문자로 변경](https://medium.com/@krzychukosobudzki/coolest-kotlin-today-picker-string-uppercase-9a8b18eb0511)
+- [Java와 Kotlin의 문자열 비교](https://www.baeldung.com/kotlin/java-string-comparison)

@@ -1,64 +1,46 @@
 ---
-title:                "Fish Shell: コンピュータープログラミング上の記事タイトル：コマンドライン引数の読み取り"
+title:                "Fish Shell: コンピュータープログラミングの記事のタイトル：「コマンドライン引数の読み取り」"
+simple_title:         "コンピュータープログラミングの記事のタイトル：「コマンドライン引数の読み取り」"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+コマンドライン引数を読み込むことの重要性について説明します。
 
-コマンドライン引数を読み取ることは、Fish Shellプログラミングを行う上で非常に便利です。引数を使用することで、プログラムをより柔軟に設定し、ユーザーにとって使いやすいものにすることができます。
+コマンドライン引数を読み込むことにより、プログラムを実行する際に指定したパラメーターを受け取ることができます。これにより、実行時に柔軟に動作を変更することができるようになります。
 
-## How To
-
-引数を読み取るには、`$fish_opt`変数を使用します。この変数には、ユーザーが入力した引数の内容が格納されます。以下の例をご覧ください。
-
-```Fish Shell
-
-# ユーザーが引数を入力しなかった場合
-$fish_opt
-
-# ユーザーが引数を1つ入力した場合
-$fish_opt "Hello"
-
-# 出力結果
-"Hello"
-
-# ユーザーが複数の引数を入力した場合
-$fish_opt "Hello" "こんにちは"
-
-# 出力結果
-"Hello こんにちは"
-```
-
-引数の数や内容に応じて、適切に処理を行うことができます。
-
-## Deep Dive
-
-引数を読み取る際には、いくつかのポイントに注意する必要があります。
-
-### 1. 引数の数を確認する
-
-ユーザーが引数を入力していない場合、`$fish_opt`変数には何も格納されません。そのため、プログラムを実行する前に、引数の数を確認する必要があります。
-
-### 2. 適切な引数の型を指定する
-
-Fish Shellでは、引数の型を指定することができます。たとえば、`-n`オプションを使用すると、引数を数値型として読み取ることができます。
+## 使い方
+コマンドライン引数を読み込むためには、Fish Shellの組み込み機能である"$argv"を使用します。以下のコードブロックを参考にしてください。
 
 ```Fish Shell
-$fish_opt -n 100
+# 例: "hello.sh"というファイルを実行する際に引数として"World"を渡した場合
+#!/bin/fish
 
-# 100を数値型として読み取ることができます
+echo "Hello $argv[1]" # output: Hello World
 ```
 
-### 3. 複数のオプションを扱う
+このように、$argvを使用することで、実行時にどの引数が渡されたかを配列として取得することができます。
 
-ユーザーが複数のオプションを使用して引数を入力することもあります。この場合、`$fish_opt`変数にはオプションごとに値が格納されます。そのため、正確に処理を行うためには、各オプションに対して適切な処理を行う必要があります。
+## 深堀り
+コマンドライン引数を扱う際には、注意すべき点がいくつかあります。
 
-## See Also
+まず、引数が渡されなかった場合、$argvの長さは1となります。これにより、引数が渡されなかったかどうかを簡単にチェックすることができます。
 
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Fish Shell GitHub Repository](https://github.com/fish-shell/fish-shell)
-- [Fish Shell Examples](https://fishshell.com/docs/current/commands.html#examples-and-tutorials)
+また、$argvには最初の要素として実行ファイル名が含まれるため、通常の引数は2番目以降から利用できます。
+
+さらに、引数に空白やシェル特殊文字が含まれる場合、特殊文字をエスケープする必要があります。例えば、```echo "Hello $argv[1]"```というコマンドを実行する際に、引数として"Hello, World!"を渡したい場合は、"Hello, World!"という文字列をダブルクォーテーションで囲まなければなりません。
+
+## その他の参考リンク
+- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/cmds/set.html)
+- [CodecademyのFish Shellチュートリアル](https://www.codecademy.com/learn/learn-the-command-line/modules/fish-shell)
+- [コマンドライン引数の扱い方 - Qiita](https://qiita.com/pochman/items/a10ee666b6ddde1489b9)
+
+## さらに参考になる情報
+- [コマンドライン引数を取得する方法まとめ - postd](https://postd.cc/how-to-read-command-line-arguments-in-ruby/)
+- [シェルスクリプトでのコマンドライン引数の利用方法 - Qiita](https://qiita.com/mikakane/items/b4325435b4730fa0b98c)
+- [コマンドライン引数を処理するプログラムの作り方 - Think IT](https://thinkit.co.jp/free/article/0712/3/1/)

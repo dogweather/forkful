@@ -1,50 +1,61 @@
 ---
-title:                "Swift: 将字符串大写化"
+title:                "Swift: 将字符串转换为大写"
+simple_title:         "将字符串转换为大写"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么
 
-字符串是Swift编程语言中非常重要的一部分。它们可以存储文本，数字和其他数据，并可以在程序中进行操作。有时候，我们需要将字符串转换为大写，这可能是因为用户输入的文本需要统一格式，或者我们需要在输出中使用大写字母。无论是什么原因，字符串的大写转换是一个很常见的任务，在接下来的教程中，我们将学习如何在Swift中轻松完成这个任务。
+在编写Swift代码时，有时我们需要仅对字符串中的首字母大写，而不改变其余字母的大小写。这可以用来改变字符串的显示效果，或者用来格式化用户输入的文本。下面介绍如何在Swift中实现字符串的首字母大写。
 
-## 如何
+# 怎么做
 
-首先，让我们定义一个简单的字符串变量，作为我们操作的例子。
+我们可以使用Swift中的一个内置函数来实现字符串的首字母大写，即`.capitalized`方法。下面是一个简单的示例，展示如何使用该方法来对输入的字符串进行首字母大写的操作：
 
-```Swift
-let myString = "hello world"
+```
+// 创建一个字符串变量
+var str = "hello, world!"
+
+// 对字符串进行首字母大写
+let capitalizedStr = str.capitalized
+
+// 输出结果为"Hello, World!"
+print(capitalizedStr)
 ```
 
-如果我们想要将这个字符串转换为全部大写，我们可以使用Swift中的`uppercased()`方法。只需要在我们的变量名后面加上`.`，然后输入方法名，就可以将字符串转换为大写形式。
+除了针对整个字符串使用`.capitalized`方法，我们也可以对每个单词的首字母进行大写操作。这可以通过使用`.capitalized`方法的另一个参数来实现，即`.words`，它会将字符串拆分成单词数组，并对每个单词的首字母进行大写操作。下面是一个示例代码：
 
-```Swift
-let myUppercasedString = myString.uppercased()
-print(myUppercasedString)
+```
+// 创建一个字符串变量
+var str = "hello, world!"
+
+// 对字符串进行首字母大写，但只针对单词首字母
+let capitalizedStr = str.capitalized(with: .words)
+
+// 输出结果为"Hello, World!"
+print(capitalizedStr)
 ```
 
-输出结果为：HELLO WORLD
+# 细节深入
 
-如果我们想要将第一个字符转换为大写，我们可以使用`capitalized`方法。这个方法只会将第一个字符转换为大写，其他字符仍保持原样。
+在Swift中，字符串是不可变的，这意味着我们不能直接修改字符串的内容。因此，当我们使用`.capitalized`方法时，实际上是创建了一个新的字符串，并对其进行首字母大写的操作。原始的字符串保持不变。
 
-```Swift
-let myCapitalizedString = myString.capitalized
-print(myCapitalizedString)
-```
+另外，`.capitalized`方法并不仅仅适用于英文字符串，它也可以处理其他语言的字符串，如中文、日文等。它会根据每个语言的首字母规则来进行大写操作。这使得在国际化的应用中，我们可以轻松地实现字符串的首字母大写功能。
 
-输出结果为：Hello world
+# 参考链接
 
-## 深入学习
+- [Swift API文档](https://developer.apple.com/documentation/swift/string/capitalized)
+- [字符串操作指南](https://www.hackingwithswift.com/quick-start/understanding-swift/when-should-you-use-strings-in-swift)
+- [字符串的不可变性](https://www.geeksforgeeks.org/immutable-strings-in-swift/)
+- [字符串国际化指南](https://developer.apple.com/documentation/foundation/bundle/1520698-preferredlocalizations)
+- [字符串本身的操作方法](https://www.avanderlee.com/swift/string-operations-swift/)
 
-除了使用内置的`uppercased()`和`capitalized`方法，我们还可以使用Swift中的其他方法来实现字符串的大写转换，例如使用`==`比较运算符来比较两个字符串是否相等，以及使用`append()`方法来在字符串后面添加字符。
+# 参见
 
-另外，还可以使用string interpolation来在字符串中插入变量，从而实现更加灵活的字符串操作。
-
-## 请参阅
-
-1. [Swift字符串官方文档](https://developer.apple.com/documentation/swift/string)
-2. [Swift字符串方法概述](https://www.hackerrank.com/domains/tutorials/30-days-of-code?filters%5Bsubdomains%5D%5B%5D=30-days-of-code&badge_type=30-days-of-code)
-3. [Swift字符串操作指南](https://www.tutorialsleeptop.com/swift-string-operations-example/)
+- [如何在Swift中对字符串进行其他操作？](https://example.com/other-string-operations)
+- [Swift中如何处理国际化字符串？](https://example.com/localized-strings-swift)

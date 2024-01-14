@@ -1,50 +1,50 @@
 ---
 title:                "Haskell: Obtendo a data atual"
+simple_title:         "Obtendo a data atual"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que obter a data atual em Haskell?
+## Por que usar Haskell para Obter a Data Atual
 
-Pode parecer uma tarefa simples, mas obter a data atual em uma linguagem de programação pode ser muito útil em diferentes situações. Se você está desenvolvendo um aplicativo que requer informações de data e hora, ou precisa rastrear a duração de um processo, saber como obter a data atual em Haskell é essencial.
+Se você é um programador experiente ou iniciante, provavelmente já passou pela tarefa de obter a data atual em algum momento. Em vez de recorrer aos métodos convencionais, por que não experimentar usar Haskell para realizar essa tarefa? Neste artigo, vamos explorar como obter a data atual em Haskell, e por que isso pode ser benéfico para os seus projetos.
 
-## Como fazer isso em Haskell
+## Como Obter a Data Atual em Haskell
 
-Em Haskell, existem diferentes maneiras de obter a data atual. A mais simples é usar a função `getCurrentTime` do módulo `Data.Time`, que retorna a data e hora atuais como valor do tipo `UTCTime`. Vamos ver um exemplo:
+Para obter a data atual em Haskell, usamos a biblioteca `Data.Time`. Dentro desta biblioteca, temos a função `getCurrentTime` que nos permite capturar a data e hora atuais em um formato específico. Veja um exemplo abaixo:
 
 ```Haskell
 import Data.Time
-import Data.Time.Format
 
 main = do
-    currentTime <- getCurrentTime
-    putStrLn $ formatTime defaultTimeLocale "%d/%m/%Y, %H:%M:%S" currentTime
+  currentTime <- getCurrentTime
+  print $ utcToLocalTime utc currentTime
 ```
 
-Neste exemplo, importamos os módulos `Data.Time` e `Data.Time.Format` para podermos usar a função `getCurrentTime` e a função `formatTime` para formatar a data de acordo com o nosso desejo. O resultado será algo como `16/04/2021, 18:00:00`, dependendo da data e hora atuais.
+Neste exemplo, usamos a função `utcToLocalTime` para converter o formato UTC (Universal Time Coordinated) em um formato de hora local mais fácil de ler. O resultado será algo como `2019-11-06 17:23:15.723726 UTC`.
 
-Outra forma de obter a data atual é usando o pacote `time`, que fornece funções mais avançadas para trabalhar com datas e horas. Vamos dar uma olhada em um exemplo usando o pacote `time`:
+## Aprofundando em Obtendo a Data Atual em Haskell
+
+Além do exemplo mostrado acima, podemos personalizar ainda mais a saída da data atual em Haskell. Por exemplo, podemos usar a função `formatTime` para definir o formato de saída da data e hora. Veja um exemplo abaixo:
 
 ```Haskell
+import Data.Time.Format
 import Data.Time.Clock
-import System.Locale (defaultTimeLocale)
 
 main = do
-    currentTime <- getCurrentTime
-    putStrLn $ formatTime defaultTimeLocale "%d/%m/%Y, %H:%M:%S" currentTime
+  currentTime <- getCurrentTime
+  let output = formatTime defaultTimeLocale "%d-%m-%Y %H:%M:%S" currentTime
+  print output
 ```
 
-Como você pode ver, a diferença aqui é que importamos o módulo `Data.Time.Clock` e usamos a função `getCurrentTime` para obter a data atual.
+Aqui, usamos a função `formatTime` juntamente com a variável `defaultTimeLocale` para formatar a data e hora no formato "dia-mês-ano hora:minuto:segundo". O resultado será algo como `06-11-2019 17:23:15`.
 
-## Mergulho profundo
+## Veja Também
 
-O pacote `time` também fornece funções úteis para trabalhar com diferentes fusos horários, bem como funções para cálculos de duração entre datas e conversão de valores de tempo. Essas funções podem ser encontradas no módulo `Data.Time.Clock.HT` e são bastante úteis em situações em que é necessário manipular informações de data e hora de forma mais complexa.
-
-## Veja também
-
-- [Haskell.org](https://www.haskell.org/)
-- [Documentação do módulo Data.Time](http://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Documentação do pacote time](http://hackage.haskell.org/package/time)
+- [Documentação oficial sobre Data.Time em Haskell](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Tutorial sobre formatação de datas e horas em Haskell](https://wiki.haskell.org/Local_time)
+- [Exemplos práticos de uso de Data.Time em projetos reais](https://www.stackbuilders.com/tutorials/haskell/date-and-time/)

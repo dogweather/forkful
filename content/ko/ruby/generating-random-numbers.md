@@ -1,48 +1,53 @@
 ---
-title:                "Ruby: 랜덤 숫자 생성"
+title:                "Ruby: 난수 생성하기"
+simple_title:         "난수 생성하기"
 programming_language: "Ruby"
-category:             "Numbers"
+category:             "Ruby"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
+## 왜
 
-우리는 여러분이 프로그래밍을 하면서 "랜덤한" 요소를 통해 만들어진 결과를 만나기를 원합니다. 이는 재미있는 게임을 만들거나, 무언가를 무작위로 선택하는 등의 용도로 많이 사용됩니다.
+랜덤한 숫자를 생성하는 것에 대해 관심이 있을 수 있습니다. 이는 범위 내에서 무작위로 숫자를 생성할 수 있는 능력을 가지기 때문입니다. 이는 게임 및 시뮬레이션 등의 분야에서 유용하게 사용될 수 있습니다.
 
 ## 어떻게?
 
-랜덤한 숫자를 생성하는 가장 간단한 방법은 Ruby의 내장 라이브러리인 `rand()` 메소드를 사용하는 것입니다. 다음은 `rand()` 메소드를 사용한 간단한 예제 코드입니다:
+우선 Ruby의 기본적인 랜덤 라이브러리인 `rand` 메소드를 사용해 봅시다.
 
 ```Ruby
-# 1에서 10 사이의 랜덤한 숫자 생성
-puts rand(1..10)
-
-# 0에서 100 사이의 랜덤한 실수 생성
-puts rand(0.0..100.0)
+rand #=> 0.08419006418511081
 ```
 
-실행 결과는 다음과 같을 수 있습니다:
+이 메소드는 0 이상 1 미만의 랜덤한 소수를 생성합니다. 이제 이를 이용해 다음과 같은 코드를 작성해 봅시다.
 
+```Ruby
+rand(10) #=> 4
 ```
-7
-65.234142643
+
+위 코드는 0 이상 10 미만의 랜덤한 정수를 생성합니다. 더 흥미로운 예제로는 다음과 같은 코드가 있습니다.
+
+```Ruby
+rand(1..10) #=> 7
 ```
 
-위의 예제 코드에서처럼, `rand()` 메소드는 인자로 넘겨진 값을 바탕으로 랜덤한 숫자를 생성합니다.
+위 코드는 1 이상 10 이하의 랜덤한 정수를 생성합니다. `..` 연산자를 사용하면 범위 내의 모든 값들이 가능한 범위가 됩니다. 마지막으로, 랜덤한 부동소수점을 생성하는 방법도 살펴봅시다.
 
-## 깊게 들어가기
+```Ruby
+rand(1.5..3.5) #=> 2.2871993837935454
+```
 
-Ruby의 `rand()` 메소드는 내부적으로 사전에 정의된 시드(seed) 값에 의존합니다. 따라서 프로그램이 실행될 때마다, 시드 값은 별개의 방식으로 설정됩니다. 이는 결과적으로 매번 실행할 때마다 다른 랜덤한 숫자가 생성됨을 의미합니다.
+이 방식으로 원하는 범위 내의 랜덤한 숫자를 생성할 수 있습니다.
 
-또한, Ruby에서는 `srand()` 메소드를 사용하여 시드 값을 수동으로 설정할 수도 있습니다. 이는 게임 또는 시뮬레이션에서 일관된 결과를 얻을 때 유용합니다.
+## 깊이 파고들기
 
-## 관련 자료
+Ruby의 `rand` 메소드는 내부적으로 의사 난수 발생기(pseudo-random number generator)를 사용합니다. 이 의사 난수 발생기는 이전에 생성된 숫자를 이용해 다음 숫자를 예측하는 방식으로 랜덤한 수열을 생성합니다. 이러한 이유로 `rand` 메소드는 프로그램을 실행할 때마다 같은 순서의 랜덤한 숫자들을 생성합니다. 따라서 보안이 중요한 애플리케이션에서는 보다 안전한 알고리즘이 필요할 수 있습니다.
 
-- [Ruby의 난수 생성 방법: `rand()` vs `srand()`](http://ruby-doc.org/core-2.6.3/Kernel.html#method-i-rand)
-- [Ruby에서의 난수 생성에 대한 깊은 이해](https://blog.appsignal.com/2018/07/31/ruby-magic-wild-and-uniform-pseudo-random-numbers.html)
+더 나아가서, Ruby의 `SecureRandom` 라이브러리는 보안 애플리케이션에서 랜덤한 값들을 생성하기 위한 다양한 방식을 제공합니다. 이를 이용해 더 안전한 랜덤한 숫자들을 생성할 수 있습니다.
 
-# 또한 볼만한 것들
+## 관련 링크
 
-- [Mersenne Twister 알고리즘을 이용한 난수 생성 방법](https://www.helloruby.com/algorithm/random-number-generation-using-mersenne-twister)
+- `rand` 메소드의 공식 문서: https://ruby-doc.org/core-3.0.0/Random.html#method-i-rand
+- `SecureRandom` 라이브러리의 공식 문서: https://ruby-doc.org/stdlib-3.0.0/libdoc/securerandom/rdoc/SecureRandom.html

@@ -1,39 +1,67 @@
 ---
-title:                "C#: Teilstrings extrahieren"
+title:                "C#: Substring extrahieren"
+simple_title:         "Substring extrahieren"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum: Oftmals müssen Entwicklerinnen und Entwickler in der Programmierung spezifische Teile von Texten oder Zeichenfolgen extrahieren. Dies kann zum Beispiel beim parsen von Daten oder beim Bearbeiten von Dateinamen nützlich sein.
+## Warum
 
-Wie geht das?: Die C# Programmiersprache bietet die Möglichkeit, Substrings aus einem String-Objekt zu extrahieren. Hierfür gibt es verschiedene Methoden, die je nach Anforderung ausgewählt werden können. Im Folgenden findest du einige Beispiele mit Erklärungen.
+Substring-Extraktion ist ein wichtiger Prozess in der Programmierung, der es uns ermöglicht, Teile von Strings, die wir möglicherweise nicht benötigen, zu entfernen oder zu bearbeiten. Es ist eine nützliche Technik, die uns in der Lage stellt, Strings effizienter zu verarbeiten und unsere Codes übersichtlicher zu gestalten.
 
-```C#
-// Beispiel 1: Substring mit Angabe von Startindex und Länge
-string text = "Dies ist ein Beispieltext.";
-string substring = text.Substring(8, 7); // Ergebnis: "ein Bei"
+## Wie
 
-// Beispiel 2: Substring mit Angabe von Startindex
-string result = text.Substring(17); // Ergebnis: "Beispieltext."
-```
-
-Es ist auch möglich, mit den Methoden `Substring()` und `IndexOf()` einen Teil eines Textes zwischen zwei bestimmten Zeichen zu extrahieren.
+Um eine Substring in C# zu extrahieren, können wir die Methode `Substring()` verwenden. Diese Methode erfordert zwei Parameter: die Startposition und die Anzahl der Zeichen, die wir extrahieren möchten. Hier ist ein Beispiel:
 
 ```C#
-// Beispiel 3: Substring zwischen bestimmten Zeichen extrahieren
-string sentence = "Ich mag Käse sehr gerne.";
-int startIndex = sentence.IndexOf("Käse") + 5;
-int length = sentence.IndexOf("sehr") - startIndex;
-string result = sentence.Substring(startIndex, length); // Ergebnis: "sehr gerne"
+string str = "Hallo Welt";
+string substr = str.Substring(6, 5); // Die Substring-Methode nimmt unsere Zeichen ab Index 6 (W) und extrahiert 5 Zeichen (Welt).
+
+Console.WriteLine(substr); // Ausgabe: Welt
 ```
 
-Deep Dive: Die `Substring()` Methode akzeptiert sowohl eine Startposition als auch eine Länge als Parameter. Die Startposition kann entweder übergeben werden oder durch die `IndexOf()` Methode bestimmt werden. Zudem gibt es auch eine Überladung der Methode, die nur einen Parameter (die Startposition) benötigt und den Rest des Strings bis zum Ende extrahiert. Es ist wichtig zu beachten, dass die Indizes in C# bei 0 beginnen und dass die Länge immer kleiner oder gleich der tatsächlichen Länge des Textes sein muss.
+Wie Sie sehen können, wird der Substring "Welt" extrahiert und in der Variable `substr` gespeichert. Wir können auch die `Length`-Eigenschaft von Strings verwenden, um die Länge des Substrings dynamisch zu bestimmen. Hier ist ein Beispiel:
 
-Siehe auch: Weitere Informationen zu Substring-Extraktion in C# findest du in der offiziellen Dokumentation und in folgenden Artikeln:
+```C#
+string str = "Hallo Welt";
+string substr = str.Substring(6, str.Length - 6); // Ab Index 6 (W) extrahieren wir die restliche Länge des Strings (5 Zeichen).
 
-- [String.Substring Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
-- [Get a Substring (indeec Answers)](https://stackoverflow.com/questions/41971045/get-a-substring-between-two-characters-using-c-sharp)
-- [How to extract a string in C# (The CodeHaven)](https://thecodehaven.com/2018/04/18/how-to-extract-a-string-in-c/)
+Console.WriteLine(substr); // Ausgabe: Welt
+```
+
+Die `Substring()`-Methode ist auch nützlich, wenn wir Teile von Benutzereingaben oder von Dateinamen isolieren müssen. Zum Beispiel könnten wir einen Pfad zu einer Datei haben, aber nur den Dateinamen benötigen. In diesem Fall können wir die `LastIndexOf()`-Methode verwenden, um die Position des letzten Schrägstrichs (oder Rückwärtsschrägstrichs) zu finden und dann den Substring zu extrahieren. Hier ist ein Beispiel:
+
+```C#
+string path = "C:/Users/Benutzer/Bilder/MeinBild.jpg";
+int lastIndex = path.LastIndexOf('/'); // Die Position der letzten Schrägstrich.
+string filename = path.Substring(lastIndex + 1); // Der Substring beginnt ab dem Zeichen nach dem Schrägstrich.
+
+Console.WriteLine(filename); // Ausgabe: MeinBild.jpg
+```
+
+## Deep Dive
+
+Die `Substring()`-Methode kann auch in Kombination mit anderen Methoden verwendet werden, um komplexe Extraktionen durchzuführen. Zum Beispiel könnten wir anstelle der `LastIndexOf()`-Methode die `Split()`-Methode verwenden, um den Pfad an jedem Schrägstrich aufzuteilen und dann den letzten Teil (Dateiname) zu extrahieren. Wir können auch die `Replace()`-Methode verwenden, um bestimmte Zeichen in einem Substring zu entfernen oder zu ersetzen. Hier ist ein Beispiel:
+
+```C#
+string path = "C:/Users/Benutzer/Bilder/MeinBild.jpg";
+string[] parts = path.Split('/'); // Der Pfad wird an jedem Schrägstrich aufgeteilt.
+string filename = parts[parts.Length - 1]; // Der letzte Teil des Strings wird extrahiert.
+
+string reversedFilename = filename.Replace("Bild", "dliaB"); // Der Substring "Bild" wird durch "dliaB" ersetzt.
+Console.WriteLine(reversedFilename); // Ausgabe: MeinDliab.jpg
+```
+
+Es gibt unendlich viele Möglichkeiten, Substrings effektiv zu extrahieren. Es ist wichtig, dass wir uns mit den verschiedenen Methoden und Techniken in C# vertraut machen, um sie in unseren Codes effizient nutzen zu können.
+
+## Siehe auch
+
+- [String.Substring Methode (System)](https://docs.microsoft.com/de-de/dotnet/api/system.string.substring)
+- [String.Length Eigenschaft (System)](https://docs.microsoft.com/de-de/dotnet/api/system.string.length)
+- [String.LastIndexOf Methode (System)](https://docs.microsoft.com/de-de/dotnet/api/system.string.lastindexof)
+- [String.Split Methode (System)](https://docs.microsoft.com/de-de/dotnet/api/system.string.split)
+- [String.Replace Methode (System)](https://docs.microsoft.com/de-de/dotnet/api/system.string.replace)

@@ -1,40 +1,38 @@
 ---
-title:                "Rust: La génération de nombres aléatoires"
+title:                "Rust: Génération de nombres aléatoires"
+simple_title:         "Génération de nombres aléatoires"
 programming_language: "Rust"
-category:             "Numbers"
+category:             "Rust"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi générer des nombres aléatoires en Rust ?
+# Pourquoi Générer des Nombres Aléatoires en Rust ?
 
-Vous vous demandez peut-être pourquoi quelqu'un voudrait générer des nombres aléatoires en Rust. Eh bien, mis à part le fait que c'est amusant, cela peut également être très utile pour des tâches telles que la génération de données aléatoires pour les tests, la simulation de situations aléatoires dans un programme ou même la création de jeux.
+Si vous êtes programmeur en herbe, vous avez peut-être entendu parler du langage de programmation Rust et de ses performances élevées. Mais pourquoi générer des nombres aléatoires en utilisant ce langage ? Eh bien, simplement parce que Rust offre une puissante bibliothèque de génération de nombres aléatoires incorporée dans sa bibliothèque standard, appelée "rand". Cela signifie que vous n'avez pas besoin d'utiliser des bibliothèques tierces ou de créer votre propre algorithme pour générer des nombres aléatoires, tout est déjà intégré dans Rust.
 
-## Comment le faire en Rust
+## Comment Générer des Nombres Aléatoires en Rust ?
 
-Générer des nombres aléatoires en Rust est assez simple grâce à la bibliothèque standard. Tout d'abord, vous devrez importer la bibliothèque en ajoutant `extern crate rand;` en haut de votre fichier. Ensuite, vous pouvez utiliser la fonction `random()` pour générer un nombre aléatoire entre 0 et un nombre maximum spécifié. Par exemple :
+La génération de nombres aléatoires en utilisant Rust est assez simple et directe. Tout d'abord, vous devez importer la bibliothèque "rand" en utilisant la déclaration `use rand::prelude::*;`. Ensuite, vous pouvez utiliser l'une des structures de données de la bibliothèque pour générer des nombres aléatoires selon vos besoins. Par exemple, pour générer un nombre entier aléatoire entre 0 et 100 inclus, vous pouvez utiliser la méthode `gen_range` de la structure `ThreadRng` comme ceci :
 
 ```Rust
-use rand::Rng; // importer la bibliothèque
-
-let number = rand::thread_rng().gen_range(1..101); // générer un nombre aléatoire entre 1 et 100
-
-println!("Mon nombre aléatoire est : {}", number); // afficher le nombre généré
+let number = thread_rng().gen_range(0, 101);
+println!("Nombre aléatoire : {}", number);
 ```
 
-En utilisant `thread_rng()`, nous nous assurons que chaque fois que notre programme est exécuté, un nouveau générateur de nombres aléatoires est créé, assurant ainsi des valeurs réellement aléatoires.
+Cette méthode prend deux paramètres, la valeur minimale et la valeur maximale entre lesquelles vous voulez générer le nombre aléatoire. Il existe également d'autres méthodes disponibles pour générer des nombres aléatoires, comme `gen`, `gen_bool` et `gen_ascii_chars`. Pour en savoir plus sur ces différentes méthodes, vous pouvez vous référer à la [documentation officielle de la bibliothèque rand](https://docs.rs/rand/0.8.4/rand/).
 
-## Plongée en profondeur
+## Plongée Profonde : Génération de Nombres Aléatoires en Rust
 
-Maintenant, si vous voulez aller encore plus loin dans la génération de nombres aléatoires en Rust, il existe également une variété d'options pour personnaliser votre générateur. Par exemple, vous pouvez spécifier le type de données que vous souhaitez générer, comme des nombres entiers, des décimaux, des caractères, etc. Vous pouvez également définir une graine pour votre générateur, ce qui permet de reproduire les mêmes valeurs aléatoires à chaque exécution. Enfin, il existe également des méthodes pour générer des séquences aléatoires, des nombres binaires et même des valeurs pseudo-aléatoires basées sur une distribution spécifique.
+Si vous voulez en savoir plus sur la génération de nombres aléatoires en utilisant Rust, il est important de comprendre comment les nombres aléatoires sont générés réellement. En fait, la bibliothèque "rand" utilise un générateur de nombres pseudo-aléatoires basé sur l'algorithme Mersenne Twister (MT). C'est l'un des générateurs de nombres aléatoires les plus couramment utilisés et il a une période de 2^19937 - 1, ce qui signifie que les nombres générés peuvent être uniques pour une très longue période. Si vous souhaitez en savoir plus sur cet algorithme, vous pouvez consulter [cet article](https://medium.com/swlh/how-are-random-numbers-generated-in-programming-48f6e53e5d6e) qui explique en détail comment les nombres pseudo-aléatoires sont générés.
 
-Pour en savoir plus sur toutes ces options et leurs utilisations en détail, vous pouvez consulter la documentation complète de la bibliothèque `rand`.
+# Voir Aussi
 
-## Voir aussi
+Maintenant que vous en savez plus sur la génération de nombres aléatoires en Rust, vous pouvez explorer d'autres fonctionnalités et bibliothèques offertes par ce langage de programmation puissant. Voici quelques liens utiles pour vous aider à démarrer :
 
-- [La documentation officielle de la bibliothèque `rand`](https://doc.rust-lang.org/rand/rand/index.html)
-- [Un tutoriel complet sur la génération de nombres aléatoires en Rust](https://medium.com/swlh/random-number-generation-in-rust-27a0b0d38711)
-- [Un article sur l'utilisation de générateurs de nombres aléatoires dans les jeux en Rust](https://ashleygwilliams.github.io/fun-with-async-std-and-crypto/)
-
-Maintenant que vous avez appris comment générer des nombres aléatoires en Rust, pourquoi ne pas l'essayer dans votre prochain projet ? Amusez-vous bien !
+- [Le site officiel de Rust](https://www.rust-lang.org/fr)
+- [La documentation officielle de Rust](https://doc.rust-lang.org/)
+- [La documentation officielle de la bibliothèque rand](https://docs.rs/rand/0.8.4/rand/)
+- [Une introduction à Rust pour les programmeurs Python](https://blog.rust-lang.org/2020/09/25/rust-with-python.html)

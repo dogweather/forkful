@@ -1,48 +1,53 @@
 ---
 title:                "Go: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Monissa ohjelmointiprojekteissa saattaa olla tarve laskea päivämääriä tulevaisuudessa tai menneisyydessä. Tässä blogipostauksessa tarkastelemme miten tämä onnistuu Go-kielen avulla.
 
-## Kuinka tehdä se
-```Go
-package main
+Miksi haluaisit laskea tulevaisuuden tai menneisyyden päivämäärän? Yleinen syy voi olla tarve suunnitella aikatauluja tai tapahtumia tulevaisuudessa tai tarkistaa tietty päivämäärä menneisyydestä.
 
-import (
-    "fmt"
-    "time"
-)
+## Miten tehdä
 
-func main() {
-    // Laskee päivän 30 päivää nykyhetkestä
-    tuleva := time.Now().AddDate(0, 0, 30)
-    fmt.Println("30 päivän päästä on:", tuleva)
-
-    // Laskee päivän 30 päivää menneisyydestä
-    menneisyys := time.Now().AddDate(0, 0, -30)
-    fmt.Println("30 päivää sitten oli:", menneisyys)
-}
-```
-
-Tässä esimerkissä käytämme Go:n `time` pakettia ja sen `AddDate()` funktiota, joka mahdollistaa päivien (ja myös kuukausien ja vuosien) lisäämisen tai vähentämisen nykyhetkestä.
-
-**Tuloste:**
+Voit laskea tulevan tai menneen päivämäärän Go-ohjelmointikielellä helposti käyttämällä aikapaketin (time package) funktioita. Seuraavassa koodiesimerkissä näytämme, miten voi laskea päivämäärän 30 päivää tulevaisuuteen ja 10 päivää menneisyyteen.
 
 ```
-30 päivän päästä on: 2019-04-16 12:00:00 +0000 UTC m=+2592000.000000000
-30 päivää sitten oli: 2019-02-16 12:00:00 +0000 UTC
+Go paketit käyttäen:
+
+// Laske 30 päivää tulevaisuudessa
+tulevaisuus := time.Now().AddDate(0, 0, 30)
+
+// Laske 10 päivää menneisyydessä
+menneisyys := time.Now().AddDate(0, 0, -10)
+
+// Tulosta tuleva ja menneinen päivämäärä
+fmt.Println("Tuleva päivämäärä:", tulevaisuus.Format("2.1.2006"))
+fmt.Println("Menneinen päivämäärä:", menneisyys.Format("2.1.2006"))
+
 ```
 
-## Syvemmälle aiheeseen
-Go:n `time` paketissa on myös muita hyödyllisiä funktioita, kuten `Date()` jolla voi tarkemmin määrittää päivämäärän ja `Parse()` jolla voi parsia päivämäärän annetusta merkkijonosta. Lisäksi myös aikavyöhyke on mahdollista määrittää Go:n avulla.
+Koodin suorittaminen tuottaa seuraavan tulosteen:
+
+```
+Tuleva päivämäärä: 8.10.2021
+Menneinen päivämäärä: 18.9.2021
+```
+
+Kuten näet, päivämäärän laskeminen Go-kielellä onnistuu helposti ja nopeasti.
+
+## Syväsukellus
+
+On tärkeää huomata, että päivämäärän laskeminen tulevaisuuteen tai menneisyyteen perustuu nykyiseen päivämäärään. Tämä tarkoittaa, että jos koodia suoritetaan eri päivänä, tulevat ja menneet päivämäärät muuttuvat vastaavasti.
+
+Lisäksi, jos haluat laskea päivämäärää pidemmän ajanjakson verran, voit käyttää `AddDate()` funktion ensimmäisenä parametrina vuosien, kuukausien tai päivien määrää. Esimerkiksi `AddDate(1, 2, 3)` lisää yhden vuoden, kaksi kuukautta ja kolme päivää nykyiseen päivämäärään.
 
 ## Katso myös
-- [Go:n virallinen "time" dokumentaatio] (https://golang.org/pkg/time/)
-- [Go:n virallinen opetusvideo päivämäärien laskemisesta] (https://www.youtube.com/watch?v=zQSVhLo1NJA)
-- [Esimerkkejä päivämäärien laskemisesta Go-kielellä] (https://github.com/GoesToEleven/GolangTraining/tree/master/47_calender_date_time)
+
+- [Go:n aikapaketin dokumentaatio](https://golang.org/pkg/time/)
+- [Kuinka laskea kuluvan viikon päivämäärät Go-ohjelmoinnilla](https://www.calhoun.io/finding-the-first-day-of-the-month-in-golang/)

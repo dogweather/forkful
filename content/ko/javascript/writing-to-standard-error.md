@@ -1,39 +1,35 @@
 ---
-title:                "Javascript: 표준 오류에 쓰는 방법"
+title:                "Javascript: 표준 오류 쓰기"
+simple_title:         "표준 오류 쓰기"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+우리는 모두 프로그래밍을 할 때 버그를 피할 수 없습니다. 그러나 그들을 찾고 해결하기 위해서는 프로그램에서 발생하는 모든 에러를 신속하게 파악할 수 있어야합니다. 여기서 하나의 도구로 여러분의 생각을 예외적인 바이트로 출력하고 자세한 원인을 찾는 데 깊게 파있는 방법이 바로 표준 에러 출력입니다.
 
-표준 오류에 쓰는 일에 대해 궁금해하는 분들에게 이 포스팅을 써보려고 합니다.
+## 글을 쓰는 방법
+표준 에러를 생성하고 기록하는 작업은 간단한 방법입니다. 먼저, `console.error()` 메서드를 사용하여 원하는 메시지를 출력 할 수 있습니다. 그리고 그 밑에는 추가적인 정보도 쓸 수 있습니다. 아래의 예시 코드 에서는 이 메서드가 어떻게 작동하는지 보여줍니다.
 
-## 어떻게
-
-보통 자바스크립트에서 콘솔에 출력할 때는 `console.log()`를 사용하게 됩니다. 하지만 때로는 콘솔이 아닌 다른 곳에서 에러 메시지나 로그를 출력해야 할 때가 있습니다. 이때 사용하는 것이 바로 `process.stderr.write()`입니다. 아래는 코드 예시와 함께 출력되는 결과입니다.
-
-```Javascript
-process.stderr.write("에러가 발생했습니다.");
+```javascript
+const age = undefined;
+console.error("나이는 정의되지 않았습니다.");
+console.error(`나이는 ${age}입니다.`);
+```
+출력:
+```
+나이는 정의되지 않았습니다.
+나이는 undefined입니다.
 ```
 
-```
-에러가 발생했습니다.
-```
+## 깊게 파보기
+자, 이제 `console.error()` 메서드의 작동 방식을 좀 더 자세히 살펴보겠습니다. 이 메서드는 TypeScript와 같은 자바스크립트의 상위 언어이기도 한 `console.log()` 메서드와 매우 유사하지만, 약간 다른 목적을 가지고 있습니다. `console.log()`는 간단한 로그 메시지를 출력하는 데 사용되지만, `console.error()`는 에러 메시지를 출력하고 콘솔 창에 눈에 잘 띄게 표시되도록 합니다. 또한, `console.error()`는 스택 추적 정보를 출력해주므로 원인을 찾는 데 도움이 됩니다. 이 메서드는 개발을 할 때 빠른 디버깅에 매우 유용하게 쓰일 수 있습니다.
 
-## 딥 다이브
-
-`process.stderr.write()`는 `console.log()`와는 다르게 바로 콘솔에 출력되는 게 아니라, 버퍼에 기록된 다음에 한꺼번에 출력되는 것입니다. 이를 통해 성능을 개선할 수 있고, 아주 긴 출력 메시지도 일괄 처리할 수 있습니다.
-
-## 참고 자료
-
-- [Node.js 공식 문서 - process.stderr.write()](https://nodejs.org/api/process.html#process_process_stderr_write_data_encoding_callback)
-- [Error Handling in Node.js](https://www.sitepoint.com/error-handling-in-node-js/)
-- [Node.js의 기본 개념과 개요](https://nodejs.dev/learn)
-- [Node.js 에러 핸들링 기초](https://www.freecodecamp.org/news/node-js-error-handling/)
-
-## 참고하실 링크
-
-(process.stderr.write() 사용법 번역 링크 여기) (딥 다이브에 대한 따로 번역된 내용 찾아 추가하면 좋을 것 같습니다)
+## 이것도 볼만합니다
+- [console.error() - MDN 웹 문서](https://developer.mozilla.org/ko/docs/Web/API/console/error)
+- [Error 객체 - MDN 웹 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error)
+- [처음 사용하는 자바스크립트 콘솔에 대해 알아보기 - MDN 웹 문서](https://developer.mozilla.org/ko/docs/Learn/JavaScript/First_steps/What_you_Will_need)

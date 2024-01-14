@@ -1,44 +1,41 @@
 ---
-title:                "Ruby: Tiedoston kirjoittaminen"
+title:                "Ruby: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Kirjoittamisen taidon kehittäminen on tärkeä osa jokaisen Ruby-ohjelmoijan työkalupakkia. Tekstieditorin avulla voit tallentaa koodisi pysyvästi ja jakaa sen muiden kanssa.
+Kirjoittaminen ja lukeminen ovat kaksi tärkeintä osaa ohjelmointia. Tekstin tallentaminen tiedostoon on tapa tallentaa ja lukea tietoja ohjelmista, ja se on yksi tärkeimmistä taidoista, joita jokaisen ohjelmoijan on hallittava.
 
-## Kuinka?
+## Kuinka kirjoittaa tekstitiedosto Rubylla
 
-Ruby-koodin tallentaminen tekstitiedostoon on helppoa. Aloita luomalla uusi tiedosto, joka päättyy .rb-tunnisteeseen, esimerkiksi "tiedosto.rb". Avaa tiedosto haluamallasi tekstieditorilla, kuten Notepadilla tai Sublimella. Kirjoita koodisi ja tallenna tiedosto.
-
-```Ruby
-puts "Tervetuloa Ruby-maailmaan!"
-``` 
-Tämän jälkeen voit suorittaa tiedoston komennolla "ruby tiedosto.rb" ja näet tulosteen "Tervetuloa Ruby-maailmaan!" terminaalissasi.
-
-## Syvemmälle
-
-Kirjoittamalla tekstitiedostoon voit myös hyödyntää sen ominaisuuksia, kuten tiedostojen sisältöjen lukemista ja muokkaamista sekä tietojen tallentamista ja lataamista. Voit esimerkiksi käyttää File-luokkaa tiedoston lukemiseen ja kirjoittamiseen.
+Ruby-ohjelmoinnissa on useita tapoja kirjoittaa tekstitiedostoja, mutta yksinkertaisin tapa on käyttää `File`-luokkaa. Ensinnäkin, avaa tiedosto `testi.txt` kirjoittamista varten käyttämällä `File.open`-metodia. Tämän jälkeen voit kirjoittaa haluamasi tekstin tiedostoon käyttämällä `puts`-komentoa. Lopuksi sulje tiedosto `File.close`-metodilla.
 
 ```Ruby
-# Avaaminen ja lukeminen
-file = File.open("tiedosto.txt", "r")
-p file.read
-
-# Kirjoittaminen
-file = File.open("tiedosto.txt", "w")
-file.write("Tervetuloa jälleen Ruby-maailmaan!")
-
-# Lopetetaan
-file.close
+File.open('testi.txt', 'w') do |tiedosto|
+    tiedosto.puts "Tämä on tekstiä, joka tallennetaan tiedostoon."
+end
 ```
 
-## Katso myös
+Tämän jälkeen voit lukea tiedoston käyttämällä `File.read`-metodia ja tulostaa sen sisällön komentoriville.
 
-- [Ruby - virallinen kotisivu](https://www.ruby-lang.org/fi/)
-- [Sublime Text - tekstieditori](https://www.sublimetext.com/)
-- [Ruby-dokumentaatio](https://ruby-doc.org/core-2.7.1/)
+```Ruby 
+puts File.read('testi.txt')
+```
+
+Tämän avulla voit tallentaa ja lukea tietoja tekstitiedostoista Rubylla.
+
+## Syvällinen sukellus
+
+Kirjoittaessa tekstitiedostoja Rubylla, on tärkeää olla huolellinen tiedoston avaamisessa ja sulkemisessa. Jos unohdat sulkea tiedoston, se voi aiheuttaa ongelmia ja jopa kadottaa tietoja. Voit myös käyttää `File.write`-metodia kirjoittamiseen, mutta muista kuitenkin sulkea tiedosto käsin. Voit myös kokeilla eri tiedostomuotoja, kuten `.csv`-tiedostoja, ja käyttää `CSV`-kirjastoa tiedon tallentamiseksi.
+
+## Katso myös
+- [File-luokka Rubyssa](https://ruby-doc.org/core-3.0.0/File.html)
+- [Ruby-tekstinkäsittely](http://ruby-doc.org/core-3.0.0/doc/syntax/calling_methods_rdoc.html)
+- [Ruby CSV-kirjasto](https://ruby-doc.org/stdlib-2.5.1/libdoc/csv/rdoc/CSV.html)

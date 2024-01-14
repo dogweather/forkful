@@ -1,39 +1,50 @@
 ---
-title:                "Python: Schreiben in Standardfehler"
+title:                "Python: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
+Die Ausgabe von Fehlermeldungen ist ein wesentlicher Bestandteil der Programmierung. Sie helfen dabei, Bugs und Probleme im Code zu identifizieren und zu beheben. Wenn du ein Programmierer bist, ist die Fähigkeit, effektiv an die Standardfehlerausgabe zu schreiben, unerlässlich.
 
-Das Schreiben in die Standardfehlerausgabe kann sehr hilfreich sein, um Fehlermeldungen und andere wichtige Informationen während der Ausführung eines Programms anzuzeigen. Dadurch können Programmiererinnen und Programmierer mögliche Probleme schnell erkennen und beheben.
-
-## Wie geht das
-
-Um in Python in die Standardfehlerausgabe zu schreiben, können wir die `sys`-Bibliothek verwenden. Wir müssen es importieren und dann die `stderr`-Methode aufrufen, um die schreibgeschützte Standardfehlerausgabe zu erhalten. Dann können wir die `write()`-Methode verwenden, um Text in die Standardfehlerausgabe zu schreiben.
+# Wie man es macht
+Die Verwendung der Standardfehlerausgabe in Python ist relativ einfach. Alles, was du tun musst, ist, die `stderr`-Funktion aus dem `sys`-Modul zu importieren und dann die `write()`-Methode zu verwenden, um die gewünschte Fehlermeldung auszugeben.
 
 ```Python
 import sys
-
-sys.stderr.write("Dies ist ein Fehler! Bitte beheben Sie es.")
+sys.stderr.write("Dies ist eine Fehlermeldung.")
 ```
 
-Das obige Beispiel würde folgende Ausgabe erzeugen:
+Dies wird die Meldung "Dies ist eine Fehlermeldung" in roter Schrift auf deinem Terminal oder in der Ausgabekonsole ausgeben. Du kannst auch Variablen in einer Fehlermeldung verwenden, indem du sie in die `write()`-Methode einfügst.
 
+```Python
+import sys
+zahl = 10
+
+sys.stderr.write("Die Zahl ist: " + str(zahl))
 ```
-Dies ist ein Fehler! Bitte beheben Sie es.
+
+Die Ausgabe davon wäre "Die Zahl ist: 10".
+
+# Tiefere Einblicke
+Wenn du tiefer in die Standardfehlerausgabe eintauchst, wirst du feststellen, dass es auch andere nützliche Methoden gibt, wie zum Beispiel `flush()`, die alle ausstehenden Daten aus dem Puffer zurückgibt.
+
+```Python
+import sys
+zahl = 5
+
+sys.stderr.write("Die Zahl ist: " + str(zahl))
+sys.stderr.flush()
+zahl = 10
 ```
 
-## Tiefer gehend
+Im obigen Beispiel wird die ursprüngliche Zahl 5 ausgegeben und dann der Puffer geleert, bevor die Zahl auf 10 aktualisiert wird und somit für die nächste Ausgabe bereit ist.
 
-Standardfehlerausgabe wird oft im Zusammenhang mit Standardausgabe (Standard Output) verwendet. Während Standardausgabe für die Anzeige von normalen Programmausgaben verwendet wird, kann Standardfehlerausgabe für die Anzeige von kritischen Fehlern oder Warnungen verwendet werden.
-
-Ein häufiges Problem beim Schreiben in die Standardfehlerausgabe ist, dass es standardmäßig nicht gepuffert wird. Das bedeutet, dass die Ausgabe jedes Mal sofort angezeigt wird, wenn sie geschrieben wird. Wenn Sie jedoch eine große Menge an Ausgabe haben, kann dies zu Unordnung und Unlesbarkeit führen. Um dies zu vermeiden, kann die `flush()`-Funktion verwendet werden, um die Ausgabe zu puffern und sie erst dann anzuzeigen, wenn sie vollständig ist.
-
-## Siehe auch
-
-- [Python-Dokumentation für sys-Bibliothek](https://docs.python.org/3/library/sys.html)
-- [Blog-Post über Standardfehlerausgabe in Python](https://realpython.com/python-logging-source-code/#the-standard-error-stream)
+# Siehe auch
+- [Python Standard Library: sys.stderr](https://docs.python.org/3/library/sys.html#sys.stderr)
+- [Python Standardbibliothek: Die stderr Ausgabe](https://docs.python.org/de/3/tutorial/errors.html#the-standard-error-device)

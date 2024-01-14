@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Das Lesen von Befehlszeilenargumenten"
+title:                "Rust: Lesen von Befehlszeilenargumenten"
+simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/reading-command-line-arguments.md"
 ---
 
@@ -9,58 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Manchmal ist es nützlich, ein Programm mit zusätzlichen Informationen zu starten, die direkt von der Kommandozeile eingegeben werden können. In Rust können diese Argumente einfach gelesen und in das Programm integriert werden.
+Wenn Sie jemals ein Programm geschrieben haben, das auf der Befehlszeile ausgeführt werden kann, haben Sie wahrscheinlich schon einmal benutzerdefinierte Argumente verwendet. Diese nützliche Funktion ermöglicht es dem Benutzer, bestimmte Einstellungen oder Funktionalitäten beim Ausführen des Programms anzupassen. In dieser Anleitung werden wir uns anschauen, wie man in Rust Befehlszeilenargumente liest und verarbeitet.
 
-## Wie geht man vor
+## Wie man Befehlszeilenargumente in Rust liest
 
-Um Kommandozeilenargumente in Rust zu lesen, müssen wir die `std::env` Bibliothek importieren. Dann können wir die Funktion `args()` verwenden, um eine Liste der Argumente zu erhalten. Wir können diese Liste durchlaufen und jeden Wert für unsere Zwecke nutzen.
+Das Lesen von Befehlszeilenargumenten in Rust ist relativ einfach und erfordert nur wenige Zeilen Code. Wir verwenden die [`std::env` Bibliothek](https://doc.rust-lang.org/std/env/) um an die Argumente heranzukommen. Der folgende Codeausschnitt zeigt, wie man alle Argumente ausgibt:
 
-```Rust
+```rust
 use std::env;
-let args: Vec<String> = env::args().collect();
-for arg in args.iter() {
+
+fn main() {
+  let args: Vec<String> = env::args().collect();
+  for arg in args {
     println!("{}", arg);
+  }
 }
 ```
 
-Wenn wir dieses Stück Code ausführen, werden alle Argumente, die beim Start des Programms angegeben wurden, ausgegeben. Wenn wir das Programm beispielsweise mit dem Befehl `rustc main.rs` kompilieren und dann mit dem Befehl `./main argument1 argument2` ausführen, würde die Ausgabe folgendermaßen aussehen:
+Der erste Eintrag im `args` Vektor ist immer der Name des Programms selbst. Wenn wir also unser Programm "hello_world" nennen, wird `args[0]` der String "hello_world" sein. Wir können auch auf bestimmte Argumente zugreifen, indem wir ihren Index übergeben. Zum Beispiel, um das dritte Argument auszugeben, würden wir `args[2]` verwenden. Der folgende Codeausschnitt zeigt, wie man das dritte Argument ausgibt, wenn es vorhanden ist, ansonsten eine Standardnachricht ausgibt:
 
-```sh
-./main
-argument1
-argument2
-```
-
-## Tieferer Einblick
-
-Die Funktion `args()` gibt uns eine `std::env::Args` Struktur zurück, die eine Iterator-ähnliche Schnittstelle bereitstellt. Das bedeutet, dass wir nicht nur über die Argumente iterieren können, sondern auch andere nützliche Methoden wie `nth()` oder `next()` verwenden können. Außerdem gibt es auch die Möglichkeit, einen spezifischen Index des Arguments zu extrahieren, indem wir die Methode `nth()` mit der Indexnummer aufrufen.
-
-Ein weiteres nützliches Feature dieser Struktur ist die Möglichkeit, den Namen des Programms zu erhalten, das ausgeführt wurde. Wir können dies tun, indem wir die Methode `next()` aufrufen, da der erste Eintrag in der Liste normalerweise der Name des Programms ist.
-
-```Rust
+```rust
 use std::env;
-let args: Vec<String> = env::args().collect();
-let program_name = args[0].clone();
 
-let mut args = env::args();
-args.next();
-
-for arg in args {
-    println!("{}", arg);
+fn main() {
+  let args: Vec<String> = env::args().collect();
+  
+  let third_arg = args.get(2); // Index 2 entspricht dem dritten Argument
+  
+  match third_arg {
+    Some(arg) => println!("{}", arg),
+    None => println!("Kein drittes Argument vorhanden.")
+  }
 }
-
-println!("Programm: {}", program_name);
 ```
 
-Die Ausgabe dieses Codes wäre folgende:
+## Tiefere Einblicke
 
-```sh
-argument1
-argument2
-Programm: ./main
-```
+Es gibt noch weitere Möglichkeiten, Befehlszeilenargumente in Rust zu verarbeiten, wie z.B. das Parsen von Argumenten mit der [`clap` Bibliothek](https://crates.io/crates/clap) oder das Lesen von Environment-Variablen mit der [`std::env::var()`](https://doc.rust-lang.org/std/env/fn.var.html) Funktion. Es gibt auch viele verschiedene Möglichkeiten, wie Sie Ihre Argumente strukturieren und verarbeiten können, je nach den Anforderungen Ihres Programms.
 
 ## Siehe auch
 
-- [Rust-Dokumentation: Kommandozeilen-Argumente lesen](https://doc.rust-lang.org/std/env/fn.args.html)
-- [Der offizielle Rust-Blog](https://blog.rust-lang.org/)
+- [`std::env`](https://doc.rust-lang.org/std/env/)
+- [`clap`](https://crates.io/crates/clap)
+- [`std::env::var()`](https://doc.rust-lang.org/std/env/fn.var.html)

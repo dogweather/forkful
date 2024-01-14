@@ -1,56 +1,48 @@
 ---
 title:                "Go: Sammenligning av to datoer"
+simple_title:         "Sammenligning av to datoer"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Å sammenligne to datoer er en vanlig oppgave for utviklere når de søker å håndtere tid og datoer i programmering. Ved å sammenligne to datoer kan vi utføre logikk og ta beslutninger basert på hvilken dato som kommer før eller etter en annen. Dette er spesielt nyttig i applikasjoner som involverer planlegging og frister.
 
-Du har kanskje stått i en situasjon der du trenger å sammenligne to datoer i et Go-program, enten det er for å finne ut hvilken dato som kommer først eller for å sjekke om to datoer er like. Uansett årsak, ved å forstå hvordan man sammenlikner datoer i Go, kan du effektivt håndtere datoer i dine programmer.
+## Slik gjør du det
+For å sammenligne to datoer i Go språket trenger vi å bruke funksjonen ```Equality()``` fra ```time``` pakken. Vi kan bruke denne funksjonen til å sammenligne to datoer og få tilbake en sann eller usann verdi, avhengig av om de er like eller ikke. Her er et eksempel på hvordan vi kan implementere dette i koden vår:
 
-# Slik gjør du det
-
-For å sammenligne to datoer i Go, kan du bruke funksjonen `.Before()` eller `.Equal()` fra pakken `"time"`. La oss se på et eksempel for å sammenligne to datoer i en enkel Go-applikasjon:
-
-```
+```Go
 package main
 
 import (
-  "fmt"
-  "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-  date1 := time.Date(2020, time.November, 10, 0, 0, 0, 0, time.UTC)
-  date2 := time.Date(2020, time.October, 15, 0, 0, 0, 0, time.UTC)
+	date1 := time.Date(2020, time.November, 15, 0, 0, 0, 0, time.UTC)
+	date2 := time.Date(2020, time.December, 1, 0, 0, 0, 0, time.UTC)
 
-  if date1.Before(date2) {
-    fmt.Println("Date 1 comes before Date 2")
-  }
-
-  if date1.After(date2) {
-    fmt.Println("Date 1 comes after Date 2")
-  }
-
-  if date1.Equal(date2) {
-    fmt.Println("Date 1 and Date 2 are equal")
-  }
+	if date1.Equal(date2) {
+		fmt.Println("Datoene er like.")
+	} else {
+		fmt.Println("Datoene er ikke like.")
+	}
 }
 ```
 
-Her har vi definert to datoer, `date1` og `date2`, og brukt `.Before()`, `.After()` og `.Equal()` funksjonene for å sammenligne dem. Hvis du kjører dette programmet, vil du se at `Date 1 comes before Date 2` blir skrevet ut, siden oktober kommer før november. Du kan også endre datoene og se hvordan konsollet endrer utskriften.
+Output av denne koden vil være "Datoene er ikke like.", siden de to datoene som er definert i koden er forskjellige. Vi kan også bruke andre metoder som ```Before()``` og ```After()``` for å sammenligne datoer i forhold til hverandre.
 
-# Dypdykk
+## Dypdykk
+Det er viktig å være klar over hvordan Go håndterer tid og datoer, spesielt når det kommer til tidszoner og sommertid. Go bruker internasjonale standarder for tid og dato håndtering, som kan føre til uventede resultater når man sammenligner datoer fra ulike tidszoner eller når sommertid er aktivert.
 
-Når du sammenligner datoer i Go, er det viktig å merke seg at datatypen `time.Time` er en struktur som inneholder informasjon om både tid og dato. Derfor må du være nøyaktig når du definerer datoene dine, ved å angi timer, minutter, sekunder og tidssone.
+En annen viktig ting å merke seg er at Go bruker UTC (Coordinated Universal Time) som standard tidszone. Dette kan føre til problemer hvis man ikke er klar over det, spesielt når man jobber med brukerspesifikke tidszoner.
 
-En annen ting å huske på er at `.Equal()` funksjonen bare sjekker om to datoer er identiske, inkludert tidssonen. Hvis du vil sjekke om to datoer er like uten å ta hensyn til tidssonen, kan du bruke `.Truncate()` funksjonen for å nullstille tidssonen før du sammenligner.
-
-# Se også
-
-* [Go's `time` pakke dokumentasjon](https://golang.org/pkg/time/)
-* [Sammenligne datoer og tider i Go - Tutorialspoint](https://www.tutorialspoint.com/go/go_compare_dates.htm)
-* [Comparing dates in Go - Stack Overflow](https://stackoverflow.com/questions/56293519/how-to-compare-dates-in-golang)
+## Se også
+- [Offisiell Go dokumentasjon for time pakken](https://golang.org/pkg/time/)
+- [Sammenligning av datoer i andre programmeringsspråk](https://www.baeldung.com/java-compare-dates)
+- [Vanlig feil når man arbeider med tid og dato i programmering](https://weblogs.asp.net/dwahlin/common-mistakes-when-working-with-dates-in-javascript)

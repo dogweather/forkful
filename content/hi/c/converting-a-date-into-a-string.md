@@ -1,44 +1,42 @@
 ---
-title:                "C: एक तारीख को स्ट्रिंग में रूपांतरित करना"
+title:                "C: एक तारीख को स्ट्रिंग में रूपांतरण करना"
+simple_title:         "एक तारीख को स्ट्रिंग में रूपांतरण करना"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-
-कई बार हमें अपने C प्रोग्राम में तारीख को स्ट्रिंग में बदलने की जरूरत होती है। इससे हमें तारीख को आसानी से प्रिंट करने आयात डेटा में भी उपयोग कर सकते हैं।
+कई बार, हमें तारीख को स्ट्रिंग में रूपांतरित करने की जरूरत होती है, जैसे कि किसी स्प्रेडशीट में रजिस्टर्ड तारीखों को स्ट्रिंग के रूप में प्रदर्शित करने के लिए। इसके अलावा, कुछ प्रोग्राम में भी तारीख को स्ट्रिंग में रूपांतरित करने की जरूरत पड़ सकती है। इस ब्लॉग पोस्ट में, हम दिखाएंगे कि एक तारीख को स्ट्रिंग में कैसे रूपांतरित किया जा सकता है।
 
 ## कैसे करें
-
-यदि आपको तारीख को स्ट्रिंग में बदलने की जरूरत है, तो निम्न उदाहरण आपको गाइड करेंगे।
-
 ```C
 #include <stdio.h>
+#include <string.h>
 #include <time.h>
 
-int main()
-{
-    // तारीख को स्ट्रिंग में बदलें
+int main() {
+    // तारीख और समय को लेना
     time_t now = time(NULL);
-    struct tm *t = localtime(&now);
-   
+    struct tm *current_time = localtime(&now);
+    // तारीख को स्ट्रिंग में रूपांतरित करना
     char date_string[50];
-    strftime(date_string, sizeof(date_string), "आज की तारीख: %d %B %Y", t);
-    // आउटपुट: आज की तारीख: 08 मई 2021
-   
+    strftime(date_string, sizeof(date_string), "%B %d, %Y", current_time);
+    // स्ट्रिंग को प्रिंट करना
+    printf("वर्तमान तारीख: %s\n", date_string);
     return 0;
 }
 ```
 
-## गहराई में जाएं
+कोड को कॉंपाइल और एक्जीक्यूट करने के बाद, आपको इस तरह का आउटपुट मिलना चाहिए:
+```
+वर्तमान तारीख: मई 24, 2021
+```
 
-तारीख को स्ट्रिंग में बदलने के लिए हम strftime फ़ंक्शन का इस्तेमाल करते हैं। इसमें हम दिए गए फ़ॉर्मेट के अनुसार तारीख को स्ट्रिंग में बदलते हैं। स्ट्रिंग विशेषकरताओं का उपयोग करके हम तारीख को और भी बदल सकते हैं। strftime फ़ंक्शन के अपने अन्य प्रारूपों के बारे में अधिक जानने के लिए आप निम्नलिखित लिंक के जरिए इसे चेक कर सकते हैं।
+यहां हम `time()` और `localtime()` का उपयोग करके वर्तमान तारीख और समय को लेते हैं। इसके बाद, `strftime()` फ़ंक्शन का उपयोग करके हम तारीख को हमारे चयनित फॉर्मेट में स्ट्रिंग में रूपांतरित करते हैं। आप भी अपने चयन के अनुसार अन्य फ़ॉर्मेट का उपयोग कर सकते हैं।
 
-## देखें भी
-
-- [C में तारीख और समय का उपयोग करना](https://www.programiz.com/c-programming/library-function/time)
-- [strftime फ़ंक्शन के अन्य प्रारूप](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [विस्तार से पढ़ें strftime फ़ंक्शन](https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time.html#Formatting-Calendar-Time)
+## गहराई से जाएं
+यदि आप अधिक जानना चाहते हैं, तो `strftime()` फ़ंक्शन के [डॉक्यूमेंटेशन](https://www.cplusplus.com/reference/ctime/strftime/) को जांचें जो आपको समर्थित फॉर

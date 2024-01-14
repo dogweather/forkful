@@ -1,53 +1,62 @@
 ---
 title:                "Python: Obtenir la date actuelle"
+simple_title:         "Obtenir la date actuelle"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi Obtenir la Date Actuelle Avec Python ?
+# Pourquoi
 
-Si vous êtes un programmeur Python, vous avez peut-être déjà eu besoin de récupérer la date actuelle dans l'un de vos projets. Cela peut sembler une chose simple et triviale, mais connaître la date actuelle peut être très utile dans de nombreuses situations, telles que l'automatisation de tâches, la gestion de données et bien plus encore. Dans cet article, nous allons voir comment obtenir la date actuelle en utilisant Python.
+Obtenir la date actuelle peut sembler trivial, mais c'est un élément essentiel de nombreux programmes Python. Que ce soit pour enregistrer des données, générer des rapports ou simplement afficher l'heure actuelle, connaître la date en temps réel est crucial pour de nombreuses tâches informatiques.
 
-## Comment le Faire
+## Comment faire
 
-Pour obtenir la date actuelle en utilisant Python, nous allons utiliser le module `datetime`. Ce module contient de nombreuses fonctions pour manipuler les dates et les heures. Commençons par l'importer dans notre code :
+Il existe plusieurs façons d'obtenir la date actuelle en Python. La méthode la plus courante est d'utiliser le module `datetime` intégré. Voici un exemple de code qui utilise ce module pour afficher la date actuelle :
 
-```python
+```Python
 import datetime
+
+now = datetime.datetime.now()
+print("La date actuelle est :", now)
 ```
 
-Maintenant, nous pouvons utiliser la fonction `now()` pour obtenir la date actuelle et l'assigner à une variable :
+La sortie de ce code sera quelque chose comme :
 
-```python
-current_date = datetime.now()
+```Python
+La date actuelle est : 2021-06-14 19:15:25.789227
 ```
 
-Nous pouvons également formater cette date en utilisant la méthode `strftime()` avec un paramètre spécifiant le format souhaité. Par exemple, si nous voulons obtenir la date au format mois/jour/année, nous pouvons utiliser le code suivant :
+Comme vous pouvez le voir, la date est affichée au format année-mois-jour heure:minute:seconde.microseconde. Mais vous pouvez également formater la date selon vos préférences en utilisant la méthode `strftime()` du module `datetime`.
 
-```python
-formatted_date = current_date.strftime("%m/%d/%Y")
+Par exemple, si vous voulez afficher la date au format jj/mm/aaaa, vous pouvez utiliser le code suivant :
+
+```Python
+import datetime
+
+now = datetime.datetime.now()
+print("La date actuelle est :", now.strftime("%d/%m/%Y"))
 ```
 
-Et voilà, nous avons maintenant la date actuelle dans le format souhaité dans notre variable `formatted_date`.
+La sortie sera :
 
-Un autre exemple utile serait d'obtenir l'heure actuelle au format 24h :
-
-```python
-current_time = datetime.now().strftime("%H:%M:%S")
+```Python
+La date actuelle est : 14/06/2021
 ```
 
-## Plongez Plus Profondément
+## Plongée en profondeur
 
-Maintenant que vous savez comment obtenir la date actuelle avec Python, il peut être intéressant de connaître les différentes méthodes disponibles dans le module `datetime`. Vous pouvez consulter la documentation officielle pour avoir une vue d'ensemble complète de toutes les fonctions disponibles.
+En utilisant le module `datetime`, vous pouvez également obtenir la date d'une manière plus spécifique. Par exemple, vous pouvez utiliser la méthode `date()` pour obtenir uniquement la date sans l'heure et les microsecondes.
 
-De plus, vous pouvez également explorer le module `calendar` de Python qui offre des fonctions pour manipuler les calendriers.
+De plus, le module `datetime` offre la possibilité de manipuler les dates en effectuant des opérations comme l'addition ou la soustraction de jours, de semaines, de mois ou d'années à une date donnée.
 
-## Voir Aussi
+Vous pouvez également utiliser des méthodes telles que `replace()` pour remplacer une partie spécifique d'une date, ou `weekday()` pour obtenir le jour de la semaine correspondant à une date donnée.
 
-- [Documentation Python du module datetime](https://docs.python.org/fr/3/library/datetime.html)
-- [Documentation Python du module calendar](https://docs.python.org/fr/3/library/calendar.html)
-- [Article sur l'utilisation du module datetime en Python](https://realpython.com/python-datetime/)
-- [Tutoriel pour formater les dates en Python](https://www.freecodecamp.org/news/how-to-format-dates-in-python/)
+# Voir aussi
+
+- [Documentation officielle de Python pour le module datetime](https://docs.python.org/fr/3/library/datetime.html)
+- [Tutoriel sur le module datetime en français](https://python.developpez.com/cours/apprendre-python-3/?page=datetime)
+- [Autres façons d'obtenir la date et l'heure en Python](https://www.programiz.com/python-programming/datetime)

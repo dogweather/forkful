@@ -1,7 +1,9 @@
 ---
 title:                "PHP: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/extracting-substrings.md"
 ---
 
@@ -9,34 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Estrazione di sub-stringhe è un concetto fondamentale nella programmazione PHP. Ci permette di ottenere parti specifiche di una stringa, come ad esempio una parola o una frase specifica. Questa tecnica è estremamente utile e viene utilizzata in diverse situazioni, come nella gestione di dati di form o nella manipolazione di url.
+L'estrazione di sottostringhe è un'operazione fondamentale nella programmazione PHP. Permette di ottenere una parte specifica di una stringa più grande e può essere utile in molte situazioni, come ad esempio l'analisi delle informazioni di un indirizzo email o la gestione dei dati inseriti dagli utenti.
 
 ## Come fare
 
-Per estrarre una sub-stringa in PHP, utilizziamo la funzione `substr()`, che prende tre argomenti: una stringa di origine, l'indice di inizio e la lunghezza della sub-stringa desiderata. Ad esempio, per estrarre la parola "programmazione" dalla stringa "Questo è un corso di programmazione", useremmo il seguente codice:
+Per estrarre una sottostringa in PHP, è possibile utilizzare la funzione `substr()`. Questa funzione richiede almeno due parametri: la stringa di origine e la posizione di inizio della sottostringa desiderata. Inoltre, è possibile specificare un terzo parametro per definire la lunghezza della sottostringa, altrimenti verrà estratta tutta la parte rimanente della stringa di origine.
 
 ```PHP
-$stringa = "Questo è un corso di programmazione";
-$parola = substr($stringa, 16, 13);
-echo $parola; // output: programmazione
+$stringa = "Ciao, mi chiamo Marco!";
+$sottostringa = substr($stringa, 6); // $sottostringa = "mi chiamo Marco!"
+$sottostringa = substr($stringa, 6, 8); // $sottostringa = "mi chiamo"
 ```
 
-Se invece vogliamo ottenere la prima parola della stringa, possiamo utilizzare la funzione `explode()`, che divide la stringa in base a un delimitatore specificato e restituisce un array. Ad esempio, per ottenere la parola "Questo" dalla stringa precedente, useremmo il seguente codice:
+Se il parametro di lunghezza è un numero negativo, la sottostringa verrà estratta a partire dalla fine della stringa di origine.
 
 ```PHP
-$stringa = "Questo è un corso di programmazione";
-$prima_parola = explode(" ", $stringa)[0];
-echo $prima_parola; // output: Questo
+$stringa = "Ciao, mi chiamo Marco!";
+$sottostringa = substr($stringa, -6); // $sottostringa = "Marco!"
+```
+
+Inoltre, è possibile specificare una stringa di fine personalizzata usando l'argomento opzionale `end` della funzione `mb_strstr()`, come mostrato di seguito:
+
+```php
+$stringa = "Ciao, mi chiamo Marco!";
+//$sottostringa = "mi chiamo" (come sopra)
+$sottostringa = mb_stristr($stringa, "chiamo", true); 
 ```
 
 ## Approfondimento
 
-Esistono altri metodi per estrarre sub-stringhe, come ad esempio utilizzare le funzioni `strpos()` e `strrpos()` per ottenere l'indice iniziale della sub-stringa desiderata e poi utilizzare la funzione `substr()` per estrarla. Inoltre, è anche possibile utilizzare le espressioni regolari per estrarre sub-stringhe in base a un pattern specifico.
+La funzione `substr()` è molto utile per estrarre una parte di una stringa, ma ci sono alcune precauzioni da prendere in considerazione. Ad esempio, se si utilizzano caratteri multi-byte come nell'esempio precedente, è importante utilizzare le funzioni `mb_substr()` e `mb_stristr()` per assicurarsi che la sottostringa venga estratta correttamente anche con caratteri speciali.
 
-È importante ricordare che l'indice di una stringa inizia sempre da 0, quindi la prima lettera di una stringa ha indice 0, la seconda ha indice 1, e così via.
+Un'altra cosa da tenere presente è che la funzione `substr()` non è in grado di gestire stringhe unicode, quindi in questi casi è necessario utilizzare funzioni più avanzate come `mb_substr()` o `grapheme_substr()`.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di PHP su substr()](https://www.php.net/manual/en/function.substr.php)
-- [Esempi pratici di estrazione di sub-stringhe in PHP](https://www.tutorialspoint.com/php/php_string_substr.htm)
-- [Approfondimento sulle espressioni regolari in PHP](https://www.php.net/manual/en/function.preg-match.php)
+- [Funzione substr() su PHP.net](https://www.php.net/manual/it/function.substr.php)
+- [Funzioni multibyte su PHP.net](https://www.php.net/manual/it/book.mbstring.php)

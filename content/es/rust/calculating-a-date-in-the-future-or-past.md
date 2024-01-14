@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Cálculo de una fecha en el futuro o pasado"
+title:                "Rust: Calculando una fecha en el futuro o en el pasado"
+simple_title:         "Calculando una fecha en el futuro o en el pasado"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,60 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Calcular fechas en el futuro o pasado es una habilidad importante para cualquier programador, ya que se puede aplicar a una variedad de situaciones, como planificación de proyectos o análisis de datos.
+Calcular fechas en el futuro o en el pasado puede ser útil en muchas situaciones, como programación de citas, gestión de proyectos o planificación de eventos. En este artículo, aprenderemos a calcular fechas en Rust utilizando la librería estándar.
 
 ## Cómo hacerlo
 
-La forma más sencilla de calcular una fecha en el futuro o pasado es utilizando la biblioteca estándar de Rust [chrono](https://crates.io/crates/chrono). Primero, es necesario agregarla a tu proyecto en el archivo `Cargo.toml`:
+Para calcular una fecha en el futuro o en el pasado, necesitamos tener una fecha inicial y una cantidad de tiempo (en segundos, minutos, horas, días, etc.) que queremos sumar o restar. En Rust, podemos hacer esto utilizando el tipo de datos `Duration` de la librería estándar, que representa una cantidad de tiempo.
 
-```
-[dependencias]
-chrono = "0.4.13"
-```
-
-A continuación, importa la biblioteca en tu archivo de código y crea una nueva instancia de `DateTime` con la fecha y hora actuales:
+Primero, importemos la librería `chrono` y sus tipos de datos `DateTime` y `Duration`:
 
 ```Rust
-use chrono::{Local, Datelike, Timelike};
-
-let now = Local::now();
+use chrono::{DateTime, Duration, Utc};
 ```
 
-Para calcular una fecha en el futuro, puedes utilizar la función `with_future` y especificar la cantidad de días que deseas sumar a la fecha actual:
+Luego, creamos una fecha inicial utilizando `DateTime::parse_from_str()` y especificando un formato de fecha:
 
 ```Rust
-let fecha_futura = now.with_future(3);
+let fecha_inicial = DateTime::parse_from_str("2021/08/25 15:30:00", "%Y/%m/%d %H:%M:%S").unwrap();
 ```
 
-Para calcular una fecha en el pasado, utiliza la función `with_past` y especifica la cantidad de días que deseas restar a la fecha actual:
+Ahora, podemos utilizar la función `checked_add()` o `checked_sub()` de `Duration` para sumar o restar una cantidad de tiempo a nuestra fecha inicial. Por ejemplo, para obtener la fecha 2 horas en el futuro, podemos hacer lo siguiente:
 
 ```Rust
-let fecha_pasada = now.with_past(7);
+let fecha_en_el_futuro = fecha_inicial.checked_add(Duration::hours(2)).unwrap();
 ```
 
-También es posible realizar cálculos más complejos, como sumar o restar años, meses o incluso horas a una fecha:
+O para obtener la fecha 3 días en el pasado:
 
 ```Rust
-let fecha_futura = now.with_year(2022).unwrap()
-                    .with_month(12).unwrap()
-                    .with_hour(8).unwrap();
+let fecha_en_el_pasado = fecha_inicial.checked_sub(Duration::days(3)).unwrap();
 ```
 
-Finalmente, puedes imprimir la fecha resultante utilizando la función `format` y especificando el formato deseado:
+También podemos hacer cálculos más complejos combinando diferentes unidades de tiempo, por ejemplo:
 
 ```Rust
-println!("{}", fecha_futura.format("%A, %B %d, %Y"));
-// Output: Friday, December 23, 2022
+let fecha_futura_poblacion = fecha_inicial.checked_add(Duration::days(365 * 50) // 50 años
+                                                + Duration::hours(1500) // 1500 horas
+                                                + Duration::minutes(10000)); // 10000 minutos
 ```
 
-## Profundizando
+## Inmersión profunda
 
-La biblioteca `chrono` ofrece una amplia gama de funciones y métodos para realizar cálculos de fechas en Rust. Puedes explorar su documentación completa [aquí](https://docs.rs/chrono/0.4.13/chrono/).
+La librería `chrono` nos ofrece una amplia gama de funciones para manejar fechas y tiempos de manera sencilla y precisa. Además de `checked_add()` y `checked_sub()`, también podemos utilizar funciones como `add()` y `sub()` que devuelven una nueva fecha en lugar de utilizar un tipo `DateTime`. Además, podemos especificar el formato de fecha y hora que queremos utilizar en las funciones `parse_from_str()` y `format()`.
 
-Otra opción es utilizar la biblioteca [date_time](https://crates.io/crates/date_time), que ofrece una sintaxis similar a la de `chrono`, pero con algunas características adicionales.
+También podemos hacer cálculos con fechas en diferentes zonas horarias utilizando tipos como `FixedOffset` y `Local` en lugar de `Utc`. Y si necesitamos trabajar con fechas más precisas, la librería `chrono` también proporciona tipos de datos como `NaiveDate` y `Utc::now()` para manejar microsegundos y nanosegundos.
 
 ## Ver también
 
-- [Documentación de chrono en crates.io](https://docs.rs/chrono/0.4.13/chrono/)
-- [Documentación de date_time en crates.io](https://docs.rs/date_time/0.2.25/date_time/)
-- [Guía de Rust: Trabajar con fechas y horas](https://www.rust-lang.org/es-ES/learn/training/trabajando-con-fechas-y-horas)
+- Documentación oficial de `chrono`: https://docs.rs/chrono/latest/chrono/
+- Tutorial de Rust sobre fechas y tiempos: https://www.youtube.com/watch?v=IkdYT

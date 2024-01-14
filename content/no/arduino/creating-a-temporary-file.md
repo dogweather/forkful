@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/creating-a-temporary-file.md"
 ---
 
@@ -9,43 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å lage midlertidige filer kan være en effektiv måte å organisere og lagre data på mens du kjører et Arduino program. Dette er spesielt nyttig hvis du trenger å behandle og manipulere store mengder data som kan overskride de begrensede minneressursene til en Arduino mikrokontroller.
+Å opprette midlertidige filer er nyttig når vi ønsker å lagre data midlertidig i vår Arduino-prosjekt. For eksempel kan vi bruke midlertidige filer for å lagre sensor data eller som et buffer for å lagre data før vi sender det til en annen enhet.
 
-## Hvordan lage en midlertidig fil på Arduino
+## Slik gjør du det
 
-For å lage en midlertidig fil på Arduino, må du først inkludere filsystembiblioteket i koden din ved å legge til følgende linje på toppen av filen:
+Opprettelse av midlertidige filer i Arduino er enkelt. Følg disse trinnene:
 
-```Arduino
-#include <FS.h>
-```
+1. Inkluder SPIFFS biblioteket ved å skrive ```#include <SPIFFS.h>``` øverst i koden din.
 
-Deretter trenger du en variabel til å representere den midlertidige filen. Dette kan gjøres ved å bruke `File`-typen og tilordne den til `File::createTempFile()`-funksjonen:
+2. Initialisere SPIFFS ved å skrive ```SPIFFS.begin()``` i ```setup``` delen av koden din.
 
-```Arduino
-File tempFile = File::createTempFile();
-```
+3. Opprett en midlertidig fil ved hjelp av ```File tmpFile = SPIFFS.open("/midlertidig.txt", "w")```. Her legger vi til filnavnet og angir at filen skal skrives til. Merk at hvis filen allerede eksisterer, vil den gamle filen bli overskrevet med den nye.
 
-Nå som filen er laget, kan du skrive data til den ved hjelp av `print()` eller `println()`-funksjonene:
+4. Skriv data til filen ved hjelp av ```tmpFile.print()``` eller ```tmpFile.println()```.
 
-```Arduino
-tempFile.println("Dette er en midlertidig fil!");
-```
+5. Lukk filen ved å skrive ```tmpFile.close()```.
 
-Når du er ferdig med å skrive til filen, må du lukke den ved hjelp av `close()`-funksjonen:
-
-```Arduino
-tempFile.close();
-```
-
-Du kan også lese data fra den midlertidige filen på samme måte som du leser data fra andre filer ved å bruke `read()`- eller `readString()`-funksjonene.
+6. For å lese data fra filen, åpne den på nytt med ```SPIFFS.open("/midlertidig.txt", "r")``` og les data med ```tmpFile.read()``` eller ```tmpFile.readString()```.
 
 ## Dypdykk
 
-Når du lager en midlertidig fil på Arduino, lagres den i ESP32s interne flashminne. Dette minnet er delt inn i to seksjoner - en for data, og en for koden til programmet ditt. Det midlertidige filsystemet er plassert i dataområdet, noe som betyr at det vil ha en begrenset størrelse som vil variere avhengig av størrelsen på koden din.
-
-Det er også viktig å merke seg at å lage midlertidige filer kan påvirke ytelsen til andre funksjoner på Arduinoen din. Dette skyldes at skriving og lesing fra filsystemet kan være en ressurskrevende operasjon.
+Mens oppretting av midlertidige filer er enkelt, er det noen ting å vurdere når du bruker dem i Arduino-prosjektet ditt. Siden SPIFFS har begrenset lagringsplass, må du være forsiktig med hvor mye data du skriver til filen din. Husk også å slette filen når du er ferdig med å bruke den for å frigjøre plass på enheten din.
 
 ## Se også
 
-- [Offisiell ESP32 dokumentasjon om filsystemet](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/spiffs.html)
-- [Tutorial om å bruke SPIFFS filsystemet på ESP32](https://randomnerdtutorials.com/esp32-spiffs-file-system-tutorial/)
+* [SPIFFS biblioteket dokumentasjon](https://arduino-esp8266.readthedocs.io/en/latest/filesystem.html)
+* [Eksempel på SPIFFS programmering](http://www.iotsharing.com/2017/09/how-to-use-spiffs-for-esp8266-to-store-files.html)
+* [Alternative måter å lagre data på med Arduino](https://www.arduino.cc/en/Tutorial/ReadASCIIString)

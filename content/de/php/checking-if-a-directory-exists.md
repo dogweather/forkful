@@ -1,53 +1,58 @@
 ---
-title:                "PHP: Überprüfen, ob ein Verzeichnis existiert."
+title:                "PHP: Überprüfen, ob ein Verzeichnis vorhanden ist"
+simple_title:         "Überprüfen, ob ein Verzeichnis vorhanden ist"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+### Warum
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist eine grundlegende Aufgabe in der PHP-Programmierung. Durch diese Überprüfung können bestimmte Funktionen ausgeführt werden, wie beispielsweise das Erstellen von neuen Dateien oder das Ausführen von Code basierend auf dem Vorhandensein eines bestimmten Verzeichnisses. Es ist ein wichtiger Teil der Fehlerbehandlung und ermöglicht es Programmen, sich an die Umgebung anzupassen und entsprechend zu reagieren.
+Das Überprüfen, ob ein Verzeichnis existiert, ist eine wichtige Aufgabe in der PHP-Programmierung. Es kann helfen, Fehler zu vermeiden und sicherzustellen, dass eine bestimmte Datei oder Ressource verfügbar ist, bevor darauf zugegriffen wird.
 
-## Wie geht es
+### Wie man es macht
 
-Es gibt mehrere Methoden, um in PHP zu überprüfen, ob ein Verzeichnis existiert. Eine Möglichkeit ist die Verwendung der "file_exists()" -Funktion, die überprüft, ob eine angegebene Datei oder ein Verzeichnis vorhanden ist. Hier ist ein Beispielcode, der zeigt, wie dies gemacht werden kann:
+Um zu überprüfen, ob ein Verzeichnis in PHP existiert, können Sie die Funktion `is_dir()` verwenden. Diese Funktion akzeptiert einen Parameter, der den Pfad zum zu überprüfenden Verzeichnis enthält. Wenn das Verzeichnis existiert, gibt die Funktion `true` zurück, andernfalls `false`.
 
-```PHP
-<?php 
-if(file_exists("/home/username/Documents")){
-  echo "Verzeichnis existiert.";
-} else{
-  echo "Verzeichnis nicht gefunden.";
+````PHP
+<?php
+if (is_dir('/pfad/zum/verzeichnis')) {
+    echo 'Das Verzeichnis existiert.';
+} else {
+    echo 'Das Verzeichnis existiert nicht.';
 }
-?>
-```
+````
 
-Dieser Code überprüft, ob das Verzeichnis "Documents" im Benutzerordner vorhanden ist und gibt dementsprechend eine Meldung aus. Eine andere Option ist die Verwendung der "is_dir()" -Funktion, die speziell überprüft, ob es sich bei dem angegebenen Pfad um ein Verzeichnis handelt. Hier ist ein Beispielcode:
+Wenn Sie den absoluten Pfad nicht kennen, können Sie auch den relativen Pfad verwenden, ausgehend von der aktuellen Arbeitsverzeichnisposition.
 
-```PHP
-<?php 
-if(is_dir("/var/www/html")){
-  echo "Ja, es ist ein Verzeichnis.";
-} else{
-  echo "Nein, es handelt sich nicht um ein Verzeichnis.";
+````PHP
+<?php
+if (is_dir('verzeichnis')) {
+    echo 'Das Verzeichnis existiert.';
+} else {
+    echo 'Das Verzeichnis existiert nicht.';
 }
-?>
-```
+````
 
-Die "is_dir()" -Funktion gibt entweder true oder false zurück, abhängig davon, ob das angegebene Speicherort ein Verzeichnis ist. Weitere Informationen zu diesen Funktionen und anderen Methoden zur Überprüfung des Vorhandenseins von Verzeichnissen finden Sie in der Dokumentation von PHP.
+### Tiefere Einblicke
 
-## Tiefer eintauchen
+Die Funktion `is_dir()` nutzt die Systemaufrufe `access()` oder `lstat()` unter der Haube, um zu überprüfen, ob ein Pfad eine gültige Verzeichnisliste ist. Je nach Dateisystem und Berechtigungen kann dies zu unterschiedlichen Ergebnissen führen. Es ist daher wichtig, sicherzustellen, dass die Berechtigungen ordnungsgemäß gesetzt sind, wenn Sie Probleme beim Überprüfen der Existenz eines Verzeichnisses haben.
 
-Um weiter in die Überprüfung von Verzeichnissen in PHP einzusteigen, ist es wichtig zu verstehen, wie das Dateisystem funktioniert. PHP bietet mehrere Funktionen zum Lesen und Bearbeiten von Dateien und Ordnern, einschließlich der obigen "file_exists()" und "is_dir()" -Funktionen. Diese Methoden können auch in Kombination mit anderen Dateisystemfunktionen verwendet werden, um komplexe Abläufe auszuführen, wie beispielsweise das Durchsuchen von Ordnern oder das Ändern von Dateinamen.
+Eine zusätzliche Möglichkeit, zu überprüfen, ob ein Verzeichnis existiert, besteht darin, die Funktion `file_exists()` zu verwenden und den Parameter `is_dir` auf `true` zu setzen.
 
-Die Überwachung von Verzeichnissen kann auch hilfreich sein, um mögliche Sicherheitslücken zu erkennen. Durch die Überprüfung und Aktualisierung von Berechtigungen für bestimmte Verzeichnisse können Entwickler sicherstellen, dass unerwünschte Zugriffe oder Veränderungen an Dateien verhindert werden.
+````PHP
+<?php
+if (file_exists('pfad/zum/verzeichnis', true)) {
+    echo 'Das Verzeichnis existiert.';
+} else {
+    echo 'Das Verzeichnis existiert nicht.';
+}
+````
 
-## Siehe auch
+### Siehe auch
 
-- [PHP Filesystem Developer Guide](https://www.php.net/manual/es/book.filesystem.php)
-- [Using files and directories in PHP](https://www.php.net/manual/es/book.filesystem.php)
-- [5 Ways to Check if a Directory Exists in PHP](https://www.shellhacks.com/php-check-if-directory-exists/)
-- [PHP 7 - Dateisystem](https://www.tutorialspoint.com/php7/php7_filesystem.htm)
+- [PHP-Dokumentation für is_dir()](https://www.php.net/manual/de/function.is-dir.php)
+- [PHP-Dokumentation für file_exists()](https://www.php.net/manual/de/function.file-exists.php)

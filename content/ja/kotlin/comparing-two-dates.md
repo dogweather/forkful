@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: 2つの日付の比較"
+title:                "Kotlin: 「2つの日付の比較」"
+simple_title:         "「2つの日付の比較」"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/comparing-two-dates.md"
 ---
 
@@ -9,54 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-日付を比較することは、プログラミングにおいて非常に一般的なタスクです。特定の日付が他の日付よりも前か後ろかを判断する必要がある場合、または日付の順序を変更する必要がある場合には、日付の比較が必要になります。
+プログラミングをするとき、時々二つの日付を比較する必要があります。それは、アプリケーションで重要な日付を追跡したい場合や、ユーザーにとって忘れられないイベントをリマインダーするための機能を作成する場合などに役立ちます。
 
 ## 使い方
 
-```Kotlin
-// 現在の日付を取得
-val currentDate = Date()
-// 比較したい日付を作成
-val comparisonDate = Date(2021, 1, 1)
-// 比較演算子を使用して、日付を比較
-if (currentDate > comparisonDate) {
-    println("比較日付は現在の日付よりも前です。")
-} else if (currentDate < comparisonDate) {
-    println("比較日付は現在の日付よりも後です。")
-} else {
-    println("比較日付と現在の日付は同じです。")
-}
-```
-
-上記のコードでは、現在の日付と比較日付を比較して、結果を出力しています。比較演算子を使用することで、日付の前後関係を簡単に判断することができます。
+Kotlinの```Date```クラスは、2つの日付を比較するための便利なメソッドを持っています。まず、比較する二つの日付を```Date```オブジェクトに変換します。
 
 ```Kotlin
-// 日付を文字列に変換して比較する
-val currentDate = Calendar.getInstance().time
-val comparisonDate = Calendar.getInstance().apply {
-    set(Calendar.YEAR, 2021)
-    set(Calendar.MONTH, 1)
-    set(Calendar.DAY_OF_MONTH, 1)
-}.time
-
-val sdf = SimpleDateFormat("yyyyMMdd")
-// 日付を比較
-if (sdf.format(currentDate) > sdf.format(comparisonDate)) {
-    println("比較日付は現在の日付よりも前です。")
-} else if (sdf.format(currentDate) < sdf.format(comparisonDate)) {
-    println("比較日付は現在の日付よりも後です。")
-} else {
-    println("比較日付と現在の日付は同じです。")
-}
+val date1 = Date("2021-03-15")
+val date2 = Date("2021-03-20")
 ```
 
-また、文字列として表現された日付を比較することもできます。上記のコードでは、日付を「yyyyMMdd」のフォーマットに変換してから比較を行います。
+次に、```before()```や```after()```などのメソッドを使って比較を行います。
 
-## ディープダイブ
+```Kotlin
+println(date1.after(date2)) // Output: false
+println(date1.before(date2)) // Output: true
+```
 
-日付を比較する際には、日付のタイムゾーンや時間まで考慮する必要があります。また、日付はプログラム内で数値として扱われるため、注意が必要です。Kotlinでは、比較演算子を使用することで日付の比較を行うことができますが、これらのポイントを把握しておくことが重要です。
+また、```compareTo()```メソッドを使っても比較できます。このメソッドは、比較対象の日付が等しい場合は0を返し、比較対象よりも前の場合は負の値を、比較対象よりも後ろの場合は正の値を返します。
 
-## 併せて参考にしてください
+```Kotlin
+println(date1.compareTo(date2)) // Output: -1
+```
 
-- [Java で日付を比較する方法](https://www.geeksforgeeks.org/compare-two-dates-in-java/)
-- [Kotlin 日付操作のドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/)
+## 深堀り
+
+日付の比較にはさまざまな方法がありますが、```Date```クラスのメソッドを使うことで簡単に比較できます。また、```LocalDate```や```Calendar```などのクラスを使うこともできますが、それぞれに特有のメソッドがあるので、使い方をしっかりと把握する必要があります。
+
+さらに、日付の比較はタイプセーフな方法で行うことが重要です。Kotlinでは、```LocalDate```や```ZonedDateTime```などのJava 8で導入されたクラスを使うことで、タイプセーフな日付の比較が可能となっています。
+
+## 参考リンク
+
+- [KotlinのDateクラスのドキュメント](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/)
+- [Java 8で導入された日付/時刻APIのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/time/package-summary.html)
+- [プログラマーのための日付の扱い方 全部くわしく解説！](https://programmingapplications.net/ja/date-comparison/)

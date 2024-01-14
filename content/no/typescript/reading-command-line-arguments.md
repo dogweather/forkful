@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Lesing av kommandolinjeargumenter"
+title:                "TypeScript: Lese kommandolinje-argumenter"
+simple_title:         "Lese kommandolinje-argumenter"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/reading-command-line-arguments.md"
 ---
 
@@ -9,30 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å lese kommandolinje-argumenter kan være en viktig del av å lage effektive og brukervennlige programmer. Enten du jobber med webutvikling, server-side scripting eller andre typer programmering, er det essensielt å kunne håndtere og tolke argumenter som brukes til å kjøre programmet ditt.
+Mange programmer har behov for å kunne ta imot og behandle informasjon gitt gjennom kommandolinjen. Dette kan være for å få spesifikk informasjon fra brukeren, som filnavn eller søkeord, eller for å kjøre forskjellige funksjoner avhengig av hvilke argumenter som er gitt. Enten du er en nybegynner eller en erfaren utvikler, er det viktig å forstå hvordan du kan lese kommandolinje-argumenter i TypeScript for å lage mer fleksible og brukervennlige programmer.
 
-## Hvordan gjøre det
+## Hvordan
 
-For å lese og behandle kommandolinje-argumenter i TypeScript, kan du bruke prossess-objektet som er innebygd i Node.js. Dette objektet gir deg tilgang til en rekke nyttige funksjoner for å håndtere kommandolinjen.
+Det er flere måter å lese kommandolinje-argumenter i TypeScript på, men en enkel og vanlig måte er ved hjelp av Node.js `process` objektet. Dette objektet gir tilgang til kommandolinjen i Node.js applikasjoner og lar deg hente ut informasjon gitt av brukeren.
 
-Et enkelt eksempel på hvordan du kan bruke prossess-objektet for å lese et argument er som følger:
-
+For å lese argumenter gitt gjennom kommandolinjen, må du først importere `process` objektet:
 ```TypeScript
-const argument = process.argv[2];
-console.log(`Du skrev inn: ${argument}`);
+import * as process from 'process';
 ```
 
-Koden ovenfor vil ta det tredje argumentet som ble gitt ved å kjøre programmet og skrive det ut til konsollen. For eksempel, hvis du kjører programmet ditt med kommandoen `node minProgram.ts Hei`, vil konsollen vise `Du skrev inn: hei`.
+Deretter kan du bruke `process.argv` til å få en liste over alle argumentene som er gitt. Dette er en array, hvor det første elementet er banen til Node.js, og de neste elementene er argumentene.
+```TypeScript
+const args = process.argv;
+```
 
-Du kan også bruke ulike metoder og funksjoner for å behandle argumentene på en mer avansert måte. For eksempel kan du bruke `process.argv.slice(2)` for å få tilgang til en liste over alle argumentene som ble gitt, eller `process.env` for å få tilgang til miljøvariabler som ble brukt ved å kjøre programmet. Det finnes også flere tredjepartsbiblioteker som kan hjelpe deg med å håndtere argumentene på en mer strukturert måte.
+For å få tak i spesifikke argumenter, kan du bruke indeksering. For eksempel, hvis du ønsker å få tak i det tredje argumentet, kan du bruke `args[2]`.
 
-## Dypdykk
+La oss se på et eksempel hvor vi ønsker å få tak i en fil som brukeren har gitt som argument, og deretter skrive ut innholdet i denne filen:
+```TypeScript
+import * as process from 'process';
+import * as fs from 'fs';
 
-Når du jobber med lesing av kommandolinje-argumenter, er det viktig å være klar over noen potensielle utfordringer. En av de vanligste feilene er at argumentene blir gitt i feil rekkefølge eller at de ikke blir validert ordentlig. Dette kan føre til uventet oppførsel i programmet ditt og føre til sikkerhetsrisikoer.
+const args = process.argv;
+const fileName = args[2];
 
-Et annet viktig punkt å huske på er at kommandolinje-argumenter er tilgjengelige for brukeren som kjører programmet ditt. Derfor bør du være forsiktig med å inkludere sensitiv informasjon som passord eller personlige data som argumenter.
+fs.readFile(fileName, 'utf-8', (error, data) => {
+  if (error) {
+    console.log('Kunne ikke lese filen. Feilmelding:', error.message);
+    return;
+  }
 
-## Se også 
+  console.log('Innholdet i filen er:', data);
+});
+```
 
-- [Node.js dokumentasjon om prosessobjektet](https://nodejs.org/dist/latest-v14.x/docs/api/process.html)
-- [Commander, et populært tredjepartsbibliotek for å håndtere kommandolinje-argumenter i Node.js](https://github.com/tj/commander.js)
+I dette eksempelet bruker vi også `fs` modulen for å lese filen som brukeren har gitt som argument.
+
+## Deep Dive
+
+I noen tilfeller kan det også være nyttig å kunne gi egendefinerte argumenter når du kjører din TypeScript applikasjon. Dette kan gjøres ved å bruke `--` etterfulgt av navnet på argumentet og verdien.
+```bash
+ts-node app.ts --navn John --alder 25
+```
+
+I koden kan du lese disse argumentene ved hjelp av `process.argv.slice(2)`, og deretter konvertere dem til objekter ved å splitte dem og bruke `reduce()` funksjonen:
+```TypeScript
+const customArgs = process.argv.slice(2).reduce((acc, curr) => {
+  const [arg, value] = curr.split('=');
+  acc[arg] = value;
+  return acc;
+}, {});
+
+console.log(customArgs.navn); // John
+console.log(customArgs.alder); // 25
+```
+
+Dette er spesielt nyttig for å gjøre applikasjonen din mer fleksibel og avhengig av hvilke argumenter brukeren gir, kan du kjøre forskjellige funksjoner eller endre oppførselen til programmet ditt.
+
+## Se Også
+
+- [Node.js Process | Node.js API Documentation](https://nodejs.org/api/process.html)
+- [Top 5 Ways to Parse Command Line Arguments in Node.js](https://stackabuse.com/top-5-ways-to-parse-command-line-arguments-in-node-js/)
+- [Understanding Command Line Arguments in Node.js](https://codeburst.io/understanding-command-line-arguments-in-node-js-d832715c5158?gi=d416d3321add)

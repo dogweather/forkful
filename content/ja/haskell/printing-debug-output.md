@@ -1,30 +1,47 @@
 ---
-title:                "Haskell: デバッグ出力の印刷"
+title:                "Haskell: デバッグ出力のプリント"
+simple_title:         "デバッグ出力のプリント"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-デバッグ出力を行う理由は、プログラムの動作や問題を理解するために非常に重要です。
+# なぜデバッグ出力をプリントするのか
 
-## How To
-デバッグ出力を行うためには、プログラム内の特定の箇所にprint文を挿入する必要があります。Haskellでは、以下のようにprint文を使用することができます。
+コンピュータプログラミングをする際、バグやエラーが発生することはよくあります。デバッグ出力をプリントすることは、それらのバグやエラーを特定し、修正するのに役立ちます。
+
+## プリントデバッグ出力の方法
+
+デバッグ出力をプリントするには、Haskellで提供される`putStrLn`関数を使用します。以下の例をご覧ください。
 
 ```Haskell
-print "デバッグ出力"
+main = do
+  putStrLn "デバッグ出力の例"
+  x <- readLn :: IO Int
+  putStrLn ("入力された数値は " ++ show x ++ " です。")
 ```
 
-これにより、プログラム実行時に "デバッグ出力" というテキストが表示されます。
+この例では、`putStrLn`関数を使用して、"デバッグ出力の例"というテキストを出力しています。そして、`readLn`関数を使用してユーザーからの入力を受け取り、その数値を`show`関数を使用して文字列に変換し、`putStrLn`関数を使用して表示しています。
 
-## Deep Dive
-デバッグ出力を使用することで、プログラム内の変数や値の値を確認することができます。また、特定の条件下でのみデバッグ出力を行うことで、プログラムの特定の部分だけを詳細に確認することができます。
+実行すると、以下のような結果が得られます。
 
-デバッグ出力はプログラムの実行速度を低下させる可能性があるため、必要最小限の箇所にのみ挿入することが重要です。また、デバッグ出力を行った後は、不要なprint文を削除することも重要です。
+```
+デバッグ出力の例
+10
+入力された数値は 10 です。
+```
 
-## See Also
-- [Haskellのprint文の使い方](https://haskell.e-bigmoon.com/print.html)
-- [デバッグ出力の重要性について](https://www.seas.upenn.edu/cets/answers/debugging.html)
-- [Haskellのデバッグ方法の記事](https://wiki.haskell.org/Debugging)
+## プリントデバッグ出力の深堀り
+
+デバッグ出力をプリントすることは非常に重要ですが、過度に使用するとプログラムのパフォーマンスに影響を与える可能性があります。そのため、デバッグ出力はバグやエラーの特定のためにのみ使用し、本番環境では削除することをお勧めします。
+
+また、Haskellでは`Debug.Trace`モジュールを使用することで、より詳細なデバッグ出力を提供することができます。詳細な情報を必要とする場合は、このモジュールを使用してください。
+
+## 参考リンク
+
+- [HaskellのputStrLn関数のドキュメント](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:putStrLn)
+- [HaskellのreadLn関数のドキュメント](https://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:readLn)
+- [HaskellのDebug.Traceモジュールのドキュメント](https://hackage.haskell.org/package/base-4.14.0.0/docs/Debug-Trace.html)

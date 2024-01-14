@@ -1,7 +1,9 @@
 ---
-title:                "C: Hakeminen ja tekstin korvaaminen"
+title:                "C: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/searching-and-replacing-text.md"
 ---
 
@@ -9,63 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tekstin etsintä ja korvaaminen on tärkeä osa C-ohjelmointia. Se mahdollistaa tekstissä olevien tiettyjen termien tai muotojen korvaamisen toisilla, mikä helpottaa koodin muokkaamista ja ylläpitämistä. Tämä blogikirjoitus auttaa sinua ymmärtämään, kuinka tämä prosessi toimii ja miten voit hyödyntää sitä omassa koodissasi.
+Ohjelmoinnin yksi tärkeimmistä tehtävistä on tekstin etsiminen ja korvaaminen. Se voi tuntua yksinkertaiselta tehtävältä, mutta se on erittäin tärkeää tekstipohjaisessa ohjelmoinnissa. Kun haluat muuttaa tiettyä sanaa tai lausetta kaikissa tiedostoissa tai korjata virheellisiä tietoja, tekstinhaku ja korvaaminen ovat välttämättömiä työkaluja tämän saavuttamiseen.
 
-## Miten tehdä
+## Kuinka
 
-Tekstin etsintä ja korvaaminen C-kielellä onnistuu käyttämällä 'str' -perheen funktioita, kuten `strchr` ja `strstr`. Näiden funktioiden avulla voit etsiä haluamasi merkkijonon ja korvata sen toisella. Katso esimerkki alla olevasta koodiblokista:
+Tekstin etsiminen ja korvaaminen on yleinen tehtävä C-ohjelmointikielellä ja se voidaan suorittaa muutamalla yksinkertaisella vaiheella. Ensinnäkin meidän täytyy avata tiedosto, jossa haluamme suorittaa etsimisen ja korvaamisen. Tämän jälkeen käytämme "fscanf" komentoa lukeaksemme tiedoston sisältöön.
 
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main(void) {
-    char teksti[] = "Hei maailma!";
-    char *esiintyma;
-
-    esiintyma = strchr(teksti, 'm');
-    *esiintyma = 'k';
-
-    printf("%s", teksti); // Tulostaa "Hei kaailka!"
-    return 0;
-}
-```
-
-Tässä esimerkissä käytämme `strchr` funktiota löytämään ensimmäisen esiintymän merkille 'm' ja korvaamme sen kirjaimella 'k'. Tämän jälkeen tulostamme uuden muokatun tekstin, "Hei kaailka!".
-
-Voit myös käyttää `strstr` funktiota etsimään tiettyä merkkijonoa ja korvaamaan sen toisella merkkijonolla. Katso esimerkki alla:
+**Esimerkki:**
 
 ```C
-#include <stdio.h>
-#include <string.h>
+FILE *tiedosto;
+char teksti[100];
 
-int main(void) {
-    char teksti[] = "Tämä on esimerkkiteksti";
-    char *esiintyma;
-
-    esiintyma = strstr(teksti, "esimerkki");
-    strcpy(esiintyma, "uusi");
-    
-    printf("%s", teksti); // Tulostaa "Tämä on uusi teksti"
-    return 0;
-}
+tiedosto = fopen("tekstitiedosto.txt", "r");  
+scanf(tiedosto, "%s", teksti);  
 ```
 
-Tässä käytämme `strstr` funktiota löytämään tekstin "esimerkki" ja korvaamme sen tekstillä "uusi". Tuloksena saamme "Tämä on uusi teksti".
+Tässä esimerkissä olemme avanneet "tekstitiedosto.txt" tiedoston ja tallentaneet sen sisällön muuttujaan "teksti". Jotta voimme suorittaa haun ja korvauksen, meidän täytyy käyttää tekstinhakufunktiota, kuten "strstr". Tämä funktio etsii annetun merkkijonon ja palauttaa löydettyjen merkkijonojen määrän.
 
-## Syvempi sukellus
+**Esimerkki:**
 
-C-kielessä tekstien etsiminen ja korvaaminen tapahtuu merkkijonojen manipuloinnin avulla. Mutta on tärkeää huomata, että merkkijonot ovat loppujen lopuksi vain merkkitaulukoita, joissa jokainen merkki vastaa tiettyä numerokoodia. Tämän vuoksi on tärkeää olla tarkkaavainen, kun käsitellään merkkijonoja, jotta varmistetaan, että ohjelma toimii oikein.
+```C
+char uusi_teksti[100];
 
-Jos haluat oppia lisää merkkijonojen manipuloinnista C-kielessä, voit tutustua näihin resursseihin:
+while (fgets(uusi_teksti, 100, tiedosto) != NULL) {  
+    if (strstr(uusi_teksti, "vanha_sana")) {  
+        strcpy(uusi_teksti, "uusi_sana");
+    }  
+} 
 
-- [C String Handling](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
-- [Working with strings in C](https://www.geeksforgeeks.org/working-with-strings-in-c/)
-- [Using string functions in C](https://www.cprogramming.com/tutorial/string.html)
+```
 
+Tässä esimerkissä olemme käyttäneet "strstr" -funktiota etsimään ja korvaamaan "vanha_sana" merkkijonon "uusi_sana" -merkkijonolla. Lopuksi, kun olemme suorittaneet haun ja korvauksen kaikissa tiedoston merkkijonoissa, meidän täytyy tallentaa muutokset ja sulkea tiedosto.
+
+**Esimerkki:**
+
+```C
+fclose(tiedosto);
+```
+
+## Syvällinen sukellus
+
+Vaikka tekstinhaku ja korvaaminen ovat tärkeitä ohjelmoinnin tehtäviä, niiden tehokas suorittaminen vaatii hieman ymmärrystä C-kielen toiminnoista ja muuttujista. Esimerkiksi "fgets" -toiminnon käyttö tekstinhakuun voi olla hyödyllistä, kun etsitään merkkijonoja tiedostosta. Lisäksi "strcmp" -funktio voidaan käyttää vertaamaan kahta merkkijonoa ja varmistamaan, että korvaaminen tapahtuu vain silloin, kun merkkijonot ovat identtisiä.
+
+On myös tärkeää varmistaa, että tiedosto suljetaan oikein suorituksen jälkeen. Jos tiedostoa ei suljeta, se voi aiheuttaa ongelmia myöhemmin.
 
 ## Katso myös
 
-- [Merkkijonon etsiminen ja korvaaminen C++:ssa](https://www.tutorialcup.com/cplusplus/replace-string-c-programming.htm)
-- [Regex-etsintä ja korvaaminen C:ssä](https://www.tutorialspoint.com/regex/regex_string_handling.htm)
-- [C-kielen dokumentaatio merkkijonofunktioille](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
+- [strcpy funktion dokumentointi](https://www.tutorialspoint.com/c_standard_library/c_function_strcpy.htm)
+- [C:n muuttujat ja niiden tyypit](https://www.tutorialspoint.com/cprogramming/c_variables.htm)
+- [Tekstitiedoston käsittely C-ohjelmoinnissa](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)

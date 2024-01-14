@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: डायरेक्टरी की मौजूदगी की जांच"
+title:                "Elixir: डायरेक्टरी का अस्तित्व जाँच करना"
+simple_title:         "डायरेक्टरी का अस्तित्व जाँच करना"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elixir/checking-if-a-directory-exists.md"
 ---
 
@@ -9,35 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-एक डायरेक्टरी का अगर मौजूद होना जांचने में क्या फायदा है, यह पता लगाना महत्वपूर्ण है।
+एक डायरेक्ट्री मौजूद है या नहीं पता करने के लिए खोज में लाने में एक व्यक्ति का हस्तक्षेप करने के लिए आप क्यों इदाचार करके होता है।
 
-## कैसे करें
+## कैसे
+
+आप एक डायरेक्टरी की मौजूदगी जांचने के लिए `File.exists? /1` फंक्शन का इस्तेमाल कर सकते हैं। नीचे दिए गए उदाहरण में, हम फाइलें बनाते हैं और उन्हें चेक करते हैं कि यदि वे मौजूद हैं तो क्या `true` के साथ आउटपुट किया जाता है या नहीं।
 
 ```Elixir
-# यहाँ हम डायरेक्टरी का मौजूद होना जांचते हैं और उसकी कमांड लाइन में आउटपुट प्रिंट करते हैं।
-dir_name = "./test_directory"
-if File.dir?(dir_name) do
-  IO.puts "डायरेक्टरी मौजूद है"
-else
-  IO.puts "डायरेक्टरी मौजूद नहीं है"
+File.mkdir("test_dir") # यह हमेशा सफलतापूर्वक चलता है
+File.mkdir("test_dir") # हमेशा से `{:error, :eexist}` एरर देगा
+File.exists?("test_dir") # true
+```
+
+आप अपनी स्वयं की डायरेक्टरी के लिए भी इस फंक्शन का इस्तेमाल कर सकते हैं।
+
+```Elixir
+# यह यह मौजूदगी जांचने और यदि नहीं तो एक नई डायरेक्टरी को बनाने के लिए फंक्शन्स का उपयोग करता है।
+def create_dir(dir_name) do
+  if File.exists?(dir_name) do
+    "डायरेक्टरी पहले से मौजूद है"
+  else
+    File.mkdir(dir_name)
+    "नई डायरेक्टरी बनाई गई"
+  end
 end
+
+create_dir("test_dir")  # "डायरेक्टरी पहले से मौजूद है"
+create_dir("new_dir")   # "नई डायरेक्टरी बनाई गई"
 ```
 
-परिणाम:
+## डीप डाइव
 
-```
-डायरेक्टरी मौजूद है
-```
-
-## गहराई में
-
-जब आप अपनी ऐप्लिकेशन में फाइल या फोल्डर को ऑपरेट करते हैं, तो आपको अनुकूलन के लिए उनमें से एक को आवश्यकता हो सकती है। इस लेख में हम डायरेक्टरी का मौजूद होना जांचने के लिए अलग-अलग तरीके देखेंगे और किसी फ़ोल्डर में फ़ाइलें खोजने के लिए भी इसका उपयोग कर सकते हैं।
-
-## इस से सम्बंधित
-
-अधिक जानकारी के लिए, नीचे दिए गए लिंक्स का उपयोग करें:
-
-- [इरेलिक्स डॉक्युमेंटेशन](https://elixir-lang.org/getting-started/introduction.html)
-- [डायरेक्टरी मौजूदिए कैसे जांचें पोस्ट](https://www.phoenixframework.org/blog/working-with-directories-in-elixir-and-phoenix)
-- [ऐप्स में फोल्डर और फाइलें व्यवस्थित करने के लिए इरेलिक्स](https://akoutmos.com/post/working-with-directories-and-files-in-elixir/)
-- [डायरेक्टरी आंकड़े और गुणिती](https://stackoverflow.com/questions/40991543/how-to-check-if-a-directory-exists-in-elixir)
+अब जब आप जानते हैं कि कैसे एक डायरेक्टरी की मौजूदगी जांचें, आइए एक दूरस्थ क्षेत्र का अध्ययन करें। एक चीज ध्यान देने योग्य है कि `File.exists? /1` एक त्रुटि को वापस नहीं करता है। इसलिए, यदि आप फाइल की मौज

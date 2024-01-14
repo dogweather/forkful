@@ -1,33 +1,44 @@
 ---
-title:                "Elixir: 文字列の大文字化"
+title:                "Elixir: 文字列の先頭大文字化"
+simple_title:         "文字列の先頭大文字化"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ文字列の先頭を大文字にするのか
+## なぜ
 
-文字列を大文字にしたい理由は様々です。例えば、ユーザー名や顧客の名前など、重要な情報を入力する際には正しい形式で入力されていることが重要です。また、出力する際にフォーマットを統一することで、見やすくしてユーザーにとって使いやすいインターフェースを提供することができます。
+文字列を大文字に変換するのに取り組むことの *なぜ* について説明します。
 
-## 方法
+大文字に変換することは、文字列を整えるための一般的なタスクです。例えば、データベースから取得した文字列を必要な形式に整形する場合や、ユーザーが入力した文字列を処理する場合に大文字に変換することが必要になるでしょう。
 
-文字列を大文字にする方法は簡単です。```String.capitalize/1```という関数を使用します。以下の例をご覧ください。
+## How To
 
-```elixir
-iex> String.capitalize("elixir")
-"Elixir" 
+文字列を大文字に変換する方法をコーディング例と ```Elixir ... ``` コードブロックを使って示します。
+
+```Elixir
+# 文字列を大文字に変換する
+string = "hello world"
+IO.puts(String.upcase(string))
+
+# 出力: HELLO WORLD
 ```
 
-このように、大文字にしたい文字列を関数に渡すだけで簡単に大文字に変換することができます。
+これで、文字列を簡単に大文字に変換できます。
 
-## 深堀り
+## Deep Dive
 
-文字列を大文字にする方法がわかれば、次はその仕組みについて深く掘り下げてみましょう。Elixirでは、文字列に関する多くの便利な関数が組み込まれており、それらを組み合わせることでより多様な文字列操作が可能になります。まず、String.capitalize/1関数の内部では、String.capitalize/2関数が呼び出されています。この関数は内部で文字列をリストに変換し、最初の文字を大文字に変換してから再び文字列に変換しています。このように、Elixirでは文字列をリストとして扱い、それによってより柔軟な操作が可能になっています。
+文字列を大文字に変換するために使われる関数について詳しく説明します。Elixirでは、```String.upcase/1``` 関数を使って文字列を大文字に変換できます。引数には変換する文字列を渡します。この関数は、標準ライブラリの一部として提供されているため、追加の設定やインストールは必要ありません。
 
-## さらに参考になる情報
+## See Also
 
-- [ElixirのStringモジュールについて](https://elixir-lang.org/getting-started/string.html)
-- [String.capitalize/1関数のドキュメント](https://hexdocs.pm/elixir/String.html#capitalize/1)
-- [他の文字列操作について知る](https://elixir-lang.org/getting-started/strings-and-binaries.html#strings)
+より詳しい情報が必要な場合は、次のリンクをご覧ください。
+
+- [Elixir 公式ドキュメント](https://elixir-lang.org/getting-started/basic-types.html#strings)
+- [Elixir School の「Strings」のセクション](https://elixirschool.com/ja/lessons/basics/string/)
+- [「日本語文字列を大文字・小文字変換」の記事](https://qiita.com/pepeok/collection/a97ae87af96b6600a97e)
+
+以上で、文字列を大文字に変換する方法についての説明を終わります。ありがとうございました！

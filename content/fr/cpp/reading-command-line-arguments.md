@@ -1,7 +1,9 @@
 ---
 title:                "C++: Lecture des arguments en ligne de commande"
+simple_title:         "Lecture des arguments en ligne de commande"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/reading-command-line-arguments.md"
 ---
 
@@ -9,46 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un programmeur débutant ou expérimenté, vous connaissez sûrement l'importance des arguments de ligne de commande dans vos programmes. Ceux-ci vous permettent de fournir des informations à votre programme lors de son exécution, sans avoir à les définir directement dans votre code. Dans cet article, nous allons explorer comment lire ces arguments de ligne de commande en utilisant C++. 
+Lorsque vous programmez en C++, il est souvent nécessaire de fournir à votre programme des informations à partir du terminal. Cela peut être utile pour personnaliser l'exécution du programme ou pour exécuter différentes tâches en fonction des paramètres fournis. Dans cet article, nous allons vous expliquer comment lire les arguments de ligne de commande en C++.
 
 ## Comment faire
 
-Tout d'abord, il est important de noter que les arguments de ligne de commande sont essentiellement une liste de chaînes de caractères, séparées par des espaces, qui sont passées à votre programme lors de son exécution. Pour les lire en utilisant C++, nous pouvons utiliser les paramètres de la fonction `main` qui prennent la forme `int argc, char* argv[]`. L'argument `argc` représente le nombre total d'arguments passés, y compris le nom du programme lui-même, tandis que `argv` est un tableau de chaînes de caractères représentant chaque argument passé.
-
-Voici un exemple de code pour lire et afficher les arguments de ligne de commande :
+La lecture des arguments de ligne de commande en C++ est assez simple. Tout d'abord, vous devez inclure la bibliothèque `iostream` pour pouvoir utiliser les fonctions de lecture du terminal. Ensuite, vous pouvez utiliser la fonction `main()` pour définir une liste de chaînes de caractères, qui représenteront les arguments de ligne de commande. Voici un exemple :
 
 ```C++
+
 #include <iostream>
 
 int main(int argc, char* argv[]) {
-    // Boucle à travers chaque argument
-    for (int i = 0; i < argc; i++) {
-        // Affiche l'index de l'argument et sa valeur
-        std::cout << "Argument " << i << ": " << argv[i] << std::endl;
-    }
-
-    return 0;
+  // Affiche le nombre d'arguments fournis
+  std::cout << "Nombre d'arguments : " << argc << std::endl;
+  // Boucle pour afficher chaque argument
+  for (int i = 0; i < argc; i++) {
+    std::cout << "Argument " << i + 1 << " : " << argv[i] << std::endl;
+  }
+  return 0;
 }
 ```
 
-Si nous exécutons ce programme avec les arguments "Bonjour tout le monde", nous obtiendrons la sortie suivante :
+Voici un exemple d'exécution de ce programme avec différents arguments :
 
 ```
-Argument 0: ./programme
-Argument 1: Bonjour
-Argument 2: tout
-Argument 3: le
-Argument 4: monde
+$ ./mon_programme argument1 argument2 argument3
+
+Nombre d'arguments : 4
+Argument 1 :./mon_programme
+Argument 2 : argument1
+Argument 3 : argument2
+Argument 4 : argument3
 ```
 
-Comme vous pouvez le voir, l'argument 0 représente le nom du programme lui-même, suivi de chaque mot passé en tant qu'argument. Il est important de noter que les arguments sont toujours lus en tant que chaînes de caractères, vous devrez donc peut-être les convertir en d'autres types de données en fonction de vos besoins.
+Comme vous pouvez le voir, `argc` représente le nombre total d'arguments fournis, y compris le nom du programme. Et `argv` est un tableau contenant chaque argument sous forme de chaîne de caractères.
+
+En plus de lire les arguments de la ligne de commande, vous pouvez également utiliser `getopt()` ou `getopt_long()` pour gérer les options et les paramètres d'une manière plus structurée. Nous vous conseillons de vous renseigner davantage sur ces fonctions si vous avez besoin de gérer des arguments plus complexes dans votre programme.
 
 ## Plongée en profondeur
 
-En plus de lire simplement les arguments de ligne de commande, il y a quelques astuces utiles à connaître lors de leur utilisation dans vos programmes. Tout d'abord, vous pouvez utiliser `std::stoi` pour convertir une chaîne de caractères en un entier, ou `std::stod` pour un nombre à virgule flottante. Deuxièmement, vous pouvez utiliser les bibliothèques de traitement de chaînes de caractères telles que `#include <string>` et `#include <sstream>` pour manipuler et extraire des informations à partir des arguments. Et enfin, vous pouvez également utiliser des drapeaux ou des options pour fournir des arguments optionnels à votre programme.
+Si vous souhaitez en savoir plus sur la lecture des arguments de ligne de commande en C++, voici quelques informations supplémentaires. Tout d'abord, sachez que le nombre maximum d'arguments possibles dépend du système d'exploitation et de l'espace disponible dans la mémoire du programme. Ensuite, il est important de noter que les arguments sont toujours renvoyés sous forme de chaînes de caractères, vous devrez donc les convertir en d'autres types de données si nécessaire.
+
+De plus, lors de l'utilisation de `getopt()` ou `getopt_long()`, vous pouvez définir des options facultatives ou requises, et spécifier des arguments supplémentaires pour ces options. Cela peut être utile si vous avez besoin d'exécuter différentes actions en fonction de différentes combinaisons d'options et d'arguments.
 
 ## Voir aussi
 
-- [Documentation C++ sur les arguments de ligne de commande](https://en.cppreference.com/w/cpp/utility/program/argument_vector)
-- [Guide pratique pour lire les arguments de ligne de commande en C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
-- [Tutoriel en vidéo sur l'utilisation des arguments de ligne de commande en C++](https://www.youtube.com/watch?v=KszBqGGnITI)
+Vous pouvez consulter ces liens pour en savoir plus sur la lecture des arguments de ligne de commande en C++ :
+
+- [La documentation de `getopt()`](https://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html#Using-Getopt)
+- [La documentation de `getopt_long()`](https://www.gnu.org/software/libc/manual/html_node/Getopt-Long-Option-Example.html#Getopt-Long-Option-Example)
+- [Un exemple plus complet de lecture d'arguments en C++](https://www.cplusplus.com/articles/DEN36Up4/)

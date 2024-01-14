@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Eine Zeichenkette großschreiben"
+title:                "Fish Shell: Eine Zeichenkette großschreiben."
+simple_title:         "Eine Zeichenkette großschreiben."
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/capitalizing-a-string.md"
 ---
 
@@ -9,42 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In diesem Artikel werden wir uns damit beschäftigen, wie man eine Zeichenfolge in Großbuchstaben konvertieren kann. Dies kann nützlich sein, wenn man beispielsweise einen Dateinamen oder einen Satz in einer bestimmten Formatierung benötigt.
+Die Verwendung von Großbuchstaben in einem String kann in der Programmierung hilfreich sein, um bestimmte Teile des Textes hervorzuheben oder die Lesbarkeit zu verbessern. In diesem Blogbeitrag werden wir uns ansehen, wie man in der Fish Shell einen String in Großbuchstaben umwandeln kann.
 
-## Wie es geht
+## Wie geht das?
 
-Um eine Zeichenfolge in Großbuchstaben umzuwandeln, können wir die "`str toupper`" Funktion in Fish Shell verwenden. Hier ist ein Beispiel, wie wir dies tun könnten:
+Um einen String in Großbuchstaben zu konvertieren, können wir die `string`-Funktion `toupper` verwenden.
 
-```Fish Shell
-set string "Hallo Welt!"
-echo $string # Output: Hallo Welt!
-str toupper $string
-echo $string # Output: HALLO WELT!
+```
+Fish Shell code block:
+set my_string "Hallo Welt"
+echo (string toupper $my_string)
 ```
 
-Wie Sie sehen können, haben wir zuerst eine Variable namens "string" erstellt und ihr den Wert "Hallo Welt!" zugewiesen. Dann haben wir die `str toupper` Funktion auf diese Variable angewendet und den resultierenden Wert ausgegeben.
+Die Ausgabe dieses Codes wäre `HALLO WELT`, da die `toupper`-Funktion jeden Buchstaben in Großbuchstaben umwandelt.
 
-Wir können auch mehrere Zeichenfolgen gleichzeitig in Großbuchstaben konvertieren, indem wir das "-Lb" Flag verwenden. Schauen wir uns ein weiteres Beispiel an:
+Wenn wir nur den ersten Buchstaben eines Strings in Großbuchstaben umwandeln möchten, können wir die `string`-Funktion `capitalize` verwenden.
 
-```Fish Shell
-set string1 "Ich bin ein Fisch!"
-set string2 "Und ich auch!"
-echo $string1 # Output: Ich bin ein Fisch!
-echo $string2 # Output: Und ich auch!
-str toupper -Lb string1 string2
-echo $string1 # Output: ICH BIN EIN FISCH!
-echo $string2 # Output: UND ICH AUCH!
+```
+Fish Shell code block:
+set my_string "hello world"
+echo (string capitalize $my_string)
 ```
 
-## Tiefer Einblick
+Die Ausgabe dieses Codes wäre `Hello world`, da nur der erste Buchstabe in Großbuchstaben umgewandelt wird.
 
-Wenn wir uns den Code der `str toupper` Funktion im Fish Shell genauer ansehen, werden wir feststellen, dass sie auf die `string` Bibliothek zugreift. Diese Bibliothek bietet verschiedene nützliche Funktionen für die Manipulation von Zeichenfolgen. Die `str toupper` Funktion selbst verwendet die `str fromlower` Funktion, um alle Kleinbuchstaben in Großbuchstaben zu konvertieren.
+## Tiefergehende Informationen
 
-Es ist wichtig zu beachten, dass die `str toupper` Funktion nur ASCII-Zeichen unterstützt. Das bedeutet, dass Zeichen aus anderen Sprachen oder Sonderzeichen nicht in Großbuchstaben konvertiert werden.
+Die `toupper`- und `capitalize`-Funktionen sind Teil des Fish Shell `string`-Moduls, das eine Vielzahl von nützlichen Funktionen enthält, um Strings zu manipulieren. Diese Funktionen können auch in anderen Situationen nützlich sein, zum Beispiel um Eingaben von Benutzern zu normalisieren oder um Strings für die Ausgabe zu formatieren.
 
-Insgesamt ist die `str toupper` Funktion eine einfache und praktische Möglichkeit, Zeichenfolgen in Großbuchstaben zu konvertieren, aber sie hat auch ihre Grenzen. Wenn Sie eine umfassendere und flexiblere Lösung benötigen, können Sie sich andere Funktionen in der `string` Bibliothek ansehen oder sogar eine benutzerdefinierte Funktion erstellen.
+Um mehr über das `string`-Modul und seine Funktionen zu erfahren, kann die Fish Shell Dokumentation konsultiert werden.
 
 ## Siehe auch
 
-- Fish Shell Dokumentation zu "str toupper": https://fishshell.com/docs/current/cmds/str.html#toupper
-- Fish Shell Dokumentation zu "`string`" Bibliothek: https://fishshell.com/docs/current/cmds/string.html
+- Fish Shell string module documentation: https://fishshell.com/docs/current/cmds/string.html
+- Offizielle Fish Shell Website: https://fishshell.com/
+- Blogbeitrag über Schleifen in der Fish Shell: https://linktoblogpost.com

@@ -1,74 +1,56 @@
 ---
 title:                "C++ recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Writing Tests Is Important in C++
+## Why Engage in Writing Tests
 
-Writing tests is an essential part of the software development process. It allows developers to catch bugs and errors early on, which can save time and resources in the long run. Additionally, writing tests can provide a sense of security and confidence in the code, as it has been thoroughly tested.
+Writing tests for your code may seem like an extra and unnecessary step in the development process. However, it is actually an essential component of writing high quality, error-free code. By writing tests, you can catch bugs and issues early on, saving yourself time and headaches in the future.
 
 ## How To Write Tests in C++
 
-Writing tests in C++ can be done using various testing frameworks such as Google Test, Catch2, or Boost.Test. Here is a simple example using Google Test:
+In order to write tests in C++, you will need to use a testing framework, such as Google Test or Catch2. These frameworks provide useful functions and macros for creating and running tests. Let's take a look at an example using Google Test:
 
 ```C++
-#include <iostream>
-#include <gtest/gtest.h> //include the Google Test library
+#include <gtest/gtest.h> //include Google Test framework
 
-int sum(int a, int b)
-{
-	return a + b;
+//create a test case
+TEST(AdditionTest, SimpleAddition) {
+
+    //define the variables to test
+    int num1 = 5;
+    int num2 = 10;
+
+    //perform the operation and store the result
+    int result = num1 + num2;
+
+    //write an assertion to check if the result is correct
+    EXPECT_EQ(result, 15);
 }
 
-TEST(SumTest, PositiveNumbers)
-{
-	EXPECT_EQ(sum(5, 6), 11); //test if the sum of 5 and 6 is 11
-}
-
-int main(int argc, char* argv[])
-{
-	testing::InitGoogleTest(&argc, argv); //initialize Google Test
-	return RUN_ALL_TESTS(); //run all tests
+//run all the tests in the code
+int main(int argc, char** argv) {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
 ```
 
-Running this code will produce the following output:
-
-```
-[==========] Running 1 test from 1 test suite.
-[----------] Global test environment set-up.
-[----------] 1 test from SumTest
-[ RUN      ] SumTest.PositiveNumbers
-[       OK ] SumTest.PositiveNumbers (0 ms total)
-[----------] 1 test from SumTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test suite ran. (0 ms total)
-[  PASSED  ] 1 test.
-```
-
-The `TEST` macro allows us to create different test cases within the same test suite. In this example, we have one test case called `PositiveNumbers`, where we use the `EXPECT_EQ` assertion to test if the sum of two positive numbers is correct. There are many other types of assertions available in Google Test, depending on the type of test being performed.
+In the above example, we have defined a test case called "SimpleAddition" which checks if the result of adding two numbers is correct. We use the `TEST()` macro to create the test case and the `EXPECT_EQ()` macro to write our assertion. Finally, in the `main()` function, we use Google Test's `RUN_ALL_TESTS()` function to run all the tests in our code.
 
 ## Deep Dive into Writing Tests
 
-Writing effective tests requires careful consideration and planning. Some tips to keep in mind when writing tests in C++ include:
+Writing tests not only helps catch bugs, but it also promotes good coding practices. By writing tests, you are forced to think about different scenarios and edge cases that your code may encounter, leading to more thorough and robust code. Writing tests also allows for easier debugging, as you can pinpoint the exact source of an issue through a failed test.
 
-- Test the boundary cases: Make sure to test not only the regular cases but also the edge cases, such as empty inputs, negative numbers, etc. This can help uncover potential bugs that may not have been caught otherwise.
-- Keep the tests short and simple: Each test should focus on a specific scenario and be easy to understand. This helps with debugging and troubleshooting.
-- Use meaningful test names: This can help identify the test and its purpose when reviewing the test results.
-- Test only one thing at a time: Avoid testing multiple functions or scenarios in the same test, as it can make it harder to pinpoint the source of a failed test.
-- Regularly update and maintain tests: As the codebase evolves, so should the tests. Make sure to update tests when new features are added or existing ones are modified.
-
-Overall, writing tests takes time and effort, but it is crucial for ensuring the quality and reliability of the code.
+It is important to note that writing tests is not a substitute for thorough code reviews and proper debugging techniques. It should be used in conjunction with these practices to ensure the highest quality code.
 
 ## See Also
 
-To learn more about writing tests in C++, check out these resources:
-
-- [Google Test Documentation](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md)
-- [Catch2 Tutorial](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md)
-- [Boost.Test Tutorial](https://www.boost.org/doc/libs/1_75_0/libs/test/doc/html/boost_test/adv_scenarios/index.html)
+- [Google Test documentation](https://github.com/google/googletest)
+- [Catch2 documentation](https://github.com/catchorg/Catch2)
+- [Tutorial on writing tests in C++](https://www.learncpp.com/cpp-tutorial/89-unit-testing-with-google-test-and-google-mock/)

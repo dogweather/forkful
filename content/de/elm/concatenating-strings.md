@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Verketten von Zeichenketten"
+title:                "Elm: Verknüpfung von Zeichenketten"
+simple_title:         "Verknüpfung von Zeichenketten"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/concatenating-strings.md"
 ---
 
@@ -9,54 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In der Programmierung gibt es oft die Notwendigkeit, Texte zu verbinden, um einen längeren String zu erzeugen. Dies kann hilfreich sein, um Benutzereingaben zu speichern, komplexe Fehlermeldungen zu generieren oder einfach nur Text auf einer Benutzeroberfläche darzustellen. In Elm gibt es verschiedene Möglichkeiten, Strings zu verbinden, je nach den spezifischen Anforderungen des Programms. In diesem Artikel werden wir uns genauer ansehen, wie man Strings in Elm concatenieren kann.
+Warum sollte man sich überhaupt mit der Zusammenführung von Zeichenfolgen beschäftigen? Nun, das Konkatenieren von Strings ist ein grundlegender Bestandteil der Programmierung, insbesondere in der Elm-Sprache. Es ermöglicht uns, verschiedene Texte zu einem zusammenzuführen und so vollständige Sätze oder Nachrichten zu erstellen. Ohne diese Funktion wäre es schwierig, dynamische Inhalte in unseren Programmen zu erstellen.
 
-## Wie geht das?
+## How To
 
-Um Strings in Elm zu concatenieren, gibt es zwei Hauptmethoden: die Verwendung des (+++) Operators und die Verwendung der String.concat Funktion. Der (+++) Operator fügt zwei Strings zusammen, während die String.concat Funktion eine Liste von Strings in einen einzelnen String zusammenfügt.
-
-### (+++) Operator Beispiel:
+Um Strings in Elm zu konkatenieren, verwenden wir den Operator `++` zwischen zwei Strings. Hier ist ein Beispiel:
 
 ```Elm
-"Hello " +++ "World"
+"Mein Name ist" ++ "Jane" -- Ergebnis: "Mein Name ist Jane"
 ```
-
-Ausgabe: "Hello World"
-
-### String.concat Beispiel:
+Wir können auch Variablen verwenden, anstatt direkt Strings zu konkatenieren:
 
 ```Elm
-String.concat ["Hello ", "World"]
+name = "Jane"
+alter = 25
+"Nur " ++ name ++ " ist schon " ++ (String.fromInt alter) ++ " Jahre alt." -- Ergebnis: "Nur Jane ist schon 25 Jahre alt."
 ```
 
-Ausgabe: "Hello World"
+Wie Sie sehen, können wir auch andere Datentypen wie Integer mithilfe von `String.fromInt` in Strings konvertieren und sie dann konkatenieren.
 
-In beiden Fällen können auch Variablen oder Funktionen verwendet werden, die Strings zurückgeben, anstatt die Strings direkt einzugeben.
+## Deep Dive
 
-Die Verwendung des (+++) Operators ist in der Regel hilfreicher, wenn nur wenige Strings concateniert werden müssen. Wenn jedoch eine größere Anzahl von Strings zusammengefügt werden muss, ist die Verwendung der String.concat Funktion effizienter, da sie eine Liste von Strings bearbeiten kann.
+Die Konkatenierung von Strings in Elm ist dank der rein funktionalen Natur der Sprache sehr einfach und robust. Im Gegensatz zu anderen Sprachen, in denen Strings als mutable (veränderbar) betrachtet werden, sind in Elm alle Strings unveränderbar. Das bedeutet, dass jedes Mal, wenn wir Strings konkatenieren, ein komplett neuer String erstellt wird, anstatt den ursprünglichen String zu ändern. Dadurch vermeiden wir unerwartete Seiteneffekte und unser Code wird insgesamt zuverlässiger.
 
-## Tiefer eintauchen
-
-In Elm gibt es auch die Möglichkeit, Strings mit Mustern zu concatenieren. Dazu werden Muster angegeben, die angeben, welche Teile der zu concatenierenden Strings hinzugefügt oder entfernt werden sollen. Dies kann besonders nützlich sein, wenn komplexe Textmanipulation erforderlich ist, z.B. beim Zusammenfügen von Teilen einer URL.
-
-Ein Beispiel für die Verwendung von Mustern beim Concatenieren von Strings:
+Ein weiterer Vorteil der funktionalen Natur von Elm ist, dass wir die Konkatenierung von Strings auf elegante Weise in Funktionen verwenden können. Zum Beispiel können wir eine Funktion erstellen, die zwei Strings konkateniert und ein Satzzeichen am Ende hinzufügt:
 
 ```Elm
-mustache = "mustache"
-beard = "beard" 
+concatenateStrings str1 str2 =
+    str1 ++ " " ++ str2 ++ "."
 
-concatWithPattern = 
-    case (mustache, beard) of
-        ("mustache", "beard") ->
-            mustache ++ " & " ++ beard
-        (_, _) ->
-            "No facial hair found."
+concatenateStrings "Hallo" "Welt" -- Ergebnis: "Hallo Welt."
 ```
 
-Ausgabe: "mustache & beard"
+Wie Sie sehen, können wir diese Funktion verwenden, um eine Vielzahl von Strings zu konkatenieren, indem wir die Parameter ändern. Dadurch wird unser Code wiederverwendbarer und einfacher zu warten.
 
 ## Siehe auch
 
-- "Official Elm Language Guide" (https://guide.elm-lang.org/)
-- "Elm in Action" von Richard Feldman (https://www.manning.com/books/elm-in-action)
-- "Elm Tutorial" von Derek Cicerone (https://www.elm-tutorial.org/de/)
+Für weitere Informationen über die Konkatenierung von Strings in Elm und andere grundlegende Sprachkonzepte empfehle ich Ihnen diese Ressourcen:
+
+- [Offizielle Elm-Website](https://elm-lang.org/)
+- [Elm-Dokumentation](https://package.elm-lang.org/)
+- [Elm-Tutorial auf Deutsch](https://www.elm-tutorial.org/de/)

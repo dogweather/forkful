@@ -1,34 +1,52 @@
 ---
-title:                "Fish Shell: Capitalizar una cadena"
+title:                "Fish Shell: Capitalizando una cadena"
+simple_title:         "Capitalizando una cadena"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué capitalizar una cadena en programación?
+## ¿Por qué capitalizar una cadena en el Shell de Fish?
 
-Capitalizar una cadena significa convertir la primera letra de cada palabra en mayúscula. Aunque puede parecer una tarea sencilla, puede ser útil en ciertas situaciones, como formatear nombres o crear títulos.
+La capitalización de una cadena puede ser útil en diversas situaciones al programar en el Shell de Fish. Por ejemplo, si estás escribiendo un guion para una aplicación o script que requiere que ciertas palabras estén en mayúsculas, capitalizar una cadena puede ahorrar tiempo y esfuerzo en la codificación. Además, puede mejorar la legibilidad del código y hacer que sea más fácil de entender para otros programadores.
 
-## Cómo hacerlo en Fish Shell
+## Cómo capitalizar una cadena en el Shell de Fish
 
-Fish Shell es un lenguaje de programación sencillo y fácil de aprender. Para capitalizar una cadena en Fish Shell, podemos utilizar el comando `string capitalize` seguido de la cadena que queremos capitalizar. Por ejemplo:
+Para capitalizar una cadena en el Shell de Fish, puedes usar el comando `string capitalize` seguido de la cadena que deseas capitalizar. Por ejemplo, si tenemos una cadena "hola mundo", podemos capitalizarla utilizando el siguiente código:
 
 ```Fish Shell
-string capitalize "hola, ¿cómo estás?"
+string capitalize "hola mundo"
 ```
 
-La salida de este comando sería "Hola, ¿Cómo Estás?". Como podemos ver, la primera letra de cada palabra ha sido convertida en mayúscula.
+La salida sería "Hola Mundo", con la primera letra de cada palabra en mayúscula.
 
-## Profundizando en la capitalización de cadenas
+Otra forma de capitalizar una cadena en el Shell de Fish es utilizando el comando `string toupper`, que convierte todos los caracteres de una cadena a mayúsculas. Por ejemplo:
 
-Aunque el comando `string capitalize` es útil en la mayoría de los casos, también existen otras formas de capitalizar una cadena en Fish Shell. Por ejemplo, podemos utilizar el comando `string sub` para reemplazar la primera letra de cada palabra por su versión mayúscula. Esto nos da un mayor control sobre cómo queremos capitalizar la cadena.
+```Fish Shell
+string toupper "hola mundo"
+```
 
-Otra opción es utilizar la función `join` para combinar una lista de palabras capitalizadas en una sola cadena. Esto puede ser útil si queremos capitalizar una oración con diferentes reglas para cada palabra.
+La salida sería "HOLA MUNDO".
+
+Si deseas capitalizar solo la primera letra de una cadena y convertir el resto a minúsculas, puedes utilizar el comando `string capitalize_first`. Por ejemplo:
+
+```Fish Shell
+string capitalize_first "hOLA mUNDO"
+```
+
+La salida sería "Hola mundo".
+
+## Profundizando en la capitalización de cadenas en Fish Shell
+
+Hay algunas cosas importantes para tener en cuenta al trabajar con la capitalización de cadenas en el Shell de Fish. Primero, es importante recordar que la capitalización distingue entre letras mayúsculas y minúsculas. Por lo tanto, "hola" y "Hola" se consideran cadenas diferentes y serán capitalizadas de manera diferente.
+
+Además, la capitalización de una cadena que ya está en mayúsculas no tendrá efecto. Por ejemplo, si intentamos capitalizar la cadena "HOLA MUNDO", la salida seguirá siendo "HOLA MUNDO".
+
+Otra cosa a tener en cuenta es que el comando `string capitalize` solo capitalizará la primera letra de una cadena si esa letra es una letra minúscula. Si la primera letra ya está en mayúscula, no se realizará ninguna capitalización.
 
 ## Ver también
-
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial de Fish Shell en español](https://www.linuxito.com/programacion/1542-tutorial-de-fish-shell)
-- [Ejemplos de código de Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_examples)
+- [Documentación oficial de Fish Shell sobre la manipulación de cadenas](https://fishshell.com/docs/current/cmds/string.html)
+- [Tutorial de Shell de Fish en español](https://carlos-jenkins.com/tutoriales/programar-bash-fish-shell-desde-0/)

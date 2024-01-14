@@ -1,53 +1,57 @@
 ---
 title:                "Go: Escrevendo um arquivo de texto"
+simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever um arquivo de texto?
+## Por que escrever um arquivo de texto em Go
+Escrever arquivos de texto em Go é uma parte essencial do desenvolvimento de aplicativos. Esses arquivos são usados ​​para armazenar e transmitir informações entre diferentes partes do programa. Além disso, eles são muito úteis para a criação de logs e configurações do aplicativo.
 
-Escrever um arquivo de texto é uma tarefa comum para muitos programadores, especialmente para aqueles que estão aprendendo a linguagem de programação Go. É uma habilidade fundamental para criar e armazenar informações úteis em um formato que possa ser facilmente lido e compreendido por outros programas.
+## Como escrever um arquivo de texto em Go
+Para começar a escrever um arquivo de texto em Go, primeiro precisamos criar um objeto de arquivo usando a função `Open()` do pacote `os`. Isso nos permitirá acessar e manipular o arquivo. Em seguida, podemos usar a função `WriteString()` para adicionar conteúdo ao arquivo. Finalmente, devemos fechar o arquivo usando a função `Close()` para garantir que todas as alterações sejam salvas.
 
-## Como fazer
-
-Escrever um arquivo de texto em Go é uma tarefa relativamente simples. Primeiro, precisamos importar o pacote `os` para que possamos lidar com operações no sistema operacional. Em seguida, podemos usar a função `Create` do pacote `os` para criar um novo arquivo de texto e o método `WriteString` para escrever nosso conteúdo nele. Veja um exemplo abaixo:
-
-```Go
+```
 package main
 
 import (
-  "fmt"
-  "os"
+	"fmt"
+	"os"
 )
 
 func main() {
-  // Criando um novo arquivo de texto chamado "exemplo.txt"
-  file, err := os.Create("exemplo.txt")
-  if err != nil {
-    fmt.Println(err)
-  }
-  
-  // Escrevendo uma string no arquivo
-  file.WriteString("Olá, mundo!")
-  
-  // Fechando o arquivo após uso
-  defer file.Close()
+	// Criando um arquivo chamado "teste.txt" em modo de escrita
+	file, err := os.Open("teste.txt")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	// Escrevendo uma string no arquivo
+	_, err = file.WriteString("Este é um exemplo de texto escrito em um arquivo usando Go!")
+	if err != nil {
+		fmt.Println(err)
+		file.Close()
+		return
+	}
+	// Fechando o arquivo
+	err = file.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 }
 ```
 
-Ao executar esse código, um arquivo de texto chamado "exemplo.txt" será criado no mesmo diretório que o arquivo Go. Ao abrirmos esse arquivo, poderemos ver o conteúdo "Olá, mundo!" escrito nele.
+O resultado desse código será um novo arquivo de texto chamado "teste.txt" com o conteúdo adicionado.
 
-## Mergulhando mais fundo
-
-Além do exemplo acima, existem outras maneiras de escrever um arquivo de texto em Go, como usar o pacote `io/ioutil` ou usar o método `Write` do pacote `os`. É importante também lembrar de sempre fechar o arquivo após o uso, para garantir que todas as alterações sejam salvas corretamente.
-
-Além disso, ao escrever um arquivo de texto, também podemos adicionar formatações, como quebras de linha e alinhamento de texto, para torná-lo mais legível.
+## Mergulho profundo
+Além da função `WriteString()`, há outras formas de escrever em arquivos de texto em Go. Podemos usar a função `Write()` para escrever bytes em vez de uma string. Também podemos usar a função `Fprintf()` para formatar e escrever dados em um arquivo. Além disso, é importante lembrar de manipular erros ao escrever em arquivos para garantir que todas as alterações sejam salvas corretamente.
 
 ## Veja também
-
-- [Documentação oficial do pacote `os` em Go](https://pkg.go.dev/os)
-- [Tutorial de escrita de arquivos em Go](https://gobyexample.com/writing-files)
-- [Exemplos de escrita de arquivos em Go](https://golangdocs.com/golang-write-file)
+- [Pacote Os em Go](https://golang.org/pkg/os/)
+- [Manipulação de arquivos em Go](https://www.calhoun.io/working-with-files-in-go/)
+- [Go tutorial: Trabalhando com arquivos](https://tutorialedge.net/golang/reading-and-writing-files-in-go/)

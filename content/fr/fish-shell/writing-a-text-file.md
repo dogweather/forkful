@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Écriture d'un fichier texte"
+title:                "Fish Shell: Écrire un fichier texte"
+simple_title:         "Écrire un fichier texte"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/writing-a-text-file.md"
 ---
 
@@ -9,48 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Écrire un fichier texte est une tâche courante pour les programmeurs, qu'il s'agisse de stocker des données, de configurer des paramètres ou d'écrire du code. Avec Fish Shell, il existe une façon simple et efficace d'écrire des fichiers texte directement à partir de votre terminal. Dans cet article, nous allons vous montrer comment le faire.
+Écrire du code peut sembler intimidant pour certaines personnes, mais cela peut être incroyablement utile et gratifiant. Écrire un fichier texte peut être un excellent moyen de stocker et d'organiser des informations pour une utilisation future. Dans cet article, nous allons explorer comment écrire un fichier texte avec Fish Shell.
 
 ## Comment faire
 
-Tout d'abord, ouvrez votre terminal Fish Shell et déplacez-vous dans le dossier où vous souhaitez créer votre fichier texte. Ensuite, tapez la commande suivante:
+La première étape consiste à ouvrir un terminal et à ouvrir Fish Shell. Une fois que vous y êtes, vous pouvez commencer à écrire votre code. Tout d'abord, nous voulons créer notre fichier texte. Nous utilisons la commande `touch` pour cela:
 
 ```Fish Shell
-echo "Bonjour le monde" > mon_fichier.txt
+touch fichier.txt
 ```
 
-Cette commande va créer un nouveau fichier texte appelé "mon_fichier.txt" et y ajouter la phrase "Bonjour le monde". Vous pouvez utiliser n'importe quelle phrase ou texte à la place, cela remplacera simplement ce qui est déjà présent dans le fichier ou le créera s'il n'existe pas encore.
-
-Maintenant, pour ajouter du contenu supplémentaire à votre fichier existant, vous pouvez utiliser la commande suivante:
+Cela va créer un nouveau fichier appelé "fichier.txt". Ensuite, nous pouvons utiliser la commande `echo` pour écrire des informations dans notre fichier. Par exemple, si nous voulons ajouter la phrase "Bonjour le monde !" dans notre fichier, nous utiliserions la commande suivante:
 
 ```Fish Shell
-echo "Ceci est une nouvelle ligne ajoutée" >> mon_fichier.txt
+echo "Bonjour le monde !" > fichier.txt
 ```
 
-Cette commande ajoutera la phrase "Ceci est une nouvelle ligne ajoutée" à la fin de votre fichier texte existant.
-
-Il est également possible de créer un fichier texte vide à partir du terminal en utilisant la commande suivante:
+Cela va écrire la phrase dans notre fichier et la remplacer par tout ce qu'il y avait auparavant. Si nous voulons simplement ajouter une nouvelle ligne de texte sans écraser l'ancienne, nous pouvons utiliser la commande `echo` suivante:
 
 ```Fish Shell
-touch nouveau_fichier.txt
+echo "Salut tout le monde !" >> fichier.txt
 ```
 
-Cette commande créera un nouveau fichier vide appelé "nouveau_fichier.txt". Vous pouvez ensuite l'ouvrir dans un éditeur de texte pour y ajouter du contenu.
-
-## Plongée en profondeur
-
-Si vous souhaitez écrire un fichier texte plus complexe, avec plusieurs lignes, vous pouvez utiliser l'éditeur de texte Vi intégré à Fish Shell. Pour ouvrir un fichier texte existant, utilisez la commande suivante:
+Cela ajoutera la phrase sur une nouvelle ligne dans notre fichier. Une fois que nous avons terminé d'écrire dans notre fichier, nous pouvons l'ouvrir pour voir le résultat final. Nous utilisons la commande `cat` pour cela:
 
 ```Fish Shell
-vi mon_fichier.txt
+cat fichier.txt
 ```
 
-Cela ouvrira le fichier dans l'éditeur de texte Vi, où vous pourrez utiliser différentes commandes pour écrire et modifier votre texte. Pour ajouter du texte, utilisez la touche "i" pour entrer en mode insertion, puis écrivez votre texte. Une fois que vous avez terminé, utilisez "Esc" pour revenir en mode commande, puis écrivez ":wq" pour enregistrer et quitter le fichier.
+Cela affichera tout le contenu de notre fichier dans le terminal.
 
-Pour apprendre plus en détail sur l'utilisation de Vi, vous pouvez consulter notre article sur le sujet [ici](lien vers l'article sur l'utilisation de Vi).
+## Plongée profonde
+
+Maintenant que nous savons comment écrire un fichier texte, voyons quelques astuces supplémentaires pour le rendre encore plus utile. Tout d'abord, si nous voulons écrire du texte sur plusieurs lignes, nous pouvons utiliser la commande `printf` à la place de `echo`. Par exemple, si nous voulons écrire un paragraphe dans notre fichier, nous utiliserions la commande suivante:
+
+```Fish Shell
+printf "Ceci est un paragraphe.\nIl contient plusieurs lignes de texte.\n" > fichier.txt
+```
+
+Nous avons ajouté le caractère `\n` à la fin de chaque ligne pour indiquer que nous voulons passer à la ligne suivante. Une autre astuce utile est de créer un fichier vide avec la commande `touch` et de l'utiliser comme base pour écrire un nouveau fichier. Par exemple, si nous avons déjà un fichier appelé "base.txt" avec une structure spécifique qui nous convient, nous pouvons utiliser la commande suivante pour en créer une copie nommée "nouveau_fichier.txt":
+
+```Fish Shell
+cp base.txt nouveau_fichier.txt
+```
+
+Cela créera une copie exacte de notre fichier "base.txt" qui peut être utilisée comme point de départ pour écrire un nouveau fichier.
 
 ## Voir aussi
 
-- [Documentation de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guide d'utilisation de Vi](lien vers l'article sur l'utilisation de Vi)
-- [Autres commandes utiles pour écrire des fichiers texte avec Fish Shell](lien vers un autre article sur les commandes utiles pour écrire des fichiers texte avec Fish Shell)
+- [Documentation de Fish Shell](https://fishshell.com/docs/current/)
+- [Guide de démarrage rapide de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Liste des commandes Fish Shell](https://fishshell.com/docs/current/cmds.html)

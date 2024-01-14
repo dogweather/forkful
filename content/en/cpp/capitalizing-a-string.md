@@ -1,61 +1,65 @@
 ---
 title:                "C++ recipe: Capitalizing a string"
+simple_title:         "Capitalizing a string"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
+## Why
 
-Have you ever come across a situation where you needed to capitalize a string in your C++ code? Perhaps you want to display the user's name in all capital letters or format a title to follow proper capitalization rules. Whatever the case may be, knowing how to capitalize a string can be a useful skill to have in your programming arsenal.
+Have you ever received a string of text with the first letter of each word lowercase, and you needed to capitalize it? Or maybe you're just curious about how to manipulate strings in C++. Whatever the reason may be, capitalizing a string is a common task in programming and knowing how to do it can save you time and effort.
 
-##How To
+## How To
 
-To capitalize a string in C++, you can use the `std::toupper()` function from the `<cctype>` library. This function takes in a character as an argument and returns the corresponding uppercase letter. Here is an example of how you can use it:
-
-```C++
-#include <iostream>
-#include <cctype>
-
-int main() {
-    std::string name = "john";
-    for (char& c : name) {
-        c = std::toupper(c);
-    }
-    std::cout << name << std::endl;
-    return 0;
-}
-```
-
-The output of this code would be `JOHN`, as each character in the string `name` has been converted to uppercase using the `std::toupper()` function.
-
-You can also use the `std::string::toupper()` function to capitalize a string. This is a member function of the `std::string` class and works similarly to the `std::toupper()` function.
+To capitalize a string in C++, you will need to use the "toupper()" function from the <cctype> library. This function takes in a single character as an argument and returns the uppercase version of that character. However, since we want to capitalize an entire string, we will need to loop through each character and apply the "toupper()" function. Let's take a look at an example: 
 
 ```C++
 #include <iostream>
-#include <string>
+#include <cctype> // for toupper() function
+#include <string> // for string data type
+
+using namespace std;
 
 int main() {
-    std::string title = "the great gatsby";
-    title[0] = toupper(title[0]); // capitalize first letter
-    std::cout << title << std::endl;
-    return 0;
+    // Initializing a string with lowercase letters 
+    string str = "hello world";
+
+    // Looping through each character in the string
+    for (int i = 0; i < str.length(); i++) {
+        // Using the toupper() function to capitalize each character
+        str[i] = toupper(str[i]);
+     }
+
+     // Outputting the capitalized string
+     cout << str << endl;
+
+     return 0;
 }
 ```
 
-The output of this code would be `The great gatsby`, as only the first letter of the string `title` has been converted to uppercase.
+Output:
+```C++
+HELLO WORLD
+```
 
-##Deep Dive
+As you can see, we used a for loop to go through each character in the string and apply the "toupper()" function to it. This resulted in our string being capitalized.
 
-There are a few things to keep in mind when capitalizing a string in C++. Firstly, both the `std::toupper()` and `std::string::toupper()` functions only work with ASCII characters. This means that characters from other languages or symbols may not be converted to uppercase correctly.
+## Deep Dive
 
-Additionally, the `std::toupper()` function takes in an `int` as an argument, not a `char`. This is because it also supports wide characters (represented by the `wchar_t` type) which may have different values from regular characters.
+Now, let's take a deeper look at the code and understand why it works. When we declare our string, each character is stored as a numerical value (ASCII code). The lowercase letters have a numerical value that is different from their uppercase counterparts. For example, the lowercase letter "a" has a value of 97 while the uppercase "A" has a value of 65.
 
-Lastly, it is important to note that the `std::toupper()` function only converts the character to its uppercase equivalent if one exists. If the character is already uppercase, it remains unchanged. This can be an issue if you want to strictly enforce uppercase letters in your string.
+When we use the "toupper()" function, it takes in a character and returns its uppercase version by subtracting 32 from its ASCII code. This means, if the character is already uppercase, its ASCII code will not change. However, if it is lowercase, the function will subtract 32 from its ASCII code, resulting in the uppercase version.
 
-##See Also
+In our example, we used a for loop to go through each character in the string and apply the "toupper()" function to it, effectively changing all lowercase letters to uppercase.
 
-- [cctype - cppreference.com](https://en.cppreference.com/w/cpp/string/byte/toupper)
-- [std::string - cppreference.com](https://en.cppreference.com/w/cpp/string/basic_string/toupper)
+## See Also
+
+- [C++ Strings](https://www.w3schools.com/cpp/cpp_strings.asp)
+- [ASCII Table](https://www.ascii-code.com)
+- [C++: toupper() function](https://www.programiz.com/cpp-programming/library-function/cctype/toupper)
+
+By learning how to capitalize a string in C++, you have gained a useful skill for manipulating strings in your programs. Keep practicing and exploring the different ways to manipulate strings in C++ to become a more proficient programmer.

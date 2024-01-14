@@ -1,43 +1,37 @@
 ---
 title:                "PHP: Obtendo a data atual"
+simple_title:         "Obtendo a data atual"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por Que
+## Por que obter a data atual é importante na programação PHP?
 
-A obtenção da data atual é uma tarefa comum e necessária em muitos projetos de programação. Conhecer a data atual pode ser útil para exibir informações em um formato legível, registrar atividades do usuário ou realizar cálculos de tempo em suas aplicações. Neste artigo, veremos como obter a data atual em PHP e algumas dicas para lidar com datas em seus projetos.
+Obter a data atual em um programa PHP é extremamente importante para uma variedade de tarefas, como gerenciamento de dados, rastreamento de eventos e agendamento de tarefas. Além disso, a data atual pode ser usada para criar pagamentos automáticos, notificações de prazos e muito mais. É uma função essencial na maioria dos aplicativos e sites modernos.
 
-##Como Fazer
+## Como obter a data atual em PHP?
 
-Para obter a data atual em PHP, podemos utilizar a função `date()`. Esta função aceita dois parâmetros: o formato da data que desejamos obter e, opcionalmente, o timestamp da data desejada. Vamos dar uma olhada nesses parâmetros em detalhes:
+A maneira mais simples de obter a data atual em PHP é usando a função `date()`. Esta função permite que você especifique o formato da data que deseja obter e retornará a data atual no formato especificado. Veja o exemplo abaixo:
 
-```PHP
-$data_atual = date("d/m/Y"); // Retorna a data atual no formato "dia/mês/ano"
-echo $data_atual; // Saída: 17/08/2021
-
-$data_especifica = date("Y-m-d", strtotime("01/01/2022")); // Retorna a data especificada em "ano-mês-dia"
-echo $data_especifica; // Saída: 2022-01-01
+```
+<?php
+$data = date('d/m/Y');
+echo $data; // output: 14/07/2021
 ```
 
-Além disso, também é possível obter a data atual do servidor utilizando a função `getdate()`. Esta função retorna um array com informações detalhadas sobre a data atual, como dia, mês, ano, dia da semana, entre outros. Vamos ver um exemplo:
+Você também pode usar outros caracteres específicos para formatar a data de acordo com suas necessidades. Por exemplo, `D` retorna o dia abreviado da semana (ex: Wed), `M` retorna o mês abreviado (ex: Jul) e `Y` retorna o ano com 4 dígitos (ex: 2021). Você pode encontrar uma lista completa de caracteres de formatação em [PHP Manual](https://www.php.net/manual/en/function.date.php).
 
-```PHP
-$data_atual = getdate();
-echo "Hoje é ".$data_atual['mday']."/".$data_atual['mon']."/".$data_atual['year']; // Saída: Hoje é 17/08/2021
-```
+## Mergulho profundo
 
-##Mergulho Profundo
+Além da função `date()`, o PHP também possui outras funções para manipular e trabalhar com datas, como `strtotime()` e `mktime()`. A função `strtotime()` converte uma string de data em um timestamp UNIX, que pode ser usado para comparar datas ou realizar cálculos. Já a função `mktime()` retorna um timestamp UNIX com base nos valores especificados para hora, minuto, segundo, mês, dia e ano.
 
-Ao lidar com datas em seus projetos, é importante ter atenção a alguns pontos. Primeiramente, é necessário ter certeza de que o fuso horário do servidor está corretamente configurado. Além disso, é sempre recomendado armazenar datas em formatos universais, como o timestamp, para facilitar conversões e cálculos de tempo.
+Também é importante lembrar que o PHP trabalha com fusos horários e configurações de data globais. Você pode especificar o fuso horário a ser usado em seu código usando a função `date_default_timezone_set()`. Além disso, o PHP permite que você altere o formato de data global usando a função `setlocale()`.
 
-O PHP também possui funções para manipulação de datas, como `strtotime()` e `date_create()`, que podem ser úteis em determinadas situações. É importante conhecer essas funções e suas variações para utilizar as melhores abordagens em seus projetos.
-
-##Veja Também
-
-- [Documentação do PHP sobre a função `date()`](https://www.php.net/manual/en/function.date.php)
-- [Guia completo sobre manipulação de datas em PHP](https://www.php.net/manual/en/datetime.formats.php)
-- [Dicas para evitar erros comuns ao lidar com datas em PHP](https://www.toptal.com/php/solving-the-php-datetime-frustration)
+## Veja também
+- [Documentação oficial do PHP sobre a função date](https://www.php.net/manual/en/function.date.php)
+- [Tutorial sobre como trabalhar com datas em PHP](https://www.php.net/manual/en/datetime.settimezone.php)
+- [Artigo sobre os fusos horários em PHP](https://www.php.net/manual/en/datetime.settimezone.php)

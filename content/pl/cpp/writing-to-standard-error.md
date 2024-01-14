@@ -1,47 +1,38 @@
 ---
 title:                "C++: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pisać do standardowego błędu
+## Dlaczego pisać na standardowe wyjście błędów jest ważne
 
-Pisanie do standardowego błędu jest często używaną techniką w programowaniu C++. Pozwala ona programistom na wyświetlanie informacji o błędach i problemach w swoim kodzie. Używanie tego narzędzia może znacznie ułatwić debugowanie i znalezienie błędów w programie.
+Pisanie na standardowe wyjście błędów jest nieodłączną częścią procesu programowania w języku C++. Jest to ważne, ponieważ pozwala programistom łatwiej śledzić i rozwiązywać błędy w swoim kodzie. Dzięki temu można uniknąć nieprzewidzianych błędów i zapewnić lepszą jakość swojego programu.
 
 ## Jak to zrobić
 
-Pisanie do standardowego błędu odbywa się za pomocą funkcji ```C++ std::cerr```. Poniżej przedstawiamy przykładowy kod, który wyświetli informację o błędzie na standardowym wyjściu błędu:
+Aby napisać na standardowe wyjście błędów w C++, należy użyć funkcji `std::cerr` lub `std::clog` z biblioteki standardowej. Następnie należy przekazać wiadomość błędu jako parametr do tej funkcji. Przykładowy kod wyglądałby mniej więcej tak:
 
 ```C++
 #include <iostream>
-using namespace std;
 
 int main() {
-    int num = 10;
-    if (num > 5)
-        cerr << "Błąd: liczba jest większa niż 5" << endl;
+    std::cerr << "Błąd: nie można odnaleźć pliku." << std::endl;
     return 0;
 }
 ```
 
-Output:
-```
-Błąd: liczba jest większa niż 5
-```
+To spowoduje wyświetlenie wiadomości "Błąd: nie można odnaleźć pliku" na standardowym wyjściu błędów podczas uruchamiania programu. Analogicznie, można użyć funkcji `std::clog` do wyświetlenia informacji o mniej ważnych błędach lub ostrzeżeń.
 
-W powyższym przykładzie wykorzystaliśmy funkcję ```C++ cerr``` do wyświetlenia informacji o błędzie. Możemy także wykorzystać tę funkcję do wyświetlania innych ważnych informacji, które pomogą nam w debugowaniu naszego programu. Jest to szczególnie przydatne w przypadku większych projektów, gdzie łatwo można zagubić się w kodzie.
+## Głębokie wnioskowanie
 
-## Głębszy wgląd
+Warto pamiętać, że opisane powyżej funkcje wyświetlają wiadomości na standardowym wyjściu błędów, co oznacza, że ​​będą one wyświetlane nawet w przypadku, gdy przekierujemy standardowe wyjście do pliku lub innego urządzenia. Ponadto, w przypadku bardziej skomplikowanych programów, zaleca się przechwytywanie wyjątków i wyświetlanie odpowiednich wiadomości błędów na standardowym wyjściu. W ten sposób można dokładniej i precyzyjniej śledzić ewentualne problemy w kodzie.
 
-Pisanie do standardowego błędu jest szczególnie ważne w dużych projektach, ponieważ wtedy łatwo można popełnić błędy. Często programiści dodają wiele instrukcji warunkowych i indeksów tablic, co może prowadzić do nieprzewidzianych błędów. Wykorzystanie funkcji ```C++ cerr``` pozwala na szybkie wyświetlenie informacji o błędach i znalezienie problemów w naszym kodzie.
+## Zobacz również
 
-Pamiętaj, że warto także dbać o czytelność swojego kodu, aby łatwo było go zrozumieć i debugować w razie potrzeby. Unikaj nadmiernego używania instrukcji warunkowych i pisanie zrozumiałego i przejrzystego kodu.
-
-## Zobacz także
-
-- [Przewodnik po debugowaniu w C++](https://pl.wikipedia.org/wiki/Debugowanie)
-- [Narzędzia do debugowania w C++](https://www.kompilatory.net/debugowanie-c/)
-- [Wyjątki w C++](https://pl.wikibooks.org/wiki/C%2B%2B/Wyj%C4%85tki)
+- [Standardowa biblioteka języka C++](https://pl.wikipedia.org/wiki/Biblioteka_standardowa_j%C4%99zyka_C%2B%2B)
+- [Obsługa wyjątków w języku C++](https://www.cplusplus.com/doc/tutorial/exceptions/)

@@ -1,52 +1,74 @@
 ---
 title:                "PHP recipe: Printing debug output"
+simple_title:         "Printing debug output"
 programming_language: "PHP"
-category:             "Testing and Debugging"
+category:             "PHP"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Debugging is an inevitable part of programming. As developers, we often come across errors and bugs in our code that need fixing. In such situations, printing debug output can be a very useful tool. It allows us to view what is happening in our code and helps us identify the cause of the problem.
+##Why Print Debug Output?
 
-## How To
-Printing debug output in PHP is quite simple. In this example, we will be using the `echo` statement to print our debug output.
+Debugging is an essential part of any programming process. It allows developers to identify and fix errors in their code, leading to more efficient and reliable applications. One useful tool for debugging is printing debug output, which allows developers to see the values of specific variables and functions at different stages of the code execution. This can help pinpoint the source of a bug and aid in troubleshooting.
 
-```
-<?php
-$variable = "Hello World!";
-echo $variable;
-```
+##How To Print Debug Output in PHP
 
-This code will output `Hello World!` to the screen. But what if we want to print out the value of a variable during runtime? That's when `echo` becomes extremely handy.
+To print debug output in PHP, we can use the `print_r()` function. This function takes in an argument and displays its value, including any nested arrays or objects.
 
 ```
 <?php
-$variable = "Hello World!";
-echo "The value of the variable is: " . $variable;
+//create a variable with a value
+$name = "John";
+
+//print out the value of the variable
+print_r($name);
+
+//output: John
+?>
 ```
 
-The output of this code will be `The value of the variable is: Hello World!` This allows us to see the value of our variable at that specific point in our code. We can also use `var_dump()` to get even more detailed information about our variables, such as their data type and size.
+We can also use this function to print out the values of arrays and objects. 
 
 ```
 <?php
-$variable = "Hello World!";
-var_dump($variable);
+//create an array with key-value pairs
+$fruits = ["apple" => "red", "banana" => "yellow", "orange" => "orange"];
 
-/* Output:
-string(12) "Hello World!"
-*/
+//print out the values of the array
+print_r($fruits);
+
+//output: Array ( [apple] => red [banana] => yellow [orange] => orange )
+?>
 ```
 
-## Deep Dive
-There are various other functions and methods that can be used for printing debug output in PHP. Some commonly used functions are `print_r()`, `debug_print_backtrace()`, and `error_log()`. These functions can be very useful when trying to debug complex code.
+Lastly, we can use `var_dump()` function to print out the data type and values of a variable. This can be helpful when debugging a complex code. 
 
-In addition, many integrated development environments (IDEs) offer their own debuggers, which allow developers to step through their code and view the values of variables at each step.
+```
+<?php
+//create a variable with a Boolean value
+$language = true;
 
-It's also important to note that printing debug output should not be used as a permanent solution. It's best to remove any debug statements before deploying your code to avoid any unnecessary output.
+//print out the datatype and value
+var_dump($language);
 
-## See Also
-- https://www.php.net/manual/en/function.echo.php
-- https://www.php.net/manual/en/function.var-dump.php
-- https://www.php.net/manual/en/function.error-log.php
+//output: bool(true)
+?>
+```
+
+##Deep Dive into Printing Debug Output
+
+While the `print_r()` and `var_dump()` functions are helpful for basic debugging, there are other ways to enhance your debugging process. For example, you can use the `error_log()` function to print out debug information to a log file instead of displaying it on the screen. This can be useful when working on a live server or when debugging long scripts.
+
+Additionally, you can add conditional statements around your debug output code to control when it is displayed. This can prevent excessive output in large projects and make your debugging process more efficient.
+
+##See Also
+
+For more information on debugging in PHP, check out these helpful resources:
+
+- PHP Manual: [Debugging in PHP](https://www.php.net/manual/en/debugger.php)
+- SitePoint: [Debugging PHP with xdebug](https://www.sitepoint.com/debugging-php-xdebug/)
+- PHP Academy: [Debugging PHP - Print and Error Log](https://www.youtube.com/watch?v=_X_vCncQaf0)
+
+Happy debugging!

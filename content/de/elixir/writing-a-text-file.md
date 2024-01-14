@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Schreiben einer Textdatei"
+title:                "Elixir: Ein Textdokument schreiben"
+simple_title:         "Ein Textdokument schreiben"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/writing-a-text-file.md"
 ---
 
@@ -9,52 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Schreiben von Textdateien ist ein grundlegender Teil der Programmierung in Elixir. Durch das Erstellen und Lesen von Textdateien können wir Daten organisieren, speichern und nutzen. Es ermöglicht uns auch, Informationen zwischen verschiedenen Programmen auszutauschen.
+Das Erstellen von Textdateien ist ein wichtiger Bestandteil der Programmierung. Es ermöglicht uns, Daten und Informationen in einer leicht lesbaren Form zu speichern und zu organisieren. Dies ist besonders nützlich, wenn wir mit größeren Datenmengen arbeiten oder Informationen für spätere Verwendung speichern möchten.
 
-## Wie geht man vor
+## Wie geht das?
 
-Um eine Textdatei in Elixir zu schreiben, können wir die `File.write/2` Funktion verwenden. Zuerst müssen wir eine Dateipfad angeben, in der die Datei erstellt werden soll, gefolgt von dem Inhalt, den wir in die Datei schreiben möchten. Beispiel:
+Um eine Textdatei in Elixir zu erstellen, verwenden wir die Funktion `File.write/2` und geben den Dateinamen als ersten Parameter und den Inhalt als zweiten Parameter an. Zum Beispiel:
 
-```elixir
-File.write("meine_datei.txt", "Hallo Welt!")
+```Elixir
+File.write("beispieldatei.txt", "Dies ist eine Beispieldatei!")
 ```
 
-Dieser Code erstellt eine neue Textdatei namens "meine_datei.txt" und schreibt den Inhalt "Hallo Welt!" in die Datei. Wenn wir den Inhalt der Datei überprüfen möchten, können wir die `File.read/1` Funktion verwenden. Beispiel:
+Dieser Code erstellt eine neue Datei mit dem Namen "beispieldatei.txt" und schreibt den gegebenen Text in die Datei. Wenn wir die Datei öffnen, werden wir den Text sehen.
 
-```elixir
-File.read("meine_datei.txt")
+Wir können auch Variablen verwenden, um den Inhalt der Datei dynamischer zu gestalten. Zum Beispiel:
 
-# Output: "Hallo Welt!"
+```Elixir
+name = "Max Mustermann"
+age = 25
+File.write("info.txt", "Name: #{name}\nAlter: #{age}")
 ```
-
-Wir können auch mehrere Zeilen in eine Textdatei schreiben, indem wir den Inhalt mit einem Zeilenumbruch trennen. Beispiel:
-
-```elixir
-File.write("meine_datei.txt", "Dies ist Zeile 1 \nDas ist Zeile 2")
-```
-
-Dies erstellt eine Textdatei mit zwei Zeilen Inhalt.
+Dieser Code erstellt eine Datei mit dem Namen "info.txt" und schreibt den Inhalt "Name: Max Mustermann Alter: 25" in die Datei. Beachten Sie, dass wir den Zeilenumbruch `\n` verwendet haben, um auf eine neue Zeile zu springen.
 
 ## Tiefentauchen
 
-Um die Funktionsweise von Textdateien in Elixir besser zu verstehen, ist es hilfreich, sich mit dem binären Datentyp vertraut zu machen. Elixir behandelt Textdateien als Binärdaten, weshalb wir auch die `File.read/1` Funktion verwenden können, um den Inhalt als Binärdaten zurückzugeben. Wir können auch die Länge der Datei mit der `File.read!/1` Funktion abrufen. Beispiel:
+Beim Schreiben von Textdateien gibt es einige Dinge zu beachten. Zum einen müssen wir sicherstellen, dass die Datei, die wir erstellen möchten, nicht bereits existiert, da dies zu einer Fehlermeldung führen würde. Wir können dies überprüfen, indem wir die Funktion `File.exists?/1` verwenden:
 
-```elixir
-file = File.read("meine_datei.txt")
-byte_size(file) # Gibt die Anzahl der Bytes in der Datei zurück
+```Elixir
+if File.exists?("neue_datei.txt") do
+  IO.puts "Datei existiert bereits!"
+else
+  File.write("neue_datei.txt", "Dies ist eine neue Datei!")
+end
 ```
 
-Wir können auch eine Textdatei mit binären Daten erstellen und schreiben. Beispiel:
+Zum anderen sollten wir sicherstellen, dass wir die Datei am Ende unseres Programms schließen, um mögliche Speicherlecks zu vermeiden. Dafür können wir die Funktion `File.close/1` verwenden:
 
-```elixir
-file = File.open("meine_datei.txt", [:write])
-IO.binwrite(file, <<33, 44, 55>>) # Schreibt die binären Daten in die Datei
+```Elixir
+file = File.open("notizen.txt")
+# tu etwas mit der Datei
+File.close(file)
 ```
 
-Um mehr über die Arbeit mit Binärdaten in Elixir zu erfahren, schaut euch die offizielle Dokumentation dazu an.
+Wenn wir bereits eine Datei haben und lediglich zusätzliche Informationen hinzufügen möchten, können wir die Funktion `File.append/2` verwenden. Diese funktioniert ähnlich wie `File.write/2`, schreibt jedoch zusätzliches Material am Ende der Datei anstatt sie zu überschreiben.
 
 ## Siehe auch
 
-- [Offizielle Elixir-Dokumentation zu Dateioperationen](https://hexdocs.pm/elixir/File.html)
-- [Erlang-Binärimplementierung in Elixir](https://hexdocs.pm/elixir/1.11.2/IO.html)
-- [Elixir-Forum für Fragen und Diskussionen](https://elixirforum.com/)
+- [Elixir Dokumentation zu File](https://hexdocs.pm/elixir/File.html)
+- [Elixir Tutorial - Dateien erstellen und schreiben](https://elixir-lang.org/getting-started/io-and-the-file-system.html#creating-and-writing-to-files)

@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Capitalizzare una stringa"
+title:                "Kotlin: Capitalizzazione di una stringa"
+simple_title:         "Capitalizzazione di una stringa"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/capitalizing-a-string.md"
 ---
 
@@ -9,39 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Capitalizzare una stringa è un'operazione comune quando si lavora con le applicazioni che gestiscono i dati dei clienti. Può essere utile per uniformare il formato dei nomi o dei dati inseriti dall'utente, o semplicemente per rendere più leggibili i dati durante la stampa.
+Molte volte ci troviamo a dover manipolare delle stringhe nel nostro codice, e una delle operazioni più comuni è la capitalizzazione di una stringa. Questo ci permette di modificare facilmente il formato della stringa senza dover scrivere codice aggiuntivo.
 
-## Come Fare
+## Come fare
 
-Per capitalizzare una stringa in Kotlin, possiamo utilizzare la funzione `capitalize()` che fa parte della classe String. Questa funzione prende la prima lettera della stringa e la trasforma in maiuscolo, mantenendo inalterate le altre lettere.
-
-```Kotlin
-val nome = "mario"
-val nomeCapitalizzato = nome.capitalize()
-println(nomeCapitalizzato) // Output: Mario
-```
-
-Possiamo anche capitalizzare solo la prima lettera di ogni parola all'interno di una stringa utilizzando la funzione `capitalizeEachWord()`.
+Per capitalizzare una stringa in Kotlin, possiamo utilizzare il metodo `capitalize()` che di default converte la prima lettera della stringa in maiuscolo.
 
 ```Kotlin
-val frase = "ciao a tutti"
-val fraseCapitalizzata = frase.capitalizeEachWord()
-println(fraseCapitalizzata) // Output: Ciao A Tutti
+val stringa = "kotlin programming"
+println(stringa.capitalize())
+
+// Output: "Kotlin programming"
 ```
 
-Queste funzioni sono molto utili per la formattazione dei dati e possono essere applicate a qualsiasi stringa.
+Inoltre, abbiamo la possibilità di specificare una regione e una codifica opzionale nel caso in cui la stringa contenga caratteri speciali.
+
+```Kotlin
+val stringa = "è facile iniziare con Kotlin"
+println(stringa.capitalize(locale = Locale.ITALIAN))
+
+// Output: "È facile iniziare con Kotlin"
+```
+
+Se invece vogliamo capitalizzare l'intera stringa, invece di solo la prima lettera, possiamo utilizzare il metodo `toUpperCase()`.
+
+```Kotlin
+val stringa = "kotlin programming"
+println(stringa.toUpperCase())
+
+// Output: "KOTLIN PROGRAMMING"
+```
 
 ## Approfondimento
 
-Se vogliamo comprendere meglio come funzionano le funzioni `capitalize()` e `capitalizeEachWord()`, possiamo dare un'occhiata all'implementazione all'interno della classe String.
+Se vogliamo ottenere un controllo più preciso sulla capitalizzazione delle stringhe, possiamo utilizzare la classe `StringBuilder` per manipolare la stringa direttamente.
 
-La funzione `capitalize()` utilizza il metodo `substring()` per prendere la prima lettera della stringa e il metodo `toUpperCase()` per trasformarla in maiuscolo. Dopodiché, utilizza il metodo `substring()` per aggiungere il resto della stringa.
+Per esempio, possiamo utilizzare il metodo `setCharAt()` per impostare manualmente la lettera maiuscola nella posizione desiderata.
 
-La funzione `capitalizeEachWord()` usa le stesse tecniche, ma con un ciclo `forEach()` per applicare il processo a ogni parola all'interno della stringa.
+```Kotlin
+val stringa = "kotlin programming"
+val stringBuilder = StringBuilder(stringa)
+stringBuilder.setCharAt(0, 'K')
+println(stringBuilder)
 
-Questo ci mostra che le funzioni `capitalize()` e `capitalizeEachWord()` sono solo alcune delle molte funzionalità utili che la classe String di Kotlin offre per manipolare le stringhe.
+// Output: "Kotlin programming"
+```
 
-## Vedi Anche
+Inoltre, possiamo utilizzare il metodo `replace()` per sostituire una porzione di stringa specificando gli indici inizio e fine.
 
-- Documentazione String Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/
-- Approfondimenti su metodi di manipolazione delle stringhe: https://kotlinexpertise.com/convert-string-to-int-kotlin/
+```Kotlin
+val stringa = "kotlin programming"
+val stringBuilder = StringBuilder(stringa)
+stringBuilder.replace(0, 6, "Java")
+println(stringBuilder)
+
+// Output: "Java programming"
+```
+
+## Vedi anche
+
+- [Documentazione ufficiale di Kotlin su `capitalize()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+- [Documentazione ufficiale di Kotlin su `toUpperCase()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
+- [Documentazione ufficiale di Kotlin su `StringBuilder`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/index.html)

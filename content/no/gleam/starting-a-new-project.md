@@ -1,45 +1,61 @@
 ---
-title:                "Gleam: Å starte et nytt prosjekt."
+title:                "Gleam: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Gleam"
-category:             "Getting Started"
+category:             "Gleam"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å starte et nytt prosjekt kan være både spennende og utfordrende. Det gir deg muligheten til å utforske nye ideer og lære nye ferdigheter. Gleam er et programmeringsspråk som kan hjelpe deg med å realisere dine kreative visjoner og bygge utrolige applikasjoner. Hvis du er klar for å ta spranget og starte et nytt Gleam-prosjekt, så er denne artikkelen for deg.
+Du har kanskje hørt om det nye funksjonelle programmeringsspråket Gleam og lurer på om det er verdt å utforske. Vel, la meg fortelle deg hvorfor Gleam kan være et flott valg for ditt neste prosjekt.
 
-## Hvordan
+Gleam kombinerer styrken til funksjonelle språk med en moderne og robust syntaks. Det er enkelt å lese og skrive, og det støtter samtidig ting som typeinferanse og mønstergjenkjenning. Dette gjør Gleam til et effektivt og robust alternativ for programmering, uansett om du er nybegynner eller en erfaren utvikler.
 
-For å starte et nytt prosjekt i Gleam, må du først installere Gleam compiler og byggeverktøyet. Når det er gjort, kan du følge disse trinnene:
+# Hvordan
 
-1. Åpne en terminal og gå til mappen der du vil lagre prosjektet.
-2. Skriv inn kommandoen `gleam new <prosjektnavn>` for å opprette en ny Gleam-applikasjon.
-3. Naviger inn i den nye mappen ved å skrive `cd <prosjektnavn>`.
-4. Du er nå klar til å starte å kode!
+For å komme i gang med Gleam, kan du følge disse enkle trinnene:
 
-Her er et eksempel på en enkel "Hello World" -applikasjon i Gleam:
+1. Installer Gleam ved å følge instruksjonene på deres offisielle nettside: https://gleam.run/getting-started/
+2. Opprett en ny Gleam-fil. Du kan kalle den hva du vil, men la oss kalle den "hello_world.gleam" for vår demonstrasjon.
+3. Skriv inn følgende kode i filen:
 
-```Gleam
+```
+gleam
 pub fn main() {
-  let beskjed = "Hei verden!"
-  io.println(beskjed)
+  let message = "Hei fra Gleam!";
+  IO.println(message);
 }
 ```
 
-Kjør koden ved å skrive `gleam run` i terminalen. Du bør se utskriften `Hei verden!`.
+4. Kjør filen ved å kjøre følgende kommando i terminalen:
 
-Du kan også følge med i offisiell Gleam dokumentasjon for flere eksempler og detaljert informasjon om hvordan du starter et nytt prosjekt.
+```
+gleam run hello_world.gleam
+```
 
-## Dypdykk
+5. Du vil se følgende output i terminalen:
 
-Når du har forstått det grunnleggende i å starte et nytt Gleam-prosjekt, kan du begynne å utforske mer komplekse funksjoner og konsepter. Gleam har støtte for funksjonell programmering, mønstergjenkjenning og typet sikkerhet, noe som betyr at det gir en robust og pålitelig måte å utvikle applikasjoner på.
+```
+Hei fra Gleam!
+```
 
-Når du utvikler i Gleam, bør du også vurdere å bruke biblioteker og rammeverk som kan hjelpe deg med å akselerere utviklingsprosessen. For eksempel kan du bruke Phoenix biblioteket for å bygge webapplikasjoner i Gleam. Ved å eksperimentere og leke med ulike verktøy og muligheter, kan du oppdage nye måter å bygge spennende og innovative applikasjoner på.
+Gratulerer, du har akkurat laget og kjørt ditt første Gleam-program!
 
-## Se også
+# Dypdykk
 
-- Offisiell Gleam dokumentasjon: https://gleam.run/
-- Gleam på GitHub: https://github.com/gleam-lang/gleam
+Nå som du har en grunnleggende forståelse av hvordan du kan kjøre Gleam-programmer, er det på tide å dykke dypere inn i detaljene om å starte et nytt prosjekt. Her er noen ekstra tips som kan være nyttige:
+
+- Gleam er kompilert til Erlang-beam-kode og kjører på Erlang Virtual Machine (VM). Dette betyr at du kan dra nytte av det store økosystemet av biblioteker som allerede eksisterer for Erlang og Elixir.
+- Gleam tilbyr også muligheten til å skrive interoperable moduler med Elixir (og snart også med andre språk som Detla eller Rust), noe som gjør det enda mer fleksibelt for større prosjekter.
+- Det er en aktiv og voksende samfunn av Gleam-utviklere der ute, så ikke nøl med å stille spørsmål og søke etter hjelp hvis du støter på problemer.
+
+# Se Også
+
+- Offisiell Gleam nettside: https://gleam.run/
+- Offisiell Dokumentasjon: https://gleam.run/getting-started/
+- Gleam-utvikleres forum: https://elixirforum.com/c/gleam
+- Gleam på Github: https://github.com/gleam-lang/gleam

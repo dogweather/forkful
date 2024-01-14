@@ -1,51 +1,47 @@
 ---
-title:                "Javascript: Päivämäärän muuttaminen merkkijonoksi"
+title:                "Javascript: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi muuntaa päivämäärä merkkijonoksi?
+## Miksi
 
-Päivämäärän muuntaminen merkkijonoksi on tärkeä osa monien ohjelmien toimintaa. Se auttaa meitä esittämään tietoja selkeästi ja ymmärrettävästi käyttäjille sekä hallitsemaan erilaisia aikavyöhykkeitä. Se myös mahdollistaa päivämäärätietojen tallentamisen tietokantaan tai tiedostoon.
+Joskus JavaScript-ohjelmoinnissa halutaan muuttaa päivämäärä merkkijonoksi. Tämä voi johtua esimerkiksi tarpeesta tallentaa päivämäärä tietokantaan tai näyttää se käyttäjälle.
 
-Kuinka muuntaa päivämäärä merkkijonoksi?
+## Kuinka
 
-Päivämäärän muuntaminen merkkijonoksi on helppoa JavaScriptin avulla. Käytä vain "toString ()" -metodia päivämääräolion jälkeen ja kaikki tapahtuu automaattisesti. Katso alla olevat koodiesimerkit ja lopputulokset.
+Päivämäärän muuttaminen merkkijonoksi JavaScriptissä on yksinkertaisimmillaan helposti ymmärrettävän `toString()` -funktion avulla. Tämä muuntaa päivämäärän haluttuun merkkijonoesitykseen.
 
-```Javascript
-// Luodaan päivämääräoliot
-let currentDate = new Date();
-let myBirthday = new Date(1990, 3, 24);
-
-// Muunnetaan päivämäärät merkkijonoksi
-let currentDateStr = currentDate.toString();
-let myBirthdayStr = myBirthday.toString();
-
-// Tulostetaan merkkijonot
-console.log(currentDateStr); // Su Sep 05 2021 17: 08: 41 GMT + 0300 (Eastern European Summer Time)
-console.log(myBirthdayStr); // Ti Huhti 24 1990 00: 00: 00 GMT + 0300 (Eastern European Summer Time)
+```JavaScript
+const date = new Date();
+const dateString = date.toString();
+console.log(dateString);
+// Tulostaa esimerkiksi "Fri May 28 2021 17:30:23 GMT+0300 (Eastern European Summer Time)"
 ```
 
-Syntaksin määrittelyn mukaan "toString ()" -metodi palauttaa päivämäärän "päiväysaikana", joka näyttää päivämäärän ja ajan sekä aikavyöhykkeen. Tämä formaatti vaihtelee kuitenkin käyttöjärjestelmän ja sijainnin mukaan. Voit muuttaa päivämäärän esitystapaa käyttämällä erilaisia JavaScriptin päivämäärämuotoiluja, kuten "toDateString ()" tai "toLocaleDateString ()".
+Voit myös muokata merkkijonoesitystä oman halusi mukaan käyttämällä Date-objektin tarjoamia metodeja. Esimerkiksi `toLocaleDateString()` tai `toLocaleTimeString()` voivat olla hyödyllisiä haluttaessa esittää päivämäärä tai aika tiettyyn paikalliseen aikaan.
 
-Syvemmälle päivämäärän muuntamiseen merkkijonoksi
-
-Päivämäärän muuntaminen merkkijonoksi voi olla monimutkaisempaa, jos aiomme esittää sen eri kielillä tai käyttää tiettyä päivämääräformaattia. Jotkut maat käyttävät esimerkiksi erilaisia ​​päivämääräformaatteja, kuten päivä/kuukausi/vuosi tai kuukausi/päivä/vuosi. JavaScript tarjoaa kuitenkin ratkaisun tähän ongelmaan "toLocaleString ()" -metodin avulla. Tämä metodi antaa meille mahdollisuuden määrittää aikavyöhyke ja kieliasetukset, jotta voimme tarkasti näyttää päivämäärätietoja halutulla tavalla.
-
-```Javascript
-// Luodaan päivämääräoliot
-let currentDate = new Date();
-let myBirthday = new Date(1990, 3, 24);
-
-// Määritetään kieliasetukset
-let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
-// Tulostetaan päivämäärät
-console.log(currentDate.toLocaleString('de-DE', options)); // Sonntag, 5 September 2021
-console.log(myBirthday.toLocaleString('fr-FR', options)); // Mardi 24 Mars 1990
+```JavaScript
+const date = new Date();
+const dateString = date.toLocaleDateString("fi-FI"); // Suomalainen päivämäärämuoto
+const timeString = date.toLocaleTimeString("fi-FI"); // Suomalainen aikamuoto
+console.log(`${dateString} klo ${timeString}`);
+// Tulostaa esimerkiksi "28.5.2021 klo 17:30:23"
 ```
 
-Tässä esimerkissä käytämme "lang-XX" -arvoja määritelläksemme halutun kielen. Voit käyttää myös muita optioita, kuten "hour", "minute" ja "second" näyttääksesi ajan. "Hour12: true" -asetuksella voimme myös määrittää, että näytettävä aika muunnetaan 12-t
+## Syvempi sukellus
+
+Tarkemmin määriteltynä `toString()`-funktio palauttaa päivämäärän merkkijonoesityksen RFC 1123 -standardin mukaisesti. Tämä tarkoittaa sitä, että päivämäärä muutetaan Greenwichin keskimääräiseen aikaan (GMT) ja näytetään tiettyyn aikavyöhykkeeseen lisätyn tai poistetun aikamäärän kera.
+
+Jos haluat hallita päivämäärän esitystapaa tarkemmin, voit käyttää `Date`-objektin tarjoamia muita metodeja, kuten `toUTCString()` tai `toISOString()`. Näiden avulla voit muuntaa päivämäärän haluamaasi muotoon tai jopa luoda oman mukautetun merkkijonoesityksen.
+
+## Katso myös
+
+- [MDN Web Docs - Date-objekti](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Modernin JavaScriptin opas: Date](https://javascript.info/date)
+- [W3Schools - JavaScript Date-objekti](https://www.w3schools.com/js/js_dates.asp)

@@ -1,7 +1,9 @@
 ---
 title:                "C: Verwendung von regulären Ausdrücken"
+simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/using-regular-expressions.md"
 ---
 
@@ -9,59 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Reguläre Ausdrücke, auch bekannt als "Regex", sind ein mächtiges Werkzeug für jeden Programmierer. Sie erlauben es uns, komplexe Muster in Texten zu erkennen und zu manipulieren. Dies kann sehr nützlich sein, zum Beispiel bei der Validierung von Benutzereingaben oder beim Extrahieren von Daten aus Dateien.
+Regular Expressions, auch bekannt als reguläre Ausdrücke, sind ein äußerst nützliches Konzept in der Welt der Programmierung. Sie bieten die Möglichkeit, Textmuster zu erkennen und zu manipulieren, was das Schreiben von effizientem Code erleichtert. Wenn Sie sich mit der Verarbeitung von Text in Ihren Projekten beschäftigen, ist es unerlässlich, sich mit regulären Ausdrücken vertraut zu machen.
 
-## Wie man Reguläre Ausdrücke verwendet
+## Wie geht's
 
-Die Verwendung von regulären Ausdrücken erfordert einige Kenntnisse in der Programmiersprache C. Um zu beginnen, müssen wir die Bibliothek "regex.h" einbinden. Dann können wir ein neues Regex-Objekt erstellen und es mit unserem gewünschten Muster initialisieren. Anschließend können wir in einer Schleife durch den Text gehen und mit Hilfe von Funktionen wie "regexec()" überprüfen, ob das Muster übereinstimmt.
-
-Hier ist ein einfaches Beispiel, bei dem wir eine E-Mail-Adresse aus einem Text extrahieren:
+Das Einbinden von regulären Ausdrücken in Ihren C-Code ist relativ einfach. Sie benötigen lediglich die Header-Datei "regex.h" und schon können Sie loslegen. Hier ist ein Beispiel, wie Sie eine Zeichenkette nach einem bestimmten Muster durchsuchen und markieren können:
 
 ```C
-#include <regex.h>
 #include <stdio.h>
-#include <stdlib.h>
+#include <regex.h>
 
 int main() {
     regex_t regex;
-    char *text = "Meine E-Mail-Adresse ist max.mustermann@test.com";
-    char *pattern = "([a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,})";
+    int result;
+    char *text = "Hallo Welt";
+    char *pattern = "Welt";
 
-    if (regcomp(&regex, pattern, REG_EXTENDED) != 0) {
-        printf("Fehler beim Kompilieren des regulären Ausdrucks\n");
-        exit(1);
+    // Kompilieren und prüfen des regulären Ausdrucks
+    result = regcomp(&regex, pattern, 0);
+    if (result) {
+        printf("Fehler beim Kompilieren von RegExp.\n");
+        return 0;
     }
 
-    regmatch_t match[2];
-    if (regexec(&regex, text, 2, match, 0) == 0) {
-        // Das erste Element in match enthält den gesamten Treffer
-        // Das zweite Element enthält die E-Mail-Adresse, die wir extrahieren wollen
-        char *email = malloc(sizeof(char) * (match[1].rm_eo - match[1].rm_so + 1));
-        sprintf(email, "%.*s", match[1].rm_eo - match[1].rm_so, text + match[1].rm_so);
-
-        printf("Gefundene E-Mail-Adresse: %s\n", email);
-        free(email);
+    // Durchsuchen des Textes und Ausgabe der Treffer
+    result = regexec(&regex, text, 0, NULL, 0);
+    if (!result) {
+        printf("Welt gefunden!");
+    } else if (result == REG_NOMATCH) {
+        printf("Keine Übereinstimmung gefunden.");
     } else {
-        printf("Keine E-Mail-Adresse gefunden\n");
+        printf("Fehler beim Durchsuchen des Textes!");
     }
 
+    // Freigeben des Speichers und aufräumen
     regfree(&regex);
+
     return 0;
 }
-
-/* Ausgabe:
-Gefundene E-Mail-Adresse: max.mustermann@test.com
-*/
 ```
+
+Die Ausgabe dieses Codes wird "Welt gefunden!" sein, da das Muster "Welt" in der Zeichenkette "Hallo Welt" gefunden wurde. Natürlich gibt es noch viele weitere Funktionen und Möglichkeiten im Umgang mit regulären Ausdrücken. Probieren Sie es aus und experimentieren Sie!
 
 ## Tiefergehende Informationen
 
-Reguläre Ausdrücke können kompliziert werden, wenn man mehrere Regeln und Sonderzeichen gleichzeitig verwenden möchte. Zum Glück gibt es viele Ressourcen, die uns dabei helfen können, diese Muster zu verstehen und zu erstellen. Eine der nützlichsten Funktionen ist die Verwendung von sogenannten "Capturing Groups", die es uns ermöglichen, Teile des Treffers zu speichern und später darauf zuzugreifen.
+Reguläre Ausdrücke sind ein großes Thema, daher können wir hier nur einen kleinen Einblick bieten. Wenn Sie sich intensiver damit beschäftigen möchten, gibt es viele Informationen und Tutorials online verfügbar. Hier sind einige hilfreiche Ressourcen:
 
-Außerdem ist es wichtig zu beachten, dass reguläre Ausdrücke immer nur auf Text angewendet werden können. Das bedeutet, dass wir den Inhalt von Dateien zunächst in eine Zeichenkette konvertieren müssen, bevor wir die Ausdrücke verwenden können.
+- [Reguläre Ausdrücke in C](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [Tutorial für reguläre Ausdrücke in C](https://www.codepug.com/tutorials/c-tutorials/c-regular-expressions)
+- [Reguläre Ausdrücke Cheat-Sheet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheat_Sheet)
 
 ## Siehe auch
 
-- [Regex-Tutorial für C-Programmierer](https://www.regular-expressions.info/c.html)
-- [Offizielle Dokumentation für die "regex.h" Bibliothek](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- [Ein praktisches Cheat-Sheet für reguläre Ausdrücke in C](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [Reguläre Ausdrücke in Java](http://www.java-programmieren.com/regulaere-ausdruecke.php)
+- [Einführung in reguläre Ausdrücke für Python](https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial)

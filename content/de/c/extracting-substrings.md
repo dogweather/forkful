@@ -1,52 +1,46 @@
 ---
-title:                "C: Extrahieren von Teilstrings"
+title:                "C: Unterstrings extrahieren"
+simple_title:         "Unterstrings extrahieren"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-Substring-Extraktion ist eine nützliche Funktion in der Programmierung, die es ermöglicht, bestimmte Teile eines Textes zu extrahieren, anstatt den gesamten Text zu bearbeiten. Dies kann zeitsparend sein und die Effizienz des Codes erhöhen. In diesem Blog-Beitrag werden wir uns damit beschäftigen, wie man Substrings in C extrahiert und tiefer in dieses Konzept eintaucht.
+## Warum
 
-# Wie man Substrings in C extrahiert
-Um Substrings in C zu extrahieren, können wir die Funktion `strncpy` verwenden, die Teil der `string.h` Bibliothek ist. Diese Funktion wird verwendet, um einen Teil eines Strings in einen anderen String zu kopieren. Der Syntax für die Verwendung von `strncpy` ist wie folgt:
+Das Extrahieren von Teilstrings ist eine nützliche Fähigkeit, die in vielen Fällen in der Programmierung benötigt wird. Es ermöglicht uns, Teile eines Textes zu isolieren, um sie später weiterzuverarbeiten oder zu analysieren.
 
-```C
-strncpy(Zielstring, Ausgangsstring, Anzahl_der_Zeichen)
-```
-Dabei ist `Zielstring` der String, in den der Substring kopiert werden soll, `Ausgangsstring` ist der ursprüngliche String, aus dem der Substring extrahiert wird und `Anzahl_der_Zeichen` gibt an, wie viele Zeichen kopiert werden sollen.
+## Wie man es macht
 
-Um dies besser zu verstehen, werfen wir einen Blick auf ein Beispiel:
+Um Teilstrings in C zu extrahieren, können wir die Funktion `strncpy` verwenden. Diese Funktion kopiert einen angegebenen Teil eines Strings in einen anderen String und gibt das Ergebnis zurück. Im folgenden Beispiel extrahieren wir einen Teilstring aus einem Namen und geben ihn aus:
 
 ```C
 #include <stdio.h>
-#include <string.h>
 
-int main()
-{
-    char ursprungsstring[] = "Willkommen";
-    char zielstring[5];
-
-    strncpy(zielstring, ursprungsstring, 5);
-
-    printf("Der Substring ist: %s", zielstring);
-
-    return 0;
+int main(void) {
+  // Deklaration des ursprünglichen Strings
+  char name[] = "Marie Müller";
+  // Ausgabe des 2. bis 6. Zeichens des Strings
+  char extracted[5];
+  strncpy(extracted, name + 1, 5); // kopiert "arie "
+  extracted[5] = '\0'; // fügt das Ende des Strings hinzu
+  printf("Extrahierter Teilstring: %s\n", extracted);
+  return 0;
 }
 ```
+Die Ausgabe wäre: `Extrahierter Teilstring: arie `. In diesem Beispiel wird der Teilstring "arie " aus dem ursprünglichen String "Marie Müller" extrahiert und in einem neuen String gespeichert.
 
-In diesem Beispiel haben wir den ursprünglichen String "Willkommen" und kopieren die ersten 5 Zeichen in den Zielstring. Ausgegeben wird der Substring "Willk".
+## Tieferer Einblick
 
-# Tiefer Einblick in die Substring-Extraktion
-Neben `strncpy` gibt es auch andere Funktionen, die für die Substring-Extraktion verwendet werden können, wie zum Beispiel `strncat` und `strndup`. Diese Funktionen haben jedoch unterschiedliche Syntax und Funktionsweise.
+Die `strncpy` Funktion akzeptiert mehrere Parameter, um verschiedene Operationen auszuführen. Zum Beispiel können wir durch Manipulation der Startposition und der Länge des extrahierten Teils verschiedene Teilstrings erhalten. Es ist auch wichtig, darauf zu achten, den extrahierten String richtig zu terminieren, indem wir ein Nullzeichen am Ende hinzufügen.
 
-Ein weiteres wichtiges Konzept bei der Substring-Extraktion ist das Indexing. In C beginnt das Indexing bei 0, was bedeutet, dass das erste Zeichen eines Strings den Index 0 hat. Um einen bestimmten Substring zu extrahieren, müssen wir daher wissen, an welcher Stelle im String er beginnt und wo er endet.
+Es gibt auch alternative Methoden zum Extrahieren von Teilstrings in C, wie zum Beispiel das Verwenden der `substr` Funktion oder das Manuellzählen der Zeichen. Indem Sie verschiedene Methoden kennenlernen, können Sie ihre Vor- und Nachteile verstehen und die für Ihre spezifischen Bedürfnisse am besten geeignete auswählen.
 
-Es ist auch wichtig zu beachten, dass bei Verwendung der Funktion `strncpy` der Zielstring immer länger sein muss als der zu kopierende Substring. Andernfalls kann es zu Speicherzugriffsverletzungen und Fehlern im Code kommen.
+## Siehe auch
 
-# Siehe auch
-- [C String Operations](https://www.tutorialspoint.com/cprogramming/c_string.htm)
-- [C Strncpy Function](https://www.w3schools.in/c-tutorial/string-handling/strncpy-function/)
-- [C Examples - String handling functions](https://www.programiz.com/c-programming/examples/string-handling-functions)
+- [Die offizielle C-Dokumentation zur strncpy-Funktion](https://www.cplusplus.com/reference/cstring/strncpy/)
+- [Ein Tutorial zur Verwendung der substr-Funktion in C](https://www.tutorialspoint.com/c_standard_library/c_function_substr.htm)
+- [Eine Erklärung, wie man Teilstrings in C manuell extrahiert](https://www.geeksforgeeks.org/c-program-extracting-characters-from-a-string/)

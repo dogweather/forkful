@@ -1,7 +1,9 @@
 ---
-title:                "Java: Virheenjäljitystulostus"
+title:                "Java: Tulostaminen Debug-ulosvedolla"
+simple_title:         "Tulostaminen Debug-ulosvedolla"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/printing-debug-output.md"
 ---
 
@@ -9,71 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Usein ohjelmointiprojektin aikana esiintyy erilaisia virheitä ja bugeja, jotka voivat vaikeuttaa koodin toimintaa. Tässä tilanteessa voi olla hyödyllistä ottaa debuggaus käyttöön ja tulostaa koodin eri vaiheissa tietoa suorituksen kulusta ja muuttujien arvoista, jotta virheiden etsiminen olisi helpompaa. Tässä blogikirjoituksessa käymme läpi, miten debuggausta ja tulostusta voidaan hyödyntää Java-ohjelmoinnissa.
+Jos olet Java-ohjelmoija, niin olet todennäköisesti joutunut käsittelemään bugiraportteja, jotka ovat todella epämääräisiä ja sisältävät vain "ohjelma kaatuu" -ilmoituksen. Tämänkaltainen ilmoitus ei tarjoa mitään hyödyllistä tietoa, jonka avulla voit korjata ongelman nopeasti. Tässä tilanteessa debug-tekstin tulostaminen voi olla erittäin hyödyllistä diagnosoida ongelma ja löytää ratkaisu siihen.
 
-## Kuinka
+## Miten
 
-Debuggausta ja tulostusta voidaan käyttää Java-ohjelmoinnissa hyödyllisenä työkaluna virheiden etsimisessä. 
-Alla on esimerkki yksinkertaisesta Java-ohjelmasta, joka tulostaa merkkijonon "Hello World" ja sen jälkeen suorittaa laskutoimituksen ja tulostaa sen tuloksen:
+Debug-tekstin tulostaminen Java-ohjelmassa on helppoa. Voit käyttää "System.out.println()" -metodia, joka tulostaa halutun tekstin konsoliin. Voit myös käyttää "System.err.println()", joka tulostaa tekstin punaisella ja näin ollen erottaa sen muusta tekstistä. Tässä on yksinkertainen Java-esimerkki debug-tekstin tulostamisesta koodissa:
 
 ```Java
-public class TulostusEsimerkki {
+public class DebugExample {
 
     public static void main(String[] args) {
-        System.out.println("Hello World");
+    
+        // Tehdään laskutoimitus ja tulostetaan sen tulos
+        int a = 5;
+        int b = 2;
+        int sum = a + b;
+        System.out.println("Summa: " + sum);
         
-        int x = 5;
-        int y = 7;
-        int summa = x + y;
-        
-        System.out.println("Summa: " + summa);
+        // Simuloidaan virhetilanne
+        int c = 10;
+        int d = 0;
+        int div = c / d;
+        System.err.println("Jakaminen nollalla: " + div);
     }
 }
 ```
 
-Tämän koodin ajamisen jälkeen konsolille tulostuu seuraava tieto:
+Tämän koodin tulos tulostettaisiin näin:
 
 ```
-Hello World
-Summa: 12
+Summa: 7
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+    at DebugExample.main(DebugExample.java:14)
 ```
 
-Vaikka tässä esimerkissä ei esiinny mitään virheitä, voimme kuitenkin käyttää tulostusta hyödyksi selvitellessämme virheitä. Esimerkiksi jos laskutoimituksessa ilmenee jokin virhe, voimme tulostaa muuttujien arvot ennen laskutoimitusta ja sen jälkeen, jotta voimme tarkistaa, missä vaiheessa virhe tapahtuu. Lisäksi voimme myös käyttää tulostusta seuraamaan ohjelman suorituksen kulkua ja varmistamaan, että ohjelma suorittaa halutut toiminnot oikeassa järjestyksessä.
+Näet, että "Summa: 7" tulostuu konsoliin, mutta virheilmoitus punaisella näkyy error-tulostevirrassa.
 
-## Syvällinen sukellus
+## Syvempi sukellus
 
-Java tarjoaa erilaisia tapoja tulostaa debug tietoa. Yksi tapa on käyttää `System.out.println()`-metodia, joka tulostaa annetun syötteen konsoliin. Tämän lisäksi on myös mahdollista käyttää `System.out.format()`-metodia, joka toimii samalla tavalla kuin `printf` C-ohjelmointikielessä.
+Debug-tekstin tulostaminen voi olla hyödyllistä myös silloin, kun haluat tarkastella tiettyjen arvojen tilaa suorituskyvyn tai tehokkuuden parantamiseksi. Voit esimerkiksi tulostaa tietyn muuttujan arvon ja suorittaa ohjelmaasi eri syötteillä, jotta näet, miten muuttujan arvo muuttuu jokaisen suorituksen välillä.
 
-Esimerkiksi alla oleva koodi tulostaa konsoliin kolme merkkijonoa, joista jokainen on tulostettu omalle rivilleen:
+On myös tärkeää muistaa, että kaikkea debug-tekstiä ei tarvitse poistaa valmiista koodista. Kun olet ratkaissut ongelman ja ohjelmasi toimii odotetulla tavalla, voit poistaa debug-tulostukset tai kommentoida ne pois koodistasi, jotta se pysyy siistinä ja helpommin luettavissa.
 
-```Java
-String etunimi = "Mikko";
-String sukunimi = "Maasalo";
-int ika = 25;
+## Katso myös
 
-System.out.println("Etunimi: " + etunimi);
-System.out.println("Sukunimi: " + sukunimi);
-System.out.println("Ikä: " + ika);
-```
-
-Tulostuksena tähän koodiin saamme seuraavan:
-
-```
-Etunimi: Mikko
-Sukunimi: Maasalo
-Ikä: 25
-```
-
-Voimme myös hyödyntää `System.out.format()`-metodia, joka toimii samalla tavalla kuin `printf` C-ohjelmointikielessä. Tässä on esimerkki samasta koodista käyttäen `System.out.format()`-metodia:
-
-```Java
-String etunimi = "Mikko";
-String sukunimi = "Maasalo";
-int ika = 25;
-
-System.out.format("Etunimi: %s%n", etunimi);
-System.out.format("Sukunimi: %s%n", sukunimi);
-System.out.format("Ikä: %d%n", ika);
-```
-
-Tulostus tähän on sama kuin edellisessä esimerkiss
+- [Java Debugging Tutorial](https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html)
+- [Debugging Tips and Tricks](https://blog.jetbrains.com/idea/2018/07/debugging-tips-tricks/)
+- [Java Debugging with Eclipse](https://www.eclipse.org/community/eclipse_newsletter/2015/june/article3.php)

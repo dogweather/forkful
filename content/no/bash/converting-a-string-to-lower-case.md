@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Oversettelse av en streng til små bokstaver."
+title:                "Bash: Konvertere en streng til små bokstaver."
+simple_title:         "Konvertere en streng til små bokstaver."
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,36 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Konvertering av en streng til små bokstaver kan være nyttig når du jobber med tekstbehandling eller manipulering av data. Det kan også være nødvendig når du samarbeider med andre programmer eller systemer som bruker små bokstaver som standard. Ved å ha en funksjon for konvertering til små bokstaver i bash-programmering, kan du effektivt håndtere og behandle tekstdata.
+Mange ganger i Bash-programmering kan det hende du trenger å konvertere en streng til små bokstaver. Dette kan være for å sammenligne input fra brukeren med forventede verdier, eller for å sikre at dataen din er i en ensartet form.
 
-## Hvordan gjøre det
+## Hvordan
 
-For å konvertere en streng til små bokstaver i bash, kan du bruke kommandoen "tr". Denne kommandoen endrer tegnene i en streng basert på et gitt sett med regler. I dette tilfellet vil vi bruke regelen "[:upper:]" til å bytte ut alle store bokstaver med tilsvarende små bokstaver.
+Det er flere måter å konvertere en streng til små bokstaver i Bash. En måte er å bruke `tr` kommandoen, som står for "translate". Denne kommandoen lar deg erstatte en sekvens av karakterer med en annen sekvens. For å konvertere en streng til små bokstaver med `tr`, kan du gjøre følgende:
 
-```Bash
-echo "HELLO WORLD" | tr '[:upper:]' '[:lower:]'
+```
+Bash
+# Lag en variabel med tekst
+original_tekst="HEI, JEG ER EN STRENG"
+
+# Bruk 'tr' kommandoen for å konvertere til små bokstaver
+konvertert_tekst=$(echo $original_tekst | tr '[:upper:]' '[:lower:]')
+
+# Skriv ut den konverterte teksten
+echo $konvertert_tekst
 ```
 
-Dette vil gi følgende output: "hello world"
+Output:
 
-Du kan også bruke denne kommandoen i kombinasjon med andre kommandoer, som for eksempel å lese en fil og konvertere alle bokstaver til små bokstaver.
+```
+hei, jeg er en streng
+```
 
-```Bash
-cat file.txt | tr '[:upper:]' '[:lower:]'
+Det er også mulig å konvertere en streng til små bokstaver ved å bruke `awk` kommandoen og dens innebygde `tolower` funksjon. Dette kan se slik ut:
+
+```
+Bash
+# Lag en variabel med tekst
+original_tekst="HEI, JEG ER EN STRENG"
+
+# Bruk 'awk' kommandoen for å konvertere til små bokstaver
+konvertert_tekst=$(echo $original_tekst | awk '{print tolower($0)}')
+
+# Skriv ut den konverterte teksten
+echo $konvertert_tekst
+```
+
+Output:
+
+```
+hei, jeg er en streng
 ```
 
 ## Dypdykk
 
-For å gjøre en mer detaljert konvertering av en streng til små bokstaver, kan du også bruke kommandoen "sed". Dette vil tillate deg å kontrollere nøyaktig hvilke bokstaver som blir konvertert og hvordan.
+Både `tr` og `awk` kommandoene kan også brukes til å konvertere en streng til store bokstaver ved å erstatte `[:lower:]` med `[:upper:]`. Du kan også bruke flere forskjellige sett med spesialtegn i `tr` kommandoen for å konvertere andre typer bokstaver. For eksempel, `tr '[åæÅÆ]' '[aaAA]'` vil konvertere alle norske bokstaver til engelsk form.
 
-```Bash
-echo "hello world" | sed -e 's/./\L&/g'
-```
+Det er også mulig å bruke regulære uttrykk i `awk` kommandoen for mer avansert tekstbehandling. Det kan du lese mer om i `man` siden for `awk`.
 
-I dette tilfellet bruker vi "sed" til å endre hvert tegn i strengen til små bokstaver. Dette gjøres ved å bruke "s/" for å erstatte hvert tegn og "\L&/" for å gjøre det om til små bokstaver. Dette vil produsere den samme outputen som i eksemplene over.
+## Se Også
 
-## Se også
-
-- [Bash-tråden til omgjøring av store og små bokstaver](https://stackoverflow.com/questions/2264428/how-to-convert-uppercase-letters-to-lowercase) 
-- [Tr-kommandoen dokumentasjon](https://www.gnu.org/software/sed/manual/html_node/The-_0022tr_0022-Command.html)
-- [Sed-kommandoen dokumentasjon](https://www.gnu.org/software/sed/manual/sed.html)
+- [Bash `tr` kommandoen](https://linux.die.net/man/1/tr)
+- [Bash `awk` kommandoen](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [Bash regulære uttrykk](https://www.gnu.org/software/gawk/manual/html_node/Regexp.html#Regexp)

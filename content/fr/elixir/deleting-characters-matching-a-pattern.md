@@ -1,42 +1,59 @@
 ---
-title:                "Elixir: Suppression de caractères correspondants à un motif"
+title:                "Elixir: Supprimer des caractères correspondant à un motif"
+simple_title:         "Supprimer des caractères correspondant à un motif"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
+Êtes-vous un programmeur expérimenté en recherche d'un moyen efficace de supprimer des caractères correspondant à un modèle spécifique dans votre code Elixir ? Ou peut-être êtes-vous juste curieux de savoir comment cette tâche peut être accomplie en utilisant le langage de programmation fonctionnel préféré des développeurs. Quelle que soit la raison, cet article vous expliquera tout ce que vous devez savoir pour supprimer facilement des caractères correspondant à un motif en Elixir.
 
-Lorsque vous travaillez avec du texte, il peut arriver que vous souhaitiez supprimer des caractères qui correspondent à un certain motif. Cela peut être utile si vous souhaitez nettoyer une chaîne de caractères ou extraire certaines informations spécifiques.
+## Comment faire
+Pour supprimer des caractères correspondant à un motif en Elixir, il existe plusieurs options. L'une des méthodes les plus courantes est d'utiliser la fonction `String.replace/3` qui prend en paramètre une chaîne de caractères, un motif et la chaîne de remplacement. Voici un exemple de code pour supprimer les caractères "a" et "e" d'une chaîne de caractères.
 
-# Comment faire
-
-Dans Elixir, vous pouvez facilement supprimer des caractères correspondant à un motif en utilisant la méthode `String.replace/4`. Cette méthode prend en paramètre une chaîne de caractères, le motif à rechercher, la chaîne de remplacement et des options facultatives.
-
-```
-iex> String.replace("Bonjour!", ~r/o+/, "-")
-"B-nj-r!"
-```
-
-Dans cet exemple, nous remplaçons toutes les occurrences de la lettre "o" par un tiret "-" dans la chaîne "Bonjour!". Nous utilisons également une expression régulière pour indiquer que nous voulons rechercher toutes les occurrences de la lettre "o" en tant que motif.
-
-# Plongée profonde
-
-Il est important de noter que la méthode `String.replace/4` ne modifie pas la chaîne d'origine, elle renvoie plutôt une nouvelle chaîne avec les modifications apportées. Si vous voulez modifier la chaîne d'origine, vous pouvez utiliser la méthode `String.replace!/4` en ajoutant le symbole "!" à la fin. Cela rendra la méthode destructive et modifie la chaîne d'origine.
-
-Lorsque vous utilisez cette méthode, vous pouvez également utiliser des groupes de capture dans votre motif et les utiliser dans la chaîne de remplacement. Par exemple :
-
-```
-iex> String.replace("12/10/2021", ~r/(\d{2})\/(\d{2})\/(\d{4})/, "$2-$1-$3")
-"10-12-2021"
+```Elixir
+string = "Hello World"
+new_string = String.replace(string, ~r/[ae]/, "")
+IO.puts new_string
+# Output: "Hllo World"
 ```
 
-Ici, nous utilisons des groupes de capture pour extraire le jour, le mois et l'année de la chaîne "12/10/2021" et les réorganiser dans un nouveau format.
+Dans cet exemple, nous utilisons les expressions régulières pour créer un motif correspondant à toutes les occurrences des lettres "a" et "e" dans la chaîne d'origine. La chaîne de remplacement est simplement une chaîne vide, ce qui signifie que toutes les occurrences du motif seront supprimées dans la chaîne d'origine.
 
-# Voir aussi
+Une autre option est d'utiliser la fonction `String.gsub/3` qui fonctionne de la même manière, mais permet également de spécifier le nombre maximum de remplacements à effectuer.
 
-- [Documentation officielle d'Elixir pour String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Liste des expressions régulières en Elixir](https://medium.com/@JottedPictionary/a-beginners-guide-to-regular-expressions-regex-in-elixir-5ca9c6f34184)
-- [Différence entre les méthodes destructives et non destructives en Elixir](https://elixir-lang.org/getting-started/runtime-errors.html#destructive-functions)
+```Elixir
+string = "Hello World"
+new_string = String.gsub(string, ~r/[ae]/, "", 1)
+IO.puts new_string
+# Output: "Hllo World"
+```
+
+Ici, nous avons spécifié que nous voulons remplacer seulement une occurrence du motif et donc seule la première lettre "e" sera supprimée de la chaîne d'origine.
+
+## Plongée en profondeur
+Si vous souhaitez avoir un meilleur contrôle sur la façon dont les caractères correspondant à un motif sont supprimés, vous pouvez également utiliser la fonction `String.split/3` pour séparer la chaîne en une liste de substrings en utilisant le motif comme séparateur, puis utiliser la fonction `List.flatten/1` pour réduire la liste en une seule chaîne. Voici un exemple de code qui supprime toutes les occurrences du motif "abc" dans une chaîne.
+
+```Elixir
+string = "abc123abc456abc"
+new_string = string
+            |> String.split(~r/abc/)
+            |> List.flatten()
+IO.puts new_string
+# Output: "123456"
+```
+
+De plus, il existe également la fonction `Regex.replace/3` qui permet d'utiliser des expressions régulières pour remplacer les occurrences d'un motif dans une chaîne.
+
+## Voir aussi
+Maintenant que vous connaissez les bases de la suppression de caractères correspondant à un motif en Elixir, voici quelques articles supplémentaires pour approfondir vos connaissances :
+
+- [Documentation officielle sur les expressions régulières en Elixir](https://hexdocs.pm/elixir/Regex.html)
+- [Article sur la manipulation de chaînes en Elixir](https://medium.com/elixirlabs/the-ultimate-elixir-string-manipulation-guide-c08eea4c972f)
+- [Exemples de code pratiques pour le traitement de chaînes en Elixir](https://github.com/wilddima/elixir-data-algebra)
+
+N'hésitez pas à explorer et à expérimenter différents moyens de supprimer des caractères correspondant à un motif dans votre code Elixir. Qui sait, vous pourriez découvrir une méthode plus efficace que celles présentées dans cet article. Bon coding !

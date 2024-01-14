@@ -1,40 +1,54 @@
 ---
-title:                "C: Stor bokstavering av en streng"
+title:                "C: Å gjøre en streng stor forbokstav"
+simple_title:         "Å gjøre en streng stor forbokstav"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
-Hvorfor bry seg med å gjøre en setning med små bokstaver til en med store bokstaver? Vel, det kan være nyttig når du for eksempel må gjøre en tittel mer iøynefallende eller lage en streng som skal brukes som en variabel eller kanskje til og med en passordbekreftelse.
+## Hvorfor
+Hvis du noensinne har jobbet med tekstbehandling eller dataprogrammering, har du sannsynligvis støtt på behovet for å konvertere en tekststreng til store bokstaver. Dette kan være nyttig for formatering, søkefunksjonalitet eller brukertilpasning, og derfor er det viktig å vite hvordan man kan gjøre dette i C-programmering.
 
-## Hvordan gjøre det
-For å gjøre en streng til store bokstaver i C, kan du bruke funksjonen `toupper()`. Her er et eksempel på hvordan den kan brukes:
+## Hvordan
+Du kan enkelt konvertere en tekststreng til store bokstaver ved hjelp av standard C-funksjoner. Her er et eksempel på hvordan dette kan gjøres:
+
 ```C
 #include <stdio.h>
+#include <string.h>
 #include <ctype.h>
-int main()
-{
-    char str[] = "Hei alle sammen!";
-    int i = 0;
-    while (str[i])
-    {
-        putchar(toupper(str[i]));
-        i++;
+
+int main(){
+    char tekst[] = "dette er en tekststreng";
+    
+    printf("Original tekst: %s\n", tekst);
+    
+    for(int i = 0; i < strlen(tekst); i++){
+        tekst[i] = toupper(tekst[i]);
     }
+    
+    printf("Konvertert tekst: %s\n", tekst);
+    
     return 0;
 }
 ```
-Dette eksemplet vil skrive ut "HEI ALLE SAMMEN!".
+
+Dette programmet bruker funksjonen `toupper` fra standardbiblioteket <ctype.h> for å konvertere hver bokstav i teksten til store bokstaver. Ved hjelp av en for-løkke og funksjonen `strlen` fra <string.h> kan vi gå gjennom teksten og gjøre endringene.
+
+Output:
+```
+Original tekst: dette er en tekststreng
+Konvertert tekst: DETTE ER EN TEKSTSTRENG
+```
 
 ## Dypdykk
-Selv om `toupper()` funksjonen er enkel og effektiv, er det viktig å merke seg at den kun fungerer for engelske alfabeter. Dersom du jobber med andre språk som har spesifikke store og små bokstavpar, så kan du bruke funksjonene `islower()` og `toupper()` i en kombinasjon for å håndtere disse tilfellene.
+I tillegg til funksjonen `toupper`, finnes det andre alternative måter å konvertere en tekststreng til store bokstaver på. En annen måte er ved hjelp av funksjonen `strlwr` fra <string.h>, som konverterer alle bokstaver til små bokstaver.
 
-Det er også verdt å merke seg at `toupper()` funksjonen ikke endrer den opprinnelige strengen, men returnerer en kopi med store bokstaver. Dersom du trenger å endre den opprinnelige strengen, må du enten bruke `strcpy()` eller manuelt endre bokstavene i strengen.
+Det er også viktig å merke seg at disse funksjonene kun fungerer på ASCII-tegn, og derfor vil de ikke fungere på spesialtegn eller bokstaver fra andre alfabeter. For å håndtere disse bokstavene, må man bruke mer avanserte metoder og algoritmer.
 
 ## Se også
-- [C library - cctype](https://www.ibm.com/support/knowledgecenter/SSLTBW_2.3.0/com.ibm.zos.v2r3.bpxbd00/toupper.htm)
-- [Tutorialspoint - C library function - toupper()](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
-- [JournalDev - C string library and its functions with examples](https://www.journaldev.com/31199/c-string-function-library-string-h)
+- [Offisiell dokumentasjon for toupper funksjonen](https://www.cplusplus.com/reference/cctype/toupper/)
+- [Offisiell dokumentasjon for strlwr funksjonen](https://www.cplusplus.com/reference/cstring/strlwr/)
+- [En artikkel om konvertering av tekster i C](https://www.geeksforgeeks.org/converting-strings-numbers-cc/)

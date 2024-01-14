@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Trova la lunghezza di una stringa"
+title:                "Haskell: Trovare la lunghezza di una stringa"
+simple_title:         "Trovare la lunghezza di una stringa"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/finding-the-length-of-a-string.md"
 ---
 
@@ -9,53 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-A volte, quando si scrive un codice, è necessario sapere quanti caratteri ci sono in una stringa. Questo può essere utile per validare l'input dell'utente, per fare operazioni di manipolazione di testo o semplicemente per ottenere informazioni su una variabile di tipo stringa. In questo post, impareremo come trovare la lunghezza di una stringa in Haskell.
+Spesso ci troviamo a dover lavorare con stringhe di testo in programmi Haskell. E una delle operazioni più comuni da eseguire su una stringa è la ricerca della sua lunghezza. Ma perché dovremmo preoccuparci di trovare la lunghezza di una stringa? Continua a leggere per scoprirlo!
 
 ## Come fare
 
-Per calcolare la lunghezza di una stringa in Haskell, possiamo utilizzare la funzione integrata `length`. Questa funzione accetta una stringa come argomento e restituisce un intero che rappresenta il numero di caratteri nella stringa.
+Per trovare la lunghezza di una stringa in Haskell, possiamo utilizzare la funzione `length`. Questa funzione accetta una stringa come argomento e restituisce il numero di caratteri presenti nella stringa.
 
 ```Haskell
-length "Ciao!"     -- Output: 5
-length "Haskell"   -- Output: 7
+length "Ciao mondo!" 
+-- Output: 11
 ```
 
-Possiamo anche applicare questa funzione ad una variabile di tipo stringa.
+In questo esempio, abbiamo utilizzato la funzione `length` per trovare la lunghezza della stringa "Ciao mondo!". Come puoi vedere, il risultato è 11 poiché la stringa è composta da 11 caratteri.
+
+Ma cosa succede se vogliamo trovare la lunghezza di una stringa vuota? In tal caso, otterremo un risultato di 0.
 
 ```Haskell
-let myString = "Buongiorno"
-length myString    -- Output: 10
+length "" 
+-- Output: 0
 ```
 
-Una delle caratteristiche interessanti di Haskell è che possiamo applicare funzioni agli argomenti usando il concetto di "composition". Ciò significa che possiamo combinare due o più funzioni per ottenere un risultato più complesso. Ad esempio, possiamo applicare la funzione `length` ad una stringa convertita in maiuscolo usando la funzione `map`.
+Abbiamo anche la possibilità di applicare la funzione `length` a una lista di stringhe invece che a una sola stringa.
 
 ```Haskell
-map toUpper "ciao"        -- Output: "CIAO"
-length (map toUpper "ciao") -- Output: 4
-```
-
-Un'altra funzione utile per la manipolazione di stringhe è `take`, che accetta un numero intero e una stringa e restituisce una sottostringa di lunghezza pari al numero specificato. Possiamo combinare queste due funzioni per ottenere la prima metà di una stringa.
-
-```Haskell
-take (length myString `div` 2) myString    -- Output: "Buon"
+length ["Ciao", "mondo", "!"]
+-- Output: 3
 ```
 
 ## Approfondimento
 
-Ora che sappiamo come trovare la lunghezza di una stringa in Haskell, possiamo esplorare come funziona la funzione `length` in dettaglio. In realtà, `length` è definita come una funzione ricorsiva nel modulo `Prelude` di Haskell.
+In Haskell, la funzione `length` è definita ricorsivamente, il che significa che viene applicata ripetutamente fino a quando non viene raggiunto il caso base. Nel caso della stringa vuota, il caso base è 0, poiché una stringa vuota non ha alcun carattere. Nel caso di una stringa non vuota, la funzione viene applicata alla stringa privata del primo carattere e viene aggiunto 1 al risultato finale.
 
-```Haskell
-length :: [a] -> Int
-length [] = 0
-length (x:xs) = 1 + length xs
-```
-
-Questa definizione può sembrare un po' strana all'inizio, ma è in realtà molto semplice. La funzione `length` accetta una lista di elementi di qualsiasi tipo (`a`) e restituisce un intero (`Int`). La prima riga della definizione è chiamata "caso base" e gestisce il caso in cui la lista è vuota, restituendo semplicemente 0. La seconda riga, invece, sfida la lista con il pattern matching, prendendo il primo elemento (`x`) e il resto della lista (`xs`). Quindi somma 1 al risultato della chiamata ricorsiva della funzione `length` sul resto della lista.
-
-In sostanza, la funzione `length` scorre ricorsivamente la lista finché non raggiunge il caso base, contando il numero di elementi nella lista man mano che procede.
+Inoltre, è importante notare che la funzione `length` è molto efficiente in quanto tiene traccia della lunghezza della stringa durante il processo di esecuzione del programma invece di doverla calcolare ogni volta.
 
 ## Vedi anche
 
-- Come usare le funzioni `map` e `length` in Haskell: https://www.tutorialspoint.com/How-can-I-use-map-and-length-functions-in-Haskell
-- Una guida completa alle funzioni per la manipolazione di stringhe in Haskell: https://wiki.haskell.org/wikiupload/9/97/TMR-Issue13.pdf
-- Il modulo `Prelude` di Haskell: https://downloads.haskell.org/~ghc/8.4.3/docs/html/libraries/base-4.11.1.0/Prelude.html
+- [Documentazione ufficiale di Haskell](https://www.haskell.org/documentation/)
+- [Funzioni di base in Haskell](https://www.haskell.org/onlinereport/standard-prelude.html)

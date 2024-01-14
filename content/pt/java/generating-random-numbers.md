@@ -1,60 +1,55 @@
 ---
 title:                "Java: Gerando números aleatórios"
+simple_title:         "Gerando números aleatórios"
 programming_language: "Java"
-category:             "Numbers"
+category:             "Java"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Gerar Números Aleatórios em Java
+## Por que utilizar a geração de números aleatórios em Java?
 
-A geração de números aleatórios é uma função importante em linguagens de programação, incluindo Java. A capacidade de gerar números aleatórios pode ser útil em jogos, simulações, criptografia, e muitas outras aplicações. Além disso, pode adicionar um elemento de aleatoriedade e imprevisibilidade aos programas, tornando-os mais interessantes e desafiadores.
+A geração de números aleatórios é uma técnica muito útil na programação em Java. Ela permite que o programa gere valores aleatórios, ou seja, que não seguem uma sequência lógica definida, para serem utilizados em diversas situações. Esses números podem ser utilizados em jogos, sorteios, criptografia, entre outras aplicações. Além disso, a geração de números aleatórios pode ser uma forma de aumentar a eficiência e segurança de um programa.
 
-## Como Gerar Números Aleatórios em Java
+## Como gerar números aleatórios em Java?
 
-Em Java, podemos gerar números aleatórios usando a classe `java.util.Random`. Aqui está um exemplo simples de um programa que gera 10 números aleatórios:
+Para gerar números aleatórios em Java, existem algumas classes e métodos que podem ser utilizados. Vamos ver abaixo um exemplo de código que gera um número inteiro aleatório entre 1 e 10:
 
 ```Java
 import java.util.Random;
 
-public class GeradorAleatorio {
-    public static void main(String[] args) {
-        Random gerador = new Random(); //cria um objeto Random
-        for (int i = 0; i < 10; i++) {
-            int numero = gerador.nextInt(100); //gera um número aleatório entre 0 e 99
-            System.out.println("Número gerado: " + numero); 
-        }
-    }
+public class GeraAleatorio {
+  public static void main(String[] args) {
+    // Cria um objeto da classe Random
+    Random gerador = new Random();
+    
+    // Gera um número aleatório entre 1 e 10
+    int num = gerador.nextInt(10) + 1;
+    
+    // Imprime o número gerado
+    System.out.println("O número aleatório gerado é: " + num);
+  }
 }
 ```
-A saída deste programa pode ser algo como:
+
+O resultado da execução deste código pode ser algo como:
 
 ```
-Número gerado: 76
-Número gerado: 29
-Número gerado: 85
-Número gerado: 51
-Número gerado: 99
-Número gerado: 19
-Número gerado: 32
-Número gerado: 70
-Número gerado: 58
-Número gerado: 2
+O número aleatório gerado é: 7
 ```
 
-Podemos usar o método `nextInt()` para gerar números inteiros em um determinado intervalo, como no exemplo acima. Também existem outros métodos disponíveis, como `nextDouble()` para gerar números decimais e `nextBoolean()` para gerar valores booleanos. Além disso, podemos definir uma semente (seed) para o objeto `Random` para obtermos uma sequência de números aleatórios determinística.
+Além do método `nextInt()`, a classe `Random` também possui outros métodos para gerar números aleatórios, como `nextDouble()` e `nextBoolean()`. É importante lembrar que esses números não são verdadeiramente aleatórios, mas sim pseudoaleatórios, ou seja, eles seguem uma sequência determinística que é difícil de prever. Para entender melhor o funcionamento desses métodos e como eles geram os números, vamos dar uma olhada na seção "Detalhes da Geração de Números Aleatórios".
 
-## Aprofundando-se em Geração de Números Aleatórios
+## Detalhes da Geração de Números Aleatórios
 
-A classe `java.util.Random` usa um algoritmo para gerar números aleatórios, mas é importante notar que esses números não são verdadeiramente aleatórios. Eles são calculados a partir de uma fórmula matemática e podem ser reproduzidos se a semente for a mesma. Se for necessário gerar números verdadeiramente aleatórios, é preciso utilizar uma fonte externa de ruído, como o movimento do mouse ou a temperatura ambiente, para criar uma semente única.
+A classe `Random` utiliza um algoritmo para gerar seus números aleatórios, e esse algoritmo pode variar de acordo com a versão do Java que está sendo utilizada. Antes da versão 8, o algoritmo padrão era o *linear congruential generators*, mas a partir do Java 8, o algoritmo utilizado é o *xorshift generators*. Esses algoritmos são baseados em operações matemáticas e de bit shifting que garantem uma sequência pseudoaleatória.
 
-Além disso, é importante lembrar que os números gerados pela classe `Random` seguem uma distribuição uniforme, ou seja, todos têm a mesma probabilidade de serem gerados. Se for necessário uma distribuição diferente, como uma distribuição normal, existem outras classes e métodos disponíveis em Java para isso.
+Outro ponto importante é que a classe `Random` possui uma *seed*, que é um valor inicial para gerar os números. Se nenhum valor for especificado, ela utiliza o tempo atual como *seed*, mas é possível definir uma *seed* personalizada através do construtor `Random(seed)`. Isso permite que um mesmo conjunto de números seja gerado sempre que a mesma *seed* for utilizada.
 
-## Veja Também
+## Veja também
 
-- [Documentação oficial da classe `Random`](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Tutorial da Oracle sobre geração de números aleatórios em Java](https://docs.oracle.com/javase/tutorial/java/javaOO/random.html)
-- [Exemplos de geração de números aleatórios em Java](https://www.baeldung.com/java-random)
-
-*Traduzido de [Java Random Number Generation for Beginners](https://www.baeldung.com/java-random)*
+- [Documentação oficial da classe Random em Java](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [Tutorial do Java Random: Como gerar números aleatórios em Java](https://www.baeldung.com/java-random)
+- [Vídeo sobre geração de números aleatórios em Java](https://www.youtube.com/watch?v=s-yJy5MqYPg)

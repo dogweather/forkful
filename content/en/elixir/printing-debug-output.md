@@ -1,90 +1,58 @@
 ---
 title:                "Elixir recipe: Printing debug output"
+simple_title:         "Printing debug output"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Have you ever encountered a bug in your Elixir code and spent hours trying to figure out where the issue lies? Printing debug output is a useful technique that can help you identify and fix bugs more efficiently. In this blog post, we will explore the importance of printing debug output and how to effectively use it in your Elixir code.
+Debugging is an essential part of the development process in any programming language. It allows developers to identify and fix issues in their code. However, sometimes debugging can be a challenging and time-consuming task. This is where printing debug output comes in handy. By printing out specific values or messages during the execution of our code, we can better understand its flow and identify any potential bugs or errors.
 
-## How To
+## How To 
 
-To print debug output in Elixir, we can use the `IO.inspect/2` function. This function takes two arguments: the value we want to inspect and an optional message to display alongside the output.
-
-```Elixir
-defmodule MyModule do
-  def add(a, b) do
-    result = a + b
-    IO.inspect(result, label: "Result is")
-    result
-  end
-end
-
-MyModule.add(2, 3)
-
-```
-
-The above code will output the following:
-
-```
-Result is: 5
-```
-
-We can also use interpolation in our message to display the values of variables at a specific point in our code.
+To print debug output in Elixir, we can use the `IO.inspect/2` function. This function takes in two arguments - the value we want to print and an optional keyword list for formatting options. Let's see an example:
 
 ```Elixir
-defmodule MyModule do
-  def say_hello(name) do
-    message = "Hello #{name}!"
-    IO.inspect(message, label: "Message:")
-  end
-end
-
-MyModule.say_hello("John")
-
+my_list = [1, 2, 3]
+IO.inspect(my_list)
 ```
 
-The output will be:
+The output of this code would be:
 
 ```
-Message: Hello John!
+[1, 2, 3]
 ```
 
-This can be especially helpful in larger codebases where it may be difficult to keep track of variable values.
-
-## Deep Dive
-
-One thing to keep in mind when printing debug output is that it can slow down your code. This is because the function needs to convert the value to a string before displaying it. To avoid this performance impact, we can use `IO.inspect/2` with the `:label` option set to `nil`.
+We can also use string interpolation in the `IO.inspect/2` function to print out a message along with the value. Here's an example:
 
 ```Elixir
-defmodule MyModule do
-  def factorial(n) do
-    if n == 1 do
-      result = 1
-    else
-      result = n * factorial(n-1)
-    end
-    IO.inspect(nil, label: "Current value:")
-    result
-  end
-end
-
-MyModule.factorial(5)
-
+name = "John"
+IO.inspect("Hello, my name is #{name}")
 ```
 
-In this example, we are only printing the label without the actual value, thus avoiding the performance impact.
+The output of this code would be:
 
-Another useful function for printing debug output is `IO.puts/2`, which simply outputs the given value as a string without any additional formatting. This can be helpful when debugging complex data structures, as it will print the entire structure on a single line.
+```
+"Hello, my name is John"
+```
 
-## See Also
+## Deep Dive 
 
-- [Elixir School - Debugging](https://elixirschool.com/en/lessons/basics/debugging/)
-- [Elixir Documentation - IO module](https://hexdocs.pm/elixir/IO.html)
-- [Debugging with `IO.inspect` in Elixir](https://dev.to/afreeorange/debugging-with-io-inspect-in-elixir-4ck0)
+There are a few important things to keep in mind when printing debug output in Elixir. First, it's essential to use the `IO.inspect/2` function only during development. It should not be left in the code in production as it can cause performance issues. 
 
-Happy debugging!
+Secondly, we can also use the `IO.inspect/2` function to print out the values of variables in a specific function. This can be helpful in cases where we want to monitor the state of a variable throughout the execution of a function.
+
+Lastly, there are additional options available for formatting the output of the `IO.inspect/2` function, such as specifying the color or depth of the output.
+
+## See Also 
+
+- [Elixir official documentation on IO.inspect/2](https://hexdocs.pm/elixir/IO.html#inspect/2)
+- [Official Elixir debugging guide](https://elixir-lang.org/getting-started/debugging.html)
+- [Code School's guide to debugging in Elixir](https://www.codeschool.com/articles/getting-started-with-debugging-in-elixir)
+
+By using the `IO.inspect/2` function, printing debug output in Elixir becomes a straightforward and efficient method for debugging your code. So next time you're stuck on a bug, try adding some debug output and see how it helps in identifying the issue. Happy coding!

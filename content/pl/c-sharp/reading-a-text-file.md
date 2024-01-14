@@ -1,7 +1,9 @@
 ---
 title:                "C#: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/reading-a-text-file.md"
 ---
 
@@ -9,42 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek chciałeś otworzyć plik tekstowy w swoim programie i wykorzystać jego zawartość? Pisanie kodu, który umożliwi Ci czytanie plików tekstowych może być przydatne w wielu scenariuszach, takich jak przetwarzanie danych lub tworzenie raportów. W tym artykule dowiesz się, jak w łatwy sposób czytać pliki tekstowe w języku C#.
+Czy kiedykolwiek musiałeś przetwarzać spory plik tekstowy w swoim programie? Czy zastanawiałeś się, jak usprawnić ten proces? W tym artykule dowiesz się, dlaczego warto poznać technikę czytania plików tekstowych oraz jak to zrobić w języku C#.
 
 ## Jak To Zrobić
 
-W C#, aby czytać pliki tekstowe, musisz najpierw użyć klasy StreamReader, która pozwala na czytanie danych z pliku. Zobacz poniższy kod:
+Kodowanie w języku C# jest bardzo wygodne dzięki wbudowanym narzędziom do operacji na plikach. Przykładowo, aby odczytać zawartość pliku tekstowego, potrzebujemy tylko kilku linijek kodu:
 
 ```C#
-using System;
-using System.IO;
+using System.IO; // importujemy bibliotekę do operacji na plikach
 
-class Program
-{
-    static void Main(string[] args)
-    {
-        string filePath = "textFile.txt";
-        StreamReader reader = new StreamReader(filePath);
+string path = @"C:\nazwa_folderu\plik.txt"; // określamy ścieżkę pliku
+string content = File.ReadAllText(path); // odczytujemy jego zawartość
 
-        string fileContents = reader.ReadToEnd();
-
-        Console.WriteLine(fileContents);
-
-        reader.Close();
-    }
-}
+Console.WriteLine(content); // wyświetlamy zawartość na ekranie
 ```
 
-Powyższy kod pokazuje, jak możesz użyć klasy StreamReader do czytania pliku tekstowego. Najpierw musisz określić ścieżkę do pliku tekstowego, który chcesz otworzyć, a następnie utworzyć nowy obiekt klasy StreamReader, podając tę ścieżkę jako argument. Następnie użyj metody ReadToEnd(), aby przeczytać całą zawartość pliku i przypisać ją do zmiennej. Wreszcie, możesz wyświetlić zawartość pliku w konsoli i zamknąć obiekt reader.
+W powyższym przykładzie korzystamy z metody `ReadAllText` z klasy `File`, która przypisuje całą zawartość pliku do zmiennej `content`. Następnie wyświetlamy ją na ekranie dzięki funkcji `WriteLine` z klasy `Console`.
 
-W powyższym przykładzie użyliśmy metody ReadToEnd(), ale istnieją też inne metody, które możesz wykorzystać do czytania pliku w różnych sposób, takich jak ReadLine(), Read(), czy ReadBlock(). Zapoznaj się z dokumentacją dotyczącą klasy StreamReader, aby poznać pełną listę dostępnych metod.
+## Głębsze Zagadnienia
 
-## Deep Dive
+Warto zauważyć, że w powyższym przykładzie nie musimy pamiętać o zamykaniu pliku - metoda `ReadAllText` robi to za nas. Możemy także sprecyzować kodowanie czy znaki nowej linii przy pomocy innych metod, takich jak `ReadAllLines` czy `ReadAllBytes`.
 
-Klasa StreamReader oferuje również wiele opcji konfiguracyjnych, które mogą poprawić wydajność i kontrolę podczas czytania plików tekstowych. Na przykład, możesz określić kodowanie pliku, tryb otwarcia czy obiekt kodujący. Możesz również użyć konstrukcji "using" do automatycznego zamknięcia obiektu klasy StreamReader po użyciu go, co jest częstym i zalecanym sposobem korzystania z tej klasy.
+Kolejną przydatną funkcją jest operowanie na poszczególnych linijkach w pliku. Możemy to zrobić przy pomocy metody `File.ReadAllLines(path)`, która zwraca tablicę stringów zawierającą wszystkie linie pliku. Możemy także użyć pętli `foreach` do przejścia przez te linie lub wybierać konkretne linie według indeksów.
 
 ## Zobacz Również
 
-- Dokumentacja dotycząca klasy StreamReader: https://docs.microsoft.com/pl-pl/dotnet/api/system.io.streamreader?view=net-5.0
-- Jak pisać do pliku tekstowego w C#: https://kodowanko.pl/jak-pisac-do-pliku-tekstowego-w-c/
-- Przetwarzanie plików w języku C#: https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file
+Jeśli chcesz dowiedzieć się więcej o operacjach na plikach w języku C#, możesz zapoznać się z poniższymi artykułami:
+
+- [Dokumentacja Microsoft o klasie `File`](https://docs.microsoft.com/pl-pl/dotnet/api/system.io.file?view=netcore-3.1)
+- [Poradnik Stack Overflow dotyczący czytania pliku w C#](https://stackoverflow.com/questions/1393708/how-to-read-a-text-file/1393734#1393734)
+
+Teraz już wiesz, jak odczytać zawartość pliku tekstowego w języku C#. Mamy nadzieję, że ten artykuł był dla Ciebie pomocny. Powodzenia!

@@ -1,57 +1,62 @@
 ---
-title:                "C++: Tekstitiedoston kirjoittaminen"
+title:                "C++: Tiedoston kirjoittaminen"
+simple_title:         "Tiedoston kirjoittaminen"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Miksi kirjoittaisit tekstitiedoston? Tekstitiedostot ovat hyödyllisiä kun haluat tallentaa tai lukea käyttöjärjestelmän ulkopuolisen tiedoston tietoja.
+Tekstitiedostojen kirjoittaminen on olennainen osa C++ -ohjelmointia, koska se mahdollistaa tietojen tallentamisen ja lukemisen pysyvästi. Tämä on erityisen hyödyllistä, kun haluat tallentaa käyttäjän syöttämiä tietoja tai luoda tiedostoihin lokitietoja.
 
-## Miten
+# Miten
+
+Tekstitiedoston kirjoittamiseen C++:lla on muutama eri vaihtoehto. Yksi tapa on avata tiedosto ofstream -luokalla ja käyttämällä siihen liittyviä funktioita, kuten open(), close() ja write(). Tässä esimerkissä luodaan tiedosto "teksti.txt" ja kirjoitetaan siihen teksti "Tervetuloa C++:aan!":
 
 ```C++
 #include <iostream>
 #include <fstream>
 
-int main()
-{
-    // Avataan tiedosto nimeltä "esimerkki.txt" ja kirjoitetaan siihen tekstiä
-    std::ofstream tiedosto("esimerkki.txt");
-    tiedosto << "Tämä on esimerkkitekstiä!" << std::endl;
-    
-    // Suljetaan tiedosto
-    tiedosto.close();
+using namespace std;
 
-    // Avataan tiedosto uudelleen ja luetaan siitä tekstiä
-    std::ifstream tiedosto2("esimerkki.txt");
-    if (tiedosto2.is_open()) {
-        std::string rivi;
-        while (getline(tiedosto2, rivi)) {
-            std::cout << rivi << std::endl;
-        }
-        tiedosto2.close();
+int main() {
+
+    // Avataan tiedosto ja liitetään se ofstream -luokkaan
+    ofstream tiedosto("teksti.txt");
+
+    // Tarkistetaan, onko tiedoston avaaminen onnistunut
+    if (tiedosto.is_open()) {
+        cout << "Tiedosto avattu onnistuneesti!" << endl;
+
+        // Kirjoitetaan teksti tiedostoon käyttämällä write() -funktiota
+        tiedosto.write("Tervetuloa C++:aan!", sizeof("Tervetuloa C++:aan!"));
+        
+        // Suljetaan tiedosto
+        tiedosto.close();
     }
-    else {
-        std::cout << "Tiedoston avaaminen epäonnistui!" << std::endl;
-        return 1;
-    }
+    else
+        cout << "Tiedoston avaaminen epäonnistui." << endl;
 
     return 0;
 }
 ```
 
-Esimerkissä avataan tiedosto nimeltä "esimerkki.txt" ja kirjoitetaan siihen tekstiä. Sen jälkeen tiedosto suljetaan. Tämän jälkeen tiedosto avataan uudelleen ja siitä luetaan tekstiä. Lopuksi tiedosto suljetaan ja ohjelma palaa takaisin pääfunktioon.
+Tämän koodin suorittamisen jälkeen "teksti.txt" -tiedostoon pitäisi tulla teksti "Tervetuloa C++:aan!".
 
-## Syväsukellus
+# Syvällinen tutustuminen
 
-Tekstitiedostojen kirjoittaminen on olennainen osa monia C++ ohjelmia. Tiedostojen luominen, avaaminen, kirjoittaminen ja lukeminen ovat kaikki tärkeitä taitoja, jotka tulevat tutuiksi tekstitiedostoja käsitellessä. Tekstien lisäksi tiedostoihin voi myös tallentaa muita datatyyppejä, kuten lukuja ja taulukoita. On myös tärkeää huolehtia tiedoston käsittelyn oikeasta järjestyksestä, jotta tiedostoa voidaan käyttää halutulla tavalla.
+Tekstitiedoston kirjoittamiseen liittyen on hyvä huomioida muutama asia. Ensinnäkin, tiedostoon kirjoitettaessa on tärkeää avata tiedosto ofstream -luokalla, kuten edellisessä esimerkissä teimme. Tämä mahdollistaa tiedoston avaamisen vain kirjoitustarkoitusta varten. 
 
-## Katso myös
+Toiseksi, tekstiä kirjoitettaessa on huomioitava tiedostoon kirjoitettavien merkkien määrä. Esimerkissä käytimme funktion sizeof() avulla selvittämään annetun tekstinpätkän merkkien määrän. On myös tärkeää huomioida tiedostossa käytetty merkistön koodaustapa (esim. UTF-8 tai ANSI), jotta kirjoitettu teksti näkyy oikein.
 
-- [C++ tiedostojen käsittely](https://www.cplusplus.com/doc/tutorial/files/)
-- [Tiedostojen käsittely C++:lla](https://www3.ntu.edu.sg/home/ehchua/programming/cpp/cp10_IO.html)
-- [C++ tiedostot](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+Lisäksi, vaikka tiedostoon kirjoittamisessa käytettiin write() -funktiota, voidaan saman tuloksen saavuttaa myös käyttämällä << -operaattoria, kuten perinteisessä C++ -tulostuksessa.
+
+# Katso myös
+
+- [C++ ifstream ja ofstream -luokat (TutorialsPoint)](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+- [Merkkijonojen koodaukset (w3schools)](https://www.w3schools.com/charsets/default.asp)
+- [C++ -virtavirrat ja tiedostojen käsittely (cplusplus.com)](https://www.cplusplus.com/doc/tutorial/files/)

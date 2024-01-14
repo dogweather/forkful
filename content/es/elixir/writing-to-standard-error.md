@@ -1,59 +1,46 @@
 ---
-title:                "Elixir: Escribiendo en el error estándar"
+title:                "Elixir: Escribiendo a error estándar"
+simple_title:         "Escribiendo a error estándar"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué escribir en el estándar de error en Elixir?
+## Por qué
 
-Escribir en el estándar de error es una técnica útil para los programadores de Elixir. Esta práctica puede ayudar a encontrar y solucionar errores en el código de manera más eficiente, ya que los mensajes de error se muestran de manera más clara y detallada.
+Escribir en la salida de error estándar (standard error) es una habilidad útil para cualquier programador de Elixir. Permite imprimir mensajes de error y depuración que pueden ser de gran ayuda en la identificación y solución de problemas en el código.
 
 ## Cómo hacerlo
 
-Para escribir en el estándar de error en Elixir, simplemente usamos la función `IO.puts("mensaje de error")`. Este código imprimirá el mensaje de error en la terminal, permitiéndonos identificar rápidamente la causa del error.
+Para escribir en la salida de error estándar, se puede utilizar el módulo `IO` y su función `stderr`. Por ejemplo, si queremos imprimir un mensaje de error en la consola, podemos utilizar el siguiente bloque de código:
 
-```Elixir
-defmodule Ejemplo do
-  def dividir(x, y) do
-    if (y == 0) do
-      IO.puts("No se puede dividir por cero.")
-    else
-      x / y
-    end
-  end
-end
-
-IO.puts("5 dividido entre 0 es #{Ejemplo.dividir(5, 0)}")
-```
-La salida en la terminal será: `No se puede dividir por cero.`
-
-Otra forma de escribir en el estándar de error es usando la macro `raise/1`, que nos permite generar un error con un mensaje personalizado.
-
-```Elixir
-defmodule Ejemplo do
-  def validar_edad(edad) do
-    if (edad < 18) do
-      raise ArgumentError, message: "Debes ser mayor de edad para ingresar."
-    end
-  end
-end
-
-Ejemplo.validar_edad(16)
+```elixir
+IO.stderr("¡Error! Este es un mensaje de error.")
 ```
 
-La salida en la terminal será: `** (ArgumentError) Debes ser mayor de edad para ingresar.`
+Esto imprimirá en pantalla el mensaje "¡Error! Este es un mensaje de error." en color rojo, lo que lo diferencia de los mensajes regulares que se imprimen con la función `IO.puts`.
 
-## En profundidad
+Otra forma de escribir en la salida de error estándar es utilizando la macro `raise` para generar una excepción. En este caso, el mensaje de error se imprimirá automáticamente en la consola al ser lanzada la excepción.
 
-Además de imprimir mensajes de error, escribir en el estándar de error también nos permite enviar información detallada, como el tipo de error, la línea de código donde ocurrió y cualquier dato importante que nos ayude a detectar y solucionar el problema. También podemos enviar el error a un archivo de log o a un servicio de monitoreo para tener un registro de los errores en nuestro código.
+```elixir
+raise "¡Oh no! Algo salió mal."
+```
 
-Es importante recordar usar esta técnica con moderación, ya que una gran cantidad de mensajes de error pueden hacer que el código sea difícil de leer y mantener.
+## Profundizando
+
+La salida de error estándar es especialmente útil en el desarrollo de aplicaciones en producción. Si un error ocurre en una aplicación en vivo, el mensaje se imprimirá en la consola y puede ser utilizado para identificar el problema y solucionarlo.
+
+Además, es posible personalizar los mensajes de error utilizando el módulo `Kernel` y la función `raise/2`. Esta función toma como argumentos una excepción y un mensaje personalizado que se mostrará en la consola.
+
+```elixir
+raise RuntimeError, "¡Hubo un error en la conexión con la base de datos!"
+```
 
 ## Ver también
 
-- [Documentación de IO](https://hexdocs.pm/elixir/IO.html)
-- [Documentación de raise/1](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#raise/1)
-- [Guía de Elixir para principiantes](https://coachacademy.io/learn-elixir-beginners-guide/)
+Para más información sobre el manejo de errores y excepciones en Elixir, consulta la documentación oficial en [elixir-lang.org](https://elixir-lang.org/getting-started/exceptions.html) y [Elixir School](https://elixirschool.com/es/lessons/basics/errors/).
+
+Si quieres profundizar en el manejo de entradas y salidas en Elixir, te recomiendo leer [este artículo](https://medium.com/@ansart/entendiendo-las-entradas-y-salidas-en-elixir-6cbe7ae4ca4e) sobre el tema.

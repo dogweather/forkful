@@ -1,60 +1,47 @@
 ---
 title:                "Python: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "Python"
-category:             "Testing and Debugging"
+category:             "Python"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+# Dlaczego warto pisać testy w Pythonie?
 
-Testowanie kodu jest jedną z najważniejszych praktyk w programowaniu. Pomaga ono w zapewnieniu poprawności i niezawodności naszego kodu oraz umożliwia łatwiejsze odnalezienie i naprawienie błędów. Pisząc testy, mamy również pewność, że nasze zmiany w kodzie nie wpływają negatywnie na działanie już istniejącego kodu. Dlatego warto poznać podstawy tworzenia testów w języku Python.
+Pisanie testów jest nieodłączną częścią procesu programowania w Pythonie. Testowanie jest ważne, ponieważ pozwala na wykrycie błędów i zapewnienie, że nasz kod działa w sposób zamierzony. Jest to szczególnie przydatne w dużych projektach, w których można łatwo popełnić błąd lub przeoczyć potencjalne problemy.
 
-## Jak to zrobić?
+# Jak pisać testy w Pythonie?
 
-Aby rozpocząć tworzenie testów w języku Python, potrzebujemy biblioteki o nazwie `unittest`. Poniżej przedstawiamy przykładowy kod, który testuje funkcję dodawania:
+Testowanie w Pythonie jest niezwykle łatwe i prostsze niż w innych językach programowania. W celu napisania testów musimy wykorzystać moduł `unittest`, który jest wbudowany w standardową bibliotekę języka Python. Poniżej przedstawiony jest przykładowy kod, który testuje funkcję `multiply`, która mnoży dwie liczby:
 
-```Python
+```
+def multiply(x, y):
+    return x * y
+
 import unittest
 
-def dodaj(a, b):
-    return a + b
-
-class TestyFunkcjiDodawania(unittest.TestCase):
-    def test_poprawny_wynik(self):
-        self.assertEqual(dodaj(2, 2), 4)
-
-    def test_niepoprawny_wynik(self):
-        self.assertNotEqual(dodaj(5, 5), 12)
+class TestMultiply(unittest.TestCase):
+    def test_multiply(self):
+        self.assertEqual(multiply(3, 4), 12) # sprawdzamy, czy wynik jest równy 12
 
 if __name__ == '__main__':
     unittest.main()
 ```
 
-Powyższy kod definiuje testową klasę `TestyFunkcjiDodawania`, która dziedziczy po klasie `unittest.TestCase`. Następnie definiujemy dwa testy - `test_poprawny_wynik`, który sprawdza, czy funkcja `dodaj` zwróciła poprawny wynik, oraz `test_niepoprawny_wynik`, w którym oczekujemy, że funkcja `dodaj` zwróci inny wynik niż oczekiwany. Na końcu wywołujemy funkcję `unittest.main()` w celu uruchomienia testów. 
+W powyższym przykładzie użyliśmy klasy `TestCase`, która dostarcza różne metody asercji do porównywania wartości i sprawdzania czy nasz kod działa poprawnie. W tym przypadku użyliśmy metody `assertEqual`, która porównuje wartość zwróconą przez funkcję `multiply` z oczekiwanym wynikiem, w naszym przypadku jest to 12.
 
-Wynik wywołania powyższego kodu będzie wyglądał następująco:
+# Głębszy wgląd w pisanie testów
 
-```
-..
-----------------------------------------------------------------------
-Ran 2 tests in 0.000s
+Pisanie testów może wydawać się czasochłonnym procesem, ale jest to inwestycja w przyszłość. Nie tylko pozwala na szybkie wykrycie potencjalnych błędów, ale także ułatwia refaktoryzację i rozwój kodu. Testy powinny być napisane w czasie, gdy piszemy kod, a nie dopiero na końcu, gdy musimy je szybko dodać przed wdrożeniem.
 
-OK
-```
+Dobrą praktyką jest dzielenie testów na różne kategorie, takie jak testy jednostkowe, integracyjne czy funkcjonalne. Może to ułatwić późniejsze debugowanie i rozwiązywanie problemów.
 
-Kropki oznaczają, że wszystkie testy przeszły pomyślnie. Jeśli któryś z testów zawiedzie, zostanie wyświetlony błąd, który pomoże nam w odnalezieniu błędu w naszej funkcji.
+Należy również pamiętać, że testy nie są wystarczające w celu wyeliminowania wszelkich błędów. Warto również stosować inne techniki, takie jak code reviews czy pair programming, aby zminimalizować ryzyko wystąpienia błędów.
 
-## Głębszy zanurzenie
+# Zobacz również
 
-Tworzenie testów w języku Python jest bardzo elastyczne i pozwala na różnorodne podejścia. Możemy testować pojedyncze funkcje, klasy, a nawet całe aplikacje. Istnieje również wiele dodatkowych bibliotek, takich jak `pytest` czy `nose`, które oferują dodatkowe funkcjonalności i ułatwienia w pisaniu testów.
-
-Jedną z najważniejszych koncepcji w testowaniu jest tzw. "jednostka testowa" - czyli najmniejsza możliwa część kodu, która może zostać przetestowana niezależnie. Dzięki temu, testy są bardziej przejrzyste i łatwiejsze w utrzymaniu.
-
-Kolejną ważną częścią pisania testów jest pokrycie kodu - czyli odsetek kodu, który został przetestowany. W idealnym przypadku powinniśmy przetestować wszystkie części naszego kodu, jednak często jest to niemożliwe lub nieopłacalne. Dlatego ważne jest, aby wybierać najważniejsze funkcje i klasy do przetestowania.
-
-## Zobacz też
-
-- [Dokumentacja `unittest` w języku Python](https://docs.python.org/3/library/unittest.html)
-- [Pytest - alternatywna biblioteka do testowania kodu w języku Python](https://docs.pytest.org/en/stable/)
+- Oficjalna dokumentacja modułu `unittest`: https://docs.python.org/3/library/unittest.html
+- Poradnik na temat pisania testów w Pythonie: https://realpython.com/python-testing/

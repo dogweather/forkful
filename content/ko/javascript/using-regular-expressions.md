@@ -1,60 +1,56 @@
 ---
 title:                "Javascript: 정규 표현식 사용하기"
+simple_title:         "정규 표현식 사용하기"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-정규 표현식을 사용하는 이유는 간단합니다. 그것은 문자열에서 패턴을 찾고 추출하는 강력한 도구입니다.
+# 왜
 
-## 사용 방법
-정규 표현식을 이용하면 문자열에서 원하는 패턴을 쉽게 찾을 수 있습니다. 아래의 예시를 보면서 실제로 어떻게 사용하는지 살펴보겠습니다.
+정규 표현식을 사용하는 이유는 다음과 같습니다. 일반적으로 코드에서 문자열과 패턴을 비교하거나 찾는 작업이 필요할 때 유용합니다. 예를 들어, 이메일 주소나 전화번호와 같은 패턴을 찾거나, 특정 문자열이 포함된 단어를 필터링할 때 정규 표현식을 사용할 수 있습니다.
+
+# 방법
+
+아래는 정규 표현식을 사용하는 간단한 예제 코드와 그 결과입니다. 코드는 Javascript 문법을 따르며, 입력된 문자열 중에서 "hello"라는 단어가 포함되어 있는 경우에만 결과를 출력하는 예제입니다.
 
 ```Javascript
-// 이메일 형식 검사
-const email = "example@example.com";
+let str = "안녕하세요, hello, 잘가";
+let pattern = /hello/;
 
-if(email.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i)) {
-  console.log("유효한 이메일 주소입니다.");
+if (pattern.test(str)) {
+  console.log("문자열 안에 hello가 포함되어 있습니다.");
 } else {
-  console.log("이메일 형식이 올바르지 않습니다.");
+  console.log("문자열 안에 hello가 포함되어 있지 않습니다.");
 }
 ```
 
-위의 코드에서는 `match()` 메소드를 이용해서 정규 표현식에 해당하는 패턴을 검사합니다. 만약 이메일이 올바른 형식이라면 `유효한 이메일 주소입니다.`가 출력될 것이고, 그렇지 않다면 `이메일 형식이 올바르지 않습니다.`가 출력됩니다.
+결과:
 
-또 다른 예시로는 문자열에서 숫자를 찾는 경우를 살펴보겠습니다.
-
-```Javascript
-// 문자열에서 숫자 찾기
-const str = "abc123def";
-
-const numbers = str.match(/[0-9]+/g);
-
-console.log(numbers); // 출력 결과: ["123"]
+```
+문자열 안에 hello가 포함되어 있습니다.
 ```
 
-위의 코드에서는 `match()` 메소드와 정규 표현식을 이용하여 문자열에서 숫자만 추출합니다. `g` 플래그를 이용하면 전체 문자열에서 모든 숫자를 추출할 수 있습니다.
+위의 예제는 단순하지만, 정규 표현식은 더 복잡한 패턴과 조건을 적용할 수도 있습니다. 다양한 메타 문자와 특수 문자를 사용하여 패턴을 정의할 수 있으며, 문자열 대신 변수를 사용할 수도 있습니다.
 
-## 깊이 파고들기
-정규 표현식은 패턴을 정의하고 검색, 치환, 추출 등 다양한 기능을 수행할 수 있습니다. 하지만 정규 표현식은 기초적인 문법부터 복잡한 패턴까지 다양한 사용법이 있기 때문에 학습에 시간이 걸릴 수 있습니다.
+# 깊이 파고들기
 
-정규 표현식을 구성하는 주요 요소는 다음과 같습니다.
+정규 표현식을 좀 더 자세히 알아보겠습니다. 정규 표현식은 문자열과 패턴을 매칭하는 과정에서 여러 가지 옵션과 플래그를 사용할 수 있습니다. 예를 들어, "i" 플래그를 사용하면 대소문자를 구분하지 않고 패턴을 검색할 수 있고, "g" 플래그를 사용하면 문자열 내에서 모든 패턴을 검색할 수 있습니다.
 
-- 패턴: 검색할 문자열의 패턴을 정의하는 부분입니다. 예를 들어 `[0-9]`는 숫자를 나타내는 패턴입니다.
-- 플래그: 검색할 문자열의 속성을 지정하여 작동 방식을 조절하는 부분입니다. 예를 들어 `g` 플래그는 검색할 문자열 전체에서 패턴을 찾는 것을 의미합니다.
-- 메소드: 정규 표현식을 이용하여 패턴을 검색, 치환 등 다양한 작업을 수행할 수 있도록 다양한 메소드를 제공합니다. 예를 들어 `match()` 메소드는 문자열에서 패턴을 검색하는 기능을 수행합니다.
+또한 정규 표현식 내에서 여러 가지 메타 문자를 조합해서 사용할 수도 있습니다. 예를 들어, [ ]를 사용하면 여러 문자 중 하나를 선택할 수 있고, ^를 사용하면 해당 문자를 제외할 수 있습니다.
 
-더 자세한 내용은 다음 링크들을 참고하시기 바랍니다.
+더 자세한 내용은 다음의 링크를 참고해주세요:
 
-## 참고 자료
-- [MDN 웹 문서 - 정규 표현식](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [정규 표현식 30분만에 제대로 배우기](https://github.com/ziishaned/learn-regex/blob/master/translations/README-ko.md)
-- [정규 표현식 코너 - 한글 버전](http://okjsp.net:8080/forums/498993)
+- [정규 표현식 입문자를 위한 기초 지식](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/정규_표현식#특수_문자)
+- [JavaScript의 정규 표현식 문법](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/정규_표현식)
+- [정규 표현식 실습 사이트](https://regexr.com/)
 
----
-## 참조
--[Markdown 문서로서 포스팅 할 때](http://blog.hwan.sk/2009/11/12/markdown-%EB%AC%B8%EC%84%9C%
+# 또 다른 방법
+
+- [정규 표현식 연습 문제](https://regexone.com/)
+- [정규 표현식 연습 문제와 해답](https://www.tutorialspoint.com/execute_regular_expression_online.php)
+- [정규 표현식으로 주어진 문자열 가공하기](https://www.sitepoint.com/regular-expressions-javascript/)
+- [정규 표현식으로 문자열 검색하기](https://codeburst.io/javascript-regular-expressions-explained-by-examples-3d02e1112c56)

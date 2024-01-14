@@ -1,55 +1,52 @@
 ---
 title:                "Elixir: 랜덤 숫자 생성"
+simple_title:         "랜덤 숫자 생성"
 programming_language: "Elixir"
-category:             "Numbers"
+category:             "Elixir"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-왜?: 무작위 숫자 생성에 참여할 이유는 컴퓨터 프로그래밍에서 사용자에게 랜덤한 데이터를 생성하는 데 유용하기 때문입니다.
+# 왜
 
-## 왜
+랜덤 숫자를 생성하는 것이 왜 중요한지 궁금하신가요? 보통 암호화나 시뮬레이션 등 다양한 프로그래밍 분야에서 랜덤 숫자가 필요합니다.
 
-랜덤 숫자를 생성하는 것은 다양한 목적에 사용될 수 있습니다. 예를 들어, 게임에서 랜덤한 이벤트를 발생시키거나 무작위로 선정된 사용자에게 상품을 제공하는 등의 용도로 사용됩니다.
+# 사용 방법
 
-## 어떻게
+랜덤 숫자를 생성하는 가장 간단한 방법은 Elixir의 `:random` 모듈을 사용하는 것입니다. 아래는 0부터 100까지의 랜덤 숫자를 생성하는 코드 예시입니다.
 
-랜덤한 숫자를 Elixir에서 생성하는 방법은 간단합니다. `:rand.uniform/1` 함수를 사용하여 무작위로 숫자를 생성할 수 있습니다. 아래는 1과 10 사이의 숫자를 무작위로 생성하는 예제 코드입니다.
-
-```elixir
-:rand.uniform(1..10)
+```Elixir
+random_number = :random.uniform(0, 100)
+IO.puts(random_number)
 ```
+출력 예시:
+` 53 `
 
-출력 결과는 매번 실행할 때마다 다를 수 있습니다. 예를 들어, `4`, `9`, `2`와 같은 숫자를 얻을 수 있습니다.
+또 다른 방법으로는 `Enum.random/1` 함수를 사용하는 것입니다. 이 함수에는 리스트 혹은 범위를 인자로 전달할 수 있습니다. 아래는 리스트에서 랜덤하게 요소를 선택하는 코드 예시입니다.
 
-### 범위 지정하기
-
-위의 예제에서 보듯이, `:rand.uniform/1` 함수를 사용하면 무작위로 범위 내의 숫자를 생성할 수 있습니다. 예를 들어, `1..10` 범위를 사용하면 1과 10 사이의 숫자를 생성할 수 있습니다.
-
-```elixir
-:rand.uniform(1..10)
+```Elixir
+random_element = Enum.random(["apple", "orange", "banana", "grape"])
+IO.puts(random_element)
 ```
+출력 예시:
+`"orange"`
 
-출력 결과는 매번 실행할 때마다 다를 수 있습니다. 예를 들어, `3`, `6`, `8`과 같은 숫자를 얻을 수 있습니다.
+# 깊이 들어가기
 
-### 부동소숫점 숫자 생성하기
+랜덤 숫자를 생성할 때 중요한 것은 사실적인 결과뿐만 아니라 재현성(reproducibility)도 중요합니다. 다시 실행해도 같은 결과를 얻을 수 있어야 합니다. 따라서, 이를 위해 Elixir에서는 `:random.seed/1` 함수를 사용합니다. 이 함수에는 랜덤 숫자를 생성할 때 사용할 시드(seed) 값을 전달합니다. 시드 값을 미리 설정해 놓으면 같은 시드 값을 사용할 때마다 같은 결과를 얻을 수 있습니다.
 
-만약 부동소숫점 숫자를 생성하고 싶다면, `:rand.uniform/1` 함수에 소수를 사용하여 다음과 같이 입력하면 됩니다.
+또한, 랜덤 숫자를 생성하기 위해 가장 널리 사용되는 알고리즘은 선형 합동법(linear congruential generator)입니다. 이 알고리즘은 현재 시간을 시드 값으로 사용하며, 빠르고 간단하지만 예측 가능성이 높은 단점이 있습니다. 따라서 보안이 중요한 경우에는 더 안전한 랜덤 숫자 생성 방법을 사용해야 합니다.
 
-```elixir
-:rand.uniform(1.0..10.0)
-```
+# 참고자료
 
-출력 결과는 매번 실행할 때마다 다를 수 있습니다. 예를 들어, `2.5`, `6.8`, `9.3`과 같은 숫자를 얻을 수 있습니다.
+[Learn Elixir: generating random numbers](https://bigmachine.io/products/the-little-elixir-otp-guidebook/chapters/random-numbers)
 
-## 깊게 파헤치기
+[Using Random Number Generators in Elixir](https://pusher.com/tutorials/pseudo-random-number-generators-elixir)
 
-Elixir에서 무작위 숫자 생성은 `:rand` 모듈에 의해 제공되는 다양한 함수들을 사용할 수 있습니다. 이 외에도 `:rand.seed/1` 함수를 사용하여 시드 값을 설정하거나 `:rand.seed/1`을 사용하여 시스템 시간을 기반으로 시드 값을 설정할 수도 있습니다.
+See Also:
 
-또한, Elixir는 우수한 랜덤성을 보장하기 위해 병렬 처리가 가능합니다. 이는 `:rand` 모듈이 단일 프로세스에서 실행되는 것이 아닌 여러 개의 프로세스에서 실행될 수 있기 때문입니다.
+[Enum 모듈 문서](https://hexdocs.pm/elixir/Enum.html)
 
-## 참고 자료
-
-- Elixir 공식 문서: https://hexdocs.pm/elixir/Kernel.Spec.html
-- 랜덤 숫자 생성 예제 코드: https://medium.com/@leanthebean/rngs-in-elixir-5e2c8a0ea4d3
+[Random 모듈 문서](https://hexdocs.pm/elixir/Random.html)

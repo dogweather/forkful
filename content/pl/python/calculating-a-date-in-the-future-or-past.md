@@ -1,7 +1,9 @@
 ---
 title:                "Python: Obliczanie daty w przyszłości lub przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,37 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wyliczanie daty w przyszłości lub przeszłości może być niezbędne w wielu projektach programistycznych. W przypadku tworzenia aplikacji zorientowanych na czas, takich jak aplikacje kalendarza lub rezerwacyjne, konieczne jest wyliczanie dat w przyszłości lub przeszłości. Ponadto, posiadanie umiejętności wyliczania dat może pomóc w rozwiązaniu wielu problemów, takich jak obliczanie wieku lub daty ważności.
+Kalkulacja daty w przeszłości lub przyszłości może być przydatna w wielu sytuacjach, na przykład w planowaniu wydarzeń lub terminów ważnych zadań.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby wyliczyć datę w przyszłości lub przeszłości w języku Python, możemy skorzystać z modułu `datetime`. Najpierw musimy zaimportować ten moduł do naszego programu, a następnie możemy wykorzystać różne funkcje, aby wyliczyć odpowiednią datę.
+Aby obliczyć datę w przeszłości lub przyszłości, musimy użyć modułu `datetime` w Pythonie. Najpierw musimy zaimportować ten moduł używając `import datetime`. Następnie możemy użyć funkcji `date()` by utworzyć obiekt daty z podanego roku, miesiąca i dnia. Przykładowo, `datetime.date(2021,7,10)` utworzy obiekt daty dla 10 lipca 2021 roku.
+
+Teraz, aby dodać lub odjąć dni lub lata do tej daty, możemy użyć `timedelta` wraz z funkcją `date()`. Przykładowo, aby dodać 30 dni do daty, możemy użyć `datetime.date(2021,7,10) + datetime.timedelta(days=30)`. Funkcja ta zwróci datę 10 sierpnia 2021 roku.
+
+Poniżej znajdują się przykładowe kodowe bloki w Pythonie oraz odpowiadające im wyniki:
 
 ```Python
-# importowanie modułu datetime
 import datetime
 
-# wyliczenie daty jutra
-jutro = datetime.date.today() + datetime.timedelta(days=1)
+# Utworzenie obiektu daty dla 10 stycznia 2021 roku
+date = datetime.date(2021,1,10)
 
-# wyliczenie daty 30 dni temu
-trzydzienki_temu = datetime.date.today() - datetime.timedelta(days=30)
+# Dodanie 30 dni do daty
+new_date = date + datetime.timedelta(days=30)
 
-# wydrukowanie wyników
-print("Jutro będzie:", jutro)
-print("30 dni temu było:", trzydziesci_temu)
+# Wyświetlenie obu dat
+print("Stara data:", date)
+print("Nowa data:", new_date)
 ```
 
-W powyższym przykładzie wykorzystaliśmy funkcję `timedelta` do wyliczenia daty w przyszłości lub przeszłości. Możemy również użyć innych funkcji, takich jak `datetime.date.replace`, aby zmienić poszczególne elementy daty, na przykład rok lub miesiąc.
+```
+Stara data: 2021-01-10
+Nowa data: 2021-02-09
+```
 
-## Wnikliwe zagłębienie
+## Głębsze zanurzenie
 
-Moduł `datetime` oferuje wiele funkcji i metod, które mogą być przydatne podczas wyliczania dat w przyszłości lub przeszłości. Możemy wykorzystać funkcje, takie jak `datetime.date.weekday`, aby uzyskać informację o dniu tygodnia lub `datetime.date.isoweekday`, aby uzyskać informację o dniu tygodnia w formacie ISO.
+W powyższym przykładzie, użyliśmy funkcji `timedelta` do dodania dni do naszej daty. Jednak, możemy również użyć tej funkcji do dodawania lub odejmowania lat, godzin, minut oraz sekund. Aby zapoznać się z pełnymi możliwościami tej funkcji, możesz zajrzeć do dokumentacji Pythona na temat modułu `datetime` i funkcji `timedelta`.
 
-Ponadto, moduł `datetime` pozwala również na wyliczanie dat w różnych strefach czasowych i konwertowanie daty do różnych formatów. Warto więc bliżej przyjrzeć się temu modułowi i poznać jego możliwości.
+## Zobacz też
 
-## Zobacz także
-
-- Dokumentacja modułu `datetime`: https://docs.python.org/3/library/datetime.html
-- Przewodnik po obliczaniu dat w Pythonie: https://stackabuse.com/how-to-calculate-dates-in-python/
-- Wideo na temat wyliczania dat w przyszłości lub przeszłości: https://www.youtube.com/watch?v=8yFHGC4rF8g
+- Dokumentacja Pythona dotycząca modułu datetime: https://docs.python.org/3/library/datetime.html
+- Inne przykłady wykorzystania dat w Pythonie: https://www.programiz.com/python-programming/datetime

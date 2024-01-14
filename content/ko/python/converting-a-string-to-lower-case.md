@@ -1,35 +1,37 @@
 ---
-title:                "Python: 대문자를 소문자로 변환하기"
+title:                "Python: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-문자열을 소문자로 변환하는 것이 왜 중요한지 설명하는 1-2 문장입니다.
 
-## 방법
+문자열을 소문자로 변환하는 작업은 대소문자를 구분하지 않는 검색 기능이나 비교 작업을 수행할 때 유용합니다.
+
+## 어떻게
+
 ```Python
-# 문자열을 작성합니다.
-string = "HELLO WORLD"
+# 문자열 변수 선언
+sentence = "안녕하세요, PYTHON 입니다."
 
-# 문자열을 소문자로 변환합니다.
-lowercase_string = string.lower()
+# 소문자로 변환
+lowercase = sentence.lower()
 
-# 변환된 문자열을 출력합니다.
-print(lowercase_string)
-```
-```
-hello world
+# 출력
+print(lowercase) # 출력 결과: "안녕하세요, python 입니다."
 ```
 
-## 깊이있게 들어가기
-문자열을 소문자로 변환하는 것은 대소문자에 민감한 언어에서 중요합니다. 대문자로 작성된 문자열을 소문자로 변환하면 나중에 문자열을 검색하거나 제어하기가 쉬워집니다. 또한, 대문자와 소문자를 구분하지 않는 경우에도 사용할 수 있습니다.
+## 깊게 들어가기
 
-변환하는 방법에는 두 가지가 있습니다. 첫 번째는 `lower()` 함수를 사용하는 것이고, 두 번째는 `casefold()` 함수를 사용하는 것입니다. `lower()` 함수는 미국 영어를 기준으로 대문자를 소문자로 변환하고, `casefold()` 함수는 유니코드를 기준으로 변환합니다. 대부분의 경우 `lower()` 함수를 사용해도 충분하지만, 자신이 어떤 언어를 다루고 있는지에 따라 다른 함수를 써야 할 수도 있습니다.
+문자열을 소문자로 변환하는 방법에는 여러 가지가 있지만, 가장 간단하고 빠른 방법은 `.lower()` 메소드를 사용하는 것입니다. 이 메소드는 문자열을 모두 소문자로 변환해주며, 이를 새로운 변수에 저장하거나 바로 출력할 수 있습니다. 또 다른 방법으로는 `str.casefold()` 메소드를 사용하는 것도 가능합니다. 이 메소드는 `.lower()` 메소드와 비슷한 기능을 수행하지만, 유니코드 문자를 더 잘 처리할 수 있습니다. 
 
-## 참고자료
-- [Python 문자열 변환](https://www.w3schools.com/python/ref_string_lower.asp)
-- [영어 대소문자를 구분하지 않는 검색](https://www.researchgate.net/publication/5702294_Case_Sensitivity_in_Internet_Search_Evaluating_Comprising_Query_Term_Weighting_Schemes)
+## 참고 자료
+
+- [Python 공식 문서 - str.lower() 메소드](https://docs.python.org/3/library/stdtypes.html#str.lower)
+- [Python 공식 문서 - str.casefold() 메소드](https://docs.python.org/3/library/stdtypes.html#str.casefold)
+- [w3schools.com - Python Strings](https://www.w3schools.com/python/python_strings.asp)

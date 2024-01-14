@@ -1,39 +1,42 @@
 ---
-title:                "Elixir: 正規表現の使用"
+title:                "Elixir: 正規表現を使用する"
+simple_title:         "正規表現を使用する"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ正規表現を使うのか？
+## なぜ
 
-正規表現は、テキストデータを処理する際に非常に便利です。例えば、特定のパターンを持つ文字列を検索したり、置換したりすることができます。また、文章の自然言語処理やデータの検証などにも活用できます。
+正規表現を使用する理由は様々です。正規表現を使用することで、文字列のパターンマッチングや置換など、複雑な文字列操作が可能になります。これは、プログラミング言語において文字列処理を高度化するために欠かせない手段です。
 
-## 正規表現の使い方
+## 方法
 
-正規表現はElixirの標準ライブラリに含まれており、```Regex```モジュールを使用して利用することができます。以下のコード例では、文字列から特定のパターンを持つ単語を抽出しています。
+正規表現を使用するには、まず`Regex`モジュールを使用する必要があります。例えば、ある文字列にマッチしたい場合は、以下のように`~r/正規表現/`という形式で表現します。
 
 ```Elixir
-string = "私の名前はジョンです"
-Regex.scan(~r/私の名前は(\w+)/u, string) |> List.first |> List.last
+~r/[a-z]+/
 ```
 
-上記のコードの実行結果は、```ジョン```という文字列になります。
+また、マッチングした文字列を取得したい場合は、`Regex.match/2`関数を使用します。例えば、以下のように使用できます。
 
-## 深堀りする
+```Elixir
+Regex.match(~r/[a-z]+/, "Hello, world") |> IO.inspect
 
-正規表現の表記法や特殊文字の扱いなど、さらに詳細な情報を知りたい場合は、正規表現のドキュメントやチュートリアルを参考にすることができます。また、正規表現を使用する際に気をつけるべき点として、パフォーマンスの問題があります。大きなテキストデータを処理する際は、正規表現の最適化を行う必要があります。
+#=> #MatchData<regexp: 1, ...>
+```
 
-## 参考
+詳しい正規表現の書き方や演算子、メタ文字については、公式ドキュメントを参照してください。
 
-- [Elixir Regexモジュールのドキュメント](https://hexdocs.pm/elixir/Regex.html)
-- [正規表現チュートリアル (英語)](https://www.regular-expressions.info/tutorial.html)
-- [正規表現最適化の方法 (英語)](https://www.regular-expressions.info/optimization.html)
+## ディープダイブ
 
-## その他のリソース
+正規表現を使用する際には、パターンマッチングやバックトラックなど、様々なテクニックが必要となります。これらの深い知識を身につけることで、より複雑な文字列操作が可能になります。また、パフォーマンス面でも正規表現の最適化が重要となります。このような詳細な知識を身につけることで、より効率的なプログラミングが可能になります。
 
-- [Elixir公式サイト](https://elixir-lang.org/)
-- [Elixirチュートリアル (日本語)](https://elixir-ja.sena-net.works/guide/basic_types.html)
-- [正規表現の基礎 (日本語)](https://www.slideshare.net/zensh75/61-japanese-tutorial)
+## 関連情報
+
+- [Elixirの正規表現ドキュメント](https://hexdocs.pm/elixir/Regex.html)
+- [正規表現チートシート](https://www.rexegg.com/regex-quickstart.html)
+- [正規表現を使った文字列操作のチュートリアル](https://www.regular-expressions.info/tutorial.html)

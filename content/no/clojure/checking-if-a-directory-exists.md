@@ -1,54 +1,38 @@
 ---
-title:                "Clojure: Sjekke om en mappe eksisterer"
+title:                "Clojure: Sjekke om en mappe finnes"
+simple_title:         "Sjekke om en mappe finnes"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
 
-Mange ganger når man skriver et program, kan det være nyttig å sjekke om en spesifikk mappe eksisterer på datamaskinen din. Dette kan hjelpe med å sikre at programmet ditt kjører som forventet og kan bidra til å unngå feil og komplikasjoner.
+Å sjekke om en mappe eksisterer kan være en viktig del av programmeringen for å sikre at koden fungerer som den skal. Det kan spare deg for problemer og feil når du prøver å åpne eller lagre filer.
 
-## Hvordan
+## Hvordan gjøre det
 
-Det er flere måter du kan sjekke om en mappe eksisterer ved hjelp av Clojure. La oss se på et eksempel:
-
-```Clojure
-(ns my-program.core
-  (:require [clojure.java.io :as io])) ; Importer nødvendige biblioteker
-
-(def file-path "/bruker/navn/dokumenter/eksempel-mappe") ; Angi banen til mappen du vil sjekke
-
-(if (.exists (io/file file-path)) ; Kjør en sjekk om mappen eksisterer
-  (println "Mappen eksisterer.")  ; Hvis den gjør det, skriv ut en melding til konsollen
-  (println "Mappen eksisterer ikke.")) ; Hvis den ikke gjør det, skriv ut en annen melding
-```
-
-La oss se nærmere på denne koden. Først importerer vi biblioteket `clojure.java.io` som gir oss funksjonalitet for å håndtere input og output. Deretter definerer vi `file-path` variabelen og angir banen til mappen vi vil sjekke. Dette kan endres til den faktiske banen på datamaskinen din.
-
-Vi bruker deretter en `if`-setning for å sjekke om mappen eksisterer. Hvis den gjør det, vil en melding bli skrevet ut til konsollen. Hvis ikke, vil en annen melding bli skrevet ut.
-
-Du kan også bruke Clojure's `clojure.java.io.file` funksjoner for å sjekke om en mappe eksisterer. For eksempel:
+Å sjekke om en mappe eksisterer i Clojure er enkelt. Du kan bruke Clojure-funksjonen "file-exists?" for å sjekke om en mappe finnes på en gitt sti. Her er et eksempel på hvordan du kan gjøre det:
 
 ```Clojure
-(require '[clojure.java.io :as io])
-
-(when (io/file-exists? "/bruker/navn/dokumenter/eksempel-mappe")
-  (println "Mappen eksisterer."))
+(if (file-exists? "sti/til/mappe")
+  (println "Mappen eksisterer!")
+  (println "Mappen eksisterer ikke."))
 ```
 
-Her bruker vi `when`-setningen som bare vil kjøre koden hvis mappen eksisterer. Ellers vil den hoppe over koden.
+Outputen av dette vil være enten "Mappen eksisterer!" eller "Mappen eksisterer ikke." avhengig av om mappen finnes eller ikke.
 
 ## Dypdykk
 
-Når du sjekker om en mappe eksisterer, bruker Clojure egentlig Java's `java.io.File` klassen. Dette gir deg flere alternativer når du sjekker for mappen, som å sjekke om det er en fil og ikke en mappe, eller å få tilgang til metadata.
+Det er også mulig å sjekke om en mappe eksisterer ved hjelp av Clojure-funksjonen "dir?" som returnerer sann hvis det er en gyldig mappe og usann hvis det ikke er det. Du kan også bruke "direktori?" -funksjonen for å gjøre det samme. Disse funksjonene gir litt mer detaljert informasjon om mappen, som for eksempel størrelse og endringsdato.
 
-Det er også flere biblioteker som du kan bruke for å håndtere filer og mapper i Clojure, som `clojure.java.io`, `clojure.contrib` og `clj-fs`.
+En annen viktig ting å merke seg er at hvis du bruker en relativ sti i "file-exists?" -funksjonen, vil den sjekke om mappen eksisterer relativt til din nåværende arbeidsmappe. Men hvis du bruker en absolutt sti, vil den sjekke om mappen eksisterer uavhengig av din nåværende arbeidsmappe.
 
 ## Se også
 
-- [clojure.java.io dokumentasjon](https://clojuredocs.org/clojure.java.io/file)
-- [clojure.contrib dokumentasjon](https://clojuredocs.org/clojure.contrib)
-- [clj-fs dokumentasjon](https://github.com/wkf/clj-fs)
+- [Clojure dokumentasjon for file-exists?](https://clojure.org/api/clojure.java.io/file_exists_qmark)
+- [Mer om filbehandling i Clojure](https://oreilly.com/library/view/clojure-cookbook/9781449366406/ch04s17.html)
+- [En nybegynnerveiledning for Clojure programmering](https://clojure.org/guides/getting_started)

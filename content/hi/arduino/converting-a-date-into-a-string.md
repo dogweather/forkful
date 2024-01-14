@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: एक तारीख को एक स्ट्रिंग में रूपांतरित करना"
+title:                "Arduino: दिनांक को एक स्ट्रिंग में रूपांतरित करना"
+simple_title:         "दिनांक को एक स्ट्रिंग में रूपांतरित करना"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/converting-a-date-into-a-string.md"
 ---
 
@@ -9,45 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-अर्डुइनो प्रोग्रामिंग में दिनांक को स्ट्रिंग में बदलना बहुत उपयोगी हो सकता है। यह स्ट्रिंग आपको उपकरण की तारीख को संग्रहीत करने और उससे सम्बंधित अन्य गणनाएं करने में मदद करेगी।
+क्या आप कभी अपने अर्दुइनो प्रोग्राम में तारीख को स्ट्रिंग में बदलने की कोशिश की है? अगर हाँ, तो आप जानते होंगे कि यह काम कितना मुश्किल हो सकता है। तारीख को स्ट्रिंग में बदलने का प्रयास क्यों किया जाता है? इसके पीछे की वजह है कि अपनी अर्दुइनो कोड में तारीख के साथ जोड़े जाने वाले संदेशों को पढ़ने का आसान तरीका हो।
 
 ## कैसे करें
 
-```
-Arduino uno;
-String date = "12/07/2021";
-String date_string = "";
+अपनी तारीख को स्ट्रिंग में बदलने के लिए, आपको सबसे पहले अपनी तारीख के डेटा टाइप में। इसके बाद, आप तारीख को लिब्रेरी से फॉर्मेट कर सकते हैं जिससे वह स्ट्रिंग में बदल जाती है। नीचे दिए गए उदाहरण को अनुसरण करके, आप इस प्रक्रिया को समझ सकते हैं।
 
-void setup(){
-  Serial.begin(9600);
+```Arduino
+#include <Time.h>
+#include <TimeLib.h>
+
+void setup() {
+  Serial.begin(9600); // सीरियल कनेक्शन स्टार्ट करें
+  setTime(9, 0, 0, 31, 8, 2021); // दिन को आपके वर्तमान तारीख से बदलें
 }
 
-void loop(){
-  convertDate();
-  displayDate();
-}
-
-void convertDate(){
-  int day = date.substring(0, 2).toInt();
-  int month = date.substring(3, 5).toInt();
-  int year = date.substring(6, 10).toInt();
-
-  date_string = String(year) + "-" + String(month) + "-" + String(day);
-}
-
-void displayDate(){
-  Serial.println("Converted date string: " + date_string);
+void loop() {
+  char datestring[20]; // स्ट्रिंग के लिए आरे को बनाते हैं
+  snprintf_P(datestring, // स्ट्रिंग में तारीख से बनाए गए संदेश के साथ स्थान पट्टी।
+  sizeof(datestring), PSTR("%A, %B %d %Y"), now());
+  Serial.println(datestring); // टेक्स्ट सीरियल मॉनिटर पर प्रिंट करें
+  delay(1000); // 1 सेकंड का रुकावट करें
 }
 ```
 
-यह कोड दिनांक को "वर्ष-महीना-दिन" का स्ट्रिंग में बदलेगा और सीरियल मॉनिटर पर प्रिंट करेगा। आप इसे अपनी आवश्यकताओं के अनुसार संशोधित कर सकते हैं।
+आपके सीरियल मॉनिटर पर निम्नलिखित मैसेज मिलेगा:
 
-## गहराई में जाएं
+```
+Monday, August 31 2021
+```
 
-दिनांक को स्ट्रिंग में बदलने के लिए, हमने `substring()` और `toInt()` फंक्शन का उपयोग किया। `substring()` फंक्शन दिनांक के भिन्न अंशों को अलग-अलग स्ट्रिंग के रूप में प्रकाशित करता है। `toInt()` फंक्शन उन स्ट्रिंग को इंटीजर में बदलता है। हम इस तरह अपने दिनांक को स्ट्रिंग से अलग भागों में विभाजित करके उसे इंटीजर में बदलते हैं और उसे फिर वापस स्ट्रिंग में जोड़कर दिनांक को परिवर्तित करते हैं।
+## डीप डाइव
 
-## देखें भी
-
-- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Converting String to Int in Arduino](https://www.arduino.cc/en/Tutorial/StringToInt)
-- [Serial Communication in Arduino](https://www.arduino.cc/en/Tutorial/Serial)
+तारीख को स्ट्रिंग में बदलने के लिए, आपको समझना होगा कि संगणना इकट्ठा कर

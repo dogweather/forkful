@@ -1,50 +1,35 @@
 ---
-title:                "Swift: Transformer une chaîne de caractères en minuscules"
+title:                "Swift: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-La conversion d'une chaîne de caractères en minuscules peut être utile dans de nombreux cas, notamment pour faciliter la comparaison de chaînes ou pour respecter une convention de nommage dans votre code.
+Vous vous êtes peut-être déjà demandé pourquoi vous auriez besoin de convertir une chaîne de caractères en minuscules lors de la programmation en Swift. La réponse est simple : cela peut être utile dans de nombreux scénarios, tels que la comparaison de chaînes ou la manipulation d'entrées utilisateur qui peuvent être entrées en majuscules ou en minuscules.
 
-## Comment le faire
-La façon la plus simple de convertir une chaîne de caractères en minuscules en Swift est d'utiliser la méthode `lowercased()`. Voici un exemple de code :
-
+## Comment Faire
+Voici un exemple de code en Swift pour convertir une chaîne de caractères en minuscules :
 ```Swift
-let string = "BONJOUR"
+let string = "Hola Mon Ami"
 let lowercasedString = string.lowercased()
 print(lowercasedString)
 ```
-
-Cela produira la sortie suivante : `bonjour`.
-
-Vous pouvez également utiliser la méthode `caseInsensitiveCompare()` pour comparer des chaînes sans tenir compte de la casse. Par exemple :
-
-```Swift
-let string1 = "hello"
-let string2 = "HELLO"
-if string1.caseInsensitiveCompare(string2) == .orderedSame {
-    print("Les deux chaînes sont identiques.")
-}
+Lorsque vous exécutez ce code, vous obtenez la sortie suivante :
 ```
-
-## Plongée en profondeur
-Il est important de noter que la conversion en minuscules dépend de la locale actuelle de l'appareil. Cela signifie que la façon dont les caractères sont accentués peut varier en fonction de la langue et de la région définies sur votre appareil.
-
-De plus, si vous utilisez des caractères Unicode, il est recommandé d'utiliser la méthode `lowercased(with:)` pour prendre en compte les règles de conversion spécifiques à chaque langue. Voici un exemple :
-
-```Swift
-let string = "ÉTÉ"
-let lowercasedString = string.lowercased(with: Locale(identifier: "fr_FR"))
-print(lowercasedString)
+hola mon ami
 ```
+Comme vous pouvez le voir, la méthode `lowercased()` a transformé toutes les lettres en minuscules.
 
-Cela produira la sortie : `été`.
+## En Profondeur
+Lorsqu'il s'agit de convertir une chaîne de caractères en minuscules, il est important de prendre en compte la langue dans laquelle elle est écrite. Par exemple, la lettre "i" en anglais peut être transformée en "ı" en turc lorsqu'elle est en minuscules. Cela peut avoir un impact sur la comparaison de chaînes et doit être pris en compte lors de la manipulation de texte.
 
-## Voir aussi
-- [Documentation Apple sur la méthode `lowercased()`](https://developer.apple.com/documentation/swift/string/3126929-lowercased)
-- [Documentation Apple sur la méthode `caseInsensitiveCompare()`](https://developer.apple.com/documentation/foundation/nsstring/1417566-caseinsensitivecompare)
-- [Guide Unicode sur la casse et la normalisation](https://unicode.org/reports/tr21/#Case_Mapping)
+De plus, en utilisant la méthode `lowercased()`, les caractères Unicode sont également transformés en minuscules. Cela peut être utile lorsque vous travaillez avec des chaînes multilingues.
+
+## Voir Aussi
+- [Documentation officielle de Swift pour la méthode `lowercased()`](https://developer.apple.com/documentation/foundation/nsstring/1411942-lowercased)
+- [Article de blog sur la manipulation de chaînes en Swift](https://www.hackingwithswift.com/articles/148/how-to-use-string-interpolation-in-swift)

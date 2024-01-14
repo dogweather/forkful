@@ -1,68 +1,75 @@
 ---
 title:                "Rust: Gerando números aleatórios"
+simple_title:         "Gerando números aleatórios"
 programming_language: "Rust"
-category:             "Numbers"
+category:             "Rust"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios é importante?
+## Por que utilizar a geração de números aleatórios em Rust?
 
-Gerar números aleatórios é uma tarefa necessária em muitos projetos de programação. Pode ser útil para criar jogos, testar algoritmos ou até mesmo para fins estatísticos. Ao aprender como gerar números aleatórios em Rust, você terá mais uma ferramenta em sua caixa de ferramentas de programação.
+A geração de números aleatórios é uma funcionalidade muito útil em diversos tipos de aplicação, como jogos, simulações e testes de desempenho. Em Rust, essa funcionalidade é suportada pela biblioteca padrão e é muito fácil de implementar.
 
-## Como gerar números aleatórios em Rust
+## Como utilizar a geração de números aleatórios em Rust
 
-Para gerar números aleatórios em Rust, usamos a biblioteca padrão `rand`. Primeiro, precisamos adicionar a dependência no nosso `Cargo.toml`:
+Para gerar números aleatórios em Rust, primeiro precisamos importar a biblioteca `rand` usando a diretiva `use`. Em seguida, podemos utilizar a função `thread_rng()` para obter um gerador de números aleatórios baseado na thread atual. Por fim, podemos utilizar esse gerador para gerar números aleatórios em um intervalo específico usando a função `gen_range()`.
 
-```
-[dependencias]
-rand = "0.7.2"
-```
-
-Em seguida, importamos o módulo `rand` e a função `Rng` para a nossa função principal:
-
-```
+```Rust
 use rand::Rng;
 
-fn main() {}
-```
+fn main() {
+    let mut rng = rand::thread_rng();
 
-Para gerar um único número aleatório, podemos usar a função `gen_range()` com um intervalo específico:
+    // Gera um número aleatório entre 1 e 10
+    let random_number = rng.gen_range(1..=10);
 
-```
-let num = rand::thread_rng().gen_range(1..=10);
-println!("Número aleatório: {}", num);
-```
-
-Este código irá gerar um número aleatório entre 1 e 10 e imprimi-lo na tela. Também podemos gerar uma sequência de números aleatórios usando um loop `for`:
-
-```
-for _ in 1..=5 {
-  let num = rand::thread_rng().gen_range(1..=10);
-  println!("{}", num);
+    println!("O número aleatório gerado é {}", random_number);
 }
 ```
 
-Isso irá gerar 5 números aleatórios entre 1 e 10 e imprimi-los na tela.
-
-## Aprofundando-se na geração de números aleatórios
-
-A função `gen_range()` é apenas uma das opções para gerar números aleatórios em Rust. A biblioteca `rand` também possui outras funções úteis, como `shuffle()` para embaralhar uma lista e `choose()` para escolher um elemento aleatório de uma lista.
-
-Algo importante a se ter em mente ao gerar números aleatórios é a semente, que é o valor inicial usado pelo gerador de números aleatórios. Se não for definida, a semente será definida como o valor atual do relógio do sistema. No entanto, se quisermos resultados previsíveis, podemos definir a semente manualmente:
+Output:
 
 ```
-let mut rng = rand::rngs::StdRng::seed_from_u64(42);
-let num = rng.gen_range(1..=10);
+O número aleatório gerado é 7
 ```
 
-Isso irá gerar um número aleatório usando a semente 42. Se executarmos esse código várias vezes, sempre obteremos o mesmo número.
+## Aprofundando na geração de números aleatórios em Rust
+
+A biblioteca `rand` em Rust utiliza o algoritmo de geração de números aleatórios conhecido como "Mersenne Twister", que é considerado bastante robusto e eficiente. Além disso, é possível customizar o gerador com sementes específicas para obter resultados previsíveis ou criar geradores paralelos para otimizar o desempenho em aplicações multi-thread.
+
+### Sementes previsíveis
+
+Podemos especificar uma semente para o gerador de números aleatórios usando o método `seed()` antes de gerar qualquer número aleatório.
+
+```Rust
+use rand::{Rng, SeedableRng};
+
+fn main() {
+    let seed: [u8; 32] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
+                          17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32];
+    let mut rng = rand::rngs::StdRng::from_seed(seed);
+
+    // Gera um número aleatório entre 1 e 10
+    let random_number = rng.gen_range(1..=10);
+
+    println!("O número aleatório gerado com a semente 123456789 é {}", random_number);
+}
+```
+
+Output:
+
+```
+O número aleatório gerado com a semente 123456789 é 4
+```
+
+### Geradores paralelos
+
+Em aplicações multi-thread, podemos utilizar o pacote `rand_pcg` para criar geradores de números aleatórios que podem ser compartilhados entre diferentes threads sem causar conflito. Isso pode ser útil em aplicações que demandam um alto desempenho ou precisam gerar números aleatórios de forma independente em diferentes threads.
 
 ## Veja também
 
-- [Documentação da biblioteca rand](https://docs.rs/rand/0.7.2/rand/)
-- [Vídeo tutorial da geração de números aleatórios em Rust](https://www.youtube.com/watch?v=R0DB_GcqXAc)
-- [Exemplos de código para gerar números aleatórios em Rust](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=19894ec24dd71b0c8c6bc1a992e90b5f)
-
-Agora você está pronto para gerar números aleatórios em seus projetos Rust. Lembre-se de sempre definir uma semente, se necessário, e explorar as diferentes opções que a biblioteca `rand` oferece. Feliz programação!
+- [Documentação oficial do pacote `rand` em Rust](https://doc.rust-lang.org/rand)
+- [Exemplos de utilização do pacote `rand` em Rust](https://github.com/rust-lang-nursery/rand/tree/master/rand/examples)

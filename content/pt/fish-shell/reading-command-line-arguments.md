@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/reading-command-line-arguments.md"
 ---
 
@@ -9,38 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Se você é um programador que já utilizou a linha de comando em seus projetos, provavelmente já precisou ler e utilizar argumentos na linha de comando. Neste post, vamos explorar como fazer isso utilizando o Fish Shell, uma ferramenta poderosa e amigável para manipulação de linha de comando.
+Se você é um programador ou está interessado em melhorar suas habilidades em linha de comando, entender como ler argumentos de linha de comando é essencial. Isso permite que você crie scripts mais dinâmicos e interativos que possam receber informações dos usuários durante a execução.
 
-## Como fazer
+## Como Fazer
 
-O Fish Shell possui um recurso nativo para lidar com a leitura de argumentos na linha de comando, através da variável interna $argv. Essa variável armazena uma lista contendo todos os argumentos passados na linha de comando ao chamar um script. Vamos ver um exemplo utilizando a função sleep do Fish Shell:
-
-```
-function exemplo -a param1
-    echo "O parâmetro passado foi $argv[1]"
-    sleep $param1
-end
-
-exemplo 5
+Para ler argumentos de linha de comando no Fish Shell, você pode usar o comando `arg` seguido do número do argumento que deseja ler. Por exemplo:
 
 ```
-
-Nesse exemplo, a função exemplo recebe um parâmetro, que é armazenado na variável $param1. Ao acessar o primeiro elemento da lista $argv, podemos ter acesso ao valor passado na linha de comando, que nesse caso será "5", e utilizá-lo no comando sleep para que o script aguarde 5 segundos antes de prosseguir com a execução.
-
-## Deep Dive
-
-Além da variável $argv, o Fish Shell também possui outras variáveis internas que podem ser úteis na leitura de argumentos. Uma delas é a variável $argc, que armazena o número de argumentos passados na linha de comando. Com isso, podemos criar loops para percorrer todos os argumentos passados, utilizando a estrutura for do Fish Shell. Por exemplo:
-
-```
-for arg in $argv
-    echo "Argumento: $arg"
-end
+Fish Shell arg 1
 ```
 
-Com isso, podemos ter acesso a todos os argumentos passados, independentemente do número e da ordem em que foram passados.
+Este comando irá exibir o primeiro argumento passado para o script. Você também pode usar `$argv` para acessar todos os argumentos passados de uma só vez.
 
-## Veja também
+Além disso, você pode usar a opção `-c` seguida de um número para ler argumentos a partir daquele número. Por exemplo:
 
-- Documentação oficial do Fish Shell sobre a leitura de argumentos: https://fishshell.com/docs/current/tutorial.html#tutorial-arguments
-- Tutorial do Medium sobre a leitura de argumentos com exemplos em Python, Java e Ruby: https://medium.com/@rajsek/fish-shell-reading-command-line-arguments-8507b9397951
-- Outras dicas e truques do Fish Shell: https://github.com/fish-shell/fish-shell/wiki/Frequently-asked-questions#how-do-i-pass-multiple-arguments-to-a-function
+```
+Fish Shell arg -c 2
+```
+
+Isso exibirá todos os argumentos a partir do segundo.
+
+## Mergulho Profundo
+
+Ao ler argumentos de linha de comando no Fish Shell, é importante estar ciente de que esses argumentos são armazenados como uma lista de strings. Isso significa que, se um argumento contiver espaços ou caracteres especiais, ele será tratado como uma única string e não será dividido em argumentos separados.
+
+Você também pode usar o comando `count $argv` para verificar quantos argumentos foram passados para o script. Isso pode ser útil para validar a entrada do usuário e evitar erros.
+
+## Veja Também
+
+- [Documentação do Fish Shell sobre os comandos arg e $argv](https://fishshell.com/docs/current/cmds/arg.html)
+- [Tutorial sobre como ler argumentos de linha de comando no Fish Shell](https://dev.to/omarhakim/read-command-line-arguments-in-fish-shell-3poly)
+- [Exemplos práticos de uso de argumentos de linha de comando no Fish Shell](https://www.learnshell.org/en/Command_Line_Arguments)

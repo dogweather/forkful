@@ -1,57 +1,85 @@
 ---
-title:                "Java: Tworzenie pliku tekstowego"
+title:                "Java: Pisanie pliku tekstowego"
+simple_title:         "Pisanie pliku tekstowego"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Pisanie tekstu w języku Java: Dlaczego i jak
+## Dlaczego pisać plik tekstowy?
 
-## Dlaczego
+Pisanie plików tekstowych jest nieodłączną częścią tworzenia oprogramowania przy użyciu języka Java. Pliki te są wykorzystywane do przechowywania i przesyłania danych w formie tekstowej, w celu ułatwienia komunikacji między różnymi aplikacjami. Oprócz tego, pisanie plików tekstowych jest często wykorzystywane do debugowania i analizy danych.
 
-Pisanie tekstu w języku Java jest niezbędnym umiejętnością dla każdego programisty. To podstawowa umiejętność potrzebna do tworzenia aplikacji, gier, a nawet stron internetowych. Bez niej niemożliwe byłoby wyświetlanie informacji użytkownikom lub zapisywanie danych. Pisanie tekstu jest jednym z fundamentalnych kroków do nauki programowania w języku Java. Jest nie tylko przydatne, ale i bardzo ważne w codziennej pracy.
+## Jak to zrobić?
 
-## Jak to zrobić
+Aby utworzyć plik tekstowy przy użyciu języka Java, należy wykonać kilka prostych kroków.
 
-Aby napisać tekst w języku Java, potrzebujemy tylko kilku wierszy kodu. Załóżmy, że chcemy utworzyć nowy plik tekstowy o nazwie "mojTekst.txt" i zapisać w nim pewien tekst. Oto jak możemy to zrobić:
+### 1. Importowanie pakietu
 
+Pierwszym krokiem jest zaimportowanie pakietu java.io, który zawiera klasy i metody do obsługi plików.
+
+```java
+import java.io.*;
 ```
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 
-public class PisanieTekstu {
+### 2. Utworzenie obiektu File
 
-  public static void main(String[] args) throws IOException {
+Następnie należy utworzyć obiekt klasy File, który będzie reprezentował nowo utworzony plik. W nawiasach konstruktora podajemy ścieżkę i nazwę pliku.
 
-    // utworzenie nowego pliku w bieżącym katalogu
-    File plik = new File("mojTekst.txt");
+```java
+File file = new File("sciezka/do/pliku/nowy_plik.txt");
+```
 
-    // utworzenie obiektu FileWriter
-    FileWriter pisarz = new FileWriter(plik);
+### 3. Utworzenie obiektu FileWriter
 
-    // zapisanie tekstu w pliku
-    pisarz.write("To jest tekst zapisany w pliku.");
+Kolejnym krokiem jest utworzenie obiektu klasy FileWriter, który będzie służył do zapisywania danych do pliku.
 
-    // zamknięcie pisarza
-    pisarz.close();
+```java
+FileWriter writer = new FileWriter(file);
+```
 
-    // wyświetlenie komunikatu o powodzeniu
-    System.out.println("Tekst został zapisany w pliku.");
-  }
+### 4. Zapisywanie danych
+
+Teraz możemy przystąpić do zapisywania danych do pliku. Do tego celu wykorzystujemy metodę write, podając jako argumenty tekst do zapisania.
+
+```java
+writer.write("To jest przykładowy tekst, który zostanie zapisany do pliku.");
+```
+
+### 5. Zamknięcie pliku
+
+Na koniec musimy zamknąć plik, wywołując metodę close na obiekcie FileWriter.
+
+```java
+writer.close();
+```
+
+Cały kod wyglądałby w ten sposób:
+
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        File file = new File("sciezka/do/pliku/nowy_plik.txt");
+        FileWriter writer = new FileWriter(file);
+        writer.write("To jest przykładowy tekst, który zostanie zapisany do pliku.");
+        writer.close();
+    }
 }
 ```
 
-Po uruchomieniu tego kodu, w bieżącym katalogu powinien pojawić się nowy plik o nazwie "mojTekst.txt" z zapisanym w nim tekstem. W ten prosty sposób możemy pisać tekst w języku Java.
+## Głębszy zanurzenie
 
-## Deep Dive
+Pliki tekstowe można także odczytywać i przetwarzać z wykorzystaniem innych klas, takich jak FileInputStream, BufferedReader czy Scanner. Warto także zapoznać się z klasą PrintWriter, która umożliwia łatwe formatowanie tekstu i zapisywanie go do plików.
 
-Przyjrzyjmy się teraz nieco dokładniej poszczególnym krokom używanym w przykładzie powyżej. Na początek, importujemy klasę "File", która pozwala nam tworzyć i manipulować plikami. Następnie, mamy obiekt "FileWriter" - jest to klasa, która pozwala nam zapisywać dane do pliku. Wiesz już, że za pomocą metody "write" możemy zapisać tekst w pliku. Na koniec, musimy zamknąć pisarza, aby zapisać zmiany i uniknąć błędów. I to wszystko!
+Ponadto, istnieje wiele zaawansowanych technik manipulacji plikami tekstowymi, takich jak parsowanie XML czy wykorzystywanie bibliotek do obsługi formatów CSV. Więcej informacji na ten temat można znaleźć w dokumentacji Java lub na różnych forach i blogach poświęconych programowaniu.
 
-## Zobacz również
+## Zobacz także
 
-- [Java - Dokumentacja o klasie File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Java - Dokumentacja o klasie FileWriter](https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html)
-- [Wprowadzenie do pisania tekstu w języku Java](https://www.w3schools.com/java/java_files_create.asp)
+- [Writing Files in Java](https://www.baeldung.com/java-write-to-file)
+- [Java File Handling](https://www.geeksforgeeks.org/file-handling-java/)
+- [Commons IO Library](https://commons.apache.org/proper/commons-io/)

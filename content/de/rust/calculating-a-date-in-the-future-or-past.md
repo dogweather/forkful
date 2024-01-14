@@ -1,43 +1,58 @@
 ---
-title:                "Rust: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Rust: Datumsberechnung in der Zukunft oder Vergangenheit"
+simple_title:         "Datumsberechnung in der Zukunft oder Vergangenheit"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum 
+# Warum
 
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit kann für viele Anwendungsfälle nützlich sein, wie z.B. die Planung von Aufgaben oder die Erstellung von Zeitplänen. In diesem Blog-Beitrag lernst du, wie du dies mit Rust programmieren kannst.
+Das Berechnen von Datumsangaben in der Zukunft oder Vergangenheit kann in verschiedenen Situationen nützlich sein, beispielsweise beim Erstellen von Kalendern oder bei der Planung von Terminen. In diesem Blogpost erfährst du, wie du mit Rust solche Berechnungen durchführen kannst.
 
-## Wie geht man vor
+# Wie man es macht
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir zunächst das [`chrono` Paket](https://docs.rs/chrono/latest/chrono/) installieren und in unserem Code importieren. Dann können wir die Funktion `days` verwenden, um eine bestimmte Anzahl von Tagen zum aktuellen Datum hinzuzufügen oder davon abzuziehen.
+Zunächst müssen wir das `chrono`-Paket in unser Projekt einbinden, um die benötigten Funktionen zur Datumsberechnung nutzen zu können.
 
 ```Rust
-use chrono::{Duration, Local};
-
-// Berechne das Datum, welches 20 Tage in der Zukunft liegt
-let future_date = Local::today() + Duration::days(20);
-
-// Berechne das Datum, welches 10 Tage in der Vergangenheit liegt
-let past_date = Local::today() - Duration::days(10);
-
-// Gib das Ergebnis aus
-println!("Zukünftiges Datum: {}", future_date);
-println!("Vergangenes Datum: {}", past_date);
+use chrono::{DateTime, NaiveDate, NaiveDateTime, NaiveTime, Utc};
 ```
 
-Dieses Code-Beispiel verwendet die aktuelle lokale Zeit, aber du kannst auch eine spezifische Zeitzone angeben, indem du die `FixedOffset` Funktion benutzt.
+Um ein bestimmtes Datum zu berechnen, benötigen wir ein Ausgangsdatum und die Anzahl der gewünschten Tage, Monate oder Jahre, die wir hinzufügen oder subtrahieren möchten.
 
-## Tiefgehende Analyse
+```Rust
+let date = NaiveDate::from_ymd(2021, 10, 10);
+let date_in_past = date - Duration::days(10);
+let date_in_future = date + Duration::years(2);
+```
 
-Das `chrono` Paket bietet auch viele weitere Funktionen, um mit Datums- und Zeitberechnungen zu arbeiten. Du kannst z.B. bestimmte Wochentage oder Monate berechnen, die Anzahl der vergangenen Tage zwischen zwei Daten bestimmen oder Zeitintervalle hinzufügen.
+Alternativ können wir auch direkt ein aktuelles Datum erstellen und berechnen.
 
-Es ist auch möglich, Datumseingaben von Benutzern über die `parse_from_str` Funktion zu verarbeiten und sie dann in ein bestimmtes Datumsformat zu konvertieren.
+```Rust
+let now = Utc::now();
+let future_date = now + Duration::days(30);
+```
 
-## Siehe auch
+Um einen Zeitstempel zu berechnen, können wir auch die `DateTime`-Struktur nutzen, die Datum und Uhrzeit kombiniert.
 
-- [Chrono Dokumentation](https://docs.rs/chrono/latest/chrono/)
-- [Date Calculation in Rust](https://medium.com/@phoomparin/calculating-date-in-rust-166c3b811def)
+```Rust
+let datetime = NaiveDateTime::new(date, time);
+let new_datetime = datetime
+    .checked_add_signed(Duration::hours(5))
+    .expect("Valid timestamp"); //um einen Überlauf zu verhindern
+```
+
+# Tiefer tauchen
+
+Beim Berechnen von Datumsangaben in die Zukunft oder Vergangenheit müssen wir berücksichtigen, dass es unterschiedliche Zeitzonen und Kalendersysteme gibt. Mit der `DateTime`-Struktur können wir Datum und Uhrzeit in der UTC-Zeitzone speichern und anzeigen. Auch die Anpassung an verschiedene Kalendersysteme ist möglich, indem wir die entsprechenden Funktionen aus dem `chrono`-Paket nutzen.
+
+Es gibt auch weitere Funktionen zum Berechnen von Datumsangaben, wie zum Beispiel das Vergleichen von zwei Daten oder das Konvertieren von einem Zeichenfolgenformat in ein Datum.
+
+# Siehe auch
+
+- [Rust-Dokumentation für das `chrono`-Paket](https://docs.rs/chrono/0.4.19/chrono/)
+- [Rust-Kurs: Datumsangaben berechnen](https://www.youtube.com/watch?v=mJrw8q9Xelg)
+- [Calendar Calculator für Rust](https://crates.io/crates/calendar)

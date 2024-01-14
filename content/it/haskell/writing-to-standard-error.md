@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Scrivere su standard error"
+simple_title:         "Scrivere su standard error"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/writing-to-standard-error.md"
 ---
 
@@ -9,11 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scrivere su Standard Error è un modo efficiente per gestire gli errori e le eccezioni all'interno di un programma Haskell. Invece di interrompere l'esecuzione del programma, scrivere su Standard Error consente di gestire l'errore e continuare con l'esecuzione del codice.
+Scrivere su standard error può essere utile quando si vuole comunicare informazioni importanti agli utenti durante l'esecuzione di un programma, come ad esempio messaggi di errore o di debug. Inoltre, scrivere su standard error è un buon modo per differenziare i messaggi importanti, da quelli che vengono scritti su standard output.
 
-## Come fare
+## Come Fare
 
-Per scrivere su Standard Error in Haskell, è necessario importare il modulo `System.IO` e utilizzare la funzione `hPutStrLn` per scrivere una stringa su Standard Error.
+Per scrivere su standard error in Haskell, è necessario importare il modulo "System.IO" e utilizzare la funzione "hPutStrLn" per scrivere una stringa su standard error. Ad esempio:
 
 ```Haskell
 import System.IO
@@ -22,66 +24,20 @@ main = do
   hPutStrLn stderr "Questo è un messaggio di errore."
 ```
 
-Output:
+L'output del programma sarà:
+
 ```
 Questo è un messaggio di errore.
 ```
 
+In questo modo, la stringa viene scritta su standard error invece che su standard output.
+
 ## Approfondimento
 
-Scrivere su Standard Error consente di gestire gli errori in modo specifico, poiché questo canale viene utilizzato solo per la stampa degli errori. Inoltre, è possibile eseguire il redirect dei messaggi di errore su un file diverso, invece di visualizzarli sulla console.
+Scrivere su standard error è utile quando si vuole separare i messaggi importanti, come i messaggi di errore, dai messaggi generici che vengono scritti su standard output. Inoltre, si può utilizzare la funzione "hPutStrLn" per scrivere qualsiasi tipo di stringa su standard error, inclusi messaggi di debug o di avviso. È importante ricordare di importare il modulo "System.IO" ogni volta che si vuole scrivere su standard error.
 
-Per esempio, nel caso di un'operazione di divisione per zero:
+## Vedi Anche
 
-```Haskell
-import System.IO
-
-main = do
-  putStrLn "Inserisci il primo numero: "
-  num1 <- getLine
-  putStrLn "Inserisci il secondo numero: "
-  num2 <- getLine
-  let result = read num1 / read num2 :: Double
-  putStrLn ("Il risultato è: " ++ show result)
-```
-
-Output:
-```
-Inserisci il primo numero:
-10
-Inserisci il secondo numero:
-0
-*** Exception: divide by zero
-```
-
-Nell'output, il messaggio di errore viene stampato sulla console e l'esecuzione del programma viene interrotta. Tuttavia, se aggiungiamo la riga `hPutStrLn stderr "Errore: Divisione per zero."` dentro alla funzione `main` prima di calcolare il risultato, il messaggio di errore verrà stampato su Standard Error invece che sulla console:
-
-```Haskell
-import System.IO
-
-main = do
-  putStrLn "Inserisci il primo numero: "
-  num1 <- getLine
-  putStrLn "Inserisci il secondo numero: "
-  num2 <- getLine
-  hPutStrLn stderr "Errore: Divisione per zero."
-  let result = read num1 / read num2 :: Double
-  putStrLn ("Il risultato è: " ++ show result)
-```
-
-Output:
-```
-Inserisci il primo numero:
-10
-Inserisci il secondo numero:
-0
-Errore: Divisione per zero.
-Il risultato è: Infinity
-```
-
-Questo è utile quando si vuole gestire l'errore in modo specifico, ad esempio con un handler di eccezioni.
-
-## Vedi anche
-
-- [Modulo System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
-- [Funzione hPutStrLn](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:hPutStrLn)
+- [Haskell Documentation](https://www.haskell.org/documentation/)
+- [System.IO Module](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO.html)
+- [Tutorial su Standard Output e Standard Error in Haskell](https://www.tutorialspoint.com/unix_commands/printf.htm)

@@ -1,56 +1,63 @@
 ---
-title:                "Fish Shell: ディレクトリの存在を確認する方法"
+title:                "Fish Shell: ディレクトリが存在するかどうかを確認する"
+simple_title:         "ディレクトリが存在するかどうかを確認する"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜディレクトリが存在するかを確認する必要があるのか
 
-```
-Fish Shell```を使ってディレクトリの存在を確認するのにどうして携わるのか、と疑問に思う人もいるかもしれません。しかし、実際にはこの機能は非常に便利であり、コードの品質や可読性を向上させることにも役立ちます。ディレクトリの存在を確認することで、より安全なコードを書くことができるのです。
+ディレクトリが存在するかどうかを確認することは、プログラムを実行する前に重要なチェックです。例えば、ファイルを読み込む前にディレクトリが存在するかどうかを確認することで、エラーを防ぐことができます。
 
-## 方法
+# ディレクトリの存在を確認する方法
 
-まず、Fish Shellを開始して、下記のコマンドを入力します。
+ディレクトリが存在するかどうかを確認するには、```test -d```コマンドを使用します。このコマンドは、指定したパスがディレクトリであれば``1``を、そうでなければ``0``を返します。
 
-```
-set -q 'dir'
-```
-
-これにより、現在のディレクトリが存在するかどうかが確認されます。もしディレクトリが存在する場合は、返り値として`1`が返されます。存在しない場合は、返り値として`0`が返されます。
-
-次に、より複雑な例を見てみましょう。下記のようなコードを入力します。
-
-```
-if set -q 'dir'
-  echo "ディレクトリが存在します"
+```Fish Shell
+if test -d /home/user/documents
+  echo "The directory exists!"
 else
-  echo "ディレクトリが存在しません"
+  echo "The directory does not exist."
 end
 ```
 
-ここでは、`if`文を使ってディレクトリの存在を確認し、存在する場合はメッセージを表示し、存在しない場合は別のメッセージを表示するようにしています。
-
-## 深堀り
-
-Fish Shellでは、`test`コマンドを使ってディレクトリの存在を確認することもできます。例えば、下記のようなコマンドを入力すると、ディレクトリの存在を確認し、存在する場合は`true`を、存在しない場合は`false` を返します。
+出力は以下のようになります。
 
 ```
-test -d 'dir'
+The directory exists!
 ```
 
-また、`and`や`or`を使うことで、複数のディレクトリの存在を同時に確認することもできます。例えば、下記のようなコードを入力すると、複数のディレクトリが全て存在する場合のみ、メッセージを表示するようになります。
+# 深堀りする
+
+ディレクトリの存在を確認する際に、```test -d```コマンドではなく、```dirhish```コマンドを使用することもできます。これは、ディレクトリが存在しない場合にエラーを返す代わりに、空の値を返します。また、特定のディレクトリに移動する必要がある場合は、```cd```コマンドを使用することもできます。
+
+```Fish Shell
+if dirhish /home/user/documents
+  cd /home/user/documents
+  echo "Moved to the documents directory."
+else
+  echo "The directory does not exist."
+end
+```
+
+出力は以下のようになります。
 
 ```
-test -d 'dir1' and test -d 'dir2' and test -d 'dir3'
-echo "全てのディレクトリが存在します"
+Moved to the documents directory.
 ```
 
-## 参考リンク
+## その他の参考リンク
 
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [How to Check if a Directory Exists in Fish Shell](https://linuxize.com/post/how-to-check-if-a-directory-exists-in-fish-shell/)
-- [Understanding Fish Shell Conditionals](https://fishshell.com/docs/current/index.html#conditionals)
+- [Fish Shell公式サイト](https://fishshell.com/)
+- [ディレクトリの存在を確認するコマンド一覧](https://fishshell.com/docs/current/commands.html#test-command)
+- [「図解でわかるFish Shellの便利な使い方」](https://zine.longseller.org/fish-shell/)
+
+＃参考リンク
+
+- [Fish Shell Official Website]（https://fishshell.com/）
+- [Directory existence confirmation command list]（https://fishshell.com/docs/current/commands.html#test-command）
+- [“Easy-to-understand use of Fish Shell”]（https://zine.longseller.org/fish-shell/）

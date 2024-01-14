@@ -1,37 +1,46 @@
 ---
 title:                "Javascript: 랜덤 숫자 생성하기"
+simple_title:         "랜덤 숫자 생성하기"
 programming_language: "Javascript"
-category:             "Numbers"
+category:             "Javascript"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 랜덤 숫자를 생성하는 것인가?
-랜덤 숫자를 생성하는 것은 다양한 프로그래밍 작업에서 유용하게 사용될 수 있습니다. 예를 들어, 랜덤 숫자는 게임에서 적이나 아이템의 위치를 정하는 데 사용될 수 있고, 데이터 샘플링이나 A/B 테스트에서도 사용될 수 있습니다.
+# 왜
 
-## 어떻게 하는가?
+랜덤한 숫자를 생성하는 것에 참여하는 이유는 다양합니다. 몇 가지 예를 들어보면, 게임에서 랜덤하게 상황을 만들거나 보안 측면에서 패스워드 생성을 위한 무작위 숫자를 사용하는 등의 이유가 있을 수 있습니다.
+
+## 하는 법
+
 ```Javascript
-// 1에서 10까지의 랜덤 숫자 생성
-let randomNumber = Math.floor(Math.random() * (10 - 1 + 1) + 1);
-console.log(randomNumber);
+// 1부터 10까지의 랜덤한 숫자 생성
+let randomNum = Math.floor(Math.random() * 10) + 1;
+console.log(randomNum);
+// 출력 결과, 예: 5
 
-// 0부터 100까지의 랜덤 숫자 생성
-let randomNumber2 = Math.floor(Math.random() * 101);
-console.log(randomNumber2);
+// 1부터 100까지의 랜덤한 숫자 생성
+let randomNum = Math.floor(Math.random() * 100) + 1;
+console.log(randomNum);
+// 출력 결과, 예: 75
 
-// 배열에서 랜덤 아이템 선택
-let items = ["사과", "바나나", "딸기", "오렌지"];
-let randomItem = items[Math.floor(Math.random() * items.length)];
+// 배열 안에서 랜덤한 아이템 선택
+let array = [1, 2, 3, 4, 5];
+let randomItem = array[Math.floor(Math.random() * array.length)];
 console.log(randomItem);
+// 출력 결과, 예: 3
 ```
 
-위의 코드는 Javascript의 Math 객체의 random() 메소드를 사용하여 랜덤 숫자를 생성하는 방법을 보여줍니다. 이 메소드는 0 이상 1 미만의 숫자를 반환하므로, 만약 1에서 10까지의 랜덤 숫자를 생성하고 싶다면, 숫자 범위를 조정해야 합니다. 또한, 배열에서 랜덤 아이템을 선택하는 방법은 배열의 길이를 고려하여 랜덤한 인덱스를 생성하고 해당 인덱스의 아이템을 반환하는 방식입니다.
+위의 코드 예시에서는 `Math.random()` 메소드를 사용하여 랜덤한 숫자를 생성합니다. 이 메소드는 0부터 1 사이의 무작위 소수를 반환합니다. 따라서 범위를 지정하려면 `Math.floor()` 메소드를 이용해 소수 부분을 버린 다음, 곱하기 연산과 더하기 연산을 통해 범위를 지정할 수 있습니다. 또한 배열에서 랜덤한 아이템을 선택하려면 `Math.floor()` 메소드의 인자로 배열의 길이를 넣어준 다음, `array` 배열에 `randomItem` 변수를 할당하는 방식으로 구현할 수 있습니다.
 
-## 더 깊게 알아보기
-랜덤 숫자 생성은 일반적으로 컴퓨터의 의사 난수 발생기를 사용합니다. 이 발생기는 초기 값인 seed와 특정 알고리즘에 의해 숫자를 계속 생성하게 됩니다. 따라서 매번 같은 seed를 제공하고 같은 알고리즘을 사용하면, 같은 숫자가 생성됩니다. 이러한 이유로, 보안과 관련된 작업에서는 보다 강력한 알고리즘을 사용하여 의사 난수 발생기를 구현해야 합니다.
+## 깊이 알아보기
 
-## 또 다른 정보 보기
-- [Javascript의 Math 객체에 대한 더 자세한 설명](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math)
-- [Javascript에서 랜덤 숫자 생성하기](https://www.w3schools.com/js/js_random.asp)
-- [컴퓨터의 의사 난수 발생기에 대한 더 깊은 이해](https://www.random.org/randomness/)
+랜덤한 숫자를 생성하는데 사용되는 `Math.random()` 메소드는 실제로 무작위한 숫자인가요? 많은 사람들이 이 질문에 의문을 가지고 있습니다. 하지만 이 메소드는 컴퓨터 내부에서 생성된 시드 값을 기반으로 구현되어 있어서 매번 실행 시 동일한 결과를 보장할 수 있습니다. 따라서 완전히 무작위한 숫자는 아니지만 일반적인 경우에는 충분히 무작위한 숫자를 생성하는 데 사용할 수 있습니다.
+
+## 이어서 보기
+
+- [JavaScript Math.random() Documentation](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Randomness in JavaScript](https://dev.to/niorad/randomness-in-javascript-1jb0)
+- [Using Math.random() to Generate Random Numbers in JavaScript](https://www.kirupa.com/html5/random_numbers_js.htm)

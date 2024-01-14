@@ -1,52 +1,67 @@
 ---
-title:                "Elixir: Pisanie do standardowego wyjścia błędów"
+title:                "Elixir: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać do standardowego błędu w Elixirze?
+## Dlaczego
 
-Pisanie do standardowego błędu (lub stderr) jest istotną częścią tworzenia oprogramowania w Elixirze. Jest to przydatne narzędzie do debugowania i przechwytywania błędów w naszych programach. Dzięki temu możemy szybciej znaleźć i naprawić potencjalne problemy w naszym kodzie.
+Pisanie do standardowego błędu jest ważnym aspektem programowania w Elixirze. Wydaje się to być tylko jednym z wielu sposobów na przekazywanie informacji o błędach w naszym kodzie, ale jest to również metoda, która może pomóc nam w diagnozowaniu problemów i poprawianiu naszej pracy. W tej krótkiej instrukcji dowiesz się, dlaczego pisanie do standardowego błędu jest ważne i jak zacząć to robić.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Poniżej znajdują się przykłady kodu i wyjścia, które pokazują, jak pisać do stderr w Elixirze.
+Aby napisać do standardowego błędu w Elixirze, należy użyć funkcji `IO.puts/2` lub `IO.puts/1` w celu wyświetlenia błędu na ekranie. Przykłady kodu:
 
+```Elixir
+IO.puts("To jest przykładowy błąd!")
 ```
-Elixir a = 1/0
-** (ArithmeticError) bad arror in arithmetic expression: a = 1/0
-```
-W powyższym przykładzie używamy błędu arytmetycznego, aby wyświetlić błąd w konsoli. Możemy również korzystać z funkcji ```IO.write/2``` i ```IO.puts/2``` do wyświetlenia wiadomości w terminalu.
 
+```Elixir
+IO.puts("Błąd numer", 404)
 ```
-IO.write(:stderr, "To jest błąd\n")
-To jest błąd
-:ok
-```
-Możemy również używać stderr wewnątrz wyjątków, aby przechwytywać i logować błędy w naszym kodzie.
 
+Potrzebujemy również wywołać funkcję `IO.inspect/1` na żądanym typie danych, aby wyświetlić szczegółowe informacje o błędzie. Przykład:
+
+```Elixir
+IO.inspect(4/0, label: "dzielenie przez 0:")
 ```
+
+Output:
+
+```Elixir
+dzielenie przez 0: %{__exception__: %Error,
+                         __struct__: %ZeroDivisionError{},
+                         left: 4,
+                         right: 0}
+```
+
+Możemy również użyć renderowania wyjątków za pomocą makr `try/rescue/1` w celu przechwytywania błędów i wyświetlania ich na ekranie. Przykład:
+
+```Elixir
 try do
-  raise "To jest błąd"
+  4/0
 rescue
-  e in Exception ->
-    IO.write(:stderr, "#{try e.why rescue nil}\n")
+  e in Error ->
+    IO.puts(e.message)
 end
-To jest błąd
-:ok
 ```
 
-## Dogłębny przegląd
+Output:
 
-Istnieje wiele przydatnych funkcji wbudowanych w Elixir, które pomagają nam w obsłudze i wyświetlaniu błędów w naszych programach. Możemy również używać modułu `Logger` do logowania błędów do plików lub do wysyłania powiadomień do naszych systemów monitoringu.
+```Elixir
+"division by zero"
+```
 
-Pamiętaj, aby używać zamienników do standardowego wyjścia, takich jak stderr, zamiast prostego drukowania do konsoli. W przeciwnym razie możemy stracić ważne informacje lub niezamierzonych efektów ubocznych.
+## Głębsza analiza
 
-## Zobacz także
+Pisanie do standardowego błędu jest ważnym narzędziem w Elixirze nie tylko ze względu na wyświetlanie błędów, ale także dla łatwiejszego debugowania i analizowania naszego kodu. Wykorzystywanie funkcji `IO.puts/2`, `IO.puts/1` i `IO.inspect/1` pozwala nam na wyświetlanie naszych własnych wiadomości błędów, dodawanie etykiet i renderowanie wyjątków w miejscach, gdzie uważamy to za potrzebne.
 
-- [Dokumentacja Elixir - Debugowanie i obsługa błędów](https://elixir-lang.org/getting-started/debugging.html)
-- [Książka - "Elixir w akcji"](https://www.manning.com/books/elixir-in-action)
-- [Blog - "Wyjątki, błędy i debugger w Elixirze"](https://www.mojdigital.pl/2017/09/exeption-try-catch-debugger-elsixir/)
+## Zobacz również
+
+- [Dokumentacja Elixir IO](https://hexdocs.pm/elixir/IO.html)
+- [Przewodnik po debugowaniu w Elixirze](https://elixirschool.com/pl/lessons/advanced/debugging/)

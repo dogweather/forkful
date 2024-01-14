@@ -1,7 +1,9 @@
 ---
-title:                "Python: Stor bokstav i en streng"
+title:                "Python: Store bokstaver i en streng"
+simple_title:         "Store bokstaver i en streng"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/capitalizing-a-string.md"
 ---
 
@@ -9,51 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor bry seg om å kapitalisere en streng i Python? Vel, det er ofte nødvendig å gjøre om strenger til store bokstaver for å matche bestemte formater eller for å gjøre dataenkoding enklere å forstå. Uansett, å kunne kapitalisere en streng er et viktig verktøy i en Python-programmerers verktøykasse.
+Det å gjøre en bokstav i en streng stor har mange bruksområder i Python-programmering. Det kan være nyttig når du ønsker å lage en tittel, for eksempel "Hei, dette er tittelen min". Det kan også være nyttig når du jobber med tekstbehandling og trenger å formatere teksten din.
 
 ## Hvordan
 
-Det er flere måter å kapitalisere en streng på i Python. En av de enkleste er ved hjelp av .upper() metoden:
+Det er veldig enkelt å gjøre en bokstav i en streng stor i Python. Alt du trenger å gjøre er å bruke metoden "upper()" på strengen du ønsker å endre. La oss se et eksempel:
 
-```Python
-streng = "hei alle sammen!"
-print(streng.upper())
+```python
+navn = "ikke store bokstaver"
+print(navn.upper())
 ```
 
-**Output:** HEI ALLE SAMMEN!
+Dette vil gi følgende utskrift:
 
-Som du kan se, konverteres alle små bokstaver til store bokstaver ved hjelp av .upper() metoden. Dette er nyttig hvis du for eksempel ønsker å printe en tittel eller en overskrift.
-
-Du kan også bruke .capitalize() metoden for å kun kapitalisere den første bokstaven i strengen:
-
-```Python
-streng = "dette er en test"
-print(streng.capitalize())
+```python
+IKKE STORE BOKSTAVER
 ```
 
-**Output:** Dette er en test
+Som du kan se, gjør "upper()" metoden alle bokstavene i strengen vår store. Men hva om vi bare ønsker å gjøre den første bokstaven stor? Da kan vi bruke metoden "capitalize()":
 
-En annen måte å kapitalisere en streng på er ved hjelp av str.upper() funksjonen:
-
-```Python
-streng = "jeg heter Peter"
-print(str.upper(streng))
+```python
+navn = "bare den første bokstaven"
+print(navn.capitalize())
 ```
 
-**Output:** JEG HETER PETER
+Dette vil gi følgende utskrift:
+
+```python
+Bare den første bokstaven
+```
+
+Som du kan se, gjorde "capitalize()" metoden kun den første bokstaven i strengen vår stor. Dette er nyttig når du ønsker å formatere teksten din på en bestemt måte.
 
 ## Dypdykk
 
-For å forstå hvordan disse metodene og funksjonene fungerer, må du ha kunnskap om strenger i Python. Strenger er en sekvens av tegn og kan manipuleres ved hjelp av forskjellige metoder og funksjoner. Når du bruker .upper() metoden, konverteres alle bokstaver i strengen til store bokstaver mens .capitalize() metoden kun kapitaliserer den første bokstaven i strengen.
+Nå som du har lært hvordan du kan gjøre bokstaver store i en streng, la oss se litt dypere på hvordan dette fungerer. I Python, er bokstaver og symboler bare tall som representerer dem i ASCII-tabellen. Dermed, når du bruker "upper()" eller "capitalize()" metoden, endres disse tallene til de som representerer store bokstaver i ASCII-tabellen.
 
-Det er også viktig å nevne at .upper() og .capitalize() metodene ikke endrer den opprinnelige strengen, men heller returnerer en ny streng med den kapitaliserte versjonen. Derfor kan du lagre den kapitaliserte strengen i en variabel og fortsette å bruke den opprinnelige strengen som den er.
+En annen ting å merke seg er at disse metodene bare fungerer på bokstaver, og ikke på tall eller andre symboler. Du vil også merke at disse metodene ikke endrer selve strengen, men returnerer en ny streng med endringene. Det betyr at du må lagre den endrede strengen i en variabel for å bruke den senere i koden din.
 
 ## Se også
 
-Her er noen nyttige ressurser for å lære mer om kapitalisering av strenger i Python:
-
-- [Offisiell dokumentasjon for strengmetoder i Python](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Enkel guide for å kapitalisere strenger i Python](https://www.digitalocean.com/community/tutorials/how-to-capitalize-strings-in-python-3)
-- [Video tutorial om manipulering av strenger i Python](https://www.youtube.com/watch?v=rfscVS0vtbw)
-
-Takk for at du leste denne blogginnlegget om hvordan du kan kapitalisere en streng i Python. Vi håper det var nyttig for deg og at du nå føler deg mer komfortabel med å arbeide med strenger i kodespråket vårt. Lykke til videre med programmering!
+- [Python strings](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+- [ASCII table](https://www.asciitable.com/)

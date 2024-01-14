@@ -1,60 +1,48 @@
 ---
-title:                "Haskell: Convirtiendo una fecha en una cadena de texto"
+title:                "Haskell: Convirtiendo una fecha en una cadena"
+simple_title:         "Convirtiendo una fecha en una cadena"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué convertir una fecha en una cadena?
 
-El manejo de fechas y horas es una tarea común en la programación. Es importante poder convertir estas fechas en diferentes formatos, incluyendo cadenas de texto, para su uso en aplicaciones y sistemas. En este artículo, exploraremos cómo convertir una fecha en una cadena de texto utilizando Haskell.
+La conversión de una fecha en una cadena es un proceso común en la programación de Haskell. Esta tarea puede parecer trivial a simple vista, pero puede ser muy útil en situaciones donde necesitamos mostrar una fecha en un formato específico o realizar operaciones con fechas.
 
 ## Cómo hacerlo
 
-En Haskell, el módulo "Data.Time.Format" provee una función llamada "formatTime" que nos permite convertir una fecha en una cadena de texto utilizando un formato específico. Para utilizar esta función, primero debemos importar el módulo:
+Para convertir una fecha en una cadena, utilizamos la función `show` y le pasamos como parámetro una instancia de la clase `Data`. Por ejemplo, si queremos mostrar la fecha actual, podemos hacer lo siguiente:
 
 ```Haskell
-import Data.Time.Format
+import Data.Time (getCurrentTime, utctDay)
+
+main :: IO ()
+main = do
+    now <- getCurrentTime
+    putStrLn $ show (utctDay now)
 ```
 
-Luego, podemos utilizar la función "formatTime" de la siguiente manera:
+Este código primero importa el módulo `Data.Time`, que contiene las funciones necesarias para trabajar con fechas. Luego, utilizando `getCurrentTime`, obtenemos la fecha actual y la almacenamos en la variable `now`. Por último, aplicamos la función `show` a la fecha y la imprimimos en la consola.
 
-```Haskell
-formatTime defaultTimeLocale "%d/%m/%Y" (fromGregorian 2020 12 18)
-```
-
-En este ejemplo, estamos convirtiendo la fecha "18 de diciembre de 2020" en una cadena de texto con formato "dd/mm/yyyy" utilizando el tipo de dato "Gregorian" que proviene del módulo "Data.Time.Calendar". Esto imprimiría la cadena de texto "18/12/2020".
-
-También podemos utilizar el mismo método para convertir la hora en una cadena de texto con formato "hh:mm:ss":
-
-```Haskell
-formatTime defaultTimeLocale "%H:%M:%S" (timeToTimeOfDay (UTCTime (fromGregorian 2020 12 18) (secondsToDiffTime 50340)))
-```
-
-En este ejemplo, estamos convirtiendo el tiempo "14:02:20" (50340 segundos) en una cadena de texto con formato "hh:mm:ss". Esto imprimiría la cadena de texto "14:02:20".
+La salida de este código será una cadena en el formato `AAAA-MM-DD`, por ejemplo `2021-07-15`.
 
 ## Profundizando
 
-La función "formatTime" puede aceptar diferentes formatos de cadena de texto, lo que nos permite personalizar aún más la salida. Algunos códigos de formato comunes utilizados en Haskell son:
+Existen diversas funciones y tipos de datos en el módulo `Data.Time` que nos permiten trabajar con fechas de manera más avanzada. Algunos de los más utilizados son:
 
-- %Y: año completo (ej: 2020)
-- %m: mes (ej: 12)
-- %d: día del mes (ej: 18)
-- %H: hora en formato 24 horas (ej: 14)
-- %M: minutos (ej: 02)
-- %S: segundos (ej: 20)
+- `Day`: Tipo de dato que representa una fecha en el calendario gregoriano.
+- `UTCTime`: Tipo de dato que representa una fecha y hora en formato UTC.
+- `parseTimeM`: Función que permite convertir una cadena en un tipo de dato `Day` o `UTCTime`.
+- `formatTime`: Función que nos permite dar formato a una fecha según nuestras necesidades.
 
-Podemos combinar estos códigos de formato para generar diferentes resultados, como por ejemplo:
-
-- "%d/%m/%Y" -> 18/12/2020
-- "%H:%M:%S" -> 14:02:20
-- "%Y-%m-%d %H:%M:%S" -> 2020-12-18 14:02:20
-
-También podemos utilizar la función "parseTimeM" del módulo "Data.Time.Format" para convertir una cadena de texto en una fecha o hora, utilizando el mismo formato utilizado en la función "formatTime". Esto es especialmente útil cuando queremos obtener una fecha de una base de datos o un archivo de texto.
+Al explorar estos y otros elementos del módulo `Data.Time`, podremos realizar operaciones más complejas y manejar fechas con mayor precisión.
 
 ## Ver también
 
-- [Documentación de Data.Time.Format en Hackage](https://hackage.haskell.org/package/time/docs/Data-Time-Format.html)
-- [Tutoriales de Haskell en español](https://happylearnhaskelltutorial.com/es/)
+- [Documentación de Data.Time en Hackage](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)
+- [Tutorial de Haskell para principiantes](https://www.haskell.org/tutorial/)
+- [Más sobre fechas y horas en Haskell](https://wiki.haskell.org/Time_and_Date_Library)

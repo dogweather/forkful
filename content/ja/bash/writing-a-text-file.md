@@ -1,44 +1,37 @@
 ---
-title:                "Bash: テキストファイルの書き方"
+title:                "Bash: 「テキストファイルの作成」"
+simple_title:         "「テキストファイルの作成」"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜテキストファイルを書くのか
+## なぜ
 
-テキストファイルを書くことには、さまざまな目的があります。例えば、プログラミング言語やシェルスクリプトのコードを保存するためや、メモを残すために使われることがあります。また、テキストエディタで編集することができるため、簡単に情報を更新したり、共有したりすることができます。
+プログラミングをする理由は様々ですが、テキストファイルを書くことには重要な役割があります。テキストファイルを書くことによって、コンピューターに対して特定の作業や情報を伝えることができます。
 
-## どのように書くのか
+## 方法
 
-まずはテキストエディタを開き、新しいテキストファイルを作成しましょう。次に、テキストファイルに必要な情報を入力します。例えば、下のコードブロックのように、Bashを使って"Hello, World!"というメッセージを出力するスクリプトを書くことができます。
+テキストファイルを書くには、Bashプログラミングを使用します。BashはGNUプロジェクトで開発されたUnixシェルで、文字ベースのコマンドラインで操作することができます。以下は、テキストファイルを書くためのBashプログラミングの例です。
 
 ```Bash
-#!/bin/bash
-
-echo "Hello, World!"
+touch sample.txt # sample.txtという名前の空のテキストファイルを作成する
+echo "Hello, world!" >> sample.txt # "Hello, world!"というテキストをsample.txtに追加する
+cat sample.txt # sample.txtの中身を表示する
 ```
 
-上のコードを実行すると、ターミナルに"Hello, World!"というメッセージが表示されます。
+上記のコードを実行すると、sample.txtに"Hello, world!"というテキストが追加され、その内容が表示されます。
 
-## 深く掘り下げる
+## ディープダイブ
 
-テキストファイルに書くことができる情報は、単純なテキストだけではありません。例えば、各行の先頭に「#」をつけることで、その行をコメントとして識別することができます。コメントは実行されないので、プログラムの説明やメモを残すために使われます。
+テキストファイルにはさまざまな使い方があります。プログラムの設定ファイルやデータの保存に使われることが多く、複数の行や文字列を含むことができます。また、テキストファイルを読み取ることで、プログラムの実行結果を確認することもできます。
 
-また、変数や条件分岐、ループなどのプログラミング機能もテキストファイルに書くことができます。これらを組み合わせて、複雑な処理を行うことができるようになります。
+## 参考文献
 
-あなたがテキストファイルに書いている情報を、プログラムやシステムに利用することもできます。例えば、データベースのパスワードを書いておいて、プログラムからそれを読み込んでデータベースに接続することができます。
-
-# さらに詳しく知るために
-
-もしBashプログラミングに興味があるのであれば、下のリンクを参考にしてみてください。
-
-- [Bashプログラミングの基礎](https://techacademy.jp/magazine/5155)
-- [標準入出力を学ぶ](https://www.sejuku.net/blog/104463)
-- [Bashの変数と定数](https://eng-entrance.com/linux-bash-variable-constant)
-
-# 詳しい情報
-
-- [Bash入門](https://www.linux.com/learn/introducing-bash-shell-scripting)
+- [GNU Bash 公式ドキュメント](https://www.gnu.org/software/bash/)
+- [コマンドラインチュートリアル](https://www.learnshell.org/)
+- [bash-scripting-guide](https://github.com/Idnan/bash-guide)
+- [Linuxコマンドライン大全](https://amzn.to/2Z61EFA)

@@ -1,39 +1,53 @@
 ---
-title:                "Clojure: קבלת התאריך הנוכחי"
+title:                "Clojure: קבלת תאריך נוכחי"
+simple_title:         "קבלת תאריך נוכחי"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה: רק 1-2 משפטים המסבירים *למה* מישהו יחזור על קבלת התאריך הנוכחי
+# למה:
 
-התכנית הזו מציגה איך לקבל ולשים בתוך משתנה, את התאריך הנוכחי עם עזרת שפת התכנות Clojure.
+רובנו רוצים לדעת מה התאריך הנוכחי בכל פעם שאנו משתמשים בתכנית כתיבה, יצירת אפליקציות או כל פעילות אחרת שדורשת ייצוג של התאריך הנוכחי. כתיבת תאריך ושעה באופן ידני כל פעם מבסס על כך ועשה אותו בצורה חוזרת יכול להיות מסוכן וטוב לתכניות גדולות יותר.
 
-## איך לעשות זאת:
+# כיצד לעשות זאת:
 
-לאחר התקנת ליבררי Clojure, ניתן להתחיל ליצור קוד דימוי תאריך הנוכחי בכמה צעדים פשוטים:
+השתמש בפונקציה ```(java.util.Date.)``` כדי לקבל את התאריך הנוכחי בתוך תא בקוד שלכם.
 
 ```Clojure
-;; משתנה שמחזיק את התאריך הנוכחי
-(def current-date (java.util.Date.))
+(defn current-date []
+  "פונקציה זו מחזירה את התאריך הנוכחי."
+  (let [today (java.util.Date.)]
+    (.toString today)))
 
-;; תאריך בפורמט של יום שבוע, חודש ושנה
-(def formatted-date (java.text.SimpleDateFormat. "dd-MM-yyyy").format current-date)
-
-;; תאריך בפורמט של חציון
-(def formatted-date (java.text.SimpleDateFormat. "MMyy").format current-date)
+(current-date)
+;;output: "Sat Sep 25 01:41:51 IDT 2021"
 ```
 
-הפלט של התוכנית הזו יהיה משתני התאריך הנוכחיים בפורמטים שונים, שניתן להתאים לפי הצורך של המשתמש.
+במקום להניח שהמשתנה שלנו ```today``` יוצא מסוג Date מהעבר, אנו משתמשים בפונקציה כדי ליצור אותו במהירות ולקבל את התאריך הנוכחי.
 
-## מכתב עמוק:
+# מעמקים:
 
-כדי להבין טוב יותר כיצד התוכנית מפעילה את תאריך היום הנוכחי, ניתן לבצע חקר עמוק יותר על הפונקציות שנמצאות בשפת התכנות Clojure. ניתן לראות כי פקודת (java.util.Date) מייצרת את תאריך היום הנוכחי מתוך האובייקט java.util.Date ואזמנתית של האובייקט לפונקציה של SimpleDateFormat. בנוסף, ניתן להתאים את הפורמט הנמצא לפני הפונקציה לפי הצורך שלנו באופן שונה.
+אנו יכולים גם להשתמש בפונקציות נוספות כדי להתאים את התאריך לפי החשיבה לפני כתיבתו. לדוגמה, נוסיף את התאריך הנוכחי על כל שאלות התאריך שלנו כדי לקבל תשובות מדויקות יותר.
 
-# ראו גם:
+```Clojure
+(defn current-time []
+  "פונקציה זו מחזירה את השעה הנוכחית."
+  (let [today (java.util.Date.)
+        fmt (java.text.SimpleDateFormat. "yyyy-MM-dd HH:mm:ss")]
+    (.format fmt today)))
 
-- [מדריך להתחיל עם Clojure](https://www.clojure.org/guides/getting_started)
-- [תיעוד רשמי לשפת Clojure](https://clojure.org/api/api)
-- [פונקציות ופורמטים בשפת Clojure](https://clojuredocs.org/core-library)
+(current-time)
+;;output: "2021-09-25 01:44:16"
+```
+
+ניתן גם להשתמש במגוון פונקציות המספקות את התאריך והשעה בפורמט שלנו, לדוגמה ```(format "%A, %B %d, %Y" (java.util.Date.))```.
+
+# ראה גם:
+
+- [מדריך לתאריך וזמן ב-Clojure](http://www.lispcast.com/clojure-date-time)
+- [התעלל כולל של תיאוריית הפונקציה מנקודת מבט של Clojure](http://www.braveclojure.com/writing-macros/)
+- [תיע

@@ -1,56 +1,41 @@
 ---
 title:                "Kotlin: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Wielu programistów często musi operować na ciągach tekstu podczas pisania kodu. W takich sytuacjach, ważne jest, aby wiedzieć jak znaleźć długość danego ciągu, ponieważ jest to podstawowa operacja, która może być potrzebna w różnych scenariuszach. W tym artykule dowiesz się, jak w łatwy sposób znaleźć długość stringa w języku Kotlin.
+Znalezienie długości ciągu znaków jest niezbędnym narzędziem w każdym języku programowania, a w Kotlinie jest to szczególnie proste i intuicyjne. Dowiedz się, dlaczego warto poznać tę funkcjonalność i jak z niej korzystać.
 
 ## Jak to zrobić
-
-W języku Kotlin, istnieje kilka sposobów na znalezienie długości ciągu tekstu. Jednym z nich jest użycie metody `length()` na obiekcie `String`. Przykładowy kod wykorzystujący tę metodę wygląda następująco:
-
-```Kotlin
-val string = "Hello World"
-val length = string.length()
-
-println(length) // Output: 11
-```
-W powyższym przykładzie, zmienna `string` przechowuje tekst, a następnie wywołujemy na niej metodę `length()`, aby znaleźć jej długość. Wynik jest przypisywany do zmiennej `length` i następnie wyświetlany w konsoli.
-
-Innym sposobem jest użycie właściwości `length` na obiekcie `String`. Przykładowy kod wykorzystujący tę właściwość wygląda następująco:
+Aby znaleźć długość ciągu znaków w Kotlinie, należy użyć metody "length". Przykładowy kod wyglądałby następująco:
 
 ```Kotlin
-val string = "Hello World"
-val length = string.length
-
-println(length) // Output: 11
+val name = "Kotlin"
+println(name.length)
 ```
-
-Ostatnią opcją jest użycie operatora `count()` na ciągu tekstu. Przykładowy kod wykorzystujący ten operator wygląda następująco:
+W powyższym przykładzie za pomocą metody "length" wyświetlamy długość zmiennej "name", czyli 6. Możemy także wyświetlić długość ciągu znaków bez użycia zmiennej, np.:
 
 ```Kotlin
-val string = "Hello World"
-val length = string.count()
-
-println(length) // Output: 11
+println("Programowanie w Kotlinie".length)
 ```
 
-Wszystkie powyższe metody i właściwości zwracają długość ciągu jako wynik, więc można wybrać tę, która wydaje się najbardziej odpowiednia w danym kontekście.
+Wynik tego kodu również wynosi 6, ponieważ liczone są tu znaki, a nie słowa.
 
-## Deep Dive
+## Głębszy wgląd
+Chociaż funkcja "length" jest prostym i niezwykle przydatnym sposobem na znalezienie długości ciągu znaków, warto zwrócić uwagę na kilka rzeczy. Po pierwsze, metoda ta jest wywoływana na zmiennej typu String, czyli tekstu. Jeśli spróbujemy użyć jej na zmiennej innego typu, otrzymamy błąd.
 
-Podczas pracy z ciągami tekstowymi, często potrzebujemy nie tylko znaleźć ich długość, ale także przetwarzać je w różny sposób. W języku Kotlin, można wykorzystać wiele funkcji i metod do manipulacji stringami, takich jak `substring()`, `contains()`, czy `replace()`. Ważne jest, aby zawsze pamiętać o typie zwracanym przez daną funkcję lub metodę, ponieważ niektóre z nich mogą zwracać wartość `null`.
-
-Ponadto, jeśli chcesz poznać jeszcze więcej możliwości manipulacji ciągami tekstowymi w języku Kotlin, warto przeczytać o wyrażeniach regularnych i jak można je wykorzystać do analizy i modyfikacji stringów.
+Po drugie, zauważyliśmy, że w przykładowym kodzie użyliśmy funkcji "println" do wyświetlenia wyniku. Możemy również przypisać długość ciągu znaków do innej zmiennej lub wykorzystać ją w dalszych operacjach.
 
 ## Zobacz także
+Jeśli chcesz pogłębić swoją wiedzę o Kotlinie, koniecznie zajrzyj na stronę dokumentacji języka oraz wypróbuj inne funkcje i metody. Możesz także zapoznać się z innymi językami programowania i porównać różnice. Poniżej kilka przydatnych linków:
 
-- [Dokumentacja języka Kotlin - podstawowe operacje na stringach](https://kotlinlang.org/docs/reference/basic-types.html#arrays)
-- [Porównanie wydajności różnych metod na znalezienie długości stringa w języku Kotlin](https://stackoverflow.com/questions/35796617/string-length-generation-kotlin-vs-java)
-- [Przykłady wykorzystania wyrażeń regularnych w języku Kotlin](https://www.baeldung.com/kotlin-regular-expressions)
+- [Oficjalna strona języka Kotlin](https://kotlinlang.org/)
+- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/home.html)
+- [Kurs programowania w Kotlinie na Codecademy](https://www.codecademy.com/learn/learn-kotlin)
+- [Porównanie języka Kotlin z innymi popularnymi językami programowania](https://www.raywenderlich.com/4738-kotlin-vs-java-comparison-of-top-features)

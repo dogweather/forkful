@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Regulareiden käyttö ohjelmoinnissa"
+title:                "Bash: Regulaarilausekkeiden käyttö"
+simple_title:         "Regulaarilausekkeiden käyttö"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/using-regular-expressions.md"
 ---
 
@@ -9,55 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi käyttää säännöllisiä lausekkeita?
 
-Säännölliset lausekkeet ovat voimakas työkalu, jota ohjelmoijat voivat hyödyntää tekstin käsittelyssä. Ne sallivat tarkan haun ja korvauksen tekstissä, mikä säästää aikaa ja vaivaa käsin tehdystä työstä.
+Säännölliset lausekkeet ovat hyödyllisiä työkaluja ohjelmoinnissa, sillä ne mahdollistavat tiettyjen merkkijonojen tarkastelun ja muokkaamisen helposti ja tehokkaasti. Esimerkiksi tiedon etsiminen ja käsittely tekstipohjaisesta tiedostosta voi olla paljon helpompaa säännöllisten lausekkeiden avulla.
 
-## Miten käyttää säännöllisiä lausekkeita?
+## Kuinka käyttää säännöllisiä lausekkeita Bash-ohjelmoinnissa?
 
-Säännöllisten lausekkeiden käyttö Bash-ohjelmoinnissa vaatii muutaman peruskäsitteen opettelua.
-
-### Yksinkertaistaen
-
-Säännöllinen lauseke (regular expression) on merkkijono, jota voidaan käyttää haun tekemiseen tai korvaamiseen tekstissä. Bashissa säännölliset lausekkeet asetetaan lainaavaaiden '`' merkkien väliin:
+Säännöllisiä lausekkeita voi käyttää Bash-skripteissä grep-komennon avulla. Seuraavassa esimerkissä näet, kuinka voit etsiä ja tulostaa kaikki sanat, jotka päättyvät kirjaimeen "a":
 
 ```Bash
-grep 'hakusana' tiedosto.txt
+echo "Tämä on esimerkkiteksti, jossa on sanoja, kuten kissa ja koira." | grep -o "\w*a\b"
 ```
 
-### Varmistaminen
+Tämä tulostaisi:
 
-Joskus haluat selvittää, löytyykö tietyllä tavalla muotoiltua tekstiä tiedostosta tai muusta lähteestä. Voit tarkistaa tämän `grep`-komentolla ja säännöllisellä lausekkeella:
+```
+kissa
+```
+
+Voit myös käyttää säännöllisiä lausekkeita muuttamaan merkkijonoja. Seuraavassa esimerkissä näet, kuinka voit korvata kaikki numerot tekstiksi "numero":
 
 ```Bash
-grep '^[A-Z0-9]*' tiedosto.txt
+echo "Tässä 123 on numeroita 456." | sed 's/[0-9]+/numero/g'
 ```
 
-Tämä haku tarkistaa, löytyykö tiedostosta sanoja, jotka alkavat joko isoilla kirjaimilla tai numerolla. `^` merkki merkitsee tiedoston alussa olevaa sanaa ja `*` merkki merkitsee yhden tai useamman merkin löytymistä.
+Tämä tulostaisi:
 
-### Selvittäminen
-
-Toisinaan haluat korvata tiettyjä sanoja tai lausekkeita toisilla. Voit tehdä tämän `sed`-komentolla ja säännöllisellä lausekkeella:
-
-```Bash
-sed 's/vanha_sanastema/uusi_sanastotermi/g' tiedosto.txt
+```
+Tässä numero on numeroita numero.
 ```
 
-Tämä komento korvaa kaikki `vanha_sanastema` sanat tai lausekkeet `uusi_sanastotermi` sanoilla tiedostossa. `g` tarkoittaa, että korvaaminen tehdään koko tiedostossa.
+## Syvällinen sukeltaminen säännöllisiin lausekkeisiin
 
-## Syventävä tieto säännöllisistä lausekkeista
+Säännölliset lausekkeet noudattavat tiettyä syntaksia, joka mahdollistaa tarkemman ja monimutkaisemman merkkijonojen käsittelyn. Esimerkiksi voit käyttää sulkeita ryhmittelemään osia merkkijonosta tai käyttää erityisiä merkkejä, kuten "+" tai "?" ilmaisemaan toistoa.
 
-Säännölliset lausekkeet ovat paljon suurempi aihe kuin tässä voitaisiin affoida. Käydään kuitenkin alustavasti läpi muutama hyödyllinen käsite:
-
-* `.` merkki tarkoittaa minkä tahansa yksittäisen merkin etsimistä
-* `|` merkki tarkoittaa vaihtoehtoja (esim. `koira|kissa` etsii sanoja 'koira' tai 'kissa')
-* `+` merkki tarkoittaa yhden tai useamman edellisen merkin etsimistä (esim. `a+` etsii yhden tai useamman a-kirjaimen)
-* `( )` sulkeet auttavat ryhmittämään säännöllisiä lausekkeita
-
-Tässä on muutama esimerkki säännöllisistä lausekkeista, jotka voisivat olla hyödyllisiä Bash-ohjelmoijille:
-
-* `^[0-9]+$` tarkistaa, että sana on kokonaisluku
-* `^[a-z]+@[a-z]+\.[a-z]+$` tarkistaa, että sana on sähköpostiosoite
-* `^\([0-9]{3}\)-[0-9]{3}-[0-9]{4}$` tarkistaa, että sana on puhelinnumero muodossa (123)-456-7890
+On tärkeää tutustua erilaisiin säännöllisten lausekkeiden käyttötapoihin ja syntaksiin, jotta niitä voi käyttää tehokkaasti ja monipuolisesti ohjelmoinnissa.
 
 ## Katso myös
 
-* [Linuxin opas säännöllisille lausekkeille Bashissa](https
+- [Bashin dokumentaatio säännöllisistä lausekkeista](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html#The-Set-Builtin)
+- [Linux Academy: Säännölliset lausekkeet Bashissa](https://linuxacademy.com/blog/linux/sed-regular-expressions-basics/)
+- [Regex101: Interaktiivinen työkalu säännöllisten lausekkeiden testaamiseen](https://regex101.com/)

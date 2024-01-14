@@ -1,50 +1,53 @@
 ---
 title:                "Elm: Procurando e substituindo texto"
+simple_title:         "Procurando e substituindo texto"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que usar o Elm para procurar e substituir texto?
 
-Há muitas situações em que precisamos fazer alterações em grande quantidade de texto. Pode ser para corrigir erros ou para padronizar trechos de código. Independente da razão, saber como pesquisar e substituir texto é uma habilidade importante para qualquer programador.
+Procurar e substituir texto é uma tarefa comum no desenvolvimento de software. Com o Elm, você pode automatizar esse processo e economizar tempo e esforço. Além disso, o Elm é uma linguagem de programação funcional elegante e robusta, que oferece uma maneira simples e eficiente de manipular strings.
 
-## Como Fazer
+## Como fazer isso no Elm:
 
-### Usando o ReplaceAll da String
+Em primeiro lugar, precisamos declarar uma string que contenha o texto que desejamos modificar. Usaremos o operador `~` para atribuir o valor a uma variável.
 
-Uma forma simples de realizar substituições de texto em Elm é utilizando a função replaceAll da biblioteca String. Ela recebe três argumentos: a substring a ser substituída, a substring de substituição e a string em que a substituição será feita.
-
-```elm
-import String exposing (replaceAll)
-
-texto = "Bem-vindo ao mundo da programação"
-novoTexto = replaceAll "programação" "codificação" texto
-
--- o resultado será: "Bem-vindo ao mundo da codificação"
+```Elm
+meuTexto = "Eu gosto de programar em Elm."
 ```
 
-### Usando Regex
+Em seguida, iremos utilizar a função `replace` do módulo `String` para substituir "gosto" por "amo" no texto:
 
-Outra opção é utilizar expressões regulares (ou regex) para realizar as substituições. A biblioteca Regex expõe funções úteis para trabalhar com esse tipo de padrão.
-
-```elm
-import Regex exposing (replace, regex)
-
-texto = "Muito Obrigado!"
-novoTexto = replace (regex "[A-Z]") (\_ -> "!") texto
-
--- o resultado será: "muito obrigado!"
+```Elm
+novoTexto = String.replace "gosto" "amo" meuTexto
 ```
 
-## Uma Mergulho Mais Profundo
+E se quisermos procurar e substituir em todas as ocorrências da string? Podemos usar a função `replace` juntamente com a função `words`, que divide o texto em uma lista de palavras. Em seguida, podemos usar o operador `|>` para encadear as funções e realizar a substituição em cada elemento da lista.
 
-Existem diversas outras maneiras de realizar buscas e substituições de texto em Elm, como utilizando as funções map, filter e fold do módulo List, ou ainda criando uma função de substituição personalizada. Além disso, é importante lembrar que a biblioteca String possui várias outras funções interessantes para trabalhar com texto.
+```Elm
+novaLista = meuTexto
+  |> String.words
+  |> List.map (\word -> String.replace "gosto" "amo" word)
+  |> String.join " "
+  |> String.trim
+```
 
-## Veja Também
+Na linha 4, estamos unindo a lista de palavras de volta em uma única string, e na linha 5, estamos removendo espaços em branco extras do início e do fim da string.
 
-- [Documentação da Biblioteca String em Elm](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Artigo sobre Expressões Regulares em Elm (em inglês)](https://thoughtbot.com/blog/elm-regular-expressions)
-- [Exemplos de Regex em Elm para exercitar](https://alfredomotta.com/regular-expressions-in-elm.html)
+O resultado final será: "Eu amo de programar em Elm."
+
+## Aprofundando-se no assunto:
+
+Além da função `replace`, o módulo `String` do Elm oferece outras funções úteis para manipulação de strings, como `startsWith`, `endsWith` e `contains`. Além disso, a linguagem Elm facilita a escrita de expressões lambda (funções anônimas) para realizar operações mais complexas em strings.
+
+Com o uso de bibliotecas externas, como o módulo `elm-regex`, é possível realizar substituições com expressões regulares e criar regras avançadas para manipulação de texto.
+
+## Veja também:
+
+- [Documentação oficial do módulo String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Módulo elm-regex](http://package.elm-lang.org/packages/elm-community/regex/latest)

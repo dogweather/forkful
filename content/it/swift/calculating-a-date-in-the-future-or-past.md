@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Calcolare una data nel futuro o nel passato"
+title:                "Swift: Calcolando una data nel futuro o nel passato"
+simple_title:         "Calcolando una data nel futuro o nel passato"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,39 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Calcolare una data nel futuro o nel passato può essere estremamente utile in diverse situazioni, come ad esempio per gestire scadenze o per pianificare eventi importanti.
+Calcolare una data nel futuro o nel passato può essere utile in molti scenari di programmazione. Ad esempio, potresti voler creare un'app che tenga traccia delle scadenze o delle date di consegna, oppure potresti dover calcolare l'età di una persona in una determinata data.
 
 ## Come fare
 
-Per calcolare una data nel futuro o nel passato in Swift, possiamo utilizzare la classe `Calendar` e il metodo `date(byAdding:value:to:)`. Ad esempio, per ottenere la data di oggi più 7 giorni, possiamo scrivere il seguente codice:
+Per calcolare una data nel futuro o nel passato, dobbiamo prima definire una data di partenza. Possiamo fare ciò utilizzando l'oggetto `Date` di Swift e impostando la data desiderata utilizzando il suo inizializzatore. Ad esempio, se vogliamo calcolare una data nel futuro, possiamo utilizzare il metodo `addingTimeInterval` per aggiungere un determinato intervallo di tempo alla data di partenza.
 
 ```Swift
-let today = Date()
-
-let calendar = Calendar.current
-let futureDate = calendar.date(byAdding: .day, value: 7, to: today)
-
-print(futureDate) // Output: 2021-09-20 19:02:53 +0000
+let startDate = Date() // abbiamo impostato la data di partenza ad oggi
+let futureDate = startDate.addingTimeInterval(86400) // 86400 secondi = 1 giorno
+print(futureDate) // output: 2022-01-16 12:00:00 +0000
 ```
 
-In questo esempio, abbiamo utilizzato `.day` come componente di data e 7 come valore, indicando così che vogliamo aggiungere 7 giorni alla data di oggi. Possiamo utilizzare lo stesso metodo per calcolare una data nel passato, specificando un valore negativo.
+Invece, se vogliamo calcolare una data nel passato, possiamo utilizzare il metodo `addingTimeInterval` con un valore negativo, indicando quanto tempo vogliamo sottrarre alla data di partenza.
+
+```Swift
+let startDate = Date() // abbiamo impostato la data di partenza ad oggi
+let pastDate = startDate.addingTimeInterval(-604800) // 604800 secondi = 1 settimana
+print(pastDate) // output: 2022-01-09 12:00:00 +0000
+```
 
 ## Approfondimento
 
-Il metodo `date(byAdding:value:to:)` ci permette di aggiungere o sottrarre una qualsiasi unità di tempo, come giorni, mesi, anni, ore, minuti, secondi, ecc. per ottenere una nuova data. Inoltre, possiamo anche specificare una data di riferimento diversa da quella odierna, passando al metodo un'altra data come parametro `to`.
-
-Un'altra opzione per calcolare date nel futuro o nel passato è utilizzare `TimeInterval`, che rappresenta una quantità di tempo in secondi e può essere aggiunta o sottratta da una data. Ad esempio:
+Per calcolare una data più specifica nel futuro o nel passato, possiamo utilizzare il metodo `date(byAdding:to:wrappingComponents:)` della classe `Calendar` di Swift. Questo metodo ci consente di aggiungere diverse componenti di tempo, come anni, mesi, giorni, ore, minuti e secondi, alla data di partenza. Inoltre, possiamo specificare se vogliamo che la data sia considerata nel calendario gregoriano o in un altro calendario specifico.
 
 ```Swift
-let today = Date()
-
-let futureDate = today + (7 * 24 * 60 * 60) // Aggiungiamo 7 giorni in secondi
-
-print(futureDate) // Output: 2021-09-20 19:02:53 +0000
+let startDate = Date() // abbiamo impostato la data di partenza ad oggi
+let futureDate = Calendar.current.date(byAdding: .day, value: 7, to: startDate) // aggiungiamo 7 giorni alla data di partenza
+print(futureDate) // output: 2022-01-23 12:00:00 +0000
 ```
 
 ## Vedi anche
 
-- [La classe `Calendar` in Swift](https://developer.apple.com/documentation/foundation/calendar)
-- [Il tipo `Date` in Swift](https://developer.apple.com/documentation/foundation/date)
-- [La struttura `DateComponents` in Swift](https://developer.apple.com/documentation/foundation/datecomponents)
+- [Documentazione di Apple su Date](https://developer.apple.com/documentation/foundation/date)
+- [Video tutorial su Date in Swift by Code With Chris](https://www.youtube.com/watch?v=SWLu89wXrZg)
+- [Articolo su come calcolare le differenze tra date in Swift by AppCoda](https://www.appcoda.com/swift-date-difference/)

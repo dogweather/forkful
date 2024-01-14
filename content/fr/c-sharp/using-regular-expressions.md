@@ -1,7 +1,9 @@
 ---
-title:                "C#: Utiliser des expressions régulières"
+title:                "C#: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/using-regular-expressions.md"
 ---
 
@@ -9,48 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Les expressions régulières sont un outil puissant pour tous ceux qui travaillent avec du code. Elles permettent de rechercher, de remplacer et de traiter des données de manière beaucoup plus efficace qu'avec des méthodes traditionnelles. Si vous voulez optimiser votre code et gagner du temps, vous devriez absolument apprendre à utiliser les expressions régulières.
+Les expressions régulières peuvent sembler effrayantes pour les débutants en programmation, mais elles sont incroyablement utiles pour créer des patrons dans du texte et les manipuler selon nos besoins. Elles sont utilisées pour la validation des entrées utilisateur, la recherche et la manipulation de données, et bien plus encore.
 
 ## Comment faire
 
-Les expressions régulières peuvent sembler intimidantes au premier abord, mais une fois que vous aurez compris leur syntaxe, elles deviendront un outil indispensable dans votre boîte à outils de programmation. Voici un exemple de code en C# pour vous aider à démarrer :
+Voici un exemple simple montrant comment utiliser les expressions régulières en C# pour valider un numéro de téléphone :
 
-```
-using System;
-using System.Text.RegularExpressions;
+```C#
+string regex = @"^\(?([0-9]{3})\)?[- .]?([0-9]{3})[- .]?([0-9]{4})$";
 
-class Program
+string phoneNumber = "123-456-7890";
+if (Regex.IsMatch(phoneNumber, regex))
 {
-  static void Main()
-  {
-    // Recherche d'une chaîne de caractères pour voir si elle contient la lettre "e"
-    string mot = "Bonjour";
-    if (Regex.IsMatch(mot, "e"))
-        Console.WriteLine("Le mot contient la lettre 'e' !");
-    else
-        Console.WriteLine("Le mot ne contient pas la lettre 'e' !");
-  }
+  Console.WriteLine("Le numéro de téléphone est valide !");
 }
+else
+{
+  Console.WriteLine("Le numéro de téléphone est invalide.");
+}
+
+Output: Le numéro de téléphone est valide !
 ```
 
-Sortie :
+Dans cet exemple, nous créons une expression régulière qui correspond à un numéro de téléphone américain au format xxx-xxx-xxxx. Nous utilisons ensuite la méthode `IsMatch` de la classe `Regex` pour vérifier si le numéro de téléphone fourni correspond à notre expression régulière.
 
-```
-Le mot contient la lettre 'e' !
-```
-
-Comme vous pouvez le voir dans l'exemple ci-dessus, les expressions régulières sont utilisées avec la classe `Regex` de la bibliothèque standard de C#. Il existe une grande variété de motifs de recherche et de remplacement que vous pouvez utiliser pour trouver et manipuler des données. N'hésitez pas à consulter la documentation pour en savoir plus sur les différentes options qui s'offrent à vous.
+Il existe de nombreux autres opérateurs et astuces pour créer des expressions régulières plus complexes en C#, mais avec cet exemple simple, vous êtes maintenant en mesure de les utiliser dans vos propres projets.
 
 ## Plongée en profondeur
 
-Les expressions régulières peuvent sembler déroutantes au début, mais elles peuvent être incroyablement utiles une fois que vous avez maîtrisé leur utilisation. Voici quelques astuces pour vous aider à devenir un pro des expressions régulières :
+Pour de plus amples informations et une liste complète des opérateurs et des symboles que vous pouvez utiliser dans vos expressions régulières C#, vous pouvez consulter la documentation officielle de Microsoft : [Expressions régulières en .NET](https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expressions).
 
-- Utilisez des sites en ligne pour tester vos expressions régulières avant de les intégrer dans votre code. Cela vous permettra d'obtenir des résultats plus précis et de déboguer plus facilement.
-- Vous pouvez utiliser la classe `RegexOptions` pour spécifier des options supplémentaires lors de l'utilisation des expressions régulières, telles que la casse sensible et l'ignorance des espaces blancs.
-- Prenez le temps de lire la documentation officielle de Microsoft sur les expressions régulières pour apprendre toutes les fonctionnalités avancées qu'elles offrent.
+Un autre outil utile pour tester et vérifier vos expressions régulières est [Regex101](https://regex101.com/), qui vous permet également de créer des expressions régulières pour d'autres langages de programmation tels que JavaScript et Python.
 
-## Voir aussi
+## Voir également
 
-- [Documentation officielle de Microsoft sur les expressions régulières](https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expressions)
-- [Tutoriel sur les expressions régulières en C#](https://www.c-sharpcorner.com/UploadFile/b2e801/regularexpressionsintro07072005003112AM/regularexpressionsintro.aspx)
-- [Tester des expressions régulières en ligne](https://regex101.com/)
+- [Expressions régulières en .NET (Microsoft)](https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expressions)
+- [Regex101](https://regex101.com/)

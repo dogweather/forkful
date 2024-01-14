@@ -1,48 +1,40 @@
 ---
-title:                "Bash: Beräkning av ett datum i framtiden eller förflutna"
+title:                "Bash: Räkna ut ett datum i framtiden eller förflutna"
+simple_title:         "Räkna ut ett datum i framtiden eller förflutna"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-### Varför
-Att kunna räkna ut ett datum i framtiden eller förfluten tid kan vara användbart i många situationer. Det kan hjälpa dig att planera framtida händelser eller att spåra tillbaka händelser som redan har inträffat. Genom att lära dig hur man gör detta med hjälp av Bash programmering kan du enkelt utföra dessa beräkningar direkt från din terminal.
+## Varför
 
-### Hur man gör det
-För att räkna ut ett datum i framtiden eller förfluten tid, behöver du använda kommandot ```date``` i Bash. Detta kommando visar det aktuella datumet och tiden, men genom att lägga till vissa parametrar kan vi få det att beräkna ett framtida eller förflutet datum åt oss.
+Att kunna beräkna ett datum i framtiden eller det förflutna kan vara mycket användbart i en rad olika situationer. Till exempel kanske du behöver planera en resa och vill veta vilken dag det är om två veckor, eller så kanske du måste beräkna när en elektiv operation ska äga rum baserat på patientens ålder. Det finns otaliga scenarier där denna färdighet kan komma till nytta.
 
-För att beräkna ett datum i framtiden kan vi använda parametern ```+``` följt av antalet dagar vi vill lägga till. Till exempel, om vi vill veta vilket datum det är om 7 dagar, kan vi använda följande kommando:
+## Så här gör du
 
-```Bash
-date +7 days
-```
-
-Detta kommer att ge oss resultatet i formatet "YYYY-MM-DD". Om vi vill ha ett annat format, som t.ex. "DD/MM/YYYY", kan vi använda kommandot ```+``` igen följt av formatet vi vill ha, till exempel:
+För att kunna beräkna ett datum i framtiden eller det förflutna behöver du använda dig av Bash-programmering. Det låter kanske avancerat, men det är faktiskt ganska enkelt. Här är ett exempel på hur du skulle gå till väga för att beräkna datumet för nästa onsdag:
 
 ```Bash
-date +"%d/%m/%Y" +7 days
+date -d “next Wednesday”
 ```
 
-På samma sätt kan vi beräkna ett datum i förfluten tid genom att använda parametern ```-``` istället för ```+```. Till exempel, om vi vill veta vilket datum det var för 2 veckor sedan, kan vi använda följande kommando:
+Efter att du har skrivit in detta i terminalen och tryckt på enter, kommer du få en utskrift med det eftertraktade datumet. Byt ut “next Wednesday” mot vilken dag som helst som du vill beräkna. Du kan också lägga till eller dra bort antalet dagar från det nuvarande datumet genom att använda en plus eller minus mellanrumsavgränsare. Till exempel:
 
 ```Bash
-date -2 weeks
+date -d “+2 weeks”
 ```
 
-### Djupdykning
-Datumberäkningar kan bli mer komplicerade när det kommer till månader och år. I dessa fall måste vi ta hänsyn till antalet dagar i varje månad och eventuella skottdagar. Detta kan göras med hjälp av Bashs inbyggda funktioner för datumberäkningar, som ```date --date```.
+Detta kommer att ge dig datumet om två veckor från idag. Det finns också andra användbara flaggor och kommandon som du kan använda för att precisionera din datumberäkning. Se till att läsa dokumentationen för att lära dig mer.
 
-Detta kommando låter oss ange ett datum i ett visst format och sedan beräkna ett annat datum baserat på det. Till exempel, om vi vill räkna ut vilket datum det är om 1 månad och 3 dagar, kan vi använda följande kommando:
+## Djupdykning
 
-```Bash
-date --date="2021-05-15 + 1 month 3 days"
-```
+För de som är intresserade av att lära sig mer om hur man beräknar datum i Bash-programmering, finns det en hel del att utforska. När man behärskar detta koncept kan man börja kombinera det med andra tekniker och skapa avancerade program för att hantera datum och tider. Det är också en nyttig färdighet att ha om man arbetar med skriptning eller automatisering av uppgifter.
 
-Detta kommer att ge oss resultatet "2021-06-18". Genom att använda Bashs inbyggda funktioner för datumberäkningar kan vi ta hänsyn till alla olika faktorer som kan påverka resultatet.
+## Se även
 
-### Se även
-- [Linux Bash Guide](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Programming Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Bash Date Man Page](https://man7.org/linux/man-pages/man1/date.1.html)
+- Bash Programlama 101: https://www.sk.com.tr/bash-programlama-101/
+- The Linux Command Line: https://www.tldp.org/LDP/Bash-Beginners-Guide/html/
+- Linux Bash: https://www.gnu.org/software/bash/

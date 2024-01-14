@@ -1,49 +1,61 @@
 ---
 title:                "Arduino: Erstellen einer temporären Datei"
+simple_title:         "Erstellen einer temporären Datei"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Warum sollte man sich mit der Erstellung einer temporären Datei befassen? Nun, temporäre Dateien können dabei helfen, Daten temporär zu speichern oder zu übertragen, ohne den permanenten Speicherplatz des Systems zu beanspruchen. Sie können auch eingesetzt werden, um komplexe Berechnungen oder Prozesse zu unterstützen, die erst in einem späteren Schritt in einer permanenten Datei gespeichert werden sollen.
+Es gibt viele Gründe, warum man temporäre Dateien in einem Arduino-Programm erstellen möchte. Zum Beispiel kann es sein, dass man Daten zwischen verschiedenen Funktionen oder Schleifen speichern muss, oder dass man bestimmte Dateien nur vorübergehend benötigt. Egal aus welchem Grund, das Erstellen und Nutzen von temporären Dateien kann sehr nützlich sein.
 
-# Wie geht man vor
+## Wie
 
-Um eine temporäre Datei in Arduino zu erstellen, kann die Funktion "tempfile()" verwendet werden. Hier ist ein Beispielcode:
+Es gibt einige Schritte, die man befolgen muss, um erfolgreich temporäre Dateien in einem Arduino-Programm zu erstellen. Zuerst muss man eine Variable erstellen, die den Speicherort der temporären Datei speichert. Dann muss man Funktionen nutzen, um die temporäre Datei zu erstellen, zu schreiben und zu löschen.
 
-```
-Arduino char filename[13]; // Name der temporären Datei wird in ein Char-Array geschrieben
-File tempFile; // Neue temporäre Datei wird erstellt
-tempFile = tempfile(filename); // Die Funktion erstellt die temporäre Datei
-tempFile.print("Hallo Welt!"); // Der Inhalt wird in die temporäre Datei geschrieben
-tempFile.close(); // Die Datei wird geschlossen
-```
+```Arduino
+File tempFile; // erstelle eine Variable für die temporäre Datei
 
-Um den Inhalt der temporären Datei zu überprüfen, kann die Funktion "open()" verwendet werden. Hier ist ein weiteres Beispiel:
+void setup() {
+  // initialisiere serielle Kommunikation
+  Serial.begin(9600);
 
-```
-Arduino char filename[13]; // Name der temporären Datei wird in ein Char-Array geschrieben
-File tempFile; // Neue temporäre Datei wird erstellt
-tempFile = tempfile(filename); // Die Funktion erstellt die temporäre Datei
-tempFile.open(filename); // Die temporäre Datei wird geöffnet
-while (tempFile.available()) { // Solange noch Inhalte verfügbar sind
-  char data = tempFile.read(); // Daten werden einzeln ausgelesen
-  Serial.print(data); // Daten werden in der Seriellen Monitor ausgegeben
+  // erstelle eine neue temporäre Datei mit dem Namen "temp.txt"
+  tempFile = SD.open("temp.txt", FILE_WRITE);
+
+  // überprüfe, ob die Datei erfolgreich erstellt wurde
+  if (!tempFile) {
+    Serial.println("Fehler beim Erstellen der temporären Datei!");
+  }
 }
-tempFile.close(); // Die Datei wird geschlossen
+
+void loop() {
+  // schreibe Daten in die temporäre Datei
+  tempFile.println("Dies ist ein Beispieltext.");
+
+  // schließe die Datei
+  tempFile.close();
+
+  // lösche die temporäre Datei
+  SD.remove("temp.txt");
+
+  // warte eine Sekunde
+  delay(1000);
+}
 ```
 
-# Tiefere Einblicke
+## Deep Dive
 
-Um die Verwendung und Erstellung von temporären Dateien besser zu verstehen, ist es wichtig, sich mit den Unterschieden zwischen temporären und permanenten Dateien auseinanderzusetzen. Während permanente Dateien dauerhaft auf dem Speicher des Systems gespeichert werden, sind temporäre Dateien nur für eine begrenzte Zeit verfügbar und werden danach gelöscht.
+Beim Erstellen einer temporären Datei gibt es einige wichtige Dinge zu beachten. Zunächst muss man sicherstellen, dass man ausreichend Speicherplatz auf dem Arduino verfügbar hat, um die temporäre Datei zu erstellen. Außerdem muss man darauf achten, dass man die Datei am Ende wieder löscht, um Speicherplatz frei zu machen.
 
-Zusätzlich gibt es verschiedene Arten von temporären Dateien, wie z.B. "volatile" oder "shared". Diese haben jeweils unterschiedliche Eigenschaften und Zwecke.
+Eine weitere wichtige Überlegung ist die Benennung der temporären Datei. Es ist wichtig, einen eindeutigen und aussagekräftigen Namen zu wählen, um Verwechslungen mit anderen Dateien zu vermeiden.
 
-# Siehe auch
+## Siehe auch
 
-- [Arduino Dokumentation zu "tempfile()"](https://www.arduino.cc/reference/de/language/functions/file-io/tempfile/)
-- [Wikipedia Eintrag zu "Temporäre Datei"](https://de.wikipedia.org/wiki/Tempor%C3%A4re_Datei)
+- [Documentation Arduino - Creating and Deleting Temporary Files](https://www.arduino.cc/en/Tutorial/Files)
+- [Tutorialspoint - Arduino SD Library](https://www.tutorialspoint.com/arduino/arduino_sd_library.htm)
+- [Instructables - How to Use the Arduino SD Card Library](https://www.instructables.com/How-to-Use-The-Arduino-SD-Card-Library/)

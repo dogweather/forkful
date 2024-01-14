@@ -1,36 +1,45 @@
 ---
-title:                "Java: 文字列の長さを探す"
+title:                "Java: 文字列の長さを見つける"
+simple_title:         "文字列の長さを見つける"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列の長さを求めることに取り組む理由について1〜2文で説明します。
+## なぜ？
 
-文字列の長さを知ることは、テキスト処理やデータ処理において非常に重要なことです。文字列の長さを知ることで、必要な情報を取得したり、特定の文字を抽出することができます。
+文字列の長さを求めることの魅力は、その文字列をより効率的に操作するためです。例えば、文字列の一部を抜き出す場合や、特定の文字列を検索する場合に、文字列の長さが必要になります。
 
-## 使い方
-文字列の長さを取得する方法のコーディング例と、その出力結果を示します。
+## やり方
+
+文字列の長さを求めるには、Javaの組み込みメソッドである`length()`を使用します。以下のコードブロックを参考にしてください。
+
 
 ```Java
-String name = "John";
-int length = name.length();
-System.out.println("Name length: " + length);
+String myString = "こんにちは、世界！";
+int length = myString.length();
+
+System.out.println("文字列の長さは" + length + "です。");
 ```
 
-**出力結果:**
-`Name length: 4`
+このコードを実行すると、次の出力が得られます。
+
+```Java
+文字列の長さは9です。
+```
 
 ## 深堀り
-文字列の長さを求める方法について、さらに詳しく説明します。
 
-まず、文字列とは複数の文字で構成されるデータのことです。Javaでは`String`クラスを使用して文字列を扱います。そして、`length()`メソッドを使用することで文字列の長さを取得することができます。
+Javaの`length()`メソッドは、実際には`int`型のプリミティブデータ型を返します。これは、文字列のバイト数をカウントしているためです。そのため、日本語や他のマルチバイト文字を含む文字列の場合、意図した文字数とは異なる結果が得られる可能性があります。
 
-また、`length()`メソッドは日本語や特殊な文字も正しくカウントすることができます。しかし、半角と全角の文字では長さが異なることに注意が必要です。
+また、`length()`メソッドはオブジェクトではなく、クラスの静的メソッドです。つまり、このメソッドを呼び出すときは、必ずクラス名を前に付ける必要があります。
 
 ## 参考リンク
-- [JavaのStringクラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
-- [Javaで文字列の長さを取得する方法](https://techacademy.jp/magazine/18850)
+
+- [JavaのStringクラスの公式ドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
+- [Javaで文字列を操作する方法](https://www.javadrive.jp/start/string/index1.html)
+- [Javaの組み込みメソッド一覧](https://www.javatpoint.com/java-string-methods)
+- [Javaで文字列を操作するためのライブラリー「Apache Commons Lang」](https://commons.apache.org/proper/commons-lang/)

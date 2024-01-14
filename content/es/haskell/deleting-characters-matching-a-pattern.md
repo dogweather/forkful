@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Borrando caracteres que coincidan con un patrón"
+simple_title:         "Borrando caracteres que coincidan con un patrón"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,47 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-A veces, al trabajar con datos y cadenas de texto en Haskell, es necesario limpiar y formatear los mismos para poder realizar operaciones o análisis específicos. Una forma de hacer esto es eliminando ciertos caracteres que no sean necesarios o que no cumplan con un patrón específico. En esta entrada del blog, aprenderemos cómo eliminar caracteres que coincidan con un patrón en Haskell, y por qué podría ser útil hacerlo.
+Como programadores en Haskell, a menudo nos encontramos con el desafío de manipular cadenas de texto y realizar diversas operaciones en ellas. Una de estas operaciones puede ser la eliminación de caracteres que coinciden con un patrón específico. Aunque esto puede no ser una tarea común, puede ser útil en ciertas situaciones, especialmente cuando estamos trabajando con grandes cantidades de datos.
 
 ## Cómo hacerlo
 
-Una forma de eliminar caracteres que coincidan con un patrón en Haskell es utilizando la función `deleteBy` de la biblioteca `Data.List`. Esta función toma dos argumentos: una función que determina si un elemento coincide con el patrón, y una lista de elementos en la que se realizará la eliminación. Por ejemplo, si queremos eliminar todas las letras mayúsculas de una cadena de texto, podemos hacerlo de la siguiente manera:
+Para eliminar caracteres que coinciden con un patrón en Haskell, podemos utilizar la función `filter` y la función `notElem`. Primero, debemos definir el patrón que queremos que cumplan los caracteres que deseamos eliminar. Por ejemplo, si queremos eliminar las vocales de una cadena, podemos definir el patrón como `["a", "e", "i", "o", "u"]`. Luego, podemos usar la función `filter` para filtrar todos los caracteres que no estén incluidos en nuestro patrón con la función `notElem`.
 
 ```Haskell
-import Data.Char (isUpper)
+-- Definimos el patrón de caracteres a eliminar
+patron = ["a", "e", "i", "o", "u"]
 
-deleteBy (==) "Haskell" -- devolverá "askell"
+-- Definimos una función que elimina los caracteres que coinciden con el patrón
+eliminarCaracteres :: [Char] -> [Char]
+eliminarCaracteres cadena = filter (`notElem` patron) cadena
+
+-- Ejemplo de uso
+> eliminarCaracteres "Hola Mundo"
+"Hl Mnd"
 ```
 
-En este ejemplo, la función `isUpper` se utiliza como la función de comparación, ya que devuelve `True` si un caracter es una letra mayúscula. La función `deleteBy` entonces eliminará todos los caracteres que cumplan con este patrón, dejando solo las letras minúsculas en la cadena de texto.
+También podemos utilizar la función `delete` del módulo `Data.List` para eliminar caracteres específicos en una cadena. Esta función toma como argumentos un elemento y una lista, y devuelve la lista sin el elemento especificado.
 
-Otra forma de eliminar caracteres que coincidan con un patrón es utilizando la función `filter` de la biblioteca `Data.List`. Esta función también toma una función como argumento, pero en este caso, la función debe devolver `True` para mantener el elemento en la lista, y `False` para eliminarlo. Por ejemplo, si queremos eliminar todos los números de una lista de enteros, podemos hacerlo de la siguiente manera:
+```Haskell
+import Data.List (delete)
+
+-- Ejemplo de uso
+> delete 'a' "Hola Mundo"
+"Hol Mundo"
+```
+
+## Profundizando
+
+Si queremos eliminar caracteres específicos basados en un patrón más complejo, podemos utilizar la función `deleteBy` del módulo `Data.List` en lugar de `delete`. Esta función toma como argumentos una función de comparación y una lista, y elimina los elementos de la lista que cumplan con la condición de la función de comparación.
+
+Por ejemplo, si queremos eliminar todos los caracteres que sean números, podemos utilizar la función `isDigit` del módulo `Data.Char` en la función `deleteBy`. Esta función devuelve `True` si el carácter es un número y `False` en caso contrario.
 
 ```Haskell
 import Data.Char (isDigit)
+import Data.List (deleteBy)
 
-filter (\x -> not (isDigit x)) [1, 2, 3, 4, 5, 6, 7, 8, 9] -- devolverá una lista vacía
+-- Definimos una función de comparación que retorna True si el carácter es un número
+esNumero :: Char -> Bool
+esNumero car = isDigit car
+
+-- Ejemplo de uso
+> deleteBy esNumero "Hola 123 Mundo"
+"Hola Mundo"
 ```
 
-En este ejemplo, se utiliza la función `isDigit` para determinar si un número es un dígito. La función `filter` luego elimina todos los elementos que cumplan con este patrón, dejando una lista vacía como resultado.
+## Ver también
 
-## Deep Dive
-
-La función `deleteBy` también es capaz de manejar patrones más complejos utilizando funciones de comparación personalizadas. Esto se puede hacer proporcionando una función que tome dos argumentos (los dos elementos que se están comparando) y devuelve un tipo de ordenamiento (`LT`, `EQ` o `GT`). Por ejemplo, si queremos eliminar todos los números pares de una lista de enteros, podemos hacerlo de la siguiente manera:
-
-```Haskell
-deleteBy compareNumbers [1, 2, 3, 4, 5, 6, 7, 8, 9] 
-    where compareNumbers x y 
-              | odd x && even y = LT
-              | odd x && odd y = EQ
-              | otherwise = GT
-
--- devolverá [1, 3, 5, 7, 9]
-```
-
-En este ejemplo, la función `compareNumbers` primero verifica si `x` es impar y `y` es par. Si esto es cierto, se devuelve `LT`, lo que significa que `x` debe eliminarse de la lista. Si ambos `x` e `y` son impares, se devuelve `EQ`, lo que significa que `x` se mantendrá en la lista. En todos los demás casos, se devuelve `GT`, lo que significa que tanto `x` como `y` se mantendrán en la lista.
-
-## Véase también
-
-- [Documentación de `Data.List.deleteBy`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:deleteBy)
-- [Documentación de `Data.List.filter`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:filter)
+- [Documentación de Haskell](https://www.haskell.org/documentation/)
+- [Módulo Data.List](https://hackage.haskell.org/package/base/docs/Data-List.html)
+- [Módulo Data.Char](https://hackage.haskell.org/package/base/docs/Data-Char.html)

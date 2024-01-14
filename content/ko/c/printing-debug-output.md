@@ -1,7 +1,9 @@
 ---
-title:                "C: 디버그 출력 출력하기"
+title:                "C: 디버그 출력 출력"
+simple_title:         "디버그 출력 출력"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/printing-debug-output.md"
 ---
 
@@ -9,44 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-디버그 출력을 프로그래밍하는 것에 관심이 있을까요? 디버그 출력은 또 다른 도구를 사용하기 전에 시스템 또는 코드를 검토하는 간단하고 효과적인 방법입니다. 또한 코드 에러를 신속하게 해결하는 데 도움이 됩니다.
+C 프로그래밍에서 디버그 출력을 프린트하는 것은 코드의 버그를 찾는 데 매우 유용합니다. 디버그 출력은 프로그래머에게 코드 실행 상황을 시각적으로 보여주며, 버그를 해결하는 데 큰 도움을 줍니다.
 
-## 어떻게
+##하는 방법
 
-C 프로그래밍에서 디버그 출력을 활용하는 방법을 알아보겠습니다. 아래 코드 블록은 디버그 출력을 위한 기본적인 예제입니다.
+디버그 출력을 프린트하는 가장 간단한 방법은 `printf()` 함수를 사용하는 것입니다. 이 함수는 문자열을 출력하는 데 사용되며, 디버그 메시지를 표시하는 데 매우 유용합니다. 다음은 `printf()` 함수를 사용하는 예제 코드입니다.
 
 ```C
-#include <stdio.h>
+#include<stdio.h>
 
-int main(void) {
-
-    int x = 5;
-    int y = 10;
-    int z = x * y;
-    
-    // 디버그 출력
-    printf("x 값: %d \n", x);
-    printf("y 값: %d \n", y);
-    printf("곱셈 결과: %d \n", z);
-
+int main() {
+    // 디버그 메시지 출력
+    printf("디버그 메시지입니다.");
     return 0;
 }
-
-/* 출력 예시:
-x 값: 5 
-y 값: 10 
-곱셈 결과: 50 
-*/
+```
+출력 결과:
+```
+디버그 메시지입니다.
 ```
 
-위 예제에서 정의한 변수들과 계산 결과를 디버그 출력을 통해 확인할 수 있습니다. 이렇게 간단한 방법으로 코드를 검토하고 문제를 해결할 수 있습니다.
+위의 예제에서, `printf()` 함수는 디버그 메시지를 출력하고 있습니다. 이 메시지를 사용하여 코드의 실행 상황을 확인할 수 있으며, 이를 통해 버그를 쉽게 찾을 수 있습니다.
 
-## 깊이 들어가기
+## 딥 다이브
 
-디버그 출력을 더욱더 효율적으로 활용하기 위해서는 다양한 방법을 익혀야 합니다. 예를 들어, `printf` 함수 대신 디버그 라이브러리를 사용하거나, 디버그 출력을 파일에 저장하거나, 조건부 디버그 출력을 설정하는 등의 방법이 있습니다. 디버깅에 대한 좀 더 자세한 내용은 다음 링크를 참고하세요.
+디버그 출력을 프린트하는 데는 여러 가지 방법이 있습니다. 가장 간단한 `printf()` 함수 외에도, `fprintf()` 함수를 사용하여 파일에 메시지를 출력하거나, `sprintf()` 함수를 사용하여 변수에 메시지를 저장할 수도 있습니다. 또한, `assert()` 함수를 사용하여 프로그램의 실행 중지를 유발하는 방법도 있습니다. 이러한 다양한 방법을 적절하게 활용하여 디버그 출력을 프린트하면, 코드의 버그를 더 쉽게 찾을 수 있습니다.
 
-## 관련 링크
+## 참고
 
-- [디버그 출력을 활용한 디버깅 방법](https://www.ics.uci.edu/~cs23/DEPTHS/EXAMPLES/DEBUG/)
-- [디버그 라이브러리 설명서](https://www.gnu.org/software/libc/manual/html_node/Debugging-Output.html)
-- [조건부 디버그 출력 설정 방법](https://stackoverflow.com/questions/142508/how-do-i-turn-off-conditional-debugging-with-print-statements)
+- [C 언어 레퍼런스](https://ko.wikipedia.org/wiki/C_%EC%96%B8%EC%96%B4)
+- [C 디버깅 기법](https://ko.wikipedia.org/wiki/디버깅#C)
+- [디버그 출력을 활용한 버그 찾기](https://builttogether.org/debug-output-for-bug-hunting/)

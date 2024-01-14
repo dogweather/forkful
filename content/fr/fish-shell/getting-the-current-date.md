@@ -1,34 +1,63 @@
 ---
 title:                "Fish Shell: Obtenir la date actuelle"
+simple_title:         "Obtenir la date actuelle"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
-Obtenir la date et l'heure actuelles est une tâche courante dans la programmation. Cela peut être utile pour afficher l'information la plus récente ou pour enregistrer des données avec un horodatage précis. Dans cet article, nous allons explorer comment obtenir la date actuelle en utilisant Fish Shell.
+## Pourquoi
 
-# Comment Faire
-Pour obtenir la date actuelle en Fish Shell, nous pouvons utiliser la commande "date" suivi du format désiré. Par exemple, si nous souhaitons afficher la date au format "jj/mm/aaaa", nous pouvons utiliser la commande suivante dans notre terminal:
+La date actuelle est une information importante à connaître dans de nombreux contextes de programmation. Que ce soit pour afficher la date dans votre interface utilisateur ou pour effectuer des tâches basées sur la date, il est essentiel de savoir comment l'obtenir dans votre code. Dans cet article, nous allons découvrir comment obtenir la date actuelle en utilisant le shell Fish.
 
-```
-date +%d/%m/%Y
-```
+## Comment faire
 
-Cela affichera la date actuelle au format "jour/mois/année". Nous pouvons également ajouter d'autres informations telles que l'heure ou le fuseau horaire en utilisant des options supplémentaires avec la commande "date". Par exemple, pour afficher la date et l'heure complètes au format ISO 8601, nous pouvons utiliser la commande suivante:
+La manière la plus simple d'obtenir la date actuelle dans Fish Shell est d'utiliser la commande `date`. Elle affichera la date et l'heure actuelles dans votre fuseau horaire local par défaut.
 
-```
-date +%Y-%m-%dT%H:%M:%S%z
+```Fish Shell
+date
 ```
 
-Cela affichera l'heure et la date au format "année-mois-jourTheure:minute:seconde+hhmm", avec le fuseau horaire inclus. Il existe de nombreuses autres options que vous pouvez explorer pour personnaliser votre sortie de date et d'heure.
+L'exécution de cette commande affichera un résultat similaire à celui-ci :
 
-# Plongée Profonde
-La commande "date" dans Fish Shell est une interface vers la fonction de système "strftime" qui est utilisée pour formater les informations de date et d'heure. Vous pouvez trouver la liste complète des spécificateurs de format disponibles dans la documentation officielle de Fish Shell. En utilisant ces spécificateurs, vous pouvez personnaliser votre sortie en affichant la date et l'heure de différentes manières.
+```
+Mercredi 9 septembre 2020 17:30:00 Heure avancée du Pacifique (GMT-7)
+```
 
-# Voir Aussi
-- Documentation officielle de Fish Shell sur la commande "date": https://fishshell.com/docs/current/commands.html#date
-- Documentation officielle de Fish Shell sur la fonction système "strftime": https://fishshell.com/docs/current/index.html#strftime
-- Tutoriel sur les bases de Fish Shell: https://hackernoon.com/a-gentle-introduction-to-fish-shell-5tj3
+Si vous souhaitez afficher la date et l'heure dans un format spécifique, vous pouvez spécifier un format en utilisant l'option `-f`. Par exemple, pour afficher la date au format ISO 8601, vous pouvez utiliser la commande suivante :
+
+```Fish Shell
+date -f "%Y-%m-%d"
+```
+
+Le résultat sera alors :
+
+```
+2020-09-09
+```
+
+Vous pouvez également spécifier un fuseau horaire différent en utilisant l'option `-u` suivie du fuseau horaire souhaité. Par exemple, pour avoir la date et l'heure en heure universelle (UTC), vous pouvez utiliser la commande suivante :
+
+```Fish Shell
+date -u
+```
+
+Le résultat sera alors :
+
+```
+Jeudi 10 septembre 2020 00:30:00 Temps universel (UTC)
+```
+
+## Plongée en profondeur
+
+La commande `date` utilise en fait les variables d'environnement `LC_TIME` et `TZ` pour afficher la date et l'heure. La variable `LC_TIME` définit le format de la date et de l'heure, tandis que `TZ` définit le fuseau horaire.
+
+La commande `date` utilise également l'utilitaire système `date` pour effectuer la tâche réelle d'obtenir la date. Cela signifie que si vous avez besoin de fonctionnalités plus avancées, vous pouvez utiliser directement l'utilitaire `date` en appelant `/bin/date`.
+
+## Voir aussi
+- [La documentation officielle de Fish Shell](https://fishshell.com/docs/current/)
+- [La documentation officielle de la commande date](https://fishshell.com/docs/current/cmds/date.html)
+- [La documentation de l'utilitaire système date](https://man7.org/linux/man-pages/man1/date.1.html)

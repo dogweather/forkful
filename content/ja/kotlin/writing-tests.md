@@ -1,51 +1,49 @@
 ---
 title:                "Kotlin: テストの書き方"
+simple_title:         "テストの書き方"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+## なぜ？
+プログラミングをする上で、テストを書くことの重要性は言うまでもありません。テストを書くことにより、コードをより信頼性の高いものにすることができます。また、バグを早期に検知し、修正することもできます。
 
-アプリケーションの品質を確保するためには、テストが不可欠です。テストを書くことで、バグを減らし、コードの安定性を保つことができます。
+## 書き方
+テストを書く方法はいくつかありますが、Kotlinを使ってどのようにテストを書くかを紹介します。まず、```kotlin ...```のコードブロック内に、テストしたい関数やメソッドを書きます。次に、期待する出力を定義し、それを実際の出力と比較します。最後に```assertEquals()```を使用して、出力が一致するかどうかを確認します。以下に例を示します。
 
-## テストの書き方
-
-テストを書くためには、まずテストフレームワークを導入する必要があります。 Kotlinの場合は、 `AndroidJunitRunner` を使用することで、JUnitテストを実行できます。
-
-```Kotlin
-@RunWith(AndroidJUnitRunner::class)
-class MyTest {
-    @Test
-    fun testSomething() {
-        // テストコードをここに書く
-    }
+```kotlin
+// テストしたい関数
+fun addNumbers(a: Int, b: Int): Int {
+    return a + b
 }
+
+// 期待する出力
+val expected = 10
+
+// 実際の出力と比較
+val actual = addNumbers(5, 5)
+
+// 出力が一致するかを確認
+assertEquals(expected, actual)
 ```
 
-テストメソッドの前には `@Test` アノテーションをつけて、テストする内容を書きます。例えば、ある関数が正しい結果を返すかどうかをテストする場合は、`assertEquals()` メソッドを使用します。
+このように、テストを書くことでコードの挙動を確認し、バグを見つけることができます。
 
-```Kotlin
-@Test
-fun testDouble() {
-    val result = someFunction(2)
-    assertEquals(4, result)
-}
-```
+## 深堀り
+テストを書く際の幾つかのポイントを紹介します。
 
-`assertEquals()` メソッドの第1引数には、期待する結果を、第2引数には実際の結果を指定します。テストが成功すると、緑のマークが出力され、失敗すると赤のマークが出力されます。
+- テストは網羅的に書くことが大切です。特定の条件下でのみ発生するバグを見つけるためには、その条件を再現するテストを書くことが必要です。
+- テストコードも普通のコードと同じようにリファクタリングすることができます。重複した部分をまとめたり、よりシンプルな書き方にすることで、保守性の高いテストコードにすることができます。
+- テストを書く際は、ユニットテストと統合テストを分けることが重要です。ユニットテストでは、個々の関数やメソッドの動作をテストし、統合テストでは複数の関数やメソッドが協調して動作しているかをテストします。
 
-## テストの深堀り
+テストを書くことで、コードの品質を保つことができます。ぜひ積極的に取り入れてみてください。
 
-テストを書く際には、どのようなテストを書けばよいか悩むことがあります。しかし、心配しなくて大丈夫です。コードカバレッジツールを使用することで、テストを書くべき箇所を把握することができます。
-
-また、TDD（Test Driven Development）を実践することで、テストを先に書くことでコードの設計を改善することができます。これにより、バグを事前に防ぐことができます。
-
-## 関連リンク
-
-- [JUnit | Android Developers](https://developer.android.com/training/testing/unit-testing/local-unit-tests)
-- [Code Coverage Tools for Kotlin | Medium](https://medium.com/@codemonkey86/code-coverage-tools-for-kotlin-13993a35de36)
-- [TDDとは？TDDのメリット・デメリットと始め方 | Wantedly Blog](https://www.wantedly.com/companies/32fun/blog_articles/140085)
-- [Kotlin + TDDで始めるAndroidアプリ開発 | Zenn](https://zenn.dev/kazuki43zoo/articles/b44b9381fc7f8d1ab03c)
+## See Also
+- [Kotlin 公式ドキュメント](https://kotlinlang.org/docs/home.html)
+- [Kotlin Test フレームワーク](https://kotlinlang.org/docs/reference/testing.html)
+- [JUnit 5 公式ドキュメント (日本語)](https://junit.org/junit5/docs/current/user-guide/junit5/)
+- [テスト駆動開発入門 ―最初の一歩から、しっかり学ぶ！TDDの基礎知識](https://www.shoeisha.co.jp/book/detail/9784798119408)

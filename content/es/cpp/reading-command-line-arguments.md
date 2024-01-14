@@ -1,57 +1,88 @@
 ---
-title:                "C++: Leyendo argumentos de línea de comando"
+title:                "C++: Leyendo argumentos de línea de comandos"
+simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué leer argumentos de línea de comando?
+## Por qué
 
-Lee este blog post si estás buscando aprender cómo utilizar argumentos de línea de comando en tus programas de C++. La utilización de argumentos de línea de comando puede hacer que tus programas sean más flexibles y dinámicos, permitiéndote personalizar la ejecución del programa según tus necesidades.
+Si estás interesado en aprender a programar en C++, una de las habilidades más importantes que debes dominar es la capacidad de leer argumentos de línea de comandos. Esto te permitirá crear programas más interactivos y dinámicos, y también te ayudará a desarrollar tus habilidades de resolución de problemas. Sigue leyendo para aprender cómo hacerlo.
 
-## Cómo hacerlo
+## Cómo
 
-Para leer argumentos de línea de comando en C++, primero debes incluir la biblioteca `iostream` y `string` en tu programa. A continuación, utiliza la función `int main(int argc, char* argv[])` para leer los argumentos de línea de comando. El parámetro `argc` contendrá el número de argumentos ingresados y `argv` será un array con los argumentos.
-
-Aquí tienes un ejemplo de cómo puedes utilizar argumentos de línea de comando para imprimir un mensaje personalizado en la consola:
+Una de las formas más comunes de leer argumentos de línea de comandos en C++ es a través de la función "getopt". Esta función te permite especificar los argumentos que deseas leer y luego los almacena en variables para que puedas usarlos en tu programa. Aquí hay un ejemplo de cómo usarlo:
 
 ```C++
-#include <iostream>
-#include <string>
+#include <unistd.h> 
 
-int main(int argc, char* argv[]) {
-  if (argc > 1) {
-    std::string nombre = argv[1];
-    std::cout << "Hola " << nombre << ", bienvenido/a a mi programa!";
-  } else {
-    std::cout << "Bienvenido al programa!";
-  }
-  return 0;
+int main(int argc, char *argv[]) { 
+    // El primer argumento es el comando  
+    // Los siguientes son los argumentos que estás buscando 
+    // "a" y "b" son indicadores opcionales 
+    int aflag = 0; 
+    int bflag = 0; 
+    char *cvalue = NULL; 
+    int index; 
+    int c; 
+
+    opterr = 0; 
+
+    while ((c = getopt(argc, argv, "abc:")) != -1) {
+        switch (c) { 
+            case 'a': 
+                aflag = 1; 
+                break; 
+            case 'b': 
+                bflag = 1; 
+                break; 
+            case 'c': 
+                cvalue = optarg; 
+                break; 
+            case '?': 
+                if (optopt == 'c') { 
+                    fprintf(stderr, "La opción -%c requiere un argumento.\n", optopt); 
+                } else if (isprint(optopt)) { 
+                    fprintf(stderr, "Opción desconocida `-%c'.\n", optopt); 
+                } else { 
+                    fprintf(stderr, "Carácter de opción desconocido `\\x%x'.\n", optopt); 
+                } 
+                return 1; 
+            default: 
+                abort(); 
+        } 
+    } 
+
+    printf("aflag = %d, bflag = %d, cvalue = %s\n", 
+            aflag, bflag, cvalue); 
+
+    for (index = optind; index < argc; index++) {
+        printf("El argumento no válido que se encontró en %d es %s\n", index, argv[index]); 
+    } 
+
+    return 0; 
 }
 ```
 
-Si ejecutas el programa anterior en la línea de comando ingresando `./programa.exe Juan`, obtendrás el siguiente resultado:
+El siguiente es un ejemplo de cómo ejecutar este programa en la línea de comandos y su posible salida:
 
-```
-Hola Juan, bienvenido/a a mi programa!
-```
-
-Si no ingresas ningún argumento, el programa imprimirá:
-
-```
-Bienvenido al programa!
+```bash
+$ ./programa -a -c abc archivo1 archivo2
+aflag = 1, bflag = 0, cvalue = abc
+El argumento no válido encontrado en 4 es archivo1
+El argumento no válido encontrado en 5 es archivo2
 ```
 
 ## Profundizando
 
-Ahora que sabes cómo leer argumentos de línea de comando, es importante tener en cuenta algunos detalles adicionales. El primer argumento ingresado (`argv[0]`) siempre será el nombre del programa en ejecución. Por lo tanto, si necesitas acceder únicamente a los argumentos ingresados por el usuario, debes empezar a recorrer el array a partir de `argv[1]`.
+Ahora que ya conoces la sintaxis básica de la función "getopt" para leer argumentos de línea de comandos en C++, puedes explorar más opciones como la función "getopt_long", que te permite especificar argumentos de una manera más flexible. También puedes experimentar con otras funciones para trabajar con argumentos de línea de comandos, como "argc" y "argv".
 
-Otro aspecto importante es que los argumentos de línea de comando siempre se leerán como cadenas de texto, incluso si son números o caracteres especiales. Si necesitas convertir los argumentos a un tipo de datos específico, como un `int` o un `char`, deberás hacerlo utilizando funciones de conversión.
+## Mira también
 
-## Ver también
-
-- [Documentación oficial de C++ sobre la función `main`](https://es.cppreference.com/w/cpp/language/main_function)
-- [Tutorial de DevC++ sobre argumentos de línea de comando](https://www.devdungeon.com/content/using-command-line-arguments-paper-c)
-- [Tutorial de Programiz sobre argumentos de línea de comando en C++](https://www.programiz.com/cpp-programming/main-function-argc-argv)
+- Tutorial sobre lectura de argumentos de línea de comandos en C++: https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/
+- Documentación de la función "getopt": http://www.cplusplus.com/reference/cstdlib/getopt/
+- Tutorial sobre lectura de argumentos de línea de comandos con getopt_long: https://www.gnu.org/software/libc/manual/html_node/Getopt-Long-Option-Example.html

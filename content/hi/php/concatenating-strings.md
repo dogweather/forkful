@@ -1,48 +1,39 @@
 ---
-title:                "PHP: स्ट्रिंग्स को एक साथ जोड़ना"
+title:                "PHP: स्ट्रिंग्स को जोड़ना"
+simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyon:
-Concatenating strings ek aam kaam hai jo PHP programmers ko aksar karna padta hai. Yeh humein multiple strings ko ek sath jodkar ek lambi string banaane mein madad karta hai. Isse hum apne code ko aur organized aur readable bana sakte hai.
+# क्यों
 
-## Kaise Karein:
-Agar hum string concatenation ke baare mein baat karein toh PHP mein do tarah ke operators hote hai - `.` aur `.=`
-```
-PHP
-$string1 = "Hello";
-$string2 = "world!";
- 
-// Using the `.` operator
-$output1 = $string1 . $string2;
-echo $output1; // Outputs "Hello world!"
- 
-// Using the `.=` operator
-$string1 .= $string2;
-echo $string1; // Outputs "Hello world!"
+बहुत सारे PHP प्रोग्राम में हमे पाठ या स्ट्रिंग जोड़ने की जरूरत होती है। इससे हमे अलग अलग पाठों को एक स्ट्रिंग में जोड़कर नया और उपयोगी स्ट्रिंग बनाने का अवसर मिलता है। इस ब्लॉग पोस्ट में हम स्ट्रिंग जोड़ने का आसान तरीका जानेंगे।
+
+# कैसे करें
+
+PHP में स्ट्रिंग जोड़ने के लिए हम `.` ऑपरेटर का प्रयोग करते हैं। इससे हम दो स्ट्रिंग्स को जोड़ सकते हैं और उनका नया स्ट्रिंग बना सकते हैं। चलिए देखते हैं एक उदाहरण:
+
+```PHP
+$string1 = "आपका नाम है? ";
+$string2 = "मेरा नाम है PHP।";
+echo $string1 . $string2;
 ```
 
-## Gehri Jahaz:
-String concatenation ke baare mein gehri jaankari ke liye, hum `printf()` aur `sprintf()` functions ka upyog kar sakte hai. Yeh humein formatting characters ka bhi pata lagane mein madad karta hai.
+इस कोड का आउटपुट होगा:
+
 ```
-PHP
-$name = "John";
-$age = 30;
- 
-// Using `printf()` function
-printf("My name is %s and I am %d years old.", $name, $age); // Outputs "My name is John and I am 30 years old."
- 
-// Using `sprintf()` function
-$output = sprintf("My name is %s and I am %d years old.", $name, $age); // Stores the formatted string in a variable
-echo $output; // Outputs "My name is John and I am 30 years old."
+आपका नाम है? मेरा नाम है PHP।
 ```
 
-## Dekhiye Bhi:
-Kisi bhi programming language ko seekhne ke liye practice hona bahut zaroori hai. Isliye, aap in links ko padhkar aur aur saare examples ko try karke apni string concatenation skills ko enhance kar sakte hai.
-- [Official PHP string concatenation documentation](https://www.php.net/manual/en/language.operators.string.php)
-- [TutorialsPoint PHP string concatenation tutorial](https://www.tutorialspoint.com/php/php_string_concatenation.htm)
-- [W3Schools PHP string concatenation tutorial](https://www.w3schools.com/php/php_string_concat.asp)
+जैसा कि आप देख सकते हैं, `$string1` और `$string2` को `.` ऑपरेटर के माध्यम से जोड़कर नया स्ट्रिंग बनने से पहले उसके बीच में एक रिक्त स्थान भी दिया गया है। आप `.` ऑपरेटर के साथ कितनी भी स्ट्रिंग्स को जोड़ सकते हैं।
+
+# गहराई में जाएं
+
+PHP में स्ट्रिंग जोड़ने को `.` ऑपरेटर के साथ कन्कटनेट बोला जाता है। आप इसके साथ स्पेशल कोड भी जोड़ सकते हैं, जैसे `.` ऑपरेटर को एक इंटीजर संख्या के साथ भी जोड़ सकते हैं। इससे आप उस इंटीजर संख्या के समान स्ट्रिंग बना सकते हैं। आप `implode()` फंक्शन के साथ भी स्ट्रिंग्स को जोड़ सकते हैं। उदाहरण के लिए:
+
+```PHP
+$array = array("पहला", "दूसरा", "तीस

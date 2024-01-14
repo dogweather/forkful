@@ -1,7 +1,9 @@
 ---
 title:                "Elm recipe: Concatenating strings"
+simple_title:         "Concatenating strings"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/concatenating-strings.md"
 ---
 
@@ -9,36 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Concatenating strings is a common task in programming, and it allows us to combine multiple string values into one meaningful string. This can be useful in many situations, such as displaying a message or building a URL.
+Concatenating strings is a basic but crucial aspect of programming in any language, including Elm. It allows us to combine multiple strings together to create a new string, which is extremely useful for building dynamic and flexible applications.
 
 ## How To
 
-To concatenate strings in Elm, we can use the `++` operator or the `concat` function. Let's take a look at some examples:
+To concatenate strings in Elm, we can use the **++** operator. Let's take a look at an example:
 
-```
-concatenatedString = "Hello " ++ "World" -- Output: "Hello World"
-```
-
-```
-URL = concat ["https://", "example.com", "search?query=", "elm"] -- Output: "https://example.com/search?query=elm"
+```Elm
+name = "John"
+greeting = "Hello, " ++ name ++ "!" 
 ```
 
-In the first example, we used the `++` operator to combine the strings "Hello " and "World" into a new string "Hello World". In the second example, we used the `concat` function to join an array of strings into one string, which can be useful when building URLs or formatting messages.
+In this code, we have declared a variable `name` with the value "John" and a variable `greeting` which is created by combining the string "Hello, " with the value of `name` and the exclamation mark. The final value of `greeting` would be "Hello, John!".
+
+We can also use the **++** operator to add strings to the end of a list of strings. Here's an example:
+
+```Elm
+numbers = ["one", "two"]
+moreNumbers = numbers ++ ["three", "four"]
+```
+
+In this case, the final value of `moreNumbers` would be ["one", "two", "three", "four"], as the **++** operator adds the new strings to the end of the list.
 
 ## Deep Dive
 
-In Elm, strings are represented as a list of characters. When we use the `++` operator or `concat` function, the strings are converted into a list of characters, concatenated, and then converted back into a string. This means that we can also use the `++` operator or `concat` function to concatenate characters or lists of characters.
+It's important to note that the **++** operator can only be used to concatenate strings or lists of strings. It cannot be used to combine other types of data such as numbers or booleans. If you try to use it with mixed types, you will receive an error.
 
-```
-greeting = 'H' ++ 'e' ++ 'l' ++ 'l' ++ 'o' -- Output: "Hello"
-```
+Another important detail is that the **++** operator always creates a new string or list, rather than modifying the existing one. This is because strings in Elm are immutable, meaning they cannot be changed once they are created. This allows for safer and more predictable code.
 
-```
-combinedList = concat [['H', 'e'], ['l', 'l'], ['o']] -- Output: "Hello"
-```
+We can also use the **concat** function to concatenate strings in Elm. It takes in a list of strings and returns a single string which is the result of concatenating all the strings in the list.
 
 ## See Also
 
-- Elm documentation on string concatenation: https://package.elm-lang.org/packages/elm/core/latest/String#++
-- Elm strings and characters guide: https://guide.elm-lang.org/strings/
-- Concatenate strings in other programming languages: https://www.geeksforgeeks.org/python-program-to-concatenate-two-strings/
+- [Official Elm Documentation on Strings](https://elm-lang.org/docs/strings)
+- [A Beginner's Guide to Elm Strings](https://guide.elm-lang.org/types/strings.html)
+- [Mastering Elm: Concatenating Strings](https://thoughtbot.com/blog/mastering-elm-concatenating-strings)

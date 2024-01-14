@@ -1,60 +1,45 @@
 ---
 title:                "C++: יצירת קובץ זמני"
+simple_title:         "יצירת קובץ זמני"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
+יצירת קובץ זמני יכול להיות חסכוני ושימושי ביותר כאשר את/ה מפתח/ת תוכניות ב- C++ ואנכה מבצע/ת מניפולציות על קבצים זמניים זה יעזור לשמור על סדר ובמקרה הצפון, לאבד משאבים אחרים.
 
-על כל חובב תכנות רציני לפעמים לצורך יצירת קובץ זמני במהלך כתיבת קוד. הקובץ זמני מיוצר ומשמש לכמה מטרות שונות, כגון כתיבת נתונים זמניים, בדיקת קוד או יצירת קבצי לוגים זמניים. בפרסום הזה נלמד כיצד ליצור קובץ זמני בשפת סי++.
+## כיצד לעשות זאת
+כדי ליצור קובץ זמני ב-C++, הכי פשוט היא להשתמש בפונקציית tmpnam שמקבלת בתור פרמטר מצב קבוע. לדוגמא:
 
-## כיצד אנחנו יוצרים קובץ זמני בסי++
-
-בשפת סי++ ישנם מספר דרכים ליצור קובץ זמני. ניתן להשתמש בפונקציות מוגדרות מראש מהספרייה הסטנדרטית או ליצור פתרונות מותאמים אישית. נדגים כאן שתי דרכים ליצור קובץ זמני בשפת סי++.
-
-פתרון ראשון הוא באמצעות הפונקציה `tmpfile()` מהספרייה הסטנדרטית. התוכנית הבאה מדגימה יצירת קובץ זמני וכתיבה של מחרוזת לתוכו.
-
-```C++ 
-#include <cstdio> 
-  
-int main() 
-{ 
-    // יצירת קובץ זמני באמצעות הפונקציה tmpfile() 
-    FILE* temp = tmpfile(); 
-      
-   
-    if (temp == NULL) 
-        printf("Failed to create temporary file."); 
-    else
-    { 
-        printf("Temporary file created successfully!\n"); 
-  
-        // כתיבת מחרוזת לקובץ 
-        fprintf(temp, "Hello from temporary file!"); 
-          
-        // סגירת הקובץ 
-        fclose(temp); 
-    } 
-    return 0; 
-} 
+```C++
+#include <stdio.h>
+#include <stdlib.h>
+int main () {
+   FILE * fp;
+   char tmpname [L_tmpnam];
+   char * filename;
+   strcpy (tmpname, tmpnam(NULL));
+   filename = tmpnam (tmpname);
+   printf ("File name: %s\n", filename);
+   fp = fopen (filename, "w");
+   fclose(fp);
+   return(0);
+}
 ```
 
-פתרון שני הוא באמצעות פונקציית `mkstemp()` מהספרייה הסטנדרטית. התוכנית הבאה מדגימה יצירת קובץ זמני עם שם ייחודי וכתיבה של מחרוזת לתוכו.
+תוצאת התוכנית תהיה כזאת:
 
-```C++ 
-#include <cstdio> 
-  
-int main() 
-{ 
-   // מטרה ליצור את הקובץ "/tmp/temp-XXXXXX" 
-   char temp[] = "/tmp/temp-XXXXXX"; 
-  
-   
-   // יצירת קובץ זמני עם שם ייחודי באמצעות הפונקציה mkstemp() 
-   int fd = mkstemp(temp); 
-  
-   
-   if (fd == -1
+`File name: D:\tmp\fileM0FSsap`
+
+## צלילה עמוקה
+קבצים זמניים הם קבצים שייצרו במערכת הפעלה. הם משמשים כמקום זמני לשמירת מידע והם נמחקים כשהתוכנית מצאת שימוש בהם שנית. על המפתח יהיה עליו למחוק את הקובץ הזמני כמו שהוא נעשה עם כל קובץ רגיל אחר.
+
+## ראו גם.
+- [קבצים זמניים בפייתון](https://www.geeksforgeeks.org/temporary-files-python/)
+- [מסמכנציאה: יצירה של קבצים זמניים](https://www.microsoft.com/he-il/microsoftteams/blog/creatings-and-using-tmps/)
+
+זהו פוסט פשוט וידידותי למתחילים שמסביר לכם כיצד ליצור קובץ זמני ב-C++. כעת, את/ה יכול/ה להשתמש בטכניקה זו בתוכניות שלך כדי לטפל בקבצים במהירות ויעילות. תהנו!

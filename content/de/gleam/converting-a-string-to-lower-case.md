@@ -1,24 +1,44 @@
 ---
-title:                "Gleam: In einen String in Kleinbuchstaben umwandeln"
+title:                "Gleam: Umwandlung eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
-Wenn du jemals mit Strings in Gleam gearbeitet hast, hast du vielleicht bemerkt, dass sie manchmal in verschiedenen Fällen geschrieben werden können - wie zum Beispiel Groß- und Kleinschreibung. Das Konvertieren eines Strings in Kleinbuchstaben kann helfen, einheitliche Daten zu erhalten und Vergleiche oder Suchen zu erleichtern.
+## Warum 
 
-##Wie man Strings in Gleam in Kleinbuchstaben umwandelt
+Es gibt viele Gründe, warum jemand eine Programmiersprache wie Gleam nutzen würde. Einer davon ist die Fähigkeit, Strings in Kleinbuchstaben zu konvertieren. Dies ist besonders nützlich, wenn Sie die Eingabe von Benutzern standardisieren oder einfach nur Strings in Ihrem Code vergleichen möchten.
+
+## Wie geht das?
+
+Die Konvertierung eines Strings in Kleinbuchstaben ist in Gleam recht einfach. Zunächst müssen Sie jedoch sicherstellen, dass Sie die "string" Bibliothek importieren, da diese die Funktionen enthält, die wir benötigen.
+
 ```Gleam
-string.to_lower("Hallo Welt") // Ausgabe: "hallo welt"
-string.to_lower("Gleam ist toll") // Ausgabe: "gleam ist toll"
+import gleam/string
+
+// Eingabe String
+let name = "Silvia"
+
+// Konvertierung zu Kleinbuchstaben
+let lower_case_name = string.to_lower(name)
+
+// Ausgabe des konvertierten Strings "silvia"
 ```
 
-##Tiefere Einblicke
-Das Konvertieren eines Strings in Kleinbuchstaben mag einfach erscheinen, aber es gibt einige Dinge zu beachten. Zum Beispiel kann es je nach verwendeter Sprache oder Umgebung Unterschiede in der Art und Weise geben, wie bestimmte Buchstaben in Kleinbuchstaben umgewandelt werden. Ein weiterer wichtiger Punkt ist die Verwendung von Sonderzeichen oder Sprachen, die mehr als nur die 26 Buchstaben des Alphabets enthalten. Eine sorgfältige Überprüfung und Verwendung der richtigen Funktionen in Gleam kann helfen, diese Faktoren zu berücksichtigen und sicherzustellen, dass die Konvertierung korrekt durchgeführt wird.
+In unserem Beispiel haben wir den Namen "Silvia" eingegeben und mit der "to_lower" Funktion in kleinere Buchstaben umgewandelt. Die Ausgabe ist der konvertierte String "silvia".
 
-##Siehe auch
-- [String-Operationen in Gleam](https://gleam.run/documentation/standard-library/string.html)
-- [Gleam Dokumentation](https://gleam.run/documentation/)
+## Tief in die Materie eintauchen
+
+Um besser zu verstehen, wie die Konvertierung eines Strings in Kleinbuchstaben funktioniert, können wir uns den Quellcode der "string" Bibliothek ansehen. Hier finden wir die "to_lower" Funktion, die den gegebenen String in eine Liste von einzelnen Buchstaben zerlegt und dann jeden davon in einen Kleinbuchstaben umwandelt, bevor sie wieder zu einem String zusammengesetzt werden.
+
+Wir können auch ein wenig über die Effizienz und Komplexität der Funktion lernen. Zum Beispiel sehen wir, dass es einen zusätzlichen Parameter gibt, um eine benutzerdefinierte Locale für die Konvertierung anzugeben. Dies ermöglicht es uns, Strings in verschiedene Sprachen zu konvertieren, die möglicherweise unterschiedliche Regeln für die Kleinbuchstabenumwandlung haben.
+
+## Siehe auch
+
+* [Offizielle Gleam Dokumentation](https://gleam.run/book/introduction.html)
+* [String Bibliothek Referenz](https://gleam.run/modules/gleam_std/string.html)
+* [Praktische Gleam Beispiele](https://github.com/gleam-lang/gleam/tree/master/examples)

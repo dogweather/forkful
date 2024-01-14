@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Sammenføyning av strenger"
+title:                "Elixir: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/concatenating-strings.md"
 ---
 
@@ -9,80 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å kombinere, eller "concatenate", strenger er en vanlig oppgave i programmering, og det er viktig å forstå hvordan dette gjøres for å kunne bygge effektive og fleksible programmer. Du vil ofte måtte sette sammen deler av en streng for å skape en komplett melding eller uttrykk.
+Å konkatenerre strenger (mer kjent som å sammenføye eller sette sammen strenger) er en vanlig oppgave i mange programmeringsspråk, inkludert Elixir. Det kan være nyttig å lære å gjøre dette for å håndtere dynamiske data eller for å lage mer komplekse tekst utdata.
 
-## Slik gjør du det
-
-I Elixir-brukergrensesnittet kan du enkelt kombinere strenger ved hjelp av "+" -operatøren. La oss si at vi ønsker å lage en velkomstmelding som sier "Hei, <bruker>!" Vi kan bruke følgende kode:
+## Hvordan
 
 ```Elixir
-bruker = "John"
-"Hei, " + bruker + "!"
+name = "Kristine"
+age = 28
+occupation = "programmerer"
+
+IO.puts "Hei, mitt navn er #{name}, jeg er #{age} år gammel og jeg jobber som #{occupation}."
 ```
 
-Dette vil gi oss følgende resultat når vi kjører koden:
+Output:
+```
+Hei, mitt navn er Kristine, jeg er 28 år gammel og jeg jobber som programmerer.
+```
+
+I eksempelet over har vi definert variabler for navn, alder og yrke. Ved å bruke interpolasjon, som er symbolisert med `#{}` inne i en streng, kan vi sette inn verdien av variablene i strengen. Det resulterende utdata vil være en setning som inneholder den dynamiske informasjonen som er satt sammen.
 
 ```Elixir
-Hei, John!
+quote = "Elixir brings joy to programming."
+
+IO.puts "Remember: #{quote}"
 ```
 
-Vi kan også kombinere flere strenger sammen. La oss si at vi vil lage en melding som sier "Hei, <bruker>, du er velkommen til Elixir-programmering!" Vi kan bruke flere "+" -operatører på følgende måte:
+Output:
+```
+Remember: Elixir brings joy to programming.
+```
+
+Her bruker vi også interpolasjon for å sette inn en variabel i en annen streng, og resultater er en korrekt sammensatt setning med dynamisk informasjon.
+
+## Deep Dive
+
+Å konkatenerre strenger kan også oppnås ved å bruke operatoren `<>`, som står for "kontatenere". Denne måten kan være mer brukervennlig hvis du jobber med flere strenger eller en samling av strenger. Du kan også bruke `<<>>` for å konkatenerre binære data, men vi vil fokusere på strenger her.
 
 ```Elixir
-bruker = "John"
-"Hei, " + bruker + ", du er velkommen til " + "Elixir-programmering!"
+name = "Michael"
+age = "41"
+occupation = "musiker"
+
+concert = "Jeg heter " <> name <> " og jeg er " <> age <> " år gammel. Jeg spiller musikk som en " <> occupation <> "."
+
+IO.puts concert
 ```
 
-Dette vil gi oss følgende resultat:
-
-```Elixir
-Hei, John, du er velkommen til Elixir-programmering!
+Output:
+```
+Jeg heter Michael og jeg er 41 år gammel. Jeg spiller musikk som en musiker.
 ```
 
-Vi kan også bruke "<<" -operatøren for å kombinere strenger. La oss se på det samme eksemplet som ovenfor, men nå med "<<" -operatøren:
+Det er viktig å merke seg at begge måtene å konkatenerre strenger på returnerer en ny streng og påvirker ikke de opprinnelige strengene.
 
-```Elixir
-bruker = "John"
-<<"Hei, ", bruker, ", du er velkommen til ", "Elixir-programmering!">>
-```
+## Se Også
 
-Som du kanskje legger merke til, trenger vi ikke lenger å bruke "+" -operatøren. Resultatet vil være det samme som ovenfor.
-
-## Dykk dypere
-
-I tillegg til "+" og "<<" -operatørene, kan vi også bruke funksjonen `String.concat/1` for å kombinere strenger. Dette kan være nyttig hvis vi har en liste med strenger som vi ønsker å kombinere.
-
-La oss si at vi har en liste med navn på forskjellige språk:
-
-```Elixir
-språk = ["Elixir", "Python", "Java", "JavaScript"]
-```
-
-Vi kan bruke `String.concat/1` til å lage en setning som sier "Jeg elsker å programmere i <språk>!" ved hjelp av følgende kode:
-
-```Elixir
-"Jeg elsker å programmere i " <> String.concat(språk) <> "!"
-```
-
-Resultatet vil være:
-
-```Elixir
-Jeg elsker å programmere i ElixirPythonJavaJavaScript!
-```
-
-Vi kan også legge til mellomrom mellom hvert språk ved å bruke `String.concat/2` og klamme oss rundt et mellomrom:
-
-```Elixir
-"Jeg elsker å programmere i " <> String.concat(språk, " ") <> "!"
-```
-
-Resultatet vil være:
-
-```Elixir
-Jeg elsker å programmere i Elixir Python Java JavaScript!
-```
-
-## Se også
-
-- [Elixir dokumentasjon om strenger](https://hexdocs.pm/elixir/String.html)
-- [Elixir string concatenation cheatsheet](https://devhints.io/elixir-string-concat)
+- [Offisiell Elixir Dokumentasjon](https://elixir-lang.org/getting-started/basic-types.html#strings)
+- [Elixir School - Strenger](https://elixirschool.com/lessons/basics/strings/)
+- [Elixir String Modul](https://hexdocs.pm/elixir/String.html)

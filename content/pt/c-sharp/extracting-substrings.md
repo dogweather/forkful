@@ -1,37 +1,59 @@
 ---
-title:                "C#: Extraindo subtrings"
+title:                "C#: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings é importante na programação?
+## Por que extrair Substrings?
 
-Extrair substrings é uma habilidade importante para quem trabalha com programação. Isso permite que o desenvolvedor manipule e utilize partes específicas de uma string em seu código. Isso pode ser útil em diversas situações, como na validação de inputs de usuários, na formatação de dados ou na realização de buscas em textos extensos.
+Extrair substrings de uma string em C# pode ser útil em muitos casos! Isso permite que você obtenha apenas uma parte específica de uma string, o que pode ser útil ao manipular dados ou formatar saídas de texto.
 
-## Como extrair substrings em C#?
+## Como fazer:
 
-Extrair substrings em C# é bastante simples. Para isso, utilizamos o método `Substring()` junto com a classe `String`. Vamos ver um exemplo prático:
+Para extrair uma substring em C#, podemos usar o método `Substring()` da classe `String`. Este método requer dois parâmetros: o índice inicial e o comprimento da substring.
 
+```C#
+// Exemplo de uma string
+string texto = "Olá, meu nome é Maria!";
+
+// Extraindo a substring 'Maria'
+string nome = texto.Substring(16, 5);
+
+Console.WriteLine(nome); // Output: Maria
 ```
-string texto = "Olá, mundo!";
-string substring = texto.Substring(4, 5);
-Console.WriteLine(substring);
+
+Neste exemplo, passamos o índice inicial de 16, que é a posição do primeiro caractere da palavra Maria na string. E então, passamos o comprimento da substring desejada, que é 5 (o número de caracteres em 'Maria').
+
+Também podemos usar o método `Substring()` para obter uma substring do final de uma string. Para isso, basta passar um valor negativo como índice inicial.
+
+```C#
+// Exemplo de uma string
+string email = "usuario@exemplo.com";
+
+// Extraindo o domínio do email
+string dominio = email.Substring(email.IndexOf("@") + 1);
+
+Console.WriteLine(dominio); // Output: exemplo.com
 ```
 
-Nesse caso, estamos criando uma variável `texto` que contém a string "Olá, mundo!", e utilizando o método `Substring()` para extrair uma substring começando na quarta letra e com um total de cinco caracteres. Isso resultará na impressão de "mundo" no console.
+Neste exemplo, usamos o método `IndexOf()` para obter a posição do caractere '@' na string e somamos 1 (para não incluir o '@' na substring resultante). Então, passamos esse valor negativo como índice inicial para extrair a substring do domínio do email.
 
-É importante notar que o primeiro argumento do método `Substring()` é o índice de início da substring, enquanto o segundo argumento é a quantidade de caracteres que a substring deve conter.
+## Mais Informações:
 
-## Aprofundando em extrair substrings
+Agora que você sabe como extrair substrings em C#, é importante ter em mente que o índice inicial deve estar dentro dos limites da string. Caso contrário, será lançada uma exceção `ArgumentOutOfRangeException`.
 
-Além do exemplo acima, o método `Substring()` também pode ser utilizado com apenas um argumento, como por exemplo `texto.Substring(7)`, que retornaria "mundo!" como resultado. Além disso, é possível utilizar valores negativos para indicar que o início da substring deve ser computado a partir do final da string. Por exemplo, `texto.Substring(-6, 3)` retornaria "mundo!" como resultado.
+Além disso, se o comprimento da substring resultante for maior que o número de caracteres restantes na string, apenas os caracteres restantes serão extraídos.
 
-É importante lembrar que os índices em C# começam a partir do número 0, então para extrair a primeira letra de uma string, utilizamos o índice 0.
+## Veja Também:
 
-## Veja também
+Aqui estão alguns recursos úteis relacionados à extração de substrings em C#:
 
-- [Documentação oficial do método Substring() em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.string.substring)
-- [Tutorial sobre Substrings em C#](https://www.guru99.com/c-sharp-string.html#10)
+- Documentação da Microsoft sobre o método `Substring`: https://docs.microsoft.com/pt-br/dotnet/api/system.string.substring
+- Tutorial sobre manipulação de strings em C#: https://www.tutorialspoint.com/csharp/csharp_strings.htm
+- Exemplo de projeto no GitHub demonstrando o uso de `Substring`: https://github.com/RodrigoDomingues/AlterandoTextoEmC-
+- Comunidade de desenvolvedores C# no Brasil: https://csharpbrasil.com.br/

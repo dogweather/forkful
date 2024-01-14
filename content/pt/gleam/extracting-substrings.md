@@ -1,40 +1,52 @@
 ---
 title:                "Gleam: Extraindo subcadeias"
+simple_title:         "Extraindo subcadeias"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings?
+## Por que
 
-Extrair substrings é uma tarefa comum em muitos projetos de programação e pode ser útil por diversos motivos. Algumas possibilidades incluem extrair informações específicas de uma string, como um nome ou um número de telefone, ou realizar manipulações em uma parte específica de uma string.
+Extrair substrings é uma tarefa essencial em muitos projetos de programação. Seja para manipular strings de texto ou para analisar dados, ter a habilidade de extrair pedaços específicos de uma string é uma ferramenta valiosa para qualquer programador. Felizmente, o Gleam oferece uma maneira simples e eficiente de realizar essa tarefa.
 
-## Como extrair substrings em Gleam
+## Como fazer
 
-Extrair substrings em Gleam é uma tarefa simples e pode ser feita usando a função `substring` da biblioteca padrão. Primeiro, devemos declarar a string original que desejamos extrair a substring:
+Para extrair uma substring usando o Gleam, você pode usar a função `String.slice()`. Esta função aceita três parâmetros: a string de origem, o início da substring e o comprimento da substring. Por exemplo:
 
-```Gleam
-let input = "Este é um exemplo de string"
+```
+Gleam
+import String
+
+my_string = "Olá Gleam programadores!"
+substring = String.slice(my_string, 5, 5)
+
 ```
 
-Em seguida, podemos usar a função `substring` para extrair uma substring a partir da posição inicial e com o comprimento desejado:
+Neste exemplo, a variável `substring` conterá a string `Gleam`. Você pode alterar os valores dos parâmetros `start` e `length` para extrair diferentes partes da string de origem.
 
-```Gleam
-let output = input.substring(5, 10)
+## Deep Dive
+
+Além da função `String.slice()`, o Gleam também oferece a função `String.slice_by_indexes()` para extrair substrings. Esta função aceita como parâmetros a string de origem e uma lista de índices para o início e o fim da substring. Por exemplo:
+
+```
+Gleam
+import String
+
+my_string = "Hello world!"
+substring = String.slice_by_indexes(my_string, [0, 5])
+
 ```
 
-O resultado será a substring "é um exe", pois começando do quinto caractere ("é") e contando 10 caracteres, chegamos até o décimo quinto caractere ("e").
+Neste exemplo, a variável `substring` conterá a string `Hello`.
 
-## Uma olhada mais profunda
-
-Existem algumas coisas a serem consideradas ao extrair substrings em Gleam. Primeiro, a posição inicial da substring deve estar dentro dos limites da string original. Caso contrário, a função `substring` retornará um erro. Além disso, o comprimento da substring deve ser um inteiro positivo e também deve ser uma posição dentro dos limites da string original.
-
-Outro ponto importante é que a função `substring` retorna uma nova string, ou seja, a string original não é modificada. Sempre devemos atribuir o resultado da função a uma nova variável.
+Além disso, o Gleam também possui a capacidade de extrair substrings usando expressões regulares. Isso pode ser feito usando a função `Regex.run()`, que aceita a string de origem e a expressão regular como parâmetros. Para mais informações sobre como usar expressões regulares no Gleam, consulte a documentação oficial.
 
 ## Veja também
 
-- Documentação da função `substring` em Gleam: https://gleam.run/core/string.html#substring
-- Tutorial de programação em Gleam: https://gleam.run/book/getting-started.html
-- Comunidade Gleam no Discord: https://discord.gg/J6d3KD5A
+- Documentação oficial do Gleam: https://gleam.run/
+- Tutorial de expressões regulares no Gleam: https://gleam.run/book/tour/regexes.html
+- Exemplo de extrair substrings no Gleam: https://github.com/gleam-lang/website-examples/blob/master/string_substring.gleam

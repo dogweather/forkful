@@ -1,59 +1,97 @@
 ---
 title:                "Fish Shell recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why: The Importance of Writing Tests
+## Why
 
-When writing code, it's crucial to ensure its functionality and catch any potential bugs or errors that may arise. This is where writing tests comes in handy. By creating tests, you can quickly and easily check your code's performance and catch any issues before they reach production. Writing tests also allows for easier collaboration with other developers by providing a clear understanding of expected outcomes.
+Writing tests is an important aspect of programming, regardless of the language or framework being used. It allows developers to catch bugs and errors early on in the development process, ensuring a more stable and reliable application. By investing time in writing tests, you can save yourself from hours of debugging in the future.
 
-# How To: Writing Tests in Fish Shell
+## How To
 
-In Fish Shell, you can write tests using the `test` function. This function takes in two arguments: a condition and a description. Here's an example of a simple test that checks if a variable is equal to a specific value:
+Writing tests in Fish Shell is a breeze with the `test` command. Let's look at an example of testing a simple function that adds two numbers together.
 
-```Fish Shell
-test $var = "Hello World" "Check if var is equal to Hello World"
-```
+````Fish Shell
+function add_numbers
+  echo "Enter first number"
+  read num1
+  echo "Enter second number"
+  read num2
+  echo ($num1 + $num2)
+end
+````
 
-To run this test, simply type `fish -t filename.fish`, and you will see the following output:
+In the above code, we have a function `add_numbers` that takes two user input numbers and adds them together before returning the result. Now, let's write a test for this function.
 
-```Terminal
-> Check if var is equal to Hello World
-```
+````Fish Shell
+function test_add_numbers
+  test (add_numbers 5 5) = 10
+  or echo "Addition test failed!"
+end
+````
 
-If the test fails, you will see an error message detailing the reason for the failure. It's essential to provide descriptive descriptions for your tests to easily identify which tests have failed.
+The `test` command takes in an expression and checks if it evaluates to `true`. If it does, the test passes. In the above code, we are passing the numbers 5 and 5 to the `add_numbers` function and checking if it returns 10, which it should. We also have an `or` statement to display an error message in case the test fails.
 
-You can also use the `not` keyword to check for the opposite condition. For example,
+To run this test, we need to execute the `test_add_numbers` function. We can do so by calling it in our terminal:
 
-```Fish Shell
-test not (count $string) = 0 "Check if string is not empty"
-```
+````Fish Shell
+test_add_numbers
+````
 
-Lastly, you can use the `contains` function to check if a string contains a particular substring.
+If the test passes, nothing will be displayed. However, if the test fails, the error message we specified will be shown. It's as simple as that!
 
-```Fish Shell
-test contains "Fish" "Checking if this sentence contains the word Fish"
-```
+## Deep Dive
 
-# Deep Dive: Tips for Writing Effective Tests
+Fish Shell also has the ability to define multiple test sections for a single function. This allows you to have different test cases for different scenarios. Let's add a conditional statement to our `add_numbers` function and see how we can write multiple tests for it.
 
-- Use clear and descriptive names for your tests to easily identify their purpose.
-- Organize your tests by category or function for better organization and readability.
-- Write tests for both expected and unexpected inputs to catch any edge cases.
-- Make use of the `not` keyword to check for negative conditions.
-- Utilize the `eq` function for more precise comparisons.
-- Write tests while you code to catch errors early on and save time in the long run.
+````Fish Shell
+function add_numbers
+  echo "Enter first number"
+  read num1
+  echo "Enter second number"
+  read num2
 
-# See Also
+  if test $num1 -gt $num2
+    echo "First number is larger"
+  else if test $num1 -lt $num2
+    echo "Second number is larger"
+  else
+    echo "Both numbers are equal"
+  end
 
-For more information on writing tests in Fish Shell, check out the following resources:
+  echo ($num1 + $num2)
+end
+````
 
-- [Official Fish Shell Documentation on Testing](https://fishshell.com/docs/current/cmds/test.html)
-- [Guide to Writing Tests in Fish Shell by Thoughtbot](https://thoughtbot.com/blog/writing-a-test-suite-in-fish-shell)
-- [Tutorial on Writing Automated Tests in Fish Shell by Medium](https://medium.com/swlh/testing-frameworks-in-fish-shell-f1dca2f522b8)
+Now, we can write three separate tests for each possible outcome of the function:
 
-Remember, writing tests is an invaluable tool that can greatly improve your coding process. So start implementing tests in your Fish Shell scripts today for better and more reliable code. Happy testing!
+````Fish Shell
+function test_add_numbers_greater
+  test (add_numbers 10 5) = 15
+  or echo "Greater test failed!"
+end
+
+function test_add_numbers_less
+  test (add_numbers 5 10) = 15
+  or echo "Less test failed!"
+end
+
+function test_add_numbers_equal
+  test (add_numbers 5 5) = 10
+  or echo "Equal test failed!"
+end
+````
+
+By writing multiple tests, we can cover all possible scenarios and ensure our function works as expected in any situation.
+
+## See Also
+
+- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
+- [Writing Tests in Fish Shell](https://fishshell.com/docs/current/tutorial.html#writing-tests)
+- [Introduction to Fish Shell](https://opensource.com/article/20/3/fish-shell)

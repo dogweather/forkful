@@ -1,37 +1,47 @@
 ---
 title:                "Rust: Odczytywanie argumentów wiersza poleceń"
+simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się, jak programy wiersza poleceń są w stanie akceptować argumenty? Możesz być programistą, który chce zwiększyć swoją wiedzę na temat języka Rust lub po prostu ciekawą osobą, która chce wiedzieć więcej na temat tego procesu. W tym blogu zgłębimy sposoby czytania argumentów wiersza poleceń w języku Rust.
+Każdy programista powinien umieć odczytywać argumenty wiersza poleceń, ponieważ jest to ważna umiejętność w programowaniu w języku Rust. Pozwala to na dostarczanie argumentów do programu podczas jego uruchamiania, co często jest wymagane w przypadku tworzenia aplikacji konsolowych.
 
-## Jak To Zrobić?
+## Jak to zrobić
 
-Pierwszym krokiem w czytaniu argumentów wiersza poleceń w języku Rust jest zaimportowanie modułu `std::env`. Następnie, możemy wykorzystać funkcję `args()` aby uzyskać iterator, który zawiera nasze argumenty przekazane z wiersza poleceń. Przykład kodu przedstawiony poniżej pokazuje, jak uzyskać dostęp do argumentów i wyświetlić je na ekranie:
+Aby odczytać argumenty wiersza poleceń w języku Rust, najpierw musimy zaimportować bibliotekę `std::env`. Następnie użyjemy funkcji `args()` do pobrania listy argumentów przekazanych do programu. Przykładowy kod wyglądać będzie następująco:
 
 ```rust
-use std::env; //importowanie modułu
+use std::env;
 
 fn main() {
-    let args: Vec<String> = env::args().collect(); //tworzenie iteratora z argumentami
-    println!("Przekazane argumenty: {:?}", args); //wyświetlenie argumentów na ekranie
+    let args: Vec<String> = env::args().collect();
+    println!("Argumenty przekazane do programu: {:?}", args);
 }
 ```
 
-Przykładowe wywołanie tego programu może wyglądać następująco: `./program_name argument1 argument2`. Wtedy, na ekranie pojawi się wydruk: `Przekazane argumenty: [./program_name, argument1, argument2]`.
+W powyższym przykładzie wykorzystaliśmy funkcję `collect()` do zamiany iteratora `args()` na wektor `Vec<String>`, aby móc łatwo wyświetlić przekazane argumenty.
 
-## Głębsze Zagłębianie Się
+### Przykładowe wywołanie programu
 
-Po uzyskaniu podstawowej wiedzy na temat czytania argumentów wiersza poleceń w języku Rust, możesz dalej zgłębiać temat poprzez naukę o funkcjonalnościach modułu `std::env` oraz metodach, które można wykorzystać do manipulowania argumentami. Możesz również zobaczyć przykładowy projekt na GitHubie lub zgłębić temat struktury argumentów przekazywanych w terminalu.
+`$ ./program arg1 arg2 arg3`
 
-## Zobacz Również
+### Oczekiwany wynik
 
-- Dokumentacja modułu `std::env` w języku Rust (https://doc.rust-lang.org/std/env/)
-- Przykładowy projekt czytający argumenty wiersza poleceń w języku Rust (https://github.com/username/project_name)
-- Dokumentacja terminalu w systemie operacyjnym, aby dowiedzieć się więcej o argumentach wiersza poleceń (np. dla systemu Linux: `man bash`)
+`Argumenty przekazane do programu: ["./program", "arg1", "arg2", "arg3"]`
+
+## Deep Dive
+
+Istnieje wiele innych przydatnych funkcji biblioteki `std::env`, które pozwalają na bardziej zaawansowane operacje na argumentach wiersza poleceń. Na przykład, funkcja `current_dir()` pozwala na pobranie aktualnego katalogu, a funkcja `set_var()` umożliwia ustawienie własnej zmiennej środowiskowej. Aby dowiedzieć się więcej o możliwościach biblioteki `std::env`, warto przejrzeć jej dokumentację.
+
+## Zobacz także
+
+- [Dokumentacja biblioteki `std::env` w języku Rust](https://doc.rust-lang.org/std/env/index.html)
+- [Poradnik odczytywania argumentów wiersza poleceń w języku Rust](https://www.tutorialspoint.com/rust/rust_command_line_arguments.htm)
+- [Przydatne wskazówki dotyczące programowania w języku Rust](https://dev.to/frosnerd/3-tips-for-getting-started-with-rust-3m4c)

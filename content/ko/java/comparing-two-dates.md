@@ -1,51 +1,68 @@
 ---
 title:                "Java: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜?
 
-비교적으로 최근 날짜를 기준으로 과거의 날짜와 비교하는 경우, 두 날짜 사이의 차이를 알아야 할 때 자바 프로그래밍을 사용해서 가장 쉽고 빠른 방법을 제공해줍니다. 
+자바 프로그래밍을 배우고 사용하는 프로그래머라면, 두 날짜를 비교하는 것은 매우 중요한 기능입니다. 날짜를 비교하여 이전 날짜인지, 이후 날짜인지 아니면 같은 날짜인지 확인하는 것은 많은 작업에서 필수적입니다. 따라서 두 날짜를 비교하는 방법을 알아보겠습니다.
 
-## 어떻게
+## 어떻게?
 
-```java
-// 두 날짜 생성
-LocalDate pastDate = LocalDate.of(2020, 1, 1);
-LocalDate currentDate = LocalDate.now();
+먼저, 두 날짜를 비교하기 전에 두 날짜를 `Date` 객체로 변환해야 합니다. 그리고 `compareTo()` 메소드를 사용하여 두 날짜를 비교할 수 있습니다. 이 메소드는 첫 번째 날짜가 두 번째 날짜보다 이전인 경우 음수를, 같은 경우 0을, 이후인 경우 양수를 반환합니다. 이를 이용해 다음과 같이 비교할 수 있습니다.
 
-// 두 날짜 사이의 차이 계산
-long daysBetween = ChronoUnit.DAYS.between(pastDate, currentDate);
+```Java 
+Date firstDate = new Date(2019, 8, 13); // 첫 번째 날짜 생성
+Date secondDate = new Date(2020, 8, 13); // 두 번째 날짜 생성
 
-// 결과 출력
-System.out.println("과거 날짜와 현재 날짜 사이의 차이는 " + daysBetween + "일 입니다.");
+// 첫 번째 날짜가 두 번째 날짜보다 이전인지 비교
+if(firstDate.compareTo(secondDate) < 0){
+    System.out.println("첫 번째 날짜가 두 번째 날짜보다 이전입니다.");
+} else if(firstDate.compareTo(secondDate) == 0) { // 같은 경우
+    System.out.println("두 날짜는 같습니다.");
+} else { // 이후인 경우
+    System.out.println("두 번째 날짜가 첫 번째 날짜보다 이전입니다.");
+}
 ```
 
-```java
-// 날짜 포맷 설정
-DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+출력결과:
 
-// 두 날짜 생성
-LocalDate date1 = LocalDate.parse("2022-12-25", formatter);
-LocalDate date2 = LocalDate.parse("2022-10-10", formatter);
-
-// 두 날짜 사이의 차이 계산
-long monthsBetween = ChronoUnit.MONTHS.between(date1, date2);
-
-// 결과 출력
-System.out.println("날짜 포맷을 지정하여 두 날짜 사이의 차이는 " + monthsBetween + "개월 입니다.");
+```
+첫 번째 날짜가 두 번째 날짜보다 이전입니다.
 ```
 
-## 자세히 살펴보기
+또 다른 방법으로는, `getTime()` 메소드를 사용하여 날짜의 밀리초 값으로 비교하는 방법도 있습니다. 이를 이용하면 아래와 같이 코드를 작성할 수 있습니다.
 
-자바의 날짜 및 시간 API인 `LocalDate`와 `ChronoUnit` 클래스를 사용하면 매우 간단하게 두 날짜를 비교할 수 있습니다. `between()` 메소드에는 두 날짜를 비교할 때 사용하고 싶은 시간 단위를 지정할 수 있습니다. 또한 `DateTimeFormatter` 클래스를 사용하면 원하는 날짜 형식으로 날짜를 입력받을 수 있습니다. 
+```Java
+Date firstDate = new Date(2019, 8, 13); // 첫 번째 날짜 생성
+Date secondDate = new Date(2020, 8, 13); // 두 번째 날짜 생성
 
-## 관련 참고자료
+// 첫 번째 날짜의 밀리초 값이 두 번째 날짜의 밀리초 값보다 작은지 비교
+if(firstDate.getTime() < secondDate.getTime()){
+    System.out.println("첫 번째 날짜가 두 번째 날짜보다 이전입니다.");
+} else if(firstDate.getTime() == secondDate.getTime()) { // 같은 경우
+    System.out.println("두 날짜는 같습니다.");
+} else { // 이후인 경우
+    System.out.println("두 번째 날짜가 첫 번째 날짜보다 이전입니다.");
+}
+```
 
-- [Java 8 날짜 및 시간 API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Java 8의 새로운 날짜 및 시간 API를 사용하여 날짜 비교하기](https://www.baeldung.com/java-8-date-time-intro#comparing-dates-in-java8)
-- [Java 8 날짜 및 시간 API를 활용한 간단한 예제](https://www.baeldung.com/java-8-date-time-intro#simple-example)
+출력결과:
+
+```
+첫 번째 날짜가 두 번째 날짜보다 이전입니다.
+```
+
+## 깊게 들어가기
+
+자바에서 `Date` 클래스는 `java.util` 패키지에 포함되어 있으며, 날짜와 시간을 다루는 기능들을 제공합니다. `compareTo()`와 `getTime()` 메소드 외에도 `equals()` 메소드를 사용하여 두 날짜가 같은지 비교할 수 있고, `after()`와 `before()` 메소드를 사용하여 각각 두 날짜가 이후인지, 이전인지 비교할 수도 있습니다. 또한, `Calendar` 클래스를 사용하여 더 다양한 방법으로 날짜와 시간을 다룰 수 있습니다.
+
+# 관련 정보
+
+- [

@@ -1,51 +1,58 @@
 ---
 title:                "C#: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför: Varför läsa inmatade argument via kommandoraden?
 
-Att läsa kommandoradsargument är en viktig del av programmering eftersom det tillåter oss att skicka och ta emot information från våra program via terminalen. Detta gör det möjligt för användare att anpassa hur programmet körs och ger en mer dynamisk upplevelse.
+Att kunna läsa inmatade argument via kommandoraden är en viktig del av C# programmering. Genom att göra det kan man ge sitt program mer flexibilitet och användbarhet. Detta är speciellt viktigt när man vill kunna köra programmet med olika inmatade argument.
 
-## Hur man gör det
+## Hur man gör: Exempelkod och utmatning
 
-För att läsa kommandoradsargument i C# kan vi använda oss av klassen `args` som innehåller alla argument som skickas till programmet via terminalen. Vi kan sedan loopa igenom dessa argument och hämta informationen som vi behöver. Här är ett enkelt exempel på hur man kan göra det:
+För att läsa inmatade argument i C# behöver man använda sig av metoden "args" som finns i "System" namespace. Här är ett enkelt exempel på hur man kan göra det:
 
 ```C#
-class Program
+using System;
+
+namespace CommandLineArguments
 {
-    static void Main(string[] args)
+    class Program
     {
-        // Loopar igenom alla kommandoradsargument
-        for (int i = 0; i < args.Length; i++)
+        static void Main(string[] args)
         {
-            Console.WriteLine($"Argument {i+1}: {args[i]}");
+            // Skriv ut alla inmatade argument
+            foreach (string argument in args)
+            {
+                Console.WriteLine(argument);
+            }
         }
     }
 }
 ```
+Om vi kör detta program via kommandoraden med argumenten "hello" och "world" så skulle utmatningen vara:
 
-Om vi nu kör detta program med argumenten `dotnet run arg1 arg2 arg3`, kommer följande att skrivas ut:
-
+```bash
+hello
+world
 ```
-Argument 1: arg1
-Argument 2: arg2
-Argument 3: arg3
-```
+Detta är bara ett enkelt exempel på hur man kan använda sig av inmatade argument via kommandoraden. Det finns många andra sätt och metoder att utforska för att maximera användbarheten av ditt program.
 
-Detta visar hur vi enkelt kan hämta information från kommandoradsargument och använda den i vårt program. Vi kan sedan använda oss av villkor och kontrollstrukturer för att göra vårt program mer flexibelt och anpassningsbart.
+## Djupdykning: Mer information om inmatade argument via kommandoraden
 
-## Djupdykning
+När man läser inmatade argument via kommandoraden finns det några saker man bör ha i åtanke. Först och främst, argumenten läses alltid in som strängar, så om man vill använda dem som andra datatyper måste man konvertera dem.
 
-När vi läser kommandoradsargument är det viktigt att tänka på säkerheten i vårt program. Vi bör alltid validera och filtrera användar-input för att undvika eventuella säkerhetsproblem. Detta kan göras genom att till exempel bara acceptera specifika typer av argument eller kontrollera att argumenten följer ett visst format.
+En annan viktig sak att tänka på är att argumenten alltid läses in i den ordning de skrivs på kommandoraden, så om ordningen är viktig för ditt program måste du se till att hantera det i din kod.
 
-Vi kan också använda oss av externa bibliotek för att göra vår kod mer robust och hantera mer komplexa kommandoradsargument. Till exempel kan vi använda "CommandLineParser" som ger oss möjlighet att hantera olika typer av argument och lägga till egna anpassade funktioner.
+Slutligen är det viktigt att komma ihåg att argumenten alltid bör separeras med ett blanksteg på kommandoraden för att de ska läsas in korrekt.
 
 ## Se också
 
-- [Microsoft Docs - Läsa kommandoradsargument i .NET](https://docs.microsoft.com/sv-se/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [CommandLineParser NuGet-paket](https://www.nuget.org/packages/CommandLineParser/)
+- [C# Dokumentation för läsa inmatade argument via kommandoraden](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [Tutorial på YouTube om läsa inmatade argument via kommandoraden i C#](https://www.youtube.com/watch?v=mT86x5-3-Jo)
+- [Stack Overflow inlägg om konvertering av argument till andra datatyper](https://stackoverflow.com/questions/4978775/how-to-convert-the-command-line-arguments-to-integer-type-in-c-sharp)

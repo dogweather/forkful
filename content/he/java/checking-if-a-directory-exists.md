@@ -1,60 +1,43 @@
 ---
-title:                "Java: האם תיקייה קיימת"
+title:                "Java: בדיקת קיום תיקייה"
+simple_title:         "בדיקת קיום תיקייה"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
-למה לבדוק אם תיקייה קיימת - לפני כל פעולה שלנו עם תיקיות בתוך קוד ג'אווה, חשוב לוודא שהיא קיימת כדי לחסוך באגים ולהבטיח שהקוד ירוץ בצורה תקינה.
+# למה
 
-## איך לעשות זאת
-```Java
+כמו שאנו כל פעם יותר משתמשים בטכנולוגיות מתקדמות ומחשבים שולחניים, כל כך חשוב לדעת איך לבדוק אם תיקייה קיימת בשימוש. זה יכול להיות שימושי בתכנות Java כדי לוודא שניתן להגשים את כל הצרכים של המשתמש ולספק חווית משתמש יעילה יותר.
+
+# איך לבדוק תיקייה קיימת בשימוש
+
+```java
 import java.io.File;
 
-public class CheckDirectoryExists {
-
-  public static void main(String[] args) {
-    // יצירת אובייקט תיקייה חדשה
-    File directory = new File("תיקייה חדשה");
-
-    // בדיקה אם התיקייה קיימת כבר
-    if (directory.exists()) {
-      System.out.println("התיקייה כבר קיימת!");
-    } else {
-      // אם התיקייה לא קיימת, ניתן ליצור אותה בצורה אוטומטית
-      if (directory.mkdir()) {
-        System.out.println("התיקייה נוצרה בהצלחה!");
-      } else {
-        System.out.println("לא ניתן ליצור את התיקייה.");
-      }
-    }
+public boolean checkDirectoryExists(String path) {
+  File directory = new File(path);
+  if (directory.isDirectory()) {
+    System.out.println("התיקייה קיימת");
+    return true;
+  } else {
+    System.out.println("התיקייה אינה קיימת");
+    return false;
   }
 }
 ```
 
-### פלט
-אם התיקייה כבר קיימת:
-```
-התיקייה כבר קיימת!
-```
+פריט זה מדגים את כיצד לכתוב פונקציה ב-Java שבודקת אם תיקייה קיימת. האלגוריתם משתמש בספרייה File המכילה את הפונקציות הנדרשות כדי לבדוק אם התיקייה קיימת. אם הפונקציה מחזירה ערך חיובי, זאת אומרת שהתיקייה קיימת וכדאי להמשיך להתקדם בתכנות.
 
-אם התיקייה לא קיימת וניתן ליצור אותה:
-```
-התיקייה נוצרה בהצלחה!
-```
+# חפירה עמוקה
 
-אם התיקייה לא קיימת ולא ניתן ליצור אותה:
-```
-לא ניתן ליצור את התיקייה.
-```
+בדיקת קיום תיקייה משתמשת בספריית File שמספקת תרגילים מרתקים שניתן לתת אליה. נוכל לראות שיש גם עוד צורות לבדוק אם תיקייה קיימת, לדוגמה, באמצעות רשימת תכונות של הקובץ. בנוסף, יתכן שנרצה לעבוד עם מסמך אחר המכיל את המידע שציפינו אותו כדי לבדוק אם תיקייה קיימת.
 
-## Deep Dive
-כדי לבדוק אם תיקייה קיימת בקוד ג'אווה, אנו משתמשים במחלקת File. למחלקה זו יש מספר שיטות שנועדו לבדוק אם תיקייה או קובץ קיים או לא. שיטת "exist()" מחזירה ערך בוליאני - true אם התיקייה קיימת וfalse אם היא לא קיימת. בנוסף, ניתן גם להשתמש בשיטת "isDirectory()", שמחזירה ערך בוליאני ומאמת אם האובייקט הם file הוא באמת תיקייה.
+# ראה גם
 
-## See Also
-* מדריך לעבודה עם קבצים ותיקיות בג'אווה: https://www.w3schools.com/java/java_files.asp
-* המחלקה File ב-Java: https://www.geeksforgeeks.org/file-class-in-java/
-* בדיקת תיקיות וקבצים קיימים בג'אווה: https://www.callicoder.com/java-check
+- דוקומנטציית פונקציות של Java File: https://www.oracle.com/technetwork/java/file-140780.html
+- כיצד לבדוק אם קובץ קיים בגישה ל-File: https://www.baeldung.com/java-check-file-exists
+- ספריית Java File: https://www.geeksforgeeks.org/file-class-in-java/

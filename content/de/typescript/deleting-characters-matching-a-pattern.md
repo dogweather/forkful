@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Löschen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,43 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann nützlich sein, wenn man in großen Textdateien nach bestimmten Inhalten suchen möchte oder unerwünschte Zeichen in einer Datenbank entfernen möchte.
+In der Programmierung kommt es oft vor, dass man bestimmte Zeichen aus einem String entfernen muss, die einem bestimmten Muster entsprechen. Dies kann zum Beispiel bei der Verarbeitung von Benutzereingaben oder beim Filtern von Daten hilfreich sein. In diesem Blog-Beitrag zeige ich euch, wie man in TypeScript Zeichen löschen kann, die einem bestimmten Muster entsprechen.
 
-## Wie
+## Wie geht's
 
-Um Zeichen mit TypeScript zu löschen, gibt es mehrere Möglichkeiten. Eine Möglichkeit ist die Verwendung der `replace()` Methode, welche ein regulärer Ausdruck oder ein bestimmtes Zeichenmuster als Parameter akzeptiert. Hier ist ein Beispielcode:
+Um Zeichen in TypeScript zu löschen, die einem Muster entsprechen, können wir die String-Methode `replace()` verwenden. Diese Methode nimmt zwei Parameter entgegen: das zu ersetzende Muster und den Ersatztext.
 
-```typescript
-let text: string = "Dies ist ein Beispieltext!";
+```TypeScript
+let string = "Hallo Welt! Hallo TypeScript!";
+let newString = string.replace(/Hallo/g, "Hi");
 
-// Alle Leerzeichen löschen
-let result = text.replace(/\s/g, "");
-
-console.log(result); // "DiesisteinBeispieltext!"
+console.log(newString); // Hi Welt! Hi TypeScript!
 ```
 
-In diesem Beispiel wird die `replace()` Methode verwendet, um alle Leerzeichen in der Variablen `text` durch ein leeres Zeichen zu ersetzen. Der Parameter `\s` sucht nach allen Leerzeichen im Text und mit dem `g` Flag werden alle Vorkommnisse ersetzt.
+In diesem Beispiel benutzen wir die String-Methode `replace()` zusammen mit dem regulären Ausdruck `/Hallo/g`, um alle Vorkommnisse von "Hallo" im String zu ersetzen. Der zweite Parameter ist in diesem Fall einfach der ersetzende Text "Hi". Die Methode `replace()` gibt einen neuen String zurück, während die ursprüngliche Variable `string` unverändert bleibt.
 
-Eine andere Möglichkeit ist die Verwendung des `filter()` Operators, um eine neue Liste mit den gewünschten Zeichen zu erstellen und diese dann in einen String zu konvertieren. Hier ist ein Beispielcode:
+Natürlich können wir auch komplexere reguläre Ausdrücke verwenden, um bestimmte Zeichen oder Muster zu löschen. Zum Beispiel können wir mit dem Platzhalter `.` alle Zeichen löschen oder mit `[0-9]` alle Zahlen. Hier nur ein kleines Beispiel:
 
-```typescript
-let text: string = "Dies ist ein Beispieltext!";
+```TypeScript
+let string = "Mai 2021";
+let newString = string.replace(/[0-9]/g, "");
 
-// Alle Vokale löschen
-let result = Array.from(text).filter(letter => !/[aeiou]/i.test(letter)).join("");
-
-console.log(result); // "Ds st n Bspltxt!"
+console.log(newString); // Mai
 ```
 
-In diesem Beispiel wird die `filter()` Methode verwendet, um alle Vokale im Text zu löschen. Dazu wird ein regulärer Ausdruck verwendet, der alle Vokale (unabhängig von der Groß- oder Kleinschreibung) erkennt. Dann wird die neue Liste zu einem String zusammengefügt.
+In diesem Beispiel löschen wir alle Zahlen aus dem String "Mai 2021", indem wir den regulären Ausdruck `[0-9]` verwenden. Die Methode `replace()` ersetzt diese Zahlen dann durch einen leeren String, sodass nur noch der Monat "Mai" übrig bleibt.
 
-## Deep Dive
+## Tiefergehende Erklärung
 
-Das Löschen von Zeichen kann auch mit komplexeren Mustern und weiteren Methoden oder Operatoren erreicht werden. Es ist wichtig, sich mit regulären Ausdrücken und der String-Manipulation in TypeScript vertraut zu machen, um diese Aufgabe effektiv und effizient zu lösen. Weiterführende Informationen zu diesen Themen findet man in der offiziellen TypeScript Dokumentation und in zahlreichen Tutorials im Internet.
+Die String-Methode `replace()` verwendet reguläre Ausdrücke, um zu bestimmen, welche Zeichen oder Muster ersetzt werden sollen. Reguläre Ausdrücke sind eine mächtige Sprache, um Textmuster zu beschreiben und zu suchen. Sie bestehen aus verschiedenen Zeichen und Symbolen, die verschiedene Muster repräsentieren, zum Beispiel `.` für ein beliebiges Zeichen oder `[]` für eine Liste von Zeichen. Hier findet ihr eine ausführliche Erklärung zu regulären Ausdrücken in TypeScript: [Link 1](https://www.regular-expressions.info/javascript.html) und [Link 2](https://www.typescriptlang.org/docs/handbook/regular-expressions.html).
 
 ## Siehe auch
 
-- [Offizielle TypeScript-Dokumentation](https://www.typescriptlang.org/docs/)
-- [RegExp-Zusammenfassung (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [String-Methoden (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String#Methoden)
-- [TypeScript-Tutorials (YouTube)](https://www.youtube.com/playlist?list=PLACeRfM1fcc4mJG4lhy6JaqMm8Vt5h_mw)
+- [String-Methode `replace()`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Reguläre Ausdrücke in TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#regular-expression-support)
+- [Eine interaktive Plattform zum Üben von regulären Ausdrücken](https://regex101.com/)

@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: Vérifier si un répertoire existe"
+simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/checking-if-a-directory-exists.md"
 ---
 
@@ -9,24 +11,14 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Nous entendons souvent parler de la vérification de l'existence d'un répertoire lorsqu'il s'agit de programmation, mais qu'est-ce que cela signifie réellement ? En bref, cela permet de s'assurer que le répertoire dans lequel nous voulons sauvegarder ou modifier des fichiers existe avant de commencer à travailler avec lui. Dans cet article, nous allons plonger plus en profondeur dans ce processus et découvrir pourquoi il est important de le faire dans nos projets Arduino.
+Si vous êtes un programmeur Arduino, vous savez probablement déjà combien il est important d'organiser efficacement vos fichiers et répertoires. Mais que se passe-t-il si vous souhaitez vérifier si un répertoire existe avant de le créer ou d'y enregistrer des fichiers ? Dans cet article, nous allons vous montrer comment faire cela en utilisant Arduino.
 
-## Comment faire
+## Comment faire 
 
-La vérification de l'existence d'un répertoire est un processus relativement simple à mettre en place grâce à la fonction `exists()` de la bibliothèque SD de l'Arduino. Pour l'utiliser, nous devons tout d'abord inclure cette bibliothèque dans notre code en ajoutant `#include <SD.h>` au début de notre esquisse. Ensuite, nous pouvons utiliser la fonction `exists()` en passant en paramètre le chemin vers le répertoire que nous voulons vérifier. Voici un exemple de code pour vérifier si un répertoire nommé "datalog" existe :
-
-```
-#include <SD.h>
-
+```Arduino
 void setup() {
-  // initialisation de la carte SD
-  if(!SD.begin()) {
-    Serial.println("Erreur de l'initialisation de la carte SD");
-    return;
-  }
-  
-  // vérification de l'existence du répertoire "datalog"
-  if (SD.exists("/datalog")) {
+  Serial.begin(9600); //Initialiser la communication série à 9600 bauds
+  if (SD.exists("/mon_repertoire")) { //Vérifier si le répertoire existe
     Serial.println("Le répertoire existe !");
   } else {
     Serial.println("Le répertoire n'existe pas !");
@@ -34,27 +26,19 @@ void setup() {
 }
 
 void loop() {
-  // code du programme principal
+  
 }
 ```
-
-Si le répertoire existe, le message "Le répertoire existe !" sera affiché dans le moniteur série. Si ce n'est pas le cas, alors le message "Le répertoire n'existe pas !" sera affiché.
+Lorsque vous allez exécuter le code ci-dessus, il vérifiera si le répertoire "mon_repertoire" existe sur votre carte SD. Si c'est le cas, il affichera "Le répertoire existe !" sur le moniteur série. Sinon, il affichera "Le répertoire n'existe pas !".
 
 ## Plongée en profondeur
 
-La fonction `exists()` renvoie une valeur booléenne (vrai ou faux) en fonction de l'existence du répertoire spécifié. Cela signifie que nous pouvons également l'utiliser en tant que condition dans une structure `if` ou `while`, par exemple :
+La fonction `SD.exists()` que nous avons utilisée dans l'exemple ci-dessus est une fonction définie dans la bibliothèque `SD.h`. Cette fonction prend le chemin absolu du répertoire en paramètre et renvoie `true` s'il existe, ou `false` s'il n'existe pas.
 
-```
-// vérification de l'existence du répertoire "data" tant qu'il n'existe pas
-while (!SD.exists("/data")) {
-  // code pour créer le répertoire "data"
-}
-```
-
-De plus, la fonction `exists()` peut également être utilisée pour vérifier l'existence de fichiers. Dans ce cas, nous passons en paramètre le chemin vers le fichier, par exemple `SD.exists("/data/test.txt")`.
+Il est également important de noter que cette fonction n'est compatible qu'avec les cartes SD utilisant le système de fichiers FAT16 ou FAT32. Si vous utilisez une carte SD avec un système de fichiers différent, cette fonction ne fonctionnera pas.
 
 ## Voir aussi
 
-Pour en savoir plus sur la bibliothèque SD de l'Arduino, vous pouvez consulter les liens suivants :
-- [Documentation officielle de la bibliothèque SD](https://www.arduino.cc/en/Reference/SD)
-- [Tutoriel sur l'utilisation de la carte SD avec l'Arduino](https://www.circuitbasics.com/how-to-set-up-an-sd-card-for-use-with-the-arduino/)
+- [Tutoriel vidéo sur l'utilisation de la carte SD avec Arduino](https://www.youtube.com/watch?v=jiR4XFByBU4)
+- [Documentation officielle sur la bibliothèque SD](https://www.arduino.cc/en/Reference/SD)
+- [Forum Arduino pour poser des questions et obtenir de l'aide](https://forum.arduino.cc/index.php?board=4.0)

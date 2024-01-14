@@ -1,56 +1,56 @@
 ---
-title:                "Ruby: Skriver tester"
+title:                "Ruby: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor: Hvorfor skal vi skrive tester?
+## Hvorfor
 
-Svaret er enkelt: Skrive tester for å sikre at koden vår fungerer som den skal. Tester hjelper til med å oppdage feil og bugs i koden vår, og tillater oss å fikse dem før de blir et større problem. Det er også en god måte å dokumentere koden vår på og gjøre den mer lesbar for andre utviklere.
+Å skrive tester er en viktig del av å være en effektiv Ruby-programmerer. Det hjelper deg med å oppdage og fikse feil tidlig i utviklingsprosessen, og sikrer at koden din fungerer som forventet. 
 
-## Hvordan: Eksempler på testing i Ruby
+## Hvordan
 
-La oss si at vi har en enkel funksjon som legger sammen to tall:
+For å skrive effektive tester i Ruby, må du bruke et testrammeverk som for eksempel RSpec eller MiniTest. Disse verktøyene gir struktur og organisering til testene dine. La oss se på et eksempel på en enkel test som bruker RSpec:
 
 ```Ruby
-def add_numbers(x, y)
-  return x + y
+require 'rspec'
+
+def add(a, b)
+  a + b
+end
+
+describe '#add' do
+  it 'should return the sum of two numbers' do
+    expect(add(2,3)).to eq(5)
+  end
 end
 ```
 
-Vi kan skrive en enkel enhetstest for denne funksjonen ved å bruke RSpec:
+I dette eksempelet definerer vi en `add` metode som tar inn to tall og returnerer summen av dem. Deretter bruker vi `RSpec` til å beskrive hva metoden skal gjøre, og bruker `expect` metoden til å sjekke om resultatet er riktig.
 
-```Ruby
-require 'rspec/autorun'
+Når vi kjører denne testen, vil vi få følgende ut:
 
-describe "add_numbers" do 
-  it "adds two numbers correctly" do 
-    expect(add_numbers(3, 4)).to eq(7)
-  end 
-end 
+```
+1 example, 0 failures
 ```
 
-Når vi kjører denne testen, vil vi få en grønn markering som betyr at testen har passert. Men hva skjer hvis vi endrer funksjonen vår litt:
+Hvis vi for eksempel endrer koden vår til å returnere summen av tre tall i stedet for to, vil testen mislykkes og vi vil få en feilmelding som hjelper oss med å finne feilen og fikse den.
 
-```Ruby
-def add_numbers(x, y)
-  return x * y
-end
-```
+## Dypdykk
 
-Nå når vi kjører testen igjen, vil vi få en rød markering som betyr at testen feilet. Dette indikerer at vår endring har ført til en uventet feil, og vi må gå tilbake og fikse koden vår.
+Å skrive gode tester handler ikke bare om å sjekke om koden fungerer som forventet. Det handler også om å skrive tester som er enkle å vedlikeholde og som dekker alle deler av koden din.
 
-## Dykk dypere: Mer informasjon om testing
+Det er viktig å skrive såkalte "assertion messages" som forklarer hva testen forventer og hva resultatet faktisk er. Dette gjør det enklere å feilsøke og fikse eventuelle feil.
 
-Det finnes flere forskjellige testrammeverk som kan brukes i Ruby, som RSpec, Minitest og Cucumber. Alle disse har sine egne fordeler og ulemper, men det viktigste er å velge et som passer best for ditt prosjekt og din personlige preferanse.
-
-Det er også viktig å forstå forskjellen mellom enhetstesting og integrasjonstesting. Enhets-testing tester enkeltkomponenter av koden vår, mens integrasjonstesting tester hvordan disse komponentene fungerer sammen. Det er viktig å balansere begge typer testing for å sikre at koden vår fungerer som den skal.
+Et annet viktig aspekt ved å skrive tester er å følge "Arrange, Act, Assert" mønsteret. Dette innebærer å først sette opp testen, deretter utføre handlingen du vil teste, og til slutt sjekke om resultatet er som forventet.
 
 ## Se også
 
-- [RailsGuides: Testing](https://guides.rubyonrails.org/testing.html)
-- [Better Specs: RSpec guidelines](https://www.betterspecs.org/)
-- [Minitest: Documentasjon](https://github.com/seattlerb/minitest)
+- [RSpec dokumentasjon](https://relishapp.com/rspec)
+- [MiniTest dokumentasjon](https://github.com/seattlerb/minitest)
+- [The Art of Unit Testing](https://www.amazon.com/Art-Unit-Testing-Examples-Net/dp/1617290890) (bok)

@@ -1,48 +1,61 @@
 ---
-title:                "Python: Utmatning av felsökningsinformation"
+title:                "Python: Utskrift av felsökningsspår"
+simple_title:         "Utskrift av felsökningsspår"
 programming_language: "Python"
-category:             "Testing and Debugging"
+category:             "Python"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
-Att skriva programspråk kan vara en komplex och tidskrävande process. Ibland kan det uppstå buggar eller fel i koden som är svåra att hitta och åtgärda. Genom att använda tryckning av felsökningstext kan man enkelt spåra dessa problem och snabbare lösa dem.
+# Varför
+Att skriva ut felsökningsutdata, eller "debug output", är en viktig del av programmering. Det kan hjälpa dig att förstå exakt vad som händer i ditt program och identifiera eventuella fel eller problem.
 
-##Så här
-För att skriva ut felsökningstext i Python kan du använda funktionen `print`. Du kan skriva ut olika typer av information såsom variabler, strängar och utskrift av olika steg i ditt program. Ett exempel på kodblock kan se ut så här:
-
-```Python
-num1 = 10
-print("Det första numret är:", num1)
-```
-
-Detta kommer att ge följande utmatning:
-
-```
-Det första numret är: 10
-```
-
-Du kan också lägga till flera variabler och strängar inuti `print` funktionen genom att använda kommatecken mellan dem. Detta kommer att skriva ut varje element åtskilt med ett mellanslag.
+## Hur man gör
+Att skriva ut felsökningsutdata i Python är enkelt. Du kan använda funktionen "print()" för att skriva ut olika variabler eller meddelanden. Här är ett exempel på koden som skriver ut texten "Hej världen!" till konsolen:
 
 ```Python
-num2 = 7.5
-print("Det andra numret är:", num2, "och summan av numren är:", num1 + num2)
+print("Hej världen!")
 ```
 
-Detta ger följande utmatning:
-
+Detta kommer att ge följande utdata:
 ```
-Det andra numret är: 7.5 och summan av numren är: 17.5
+Hej världen!
 ```
 
-##Djupdykning
-När det gäller att skriva ut felsökningstext finns det flera andra funktioner som kan hjälpa till att göra processen ännu enklare. Till exempel kan du använda `format` funktionen för att formatera utskriften av ditt felsökningstext. Du kan också använda `repr` funktionen för att få en mer detaljerad utmatning av dina objekt.
+Du kan också använda "format()" funktionen för att formatera utdatan på ett mer läsbart sätt. Här är ett exempel på hur man skriver ut en text med variabler i Python:
 
-En annan användbar funktion är `sys` modulen, som ger tillgång till systemrelaterad information som till exempel vilken plattform ditt program körs på och vilken version av Python som används. Du kan använda `sys.stderr` för att skriva ut felmeddelanden och `sys.stdout` för att skriva ut annan felsökningstext.
+```Python
+namn = "Anna"
+ålder = 25
+print("Hej, mitt namn är {} och jag är {} år gammal.".format(namn, ålder))
+```
 
-##Se också
-- [7 sätt att använda Python för felsökning](https://www.datacamp.com/community/tutorials/7-essential-python-scripts-debugging)
-- [Felsökningsguide för Python-utvecklare](https://realpython.com/python-debugging-pdb/)
-- [Python dokumentationen för `print`](https://docs.python.org/3/library/functions.html#print)
+Detta kommer att ge följande utdata:
+```
+Hej, mitt namn är Anna och jag är 25 år gammal.
+```
+
+## Djupdykning
+När man skriver ut felsökningsutdata är det viktigt att tänka på vad som är relevant att skriva ut. Om du har många variabler i ditt program så kan det vara en god idé att bara skriva ut de viktigaste för att hålla konsolen ren och lättläst.
+
+Du kan också använda villkorsuttryck för att endast skriva ut utdata när ett visst villkor är uppfyllt. Här är ett exempel på hur man bara skriver ut utdata om ett nummer är större än 10:
+
+```Python
+num = 15
+if num > 10:
+    print("{} är större än 10".format(num))
+```
+
+Detta kommer att ge följande utdata:
+```
+15 är större än 10
+```
+
+En annan användbar funktion är "logging" som kan hjälpa dig att ordna och filtrera felsökningsutdata. Du kan också använda "try-except" block för att fånga och skriva ut eventuella felmeddelanden.
+
+# Se även
+- [Python felsökning](https://www.python.org/doc/glossary.html#term-debugging)
+- [Python print() funktionen](https://docs.python.org/3/library/functions.html#print)
+- [Python format() funktionen](https://docs.python.org/3/library/stdtypes.html#str.format)

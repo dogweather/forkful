@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Scrivere su standard error"
+simple_title:         "Scrivere su standard error"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/writing-to-standard-error.md"
 ---
 
@@ -9,23 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scrivere sulla standard error è un aspetto importante della programmazione in Elixir, poiché fornisce un modo per visualizzare informazioni di errore su un terminale quando si eseguono i programmi. Ciò rende più facile il debug e la risoluzione di eventuali problemi durante lo sviluppo.
+Esistono diversi motivi per cui potresti voler scrivere su standard error quando si tratta di programmazione in Elixir. Potresti voler segnalare errori o eccezioni durante l'esecuzione del codice, o semplicemente voler registrare informazioni di debug per aiutarti a risolvere eventuali problemi.
 
 ## Come fare
 
-Per scrivere sulla standard error in Elixir, è possibile utilizzare la funzione `IO.puts/2` passando come argomenti la stringa di testo da visualizzare e `:stderr` come secondo argomento. Ad esempio:
+In Elixir, per scrivere su standard error, possiamo utilizzare la funzione `IO.puts/2` impostando il secondo parametro su `:stderr`. Ad esempio:
 
-```
-Elixir IO.puts("Errore!", :stderr)
+```Elixir
+IO.puts("Questo è un messaggio di errore", :stderr)
 ```
 
-Questo scriverà "Errore!" sulla standard error durante l'esecuzione del programma.
+Questo scriverà il messaggio "Questo è un messaggio di errore" su standard error.
 
 ## Approfondimento
 
-La scrittura sulla standard error fa parte delle funzioni di input/output di Elixir, che rendono possibile la comunicazione tra un programma e l'ambiente esterno. Con la standard error, si ha a disposizione un canale dedicato alle informazioni di errore, che possono essere facilmente catturate e visualizzate durante l'esecuzione.
+Scrivere su standard error in Elixir ha in realtà molte più opzioni rispetto a semplici messaggi di errore. Possiamo anche utilizzare la funzione `IO.error/1` per formattare il messaggio di errore in modo più dettagliato, includendo la data e l'ora in cui si è verificato, la posizione nel codice e il nome del modulo. Ad esempio:
+
+```Elixir
+IO.error({:enoent, "file.txt"})
+```
+
+Questo produrrà un messaggio di errore simile a questo:
+
+```
+** (File.Error) could not read file file.txt. The following reason was given: :enoent
+** File.noent: file file.txt does not exist
+    (elixir) src/elixir_io.erl:126: :elixir_io.in/4
+```
+
+Inoltre, possiamo anche utilizzare il modulo `Logger` per scrivere su standard error, utilizzando il livello di log `:error` per segnalare errori e problemi gravi nel nostro codice.
 
 ## Vedi anche
 
-- [Funzioni di input/output in Elixir](https://elixir-lang.org/getting-started/io-and-the-file-system.html)
-- [Documentazione ufficiale su IO](https://hexdocs.pm/elixir/IO.html)
+- [Documentazione ufficiale di Elixir su standard error](https://hexdocs.pm/elixir/IO.html#writing-to-standard-error)
+- [Guida su come utilizzare il modulo Logger in Elixir](https://elixirschool.com/it/lessons/advanced/logging-with-logger/)
+- [Articolo su come gestire gli errori e le eccezioni in Elixir](https://medium.com/thecode/news-flash-elixir-is-awesome-for-handling-errors-e6c454043c17)

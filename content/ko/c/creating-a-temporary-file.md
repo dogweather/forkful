@@ -1,57 +1,101 @@
 ---
 title:                "C: 임시 파일 생성하기"
+simple_title:         "임시 파일 생성하기"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-임시 파일을 생성하는 프로그래밍이 필요한 이유는 매우 다양합니다. 일반적으로 프로그램이 실행되는 동안 사용자 데이터를 임시로 저장하거나 프로그램이 실행 중인 동안 생성된 데이터를 파일에 저장하는 데 사용됩니다.
+일시적인 파일을 생성하는 것에 대해 궁금하신가요? 이 글에서는 C 프로그래밍에서 가끔 필요한 일시적인 파일을 만드는 방법과 그 의미에 대해 소개합니다.
 
-## 어떻게
+## 어떻게 하나요?
 
-임시 파일을 생성하는 것은 C 언어에서 매우 간단합니다. 우리는 `tmpfile()` 함수를 사용하여 임시 파일 포인터를 얻을 수 있습니다. 그리고 `fprintf()` 함수를 사용하여 파일에 데이터를 작성할 수 있습니다. 예제 코드는 다음과 같습니다:
+가장 먼저, 일시적인 파일을 생성하기 위해 `tmpfile()` 함수를 사용합니다. 이는 파일 디스크립터를 리턴하는데, 여기서 우리는 새로운 파일을 생성하지 않는 걸 주목해야 합니다. 새로운 파일을 생성하지 않기 때문에, 우리는 일시적인 파일을 사용한 후에 나중에 지울 필요가 없습니다.
+
+아래의 코드 예제를 살펴보세요:
 
 ```C
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    FILE *fp;
-    char data[] = "This is a sample temporary file.";
+int main(void) {
+    FILE *file;
+    char c;
 
-    fp = tmpfile(); // 임시 파일 포인터 획득
-    fprintf(fp, "%s\n", data); // 데이터 작성
-    fclose(fp); // 파일 닫기
+    // 일시적인 파일 생성
+    file = tmpfile();
+
+    // 사용자 입력 받기
+    printf("파일에 저장할 문자를 입력하세요: ");
+    c = getchar();
+
+    // 파일에 쓰기
+    putc(c, file);
+
+    // 파일 읽어오기
+    rewind(file); // 파일 포인터 위치를 처음으로 바꾸기
+    c = getc(file);
+
+    // 결과 출력
+    printf("입력한 문자는 %c 입니다.\n", c);
 
     return 0;
 }
 ```
 
-위 코드를 `tmpfile_example.c` 파일로 저장하고 컴파일한 뒤 실행하면 다음과 같은 결과를 얻을 수 있습니다:
+위의 코드를 실행하면, 사용자가 입력한 문자를 일시적인 파일에 저장하고, 다시 그 파일에서 문자를 읽어와 출력합니다. 간단한 예제이지만, 여러분은 이를 응용하여 더 복잡한 로직을 구현할 수 있습니다.
 
+## 깊게 들어가기
+
+일시적인 파일을 생성하는 방법 외에도, 우리는 파일 경로와 이름을 지정하여 직접 파일을 생성해줄 수도 있습니다. 이를 위해 `tmpnam()` 함수를 사용하면 됩니다. 아래의 코드 예제를 살펴보세요:
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+    FILE *file;
+    char tmpname[L_tmpnam];
+    char c;
+
+    // 일시적인 파일 경로 생성
+    tmpnam(tmpname);
+
+    // 파일 생성 및 열기
+    file = fopen(tmpname, "w+");
+
+    // 사용자 입력 받기
+    printf("파일에 저장할 문자를 입력하세요: ");
+    c = getchar();
+
+    // 파일에 쓰기
+    putc(c, file);
+
+    // 파일 읽어오기
+    rewind(file); // 파일 포인터 위치를 처음으로 바꾸기
+    c = getc(file);
+
+    // 결과 출력
+    printf("입력한 문자는 %c 입니다.\n", c);
+
+    return 0;
+}
 ```
-$ gcc tmpfile_example.c -o tmpfile_example
-$ ./tmpfile_example
 
-$ cat /tmp/tmpfileXXXXXX
-This is a sample temporary file.
-```
+위의 코드를 실행하면, 일시적인 파일의 경로를 생성하고 그 경로를 이용해 파일을 생성하고 열어 데이터를 저장하고 읽어옵니다. 이러한 방식은 더 세밀한 제어가 필요한 경우에 유용하게 사용할 수 있습니다.
 
-위 예제 코드에서 `tmpfile()` 함수는 `/tmp` 디렉토리에 새로운 임시 파일을 생성하고 해당 파일의 파일 포인터를 반환합니다. 파일 포인터를 사용하여 `fprintf()` 함수를 호출하면 해당 임시 파일에 `data` 문자열을 작성할 수 있습니다. 마지막으로 파일을 닫아서 `fclose()` 함수를 호출합니다.
+## 또 다른 정보
 
-## 깊이 파고들기
+일시적인 파일을 생성하는 것은 프로그래밍에서 가끔 필요한 작업이기 때문에, 더 많은 정보를 알고 싶은 분들을 위해 아래의 링크를 참고하세요:
 
-`tmpfile()` 함수는 실제로 운영체제의 기능을 사용하여 임시 파일을 생성합니다. 많은 운영체제에서는 `/tmp` 디렉토리에 생성된 임시 파일이 적절하게 관리되어 해당 파일이 더 이상 필요하지 않을 경우 삭제됩니다. 따라서 임시 파일을 생성하고 데이터를 작성하는 것 외에 파일 관리에 대한 걱정은 없어도 됩니다.
+- [The tmpfile() function](http://www.cplusplus.com/reference/cstdio/tmpfile/)
+- [The tmpnam() function](http://www.cplusplus.com/reference/cstdio/tmpnam/)
 
-그러나 `tmpfile()` 함수는 사용자가 파괴하지 않는 한 해당 파일을 유지합니다. 따라서 파일을 더 이상 사용하지 않을 때에는 `fclose()` 함수를 호출하여 파일을 닫아야 합니다. 그렇지 않으면 파일이 유지되며 디스크 공간을 차지하게 될 수 있습니다.
+# 더 알아보기
 
-## 관련 자료
-
-더 많은 정보를 원한다면 다음의 링크를 참고하세요:
-
-- [Linux tmpfile() 함수 문서](https://www.man7.org/linux/man-pages/man3/tmpfile.3.html)
-- [C 파일 입출력 관련 기초](https://modoocode.com/81)
-- [C 언어 기초 강좌](https://opentutorials.org/course/1335)
+이 글에서는 C 프로그래밍에서 일시적인 파일을 생성하는 방법에 대해 언급했습니다. 하지만 여러분은 이를 활용하여 더 다양한 작업을 수행할 수 있습니다. 따라서 더 많은 지식을 얻기 위해

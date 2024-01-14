@@ -1,42 +1,46 @@
 ---
-title:                "Swift: 部分文字列を抽出する"
+title:                "Swift: 「部分文字列の抽出」"
+simple_title:         "「部分文字列の抽出」"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## なぜ
 
-文字列の一部の部分を取り出すことは、Swiftプログラミングで非常に便利です。例えば、ユーザーから入力された文字列から特定のキーワードを抽出したり、文字列をフォーマットしたりする際に役立つことがあります。
+Swiftでサブストリングを抽出する必要があるのでしょうか？サブストリングを抽出することで、文字列をより細かく分割することができます。例えば、名前や住所など、文字列の一部を取り出す場合に便利です。
 
-## How To
+## 方法
+
+まずは、どの文字列からサブストリングを抽出するかを決めます。次に、どの部分を抽出したいかを指定します。最後に、サブストリングを抽出するメソッドを使って実際に抽出します。例えば、以下のようなコードを使うことができます。
 
 ```Swift
-let str = "今はSwiftを勉強しています。"
-
-// "Swift"という文字列を取り出す
-let substring1 = str[2...6]
-print(substring1) // Output: Swift
-
-// "を"以降の文字列を取り出す
-let substring2 = str[6...]
-print(substring2) // Output: を勉強しています。
-
-// "Swiftを勉強しています。"という部分を"Swiftを学ぶ"に変更する
-var newStr = str
-newStr.replaceSubrange(6..., with: "を学ぶ")
-print(newStr) // Output: 今はSwiftを学ぶ
-
+let fullName = "Yuto Yamada"
+let firstName = fullName.prefix(4) // 「Yuto」が抽出される
 ```
 
-## Deep Dive
+抽出する部分を指定する際には、文字列のインデックスを使います。例えば、上記の例では「Yuto」の最初の文字、つまりインデックス番号が0の文字から４文字分を抽出しています。抽出する部分がどのインデックス番号に該当するかを把握することが重要です。
 
-Swiftでは、文字列型に組み込まれている`subscript`機能を使うことで、文字列の一部を取り出すことができます。`subscript`を使用する際は、文字列のインデックス(開始位置)を指定し、`subscript`の引数に開始位置から取り出したい文字の数を指定します。また、範囲演算子`...`を使用することで、開始位置から終了位置までの文字列を取り出すことができます。さらに、`replaceSubrange`メソッドを使用することで、指定した範囲の文字列を別の文字列で置き換えることもできます。
+## 深堀り
 
-## See Also
+サブストリングを抽出するメソッドには、いくつかの種類があります。それぞれのメソッドは、抽出する部分の指定方法や戻り値の形式が異なります。例えば、下記のようなメソッドがあります。
 
-- [文字列型 - Swift公式ドキュメント](https://developer.apple.com/documentation/swift/string)
-- [String.SubSequence - Swift公式ドキュメント](https://developer.apple.com/documentation/swift/string/subsequence)
-- [String の繰り返しや他の方法を使ってサブ文字列にアクセスする - Swift公式ドキュメント](https://developer.apple.com/documentation/swift/string/2994856-split)
+- `prefix`: 文字列の先頭から指定した数の文字を抽出する
+- `suffix`: 文字列の末尾から指定した数の文字を抽出する
+- `dropFirst`: 指定した数の文字を先頭から削除した文字列を返す
+- `dropLast`: 指定した数の文字を末尾から削除した文字列を返す
+
+また、`string.index()`メソッドを使うことで、指定したインデックス番号の文字を取得することもできます。
+
+## 参考リンク
+
+- [Swiftでの文字列操作について](https://developer.apple.com/documentation/swift/string)
+- [サブストリングを抽出する方法](https://www.hackingwithswift.com/example-code/strings/how-to-extract-a-substring-from-a-string-coded-in-swift)
+- [文字の抽出と削除に関するチュートリアル](https://www.swiftmania.io/tutorials/learn-how-to-extract-remove-characters-from-strings-in-swift)
+- [文字列の処理に関する基本的なメソッド一覧](https://qiita.com/KangKiBeom/items/64721003b9390c991fd1)
+
+
+## 関連リンク

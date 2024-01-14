@@ -1,46 +1,40 @@
 ---
-title:                "Elm: Sprawdzanie, czy istnieje katalog"
+title:                "Elm: Sprawdzanie, czy istnieje katalog."
+simple_title:         "Sprawdzanie, czy istnieje katalog."
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego warto sprawdzać istnienie katalogu?
 
-Sprawdzanie, czy katalog istnieje, jest ważną częścią programowania, ponieważ umożliwia bezpieczne zarządzanie plikami i folderami na dysku. To nie tylko pomaga w uniknięciu błędów, ale także zwiększa niezawodność naszej aplikacji.
+Sprawdzanie, czy dany katalog istnieje, jest ważnym aspektem programowania w Elm. Jest to szczególnie przydatne w przypadku aplikacji internetowych, które często muszą odwoływać się do plików lub katalogów na serwerze. Sprawdzenie, czy katalog istnieje, pomaga uniknąć błędów związanych z dostępem do plików, a także zapewnia bezpieczeństwo aplikacji.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby sprawdzić istnienie katalogu w Elm, możesz użyć funkcji `Dir.exists`. Przykładowy kod wyglądałby tak:
+Aby sprawdzić istnienie katalogu w Elm, należy użyć funkcji `Directory.exists` z modułu `Elm.Kernel.Directory`. Poniżej przedstawiono przykładowy kod, który demonstruje tę funkcję:
 
-```Elm
-exists : Dir -> Task Never Bool
-exists dir =
-  Task.succeed True -- przykładowy kod, który zawsze zwraca wartość True
+```
+Elm.Kernel.Directory.exists "sciezka/do/katalogu" 
+    |> Result.andThen (\exists -> 
+        if exists then 
+            "Katalog istnieje." |> Result.ok
+        else
+            "Katalog nie istnieje." |> Result.err)
+    |> Result.withDefault "Wystąpił błąd."
 ```
 
-Jest to tylko przykład, ale pokazuje użycie tej funkcji. Pamiętaj, że funkcja ta zwraca wartość logiczną `True` lub `False` w zależności od tego, czy podana ścieżka do katalogu istnieje czy nie. 
+Kod ten pozwala najpierw na sprawdzenie, czy katalog istnieje. Jeśli tak, zostanie zwrócony pozytywny wynik, w przeciwnym wypadku zostanie zwrócony błąd. Należy pamiętać, że funkcja `exists` zwraca wartość typu `Result`, więc musimy obsłużyć zarówno przypadki sukcesu, jak i błędu.
 
-Możesz także wyświetlić informację o istnieniu katalogu za pomocą polecenia `Debug.log` w następujący sposób:
+## Wnikliwa analiza
 
-```Elm
-exists : Dir -> Task Never Bool
-exists dir =
-  Task.succeed True
-    |> Task.andThen (\_ -> Debug.log "Katalog istnieje!")
-```
+Sprawdzanie istnienia katalogu może być także przydatne w sytuacjach, gdy użytkownik aplikacji musi wybrać konkretny katalog, w którym ma zostać zapisany plik lub dane. W takim przypadku można wyświetlić użytkownikowi listę dostępnych katalogów i sprawdzić, czy wybrany przez niego istnieje.
 
-To wyświetli "Katalog istnieje!" w konsoli, jeśli katalog istnieje.
+## Zobacz także
 
-## Deep Dive
-
-Sprawdzanie istnienia katalogu może być również przydatne przy tworzeniu aplikacji, które wymagają dostępu do konkretnych plików lub folderów. Możesz także użyć funkcji `Dir.exists` do tworzenia nowych katalogów, jeśli nie istnieją.
-
-Jednak zawsze pamiętaj o obsłudze błędów i upewnij się, że Twoja aplikacja jest przygotowana na przypadek, gdy nie będzie można dostać się do danego katalogu.
-
-## Zobacz również
-
-- Dokumentacja Elm o funkcjach do zarządzania plikami: https://package.elm-lang.org/packages/elm/file/latest/
-- Przykładowy kod wykorzystujący `Dir.exists`: https://gist.github.com/rtfeldman/7405f63646ed613dbe00
+* Dokumentacja dotycząca funkcji `Directory.exists` w oficjalnym podręczniku Elm (https://guide.elm-lang.org/interop/javascript.html#calling-a-function)
+* Przykładowy kod wykorzystujący `Directory.exists` na stronie GitHub (https://github.com/some-user/some-repo)
+* Dyskusja na forum Elm Dev o wykorzystaniu `Directory.exists` w aplikacji webowej (https://discourse.elm-lang.org/t/check-if-directory-directory-exists/1234)

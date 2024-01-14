@@ -1,50 +1,37 @@
 ---
 title:                "Fish Shell recipe: Checking if a directory exists"
+simple_title:         "Checking if a directory exists"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why 
-
-You may find yourself in a situation where you need to check if a specific directory exists before running a task. This could be useful in automating certain processes or to avoid any errors while executing a script.
+As a fish shell programmer, you may find yourself needing to check if a directory exists before executing a certain command or script. This can save you from running into errors and make your code more efficient.
 
 ## How To
+To check if a directory exists in Fish Shell, you can use the `test` command with the `-d` option. This command checks if a given path exists and is a directory. Here's an example code block:
 
-Coding in Fish Shell makes it easy to check if a directory exists. Here's an example using the `test` command and the `--directory` flag to check for a directory named "documents":
-
-```Fish Shell
-if test -d documents
-    echo "The directory exists"
+```
+Fish Shell Code Block
+if test -d /path/to/directory
+    echo "Directory exists"
 else
-    echo "The directory does not exist"
+    echo "Directory does not exist"
 end
 ```
 
-The above code will first check if the "documents" directory exists using the `test` command and then print a message accordingly. 
-
-Here's another example using the `status` command and the `--is-dir` flag to check if the current working directory is a directory:
-
-```Fish Shell
-if status --is-dir
-    echo "The current directory is a directory"
-else
-    echo "The current directory is not a directory"
-end
-```
-
-The above code will use the `status` command to check the current directory and then print a message based on the result.
+If the `/path/to/directory` exists, the output will be "Directory exists". If it doesn't exist, the output will be "Directory does not exist". 
 
 ## Deep Dive
+For a deeper understanding, let's break down the code block above. The `if` statement checks the output of the `test` command. If it returns true, the first block of code is executed. If it returns false, the `else` statement is executed. 
 
-The `test` command is a built-in command in Fish Shell that allows for evaluating conditions and returning a successful or unsuccessful exit status. Using the `-d` or `--directory` flag will check if the given path is a directory and return a successful exit status if it exists.
-
-The `status` command is also a built-in command that prints information about the given path. The `--is-dir` flag will check if the given path is a directory and print a successful exit status if it is.
+The `-d` option specifically checks if the given path exists and is a directory. In this case, the path is the `/path/to/directory` that we are checking. 
 
 ## See Also
-
-- Fish Shell Tutorial: [https://fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)
-- Fish Shell Command Line Tools: [https://fishshell.com/docs/current/cmds.html](https://fishshell.com/docs/current/cmds.html)
-- Official Fish Shell Documentation: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- [Fish Shell documentation on test command](https://fishshell.com/docs/current/cmds/test.html)
+- [Fish Shell tutorial on file tests](https://fishshell.com/docs/current/tutorial.html#file-tests)
+- [Linux man page for test command](https://man7.org/linux/man-pages/man1/test.1.html)

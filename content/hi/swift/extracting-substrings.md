@@ -1,7 +1,9 @@
 ---
 title:                "Swift: उप-स्ट्रिंग निकालना"
+simple_title:         "उप-स्ट्रिंग निकालना"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/extracting-substrings.md"
 ---
 
@@ -9,22 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-क्या आपको कभी लगता है कि आपको किसी शब्द को छोटे अनुभागों में विभाजित करना होता है? एक बड़े शब्द के साथ काम करने में थोड़ी परेशानी हो सकती है, लेकिन स्विफ्ट में substrings का उपयोग करके आप इससे आसानी से निपट सकते हैं। इस लेख में हम आपको स्विफ्ट भाषा में substrings के बारे में बताएंगे।
+स्विफ्ट प्रोग्रामिंग बहुत ही व्यापक है और इसमें कई काम किए जा सकते हैं, जैसे स्ट्रिंग्स को अलग से निकालना। यह अपने दस्तावेजों और डेटा को अधिक सुविधाजनक तरीके से संगठित करने में मदद कर सकता है।
 
 ## कैसे करें
 
-जब हम substrings के बारे में बात करते हैं, तो हम उस स्ट्रिंग को उसके छोटे अनुभागों में विभाजित कर देते हैं जो कि हमें अलग-अलग काम करने में मदद करते हैं। स्विफ्ट में हम `substring()` फंक्शन का इस्तेमाल करके substrings बना सकते हैं। नीचे दिए गए कोड ब्लॉक में आप इसका उदाहरण देख सकते हैं:
+स्ट्रिंग्स से सबस्ट्रिंग्स निकालने का सबसे सरल तरीका `suffix()` और `prefix()` फ़ंक्शन्स का उपयोग करना है। यहाँ एक उदाहरण है:
 
-```Swift
-// अपने वाक्यांश पर substrings बनाने के लिए:
-let sentence = "मैं इस भाषा में प्रोग्रामिंग करता हूँ"
-let language = sentence.substring(from: 2, to: 7)
-
-// language में "भाषा" का मान होगा
+```Swift 
+let name = "John Doe"
+let lastName = name.suffix(3)
+print(lastName)
+// Output: "Doe"
 ```
 
-इस उदाहरण में हमने `substring()` का इस्तेमाल करके `sentence` स्ट्रिंग के 2वें और 7वें अक्षरों के बीच वाक्यांश में से `language` स्ट्रिंग बनाया है। इसी तरह आप अपनी जरूरत के अनुसार substrings बना सकते हैं।
+आप `substring()` फ़ंक्शन का उपयोग करके भी सबस्ट्रिंग्स निकाल सकते हैं। इसमें आप को सबस्ट्रिंग की शुरुआत की और अंत की इंडेक्स भी देनी होगी। यहाँ एक उदाहरण है:
+
+```Swift 
+let sentence = "Hello, how are you?"
+let greeting = sentence.substring(with: 0..<5)
+print(greeting)
+// Output: "Hello"
+```
 
 ## गहराई में जाएं
 
-स्विफ्ट में substrings को किसी और स्ट्रिंग से अलग रखने के लिए हम `substring()` फंक्शन के साथ `range()` या `index()` भी इस्तेमाल कर सकते हैं। इससे हमें बड़ी स्ट्रिंग पर काम करने में और भी आसानी होगी। नीचे दिए गए कोड ब्लॉक
+सबस्ट्रिंग्स को अलग करने के लिए इस्तेमाल किए जाने वाले फ़ंक्शन्स का अधिक गहराई से समझना बेहद महत्वपूर्ण है। इसके अलावा, यह प्रोग्रामिंग में प्रयोग करने में और भी कुछ तरीके हैं, जो आपके कोड को और भी बेहतर बना सकते हैं। स्ट्रिंग्स के साथ काम करते समय सावधान रहें और समस्याओं को सुलझाने के लिए इस्तेमाल करीबी रखें।
+
+## देखें भी
+
+- [Swift Strings Tutorial](https://www.appcoda.com/swift-string/)
+- [String Manipulation in Swift](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/using.html#//apple_ref/doc/uid/TP40004265-SW1)
+- [Swift String Cheat Sheet](https://learnappmaking.com/swift-string-cheat-sheet/)
+- [Advanced String Manipulation in Swift](https://www.ralfebert.de/ios/extras/string-processing/)

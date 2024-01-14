@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Stampa dell'output di debug"
+simple_title:         "Stampa dell'output di debug"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/printing-debug-output.md"
 ---
 
@@ -9,54 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Spesso, quando si sta scrivendo codice in Clojure, si possono incontrare alcuni problemi o bug difficili da risolvere. In tali casi, può essere utile stampare gli output di debug per capire il flusso del programma e individuare eventuali errori.
+Stampare output di debug è una pratica comune per risolvere problemi e ottenere una migliore comprensione del codice. Con il linguaggio di programmazione Clojure, è possibile utilizzare vari strumenti per generare output di debug utili e informativi.
 
-## Come fare
+## Come
 
-Per stampare l'output di debug in Clojure, possiamo utilizzare la funzione `println`, che stampa una stringa sullo standard output. Possiamo anche usare la macro `spy` della libreria `clojure.inspector` per stampare il valore di una variabile in un certo punto del nostro codice. Vediamo un esempio pratico:
+Per stampare output di debug in Clojure, puoi utilizzare la funzione `println` e passare come argomento la variabile o l'espressione che vuoi stampare. Ad esempio:
 
 ```Clojure
-(defn add [x y]
-  (println "Input: " x y)
-  (+ x y))
-
-(let [a 3
-      b 5]
-  (println "Result: " (add a b)))
-
-;; Output:
-;; Input: 3 5
-;; Result: 8
+(def nome "Mario")
+(println nome)
 ```
 
-In questo esempio, abbiamo definito una semplice funzione `add` che stampa gli input ricevuti e restituisce la somma dei due numeri. Nella seconda parte del codice, abbiamo assegnato dei valori alle variabili `a` e `b` e stampato il risultato della funzione `add`. Vediamo come l'output di debug ci aiuta a capire il funzionamento del nostro codice e a verificare i valori delle variabili.
+Questo stamperebbe "Mario" nella console come output di debug.
+
+Puoi anche utilizzare la macro `prn` per stampare una rappresentazione pratica di un'intera struttura di dati. Ad esempio:
+
+```Clojure
+(def numeri [1 2 3])
+(prn numeri)
+```
+
+Questo stamperebbe il vettore [1 2 3] nella console come output di debug.
+
+Puoi anche combinare `println` e `prn` per stampare output più dettagliati, ad esempio:
+
+```Clojure
+(def x 5)
+(def y 10)
+(println "Il valore di x è:" x)
+(prn "Il valore di y è:" y)
+```
+
+Questo stamperebbe nella console "Il valore di x è: 5" seguito da "Il valore di y è: 10".
 
 ## Approfondimento
 
-E se vogliamo avere maggiori informazioni sull'output di debug? Possiamo utilizzare la funzione `pprint` per stampare una rappresentazione leggibile dei dati su più righe. Inoltre, possiamo anche utilizzare la macro `prn` per stampare valori in modo più strutturato, separando gli elementi con uno spazio e andando a capo alla fine.
+Oltre alle funzioni di base `println` e `prn`, Clojure offre anche il logging tramite la libreria `clojure.tools.logging`. Questa libreria permette di stampare output di debug con diversi livelli di severità (ad esempio `info`, `debug`, `warn`), rendendo più semplice comprendere e organizzare gli output.
 
-Ecco un esempio pratico dell'utilizzo di `pprint` e `prn`:
-
-```Clojure
-(defn check [x]
-  (if (> x 10)
-    (println "Il valore è maggiore di 10")
-    (println "Il valore è minore o uguale a 10")))
-
-(pprint (range 10))
-(prn (check 5))
-
-;; Output:
-;; (0 1 2 3 4 5 6 7 8 9)
-;; Il valore è minore o uguale a 10
-```
-
-In questo esempio, la funzione `check` controlla se il valore passato è maggiore di 10 e stampa un messaggio di conseguenza. Abbiamo anche utilizzato `pprint` per stampare il range dei numeri da 0 a 9 e `prn` per stampare il risultato della funzione `check`.
+Un altro strumento utile per il debugging in Clojure è il REPL (Read-Eval-Print Loop). Questo ambiente interattivo permette di eseguire istruzioni in modo rapido e controllare i risultati. Utilizzando il REPL, è possibile inserire output di debug direttamente nel codice e vedere istantaneamente i risultati.
 
 ## Vedi anche
 
-- [Documentazione di Clojure][1]
-- [Guida alla risoluzione dei bug in Clojure][2]
-
-[1]: https://clojure.org/
-[2]: https://purelyfunctional.tv/article/debugging-in-clojure/
+- [Documentazione Clojure "Debugging"](https://clojure.org/guides/debugging)
+- [Clojure Logging - Clojure Cookbook](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/08_logging.asciidoc)
+- [REPL - Clojure Docs](https://clojure.org/reference/repl)

@@ -1,48 +1,52 @@
 ---
-title:                "Ruby: Beräkna ett datum i framtiden eller i det förflutna"
+title:                "Ruby: Beräkna ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller det förflutna"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
-Att beräkna ett datum i framtiden eller förflutna kan vara en mycket användbar funktion i många olika situationer. Oavsett om man behöver planera ett möte, boka en resa eller visa en deadline, kan kunskap om hur man beräknar datum vara till hjälp.
+## Varför
 
-## Så här gör du
-För att beräkna ett datum i framtiden eller förflutna i Ruby, kan man använda sig av Date-klassen. Det finns olika metoder inom klassen som gör det möjligt att manipulera datumet, till exempel ```+``` för att lägga till dagar eller ```-``` för att ta bort dagar. Här är ett exempel på hur man kan beräkna ett datum 10 dagar framåt i tiden:
+Att kunna beräkna datum i framtiden eller förflutna är en viktig färdighet för alla som arbetar med Ruby-programmering. Det kan hjälpa till att automatisera uppgifter och spara tid när man hanterar datum och tid i sina projekt.
 
-```
+## Hur man gör det
+
+För att beräkna ett datum i framtiden eller förflutna behöver vi använda oss av Ruby's Date klass. Genom att använda metoden `+` eller `-` kan vi lägga till eller subtrahera ett visst antal dagar från ett datum. Till exempel:
+
 ```Ruby
-today = Date.today
-future_date = today + 10
-puts future_date
-# output: 2020-10-26
+Date.today + 7 #=> 2021-10-22
+Date.today - 7 #=> 2021-10-08
 ```
 
-Man kan också använda sig av metoden ```parse``` för att konvertera en sträng med ett datum till ett Date-objekt. Här är ett exempel på hur man kan beräkna ett datum 5 dagar tidigare:
+Vi kan också använda metoden `advance` för att specificera hur många dagar, månader eller år vi vill lägga till eller subtrahera. Till exempel:
 
-```
 ```Ruby
-today = Date.today
-past_date = Date.parse('2020-10-15')
-new_date = past_date - 5
-puts new_date
-# output: 2020-10-10
+Date.today.advance(days: 14) #=> 2021-10-29
+Date.today.advance(years: -2) #=> 2019-10-15
+```
+
+Om vi behöver beräkna ett specifikt datum, kan vi använda metoden `parse` tillsammans med parameter för ett datum i form av en sträng. Till exempel:
+
+```Ruby
+Date.parse('2021-10-15') + 10 #=> 2021-10-25
 ```
 
 ## Djupdykning
-När man beräknar datum i Ruby, är det viktigt att förstå hur klassen Date fungerar och vilka metoder som finns tillgängliga. Det finns till exempel möjlighet att jämföra två datum med ```==```, ```>``` eller ```<``` och även att formatera datum i olika format med hjälp av metoden ```strftime```.
 
-En viktig sak att komma ihåg är att Ruby använder sig av den gregorianska kalendern, vilket kan påverka beräkningen av datum beroende på vilket land man befinner sig i. Det är också möjligt att manipulera datum med hjälp av andra klasser, som DateTime och Time, beroende på vilka specifika behov man har.
+Det finns också fler avancerade sätt att beräkna datum i framtiden eller förflutna. En av dessa är att använda sig av `DateTime` klassen istället för `Date` klassen. Detta gör det möjligt för oss att även ta hänsyn till tiden när vi beräknar datum. Ett exempel:
 
-## Se också
-Här är några användbara resurser för att lära sig mer om att beräkna datum i Ruby:
+```Ruby
+DateTime.now + 2.hours #=> 2021-10-15 17:30:12 +0200
+```
 
-- Ruby Docs - [Date Class](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
-- Codecademy - [Manipulating and Formatting Dates in Ruby](https://www.codecademy.com/learn/paths/learn-ruby/modules/learn-ruby-date-and-time-u/lessons/date-and-time-u/exercises/manipulating-date)
-- RubyGuides - [Ruby Date and Time](https://www.rubyguides.com/2015/10/ruby-datetime-methods/)
-- Techtopia - [Manipulating Dates and Times in Ruby](https://www.techotopia.com/index.php/Manipulating_Dates_and_Times_in_Ruby)
+Det finns också en rad andra metoder som kan hjälpa oss att hantera datum och tid i Ruby, som `strftime`, `strptime` och `to_time`. Det är viktigt att läsa på dokumentationen för dessa metoder för en mer detaljerad förklaring.
 
-Genom att använda dessa resurser och öva på att beräkna datum i Ruby, kan man snart behärska denna användbara funktion och använda den för att underlätta sina uppgifter och projekt.
+## Se även
+
+- [Officiell dokumentation för Ruby's Date och DateTime klasser](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [En guide till Ruby Date och Time klasser](https://www.rubyguides.com/2015/08/ruby-datetime/)
+- [Beräkna datum i Ruby med Rails' ActiveSupport](https://www.rubyguides.com/2019/02/date-calculation-ruby/)

@@ -1,77 +1,45 @@
 ---
-title:                "C#: Rozpoczęcie nowego projektu"
+title:                "C#: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "C#"
-category:             "Getting Started"
+category:             "C#"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
+Jeśli jesteś zainteresowany programowaniem w języku C#, jest duża szansa, że chcesz rozpocząć nowy projekt. Może to być dla ciebie jedna z metod nauki lub zrealizowania swojego pomysłu. W każdym przypadku, warto poznać podstawowe kroki, które pomogą ci rozpocząć projekt w sposób efektywny i zorganizowany.
 
-C# jest jednym z najczęściej używanych języków programowania na świecie. Jest to język wszechstronny i łatwy w użyciu, dzięki czemu jest idealny dla programistów na różnych poziomach doświadczenia. Rozpoczęcie nowego projektu w C# może być ekscytujące i satysfakcjonujące, ponieważ znajdziesz wiele możliwości i narzędzi, które pozwalają ci spełnić swój wizualizowany produkt.
+## Jak To Zrobić
+Pierwszym krokiem w rozpoczęciu nowego projektu jest stworzenie nowego projektu w programie Visual Studio lub innym narzędziu programistycznym. Następnie, musisz wybrać typ projektu, w którym będziesz pracować. Może to być na przykład aplikacja konsolowa, aplikacja webowa lub biblioteka klas. Na początku może być trudno zdecydować, ale wybierz ten typ projektu, z którym czujesz się najbardziej komfortowo.
 
-## Jak to zrobić?
-
-```C#
-using System;  
-
-namespace ProjectDemo  
-{  
-    class Program  
-    {  
-        static void Main(string[] args)  
-        {  
-            Console.WriteLine("Witaj w nowym projekcie C#!");  
-        }  
-    }  
-}  
-```
-
-Po uruchomieniu powyższego kodu, zobaczysz na ekranie polecenie "Witaj w nowym projekcie C#!". Jest to podstawowy przykład, który pokazuje jak szybko można zacząć pracować nad nowym projektem w C#. 
-
-Innym ważnym aspektem tworzenia nowego projektu w C# jest wybór środowiska programistycznego. Możesz wybrać z różnych opcji, takich jak Visual Studio, Visual Studio Code lub Rider. Każde z tych środowisk ma swoje zalety, więc ważne jest, aby znaleźć to, które najlepiej odpowiada twoim potrzebom i umiejętnościom.
-
-Kiedy już wybierzesz swoje środowisko, możesz rozpocząć pisanie kodu. C# jest językiem obiektowym, więc ważne jest, aby zrozumieć podstawowe koncepty, takie jak klasy, obiekty i metody. Poniżej przedstawiono przykład prostej klasy wraz z metodą, która oblicza sumę dwóch liczb:
+Po utworzeniu projektu, przystępujemy do pisania pierwszego kodu w języku C#. Skorzystajmy z prostego przykładu w postaci aplikacji konsolowej, która wypisze na ekranie "Hello World!". W tym celu użyjemy poniższego kodu w bloku "```C#...```".
 
 ```C#
-using System;  
+using System;
 
-namespace ProjectDemo  
-{  
-    class Calculator  
-    {  
-        public int Add(int num1, int num2)  
-        {  
-            return num1 + num2;  
-        }  
-    }  
-
-    class Program  
-    {  
-        static void Main(string[] args)  
-        {  
-            Calculator calculator = new Calculator();  
-            int result = calculator.Add(5, 10);  
-            Console.WriteLine("Wynik dodawania to: " + result);  
-        }  
-    }  
-}  
+namespace HelloWorld
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
 ```
 
-## Głębsze zanurzenie
+Kiedy wywołamy tą metodę, otrzymamy na ekranie tekst: "Hello World!".
 
-Pisanie projektu w C# może być przyjemnym i satysfakcjonującym doświadczeniem, ale ważne jest, aby przestrzegać dobrych praktyk programistycznych. Oto kilka wskazówek:
+## Głębszy Wgląd
+Wybierając odpowiedni typ projektu, warto wcześniej zastanowić się nad swoim pomysłem i określić, jakiej funkcjonalności potrzebujesz. Może to pomóc w wybraniu odpowiedniego typu projektu oraz ułatwić pisanie kodu.
 
-- Pierwszą rzeczą, którą powinieneś zrobić jest ustalenie co chcesz osiągnąć w projekcie oraz określenie funkcjonalności, które chcesz umieścić. Dzięki temu będziesz miał jasny cel i będziesz mógł skupić się na tworzeniu potrzebnych funkcji.
+Ważne jest również utrzymywanie porządku w projekcie. Zorganizowane foldery i nazewnictwo plików pomogą w łatwiejszym odnalezieniu potrzebnych części kodu. Po utworzeniu projektu możesz również skorzystać z narzędzi do kontroli wersji, takich jak Git, aby śledzić zmiany w kodzie i mieć możliwość powrotu do poprzednich wersji w razie potrzeby.
 
-- Pamiętaj o pisaniu czytelnego i zrozumiałego kodu. To pozwoli innym programistom łatwiej zrozumieć twój projekt i potencjalnie do niego dołączyć.
-
-- Regularne testowanie twojego kodu jest kluczem do uniknięcia błędów i zapewnienia wydajności aplikacji.
-
-## Zobacz także
-
-- [Dokumentacja C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/)
-- [Visual Studio](https://visualstudio.microsoft.com/pl/)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Rider](https://www.jetbrains.com/rider/)
+## Zobacz Również
+- [Tworzenie nowego projektu w programie Visual Studio](https://docs.microsoft.com/en-us/visualstudio/ide/creating-solutions-and-projects?view=vs-2019)
+- [Rozpoczynanie pracy z językiem C#](https://docs.microsoft.com/en-us/dotnet/csharp/getting-started/)
+- [Podstawy programowania w języku C#](https://www.tutorialspoint.com/csharp/index.htm)

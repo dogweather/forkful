@@ -1,53 +1,44 @@
 ---
 title:                "Javascript: 「標準エラーへの書き込み」"
+simple_title:         "「標準エラーへの書き込み」"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ標準エラー出力を書き込むのか
+## なぜ
 
-プログラミングをしていると、バグやエラーが発生することはよくあります。その際、標準エラー出力にメッセージを書き込むことで、エラーの原因を特定しやすくなります。例えば、デバッグのために変数の値を確認したいときに、標準出力ではなく標準エラー出力に変数の値を書き込むことができます。
+プログラミングでは、デバッグが非常に重要です。プログラムが正しく動作しないとき、エラーメッセージは開発者にとって非常に役立つ情報源となります。その中でも、標準エラー出力に書き込むことは、最も重要な手段の一つです。
 
-# どのように書き込むのか
+## 方法
 
-まず、コンソールオブジェクトのメソッドである`console.error()`を使います。これにより、任意のメッセージを標準エラー出力に書き込むことができます。
-
-```Javascript
-console.error("This is an error message.");
-```
-
-上記のコードを実行すると、コンソールに赤色のエラーメッセージが表示されます。
-
-また、変数の値を書き込む場合は、文字列と結合して書き込むこともできます。
+以下のコード例を見てみましょう。例えば、ある関数が引数に数値を取るとき、その数値が負の場合にエラーメッセージを標準エラー出力に書き込むことを考えます。
 
 ```Javascript
-const num = 5;
-console.error("The value of num is " + num);
-```
-
-このようにすることで、変数の値を確認することができます。
-
-# 深く掘り下げる
-
-標準エラー出力を使う際には、`console.error()`の他にも手法があります。例えば、例外処理で`throw`文を使うと、エラーが発生した際に標準エラー出力にメッセージを書き込むことができます。
-
-```Javascript
-try {
-  // 例外が発生する可能性のある処理
-} catch(err) {
-  console.error("An error occurred: " + err);
+const square = (num) => {
+  if (num < 0) {
+    console.error("数値は正でなければいけません");
+    return;
+  }
+  return num * num;
 }
+
+console.log(square(2)); // 4
+console.log(square(-2)); // undefined
 ```
 
-また、Webサイトやアプリケーションを開発する際には、JavaScriptのデバッガーである`debugger`文を使うこともできます。この文を使うと、指定した箇所でプログラムの実行を一時停止し、標準エラー出力に変数の値を表示させることができます。
+このように、`console.error`を使用することで、関数の動作が想定と異なる場合に開発者に対して警告を出すことができます。また、`console.error`は場所を特定しやすいため、デバッグの際にも非常に役立ちます。
 
-以上が、標準エラー出力を活用するための基本的な情報です。頻繁にバグやエラーが発生するプログラミングでは、この機能を使って効率的にデバッグすることが重要です。
+## 深堀り
 
-# 参考リンク
+標準エラー出力に書き込まれるメッセージは、通常標準出力に書き込まれるメッセージとは別のファイルに保存されます。それぞれの出力は異なるストリームを使用しており、標準出力は`process.stdout`、標準エラー出力は`process.stderr`を使用します。
 
-- [JavaScriptコンソール入門](https://developer.mozilla.org/ja/docs/Web/API/Console)
-- [例外処理の使い方](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/throw)
-- [デバッグのためのdebugger文](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/debugger)
+また、`console.error`は単にエラーメッセージを書き込むだけではなく、エラーオブジェクトを受け取って詳細な情報を出力することもできます。
+
+## 併せて見ておきたい
+
+- [Node.jsの標準エラー出力について](https://nodejs.org/api/console.html#console_console_error_data_args)
+- [Javascriptのエラーオブジェクトについて](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Error)

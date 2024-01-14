@@ -1,54 +1,50 @@
 ---
-title:                "Gleam: 임시 파일 생성"
+title:                "Gleam: 임시 파일 만들기"
+simple_title:         "임시 파일 만들기"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Gleam 언어로 임시 파일을 만드는 방법
+# 왜?
 
-## 왜
+일시적인 파일을 생성하는 것은 개발자들에게 매우 중요한 작업입니다. 임시 파일은 프로그램 실행 중에 일시적으로 생성된 데이터를 저장하는 데 사용될 수 있습니다.
 
-임시 파일을 만드는 것의 가장 큰 이유는 프로그램이 파일에 데이터를 읽고 쓸 수 있도록 하는 것입니다. 이는 프로그램이 실행 중에 만들어진 파일을 활용할 수 있게 해줍니다.
+# 어떻게?
 
-## 어떻게
-
-임시 파일을 만드는 방법은 간단합니다. 먼저, 해당 파일이 저장될 디렉토리를 정하고, 임의의 이름을 지정해주면 됩니다. 그리고 다음과 같이 코드를 작성하면 됩니다: 
+파일을 생성하려면 `tempfile` 모듈을 사용해야 합니다. 예를 들어, 다음과 같이 코드를 작성할 수 있습니다.
 
 ```Gleam
-import gleam/os
+import tempfile
 
-// 임시 파일을 만듭니다
-let temp_file = os.temp_file("/tmp/", "gleam_temp_")
-
-// 임시 파일에 데이터를 쓰고 읽습니다
-os.write_file(temp_file, "안녕하세요")
-let data = os.read_file(temp_file)
-
-// 결과를 출력합니다
-io.println(data)
+{_, path} = tempfile.new()
 ```
 
-위 코드를 실행하면 다음과 같은 결과가 출력됩니다:
+위의 코드는 임시 파일을 생성하고, 해당 파일의 경로를 `path` 변수에 할당합니다. 임시 파일을 사용한 후에는 `delete` 함수를 호출하여 삭제해야 합니다.
 
+```Gleam
+import tempfile
+
+{_, path} = tempfile.new()
+// 임시 파일 사용
+tempfile.delete(path)
 ```
-안녕하세요
-```
 
-## Deep Dive
+# 깊게 파보기
 
-임시 파일을 만드는 더 깊은 내용을 알고 싶다면, Gleam 공식 문서에서 관련 정보를 찾아볼 수 있습니다. 이 문서에서는 임시 파일을 만드는 다른 방법도 소개해줍니다. 예를 들어, 운영체제에 기본적으로 포함되어 있는 `mktemp` 명령어를 사용하여 임시 파일을 생성하는 방법도 있습니다.
+파일의 생성과 삭제는 파일 시스템에 많은 부하를 줄 수 있습니다. 따라서, 임시 파일을 사용할 때에는 성능 문제를 고려해야 합니다. 매번 파일을 생성할 때마다 많은 시간이 소요된다면, 메모리에 임시 데이터를 저장하는 방법을 고려해볼 수 있습니다.
 
-## 비슷한 주제
+# 이어보기
 
-- [Gleam 공식 문서: 임시 파일 만들기](https://gleam.run/manual/stdlib.html#io.temp-file)
-- [Linux 명령어: mktemp](https://man7.org/linux/man-pages/man1/mktemp.1.html)
+다음은 임시 파일 생성에 관련된 링크들입니다.
 
----
+- [Gleam 공식 문서 - tempfile 모듈](https://gleam.run/standard-library/#documentation_tempfile)
+- [Python에서 임시 파일 생성하기](https://realpython.com/python-tempfile/#using-python-tempfile-module)
+- [Linux에서 임시 파일 생성하기](https://www.geeksforgeeks.org/create-temporary-file-name-temp-file-function/)
 
-# 더 알아보기
+# 참고
 
-- [Gleam 공식 웹사이트](https://gleam.run/)
-- [Gleam 공식 GitHub 레포지토리](https://github.com/gleam-lang/gleam)
+- [Markdown 가이드](https://www.markdownguide.org/basic-syntax/)

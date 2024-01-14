@@ -1,47 +1,64 @@
 ---
 title:                "Bash: 새로운 프로젝트 시작하기"
+simple_title:         "새로운 프로젝트 시작하기"
 programming_language: "Bash"
-category:             "Getting Started"
+category:             "Bash"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-우리는 새로운 프로젝트를 시작하는 이유가 무엇일까요? 실제로, 프로그래밍은 계속해서 발전하고 새로운 기술이 등장하기 때문에 우리는 새로운 프로젝트를 시작하는 것이 필요합니다. 프로그래밍을 통해 우리는 새로운 기술을 배우고 동시에 창의적이고 혁신적인 아이디어를 구현할 수 있기 때문입니다.
+## 왜 시작하는지
 
-## 어떻게 시작할까요
-새로운 프로젝트를 시작하는 것은 어려운 일이 아닙니다. 바로 Bash 프로그래밍을 사용하면서 느끼는 재미와 이해를 바탕으로 새로운 프로젝트를 시작해보세요. 여기에는 파이썬과 Ruby의 기본 문법에 대한 예제 및 샘플 출력이 포함되어 있습니다. 다음 예제에서는 프로그래밍 기초부터 조금 더 복잡한 스크립트까지 다루겠습니다.
+새로운 프로젝트를 시작하게 되는 이유는 다양합니다. 혹시 여러분께서 새로운 언어를 배우고 싶어하거나, 새로운 아이디어를 구현하고 싶어할 수도 있습니다. 어떤 이유든, 새로운 프로젝트를 시작하면 우리에게 배울 점이 많고, 새로운 도전을 할 수 있습니다.
+
+## 어떻게 시작할까요 
+
+Bash 프로그래밍은 매우 쉽고 간단한 스크립트 언어입니다. 기본적으로 운영 체제에서 명령어를 실행하고, 그 결과를 출력하는 기능을 갖고 있습니다. 이번 섹션에서는 Bash 프로그래밍을 시작하는 방법을 알아보겠습니다.
 
 ```Bash
-# 변수 선언과 사용
+# 주석은 #으로 표시됩니다. 이 줄은 실행되지 않습니다.
+
+echo "안녕하세요! 이것은 Bash 프로그래밍 예제입니다." # echo 명령어는 문자열을 출력합니다.
+
+# 변수를 선언하는 방법입니다. "="기호는 변수 이름과 값을 구분짓습니다.
 name="홍길동"
-echo "내 이름은 $name입니다."
 
-# 조건문 다루기
-if [ $name == "홍길동" ]; then
-  echo "나는 홍길동입니다!"
+# 변수를 출력하는 방법입니다.
+echo "내 이름은 $name입니다. 반가워요!"
+
+# 사용자로부터 입력을 받는 방법입니다. "read" 명령어를 사용하며, 입력 값을 변수에 저장합니다.
+# "-p" 옵션은 사용자에게 입력을 요청하는 문구를 포함합니다.
+read -p "당신의 나이는 몇 살인가요? " age
+
+# 조건문을 사용하는 방법입니다. "-gt"는 "greater than"을 의미합니다.
+if [ $age -gt 18 ]
+then
+  echo "당신은 성인입니다!"
 else
-  echo "나는 홍길동이 아닙니다."
+  echo "아직 어린가봐요. 무녀하세요!"
 fi
-
-# 반복문 사용
-for ((i=1; i<=10; i++))
-do
-  echo "현재 숫자는 $i입니다."
-done
 ```
 
-## 심층 탐구
-새로운 프로젝트를 시작하는 것은 단순히 코딩을 하는 것 이상입니다. 아래의 링크들을 통해 프로젝트를 시작할 때 고려해야 할 다양한 측면과 유용한 팁들을 알아보세요.
+### 예제 출력
+```
+안녕하세요! 이것은 Bash 프로그래밍 예제입니다.
+내 이름은 홍길동입니다. 반가워요!
+당신의 나이는 몇 살인가요? 25
+당신은 성인입니다!
+```
 
-- [프로그래밍을 배우기 위한 10가지 방법](https://www.codingdojo.com/blog/10-ways-to-learn-how-to-code/)
-- [팀 프로젝트를 위한 유용한 도구들](https://www.thoughtco.com/tools-for-team-coding-projects-373329)
-- [프로젝트 관리 및 개발 프로세스](https://www.cprime.com/resources/what-is-project-management-methodology/)
+## 더 들어가보기
 
-## 또 다른 참고자료들
-- [Bash를 사용한 간단한 스크립트 예제](https://www.linuxjournal.com/content/return-values-bash-functions)
-- [우분투 서버에 Bash 스크립트 배포하기](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-bash-script-to-ubuntu-servers)
-- [Bash 프로그래밍 공식 문서](https://www.gnu.org/software/bash/manual/bash.html)
+위의 예제만으로는 Bash 프로그래밍을 완전히 이해하기는 어렵습니다. 따라서 이번 섹션에서는 더 깊이 들어가서 새로운 프로젝트를 시작하는 방법을 자세히 살펴보겠습니다.
 
-감사합니다! 새로운 프로젝트를 시작하는 여러분들의 성공을 기원합니다. 지금 바로 시작해보세요!
+Bash 프로그래밍을 시작하기 전에, 기본적인 운영 체제의 명령어에 대한 이해가 필요합니다. 또한, 조건문과 반복문을 다룰 수 있어야 합니다. 이러한 지식들은 새로운 프로젝트를 시작하는 데 매우 유용합니다.
+
+또한, Bash 프로그래밍의 장점 중 하나는 많은 플러그인과 라이브러리가 있어서 다양한 기능을 쉽게 구현할 수 있다는 점입니다. 이러한 플러그인과 라이브러리를 활용하면, 더 많은 기능을 추가하고 프로젝트를 보다 더 발전시킬 수 있습니다.
+
+## 더 읽어보기
+
+- [Bash 프로그래밍 시작하기](https://www.tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-1.html)
+- [Bash 스터디 자료](https://www.joinc.co.kr/school/lectureseries/291216)
+- [Bash 프로그래밍 공식 문서

@@ -1,7 +1,9 @@
 ---
-title:                "Go: Leyendo argumentos de línea de comando"
+title:                "Go: Leyendo argumentos de línea de comandos"
+simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/reading-command-line-arguments.md"
 ---
 
@@ -9,44 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-La lectura de argumentos de línea de comandos es una habilidad esencial para cualquier programador de Go. Con esta técnica, podrás interactuar con tu programa en tiempo de ejecución y personalizar su comportamiento. Además, es una buena práctica de programación y te ayudará a escribir programas más robustos.
+Leer argumentos de la línea de comandos es una habilidad importante para cualquier programador de Go. Nos permite interactuar con nuestro programa de una manera práctica y eficiente. ¡Sigue leyendo para descubrir cómo hacerlo!
 
 ## Cómo hacerlo
 
-El paquete "flag" de Go nos proporciona una manera fácil de leer argumentos de línea de comandos. Primero, importamos el paquete en nuestro programa:
+En Go, podemos usar el paquete `flag` para leer argumentos de la línea de comandos. Primero, importamos el paquete en nuestro programa:
 
 ```Go
-import "flag"
+import "flag" 
 ```
-
-Luego, podemos definir las variables donde queremos almacenar los argumentos:
+Luego, podemos definir las variables que almacenarán nuestros argumentos utilizando la función `flag.String`:
 
 ```Go
-var flag1 string
-var flag2 bool
+var direccion = flag.String("direccion", "default", "La dirección del servidor")
 ```
+En este ejemplo, `direccion` se refiere al nombre del argumento, `default` es el valor predeterminado que se utilizará si no se proporciona un valor y `La dirección del servidor` es una breve descripción del argumento.
 
-Después, usamos la función "flag.String()" o "flag.Bool()" para enlazar esas variables a los argumentos correspondientes:
+Finalmente, en el `main`, podemos usar la función `flag.Parse()` para leer los argumentos proporcionados por el usuario:
 
 ```Go
-flag.StringVar(&flag1, "flag1", "default", "Este es el primer argumento.")
-flag.BoolVar(&flag2, "flag2", false, "Este es el segundo argumento.")
+func main() {
+  flag.Parse()
+  // código para utilizar el argumento
+}
 ```
-
-Finalmente, llamamos a la función "flag.Parse()" para leer los argumentos y asignarlos a nuestras variables:
-
+Si quisiéramos ver el valor del argumento en nuestro programa, podríamos imprimirlo de esta manera:
 ```Go
-flag.Parse()
+fmt.Println("La dirección del servidor es:", *direccion)
+```
+Entonces, si ejecutamos nuestro programa de esta manera `go run main.go -direccion=localhost`, el resultado sería:
+```Go
+La dirección del servidor es: localhost
 ```
 
-Ahora podemos usar las variables "flag1" y "flag2" en nuestro programa para realizar acciones en función de los argumentos ingresados por el usuario.
+## Profundizando
 
-## Profundizando más
+Hay varias opciones que podemos utilizar en la función `flag.String` para personalizar nuestros argumentos. Podemos especificar un tipo de datos diferente, como `int` o `bool`, y también podemos proporcionar un conjunto de opciones en lugar de un solo valor.
 
-El paquete "flag" también nos permite definir argumentos posicionales y establecer valores por defecto para ellos. Además, podemos usar el comando "-h" para mostrar un mensaje de ayuda con la descripción de todos los argumentos y su uso. También podemos establecer variables globales para almacenar los argumentos y acceder a ellos desde cualquier parte de nuestro programa.
+Además, si queremos acceder a los argumentos en cualquier parte de nuestro programa, podemos definirlos fuera de la función `main`, lo que los convierte en variables globales.
+
+Puedes encontrar más información sobre el paquete `flag` en la [documentación oficial de Go](https://golang.org/pkg/flag/).
 
 ## Ver también
 
-- Documentación oficial del paquete "flag" en Go: https://golang.org/pkg/flag/
-- Tutorial de lectura de argumentos de línea de comandos en en Go: https://www.golangprograms.com/command-line-arguments-in-golang.html
-- Ejemplos de uso del paquete "flag" en Go: https://www.calhoun.io/5-tips-for-using-go-flags/
+- [Documentación oficial del paquete `flag`](https://golang.org/pkg/flag/)
+- [Video tutorial sobre el manejo de argumentos de línea de comandos en Go](https://www.youtube.com/watch?v=-PxzBh-ClhE&t=548s)
+- [Artículo sobre los argumentos de la línea de comandos en Go](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-go-es)

@@ -1,43 +1,48 @@
 ---
 title:                "Haskell: חישוב תאריך בעתיד או בעבר"
+simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# מדוע
-מחשבות בגודלים כאשר מדובר בחישוב תאריך בעתיד או בעבר? כל שעליך לעשות הוא להחשיב כמה ימים, שבועות או אפילו שנים יש להוסיף או להוריד מהתאריך הנוכחי וזהו! החישוב של תאריך בעתיד או בעבר עלול להיות שימושי לשימושים שונים בתכנות בחירות פלטפורמות.
+## למה
 
-# כיצד לבצע
-אם תרצה לחשב תאריך בעתיד או בעבר בשפת התכנות Haskell, הנה כמה דוגמאות של קוד ופלט נתונים תוך שימוש בתוכנית לחישוב תאריך:
+הקוד הפותחים והמתכנתים שלנו צריכים להשתמש בחישוב תאריך בעתיד או בעבר בכמה מקרים בתוכניותינו. לדוגמה, אם אנחנו מפתחים אפליקציה של תזכורות ורוצים להדגיש למשתמש על אירוע הקרוב המתקרב, או אם אנחנו רוצים ליצור פונקציה שתחזיר לנו את תאריך הלידה של בני המשפחה שלנו. כתוצאה מכך, חישוב תאריך בעתיד או בעבר יכול לסייע לנו ליצור יישום יעיל ומספק למשתמשים שלנו.
 
-``` Haskell
+## איך לעשות זאת
+
+ב-Haskell יש כמה דרכים לחשב תאריך בעתיד או בעבר. למשל, ניתן להשתמש בפונקציות כמו `addDays` ו-`addMonths` כדי להוסיף ימים או חודשים לתאריך קיים. למשל:
+
+```Haskell
 import Data.Time
 
--- חישוב התאריך הקרוב ביותר בעתיד
-main = do
-    today <- getCurrentTime
-    let futureDate = addDays 7 today -- הוספת שבוע לתאריך הנוכחי
-    print futureDate -- תאריך הקרוב בעתיד
+-- חישוב תאריך בעתיד:
+let today = fromGregorian 2021 08 23 -- תאריך היום
+let futureDate = addDays 10 today -- תאריך של 10 ימים בעתיד
+
+-- חישוב תאריך בעבר:
+let pastDate = addMonths (-3) today -- תאריך של 3 חודשים בעבר
 ```
 
-אם רוצים לחשב תאריך בעבר, ניתן לממש את הפעולה הפונקצייתית `diffDays` מול תאריך הנוכחי כדי להוריד ימים מהתאריך. למשל:
+ניתן גם להשתמש בפונקציות חישוב של טבלאות כמו `lookup` ו-`elemIndices` לחישוב תאריך במקרים מיוחדים. למשל:
 
-``` Haskell
+```Haskell
 import Data.Time
 
--- חישוב התאריך הקרוב ביותר בעבר
-main = do
-    today <- getCurrentTime
-    let pastDate = addDays (-30) today -- הוצאת 30 ימים מהתאריך הנוכחי
-    print pastDate -- תאריך הקרוב בעבר
+-- חישוב תאריך לפי יום בשבוע:
+let today = fromGregorian 2021 08 23
+let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+let dayOfWeek = lookup today days -- יום השבוע של התאריך היום
+
+-- חישוב תאריך לפי תאריכי יום הולדת קודמים:
+let birthdays = [fromGregorian 2001 08 23, fromGregorian 1993 08 10, fromGregorian 1990 04 05]
+let previousBirthdays = elemIndices today birthdays -- תאריכי יום ההולדת הקודמים לתאריך היום
 ```
 
-# חקירה עמוקה
-חישוב תאריך בעתיד או בעבר לא מורכב בכלל וניתן לממשו בכמה שורות קוד פשוטות באמצעות הפונקציות הפונקציות `addDays` ו-`diffDays`. אם ברצונך ללמוד עוד על פעולות שיחזור מופעים חזרה ויצירת תאריכים נוספים, מומלץ לבדוק את החבילות המסופקות על ידי `Data.Time` בעת תכנות ב־Haskell.
+## העומק שבחישוב תאריך בעתיד או בעבר
 
-# ראה גם
-- [תעודת המדריך של Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [חבילת Data.Time במדריך תכנותי בעברית](https://www.haskell.org
+במאמר זה ראינו כמה דרכים שונות לחשב תאר

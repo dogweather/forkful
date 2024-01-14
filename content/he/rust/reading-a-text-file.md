@@ -1,42 +1,66 @@
 ---
 title:                "Rust: קריאת קובץ טקסט"
+simple_title:         "קריאת קובץ טקסט"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
-שחומם לכתוב את הטקסט שלך כקובץ טקסט? לקרוא טקסט מקובץ הוא דרך נוחה כדי לשמור נתונים ולעבוד עם קבצי טקסט מאורגנים. אתה יכול להשתמש בקוד Rust כדי לקרוא קבצי טקסט באופן מהיר ויעיל, מה שיכול להיות שימושי למטרות כמו העתקת נתונים או עיבוד טקסט.
+## למה:
 
-# איך לעשות זאת
-כדי לקרוא קובץ טקסט ב-Rust, תצטרך להשתמש במודול std::fs כדי ליצור אובייקט קובץ ולקרוא את התוכן שלו. נציג לך כמה דוגמאות לקריאת נתונים מקובץ טקסט ולהדפסתם למסך:
+כתיבת קבצי טקסט היא חלק חשוב מאוד בתהליך התכנות ובלמידת שפת התכנות Rust. קריאת קבצי טקסט מאפשרת לנו לעבוד בצורה יעילה יותר עם נתונים וליצור אפליקציות מתקדמות.
+
+## איך לעשות זאת:
+
+תחילה נצטרך ליצור משתנה מסוג `File` שיכיל את הקובץ שנרצה לקרוא. לדוגמה:
 
 ```Rust
-use std::fs::File;
-use std::io::prelude::*;
+let file = File::open("myfile.txt").expect("Failed to open file");
+```
 
-fn main() {
-    // פתיחת קובץ
-    let mut file = File::open("sample.txt").expect("לא ניתן לפתוח את הקובץ");
-    
-    let mut contents = String::new();
-    
-    // קריאת התוכן של הקובץ ושמירתו במשתנה סטרינג
-    file.read_to_string(&mut contents).expect("לא ניתן לקרוא את הקובץ");
-    
-    // הדפסת התוכן למסך
-    println!("{}", contents);
+כעת ניתן לקרוא את הקובץ באמצעות הפעולה `read_to_string()` ולאחר מכן להדפיס את התוכן בעזרת הפעולה `println!()`:
+
+```Rust
+let contents = fs::read_to_string(file).expect("Failed to read file");
+println!("The contents of the file are:\n{}", contents);
+```
+
+כמו כן, ניתן להשתמש בלולאת `for` על מנת לעבור על כל השורות בקובץ ולהדפיס אותן אחת אחרי השניה:
+
+```Rust
+for line in contents.lines() {
+    println!("{}", line);
 }
 ```
 
-Output:
-```
-זוהי טקסט דוגמה להדגמת קריאת קובץ ב-Rust. אתה יכול לשנות את הטקסט בקובץ "sample.txt" כדי לבדוק את הקוד.
+לאחר מכן ניתן לסגור את הקובץ באמצעות הפעולה `close()`:
+
+```Rust
+file.close().expect("Failed to close file");
 ```
 
-ניתן גם לעבוד עם קבצי טקסט שמכילים מידע מבני כגון CSV או JSON, תוך שימוש בספריות חיצוניות כמו csv ו-serde_json.
+## הצצה מעמיקה:
 
-# עיון מעמיק
-קריאת קובץ ב-Rust משתמשת במנגנון שנקרא "מעקב עד-סוף" (end-of-file), שמאפשר לנו לקרוא פרקים שונים של הקובץ עד לסוף שלו. כאשר אנו קוראים את התוכן של הקובץ, הנקודת המרכזית (cursor)
+כדי לקרוא קובץ טקסט בצורה נמוכה יותר, ניתן להשתמש במודול `io` ובפעולת `read_line()`. פעולה זו מאפשרת לנו לקרוא כל שורה בקובץ בנפרד ולעבוד איתן באופן עקבי יותר.
+
+```Rust
+let file = fs::File::open("myfile.txt").expect("Failed to open file");
+let reader = BufReader::new(file);
+
+for line in reader.lines() {
+    if let Ok(line) = line {
+        println!("{}", line);
+    }
+}
+```
+
+חשוב לסגור את הקובץ בסוף על מנת למנוע כל מקרי תקיעה או שגיאות אפשריות.
+
+## ראו גם:
+
+- [מדריך לקריאת קובץ טקסט ב-Rust](https://doc.rust-lang.org/std/fs/struct.File.html#method.read_to_string)
+- [מדריך למודול io ב-Rust](https://doc.rust-lang.org/std/io/index.html)
+- [מדריך לשימוש בתנאי if let ב-Rust](https://doc.rust-lang.org/reference/expressions/if-let-expr.html)

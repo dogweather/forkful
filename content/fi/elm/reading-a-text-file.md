@@ -1,41 +1,45 @@
 ---
-title:                "Elm: Tekstitiedoston lukeminen"
+title:                "Elm: Tiedostojen lukeminen"
+simple_title:         "Tiedostojen lukeminen"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi lukea tekstitiedosto?
+## Miksi
 
-Tekstitiedostot ovat yleinen tapa tallentaa ja jakaa tietoa, joten on tärkeää osata lukea niitä. Elm-ohjelmointikielellä tekstien lukeminen on helppoa ja tehokasta. Seuraavassa opas siitä, miten se tapahtuu.
+Miksi lukisi tekstitiedostoa? Satunnaisena lukijana saatat ihmetellä, miksi kukaan haluaisi lukea pelkkiä tekstejä. Mutta me Elm-ohjelmoijat tiedämme, että tekstitiedostot voivat olla erittäin hyödyllisiä tietolähteitä ohjelmien sisällön tallentamiseen ja jakamiseen. Lue eteenpäin ja löydä, miten voit käyttää Elm:ää lukemaan tekstitiedostoja.
 
-## Miten lukea tekstitiedosto Elmillä?
+## Näin teet sen
+
+Elm tarjoaa kätevän ```Text```-moduulin, jota voit käyttää tekstitiedoston lukemiseen. Alla on yksinkertainen esimerkki, jossa luemme tekstitiedoston ```data.txt``` ja tulostamme sen sisällön konsoliin:
 
 ```Elm
-import File exposing (readTextFile)
-import Task exposing (attempt)
+import Text exposing (..)
 
--- Avataan tiedosto ja luetaan sen sisältö
-result = Task.attempt readFile (File.readTextFile "tekstitiedosto.txt")
+main =
+  fileText "data.txt"
+    |> andThen print
 
--- Tulostetaan tiedoston sisältö konsoliin
-readFile result = 
-    case result of 
-        Ok content -> 
-            Debug.log "Tekstin sisältö:" content
-        Err error -> 
-            Debug.log "Virhe:" error
 ```
 
-Tässä esimerkissä ensin tuodaan File-kirjasto, jolla voidaan lukea tekstitiedostoja. Sitten tehdään tehtävä result, joka kutsuu readFile-funktiota, joka lukee tiedoston ja palauttaa sen sisällön. Lopuksi content tai mahdollinen virhe tulostetaan konsoliin.
+Tässä koodissa käytämme ```Text```-moduulin ```fileText```-funktiota, joka ottaa parametrinaan tekstitiedoston nimen ja palauttaa ```Task```-tyypin. Tämä ```Task``` suoritetaan ja sen lopputulos lähetetään ```andThen```-funktiolle, joka tulostaa tekstin haluamaamme paikkaan, tässä tapauksessa konsoliin.
 
-## Syvemmällä tekstitiedoston lukemisessa
+Tällä tavalla voit lukea ja käsitellä tekstitiedostoja käyttäen Elmin ```Text```-moduulia.
 
-Voit myös käsitellä tekstitiedoston sisältöä enemmän. Esimerkiksi voit käyttää String-moduulia etsimään tietoa tai käyttää Json-dekoodausta jos tiedostossa on JSON-muotoista dataa. Mahdollisuudet ovat rajattomat!
+## Syvempää sukellusta
+
+Jos haluat keskittyä tarkemmin tekstitiedostojen lukemiseen Elm:llä, voit tutkia alla olevia linkkejä:
+
+- [Elm Text -dokumentaatio](https://package.elm-lang.org/packages/elm/core/latest/Text)
+- [Reaktiivinen ohjelmointi Elmin avulla](https://guide.elm-lang.org/effects/)
+- [Elm-yhteisön foorumi](https://discourse.elm-lang.org/)
 
 ## Katso myös
-- [Elm File -kirjasto](https://package.elm-lang.org/packages/elm/file/latest/File)
-- [Elm String -moduuli](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [JSON-dekoodaus Elmillä](https://guide.elm-lang.org/error_handling/json.html)
+
+- [Elm-kielen virallinen sivusto](https://elm-lang.org/)
+- [Elm-oppaan aloitussivu](https://guide.elm-lang.org/)
+- [Elm-kielen oppituntivalikoima](https://elm-lang.org/learn)

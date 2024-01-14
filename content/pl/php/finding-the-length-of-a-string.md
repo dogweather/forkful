@@ -1,33 +1,47 @@
 ---
 title:                "PHP: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-W dzisiejszym poście dowiesz się, dlaczego jest istotne znaleźć długość ciągu znaków w PHP i jak to zrobić.
+Wiele razy w trakcie programowania może pojawić się potrzeba zbadania długości łańcucha znaków. Bez względu na to czy jest to potrzebne do walidacji danych czy też do logiki biznesowej, znajomość sposobu na ustalenie długości łańcucha znaków jest niezbędna w codziennym życiu programisty.
 
-# Jak to zrobić
-
-Aby znaleźć długość ciągu znaków w PHP, można użyć wbudowanej funkcji `strlen()`. Przykładowy kod wygląda następująco:
+## Jak to zrobić
 
 ```PHP
-$string = "Witaj, świecie!";
-echo strlen($string);
+$string = "Cześć, to jest przykładowy łańcuch znaków";
+
+echo "Długość łańcucha: " . strlen($string);
 ```
+**Output:**
+Długość łańcucha: 36
 
-Po uruchomieniu tego kodu, ujrzymy na ekranie liczbę `16`, która jest długością ciągu `Witaj, świecie!`.
+Funkcja `strlen()` jest używana do zwrócenia długości łańcucha znaków. Może być używana zarówno do zwykłych łańcuchów znaków, jak i zmiennych przechowujących dane tekstowe. Istnieje też możliwość użycia tej funkcji do wyznaczenia długości tablicy.
 
-# Deep Dive
+Jeśli interesuje nas długość łańcucha znaków w bajtach, możemy użyć funkcji `mb_strlen()` z modułu rozszerzeń Multibyte String.
 
-Funkcja `strlen()` liczy liczbę znaków w danym ciągu, włącznie ze spacjami. Dlatego warto zwrócić uwagę na używane znaki, ponieważ mogą one mieć wpływ na wynik. Jeśli chcemy policzyć tylko znaki alfanumeryczne, można użyć funkcji `preg_replace()` w celu usunięcia innych znaków.
+```PHP
+$string = "Łódź";
 
-# Zobacz także
+echo "Długość łańcucha w bajtach: " . mb_strlen($string);
+```
+**Output:**
+Długość łańcucha w bajtach: 6
 
-- Dokumentacja PHP: https://www.php.net/manual/en/function.strlen.php
-- Wideo tutorial na temat funkcji `strlen()`: https://www.youtube.com/watch?v=Pz8LSvgsNbg
-- Przykładowe zadanie dla praktyki: https://www.w3resource.com/php-exercises/php-basic-exercise-3.php
+## Deep Dive
+
+Funkcja `strlen()` jest bardzo prosta w użyciu i zwraca dokładną długość łańcucha znaków. Jest to możliwe, ponieważ łańcuchy znaków w PHP są przechowywane wewnątrz specjalnych struktur danych znanymi jako ZVAL (zend value). Te struktury zawierają nie tylko same znaki, ale także dodatkowe informacje, takie jak długość łańcucha. Dzięki temu PHP może szybko i skutecznie zwrócić długość łańcucha, bez konieczności przeliczania go na bieżąco.
+
+Jednak istnieje pewne zachowanie, o którym warto wiedzieć. Funkcja `strlen()` zwróci długość łańcucha w bajtach, a nie w znakach. Oznacza to, że jeśli używasz kodowania znaków, które wykorzystuje znaki wielobajtowe (np. UTF-8), długość może być nieco inna, niż się tego spodziewasz.
+
+## Zobacz także
+- [Dokumentacja funkcji `strlen()` na php.net](https://www.php.net/manual/en/function.strlen.php)
+- [Dokumentacja funkcji `mb_strlen()` na php.net](https://www.php.net/manual/en/function.mb-strlen.php)
+- [Inne funkcje związane z manipulacją łańcuchami znaków w PHP na phppopolsku.pl](https://phppopolsku.pl/funkcje/lanuchy-znakow)

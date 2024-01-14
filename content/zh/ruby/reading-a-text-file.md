@@ -1,78 +1,48 @@
 ---
 title:                "Ruby: 读取文本文件"
+simple_title:         "读取文本文件"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：阅读文本文件的好处
+## 为什么
 
-阅读文本文件是程序员必备的技能之一。它可以帮助我们处理大量的文本数据，并从中提取有用的信息。无论是从网络抓取数据，还是从本地文件读取数据，掌握文本文件的读取技巧都是至关重要的。
+阅读文本文件在编程中是非常常见的任务。它可以帮助我们处理大量的数据，例如CSV文件，或者从网站上爬取的信息。阅读文本文件也是学习Ruby编程的基础之一。
 
-如何进行文本文件读取：
+## 如何做
+
+最简单的方法是使用Ruby的File类来读取文件。首先，我们需要使用`open`方法打开文件，并指定文件名和打开模式。接下来，我们可以使用`read`方法来读取整个文件内容，或者使用`each`方法来逐行读取文件内容。最后，我们可以使用`close`方法来关闭文件。
 
 ```Ruby
-# 打开文件
-file = File.open("textfile.txt")
-
-# 逐行读取文件，存储在数组中
-lines = file.readlines
-
-# 关闭文件
+file = File.open("sample.txt", "r")
+puts file.read
 file.close
 
-# 遍历数组，输出每一行文本
-lines.each do |line|
-    puts line
+file.each do |line|
+  puts line
 end
-```
-
-输出示例：
-```
-Hello world
-This is a text file.
-It contains multiple lines.
-```
-
-深入探讨：
-
-除了逐行读取，我们还可以使用 Ruby 内置的 `File` 类的 `read` 方法来直接读取整个文件内容。例如：
-
-```Ruby
-# 打开文件
-file = File.open("textfile.txt")
-
-# 读取文件内容
-content = file.read
-
-# 关闭文件
 file.close
-
-# 输出文件内容
-puts content
 ```
 
-输出示例：
-```
-Hello world
-This is a text file.
-It contains multiple lines.
-```
+上面的代码演示了两种不同的读取文件的方法。`read`方法会将整个文件的内容作为一个字符串返回，而`each`方法会逐行读取文件，并将每一行作为一个字符串返回。
 
-除了常规的文本文件，我们还可以使用 Ruby 的 `CSV` 模块来读取和处理 CSV 格式的文件。这可以大大简化我们的操作，同时也能提高程序的运行效率。关于 `CSV` 模块的更多详细信息，请参考官方文档。
+## 深入了解
 
-## 参考链接：
+除了基本的读取文件操作，Ruby还提供了许多其他有用的方法来处理文件。例如，我们可以使用`gets`方法来逐行读取文件内容，并使用`split`方法来分隔每一行的内容。我们也可以使用正则表达式来对文件内容进行匹配和替换等操作。
 
-- [Ruby 文档 - File 类](https://ruby-doc.org/core-2.7.2/File.html)
-- [Ruby 文档 - CSV 模块](https://ruby-doc.org/stdlib-2.7.2/libdoc/csv/rdoc/CSV.html)
-- [Ruby 教程 - 文件操作](https://ruby-china.org/wiki/file-operations-in-ruby)
+另外，我们还可以使用`write`方法来写入文件内容，以及创建和删除文件等操作。深入了解这些方法可以让我们更加灵活地处理文本文件。
 
-请参考上述链接了解更多有关文本文件读取的知识。
+## 参考链接
 
-## 参见：
+- [Ruby文档：File类](https://ruby-doc.org/core-3.0.2/File.html)
+- [Ruby教程：文件和文件操作](https://www.runoob.com/ruby/ruby-file-io.html)
+- [Ruby基础教程第11章：文件操作](https://www.liaoxuefeng.com/wiki/896043488029600/897013441037824)
 
-- [如何使用 Ruby 写入文本文件？](https://example.com/article)
-- [Ruby 中使用正则表达式提取文本信息](https://example.com/article)
-- [探索 Ruby 中的文件操作：删除、重命名和复制文件](https://example.com/article)
+## 参考资料
+
+- [Markdown语法指南](https://www.markdownguide.org/basic-syntax/)
+- [Markdown中文简明教程](https://www.jianshu.com/p/7bd23251da0a)

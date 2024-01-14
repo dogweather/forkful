@@ -1,54 +1,46 @@
 ---
-title:                "Kotlin: Tekstin hakeminen ja korvaaminen"
+title:                "Kotlin: Tekstin Etsiminen ja Korvaaminen"
+simple_title:         "Tekstin Etsiminen ja Korvaaminen"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi etsiä ja korvata tekstiä?
 
-Ehkä olet huomannut, että tekstiä joudutaan usein korvaamaan erilaisilla ohjelmointiprojekteissa. Se voi olla uuden määritelmän lisääminen tietokannan kyselyyn tai vain halu muuttaa tietyn sanan muotoilua. Harkitset sitten tekstieditoria tai koodieditoria, manuaalinen korvaaminen voi olla hidasta ja altis virheille. Onneksi Kotlin tarjoaa tehokkaan ja helpon tavan etsiä ja korvata tekstiä ohjelmallisesti.
+Joskus ohjelmoinnissa on tarpeen löytää ja korvata tietyt tekstit tiedostoista. Tämä voi johtua esimerkiksi tietokonetyöskentelyn automatisointitarpeista tai suurien tekstimäärien muokkaamisesta. Onneksi Kotlin tarjoaa näppärän tavan toteuttaa tämä.
 
-## Miten
+## Kuinka: Etsi ja korvaa tekstin Kotlinilla
 
-Kotlinin String-tyypillä on valmiiksi määriteltyjä toimintoja, jotka helpottavat tekstien etsimistä ja korvaamista. Yksi näistä toiminnoista on `replace`-metodi, joka korvaa kaikki annetut merkkijonot toisella merkkijonolla. Esimerkiksi:
-
-```Kotlin
-val teksti = "Tämä on vain esimerkki"
-val uusiTeksti = teksti.replace("vain", "ainoastaan")
-println(uusiTeksti)
-```
-
-Tulostus:
-
-```
-Tämä on ainoastaan esimerkki
-```
-
-Voit myös antaa parametrina regex-lausekkeen, jolloin voit hakea ja korvata esimerkiksi erilaisia muotoiluja. Esimerkiksi:
+Etsi ja korvaa tekstin toiminnallisuus on osa Kotlinin standardikirjastoa, joten sen käyttö on helppoa. Käytämme tätä toiminnallisuutta String-luokan extension-metodin avulla.
 
 ```Kotlin
-val teksti = "Käytä email@example.com työpaikan hakemiseen"
-val uusiTeksti = teksti.replace("[a-z0-9\\.\\-]+@[a-z0-9\\.\\-]+".toRegex(), "**********")
-println(uusiTeksti)
+val originalText = "Tervetuloa Kotlin-maailmaan!" 
+val newText = originalText.replace("Kotlin", "mahtava") 
+println(newText)
 ```
 
-Tulostus:
+Tämä koodi tulostaa "Tervetuloa mahtava-maailmaan!". Voit myös käyttää säännöllisiä lausekkeita etsiessäsi ja korvatessaessasi tekstiä:
 
+```Kotlin
+val originalText = "Viikonlopun säätila: Lämpötila: 23C, Pilvisyys: Osittain pilvinen" 
+val newText = originalText.replace(Regex("Lämpötila: (\\d+)C"), "Lämpötila: 25C") 
+println(newText)
 ```
-Käytä ********** työpaikan hakemiseen
-```
 
-## Syväsukellus
+Tämä koodi tulostaa "Viikonlopun säätila: Lämpötila: 25C, Pilvisyys: Osittain pilvinen". Huomaat, että säännöllistä lauseketta käytetään replace-metodin toisessa parametrissa.
 
-Kotlin tarjoaa myös muita tapoja etsiä ja korvata tekstiä, kuten `replaceFirst` ja `replaceBefore` -metodit, jotka korvaavat vain ensimmäisen löydetyn osuman tai korvaavat tekstin ennen tai jälkeen tietyn merkkijonon. Näitä kaikkia metodeja voi käyttää myös StringBuilder-tyypillä, jolloin pystyt muokkaamaan ja korvaamaan tekstiä vielä tehokkaammin.
+## Syventävä tarkastelu: Huomioita etsimisestä ja korvaamisesta Kotlinissa
 
-Kun ohjelmoit Kotlinilla, sinun ei tarvitse enää tehdä etsimistä ja korvaamista manuaalisesti - voit hyödyntää kielen valmiiksi sisäänrakennettuja toimintoja ja säästää aikaa ja vaivaa.
+Olet ehkä huomannut, että replace-metodi luo uuden merkkijonon eikä muuta alkuperäistä. Tämä on tärkeää huomioida erityisesti, jos käytät replace-metodia silmukassa ja haluat muuttaa alkuperäistä merkkijonoa. Tämä voidaan kuitenkin ratkaista helposti käyttämällä mutable-luokkia, kuten StringBuilder tai StringBuffer.
+
+Lisäksi, huomaathan, että replace-metodin ensimmäinen parametri voi olla myös säännöllinen lauseke, ei pelkästään merkkijono. Tämä tarjoaa enemmän joustavuutta etsintä- ja korvausprosessissa.
 
 ## Katso myös
 
-- [Kotlinin virallinen dokumentaatio String-tyypin metodeista](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)
-- [Ohjeet regex-lausekkeiden käyttöön Kotlinissa](https://www.regular-expressions.info/kotlin.html)
-- [Kotlinin virallinen verkkosivusto](https://kotlinlang.org/)
+- [Kotlinin virallinen dokumentaatio etsimisestä ja korvaamisesta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- [Tutoriaali: Regex-säännölliset lausekkeet Kotlinissa](https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm)
+- [Kotlinin muuta hyödyllistä String-extension-metodia](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/index.html)

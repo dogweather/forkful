@@ -1,67 +1,35 @@
 ---
 title:                "Javascript: दो तारीखों की तुलना करना"
+simple_title:         "दो तारीखों की तुलना करना"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+# Why (क्यों):
 
-एक इंसान दो तारीखों को तुलना करने में एंगेज क्यों होगा, यह उसमें से एक है।
+दो तारीखों को तुलना करने का लक्ष्य हमें दो अलग-अलग तारीखों के बीच की अन्तर जानने को सक्षम बनाना है। इससे हमारे पास तारीखों के बीच के अंतर के आधार पर नए और उपयोगी जानकारी मिल सकती है।
 
-## कैसे करें
+# How To (कैसे करें):
 
-```Javascript
-// एक तारीख से दुसरी तारीख तक का अंतरण निकालें
-var date1 = new Date("09/20/2021");
-var date2 = new Date("09/25/2021");
-
-var diffInDays = (date2.getTime() - date1.getTime()) / (1000 * 3600 * 24);
-
-console.log(diffInDays);
-// आउटपुट: 5
-```
+तारीखों को तुलना करने के लिए, हमें पहले दो Date ऑब्जेक्ट्स को बनाना होगा जिनमें हम अपनी देनी हुई तारीख को बता सकते हैं। अगर हम दो तारीखों के बीच का अंतर जानना चाहते हैं, तो हम Date ऑब्जेक्ट का diff() मेथड इस्तेमाल कर सकते हैं। नीचे दिए गए कोड ब्लॉक में इसका एक उदाहरण दिखाया गया है।
 
 ```Javascript
-// दो तारीखों के बीच कुल सेकंड निकालें
-var date1 = new Date("09/20/2021");
-var date2 = new Date("09/25/2021");
+let date1 = new Date("2021-01-01");
+let date2 = new Date("2021-05-01");
 
-var diffInSeconds = (date2.getTime() - date1.getTime()) /1000;
+let difference = date2.diff(date1); // यहां हमें 120 दिनों यानी 4 महीनों का अंतर मिलेगा
 
-console.log(diffInSeconds);
-// आउटपुट: 432000
+console.log(difference); // 120
 ```
 
-```Javascript
-// दो तारीखों के बीच कुल मिनट निकालें
-var date1 = new Date("09/20/2021");
-var date2 = new Date("09/25/2021");
+इस तरह से हम विभिन्न तारीख समय को संपर्कित कर सकते हैं और उनमें से अंतर निकाल सकते हैं।
 
-var diffInMinutes = (date2.getTime() - date1.getTime()) / (1000 * 60);
+# Deep Dive (गहराई में जायें):
 
-console.log(diffInMinutes);
-// आउटपुट: 7200
-```
+इस लेख में हमने Date ऑब्जेक्ट के diff() मेथड के बारे में चर्चा की है, लेकिन दो तारीखों के अंतर को जानने के लिए और भी कई तरह के मेथड्स हैं। एक और प्रभावी मेथड है Date ऑब्जेक्ट के getTime() मेथड को समय क्षेत्रों के बीच की मुकबला करने के लिए इस्तेमाल किया जाता है। इसमें हमें दो तारीखों के अंतर को मिलीसेकंड में मिलेगा।
 
-```Javascript
-// दो तारीखों के बीच कुल घंटे निकालें
-var date1 = new Date("09/20/2021");
-var date2 = new Date("09/25/2021");
-
-var diffInHours = (date2.getTime() - date1.getTime()) / (1000 * 3600);
-
-console.log(diffInHours);
-// आउटपुट: 120
-```
-
-## गहराई में जाइए
-
-दो तारीखों को तुलना करने के लिए, हमें प्रथम तारीख को JavaScript ऑब्जेक्ट में बदलना होगा। साथ ही साथ, हम प्रथम और दूसरी तारीखों के बीच का अंतरण निकालने के लिए getTime() फंकशन का उपयोग कर सकते हैं। इससे हमें दो तारीखों के बीच के मिलनसार अंतर निकालने में आसानी होगी। इसके अलावा, हम इस तरीके को साल, महीने, दिन, घंटे, मिनट और सेकंड के रूप में भी उपयोग कर सकते हैं।
-
-## देखें भी
-
-- [MDN वेब डाक्यूमेंटेशन: तारीख को तुलना करना](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [JavaScript.info: दो त
+इसके अलावा, हम स्ट्रिंग दो तारीखों को new Date() के साथ न

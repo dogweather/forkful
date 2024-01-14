@@ -1,7 +1,9 @@
 ---
 title:                "Bash recipe: Converting a string to lower case"
+simple_title:         "Converting a string to lower case"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,63 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever needed to convert a string to lower case in your Bash script? Maybe you want to make sure that the user's input is in a consistent format, or you need to compare two strings but case-sensitivity is not relevant. No matter the reason, knowing how to convert a string to lower case in Bash can be a useful skill to have in your programming arsenal.
+When working with strings in Bash programming, it's important to have the ability to manipulate them in different ways. Converting a string to lower case is a common task that can be useful in various scenarios. 
 
 ## How To
 
-To convert a string to lower case in Bash, we can use the `tr` command which is used for translating or deleting characters. Specifically, we will be using the `-s` option of `tr` which removes duplicate characters and the `-d` option which deletes specified characters.
+To convert a string to lower case in Bash, we can use the built-in `tr` command. This command allows us to perform text transformations on standard input or a given file. To convert a string to lower case, we can use the `-a` flag which specifies that all characters should be converted to lower case. Let's take a look at an example.
 
-```Bash
-// Example code block showing a variable assignment and the tr command with -s and -d options
+```
+#!/usr/bin/env bash
+
+#defining a string variable
 string="HELLO WORLD"
-lowercase=$(echo $string | tr -s [:upper:] [:lower:] | tr -d ' ')
+
+#converting the string to lower case using 'tr'
+lowercase=$(echo "$string" | tr -a '[:upper:]' '[:lower:]')
+
+#outputting the result
+echo "$lowercase"
 ```
 
-In the above code, we first assign the string "HELLO WORLD" to a variable named `string`. Then, we use the `echo` command to print the value of `string` and pass it as input to the `tr` command. The `-s` option takes two character sets as arguments. In this case, we specify the `[:upper:]` character set to represent all uppercase letters and the `[:lower:]` character set to represent all lowercase letters. This will convert all uppercase letters in the string to lowercase. Next, we use the `-d` option with the `tr` command to specify which characters to delete. In this example, we delete the space character (represented by the single quotes) to remove any whitespace in the converted string. Finally, we assign the output of `tr` to a new variable named `lowercase` which will contain the lowercase version of the string "Hello World".
-
-The output of this code will be as follows:
-
-```Bash
-echo $lowercase
+The output of this script would be:
+```
 hello world
 ```
 
-We can also use the `tr` command on a variable without using the `echo` command. For example:
+Here, we have used the `echo` command to print the result and saved it in a variable called `lowercase`. We have also used the `|` symbol to pipe the output of `echo` as the input for the `tr` command. This allows us to convert the string to lower case without changing the value of the original variable.
 
-```Bash
-// Example code block showing the use of `tr` command on a variable directly
-string="HELLO WORLD"
-lowercase=$(tr -s [:upper:] [:lower:] <<< $string)
+We can also use the same approach to convert the contents of a file to lower case. Let's take a look at another example.
+
+```
+#!/usr/bin/env bash
+
+#defining the file path
+file="example.txt"
+
+#converting the contents of the file to lower case and saving it in a new file
+echo "$(cat "$file")" | tr -a '[:upper:]' '[:lower:]' > lowercase.txt
+
+#outputting the result
+echo "Successfully converted '$file' to lower case and saved it in 'lowercase.txt'"
 ```
 
-The output of this code will be the same as the previous example.
+The output of this script would be:
+```
+Successfully converted 'example.txt' to lower case and saved it in 'lowercase.txt'
+```
+
+Here, we have used the `cat` command to print the contents of the file and used `>` to redirect the output to a new file called `lowercase.txt`. This allows us to preserve the original file while creating a new file with the lower case version of the contents.
 
 ## Deep Dive
 
-We can also use other methods to convert a string to lower case in Bash, such as using the `sed` command or using `bash` built-in parameter expansion.
-
-```Bash
-// Example code block showing the use of `sed` command
-string="HELLO WORLD"
-lowercase=$(echo $string | sed 's/./\L&/g')
-```
-
-In this example, we use `sed` to substitute each character in the string with its lowercase version.
-
-```Bash
-// Example code block showing the use of `bash` built-in parameter expansion
-string="HELLO WORLD"
-lowercase=${string,,}
-```
-
-In this example, we use `bash` built-in parameter expansion to convert the value of the variable `string` to lowercase.
-
-However, using the `tr` command is the most common and efficient way to convert a string to lower case in Bash.
+Under the hood, the `tr` command uses ASCII codes to convert the characters in the string to lower case. It takes two sets of characters as arguments - the first set represents the characters to be replaced, and the second set represents the characters to be used for replacement. In our examples, we have used `[:upper:]` and `[:lower:]` to specify all upper case and lower case characters respectively. However, we can also use a range of ASCII codes for more specific conversions. For example, if we only want to convert letters from A to D to lower case, we can use `A-D` as the first set and `a-d` as the second set. 
 
 ## See Also
 
-Here are some useful resources for further reading on converting strings to lower case in Bash:
-
-- [Bash String Manipulation](https://www.tldp.org/LDP/abs/html/string-manipulation.html)
-- [Bash String Operators](https://www.gnu.org/software/bash/manual/html_node/String-Operators.html)
-- [tr command in Linux with examples](https://www.geeksforgeeks.org/tr-command-in-linux-with-examples/)
+- [Bash tr command](https://linux.die.net/man/1/tr)
+- [Character encoding](https://www.w3schools.com/charsets/)
+- [ASCII table](https://www.asciitable.com/)

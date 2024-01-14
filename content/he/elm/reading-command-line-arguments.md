@@ -1,7 +1,9 @@
 ---
-title:                "Elm: קריאת פרמטרי שורת פקודה"
+title:                "Elm: קריאת ארגומנטים בשורת הפקודה"
+simple_title:         "קריאת ארגומנטים בשורת הפקודה"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/reading-command-line-arguments.md"
 ---
 
@@ -9,50 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-הזינו אחד או שני משפטים לסביר לקוראים למה הם ישתתפו בקריאת ארגומנטים ממסך הפקודות.
+קריאת ארגומנטים בשורת הפקודה היא כלי חשוב בתכנות ב-Elm שיכול להעצים את יכולות התוכנה שלכם. כתיבת תוכניות שישתמשו בארגומנטים בשורת הפקודה יכולה להפוך את התוכניות שלכם לנמכות יותר וחכמות יותר, תוך שימוש בקלות בשורת הפקודה.
 
-להזין מידע נכון ממסך הפקודות הוא כלי חיוני לכל מתכנת. הכירו את אפשרויות הקוד השונות שמספקת לנו אלם לקריאת ארגומנטים ממסך הפקודות בקלות ובפשטות.
+## איך לעשות זאת
 
-## כיצד לעשות זאת
+```Elm
+import Html exposing (text)
+import Platform.Cmd exposing (args)
 
-בשפת אלם ישנן כמה דרכים לקרוא ארגומנטים ממסך הפקודות. הנה כמה דוגמאות של קוד ופלט ממסך הפקודות:
-
-```elm 
-module Main exposing (main)
-import Platform exposing (worker)
-import String
-import Task exposing (perform)
-import Console exposing (log)
-
-type alias Flags =
-	{ file : String
-	}
-
-init : Flags -> ((), Cmd Msg)
-init flags =
-	( (), Cmd.none )
-
-type Msg
-	= GotFile String
-
-update : Msg -> () -> ((), Cmd Msg)
-update msg _ =
-	case msg of
-		GotFile file ->
-			( (), Cmd.none )
-
-port workerPort : Platform.Flags -> Platform.Flags
-port workerPort flags =
-	({ flags | tasks = GotFile "Hello World!" })
+main =
+    Html.text (args)
+```
+```
+elmi
+```
+```
+| "Hello"
 ```
 
-כאן אנו משתמשים בפונקצייות כמו `Platform` ו- `Console` כדי לקרוא את הארגומנטים ממסך הפקודות ולהדפיס אותם על גבי הקונסולה.
+הדוגמא הבאה מראה כיצד לכתוב קוד ב-Elm שיקרא את המשתנה `args` באמצעות פונקציות מובנות של הפלטפורמה. פלט התוכנית הינו הרשימה של תפוצות המשתנים שהועברו לשורת הפקודה.
 
 ## להעמיק
 
-לקריאת ארגומנטים יש לנו גם אפשרות להשתמש בפונקציות כמו `Platform` ו- `Task` כדי לשלוט בארגומנטים ולתפעול פעולות נוספות עליהם. כדאי ללמוד עוד על הפונקציות השונות שמספקות לנו אלם לקריאת ארגומנטים ולהתאים אותן לצרכי הפרויקטים שלנו.
+כאשר מעוניינים לקרוא את הפרמטרים שהועברו לתכנית בשורת הפקודה, ניתן לעשות זאת על ידי כתיבת קוד שיקרא מערך המשתנים `argv`, או ליצור קובץ מיוחד שמכיל את הפרמטרים או להשתמש בתוכנית חיצונית שתמצא את הפרמטרים לכם.
 
 ## ראו גם
 
-- Documentation for `Platform` in the Elm website (http://elm-lang.org/docs/).
-- Blog post about reading command line arguments in Elm by Richard Feldman (https://dev.to/rtfeldman/how-to-read-command-line-arguments-in-elm-9o).
+- [תיעוד רשמי של שורת הפקודה של Elm](https://guide.elm-lang.org/interop/cmd.html)
+- [מדריך על כתיבת תוכניות בשורת הפקודה עם Elm](https://medium.com/@preethi_a/writing-command-line-tools-using-elm-c2bf4ac42a7a)
+- [פרויקט בגיטהאב של ניידת כיוונים בשורת הפקודה ב-Elm](https://github.com/ababkin/elm-cli-zygohora)

@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Obliczanie daty w przyszłości lub przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,37 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami potrzebujemy obliczyć datę w przyszłości lub w przeszłości, na przykład w przypadku planowania wydarzeń lub tworzenia raportów. W języku Elixir istnieje wiele przydatnych funkcji, które można wykorzystać do dokonania tych obliczeń. W tym artykule dowiesz się, jak to zrobić.
+W dzisiejszych czasach programowanie jest wielką częścią naszego życia. Często musimy tworzyć aplikacje, które wymagają obliczenia daty w przeszłości lub przyszłości. Dzięki Elixir możemy łatwo wykonać takie obliczenia, co pozwala nam na oszczędność czasu i skupienie się na innych aspektach naszego projektu.
 
-## Jak zrobić
+## Jak to zrobić
 
-```elixir
-Calendar.DateTime.add(Calendar.utc_now(), 1, :month)
+Obliczenie daty w przeszłości lub przyszłości w Elixir jest bardzo proste. Wystarczy użyć funkcji `DateTime.add/2` lub `DateTime.subtract/2`, które obliczą nowy datę na podstawie podanej daty oraz liczby dni, tygodni, miesięcy czy lat. W poniższym przykładzie dodamy 5 dni do dzisiejszej daty:
+
+```
+Elixir
+iex> dzis = DateTime.utc_now()
+~U[2020-11-15 10:00:00.000000Z]
+iex> DateTime.add(dzis, 5, :days)
+~U[2020-11-20 10:00:00.000000Z]
 ```
 
-Powyższy kod używa funkcji `add` z modułu `Calendar.DateTime`, który został importowany w ramach standardowej biblioteki `Calendar`. Pierwszym argumentem funkcji jest aktualny czas w formacie `DateTime`. Drugi argument oznacza, że chcemy dodać 1 miesiąc do bieżącego czasu. Trzeci argument przekazuje informacje, czy chcemy dodać czas lokalny (`:local`) czy czas uniwersalny (`:utc`).
+Możemy również użyć funkcji `DateTime.to_string/2` w celu sformatowania daty do czytelniejszej postaci. W poniższym przykładzie zmienimy format daty na "DD/MM/YYYY":
 
-Wynik powyższego kodu powinien wyglądać mniej więcej tak:
-
-```elixir
-~N[2019-06-29 15:24:50.000000] + 1 month
-~N[2019-07-29 15:24:50.000000]
+```
+Elixir
+iex> DateTime.to_string(dzis, "{0:%d}/{0:%m}/{0:%Y}")
+"15/11/2020"
 ```
 
-Możesz również użyć innych jednostek czasu, takich jak sekundy, minuty, godziny, dni, tygodnie i lata. Na przykład, aby obliczyć datę, która jest 2 lata w przyszłości, możesz użyć funkcji `add` w następujący sposób:
 
-```elixir
-Calendar.DateTime.add(Calendar.utc_now(), 2, :years)
-```
+## Głębszy zanurzenie
 
-Możesz także ustalić datę w przeszłości, zmieniając drugi argument na wartość ujemną.
+Funkcje odpowiedzialne za obliczanie daty w przeszłości lub przyszłości zostały zaimplementowane w module `DateTime`, który jest częścią standardowej biblioteki Elixir. Warto zauważyć, że funkcje te zwracają nową datę, a nie modyfikują oryginalnej, co jest zgodne z ogólnym założeniem języka Elixir o niemutowalności danych.
 
-## Wnikliwe spojrzenie
-
-Obliczanie daty w przyszłości lub przeszłości odbywa się głównie dzięki funkcji `add` z modułu `Calendar`. W przypadku gdy potrzebujemy dokonać bardziej złożonych obliczeń, z pomocą przychodzi nam moduł `Timex`, który dostarcza bardziej precyzyjne i pomocne funkcje do zarządzania datami i czasem.
+Drugim ważnym elementem jest fakt, że Elixir wykorzystuje czas uniwersalny UTC (Coordinated Universal Time), co oznacza, że nie musimy się martwić o strefy czasowe czy zmianę czasu letniego i zimowego.
 
 ## Zobacz również
 
-- [Elixir School](https://elixirschool.com/pl/) - bezpłatne i dostępne w wielu językach źródła edukacyjne dla języka Elixir.
-- [Oficjalna dokumentacja Elixir](https://hexdocs.pm/elixir/DateTime.html#add/4) - pełna dokumentacja dla funkcji `add` w języku Elixir.
-- [Oficjalna strona Timex](https://hexdocs.pm/timex/Timex.html) - dokumentacja i przykłady użycia dla modułu `Timex` w języku Elixir.
+- [Dokumentacja Elixir - DateTime](https://hexdocs.pm/elixir/DateTime.html)
+- [Książka "Programming Elixir" przez Davida Thomasa i José Valima](https://pragprog.com/titles/elixir/programming-elixir/)

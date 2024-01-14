@@ -1,51 +1,50 @@
 ---
-title:                "Swift: 문자열 연결"
+title:                "Swift: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+"## 왜"
 
-스트링을 연결하는 것의 이점은 가독성과 효율성을 높여줍니다.
+문자열을 연결하는 것에 대해 알아볼까요? 왜냐하면 프로그래밍에서 문자열은 매우 중요한 개념이기 때문입니다.
 
-## 하는 방법
+## "## 방법"
 
-```Swift
-// 기본적인 스트링 연결
-let greeting = "안녕"
-let name = "제이슨"
-let fullGreeting = greeting + ", " + name
-print(fullGreeting)
-// 출력: 안녕, 제이슨
-```
+다음은 간단한 Swift 코드를 사용하여 문자열을 연결하는 방법을 보여드리겠습니다.
 
 ```Swift
-// 여러 스트링을 한 번에 연결
-let first = "한국"
-let second = "어학당"
-let third = "에서 공부하다."
-let location = first + second + third
-print(location)
-// 출력: 한국어학당에서 공부하다.
+let string1 = "Hello"
+let string2 = "world"
+let greeting = string1 + string2
+
+print(greeting)
 ```
+
+출력 결과: Hello world
+
+이 코드에서는 "+" 연산자를 사용하여 두 개의 문자열을 결합하고 새로운 변수에 저장합니다. 그리고 이 새로운 변수를 출력하면 두 문자열이 연결된 모습을 볼 수 있습니다.
+
+## "## 깊게 파헤치기"
+
+문자열을 연결하는 더 깊은 방법을 알아보겠습니다. Swift에서는 문자열을 다루는 많은 유용한 메소드들이 있습니다. 그 중에서도 두 문자열을 연결하는 메소드인 `joined()`를 사용해보겠습니다.
 
 ```Swift
-// 변수나 상수와 스트링을 동시에 연결
-let age = 35
-let message = "내 나이는"
-let description = message + String(age) + "살 입니다."
-print(description)
-// 출력: 내 나이는 35살 입니다.
+let strings = ["This", "is", "a", "sentence"]
+let combinedString = strings.joined(separator: " ")
+print(combinedString)
 ```
 
-## 딥 다이브
+출력 결과: This is a sentence
 
-스트링 연결 시 사용하는 `+` 연산자는 내부적으로 `append()` 함수를 호출합니다. 또한, `append()` 함수를 여러 번 연속해서 호출하는 것보다 `+` 연산자를 사용하는 것이 성능이 더 좋습니다.
+이 코드에서는 `joined()` 메소드를 사용하여 배열에 있는 문자열들을 띄어쓰기를 기준으로 연결하고, 그 결과를 `combinedString` 변수에 저장하고 출력합니다.
 
-## 참고
+## "See Also"
 
-- [Apple Developer Documentation](https://developer.apple.com/documentation/swift/string/1688831-append)
-- [Swift Programming Language Guide](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Apple Developer Documentation: [Concatenating Strings](https://developer.apple.com/documentation/swift/string/3244336-joined)
+- Codecademy: [Combining Strings](https://www.codecademy.com/courses/introduction-to-swift/lessons/strings-operators/exercises/concat)
+- Ray Wenderlich: [Swift String Interpolation: Concatenate and Format Strings Easily](https://www.raywenderlich.com/5598-swift-string-interpolation-tutorial#toc-anchor-001)

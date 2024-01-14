@@ -1,36 +1,47 @@
 ---
-title:                "Swift: Sattumanvaraisten numeroiden luominen"
+title:                "Swift: Satunnaislukujen luominen"
+simple_title:         "Satunnaislukujen luominen"
 programming_language: "Swift"
-category:             "Numbers"
+category:             "Swift"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+# Miksi: Satunnaislukujen generoiminen
 
-Miksi haluaisit luoda satunnaisia numeroita Swift-ohjelmointikielellä? Satunnaisilla numeroilla on monia käyttötarkoituksia, kuten pelien luomiseen, testidataa generoimiseen ja satunnaisien laskelmien suorittamiseen.
+Satunnaislukujen generoiminen on hyödyllinen taito Swift-ohjelmoinnissa, sillä se mahdollistaa ohjelman erilaisten toimintojen satunnaisuuden simuloimisen ja monipuolistamisen.
 
-## Kuinka tehdä se?
-
-Voit luoda satunnaisen numeron Swiftillä käyttämällä `arc4random()` -funktiota. Tämä funktio palauttaa kokonaisluvun väliltä 0 ja 2^32 - 1. Seuraavassa esimerkissä luodaan ja tulostetaan 10 satunnaista numeroa väliltä 1 ja 100:
+## Kuinka: Esimerkkejä
 
 ```Swift
-for _ in 1...10 {
-  let randomNum = arc4random_uniform(100) + 1
-  print(randomNum)
-}
+// Generoidaan yksi satunnainen kokonaisluku väliltä 1-100
+let randomNumber = Int.random(in: 1...100)
+print(randomNumber) // Tulostaa esim. 56
+
+// Generoidaan satunnainen liukuluku väliltä 0.0 - 1.0
+let randomFloat = Float.random(in: 0.0...1.0)
+print(randomFloat) // Tulostaa esim. 0.78346
+
+// Generoidaan satunnainen merkkijono kolmesta satunnaisesta kirjaimesta
+let randomString = String((0..<3).map{ _ in Character(UnicodeScalar(Int.random(in: 65...90))!) })
+print(randomString) // Tulostaa esim. "EJQ"
+
+// Generoidaan satunnainen Bool-arvo
+let randomBool = Bool.random()
+print(randomBool) // Tulostaa joko "true" tai "false"
 ```
 
-Tässä koodissa käytetään myös `arc4random_uniform()` -funktiota, joka palauttaa satunnaisen numeron väliltä 0 ja haluttu maksimiarvo välttäen tasajakoa. Lisäksi voidaan käyttää muita esim. `arc4random()` -funktion muunnelmia, kuten `arc4random_uniform(max: UInt32)` ja `arc4random_uniform(min: UInt32, max: UInt32)`.
+Näiden esimerkkien avulla voit helposti generoida satunnaisia arvoja omiin ohjelmiisi.
 
-## Syvemmälle aiheeseen
+## Syvällisempi tarkastelu
 
-Satunnaiset numerot Swiftissä luodaan käyttämällä Mersenne Twister -algoritmia, joka luo kyseisen satunnaisluokan. Tämä algoritmi on suunniteltu luomaan erittäin laadukkaita satunnaislukuja ja se on skaalautuva sekä suurelle että pienelle kokoonpanolle.
+Swiftin Foundation-kirjaston Random-luokassa on monia muitakin toimintoja satunnaislukujen generoimiseen. Voit esimerkiksi määrittää tietyn alkuluvun ja tulostaa sen kaikki jakajat tai generoida satunnaisen arvon annetun jakauman mukaan.
 
-Voit myös antaa `srand()` -funktiolle alkuperäisen siemenarvon luodaksesi erilaisen satunnaisjonojen sarjan tai käyttää `srandom()` -funktiota muuttaaksesi siemenarvoa kesken ohjelman suorituksen.
+Kannattaa myös muistaa, että satunnaislukujen generoiminen voi olla hyödyllistä esimerkiksi testaamisessa ja pelien luomisessa.
 
 ## Katso myös
 
-- [Swiftin eri random-funktiot](https://developer.apple.com/documentation/swift/global_functions/1539600-arc4random-uniform)
-- [Mersenne Twister -algoritmi](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- [Apple Developer Documentation: Random](https://developer.apple.com/documentation/foundation/random)
+- [Hacking with Swift: How to generate random numbers in Swift](https://www.hackingwithswift.com/example-code/system/how-to-generate-random-numbers-in-swift)

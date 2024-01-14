@@ -1,52 +1,60 @@
 ---
-title:                "Haskell: כתיבת בדיקות"
+title:                "Haskell: כתיבת מבחנים"
+simple_title:         "כתיבת מבחנים"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
-נכתוב כמה משפטים על *למה* מישהו יכול להתעסק בכתיבת בדיקות.
 
-כתיבת בדיקות היא חלק חשוב מתהליך הפיתוח בכל שפת תכנות, ובמיוחד ב-Haskell. בעזרת הבדיקות, אנו יכולים לוודא שהקוד שכתבנו עובד כפי שצריך ולזהות שגיאות לפני שהן מופעלות בסביבה ההפעלה האמיתית של התוכנית.
+בעת שליחת תכניות חדשות או שינויים בתכנית קיימת, כתיבת בדיקות בודקת כי התוכנית עובדת כפי שצוין ואין בעיות או תקלות לפני שהתוכנית מושגת על ידי המשתמשים. זה מקנה ביטחון ומבטיח שהתוכנית תוכל להיות בשימוש מוצלח.
 
 ## איך לעשות זאת
-לכתוב בדיקות ב-Haskell הוא פשוט כמו לכתוב קוד רגיל. נוכל להשתמש בספריית HUnit או QuickCheck כדי לכתוב ולהריץ את הבדיקות שלנו. הנה דוגמאות בלוק קוד המראות איך לממש בדיקות באמצעות HUnit ו-QuickCheck:
 
-```Haskell
-import Test.HUnit
-import Test.QuickCheck
+הנה דוגמאות לכתיבת בדיקות בשפת Haskell
 
--- דוגמא לבדיקת יחידה באמצעות HUnit
--- בדיקה שהפונקציה add מקבלת שני מספרים ומחזירה את הסכום שלהם
-testAdd :: Test
-testAdd = TestCase (assertEqual "add 3 5 should be 8" 8 (add 3 5))
+```haskell
+-- מתוך נתון ארבעה מספרים, המצא את המספר הגדול ביותר
 
--- דוגמא לבדיקה מונחית באמצעות QuickCheck
--- בדיקה שהפונקציה reverse לא משנה את הסדר של האיברים ברשימה
-prop_reverse :: [Int] -> Bool
-prop_reverse xs = reverse (reverse xs) == xs
+maxNumber :: Int -> Int -> Int -> Int -> Int
+maxNumber a b c d = max (max a b) (max c d)
 
--- הרצת כל הבדיקות עם runTestTT ו-quickCheck
-main :: IO ()
+-- בדיקות
+
 main = do
-    runTestTT testAdd
-    quickCheck prop_reverse
+    putStrLn "Testing maxNumber..."
+    test "#1" (maxNumber 1 2 3 4 == 4)
+    test "#2" (maxNumber 4 3 2 1 == 4)
+    test "#3" (maxNumber 2 1 4 3 == 4)
+    test "#4" (maxNumber 1 3 2 4 == 4)
+
+test :: String -> Bool -> IO ()
+test name result = if result
+                      then putStrLn (name ++ " passed!")
+                      else putStrLn (name ++ " failed.")
 ```
 
-הפלט של הקוד הזה יוכיח שהפונקציות שלנו עובדות כפי שצריך:
+פלט:
 
 ```
-Cases: 1  Tried: 1  Errors: 0  Failures: 0
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+++ GHCi: Test cases passed
-+++ GHCi: Successfully generated & tested 100 test(s)..
-+++ GHCi: SUCCESS (1 test(s) passed)
+Testing maxNumber...
+#1 passed!
+#2 passed!
+#3 passed!
+#4 passed!
 ```
 
-כמו שאתה רואה, כתיבת בדיקות היא פשוטה ונוחה ונותנת לנו הבטחה גדולה ביצירת תוכניות ברמה גבוהה יותר של אמינות ותקינות.
+## להעמיק
 
-## מעמקים יותר
-כשאנו כותבים בדיקות ב-Haskell, ישנם מספר פרטים קט
+כתיבת בדיקות קשה עבור מתכנתים רבים, אך זה מאוד חשוב כדי לוודא שהתוכנית עובדת ביעילות ובאמינות. ישנם כמה טכניקות שניתן להשתמש בהן כדי לכתוב בדיקות בצורה יעילה וחכמה. כמו כן, ישנם כלים וספריות זמינים כמו QuickCheck ו-Hspec שעוזרים לכתוב בדיקות באופן ידידותי ומתקדם.
+
+## ראה גם
+
+- [QuickCheck ספריית הבדיקות של Haskell](https://hackage.haskell.org/package/QuickCheck)
+- [Hspec ספריית הבדיקות של Haskell](https://hspec.github.io)
+- [הכרת מיומנויות בכתיבת בדיקות ב-Haskell](https://blog.ezyang.com/2010/05/the-very-model-of-a-modern-noetherian-induction)
+- [מדריך לכתיבת בדיקות באמצעות QuickCheck](https://begriffs.com/posts/2017-01-14-design-use-quickcheck.html)

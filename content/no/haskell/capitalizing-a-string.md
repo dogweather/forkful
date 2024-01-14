@@ -1,40 +1,37 @@
 ---
-title:                "Haskell: Stor bokstaving av en streng"
+title:                "Haskell: Stor bokstavering av en streng"
+simple_title:         "Stor bokstavering av en streng"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Har du noen gang ønsket å gjøre en vanlig streng mer uttrykksfull ved å ha den i stor bokstav? Vel, det er akkurat det vi skal lære om i denne bloggen - hvordan du kan kapitalisere en streng i Haskell.
 
-Å kapitalisere en streng er en vanlig operasjon i mange programmeringsspråk, inkludert Haskell. Dette handler om å gjøre den første bokstaven i en streng til en stor bokstav. Dette kan være nyttig når man ønsker å presentere data på en ryddig og konsistent måte, eller når man trenger å sammenligne to strenger.
-
-# Hvordan
+## Slik gjør du det
+For å kapitalisere en streng i Haskell, kan du bruke funksjonen `toUpper` fra `Data.Char`. Denne funksjonen tar inn en char og returnerer den samme char i stor bokstav. La oss se på et eksempel:
 
 ```Haskell
-import Data.Char -- importerer Data.Char biblioteket for å få tilgang til funksjoner som hjelper oss med å kapitalisere strenger
-capitalize :: String -> String -- funksjonen tar en streng som input og returnerer en streng
-capitalize [] = [] -- hvis den tomme strengen blir gitt som input, returnerer vi den tomme strengen
-capitalize (x:xs) = toUpper x : xs -- vi bruker funksjonen toUpper fra Data.Char biblioteket til å gjøre den første bokstaven i strengen til en stor bokstav, og legger den tilbake til resten av strengen
+import Data.Char (toUpper)
 
--- eksempel på bruk av funksjonen
-capitalize "haskell" -- "Haskell"
-capitalize "hello world" -- "Hello world"
-capitalize "123abc" -- "123abc" siden tall ikke blir påvirket av funksjonen
+streng = "velkommen"
+kapitalisert = map toUpper streng
+
+print kapitalisert
 ```
 
-# Dypdykk
+Dette vil gi output av `"VELKOMMEN"`, siden `map` funksjonen gjør om hver char i strengen `streng` til stor bokstav ved hjelp av funksjonen `toUpper`.
 
-Selv om det kan virke som en enkel operasjon, er det noen ting å merke seg når det kommer til å kapitalisere strenger i Haskell. For det første, kan strenger i Haskell bestå av Unicode-tegn, og ikke bare ASCII-tegn. Derfor må vi være forsiktige når vi bruker funksjoner som `toUpper` for å sikre at alle tegn i strengen blir behandlet riktig.
+## Dypdykk
+For å forstå mer om hvordan dette fungerer, la oss se nærmere på `map` funksjonen som vi bruker i eksempelet over. `map` tar inn en funksjon og en liste, og returnerer en ny liste der funksjonen er blitt brukt på hvert element i den originale listen. I vårt eksempel, bruker vi `map` til å bruke `toUpper` funksjonen på hver char i strengen `streng`.
 
-I tillegg er det viktig å være oppmerksom på at funksjonen `capitalize` som er vist over bare tar hensyn til den første bokstaven i en streng. Hvis man ønsker å kapitalisere alle bokstaver i en streng, må man bruke en annen tilnærming.
+Vi bruker også `import Data.Char (toUpper)` for å importere funksjonen `toUpper` fra `Data.Char` modulen. Dette lar oss bruke funksjonen i koden vår. Husk å alltid importere de nødvendige modulene for å kunne bruke funksjonene du trenger.
 
-En annen nyttig ting å vite er at funksjonen `toUpper` returnerer en `Char` type, ikke en `String` type. Derfor må man bruke funksjoner som `map` for å bruke `toUpper` på alle tegn i en streng.
-
-# Se også
-
-- [Haskell Standard Libraries](http://www.haskell.org/onlinereport/standard-prelude.html)
-- [Unicode og Haskell](https://wiki.haskell.org/Unicode)
-- [Stack Overflow: How to capitalize a string in Haskell?](https://stackoverflow.com/questions/13402033/how-to-capitalize-first-letter-of-a-string-in-haskell)
+## Se også
+- [Offisiell Haskell nettsted](https://www.haskell.org/)
+- [Haskell kurs på Khan Academy](https://www.khanacademy.org/computing/computer-programming)
+- [Offisiell Haskell dokumentasjon](https://www.haskell.org/documentation/)

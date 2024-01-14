@@ -1,50 +1,40 @@
 ---
-title:                "Arduino: Scrivere su standard error"
+title:                "Arduino: Scrivere su errore standard"
+simple_title:         "Scrivere su errore standard"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché
+# Perché
+Scopriamo insieme perché è importante imparare a scrivere su standard error quando si programma con Arduino. Scrivere su standard error è una tecnica utile per identificare e risolvere eventuali errori nel codice, aiutando a migliorare la qualità del programma.
 
-Scrivere su standard error è un importante aspetto della programmazione su Arduino che può aiutare a identificare e risolvere errori nel codice. È un modo per visualizzare messaggi di errore specifici che possono aiutare a debuggare e ottimizzare il programma.
+# Come fare
+Per scrivere su standard error in Arduino, utilizzeremo la funzione "Serial.println()", specificando come parametro "stderr". Questo invierà l'output agli errori del codice alla console di monitoraggio seriale.
 
-##Come Fare
+```
+Arduino Serial.println("Messaggio di errore", stderr);
+```
 
-Per scrivere su standard error in Arduino, è necessario utilizzare la funzione `Serial.println()`. Questo comando invia un messaggio di testo alla porta seriale USB del microcontrollore, che può essere visualizzato in un terminale seriale sul computer.
+Un esempio pratico potrebbe essere:
 
-Ecco un esempio di codice che scrive un messaggio di errore alla fine del programma:
-
-```Arduino
-void setup() {
-  Serial.begin(9600);  // inizializza la comunicazione seriale
-}
-
-void loop() {
-  // codice del programma
-
-  // se si verifica un errore, scrivere il messaggio su standard error
-  Serial.println("Errore: variabile non definita");
-
-  // altri comandi del programma
+```
+int a = 5;
+int b = 0;
+if (b == 0) {
+  Serial.println("Errore: divisione per zero", stderr);
 }
 ```
 
-L'output di questo esempio verrà visualizzato nel terminale seriale come:
+Questo codice scriverà il messaggio di errore nella console di monitoraggio seriale, aiutandoci a identificare il problema e a risolverlo.
 
-`Errore: variabile non definita`
+# Approfondimento
+Scrivere su standard error è solo una delle tecniche che possono essere utilizzate per individuare e risolvere gli errori nel codice di Arduino. Altre opzioni includono l'utilizzo di LED di segnalazione o la creazione di un registro degli errori. È importante comprendere il concetto di debug e utilizzare le tecniche in modo appropriato per migliorare la qualità dei propri programmi.
 
-##Approfondimento
-
-Per massimizzare l'utilità di scrivere su standard error, è importante comprendere come gestire i messaggi di errore nel tuo codice. Ecco alcune considerazioni:
-
-- Utilizzare messaggi di errore chiari e descrittivi per aiutare a identificare il problema facilmente.
-- Aggiungere numeri di riga o altre informazioni nel messaggio di errore per individuare più facilmente il punto esatto in cui si è verificato l'errore.
-- Utilizzare la funzione `Serial.setTimeout()` per impostare un limite di tempo per leggere i messaggi di errore, in modo da non bloccare il programma in caso di errore.
-
-##Vedi Anche
-
-- [Documentazione Arduino su Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Tutorial su come scrivere messaggi di errore efficaci in Arduino](https://create.arduino.cc/projecthub/eduardoschneiders/arduino-tutorial-writing-effective-error-messages-e41d82)
+# Vedi anche
+- [Documentazione ufficiale di Arduino su Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Esempio di codice per gestire gli errori su Arduino](https://www.instructables.com/id/Error-Handling-in-Arduino/)
+- [Articolo su come scrivere codice efficiente su Arduino](https://allaboutee.com/2012/11/01/arduino-building-efficient-code-that-doesnt-suck-memory/)

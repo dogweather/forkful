@@ -1,7 +1,9 @@
 ---
 title:                "Go: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "Go"
-category:             "Testing and Debugging"
+category:             "Go"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/writing-tests.md"
 ---
 
@@ -9,37 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man Tests schreiben? Ist es nicht genug, dass unser Code einfach funktioniert?
-
-Die Antwort ist einfach: Tests helfen uns dabei, sicherzustellen, dass unser Code nicht nur funktioniert, sondern auch weiterhin funktioniert. Sie geben uns die Zuversicht, Änderungen an unserem Code vorzunehmen, ohne befürchten zu müssen, dass wir etwas kaputt machen.
+Wenn Sie regelmäßig Go-Code schreiben, werden Sie sicherlich schon von Test-Driven Development (TDD) gehört haben. Aber warum sollten Sie sich die Zeit nehmen, Tests zu schreiben, anstatt einfach direkt mit dem Codieren zu beginnen? Die Antwort ist einfach: Tests helfen Ihnen, die Qualität Ihres Codes zu verbessern, Bugs frühzeitig zu erkennen und Ihre Entwicklungsprozesse zu verbessern.
 
 ## Wie
-Um Tests in Go zu schreiben, müssen wir zunächst das standardmäßige Test-Framework von Go importieren. Dies geschieht mit dem folgenden Import-Statement:
+
+Um Tests in Go zu schreiben, verwenden wir das Paket "testing". Hier ist ein einfaches Beispiel, um zu zeigen, wie es funktioniert:
 
 ```Go
-import "testing"
-```
+func Add(a, b int) int {
+    return a + b
+}
 
-Um eine neue Test-Funktion zu erstellen, verwenden wir das ```func``` Schlüsselwort gefolgt vom namen unserer Funktion und der Parameterliste. Wir definieren auch einen ```*testing.T``` Parameter, der uns beim Schreiben von Tests helfen wird. Ein Beispiel dafür könnte so aussehen:
+func TestAdd(t *testing.T) {
+    result := Add(2, 3)
+    expected := 5
 
-```Go
-func TestAddition(t *testing.T) {
-    // Hier schreiben wir unseren Test-Code
+    if result != expected {
+        t.Errorf("Expected %d, got %d", expected, result)
+    }
 }
 ```
 
-In unserem Test können wir nun die Funktion ```t.Errorf``` verwenden, um Fehlermeldungen auszugeben, falls unser Test fehlschlägt. Es ist auch möglich, mehrere Tests innerhalb einer Funktion zu schreiben, aber es ist eine bewährte Praxis, für jeden Test eine eigene Funktion zu erstellen.
+Dieser Code definiert eine Funktion "Add", die zwei Zahlen addiert, und einen Test, der überprüft, ob das Ergebnis der Funktion dem erwarteten Wert entspricht. Wir können den Test ausführen, indem wir "go test" in der Terminal eingeben.
+
+Das Output sollte wie folgt aussehen:
+
+```
+--- FAIL: TestAdd (0.00s)
+    main_test.go:9: Expected 5, got 6
+FAIL
+```
+
+Hier können wir sehen, dass unser Test fehlgeschlagen ist, was bedeutet, dass wir einen Fehler in unserer Funktion haben und sie korrigieren müssen.
 
 ## Deep Dive
-Jetzt, da wir wissen, wie wir Tests schreiben können, wollen wir uns einige bewährte Praktiken für das Schreiben von effektiven Tests ansehen.
 
-1. Behalten Sie Ihre Tests immer im gleichen Paket wie Ihre Code-Dateien. Dies hilft dabei, alles organisiert und leicht zugänglich zu halten.
+Wenn es um das Schreiben von Tests geht, gibt es viele Techniken und Methoden, die Sie anwenden können. Eine wichtige Sache zu beachten ist, dass Ihre Tests so einfach und unabhängig wie möglich sein sollten. Das bedeutet, dass Sie sie nicht von anderen Tests abhängig machen und sie auch nicht zu komplex machen sollten.
 
-2. Verwenden Sie aussagekräftige Test-Namen. Vermeiden Sie es, Namen wie ```test1``` oder ```myTest``` zu verwenden. Verwenden Sie stattdessen einen Namen, der beschreibt, was genau in diesem Test überprüft wird.
+Ein weiterer wichtiger Punkt ist, dass die Anzahl Ihrer Tests nicht immer wichtiger ist als ihre Qualität. Fokussieren Sie sich auf die kritischen Teile des Codes und schreiben Sie Tests dafür, anstatt jede einzelne Funktion zu testen.
 
-3. Testen Sie sowohl den Erfolg als auch das Fehlschlagen von Funktionen. Dies stellt sicher, dass unser Code fehlerfrei funktioniert und auch die richtigen Fehlermeldungen ausgibt, falls etwas schief geht.
+Es gibt auch verschiedene Tools, die Ihnen helfen können, bessere Tests zu schreiben, wie zum Beispiel "go test -cover", das Ihnen zeigt, wie viel Prozent Ihres Codes von Ihren Tests abgedeckt wird. Je höher die Abdeckung, desto besser.
 
 ## Siehe auch
-- Offizielle Dokumentation zu Tests in Go: https://golang.org/pkg/testing/
-- Ein praktisches Beispiel für das Schreiben von Tests in Go: https://www.calhoun.io/writing-very-large-go-applications-in-a-team/
-- Weitere bewährte Praktiken für das Schreiben von Tests in Go: https://blog.alexellis.io/golang-writing-unit-tests/
+
+- [Official Go testing package documentation](https://golang.org/pkg/testing/)
+- [Effective Go (Testing section)](https://golang.org/doc/effective_go.html#testing)
+- [The Go Testing Toolbox](https://github.com/golang/go/wiki/Testing)
+  - [GoConvey](https://github.com/smartystreets/goconvey)
+  - [Testify](https://github.com/stretchr/testify)
+  - [Ginkgo](https://github.com/onsi/ginkgo)
+  - [Mockery](https://github.com/vektra/mockery)

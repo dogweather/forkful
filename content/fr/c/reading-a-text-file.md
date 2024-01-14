@@ -1,7 +1,9 @@
 ---
-title:                "C: La lecture d'un fichier texte"
+title:                "C: Lecture d'un fichier texte"
+simple_title:         "Lecture d'un fichier texte"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/reading-a-text-file.md"
 ---
 
@@ -9,61 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Lire un fichier texte est une tâche courante en programmation, que ce soit pour récupérer des données ou les afficher à l'utilisateur. Dans cet article, nous allons voir comment lire un fichier texte en utilisant le langage de programmation C.
+Qu'est-ce qui pousse les programmeurs à lire un fichier texte? La réponse est simple : les fichiers texte sont un outil de communication essentiel dans le monde de la programmation. Ils permettent de stocker et de transmettre des données de manière simple et efficace. Dans cet article, nous allons explorer comment lire un fichier texte en utilisant le langage de programmation C.
 
 ## Comment faire
 
-Pour lire un fichier texte en C, nous allons utiliser la fonction `fopen` pour ouvrir le fichier et `fgets` pour lire ligne par ligne. Voici un exemple de code :
+Pour ouvrir et lire un fichier texte en C, nous utilisons la fonction `fopen` qui prend deux paramètres : le nom du fichier et le mode d'ouverture. Par exemple, pour ouvrir un fichier texte nommé "texte.txt" en mode lecture, nous utilisons la syntaxe suivante :
 
 ```C
-#include <stdio.h>
-
-int main(){
-    // Ouverture du fichier en mode lecture
-    FILE* fichier = fopen("mon_fichier.txt", "r");
-
-    // Boucle pour lire chaque ligne du fichier
-    char ligne[100];
-    while (fgets(ligne, 100, fichier) != NULL) {
-        // Affichage de la ligne lue à l'utilisateur
-        printf("%s", ligne);
-    }
-
-    // Fermeture du fichier
-    fclose(fichier);
-
-    return 0;
-}
+FILE *fichier;
+fichier = fopen("texte.txt", "r");
 ```
 
-Supposons que notre fichier texte `mon_fichier.txt` contienne les lignes suivantes :
+Ensuite, pour lire le contenu du fichier, nous utilisons la fonction `fscanf` qui fonctionne de la même manière que `scanf` pour la saisie au clavier :
 
-```
-Bonjour,
-Comment ça va ?
-```
-
-Lorsque nous exécutons le code précédent, nous obtiendrons en sortie :
-
-```
-Bonjour,
-Comment ça va ?
+```C
+char texte[100];
+fscanf(fichier, "%s", texte);
 ```
 
-Comme vous pouvez le constater, la boucle `while` lit chaque ligne du fichier et utilise `printf` pour l'afficher à l'utilisateur.
+Il est important de noter que la fonction `fscanf` lit le contenu du fichier jusqu'à un espace blanc ou un retour à la ligne. Si vous voulez lire une ligne complète, utilisez plutôt la fonction `fgets`.
+
+Une fois que vous avez terminé de lire le fichier, n'oubliez pas de le fermer en utilisant la fonction `fclose` :
+
+```C
+fclose(fichier);
+```
 
 ## Plongée en profondeur
 
-Maintenant que nous avons vu un exemple basique de lecture de fichier texte en C, voyons quelques informations plus détaillées sur la manipulation de fichiers.
+Maintenant que vous savez comment ouvrir et lire un fichier texte en utilisant C, voici quelques informations supplémentaires pour vous aider à maîtriser cette tâche. Tout d'abord, les modes d'ouverture les plus couramment utilisés sont `r` pour la lecture, `w` pour l'écriture et `a` pour ajouter du contenu au fichier existant. Deuxièmement, si vous voulez lire plusieurs mots du fichier en une seule fois, utilisez `%[^\n]` comme format dans la fonction `fscanf`.
 
-- La fonction `fopen` prend deux paramètres : le nom du fichier et le mode d'ouverture. Le mode `r` indique que le fichier doit être ouvert en lecture seule. Vous pouvez également utiliser `w` pour écrire dans un fichier ou `a` pour ajouter du contenu à la fin du fichier.
-- Le premier paramètre de la fonction `fgets` est un pointeur vers un tableau de caractères qui contiendra la ligne lue. Le deuxième paramètre est la taille maximale de la ligne et le dernier paramètre est un pointeur vers le fichier. `fgets` renvoie `NULL` lorsque la fin du fichier est atteinte.
-- N'oubliez pas de fermer le fichier après avoir fini de le lire en utilisant la fonction `fclose` pour éviter les fuites de mémoire.
+Enfin, il est également possible de manipuler des fichiers texte en utilisant des fonctions de bas niveau telles que `fgetc` pour lire un seul caractère à la fois ou `fprintf` pour écrire dans un fichier. Mais cela dépasse le cadre de cet article.
 
-Maintenant que vous avez les bases pour lire un fichier texte en C, vous pouvez explorer d'autres fonctions telles que `fgetc` pour lire un caractère à la fois ou `fseek` pour déplacer le curseur de lecture dans le fichier.
+## Voir aussi
 
-# Voir aussi
+Vous pouvez en apprendre davantage sur la manipulation de fichiers texte en C en consultant les ressources suivantes :
 
-- [Documentation officielle de la fonction fopen en C](https://www.gnu.org/software/libc/manual/html_node/Opening-and-Closing-Streams.html)
-- [Tutoriel sur la lecture de fichiers en C](https://www.programiz.com/c-programming/c-file-input-output)
-- [Exemples avancés de manipulation de fichiers en C](https://www.guru99.com/c-file-handling.html)
+- [Documentation officielle de fopen](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [Guide de référence sur les fichiers en C](https://www.cprogramming.com/tutorial/cfileio.html)
+- [Exemples de code pour lire et écrire dans un fichier en C](https://www.programiz.com/c-programming/file-input-output)

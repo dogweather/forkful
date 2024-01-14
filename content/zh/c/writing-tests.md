@@ -1,83 +1,60 @@
 ---
 title:                "C: 编写测试"
+simple_title:         "编写测试"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么写测试？
 
-编写测试代码是软件开发过程中至关重要的一步。它可以帮助您发现潜在的错误和缺陷，并确保您的代码在各种情况下都能正常工作。写测试代码还可以提高代码的可读性和可维护性。
+每个程序员都知道写测试是一个重要的过程，但是很多人都会忽略它。但是，写测试有很多好处。首先，它可以帮助我们识别程序中的错误和漏洞。通过运行测试，我们可以确保我们的代码可以正确地运行，并且能够在未来进行修改和维护。
 
-## 如何做
+另外，写测试可以帮助我们构建更可靠的代码。通过编写测试，我们可以更好地了解我们的代码如何与其他部分交互，从而可以更有效地进行调试和修复错误。
 
-为了向大家展示如何编写测试代码，我们将使用 C 语言作为示例。假设我们有一个简单的程序，需要将两个整数相加并返回结果。
+总的来说，编写测试可以提高我们的代码质量，并帮助我们节省宝贵的时间和精力。
+
+# 如何写测试？
+
+对于C语言，写测试需要使用一个称为“断言”的工具。断言是一个布尔语句，它可以验证一些条件是否为真。如果条件为真，则断言没有任何效果。但是如果条件为假，则断言会抛出一个错误，表明代码中存在问题。
+
+让我们来看一个例子：
 
 ```C
-#include <stdio.h>
+#include <assert.h>
 
-int add(int num1, int num2) {
-    return num1 + num2;
+int divide(int a, int b) {
+  // 断言，如果b为0，则抛出错误
+  assert(b != 0);
+  return a / b;
 }
 
 int main() {
-    int result = add(5, 10);
-    printf("Result: %d\n", result);
-    return 0;
+  int result = divide(10, 2);
+  // 断言，如果结果不是5，则抛出错误
+  assert(result == 5);
+
+  return 0;
 }
 ```
 
-输出应为: `Result: 15`
+在上面的示例中，我们使用`assert`函数来确保除数不为零，并且通过比较结果来验证程序是否正常工作。
 
-现在，我们将为这个简单的程序编写测试代码来验证它是否按预期工作。
+# 深入了解测试
 
-```C
-#include <stdio.h>
+当涉及到编写测试时，有一些最佳实践值得我们注意。首先，每个函数应该至少有一个相关的测试。这可以帮助我们找出可能存在的潜在问题。
 
-int add(int num1, int num2) {
-    return num1 + num2;
-}
+其次，测试应该涵盖尽可能多的边界条件，以及正常的输入和异常输入。这可以帮助我们确保代码在各种情况下都能正常工作。
 
-// 测试函数
-void test() {
-    int result = add(5, 10);
-    
-    // 断言
-    if (result == 15) {
-        printf("Test passed!\n");
-    } else {
-        printf("Test failed\n");
-    }
-}
+另外，我们应该定期运行测试，以确保代码在任何更改后都能正确运行。最后，我们应该编写易于阅读和维护的测试案例，这样可以帮助我们更快地定位和修复问题。
 
-int main() {
-    test();
-    return 0;
-}
-```
+查看下面的链接，以获取更多关于如何编写好的测试的信息。
 
-输出应为: `Test passed!`
+# 参考链接
 
-从输出结果可以看出，我们的测试代码成功验证了 add() 函数的功能。
-
-## 深入探讨
-
-编写测试代码可以帮助我们更早地发现问题，并且随着代码的增长，这种方法也更加高效。通过不断地添加测试代码，我们可以更有信心地修改和优化代码，而不用担心影响现有的功能。
-
-此外，编写测试代码还可以帮助我们更好地理解代码和预期的结果。在撰写测试用例时，我们需要考虑各种可能的情况，这有助于增强我们对代码的理解。
-
-最后，编写测试代码还可以帮助我们避免不必要的重生错误。当我们在修改代码时，我们可以运行测试代码来确保我们的修改没有破坏原有的功能。
-
-## 参考
-
-- [C语言教程](https://www.runoob.com/cprogramming/c-programming-tutorial.html)
-- [简单的C语言测试框架](https://github.com/alexei-led/pumba)
-- [单元测试入门教程](https://www.jianshu.com/p/328f3c6600b4)
-
-## 参见
-
-- [编写测试代码的重要性](https://techcrunch.com/2014/03/24/the-importance-of-writing-tests/)
-- [测试代码应该覆盖多少？](https://stackoverflow.com/questions/484265/how-much-code-coverage-is-enough)
-- [测试驱动开发简介](https://www.ibm.com/developerworks/cn/rational/bdd/)
+- [JUnit:手工编码测试](https://learn.mairie-at.fr/codewars/best-practices-for-writing-tests)
+- [测试最佳实践：从单元测试到黄金测试到测试驱动开发](http://blog.codinglabs.org/articles/test-best-practices.html)
+- [谷歌测试官方教程](https://developers.google.com/edu/testing/overview)

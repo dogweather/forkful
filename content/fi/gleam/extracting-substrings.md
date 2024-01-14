@@ -1,41 +1,42 @@
 ---
-title:                "Gleam: Alimerkkijonojen erottaminen"
+title:                "Gleam: Tiedonpätkien eristäminen"
+simple_title:         "Tiedonpätkien eristäminen"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi joku haluaisi käyttää substringsin erottelua?
+## Miksi
 
-Joskus tarvitset vain tietyn osan merkkijonosta, ei koko merkkijonoa. Substringsin erottelu voi auttaa sinua saamaan tarvitsemasi osan.
+Substringien erotuksen tekeminen on tärkeää, kun halutaan pilkkoa merkkijonoja pienempiin osiin ja käsitellä niitä erikseen. Tämä voi olla hyödyllistä esimerkiksi tietokannassa tai käyttäjän syöttämien tietojen käsittelyssä. Gleamin substring-toiminto tarjoaa tehokkaan ja helpon tavan saavuttaa tämä tavoite.
 
-## Miten: Koodiesimerkkejä ja tulosteita "```Gleam ... ```" koodilohkojen sisällä.
+## Kuinka tehdä
 
-Esim. haluamme erottaa merkkijonon "Tämä on esimerkki" substringssiin "Tämä" ja "esimerkki":
-```
-Gleam glee = "Tämä on esimerkki"
-file1 = String.substring(glee, 0, 4)
-file2 = String.substring(glee, 8, 7)
+Gleam tarjoaa kätevän ```substring```-funktion, joka ottaa parametreiksi halutun merkkijonon, aloitusindeksin ja lopetusindeksin. Esimerkiksi jos halutaan erotella sana "Hei" lauseesta "Hei, mitä kuuluu?", voitaisiin käyttää seuraavaa koodia:
 
-IO.println(file1)
-IO.println(file2)
-```
-Tuloste:
-```
-"Tämä"
-"esimerkki"
+```Gleam
+sana = "Hei, mitä kuuluu?"
+substring(sana, 0, 3)
 ```
 
-## Syvällisempi sukellus: Lisätietoja substringsin erottelusta.
+Tämä tulostaisi ```"Hei"```. Voit myös käyttää negatiivisia indeksejä, jolloin nollaa vastaava indeksi kuvailee merkkijonon loppua. Esimerkiksi:
 
-Substringseilla on monia käyttötarkoituksia, kuten esimerkiksi tiedon tallentaminen tietyllä tavalla tai halutun tiedon hakeminen erilaisista tiedostoista. Korkean tason kielet kuten Gleam tekevät substringsien erottelusta helppoa ja tehokasta.
+```Gleam
+sana = "Tämä on testi"
+substring(sana, -5, -1)
+```
 
-## Katso myös:
+Tulostaisi ```"test"```. Näillä muutoksilla voit räätälöidä tulevan substringisi juuri haluamasi pituiseksi.
 
-- Gleam Dokumentaatio: https://gleam.run/documentation/
-- Ohjelmoinnin perusteet: https://ohjelmointitiede.fi/
-- Koodiesimerkit substringsien erottelusta: https://gist.github.com/
+## Syväsukellus
 
-Kiitos lukemisesta ja onnea substringsien erottelun kokeiluun!
+Gleamilla on myös muita hyödyllisiä substring-operaattoreita, kuten esimerkiksi ```contains```, joka tarkistaa esiintyykö annettu merkkijono toisessa annetussa merkkijonossa, tai jopa ```split```, joka pilkkoo merkkijonon halutun kohdan perusteella. Näitä ja muita Gleamin tarjoamia toimintoja kannattaa tutkia lisää, sillä ne voivat olla erittäin hyödyllisiä substringien käsittelyssä.
+
+## Katso myös
+
+- [Gleam ohjelmointikieli](https://gleam.run/)
+- [Gleam dokumentaatio](https://gleam.run/documentation/)
+- [Gleam tekstinkäsittelytoiminnot](https://gleam.run/documentation/stdlib/string/)

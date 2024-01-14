@@ -1,45 +1,40 @@
 ---
-title:                "Bash: 표준 에러 출력하기"
+title:                "Bash: 표준 오류에 쓰는 방법"
+simple_title:         "표준 오류에 쓰는 방법"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-이 글을 쓰는 이유는 무엇일까요? "표준 오류"에 대해 직접적으로 쓸 필요가 있는 이유는 무엇이 있을까요? 일반적인 경우에는 애플리케이션의 실행 과정에서 오류가 발생할 수 있습니다. 이 오류를 적절히 처리하지 않으면 사용자는 애플리케이션에 대한 정보를 얻을 수 없습니다. 따라서 오류 메시지를 출력하는 것은 매우 중요합니다.
+# 왜 Standard Error를 사용하는가?
 
-## 어떻게
-이제 "표준 오류"에 대해 어떻게 쓰는지 살펴보겠습니다. 우선, 오류를 출력하기 위해 "데이터 스트림 리디렉션"을 사용해야 합니다. 이를 통해 출력되는 메시지가 화면이 아닌 파일로 전송될 수 있습니다. 예를 들어, 다음과 같이 사용할 수 있습니다:
+프로그래밍에서 오류는 피할 수 없는 부분입니다. 때로는 예기치 못한 동작이 발생하거나 프로그램이 중단되는 경우가 있습니다. 이러한 오류를 디버깅하고 발견하기 위해서는 우리는 적절한 방법으로 오류 메시지를 출력해야 합니다. 여기서 Standard Error가 필요한데, 이것은 표준 출력(Standard Output)과는 다르게 프로그램의 오류 메시지를 출력하는 채널입니다. 즉, Standard Error를 사용하면 오류 메시지를 더 효과적으로 디버깅할 수 있습니다.
+
+# Standard Error 사용하는 방법
+
+Bash를 사용해서 Standard Error를 출력하는 방법은 매우 간단합니다. 우선, `>>` 기호를 사용하여 오류 메시지를 출력할 파일을 지정합니다. 다음은 오류 메시지를 출력하는 예시 코드입니다.
+
 ```Bash
-./my_app 2> error_log.txt
+echo "이것은 오류 메시지입니다." >> error.log
 ```
-위의 코드는 "my_app" 애플리케이션의 실행 결과를 "error_log.txt" 파일에 저장합니다. 만약 오류가 발생하면, 해당 오류 메시지가 "error_log.txt" 파일에 출력됩니다.
 
-## 깊이 들어가기
-이제 더 깊이 들어가보겠습니다. 표준 오류를 출력하는 가장 일반적인 방법은 "echo"명령어를 사용하는 것입니다. 예를 들어,
+위 코드를 실행하면 "이것은 오류 메시지입니다."라는 문자열이 `error.log`라는 파일에 새로 추가됩니다.
+
+# 더 깊이 들어가기
+
+Bash에서 Standard Error를 출력하는 가장 일반적인 방법은 `2>` 기호를 사용하는 것입니다. 이 기호는 우리가 오류 메시지를 출력할 파일을 지정하는 것이 아니라, 오류 메시지 자체를 지정하는 것입니다. 즉, 다음과 같이 사용됩니다.
+
 ```Bash
-echo "An error has occurred" 1>&2
+echo "이것은 오류 메시지입니다." 2> error.log
 ```
-위의 코드는 "echo" 명령어를 사용하여 "표준 오류"로 "An error has occurred"라는 메시지를 출력합니다. 우리는 "1>&2"라는 리디렉션 연산자를 사용하여 메시지를 표준 오류로 전송합니다.
 
-또 다른 유용한 방법은 "stderr" 명령어를 사용하는 것입니다. "stderr" 명령어는 오류 메시지를 출력할 때 사용할 수 있는 전역 변수입니다. 예를 들어,
-```Bash
-#!/bin/bash
-echo "This is a normal message"
-sleep 2
->&2 echo "An error has occurred"
-```
-위의 코드는 "이것은 일반적인 메시지입니다"라는 메시지를 출력한 다음, 2초 후에 "stderr" 명령어를 사용하여 "An error has occurred"라는 메시지를 표준 오류로 출력합니다.
+이 예제에서는 오류 메시지를 직접 `error.log` 파일에 출력합니다. 이외에도 Bash에서는 오류 메시지를 별도의 파일에 저장하는 방법 외에도 다양한 방법으로 Standard Error를 활용할 수 있습니다. 더 많은 정보는 Bash 공식 문서나 인터넷 자료를 참고하시기 바랍니다.
 
-## 참고
-마지막으로, 더 많은 정보를 원한다면 다음 링크들을 참고하시기 바랍니다.
-- [리디렉션 연산자에 대한 자세한 내용](https://ryanstutorials.net/linuxtutorial/piping.php)
-- [오류 처리에 대한 좋은 설명](https://www.baeldung.com/linux/bash-standard-error)
-- [stdout과 stderr에 대한 깊이있는 설명](https://guides.yooseunghui.net/programming/bash-shell-scripting/chapter-output.html)
+# 더 찾아보기
 
-## 참고 문서
-- [리디렉션 연산자에 대한 자세한 내용](https://ryanstutorials.net/linuxtutorial/piping.php)
-- [오류 처리에 대한 좋은 설명](https://www.baeldung.com/linux/bash-standard-error)
-- [stdout과 stderr에 대한 깊이있는 설명](https://guides.yooseunghui.net/programming/bash-shell-scripting/chapter-output.html)
+- [Bash 공식 문서](https://www.gnu.org/software/bash/manual/html_node/index.html)
+- [Bash 스크립트 튜토리얼 (번역)](https://wikidocs.net/book/587)
+- [Bash 생활백서 (번역)](https://devh.kr/3)

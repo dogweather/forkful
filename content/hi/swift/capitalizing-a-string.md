@@ -1,30 +1,46 @@
 ---
-title:                "Swift: स्ट्रिंग को कैपिटलाइज़ करना"
+title:                "Swift: स्ट्रिंग कैपिटलाइज करना"
+simple_title:         "स्ट्रिंग कैपिटलाइज करना"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
-यदि आप Swift में प्रोग्रामिंग करते हैं तो आपने शायद capitalizing या वक्रीकरण के बारे में सुना होगा। अगर आप आज भी इसके बारे में जानना चाहते हैं, तो यह लेख आपके लिए ही है।
+## Kyun:
+Kya aapne kabhi socha hai ki Swift mein strings ko capital letters mein convert karna kyon zaruri hai? Ye bahut sari coding languages mein common hai aur kaafi use hota hai. Iska kaaran hai ki capital letters padhne aur samajhne mein aasaan hote hain, aur kuch cases mein ye data ko sahi format mein present karna ke liye bhi zaruri ho sakta hai.
 
-## कैसे करें
-इसके लिए, हमें एक string को capitalize करने के लिए String वर्ग के एक विशेष तरीके या तकनीक का उपयोग करना होगा। इसके लिए हम ```Swift.uppercased()``` का उपयोग कर सकते हैं। इसका उपयोग निम्न तरह से किया जा सकता है:
+## Kaise Karein:
+Agar aapka string "hello world" hai, to aap use capital letters mein kaise convert kar sakte hain? Ye kaam asaan hai, bas kuch simple steps follow karein:
 
+1. Sabse pehle, apne string ko variable mein store karein. Jaise ki:
 ```Swift
-let str = "hello"
-print(str.uppercased())
-// Output: "HELLO"
+var myString = "hello world"
 ```
 
-पहले, हम उपरोक्त कोड के माध्यम से "str" नाम का एक string बनाते हैं। उसके बाद, हम ```uppercased()``` तकनीक का उपयोग करके इस string को capitalized करते हैं और अंत में हम उसको प्रिंट करते हैं।
+2. Ab ye string ko capital letters mein convert karne ke liye, `uppercased()` function ka use karein. Jaise ki:
+```Swift
+var myCapitalString = myString.uppercased()
+```
 
-## गहराई में
-Capitalizing string के बारे में और गहराई में जानने के लिए, आप हमारे द्वारा लिखित एक अन्य आलेख पढ़ सकते हैं जो आपको Swift में strings के साथ काम करने के बारे में विस्तृत जानकारी देगा।
+3. Aur agar aapko string mein sirf first letter ko capital karna hai, to `capitalized` function ka use karein. Jaise ki:
+```Swift
+var myTitleString = myString.capitalized
+```
 
-## देखें भी
-- [Strings Tutorial in Swift](https://www.raywenderlich.com/147162/swift-tutorial-part-1-expressions-variables-constants)
-- [Working with Strings in Swift](https://medium.com/@surabhisatamkari/working-with-strings-in-swift-431c6f788949)
-- [Capitalizing and Lowercasing Strings in Swift](https://swiftrocks.com/capitalizing-and-lowercasing-strings-in-swift.html)
+4. Ye steps follow karne ke baad, aapko apne console mein output ke tarah capital letters mein string dikhega:
+```
+HELLO WORLD
+Hello World
+```
+
+## Gehri Jaanch:
+Swift mein dhyan deni wali choti si baat hai ki, agar aap original string ko capital letters mein convert karte hain, to wo string mutable alter hojati hai. Yani, agar aap use baad mein uppercase or lowercase mein use karna chahte hain, to aapko original string ko save karna hoga. Isse bachne ke liye, aap `lowercased()` function ka use karke uppercase characters ko lowercase mein convert kar sakte hain aur use save kar sakte hain. Isi tarah aap `uppercased()` function ka use karke lowercase characters ko uppercase mein convert kar sakte hain.
+
+## Dekhein Bhi:
+Agar aapko aur bhi Swift programming se jude articles padhne hain, to neeche diye gaye links zaroor check karein:
+- [Strings in Swift](https://www.hackingwithswift.com/sixty/2/1/strings)
+- [Working with Strings in Swift 5](https://medium.com/better-programming/working-with-strings-in-swift-5-f93ba6cc8e2f)
+- [Understanding Mutability in Swift](https://www.iosapptemplates.com/blog/swift-programming/swift-mutability)

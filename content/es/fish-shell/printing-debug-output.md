@@ -1,60 +1,52 @@
 ---
-title:                "Fish Shell: Impresión de salida de depuración"
+title:                "Fish Shell: Imprimiendo la salida de depuración"
+simple_title:         "Imprimiendo la salida de depuración"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué: Imprimiendo salida de depuración
 
-Imprimir la salida de depuración es una herramienta valiosa en la programación, ya que nos permite ver el flujo de nuestro código y detectar posibles errores. Además, puede ayudarnos a comprender mejor cómo funciona nuestro programa y a resolver problemas más rápido.
+Imprimir la salida de depuración es una herramienta importante para los programadores que desean entender mejor lo que está sucediendo en el código. Puede ser útil ver los valores de variables o verificar si las condiciones de un bucle se están cumpliendo correctamente. Además, imprimir la salida de depuración también puede ayudar a detectar errores y solucionar problemas en el código.
 
-## Cómo hacerlo
+## Cómo: Ejemplos de código en Fish Shell
 
-Para imprimir la salida de depuración en Fish Shell, podemos utilizar el comando `echo`. Por ejemplo, si queremos imprimir el valor de una variable llamada `numero`, podemos escribir lo siguiente en nuestra terminal:
-
-```Fish Shell
-echo $numero
-```
-
-Esto imprimirá el valor actual de la variable `numero` en la terminal. También podemos agregar texto junto con la salida de depuración para hacerla más comprensible, por ejemplo:
-
-```Fish Shell
-echo "El valor de la variable numero es: $numero"
-```
-
-Esta línea de código imprimirá "El valor de la variable numero es: " seguido del valor actual de `numero`.
-
-## Profundizando
-
-Además del comando `echo`, también podemos utilizar otros métodos para imprimir la salida de depuración en Fish Shell. Uno de ellos es `printf`, que nos permite formatear la salida de una manera más precisa. Por ejemplo:
-
-```Fish Shell
-printf "La suma de %d y %d es: %d" 3 5 (math 3+5)
-```
-
-Esto imprimirá la siguiente salida:
+Para imprimir la salida de depuración en Fish Shell, se puede utilizar el comando `echo`. Por ejemplo, si queremos imprimir el valor de una variable `contador`, podemos hacer lo siguiente:
 
 ```
-La suma de 3 y 5 es: 8
+Fish Shell
+echo $contador
 ```
 
-También podemos utilizar el comando `debug` para imprimir la salida de depuración de manera más organizada y con colores para diferenciarla de otros mensajes en la terminal. Por ejemplo:
-
-```Fish Shell
-debug "El resultado de la operación es: %d" (math 5*3)
-```
-
-Esto imprimirá la siguiente salida con colores:
+Esto imprimirá el valor actual de la variable `contador` en la terminal. También es posible imprimir mensajes personalizados junto con la salida de depuración, como se muestra en el siguiente ejemplo:
 
 ```
-[debug] El resultado de la operación es: 15
+Fish Shell
+set variable "Hola"
+echo "El valor actual de la variable es: $variable"
 ```
+
+Esto imprimirá en la terminal: `El valor actual de la variable es: Hola`.
+
+## Profundizando: Más información sobre la impresión de la salida de depuración
+
+Además de utilizar el comando `echo` para imprimir la salida de depuración, también se puede utilizar la variable `status` para imprimir información de estado útil, como el código de salida de un comando. Por ejemplo:
+
+```
+Fish Shell
+ls /carpeta_inexistente
+echo $status
+```
+
+Esto imprimirá en la terminal: `1` ya que el comando `ls` fallará al no poder encontrar la carpeta especificada y el código de salida por defecto para un error es `1`.
+
+Otro punto importante a tener en cuenta es que es posible deshabilitar la impresión de salida de depuración con el comando `debug off` y volver a habilitarla con `debug on`.
 
 ## Ver también
-
 - [Documentación de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Cómo imprimir la salida de depuración en Bash](https://www.ionos.com/community/server-cloud-infrastructure/linux/how-to-use-the-echo-command-in-linux/)
-- [5 métodos para imprimir la salida de depuración en diferentes lenguajes de programación](https://www.digitalocean.com/community/tutorials/5-common-debug-methods-in-almost-any-programming-language)
+- [Tutorial de Fish Shell](https://fishshell.com/docs/2.0/tutorial.html)
+- [Comandos útiles de Fish Shell](https://fishshell.com/docs/current/commands.html)

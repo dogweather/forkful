@@ -1,58 +1,53 @@
 ---
 title:                "Bash: Obtendo a data atual"
+simple_title:         "Obtendo a data atual"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar o comando de data em Bash?
+## Por que Programar em Bash?
 
-O Bash é uma linguagem de script amplamente utilizada em sistemas operacionais Unix e Linux. Uma das funcionalidades mais úteis é o comando de data, que permite que o usuário obtenha a data e a hora atuais do sistema. Isso pode ser útil em vários cenários, como criar logs de eventos, agendar tarefas ou até mesmo para exibir a data atual em um prompt de comando personalizado.
+Programar em Bash pode ser uma tarefa intimidadora para alguns, mas é uma habilidade muito útil para qualquer programador. Uma das coisas mais comuns que você pode querer fazer é obter a data atual em seus scripts. Neste post, vamos aprender a fazer isso em Bash.
 
-## Como usar o comando de data em Bash
+## Como Obter a Data Atual em Bash
 
-Para obter a data e a hora atuais em Bash, basta usar o comando "date":
-
-```Bash
-date
-```
-
-Isso irá imprimir a data e a hora atuais no formato padrão do sistema.
-
-```
-Wed Jun 23 12:47:23 CEST 2021
-```
-
-Você também pode formatar a saída da data de acordo com suas necessidades. Por exemplo, para obter apenas a data no formato "dd/mm/aaaa", você pode usar o seguinte comando:
+Para começar, você precisa usar o comando `date` seguido de um formato específico para obter a data atual. Abaixo está um exemplo básico:
 
 ```Bash
-date "+%d/%m/%Y"
+date +%Y-%m-%d
 ```
 
-Isso irá imprimir apenas a data atual no formato especificado.
+Este comando irá retornar a data atual no formato AAAA-MM-DD, por exemplo: 2021-01-31.
 
-```
-23/06/2021
-```
-
-Existem várias opções de formatação disponíveis para personalizar a saída do comando de data. Você pode verificar a documentação oficial do Bash para obter uma lista completa dessas opções.
-
-## Mergulho profundo no comando de data em Bash
-
-Por trás dos bastidores, o comando "date" em Bash usa a função "strftime" para formatar a data de acordo com as opções especificadas. A função "strftime" é uma função C que permite formatar datas e horas em uma variedade de formas. Ao usar o comando "date" em Bash, você está efetivamente usando essa função para obter a data atual.
-
-Além disso, o comando de data também pode ser usado para definir a data e hora do sistema. Isso pode ser feito especificando a data e hora desejadas no seguinte formato: "MMDDhhmmYYYY.ss". Por exemplo, para definir a data como 23 de junho de 2021 às 12:30, você pode usar o seguinte comando:
+Você também pode adicionar outros formatos para obter informações como a hora, dia da semana, fuso horário, entre outros. Aqui estão alguns exemplos adicionais:
 
 ```Bash
-date 062312302021.00
+date +%H:%M:%S # retorna a hora atual no formato HH:MM:SS
+date +%A # retorna o dia da semana por extenso (por exemplo: Domingo)
+date +"%Y-%m-%d %H:%M:%S" # combina múltiplos formatos em uma única saída (por exemplo: 2021-01-31 18:30:15)
 ```
 
-Isso irá alterar a data atual para a que você especificou.
+## Mergulho Profundo: Obtendo a Data Atual em Detalhes
 
-## Veja também
+Agora que você já sabe como obter a data atual em Bash, vamos dar um mergulho mais profundo para entender melhor como isso funciona.
 
-- Documentação oficial do Bash: https://www.gnu.org/software/bash/
-- Documentação oficial do comando date: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- Função strftime na linguagem C: https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm
+Quando você executa o comando `date` sem nenhum formato, ele irá retornar a data e hora completa no formato padrão da sua máquina. Porém, quando você adiciona os formatos (representados pelo caractere `%`), o comando irá interpretá-los e retornar apenas as informações que você especificou.
+
+Além disso, você também pode usar a opção `-d` para obter a data de um dia específico. Por exemplo:
+
+```Bash
+date -d "3 days ago" +%Y-%m-%d # retorna a data de 3 dias atrás no formato AAAA-MM-DD
+date -d "next Wednesday" +"%A, %d de %B de %Y" # retorna o dia da semana, dia e mês por extenso (por exemplo: Quarta-feira, 03 de Fevereiro de 2021)
+```
+
+## Veja Também
+
+- [Site Oficial do Bash](https://www.gnu.org/software/bash/)
+- [Documentação do Comando Date](https://www.gnu.org/software/coreutils/date)
+- [Tutorial de Bash para Iniciantes](https://www.hostinger.com.br/tutoriais/comando-linux-bash-para-iniciantes)
+
+Agora que você sabe como obter a data atual em Bash, use essa habilidade para criar scripts poderosos e automatizar suas tarefas de forma eficiente. Não tenha medo de experimentar diferentes formatos e opções para obter informações específicas de data e hora. Continue aprendendo e aprimorando suas habilidades em Bash!

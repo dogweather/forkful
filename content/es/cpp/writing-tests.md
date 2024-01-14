@@ -1,56 +1,48 @@
 ---
-title:                "C++: Escribir pruebas"
+title:                "C++: Escribiendo pruebas"
+simple_title:         "Escribiendo pruebas"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué escribir pruebas en C++
+# ¿Por qué escribir pruebas en C++ es importante?
 
-Escribir pruebas en C++ puede parecer una tarea tediosa y que consume mucho tiempo, pero en realidad, es una práctica muy importante en el desarrollo de software profesional. Las pruebas te permiten detectar errores en tu código de forma anticipada, lo que ahorra tiempo y esfuerzo en el futuro.
+Escribir pruebas para su código en C++ puede parecer una tarea tediosa y redundante, pero en realidad es una parte crucial del proceso de desarrollo. Al implementar pruebas en su código, puede detectar y solucionar errores antes de que se conviertan en problemas más grandes en su aplicación. En resumen, escribir pruebas es una forma eficaz de garantizar que su código funcione correctamente y de forma consistente.
 
 ## Cómo escribir pruebas en C++
 
-Para escribir pruebas en C++, necesitarás utilizar un framework de pruebas, como Google Test o Catch2. Estos frameworks te proporcionan herramientas y estructuras para crear y ejecutar pruebas de forma eficiente.
-
-Veamos un ejemplo sencillo para ilustrar cómo escribir pruebas en C++. Supongamos que tenemos una función que suma dos números enteros:
+Para escribir pruebas en C++, hay varios marcos de trabajo disponibles, como Google Test y Boost Test. A continuación, se presenta un ejemplo de cómo escribir una simple prueba en C++ utilizando la biblioteca Google Test:
 
 ```C++
-int sum(int a, int b) {
-    return a + b;
+TEST(AdditionTest, SimpleAddition) {
+  // Arrange - se preparan los datos necesarios para la prueba
+  int num1 = 5;
+  int num2 = 10;
+
+  // Act - se llama a la función que se quiere probar
+  int result = AddNumbers(num1, num2);
+
+  // Assert - se verifican los resultados esperados
+  EXPECT_EQ(result, 15);
 }
 ```
 
-Para probar esta función, necesitamos asegurarnos de que el resultado sea el esperado para diferentes entradas. En nuestro caso, esperamos que la suma de 2 y 3 sea 5. Usando Google Test, podemos escribir una prueba simple de la siguiente manera:
+En el ejemplo anterior, primero se preparan los datos necesarios para la prueba en la sección "Arrange". Luego, en la sección "Act", se llama a la función que se quiere probar. Finalmente, en la sección "Assert", se verifica si el resultado de la función es el esperado utilizando la macro EXPECT_EQ de Google Test.
 
-```C++
-TEST(SumTest, SumPositiveNumbers) {
-    // Arrange
-    int a = 2;
-    int b = 3;
+Una vez que se han escrito todas las pruebas necesarias, se pueden ejecutar utilizando la herramienta de prueba proporcionada por el marco de trabajo elegido. Esto mostrará los resultados de cada prueba y si han pasado o fallado.
 
-    // Act
-    int result = sum(a, b);
+## Profundizando en la escritura de pruebas
 
-    // Assert
-    EXPECT_EQ(result, 5);
-}
-```
+Además de las pruebas unitarias, hay otros tipos de pruebas que se pueden implementar en su código en C++. Algunos ejemplos incluyen pruebas de integración, pruebas de carga y pruebas de aceptación. Cada tipo de prueba tiene su propósito y pueden ser utilizadas en conjunto para garantizar que su código funcione correctamente en todas las situaciones.
 
-En la sección *Arrange*, establecemos los valores de entrada para nuestra función. En *Act*, ejecutamos la función y guardamos el resultado en una variable. Finalmente, en *Assert* comprobamos que el resultado es el esperado utilizando una macro del framework.
+También es importante tener en cuenta que las pruebas deben escribirse de forma independiente y no deben depender de otras pruebas. Esto asegura que cada prueba sea autónoma y no afecte los resultados de otras pruebas.
 
-## Profundizando en la escritura de pruebas en C++
+# Ver también
 
-Para escribir buenas pruebas en C++, es importante tener en cuenta algunas cosas. Primero, asegúrate de cubrir diferentes casos de prueba, incluyendo entradas válidas e inválidas y valores límite. Además, es importante escribir pruebas independientes y evitar acoplarlas entre sí.
-
-También es recomendable utilizar mocks y stubs para simular componentes externos y probar tu código de forma aislada. Por último, no te olvides de realizar pruebas de rendimiento y de estres para garantizar que tu código es eficiente y robusto.
-
-## Ver también
-
-- [Documentación de Google Test](https://github.com/google/googletest)
-- [Tutorial de Catch2](https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md)
-- [Artículo sobre la importancia de las pruebas en el desarrollo de software](https://blog.hartleybrody.com/debug-software/)
-
-¡Esperamos que este artículo te haya sido útil para empezar a escribir pruebas en C++! Recuerda que, aunque pueda parecer un poco abrumador al principio, la práctica y la familiarización con los frameworks de pruebas te ayudarán a escribir pruebas de forma más eficiente y efectiva. Tu código y tu equipo te lo agradecerán. ¡Feliz prueba y error!
+- [Introducción a las pruebas de software en C++](https://www.techopedia.com/2/29653/software/programming/introduction-to-software-testing-in-c)
+- [Guía de Google Test](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)
+- [Introducción a las pruebas de software](https://www.pluralsight.com/blog/software-development/software-testing-basics)

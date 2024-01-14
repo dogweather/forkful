@@ -1,58 +1,43 @@
 ---
-title:                "Kotlin: Das Finden der Länge eines Strings."
+title:                "Kotlin: Die Länge eines Strings finden"
+simple_title:         "Die Länge eines Strings finden"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Die Länge einer Zeichenfolge zu finden, ist eine häufige Aufgabe beim Programmieren. Es ist wichtig, die Länge einer Zeichenfolge zu kennen, um effizient mit ihr arbeiten zu können. In diesem Artikel werden wir uns ansehen, wie man die Länge einer Zeichenfolge in Kotlin finden kann.
+Das Finden der Länge eines Strings ist ein häufig verwendeter Prozess bei der Entwicklung von Software. Es ermöglicht Programmierern, die Länge eines Textes oder einer Kombination von Zeichen zu bestimmen, um sie dann für verschiedene Zwecke zu nutzen.
 
-## Wie geht's?
+# Wie
 
-Um die Länge einer Zeichenfolge in Kotlin zu finden, können wir die ```length```-Funktion verwenden. Diese Funktion gibt uns die Anzahl der Zeichen in der Zeichenfolge zurück. Schauen wir uns dazu ein Beispiel an:
-
-```Kotlin
-val string = "Hallo Welt"
-println(string.length)
-```
-
-Das obige Beispiel gibt die Zahl 10 aus, da die Zeichenfolge "Hallo Welt" 10 Zeichen lang ist.
-
-Eine weitere Möglichkeit, die Länge einer Zeichenfolge zu finden, ist die Verwendung der ```count```-Funktion. Diese Funktion zählt die Anzahl der Elemente in einer Kollektion, was auch für Zeichenfolgen gilt. Hier ist ein Beispiel:
+In Kotlin ist das Finden der Länge eines Strings sehr einfach. Hier ist ein Beispiel, wie man dies in einer Funktion nutzen kann:
 
 ```Kotlin
-val string = "Hey"
-println(string.count())
+fun main() {
+    val text = "Guten Tag"
+    val length = text.length
+    
+    println("Die Länge des Strings ist: $length")
+}
+
+// Output: Die Länge des Strings ist: 9
 ```
 
-Dieses Beispiel gibt die Zahl 3 aus, da die Zeichenfolge "Hey" aus 3 Buchstaben besteht.
+In diesem Beispiel haben wir ein String-Objekt mit dem Wert "Guten Tag" erstellt. Dann haben wir die Länge dieses Strings mithilfe der `length`-Funktion ermittelt und in einer Variable gespeichert. Schließlich geben wir die Länge über die `println`-Funktion aus.
 
-## Tiefentauchen
+# Deep Dive
 
-In Kotlin gibt es verschiedene Möglichkeiten, die Länge einer Zeichenfolge zu finden. Neben den oben genannten Funktionen gibt es auch noch die Funktion ```size```, die uns die Größe einer Zeichenfolge zurückgibt. Diese Funktion ist besonders nützlich, wenn wir mit Arrays oder anderen Datenstrukturen arbeiten. Hier ein Beispiel:
+Um das Konzept des String-Längen-Findens besser zu verstehen, ist es hilfreich zu wissen, dass ein String in Kotlin im Wesentlichen eine Kette von einzelnen Zeichen darstellt. Die Funktion `length` gibt einfach die Anzahl der Zeichen in diesem String zurück.
 
-```Kotlin
-val string = "Hallo"
-println(string.size)
-```
+Eine wichtige Sache zu beachten ist, dass die `length`-Funktion nicht nur bei normalen Strings, sondern auch bei anderen Kotlin-Datentypen wie beispielsweise Arrays verwendet werden kann.
 
-Dieses Beispiel gibt die Zahl 5 aus, da die Größe der Zeichenfolge "Hallo" 5 ist.
+# Siehe auch
 
-Zusätzlich gibt es auch noch die Funktion ```length()```, die das gleiche wie ```length``` tut. Sie kann jedoch auf Java-basierten Datenstrukturen verwendet werden. Hier ein Beispiel:
-
-```Kotlin
-val list = arrayListOf("Eins", "Zwei", "Drei")
-println(list[2].length())
-```
-
-Dieses Beispiel gibt die Zahl 4 aus, da das Wort "Drei" 4 Zeichen hat.
-
-## Siehe auch
-
-- Kotlin offizielle Dokumentation: https://kotlinlang.org/docs/reference/basic-types.html#strings
-- Erklärvideo zur Länge von Zeichenfolgen in Kotlin: https://www.youtube.com/watch?v=5SulWAsf0Aw
-- Weitere nützliche Kotlin-Programmiertricks: https://blog.mindorks.com/5-useful-kotlin-tricks-for-android-development
+- Offizielle Dokumentation zu Strings und deren Größe in Kotlin: https://kotlinlang.org/docs/reference/basic-types.html#strings
+- Einführung in Kotlin: https://developer.android.com/kotlin/learn
+- Weitere nützliche Funktionen bei der Arbeit mit Strings in Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/

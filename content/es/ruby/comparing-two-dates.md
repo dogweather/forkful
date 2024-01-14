@@ -1,69 +1,52 @@
 ---
 title:                "Ruby: Comparando dos fechas"
+simple_title:         "Comparando dos fechas"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Si bien puede parecer una tarea simple, comparar dos fechas en Ruby es una habilidad útil en la programación. Puede ser útil para verificar si una fecha está dentro de un cierto rango o para ordenar una lista de fechas. Aprender cómo comparar fechas en Ruby puede ahorrar tiempo y mejorar tu código.
+
+Comparar fechas en un programa es una tarea común que puede ayudar a determinar la duración de un evento o calcular el tiempo transcurrido entre dos fechas específicas.
 
 ## Cómo hacerlo
-Para comparar dos fechas en Ruby, utilizaremos el método `.to_date`, que convierte un objeto de fecha y hora en un objeto de fecha. Luego, podemos usar los operadores de comparación como `<`, `>` y `==` para comparar las dos fechas. Por ejemplo, si queremos verificar si una fecha está antes de otra, podemos usar el siguiente código:
+
+Usando Ruby, podemos utilizar el método `compare` para comparar dos fechas y obtener un resultado numérico basado en la diferencia entre ellas. Veamos un ejemplo de cómo hacerlo:
 
 ```Ruby
-fecha1 = "01/01/2020"
-fecha2 = "01/01/2021"
+fecha_1 = Time.new(2021, 9, 1)
+fecha_2 = Time.new(2021, 8, 1)
 
-if fecha1.to_date < fecha2.to_date
-  puts "La fecha 1 es anterior a la fecha 2"
+resultado = fecha_1.compare(fecha_2)
+puts resultado
+```
+
+Este código imprimirá "1" ya que la fecha 1 es más reciente que la fecha 2. Además, también podemos utilizar el método `between?` para determinar si una fecha se encuentra entre otras dos fechas. Veamos otro ejemplo:
+
+```Ruby
+fecha = Time.now
+fecha_inicio = Time.new(2021, 1, 1)
+fecha_fin = Time.new(2021, 12, 31)
+
+if fecha.between?(fecha_inicio, fecha_fin)
+  puts "La fecha actual se encuentra entre las fechas elegidas"
 end
 ```
 
-La salida en la consola sería: `La fecha 1 es anterior a la fecha 2`.
-
-También podemos comparar fechas usando el método `.compare_to` que devuelve un número positivo si la fecha es más reciente, un número negativo si es más temprana y 0 si son iguales. Aquí está un ejemplo que muestra esto en acción:
-
-```Ruby
-fecha1 = "01/01/2020"
-fecha2 = "01/01/2021"
-
-comparacion = fecha1.compare_to(fecha2)
-
-if comparacion > 0
-  puts "La fecha 1 es más reciente que la fecha 2"
-elsif comparacion < 0
-  puts "La fecha 1 es más temprana que la fecha 2"
-else
-  puts "Ambas fechas son iguales"
-end
-```
-
-La salida sería: `La fecha 1 es más temprana que la fecha 2`.
+Este código imprimirá el mensaje si la fecha actual está entre el 1 de enero y el 31 de diciembre del año actual.
 
 ## Profundizando
-Puede haber casos en los que solo queremos comparar ciertos aspectos de una fecha, como el mes o el año. Para eso, podemos usar el método `.strftime` para formatear la fecha en una cadena y luego comparar esas cadenas. Por ejemplo, si solo queremos comparar el mes y el año, podemos hacerlo de la siguiente manera:
 
-```Ruby
-fecha1 = "01/01/2020"
-fecha2 = "01/01/2021"
+Al comparar fechas en Ruby, es importante tener en cuenta que los resultados se basan en la diferencia de tiempo en segundos. Por lo tanto, es importante estar atentos a las zonas horarias y ajustarlas adecuadamente para obtener resultados precisos. Además, Ruby también ofrece otros métodos para comparar fechas, como `eql?` y `==` que pueden ser útiles en diferentes situaciones.
 
-if fecha1.strftime("%m-%Y") == fecha2.strftime("%m-%Y")
-  puts "Ambas fechas tienen el mismo mes y año"
-end
-```
-
-La salida sería: `Ambas fechas tienen el mismo mes y año`.
-
-Otra cosa a tener en cuenta al comparar fechas es que si se utiliza el operador `==` en objetos de fecha y hora, devolverá `false` incluso si representan la misma fecha y hora exactos. Para evitar esto, podemos utilizar el método `.to_i` que devuelve un número entero que representa el número de segundos desde la época de Unix (1 de enero de 1970). Luego, podemos comparar estos números enteros para determinar si las fechas son iguales.
-
-¡Y eso es todo! Ahora sabes cómo comparar fechas en Ruby y tener más control sobre tu código.
+Por otro lado, es importante tener en cuenta que Ruby también nos permite comparar fechas en formato string utilizando el método `Date.parse`. Esto puede ser útil para comparar fechas ingresadas por el usuario o desde un archivo externo.
 
 ## Ver también
-- [Documentación de Ruby: DateTime](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html)
-- [Comparación de fechas en Ruby: explicada](https://medium.com/@kyleeecodes/ruby-date-comparison-explained-fb9428858e6d)
-- [Diferencia entre dos fechas en Ruby](https://gist.github.com/jeremyw/993506)
 
-¡Feliz programación! 🚀
+- [Documentación de Ruby para el método "compare"](https://ruby-doc.org/core-3.0.1/Time.html#method-i-compare)
+- [Documentación de Ruby para el método "between?"](https://ruby-doc.org/core-3.0.1/Time.html#method-i-between-3F)
+- [Artículo sobre cómo comparar fechas en Ruby](https://www.geeksforgeeks.org/how-to-compare-dates-in-ruby/)

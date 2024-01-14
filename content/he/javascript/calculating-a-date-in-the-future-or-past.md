@@ -1,43 +1,46 @@
 ---
 title:                "Javascript: חישוב תאריך בעתיד או בעבר"
+simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## מדוע
+##למה
 
-למה לזהות זמן בעתיד או בעבר באמצעות תכנות ב-Javascript? אחד הסיבות העיקריות לכך הוא לתכנת תאריכי הפעילות או אירועים עתידיים לקבוע מדויק מתי הם קורים.
+למה ישנם ימים שבהם אנו רוצים לחשב תאריך מסוים בעתיד או בעבר? כי פעמים רבות אנו צריכים לייעץ עם התאריך המדוייק כדי לתכנן את החיים שלנו ולקבוע את המועדים החשובים עבורנו. בעזרת תכנות ב-Javascript, אנו יכולים לכתוב קוד שיעזור לנו לחשב תאריך בעתיד או בעבר.
 
-## איך לעשות
+##כיצד
 
-על מנת לחשב תאריך בעבר או בעתיד, נשתמש באובייקט המובנה של Javascript הנקרא `Date`. כדי ליצור אובייקט תאריך חדש, נשתמש בפונקציית הבנאי `new Date()` ונעביר לה את הפרמטרים המתאימים לתאריך הרצוי. הנה כמה דוגמאות של קוד ופלט:
-
-```Javascript
-// קביעת תאריך של יום שלישי הבא
-const nextTuesday = new Date('2021-11-30');
-console.log(nextTuesday); // Output: Tue Nov 30 2021 00:00:00 GMT+0200 (Eastern European Standard Time)
-
-// קביעת תאריך של שנה לפני היום הנוכחי
-const lastYear = new Date(2020, 10, 23);
-console.log(lastYear); // Output: Mon Nov 23 2020 00:00:00 GMT+0200 (Eastern European Standard Time)
-```
-
-ניתן גם להשתמש בפונקציות של האובייקט `Date`, כגון `getDate()`, `getMonth()`, ו-`getFullYear()`, כדי לגשת למידע ספציפי על תאריך מסוים. לדוגמה, ניתן להשתמש בפונקציה `getMonth()` כדי לקבל את שם החודש עבור תאריך מסוים. הנה דוגמא נוספת:
+תחילה, עלינו לציין את התאריך הבסיסי של תאריך המבוקש בעתיד או בעבר. לדוגמה, אם אנחנו רוצים לחשב את התאריך של אחרי 100 ימים מהתאריך הנוכחי, נתחיל עם התאריך הנוכחי ונוסיף אליו 100 ימים. בקוד הבא, אנחנו משתמשים בפונקציית Date של Javascript כדי לייצר את התאריך הנוכחי:
 
 ```Javascript
-const date = new Date('2021-12-25');
-
-// השגת שם החודש והיום בחודש
-console.log(date.getMonth()); // Output: 11 (המיקום של חודש דצמבר במערך החודשים ב-Javascript)
-console.log(date.getDate()); // Output: 25
-
-// השתמשות בתאריך לקבלת פלט נוח יותר
-console.log(`${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`); // Output: 25/12/2021
+let today = new Date();
 ```
 
-## Deep Dive
+לאחר מכן, עלינו להוסיף את מספר הימים הנדרשים לתאריך המבוקש. במקרה שלנו, נרצה לחשב את התאריך של אחרי 100 ימים, לכן נוסיף 100 לתאריך הנוכחי:
 
-אובייקט התאריך ב-Javascript מאפשר לנו לכלול בתוכו מידע נרחב על תאריך מסוים, כגון יום בשבוע, יום בחודש, שעה, ועוד. בנוסף, ניתן להשתמש בפונקציות כמו `setDate()` ו-`setFullYear()`
+```Javascript
+let futureDate = today.getDate() + 100;
+```
+
+כעת, אנו יכולים להציג את התאריך המבוקש באמצעות פונקציות נוספות של Date, כגון פונקציית getMonth ופונקציית getFullYear. הקוד המלא מאחד את כל הפונקציות ומציג את התאריך המבוקש בפורמט ידידותי:
+
+```Javascript
+let futureDate = today.getDate() + 100;
+let futureMonth = today.getMonth();
+let futureYear = today.getFullYear();
+
+console.log("התאריך של אחרי 100 ימים הוא " + futureMonth + "/" + futureDate + "/" + futureYear);
+```
+
+הפלט של הקוד הזה יהיה:
+
+`התאריך של אחרי 100 ימים הוא 5/20/2021`
+
+##להעמיק
+
+בנוסף לחישוב תאריך בעתיד, ניתן גם לחשב תאריך בעבר באותו הדרך. כל מה שצריך לעשות הוא להוסיף את

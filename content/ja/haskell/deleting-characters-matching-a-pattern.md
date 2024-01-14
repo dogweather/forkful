@@ -1,47 +1,55 @@
 ---
-title:                "Haskell: パターンにマッチする文字の削除"
+title:                "Haskell: パターンにマッチする文字を削除する"
+simple_title:         "パターンにマッチする文字を削除する"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-『なぜ』
+# なぜ
 
-最近、私たちはHaskellのプログラムで文字パターンを削除することがよくあります。その理由は、ある文字や文字列を処理する際に、そのパターンに合致する文字は不要であり、邪魔になるからです。例えば、特定の言語の文章から数字を削除する際には、数字のパターンに合致する文字を除外した方が処理が簡単になります。
+あるパターンに一致する文字を削除することについて考える方がいると思います。それは、文字列から特定の文字を除外したい場合や、文字列から特定のパターンを除外したい場合に役立ちます。
 
-## 方法
+# 方法
 
-Haskellでは、文字パターンを削除する方法はとても簡単です。まずは、`Data.Text`モジュールを読み込みます。
+まず、「Data.Text」というHaskellのモジュールを読み込む必要があります。次に、文字列の変数を作成し、`deleteAll`関数を使用して、削除したい文字のパターンを指定します。
 
 ```Haskell
+import Data.Text (Text)
 import qualified Data.Text as T
-```
 
-その後、`Data.Text`モジュールの`replace`関数を使って、指定したパターンに合致する文字を削除します。
+myString :: Text
+myString = "こんにちは、世界"
+
+deleteAll :: Char -> Text -> Text
+deleteAll char = T.filter (/= char)
+
+deleteAll 'ん' myString -- "こんにちは、世界"
+```
+上記の例では、文字列`"こんにちは、世界"`から文字`'ん'`を削除しました。同じ方法で、さまざまなパターンの文字を削除することができます。
+
+また、`deleteAll`関数を`Data.List`モジュールを使って以下のように定義することもできます。
 
 ```Haskell
-deletePattern :: T.Text -> T.Text
-deletePattern text = T.replace "パターン" "" text
+import Data.List (delete)
+
+deleteAll :: Eq a => a -> [a] -> [a]
+deleteAll = delete
 ```
 
-さらに、`Data.Text`モジュールの`strip`関数を使うことで、文字列の先頭や末尾にある指定したパターンを一括で削除することもできます。
+どちらの定義方法でも、同じ結果が得られます。
 
-```Haskell
-deletePatternEnd :: T.Text -> T.Text
-deletePatternEnd text = T.stripSuffix "パターン" text
-```
+# 深堀り
 
-これで、簡単に文字パターンを削除することができます。
+上記の例では、文字列を操作するために`Data.Text`と`Data.List`を使用しました。`Data.Text`は、`String`と比べてより効率的な文字列の表現を提供します。`Data.List`は、リストを操作するための便利な関数をたくさん提供しています。
 
-## 深い掘り下げ
+また、`deleteAll`関数を定義する際に使用した高階関数`(=)`は、プレディケートを引数にとり、与えられた引数と等しいものをフィルタリングする関数です。このように、Haskellでは高階関数を積極的に用いることができます。
 
-文字パターンの削除は、ユーザーインターフェースやデータの処理など、様々な場面で役立ちます。また、Haskellの強力な機能であるパターンマッチングを活用することで、より柔軟なパターン削除が可能になります。例えば、特定の文字列内の数字や記号を一括で削除するような処理が簡単に実装できます。
+# 関連記事
 
-## 参考リンク
-
-- [Haskell Data.Text Documentation](https://hackage.haskell.org/package/text/docs/Data-Text.html)
-- [Haskell Pattern Matching Tutorial](https://www.tutorialspoint.com/haskell/haskell_pattern_matching.htm)
-
-## 関連リンク
+- [Haskellの公式ドキュメント](https://www.haskell.org/documentation/)
+- [Haskell Wiki](https://wiki.haskell.org/)
+- [Real World Haskell](http://book.realworldhaskell.org/read/)

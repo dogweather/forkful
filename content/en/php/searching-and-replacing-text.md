@@ -1,52 +1,63 @@
 ---
 title:                "PHP recipe: Searching and replacing text"
+simple_title:         "Searching and replacing text"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Searching and replacing text is a common task in programming. It allows for efficient and accurate changes to be made to large amounts of text, without having to manually go through each line. In PHP, this can be done easily with the use of regular expressions.
+Searching and replacing text is a common task in programming, especially when working with large amounts of data. It can save time and effort by allowing you to make multiple changes at once, rather than manually editing each instance of the text.
 
 ## How To
-
-To start, we will use the `preg_replace()` function in PHP to search and replace text. Let's say we have a string that contains the phrase "Hello world!" and we want to replace the word "world" with "universe". Our code would look like this:
-
-```PHP
-$string = "Hello world!";
-$new_string = preg_replace("/world/", "universe", $string);
-echo $new_string;
-```
-
-The output of this code would be "Hello universe!", as expected. Let's break down the `preg_replace()` function and its parameters:
-
-- The first parameter is the regular expression pattern, surrounded by forward slashes (`/`). In this case, we are simply searching for the word "world".
-- The second parameter is the replacement text, in this case "universe".
-- The third parameter is the original string which we are performing the search and replace on.
-
-Regular expressions can also be used to perform more complex searches, such as searching for specific patterns or characters within a string. Let's look at an example of how to replace all numbers in a string with the letter "x":
+To search and replace text in PHP, we can use the `str_replace` function. This function takes three parameters: the text to search for, the text to replace it with, and the string to search within. Let's take a look at an example:
 
 ```PHP
-$string = "I have 3 cats and 2 dogs.";
-$new_string = preg_replace("/[0-9]/", "x", $string);
-echo $new_string;
+$text = "Hello World";
+$new_text = str_replace("World", "Universe", $text);
+echo $new_text;
 ```
+Output: Hello Universe
 
-The output of this code would be "I have x cats and x dogs.". Here, the regular expression pattern is set to match any number between 0-9, and replaces it with the letter "x".
+In this example, we searched for the word "World" within the string "Hello World" and replaced it with "Universe". The `str_replace` function then returned the new string with the text replaced.
+
+We can also use arrays as the first two parameters to make multiple replacements at once. Let's see how that works:
+
+```PHP
+$before = ["red", "green", "blue"];
+$after = ["orange", "purple", "yellow"];
+$text = "I love red, green, and blue.";
+$new_text = str_replace($before, $after, $text);
+echo $new_text;
+```
+Output: I love orange, purple, and yellow.
+
+In addition to using `str_replace`, we can also use regular expressions to search and replace text in PHP. This gives us more flexibility in what we can search for and what we can replace it with. Here's an example using `preg_replace`:
+
+```PHP
+$text = "My favorite numbers are 123 and 456.";
+$new_text = preg_replace("/[0-9]+/", "five", $text);
+echo $new_text;
+```
+Output: My favorite numbers are five and five.
+
+In this example, we used a regular expression to search for any sequence of numbers and replace it with the word "five". This is just one example of how regular expressions can be powerful tools for searching and replacing text.
 
 ## Deep Dive
+Now that we have an understanding of how to search and replace text in PHP, let's take a deeper look at the different functions and methods available for this task.
 
-There are many different ways to use regular expressions in PHP for searching and replacing text. They allow for advanced and precise search patterns to be created, making the task of finding and replacing text much easier.
+First, we have the `str_replace` function, which we discussed earlier. This function is useful for simple, straightforward replacements. However, it is case-sensitive, so it may not always give us the desired results.
 
-One important aspect to keep in mind when using regular expressions is the use of special characters. These characters have a specific meaning in a regular expression, and must be escaped with a backslash (\) if they are meant to be taken literally. For example, the period character (.) is a special character that matches any single character in a regular expression. If we want to search for a period in a string, we must escape it like this: `/\./`.
+Next, we have the `str_ireplace` function, which works the same as `str_replace` but is case-insensitive. This can be helpful when we want to make replacements regardless of case.
 
-Another useful feature of regular expressions is the use of modifiers. These are additional characters that can be added at the end of a pattern to specify how the search should be performed. For example, using the `g` modifier will perform a global search, meaning all occurrences of the pattern will be replaced, rather than just the first one.
+For more advanced replacements, we can use the `preg_replace` function, which as we saw earlier, allows us to use regular expressions. This gives us more control over what we search for and what we replace it with.
+
+Lastly, there is the `strtr` function, which stands for "string translate". This function allows us to make multiple replacements at once using arrays, similar to how we did it with `str_replace`, but it also preserves the order of the replacements. This can be useful if we need to make replacements in a specific order.
 
 ## See Also
-
-- [PHP Manual: Regular Expressions](https://www.php.net/manual/en/regexp.reference.php)
-- [Regex101](https://regex101.com/): a helpful tool for testing and creating regular expressions
-- [Mastering Regular Expressions](https://www.amazon.com/dp/0596528124/): a comprehensive guide to mastering regular expressions
+- [PHP string functions](https://www.php.net/manual/en/ref.strings.php)
+- [Regular expressions in PHP](https://www.php.net/manual/en/reference.pcre.pattern.php)
+- [PHP.net - String functions](https://www.php.net/manual/en/ref.strings.php)

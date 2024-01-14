@@ -1,31 +1,35 @@
 ---
 title:                "PHP: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie do błędu standardowego jest ważne?
+## Dlaczego
 
-Pisanie do standardowego błędu może być przydatne dla programistów, którzy chcą od razu reagować na błędy podczas wykonywania swojego kodu. Może to pomóc w szybszym znajdowaniu i naprawianiu problemów, co przyspieszy proces debugowania i poprawy kodu.
+Często podczas pisania kodu w języku PHP możemy natrafić na błędy, które są wyświetlane w standardowym wyjściu. Jednakże, w niektórych przypadkach, zamiast wyświetlać błąd dla użytkownika, lepiej jest zapisać go do standardowego błędu. W tym artykule dowiesz się dlaczego warto pisać do standardowego błędu i jak to zrobić.
 
-## Jak to zrobić?
+## Jak to zrobić
+
+Aby zapisać błąd do standardowego wyjścia, możemy użyć funkcji `fwrite(STDERR, "Tekst błędu");`. Funkcja ta przyjmuje dwa argumenty - uchwyt do standardowego wyjścia błędu ( `STDERR`) oraz tekst, który chcemy zapisać. Spróbujmy teraz wywołać tę funkcję w kodzie PHP.
 
 ```PHP
 <?php
-fwrite(STDERR, "Przykładowy błąd, nieprawidłowe wywołanie funkcji"); // pisanie do standardowego błędu
+fwrite(STDERR, "To jest przykładowy błąd.");
+echo "Ten tekst pojawi się w standardowym wyjściu.";
 ```
 
-Wywołanie funkcji "fwrite()" z argumentem STDERR spowoduje, że tekst zostanie wypisany bezpośrednio do standardowego błędu. Można to wykorzystać w warunkach "if" lub "try-catch" do łatwego wyświetlania informacji o błędzie.
+Teraz, gdy wykonamy ten kod, zamiast wyświetlić tekst "Ten tekst pojawi się w standardowym wyjściu.", zostanie on zapisany w standardowym wyjściu błędu, a użytkownik zobaczy tylko błąd "To jest przykładowy błąd.".
 
-## Głębszy wgląd w pisanie do standardowego błędu
+## Dogłębna analiza
 
-Pisanie do standardowego błędu można wykorzystać także do generowania własnych komunikatów błędów. Można zdefiniować swoją własną funkcję obsługującą błędy, która będzie wywoływana zamiast standardowej, wbudowanej w PHP. W ten sposób można dostosować format i treść komunikatów błędów według własnych potrzeb.
+Pisanie do standardowego błędu jest szczególnie przydatne w sytuacjach, gdy nie chcemy wyświetlać użytkownikowi błędów lub gdy chcemy zachować jasność w standardowym wyjściu. Możemy również wykorzystać funkcję `error_log()` do zapisywania błędów do pliku dziennika. Jest to przydatne w przypadku, gdy chcemy później przeanalizować i zrozumieć błędy w naszym kodzie.
 
-## Zobacz także
+## Zobacz też
 
-- [Oficjalna dokumentacja PHP o pisaniu do standardowego błędu](https://www.php.net/manual/en/function.fwrite.php)
-- [Poradnik na temat pisania do błędu standardowego na stronie Stack Overflow](https://stackoverflow.com/questions/6631193/make-output-to-stream-error-instead-of-standard-output)
-- [Wideo na YouTube o pisanie do standardowego błędu](https://www.youtube.com/watch?v=zgnQjazsaqI)
+- [Dokumentacja PHP - fwrite()](https://www.php.net/manual/en/function.fwrite.php)
+- [Dokumentacja PHP - error_log()](https://www.php.net/manual/en/function.error-log.php)

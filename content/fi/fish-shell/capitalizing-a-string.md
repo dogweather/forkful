@@ -1,48 +1,47 @@
 ---
-title:                "Fish Shell: Merkkijonon muuttaminen isoiksi kirjaimiksi"
+title:                "Fish Shell: Merkkijonon muuntaminen isolla alkukirjaimella"
+simple_title:         "Merkkijonon muuntaminen isolla alkukirjaimella"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
+# Miksi stringien isoiksi kirjoittaminen on tärkeää Fish Shell ohjelmoinnissa?
+
 ## Miksi
 
-Monilla ohjelmointikielet tarjoavat sisäänrakennettuja toimintoja, jotka helpottavat datan käsittelyä. Fish Shellissa yksi näistä toiminnoista on merkkijonomuuttujien käsittely. Kapitalisointitoiminnon avulla käyttäjä voi muuttaa merkkijonon ensimmäisen kirjaimen isoksi ja loput kirjaimet pieniksi. Tässä blogikirjoituksessa opit, miten voit hyödyntää tätä toimintoa Fish Shell -ohjelmoinnissa.
+Fish Shell on suosittu työkalu ohjelmoijille, jotka haluavat tehostaa työskentelyään. Yksi tapa tehdä tämä on kirjoittaa koodi mahdollisimman lyhyesti ja tehokkaasti. Yksi tapa tehdä tämä on capitalize-funktio. Tämän toiminnon avulla voit nopeasti muuttaa kirjaimet stringin ensimmäisten kirjainten kirjoittamalla ne isoina ja loput pieninä. Tämä voi auttaa parantamaan lopputulosta ja säästämään aikaa kirjoittamisessa.
 
-## Näin teet sen
+## Miten capitalizing toimii Fish Shell:in avulla
 
-Fish Shellissa merkkijonon kapitalisointi tapahtuu käyttämällä sisäänrakennettua `capitalize` -toimintoa. Se ottaa parametrinaan merkkijonon ja palauttaa uuden merkkijonon, jossa ensimmäinen kirjain on isolla ja loput pienellä.
+```Fish Shell
+string capitalize "testi"
+```
 
 ```
-Fish Shell 
-capitalize "esimerkki"```
-
-Tämä palauttaa "Esimerkki".
-
-
+OUTPUT: Testi
 ```
-Fish Shell
-capitalize "FINNISH"``
-Tämä palauttaa "Finnish".
 
-Voit myös ketjuttaa useita toimintoja yhteen saadaksesi haluamasi tuloksen, esimerkiksi:
+Capitalizing toimii yksinkertaisesti syöttämällä komento "capitalize" ja sitten haluamasi string. Ohjelma sitten muuttaa ensimmäisen kirjaimen isoksi ja loput pieniksi. Tämä toimii kaikille stringeille, joten voit käyttää sitä eri kielillä ja eri muodoilla.
 
+Toinen kätevä tapa käyttää capitalize on yhdistää se muihin komentoihin. Esimerkiksi, jos haluat muuttaa tietyn tiedoston nimen ensimmäinen kirjain isoksi, voit tehdä sen seuraavalla tavalla:
+
+```Fish Shell
+mv testi.txt (string capitalize "testi").txt
 ```
-Fish Shell
-capitalize "fish" | append ", the friendly shell” | append " is" | append " awesome!"```
 
-Tämä palauttaa "Fish, the friendly shell is awesome!"
+Tämä komento muuttaa tiedoston nimen "testi.txt" muotoon "Testi.txt". Näin voit käyttää capitalizea osana muita komentoja ja tehostaa työskentelyäsi.
 
-## Syvällisemmin
+## Syvällisempi sukellus capitalizen maailmaan
 
-Kapitalisointitoiminto tarjoaa helpon tavan muokata merkkijonoja Fish Shell -ohjelmoinnissa. Tämän toiminnon lisäksi Fish Shellissa on myös muita tapoja muokata merkkijonoja, kuten `join`, `replace`, `substr` ja `split`. Näiden toimintojen yhdisteleminen mahdollistaa monimutkaisempien merkkijonokäsittelyjen suorittamisen.
+Capitalizen toiminta perustuu Unicode-standardiin ja se tunnistaa automaattisesti eri kielellisiä kirjaimia. Tämä tarkoittaa, että voit käyttää capitalizea monilla eri kielillä ja se toimii silti oikein. Lisäksi se pystyy käsittelemään myös erikoismerkkejä ja välimerkkejä kunnolla, mikä tekee siitä monipuolisen työkalun ohjelmoijille.
 
-Fish Shell tarjoaa myös mahdollisuuden muokata ympäristömuuttujia, jotka ovat suosittu tapa säilyttää tietoa ohjelmien välillä. `set` -toiminnon avulla voit asettaa uuden muuttujan arvon ja `get` -toiminto antaa sinulle kyseisen muuttujan arvon.
+On myös huomionarvoista, että capitalize ei muuta stringin alkuperäistä muotoa, vaan tuottaa uuden, muutetun version. Täten voit käyttää sitä luomaan dynaamisia nimiä esimerkiksi tiedostoille tai kansioille, mikä voi olla hyödyllistä monimutkaisemmissa ohjelmissa.
 
 ## Katso myös
 
-- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Opas merkkijonokäsittelyyn Fish Shellissä](https://blog.crashmaster.me/post/fish-string-manipulation/)
-- [Fish Shellin komentorivivinkkejä](https://www.linode.com/docs/guides/fish-shell-tips-and-tricks/)
+- [Fish-Shell dokumentaatio](https://fishshell.com/docs/current/)
+- [Unicode-standardin selitys](https://www.unicode.org/)

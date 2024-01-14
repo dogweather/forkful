@@ -1,88 +1,73 @@
 ---
-title:                "C++: Att skriva en textfil"
+title:                "C++: Skriva en textfil"
+simple_title:         "Skriva en textfil"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Varför: Att skriva en textfil kan vara en nyttig och viktig del av programmering. Det gör det möjligt för användare att spara och lagra information på ett strukturerat sätt.
+##Varför
 
-Hur man gör det: Det finns flera sätt att skriva en textfil i C ++, men den enklaste metoden är att använda funktionen "ofstream". Här är ett exempel på kod som visar hur man öppnar en fil, skriver in en sträng och sedan stänger filen:
+Att skapa en textfil är en grundläggande men viktig färdighet för alla som lär sig programmera i C++. Textfiler låter dig lagra och hantera data på ett enkelt och effektivt sätt. Det är ett viktigt steg för att förstå hur filer fungerar och för att kunna skriva mer komplexa program.
 
-```C++
-#include <iostream>
-#include <fstream>  // inkludera filhanteringsbiblioteket
+##Hur Man Gör
 
-using namespace std;
-
-int main()
-{
-    // skapa ett ofstream-objekt för att hantera filen
-    // filnamnet "mitt_test.txt" kan bytas ut mot önskat filnamn
-    ofstream min_fil("mitt_test.txt");
-
-    // skriv in en sträng i filen
-    minFil << "Hej, det här är en textsträng som sparas i filen.";
-
-    // kom ihåg att stänga filen när all data har skrivits
-    minFil.close();
-    
-    return 0;
-}
-```
-
-Om du vill kontrollera om filen skapades och skrevs korrekt kan du använda "ifstream" -funktionen för att öppna och läsa filen. Här är ett exempel på kod som läser filen och skriver ut innehållet på skärmen:
+Först och främst behöver du inkludera biblioteket `fstream` för att kunna arbeta med filer. Sedan behöver du öppna en fil med hjälp av `ofstream` och ange vilken fil du vill arbeta med, t.ex. `myFile.txt`. Om filen inte finns kommer den att skapas automatiskt. Här är ett exempel på kod som skapar en textfil och skriver en rad med text i den:
 
 ```C++
-#include <iostream>
 #include <fstream>
 
 using namespace std;
 
 int main()
 {
-    ifstream min_fil("mitt_test.txt");
-
-    // läs varje rad i filen tills det inte finns några fler att läsa
-    while (getline(min_fil, rad))
-    {
-        cout << rad << '\n';
-    }
-
-    // stäng filen när all data har lästs
-    min_fil.close();
-
-    return 0;
+  ofstream myFile("myFile.txt");
+  myFile << "Detta är en text i min fil.";
+  myFile.close();
+  return 0;
 }
 ```
 
-Ett annat sätt att öppna och skriva i en fil är att använda funktionen "fopen" och "fprintf". Här är ett exempel på kod som visar hur man skapar och skriver i en fil:
+Notera att vi använder `ofstream` för att öppna filen i skrivläge och `myFile.close()` för att stänga filen igen efter att vi är klara med den.
+
+Om du redan har en befintlig textfil som du vill lägga till mer text i, kan du använda `ofstream` tillsammans med `ios::app` för att lägga till texten i slutet av filen istället för att skriva över den befintliga texten:
 
 ```C++
-#include <stdio.h>
+ofstream myFile("myFile.txt", ios::app);
+myFile << "Detta är den nya raden.";
+```
+
+Du kan även läsa in text från en befintlig fil med hjälp av `ifstream` och `getline()` funktionen. Här är ett exempel på kod som läser in text från en fil och skriver ut den till konsolen:
+
+```C++
+#include <fstream>
+#include <iostream>
+
+using namespace std;
 
 int main()
 {
-    // skapa ett FILE-objekt för att hantera filen
-    // "mitt_test2.txt" kan bytas ut mot önskat filnamn
-    FILE *min_fil = fopen("mitt_test2.txt", "w");
+  ifstream myFile("myFile.txt");
+  string text;
 
-    // skriv in en sträng i filen
-    fprintf(min_fil, "Hej, det här är en textsträng som skrivs i filen.");
+  while (getline(myFile, text)) {
+    cout << text << endl;
+  }
 
-    // kom ihåg att stänga filen när all data har skrivits
-    fclose(min_fil);
-
-    return 0;
+  myFile.close();
+  return 0;
 }
 ```
 
-Djupdykning: När du skriver en textfil är det viktigt att vara medveten om filformatet. Ett vanligt format är "textfil" eller "plain text", där varje tecken sparas exakt som det är utan någon extra formatering eller kodning. Detta är den typ av fil som genereras när du använder funktionerna "ofstream" eller "fprintf". En annan typ av fil är "binär" eller "binär data", där information kan sparas effektivare genom att koda den i ett annat format, till exempel "byte" eller "hexadecimal". Detta är särskilt användbart när du har en stor mängd data som ska sparas. Du kan lära dig mer om de olika filformaten och deras användning i din specifika programmeringsmiljö.
+##Djupdykning
 
-Se även: Här är några resurser som kan hjälpa dig att lära dig mer om att skriva textfiler i C ++:
+Det finns många andra användbara funktioner och metoder för att arbeta med textfiler, som att läsa och skriva specifika delar av filen och hantera fel som kan uppstå under arbetet med filen. Det är viktigt att förstå hur dessa funktioner fungerar och använda dem på ett korrekt sätt för att undvika problem med dina filer.
 
-- [cplusplus.com - File I/O in C++](http://www.cplusplus.com/doc/tutorial/files/)
-- [GeeksforGeeks - File handling in C++](https://www.geeksforgeeks.org/file-handling-c-classes/)
-- [Programiz - C++ File Handling](https://www.programiz.com/cpp-programming/file-io)
+Se även
+
+- [Tutorialspoint - C++ File Input/Output](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+- [cplusplus.com - File streams](http://www.cplusplus.com/doc/tutorial/files/)
+- [GeeksforGeeks - File Handling in C++](https://www.geeksforgeeks.org/file-handling-c-classes/)

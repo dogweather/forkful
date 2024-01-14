@@ -1,54 +1,48 @@
 ---
 title:                "Ruby: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que?
 
-Imagine que você tenha um texto gigante e precise fazer várias substituições em palavras específicas. Fazer isso manualmente pode ser uma tarefa árdua e demorada. Felizmente, com a programação em Ruby, podemos automatizar esse processo e economizar muito tempo e esforço.
+Há momentos em que você precisa fazer alterações em todo o texto de um arquivo, seja para corrigir erros ortográficos ou para substituir uma expressão por outra. Fazer isso manualmente pode ser tedioso e demorado, mas felizmente, existem maneiras de automatizar esse processo através da programação.
 
-## Como fazer
+## Como Fazer
 
-Em Ruby, podemos usar o método `gsub` para buscar e substituir texto em uma string. Ele recebe dois argumentos: o trecho de texto que desejamos substituir e o novo texto que será colocado no lugar. Vamos ver um exemplo:
+Em Ruby, podemos usar o método `.gsub()` para realizar a busca e substituição de texto. Este método aceita dois argumentos: o primeiro é a expressão que desejamos substituir e o segundo é a nova expressão que será usada no lugar. Vamos dar uma olhada em um exemplo:
 
 ```Ruby
-texto = "Eu amo programar em Ruby!"
-novo_texto = texto.gsub("amo", "adorei") #substitui "amo" por "adorei"
+texto = "Estou aprendendo Ruby programação!"
+novo_texto = texto.gsub("aprendendo", "explorando")
 puts novo_texto
 ```
 
-O output desse código seria: `Eu adorei programar em Ruby!`
-
-Podemos usar o método `gsub` para substituir várias ocorrências de uma palavra em um texto, usando uma expressão regular como primeiro argumento. Por exemplo:
+O código acima irá resultar em "Estou explorando Ruby programação!". Podemos ver que a palavra "aprendendo" foi substituída por "explorando". Mas e se quisermos substituir todas as ocorrências de uma palavra em uma string? Podemos usar uma expressão regular dentro do método `.gsub()` para isso. Por exemplo:
 
 ```Ruby
-texto = "Aprendendo a programar em Ruby é muito divertido!"
-novo_texto = texto.gsub(/[aA]/, "e") #substitui "a" e "A" por "e"
+texto = "A vida é muito curta para aprender uma única linguagem de programação."
+novo_texto = texto.gsub(/aprender/, "explorar")
 puts novo_texto
 ```
 
-Output: `Erprendendo e progrermer em Ruby é muito divertido!`
-
-## Deep Dive
-
-O método `gsub` também é conhecido como "global substitution" por ser capaz de substituir todas as ocorrências de um texto em uma string. No entanto, ele também possui uma variante, o `sub`, que substitui a primeira ocorrência encontrada e depois para de procurar. Por exemplo:
+Agora, todas as ocorrências da palavra "aprender" serão substituídas por "explorar". Além disso, podemos usar a flag `i` para tornar a substituição case-insensitive, ou seja, ela irá substituir tanto "aprender" quanto "Aprender". Assim:
 
 ```Ruby
-texto = "Muitos programadores amam Ruby"
-novo_texto = texto.sub("amam", "detestam") #substitui apenas a primeira ocorrência
-puts novo_texto
+novo_texto = texto.gsub(/aprender/i, "explorar")
 ```
 
-Output: `Muitos programadores detestam Ruby`
+## Mergulho Profundo
 
-Lembrando que tanto o `gsub` quanto o `sub` não alteram a string original, apenas retornam uma nova string com as substituições.
+Além do método `.gsub()`, Ruby também possui outros métodos que nos permitem buscar e substituir texto, como o `.sub()`, que substitui apenas a primeira ocorrência encontrada, e o `.scan()`, que nos permite procurar por padrões e retornar uma lista com os resultados encontrados. Existem também gemas (ou gems) como o `Stringex` que fornecem ainda mais funcionalidades para tarefas de busca e substituição de texto.
 
-## Veja também
+## Veja Também
 
-- [Documentação oficial do método `gsub` em Ruby](https://ruby-doc.org/core-2.7.3/String.html#method-i-gsub)
-- [Tutorial sobre expressões regulares em Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Artigo sobre substituição de texto em Ruby](https://www.codegrepper.com/code-examples/ruby/ruby+gsub)
+- [Documentação do método `.gsub()` em Ruby](https://ruby-doc.org/core-2.5.1/String.html#method-i-gsub)
+- [Como usar Expressões Regulares em Ruby](https://www.regexpedia.com/ruby)
+- [Gema Stringex para manipulação de strings em Ruby](https://github.com/svenfuchs/stringex)

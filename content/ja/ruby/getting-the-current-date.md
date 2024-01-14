@@ -1,69 +1,63 @@
 ---
-title:                "Ruby: 現在の日付の取得"
+title:                "Ruby: 「現在の日付の取得」"
+simple_title:         "「現在の日付の取得」"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-「現在の日付を取得する」という作業の重要性は、プログラミング言語を学ぶ上で必須のスキルです。日付を取得することで、タイムスタンプを作成したり、アプリケーションにおいて特定の日付を追跡することができます。
+
+プログラミングをする方々にとって、現在の日付を取得することは非常に役立ちます。特にプログラム内で日付を使用する場合には、正確な日付が必要になります。そこで今回は、Rubyで現在の日付を取得する方法を紹介します。
 
 ## 方法
-日付を取得するには、Rubyの標準ライブラリである`Date`クラスを使います。まずは、`require`メソッドを使って`date`ライブラリを読み込みます。
+
+RubyのDateTimeモジュールを使用することで、現在の日付や時刻を簡単に取得することができます。以下のようにコードを書くことで、現在の日付や時刻を取得することができます。
 
 ```Ruby
 require 'date'
 
+# 現在の日付を取得する
+date = Date.today
+puts "今日の日付は#{date}です。"
+
+# 現在の時刻を取得する
+time = Time.now
+puts "現在の時刻は#{time}です。"
 ```
 
-次に、`Date.today`メソッドを使って、今日の日付を取得することができます。
+上記のコードを実行すると、以下のような出力結果が得られます。
+
+```
+今日の日付は2020-08-06です。
+現在の時刻は2020-08-06 12:00:00 +0900です。
+```
+
+また、日付や時刻を特定のフォーマットで取得することもできます。例えば、年月日を「年-月-日」のフォーマットで取得する場合は、以下のようにコードを書きます。
 
 ```Ruby
-today = Date.today
+require 'date'
+
+# 現在の日付を「年-月-日」のフォーマットで取得する
+date = Date.today.strftime("%Y-%m-%d")
+puts "今日の日付は#{date}です。"
 ```
 
-もしくは、任意の日付を取得することもできます。例えば、2022年8月20日を取得するには以下のように記述します。
-
-```Ruby
-specific_date = Date.new(2022, 8, 20)
-```
-
-また、時刻情報を含めたい場合は、`DateTime`クラスを使います。
-
-```Ruby
-now = DateTime.now
-```
-
-これらのコードを実行すると、日付や時刻に関する情報を含むオブジェクトが返されます。
+この場合、今日の日付は「2020-08-06」というフォーマットで取得されます。
 
 ## 深堀り
-さらに詳細な日付情報を取得したい場合は、`Date`や`DateTime`クラスのメソッドを使うことで可能です。例えば、特定の日付が何曜日かを知りたい場合は、`wday`メソッドを使います。
 
-```Ruby
-date = Date.new(2022, 8, 20)
-puts date.wday # => 6 （土曜日）
-```
+RubyのDateTimeモジュールには、現在の日付や時刻を取得する以外にもさまざまな便利な機能があります。例えば、「日付や時刻の計算」「日付や時刻の比較」「特定の曜日の日付を取得する」など、さまざまな機能がありますので、ぜひ試してみてください。
 
-また、年や月、日など単独の情報を取得することもできます。
+## 参考リンク
 
-```Ruby
-specific_date = Date.new(2022, 8, 20)
-puts specific_date.year # => 2022
-puts specific_date.month # => 8
-puts specific_date.day # => 20
-```
+- [Date and Timeクラス - Rubyリファレンスマニュアル](https://docs.ruby-lang.org/ja/latest/class/DateTime.html)
+- [Rubyで現在時刻を取得する方法 - Qiita](https://qiita.com/terrym/items/f0444a65075c27f33023)
+- [RubyのDateTimeで日付と日時を扱う - hiroLabo](https://www.hirolabo.com/archives/tech/3512)
 
-さまざまなメソッドを組み合わせることで、必要な日付情報を取得することができます。
+# 他にも見る
 
-## さらに詳しく学ぶ
-以上が日付を取得するための基本的な方法ですが、実はRubyにはもっと高度な日付操作の方法が備わっています。例えば、時間差やタイムゾーンを扱うことも可能です。
-
-より詳しい情報を学びたい方は、以下のリンクをチェックしてみてください。
-
-[Dateクラスのドキュメント](https://ruby-doc.org/stdlib/libdoc/date/rdoc/Date.html)
-[DateTimeクラスのドキュメント](https://ruby-doc.org/stdlib/libdoc/date/rdoc/DateTime.html)
-
-## 関連情報を参照する
-[Ruby基礎文法まとめ](https://qiita.com/yatnnn/items/f6defe1ff96d9a2faf56)
+- [Rubyの基本的な日付と時間の処理方法 - Prog-8](https://prog-8.com/docs/ruby-date-time-basics)

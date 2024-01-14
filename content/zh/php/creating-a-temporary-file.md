@@ -1,42 +1,45 @@
 ---
 title:                "PHP: 创建临时文件"
+simple_title:         "创建临时文件"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##为什么？
- 创建临时文件对于PHP程序员来说是一个常见的操作。它可以用来存储临时数据，如用户上传的文件，在处理过程中需要暂时存储的数据等。临时文件还可以用来在程序中存储一些中间结果，以便将来可以继续使用。总而言之，创建临时文件是为了更有效地处理数据。
+为什么：为什么有人会选择创建临时文件？
 
-##如何做到？
-要创建一个临时文件，首先需要使用PHP内置函数`tempnam()`来生成一个唯一的临时文件名，并指定一个目录进行存储。接下来，可以使用`fopen()`函数以写入模式打开该文件，这样就可以像操作通常的文件一样进行写入。下面是一个简单的示例代码：
+创建临时文件在PHP编程中是一项非常有用的技术。它可以让程序员临时存储数据或执行操作，而无需永久改变或污染服务器上的其他文件。这对于测试和调试代码尤其有用。
+
+## 如何创建临时文件
+
+在PHP中，我们可以使用`tempnam()`函数来创建临时文件。这个函数接受两个参数，第一个参数是指定临时文件的目录，第二个参数是可选的前缀。例如，我们可以使用以下代码来创建一个名为“tempfile”的临时文件：
 
 ```PHP
-<?php
-// 创建临时文件
-$tempFile = tempnam('/tmp', 'temp_');
-
-// 打开文件进行写入
-$handle = fopen($tempFile, "w");
-fwrite($handle, "这是临时数据");
-fclose($handle);
-
-// 读取此临时文件并打印内容
-echo file_get_contents($tempFile);
-// 输出：这是临时数据
-
-// 删除临时文件
-unlink($tempFile);
-?>
+$temp_dir = "/tmp/";
+$file_name = tempnam($temp_dir, "tempfile");
 ```
 
-##深入探讨
-当使用`tempnam()`函数创建临时文件时，可以指定一个前缀来标识该文件。这一点在处理多个临时文件时很有用。另外，使用`tempnam()`返回的临时文件名称是绝对路径，因此我们不必担心文件名称冲突的问题。一旦不再需要使用临时文件，我们可以使用`unlink()`函数将其删除，以节省磁盘空间。
+当代码执行完后，我们可以在指定的目录中找到名为“tempfile”的临时文件。我们还可以使用`tempnam()`函数来指定一个空字符串作为前缀，从而让系统为我们生成一个随机的文件名。
 
-另外，PHP还提供了`tmpfile()`函数来直接创建临时文件，而无需指定存储目录。这个方法会返回一个文件句柄，对于需要立即打开临时文件进行写入的场景很有用。同样，在使用完毕后也可以使用`fclose()`和`unlink()`函数来关闭和删除临时文件。
+## 深入了解创建临时文件
 
-##参考链接
-- PHP官方文档：[创建临时文件](https://www.php.net/manual/zh/function.tempnam.php)
-- 《PHP设计模式与最佳实践》：[创建临时文件](https://design-patterns.readthedocs.io/zh_CN/latest/print_PDF/temporary_file.html)
+创建临时文件涉及到很多细节，比如文件命名的算法、临时文件的创建位置和权限设置。在PHP中，我们可以通过设置`sys_temp_dir`选项来指定临时文件的默认创建目录。当然，我们也可以使用`tempnam()`函数来自己指定创建目录。
+
+此外，我们还需要考虑文件的权限设置。临时文件应该具有足够的权限，能够让PHP程序在其上执行相关操作。一般来说，我们可以使用`chmod()`函数来设置文件的权限。
+
+临时文件也需要正确地处理，即当程序结束时，它们应该被自动删除。在PHP中，我们可以使用`register_shutdown_function()`函数来注册一个函数，用于在程序结束时清理临时文件。
+
+## 参考链接
+
+- [PHP官方文档-`tempnam()`函数](https://www.php.net/manual/zh/function.tempnam.php)
+- [How to Create Temporary Files in PHP](https://www.geeksforgeeks.org/how-to-create-temporary-file-in-php/)
+- [官方PHP源码中`tempnam()`函数的实现](https://github.com/php/php-src/blob/master/ext/standard/file.c#L711)
+
+## 请参阅
+
+- [为什么使用临时文件](https://geekflare.com/php-create-temporary-file/)
+- [PHP官方文档-`chmod()`函数](https://www.php.net/manual/zh/function.chmod.php)
+- [官方PHP源码中`register_shutdown_function()`函数的实现](https://github.com/php/php-src/blob/master/main/php_shutdown.c#L474)

@@ -1,56 +1,63 @@
 ---
 title:                "Gleam recipe: Searching and replacing text"
+simple_title:         "Searching and replacing text"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Searching and replacing text is a common task in programming that allows you to quickly and efficiently update and modify code. Whether you need to fix a typo, change a variable name, or update a URL, using the Gleam language for searching and replacing text can save you time and effort.
+Searching and replacing text is a fundamental task in programming, allowing developers to efficiently make changes to large amounts of code. Gleam, with its robust string manipulation capabilities, makes this task even easier and smoother. In this blog post, we will dive into the basics of searching and replacing text in Gleam.
 
 ## How To
-To search and replace text in Gleam, you can use the built-in `String.replace` function. This function takes in two arguments: the string to search for and the string to replace it with.
+To search and replace text in Gleam, we can use the `replace` function from the `gleam/string` module. This function takes in three arguments - the string to be searched, the old string to be replaced, and the new string to replace it with.
 
-```Gleam
-let original_str = "Hello World"
-let new_str = String.replace("World", "Universe", original_str)
+```
+Gleam REPL
+---
+import gleam/string
+
+let original_string = "Hello, World!"
+let new_string = replace(original_string, "Hello", "Hey")
+
+new_string # Hey, World!
 ```
 
-In this example, the string "Hello World" is searched for the word "World" and replaced with "Universe". The output of `new_str` would be "Hello Universe".
+We can also use regular expressions as the old string to perform more complex and dynamic replacements. The `regex` function from the `gleam/regex` module can be used to create a regex pattern, which can then be passed in as the old string.
 
-If you want to replace all instances of a word or phrase, you can use the `String.replace_all` function instead. This function takes in the same arguments as `String.replace` but replaces all occurrences instead of just the first one.
-
-```Gleam
-let original_str = "I love pizza, pizza is my favorite food"
-let new_str = String.replace_all("pizza", "sushi", original_str)
 ```
+Gleam REPL
+---
+import gleam/string
 
-The output of `new_str` would be "I love sushi, sushi is my favorite food" as all instances of "pizza" have been replaced with "sushi".
+let original_string = "This is a sample string with numbers 1234."
+let pattern = regex("[0-9]+")
+let new_string = replace(original_string, pattern, "")
+
+new_string # This is a sample string with numbers .
+```
 
 ## Deep Dive
-In addition to the basic `String.replace` and `String.replace_all` functions, there are advanced functions in Gleam that allow for more complex searching and replacing.
+While the `replace` function is useful for basic searching and replacing, it also has some additional options that can be explored for more advanced use cases. One such option is the `count` argument, which allows us to specify the number of replacements to be made.
 
-For example, the `String.replace_regex` function allows you to use regular expressions to specify what to search for and replace. This can be useful for scenarios where there is not a specific string to search for, but rather a pattern.
+```
+Gleam REPL
+---
+import gleam/string
 
-```Gleam
-let original_str = "Today's date is 07-12-2021"
-let new_str = String.replace_regex("[:digit:]+", "12", original_str)
+let original_string = "One fish, two fish, red fish, blue fish."
+let new_string = replace(original_string, "fish", "rabbit", count=2)
+
+new_string # One rabbit, two rabbit, red fish, blue fish.
 ```
 
-The output of `new_str` would be "Today's date is 07-12-2021" as the regular expression has replaced the numbers with "12".
+There is also the `case_sensitive` argument, which can be set to `false` to perform a case-insensitive search and replace.
 
-Additionally, Gleam also has the `String.replace_range` function which allows you to specify a specific range within the string to search and replace. This can be useful if you only want to replace a portion of a string and not the entire thing.
-
-```Gleam
-let original_str = "Hello world"
-let new_str = String.replace_range(6, 10, "Gleam", original_str)
-```
-
-The output of `new_str` would be "Hello Gleam" as the range of characters 6 to 10 (inclusive) have been replaced with "Gleam".
+Additionally, the `replace` function supports unicode characters, making it suitable for internationalization and multilingual applications.
 
 ## See Also
-- [Gleam language documentation](https://gleam.run/book)
-- [Regular expressions in Gleam](https://gleam.run/examples/regular-expressions)
-- [String functions in Gleam](https://gleam.run/libraries/stdlib/String.html)
+- Gleam's official documentation on string manipulation: http://gleam.run/book/std-libraries/strings.html
+- Regex tutorial for beginners: https://www.regular-expressions.info/tutorial.html

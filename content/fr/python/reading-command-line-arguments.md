@@ -1,7 +1,9 @@
 ---
-title:                "Python: Lecture des arguments en ligne de commande"
+title:                "Python: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/reading-command-line-arguments.md"
 ---
 
@@ -9,62 +11,91 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un développeur Python, vous savez probablement déjà à quel point les arguments de ligne de commande sont utiles. Mais pour ceux qui ne sont pas familiers avec ce concept, sachez que la lecture d'arguments de ligne de commande peut grandement faciliter l'exécution de votre code. Cela permet également à vos utilisateurs de personnaliser l'exécution de votre programme en fonction de leurs besoins.
+Vous avez peut-être déjà entendu parler de l'expression "arguments de ligne de commande" en programmation Python, mais vous n'êtes pas sûr de savoir exactement ce qu'elle signifie ou pourquoi elle est importante. Dans cet article, nous allons expliquer pourquoi la lecture des arguments de ligne de commande est essentielle pour les programmeurs Python.
 
 ## Comment faire
 
-Lecture des arguments de ligne de commande en utilisant le module "sys". Tout d'abord, importez le module "sys" dans votre code :
-
-```Python
-import sys
-```
-
-Ensuite, vous pouvez extraire les arguments de ligne de commande en utilisant la fonction "argv" du module "sys" :
-
-```Python
-arguments = sys.argv
-```
-
-Cela vous donnera une liste d'arguments dans laquelle le premier élément est toujours le nom du fichier python lui-même. Vous pouvez ensuite parcourir cette liste pour obtenir les arguments spécifiques qui vous intéressent :
-
-```Python
-for i in range(1, len(arguments)):
-    print("Argument #{} : {}".format(i, arguments[i]))
-```
-
-Voici un exemple de code complet :
+Pour lire les arguments de ligne de commande dans Python, nous utilisons le module `sys`. Voici un exemple de code qui illustre comment utiliser ce module :
 
 ```Python
 import sys
 
+# Récupérer les arguments de ligne de commande
 arguments = sys.argv
 
-for i in range(1, len(arguments)):
-    print("Argument #{} : {}".format(i, arguments[i]))
+# Imprimer chaque argument sur une nouvelle ligne
+for arg in arguments:
+    print(arg)
 ```
 
-Et voici un exemple de sortie en utilisant cette ligne de commande :
+Si nous exécutons ce code avec des arguments de ligne de commande comme ceci : `python mon_code.py arg1 arg2 arg3`, nous obtiendrons l'affichage suivant :
 
 ```
-python mon_script.py argument1 argument2 argument3
+mon_code.py
+arg1
+arg2
+arg3
 ```
 
+Comme vous pouvez le voir, la liste `sys.argv` contient le nom du fichier Python que nous avons exécuté en premier, suivi de tous les arguments que nous avons passés à la suite.
+
+## Plongée profonde
+
+Maintenant que nous savons comment lire les arguments de ligne de commande en Python, explorons quelques cas d'utilisation courants pour cette fonctionnalité.
+
+### Utilisation de arguments pour exécuter différentes actions
+
+L'un des avantages de la lecture des arguments de ligne de commande est que cela nous permet d'ajouter de la flexibilité à nos programmes. Nous pouvons utiliser les arguments pour déterminer quelle action doit être exécutée. Par exemple, nous pouvons modifier notre code pour imprimer un message différent en fonction du premier argument passé :
+
+```Python
+import sys
+
+if sys.argv[1] == "bonjour":
+    print("Salut tout le monde !")
+elif sys.argv[1] == "au revoir":
+    print("À bientôt !")
 ```
-Argument #1 : argument1
-Argument #2 : argument2
-Argument #3 : argument3
+
+Maintenant, si nous exécutons notre code avec `python mon_code.py bonjour`, nous obtiendrons l'affichage `Salut tout le monde !`, tandis que `python mon_code.py au revoir` affichera `À bientôt !`.
+
+### Utilisation d'arguments pour fournir des options
+
+Les arguments de ligne de commande peuvent également être utilisés pour fournir des options à un programme. Par exemple, nous pourrions utiliser des arguments pour déterminer si nous voulons imprimer un message en majuscules ou en minuscules :
+
+```Python
+import sys
+
+if sys.argv[1] == "-majuscules":
+    print("MON MESSAGE EN MAJUSCULES !")
+elif sys.argv[1] == "-minuscules":
+    print("mon message en minuscules !")
 ```
 
-## Plongée en profondeur
+En exécutant notre code avec `python mon_code.py -majuscules`, nous obtenons `MON MESSAGE EN MAJUSCULES !`, tandis que `python mon_code.py -minuscules` affichera `mon message en minuscules !`.
 
-Il est important de noter que les arguments de ligne de commande peuvent également être positionnels ou optionnels. Les arguments positionnels sont ceux qui doivent être fournis dans un ordre spécifique et doivent être utilisés par votre programme. Les arguments optionnels sont ceux qui sont facultatifs et peuvent être fournis dans n'importe quel ordre.
+### Utilisation d'arguments pour lire des fichiers
 
-De plus, en utilisant le module "argparse", vous pouvez définir des arguments de ligne de commande avec des valeurs par défaut, des descriptions et même des options à choix multiples. Cela peut rendre votre code beaucoup plus clair et facile à utiliser pour vos utilisateurs.
+Enfin, les arguments de ligne de commande peuvent être utiles pour lire des fichiers spécifiés par l'utilisateur. Par exemple, nous pourrions modifier notre code pour lire et imprimer le contenu d'un fichier spécifié par un argument :
 
-Enfin, gardez à l'esprit que les arguments de ligne de commande peuvent également être utilisés pour fournir des informations de configuration à votre programme. Par exemple, vous pouvez utiliser un argument pour spécifier un fichier de configuration externe qui sera utilisé par votre code.
+```Python
+import sys
+
+# Récupérer le nom du fichier à lire depuis le deuxième argument
+nom_fichier = sys.argv[2]
+
+# Ouvrir et lire le fichier
+with open(nom_fichier, 'r') as f:
+    contenu = f.read()
+    print(contenu)
+```
+
+Si nous exécutons notre code avec `python mon_code.py lire fichier.txt`, notre programme lira et imprimera le contenu du fichier "fichier.txt".
 
 ## Voir aussi
 
-- [Documentation officielle Python pour le module "sys"](https://docs.python.org/fr/3/library/sys.html)
-- [Documentation officielle Python pour le module "argparse"](https://docs.python.org/fr/3/library/argparse.html)
-- [Article sur la lecture des arguments de ligne de commande en Python](https://realpython.com/command-line-interfaces-python-argparse/)
+Pour en savoir plus sur la manipulation des arguments en Python, consultez ces ressources :
+
+- [Documentation officielle de Python sur le module `sys`](https://docs.python.org/fr/3/library/sys.html)
+- [Tutoriel RealPython : Arguments de ligne de commande en Python](https://realpython.com/python-command-line-arguments/)
+
+Nous espérons que cet article vous a donné une meilleure compréhension des arguments de ligne de commande en Python et de leurs utilisations pratiques. N'hésitez pas à explorer davantage et à expérimenter avec cette fonctionnalité pour devenir un programmeur Python plus efficace !

@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: 文字列のキャピタル化"
+title:                "Haskell: 文字列の大文字変換"
+simple_title:         "文字列の大文字変換"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/capitalizing-a-string.md"
 ---
 
@@ -9,61 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-プログラミングを行う人々は、しばしば文字列を大文字に変換する必要があります。例えば、ユーザーからの入力を正しく処理するためには、大文字と小文字を区別する必要があります。また、文字列を比較する場合にも、大文字と小文字を区別する必要があります。このような場面で、文字列を大文字に変換することは非常に重要なテクニックです。
+文字列を大文字にすることに興味がある人にとって、Haskellのプログラミングは非常に魅力的なものです。文字列を大文字に変換することは、エンコーディングやフォーマットなどの多くの問題を解決することができます。
 
 ## 方法
 
-文字列を大文字に変換する方法はさまざまですが、今回はHaskellを使って実装してみましょう。
-
-まず、文字列を受け取る関数capitalizeを定義します。
+まずは、必要な言語拡張を有効にしましょう。
 
 ```Haskell
-capitalize :: String -> String
-capitalize str = undefined
+{-# LANGUAGE OverloadedStrings #-}
 ```
 
-この関数では、文字列を引数として受け取り、大文字に変換した文字列を返すように定義します。Haskellではパターンマッチングを使って、文字列を一つずつ分解して処理することができます。
+次に、Data.Textモジュールをインポートし、capitalize関数を定義します。
 
 ```Haskell
-capitalize :: String -> String
-capitalize [] = []
-capitalize (x:xs) = toUpper x : capitalize xs
+import Data.Text (toUpper)
+
+capitalize :: Text -> Text
+capitalize str = toUpper str
 ```
 
-このように、文字列を再帰的に分解しながら大文字に変換していきます。toUpper関数は、与えられた文字を大文字に変換する関数です。
-
-実際に、"haskell"という文字列を大文字に変換してみましょう。
+最後に、入力文字列を受け取って、大文字に変換した文字列を返すように関数を呼び出します。
 
 ```Haskell
-capitalize "haskell" 
-```
-```
-HASKELL
+capitalize "hello world" -- 出力: "HELLO WORLD"
 ```
 
 ## ディープダイブ
 
-この方法では、文字列に含まれる全ての文字を大文字に変換します。もし特定の文字だけ大文字にしたい場合は、パターンマッチングを使って条件分岐を行うことで実現することができます。
-
-また、現在はASCII文字しか扱っていませんが、Unicode文字にも対応することができます。Unicode文字を扱うには、Data.Textモジュール内のtoUpper関数を使用する必要があります。
-
-さらに、今回は文字列を再帰的に分解して処理しましたが、Haskellにはより効率的な方法があります。例えば、Data.Textモジュール内のtoUpper関数を使うことで、特定の文字だけ大文字に変換することもできます。
-
-```Haskell
-Data.Text.map toUpper "haskell"
-```
-```
-"HASKELL"
-```
+文字列を大文字に変換する際に、多くの人が便利だと感じるのは、特殊文字や記号などを含む文字列でも正しく変換することができる点です。HaskellのData.Textモジュールには、これらの文字を扱うための便利な関数がたくさん用意されています。また、文字列を大文字に変換するだけでなく、Data.Textモジュールでは様々な文字列操作を行う関数が提供されています。
 
 ## 参考リンク
 
-- [Haskellで文字列を大文字に変換する方法](https://www.yesodweb.com/book/shakespearean-templates.html#shakespearean-環境)
-- [Haskell標準ライブラリのData.Textモジュール](https://hackage.haskell.org/package/text/docs/Data-Text.html)
-- [Haskellにおけるパターンマッチングの基礎](https://medium.com/彼女と彼氏の研究日誌/haskell-におけるパターンマッチングの基礎-79972a9b5275)
+- Data.Textモジュールの公式ドキュメント: https://hackage.haskell.org/package/text/docs/Data-Text.html
+- Haskell言語のチュートリアル: https://www.haskell.org/tutorial/
+- 他の便利な言語拡張について: https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/exts/index.html
 
-## 関連リンク
+## 参考
 
-- [Haskell入門ブログ](https://haskelltutorial.net/)
-- [Haskell.jp公式ウェブサイト](https://haskell.jp/)
-- [Haskell日本ユーザーグループ](https://haskell.jp/users.html)
+- [Haskellでの文字列操作について](https://qiita.com/hiratara/items/7686b334c35194f9cb5d)
+- [実践的なHaskellプログラミング入門](https://blog.eleven-labs.com/ja/introduction-a-la-programmation-haskell-pratique/)

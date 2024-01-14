@@ -1,7 +1,9 @@
 ---
 title:                "Swift recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/reading-command-line-arguments.md"
 ---
 
@@ -9,54 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-When writing a Swift program, you may encounter situations where you need to get information from the user directly in the command line. This is where reading command line arguments becomes useful. It allows you to access and use input from the user without the need for a graphical user interface.
+Command line arguments are an essential aspect of programming that can help optimize and enhance your code. Whether you are a beginner or an experienced developer, understanding how to read command line arguments can greatly benefit your Swift programming skills.
 
 ## How To
 
-Reading command line arguments in Swift is a straightforward process. First, you need to create a variable to store the arguments. This is usually an array of strings as each argument will be stored as a separate element. You can do this by using the `CommandLine.arguments` property.
-
-```Swift
-let args = CommandLine.arguments
-```
-
-To access a specific argument, you can use the bracket notation and specify the index of the argument you want to access. Remember, the first argument (index 0) will always be the name of the executable file.
-
-```Swift
-let firstArg = args[1] // accessing the second argument
-```
-
-To print out the arguments, you can use a simple `for` loop and print each element in the `args` array.
-
-```Swift
-for arg in args {
-  print(arg)
-}
-```
-
-Now, let's say you have a simple program that adds two numbers together. You can read the numbers from the command line and perform the addition as follows:
-
-```Swift
-let firstNum = Int(args[1]) ?? 0 // converting argument to an integer
-let secondNum = Int(args[2]) ?? 0 // converting argument to an integer
-let result = firstNum + secondNum
-print("The sum of the two numbers is \(result).")
-```
-
-Running the program in the command line with the arguments `3 7` would produce the following output:
+To read command line arguments in Swift, we first need to import the `Foundation` module to access the `Process` class. Then, we can create an instance of the `Process` class and use the `arguments` property to retrieve an array of string arguments passed in through the command line. Let's take a look at an example:
 
 ```
-The sum of the two numbers is 10.
+import Foundation
+
+let arguments = ProcessInfo.processInfo.arguments
+
+print("Command line arguments: \(arguments)")
 ```
+
+Running this code in the command line with arguments, such as `swift main.swift argument1 argument2`, will output the following:
+
+```
+Command line arguments: ["/path/to/main.swift", "argument1", "argument2"]
+```
+
+Notice that the first argument in the array is always the path to the Swift file, while the remaining arguments are the ones passed in through the command line. We can also use `arguments.dropFirst()` to exclude the path to the file and only retrieve the user-provided arguments.
 
 ## Deep Dive
 
-There are a few things to keep in mind when reading command line arguments in Swift. First, remember to always check for the number of arguments before accessing them. If there are not enough arguments passed in, your program may crash. Additionally, you may need to do some data type conversion depending on what type of input you are expecting.
+Command line arguments can also be used to pass in options or flags to our code. These can be specified by using a dash before the argument, such as `-v` for verbose mode or `-f` for a specific file.
 
-It's also worth noting that the order in which the arguments are passed in the command line matters. For example, if your program expects a first name and a last name, but the user passes them in the reverse order, the output will also be reversed.
+We can check for the presence of these options by using the `contains` method on the `arguments` array. Let's take a look at an example:
 
-Lastly, you can also use flags or options as arguments in Swift by using the `CommandLine.option` property. This can be particularly useful in more complex programs that require different behaviors based on user input.
+```
+import Foundation
+
+let arguments = ProcessInfo.processInfo.arguments
+
+if arguments.contains("-v") {
+    print("Verbose mode activated")
+}
+
+if arguments.contains("-f") {
+    let fileIndex = arguments.firstIndex(of: "-f")!
+
+    print("File name: \(arguments[fileIndex + 1])")
+}
+```
+
+In this example, we are checking for the presence of the `-v` and `-f` flags and retrieving additional information if they are present in the command line arguments. This allows us to create more dynamic and customizable code using command line input.
 
 ## See Also
 
-- [Official Swift Language Guide](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html)
-- [Working with Command Line Arguments in Swift](https://www.hackingwithswift.com/articles/162/how-to-use-command-line-arguments-in-swift)
+- [Apple Developer Documentation on ProcessInfo](https://developer.apple.com/documentation/foundation/processinfo)
+- [Swift Argument Parser Library](https://github.com/apple/swift-argument-parser)
+- [Command Line Arguments Tutorial in Swift](https://medium.com/slalom-build/using-command-line-arguments-in-your-swift-script-29b5585ad847)

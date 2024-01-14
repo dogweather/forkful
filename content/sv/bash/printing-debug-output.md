@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Utskrift av felsökningsutdata"
+title:                "Bash: Utskrift av felsökningsutmatning"
+simple_title:         "Utskrift av felsökningsutmatning"
 programming_language: "Bash"
-category:             "Testing and Debugging"
+category:             "Bash"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/printing-debug-output.md"
 ---
 
@@ -9,77 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva ut debuggutdata är ett användbart verktyg för att felsöka och förbättra Bash-programmeringserfarenhet. Genom att skriva ut variabler, värden och steg i ditt program kan du enkelt följa flödet och hitta eventuella fel.
+Att skriva Bash-kod kan vara en utmanande uppgift och ofta stöter man på problem längs vägen. Att lägga till debugutmatning i koden kan hjälpa till att hitta fel och lösa dem snabbare. Det kan också ge en bättre förståelse för hur koden fungerar och därmed förbättra kvaliteten på slutprodukten.
 
-## Hur man gör
+## Hur man gör det
 
-Det finns flera sätt att skriva ut debuggutdata i Bash. Det enklaste sättet är att använda kommandot "echo" för att skriva ut en variabel eller ett meddelande. Till exempel:
+Att lägga till debugutmatning i din Bash-kod är en enkel process. Det finns flera sätt att göra det, men här är några enkla sätt att komma igång:
 
+1. Använd `echo`-kommandot för att skriva ut variabler i olika delar av koden.
 ```Bash
-#!/bin/bash
-namn="Emma"
-echo "Hej $namn!"
+echo "Variabeln är $var"
 ```
-
-Detta kommer att skriva ut meddelandet "Hej Emma!" när programmet körs.
-
-För mer detaljerad debuggutdata kan du använda kommandot "set -x" för att aktivera "trace mode". Detta kommer att skriva ut varje steg i ditt program tillsammans med dess värden. Till exempel:
-
+2. Använd `set -x` för att aktivera debug-läget som kommer att skriva ut varje rad i koden när den körs.
 ```Bash
-#!/bin/bash
 set -x
-namn="Emma"
-ålder=25
-echo "$namn är $ålder år gammal"
+# kod här
+set +x # för att inaktivera debug-läget igen
 ```
-
-Detta kommer att skriva ut:
-
-```
-+ namn=Emma
-+ ålder=25
-+ echo 'Emma är 25 år gammal'
-Emma är 25 år gammal
-```
-
-Det är också möjligt att skriva ut ett meddelande för att identifiera viktiga steg i ditt program. Till exempel:
-
+3. Använd `read` för att vänta på användarens input och skriva ut det i koden.
 ```Bash
-#!/bin/bash
-namn="Emma"
-echo "Följande kod visar värdet av variabeln namn:"
-echo "Namn: $namn"
-```
-
-Detta kommer att skriva ut:
-
-```
-Följande kod visar värdet av variabeln namn:
-Namn: Emma
+read -p "Ange ett nummer: " num
+echo "Du angav: $num"
 ```
 
 ## Djupdykning
 
-Att skriva ut debuggutdata kan också vara användbart för att kontrollera och jämföra värden. Till exempel, om du har en loop som ska öka ett nummer med ett visst värde varje gång, kan du skriva ut det ökade värdet för att se om det är korrekt.
+Att lägga till debugutmatning kan vara mycket hjälpsamt men det kan också leda till större filstorlekar och onödigt utskrift. Här är några tips för att optimera din debugutmatning:
 
-En annan användbar funktion är att använda "printf" för att skriva ut format och värden. Detta ger dig möjlighet att kontrollera och formatera hur din debuggutdata visas. Till exempel:
-
+- Använd `>/dev/null` för att dölja output från vissa kommandon såsom `curl` eller `grep`.
 ```Bash
-#!/bin/bash
-number1=5
-number2=10
-summa=$(( $number1 + $number2 ))
-printf "Summan av %s och %s är %s\n" "$number1" "$number2" "$summa"
+curl example.com > /dev/null # skriver ut resultaten på skärmen men de ignoreras
 ```
 
-Detta kommer att skriva ut:
-
+- Använd `echo -n` för att hålla debug-utmatningen på samma rad som kodraden.
+```Bash
+echo -n "Om du kan läsa detta är koden körd"
 ```
-Summan av 5 och 10 är 15
+
+- Använd `>&2` för att skriva ut felmeddelanden på standard error istället för standard output.
+```Bash
+(( 1/0 )) 2>&1 # skriver ut felmeddelandet på standard error istället för skärmen
 ```
 
 ## Se även
 
-- [Bash referenshandbok](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Guide för nybörjare](http://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [10 Bash Tips och Tricks för att spara tid och förbättra produktiviteten](https://www.tecmint.com/best-linux-bash-tips-and-tricks/)
+Här är några användbara artiklar och resurser för att lära dig mer om att lägga till debugutmatning i din Bash-kod:
+
+- [Debug Bash Scripts Like a Pro](https://www.enterprisedb.com/postgres-tutorials/debug-bash-scripts-pro)
+- [Debugging Bash scripts](https://linuxconfig.org/debugging-bash-scripts)
+- [Bash Debugging - Linux Journal](https://www.linuxjournal.com/content/bash-debugging-linux-journal)

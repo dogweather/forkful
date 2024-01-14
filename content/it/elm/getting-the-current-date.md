@@ -1,51 +1,43 @@
 ---
-title:                "Elm: Ottenere la data corrente"
+title:                "Elm: Ottenere la data attuale"
+simple_title:         "Ottenere la data attuale"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché Utilizzare Elm per Ottenere la Data Corrente?
+## Perché
 
-Ottenere la data corrente potrebbe sembrare un'operazione banale, ma in realtà può essere molto utile in diversi scenari di programmazione. Con Elm, puoi facilmente ottenere la data corrente e utilizzarla nel tuo codice in modo efficiente e accurato.
+La data corrente è un elemento essenziale in molti programmi. Potresti aver bisogno di utilizzarla per gestire eventi, mostrare notifiche o semplicemente per aggiornare informazioni in tempo reale.
 
-## Come Ottenere la Data Corrente in Elm
+## Come fare
 
-Per ottenere la data corrente in Elm, possiamo utilizzare la funzione `Date.now` del pacchetto `elm/time`. Questa funzione restituisce un valore `Time` rappresentante la data corrente, che possiamo poi formattare a nostro piacimento.
-
-```Elm
-import Time exposing (..)
-import Date exposing (..)
-
-currentTime : Time
-currentTime =
-    Date.now
-
--- Output: 1604585419200
-```
-
-Possiamo anche utilizzare il package `elm/time` per formattare la data corrente in un formato più leggibile, come ad esempio una stringa.
+Per ottenere la data corrente in Elm, dobbiamo utilizzare il modulo `Time`. Per prima cosa, dobbiamo importare questo modulo:
 
 ```Elm
 import Time exposing (..)
-import Date exposing (..)
-
-currentTime : String
-currentTime =
-    Time.format "%Y/%m/%d" (Date.now)
-
--- Output: 2020/11/05
 ```
 
-## Approfondimento su Come Funziona l'Ottenimento della Data Corrente in Elm
+Successivamente, possiamo utilizzare la funzione `now` per ottenere la data corrente. Questa funzione ci restituirà un valore di tipo `Task Time.Posix` che dobbiamo elaborare utilizzando la funzione `andThen`:
 
-La funzione `Date.now` sfrutta il time Unix epoch, un sistema utilizzato per rappresentare il tempo come numero di secondi passati dal 1 gennaio 1970. In Elm, il package `elm/time` converte questo valore in un tipo `Time` per rappresentare la data corrente.
+```Elm
+now
+    |> andThen (always currentData)
+```
 
-Per formattare la data, il package `elm/time` utilizza la libreria di formattazione time di JavaScript, fornendo una serie di stringhe di formattazione per personalizzare il risultato finale.
+Dove `currentDate` è una funzione che elabora il valore di `Time.Posix` per ottenere la data formattata in modo leggibile.
 
-## Vedi Anche
+## Approfondimento
 
-- Documentazione ufficiale del package `elm/time` su https://package.elm-lang.org/packages/elm/time/latest/
-- Tutorial su come utilizzare Elm con Time di Luca Palmieri su https://medium.com/@lucapalmieri/introduzione-ad-elm-con-time-b7e645e6c68c
+Il valore restituito dalla funzione `now` è di tipo `Task Time.Posix` perché la data corrente potrebbe non essere immediatamente disponibile. Questo perché viene utilizzata la funzione `performance.now` del browser, che restituisce il tempo trascorso dall'avvio del browser in millisecondi.
+
+Inoltre, il modulo `Time` ci offre diverse funzioni per manipolare i valori di tempo, come ad esempio `add`, che ci permette di aggiungere un certo numero di millisecondi a una data.
+
+## Vedi anche
+
+- Documentazione del modulo `Time`: https://package.elm-lang.org/packages/elm/time/latest/
+- Tutorial di Elm sulla gestione del tempo: https://www.elm-tutorial.org/en/06-the-elm-architecture/05-time.html
+- Esempi di utilizzo della data corrente in Elm: https://github.com/search?p=1&q=elm+current+date&type=Repositories

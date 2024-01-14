@@ -1,41 +1,47 @@
 ---
 title:                "Java: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porque
-Há muitas vezes em que precisamos alterar algum texto em um programa Java. Pode ser necessário corrigir um erro ortográfico, atualizar uma informação ou simplesmente melhorar a legibilidade do código. A busca e substituição de texto é uma ferramenta útil para tornar essas alterações de maneira rápida e eficiente.
+## Por que
 
-## Como Fazer
-Para fazer uma busca e substituição de texto em Java, podemos utilizar o método `replaceAll()` da classe `String`. Este método recebe dois parâmetros: a expressão regular a ser buscada e a string de substituição. Vejamos um exemplo abaixo:
+Se você é um programador Java, provavelmente já se deparou com a tarefa de buscar e substituir texto em seu código. Isso pode ser necessário para fazer alterações em massa, corrigir erros ou melhorar a legibilidade do seu código. Aprender a realizar essa tarefa pode economizar tempo e melhorar sua eficiência como desenvolvedor.
 
-```Java
-String texto = "Este texto contém muitas vogais.";
-String novoTexto = texto.replaceAll("[aeiou]", "I");
-System.out.println(novoTexto);
-```
-Output:
-`IstI tIxtI cIntIm mItIs vIgIIs.`
+## Como fazer
 
-No exemplo acima, utilizamos uma expressão regular que representa todas as vogais para substituí-las pela letra "I". É importante destacar que o método `replaceAll()` é sensível a maiúsculas e minúsculas, então se quisermos substituir todas as letras "a" e "A", por exemplo, devemos especificar as duas letras na expressão regular.
-
-Também é possível utilizar o método `replace()` se quisermos substituir apenas a primeira ocorrência do padrão de texto. Veja um exemplo abaixo:
+Para buscar e substituir texto em Java, você pode usar o método `replace()` da classe `String`. Este método recebe dois parâmetros: o texto a ser substituído e o texto substituto. Veja um exemplo abaixo:
 
 ```Java
-String texto = "Este texto contém muitas vogais.";
-String novoTexto = texto.replace("vogais", "consoantes");
+String texto = "Olá, mundo!";
+String novoTexto = texto.replace("mundo", "você");
 System.out.println(novoTexto);
 ```
-Output:
-`Este texto contém muitas consoantes.`
 
-## Mergulho Profundo
-A busca e substituição de texto em Java pode ser utilizada em casos mais complexos, como por exemplo, no uso de expressões regulares. É possível especificar padrões de texto mais precisos para realizar a substituição. Além disso, também é possível utilizar outros métodos da classe `String`, como `split()` e `Pattern` para obter um maior controle sobre a busca.
+A saída desse código seria "Olá, você!".
 
-## Veja Também
-- Documentação do método `replaceAll()` em Java: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#replaceAll(java.lang.String,java.lang.String)
-- Tutorial sobre expressões regulares em Java: https://www.regular-expressions.info/tutorial.html
+Você também pode usar o método `replaceAll()` para substituir todas as ocorrências de um texto em uma string. Veja um exemplo abaixo:
+
+```Java
+String texto = "banana, batata, maçã, abacate";
+String novoTexto = texto.replaceAll("a", "e");
+System.out.println(novoTexto);
+```
+
+A saída seria "benene, betete, meçã, ebecete".
+
+## Mergulho profundo
+
+Ao usar os métodos `replace()` e `replaceAll()`, é importante entender que eles retornam uma nova string e não alteram a string original. Isso significa que se você quiser substituir o texto em uma string e manter a alteração, precisa atribuir o resultado a uma nova string.
+
+Você também pode usar o método `replaceFirst()` para substituir apenas a primeira ocorrência de um texto em uma string. Outra opção é usar expressões regulares para buscar e substituir padrões específicos em uma string.
+
+## Veja também
+
+- [Documentação oficial do Java sobre o método `replace()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-char-char-)
+- [Tutorial sobre expressões regulares em Java](https://www.devmedia.com.br/expressoes-regulares-em-java/32126)

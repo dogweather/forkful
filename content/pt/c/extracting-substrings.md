@@ -1,59 +1,59 @@
 ---
-title:                "C: Extraindo substrings"
+title:                "C: Extraindo subcadeias"
+simple_title:         "Extraindo subcadeias"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em programação?
+## Por que extrair subcadeias?
 
-Ao escrever código em linguagem C, muitas vezes nos deparamos com a necessidade de extrair partes específicas de uma string. Isso pode ser útil em várias situações, como na validação de entradas do usuário ou na manipulação de dados em um banco de dados. Nesse sentido, a capacidade de extrair substrings é uma habilidade importante para os programadores.
+A extração de subcadeias é uma técnica muito útil e comumente utilizada em programação. Ela permite que o programador extraia uma parte específica de uma string, que pode ser usada posteriormente para diferentes fins. Por exemplo, se você quiser pegar apenas o sobrenome de uma pessoa em um banco de dados, a extração de subcadeias pode ser útil. Além disso, essa técnica também pode ser usada para verificar se uma determinada palavra está presente em uma string maior, entre outras possibilidades.
 
-## Como fazer isso em C?
+## Como fazer a extração de subcadeias em C
 
-Extrair substrings em C é uma tarefa relativamente simples. Primeiro, é necessário ter uma string da qual você quer extrair a substring. Suponha que temos a seguinte string:
-
-```C
-char str[] = "Extração de substrings em C";
-```
-
-Para extrair uma substring dessa string, é necessário especificar o índice de início e o tamanho da substring desejada. Por exemplo, se quisermos extrair a palavra "substrings", podemos fazer o seguinte:
+Para extrair subcadeias em C, é necessário utilizar a função `strncpy()` da biblioteca `string.h`. Essa função recebe três parâmetros: a string na qual será feita a extração, o índice inicial da subcadeia e o tamanho da subcadeia. Veja um exemplo de código abaixo:
 
 ```C
-char substring[10];
+#include <stdio.h>
+#include <string.h>
 
-// Índice de início da substring
-int start = 14;
+int main() {
+   char str[] = "Este é um exemplo de string";
+   char subc[10];
 
-// Tamanho da substring desejada
-int length = 10;
+   // utilizando strncpy para extrair uma subcadeia de tamanho 10
+   strncpy(subc, str + 11, 10);
+   subc[10] = '\0';
 
-// Usando a função strncpy para extrair a substring
-strncpy(substring, str + start, length);
+   printf("Subcadeia extraída: %s\n", subc);
+   
+   return 0;
+}
 ```
 
-Agora, a variável "substring" contém a substring "substrings". Podemos imprimir essa substring para verificar se ela foi extraída corretamente:
+O código acima irá extrair a subcadeia "exemplo de" da string "Este é um exemplo de string". Note que é necessário adicionar o caractere nulo (`'\0'`) ao final da subcadeia para indicar seu término.
 
-```C
-printf("Substring: %s\n", substring);
-```
-
-O código acima produziria o seguinte resultado:
+O resultado esperado da execução do código acima será:
 
 ```
-Substring: substrings
+Subcadeia extraída: exemplo de
 ```
 
-## Aprofundando-se na extração de substrings
+## Mergulho mais profundo na extração de subcadeias
 
-Além da função `strncpy`, C também possui outras funções que podem ser úteis na extração de substrings, como `strchr` e `strtok`. É importante entender como essas funções funcionam e em quais situações elas podem ser mais adequadas.
+Além da função `strncpy()`, existem várias outras maneiras de extrair subcadeias em C. Algumas delas são:
 
-Além disso, também é importante lembrar que, ao extrair substrings, devemos levar em consideração o tamanho da string original e do tamanho de substring desejado para evitar possíveis erros na execução do código.
+- Utilizar `strncat()` para juntar duas strings e em seguida utilizar `strncpy()` para extrair a subcadeia desejada.
+- Utilizar a técnica de ponteiros para percorrer a string e copiar a subcadeia para outra variável.
+- Utilizar `sscanf()` para ler a string e armazenar a subcadeia em uma variável.
+
+É importante lembrar que ao extrair uma subcadeia, é necessário garantir que a string tem um tamanho suficiente para armazenar a subcadeia desejada.
 
 ## Veja também
-
-- [Referência de Strings em C](https://www.codingame.com/playgrounds/14213/string-handling-in-c)
-- [Documentação oficial da função strncpy](https://www.ibm.com/docs/en/zos/2.3.0?topic=functions-strncpy-store-string)
-- [Tutorial de programação em C](https://www.devmedia.com.br/c-tutorial/)
+- [Documentação oficial da função `strncpy()` em C](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)
+- [Tutorial sobre a extração de subcadeias em C](https://www.geeksforgeeks.org/c-program-extracting-substrings-given-string/)
+- [Outras funções úteis para manipulação de strings em C](https://www.geeksforgeeks.org/string-handling-library-functions-c/)

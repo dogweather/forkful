@@ -1,22 +1,50 @@
 ---
 title:                "Go: Tworzenie pliku tekstowego"
+simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+### Dlaczego
 
-Pisanie pliku tekstowego przy użyciu języka programowania Go może być niezbędne w wielu przypadkach, takich jak tworzenie raportów, zapisywania plików konfiguracyjnych lub generowania plików źródłowych dla innych programów. Poniżej przedstawimy kilka prostych przykładów, jak to zrobić przy użyciu Go.
+Pisanie pliku tekstowego jest nieodłączną częścią programowania w języku Go. Jest to łatwy i szybki sposób na zapisywanie danych w zrozumiałej dla człowieka formie.
 
-## Jak to zrobić
+### Jak to zrobić
 
-Poniżej znajduje się przykład kodu w języku Go, który tworzy nowy plik tekstowy o nazwie "sample.txt" i wpisuje do niego tekst. Następnie zapisuje plik i zamyka go.
+W języku Go istnieje wiele sposobów na zapisanie tekstu do pliku. Jednym z najprostszych jest użycie funkcji `WriteFile` z pakietu `io/ioutil`. Oto przykładowy kod:
 
-```Go
-package main
+```
+paczka glówna
+
+import (
+    "fmt"
+    "io/ioutil"
+)
+
+func main() {
+    tekst := "To jest przykładowy tekst, który zostanie zapisany do pliku."
+    err := ioutil.WriteFile("tekst.txt", []byte(tekst), 0644)
+    if err != nil {
+        fmt.Println("Błąd przy zapisywaniu pliku:", err)
+        return
+    }
+    
+    fmt.Println("Plik został zapisany.")
+}
+```
+
+Powyższy kod wykorzystuje funkcję `WriteFile` do zapisania tekstu do pliku o nazwie "tekst.txt". Kod 0644 oznacza, że plik będzie miał uprawnienia do odczytu i zapisu dla właściciela, a tylko do odczytu dla innych użytkowników.
+
+### W głębi
+
+Aby zapisać dane w formacie innych niż tekst, można użyć funkcji `Write` z pakietu `os`. Ta funkcja przyjmuje jako parametry plik, do którego chcemy zapisać dane oraz slice bajtów reprezentujących dane. Oto przykładowy kod:
+
+```
+paczka główna
 
 import (
     "fmt"
@@ -24,32 +52,28 @@ import (
 )
 
 func main() {
-
-    // utworzenie pliku
-    file, err := os.Create("sample.txt")
+    plik, err := os.Create("dane.bin")
     if err != nil {
-        fmt.Println(err)
+        fmt.Println("Błąd przy tworzeniu pliku:", err)
+        return
     }
-    defer file.Close()
-
-    // wpisanie tekstu do pliku
-    fmt.Fprintln(file, "Cześć, to jest przykładowy plik tekstowy")
-
-    // zapisanie i zamknięcie pliku
-    file.Sync()
+    defer plik.Close()
+    
+    dane := []byte{0x48, 0x65, 0x6C, 0x6C, 0x6F, 0x20, 0x57, 0x6F, 0x72, 0x6C, 0x64}
+    _, err = plik.Write(dane)
+    if err != nil {
+        fmt.Println("Błąd przy zapisywaniu danych:", err)
+        return
+    }
+    
+    fmt.Println("Dane zostały zapisane.")
 }
 ```
 
-Po uruchomieniu powyższego kodu, w folderze projektu zostanie utworzony plik tekstowy o nazwie "sample.txt", a w nim wpisany będzie nasz przykładowy tekst.
+Ten kod tworzy plik "dane.bin" i zapisuje w nim dane w postaci slice'a bajtów. Funkcja `Write` zwraca również ilość zapisanych bajtów, która w tym przypadku jest pomijana przy użyciu `_`.
 
-## Deep Dive
+### Zobacz również
 
-Pisanie plików tekstowych w języku Go jest możliwe dzięki modułowi "os", który w swojej funkcjonalności obsługuje operacje związane z systemem operacyjnym, takie jak tworzenie i edycja plików.
-
-W funkcji "main" najpierw używamy funkcji "Create" z modułu "os" by utworzyć nasz plik tekstowy. Następnie, za pomocą funkcji "Fprintln" z modułu "fmt", możemy wpisać tekst do pliku. Na końcu wykorzystujemy funkcję "Sync" do zapisania i zamknięcia pliku.
-
-## Zobacz również
-
-- Dokumentacja języka Go: https://golang.org/doc/
-- Przykłady kodu w języku Go: https://gobyexample.com/
-- Ucz się programowania w języku Go: https://tour.golang.org/welcome/1
+- Dokumentacja pakietu `io/ioutil`: https://golang.org/pkg/io/ioutil/
+- Dokumentacja pakietu `os`: https://golang.org/pkg/os/
+- Przykładowe zadania związane z pisanie plików w języku Go: https://gobyexample.com/writing-files

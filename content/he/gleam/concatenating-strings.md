@@ -1,34 +1,56 @@
 ---
-title:                "Gleam: שרשור מחרוזות"
+title:                "Gleam: קישור מחרוזות"
+simple_title:         "קישור מחרוזות"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה?
+## למה:
 
-קישור מחרוזות הוא כלי חיוני בתכנות, הוא מאפשר למפתחים ליצור מחרוזות ארוכות ומורכבות מתוך מחרוזות קטנות יותר. זה מאפשר לנו ליצור תוכניות בעלות יכולות מיוחדות ותיאומים מדוייקים, כגון יצירת הודעות למשתמש, יצירת פרסומות וכו'.
+פרידת ה מחרוזות בשפת למדת יכולה להיות מאוד שימושי בסיטואציות רבות, כולל בתכנות וגם בשימושים יומיומיים כמו בכתיבת הודעות או פוסטים במדיה חברתית. כשמשתמשים בפונקציות כמו ```string.concat()``` או באופרטור ```++```, ניתן לקבל מחרוזות מאוחדות בקלות ובמהירות, מה שיעניק נוחות ויכולת יצירתית של קוד.
 
-## איך לבצע קישור מחרוזות
+## איך לעשות זאת:
 
-``` Gleam
-let name = "עמית"
-let greeting = "שלום"
+בדוגמאות הקוד הבאות נראה כיצד לחבר מחרוזות ב-Gleam בשימוש בפונקציות ובאופרטורים שונים:
 
-let message = greeting ++ ", " ++ name ++ "!"
-// פלט: שלום, עמית!
+```
+Gleam module Example {
 
-let numbers = "123" ++ "456"
-// פלט: 123456
+  pub fn simple_concat() {
+    let str1 = "Hello ";
+    let str2 = "world";
+    let result = string.concat(str1, str2);
+    IO.print(result);
+  }
+  
+  pub fn complex_concat() {
+    let str1 = "Let's ";
+    let str2 = "do ";
+    let str3 = "something ";
+    let str4 = "amazing!";
+    let result = str1 ++ str2 ++ str3 ++ str4;
+    IO.puts(result);
+  }
+
+}
 ```
 
-## העמוד העמוק
+פלט של הקוד הנ"ל ביציאת האופקת יהיה:
 
-קישור מחרוזות ב-Gleam מאפשר גם להשתמש במשתנים נוספים באמצעות תוויות מגדר. בנוסף, ניתן להשתמש בפונקציות כדי ליצור מחרוזת דינמית. כל מחרוזת מוגדרת כך שניתן לגשת אליה כפעולת התעתקות.
+```
+Hello world
+Let's do something amazing!
+```
 
-## ראה גם
+## מה הנעשה במפתח:
 
-- קישור מחרוזות ב-Gleam: https://gleam.run/documentation/guides/strings.html
-- קוד דוגמה לקישור מחרוזות ב-Gleam: https://github.com/gleam-lang/gleam/blob/master/examples/strings.gleam
+פרידת המחרוזות ב-Gleam מבצעת פעולת שמירה (concatenation), שפועלת על שני ארגומנטים ומחזירה מחרוזת אחת מאוחדת. פונקציות כמו ```string.concat()``` מקבלות שני ארגומנטים וביצוע את פעולת השמירה עליהם, בעוד שאופרטור כמו ```++```, מספק דרך יעילה יותר לחבר מחרוזות בלי להשתמש בפונקציות.
+
+## ראה גם:
+
+- [פקודת IO.print](https://hexdocs.pm/gleam_stdlib/Gleam.IO.html#print/1)
+- [מדריך לעבודה עם מחרוזות ב-Gleam](https://gleam.run/book/core-modules)

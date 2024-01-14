@@ -1,43 +1,46 @@
 ---
 title:                "Gleam recipe: Writing to standard error"
+simple_title:         "Writing to standard error"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Writing to standard error can be a useful tool for programmers in many situations. It allows for error messages and other important information to be displayed separately from the regular output, making debugging and troubleshooting much easier.
+## Why Writing to Standard Error in Gleam is Useful
 
-## How To
-To write to standard error in Gleam, you can use the `io.error` function. This function takes a string as its argument, which will be displayed on the standard error output.
+Writing to standard error in Gleam can be useful for debugging purposes. It allows you to print out specific information or error messages that can help you troubleshoot any issues in your code. This can save you time and effort in the troubleshooting process.
 
-```
-Gleam ...
-let error_message = "Something went wrong"
-io.error(error_message)
-...
-```
+## How To Write to Standard Error in Gleam
 
-Running this code will produce the following output:
+To write to standard error in Gleam, you can use the ```gleam/io:stderr``` module. Here's an example code snippet:
 
-```
-Something went wrong
+```Gleam
+import gleam/io
+
+fn main() {
+  io.stderr.print("Oops, an error occurred!")
+}
 ```
 
-As you can see, the error message is displayed separately from the regular output.
+In this example, we imported the ```gleam/io``` module and used the ```stderr.print()``` function to print out a custom error message to the standard error stream. 
 
-## Deep Dive
-One of the key benefits of writing to standard error is that it allows for error messages to be easily distinguished from regular output. This is especially useful when dealing with large amounts of data or complex programs, as it can be difficult to locate error messages in a sea of output.
+The output of this code would be:
 
-Additionally, writing to standard error can be helpful in cases where you need to differentiate between types of messages, such as warnings, errors, or informational messages. This can aid in quickly identifying and addressing issues within your code.
+```
+Oops, an error occurred!
+```
 
-Another important aspect to note is that writing to standard error does not halt the execution of the program, unlike writing to standard output. This means that even if an error occurs, the program will continue to run and display output, making it easier to identify and troubleshoot issues.
+## Deep Dive into Writing to Standard Error
+
+In Gleam, everything printed to ```stdout``` goes to the standard output stream, which is typically displayed in the console when you run your program. The ```stderr``` stream, on the other hand, is used for error messages and is typically printed in red or highlighted in some way to differentiate it from regular output.
+
+By using the ```stderr.print()``` function, you can add more context to your error messages and make them stand out for easier troubleshooting. You can also use the ```stderr.println()``` function to add a new line after your error message.
 
 ## See Also
-Here are some helpful links for further reading on writing to standard error in Gleam:
+- [Gleam.io module documentation](https://gleam.run/documentation/stdlib/io)
+- [Gleam error handling documentation](https://gleam.run/documentation/error_handling)
 
-- [Gleam Documentation on Writing to Standard Error](https://gleam.run/articles/writing-to-standard-error)
-- [Gleam Language Reference on Standard I/O](https://gleam.run/reference/std/#standard-io)
-- [Gleam Blog on Debugging with Standard Error](https://gleam.run/articles/debugging-with-standard-error)
+By writing to standard error in Gleam, you can improve your debugging process and make it easier to identify and fix any issues in your code. Give it a try in your next project and see how it can benefit you!

@@ -1,57 +1,35 @@
 ---
-title:                "Clojure: Eliminar caracteres que coinciden con un patrón"
+title:                "Clojure: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
+## ¿Por qué borrar caracteres que coinciden con un patrón?
 
-A veces, al trabajar con cadenas de texto en Clojure, te encuentras con caracteres que no necesitas. Estos pueden ser espacios en blanco, números, símbolos, o cualquier otro carácter que no cumpla con cierto patrón. En estos casos, puede ser útil saber cómo eliminar esos caracteres para obtener una cadena más limpia y legible.
+Borrar caracteres que coinciden con un patrón es una acción común en la programación para limpiar y formatear datos de manera eficiente.
 
-## Cómo hacerlo
-
-Para eliminar caracteres que coincidan con un patrón, utilizamos la función `replace-first` de la librería core de Clojure. Por ejemplo, si queremos eliminar todos los espacios en blanco de una cadena, podemos hacer lo siguiente:
+## Cómo hacerlo:
 
 ```Clojure
-(require '[clojure.string :as str])
-
-(def texto "Hola   Mundo")
-
-(str/replace-first texto #"\s+" "")
-; => "HolaMundo"
+(def string "hola123")
+(re-seq #"[0-9]" string)
 ```
 
-En el código anterior, la función `replace-first` toma dos argumentos: la cadena en la que queremos buscar y el patrón que queremos eliminar. En este caso, usamos la expresión regular `#"\s+"` para representar uno o más espacios en blanco. Luego, reemplazamos esos espacios con una cadena vacía `""`.
+El código anterior utiliza la función `re-seq` para encontrar y eliminar todos los números en la cadena "hola123". El patrón utilizado, `[0-9]`, indica a la función que busque cualquier número del 0 al 9 en la cadena. La salida sería `("1" "2" "3")`, lo que significa que los números en la cadena han sido eliminados.
 
-Podemos utilizar esta técnica para eliminar otros tipos de caracteres también. Por ejemplo, si queremos eliminar todos los números de una cadena, podemos usar la expresión regular `#"\d+"` para representar cualquier digito numérico.
+## Profundizando:
 
-```Clojure
-(def texto "Hoy es 19 de abril de 2021")
+La función `re-seq` utiliza expresiones regulares para encontrar una coincidencia con un patrón dado en una cadena. Utilizando diferentes patrones, es posible eliminar múltiples tipos de caracteres de una cadena, como letras, símbolos o espacios en blanco.
 
-(str/replace-first texto #"\d+" "")
-; => "Hoy es de abril de"
-```
+Además, existen otras funciones en Clojure que también permiten borrar caracteres basados en patrones, como por ejemplo la función `re-find` que devuelve la primera coincidencia encontrada en lugar de todas las coincidencias como lo hace `re-seq`.
 
-## Profundizando
+## Ver también:
 
-La función `replace-first` de Clojure también nos permite utilizar una función como segundo argumento, en lugar de un patrón. Esto significa que podemos realizar una acción sobre los caracteres que coinciden con el patrón antes de eliminarlos.
-
-Por ejemplo, si queremos eliminar todas las letras mayúsculas de una cadena, podemos usar la función `clojure.string/upper-case` en lugar de una expresión regular:
-
-```Clojure
-(def texto "¡HOLA, MUNDO!")
-
-(str/replace-first texto clojure.string/upper-case "")
-; => "¡, !"
-```
-
-En este caso, la función `upper-case` se aplica a cada letra mayúscula encontrada en la cadena antes de eliminarla.
-
-## Ver también
-
-- Documentación oficial de `replace-first`: https://clojuredocs.org/clojure.string/replace-first
-- Tutorial de expresiones regulares en Clojure: http://julianromera.com/2016/12/24/expresiones-regulares-en-clojure.html
-- Ejemplos de uso de `replace-first`: https://puredanger.github.io/tech.puredanger.com/2010/04/21/replacements/
+- [Documentación de Clojure sobre expresiones regulares](https://clojure.org/reference/regular_expressions)
+- [Tutorial de expresiones regulares en Clojure](https://www.brainbell.com/tutorials/Clojure/Regular_Expressions.html)
+- [Ejemplos de expresiones regulares en Clojure](https://gist.github.com/shastri65/f9a4781997b8e9313493)

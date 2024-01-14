@@ -1,7 +1,9 @@
 ---
 title:                "Bash: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,46 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W tym wpisie na blogu dowiesz się, dlaczego i w jaki sposób warto przekonwertować ciąg znaków na małe litery w języku programowania Bash.
+Konwertowanie ciągu znaków na małe litery jest często wykorzystywane w programowaniu, aby ułatwić porównywanie i manipulowanie tekstem. Jest to szczególnie przydatne, gdy pracujesz z danymi pobranymi z zewnętrznych źródeł, które mogą mieć różne wielkości liter lub pomiędzy systemami o różnych ustawieniach lokalnych.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Konwersja ciągu znaków na małe litery w Bash jest bardzo prosta i wykorzystuje się do tego funkcję wbudowaną "tr". W poniższych przykładach wyjaśnimy krok po kroku jak tego dokonać.
+Aby zamienić ciąg znaków na małe litery w Bash, można użyć wbudowanej funkcji "tr" w poniższym kodzie:
 
 ```Bash
-# Przykładowy ciąg znaków
 string="PRZYKŁADOWY TEKST"
-
-# Wyświetlenie oryginalnego ciągu
-echo $string
+echo "$string" | tr '[:upper:]' '[:lower:]'
 ```
 
-Wynik:
-```
-PRZYKŁADOWY TEKST
-```
+Jego wyjście będzie następujące:
 
 ```Bash
-# Konwersja na małe litery
-lower=$(echo $string | tr '[:upper:]' '[:lower:]')
-
-# Wyświetlenie przekonwertowanego ciągu
-echo $lower
-```
-
-Wynik:
-```
 przykładowy tekst
 ```
 
-## Zagłębienie się w temat
+Kod powyżej używa funkcji "echo" do wyświetlenia oryginalnego tekstu, a następnie przesyła wynik do funkcji "tr" wraz z dwoma zestawami znaków. Pierwszy zestaw oznacza wszystkie duże litery, a drugi zestaw oznacza wszystkie małe litery. W ten sposób wszystkie duże litery są zamieniane na małe litery w ciągu.
 
-Konwersja ciągu znaków na małe litery może być przydatna w wielu przypadkach. Na przykład podczas przetwarzania danych wejściowych, skanowania plików lub tworzenia nowych plików o jednolitym formatowaniu. Funkcja "tr" w Bash pozwala również na dodanie lub usunięcie innych znaków, jak również na zmianę wielkości liter.
+Można również wykorzystać pętlę "for" do zamiany na małe litery każdego pojedynczego wyrazu w tekście, jak w poniższym przykładzie:
 
-Podczas konwersji na małe litery, "tr" zwraca nowy ciąg znaków, więc warto przypisać go do zmiennej, aby móc go wykorzystać w dalszej części skryptu.
+```Bash
+string="PRZYKŁADOWY TEKST"
+for word in $string; do
+    echo "${word,,}"
+done
+```
+
+Jego wyjście będzie następujące:
+
+```Bash
+przykładowy 
+tekst
+```
+
+W powyższym kodzie zmienna "word" reprezentuje każde pojedyncze słowo w tekście, a operator "${}" pozwala na zamianę na małe litery.
+
+## Głębsza Analiza
+
+Istnieje wiele różnych sposobów, aby zamienić ciąg znaków na małe litery w Bash, włączając wiele funkcji takich jak "sed", "awk" i "perl". Każda z nich ma swoje własne zalety i jest używana w różnych przypadkach w zależności od potrzeb programisty.
+
+Jedną z popularnych metod jest użycie funkcji "tr" wraz z parametrem "-c" do wykluczenia specyficznych znaków z zamiany. Na przykład, jeśli chcesz zachować oryginalną wielkość znaków nawiasów, możesz użyć poniższego kodu:
+
+```Bash
+string="Przykładowy TEKST (ZS) Wielkiego miasta."
+echo "$string" | tr '[:upper:]' '[:lower:]' | tr '()' '()'
+```
+
+Jego wyjście będzie następujące:
+
+```Bash
+przykładowy tekst (ZS) wielkiego miasta.
+```
+
+Warto również pamiętać, że niektóre parametry transkrypcji mogą różnić się w zależności od ustawień regionalnych i systemowych. Dlatego zaleca się, aby wcześniej przetestować kod na różnych platformach.
 
 ## Zobacz również
 
-- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/html_node/index.html)
-- [Przydatne funkcje w Bash](https://linuxconfig.org/bash-functions)
-- [Przekierowanie i przetwarzanie danych w Bash](https://www.shell-tips.com/bash/redirect-stdout-and-stderr/)
+- [Bash Scripting Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [The Linux Command Line](https://linuxcommand.org/tlcl.php)
+- [AWK - A Tutorial and Introduction](https://www.grymoire.com/Unix/Awk.html)

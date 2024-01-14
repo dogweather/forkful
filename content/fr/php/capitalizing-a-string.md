@@ -1,50 +1,43 @@
 ---
-title:                "PHP: Majuscule d'une chaîne de caractères"
+title:                "PHP: Capitaliser une chaîne de caractères"
+simple_title:         "Capitaliser une chaîne de caractères"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Pourquoi: Il peut sembler banal de capitaliser une chaîne de caractères en PHP, mais il est en réalité très utile pour améliorer l'apparence de vos données et les rendre plus lisibles pour vos utilisateurs.
+## Pourquoi
 
-Comment faire: Voici un exemple simple de code pour capitaliser une chaîne de caractères en PHP :
+Avant de commencer à coder en PHP, une question que l'on pourrait se poser est : pourquoi devrais-je utiliser la fonction de mise en majuscule d'une chaîne de caractères ? En réalité, il peut y avoir plusieurs raisons pour lesquelles vous pourriez avoir besoin de capitaliser une chaîne. Peut-être devez-vous formater correctement un titre ou un nom, ou peut-être voulez-vous simplement rendre le texte plus lisible.
 
-```PHP
-$maChaine = "mon texte en minuscules";
-echo strtoupper($maChaine);
-```
+## Comment faire
 
-Le résultat de ce code sera :
+La fonction utilisée pour capitaliser une chaîne en PHP est `ucfirst()`. Elle va transformer la première lettre en majuscule et laisser les autres caractères intacts. Voyons un exemple concret :
 
 ```PHP
-MON TEXTE EN MINUSCULES
+$nom = "martin";
+echo ucfirst($nom);
 ```
 
-Voici un autre exemple avec un peu plus de manipulations :
+Cet exemple va afficher "Martin" car la première lettre du nom "martin" a été mise en majuscule. Vous pouvez également utiliser la même fonction pour capitaliser la première lettre de chaque mot d'une phrase :
 
 ```PHP
-$maChaine = "mon texte en minuscules";
-$maChaine = strtolower($maChaine); // convertit en minuscules
-echo ucfirst($maChaine); // met en majuscule la première lettre
+$phrase = "bonjour à tous";
+echo ucwords($phrase);
 ```
 
-Le résultat sera cette fois-ci :
+Cela va afficher "Bonjour À Tous".
 
-```PHP
-Mon texte en minuscules
-```
+## Plongée en profondeur
 
-Profonde plongée: Vous vous demandez peut-être comment la fonction `strtoupper()` fonctionne exactement ? Elle prend une chaîne de caractères en entrée et la transforme en majuscules selon les règles de la langue utilisée par PHP. Cela signifie que si vous utilisez des caractères spéciaux, ceux-ci seront également convertis en majuscules si vous utilisez cette fonction.
+Outre la fonction `ucfirst()`, il existe d'autres fonctions qui peuvent vous aider à capitaliser des chaînes en PHP. La fonction `ucwords()` que nous avons utilisée dans l'exemple précédent va transformer la première lettre de chaque mot en majuscule, mais elle va également convertir les autres lettres en minuscule si nécessaire. Cela peut être utile si vous souhaitez uniformiser le format de vos chaînes de caractères.
 
-Pour convertir une chaîne de caractères en minuscules, vous pouvez utiliser la fonction `strtolower()`. Si vous voulez capitaliser seulement la première lettre d'une chaîne, vous pouvez utiliser la fonction `ucfirst()`. Il existe également d'autres méthodes pour capitaliser une chaîne telle que `ucwords()` qui mettra en majuscule la première lettre de chaque mot dans la chaîne.
+Il existe également la fonction `strtoupper()` qui va transformer l'ensemble de la chaîne en majuscules, et la fonction `strtolower()` qui quant à elle, va mettre l'ensemble de la chaîne en minuscules. Gardez en tête que ces fonctions peuvent ne pas fonctionner comme vous le souhaitez si votre chaîne contient des caractères spéciaux ou des accents.
 
-Il est également important de noter que ces fonctions peuvent être utilisées avec toutes les langues supportées par PHP, ce qui en fait un outil très pratique pour un développement multilingue.
+## Voir aussi
 
-Voir aussi: Pour en savoir plus sur les différentes fonctions disponibles pour manipuler les chaînes de caractères en PHP, vous pouvez consulter la documentation officielle : 
-
-- `strtoupper()` : http://php.net/manual/fr/function.strtoupper.php
-- `strtolower()` : http://php.net/manual/fr/function.strtolower.php 
-- `ucfirst()` : http://php.net/manual/fr/function.ucfirst.php 
-- `ucwords()` : http://php.net/manual/fr/function.ucwords.php
+- [Documentation officielle de la fonction ucfirst() en PHP](https://www.php.net/manual/fr/function.ucfirst.php)
+- [Liste des fonctions de manipulation de chaînes en PHP](https://www.php.net/manual/fr/ref.strings.php)

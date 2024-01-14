@@ -1,46 +1,39 @@
 ---
 title:                "TypeScript recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "TypeScript"
-category:             "Testing and Debugging"
+category:             "TypeScript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-As developers, writing tests is an essential part of our job. Not only does it ensure that our code is functioning properly, but it also helps with future maintenance and debugging. In this blog post, we will dive into the world of testing in TypeScript and learn why it is important.
+## Why 
+Writing tests is an essential part of the software development process. It allows developers to ensure that their code is functioning as intended and catches any potential bugs before they reach production. By writing tests, developers can have more confidence in their code and spend less time debugging in the long run.
 
 ## How To
-To start writing tests in TypeScript, we need to install a testing framework. One popular option is Jest, which provides a simple and intuitive API for testing. Let's create a simple function that adds two numbers and write a test for it.
+To write tests in TypeScript, we first need to set up a testing framework. One popular choice is Jest, which can be installed through npm. Once Jest is installed, we can create a separate folder for our tests and use the `describe` and `it` functions to structure our tests. Here is an example of a simple test in TypeScript using Jest:
 
 ```TypeScript
-// Our add function
-function add(a: number, b: number) {
-  return a + b;
-}
+// app.test.ts
 
-// Test case for add function
-test('adds two numbers correctly', () => {
-  expect(add(2, 3)).toBe(5);
+describe('Calculator', () => {
+  it('should add two numbers correctly', () => {
+    const calc = new Calculator();
+    expect(calc.add(1, 2)).toEqual(3);
+  });
 });
 ```
 
-In the above code, we have defined our add function and then written a test case using the `test` function provided by Jest. The `expect` statement compares the result of our `add` function with the expected result using the `toBe` matcher. If the values aren't equal, the test will fail and provide a detailed error message.
-
-Besides the `toBe` matcher, Jest also provides other useful matchers such as `toEqual` for deep equality checks and `toHaveLength` for checking the length of an array or string.
-
-Now that we have seen a simple example, let's take a deeper look into writing tests.
+In this example, we are testing a `Calculator` class and its `add` method, expecting it to correctly add two numbers. If the test passes, Jest will output a green checkmark, indicating that the test was successful.
 
 ## Deep Dive
-One of the key principles of testing is having a good test structure. We usually want to have one test file per code file, with each test case focusing on a specific function or functionality. This helps with debugging and maintaining our tests in the future.
+When writing tests, it is important to consider different types of tests such as unit tests, integration tests, and end-to-end tests. Unit tests focus on testing small units of code in isolation, while integration tests check how different units work together. End-to-end tests, on the other hand, simulate the entire user flow and test the application as a whole. It is important to have a good balance of these different types of tests to ensure code coverage and catch any potential bugs.
 
-In addition to unit tests, we can also write integration tests to check the behavior of multiple components working together. Jest provides us with different ways to group and organize our tests, allowing us to run specific groups of tests or only a single test.
-
-Another important aspect is writing tests that are independent of each other. Each test should be able to run on its own without depending on the result of another test. This ensures that our tests are reliable and can be run in any order.
-
-Lastly, we should aim for a high code coverage when writing tests. Code coverage is a metric that measures the percentage of code that is covered by our tests. This helps us identify any areas of our code that might not be tested and may require additional tests.
+In TypeScript, we can also take advantage of its type system to write more robust tests. By defining types for our variables, we can catch errors at compile time instead of during runtime. This can save us a lot of time and effort in the long run and ensure that our tests are comprehensive and reliable.
 
 ## See Also
-- [Jest Documentation](https://jestjs.io/docs/en/getting-started)
-- [Introduction to Testing in JavaScript with Jest](https://www.digitalocean.com/community/tutorials/how-to-write-and-run-tests-with-jest)
-- [TDD vs BDD vs ATDD: What’s the Difference?](https://www.qasymphony.com/blog/tdd-vs-bdd-vs-atdd/)
+- [Jest](https://jestjs.io/)
+- [Typescript Official Documentation](https://www.typescriptlang.org/)
+- [Testing in TypeScript with Jest](https://medium.com/@rosswintle/testing-in-typescript-with-jest-8eee56e1edfc)

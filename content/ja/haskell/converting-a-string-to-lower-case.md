@@ -1,57 +1,39 @@
 ---
-title:                "Haskell: 文字列を小文字に変換する"
+title:                "Haskell: 「文字列を小文字に変換する」"
+simple_title:         "「文字列を小文字に変換する」"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-文字列を小文字に変換することについては、実生活でよくあるシナリオを想像できます。例えば、ユーザーがフォームに入力した文字列を小文字に変換して、データベースに保存したい場合などがあります。これは、より効率的な検索や比較が可能になるため、多くの場面で必要とされるタスクです。
+文字列を小文字に変換することに興味が湧いていますか？それは、プログラミングにおいて文字列を操作する必要がある一般的なタスクの一つであり、小文字に変換することで文字列の処理がより簡単になるからです。
 
 ## 方法
-
-まずは、```Haskell```コードブロック内における基本的な方法を紹介します。
-
-```Haskell
-import Data.Char
-
--- 文字列を小文字に変換する関数
-toLowerString :: String -> String
-toLowerString s = map toLower s
-```
-
-上記のコードは、文字列を受け取って、それぞれの文字を小文字に変換する```toLower```関数を利用しています。そして、```map```関数を使って、文字列全体に対してこの処理を適用させています。実際に試してみると、以下のような結果になります。
+Haskellでは、`map`と`toLower`という2つの関数を使用して、文字列を小文字に変換することができます。例を見てみましょう。
 
 ```Haskell
-toLowerString "HELLO"  -- 出力: "hello"
+-- "Hello World!"を小文字に変換する例
+let str = "Hello World!"
+let lowerStr = map toLower str
+
+-- 出力: "hello world!"
 ```
 
-また、より一般的な文字列操作のライブラリである```Data.Text```を使っても同じことができます。
+`map`関数は、リストや文字列の各要素に対して指定した関数を適用し、新しいリストや文字列を返す関数です。`toLower`関数は、与えられた文字を小文字に変換する関数です。これら2つの関数を組み合わせることで、簡単に文字列を小文字に変換することができます。
 
-```Haskell
-import Data.Text (toLower, pack, unpack)
+## 深堀り
+上記の方法では、文字列を全て小文字に変換することができましたが、実際にはASCII文字だけでなく、Unicode文字も含めて変換する必要があるかもしれません。その場合は標準ライブラリの`Data.Text`モジュールの`toLower`関数を使用することで、全ての文字を適切に小文字に変換することができます。また、文字列の大文字を小文字に変換するだけでなく、逆の変換を行う`toUpper`関数も存在します。
 
--- 文字列を小文字に変換する関数
-toLowerString :: String -> String
-toLowerString s = unpack $ toLower $ pack s
-```
+## はじめに戻る
+文字列を小文字に変換する方法について紹介しましたが、他にも文字列を操作するための多くの関数が存在します。Haskellの標準ライブラリを調べてみることで、より多くの機能を見つけることができるでしょう。
 
-上記の例では、まず文字列を```pack```関数で```Text```型に変換し、```toLower```関数を適用させてから、再び```unpack```関数を使って文字列型に戻しています。これも同じ結果になります。
-
-```Haskell
-toLowerString "HELLO"  -- 出力: "hello"
-```
-
-## ディープダイブ
-
-文字列を小文字に変換する方法は、データ型の一つである```Char```型を扱うことによって実現されています。```Data.Char```モジュールには、様々な文字操作を行うための便利な関数が用意されています。そこで、ぜひ一度ドキュメントを読んでみることをお勧めします。
-
-また、もしこれ以上の文字列操作を学びたい場合は、```Data.Text```モジュールを用いることでより高度な処理を行うことができます。例えば、文字列パターンの検索や置換、文字列の比較などが可能になります。こちらもぜひ調べてみてください。
-
-## 関連情報
-
-- [Haskell - Data.Char Documentation](https://hackage.haskell.org/package/base/docs/Data-Char.html)
-- [Haskell - Data.Text Documentation](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+## 言語参考
+- [Haskell Wiki: 関数型プログラミング](https://wiki.haskell.org/Functional_programming)
+- [Haskell Wiki: `map`関数](https://wiki.haskell.org/Map)
+- [Haskell Wiki: `toLower`関数](https://wiki.haskell.org/Lowercase)
+- [Haskell Wiki: Unicodeサポート](https://wiki.haskell.org/Unicode)
+- [Haskellの標準ライブラリのドキュメント](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#g:6)

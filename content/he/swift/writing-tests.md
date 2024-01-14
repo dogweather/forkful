@@ -1,41 +1,70 @@
 ---
 title:                "Swift: כתיבת בדיקות"
+simple_title:         "כתיבת בדיקות"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה:
+בעלי התכניתים הבריטיים הסטנדרטיים יעדיפו לבדוק את הקוד שלהם לפני שהם אוהבים לשחרר אותו לעולם. אבל עם תכניות בשפות תכנות חמות כמו Swift, לסדר ביצועי מבחן נעילה מתחברים יותר ויותר בעבריית משתמשי המחשבות שלהם. מאמר זה יסביר לך לאזור איך אתה יכול לכתוב מבחן נעילה בשפת Swift כדי לוודא שהתכנית שלך רצה כפי שצריך.
 
-בכל תכנות יש כמה דרכים לוודא שהקוד שכתבנו עובד כצפוי. בswift, בעזרת הצבת בדיקות אנו יכולים לוודא שכל חלקי הקוד עובדים נכון. כתיבת בדיקות מעקב גם מבטיחה שהקוד יישאר תקין כאשר אנו מבצעים שינויים או מוסיפים כישורים חדשים לקוד.
+## למה
 
-# כיצד ל:
+מבחן נעילה הוא בעצם תכליתי כדי לוודא שתכנית שלך רצה בסדר שמתאים למה שאתה מצפה לו. זה מוגדל השגת תוכנות שאינן מדוייקות ואינן נגישות.
 
-לכתוב בדיקות בswift קל וכיפי. להלן כמה דוגמאות מקוד שיעזרו לך להתחיל:
+## איך
+
+#### Swift מבחן נעילה דוגמא עם תלתמימדי
+
+כאן קוד ככל שנוכל בשיכולת הייכולה שלכם:
+
+* ** אנא התא המשך לבצע בדיקת פינוי ו……
+* **אנא התא המשך לבצע בדיקת פינוי לפני שתיאומלפת, אלא זה יפריד את הדרכונים
+
+<details>
 
 ```Swift
-// הגדרה ראשונה של מערך
-var numbers = [1, 2, 3, 4, 5]
+class Tutorial {
+    var title: String
+    var author: String
+    var isIncomplete: Bool
 
-// בדיקה שהמערך מכיל מספר חיובי
-XCTAssertTrue(numbers[0] > 0, "מספר חיובי ייפול בעת הרענון")
+    init(title: String, author: String, isIncomplete: Bool) {
+        self.title = title
+        self.author = author
+        self.isIncomplete = isIncomplete
+    }
+}
 
-// הוספת מספר חדש למערך
-numbers.append(6)
+func runTutorialReport(tutorial: Tutorial) {
+    if tutorial.title.isEmpty || tutorial.author.isEmpty {
+        print("*** ERROR: There is no title or author printed.")
+    } else if tutorial.isIncomplete {
+        print("The tutorial '\(tutorial.title)' by \(tutorial.author) needs to be completed.")
+    } else {
+        print("The tutorial '\(tutorial.title)' is complete. Thanks \(tutorial.author)!")
+    }
+}
 
-// בדיקה שהמערך מכיל 6 פריטים
-XCTAssertEqual(numbers.count, 6, "מספר הפריטים שלא לא לא תקין")
+let myTutorial = Tutorial(title: "Learn Swift", author: "John Doe", isIncomplete: true)
+runTutorialReport(tutorial: myTutorial)
+
+let myOtherTutorial = Tutorial(title: "iOS Development", author: "Jane Smith", isIncomplete: false)
+runTutorialReport(tutorial: myOtherTutorial)
 ```
 
-יכול להיות משעשע לראות את הקוד עובד ברגעים שאתה מוודא את היכולת הכי נמוכה של הקוד.
+Output:
 
-# צלילה עמוקה:
+```
+The tutorial 'Learn Swift' by John Doe needs to be completed.
+The tutorial 'iOS Development' is complete. Thanks Jane Smith!
+```
 
-בדיקות הם חלק חשוב וחיוני מתהליך התכנות. בתכלס, הם מאפשרים לך לבדוק את כל המקרים הקצה ולוודא שהקוד שלך עובד כצפוי. בנוסף, כתיבת בדיקות מאפשרת לך לשתף את קודך עם אחרים ולוודא שהם לא מפריעים לנך כשאתה מבצע שינויים או מוסיף כישורים נוספים. אל תתנו ליצירת בדיקות להיות תנופות וקושי נפשי, ככל שתמשיכו לתכנת יותר תבינו כמה חשובים הם.
+</details>
 
-# ראה גם:
+## מהומה עמוקה
 
-- [XCTest מסמך טכני](https://developer.apple.com/documentation/xctest)
-- [מדריך לכתיבת בדיקות בswift](https://www.raywenderlich.com/708-a-swift-xctest-tutorial-getting-start
+הגולל הזה הוא נשמע נפלאו מספק לך יכלילים עמוקים נוספים על כתונת כיום כתגישבימיק הקונעב ובחן כתונת תףניג עם גישביום

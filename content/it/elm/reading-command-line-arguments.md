@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Lettura degli argomenti da riga di comando"
+title:                "Elm: Lettura degli argomenti della riga di comando."
+simple_title:         "Lettura degli argomenti della riga di comando."
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/reading-command-line-arguments.md"
 ---
 
@@ -9,44 +11,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se stai iniziando ad imparare Elm, potresti chiederti perché dovresti leggere gli argomenti della riga di comando. In realtà, la lettura degli argomenti della riga di comando è molto utile quando si sviluppano applicazioni Elm più complesse, in cui si vuole poter passare informazioni o opzioni all'apertura dell'applicazione.
+Molte volte, nei nostri progetti di programmazione, abbiamo bisogno di leggere i dati forniti dall'utente all'avvio del programma. Questa è una pratica comune anche in Elm, ma come possiamo implementarla? In questo post, scopriremo come leggere gli argomenti da linea di comando in Elm.
 
 ## Come Fare
 
-Per leggere gli argomenti della riga di comando in Elm, possibilità utilizzare la funzione `Platform.worker` combinata con la funzione `Platform.workerParser`. Innanzitutto, aggiungi la seguente importazione all'inizio del tuo file Elm:
+Per iniziare, dobbiamo importare il modulo `Platform` in cui è definita la funzione `worker`, che ci permetterà di interagire con gli argomenti della linea di comando:
 
 ```Elm
 import Platform exposing (worker)
-import Platform.Cmd exposing (dump)
 ```
 
-Poi, puoi utilizzare la funzione `workerParser` per elaborare gli argomenti della riga di comando:
+Ora dobbiamo definire il nostro model, che conterrà i dati letti dall'utente. In questo caso, creeremo un modello semplice con un campo `name`:
 
 ```Elm
-main =
-  Program.worker
-    { init = init,
-      update = update,
-      subscriptions = subscriptions,
-      view = view
+type alias Model =
+    { name : String
     }
-
-init : ( Model, Cmd Msg )
-init =
-  ( Model [],
-    Platform.workerParser dump
-  )
 ```
 
-In questo esempio, stiamo utilizzando la funzione `dump` per salvare gli argomenti della riga di comando nella nostra applicazione. Puoi anche utilizzare una funzione personalizzata per elaborare gli argomenti in base alle tue esigenze.
+Successivamente, definiremo un'azione `ReceiveArgs` che verrà attivata quando i dati verranno letti dalla linea di comando:
 
-## Approfondimento
+```Elm
+type Action
+    = ReceiveArgs (List String)
+```
 
-Quando si leggono gli argomenti della riga di comando, è importante comprendere come vengono passati e gestiti. In Elm, gli argomenti sono passati come stringhe nella forma `--nome=valore` o `--nome valore`. Queste stringhe possono poi essere elaborate e utilizzate per inizializzare o modificare il modello della tua applicazione.
+Infine, dobbiamo scrivere la nostra funzione di aggiornamento che gestirà l'azione `ReceiveArgs` e modificherà il modello con i dati ricevuti:
 
-Se vuoi leggere ulteriori informazioni sui comandi della riga di comando in Elm, ti consiglio di dare un'occhiata alla documentazione ufficiale su [Platform.worker](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker) e [Platform.workerParser](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd#workerParser).
+```Elm
+update : Action -> Model -> (Model, Cmd Action)
+update action model =
+    case action of
+        ReceiveArgs args ->
+            ( { model | name = List.head args }, Cmd.none )
+```
+
+A questo punto, dobbiamo creare la nostra funzione `main` che utilizzerà il modulo `Platform` per leggere gli argomenti dalla linea di comando e attivare l'azione `ReceiveArgs`:
+
+```Elm
+main : Program () Model Action
+main =
+    worker
+        { init = ( Model "", Cmd.none )
+        , update = update
+        , subscriptions = always Sub.none
+        }
+```
+
+Infine, dobbiamo compilare il nostro programma con `elm make` e avviarlo fornendo gli argomenti desiderati:
+
+```bash
+elm make Main.elm
+node Main.js nomeUtente
+```
+
+Se tutto è andato a buon fine, vedrai la tua stringa inserita come valore del campo `name` nel tuo modello!
+
+## Deep Dive
+
+La funzione `worker` del modulo `Platform` è essenziale per leggere gli argomenti da linea di comando in Elm. Ci consente di creare un `Program` con un `init`, una funzione di `update` e una funzione di `subscriptions`. Inoltre, la funzione `worker` accetta anche una funzione `view`, ma poiché non è necessaria per leggere gli argomenti dalla linea di comando, possiamo lasciarla vuota come nel nostro esempio sopra.
+
+Inoltre, è importante notare che `Platform` non è il solo modo per leggere gli argomenti dalla linea di comando in Elm. Alcuni pacchetti di terze parti, come `elm-argv` e `elm-command-line`, offrono alternative a `Platform`, quindi è sempre una buona idea esplorare diverse opzioni per trovare quella più adatta alle tue esigenze.
 
 ## Vedi Anche
 
-- [Documentazione su Platform.worker](https://package.elm-lang.org/packages/elm/core/latest/Platform#worker)
-- [Documentazione su Platform.workerParser](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd#workerParser)
+- Documentazione ufficiale su `Platform`: https://package.elm-lang.org/packages/elm/core/latest/Platform
+- Pacchetto di terze parti `elm-argv`: https://package.elm-lang.org/packages/dillonkearns/elm-argv/latest/
+- Pacchetto di terze parti `elm-command-line`: https://package.elm-lang.org/packages/ohanhi/elm-command-line/latest/

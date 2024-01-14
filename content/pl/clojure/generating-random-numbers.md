@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Tworzenie losowych liczb"
+title:                "Clojure: Generowanie losowych liczb"
+simple_title:         "Generowanie losowych liczb"
 programming_language: "Clojure"
-category:             "Numbers"
+category:             "Clojure"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/generating-random-numbers.md"
 ---
 
@@ -9,34 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Generowanie liczb losowych jest ważną częścią programowania, ponieważ pozwala na tworzenie różnorodnych i losowych wyników, które są niezbędne w wielu aplikacjach, takich jak gry, symulacje czy testy jednostkowe.
+Generowanie losowych liczb jest niezbędnym elementem programowania w wielu językach, w tym w Clojure. Losowe liczby mogą być wykorzystywane do symulacji, generowania unikalnych identyfikatorów, szyfrowania danych oraz wielu innych zastosowań. W tym artykule dowiecie się, jak wygenerować losowe liczby w Clojure i jak można je wykorzystać.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-W Clojure istnieje wiele metod generowania liczb losowych. Jedną z najprostszych jest użycie funkcji `rand`, która zwraca losową liczbę z przedziału [0,1).
-
-```Clojure
-(rand) ; wyświetli na przykład: 0.30117199280951024
-```
-
-Możemy również określić własny przedział, podając odpowiednie argumenty do funkcji `rand`.
+Aby wygenerować losową liczbę w Clojure, można użyć wbudowanej funkcji "rand". Przykładowo, aby wylosować liczbę z przedziału od 1 do 10, należy użyć poniższego kodu:
 
 ```Clojure
-(rand 10) ; wygeneruje liczbę od 0 do 9, na przykład: 5.463217748465344
+(rand-int 10) ; zwraca losową liczbę całkowitą od 0 do 9
 ```
 
-Inną opcją jest użycie funkcji `rand-int`, która zwraca losową liczbę całkowitą z podanego przedziału.
+Można także wygenerować losową liczbę zmiennoprzecinkową używając funkcji "rand".
 
 ```Clojure
-(rand-int 100) ; wygeneruje liczbę od 0 do 99, na przykład: 76
+(rand) ; zwraca losową liczbę z przedziału od 0 do 1
 ```
 
-## Głębsza analiza
+Jeśli potrzebujemy większej precyzji lub chcemy wygenerować liczbę z innego przedziału, można użyć funkcji "rand-nth". Przykładowo, jeśli chcemy wylosować liczbę z przedziału od 50 do 100, możemy użyć poniższego kodu:
 
-Clojure używa silnika Javy do generowania liczb losowych, co oznacza, że są one nieprzewidywalne i bardziej losowe niż w innych językach programowania. Istnieje również wiele innych funkcji i metod generowania liczb losowych w Clojure, takich jak `rand-nth`, `shuffle` czy `sample`, które można wykorzystać w zależności od potrzeb.
+```Clojure
+(rand-nth (range 50 101)) ; zwraca losową liczbę z przedziału od 50 do 100
+```
+
+Można także wylosować element z listy używając funkcji "rand-nth". Przykładowo:
+
+```Clojure
+(rand-nth ['jabłko 'banan 'truskawka]) ; zwraca losowy element z listy
+```
+
+## Mocne strony
+
+Clojure ma wiele wbudowanych funkcji do generowania losowych liczb, co czyni ją wygodnym wyborem dla programistów. Dodatkowo, Clojure jest językiem funkcyjnym, co oznacza, że generowanie losowych liczb jest deterministyczne i zawsze zwraca ten sam wynik dla tego samego wejścia. Dzięki temu, można dokładnie kontrolować, jakie liczby zostaną wygenerowane.
+
+## Wnikliwe zagłębienie
+
+Clojure korzysta z algorytmu Mersenne Twister do generowania losowych liczb. Jest to algorytm o wysokim stopniu losowości i szybkości, który jest również szeroko stosowany w innych językach programowania.
+
+Warto także pamiętać, że generowanie względnie "losowych" liczb w komputerach nie jest możliwe. Algorytmy używane w językach programowania są jedynie sposobem na symulowanie losowości, a ich wyniki są zawsze przewidywalne.
 
 ## Zobacz także
 
-- Dokumentacja Clojure dotycząca generowania liczb losowych: https://clojuredocs.org/clojure.core/rand
-- Wprowadzenie do programowania w języku Clojure: https://clojure.org/guides/getting_started
-- Wideo o generowaniu liczb losowych w Clojure: https://www.youtube.com/watch?v=P5VuB9ldd34
+- [Dokumentacja Clojure o generowaniu liczb losowych](https://clojure.org/reference/numbers#_random_numbers)
+- [Algorytm Mersenne Twister](https://pl.wikipedia.org/wiki/Mersenne_Twister)

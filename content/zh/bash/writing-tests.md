@@ -1,60 +1,52 @@
 ---
 title:                "Bash: 编写测试"
+simple_title:         "编写测试"
 programming_language: "Bash"
-category:             "Testing and Debugging"
+category:             "Bash"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么：测试是软件开发过程中至关重要的一部分。它可以确保代码的正确性，并帮助发现潜在的bug和错误。通过编写测试，您可以提高软件的质量以及用户的体验。
 
-写测试是一个保证代码质量的重要手段。通过编写测试，我们可以更加确保我们的代码可以正常运行，并且不会因为小的修改而引入新的错误。这样可以大大提高代码的可维护性和稳定性。
-
-## 如何进行
-
-编写测试可以采用Bash语言来实现。下面是一个简单的例子，展示了如何编写一个Bash测试脚本，并且运行测试：
+如何编写测试：编写测试是一项简单却必不可少的技能。首先，您需要了解如何使用Bash编程语言。下面是一个简单的例子，展示如何编写一个简单的测试：
 
 ```Bash
-#!/bin/bash
-
-# 测试脚本
-
-# 定义一个函数
-function greeting {
-    echo "Hello, World!"
+# 定义一个函数来检查输出是否为预期值
+function check_odd {
+    result=$(bash yourscript.sh) # 运行您的脚本，将结果存储在变量中
+    if [[ $result -eq 1 ]]; then # 如果结果等于1，表示是一个奇数
+        echo "奇数" # 打印出“奇数”
+    else
+        echo "偶数" # 否则打印出“偶数”
+    fi
 }
 
-# 调用函数并获取结果
-result=$(greeting)
-
-# 判断结果是否正确
-if [ "$result" == "Hello, World!" ]; then
-    echo "Test Passed!"
-else
-    echo "Test Failed!"
-fi
+# 调用函数来检查结果
+check_odd
 ```
 
-将上面的代码保存为一个名为`test.sh`的文件，并且在终端中执行`bash test.sh`可以看到如下输出：
+## 深入了解：编写测试不仅仅是为了简单地检查程序输出是否正确。它还可以帮助您在开发过程中发现潜在的错误和漏洞。通过编写全面的测试，您可以有效地定位问题并及时解决它们。同时，编写测试也可以帮助您更好地组织和管理代码，提高代码的可维护性。
 
-```
-Hello, World!
-Test Passed!
-```
+此外，编写测试还可以节省您的时间和精力。通过自动化测试，您可以避免手动测试每个部分的繁琐过程。因此，当您进行较大规模的修改时，测试将会为您节省大量的时间和精力。
 
-通过这个例子，我们可以学习到如何编写一个简单的Bash测试脚本，并且使用if语句来判断测试结果是否正确。
+## 参考文章
 
-## 深入学习
 
-编写测试不仅仅是为了验证代码的正确性，还可以帮助我们更好地组织和设计代码。通过编写不同类型的测试，比如单元测试、集成测试和端到端测试，我们可以进一步提高代码质量，并且更加容易地发现和修复代码中的错误。
+[为什么编写测试一文不足](https://www.joelonsoftware.com/2000/05/29/things-you-should-never-do-part-i/)
 
-另外，编写测试也可以帮助我们快速反馈代码的变化。如果我们在进行功能开发时，随时编写并运行测试，就可以及时发现和修复潜在错误，从而避免代码在后续开发过程中导致严重的问题。
+[使用Bash编写测试](https://dev.to/nenaudev/writing-tests-with-bash-44le)
+
+[测试驱动开发(TDD)简介](https://medium.com/swlh/introduction-test-driven-development-tdd-6853d0f9076a)
+
+[Shell脚本编写指南](https://devhints.io/bash)
 
 ## 参考链接
 
-- [Bash编程入门指南](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [如何编写高质量的Bash脚本](https://www.shellscript.sh/)
-- [单元测试、集成测试和端到端测试介绍](https://www.guru99.com/unit-testing-guide.html)
+[Markdown入门指南](https://www.markdownguide.org/getting-started/)
 
-## 参见
+[Bash编程介绍](https://www.linuxtopia.org/online_books/bash_guide_for_beginners/sect_01_02.html)
+
+[Bash官方文档](https://www.gnu.org/software/bash/manual/html_node/index.html)

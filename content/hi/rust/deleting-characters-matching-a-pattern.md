@@ -1,36 +1,37 @@
 ---
-title:                "Rust: पैटर्न से मेल खाते अक्षर हटाना"
+title:                "Rust: पैटर्न से मेल खाने वाले अक्षरों को हटाना"
+simple_title:         "पैटर्न से मेल खाने वाले अक्षरों को हटाना"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/rust/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-अब रस्ट प्रोग्रामिंग का एक प्रोग्राम ब्लॉग लेख हिंदी में। वह 3 सेक्शन में बांटा हुआ है, प्रत्येक में एक हेडिंग है। सरणी में हीडिंग द्वारा दिया गया है, किवलिख नहीं देता है।
+## Kyun
 
-## क्यों
+Kabhi kabhi humare code mein unwanted characters ho jate hain aur hum unko delete karna chahte hain taaki humara code efficient aur clean rahe. Is situation mein hum characters ko delete karne ka ek pattern use kar sakte hain. Is blog post mein hum dekhenge ki hum characters ko delete kaise kar sakte hain Rust programming language mein.
 
-किसी भी प्रोग्रामर के लिए अपनी कोड को साफ़ रखना बहुत महत्वपूर्ण होता है। आपके कोड में कई बार ऐसे चरित्र होते हैं जो आपके प्रोग्राम के लिए अनावश्यक हो सकते हैं। इस लेख में हम डेटा से भरा हुआ पैटर्न हटाने पर बात करेंगे।
+## Kaise Kare
 
-## कैसे करें
-
-अपने रस्ट प्रोग्राम में चरित्रों को पैटर्न के आधार पर हटाने के लिए आपको कुछ चरणों का पालन करना होगा। सबसे पहले, आपको `use regex::Regex;` बिल्ज करना होगा। इसके बाद, आपको अपने प्रोग्राम में `main` फंक्शन बनानी होगी। इसके बाद, आपको `let input = "Sample String";` बिल्ज करना होगा। आपको यह भी बिल्ज करना होगा `let re = Regex::new(r"[^a-zA-Z0-9]");` यह पैटर्न होगा जो आपके चरित्रों को हटाने के लिए इस्तेमाल किया जाएगा। अंत में, आपको `println!("{}", re.replace_all(input, ""));` बिल्ज करना होगा जो आपके पैटर्न के आधार पर चरित्रों को हटाएगा। नीचे दिए गए उदाहरण को चलाने के बाद, आपके पास बदला हुआ स्ट्रिंग होना चाहिए।
+Hum characters ko delete karne ke liye `str::replace` function ka use kar sakte hain. Is function mein hum `pattern` aur `replace_with` arguments pass karte hain. Jaise ki is coding example mein dikhaya gaya hai:
 
 ```Rust
-use regex::Regex;
-
-fn main() {
-  let input = "He#ll0 W0rld!";
-  let re = Regex::new(r"[^a-zA-Z0-9]").unwrap();
-  println!("{}", re.replace_all(input, ""));
-}
+let string = String::from("Hindi me programming sikhna accha lagta hai.");
+let new_string = string.replace("a",""); 
 ```
 
-उत्पाद:
+Is coding example mein humne `a` character ko replace nahi kiya lekin usko delete kar diya. Is code ki output `Hindi me progrming sihkn acch lgt h.i` hogi.
 
-`Hel0W0rld`
+## Gehri Jankari
 
-## गहराई में जाने
+`str::replace` function characters ko delete karne ke liye kafi useful hai. Hum is function ka use karke specific patterns ke according characters ko delete bhi kar sakte hain. Iske alawa, hum regex pattern ka bhi use kar sakte hain character deletion ke liye. Rust mein regex pattern ke liye hum `regex` crate ka use kar sakte hain.
 
-अब जब हम ह
+## Dekhe Bhi
+
+- [Rust Language Documentation](https://www.rust-lang.org/hi)
+- [regex Crate Documentation](https://crates.io/crates/regex)
+- [Rust By Example](https://doc.rust-lang.org/rust-by-example/)
+
+Asha karte hain ki ab aapko characters ko delete karne ke liye pattern use karne ka tarika samajh aa gaya hai. Agar aapko koi aur programming topic par article padhna hai to humare "See Also" section mein diye gaye links ko follow karein. Happy coding!

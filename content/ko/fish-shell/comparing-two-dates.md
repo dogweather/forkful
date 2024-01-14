@@ -1,36 +1,44 @@
 ---
-title:                "Fish Shell: 두 날짜를 비교하는 방법"
+title:                "Fish Shell: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-날짜를 비교하는 것이 왜 중요한지 궁금하다면 이 글을 읽어보세요. Fish Shell을 이용하여 날짜를 비교하는 방법을 알려드리겠습니다. 또한 어떤 상황에서 날짜를 비교하는 것이 유용한지에 대해서도 알아보겠습니다.
+## 왜 
 
-## 어떻게
-날짜를 비교하기 위해선 Fish Shell의 `date +%s` 명령어가 필요합니다. 이 명령어는 현재 날짜를 UNIX 시간으로 반환해줍니다. 예를 들어서 오늘의 날짜를 비교하려면 다음과 같이 입력해주세요:
+두 날짜를 비교하는 것이 왜 중요한지 궁금해 하셨나요? 간단히 말하면, 두 날짜를 비교하면 더 효율적인 코드를 작성할 수 있고, 일정한 패턴을 찾는 데 도움이 됩니다. 또한 날짜와 시간은 많은 애플리케이션에서 중요한 역할을 하는 기능이므로, 정확히 비교하는 것이 매우 중요합니다.
 
-```Fish Shell
-set today (date +%s)
-echo $today
+## 사용 방법
+
+Fish Shell을 사용하여 두 날짜를 비교하는 방법은 매우 간단합니다. 다음과 같은 형식으로 `date` 명령어를 사용합니다.
+
+```
+$ date -f '%Y-%m-%d' $first_date > $second_date # $first_date와 $second_date 변수에 각각 날짜를 저장
 ```
 
-출력값은 현재 시간을 나타내는 숫자일 것입니다. 이제 비교할 날짜를 입력해서 두 날짜를 비교할 수 있습니다. 이 경우에는 UNIX 시간으로 변환하기 위해 `string toarr -i [your_date]`를 사용할 수 있습니다. 예를 들어서 5월 15일 2020년의 UNIX 시간을 구하려면 다음과 같이 하면 됩니다:
+여기서 `-f` 플래그를 사용하여 날짜 형식을 지정해줍니다. `%Y`는 연도, `%m`은 월, `%d`는 일을 나타냅니다. 이 외에도 `%H`는 시간, `%M`은 분, `%S`는 초를 나타내는데 사용할 수 있습니다.
 
-```Fish Shell
-set date1 1589529600
-set date2 (string toarr -i 2020-05-15)
-echo $date2
+예를 들어, 2021년 7월 15일과 2021년 7월 20일을 비교하려면 다음과 같이 작성합니다.
+
+```
+$ date -f '%Y-%m-%d' 2021-07-15 > 2021-07-20
 ```
 
-이제 `$date1`과 `$date2`를 비교할 수 있습니다. 예를 들어서 두 날짜가 동일하다면 `echo "Dates are equal!"`를 출력하게 할 수 있습니다.
+Output으로는 첫 번째 날짜가 두 번째 날짜보다 이전인 경우 `-1`을, 두 날짜가 같은 경우 `0`을, 첫 번째 날짜가 두 번째 날짜보다 이후인 경우 `1`을 반환합니다.
 
-## 깊이 파고들기
-날짜를 비교하기 위해선 UNIX 시간을 사용해야하는 이유가 무엇일까요? UNIX 시간은 1970년 1월 1일부터 현재까지의 초를 나타내는 숫자 값입니다. 따라서 이를 이용하면 날짜를 쉽게 비교할 수 있습니다. 또한 Fish Shell은 삼항 연산자를 지원하기 때문에 UNIX 시간을 비교할 때 유용하게 사용할 수 있습니다.
+## 깊게 알아보기
 
-## 관련글보기
-- [Fish Shell 공식 홈페이지](https://fishshell.com/)
-- [UNIX 시간에 대한 더 많은 정보](https://ko.wikipedia.org/wiki/UNIX_%EC%8B%9C%EA%B0%84)
+날짜를 비교할 때 주의해야 할 점이 있습니다. 바로 윤년과 30일 미만의 월을 다루는 것입니다. 이러한 경우, `date` 명령어가 정확한 결과를 내지 못할 수 있습니다. 따라서 `%j`를 사용하여 날짜를 비교하지 않고, 일 수를 비교하는 것이 더 정확합니다.
+
+이 외에도 `strftime`이라는 함수를 사용하여 날짜 형식을 바꿔주는 것도 가능합니다. 예를 들어, `%V`를 사용하면 ISO 8601 주 번호를 반환할 수 있습니다. 이러한 함수를 사용하면 더 정확하고 유용한 결과를 얻을 수 있습니다.
+
+## See Also
+
+- [Fish Shell 공식 홈페이지](https://fishshell.com/): Fish Shell의 공식 홈페이지로, 더 많은 정보와 사용 방법을 알아볼 수 있습니다.
+- [Unix Timestamp 변환기](https://www.unixtimestamp.com): 날짜를 Unix Timestamp로 변환해주는 온라인 도구입니다. Unix Timestamp는 1970년 1월 1일부터 경과된 초를 나타내는 숫자 형식입니다.
+- [Python으로 날짜 비교하는 방법](https://wikidocs.net/78561): 파이썬을 사용하여 날짜를 비교하는 방법에 대해 알아볼 수 있습니다. Fish Shell과 비슷한 형식을 사용하기 때문에 참고하기 좋습니다.

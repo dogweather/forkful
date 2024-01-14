@@ -1,55 +1,61 @@
 ---
-title:                "C#: Escribiendo en error estándar."
+title:                "C#: Escribiendo en el error estándar"
+simple_title:         "Escribiendo en el error estándar"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué deberías escribir en el estándar de error?
 
-Escribir a la salida de error estándar puede ser una habilidad muy valiosa para cualquier programador. Esta técnica permite identificar y solucionar problemas en el código de manera más eficiente, lo que ahorra tiempo y esfuerzo en el proceso de depuración.
+Escribir en el estándar de error es una técnica importante en la programación de C#, ya que permite mostrar información importante o mensajes de error al usuario durante la ejecución de un programa. Además, ayuda en la depuración de código y a identificar posibles problemas en el mismo.
 
-## Cómo hacerlo
+## Cómo escribir en el estándar de error
 
-Para escribir a la salida de error estándar en C#, se utiliza el método `Console.Error.WriteLine()`. Este método toma un argumento de tipo `string` que contiene el mensaje a imprimir en la consola de errores.
-
-```C#
-Console.Error.WriteLine("Este es un mensaje de error");
-```
-
-Este código imprimirá el mensaje "Este es un mensaje de error" en la consola de errores cuando se ejecute.
-
-Otra forma de escribir a la salida de error estándar es utilizando el objeto `StreamWriter`. Para hacerlo, primero se debe crear una instancia de este objeto y luego utilizar su método `WriteLine()` para imprimir el mensaje en la consola de errores.
+Para escribir en el estándar de error en C#, se utiliza el objeto `Console` y su método `Error.WriteLine()`. Este método recibe como parámetro una cadena de texto que se imprimirá en la salida de error.
 
 ```C#
-StreamWriter errorWriter = new StreamWriter(Console.Error);
-errorWriter.WriteLine("Este es otro mensaje de error");
+//Ejemplo de escritura en el estándar de error
+Console.Error.WriteLine("¡Ha ocurrido un error! Por favor, revisa tu código.");
 ```
 
-Este método también toma un argumento de tipo `string` con el mensaje a imprimir en la consola de errores.
+El resultado de este código sería:
 
-## Profundizando
+```
+¡Ha ocurrido un error! Por favor, revisa tu código.
+```
 
-Además de imprimir mensajes de error en la consola, también es posible redirigir la salida de error estándar a un archivo de texto. Esto puede ser útil cuando se necesita guardar los mensajes de error para su posterior análisis.
+## Profundizando en la escritura en el estándar de error
 
-Para hacer esto, se utiliza el método `Console.SetError()` para establecer el archivo donde se escribirán los mensajes de error. Luego, se utiliza el método `Console.Error.WriteLine()` para imprimir los mensajes.
+Además de simplemente imprimir un mensaje de error, se pueden realizar otras acciones con el estándar de error en C#. Por ejemplo, se puede utilizar el objeto `TextWriter` y su método `StandardError`, que permite redirigir la salida de error a un archivo de texto.
 
 ```C#
-// Establecer el archivo para escribir los mensajes de error
-Console.SetError(new StreamWriter("archivo_errores.txt"));
-
-// Imprimir un mensaje de error
-Console.Error.WriteLine("Este es un mensaje de error que será guardado en el archivo");
-
-// Cerrar el archivo
-Console.Error.Close();
+//Ejemplo de redirección del estándar de error a un archivo
+var file = new StreamWriter("error.txt"); //crea un archivo error.txt
+Console.SetError(file); //seleciona el archivo como salida de error
+Console.Error.WriteLine("Este mensaje estará en el archivo error.txt");
 ```
 
-Es importante recordar cerrar el archivo después de terminar de usarlo.
+Además, también se pueden utilizar diferentes métodos de formato para mostrar información más específica en la salida de error, como el método `Error.Write()` que no agrega un salto de línea al final de la cadena de texto.
+
+```C#
+//Ejemplo de escritura en el estándar de error sin salto de línea
+Console.Error.Write("Número de error: ");
+Console.Error.WriteLine(404);
+```
+
+El resultado sería:
+
+```
+Número de error: 404
+```
 
 ## Ver también
+- [Documentación de Microsoft sobre el objeto Console en C#](https://docs.microsoft.com/es-es/dotnet/api/system.console?view=netcore-3.1)
+- [Tutorial de programación de C# en español](https://www.tutorialesprogramacionya.com/csharpya/index.php?inicio=0)
+- [Blog de programación en C# en español](http://csharplearning.blogspot.com/)
 
-- [Documentación de Microsoft sobre la clase Console](https://docs.microsoft.com/es-es/dotnet/api/system.console?view=net-5.0)
-- [Tutorial sobre depuración en C#](https://docs.microsoft.com/es-es/visualstudio/debugger/debugging-basics-csharp?view=vs-2019)
+¡Espero que este artículo te haya sido útil para aprender sobre la escritura en el estándar de error en C#! ¡Sigue investigando y mejorando tus habilidades de programación!

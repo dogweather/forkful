@@ -1,7 +1,9 @@
 ---
 title:                "Go: Generowanie losowych liczb"
+simple_title:         "Generowanie losowych liczb"
 programming_language: "Go"
-category:             "Numbers"
+category:             "Go"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/generating-random-numbers.md"
 ---
 
@@ -9,49 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Generowanie liczb losowych pełni istotną rolę w wielu dziedzinach programowania. Może być wykorzystywane do testowania algorytmów, tworzenia gier, lub nawet do wylosowania zwycięskich numerów w loterii. W tym artykule dowiesz się jak wygenerować losowe liczby w języku Go i jakie techniki mogą zostać wykorzystane.
+Generowanie losowych liczb jest ważnym elementem wielu programów. Może posłużyć do symulacji, testowania, lub prostego losowania losowych elementów.
 
 ## Jak to zrobić
 
-Aby wygenerować losowe liczby w Go, musimy najpierw zaimportować pakiet "math/rand". Następnie możemy wywołać funkcję "rand.Intn()", która zwraca losową liczbę całkowitą o podanym zakresie. Oto przykładowy kod:
-
 ```Go
-import "math/rand"
+package main
 
-// Wygenerowanie losowej liczby od 0 do 100
-rand.Intn(101)
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+	// Ustawienie ziarna generatora losowych liczb
+	rand.Seed(time.Now().UnixNano())
+
+	// Generowanie pojedynczej losowej liczby całkowitej z zakresu 0-10
+	randomInt := rand.Intn(11)
+	fmt.Println(randomInt)
+
+	// Generowanie pojedynczej losowej liczby zmiennoprzecinkowej z zakresu 0-1
+	randomFloat := rand.Float64()
+	fmt.Println(randomFloat)
+
+	// Generowanie losowej liczby z zakresu 10-20
+	randomRange := rand.Intn(11) + 10
+	fmt.Println(randomRange)
+
+	// Generowanie listy 10 losowych liczb całkowitych z zakresu 1-100
+	for i := 0; i < 10; i++ {
+		fmt.Print(rand.Intn(100) + 1)
+		fmt.Print(" ")
+	}
+}
 ```
 
-Jeśli chcemy, aby liczby były generowane w oparciu o jakiś seed, co pozwala na powtarzalność wyników, możemy wykorzystać funkcję "rand.NewSource()" wraz z funkcją "rand.New()". Oto przykładowy kod:
+Wynik:
 
-```Go
-// Ustawienie seed na 42
-source := rand.NewSource(42)
-rand := rand.New(source)
+7
+0.7859221557077516
+17
+20 62 91 50 70 86 80 57 76 82
 
-// Wygenerowanie losowej liczby od 0 do 100
-rand.Intn(101)
-```
+## Deep Dive
 
-Możemy również wykorzystać inne funkcje z pakietu "math/rand" do generowania różnych typów liczb, takich jak liczby zmiennoprzecinkowe lub liczby losowe z przedziału od innej liczby. Zachęcam do eksperymentowania z różnymi funkcjami i sposobami generacji liczb losowych.
+Generowanie losowych liczb jest w rzeczywistości wykonywane przy pomocy pseudolosowego generatora. Oznacza to, że podczas gdy wyglądają one na losowe, faktycznie są one generowane przy użyciu ustalonego algorytmu. Aby uzyskać jeszcze bardziej losowe liczby, często używa się tzw. ziarna generatora (np. na podstawie aktualnego czasu), które zmienia początkowy stan algorytmu. W ten sposób, za każdym razem, gdy generator jest uruchamiany, wyniki są różne.
 
-## Głębsze zagadnienia
+## Zobacz również
 
-Generowanie liczb losowych może być trudne ze względu na to, że komputery nie są w stanie wygenerować naprawdę losowych liczb. Zwykle wykorzystują one określone algorytmy i seed, aby generować liczby, które wydają się losowe dla nas, ale tak naprawdę są one deterministyczne. Dlatego też, jeśli potrzebujesz naprawdę losowych liczb losowych, powinieneś rozważyć wykorzystanie zewnętrznych źródeł jak np. losujących karty lub kostki.
-
-W języku Go możemy również wykorzystać pakiet "crypto/rand", który jest bardziej bezpieczny i wykorzystuje losowość systemową. Oto przykładowy kod:
-
-```Go
-import "crypto/rand"
-
-var bytes []byte = make([]byte, 5)
-
-// Wygenerowanie losowych bajtów
-rand.Read(bytes)
-```
-
-## Zobacz też
-
-- [Dokumentacja pakietu math/rand w języku Go](https://golang.org/pkg/math/rand/)
-- [Dokumentacja pakietu crypto/rand w języku Go](https://golang.org/pkg/crypto/rand/)
-- [Artykuł na temat generowania liczb losowych w języku Go](https://blog.gopheracademy.com/advent-2017/pitfalls-of-random-number-generation/)
+- [Oficjalna dokumentacja języka Go dotycząca generowania liczb losowych](https://golang.org/pkg/math/rand/)
+- [Przykładowy program generujący losowe liczby w Go](https://www.calhoun.io/creating-random-numbers-in-go/)
+- [Wideo wyjaśniające, jak działa pseudolosowy generator w języku Go](https://www.youtube.com/watch?v=3vQfzhU-nY4)

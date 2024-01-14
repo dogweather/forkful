@@ -1,48 +1,45 @@
 ---
-title:                "Elm: Wycinanie podciągów"
+title:                "Elm: Ekstrahowanie podciągów"
+simple_title:         "Ekstrahowanie podciągów"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-W tym wpisie na blogu dowiesz się, dlaczego warto wykorzystywać funkcję wyciągania podłańcuchów w języku Elm. Poznasz również przykłady kodu oraz przeczytasz o szczegółach tej operacji.
+Wyodrębnianie podciągów jest ważnym aspektem programowania, ponieważ pozwala na manipulowanie i przetwarzanie tekstu w bardziej precyzyjny sposób. Jest to niezbędne w wielu aplikacjach, w których musimy przeprowadzić operacje na fragmentach tekstu, takich jak wyszukiwanie, zamiana czy analiza.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Funkcja extractSubstring w języku Elm pozwala na wyodrębnienie części ciągu znaków z danej wartości. Przykładowo, jeśli masz ciąg znaków "Hello World", a chcesz wyodrębnić tylko wyraz "Hello", możesz użyć funkcji extractSubstring w ten sposób:
+Wykorzystując język Elm, możemy wygodnie i efektywnie wyodrębnić podciągi za pomocą funkcji `slice`. Przykładowe wywołanie tej funkcji wygląda następująco:
 
-```Elm
-extractSubstring 0 5 "Hello World" -- wynik: "Hello"
+```elm
+slice 10 15 "Wyodrębnij podciąg" 
+
+-- Output: "podciąg"
 ```
 
-W powyższym przykładzie pierwszym argumentem jest indeks początkowy, czyli od którego znaku ma zostać wyodrębiony podłańcuch. W tym przypadku jest to 0, ponieważ wyraz "Hello" rozpoczyna się od pierwszego znaku. Drugim argumentem jest długość podłańcucha, czyli ile znaków będzie wyodrębnionych od indeksu początkowego. W tym przypadku jest to 5, ponieważ wyraz "Hello" składa się z pięciu znaków.
+Funkcja `slice` przyjmuje trzy argumenty: początkowy i końcowy indeks wyodrębnianego podciągu oraz tekst, z którego chcemy wyodrębnić podciąg. W powyższym przykładzie, wyodrębniliśmy podciąg z tekstu "Wyodrębnij podciąg" rozpoczynający się od 10-tej pozycji i kończący na 15-tej. 
 
-Możesz również użyć ujemnych indeksów, aby wyodrębnić podłańcuch od końca ciągu znaków. Na przykład, jeśli chcesz wyodrębnić wyraz "World" z ciągu "Hello World", możesz użyć funkcji w ten sposób:
+Język Elm oferuje również inne funkcje do wyodrębniania podciągów, takie jak `left`, `right` czy `mid`. Warto zaznaczyć, że indeksacja w Elm zaczyna się od 0, czyli pierwsza pozycja tekstu ma indeks 0, druga pozycja ma indeks 1 itd.
 
-```Elm
-extractSubstring -5 5 "Hello World" -- wynik: "World"
+## Wnikliwa analiza
+
+Aby lepiej zrozumieć, jak funkcja `slice` działa, warto przyjrzeć się jej implementacji. W Elm, wszystkie funkcje są czyste, co oznacza, że zawsze zwracają tę samą wartość dla podanych argumentów. Implementacja funkcji `slice` wygląda następująco:
+
+```elm
+slice start stop string = 
+    String.slice start stop string
 ```
 
-Jeśli nie podasz drugiego argumentu, zostanie wyodrębniony cały podłańcuch od danego indeksu do końca ciągu. Na przykład:
-
-```Elm
-extractSubstring 3 "Hello World" -- wynik: "lo World"
-```
-
-### Przykładowe użycie
-
-Funkcja extractSubstring jest szczególnie przydatna w przypadku analizowania tekstu lub wyodrębniania konkretnych danych z ciągów znaków. Możesz używać jej do manipulowania danymi wejściowymi lub do tworzenia wyświetlanych treści w Twojej aplikacji. Przykładowo, jeśli w Twoim tekście wyświetlasz tylko fragment wiadomości, możesz użyć funkcji extractSubstring, aby wyświetlić tylko pierwszą część wiadomości.
-
-## Dogłębna analiza
-
-W przypadku niektórych operacji na ciągach znaków, takich jak funkcja replace, należy najpierw wyodrębnić podłańcuch, a następnie dokonać modyfikacji. W przypadku, gdy zależy Ci na wykorzystaniu wskaźnika początkowego and długości zamiast indeksu końcowego, możesz użyć funkcji extractSubstring, aby wygodnie odwoływać się do konkretnych części tekstu.
+Funkcja ta wykorzystuje moduł `String`, który dostarcza podstawowe operacje na tekstach, takie jak wyodrębnianie podciągów czy łączenie tekstów.
 
 ## Zobacz także
 
-- Oficjalna dokumentacja funkcji extractSubstring w języku Elm: [https://package.elm-lang.org/packages/elm/string/latest/String#extractSubstring](https://package.elm-lang.org/packages/elm/string/latest/String#extractSubstring)
-- Przykłady użycia funkcji extractSubstring: [https://elmprogramming.com/elm-string-extractsubstring.html](https://elmprogramming.com/elm-string-extractsubstring.html)
-- Wpływ funkcji extractSubstring na wydajność aplikacji: [https://matteofigus.github.io/EasyLearnJS/js/2009/07/15/drew-representants-stickman-in-javascript-with-canvas-and-web-sockets/](https://matteofigus.github.io/EasyLearnJS/js/2009/07/15/drew-representants-stickman-in-javascript-with-canvas-and-web-sockets/)
+- Dokumentacja języka Elm dotycząca funkcji wyodrębniania podciągów: https://guide.elm-lang.org/strings.html#substring-functions
+- Przykładowe kody wykorzystujące funkcję `slice` w Elm: https://ellie-app.com/3bKdWL6pTPha1
+- Praktyczne zastosowania wyodrębniania podciągów w aplikacjach: https://www.dailydrip.com/topics/elm/drips/flutter-substring-manipulating-strings-in-elm

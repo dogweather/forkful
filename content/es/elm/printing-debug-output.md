@@ -1,41 +1,54 @@
 ---
 title:                "Elm: Imprimiendo salida de depuración"
+simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Elm"
-category:             "Testing and Debugging"
+category:             "Elm"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¡Imprime tus errores con Elm!
+## ¿Por qué imprimir salidas de depuración en Elm?
 
-Si eres un programador de Elm, es posible que hayas escuchado sobre la importancia de imprimir tu salida de depuración. Pero, ¿por qué es tan importante? ¿Cómo puedes hacerlo? ¿Y qué más necesitas saber sobre la impresión de salida de depuración en Elm? ¡Sigue leyendo para saber más!
+Si estás empezando a aprender Elm, puede ser útil imprimir salidas de depuración para entender mejor cómo funciona tu código. También puede ser útil para identificar y solucionar errores en tu programa.
 
-## ¿Por qué imprimir la salida de depuración?
+## Cómo imprimir salidas de depuración en Elm
 
-La impresión de salida de depuración, también conocida como "depuración por consola", es una herramienta esencial para los programadores de Elm. Te permite ver información valiosa sobre lo que está sucediendo en tu código mientras se ejecuta. Esto es especialmente útil cuando estás tratando de encontrar y solucionar errores en tu programa. Al imprimir la salida de depuración, puedes ver el valor de ciertas variables en diferentes puntos de tu código y así identificar dónde se produce el error.
+Para imprimir una salida de depuración en Elm, puedes utilizar la función ```Debug.log``` y pasarle una etiqueta y un valor para imprimir. Aquí hay un ejemplo:
 
-## ¿Cómo imprimir la salida de depuración?
-
-Para imprimir la salida de depuración en Elm, simplemente utiliza la función `Debug.log` seguida de una cadena de texto y el valor que quieres imprimir. Por ejemplo:
-
-```
-elm
-Debug.log "MiNumero" 42
+```Elm
+myInt = 5
+Debug.log "Valor de myInt:" myInt
 ```
 
-Esto imprimirá la cadena de texto "MiNumero" seguida del valor 42 en la consola de tu navegador cuando ejecutes tu programa. También puedes imprimir múltiples valores separándolos por comas.
+Al ejecutar este código, verás en la consola la etiqueta y el valor que has impreso: "Valor de myInt: 5".
 
-## Profundizando en la impresión de salida de depuración
+También puedes imprimir valores de variables en una lista o en un registro. Por ejemplo:
 
-La función `Debug.log` no es la única manera de imprimir la salida de depuración en Elm. También puedes usar `Debug.watch` para imprimir valores en tiempo real mientras interactúas con tu programa, y `Debug.todo` para mostrar una advertencia cuando se accede a una parte de tu código que aún no has implementado.
+```Elm
+myList = [1, 2, 3]
+Debug.log "Lista:" myList
 
-Además, es importante tener en cuenta que la impresión de salida de depuración solo funciona en el modo de depuración de Elm. Cuando construyes tu programa para producción, todas las funciones de depuración son eliminadas automáticamente, por lo que no afectan el rendimiento de tu aplicación final.
+myRecord = { x = 1, y = 2 }
+Debug.log "Registro:" myRecord
+```
+En la consola se imprimirán los valores de la lista y del registro:
+
+"Lista: [1, 2, 3]"
+
+"Registro: { x = 1, y = 2 }"
+
+## Profundizando en la impresión de salidas de depuración
+
+Una de las ventajas de utilizar la función ```Debug.log``` es que solo se imprimirá la salida de depuración en modo de desarrollo, no en producción. Esto significa que en tu aplicación en vivo, las salidas de depuración no serán visibles para los usuarios. Esto es útil para no sobrecargar tu aplicación con salidas innecesarias en producción.
+
+Además, puedes utilizar esta función no solo para imprimir valores, sino también para comprobar si ciertos bloques de código están siendo ejecutados. Al pasar una cadena vacía como etiqueta, la salida de depuración se imprimirá sin la etiqueta, lo que puede ser útil para comprobar si un bloque de código en particular se está ejecutando.
 
 ## Ver también
 
-- [Documentación oficial sobre depuración en Elm] (https://guide.elm-lang.org/debugging/)
-- [Artículo sobre depuración en Elm de Pragmatic Studio] (https://pragmaticstudio.com/tutorials/debugging-elm)
-- [Tutorial de depuración en Elm de Elm Europe] (https://www.youtube.com/watch?v=ixB5U6de-PI)
+- [Documentación oficial de Debug en Elm](https://guide.elm-lang.org/interop/debug.html)
+- [Tutorial de Elm en español](https://www.youtube.com/watch?v=N2NWC6USYp8)
+- [Ejemplos de código en Elm](https://github.com/elm-examples)
 
-¡Ahora que sabes cómo imprimir la salida de depuración en Elm, puedes utilizar esta herramienta para mejorar tu proceso de codificación y encontrar y solucionar errores más fácilmente!
+Gracias por leer este post sobre cómo imprimir salidas de depuración en Elm. Esperamos que te haya sido útil para comprender mejor esta herramienta y puedas utilizarla en tus proyectos de manera efectiva. ¡Hasta la próxima!

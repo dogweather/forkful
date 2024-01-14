@@ -1,56 +1,75 @@
 ---
 title:                "Haskell recipe: Printing debug output"
+simple_title:         "Printing debug output"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why: 
 
-As developers, we often encounter bugs and errors in our code. While unit testing and debugging tools can help track down these issues, sometimes it's simply easier to print out debug output to get a better understanding of what is happening in our code. In this blog post, we will discuss how to do just that in Haskell, a powerful functional programming language.
+As programmers, it's important to have a way to debug our code and understand what's happening under the hood. Printing debug output is a useful tool to help with this process and identify any errors or bugs in our programs.
 
-## How To
+## How To: 
 
-To print out debug output in Haskell, we can use the `trace` function from the `Debug.Trace` module. The `trace` function takes in a string as input and returns the same string as output while also printing it to the console. Let's take a look at an example:
-
-```Haskell
-import Debug.Trace
-
-myFunction :: Int -> Int
-myFunction x = trace ("The input value is: " ++ show x) (x * 2)
-```
-If we call `myFunction` with an input of 5, we will see the following output in the console:
-
-```
-"The input value is: 5"
-```
-
-We can also use the `traceShow` function to print out the result of an expression. Let's modify our previous example to use `traceShow` instead:
+Printing debug output in Haskell is quite simple. We can use the `trace` function from the `Debug.Trace` module. Let's take a look at a quick example:
 
 ```Haskell
 import Debug.Trace
 
-myFunction :: Int -> Int
-myFunction x = traceShow (x * 2) (x * 2)
+-- A simple function that returns the sum of two numbers
+add :: Int -> Int -> Int
+add x y = x + y
+
+-- We can use trace to print out the value of our variables
+main = do
+  let x = 5
+  let y = 10
+  let sum = add x y
+  trace ("The value of x is: " ++ show x) (return ())
+  trace ("The value of y is: " ++ show y) (return ())
+  trace ("The sum of x and y is: " ++ show sum) (return ())
 ```
 
-Now, when we call `myFunction` with an input of 5, we will see the following output in the console:
+When we run this code, we will see the following output:
 
 ```
-10
+The value of x is: 5
+The value of y is: 10
+The sum of x and y is: 15
 ```
 
-## Deep Dive
+As we can see, the `trace` function allows us to print out the values of our variables during runtime. This can be extremely helpful in understanding how our code is executing and identifying any potential issues.
 
-While using `trace` and `traceShow` can be useful for simple debugging purposes, it's important to note that these functions are meant for debugging only and should not be used in production code. This is because these functions can have unexpected side effects and can affect the performance of our code.
+## Deep Dive: 
 
-Another thing to keep in mind is that each time we call `trace` or `traceShow`, a string is created and stored in memory. This can be a problem if we are using these functions in a recursive function, as it can quickly lead to memory consumption and potential performance issues.
+The `trace` function works by taking in a message and a value and printing them both to the console during execution. It then returns the given value, allowing us to use it in the rest of our code. In the example above, we used `return ()` since we didn't need to use the value for anything else.
 
-## See Also
+One thing to keep in mind when using `trace` is that it should only be used for debugging purposes. It is not recommended to use it in production code, as it can cause performance issues.
 
-- [Haskell Debugging Guide](https://wiki.haskell.org/Debugging)
-- [Debug.Trace documentation](https://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html)
+We can also use the `traceShow` function from the `Debug.Trace` module to print out the result of an expression. For example:
 
-By using the `trace` and `traceShow` functions, we can easily print out debug output in Haskell and gain a better understanding of our code. Just remember to use these functions with caution and only for debugging purposes. Happy coding!
+```Haskell
+import Debug.Trace
+
+-- A function that checks if a number is even
+isEven :: Int -> Bool
+isEven x = traceShow (x `mod` 2 == 0) (x `mod` 2 == 0)
+```
+
+When we call this function, we will see the following output:
+
+```
+True
+```
+
+This can be useful when we want to quickly check the result of an expression without cluttering our code with `trace` statements.
+
+## See Also:
+
+- [Debugging in Haskell](https://wiki.haskell.org/Debugging)
+- [Using trace to debug a Haskell application](https://www.ryadel.com/en/haskell-using-trace-debug-application-example-tutorial/)
+- [Debugging monadic code in Haskell](https://blog.jez.io/2017/05/31/haskell-debugging-monadic-code/)

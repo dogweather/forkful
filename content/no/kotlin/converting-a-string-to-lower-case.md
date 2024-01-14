@@ -1,39 +1,48 @@
 ---
-title:                "Kotlin: Konvertere en streng til små bokstaver"
+title:                "Kotlin: Konvertere en streng til små bokstaver."
+simple_title:         "Konvertere en streng til små bokstaver."
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Når du jobber med tekster i Kotlin, kan du komme over situasjoner der du trenger å endre teksten til små bokstaver. Dette er nyttig for å sammenligne ulike tekststrenger eller for å sørge for at din input er i riktig form. Ved å konvertere en streng til små bokstaver, kan du gjøre søket mer nøyaktig og unngå feil i koden din. Derfor er det viktig å vite hvordan du kan konvertere en streng til små bokstaver i Kotlin.
 
-## Hvordan
-For å konvertere en streng til små bokstaver i Kotlin, kan du bruke funksjonen `toLowerCase ()`. Denne funksjonen vil endre alle bokstavene i strengen til små bokstaver og returnere den endrede strengen. Her er et eksempel på hvordan du kan bruke denne funksjonen i kode:
+Å konvertere en streng til små bokstaver kan være nyttig for å sammenligne tekst, forenkle søk og generelt forbedre lesbarheten av koden din.
 
-```Kotlin
-val tekst = "HELLO KOTLIN"
-val endretTekst = tekst.toLowerCase()
-println(endretTekst)
-```
-
-Output: `hello kotlin`
-
-Du kan også bruke denne funksjonen direkte på en streng når du sammenligner eller bruker den:
+## Slik gjør du det
 
 ```Kotlin
-if (input.toLowerCase() == "ja") {
-    println("Korrekt svar!")
-}
+val string = "HELLO WORLD"
+val lowerCaseString = string.toLowerCase()
+println(lowerCaseString)
 ```
 
-## Deep Dive
-Når du bruker `toLowerCase ()` i Kotlin, kan det hende du lurer på hva som skjer under overflaten. Denne funksjonen er en del av standardbiblioteket i Kotlin og er implementert ved hjelp av standard Unicode-spesifikasjoner. Dette betyr at funksjonen vil fungere for alle språk og karaktersett som støttes av Unicode.
+Output: `hello world`
 
-En viktig ting å merke seg er at `toLowerCase ()` funksjonen vil endre alle bokstaver, uavhengig av språk og alfabet. Dette betyr at du må være nøye med hvilken inngangsverdi du bruker, slik at den ikke endrer meningen av teksten din.
+Her bruker vi `toLowerCase()`-funksjonen for å konvertere strengen `HELLO WORLD` til små bokstaver og deretter skrive den ut til konsollen.
 
-## Se Også
-- [Kotlin strings](https://kotlinlang.org/docs/strings.html)
-- [Unicode Character Database](https://www.unicode.org/ucd/)
+## Dypdykk
+
+Konvertering av en streng til små bokstaver er en vanlig oppgave i programmering. Det finnes flere måter å gjøre det på, men i Kotlin kan vi bruke den innebygde `toLowerCase()`-funksjonen for å gjøre det enkelt og effektivt. Denne funksjonen tar ikke bare hensyn til det latinske alfabetet, men også spesialtegn og diakritiske tegn.
+
+En annen måte å konvertere en streng til små bokstaver på er å bruke `map()`-funksjonen og endre hvert tegn i strengen til små bokstaver individuelt. Her er et eksempel på hvordan dette kan gjøres:
+
+```Kotlin
+val string = "HELLO WORLD"
+val lowerCaseString = string.map { it.lowercase() }.joinToString("")
+println(lowerCaseString)
+```
+
+Output: `hello world`
+
+Denne tilnærmingen kan være mer nyttig hvis du trenger å gjøre endringer på hvert tegn i strengen, for eksempel å erstatte spesialtegn med vanlige bokstaver.
+
+## Se også
+
+- [Kotlin - Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
+- [Java - Converting String to lowercase](https://www.geeksforgeeks.org/java-converting-string-lower-case/)
+- [Swift - Lowercased](https://developer.apple.com/documentation/swift/string/1689702-lowercased)

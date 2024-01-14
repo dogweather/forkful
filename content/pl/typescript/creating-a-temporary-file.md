@@ -1,39 +1,39 @@
 ---
 title:                "TypeScript: Tworzenie pliku tymczasowego"
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto tworzyć tymczasowe pliki w TypeScript
+##Dlaczego tworzymy tymczasowe pliki?
 
-Tworzenie tymczasowych plików jest bardzo przydatną umiejętnością w programowaniu TypeScript. Pozwala ona na przechowywanie danych w plikach, które są używane tylko przez krótki okres czasu. W tym artykule dowiesz się dlaczego warto nauczyć się tworzenia tymczasowych plików oraz jak to zrobić w praktyce.
+Tworzenie tymczasowych plików jest nieodłączną częścią programowania w TypeScript. Pomimo, że możemy wykonywać wiele operacji na zawartości plików, niektóre z nich wymagają tworzenia tymczasowych plików, aby przetworzyć dane w bardziej efektywny sposób. W tym artykule dowiesz się, jak stworzyć tymczasowy plik w TypeScript oraz w jaki sposób wykorzystać go w swoim kodzie.
 
-## Jak to zrobić
+##Jak stworzyć tymczasowy plik w TypeScript?
 
-Aby stworzyć tymczasowy plik w TypeScript, musimy użyć typu danych `fs` z modułu `node`. Następnie możemy użyć metody `writeFile` aby utworzyć plik z wybraną zawartością. Poniżej znajduje się przykładowy kod oraz jego wynik:
+Aby stworzyć tymczasowy plik w TypeScript, możemy użyć modułu `fs` i jego funkcji `mktempSync()`. Poniższy kod pokazuje przykładowe użycie tej funkcji w TypeScript:
 
 ```TypeScript
-import * as fs from 'fs';
+import fs from 'fs';
 
-fs.writeFile('tymczasowy_plik.txt', 'Przykładowa zawartość', (err) => {
-  if (err) throw err;
-  console.log('Plik został utworzony!');
-});
+const temporaryFilePath = fs.mktempSync('tempFile-XXXXXX.txt');
 ```
 
-W powyższym przykładzie tworzymy plik o nazwie "tymczasowy_plik.txt" z zawartością "Przykładowa zawartość". W przypadku błędu, metoda `writeFile` wyświetli wyjątek. W przeciwnym razie, zostanie wyświetlone powiadomienie o sukcesie.
+Funkcja `mktempSync()` przyjmuje jako argument wzorzec nazwy tymczasowego pliku, w którym znaki `X` są zastępowane losowymi znakami. Warto zauważyć, że ta funkcja automatycznie tworzy plik, więc nie musimy sami wywoływać funkcji `fs.createWriteStream()`.
 
-## Pogłębione informacje
+Po wykonaniu tego kodu, nowy tymczasowy plik zostanie utworzony pod podaną nazwą wzorca, a jego ścieżka zostanie zwrócona przez funkcję `mktempSync()`. Możemy teraz wykorzystać tę ścieżkę do wykonania operacji na naszym pliku.
 
-Tworzenie tymczasowych plików jest szczególnie przydatne w przypadku niektórych operacji, takich jak generowanie raportów lub tworzenie kopii zapasowych danych. Dzięki tymczasowym plikom, nie musimy obciążać naszego systemu plików niepotrzebnymi danymi, co przyczynia się do zwiększenia wydajności naszej aplikacji.
+##Głębsze zanurzenie
 
-Ważne jest również pamiętanie o usuwaniu tych plików po zakończeniu ich wykorzystania, aby nie zajmowały one niepotrzebnej przestrzeni na naszym dysku. Możemy to zrobić korzystając z metody `unlink` z modułu `fs`.
+Tworzenie tymczasowych plików jest użyteczne w różnych przypadkach, takich jak przetwarzanie danych w pamięci podręcznej lub tworzenie plików tymczasowych do testowania naszego kodu. W wielu przypadkach możemy również użyć funkcji `mkdtempSync()`, która tworzy tymczasowy katalog z podobnym wzorcem nazwy.
+
+Ponadto, funkcje `mktempSync()` i `mkdtempSync()` przyjmują drugi argument, który pozwala na określenie lokalizacji, w której zostanie utworzony tymczasowy plik lub katalog. Dzięki temu, możemy kontrolować, gdzie nasze tymczasowe pliki będą przechowywane.
 
 ## Zobacz również
 
-- [Dokumentacja Node.js o tworzeniu plików](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
-- [Inne przykłady użycia typu danych `fs` w TypeScript](https://www.digitalocean.com/community/tutorials/nodejs-creating-your-own-node-js-modules)
-- [Przewodnik po TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
+- Dokumentacja fs.mktempSync() (https://nodejs.org/api/fs.html#fs_fs_mktempsync_template_options)
+- Dokumentacja fs.mkdtempSync() (https://nodejs.org/api/fs.html#fs_fs_mkdtempsync_prefix_options)

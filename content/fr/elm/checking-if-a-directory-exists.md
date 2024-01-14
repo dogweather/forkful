@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Vérifier si un répertoire existe"
+title:                "Elm: Vérification de l'existence d'un répertoire"
+simple_title:         "Vérification de l'existence d'un répertoire"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/checking-if-a-directory-exists.md"
 ---
 
@@ -9,64 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il est fréquent que les programmes Elm aient besoin de savoir si un dossier existe avant de pouvoir y accéder ou de le créer. En vérifiant si un dossier existe au préalable, vous pouvez éviter les erreurs et gérer les cas où le dossier n'existe pas encore.
+Dans la programmation, il est important de s'assurer que les fichiers ou les dossiers que l'on souhaite utiliser existent avant de les manipuler. Cela peut éviter des erreurs et des problèmes lors de l'exécution du code. En utilisant Elm, on peut facilement vérifier si un dossier existe avant de continuer avec les opérations prévues.
 
 ## Comment faire
 
-Cela peut sembler compliqué, mais avec Elm, vérifier si un dossier existe est en fait assez simple. Vous avez besoin de deux choses : le nom du dossier que vous voulez vérifier et le chemin du dossier.
+Pour vérifier si un dossier existe en Elm, il faut utiliser la fonction `dirExists` du module `FileSystem`. Cette fonction prend en paramètre le chemin du dossier à vérifier et renvoie un `Task` avec un `Result` indiquant si le dossier existe ou non.
 
-```Elm
-existeDossier : String -> String -> Cmd Msg
-existeDossier nom chemin =
-  Native.Directory.exists nom chemin toMsg
+Voici un exemple de code avec un dossier existant :
+
+```
+Elm.FileSystem.dirExists "chemin/vers/mon_dossier"
+    |> Task.perform checkDirectory
+  where
+    checkDirectory result =
+        case result of
+            Err error ->
+                Debug.log "Erreur: " error
+
+            Ok exists ->
+                if exists then
+                    Debug.log "Le dossier existe !"
+                else
+                    Debug.log "Le dossier n'existe pas."
 ```
 
-La fonction `existeDossier` prend en paramètres le nom du dossier et le chemin du dossier, puis renvoie une commande `Cmd` avec un message à traiter. Pour utiliser cette fonction, vous pouvez l'invoquer dans votre `update` comme suit :
+Et voici un exemple avec un dossier inexistant :
 
-```Elm
-case msg of
-  ...
-  VerifierDossier ->
-    existeDossier "documents" "dossier/parent"
-  ...
+```
+Elm.FileSystem.dirExists "chemin/vers/dossier/incorrect"
+    |> Task.perform checkDirectory
+  where
+    checkDirectory result =
+        case result of
+            Err error ->
+                Debug.log "Erreur: " error
+
+            Ok exists ->
+                if exists then
+                    Debug.log "Le dossier existe !"
+                else
+                    Debug.log "Le dossier n'existe pas."
 ```
 
-Ensuite, vous pouvez gérer le résultat de la vérification dans votre `init` en ajoutant un `case` supplémentaire :
+La sortie pour ces deux exemples serait respectivement "Le dossier existe !" et "Le dossier n'existe pas.".
 
-```Elm
-init : Model
-init =
-  { nomDossier = ""
-  , cheminDossier = ""
-  }
+## Approfondissement
 
-type Msg
-  = ...
-  | ResultatVerification Bool
+La fonction `dirExists` utilise la bibliothèque JavaScript `fs-extra` pour interagir avec le système de fichiers. Cela signifie que la fonction peut ne pas fonctionner sur certains navigateurs ou environnements. Il est donc important de s'assurer que l'environnement dans lequel on exécute le code est compatible avec `fs-extra`.
 
-toMsg : Platform.Task Never bool -> Task Msg Bool 
-toMsg task =
-  fromA2 ResultatVerification task
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-  case msg of
-    ...
-    ResultatVerification existe ->
-      ({ model | nomDossier = "documents"
-               , cheminDossier = "dossier/parent"
-        }, Cmd.none)
-    ...
-```
-
-## Plongée en profondeur
-
-La fonction `existeDossier` utilise des fonctions natives pour interagir avec le système de fichiers. Cela peut poser des problèmes de sécurité et de confidentialité, c'est pourquoi ces fonctions sont disponibles dans un module distinct appelé `Native.Directory`.
-
-Il est également important de noter que cette fonction ne vérifie que l'existence d'un dossier et pas sa validité. Vous devriez également vérifier si le dossier est vide ou s'il contient des fichiers avant d'y accéder ou de le supprimer.
+Il est également possible d'utiliser la fonction `fileExists` du même module pour vérifier l'existence d'un fichier plutôt que d'un dossier.
 
 ## Voir aussi
 
-- [Documentation officielle Elm on directories](https://guide.elm-lang.org/interop/directories.html)
-- [Managing File and Folder Paths in Elm](https://thoughtbot.com/blog/managing-file-and-folder-paths-in-elm)
-- [Filesystem Access in Elm with Elmap](https://www.elmap.org/2020/02/filesystem-access-in-elm/)
+- Documentation officielle d'Elm sur le module FileSystem : <https://package.elm-lang.org/packages/elm/file/latest/>
+
+- Documentation de `fs-extra` : <https://www.npmjs.com/package/fs-extra>
+
+- Liste des modules officiels d'Elm : <https://package.elm-lang.org/>

@@ -1,58 +1,51 @@
 ---
 title:                "PHP: デバッグ出力の印刷"
+simple_title:         "デバッグ出力の印刷"
 programming_language: "PHP"
-category:             "Testing and Debugging"
+category:             "PHP"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜデバッグ出力をする必要があるのか
+## なぜデバッグ出力を行うのか
 
-プログラミングに慣れている人には、デバッグ出力がなぜ重要なのか、簡単に理解ができるかもしれません。しかし、初心者の方にとっては、なかなか理解しにくいかもしれません。デバッグ出力をすることで、コードの実行中にどのような値が取得されているかを確認することができます。エラーがあった場合にも、どこで発生しているかを特定することができます。また、コードの複雑な部分を理解するのにも役立ちます。 
+デバッグ出力は、プログラムのエラーを特定するための重要なテクニックです。エラーが発生した際にコード内の特定の場所で変数や処理の値を出力することで、問題を特定し解決することができます。
 
 ## デバッグ出力の方法
-プログラミングでは、変数や配列の中身を確認するためにデバッグ出力が必要です。PHPでは、次のように`print_r()`関数を使用することで、変数の中身を出力することができます。
+
+デバッグ出力は、```print_r()```や```var_dump()```などのPHPの組み込み関数を使用することで簡単に実現することができます。例えば、以下のように変数やオブジェクトを出力することができます。
 
 ```PHP
-$fruit = ["apple", "orange", "banana"];
-
-print_r($fruit);
+$number = 10;
+$obj = new stdClass();
+$obj->name = "John";
+print_r($number);
+var_dump($obj);
 ```
 
-上記のコードを実行すると、次のような出力が得られます。
-
-```
-Array
-(
-    [0] => apple
-    [1] => orange
-    [2] => banana
-)
-```
-
-また、変数の値を確認するだけでなく、プログラムの実行フローを追跡するためにもデバッグ出力は役立ちます。PHPには`var_dump()`関数もあります。次のように使用することで、変数の値だけでなく、データ型や値の長さも確認することができます。
+すると、以下のような出力が得られます。
 
 ```PHP
-$num = 5;
-$str = "Hello";
-
-var_dump($num, $str);
+10
+object(stdClass)#1 (1) {
+  ["name"]=>
+  string(4) "John"
+}
 ```
 
-出力結果:
+このように、変数の値やオブジェクトの構造を見ることで、エラーの原因を特定することができます。
 
-```
-int(5)
-string(5) "Hello"
-```
+## デバッグ出力の詳細
 
-## デバッグ出力の深堀り
+実際にデバッグ出力を行った際に、出力結果の意味を正しく理解することも重要です。PHPのドキュメントやオンラインのリソースを参考にして、出力結果がどのような意味を持つのかを学ぶことができます。また、デバッグ出力を行う際には、必要な部分のみを出力するようにコーディングすることも重要です。あまりにも多くの情報を出力すると、逆に問題の特定が難しくなってしまいます。
 
-PHPのデバッグ出力には、他にも多くの関数が用意されています。例えば、`debug_backtrace()`関数は、実行された関数やファイルの情報を取得するのに役立ちます。また、`error_get_last()`関数は直近のエラー情報を取得することができます。これらの関数を組み合わせることで、より詳細なデバッグ情報を取得することができます。
+## さらに見る
 
-## 併せて読みたい記事
+参考になるリソースや関連するリンクを以下にまとめました。
 
-- [PHP公式ドキュメント：デバッグ出力](https://www.php.net/manual/ja/function.print-r.php)  
-- [PHP公式ドキュメント：var_dump()関数](https://www.php.net/manual/ja/function.var-dump.php)  
-- [PHP公式ドキュメント：debug_backtrace()関数](https://www.php.net/manual/ja/function.debug-backtrace.php)
+- PHPの```print_r()```関数のドキュメント：https://www.php.net/manual/en/function.print-r.php
+- PHPの```var_dump()```関数のドキュメント：https://www.php.net/manual/en/function.var-dump.php
+- PHPのデバッガーXdebugのドキュメント：https://xdebug.org/docs/
+- PHPストレージデバッガーのドキュメント：https://github.com/maximebf/php-debug/blob/master/README.md

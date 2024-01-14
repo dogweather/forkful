@@ -1,65 +1,46 @@
 ---
-title:                "C: Skapa en tillfällig fil"
+title:                "C: Skapa en temporär fil"
+simple_title:         "Skapa en temporär fil"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför skapa en temporär fil?
+## Varför
 
-Det finns många fördelar med att skapa en temporär fil i ett C-program. En temporär fil är en fil som skapas av programmet under körning, används för att lagra data temporärt och sedan raderas när programmet avslutas. Detta kan vara användbart för att spara tillfällig data, organisera filer eller för att underlätta kommunikation mellan olika delar av programmet.
+Skapande av en temporär fil är något som många programmerare kommer stöta på under sin karriär. Det kan verka som en onödig process, men det finns många tillfällen då det kan vara användbart. I denna bloggartikel kommer vi att undersöka varför det är viktigt att kunna skapa temporära filer och hur man gör det i C-programmering.
 
-## Så här skapar du en temporär fil i C
+## Hur man gör
 
-Att skapa en temporär fil i C är relativt enkelt och kan göras med hjälp av standardbiblioteksfunktionen "tmpfile()". Detta kommer att skapa en fil i det temporära mappsystemet för programmet. Här är ett enkelt kodexempel som illustrerar hur man skapar en temporär fil:
+För att skapa en temporär fil i C behöver man först inkludera biblioteket `<stdio.h>`. Sedan används funktionen `tmpfile()` för att skapa filen. Detta bör göras innan någon data skrivs till filen. Nedan följer ett exempel på hur en temporär fil kan skapas och användas:
 
 ```C
 #include <stdio.h>
-#include <stdlib.h>
 
-int main()
-{
-    char *tempfile;
-    FILE *fp;
-
-    // Skapa en temporär fil med tmpfile()
-    fp = tmpfile();
-
-    // Skriv till filen
-    fprintf(fp, "Hej från den temporära filen!");
-
-    // Hämta filnamnet
-    tempfile = tmpnam(NULL);
-
-    // Skriv ut filnamnet
-    printf("Temporär fil skapad: %s\n", tempfile);
-
-    // Stäng filen och radera den
-    fclose(fp);
-    remove(tempfile);
-
-    return 0;
+int main() {
+  FILE *fp; // Filpekare
+  fp = tmpfile(); // Skapar en temporär fil
+  fprintf(fp, "Det här är en temporär fil"); // Skriver data till filen
+  fclose(fp); // Stänger filen
+  return 0;
 }
 ```
-Detta program kommer att skapa en temporär fil med hjälp av "tmpfile()", skriva till filen och sedan stänga och radera den när programmet avslutas. Det användardefinierade filnamnet skrivs också ut för att visa att filen faktiskt har skapats i det temporära mappsystemet.
 
-Output:
-```
-Temporär fil skapad: C:\Users\User\AppData\Local\Temp\tmp1z3gyik6
-```
+Efter att filen har skapats och data har skrivits till den, kan man använda `fclose()` för att stänga filen. Det är viktigt att göra detta för att frigöra systemresurser och se till att filen inte fortsätter att användas utanför programmet.
 
-## Fördjupad information om temporära filer
+## Djupdykning
 
-När man arbetar med temporära filer är det viktigt att förstå några viktiga koncept. För det första måste man komma ihåg att temporära filer är unika för varje program och körsession. Det innebär att en temporär fil som skapats av ett program inte kan återanvändas av ett annat program eller i en annan körning av samma program. 
+Att skapa en temporär fil kan vara en nyttig process i många situationer. En av de vanligaste användningarna är att skriva data till en fil och sedan läsa tillbaka den senare. Detta kan vara till hjälp när man vill lagra mellanresultat och sedan använda dem för att skapa en slutlig rapport eller presentation.
 
-Det är också viktigt att hålla koll på var temporära filer skapas och raderas, eftersom det temporära mappsystemet är specifikt för användaren och kan vara sårbar för utrymmesbrist. Om inte temporära filer hanteras korrekt kan detta leda till problem och fel i programmet.
+En annan vanlig anledning till att skapa en temporär fil är när man har att göra med stora datamängder. Genom att skriva till en temporär fil kan man minska belastningen på systemets minne och hårddisk.
 
-Slutligen är det värt att notera att det finns andra sätt att skapa temporära filer i C, såsom att använda "tmpnam()" eller att skapa en tillfällig fil på en specifik sökväg. Det är viktigt att välja den bästa metod som passar för det aktuella programmet.
+Det finns också möjlighet att ge en namngiven "prefix" till en temporär fil för att göra det lättare att hitta och arbeta med den senare. Detta kan åstadkommas genom att använda funktionen `tmpnam()` och ange prefixet som argument.
 
 ## Se även
 
-- [Using tmpfile in C programming](https://www.geeksforgeeks.org/tmpfile-function-in-c-with-examples/)
-- [Temporary files in C](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
-- [C Programming - File I/O](https://www.programiz.com/c-programming/c-file-input-output)
+- [C-filer tutorial](https://www.learn-c.org/en/File_I/O)
+- [Skapa temporära filer i C](https://www.geeksforgeeks.org/creating-a-temporary-file-in-c/)
+- [Mer om C-programmering](https://www.cprogramming.com/)

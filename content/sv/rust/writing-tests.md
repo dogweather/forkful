@@ -1,42 +1,48 @@
 ---
 title:                "Rust: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva tester är en viktig del av programmeringsprocessen och kan hjälpa till att upptäcka buggar och fel i koden innan de når användarna. Med Rusts inbyggda testfunktioner kan du enkelt skapa och köra tester för din kod.
 
-## Hur man skriver tester i Rust
-Det första steget för att skriva tester i Rust är att inkludera `test` biblioteket som en dependecy i ditt projekt. Sedan kan du använda den inbyggda `#[test]` makron för att ange en funktion som ett test.
+Att skriva tester är en viktig del av programmering, oavsett vilket språk man använder. Med hjälp av tester kan man säkerställa att ens kod fungerar som den ska och undvika buggar och felaktigheter. Det kan även bidra till en bättre och mer strukturerad kodbas.
+
+## Hur man gör det
+
+Att skriva tester i Rust är en relativt enkel process. Man använder en inbyggd funktion, `assert_eq!`, för att kontrollera om två värden är lika. Nedan finns ett exempel där vi testar en funktion som adderar två tal:
 
 ```Rust
+fn add(x: i32, y: i32) -> i32 {
+    return x + y;
+}
+
 #[test]
-fn test_sum() {
-    let result = sum(1, 2);
-    assert_eq!(result, 3);
+fn test_add() {
+    let sum = add(3, 5);
+    assert_eq!(sum, 8);
 }
 ```
 
-För att köra testerna kan du använda kommandot `cargo test`. Om alla tester passerar kommer du att få följande utmatning:
-
-``` 
-running 1 test
-test test_sum ... ok
-
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
-```
-Om en eller flera tester misslyckas kommer du att få en uppdaterad utmatning som visar vilka tester som har misslyckats och vad det förväntade resultatet var.
+När vi kör detta test med hjälp av kommandot `cargo test` kommer det att ge oss en output som säger att testet har passerat. Om vi ändrar värdet på `sum` till ett annat tal som inte stämmer överens med vår förväntade output, kommer testet att misslyckas.
 
 ## Djupdykning
-Rust har en mängd olika assert makron som kan användas för att skriva tester. Det finns också möjlighet att använda `#[should_panic]` för att testa om en funktion korrekt kraschar eller inte.
 
-En annan viktig punkt att tänka på när du skriver tester är att ha en god kodtäckning. Det innebär att alla delar av koden ska testas för att säkerställa att inga buggar slipper igenom. För att kontrollera kodtäckningen i Rust kan du använda verktyget `cargo tarpaulin`.
+Det finns olika typer av tester man kan skriva i Rust, såsom enhetstester, integrationstester och funktionella tester. Det är viktigt att välja rätt typ av test för den specifika koden man vill testa.
 
-## Se också
-- [Rust vägledning om tester](https://doc.rust-lang.org/rust-wasm/book/game-of-life/testing.html)
-- [Rust API referens för test](https://doc.rust-lang.org/std/macro.assert.html)
-- [Cargo tarpaulin dokumentation](https://github.com/xd009642/tarpaulin)
+En annan viktig aspekt av att skriva tester är att skriva testbar kod. Detta innebär att koden bör vara strukturerad på ett sätt som gör den enkel att testa. Det kan innebära att dela upp koden i mindre funktioner eller använda sig av designmönster som underlättar testning.
+
+Genom att skriva tester för sin kod kan man också få en bättre förståelse för hur den fungerar och undvika potentiella buggar och fel i framtiden.
+
+## Se även
+
+Här är några länkar som kan vara till hjälp för att lära sig mer om att skriva tester i Rust:
+
+- [The Rust Book - Testing](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Writing Tests in Rust - Dev.to](https://dev.to/anshulgupta1029/writing-tests-in-rust-2fih)
+- [Rust Test Macro - Rust Documentation](https://doc.rust-lang.org/rust-by-example/testing/unit_testing.html)

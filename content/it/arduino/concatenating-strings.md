@@ -1,45 +1,44 @@
 ---
-title:                "Arduino: Concatenazione di stringhe"
+title:                "Arduino: Concatenazione di stringhe."
+simple_title:         "Concatenazione di stringhe."
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché concatenare le stringhe in Arduino
+## Perché
+Spesso nella programmazione di Arduino, è necessario combinare più stringhe di testo per creare un'unica stringa più lunga. Questo può essere fatto tramite una funzione chiamata "concatenazione di stringhe". In questo post, vedremo come utilizzare la concatenazione di stringhe in Arduino e perché può essere utile.
 
-Concatenare le stringhe può essere utile in molte situazioni, soprattutto quando si vuole creare un output personalizzato o un messaggio dinamico da inviare ad un display, un'interfaccia seriale o altri dispositivi. Ci permette di combinare diverse parti di testo o variabili per creare un'unica stringa.
-
-## Come concatenare le stringhe in Arduino
-
-Per concatenare le stringhe in Arduino, possiamo utilizzare la funzione "concat" della libreria "ArduinoString". Di seguito un esempio di codice che combina una stringa predefinita con una variabile:
+## Come Fare
+La concatenazione di stringhe in Arduino è molto semplice. Utilizzando la funzione `concat()` è possibile unire due o più stringhe in una sola. Ecco un esempio di codice:
 
 ```Arduino
-#include <ArduinoString.h>
-
-// Dichiarazione della variabile
-int temperatura = 25;
-
-// Creazione di una nuova stringa che combina il testo con la variabile
-ArduinoString messaggio = "La temperatura attuale è " + temperatura + "°C";
-
-// Stampa del messaggio sulla porta seriale
-Serial.println(messaggio);
+String primaStringa = "Ciao";
+String secondaStringa = "amici";
+String terzaStringa = primaStringa.concat(secondaStringa);
 ```
 
-Questo codice producirà l'output "La temperatura attuale è 25°C" sulla porta seriale.
+Nell'esempio sopra, abbiamo creato tre stringhe: "Ciao", "amici" e una terza stringa che unisce le prime due. Il risultato sarà "Ciaoamici". È anche possibile concatenare più di due stringhe utilizzando la funzione `concat()` più volte, come mostrato nell'esempio seguente:
 
-## Approfondimento sulla concatenazione delle stringhe
+```Arduino
+String primaStringa = "Benvenuto";
+String secondaStringa = "nel";
+String terzaStringa = "mondo di Arduino";
+String quartaStringa = primaStringa.concat(secondaStringa).concat(terzaStringa);
+```
 
-La funzione "concat" della libreria "ArduinoString" permette di concatenare fino a 255 stringhe o variabili in una sola, ottenendo una maggiore flessibilità nell'output dei nostri progetti. Inoltre, possiamo anche utilizzare la funzione "strcpy" per copiare il contenuto di una stringa in un'altra.
+Il risultato di questo esempio sarà "Benvenutonelmondo di Arduino". Come puoi vedere, la funzione `concat()` può essere utilizzata per unire quante stringhe desideri.
 
-È importante notare che quando si concatenano le stringhe, ogni stringa concatenata viene salvata in memoria, quindi è fondamentale prestare attenzione alla quantità di spazio disponibile.
+## Approfondimento
+La concatenazione di stringhe può essere utile in diverse situazioni. Ad esempio, se stai lavorando con un display LCD, potresti voler visualizzare più messaggi su una sola riga. Utilizzando la concatenazione di stringhe, puoi unire diversi messaggi in un'unica riga e visualizzarli sul display.
 
-# Vedi anche
+Inoltre, la concatenazione di stringhe può essere utilizzata per creare messaggi personalizzati o per unire vari dati o variabili in una sola stringa.
 
-- [Documentazione sulla funzione "concat" di ArduinoString](https://arduiniana.org/libraries/arduinostring)
-- [Esempi di concatenazione delle stringhe su Arduino](https://www.arduino.cc/reference/it/language/variables/data-types/string/functions/concat/)
-- [Guida per principianti su come utilizzare le stringhe in Arduino](https://www.electronicshub.org/arduino-string/)
+È importante notare che la funzione `concat()` può essere utilizzata solo con le stringhe di tipo `String` nell'Arduino. Se stai lavorando con variabili di tipo `char`, puoi utilizzare la funzione `strcat()` per concatenarle.
 
-Con la funzione di concatenazione delle stringhe, possiamo facilmente creare un output personalizzato e dinamico nei nostri progetti Arduino. Speriamo che questo articolo ti sia stato utile nella comprensione di questa funzionalità e ti invitiamo a esplorare ulteriormente le potenzialità delle stringhe in Arduino.
+## Vedi Anche
+- [Funzione `concat()`](https://www.arduino.cc/reference/it/language/functions/strings/concat/)
+- [Funzione `strcat()`](https://www.arduino.cc/reference/it/language/functions/communication/serial/strcat/)

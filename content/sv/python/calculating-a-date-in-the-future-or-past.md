@@ -1,52 +1,49 @@
 ---
-title:                "Python: Beräkna ett datum i framtiden eller förflutna"
+title:                "Python: Beräkning av ett datum i framtiden eller förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller förflutna"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför
 
-Att kunna beräkna ett datum i framtiden eller det förflutna kan vara användbart i många olika situationer, såsom att planera resor, födelsedagar eller viktiga händelser. Det kan också hjälpa till med bokföring eller projektplanering när man behöver veta när en viss tidsperiod börjar och slutar.
+Har du någonsin behövt räkna ut ett datum i framtiden eller förflutet? Kanske ska du planera en resa eller behöver veta vilken dag du fyller år nästa år. Oavsett anledningen kan det vara användbart att kunna göra detta med hjälp av Python-programmering.
 
-## Så här gör du 
+## Så här gör du
 
-För att kunna beräkna ett datum i framtiden eller det förflutna i Python behöver du först importera datetime-modulen. Sedan kan du använda funktionen `timedelta()` för att lägga till eller subtrahera en viss tidsperiod från ett datum. 
+Att beräkna ett datum i framtiden eller förflutet med Python är ganska enkelt. Först behöver vi importera biblioteket `datetime` som ger oss funktioner för att hantera datum och tid i Python. Sedan kan vi använda funktionen `date` för att skapa ett datumobjekt med ett specifikt år, månad och dag. Här är ett exempel på hur du kan räkna ut ett datum 10 dagar framåt från idag:
 
-```Python 
-import datetime 
+```Python
+import datetime
 
-today = datetime.date.today() 
-print("Idag är det:", today) 
+idag = datetime.date.today()
+tio_dagar_fram = idag + datetime.timedelta(days=10)
 
-# Lägg till 30 dagar till dagens datum 
-future_date = today + datetime.timedelta(days=30) 
-print("Om 30 dagar är det:", future_date) 
-
-# Subtrahera 2 veckor från dagens datum 
-past_date = today - datetime.timedelta(weeks=2) 
-print("För 2 veckor sedan var det:", past_date) 
+print(tio_dagar_fram)
 ```
 
-Output:
+Detta kommer att ge oss ett datumobjekt för 10 dagar framåt från dagens datum. Du kan också välja att ange ett specifikt datum istället för att använda `datetime.date.today()` för att beräkna från ett dynamiskt datum.
+
+## Djupdykning
+
+För att kunna göra mer avancerade beräkningar såsom att räkna ut ett datum baserat på specifika veckodagar eller veckonummer, kan vi använda mer avancerade funktioner inom `datetime`-biblioteket. Till exempel kan vi använda funktionen `datetime.weekday()` för att få reda på vilken veckodag ett visst datum ligger på. Här är ett exempel på hur det kan se ut:
+
+```Python
+import datetime
+
+datum = datetime.date(2021, 7, 1)
+
+print("Veckodag för den 1:a juli 2021:", datum.weekday())
 ```
-Idag är det: 2021-10-10
-Om 30 dagar är det: 2021-11-09
-För 2 veckor sedan var det: 2021-09-26
-```
 
-## Djupdykning 
+Detta kommer att ge oss utdatan `3` vilket representerar torsdag (6 = söndag, 0 = måndag).
 
-För att förstå hur datumen beräknas i koden ovan är det viktigt att förstå hur `timedelta()`-funktionen fungerar. Den tar emot parametrar för antal dagar, veckor, månader eller år som ska läggas till eller subtraheras från ett datum. Dessutom kan man även ange parameter för timmar, minuter, sekunder och mikrosekunder för mer exakta beräkningar. 
+## Se även
 
-Det finns också andra användbara funktioner i datetime-modulen för att hantera datum och tid, såsom `date()` för att skapa ett datumobjekt, `time()` för att skapa ett tidsobjekt, och `datetime()` för att skapa ett datum och tidsobjekt. 
-
-Det finns många olika sätt att använda datetime-modulen och dess funktioner för att beräkna datum i framtiden eller det förflutna. Genom att öva och utforska ytterligare kan du lära dig fler avancerade tekniker för hantering av datum och tid i Python. 
-
-## Se också 
-
-- [Python's Official Documentation on datetime](https://docs.python.org/3/library/datetime.html) (engelska)
-- [Python SE:s tutorial om datetime](https://python.se/tutorials/verktyg/tidsritten-views.py) (svenska)
-- [W3Schools' tutorial om datetime](https://www.w3schools.com/python/python_datetime.asp) (engelska)
+- [Python dokumentation om datetime](https://docs.python.org/sv/3/library/datetime.html)
+- [Tutorial om datetider i Python](https://www.programiz.com/python-programming/datetime)
+- [Beräkna tid mellan två datum med Python](https://stackabuse.com/how-to-calculate-days-between-two-dates-in-python/)

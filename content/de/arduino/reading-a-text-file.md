@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/reading-a-text-file.md"
 ---
 
@@ -9,59 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Lesen und Verarbeiten von Textdateien ist ein wichtiger Bestandteil der Programmierung mit Arduino. Es ermöglicht die Verwendung von externen Daten in Projekten und eröffnet viele Möglichkeiten für Kreativität und Innovation. In diesem Blog-Beitrag werden wir uns ansehen, wie man eine Textdatei mit Arduino liest und verarbeitet.
+Das Lesen von Textdateien ist eine wichtige Fähigkeit für jeden Arduino-Programmierer. Es ermöglicht die Kommunikation mit anderen Geräten oder das Speichern von Daten für spätere Verwendung.
 
 ## Wie geht's
 
-Um eine Textdatei mit Arduino zu lesen, benötigen wir die `SD` Bibliothek, die Teil der Standardbibliothek von Arduino ist. Diese Bibliothek ermöglicht die Kommunikation mit einer SD-Karte, auf der wir unsere Textdatei speichern können.
+Das Lesen einer Textdatei mit Arduino erfordert drei Schritte:
 
-Hier ist ein Beispielcode, der eine Textdatei mit dem Namen "data.txt" auf einer SD-Karte liest und ihren Inhalt in der Seriellen Monitor ausgibt:
+1. Öffnen der Textdatei: Verwende die `SD.open()` Funktion, um die Textdatei zu öffnen und einen Dateizeiger zu erhalten.
+2. Lesen der Datei: Verwende die `SD.read()` Funktion, um den Inhalt der Datei auszulesen. Speichere die gelesenen Daten in einer Variable.
+3. Schließen der Datei: Verwende die `SD.close()` Funktion, um die Datei wieder zu schließen.
+
+Um einen einfachen Beispielcode auszuführen, stelle sicher, dass du eine SD-Karte an deinen Arduino angeschlossen hast und die SD-Kartenbibliothek eingebunden hast:
 
 ```Arduino
 #include <SD.h>
 
-File myFile; // Variable für die Textdatei
-int pinChipSelect = 10; // Pin, an dem die SD-Karte angeschlossen ist
+File myFile; // Erstelle eine Dateivariable
 
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(9600); // Verbinde den seriellen Monitor
+  SD.begin(4); // Initialisiere die SD-Karte auf Pin 4
+  myFile = SD.open("test.txt"); // Offne die Datei "test.txt"
   
-  // Initialisiere die SD-Karte und öffne die Textdatei
-  SD.begin(pinChipSelect);
-  myFile = SD.open("data.txt");
+  // Überprüfe, ob die Datei geöffnet wurde
+  if (myFile) {
+    Serial.println("Successfully opened file!");
+    
+    // Lese den Inhalt Zeile für Zeile
+    while (myFile.available()) {
+      Serial.write(myFile.read()); //Gib den gelesenen Inhalt aus
+    }
+    
+    myFile.close(); // Schließe die Datei
+  }
+  else {
+    Serial.println("Error opening file."); 
+  }
 }
 
 void loop() {
-  // Lese eine Zeile aus der Textdatei
-  String data = myFile.readStringUntil('\n');
   
-  // Gib die gelesene Zeile im Seriellen Monitor aus
-  Serial.println(data);
 }
-
 ```
 
-Die Ausgabe im Seriellen Monitor wird wie folgt aussehen:
+Wenn du den Code ausführst, solltest du den Inhalt der Textdatei auf deinem seriellen Monitor sehen:
 
 ```
-Dies ist Zeile 1
-Hier ist die zweite Zeile
-Und hier kommt die dritte
+Successfully opened file!
+This is a test file for reading.
+It contains some sample text.
 ```
 
-## Tiefentauchen
+## Tiefergehende Einblicke
 
-Es gibt mehrere nützliche Funktionen, die in der `SD` Bibliothek enthalten sind und die es uns ermöglichen, Textdateien in verschiedene Formate und mit verschiedenen Methoden zu lesen. Hier sind einige davon:
+Die `SD.read()` Funktion liest immer nur einen einzelnen Byte aus der Datei. Um eine vollständige Zeile auszulesen, musst du eine Schleife verwenden und jeden Buchstaben einzeln auslesen. Du kannst auch die `SD.seek()` Funktion verwenden, um an eine bestimmte Stelle in der Datei zu springen.
 
-- `readString()` - liest die nächste Zeile der Textdatei und gibt sie als Zeichenkette zurück.
-- `readInt()` - liest die nächste Zeile der Textdatei und gibt sie als Integer-Wert zurück.
-- `parseFloat()` - liest die nächste Zeile der Textdatei und gibt sie als Gleitkommazahl zurück.
-- `seek()` - ermöglicht es uns, zu einer bestimmten Position in der Textdatei zu springen.
-
-Es gibt noch viele weitere Funktionen, die du ausprobieren kannst. Eine vollständige Liste findest du in der [Arduino SD Library Reference](https://www.arduino.cc/en/Reference/SD).
+Es ist auch wichtig zu beachten, dass die maximale Dateigröße auf einer SD-Karte vom Dateisystem abhängt. Die meisten modernen SD-Karten unterstützen jedoch Dateigrößen bis zu 4 GB.
 
 ## Siehe auch
 
-- [Arduino SD Library Reference](https://www.arduino.cc/en/Reference/SD)
-- [Tutorial: How to Read and Write to a Text File with Arduino](https://randomnerdtutorials.com/how-to-write-and-read-from-arduino-sd-card/)
-- [SD Library Examples](https://www.arduino.cc/en/Tutorial/LibraryExamples/SDReadWrite)
+- SD library reference: https://www.arduino.cc/en/Reference/SD
+- Reading and writing files on SD cards: https://www.arduino.cc/en/Tutorial/ReadASCIIStringFromExternalFile

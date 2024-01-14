@@ -1,37 +1,38 @@
 ---
 title:                "Ruby: デバッグ出力の印刷"
+simple_title:         "デバッグ出力の印刷"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-デバッグ出力を表示する理由は、プログラマーがコードが期待通りに動作しているかどうかを確認するためです。エラーが発生した場合、デバッグ出力を使用して問題の原因を特定することができます。
+
+プログラミングでデバッグ出力を行う理由をご紹介します。デバッグ出力は、コードの実行中に発生したエラーや想定しない動作を追跡するのに役立ちます。また、コードの実行を理解するためにも重要です。
 
 ## 方法
-デバッグ出力を表示するには、```puts```というメソッドを使います。以下のコード例を参考にしてください。
+
+デバッグ出力を行うためには、`puts`メソッドを使用します。これは、コードが実行されると、指定した変数や文をターミナルに出力します。例を見てみましょう。
 
 ```Ruby
-def add_numbers(x, y)
-    puts "Adding #{x} and #{y}!"
-    return x + y
-end
-
-sum = add_numbers(3, 5)
-puts "The total is #{sum}!"
-```
-出力結果:
-```
-Adding 3 and 5!
-The total is 8!
+name = "あかり"
+puts "私の名前は#{name}です。"
 ```
 
-## 深堀り
-デバッグ出力には、異なるレベルの詳細度を指定することもできます。例えば、```puts "DEBUG: #{variable}"```とすることで、特定の変数の値を確認することができます。また、```p variable```とすることで、変数のデータ型や値を詳しく表示することができます。
+上記のコードを実行すると、ターミナルには「私の名前はあかりです。」という出力が表示されます。
+
+## ディープダイブ
+
+デバッグ出力は、特定の部分のコードがどのように実行されているかを詳しく追跡するのに役立ちます。`puts`メソッドを使用することで、変数の値や条件分岐の結果などを確認することができます。これにより、問題の原因を特定するのに役立ちます。
+
+また、デバッグ出力を行う際には、`p`メソッドも重宝します。`p`メソッドは、デバッグ用の出力に特化した`puts`メソッドです。変数の値やオブジェクトの状態を詳しく出力してくれるので、より詳細なデバッグが可能です。
 
 ## 参考リンク
-- [Rubyのデバッグ出力についてのドキュメント](https://docs.ruby-lang.org/ja/latest/class/IO.html#M_P-puts)
-- [Rubyのデバッグ技術についての記事](https://qiita.com/joker1007/items/32ba10235eb383956c52)
-- [Rubyのデバッグ出力を上手に使う方法](https://www.codementor.io/@bryanarboleda/using-debug_output-in-ruby-d0qzv3whh)
+
+- [Ruby 公式ドキュメント: デバッグ出力](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-puts)
+- [Ruby 公式ドキュメント: pメソッド](https://ruby-doc.org/core-2.7.0/Kernel.html#method-i-p)
+- [Rubyにおけるデバッグ方法の基本](https://qiita.com/jnchito/items/42193d066bd61c740612)
+- [Rubyのデバッグ方法をマスターする](https://blog.cloud-acct.com/posts/ruby_develop/222)

@@ -1,7 +1,9 @@
 ---
-title:                "C++: Omvandla en sträng till gemener"
+title:                "C++: Konvertera en sträng till gemener"
+simple_title:         "Konvertera en sträng till gemener"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,51 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att konvertera en sträng till gemener (lower case) kan vara användbart i olika situationer inom programmering, som till exempel när man vill jämföra strängar utan att ta hänsyn till storleksskillnader, eller när man vill standardisera inmatade användardata.
+Att konvertera en sträng till små bokstäver kan vara en viktig del av att hantera användarinput eller behandla data på ett enhetligt sätt. Detta kan vara speciellt användbart när man jämför strängar eller gör sökoperationer.
 
-## Hur man gör
-
-En enkel och smidig metod för att konvertera en sträng till gemener är genom att använda sig av den inbyggda funktionen `tolower()` tillsammans med en `for`-loop som loopar över varje tecken i strängen och använder `tolower()` för att byta ut eventuella versaler till gemener.
+## Såhär gör man
 
 ```C++
 #include <iostream>
 #include <string>
+
 using namespace std;
 
 int main() {
-    // Input sträng som ska konverteras
-    string str = "Hej på dig";
+    // Skapa en sträng med blandade bokstäver
+    string str = "HeLLo WoRLd";
 
-    // Loopar över varje tecken i strängen
+    // Konvertera strängen till små bokstäver
     for (int i = 0; i < str.length(); i++) {
-        // Om nuvarande tecken är en versal, byt ut det med en gemen
         str[i] = tolower(str[i]);
     }
 
-    // Skriver ut den konverterade strängen
-    cout << str; // hej på dig
-
-    return 0;
-}
-```
-
-En annan metod är att använda den inbyggda funktionen `transform()` tillsammans med `tolower()` och `begin()` samt `end()` för att konvertera hela strängen till gemener på en rad.
-
-```C++
-#include <iostream>
-#include <string>
-#include <algorithm>
-using namespace std;
-
-int main() {
-    // Input sträng som ska konverteras
-    string str = "Hallå där";
-
-    // Använder transform() för att konvertera hela strängen
-    transform(str.begin(), str.end(), str.begin(), ::tolower);
-
-    // Skriver ut den konverterade strängen
-    cout << str; // hallå där
+    // Skriv ut konverterade strängen
+    cout << str << endl; // hello world
 
     return 0;
 }
@@ -61,10 +39,13 @@ int main() {
 
 ## Djupdykning
 
-I C++ finns det flera inbyggda funktioner och metoder som kan vara användbara för att manipulera strängar till gemener. En sådan funktion är `toupper()` som istället konverterar en sträng till versaler, och `isalpha()` som kollar om ett tecken är en bokstav eller inte. Det kan även vara värt att titta närmare på hur olika teckenuppsättningar och teckenkodning påverkar konvertering av strängar till gemener.
+I C++ finns det flera sätt att konvertera en sträng till små bokstäver. En metod är att använda en loop och `tolower()` funktionen för att ändra varje enskild bokstav. En annan metod är att använda `transform()` funktionen tillsammans med `tolower()` för att konvertera hela strängen på en gång.
 
-## Se även
+Det finns också bibliotek och externa funktioner som kan användas för att konvertera en sträng till små bokstäver, som `boost::algorithm::to_lower()` från Boost biblioteket.
 
-- C++ String Methods: https://www.w3schools.com/cpp/cpp_strings.asp
-- ASCII table: https://ascii.cl/
-- Unicode and UTF-8 Explanation: https://www.ibm.com/support/knowledgecenter/ssw_aix_72/com.ibm.aix.nlsgdrf/utf-8.htm
+## Se också
+
+- [C++ Documentation: tolower()](https://www.cplusplus.com/reference/cctype/tolower/)
+- [C++ Documentation: transform()](https://www.cplusplus.com/reference/algorithm/transform/)
+- [Boost Library: to_lower()](https://www.boost.org/doc/libs/1_77_0/doc/html/string_algo/reference.html#header_boost_algorithm_string_h)
+- [Stack Overflow: Convert to Lower Case in C++](https://stackoverflow.com/questions/313970/how-to-convert-stdstring-to-lower-case)

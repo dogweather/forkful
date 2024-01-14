@@ -1,37 +1,46 @@
 ---
-title:                "Clojure: Å finne lengden til en streng"
+title:                "Clojure: På jakt etter lengden til en tekststreng"
+simple_title:         "På jakt etter lengden til en tekststreng"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-I denne bloggen skal vi se på hvordan du kan finne lengden til en tekststreng ved hjelp av Clojure programmeringsspråk. Å finne lengden av en streng er en grunnleggende oppgave som ofte brukes i utvikling av dataprogrammer, og det er derfor viktig å forstå hvordan man kan gjøre dette i Clojure.
+Strings, eller strenger, er en viktig del av programmering og kan ofte være nøkkelen til å manipulere og håndtere data. Å vite lengden på en streng er en grunnleggende operasjon som kan være nyttig i en rekke situasjoner. I denne bloggposten vil vi gå gjennom hvordan man kan finne lengden på en streng i Clojure.
 
 ## Hvordan
-For å finne lengden til en streng i Clojure, kan vi bruke funksjonen "count". Denne funksjonen tar inn en streng som argument og returnerer antall tegn i strengen. La oss se på et eksempel:
+Å finne lengden på en streng i Clojure er enkelt og kan gjøres på flere måter.
+
+```Clojure
+(.length "Hei, verden!")
+```
+Dette eksempelet bruker Java-interoperabilitet i Clojure for å kalle på lengdefunksjonen til Java String-klassen.
 
 ```Clojure
 (count "Hei, verden!")
 ```
+Her bruker vi funksjonen "count" som er en del av Clojure's standardbibliotek. Denne funksjonen teller antall elementer i en sekvens, inkludert den gitte strengen.
 
-Dette vil returnere 12, siden strengen "Hei, verden!" inneholder 12 tegn. Vi kan også bruke "count" på variabler som inneholder strenger.
+Om du ønsker å finne lengden på alle strenger i en liste, kan du bruke "map" funksjonen.
 
 ```Clojure
-(def tekst "Dette er en test")
-(count tekst)
+(map count ["Hei, verden!" "Hello, world!"])
 ```
 
-Dette vil også returnere 12. Det er viktig å merke seg at "count" også kan brukes på andre datatyper som lister og vektorer, og vil da returnere antall elementer i disse.
+Dette vil returnere en sekvens med lengden på hver streng, som i dette tilfellet blir [13 12]. 
 
-## Deep Dive
-Når vi bruker "count" funksjonen på en streng, hva skjer egentlig bak kulissene? I Clojure er strenger implementert som en sekvens av tegn, og "count" funksjonen går gjennom denne sekvensen og teller antall tegn. Dette kan være nyttig å vite hvis du vil lage din egen funksjon for å finne lengden av en streng.
+Alle eksemplene ovenfor vil gi oss samme utgangspunkt, nemlig lengden på den gitte strengen. Dette er en enkel og nyttig funksjon som kan brukes i mange forskjellige sammenhenger.
 
-Det er også viktig å merke seg at "count" funksjonen tar hensyn til Unicode-tegn i strengen, og ikke bare standard ASCII-tegn. Dette betyr at den vil fungere for å finne lengden av både engelske og norske tekster.
+## Dypdykk
+Det er viktig å merke seg at lengden på en streng er antall tegn i strengen, og ikke antall ord. Dette kan føre til forvirring hvis man ikke er klar over forskjellen.
 
-## Se Også
-- [Clojure dokumentasjon for "count" funksjonen](https://clojuredocs.org/clojure.core/count)
-- [En tutorial om strenger i Clojure](https://www.braveclojure.com/do-things-with-strings/)
-- [En guide til Unicode i Clojure](https://gist.github.com/skeet70/cef7dad4b55720326d1451ceff2ea3d7)
+En annen viktig ting å huske på er at "count" funksjonen kun opererer på Unicode-tegn og ignorerer eventuelle kontrollkarakterer eller hviteskipskarakterer. For å få en mer nøyaktig telling kan man bruke en regex for å fjerne disse karakterene før man teller lengden.
+
+## Se også
+- [Clojure dokumentasjon](https://clojuredocs.org/)
+- [Java String dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Clojure regex tutorial](https://dzone.com/articles/java-regex-tutorial)

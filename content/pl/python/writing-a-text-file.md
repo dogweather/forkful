@@ -1,33 +1,57 @@
 ---
 title:                "Python: Pisanie pliku tekstowego"
+simple_title:         "Pisanie pliku tekstowego"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisanie plików tekstowych jest ważne?
+## Dlaczego
 
-Pisanie plików tekstowych jest niezbędnym elementem w programowaniu Pythona. Pozwala ono na zapisywanie i przechowywanie danych, co jest nieodzowne w wielu aplikacjach. Pisanie plików tekstowych pozwala również na łatwiejsze udostępnianie i przetwarzanie danych pomiędzy różnymi programami.
+Pisanie plików tekstowych jest bardzo ważną częścią nauki programowania w języku Python. Jest to niezbędna umiejętność dla każdego programisty, niezależnie od jego poziomu doświadczenia. Tworzenie i modyfikowanie plików tekstowych jest kluczowym elementem w wielu projektach i może pomóc w automatyzacji zadań oraz przechowywaniu danych.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby utworzyć nowy plik tekstowy w Pythonie, musimy wykorzystać funkcję `open()`. Pierwszym argumentem funkcji jest nazwa pliku, który chcemy utworzyć lub zmodyfikować. Drugim argumentem jest tryb, w jakim chcemy otworzyć plik. Przykładowy kod wyglądałby następująco:
+Aby stworzyć plik tekstowy w języku Python, możemy użyć funkcji `open()` wraz z parametrem `"w"` (write), która umożliwia zapisywanie danych do pliku. Następnie, możemy użyć metody `write()` aby wprowadzić zawartość do pliku. Na przykład:
 
 ```Python
-with open("nowy_plik.txt", "w") as file:
-    file.write("To jest zawartość nowego pliku!")
+file = open("moj_plik.txt", "w")
+file.write("To jest test")
+file.close()
 ```
 
-Powyższy kod otwiera plik "nowy_plik.txt" w trybie zapisu ("w") i zapisuje w nim podaną treść. Dzięki użyciu polecenia `with`, plik zostaje automatycznie zamknięty po zakończeniu działania bloku kodu. Istnieją również inne tryby otwierania plików, takie jak "r" (read - tylko do odczytu) czy "a" (append - dopisanie treści do istniejącego pliku).
+Ten kod stworzy plik o nazwie "moj_plik.txt" i wprowadzi w nim tekst "To jest test". Po wykonaniu tego kodu, plik ten będzie dostępny dla nas w tym samym folderze, w którym znajduje się plik z kodem.
 
-## Głębsze zagadnienia
+Jeśli chcemy odczytać zawartość pliku, możemy użyć metody `read()` w następujący sposób:
 
-Obok podstawowych funkcji, Python oferuje również bardziej zaawansowane metody manipulacji plikami tekstowymi. Na przykład, można użyć polecenia `readlines()` do odczytywania wszystkich wierszy z pliku i zapisania ich w liście. Możemy także określić kodowanie znaków przy otwieraniu pliku, co jest ważne przy pracy z plikami w innych językach niż angielski.
+```Python
+file = open("moj_plik.txt", "r")
+print(file.read())
+file.close()
+```
+
+Wykonanie tego kodu spowoduje wyświetlenie zawartości pliku w konsoli.
+
+## Wnikliwe spojrzenie
+
+Pisanie plików tekstowych jest tylko jednym ze sposobów, w jaki Python może przetwarzać dane. Możemy również użyć biblioteki `csv` aby pracować z plikami formatu CSV lub biblioteki `json` do obsługi plików w formacie JSON. Język Python oferuje również wiele innych funkcji związanych z pracą na plikach, takich jak modyfikowanie, aktualizacja i usuwanie danych.
+
+Jednym z najważniejszych aspektów pisania plików tekstowych jest pamiętanie o zamknięciu pliku po zakończeniu jego pracy. Możemy to zrobić za pomocą metody `close()`, która zwalnia zasoby używane przez ten plik.
+
+Zalecamy również korzystanie z konstrukcji `with...as`, która automatycznie zamknie plik po zakończeniu bloku kodu. Na przykład:
+
+```Python
+with open("moj_plik.txt", "w") as file:
+    file.write("To jest test")
+```
+
+Ta konstrukcja jest korzystna szczególnie w przypadku, gdy pracujemy z wieloma plikami jednocześnie.
 
 ## Zobacz także
 
-- Oficjalna dokumentacja Pythona dotycząca manipulacji plikami: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
-- Poradnik na temat manipulacji plikami tekstowymi: https://realpython.com/read-write-files-python/
-- Przydatne wskazówki dotyczące pracy z plikami w Pythonie: https://www.datacamp.com/community/tutorials/reading-writing-files-python
+- Dokumentacja Pythona o operacjach na plikach: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+- Tutoriale na YouTube: https://www.youtube.com/watch?v=Uh2ebFW8OYM
+- Przykładowy kod pisania i odczytywania plików w Pythonie: https://realpython.com/read-write-files-python/

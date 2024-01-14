@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/extracting-substrings.md"
 ---
 
@@ -9,59 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Por qué extraer subcadenas en Elixir?
 
-Extraer subcadenas es una técnica muy útil en la programación de Elixir. Nos permite obtener una porción de una cadena más grande, que puede ser útil en diferentes situaciones, como por ejemplo, si necesitamos procesar una parte específica de un texto o validar un formato determinado. En esta publicación, veremos cómo podemos extraer subcadenas en Elixir y profundizaremos en algunas de sus características.
+Extraer subcadenas es una habilidad esencial para cualquier programador de Elixir, ya que permite manipular y trabajar con cadenas de texto de una manera más eficiente y efectiva. Con la capacidad de extraer subcadenas, puedes obtener partes específicas de una cadena para realizar operaciones como búsqueda, reemplazo y validación.
 
-## Cómo hacerlo
+## ¿Cómo hacerlo?
 
-Extraer subcadenas en Elixir es muy sencillo gracias a la función `String.slice/2`. Esta función toma como argumento la cadena de texto y una lista que indica el rango de índices de la subcadena que queremos extraer. Veamos un ejemplo:
-
-```Elixir
-texto = "Hola Mundo"
-String.slice(texto, 0..3) # devuelve "Hola"
-String.slice(texto, 5..9) # devuelve "Mundo"
-```
-
-En el primer ejemplo, indicamos que deseamos obtener los caracteres desde el índice 0 hasta el índice 3 de la cadena `texto`, lo que resulta en la subcadena "Hola". En el segundo ejemplo, hacemos lo mismo pero con un rango diferente, por lo que obtenemos "Mundo". Como podemos ver, el índice de inicio del rango es inclusivo, mientras que el índice final es exclusivo.
-
-También podemos utilizar números negativos para indicar el rango. En este caso, los índices se cuentan desde el final de la cadena hacia el principio. Por ejemplo:
+Extraer subcadenas en Elixir es bastante sencillo con el uso de la función `String.slice/3` y la sintaxis de rangos. Veamos algunos ejemplos prácticos para comprender mejor cómo funciona.
 
 ```Elixir
-texto = "Hola Mundo"
-String.slice(texto, -5..-1) # devuelve "Mundo"
+# Extraer una subcadena de una cadena dada
+String.slice("Hola mundo", 1..4)
+# Output: "Hola"
+
+# Extraer una subcadena a partir de un índice específico hasta el final de la cadena
+String.slice("Programando en Elixir", 13..-1)
+# Output: "Elixir"
+
+# Extraer una subcadena utilizando una expresión regular
+String.slice("¡Hola mundo!", ~r/hola/i)
+# Output: "Hola"
+
+# Extraer una subcadena utilizando una expresión regular y especificando la posición inicial
+String.slice("¡Hola mundo!", ~r/[a-z]/, pos: 6)
+# Output: "l mundo"
 ```
 
-En este caso, el rango indica que deseamos obtener los últimos 5 caracteres de la cadena `texto`, obteniendo así la subcadena "Mundo". Además, si omitimos el índice final del rango, la función `String.slice/2` devolverá la subcadena desde el índice indicado hasta el final de la cadena. Por ejemplo:
+Como se puede observar en los ejemplos anteriores, la función `String.slice/3` toma tres parámetros: la cadena de texto, el rango de la subcadena que se desea extraer y (opcionalmente) las opciones de configuración. Esta función también permite extraer subcadenas utilizando expresiones regulares para mayor flexibilidad.
 
-```Elixir
-texto = "Hola Mundo"
-String.slice(texto, 5..) # devuelve "Mundo"
-```
+## Profundizando
 
-Por último, si queremos obtener un solo carácter, podemos utilizar la función `String.at/2`, especificando únicamente el índice del carácter que deseamos obtener. Por ejemplo:
+La función `String.slice/3` es solo una de las muchas formas en las que puedes extraer subcadenas en Elixir. También existen otras funciones, como `String.split/3` y `String.replace/4`, que pueden ser útiles para esta tarea.
 
-```Elixir
-texto = "Hola Mundo"
-String.at(texto, 5) # devuelve "M"
-```
-
-## Profundizando en la extracción de subcadenas
-
-Además de la función `String.slice/2`, Elixir también cuenta con otras funciones útiles para extraer subcadenas. Por ejemplo, si necesitamos obtener una subcadena de una cadena basada en una determinada secuencia de caracteres, podemos utilizar `String.split/2`. Esta función toma como argumentos la cadena y el delimitador que queremos utilizar para dividir la cadena. Veamos un ejemplo:
-
-```Elixir
-texto = "Hola,Mundo"
-String.split(texto, ",") # devuelve ["Hola", "Mundo"]
-```
-
-Otra función útil es `String.trim/2`, que nos permite eliminar espacios en blanco al inicio y al final de una cadena. Esto puede ser especialmente útil cuando trabajamos con cadenas de texto que provienen de una fuente externa, como un archivo o una API. Por ejemplo:
-
-```Elixir
-texto = "    Hola Mundo    "
-String.trim(texto) # devuelve "Hola Mundo"
-```
+Además, es importante mencionar que las cadenas en Elixir son inmutables, lo que significa que la función `String.slice/3` no modifica la cadena original, sino que retorna una versión nueva con la subcadena extraída. Esto es beneficioso ya que garantiza la integridad de los datos y previene posibles errores.
 
 ## Ver también
 
-- Documentación oficial de Elixir sobre `String`: https://hexdocs.pm/elixir/String.html
-- Tutorial de Elixir en español: https://www.elixirtutorials.com/
-- Comunidad de Elixir en español: https://elixir-lang.lat/
+- [Documentación oficial de Elixir sobre cadenas de texto](https://hexdocs.pm/elixir/String.html)
+- [Artículo sobre la manipulación de cadenas en Elixir](https://medium.com/@Jeyachandran/coding-with-elixir-manipulating-strings-c5ad808920ef)
+- [Curso en línea gratuito sobre programación en Elixir (en español)](https://www.udemy.com/course/elixir-elixir-programming-for-beginners/?couponCode=ELIXIR_ES)

@@ -1,44 +1,83 @@
 ---
-title:                "Python: Söka och ersätta text"
+title:                "Python: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför?
 
-Att söka och ersätta text är en vanlig uppgift inom programmering, oavsett om du arbetar med webbutveckling, dataanalys eller automatiskt generering av kod. Med hjälp av Python kan du effektivt söka igenom stora mängder text och ersätta vissa delar med annan text eller kod.
+Att söka och ersätta text är en vanlig uppgift inom programmering. Det kan vara användbart för att korrigera stavfel, ändra variabler eller uppdatera innehållet i en fil. Genom att använda Python kan vi enkelt automatisera denna uppgift och spara tid och ansträngning.
 
-## Så här gör du
+## Hur man gör det
 
-För att söka och ersätta text i Python använder du en kombination av strängmetoder och reguljära uttryck. Här är några exempel på hur du kan använda dessa verktyg:
+I Python finns det flera sätt att söka och ersätta text. Den enklaste metoden är att använda replace() funktionen, vilket ersätter en viss sträng med en annan.
 
-```python
-text = "Hej alla Python-programmerare! Välkommen till min blogg."
-# Ersätt "Python-programmerare" med "kodslingor"
-text = text.replace("Python-programmerare", "kodslingor")
-# Texten nu innehåller "Hej alla kodslingor! Välkommen till min blogg."
-
-# Ersätt siffror med "X"
-import re
-text = "12345 är ett tal som kan ersättas."
-text = re.sub("[0-9]+", "X", text)
-# Texten nu innehåller "X är ett tal som kan ersättas."
+```Python
+text = "Hej! Jag heter Emma."
+ny_text = text.replace("Emma", "Lisa")
+print(ny_text)
+# Output: Hej! Jag heter Lisa.
 ```
 
-Som du kan se kan du med hjälp av `replace`-metoden enkelt byta ut en del av en sträng med en annan. Genom att importera modulen "re" kan du också använda reguljära uttryck för att söka efter mer komplexa mönster och ersätta dem med annan text.
+För att byta ut flera förekomster av en sträng, kan vi använda replace() funktionen i en loop.
+
+```Python
+text = "Det finns en stor hund, en liten hund och en medelstor hund."
+hundar = ["stor", "liten", "medelstor"]
+for hund in hundar:
+  ny_text = text.replace(hund, "gammal")
+  print(ny_text)
+
+# Output: Det finns en gammal hund, en gammal hund och en gammal hund.
+```
+
+En annan användbar metod är att använda regular expressions (regex) för att söka efter ett mönster och ersätta det med en annan sträng.
+
+```Python
+import re
+text = "Min favoritfärg är blå, men jag gillar också grönt."
+ny_text = re.sub("blå|gillar", "röd", text)
+print(ny_text)
+
+# Output: Min favoritfärg är röd, men jag tycker också om grönt.
+```
 
 ## Djupdykning
 
-Reguljära uttryck är en kraftfull teknik för sökning och ersättning, men det kan vara svårt att lära sig. Om du vill lära dig mer om reguljära uttryck och hur du kan använda dem i Python rekommenderar jag dessa resurser:
+När vi söker och ersätter text med hjälp av regex, kan vi använda specifika metakaraktärer för att uttrycka ett mer komplicerat mönster. Till exempel:
 
-- [Python Regular Expression HOWTO](https://docs.python.org/3/howto/regex.html)
-- [RegExr - Online tool for testing regular expressions](https://regexr.com/)
-- [RegEx101 - Online tool for crafting and testing regular expressions](https://regex101.com/)
+- \w: matchar alla bokstäver och siffror.
+- \d: matchar alla siffror.
+- \s: matchar alla mellanslag och tabbar.
+- .: matchar alla tecken (inklusive specialtecken).
 
-## Se också
+Vi kan också använda dessa metakaraktärer tillsammans med regex kvantitetsuttryck för att göra vårt mönster ännu mer specifikt. Till exempel:
 
-- [Python dokumentation för strängmetoder](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Python dokumentation för reguljära uttryck](https://docs.python.org/3/library/re.html)
+- ?: matchar 0 eller 1 gånger.
+- *: matchar 0 eller fler gånger.
+- +: matchar 1 eller fler gånger.
+- {n}: matchar exakt n antal gånger.
+- {n,m}: matchar minst n och högst m antal gånger.
+
+Låt oss använda dessa kunskaper för att ersätta all text inom parenteser med en annan sträng.
+
+```Python
+import re
+text = "Namn: Emma (19)"
+ny_text = re.sub("\(.+?\)", "(25)", text)
+print(ny_text)
+
+# Output: Namn: Emma (25)
+```
+
+Som vi kan se i exemplet ovan, använde vi metakaraktären ? för att matcha "19" endast en gång, och ersatte det sedan med "25". Genom att lära oss mer om regex och dess metakaraktärer kan vi göra ännu mer avancerade sökningar och ersättningar i text.
+
+## Se även
+
+- [Python regex dokumentation](https://docs.python.org/3/library/re.html)
+- [Tutorial för regex](https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial)

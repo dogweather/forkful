@@ -1,52 +1,50 @@
 ---
-title:                "Javascript: Alimerkkijonojen erottaminen"
+title:                "Javascript: Alimerkkien erottaminen"
+simple_title:         "Alimerkkien erottaminen"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi haluaisin poimia alimerkkejä (substring)?
 
-Joskus käyttäjät tarvitsevat tietyn osan merkkijonosta sen sijaan, että käyttäisivät koko merkkijonoa. Substringin eli osakerroksen eristäminen on siis erittäin hyödyllistä monissa ohjelmointitilanteissa.
+Kun työskentelet tekstin käsittelyssä, saatat törmätä tilanteeseen, jossa haluat tarkistaa tai muokata tietyn osan tekstistä. Tässä tilanteessa alimerkkien (substring) poimiminen on hyödyllinen ominaisuus, joka säästää aikaa ja vaivaa.
 
-## Miten
+Esimerkiksi haluat ehkä tarkistaa, onko tietyssä sanassa tietty kirjain tai haluatko jakaa tekstin eri osiin. Alimerkkien poimiminen antaa sinulle mahdollisuuden työskennellä tarkasti halutun tekstin kanssa helposti ja tehokkaasti.
 
-Alla on esimerkki, joka näyttää, miten merkkijonon osakerros voidaan eristää käyttämällä Javascriptin substring-funktiota.
+## Kuinka: Näin poimit alimerkkiä käyttäen JavasScriptiä
 
-```Javascript
-let teksti = "Tämä on esimerkki merkkijonosta!";
-let sub = teksti.substring(8, 15);
-console.log(sub);
-```
-
-Tulostus: "esimerkki"
-
-In yllä olevassa esimerkissä substring-funktio ottaa kaksi parametria: alkuindeksin ja loppuindeksin. Alkuindeksi määrittelee, mistä merkkijonon kohdasta osakerros alkaa, ja loppuindeksi määrittelee, mihin kohtaan se päättyy. Loppuindeksi ei sisälly itse osakerrokseen.
-
-Voit myös antaa vain yhden parametrin, jolloin substring ottaa alkuindeksin ja päättyy merkkijonon loppuun:
+Alimerkkien poimiminen JavaScriptillä on melko helppoa. Voit käyttää String-olioon sisäänrakennettua "substring" -toimintoa. Se ottaa parametreikseen aloitus- ja lopetusindeksit ja palauttaa halutun osan tekstin alimerkkinä.
 
 ```Javascript
-let teksti = "Tämä on esimerkki merkkijonosta!";
-let sub = teksti.substring(12);
-console.log(sub);
+let teksti = "Tämä on esimerkki tekstistä."
+let osa = teksti.substring(5, 17)
+console.log(osa) // "on esimerkki"
 ```
 
-Tulostus: "esimerkki merkkijonosta!"
+Tässä esimerkissä "substring" -toiminto poimii tekstin osan, joka alkaa indeksistä 5 ja päättyy indeksiin 17. On tärkeää huomata, että aloitusindeksi on mukana, mutta lopetusindeksi ei.
 
-Substringin lisäksi Javascriptissa on myös slice-funktio, jota voidaan käyttää samalla tavalla. Ainoa ero on, että slice-haarasleikkaus ei hyväksy negatiivisia indeksejä, kun taas substring voi.
+Voit myös asettaa vain yhden parametrin, jolloin "substring" -toiminto palauttaa kaiken tekstin aloittaen halutusta indeksistä.
 
-## Syvemmälle
+```Javascript
+let teksti = "Tämä on esimerkki tekstistä."
+let osa = teksti.substring(10)
+console.log(osa) // "esimerkki tekstistä."
+```
 
-Merkkijonon osakerroksen erottaminen on tärkeä osa Javascript-ohjelmointia. Se voi auttaa käyttäjiä hallitsemaan ja manipuloimaan dataa helposti ja tehokkaasti.
+## Syvällinen sukellus
 
-On kuitenkin tärkeää muistaa, että merkkijonon indeksointi alkaa aina nollasta. Tämä tarkoittaa sitä, että ensimmäinen merkki merkkijonossa on indeksissä 0, toinen indeksissä 1 ja niin edelleen. Myös päättyvä indeksi ei sisälly itse osakerrokseen, mikä voi joskus aiheuttaa virheitä, jos se unohdetaan.
+Alimerkkien poimimiseen liittyy muutamia tärkeitä seikkoja, jotka on hyvä pitää mielessä.
 
-Lisäksi merkkijonojen käsitteleminen voi olla hieman erilaista eri ohjelmointikielissä, joten on tärkeää tarkistaa dokumentaatio ennen substringin tai slice-haarasleikkauksen käyttöä.
+Ensinnäkin, kun poimit alimerkkiä, muista, että tekstin indeksointi alkaa aina 0: sta. Toiseksi, "substring" -toiminto ei muuta alkuperäistä tekstiä, vaan palauttaa uuden tekstinäyttövastauksen. Kolmanneksi, alimerkin pituuden on oltava suurempi tai yhtä suuri kuin alkuperäisen tekstin. Muuten palautetaan tyhjä vastaus.
+
+Lisäksi, jos haluat puuttua tekstistä merkkeihin, voit käyttää "charCodeAt" -toimintoa, mikä antaa sinulle merkin UTF-16 Unicode -arvon. Tämä mahdollistaa tarkemman tekstin käsittelyn.
 
 ## Katso myös
 
-- [MDN: String.substring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN: String.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
-- [W3Schools: Javascript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+- [MDN Web Docs - substring](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [W3Schools - JavaScript substring() Method](https://www.w3schools.com/jsref/jsref_substring.asp)
+- [Ultimate Guide to JavaScript Substrings](https://www.javascripttutorial.net/javascript-substring/)

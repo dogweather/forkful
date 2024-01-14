@@ -1,75 +1,65 @@
 ---
-title:                "C: Leyendo argumentos de línea de comando"
+title:                "C: Leyendo argumentos de línea de comandos"
+simple_title:         "Leyendo argumentos de línea de comandos"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué leer argumentos de línea de comandos en C?
+## Por qué
 
-Los argumentos de línea de comandos son una herramienta esencial en el mundo de la programación, especialmente en el lenguaje C. Permiten que los usuarios pasen información a un programa desde la línea de comandos, lo que lo hace más versátil y personalizable. En esta publicación, aprenderemos cómo leer y utilizar argumentos de línea de comandos en C.
+El uso de argumentos de línea de comandos en la programación en C es una práctica muy común y útil. Permite a los usuarios proporcionar información adicional al programa al momento de su ejecución, lo que facilita su uso y personalización. Además, el uso de argumentos de línea de comandos también permite a los programadores ahorrar tiempo y esfuerzo al no tener que recompilar constantemente el código para cambiar los valores de entrada del programa.
 
 ## Cómo hacerlo
 
-Para leer los argumentos de línea de comandos en C, utilizamos la función `main()` y sus parámetros `argc` y `argv`. `argc` (argument count) es una variable entera que contiene el número de argumentos pasados al programa, mientras que `argv` (argument vector) es una matriz de cadenas que contiene los argumentos en sí. Veamos un ejemplo:
+Para leer los argumentos de línea de comandos en un programa en C, se utilizan los parámetros "argc" y "argv". "argc" (argument count) representa el número de argumentos que se pasan al programa, mientras que "argv" (argument vector) es una matriz que contiene todos los argumentos como cadenas de caracteres.
+
+A continuación se muestra un ejemplo de código que utiliza estos parámetros para leer los argumentos de línea de comandos y mostrarlos en pantalla:
 
 ```C
-// Ejemplo de código para leer argumentos de línea de comandos
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
-  printf("El número de argumentos pasados es %d\n", argc);
-  for(int i = 0; i < argc; i++) {
-    printf("Argumento %d: %s\n", i, argv[i]);
-  }
-  return 0;
+int main(int argc, char *argv[])
+{
+    // El primer argumento (argv[0]) siempre es el nombre del programa
+    printf("El nombre del programa es: %s\n", argv[0]);
+
+    // Se recorren los demás argumentos con un bucle for
+    for (int i = 1; i < argc; i++)
+    {
+        printf("Argumento %d: %s\n", i, argv[i]);
+    }
+
+    return 0;
 }
 ```
 
-Este código imprimirá el número de argumentos pasados al programa y cada uno de los argumentos en una línea separada. Ahora, si ejecutamos el programa con algunos argumentos como `./programa Hola mundo`, obtendremos la siguiente salida:
+Si se compila y ejecuta este programa con los siguientes argumentos de línea de comandos:
 
 ```
-El número de argumentos pasados es 3
-Argumento 0: ./programa
-Argumento 1: Hola
-Argumento 2: mundo
+./programa argumento1 "argumento 2" 3
 ```
 
-Podemos ver que el primer argumento (`argv[0]`) siempre es el nombre del programa. Los siguientes son los argumentos que hayamos pasado en la línea de comandos.
+La salida sería la siguiente:
+
+```
+El nombre del programa es: ./programa
+Argumento 1: argumento1
+Argumento 2: argumento 2
+Argumento 3: 3
+```
 
 ## Profundizando
 
-Además de leer los argumentos de línea de comandos, también podemos validarlos y utilizarlos en nuestro programa. Por ejemplo, podríamos crear un programa que convierte una temperatura de grados Celsius a Fahrenheit utilizando un argumento de línea de comandos. Para ello, necesitamos asegurarnos de que el usuario ingrese un argumento numérico. Podemos hacerlo utilizando la función `atoi()` para convertir `argv[1]` en un número entero y luego verificar si el resultado es mayor que cero (ya que no tendría sentido convertir una temperatura menor a cero en grados Celsius). Aquí hay un ejemplo de código:
+Además de los argumentos de línea de comandos estándar, también es posible utilizar argumentos opcionales utilizando la función "getopt()". Esta función permite especificar opciones, como en el comando "ls -l", donde "l" es una opción.
 
-```C
-#include <stdio.h>
-#include <stdlib.h> // Para utilizar la función atoi()
-
-int main(int argc, char *argv[]) {
-  if(argc == 2) { // Verifica si se ha pasado un único argumento
-    int celsius = atoi(argv[1]); // Convierte el argumento a un número entero
-    if(celsius > 0) { // Verifica si es mayor a cero
-      float fahrenheit = ((celsius * 9) / 5) + 32; // Convierte a Fahrenheit
-      printf("%d grados Celsius equivale a %.2f grados Fahrenheit\n", celsius, fahrenheit);
-    } else {
-      printf("Ingrese un valor mayor a cero\n");
-    }
-  } else {
-    printf("Ingrese solo un argumento: temperatura en grados Celsius\n");
-  }
-  return 0;
-}
-```
-
-Al ejecutar este programa con `./programa 25`, obtendremos la siguiente salida:
-
-```
-25 grados Celsius equivale a 77.00 grados Fahrenheit
-```
+Además, también se pueden procesar argumentos de línea de comandos de forma más compleja utilizando bibliotecas externas, como "argp" o "popt", que proporcionan herramientas adicionales para trabajar con argumentos de línea de comandos.
 
 ## Ver también
 
-- [Documentación de argc y argv en C](https://www.programiz.com/c-programming/c-command-line-arguments)
-- [Más sobre la función atoi() en C](https://www.geeksforgeeks.org/atoi-function-in-c-cpp/)
+- [Tutorial: Leer argumentos de línea de comandos en C](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Ejemplos de uso de getopt() en C](https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html)
+- [Documentación de la función getopt() en C](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)

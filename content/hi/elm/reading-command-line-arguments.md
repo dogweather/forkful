@@ -1,56 +1,52 @@
 ---
-title:                "Elm: कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन तर्क पढ़ना"
+title:                "Elm: कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट पढ़ना।"
+simple_title:         "कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट पढ़ना।"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-
-क्या आपने कभी सोचा है कि प्रोग्रामिंग का यह साधन क्यों महत्वपूर्ण हो सकता है? पूर्णांक तथा मान आदि को स्टोर करने के लिए अलग-अलग परामीटर को डालना अपने आप में एक चुनौतीपूर्ण काम हो सकता है। अतः डेस्कटॉप या वेब अनुप्रयोगों में ये कमांड लाइन आगठी महत्वपूर्ण हैं।
+अगर आप कोडिंग के अंदर नए हैं और प्रोग्रामिंग भाषा Elm को सीखना चाहते हैं, तो आप जानना चाहेंगे कि command line arguments क्या होते हैं और इन्हें कैसे पढ़ा जाता है। यह एक महत्वपूर्ण जानकारी है जो आपको प्रोग्रामिंग में आगे बढ़ने में मदद कर सकती है।
 
 ## कैसे करें
+एक सरल उदाहरण के साथ, हम दिखाएंगे कि आप कैसे अपने Elm प्रोग्राम में command line arguments को पढ़ सकते हैं।
 
-आपको प्रोग्रामिंग भाषा Elm में कमांड लाइन आगठी को पढ़ने के लिए निम्नलिखित चरणों का पालन करना होगा। पहले हम उन परामीटरों की डालन करते हैं जो हमें चाहिए, फिर हम उन्हें समझते हैं और अंत में आवश्यकतानुसार प्रिंट करते हैं।
+```Elm 
+import Platform exposing (worker)
+import Array exposing (toList, getAt)
 
-``` Elm
-import Platform
-
-main : Program String
+main : Program Never Flags
 main =
-    Platform.worker
+    worker
         { init = init
         , update = update
-        , subscriptions = \_ -> Sub.none
+        , subscriptions = subscriptions
         }
 
-type Msg
-    = Param String
-    | PrintOutput
-
-init : () -> ( Model, Cmd Msg )
+init : () -> (Array String, Cmd Msg)
 init _ =
-    let
-        args =
-            Platform.workerContext.cmdLineArgs
-    in
-        ( Model args, Cmd.none )
+    ( Platform.arguments, Cmd.none )
 
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        Param value ->
-            ( Model value, Cmd.none )
+type Msg
+    = ArgumentsMsg Array String
 
-        PrintOutput ->
-            ( model, Cmd.none )
+update : Msg -> Array String -> ( Array String, Cmd Msg )
+update msg arguments =
+    ( arguments, Cmd.none )
+
+subscriptions : Array String -> Sub Msg
+subscriptions arguments =
+    Sub.none
 
 ```
 
-इस उदाहरण में हमने तीन परामीटर डाले हैं और उन्हें संग्रहीत किया है। फिर हमने संग्रहीत परामीटर को print किया है जो प्रिंटर और प्रिंटर टिकानेर पहले से ही उपलब्ध हैं।
+उपरोक्त कोडब्लॉक में, हमने सर्वर से विन्यास किया हुआ worker फ़ंक्शन है, जो कि `Platform` में है और हमारे आगेबार आम argument सूची में सेट करता है। हमने `init` फ़ंक्शन को परिवर्तित किया है ताकि वह पोर्ट मानचित्र को खुश कर सकें, जिसमे हमने यहां से आगेबार आम प्राप्त कर लिए हैं कि आप Elm को अपने कोड के बाहर कैसे उपयोग कर सकते हैं।
+
+मानचित्र का वर्गीकरण करने के बाद, हमने `update` फ़ंक्शन को लपेट किया हुआ है जिसमे हमने क्रमशः `arguments` संग्रह में समावेशित किया है।
 
 ## गहराई में जाएं
-
-अगर आप अपने प्रोग्राम में कमांड लाइन आगठी को ज्यादा मूल्य देना चाहते हैं, तो आप और गहराई में जा सकते हैं। आप अन्य भाषाओं में भी कमांड लाइन आगठी को पढ़ सकते हैं, लेकिन अगर आप Elm में कर रहे हैं, तो आपको कुछ भ्रांतियों क
+command line arguments को पढने के बारे में अधिक जानकारी के लिए, आप `Platform.arguments` और `Array` के लिए Elm निर्देशिका को देख सकते हैं। आप command line arguments को पढ़ने की विश्वसनीय प्रक्रिया और उसका उपयोग कर

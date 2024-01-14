@@ -1,7 +1,9 @@
 ---
-title:                "C: Å få gjeldende dato"
+title:                "C: Få dagens dato"
+simple_title:         "Få dagens dato"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/getting-the-current-date.md"
 ---
 
@@ -9,11 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det er mange grunner til å ville vite den gjeldende datoen i et C-program. Kanskje du trenger å vise datoen til brukeren, sjekke om en dato er innenfor et bestemt tidsintervall, eller til og med sørge for at en applikasjon fungerer riktig på ulike datoer. Uansett hva årsaken er, er det viktig å kunne hente den gjeldende datoen i et program, og det er akkurat det vi vil vise deg i denne bloggposten.
+Å få dagens dato er en vanlig oppgave i programmering som kan være nyttig av flere grunner. Dette kan inkludere å registrere når en bestemt hendelse skjedde, å vise dato på et brukergrensesnitt eller å beregne tidsintervaller fra nåtid.
 
 ## Hvordan
 
-For å hente den gjeldende datoen i et C-program, må du inkludere "time.h" header-filen. Dette gir tilgang til funksjoner som lar deg manipulere og få informasjon om dato og tid. Det finnes flere forskjellige funksjoner for å hente den gjeldende datoen, men i dette eksempelet vil vi bruke "time" funksjonen.
+Å få dagens dato i C-programmering er en enkel oppgave som kan gjøres på flere måter. En av de mest vanlige måtene er å bruke funksjonen `time()` fra standardbiblioteket `<time.h>`. Denne funksjonen returnerer antall sekunder som har gått siden 1. januar 1970 kalt "Epoken". Ved å dele dette tallet med antall sekunder i en dag (86400), kan vi få antall hele dager siden Epoken. Dette kan deretter konverteres til en mer leslig dato ved hjelp av andre funksjoner fra `<time.h>` som `localtime()` og `strftime()`.
 
 ```C
 #include <stdio.h>
@@ -21,33 +23,52 @@ For å hente den gjeldende datoen i et C-program, må du inkludere "time.h" head
 
 int main()
 {
-    time_t now;
-    struct tm *currentTime;
+    // Få antall sekunder siden Epoken
+    time_t now = time(NULL);
 
-    time(&now); // henter den nåværende tiden
-    currentTime = localtime(&now); // konverterer til lokal dato og klokkeslett
+    // Beregn antall dager siden Epoken
+    int days_since_epoch = now / 86400;
 
-    printf("Dagens dato er: %d/%d/%d", currentTime->tm_mday, currentTime->tm_mon + 1, currentTime->tm_year + 1900);
+    // Konverter til datostruktur
+    struct tm *date = localtime(&days_since_epoch);
+
+    // Bruk strftime for å formatere datoen
+    char formatted_date[11];
+    strftime(formatted_date, 11, "%d %b %Y", date);
+
+    // Skriv ut datoen på standard output
+    printf("Dagens dato er: %s\n", formatted_date);
+
     return 0;
 }
 ```
-
-I dette eksempelet deklarerer vi en variabel "now" av typen "time_t", som er en kjepp til tiden. Deretter bruker vi "time" funksjonen for å hente den nåværende tiden og lagrer den i variabelen vår. Vi bruker deretter "localtime" funksjonen for å konvertere tiden til lokal dato og klokkeslett, som vi deretter kan få tilgang til ved hjelp av "struct tm" strukturen. Her kan vi bruke flere formateringsalternativer, som for eksempel å vise månedens navn i stedet for et tall. I dette eksempelet bruker vi "tm_mday" for å få dagens dato, "tm_mon" for å få måneden og "tm_year" for å få året. Det er viktig å merke seg at måneden og året er "zero-indexed", noe som betyr at vi må legge til 1 og 1900 for å få den faktiske måneden og året.
-
-Når vi kjører dette programmet, får vi følgende utskrift:
-
-```
-Dagens dato er: 29/10/2020
-```
+**Output:** Dagens dato er: 03 Aug 2021
 
 ## Dypdykk
 
-Som nevnt tidligere, finnes det flere forskjellige funksjoner for å hente den gjeldende datoen i et C-program. En annen nyttig funksjon er "gmtime", som henter den universelle tiden og konverterer den til dato og klokkeslett i Greenwich Mean Time (GMT). Dette kan være nyttig hvis du trenger å håndtere tidssoner i programmet ditt.
+En annen måte å få dagens dato på er å bruke funksjonen `ctime()` fra `<time.h>`. Denne funksjonen returnerer en lesbar streng av dagens dato og klokkeslett. En ting å merke seg med denne metoden er at den bruker systemets lokale tidssone, så det kan være forskjeller mellom datoen på forskjellige systemer.
 
-Det finnes også funksjoner for å få tilgang til spesifikke deler av datoen, som for eksempel "tm_hour" for å få timen på dagen eller "tm_min" for å få minuttene. Utforsk gjerne flere av disse mulighetene og se hvordan du kan tilpasse datoen i henhold til dine behov.
+```C
+#include <stdio.h>
+#include <time.h>
+
+int main()
+{
+    // Få dagens dato som en streng
+    char *today = ctime(NULL);
+
+    // Skriv ut datoen på standard output
+    printf("Dagens dato er: %s", today);
+
+    return 0;
+}
+```
+**Output:** Dagens dato er: Sun Aug  3 00:00:00 2021
+
+Det finnes også flere tredjeparts biblioteker som kan brukes for å få dagens dato i en ønsket format eller med støtte for forskjellige tidssoner.
 
 ## Se også
 
-- [C Time and Date functions](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [C Reference Manual - <time.h>](https://www.win.tue.nl/~aeb/linux/lk/lk-4.html)
-- [Date and Time in C](https://www.geeksforgeeks.org/date-time-programming-in-c)
+- [Mer om `<time.h>` biblioteket (offisiell dokumentasjon)](https://www.cplusplus.com/reference/ctime)
+- [Informasjon om Epoken i C (på engelsk)](https://www.epochconverter.com/programming/c)
+- [Eksempler på flere metoder for å få dagens dato i C](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)

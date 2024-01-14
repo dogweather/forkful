@@ -1,50 +1,35 @@
 ---
-title:                "Ruby: Überprüfung, ob ein Verzeichnis existiert"
+title:                "Ruby: Überprüfen, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Eine der grundlegenden Fähigkeiten in der Ruby-Programmierung ist die Überprüfung, ob ein Verzeichnis existiert. Dies ist besonders wichtig, wenn man mit Dateien arbeitet und sicherstellen möchte, dass der Code auf die richtigen Dateien zugreift. In diesem Blogpost erfährst du, wie du mit Ruby prüfen kannst, ob ein Verzeichnis existiert.
 
-In der Welt der Programmierung gibt es viele verschiedene Aufgaben und Herausforderungen zu bewältigen. Eines der häufigsten Probleme ist das Überprüfen der Existenz eines Verzeichnisses. Aber warum sollte man das überhaupt tun?
-
-Das Überprüfen, ob ein Verzeichnis existiert, ist besonders wichtig, wenn man mit Dateien und Ordnern interagiert, zum Beispiel beim Öffnen, Verschieben oder Löschen von Dateien. Wenn man nicht sicherstellt, dass das betreffende Verzeichnis existiert, kann dies zu Fehlern und unerwünschtem Verhalten führen. Daher ist es wichtig, diese grundlegende Aufgabe zu beherrschen, um sicherzustellen, dass das Programm reibungslos funktioniert.
-
-## Wie geht das?
-
-In Ruby gibt es eine eingebaute Methode namens `Dir.exist?`, die sehr nützlich ist, um die Existenz eines Verzeichnisses zu überprüfen. Hier ist ein kleines Beispiel, wie man diese Methode verwenden kann:
+## Wie geht man vor
+Das Überprüfen eines Verzeichnisses auf Existenz ist ein einfacher Vorgang in der Ruby-Syntax. Hier ist ein Beispiel, wie man das prüfen kann:
 
 ```Ruby
-if Dir.exist?("Beispielverzeichnis")
-    puts "Das Verzeichnis existiert."
-else
-    puts "Das Verzeichnis existiert nicht."
-end
+exists = Dir.exist?('Pfad/zu/Verzeichnis')
+puts exists
 ```
 
-Das obige Beispiel wird zunächst überprüfen, ob das Verzeichnis "Beispielverzeichnis" existiert und je nach Ergebnis eine entsprechende Meldung ausgeben. Aber was passiert, wenn man auch den Pfad angeben möchte? Keine Sorge, auch dafür gibt es eine Lösung:
+In diesem Beispiel verwenden wir die eingebaute Methode `Dir.exist?`, um zu prüfen, ob das Verzeichnis "Pfad/zu/Verzeichnis" existiert. Diese Methode gibt einen Boolean (wahr/falsch) Wert zurück, der in der Variable `exists` gespeichert ist. Und schließlich geben wir den Wert mit `puts` aus.
 
-```Ruby
-if Dir.exist?("/Users/Beispielverzeichnis/Test")
-    puts "Das Verzeichnis existiert."
-else
-    puts "Das Verzeichnis existiert nicht."
-end
-```
+Wenn das Verzeichnis existiert, wird `true` ausgegeben. Falls es nicht existiert, wird `false` ausgegeben.
 
-Wie man sehen kann, gibt es auch die Möglichkeit, den vollständigen Pfad anzugeben. Die Methode erwartet als Argument entweder einen relativen oder absoluten Pfad.
+## Tieferer Einblick
+Die eingebaute Methode `Dir.exist?` verwendet das Betriebssystem, um zu überprüfen, ob das Verzeichnis tatsächlich existiert. Sie gibt immer den aktuellen Status zurück und berücksichtigt dabei mögliche Änderungen an dem Verzeichnis.
 
-## Tiefergehende Informationen
-
-Wenn man genauer darüber nachdenkt, ist ein Verzeichnis eigentlich nur eine Art von Datei. Das lässt einen vielleicht glauben, dass man einfach die `File.exist?` Methode nutzen könnte, um die Existenz eines Verzeichnisses zu überprüfen. Aber das ist nicht unbedingt der Fall, da ein Verzeichnis einige Unterschiede zu anderen Dateien aufweist.
-
-Wenn man also sicher sein möchte, dass es sich bei einem bestimmten Dateipfad auch um ein Verzeichnis handelt, sollte man die `Dir.exist?` Methode verwenden. Diese Methode überprüft genau, ob es sich um ein Verzeichnis handelt oder nicht.
+Außerdem kann man mit dieser Methode auch überprüfen, ob ein Verzeichnis schreibgeschützt ist. Wenn das Verzeichnis schreibgeschützt ist, wird `false` zurückgegeben.
 
 ## Siehe auch
-
-* [Dir.exist? Dokumentation](https://ruby-doc.org/core-3.0.0/Dir.html#method-c-exist-3F)
-* [Überprüfen der Existenz von Dateien und Verzeichnissen in Ruby](https://www.rubyguides.com/2017/09/ruby-file-exists/)
-* [Was ist ein Verzeichnis? (auf Deutsch)](https://www.computerhope.com/jargon/d/webdir.htm)
+- Offizielle Ruby-Dokumentation zu `Dir.exist?`: https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F
+- Beispiel für das Arbeiten mit Dateien und Verzeichnissen in Ruby: https://www.codecademy.com/articles/ruby-file-system
+- Weitere Informationen über die Ruby-Syntax: https://ruby-lang.org/de/documentation/

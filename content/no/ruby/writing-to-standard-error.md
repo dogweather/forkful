@@ -1,53 +1,46 @@
 ---
-title:                "Ruby: Å skrive til standardfeil"
+title:                "Ruby: Skriver til standardfeil"
+simple_title:         "Skriver til standardfeil"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor du bør bruke standard error når du koder
 
-Å skrive til standard error i Ruby-programmering kan være nyttig for feilsøking av koden din. Det lar deg skrive ut spesielle feilmeldinger som kun vises når det oppstår en feil i programmet, og gir deg detaljert informasjon om hvor feilen skjedde. Dette kan hjelpe deg med å finne og løse feil raskere.
+Mange nye Ruby-utviklere lurer på hvorfor de trenger å bruke standard error når de koder. Svaret er enkelt: det hjelper deg med å finne og løse feil i koden din. Når du skriver til standard error, kan du spore feil på en mer effektiv måte og få bedre forståelse av hva som skjer i programmet ditt.
 
-## Hvordan
+## Hvordan du kan skrive til standard error i Ruby
 
-For å skrive til standard error i Ruby, kan du bruke metoden `STDERR.puts()` med en streng som argument. Dette vil skrive ut strengen til standard error output. Du kan også bruke `STDERR.print()` for å skrive uten en linjeskift på slutten.
+Å skrive til standard error er enkelt. Du kan bruke metoden `STDERR.puts` for å skrive ut en melding til standard error. Her er et eksempel på hvordan du kan gjøre det:
 
 ```Ruby
-x = 10
-if x > 5
-  STDERR.puts("x er større enn 5")
-else
-  STDERR.puts("x er mindre enn 5")
+STDERR.puts "Dette er en feilmelding"
+```
+
+Dette vil skrive ut teksten "Dette er en feilmelding" til standard error. Her er et annet eksempel som viser hvordan du kan bruke standard error til å håndtere feil i koden din:
+
+```Ruby
+begin
+  # Kode som kan føre til en feil
+rescue StandardError => e
+  STDERR.puts "Noe gikk galt: #{e.message}"
 end
 ```
 
-Dette eksemplet vil skrive ut "x er større enn 5" til standard error output, siden 10 er større enn 5. Hvis du ønsker å skrive ut til standard error og standard output samtidig, kan du bruke `puts()` og `STDERR.puts()` sammen.
+I dette eksempelet bruker vi `begin` og `rescue` for å håndtere en potensiell feil i koden vår. Vi skriver ut feilmeldingen ved hjelp av `STDERR.puts` og får tilbake feilmeldingen ved hjelp av `e.message`.
 
-```Ruby
-puts("Dette er en melding som skrives til standard output")
-STDERR.puts("Dette er en melding som skrives til standard error")
-```
+## Dykk dypere inn i bruken av standard error
 
-Dette eksemplet vil skrive ut begge meldingene, men "Dette er en melding som skrives til standard error" vil være merket med en rød farge for å indikere at det er en feilmelding.
+Å skrive til standard error er en viktig komponent i feilhåndtering i Ruby. Mange utviklere bruker det også til å logge feil og andre viktige meldinger. Det finnes også forskjellige metoder du kan bruke i tillegg til `puts`, som for eksempel `warn` og `error`, for å gi forskjellige nivåer av viktig informasjon. Det er også mulig å kombinere bruk av standard error med andre feilhåndteringsmetoder som `raise` for å få en mer strukturert og effektiv måte å håndtere feil i koden din.
 
-## Deep Dive
+## Se også
+- [Ruby dokumentasjon: Debugging med standard error](https://ruby-doc.org/stdlib-2.7.1/libdoc/logger/rdoc/Logger.html#method-c-new)
+- [Stack Overflow: Hva er forskjellen mellom standard error og standard output?](https://stackoverflow.com/questions/3703493/what-is-the-difference-between-stderr-and-stdout-in-ruby)
+- [Codecademy: Feilhåndtering i Ruby](https://www.codecademy.com/learn/learn-ruby/modules/exceptions-and-error-handling-in-ruby)
+- [Ruby Monstas: Feilhåndtering i Ruby](https://rubymonstas.org/curriculum/intermediate_ruby/error_handling.html)
 
-Når du skriver til standard error i Ruby, vil output bli skrevet til standard error stream, som er en del av den standard Ruby-kanalene. Du kan også bruke metoden `Kernel.warn()` for å skrive en advarsel til standard error. Denne metoden viser spesiell fargeformatert output for å tydeliggjøre at det er en advarsel.
-
-```Ruby
-x = 0
-Kernel.warn("x er lik 0") if x == 0
-```
-
-Dette eksemplet vil skrive ut "x er lik 0" med rød fargeformatert output for å indikere en advarsel, siden x er lik 0.
-
-Når du bruker `puts()` eller `print()` for å skrive ut til standard error, vil de bli vist i gult for å skille dem fra standard output. Dette er nyttig for feilsøking og løsning av feil i kode.
-
-## Se Også
-
-- [Ruby Dokumentasjon - Standard Error](https://ruby-doc.org/core-2.7.1/IO.html#method-i-puts)
-- [Ruby Dokumentasjon - Kernel.warn()](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-warn)
-- [Om feilsøking i Ruby-programmering](https://www.rubyguides.com/2019/11/debugging-ruby/)
+Husk at å bruke standard error er en viktig del av å skrive robust og feilfri kode i Ruby. Ta deg tid til å lære om det og utforske mulighetene for å bruke det i koden din. Lykke til!

@@ -1,56 +1,77 @@
 ---
-title:                "C: Calculando una fecha en el futuro o el pasado"
+title:                "C: Calculando una fecha en el futuro o pasado."
+simple_title:         "Calculando una fecha en el futuro o pasado."
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué
 
-¿Alguna vez te has preguntado cómo calcular una fecha en el futuro o en el pasado en un programa escrito en C? Esto puede ser útil en varios casos, como en aplicaciones de calendario o gestión de eventos. Aprender a hacer esto en C te permitirá agregar una funcionalidad más avanzada a tus programas.
+Calcular fechas en el futuro o en el pasado es una herramienta esencial para muchas aplicaciones, como calendarios, gestión de tareas y automatización de procesos. Además, es un concepto fundamental en la programación que permite comprender cómo funcionan las fechas en los diferentes lenguajes de programación.
 
 ## Cómo hacerlo
 
-Para calcular una fecha en el futuro o en el pasado, primero necesitamos la fecha actual. En C, podemos obtener la fecha actual utilizando la función `time()`, que devuelve el número de segundos transcurridos desde una fecha de referencia. Luego, utilizando algunos cálculos matemáticos simples, podemos agregar o restar un número determinado de días, meses o años a la fecha actual para obtener la fecha deseada. Veamos un ejemplo de código que calcula la fecha dentro de 100 días a partir de la fecha actual:
+Para calcular una fecha en el futuro o en el pasado en C, primero debemos tener en cuenta algunas cosas importantes:
+
+- La fecha actual se puede obtener fácilmente con la función `time()` de la librería `time.h`.
+- Debemos tener en cuenta el formato de la fecha que queremos obtener, ya sea en formato día/mes/año o mes/día/año.
+- La estructura `struct tm` nos permite trabajar con fechas de manera más sencilla, ya que almacena los diferentes componentes de una fecha (día, mes, año, etc.).
+
+Una vez establecidas estas consideraciones, podemos utilizar las funciones `mktime()` y `localtime()` para obtener una estructura `struct tm` de una fecha en particular. Luego, podemos utilizar operaciones matemáticas para sumar o restar días, meses o años a la estructura `struct tm`, y finalmente convertirlo de nuevo a tiempo utilizando la función `mktime()`.
+
+A continuación, se muestra un ejemplo de cómo calcular una fecha en el futuro y en el pasado utilizando las consideraciones mencionadas anteriormente:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // Obtener fecha actual
+    // Obtenemos la fecha actual
     time_t now = time(NULL);
-    // Definir número de segundos en 100 días
-    time_t hundred_days = 100 * 24 * 60 * 60;
-    // Calcular fecha dentro de 100 días
-    time_t future_date = now + hundred_days;
-    // Convertir fecha a estructura `tm`
-    struct tm *future_date_struct = localtime(&future_date);
-    // Imprimir resultado en formato DD-MM-AAAA
-    printf("La fecha dentro de 100 días será: %d-%d-%d", future_date_struct->tm_mday, future_date_struct->tm_mon + 1, future_date_struct->tm_year + 1900);
+
+    // Convertimos la fecha actual a una estructura `struct tm`
+    struct tm *tm_now = localtime(&now);
+
+    // Sumamos 10 días a la fecha actual
+    tm_now->tm_mday += 10;
+
+    // Convertimos de nuevo la estructura `struct tm` a tiempo
+    time_t new_date = mktime(tm_now);
+
+    // Imprimimos la nueva fecha en formato día/mes/año
+    printf("Fecha en 10 días: %02d/%02d/%d\n", tm_now->tm_mday, tm_now->tm_mon + 1, tm_now->tm_year + 1900);
+
+    // Restamos 2 meses a la fecha actual
+    tm_now->tm_mon -= 2;
+
+    // Convertimos de nuevo la estructura `struct tm` a tiempo
+    new_date = mktime(tm_now);
+
+    // Imprimimos la nueva fecha en formato día/mes/año
+    printf("Fecha hace 2 meses: %02d/%02d/%d\n", tm_now->tm_mday, tm_now->tm_mon + 1, tm_now->tm_year + 1900);
 
     return 0;
 }
 ```
 
-La salida del programa será:
+El resultado de este código sería:
 
 ```
-La fecha dentro de 100 días será: 6-1-2022
+Fecha en 10 días: 22/08/2021
+Fecha hace 2 meses: 22/05/2021
 ```
-
-Recordemos que los cálculos de fechas pueden variar según la zona horaria en la que nos encontremos, por lo que es importante tener esto en cuenta al realizar cálculos precisos de fechas.
 
 ## Profundizando
 
-Para calcular fechas aún más precisas, también podemos utilizar la función `mktime()` que nos permite crear una estructura `tm` con una fecha y hora específicas. Además, existen varias funciones para manipular fechas como `strftime()`, que permite dar formato a una fecha en una cadena de caracteres, y `difftime()`, que calcula la diferencia de tiempo entre dos fechas.
+Calcular fechas en el futuro o en el pasado puede ser un poco más complejo cuando se tienen en cuenta otros factores, como los años bisiestos, cambio de horario de verano/invierno, entre otros. En esos casos, es importante comprender cómo funcionan estas situaciones en el lenguaje de programación y aplicar ajustes necesarios en el código.
 
-También es importante tener en cuenta que existen bibliotecas externas en C que facilitan el cálculo de fechas, como `libical` o `libdatetime`.
+Una recomendación importante es utilizar librerías externas que ya se encarguen de estos cálculos complejos, como la librería `date.h`, que facilita la manipulación de fechas y horas en diferentes formatos.
 
-## Ver también
+# Ver también
 
-- [Documentación de la función `time()` en C](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
-- [Explicación detallada de cómo calcular fechas en C](https://www.programiz.com/c-programming/examples/current-date-time)
-- [Biblioteca de C para cálculos de fechas](https://libical.github.io/libical/)
+- [Documentación oficial de la librería `time.h`](https://www.gnu.org/software/libc/manual/html_node/Working-with-Time.html)
+- [Documentación de la librería `date.h`](https://github.com/HowardHinnant/date)

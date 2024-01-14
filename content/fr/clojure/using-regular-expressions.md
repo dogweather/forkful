@@ -1,45 +1,58 @@
 ---
-title:                "Clojure: Utiliser les expressions régulières"
+title:                "Clojure: L'utilisation des expressions régulières"
+simple_title:         "L'utilisation des expressions régulières"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
-Les expressions régulières sont un outil puissant et polyvalent pour la manipulation de chaînes de caractères en Clojure. En utilisant des motifs spécifiques, elles permettent de rechercher, de valider et de remplacer des chaînes de caractères de manière rapide et efficace. Que vous soyez un débutant en programmation ou un développeur expérimenté, les expressions régulières peuvent grandement améliorer votre expérience de codage en Clojure.
+# Pourquoi utiliser des expressions régulières en Clojure ?
 
-## Comment faire
-Les expressions régulières en Clojure sont définies avec le mot-clé `#"pattern"` et peuvent être utilisées avec la fonction `re-seq`. Voici un exemple simple pour trouver tous les nombres dans une chaîne de caractères :
+Les expressions régulières sont des outils puissants pour rechercher, extraire et manipuler des motifs de texte. En utilisant des expressions régulières en Clojure, vous pouvez facilement traiter et manipuler des données textuelles de manière efficace. Que vous travailliez avec du texte brut ou des chaînes de caractères, les expressions régulières peuvent vous aider à trouver et à traiter rapidement ce dont vous avez besoin.
 
-```Clojure
-(re-seq #"[\d]+" "Il y a 5 pommes dans le panier.")
-```
-La sortie sera `("5")`, car `[d]` est un raccourci pour `[0-9]`, qui correspond à un seul chiffre. Vous pouvez également utiliser des opérateurs tels que `+` pour correspondre à un ou plusieurs éléments, `*` pour correspondre à zéro ou plusieurs éléments, et `?` pour correspondre à zéro ou un élément.
+## Comment faire ?
 
-Pour valider une chaîne de caractères, vous pouvez utiliser la fonction `re-matches`, qui renvoie `true` si la chaîne correspond au motif donné et `false` sinon. Par exemple :
+Les expressions régulières en Clojure peuvent être utilisées à l'aide de la fonction `re-find`, qui recherche une expression régulière dans une chaîne de caractères et renvoie le premier résultat trouvé. Voici un exemple de code utilisant `re-find` :
 
 ```Clojure
-(let [pattern #"Date : \d{2}/\d{2}/\d{4}"
-      string "Date : 01/01/2021"]
-  (re-matches pattern string))
-```
-La sortie sera `true`, car `d{2}` correspond à deux chiffres et `d{4}` correspond à quatre chiffres.
+; Définir une chaîne de caractères
+(def chaine "Je suis un développeur Clojure")
 
-Enfin, pour remplacer une partie d'une chaîne de caractères, vous pouvez utiliser la fonction `re-sub` et spécifier le motif à remplacer et le remplacement souhaité. Par exemple :
+; Utilisation de `re-find` pour rechercher le mot "développeur" dans la chaîne
+(re-find #"développeur" chaine)
+; Output: "développeur"
+```
+
+Vous pouvez également utiliser `re-seq` pour renvoyer tous les résultats trouvés plutôt que seulement le premier. Voici un exemple avec `re-seq` :
 
 ```Clojure
-(re-sub #"pommes" "bananes" "Il y a 5 pommes dans le panier.")
+; Définir une chaîne de caractères
+(def chaine "La vie est belle")
+
+; Utilisation de `re-seq` pour rechercher tous les mots contenant la lettre "e" dans la chaîne
+(re-seq #"\w*e\w*" chaine)
+; Output: ("belle")
 ```
-La sortie sera `"Il y a 5 bananes dans le panier."`.
 
 ## Plongée en profondeur
-Il existe de nombreux modèles et opérateurs que vous pouvez utiliser pour créer des expressions régulières complexes et puissantes. Avec la pratique et la compréhension de la syntaxe des expressions régulières, vous pouvez les utiliser pour résoudre des problèmes de manipulation de chaînes de caractères beaucoup plus rapidement et facilement qu'avec des fonctions de base en Clojure.
 
-Il est également important de noter que les expressions régulières peuvent être sensibles à la casse et qu'il existe des options telles que `re-matches?i` pour les rendre insensibles à la casse. Vous pouvez également utiliser des groupes et des références de groupes pour capturer et réutiliser des parties spécifiques des correspondances.
+Les expressions régulières en Clojure utilisent la bibliothèque Java `java.util.regex`, ce qui signifie que vous pouvez utiliser toutes les fonctionnalités de cette bibliothèque dans vos expressions régulières Clojure. En outre, vous pouvez utiliser des groupes de capture, qui vous permettent de cibler et de récupérer des parties spécifiques d'un motif. Voici un exemple de code utilisant des groupes de capture :
 
-## Voir aussi
-- [Documentation officielle de la classe `re-matches`](https://clojuredocs.org/clojure.core/re-matches)
-- [Guide des expressions régulières en Clojure](https://clojure.org/reference/regexp)
-- [Référence interactive pour les expressions régulières en Clojure](https://regexone.com/references/clojure)
+```Clojure
+; Définir une chaîne de caractères
+(def chaine "Mon adresse email est contact@domaine.com")
+
+; Utilisation de groupes de capture pour récupérer l'adresse email
+(re-find #"(\w+@\w+\.com)" chaine)
+; Output: ("contact@domaine.com" "contact@domaine.com")
+```
+
+Pour plus d'informations sur l'utilisation des expressions régulières en Clojure, vous pouvez consulter la documentation officielle de Clojure sur les expressions régulières ainsi que la documentation de la bibliothèque Java `java.util.regex`.
+
+# Voir aussi
+
+- Documentation officielle de Clojure sur les expressions régulières: https://clojure.org/guides/faq?section=regularexpressions
+- Documentation de la bibliothèque Java `java.util.regex`: https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html

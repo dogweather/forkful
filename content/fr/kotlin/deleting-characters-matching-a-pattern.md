@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Suppression de caractères correspondants à un modèle"
+title:                "Kotlin: Supprimer les caractères correspondant à un motif"
+simple_title:         "Supprimer les caractères correspondant à un motif"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,45 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Vous vous demandez pourquoi vous devriez vous intéresser à supprimer des caractères correspondant à un motif en Kotlin ? Vous êtes au bon endroit ! La suppression de caractères correspondant à un motif est un outil utile à connaître pour effectuer des modifications de chaînes de manière efficace et rapide.
+Vous vous demandez peut-être pourquoi quelqu'un voudrait supprimer des caractères correspondant à un modèle ? Eh bien, cela peut être utile dans de nombreuses situations en programmation, notamment pour nettoyer des données ou pour résoudre des problèmes de validation de saisie utilisateur.
 
 ## Comment faire
 
-Pour supprimer des caractères correspondant à un motif en Kotlin, il existe plusieurs méthodes. Voici deux façons d'y parvenir :
-
-1. Utiliser la méthode `replace()` sur la chaîne et passer le motif à supprimer et une chaîne vide en tant que paramètres. En voici un exemple :
+Pour supprimer des caractères correspondant à un modèle en utilisant Kotlin, vous pouvez suivre ces étapes simples :
 
 ```Kotlin
-val originalString = "Bonjour le monde !"
-val modifiedString = originalString.replace("le monde", "")
-println(modifiedString)
+val input = "aa1aa2aa3"
+val pattern = "[1-3]".toRegex()
+val output = input.replace(pattern, "")
+
+println(output) // affiche "aaaa"
 ```
 
-Résultat :
+Ici, nous avons défini une chaine de caractères et un modèle utilisant la fonction `toRegex()` de Kotlin qui convertit une chaîne de caractères en une expression régulière. Ensuite, nous utilisons la fonction `replace` pour remplacer les caractères correspondant au modèle par une chaîne vide.
 
-```Kotlin
-Bonjour  !
-```
-
-2. Utiliser la méthode `replace(regex, "")` en passant un motif regex (expression régulière) en tant que premier paramètre et également une chaîne vide en tant que deuxième paramètre. Voici un exemple :
-
-```Kotlin
-val originalString = "Codez avec Kotlin !"
-val modifiedString = originalString.replace(Regex("[ae]"), "")
-println(modifiedString)
-```
-
-Résultat :
-
-```Kotlin
-Codz vc Ktlin !
-```
+Bien sûr, cela peut être adapté en fonction de vos besoins, en utilisant différents modèles pour correspondre à différentes combinaisons de caractères.
 
 ## Plongée en profondeur
 
-Maintenant que vous savez comment supprimer des caractères correspondant à un motif en Kotlin, plongeons plus en détail dans la méthode `replace()` et la classe `Regex`. La méthode `replace()` renvoie une nouvelle chaîne avec les caractères remplacés selon le motif spécifié. La classe `Regex` est utilisée pour représenter une expression régulière et est souvent utilisée pour effectuer des opérations de correspondance et de remplacement complexes sur des chaînes.
+La suppression de caractères correspondant à un modèle est un concept courant en programmation, et il est important de comprendre comment cela fonctionne pour choisir la meilleure approche pour votre code. Vous pouvez également explorer d'autres méthodes pour supprimer des caractères correspondant à un modèle, comme l'utilisation d'expressions régulières avancées ou d'autres fonctions de manipulation de chaînes.
 
 ## Voir aussi
 
-- [Documentation Kotlin sur replace()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-- [Documentation Kotlin sur Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+Pour en savoir plus sur la suppression de caractères correspondant à un modèle en Kotlin, consultez ces liens utiles :
+
+- [Documentation officielle de Kotlin](https://kotlinlang.org/docs/reference/)
+
+- [Tutoriel sur les expressions régulières en Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_regular_expressions.htm)

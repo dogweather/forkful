@@ -1,39 +1,48 @@
 ---
 title:                "Python: 编写文本文件"
+simple_title:         "编写文本文件"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：写文本文件是Python编程中常见的任务之一，可以用于存储数据、日志记录或与其他程序交互。它可以帮助开发人员在代码中轻松地创建和修改文本文件。
+## 为什么要写文本文件
 
-如何：在Python中，写文本文件只需要几行代码。首先，我们需要打开一个文件对象并指定文件名、打开模式和编码。然后，我们可以使用“write（）”方法向文件中写入文本。最后，我们需要关闭文件以确保数据被正确保存。
+写文本文件是一种常见的程序员行为，因为它可以帮助我们记录信息、存储数据和与用户交互。通过编写文本文件，我们可以在程序运行时动态地读取和写入文件，这有助于我们创建可扩展的程序。
+
+## 如何写文本文件
+
+首先，我们需要通过打开`open()`函数来创建一个文件对象。通过指定文件名和操作模式，我们可以定义如何打开文件。例如，如果我们想在文件末尾添加新行，我们可以使用操作模式`a`。接下来，我们可以使用`write()`函数来写入我们想要的内容，最后使用`close()`函数来关闭文件。
 
 ```Python
 # 打开文件
-file = open("example.txt", "w", encoding="utf-8")
-# 写入文本
-file.write("这是一个例子")
+file = open("example.txt", "a")
+
+# 写入内容
+file.write("Hello, world!")
+
 # 关闭文件
 file.close()
 ```
 
-输出：
-这是一个例子
+## 深入了解文本文件的写入
 
-深入探讨：除了基本的写入操作，Python还提供了许多有用的方法来帮助我们更轻松地创建和修改文本文件。例如，在打开文件时，我们可以指定不同的打开模式，如“a”（追加）或“r+”（读取和写入）。此外，我们还可以使用“with”语句来自动关闭文件，而无需手动关闭它。
+除了简单地写入字符串，我们也可以通过使用`print()`函数来格式化内容并将其写入文件。我们也可以使用换行符`\n`来添加新行。如果我们想要在每次写入后自动添加换行符，可以在`write()`函数中加入`"end='\n'"`参数。此外，我们还可以使用`with`关键词来简化文件打开和关闭的过程。
 
 ```Python
-# 使用“with”语句自动关闭文件
-with open("new_file.txt", "a", encoding="utf-8") as file:
-    file.write("这是另一个例子")
+# 打开文件并使用`with`关键词
+with open("example.txt", "a") as file:
+    # 使用`print()`函数来格式化内容并写入文件
+    print("Hello, world!", file=file, end="\n")
+    # 使用换行符来添加新行
+    print("This is a new line.", file=file, end="\n")
 ```
 
-另外，我们还可以使用“read（）”方法来读取文件中的文本，或使用“seek（）”方法来定位文件中的特定位置。有关更多功能，请查阅Python文档。
+## 参考链接
 
-另请参阅：
-- Python文档：https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
-- “with”语句：https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects
-- “seek（）”方法：https://docs.python.org/3/tutorial/inputoutput.html#the-write-method
+- [Python文本文件操作教程](https://www.runoob.com/python/python-files-io.html)
+- [Python `open()`函数文档](https://docs.python.org/3/library/functions.html#open)
+- [Python `print()`函数文档](https://docs.python.org/3/library/functions.html#print)

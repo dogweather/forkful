@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Extrahieren von Unterstrings"
+title:                "Haskell: Unterzeichenfolgen extrahieren"
+simple_title:         "Unterzeichenfolgen extrahieren"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/extracting-substrings.md"
 ---
 
@@ -9,52 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Extraktion von Teilstrings ist eine nützliche Fähigkeit für jeden Programmierer, der mit Texten arbeitet. Mit dieser Technik können wir schnell und präzise bestimmte Teilbereiche von Zeichenketten extrahieren und weiterverarbeiten. In diesem Blog-Post werden wir uns ansehen, wie man diese Aufgabe in Haskell lösen kann.
+Substring-Extraktion ist eine nützliche Programmierfunktion, die es uns ermöglicht, Teilzeichenketten aus anderen Zeichenketten zu extrahieren. Dies kann hilfreich sein, wenn wir bestimmte Informationen aus längeren Texten oder Daten extrahieren möchten.
 
-## Wie geht man vor
+## So geht's
 
-Das `Data.Text` Modul bietet uns einige nützliche Funktionen für die Manipulation von Texten. Eine davon ist die `take` Funktion, die es uns ermöglicht, eine bestimmte Anzahl von Zeichen aus einem Text zu extrahieren. Schauen wir uns zunächst ein Beispiel an:
+Um Substrings in Haskell zu extrahieren, können wir die `take`- und `drop`-Funktionen verwenden. Die `take`-Funktion nimmt als Argument die Anzahl der gewünschten Zeichen und die ursprüngliche Zeichenkette und gibt die ersten n Zeichen als Substring zurück. Die `drop`-Funktion hingegen gibt die Zeichenkette ohne die ersten n Zeichen als Substring zurück.
 
-```Haskell
-import Data.Text
-
-myText = pack "Dies ist ein Beispieltext."
-extractedText = take 4 myText
-```
-
-Bei der Kompilierung sehen wir nun, dass der Wert für `extractedText` "Dies" lautet. Wir haben also erfolgreich die ersten 4 Zeichen aus unserem Text extrahiert. Aber was ist, wenn wir nicht nur die ersten 4 Zeichen, sondern die ersten 6 extrahieren wollen? Hier kommt die `take` Funktion ins Spiel, die uns die Länge des gewünschten Teiltexts angibt.
-
-Wie können wir jedoch die Zeichen an einem bestimmten Index extrahieren? Hier kommt die `index` Funktion ins Spiel. Schauen wir uns ein Beispiel an:
+Ein Beispielcode sieht so aus:
 
 ```Haskell
-myText = pack "Dies ist ein Beispieltext."
-extractedChar = index myText 5
+-- Hier nehmen wir die ersten drei Zeichen des Strings "Haskell" als Substring
+take 3 "Haskell"
+-- Output: "Has"
+
+-- Hier geben wir alle Zeichen des Strings "Haskell" außer den ersten drei als Substring zurück
+drop 3 "Haskell"
+-- Output: "kell"
 ```
 
-In diesem Fall würden wir das Zeichen "i" extrahieren, das an der 5. Stelle des Textes steht. Mit diesen zwei Funktionen haben wir bereits eine solide Grundlage, um Teilstrings zu extrahieren.
+## Tieferes Eintauchen
 
-## Tiefere Einblicke
+In Haskell kann Substring-Extraktion auch mit der Funktion `substring` aus dem `Data.Text`-Modul durchgeführt werden. Diese Funktion nimmt drei Argumente: die Startposition des Substrings, die Länge des gewünschten Substrings und die ursprüngliche Zeichenkette.
 
-Die `take` und `index` Funktionen sind sehr nützlich, aber wir können noch weiter in die Tiefe gehen. Wenn wir zum Beispiel jemanden haben, der unseren Text überprüfen und mitteilen soll, ob ein bestimmter Teiltext darin enthalten ist, können wir die `isInfixOf` Funktion verwendet werden. Schauen wir uns ein Beispiel an:
+Ein Beispielcode sieht so aus:
 
 ```Haskell
-myText = pack "Dies ist ein Beispieltext."
-checkText = "ei"
-result = isInfixOf checkText myText
+import Data.Text (Text, substring)
+
+-- Hier extrahieren wir den Substring aus dem Tripel "Haskell-Programmierung"
+substring 0 6 "Haskell-Programmierung"
+-- Output: "Haskell"
 ```
 
-Bei der Kompilierung sehen wir, dass der Wert für `result` `True` lautet, da der Teiltext "ei" im Text enthalten ist.
-
-Das `Data.Text` Modul bietet uns auch die `breakOn` Funktion, mit der wir eine Zeichenkette in zwei Teilstrings aufteilen können. Schauen wir uns ein Beispiel an:
-
-```Haskell
-myText = pack "Dies ist ein Beispieltext."
-slicedText = breakOn "ist" myText
-```
-
-Wir erhalten nun als Ergebnis ein Tupel, in dem der erste Teilstring "Dies " und der zweite Teilstring "ist ein Beispieltext." sind.
+Es ist wichtig zu beachten, dass die Startposition des Substrings bei 0 beginnt.
 
 ## Siehe auch
 
-- [Haskell-Dokumentation zum Data.Text-Modul] (https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
-- [Haskell-Grundlagen für Anfänger] (https://www.haskell.org/tutorial/)
+- [Haskell-Dokumentation zur `take`-Funktion](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:take)
+- [Haskell-Dokumentation zur `drop`-Funktion](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html#v:drop)
+- [Haskell-Dokumentation zur `substring`-Funktion](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html#v:substring)

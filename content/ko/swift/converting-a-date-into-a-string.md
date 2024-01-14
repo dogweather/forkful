@@ -1,7 +1,9 @@
 ---
 title:                "Swift: 날짜를 문자열로 변환하기"
+simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/converting-a-date-into-a-string.md"
 ---
 
@@ -9,33 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-날짜를 문자열로 변환하는 것에 관심이 있을 수도 있습니다. 날짜와 관련된 정보를 저장하고 표시하기 위해서라던지, 날짜에 따라 다른 작업을 수행하기 위해서일 수도 있습니다.
+날짜를 문자열로 변환하는 과정에 참여하는 이유는 무엇일까요? 날짜를 문자열로 변환하면 텍스트로 데이터를 표현할 수 있고, 이를 다시 숫자로 바꿀 때 필요합니다.
 
-## 어떻게
+## 하는 법
 
-날짜를 문자열로 변환하는 방법을 살펴보겠습니다. Swift에서는 `DateFormatter`를 사용하여 날짜를 원하는 형식의 문자열로 변환할 수 있습니다. 아래 코드는 `DateFormatter`를 사용하여 현재 날짜를 YYYY/MM/DD 형식의 문자열로 변환하는 예시입니다.
+날짜를 문자열로 변환하는 방법은 간단합니다. 먼저, `DateFormatter`를 이용하여 원하는 날짜 형식을 지정합니다. 다음으로 `string(from: Date)` 메서드를 사용하여 변환할 날짜를 지정하고, 문자열로 변환하여 출력합니다.
 
 ```Swift
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "YYYY/MM/DD"
-let currentDate = Date()
-let stringDate = dateFormatter.string(from: currentDate)
-print(stringDate) // 2021/05/19
+dateFormatter.dateFormat = "yyyy-MM-dd"
+
+let date = Date()
+
+let stringDate = dateFormatter.string(from: date)
+
+print(stringDate) // 2021-01-01
 ```
 
-위의 코드를 실행하면 현재 날짜가 2021년 5월 19일이라면 `"2021/05/19"`라는 형식의 문자열이 출력될 것입니다. `DateFormatter`의 `dateFormat` 속성을 원하는 형식으로 지정해주면 해당 형식으로 날짜를 문자열로 변환할 수 있습니다.
+위의 예시에서는 `yyyy-MM-dd` 형식으로 날짜를 변환하였습니다. 날짜 형식은 다양하게 설정할 수 있으며, [여기](https://nsdateformatter.com/)에서 더 많은 형식을 확인할 수 있습니다.
 
-## 깊게 파고들기
+## 딥 다이브
 
-`DateFormatter`를 사용하여 날짜를 문자열로 변환하는 것은 간단하지만, 더 많은 옵션들을 살펴보고 싶을 수도 있습니다. 예를 들어 년, 월, 일 등 다양한 단위로 날짜를 표시하거나 지역 설정에 따라 다른 언어로 출력하는 방법도 알아볼 수 있습니다.
+`DateFormatter`는 날짜를 문자열로 변환할 때 매우 유용한 클래스입니다. 이 클래스를 사용하여 원하는 날짜 형식에 맞게 데이터를 표현할 수 있습니다. 또한 `DateFormatter`를 사용하여 문자열로 된 날짜를 다시 숫자 형태로 변환할 수도 있습니다.
 
-## 관련 링크
+`Date` 클래스와 `DateFormatter` 클래스에 대해 더 자세히 알고 싶다면 [여기](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)에서 확인할 수 있습니다.
 
-- [Swift 공식 문서: Formatter Class Reference](https://developer.apple.com/documentation/foundation/formatter)
-- [날짜 및 시간 변환기를 사용하여 문자열을 날짜로 변환하는 방법 (Swift)](https://stackoverflow.com/questions/35700281/how-to-convert-string-to-date-using-date-formatter-in-swift/35700828)
-- [Swift에서 날짜 다루기](https://www.hackingwithswift.com/articles/117/swift-5-4-brings-a-new-date-formatting-api)
+## 관련 자료
 
-## 참고
-
-- [마크다운 (Markdown) 살펴보기](https://gist.github.com/ihoneymon/652be052a0727ad59601)
-- [Kakao Markdown 사용법](https://story.kakao.com/ch/markdown)
+- [날짜를 문자열로 변환하는 다른 방법 알아보기](https://azusa.hatenablog.com/entry/2019/08/10/164026)
+- [DateFormatter 클래스 공식 문서](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Swift 날짜 관련 유용한 팁 모음](https://useyourloaf.com/blog/swift-date-cheat-sheet/)

@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Перетворення рядка в нижній регістр"
+title:                "Javascript: Перетворення рядка у нижній регістр"
+simple_title:         "Перетворення рядка у нижній регістр"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/javascript/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,25 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Конвертування рядка в нижній регістр може знадобитись, якщо ви хочете змінити регістр введеного користувачем тексту, зробити його більш однорідним або зробити пошук більш гнучким.
+Для багатьох програмістів конвертація рядка до нижнього регістру може здаватися дуже простим завданням, проте цей процес має велике значення для правильної роботи програми. Перетворення рядка до нижнього регістру робить його більш читабельним та зручним для подальшої обробки.
 
-## Як це зробити
+## Як
 
 ```Javascript
-let str = "Приклад Тексту";
-
+let str = "HELLO WORLD";
 console.log(str.toLowerCase());
+// Output: hello world
 ```
 
-Вивід: "приклад тексту"
+У цьому прикладі ми використали метод `toLowerCase()` для зміни рядка з великих літер до нижнього регістру. Цей метод повертає новий рядок зі зміненим регістром, тому присвоїли його до змінної `str`. Потім використали консоль для виведення отриманого результату.
 
-Ви можете використовувати метод `toLowerCase()` для будь-якого рядка, щоб конвертувати його в нижній регістр. Цей метод повертає новий рядок зі зміненим регістром.
+## Глибока аналітика
 
-## Глибокий аналіз
+Крім методу `toLowerCase()`, існує ще кілька способів, якими можна змінити регістр рядка в Javascript. Один з них - використання циклу `for` та методу `charAt()` для перебирання кожного символу рядка та зміни його регістру. Також існує метод `toUpperCase()`, який перетворює рядок до верхнього регістру.
 
-При виклику методу `toLowerCase()`, всі букви рядка перетворюються на малі літери. Це може бути корисно при порівнянні рядків, оскільки вони будуть рівні, незалежно від поточного регістру. Також, метод `toLowerCase()` не впливає на розділові знаки та цифри, тому вони залишаються без змін.
+Варто пам'ятати, що методи `toLowerCase()` та `toUpperCase()` не змінюють оригінальний рядок, а повертають новий. Тому, якщо потрібно зберегти змінений рядок, його необхідно присвоїти до нової змінної.
 
 ## Дивись також
 
-- [Стрічки в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [Регулярні вирази в Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Mozilla Developer Network - String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [W3Schools - JavaScript String.toLowerCase() Method](https://www.w3schools.com/jsref/jsref_tolowercase.asp)
+- [GeeksforGeeks - JavaScript String toLowerCase() Method](https://www.geeksforgeeks.org/javascript-string-tolowercase-method/)

@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Tworzenie pliku tekstowego"
+simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/writing-a-text-file.md"
 ---
 
@@ -9,32 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Pisanie tekstu może sprawiać przyjemność, ale czy kiedykolwiek zastanawiałeś się, jak można zapisać ten tekst do pliku tekstowego? Programowanie może wydawać się trudne, ale dzięki językowi Rust jest to o wiele prostsze i szybsze. Zobacz, jak w łatwy sposób można zapisać tekst do pliku, używając Rust.
+Pisanie kodu może być fascynującym wyzwaniem, a w szczególności pisanie w języku Rust. Jedną z przydatnych umiejętności w programowaniu jest tworzenie plików tekstowych. W tym artykule dowiesz się, dlaczego warto nauczyć się tego w języku Rust.
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby móc zapisać tekst do pliku w języku Rust, potrzebujemy w naszym kodzie użyć biblioteki standardowej `std::fs`. Najpierw musimy utworzyć instancję struktury `File`, która reprezentuje plik tekstowy. Następnie, za pomocą metody `write` możemy przesłać tekst do naszego pliku. Poniżej przedstawiamy przykładowy kod, który zapamiętuje nasz tekst "Cześć, świecie!" do pliku o nazwie "tekst.txt":
+Początek jest prosty, musisz tylko utworzyć nowy projekt Rust i utworzyć plik o rozszerzeniu `.rs`. Następnie będziesz miał możliwość używania wielu funkcji i metod, aby utworzyć swój własny plik tekstowy. Oto przykładowy kod:
 
 ```Rust
 use std::fs::File;
 use std::io::prelude::*;
 
 fn main() {
-    let mut plik = File::create("tekst.txt").unwrap();
-    plik.write(b"Cześć, świecie!").unwrap();
+  let mut file = File::create("moj_plik.txt").expect("Nie można utworzyć pliku");
+  file.write_all(b"To jest pierwszy tekst w moim pliku tekstowym!").expect("Nie można zapisać do pliku");
 }
 ```
 
-Po uruchomieniu tego kodu, zostanie utworzony plik tekstowy "tekst.txt", który będzie zawierał tekst "Cześć, świecie!". W przypadku, gdy plik już istnieje, metoda `create` zwróci błąd, dlatego używamy metody `unwrap`, aby go obsłużyć.
+W powyższym przykładzie importujemy bibliotekę `std::fs::File`, która pozwala nam na tworzenie i manipulowanie plikami, oraz bibliotekę `std::io::prelude:: *`, która udostępnia metody do czytania i pisania do pliku. Następnie w funkcji `main` tworzymy nowy plik o nazwie `moj_plik.txt` i piszemy w nim tekst. Zauważ, że tekst jest konwertowany na typ `byte` za pomocą `b"..."`.
 
-## Deep Dive
+Po uruchomieniu programu w Twoim środowisku Rust, utworzony zostanie plik o nazwie `moj_plik.txt` w folderze z projektem i będzie zawierać tekst "To jest pierwszy tekst w moim pliku tekstowym!".
 
-Kod użyty w przykładzie jest dość prosty, jednak istnieje wiele innych sposobów na zapis tekstu do pliku w języku Rust. Możemy na przykład użyć metody `writeln`, aby automatycznie dodać znak nowej linii na końcu tekstu, lub użyć makra `writeln!`, które oprócz tekstu będzie mogło również przyjmować zmienne.
+## Wgląd w głębsze szczegóły
 
-Warto również zaznaczyć, że metoda `write` zwraca wynik w postaci `io::Result`, który jest typem enum z dwiema wartościami: `Ok` i `Err`. Dzięki temu możemy lepiej kontrolować nasz program i obsługiwać ewentualne błędy zapisu.
+W powyższym przykładzie użyliśmy metody `write_all` do zapisania tekstu do pliku tekstowego. Ale istnieje wiele innych metod, które można wykorzystać w celu dostosowania swojego pliku. Na przykład, możesz użyć metody `append`, aby dodać nowy tekst do istniejącego pliku, lub `seek` do ustawienia kursora w konkretnym miejscu w pliku.
 
 ## Zobacz również
 
-- [Dokumentacja biblioteki standardowej fs](https://doc.rust-lang.org/std/fs/index.html)
-- [Inne możliwości zapisywania danych w Rust](https://blog.logrocket.com/7-ways-to-write-data-in-rust/)
-- [Poradnik języka Rust od podstaw](https://pl.wikibooks.org/wiki/Rust/J%C4%99zyk_Rust:_Wst%C4%99p)
+Jeśli chcesz dowiedzieć się więcej o tworzeniu plików tekstowych w języku Rust, możesz przejść przez oficjalną dokumentację na stronie https://doc.rust-lang.org/std/fs/struct.File.html. Będzie to świetny sposób na pogłębienie swojej wiedzy na ten temat.
+
+Możesz również przeczytać inne artykuły ze strony https://www.rust-lang.org/learn, aby nauczyć się więcej o programowaniu w języku Rust. Nie bój się eksperymentować i tworzyć własnych projektów, aby lepiej zrozumieć ten język programowania. Powodzenia!

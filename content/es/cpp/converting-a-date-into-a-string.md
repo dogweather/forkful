@@ -1,92 +1,91 @@
 ---
-title:                "C++: Convirtiendo una fecha en una cadena"
+title:                "C++: Convertir una fecha en un string"
+simple_title:         "Convertir una fecha en un string"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¿Por qué convertir una fecha en una cadena de texto?
+## ¿Por qué convertir una fecha en un string?
 
-Al trabajar con fechas en un programa, es común que necesitemos mostrarlas en formato de cadena de texto. Ya sea para imprimir en pantalla, almacenar en una base de datos o pasar como parámetro a una función, convertir una fecha en una cadena es una tarea esencial en la programación. En este artículo, aprenderemos cómo realizar esta conversión en C++.
+Convertir una fecha en un string es una tarea común en la programación. Puede ser útil al crear una aplicación que muestre la fecha actual en un formato legible para los usuarios. También es útil para almacenar y manipular fechas en bases de datos.
 
 ## Cómo hacerlo
 
-En C++, existen diversas formas de convertir una fecha en una cadena de texto. A continuación, se presentan dos ejemplos utilizando la librería estándar de C++.
+Para convertir una fecha en un string en C++, se puede utilizar la función strftime() de la librería <ctime>. Esta función toma como argumentos la fecha y hora deseada, junto con el formato en el que se quiere mostrar la fecha.
 
 ```C++
-// Incluir la librería <ctime> para trabajar con fechas
-#include <ctime> 
-
-// Función para convertir una fecha en cadena de texto
-std::string convertirFecha(int dia, int mes, int anio){
-  
-  // Crear una estructura de tipo tm y asignar valores a sus campos
-  // tm_year - año desde 1900, tm_mon - meses desde 0 (Enero)
-  // tm_mday - día del mes, tm_wday - día de la semana
-  // tm_yday - día del año, tm_isdst - horario de verano (DST)
-  tm fecha = {0, 0, 0, dia, mes-1, anio - 1900, 0, 0, 0};
-  
-  // Crear un array de caracteres de tamaño suficiente para almacenar la fecha convertida
-  char str[80];
-  
-  // Usar la función strftime para convertir la fecha en una cadena de texto con el formato deseado
-  // En este caso, "DD/MM/YYYY"
-  strftime(str, 80, "%d/%m/%Y", &fecha);
-  
-  // Retornar la cadena con la fecha convertida
-  return str;
-}
-
-int main(){
-  // Convertir la fecha 27/10/2021 en una cadena de texto y almacenarla en una variable
-  std::string fecha_cadena = convertirFecha(27, 10, 2021);
-  
-  // Imprimir la cadena en pantalla
-  std::cout << fecha_cadena << std::endl;
-  
-  // Output: 27/10/2021
-  return 0;
-}
-```
-
-Otra forma de realizar la conversión es utilizando la clase `std::stringstream` y la función `std::put_time`.
-
-```C++
-// Incluir la librería <ctime> para trabajar con fechas
+#include <iostream>
 #include <ctime>
-// Incluir la librería <sstream> para utilizar std::stringstream
-#include <sstream>
 
-int main(){
-  // Crear una estructura de tipo tm y asignar valores a sus campos
-  tm fecha = {0, 0, 0, 27, 9, 2021 - 1900, 0, 0, 0};
-  
-  // Crear un stringstream vacío
-  std::stringstream ss;
-  
-  // Agregar la fecha al stringstream en formato DD/MM/YYYY
-  ss << std::put_time(&fecha, "%d/%m/%Y");
-  
-  // Convertir el stringstream en una cadena de texto
-  std::string fecha_cadena = ss.str();
-  
-  // Imprimir la cadena en pantalla
-  std::cout << fecha_cadena << std::endl;
-  
-  // Output: 27/10/2021
-  return 0;
+int main() {
+    // Obtener la fecha y hora actual
+    time_t now = time(0);
+    
+    // Convertir a un formato legible
+    char fecha[100];
+    strftime(fecha, 100, "%d/%m/%Y %H:%M:%S", localtime(&now));
+    
+    // Imprimir el resultado
+    cout << "La fecha actual es: " << fecha << endl;
+    
+    return 0;
 }
 ```
 
-## Profundizando en la conversión
+**Output:**
+```
+La fecha actual es: 28/04/2021 19:45:20
+```
 
-Ambas formas de convertir una fecha en una cadena de texto utilizan la función `strftime` y la clase `std::stringstream` de la librería `<ctime>`, pero sus implementaciones son diferentes. La función `strftime` toma una estructura `tm` como parámetro y utiliza una cadena de formato para definir cómo se mostrará la fecha en la cadena de texto resultante. Por otro lado, la clase `std::stringstream` permite agregar y manipular datos en un `stringstream` de la misma forma que se haría con `cout` o `cin`.
+También se puede utilizar la función std::stringstream para convertir la fecha en un string. Esta función es especialmente útil si se desea un formato personalizado para la fecha.
 
-Es importante tener en cuenta que el resultado de la conversión de una fecha depende del formato de la cadena especificado en la función o clase utilizada. Es recomendable consultar la documentación oficial para encontrar el formato adecuado para mostrar la fecha en la cadena de texto según nuestras necesidades.
+```C++
+#include <iostream>
+#include <sstream>
+#include <iomanip>
+
+int main() {
+    // Obtener la fecha y hora actual
+    time_t now = time(0);
+    
+    // Crear un objeto std::stringstream
+    std::stringstream ss;
+    
+    // Escribir la fecha en un formato deseado
+    ss << std::put_time(localtime(&now), "%B %d, %Y");
+    
+    // Imprimir el resultado
+    std::cout << "La fecha actual es: " << ss.str() << endl;
+    
+    return 0;
+}
+```
+
+**Output:**
+```
+La fecha actual es: April 28, 2021
+```
+
+## Profundizando
+
+La función strftime() utiliza una cadena de formato para determinar cómo se mostrará la fecha. Algunos de los símbolos más comúnmente utilizados en esta cadena son:
+- "%d": Día del mes (01-31)
+- "%m": Mes (01-12)
+- "%Y": Año (4 dígitos)
+- "%H": Hora en formato de 24 horas (00-23)
+- "%M": Minutos (00-59)
+- "%S": Segundos (00-59)
+
+También se pueden utilizar otros símbolos para mostrar información adicional, como el día de la semana o la zona horaria.
+
+Otra opción es utilizar la librería <iomanip> para formatear la fecha en un string. Esta librería permite controlar la alineación, el relleno y la precisión de la fecha.
 
 ## Ver también
 
-- [Documentación oficial de la librería <ctime> en C++](https://cppreference.com/w/cpp/chrono/c/strftime)
-- [Tutorial sobre la clase std::stringstream en C++](https://www.learncpp.com/cpp-tutorial/stringstream
+- [Documentación de la función strftime() en cplusplus.com (en inglés)](https://www.cplusplus.com/reference/ctime/strftime/)
+- [Referencia de símbolos para la función strftime() en cppreference.com (en inglés)](https://en.cppreference.com/w/cpp/chrono/c/strftime)
+- [Tutorial sobre la librería <iomanip> en GeeksforGeeks (en inglés)](https://www.geeksforgeeks.org/iomanip-headers-c-set1/)

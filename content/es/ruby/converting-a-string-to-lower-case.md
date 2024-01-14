@@ -1,66 +1,56 @@
 ---
 title:                "Ruby: Convirtiendo una cadena a minúsculas"
+simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué convertir una cadena a minúsculas?
+## Por qué
 
-Hay muchas razones por las cuales uno podría querer convertir una cadena (string) a minúsculas en Ruby. Puede ser para estandarizar el formato de una cadena que ingresó un usuario, para comparar dos cadenas de manera más precisa o simplemente para hacer que una cadena sea más fácil de leer.
+¿Alguna vez has necesitado manipular una cadena de texto en tu programa de Ruby? Puede que hayas notado que algunas cadenas están en mayúsculas y otras en minúsculas, y esto puede afectar el funcionamiento de tu código. Para evitar problemas y tener más control sobre tus cadenas de texto, es importante saber cómo convertir una cadena a minúsculas.
 
-## Cómo hacerlo:
+## Cómo hacerlo
 
-Para convertir una cadena a minúsculas en Ruby, podemos usar el método `downcase`. Veamos un ejemplo de cómo usarlo en un programa:
+Para convertir una cadena a minúsculas en Ruby, puedes utilizar el método `.downcase`. Este método toma una cadena y devuelve una copia de ella en minúsculas. Veamos un ejemplo:
 
 ```Ruby
-cadena = "HOLA MUNDO"
+cadena = "ESTO ES UNA CADENA EN MAYÚSCULAS"
 puts cadena.downcase
 ```
 
-Esto producirá la siguiente salida:
+El resultado sería: `esto es una cadena en mayúsculas`. Como puedes ver, todas las letras se han convertido a minúsculas.
+
+También puedes utilizar este método para convertir sólo una parte de una cadena a minúsculas. Por ejemplo:
 
 ```Ruby
-hola mundo
+nombre = "Juan"
+apellido = "PÉREZ"
+
+puts nombre.downcase + " " + apellido.downcase
 ```
 
-Tenga en cuenta que el método `downcase` devuelve una nueva cadena en minúsculas, por lo que si queremos modificar la cadena original, podemos usar el método `downcase!` con un signo de exclamación al final, como se muestra a continuación:
+El resultado sería: `juan pérez`. En este caso, sólo hemos convertido a minúsculas el nombre y apellido, pero no el resto de la cadena.
+
+## Profundizando
+
+El método `.downcase` es muy útil, pero es importante tener en cuenta que sólo convierte letras en mayúsculas a minúsculas. Esto significa que si tenemos caracteres especiales o números en nuestra cadena, no serán afectados por este método.
+
+Por ejemplo:
 
 ```Ruby
-cadena = "HOLA MUNDO"
-cadena.downcase!
-puts cadena
+cadena = "¡ESTO TIENE CARACTERES ESPECIALES: #@$%!"
+puts cadena.downcase
 ```
 
-La salida será:
+El resultado sería: `¡esto tiene caracteres especiales: #@$%!`. El símbolo de exclamación y los caracteres especiales no fueron afectados por el método.
 
-```Ruby
-hola mundo
-```
-
-## Profundizando en la conversión de cadenas a minúsculas:
-
-Ahora que sabemos cómo convertir una cadena a minúsculas en Ruby, es importante entender cómo se realiza esta conversión internamente. En Ruby, cada carácter en una cadena tiene un código numérico asociado, conocido como código ASCII (American Standard Code for Information Interchange). Los caracteres en mayúsculas y minúsculas tienen números diferentes, por lo que cuando se llama al método `downcase`, Ruby simplemente iterará a través de cada carácter en la cadena y le restará 32 al número del código ASCII para convertirlo a minúscula.
-
-Además, el método `downcase` no solo funciona con letras en inglés, sino que también puede manejar caracteres en otros idiomas, como el español. Por ejemplo:
-
-```Ruby
-cadena = "HOLA MUNDO"
-cadena_español = "HASTA LUEGO"
-puts cadena_español.downcase
-```
-
-Producirá la salida:
-
-```Ruby
-hasta luego
-```
-
-¡Ahora ya sabes cómo convertir cadenas a minúsculas en Ruby y cómo funciona este proceso internamente!
+También es importante mencionar que este método es sensible a la codificación de tu programa. Si tienes una cadena en un idioma diferente al inglés, puede que los caracteres no sean convertidos correctamente. Para solucionar esto, puedes especificar la codificación al llamar al método.
 
 ## Ver también
 
-- [Ruby String Documentation](https://ruby-doc.org/core-2.5.0/String.html)
-- [Ruby ASCII Codes](http://www.asciitable.com/)
+- Documentación oficial de `.downcase`: https://ruby-doc.org/core-3.0.0/String.html#method-i-downcase
+- Métodos de manipulación de cadenas en Ruby: https://www.rubyguides.com/2015/11/ruby-string-methods/

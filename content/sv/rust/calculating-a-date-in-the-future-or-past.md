@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Beräkna ett datum i framtiden eller det förflutna"
+title:                "Rust: Beräkning av ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller det förflutna"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,42 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna beräkna ett datum i framtiden eller det förflutna kan vara väldigt användbart i många situationer, till exempel vid schemaläggning eller för att hålla koll på kommande händelser.
+I många programmeringsprojekt behövs det ibland att beräkna ett datum i framtiden eller historiskt. Att kunna göra detta är en viktig del av att skapa applikationer som kräver att planera för händelser eller hantera tidsbaserad data. I den här artikeln kommer vi att utforska hur man kan göra detta med Rust-programmeringsspråket.
 
-## Så här gör du
+## Hur man gör det
 
-Det finns många olika sätt att beräkna ett datum i framtiden eller det förflutna i Rust, men vi kommer att fokusera på en enkel metod. Först behöver du importera modulen `chrono`, som innehåller funktioner för att hantera datum och tid.
+För att kunna beräkna ett datum i framtiden eller tidigare behöver vi först definiera variabler för det nuvarande datumet, antal dagar och riktningen vi vill gå i (framåt eller bakåt i tiden).
 
-```
-extern crate chrono;
-use chrono::prelude::*;
-```
+```Rust
+use chrono::{Duration, DateTime, Utc};
 
-För att beräkna ett datum i framtiden eller det förflutna kan du använda funktionen `naive_date` och ange antalet dagar som ska adderas eller subtraheras från ett specifikt datum.
-
-```
-let current_date = NaiveDate::from_ymd(2021, 11, 3);
-let future_date = current_date.naive_date().unwrap() + Duration::days(45);
-let past_date = current_date.naive_date().unwrap() - Duration::days(10);
-
-println!("Detta är datumet 45 dagar från nu: {}", future_date);
-println!("Detta är datumet 10 dagar före nu: {}", past_date);
+// Definiera nuvarande datum
+let now = Utc::now();
+// Definiera antal dagar
+let days = Duration::days(7);
+// Definiera riktning
+let direction = "framåt";
 ```
 
-Denna kod kommer att ge följande utdata:
+För att beräkna datumet använder vi sedan `with_duration`-funktionen från Chrono-biblioteket och anger antalet dagar och riktningen som parametrar. Detta resulterar i ett nytt `DateTime`-objekt som representerar det beräknade datumet.
+
+```Rust
+// Beräkna datumet
+let calculated_date = now.with_duration(direction, days);
+
+println!("Beräknat datum: {}", calculated_date);
+```
+
+När vi kör koden ovan kommer vi att se följande utmatning:
 
 ```
-Detta är datumet 45 dagar från nu: 2021-12-18
-Detta är datumet 10 dagar före nu: 2021-10-24
+Beräknat datum: 2020-06-12 15:00:00 UTC
 ```
+
+Vi kan också utföra samma beräkning för tidigare datum genom att ändra värdet för variabeln `riktning` till "bakåt".
 
 ## Djupdykning
 
-För att förstå hur detta fungerar behöver vi först förstå vad `naive_date` och `Duration` gör. Funktionen `naive_date` skapar en nytt `NaiveDate`-objekt från ett specifikt datum, medan `Duration` är en strukt som kan användas för att representera en tidsintervall. Genom att lägga till eller subtrahera ett `Duration`-objekt från ett `NaiveDate`-objekt kan vi enkelt beräkna ett nytt datum.
+Under huven använder sig Chrono-biblioteket av Gregorian Calendar för att hantera datum- och tidsberäkningar. Detta är en standardkalender som används i många länder och baseras på den julianska kalendern.
 
-Det är också värt att nämna att `chrono`-modulen innehåller många andra användbara funktioner för att hantera datum och tid. Det är definitivt värt att djupdyka i dokumentationen för att lära sig mer.
+En viktig aspekt att tänka på vid beräkningar av datum i framtiden eller historiskt är att ta hänsyn till skottår. Detta görs automatiskt av Chrono-biblioteket, men det kan vara bra att ha i åtanke när man utför beräkningarna.
 
 ## Se även
 
-- [Dokumentation för chrono-modulen](https://docs.rs/chrono/0.4.19/chrono/index.html)
-- [Rust standardbibliotekets dokumentation för datum och tid](https://doc.rust-lang.org/std/time/index.html)
+- [Chrono-biblioteket på crates.io](https://crates.io/crates/chrono)
+- [Chrono-dokumentation](https://docs.rs/chrono)
+- [Rust-programmeringsspråkets hemsida](https://www.rust-lang.org/sv-SE/)

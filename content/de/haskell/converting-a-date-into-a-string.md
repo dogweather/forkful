@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Converting eines Datums in eine Zeichenkette."
+title:                "Haskell: Ein Datum in einen String konvertieren"
+simple_title:         "Ein Datum in einen String konvertieren"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/converting-a-date-into-a-string.md"
 ---
 
@@ -9,38 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Konvertierung von Datum in eine Zeichenfolge ist ein wichtiger Schritt in der Programmierung, da sie es ermöglicht, Daten in einem leicht lesbaren Format auszugeben. Dies kann beispielsweise bei der Erstellung von Berichten oder beim Speichern von Daten in einer Datei hilfreich sein.
+Das Konvertieren eines Datums in eine Zeichenkette kann in vielen verschiedenen Situationen nützlich sein, z. B. beim Erstellen von Berichten, beim Exportieren von Daten oder einfach nur bei der Anzeige von Datum und Uhrzeit in einem lesbareren Format.
 
-## Wie man das macht
+## Wie geht das?
 
-Um in Haskell ein Datum in eine Zeichenfolge umzuwandeln, können wir die Funktion `show` verwenden. Diese Funktion akzeptiert ein Datum als Argument und gibt eine Zeichenfolge zurück, die das Datum im Format "JAHR-MONAT-TAG" darstellt. Schauen wir uns ein Beispiel an:
-
-```Haskell
-show (2021, 10, 26)
-```
-Ausgabe: "2021-10-26"
-
-Hier ist ein Beispiel, wie du die Funktion `show` in einer Funktion verwenden kannst, die das aktuelle Datum als Zeichenfolge ausgibt:
+Die Konvertierung eines Datums in eine Zeichenkette ist in Haskell relativ einfach. Wir können die Funktion "show" verwenden, um das Datum in das Datumsformat "String" umzuwandeln. Hier ist ein Beispielcode:
 
 ```Haskell
 import Data.Time
 
-getToday :: IO String
-getToday = do
-    t <- getZonedTime
-    return (show $ localDay $ zonedTimeToLocalTime t)
-```
-Ausgabe (je nach aktuellem Datum): "2021-10-26"
+-- Ein Datum erstellen
+let date = fromGregorian 2020 01 01
 
-Es gibt auch andere Funktionen, die verwendet werden können, um das Format der Ausgabe zu ändern, zum Beispiel die Funktionen `formatTime` und `formatTimeLocale`.
+-- Datum in String konvertieren
+let dateString = show date 
+
+-- Ausgabe: "2020-01-01"
+print dateString
+```
+
+Wie Sie sehen können, wird das Datum im Format "YYYY-MM-DD" angezeigt. Dies ist die Standardformatierung für Datumswerte in Haskell.
+
+Natürlich können wir die Ausgabe auch in einem anderen Format erhalten. Hier ist ein Beispiel, bei dem wir das Datum im Format "TT.MM.JJJJ" anzeigen lassen:
+
+```Haskell
+-- Datum in String konvertieren mit angegebenem Format
+let dateString = formatTime defaultTimeLocale "%d.%m.%Y" date 
+
+-- Ausgabe: "01.01.2020"
+print dateString
+```
+
+In diesem Beispiel verwenden wir die Funktion "formatTime" und geben das gewünschte Format als Argument an. Wir können auch weitere Details wie die Uhrzeit oder die Zeitzone hinzufügen, indem wir das Format entsprechend anpassen.
 
 ## Tiefergehende Informationen
 
-In Haskell gibt es verschiedene Datentypen, die Datum und Uhrzeit repräsentieren, wie zum Beispiel `UTCTime`, `ZonedTime` und `LocalTime`. Wenn du dich intensiver mit der Konvertierung von Datum in eine Zeichenfolge beschäftigen möchtest, solltest du dich mit diesen Datentypen vertraut machen.
-
-Ein weiterer wichtiger Aspekt bei der Konvertierung von Datum in eine Zeichenfolge ist die Lokalisierung. Je nach Region oder Sprache können die Formate variieren. Dafür bietet Haskell die Funktion `setLocaleTime` an, mit der du das Ausgabeformat anpassen kannst.
+Das Datumskonvertierungsmodul in Haskell, "Data.Time", bietet viele weitere Funktionen und Möglichkeiten, um Datums- und Zeitinformationen zu manipulieren. Es gibt zum Beispiel Funktionen, um Zeiträume zu berechnen, Zeitzonen zu konvertieren oder Tageslichtzeiten zu berücksichtigen. Eine ausführliche Dokumentation zu diesen Funktionen und mehr finden Sie in der offiziellen Haskell-Dokumentation für das Datumskonvertierungsmodul: [https://hackage.haskell.org/package/time](https://hackage.haskell.org/package/time)
 
 ## Siehe auch
-- [Haskell-Dokumentation zu `show`](https://www.haskell.org/onlinereport/standard-prelude.html#show)
-- [Hackage-Dokumentation zu Datum und Uhrzeit in Haskell](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-- [Tutorial: Datum und Uhrzeit in Haskell](https://www.tutorialspoint.com/haskell/haskell_date_time.htm)
+
+- [Haskell-Dokumentation zum Datumskonvertierungsmodul](https://hackage.haskell.org/package/time)
+- [Tutorial zu Datumsmanipulation in Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/10-Dates-and-Calendars)
+- [Weitere Infos zu Zeit- und Datumskonvertierung in Haskell](https://www.4haskell.com/2019/07/date-translation-and-manipulation

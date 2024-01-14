@@ -1,7 +1,9 @@
 ---
-title:                "C++: Mallin mukaisten merkkien poistaminen"
+title:                "C++: Kaavan mukaisesti vastaavien merkkien poistaminen"
+simple_title:         "Kaavan mukaisesti vastaavien merkkien poistaminen"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,47 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa ohjelmointitilanteissa voi olla tarpeen poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi auttaa hallitsemaan ja muokkaamaan tekstiä tai datan käsittelyä tietyissä tapauksissa. Tässä blogipostissa käsittelemme, miten tämä tehdään C++:ssa ja miksi se voi olla hyödyllistä.
+Usein ohjelmoinnissa on tarpeen poistaa merkkejä merkkijonosta, jotka vastaavat tiettyä kaavaa. Tämä voi johtua esimerkiksi tarpeesta puhdistaa käyttäjän antamaa syötettä tai muokata tietokannasta haettuja tietoja. Tässä blogikirjoituksessa käsittelemme, miten voit poistaa merkkejä, jotka vastaavat tiettyä kaavaa, käyttäen C++ -ohjelmointikieltä.
 
-## Miten
+## Miten se toimii
 
-Alla on esimerkki siitä, miten poistaa merkkejä vastaava kaava käyttämällä C++:n tilapäävariota ja standardikirjastosta löytyviä funktioita. Koodissa poistamme kaikki numerot sisältävät merkit ja tulostamme lopputuloksen:
+Käytännön esimerkissä käytämme C++:n sisäänrakennettua `std::string` -luokkaa ja sen `.erase()` -metodia merkkijonon manipulointiin. Alla on esimerkkikoodi, jossa poistamme kaikki numerot merkkijonosta ja tulostamme lopputuloksen.
 
 ```C++
 #include <iostream>
 #include <string>
-#include <algorithm>
-
-using namespace std;
 
 int main() {
-    string teksti = "Tämä on esimerkki 123 tekstistä 456!";
-    
-    // Poistetaan numerot käytettävän kaavan avulla
-    teksti.erase(remove_if(teksti.begin(), teksti.end(), ::isdigit), teksti.end());
-    
-    // Tulostetaan lopputulos
-    cout << teksti << endl;
-    
+    std::string s = "Tämä on es1imerkki 2 poista3misesta.";
+
+    std::cout << "Alkuperäinen merkkijono: " << s << std::endl;
+
+    // Poistetaan numerot merkkijonosta
+    for (int i = 0; i < s.length(); ++i) {
+        if (isdigit(s[i])) {
+            s.erase(i, 1);
+            i--;
+        }
+    }
+
+    std::cout << "Lopullinen merkkijono: " << s << std::endl;
+
     return 0;
 }
+
+// Output:
+// Alkuperäinen merkkijono: Tämä on es1imerkki 2 poista3misesta.
+// Lopullinen merkkijono: Tämä on esimerkki poistamisesta.
 ```
 
-Tulostus:
-```
-Tämä on esimerkki tekstistä !
-```
+Tässä esimerkissä käytämme `for`-silmukkaa käymään läpi merkkijonon merkkejä. `.length()`-metodi palauttaa merkkijonon pituuden, ja `isdigit()`-funktio tarkistaa, onko kyseessä numero. Jos löydämme numeron, käytämme `.erase()`-metodia poistamaan sen. On tärkeää huomata, että poistettavan numeron indeksin täytyy olla yhden pienempi kuin seuraavan tarkistettavan merkin indeksi, siksi vähennämme `i++` silmukan sisällä.
 
-Tämä esimerkki käyttää `std::remove_if()` funktiota, joka löytyy `<algorithm>` kirjastosta. Tämä funktio ottaa vastaan kolme parametria: alueen aloituselementin, alueen lopetuselementin ja käytettävän ehtofunktion. Ehtofunktio `::isdigit` tarkistaa, onko kyseinen merkki numero vai ei ja poistaa sen, jos se on. Lopuksi `teksti.erase()` funktiolla poistetaan kaikki ehtofunktion palauttamat merkit.
+## Syväsukellus
 
-## Syvällisempi tarkastelu
+Vaikka edellä mainittu esimerkki toimii monissa tilanteissa, on hyvä ottaa huomioon muutamia seikkoja, jos haluat poistaa merkkejä merkkijonosta, jotka vastaavat tiettyä kaavaa.
 
-Poistaessa merkkejä vastaavan kaavan C++:ssa on tärkeää muistaa, että poistamisen jälkeen merkkijono ei enää ole samankokoinen kuin ennen. Toisin sanoen, alkuperäistä merkkijonoa ei lyhennetä, vaan poistettavat merkit korvataan lopetuselementin ja alkuelementin välillä. Jos siis haluat täysin lyhentää merkkijonoa, sinun tulee käyttää esimerkiksi `std::erase()` funktiota.
+Ensinnäkin, jos tarvitset poistamaan useita erilaisia merkkejä tai kaavoja, on ehkä kätevämpää käyttää `std::regex` -luokkaa ja sen `.regex_replace()` -metodia. Tällä tavalla voit määrittää useita kaavoja yhdellä luettelolla ja korvata ne haluamallasi merkeillä.
 
-Lisäksi on hyödyllistä tietää, että ehtofunktiota voi muokata haluamallaan tavalla saavuttaakseen halutun lopputuloksen. Esimerkiksi, jos haluat poistaa vain tietyt kirjaimet tai tietyn pituiset merkkijonot, voit muokata ehtofunktiota vastaavasti.
+Toiseksi, on tärkeää ottaa huomioon, mihin merkkijonon indeksiin olet poistamassa merkkejä. Jos esimerkiksi käytät `while`-silmukkaa ja lisäät sen sisällä yhden merkin jokaiseen poistettavaan kaavaan, seurauksena voi olla loputtomasti toistuva silmukka. Varmista siis, että ohjelmasi pysäyttää silmukan oikeassa kohdassa.
+
+Lisäksi sinun pitäisi harkita tarvitaanko merkkijonon kopio (esimerkiksi `s.erase()` vs. `s.erase()`), jos haluat muuttaa alkuperäistä merkkijonoa tai käyttää sitä myöhemmin.
 
 ## Katso myös
 
-- [C++ reference - remove_if()](http://www.cplusplus.com/reference/algorithm/remove_if/)
-- [C++ reference - erase()](http://www.cplusplus.com/reference/string/string/erase/)
-- [C++ reference - isdigit()](http://www.cplusplus.com/reference/cctype/isdigit/)
+- [

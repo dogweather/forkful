@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Substrings extrahieren"
+title:                "Elm: Unterstrings extrahieren"
+simple_title:         "Unterstrings extrahieren"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/extracting-substrings.md"
 ---
 
@@ -9,58 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Extrahieren von Substrings ist eine nützliche Funktion in Elm, die es ermöglicht, Teile von Strings basierend auf bestimmten Kriterien zu extrahieren. Dies ist besonders hilfreich, wenn man mit großen Strings arbeitet und nur bestimmte Teile davon benötigt. In diesem Blog-Beitrag werden wir genauer untersuchen, warum und wie man Substrings in Elm extrahiert.
+Das Extrahieren von Teilstrings, also Teilen eines längeren Strings, kann sehr nützlich sein, um spezifische Informationen aus einem Text zu erhalten. In Elm gibt es verschiedene Funktionen, die dabei helfen können, diese Aufgabe effizient zu erledigen.
 
-## Anleitung
+## Wie funktioniert es?
 
-Um einen Substring in Elm zu extrahieren, können wir die `String.slice` Funktion verwenden. Diese Funktion erfordert drei Argumente: den Startindex, den Endindex und den String selbst. Der Startindex gibt an, an welcher Stelle der Substring beginnen soll, während der Endindex angibt, an welcher Stelle der Substring enden soll. Hier ist ein Beispielcode, der einen Substring von einem String extrahiert:
-
-```Elm
--- String mit dem Text "Hello World"
-let str = "Hello World"
-
--- Extrahieren des Substrings "World"
-let substr = String.slice 6 11 str
-
--- Ausgabe des Substrings
--- "World"
-```
-
-Wie Sie sehen können, haben wir den Substring von Index 6 (inklusive) bis Index 11 (exklusive) extrahiert. Es ist wichtig zu beachten, dass der Endindex nicht Teil des extrahierten Substrings ist.
-
-Wenn Sie möchten, können Sie auch negative Indizes verwenden, um Substrings zu extrahieren. Ein negativer Startindex gibt an, an welcher Stelle der letzte Zeichen des Strings als Start für den Substring verwendet werden soll, während ein negativer Endindex angibt, an welcher Stelle das vorletzte Zeichen des Strings als Ende für den Substring verwendet werden soll. Hier ist ein Beispielcode:
+Um Teilstrings in Elm zu extrahieren, gibt es zwei Hauptfunktionen: `slice` und `substring`. Die `slice`-Funktion erwartet den Start- und Endindex des zu extrahierenden Teilstrings sowie den ursprünglichen String. Zum Beispiel:
 
 ```Elm
--- String mit dem Text "Abcdefg"
-let str = "Abcdefg"
-
--- Extrahieren des Substrings "def"
-let substr = String.slice -5 -2 str
-
--- Ausgabe des Substrings
--- "def"
+originalString = "Bankkonto"
+teilstring = slice 0 4 originalString
 ```
 
-Ein weiteres nützliches Feature ist die Möglichkeit, den Endindex weglassen zu können. Dadurch wird automatisch der Rest des Strings vom angegebenen Startindex bis zum Ende als Substring extrahiert. Hier ist ein Beispielcode:
+In diesem Beispiel wird der Teilstring "Bank" aus dem ursprünglichen String extrahiert und der Variablen `teilstring` zugewiesen. Das Ergebnis wäre also `"Bank"`.
+
+Eine andere Möglichkeit, Teilstrings zu extrahieren, ist die `substring`-Funktion. Sie erwartet ebenfalls den Start- und Endindex, jedoch mit dem Unterschied, dass der Endindex nicht einschließlich, sondern exklusive ist. Zum Beispiel:
 
 ```Elm
--- String mit dem Text "123456789"
-let str = "123456789"
-
--- Extrahieren des Substrings "456789"
-let substr = String.slice 3 str
-
--- Ausgabe des Substrings
--- "456789"
+originalString = "Laptop"
+teilstring = substring 2 5 originalString
 ```
 
-## Tiefergehende Informationen
+Hier würde der Teilstring "pto" extrahiert werden. Wie man sieht, ist der Startindex inklusive ("top" beginnt an Index 2), der Endindex jedoch exklusive ("to" endet an Index 5).
 
-Es gibt noch weitere Funktionen, die beim Extrahieren von Substrings in Elm hilfreich sein können. Die `String.left` Funktion gibt eine bestimmte Anzahl von Zeichen vom Anfang des Strings zurück, während `String.right` eine bestimmte Anzahl von Zeichen vom Ende des Strings zurückgibt. Es ist auch möglich, einen bestimmten String als Trennzeichen zu verwenden, um den String in Unterstrings zu teilen, indem die Funktion `String.split` verwendet wird.
+## Tiefere Einblicke
 
-Es ist wichtig zu beachten, dass das Extrahieren von Substrings nicht nur auf Strings beschränkt ist. Auch in Listen kann man Sublists extrahieren, indem man die `List.slice` Funktion verwendet.
+Es gibt noch weitere Funktionen, um Teilstrings in Elm zu extrahieren, wie z.B. `left` und `right`. Diese ermöglichen das Extrahieren von Teilstrings ab einem bestimmten Index bis zum Anfang oder Ende des ursprünglichen Strings. Es gibt auch die Funktion `trim`, die Leerzeichen vor und/oder nach dem Teilstring entfernt.
+
+Es ist auch möglich, Teilstrings mit Hilfe von Bedingungen zu extrahieren. Hierfür gibt es die `contains`-Funktion, die überprüft, ob ein bestimmter String in einem anderen String enthalten ist und dann den entsprechenden Teilstring extrahiert.
 
 ## Siehe auch
 
-- [`String.slice` Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
-- ["Startseite" einer deutschen Elm-Community](https://elm-lang.de/)
+* [Offizielle Elm-Dokumentation zur String-Extraktion](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
+* [Elm Cheat Sheet zur String-Extraktion](https://elmprogramming.com/elm-cheat-sheet.pdf) 
+* [Blog-Beitrag zu nützlichen String-Funktionen in Elm](https://www.brianthicks.com/post/2018/08/07/some-useful-elm-string-functions/)

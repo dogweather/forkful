@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Ottenere la data corrente"
+title:                "Fish Shell: Ottenere la data attuale"
+simple_title:         "Ottenere la data attuale"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/getting-the-current-date.md"
 ---
 
@@ -9,54 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Capita spesso di dover utilizzare la data corrente nei nostri programmi, ad esempio per stamparla su schermo o effettuare calcoli basati sul giorno o mese corrente. Imparare come ottenere automaticamente la data corrente può semplificare la nostra vita da programmatori.
+Molti potrebbero chiedersi perché dovrebbero interessarsi a ottenere la data corrente utilizzando il Fish Shell. La risposta è semplice: la data corrente è un elemento fondamentale di qualsiasi programma o script che richieda l'utilizzo del tempo come variabile. Ad esempio, potresti voler creare un file con la data corrente nel nome, o calcolare l'età di una persona in base alla data di nascita. Inoltre, conoscere la data corrente può essere molto utile per l'organizzazione dei tuoi file o per tenere traccia delle tue attività giornaliere.
 
-## Come Fare
+## Come ottenere la data corrente con il Fish Shell
 
-Il comando `date` ci permette di ottenere la data corrente nel formato standard ISO. Ecco un esempio di come visualizzarla su schermo utilizzando Fish Shell:
+Per ottenere la data corrente usando il Fish Shell, puoi utilizzare il comando `date` seguito da una formattazione specifica. Ad esempio, per ottenere la data corrente nel formato "mese/giorno/anno", puoi utilizzare il comando:
 
-```Fish Shell
-date
+```
+date +%m/%d/%y
 ```
 
-Output: `2019-07-10`
+Il simbolo `%` seguito da una lettera specifica il formato della data da ottenere. Ad esempio, `%m` indica il numero di mese, `%d` il numero di giorno e `%y` l'anno in formato abbreviato a due cifre. Puoi consultare la documentazione del comando `date` per vedere tutti i possibili formati disponibili.
 
-Se invece vogliamo avere la data nel formato giorno/mese/anno, possiamo utilizzare la seguente sintassi:
+Un'altra opzione è utilizzare il comando `echo` combinato con il comando `date`. Ad esempio, per ottenere la data corrente nel formato "giorno della settimana, giorno/mese/anno", puoi utilizzare il seguente comando:
 
-```Fish Shell
-date +%d/%m/%Y
+```
+echo (date +%A), (date +%d/%m/%y)
 ```
 
-Output: `10/07/2019`
+Il comando `echo` serve per visualizzare il risultato ottenuto dal comando `date`.
 
-Possiamo anche specificare una data diversa da quella corrente, utilizzando il formato numerico `YYYY/MM/DD`. Ad esempio:
+## Deep Dive
 
-```Fish Shell
-date -d 1996/02/14 +%A
-```
+Per coloro che sono interessati a saperne di più su come ottenere la data corrente con il Fish Shell, ecco alcune informazioni aggiuntive. Il comando `date` è parte del pacchetto Coreutils, che è disponibile in vari sistemi operativi, tra cui Linux e macOS. Puoi anche utilizzare il comando `man date` per accedere alla documentazione del comando e scoprire tutte le sue opzioni e formati.
 
-Output: `giovedì`
+Inoltre, è possibile combinare il comando `date` con altri comandi del Fish Shell per ottenere risultati più complessi. Ad esempio, puoi utilizzare il comando `set` per assegnare la data corrente a una variabile e utilizzarla in seguito nel tuo script.
 
-Possiamo anche effettuare calcoli sulla data corrente, ad esempio per ottenere la data di ieri o quella di domani:
+## Vedi anche
 
-```Fish Shell
-date -d "yesterday" +%d/%m/%Y
-```
-
-Output: `09/07/2019`
-
-```Fish Shell
-date -d "+1 day" +%d/%m/%Y
-```
-
-Output: `11/07/2019`
-
-## Approfondimento
-
-Il comando `date` è parte del coreutils package e accetta molte altre opzioni per ottenere la data in diversi formati e eseguire calcoli su di essa. Per ulteriori informazioni, è possibile consultarne la pagina di manuale con il comando `man date`.
-
-## Vedi Anche
-
-- [Manuale di Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Pagina di manuale di date](https://man7.org/linux/man-pages/man1/date.1.html)
-- [Altro articolo su Fish Shell (in italiano)](https://fulgid.eu/post/introduzione-a-fish-shell)
+- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
+- [Guide to command substitution in Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_expansion)
+- [Mastering the date command in Linux](https://www.tecmint.com/20-practical-examples-of-date-command-in-linux/) (in inglese)

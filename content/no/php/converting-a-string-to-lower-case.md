@@ -1,7 +1,9 @@
 ---
 title:                "PHP: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,33 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det er flere grunner til å konvertere en streng til små bokstaver. Det kan være for å sikre ensartethet i en database, for å unngå sammenligningsfeil mellom strenger eller simpelthen for å gjøre tekstbehandling enklere.
+Mange ganger, når vi jobber med tekstbehandling, ønsker vi å behandle teksten på forskjellige måter avhengig av om bokstavene er store eller små. For eksempel, når vi lager et innloggingsystem, vil vi at brukerens passord skal være case-sensitive, men ikke brukernavnet. Det er her funksjonen for å konvertere en streng til små bokstaver kommer inn. Ved å konvertere all teksten til små bokstaver, vil vi unngå feil ved innlogging og andre sikkerhetsproblemer. 
 
-## Hvordan gjøre det
+## Hvordan
 
-For å konvertere en streng til små bokstaver, kan du bruke funksjonen `strtolower ()`. Her er et eksempel på hvordan du kan bruke denne funksjonen:
-
-```PHP
-$str = "HELLO WORLD";
-echo strtolower($str);
-```
-
-Dette vil gi følgende utdata:
+For å konvertere en streng til små bokstaver, bruker vi funksjonen `strtolower ()` i PHP. Her er et enkelt eksempel som viser frem hvordan dette fungerer:
 
 ```PHP
-hello world
+$originalStreng = "DEtte ER EN eksempelSTRiNG";
+$nyStreng = strtolower($originalStreng);
+echo $nyStreng;
 ```
 
-Som du kan se, er alle bokstavene i strengen nå konvertert til små bokstaver.
+Dette vil gi følgende utskrift:
 
-## Dypdykk
+```PHP
+dette er en eksempelstring
+```
 
-Når du bruker `strtolower ()` -funksjonen, er det viktig å være klar over at den bare støtter ASCII-tegn. Hvis du trenger å konvertere en streng som inneholder ikke-ASCII-tegn, må du bruke funksjonen `mb_strtolower ()`.
+Vi kan også bruke `strtolower ()` for å behandle hele tekststrenger som består av flere ord. Her er et eksempel på hvordan vi kan konvertere en hel setning til små bokstaver:
 
-Du bør også være oppmerksom på at hvis du har behov for å konvertere en streng til små bokstaver, men beholde noen bokstaver som store bokstaver (for eksempel initialer i et navn), kan du bruke funksjonen `ucwords ()` på strengen etter å ha konvertert den til små bokstaver.
+```PHP
+$setning = "Hei, Dette ER En EKSEMPEL Setning";
+$nySetning = strtolower($setning);
+echo $nySetning;
+```
 
-## Se også
+Utskriften vil da være:
 
-- [strtolower() documentation](https://www.php.net/manual/en/function.strtolower.php)
-- [mb_strtolower() documentation](https://www.php.net/manual/en/function.mb-strtolower.php)
-- [ucwords() documentation](https://www.php.net/manual/en/function.ucwords.php)
+```PHP
+hei, dette er en eksempel setning
+```
+
+Husk at `strtolower ()` funksjonen ikke bare konverterer store bokstaver til små, den vil også behandle alle spesialtegn og tall på samme måte.
+
+## Dykk Dypere
+
+Nå som vi har forstått hvordan man konverterer en streng til små bokstaver, la oss se på hvorfor dette er viktig i programmering. Som nevnt tidligere, er sikkerhet en viktig årsak til å bruke denne funksjonen. Ved å konvertere alle inntastede passord til små bokstaver, unngår vi mulige feil når brukeren logger seg inn.
+
+Å bruke små bokstaver i alle tekststrenger kan også gjøre det enklere å sammenligne dem. For eksempel, hvis du vil sjekke om to strenger er like, kan det være lurt å konvertere dem til små bokstaver først for å unngå eventuelle forskjeller i store og små bokstaver.
+
+## Se Også
+
+- [PHP.net - strtolower()](https://www.php.net/manual/en/function.strtolower.php)
+- [Tuttefel.com - Lowercase String with PHP](https://tuttefel.com/languages/php/lowercase-string-methods/)
+- [W3Schools.com - PHP String Functions](https://www.w3schools.com/php/php_string_functions.asp)

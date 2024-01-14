@@ -1,71 +1,47 @@
 ---
-title:                "Java: Lettura degli argomenti della riga di comando."
+title:                "Java: Leggere gli argomenti della linea di comando"
+simple_title:         "Leggere gli argomenti della linea di comando"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché
-Spesso nella programmazione, siamo chiamati ad interagire con l'utente per ottenere dati o input. Una delle tecniche utilizzate per ottenere dati in modo dinamico è attraverso l'utilizzo di  comandi della linea di comando. In questo post, esploreremo come leggere questi argomenti della linea di comando in Java e impareremo ad utilizzarli efficacemente nei nostri programmi.
+## Perché
+Ciao lettori, oggi parleremo di un argomento fondamentale per chiunque stia imparando a programmare in Java: la lettura degli argomenti della riga di comando. Ma perché dovresti leggere questo articolo? Semplice, perché la capacità di leggere gli argomenti della riga di comando è uno strumento prezioso per creare programmi più interattivi e personalizzati. Continua a leggere per scoprire come!
 
-##Come fare
-Per leggere gli argomenti della linea di comando in Java, possiamo utilizzare l'oggetto args del metodo main. In questo oggetto sono memorizzati tutti gli argomenti passati al programma al momento dell'esecuzione.
-
-Ecco un esempio pratico:
+## Come Fare
+Per leggere gli argomenti della riga di comando in Java, devi utilizzare il metodo "getArgs()" della classe String. Qui di seguito troverai un esempio di codice con un'esplicazione dettagliata di come funziona:
 
 ```Java
-public class Main {
-  public static void main(String[] args) {
-    System.out.println("Hai inserito " + args.length + " argomenti.");
-
-    for (int i = 0; i < args.length; i++) {
-      System.out.println("Argomento " + (i+1) + ": " + args[i]);
+public class CommandLineArguments {
+    public static void main(String[] args) {
+        // Dichiarazione di una variabile contenente gli argomenti della riga di comando
+        String[] arguments = args;
+        
+        // Ciclo for per stampare ogni argomento della riga di comando
+        for (String arg : arguments) {
+            System.out.println(arg);
+        }
     }
-  }
 }
 ```
 
-Nel codice sopra, stiamo semplicemente stampando il numero di argomenti passati e il loro valore.
+In questo esempio abbiamo creato un programma che stampa tutti gli argomenti che vengono passati nella riga di comando. Ad esempio, se eseguiamo il programma con il comando "java CommandLineArguments arg1 arg2", l'output sarà:
 
-Supponiamo di eseguire il programma con i seguenti argomenti dalla linea di comando: "Java Main arg1 arg2 arg3". L'output del programma sarà il seguente:
-
-```
-Hai inserito 3 argomenti.
-Argomento 1: arg1
-Argomento 2: arg2
-Argomento 3: arg3
+```Shell
+arg1
+arg2
 ```
 
-Possiamo anche utilizzare gli argomenti della linea di comando per impostare valori in variabili all'interno del programma, evitando così di doverli dichiarare manualmente nel codice. Ad esempio, nel caso di una calcolatrice, potremmo passare due numeri come argomenti in input per eseguire un'operazione.
+## Approfondimento
+Ora che hai imparato come leggere gli argomenti della riga di comando, è importante capire come gestirli in modo più avanzato. Ad esempio, puoi utilizzare la classe Scanner per acquisire input dall'utente e utilizzarlo come argomenti della riga di comando. Oppure puoi utilizzare librerie come Apache Commons CLI per gestire argomenti più complessi e permettere all'utente di specificare opzioni e parametri. Continua a studiare e sperimentare con questi strumenti per migliorare le tue conoscenze di lettura degli argomenti della riga di comando in Java.
 
-##Deep dive
-Oltre all'oggetto args, esiste anche un'altra classe che possiamo utilizzare per gestire gli argomenti della linea di comando in Java, ovvero la classe Scanner. Utilizzando questa classe, possiamo leggere argomenti specifici dalla linea di comando in modo più strutturato, ad esempio indicando un tipo di dato specifico (intero, stringa, float, ecc.).
+## Vedi Anche
+- [Comprendere gli argomenti della riga di comando in Java](https://www.programcreek.com/2009/02/java-parse-command-line-argument/)
+- [Apache Commons CLI Tutorial](https://www.baeldung.com/apache-commons-cli)
+- [Utilizzare la classe Scanner in Java](https://www.geeksforgeeks.org/scanner-class-in-java/)
 
-Ecco un esempio di utilizzo della classe Scanner:
-
-```Java
-import java.util.Scanner;
-
-public class Main {
-  public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
-
-    System.out.println("Inserisci il tuo nome:");
-    String nome = sc.next();
-
-    System.out.println("Inserisci la tua età:");
-    int eta = sc.nextInt();
-
-    System.out.println("Ciao, " + nome + ", hai " + eta + " anni!");
-  }
-}
-```
-
-In questo esempio, dopo aver compilato il programma, verrà richiesto all'utente di inserire il proprio nome e la propria età. Tali valori verranno poi stampati a schermo.
-
-##Vedi anche
-- [Documentazione ufficiale di Java sugli argomenti della linea di comando](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Tutorial su come leggere gli argomenti della linea di comando in Java](https://www.guru99.com/command-line-arguments.html)
-- [Esempi di utilizzo di Scanner per leggere gli argomenti dalla linea di comando in Java](https://www.baeldung.com/java-command-line-arguments)
+Grazie per aver letto questo articolo sull'importanza della lettura degli argomenti della riga di comando in Java. Continua a lavorare sodo e a praticare, e presto sarai un esperto nella gestione degli argomenti della riga di comando nei tuoi programmi! A presto!

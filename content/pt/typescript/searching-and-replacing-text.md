@@ -1,45 +1,49 @@
 ---
-title:                "TypeScript: Localizando e substituindo texto"
+title:                "TypeScript: Busca e substituição de texto"
+simple_title:         "Busca e substituição de texto"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que fazer a substituição de texto em TypeScript?
 
-Substituir texto é uma tarefa essencial na programação, seja para corrigir erros ou para fazer alterações em massa. Aprender como realizar essa tarefa usando TypeScript pode ajudar a tornar seu código mais eficiente e preciso.
+A busca e substituição de texto é uma tarefa comum em muitas linguagens de programação, incluindo TypeScript. Ela pode ser usada para fazer correções em um grande volume de código, alterar uma determinada palavra ou expressão em vários arquivos ou até mesmo para automatizar tarefas repetitivas. Ao aprender como realizar essa tarefa em TypeScript, você pode economizar muito tempo e esforço no seu processo de desenvolvimento.
 
-## Como Fazer
+## Como fazer a substituição de texto em TypeScript?
 
-Para substituir texto em TypeScript, podemos usar o método `replace()` do objeto `String`. Ele aceita dois parâmetros: o texto que queremos substituir e o novo texto que queremos inserir. Vamos ver um exemplo:
-
-```TypeScript
-let mensagem: string = "Bem-vindo ao blog de programação!"
-let novaMensagem: string = mensagem.replace("blog de programação", "blog de TypeScript")
-console.log(novaMensagem)
-```
-
-A saída seria: "Bem-vindo ao blog de TypeScript!".
-
-Podemos também usar expressões regulares no método `replace()` para realizar substituições mais complexas. Por exemplo, se quisermos substituir todas as ocorrências de uma palavra por outra, podemos usar a flag `g` para indicar que a substituição deve ser global. Veja o exemplo:
+Para fazer a substituição de texto em TypeScript, você pode utilizar o método `replace()` da classe `String`. Ele aceita dois parâmetros: o padrão que você deseja substituir e o texto de substituição. Veja um exemplo prático:
 
 ```TypeScript
-let texto: string = "Este artigo é sobre TypeScript e como substituir texto."
-let novoTexto: string = texto.replace(/TypeScript/g, "programação")
-console.log(novoTexto)
+let texto = "Olá, sou um texto de exemplo."
+let novoTexto = texto.replace("Olá", "Hi");
+console.log(novoTexto);
+
+// Output: Hi, sou um texto de exemplo.
 ```
 
-A saída seria: "Este artigo é sobre programação e como substituir texto.".
+Neste exemplo, usamos o método `replace()` para substituir a palavra "Olá" por "Hi" no texto original.
 
-## Deep Dive
+Também é possível usar expressões regulares para fazer substituições mais complexas. Veja outro exemplo:
 
-Existem alguns outros detalhes importantes a serem considerados quando se trata de substituir texto em TypeScript. Por exemplo, o método `replace()` retorna uma nova string, não altera a string original. Além disso, ele é sensível a maiúsculas e minúsculas, o que significa que se usarmos a palavra "programação" em vez de "TypeScript" no exemplo acima, a substituição não será feita.
+```TypeScript
+let texto = "Esse código foi escrito em TypeScript.";
+let novoTexto = texto.replace(/TypeScript/g, "Python");
+console.log(novoTexto);
 
-Outra coisa a ter em mente é que expressões regulares podem ser poderosas, mas também podem ser complicadas. Certifique-se de pesquisar e entender como elas funcionam antes de usá-las em seus códigos.
+// Output: Esse código foi escrito em Python.
+```
+
+Neste caso, usamos uma expressão regular para substituir todas as ocorrências da palavra "TypeScript" por "Python" no texto original.
+
+## Uma visita mais aprofundada à substituição de texto
+
+Existem diversas opções e possibilidades ao utilizar o método `replace()` em TypeScript. É possível fazer substituições sensíveis a maiúsculas e minúsculas, substituir apenas a primeira ocorrência de um padrão, utilizar funções de callback e muito mais. Recomendamos que você confira a documentação oficial da classe `String` para entender todas as opções disponíveis.
 
 ## Veja também
 
-- [Documentação oficial do método `replace()` em TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#template-literal-types)
-- [Guia de expressões regulares em JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Documentação oficial do método `replace()` em TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#string-replace)
+- [Outras dicas e truques em TypeScript](https://devblogs.microsoft.com/typescript/tag/tips-tricks/)

@@ -1,30 +1,38 @@
 ---
-title:                "PHP: 정규식 사용하기"
+title:                "PHP: 정규 표현식 활용"
+simple_title:         "정규 표현식 활용"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-##왜 Regular Expressions를 사용해야 하는가? 
-정규표현식은 파이썬 프로그래밍에서 필수적인 요소입니다. 여러분은 이를 사용하여 문자열에서 원하는 패턴을 찾거나, 특정 문자열의 포맷을 검증하거나, 특정 문자열을 교체할 수 있습니다.
+# 왜 정규 표현식을 사용해야 할까요?
 
-##어떻게 사용하나요? 
-Regular Expressions는 다양한 방법으로 사용할 수 있지만, 가장 기본적인 방법은 "preg_match()" 함수를 사용하는 것입니다. 예를 들어, 다음과 같은 코드를 사용하여 이메일 주소의 유효성을 검증할 수 있습니다.
+정규 표현식은 PHP 프로그래밍에서 빈번하게 사용되는 패턴 매칭 도구로, 문자열에서 특정 패턴을 찾아내거나 변환하는 데에 유용합니다. 이를 통해 좀 더 효율적이고 정확한 작업을 할 수 있게 됩니다.
+
+# 어떻게 정규 표현식을 사용할 수 있을까요?
+
+아래 코드 블록에서는 정규 표현식을 사용하여 이메일 주소에서 유저네임을 추출하는 예제를 보여드리겠습니다.
 
 ```PHP
-$email = "example@example.com";
-if (preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i", $email)) {
-  echo "유효한 이메일 주소입니다.";
-}
+$email = 'user123@example.com';
+$username = preg_match('/^([a-z0-9]+)@([a-z]+\.[a-z]+)$/i', $email, $matches);
+
+echo $matches[1]; // 출력 결과: user123
 ```
-위 코드에서는 정규표현식을 사용하여 이메일 주소의 패턴을 검증하고 있습니다. "preg_match()" 함수는 해당 문자열에서 정규표현식 패턴과 일치하는 부분을 찾아내어, 찾지 못하면 "false"를 반환합니다.
 
-##더 깊이 알아보기 
-패턴 내용이 복잡해지면, 정규표현식 관련 메타문자를 사용하여 더 복잡한 패턴을 정의할 수 있습니다. 또한, "preg_match_all()" 함수를 사용하면 해당 문자열에서 일치하는 모든 패턴을 찾아낼 수도 있습니다.
+위 코드에서는 `preg_match()` 함수를 사용하여 정규 표현식과 문자열을 매칭시키고, `$matches` 배열에서 추출한 유저네임을 출력하였습니다. 이처럼 정규 표현식은 정확한 패턴을 지정하고 해당 패턴에 맞는 문자열을 찾아내는 데에 사용될 수 있습니다.
 
-See Also (더 알아보기) 
-- PHP Manual: 정규표현식 (https://www.php.net/manual/kr/ref.pcre.php)
-- 정규표현식 테스트 사이트 (https://regexr.com/)
-- 정규표현식 관련 온라인 강의 (https://www.inflearn.com/course/%EC%A0%95%EA%B7%9C%ED%91%9C%ED%98%84%EC%8B%9D-regex/dashboard)
+# 깊게 살펴보기
+
+정규 표현식은 조금 복잡하게 느껴질 수 있지만, 많은 PHP 개발자들이 이를 배우고 사용하고 있습니다. 정규 표현식의 패턴을 이해하고 응용할 수 있는 능력은 PHP 프로그래밍에서 매우 유용합니다. 따라서 시간을 내어 몇 가지 패턴 예제를 직접 작성해보며 연습하는 것이 추천됩니다.
+
+# 관련 자료
+
+- [PHP 공식 문서 - 정규 표현식](https://www.php.net/manual/en/book.pcre.php)
+- [정규 표현식을 활용한 패턴 매칭 툴](https://regex101.com/)
+- [정규 표현식에 대한 더 많은 예제 및 설명](https://www.regular-expressions.info/tutorials.html)
+- [정규 표현식을 자세히 다루는 책 "정규 표현식 완전 정복"](https://www.oreilly.com/library/view/regular-expressions-cookbook/9780596802837/)

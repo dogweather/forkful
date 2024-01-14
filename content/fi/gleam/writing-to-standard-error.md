@@ -1,45 +1,41 @@
 ---
-title:                "Gleam: Tietokoneohjelmointi: Kirjoittaminen standardivirheeseen"
+title:                "Gleam: Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheelle"
+simple_title:         "Tietokoneohjelmoinnin artikkeli: Kirjoittaminen standardivirheelle"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi: Miksi kirjoittaa koodia virhesyötteelle?
+# Miksi
 
-Kirjoittaminen virhesyötteelle on tärkeä osa ohjelmointia, sillä se auttaa vianmäärityksessä ja -korjauksessa. Kun sovellus tai ohjelma törmää ongelmaan, se usein tulostaa virhetiedot standardivirhesyötteelle. Tämä auttaa kehittäjiä löytämään ja korjaamaan virheet.
+Miksi joku haluaisi kirjoittaa standardi virheeseen (standard error)?
 
-Kuinka: Koodiesimerkit ja tulosteet ```Gleam...``` lohkoissa
+Vastaus on yksinkertainen - standardi virhe on tärkeä osa koodin suorittamista ja virheilmoitukset on tärkeää havaita mahdollisimman nopeasti. Kirjoittamalla standardi virheeseen, voit nähdä mahdolliset virheet ja havaita mahdolliset ongelmat koodissasi, mikä auttaa sinua korjaamaan ne nopeasti.
 
-Kirjoittaessa koodia, jossa halutaan tulostaa virheet standardivirhesyötteelle, on tärkeää käyttää oikeaa syntaksia ja oikeita funktioita. Tässä on esimerkki koodilohkosta käyttäen Gleam-kieltä:
+# Miten
+
+Standardi virheeseen kirjoittaminen Gleam-ohjelmointikielessä on yksinkertaista. Voit käyttää standardi biblioteekin funktiota ```io:error/1``` ja antaa sille parametriksi merkkijonon, joka sisältää haluamasi virheilmoituksen. Tämä funktio kirjoittaa merkkijonon standardi virheeseen ja aiheuttaa virheen ohjelman suorituksessa. Alla on esimerkki koodista ja sen tulosteesta:
+
+```Gleam
+let virhe = "Tässä on virheilmoitus!"
+let _ = io:error(virhe)
+```
+
+Tuloste:
 
 ```
-Gleam standarderror
-Gleam.stdio.write_stderr("Virheellinen syöte")
+Tässä on virheilmoitus!
 ```
 
-Tämä koodi tulostaa lauseen "Virheellinen syöte" standardivirhesyötteelle. Tämän avulla kehittäjät voivat helposti tunnistaa virheen ja aloittaa sen selvittämisen. On myös tärkeää huomata, että standardivirhesyöte voi tulostaa myös muutakin kuin vain tekstimuotoisia virheilmoituksia.
+# Syväluotaus
 
-Syvennys: Tarkempaa tietoa standardivirhesyötteen kirjoittamisesta
+Vaikka standardi virheeseen kirjoittaminen voi tuntua yksinkertaiselta, se on tärkeä osa koodin suunnittelua ja debuggausta. On tärkeää, että käytät hyviä käytäntöjä ja huolellisesti harkitset mitä ja milloin kirjoitat standardi virheeseen. Huolellinen suunnittelu voi auttaa sinua välttämään tarpeettomia virheitä ja selkiyttää koodisi rakennetta.
 
-Kun ohjelmassa on useita lokitus- tai virheenkäsittelytoimintoja, on tärkeää harkita, mihin nämä tiedot tulostetaan. Joskus voi olla hyödyllistä tulostaa virheilmoitukset eri tiedostoon kuin muut lokitiedot, jotta niitä on helpompi seurata ja käsitellä.
+# Katso myös
 
-Lisäksi tulee huomioida myös virheilmoitusten muotoilu ja selkeys. Yksinkertainen ja selkeä virheilmoitus auttaa kehittäjiä nopeammin tunnistamaan ja korjaamaan ongelman.
-
-Katso myös:
-
-Katso myös näitä linkkejä lisäresursseiksi:
-
-- Gleamin virallinen dokumentaatio standardivirhesyötteen kirjoittamisesta: https://gleam.run/documentation/error_handling.html#standard-error
-- Esimerkkejä ja opetusvideoita Gleam-kielen käytöstä: https://gleam.run/documentation/examples_and_videos.html
-- Lisätietoa virheiden käsittelystä ja lokittamisesta ohjelmoinnissa: https://www.freecodecamp.org/news/error-handling-and-logging-best-practices-for-large-nodejs-and-javascript-applications/ 
-
-Katso myös
-
-Jos haluat oppia lisää Gleam-ohjelmoinnista ja sen ominaisuuksista, suosittelemme tutustumaan seuraaviin linkkeihin:
-
-- Gleam-kielen virallinen verkkosivusto: https://gleam.run/
-- Gleam-kielen yhteisöfoorumi: https://forum.gleam.run/
-- Gleam-kielen GitHub-sivusto: https://github.com/gleam-lang/gleam
+- [Gleam standard bibliteekki](https://gleam.run/stdlib/io.html#io:error/1)
+- [Standardi virheen merkitys ohjelmoinnissa](https://www.lifewire.com/standard-error-definition-4587090)
+- [Vinkkejä virheilmoitusten käsittelyyn](https://www.codinghorror.com/blog/2009/05/should-error-messages-be-humorous.html)

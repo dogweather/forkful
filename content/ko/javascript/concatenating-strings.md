@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/concatenating-strings.md"
 ---
 
@@ -9,44 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-자바스크립트 프로그래밍을 하다 보면 다양한 문자열을 사용해야 할 때가 있습니다. 여러 문자열을 합쳐야 할 때가 있는데, 이때 문자열을 합치는 것을 "concatenating"이라고 합니다. 이것은 프로그램에서 필요한 데이터를 보다 효율적으로 다룰 수 있게 해줍니다. 
+스트링을 결합하는 것을 왜 해야 할까요? 이것은 프로그래밍에서 매우 일반적인 작업입니다. 알아봅시다!
 
 ## 어떻게
 
-자바스크립트에서 문자열을 합치는 방법은 간단합니다. 다음 예제 코드를 살펴보세요.
+스트링을 결합하는 것은 매우 간단합니다. 우리는 `+` 기호를 사용하여 스트링을 하나씩 추가하기만 하면 됩니다. 예를 들어:
 
-```Javascript
-let firstName = "홍";
-let lastName = "길동";
-
-let fullName = firstName + " " + lastName;
-console.log(fullName);
-```
-
-출력은 다음과 같이 나올 것입니다.
-
-```
-홍 길동
-```
-
-위 예제에서는 "+" 기호를 사용해 두 개의 문자열을 합치는 방식을 사용했습니다. 또는 다음과 같이 함수를 사용해서도 문자열을 합칠 수 있습니다.
-
-```Javascript
+```javascript
 let firstName = "박";
-let lastName = "철수";
-
-let fullName = firstName.concat(" ", lastName);
+let lastName = "지연";
+let fullName = firstName + lastName;
 console.log(fullName);
 ```
 
-출력은 마찬가지로 "박 철수"가 될 것입니다.
+결과는 "박지연"이 될 것입니다.
 
-## 깊이 파고들기
+여러 개의 스트링을 결합할 수도 있습니다. 예를 들어:
 
-자바스크립트에서 문자열을 합치는 방법은 간단하지만, 내부적으로는 좀 더 복잡한 이야기가 있습니다. 문자열을 합치면서 컴퓨터는 먼저 문자열을 저장할 메모리 공간을 할당합니다. 그 다음에는 합쳐진 문자열을 저장할 새로운 메모리 공간을 할당하고, 기존의 문자열들을 복사해 넣습니다. 따라서 많은 문자열을 합치는 작업은 성능에 영향을 미칠 수 있으므로 최대한 효율적인 로직을 작성하는 것이 중요합니다.
+```javascript
+let firstPart = "안녕";
+let secondPart = "하세요";
+let thirdPart = "!";
+let greeting = firstPart + secondPart + thirdPart;
+console.log(greeting);
+```
 
-## 관련 링크
+출력은 "안녕하세요!"가 될 것입니다.
 
-[MDN의 문자열 합치기 관련 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-[웹개발자 포럼에서의 문자열 합치기에 대한 토론](https://forum.webdevelopers.kr/t/topic/887)
-[자바스크립트를 활용한 문자열 합치기 예제](https://www.daleseo.com/js-string-concat/)
+## 딥 다이브
+
+스트링을 결합하는 것은 문자열 연산의 일부입니다. 문자열 연산은 문자열을 조작하거나 변환할 때 사용됩니다. 예를 들어, `+` 기호를 사용하여 스트링 결합 외에도, 그 외에도 문자열 길이를 알 수 있는 `length` 속성이 있습니다. 그리고 문자열의 일부를 추출하는 `substring()` 메소드 등 여러 가지 작업을 할 수 있습니다.
+
+## 또 보기
+
+* [JavaScript 문자열 연산 가이드](https://www.w3schools.com/js/js_string_methods.asp)
+* [JavaScript에서 스트링 결합하기](https://www.javatpoint.com/javascript-string-concat)
+* [스트링 연산에 대한 MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)

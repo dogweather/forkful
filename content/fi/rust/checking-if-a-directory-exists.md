@@ -1,52 +1,49 @@
 ---
-title:                "Rust: Tarkista onko hakemisto olemassa"
+title:                "Rust: Tarkistetaan, onko hakemistoa olemassa"
+simple_title:         "Tarkistetaan, onko hakemistoa olemassa"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa hakemisto löytyy
-On monia syitä, miksi haluat tarkistaa, onko tietty hakemisto olemassa Rust-ohjelmassasi. Esimerkiksi voit haluta varmistaa, että hakemisto on luotu ennen tiedostojen tallentamista sinne tai määrittää ohjelman käyttäytymisen, jos hakemisto puuttuu. Onneksi Rust tarjoaa helpon tavan tarkistaa, onko hakemisto olemassa.
+## Miksi tarkistaa, onko hakemistoa olemassa?
 
-## Miten tehdä se
-Rustissa voit käyttää `PathBuf`-luokkaa tarkistaaksesi, onko hakemisto olemassa. Ensinnäkin varmista, että tuot `std::path::PathBuf` luokan käyttöön:
+Hakemisto on tiedostojen kokoelma, joka voi sisältää esimerkiksi ohjelmien tai dokumenttien tiedostoja. On tärkeää tietää, onko hakemistoa olemassa, jotta voidaan varmistaa, että tarvittavat tiedostot ovat saatavilla ja ohjelma voi toimia oikein.
 
-```rust
-use std::path::PathBuf;
-```
+## Kuinka tarkistaa, onko hakemisto olemassa
 
-Sitten voit luoda uuden `PathBuf` -olion antamalla sille polun:
+```Rust
+use std::fs;
 
-```rust
-let polku = PathBuf::from("polku/hakemistoon");
-```
+fn main() {
+    let result = fs::metadata("hakemisto");
 
-Nyt kun meillä on `PathBuf` -olio, voimme käyttää `exists` -metodia tarkistaaksemme, onko hakemisto olemassa:
-
-```rust
-if polku.exists() {
-    println!("Hakemisto on olemassa!");
-} else {
-    println!("Hakemistoa ei löytynyt.");
+    match result {
+        Ok(metadata) => {
+            if metadata.is_dir() {
+                println!("Hakemisto on olemassa!");
+            } else {
+                println!("Hakemistoa ei ole olemassa!");
+            }
+        },
+        Err(_e) => println!("Hakemistoa ei ole olemassa!"),
+    }
 }
 ```
 
-## Syvällinen käsittely
-Vaikka `exists` -metodi onkin helppo käyttää, se ei välttämättä toimi odotetulla tavalla. Jos hakemisto ei ole luotu, mutta sillä on sama nimi kuin olemassa olevalla tiedostolla, `exists` -metodi palauttaa `true` -arvon, joka voi aiheuttaa ongelmia. Tämän välttämiseksi voit käyttää `is_dir` -metodia, joka palauttaa `true` vain, jos käsiteltävä polku on hakemisto.
+Kun käytämme `fs::metadata` -funktiota ja annamme sille hakemistopolun parametrina, se palauttaa `Ok`-arvon, jos hakemisto on olemassa. Voimme sitten käyttää `is_dir()` -metodia tarkistaaksemme, onko se todella hakemisto. Jos hakemisto ei ole olemassa, funktio palauttaa `Err`-arvon.
 
-```rust
-if path.is_dir() {
-    println!("Hakemisto on olemassa!");
-} else {
-    println!("Hakemistoa ei löytynyt.");
-}
-```
+## Syvempi sukellus
 
-Voit myös käyttää `is_file` -metodia varmistaaksesi, että polku on tiedosto eikä esimerkiksi tunnelukon tiedosto.
+`fs::metadata` -funktion sijaan voit myös käyttää `fs::metadata()` -funktiota, joka palauttaa `Ok`-arvon vain silloin, kun hakemisto on olemassa. Muussa tapauksessa se palauttaa virheen.
+
+Voit myös käyttää `exists()` -metodia tarkistaaksesi, onko hakemisto olemassa ilman, että käytät `metadata()` -funktiota. Tämä metodi palauttaa totuusarvon sen perusteella, onko hakemisto olemassa vai ei.
 
 ## Katso myös
-- [Rustin virallinen dokumentaatio PathBuf-luokasta](https://doc.rust-lang.org/std/path/struct.PathBuf.html)
-- [Rustin virallinen dokumentaatio Path-luokasta](https://doc.rust-lang.org/std/path/struct.Path.html)
-- [Rustin opetusohjelma hakemistojen hallinnasta](https://doc.rust-lang.org/book/ch12-03-improving-error-handling-and-modularity.html)
+
+- [Rustin tiedostonhallinta](https://doc.rust-lang.org/std/fs/)
+- [Hakemisto-operaatiot Rustissa](https://blog.legacyteam.info/2018/12/14/directory-operations-in-rust/)
+- [Hallitse tiedostojärjestelmääsi Rustin avulla](https://medium.com/@fardjad/handle-your-filesystem-with-rust-e0e7a0b92deb)

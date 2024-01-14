@@ -1,54 +1,60 @@
 ---
 title:                "Bash recipe: Reading a text file"
+simple_title:         "Reading a text file"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why: The Importance of Reading a Text File
+## Why
 
-Text files are an essential part of programming, as they serve as a medium for storing and manipulating data. Whether you are a beginner or an experienced programmer, understanding how to read a text file is a necessary skill. By learning this, you can easily access and modify important information without having to manually input it every time.
+Reading a text file may seem like a simple task, but it is a crucial skill to have in any kind of programming. It allows you to access and manipulate data stored in a text format, which is commonly used for various purposes such as configuration files, data storage, and more.
 
-## How To: Reading a Text File in Bash
+## How To
 
-Reading a text file in Bash is a straightforward process that involves a few simple steps. First, we need to open the file using a text editor, such as Vim or Nano. Then, we can use the `cat` command to display the contents of the file in the terminal. Let's take a look at an example:
-
-```Bash
-# Open the file using Vim
-vim file.txt
-
-# Display the contents of the file
-cat file.txt
-```
-
-The output of the `cat` command will show the entire text file in the terminal. However, in some cases, we may only want to read a specific line or a portion of the file. To do this, we can use the `head` or `tail` command, which allows us to read the first or last few lines of the file, respectively. Here's an example:
+In Bash programming, reading a text file can be done using the `cat` command. This command takes in the name of the text file as an argument and outputs the contents of the file to the terminal. Let's say we have a text file called "example.txt" with the following content:
 
 ```Bash
-# Read the first 5 lines of the file
-head -n 5 file.txt
-
-# Read the last 10 lines of the file
-tail -n 10 file.txt
+Hello World!
+This is an example text file.
 ```
 
-These commands are useful for quickly checking the contents of a file without having to open it in a text editor.
-
-## Deep Dive: Understanding the `cat` Command
-
-The `cat` command, short for concatenate, is used to display the contents of a file in the terminal. It can also be used to combine multiple files into one. In addition, the `cat` command has several options that can be used to modify its behavior, such as `-n` to number the lines or `-E` to display an end-of-line character. You can learn more about these options by using the `man cat` command in the terminal.
-
-Another useful command is `grep`, which is used to search for specific patterns within a file. For example, if we wanted to find all occurrences of the word "apple" in a text file, we can use the following command:
+To read this file, we can use the `cat` command as follows:
 
 ```Bash
-grep "apple" file.txt
+cat example.txt
 ```
 
-This will display all lines in the file that contain the word "apple", helping us quickly find important information.
+This will output the contents of the file to the terminal, which in this case will be:
+
+```Bash
+Hello World!
+This is an example text file.
+```
+
+We can also use the `read` command to read a text file line by line. This command can be used in a loop to read and process data from a text file. Let's see an example of this in action:
+
+```Bash
+while read line; do
+	echo "The line says: $line"
+done < example.txt
+```
+
+Running this code will output each line of the text file with the added prefix "The line says:".
+
+## Deep Dive
+
+Reading a text file can be done in multiple ways. As shown above, the `cat` and `read` commands are the most popular ways to read a text file in Bash. However, there are other commands and options available as well.
+
+For example, the `head` and `tail` commands allow you to read the first or last few lines of a text file, respectively. The `less` command allows you to view the contents of a text file with the ability to scroll and search through the file. And the `grep` command can be used to search for specific words or patterns in a text file.
+
+Additionally, Bash also allows you to read a text file directly into a variable, using the `$(<filename)` syntax. This can be useful when you need to use the contents of a text file in your code.
 
 ## See Also
 
-- [Bash Text Processing](https://www.gnu.org/software/bash/manual/html_node/Text-Processing.html)
-- [Vim Documentation](https://www.vim.org/docs.php)
-- [Linux Command Line](https://www.linuxcommand.org/)
+- [Bash Reference Manual - Basic Concepts](https://www.gnu.org/software/bash/manual/html_node/Basic-Shell-Concepts.html)
+- [Linux Command Library - Bash Commands](https://www.linuxcommand.org/lc3_learning_the_shell.php)
+- [Bash Scripting Tutorial - Working with Files](http://www.panix.com/~elflord/unix/bash-tute.html#3.1)

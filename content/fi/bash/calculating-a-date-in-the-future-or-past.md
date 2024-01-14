@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Tulevan tai menneen päivän laskeminen"
+title:                "Bash: Päivän laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Päivän laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,30 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Bash-ohjelmointikieli voi tuntua aluksi pelottavalta ja monimutkaiselta, mutta sen avulla on mahdollista suorittaa monia hyödyllisiä tehtäviä. Yksi näistä on päivämäärien laskeminen tulevaisuutta tai menneisyyttä varten. Tämä voi olla hyödyllistä esimerkiksi laskiessa eräpäivää tai suunnitellessa tulevia tapahtumia.
+Tässä blogipostauksessa selitämme, miksi olisi hyödyllistä oppia laskemaan päivämääriä tulevaisuudessa tai menneisyydessä.
 
-## Kuinka tehdä se
+## Miten
 
-Päivämäärien laskeminen Bashissa onnistuu helposti käyttämällä `date` -komennolla. Tämä komento antaa mahdollisuuden käsitellä päivämääriä eri muodoissa ja laskea niitä haluttuun suuntaan. Käytännössä tätä varten tarvitsemme kolme asiaa: lähtöpäivämäärän, päivien määrän, ja halutun suunnan (tuleva vai menneisyyteen).
-
-- Lähtöpäivämäärä määritellään muodossa `YYYY-MM-DD`.
-- Päivien määrä ilmoitetaan lisäämällä tai vähentämällä kokonaislukuja `+` tai `-` -merkkien perään.
-- Suunta määritellään viimeisenä parametrina `day` tai `days`.
+Voit helposti laskea tiettyä päivämäärää tulevaisuudessa tai menneisyydessä käyttämällä Bash-ohjelmointikieltä. Alla olevat koodilohkot näyttävät esimerkin tulevasta ja menneestä päivästä.
 
 ```Bash
-# Laske päivämäärä 10 päivää tulevaisuuteen
-date -d "2021-10-25 + 10 days"
+# Laske päivämäärä kaksi viikkoa tulevaisuudessa
+date -d "+2 weeks"
+
+Tulostus: Fri May 28 00:00:00 EEST 2021
+
+# Laske päivämäärä yksi vuosi ja kuusi kuukautta menneisyydessä
+date -d "-1 year -6 months"
+
+Tulostus: Sun Nov 29 00:00:00 EET 2019
 ```
 
-Tämän komennon tulosteena saamme uuden päivämäärän, joka tässä tapauksessa on `2021-11-04`.
+Voit myös asettaa tietyn päivämäärän, josta haluat laskea eteen- tai taaksepäin.
 
-## Syvemmälle aiheeseen
+```Bash
+# Laske päivämäärä viisi päivää tulevaisuudessa
+date -d "2021-04-25 +5 days"
 
-`date` -komennolla on paljon muitakin vaihtoehtoja, joilla voit muokata päivämäärien laskemista haluamallasi tavalla. Voit esimerkiksi käyttää eri aikavyöhykkeitä, näyttää viikonpäivän tai vuoden päivän ja paljon muuta. Suosittelemme tutustumaan tarkemmin `date` -komennon manuaalisivuihin (`man date`) saadaksesi kaiken irti tästä kätevästä työkalusta.
+Tulostus: Fri Apr 30 00:00:00 EEST 2021
+
+# Laske päivämäärä kolme kuukautta ja kaksi viikkoa menneisyydessä
+date -d "2019-08-10 -3 months -2 weeks"
+
+Tulostus: Wed Apr 24 00:00:00 EEST 2019
+```
+
+## Syvällinen sukellus
+
+Bashin `date` -komento hyödyntää ISO 8601-standardin mukaista päivämäärä- ja aikamuotoilua. Voit lukea lisää siitä [täältä](https://en.wikipedia.org/wiki/ISO_8601). Lisäksi voit tarkastella `man date` -komentoa saadaksesi lisätietoja eri vaihtoehdoista, joita voit käyttää päivämäärien laskemiseen.
+
+Samalla tavalla voit myös käyttää muita Bashin sisäänrakennettuja funktioita, kuten `grep`, `sed` ja `awk`, muokkaamaan tiettyjä päivämääriä ja tulostamaan haluamasi formaatin.
 
 ## Katso myös
 
-- [Bashin viralliset dokumentaatiot](https://www.gnu.org/software/bash/manual/)
-- [Date-komennon manuaalisivu](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Date-Manipulation)
-
-Kiitos lukemisesta ja onnea Bash-ohjelmointisi kanssa!
+- [Date manuaalisivu](https://man7.org/linux/man-pages/man1/date.1.html)
+- [ISO 8601-standardi](https://en.wikipedia.org/wiki/ISO_8601)

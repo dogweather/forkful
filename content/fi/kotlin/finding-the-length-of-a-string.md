@@ -1,47 +1,42 @@
 ---
 title:                "Kotlin: Merkkijonon pituuden löytäminen"
+simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+# Miksi etsiä merkkijonon pituutta?
 
-Kotlin on monikäyttöinen ja helposti opittava ohjelmointikieli, joka on tullut suosituksi erityisesti Android-sovellusten kehittämisessä. Yksi tärkeimmistä taidoista ohjelmointikielen hallitsemisessa on kyky muokata ja käsitellä merkkijonoja. Merkkijonojen pituuden laskeminen on yksi näistä taidoista, joka on hyödyllinen monissa ohjelmoinnin tehtävissä.
+Merkkijonon pituuden etsiminen on yksi yleisimmistä ohjelmointitehtävistä, ja sillä on useita käyttötarkoituksia. Jotkut esimerkit voivat olla merkkijonojen validointi, tietokannan hakujen rajaaminen tai merkkijonojen muokkaaminen erilaisiin tarkoituksiin. Tässä blogikirjoituksessa keskitymme oppimaan, kuinka voit löytää merkkijonon pituuden Kotlin-ohjelmointikielellä.
 
-## Miten?
+## Miten löytää merkkijonon pituus Kotlinilla?
 
-Merkkijonojen pituuden laskeminen Kotlinissa on helppoa. Voit käyttää `length` -funktiota, joka palauttaa merkkijonon pituuden. Alla on esimerkki:
+```kotlin
+val merkkijono = "Tervetuloa blogiin"
+println("Merkkijonon pituus on: ${merkkijono.length}")
+```
+Tässä esimerkissä käytämme merkkijonon `length`-ominaisuutta, joka palauttaa merkkijonon pituuden. Tulosteena näemme "Merkkijonon pituus on: 20", koska kyseisessä merkkijonossa on 20 merkkiä. On tärkeää huomata, että merkkijonon pituusmittari alkaa aina nollasta.
 
-```Kotlin
-val sana = "Tervetuloa"
-println(sana.length) //tulostaa 10
+Toinen tapa löytää merkkijonon pituus on käyttää `count()`-funktiota:
+
+```kotlin
+val merkkijono = "Tervetuloa blogiin"
+println("Merkkijonon pituus on: ${merkkijono.count()}")
 ```
 
-Voit myös laskea merkkijonojen pituuden käyttämällä `count` -funktiota. Se palauttaa merkkijonon merkkien määrän ainoastaan, eikä huomioi esimerkiksi välilyöntejä. Alla on esimerkki:
+Yllä olevassa esimerkissä `count()`-funktio laskee kaikki merkit merkkijonossa ja palauttaa niiden lukumäärän.
 
-```Kotlin
-val lause = "Tämä on esimerkkilause"
-println(lause.count()) //tulostaa 22
-```
+## Syväluotaus
 
-Voit myös käyttää `length` ja `count` yhdessä saadaksesi merkkien ja välilyöntien lukumäärän. Esimerkiksi:
+Kuten aikaisemmin mainitsimme, merkkijonon pituuden löytäminen on yleinen tehtävä ohjelmoinnissa. Yleensä ohjelmoijana sinun tulee muistaa, että merkkijonot ovat muuttumattomia, eli niitä ei voi muokata. Siksi, aina kun teet muutoksia merkkijonoihin, luot todellisuudessa uuden merkkijonon. Tämä voi aiheuttaa haasteita muistinhallinnassa ja tehokkuudessa, jos käsittelet suuria määriä dataa.
 
-```Kotlin
-val lause = "Tämä on esimerkkilause"
-val pituus = lause.length + lause.count()
-println(pituus) //tulostaa 24
-```
-
-## Syvemmälle
-
-Kotlinin merkkijonojen pituuden laskeminen perustuu `CharSequence` -rajapintaan, joka antaa pääsyn merkkijonon elementteihin ja niiden määrään. Tämä tarkoittaa sitä, että merkkijonojen pituuden laskeminen ei riipu pelkästään `length` tai `count` -funktioista, vaan voit myös käyttää muita `CharSequence` -rajapinnan tarjoamia toimintoja.
-
-Merkkijonojen pituuden laskeminen voi myös olla hyödyllistä silloin, kun haluat esimerkiksi rajata käyttäjän antaman merkkijonon tiettyyn pituuteen, tai tarkistaa onko merkkijono riittävän pitkä ennen sen käyttämistä.
+On myös tärkeää muistaa eri kieliversioiden vaikutus merkkijonon pituuteen. Tietyt kirjaimet ja merkit voivat olla eri pituisia eri kieliversioissa, mikä voi vaikuttaa mittaukseen. Esimerkiksi ääkköset voivat olla kaksi merkkiä pitkiä joissain kieliversioissa ja yksi merkki pitkiä toisissa.
 
 ## Katso myös
 
-- [Kotlinin merkkijonojen käsittely](https://kotlinlang.org/docs/strings.html)
-- [Kotlinin `CharSequence` -rajapinta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/)
+- [Kotlinin virallinen dokumentaatio merkkijonojen käsittelystä](https://kotlinlang.org/docs/reference/strings.html)
+- [Stack Overflow -vastaus merkkijonon pituudesta Kotlinilla](https://stackoverflow.com/questions/39680310/get-the-length-of-a-string-in-kotlin/39680372)

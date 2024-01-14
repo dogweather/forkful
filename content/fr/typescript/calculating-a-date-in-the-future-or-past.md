@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,36 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Le calcul d'une date dans le futur ou le passé peut être très utile pour de nombreux types de programmation, tels que les applications de planification ou les rappels automatiques. Cela vous permet également de personnaliser votre application pour afficher des dates spécifiques à vos besoins.
+Calculer une date dans le futur ou dans le passé peut être utile dans de nombreuses situations en programmation. Cela permet de planifier des tâches ou des événements à venir ou de manipuler des données temporelles dans une application.
 
 ## Comment faire
 
+Pour calculer une date dans le futur ou dans le passé en TypeScript, il existe plusieurs méthodes. La plus simple est d'utiliser la classe `Date` et ses méthodes `getDate()` et `setDate()` pour incrémenter ou décrémenter une date en fonction de vos besoins.
+
 ```TypeScript
-// Calculer une date dans le futur
-const currentDate = new Date();
-const futureDate = new Date();
-futureDate.setDate(currentDate.getDate() + 7); // ajouter 7 jours
-console.log(futureDate) // affiche la date dans une semaine à partir de maintenant
+// Définir la date actuelle
+let date = new Date();
 
-// Calculer une date dans le passé
-const pastDate = new Date();
-pastDate.setDate(currentDate.getDate() - 14); // soustraire 14 jours
-console.log(pastDate) // affiche la date il y a deux semaines
+// Calculer la date dans 7 jours
+date.setDate(date.getDate() + 7);
+console.log(date); // Output: Sat Jul 24 2021 15:00:00 GMT+0200 (Central European Summer Time)
 
-// Calculer une date à partir d'une date spécifique
-const specificDate = new Date('2021-01-01');
-specificDate.setDate(specificDate.getDate() + 30); // ajouter 30 jours
-console.log(specificDate); // affiche une date dans un mois à partir du 1er janvier 2021
+// Calculer la date dans 1 an
+date.setFullYear(date.getFullYear() + 1);
+console.log(date); // Output: Sun Jul 24 2022 15:00:00 GMT+0200 (Central European Summer Time)
 ```
 
-## Plongée en profondeur
+Vous pouvez également utiliser des bibliothèques tierces comme Moment.js qui offre des fonctionnalités plus avancées pour la manipulation des dates.
 
-Lorsque vous calculez des dates dans le futur ou le passé en TypeScript, il est important de comprendre que le type de données utilisé pour les dates est un objet "Date". Cela signifie que vous pouvez utiliser des méthodes telles que .getDate() pour obtenir le jour d'une date spécifique, .getMonth() pour obtenir le mois et .getFullYear() pour obtenir l'année. Vous pouvez également utiliser les méthodes .setDate(), .setMonth() et .setFullYear() pour modifier ces valeurs.
+## Plongée profonde
 
-Une chose importante à retenir est que TypeScript compte les mois à partir de 0, ce qui signifie que le mois de janvier est représenté par 0 et le mois de février par 1. Cela peut causer des erreurs si vous n'êtes pas conscient de cela lors du calcul de dates.
+Il est important de prendre en compte les différents fuseaux horaires lors de la manipulation de dates. En TypeScript, vous pouvez utiliser la classe `Intl.DateTimeFormat` pour afficher les dates dans le fuseau horaire de votre choix.
+
+```TypeScript
+// Définir la date actuelle
+let date = new Date();
+
+// Afficher la date en utilisant le fuseau horaire UTC
+const options = { timeZone: "UTC" };
+const formatter = new Intl.DateTimeFormat("fr-FR", options);
+console.log(formatter.format(date)); // Output: 2021-07-17T13:00:00.000Z
+```
+
+Il est également important de manipuler les dates avec précision, en prenant en compte les années bissextiles et les différents nombres de jours dans chaque mois. Pour cela, vous pouvez utiliser la bibliothèque date-fns qui offre des fonctions de manipulation des dates plus précises.
 
 ## Voir aussi
 
-- [Documentation officielle de TypeScript sur les objets Date](https://www.typescriptlang.org/docs/handbook/standard-objects.html#date)
-- [Calculer des dates dans le futur et le passé en JavaScript](https://www.w3schools.com/js/js_dates.asp)
-- [Guide complet pour travailler avec des dates en TypeScript](https://felixgerschau.com/typescript-date/)
+- [Manipulating Dates in TypeScript](https://devblogs.microsoft.com/typescript/manipulating-dates-in-typescript/)
+- [Handling Time and Date in TypeScript Applications](https://blog.greenroots.info/handling-time-&-date-in-typescript-applications)
+- [Moment.js Documentation](https://momentjs.com/docs/)
+- [date-fns Documentation](https://date-fns.org/docs/)

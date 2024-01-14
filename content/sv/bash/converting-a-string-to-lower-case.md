@@ -1,40 +1,44 @@
 ---
-title:                "Bash: Omvandla en sträng till gemener"
+title:                "Bash: Konvertera en sträng till gemener"
+simple_title:         "Konvertera en sträng till gemener"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-Det finns många anledningar till varför du skulle vilja konvertera en sträng till gemener (lower case) i Bash-programmering. En möjlig anledning kan vara för att jämföra strängar på ett mer enhetligt sätt, oavsett vilken stor bokstav de innehåller.
+Att konvertera en sträng till gemener (lower case) kan vara användbart i många olika situationer inom Bash-programmering. Det kan göra det enklare att jämföra strängar, söka efter specifika delar av en sträng eller helt enkelt göra det mer läsvänligt.
 
-## Så här gör du
+##Så här gör du
 
-För att konvertera en sträng till gemener i Bash kan du använda kommandot `tr [a-z] [A-Z]` följt av det du vill konvertera. Till exempel: 
-
-```Bash
-echo "HELLO WORLD" | tr [A-Z] [a-z]
-```
-
-Detta kommer att ge utdatan "hello world". Om du vill spara utdatan i en variabel kan du använda följande kod:
+Att konvertera en sträng till gemener i Bash är enkelt med hjälp av kommandot "tr" (translate). Syntaxen för detta kommando är "tr [OLD] [NEW]", där [OLD] är de tecken du vill byta ut och [NEW] är de tecken du vill byta ut dem med. I vårt fall vill vi byta ut alla versala (upper case) tecken i strängen med motsvarande gemena tecken. Så här ser det ut i praktiken:
 
 ```Bash
-name="JOHN DOE"
-lowercase_name=$(echo $name | tr [A-Z] [a-z])
-echo $lowercase_name
+echo "DETTA ÄR EN STRÄNG" | tr '[:upper:]' '[:lower:]'
 ```
 
-Detta kommer att ge utdatan "john doe". Det är viktigt att notera att `tr`-kommandot bara konverterar bokstäver i det engelska alfabetet. Om du har specialtecken eller bokstäver från andra språk kan du behöva använda en annan metod för konvertering.
+Det första steget är att skriva ut strängen (echo) och sedan pipa resultatet till tr-kommandot. I [OLD] anger vi "[:upper:]", vilket betyder att vi vill byta ut alla versala tecken. I [NEW] anger vi "[:lower:]", vilket betyder att vi vill ersätta dem med motsvarande gemena tecken. Om vi kör detta kommer utmatningen (output) att vara "detta är en sträng" - nu har alla versala tecken omvandlats till gemena.
 
-## Djupdykning
+Ett annat sätt att konvertera en sträng till gemener är med hjälp av "sed" (stream editor). I detta fall använder vi sed för att göra en global ersättning av alla versala tecken till gemena tecken i vår sträng. Så här kan det se ut:
 
-Bakom kulisserna använder `tr`-kommandot sig av ASCII-tabellen för att byta ut stora bokstäver mot små bokstäver. ASCII står för American Standard Code for Information Interchange och är ett vanligt använd format för att representera text i datorer. Varje bokstav har en numerisk värde som `tr`-kommandot refererar till för konverteringen.
+```Bash
+echo "DETTA ÄR EN STRÄNG" | sed 's/[A-Z]/[a-z]/g'
+```
 
-## Se även
+Det första steget är samma som tidigare, vi skriver ut strängen och pipar den till sed-kommandot. I [s/OLD/NEW/] anger vi vilken ersättning vi vill göra, och med "g" markerar vi att vi vill göra detta globalt (alltså för alla förekomster av versala tecken i strängen).
 
-- [Officiell dokumentation för `tr`](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html#tr-invocation)
-- [Mer information om ASCII-tabellen](https://www.ascii-code.com/)
-- [En guide om andra sätt att konvertera bokstäver i Bash](https://askubuntu.com/questions/488875/is-there-a-way-to-create-an-alphabetically-rearranged-list-of-all-the-english-l)
+##Djupdykning
+
+Nu när vi vet hur vi kan konvertera en sträng till gemener i Bash, låt oss titta lite närmare på vad som faktiskt händer bakom kulisserna. När vi använder kommandot "tr" byter vi egentligen ut tecknen baserat på deras ASCII-värden. Så varje versalt tecken (t.ex. A) har ett numeriskt värde, det är detta värde som tr använder för att byta ut det korrekta gemena tecknet (i vårt fall a). Detta sker tack vare tabellen "charmap" som finns i Bash.
+
+Med "sed" använder vi en regelbaserad ersättning (substitution) för att byta ut tecken. Detta innebär att vi alltså anger en regel för vad som ska bytas ut mot vad, istället för att bara använda ASCII-värden. Detta ger oss mer flexibilitet och möjlighet att göra mer avancerade ersättningar.
+
+##Se även
+
+- tr Command i Bash: https://www.tutorialspoint.com/unix_commands/tr.htm
+- sed Command i Bash: https://www.tutorialspoint.com/unix_commands/sed.htm
+- ASCII-tabellen: https://en.wikipedia.org/wiki/ASCII

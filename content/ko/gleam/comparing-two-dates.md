@@ -1,47 +1,49 @@
 ---
 title:                "Gleam: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-두 개의 날짜를 비교하는 것이 왜 중요한지 궁금하신가요? 그렇다면 이 블로그 포스트를 읽어보세요! 두 날짜를 비교하는 방법을 알려주고, 왜 이를 활용하는 지에 대해 소개해 드릴 것입니다.
+# 왜
 
-## 어떻게
-두 개의 날짜를 비교하는 방법은 매우 간단합니다. 먼저, 두 날짜를 각각 변수에 할당합니다. 그 다음 "```Gleam
-```" 코드 블록 안에 `gleam/date` 에서 제공하는 `compare` 함수를 사용하여 두 날짜를 비교해보세요. 예를 들면 아래와 같습니다.
+우리는 일상 생활에서 종종 두 가지 날짜를 비교해야 할 때가 있습니다. 예를 들어, 어떤 사건이 발생한 시간을 계산하거나 마감일을 확인하기 위해선 두 날짜 간의 차이를 알아야 할 수도 있습니다. 이러한 상황에서 Gleam 프로그래밍 언어를 사용하여 두 날짜를 비교하는 방법에 대해 알아보겠습니다.
 
+# 어떻게
+
+먼저, ```gleam/datetime``` 모듈을 임포트해야 합니다. 그런 다음, 비교하려는 두 날짜를 각각 ```datetime.Datetime``` 구조체에 저장합니다. 예를 들어, 2021년 7월 1일과 2021년 6월 1일을 비교하려면 다음과 같이 코드를 작성할 수 있습니다.
+
+```gleam
+import gleam/datetime
+
+let before = datetime.make(2021, 7, 1)
+let after = datetime.make(2021, 6, 1)
 ```
-Gleam
-import gleam/date
 
-let today = date.now()
-let yesterday = date.add_days(today, -1)
+이제 ```before```와 ```after```의 차이를 계산하여 일(day) 단위로 출력하려면, ```before - after``` 식을 사용하면 됩니다.
 
-date.compare(today, yesterday)
+```gleam
+let days = before - after
 ```
-위 코드는 오늘 날짜와 어제 날짜를 비교하고 있습니다. `compare` 함수는 첫 번째 매개변수가 두 번째 매개변수보다 크면 `Greater`를, 작으면 `Less`를, 같으면 `Equal`을 반환합니다. 코드를 실행해보면 `Less`가 출력될 것입니다.
 
-## 깊게 파보기
-두 개의 날짜를 비교할 때는 더 많은 정보가 필요할 수도 있습니다. 예를 들어 두 날짜 사이의 차이를 구하고 싶다면 어떻게 해야할까요? 이를 위해서는 `compare` 함수를 사용한 다음 `diff` 함수를 사용합니다.
+이렇게 하면 ```days``` 변수에 값으로 일(day) 단위의 차이가 저장됩니다. 따라서 출력 결과는 ```30```이 될 것입니다. Gleam은 날짜 비교를 위해 추가적인 라이브러리나 기능을 제공하지 않기 때문에 간단하면서도 효율적인 비교가 가능합니다.
 
-```
-Gleam
-import gleam/date
+# 깊이 파고들기
 
-let today = date.now()
-let yesterday = date.add_days(today, -1)
+Gleam의 날짜와 시간 모듈은 Erlang 라이브러리를 기반으로 구현되기 때문에 ```erlang/calendar``` 모듈과 동일한 메소드와 구조를 공유합니다. 따라서 Gleam에서도 Erlang으로 날짜와 시간을 다루듯이 다룰 수 있습니다.
 
-date.diff(today, yesterday)
-```
-위 코드는 오늘 날짜와 어제 날짜 사이의 차이를 일수로 반환합니다. 만약 날짜 사이의 차이를 시간 단위로 구하고 싶다면 `diff` 함수의 두 번째 매개변수에 `Time` 타입을 추가해주면 됩니다.
+Gleam에서는 또한 ```gleam/datetime``` 모듈의 빠른 비교를 위해 엑셀 1900날짜 기준을 사용하므로 정확한 비교가 필요한 경우에는 Erlang 라이브러리를 직접 사용하는 것이 더 좋은 선택일 수 있습니다. 또한 Gleam이 Erlang과 같은 불변성(immutability)을 유지하기 때문에 날짜와 시간을 다루는 과정에서 발생할 수 있는 버그를 방지할 수 있습니다.
 
-## 더 읽어보기
-더 많은 정보를 원하신다면 아래 링크를 참고해보세요.
+# 관련 링크
 
-- [Gleam 공식 문서](https://gleam.run/)
-- [Gleam Date 라이브러리 문서](https://gleam.run/modules/date)
-- [Gleam 공식 Github 레포지토리](https://github.com/gleam-lang/gleam)
+- [공식 Gleam 날짜 및 시간 문서](https://gleam.run/modules/gleam/datetime.html)
+- [Erlang 달력 문서](https://erlang.org/doc/man/calendar.html)
+- [Erlang에서 날짜 비교하기](https://9pmyohjewdum.medium.com/erlang-how-to-compare-dates-d1222b58c61c)
+
+# 참고
+
+이 글은 Gleam 공식 문서에서도 언급되는 내용을 바탕으로 작성되었습니다. 날짜와 시간을 다루는 기능은 Gleam과 Erlang 모두에서 동일하게 작동하기 때문에 해당 언어의 문서를 함께 참고하는 것을 추천합니다.

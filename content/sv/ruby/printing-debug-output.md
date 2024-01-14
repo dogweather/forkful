@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Skriv ut felsökningsutdata"
+title:                "Ruby: Utskrift av felsökningsresultat"
+simple_title:         "Utskrift av felsökningsresultat"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/printing-debug-output.md"
 ---
 
@@ -9,43 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Ibland när du programmerar i Ruby kan det hända att du stöter på buggar eller fel i din kod. För att hitta dessa fel och kunna åtgärda dem behöver du ett sätt att visa vad som händer i din kod under körningen. Det är där utskrift av debug information kommer in.
+Att skriva debug-utskrifter är en viktig del av en programmerares arbetsflöde. Genom att lägga in utskrifter i din kod kan du enkelt identifiera och åtgärda potentiella fel och problem under utvecklingsprocessen. Det är ett effektivt sätt att få en djupare förståelse för hur din kod fungerar och att hitta eventuella buggar.
 
-## Så här gör du
+## Hur man gör
 
-Det finns ett enkelt sätt att skriva ut debug information i Ruby genom att använda metoden `puts()`. Du kan lägga till `puts()` i olika delar av din kod för att visa information om vad som händer vid varje steg.
-
-```Ruby
-puts("Debug utskrift här")
-```
-
-Du kan också använda `p()` metoden för att skriva ut mer detaljerad information om ett specifikt objekt.
+Att skriva ut debug-utskrifter i Ruby är enkelt. Du kan använda `puts` eller `p` för att skriva ut variabler och värden. Till exempel:
 
 ```Ruby
-p(objekt)
+# Definiera en variabel
+num = 10
+
+# Skriv ut variabelns värde
+puts num # Output: 10
+
+# Skriv ut variabelns typ
+p num.class # Output: Integer
 ```
 
-Även om dessa metoder är enkla kan de vara mycket hjälpsamma när du behöver förstå vad som händer i din kod.
+Du kan också använda `pp` för att få bättre formaterade utskrifter eller `inspect` för att få en sträng representation av ett objekt.
+
+```Ruby
+# Definiera en hash
+hash = { key: "value" }
+
+# Skriv ut hashen med pp
+pp hash
+# Output: {:key=>"value"}
+```
 
 ## Djupdykning
 
-Det finns flera sätt att använda utskrift av debug information i Ruby. En annan metod som kan vara användbar är att använda `inspect()` metoden för att få en detaljerad lista på alla attribut och värden för ett objekt.
+Det finns många anledningar till varför det är viktigt att skriva debug-utskrifter i din kod. Först och främst ger det dig möjlighet att testa olika delar av koden och se hur olika värden påverkar dess beteende. Detta är speciellt användbart när du stöter på oväntade resultat eller fel i din kod.
 
-```Ruby
-puts(objekt.inspect)
-```
+Utöver det kan debug-utskrifter också hjälpa dig att förstå hur dina metoder och funktioner samverkar med varandra. Genom att lägga in utskrifter i början och slutet av en funktion kan du se vilka värden som läses och returneras, vilket kan hjälpa dig att identifiera eventuella buggar.
 
-Du kan också använda `gets()` metoden för att få input från användaren och sedan skriva ut det för att kontrollera om värdet är korrekt.
-
-```Ruby
-input = gets()
-puts("Användarens input var: #{input}")
-```
-
-En annan fördel med att använda utskrift av debug information är att det kan hjälpa dig att få en bättre förståelse för hur din kod fungerar och hjälpa dig att förbättra den.
+En annan viktig anledning till att skriva debug-utskrifter är för att förbättra kodens läsbarhet. Genom att inkludera utskrifter kan det bli lättare för andra utvecklare att förstå koden och göra ändringar utan att orsaka oönskade effekter.
 
 ## Se även
 
-- [Ruby dokumentation](https://www.ruby-lang.org/sv/documentation/)
-- [Debugging med pry](https://rubygems.org/gems/pry)
-- [Ruby for nybörjare](https://learnrubythehardway.org/book/ex46.html)
+- [Ruby dokumentation för `puts`](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-puts)
+- [Ruby dokumentation för `p`](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-p)
+- [Ruby dokumentation för `pp`](https://ruby-doc.org/stdlib-2.7.1/libdoc/pp/rdoc/PP.html)
+- [Ruby dokumentation för `inspect`](https://ruby-doc.org/core-2.7.1/Object.html#method-i-inspect)

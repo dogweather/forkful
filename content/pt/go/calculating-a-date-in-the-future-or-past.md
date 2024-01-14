@@ -1,7 +1,9 @@
 ---
-title:                "Go: Calculando uma data no futuro ou passado."
+title:                "Go: Calculando uma data no futuro ou no passado"
+simple_title:         "Calculando uma data no futuro ou no passado"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,31 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Saber como calcular uma data no futuro ou passado é uma habilidade essencial para qualquer programador Go. Isso permite que você crie soluções dinâmicas e precisas para problemas relacionados com datas em suas aplicações.
+Calcular datas futuras ou passadas pode ser uma tarefa comum para muitos programas, seja para agendar eventos, criar lembretes ou lidar com planejamento de tempo. No entanto, o Go tem uma biblioteca de gerenciamento de tempo robusta que pode facilitar essa tarefa de forma eficiente e eficaz.
 
 ## Como fazer
 
-Para calcular uma data no futuro ou passado em Go, você precisará utilizar a função `Time.AddDate()`. Essa função recebe três argumentos: anos, meses e dias, e retorna uma data nova acrescida ou subtraída da data original. Veja um exemplo de código abaixo:
+Para calcular datas futuras ou passdas com Go, podemos usar a função `AddDate()` da biblioteca `time`. Vamos dar uma olhada em um exemplo simples:
 
 ```Go
-newDate := time.Now().AddDate(1, 2, 3)
-fmt.Println(newDate)
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    agora := time.Now()
+    dataFutura := agora.AddDate(0, 0, 7)
+
+    fmt.Println("A data de hoje é:", agora.Format("02/01/2006"))
+    fmt.Println("A data daqui a uma semana é:", dataFutura.Format("02/01/2006"))
+}
 ```
-O código acima irá calcular uma nova data adicionando 1 ano, 2 meses e 3 dias à data atual e imprimi-la no formato de data e hora padrão do sistema.
 
-Algumas coisas importantes a se notar nesta função são:
-- Os argumentos podem ser positivos ou negativos dependendo se você quer adicionar ou subtrair da data original.
-- A função leva em consideração os anos bissextos e ajusta a data de acordo.
-- Você pode utilizar `time.Duration` para adicionar ou subtrair unidades menores de tempo, como horas, minutos e segundos. 
+Neste exemplo, usamos `AddDate()` para calcular a data de hoje mais 7 dias no futuro. Podemos alterar os valores passados como parâmetros para obter uma data mais distante no futuro ou no passado.
 
-## Mergulho Profundo
+Podemos também calcular datas com mais precisão, especificando a quantidade de anos, meses e dias em vez de apenas dias. Por exemplo, `dataFutura := agora.AddDate(2, 3, 20)` irá adicionar 2 anos, 3 meses e 20 dias à data atual.
 
-Calculando datas no futuro ou passado pode ser mais complexo do que apenas adicionar ou subtrair dias, meses e anos. Uma das coisas que você precisa levar em consideração é o fuso horário. Por exemplo, se você estiver em um lugar com fuso horário diferente do local onde seu código está sendo executado, a data resultante pode ser diferente do esperado.
+## Profundidade
 
-Além disso, ao lidar com dias úteis, feriados e outras regras de negócio, pode ser necessário utilizar pacotes externos como o `github.com/leekchan/timeutil` ou `github.com/robfig/cron` para ter um maior controle sobre o cálculo de datas.
+Além da função `AddDate()`, a biblioteca `time` também possui outras funções úteis para lidar com datas, como `Date()`, `Parse()`, `Unix()` e muitas outras. Essas funções podem ajudar a formatar, converter e realizar cálculos com datas de forma mais precisa.
+
+É importante notar que o Go usa `time.Location` para gerenciar diferenças de fuso horário, portanto, certifique-se de estar ciente disso ao realizar cálculos de datas em diferentes fusos horários.
 
 ## Veja também
 
-- [Documentação oficial da função `Time.AddDate()` em Go](https://golang.org/pkg/time/#Time.AddDate)
-- [Pacote timeutil](https://github.com/leekchan/timeutil)
-- [Pacote cron](https://github.com/robfig/cron)
+- [Documentação da biblioteca time do Go](https://pkg.go.dev/time)
+- [Tutorial de cálculo de datas em Go](https://gobyexample.com/time)
+- [Exemplos avançados de cálculo de datas em Go](https://www.golangprograms.com/go-language/date-time.html)

@@ -1,59 +1,57 @@
 ---
 title:                "PHP: Imprimindo saída de depuração"
+simple_title:         "Imprimindo saída de depuração"
 programming_language: "PHP"
-category:             "Testing and Debugging"
+category:             "PHP"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração em programação PHP?
+## Por que imprimir saída de depuração?
 
-A depuração é uma parte essencial do processo de programação, pois ajuda a identificar e corrigir erros em um código. Imprimir saída de depuração em PHP permite que os desenvolvedores visualizem informações específicas durante a execução do código, facilitando a identificação de possíveis problemas e aprimorando a qualidade do resultado final.
+A impressão de saída de depuração é uma técnica comumente usada por programadores para encontrar e solucionar erros em seus códigos. Isso permite que eles vejam o valor de diferentes variáveis e detectem possíveis problemas à medida que o código é executado. Imprimir a saída de depuração também é útil para entender como o código está funcionando e pode ser usado para fins de otimização.
 
-## Como fazer:
+## Como fazer
 
-Para imprimir saída de depuração em PHP, basta usar a função `echo` ou `print_r` e incluir a variável ou valor que deseja visualizar. Por exemplo:
-
-```PHP
-// Exemplo de uso da função echo
-$nome = "João";
-echo "Olá " . $nome . "! Bem-vindo ao meu blog.";
-```
+Para imprimir a saída de depuração em PHP, você pode usar a função "print_r()" ou "var_dump()". Ambas as funções são úteis para visualizar arrays e objetos complexos. Por exemplo:
 
 ```PHP
-// Exemplo de uso da função print_r
-$frutas = array("Maçã", "Banana", "Abacaxi", "Melancia");
-print_r($frutas);
+$arr = array(1, 2, 3);
+
+print_r($arr);
+// Saída: Array ( [0] => 1 [1] => 2 [2] => 3 )
+
+$object = new StdClass();
+$object->name = "João";
+$object->age = 25;
+
+var_dump($object);
+/* Saída: object(stdClass)#1 (2) {
+  ["name"] => string(4) "João"
+  ["age"] => int(25)
+} */
 ```
 
-A saída desses códigos seria:
+Além disso, você também pode usar a função "echo" para imprimir valores simples, como strings e números. Por exemplo:
 
-```
-Olá João! Bem-vindo ao meu blog.
-Array
-(
-    [0] => Maçã
-    [1] => Banana
-    [2] => Abacaxi
-    [3] => Melancia
-)
+```PHP
+$name = "Maria";
+$age = 30;
+
+echo "Nome: " . $name . ", Idade: " . $age;
+// Saída: Nome: Maria, Idade: 30
 ```
 
-## Mergulho profundo:
+## Mergulho profundo
 
-Além das funções `echo` e `print_r`, existem outras opções para imprimir saída de depuração em PHP, como a função `var_dump` que exibe informações detalhadas sobre uma variável ou expressão, incluindo o tipo de dado e seu valor. Também é possível utilizar a constante `DEBUG_BACKTRACE_IGNORE_ARGS` como segundo argumento da função `debug_print_backtrace` para obter uma pilha de chamadas de funções sem mostrar seus argumentos.
+Além das funções mencionadas acima, existem outras técnicas que podem ser usadas para imprimir saída de depuração em PHP. Alguns programadores preferem usar a diretiva "ini_set('display_errors', 1)" para exibir erros e avisos no navegador. Outros usam a função "error_log()" para imprimir mensagens de erro em um arquivo de log. Você também pode criar suas próprias funções de depuração, personalizadas para suas necessidades específicas.
 
-Outra dica é utilizar a ferramenta Xdebug em conjunto com o depurador de códigos como o PHPStorm, que permite acompanhar cada linha do código e visualizar o valor das variáveis em tempo real durante a execução. Isso pode ser extremamente útil para encontrar e corrigir erros difíceis.
+Uma boa prática é usar a saída de depuração durante o desenvolvimento e removê-la antes de publicar o código em produção, para evitar possíveis problemas de segurança e melhorar a performance do código.
 
-## Veja também:
+## Veja também
 
-- Artigo sobre depuração em PHP: https://www.php.net/manual/pt_BR/debugger.php
-- Documentação oficial do Xdebug: https://xdebug.org/
-- Tutorial de depuração com PHPStorm: https://www.jetbrains.com/help/phpstorm/debugging-with-phpstorm.html
-
-## Veja também:
-
-- Artigo sobre debugging in PHP: https://www.php.net/manual/pt_BR/debugger.php
-- Official Xdebug documentation: https://xdebug.org/
-- Debugging tutorial with PHPStorm: https://www.jetbrains.com/help/phpstorm/debugging-with-phpstorm.html
+- [Funções de depuração em PHP](https://www.php.net/manual/en/book.debugger.php)
+- [Tutorial de depuração em PHP](https://www.php.net/manual/en/debugger-quick-start.php)
+- [Artigo sobre depuração de código em PHP](https://www.w3resource.com/php/debugging/diagnosing-php-code.php)

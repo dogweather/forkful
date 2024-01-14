@@ -1,7 +1,9 @@
 ---
-title:                "Go: 미래 또는 과거에 날짜 계산하기"
+title:                "Go: 미래나 과거의 날짜 계산하기"
+simple_title:         "미래나 과거의 날짜 계산하기"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,53 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-날짜를 미래 또는 과거로 계산하는 것은 프로그래머가 시간과 날짜를 다루는 것이 필요하기 때문입니다.
+날짜를 미래 또는 과거로 계산하는 것에 대해 관심이 있을 때가 있습니다. 예를 들어, 특정 날짜에 어떤 일이 발생할 지 궁금하거나, 어떤 날짜가 특정 요일이라서 휴일이나 이벤트를 계획하고 싶을 때가 있을 수 있습니다.
 
-## 사용 방법
+## 어떻게
 
-날짜를 미래나 과거로 계산하는 방법은 Go 언어 기능을 활용하는 것입니다. 아래는 예시 코드와 결과 값입니다.
+가장 간단한 방법은 time 패키지의 Now() 함수를 사용하여 현재 시간을 가져와서 원하는 날짜를 계산하는 것입니다. 예를 들어, 다음과 같이 코드를 작성할 수 있습니다:
 
 ```Go
-package main
+day := time.Now().Date() // 현재 일자 가져오기
+year := day.Year() // 현재 연도 가져오기
+month := day.Month() // 현재 월 가져오기
+dayOfMonth := day.Day() // 현재 날짜 가져오기
 
-import (
-	"fmt"
-	"time"
-)
+// 미래로 10일 뒤의 날짜 계산
+future := time.Date(year, month, dayOfMonth+10, 0, 0, 0, 0, time.Local)
 
-func main() {
-	// 현재 날짜
-	today := time.Now()
+// 과거로 1년 전의 날짜 계산
+past := time.Date(year-1, month, dayOfMonth, 0, 0, 0, 0, time.Local)
 
-	// 미래로 7일 계산
-	future := today.AddDate(0, 0, 7)
-
-	// 과거로 1월 계산
-	past := today.AddDate(0, -1, 0)
-
-	// 결과 출력
-	fmt.Println("현재 날짜:", today)
-	fmt.Println("미래 날짜:", future)
-	fmt.Println("과거 날짜:", past)
-}
+// 계산된 날짜 출력
+fmt.Println("10일 후 날짜:", future.Format("2006-01-02"))
+fmt.Println("1년 전 날짜:", past.Format("2006-01-02"))
 ```
 
-결과:
+위 코드의 결과는 다음과 같습니다:
 
-```bash
-현재 날짜: 2021-03-25 14:26:30.610374 +0900 KST m=+0.000847026
-미래 날짜: 2021-04-01 14:26:30.610374 +0900 KST m=+604800.000847026
-과거 날짜: 2021-02-25 14:26:30.610374 +0900 KST m=+2628932.000847026
+```
+10일 후 날짜: 2021-06-18
+1년 전 날짜: 2020-06-08
 ```
 
-## 깊이있는 알아보기
+## 깊게 알아보기
 
-Go 언어에서 시간과 날짜를 다루는 데에 사용되는 기능 중 하나는 `AddDate()` 함수입니다. 이 함수는 `int`형 변수를 인수로 받아 날짜를 미래나 과거로 계산합니다. `AddDate()` 함수 뒤에는 `Add()` 함수를 사용해 시간 단위까지 조절할 수 있습니다. 더 많은 정보를 알고 싶다면 공식 Go 언어 문서를 참고하세요.
+Go의 time 패키지는 더 복잡한 날짜 계산을 제공합니다. 예를 들어, 원하는 날짜의 요일을 가져오는 것이나 특정 날짜가 어떤 기간에 속하는지 확인하는 것이 가능합니다. 또한, 날짜와 시간을 형식화하거나 시간대를 설정하는 것도 가능합니다.
 
-## 관련 링크
+더 자세한 정보는 Go의 공식 문서에서 확인할 수 있습니다.
 
-- `AddDate()` 함수 공식 문서: https://golang.org/pkg/time/#AddDate
-- Go 언어 시간과 날짜 다루기: https://velog.io/@jyoo0523/Go 
-- Go 언어 기초: https://www.44bits.io/ko/post/go-basic-concept 
-- Go 언어 공식 홈페이지: https://golang.org/
-- Go 언어 공식 블로그: https://blog.golang.org/
+## 참고 자료
+
+- [Go 공식 문서 - time 패키지](https://golang.org/pkg/time/)
+- [time 패키지 더 알아보기 - GopherAcademy](https://blog.gopheracademy.com/advent-2013/day-08-go-dates/)
+- [Go 언어의 시간과 날짜 처리 - 씨앗섬 기술블로그](https://blog.craftyworks.co.kr/66)
+- [날짜 형식 지정 문자열 - Cheat Sheet](https://yourbasic.org/golang/time-format-parse-string-example/)

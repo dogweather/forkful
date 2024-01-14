@@ -1,7 +1,9 @@
 ---
 title:                "Rust recipe: Creating a temporary file"
+simple_title:         "Creating a temporary file"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/creating-a-temporary-file.md"
 ---
 
@@ -9,59 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In Rust, temporary files are a useful tool for managing data that is only needed for a short period of time. This could include logging information, intermediate results in a complex computation, or any other data that is not necessary to permanently store.
+Creating a temporary file may seem like a simple and mundane task in programming, but in reality, it serves an important purpose. Temporary files are commonly used to store data temporarily, often during the execution of a program or process. They can also be used for debugging and maintaining code, making them a useful tool for any programmer.
 
 ## How To
 
-Creating a temporary file in Rust requires a few steps, but it is a fairly straightforward process. First, we need to import the necessary libraries:
+In Rust, creating a temporary file is a straightforward process. First, we need to import the `std::fs` module, which provides functions for creating files and directories. Then, we can use the `fs::File::create()` method to create a new, empty file.
 
 ```Rust
-use std::io::prelude::*;
-use std::fs::File;
-use std::io::Result;
-use std::path::Path;
+use std::fs;
+
+let temp_file = fs::File::create("temp.txt").expect("Unable to create file.");
 ```
 
-Next, we can use the `tempfile` crate to easily generate a temporary file. This crate provides a `Builder` struct that allows us to specify the prefix and suffix of the file name, as well as the directory where it will be created. Here's an example of creating a temporary file with a prefix of "temp" and a suffix of ".txt":
+Next, we can write data to the file using the `std::io::Write` trait. This allows us to use the `write` and `flush` methods to write data and ensure it is immediately written to the file.
 
 ```Rust
-let temp_file = tempfile::Builder::new()
-    .prefix("temp")
-    .suffix(".txt")
-    .tempfile()?;
+use std::io::Write;
+
+let mut temp_file = fs::File::create("temp.txt").expect("Unable to create file.");
+
+temp_file.write(b"Example data").expect("Unable to write data.");
+
+// Make sure data is written immediately
+temp_file.flush().expect("Unable to flush data to file.");
 ```
 
-The `tempfile()` method will return a `Result` type, so we use the `?` operator to handle any potential errors. Next, we can write data to the temporary file using a `File` object:
+We can also read data from the file by using the `read_to_string` method from the `std::fs` module.
 
 ```Rust
-let mut file = File::create(temp_file.path())?;
-file.write_all(b"Hello, World!")?;
-```
+let data = fs::read_to_string("temp.txt").expect("Unable to read file.");
 
-Finally, we can read the contents of the temporary file back and print them to the console:
-
-```Rust
-let mut contents = String::new();
-let mut file = File::open(temp_file.path())?;
-file.read_to_string(&mut contents)?;
-
-println!("Temporary file contains: {}", contents);
-```
-
-The output of the above code will be:
-
-```
-Temporary file contains: Hello, World!
+println!("Data from temporary file: {}", data);
 ```
 
 ## Deep Dive
 
-Behind the scenes, the `tempfile` crate uses the `mkstemp` system call to create the temporary file. This ensures that the file name is unique and that there are no race conditions when multiple processes are trying to create temporary files at the same time.
+Behind the scenes, when we create a temporary file in Rust, it is actually being created in our computer's temporary directory. We can access this directory by using the `std::env::temp_dir` method.
 
-Additionally, the `tempfile` crate automatically deletes the temporary file when the `File` object goes out of scope. This means we don't have to worry about manually deleting the file after we are done using it.
+```Rust
+use std::env;
+
+let temp_dir = env::temp_dir();
+```
+
+By default, these temporary files are set to be deleted when the program exits. However, we can change this behavior by manually deleting the file using the `std::fs::remove_file` method.
+
+```Rust
+use std::fs;
+
+// Deletes the temporary file
+fs::remove_file("temp.txt").expect("Unable to delete file.");
+```
+
+Additionally, temporary files can also be given a specific prefix and suffix, making it easier to identify them and avoid naming conflicts with other files.
+
+```Rust
+use std::fs;
+
+let temp_file = fs::File::create("prefix_temp_suffix.txt").expect("Unable to create file.");
+```
 
 ## See Also
 
-- [Rust Documentation](https://doc.rust-lang.org/)
-- [tempfile crate](https://crates.io/crates/tempfile)
-- [The Rust Book](https://doc.rust-lang.org/stable/book/)
+- [Rust Standard Library Documentation](https://doc.rust-lang.org/std/fs/index.html)
+- [Creating a Temporary File in Rust](https://www.jeremywsherman.com/blog/2016/06/25/create-temporary-file-rust/)

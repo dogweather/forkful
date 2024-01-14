@@ -1,7 +1,9 @@
 ---
-title:                "Python: Wyciąganie podłańcuchów"
+title:                "Python: Wycinanie podciągów"
+simple_title:         "Wycinanie podciągów"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/extracting-substrings.md"
 ---
 
@@ -9,28 +11,100 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu musimy pracować z łańcuchami znaków, czyli ciągami liter, cyfr i symboli. Jedną z przydatnych technik jest wyodrębnianie podłańcuchów, czyli fragmentów danego łańcucha. W tym artykule dowiesz się dlaczego warto nauczyć się tej techniki i jak jej używać w języku Python.
+Wydobycie podciągów jest ważnym aspektem w wielu projektach programistycznych. Pozwala na wyodrębnienie określonych części tekstu z dłuższej linii, co ułatwia przeprowadzanie analiz i przetwarzanie danych. W tym artykule dowiecie się, dlaczego wydobycie podciągów jest przydatne w programowaniu i jak to zrobić przy użyciu języka Python.
 
 ## Jak to zrobić
 
-Wyodrębnianie podłańcuchów w Pythonie jest bardzo proste i korzysta z funkcji `str[start:stop]`. Start oznacza indeks, od którego ma zacząć się wyodrębnianie, a stop to indeks, na którym ma się skończyć. Pamiętaj, że indeksy zaczynają się od 0. Przykładowy kod wykorzystujący tę funkcję wyglądałby następująco:
+W celu wydobycia podciągów z tekstu w języku Python, należy użyć metody `substring()`. Przedstawimy teraz kilka przykładów, aby pokazać jak wykorzystać tę metodę w praktyce.
 
-```Python
-str = "Python jest wspaniały językiem programowania"
-print(str[0:6]) # wyświetli "Python"
-print(str[14:19]) # wyświetli "wspan"
+### Przykład 1:
+
+```
+text = "Witaj w świecie programowania"
+print(text.substring(6,14))
 ```
 
-Możemy również wykorzystać przestawienie indeksów, na przykład `str[:5]` oznacza, że chcemy wyodrębnić podłańcuch od początku do indeksu 5 (nie włącznie). Natomiast `str[10:]` oznacza, że chcemy wyodrębnić podłańcuch od indeksu 10 do końca łańcucha. Spróbuj samemu zmieniać wartości indeksów i sprawdzić, jakie podłańcuchy uzyskasz.
+**Output:**
 
-## Głębszy wgląd
+```
+w świecie
+```
 
-W Pythonie możemy również wyodrębnić co drugi lub co trzeci znak z łańcucha. W tym celu należy dodać krok do naszej funkcji `str[start:stop:step]`. Na przykład, jeśli chcemy wyodrębnić co drugą literę z naszego łańcucha, możemy napisać `str[::2]`.
+W tym przykładzie użyliśmy metody `substring()` aby wyodrębnić podciąg z tekstu od 6 do 14 znaku. W ten sposób otrzymujemy wyraz "świecie" bez pierwszej litery "W".
 
-Ważną rzeczą do zapamiętania jest to, że funkcja `str[start:stop]` zwraca podłańcuch od indeksu start do indeksu stop-1. Dlatego też, jeśli chcemy uzyskać cały łańcuch, należy użyć wartości `str[:]`.
+### Przykład 2:
 
-## Zobacz również
+```
+text = "Kocham Pythona"
+print(text.substring(7))
+```
 
-- [Dokumentacja Pythona na temat wyodrębniania podłańcuchów](https://docs.python.org/3.7/library/stdtypes.html#text-sequence-type-str)
-- [Artykuł na temat wyodrębniania podłańcuchów w Pythonie](https://realpython.com/python-substrings/)
-- [Praktyczne przykłady wykorzystania wyodrębniania podłańcuchów](https://www.programiz.com/python-programming/string-slicing)
+**Output:**
+
+```
+Pythona
+```
+
+W drugim przykładzie pominięliśmy drugi parametr metody `substring()`, co oznacza, że zostanie ona użyta do wydobycia podciągu od 7 znaku do końca tekstu.
+
+### Przykład 3:
+
+```
+text = "Hello World"
+print(text.substring(-3))
+```
+
+**Output:**
+
+```
+World
+```
+
+W ostatnim przykładzie wykorzystaliśmy także wartość ujemną jako drugi parametr metody `substring()`. W takim przypadku liczba ujemna jest traktowana jako odległość od końca tekstu, co oznacza, że wyciągany jest podciąg od ostatniej litery zgodnie z podaną wartością.
+
+## Połączenie podciągów
+
+Kolejną przydatną techniką jest połączenie kilku podciągów w jeden dłuższy. Możemy to zrobić za pomocą operatora plus `+` lub metody `join()`.
+
+### Przykład 1:
+
+```
+name = "Michał"
+surname = "Kowalski"
+print(name + " " + surname)
+```
+
+**Output:**
+
+```
+Michał Kowalski
+```
+
+W tym przypadku połączyliśmy dwa podciągi (zmienne `name` i `surname`) za pomocą operatora plus `+`.
+
+### Przykład 2:
+
+```
+word_list = ["Lorem", "ipsum", "dolor"]
+sentence = " ".join(word_list)
+print(sentence)
+```
+
+**Output:**
+
+```
+Lorem ipsum dolor
+```
+
+W drugim przykładzie użyliśmy metody `join()` do połączenia listy słów w jedno zdanie, oddzielone spacją.
+
+## Głębszy zanurzenie
+
+Metoda `substring()` w Pythonie jest często wykorzystywana przy przetwarzaniu tekstu, np. przy wycinaniu niepotrzebnych części tekstu lub tworzeniu unikalnych nazw plików. Jest to również przydatna umiejętność podczas manipulacji napisami w różnych kontekstach programistycznych.
+
+## Zobacz także
+
+- [Dokumentacja Python](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+- [Tutorial: Python 3 - Podstawy](https://www.learnpython.org/pl/Welcome)
+
+Dziękujemy za przeczytanie tego artykułu! Mamy nadzieję, że przydał się wam w praktyce programistycznej. Zapraszamy do eksperymentowania z metodą `substring()` i wykorzystywania jej w swoich projektach. Do zobaczenia w kolejnych artykułach! 🙂

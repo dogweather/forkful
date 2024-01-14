@@ -1,7 +1,9 @@
 ---
 title:                "Elixir recipe: Using regular expressions"
+simple_title:         "Using regular expressions"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/using-regular-expressions.md"
 ---
 
@@ -9,45 +11,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Regular expressions, also known as regex, are an essential tool in any programmer's toolkit. They allow us to search for and manipulate text in a precise and efficient manner. In the world of Elixir, regex is particularly powerful due to its integration with pattern matching.
+Regular expressions may seem intimidating at first, but once you understand their power, they become an essential tool in your Elixir programming arsenal. With regular expressions, you can easily manipulate strings and perform complex pattern matching, making your code more efficient and concise.
 
 ## How To
 
-To use regex in Elixir, we first need to import the `Regex` module. We can then use the `=~` operator to match a string against a regular expression:
+To use regular expressions in Elixir, you first need to import the `Regex` module. You can do this by adding the `use Regex` statement at the top of your file. Once imported, you can use the `~r` sigil to define regular expressions.
 
 ```Elixir
 import Regex
 
-"Hello world" =~ ~r/world/
-#=> true
+# Defining a regular expression
+regex = ~r/foo/
+
+# Matching a string against the regex
+"foo bar" =~ regex
+# Output: true
 ```
 
-In this example, we searched for the word "world" in the string "Hello world" and found a match. The `=~` operator returns `true` if there is a match and `false` if there isn't. 
-
-We can also use regex to extract specific parts of the string using capture groups. For example, if we have a string with a phone number in the format `XXX-XXX-XXXX`, we can use regex to extract the area code:
+You can also use the `~r` sigil with options to specify more complex patterns. For example, you can use the `i` option to make the regex case-insensitive.
 
 ```Elixir
-phone_number = "555-123-4567"
-number_match = phone_number =~ ~r/(\d{3})-\d{3}-\d{4}/
+# Defining a case-insensitive regex
+regex = ~r/foo/i
 
-Regex.group(number_match, 1)
-#=> "555"
+# Matching a string against the regex
+"foO BAR" =~ regex
+# Output: true
 ```
 
-In this case, we used `(\d{3})` as our capture group to extract the first three digits of the phone number. We can then use the `Regex.group` function to specify which group we want to return, in this case, the first group.
+You can also use regular expressions with the `Regex.match?/2` function to extract specific parts of a string.
 
-There are many more ways to use regex in Elixir, and the syntax may take some time to get used to. However, with regular practice and experimentation, you'll become a regex pro in no time.
+```Elixir
+# Defining a regex with capture groups
+regex = ~r/(foo) (bar)/
+
+# Matching a string and extracting the captured groups
+{"foo bar", match} = Regex.match?("foo bar", regex)
+
+# Accessing the captured groups
+match["1"] 
+# Output: "foo"
+match["2"]
+# Output: "bar"
+```
 
 ## Deep Dive
 
-Elixir's regex module provides many helpful functions for working with regular expressions. Some notable ones include `Regex.replace`, which allows us to replace parts of a string that match a regex pattern, and `Regex.scan`, which returns all matches in a string.
+Regular expressions in Elixir follow the same syntax as those in other programming languages, with a few minor differences. Elixir uses the PCRE (Perl Compatible Regular Expressions) library, which is a popular and widely-used library for regular expressions. This means that you can use any PCRE syntax in your Elixir regular expressions, including lookaheads, lookbehinds, and backreferences.
 
-One crucial concept to understand when working with regex in Elixir is greedy vs. non-greedy matching. Greedy matching means that the regex pattern will match as much as possible, while non-greedy matching will stop at the first match. For example, in the string "Hello <b>world</b>", the regex pattern `<.*>` would match the entire string because it is greedy, while the pattern `<.*?>` would only match `<b>` because it is non-greedy.
+Another key feature of regular expressions in Elixir is the ability to use named capture groups. Instead of accessing captured groups by their index, you can use a name to retrieve the data. This provides more readability and allows you to reference the captured group by its purpose instead of its position.
 
-For a more in-depth explanation of different regex concepts and how to use them in Elixir, check out the official documentation or online tutorials.
+```Elixir
+# Defining a regex with named capture groups
+regex = ~r/(?<first_name>John) (?<last_name>Doe)/
+
+# Matching a string and extracting the named capture groups
+{"John Doe", match} = Regex.match?("John Doe", regex)
+
+# Accessing the captured groups by name
+match["first_name"]
+# Output: "John"
+match["last_name"]
+# Output: "Doe"
+```
 
 ## See Also
 
-- [Elixir Regular Expressions Documentation](https://hexdocs.pm/elixir/Regex.html)
-- [Regular Expressions Tutorial - Learn to Use Regex](https://www.regular-expressions.info/tutorial.html)
-- [Mastering Regular Expressions - Book by Jeffrey E.F. Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/9780596528126/)
+- Official Elixir documentation for regular expressions: https://hexdocs.pm/elixir/Regex.html
+- Regex tutorial for Elixir: https://elixirschool.com/en/lessons/advanced/regex/

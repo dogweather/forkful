@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Konwertowanie daty na ciąg znaków"
+simple_title:         "Konwertowanie daty na ciąg znaków"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/converting-a-date-into-a-string.md"
 ---
 
@@ -9,32 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja daty na łańcuch znaków jest powszechnym wyzwaniem w programowaniu. Czasami musimy wyświetlić datę w czytelny sposób dla użytkownika lub zapisać ją w odpowiednim formacie do pliku. W tym poście dowiesz się, jak wykonać tę konwersję w języku Rust.
+Konwersja daty na string jest częstą czynnością w wielu aplikacjach i często jest to wymagane przez różne biblioteki i narzędzia. Aby z powodzeniem wykorzystać Rust w swoich projektach, warto poznać jak wykonać tę operację.
 
 ## Jak to zrobić
 
-Istnieją różne metody konwersji daty na łańcuch znaków w języku Rust. Jedną z najpopularniejszych jest użycie biblioteki "chrono". Spójrzmy na przykładowy kod:
+Aby przekonwertować datę na string w języku Rust, można użyć funkcji `to_string()` z modułu `chrono::DateTime`. Przykładowy kod wyglądałby następująco:
 
-```Rust
-use chrono::{DateTime, Utc, Datelike, Timelike};
+```rust
+use chrono::{DateTime, Local, TimeZone};
 
-fn main() {
-    let now: DateTime<Utc> = Utc::now();
-    let date_string = now.format("%Y-%m-%d").to_string();
-    println!("{}", date_string);
-}
+let now: DateTime<Local> = Local::now();
+let date_string = now.to_string();
+
+println!("Aktualna data i godzina: {}", date_string);
 ```
 
-W tym przykładzie, używamy funkcji `format()` do sformatowania daty według podanego szablonu, a następnie używamy funkcji `to_string()` aby konwertować ją na łańcuch znaków. Wynik powyższego kodu będzie wyglądał następująco: `2021-08-27`.
+W powyższym przykładzie, najpierw importujemy moduł `chrono` zawierający funkcje do operacji na czasie. Następnie, używając funkcji `Local::now()`, pobieramy aktualną datę i godzinę z lokalnego systemu. Wreszcie, za pomocą metody `to_string()` konwertujemy tę datę na string. Wynikiem jest string zawierający datę i czas w formacie ISO 8601.
 
-Możemy także wybrać inny format, na przykład `"%d/%m/%Y"`, który wyświetli datę w postaci: `27/08/2021`. Pełna lista dostępnych szablonów znajduje się w dokumentacji biblioteki "chrono".
+Można również czasami potrzebować bardziej szczegółowej konwersji daty na string, na przykład z wykorzystaniem formatu niestandardowego. W takim przypadku można użyć funkcji `format()` z modułu `chrono::format::strftime`. Poniżej przedstawiony jest przykład kodu, który konwertuje datę na string w formacie "Dzień Tygodnia, Dzień Miesiąca Rok":
 
-## Deep Dive
+```rust
+use chrono::{DateTime, Local, TimeZone};
+    use chrono::format::strftime::StrftimeItems;
 
-Podczas konwersji daty na łańcuch znaków, ważne jest aby pamiętać o strefie czasowej. W powyższym przykładzie użyliśmy strefy czasowej "Utc". Jeśli jednak potrzebujemy wyświetlić datę w odpowiednim dla nas regionie czasowym, musimy uwzględnić to przy konwersji. Możemy to zrobić poprzez użycie funkcji `with_timezone()` i przekazanie jej odpowiedniej strefy czasowej.
+    let now: DateTime<Local> = Local::now();
+    let format = StrftimeItems::new("%A, %d %B %Y");
+    let date_string = now.format(format).to_string();
+
+    println!("Aktualna data: {}", date_string);
+```
+
+Wynikiem tego przykładu jest string zawierający aktualną datę w postaci "Niedziela, 05 września 2021". Można dowolnie manipulować formatem używając specjalnych symboli dostępnych w module `strftime`.
+
+## Wnikliwe spojrzenie
+
+Podczas konwersji daty na string ważne jest, aby zawsze określać strefę czasową, z której pobierana jest data. W przeciwnym razie, może to prowadzić do nieoczekiwanego wyniku, szczególnie w przypadku używania narzędzi i bibliotek operujących na czasie. W języku Rust, standardową metodą dla stref czasowych jest moduł `chrono::TimeZone`, który zapewnia obsługę różnych stref czasowych.
 
 ## Zobacz też
 
-- [Dokumentacja biblioteki "chrono"](https://docs.rs/chrono/0.4.19/chrono/)
-- [Wideo o konwertowaniu daty na łańcuch znaków w języku Rust](https://www.youtube.com/watch?v=k0Akn3rnFck)
-- [Artykuł o konwersji daty na łańcuch znaków w języku Rust](https://dev.to/ybanis/konwersja-daty-na-lancuch-znakow-w-jezyku-rust-4f8a)
+- Dokumentacja modułu `chrono` dla języka Rust: https://docs.rs/chrono/latest/chrono/
+- Przewodnik konwersji dat w języku Rust: https://users.rust-lang.org/t/how-can-i-convert-a-date-to-a-string/23764
+- Oficjalna strona języka Rust: https://www.rust-lang.org/pl

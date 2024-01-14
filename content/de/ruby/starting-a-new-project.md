@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Ein neues Projekt starten"
+title:                "Ruby: Eine neue Programmier-Projekt beginnen"
+simple_title:         "Eine neue Programmier-Projekt beginnen"
 programming_language: "Ruby"
-category:             "Getting Started"
+category:             "Ruby"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/starting-a-new-project.md"
 ---
 
@@ -9,34 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Erstellen eines neuen Projekts in Ruby kann sehr aufregend sein. Es bietet die Möglichkeit, etwas Neues zu schaffen und Ihren Programmierfähigkeiten eine Herausforderung zu stellen. Außerdem können Sie Ihre kreativen Ideen umsetzen und Ihr Wissen über die Sprache erweitern. Egal, ob Sie ein erfahrener Ruby-Programmierer sind oder gerade erst anfangen, es gibt immer einen guten Grund, ein neues Projekt zu starten.
+Wenn du ein begeisterter Programmierer bist, dann ist es wahrscheinlich, dass du immer wieder neue Projekte startest. Ob es darum geht, eine neue Programmiersprache zu lernen oder eine Idee in die Tat umzusetzen - es gibt viele Gründe, warum wir uns auf neue Programmierabenteuer einlassen. Lass uns nun darüber sprechen, wie du dein nächstes Projekt in Ruby beginnen kannst.
 
-## Wie man anfängt
+## Wie geht man vor
 
-Um ein neues Projekt in Ruby zu starten, müssen Sie zunächst die Ruby-Umgebung auf Ihrem Computer einrichten. Dies beinhaltet die Installation von Ruby und eines Paketmanagers wie Bundler. Sobald dies erledigt ist, können Sie Ihren Code in einem Texteditor oder einer integrierten Entwicklungsumgebung (IDE) schreiben. Hier ist ein Beispielcode, der "Hello World" in der Konsole ausgibt:
-
-```Ruby
-# Hello World Beispiel
-puts "Hallo Welt!"
-```
-
-Nachdem Sie Ihr Ruby-Programm geschrieben haben, können Sie es mit dem folgenden Befehl in Ihrer Konsole ausführen:
+Das Starten eines neuen Projekts kann manchmal etwas überwältigend sein, aber mit ein paar einfachen Schritten kannst du dich schnell zurechtfinden. Hier sind einige Beispiele, wie du ein neues Projekt in Ruby erstellen und ausführen kannst:
 
 ```Ruby
-ruby hello_world.rb
+# Erstelle ein neues Projektverzeichnis
+mkdir neues-projekt
+
+# Gehe in das Verzeichnis
+cd neues-projekt
+
+# Erstelle eine neue Ruby-Datei
+touch hallo-welt.rb
+
+# Öffne die Datei in deinem bevorzugten Texteditor
+code hallo-welt.rb
 ```
 
-Die Ausgabe sollte "Hallo Welt!" sein. Das ist die erste und einfachste Möglichkeit, ein Ruby-Projekt zu starten.
+Jetzt kannst du deine Ruby-Datei bearbeiten und deinem Projekt Leben einhauchen. Vergiss nicht, dass du jederzeit den Code ausführen und testen kannst:
 
-## Tiefer tauchen
+```Ruby
+# Führe deine Datei aus
+ruby hallo-welt.rb
+# => Hallo Welt!
+```
 
-Bevor Sie mit Ihrem neuen Projekt loslegen, ist es wichtig, ein paar Dinge zu beachten. Denken Sie zunächst über das Ziel Ihres Projekts nach und welche Funktionen es haben soll. Dann können Sie mit dem Entwurf Ihres Programms beginnen, indem Sie es in kleinere Teilaufgaben aufteilen. Diesen Ansatz nennt man auch "komponentenorientierte Programmierung", bei der das Gesamtprogramm in kleinere, leichter zu handhabende Komponenten unterteilt wird.
+## Tiefer Einblick
 
-Außerdem empfiehlt es sich stark, die Ruby-Dokumentation zu lesen, um das volle Potenzial der Sprache zu verstehen. Es gibt auch viele Online-Ressourcen, Tutorials und Foren, die Ihnen bei Fragen und Problemen helfen können. Verzweifeln Sie nicht, wenn Sie auf Hindernisse stoßen – es erfordert Übung und Geduld, um sich in Ruby zu verbessern.
+Während du mit deinem neuen Projekt weitermachst, gibt es ein paar wichtige Dinge, die du berücksichtigen solltest. Hier sind einige Ressourcen, die dir helfen können, bessere Entscheidungen für dein Projekt zu treffen:
+
+- Ruby Dokumentation (https://www.ruby-lang.org/de/documentation): Hier findest du Informationen zu den verschiedenen Ruby-Methoden und -Funktionen.
+- Rubygems (https://rubygems.org): Entdecke und verwende bereits erstellte Ruby-Bibliotheken, um deine Arbeit zu vereinfachen.
+- Ruby on Rails (https://rubyonrails.org): Erfahre mehr über das beliebte Ruby-Framework, das dir helfen kann, deine Projekte noch schneller und effizienter zu gestalten.
 
 ## Siehe auch
 
-- [Offizielle Ruby-Website](https://www.ruby-lang.org/de/)
-- [Bundler Dokumentation](https://bundler.io/)
-- [RubyGems](https://rubygems.org/)
-- [Ruby-Community-Forum](https://ruby-talk.org/)
+- Ruby-Tutorial für Anfänger (https://www.ruby-lang.org/de/documentation/quickstart)
+- RubyGems Ressourcen (https://www.nokogiri.org/tutorials/installing_nokogiri.html)
+- Ruby on Rails-Tutorial (https://guides.rubyonrails.org/getting_started.html)

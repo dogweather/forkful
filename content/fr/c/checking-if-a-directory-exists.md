@@ -1,7 +1,9 @@
 ---
-title:                "C: Vérification de l'existence d'un répertoire"
+title:                "C: Vérifier si un répertoire existe"
+simple_title:         "Vérifier si un répertoire existe"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/checking-if-a-directory-exists.md"
 ---
 
@@ -9,46 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Vérifier si un répertoire existe est une tâche courante en programmation. Cela peut être utile pour s'assurer qu'un chemin de fichier est valide avant de créer ou d'y accéder. Cela peut également être utilisé pour vérifier si un répertoire spécifique a déjà été créé.
+Dans le monde de la programmation, il est souvent nécessaire de travailler avec des fichiers et des répertoires. Il peut arriver qu'on ait besoin de vérifier si un répertoire existe avant de faire d'autres opérations telles que la création ou la suppression de fichiers. Dans cet article, nous allons explorer comment vérifier si un répertoire existe en utilisant le langage de programmation C.
 
 ## Comment faire
 
-Pour vérifier si un répertoire existe en C, nous utilisons la fonction `opendir()` qui prend en paramètre le chemin du répertoire à vérifier. Voici un exemple de code :
+La première étape pour vérifier si un répertoire existe en C est de déclarer une variable de type `DIR` qui représente le répertoire. Ensuite, nous utilissons la fonction `opendir()` pour ouvrir le répertoire et stocker son pointeur dans la variable que nous avons déclarée. Si le répertoire existe, la fonction renverra un pointeur valide.
 
 ```C
-#include <stdio.h>
-#include <dirent.h>
-
-int main() {
-    char* path = "/chemin/vers/mon/repertoire";
-    
-    // Vérification du répertoire
-    DIR* dir = opendir(path);
-    
-    // Si le répertoire existe
-    if (dir) {
-       printf("Le répertoire existe !");
-       closedir(dir);
-    }
-    // Si le répertoire n'existe pas
-    else {
-        printf("Le répertoire n'existe pas !");
-    }
-    
-    return 0;
+DIR *rep = opendir("chemin/du/répertoire");
+if (rep != NULL) {
+  // Le répertoire existe, effectuer des opérations
+} else {
+  // Le répertoire n'existe pas, gérer l'erreur
 }
 ```
 
-Lors de l'exécution de ce code, si le répertoire spécifié existe, un message indiquant sa présence sera affiché. Sinon, un autre message indiquant qu'il n'existe pas sera affiché.
+Ensuite, pour libérer les ressources et fermer le répertoire, nous utilisons la fonction `closedir()` en passant le pointeur de notre répertoire en paramètre.
 
-## Approfondissement
+```C
+closedir(rep); // Ferme le répertoire
+```
 
-La fonction `opendir()` utilise un pointeur de type `DIR` pour représenter le répertoire ouvert. Ce pointeur peut ensuite être utilisé pour effectuer d'autres opérations sur ce répertoire si besoin.
+## Plongée en profondeur
 
-Il est également important de noter que la fonction `opendir()` renvoie `NULL` en cas d'erreur. Il est donc important de toujours vérifier si le répertoire a été ouvert avec succès avant de continuer à utiliser le pointeur de type `DIR`.
+Pour une vérification plus précise, nous pouvons utiliser la fonction `opendir()` en passant le chemin du répertoire en paramètre. En cas de succès, cette fonction renvoie un pointeur valide et en cas d'erreur, elle renvoie NULL. Nous pouvons également utiliser la fonction `errno` pour obtenir la raison de l'échec et traiter l'erreur en conséquence.
+
+Il est également important de noter que lorsqu'on travaille avec des répertoires, nous devons nous assurer que le code est portable sur différents systèmes d'exploitation. Ainsi, il est recommandé d'utiliser les fonctions de la bibliothèque standard C tels que `opendir()` et `closedir()` plutôt que des fonctions spécifiques à un système d'exploitation.
 
 ## Voir aussi
 
-- [Fonction opendir() en C](https://www.tutorialspoint.com/c_standard_library/c_function_opendir.htm)
-- [Manipulation de fichiers et répertoires en C](https://www.commentcamarche.net/contents/754-manipulation-de-fichiers-et-repertoires-en-c)
-- [Gestion des erreurs en C](https://fr.wikibooks.org/wiki/Programmation_C/Gestion_des_erreurs)
+- [Documentation officielle sur la fonction opendir de la bibliothèque standard C](https://en.cppreference.com/w/c/io/opendir)
+- [Utilisation de errno en programmation C](https://www.cs.utah.edu/~germain/PPS/Topics/C_Language/exceptions_and_error_handling.html#errno)

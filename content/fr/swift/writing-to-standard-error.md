@@ -1,41 +1,53 @@
 ---
-title:                "Swift: Écrire sur la sortie d'erreur standard"
+title:                "Swift: Écrire vers l'erreur standard"
+simple_title:         "Écrire vers l'erreur standard"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
-
-Ecrire sur la sortie d'erreur standard peut sembler être une tâche inutile ou même ennuyeuse, mais c'est en fait une compétence très importante pour tout programmeur Swift. Savoir comment écrire sur la sortie d'erreur standard peut vous aider à déboguer facilement vos programmes et à diagnostiquer les problèmes plus rapidement.
+## Pourquoi écrire vers l'erreur standard en Swift
+Lorsque vous êtes en train de programmer en Swift, il peut souvent être utile de voir les messages d'erreur de votre code directement dans votre environnement de développement. Cela peut vous aider à repérer les erreurs et à les corriger plus rapidement. C'est là que l'écriture vers l'erreur standard entre en jeu.
 
 ## Comment faire
-
-Voici un exemple simple de code Swift pour écrire sur la sortie d'erreur standard :
+Pour écrire vers l'erreur standard en Swift, vous pouvez utiliser la fonction `fwrite()` avec `stderr` comme paramètre. Voici un exemple de code qui montre comment utiliser cette fonction :
 
 ```Swift
-let errorMessage = "Une erreur s'est produite"
-print(errorMessage, to: &stderr)
+import Foundation
+
+// Définition d'une fonction pour écrire vers l'erreur standard
+func writeError(message: String) {
+    let error = "Erreur : " + message + "\n"
+    guard let errorData = error.data(using: .utf8) else {
+        print("Impossible de convertir le message en données.")
+        return
+    }
+    // Écriture vers l'erreur standard
+    fwrite(errorData, 1, errorData.count, stderr)
+}
+
+// Exemple d'utilisation de la fonction
+writeError(message: "Valeur invalide pour la variable.")
 ```
 
-Lorsque vous exécutez ce code, vous verrez l'erreur s'afficher dans la console avec un préfixe "error:". Cela rendra plus facile pour vous de repérer les erreurs et de les traiter rapidement.
+Lorsque vous exécutez ce code, vous verrez le message d'erreur s'afficher dans votre console, en rouge et précédé de la mention "Erreur : ".
 
-N'oubliez pas que vous pouvez également écrire sur la sortie d'erreur standard en utilisant la méthode ```write(to: "")```, mais utiliser la fonction ```print(to: &stderr)``` est généralement plus pratique et plus simple.
+## Plongeons plus profondément
+En écrivant vers l'erreur standard en Swift, vous pouvez également utiliser la fonction `fputs()` pour écrire une chaîne de caractères directement vers l'erreur standard. Voici un exemple :
 
-## Plongée en profondeur
+```Swift
+// Écriture d'une chaîne de caractères vers l'erreur standard
+fputs("Erreur : Valeur invalide pour la variable.\n", stderr)
+```
 
-Ecrire sur la sortie d'erreur standard peut sembler simple, mais il y a en fait quelques nuances à connaître. Par exemple, vous pouvez contrôler ce qui est imprimé avant et après votre message d'erreur en utilisant les paramètres ```terminator``` et ```separator```. Vous pouvez également utiliser la balise ```separator``` pour définir un caractère de séparation personnalisé entre chaque élément imprimé.
+De plus, vous pouvez également utiliser `NSFileHandle` pour écrire vers l'erreur standard en utilisant la méthode `writeData()`.
 
-Vous pouvez également utiliser la méthode ```FileHandle.standardError``` pour définir un autre flux de sortie d'erreur, au cas où vous voudriez imprimer sur une autre console ou un autre emplacement.
+Dans certains cas, vous voudrez peut-être également afficher des informations de débogage dans l'erreur standard. Pour cela, vous pouvez utiliser la fonction `debugPrint()` qui affiche les valeurs des variables de manière lisible pour les humains.
 
-Enfin, il est important de noter que le flux de sortie d'erreur standard n'est pas seulement utile pour la débogage. Vous pouvez également l'utiliser pour imprimer des messages d'erreur ou des avertissements à vos utilisateurs, afin qu'ils sachent ce qui se passe en arrière-plan.
-
-## Voir aussi
-
-- [Documentation officielle de Swift sur la sortie d'erreur standard](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#error-handling)
-
-- [Tutoriel vidéo sur l'utilisation de la sortie d'erreur standard en Swift](https://www.youtube.com/watch?v=TgJYI3xquJU)
-
-- [Un article sur les meilleures pratiques pour la gestion des erreurs en Swift](https://medium.com/ios-os-x-development/error-handling-in-swift-with-do-try-catch-bc7f332ca2cb)
+## See Also
+- [Documentation Apple pour la fonction `fwrite()`](https://developer.apple.com/documentation/foundation/filehandle/1410972-fwrite?language=swift)
+- [Article de référence sur l'utilisation de `fprintf()` et `stderr`](https://www.dummies.com/programming/c/how-to-display-information-in-the-standard-error-file-stderr/)
+- [Documentation Apple pour la fonction `fputs()`](https://developer.apple.com/documentation/foundation/filehandle/1409761-fputs?language=swift)

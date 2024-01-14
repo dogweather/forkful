@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Användning av reguljära uttryck"
+simple_title:         "Användning av reguljära uttryck"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/using-regular-expressions.md"
 ---
 
@@ -9,40 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Regular expressions, eller reguljära uttryck, är ett kraftfullt verktyg inom programmering som underlättar sökning och manipulation av textsträngar. Genom att använda reguljära uttryck kan du effektivt hitta och extrahera information från text, vilket är speciellt användbart för bearbetning av stora datamängder eller hantering av användardata.
+Regular expressions är ett kraftfullt verktyg för strängmanipulering och mönstermatchning. Med hjälp av dessa uttryck kan du snabbt och effektivt hitta specifika strängar eller mönster i en textsträng. Detta kan vara särskilt användbart för datafiltrering, dataanalys och webbutveckling.
 
-## Hur man använder reguljära uttryck i Rust
+## Så här gör du
 
-För att använda reguljära uttryck i Rust behöver du importera `regex` biblioteket genom att lägga till detta i din kod:
-
-```Rust
-extern crate regex;
-```
-
-Efter att du har importerat biblioteket kan du använda dess funktioner för att skapa ett reguljärt uttryck och sedan tillämpa det på textsträngar. Nedan finns ett exempel på hur man kan använda reguljära uttryck för att hitta alla förekomster av bokstaven "a" i en textsträng:
-
+För att använda regular expressions i Rust, måste du först importera biblioteket `regex`. Sedan kan du skapa ett nytt uttryck med hjälp av funktionen `Regex:: new`. Till exempel:
 ```Rust
 use regex::Regex;
 
-let text = "Detta är en textsträng för att testa reguljära uttryck.";
-let re = Regex::new("a").unwrap();
-let matches = re.find_iter(text);
-
-for match in matches {
-    println!("Match found at index: {}", match.start());
-}
+let re = Regex::new(r"hej");
 ```
+Här skapar vi ett uttryck som matchar strängen "hej". Notera att vi använder prefixet `r` före strängen för att markera den som en raw string, vilket gör det enklare att hantera specialtecken.
 
-Detta kodblock kommer att skriva ut "11" och "28" eftersom bokstaven "a" finns på de positionerna i textsträngen.
+För att söka efter mönster i en textsträng, använder vi funktionen `find`:
+```Rust
+let text = "Hej, detta är en textsträng.";
+let result = re.find(text);
 
-## Deep Dive
+println!("Resultat: {:?}", result);
+```
+Detta kommer att returnera en `Option` som antingen är `Some(match)` om uttrycket matchades eller `None` om det inte gjorde det. Om det matchade kan vi få åtkomst till matchen genom att använda `.unwrap()` metoden:
+```Rust
+let matchen = result.unwrap();
+println!("Match: {}", matchen.as_str());
+```
+Detta kommer att skriva ut den matchande delen av textsträngen, vilket i detta fall skulle vara "hej".
 
-Reguljära uttryck i sig kan verka förvirrande och komplicerade, men de följer ett standardiserat mönster och kan vara mycket användbara när man förstår hur de fungerar. En djupare förståelse av reguljära uttryck kan hjälpa dig att effektivt skapa mer avancerade mönster för att matcha specifika delar av textsträngar.
+## Djupdykning
 
-En av de viktigaste delarna av ett reguljärt uttryck är metatecken, som tecknen `^`, `$` och `.` som används för att specificera var en matchning ska ske i en textsträng. En annan viktig del är kvantifierare, som styr hur ofta ett visst tecken eller mönster ska matchas. Genom att förstå hur dessa metatecken och kvantifierare fungerar, kan du skapa mer precisa reguljära uttryck för att hitta och manipulera text.
+Utöver att söka efter mönster kan du också använda regular expressions för att ersätta textsträngar med hjälp av `replace_all` funktionen:
+```Rust
+let ny_text = re.replace_all(text, "hallå");
+println!("Ny text: {}", ny_text);
+```
+Detta skulle byta ut alla förekomster av "hej" i texten med "hallå".
+
+Du kan också använda "capturing groups" för att fånga specifika delar av texten. Till exempel, om vi vill ha åtkomst till den första bokstaven i varje ord i en textsträng, kan vi använda `Regex::new(r"\b(\w)").unwrap()` och sedan iterera över varje match för att få åtkomst till gruppens innehåll.
+
+För mer information och avancerade användningsområden, se dokumentationen för `regex` biblioteket och andra relaterade bibliotek.
 
 ## Se även
 
-- [Rust - regex bibliotek](https://docs.rs/regex/1.3.1/regex/)
-- [Reguljära uttryck för nybörjare](https://www.regular-expressions.info/tutorial.html)
-- [Reguljära uttryck på Wikipedia](https://sv.wikipedia.org/wiki/Regulj%C3%A4rt_uttryck)
+- Officiell dokumentation för `regex` biblioteket: https://docs.rs/regex/1.4.2/regex/
+- En grundläggande handledning för att arbeta med regular expressions i Rust: https://brandonkal.blogspot.com/2019/02/text-parsing-in-rust-using-regular.html

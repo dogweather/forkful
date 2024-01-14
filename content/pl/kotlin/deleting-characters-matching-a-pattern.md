@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Usuwanie znaków pasujących do wzorca"
+title:                "Kotlin: Usuwanie znaków pasujących do wzoru"
+simple_title:         "Usuwanie znaków pasujących do wzoru"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,53 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami w swoim kodzie programów w języku Kotlin możemy natknąć się na niechciane znaki. Mogą być one niepotrzebne lub wręcz zaszkodzić funkcjonowaniu naszej aplikacji. W takich sytuacjach przydatne jest usunięcie tych znaków. W tym artykule pokażę Ci, jak w łatwy sposób usunąć znaki, które pasują do określonego wzorca.
+Często podczas pisania kodu spotykamy się z sytuacją, w której chcemy usunąć część tekstu odpowiadającą określonemu wzorcowi. W Kotlinie istnieje możliwość skorzystania z różnych funkcji, które ułatwią nam to zadanie. W tym artykule dowiesz się, dlaczego warto używać tych funkcji i jak je zastosować.
 
 ## Jak to zrobić
 
-Wykorzystają do tego metody `replace()` oraz `replaceFirst()`. Najpierw jednak musimy utworzyć zmienną, która będzie przechowywała nasz ciąg znaków.
+Do usunięcia znaków pasujących do wzorca można wykorzystać metodę `remove` lub `replace` na obiekcie typu String. Sprawdźmy przykładowy kod:
 
 ```Kotlin
-val string = "Wykła@@d programowania@@y w języku Kotlin@@ są cenne!"
+val originalString = "Kotlin jest super!"
+val newString = originalString.remove("super")
+println(newString) // wypisze "Kotlin jest!"
 ```
 
-Naszym zadaniem jest usunięcie znaku `@` oraz wszystkich znaków, które następują po nim. W tym celu musimy ustalić odpowiedni wzorzec.
+W przypadku gdy chcemy usunąć więcej niż jeden wzorzec, możemy użyć funkcji `replace` wraz z wyrażeniem regularnym. Zobaczmy przykład:
 
 ```Kotlin
-val pattern = "@+.*"
+val originalString = "123-456-789"
+val newString = originalString.replace(Regex("[0-9]"), "")
+println(newString) // wypisze "---"
 ```
 
-W powyższym wzorcu użyliśmy `+`, aby określić, że usuwane mają być wszystkie znaki występujące po znaku `@`. Teraz możemy wykorzystać metodę `replace()` w celu usunięcia naszego wzorca.
+Na powyższych przykładach widać, że usuwanie znaków na podstawie wzorca jest bardzo proste i intuicyjne w użyciu.
+
+## Deep Dive
+
+W Kotlinie istnieje także możliwość wykorzystania funkcji `dropWhile` oraz `slice` do usuwania znaków na podstawie predykatu. Funkcja `dropWhile` pozwala na usunięcie wszystkich znaków do momentu spełnienia warunku, natomiast funkcja `slice` usuwa znaki na wybranej pozycji.
+
+### dropWhile
 
 ```Kotlin
-val result = string.replace(pattern, "")
+val originalString = "Kot jest najlepszym przyjacielem człowieka"
+val newString = originalString.dropWhile { it != 'n' }
+println(newString) // wypisze "najlepszym przyjacielem człowieka"
 ```
 
-Teraz w zmiennej `result` przechowujemy nasz nowy ciąg znaków, w którym usunięte zostają wszystkie znaki pasujące do wzorca. Sprawdźmy teraz, czy nasza metoda zadziałała poprawnie.
+### slice
 
 ```Kotlin
-println(result)
+val originalString = "Witaj, świecie!"
+val newString = originalString.slice(4..10)
+println(newString) // wypisze "świecie"
 ```
 
-**Wynik:**
-
-```
-Wykłady programowania są cenne!
-```
-
-Możemy także wykorzystać metodę `replaceFirst()` w celu usunięcia tylko pierwszego dopasowania do wzorca.
-
-```Kotlin
-val result = string.replaceFirst(pattern, "")
-```
-
-## Głębszy wgląd
-
-W powyższym przykładzie wykorzystaliśmy proste wyrażenia regularne, aby określić wzorzec dla naszych znaków do usunięcia. Jednak możliwości wyrażeń regularnych są dużo większe. Możemy wykorzystać różne symbole, aby określić dokładniej, które znaki mają zostać usunięte.
-
-Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych w języku Kotlin, polecam przeczytać ten artykuł: [Wyrażenia regularne w języku Kotlin](https://kotlinlang.org/docs/regexp.html).
+Warto również zwrócić uwagę na wydajność używanego rozwiązania, ponieważ często nie jest to najważniejszy aspekt przy pisaniu kodu. W przypadku dużych ilości danych, lepszym wyborem może być użycie wyrażeń regularnych w funkcji `replace`.
 
 ## Zobacz także
 
-- [Podstawy języka Kotlin](https://kotlinlang.org/docs/basic-syntax.html)
-- [Metody stringów w języku Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)
+- "Kotlin dla początkujących" (https://developer.android.com/kotlin/resources)
+- "Wprowadzenie do wyrażeń regularnych w Kotlinie" (https://kotlinlang.org/docs/reference/regular-expressions.html)

@@ -1,75 +1,49 @@
 ---
-title:                "Haskell: Sammenligne to datoer"
+title:                "Haskell: Sammenligning av to datoer"
+simple_title:         "Sammenligning av to datoer"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Har du noen gang hatt behov for å sammenligne to datoer i Haskell? Det kan være nyttig i en rekke situasjoner, som for eksempel å finne ut om en hendelse har skjedd før eller etter en annen, eller for å sortere en liste med datoer etter deres kronologiske orden. I denne artikkelen vil vi ta en titt på hvordan du kan sammenligne to datoer ved hjelp av Haskell.
+Når du jobber med programmering, kan det ofte være nødvendig å sammenligne to datoer. Dette kan være nyttig når du for eksempel skal sortere data eller utføre beregninger basert på datoer. I denne bloggposten vil vi se på hvordan du kan sammenligne to datoer i Haskell.
 
-## Hvordan
+# Hvordan
 
-For å sammenligne to datoer i Haskell, må vi først importere `Data.Time` biblioteket. Dette biblioteket inneholder nyttige funksjoner for å håndtere og manipulere datoer og klokkeslett. La oss se på et enkelt eksempel:
-
-```Haskell
-import Data.Time (parseTimeM, defaultTimeLocale)
-
--- Definer to forskjellige datoer
-dato1Str = "2021-03-10"
-dato2Str = "2021-03-15"
-
--- Konverter strengene til datoobjekter
-dato1 = parseTimeM True defaultTimeLocale "%Y-%m-%d" dato1Str :: Maybe Day
-dato2 = parseTimeM True defaultTimeLocale "%Y-%m-%d" dato2Str :: Maybe Day
-
--- Sammenlign datoene
-case (dato1, dato2) of
-    (Just d1, Just d2) -> if d1 < d2
-                             then putStrLn "Dato 1 er før Dato 2"
-                             else putStrLn "Dato 1 er etter Dato 2"
-    _ -> putStrLn "Kunne ikke konvertere datoene"
-```
-
-I dette eksempelet bruker vi `parseTimeM` funksjonen til å konvertere strengrepresentasjonen av datoene til `Day` objekter. Vi bruker også `defaultTimeLocale` for å definere formatet på datoene våre. Deretter sammenligner vi de to datoene ved hjelp av en enkel `if...else` uttalelse.
-
-La oss se på et annet eksempel der vi sammenligne datoer basert på klokkeslett:
+For å sammenligne to datoer i Haskell, må du først importere modulen ```Data.Time```. Deretter kan du bruke funksjonen ```diffDays``` for å finne antall dager mellom to datoer. La oss se på et eksempel:
 
 ```Haskell
-import Data.Time (parseTimeM, defaultTimeLocale)
+import Data.Time
 
--- Definer to forskjellige tidspunkter
-tid1Str = "10:30"
-tid2Str = "08:45"
+startDate = fromGregorian 2020 1 1
+endDate = fromGregorian 2020 8 31
 
--- Konverter strengene til tidspunktsobjekter
-tid1 = parseTimeM True defaultTimeLocale "%H:%M" tid1Str :: Maybe TimeOfDay
-tid2 = parseTimeM True defaultTimeLocale "%H:%M" tid2Str :: Maybe TimeOfDay
-
--- Sammenlign tidspunktene
-case (tid1, tid2) of
-    (Just t1, Just t2) -> if t1 > t2
-                             then putStrLn "Tid 1 er etter Tid 2"
-                             else putStrLn "Tid 1 er før Tid 2"
-    _ -> putStrLn "Kunne ikke konvertere tidspunktene"
+diffDays startDate endDate
 ```
 
-I dette eksempelet bruker vi `TimeOfDay` objekter og sammenligner dem ved hjelp av `>` og `<` operatorene.
+Dette vil returnere verdien 243 (dager), som er antall dager mellom startdatoen og sluttdatoen.
 
-## Dykk dypere
+I tillegg til å finne antall dager, kan du også bruke funksjonene ```diffMinutes```, ```diffHours``` og ```diffMonths``` for å finne forskjellen mellom to datoer i henholdsvis minutter, timer og måneder.
 
-Hittil har vi bare sett på enkle eksempler på hvordan man kan sammenligne datoer i Haskell. Men det finnes også andre nyttige funksjoner og metoder for å sammenligne datoer og klokkeslett. Noen av disse inkluderer:
+For å sammenligne om en dato kommer før eller etter en annen dato, kan du bruke funksjonen ```compare```. Denne funksjonen vil returnere en ordre (LT, EQ eller GT) basert på hvilken dato som kommer først.
 
-- `diffDays`: Denne funksjonen tar inn to datoer og returnerer antall dager mellom dem.
-- `diffUTCTime`: Denne funksjonen tar inn to klokkeslett og returnerer antall sekunder mellom dem.
-- `showGregorian`: Denne funksjonen tar inn et datoobjekt og returnerer den formatert som en åbenbar Gregoriansk dato.
+```Haskell
+compare startDate endDate
+```
 
-Det er også verdt å merke seg at Haskell har streng typekontroll, så når du sammenligner to datoer eller klokkeslett, må de være av samme type for å kunne sammenligne dem.
+Dette vil returnere verdien LT (Less Than), som betyr at startdatoen kommer før sluttdatoen. 
 
-## Se også
+# Dypdykk
 
-- [Dokumentasjon for Data.Time biblioteket](https://hackage.haskell.org/package/time)
-- [En mer omfattende guide for å håndtere datoer i Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/lets-play-date-time/lets-play
+I Haskell er datatypen for datoer ```Day```, som representerer en spesifikk dato. Det er også mulig å bruke datatypen ```UTCTime```, som representerer en spesifikk dato og tid. I tillegg til de nevnte funksjonene, finnes det også mange andre funksjoner og operasjoner for å jobbe med datoer i Haskell.
+
+# Se også
+
+- [Data.Time dokumentasjon] (https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Haskell Wiki-side om datoer] (https://wiki.haskell.org/Date_and_time)
+- [Tutorial on comparing dates in Haskell] (https://www.schoolofhaskell.com/school/advanced-haskell/date-and-time)

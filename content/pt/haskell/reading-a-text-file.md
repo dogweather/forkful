@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Lendo um arquivo de texto"
+simple_title:         "Lendo um arquivo de texto"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/reading-a-text-file.md"
 ---
 
@@ -9,33 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que ler um arquivo de texto em Haskell?
 
-Ler um arquivo de texto pode ser uma tarefa comum em muitos projetos de programação, independentemente da linguagem escolhida. No entanto, em Haskell, a leitura de arquivos de texto pode se tornar uma tarefa simples e elegante devido à sua sintaxe funcional e bibliotecas poderosas. Neste artigo, iremos explorar por que vale a pena aprender a ler arquivos de texto em Haskell.
+Ler arquivos de texto é uma tarefa comum e útil na programação. Em Haskell, isso pode ser feito de forma eficiente e elegante, e entender como isso funciona é fundamental para qualquer programador da linguagem. Neste artigo, vamos mergulhar no processo de leitura de arquivos de texto em Haskell e explorar como esta poderosa funcionalidade pode ser usada em seus projetos.
 
-## Como ler um arquivo de texto em Haskell
+## Como fazer isso?
 
-Para ler um arquivo de texto em Haskell, precisamos primeiro abrir o arquivo e armazená-lo em uma variável. Podemos fazer isso usando a função `openFile` da biblioteca `System.IO`. Esta função possui três parâmetros: o nome do arquivo, o modo de abertura (leitura, escrita, etc.) e um identificador de encoding, que define como o arquivo será interpretado (UTF-8, Latin-1, etc.).
+Para ler um arquivo de texto em Haskell, precisamos primeiro importar o módulo `System.IO` e utilizar a função `readFile` que está presente nele. Esta função recebe um caminho para o arquivo de texto e retorna uma ação do tipo `IO String`, que contém todo o conteúdo do arquivo como uma única string.
 
-````Haskell
+```Haskell
 import System.IO
 
 main = do
-  handle <- openFile "exemplo.txt" ReadMode
-  contents <- hGetContents handle
-  putStrLn contents
-  hClose handle
-````
-Neste exemplo, o arquivo "exemplo.txt" é aberto com o modo de leitura e o conteúdo do arquivo é armazenado na variável `contents`. Usamos então a função `putStrLn` para imprimir o conteúdo na tela e `hClose` para fechar o arquivo.
+  file <- readFile "arquivo.txt"
+  putStrLn file
+```
 
-## Aprofundando na leitura de arquivos de texto em Haskell
+No exemplo acima, estamos lendo o conteúdo do arquivo "arquivo.txt" e imprimindo-o na tela utilizando a função `putStrLn`. Note que é importante utilizar a função `main` e a monada `do` para executarmos uma ação do tipo `IO`. Além disso, é necessário tratar possíveis erros ao tentar ler o arquivo, o que pode ser feito utilizando a função `catch` do módulo `Control.Exception`.
 
-Além da função `openFile`, existem outras funções úteis para lidar com arquivos de texto em Haskell. Por exemplo, a função `readFile` que abre, lê e fecha o arquivo automaticamente, e a função `writeFile` que escreve no arquivo.
+```Haskell
+import System.IO
+import Control.Exception
 
-Devemos lembrar que ao ler um arquivo, o conteúdo é retornado na forma de uma string. Portanto, se quisermos trabalhar com esses dados, podemos usar funções de manipulação de strings disponíveis em Haskell, como `lines` para separar o texto em uma lista de linhas ou `words` para obter uma lista de palavras.
+main = do
+  file <- catch (readFile "arquivo.txt") (return . show)
+  putStrLn file
+```
 
-Além disso, vale ressaltar que a funcão `openFile` pode levantar uma exceção caso o arquivo não seja encontrado ou não tenha permissão de leitura. Por isso, é importante lidar com possíveis erros ao lidar com arquivos de texto em Haskell.
+No exemplo acima, caso ocorra um erro ao tentar ler o arquivo, a função `catch` retornará uma string com a descrição do erro, que será impressa na tela.
+
+## Profundidade do processo de leitura
+
+Em Haskell, a leitura de um arquivo de texto é um processo simples, mas é importante entender como isso funciona nos bastidores. Quando utilizamos a função `readFile`, Haskell não lê todo o conteúdo do arquivo de uma vez. Na verdade, ele cria uma "promessa" de ler o arquivo no futuro, utilizando a monada `IO`. Isso significa que podemos realizar outras ações antes de realmente ler o arquivo, tornando o processo mais eficiente. Além disso, a função `readFile` cuida automaticamente do fechamento do arquivo após a leitura, evitando vazamentos de memória.
 
 ## Veja também
 
-- [Documentação sobre leitura e escrita de arquivos em Haskell](https://www.haskell.org/onlinereport/io.html)
-- [Tutoriais de Haskell da Wikibooks](https://en.wikibooks.org/wiki/Haskell)
-- [Artigo sobre manipulação de strings em Haskell](https://wiki.haskell.org/Strings)
+Se você quer se aprofundar ainda mais no assunto, confira os links abaixo:
+
+- [Documentação oficial do módulo System.IO](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
+- [Tutorial da Wikibooks sobre leitura de arquivos em Haskell](https://en.wikibooks.org/wiki/Haskell/Input_and_output#Reading_files)
+
+Espero que este artigo tenha sido útil e que você possa aplicar esses conhecimentos em seus projetos futuros. Happy coding!

@@ -1,55 +1,46 @@
 ---
-title:                "Javascript: 打印调试输出。"
+title:                "Javascript: 打印调试输出"
+simple_title:         "打印调试输出"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要打印调试信息
-在编写JavaScript程序时，打印调试信息是一种常用的调试方法。通过打印调试信息，开发人员可以实时查看程序中的变量值和代码执行路径，从而更快地定位和解决bug。
+## 为什么
 
-## 如何打印调试信息
-要打印调试信息，可以使用console.log()方法。这个方法接受一个或多个参数，可以是字符串、数字、变量等，它会打印出这些参数的值。例如：
+在编写代码时，经常会出现错误和bug。此时，通过打印调试输出可以帮助我们更快地定位问题的所在，从而解决bug。打印调试输出是一种非常有用的调试工具，可以提高我们的开发效率。
 
-```Javascript
-let name = "小明";
-let age = 25;
-console.log("姓名：" + name);
-console.log("年龄：" + age);
-```
+## 如何打印调试输出
 
-这段代码会在控制台打印出以下信息：
-
-```
-姓名：小明
-年龄：25
-```
-
-除了console.log()，还有console.error()和console.warn()等方法可以用来打印不同级别的调试信息。
-
-## 深入了解打印调试信息
-除了简单地打印变量值，还可以在调试信息中加入一些额外的内容，帮助进一步定位问题。比如在console.log()中可以使用模板字符串，来动态地拼接字符串和变量。例如：
+在Javascript中，我们可以使用console.log()函数来打印调试输出。下面是一个简单的例子，展示如何在代码中使用该函数。
 
 ```Javascript
-let count = 10;
-console.log(`当前计数值为：${count}`);
+let num1 = 5;
+let num2 = 10;
+console.log("num1的值是：" + num1); // 打印调试输出
+console.log("num2的值是：" + num2); // 打印调试输出
 ```
 
-这段代码会打印出如下信息：
+代码运行后，我们可以在控制台中看到以下输出：
 
 ```
-当前计数值为：10
+num1的值是：5
+num2的值是：10
 ```
 
-另外，还可以使用console.group()和console.groupEnd()方法来对调试信息进行分组。这样可以更清晰地显示调试信息的层次结构，方便调试复杂的程序。
+通过打印调试输出，我们可以得到变量的值，从而帮助我们分析代码的执行情况。除了使用console.log()函数，Javascript中还有其他一些打印调试输出的方法，如console.error()和console.warn()。我们可以根据需要选择使用不同的方法。
 
-## 查看更多
-- [MDN documentation on console](https://developer.mozilla.org/zh-CN/docs/Web/API/Console)
-- [Debugging JavaScript with console](https://www.w3schools.com/js/js_debugging.asp)
-- [The art of debugging JavaScript](https://www.freecodecamp.org/news/the-art-of-debugging-javascript/)
-- [JavaScript调试技巧](https://juejin.im/post/5962b8e3518825006b1d09f5)
+## 深入了解打印调试输出
 
-## 请参考
-对于需要调试的程序，打印调试信息是一种简单而有效的方法。希望这篇文章能帮助到你在JavaScript编程中的调试工作。如果想要更加深入地了解JavaScript调试技巧，也可以参考上面提供的链接。
+除了简单地打印变量的值，我们还可以结合其他一些技巧来更好地利用打印调试输出。例如，在循环中打印调试输出，可以帮助我们跟踪循环的每一次迭代，从而更容易找出问题所在。另外，我们还可以使用console.group()和console.groupEnd()来将相关的调试输出分组，帮助我们更清晰地看到不同部分的输出内容。
+
+另外，我们也可以使用条件语句来决定是否打印调试输出，从而避免在不需要的情况下产生过多的输出内容。对于更复杂的调试需求，我们可以使用调试器工具来进行更精准的调试操作。
+
+## 另请参阅
+
+- [Javascript中console.log的使用方法](https://developer.mozilla.org/zh-CN/docs/Web/API/Console/log)
+- [打印调试输出的小技巧](https://codeburst.io/javascript-console-d64c3a0e1a25)
+- [使用调试器进行高级调试](https://javascript.info/debugging-chrome)

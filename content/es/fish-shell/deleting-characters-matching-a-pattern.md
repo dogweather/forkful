@@ -1,66 +1,48 @@
 ---
 title:                "Fish Shell: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por Qué?
+## ¿Por qué deberías borrar caracteres que coincidan con un patrón?
 
-A veces, al trabajar con archivos de texto en la terminal, puede ser necesario eliminar caracteres específicos que cumplan con un patrón determinado. Esto puede ser útil, por ejemplo, cuando se está procesando un archivo de registro y se desea eliminar todas las líneas que contengan un determinado mensaje de error.
+A veces, mientras trabajas en tu terminal con Fish Shell, puedes encontrarte con la necesidad de borrar ciertos caracteres de un texto que coinciden con un patrón específico. Esto puede ser útil para limpiar tus archivos de configuración, depurar tu código o simplemente para mantener tu sistema organizado. En esta entrada, te mostraré cómo hacerlo de manera sencilla y eficiente en Fish Shell.
 
-## Cómo Hacerlo
+## Cómo hacerlo
 
-Para eliminar caracteres que coincidan con un patrón en Fish Shell, se puede utilizar el comando `string match`. Este comando acepta una cadena de texto y un patrón de búsqueda, y elimina todas las apariciones del patrón en la cadena de texto.
+Para borrar caracteres que coincidan con un patrón en Fish Shell, utilizaremos el comando `string replace` seguido del patrón que deseamos eliminar y reemplazándolo con un texto vacío. Por ejemplo, si queremos eliminar todos los símbolos de exclamación en un texto, podemos escribir lo siguiente en nuestro terminal:
 
-Veamos un ejemplo para entender mejor. Supongamos que tenemos un archivo de registro llamado `log.txt` que contiene las siguientes líneas:
+```Fish Shell
 
-```
-10:30 - Error: Connection timed out
-11:00 - Info: Successfully connected
-11:15 - Warning: Disk space running low
-```
-
-Si queremos eliminar todas las líneas que contengan la palabra "Error", podemos hacerlo de la siguiente manera en Fish Shell:
+echo "¡Hola mundo!" | string replace "!" ""
 
 ```
-string match -v "Error" log.txt
+
+Esto imprimirá en la línea de comandos el texto "¡Hola mundo" sin el símbolo de exclamación.
+
+## Profundizando
+
+El comando `string replace` en Fish Shell también nos permite usar patrones más complejos utilizando expresiones regulares. Por ejemplo, si deseamos eliminar todos los números de un texto, podemos usar la expresión regular `"[0-9]"` para indicar que queremos borrar cualquier dígito del 0 al 9. El comando se vería así:
+
+```Fish Shell
+echo "Hoy es 1 de enero del 2020" | string replace "[0-9]" ""
 ```
 
-Esto eliminará la primera línea del archivo y nos mostrará el resultado en la terminal:
+Esto nos dará como resultado el texto "Hoy es de enero del ", sin los números de la fecha.
 
-```
-11:00 - Info: Successfully connected
-11:15 - Warning: Disk space running low
-```
+También podemos usar la opción `-g` para borrar todas las ocurrencias del patrón en lugar de solo la primera. Por ejemplo:
 
-También es posible utilizar caracteres comodín en el patrón de búsqueda para eliminar múltiples caracteres que coincidan con ciertos criterios. Por ejemplo, si quisiéramos eliminar todas las líneas que comiencen con un número, podríamos utilizar el siguiente patrón:
-
-```
-string match -v "[0-9]*" log.txt
+```Fish Shell
+echo "¡¡¡Feliz cumpleaños!!!" | string replace "!" "" -g
 ```
 
-Esto eliminará la primera línea del archivo y nos mostrará el resultado en la terminal:
+Esto nos devolverá el texto "¡Feliz cumpleaños!" sin los símbolos de exclamación.
 
-```
-11:00 - Info: Successfully connected
-11:15 - Warning: Disk space running low
-```
+## Ver también
 
-## Buscando en Profundidad
-
-Además de utilizar el comando `string match` para eliminar caracteres que coincidan con un patrón, Fish Shell también ofrece otras herramientas que pueden ser útiles en diferentes situaciones.
-
-Por ejemplo, el comando `string replace` permite reemplazar caracteres que coincidan con un patrón en una cadena de texto. Esto puede ser útil si se desea realizar una acción más específica que simplemente eliminar los caracteres que coinciden con el patrón.
-
-Por otro lado, para aquellos que prefieren utilizar expresiones regulares para buscar patrones, Fish Shell ofrece el comando `string match -r`, que realiza una búsqueda basada en expresiones regulares en lugar de una búsqueda de texto simple.
-
-Explorar estas herramientas y aprender cómo utilizarlas puede ayudar a trabajar de manera más eficiente y efectiva con archivos de texto en la terminal.
-
-## Ver También
-
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial de Fish Shell en español](https://geekytheory.com/tutorial-fish-una-shell-moderna-y-rapida)
-- [Guía de expresiones regulares en Fish Shell](https://fishshell.com/docs/current/tutorial.html#tutorial-rx)
+Para más información sobre el comando `string replace` en Fish Shell y todos sus parámetros, puedes consultar la [documentación oficial](https://fishshell.com/docs/current/cmds/string-replace.html). También puedes aprender más sobre expresiones regulares en Fish Shell en esta [entrada de blog](https://fishshell.com/docs/current/tutorial.html#using-regular-expressions). ¡Espero que te haya sido útil esta entrada y que te ayude a mejorar tus habilidades en Fish Shell!

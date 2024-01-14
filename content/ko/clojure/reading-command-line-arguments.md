@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: 명령 줄 인수 읽기"
+title:                "Clojure: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/reading-command-line-arguments.md"
 ---
 
@@ -9,16 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-커맨드 라인 인자를 읽는 것의 중요성은 여러분의 프로그램을 커스터마이징하고, 유연하게 만들며 사용자와 상호작용하기 위해서입니다.
+커맨드 라인 인수를 읽는 것은 프로그래머에게 매우 유용합니다. 인수를 읽는 능력은 여러분이 쉘 스크립트를 작성하거나 Clojure 애플리케이션을 만들 때 매우 중요한 요소입니다.
 
-## 사용 방법
+## 어떻게
 
-커맨드 라인 인자를 읽는 것은 간단합니다. 먼저 ```clojure (def args (-> *command-line-args* rest)). ``` 을 사용하여 커맨드 라인 인자를 가져옵니다. 다음으로 ```clojure (println "Hello, " (first args) "!") ``` 처럼 다양한 방식으로 인자를 사용할 수 있습니다. 예를 들어, ```clojure java -jar my-program.jar John ``` 을 입력하면 "Hello, John!"이 출력됩니다.
+커맨드 라인 인수를 읽기 위해서는 Clojure의 `command-line-args` 함수를 사용하면 됩니다. 이 함수는 현재 프로세스의 커맨드 라인 인수를 가져옵니다. 예를 들어, `lein run arg1 arg2` 명령으로 프로그램을 실행하면, `command-line-args` 함수는 `["arg1" "arg2"]`를 반환합니다.
 
-## 심화 학습
+```Clojure
+(defn -main [& args]
+  (let [command-line-args (command-line-args)]
+    (println command-line-args)))
 
-커맨드 라인 인자를 더 깊이 이해하기 위해서는 Clojure의 ```*command-line-args*``` 함수를 더 자세히 살펴보세요. 이 함수는 Java의 ```args``` 배열로부터 커맨드 라인 인자를 가져옵니다.
+; Output: ["arg1" "arg2"]
+```
 
-## 더 알아보기
+## 깊게 파고들기
 
-"Command Line Arguments in Clojure"는 Clojure 공식 문서에서 커맨드 라인 인자를 다루는 방법에 대해 더 자세히 설명합니다. 또한 "Clojure for the Brave and True" 책의 "Reading Command-Line Arguments" 섹션도 이 주제에 대한 유용한 정보들을 담고 있습니다. 마지막으로 "Clojure CLI"는 더 복잡한 커맨드 라인 인자를 다루는 데 유용한 도구입니다.
+`command-line-args` 함수는 기본적으로 스트링 형태의 인수만을 반환합니다. 그러나 만약에 여러분이 숫자를 인수로 받고 싶다고 가정해 봅시다. 이 경우에는 `parse-int` Clojure 함수를 사용하여 숫자로 변환할 수 있습니다. 또한 여러분이 다양한 인수를 받아서 사용할 때 `getopts` 라이브러리를 사용하는 것도 좋은 옵션입니다.
+
+## See Also
+
+- `command-line-args` 함수: https://clojuredocs.org/clojure.core/command-line-args
+- `parse-int` 함수: https://clojuredocs.org/clojure.core/parse-int
+- `getopts` 라이브러리: https://github.com/clojure/tools.cli

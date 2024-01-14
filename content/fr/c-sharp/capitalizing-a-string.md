@@ -1,77 +1,72 @@
 ---
-title:                "C#: Mettre en majuscule une chaîne de caractères"
+title:                "C#: Majuscule d'une chaîne de caractères"
+simple_title:         "Majuscule d'une chaîne de caractères"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi capitaliser une chaîne de caractères ?
 
-Il peut sembler anodin, mais il est important de savoir comment capitaliser correctement une chaîne de caractères en C#. Cela peut sembler être une tâche simple, mais une mauvaise capitalisation peut entraîner des erreurs dans votre code et des résultats inattendus. Heureusement, il existe des méthodes simples pour capitaliser efficacement une chaîne de caractères en C#, que nous allons explorer dans cet article.
+Capitaliser une chaîne de caractères est une opération courante en programmation. Cela consiste à mettre la première lettre de chaque mot en majuscule et le reste en minuscule. Cette pratique est utile pour améliorer la lisibilité et la cohérence d'un texte, en particulier lorsqu'il s'agit d'afficher des informations à l'utilisateur.
 
-## Comment Faire
+## Comment le faire en C# ?
 
-Pour capitaliser une chaîne de caractères en C#, vous pouvez utiliser la méthode `ToUpper()` ou `ToLower()` en fonction de vos besoins.
+Il existe plusieurs façons de capitaliser une chaîne de caractères en C#. La méthode la plus simple consiste à utiliser la fonction intégrée ToTitleCase() de la classe TextInfo. Voici un exemple de code qui capitalise une chaîne saisie par l'utilisateur :
 
-```
-string phrase = "Bonjour le monde";
+```C#
+using System;
+using System.Globalization;
 
-Console.WriteLine(phrase.ToUpper());
-Console.WriteLine(phrase.ToLower());
+namespace CapitalizeString
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Demande à l'utilisateur de saisir une chaîne de caractères
+            Console.WriteLine("Entrez une chaîne de caractères : ");
+            string input = Console.ReadLine();
 
-// Output:
-// BONJOUR LE MONDE
-// bonjour le monde
-```
+            // Utilise la classe TextInfo pour capitaliser la chaîne
+            TextInfo myTI = new CultureInfo("fr-FR", false).TextInfo;
+            string capitalizedInput = myTI.ToTitleCase(input);
 
-Vous pouvez également utiliser la méthode `CultureInfo` pour capitaliser une chaîne de caractères selon une culture spécifique.
-
-```
-string phrase = "hello world";
-
-Console.WriteLine(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(phrase));
-
-// Output:
-// Hello World
-```
-
-## Plongée en Profondeur
-
-Il est important de noter que la méthode `ToUpper()` et `ToLower()` utilisent la culture en cours pour capitaliser la chaîne de caractères. Si vous voulez une capitalisation spécifique, vous pouvez utiliser la méthode `String.ToUpperInvariant()` ou `String.ToLowerInvariant()`.
-
-```
-string phrase = "Bonjour le monde";
-
-Console.WriteLine(phrase.ToUpper());
-Console.WriteLine(phrase.ToUpperInvariant());
-
-// Output:
-// BONJOUR LE MONDE
-// BONJOUR LE MONDE
+            // Affiche la chaîne capitalisée
+            Console.WriteLine("Chaîne capitalisée : " + capitalizedInput);
+            Console.ReadLine();
+        }
+    }
+}
 ```
 
-De plus, il est important de comprendre l'utilisation de la méthode `CultureInfo` pour capitaliser une chaîne de caractères. Par exemple, le comportement de la méthode `ToTitleCase()` peut varier en fonction de la culture utilisée. Prenons pour exemple le mot "Istanbul" qui sera capitalisé différemment selon la culture choisie.
-
+**Exemple d'entrée et de sortie :**
 ```
-string city = "Istanbul";
-
-CultureInfo english = new CultureInfo("en-US");
-CultureInfo turkish = new CultureInfo("tr-TR");
-
-Console.WriteLine(english.TextInfo.ToTitleCase(city));
-Console.WriteLine(turkish.TextInfo.ToTitleCase(city));
-
-// Output:
-// Istanbul
-// İstanbul
+Entrez une chaîne de caractères : bonjour tout le monde
+Chaîne capitalisée : Bonjour Tout Le Monde
 ```
 
-Comme vous pouvez le voir, la méthode `ToTitleCase()` capitalise le "I" en minuscule en utilisant la culture turque, tandis qu'il reste en majuscule en utilisant la culture anglaise.
+Il est également possible de capitaliser une chaîne en utilisant la fonction Substring() pour extraire la première lettre et la mettre en majuscule, puis en ajoutant le reste de la chaîne. Voici un exemple :
+
+```C#
+string input = "hello world";
+string capitalizedInput = input.Substring(0, 1).ToUpper() + input.Substring(1).ToLower();
+Console.WriteLine(capitalizedInput);
+```
+
+**Sortie :** Hello world
+
+## Approfondissement
+
+En plus des méthodes mentionnées ci-dessus, il est également possible de capitaliser une chaîne en utilisant des expressions régulières ou en créant une fonction personnalisée. Cependant, il est important de noter que ces méthodes peuvent avoir un impact sur les performances de votre code en raison de leur complexité.
+
+Il est également important de prendre en compte la langue et la culture lors de la capitalisation d'une chaîne de caractères. Par exemple, en français, les règles d'accents et de majuscules peuvent varier en fonction du contexte. Il est donc important de bien comprendre les besoins et les spécifications de votre application avant de choisir la méthode la plus appropriée pour capitaliser une chaîne.
 
 ## Voir aussi
 
-- [Documentation Microsoft sur la méthode ToUpper()](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.toupper)
-- [Documentation Microsoft sur la méthode ToLower()](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.tolower)
-- [Documentation Microsoft sur la classe CultureInfo](https://docs.microsoft.com/fr-fr/dotnet/api/system.globalization.cultureinfo)
+- Documentation Microsoft sur la fonction ToTitleCase() : https://msdn.microsoft.com/fr-fr/library/system.globalization.textinfo.totitlecase(v=vs.110).aspx
+- Guide de référence sur les expressions régulières en C# : https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expression-language-quick-reference
+- Tutoriel sur la création de fonctions personnalisées en C# : https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/classes-and-structs/how-to-define-and-use-custom-numeric-format-providers

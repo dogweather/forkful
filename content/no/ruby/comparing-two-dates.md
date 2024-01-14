@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Sammenligning av to datoer"
+simple_title:         "Sammenligning av to datoer"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/comparing-two-dates.md"
 ---
 
@@ -9,42 +11,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-I dagens verden av teknologi er det viktigere enn noensinne å være i stand til å håndtere og manipulere data på en effektiv måte. En av de vanligste oppgavene innen programmering er å sammenligne to datoer for å bestemme hvilken som er tidligere eller senere. Dette kan være nyttig for å sortere data eller for å beregne tidsperioder. I denne bloggposten skal vi lære deg hvordan du enkelt kan sammenligne to datoer ved hjelp av Ruby-programmering.
+Å sammenligne to datoer kan være en viktig del av programmering, spesielt når man jobber med tidssensitive applikasjoner. Ved å sammenligne datoer kan man enkelt finne ut om en dato er før, etter eller lik en annen. Dette kan være nyttig for å utføre forskjellige handlinger eller filtrere data basert på datoer.
 
-## Hvordan
+## Hvordan gjøre det
 
-For å sammenligne to datoer i Ruby, må man først konvertere dem til et format som kan sammenlignes. Dette kan gjøres ved å bruke "Date" og "Time" klassene i Ruby, og deretter bruke metoder som "parse" og "strftime" for å få ønsket format. La oss se på et eksempel:
+Det er flere måter å sammenligne datoer på i Ruby, avhengig av hvordan datoene er lagret. Her er tre eksempler på hvordan dette kan gjøres:
 
-```Ruby
-# Konvertering av datoer til ønsket format
-dato1 = Date.parse("12/10/2020") # Datoen skal være i formatet MM/DD/YYYY
-dato2 = Time.parse("20201210") # Datoen skal være i formatet YYYYMMDD
-```
-
-Nå som vi har konvertert begge datoene, kan vi enkelt sammenligne dem ved hjelp av operatorer som ">","<" eller "==". Her er et eksempel på hvordan man kan finne ut hvilken av datoene som er tidligere:
+### Med Date objekter
 
 ```Ruby
-# Sammenligne datoer og bestemme hvilken som er tidligere
-if dato1 < dato2
-  puts "Dato 1, #{dato1.strftime("%d/%m/%Y")}, er tidligere enn dato 2, #{dato2.strftime("%Y/%m/%d")}."
+require 'date'
+
+date1 = Date.new(2020, 9, 1)
+date2 = Date.new(2020, 8, 1)
+
+if date1 > date2
+  puts "Date1 er etter Date2"
+elsif date1 < date2
+  puts "Date1 er før Date2"
 else
-  puts "Dato 2, #{dato2.strftime("%Y/%m/%d")}, er tidligere enn dato 1, #{dato1.strftime("%d/%m/%Y")}."
+  puts "Date1 er lik Date2"
 end
 ```
 
-Dette vil gi følgende output:
+### Med Time objekter
 
-```console
-=> Dato 2, 2020/12/10, er tidligere enn dato 1, 12/10/2020.
+```Ruby
+require 'time'
+
+time1 = Time.new(2020, 9, 1, 12, 0, 0)
+time2 = Time.new(2020, 9, 1, 10, 0, 0)
+
+if time1 > time2
+  puts "Time1 er etter Time2"
+elsif time1 < time2
+  puts "Time1 er før Time2"
+else
+  puts "Time1 er lik Time2"
+end
 ```
 
-## Deep Dive
+### Med DateTime objekter
 
-For de som er interessert i å gå dypere inn i temaet, finnes det flere metoder for å sammenligne datoer i Ruby. En annen vanlig metode er å bruke klassen "DateTime", som har flere innebygde metoder for å sammenligne datoer. Det finnes også gems (tredjepartsbiblioteker) som kan gjøre dette enda enklere og mer robust, som for eksempel "compare_by_date" og "chronic". Det er også viktig å være oppmerksom på forskjellige tidszoner og hvordan de kan påvirke sammenligningen av datoer.
+```Ruby
+require 'date'
 
-## Se Også
+date_time1 = DateTime.new(2020, 9, 1, 12, 0, 0)
+date_time2 = DateTime.new(2020, 9, 1, 10, 0, 0)
 
-- [Ruby Date Klasse Dokumentasjon](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
-- [Ruby Time Klasse Dokumentasjon](https://ruby-doc.org/core-2.5.1/Time.html)
-- [Ruby DateTime Klasse Dokumentasjon](https://ruby-doc.org/stdlib-2.5.1/libdoc/datetime/rdoc/DateTime.html)
-- [Rubygems.org](https://rubygems.org)
+if date_time1 > date_time2
+  puts "DateTime1 er etter DateTime2"
+elsif date_time1 < date_time2
+  puts "DateTime1 er før DateTime2"
+else
+  puts "DateTime1 er lik DateTime2"
+end
+```
+
+Output for alle tre eksemplene vil være:
+
+```Ruby
+Date1 er etter Date2 (eller Time1 er etter Time2 / DateTime1 er etter DateTime2)
+```
+
+## Dypdykk
+
+Det er viktig å merke seg at når man sammenligner datoer i Ruby, så vil kun dato, måned og år bli tatt i betraktning. Timer, minutter og sekunder blir ikke sammenlignet. Dette kan føre til uventet oppførsel dersom man jobber med datoer i ulike formater eller tidsmerking. Det er derfor viktig å være oppmerksom på disse forskjellene når man sammenligner datoer i Ruby.
+
+## Se også
+
+- [Date klasse i Ruby](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [Time klasse i Ruby](https://ruby-doc.org/core-2.7.1/Time.html)
+- [DateTime klasse i Ruby](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html)

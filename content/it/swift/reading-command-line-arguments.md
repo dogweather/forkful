@@ -1,60 +1,56 @@
 ---
 title:                "Swift: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché leggere gli argomenti della riga di comando?
+## Perché
 
-Se stai sviluppando un'applicazione da riga di comando in Swift, probabilmente avrai bisogno di leggere gli argomenti passati dall'utente al momento dell'esecuzione del programma. Questo ti aiuterà a gestire gli input dell'utente in modo dinamico e a creare un'esperienza più fluida per l'utente. In questa guida, vedremo come leggere gli argomenti della riga di comando in Swift.
+Scrivere un programma non significa solo creare un codice e farlo funzionare, ma anche comprendere come esso interagisce con l'utente. Una delle modalità più comuni per l'utente di fornire input al programma è attraverso gli argomenti della riga di comando. In questo articolo vedremo come leggere questi argomenti in Swift.
 
-## Come farlo:
+## Come fare
 
-In Swift, ci sono diverse opzioni per leggere gli argomenti della riga di comando. Una delle opzioni più comuni è utilizzare il metodo `CommandLine.arguments`. Questo metodo restituisce un array di stringhe che rappresentano gli argomenti passati alla riga di comando. Vediamo un esempio:
+Per prima cosa, è necessario definire una variabile di tipo `CommandLine` per poter accedere agli argomenti della riga di comando. Successivamente, possiamo utilizzare il metodo `arguments` per ottenere un array contenente tutti gli argomenti passati al programma. Ecco un esempio di come leggere e stampare gli argomenti forniti dall'utente:
 
 ```Swift
 let arguments = CommandLine.arguments
-print(arguments)
+
+for argument in arguments {
+    print(argument)
+}
 ```
 
-Se eseguiamo questo programma con alcuni argomenti, ad esempio `swift main.swift arg1 arg2`, otterremo il seguente output:
+Se si esegue il programma con il comando `swift nomeDelProgramma.swift uno due tre`, l'output dovrebbe essere:
 
 ```
-["main.swift", "arg1", "arg2"]
+nomeDelProgramma.swift
+uno
+due
+tre
 ```
 
-Possiamo quindi utilizzare i valori all'interno di questo array per gestire l'input dell'utente e eseguire determinate azioni in base agli argomenti passati.
+Per accedere a un argomento specifico, è possibile utilizzare la sua posizione nell'array. Ad esempio, se si vuole ottenere il terzo argomento, si può usare `arguments[2]`.
 
 ## Approfondimento
 
-Per una maggiore flessibilità, possiamo anche utilizzare la libreria `ArgumentParser` di Apple, che ci permette di definire opzioni e argomenti personalizzati per il nostro programma da riga di comando. Possiamo utilizzare questa libreria per creare un'interfaccia più intuitiva e facile da usare per l'utente. Ad esempio, possiamo definire una variabile `verbose` per specificare se l'utente vuole o meno output dettagliati. Vediamo un esempio di utilizzo di `ArgumentParser`:
+Oltre alla lettura degli argomenti della riga di comando, è possibile anche aggiungere dei parametri di opzioni, che rendono il programma più flessibile. Per aggiungere un parametro di opzione, basta utilizzare il formato `--nomeDelParametro=valore`. Ad esempio:
 
 ```Swift
-import ArgumentParser
+let options = CommandLine.options
 
-struct MyCommand: ParsableCommand {
-    @Flag(help: "Prints verbose output")
-    var verbose: Bool
-
-    func run() throws {
-        if verbose {
-            print("Verbose output enabled")
-        }
-    }
+if options.keys.contains("--nome") {
+    let name = options["--nome"]
+    print("Ciao \(name)!")
 }
-
-MyCommand.main()
 ```
-
-Con questo codice, possiamo avviare il nostro programma con l'argomento `--verbose` per ottenere l'output dettagliato.
+In questo caso, se il parametro `--nome` è presente, il programma saluta l'utente usando il nome fornito come valore.
 
 ## Vedi anche
-
-- [Documentazione di Apple su CommandLine](https://developer.apple.com/documentation/foundation/commandline)
-- [Documentazione di Apple su ArgumentParser](https://developer.apple.com/documentation/swift-argumentparser)
-- [Tutorial su come scrivere un'applicazione da riga di comando in Swift](https://dev.to/yagiz/creating-a-command-line-tool-in-swift-5-eop)
-
-Speriamo che questa guida ti sia stata utile per imparare come leggere gli argomenti della riga di comando in Swift. Con questo, puoi creare applicazioni più interattive e personalizzate per i tuoi utenti. Continua a esplorare il mondo della programmazione in Swift e buon coding!
+- [Documentazione di Swift per la classe `CommandLine`](https://developer.apple.com/documentation/swift/commandline)
+- [Tutorial su come leggere argomenti della riga di comando in Swift](https://www.hackingwithswift.com/example-code/system/how-to-read-command-line-arguments-using-commandline)
+- [Esempi di utilizzi avanzati degli argomenti della riga di comando in Swift](https://www.swiftbysundell.com/posts/using-the-command-line-in-swift)

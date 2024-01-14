@@ -1,81 +1,48 @@
 ---
 title:                "Ruby: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor?
 
-Hvorfor bør man kunne regne ut datoer i fremtiden eller fortiden? Det kan være nyttig for å planlegge fremtidige arrangementer eller for å spore tilbake i tid.
+Det kan være mange grunner til at man ønsker å kunne beregne en dato i fremtiden eller fortiden ved hjelp av Ruby-programmering. Noen eksempler kan være å lage en kalender-applikasjon, planlegge fremtidige hendelser eller datofeste innlegg på en blogg. Uansett hva årsaken måtte være, så kan dette være et nyttig verktøy å ha i verktøykassen din som Ruby-utvikler.
 
-# Hvordan gjøre det
+## Slik gjør du det
 
-For å regne ut en dato i fremtiden eller fortiden, kan man bruke Ruby sin `Date` klasse. Ved å bruke `#new` metoden og gi den ønsket år, måned og dag, kan man opprette en ny dato.
+Å beregne en dato i fremtiden eller fortiden i Ruby er enkelt, takket være `Date` klassen. Du kan benytte følgende kode for å beregne en dato 5 dager frem i tid fra dagens dato:
 
-```ruby
-# Opprett en dato for 1. mai 2022
-future_date = Date.new(2022, 5, 1)
+```Ruby
+require 'date' # Importerer Date-klassen
 
-# Opprett en dato for 1. mai 2018
-past_date = Date.new(2018, 5, 1)
+today = Date.today # Henter dagens dato
+future_date = today + 5 # Legger til 5 dager
+puts future_date # Skriver ut resultatet
 ```
 
-For å regne ut en dato i fremtiden eller fortiden, kan man bruke `#next_day` eller `#prev_day` metoden. Disse metodene tar et heltall som argument, som representerer hvor mange dager man vil gå frem eller tilbake fra den opprinnelige datoen.
+Dette vil gi følgende utskrift:
 
-```ruby
-# Regn ut datoen 30 dager etter 1. mai 2022
-future_date = future_date.next_day(30)
-
-# Regn ut datoen 30 dager før 1. mai 2018
-past_date = past_date.prev_day(30)
+```Ruby
+#<Date: 2020-06-15 ((2459034j,0s,0n),+0s,2299161j)>
 ```
 
-Man kan også bruke `#next_month` og `#prev_month` metoden for å regne ut datoer i fremtiden eller fortiden basert på antall måneder i stedet for dager.
+Som du kan se, returnerer Ruby en instans av `Date` klassen med ønsket dato. Du kan også beregne datoer i fortiden ved å trekke fra et antall dager fra dagens dato.
 
-```ruby
-# Regn ut datoen 6 måneder etter 1. mai 2022
-future_date = future_date.next_month(6)
+## Dypdykk
 
-# Regn ut datoen 6 måneder før 1. mai 2018
-past_date = past_date.prev_month(6)
-```
+Det er verdt å merke seg at `Date` klassen i Ruby har mange nyttige metoder for å arbeide med datoer. Du kan for eksempel sjekke hvilken dag i uken en bestemt dato faller på, sjekke om et år er et skuddår og mye mer. Ved å utforske dokumentasjonen til `Date` klassen, kan du oppdage enda flere måter å manipulere datoer på.
 
-For å få utskrift av datoen i ønsket format, kan man bruke `#strftime` metoden og gi den ønsket formatstring som argument.
+En annen viktig ting å huske på er at Ruby også har klasser for å håndtere tid og dato sammen, slik som `DateTime` og `Time`. Disse klassene kan være nyttige hvis du også trenger å håndtere tidspunkt i tillegg til datoer.
 
-```ruby
-# Få utskrift av datoen i formatet dd.mm.åååå
-puts future_date.strftime("%d.%m.%Y")
+## Se også
 
-# Utskrift: 31.10.2022
+Her er noen nyttige ressurser for å hjelpe deg med å lære mer om beregning av datoer i Ruby:
 
-# Få utskrift av datoen i formatet åååå/mm/dd
-puts past_date.strftime("%Y/%m/%d")
-
-# Utskrift: 2018/11/01
-```
-
-# Dypdykk
-
-Det er også mulig å regne ut datoer i fremtiden eller fortiden fra en eksisterende dato. Ved å bruke `#next` eller `#prev` metoden, kan man regne ut datoer basert på en annen dato. I tillegg kan man også bruke `#next_year` og `#prev_year` metoden for å regne ut datoer som er ett år frem eller tilbake fra en eksisterende dato.
-
-```ruby
-# Opprett en eksisterende dato
-existing_date = Date.new(2020, 6, 15)
-
-# Regn ut datoen 2 år etter den eksisterende datoen
-future_date = existing_date.next_year(2)
-
-# Regn ut datoen 10 år før den eksisterende datoen
-past_date = existing_date.prev_year(10)
-```
-
-Man kan også bruke `#next_week` eller `#prev_week` metoden for å regne ut datoer basert på antall uker i stedet for dager. Og ved å bruke `DateTime` klasse i stedet for `Date` klasse, kan man også inkludere klokkeslett i utregningen av datoer.
-
-# Se også
-
-- [Ruby Doc - Date Class](https://ruby-doc.org/core-2.7.1/Date.html)
-- [Ruby Doc - DateTime Class](https://ruby-doc.org/standard-library-2.7.1/libdoc/date/rdoc/DateTime.html)
-- [Ruby Doc - String#strftime](https://ruby-doc.org/core-2.7.1/String.html#method-i-strftime)
+- [Dokumentasjon for `Date` klassen](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [Beregning av dato og tid i Ruby](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
+- [Dato- og tidsbehandling i Ruby](http://zetcode.com/ruby/datetime/)

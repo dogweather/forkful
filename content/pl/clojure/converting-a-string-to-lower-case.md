@@ -1,51 +1,41 @@
 ---
-title:                "Clojure: Konwersja ciągu znaków na małe litery"
+title:                "Clojure: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego
+## Dlaczego
 
-Konwertowanie ciągów znaków na mniejsze litery jest podstawową funkcją w każdym języku programowania, która jest niezbędna przy przetwarzaniu tekstu. W Clojure istnieje wiele sposobów na wykonanie tego zadania, co sprawia, że jest to bardzo elastyczne i użyteczne narzędzie dla programistów.
+Często w pracy z danymi, może się zdarzyć że będziemy musieli dokonać konwersji napisu na małe litery. Powodem może być np. porównywanie napisów, czy zamiana dużych liter na małe w celu spójności danych. W tym przypadku, konwersja do małych liter jest niezbędna.
 
-# Jak to zrobić
+## Jak to zrobić
 
-Zacznijmy od prostego przykładu, w którym zamienimy ciąg znaków "Hello, World!" na mniejsze litery.
-
-```Clojure
-(.toLowerCase "Hello, World!")
-```
-
-Output: "hello, world!"
-
-Możemy również użyć funkcji ```clojure.string/lower-case``` , która sprowadza ciągi znaków do samej postaci "hello, world!".
+W celu konwersji napisu na małe litery w języku Clojure, musimy użyć funkcji `lower-case` z biblioteki `clojure.string`. Przykładowy kod wyglądałby następująco:
 
 ```Clojure
 (require '[clojure.string :as str])
 
-(str/lower-case "Hello, World!")
+(str/lower-case "PRZYKŁADOWY NAPIS") ; wynik: "przykładowy napis"
 ```
 
-Output: "hello, world!"
-
-Jeśli chcemy zachować oryginalną formę tekstu, ale jedynie zamienić litery na mniejsze, możemy użyć funkcji ```clojure.string/capitalize``` , która zamieni tylko pierwszą literę na wielką.
+Możemy również zastosować tę funkcję do kolekcji napisów, dzięki czemu cała kolekcja zostanie automatycznie przekonwertowana do małych liter.
 
 ```Clojure
-(str/capitalize "hello, world!")
+(str/lower-case ["ABRA", "KADABRA"]) ; wynik: ["abra", "kadabra"]
 ```
 
-Output: "Hello, world!"
+## Głębsza analiza
 
-# Głębsza analiza
+Podczas przekonwertowania napisu na małe litery, warto pamiętać o kilku ważnych zagadnieniach. Po pierwsze, funkcja `lower-case` zwraca nowy napis, a nie zmienia oryginalnego. Dlatego, jeśli chcemy zastosować zmiany bezpośrednio na oryginalnym napisie, musimy skorzystać z funkcji `str/lower-case!`.
 
-W Clojure istnieje wiele funkcji i metod, które pozwalają na konwertowanie ciągów znaków na mniejsze litery lub zamianę liter na wielkie. Warto zwrócić uwagę na to, że funkcje te są często wykorzystywane w połączeniu z innymi funkcjami, co umożliwia jeszcze bardziej zaawansowane operacje na tekście.
+Należy również zwrócić uwagę na język, w którym jest zapisany dany napis. Niektóre znaki mogą mieć odmienne formy w zależności od języka, dlatego konwersja do małych liter może nie być skuteczna w przypadku napisów z różnymi alfabetami.
 
-Możemy również spotkać się z różnymi problemami związanymi z konwertowaniem ciągów znaków, na przykład jeśli używamy znaków specjalnych lub innych języków. W takich przypadkach warto poszukać specjalnych funkcji lub rozwiązań, które pozwolą na prawidłową konwersję tekstu.
+## Zobacz także
 
-# Zobacz również
-
-- [Funkcje tekstowe w Clojure](https://clojuredocs.org/clojure.string)
-- [Przetwarzanie tekstu w Clojure](https://www.braveclojure.com/troubleshooting-strings-in-clojure/)
+- Dokumentacja funkcji `str/lower-case`: https://clojuredocs.org/clojure.string/lower-case
+- Porównywanie napisów w języku Clojure: https://code-maven.com/compare-strings-clojure

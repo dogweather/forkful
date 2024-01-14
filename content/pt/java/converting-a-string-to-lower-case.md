@@ -1,37 +1,52 @@
 ---
 title:                "Java: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-A conversão de uma string para letras minúsculas é uma tarefa comum na programação, especialmente quando lidamos com dados de usuário ou manipulamos strings em geral. Ao converter uma string para letras minúsculas, podemos garantir que a comparação de strings seja feita de forma consistente e precisa.
+# Por que converter uma string para minúsculas?
 
-## Como Fazer
-```Java
-// Criando uma string com letras maiúsculas
-String exemplo = "CONVERTE-ME PARA LETRAS MINÚSCULAS"; 
-// Utilizando o método toLowerCase() para converter a string para letras minúsculas
-String resultado = exemplo.toLowerCase();
-// Imprimindo o resultado
-System.out.println(resultado);
+Converter uma string para minúsculas pode ser útil em várias situações, como por exemplo, ao fazer comparações de strings, gerar saídas de texto com formatação específica ou simplesmente para deixar o texto mais uniforme e legível.
 
-// Output: converte-me para letras minúsculas
+## Como fazer:
+
+Usando a função `toLowerCase()` da classe `String`, podemos facilmente converter uma string para minúsculas. Veja um exemplo abaixo:
+
+```java
+String texto = "Olá, Mundo!";
+String textoMinusculo = texto.toLowerCase();
+System.out.println(textoMinusculo);
 ```
 
-Ao utilizar o método `toLowerCase()`, garantimos que todas as letras da string sejam convertidas para minúsculas, incluindo acentos e caracteres especiais. Além disso, é importante lembrar que strings são imutáveis em Java, então o método `toLowerCase()` irá criar uma nova string com as modificações realizadas, preservando a string original.
+A saída será: `olá, mundo!`
 
-## Mergulho Profundo
-O método `toLowerCase()` é uma função da classe `String` do Java, e é responsável por converter todas as letras maiúsculas da string para letras minúsculas. Ele é baseado na tabela ASCII, que é um sistema de mapeamento de caracteres usado em computadores.
+Podemos também utilizar esta função em conjunto com outras operações, como por exemplo, comparar duas strings ignorando o seu case, como mostrado no exemplo abaixo:
 
-Ao converter uma string para letras minúsculas, o Java utiliza esse mapeamento para trocar os valores numéricos de cada caractere, mudando-os para o equivalente em letras minúsculas. Por exemplo, a letra "A" possui um valor numérico na tabela ASCII de 65, enquanto a letra "a" possui o valor 97. O método `toLowerCase()` irá trocar esse valor de 65 para 97, convertendo a letra maiúscula "A" para minúscula "a".
+```java
+String texto1 = "Java";
+String texto2 = "JAVA";
+if (texto1.toLowerCase().equals(texto2.toLowerCase())) {
+    System.out.println("As duas strings são iguais!");
+} else {
+    System.out.println("As duas strings são diferentes.");
+}
+```
 
-Além disso, é importante lembrar que a conversão de letras maiúsculas para minúsculas pode ser dependente da localização (locale) em que o programa está sendo executado. Isso significa que caracteres com acentos, como "Á" ou "Â", podem ser convertidos de forma diferente dependendo da região. Portanto, é sempre importante utilizar a conversão de strings de forma consciente e considerar possíveis diferenças na localização.
+A saída será: `As duas strings são iguais!`
 
-## Veja também
-- [Documentação oficial do método toLowerCase()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
-- [Tabela ASCII](https://www.ascii-code.com/)
-- [Java Tutorial: Strings and Text](https://docs.oracle.com/javase/tutorial/i18n/text/string.html)
+## Aprofundando mais
+
+Ao converter uma string para minúsculas, é importante ter em mente que isso será aplicado em todas as letras da string, incluindo acentos e caracteres especiais, como por exemplo o "ß" (ß é equivalente a "ss" em alemão). Porém, vale ressaltar que a maneira como a conversão é feita pode variar dependendo do idioma utilizado e suas regras de letras maiúsculas e minúsculas.
+
+Além disso, também é importante lembrar que strings em Java são imutáveis, ou seja, ao converter uma string para minúsculas, na verdade estamos criando uma nova string com o texto em minúsculas. Isso pode afetar o desempenho e consumo de memória do seu código, especialmente em casos onde é necessário converter várias strings para minúsculas em um loop.
+
+# Veja também
+
+- [Explicação sobre a classe String em Java](https://www.devmedia.com.br/trabalhando-com-a-classe-string-em-java/25505)
+- [Documentação da função toLowerCase()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+- [Outras maneiras de transformar strings em Java](https://www.baeldung.com/java-string-lower-upper-case)

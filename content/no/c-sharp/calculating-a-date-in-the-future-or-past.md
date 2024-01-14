@@ -1,36 +1,42 @@
 ---
 title:                "C#: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Det kan være nyttig å kunne beregne datoer i fremtiden eller i fortiden for å kunne planlegge hendelser eller for å forstå tidligere hendelser.
+## Hvorfor
+Det kan være mange grunner til hvorfor noen vil beregne en dato i fremtiden eller fortiden. Kanskje du planlegger en ferietur eller må organisere en viktig hendelse. Uansett årsak, kan det være nyttig å kunne beregne datoer i C# for å forenkle prosessen.
 
-# Slik gjør du det
-```C#
-// Beregne dato i fremtiden
-DateTime today = DateTime.Today;
-DateTime futureDate = today.AddDays(7); // Legg til 7 dager for å få dato i neste uke
-
-Console.WriteLine("Dato i neste uke: " + futureDate.ToShortDateString()); // Skriver ut datoen på kort format, f.eks 02.06.2020
-```
+## Hvordan gjøre det
+Det første trinnet er å importere `System`-biblioteket i C#, som inneholder funksjoner for å håndtere datoer og kalendere. Deretter kan du bruke funksjonen `AddDays()` til å legge til eller trekke fra et gitt antall dager fra en eksisterende dato.
 
 ```C#
-// Beregne dato i fortiden
-DateTime today = DateTime.Today;
-DateTime pastDate = today.AddDays(-30); // Trekk fra 30 dager for å få dato for en måned tilbake
+using System;
 
-Console.WriteLine("Dato for en måned siden: " + pastDate.ToShortDateString()); // Skriver ut datoen på kort format, f.eks 02.05.2020
+DateTime nå = DateTime.Today; // Dagens dato
+DateTime nyDato = nå.AddDays(14); // Legge til 14 dager til nå
+Console.WriteLine(nyDato); // Skriver ut datoen 14 dager fra nå 
+// Output: 02/08/2021
 ```
 
-# Dypdykk
-Å beregne datoer i fremtiden eller i fortiden innebærer å forstå hvordan datoer håndteres i programmet og hvordan matematiske operasjoner kan brukes for å endre datoverdien. Man må også være oppmerksom på ulike datoformater og sørge for at utskrift av datoene blir gjort på ønsket format.
+Du kan også bruke funksjonen `AddMonths()` og `AddYears()` for å legge til eller trekke fra måneder og år fra en dato. Det er også mulig å spesifisere et negativt tall for å beregne en dato i fortiden.
 
-# Se også
-- [DateTime Struktur (Microsoft Dokumentasjon)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1)
-- [How to: Add Days to a Date (C# Programmeringsguide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/numbers-dates/how-to-add-interval-to-a-date)
-- [Custom Date and Time Format Strings (Microsoft Dokumentasjon)](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
+```C#
+DateTime nå = DateTime.Today; // Dagens dato
+DateTime nyDato = nå.AddYears(-2); // Trekke fra 2 år fra nå
+Console.WriteLine(nyDato); // Skriver ut datoen fra 2 år siden
+// Output: 29/01/2019
+```
+
+## Dykk ned i detaljene
+Innenfor `System`-biblioteket finnes det flere funksjoner for å håndtere datoer og kalendere. Det er også mulig å spesifisere en bestemt dato og formatere den etter behov. Det er også viktig å merke seg at alle operasjoner blir utført basert på datoen og klokkeslettet som er satt på maskinen din.
+
+## Se også
+- [DateTime.AddYears metode i C# (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.addyears?view=net-5.0)
+- [DateTime struct i C# (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [Date and Time Functions i C# (W3Schools)](https://www.w3schools.com/cs/cs_ref_date_time.asp)

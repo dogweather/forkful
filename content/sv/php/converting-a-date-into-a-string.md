@@ -1,42 +1,36 @@
 ---
 title:                "PHP: Omvandla ett datum till en sträng"
+simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför konvertera datum till strängar?
 
-Att konvertera ett datum till en sträng är en viktig del av programmering eftersom det gör det möjligt för användaren att läsa och förstå datumen i ett format som är lättare att läsa och använda.
+Att konvertera ett datum till en sträng är en vanlig uppgift i PHP-programmering. Det kan behövas för att visa när ett visst evenemang eller datum äger rum, eller för att formatera datumet på ett visst sätt för en viss applikation. Att kunna konvertera datumet till en sträng ger också en mer läsbar och användarvänlig presentation av datumen.
 
-## Hur
-
-```PHP
-$date = date_create('2021-09-01');
-echo date_format($date, 'd M Y');
-```
-Output: 01 Sep 2021
-
-Det första steget är att skapa ett datumobjekt med hjälp av funktionen `date_create()`. Sedan använder vi `date_format()` funktionen för att konvertera datumet till önskat format, i detta fall "d M Y" som står för dag, månad och år. 
+## Så här gör du det:
 
 ```PHP
-$date = date_create('2021-09-01');
-echo date_format($date, 'l, jS F Y');
+$today = date('Y-m-d'); // Skapar en variabel som innehåller dagens datum (i det här fallet i formatet: ÅÅÅÅ-MM-DD)
+echo $today; // Ger utmatning: 2021-03-24
+
+$nextWeek = date('l, F jS, Y', strtotime('+1 week')); // Skapar en variabel som innehåller datumet för exakt en vecka framåt
+echo $nextWeek; // Ger utmatning: Wednesday, March 31st, 2021
 ```
-Output: Wednesday, 1st September 2021
 
-Förutom att konvertera datum till olika format, kan vi också inkludera dagen i veckan med hjälp av bokstaven "l" och månadens fullständiga namn med "F". Vi kan också lägga till "S" för att få dagar som 1st, 2nd, 3rd istället för bara siffrorna.
+I det första exemplet använder vi funktionen `date()` för att skapa en sträng baserad på dagens datum. Vi använder `Y-m-d` för att få utformatet `ÅÅÅÅ-MM-DD`. I det andra exemplet använder vi även funktionen `strtotime()` för att lägga till en vecka på det nuvarande datumet och formaterar sedan strängen med dag, månad och år.
 
-## Deep Dive
+## Utforska mer:
 
-När det gäller att konvertera datum till strängar finns det olika format och alternativ som kan anpassas efter användarens behov. Till exempel kan man inkludera tider, tidszoner och andra inställningar för att få ut en ännu mer specifik sträng med datumet.
+Att konvertera datum till strängar kan vara mer komplicerat än dessa enkla exempel. Det finns flera olika formatvalssträngar som kan användas i funktionen `date()` och det går också att skapa egna format genom att använda delar av datumet och kombinera dem på olika sätt. Det finns också flera andra funktioner som kan användas för att manipulera datum och tider i PHP, som `strtotime()` och `mktime()`. Genom att lära sig mer om dessa funktioner kan du enkelt konvertera datum till önskad form och använda dem i din kod.
 
-En annan viktig aspekt att tänka på är inputdatatet. Om vi läser in ett datum från en användare, är det viktigt att säkerställa att det är i ett giltigt format och konvertera det till ett standardformat innan vi använder `date_format()` funktionen.
+## Se även:
 
-## Se även
-
-- [PHP Date Formats](https://www.php.net/manual/en/datetime.format.php)
-- [PHP Date & Time Functions](https://www.php.net/manual/en/ref.datetime.php)
-- [PHP Date and Time tutorials](https://www.tutorialspoint.com/php/php_date_time.htm)
+- [PHP date() funktionen](https://www.php.net/manual/en/function.date.php)
+- [PHP strtotime() funktionen](https://www.php.net/manual/en/function.strtotime.php)
+- [PHP mktime() funktionen](https://www.php.net/manual/en/function.mktime.php)

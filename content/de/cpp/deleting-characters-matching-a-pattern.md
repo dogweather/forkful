@@ -1,54 +1,55 @@
 ---
-title:                "C++: Löschen von Zeichen, die einem Muster entsprechen"
+title:                "C++: Zeichen löschen, die einem Muster entsprechen"
+simple_title:         "Zeichen löschen, die einem Muster entsprechen"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+##Warum
 
-Manchmal kommt es vor, dass man in einer Zeichenkette bestimmte Zeichen löschen möchte, die einem bestimmten Muster entsprechen. Dies kann aus verschiedenen Gründen nützlich sein, wie zum Beispiel bei der Validierung von Benutzereingaben oder bei der Analyse von Daten.
+Beim Programmieren gibt es oft die Notwendigkeit, bestimmte Zeichen in einem Text oder einer Zeichenkette zu entfernen. Sei es, weil sie überflüssig sind oder weil sie einer bestimmten Formatierung entsprechen müssen. Das Löschen von Zeichen anhand eines bestimmten Musters kann sehr nützlich sein, um Texte effizient zu bearbeiten und zu formatieren.
 
-## Wie geht man vor?
+##Anleitung
 
-Um dieses Problem in C++ zu lösen, gibt es verschiedene Ansätze. Eine Möglichkeit ist die Verwendung der `std::string` Klasse und ihrer Methoden. Hier ein Beispiel mit dem Muster "abc", bei dem alle Vorkommnisse von "b" gelöscht werden:
+Um Zeichen anhand eines Musters zu löschen, gibt es mehrere Möglichkeiten in C++. Eine Möglichkeit ist die Verwendung von Schleifen und Bedingungen, um jeden Buchstaben in einem Text zu überprüfen und gegebenenfalls zu löschen. Eine andere Möglichkeit ist die Verwendung von eingebauten Funktionen, wie zum Beispiel der replace() Funktion aus der Standardbibliothek <string>. Hier ist ein Beispiel, wie man alle Leerzeichen in einem Text löschen kann:
 
-```C++
+```
 #include <iostream>
 #include <string>
- 
+
+using namespace std;
+
 int main() {
-  std::string str = "abcdebbcdefb";
-  std::string pattern = "b";
- 
-  // Schleife durch die Zeichenkette
-  for (int i = 0; i < str.length(); i++) {
-    // Überprüfen, ob das aktuelle Zeichen dem Muster entspricht
-    if (str.substr(i, pattern.length()) == pattern) {
-      // Falls ja, das Zeichen löschen
-      str.erase(i, pattern.length());
+    string text = "Das ist ein Beispieltext.";
+    for (int i = 0; i < text.length(); i++) {
+        if (text[i] == ' ') {
+            text.replace(i, 1, "");
+        }
     }
-  }
- 
-  // Ausgabe der bearbeiteten Zeichenkette
-  std::cout << str << std::endl;
- 
-  return 0;
+    cout << text << endl;
 }
 ```
 
-Die Ausgabe dieses Beispiels wäre "acdecedef". Hier wurde jedes Vorkommnis von "b" gelöscht.
+Dieses Beispiel nutzt eine Schleife, um jeden Buchstaben in der Variable "text" zu überprüfen. Wenn ein Leerzeichen gefunden wird, wird es mit der replace() Funktion gelöscht. Das Ergebnis wäre:
 
-Natürlich gibt es auch noch andere Möglichkeiten, dieses Problem zu lösen, wie zum Beispiel die Verwendung von regulären Ausdrücken oder das Arbeiten mit Zeigern. Je nach Anwendungsfall kann die eine oder andere Methode besser geeignet sein.
+```
+DasisteinBeispieltext.
+```
 
-## Eine tiefergehende Analyse
+Natürlich können auch andere Muster anstelle von Leerzeichen verwendet werden, je nachdem welche Zeichen gelöscht werden sollen. Es ist auch möglich, reguläre Ausdrücke mit der <regex> Bibliothek zu verwenden.
 
-Wenn wir uns näher mit dem oben gezeigten Beispiel beschäftigen, gibt es ein paar Dinge, die man beachten muss. Zum einen werden die Zeichen von links nach rechts durchlaufen, was bedeutet, dass nur das erste Vorkommnis eines Musters gelöscht wird. Wenn wir also alle Vorkommnisse löschen wollen, müssen wir eine zusätzliche Schleife verwenden. Zum anderen könnten durch das Löschen die Indizes der Zeichen in der Zeichenkette verschoben werden. Dies könnte zu unerwünschten Ergebnissen führen oder sogar zu einem Programmabsturz führen. Daher ist es wichtig, die Indizes nach dem Löschen entsprechend anzupassen.
+##Tiefer Einblick
 
-## Siehe auch
+Beim Löschen von Zeichen anhand eines Musters gibt es einige Dinge zu beachten. Zum einen sollte man immer darauf achten, dass nur die gewünschten Zeichen gelöscht werden und keine anderen unerwarteten Zeichen im Text verändert werden. Außerdem ist es wichtig zu bedenken, dass das Löschen von Zeichen auch die Länge des Textes beeinflusst und somit eventuell weitere Anpassungen im Code erforderlich sind.
 
-- Diese [Seite](https://www.cplusplus.com/reference/string/string/erase/) bietet weitere Informationen über die `erase()` Methode der `std::string` Klasse.
-- Hier gibt es eine [Einführung](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm) in die Arbeit mit Zeichenketten in C++.
-- Auf dieser [Seite](https://www.regular-expressions.info/) erfährt man mehr über reguläre Ausdrücke und wie man sie in C++ einsetzen kann.
+Es ist auch wichtig zu beachten, dass das Löschen von Zeichen in einer Schleife sehr zeitaufwändig sein kann, insbesondere bei längeren Texten. Daher ist es immer ratsam, nach effizienteren Methoden zu suchen, wie zum Beispiel die Verwendung von regulären Ausdrücken oder eingebauten Funktionen.
+
+##Siehe auch
+
+- [std::string::replace](https://en.cppreference.com/w/cpp/string/basic_string/replace)
+- [C++ Regular Expressions](https://en.cppreference.com/w/cpp/regex)
+- [C++ string mit Schleifen bearbeiten (German)](https://www.programmierenlernen24.de/cpp-string-mit-schleifen-bearbeiten/)

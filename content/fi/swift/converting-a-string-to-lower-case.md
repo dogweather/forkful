@@ -1,51 +1,59 @@
 ---
-title:                "Swift: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Swift: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi konvertoida String alakirjaimiin?
+## Miksi
 
-Kirjoitettaessa ohjelmia Swift-kielellä, saattaa joskus olla tarpeellista muuttaa annettu teksti pieniksi kirjaimiksi. Tämä saattaa olla hyödyllistä esimerkiksi vertaillessa erilaisia merkkijonoja. Onneksi Swift tarjoaa helpon ja tehokkaan tavan muuttaa merkkijonon kaikki kirjaimet pieniksi.
+Miksi muuttaa merkkijono pieniksi kirjaimiksi? Pieniksi kirjaimiksi muuttaminen on tärkeä osa merkkijonojen käsittelyä, ja se tekee tekstin vertailusta ja hakemisesta helpompaa. Esimerkiksi käyttäjien antamat merkkijonot voivat sisältää niin isoja kuin pieniäkin kirjaimia, joten muuttamalla ne kaikki pieniksi kirjaimiksi voimme varmistaa yhdenmukaisuuden ja helpottaa koodin lukemista.
 
-## Miten tehdä se?
+## Kuinka tehdä
 
-Voimme käyttää funktiota `lowercased ()`, joka on saatavana kaikissa String muuttujissa Swiftissä. Katso alla oleva koodiesimerkki ja sen tuottama tulos:
-
-```Swift
-var teksti = "MOI MAAILMA!"
-print (teksti.lowercased ()) // tulostaa "moi maailma!"
-```
-
-Se on niin helppoa! Voimme myös tallentaa uuden String muuttujan arvon `lowercased ()` funktiolla:
+Pieniksi kirjaimiksi muuttaminen Swiftissä on hyvin yksinkertaista. Käytämme siihen String-tyypin lowercased() -metodia. Tässä esimerkissä muutamme merkkijonon "Tämä On Esimerkki" pieniksi kirjaimiksi ja tulostamme sen konsoliin.
 
 ```Swift
-var teksti = "MOI MAAILMA!"
-var alakirjaimet = teksti.lowercased ()
-print (alkakirjaimet) // tulostaa "moi maailma!"
+let merkkijono = "Tämä On Esimerkki"
+print(merkkijono.lowercased())
+
+/* Output:
+tämä on esimerkki
+*/
 ```
 
-Voimme myös käyttää `lowercased ()` funktiota yhdessä ehtolauseen kanssa, kuten tässä esimerkissä:
+Voimme myös tallentaa muuttuneen merkkijonon uuteen muuttujaan, jos haluamme käyttää sitä myöhemmin koodissa.
 
 ```Swift
-var oikeaSana = "kissa"
-var käyttäjänSana = "KIssA"
+let merkkijono = "Tämä On Esimerkki"
+let pienetKirjaimet = merkkijono.lowercased()
+print(pienetKirjaimet)
 
-if käyttäjänSana.lowercased () == oikeaSana { // vertaa alakirjaimisiin
-    print ("Oikea vastaus!") // tulostaa "Oikea vastaus!"
-} else {
-    print ("Väärä vastaus!")
-}
+/* Output:
+tämä on esimerkki
+*/
 ```
 
-## Syvemmälle String alakirjaimisiin muuntamiseen
+## Syvempi sukellus
 
-`lowercased ()` funktio käyttää taustalla Unicode:n yleisiä tallennussääntöjä muuttaessaan merkkijonon kirjaimet pieniksi. Se ottaa huomioon myös erikoismerkit ja erilaiset kieliympäristöt, joten se on luotettava tapa muuttaa merkkijonon kaikki kirjaimet pieniksi.
+Mikäli haluamme muuntaa merkkijonon vain tiettyyn kieleen sopivaksi, voimme käyttää lowercased() -metodin sijasta localizedLowercase -metodia. Tämä huomioi kyseisen kielen merkistön ja muuntaa merkkijonon vastaaviksi pieniksi kirjaimiksi.
+
+```Swift
+let merkkijono = "ÅÄÖ"
+print(merkkijono.localizedLowercase)
+
+/* Output:
+åäö
+*/
+```
+
+Lisäksi Swift tarjoaa myös uppercased() ja uppercased() -metodit, jotka muuntavat merkkijonon isoiksi kirjaimiksi.
 
 ## Katso myös
 
-- [Swift String dokumentaatio](https://developer.apple.com/documentation/swift/string)
-- [String menetelmät ja Operatiiviset](https://www.noviello.it/string-methods-operators-swift-en/)
+- [Swiftin virallinen String-dokumentaatio](https://developer.apple.com/documentation/swift/string)
+- [Apple Education: Exploring Strings, Characters, and Collections](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

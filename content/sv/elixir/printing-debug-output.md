@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Utskrift av felsökningsdata"
+title:                "Elixir: Utmatning av felavhjälpning"
+simple_title:         "Utmatning av felavhjälpning"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/printing-debug-output.md"
 ---
 
@@ -9,41 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva ut debug-output är ett viktigt verktyg för utvecklare som vill förstå vad som händer i sina program. Det kan hjälpa dig att hitta och lösa felaktig kod, och det kan också ge dig förståelse för hur dina program fungerar internt.
+Att skriva ut debug-utdata är ett viktigt verktyg för utvecklare att förstå vad som händer i deras kod. Det kan hjälpa till att hitta och åtgärda fel och förstå hur kod utförs i realtid.
 
-## Hur man gör
+## Så här gör du
 
-Det enklaste sättet att skriva ut debug-output i Elixir är att använda funktionen `IO.inspect/2`. Detta tar ett värde som argument och skriver ut det till terminalen.
-
-```Elixir
-IO.inspect("Hej världen")
-```
-
-Detta kommer att skriva ut "Hej världen" till terminalen. Du kan också använda `IO.inspect/2` för att skriva ut variabler eller värden i dina program.
+För att skriva ut debug-utdata i Elixir kan du använda funktionen `IO.inspect/2`. Detta låter dig skriva ut värden och variabler till din terminal som ska hjälpa dig att följa kodens utförande.
 
 ```Elixir
-namn = "Elixir"
-IO.inspect(namn)
+IO.inspect(variable)
 ```
 
-Detta kommer att skriva ut värdet av variabeln "namn" till terminalen.
-
-Du kan också formatera utskriften med hjälp av formatsträngar, precis som i andra programmeringsspråk. Till exempel:
+För att skriva ut ett specifikt meddelande kan du använda `IO.puts/2`.
 
 ```Elixir
-IO.inspect("Välkommen %s", "till Elixir") 
+IO.puts("Meddelande")
 ```
 
-Denna kod kommer att skriva ut "Välkommen till Elixir" till terminalen.
+Du kan också använda `IO.inspect/2` för att skriva ut komplexa datastrukturer, som listor och kartor.
 
-## Utforska djupare
+```Elixir
+list = [1, 2, 3]
+IO.inspect(list)
+```
 
-För mer avancerade debugging-scenarier kan du använda Elixirs inbyggda `:debugger` modul. Detta ger dig tillgång till en interaktiv debugger där du kan stega igenom din kod och undersöka variabler och uttryck.
+Output:
 
-Du kan också använda `Logger` modulen för att skriva ut debug-information till loggfiler. Detta är särskilt användbart för långsiktiga debugginsättningar eller för att spåra problem i produktion.
+```
+[1, 2, 3]
+```
 
-## Se också
+För att skriva ut en skapad variabel kan du använda dubbelt citattecken runt variabelnamnet. Detta gör att du kan se det faktiska värdet som skrivs ut istället för att variabelnamnet visas.
 
-- [Elixir Dokumentation om IO.inspect/2](https://hexdocs.pm/elixir/Kernel.html#inspect/2)
-- [Elixir Dokumentation om :debugger](https://hexdocs.pm/elixir/Debugger.html)
-- [Elixir Dokumentation om Logger-modulen](https://hexdocs.pm/logger/Logger.html)
+```Elixir
+variable = "data"
+IO.inspect("#{variable}")
+```
+
+Output:
+
+```
+"data"
+```
+
+## Djupdykning
+
+När du använder `IO.inspect/2` för att skriva ut en variabel, returneras också värdet av variabeln. Detta gör att du kan skriva ut variabler mitt i en kodrad utan att bryta ut avkörningen.
+
+För att undvika den här funktionen, kan du använda `IO.debug/2`. Detta skriver bara ut informationen utan att returnera värdet.
+
+En annan användbar funktion för debug-utdata är `IO.puts inspect/2`. Detta låter dig välja vilken detaljnivå du vill ha för dina debug-utdata.
+
+## Se även
+
+- [Elixir Dokumentation: IO-modulen](https://hexdocs.pm/elixir/IO.html)
+- [Elixir Dokumentation: IO.inspect/2](https://hexdocs.pm/elixir/IO.html#inspect/2)
+- [Elixir Dokumentation: IO.debug/2](https://hexdocs.pm/elixir/IO.html#debug/2)
+- [Elixir Dokumentation: IO.puts/2](https://hexdocs.pm/elixir/IO.html#puts/2)

@@ -1,7 +1,9 @@
 ---
-title:                "Python: Merkkijonon pituuden etsiminen"
+title:                "Python: Merkkijonon pituuden löytäminen"
+simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/finding-the-length-of-a-string.md"
 ---
 
@@ -9,39 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Jokainen, joka on koskaan käyttänyt Pythonia, tietää, että tekstistringsit ovat tärkeä osa ohjelmointia. Mutta miksi meidän pitäisi välittää merkkijonojen pituudesta? Merkkijonojen pituuden laskeminen voi olla hyödyllistä, kun haluamme esimerkiksi tarkistaa, onko käyttäjän syöttämä salasana tarpeeksi pitkä vai laskea kuinka monta kirjainta on tietyn sanan sisällä.
+Miksi haluaisit selvittää merkkijonon pituuden? Tämä on tärkeä taito ohjelmoinnissa, sillä se auttaa sinua hallitsemaan ja käsittelemään merkkijonoja tehokkaasti. Merkkijonot ovat tärkeä osa ohjelmointia ja niitä käytetään esimerkiksi tekstin käsittelyssä ja tietokantojen hakemisessa.
 
 ## Kuinka
 
-Merkkijonojen pituuden laskeminen on yksinkertaista Pythonissa. Voimme käyttää *len()* -funktiota. Tämä funktio ottaa yhden argumentin, joka on merkkijono ja palauttaa sen pituuden. Katso esimerkki alla:
+Voit helposti selvittää merkkijonon pituuden Pythonilla. Ensimmäinen askel on luoda muuttuja, joka sisältää haluamasi merkkijonon. Voit tehdä tämän kirjoittamalla seuraavan koodin:
 
 ```Python
-# Määritetään muuttuja tekstistringille
-teksti = "Tämä on tekstiä!"
+merkkijono = "Tämä on esimerkki merkkijonosta"
+```
 
-# Kutsutaan len()-funktiota ja tallennetaan sen palauttama arvo muuttujaan
-pituus = len(teksti)
+Kun olet määrittänyt muuttujan, voit käyttää `len()` funktiota selvittääksesi merkkijonon pituuden. Tämä funktio laskee kaikki merkit merkkijonossa, mukaan lukien välilyönnit ja erikoismerkit. Käytännössä tämä tarkoittaa, että se laskee myös tyhjät välilyönnit, jotka ovat tärkeitä monimutkaisissa tiedonkäsittelytehtävissä.
 
-# Tulostetaan pituus
+```Python
+pituus = len(merkkijono)
 print(pituus)
 ```
 
-Tässä esimerkissä *teksti* -muuttujaan tallennetaan merkkijono "Tämä on tekstiä!" ja sitten käytämme *len()* -funktiota laskemaan sen pituuden. Tämä palauttaa arvon 16, koska merkkijonossa on 16 merkkiä. Voimme myös käyttää *len()* -funktiota suoraan tulostamalla tuloksen ilman, että sitä tallennetaan muuttujaan.
+Tämä koodi tulostaa arvon 31, koska merkkijonossa on 31 merkkiä.
+
+## Syvempi sukellus
+
+Merkkijonon pituuden selvittäminen ei rajoitu vain yksittäisiin merkkijonoihin, vaan voit myös laskea pituuden useasta merkkijonosta yhdistämällä ne. Tätä varten voit käyttää yksinkertaista yhteenlaskutoimitusta:
 
 ```Python
-# Tulostetaan pituus suoraan
-print(len("Tämä on tekstiä!"))
+pituus = len("Tämä on") + len("merkkijonon") + len("yhdistelmä")
+print(pituus)
 ```
 
-Tämä tulostaa myös arvon 16.
+Tämä koodi tulostaa edelleen arvon 31, koska yhdessä nämä kolme merkkijonoa muodostavat saman pituisen merkkijonon kuin alkuperäinen esimerkkimme.
 
-## Syvemmälle
+[Lisätietoa merkkijonoista Pythonissa](https://www.w3schools.com/python/python_strings.asp)
 
-Merkkijonojen pituuden laskeminen ei rajoitu vain tavanomaisiin stringeihin, vaan voimme käyttää sitä myös listoihin, tupleihin, sanakirjoihin ja jopa tiedostoihin. Lisäksi *len()* -funktiota voidaan käyttää yhdessä muiden funktioiden kanssa, kuten *min()* ja *max()*, jolloin voimme laskea esimerkiksi listan lyhimmän tai pisimmän merkkijonon pituuden.
-
-Ennen kuin käytät *len()* -funktiota, on kuitenkin hyvä tarkistaa, onko se tuetussa muodossa. Esimerkiksi *len()* ei toimi numeroiden kanssa, sillä numerot eivät ole merkkijonoja.
+[Lisätietoa len() funktiosta](https://docs.python.org/3/library/functions.html#len)
 
 ## Katso myös
 
-- [Pythonin dokumentaatio merkkijonojen pituuden laskemisesta](https://docs.python.org/fi/3/library/stdtypes.html#typesseq-common)
-- [Tietoa Pythonin *len()* -funktiosta](https://realpython.com/python-length-length-len/)
+[Tietoa merkkijonojen käsittelystä Pythonissa](https://www.turtlepoint.fi/python-merkkijonot/)
+
+[Pythonin viralliset dokumentaatiot](https://docs.python.org/3/)

@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: 今日の日付の取得"
+title:                "Javascript: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/getting-the-current-date.md"
 ---
 
@@ -9,32 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-プログラミングをする際に、現在の日付を取得することは非常に重要です。コードやアプリケーションを作成する際に、現在の日付を使用してデータを整理したり、イベントをスケジュールしたりする必要があるからです。
+なぜ私たちはJavaScriptプログラミングにおいて現在の日付を取得するのか、その理由を知りたいと思いませんか？JavaScriptには日付を取得する簡単な方法があり、便利なアプリケーションを開発する上でも重要なスキルです。この記事では、現在の日付を取得する方法とその背景について紹介します。
 
-## 使い方
+## 方法
 
-```Javascript
-// 現在の日付を取得する方法
+JavaScriptでは、現在の日付を取得するために`Date()`オブジェクトを使用します。以下のコードを参考にしてください。
+
+```Javascript 
+// 現在の日付を取得する
 const currentDate = new Date();
+console.log(currentDate); //2021-07-31T08:23:36.004Z
 
-// 日付のフォーマットを指定する方法
-const options = { year: 'numeric', month: 'long', day: 'numeric' };
-const formattedDate = currentDate.toLocaleDateString('ja-JP', options);
-
-// 結果をコンソールに出力する
-console.log(`今日の日付は ${formattedDate} です。`);
+// 年、月、日を取得する
+const year = currentDate.getFullYear();
+const month = currentDate.getMonth();
+const date = currentDate.getDate();
+console.log(year); // 2021
+console.log(month); // 6 (Javascriptでは月は0から始まるため、7月であっても6と表示されます)
+console.log(date); // 31
 ```
 
-上記のコードで、現在の日付を取得する方法がわかります。JavaScriptのDateオブジェクトを使用することで、日付のフォーマットを自由に指定することもできます。`toLocaleDateString`メソッドは、指定したロケールで日付を文字列に変換するために使用されます。上記の例では、日本語のロケールとして`ja-JP`を使用しています。
+`new Date()`を使用すると、現在の日時が表されるオブジェクトが作成されます。ここから、`getFullYear()`、`getMonth()`、`getDate()`を使用してそれぞれ年、月、日を取得することができます。
 
-## 深堀り
+また、現在の時刻を取得するには`getHours()`、`getMinutes()`、`getSeconds()`を使用します。以下のコードを参考にしてください。
 
-現在の日付は、コンピューター内でエポック時刻と呼ばれる数値として表されます。エポック時刻とは、1970年1月1日0時0分0秒（世界協定時UTC）からの経過秒数を表します。Dateオブジェクトの`getTime`メソッドを使用すると、エポック時刻を取得することができます。
+```Javascript
+// 現在の時刻を取得する
+const currentDateTime = new Date();
+const hour = currentDateTime.getHours();
+const minute = currentDateTime.getMinutes();
+const second = currentDateTime.getSeconds();
+console.log(hour); // 17
+console.log(minute); // 26
+console.log(second); // 27
+```
 
-また、`toLocaleDateString`メソッドの第二引数には、日付のフォーマットを指定するオブジェクトを渡すことができます。上記の例では、`year`、`month`、`day`のプロパティでそれぞれ年、月、日のフォーマットを指定しています。
+## ディープダイブ
+
+JavaScriptには`Date()`オブジェクト以外にも日付を取得する方法があります。例えば、`new Date()`の代わりに`Date.now()`を使用すると、ミリ秒単位の現在の日時を取得することができます。また、`toLocaleDateString()`を使用すると、ブラウザのロケーションに合わせた日付を取得することができます。
+
+日付を取得する際には、タイムゾーンの考慮やブラウザごとの差異についても知る必要があります。さらに詳しく知りたい方は、[MDN web docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)を参考にしてください。
+
+## 詳しくはこちらを参照
+
+[JavaScriptで日付を取得する方法](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+[JavaScriptで使えるDateオブジェクトのメソッド一覧](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date#methods)
+
+[Date.now()を使用して現在の日時を取得する](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date/now)
+
+---
 
 ## 参考リンク
 
-- [Date - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Date.prototype.toLocaleDateString() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
-- [エポック時刻 - Wikipedia](https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%9D%E3%83%83%E3%82%AF%E6%99%82%E5%88%BB)
+[MDN web docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+[Date オブジェクトのリファレンス](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date#Methods) 
+
+[JavaScripでの日時操作について知る](https://tech.recruit-mp.co.jp/front-end/post-9887/)

@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: Comenzando un nuevo proyecto"
+simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Arduino"
-category:             "Getting Started"
+category:             "Arduino"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/starting-a-new-project.md"
 ---
 
@@ -9,41 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Comenzar un nuevo proyecto con Arduino puede ser una gran oportunidad para aprender y desarrollar habilidades en programación, electrónica y desarrollo de proyectos. Además, la comunidad de Arduino es muy activa y hay una gran variedad de recursos disponibles para ayudar en el proceso de creación.
+El mundo de la tecnología es fascinante y emocionante, y muchas personas se sienten atraídas a empezar proyectos utilizando Arduino para aprender y experimentar con nuevas habilidades y conceptos. Además, es una forma divertida de crear cosas únicas y útiles. ¡Así que adelante, sumérgete en el mundo de Arduino y comienza tu propio proyecto!
 
 ## Cómo hacerlo
-En primer lugar, necesitamos tener un Arduino board y un cable USB para conectarlo a nuestra computadora. Luego, podemos seguir estos pasos para comenzar:
 
-- Descargar e instalar el software "Arduino IDE" desde el sitio web oficial.
-- Conectar el Arduino a nuestra computadora.
-- Abrir el programa Arduino IDE y seleccionar nuestro modelo de Arduino en la pestaña "Herramientas".
-- Escribir nuestro código en la parte principal del programa, dentro del "void setup" y el "void loop".
-- Verificar el código presionando el botón "Verificar" en la parte superior del programa.
-- Cargar el código en el Arduino presionando el botón "Cargar" en la parte superior del programa.
+Antes de empezar a escribir código, es importante tener una comprensión básica de cómo funciona Arduino. Esta placa programable utiliza un lenguaje de programación basado en C++ y consiste en un microcontrolador, una placa de circuito, pines para conectar componentes externos y un puerto USB para comunicarse con una computadora. Además, necesitarás el software gratuito Arduino IDE, que te permitirá escribir, compilar y subir código a tu placa de Arduino.
 
-¡Y listo! Nuestro proyecto de Arduino estará funcionando.
+Para empezar, crea una función "setup" para inicializar las variables y configurar el entorno de trabajo. Luego, escribe una función "loop" que se encargue de ejecutar el código una y otra vez. Dentro de estas funciones, puedes utilizar diferentes comandos y funciones para controlar los pines, leer y escribir valores, y realizar operaciones matemáticas.
+
+Aquí hay un ejemplo de un programa simple que enciende un LED conectado al pin 13 de tu placa de Arduino:
 
 ```Arduino
-// Código de ejemplo para encender un LED en el pin 13
 void setup() {
-  pinMode(13, OUTPUT);  // Configuramos el pin 13 como salida
+  pinMode(13, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(13, HIGH); // Encendemos el LED
-  delay(1000); // Esperamos un segundo
-  digitalWrite(13, LOW); // Apagamos el LED
-  delay(1000); // Esperamos un segundo
+  digitalWrite(13, HIGH);
+  delay(1000);
+  digitalWrite(13, LOW);
+  delay(1000);
 }
 ```
 
-## Profundizando
-Además de seguir los pasos anteriores, es importante entender algunos conceptos básicos de Arduino. Por ejemplo, cómo funciona el "void setup" y el "void loop", cómo declarar y utilizar variables, y cómo utilizar diferentes tipos de sensores y actuadores.
+Este programa establece el pin 13 como salida en la función "setup", y utiliza la función "digitalWrite" para encender el LED durante un segundo y luego apagarlo durante otro segundo dentro de la función "loop". Puedes jugar con los tiempos y los pines para crear patrones diferentes.
 
-También es importante explorar la comunidad de Arduino y aprovechar los recursos disponibles, como foros, tutoriales y proyectos compartidos por otros usuarios. Esto puede ayudarnos a aprender de la experiencia de otros y mejorar nuestras habilidades en Arduino.
+## Profundizando
+
+Ahora que ya tienes una idea de cómo funciona Arduino y cómo escribir código básico, es el momento de profundizar un poco más en los proyectos que quieres crear. Puedes encontrar una gran cantidad de recursos en línea, desde tutoriales hasta comunidades de apoyo, que pueden ayudarte a aprender más sobre las capacidades de Arduino y cómo utilizarlas en tus proyectos.
+
+También puedes experimentar con diferentes componentes, como sensores, motores y pantallas, para hacer proyectos más complejos e interesantes. Puedes utilizar la función "analogRead" para leer valores de sensores analógicos y ajustar tu código para que reaccione a diferentes entradas. Además, puedes aprender a utilizar bibliotecas o librerías de código que pueden facilitar el proceso de programar ciertas funcionalidades.
+
+En resumen, hay infinitas posibilidades cuando se trata de proyectos de Arduino, solo es cuestión de explorar y experimentar para encontrar lo que más te interesa.
 
 ## Ver también
-- [Sitio web oficial de Arduino](https://www.arduino.cc/)
-- [Foro de Arduino en español](https://forum.arduino.cc/index.php/board,49.0.html)
-- [Tutoriales de Proyecto Arduino](https://www.proyectoarduino.com/)
-- [Proyectos de Arduino compartidos en Instructables](https://www.instructables.com/circuits/arduino/projects/)
+
+- [Guía de inicio de Arduino](https://www.arduino.cc/en/Guide/HomePage)
+- [Tutorial de programación para principiantes de Arduino](https://www.circuitbasics.com/arduino-programming-tutorial/)
+- [Proyectos de Arduino para principiantes](https://maker.pro/arduino/projects-for-beginners)

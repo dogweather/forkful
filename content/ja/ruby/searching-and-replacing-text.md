@@ -1,52 +1,65 @@
 ---
 title:                "Ruby: テキストの検索と置換"
+simple_title:         "テキストの検索と置換"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ検索と置換をするのか
+## なぜ
 
-検索と置換は、プログラミングの世界で非常に重要なタスクです。テキスト内の特定のキーワードを見つけて置換することで、数百、数千、または数万ものファイルを効率的に更新することができます。これにより、時間の節約やヒューマンエラーの可能性を減らすことができます。Rubyプログラミング言語を使えば、簡単で強力な検索と置換を実装することができます。
+テキストを検索して置換することは、コーディングにおいて重要なタスクです。特定の文字列を一括で置き換えることで、プログラムの動作や出力を変更することができます。この記事では、Rubyを使ってテキストを検索・置換する方法を紹介します。
 
-## 検索と置換の方法
+## 使い方
 
-Rubyでは、Stringクラスのメソッドである`gsub`を使って検索と置換を行います。`gsub`メソッドは、指定した文字列を別の文字列に置き換えます。下の例を見てみましょう。
+まずは検索する文字列を指定します。例えば、次のようなコードがあったとします。
 
-```Ruby
-"Hello World".gsub("Hello", "こんにちは")
+```
+text = "Hello, world!"
 ```
 
-このコードを実行すると、"Hello World"が"こんにちは World"に置換されます。もし、テキスト内に複数の"Hello"がある場合は、すべての"Hello"が置換されます。
+もし、このコードの中の"Hello"を"Hi"に置き換えたい場合、次のようにコードを書きます。
 
-また、正規表現を使って検索と置換を行うこともできます。正規表現を使うと、より柔軟な検索が可能になります。下の例では、`/o/`という正規表現を使って、単語内の"o"を"0"に置換しています。
-
-```Ruby
-"Hello World".gsub(/o/, "0")
+```
+text.gsub!("Hello", "Hi")
 ```
 
-このコードを実行すると、"H0ll0 W0rld"という文字列が返されます。
+すると、`text`の文字列が"Hi, world!"に置き換わります。ただし、この置換は最初にマッチした文字列のみに適用されます。
 
-## 検索と置換の詳細
+複数の文字列を一括で置き換えたい場合には、正規表現を使うことができます。例えば、次のようなコードがあったとします。
 
-もっと深く検索と置換を理解するために、`gsub`メソッドの内部を見てみましょう。Rubyのドキュメントによると、`gsub`メソッドは次のように定義されています。
-
-```Ruby
-gsub(pattern, replacement) → new_str
+```
+text = "Hello, world! Ruby is awesome!"
 ```
 
-第1引数には検索する文字列または正規表現を、第2引数には置換する文字列を指定します。検索した文字列が見つかった場合は、置換された新しい文字列が返されます。
+ここで「Hello」と「Ruby」をそれぞれ「Hi」と「Python」に置き換えたい場合、正規表現を使って次のようにコードを書きます。
 
-また、`gsub!`というメソッドもあります。このメソッドは、呼び出し元の文字列を直接置換することで、メモリの使用量を減らすことができます。
+```
+text.gsub!(/Hello|Ruby/, "Hi" => "Python")
+```
 
-## さらに学ぶために
+すると、`text`の文字列が"Hi, world! Python is awesome!"に置き換わります。
 
-検索と置換はプログラミングの中でも非常に便利なタスクです。もし興味があれば、ぜひRubyのドキュメントやチュートリアルを読んで、もっと多くの情報を学んでください。
+また、置き換えた後の文字列をすべて大文字や小文字に変換することもできます。例えば、先ほどのコードを次のように書き換えると、文字列がすべて大文字に変換されます。
 
-## 他のリソース
+```
+text.gsub!(/Hello|Ruby/, "Hi" => "Python".upcase)
+```
 
-- [Ruby ドキュメント](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
-- [Ruby ガイド](https://rubyguides.com/ruby-string-methods/)
+## 深堀り
+
+テキストを検索・置換する際、正規表現を使うことでより柔軟な操作が可能になります。正規表現を使うことで、マッチするパターンや置き換える内容を自在に指定することができます。しかし、正規表現は少し複雑なため、使いこなすには練習が必要です。正規表現のパターンを作成する際には、[Rubular](https://rubular.com/)や[Rubyの公式ドキュメント](https://docs.ruby-lang.org/ja/latest/doc/spec=2fregexp.html)などのサイトを参考にすると便利です。
+
+## その他の情報
+
+Rubyにおけるテキストの検索と置換については、[Stringクラスのドキュメント](https://docs.ruby-lang.org/ja/latest/class/String.html#I_GSUB)を参照してください。
+
+## 関連リンク
+
+- [Ruby Cheat Sheets](https://www.ruby-lang.org/ja/documentation/cheat-sheet/)
 - [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)
+- [Rubyを使ったテキスト操作のヒント](https://launchschool.com/blog/handling-text-in-ruby)
+- [Rubyの正規表現入門](http://www.geocities.jp/kosako3/oniguruma/guideline-ja.html)

@@ -1,59 +1,52 @@
 ---
 title:                "Elm: Skriva en textfil"
+simple_title:         "Skriva en textfil"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-#Varför
+## Varför
 
-Att skriva en textfil kan vara ett användbart sätt att organisera och spara information. I Elm, kan textfiler användas för att lagra data, konfigurationsfiler och även källkod.
+Att skriva en textfil är en grundläggande uppgift för alla programmerare, oavsett vilket språk de använder sig av. Textfiler används för att lagra och hantera olika typer av information, vilket gör dem oumbärliga för utveckling av applikationer och webbplatser. I denna bloggpost kommer vi att lära oss hur man skriver en textfil med hjälp av Elm-programmeringsspråket.
 
-#Så här gör du
+## Hur man gör det
 
-För att skapa en textfil i Elm, används funktionen `File.write`. Nedan finns ett exempel på hur man skapar en textfil med innehållet "Hej världen":
-
-```Elm
-import File
-
-File.write "hello.txt" "Hej världen"
-```
-
-När detta körs, kommer en ny fil med namnet "hello.txt" att skapas med texten "Hej världen" som innehåll. Om filen redan finns, kommer den gamla filen att skrivas över.
-
-För att läsa en befintlig textfil, används istället funktionen `File.read`. Nedan finns ett exempel på hur man läser innehållet i en textfil och skriver ut det i konsolen:
+För att skriva en textfil i Elm behöver vi använda en funktion som heter `File.write`, tillsammans med en filväg och innehållet som ska skrivas till filen. Här är ett enkelt exempel på hur man skapar och skriver till en textfil i Elm:
 
 ```Elm
 import File
-import Task
 
--- En hjälpfunktion för att skriva ut resultatet
-printResult : Result File.Error String -> Task x ()
-printResult result =
-    case result of
-        Ok text ->
-            text
-                |> Debug.log "Innehåll i filen:"
-
-        Err error ->
-            error
-                |> Debug.log "Ett fel uppstod:"
-
--- Läser innehållet från filen "hello.txt"
-Task.attempt printResult (File.read "hello.txt")
+main : Program Never
+main =
+  let
+    filePath = "minTextfil.txt" -- Filvägen för den nya textfilen
+    content = "Hej världen!" -- Innehållet som ska skrivas till filen
+    writeResult = File.write filePath content -- Anropar funktionen för att skriva till filen
+  in
+    case writeResult of
+      Err err ->
+        text ("Det uppstod ett fel: " ++ err) -- Om det uppstår ett fel skriver vi ut det
+      Ok ->
+        text "Textfilen har skapats och innehållet har skrivits till den." -- Om allt har gått bra skriver vi ut ett bekräftelsemeddelande
 ```
 
-Detta kommer att skriva ut "Innehåll i filen: Hej världen" i konsolen. Om filen inte finns, kommer det istället att skriva ut "Ett fel uppstod: FileNotFound".
+Output:
 
-#Djupdykning
+Hej världen!
 
-När man skriver en textfil i Elm, kan man också använda sig av fält och registervärden för att organisera och strukturera informationen. Detta är särskilt användbart när man ska lagra komplexa datastrukturer.
+I detta exempel använder vi `File.write` för att skapa en textfil med namnet "minTextfil.txt" och skriva innehållet "Hej världen!" till filen. Funktionen returnerar antingen ett felmeddelande genom `Err err` eller `Ok` om allt lyckades. Vi hanterar detta i vår `case`-sats och skriver ut en lämplig text till användaren.
 
-Man kan också använda sig av funktioner som `File.append` för att lägga till innehåll i en befintlig textfil istället för att skriva över den.
+## Djupdykning
 
-#Se även
+När vi skriver en textfil i Elm är det viktigt att förstå att den skapas på användarens dator och inte på servern. Detta innebär att tillgången till filen är beroende av användarens webbläsare och filvägen måste vara till en plats på datorn som användaren har tillgång till. Om filen ska delas eller användas på olika datorer bör vi använda en server för att hantera filen istället.
 
-- [Officiell dokumentation för Elm filhantering](https://package.elm-lang.org/packages/elm/file/latest/) 
-- [Samtliga Elm blogginlägg på swedishelm.org](https://www.swedishelm.org/tag/elm/)
+Det är också viktigt att se till att filvägen är rätt skriven för att programmet ska fungera korrekt. Om filen inte skapas som förväntat kan det bero på en felaktig filväg.
+
+## Se också
+
+* [Elm-documentation för File](https://package.elm-lang.org/packages/elm/file/latest/File)
+* [Artikel om hur man läser textfiler i Elm](https://dev.to/andys8/reading-files-in-elm-with-a-custom-remote-data-type-1ihm)

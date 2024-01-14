@@ -1,37 +1,47 @@
 ---
 title:                "Gleam: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi
 
-Miksi haluaisit muuttaa päivämäärän merkkijonoksi? Tämä voi olla hyödyllistä esimerkiksi päivämäärän esittämiseksi käyttäjälle tai tiedoston nimen luomiseksi.
+On monia syitä, miksi sinun kannattaisi muuntaa päivämäärä merkkijonoksi. Ehkä haluat tulostaa päivämäärän tietyn muodon mukaisesti tai tallentaa sen tietokantaan. Gleam tekee tämän prosessin helpoksi ja sujuvaksi.
 
-## Miten
+# Miten tehdä
+
+Muuntaminen päivämäärästä merkkijonoksi Gleamilla on helppoa. Käytämme tähän "to_string" -funktiota, joka ottaa parametrina päivämäärän ja palauttaa sen merkkijonona. Alla on esimerkkejä koodista ja sen tulostuksista Gleamilla.
 
 ```Gleam
-import gleam/time.Date
+let date = Date.from_string("2020-06-01", "%Y-%m-%d")
+let string_date = Date.to_string(date, "%A, %d. %B %Y")
 
-let date = Date.new(2021, 9, 1)
-let formatted_date = Date.format(date, "~D-~M-~yyyy")
+io.format("Päivämäärä merkkijonona: {}", [string_date])
+// Tulostus: Päivämäärä merkkijonona: maanantai, 01. kesäkuuta 2020
 ```
 
-Tämä koodi luo päivämäärä-olion ja muuttaa sen sitten toivotuksi merkkijonoksi käyttäen Date.format-funktiota. Tulostus on "1-9-2021".
+Voit myös käyttää Gleamin "Fmt" -kirjastoa helpottamaan muotoilua. Se tarjoaa erilaisia ​​apufunktioita päivämäärien muotoilemiseen. Alla olevassa esimerkissä käytämme "fmt.rfc822" -funktiota muuntamaan päivämäärän RFC 822 -muotoon.
 
-## Syvällä
+```Gleam
+let date = Date.from_string("2020-06-01", "%Y-%m-%d")
+let rfc822_date = Fmt.rfc822(date)
 
-Päivämäärän muuttaminen merkkijonoksi Gleamin avulla perustuu olionmuotoilukieleen, joka on vahvasti muotoiltu Gleamissa. Tämä tarkoittaa, että muuttujan tietotyyppi ja sen muodostajat ovat tärkeitä.
+io.format("RFC 822 -muotoinen päivämäärä: {}", [rfc822_date])
+// Tulostus: RFC 822 -muotoinen päivämäärä: Mon, 01 Jun 20 00:00:00 +0000
+```
 
-Voit tutustua lisää Gleamin Date-moduulin dokumentaatioon saadaksesi täyden käsityksen eri muodostajien käyttämisestä ja päivämäärän muotoilun vaihtoehdoista.
+# Syvällinen sukellus
 
-## Katso myös
+Gleam käyttää taustallaan Erlangin "calendar"-moduulia, joka tarjoaa monia erilaisia muuntoja päivämäärän ja ajan välillä. Tämän ansiosta Gleamissa on runsaasti tehokkuutta ja tarkkuutta.
 
-- Gleamin Date-moduulin dokumentaatio (englanniksi) https://gleam.run/modules/gleam/time.Date.html
-- Date-olionmuotoilu Gleam-mallissa (englanniksi) https://gleam.run/manual/olionmuotoilu.html
-- Gleam Community Slack (englanniksi) https://join.slack.com/t/gleam-lang/shared_invite/zt-m42jatxf-2ZVeSZb2r_P8wX84AfKuLg
+Muotoilumerkkijät, kuten "%Y-%m-%d" ja "%A, %d. %B %Y", sisältävät erilaisia ​​merkkejä, jotka kertovat Gleamille, millainen tulostus halutaan. Jokainen merkki vastaa tietyille osille päivämäärää, kuten vuodelle, kuukaudelle, päivälle jne. Lisätietoja näistä löytyy Erlangin kalenterimoduulin dokumentaatiosta.
 
-Kiitos lukemisesta ja onnea Gleamin käytössä!
+# Katso myös
+
+- Gleamin "Date" -moduulin dokumentaatio
+- Erlangin "calendar" -moduulin dokumentaatio

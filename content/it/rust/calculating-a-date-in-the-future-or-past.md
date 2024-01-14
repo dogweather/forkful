@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Calcolare una data nel futuro o nel passato"
+title:                "Rust: Calcolo di una data nel futuro o nel passato."
+simple_title:         "Calcolo di una data nel futuro o nel passato."
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,48 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Ci sono molte situazioni in cui potresti aver bisogno di calcolare una data nel futuro o nel passato. Ad esempio, potresti dover programmare una task o un evento futuro, o forse stai scrivendo un'applicazione per la gestione di appuntamenti e hai bisogno di calcolare date in modo dinamico. In ogni caso, sapere come calcolare una data in Rust è un'abilità utile da avere.
+Calcolare una data nel futuro o nel passato può essere utile in molte situazioni di programmazione. Ad esempio, si potrebbe voler calcolare la data di scadenza di un contratto o il giorno in cui si compiono un certo numero di anni. In questo post scopriremo come farlo utilizzando il linguaggio di programmazione Rust.
 
 ## Come Fare
 
-In Rust, esistono diverse librerie che possono aiutarti a calcolare date. In questo blog post, ci concentreremo sulla libreria Chrono, una delle più popolari librerie per la gestione del tempo in Rust.
-
-Iniziamo importando la libreria nel nostro progetto:
+Per calcolare una data nel futuro o nel passato con Rust, dobbiamo prima importare la libreria `chrono`, che ci permette di manipolare le date in modo semplice e completo. Vediamo un esempio pratico:
 
 ```Rust
-use chrono::{DateTime, Local, Duration};
+use chrono::{Utc, Duration};
+
+let today = Utc::today(); // prende la data odierna
+let future = today + Duration::days(14); // calcola la data di 14 giorni nel futuro
+let past = today - Duration::weeks(3); // calcola la data di 3 settimane nel passato
 ```
 
-Ora, per calcolare una data nel futuro o nel passato, dobbiamo prima definire una data iniziale. Possiamo farlo utilizzando il metodo `now()` per ottenere la data e l'ora correnti.
+In questo semplice codice, utilizziamo la struttura `Duration` per specificare quanti giorni o settimane vogliamo aggiungere o sottrarre dalla data odierna. Possiamo anche specificare altri unità di tempo come ore, minuti e secondi. Una volta calcolata la nuova data, possiamo utilizzarla come meglio preferiamo nel nostro programma.
 
-```Rust
-let today = Local::now(); // data corrente
-```
+## Approfondimento
 
-Supponiamo che vogliamo calcolare la data tra un mese. Per fare ciò, dobbiamo utilizzare il metodo `with_month()` che ci permette di specificare il numero del mese desiderato.
-
-```Rust
-let one_month_later = today.with_month(today.month() + 1).unwrap();
-```
-
-In questo esempio, stiamo calcolando la data di un mese dopo quella corrente, utilizzando il metodo `month()` per ottenere il numero del mese corrente e aggiungendo 1. È importante notare che il metodo `with_month()` restituisce un `Result`, quindi dobbiamo utilizzare il metodo `unwrap()` per ottenere la data finale.
-
-Se vogliamo invece calcolare una data nel passato, possiamo utilizzare il metodo `with_month_past()`.
-
-Oltre a specificare il numero del mese, possiamo anche specificare un'espressione di `Duration` per calcolare una data in base a un periodo di tempo specificato. Ad esempio, per calcolare la data tra un anno e tre mesi, possiamo utilizzare il metodo `with_year()` per impostare l'anno corrente più uno, e poi aggiungere tre mesi utilizzando il metodo `with_month()` e un espressione di `Duration` di 3 mesi.
-
-```Rust
-let one_year_three_months_later = today.with_year(today.year() + 1).unwrap().with_month(today.month() + Duration::months(3)).unwrap();
-```
-
-Ora che abbiamo una data calcolata, possiamo utilizzarla per eseguire diverse operazioni, come ad esempio stamparla a schermo, confrontarla con altre date o utilizzarla in altre funzioni.
-
-## Deep Dive
-
-La libreria Chrono offre molte altre funzionalità per la gestione delle date, come ad esempio il calcolo di intervalli di tempo, il parsing e la formattazione di date in vari formati, la gestione dei fusi orari e molto altro. Se sei interessato a saperne di più, puoi consultare la documentazione ufficiale della libreria [qui](https://docs.rs/chrono/) e il repository su GitHub [qui](https://github.com/chronotope/chrono).
+La libreria `chrono` di Rust offre molte altre funzionalità per manipolare le date. Ad esempio, possiamo creare una data specifica utilizzando la struttura `Date` oppure ottenere l'ora corrente con la struttura `Time`. Inoltre, possiamo formattare le date con diversi stili e zone orarie. Per ulteriori informazioni, ti consiglio di leggere la documentazione ufficiale della libreria.
 
 ## Vedi Anche
 
-- [Uso delle date in Rust](https://dev.to/amalrizal13/using-dates-in-rust-f84)
-- [Manipolazione del tempo in Rust con Chrono](https://dev.to/l00x/manipulating-time-in-rust-with-chrono-3p62)
-- [Convertire date in diversi formati con Chrono](https://blog.logrocket.com/how-to-convert-date-to-a-different-format-in-rust/)
+- [Documentazione ufficiale di Chrono](https://docs.rs/chrono/0.4.19/chrono/)
+- [Corso su Rust su Udemy (in italiano)](https://www.udemy.com/course/programmare-con-rust/)
+- [Tutorial per principianti su Rust (in italiano)](https://www.tutorialspoint.com/rtutorial/index.htm)

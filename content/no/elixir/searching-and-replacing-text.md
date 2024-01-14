@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Søking og Erstatning av Tekst"
+title:                "Elixir: Søking og erstatting av tekst"
+simple_title:         "Søking og erstatting av tekst"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/searching-and-replacing-text.md"
 ---
 
@@ -9,48 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-I Elixir er tekstbehandling et uunnværlig verktøy for enhver programmør. Det gjør det enkelt å finne og erstatte deler av tekst i koden din, noe som kan være svært nyttig når du jobber med store eller komplekse prosjekter. Så hvorfor bør du bruke tid på å lære hvordan du kan søke og erstatte tekst i Elixir? Fordi det kan spare deg for massevis av tid og arbeid når du skal gjøre endringer i koden din.
+Å søke og erstatte tekst er en vanlig oppgave innen programmering. Dette kan være nødvendig for å endre variabelnavn, fjerne feilaktige karakterer eller bare en generell renseprosess av kode. Elixir, et funksjonelt programmeringsspråk, tilbyr kraftige verktøy for å utføre disse oppgavene på en enkel og effektiv måte.
 
 ## Hvordan
 
-Det første du må gjøre er å lagre teksten du ønsker å søke og erstatte i en variabel. La oss si at du ønsker å endre "hei" til "hallo" i en tekststreng. Du ville da skrive følgende:
+I Elixir bruker vi funksjonen `String.replace/4` for å søke og erstatte tekst. Denne funksjonen tar fire argumenter: den originale teksten, søkeordet, erstatningsordet og en liste med modifikasjonstegn. La oss se på et eksempel:
 
-```Elixir
-tekst = "Hei, dette er en test"
+```elixir
+original_tekst = "God dag, verden!"
+søkeord = "dag"
+erstatningsord = "kveld"
+
+ny_tekst = String.replace(original_tekst, søkeord, erstatningsord, ["c"])
+IO.puts ny_tekst  # Resultatet blir "God kveld, verden!"
 ```
 
-For å søke og erstatte i Elixir bruker vi funksjonen `replace/3`. La oss nå bruke denne funksjonen for å erstattte "hei" med "hallo" i teksten vår:
+I dette eksempelet har vi byttet ut "dag" med "kveld", og vi har også inkludert modifikasjonstegnet "c", som står for "case-sensitive" (så ordet "Dag" ville ikke blitt byttet ut).
 
-```Elixir
-ny_tekst = replace(tekst, "hei", "hallo")
+Det er også mulig å bruke regulære uttrykk ved hjelp av `Regex.replace/3`-funksjonen. Dette er nyttig når du trenger å søke og erstatte mer komplekse mønstre i teksten. Her er et eksempel på å erstatte alle tall med "X":
+
+```elixir
+tekst = "Det er 123 mangoer på bordet"
+ny_tekst = Regex.replace(~r/\d+/, tekst, "X")
+IO.puts ny_tekst # Resultatet blir "Det er X mangoer på bordet"
 ```
-
-Nå vil variabelen `ny_tekst` inneholde "Hallo, dette er en test". Som du ser, blir ordet "hei" erstattet med "hallo" i teksten.
-
-Men hva om vi ønsker å gjøre dette med flere forekomster av et ord i teksten? Da kan vi bruke funksjonen `replace_all/3`, som vil erstatte alle forekomster av ordet vi søker etter. Her er et eksempel:
-
-```Elixir
-tekst = "Hei, dette er en test. Hei, dette er en annen test."
-ny_tekst = replace_all(tekst, "hei", "hallo")
-```
-
-Nå vil `ny_tekst` inneholde "Hallo, dette er en test. Hallo, dette er en annen test."
 
 ## Dypdykk
 
-I Elixir er det også mulig å bruke regulære uttrykk for å søke og erstatte tekst. Dette gir deg enda mer fleksibilitet og kraft når du jobber med tekstbehandling. Her er et eksempel på hvordan du kan bruke et regulært uttrykk i `replace/3`:
+Begge disse funksjonene gir deg muligheten til å spesifisere hvor mange ganger du vil gjøre søket og erstatningen. Du kan også bruke `String.replace_all/4` og `Regex.replace_all/3` for å utføre søk og erstatt operasjoner på tekststrenger hvor søket skjer flere ganger.
 
-```Elixir
-tekst = "Elixir er et fantastisk programmeringsspråk!"
-ny_tekst = replace(tekst, ~r/et fantastisk/, "det beste")
-```
+Det er også verdt å nevne at både `String.replace/4` og `Regex.replace/3` returnerer en kopi av den originale teksten med søket og erstatningen gjort. Dette betyr at den originale teksten ikke blir endret, og du må lagre det returnerte resultatet hvis du ønsker å bruke den endrede teksten videre.
 
-Nå vil `ny_tekst` inneholde "Elixir er det beste programmeringsspråket!".
+## Se Også
 
-Det er også verdt å nevne at Elixir har mange andre nyttige funksjoner for tekstbehandling, som for eksempel `split/2`, `join/2` og `split_at/3`. Utforsk disse funksjonene og se hva du kan gjøre med dem!
-
-## Se også
-
-- Offisiell Elixir dokumentasjon for `replace/3`: https://hexdocs.pm/elixir/String.html#replace/3
-- Elixirforumets diskusjon om søking og erstatting i tekst: https://elixirforum.com/t/text-search-replace
-- ElixirCast-podcast om tekstbehandling i Elixir: https://elixircast.com/episode/10-text-processing/
+- [Elixir Docs om String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
+- [Elixir Docs om Regex.replace/3](https://hexdocs.pm/elixir/Regex.html#replace/3)
+- [Elixir offisiell hjemmeside](https://elixir-lang.org/)

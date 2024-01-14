@@ -1,7 +1,9 @@
 ---
 title:                "Rust recipe: Extracting substrings"
+simple_title:         "Extracting substrings"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/extracting-substrings.md"
 ---
 
@@ -9,47 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-When writing code in Rust, at some point you may need to manipulate strings and extract substrings from them. This could be for tasks such as parsing user input or formatting data. Luckily, Rust has built-in methods for extracting substrings that make this process efficient and easy. In this blog post, we will explore how to extract substrings in Rust.
+Substrings are snippets of text extracted from a larger string. In Rust, working with substrings can be useful in a variety of situations, such as parsing user input, manipulating text, or implementing search algorithms. In this blog post, we'll take a look at how to extract substrings in Rust and explore some of the underlying concepts.
 
 ## How To
 
-To extract a substring in Rust, we use the `get()` method on a `String` or `&str` variable. This method takes two parameters: the starting index and the ending index of the substring we want to extract. Let's look at an example:
+To extract a substring in Rust, we can use the `get()` method from the `str` type. This method takes two parameters: the starting position of the substring and the ending position. Both parameters are specified as indices within the original string.
 
-```rust
-let word = "Hello World";
-let sub = word.get(0..5);
+Let's take a look at an example:
+
+```Rust
+let my_string = "Hello, world!";
+let sub =my_string.get(0..5);
+println!("{}", sub); // outputs: `Hello`
 ```
 
-In this code, we have a string variable `word` containing the phrase "Hello World." We then use the `get()` method to extract the substring from the first index (0) to the fifth index (not inclusive). The result will be a new `&str` variable `sub` containing the substring "Hello."
+In this example, we create a string `my_string` and use the `get()` method to extract a substring starting at index 0 and ending at index 5. The resulting substring is then printed to the console.
 
-If we want to get the whole word "World," we can use the `get()` method with a range of indices:
+We can also use the `get()` method with variables to dynamically extract substrings. This is useful when dealing with user input or data from an external source.
 
-```rust
-let word = "Hello World";
-let sub = word.get(6..);
+```Rust
+let my_string = "Hello, world!";
+let start = 0;
+let end = 5;
+let sub = my_string.get(start..end);
+println!("{}", sub); // outputs: `Hello`
 ```
 
-In this case, we omit the second index, which means we want to extract all the characters from the sixth index until the end of the string. The result will be a new `&str` variable `sub` containing the substring "World."
+It's also worth noting that the `get()` method returns an `Option` type, which means it can either return a substring or `None` if the specified indices are out of bounds.
 
 ## Deep Dive
 
-Under the hood, the `get()` method uses the slice syntax in Rust. This syntax allows us to take a portion of a string or an array without creating a new memory allocation. This means that the substring we extracted using the `get()` method will still refer to the original string, saving memory and making our code more efficient.
+Under the hood, the `get()` method uses Rust's `Index` trait, which allows us to access elements of a data structure by index. This trait is implemented for the `str` type, which is why we can use the `get()` method on string slices.
 
-It's also worth noting that the first index in Rust is inclusive, while the second index is not. So, when using `get()`, we need to specify the index where we want the substring to start and the index right after where we want it to end.
+When extracting substrings, it's important to understand how indices work in Rust. Rust strings are UTF-8 encoded, which means that not all characters have the same byte length. This can lead to unexpected results when working with indices, so it's important to carefully consider which indices to use when extracting substrings.
 
-Additionally, we can also use the `&str` slice type directly without the `get()` method. For example:
+We can also use slicing syntax as an alternative to the `get()` method. This syntax allows us to specify ranges of indices directly within square brackets.
 
-```rust
-let word = "Hello World";
-let sub = &word[0..5];
+```Rust
+let my_string = "Hello, world!";
+let sub = &my_string[0..5]; // using slicing syntax
+println!("{}", sub); // outputs: `Hello`
 ```
-
-This does the same thing as using `get()` and returns a `&str` variable containing the substring "Hello." However, using the `get()` method is preferred as it performs bounds checking and ensures we do not try to access indices that do not exist.
 
 ## See Also
 
-For more information on extracting substrings in Rust, check out the official documentation:
-
-- [The Rust Book: Strings](https://doc.rust-lang.org/book/ch08-02-strings.html#slices)
-- [Rust By Example: Strings and Slices](https://doc.rust-lang.org/rust-by-example/std/str.html#slices)
-- [Rust String Slice Cheatsheet](https://gist.github.com/joearasin/baff5fc60497e0d5a4c5796c56977aac)
+- [Rust Documentation: str::get()](https://doc.rust-lang.org/std/primitive.str.html#method.get)
+- [Rust Documentation: slicing syntax](https://doc.rust-lang.org/stable/book/ch04-03-slices.html#slicing-strings)
+- [Rust Documentation: Index trait](https://doc.rust-lang.org/std/ops/trait.Index.html)
+- [Rust Programming Language](https://www.rust-lang.org/)

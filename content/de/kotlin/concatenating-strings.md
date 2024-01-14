@@ -1,51 +1,73 @@
 ---
 title:                "Kotlin: Verkettung von Zeichenfolgen"
+simple_title:         "Verkettung von Zeichenfolgen"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Verkettet von Strings ist eine häufig genutzte Funktion in der Programmierung. Es ermöglicht uns, mehrere Zeichenfolgen miteinander zu verbinden und so einen einzelnen Satz oder eine Nachricht zu erstellen. Dies ist besonders hilfreich, wenn mehrere Variablen oder Textbausteine zu einer Nachricht zusammengefügt werden müssen.
+Es gibt viele Situationen in der Programmierung, in denen es notwendig ist, Zeichenketten miteinander zu verbinden. Dies kann zum Beispiel beim Zusammenfügen von Texten, Erstellen von Pfaden oder Generieren von dynamischen HTML-Elementen erforderlich sein.
 
-## Wie geht man vor
+# Wie man Zeichenketten in Kotlin verbindet
 
-Um Strings in Kotlin zu verketten, können wir den Operator `+` verwenden. Ein Beispiel dafür wäre:
-
-```Kotlin
-val name = "Lisa"
-val age = 25
-val message = "Hallo, mein Name ist " + name + " und ich bin " + age + " Jahre alt."
-println(message)
-```
-
-Dies würde folgende Ausgabe produzieren:
-
-`Hallo, mein Name ist Lisa und ich bin 25 Jahre alt.`
-
-Wir können auch den String-Interpolation-Syntax von Kotlin nutzen, um einfacher und effizienter zu verketten. Hier ein Beispiel:
+In Kotlin gibt es verschiedene Möglichkeiten, Zeichenketten zu verbinden. Die einfachste Methode ist die Verwendung des Plus-Operators (+), der zwei Zeichenketten zu einer neuen kombiniert.
 
 ```Kotlin
-val name = "Peter"
-val age = 30
-val message = "Hallo, mein Name ist $name und ich bin $age Jahre alt."
-println(message)
+val firstName = "Max"
+val lastName = "Mustermann"
+val fullName = firstName + " " + lastName
+println(fullName) // Ausgabe: Max Mustermann
+```
+Es ist auch möglich, die Methode `plus()` aufzurufen, um Zeichenketten zu verbinden.
+
+```Kotlin
+val firstName = "Max"
+val lastName = "Mustermann"
+val fullName = firstName.plus(" ").plus(lastName)
+println(fullName) // Ausgabe: Max Mustermann
 ```
 
-Dies würde ebenfalls die gleiche Ausgabe erzeugen:
+Eine weitere Option ist die Verwendung von String-Formatierung mit Hilfe von Platzhaltern. Dabei werden die Platzhalter durch die tatsächlichen Werte ersetzt.
 
-`Hallo, mein Name ist Peter und ich bin 30 Jahre alt.`
+```Kotlin
+val firstName = "Max"
+val lastName = "Mustermann"
+val fullName = "%s %s".format(firstName, lastName)
+println(fullName) // Ausgabe: Max Mustermann
+```
 
-## Tiefere Einblicke
+# Tiefergehende Informationen über das Verbinden von Zeichenketten
 
-Beim Verketten von Strings sollten wir darauf achten, die richtige Reihenfolge einzuhalten. Sie können in beliebiger Reihenfolge aufgerufen werden, aber es ist wichtig, die Variablen oder Textbausteine in der richtigen Reihenfolge anzugeben, damit die Nachricht sinnvoll bleibt.
+Es ist wichtig zu beachten, dass das Verbinden von Zeichenketten in Kotlin nicht effizient ist, da dabei immer wieder neue Zeichenketten erzeugt werden müssen. Aus diesem Grund empfiehlt es sich, wenn möglich, die `StringBuilder`-Klasse zu verwenden.
 
-Ein weiterer wichtiger Punkt ist, dass Strings in Kotlin unveränderlich sind, was bedeutet, dass sie nach der Erstellung nicht mehr geändert werden können. Aus diesem Grund können wir nicht direkt Zeichen zu einem bereits vorhandenen String hinzufügen, stattdessen müssen wir einen neuen String erstellen, der den bereits vorhandenen mit dem neuen Zeichen enthält.
+Die `StringBuilder`-Klasse ermöglicht es, Zeichenketten effizient zu verbinden, da dabei nur ein Objekt erstellt wird und die internen Zeichenketten angepasst werden können.
 
-## Siehe auch
+```Kotlin
+val firstName = "Max"
+val lastName = "Mustermann"
+val fullNameBuilder = StringBuilder(firstName)
+fullNameBuilder.append(" ")
+fullNameBuilder.append(lastName)
+println(fullNameBuilder.toString()) // Ausgabe: Max Mustermann
+```
 
-- Offizielle Dokumentation zu Strings in Kotlin (https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- Ein Leitfaden zur Verwendung von String-Interpolation in Kotlin (https://www.baeldung.com/kotlin-string-interpolation)
+Außerdem ist es möglich, die Methode `joinToString()` auf einer Collection aufzurufen, um die Elemente mit einem bestimmten Trennzeichen zu verbinden.
+
+```Kotlin
+val numbers = listOf(1, 2, 3, 4, 5)
+val numberString = numbers.joinToString(", ")
+println(numberString) // Ausgabe: 1, 2, 3, 4, 5
+```
+
+Es ist auch wichtig zu beachten, dass in Kotlin Zeichenketten im Gegensatz zu anderen Datentypen wie Integers oder Floats unveränderbar sind. Das bedeutet, dass jede Veränderung an einer Zeichenkette eine neue Zeichenkette erzeugt. Deshalb ist es sinnvoll, die entsprechenden Methoden auf der ursprünglichen Zeichenkette aufzurufen, anstatt eine neue Zeichenkette zu erstellen.
+
+# Siehe auch
+
+- [Offizielle Dokumentation von JetBrains: String Concatenation](https://kotlinlang.org/docs/reference/basic-types.html#string-concatenation)
+- [Kotlin String Formatting Guide](https://kotlinlang.org/docs/reference/basic-types.html#string-formatting)
+- [Effizientes Verbinden von Zeichenketten in Kotlin](https://blog.kotlin-academy.com/string-concatenation-and-joining-kotlin-performance-pitfalls-f3aa5e01e55b)

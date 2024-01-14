@@ -1,38 +1,51 @@
 ---
 title:                "Fish Shell recipe: Converting a date into a string"
+simple_title:         "Converting a date into a string"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Converting a date into a string may seem like a mundane task, but it can actually be quite useful in certain situations. For example, if you need to display a date on a website or in a user interface, converting it into a string can make it more easily readable for users. Understanding how to do this in the Fish Shell can also help you become more proficient in using date and time functions in your scripts.
+Converting dates into strings is a common task in programming, especially when working with user input or data from databases. It allows for easier manipulation and organization of dates, making them more user-friendly and potentially easier to work with in your code.
 
 ## How To
-Converting a date into a string in the Fish Shell is a fairly simple task. Here's an example of how you can achieve this:
 
-```Fish Shell
-# Assign a date to a variable
-set date (date "+%b %d, %Y")
+Fish Shell provides a simple and efficient way to convert dates into strings. Let's consider the following example code:
 
-# Convert the date into a string 
-set date_string "$date"
+```
+Fish Shell date '%Y-%m-%d'
+```
+This will output the current date in the format of "year-month-day". You can also specify a specific date like this:
+
+```
+Fish Shell date -f '%Y-%m-%d' '1984-06-21'
+```
+This will convert the date "1984-06-21" into the format "year-month-day". 
+
+You can also add more complexity by including time in the string, like this:
+
+```
+Fish Shell date -f '%Y-%m-%d %H:%M' '2021-09-01 13:45'
 ```
 
-In this example, we first use the `date` command to assign the current date to a variable. Then, we use the `set` command to convert the date variable into a string, which is denoted by the double quotation marks.
-
-The output of this code would be a string in the format of "Month Day, Year" (e.g. "Oct 28, 2021").
+This will print out the date and time in the format "year-month-day hour:minute".
 
 ## Deep Dive
-While the conversion process may seem straightforward, there are actually a few things to consider when converting a date into a string in the Fish Shell. One important aspect is the usage of format codes in the `date` command.
+Fish Shell uses the date command, which allows for a variety of formatting options. Some common options include:
 
-Format codes allow you to format the date according to your preferences. For example, the `%b` code in our example represents the abbreviated month name, while the `%d` code represents the day of the month. You can find a comprehensive list of format codes in the Fish Shell documentation.
+- %Y: 4-digit year
+- %m: 2-digit month
+- %d: 2-digit day
+- %H: 24-hour format hour
+- %M: 2-digit minute
 
-Another aspect to consider is the use of the `strftime` command, which allows you to format the date using a specific formatting string. This can give you even more control over the output of the date conversion.
+You can also combine these options to create a custom date string that fits your specific needs. It's important to note that the syntax for the date command may vary slightly depending on your operating system.
 
 ## See Also
-- [Fish Shell Documentation on Date and Time](https://fishshell.com/docs/current/commands.html#date)
-- [Date Format Codes](https://fishshell.com/docs/current/commands.html#date-format-codes)
-- [strftime Command Documentation](https://fishshell.com/docs/current/commands.html#strftime)
+- [Fish Shell date documentation](https://fishshell.com/docs/current/commands.html#date)
+- [GNU date manual](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Stack Overflow thread on converting dates to strings](https://stackoverflow.com/questions/18305239/how-to-convert-a-date-into-a-string)

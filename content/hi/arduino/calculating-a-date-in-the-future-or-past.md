@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: भविष्य या भूतकाल में एक तारीख गणना करना"
+title:                "Arduino: भविष्य या अतीत में दिनांक की गणना"
+simple_title:         "भविष्य या अतीत में दिनांक की गणना"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,48 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-क्या आपको कभी किसी स्पेशल अवसर के लिए तारीख की गणना करने की ज़रूरत हुई है? आजकल, हमारे जीवन में इस्तेमाल किये जाने वाले इलेक्ट्रॉनिक उपकरण जैसे कि अर्डुइनो बोर्ड, तारीख की गणना को आसान और तेज़ बना देते हैं। इस ब्लॉग पोस्ट के माध्यम से हम आपको बताएंगे कि अर्डुइनो में तारीख की गणना कैसे की जाती है। 
+अर्डुइनो प्रोग्रामिंग क्यों की जाती है? आप अपने प्रोजेक्ट में एक तारीख को भविष्य में या भूतकाल में गणना करना चाहते होंगे। इससे आप अपने प्रोजेक्ट का समयांतर बना सकते हैं या अपने स्केच में मध्यावधि समय को गणना कर सकते हैं। 
 
-## कैसे करे
+## कैसे करें
 
-```arduino
-// आवेदन को इनपुट के रूप में तारीख दिया जाना 
-int date = 29022020;
+आपको अपने अर्डुइनो बोर्ड में Real Time Clock (RTC) मॉड्यूल का उपयोग करना होगा। यह आपको वर्तमान दिनांक और समय को पढ़ने और आगामी या अतीत में समय गणना करने की अनुमति देता है। यहां हम आपको भविष्य की तारीख के लिए कोड दर्शाएंगे: 
 
-// पूर्व के तिथि की गणना
-int day = date%100;
-int month = date/100%100;
-int year = date/10000;
+```Arduino
+#include <Wire.h>
+#include "RTClib.h"
 
-// कल की तिथि की गणना
-int next_day = day+1;
-int next_month = month;
-int next_year = year;
+RTC_DS1307 rtc;
 
-// तारीख परिवर्तन
-if (next_day > 31) {
-  next_day = 1;
-  next_month++;
+void setup () {
+  Serial.begin(9600);
+  if (! rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+
+  if (! rtc.isrunning()) {
+    Serial.println("RTC is NOT running!");
+    // following line sets the RTC to the date & time this sketch was compiled
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+    // This line sets the RTC with an explicit date & time, for example to set
+    // January 21, 2014 at 3am you would call:
+    // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+  }
+  DateTime now = rtc.now();
+
+  // replace the following line with whatever date you'd like
+  DateTime futureDate (now.year() + 1, 1, 1, 0, 0, 0);
+
+  Serial.print("The current date is: ");
+  Serial.print(now.year());
+  Serial.print("-");
+  Serial.print(now.month());
+  Serial.print("-");
+  Serial.println(now.day());
+  
+  Serial.print("The future date is: ");
+  Serial.print(futureDate.year());
+  Serial.print("-");
+  Serial.print(futureDate.month());
+  Serial.print("-");
+  Serial.println(futureDate.day());
 }
 
-if (next_month > 12) {
-  next_month = 1;
-  next_year++;
+void loop () {
+  // do nothing
 }
+```
 
-// प्रिंट करें
-Serial.print("कल की तारीख: ");
-Serial.print(next_day);
-Serial.print("/");
-Serial.print(next_month);
-Serial.print("/");
-Serial.print(next_year);
-``` 
+जब आप इन कोड्स को अपने अर्डुइनो बोर्ड पर अपलोड करेंगे, सीरियल मॉनिटर पर आप वर्तमान और भविष्य की तिथियों को देख सकते हैं। आप चाहें तो इन तिथियों को हैप्टोनिक फार्मेट में भी लेख सकते हैं। 
 
-यहा आप देख सकते हैं कि हमने आर्डुइनो कोड के माध्यम से आसानी से कल की तारीख की गणना कर ली है। हमने `date` को तारीख के रूप में दिया गया है और इसे प्रिंट कर दिया गया है। इसके बाद, हमने `next_day`, `next_month` और `next_year` का प्रिंट किया है जो की कल की तारीख है। 
+## गहराई में जाएं
 
-अधिक जानकारी के लिए, आप नीचे दिए गए स्रोत लिंक देख सकते हैं। 
-
-## गहराई में
-
-तारीख की गणना प्रोग्रामिंग के लिए बहुत ही महत्वपूर्ण है। इस से हम स्पेशल अवसरों को नहीं भूलते हैं और समय की बचत कर सकते हैं। अर्डुइनो जैसे उ
+जब हम समय गणना करते हैं, हमें समय के साथ गहराई में जाना होत

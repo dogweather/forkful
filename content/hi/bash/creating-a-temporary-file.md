@@ -1,7 +1,9 @@
 ---
 title:                "Bash: अस्थायी फ़ाइल बनाना"
+simple_title:         "अस्थायी फ़ाइल बनाना"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/creating-a-temporary-file.md"
 ---
 
@@ -9,25 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-हम भाषा प्रोग्रामिंग को अपने करियर में बीते वर्षों से देखते आए हैं। एक न करके, रोबड़ से अनजान आज की दुनियां में आज हम कैसे हमारी सक्सेसफुल बीबीएसी करने वाले थे हैं। लेकिन बीते वर्षों में प्रोग्रामिंग का प्रचार बढ़ गया है और आज लोगों को प्रोग्रामिंग का अधिक अनुप्रयोग मिल रहा है। हम आपको बताएंगे कि क्यों आप अपने काम के दौरान एक अस्थायी फ़ाइल को बनाने के बारे में जानना चाहिए।
+विकासकों और प्रोग्रामर्स के लिए Temporary files का उपयोग उनकी प्रोग्राम्स को बदलने या अपडेट करने के दौरान करना जरूरी हो सकता है। Temporary files उनके काम को आसान और स्मूथ बनाते हैं, और सुनिश्चित करते हैं कि कोई भी डेटा चूर्ण न हों। 
 
-## कैसे जाएं
+## कैसे करें 
 
-```Bash
-# अस्थायी फ़ाइल बनाएँ
-tmpfile=$(mktemp)
+आप temporary file कैसे बना सकते हैं, इसके लिए हमें ```mktemp``` command का उपयोग करना होता है। नीचे दिखाए गए कोड में हम एक temporary फ़ाइल बनाते हैं जो एक unique नाम से शुरू होती है। 
 
-# अस्थायी फ़ाइल का उपयोग करें
-echo "यह एक अस्थायी फ़ाइल है" > $tmpfile
-cat $tmpfile
+```Bash 
+tempfile=$(mktemp) 
+echo "This is a temporary file" >> $tempfile 
+cat $tempfile 
+rm $tempfile 
 ```
 
-**आउटपुट:**
+उपरोक्त कोड का output नीचे दिया गया है। 
 
-```Bash
-यह एक अस्थायी फ़ाइल है
+```Bash 
+This is a temporary file 
 ```
 
-## गहराई तक जाइए
+## गहराई में जाएँ 
 
-जब हम बात करते हैं अस्थायी फाइल से, तो आमतौर पर हम आपको अस्थायी फ़ाइलों का उपयोग तभी सिखाते हैं जब हम किसी अन्य सेकंशन में उन्हें अस्थायी बनाना और उसका उपयोग करना चाहते हैं। अस्थायी फ़ाइलें अस्थायी होती हैं क्योंकि इन्हें बनाया जाता है और इस्तेमाल किया जाता है जब हमें उनकी जगह वाली फ़ाइल नहीं मिलती है। इस प्रकार, ये अस्थायी फ़ाइलें एक सुरक्षित, साफ और निःशुल्क उपयोग होते हैं। आप अपने उन सारे कामों को कर सकते हैं जो पहले आप अस्थायी अनुमति
+जब हम temporary file बनाते हैं, तो default रूप से यह ```/tmp``` directory में बनती है। हम ऐसा करते हैं क्यूंकि यह एक ताजगी तथा temporary file को जल्दी से delete कर सकने वाली जगह होती है। आप भी अपने temporary file को किसी और directory में बना सकते हैं, यह ```mktemp``` command में ```-p``` ऑप्शन का उपयोग करके किया जा सकता है। 
+
+## देखें भी 
+
+[बाश प्रोग्रामिंग के बेहतरीन tutorials](https://www.geeksforgeeks.org/bash-scripting-tutorial/) 
+[पावरशेल स्क्रिप्टिंग में temporary files का उपयोग कैसे करें](https://www.lifewire.com/creating-temp-files-in-powershell-scripts-3897488) 
+[Temporary files क्या हैं और उनका उपयोग क्यों किया जाता है](https://www.computerhope.com/jargon/t/tempfile.htm)

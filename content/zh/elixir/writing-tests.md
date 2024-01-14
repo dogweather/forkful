@@ -1,55 +1,64 @@
 ---
-title:                "Elixir: 编写测试 (Biānxiě cèshì)"
+title:                "Elixir: 编写测试"
+simple_title:         "编写测试"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么需要写测试 (Why)
+## 为什么
 
-编写测试是软件开发过程中必不可少的一部分。通过编写测试，我们可以验证代码的正确性，减少错误和问题，提高代码质量和稳定性。
+在编写代码的过程中，我们经常会遇到各种各样的问题。而写测试就可以帮助我们在开发过程中发现和解决这些问题，同时也可以确保我们的代码质量和稳定性。
 
-## 如何编写测试 (How To)
+## 如何
 
-编写测试可以分为两步：1）编写代码；2）运行测试。首先，我们需要创建一个测试文件，命名为 "example_test.exs"。然后，在文件中导入 "ExUnit" 的模块，并定义一个测试模块，例如 "ExampleTest"。在该模块中，可以使用 "test" 函数来编写具体的测试代码。
+为了写测试，我们需要使用 Elixir 的测试框架 ExUnit。下面是一个简单的示例，展示了如何编写测试来测试一个函数是否返回正确的结果。
 
 ```Elixir
-defmodule ExampleTest do
-  use ExUnit.Case
-  test "addition" do
-    assert 1 + 1 == 2
+defmodule Math do
+  def add(a, b) do
+    a + b
   end
 end
 ```
 
-运行测试的方法有多种，可以使用命令行工具 "mix test"，也可以在编辑器中使用相应的插件来运行测试。
+```Elixir
+defmodule MathTest do
+  use ExUnit.Case
 
-测试代码的输出结果如下所示：
-
-```
-1) test addition (ExampleTest)
-     test/example_test.exs:3
-      Assertion with == failed
-      code:  assert 1 + 1 == 2
-      left:  2
-      right: 3
-
-Finished in 0.07 seconds
-1 test, 1 failure
-
-Randomized with seed 52289
+  test "adds two numbers" do
+    assert Math.add(1, 2) == 3
+  end
+end
 ```
 
-## 深入了解测试 (Deep Dive)
+运行测试命令 `mix test` 后，我们就可以看到测试结果输出为 `1 test, 0 failures`，表示测试通过。
 
-编写测试的目的是为了验证代码的正确性，在测试中通常会包含断言(assertion)，即我们预期的代码结果。除了基本的等式判断，我们还可以使用其他函数来编写更加复杂的测试。例如，可以使用 "assert_raise" 函数来测试代码是否会抛出异常，使用 "assert_receive" 函数来测试代码是否可以正确接收消息。
+## 深入探讨
 
-此外，我们也可以编写 "setup" 和 "teardown" 函数，用于准备测试环境和清理测试环境，在测试代码之间保持独立性。
+除了简单的测试，我们还可以在测试中使用一些特殊的断言函数，来确保代码的正确性。例如，可以使用 `assert_raise` 来测试一个函数是否会抛出异常。
 
-## 参考链接 (See Also)
+```Elixir
+test "raises an error if dividing by zero" do
+  assert_raise ArgumentError, fn ->  
+    Math.div(10, 0)
+  end
+end
+```
 
-- [ExUnit 指南](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Elixir 测试实践](https://hexdocs.pm/ex_unit/writing-tests.html)
-- [Elixir 断言函数示例](https://hexdocs.pm/ex_unit/ExUnit.Assertions.html)
+另外，我们也可以在测试中使用 `setup` 和 `teardown` 函数来准备和清理测试所需的环境，以及使用 `async: true` 参数来并发运行测试。
+
+## 参考链接
+
+- [Elixir官方文档 - 测试](https://elixir-lang.org/getting-started/introduction.html#testing)
+- [ExUnit文档](https://hexdocs.pm/ex_unit/ExUnit.html)
+- [Elixir School - 测试](https://elixirschool.com/zh-hans/lessons/basics/testing/)
+
+## 更多阅读
+
+- [如何使用 ExCoveralls 测试覆盖率工具](https://cloud.tencent.com/developer/article/1518689)
+- [5个步骤编写高质量的 Elixir 测试代码](https://medium.com/@mikulskibartosz/writing-great-elixir-tests-in-5-easy-steps-f62f6cc825b6)
+- [Elixir与Clojure测试比较](https://blog.rowanhu.com/2017/01/18/clojure%E4%B8%8Eelixir%E7%9A%84%E6%B5%8B%E8%AF%95%E6%AF%94%E8%BE%83/)

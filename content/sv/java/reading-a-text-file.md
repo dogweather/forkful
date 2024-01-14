@@ -1,7 +1,9 @@
 ---
-title:                "Java: Läsning av en textfil"
+title:                "Java: Att läsa en textfil"
+simple_title:         "Att läsa en textfil"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/reading-a-text-file.md"
 ---
 
@@ -9,42 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att läsa och bearbeta textfiler är en vanlig uppgift inom programmering, oavsett om du är nybörjare eller erfaren. Att kunna läsa in data från en textfil kan hjälpa dig att automatisera processer och göra dina program mer intelligent. Läs vidare för att lära dig hur du kan läsa en textfil i Java.
+Att läsa en textfil är en vanlig uppgift inom programmering. Genom att lära dig hur man läser en textfil kan du enkelt manipulera data och utföra olika åtgärder baserat på dess innehåll. Det är också ett viktigt koncept inom filhantering och kan hjälpa dig att förbättra din kodningsteknik.
 
-## Så här
+## Hur man gör
 
-Det första steget för att läsa en textfil i Java är att skapa en instans av klassen `File` med hjälp av filnamnet som argument. Detta kommer att representera den faktiskt filen på ditt filsystem.
+Först och främst måste vi deklarera en `File` objekt och ange sökvägen till vår textfil. Detta görs genom att skriva:
 
 ```Java
-File file = new File("input.txt"); // skapa en instans av File-klassen med filnamnet input.txt
+File myFile = new File("min_textfil.txt");
 ```
 
-Nästa steg är att skapa en instans av klassen `Scanner` som kommer att hjälpa dig att läsa in data från filen. Detta görs genom att skicka in din `File`-instans som argument till `Scanner`-konstruktorn.
+Efter att vi har deklarerat vår fil, måste vi skapa en `FileReader` objekt. Detta objekt kommer att hantera läsningen av filen. Vi kan göra detta genom att skriva:
 
 ```Java
-Scanner scanner = new Scanner(file); // skapa en instans av Scanner-klassen med File-instanse som argument
+FileReader fileReader = new FileReader(myFile);
 ```
 
-Nu är det dags att börja läsa filen. Du kan använda metoden `nextLine()` för att läsa in en rad åt gången och `hasNextLine()` för att kontrollera om det finns fler rader att läsa.
+Nu kan vi använda vår `FileReader` för att skapa en `BufferedReader` som kommer att läsa in vår textfil:
 
 ```Java
-while (scanner.hasNextLine()) {
-    String line = scanner.nextLine(); // läs in en rad och spara den i en variabel
+BufferedReader reader = new BufferedReader(fileReader);
+```
 
-    System.out.println(line); // skriv ut raden till konsolen
+När vi har vår `BufferedReader` objekt, kan vi börja läsa vår fil. Detta görs med hjälp av `readLine()` metoden:
+
+```Java
+String line = reader.readLine();
+```
+
+Denna kod läser en rad i taget från vår textfil och tilldelar den till en `String` variabel. Om vi vill läsa hela filen kan vi använda en loop för att läsa varje rad, som i exemplet nedan:
+
+```Java
+String line;
+while ((line = reader.readLine()) != null) {
+    // Gör något med varje rad här
 }
 ```
 
-I exemplet ovan kommer varje rad i filen att skrivas ut till konsolen. Nu är det upp till dig att bearbeta datan på ett sätt som passar ditt program.
+När vi är klara med att läsa filen, måste vi stänga vår `BufferedReader` för att frigöra resurser. Detta görs enkelt genom att skriva:
+
+```Java
+reader.close();
+```
 
 ## Djupdykning
 
-När det gäller bearbetning av en textfil, finns det många andra saker du kan göra med hjälp av `Scanner`-klassen. Till exempel kan du använda metoder som `nextInt()` och `nextDouble()` för att läsa in numeriska värden från filen. Du kan också använda `useDelimiter()` för att specificera ett tecken eller en sträng som ska användas som avskiljare mellan värden.
+När vi läser en textfil är det viktigt att förstå filens format. Om det är en vanlig textfil med endast tecken och rader, då är `readLine()` metoden tillräcklig för att läsa den. Men ibland kan filen innehålla annan data, som till exempel kommaseparerad data eller XML-format. I sådana fall måste vi använda andra metoder och tekniker för att läsa in och bearbeta datan.
 
-Du kan också skriva till en textfil på liknande sätt genom att använda klassen `FileWriter` och dess metoder som `write()` och `append()`. Kom bara ihåg att stänga filen när du är klar genom att använda metoden `close()`.
+Vi kan också använda `FileWriter` och `PrintWriter` objekt för att skriva till en textfil. Detta kan vara användbart om vi vill skapa eller uppdatera en fil.
 
 ## Se även
 
-- Java: Läs och skriv till textfiler [https://www.w3schools.com/java/java_files_read.asp]
-- Scanner-klassens Java API [https://docs.oracle.com/javase/7/docs/api/java/util/Scanner.html]
-- FileWriter-klassens Java API [https://docs.oracle.com/javase/7/docs/api/java/io/FileWriter.html]
+- [Java File Handling Tutorial](https://www.javatpoint.com/java-file)
+- [Oracle Java File Class Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
+- [Java Write to File Tutorial](https://www.geeksforgeeks.org/write-data-file-java/)

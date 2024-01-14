@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Das Schreiben von Tests"
+title:                "Clojure: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/writing-tests.md"
 ---
 
@@ -9,36 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Schreiben von Tests ist ein wichtiger Bestandteil beim Entwickeln von Clojure-Programmen. Tests ermöglichen es Entwicklern, ihre Codebasis zu überprüfen und sicherzustellen, dass alle Funktionen wie erwartet funktionieren. Dadurch wird die Qualität des Codes erhöht und Bugs können frühzeitig erkannt und behoben werden. Dies spart Zeit und Mühe in der späteren Entwicklungsphase.
+Wenn man in der Softwareentwicklung tätig ist, ist es wichtig, sich mit dem Thema Testen auseinanderzusetzen. Durch das Schreiben von Tests kann man sicherstellen, dass der Code funktioniert und spart langfristig Zeit und Nerven bei der Fehlersuche. In diesem Blog-Beitrag erfährst du, wie du effektive Tests in Clojure schreiben kannst.
 
-## Wie geht es?
+## Wie geht's
 
-Zum Schreiben von Tests in Clojure gibt es verschiedene Möglichkeiten. Eine gängige Methode ist die Verwendung des integrierten Testframeworks von Clojure, clojure.test. Hier ist ein Beispiel, wie eine einfache Testfunktion in Clojure aussehen könnte:
+Zuerst müssen wir die Test-Bibliothek `clojure.test` importieren. Dann können wir unsere Funktionen testen, indem wir sie innerhalb von `def`-Blöcken definieren und mit `is` Aussagen über ihre erwarteten Ausgaben abgeben. Schauen wir uns dazu ein Beispiel an:
 
 ```Clojure
-(ns test-funktionen
-  (:require [clojure.test :refer :all]))
+(ns testing.blog
+  (:require [clojure.test :refer [deftest is]]))
 
-(defn addieren [a b]
-  (+ a b))
+; Funktion, die das Quadrat einer Zahl berechnet
+(defn square [x]
+  (* x x))
 
-(deftest test-addieren
-  (is (= 4 (addieren 2 2)))
-  (is (= 10 (addieren 6 4))))
+; Test für die square-Funktion
+(deftest square-test
+  (is (= (square 3) 9)) ; erwartete Ausgabe: 9
+  (is (= (square -5) 25)) ; erwartete Ausgabe: 25
+  (is (= (square 4) 16))) ; erwartete Ausgabe: 16
 ```
 
-In diesem Beispiel wurde eine Funktion namens "addieren" definiert, die zwei Zahlen addiert. Dann wurde eine Testfunktion ("test-addieren") erstellt, die überprüft, ob die richtigen Ergebnisse zurückgegeben werden.
+Wenn du diese Code-Beispiele ausführst, solltest du sehen, dass alle Tests erfolgreich sind! Es ist eine gute Praxis, jede Funktion in deinem Code mit mindestens einem Test abzudecken, um sicherzustellen, dass sie immer die erwarteten Ergebnisse liefert.
 
-Um diese Tests auszuführen, müssen wir in der Konsole in das Verzeichnis des Projekts wechseln und den Befehl "lein test" ausführen. Dies wird uns sagen, ob unsere Tests erfolgreich waren oder nicht. Wenn ein Test fehlschlägt, wird eine Fehlermeldung mit allen relevanten Informationen angezeigt, um das Problem zu beheben.
+## Tiefergehende Informationen
 
-## Tiefer gehen
+Es gibt viele Möglichkeiten, Tests in Clojure zu schreiben, einschließlich der Verwendung von Mocking-Frameworks und Property Testing. Um tiefer in dieses Thema einzusteigen, empfehle ich dir folgende Ressourcen:
 
-Obwohl das obige Beispiel eine einfache Einführung in das Testen in Clojure bietet, gibt es noch viel mehr zu entdecken. Zum Beispiel gibt es verschiedene assert-Funktionen, die in clojure.test verwendet werden können, um verschiedene Arten von Tests durchzuführen. Darüber hinaus gibt es auch andere Testframeworks, die spezifische Vorteile und Funktionen bieten.
-
-Es ist auch wichtig zu beachten, dass das Testen nicht nur beim Schreiben von Funktionen stattfinden sollte, sondern auch beim Überprüfen von Schnittstellen und Integrationen mit anderen Teilen des Codes. Wenn mehrere Entwickler an einem Projekt arbeiten, sollten auch Continuous Integration-Tools verwendet werden, um sicherzustellen, dass Änderungen keine bestehenden Funktionen beeinträchtigen.
+- Clojure's offizielle Dokumentation zu `clojure.test`: [(en) https://clojure.github.io/clojure/clojure.test-api.html](https://clojure.github.io/clojure/clojure.test-api.html) / [(de) https://clojure.github.io/clojure/clojure.test-api-de.html](https://clojure.github.io/clojure/clojure.test-api-de.html)
+- Rich Hickey's Präsentation über "Spec-ulation": [(en) https://www.infoq.com/presentations/clojure-spec/ ](https://www.infoq.com/presentations/clojure-spec/) / [(de) https://www.youtube.com/watch?v=oh6L5STFAj0 ](https://www.youtube.com/watch?v=oh6L5STFAj0)
 
 ## Siehe auch
 
-- Offizielle Clojure-Testdokumentation: https://clojure.github.io/clojure/clojure.test-api.html
-- Ein Tutorium zum Schreiben von Tests in Clojure: https://www.braveclojure.com/testing/
-- Vorteile des Testens in Clojure: https://www.youtube.com/watch?v=P56JVpERsXc
+- [(en) https://gist.github.com/alexanderkyte/93884185a1f7d50383147a6baa89cc01](https://gist.github.com/alexanderkyte/93884185a1f7d50383147a6baa89cc01)
+- [(en) https://purelyfunctional.tv/guide/es6-conversion-testing-with-clojure/](https://purelyfunctional.tv/guide/es6-conversion-testing-with-clojure/) / [(de) https://purelyfunctional.tv/wissensbasis/es6-konvertierung-testen-mit-clojure/](https://purelyfunctional.tv/wissensbasis/es6-konvertierung-testen-mit-clojure/)

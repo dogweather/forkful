@@ -1,47 +1,41 @@
 ---
 title:                "Javascript: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi kirjoittaa testejä?
 
-Testien kirjoittaminen ohjelmointiprojekteissa on erittäin tärkeää, sillä ne varmistavat koodin toimivuuden ja auttavat havaitsemaan mahdolliset virheet ja bugeja ennen tuotteen julkaisua. Se myös auttaa parantamaan ohjelmointitaitoja ja edistää koodin laadun hallintaa.
+Testien kirjoittaminen on tärkeä osa ohjelmoinnin prosessia, joka auttaa varmistamaan koodin laadun ja vähentämään mahdollisia bugeja tai virheitä. Testien avulla voit myös testata uusia ominaisuuksia ja varmistaa, että ne toimivat oikein ennen kuin otat ne käyttöön tuotantoympäristöön.
 
-## Miten
+## Näin teet sen:
 
-Testien kirjoittaminen voi aluksi vaikuttaa hankalalta ja aikaavievältä, mutta se maksaa itsensä takaisin pitkällä aikavälillä. Alla on esimerkkejä siitä, miten voit kirjoittaa yksinkertaisia testejä JavaScriptillä käyttäen [Jest] (https://jestjs.io/) testauskirjastoa.
+```Javascript
+// Luo yksinkertainen funktio, joka laskee kahden numeron summan
+function sum(a, b) {
+  return a + b;
+}
 
-````Javascript
-// Testi funktiolle, joka lisää kahden luvun arvot
-test('addition adds two numbers correctly', () => {
-  expect(addition(1, 2)).toBe(3);
-});
-````
+// Testaa, että summa on oikein
+console.log(sum(2, 3)); // Output: 5
+console.log(sum(10, 5)); // Output: 15
+```
 
-Testin suorittaminen tulisi palauttaa "passed", jos funktio toimii oikein. Voit myös lisätä virheellisiä arvoja testaukseen nähdäksesi, kuinka ohjelma käsittelee ne.
+Testien kirjoittaminen aloitetaan yksinkertaisesti luomalla funktioita ja sitten testaamalla niiden toimivuutta. Voit käyttää `console.log()`-komentoa tulostamaan testien tulokset konsoliin ja varmistamaan, että kaikki toimii halutulla tavalla.
 
-````Javascript
-// Testi funktiolle, joka tarkistaa, onko syötetty arvo luku
-test('check if input is a number', () => {
-  expect(checkNumber(3)).toBe(true);
-  expect(checkNumber('abc')).toBe(false);
-});
-````
+## Syvemmälle testien kirjoittamiseen
 
-## Deep Dive
+Testien kirjoittaminen voi myös auttaa sinua ymmärtämään paremmin koodin rakennetta ja toimintaa. Voit esimerkiksi testata erilaisia syötteitä ja tarkistaa, että funktio reagoi niihin odotetulla tavalla. Tämä auttaa myös havaitsemaan mahdollisia virheitä tai puutteita koodissa ja korjaamaan ne ennen kuin ne aiheuttavat ongelmia.
 
-Testien kirjoittamisessa on tärkeää ymmärtää, mitä haluat testata ja miksi. On myös tärkeää muistaa, että testien kirjoittaminen ei tarkoita, että koodi on täysin virheetöntä. Se auttaa kuitenkin löytämään ja korjaamaan mahdolliset virheet aikaisessa vaiheessa, mikä säästää aikaa ja vaivaa myöhemmin.
+Voit myös käyttää JavaScriptin testaustyökaluja, kuten Jest tai Mocha, jotka tekevät testien kirjoittamisesta ja suorittamisesta helpompaa ja tehokkaampaa. Näistä työkaluista löytyy runsaasti ohjeita ja resursseja verkosta, joten rohkeasti tutustumaan niihin ja hyödyntämään niitä koodin laadun parantamiseksi.
 
-Kun kirjoitat testejä, sinun tulee myös varmistaa, että testauksen kattavuus on riittävä. Tämä tarkoittaa, että testaat kaikki mahdolliset tapaukset, jotta voit olla varma, että koodi toimii oikein kaikissa tilanteissa.
+## Katso myös:
 
-Voit myös harkita testien automatisointia ja niiden integroimista osaksi ohjelmointiprosessia. Tämä auttaa pitämään koodin laadun korkealla ja säästää aikaa manuaaliselta testaukselta.
-
-## Katso myös
-
-- [Jest testing library] (https://jestjs.io/)
-- [The importance of writing tests in programming] (https://blog.testlodge.com/importance-writing-tests-programming/)
-- [Test-driven development in JavaScript] (https://www.digitalocean.com/community/tutorials/test-driven-development-in-javascript)
+- [Jest-testityökalun dokumentaatio](https://jestjs.io/)
+- [Mochan aloitusopas](https://mochajs.org/#getting-started)
+- [JavaScript-testaamisen perusteet](https://developers.google.com/web/tools/chrome-devtools/javascript/testing)

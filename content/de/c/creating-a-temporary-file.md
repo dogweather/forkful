@@ -1,53 +1,48 @@
 ---
-title:                "C: Ein temporäres File erstellen"
+title:                "C: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
+Für viele Programmierer ist das Erstellen von temporären Dateien eine gängige Praxis. Diese Dateien werden für eine Vielzahl von Zwecken verwendet, wie zum Beispiel zum Speichern von Zwischenergebnissen, zur Fehlerbehebung oder zum Testen von Code. Sie sind nützlich, weil sie schnell erstellt und gelöscht werden können, ohne dass der Prozess des eigentlichen Programms beeinträchtigt wird.
 
-In der Programmierung gibt es oft die Notwendigkeit, temporäre Dateien zu erstellen. Diese dienen als Zwischenspeicher für Daten, die für einen bestimmten Zeitraum benötigt werden. In diesem Blog-Post werden wir uns genauer mit dem Erstellen von temporären Dateien in C beschäftigen.
+# Wie man es macht
+Um eine temporäre Datei in C zu erstellen, können Sie die Funktion ```tmpfile()``` verwenden. Diese Funktion erstellt eine temporäre Datei und gibt einen Zeiger auf die Datei zurück, über den Sie darauf zugreifen können. Schauen wir uns ein Beispiel an:
 
-## Wie erstelle ich eine temporäre Datei?
-
-Das Erstellen einer temporären Datei ist in C relativ einfach. Wir verwenden die Funktion `tmpfile()`, die Teil der Standardbibliothek `stdio.h` ist. Diese Funktion erstellt eine temporäre Datei und gibt einen Datei-Stream zurück, auf den wir schreiben oder lesen können.
-
-Im folgenden Beispiel erstellen wir eine temporäre Datei und schreiben einige Daten in sie:
-
-```C
+```
 #include <stdio.h>
 
 int main() {
-  FILE *temp = tmpfile();
-  if(temp == NULL) {
-    printf("Fehler beim Erstellen der temporären Datei.");
-    return 1;
-  }
-
-  // Daten in die temporäre Datei schreiben
-  fprintf(temp, "Dies ist eine temporäre Datei.");
-
-  // Datei schließen und löschen
-  fclose(temp);
-  remove(temp); // Diese Zeile ist optional
-
+  FILE *tmp;
+  tmp = tmpfile();
+  fprintf(tmp, "Dies ist eine temporäre Datei.");
+  rewind(tmp);
+  char str[50];
+  fscanf(tmp, "%s", str);
+  printf("%s", str);
+  fclose(tmp);
   return 0;
 }
+
 ```
 
-Das obige Beispiel verwendet den Datei-Stream und die Funktion `fprintf()` aus der Standardbibliothek `stdio.h`, um Daten in die Datei zu schreiben. Anschließend wird die Datei geschlossen und optional auch gelöscht, indem wir die Funktion `remove()` verwenden.
+Dieser Code erstellt eine temporäre Datei, fügt einen Text hinzu, liest den Text in eine Variable und gibt den Text dann auf der Konsole aus. Der Output des Programms wird folgendermaßen aussehen: 
 
-## Tiefergehende Informationen
+```
+Dies ist eine temporäre Datei.
+```
 
-Wenn wir eine temporäre Datei erstellen, wird sie im Verzeichnis `/tmp` auf Unix-Systemen oder im aktuellen Arbeitsverzeichnis auf Windows-Systemen erstellt. Die Datei wird automatisch gelöscht, wenn sie geschlossen wird oder das Programm beendet wird. Auch können wir eine Datei mit einem bestimmten Namen erstellen, indem wir die Funktion `tmpnam()` verwenden.
+# Eintauchen
+Wenn Sie tiefer in das Thema der temporären Dateien einsteigen möchten, sollten Sie sich mit den verschiedenen Funktionen auseinandersetzen, die zum Erstellen und Löschen von temporären Dateien verwendet werden können. Zum Beispiel existiert auch die Funktion ```mkstemp()```, die ähnliche Ergebnisse erzielt wie ```tmpfile()```, aber Ihnen mehr Kontrolle über die Datei gibt, da sie einen Dateinamen zurückgibt, den Sie verwenden können.
 
-Es ist wichtig zu beachten, dass temporäre Dateien für die einfache Zwischenspeicherung von Daten gedacht sind und nicht für dauerhafte Speicherung. Sie sind auch nicht für die gemeinsame Nutzung von Daten zwischen verschiedenen Programmen gedacht. In solchen Fällen sollten andere Methoden der Kommunikation und/oder des Datenaustauschs verwendet werden.
+Eine weitere wichtige Sache, die man beachten sollte, ist, dass temporäre Dateien nicht nur in C, sondern auch in anderen Programmiersprachen wie Java oder Python häufig verwendet werden. In diesen Sprachen existieren spezifische Funktionen zum Erstellen von temporären Dateien, die unterschiedliche Ergebnisse erzielen können.
 
-## Siehe auch
-
-- [Die offizielle Dokumentation zur Funktion `tmpfile()`](https://www.cplusplus.com/reference/cstdio/tmpfile/)
-- [Weitere Informationen zur Verwendung von temporären Dateien in C](https://www.geeksforgeeks.org/temporary-file-in-c-programming/)
-- [Übersicht der Standardbibliothek `stdio.h`](https://www.tutorialspoint.com/c_standard_library/stdio_h.htm)
+# Siehe auch
+- [Einführung in temporäre Dateien in C](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
+- [Verwendung von temporären Dateien in Python](https://www.geeksforgeeks.org/python-temporary-files/)

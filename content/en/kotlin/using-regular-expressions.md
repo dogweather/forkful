@@ -1,62 +1,53 @@
 ---
 title:                "Kotlin recipe: Using regular expressions"
+simple_title:         "Using regular expressions"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Regular expressions, also known as regex, are powerful tools that allow programmers to efficiently search, manipulate, and validate text. They are commonly used in tasks such as data cleaning, text parsing, and form validation.
+Regular expressions, also known as regex, are a powerful tool in programming that allow for efficient and flexible text manipulation. They are especially useful when working with large strings of data or when specific patterns need to be identified. With regular expressions, you can search, replace, and extract text in a precise and automated way.
 
 ## How To
+To use regular expressions in Kotlin, we first need to import the `Regex` class from the `kotlin.text` package. This class provides methods for creating and manipulating regular expressions. Let's take a look at a simple example:
 
-Using regex in Kotlin is simple and straightforward. First, we need to create a Regex object by passing in a string pattern to search for. For example, if we want to find all words that contain "cat", our regex pattern would be "\w*cat\w*". Next, we can use the matches() function to check if a given string matches our regex pattern.
-
-```
-Kotlin 
-val regex = Regex("\w*cat\w*")
-val stringToCheck = "I love my cat, she's the best!"
-println(stringToCheck.matches(regex))
-```
-
-**Output:** true
-
-We can also use regex to replace parts of a string with a desired value. This is especially useful for data cleaning and formatting. For example, if we want to replace all numbers in a string with "X", we can use the replace() function.
-
-```
-Kotlin
-val regex = Regex("\\d+")
-val stringToClean = "My phone number is 123-456-7890."
-println(stringToClean.replace(regex, "X"))
+```Kotlin
+fun main() {
+    val text = "Hello, world!"
+    val regex = Regex("[a-z]+")
+    val matchResult = regex.find(text)
+    println(matchResult?.value) 
+}
 ```
 
-**Output:** My phone number is X-X-X.
+In this code, we are using the `find()` method on our `Regex` object to search for any lowercase letters in the given string. The output of this code will be `ello`, as the first pattern that matches our regex is `ello` in `Hello, world!`.
+
+But what if we want to replace a certain pattern in our string? We can use the `replace()` method instead:
+
+```Kotlin
+fun main() {
+    val text = "I love coding in Kotlin"
+    val regex = Regex("Kotlin")
+    val result = regex.replace(text, "Java")
+    println(result)
+}
+```
+
+In this example, we are using the `replace()` method to replace all occurrences of the string `Kotlin` with `Java` in our original text. The output will be `I love coding in Java`.
+
+Regex also allows for more complex patterns using special characters and modifiers. For example, we can use the `+` modifier to match one or more occurrences of a specific pattern, or the `^` modifier to match the beginning of a line. There are many more modifiers and special characters that can be used in regular expressions, and it's worth exploring their functionality.
 
 ## Deep Dive
+Regular expressions can be a bit daunting at first, but once you get the hang of them, they can save a lot of time and effort in your coding. One thing to keep in mind is that regular expressions can affect the performance of your code if not used carefully. It's important to test and optimize your regex patterns to ensure they are not slowing down the execution of your program.
 
-Regular expressions have a rich set of symbols and operators that allow for complex pattern matching. Some commonly used symbols include:
-
-- **\w** : Matches any word character (letters, numbers, and underscores)
-- **\s** : Matches any whitespace character (spaces, tabs, and line breaks)
-- **\d** : Matches any digit character
-- **[abc]** : Matches any single character within the brackets
-- **^** : Matches the beginning of a string
-- **$** : Matches the end of a string
-
-Regular expressions also have quantifiers that allow for repetition. Some examples are:
-
-- **+** : Matches one or more occurrences of the preceding expression
-- **\*** : Matches zero or more occurrences of the preceding expression
-- **?** : Matches zero or one occurrence of the preceding expression
-- **{n}** : Matches exactly n occurrences of the preceding expression
-
-It is important to note that regex patterns are case sensitive by default. However, we can use the ignoreCase flag to make our patterns case-insensitive.
+Another tip is to use online tools or editors that support regex, such as [Regex101](https://regex101.com/) or [Visual Studio Code](https://code.visualstudio.com/). These tools provide a visual representation and explanation of your regular expressions, making it easier to understand and debug them.
 
 ## See Also
-
-- [Kotlin Regex Documentation](https://kotlinlang.org/docs/regex.html)
-- [Regular Expressions Tutorial - How to Get Started](https://www.regular-expressions.info/tutorial.html)
-- [Mastering Regular Expressions Book by Jeffrey E.F. Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)
+- [Kotlin Regular Expressions](https://kotlinlang.org/docs/regex.html)
+- [Regular Expressions in Java](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+- [Mastering Regular Expressions by Jeffrey E.F. Friedl](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)
+- [Regexone - Interactive Regular Expressions Tutorial](https://regexone.com/)

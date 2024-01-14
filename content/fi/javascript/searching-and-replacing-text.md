@@ -1,59 +1,69 @@
 ---
 title:                "Javascript: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Monet ohjelmointiprojektit vaativat tekstin muokkausta, ja aina silloin tällöin täytyy vaihtaa yksittäisiä sanoja tai lauseita koodissa. Ei ehkä ole järkevää tehdä tätä manuaalisesti, varsinkin jos tekstiä on paljon. Siinä tulee tarpeelliseksi tekstinhakutoiminto.
+Miksi haluat käyttää Javascriptin hakua ja tekstin korvaamista? Monissa koodaustilanteissa saattaa olla tarpeellista korvata esimerkiksi tietynlaiset merkit tai tekstit toisilla. Tässä blogikirjoituksessa käymme läpi, miten tämä onnistuu Javascript-ohjelmoinnissa.
 
-# Miten
+## Miten tehdä
 
-Tekstihakutoiminnon käyttö on melko yksinkertaista. Ensinnäkin, luo muuttuja, johon tallennetaan haluttu teksti. Esimerkiksi:
-
-```Javascript
-let teksti = "Tämä on esimerkki tekstistä."
-```
-
-Sitten voit käyttää `.replace()`-metodia, joka hyväksyy kaksi parametria: etsittävän tekstin ja korvaavan tekstin. Esimerkiksi, jos haluat vaihtaa sanan "esimerkki" sanaan "esimerkki tekstistä", se olisi:
+Javascriptissa on kätevä funktio nimeltään replace(), jota voi käyttää tekstin hakemiseen ja korvaamiseen. Se ottaa vastaan kaksi parametria: etsittävän tekstin ja korvaavan tekstin. Lopuksi funktio palauttaa muokatun tekstin.
 
 ```Javascript
-let korjattuTeksti = teksti.replace("esimerkki", "esimerkki tekstistä");
+let teksti = "Tervetuloa suomeen!";
+let uusiTeksti = teksti.replace("suomeen", "Suomeen");
+
+console.log(uusiTeksti);
+
+// Output: Tervetuloa Suomeen!
 ```
 
-Huomaa, että `.replace()`-metodi antaa takaisin uuden merkkijonon, joten tallenna se uuteen muuttujaan. Jos haluat korvata kaikki esiintymät tekstin sisällä, voit käyttää lausetta "g" parametrina:
+Hakeminen ja korvaaminen voi tapahtua myös säännöllisten lausekkeiden avulla, mikä antaa enemmän mahdollisuuksia muokata tekstejä halutulla tavalla.
 
 ```Javascript
-let korjattuTeksti = teksti.replace(/esimerkki/g, "esimerkki tekstistä");
+let lauseke = /elon/i // hakee kaikki esiintymät, jotka sisältävät "elon" sanaan katsomatta piirroksia ( case-insensitive)
+let teksti = "Elon Musk on menestynyt liikemies ja keksijä.";
+let uusiTeksti = teksti.replace(lauseke, "Jeff Bezos");
+
+console.log(uusiTeksti);
+
+// Output: Jeff Bezos on menestynyt liikemies ja keksijä.
 ```
 
-Nyt korjattuTeksti-muuttuja sisältää alkuperäisen tekstin, jossa kaikki esiintymät sanasta "esimerkki" on korvattu sanalla "esimerkki tekstistä". Voit myös antaa toisen muuttujan `.replace()`-metodin toisena parametrina, jotta voit käyttää sitä tekstiin, joka halutaan korvata. Esimerkiksi:
+## Syvällinen sukellus
+
+Javascriptin replace() -funktiota käyttämällä voi myös korvata tekstin tietyn paikan perusteella tietyn kerran tai jopa kaikki esiintymät. Esimerkiksi, jos haluat korvata vain ensimmäisen esiintymän, voit antaa parametrina vaihtoehdon "1".
 
 ```Javascript
-let korvaaja = "muokattu";
-let korjattuTeksti = teksti.replace(/esimerkki/g, korvaaja);
+let teksti = "Olen surffannut kolme kertaa tänä kesänä.";
+let uusiTeksti = teksti.replace("kolme", "viisi", 1);
+
+console.log(uusiTeksti);
+
+// Output: Olen surffannut viisi kertaa tänä kesänä.
 ```
 
-Tämä korvaa kaikki esiintymät sanasta "esimerkki" muuttujan "korvaaja" sisällöllä. Lopputulos olisi "Tämä on muokattu tekstistä."
-
-# Syvempi sukellus
-
-`.replace()`-metodi hyväksyy myös toisen parametrin, joka voi olla funktio. Tämä funktio käsittelee jokaisen tekstin esiintymän erikseen ja palauttaa uuden tekstin, joka korvataan alkuperäisessä tekstittringissä. Esimerkiksi:
+Voit myös korvata kaikki esiintymät käyttämällä globaalia vaihtoehdoissa, mikäli tarvetta esiintyy.
 
 ```Javascript
-let korjattuTeksti = teksti.replace(/esimerkki/g, (osoittama) => {
-  return osoittama.toUpperCase(); // muuttaa korvatun tekstin isoihin kirjaimiin
-});
+let teksti = "Javascript on hieno ohjelmointikieli, joka yhä kasvattaa suosiotaan.";
+let uusiTeksti = teksti.replace(/ohjelmointikieli/ig, "koodauskieli");
+
+console.log(uusiTeksti);
+
+// Output: Javascript on hieno koodauskieli, joka yhä kasvattaa suosiotaan.
 ```
 
-Tämän avulla voit suorittaa enemmän monimutkaisia muutoksia tekstin sisällä, joita et voi tehdä yksinkertaisesti antamalla korvaavan merkkijonon parametrina.
+## Katso myös
 
-# Katso myös
-
-- [MDN web docs: .replace()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [W3Schools: JavaScript String replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)
-- [Tutorialspoint: JavaScript String replace() Method](https://www.tutorialspoint.com/javascript/string_replace.htm)
+- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [W3Schools - JavaScript String replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)
+- [Eloquent JavaScript - Regular Expressions](https://eloquentjavascript.net/09_regexp.html)

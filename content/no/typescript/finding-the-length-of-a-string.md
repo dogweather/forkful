@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Å finne lengden av en streng"
+simple_title:         "Å finne lengden av en streng"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/finding-the-length-of-a-string.md"
 ---
 
@@ -9,36 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det å kunne finne lengden til en streng er en viktig del av programmering. Det lar deg enkelt håndtere tekstbaserte data og utføre forskjellige operasjoner på dem. Å forstå hvordan å finne lengden av en streng er grunnleggende for enhver programmerer, uavhengig av hvilket språk de jobber med. I denne bloggposten skal vi utforske hvordan å finne lengden av en streng ved hjelp av TypeScript.
+Mange ganger når du jobber med programmering, spesielt i TypeScript, vil du bli bedt om å finne lengden av en streng eller tekst som er gitt til deg. Dette kan virke som en enkel oppgave, men det er viktig å forstå hvorfor og hvordan du gjør det riktig. I denne bloggposten vil jeg gå gjennom hvorfor det er viktig å kunne finne lengden av en streng og hvordan du kan gjøre det i TypeScript.
 
-## Slik gjør du det
+## Hvordan 
 
-Før vi begynner å dykke inn i koden, må du sørge for at du har TypeScript installert på datamaskinen din. Deretter kan du følge disse trinnene for å finne lengden av en streng:
-
-1. Lag en variabel som inneholder en streng:
-```TypeScript
-let streng = "Dette er en streng";
+For å finne lengden av en streng i TypeScript, kan du bruke metoden .length. La oss si at vi har en streng som heter "Hei, verden!" og vi vil finne lengden av den. Vi kan gjøre dette ved å skrive følgende kode i TypeScript: 
+```TypeScript 
+let streng = "Hei, verden!"; 
+console.log(streng.length); 
 ```
-2. Bruk `length` egenskapen for å finne lengden av strengen:
-```TypeScript
-let lengde = streng.length;
+Dette vil gi oss en output på 12, da det er 12 tegn i "Hei, verden!" strengen. Du kan også bruke .length metoden på en tom streng eller en streng med kun ett tegn, og det vil returnere henholdsvis 0 og 1. 
 
-console.log(lengde); // Output: 18
-```
-Her bruker vi `length` egenskapen på variabelen `streng` og lagrer resultatet i en ny variabel kalt `lengde`. Deretter logger vi resultatet til konsollen og får lengden av strengen som output.
+## Deep Dive 
 
-## Dype dypere
+Du lurer kanskje på hvordan .length metoden fungerer og hva som gjør den i stand til å finne lengden på en streng. Vel, det er ingen magi bak det, det er faktisk ganske enkelt. Når du bruker .length på en streng, teller den antall tegn i strengen og returnerer det til deg. Så hvis vi bruker det samme eksempelet som tidligere og legger til en mellomrom mellom "Hei" og "," vil vi få en output på 13, da det nå er 13 tegn i strengen. Det er viktig å merke seg at .length også kan brukes på andre datatyper som arrays og objekter for å finne lengden på dem.
 
-I tillegg til å finne lengden av en vanlig streng, kan du også bruke denne metoden for å finne lengden til en rekke andre datatyper, som for eksempel et array eller en tuple. Når det gjelder en tuple, vil lengden være antall elementer den inneholder. Når det gjelder et array, vil lengden være antall elementer i arrayet.
+## Se Også
 
-Det er også verdt å merke seg at denne metoden bare teller de faktiske tegnene i strengen, og ikke mellomrom eller andre tegn som kan være inkludert. For eksempel, i strengen "  Hei!  ", vil lengden være 6, ikke 8.
+Her er noen nyttige ressurser for å lære mer om hvordan du finner lengden av en streng i TypeScript:
 
-Å forstå hvordan man finner lengden av en streng er også en viktig del av å kunne jobbe med løkker og iterere gjennom tekstbaserte data. Det gjør det også mulig å håndtere og manipulere strenger på en enkel måte.
-
-## Se også
-
-- [Dokumentasjon om `length` egenskapen i TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-
-- [Enkel guide til å komme i gang med TypeScript](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-typescript-project)
-
-- [Ti ting å vite om TypeScript](https://medium.com/@lucianomedinam/ti-tips-til-%C3%A5-komme-i-gang-med-typescript-8a61ed163f21)
+- [MDN Web Docs: String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [TypeScript Handbook - Strings](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [W3Schools: TypeScript String](https://www.w3schools.com/js/js_strings.asp)

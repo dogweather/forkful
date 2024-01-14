@@ -1,7 +1,9 @@
 ---
 title:                "Bash: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,47 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Es gibt zahlreiche Gründe, warum man ein Programm schreiben möchte, das ein Datum in der Zukunft oder Vergangenheit berechnet. Vielleicht planst du einen Urlaub und möchtest wissen, an welchem Datum du wieder zuhause sein wirst. Oder du möchtest eine Erinnerung setzen, um dich an wichtige Termine zu erinnern. Egal aus welchem Grund, die Berechnung von Datum kann eine nützliche Fähigkeit in der Bash-Programmierung sein.
+Das Berechnen von Datumsangaben in der Zukunft oder Vergangenheit kann in vielen Szenarien nützlich sein, z.B. bei der Planung von Terminen oder Veranstaltungen oder bei der Erstellung von automatisierten Skripten. Es ist daher wichtig zu wissen, wie man dies in der Bash-Programmierung durchführen kann.
 
-## Wie geht das?
+## Wie geht's
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, gibt es verschiedene Methoden in der Bash. Eine Möglichkeit ist die Nutzung des Befehls `date`, der standardmäßig auf vielen Unix- und Linux-Systemen verfügbar ist. Mit diesem Befehl kannst du das aktuelle Datum und Uhrzeit ausgeben lassen und auch in verschiedene Formate konvertieren. Zum Beispiel:
-
-```Bash
-date +%d.%m.%Y
-```
-Dieser Befehl gibt das heutige Datum im Format Tag.Monat.Jahr aus.
-
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir den Befehl `date` mit der Option `-d` verwenden. Hier können wir Parameter wie "next week", "2 years ago" oder spezifische Datumsangaben wie "25th of December" angeben. Zum Beispiel:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, verwenden wir das `date` Kommando in Kombination mit der Option `-d` und dem gewünschten Datumsformat. Ein Beispielcode könnte so aussehen:
 
 ```Bash
-date -d "next week"
+date -d "27 September 2021" +"Der Tag in einer Woche ist %A, der 4. Oktober 2021"
 ```
-Dieser Befehl gibt das Datum in einer Woche aus. Du kannst auch Datum und Uhrzeit kombinieren, um genauere Berechnungen zu erhalten, z.B.:
 
-```Bash
-date -d "2 weeks 3 days 10:00" +%d.%m.%Y
-```
-Dieser Befehl gibt das Datum in 2 Wochen, 3 Tagen und um 10 Uhr aus, im Format Tag.Monat.Jahr.
+Dies würde uns das Ergebnis "Der Tag in einer Woche ist Montag, der 4. Oktober 2021" anzeigen. Beachten Sie, dass wir das gewünschte Datum im Zitatzeichen angeben und das gewünschte Datumsformat mit `+` angeben.
 
-## Tiefere Einblicke
+## Deep Dive
 
-Der Befehl `date` kann auch mit der Option `-s` verwendet werden, um das Systemdatum und die Uhrzeit manuell zu setzen. Dies kann nützlich sein, um bestimmte Datumskonfigurationen zu testen, ohne das eigentliche Systemdatum zu ändern. Zum Beispiel:
-
-```Bash
-date -s "2030-01-01 12:00:00"
-```
-Dieser Befehl setzt das Datum auf den 1. Januar 2030 um 12 Uhr mittags.
-
-Eine weitere nützliche Funktion ist die Möglichkeit, Datumsbereiche zu vergleichen. Mit den Vergleichsoperatoren wie `<` oder `>` können wir überprüfen, ob ein Datum vor oder nach einem anderen Datum liegt. Zum Beispiel:
-
-```Bash
-if [ "2020-05-01" > "2020-04-30" ]; then echo "Das zweite Datum liegt nach dem ersten."; fi
-```
-Dieses Beispiel würde die Nachricht ausgeben, dass das zweite Datum nach dem ersten liegt.
-
-Mit diesen und vielen weiteren Funktionen des `date`-Befehls kannst du deine Bash-Skripte um die Fähigkeit erweitern, Datum in der Zukunft oder Vergangenheit zu berechnen und damit deine täglichen Aufgaben effizienter zu gestalten.
+Die Verwendung von Optionen wie `-d` ermöglicht es uns, komplexe Berechnungen durchzuführen, um z.B. das Datum von einem bestimmten Tag aus zu bestimmen oder um die Zeitzone zu berücksichtigen. Wenn Sie tiefer in die Materie eintauchen möchten, können Sie die Dokumentation des `date` Kommandos lesen und verschiedene Datumsformate ausprobieren.
 
 ## Siehe auch
-- [Bash-Befehlsreferenz: date](https://www.gnu.org/software/coreutils/date/) 
-- [Shell Scripting Tutorial - Date Manipulation](https://www.shellscript.sh/date.html)
+
+- [Bash-Programmierung lernen: Ein umfassender Leitfaden](https://www.linode.com/docs/guides/beginning-bash-scripting-guide/)
+- [Die `date`-Dokumentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Ein nützliches Tool zum Berechnen von Datumsangaben in der Bash-Programmierung](https://ostechnix.com/dealynum-bash-script-display-date-and-time-differences/)

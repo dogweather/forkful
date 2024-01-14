@@ -1,62 +1,59 @@
 ---
 title:                "C: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+文字列の連結を行う理由はたくさんあります。例えば、データベースからの情報の結合や、テキストファイルを生成する際に必要になることがあります。C言語では、これらの操作を簡単に行うための方法があります。今回は、その方法についてご紹介します。
 
-文字列の連結を行うのはなぜでしょうか？ それは、プログラムで複数の文字列を結合する必要があるためです。例えば、ユーザーに表示するメッセージを作成するときに、動的な要素を含めたい場合や、文字列をデータベースに保存するときに必要な場合などが挙げられます。
-
-## 方法
-
-文字列の連結は、C言語で簡単に行うことができます。以下のようなコードを使用します。
+## 使い方
+まずは、文字列を連結する方法を見ていきましょう。C言語では、文字列を連結するために `strcat()` 関数が用意されています。この関数を使うことで、二つの文字列を連結することができます。
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-  // 結合する文字列を定義する
-  char firstString[] = "Hello ";
-  char secondString[] = "World!";
+    char str1[20] = "Hello ";
+    char str2[] = "World!";
 
-  // 文字列の長さを取得する
-  int firstStringLength = strlen(firstString);
-  int secondStringLength = strlen(secondString);
+    strcat(str1, str2);
 
-  // 結合後の文字列を格納する配列を作成する
-  char finalString[firstStringLength + secondStringLength];
+    printf("%s\n", str1);
 
-  // 文字列を結合する
-  strcat(finalString, firstString);
-  strcat(finalString, secondString);
-
-  // 結果を出力する
-  printf("%s", finalString);
-  return 0;
+    return 0;
 }
 ```
 
-上記のコードでは、まず結合する文字列を定義し、それぞれの長さを取得します。そして、最終的な文字列を格納する配列を作成し、`strcat`関数を使って文字列を結合します。最後に、結果を出力します。
+上記のコードでは、`strcat()` 関数を使って `str1` と `str2` の文字列を連結しています。`strcat()` 関数は、第一引数に連結する元の文字列、第二引数に連結する文字列を指定します。そして、元の文字列が格納されている配列の末尾に、指定した文字列が連結されます。上記のコードの場合、`strcat()` 関数を使うことで、`str1` の末尾に `str2` が連結されて `"Hello World!"` という文字列が出力されます。
 
-上記のコードを実行すると、以下のような結果が得られます。
+ただし、注意点が一つあります。`strcat()` 関数では、元の文字列が格納されている配列のサイズが、連結後の文字列の大きさに十分である必要があります。サイズが十分でない場合、新しい文字列が元の文字列を上書きしてしまいます。そのため、事前に必要なサイズを計算してから、配列を宣言する必要があります。
 
+```C
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str1[10] = "Hello ";
+    char str2[] = "World!";
+
+    strcat(str1, str2);
+
+    printf("%s\n", str1);
+
+    return 0;
+}
 ```
-Hello World!
-```
 
-## 深堀り
+上記のコードでは、`str1` のサイズが足りず、`strcat()` 関数を使うことで、`str2` が `str1` の文字を上書きしてしまい、不正なメモリアクセスが発生します。そのため、新しい文字列が元の文字列を上書きしてしまう可能性を考慮して、配列のサイズを適切に設定する必要があります。
 
-C言語の`strcat`関数は、指定された文字列を結合するだけではなく、元の文字列を変更します。つまり、結合前の文字列は破壊されてしまいます。そのため、元の文字列を保持したい場合は、`strncat`関数を使用することをお勧めします。
+## ディープダイブ
+C言語では、文字列を連結するために `strcat()` 関数のほかにも `sprintf()` 関数を使う方法や、バッファオーバーフローを防ぐための `strlcat()` 関数を使用する方法などがあります。それぞれの方法について詳しく知りたい方は、公式ドキュメントやオンラインのコミュニティで情報を収集することができます。
 
-また、`strcat`関数が受け取る引数の文字列長には制限があり、文字列の最大長を超えた場合はプログラムが意図せず終了してしまう可能性があります。そのため、安全な結合を行うためには`strncat`関数による制限を行うことが重要です。
-
-## 参考リンク
-
-- [C言語の文字列の連結方法](https://programming-summary.hateblo.jp/entry/2018/06/22/075618)
-- [C言語の文字列結合をマスターしよう](https://qiita.com/knmkr/items/3742d76228a37494889d)
-- [strcat関数の使い方を理解しよう](https://www.sejuku.net/blog/23574)
+ただし、文字列の連結は文字列操作の中でもコストの高い操作の一つです。そのため、関数を呼び出す回数を減らすことでパフォーマンスの改善ができる場合もあります。また、配列のサイズやメモリの管理など、データ構

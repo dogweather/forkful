@@ -1,70 +1,70 @@
 ---
-title:                "Rust: כותבים תכנית להמרת מחרוזת לאותיות קטנות"
+title:                "Rust: המרת מחרוזת לאותיות קטנות"
+simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+המימוש של הפונקציה להמיר מחרוזת לאותיות קטנות הוא נחשב כקל במגוון שפות תכנות אחרות, אך זה יכול להיות קצת מאתגר כאשר מדובר בשפת ראסט. אז למה בכלל להתעסק בהמרת מחרוזת לאותיות קטנות? התשובה היא פשוטה - בכדי לקבל את המילים והתווים הנכונים בפורמט תקין, בדוק אם יש צורך להשתמש בהן בתוך אלגוריתמים או להשוות ביניהן.
 
-יחד עם שפת תכנות חדשה, מגיעות תפקודים חדשים וטרנדים חדשים. אחד הטרנדים הנפוצים בתחום התכנות הוא שימוש בקוד פשוט ופתרונות הסובבים קוד בכיף ויצירת קוד יעיל יותר. בכדי לקדם את התפתחות הדרישות הם הביאו את שפת "ראסט" לטכנולוגיות התכנות החדשות, ביחד עם חברות הטכנולוגיות הגדולות.
+## איך לעשות
 
-## איך לעשות זאת
-
-הנה כמה דוגמאות לקוד פשוט ויישומי של איך להמיר מחרוזת למקרא נמוך במקרא פשוט:
+הנה דוגמאות של קוד המדגימות איך להמיר מחרוזת לאותיות קטנות בשפת ראסט:
 
 ```Rust
-let name = String::from("JOSH");
 
-let name_lower = name.to_lowercase();
+fn to_lower_case(string: &str) -> String {
+    let mut result = String::new();
 
-println!("{}", name_lower);
-```
+    for c in string.chars() {
+        if c.is_uppercase() {
+            result.push(c.to_lowercase().next().unwrap());
+        } else {
+            result.push(c);
+        }
+    }
 
-תוצאה:
-
-```JOSH```
-
-בדוגמא השנייה, ניתן להמיר כל מחרוזת שנכתבת באנגלית למקרא נמוך באמצעות הפונקציה "to_lowercase". בתוך הפונקציה ניתן להכניס מחרוזת כדי להמיר אותו למקרא נמוך. ניתן לראות את הקוד המלא להמיר מחרוזת למקרא נמוך בדוגמא הבאה:
-
-```Rust
-use std::string::ToString;
-
-fn main() {
-    let word = "HELLO";
-
-    let word_lower = word.to_lowercase();
-
-    println!("{}", word_lower);
+    return result;
 }
+
+// כאן נקבל את הפלט "hello world" כאשר הקלט הוא "Hello World"
+print!("{}", to_lower_case("Hello World"));
+
 ```
 
-תוצאה:
-
-```hello```
-
-בדוגמא האחרונה, ניתן להמיר מחרוזת שמכילה אותיות מיוחדות, כגון תווים יפנים או כתבו הקירילי. תוצאה הקוד המלא להמיר מחרוזת למקרא נמוך מוצגת בחלק הבא:
+הנה עוד דוגמא עם פונקצית המשמשת להמיר לאותיות קטנות שנמצאת בספריית התקנים של ראסט:
 
 ```Rust
-use std::string::ToString;
 
-fn main() {
-    let my_name = "דניאל";
+use std::collections;
 
-    let my_name_lower = my_name.to_lowercase();
+fn to_lower_case(string: String) -> String {
+    let mut map = collections::HashMap::new();
 
-    println!("{}", my_name_lower);
+    map.insert(String::from("A"), String::from("a"));
+    map.insert(String::from("B"), String::from("b"));
+    map.insert(String::from("C"), String::from("c"));
+    // וכן הלאה עד שמיתוגרש אף אות לאותה המקבילה שלה באותיות קטנות
+
+    let result: Vec<_> = string
+        .chars()
+        .map(|c| match map.get(&c.to_string().to_uppercase()) {
+            Some(v) => v.to_string(),
+            None => c.to_string(),
+        })
+        .collect();
+    return result.join("");
 }
+
+// כאן נקבל את הפלט "hello world" כאשר הקלט הוא "Hello World"
+print!("{}", to_lower_case("Hello World".to_string()));
+
 ```
 
-תוצאה:
+## טיול עמוק
 
-```דניאל```
-
-ביותר!
-
-## העמקה
-
-מה קורה באמת כאשר משתמשים בפונקציה "to_lowercase" כדי להמיר מחרוזת למקרא נמוך? הבעיה היא שכשמשתמשים בפונקציה זו, היא לא יכולה לשנות את האותיות במקור
+הפונקציה להמרת מחרוזת לאותיות קטנות נחשבת לאחת מבורך מאוד שבמגוון השפות התכנות. ברמת הקוד, זהו כמעט תמיד ניתן לממש בצורה קלה ומהירה. אבל הדרך שבה סביר למ

@@ -1,40 +1,48 @@
 ---
-title:                "Fish Shell: डायरेक्ट्री मौजूद है या नहीं जांचना"
+title:                "Fish Shell: डायरेक्टरी मौजूद है या नहीं पर जाँच करना"
+simple_title:         "डायरेक्टरी मौजूद है या नहीं पर जाँच करना"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+"## Kyon: Pratiksha Karte Huye Directory Ko Kaise Check Karein"
 
-डायरेक्टरी मौजूद होने की जांच करने के लिए फिश शेल में कोई भी व्यक्ति क्यों शामिल हो जाएगा।
+Kabhi kabhi humein apne program mein kisi directory ki upasthiti ko check karna padta hai. Yah jaruri ho sakta hai kisi specific file ko dhoondhne ke liye, ya fir ek directory mein kuch files ko read ya modify karne ke liye. Isliye, directory ki presence check karna, ek zaroori part hota hai humare coding process ka. Is blog post mein hum aapko batayenge ki kisi directory ki presence kaise check kar sakte hain, Fish Shell ke saath.
 
-## कैसे
+"## Kaise Kare"
 
-अगर आप किसी फॉल्डर या डायरेक्टरी के बारे में संदेह रखते हैं कि क्या वह मौजूद है या नहीं, तो आप उसे जांच सकते हैं फिश शेल के `test` फंक्शन का उपयोग करके। यह फंक्शन आपको संदेह होने पर `true` या `false` के साथ उत्पन्न करेगा।
+Fish Shell mein, hum `test` command ka use karke directory ki presence check kar sakte hain. Yeh command ek conditional check ke liye use hoti hai. Agar humein kisi specific directory ki presence check karni hai, toh hum `test -d` command ka use karenge, jahan `-d` `test` command ka ek flag hai, jo directory ki presence check karta hai.
 
+### Raasta #1: Directory ki Presence Check karna
 ```Fish Shell
-if test -d "/path/to/directory"
-   echo "यह डायरेक्टरी मौजूद है"
-else
-   echo "यह डायरेक्टरी मौजूद नहीं है"
+test -d /path/to/directory
+```
+Yeh command `true` ya `false` output degi, jahan `true` hoga agar directory upasthit hai aur `false` hoga agar directory na ho.
+
+### Raasta #2: Agar Directory Upasthit Hai Toh Use Ek Conditional Block Mein Add Karein
+```Fish Shell
+if test -d /path/to/directory
+    echo "Directory upasthit hai!"
 end
 ```
+Yahan hum `if` aur `end` keywords ka use kar rahe hain, jismein `if` conditional check ko define karta hai, aur `end` uske baad ka code block ko define karta hai.
 
-मूल्यांकन के लिए, यदि आप गलत पथ या डायरेक्टरी को देंगे, तो फंक्शन `false` को उत्पन्न करेगा। आप `else` भी उपयोग कर सकते हैं ताकि जब `false` को उत्पन्न किया जाता है, तो आप उसको हैंडल कर सकें।
-
+### Raasta #3: Output Ko Variable Mein Store Karein
 ```Fish Shell
-if test -d "/invalid/path"
-   echo "यह डायरेक्टरी मौजूद है"
-else
-   echo "यह डायरेक्टरी मौजूद नहीं है, कृपया सही पथ दें"
-end
+set directory_present (test -d /path/to/directory; and echo "true")
 ```
+Yahan humne `test -d` command ke output ko variable `directory_present` mein store kiya hai. Is raaste mein, hum `; and` use kar rahe hain, jo `test` command ke output ko `echo` command ke saath combine karta hai.
 
-अन्य विकल्प छःविकल्पन का उपयोग भी किया जा सकता है `test` फंक्शन में। आप संदेह का मूल्यांकन कर सकते हैं या फॉल्डर के अस्तित्व की जांच कर सकते हैं।
+"## Deep Dive"
 
-## गहराई से जाएं
+`test` command, Fish Shell ke ek built-in command hai, jo file aur directory ko check karne ke liye use hota hai. Yeh command 3 levels of prescription dekhta hai - user, group, aur world. Is command ka format hai `test [switch] file`. Humne is post mein, `-d` switch ka use kiya hai, jiske zariye hum specific directory ko check kar rahe hain.
 
-`test` फंक्शन के अलावा, आप `fish` शेल में दो और तरीकों से डायरेक्टरी की जांच कर सकते हैं। पहला तरीका है `--directory` विकल्प का उपयोग करके कर सकते हैं। इस विकल्प से आप सीधे फाइल या फॉल्डर का अस्त
+"## See Also"
+
+- [Fish Shell documentation on `test` command](https://fishshell.com/docs/current/cmds/test.html)
+- [Tutorialspoint article on `test` command in Fish Shell](https://www.tutorialspoint.com/unix_commands/test.htm)
+- [Maanava Adhikar Foundation blog on basic Fish Shell commands](https://www.manavadhikarfoundation.org/2018/05/27/basic-fish-shell-commands/)

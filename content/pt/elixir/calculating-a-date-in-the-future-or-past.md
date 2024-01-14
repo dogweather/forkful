@@ -1,63 +1,50 @@
 ---
-title:                "Elixir: Calculando uma data no futuro ou no passado"
+title:                "Elixir: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que calcular uma data no futuro ou no passado?
 
-Calcular uma data no futuro ou passado é uma tarefa comum ao escrever programas em Elixir. Saber como fazer isso pode te ajudar a criar aplicações mais dinâmicas e versáteis.
+Calcular datas pode ser uma tarefa essencial em muitos projetos de programação. Elixir tem algumas ferramentas úteis que podem ajudar a fazer esse cálculo de forma rápida e eficiente.
 
-## Como Fazer
+## Como fazer
 
-Existem várias maneiras de calcular uma data no futuro ou passado em Elixir, mas vamos focar em uma das mais simples e eficazes: usando a função `Timex.shift/4`. Essa função pertence à biblioteca `Timex`, que já vem incluída no Elixir.
+A maneira mais simples de calcular uma data no futuro ou no passado em Elixir é usando as funções `Date.add/2` e `Date.subtract/2`. Essas funções aceitam dois argumentos: a data a ser alterada e o número de dias que devem ser adicionados ou subtraídos.
 
-Primeiro, precisamos importar a biblioteca `Timex` em nosso módulo:
-
-```Elixir
-import Timex
-```
-
-Agora, vamos ver alguns exemplos de como usar a função `Timex.shift/4` e a saída que ela produz:
+Vamos dar um exemplo simples de como usar essas funções para calcular uma data no futuro:
 
 ```Elixir
-# Para calcular 1 dia no futuro a partir da data atual:
-Timex.shift(Timex.today(), days: 1)
-# Saída: {{2020, 2, 11}, 0, 0, 0}
-
-# Para calcular 1 semana no futuro a partir de uma data específica:
-Timex.shift({2020, 2, 11}, weeks: 1)
-# Saída: {{2020, 2, 18}, 0, 0, 0}
-
-# Para calcular 1 mês no passado a partir da data atual:
-Timex.shift(Timex.today(), months: -1)
-# Saída: {{2020, 0, 10}, 0, 0, 0}
-
-# Para calcular 1 ano no futuro a partir de uma data específica:
-Timex.shift({2020, 2, 11}, years: 1)
-# Saída: {{2021, 2, 11}, 0, 0, 0}
-
-# Além de dias, semanas, meses e anos, é possível também calcular horas, minutos e segundos:
-# Para calcular 6 horas no futuro a partir da data atual:
-Timex.shift(Timex.today(), hours: 6)
-# Saída: {{2020, 2, 11}, 6, 0, 0}
+iex> hoje = Date.utc_today()
+~D[2020-11-12]
+iex> Date.add(hoje, 7)
+~D[2020-11-19]
 ```
 
-## Deep Dive
+Podemos ver que a função `Date.add/2` adiciona 7 dias à data atual e retorna a nova data. Da mesma forma, podemos usar a função `Date.subtract/2` para calcular uma data no passado:
 
-A função `Timex.shift/4` leva como primeiro argumento uma data e, em seguida, uma lista de opções para calcular a nova data. Essas opções podem ser dias, semanas, meses, anos, horas, minutos ou segundos, podendo ser tanto positivos (para calcular datas no futuro) quanto negativos (para calcular datas no passado).
+```Elixir
+iex> hoje = Date.utc_today()
+~D[2020-11-12]
+iex> Date.subtract(hoje, 14)
+~D[2020-10-29]
+```
 
-Além disso, existe a opção `:calendar`, que aceita as opções `:gregorian` ou `:julian` e indica qual calendário deve ser usado para fazer o cálculo. Por padrão, o calendário gregoriano é usado.
+Uma coisa importante a notar é que essas funções retornam uma nova data e não alteram a data original. Para alterar a data original, podemos usar as funções `Date.add!/2` e `Date.subtract!/2`.
 
-Também é importante mencionar que a função `Timex.shift/4` retorna sempre uma `DateTime` na saída, independentemente do tipo de dado que foi passado como argumento.
+## Mergulho profundo
 
-Para mais informações sobre a função `Timex.shift/4` e outros recursos da biblioteca `Timex`, consulte a documentação oficial: https://hexdocs.pm/timex/Timex.html#shift/4
+Além das funções `Date.add/2` e `Date.subtract/2`, Elixir também tem a função `Date.shift/2` que nos permite calcular datas futuras ou passadas com unidades de tempo mais precisas, como anos, meses, horas, minutos e segundos.
 
-## Veja Também
+Além disso, o módulo `DateTime` é uma ótima ferramenta para trabalhar com datas e horários em Elixir. Ele fornece funções como `DateTime.add/4` e `DateTime.diff/3` que podem ser úteis ao realizar cálculos complexos com datas.
 
-- https://elixir-lang.org/getting-started/date-time-and-time-zones.html#calculating-dates-in-the-future
-- https://hexdocs.pm/timex/Timex.html#shift/4
-- https://hexdocs.pm/elixir/DateTime.html
+## Veja também
+
+- [Documentação oficial do Elixir Date](https://hexdocs.pm/elixir/Date.html)
+- [Documentação oficial do Elixir DateTime](https://hexdocs.pm/elixir/DateTime.html)
+- [Post sobre cálculos de datas em Elixir no blog do AdopteUnDev](https://blog.adopteundev.com/calculation-de-dates-et-dheure-en-elixir-facilement/)

@@ -1,55 +1,69 @@
 ---
 title:                "Gleam: Lesen von Befehlszeilenargumenten"
+simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Manche Programmierer mögen es vielleicht nicht, aber die Wahrheit ist, dass das Lesen von Befehlszeilenargumenten eine wichtige Fähigkeit ist, die jeder Entwickler beherrschen sollte. Egal ob du ein einfaches Skript schreibst oder eine komplexe Anwendung entwickelst, das Lesen von Befehlszeilenargumenten kann dir helfen, interaktive Funktionen zu erstellen und deinen Code noch leistungsstärker zu machen.
 
-Wenn Sie Gleam-Programmierer sind, müssen Sie häufig mit Echtwerten arbeiten, die vom Benutzer über die Befehlszeilenschnittstelle eingegeben werden. In diesem Blogbeitrag werde ich Ihnen zeigen, wie Sie Command-Line-Argumente in Gleam lesen und verarbeiten können, um Ihre Programme interaktiver zu gestalten.
-
-## Anleitung
-
-Das Lesen von Befehlszeilenargumenten in Gleam ist eine einfache Aufgabe. Zuerst müssen Sie das Standardmodul "os" importieren, um auf die Befehlszeilenargumente zugreifen zu können.
+## Wie Funktioniert Das
+Um Befehlszeilenargumente in Gleam zu lesen, verwenden wir die `arg`-Bibliothek. Diese stellt uns eine Funktion zur Verfügung, die das Lesen von Argumenten vereinfacht. Schau dir das folgende Beispiel an:
 
 ```Gleam
-import os
+// Definiere einige Argumente
+let args = ["-u", "username", "-p", "password", "-d", "database"]
 
+// Verwende die `arg`-Bibliothek, um diese Argumente zu lesen
+let opts = arg.parse(args)
+
+// Gib die gelesenen Werte aus
+// Output: Some ["username", "password", "database"]
+io.println(opts.map(x => x.value))
 ```
 
-Dann können Sie die Befehlszeilenargumente mit der Funktion `os.args()` in einer Liste von Strings erhalten. Sie können diese Liste dann durchlaufen und die Argumente mit Ihren Programmausgaben verarbeiten.
+In diesem Beispiel haben wir eine Liste mit Befehlszeilenargumenten erstellt und diese dann mit der `parse`-Funktion gelesen. Das Ergebnis ist ein optionales Array mit den gelesenen Werten, welches wir dann einfach ausgeben können.
+
+Natürlich können wir die `arg`-Bibliothek auch verwenden, um Argumente mit verschiedenen Datentypen wie z.B. Zahlen oder Bools zu lesen. Dazu können wir die Funktion `parse_as` verwenden, die uns ermöglicht, den gewünschten Typ der Argumente anzugeben.
 
 ```Gleam
-fn main() {
-  args := os.args()
+// Definiere einige Argumente
+let args = ["-p", "8080"]
 
-  for arg in args {
-    println("Received argument: ${arg}")
-  }
-}
+// Verwende die `arg`-Bibliothek, um die Argumente als Integer zu lesen
+let port = arg.parse_as(args, Int)
 
+// Gib den gelesenen Wert aus
+// Output: Some 8080
+io.println(port.value)
 ```
 
-Angenommen, Sie starten Ihr Programm mit dem Befehl `gleam run my_program.gleam hello world`, dann wird die Ausgabe wie folgt sein:
+## Tiefer Einblick
+Die `arg`-Bibliothek ermöglicht es uns auch, optionale Argumente oder Argumente mit Standardwerten zu definieren. Dies ist besonders nützlich, wenn wir flexiblere Anwendungen entwickeln möchten.
 
+```Gleam
+// Definiere einige optionale Argumente
+let args = ["-i", "input.txt", "-o", "output.txt"]
+
+// Verwende die `arg`-Bibliothek, um die Argumente zu lesen
+let opts = arg.parse(args)
+
+// Definiere Default-Werte für die Argumente
+let input = opts["i"]? |> Optional.with_default("input.txt")
+let output = opts["o"]? |> Optional.with_default("output.txt")
+
+// Gib die gelesenen Werte aus
+// Output: Some ["input.txt", "output.txt"]
+io.println(Some(tuple(input, output)))
 ```
-Received argument: hello
-Received argument: world
-```
 
-Sie können auch auf einzelne Argumente zugreifen, indem Sie auf die entsprechenden Indizes in der Liste `args` verweisen. Zum Beispiel, wenn Sie nur das zweite Argument benötigen, können Sie `args[1]` verwenden.
+Mit der `arg`-Bibliothek haben wir die Möglichkeit, auch komplexere Anwendungen zu entwickeln, die verschiedene Parameter und Einstellungen unterstützen.
 
-## Deep Dive
-
-Sie können auch benutzerdefinierte Argumente für Ihr Programm definieren, indem Sie Optionen und Werte im Befehlszeilenformat übergeben. Beispielsweise können Sie die Option `-n` verwenden, um den Namen des Benutzers einzugeben, und die Option `-a` für das Alter. Um diese Argumente in Gleam zu lesen, können Sie das externe Paket "clap" verwenden. Dieses Paket ermöglicht es Ihnen, komplexe Befehlszeilenargumente mit verschiedenen Typen zu definieren.
-
-Weitere Informationen zu "clap" und wie Sie es in Ihre Gleam-Projekte einbinden können, finden Sie in der offiziellen Dokumentation.
-
-## Siehe auch
-
-- Offizielle Dokumentation für Gleam: https://gleam.run/getting-started/
-- Externes Paket "clap" für Gleam: https://github.com/gleam-lang/clap
-- Beispielprojekt für Gleam mit Befehlszeilenargumenten: https://github.com/gleam-lang/gleam-cli-example
+## Siehe Auch
+- [Die offizielle Gleam Dokumentation zur `arg`-Bibliothek](https://gleam.run/documentation/stdlib/arg)
+- [Ein Tutorial zum Lesen von Befehlszeilenargumenten in Gleam](https://gleam.run/tutorials/cli-args)

@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Unindo strings"
+title:                "Swift: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/concatenating-strings.md"
 ---
 
@@ -9,67 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Se você está aprendendo a programar em Swift, é importante entender como concatenar strings para criar mensagens personalizadas para o seu aplicativo. Concatenar strings é uma maneira útil de combinar várias informações em uma única string para exibir aos usuários ou usar em cálculos.
+A concatenação de strings é uma técnica muito útil na programação Swift que permite unir duas ou mais strings em uma única string. Isso é especialmente útil quando você precisa criar mensagens personalizadas ou manipular dados de entrada do usuário. Aprender a concatenar strings pode tornar o seu código mais eficiente e fácil de ler.
 
 ## Como fazer
 
-Existem algumas maneiras de concatenar strings em Swift, dependendo de suas necessidades. Vamos dar uma olhada em alguns exemplos de código usando o operador `+`:
+A concatenação de strings é bastante simples de realizar em Swift. Você pode usar o operador "+" para unir duas strings ou usar o método "append" para adicionar uma string ao final de outra. Veja um exemplo de como usar o operador "+" para concatenar strings:
 
-```Swift
-var mensagem = "Bem-vindo "
-var nome = "Fernanda"
-var sobrenome = "Silva"
-
-mensagem = mensagem + nome + " " + sobrenome
+``` Swift 
+let primeiraString = "Olá"
+let segundaString = "mundo!"
+let mensagem = primeiraString + segundaString
 print(mensagem)
 ```
 
-A saída será:
+Este código irá resultar na seguinte saída: "Olá mundo!".
 
-```
-Bem-vindo Fernanda Silva
-```
+Também é possível concatenar mais de duas strings de uma vez, basta adicionar o operador "+" entre cada uma delas. Por exemplo:
 
-Você também pode usar o método `append()` para adicionar strings ao final de uma string existente. Por exemplo:
-
-```Swift
-let texto = "Eu adoro "
-let linguagem = "programação"
-var frase = texto.append(linguagem)
-
-print(frase)
-```
-
-A saída será:
-
-```
-Eu adoro programação
-```
-
-Se você precisar de mais controle sobre como as strings estão sendo concatenadas, pode usar o método `join()` com um array de strings. Por exemplo:
-
-```Swift
-let nomes = ["Maria", "João", "Ana", "Pedro"]
-let saudacao = "Olá, meu nome é"
-var mensagem = saudacao.join(nomes)
-
+``` Swift
+let primeiraString = "Eu"
+let segundaString = "amo"
+let terceiraString = "programar"
+let mensagem = primeiraString + " " + segundaString + " " + terceiraString
 print(mensagem)
 ```
 
-A saída será:
+Este código irá resultar na seguinte saída: "Eu amo programar".
 
-```
-Olá, meu nome é Maria, João, Ana, Pedro
-```
+Existem ainda outras formas de concatenar strings em Swift, como a utilização de templates de string ou operadores compostos. Para saber mais, consulte os links da seção "Veja também".
 
-## Aprofundando
+## Aprofundando-se
 
-Concatenar strings pode parecer simples, mas existem algumas coisas que você deve estar ciente para evitar problemas. Por exemplo, quando você está concatenando várias strings, é importante ter cuidado com a ordem em que as strings são adicionadas. Como vimos no primeiro exemplo acima, a primeira string que adicionamos foi "Bem-vindo", mas se tivéssemos adicionado o nome antes, a saída seria "Fernanda Silva Bem-vindo".
+A concatenação de strings pode parecer simples, mas é importante entender como ela funciona nos bastidores. Em Swift, strings são representadas por uma estrutura de dados que armazena cada caractere individualmente e, quando concatenadas, essa estrutura precisa ser recriada para acomodar a nova string. Por isso, é sempre importante pesquisar sobre desempenho ao usar muitas concatenações em um mesmo trecho de código.
 
-Outro aspecto importante a ser considerado é o desempenho. Concatenar strings em loops ou em grandes quantidades pode afetar a velocidade do seu aplicativo. Nesses casos, pode ser melhor usar a classe `NSMutableString`, que é projetada para lidar com alterações frequentes em uma string.
+Outro aspecto importante é a utilização de diferentes tipos de dados em uma concatenação. Ao unir uma string com um número, por exemplo, é preciso converter o número para uma string utilizando o método "String()". Caso contrário, o compilador pode gerar um erro.
 
 ## Veja também
 
-- [Documentação oficial do Swift sobre strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Tutorial sobre concatenação de strings em Swift](https://www.hackingwithswift.com/read/0/2/concatenating-strings)
-- [Exemplos práticos de concatenação de strings em Swift](https://www.codementor.io/@ashishkakkad16/concatenating-strings-with-for-loop-in-swift-5-2r645e7ph)
+- [Documentação da Apple sobre strings em Swift](https://developer.apple.com/documentation/swift/string)
+- [Artigo sobre concatenação de strings em Swift](https://medium.com/@JohnSundell/using-the-string-plus-operator-in-swift-2479a2544e69)
+- [Tutorial sobre templates de string em Swift](https://learnappmaking.com/string-interpolation-swift-how-to/)

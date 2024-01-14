@@ -1,48 +1,64 @@
 ---
 title:                "Elm: Comparando dos fechas"
+simple_title:         "Comparando dos fechas"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué comparar dos fechas en Elm
+## Por qué
 
-Al programar en Elm, puede ser útil comparar dos fechas para determinar cuál es más reciente, por ejemplo, o para filtrar datos basados en fechas. En esta entrada del blog, aprenderemos cómo comparar dos fechas en Elm y profundizaremos un poco en el proceso. ¡Vamos a empezar!
+Si estás aprendiendo a programar en Elm, es importante que entiendas cómo comparar dos fechas. Esto te permitirá realizar acciones basadas en la fecha y hora actual de manera efectiva en tus programas. En este artículo, te mostraré cómo comparar fechas en Elm de forma sencilla.
 
 ## Cómo hacerlo
 
-Para comparar dos fechas en Elm, primero debemos asegurarnos de que las fechas estén en un formato adecuado. Elm utiliza el módulo `Time` para manejar fechas y horas, por lo que debemos importar este módulo al principio de nuestro archivo:
+Primero, necesitamos tener dos fechas que queramos comparar. Podemos hacer esto utilizando la función `Date.fromTime` para convertir un registro `Time` en una fecha y utilizar `Date.fromString` para crear una fecha a partir de una cadena de texto.
 
 ```Elm
-import Time
+import Date exposing (fromString, fromTime)
+
+-- Creamos dos fechas a partir de una cadena de texto y un registro Time
+firstDate = Date.fromString "2021-06-01"
+secondDate = Date.fromTime { hour = 12, day = 10, month = 05, year = 2021, second = 30 }
 ```
 
-Una vez importado el módulo `Time`, podemos utilizar la función `Time.fromString` para convertir una cadena de texto en una fecha. Por ejemplo, si tenemos la cadena "2020-01-01" como fecha, podemos convertirla de la siguiente manera:
+A continuación, utilizaremos la función `Date.compare` para comparar ambas fechas. Esta función devuelve un valor `Order` que puede ser `LT` (menor que), `EQ` (igual que) o `GT` (mayor que).
 
 ```Elm
-fechaEjemplo = Time.fromString "2020-01-01"
+-- Esta función devuelve la relación entre las dos fechas
+compareResult : Order
+compareResult = Date.compare firstDate secondDate
 ```
 
-Ahora que tenemos nuestras dos fechas en un formato adecuado, podemos utilizar las funciones de comparación `Date.comparable` y `Date.compare` para determinar cuál de las dos fechas es más reciente. Por ejemplo, si queremos comparar las fechas "2020-01-01" y "2020-05-01", podemos hacerlo de la siguiente manera:
+Podemos utilizar una declaración `case` para evaluar el resultado de la comparación y realizar acciones en función de ello.
 
 ```Elm
-fecha1 = Time.fromString "2020-01-01"
-fecha2 = Time.fromString "2020-05-01"
-comparacion = Date.compare (Date.comparable fecha1) (Date.comparable fecha2)
+case compareResult of
+  LT ->
+    -- firstDate es menor que secondDate, realizamos alguna acción
+    "Realizamos alguna acción"
+  
+  EQ ->
+    -- firstDate es igual que secondDate, realizamos otra acción
+    "Realizamos otra acción"
+  
+  GT ->
+    -- firstDate es mayor que secondDate, realizamos otra acción diferente
+    "Realizamos otra acción diferente"
 ```
 
-La variable `comparacion` ahora tendrá un valor que nos indicará si la fecha1 es anterior, igual o posterior a la fecha2. Podemos utilizar una expresión `case` para manejar cada uno de estos casos.
+Este es un ejemplo básico de cómo comparar dos fechas en Elm. Ahora, profundizaremos un poco más en cómo funciona la comparación de fechas.
 
 ## Profundizando
 
-Al comparar dos fechas en Elm, es importante tener en cuenta que también podemos utilizar la función `Time.now` para obtener la fecha y hora actuales. Esto puede ser útil para comparar una fecha con la fecha actual, por ejemplo.
+Cuando comparamos dos fechas en Elm utilizando la función `Date.compare`, en realidad estamos comparando dos registros `Date` que contienen los campos `year`, `month`, `day` y `hour`. Sin embargo, solo se tienen en cuenta `year`, `month` y `day` ya que la hora no es relevante en la comparación de fechas.
 
-También podemos utilizar la función `Time.fromPosix` para crear una fecha a partir de un valor de tiempo POSIX, lo que nos permite trabajar con fechas en una escala más precisa.
+Además, es importante tener en cuenta que, al igual que con otras comparaciones en Elm, la comparación de fechas utiliza la implementación de `Ord` de las fechas. Esto significa que si utilizamos fechas personalizadas que implementan su propia versión de `Ord`, la comparación de fechas puede devolver resultados inesperados.
 
-## Ver también
+## Véase también
 
-- [Documentación oficial de Elm sobre el módulo Time](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Artículo sobre comparar fechas en Elm](https://12devsofxmas.co.uk/2013/10/learning-elm-from-a-ruby-developers-perspective-part-3/)
-- [Ejemplo de código en GitHub de comparación de fechas en Elm](https://github.com/FidelisClayton/elm-date-comparison-example)
+- Documentación oficial de Elm sobre la función `Date.compare`: https://package.elm-lang.org/packages/elm/time/latest/Date#compare
+- Respuesta en Stack Overflow sobre cómo comparar fechas en Elm: https://stackoverflow.com/questions/63935256/how-to-compare-two-dates-in-elm

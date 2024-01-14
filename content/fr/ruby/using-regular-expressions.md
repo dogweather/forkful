@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Utiliser les expressions régulières"
+simple_title:         "Utiliser les expressions régulières"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/using-regular-expressions.md"
 ---
 
@@ -9,39 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Utiliser des expressions régulières peut considérablement simplifier votre code lorsque vous travaillez avec des chaînes de caractères. Elles permettent de rechercher et de manipuler des motifs de texte de manière efficace et rapide.
+Utiliser des expressions régulières peut sembler intimidant au premier abord, mais c'est en fait un outil puissant pour manipuler et analyser des chaînes de caractères en Ruby. Que vous cherchiez à valider des données entrées par l'utilisateur, à extraire des informations d'un fichier texte ou même à remplacer des mots dans une chaîne, les expressions régulières peuvent vous faire gagner un temps précieux et rendre votre code plus élégant.
 
 ## Comment faire
 
-Les expressions régulières en Ruby sont définies entre des barres obliques (slashes) et peuvent être utilisées avec des chaînes de caractères ou une variable contenant une chaîne de caractères.
+Pour utiliser les expressions régulières en Ruby, vous devez d'abord les encapsuler entre deux slashs (`/expression/`) dans une variable ou directement dans une méthode comme `gsub` ou `match`. Ensuite, vous pouvez utiliser différents symboles avant ou après l'expression pour spécifier ce que vous cherchez à faire.
+
+Par exemple, si vous voulez chercher toutes les occurrences d'une lettre dans une chaîne de caractères, vous pouvez utiliser le symbole `.` pour représenter n'importe quel caractère, suivi du symbole `*` qui signifie "0 ou plus". Voici un exemple de code :
 
 ```Ruby
-# Recherche dans une chaîne de caractères
-"Bonjour, je m'appelle Jean." =~ /Jean/  # retourne 19 (index de la première occurrence de "Jean")
-
-# Utilisation de la méthode « scan » pour récupérer tous les mots commençant par « from »
-"from date: 2021-01-01 to date: 2021-12-31" =~ /from[^ ]+/  # retourne ["from date:", "from date:"]
+texte = "Bonjour tout le monde!"
+resultat = texte.scan(/to\*/) # trouve toutes les lettres "to" dans la chaîne
+puts resultat # affiche ["tout"]
 ```
 
-Il existe une variété de symboles spéciaux qui peuvent être utilisés pour créer des motifs plus complexes dans les expressions régulières. Par exemple, le symbole « ^ » peut être utilisé pour trouver des mots en début de ligne et le symbole « ? » pour rechercher des caractères optionnels. Vous pouvez trouver une liste complète de ces symboles et leur signification dans la documentation de Ruby.
+Vous pouvez également utiliser des symboles spéciaux pour rechercher des ensembles de caractères spécifiques, comme `[aeiou]` pour toutes les voyelles ou `[A-Z]` pour toutes les lettres majuscules. Pour plus d'exemples et de détails, consultez la section "Voir aussi" ci-dessous.
 
 ## Plongée en profondeur
 
-Les expressions régulières en Ruby peuvent être encore plus puissantes grâce à l'utilisation de blocs de code et de méthodes spéciales comme « sub » et « gsub ». Ces dernières permettent de remplacer une partie ou toutes les occurrences d'un motif dans une chaîne de caractères par un autre texte ou du code. Il est également possible de capturer des parties d'un motif pour les utiliser dans le remplacement.
+Les expressions régulières peuvent sembler complexes au début, mais elles peuvent être très utiles pour des tâches plus avancées. Par exemple, vous pouvez utiliser des parenthèses pour capturer les parties spécifiques d'une chaîne que vous souhaitez extraire. Vous pouvez également utiliser les symboles `+`, `?` ou `{n, m}` pour spécifier des occurrences multiples, facultatives ou d'un nombre précis.
 
-Par exemple, vous pouvez utiliser cette fonctionnalité pour remplacer automatiquement des noms dans une phrase :
-
-```Ruby
-# Remplacer automatiquement une partie d'une phrase
-"Il est parti en vacances avec son ami Pierre." =~ /(ami) ([A-Z][a-z]+)/
-puts "Il est parti en vacances avec son #{$1} #{ $2.gsub(/[A-Z]/, '')}."  # retourne "Il est parti en vacances avec son ami pierre."
-```
-
-De plus, il existe des bibliothèques tierces, telles que « rubular » et « regexr », qui permettent de tester et de visualiser facilement vos expressions régulières en temps réel.
+En plus des techniques de correspondance, les expressions régulières en Ruby ont également des méthodes utiles telles que `sub` qui remplace la première occurrence correspondante ou `gsub` qui remplace toutes les occurrences correspondantes. Il existe également des options comme l'utilisation de modificateurs d'expression régulière pour ignorer la casse ou utiliser des expressions régulières multilignes.
 
 ## Voir aussi
 
-- [Documentation de Ruby sur les expressions régulières](https://ruby-doc.org/core-3.0.1/Regexp.html)
-- [Liste de symboles pour les expressions régulières en Ruby](https://medium.com/@mekhifiras/tips-for-regex-in-ruby-9715be3c805c)
-- [Bibliothèque rubular pour tester des expressions régulières en ligne](https://rubular.com/)
-- [Bibliothèque regexr pour tester et visualiser des expressions régulières en ligne](https://regexr.com/)
+- [Documentation Ruby pour les expressions régulières] (https://ruby-doc.org/core/Regexp.html)
+- [Un guide complet des expressions régulières en Ruby] (https://www.regular-expressions.info/ruby.html)
+- [Rubular - tester vos expressions régulières en temps réel] (https://rubular.com/)

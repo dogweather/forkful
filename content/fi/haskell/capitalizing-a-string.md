@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Merkkijonon suuraakkostaminen"
+title:                "Haskell: Merkkijonon kirjoittaminen isolla alkukirjaimella"
+simple_title:         "Merkkijonon kirjoittaminen isolla alkukirjaimella"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/capitalizing-a-string.md"
 ---
 
@@ -9,42 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi joku haluaisi muuttaa merkkijonon isoiksi kirjaimiksi Haskell-ohjelmointikielen avulla? Syitä tähän voivat olla esimerkiksi tekstin muotoilu, tietokannan hakujen tehostaminen tai tietojen yhdistäminen eri järjestelmistä.
+Monissa ohjelmointitehtävissä saattaa olla tarve muuttaa merkkijono isolla alkukirjaimella alkavaksi. Tällainen toiminto voi olla tarpeen esimerkiksi kun halutaan tulostaa käyttäjän syöttämä nimi tai kun muutetaan tietyn formaatin vaatimuksia vastaavaksi. Tässä blogipostissa käymme läpi, miten merkkijonon ensimmäinen kirjain voidaan muuttaa isoksi.
 
-## Miten tehdä
+## Kuinka tehdä
 
-Ohjelmoinnin aloittelijan on helppo muuttaa merkkijono isoiksi kirjaimiksi Haskellissa. Tarvitset vain muutaman rivin koodia ja pääset tavoitteeseen.
+Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi onnistuu helposti Haskellissa käyttämällä `toUpper` funktiota. Tämä funktio kuuluu `Data.Char` moduuliin, joten se täytyy tuoda käyttöön ensin `import`-lauseella. Seuraavassa esimerkissä käydään läpi yksinkertainen tapa muuttaa merkkijonon ensimmäinen kirjain isoksi ja tulostaa tulos konsoliin.
 
 ```Haskell
-import Data.Char
+import Data.Char (toUpper)
 
 capitalize :: String -> String
-capitalize = map toUpper
+capitalize [] = []
+capitalize (x:xs) = toUpper x : xs
 
 main = do
-    putStrLn "Syötä merkkijono:"
-    string <- getLine
-    let capitalized = capitalize string
-    putStrLn ("Isot kirjaimet: " ++ capitalized)
-
+  putStrLn "Syötä nimi:"
+  name <- getLine
+  putStrLn ("Tervehdys " ++ capitalize name)
 ```
 
-Esimerkiksi syötteellä "haskell on mahtava ohjelmointikieli" ohjelma tuottaa seuraavan tulosteen:
+Tämän esimerkin avulla pystytään muuttamaan käyttäjän syöttämä nimi isolla alkukirjaimella alkavaksi ja tulostamaan se tervehdyksen muodossa.
 
-```Haskell
-Syötä merkkijono:
-haskell on mahtava ohjelmointikieli
-Isot kirjaimet: HASKELL ON MAHTAVA OHJELMOINTIKIELI
-```
+## Syvemmälle
 
-## Syventävä sukellus
+Haskellissa merkkijonojen muokkaaminen tapahtuu yleensä listana merkeistä. Tästä syystä merkkijonon ensimmäisen kirjaimen muuttaminen vaatii listan käsittelyä. Esimerkissämme funktio `capitalize` ottaa parametrinaan merkkijonon ja tarkistaa ensin, ettei se ole tyhjä. Jos merkkijono on tyhjä, funktio palauttaa tyhjän listan. Jos merkkijono ei ole tyhjä, funktio käyttää `toUpper` funktiota ensimmäisen kirjaimen muuttamiseksi isoksi ja lisää sen merkkijonon alkuun. Lopuksi funktio yhdistää ensimmäisen kirjaimen ja loput merkit `:`-merkillä. 
 
-Merkkijonon isoiksi muuttaminen ei ole aina yksiselitteistä, sillä eri kielissä voi olla eroja siinä, miten merkistöjä käsitellään. Esimerkiksi Haskellissa `toUpper`-funktio käyttää Unicode-merkistöä, joten se muuttaa myös kansainväliset merkit isoiksi kirjaimiksi. Tämä tulee ottaa huomioon, jos käsitellään tekstiä, jossa on eri kielten merkkejä.
-
-Myös tehokkuus voi olla tärkeä tekijä, kun kyseessä on suurempien merkkijonojen käsittely. Siksi kannattaa tutustua muihin vaihtoehtoihin, kuten `ByteString`-kirjastoon, joka tarjoaa nopeampia tapoja muuttaa merkkijonon merkkejä.
+Tämän lisäksi Haskellissa on myös valmiina funktioita, jotka tekevät saman asian merkkijonon muokkaamiseksi, kuten `capitalize` johon voit tutustua [täältä](http://hackage.haskell.org/package/text/docs/Data-Text.html#v:capitalize). On myös mahdollista kirjoittaa sama funktio käyttämällä esimerkiksi `map` funktiota, joka käy läpi listan ja soveltaa sille annettua funktiota jokaiseen alkioon. Tämä tapahtuu seuraavalla tavalla: `map toUpper "hello"`, joka palauttaa listan `['H', 'E', 'L', 'L', 'O']`.
 
 ## Katso myös
 
-- [Haskellin dokumentaatio merkkijonojen käsittelystä](https://www.haskell.org/tutorial/strings.html)
-- [Data.Char-kirjaston dokumentaatio](https://hackage.haskell.org/package/base/docs/Data-Char.html)
-- [ByteString-kirjaston dokumentaatio](https://hackage.haskell.org/package/bytestring-0.11.1.0/docs/Data-ByteString.html)
+- [Haskell Documentation - Data.Char](https://www.haskell.org/onlinereport/standard-prelude.html#char)
+- [Haskell Documentation - Text](http://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Haskell Wiki - String](https://wiki.haskell.org/String)

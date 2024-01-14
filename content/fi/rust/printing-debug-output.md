@@ -1,55 +1,52 @@
 ---
-title:                "Rust: Debug-tulostus"
+title:                "Rust: Tulostetaan debug-tulosteita"
+simple_title:         "Tulostetaan debug-tulosteita"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+Finnish: ## Miksi
 
-Jos olet ohjelmointimaailmassa läsnä, on hyvin todennäköistä, että olet törmännyt debuggaamiseen, eli virheiden etsimiseen ohjelmakoodista. Yksi tehokas tapa helpottaa virheen jäljittämistä on tulostaa debug-tekstiä, joka antaa sinulle tärkeää tietoa ohjelman suorituksesta. Tässä blogikirjoituksessa käsittelemme, miten voit käyttää Rust-ohjelmointikielen debug-ominaisuuksia ja millaisia etuja se tarjoaa.
+Miksi tulostamaan debuggaustulostusta? Debuggaus on tärkeä osa ohjelmoinnin prosessia, ja tulostamalla debuggaustulostusta voidaan selvittää ohjelman toimintaa ja mahdollisia virheitä.
 
-## Miten
+## Kuinka
 
-Rustilla on sisäänrakennettu debug-toiminto `println!()`, joka tulostaa tekstin konsoliin. Voit käyttää sitä tulostamaan muuttujien arvoja ja muita tietoja ohjelman suorituksen aikana. Alla on esimerkki:
-
+Ohjelmoidessa Rustilla, voit tulostaa debuggaustulostusta käyttämällä `println!` makroa. Alla on esimerkkejä koodista ja tulostuksista:
 ```Rust
-let nimi = "Mikko";
+let nimi = "Matti";
 let ikä = 24;
-println!("Terve, minun nimeni on {} ja olen {} vuotta vanha.", nimi, ikä);
+
+println!("Terveisiä, olen {} ja olen {} vuotta vanha.", nimi, ikä);
 ```
-
-Tämä tulostaisi seuraavan tekstin:
-
+Tulostus:
 ```
-Terve, minun nimeni on Mikko ja olen 24 vuotta vanha.
+Terveisiä, olen Matti ja olen 24 vuotta vanha.
 ```
-
-Voit myös käyttää `dbg!()` makroa, joka tulostaa sekä muuttujan nimen että arvon. Tämä on erityisen hyödyllinen, kun haluat tarkistaa, onko muuttujan arvo oikea. Esimerkki:
-
+Voit myös tulostaa muuttujan tai rakenteen arvon käyttämällä `{:?}` merkintää:
 ```Rust
-let luku = 42;
-dbg!(luku);
+let lista = [1, 2, 3];
+let vektori = vec![4, 5, 6];
+
+println!("Lista: {:?}, Vektori: {:?}", lista, vektori);
+```
+Tulostus:
+```
+Lista: [1, 2, 3], Vektori: [4, 5, 6]
 ```
 
-Tämä tulostaisi:
+## Syvällisemmältä
 
-```
-[luku: 42]
-```
+Tulostamalla debuggausarvoja, voit selvittää tarkemmin ohjelmasi toimintaa ja mahdollisia virheitä. Voit myös käyttää erilaisia makroja kuten `dbg!` tai `eprintln!`, jotka antavat lisätietoja tulosteeseen.
 
-## Syvempi sukellus
-
-Molemmat `println!()` ja `dbg!()` voivat myös ottaa vastaan monia argumentteja, jotta voit muotoilla tulostettavaa tekstiä haluamallasi tavalla. Voit esimerkiksi käyttää muotoilija `%` merkinnällä, joka vastaa C-kielen tunnettua `printf` funktiota.
-
-Voit myös rajata missä paketissa debug-teksti tulostetaan, lisäämällä `#[cfg(debug_assertions)]` ennen `println!()` tai `dbg!()` riviä. Tämä varmistaa, että debug-teksti näkyy vain debug-tarkoituksissa eikä vaikuta ohjelman suoritukseen.
-
-On myös hyvä pitää mielessä, että kaikki debug-teksti lisää ohjelman kokoa ja hidastaa sitä hieman, joten on tärkeää poistaa tai disabloida debug-rivit ennen ohjelman julkaisua.
+Lisäksi voit käyttää `#[derive(Debug)]` annotaatiota rakenteiden ja enumien yhteydessä, jolloin voit tulostaa koko rakenteen tai enumin kerralla.
 
 ## Katso myös
 
-- [Rustin dokumentaatio debuggauksesta](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)
-- [Rust-ohjelmointikielen kotisivu](https://www.rust-lang.org/fi/)
-- [Debuggaus vinkkejä Rust ohjelmille](https://crates.io/crates/crate-template)
+- [Rust dokumentaatio](https://www.rust-lang.org/learn)
+- [Rust ohjelmoinnin käytännön esimerkkejä](https://github.com/rust-lang/rustlings)
+- [Rust yhteisö ja keskustelufoorumi](https://users.rust-lang.org/)
+- [Rust ohjelmointikielen opiskelijalle](https://www.tutorialspoint.com/rust/index.htm)

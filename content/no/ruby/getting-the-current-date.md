@@ -1,60 +1,60 @@
 ---
-title:                "Ruby: Å få gjeldende dato"
+title:                "Ruby: Hente gjeldende dato"
+simple_title:         "Hente gjeldende dato"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å vite den nåværende datoen er en viktig del av å skrive effektiv kode. Det kan hjelpe deg med å lage dynamiske programmer, spore tidsfølsomme hendelser og holde orden på tidsfrister.
+Å få tak i den aktuelle datoen er en viktig ferdighet som mange programmerere trenger i sine programmer. Enten du skal vise datoen på en nettside, lage en kalender eller logge når en hendelse skjedde, er det avgjørende å kunne få tak i riktig dato. Heldigvis er dette en enkel oppgave i Ruby-programmering, og i denne bloggposten skal vi se nærmere på hvordan du kan gjøre det.
 
-## Hvordan få den nåværende datoen i Ruby
+## Hvordan
 
-Det er flere måter å få den nåværende datoen i Ruby på, men den enkleste er å bruke `Date`-klassen og metoden `today`. Her er et eksempel på hvordan du kan gjøre det:
+For å få tak i den aktuelle datoen i Ruby, kan du bruke klassen `Date`. Denne klassen gir oss tilgang til ulike metoder for å få tak i datoen, og vi skal se på noen av dem her.
+
+Først må vi importere `Date`-klassen:
 
 ```Ruby
 require 'date'
-
-current_date = Date.today
-
-puts current_date
 ```
 
-Når du kjører dette kodesnippet, vil du få utskrift av den nåværende datoen i formatet `yyyy-mm-dd`.
-
-Du kan også formatere datoen ved å bruke metoden `strftime`:
+Deretter kan vi få tak i datoen på ulike måter. Her er noen eksempler:
 
 ```Ruby
-formatted_date = current_date.strftime("%d %b %Y")
+# Få tak i dagens dato
+Date.today
 
-puts formatted_date
+# Få tak i datoen for en bestemt dag
+Date.new(2021, 10, 25)
+
+# Få tak i datoen for en bestemt dag fra en string
+Date.parse("2021-10-25")
 ```
 
-Dette vil gi deg utskrift av datoen i formatet `dd mmm yyyy` (for eksempel 31 Dec 2020).
-
-Det er også verdt å nevne at du også kan få den nåværende datoen og tidspunktet ved å bruke `DateTime`-klassen og metoden `now` på samme måte som vi gjorde med `Date`-klassen og metoden `today`.
-
-## Dykk dypere
-
-Hvis du vil lære mer om hvordan Ruby håndterer datoer og tider, kan du utforske `Time`- og `DateTime`-klassene. Disse klassene har flere nyttige metoder for å konvertere datoer og tider og beregne forskjeller mellom dem.
-
-En annen nyttig metode å vite om er `parse`, som lar deg konvertere tekststrenger til dato- eller tidobjekter. Her er et eksempel:
+Du kan også få tak i ulike deler av datoen, som for eksempel år, måned og dag. Her er noen eksempler på hvordan du kan gjøre det:
 
 ```Ruby
-date_string = "2020-12-31"
+# Få tak i året
+Date.today.year
 
-parsed_date = Date.parse(date_string)
+# Få tak i måneden
+Date.today.month
 
-puts parsed_date
+# Få tak i dagen
+Date.today.day
 ```
 
-Dette vil konvertere tekststrengen til et `Date`-objekt og gi utskrift av datoen.
+## Dypdykk
+
+Nå som vi har sett hvordan du kan få tak i den aktuelle datoen, la oss se litt på hvordan det faktisk fungerer bak kulissene. Ruby bruker en metode kalt "proleptisk Gregorian calendar" for å håndtere datoene. Det betyr at selv om det ikke fantes en 0. år før vår tidsregning begynte, så bruker Ruby det allikevel for å gjøre beregningene enklere. I tillegg håndterer Ruby skuddår, så du trenger ikke bekymre deg for det når du jobber med datoer.
 
 ## Se også
 
-- [Ruby dokumentasjon om Date-klassen](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
-- [Ruby dokumentasjon om DateTime-klassen](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html)
-- [Ruby dokumentasjon om Time-klassen](https://ruby-doc.org/stdlib-2.7.2/libdoc/time/rdoc/Time.html)
+- [Date-klassen i Ruby-dokumentasjonen](https://ruby-doc.org/stdlib-2.7.5/libdoc/date/rdoc/Date.html)
+- [Ruby-forumet](https://www.ruby-forum.com/)
+- [Ruby på nettet](https://www.ruby-lang.org/nb/)

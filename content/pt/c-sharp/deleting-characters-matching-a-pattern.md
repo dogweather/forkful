@@ -1,44 +1,41 @@
 ---
-title:                "C#: Exclusão de caracteres correspondentes a um padrão"
+title:                "C#: Excluir caracteres que correspondem a um padrão"
+simple_title:         "Excluir caracteres que correspondem a um padrão"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
-
-Muitas vezes, ao trabalhar com strings e textos em C#, pode ser necessário remover certos caracteres que correspondam a um determinado padrão. Isso pode ser útil para limpar dados da entrada do usuário ou para formatar o texto de uma maneira específica. Neste artigo, vamos explorar como podemos fazer isso no C#.
+Existem diversas razões pelas quais alguém pode querer excluir caracteres que correspondem a um determinado padrão em um programa em C#. Pode ser para lidar com entrada de dados inválida, para limpar e formatar strings antes de processá-las, ou simplesmente para remover elementos desnecessários de um texto.
 
 ## Como Fazer
 
-Existem algumas maneiras de deletar caracteres que correspondam a um padrão em C#. Uma delas é usar o método `string.Replace()` combinado com expressões regulares para especificar o padrão que queremos deletar. Vamos dar uma olhada neste exemplo de código:
+Para deletar caracteres correspondentes a um padrão, podemos utilizar a função `Regex.Replace()` da biblioteca `System.Text.RegularExpressions`. Primeiramente, importe a biblioteca adicionando `using System.Text.RegularExpressions;` no início do seu código. Em seguida, vamos declarar uma string com o texto que desejamos processar e um padrão que queremos que seja correspondido, por exemplo:
 
 ```C#
-string texto = "Este é um texto de exemplo que contém @ e # caracteres especiais.";
-string textoCorrigido = Regex.Replace(texto, "[#@]", "");
-Console.WriteLine(textoCorrigido);
+string texto = "Esta é uma string com alguns caracteres inválidos #@$^&";
+string padrao = "[^a-zA-Z0-9 ]+";
 ```
 
-Aqui, usamos a classe `Regex` para especificar os caracteres `@` e `#` que queremos deletar do texto. O resultado retornado pela chamada do método `Replace()` é uma nova string sem esses caracteres. No exemplo acima, a saída seria: "Este é um texto de exemplo que contém e caracteres especiais."
-
-Além disso, podemos utilizar o método `string.Trim()` para remover espaços em branco ou caracteres indesejados do início ou do fim de uma string. Por exemplo:
+Agora, podemos utilizar a função `Regex.Replace()` passando como argumentos a string `texto`, o padrão `padrao` e uma string vazia `""` para indicar que queremos substituir os caracteres correspondentes por nada. O resultado será uma nova string com os caracteres inválidos removidos:
 
 ```C#
-string texto = "   Exemplo de texto com espaços em branco    ";
-string textoTrimmed = texto.Trim();
-Console.WriteLine(textoTrimmed);
+string resultado = Regex.Replace(texto, padrao, "");
+Console.WriteLine(resultado);
+// Imprime: "Esta é uma string com alguns caracteres inválidos "
 ```
-
-O resultado seria a nova string "Exemplo de texto com espaços em branco". Podemos também usar o método `string.TrimStart()` ou `string.TrimEnd()` se quisermos especificar o lado da string que queremos "aparar".
 
 ## Deep Dive
 
-Remover caracteres correspondentes a um padrão pode ser útil em diversas situações. Além dos exemplos acima, podemos usar essa técnica para validar entradas do usuário em um formulário ou para formatar corretamente um número de telefone. É importante lembrar que podemos usar expressões regulares para especificar padrões mais complexos, o que torna essa técnica ainda mais poderosa.
+O `\` é conhecido como escape character em C#, utilizado para indicar que o próximo caractere deve ser tratado de forma especial. Por exemplo, o `\n` é utilizado para representar uma quebra de linha. Porém, quando utilizado em conjuntos de caracteres em uma regex, ele tem o efeito de desabilitar os caracteres especiais, incluindo o `+` que representa uma ou mais ocorrências do padrão anteriormente especificado. Por isso, é necessário utilizar uma classe de caracteres negada (`[^...]`) para conseguir deletar os caracteres correspondentes ao padrão.
+
+Existem diversas outras funções e métodos que podemos utilizar para lidar com padrões em C#, como a função `Regex.IsMatch()` para verificar se uma determinada string corresponde a um padrão, ou a classe `Regex.Match` para extrair trechos da string que correspondem a um padrão específico.
 
 ## Veja Também
-
-- [Documentação da classe `Regex` em C#](https://docs.microsoft.com/pt-br/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)
-- [Guia de expressões regulares em C#](https://csharp-station.com/Tutorial/CSharp/Lesson11)
-- [Tutorial de formatação de strings em C#](https://www.tutorialsteacher.com/csharp/csharp-string-format)
+- [Documentação do `Regex.Replace()` em MSDN](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)
+- [Exemplos de utilização do `Regex` em C#](https://www.dotnetperls.com/regex)
+- [Tutorial sobre expressões regulares em C#](https://www.youtube.com/watch?v=BBz4q3SQ4gA)

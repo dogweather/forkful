@@ -1,48 +1,36 @@
 ---
 title:                "Swift: Merkkijonon pituuden löytäminen"
+simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-On monia syitä, miksi haluat selvittää merkkijonon pituuden Swift-ohjelmoinnissa. Se voi olla tarpeen tarkistaa käyttäjän antaman syötteen oikeellisuus tai suorittaa tiettyjä operaatioita riippuen merkkijonon pituudesta. Riippumatta syystä, on tärkeää ymmärtää, miten tämä tehdään nopeasti ja tehokkaasti.
+Miksi haluaisit selvittää merkkijonon pituuden? Monissa ohjelmointiprojekteissa on tarpeen muokata ja työstää merkkijonoja, ja usein tarvitaan tietoa merkkijonon pituudesta. On myös tärkeää ymmärtää, miten tieto tallennetaan erilaisiin muuttujiin, kuten merkkijonoon.
 
-## Kuinka?
+## Miten tehdä se
 
-Merkkijonon pituuden löytäminen Swiftillä on hyvin yksinkertaista. Voit käyttää `count`-metodia merkkijonolle ja se palauttaa merkkien määrän. Esimerkiksi:
-
-```Swift
-let merkkijono = "Hei, maailma!"
-print(merkkijono.count) // tulostaa 13
-```
-
-Joskus merkkijonon pituus saattaa olla tarpeen myös pyöräyttää silmukassa ja suorittaa tiettyjä toimintoja jokaiselle merkille. Tämä voidaan tehdä käyttämällä `characters`-ominaisuutta ja sen `count`-metodia. Esimerkiksi:
+Merkkijonon pituuden selvittäminen Swiftillä on hyvin yksinkertaista. Kaikki merkkijonot ovat objekteja Swiftissä, ja niillä on oma `count`-metodi, joka palauttaa merkkijonon pituuden. Katso esimerkiksi:
 
 ```Swift
-let merkkijono = "Kissapöllö"
-for merkki in merkkijono.characters {
-    print("Merkki: \(merkki)")
-}
-// tulostaa: K I S S A P Ö L L Ö
+let sana = "Heippa!"
+print(sana.count)
 ```
 
-## Syvempi katsaus
+Tämän koodin tulostus olisi `7`, koska sana "Heippa!" koostuu seitsemästä merkistä. Voit myös käyttää `Character`-tyypin `count`-metodia, joka palauttaa merkkijonon pituuden merkkeinä sen sijaan, että laskisi kaikki välilyöntien ja erikoismerkkien määrän.
 
-Vaikka merkkijonon pituuden löytäminen saattaa vaikuttaa yksinkertaiselta, se voi silti aiheuttaa ongelmia, jos et ymmärrä, miten Swift käsittelee merkkijonoja. Esimerkiksi, jos haluat löytää merkkijonon pituuden, jossa on erikoismerkkejä tai emoji-ikoneja, `count`-metodi ei välttämättä palauta odottamaasi vastausta. Tämä johtuu siitä, että jotkut merkkijonon merkit voivat sisältää useita Unicode-kerroksia, ja tämä vaikuttaa merkkien lukumäärään.
+## Syvempi sukellus
 
-Voit kiertää tämän ongelman käyttämällä `unicodeScalars`-ominaisuutta ja sen `count`-metodia. Tämän avulla voit saada tarkan lukumäärän merkkien lukumäärästä huolimatta niiden sisältämistä Unicode-kerroksista.
+Merkkijonon pituuden selvittäminen voi tuntua yksinkertaiselta, mutta se on tärkeä osa ohjelmoinnin perusteita. On tärkeää ymmärtää, että jokainen merkki merkkijonossa vie yhden muistipaikan, joten jos merkkijono on hyvin pitkä, se voi vaikuttaa suorituskykyyn.
 
-```Swift
-let merkkijono = "🐱😸"
-print(merkkijono.count) // tulostaa 2
-print(merkkijono.unicodeScalars.count) // tulostaa 4
-```
+Swiftissä on myös muita hyödyllisiä metodeja, kuten `isEmpty`, joka tarkistaa, onko merkkijono tyhjä, ja `hasPrefix` ja `hasSuffix`, jotka tarkistavat, alkaako tai päättyykö merkkijono tietyllä merkkijonolla. Opi lisää näistä Swiftin virallisesta dokumentaatiosta.
 
 ## Katso myös
 
-- [Swiftin merkkijonojen dokumentaatio](https://developer.apple.com/documentation/swift/string)
-- [Lyhyt opas Swiftin merkkijonoihin](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/StringsAndCharacters.html)
+- [Swift Programming Language Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Apple Developer Documentation on Strings](https://developer.apple.com/documentation/swift/string)

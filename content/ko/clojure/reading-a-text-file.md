@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: 텍스트 파일 읽기"
+simple_title:         "텍스트 파일 읽기"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/clojure/reading-a-text-file.md"
 ---
 
@@ -9,42 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-텍스트 파일을 읽는 것에 대해 관심을 가지는 이유는 여러 가지가 있을 수 있습니다. 예를 들어, 프로그래밍을 배우고 연습하기 위해서, 다른 프로그래머들의 코드를 읽고 이해하기 위해서, 또는 자신이 작성한 코드의 작동 여부를 확인하기 위해서 등이 있을 수 있습니다. 어떤 이유든지 간에, 텍스트 파일을 읽는 것은 프로그래밍에서 기본적이고 필요한 기술입니다.
+텍스트 파일을 읽는 것에 대해 궁금하신가요? 프로그래밍에서 텍스트 파일을 읽는 것은 다양한 정보를 컴퓨터로 가져오는 중요한 일입니다. 이를 통해 여러분은 더 많은 데이터를 제어하고 활용할 수 있게 됩니다.
 
-## 어떻게
+## 사용 방법
 
-텍스트 파일을 읽는 것은 간단한 작업처럼 보일 수 있지만, Clojure에서는 여러 가지 방법으로 할 수 있습니다. 가장 기본적인 방법은 `slurp` 함수를 사용하는 것입니다. 이 함수는 파일의 전체 내용을 문자열로 반환해줍니다. 예를 들어, `slurp` 함수를 사용하여 `"sample.txt"` 파일을 읽으면 다음과 같은 결과가 나옵니다:
-
-```Clojure
-(slurp "sample.txt")
-```
+파일을 읽는 법을 알아보기 위해서는 먼저 파일을 열어야 합니다. 이 과정은 몇 가지 단계로 이뤄집니다. 먼저, `with-open` 함수를 사용하여 파일을 열어야 합니다. 그리고 `reader` 함수를 사용하여 파일을 읽을 준비를 해야 합니다. 아래 예시 코드를 참고해보세요.
 
 ```
-안녕하세요? 이것은 텍스트 파일의 내용입니다.
+(clojure.pprint/pprint "파일을 열기 위해 with-open 사용하기")
+
+(with-open [file (io/reader "sample.txt")]
+  (let [line (line-seq file)]
+    (doseq [l line]
+      (println l))))
 ```
 
-하지만 크기가 큰 파일을 읽는 경우에는 메모리 부족 오류가 발생할 수 있습니다. 이럴 때는 `line-seq` 함수를 사용하여 한 줄씩 파일을 읽어올 수 있습니다. 예를 들어, `line-seq` 함수를 사용하여 `"numbers.txt"` 파일을 읽어오면 다음과 같은 결과가 나옵니다:
+위 코드를 실행하면 `sample.txt` 파일의 내용이 각 줄마다 출력됩니다. 이를 통해 파일을 읽을 수 있는 기초적인 방법을 알게 되었습니다.
 
-```Clojure
-(loop [lines (line-seq (clojure.java.io/reader "numbers.txt"))]
-  (when-let [line (first lines)]
-    (println line)
-    (recur (rest lines))))
-```
+## 깊이 파고들기
 
-```
-1
-2
-3
-4
-5
-```
+파일을 읽는 방법은 여러 가지가 있습니다. 위의 예시 코드는 파일의 각 줄을 하나씩 읽어오는 방식이었습니다. 하지만 여러분은 `slurp` 함수를 사용하여 파일 전체의 내용을 문자열 형태로 가져올 수도 있습니다. 또한 Clojure는 다양한 라이브러리를 제공하여 파일 형식에 따라 더 쉽게 읽고 처리할 수 있도록 도와줍니다.
 
-## 심층 분석
+## 또 다른 정보들
 
-텍스트 파일을 읽는 것에 대해 더욱 깊이 들어가보면, Clojure에서는 `clojure.java.io` 라이브러리를 사용하여 파일을 읽고 쓸 수 있습니다. 이 라이브러리는 Java의 `java.io` 패키지를 Clojure에서 사용할 수 있게 해주는 매우 유용한 도구입니다. 또한, `clojure.string` 라이브러리를 사용하면 문자열을 다루는 데에 있어서 더욱 편리하게 사용할 수 있습니다.
-
-## 참고 자료
-
-- [Clojure 공식 문서 - 파일](https://clojure.org/reference/java_interop#_file)
-- [불편한 클로져 튜토리얼 - 파일 핸들링](https://uncomfortableprogrammer.com/clojure-tutorial/#파일-핸들링)
+- [Clojure의 파일 입출력](https://clojure.org/reference/java_interop#_file_io)
+- [with-open을 사용한 파일 열기](https://clojuredocs.org/clojure.core/with-open)
+- [주요 Clojure 라이브러리](https://clojuredocs.org/libraries)

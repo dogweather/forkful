@@ -1,34 +1,36 @@
 ---
-title:                "Elixir: Kirjoittaminen standardivirheeseen"
+title:                "Elixir: Standard errorin kirjoittaminen"
+simple_title:         "Standard errorin kirjoittaminen"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi kirjoittaa standardin virheille?
+## Miksi
 
-Kirjoittaminen standardin virheille (standard error) on tärkeä osa ohjelmointia ja se auttaa kehittäjiä löytämään ja korjaamaan virheitä nopeasti. Kun kehität Elixir-sovelluksia, voit käyttää tätä menetelmää virheiden jäljittämiseen ja ymmärtää, mitä ohjelma tekee.
+Kirjoittaminen standardivirheeseen (standard error) on tärkeä taito Elixir-ohjelmoinnissa. Se auttaa kehittäjiä tunnistamaan ja korjaamaan virheitä, jotka ilmenevät ohjelman suorittamisen aikana.
 
-## Miten tehdä se?
+## Miten
 
-Voit kirjoittaa standardin virheille yksinkertaisesti käyttämällä `IO.puts/1` -funktiota ja välittämällä sille virheviestisi parametrina. Esimerkiksi, jos haluat näyttää käyttäjälle virheviestin, voit käyttää seuraavaa koodia:
+Kirjoittaminen standardivirheeseen on yksinkertaista Elixir-ohjelmoinnissa. Voit käyttää `IO`-moduulia, jota käytetään tietojen tulostamiseen ohjelman suorituksen aikana. Voit kirjoittaa viestin standardivirheeseen käyttämällä `IO.puts/2`-funktiota, joka ottaa kaksi argumenttia: tietojen tulostettavan viestin ja virhetason.
 
 ```
-Elixir
-IO.puts("Tapahtui virhe: Tietoja ei löytynyt.")
+Elixir puts("Tämä on virheellinen viesti", :error)
 ```
 
-Tämä tulostaa tekstin "Tapahtui virhe: Tietoja ei löytynyt." standardin virheille.
+Tämä koodi tulostaa viestin "Tämä on virheellinen viesti" standardivirheeseen ja asettaa sen virhetasoksi `:error`. Voit myös käyttää muita virhetasoja, kuten `:debug`, `:warn` ja `:info`, riippuen siitä, kuinka tärkeä viesti on.
 
-## Syvempi sukellus
+## Syvällisempi tarkastelu
 
-Kun kirjoitat standardin virheille, on tärkeää huomata, että se ei pysäytä ohjelman suorittamista. Sen sijaan se vain tulostaa virheviestin ja jatkaa ohjelman suorittamista normaalisti. Tämä tekee siitä hyödyllisen työkalun virheiden jäljittämiseen ja korjaamiseen.
+Kun ohjelma suoritetaan, se lukee koodia ja tulostaa tietoja standardiulostuloon (standard output). Jos ohjelmassa ilmenee virheitä, ne lähetetään standardivirheeseen. Tämän avulla kehittäjät voivat selvittää, missä kohdassa koodia virhe tapahtui ja korjata sen.
 
-Lisäksi, jos haluat näyttää erityyppisiä virheviestejä, voit käyttää `IO.puts/2` -funktiota ja välittää sille toisen parametrin tulostuskanavana. Tällä tavoin voit erottaa virheviestit muista tulostuksista ja hallita niitä erikseen.
+Elixirin standardivirheen käyttö on tärkeä erityisesti silloin, kun käsitellään tietokantoja ja ulkoisia tiedostoja. Jos ohjelma ei pysty lukemaan tai tallentamaan tietoa, siitä lähetetään viesti standardivirheeseen, mikä auttaa kehittäjiä tunnistamaan ja korjaamaan ongelman.
 
-# Katso myös
+## Katso myös
 
-- Elixirin virallinen dokumentaatio: https://elixir-lang.org/docs.html
-- Virheiden hallinta Elixirissä: https://elixirschool.com/en/lessons/basics/error-handling/
+- [Elixir IO-moduuli](https://hexdocs.pm/elixir/IO.html)
+- [IO.puts/2-funktio](https://hexdocs.pm/elixir/IO.html#puts/2)
+- [Standard output ja standard error](https://en.wikipedia.org/wiki/Standard_streams)

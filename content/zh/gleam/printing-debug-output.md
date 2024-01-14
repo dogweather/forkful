@@ -1,48 +1,51 @@
 ---
 title:                "Gleam: 打印调试输出"
+simple_title:         "打印调试输出"
 programming_language: "Gleam"
-category:             "Testing and Debugging"
+category:             "Gleam"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-#为什么
-在编写和调试程序时，打印调试输出是非常有用的工具。它可以帮助程序员跟踪代码的执行过程，定位错误的位置并快速解决问题。通过打印调试输出，程序员可以更加直观地了解程序的运行情况，从而更有效地调试代码。
+## 为什么：打印调试信息的重要性
 
-##如何做
-在Gleam中，通过使用```print_debug()```函数来打印调试输出。该函数接受一个参数，可以是任意类型的变量或表达式。例如，我们想要打印一个字符串变量的内容，可以使用以下代码：
+在编程过程中，经常会遇到一些难以理解的bug。这时，打印调试信息可以帮助我们更快地定位问题所在，从而加快程序的开发和调试过程。
 
+## 如何打印调试信息：
 ```Gleam
-let message = "Hello world"
-print_debug(message)
+// 假设我们有一个名为add的函数，功能是将两个数相加并返回结果
+fn add(a, b) {
+  var result = a + b;
+  // 打印调试信息，可在终端看到该信息
+  dbg("The result of adding", a, "and", b, "is", result);
+  return result;
+}
 ```
-
-以上代码的输出结果将是：
-
+运行该函数后，我们可以在终端看到输出如下：
+```bash
+The result of adding 2 and 3 is 5
 ```
-"Hello world"
-```
+这样我们就能清楚地知道add函数的运行结果，从而帮助我们定位问题。
 
-除了打印变量的值，我们还可以在```print_debug()```函数中使用表达式。例如，我们想要打印两个数的和，可以使用以下代码：
-
+## 深入了解：
+打印调试信息并不仅限于简单地输出变量的值。在Gleam中，我们还可以使用`${}`语法来输出变量的值，并且还可以同时输出多个变量的值。例如：
 ```Gleam
-let a = 3
-let b = 5
-print_debug(a + b)
+// 假设我们有两个变量a和b
+dbg("The value of a is ${a} and the value of b is ${b}");
 ```
-
-输出结果将是：
-
+输出信息将会是：
+```bash
+The value of a is 你的值 and the value of b is 你的值
 ```
-8
-```
+此外，我们还可以使用`dbg_expr()`函数来打印表达式的值。这在调试复杂的逻辑过程中非常有用。
 
-##深入探讨
-除了基本的打印功能，```print_debug()```函数还有其他的选项可以使用。例如，我们可以使用```print_debug("Some text", debug_as_warning: true)```来打印一个警告信息，将内容显示为黄色。另外，我们也可以通过指定```debug_scope```参数来控制打印信息的范围，例如只在特定条件下才打印调试输出。
+## 参考链接：
+- [Gleam官方文档](https://gleam.run/book/introduction.html)
+- [Gleam Github仓库](https://github.com/gleam-lang/gleam)
+- [如何为Gleam函数添加调试信息](https://gleam.run/posts/adding-debugging-output-to-gleam-functions.html)
 
-值得注意的是，打印调试信息可能会影响程序的性能。因此，在调试结束后，记得将不必要的调试输出语句删除。
+## 参见：更多Gleam相关文章
 
-#相关阅读
-- [Gleam官方文档-打印调试输出](https://gleam.run/documentation/printing_debug_output)
-- [Gleam官方博客-调试代码的最佳实践](https://blog.gleam.run/coding-best-practices-debugging)
+欢迎访问我们的网站，了解更多Gleam编程相关的知识和技巧。记得每次遇到难以解决的bug时，不妨尝试使用打印调试信息来快速定位问题哦！

@@ -1,39 +1,51 @@
 ---
-title:                "Fish Shell: 현재 날짜 받기"
+title:                "Fish Shell: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 필요한가? 
+# 왜
 
-현재 날짜를 알고 싶은 이유는 다양할 수 있습니다! 일상적으로는 프로그램을 실행할 때마다 현재 날짜가 필요할 수 있습니다. 또는 날짜를 기반으로 한 다양한 기능을 포함하는 프로그램을 개발하고자 할 때도 마찬가지입니다. 어떤 이유든 간에 현재 날짜를 가져오는 것은 매우 유용합니다!
+현재 날짜를 가져오는 법을 배우면, 시스템에서 사용하는 날짜와 시간을 간편하게 확인할 수 있습니다.
 
-## 어떻게 하나요? 
+## 어떻게
 
-Fish Shell을 사용하면 쉽게 현재 날짜를 가져올 수 있습니다. 아래 코드 블록을 참고하여 보시죠!
-
-```Fish Shell
-set curr_date (date +%Y-%m-%d)
-echo $curr_date
-```
-
-위 코드를 실행하면 현재 날짜를 년-월-일 형식으로 출력해주게 됩니다. 예를 들어, 오늘 날짜가 2021년 11월 3일이라면 "2021-11-03"이 출력됩니다. 또한, date 명령어를 사용하면 시간 정보까지 함께 가져올 수 있습니다. 아래 코드를 참고해보세요.
+먼저, Fish Shell에서 "date" 명령어를 사용하여 현재 날짜를 가져올 수 있습니다. 아래의 코드 블럭을 참고해주세요.
 
 ```Fish Shell
-set curr_date_time (date +%Y-%m-%d_%H:%M:%S)
-echo $curr_date_time
+date
 ```
 
-위 코드를 실행하면 현재 날짜와 시간을 년-월-일_시:분:초 형식으로 출력해줍니다. 예를 들어, 현재 시간이 오후 2시 30분 10초라면 "2021-11-03_14:30:10"이 출력됩니다.
+출력 결과는 현재 시스템 날짜와 시간이 나타납니다. 예를 들어,
 
-## 더 깊게 들어가보기 
+```Fish Shell
+Mon Aug 30 21:14:31 KST 2021
+```
 
-"date +%Y-%m-%d"와 같은 형식으로 사용하는 date 명령어는 날짜 형식을 원하는 대로 설정할 수 있습니다. 예를 들어, %Y 대신 %d를 사용하면 일만 출력되며, %b를 사용하면 현재 월의 약어가 출력됩니다. 더 자세한 정보는 아래 링크들을 참고해보세요.
+만약 날짜와 시간의 형식을 변경하고 싶다면, "date" 명령어 다음에 형식을 지정해주면 됩니다. 예를 들어,
 
-## 같이 보기 
+```Fish Shell
+date +"%Y/%m/%d %H:%M:%S"
+```
 
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/cmds/date.html)
-- [GNU 'date' 명령어 설명서](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+라는 코드를 입력하면, 날짜와 시간이 다음과 같은 형식으로 나옵니다.
+
+```Fish Shell
+2021/08/30 21:14:31
+```
+
+더 많은 형식 옵션은 Fish Shell 공식 문서를 참고해주세요.
+
+## 깊이 파고들기
+
+날짜와 시간 형식을 지정하는 방법 외에도 여러 가지 옵션이 있습니다. 예를 들면, 특정 날짜와 시간을 설정하는 방법이나, 다른 시간대의 시간을 확인하는 방법 등이 있습니다. 아래의 링크들을 참고하시면 더 자세한 내용을 알 수 있습니다.
+
+# 참고 자료
+
+- [Fish Shell 공식 문서](https://fishshell.com/docs/current/commands.html#date)
+- [날짜와 시간 형식 옵션](https://fishshell.com/docs/current/cmds/date.html#formatting-date-and-time)

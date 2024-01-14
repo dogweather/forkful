@@ -1,57 +1,46 @@
 ---
 title:                "C#: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c-sharp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Que
-Converter uma string para minúsculo é uma tarefa comum na programação. Isso pode ser necessário para comparar strings de forma mais precisa ou para exibir texto em um formato uniforme. Neste artigo, mostraremos como realizar essa conversão em C#.
+## Por que
 
-## Como Fazer
-Para converter uma string para minúsculo em C#, podemos utilizar o método `ToLower()` da classe `string`. Veja um exemplo abaixo:
+Converter uma string para letras minúsculas é uma tarefa comum em programação, especialmente ao manipular texto e realizar comparações. Ao fazer isso, você garante que as letras maiúsculas não se tornem um obstáculo para o seu código.
 
-```C#
-string texto = "Texto em MAIÚSCULO";
-string textoMin = texto.ToLower();
-Console.WriteLine(textoMin);
-```
+## Como fazer
 
-O resultado deste código será "texto em maiúsculo", como esperado. Agora, vamos criar um método que recebe uma string como parâmetro e a converte para minúsculo:
+Aqui vai um exemplo simples de como converter uma string para letras minúsculas em C#:
 
 ```C#
-static string ConverterParaMinusculo(string texto)
-{
-    return texto.ToLower();
-}
-
-string texto = "OUTRO TEXTO EM MAIÚSCULO";
-string textoMin = ConverterParaMinusculo(texto);
-Console.WriteLine(textoMin);
+string texto = "EStE é UM teXto eMp MaiúSCuLAS";
+Console.WriteLine(texto.ToLower());
 ```
 
-Ao executar esse código, o resultado será novamente "texto em maiúsculo". Isso mostra que podemos utilizar o método `ToLower()` dentro de outros métodos ou funções.
-
-## Mergulho Profundo
-Na verdade, o método `ToLower()` utiliza a cultura atual para realizar a conversão. Isso significa que, em diferentes culturas, o mesmo caractere pode ter diferentes representações em minúsculo.
-
-Por exemplo, em português, a letra "Ç" deve ser convertida para "ç" quando transformada em minúsculo. Mas em outras culturas, essa letra pode ser simplesmente removida ou substituída por outro caractere.
-
-Para garantir que a conversão para minúsculo seja feita de acordo com a cultura esperada, podemos utilizar o método `ToLowerInvariant()`, que ignora as variações de cultura e sempre realiza a conversão da mesma maneira.
-
-```C#
-string texto = "LUCAS É COM Ç";
-string textoMin = texto.ToLowerInvariant();
-Console.WriteLine(textoMin);
+Saída:
+```
+este é um texto em maiúsculas
 ```
 
-O resultado, neste caso, será "lucas é com ç". É importante lembrar que, ao utilizar métodos de conversão, é necessário ter cuidado com a cultura utilizada e como isso pode afetar o resultado final.
+O método "ToLower()" é usado para converter todas as letras maiúsculas em minúsculas. É importante notar que o original não é alterado, mas sim uma cópia é criada com as letras minúsculas.
 
-## Veja Também
-- [Documentação oficial do método `ToLower()`](https://docs.microsoft.com/pt-br/dotnet/api/system.string.tolower)
-- [Cultura em C# (em inglês)](https://docs.microsoft.com/en-us/dotnet/standard/globalization-localization/culture)
-- [Formatando strings em C#](https://docs.microsoft.com/pt-br/dotnet/standard/base-types/formatting-strings)
+Você também pode usar este método em variáveis de tipo "char" para converter caracteres individuais. Além disso, você pode usar "ToUpper()" para fazer o inverso - converter todas as letras minúsculas em maiúsculas.
 
-Esperamos que esse artigo tenha ajudado você a entender melhor como converter strings para minúsculo em C#. Se tiver alguma dúvida ou sugestão, deixe um comentário abaixo. Obrigado por ler!
+## Mergulho profundo
+
+Vamos entender um pouco mais sobre o processo de conversão de string para letras minúsculas. Quando usamos o método "ToLower()", ele basicamente percorre cada caractere da string e, caso encontre uma letra maiúscula, converte-a em minúscula.
+
+No entanto, isso pode ser um problema para idiomas com letras acentuadas, como o português. Por exemplo, a letra "é" quando convertida para maiúscula resulta em "É", que é um caractere completamente diferente. Nesses casos, é importante usar o método "ToLowerInvariant()", que garante que as regras de capitalização sejam aplicadas de forma consistente, independentemente do idioma.
+
+Outro detalhe importante é que o método "ToLower()" usa as configurações de cultura do sistema operacional, o que pode variar de acordo com o dispositivo que está executando o código. Se você deseja garantir que a conversão seja feita de forma consistente, é recomendado especificar a cultura desejada ao usar o método.
+
+## Veja também
+
+- [Método ToLower() da documentação oficial do C#](https://docs.microsoft.com/pt-br/dotnet/api/system.string.tolower)
+- [Cultura no C#](https://docs.microsoft.com/pt-br/dotnet/standard/base-types/using-locale-specific-data)
+- [Como lidar com letras acentuadas em C#](https://codewithshadman.com/c-sharp-accented-characters/)

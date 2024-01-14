@@ -1,60 +1,41 @@
 ---
-title:                "Ruby: 编写一个文本文件"
+title:                "Ruby: 编写文本文件"
+simple_title:         "编写文本文件"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么要写文本文件？
 
-为什么要写一个文本文件呢？当你想要保存一些数据或者记录一些信息时，文本文件是一种非常便捷和简单的选择。通过使用Ruby编程语言，你可以轻松地创建和编辑文本文件，为你的工作和学习带来便利。
+在编程中，文本文件是一种常用的数据存储方式。通过写文本文件，我们可以保存和管理大量的数据，同时也能与其他程序或人类交互。例如，如果你想要保存一些用户信息，或是记录程序运行过程中的日志，那么写文本文件无疑是一个很好的选择。
 
-## 如何
+## 如何编写文本文件？
 
-首先，我们需要使用Ruby的File类来创建一个文本文件。在以下的代码块中，我们将创建一个名为“hello.txt”的文本文件，并向其中写入一条简单的问候语。
+编写文本文件的方法有很多种，但以下是最常用的方式：
 
-```Ruby
-file = File.new("hello.txt", "w")
-file.puts("你好，世界！")
-```
-
-在上面的例子中，我们使用“w”模式来指定文件为写入模式。接着，我们使用File类的puts方法将字符串“你好，世界！”写入了文本文件中。
-
-如果我们想要查看我们刚刚写入的内容，可以使用下面的代码来读取文件并打印出内容。
+使用Ruby自带的File类，首先打开一个文件，然后通过write方法写入数据，最后关闭文件。示例如下：
 
 ```Ruby
-file = File.open("hello.txt", "r")
-puts file.read
-
-# output: 你好，世界！
+file = File.open("user_info.txt", "w") # 打开文件
+file.write("用户名：John\n") # 写入数据
+file.write("密码：123456\n")
+file.close # 关闭文件
 ```
 
-此外，我们也可以使用Ruby来向已存在的文本文件中追加内容。我们只需要将“w”模式更改为“a”模式即可。
+执行以上代码后，你会发现当前文件夹下多了一个名为"user_info.txt"的文件，打开后将看到里面的内容就是我们刚才写入的信息。
 
-```Ruby
-file = File.new("hello.txt", "a")
-file.puts("祝你有一个美好的一天！")
-```
+## 深入了解文本文件
 
-在上面的例子中，我们使用puts方法向文本文件中追加了一条祝福语。
+除了上述简单的写入操作，文本文件还有很多高级用法。例如，我们可以使用CSV库来处理CSV格式的文本文件，或是使用YAML库来读写YAML格式的文本文件。此外，对于大型的文本文件，我们还可以使用文件流来实现分块读写，从而提高效率。
 
-## 深入学习
+## 看看下面这些链接吧！
 
-除了上面介绍的基础用法外，Ruby还有许多强大的功能可以用来操作文本文件。例如，你可以使用正则表达式来搜索和替换文本，也可以使用文件IO类来读取和写入大型文件。
+[File类官方文档](https://ruby-doc.org/core-2.7.3/File.html)
 
-另外，你也可以学习如何处理文件路径、错误处理、文件权限等相关的知识，来更加深入地了解Ruby操作文本文件的方法。
+[CSV库官方文档](https://ruby-doc.org/stdlib-2.7.3/libdoc/csv/rdoc/CSV.html)
 
-## 参考资料
-
-- [Ruby文件IO文档](https://ruby-doc.org/core-2.7.2/File.html)
-- [Ruby正则表达式教程](https://rubular.com/)
-- [《Why's Poignant Guide to Ruby》](https://poignant.guide/book/chapter-5.html)
-- [《Ruby编程语言》](https://www.ruby-lang.org/zh_cn/)
-
-## 参见
-
-- [Ruby开发者社区](https://www.ruby-china.org/)
-- [Ruby中国论坛](https://forum.ruby-china.org/)
-- [Ruby on Rails中文文档](https://ruby-china.github.io/rails-guides/)
+[YAML库官方文档](https://ruby-doc.org/stdlib-2.7.3/libdoc/yaml/rdoc/YAML.html)

@@ -1,39 +1,35 @@
 ---
 title:                "Java: 문자열 대문자로 변환하기"
+simple_title:         "문자열 대문자로 변환하기"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-문자열을 대문자로 바꾸는 작업을 수행하는 이유는 다양합니다. 예를 들어, 사용자로부터 입력받은 데이터를 일관성있게 표현하거나, 특정 키워드가 들어간 문자열을 찾아내는 등의 목적으로 사용할 수 있습니다.
+문자열의 첫 번째 문자를 대문자로 변환하는 것은 코드의 일부로 자주 사용되고 있습니다. 이를테면, 이름과 성을 조합하여 전체 이름을 나타내는 경우에 사용합니다.
 
-## 어떻게 해야 할까요?
+## 방법
 
-자바에서 문자열을 대문자로 변환하는 방법에는 여러가지가 있지만, 그 중에서도 가장 간편하고 사용하기 쉬운 방법은 `toUpperCase()` 메소드를 사용하는 것입니다. 이 메소드는 문자열의 모든 문자를 대문자로 변환해주는 역할을 합니다. 예를 들어, 다음과 같이 코드를 작성하면 입력받은 문자열을 대문자로 변환할 수 있습니다.
+우선, 문자열을 입력받은 다음, 첫 번째 문자를 대문자로 변환하고 나머지 문자열과 합쳐야 합니다. 이를 위해 Java에서 제공하는 `substring()` 메소드를 사용할 수 있습니다. 아래는 코드 예시와 출력 결과입니다.
 
 ```Java
-// 사용자로부터 입력받은 문자열
-String input = "Hello world!";
-
-// 대문자로 변환
-String capitalized = input.toUpperCase();
-
-// 변환된 문자열 출력
-System.out.println(capitalized);
-
-// 결과: HELLO WORLD!
+String name = "john";
+String capitalized = name.substring(0, 1).toUpperCase() + name.substring(1);
+System.out.println(capitalized); 
+// Prints "John"
 ```
 
-## 딥 다이브
+## 깊게 파헤치기
 
-자바에서 문자열을 대문자로 변환하는 방법에는 `toUpperCase()` 메소드 말고도, `StringBuffer`나 `StringBuilder` 클래스를 활용하는 방법도 있습니다. 또한, 정규표현식을 사용하여 특정 패턴의 문자열만 대문자로 변환할 수도 있습니다. 이러한 다양한 방법을 익히면 다양한 상황에서 문자열을 대문자로 변환하는 작업을 보다 쉽고 효율적으로 수행할 수 있습니다.
+위에서 소개한 방법은 간단하지만, 실제로 문자열의 첫 번째 문자만 대문자로 변환하는 것은 더 복잡합니다. 이는 특정 언어의 규칙에 따라 다르기 때문입니다. 예를 들어, 한국어의 경우에는 이름의 마지막 글자를 대문자로 변환해주는 경우가 많습니다. 따라서, 사용하고자 하는 언어의 이름 변환 규칙을 잘 알고 코드를 작성해야 합니다.
 
-# 참고자료
+## 또 다른 정보
 
-- [Oracle Java Docs에서 toUpperCase() 공식 문서](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--)
-- [TutorialsPoint에서 Java에서 대문자로 변환하기](https://www.tutorialspoint.com/java/java_string_touppercase.htm)
-- [Baeldung 블로그에서 Java에서 대소문자 변환하기](https://www.baeldung.com/java-change-string-case)
+- [Java String class documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [Java substring() method explanation](https://www.javatpoint.com/java-string-substring)
+- [Java String manipulation examples](https://www.baeldung.com/java-strings)

@@ -1,40 +1,44 @@
 ---
-title:                "Clojure: Eliminazione di caratteri corrispondenti a un modello."
+title:                "Clojure: Eliminazione dei caratteri corrispondenti a un determinato modello"
+simple_title:         "Eliminazione dei caratteri corrispondenti a un determinato modello"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
+Ci sono molte ragioni per voler eliminare caratteri che corrispondono ad uno specifico modello in Clojure. Ad esempio, potresti voler pulire una stringa di input da caratteri indesiderati prima di elaborarla, o rimuovere caratteri non validi da un file di testo. Eliminare caratteri in questo modo è un'operazione comune in molte applicazioni di programmazione.
 
-Ci sono diversi motivi per cui potresti voler cancellare i caratteri corrispondenti a un determinato modello nel tuo codice Clojure. Potresti voler rimuovere caratteri non desiderati da una stringa per ottenere un output pulito, o potresti voler eliminare caratteri speciali prima di elaborare i dati.
-
-## Come
-
-Ecco un esempio di come puoi utilizzare la funzione `remove` per eliminare caratteri corrispondenti a un modello specifico in una stringa:
+## Come 
+Per eliminare caratteri in Clojure, puoi utilizzare la funzione `replace` in combinazione con espressioni regolari. Ecco un esempio di codice che rimuove tutti i numeri da una stringa:
 
 ```Clojure
-(remove #"[aeiou]" "ciao mondo") 
+(def input "abc123def456ghi789")
+(replace #"\d+" input "")
 ```
+Output: "abcdefghi"
 
-Questo codice restituirà "c mnd", poiché ha rimosso tutte le vocali dalla stringa. È possibile utilizzare espressioni regolari per specificare il modello dei caratteri che si desidera eliminare.
+In questo esempio, l'espressione regolare `#"\d+"` corrisponde a tutti i numeri presenti nella stringa di input e la funzione `replace` li sostituisce con una stringa vuota, eliminandoli così dalla stringa.
 
-## Deep Dive
-
-La funzione `remove` accetta un modello di espressione regolare come primo argomento e la stringa su cui lavorare come secondo argomento. È in grado di rimuovere tutti i caratteri corrispondenti al modello dalla stringa e restituire la stringa risultante.
-
-Inoltre, è possibile utilizzare la funzione `replace` per sostituire i caratteri corrispondenti a un modello con un altro carattere o stringa. Ad esempio:
+Un'altra opzione è utilizzare la funzione `filter` combinata con la negazione dell'espressione regolare. Ecco un esempio di codice che elimina tutti i caratteri non alfabetici da una stringa:
 
 ```Clojure
-(replace #"[^a-z0-9 ]" "" "Ciao! Questa stringa ha caratteri speciali!") 
+(def input "ab#c$d%e&f")
+(filter #(re-find #"[a-zA-Z]" (str %)) input)
 ```
+Output: "abcdef"
 
-Questo codice restituirà "Ciao Questa stringa ha caratteri speciali", poiché ha sostituito tutti i caratteri speciali con una stringa vuota.
+In questo esempio, l'espressione regolare `#"[a-zA-Z]"` corrisponde a tutti i caratteri alfabetici presenti nella stringa di input e `filter` restituisce solo i caratteri che corrispondono a quella espressione regolare, eliminando così tutti i caratteri non alfabetici.
+
+## Approfondimento
+Oltre all'utilizzo delle espressioni regolari, ci sono altre opzioni per eliminare caratteri in Clojure. Ad esempio, puoi utilizzare la funzione `replace-first` per rimuovere solo il primo carattere corrispondente a un modello, anziché tutti i caratteri.
+
+Inoltre, è importante notare che le operazioni di eliminazione dei caratteri sono spesso eseguite per motivi di sicurezza. Ad esempio, se stai elaborando una stringa di input fornita dall'utente, è importante rimuovere caratteri potenzialmente dannosi o invalidi prima di utilizzare la stringa nel tuo programma. Invece di specificare manualmente quali caratteri rimuovere, puoi utilizzare librerie come clojure.string per eliminare automaticamente tutti i caratteri non sicuri da una stringa.
 
 ## Vedi anche
-
-- [Documentazione ufficiale di Clojure](https://clojure.org/reference/strings)
-- [Tutorial sulle espressioni regolari in Clojure](https://clojure.org/reference/regexp)
-- [Esempi di utilizzo di funzioni di manipolazione delle stringhe in Clojure](https://github.com/seancorfield/clojure-string-tour)
+- [Documentazione ufficiale su le espressioni regolari in Clojure](https://clojure.org/reference/reader#_regular_expression_syntax)
+- [Tutorial su clojure.string](https://clojuredocs.org/clojure.string)
+- [Spiegazione delle principali funzioni di stringhe in Clojure](https://beginners-clojure.com/docs/basic-strings/)

@@ -1,46 +1,53 @@
 ---
-title:                "Swift: Regular Expressionsを使用する"
+title:                "Swift: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ 
- Regular Expressionsを使用するか
+## なぜ
 
-正規表現は、文字列の処理や検索を行う際に非常に便利なツールです。Swiftを使用して開発を行う際に、文字列を扱う場面は非常に多いため、正規表現を学ぶことで開発効率を上げることができます。
+正規表現を使う理由はたくさんあります。例えば、大量のテキストの中から特定のパターンを簡単に見つけたり、複雑な文字列を検索したりする時に役立ちます。Swiftでの正規表現の使用は、よりスマートかつ効率的なプログラミングを実現するための重要なツールです。
 
-## 初め方
+## 使い方
 
-正規表現を使用するには、まずは正規表現のパターンを定義する必要があります。このパターンを使用して、文字列を検索や置換することができます。下記のように、```Swift```ブロック内にパターンを定義し、文字列を操作してみましょう。
+まずは、正規表現を使うために必要な`Foundation`フレームワークをインポートします。次に、`NSRegularExpression`のインスタンスを作成し、パターンとオプションを指定します。
 
 ```Swift
-let pattern = "\\d+"
-let string = "abc123"
+import Foundation
 
-if let range = string.range(of: pattern, options: .regularExpression) {
-    let match = string.substring(with: range)
-    print(match)
-}
+let text = "Swiftは素晴らしいプログラミング言語です。正規表現を使って文字列を検索したり、置換したりすることができます。"
 
-// Output: 123
+let pattern = "正規表現"
+
+let regex = try! NSRegularExpression(pattern: pattern, options: [])
+
 ```
 
-文字列の中から、数字のみを抽出することができました。これは非常に便利ですね！正規表現には様々なパターンがあり、様々な文字列を検索や置換することができます。自分の開発に合わせたパターンを学ぶことで、より効率的に文字列を操作することができます。
+次に、`matches`メソッドを使ってテキスト内でパターンにマッチする箇所を見つけることができます。
 
-## 深く学ぶ
+```Swift
+let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
 
-正規表現に関する詳細な情報は、公式ドキュメントや書籍にて学ぶことができます。また、オンライン上には多くのサンプルコードやコミュニティが存在しており、他の開発者がどのように正規表現を使用しているかを学ぶこともできます。正規表現は一度学ぶとその知識は幅広い開発に応用することができるため、しっかりと学ぶことが重要です。
+for match in matches {
+    let range = match.range
+    let matchString = (text as NSString).substring(with: range)
+    print(matchString) // "正規表現"
+}
+```
+
+## ディープダイブ
+
+正規表現の書式を学ぶことで、パターンをより詳細に指定することができます。例えば、`+`や`*`を使って特定の文字が1回以上または0回以上繰り返されることを表現できます。また、`[]`を使って複数の文字の中からマッチするものを選ぶことができます。
+
+さらに、正規表現の辞書を用意することで、より複雑なパターンを探すことができます。これにより、複数のパターンを組み合わせたり、特定の文字列のグループを検索することができます。
 
 ## 参考リンク
 
-- [Swift正規表現チュートリアル](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial)
-- [正規表現入門](https://www.amazon.co.jp/dp/4798060651)
-- [正規表現パターン](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID335) (公式ドキュメント) 
-
-## 参考にする
-
-- [Swiftで文字列操作をする際の Tips](https://qiita.com/YutaSaito1991/items/61933c87a431c2b02da7)
-- [正規表現を使った Swift の文字列操作方法](https://tmasuda37.net/archives/1213)
+- [Swiftの正規表現](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID289)
+- [正規表現のチートシート](https://www.ibm.com/support/knowledgecenter/ja/SSMKHH_10.0.0/com.ibm.etools.mft.doc/be43230_.htm#be43230___5symbols)
+- [オンライン正規表現テスター](https://regex101.com/)

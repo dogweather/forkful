@@ -1,41 +1,46 @@
 ---
 title:                "C#: 使用正则表达式"
+simple_title:         "使用正则表达式"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要使用正则表达式
+为什么：正则表达式是一种强大的工具，可以用来处理和匹配字符串模式。它可以帮助开发人员在处理文本时更有效率，减少大量的手动工作。 
 
-在编写C#程序时，您可能会遇到需要对文本进行复杂匹配和替换的情况。这时候，正则表达式就是您的好帮手。使用正则表达式，您可以通过一系列规则来查找和修改文本，极大地提高了文本处理的效率。
+如何使用： 
 
-## 如何使用正则表达式
+```C# 
+// 导入System.Text.RegularExpressions命名空间 
+using System.Text.RegularExpressions; 
 
-使用C#内置的regex类，您可以轻松创建和管理正则表达式。下面是一个简单的示例代码，演示如何使用正则表达式来匹配和替换文本中的数字。
+// 定义一个包含混合大小写和数字的字符串 
+string myString = "Th1sIsAMiXeDStr1ng"; 
 
-```C#
-string text = "我的电话号码是12345678。";
-string pattern = @"\d+";
-string replacement = "[电话号码]";
-string result = Regex.Replace(text, pattern, replacement);
-Console.WriteLine(result);
-```
+// 创建一个正则表达式匹配模式，匹配字符串中的数字 
+Regex pattern = new Regex(@"\d"); 
 
-输出结果将会是`我的电话号码是[电话号码]。`，其中的数字被替换成了指定的文字。
+// 使用Matches函数返回匹配结果集合 
+MatchCollection matches = pattern.Matches(myString); 
 
-## 深入了解正则表达式
+// 循环遍历结果集合并输出每个匹配项 
+foreach (Match match in matches) 
+{ 
+    Console.WriteLine(match.Value); 
+} 
+``` 
 
-正则表达式是一门强大的文本处理工具，不仅仅可以用来简单的匹配和替换。通过学习更多的语法和特殊符号，您可以轻松地实现更复杂的文本操作。例如，使用正则表达式可以轻松地从一个HTML文档中抽取所有的链接地址。
+上面的代码将输出： 1 1。 
 
-## 参考链接
+深入了解：正则表达式可以使用一些特殊的语法来匹配不同的模式，例如在上面示例中使用的“\d”来匹配数字。还可以使用量词来匹配特定数量的字符，或使用字符类来匹配特定类型的字符。此外，使用特殊的符号和命令可以实现更高级的模式匹配功能。要学习更多关于正则表达式的知识，请查阅下面的参考链接。 
 
-- C# 正则表达式教程（https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expression-language-quick-reference）
-- 正则表达式在线练习平台（https://regexr.com/）
-- 在C#程序中使用正则表达式的最佳实践（https://www.c-sharpcorner.com/article/best-practices-to-use-regular-expressions-in-C-Sharp/）
+参考链接： 
 
-# 参见
+[正则表达式入门教程] (https://www.runoob.com/regexp/regexp-tutorial.html) 
+[.NET正则表达式指南] (https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference) 
+[Regexr在线工具] (https://regexr.com/) 
 
-- [C# String 类的文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.string?view=netcore-3.1)
-- [C#正则表达式的高级用法](https://www.c-sharpcorner.com/UploadFile/89b85a/higher-usage-of-regular-expression-in-C-Sharp/)
+另请参阅：

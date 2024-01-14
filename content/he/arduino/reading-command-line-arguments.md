@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: קריאת פרמטרי שורת הפקודה"
+title:                "Arduino: קריאת ארגומנטים בשורת הפקודה"
+simple_title:         "קריאת ארגומנטים בשורת הפקודה"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/reading-command-line-arguments.md"
 ---
 
@@ -9,29 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## מדוע
 
-קריאת פרמטרי שורת הפקודה יכולה להיות כלי חשוב בתכנות עם ארדואינו. זה מאפשר לנו להעביר פרמטרים לתוכנית שלנו בזמן הריצה, מאפשר יצור של יישומים יותר גמישים וחסכון בזמן ובמאמץ יקר של הכתיבה של כמה קבצי תוכניות נפרדות לכל קבלת הזמנה.
+למה אנשים בכלל מתעניינים לקרוא ארדואינו פוסטים עבור קוד פתוח? יתכן שאתה מחפש דרך חדשה להשתמש בארדואינו, עליך לכתוב קוד שיכול לקבל פרמטרים מהפקודה העיקרית של המחשב, או שאתה סתם סקרן לגלות מה יכול לעשות ארדואינו כשמדובר בקרות צפויות.
 
-## איך לעשות
+## איך לעשות זאת
 
-זה פשוט לקרוא פרמטרים משורת הפקודה עם פונקציית `Serial` בארדואינו. הנה דוגמה של תוכנית פשוטה שקוראת פרמטר אחד ומדפיסה אותו לטרמינל:
+אם אתה רוצה לכתוב קוד ארדואינו שיקבל פרמטרים מהפקודה העיקרית, אתה צריך להשתמש בפונקציית "parseInt" כדי להמיר את המחרוזת שמקבלת את הפרמטר למשתנה מספרי. הנה דוגמה לכך:
 
 ```arduino
-void setup() {
-  Serial.begin(9600); // פתח חיבור סיריאל עם מהירות 9600 ביטים לשנייה
-  while (!Serial) { // המתן עד שיתקיים חיבור בין המחשב לארדואינו
-    ;
-  }
-  // הדפס את הפרמטר הראשון של הפקודה
-  Serial.println(Serial.readStringUntil(' '));
-}
-
-void loop() {
-  // כאן יכולים להיות פעולות נוספות שיתבצעו כל פעם שנקראת הפונקציה loop
-}
+int parameter = parseInt(Serial.readStringUntil('\n'));
 ```
 
-כדי להשתמש בקוד הזה, פשוט ענה על הפקודה עם פרמטר אחד כאשר תשלח אותו לארדואינו. לדוגמה, אם תכתב "Hello" בטרמינל ותשלח עם חצן ה`Enter`, התוכנית תדפיס "Hello".
+בדוגמה זו, אנחנו משתמשים בפונקציית "readStringUntil" כדי לקרוא את הפלט שלנו עד לתו השורה הבאה (כלומר, הכנסה של הפרמטר שהמשתמש זנה בשורת הפקודה) ולמידע זה יש לי את-חזוק במשתנה "parameter". כעת אנחנו יכולים להשתמש בפרמטר כלשהו שהמשתמש אינו מזהה כשמישהו לוחץ על כפתור כדי להתחיל פעולה מסוימת.
 
-## מעמד עמוק
+## מכהש
 
-קריאת פרמטרים משורת הפקודה יכולה להיות גם מועילה למניעת התנגשויות בין פרויקטים שונים עם ארדואינו. כאשר נכתבים יישומים שונים לעשות דברים שונים עם אותו ארדואינו, את הפקודה Serial.readStringUntil ניתן להשתמש על מנת לבחון כמה פרמטרים ויש לך את המידע שאוספת הלוואי שמיצר את
+הפונקציונליות של קריאת ארגומנטים משולבת יותר בצורה מורכבת מאשר תמיד כמו `parseInt` מהפקודה. אתה יכול לממש את זה בצורות רפויות, לדוגמא:
+
+```c
+// this should be the first thing you define in your code
+enum COMMANDS {
+  // this command has no command line arguments
+  NO_PARAMETERS,
+
+  // this command has one integer argument
+  PRINT_NUMBER,
+
+  // this command has two integer arguments
+  PRINT_SUM,
+
+  // and so on. you get the idea
+  CUSTOM_COMMAND
+};
+
+enum COMMANDS parseCommand(String str) {
+  if (0 == str.startsWith("print sum ")) {
+    return PRINT_SUM;
+  } else if (0 == str.startsWith("print number ")) {
+    return PRINT_NUMBER;
+  } else {
+    return CUSTOM_COMMAND;
+  }
+}
+
+enum COMMANDS command = parseCommand(Serial.readStringUntil('\n'))
+```
+
+בעזרת הערה זו, אין אמור להיות ברור אחרת בין-לבין א

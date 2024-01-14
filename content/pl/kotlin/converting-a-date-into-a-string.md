@@ -1,37 +1,47 @@
 ---
 title:                "Kotlin: Konwertowanie daty na ciąg znaków"
+simple_title:         "Konwertowanie daty na ciąg znaków"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto przekonwertować datę na ciąg znaków?
 
-Kiedy pracujesz z danymi, często istnieje potrzeba konwertowania jednego typu danych na inny. Jedną z tych konwersji jest zamiana daty na ciąg znaków. W tym artykule dowiesz się, jak to zrobić w języku Kotlin i dlaczego jest to ważne.
+Konwersja daty na ciąg znaków jest niezbędnym krokiem w wielu projektach programistycznych. Dla przykładu, może to być potrzebne do wyświetlenia daty w czytelnej formie dla użytkowników, lub do zapisania daty w odpowiednim formacie w bazie danych. W tym artykule dowiesz się, jak w prosty sposób przekonwertować datę na ciąg znaków w języku Kotlin.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Możesz użyć funkcji `format()` w klasie `SimpleDateFormat` do konwersji daty na ciąg znaków. Przykładowy kod wyglądałby następująco:
+Często zdarza się, że konwersja daty na ciąg znaków wymaga użycia odpowiedniego formatu daty. W języku Kotlin możemy wykorzystać funkcję `format()` klasy `SimpleDateFormat` do przekonwertowania daty na ciąg znaków w wybranym formacie. Poniżej przedstawione są przykładowe kody oraz odpowiadające im wyniki:
 
 ```Kotlin
-val date = Date()
-val format = SimpleDateFormat("dd/MM/yyyy")
-val dateString = format.format(date)
-println(dateString)
+val currentDate = Date() // bieżąca data
+val dateFormat = SimpleDateFormat("dd/MM/yyyy") // format daty
+val dateString = dateFormat.format(currentDate) // konwersja daty na ciąg znaków w podanym formacie
+println(dateString) // wyświetlenie wyniku: 20/10/2021
 ```
 
-W powyższym przykładzie, najpierw tworzony jest obiekt `Date`, który przechowuje aktualną datę. Następnie tworzony jest format daty i używany do skonwertowania obiektu `Date` na ciąg znaków. Wynikiem jest ciąg znaków reprezentujący aktualną datę w formacie "dd/MM/yyyy". Po wywołaniu funkcji `println()` na zmiennej `dateString`, wyświetlony zostanie taki wynik: "29/04/2022".
+W powyższym przykładzie użyliśmy formatu "dd/MM/yyyy", ale istnieje wiele innych możliwych formatów, które mogą być wykorzystane w zależności od potrzeb.
 
-## Deep Dive
+## Głębsze zagadnienia
 
-Teraz, gdy wiesz już, jak skonwertować datę na ciąg znaków, warto dowiedzieć się więcej na temat formatowania. Istnieje wiele różnych wzorców formatowania, które możesz użyć do określenia wyglądu końcowego ciągu znaków. Na przykład, jeśli chcesz wyświetlić rok jako dwie cyfry, możesz użyć formatu "dd/MM/yy" zamiast "dd/MM/yyyy".
+Podczas konwersji daty na ciąg znaków, często spotykamy się z problemem lokalizacji. Na przykład, format daty może być różny dla użytkowników w różnych krajach. W celu rozwiązania tego problemu, można użyć klasy `Locale` w połączeniu z funkcją `format()`.
 
-Warto również pamiętać, że klasa `SimpleDateFormat` jest obiektowo orientowana, co oznacza, że możesz zachowywać różne formaty dla różnych obiektów daty. Możesz również tworzyć własne wzorce formatowania, dostosowując je do swoich potrzeb.
+Przykładowy kod:
 
-## Zobacz również
+```Kotlin
+val currentDate = Date()
+val dateFormat = SimpleDateFormat("MM/dd/yyyy", Locale("pl", "PL")) // ustawienie lokalizacji na język polski
+val dateString = dateFormat.format(currentDate) // konwersja daty na ciąg znaków
+println(dateString) // wyświetlenie wyniku: 10/20/2021
+```
 
-- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/working-with-dates.html)
-- [Poradnik konwersji dat w języku Kotlin](https://medium.com/@sagar0497/date-formatting-in-kotlin-75f6d94fe296)
-- [Przykładowy kod konwersji daty na ciąg znaków w języku Kotlin](https://gist.github.com/alephZa/d05e3af7a758d0cbe2b570bdcda562ba)
+W tym przypadku, format daty został przetłumaczony na polski, a wynik wyświetla się w formacie "MM/dd/yyyy".
+
+## Zobacz także
+
+- Dokumentacja klasy SimpleDateFormat w języku Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-simple-date-format/
+- Przewodnik po języku Kotlin: https://kotlinlang.org/docs/basic-syntax.html

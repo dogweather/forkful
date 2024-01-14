@@ -1,60 +1,70 @@
 ---
 title:                "C++: Capitalizando uma string"
+simple_title:         "Capitalizando uma string"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string em C++
+## Por que capitalizar uma string é importante
 
-Ao escrever código em C++, é comum nos depararmos com a necessidade de manipular strings. Algumas vezes, precisamos garantir que todas as letras em uma string estejam maiúsculas, o que pode ser feito por meio da capitalização. Neste artigo, vamos explorar como podemos capitalizar uma string em C++.
+Capitalizar uma string é uma tarefa comum em muitos programas de computador. É especialmente útil quando queremos garantir que uma string esteja formatada corretamente para facilitar a leitura e o processamento pelos usuários.
 
-## Como fazer a capitalização de uma string em C++
+## Como capitalizar uma string em C++
 
-Existem diferentes formas de capitalizar uma string em C++, mas vamos focar na mais simples e eficiente - usando a função `toupper()` da biblioteca `cctype`.
-
-Primeiramente, devemos garantir que a biblioteca `cctype` esteja incluída em nosso código:
+Em C++, há várias maneiras de capitalizar uma string, mas usaremos a função `toupper()` da biblioteca `cctype`. Primeiro, devemos incluir a biblioteca em nosso código:
 
 ```C++
 #include <cctype>
 ```
-Em seguida, definimos a string que desejamos capitalizar:
+
+Em seguida, podemos usar a função `toupper()` em um loop `for` para iterar por cada caractere da string:
 
 ```C++
-string palavra = "exemplo";
-```
-
-Para capitalizar a string, usamos um loop `for` que percorre cada caractere da string e utiliza a função `toupper()` para transformá-lo em maiúsculo:
-
-```C++
-for (int i = 0; i < palavra.length(); i++) {
-  palavra[i] = toupper(palavra[i]);
+for(int i = 0; i < str.length(); i++){
+    str[i] = toupper(str[i]);
 }
 ```
 
-Por fim, podemos imprimir a string capitalizada:
+O loop itera pelos índices da string `str` e atualiza cada caractere usando a função `toupper()`. Por fim, podemos imprimir a string capitalizada para verificar o resultado:
 
 ```C++
-cout << palavra << endl;
+std::cout << str;
 ```
 
-O output será:
+Aqui está um exemplo completo de como capitalizar uma string em C++:
 
 ```C++
-EXEMPLO
+#include <iostream>
+#include <string>
+#include <cctype>
+
+int main(){
+    std::string str = "exemplo de STRING para capitalizar";
+    
+    for(int i = 0; i < str.length(); i++){
+        str[i] = toupper(str[i]);
+    }
+    
+    std::cout << str;
+    
+    return 0;
+}
 ```
 
-## Aprofundando na capitalização de strings em C++
+A saída deste programa seria: "EXEMPLO DE STRING PARA CAPITALIZAR".
 
-É importante lembrar que essa é uma forma básica de capitalizar uma string em C++ e pode não funcionar em todas as situações. Por exemplo, se a string contiver caracteres acentuados, eles não serão capitalizados corretamente.
+## Mais informações sobre capitalização de strings
 
-Além disso, essa abordagem altera a string original, o que pode ser indesejado em certas situações. Para evitar isso, podemos criar uma cópia da string original e capitalizar apenas a cópia.
+Existem várias outras maneiras de capitalizar uma string em C++, incluindo o uso da função `strlwr()` para transformar a string em letras minúsculas e depois usar `toupper()` para capitalizar apenas a primeira letra. Também é possível criar uma função personalizada para capitalizar uma string, que pode ser útil para lidar com casos específicos.
 
-Outra abordagem é criar uma função que verifique se cada caractere é uma letra e, caso seja, faça a capitalização. Isso pode ser útil quando precisamos capitalizar apenas uma parte da string, não a string inteira.
+Além disso, é importante lembrar que a função `toupper()` só funciona para caracteres ASCII, então, se estivermos lidando com strings que contenham caracteres acentuados ou de outros alfabetos, será necessário usar outras funções ou implementar uma solução mais complexa.
 
 ## Veja também
-- [Funções de manipulação de strings em C++](https://www.cplusplus.com/reference/string/string/)
-- [Documentação da função `toupper()`](https://www.cplusplus.com/reference/cctype/toupper/)
-- [Exemplos de capitalização de strings em C++](https://www.programiz.com/cpp-programming/library-function/cctype/toupper)
+
+- [Documentação oficial da função `toupper()`](https://en.cppreference.com/w/cpp/string/byte/toupper)
+- [Outras maneiras de capitalizar uma string em C++](https://www.geeksforgeeks.org/capitalize-string-in-c/)
+- [Manipulação de strings em C++](https://www.cplusplus.com/reference/string/string/)

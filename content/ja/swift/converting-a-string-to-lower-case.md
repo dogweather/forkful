@@ -1,38 +1,42 @@
 ---
-title:                "Swift: 「文字列を小文字に変換する」"
+title:                "Swift: 小文字に文字列を変換する"
+simple_title:         "小文字に文字列を変換する"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ
 
-文字列を小文字に変換する必要があるのは、プログラム内で大文字と小文字を区別しなければならない場合や、ユーザーからの入力を同一視する必要がある場合があります。
+文字列を小文字に変換することに関心があるかもしれません。例えば、ユーザーからの入力を標準化したい場合や、文字列の比較を行う必要がある場合などが考えられます。
 
-## 使い方
+# 方法
 
-```Swift 
-let string = "Hello World"
-let lowercasedString = string.lowercased()
-print(lowercasedString)
+文字列を小文字に変換する方法は簡単です。 `lowercased()` メソッドを使用するだけです。以下のように ```Swift ... ``` コードブロック内で例を示します。
+
+```Swift
+let str = "Hello, World!"
+let lowercasedStr = str.lowercased()
+print(lowercasedStr) // 出力: hello, world!
 ```
 
+# 深堀り
+
+文字列は Swift で不変なので、`lowercased()` メソッドを使用すると新しい文字列が作成されます。また、ロケールに応じて文字を正しく小文字に変換するためには、`lowercased()` メソッドの引数として `Locale` オブジェクトを渡すこともできます。
+
+```Swift
+let str = "Äpfel"
+let germanLocale = Locale(identifier: "de_DE")
+let lowercasedStr = str.lowercased(with: germanLocale)
+print(lowercasedStr) // 出力: äpfel
 ```
-output: hello world
-```
 
-## 詳しく調べる
+しかし、文字列を小文字に変換するだけでなく、使用できるメソッドはさらにたくさんあります。例えば、`uppercased()` メソッドを使用すると文字列を大文字に変換できます。詳細は[ドキュメント](https://developer.apple.com/documentation/foundation/nslocalizedstring/1408241-lowercased)を参照してください。
 
-文字列を小文字に変換する方法はいくつかありますが、一番簡単な方法は`lowercased()`メソッドを使用することです。このメソッドは文字列の全ての文字を小文字に変換して新しい文字列を返します。
+# 参考
 
-また、String型には`uppercased()`メソッドもあり、これは全ての文字を大文字に変換することができます。これらのメソッドは大文字と小文字を区別するだけでなく、非アルファベット文字も変換することができます。
-
-さらに、`localizedLowercase`と`localizedUppercase`というプロパティを使うことで、使用している言語や地域の慣習に従って文字を変換することができます。
-
-## 併せて参照
-
+- [Strings and Characters - The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
 - [String - Apple Developer Documentation](https://developer.apple.com/documentation/swift/string)
-- [Converting between string cases using the Swift standard library - Hacking with Swift](https://www.hackingwithswift.com/example-code/strings/converting-between-string-cases-using-the-swift-standard-library)
-- [ローカライズする - Swift: 第1回　文字列のローカル化 - プログラムはメディアだ](https://www.proglearn.com/swift-localization-string/)

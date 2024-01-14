@@ -1,48 +1,66 @@
 ---
-title:                "Arduino: Ottenere la data corrente"
+title:                "Arduino: Ottenere la data corrente."
+simple_title:         "Ottenere la data corrente."
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+# Perché
 
-Ci sono molte ragioni per cui potresti voler conoscere la data attuale nel tuo progetto Arduino. Forse stai creando un calendario e hai bisogno di visualizzare la data, oppure stai monitorando una pianta e vuoi tenere traccia di quando l'hai annaffiata per l'ultima volta. Qualunque sia il tuo motivo, è importante sapere come ottenere la data corrente per rendere il tuo progetto ancora più efficace.
+Se stai lavorando su un progetto che richiede di utilizzare la data corrente, sapere come ottenere la data corrente sul tuo programma Arduino è essenziale. Ciò ti consente di utilizzare la data come riferimento per diverse funzioni, come accendere una luce solo durante determinati giorni o inviare una notifica ogni volta che la data raggiunge una certa soglia.
 
-## Come fare
+## Come Fare
 
-Per ottenere la data attuale in Arduino, è necessario utilizzare la funzione `now()` della libreria `Time`. Inizialmente, dovrai impostare il tuo orologio in tempo reale (RTC) per garantire che l'Arduino abbia una fonte accurata di tempo. Ci sono molte schede RTC compatibili con Arduino, come la popolare scheda DS1307. Una volta impostato l'RTC, puoi utilizzare il seguente codice per visualizzare la data attuale:
+Per ottenere la data corrente sul tuo programma Arduino, puoi utilizzare la libreria "Time". Assicurati di avere la versione più recente di Arduino installata e di aver importato la libreria "Time" nel tuo progetto. Quindi, puoi utilizzare il seguente codice:
 
 ```arduino
-#include <Time.h> // inclusione della libreria Time
+#include <Time.h>
+
 void setup() {
-  Serial.begin(9600); // inizializza la comunicazione seriale
+  // Inizializza la comunicazione seriale con il tuo computer
+  Serial.begin(9600);
+
+  // Imposta il time server da cui ottenere la data
+  // Puoi utilizzare anche l'indirizzo IP del server se non hai un nome host
+  // Puoi trovare una lista di time server disponibili su internet
+  // Esempio: time.nist.gov
+  setTimeServer("pool.ntp.org");
+
+  // Inizializza la connessione al server
+  setSyncProvider(getNtpTime);
 }
+
 void loop() {
-  time_t t = now(); // memorizza la data e l'ora correnti nella variabile t
-  Serial.print("La data attuale è: ");
-  Serial.print(year(t)); // stampa l'anno corrente
-  Serial.print("-");
-  Serial.print(month(t)); // stampa il mese corrente
-  Serial.print("-");
-  Serial.println(day(t)); // stampa il giorno corrente
-  delay(1000); //Aspetta un secondo prima di ripetere
+  // Ottieni la data e l'ora correnti
+  // Puoi utilizzare questa funzione in qualsiasi momento nel tuo programma
+  time_t t = now();
+
+  // Converte la data in una stringa leggibile
+  // Puoi personalizzare il formato a tuo piacimento
+  // Esempio: "dd/mm/yyyy hh:mm:ss"
+  String dateString = String(day(t)) + "/" + String(month(t)) + "/" + String(year(t));
+
+  // Stampa la data sulla seriale
+  Serial.println(dateString);
+
+  // Metti il programma in pausa per un secondo
+  delay(1000);
 }
 ```
 
-Una volta caricato questo codice nella tua scheda Arduino, puoi aprire il monitor seriale per visualizzare la data attuale stampata ogni secondo. Puoi anche personalizzare l'output in base alle tue esigenze, ad esempio aggiungendo le informazioni sull'ora e i secondi.
+L'output di questo codice mostrerà la data corrente in formato "gg/mm/aaaa" una volta al secondo sulla seriale.
 
-## Approfondimento
+## Deep Dive
 
-Se desideri approfondire ulteriormente il concetto di data attuale in Arduino, puoi esplorare le varie funzioni della libreria Time. Ad esempio, puoi utilizzare la funzione `hour()` per ottenere l'ora corrente o `weekday()` per ottenere il giorno della settimana. Puoi anche utilizzare la funzione `now()` per impostare una variabile con la data e l'ora attuali e utilizzarla successivamente nel tuo codice.
+Quando si utilizza la libreria "Time", è importante notare che il time server a cui ci si connette dovrebbe essere sempre online e fornire il tempo in UTC (Coordinated Universal Time). Inoltre, la libreria tiene conto del tempo trascorso dall'ultima sincronizzazione con il server. Ciò significa che se si stacca l'Arduino dalla corrente per un lungo periodo di tempo, la data e l'ora memorizzate saranno errate fino alla successiva sincronizzazione con il server. Per evitare questo problema, si può utilizzare un modulo RTC (Real-Time Clock) che tiene traccia del tempo in modo indipendente dall'alimentazione dell'Arduino.
 
-Inoltre, se vuoi utilizzare la data per scopi più avanzati, puoi anche combinare la libreria Time con altre librerie come la libreria SD per registrare le date e i tempi delle tue misurazioni o la libreria Wireless per inviare dati con la data corrente tramite connessione Wi-Fi.
+Inoltre, il codice mostrato sopra utilizza solo la data e non tiene conto dell'ora. Se si desidera ottenere anche l'ora corrente, si può utilizzare la funzione "hour(t)" per estrarre l'ora dalla variabile "t".
 
-## Vedi anche
+# Vedi Anche
 
-- [Libreria RTCtime](https://www.arduino.cc/reference/en/libraries/rtctime/)
-- [Libreria Time](https://www.arduino.cc/reference/en/libraries/time/)
-- [Tutorial su come impostare un RTC e utilizzare la libreria Time](https://randomnerdtutorials.com/arduino-ds1307-rtc-with-at24c32-eeprom/
-- [Tutorial su come utilizzare la libreria Time in combinazione con la libreria SD](https://diyi0t.com/arduino-sd-card-data-logger/)
+- [Documentazione Time.h](https://www.arduino.cc/reference/it/libraries/time/)
+- [Lista di time server disponibili](https://tf.nist.gov/tf-cgi/servers.cgi)

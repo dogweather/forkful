@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Lesing av kommandolinje-argumenter"
+title:                "Rust: Å lese kommandolinjeargumenter"
+simple_title:         "Å lese kommandolinjeargumenter"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/reading-command-line-arguments.md"
 ---
 
@@ -9,44 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Mange programmer krever interaksjon med brukeren, og et vanlig eksempel på dette er å lese inn kommandolinjeargumenter. Dette lar programmet ta imot informasjon fra brukeren og utføre handlinger basert på disse argumentene. Lesing av kommandolinjeargumenter er derfor en viktig ferdighet for enhver programmerer, og i denne artikkelen vil vi se på hvordan man kan gjøre dette i Rust.
+I denne bloggposten skal vi se på hvordan man kan lese kommandolinje-argumenter ved hjelp av Rust, et moderne programmeringsspråk som er kjent for sin pålitelighet og effektive ytelse. Å kunne lese kommandolinje-argumenter er en viktig del av å lage robuste og fleksible programmer, og det er derfor verdt å lære hvordan man gjør det i Rust.
 
-## Hvordan
+## Slik gjør du det
 
-For å lese kommandolinjeargumenter i Rust, kan vi bruke et innebygd bibliotek som heter `args`. Vi trenger først å importere dette biblioteket i vårt program ved å legge til `use std::env;` i toppen av koden vår. Deretter kan vi bruke funksjonen `args()` fra dette biblioteket for å få en vektor med alle de gitte argumentene.
+For å kunne lese kommandolinje-argumenter i Rust, bruker vi standardbiblioteket "std::env". Dette gir oss tilgang til funksjonen "args()", som returnerer en vector med alle argumentene som ble gitt til programmet.
 
-For å få tilgang til de enkelte argumentene, kan vi bruke indeksering på vektoren vår. For eksempel, hvis vi ønsker å lese inn det første argumentet, kan vi skrive `args[1]` (indeksering starter på 1, siden det første argumentet er selve programnavnet).
-
-La oss se på et eksempel på hvordan dette kan se ut:
+La oss se på et enkelt eksempel. I dette eksempelet ønsker vi å lage et program som tar inn et navn og printer en personlig hilsen til terminalen:
 
 ```rust
 use std::env;
+
 fn main() {
+    // Leser kommandolinje-argumenter
     let args: Vec<String> = env::args().collect();
-    println!("Programnavn: {}", args[0]);
-    println!("Første argument: {}", args[1]);
+
+    // Sjekker om det ble gitt et navn som argument
+    if args.len() > 1 {
+        // Første argument er navnet som ble gitt
+        let name = &args[1];
+        println!("Hei, {}!", name);
+    } else {
+        println!("Vennligst skriv inn et navn som argument.");
+    }
 }
 ```
 
-Her oppretter vi først en vektor ved hjelp av `args()`-funksjonen og lagrer den i en variabel kalt `args`. Deretter bruker vi `println!()`-makroen for å skrive ut programnavnet og det første argumentet. For å kjøre dette programmet, må vi først kompilere det og deretter kan vi gi argumentene vi ønsker å lese inn i kommandolinjen. For eksempel kan vi skrive `./programnavn argument_1 argument_2` og få output som følger:
+Når vi kjører dette programmet med kommandoen "rustc hello.rs && ./hello John", vil terminalen skrive ut "Hei, John!". Hvis vi ikke gir et navn som argument, vil den skrive ut "Vennligst skriv inn et navn som argument.".
 
-```bash
-Programnavn: programnavn
-Første argument: argument_1
+Vi kan også benytte oss av "args()" funksjonen for å lese flere argumenter, og behandle dem på ulike måter i programmet vårt.
+
+## Dypdykk
+
+Når vi bruker "args()" funksjonen, får vi en vector med argumenter som er gitt som strenger. Det kan være nyttig å konvertere disse argumentene til andre datatyper hvis vi ønsker å gjøre mer sofistikerte operasjoner med dem. For eksempel kan vi bruke "parse()" funksjonen for å konvertere en streng til et tall. Her er et eksempel:
+
+```rust
+use std::env;
+
+fn main() {
+    let args: Vec<String> = env::args().collect();
+
+    if args.len() > 2 {
+        // Første argument er et tall
+        let num1: i32 = args[1].parse().unwrap();
+        // Andre argument er også et tall
+        let num2: i32 = args[2].parse().unwrap();
+
+        let sum = num1 + num2;
+        println!("Summen av {} og {} er {}.", num1, num2, sum);
+    } else {
+        println!("Vennligst skriv inn to tall som argumenter.");
+    }
+}
 ```
 
-## Deep Dive
-
-Nå som vi har sett hvordan man enkelt kan lese inn kommandolinjeargumenter i Rust, la oss se på noen flere detaljer om dette. Det er viktig å merke seg at når man leser inn argumenter, vil alle disse være `String`-typer, uavhengig av hva slags datatype det faktiske argumentet er. Hvis vi ønsker å konvertere et argument til en annen datatype, må vi gjøre dette manuelt ved å bruke funksjoner som `parse()` og `unwrap()`.
-
-Vi kan også legge til funksjonalitet for å sjekke om riktig antall argumenter er gitt, eller for å gi en brukerfeilmelding hvis et forventet argument ikke er gitt. Dette kan være nyttig for å gjøre programmet vårt mer robust og brukervennlig.
+Nå kan vi kjøre programmet med to tall som argumenter, for eksempel "rustc sum.rs && ./sum 5 10", og terminalen vil skrive ut "Summen av 5 og 10 er 15.".
 
 ## Se også
 
-For mer informasjon om lesing av kommandolinjeargumenter i Rust, kan du besøke følgende ressurser:
-
-- [Rust Docs: Command Line Arguments](https://doc.rust-lang.org/std/env/fn.args.html)
-- [Rust by Example: Command Line Arguments](https://doc.rust-lang.org/rust-by-example/std_misc/arg.html)
-- [The Rust Programming Language: Handling Command Line Arguments](https://doc.rust-lang.org/book/ch12-03-improving-error-handling-and-modularity.html#handling-command-line-arguments)
-
-Takk for at du leste denne artikkelen om å lese kommandolinjeargumenter i Rust. Vi håper den var nyttig og gir deg en god forståelse av hvordan man kan gjøre dette i ditt eget prosjekt. Lykke til med programmeringen!
+- [Rust Documentation - std::env](https://doc.rust-lang.org/std/env/)
+- [Rust by Example - Command Line Arguments](https://doc.rust-lang.org/stable/rust-by-example/std_misc/arg.html)

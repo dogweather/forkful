@@ -1,57 +1,71 @@
 ---
 title:                "Haskell recipe: Searching and replacing text"
+simple_title:         "Searching and replacing text"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-In the world of programming, text manipulation is a common task that we encounter on a daily basis. As our programs become more complex, the need for automating this task becomes increasingly important. That's where searching and replacing text comes into play. By using Haskell, a functional programming language, we can easily automate this process and save ourselves time and effort.
+Have you ever found yourself struggling to manually replace text in your code? It can be a time-consuming and tedious task, especially when working with large files. Thankfully, there's a solution - using Haskell to search and replace text. This functional programming language provides a simple and efficient way to automate this process.
 
 ## How To
+Let's dive into the code and see how we can easily search and replace text using Haskell. First, we need to import the necessary module(s) for our task:
 
-To begin, we first need to import the necessary module, `Text.Regex.Posix`, which contains functions for regular expressions. Next, we can create a regular expression pattern using the `makeRegex` function. This allows us to specify the text we want to search for and any modifiers, such as case sensitivity.
-
-```
-import Text.Regex.Posix
-
--- Example regular expression pattern
-let pattern = makeRegex "world" :: Regex
+```Haskell
+import Data.List
 ```
 
-Next, we can use the `match` function to find and replace the text in our source string. This function takes in our pattern, the source string and the text we want to replace it with.
+Next, we can define a function that takes in two parameters - the old text and the new text, and returns a modified string with the replaced text:
 
-```
-let source = "Hello world"
-let output = match pattern source "universe" :: String
+```Haskell
+replaceText :: String -> String -> String -> String
+replaceText old new str = intercalate new (splitOn old str)
 ```
 
-The output should now be `Hello universe`, with the original word "world" replaced by "universe". It's important to note that this function will only replace the first occurrence of the pattern. To replace all occurrences, we can use the `replaceAll` function instead.
+In this function, we're using two functions from the `Data.List` module - `splitOn` and `intercalate`. `splitOn` takes in a delimeter (in this case, our old text) and splits the string into a list. We then use `intercalate` to join the list back together, this time with our new text as the separator.
 
+Let's test out our function with some sample text:
+
+```Haskell
+replaceText "world" "Haskell" "Hello world"
 ```
-let output = replaceAll pattern source "universe" :: String
+
+The output of this code would be `"Hello Haskell"`.
+
+But what if we want to replace multiple occurrences of the same text? We can use the built-in `replaceAll` function in the `Data.List.Split` module. Here's an example:
+
+```Haskell
+replaceAll "a" "e" "alphabet"
 ```
+
+The output of this code would be `"elphebet"`.
 
 ## Deep Dive
+Now that we have a basic understanding of how to search and replace text using Haskell, let's take a deeper look at some other useful functions and methods.
 
-While the `Text.Regex.Posix` module is very handy for simple text replacements, it does have some limitations. For more complex patterns, we can utilize the `Text.Regex.PCRE` module, which supports Perl Compatible Regular Expressions (PCRE).
+Firstly, we can use the `subRegex` function from the `Text.Regex` module to replace text based on a regular expression pattern. For example:
 
-For example, we may want to replace all digits with an underscore in a source string. This can be achieved using a regular expression pattern like `\\d` which matches all digits. We can then use the `subRegexAll` function to replace all occurrences using this pattern.
-
-```
-import Text.Regex.PCRE
-
-let pattern = "[0-9]"
-let source = "H3ll0 w0rld"
-let output = subRegexAll (mkRegex pattern) source "_" :: String
+```Haskell
+subRegex (mkRegex "foo[0-9]*") "bar" "Hello foo123"
 ```
 
-The output will now be `H_ll_ w_rld`, with all digits replaced by underscores. Other useful functions and modifiers can also be found in the `Text.Regex.PCRE` module, allowing for even more complex text replacements.
+The output of this code would be `"Hello bar"`. Here, we're using the regular expression pattern `foo[0-9]*` to match any text starting with "foo" followed by any number of digits.
+
+Additionally, we can also use the `replace` function from the `Text.Regex.Posix` module to replace text based on a regular expression pattern using POSIX-style regular expressions. Here's an example:
+
+```Haskell
+replace "([A-Z])" " $1" "HelloWorld"
+```
+
+The output of this code would be `"Hello World"`. The regular expression pattern `([A-Z])` matches any uppercase letter and the replacement string adds a space before the matched letter.
 
 ## See Also
+- [Haskell Data.List module](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html)
+- [Haskell Text.Regex module](https://hackage.haskell.org/package/regex-base-0.93.2/docs/Text-Regex.html)
+- [Haskell Text.Regex.Posix module](https://hackage.haskell.org/package/regex-posix-0.96.0.0/docs/Text-Regex-Posix.html)
 
-- [Haskell Regex Module](https://hackage.haskell.org/package/regex)
-- [Haskell PCRE Module](https://hackage.haskell.org/package/pcre-light)
+By using Haskell to search and replace text, we can save time and effort in editing code. And with the range of functions available, we can easily adapt to different cases and patterns. Happy coding!

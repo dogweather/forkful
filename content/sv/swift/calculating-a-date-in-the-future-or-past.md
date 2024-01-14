@@ -1,41 +1,68 @@
 ---
-title:                "Swift: Beräkna ett datum i framtiden eller i det förflutna"
+title:                "Swift: Beräkning av ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller det förflutna"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
-Att kunna räkna ut ett datum i framtiden eller förflutna kan vara användbart i många situationer. Det kan hjälpa till att planera evenemang, hålla koll på födelsedagar eller bara få en bättre förståelse för tiden.
+## Varför
 
-# Hur du gör det
-För att räkna ut ett datum i Swift, kan du använda dig av datumaritmetiken som finns tillgänglig i `Foundation`-ramverket. Här är en enkel kodexempel på hur du kan räkna ut ett datum i framtiden:
+Att kunna beräkna ett datum i framtiden eller det förflutna kan vara användbart i olika situationer. Det kan till exempel hjälpa dig att planera evenemang, schemalägga uppgifter eller hålla reda på åldern hos dina nära och kära.
+
+## Så här gör du
+
+Att beräkna ett datum i Swift är enkelt med hjälp av Date-klassen. För att beräkna ett datum i framtiden kan du använda funktionen addingTimeInterval(), som tar ett antal sekunder som argument och lägger till det på det aktuella datumet. Till exempel, om du vill beräkna datumet en vecka från idag, så kan du göra så här:
 
 ```Swift
-let today = Date()
-let dateComponents = DateComponents(year: 2022, month: 10, day: 30)
-let futureDate = Calendar.current.date(byAdding: dateComponents, to: today)
-
-print(futureDate)
+let enVeckaSenare = Date().addingTimeInterval(60*60*24*7)
+print(enVeckaSenare)
 ```
 
-I detta exempel skapar vi först ett `Date`-objekt för dagens datum. Sedan använder vi `DateComponents` för att specificera detaljerna för det datumet som vi vill räkna ut i framtiden, i detta fall 30 oktober 2022. Slutligen använder vi `Calendar` för att lägga till dessa komponenter till dagens datum och få ut ett nytt `Date`-objekt för framtiden.
+Output:
 
-Output: 2022-10-30 09:00:00 +0000
+```
+2020-06-02 07:21:52 +0000
+```
 
-Detta är bara ett enkelt exempel, men genom att leka runt med olika värden och använda olika metoder som `date(bySetting:to:)` eller `date(byAdding:to:)` kan du skapa kod som passar dina specifika behov.
+För att beräkna ett datum i det förflutna kan du använda funktionen subtractingTimeInterval() på samma sätt. Till exempel, om du vill beräkna datumet en månad tillbaka i tiden, kan du göra så här:
 
-# Djupdykning
-Att räkna ut datum i framtiden eller förflutna kan ibland vara mer komplicerat än bara att lägga till eller dra bort ett antal månader, veckor eller dagar. Det kan också involvera saker som tidszoner och kalendrar.
+```Swift
+let enManadTillbaka = Date().subtractingTimeInterval(60*60*24*30)
+print(enManadTillbaka)
+```
 
-Till exempel, om du vill räkna ut ett datum i en annan tidszon, så behöver du först konvertera ditt `Date`-objekt till rätt tidszon. Du kan använda dig av `TimeZone`-objekt och `DateFormatter` för att göra detta.
+Output:
 
-När det kommer till kalendrar, så är det viktigt att förstå att olika kulturer och religioner har olika kalendrar. I Swift finns det färdigbyggda kalendrar för de vanligaste kulturerna, men det är också möjligt att skapa egna kalendrar för mer specifika behov.
+```
+2020-04-03 07:21:52 +0000
+```
 
-# Se även
-Om du vill lära dig mer om hur man räknar ut datum i framtiden eller förflutna i Swift, så kan du läsa mer i dokumentationen för Foundation-ramverket och titta på olika kodexempel och guider online.
+Du kan också beräkna ett datum baserat på ett befintligt datum med hjälp av DateComponents, som låter dig specificera exakt vilken del av datumet du vill ändra. Till exempel, om du vill beräkna datumet en vecka från en specifik datum, kan du göra så här:
 
-- Läs mer om DateComponents och Calendar i Foundation-dokumentationen: https://developer.apple.com/documentation/foundation/
-- Se kodexempel och guider från andra Swift-utvecklare på GitHub: https://github.com/search?q=Swift+date+calculation
+```Swift
+let date = DateComponents(year: 2020, month: 6, day: 2).date!
+let enVeckaFranDate = Calendar.current.date(byAdding: .day, value: 7, to: date)
+print(enVeckaFranDate)
+```
+
+Output:
+
+```
+2020-06-09 07:21:52 +0000
+```
+
+## Djupdykning
+
+Date-klassen i Swift är baserad på Gregorian-kalendern. Detta betyder att det tar hänsyn till skottår och månader med olika antal dagar. Det finns också många andra användbara funktioner som kan hjälpa dig att hantera datum, till exempel att jämföra två datum eller konvertera mellan olika tidszoner.
+
+Om du vill lära dig mer om hantering av datum i Swift, så rekommenderar vi att du tittar närmare på Date- och Calendar-klassen i Apples dokumentation.
+
+## Se även
+
+- [Apples dokumentation om Date-klassen](https://developer.apple.com/documentation/foundation/date)
+- [Apples dokumentation om Calendar-klassen](https://developer.apple.com/documentation/foundation/calendar)
+- [Tutorial: Hantera datum och tidszoner i Swift](https://medium.com/@jamesrochabrun/managing-dates-and-time-zones-in-swift-e4b2c6cae42e) (på engelska)

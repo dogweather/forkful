@@ -1,7 +1,9 @@
 ---
 title:                "C: Convirtiendo una cadena a minúsculas"
+simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,36 +11,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-En programación, es común encontrarse con la necesidad de convertir una cadena de caracteres a minúsculas. Esto es especialmente útil cuando se están comparando dos cadenas y se desea ignorar las diferencias en mayúsculas y minúsculas. Afortunadamente, en C existe una función incorporada que nos permite realizar esta conversión de manera sencilla y eficiente.
+Convertir una cadena de texto a minúsculas es una tarea común en la programación en C. Esto puede ser útil al realizar operaciones de comparación de cadenas o al formatear la salida de datos. También puede mejorar la legibilidad del código para aquellos que estén acostumbrados a trabajar con cadenas en minúsculas.
 
 ## Cómo hacerlo
 
-Para convertir una cadena a minúsculas en C, utilizamos la función `tolower()` de la biblioteca `ctype.h`. Esta función toma como argumento un carácter y devuelve su equivalente en minúscula. Sin embargo, para poder utilizarla con una cadena completa, necesitamos recorrer cada carácter de la cadena y aplicarle la función `tolower()`.
+Para convertir una cadena de texto a minúsculas en C, existen varias formas de lograrlo. Una de ellas es utilizando la función `tolower()` que se encuentra en la biblioteca estándar `ctype.h`. Esta función toma un carácter como argumento y devuelve su versión en minúsculas.
 
-```c
+```C
 #include <stdio.h>
 #include <ctype.h>
 
-int main() {
-    char cadena[] = "EN ESTA CADENA TODO ESTÁ EN MAYÚSCULAS";
-    
-    // Recorremos la cadena y aplicamos tolower()
-    for (int i = 0; cadena[i] != '\0'; i++) {
-        cadena[i] = tolower(cadena[i]);
-    }
-    
-    printf("%s\n", cadena);
-    // Output: en esta cadena todo está en mayúsculas
+int main()
+{
+    char letra = 'A';
+    printf("Letra original: %c\n", letra);
+    letra = tolower(letra);
+    printf("Letra convertida: %c\n", letra);
+    return 0;
 }
 ```
 
-## Profundizando
+Output:
 
-La función `tolower()` utiliza la tabla de caracteres ASCII (American Standard Code for Information Interchange) para realizar la conversión. Esta tabla asigna un número entero a cada carácter, y las letras mayúsculas y minúsculas tienen sus propios códigos que se encuentran a una distancia constante de 32. Por ejemplo, la letra `A` tiene un código de 65, mientras que la letra `a` tiene un código de 97. Por lo tanto, para convertir una letra mayúscula a minúscula, solo tenemos que sumar 32 a su código.
+```
+Letra original: A
+Letra convertida: a
+```
 
-Otra cosa importante a tener en cuenta es que esta función solo funciona para caracteres alfabéticos. Si intentamos convertir un carácter numérico u otro tipo de carácter, no veremos ningún cambio.
+Si deseamos convertir una cadena completa a minúsculas, podemos utilizar una función personalizada con un bucle `for` que recorra cada carácter y utilice `tolower()` en cada uno de ellos.
+
+```C
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+void minusculas(char cadena[])
+{
+    for(int i = 0; i < strlen(cadena); i++)
+    {
+        cadena[i] = tolower(cadena[i]);
+    }
+}
+
+int main()
+{
+    char cadena[] = "Hola Mundo";
+    printf("Cadena original: %s\n", cadena);
+    minusculas(cadena);
+    printf("Cadena convertida: %s\n", cadena);
+    return 0;
+}
+```
+
+Output:
+
+```
+Cadena original: Hola Mundo
+Cadena convertida: hola mundo
+```
+
+## Profundizando en el tema
+
+Si bien las dos formas mencionadas cumplen con el objetivo de convertir una cadena de texto a minúsculas, existen algunas diferencias que vale la pena mencionar. La función `tolower()` solo funciona con caracteres individuales, por lo que si deseamos convertir una cadena que contenga números o símbolos, estos serán ignorados y permanecerán sin cambios.
+
+Por otro lado, al utilizar una función personalizada con un bucle `for`, podemos incluir condiciones para que también se conviertan caracteres especiales. También podemos modificar la función para que solo convierta ciertos caracteres específicos, según nuestras necesidades.
+
+Además, es importante tener en cuenta que al trabajar con cadenas en C, debemos asegurarnos de tener suficiente memoria asignada para almacenar la cadena resultante luego de la conversión. De lo contrario, podríamos tener problemas de desbordamiento de búfer.
 
 ## Ver también
 
-- [Función tolower() en la documentación de C](https://www.programiz.com/c-programming/library-function/ctype.h/tolower)
-- [Tabla de caracteres ASCII](https://es.wikipedia.org/wiki/ASCII)
+- [Documentación de la función `tolower()` en C](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
+- [Tutorial para trabajar con cadenas en C](https://www.programiz.com/c-programming/c-strings)

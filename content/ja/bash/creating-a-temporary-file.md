@@ -1,7 +1,9 @@
 ---
-title:                "Bash: 一時的なファイルを作成する"
+title:                "Bash: 一時ファイルの作成"
+simple_title:         "一時ファイルの作成"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/creating-a-temporary-file.md"
 ---
 
@@ -9,46 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-一時ファイルを作成することに取り組む理由はいくつかあります。一時ファイルを使用することで、データの一時的な保存やプログラムの実行に必要なファイルの作成が容易になります。また、一時ファイルを使用すると、データを簡単に削除できるため、セキュリティの観点からも有用です。
+プログラミングをする人なら、一時ファイル作成について知っておくことが重要です。一時ファイルは、プログラムにとって重要な情報を保管する際や、特定のタスクを実行する際に必要になります。
 
 ## 作り方
 
-一時ファイルを作成するためには、次のようなBashコードを使用します。
+Bashを使用して一時ファイルを作成する方法はいくつかありますが、最も一般的な方法は以下の通りです。
 
 ```Bash
-#!/bin/bash
+# ランダムなファイル名で一時ファイルを作成
+tempfile=$(mktemp)
 
-# 一時ファイルを作成する
-temp_file=$(mktemp) 
+# 作成したファイルにデータを書き込む
+echo "これは一時ファイルです" > $tempfile
+
+# ファイルを読み込んで出力する
+cat $tempfile
 ```
 
-上記のコードでは、mktempコマンドを使用して一時ファイルを作成し、そのファイル名を変数に保存しています。また、作成したファイルを使用した後は、次のように削除することができます。
+実行すると、下記のような結果が得られます。
 
 ```Bash
-# 一時ファイルを削除する
-rm $temp_file
+これは一時ファイルです
 ```
 
-## 深く掘り下げる
-
-一時ファイルを作成する方法には、さまざまなオプションがあります。例えば、次のオプションを使用することで、ファイル名のプレフィックスやサフィックス、ディレクトリの指定などを行うことができます。
+また、一時ファイルには有用なオプションもあります。例えば、一時ファイルを作成せずに直接ファイルにデータを書き込むことができます。
 
 ```Bash
-# プレフィックスを指定して一時ファイルを作成する
-temp_file=$(mktemp example_XXXX)
-
-# ディレクトリを指定して一時ファイルを作成する
-temp_file=$(mktemp -d /tmp/example)
-
-# サフィックスを指定して一時ディレクトリを作成する
-temp_dir=$(mktemp -d -t example_)
+# 一時ファイルを作成せずに直接ファイルにデータを書き込む
+echo "このデータは一時ファイルではなく、直接ファイルに書き込まれます" > tempfile.txt
 ```
 
-また、一時ファイルを作成する際には、安全性を考慮する必要があります。一時ファイルを作成する前に、ファイルの書き込み権限をチェックすることや、ランダムなファイル名を使用することが重要です。
+## 詳細を調べる
 
-## 参考リンク
+一時ファイルを作成する際、このファイルがどこに保存されるのか知ることも重要です。一時ファイルは通常、`/tmp`ディレクトリ内に保存されますが、環境変数を設定することで保存先を変更することもできます。
 
-- [mktempコマンドのマニュアル](https://linuxjm.osdn.jp/html/GNU_coreutils/man1/mktemp.1.html)
-- [一時ファイルを作成する方法](https://www.shellhacks.com/create-temporary-file-in-bash-script/)
-- [一時ファイルの作成と削除の安全性について](https://www.linux.com/tutorials/working-temporary-files-bash/)
-- [一時ファイルを使用する際の注意点](https://www.cyberciti.biz/faq/create-files-in-linux-using-the-temporary-file-utility-mktemp/)
+また、一時ファイルを作成する際に使用される`mktemp`コマンドのオプションも重要です。`-u`オプションを使用すると、ファイルの作成だけを行ってファイル名を出力することができます。`-d`オプションを使用すると、一時ディレクトリを作成することができます。
+
+## 参考
+
+- [Bashで一時ファイルを作成する方法](https://www.lifewire.com/create-temporary-files-bash-scripts-2200578)
+- [Linuxの一時ファイルの作成](https://www.pluralsight.com/blog/operating-systems/linux-temporary-files)
+- [Bashのmktempコマンドのドキュメント](https://linux.die.net/man/1/mktemp)
+
+## 関連情報を見る

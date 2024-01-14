@@ -1,74 +1,51 @@
 ---
-title:                "C: テストの書き方"
+title:                "C: テストを書く"
+simple_title:         "テストを書く"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-今回は、テストコードを書くことの重要性についてお伝えします。プログラムの品質を保証する上で、テストは欠かせないものとなっています。では、テストコードをどのように書くかを見ていきましょう。
+## なぜテストを書くのか
 
-## Why
-テストコードを書く主な目的は、自分のコードや他の人のコードが正しく動作するかどうかを確かめることです。コードにバグがあると、それがプログラム全体に大きな影響を与える可能性があります。しかし、テストコードを書くことで、バグを発見し修正することができます。さらに、コードの変更や追加を行った際にも、テストコードがあれば正しく動作していることを確認することができます。
+プログラミングは、エラーが起きない完璧なコードを書くことは不可能です。しかし、プログラムにバグがあると、予期せぬ結果を引き起こす可能性があり、時には致命的な結果になることもあります。こうした意外な問題を防ぐため、テストを書くことが非常に重要です。
 
-## How To
-テストコードを書くにあたっては、一般的には次のようなプロセスになります。
+## テストの書き方
 
-1. テスト対象のコードを読んで、どのような場合にどのような結果が得られるかを把握する
-2. テストケースを作成し、期待される結果を明確にする
-3. コードを実行し、テストが正しく動作するかを確認する
-4. バグが見つかった場合は、その原因を特定し修正する
-
-以下は、簡単な関数をテストする例です。
+テストを書くには、C言語のアサート（assert）を使用します。これは、プログラム実行時に特定の条件が満たされていることを確認するものです。例えば、関数の戻り値が正しいかどうかをテストすることができます。
 
 ```C
 #include <stdio.h>
+#include <assert.h>
 
-/* 値を2倍にする関数 */
-int double_value(int num) {
-    return num * 2;
+// テストする関数
+int square(int num){
+    return num * num;
 }
 
-int main() {
-    int result = double_value(5);
-    printf("Result: %d\n", result);
+int main(){
+    // アサートを使用してテストを実行
+    assert(square(2) == 4);
+    assert(square(5) == 25);
+    assert(square(-3) == 9);
+    printf("テストは成功しました！\n");
     return 0;
 }
 ```
 
-この関数をテストするためには、以下のようなテストコードを書きます。
+上記のコードでは、アサートを使用してテストを行っています。もし、条件を満たさない場合はプログラムが停止してエラーを出力します。これにより、プログラム実行中に問題が発生したことがわかり、バグを修正することができます。
 
-```C
-#include <stdio.h>
+## テストの詳細
 
-/* テスト対象の関数 */
-int double_value(int num) {
-    return num * 2;
-}
+テストを書く際には、どのような条件をテストするかを良く考えることが大切です。また、プログラムの各部分を個別にテストすることも重要です。これにより、問題が起きた時に原因を特定しやすくなります。
 
-int main() {
-    int expected_result = 10;
-    int actual_result = double_value(5);
-
-    /* テストを実行し、結果を確認する */
-    if (actual_result == expected_result) {
-        printf("Test passed!\n");
-    } else {
-        printf("Test failed. Expected: %d, Actual: %d\n", expected_result, actual_result);
-    }
-
-    return 0;
-}
-```
-
-上記のテストコードを実行すると、`Test passed!`というメッセージが表示されるはずです。このように、テストコードを書くことで、コードの動作を確認することができます。
-
-## Deep Dive
-テストコードを書く際には、いくつかのポイントに注意することが重要です。例えば、テストケースを作成する際には、コーナーケースやエッジケースに対してもテストすることが必要です。また、テストコードのメンテナンスも重要であり、新しい機能が追加された際には、それに応じてテストコードも更新する必要があります。
-
-テストコードはプログラムの品質を向上させる上で非常に重要なものです。プログラマーとして、テストコードをしっかりと書くことを意識しましょう。
+さらに、テストを自動化することも重要です。手動でテストを行うと、時間がかかり正確性も低くなります。そのため、自動化されたテストを使うことで効率的にバグを見つけることができます。
 
 ## See Also
-- [プログラムテストの基本](https://www.ipa.go.jp/sec/softwaretest/test_guide5.html)
-- [単体テストの書き方](https://www.qa-check.com/test_types/test_case/unit?page=1)
+
+- [C言語のテスト駆動開発](https://www.ibm.com/developerworks/jp/linux/library/l-lpic1-103-4/)
+- [JUnitでのテスト自動化の基本](https://www.ibm.com/developerworks/jp/java/library/j-junitbasics.html)
+- [シアトル大学：ソフトウェア開発の創造性と力](https://www.coursera.org/specializations/dukeklobucharspecialization/1)

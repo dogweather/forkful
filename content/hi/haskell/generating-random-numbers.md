@@ -1,37 +1,40 @@
 ---
-title:                "Haskell: रैंडम नंबर उत्पन्न करना"
+title:                "Haskell: संख्याओं का त्याग जेनरेट करना"
+simple_title:         "संख्याओं का त्याग जेनरेट करना"
 programming_language: "Haskell"
-category:             "Numbers"
+category:             "Haskell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+##Kyon: 
+Kisi ko prakrath algorithms ki madad se brahmaankan sankhyaon ka nirman kyu karna chahiye?
 
-क्या आप कभी सोचा है कि हैस्केल में यादृच्छिक संख्याओं को कैसे उत्पन्न किया जाता है? यदि हाँ, तो आप सही जगह पर हैं। हम जानते हैं कि कई बार हमें एक से अधिक संख्याओं की आवश्यकता होती है जो हमारे प्रोग्राम में यादृच्छिक रूप से उत्पन्न होती हैं, और हमारे लिए उन्हें हजारों से अधिक उत्पन्न करना या यादृच्छिक रूप से उत्पन्न करना मुश्किल हो सकता है। लेकिन धीरे-धीरे, हम एक काम जानते हैं जो हमारे लिए यह समस्या हल कर सकता है। और बात बनेगी कि आप हमारी इस ब्लॉग पोस्ट को पढ़कर समस्त काम सीख लेंगे।
+Koi bhi programming bhasha sikhne ke liye, dhyaan me rakhna jaruri hai ki yeh kis tarah se aur kyun kaam karti hai. Isi tarah, brahmaankan sankhyaon ka nirman bhi kisi dusre algorithms se alag hai aur iske pichhe kuch mukhya karan hain. Is blog post me hum dekhenge ki brahmaankan sankhyaon ka nirman kyu pratikool ho sakta hai aur kis tarah se ye hamari coding skills ko prabhavit karta hai.
 
-## कैसे
-
-अगर आप हास्केल में यादृच्छिक संख्याओं को उत्पन्न करना चाहते हैं, तो आप `random` लाइब्रेरी का उपयोग कर सकते हैं। इसे `import System.Random` के साथ शुरू कर सकते हैं। हम जानते हैं कि यादृच्छिक संख्याओं के लिए एक रैंडम नम्बर जनरेटर को वर्तमान समय से प्राप्त किया जाता है, इसलिए हम `randomIO` फंक्शन का उपयोग कर सकते हैं।
-
-यहां हम एक उदाहरण देख रहे हैं जहां हम `randomIO` का उपयोग करके आठ अंकों के यादृच्छिक संख्याओं को प्रिंट कर रहे हैं।
-
+##Kaise Kare:
 ```Haskell
-import System.Random
-
 main = do
-  numbers <- randomIO :: IO [Int]
-  print $ take 8 numbers
+  -- by using the "random" package
+  import System.Random
+  -- generates a random number between 1 and 10
+  randomInt <- randomRIO (1, 10)
+  print randomInt
 ```
 
-आउटपुट:
+Is code snippet me humne "random" package ka istemaal kiya hai jo hame kisi bhi range me ek random integer number deta hai. Isse hume ek nirdeshit range me kisi bhi tarah ka sankhya banana aasan ho jata hai. Hum bhi apne aapko ek seed value provide kar sakte hain taki hamesha same random number generate ho. Is tarah se, hamara output hamesha predictable hoga aur hame debugging karne me madad milegi.
 
-```
-[1482924524, -458396065, -1509191285, -2112372851,
-498562326, 1043761820, 1251268933, 80843112]
-```
 
-## डीप डाइव
+##Gehri Jhalak:
+Brahmaankan sankhyaon ka nirman ek bhavnatam prakriya hai programming me aur isse hamare coding skills ko develop hone me madad milti hai. Isse hume algorithms ko samajhne me madad milti hai aur iska istemaal bade bade project me jaise machine learning aur data analysis ke liye bhi kiya ja sakta hai. Iske alawa, random numbers ki khoj ke peeche bhi kaafi rachna hain aur ye ek bohot vyapak aur rochak vishay hai.
 
-यादृच्छिक संख्याओं क
+
+##Dekhna Jaroor:
+Yadi aapko brahmaankan sankhyaon ka nirman ke bare me aur gehre jankariya chahiye, toh yahi samay hai ki aap "random" package ke documentation ko padhe aur iske ander ki programming techniques ko samajhe. Dhanyavaad!
+
+See Also:
+- [Haskell Programming Language](https://www.haskell.org/)
+- [Random Package Documentation](https://hackage.haskell.org/package/random/docs/System-Random.html)
+- [Introduction to Random Numbers in Programming](https://www.educative.io/edpresso/introduction-to-random-numbers-in-programming)

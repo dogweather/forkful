@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Päivämäärän hankkiminen"
+title:                "Swift: Nykyisen päivämäärän saaminen"
+simple_title:         "Nykyisen päivämäärän saaminen"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/getting-the-current-date.md"
 ---
 
@@ -9,64 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä miksi haluaisi saada näytön päivämäärän Swift-ohjelmoinnissa. Tämä voi olla hyödyllistä esimerkiksi tapahtumien aikaleimojen tallentamiseen tai suorituskyvyn mittaamiseen eri päivien välillä.
+On monia käytännön syitä, miksi tarvitsisimme nykyisen päivämäärän ohjelmoinnissa. Esimerkiksi lomakkeiden täyttämisessä tai kalenteri- ja aikaa herkällä sovelluksissa, kuten varaussovelluksessa, on tärkeää saada luotettava ja ajantasainen päivämäärätieto. Onneksi Swift-ohjelmointikielessä on helppo hakea nykyinen päivämäärä.
 
-## Kuinka
+## Miten
 
-Käyttämällä Swiftin ```Date()```-funktiota, voit helposti saada nykyisen päivämäärän ja ajan. Tämä palauttaa päivämäärän ja ajan nykyisestä aikavyöhykkeestäsi.
+Swift tarjoaa Date-luokan, joka sisältää kaikki päivämäärätietoihin liittyvät toiminnot. Aluksi meidän täytyy importata Foundation-kirjasto, joka sisältää Date-luokan.
 
+```Swift
+import Foundation
 ```
+
+Sitten voimme käyttää Date()-funktiota luodaksemme uuden päivämääräolion. Tämä päivämääräolion sisältämät tiedot ovat nykyinen aika ja päiväys.
+
+```Swift
 let currentDate = Date()
-print(currentDate)
 ```
 
-Tämä koodi tulostaa nykyisen päivämäärän ja ajan seuraavassa muodossa:
+Voimme myös muuttaa päivämäärän muotoa haluamallamme tavalla käyttämällä DateFormatter-luokkaa. Se tarjoaa mahdollisuuden asettaa halutun muodon ja kielen päivämäärään. Esimerkiksi jos haluamme näyttää päivämäärän englanniksi ja muodossa "dd/MM/yyyy", voimme tehdä sen seuraavalla tavalla.
 
-```
-2019-09-10 18:28:30 +0000
-```
-
-Voit myös muuttaa päivämäärän muotoa käyttämällä ```DateFormatter```-luokkaa. Tässä esimerkissä päivämäärä muutetaan "dd/MM/yyyy" muotoon:
-
-```
+```Swift
 let formatter = DateFormatter()
 formatter.dateFormat = "dd/MM/yyyy"
-
-let currentDate = Date()
-print(formatter.string(from: currentDate))
+formatter.locale = Locale(identifier: "en")
+let formattedDate = formatter.string(from: currentDate)
+print(formattedDate) // tulostaa "04/03/2021"
 ```
 
-Tämä tulostaa nykyisen päivämäärän muodossa:
+## Syvällinen sukellus
 
-```
-10/09/2019
-```
+Date-luokka perustuu Gregorian-kalenteriin, joka on yleisimmin käytetty kalenterijärjestelmä. Se tallentaa päivämäärän sisäisesti sekunteina alkaen 1. tammikuuta 2001. Tämä tarkoittaa, että se ei ota huomioon aikavyöhyke- tai päiväntasaajan muutoksia, joten päivämäärän tarkkuus voi joskus olla kyseenalainen. 
 
-## Syvenny
+Voimme myös käyttää DateComponents-luokkaa saadaksemme tarkempaa tietoa päivämäärästä. Se antaa meille pääsyn päivän, kuukauden, vuoden ja viikonpäivän tietoihin erikseen.
 
-Päivämäärän saaminen voi joskus olla monimutkaisempaa, erityisesti jos tarvitset tarkempaa tietoa päivämäärästä, kuten vuoden, kuukauden tai päivän numeron. Tähän voit käyttää ```Calendar```-luokkaa, joka antaa sinulle lisätoiminnallisuutta päivämäärään liittyen.
-
-```
+```Swift
 let calendar = Calendar.current
-let year = calendar.component(.year, from: Date())
-let month = calendar.component(.month, from: Date())
-let day = calendar.component(.day, from: Date())
-
-print("Nykyinen vuosi: \(year)")
-print("Nykyinen kuukausi: \(month)")
-print("Nykyinen päivä: \(day)")
-```
-
-Tämä koodi palauttaa seuraavan tulosteen:
-
-```
-Nykyinen vuosi: 2019
-Nykyinen kuukausi: 9
-Nykyinen päivä: 10
+let components = calendar.dateComponents([.day, .month, .year, .weekday], from: currentDate)
+print(components.day) // tulostaa nykyisen päivän numeron
+print(components.month) // tulostaa nykyisen kuukauden numeron
+print(components.year) // tulostaa nykyisen vuoden numeron
+print(components.weekday) // tulostaa nykyisen viikonpäivän numeron
 ```
 
 ## Katso myös
 
-- Apple Developer Documentation: [Date Class](https://developer.apple.com/documentation/foundation/date)
-- Apple Developer Documentation: [DateFormatter Class](https://developer.apple.com/documentation/foundation/dateformatter)
-- Apple Developer Documentation: [Calendar Class](https://developer.apple.com/documentation/foundation/calendar)
+- [Official Swift Date Documentation](https://developer.apple.com/documentation/foundation/date)
+- [DateFormatter-luokka](https://developer.apple.com/documentation/foundation/dateformatter)
+- [DateComponents-luokka](https://developer.apple.com/documentation/foundation/datecomponents)

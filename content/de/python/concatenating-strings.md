@@ -1,7 +1,9 @@
 ---
-title:                "Python: Zeichenketten verketten"
+title:                "Python: Strings verbinden."
+simple_title:         "Strings verbinden."
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/concatenating-strings.md"
 ---
 
@@ -9,54 +11,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Strings sind eine grundlegende Datentyp in Python, die verwendet werden, um Text und Zeichenfolgen darzustellen. Oftmals müssen wir jedoch mehrere Strings miteinander verbinden, um bestimmte Aufgaben zu erledigen. Die Konkatenation von Strings ist eine wichtige Fähigkeit, die jeder Python-Programmierer beherrschen sollte.
+Das Verketten von Strings ist eine grundlegende Operation in der Python-Programmierung. Es ermöglicht es uns, mehrere Zeichenketten zu einem zusammenzufügen und somit längere und aussagekräftigere Ausgaben zu erzeugen.
 
-## Wie man Strings in Python konkateniert
+## Wie man
 
-Die einfachste Methode, Strings in Python zu konkatenieren, ist die Verwendung des Plusoperators (+). Schauen wir uns ein Beispiel an:
-
-```Python
-name = "Maria"
-greeting = "Hallo, " + name + "!"
-print(greeting)
-```
-Der obige Code würde die Ausgabe "Hallo, Maria!" erzeugen, da die einzelnen Strings durch den Plusoperator miteinander verbunden werden.
-
-Eine andere Möglichkeit, Strings zu konkatenieren, ist die Verwendung der .format()-Methode. Hier ist ein Beispiel:
+In Python können wir Strings auf verschiedene Arten verketten. Die einfachste Möglichkeit ist die Verwendung des `+` Operators, wie in diesem Beispiel:
 
 ```Python
-name = "Maria"
-greeting = "Hallo, {}!".format(name)
-print(greeting)
+# Verketten von zwei Strings
+anfang = "Hallo "
+ende = "Welt!"
+begrüßung = anfang + ende
+print(begrüßung)
 ```
-Dies würde die gleiche Ausgabe wie zuvor erzeugen, aber diesmal wird der Platzhalter {} durch den Wert von name ersetzt.
 
-Schließlich können auch f-Strings verwendet werden, um Strings zu konkatenieren. F-Strings sind mit Python 3.6 eingeführt worden und ermöglichen es uns, Variablen direkt in einem String zu verwenden, indem sie mit dem Präfix "f" gekennzeichnet werden. Zum Beispiel:
+Die Ausgabe dieses Codes ist:
+
+```
+Hallo Welt!
+```
+
+Wir können auch den `+=` Operator verwenden, um einen bestehenden String zu erweitern:
 
 ```Python
-name = "Maria"
-greeting = f"Hallo, {name}!"
-print(greeting)
+# Erweitern eines bestehenden Strings
+name = "Max"
+name += " Mustermann"
+print(name)
 ```
-Auch hier würde die Ausgabe "Hallo, Maria!" lauten.
 
-## Tiefere Einblicke
+Die Ausgabe ist:
 
-Eines der wichtigsten Dinge, die man bei der Konkatenation von Strings beachten sollte, ist, dass es nur möglich ist, Strings mit anderen Strings zu verbinden. Versuche, Strings mit anderen Datentypen wie Integer oder Float zu verbinden, werden zu einem Fehler führen.
+```
+Max Mustermann
+```
 
-Außerdem ist es möglich, mehr als zwei Strings gleichzeitig zu konkatenieren, indem man einfach mehrere Einzelheiten mit dem Plusoperator verbindet. Zum Beispiel:
+Eine weitere Möglichkeit ist die Verwendung von `str.join()`, um mehrere Strings mit einem Trennzeichen zu verketten:
 
 ```Python
-name = "Maria"
-greeting = "Hallo, " + name + "!" + " Wie geht es dir?"
-print(greeting)
+# Verketten von Strings mit einem Trennzeichen
+namen_liste = ["Max", "Mustermann", "Musterfrau"]
+trennzeichen = " "
+name = trennzeichen.join(namen_liste)
+print(name)
 ```
-Die Ausgabe wäre "Hallo, Maria! Wie geht es dir?".
 
-Es gibt auch bestimmte Methoden, die in Python verfügbar sind, um die Konkatenation von Strings effektiver zu gestalten, wie z.B. .join() oder .split(). Es empfiehlt sich, diese Methoden bei Bedarf zu recherchieren.
+Die Ausgabe ist:
+
+```
+Max Mustermann Musterfrau
+```
+
+## Tiefer Einblick
+
+Strings in Python sind unveränderlich, was bedeutet, dass sie nicht direkt geändert werden können. Wenn wir also einen String verketten, erzeugen wir tatsächlich einen neuen String, anstatt den bestehenden zu ändern. Dies hat Auswirkungen auf die Leistung, insbesondere wenn wir eine große Anzahl von Strings verketten.
+
+Um dieses Performance-Problem zu lösen, kann die Verwendung von `str.format()` anstelle von `+` oder `+=` eine bessere Wahl sein. Mit dieser Methode können wir Platzhalter in einem String definieren und dann Werte in diese Platzhalter einfügen, anstatt Strings direkt zu verketten.
+
+```Python
+# Verwendung von str.format()
+zahl = 5
+verkettung = "Ich habe {} Äpfel und {} Orangen".format(zahl, 3)
+print(verkettung)
+```
+
+Die Ausgabe ist:
+
+```
+Ich habe 5 Äpfel und 3 Orangen
+```
 
 ## Siehe auch
 
-- [Python String Concatenation](https://www.programiz.com/python-programming/string-concatenation)
-- [Python String Methods](https://www.w3schools.com/python/python_strings_methods.asp)
-- [PEP 498: Literal String Interpolation](https://www.python.org/dev/peps/pep-0498/)
+- Offizielle Python-Dokumentation zu Strings: https://docs.python.org/de/3/tutorial/introduction.html#strings
+- Weitere Möglichkeiten, Strings in Python zu verarbeiten: https://www.datacamp.com/community/tutorials/python-string-processing

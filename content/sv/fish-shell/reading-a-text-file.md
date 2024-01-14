@@ -1,45 +1,59 @@
 ---
-title:                "Fish Shell: Läsning av en textfil"
+title:                "Fish Shell: Att läsa en textfil"
+simple_title:         "Att läsa en textfil"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att läsa och använda en textfil är ett vanligt scenario när man programmerar. Det kan användas för att lagra data, spara inställningar eller hantera kommandoradsargument. Det är viktigt att veta hur man läser och manipulerar en textfil för att kunna effektivisera sitt programmeringsarbete.
 
-Att läsa och förstå textfiler är en vanlig uppgift inom programmering. Det kan till exempel vara för att importera eller bearbeta data, eller för att söka efter specifika information. Oavsett varför du behöver läsa en textfil, kan du använda Fish Shell för att enkelt hantera denna uppgift.
-
-## Hur man gör det
-
-För att läsa en textfil med Fish Shell, använder du kommandot "cat" följt av sökvägen till filen du vill läsa. Till exempel:
+## Så här gör man
+För att läsa en textfil i Fish Shell, kan följande kod användas:
 
 ```Fish Shell
-cat minTextfil.txt
+$ cat file.txt
 ```
-Detta kommando kommer att skriva ut innehållet i filen direkt i terminalen. Om du vill spara resultatet i en annan fil, kan du använda ">" tecknet följt av namnet på den nya filen du vill skapa. Till exempel:
+
+Denna kod läser innehållet i filen "file.txt" och skriver ut det på skärmen. Om man vill spara innehållet i en variabel, kan man använda följande kod:
 
 ```Fish Shell
-cat minTextfil.txt > nyFil.txt
+$ set content (cat file.txt)
 ```
 
-Det finns också möjlighet att söka och filtrera textfilen genom att använda filterkommandot "grep". Till exempel:
+Genom att nu skriva ut variabeln "content" kommer innehållet i filen att visas på skärmen. Om man vill läsa innehållet rad för rad, kan man använda en "while loop" i följande kod:
 
 ```Fish Shell
-cat minTextfil.txt | grep "sökord"
+while read -r line
+    echo $line
+end < file.txt
 ```
 
-Genom att kombinera detta med andra kommandon kan du också manipulera textfilen och byta ut eller lägga till information efter behov.
+Detta kommer att läsa innehållet i filen "file.txt" och skriva ut en rad i taget tills hela filen har lästs.
 
 ## Djupdykning
+När man läser en textfil, läses innehållet rad för rad. Det finns också möjlighet att läsa en specifik rad eller ett visst antal rader från en fil. Detta kan göras med hjälp av kommandot "head" och "tail".
 
-För att förstå textfiler på en djupare nivå, är det viktigt att känna till hur de är strukturerade. En textfil består av rader av text som kan innehålla olika tecken och teckenkoder. Vanligtvis är de också avgränsade av radbrytningar för att skapa en struktur.
+Om man vill läsa den första raden i en fil, kan man använda följande kod:
 
-När du läser en textfil i Fish Shell, kommer den att tolka radbrytningar som ett slut och gå vidare till nästa rad. Det är därför viktigt att se till att din textfil är korrekt formaterad för att få önskat resultat.
+```Fish Shell
+$ cat file.txt | head -n 1
+```
+
+Detta kommer att läsa den första raden i filen "file.txt" och skriva ut den på skärmen. Om man vill läsa de fem första raderna i filen, kan man använda:
+
+```Fish Shell
+$ cat file.txt | head -n 5
+```
+
+På samma sätt kan man använda kommandot "tail" för att läsa de sista raderna i filen.
 
 ## Se även
-
-- [Fish Shell Kommandon](https://fishshell.com/docs/current/cmds.html)
-- [Unix Filkommandon](https://www.cs.umd.edu/class/sum2003/cmsc311/Notes/Unix/commands.html) 
-- [Regex För Nybörjare](https://www.regular-expressions.info/tutorial.html)
+- [Fish Shell's officiella dokumentation för att läsa en textfil](https://fishshell.com/docs/current/cmds/cat.html)
+- [En guide för att läsa en fil rad för rad i Fish Shell](https://www.cyberciti.biz/faq/bash-loop-over-file/)
+- [Kommandot "head" i Fish Shell](https://fishshell.com/docs/current/cmds/head.html)
+- [Kommandot "tail" i Fish Shell](https://fishshell.com/docs/current/cmds/tail.html)

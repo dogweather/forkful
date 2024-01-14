@@ -1,46 +1,40 @@
 ---
-title:                "PHP: Procurando e substituindo texto"
+title:                "PHP: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que fazer busca e substituição de texto?
+## Por que utilizar a função de busca e substituição em textos?
 
-Fazer busca e substituição de texto em programas PHP é uma importante habilidade para qualquer desenvolvedor. Com esta técnica, é possível encontrar e substituir blocos de texto específicos em um conjunto de dados, poupando tempo e esforço em processos de edição manual.
+A busca e substituição de textos é uma ferramenta muito útil para programadores PHP. Com ela, é possível realizar alterações em um texto de forma rápida e eficiente, economizando tempo e evitando erros manuais. Além disso, essa função também pode facilitar a manutenção de códigos e a automação de tarefas.
 
-## Como fazer busca e substituição em PHP
+## Como utilizar a função de busca e substituição em PHP
 
-Fazer busca e substituição em PHP é um processo simples e eficiente. Para realizar essa tarefa, é preciso usar duas funções nativas do PHP: ```str_replace()``` e ```preg_replace()```. Vamos ver como cada uma delas funciona.
+Para utilizar a função de busca e substituição em PHP, é necessário utilizar a função `str_replace()`. Essa função possui os seguintes parâmetros: a string a ser substituída, a nova string que irá substituí-la e a string onde a busca será realizada.
 
-```
-<?php
-// Usando a função str_replace()
-$texto = "O rato roeu a roupa do rei de Roma";
-$resultado = str_replace("rato", "gato", $texto);
-echo $resultado;
+Por exemplo, se quisermos substituir a palavra "amarelo" por "vermelho" em um texto, o código seria o seguinte:
 
-// Saída: O gato roeu a roupa do rei de Roma
-
-// Usando a função preg_replace()
-$texto = "Ligue para (11) 99999-9999 para falar com nosso atendimento";
-$resultado = preg_replace("/(\([0-9]{2}\)) ([0-9]{4,5}-[0-9]{4})/", "Sua ligação foi encaminhada para o número $2", $texto);
-echo $resultado;
-
-// Saída: Ligue para Sua ligação foi encaminhada para o número 99999-9999 para falar com nosso atendimento
-?>
+```PHP
+$frase = "O céu está amarelo hoje.";
+$nova_frase = str_replace("amarelo", "vermelho", $frase);
+echo $nova_frase;
 ```
 
-Como podemos ver nos exemplos acima, a função ```str_replace()``` substitui todas as ocorrências de uma palavra por outra, enquanto a função ```preg_replace()``` usa expressões regulares para encontrar e substituir padrões. Você também pode usar essas funções em conjunto com outras funções de manipulação de strings do PHP, como ```explode()``` e ```implode()```, para ter ainda mais controle sobre o processo de busca e substituição.
+O resultado seria: "O céu está vermelho hoje." Como podemos ver, a função `str_replace()` substituiu todas as ocorrências da palavra "amarelo" pela palavra "vermelho".
 
-## Aprofundando na busca e substituição em PHP
+## Mais informações sobre a função de busca e substituição
 
-Para aqueles que desejam aprofundar seus conhecimentos em busca e substituição em PHP, é importante aprender a usar expressões regulares. Com elas, é possível encontrar e substituir padrões específicos em um texto, tornando o processo ainda mais versátil e poderoso. Além disso, é importante estar sempre atualizado sobre as diferentes funções nativas do PHP, pois novas versões sempre trazem melhorias e novidades úteis para o desenvolvimento.
+Além da função `str_replace()`, existem outras opções para realizar a busca e substituição de textos em PHP, como a função `preg_replace()`, que permite o uso de expressões regulares. Além disso, é possível utilizar parâmetros adicionais como o número máximo de substituições e a partir de qual ocorrência a busca deve ser realizada.
+
+No entanto, é importante ter cuidado com a sensibilidade a maiúsculas e minúsculas ao utilizar a função de busca e substituição, pois por padrão ela respeita a diferença entre letras maiúsculas e minúsculas.
 
 ## Veja também
 
-- [Documentação oficial do PHP: Funções de manipulação de strings](https://www.php.net/manual/pt_BR/ref.strings.php)
-- [Tutorial: Busca e substituição em PHP](https://www.php.net/manual/pt_BR/function.preg-replace)
-- [Site com expressões regulares interativas](https://regexr.com/)
+- Documentação PHP sobre a função `str_replace()`: https://www.php.net/manual/pt_BR/function.str-replace.php
+- Tutorial em vídeo sobre busca e substituição em PHP: https://www.youtube.com/watch?v=ePwH3uNpZuY
+- Artigo sobre expressões regulares em busca e substituição em PHP: https://blog.schoolofnet.com/2018/10/busca-e-substituicao-em-php/

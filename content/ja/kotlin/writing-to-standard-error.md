@@ -1,43 +1,62 @@
 ---
-title:                "Kotlin: 「標準エラーに書き込むこと」"
+title:                "Kotlin: 「標準エラーへの書き込み」"
+simple_title:         "「標準エラーへの書き込み」"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜコンソールのエラー表示をするのか
 
-エラーを書き込むことには、いくつかのメリットがあります。最も一般的なのは、プログラムの実行時に発生したエラーをキャッチするためです。また、デバッグやトラブルシューティングの際にもエラーの詳細が必要になる場合があります。そういったケースでは、エラーを標準エラー出力に書き込むことで、問題の特定や解決に役立ちます。
+プログラミングをする際には、誤ったコードを書いたり、想定外のエラーが起きたりすることがあります。その際に、コンソールのエラー表示をすることで、どの部分が間違っているのか、どのようなエラーが起きているのかを確認することができます。そのため、エラー表示をすることはデバッグをする上でとても重要な役割を果たします。
 
-## 使い方
+## 書き方
 
-標準エラー出力に書き込むには、 `System.err.println()` メソッドを使用します。以下のように、エラーメッセージを文字列として渡すことで、エラーを書き込むことができます。
+Kotlinでは、`System.err`を使用して、コンソールにエラーを表示することができます。また、Kotlinの例外処理の中でも、例外をキャッチした際にエラーをコンソールに表示することができます。
 
 ```Kotlin
-// エラーメッセージを書き込む
-System.err.println("Error occurred.")
-
-// 変数の値を含むエラーメッセージを書き込む
-val num = 5
-System.err.println("Error: The value is $num")
+fun main() {
+    try {
+        // ここに起こりうるエラーを含むコードを書く
+    } catch (e: Exception) {
+        System.err.println("エラーが発生しました。: $e")
+    }
+}
 ```
 
-上記のコードを実行すると、次のような出力が得られます。
+上記の例では、`try-catch`ブロックを使用し、エラーが発生した場合に`System.err.println()`でエラーをコンソールに表示しています。
 
+## 深堀り
+
+Kotlinでは、標準ライブラリである`kotlin.io`を使用することで、さまざまな方法でエラーをコンソールに表示することができます。例えば、`println()`メソッドを使用することで、エラーを通常のテキストとして表示することができます。
+
+```Kotlin
+import kotlin.io.*
+
+fun main() {
+    println("エラーが発生しました。")
+}
 ```
-Error occurred.
-Error: The value is 5
+
+また、`e.printStackTrace()`を使用することで、エラーの詳細情報をコンソールに表示することもできます。
+
+```Kotlin
+fun main() {
+    try {
+        // ここに起こりうるエラーを含むコードを書く
+    } catch (e: Exception) {
+        e.printStackTrace()
+    }
+}
 ```
 
-## 詳細を見る
+このように、Kotlinではさまざまな方法でエラーをコンソールに表示することができます。これらをうまく活用することで、より効率的なデバッグを行うことができます。
 
-標準エラー出力を使用すると、エラーの詳細をプログラム実行中に確認することができます。また、これらの詳細をログファイルに書き込むことで、後から調査やトレースが可能になります。さらに、標準エラー出力を使用することで、エラーが発生した箇所や原因を特定しやすくなります。
+## 下記リンクも参考にしてみてください。
 
-## さらに見る
-
-* [Kotlin Standard Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/index.html)
-* [Using the Standard Error Output Stream in Java](https://www.baeldung.com/java-write-to-standard-error)
-* [Debugging Kotlin Code with Logback](https://www.baeldung.com/kotlin-logback)
-* [Kotlin Logging Tutorial](https://www.codevscolor.com/kotlin-logging/)
+- [Kotlin公式ドキュメント：標準ライブラリの使用](https://kotlinlang.org/docs/reference/basic-types.html#using-kotlin-standard-library)
+- [Kotlin公式ドキュメント：例外処理](https://kotlinlang.org/docs/reference/exceptions.html)
+- [Kotlin入門編：例外処理の基本](https://www.tohoho-web.com/kotlin/basic/exception.html)

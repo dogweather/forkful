@@ -1,17 +1,21 @@
 ---
-title:                "Go: Komentoriviparametrien lukeminen"
+title:                "Go: Puhekomentoriviparametrien lukeminen"
+simple_title:         "Puhekomentoriviparametrien lukeminen"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Komentoriviparametrien lukeminen on tärkeä taito jokaiselle Go-ohjelmoijalle. Käyttämällä tätä toimintoa voit antaa ohjelmillesi argumentteja suoraan komentoriviltä, mikä parantaa niiden joustavuutta ja käytettävyyttä.
+## Miksi lukea komentorivin argumentteja?
 
-## Kuinka
-Komennot voidaan lukea Go-kielellä käyttämällä `os` -pakettia ja sen `Args` -muuttujaa. Tämä muuttuja sisältää kaikki komentoriviltä saadut argumentit, joten voit käsitellä niitä ohjelmassasi haluamallasi tavalla. Alla on esimerkkikoodi, joka tulostaa komentoriviltä saadut argumentit:
+Yksi Go-ohjelmoinnin tärkeimmistä taidoista on käyttäjän syöttämän datan käsittely. Komentorivin argumentit ovat yksi tapa saada käyttäjältä tietoa ohjelmalle. Tässä blogikirjoituksessa opit, kuinka lukea ja käsitellä komentorivin argumentteja Go-kielellä.
+
+## Miten tehdä se?
+
+Go-kielellä komentorivin argumentteja voidaan lukea `os`-paketin `Args`-muuttujan avulla. Alla on esimerkki, jolla tulostetaan kaikki komentorivin argumentit:
 
 ```Go
 package main
@@ -22,24 +26,33 @@ import (
 )
 
 func main() {
-    arguments := os.Args
-
-    fmt.Println("Komentoriviltä saadut argumentit:")
-    for i := 1; i < len(arguments); i++ {
-        fmt.Println(arguments[i])
+    args := os.Args[1:]
+    for _, arg := range args {
+        fmt.Println(arg)
     }
 }
 ```
-Esimerkkitulostus:
+
+Jos käytämme yllä olevaa ohjelmaa komentorivillä seuraavasti:
+
 ```
-Komentoriviltä saadut argumentit:
+go run main.go Hello World
+```
+
+Saamme seuraavan tulosteen:
+
+```
 Hello
 World
 ```
 
-## Syvällinen sukellus
-Komentoriviparametrien lukeminen ei rajoitu vain yksinkertaiseen tulostamiseen. Voit myös käsitellä niitä monipuolisesti ja hyödyntää niitä ohjelman logiikassa. Esimerkiksi voit käyttää tiettyjä argumentteja asetusmuuttujina tai vertailla niitä tiettyihin parametreihin. Voit myös validoida argumentteja ja hälyttää käyttäjälle, jos annetut arvot eivät ole kelvollisia.
+Kuten näet, `os.Args`-muuttuja tallettaa kaikki komentorivin argumentit `[]string`-tyypin listana. Voit käyttää tavallisia `for`-silmukoita tai `range`-silmukoita käsitelläksesi näitä argumentteja.
+
+## Syvällisempi tarkastelu
+
+Komentorivin argumenttien lukeminen ei rajoitu vain `os.Args`-muuttujan käyttöön. Go-kielessä on myös `flag`-paketti, joka tarjoaa enemmän toiminnallisuutta komentorivin argumenttien käsittelyyn. Voit lukea lisätietoja tästä paketista Go:n [virallisesta dokumentaatiosta](https://golang.org/pkg/flag/).
 
 ## Katso myös
-- [os-paketti Go-kielen virallisessa dokumentaatiossa](https://golang.org/pkg/os/)
-- [Go-ohjelmointikielen perusteet](https://www.golang-book.com/books/intro)
+
+- [Go:n viralliset dokumentaatiot komentorivin argumenttien käsittelystä](https://golang.org/pkg/os/#Args)
+- [Go:n viralliset dokumentaatiot `flag`-paketista](https://golang.org/pkg/flag/)

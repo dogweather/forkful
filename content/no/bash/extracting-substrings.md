@@ -1,58 +1,45 @@
 ---
-title:                "Bash: Ekstrahering av substringer"
+title:                "Bash: Utvinning av delstrenger"
+simple_title:         "Utvinning av delstrenger"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Har du noen gang lurt på hvordan du kan trekke ut en del av en tekststreng i et Bash-skript? Kanskje du har en fil med mange adresser og trenger bare å få ut postnummeret? Å trekke ut substrings er en nyttig og effektiv måte å behandle tekst på, og det kan spare deg mye tid og arbeid når du jobber med store datamengder.
 
-## Slik gjør du det
-For å trekke ut en del av en tekststreng i Bash, bruker du kommandoen `cut`. Denne kommandoen lar deg angi start- og sluttposisjonen for den delen av strengen du vil få ut. La oss si at du har en fil med massevis av e-postadresser, og du bare vil få ut brukernavnene. Du kan bruke følgende kommando:
+Å utvinne substrings kan være nyttig når du trenger å isolere og manipulere bestemte deler av en tekststreng. Dette kan være spesielt praktisk når du jobber med tekstbaserte datafiler eller i tilfeller der du trenger å utføre ulike handlinger basert på visse deler av en tekst.
 
-```Bash
-cut -d "@" -f 1 email_list.txt
-```
-Dette kommandoen deler hver linje i filen ved hjelp av "@" som skiller, og tar den første delen som brukernavn. La oss si at du har en fil som inneholder følgende:
+## Hvordan
+
+Det finnes flere måter å utvinne substrings på i Bash. En av de enkleste måtene er å bruke kommandoen "cut". La oss si at vi har en tekstfil med navnene på ulike personer, og vi bare ønsker å hente ut etternavnene. Vi kan gjøre dette ved å bruke følgende kommando:
 
 ```Bash
-john.smith@example.com
-jane.doe@example.com
+cut -d " " -f2 persons.txt
 ```
-Etter å ha kjørt kommandoen, vil du få følgende output:
+
+I dette eksempelet bruker vi "cut"-kommandoen til å dele opp tekstfilen ved hjelp av mellomrom som skilletegn ("-d" argumentet) og deretter selektere den andre samlingen av ord ("-f2" argumentet). Dette vil resultere i en utgang som bare inneholder etternavnene til personene i filen.
+
+En annen metode for å utvinne substrings er å bruke en kombinasjon av ulike Bash-kommandoer som "grep" og "sed". La oss si at vi har en lang tekststreng og vi bare ønsker å hente ut den første bokstaven. Vi kan gjøre dette ved å bruke følgende kommandoer:
 
 ```Bash
-john.smith
-jane.doe
-```
-Du kan også bruke `cut` til å få ut deler av strenger basert på et bestemt antall tegn, i stedet for posisjon. For eksempel, la oss si at du har en tekststreng som består av et navn etterfulgt av et ID-nummer, og du vil få ut bare navnet. Du kan bruke følgende kommando:
-
-```Bash
-cut -c 1-5 name_id.txt
-```
-Dette vil returnere de første 5 tegnene i hver linje i filen. Hvis fila ser slik ut:
-
-```Bash
-John123
-Jane456
+echo "lang tekststreng" | grep -o "." | sed -n 1p
 ```
 
-Vil output være:
-
-```Bash
-John1
-Jane4
-```
+Her bruker vi "grep"-kommandoen til å finne alle tegn ("-o" argumentet) i teksten og deretter bruker "sed"-kommandoen til å bare returnere den første linjen ("-n 1p" argumentet).
 
 ## Dykk dypere
-Nå som du vet hvordan du skal bruke `cut` for å trekke ut substrings, kan du også utforske flere funksjoner og alternativer til denne kommandoen. For eksempel kan du bruke `-s` alternativet for å hoppe over linjer som ikke inneholder et bestemt tegn eller tegnsekvens. Du kan også bruke `-n` for å spesifisere et område av tegn som skal returneres uten noen ganger å bruke en separat fil for å definere det området.
 
-Du kan også bruke kommandoen `grep` for å trekke ut substrings basert på et søkeord eller et mønster i teksten. Dette kan være nyttig for å filtrere ut bestemte data fra en større tekstfil.
+I tillegg til disse enkle eksemplene, er det også mange andre alternativer og muligheter når det kommer til å utvinne substrings i Bash. Du kan for eksempel bruke forskjellige regex uttrykk for mer avanserte søk eller bruke variabler for å lagre og manipulere utvinnet tekst.
+
+Det er også viktig å merke seg at Bash fungerer ganske likt uavhengig av hvilket operativsystem du bruker det på. Dette gjør det enkelt å lære det en gang og deretter bruke det på tvers av forskjellige plattformer.
 
 ## Se også
-- [Offisiell dokumentasjon for cut command](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
-- [W3Schools tutorial for Bash strings](https://www.w3schools.com/bash/bash_substrings.asp) 
-- [Guide til grep command](https://www.geeksforgeeks.org/grep-command-in-unixlinux/)
+
+- [Cut Command in Unix (With Examples)](https://www.geeksforgeeks.org/cut-command-in-unix-with-examples/)
+- [Basic Sed Commands](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
+- [Bash Regex Tutorial](https://www.digitalocean.com/community/tutorials/an-introduction-to-regular-expressions-in-bash)
+- [Bash Variable Substitution](https://linuxize.com/post/bash-variable-substitution/)

@@ -1,49 +1,41 @@
 ---
-title:                "Bash: Génération de nombres aléatoires"
+title:                "Bash: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "Bash"
-category:             "Numbers"
+category:             "Bash"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi générer des nombres aléatoires ?
+## Pourquoi
 
-Générer des nombres aléatoires est un élément essentiel de la programmation, et cela peut être utile dans de nombreuses applications. Cela peut être utilisé pour créer des jeux, des simulations, des tests et bien plus encore. Les nombres aléatoires ajoutent de l'imprévisibilité à vos programmes et peuvent rendre votre code plus dynamique et intéressant.
+La génération de nombres aléatoires est un outil essentiel en programmation Bash. Elle permet de créer des applications plus dynamiques et interactives en ajoutant un élément imprévisible aux résultats. Cela peut être utile pour les jeux, les simulations ou tout simplement pour ajouter de l'intérêt à un programme.
 
-## Comment le faire en Bash ?
+## Comment faire
 
-En Bash, générer des nombres aléatoires est assez simple. Vous pouvez utiliser la commande `shuf`, qui mélange les lignes d'un fichier et retourne une ligne aléatoire. Par exemple, si vous souhaitez générer un nombre aléatoire compris entre 1 et 100, vous pouvez utiliser la commande suivante :
-
-```Bash
-shuf -i 1-100 -n 1
-```
-Cela retournera un nombre aléatoire entre 1 et 100. Vous pouvez également utiliser la commande `RANDOM`, qui génère un nombre aléatoire compris entre 0 et 32767 à chaque fois qu'elle est exécutée. Voici un exemple de code utilisant `RANDOM` pour générer 5 nombres aléatoires :
+Pour générer des nombres aléatoires en Bash, nous pouvons utiliser la commande `shuf`. Voici un exemple de code pour générer un nombre aléatoire entre 1 et 10 :
 
 ```Bash
-for i in {1..5}
-do
-  echo $RANDOM
-done
-```
-Cela produira une sortie semblable à ceci :
-
-```
-10878
-28057
-13947
-21219
-26056
+echo $((1 + $RANDOM % 10))
 ```
 
-## Plongée dans le sujet
+Le code ci-dessus utilise une méthode simple en utilisant `RANDOM`, une variable interne de Bash qui génère un nombre aléatoire entre 0 et 32767. Nous pouvons ensuite utiliser l'opérateur `%` pour limiter la plage et l'opérateur `+` pour spécifier à partir de quel nombre nous voulons commencer. Vous pouvez également modifier ces valeurs selon vos besoins.
 
-Vous pourriez vous demander comment Bash génère réellement ces nombres aléatoires. La réponse est qu'il utilise le générateur de nombres pseudo-aléatoires de GNU, qui utilise une formule mathématique pour produire des nombres qui semblent aléatoires. Cependant, ces nombres ne sont pas vraiment aléatoires car ils peuvent être reproduits en utilisant la même formule. Cela peut sembler peu fiable, mais pour la plupart des cas d'utilisation courants, cela fonctionne bien.
+Il est important de noter que `RANDOM` utilise une graine pseudo-aléatoire, donc si vous voulez obtenir des résultats vraiment aléatoires, vous devriez utiliser un ensemble de graines différentes à chaque exécution.
 
-Si vous souhaitez utiliser des nombres vraiment aléatoires dans votre code Bash, vous pouvez utiliser des sources externes comme un générateur de nombres aléatoires matériel ou des données provenant d'une source en ligne. Cela nécessite des connaissances plus avancées en programmation Bash et n'est pas nécessaire pour la plupart des projets.
+## Plongée en profondeur
+
+Si vous souhaitez en savoir plus sur la génération de nombres aléatoires en Bash, il existe une commande intégrée appelée `$RANDOM` qui utilise une vraie source d'entropie pour générer des nombres aléatoires. Cela rend les résultats plus sûrs et plus aléatoires que la méthode précédente. Voici un exemple d'utilisation :
+
+```Bash
+echo $RANDOM
+```
+
+En utilisant cette méthode, aucun calcul n'est nécessaire et la plage de nombres est plus large, allant de 0 à 32767.
 
 ## Voir aussi
 
-- [Documentation Bash sur la commande shuf](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
-- [Documentation Bash sur la variable RANDOM] (https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
-- [Article sur les nombres aléatoires en Bash] (https://www.linuxjournal.com/content/bash-tips-random-numbers)
+- La documentation officielle de Bash sur `shuf` : https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html
+- Des exemples de code pour générer des nombres aléatoires en Bash : https://linuxhint.com/bash_random_numbers/

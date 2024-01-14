@@ -1,37 +1,46 @@
 ---
 title:                "PHP: Merkkijonon pituuden löytäminen"
+simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi etsiä merkkijonon pituutta?
+## Miksi
 
-Monissa ohjelmointitehtävissä voi olla tarpeen selvittää kuinka monta merkkiä tai kirjainta sisältää tietty merkkijono. Tämä tieto on tärkeä esimerkiksi jäsenten salasanojen tarkistamisessa tai tekstin formatoinnissa.
- 
-# Näin teet sen
+On monia tilanteita, joissa ohjelmoinnissa on tarpeen selvittää merkkijonon pituus. Esimerkiksi tietokannan tiedon tallentamisessa, tekstikenttien validoinnissa tai yksinkertaisesti merkkijonon muotoilun yhteydessä. Siksi on tärkeää ymmärtää miten PHP:ssä löydetään merkkijonon pituus.
 
-PHP:ssa on sisäänrakennettu funktio `strlen()`, joka palauttaa merkkijonon pituuden. Alla on esimerkkikoodi ja sen tuloste:
+## Kuinka
+Merkkijonon pituuden löytäminen PHP:ssä on hyvin yksinkertaista, sillä siihen on valmiiksi sisäänrakennettu funktio `strlen()`. Tämä funktio saa parametrinaan halutun merkkijonon ja palauttaa sen pituuden. 
 
 ```PHP
-<?php
 $merkkijono = "Tämä on esimerkki";
 echo strlen($merkkijono);
 ```
 
-Tulostus: 18
+Tämä koodi tulostaa näytölle luvun 18, sillä merkkijonossa on 18 merkkiä. On kuitenkin tärkeää huomata, että merkkijonon pituus lasketaan myös välilyönnit ja välimerkit mukaan lukien. 
 
-# Syvemmälle merkkijonon pituuteen
+```PHP
+$merkkijono = "Tämä on esimerkki!";
+echo strlen($merkkijono);
+```
+Tässä tapauksessa tulostuksena on 19.
 
-Merkkijonon pituuden laskeminen ei välttämättä ole aina yksinkertaista. Esimerkiksi jotkin merkit, kuten aakkoset eri kielistä, voivat olla tavallista pidempiä ja vaikuttaa siten merkkijonon pituuteen. Lisäksi merkkijonon pituuden laskeminen voi olla haastavampaa monimutkaisten tietorakenteiden, kuten moniulotteisten taulukoiden, yhteydessä.
+## Sukella syvemmälle
+Merkkijonon pituuden laskeminen ei aina ole yksiselitteistä, sillä se riippuu käytetystä merkistöstä. Esimerkiksi erikoismerkit, kuten ääkköset, voivat vaikuttaa pituuteen eri tavalla. Siksi on hyvä tarkistaa, että käytetty merkistö sopii tarkoitukseen.
 
-On myös tärkeää huomata, että `strlen()` -funktio mittaa merkkijonon pituuden merkeissä eikä sanoissa. Jos haluat laskea sanamäärän, sinun tulee käyttää esimerkiksi `str_word_count()` -funktiota.
+On myös mahdollista muuntaa merkkijono eri muotoon ennen sen pituuden laskemista. Tämä on hyödyllistä esimerkiksi silloin, kun halutaan poistaa välilyönnit merkkijonosta ennen sen pituuden tarkistamista. Tämä onnistuu `trim()`-funktiolla.
 
-# Katso myös
+```PHP
+$merkkijono = " Tämä on esimerkki ";
+echo strlen($merkkijono); // Tulostaa 21
+echo strlen(trim($merkkijono)); // Tulostaa 18
+```
 
-- [`strlen()` -funktion dokumentaatio](https://www.php.net/manual/en/function.strlen.php)
-- [`str_word_count()` -funktion dokumentaatio](https://www.php.net/manual/en/function.str-word-count.php)
-- [5 tapaa laskea PHP:ssa merkkijonon pituus](https://www.codementor.io/@ammach/5-ways-to-calculate-the-length-of-a-string-in-php-g8b1d7zm9)
-- [Merkkijonon käsittely PHP:ssa](https://www.php.net/manual/en/book.strings.php)
+## Katso myös
+- PHP:n virallinen dokumentaatio `strlen()`-funktiosta: https://www.php.net/manual/en/function.strlen.php
+- Tietoa merkistöistä PHP:ssä: https://www.php.net/manual/en/function.mb-internal-encoding.php
+- `trim()`-funktion dokumentaatio: https://www.php.net/manual/en/function.trim.php

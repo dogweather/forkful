@@ -1,7 +1,9 @@
 ---
 title:                "Rust recipe: Deleting characters matching a pattern"
+simple_title:         "Deleting characters matching a pattern"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,42 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever found yourself needing to delete certain characters from a string in your Rust code? Maybe you want to remove all whitespace or specific punctuation marks. Whatever the reason may be, knowing how to delete characters matching a pattern can come in handy when working with strings in Rust.
+In programming, deleting characters that match a certain pattern is a common task. Whether it's cleaning up user input or removing unwanted characters from a string, this can be a useful skill to have in your programming arsenal. In this blog post, we'll explore how to efficiently delete characters matching a pattern in the Rust programming language.
 
 ## How To
 
-To delete characters matching a pattern in Rust, we can use the `trim_matches` method from the `str` type. This method takes in a character or string pattern and removes any occurrences of it from both the beginning and end of the string.
+To delete characters that match a pattern in Rust, we can use the `replace` method from the standard library's `String` type. This method takes in a pattern and a replacement string and returns a new string with all occurrences of the pattern replaced with the replacement string.
 
-Here is an example of how we can use `trim_matches` to remove all whitespace from a string:
-
-```Rust
-let string = "   Hello Rust  ";
-let trimmed = string.trim_matches(' ');
-println!("Trimmed string: {}", trimmed);
-
-// Output: Trimmed string: HelloRust
-```
-
-As you can see, the `trim_matches` method removed all the whitespace from the original string, leaving us with only the desired characters.
-
-We can also specify a string pattern instead of a single character. Let's say we want to remove all occurrences of "Rust" from a string. We can do so by passing in the string pattern "Rust" to the `trim_matches` method.
+Let's take a look at an example:
 
 ```Rust
-let string = "Hello Rust, welcome to my code";
-let trimmed = string.trim_matches("Rust");
-println!("Trimmed string: {}", trimmed);
-
-// Output: Trimmed string: Hello , welcome to my code
+let str = "Hello,world!";
+let new_str = str.replace(",", "");
 ```
+
+In this code, we have a string that contains a comma between the words "Hello" and "world". Using the `replace` method, we provide the comma as our pattern and an empty string as our replacement. The output will be a string without the comma, which is equal to "Hello world!".
+
+We can also use the `replace` method to remove multiple characters that match a specific pattern. We can provide a string as our pattern and an empty string as the replacement, and all the characters in the pattern string will be removed.
+
+Let's see another example:
+
+```Rust
+let str = "This is a test string!";
+let new_str = str.replace("aeiou", "");
+```
+
+In this code, we use the `replace` method to remove all vowels from the string. The result will be "Ths s  tst strng!".
 
 ## Deep Dive
 
-Under the hood, the `trim_matches` method uses pattern matching to identify and remove characters from the string. This makes it a powerful and versatile tool for deleting characters in Rust.
+Under the hood, the `replace` method is using the `std::mem::replace` function, which replaces all occurrences of a pattern in a string slice with a replacement string. It also handles Unicode characters properly, making it a safe and efficient method to use.
 
-It's also worth noting that the `trim_matches` method returns a string slice, meaning it doesn't modify the original string. If you want to modify the original string, you can use the `to_string` method to convert the string slice back into a `String` type.
+Additionally, if we want to only remove characters from a string without replacing them with anything, we can use the `retain` method from the `String` type. This method takes a closure as an argument, and any character that returns `false` from the closure will be removed from the string.
+
+Here's an example:
+
+```Rust
+let str = "123abc456";
+let new_str = str.retain(|c| c.is_numeric()); 
+```
+
+This code will keep only the numbers in the string and remove all the alphabetic characters, resulting in "123456".
 
 ## See Also
 
-- [Rust Documentation on Strings](https://doc.rust-lang.org/std/primitive.str.html)
-- [Rust Playground](https://play.rust-lang.org/) (try out the code snippets in this post)
-- [Rust Book](https://doc.rust-lang.org/book/) (a comprehensive guide to Rust language)
+If you want to dive deeper into string manipulation in Rust, here are some recommended resources:
+
+- [Rust standard library documentation on String](https://doc.rust-lang.org/std/string/index.html)
+- [Official Rust book chapter on strings and operations](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html)
+- [Rust Playground](https://play.rust-lang.org/) for quick and easy coding experiments.

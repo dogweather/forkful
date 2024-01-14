@@ -1,34 +1,46 @@
 ---
 title:                "Javascript: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto umieć pisać do standardowego błędu?
+### Dlaczego warto używać standardowego wyjścia błędu w programowaniu Javascript?
 
-Pisanie do standardowego błędu jest niezbędną umiejętnością dla każdego programisty. Pozwala ono na monitorowanie występujących błędów podczas uruchamiania kodu i szybkie ich naprawianie. Dzięki temu proces tworzenia oprogramowania jest bardziej efektywny i przyspiesza czas dostarczenia działającego produktu.
+Często podczas pisania kodu, natrafiamy na błędy, które uniemożliwiają poprawne działanie naszej aplikacji. W takich sytuacjach bardzo pomocne jest używanie standardowego wyjścia błędu w Javascript. Dzięki temu możemy szybko zlokalizować problem i naprawić go, co przyczyni się do poprawnego działania naszego programu.
 
-## Jak to zrobić?
+### Jak używać standardowego wyjścia błędu w Javascript?
 
-Aby pisać do standardowego błędu w języku Javascript, wystarczy użyć funkcji `console.error()`. Przykładowy kod wyglądałby następująco:
+Aby móc korzystać ze standardowego wyjścia błędu w Javascript, musimy znać kilka prostych komend. Pierwszą z nich jest ```console.error()```, która pozwala nam na wypisanie błędu w konsoli przeglądarki. Przykładowo:
 
 ```Javascript
-console.error("Błąd: Niedostępny plik");
+let num = "abc";
+
+if(isNaN(num)){
+    console.error("Wprowadzony argument nie jest liczbą");
+}
 ```
 
-Wywołanie tej funkcji spowoduje wyświetlenie wiadomości o błędzie w konsoli przeglądarki lub środowisku node.js. Można również przekazać więcej argumentów do funkcji, dzięki czemu błąd będzie zawierał szczegółowe informacje na temat jego przyczyny.
+W tym przykładzie, wprowadzenie tekstu zamiast liczby do zmiennej "num", spowoduje wypisanie błędu w konsoli: "Wprowadzony argument nie jest liczbą".
 
-## Wnikliwszy przegląd
+Możemy także użyć ```process.stderr.write()```, aby wypisać błąd w terminalu. Przykład:
 
-Pisanie do standardowego błędu jest przydatne nie tylko podczas debugowania kodu, ale także do obsługi wyjątków. Można wykorzystać instrukcję `try...catch` do przechwytywania błędów i wyświetlania ich w konsoli przy użyciu funkcji `console.error()`.
+```Javascript
+process.stderr.write("Błąd: Nie można odnaleźć pliku");
+```
 
-Kolejną zaletą pisania do standardowego błędu jest możliwość przekierowania informacji o błędzie do pliku dziennika (ang. log file). Jest to szczególnie przydatne w przypadku aplikacji internetowych, gdzie dostęp do konsoli przeglądarki jest utrudniony.
+Ten kod spowoduje wypisanie tekstu "Błąd: Nie można odnaleźć pliku" w terminalu.
 
-## Zobacz także
+### Głębszy wgląd w wykorzystanie standardowego wyjścia błędu w Javascript
 
-- [Dokumentacja funkcji console.error() w języku Javascript](https://developer.mozilla.org/pl/docs/Web/API/Console/error)
-- [Przewodnik po obsłudze błędów w języku Javascript](https://www.w3schools.com/js/js_errors.asp)
-- [Przykładowy kod z wykorzystaniem funkcji console.error()](https://www.geeksforgeeks.org/javascript-console-error-with-examples/)
+Używanie standardowego wyjścia błędu jest nie tylko przydatne w sytuacjach, gdy występują błędy w naszym kodzie. Możemy też wykorzystać to narzędzie do debugowania naszej aplikacji. W przypadku, gdy chcemy śledzić pewne wartości w naszym programie, możemy użyć ```console.error()``` lub ```process.stderr.write()``` do wypisywania tych wartości w konsoli lub terminalu. Dzięki temu możemy szybko sprawdzić, czy nasze zmienne mają poprawne wartości i czy nasz kod działa zgodnie z oczekiwaniami.
+
+### Zobacz także
+
+- [Jak używać standardowego wyjścia błędu w Javascript](https://developer.mozilla.org/pl/docs/Web/API/console/error)
+- [Tutorial: Debugowanie aplikacji Javascript z wykorzystaniem standardowego wyjścia błędu](https://www.digitalocean.com/community/tutorials/how-to-debug-node-js-errors)
+- [Informacje o module "process" w Node.js](https://nodejs.org/docs/latest/api/process.html)

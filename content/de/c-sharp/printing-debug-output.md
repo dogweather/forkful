@@ -1,34 +1,62 @@
 ---
-title:                "C#: Ausgabe von Debuginformationen drucken"
+title:                "C#: Debug-Ausgabe drucken"
+simple_title:         "Debug-Ausgabe drucken"
 programming_language: "C#"
-category:             "Testing and Debugging"
+category:             "C#"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum: Debugging-Output zu drucken kann ein nützliches Werkzeug sein, um Fehler in deinem C# Code zu finden und zu lösen.
+## Warum
 
-Wie geht's: Um Debugging-Output in deinem Code zu drucken, kannst du die Methode "Console.WriteLine()" verwenden. Dies ermöglicht es dir, Text auf der Konsole auszugeben, um den Wert von Variablen oder andere relevante Informationen anzuzeigen.
+Debug-Ausgaben sind ein wichtiges Instrument für Entwickler, um Fehler in ihrem Code zu finden und zu beheben. Durch das Drucken von debug-Ausgaben können Entwickler den Zustand ihres Codes zu einem bestimmten Zeitpunkt nachvollziehen und so potenzielle Fehlerquellen identifizieren.
+
+## Wie
+
+Das Drucken von debug-Ausgaben in C# ist einfach und kann auf verschiedene Arten erfolgen. Hier sind zwei Beispiele:
 
 ```C#
+// Beispiel 1: Verwendung von Console.WriteLine()
+int num = 10;
+Console.WriteLine($"num hat den Wert von {num}");
+
+// Output: num hat den Wert von 10
+```
+
+```C#
+// Beispiel 2: Verwendung von Debug.WriteLine()
+Debug.WriteLine("Dies ist eine Debug-Ausgabe");
+
+// Output in der Debug-Konsole: Dies ist eine Debug-Ausgabe
+```
+
+Diese Beispiele zeigen, dass wir entweder die `Console.WriteLine()`-Methode oder die `Debug.WriteLine()`-Methode verwenden können, um debug-Ausgaben zu drucken.
+
+## Deep Dive
+
+In C# gibt es verschiedene Arten, wie wir debug-Ausgaben formatieren können. Wir können z.B. die Platzhalter-Syntax (`${}`) oder die String-Interpolation (`$""`) verwenden, um Variablenwerte in unsere Ausgabe einzubinden.
+
+```C#
+// Platzhalter-Syntax
+string name = "Max Mustermann";
+Console.WriteLine("Mein Name ist {0}", name);
+
+// Output: Mein Name ist Max Mustermann
+
+// String-Interpolation
 int num1 = 5;
 int num2 = 10;
-Console.WriteLine("Der Wert von num1 ist: " + num1);
-Console.WriteLine($"Der Wert von num2 ist: {num2}"); 
+Console.WriteLine($"Das Ergebnis von {num1} + {num2} ist {num1 + num2}");
+
+// Output: Das Ergebnis von 5 + 10 ist 15
 ```
 
-Ausgabe:
-```
-Der Wert von num1 ist: 5
-Der Wert von num2 ist: 10
-```
+Zusätzlich können wir durch das Setzen von Breakpoints in Visual Studio und das Hinzufügen von Debug-Messages unsere Ausgabe noch genauer kontrollieren und beobachten.
 
-Tipp: Du kannst auch Kombinationen von Text und Variablen innerhalb der "Console.WriteLine()" Methode verwenden, um mehr Informationen auszugeben.
+## Siehe auch
 
-Tiefergehende Informationen: Wenn du noch tiefer in das Thema Debugging-Output eintauchen möchtest, gibt es einige zusätzliche Techniken, die du verwenden kannst. Zum Beispiel kannst du die Methode "Console.Clear()" verwenden, um die Konsole vor jedem Aufruf von "Console.WriteLine()" zu leeren. Dies verhindert, dass sich die Ausgabe überschneidet und macht das Lesen des Outputs einfacher.
-
-Siehe auch:
-- [Microsoft Dokumentation zu Console.WriteLine()](https://docs.microsoft.com/en-us/dotnet/api/system.console.writeline)
-- [Tutorial zu Debugging in C#](https://www.tutorialspoint.com/csharp/csharp_debugging.htm)
-- [Blog Artikel: 5 Tipps zum effektiven Debugging in C#](https://www.syncfusion.com/blogs/post/5-tips-to-make-your-csharp-debugging-more-effective.aspx)
+- [Debug-Ausgaben in C#](https://docs.microsoft.com/de-de/visualstudio/debugger/using-the-debugger-window?view=vs-2019)
+- [Tipps und Tricks für das Debuggen in C#](https://stackify.com/csharp-debugging-tips/)
+- [Fehlerbehebung in C#](https://www.codeproject.com/Articles/6948/Debugging-in-C-A-tutorial)

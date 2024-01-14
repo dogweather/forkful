@@ -1,7 +1,9 @@
 ---
-title:                "C#: 检查目录是否存在。"
+title:                "C#: 检查目录是否存在"
+simple_title:         "检查目录是否存在"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/checking-if-a-directory-exists.md"
 ---
 
@@ -9,44 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-有时候在编程过程中，我们需要检查某个特定目录是否存在。这可以帮助我们避免出错或者优化我们的代码。接下来我们将学习如何通过C#代码来检查目录是否存在。
+当我们在编程过程中需要经常读取或写入文件时，我们需要先确保所需的目录是否存在。这样我们才能对文件进行正确的操作。如果我们没有检查目录的存在性，可能会导致程序出错或无法正常运行。
 
-## 如何做
+## 如何操作
 
-我们可以使用`Directory.Exists()`方法来检查目录是否存在。下面是一个简单的示例代码：
+在C#中，我们可以使用Directory类的Exists方法来检查目录是否存在。首先，我们需要导入System.IO命名空间。接下来，在主函数中，我们可以使用if语句来判断目录是否存在，并打印出相应的结果。
 
-```C#
-if(Directory.Exists("C:\\myDirectory")) 
+```
+using System;
+using System.IO;
+
+class Program
 {
-    // 如果目录存在，执行这里的代码
-    Console.WriteLine("myDirectory存在!");
-} 
-else 
-{
-    // 如果目录不存在，执行这里的代码
-    Console.WriteLine("myDirectory不存在!");
+    static void Main()
+    {
+        if (Directory.Exists(@"C:\Users\Username\Desktop\NewFolder"))
+        {
+            Console.WriteLine("目录存在！");
+        }
+        else
+        {
+            Console.WriteLine("目录不存在！");
+        }
+    }
 }
 ```
 
-上述代码将会先检查"C:\\myDirectory"是否存在，在代码中进行相应的输出。如果目录存在，将会输出"myDirectory存在!"，如果目录不存在，将会输出"myDirectory不存在!"。
+输出结果：
 
-## 深入探讨
+```
+目录存在！
+```
 
-在深入探讨检查目录是否存在的过程中，我们需要了解`Directory.Exists()`方法的工作原理。该方法将会返回一个布尔值，表示目录是否存在。如果目录存在，则返回`true`，如果目录不存在，则返回`false`。
+## 深入了解
 
-同时，我们还可以使用`FileAttributes.Directory`来检查目录的属性，以确定它是否为一个目录而不是一个文件。在这种情况下，我们不仅需要检查目录是否存在，还需要确认它是一个目录。
-
-## 参考链接
-
-- [MSDN 文档：Directory.Exists 方法（System.IO）](https://msdn.microsoft.com/zh-cn/library/system.io.directory.exists(v=vs.110).aspx)
-- [MSDN 文档：FileAttributes 枚举](https://msdn.microsoft.com/zh-cn/library/system.io.fileattributes(v=vs.110).aspx)
-- [C# 目录和文件操作教程](https://www.tutorialspoint.com/csharp/csharp_directories.htm)
-
-
----
+除了使用Exists方法，我们还可以使用其他方法来检查目录的存在性。例如，可以通过调用Directory.GetDirectories方法来获取指定路径下的目录数组，并判断目录数组中是否包含了我们需要的目录名称。
 
 ## 参考链接
 
-- [MSDN Documentation: Directory.Exists Method (System.IO)](https://msdn.microsoft.com/en-us/library/system.io.directory.exists(v=vs.110).aspx)
-- [MSDN Documentation: FileAttributes Enumeration](https://msdn.microsoft.com/en-us/library/system.io.fileattributes(v=vs.110).aspx)
-- [C# Directory and File Operations Tutorial](https://www.tutorialspoint.com/csharp/csharp_directories.htm)
+- Directory.Exists 方法 (System.IO) - https://docs.microsoft.com/zh-cn/dotnet/api/system.io.directory.exists?view=netframework-4.8
+- About DirectoryInfo and FileInfo (System.IO) - https://docs.microsoft.com/zh-cn/dotnet/standard/io/file-directory-and-drive-manipulation
+- Directory Class (System.IO) - https://docs.microsoft.com/zh-cn/dotnet/api/system.io.directory?view=netframework-4.8
+- System.IO命名空间 - https://docs.microsoft.com/zh-cn/dotnet/api/system.io?view=netframework-4.8#properties
+- Microsoft: C# Documentation - https://docs.microsoft.com/zh-cn/dotnet/csharp/

@@ -1,44 +1,66 @@
 ---
-title:                "Go: Szukanie i zamiana tekstu"
+title:                "Go: Wyszukiwanie i zamiana tekstu"
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Witajcie! Jeśli jesteś programistą, który często pracuje z tekstem, na pewno zdarza się Tobie przeszukiwać i zamieniać fragmenty tekstu w swoim kodzie. W tym poście przyjrzymy się temu, dlaczego jest to ważne i jak to zrobić w języku Go.
+
+W dzisiejszych czasach programowanie jest nieodłączną częścią codziennej pracy wielu osób. Często spotykamy się z koniecznością zmieniania dużych ilości tekstu w naszym kodzie. Dlatego warto poznać sposoby na efektywne wyszukiwanie i wymienianie tekstu w języku Go.
 
 ## Jak to zrobić
-Aby przeszukiwać i zamieniać tekst w Go, musimy skorzystać z funkcji `strings.Replace()`. Poniżej znajdziesz prosty przykład kodu, który zamienia słowo "Hello" na "Hola":
+
+Pierwszym krokiem jest skupienie się na funkcji `strings.Replace()`, która jest wbudowana w język Go. Pozwala ona na wyszukiwanie i zamienianie określonych fragmentów tekstu w danej napisanej linii kodu. Poniżej znajduje się przykład kodu, który demonstrować będzie tę funkcję:
 
 ```Go
 package main
 
-import(
-    "fmt"
-    "strings"
+import (
+  "fmt"
+  "strings"
 )
 
 func main() {
-    text := "Hello world!"
-    newText := strings.Replace(text, "Hello", "Hola", 1)
-    fmt.Println(newText) // Prints "Hola world!"
+  text := "Witamy w świecie Go!"
+  newText := strings.Replace(text, "Go", "programowania", 1)
+  fmt.Println(newText)
 }
+
+// output: Witamy w świecie programowania!
 ```
 
-Funkcja ta przyjmuje cztery argumenty: napis, który chcemy zamienić, fragment, który chcemy zastąpić, wartość zastępującą oraz liczbę wystąpień, które chcemy zamienić. W powyższym przykładzie użyliśmy wartości 1, więc zastąpiliśmy tylko pierwsze wystąpienie słowa "Hello". Jeśli chcesz zastąpić wszystkie wystąpienia, po prostu użyj parametru -1.
+Jak widać, funkcja `strings.Replace()` przyjmuje trzy argumenty - oryginalny tekst, szukaną frazę oraz tekst, na który ma zostać zamieniona szukana fraza. Dodatkowo, dodaliśmy trzeci argument w postaci liczby `1`, co oznacza, że zamiana wykona się tylko raz dla pierwszego napotkanego wystąpienia frazy "Go". W ten sposób możemy precyzyjnie kontrolować zamienianie tekstu w naszym kodzie.
 
-## Deep Dive
-Jeśli chcesz dowiedzieć się więcej na temat przeszukiwania i zamieniania tekstu w Go, warto zapoznać się z dokumentacją języka. Istnieje wiele różnych metod i funkcji, które mogą pomóc Ci w manipulowaniu tekstem, a znajomość ich może znacznie usprawnić Twoją pracę.
+## Głębsze zagadnienia
 
-## Zobacz też
-Jeśli chcesz zgłębić temat jeszcze bardziej, polecamy zapoznać się z tymi zasobami:
+W języku Go istnieje również funkcja `strings.ReplaceAll()`, która pozwala na globalne zastępowanie określonej frazy we wszystkich jej wystąpieniach w tekście. Poniżej przedstawiono jej prosty przykład:
 
-- Dokumentacja Go - https://golang.org/doc
-- Oficjalne forum języka Go - https://forum.golangbridge.org/
-- Poradniki i artykuły na temat Go - https://blog.golang.org/
-- Społeczność Go na Reddit - https://www.reddit.com/r/golang/
+```Go
+package main
 
-Dzięki funkcji `strings.Replace()` możemy łatwo przeszukiwać i zamieniać tekst w naszym kodzie. Mamy nadzieję, że ten artykuł okazał się dla Ciebie pomocny. Dziękujemy za przeczytanie!
+import (
+  "fmt"
+  "strings"
+)
+
+func main() {
+  text := "To jest przykładowy tekst, tekst, tekst!"
+  newText := strings.ReplaceAll(text, "tekst", "teksty")
+  fmt.Println(newText)
+}
+
+// output: To jest przykładowy teksty, teksty, teksty!
+```
+
+Dodatkowo, w języku Go istnieje możliwość wykorzystania wyrażeń regularnych do jeszcze bardziej precyzyjnego wyszukiwania i zamiany tekstu. W tym przypadku, należy wykorzystać pakiet `regexp` oraz funkcję `ReplaceAllString()`.
+
+## Zobacz również
+
+- [Dokumentacja funkcji strings.Replace() w języku Go](https://golang.org/pkg/strings/#Replace)
+- [Dokumentacja funkcji strings.ReplaceAll() w języku Go](https://golang.org/pkg/strings/#ReplaceAll)
+- [Dokumentacja pakietu regexp w języku Go](https://golang.org/pkg/regexp/)

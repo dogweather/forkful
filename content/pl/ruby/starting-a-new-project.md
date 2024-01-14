@@ -1,38 +1,41 @@
 ---
-title:                "Ruby: Rozpoczynając nowy projekt"
+title:                "Ruby: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Ruby"
-category:             "Getting Started"
+category:             "Ruby"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+Dlacz: Dlaczego zacząć nowy projekt w języku Ruby?
 
-Zacząć nowy projekt programowania może być trudnym wyzwaniem, ale jest to wspaniały sposób na naukę nowych umiejętności i rozwój osobisty. Tworzenie aplikacji i programów może być również bardzo satysfakcjonujące i możliwe do wykorzystania w życiu zawodowym.
+Ruby jest jednym z najpopularniejszych języków programowania na świecie, a jego popularność stale rośnie. Jego prostota i wyraźna składnia sprawiają, że jest on idealny zarówno dla początkujących, jak i doświadczonych programistów. Tworząc nowy projekt w języku Ruby, możesz cieszyć się jego elastycznością, czytelnością i wydajnością.
 
-## Jak to zrobić
+Jak to zrobić:
 
-Aby rozpocząć nowy projekt programowania w języku Ruby, należy pobrać i zainstalować najnowszą wersję Ruby na swoim komputerze. Następnie można użyć edytora kodu, takiego jak Visual Studio Code lub Atom, aby rozpocząć pisanie kodu w języku Ruby.
+```Ruby
+def hello(name)
+  puts "Witaj, #{name}!"
+end
 
-Poniżej znajduje się przykładowy kod w języku Ruby, który wyświetli prostą wiadomość "Witaj Świecie!" w konsoli:
-
-```ruby
-puts "Witaj Świecie!"
+hello("Polonais") # Wynik: Witaj, Polonais!
 ```
 
-Po napisaniu kodu, należy uruchomić go klikając przycisk "Run" lub używając skrótu klawiszowego. W konsoli powinna pojawić się nasza wiadomość "Witaj Świecie!".
+Powyższy przykład kodu pokazuje, jak niewiele wysiłku wymaga napisanie prostego programu w języku Ruby. Wystarczy określić nazwę funkcji, jej parametry i zaprogramować pożądane działanie. Język ten jest również bogaty w gotowe biblioteki i frameworki, co umożliwia szybkie tworzenie nowych projektów.
 
-## Wnikliwe spojrzenie
+Głęboka analiza:
 
-Początek nowego projektu programowania może być przytłaczający, ale warto poświęcić czas na zaplanowanie go i rozpoczęcie na prawo. Najważniejsze jest ustalenie celów i wyznaczenie kroków niezbędnych do osiągnięcia tych celów.
+Początki pracy nad nowym projektem mogą być przytłaczające. Aby ułatwić sobie życie i uniknąć problemów w przyszłości, warto przeprowadzić głębszą analizę przed przystąpieniem do kodowania. Oto kilka ważnych kroków, które warto wykonać:
 
-Kolejnym ważnym krokiem jest nauka podstaw języka Ruby i wybór odpowiednich narzędzi i bibliotek, które będą niezbędne do stworzenia danego projektu. Ważne jest również zapoznanie się z dobrymi praktykami programowania, takimi jak pisania czystego i czytelnego kodu.
+- Zdefiniuj cel projektu i jego zakres. Niezbędne jest określenie, czego dokładnie chcesz osiągnąć, aby mieć jasny kierunek podczas tworzenia kodu.
+- Wybierz odpowiednie narzędzia i biblioteki. Dobór odpowiednich narzędzi i bibliotek jest kluczowy dla osiągnięcia sukcesu w projekcie. Upewnij się, że wybierasz te, które najlepiej odpowiadają twoim potrzebom.
+- Stwórz plan działania. To ważne, aby mieć jasny plan, jakie kroki należy podjąć w celu osiągnięcia celu projektu. Skupienie na jednym zadaniu na raz może pomóc uniknąć chaosu i przyspieszyć pracę.
+- Testuj i udoskonalaj. Nie zapominaj o testowaniu swojego kodu i regularnym wprowadzaniu ulepszeń. To pozwoli uniknąć błędów i poprawić wydajność projektu.
 
-Po skończeniu projektu, warto przetestować go i poprosić o feedback od innych programistów. Ponadto, niezapomnianym elementem jest udostępnienie swojego projektu innym i otwarcie się na uwagi i sugestie, co pozwoli na dalszy rozwój umiejętności programistycznych.
+Zobacz także:
 
-## Zobacz również
-
-* [Ruby dla początkujących](https://guides.rubyonrails.org/getting_started.html)
-* [Podstawy programowania w języku Ruby](https://www.codecademy.com/learn/learn-ruby)
-* [Stosowane praktyki w programowaniu](https://www.theodinproject.com/courses/ruby-programming/lessons/basics)
+- 10 najlepszych darmowych kursów nauki języka Ruby: polecamy najbardziej wartościowe materiały, które pomogą ci szybko rozpocząć pracę nad nowym projektem w języku Ruby.
+- Strona oficjalna języka Ruby: tutaj znajdziesz wszystkie niezbędne informacje na temat samego języka, jego dokumentacji, aktualnej wersji i wiele więcej.
+- Ruby on Rails: popularny framework do tworzenia aplikacji internetowych w języku Ruby. Jeśli tworzysz projekt związaną z siecią, warto zapoznać się z tą platformą.

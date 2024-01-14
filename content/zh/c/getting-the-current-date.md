@@ -1,59 +1,65 @@
 ---
 title:                "C: 获取当前日期"
+simple_title:         "获取当前日期"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么: 获取当前日期的重要性
+##为什么
 
-在编写程序时，经常需要获取当前日期作为参考，以便执行特定的操作。比如在开发日记应用程序时，需要自动记录当前日期的日志，或者在开发预约系统时，需要获取当前日期以便进行预约安排。获取当前日期可以让程序具有更强大的功能，提升用户体验。
+计算机编程是一个充满创造性的过程，在现代社会中有着广泛的应用。作为一种主流编程语言，C语言广泛运用于系统开发、网络编程和嵌入式设备中。获取当前日期是一个常见的需求，它可以帮助我们记录和跟踪系统运行的日期，也可以用来实现各种不同的功能。在本文中，我将介绍如何在C语言中获取当前日期，并深入解析其实现原理。
 
-## 如何: 使用C语言获取当前日期
+##如何做到
 
-在C语言中，有一个特别的函数可以帮助我们获取当前日期，它就是 `time()` 函数。首先，我们需要包含 `<time.h>` 头文件，接着调用 `time()` 函数，将返回的时间戳（以秒为单位）赋值给 `time_t` 类型的变量。然后，使用 `localtime()` 函数将时间戳转换为本地时间，并将结果赋值给 `struct tm` 类型的变量。最后，可以通过使用该结构体变量的成员来获取当前日期的年、月、日等信息。下面是一个简单的示例代码：
+以下示例代码将演示如何在C语言中使用time.h头文件中的函数来获取当前日期。
 
 ```C
-#include <stdio.h>
-#include <time.h>
+include <stdio.h>
+include <time.h>
 
 int main() {
-    time_t current_time;
-    struct tm *local_time;
-
-    // 获取当前时间戳
-    current_time = time(NULL);
-
-    // 转换为本地时间
-    local_time = localtime(&current_time);
-
-    // 打印当前日期
-    printf("%d年%d月%d日\n", (local_time->tm_year + 1900), (local_time->tm_mon + 1), local_time->tm_mday);
-
+    // 调用time函数，获取当前时间的秒数
+    time_t now = time(NULL);
+    // 将秒数转换为日期结构体
+    struct tm *current_time = localtime(&now);
+    // 使用结构体中的成员变量，分别获取年、月、日
+    int year = current_time->tm_year + 1900;
+    int month = current_time->tm_mon + 1;
+    int day = current_time->tm_mday;
+    // 打印输出当前日期
+    printf("当前日期是：%d年%d月%d日\n", year, month, day);
     return 0;
 }
 ```
 
-上述代码中，`localtime()` 函数会自动转换为本地时间，因此无需考虑时区的问题。最后的输出结果可能为：
+该代码的输出如下所示：
 
 ```
-2021年6月15日
+当前日期是：2020年8月12日
 ```
 
-## 深入了解: 获取当前日期的原理
+可以看到，我们成功获取到了当前的日期，并打印输出了相应的信息。下面我们来深入了解一下这段代码的实现原理。
 
-在上面的示例代码中，我们调用了 `time()` 和 `localtime()` 两个函数来获取当前日期。那么这两个函数是如何工作的呢？其实， `time()` 函数会返回一个表示当前时间的时间戳，该时间戳是从1970年1月1日零点开始计算的秒数。而 `localtime()` 函数则将时间戳转换为本地时间，并返回一个 `struct tm` 结构体变量，其中包含了当前日期的年、月、日、时、分、秒等信息。
+##深入解析
 
-另外，需要注意的是， `time()` 函数的返回值是一个 `time_t` 类型的变量，其实质上也是一个长整型数，可以使用 `long` 或 `long long` 类型的变量来接收。
+在C语言中，获取当前日期的功能是由time.h头文件中的函数来实现的。主要使用的函数有time和localtime。time函数是标准库函数，它会返回当前时间的秒数。而localtime函数则会将这个秒数转换为一个日期结构体，结构体中包含了年、月、日等信息。需要注意的是，结构体中的年变量是从1900年开始计算，月份是从0开始计算，因此需要进行对应的调整。最后，我们使用printf函数将获取到的日期信息打印输出。
 
-## 参考资料
+除了time和localtime函数外，time.h头文件中还有其他一些函数可以帮助我们获取更详细的日期信息，比如获取小时、分钟、秒等。感兴趣的读者可以自行探索。
 
-- [C语言获取当前日期的方法](https://www.runoob.com/cprogramming/c-standard-library-time-h.html)
-- [C语言标准库中的时间函数](https://zh.cppreference.com/w/c/chrono)
+##参考阅读
 
-## 参见
+如果你想进一步了解关于日期和时间的函数，可以参考以下链接：
 
-- [C语言教程](https://www.runoob.com/cprogramming/c-tutorial.html)
-- [Markdown语法指南](https://www.runoob.com/markdown/md-tutorial.html)
+- [C语言中日期和时间的函数](https://www.runoob.com/cprogramming/c-date-time.html)
+- [关于time.h头文件的详细解释](https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_73/rtref/time.htm)
+- [深入了解C语言的时间和日期处理](https://github.com/iamslash/C/blob/master/B%c3%a1sic/Time/README.md)
+
+##请参见
+
+- [Markdown语法指南](https://markdown.cn/)
+- [C语言基础教程](https://www.runoob.com/cprogramming/c-tutorial.html)
+- [学习C语言的好处](https://zhuanlan.zhihu.com/p/38662595)

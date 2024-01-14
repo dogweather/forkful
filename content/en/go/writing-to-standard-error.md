@@ -1,7 +1,9 @@
 ---
 title:                "Go recipe: Writing to standard error"
+simple_title:         "Writing to standard error"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/writing-to-standard-error.md"
 ---
 
@@ -9,36 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Writing to standard error is a common practice in Go programming for troubleshooting and debugging purposes. It allows developers to print out error messages and other valuable information that can aid in identifying and fixing issues within their code.
+In Go programming, writing to standard error is a common way to log error messages during program execution. This allows developers to easily identify and debug any issues that may arise.
 
 ## How To
 
-To write to standard error in Go, we can use the `fmt.Fprintf()` function with `os.Stderr` as the first argument. This allows us to format and print an error message to the standard error stream.
+To write to standard error in Go, we first need to import the `os` package. This package provides functionality for interacting with the operating system.
 
+```Go
+import "os"
 ```
-Go fmt.Fprintf(os.Stderr, "Error: %v", err)
+
+Next, we can use the `os.Stderr` variable to access the standard error output.
+
+```Go
+os.Stderr.WriteString("Error message")
 ```
 
-The `os.Stderr` command is used to specify the output stream as the standard error, rather than the standard output. This ensures that our error message is printed to the appropriate stream, making it easier to distinguish from other printed statements.
+This will write the given error message to standard error. We can also use the `fmt` package to format the error message before writing it to standard error.
 
-A simple example of how this can be used is in error handling. For instance, we can use `fmt.Fprintf` to print out a custom error message and the actual error when an error occurs in our code. This can help us pinpoint the exact cause of the error and make it easier to fix.
+```Go
+import "fmt"
 
+//...
+
+errorMsg := "Invalid input: %v"
+fmt.Fprintf(os.Stderr, errorMsg, userInput)
 ```
-err := doSomething()
+
+The above examples will print the error message to the terminal, but we can also redirect the standard error output to a file by using the `os.Stderr` variable along with `os.OpenFile()`.
+
+```Go
+file, err := os.OpenFile("error.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
 if err != nil {
-  fmt.Fprintf(os.Stderr, "Failed to do something: %v", err)
-  // Other error handling logic
+    fmt.Println("Unable to open error log file.")
+    os.Exit(1)
 }
+defer file.Close()
+
+os.Stderr = file
 ```
+
+Now, any error messages written to standard error will be redirected to the specified file instead of the terminal.
 
 ## Deep Dive
 
-In Go, standard error is typically used for printing out error messages and other critical information that may not necessarily need to be seen by the end-user. Unlike the standard output, which is usually displayed on the console or terminal, standard error is typically redirected to a log file or a debugging tool.
+In Go, writing to standard error is a blocking operation. This means that the code execution will pause until the error message is written completely. This is important to keep in mind, especially in concurrent programs.
 
-Additionally, writing to standard error allows for the use of formatting and string interpolation, making error messages more informative and helpful. By specifying the stream as standard error, we can also distinguish between regular output and error messages, making it easier to filter and debug our code.
+We can also use the `log` package to write error messages to standard error.
+
+```Go
+import "log"
+
+//...
+
+errorMsg := "Error occurred while processing data."
+log.Println(errorMsg)
+```
+
+This will add a timestamp to the error message before writing it to standard error. Additionally, the `log` package provides multiple levels of severity for errors such as `Print()`, `Panic()`, and `Fatal()`.
 
 ## See Also
 
-- [Printing to Standard Error in Go](https://golang.org/pkg/fmt)
-- [The Standard Library Package os](https://golang.org/pkg/os)
-- [Error Handling in Go](https://blog.golang.org/error-handling-and-go)
+- [Official documentation for writing to standard error in Go](https://golang.org/pkg/os/#Stderr)
+- [Tutorial on using the `log` package in Go](https://www.digitalocean.com/community/tutorials/how-to-use-the-log-package-in-go)
+- [Additional information on handling errors in Go](https://blog.golang.org/error-handling-and-go)

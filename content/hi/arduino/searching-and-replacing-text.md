@@ -1,31 +1,25 @@
 ---
-title:                "Arduino: टेक्स्ट खोज और प्रतिस्थापन"
+title:                "Arduino: टेक्स्ट खोजना और बदलना"
+simple_title:         "टेक्स्ट खोजना और बदलना"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों 
-आपने अर्दुइनो प्रोग्रामिंग को काफी समय से कर रहे होंगे और आपने यह शब्द "search and replace" सुना होगा। यह जानने के लिए आप काफी आश्चर्य जनक होंगे कि यह क्या है और यह आपके लिए कितना महत्वपूर्ण है। यह आर्टिकल आपको समझाएगा कि आपको क्यों "search and replace" करने की आवश्यकता हो सकती है और इससे आपको क्या लाभ हो सकते हैं।
+## क्यों
+क्या आपने कभी अपने Arduino कोड में कोई टेक्स्ट ढूंढ़ने और इसे बदलने की आवश्यकता महसूस की है? आप किसी बड़ी Arduino प्रोजेक्ट पर काम कर रहे हैं और आपको अपने कोड में बहुत से टेक्स्ट बदलने हैं? या फिर आप अपने आवागमन से संबंधित किसी डेटा को निरंतर ढूंढ़ने और बदलने की आवश्यकता महसूस कर रहे हैं? इन सभी स्थितियों में, टेक्स्ट खोज और बदलाव काम आएगा। इससे आपको समय और मेहनत दोनों बचाएंगे और अपने कोड को अत्यंत प्रभावी बनाएंगे।
 
 ## कैसे करें
-```arduino
-void setup(){
-    String message = "Hello World!";
-    message.replace("Hello", "Namaste"); 
-    // "search and replace" करें
-    Serial.println(message); 
-    // "Namaste World!" मुद्रित करें
-}
+```Arduino
+String myString = "Hello World";
+myString.replace("Hello", "Namaste");
+Serial.println(myString); // Output: Namaste World
 ```
-ऊपर दिए गए कोड ब्लॉक में हमने अपनी स्ट्रिंग "message" में शब्द "Hello" को खोज और उसे "Namaste" से बदल दिया है। फिर हमने अपना संदेश मुद्रित किया जो अब "Hello World!" की जगह "Namaste World!" है। इस तरह से, हम आसानी से स्ट्रिंग में शब्दों को खोजें और उसे बदल सकते हैं।
 
-## गहराई से जाने
-अपनी प्रोग्रामिंग जानकारी को और भी बढ़ाने के लिए, आप "search and replace" और उसके विभिन्न तकनीकों की गहराई में जानकारी हासिल कर सकते हैं। यह एक आर्डिनो प्रोग्रामिंग में उपयोगी टूल है जो आपको स्ट्रिंग में आसानी से शब्दों को खोजने और बदलने की अनुमति देता है। इसलिए, अपनी आर्डिनो प्रोग्रामिंग को और भी अधिक प्रभावी और स्मार्ट बनाने के लिए यह टूल अपनाएं।
+यह उपयोगकर्ता द्वारा दिए गए उदाहरण में, हमने मौजूदा स्ट्रिंग में "Hello" को "Namaste" से बदला है। आप इस तरह अपने स्ट्रिंग के किसी भी टेक्स्ट को आसानी से बदल सकते हैं। इसके अलावा, यदि आपके पास एक सरल टेक्स्ट खोज और बदल फ़ंक्शन के साथ-साथ अन्य विकल्प जैसे कि फ़ाइल से टेक्स्ट पढ़ने और स्ट्रिंग में संपादन करने का भी विकल्प होता है। आपको ऑनलाइन संसाधनों से भी सहायता मिल सकती है, जो कि आपको पूर्ण स्क्रिप्ट कोड और ट्यूटोरियल प्रदान करते हैं।
 
-## देखें भी
-- [String replace() method in Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-- [Using Strings in Arduino](https://learn.sparkfun.com/tutorials/using-the-arduinonbspsupplied-nbspstring-class)
-- [Arduino String Manipulation](https
+## गहराई तक खोजें
+टेक्स्ट खोज और बदल काम में, आपको विभिन्न कारकों का ध्यान रखने की आवश्यकता हो सकती है। पहले से स्थिति,

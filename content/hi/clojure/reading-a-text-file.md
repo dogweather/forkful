@@ -1,41 +1,37 @@
 ---
-title:                "Clojure: एक पाठ फ़ाइल पढ़ना"
+title:                "Clojure: एक टेक्स्ट फ़ाइल पढ़ना"
+simple_title:         "एक टेक्स्ट फ़ाइल पढ़ना"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Whyक्यों: एक पाठ फ़ाइल को पढ़ने के लिए कोई दिलचस्पी रखने के लिए *क्यों* कोडिंगवादकों के लिए उपयुक्त है। इसके अलावा, यह जानना भी आवश्यक है कि पाठ फ़ाइलों में किसी भी तरह की डेटा को कैसे और जानकारी को कैसे पढ़ा जाए।
 
-टेक्स्ट फ़ाइल को समझना और उसमे दिए गए डेटा का उपयोग करना कोडिंग में अहम भूमिका निभाता है। यह ब्लॉग पोस्ट हिंदी पाठकों के लिए Clojure प्रोग्रामिंग को समझने का अच्छा माध्यम है।
+## How To
 
-## कैसे करें
+"```Clojure
+(defn read-text-file [file]
+  (with-open [reader (clojure.java.io/reader file)]
+    (doseq [line (line-seq reader)]
+      (println line)))
 
-टेक्स्ट फ़ाइल को पढ़ने के लिए, हम `java.io` लाइब्रेरी का उपयोग कर सकते हैं।
+(read-text-file "sample.txt")
 
-```Clojure
-(import java.io.FileReader)
-(import java.io.BufferedReader)
+;;output:
+;;This is a sample text file.
+;;It contains multiple lines.
+;;Each line is read and printed using Clojure.
+```"
 
-(def file (FileReader. "sample.txt"))
-(def reader (BufferedReader. file))
+## Deep Dive
 
-(loop [line (.readLine reader)]
-  (when line
-    (println line)
-    (recur (.readLine reader))))
+पाठ फ़ाइलों को पढ़ने के लिए, क्लोजुर में विभिन्न फ़ंक्शन्स का प्रयोग किया जाता है। सबसे पहले, हम ```with-open``` फ़ंक्शन का उपयोग करके एक फ़ाइल रीडर खोलते हैं और उसे एक एलियास में स्थापित करते हैं। फिर, हम ```line-seq``` फ़ंक्शन का उपयोग करके रीडर में से पंक्तियों की एक श्रृंखला बनाते हैं। और अंत में, हम ```doseq``` फ़ंक्शन का उपयोग करके उस श्रृंखला के हर पंक्ति को प्रिंट करते हैं। इस तरह, हम पाठ फ़ाइल को सुचारू ढंग से पढ़ सकते हैं।
 
-```
+## See Also
 
-यहां `sample.txt` की जगह आप अपनी टेक्स्ट फ़ाइल के नाम का उपयोग कर सकते हैं। प्रत्येक पंक्ति `println` के माध्यम से कॉन्सोल पर प्रिंट होगी। अगर आप कोडिंग का अभ्यास करना चाहते हैं तो आप `recur` की जगह `map` भी प्रयोग कर सकते हैं जो आपको सभी पंक्तियों का तालिका बना कर देगा।
-
-## गहराई में जाएं
-
-टेक्स्ट फ़ाइल को पढ़ने के लिए कई तरीके हैं और कुछ लोगों के लिए यह कठिन भी हो सकता है। Clojure में `java.io` लाइब्रेरी के अलावा भी आपको `clojure.java.io` बिल्ट-इन फ़ंक्शन्स का उपयोग करने की सुविधा है। कुछ लोग खुद को आराम से `line-seq` का उपयोग करते हुए टेक्स्ट फ़ाइल को साधनाओं में विभाजित करने में पाते हैं।
-
-## देखें भी
-
- [Clojure कोडिंग के लिए ये 5 कारगर टोटल्स](https://www.hackerearth.com/blog/programming/5-essential-clojure-libraries/) 
-- इस लेख में हमने कुछ और भी लाइब्रेरी के बारे में बात की है जो आपको Clojure कोडिंग में ब
+- [Official Clojure Documentation on File I/O](https://clojure.org/reference/java_interop#_file_i_o) 
+- [Clojure Cookbook Chapter on File Reading and Writing](https://clojure-cookbook.net/file-io/file_reading_writing.html)

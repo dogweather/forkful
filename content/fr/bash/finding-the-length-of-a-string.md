@@ -1,7 +1,9 @@
 ---
 title:                "Bash: Trouver la longueur d'une chaîne de caractères"
+simple_title:         "Trouver la longueur d'une chaîne de caractères"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/finding-the-length-of-a-string.md"
 ---
 
@@ -9,47 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La recherche de la longueur d'une chaîne de caractères est une tâche courante en programmation. Cela peut être utile lorsque vous devez manipuler des données de texte ou lorsque vous devez effectuer des vérifications de validation. Dans cet article, nous allons vous montrer comment trouver la longueur d'une chaîne de caractères en utilisant Bash.
+Si vous êtes un programmeur débutant en Bash, vous pourriez vous demander pourquoi il est utile de trouver la longueur d'une chaîne de caractères. Eh bien, trouver la longueur d'une chaîne peut être très utile lors de la manipulation de données texte. Cela vous permettra de vérifier si une entrée utilisateur dépasse la limite de caractères autorisée ou de compter le nombre de caractères dans une certaine zone d'un texte.
 
 ## Comment faire
 
-Pour trouver la longueur d'une chaîne de caractères en Bash, nous utilisons la commande `expr length`. Cette commande prend une chaîne de caractères en paramètre et retourne sa longueur.
+Trouver la longueur d'une chaîne en Bash est une tâche assez simple et peut être réalisée en quelques étapes.
 
-Voici un exemple d'utilisation de la commande `expr length`:
-
-```Bash
-$ myString="Bonjour"
-$ echo "La longueur de la chaîne de caractères est : `expr length $myString`"
-```
-
-Lorsque vous exécutez ce code, vous obtiendrez le résultat suivant :
+D'abord, déclarez une variable contenant la chaîne que vous souhaitez vérifier. Par exemple :
 
 ```Bash
-La longueur de la chaîne de caractères est : 7
+ma_variable="Bonjour le monde"
 ```
 
-Vous pouvez également utiliser la commande `wc -c` pour trouver la longueur d'une chaîne de caractères. Cette commande compte le nombre de caractères d'un fichier ou d'une entrée donnée. Voici un exemple:
+Ensuite, utilisez la commande `expr length` suivie de votre variable et entourez le tout de deux points d'exclamation. Par exemple :
 
 ```Bash
-$ myString="Bonsoir"
-$ echo "La longueur de la chaîne de caractères est : `echo $myString | wc -c`"
+longueur=!!ma_variable
+echo $longueur
 ```
 
-Ce code renverra également `8` comme résultat.
+Lorsque vous exécutez ce code, vous obtiendrez la sortie suivante :
+
+```Bash
+17
+```
+
+Cela indique que la chaîne contenue dans la variable `ma_variable` est composée de 17 caractères.
 
 ## Plongée en profondeur
 
-Il est important de garder à l'esprit que la longueur d'une chaîne de caractères peut varier selon la méthode utilisée pour la trouver. Par exemple, si votre chaîne de caractères contient des espaces, la commande `expr length` ne comptera pas ces espaces, tandis que la commande `wc -c` les comptera.
+Il est également possible de trouver la longueur d'une chaîne en utilisant la syntaxe du slicing en Bash. Cela peut être utile si vous souhaitez compter le nombre de caractères dans une certaine zone d'un texte.
 
-Il est également important de noter que la plupart des programmes de traitement de texte et d'autres langages de programmation ont leur propre méthode pour trouver la longueur d'une chaîne de caractères. Il est donc toujours utile de vérifier la documentation de votre programme pour trouver la méthode la plus appropriée.
+Par exemple, si vous voulez trouver le nombre de caractères dans les 10 premiers caractères d'une chaîne, vous pouvez utiliser la syntaxe suivante :
 
-En outre, si vous travaillez avec des caractères Unicode, la longueur d'une chaîne de caractères peut varier en fonction du type de codage utilisé. Par exemple, une chaîne de caractères Unicode peut être encodée en UTF-8, UTF-16 ou UTF-32, ce qui affectera la longueur de la chaîne. Vous devrez donc utiliser la méthode appropriée pour trouver la longueur en fonction de votre codage.
+```Bash
+ma_variable="Bonjour le monde"
+echo ${#ma_variable:0:10}
+```
+
+Cela vous donnera la sortie suivante :
+
+```Bash
+10
+```
+
+Cela signifie qu'il y a 10 caractères dans les 10 premiers caractères de la variable `ma_variable`.
 
 ## Voir aussi
 
-Voici quelques liens utiles pour en savoir plus sur la recherche de la longueur d'une chaîne de caractères en Bash :
-
-- [La documentation officielle de `expr length`](https://ss64.com/bash/expr.html)
-- [La documentation officielle de `wc`](https://ss64.com/bash/wc.html)
-- [Les différentes façons de compter la longueur d'une chaîne en Bash](https://www.linuxjournal.com/content/bash-parameter-expansion)
-- [Un guide complet sur le traitement de texte en Bash](https://www.linuxjournal.com/article/10715)
+- [La syntaxe des chaînes en Bash](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [La commande `expr` en Bash](https://www.gnu.org/software/gcc/bash/manual/html_node/Shell-Arithmetic.html)

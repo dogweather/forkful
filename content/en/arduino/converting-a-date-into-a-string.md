@@ -1,76 +1,50 @@
 ---
 title:                "Arduino recipe: Converting a date into a string"
+simple_title:         "Converting a date into a string"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-If you're new to Arduino programming, you may be wondering why someone would want to convert a date into a string. The reality is, there are many applications where you may want to display the date on an LCD screen or store it in a data logger. Converting a date into a string makes it easier to work with and display in a readable format.
+As an Arduino programmer, you may come across a scenario where you need to display the date on a LCD screen or log data with a timestamp. In such cases, it is necessary to convert the date into a string format so that it can be easily displayed or stored. In this blog post, we will explore how to convert a date into a string using Arduino.
 
 ## How To
+Converting a date into a string can be accomplished by using the built-in function `strftime()` from the Arduino Time Library. This function takes in a date and time structure and formats it into a string according to the specified format.
 
-Converting a date into a string in Arduino is a simple process. Here is an example using a DS1307 real-time clock module:
+```Arduino
+#include <TimeLib.h> // Include Time Library
+tmElements_t time; // Create a time structure
 
-```
-Arduino Wire Library for I2C communication
-#include <Wire.h>
+// Set the date and time using a Unix timestamp
+time_t t = 1588657100; // Representing May 05, 2020 10:05:00
+breakTime(t, time); // Break time into individual elements
 
-Arduino RTClib Library for DS1307
-#include "RTClib.h"
+// Convert the date into a string using strftime function
+char dateString[20]; // Define a char array for the string
+strftime(dateString, sizeof(dateString), "%d/%m/%Y", &time); // Format: DD/MM/YYYY
 
-//Initialize the RTC object
-RTC_DS1307 rtc;
-
-void setup() {
-  //Initialize serial communication
-  Serial.begin(9600);
-  
-  //Initialize I2C communication
-  Wire.begin();
-
-  //Check if the RTC is running, if not, set the date and time
-  if (!rtc.begin()) {
-    Serial.println("RTC is not running!");
-    rtc.adjust(DateTime(__DATE__, __TIME__));
-  }
-
-  //Read the current date and time from the RTC
-  DateTime now = rtc.now();
-
-  //Convert the date into a string
-  String dateString = String(now.day()) + "/" + String(now.month()) + "/" + String(now.year());
-
-  //Convert the time into a string
-  String timeString = String(now.hour()) + ":" + String(now.minute()) + ":" + String(now.second());
-
-  //Print the date and time in a readable format
-  Serial.println("Current Date: " + dateString);
-  Serial.println("Current Time: " + timeString);
-}
-
-void loop() {
-  //Do nothing
-}
+// Print the date string
+Serial.println(dateString); // Output: 05/05/2020
 ```
 
-**Sample Output:**
-```
-Current Date: 23/8/2021
-Current Time: 16:48:54
-```
+In the code above, we first include the Time Library and create a `tmElements_t` structure to store the date and time. Then, using a Unix timestamp representing a specific date and time, we break it down into individual elements using the `breakTime()` function. Finally, we use the `strftime()` function to format the date into a string and print it to the Serial Monitor.
 
 ## Deep Dive
+The `strftime()` function allows you to specify the format of the output string by using format specifiers. Some commonly used format specifiers for date are:
 
-The process of converting a date into a string involves using the `DateTime` object from the RTClib library to retrieve the current date and time data from the DS1307 module. Then, the `String()` function is used to convert the individual components (day, month, year, hour, minute, second) into strings and concatenate them together with the appropriate formatting characters (e.g. "/"). Finally, the date and time strings are printed to the serial monitor for testing purposes, but you can use them however you like in your project.
+- `%d` for day of the month (01-31)
+- `%m` for month (01-12)
+- `%Y` for year (4 digits)
+- `%y` for year (2 digits)
 
-One thing to note is that when using the `DateTime` object, you may need to account for any potential variations in the date and time formats. For example, in some cases, the month or day may only be represented by a single digit. In these cases, you can use conditional statements or padding functions to ensure that the formatting of your date and time strings remains consistent.
+There are also options to include the day of the week, time, and other variations. You can find a list of all the format specifiers and their meanings in the Arduino Time Library documentation.
+
+Additionally, the `strftime()` function also allows you to convert the date and time into different time zones by using the `setTime()` and `setTZ()` functions. This can be useful if you want to display the date and time in a specific location or adjust for daylight saving time.
 
 ## See Also
-
-- [Arduino Wire Library](https://www.arduino.cc/en/reference/wire)
-- [RTClib Library for DS1307](https://github.com/adafruit/RTClib)
-- [DateTime Object Reference](https://www.pjrc.com/teensy/td_libs_RTC.html)
+- [Arduino Time Library documentation](https://www.arduino.cc/reference/en/libraries/time/)
+- [TimeLib.h Library Reference](https://github.com/PaulStoffregen/Time/blob/master/TimeLib.h)

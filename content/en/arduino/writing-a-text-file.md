@@ -1,64 +1,75 @@
 ---
 title:                "Arduino recipe: Writing a text file"
+simple_title:         "Writing a text file"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-If you're an Arduino enthusiast, you may have come across the need to write a text file using your board. This can serve a variety of purposes such as storing sensor data, creating a log, or even just printing a message on a display. Whatever the reason may be, learning how to write a text file using Arduino can open up a whole new world of possibilities for your projects.
+When working with Arduino, you may come across situations where you need to store data in a more permanent manner. Text files are a great way to achieve this as they allow you to store data that can be easily read and modified.
 
 ## How To
+To write a text file in Arduino, you will need to use the `File` library. First, you will need to include the library by adding `#include <File.h>` at the top of your sketch. Then, you will need to create a `File` object using the `File` class by declaring it with a name of your choice, for example `myFile`. This file object will handle all the operations related to the text file.
 
-To write a text file using Arduino, we will be using the `File` library. Firstly, make sure to include the library by adding `#include <File.h>` at the top of your code. Next, initialize an object of the `File` class by calling `File myFile = File("filename.txt", FILE_WRITE);` where "filename.txt" is the name of your text file and FILE_WRITE ensures that we can write to the file.
+Next, you will need to open the text file using the `open()` method, which takes in two parameters: the name of the file and the mode in which it should be opened. The modes available are `FILE_READ` for reading a file and `FILE_WRITE` for writing to a file. For example, you can use `myFile.open("data.txt", FILE_WRITE)` to open a file named "data.txt" for writing.
 
-Next, we can use the `print()` or `println()` functions to write text to our file. For example, `myFile.println("Hello World!");` will write the text "Hello World!" to our file. To save the changes, we need to close the file by calling `myFile.close();`.
+Once the file is opened, you can start writing to it using the `print()` or `println()` methods, which work similar to the `Serial` class. For example, `myFile.println("Hello, world!")` will write the string "Hello, world!" to the file on a new line.
 
-Now, let's see an example of writing sensor data to a text file:
+After you have finished writing to the file, you will need to close it using the `close()` method. This will ensure that all the data is properly saved and the file is closed to allow other programs to access it.
+
+Here is a complete example of writing to a text file:
 
 ```Arduino
 #include <File.h>
 
-void setup() {
+File myFile;
 
-  // initialize serial communication
+void setup() {
+  // Initialize serial communication
   Serial.begin(9600);
 
-  // open file in write mode
-  File myFile = File("sensor_data.txt", FILE_WRITE);
-  
-  // read temperature sensor value
-  float temp = analogRead(A0) * 0.48828125; // convert from ADC value to Celsius
-  
-  // write temperature to file
-  myFile.print("Current temperature: ");
-  myFile.print(temp);
-  myFile.println(" °C");
+  // Open file for writing
+  myFile.open("data.txt", FILE_WRITE);
 
-  // close file
+  // Write data to file
+  myFile.print("Temperature: ");
+  myFile.println(25.5);
+  myFile.print("Humidity: ");
+  myFile.println(58);
+
+  // Close file
   myFile.close();
 
+  // Print message to confirm file was written
+  Serial.println("Data written to file!");
 }
 
 void loop() {
-  // do nothing
+  // Do nothing
 }
 ```
 
-After running this code, you should see a new text file named "sensor_data.txt" containing the current temperature in Celsius. You can modify the code to write any other type of data or message to your text file.
+The output of this code will be a new text file named "data.txt" with the following content:
+
+```
+Temperature: 25.5
+Humidity: 58
+```
 
 ## Deep Dive
+When using the `open()` method, you can also specify additional parameters to customize how the file will be handled. For example, you can use `FILE_WRITE_APPEND` to open an existing file and write new data at the end instead of overwriting the existing data.
 
-The `print()` and `println()` functions can be used to write not just text, but also variables and other data types to your file. You can also use the `write()` function to write individual characters.
+You can also use the `truncate()` method to clear the contents of a file before writing new data to it. This can be useful when you want to update the data in a file without creating a new file.
 
-By default, the `File` library will create a new text file if it doesn't already exist. However, you can also use the `FILE_APPEND` flag when initializing your `File` object to append new data to an existing file instead of overwriting it.
+Additionally, you can use the `seek()` method to move the writing position to a specific point in the file. This is helpful when you want to write data at a specific location in the file instead of just appending it at the end.
 
-It's important to note that the `File` library has a limited amount of memory for storing data. Therefore, it's recommended to use this method for smaller amounts of data, such as sensor readings, and not for large text files.
+Overall, using text files in Arduino gives you the flexibility to store and manage data in a more organized manner. With the various methods available, you can easily customize how you want to handle the file depending on your needs.
 
 ## See Also
-
-- [Arduino File Class Reference](https://www.arduino.cc/reference/en/libraries/file/)
-- [Writing to Files on Arduino](https://www.arduino.cc/en/Tutorial/WriteToFile)
-- [How to Write Text Files](https://forum.arduino.cc/index.php?topic=421610.0)
+- [Arduino File Library Reference](https://www.arduino.cc/en/Reference/File)
+- [Arduino Serial Communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [C++ File Input/Output](https://www.cplusplus.com/doc/tutorial/files/)

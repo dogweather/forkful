@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Skriving til standardfeil"
+title:                "Clojure: Skriver til standardfeil"
+simple_title:         "Skriver til standardfeil"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/writing-to-standard-error.md"
 ---
 
@@ -9,27 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive til standard error kan være en nyttig måte å håndtere feil og debugging på når du utvikler Clojure-programmer. Det lar deg sende informative meldinger direkte til din programvares feilstrøm, noe som kan hjelpe deg med å identifisere og løse problemer raskere.
+Å skrive til standardfeil (standard error) i Clojure kode kan være en nyttig måte å feilsøke og kommunisere med utvikleren på. Det lar deg informere om feilmeldinger, advarsler og andre viktige meldinger som er viktige for å forstå og løse problemer i koden din.
 
-## Hvordan gjøre det
+## Slik gjør du det
 
-Det første trinnet for å kunne skrive til standard error i Clojure er å importere `clojure.java.io` biblioteket. Dette gir deg tilgang til funksjoner som lar deg skrive til forskjellige strømmer, inkludert standard error. Her er et eksempel på hvordan du kan skrive en feilmelding til standard error:
+For å skrive til standardfeil i Clojure, bruker du funksjonen `println` og angir `System/err` som første parameter. Dette forteller Clojure at du vil skrive til standardfeil i stedet for standard utgang (standard out). Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
 ```Clojure
-(import '[clojure.java.io :as io])
-(io/println *err* "Dette er en feilmelding!")
+(println System/err "Dette er en feilmelding som vil bli skrevet til standardfeil")
 ```
 
-Dette vil skrive ut teksten "Dette er en feilmelding!" til feilstrømmen. Merk at `*err*` er et Clojure globalt varibelt som refererer til standard error-strømmen. Du kan bruke `*err*` når du vil sende meldinger til standard error.
+Output vil se slik ut:
+
+```Clojure
+Dette er en feilmelding som vil bli skrevet til standardfeil
+```
+
+I tillegg til `println` funksjonen kan du også bruke `eprintln` funksjonen for å skrive til standardfeil. Forskjellen er at `eprintln` automatisk legger til en linjeskift på slutten, så du trenger ikke å legge til det selv som i eksempelet over.
 
 ## Dypdykk
 
-Å skrive til standard error kan være spesielt nyttig når du jobber med flertrådede applikasjoner. Det lar deg skrive meldinger til feilstrømmen uten å påvirke utstrømmen til brukeren. Dette er nyttig når du vil holde kommunikasjon med brukeren ren og ryddig, men fortsatt være i stand til å få tilgang til feilmeldinger.
+Når du skriver til standardfeil i Clojure, er det viktig å merke seg at meldingene dine vil bli skrevet til terminalen der koden din blir kjørt. Dette betyr at du kan se feilmeldinger og andre meldinger i sanntid når du kjører koden din.
 
-Du kan også bruke funksjoner som `with-out-str` for midlertidig å omdirigere utstrømmen til en annen strøm, inkludert standard error. Dette kan være nyttig når du jobber med biblioteker som allerede skriver ut til utstrømmen, men du vil kunne lese og håndtere feilmeldinger på en annen strøm.
+En annen viktig ting å huske på er at du bør unngå å bruke standardfeil til å legge til logging i koden din. Dette kan føre til at feilmeldinger og andre viktige meldinger blir oversett og blandet sammen med loggingen din.
 
 ## Se også
 
-- [clojure.java.io dokumenasjon](https://clojuredocs.org/clojure.java.io)
-- [Java IO API dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html)
-- [Offisiell Clojure-nettside](https://clojure.org/)
+- [Clojure dokumentasjonen om standardfeil](https://clojuredocs.org/clojure.core/println)
+- [En grundig guide til Clojure feilsøking](https://technomancy.us/149)
+- [En introduksjon til Clojure logging](https://clojure.org/guides/logging)

@@ -1,35 +1,64 @@
 ---
-title:                "Arduino: Merkkijonon suurtaminen"
+title:                "Arduino: Merkkijonon suurennus"
+simple_title:         "Merkkijonon suurennus"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Miksi haluaisit muuttaa merkkijonon ensimmäisen kirjaimen isoksi Arduino-ohjelmassa? Joskus haluat esimerkiksi näyttää tulostimessa käyttäjän syöttämän nimen, mutta haluat, että nimi näkyy oikeassa muodossa isolla alkukirjaimella. Tässä tapauksessa voi olla hyödyllistä käyttää merkkijonon kapselointitoimintoa.
 
-## Miten se tehdään
-Voit helposti muuttaa merkkijonon ensimmäisen kirjaimen isoksi Arduino-ohjelmassa käyttämällä "capitalize" -toimintoa. Katso alla oleva esimerkki, kuinka tämä voidaan toteuttaa:
+String-muuttujien käsittely on olennainen osa monia Arduino-projekteja. Oletetaan esimerkiksi, että sinulla on sensori, joka lukee ulkolämpötilaa ja haluat tulostaa sen LCD-näytölle. Mutta ennen kuin voit näyttää lämpötilan, sinun täytyy saada se tallennettua String-muuttujaan. Mutta mitä jos haluat näyttää lämpötilan isoilla kirjaimilla, esimerkiksi "23 C"? Tässä tulee tarpeeseen stringin muuttaminen isoin kirjaimin.
+
+## Miten
+
+Voit tehdä tämän yksinkertaisesti kahdella tavalla: käyttämällä valmista funktiota tai kirjoittamalla oman.
+
+### Valmis funktio
+
+Arduino tarjoaa valmiin funktion `toUpperCase()`, joka muuntaa stringin isoihin kirjaimiin. Käyttö on yksinkertaista: anna vain muutettava stringi funktion sisälle ja tallenna uuteen muuttujaan.
 
 ```Arduino
-// Määritetään merkkijono
-String nimi = "alex";
-
-// Käytetään capitalize-toimintoa muuttamaan nimen ensimmäinen kirjain isoksi
-nimi.capitalize();
-
-// Tulostetaan muokattu nimi
-Serial.println(nimi); // Tulostaa "Alex"
+String alkuperainenString = "23 C";
+String suuriString = alkuperainenString.toUpperCase(); // "23 C" muuttuu "23 C"ksi
 ```
 
-## Syvä sukellus
-Merkkijonon kapselointitoiminto käyttää C ++: n standardikirjaston "string.h" -kirjastoa. Tämä kirjasto sisältää useita toimintoja, jotka voivat manipuloida merkkijonon merkkejä.
+### Oma funktio
 
-Yksi tällainen toiminto on "toupper ()", joka muuttaa merkkijonon kaikki kirjaimet isoksi kirjoitettuiksi. "capitalize" -toiminto käyttää tätä toimintoa muuttaa ensimmäisen kirjaimen isoksi ja jättää muut kirjaimet ennalleen.
+Voit myös kirjoittaa oman funktion, joka muuntaa stringin isoihin kirjaimiin. Tässä esimerkki siitä, miten se voitaisiin toteuttaa:
+
+```Arduino
+String muutaIsoksi(String pieniString) {
+  String isoni = ""; // alustetaan uusi stringi
+
+  for (int i = 0; i < pieniString.length(); i++) { // käydään läpi jokainen merkki pienessä stringissä
+    isoni += toupper(pieniString.charAt(i)); // lisätään isoon stringiin jokainen merkki muutettuna isoksi
+  }
+
+  return isoni; // palautetaan uusi stringi
+}
+
+String alkuperainenString = "23 C";
+String suuriString = muutaIsoksi(alkuperainenString); // "23 C" muuttuu "23 C"ksi
+```
+
+Huomaa, että oman funktion kirjoittaminen on hieman monimutkaisempaa, mutta se antaa sinulle enemmän hallintaa ja muunnoksen voi tehdä haluamallasi tavalla.
+
+## Syväsukellus
+
+Jotta ymmärrät paremmin, miten stringin muuntaminen isoihin kirjaimiin toimii, meidän täytyy tarkastella hieman tarkemmin, miten stringit toimivat Arduino-ohjelmoinnissa.
+
+Stringit ovat todellisuudessa vain merkkijonoja, jotka koostuvat yksittäisistä merkeistä. Esimerkiksi "Hello" on todellisuudessa "H" + "e" + "l" + "l" + "o". Voit käyttää kahta eri tapaa käsitellä ja muokata stringejä:
+
+- Merkkijonon ominaisuudet ja metodit: käytetään pisteota (.) stringin lopussa
+- Merkkijonofunktiot Arduino.h-kirjastosta: käytetään yhdessä stringien kanssa
+
+Kun muutat stringin isoihin kirjaimiin, käytät oikeastaan merkkijonofunktiota `toupper()`, joka ottaa parametrina merkin ja palauttaa muutetun version.
 
 ## Katso myös
-- [Arduino-opetusohjelma: Merkkijonojen käsittely ja manipulointi](https://create.arduino.cc/projecthub/Arduino_Genuino/strings-937228)
-- [C ++: n "string.h" -kirjaston dokumentaatio](https://www.cplusplus.com/reference/cstring/)
-- [capitalize-toiminnon dokumentaatio](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/capitalize/)
+
+- Arduino-valmistajan virallinen dokumentaatio stringien hallinnasta: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+- MDN Web Docs selitys stringien hallinnasta: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String

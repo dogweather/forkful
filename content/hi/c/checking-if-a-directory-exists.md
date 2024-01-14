@@ -1,7 +1,9 @@
 ---
-title:                "C: क्या एक निर्देशिका मौजूद है या नहीं देखना।"
+title:                "C: डायरेक्टरी का अस्तित्व जांच करना"
+simple_title:         "डायरेक्टरी का अस्तित्व जांच करना"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/checking-if-a-directory-exists.md"
 ---
 
@@ -9,57 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-क्या आपने कभी सोचा है कि आपको प्रोग्रामिंग में फ़ाइल या डायरेक्ट्री की उपस्थिति को कैसे जांचना चाहिए? एक नौकरी से मुक़ाबले करते हुए, हमारी हर दिनलिखित कार्यों में फ़ाइलें या डायरेक्ट्री काफी महत्वपूर्ण हो सकती हैं। इसलिए इस ब्लॉग पोस्ट में, हम आपको बताएंगे कि यह क्यों महत्वपूर्ण है और आपको इसे कैसे करना चाहिए।
+एक डायरेक्ट्री का अस्तित्व जांचना क्यों जरूरी है? एक फ़ोल्डर में उपलब्ध फ़ाइलों और डाटा को पहचानने के लिए यह जानना आवश्यक होता है कि वहां उस फ़ोल्डर में एक् डायरेक्ट्री मौजूद है या नहीं।
 
 ## कैसे
 
-आप अपने कोड में निम्नलिखित तरीके से दिए गए कोड ब्लॉक का उपयोग करके फाइल या डायरेक्ट्री की उपस्थिति को जांच सकते हैं। 
-
 ```C
 #include <stdio.h>
-#include <stdbool.h>
+#include <unistd.h>
 #include <sys/stat.h>
+#include <sys/types.h>
 
-// Function to check if a directory exists
-bool checkDirectory(const char *path) {
+int main()
+{
+    char *path = "my_folder"; // अपने फ़ोल्डर का नाम यहां लिखें
     struct stat stats;
-    
-    // Use stat() function to get information about the file or directory
-    if (stat(path, &stats) != 0) {
-        return false;
-    }
-    
-    // Check if it is a directory
-    if (S_ISDIR(stats.st_mode)) {
-        return true;
-    }
-    
-    return false;
-}
 
-int main() {
-    // Path of the directory to be checked
-    char *path = "/path/to/directory";
-    
-    // Call the checkDirectory() function
-    if (checkDirectory(path)) {
-        printf("Directory exists!");
-    } else {
-        printf("Directory does not exist.");
+    if (stat(path, &stats) == 0) // स्टैट फ़ंक्शन कोल करें
+    {
+        if (S_ISDIR(stats.st_mode)) // फ़ोल्डर है कि नहीं यह कंडीशन चेक करें
+        {
+            printf("दिए गए फ़ोल्डर में एक् डायरेक्ट्री है।\n");
+        }
+        else
+        {
+            printf("दिए गए फ़ोल्डर में एक् डायरेक्ट्री नहीं है।\n");
+        }
     }
-    
+    else
+    {
+        printf("फ़ोल्डर नहीं में है।\n");
+    }
+
     return 0;
 }
 ```
 
-आप ऊपर दिए गए कोड ब्लॉक में दिए गए कोमेंट्स का भी उपयोग कर सकते हैं ताकि आपको समझ में आसानी हो। इस कोड का आउटपुट निम्न रूप में होगा:
+उपरोक्त कोड में, हम "sys/stat.h" और "sys/types.h" लाइब्ररी का इस्तेमाल करके फ़ोल्डर के सभी स्टैटस जानकारी को पढ़ते हैं। फिर स्टैट फ़ंक्शन कोल करके पता लगाते हैं कि दिए गए पाथ से फ़ोल्डर में एक् डायरेक्ट्री है या नहीं। अगर फ़ोल्डर है, तो हम उसे डायरेक्ट्री के रूप में पहचानते हैं और साथ ही उसकी स्टैटस भी दिखाते हैं। पर अगर फ़ोल्डर नहीं है तो हम उसे डायरेक्ट्री के रूप में नहीं पहचानते और साथ ही उसका स्टैटस भी दिखाते हैं।
 
-```
-Directory exists!
-```
-
-इस तरह से आप फ़ाइल या डायरेक्ट्री की उपस्थिति को आसानी से जांच सकते हैं।
-
-## डीप डाइव
-
-इस ब्लॉग पोस्ट में हमने `stat()` फ़ंक्शन का उपयोग किया है जो कि लीनक्स और यूनिक्स के आधार पर बने ऑपरेटिंग सिस्टम में समर्थित है। इसके अलावा आप `access()` फ़ंक्शन का भी उपयो
+ये सब कोड का एक आसान उदाहरण है जो आपको समझने में मदद करेगा कि आप कैसे अपने को

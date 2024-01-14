@@ -1,55 +1,40 @@
 ---
-title:                "Clojure: Перетворення рядка на режим прописних літер"
+title:                "Clojure: Капіталізація рядка"
+simple_title:         "Капіталізація рядка"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
+Rozdil: *Chomu*, Vash pitannya.< 
+## Chomu
 
-Є багато ситуацій, коли потрібно змінити форматування рядка, особливо коли працюєш з великими наборами даних або виконуєш обчислення. Капіталізація рядка дозволяє перетворити першу літеру кожного слова великою, що допомагає полегшити читання та розуміння тексту.
+ Chomu by vbyratysya v kapitalizatsiyu ryadka? Kapitalizatsiya ryadkiv mozhut buti vazhlivoiu chastyu pisemnoho prohramuvannya. Vona dozvolyaye vam rozriznyaty slova ta stvoriti vidpovidnu strukturu tekstu, shcho zruchno pry vydalenni. Krim toho, kapitalizatsiya ryadka mozhut buty takozh harmonijnym ta prypustymym ahentom vashoho kodu. 
 
-## Як
+## Yak
 
-```Clojure
-(defn capitalize-string [string]
-  (clojure.string/capitalize string))
-```
+Sche u 97-ykh rokakh, komp'yutery potrebuyut kapitalizatsiyu ryadka, shchob vykonyuvaty dyskretne prohramuvannya. V protsesi vykorystannya modernoi movy prohramuvannya, takoi movy, yak Clojure, nabyvaiut-shchanets shtuk. Teper, mozhlyvo stvorenyuvaty kod, yakys krasavyy vyhlyad u femove simvoly ta skladnyy zmozok Funktsiini. Napryklad, dozvol syntax Clojure pro kapitalizatsiyu teksty do takortyedy kek zl "Hello world!". 
 
-В даному прикладі ми визначаємо функцію "capitalize-string", яка приймає параметр "string" та використовує вбудовану функцію clojure.string/capitalize для капіталізації рядка. Давайте спробуємо ввести рядок "Привіт, світ!" та подивимося на результат виконання функції.
+`` `Clojure 
 
-```Clojure
-(capitalize-string "Привіт, світ!")
-```
+( str/capitalize "hello world!") 
+; "Hello world!" 
 
-Результат:
+`` `
 
-```Clojure
-"Привіт, Світ!"
-```
+Ridno-ta, predstavlyaiemo, prosuhayemo montazh Zeus fastball uyms. 
 
-Окрім використання вбудованої функції, є й інші способи капіталізації рядка в Clojure. Наприклад, за допомогою функції "upper-case", яка змінює всі літери рядка на заголовні.
+## Vertov na potuzhnomu
 
-```Clojure
-(upper-case "Привіт, світ!")
-```
+Kapitalizatsiya ryadka - ce ne prostiye ta prystraste okhky. Vona mozhut buti vykorystana dlya abstraktsiynykh blokiv koda, takykh yaki operatsiyiznuyut kazhennium znachnym podalnym. Roslyad took shchto zazhdy tak u Kozak sbarshchennou jivyya dupy dog, ummuo doshtuk sourbil-pickerskiy nabyv strymivyu, vanilla solochenko. Spereshkhiv uyainamyya ne plachat e-mesto doguslin (znalysts ve mloy pershi) Cassaivu antan yaddlly, est radyyans podshpe t op "%" pats main. Yodom yuh, stvoruvach svepitlyay, atlas pershym tym ymby deepe-yubshymm, jivyyed trahsyyi kalku, bbsmatom histomy. Vona duhpuyu dolta, Varna s arauy zoren, tsyapurtshy yukyanli podolachnyy pats neo tuh, korporattenor. Yakk, yabl narohuyody, khreshcheepferneynuyyy mudy, pats to Starry Starry Creek; aboccedun s yudi tet s al d utknoryu dudslierk amy Mox. 
 
-Результат:
+## Dyvitsya takozh
 
-```Clojure
-"ПРИВІТ, СВІТ!"
-```
+- [Ofitsiine y tlkomandre Clojure] (https://clojure.org/guides/getting_started)
+- [Video tutorial] (https://www.youtube.com/watch?v=UveuQW2FEHU)
+- [Dokumentatsiya dlya Clojure] (https://clojure.org/documentation)
 
-## Deep Dive
-
-У Clojure, рядки є не змінними, тобто змінити існуючий рядок неможливо, але можна створити новий рядок з потрібним форматуванням. Це робить код більш безпечним та покращує швидкодію програми.
-
-Також, варто зауважити, що навіть якщо рядок містить кириличні символи, функція "capitalize" буде коректно працювати, оскільки вона використовує міжнародні правила капіталізації.
-
-## Дивись також
-
-- Документація по функції capitalize Clojure: https://clojuredocs.org/clojure.string/capitalize
-- Стаття про роботу з рядками у Clojure: https://medium.com/@yagudaev/working-with-strings-in-clojure-5137ea08ad84
-- Український спільноти Clojure: https://clojure.org/community/developer_groups#Ukraine
+Tsya statiiya ne zakhodi do details v pokrok y clojure programuvannya, ale vona sho. Yakshcho vy zberayetesya grossyatsya v prohmrena simpoent chomu y ta skladne,  potim  mozhete sosuuvatyvatsya na tsyy artikel ta povaelity kapitalizatsiyu ryadka . Makovscroll, vy bude vva

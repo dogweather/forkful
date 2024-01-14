@@ -1,28 +1,39 @@
 ---
-title:                "Gleam: 現在の日付を取得する"
+title:                "Gleam: 「現在の日付を取得する」"
+simple_title:         "「現在の日付を取得する」"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-日付を取得するのに興味がある人は、Gleamでの日付の取得方法を学ぶことで、より使いやすくエレガントなコードを書くことができるようになります。また、日付はプログラミングで非常によく使用される基本的な要素であるため、その機能を理解することは非常に重要です。
+＃＃　なぜ
 
-## 使い方
+日付を取得する理由は多々あります。例えば、データベースやファイルの作成日時を取得するために使用したり、特定の作業を実行するために必要な正確な時刻を取得したりするためにも使用することができます。
+
+＃＃＃　Ｈｏｗ　Ｔｏ
+
+日付を取得するには、まず「gleam/datetime」ライブラリをインポートします。次に、```Gleam.datetime.now()```を使用して現在の日付を取得します。また、日付をフォーマットする必要がある場合は、```Gleam.datetime.format()```を使用することができます。
+
+例：
 ```Gleam
-import gleam/time
+import gleam/datetime
 
-let current_date = time.now()
-|> time.format_date(time.format.rfc_3339)
-|> IO.print
-```
-上記のコードを実行すると、現在の日付と時刻がRFC 3339のフォーマットで出力されます。他のフォーマットを使用する場合は、`time.format`モジュールのドキュメントを参照してください。
+let current_date = Gleam.datetime.now()
 
-## ディープダイブ
-日付を取得するとき、われわれのコンピュータは実際にはUTC時間を使用しています。`time.now()`は、システムのタイムゾーン設定に基づいて日付を調整します。また、`time.now()`は関数ですが、第二引数としてタイムゾーン情報を受け取ることもできます。より詳細な情報については、`gleam/time`モジュールのドキュメントを参照してください。
+let formatted_date = Gleam.datetime.format("YYYY-MM-DD hh:mm:ss", current_date)
 
-## 詳しくはこちらを参照
-- Gleam公式ドキュメント: https://gleam.run/libraries/time/
-- RFC 3339フォーマットの説明: https://www.ietf.org/rfc/rfc3339.txt
+## Deep Dive
+
+日付を取得する方法についてもっと詳しく知りたい場合、以下の点に注意してください：
+
+- ライブラリをインポートする方法
+- 「now()」を使用して日付を取得する際のオプションフィールド
+- フォーマットすることで取得した日付を表示する方法
+
+## 関連リンク
+
+[マニュアル：gleam/datetime](https://gleam.run/manuals/libraries/datetime.html)
+[サンプルコード：日付を取得する方法](https://github.com/gleam-lang/gleam/blob/master/examples/datetime/datetime.gleam)

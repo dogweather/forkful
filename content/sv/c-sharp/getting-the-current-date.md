@@ -1,42 +1,56 @@
 ---
-title:                "C#: Att få aktuellt datum"
+title:                "C#: Att få nuvarande datum"
+simple_title:         "Att få nuvarande datum"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att få den nuvarande datumen kan vara användbart för olika program och applikationer. Det kan användas för att visa den aktuella tidpunkten i en kalenderapplikation eller för att hålla reda på när en transaktion gjordes i ett ekonomisystem.
 
-## Hur man
-För att få den aktuella datumen i C#, kan du använda DateTime-objektet.
+Att veta och använda den aktuella datumet är en viktig del av programmering i C#. Det är en grundläggande funktion som hjälper till att skapa dynamiska program och hantera olika datumformat. Oavsett om det är för en kalenderapplikation eller för att spåra transaktioner i ett program, behöver man ofta veta det aktuella datumet.
 
-```C#
-DateTime currentDateTime = DateTime.Now;
-Console.WriteLine("Aktuellt datum: " + currentDateTime.ToString("dd/MM/yyyy"));
-Console.WriteLine("Aktuell tid: " + currentDateTime.ToString("HH:mm:ss"));
+## Hur man gör det
+
+Det finns flera sätt att få det aktuella datumet i C#. Det enklaste sättet är att använda DateTime-klassen. Detta är en inbyggd typ i C# och ger information om datum och tid. För att få det aktuella datumet behöver du bara skapa en DateTime-variabel och tilldela den till metoden Now().
+
+```csharp
+DateTime datum = DateTime.Now;
+
+Console.WriteLine(datum);
 ```
 
-Output:
-```
-Aktuellt datum: 21/10/2020
-Aktuell tid: 09:00:00
-```
-Först skapar vi ett DateTime-objekt och tilldelar det den aktuella datumen med DateTime.Now. Sedan använder vi ToString-metoden för att formatera datumet och tiden enligt vår önskade format.
+Med detta enkla kodavsnitt kommer du att få det aktuella datumet i det format som är inställt på din dator.
 
 ## Djupdykning
-DateTime-objektet i C# är mycket kraftfullt och innehåller många metoder och egenskaper för att hantera datum och tid. Du kan till exempel använda Add-metoden för att lägga till eller subtrahera en viss tid till det aktuella datumet eller använda Parse-metoden för att konvertera en sträng till ett DateTime-objekt.
 
-Nedan är några andra användbara metoder och egenskaper som finns tillgängliga:
+Om du vill ha mer kontroll över formatet på det aktuella datumet finns det flera sätt att göra det. Ett sätt är att använda ToString() metoden och ange ett format som önskas. Till exempel kan du använda "d" för ett kort datumformat eller "D" för ett långt datumformat.
 
-- `DateTime.Today`: Returnerar en DateTime-objekt som innehåller datumen för dagens datum.
-- `DateTime.IsLeapYear(year)`: Returnerar en boolesk värde som indikerar om det angivna året är ett skottår.
-- `DateTime.Compare(date1, date2)`: Jämför två DateTime-objekt och returnerar en positiv, negativ eller noll värde baserat på vilket datum som är senare.
-- `DateTime.TryParse(str, out date)`: Försöker tolka en sträng som ett DateTime-objekt och returnerar en boolesk värde som indikerar om tolkningen var framgångsrik eller inte.
+```csharp
+DateTime datum = DateTime.Now;
 
-## Se även
-- [Microsoft Docs: DateTime Struct] (https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1)
-- [C# DateTime Example] (https://www.c-sharpcorner.com/article/c-sharp-datetime-examples/)
-- [DateTime vs DateTimeOffset] (https://www.c-sharpcorner.com/article/datetime-vs-datetimeoffset/)
+Console.WriteLine(datum.ToString("d")); // kommer att ge 03/10/2021
+Console.WriteLine(datum.ToString("D")); // kommer att ge 03 oktober 2021
+```
+
+En annan användbar funktion är att kunna ändra tidszonen för det aktuella datumet. Detta kan göras genom att använda TimeZoneInfo-klassen och dess metoder.
+
+```csharp
+DateTime datum = DateTime.Now;
+
+TimeZoneInfo tidszon = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time"); // ändra till önskad tidszon
+DateTime aktuelltDatum = TimeZoneInfo.ConvertTime(datum, tidszon);
+
+Console.WriteLine(aktuelltDatum);
+```
+
+Detta kommer att ge det aktuella datumet i tidszonen som anges.
+
+## Se också
+
+- [DateTime Class](https://docs.microsoft.com/sv-se/dotnet/api/system.datetime?view=net-5.0)
+- [TimeZoneInfo Class](https://docs.microsoft.com/sv-se/dotnet/api/system.timezoneinfo?view=net-5.0)
+- [C# Datetime formats](https://www.csharp-examples.net/string-format-datetime/)

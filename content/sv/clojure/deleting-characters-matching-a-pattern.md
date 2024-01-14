@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Radera tecken som matchar ett mönster"
+title:                "Clojure: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,28 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att ta bort tecken som matchar ett mönster kan vara användbart när man vill rensa data eller förbereda det för vidare bearbetning.
+Att ta bort tecken som matchar ett mönster kan vara användbart för att rensa upp data eller filtrera bort oönskade tecken i en sträng.
 
-## Hur man gör
+## Hur man gör det
 
-För att ta bort tecken som matchar ett mönster i Clojure använder man sig av funktionen `str/replace` tillsammans med reguljära uttryck. Låt oss säga att vi har en sträng som innehåller både bokstäver och siffror och vi vill ta bort alla siffror från den. Vi kan då använda följande kod:
+För att ta bort tecken som matchar ett visst mönster använder man en kombination av funktionerna `str` och `re-seq`.
 
 ```Clojure
-(require '[clojure.string :as str])
-(str/replace "Hej123" #"\d" "") ;; output: "Hej"
+(str (re-seq #"[*]" "Det här är en *provsats* med *tecken* att ta bort."))
 ```
 
-I detta exempel använder vi funktionen `replace` från `clojure.string` biblioteket och ger den två argument - strängen vi vill manipulera och ett reguljärt uttryck `#"\d"` som betyder "matcha alla siffror". Det tredje argumentet är en tom sträng, vilket betyder att vi vill ersätta alla matchade siffror med inget, vilket resulterar i att de tas bort från strängen.
+Detta kommer att skapa en ny sträng utan några asterisker (`*`).
 
-Man kan också göra mer avancerade manipulationer med reguljära uttryck för att ta bort specifika tecken eller grupper av tecken från en sträng. Det är värt att experimentera med olika uttryck för att utforska möjligheterna.
+Output: "Det här är en provsats med tecken att ta bort."
 
 ## Djupdykning
 
-Reguljära uttryck är ett kraftfullt verktyg för strängmanipulation i Clojure. De gör det möjligt för oss att både hitta och ersätta tecken baserat på specifika mönster. Det finns också olika "modifierare" som vi kan använda tillsammans med vårt uttryck för att få mer exakta matchningar. Till exempel kan `i` modifieraren användas för att ignorera skillnaden mellan små och stora bokstäver när man söker efter matchningar.
+För att förstå hur detta fungerar djupare, låt oss bryta ner koden:
 
-En annan intressant funktion är `replace-first`, vilket gör att man bara tar bort det första matchande tecknet istället för alla, som `replace` gör. Det finns många andra användbara funktioner som man kan använda sig av när man arbetar med reguljära uttryck, så det kan vara värt att läsa på mer om dem.
+- `re-seq` används för att matcha regelbundna uttryck i en sträng.
+- `#"[*]"` är det mönster som vi vill matcha, i detta fall en asterisk.
+- `"Det här är en *provsats* med *tecken* att ta bort."` är den sträng som vi vill filtrera.
+- `str` används för att kombinera resultaten från `re-seq` till en enda sträng.
 
-## Se även
+Genom att använda `re-seq` för att matcha ett visst mönster och sedan använda `str` för att kombinera resultatet kan vi enkelt ta bort oönskade tecken från en sträng.
 
-- [Reguljära uttryck guider för Clojure](https://clojure.org/guides/regex)
-- [Official Clojure docs om `str/replace`](https://clojuredocs.org/clojure.string/replace)
+## Se också
+
+- [Clojure Dokumentation](https://clojure.org/)
+- [RegEx Tutorial](https://www.regular-expressions.info/tutorial.html)
+- [Clojure Cookbook](https://www.clojure-cookbook.com/)

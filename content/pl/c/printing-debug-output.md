@@ -1,44 +1,61 @@
 ---
-title:                "C: Wyświetlanie wyników debugowania"
+title:                "C: Drukowanie wyników debugowania"
+simple_title:         "Drukowanie wyników debugowania"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Debugowanie jest jedną z najważniejszych części procesu pisania programów. Bez niego trudno jest znaleźć błędy i poprawić działanie naszego kodu. Jednym z potężniejszych narzędzi debugujących jest wyświetlanie informacji pomocniczych, które pomagają nam w prześledzeniu działania naszego programu i identyfikacji problemów. W tym artykule zobaczymy, dlaczego wyświetlanie debug output jest ważne i jak tego dokonać.
+Drukowanie komunikatów debugowania jest niezbędnym elementem procesu programowania. Pozwala nam to na śledzenie i analizę działania naszego kodu, a także na szybkie znalezienie ewentualnych błędów. Oczywiście przydatne jest jedynie w fazie developmentu i nie powinno znajdować się w finalnej wersji programu, jednak może znacząco ułatwić nam pracę nad projektem.
 
-## Jak to zrobić?
+## Jak To Zrobić
 
-Wyświetlanie debug output w języku C jest stosunkowo proste. Wystarczy wykorzystać funkcję `printf()` w celu wyświetlenia żądanych informacji. Przykładowy kod wyglądałby następująco:
+Aby wyświetlić komunikaty debugowania w języku C, musimy użyć funkcji ```printf```. Jest to podstawowa funkcja do wyświetlania informacji w konsoli. Możemy umieścić ją w dowolnym miejscu naszego kodu, gdzie chcemy uzyskać informacje o wartościach zmiennych, przebiegu pętli itp. Przykładowy kod wyglądałby następująco:
 
-```C
+```
 #include <stdio.h>
 
 int main()
 {
-    int a = 5, b = 7;
-    printf("Wartość a: %d, wartość b: %d.\n", a, b);
+    int x = 5;
+    printf("Wartość zmiennej x wynosi: %d", x);
     return 0;
 }
 ```
 
-Powyższy kod wyświetli nam informację o wartościach zmiennych `a` i `b` na konsoli w trakcie działania programu. Jednak warto pamiętać, że wyświetlanie debug output powinno być używane tylko podczas debugowania, a nie w końcowej wersji produktu.
+Po uruchomieniu tego kodu, w konsoli zostanie wyświetlona informacja: "Wartość zmiennej x wynosi: 5". Dodatkowo, możemy również wyświetlać więcej niż jedną zmienną w jednym wywołaniu funkcji ```printf```, na przykład:
 
-## Deep Dive
+```
+printf("Wartości zmiennych to: x = %d, y = %f, z = %c", x, y, z);
+```
 
-Za pomocą funkcji `printf()` możemy wyświetlić różnego rodzaju informacje, takie jak wartości zmiennych, tekst, czy nawet adresy pamięci. W celu odseparowania tych informacji możemy wykorzystać specjalne znaki formatujące, np. `%d` dla wartości całkowitych, `%f` dla liczb zmiennoprzecinkowych, czy `%s` dla tekstów.
+W tym przypadku, musimy pamiętać o odpowiedniej kolejności zmiennych w funkcji.
 
-Dodatkowo, możemy wykorzystać również inne funkcje, takie jak `sprintf()`, która pozwala na zapisanie wyświetlanych informacji do zmiennej, lub `fprintf()`, która zapisuje je do pliku zamiast na konsoli.
+## Głębszy Rzut Oka
 
-Pamiętajmy, żeby nie nadużywać wyświetlania debug output, ponieważ to może wpłynąć na wydajność naszego programu.
+Komunikaty debugowania mogą również zawierać bardziej szczegółowe informacje, takie jak wartości zmiennych po każdej iteracji pętli lub komunikaty o błędach. W takim przypadku, możemy użyć funkcji ```fprintf```, która oprócz wyświetlania komunikatów w konsoli, umożliwia również zapisywanie ich do pliku. Przykładowy kod wyglądałby tak:
 
-## Zobacz też
+```
+#include <stdio.h>
 
-- ["Debugowanie w języku C"](https://pl.wikipedia.org/wiki/B%C5%82%C4%85d_programowania)
-- ["Wyświetlanie debug output w języku Python"](https://realpython.com/python-debugging-pdb/#printing-values-to-understand-what-s-going-on)
+int main()
+{
+    FILE *fp;
+    
+    fp = fopen("debug.txt", "w");
+    fprintf(fp, "Wartość zmiennej x wynosi: %d", x);
 
-Dzięki wyświetlaniu debug output możemy łatwiej zidentyfikować błędy w naszym kodzie i naprawić je szybciej. Pamiętajmy jednak, żeby używać go tylko podczas debugowania, a nie w końcowej wersji produktu. Miejmy również na uwadze wydajność naszego programu i unikajmy nadmiernego wyświetlania informacji pomocniczych.
+    return 0;
+}
+```
+
+Taka metoda może być przydatna w przypadku, gdy chcemy zachować historyczne informacje o przebiegu działania naszego programu.
+
+## Zobacz Również
+
+- [CppSho

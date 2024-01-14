@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Verificare se una directory esiste"
+title:                "PHP: Verifica dell'esistenza di una cartella"
+simple_title:         "Verifica dell'esistenza di una cartella"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/php/checking-if-a-directory-exists.md"
 ---
 
@@ -9,36 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Esistono molte situazioni in cui può essere utile verificare se una directory esiste o meno. Ad esempio, quando si vuole creare una nuova directory per archiviare i file o quando si vuole eliminare una directory solo se esiste già.
+Quando si scrive un codice PHP, ci sono molte situazioni in cui si tiene traccia di file o directory. Può essere utile verificare se una directory esiste prima di eseguire azioni come creare nuovi file o copiare file in essa. In questo articolo, vedremo come verificare se una directory esiste utilizzando PHP.
 
-## Come Fare
+## Come fare
 
-Per verificare se una directory esiste, possiamo utilizzare la funzione `is_dir()` di PHP. Questa funzione accetta come argomento il percorso della directory e restituisce un valore booleano, `true` se la directory esiste e `false` se non esiste.
-
-Ecco un esempio di codice in cui utilizziamo la funzione `is_dir()` per verificare l'esistenza di una directory chiamata "documenti":
+Per verificare se una directory esiste utilizzando PHP, possiamo utilizzare la funzione nativa `is_dir()`. Questa funzione restituisce un valore booleano che indica se la directory specificata esiste o meno.
 
 ```PHP
-if(is_dir("documenti")){
-  echo "La directory 'documenti' esiste.";
-} else{
-  echo "La directory 'documenti' non esiste.";
+<?php
+$directory = '/path/to/directory'; // immettere il percorso della directory da verificare
+if (is_dir($directory)) { // verifica se la directory esiste
+  echo "$directory esiste.";
+} else {
+  echo "$directory non esiste.";
 }
 ```
 
-Se la directory "documenti" esiste sulla nostra macchina, il codice stamperà "La directory 'documenti' esiste." Altrimenti, stamperà "La directory 'documenti' non esiste."
+Output:
+```
+/path/to/directory esiste.
+```
 
-## Approfondimento
+Se si desidera verificare se una directory esiste all'interno di un'altra directory specifica, è possibile utilizzare `is_dir()` in combinazione con `file_exists()`. Quest'ultima funzione verifica se un file o una directory esiste e restituisce un valore booleano.
 
-Oltre alla funzione `is_dir()`, PHP offre anche altre funzioni per gestire le directory. Alcune di queste sono:
+```PHP
+<?php
+$base_directory = '/path/to/base/directory'; // immettere il percorso della directory base
+$target_directory = 'directory'; // immettere il nome della directory da verificare
+if (file_exists($base_directory . '/' . $target_directory) && is_dir($base_directory . '/' . $target_directory)) {
+  echo "La directory $target_directory esiste all'interno di $base_directory.";
+} else {
+  echo "La directory $target_directory non esiste all'interno di $base_directory.";
+}
+```
 
-- `mkdir()`: per creare una nuova directory
-- `rmdir()`: per eliminare una directory vuota
-- `scandir()`: per ottenere un array di tutti i file e le directory presenti all'interno di una directory specificata
+Output:
+```
+La directory directory non esiste all'interno di /path/to/base/directory.
+```
 
-È importante notare che quando si utilizzano queste funzioni, il percorso della directory deve essere specificato correttamente per ottenere i risultati desiderati.
+## Approfondimenti
 
-## Vedi Anche
+Oltre alla funzione `is_dir()`, esiste anche la funzione `is_readable()` che può essere utilizzata per verificare se una directory è leggibile o meno, e la funzione `is_writable()` per verificare se una directory è scrivibile o meno.
 
-- [Documentazione su `is_dir()` di PHP](https://www.php.net/manual/en/function.is-dir.php)
-- [Tutorial su come gestire le directory in PHP](https://www.tutorialrepublic.com/php-tutorial/php-file-directory-management.php)
-- [Video introduttivo su is_dir() e altre funzioni di gestione delle directory](https://www.youtube.com/watch?v=IJkTWHa4y2E)
+Inoltre, è importante notare che la funzione `is_dir()` potrebbe rallentare l'esecuzione del codice se viene utilizzata su una directory di grandi dimensioni, poiché dovrà scorrere ogni file all'interno della directory per confermare la sua esistenza. In questi casi, è meglio utilizzare la funzione `file_exists()` invece di `is_dir()`.
+
+## Vedi anche
+
+- [Documentazione PHP: is_dir()](https://www.php.net/manual/en/function.is-dir.php)
+- [Documentazione PHP: file_exists()](https://www.php.net/manual/en/function.file-exists.php)
+- [Documentazione PHP: is_readable()](https://www.php.net/manual/en/function.is-readable.php)
+- [Documentazione PHP: is_writable()](https://www.php.net/manual/en/function.is-writable.php)

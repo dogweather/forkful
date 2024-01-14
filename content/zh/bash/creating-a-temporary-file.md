@@ -1,73 +1,49 @@
 ---
-title:                "Bash: 创建临时文件"
+title:                "Bash: 创建临时文件。"
+simple_title:         "创建临时文件。"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么
 
-不论是作为初学者或者有经验的程序员，都会遇到创建临时文件的情况。临时文件在编程中扮演着重要的角色，它们可以充当日志文件、缓存文件或者是暂存数据的存储空间。因此，掌握创建临时文件的方法是非常有用的。
+临时文件在编程中扮演着非常重要的角色。它们可以帮助我们存储和处理临时数据，而不会占用过多的内存空间。临时文件还可以帮助我们在程序运行过程中保留一些重要的信息，以便于后续使用。因此，创建临时文件是一项非常有用的编程技巧，可以帮助我们更有效地编写程序。
 
-## 如何
-
-在Bash编程中，可以通过使用 `mktemp` 命令来创建临时文件。其基本语法如下：
+# 如何做
 
 ```Bash
-TEMPFILE=$(mktemp)
+# 创建一个临时文件
+temp_file=$(mktemp)
+
+# 将数据写入临时文件
+echo "这是一个临时文件" > $temp_file
+
+# 从临时文件读取数据
+cat $temp_file
+
+# 删除临时文件
+rm $temp_file
 ```
 
-这条命令将会在默认的临时文件目录中创建一个唯一的文件并将其赋值给 `TEMPFILE` 变量。也可以通过指定文件名前缀来创建有意义的文件名，例如：
+输出：
 
-```Bash
-LOGFILE=$(mktemp log.XXXXX)
-```
+这是一个临时文件
 
-其中， `XXXXX` 代表随机的字符串。这样可以让我们更容易地识别出不同的临时文件。
+# 深入了解
 
-除了使用 `mktemp` 命令，我们也可以使用 `touch` 命令来创建临时文件：
+在Bash中，我们可以使用mktemp命令来创建临时文件。使用这个命令，我们可以生成一个唯一的文件名，并将其赋值给一个变量。然后，我们可以使用这个变量来操作临时文件，比如将数据写入文件或从文件中读取数据。最后，我们需要在程序结束时手动删除临时文件，以确保不会耗费存储空间。
 
-```Bash
-touch /tmp/tempfile
-```
+# 参考链接
 
-但是需要注意的是，这种方法创建的文件可能不够安全，因为其他用户也有可能在同一时间创建相同名字的文件。
+- [Bash文档](https://www.gnu.org/software/bash/manual/bash.html)
+- [Linux命令mktemp用法详解](https://blog.51cto.com/nickge/1897287)
+- [编程中十分常用的几个Linux命令](https://blog.csdn.net/u012067966/article/details/52037972)
 
-创建临时文件之后，可以在其中写入数据，例如：
+# 参看
 
-```Bash
-TEMPFILE=$(mktemp)
-echo "Hello World!" >> $TEMPFILE
-```
-
-## 深入了解
-
-当我们在创建临时文件的时候，有时候需要指定文件的权限。在使用 `mktemp` 命令时，可以使用 `-m` 参数来指定文件的权限，例如：
-
-```Bash
-TEMPFILE=$(mktemp -m 777)
-```
-
-这样就会在创建文件的同时，将其权限设置为 `777`，即所有用户都有读写执行的权限。
-
-另外，可以使用 `-d` 参数来创建临时文件夹：
-
-```Bash
-TEMPDIR=$(mktemp -d)
-```
-
-这样就可以在需要的时候创建临时文件夹来存储临时文件。
-
-## 参考链接
-
-- [Bash脚本教程](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Shell脚本编程基础](https://www.tutorialspoint.com/unix/shell_scripting.htm)
-- [Shell脚本基础语法](https://www.tldp.org/LDP/abs/html/basic-syntax.htm)
-
-## 延伸阅读
-
-- [如何在Linux中管理临时文件](https://www.howtogeek.com/213899/how-to-manage-temporary-files-in-linux/)
-- [Shell脚本中的命令替换](https://www.cyberciti.biz/faq/unix-linux-replace-string-words-in-many-files/)
-- [Linux命令参考手册](https://www.linuxcommand.org/)
+- [Markdown语法指南]（http://www.markdown.cn/）
+- [Bash编程的基本概念]（https://www.ibm.com/developerworks/cn/linux/l-bash-components）

@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: デバッグ出力の印刷"
+title:                "Elixir: 「デバッグ出力の印刷」"
+simple_title:         "「デバッグ出力の印刷」"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/printing-debug-output.md"
 ---
 
@@ -9,37 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-デバッグ出力を行う理由を説明します。これは、コード内のエラーを特定し、修正するために非常に重要なツールです。デバッグ出力を使用することで、コードの実行中に発生した値や変数を確認することができ、プログラムの動作を理解するのに役立ちます。
+Elixirプログラムでデバッグ出力を行うことについて理解がまだ不十分な方もいるかもしれません。しかし、デバッグ出力はElixirプログラム開発の中で非常に重要な役割を果たしています。デバッグ出力はプログラムの実行中にどのようにコードが実行されているかを確認することができ、バグの発見や修正に役立ちます。
 
 ## 方法
 
-Elixir では、`IO.inspect/2`関数を使用してデバッグ出力を行うことができます。以下のようにコード内に記述します。
+Elixirでは、デバッグ出力を行うためには単純に`IO.puts`メソッドを使用します。このメソッドはコンソールに文字列を出力することができます。以下は、`IO.puts`メソッドを使用して文字列を出力する例です。
 
 ```Elixir
-def foo(x) do
-    IO.inspect(x)
-    x + 2
-end
+IO.puts("Hello, world!")
 ```
 
-上記の例では、変数 `x` の値を出力し、その後に `x + 2` を返す関数 `foo` を定義しています。コードを実行すると、コンソールに変数 `x` の値が表示されます。
+上記のコードでは、`Hello, world!`という文字列がコンソールに表示されます。また、`IO.inspect`メソッドを使用することで、変数の値やオブジェクトの内容を出力することもできます。
 
 ```Elixir
-iex> foo(5)
-5
-7
+name = "Alice"
+IO.inspect(name)
 ```
 
-このように、`IO.inspect/2` を使用することで、関数や変数の値を簡単に出力することができます。
+上記のコードでは、変数`name`の値である`Alice`がコンソールに出力されます。
 
-## ディープダイブ
+## 深堀り
 
-デバッグ出力を行う際には、さまざまなオプションを設定することができます。例えば、`IO.inspect/2` の第2引数に `label` を指定することで、出力の前に任意のラベルを表示することができます。また、`IO.inspect/2` の第2引数に `pretty: true` を指定することで、出力を見やすい形式で表示することができます。
+デバッグ出力を行う際には、パフォーマンスや可読性の観点から注意する必要があります。例えば、複雑なオブジェクトを出力する際には、`IO.inspect`を使用して適切なフォーマットを指定することが重要です。
 
-更に、`IO.inspect/2` をチェーンすることで、複数のデータを同時に出力することができます。また、`IO.inspect/2` では色付きの出力を行うこともでき、問題の特定に役立ちます。
+また、`Logger`モジュールを使用することで、ログレベルやファイルへの出力など、より高度なデバッグ出力を行うことができます。さらに、`Mix`コマンドを使用することで、Elixirのプロセスの状態やトレース情報を取得することもできます。
 
-## See Also
+## 他の情報
 
-- [Elixir 公式ドキュメント - IO.inspect/2](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Elixir 入門 - デバッグの基礎](https://elixir.jp/learn/basic/debug.html)
-- [Deviac - Elixir を使用したデバッグの方法](https://deviac.me/articles/how-to-debug-your-elixir-code/)
+Elixirプログラミングの世界では、デバッグ出力に関するさまざまなテクニックやベストプラクティスが語られています。以下のリンクを参考に、さらに深く学ぶことができます。
+
+- [Elixir公式ドキュメント - デバッグ](https://hexdocs.pm/elixir/debugging.html)
+- [Elixir Forum - デバッグ出力について](https://elixirforum.com/t/elixir-outputting-debug-information/1196)
+- [elxir - Mixコマンドについて](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)

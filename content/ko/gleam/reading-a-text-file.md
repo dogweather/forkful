@@ -1,48 +1,46 @@
 ---
 title:                "Gleam: 텍스트 파일 읽기"
+simple_title:         "텍스트 파일 읽기"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Gleam 프로그래밍 블로그 포스트 - 한국 독자들을 위해
+## 왜
 
-# 왜
-
-## 왜 읽기
-
-텍스트 파일을 읽는 이유는 주로 데이터를 처리하거나 분석하기 위해서입니다. 읽은 데이터를 바탕으로 프로그래밍 작업을 수행하거나 파일 내용을 확인하는 등 다양한 목적으로 사용될 수 있습니다.
+텍스트 파일을 읽는 것은 프로그램을 작성하거나 데이터를 분석하는 데 필요한 매우 기본적인 작업입니다. 이 기술을 배우면 더 나은 프로그래머가 될 수 있습니다.
 
 ## 어떻게
 
-Gleam에서 텍스트 파일을 읽는 가장 기본적인 방법은 `File.read` 함수를 사용하는 것입니다. 이 함수는 파일의 경로를 인자로 받아서 파일의 내용을 읽어올 수 있습니다.
+먼저, Gleam에서 도구를 로드해야 합니다. 그런 다음, 파일 경로와 함께 `gleam_text_file` 함수를 사용하여 텍스트 파일을 로드하고, 결과를 변수에 할당하십시오.
 
 ```Gleam
-let path = "file.txt"
-let content = File.read(path)
+// 예시 파일 경로
+let file_path = "example.txt"
+
+// 파일 읽기
+let file = gleam_text_file.load(file_path)
 ```
 
-위 예시는 `file.txt`라는 파일을 읽어서 해당 파일의 내용을 `content` 변수에 저장합니다. 파일의 내용은 문자열 형태로 저장됩니다.
-
-## 깊이 파고들기
-
-파일을 읽는 데 있어서 유의해야 할 점은 파일이 존재하지 않거나 잘못된 경로를 입력하면 오류가 발생한다는 것입니다. 이러한 상황에 대비해서 `File.read` 함수를 사용할 때는 `Option` 타입을 사용하는 것이 좋습니다.
-
-예를 들어서 아래와 같이 `match` 표현을 사용하여 파일을 읽는 작업을 수행할 수 있습니다.
+텍스트 파일을 읽은 후, 데이터를 사용해 원하는 방식으로 가공할 수 있습니다. 예를 들어, `string` 타입으로 값을 추출하거나 `interprete` 함수를 사용하여 문자열을 다른 타입으로 변환할 수 있습니다.
 
 ```Gleam
-let path = "file.txt"
-let result = match File.read(path) {
-    Ok(content) -> content
-    Error(_) -> "파일을 읽는 중 오류가 발생했습니다."
-}
+// 예시 파일에서 string 값 추출
+let name = file.name
+
+// string 값을 int 타입으로 변환
+let age = file.age |> interprete.int
 ```
 
-위 예시에서 `match` 표현을 사용하면 `File.read` 함수가 `Ok` 값을 반환하면 해당 값을 `result` 변수에 저장하고, `Error` 값을 반환하면 오류 메시지를 출력하는 것을 볼 수 있습니다.
+## 고수정보
 
-# 관련 항목
+텍스트 파일을 읽는 더 깊은 정보를 알고 싶다면, `gleam_text_file` 모듈의 공식 문서를 참조하십시오. 이 모듈에는 파일을 읽는 방법 외에도 파일의 존재 여부를 확인하고 쓰기 및 수정하는 방법도 포함되어 있습니다.
 
-- [Gleam 공식 문서 - 파일 입출력](https://gleam.run/documentation/stdlib/file.html)
-- [Gleam Community Forum - 파일 관련 질문들과 답변들](https://gleam.discourse.group/search?q=file)
+## 연관된 것들
+
+- [Gleam 공식 문서](https://gleam.run/building-getting-started.html)
+- [Gleam 텍스트 파일 모듈 문서](https://gleam.run/building-stdlib-modules.html#gleam-text-file)
+- [다른 Gleam 모듈 살펴보기](https://gleam.run/building-stdlib-modules.html)

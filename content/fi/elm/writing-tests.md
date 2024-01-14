@@ -1,51 +1,58 @@
 ---
 title:                "Elm: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Elm"
-category:             "Testing and Debugging"
+category:             "Elm"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Kirjoittaminen testien avulla on tärkeä osa ohjelmiston kehittämistä. Se auttaa varmistamaan, että koodi toimii oikein ja mahdollistaa muutosten tekemisen ilman pelkoa mahdollisista hajoamisista. Se myös helpottaa uusien kehittäjien pääsemistä nopeasti sisään projektiin ja ylläpitää koodin laatua.
+## Miksi?
 
-## Miten
-Testien kirjoittaminen Elmillä on hyvin yksinkertaista hyödyntämällä sisäänrakennettuja Unit.testing moduuleja. Alla olevassa esimerkissä testataan funktiota, joka palauttaa saman arvon kuin annettu parametri:
+Testaaminen on tärkeä osa koodin kirjoittamista, sillä se auttaa löytämään ja korjaamaan mahdollisia virheitä ja varmistaa, että koodi toimii oikein. Kirjoittamalla testejä varmistat myös, että muutokset ja lisäykset eivät aiheuta ongelmia jo kirjoitettuun koodiisi.
 
-```Elm
-import Unit
+## Miten?
 
-funktio x = x
+Testien kirjoittaminen Elm-kielellä on helppoa ja intuitiivista. Voit käyttää "elm-test" pakettia, joka tulee mukana Elm-asennuksen yhteydessä. Tässä esimerkissä luomme yksinkertaisen testin, joka tarkistaa, vastaako laskufunktiomme oikein:
 
-Unit.test "funktio palauttaa saman parametrin" <|
-    \_ -> 
-        let
-            tulos = funktio 5
-        in
-            tulos === 5 
+```elm
+-- Määritellään laskufunktio
+laske : Int -> Int
+laske x = x * 2
+
+-- Tuodaan Elm-testipaketti
+import Test exposing (..)
+
+-- Luodaan testi
+testi =
+    describe "Laske-funktion testi"
+        [ test "Laskennan tulos on oikein" <|
+            \() ->
+                Expect.equal (laske 5) 10
+        ]
+
+-- Suoritetaan testit
+main : Program Never
+main =
+    beginnerProgram
+        { model = ()
+        , view = always ""
+        , update = always
+        , subscriptions = always Sub.none
+        }
+
+-- Testin tulos:
+-- "1/1 passes"
 ```
 
-Tämä testi varmistaa, että funktio palauttaa odotetun arvon, 5. Voit myös testata vääriä tulosteita varmistamalla, että makron avulla kutsuttu virhe, kuten virhetilanne, nostetaan oikein.
+## Syväsukellus
 
-```Elm
-import Expect exposing (equal)
-
-funktio x = 
-    if x < 0 then
-        (Result.Err "Virhetilanne")
-    else
-        (Result.Ok x)
-
-Expect.equal "funktio tunnistaa negatiiviset arvot" <| funktio (-5) <|
-    Result.Err "Virhetilanne"
-```
-
-Tässä käytetään Expect.equal -funktiota, joka varmistaa, että virhetilanne nostetaan oikein, kun annetaan negatiivinen luku.
-
-## Syvällinen tutkimus
-Testien kirjoittaminen voi olla aikaa vievää, mutta se on tärkeä osa koodin laadun ylläpitämistä. On tärkeää kirjoittaa testit jokaiselle funktiolle ja varmistaa, että ne kattavat kaikki mahdolliset polut koodin suorituksessa. Lisäksi on hyvä myös järjestää testit niin, että ne koskevat spesifistä käyttäytymistä tai ominaisuutta, jolloin virheen paikantaminen ja korjaaminen on helpompaa.
+Testien kirjoittaminen Elm-kielellä noudattaa usein samaa kaavaa: määritellään funktio, tuodaan tarvittavat kirjastot ja luodaan testi, jossa verrataan saatuja tuloksia odotettuihin. Elm-test paketti tarjoaa myös muita käteviä funktioita testien kirjoittamiseen, kuten tarkistukset listoille ja merkkijonoille.
 
 ## Katso myös
-- [Elm Test -dokumentaatio](https://elm-test.readme.io/)
-- [Jatkaava integrointi Elmissä](https://elm-test.readme.io/docs/continuous-integration)
+
+- [Elm-test pakkauksen dokumentaatio](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [Elm-test esimerkkejä](https://github.com/elm-explorations/test/tree/master/examples)
+- [Elm-test kirjaston käyttö esimerkkikohteissa](https://blog.fsprojects.com/2020/07/03/elm-the-testing-learn-elm-with-tests/)

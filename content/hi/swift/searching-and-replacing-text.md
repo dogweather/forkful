@@ -1,7 +1,9 @@
 ---
-title:                "Swift: टेक्स्ट खोजना और बदलना"
+title:                "Swift: टेक्स्ट को खोजें और बदलें"
+simple_title:         "टेक्स्ट को खोजें और बदलें"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/searching-and-replacing-text.md"
 ---
 
@@ -9,34 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-इस ब्लॉग पोस्ट में हम स्विफ्ट प्रोग्रामिंग के माध्यम से उब्दों और मूल्यों की जगह तलाशने और बदलने के बारे में बात करेंगे। यह उपयोगकर्ता के लिए बहुत ही हासिल कार्य हो सकता है।
+यदि आप टेक्स्ट में खोज और प्रतिस्थापन करने में सक्षम होना चाहते हैं, तो स्विफ्ट प्रोग्रामिंग आपको इस प्रकार की सहायता प्रदान कर सकता है। इसके जरिए आप बहुत कम समय में बड़े टेक्स्ट फ़ाइलों को संशोधित कर सकते हैं। 
 
 ## कैसे करें
 
-स्विफ्ट में टेक्स्ट तलाशने और बदलने का अनुरोध ```String``` में इन्हें अपडेट करके किया जाता है। नीचे एक उदाहरण दिया गया है:
+आप निम्न कोड के जरिए स्विफ्ट में टेक्स्ट को खोज और प्रतिस्थापित कर सकते हैं। यहां हम "replace" फ़ंक्शन का उपयोग करके टेक्स्ट को बदल देंगे।
 
 ```Swift
-var message = "मैं हिंदी में हूं।"
-message = message.replacingOccurrences(of: "में", with: "से")
-print(message)
+let originalString = "यह है एक मूल टेक्स्ट।"
+let replacedString = originalString.replacingOccurrences(of: "मूल", with: "नया")
+print(replacedString)
+
+// Output: यह है एक नया टेक्स्ट।
 ```
 
-आउटपुट: "मैं हिंदी से हूं।"
+स्विफ्ट में हम "replacingOccurrences" फ़ंक्शन का उपयोग करके टेक्स्ट के भीतर स्ट्रिंग या चर आइटम का आसानी से प्रतिस्थापन कर सकते हैं। इसके अलावा, हम "replaceAll" फ़ंक्शन का भी प्रयोग कर सकते हैं जो समस्त स्थितियों में टेक्स्ट को प्रतिस्थापित करेगा।
 
-## गहराई में जाएं
+## गहराई में जाएँ
 
-अगर आपको किसी स्ट्रिंग के आंशिक उपस्थिति को बदलने की जरूरत है, तो आप regular expressions का उपयोग कर सकते हैं। ```NSRegularExpression``` के साथ आपको एक मजबूत खंडन इंजन मिलता है जो कुछ भी तलाशने और बदलने में मदद कर सकता है। नीचे एक उदाहरण दिया गया है:
+टेक्स्ट को खोजने और प्रतिस्थापित करने के लिए स्विफ्ट में कई और फ़ंक्शन होते हैं जैसे "replacingOccurrences(of:with:)" और "replaceAll(_:with:options:range:)"। इन फ़ंक्शनों के अलावा आप "range(of:options:range:locale:)" फ़ंक्शन का भी उपयोग कर सकते हैं जो आपको टेक्स्ट में खोजने की सुविधा प्रदान करता है।
 
-```Swift
-let input = "सर्वश्रेष्ठ भविष्य के लिए Swift है।"
-let regex = try! NSRegularExpression(pattern: "भविष्य")
-let output = regex.stringByReplacingMatches(in: input, range: NSRange(input.startIndex..., in: input), withTemplate: "भविष्य के लिए उत्तम")
-print(output)
-```
+## देखें
 
-आउटपुट: "सर्वश्रेष्ठ भविष्य के लिए उत्तम Swift है।"
-
-## देखें भी
-
-- [Swift String पढ़ना और बदलना](https://developer.apple.com/documentation/swift/string)
-- [NSRegularExpression के साथ काम करना](https://developer.apple.com/documentation/foundation/nsregularexpression)
+आप टेक्स्ट को खोजने और प्रतिस्थापित करने के बारे में और जानना चाहते हैं, तो हमारे साथ बने रहें और इन लिंक्स को जां

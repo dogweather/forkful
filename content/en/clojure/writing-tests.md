@@ -1,86 +1,55 @@
 ---
 title:                "Clojure recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Writing tests is a crucial aspect of programming in any language, including Clojure. It allows developers to catch bugs and errors in their code early on, saving time and effort in the long run. Additionally, tests serve as documentation for the code and help ensure that it remains functional even after updates or changes.
+Testing is an essential part of any programming project, and Clojure is no exception. Writing tests allows us to catch errors early on, ensure our code is functioning properly, and make future changes with confidence. It may seem like extra work, but in the long run, it will save time and headaches.
 
 ## How To
+Writing tests in Clojure is easy and straightforward. We will be using the built-in library "clojure.test" to create our tests. Let's take a simple example of a function that adds two numbers and returns the result.
 
-Writing tests in Clojure is made easy with the use of the `clojure.test` library. First, we need to import it into our namespace:
+```Clojure
+(ns my-project.core-test
+  (:require [clojure.test :refer :all]
+            [my-project.core :refer :all]))
 
-```
-(ns my-project.test
-  (:require [clojure.test :refer :all]))
-```
-
-Next, we can define our test cases using the `deftest` macro and provide a descriptive name for each test. Within the body of the test, we can use standard Clojure functions to check for expected outputs.
-
-```
-(deftest test-addition
-  (is (= (+ 1 2) 3))
-  (is (= (+ 10 5) 15))
-  (is (= (+ 7 3) 10)))
+(deftest test-add
+  (is (= 6 (add 2 4))))
 ```
 
-We can also use the `run-tests` function to run our tests and see the results in the console:
+In this example, we have created a test named "test-add" which uses the "is" assertion to check if the result of our "add" function is equal to 6 when given the inputs 2 and 4. 
+We can run this test by calling "lein test" in our project directory. If the test passes, we will see an output of "Ran 1 tests containing 1 assertions. 0 failures, 0 errors." 
+But what if we want to test multiple scenarios or functions? We can use the "testing" macro to group multiple tests together.
 
+```Clojure
+(deftest test-multiply
+  (testing "positive multiplication"
+    (is (= 8 (multiply 2 4))))
+  (testing "negative multiplication"
+    (is (= -8 (multiply -2 4))))
+  (testing "zero multiplication"
+    (is (= 0 (multiply 0 4)))))
 ```
-(run-tests)
 
-;; Output:
-Testing my-project.test
-
-Ran 1 tests containing 3 assertions.
-0 failures, 0 errors.
-```
+We can also use the "testing" macro to provide descriptive names for our tests, making it easier to identify any failing tests.
 
 ## Deep Dive
+Now that we have covered the basics, let's take a deeper look at writing tests in Clojure. The "clojure.test" library provides various assertion functions, such as "is", "are", "testing", "thrown?", etc. These functions allow us to check different conditions, such as equality, exceptions, etc. You can find the full documentation for these functions [here](https://clojure.github.io/clojure/clojure.test-api.html).
 
-In addition to using standard Clojure functions such as `=` and `is`, we can also use the `isnt` function to check for negative conditions and `throws?` to check for exceptions. We can also use the `testing` macro to group related tests together.
+It is also a good practice to organize our tests into different namespaces, just like we do with our code. This helps to keep our tests separate from our actual code, making it easier to maintain and debug.
 
-```
-(deftest test-multiplication
-  (is (= (* 2 3) 6))
-  (testing "Error handling"
-    (isnt (throws? (fn [] (* 2 "test"))))))
-```
-
-Another useful feature of `clojure.test` is the use of fixtures, which allow us to set up and tear down test environments. This is especially useful for testing database functions or web services.
-
-```
-(defn add-user [user]
-  ;; Code to add user to database
-)
-
-(deftest test-add-user
-  (testing "Valid user"
-    (is (= (add-user {:username "test" :password "1234"}) true)))
-  (testing "Invalid user"
-    (is (= (add-user {:username "" :password ""}) false))))
-
-(defn- setup-db []
-  (println "Setting up database connection...")
-  ;; Code to connect to database
-)
-
-(defn- teardown-db []
-  (println "Closing database connection...")
-  ;; Code to close database connection
-)
-
-(use-fixtures :each setup-db teardown-db)
-
-```
+Lastly, we can also use third-party libraries such as "midje" or "spectrum" for more advanced testing features, such as mocking and property-based testing.
 
 ## See Also
+- [Clojure Official Documentation on Testing](https://clojure.org/guides/testing)
+- [Article on Writing Tests in Clojure](https://www.braveclojure.com/practicalli-testing-clojure)
+- [Introduction to clojure.test](https://www.stevejgordon.co.uk/getting-started-with-clojure-test-writing-tests-in-clojure)
 
-- [Official documentation for `clojure.test`](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Effective testing in Clojure](https://medium.com/swlh/effective-testing-in-clojure-b199d0e589ca)
-- [Writing tests with Clojure Spec](https://betweentwoparens.com/articles/writing-tests-with-clojure-spec)
+Remember, testing is an important step in the development process, and it will benefit you in the long run. So don't skip it!

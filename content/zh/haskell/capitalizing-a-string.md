@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: 字符串的大写"
+title:                "Haskell: 将字符串大写"
+simple_title:         "将字符串大写"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/capitalizing-a-string.md"
 ---
 
@@ -9,56 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么
 
-在Haskell编程中，我们经常需要处理字符串。有时候，我们需要将一个字符串中的所有字母变成大写。这可能是为了满足特定的格式要求，或者是为了方便处理数据。不管是什么原因，学会如何将字符串中的字母变成大写是非常有用的。
+在编写Haskell代码时，有时候我们需要将字符串的首字母变成大写。这可能是因为代码的规范要求，或者是为了使得输出更美观。
 
-## 如何实现
+## 如何做到
 
-在Haskell中，我们可以使用函数`toUpper`来将一个字符变成大写。我们也可以使用`map`函数来将一个字符串中的所有字符应用`toUpper`函数。下面是一个简单的例子：
+要实现这一功能，我们可以使用Haskell标准库中的toTitle函数。这个函数接受一个字符串作为参数，并返回一个新的字符串，其中首字母变成大写，其他字母保持不变。
 
 ```Haskell
-strToUpper :: String -> String
-strToUpper str = map toUpper str
+import Data.Char (toTitle)
 
+capitalize :: String -> String
+capitalize str = toTitle (head str) : tail str
+```
+
+下面是一个使用例子，我们将字符串"haskell"变成"Haskell"。
+
+```Haskell
 main :: IO ()
-main = do
-  let str = "Hello World"
-  let upperStr = strToUpper str
-  putStrLn upperStr
+main = putStrLn (capitalize "haskell")
 ```
 
-运行上面的代码，会输出：
-
-```
-HELLO WORLD
-```
+输出结果为："Haskell"
 
 ## 深入探讨
 
-在上面的例子中，我们使用了`map`函数来将函数`toUpper`应用到字符串的每一个字符上。但实际上，Haskell中还有更优雅的方法来实现这个功能。
+首先要注意的是，toTitle函数只会将ascii字符转换成大写，其他字符不会改变。所以如果想要将一个字符串的每个单词的首字母都变成大写，我们需要对字符串进行拆分，然后再分别处理每个单词。
 
-我们可以使用列表推导式来直接将字符串中的每个字符转化成大写。下面是一个示例：
+此外，toTitle函数也支持Unicode字符的转换。但是要注意，不同的编码系统可能会有不同的行为，所以在使用toTitle函数时，最好先了解一下所使用的编码系统的特点。
 
-```Haskell
-strToUpper :: String -> String
-strtoupper str = [toUpper c | c <- str]
+## 参考资料
 
-main :: IO ()
-main = do
-  let str = "Hello World"
-  let upperStr = strToUpper str
-  putStrLn upperStr
-```
+[Data.Char - Hackage](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
 
-运行上面的代码，会获得和之前相同的输出。但是，使用列表推导式的方法更加简洁和易读。
+[探究Haskell字符串的编码问题](https://www.cnblogs.com/lazybug/p/6976726.html)
 
-## 参考链接
+# 参见
 
-- [Haskell字符串教程](https://www.haskell.org/tutorial/strings.html)
-- [Haskell标准文档 - toUpper函数](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toUpper)
-- [Haskell标准文档 - map函数](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)
-- [Haskell列表推导式教程](https://en.wikibooks.org/wiki/Haskell/List_comprehension)
+[Markdown入门指南](https://www.zhihu.com/question/19963642)
 
-## 参见
-
-- [Haskell入门教程](https://www.haskell.org/documentation/)
-- [Haskell String模块文档](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html)
+[Haskell中文编程指南](https://wiki.haskell.org.cn/Haskell%E9%A6%96%E9%A1%B5)

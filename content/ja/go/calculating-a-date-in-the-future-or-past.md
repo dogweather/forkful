@@ -1,36 +1,67 @@
 ---
-title:                "Go: 未来や過去の日付の計算"
+title:                "Go: 将来または過去の日付の計算."
+simple_title:         "将来または過去の日付の計算."
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-日付を過去や未来に計算する理由は、覚えておくことが重要です。例えば、リマインダーやスケジュール作成など、日常生活で非常に役立つ機能です。
+時には、未来や過去の日付を計算する必要が生じることがあります。そのような場合、Go言語を使用すると非常に簡単に実装することができます。
 
 ## 方法
-Goプログラミング言語を使用して日付を計算する方法はとてもシンプルです。以下のコードを参考にしてください。
+Go言語を使用して未来や過去の日付を計算するには、`time` パッケージを使用します。以下のコードは、現在の日付から指定した日数を加算した未来の日付を計算する例です。
 
 ```Go
-// 現在の日付
-今日 := time.Now()
+package main
 
-// 1ヶ月後の日付を計算する
-1ヶ月後 := 今日.AddDate(0, 1, 0)
+import (
+	"fmt"
+	"time"
+)
 
-// 1ヶ月前の日付を計算する
-1ヶ月前 := 今日.AddDate(0, -1, 0)
+func main() {
+	// 現在の日付を取得
+	currentDate := time.Now()
+
+	// 指定した日数後の日付を取得
+	futureDate := currentDate.AddDate(0, 0, 7)
+
+	// 結果を出力
+	fmt.Println("現在の日付:", currentDate)
+	fmt.Println("未来の日付:", futureDate)
+}
 ```
 
-上記のコードでは、`time`パッケージの`AddDate()`関数を使用して日付を計算しています。第一引数は年数、第二引数は月数、第三引数は日数を表します。このように、数値を調整することで未来や過去の日付を計算することができます。
+以下は、上記コードの実行結果です。
 
-## 深堀り
-日付を計算する際には、`time`パッケージの他にも様々な方法があります。例えば、`time.Parse()`関数を使用すれば特定の日付型の文字列を解析して日付を取得することができます。また、`time.Date()`関数を使用すれば独自の日付を作成することも可能です。さらに、タイムゾーンやロケールを設定することもできます。これらの機能を上手く組み合わせて使うことで、あなたのプログラムに最適な日付計算方法を見つけることができます。
+```
+現在の日付: 2020-10-01 13:00:00 +0900 JST
+未来の日付: 2020-10-08 13:00:00 +0900 JST
+```
+
+同様に、過去の日付を計算する場合は、`AddDate` メソッドの引数に負の値を渡すことで実現できます。
+
+```Go
+// 指定した日数前の日付を取得
+pastDate := currentDate.AddDate(0, 0, -7)
+```
+
+## ディープダイブ
+Go言語の`time` パッケージには、未来や過去の日付を計算するためのさまざまなメソッドや機能が用意されています。詳細については、公式ドキュメントを参照してください。
+
+https://golang.org/pkg/time/
 
 ## 参考リンク
-- [Goプログラミング言語公式サイト](https://golang.org/)
-- [timeパッケージドキュメント](https://golang.org/pkg/time/)
-- [Effective Go日本語訳](https://github.com/golang-jp/golang.org/blob/master/doc/effective_go.ja.md#%E6%97%A5%E4%BB%98%E3%81%AE%E8%A8%AD%E5%AE%9A)
-- [Goで日付を計算する方法について学ぼう](https://developer.ibm.com/jp/blogs/try-to-calculate-date-in-golang/)
+- Go言語公式ドキュメント：https://golang.org/pkg/time/
+- 日付の操作について学ぶ：https://gobyexample.com/date-time
+- 日付と時刻を扱うための10のベストプラクティス：https://blog.chathurawidanage.com/2019/08/20/best-practices-for-handling-dates-and-times-in-go-lang/
+
+See Also
+## 関連リンク
+- Go言語公式ドキュメント：https://golang.org/
+- 日本Go言語ユーザーグループ：https://golang.jp/
+- Go言語メモ帳：https://memo.yuuk.io/

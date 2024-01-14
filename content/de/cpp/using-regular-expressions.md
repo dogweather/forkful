@@ -1,56 +1,49 @@
 ---
-title:                "C++: Verwendung von Regulären Ausdrücken"
+title:                "C++: Verwendung von regulären Ausdrücken"
+simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum (Why)
+## Warum
 
-Reguläre Ausdrücke sind ein wichtiges Werkzeug für Programmierer, um Muster in Texten zu finden und zu manipulieren. Sie können hilfreich sein, wenn man beispielsweise Daten aus einer Datei extrahieren oder Benutzereingaben validieren möchte.
+Wenn Sie jemals versucht haben, bestimmte Muster in einem Text zu suchen oder zu ersetzen, haben Sie wahrscheinlich schon von regulären Ausdrücken (oder Regex) gehört. Mit regulären Ausdrücken können Sie Text in einem Dokument effizient durchsuchen und bearbeiten, ohne dass Sie jede Zeile manuell überprüfen müssen. Sie sind unglaublich nützlich für Entwickler, die mit großen Mengen an Daten arbeiten, und können Zeit und Mühe sparen. Lassen Sie uns einen Blick darauf werfen, wie man reguläre Ausdrücke in C++ verwenden kann.
 
-## Wie (How To)
+## Wie geht das
 
-Die Verwendung von regulären Ausdrücken in C++ ist relativ einfach. Zunächst müssen Sie das <regex> Header-Datei in Ihr Programm einbinden. Dann können Sie mithilfe der Klasse `regex` ein Muster definieren und mit der `match` Funktion überprüfen, ob eine Zeichenkette diesem Muster entspricht.
+Es gibt einige grundlegende Schritte, die Sie befolgen können, um reguläre Ausdrücke in C++ zu nutzen. Zunächst müssen Sie die Bibliothek "regex" in Ihr Programm einbinden. Dann können Sie einen regulären Ausdruck als String erstellen und ihn mit der Funktion "std::regex_match" auf Übereinstimmungen prüfen. Alternativ können Sie auch die Funktion "std::regex_search" verwenden, um alle Übereinstimmungen in einem Text zu finden.
 
-Hier ist ein einfaches Beispiel, das überprüft, ob eine E-Mail-Adresse gültig ist:
+Lassen Sie uns ein Beispiel betrachten, in dem wir nach einer bestimmten Telefonnummer in einem Text suchen. Zuerst müssen wir die Bibliothek einbinden:
 
-```C++
-#include <iostream>
-#include <regex> 
+```
+#include <regex>
+```
 
-int main() {
-    std::string email = "beispiel@beispieldomain.de";
-    std::regex regex_pattern("([\\w-]+)@([\\w-]+)(\\.[\\w-]+)+");
-    if (std::regex_match(email, regex_pattern)) {
-        std::cout << "Gültige E-Mail-Adresse." << std::endl;
-    }
-    else {
-        std::cout << "Ungültige E-Mail-Adresse." << std::endl;
-    }
-    
-    return 0;
+Dann erstellen wir unseren regulären Ausdruck und prüfen, ob er in unserem Text vorkommt:
+
+```
+std::regex reg("\\d{3}-\\d{3}-\\d{4}");
+std::string text = "Meine Telefonnummer ist 123-456-7890";
+if (std::regex_search(text, reg)){
+  std::cout << "Eine Telefonnummer wurde gefunden!" << std::endl;
 }
 ```
 
-Die Ausgabe dieses Programms wäre "Gültige E-Mail-Adresse."
+In diesem Beispiel verwenden wir den regulären Ausdruck "\d{3}-\d{3}-\d{4}", um nach der typischen amerikanischen Telefonnummer-Formatierung zu suchen. Die Ausgabe wird "Eine Telefonnummer wurde gefunden!" sein.
 
-## Tiefenschärfe (Deep Dive)
+## Tiefergehende Informationen
 
-Reguläre Ausdrücke bieten viele verschiedene Möglichkeiten, um Texte zu durchsuchen und zu manipulieren. Hier sind einige wichtige Konzepte, die es zu beachten gilt:
+Es gibt eine Vielzahl von Möglichkeiten und Funktionen, die man beim Arbeiten mit regulären Ausdrücken in C++ verwenden kann. Hier sind einige nützliche Ressourcen, die Ihnen helfen können, tiefer in dieses Thema einzutauchen:
 
-- Zeichenklassen: Sie können bestimmte Zeichen spezifizieren, die in einer Zeichenkette vorkommen müssen, z.B. `[a-z]` für Kleinbuchstaben oder `[0-9]` für Zahlen.
+- [C++ Referenz zu regulären Ausdrücken](https://en.cppreference.com/w/cpp/regex)
+- [Regex Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+- [Tutorial zu regulären Ausdrücken in C++](https://www.tutorialspoint.com/cpp_standard_library/cpp_regex_library.htm)
 
-- Quantoren: Sie legen fest, wie oft ein vorhergehendes Element in einer Zeichenkette vorkommen muss, z.B. `+` für einmal oder öfter, `*` für beliebig oft oder `?` für einmal oder gar nicht.
+## Siehe auch
 
-- Gruppen: Sie können Teile eines Musters in Gruppen zusammenfassen, um sie später zu referenzieren oder zu extrahieren.
-
-Für eine ausführlichere Anleitung zu regulären Ausdrücken in C++ können Sie die offizielle C++-Referenz des `<regex>`-Headers oder andere Online-Ressourcen wie beispielsweise [diese](https://www.cplusplus.com/reference/regex/regex/) konsultieren.
-
-## Siehe auch (See Also)
-
-- [C++ Referenz zu regulären Ausdrücken](https://www.cplusplus.com/reference/regex/)
-- [Leitfaden zu regulären Ausdrücken in C++](https://www.geeksforgeeks.org/regular-expressions-in-c-c/)
-- [Howto Regex-Tutorial für C++](https://howtobuildsoftware.com/index.php/how-fb-cpp/cplusplus-regex-tutorial-how-to-use-regular-expression-pattern-matching-library-examples)
+- [Wie man reguläre Ausdrücke in Python verwendet](https://www.example.com/article/py-regex)
+- [Einführung in die Verwendung von regulären Ausdrücken in Java](https://www.example.com/article/java-regex)

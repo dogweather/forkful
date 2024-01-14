@@ -1,49 +1,56 @@
 ---
-title:                "Clojure: Uniendo cadenas"
+title:                "Clojure: Concatenando cadenas"
+simple_title:         "Concatenando cadenas"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-La concatenación de cadenas es una herramienta fundamental en cualquier lenguaje de programación, incluyendo Clojure. Te permite unir varias cadenas para crear una nueva y manipular datos de forma más eficiente. 
+## ¿Por qué usar la concatenación de cadenas?
 
-## Cómo hacerlo
-En Clojure, la concatenación de cadenas se puede realizar de varias maneras. Una forma es utilizar la función `str`, que toma cualquier número de argumentos de cadena y los combina en una sola cadena.
+La concatenación de cadenas es una técnica esencial en la programación, especialmente en Clojure. Permite combinar varias cadenas juntas para crear una cadena más larga y completa. Esto puede ser últil en la creación de mensajes, errores y en el manejo de datos.
 
-```Clojure
-(str "Hola" "mundo") ; la salida será "Holamundo"
-```
+## Cómo hacerlo:
 
-También puedes usar la función `str` para unir cadenas con otros tipos de datos, como números y otros valores.
+La concatenación de cadenas en Clojure utiliza la función `str` que toma cualquier cantidad de argumentos y los combina en una sola cadena. Aquí hay un ejemplo:
 
 ```Clojure
-(str "El número es " 42) ; la salida será "El número es 42"
+(str "¡Hola!" " Mi nombre es " "Juan.")
 ```
 
-Otra forma de concatenar cadenas en Clojure es utilizando la función `format`, que te permite crear una cadena con formato. Esto significa que puedes especificar dónde quieres que se inserten los valores dentro de la cadena.
+El resultado sería "¡Hola! Mi nombre es Juan.". Como puedes ver, los espacios también se concatenan entre cada cadena.
+
+También puedes utilizar la función `format` para crear una cadena con formato específico. Algo así:
 
 ```Clojure
-(format "Hola %s" "Juan") ; la salida será "Hola Juan"
-(format "La respuesta es %d" 42) ; la salida será "La respuesta es 42"
+(format "Mi nombre es %s y mi edad es %d años." "Juan" 27)
 ```
 
-## Profundizando
-Clojure también ofrece otras funciones para la manipulación de cadenas, como `subs`, que te permite obtener una subcadena de una cadena dada.
+Aquí, el símbolo `%s` se reemplaza por la cadena "Juan" y el símbolo `%d` por el número 27.
+
+## Profundizando:
+
+Además de las funciones `str` y `format`, Clojure también cuenta con la función `join` que permite concatenar una secuencia de cadenas, uniendo cada una con un separador específico. Por ejemplo:
 
 ```Clojure
-(subs "Hola mundo" 0 4) ; la salida será "Hola"
+(join "-" ["rojo" "verde" "azul"])
 ```
 
-También puedes utilizar la función `join` para unir varias cadenas en una sola, utilizando un separador opcional.
+El resultado sería "rojo-verde-azul", ya que el separador elegido fue el guión "-".
+
+También puedes combinar estas funciones para obtener resultados más complejos. Por ejemplo, puedes utilizar `join` dentro de `str` para crear un mensaje personalizado:
 
 ```Clojure
-(join ", " ["manzana" "plátano" "naranja"]) ; la salida será "manzana, plátano, naranja"
+(str "¡Hola! Soy " (join " " ["Juan" "el" "programador"]))
 ```
 
-## Ver también
-- [Documentación oficial de Clojure](https://clojure.org/guides/strings)
-- [Tutorial de concatenación de cadenas en Clojure](https://www.tutorialspoint.com/clojure/clojure_strings.htm)
-- [Ejemplos prácticos de concatenación de cadenas en Clojure](https://www.javacodegeeks.com/2019/04/10-clojure-examples-concatenating-strings.html)
+El resultado sería "¡Hola! Soy Juan el programador.". Como puedes ver, la concatenación de cadenas ofrece muchas posibilidades y es una técnica importante para cualquier programador en Clojure.
+
+## Ver también:
+
+- [Documentación oficial de concatenación de cadenas en Clojure](https://clojuredocs.org/clojure.core/str)
+- [Tutorial de concatenación de cadenas en Clojure](https://www.tutorialspoint.com/clojure/clojure_string_concatenation.htm)
+- [Otros ejemplos de concatenación en Clojure](https://4clojure.com/problem/108)

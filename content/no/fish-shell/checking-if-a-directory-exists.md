@@ -1,44 +1,46 @@
 ---
-title:                "Fish Shell: Sjekke om en mappe eksisterer"
+title:                "Fish Shell: Å sjekke om en mappe eksisterer"
+simple_title:         "Å sjekke om en mappe eksisterer"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor sjekke om en mappe eksisterer i Fish Shell
 
-Lurer du på om en mappe eksisterer i Fish Shell-programmering? Det er flere gode grunner til hvorfor du kanskje trenger å sjekke dette. Kanskje du vil utføre en spesifikk handling bare hvis mappen eksisterer, eller kanskje du vil unngå å overskrive en eksisterende mappe. Uansett årsak, hvis du trenger å sjekke om en mappe eksisterer, er det viktig å vite hvordan du gjør det riktig.
+Når man jobber med programmering, kan det være nyttig å sjekke om en mappe eksisterer før man gjør operasjoner som å opprette eller fjerne filer i den. Dette kan hjelpe til med å unngå feil og sikre at koden kjører som forventet. I denne bloggposten vil vi lære hvordan man kan sjekke om en mappe eksisterer i Fish Shell.
 
-## Hvordan
+## Slik gjør du det
 
-Fish Shell har en innebygd kommando, `test`, som kan brukes til å sjekke om en fil eller mappe eksisterer. Du kan bruke følgende syntaks for å sjekke om en mappe eksisterer i Fish Shell:
+Det første vi må gjøre er å åpne Fish Shell og navigere til mappen vi ønsker å sjekke. Deretter kan vi bruke kommandoen `test -d` sammen med mappenavnet for å sjekke om mappen eksisterer. Her er et eksempel på hvordan dette kan se ut:
 
 ```Fish Shell
-if test -d <mappenavn>
-    echo "Mappen eksisterer"
-else
-    echo "Mappen eksisterer ikke"
-end
+test -d Documents # Sjekker om mappen "Documents" eksisterer
 ```
-Dette vil sjekke om mappen med navnet du har gitt eksisterer. Hvis den gjør det, vil den skrive ut "Mappen eksisterer", ellers vil den skrive ut "Mappen eksisterer ikke".
 
-## Deep Dive
+Dette vil returnere enten `true` eller `false`, avhengig av om mappen eksisterer eller ikke. For å gjøre dette litt mer dynamisk, kan vi bruke en variabel i stedet for et statisk mappenavn:
 
-Kommandoen `test` i Fish Shell tar en rekke argumenter, og i eksempelet over brukte vi `-d` for å sjekke om en mappe eksisterer. Her er noen andre nyttige argumenter som kan brukes for å sjekke filer og mapper:
+```Fish Shell
+set directory "Documents"
+test -d $directory # Sjekker om mappen definert i variabelen eksisterer
+```
 
-- `-e`: Sjekker om filen eller mappen eksisterer.
-- `-f`: Sjekker om det er en vanlig fil.
-- `-L`: Sjekker om det er en symbolisk link.
-- `-r`: Sjekker om filen eller mappen er lesbar.
-- `-w`: Sjekker om filen eller mappen er skrivbar.
-- `-x`: Sjekker om filen eller mappen er utførbar.
+Vi kan også bruke en logisk operator, for eksempel `&&`, for å utføre en handling basert på om mappen eksisterer eller ikke. Her er et eksempel der vi printer ut en melding hvis mappen eksisterer:
 
-Hvis du vil lære mer om disse argumentene og andre funksjoner i `test`-kommandoen, kan du sjekke ut Fish Shell sin dokumentasjon.
+```Fish Shell
+test -d Documents && echo "Mappen finnes allerede"
+```
+
+## Dykk dypere
+
+Hvis du ønsker å forstå mer om hvordan Fish Shell sjekker om en mappe eksisterer, kan vi dykke litt dypere inn i koden. Kommandoen `test -d` er faktisk en forkortelse for `test -z DIRECTORY`, der `-z` betyr "empty" og sjekker om en variabel er tom eller ikke. Når vi bruker `-d`, oversettes det til `fish_is_directory`.
+
+Fish Shell bruker to hovedkilder for å sjekke om en mappe eksisterer. Den første er en funksjon kalt `fish_working_directory`, som returnerer den nåværende arbeidsmappen. Den andre er en funksjon kalt `fish_complete` som sjekker om en mappe allerede er fullført i Fish sin autocomplete-funksjon. Hvis mappen blir funnet i en av disse to funksjonene, returneres `true`.
 
 ## Se også
-
-- [Fish Shell sin offisielle dokumentasjon](https://fishshell.com/docs/current/cmds.html#test)
-- [En guide til å programmere i Fish Shell](https://codeburst.io/getting-started-with-fish-shell-f1c4c8ec6059)
-- [Fish Shell tips og triks for nybegynnere](https://medium.com/@crmaxstudio/fish-the-shell-of-the-future-tips-tricks-for-beginners-847cf85ed8be)
+- [Fish Shell offisiell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Guide til Bash til Fish konvertering](https://fishshell.com/docs/current/tutorial.html)
+- [GitHub-siden for Fish Shell](https://github.com/fish-shell/fish-shell)

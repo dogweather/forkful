@@ -1,37 +1,47 @@
 ---
-title:                "Kotlin: Merkkijonon muuttaminen pienaakkosiksi"
+title:                "Kotlin: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi Stringin muuntaminen pienaakkosiin on hyödyllistä?
 
-Tekstin muuttaminen pienaakkosiksi on tärkeää, kun haluat verrata tai etsiä tietoa tekstissä. Muunnaessa merkkijonon pienaakkosiksi, voit varmistaa että kaikki kirjaimet ovat samassa muodossa.
+Stringin muuntaminen pienaakkosiin on tärkeä osa ohjelmointia, koska se helpottaa tekstin käsittelyä ja vertailua. Pienaakkosten käyttö yhdenmukaistaa tekstin, mikä tekee siitä helpommin luettavan ja ymmärrettävän.
 
-## Miten
+## Kuinka muuntaa String pienaakkosiin Kotlinissa?
 
 ```Kotlin
-fun main() {
-    val merkkijono = "TÄMÄ ON ESIMERKKI"
-    println(merkkijono.toLowerCase())
-}
+val sana = "TEKSTI"
+println(sana.lowercase()) //tulostaa "teksti"
 ```
-**Output:** *tämä on esimerkki*
 
-Muuttamista varten käytämme `toLowerCase()` -metodia, jonka avulla voimme muuttaa merkkijonon pienaakkosiksi. Tämä metodi auttaa myös sivuuttamaan kirjainten väliset erot, kuten ä tai ö.
+Stringin muuntaminen pienaakkosiin Kotlinissa on yksinkertaista, sillä siihen on sisäänrakennettu metodi ```lowercase()```. Metodi palauttaa uuden String-olion, joka sisältää kaikki kirjaimet pienaakkosina.
 
-Voimme myös käyttää `toLowerCase(Locale.ENGLISH)` tai muuta tiettyä kieltä vastaavaa `Locale` -arvoa, jotta merkkijono muutetaan kyseiselle kielelle tyypilliseen muotoon.
+Jos haluat muuntaa Stringin pienaakkosiin ilman uuden olion luomista, voit käyttää ```lowercaseInPlace()``` -metodia:
 
-## Syvällinen sukellus
+```Kotlin
+var tekstiMuutettavaksi = "MUUTETTAVA TEKSTI"
+tekstiMuutettavaksi.lowercaseInPlace()
+println(tekstiMuutettavaksi) //tulostaa "muutettava teksti"
+```
 
-Kotlinissa `String` -luokassa on `toLowerCase()` -metodi, joka palauttaa merkkijonosta uuden olion, joka sisältää kaikki merkit pienaakkosina. Tämä metodi käyttää oletusarvoisesti `Locale.getDefault()` -arvoa käyttöjärjestelmämme kielelle, mutta voimme myös antaa `Locale` -arvon haluamamme kielen mukaan.
+Tässä tapauksessa alkuperäinen String-muuttuja muutetaan suoraan pienaakkosiksi.
 
-Voimme myös käyttää `toCharArray()` -metodia ja `CharSequence.map()` -funktiota muuttaaksemme kirjaimet pienaakkosiksi ja yhdistää ne takaisin merkkijonoksi, mutta tämä on hieman monimutkaisempi tapa.
+## Syvempi sukellus Stringin muuntamiseen pienaakkosiin
+
+Kotlinin ```lowercase()``` ja ```lowercaseInPlace()``` -metodien toiminta perustuu Unicode-standardissa määritettyyn pienaakkosten muuntamiseen. Unicode-standardi sisältää kaikki mahdolliset merkit ja kirjaimet, ja sen avulla varmistetaan, että ohjelmointikielet käyttävät yhteistä merkistöä.
+
+Usein ohjelmointikielistä löytyy myös muita metodeja, kuten ```toLowercase()```, jotka suorittavat saman toiminnon. Näissä tapauksissa kannattaa tarkistaa, miten kyseinen metodi käsittelee erikoismerkkejä ja kielikohtaisia eroavaisuuksia.
+
+On myös hyvä ottaa huomioon, että merkkijonon pienaakkosiksi muuttaminen ei yleensä vaikuta merkkijonon sisältöön. Esimerkiksi sana "ÄITI" muuttuu pienaakkosiin "äiti", mutta kirjoitusasu ei muutu. Jos haluat muuttaa myös sanojen kirjoitusasun, voit käyttää esimerkiksi metodeja ```capitalize()``` tai ```titlecase()```.
 
 ## Katso myös
 
-- [Kotus-sivusto merkkijonojen muuttamisesta pienaakkosiksi](https://www.kotus.fi/nyt/kayttomanualit/uudenkielennayttajalle/merkkijonojen-muuttaminen-pienaakkosiksi) 
-- [Kotlin Docs - String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+- Kotlinin virallinen dokumentaatio: https://kotlinlang.org/docs/reference/strings.html#string-literals
+- Unicode-standardin tietoja: https://unicode.org/
+- Vinkkejä merkkijonojen käsittelyyn Kotlinissa: https://www.baeldung.com/kotlin/strings-processing

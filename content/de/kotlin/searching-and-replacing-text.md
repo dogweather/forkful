@@ -1,57 +1,45 @@
 ---
-title:                "Kotlin: Suchen und Ersetzen von Text"
+title:                "Kotlin: Suchen und Ersetzen von Text."
+simple_title:         "Suchen und Ersetzen von Text."
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Textsuche und -ersetzung (engl. searching and replacing) zu beherrschen ist essentiell für jeden, der mit Programmierung zu tun hat. Diese Fähigkeit ermöglicht es, effizienter und schneller Code zu schreiben und Fehler zu beheben.
 
-## Wie geht's
-Die grundlegenden Schritte für Textsuche und -ersetzung in Kotlin sind einfach:
+Das Ersetzen von Text ist eine häufige Aufgabe in der Programmierung. Wenn du schnell und effizient Text in deinem Code ändern möchtest, ist es wichtig zu wissen, wie man gezielt sucht und ersetzt.
 
-1. Importiere die `text` Bibliothek von Kotlin.
-2. Verwende den Befehl `replace()` um die gewünschten Textstellen zu ersetzen.
-3. Optional: Verwende den Befehl `find()` um zu überprüfen, ob ein bestimmter Text vorhanden ist.
+## Wie geht das?
 
-Hier ist ein Beispiel, um das Wort "Hallo" in einem String durch "Hallo Welt" zu ersetzen:
+Die Kotlin Standardbibliothek bietet verschiedene Funktionen für das Suchen und Ersetzen von Text. Hier sind einige Beispiele:
 
-```Kotlin
-import kotlin.text.*
-
-fun main() {
-    val text = "Hallo Kotlin!"
-    val newText = text.replace("Kotlin", "Welt")
-    println(newText)
-    
-    // Output: Hallo Welt!
-}
+```
+val text = "Hallo Welt"
+val newText = text.replace("Welt", "Kotlin")
+println(newText) // Output: Hallo Kotlin
 ```
 
-## Einblicken
-Textsuche und -ersetzung kann auch komplexere Muster beinhalten, anstatt nur einfache Textersetzung. Dafür bietet Kotlin die `Regex` Klasse an, mit der man reguläre Ausdrücke nutzen kann.
+In diesem Beispiel wird die Funktion `replace()` verwendet, um das Wort "Welt" durch "Kotlin" zu ersetzen. Du kannst auch reguläre Ausdrücke verwenden, um gezielter zu suchen und zu ersetzen:
 
-Hier ist ein Beispiel, um alle Zahlen in einem String durch "x" zu ersetzen:
-
-```Kotlin
-import kotlin.text.*
-
-fun main() {
-    val text = "1234ab5678"
-    val pattern = Regex("[0-9]")
-    val newText = pattern.replace(text, "x")
-    println(newText)
-    
-    // Output: xxxxabxxxx
-}
+```
+val text = "Dies ist eine Beispielstrecke mit verschiedenen Stichwörtern"
+val newText = text.replace(Regex("Stichwörter"), "Schlagworte")
+println(newText) // Output: Dies ist eine Beispielstrecke mit verschiedenen Schlagworte
 ```
 
-Reguläre Ausdrücke können auch verwendet werden, um bestimmte Muster in einem Text zu finden und zu manipulieren, was die Textsuche und -ersetzung noch mächtiger macht.
+Du kannst auch die Funktion `replaceFirst()` verwenden, um nur das erste Vorkommen eines bestimmten Textes zu ersetzen, oder `replaceBefore()` und `replaceAfter()`, um Text vor oder nach einem bestimmten Text zu ersetzen. Die Kotlin Standardbibliothek bietet noch viele weitere Funktionen für das Suchen und Ersetzen von Text.
+
+## Tiefer Einblick
+
+Wie du siehst, gibt es viele Möglichkeiten, Text in Kotlin zu suchen und zu ersetzen. Es ist jedoch wichtig zu beachten, dass diese Funktionen Strings nicht direkt ändern, sondern eine kopierte Version des Strings mit den gewünschten Änderungen zurückgeben. Wenn du also eine große Anzahl an String-Operationen durchführst, solltest du stattdessen die `StringBuilder` Klasse verwenden, um die Leistung zu verbessern.
+
+Eine weitere wichtige Sache bei der Textersetzung ist die Verwendung von regulären Ausdrücken, um gezielt zu suchen und ein breiteres Spektrum an Textmustern abzudecken. Es kann hilfreich sein, sich mit regulären Ausdrücken vertraut zu machen, um effektiv Text in deinem Code zu manipulieren.
 
 ## Siehe auch
-- [Kotlin Standardbibliothek](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/)
-- [Reguläre Ausdrücke in Kotlin](https://kotlinlang.org/docs/regex.html)
-- [Textsuche und -ersetzung in Java](https://docs.oracle.com/javase/tutorial/essential/regex/)
+
+- [Offizielle Dokumentation von Kotlin zu String-Ersetzungen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- [Reguläre Ausdrücke in Kotlin](https://kotlinlang.org/docs/reference/regular-expressions.html)

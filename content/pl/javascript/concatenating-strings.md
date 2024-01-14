@@ -1,52 +1,49 @@
 ---
-title:                "Javascript: Łączenie łańcuchów znaków"
+title:                "Javascript: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego skręcanie ciągów znaków w JavaScript jest ważne?
+## Dlaczego
 
-Skręcanie, czyli łączenie, ciągów znaków jest ważnym elementem w programowaniu w JavaScript. Pozwala na łączenie różnych zmiennych i tekstu w jeden ciąg, co jest niezbędne w wielu przypadkach. Na przykład, jeśli chcemy wyświetlić imię i nazwisko użytkownika w jednym komunikacie, to musimy skleić dwa ciągi znaków - zmienną z imieniem i zmienną z nazwiskiem.
+Jedną z ważnych umiejętności w programowaniu jest łączenie, zwane również konkatencją, różnych ciągów znaków w jeden. W JavaScript, istnieje kilka sposobów, aby to osiągnąć i jest używana w wielu przypadkach, aby zmienić wygląd lub treść na stronie internetowej.
 
-# Jak to zrobić?
+## Jak To Zrobić
 
-Skręcanie ciągów znaków w JavaScript jest bardzo proste. Możemy tego dokonać poprzez użycie operatora "+" lub metody `.concat()`. Oba te sposoby działają w taki sam sposób - łączą podane ciągi znaków w jeden. Przykładowe użycie:
-
-```Javascript
-let imie = "Jan";
-let nazwisko = "Kowalski";
-let pelneImie = imie + " " + nazwisko; // pelenImie = "Jan Kowalski"
-let innaforma = imie.concat(" ", nazwisko); // innaforma = "Jan Kowalski"
-```
-
-Pamiętajmy, że jeśli nie użyjemy spacji w skłądania ciągów, to otrzymamy po prostu połączenie dwóch słów bez przerwy, co w niektórych przypadkach może być niepożądane.
-
-# Głębsza analiza
-
-W przypadkach, gdy potrzebujemy połączyć więcej niż dwa ciągi znaków, możemy stosować różne podejścia. Jednym z nich jest użycie operatora "+" wielokrotnie, np.:
+Istnieje kilka sposobów, aby połączyć ciągi znaków w JavaScript. Można tego dokonać za pomocą operatora "+" lub metody "concat()". Poniżej przedstawione są przykładowe fragmenty kodu wraz ze wzorcowym wyjściem dla obu metod:
 
 ```Javascript
-let pierwszy = "Ala";
-let srodkowy = "ma";
-let trzeci = "kota";
-let caly = pierwszy + " " + srodkowy + " " + trzeci; // caly = "Ala ma kota"
+// Użycie operatora "+" 
+let imie = "Anna";
+let nazwisko = "Kowalska";
+let pelneDane = imie + " " + nazwisko;
+console.log(pelneDane);
+// Output: "Anna Kowalska" 
+
+// Użycie metody "concat()" 
+let pierwszeImie = "Julia";
+let drugieImie = "Maria";
+let zakonczenia = "i Barbara";
+let calaNazwa = pierwszeImie.concat(" ", drugieImie, " ", zakonczenia);
+console.log(calaNazwa);
+// Output: "Julia Maria i Barbara"
 ```
 
-Innym sposobem jest użycie metody `.join()`, która łączy tablicę ciągów znaków w jeden, używając jako separatora podanego argumentu. Przykład:
+Użycie operatora "+" jest prostsze i czytelniejsze, jednak metoda "concat()" jest bardziej wydajna dla łączenia wielu ciągów znaków.
 
-```Javascript
-let zdanie = ["Algorytm", "jest", "bardzo", "ważny"];
-let sklejone = zdanie.join(" "); // sklejone = "Algorytm jest bardzo ważny"
-```
+## Dogłębna Analiza
 
-Warto również pamiętać, że skręcanie ciągów znaków ma wpływ na wydajność kodu. Używanie operatora "+" wielokrotnie może powodować wolniejsze działanie programu. W takich przypadkach lepiej jest zastosować metodę `.join()` lub postawić na inne podejście do problemu. 
+W JavaScript, łączenie ciągów znaków jest możliwe dzięki konwersji ciągów na typ danych "String". W przypadku użycia operatora "+", każdy operand jest przekształcany na string i następnie są łączone. Natomiast metoda "concat()" przyjmuje wiele argumentów, które są następnie dodawane do pierwotnego ciągu. Jedną z zalet tej metody jest możliwość zastosowania jej w połączeniu z zmiennymi.
 
-# Zobacz także
+Jednak przy łączeniu dużej ilości ciągów znaków, może być wydajniejsze użycie operatora "+". Jest to spowodowane faktem, że każde wywołanie metody "concat()" powoduje utworzenie nowego obiektu typu "String", co może być kosztowne dla pamięci i wydajności.
 
-- [MDN web docs - String concatenation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Addition_assignment)
-- [W3Schools - JavaScript String concatenation](https://www.w3schools.com/js/js_string_concat.asp)
-- [The Modern JavaScript Tutorial - String concatenation](https://javascript.info/string)
-- [Codecademy - String Concatenation](https://www.codecademy.com/learn/learn-javascript/modules/learn-javascript-strings/cheatsheet)
+## Zobacz również
+
+- [W3Schools.com - JavaScript String Concat() Method](https://www.w3schools.com/jsref/jsref_concat_string.asp)
+- [MDN Web Docs - String.prototype.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [FreeCodeCamp.org - How to Concatenate Strings in JavaScript](https://www.freecodecamp.org/news/how-to-concatenate-strings-in-javascript/)

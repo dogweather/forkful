@@ -1,7 +1,9 @@
 ---
 title:                "C#: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,42 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'une des tâches les plus courantes en programmation consiste à calculer une date dans le futur ou dans le passé. Cela peut servir dans de nombreux cas, par exemple pour planifier une action, effectuer des opérations financières ou tout simplement pour afficher des informations dynamiques à l'utilisateur.
+Il est souvent nécessaire de calculer une date dans le futur ou dans le passé dans le cadre de la programmation en C#. Que ce soit pour planifier des événements, effectuer des calculs temporels ou tout autre scénario, il est important de comprendre comment le faire correctement. Dans cet article, nous allons explorer les différentes façons de calculer une date dans le futur ou dans le passé en utilisant le langage C#.
 
 ## Comment faire
 
-Pour calculer une date dans le futur ou dans le passé en C#, nous pouvons utiliser la classe `DateTime` et ses différentes méthodes et propriétés. Voici un exemple de code qui calcule la date dans trois jours à partir de la date actuelle :
+La première étape pour calculer une date dans le futur ou dans le passé est de choisir une méthode pour le faire. Voici quelques exemples de méthodes couramment utilisées en C#:
 
 ```C#
-DateTime aujourdhui = DateTime.Now;
-DateTime demain = aujourdhui.AddDays(3);
-Console.WriteLine("Dans trois jours, nous serons le {0:d}", demain);
-```
-Lorsque nous exécutons ce code, nous obtenons le résultat suivant :
-```
-Dans trois jours, nous serons le 03/09/2020
-```
-Nous pouvons également calculer une date dans le passé en utilisant la méthode `AddDays()` avec un nombre négatif. Voici un exemple qui calcule la date il y a 5 jours à partir de la date actuelle :
+// Calculer une date dans le futur en utilisant DateTime.AddYears()
+DateTime dateDansLeFutur = DateTime.Now.AddYears(2);
+Console.WriteLine(dateDansLeFutur);
+// Sortie: 09/07/2022 14:30:15
 
-```C#
-DateTime aujourdhui = DateTime.Now;
-DateTime ilYa5Jours = aujourdhui.AddDays(-5);
-Console.WriteLine("Il y a cinq jours, c'était le {0:d}", ilYa5Jours);
+// Calculer une date dans le passé en soustrayant des jours de DateTime.Today
+DateTime dateDansLePasse = DateTime.Today.AddDays(-30);
+Console.WriteLine(dateDansLePasse);
+// Sortie: 09/06/2021 00:00:00
+
+// Utiliser la classe TimeSpan pour ajouter ou soustraire une période de temps à une date donnée
+TimeSpan periode = new TimeSpan(2, 0, 0, 0); // 2 jours
+DateTime nouvelleDate = DateTime.Now + periode; // Ajouter 2 jours à la date actuelle
+Console.WriteLine(nouvelleDate);
+// Sortie: 11/07/2021 14:30:15
 ```
-Lorsque nous exécutons ce code, nous obtenons le résultat suivant :
-```
-Il y a cinq jours, c'était le 29/08/2020
-```
+
+Il est également important de prendre en compte les dates bissextiles lors du calcul de dates dans le futur ou dans le passé. Cela peut être fait en utilisant la méthode DateTime.IsLeapYear() pour vérifier si une année est bissextile ou non.
 
 ## Plongée en profondeur
 
-Il existe de nombreuses autres méthodes et propriétés de la classe `DateTime` qui peuvent nous aider à calculer des dates dans le futur ou dans le passé. Par exemple, nous pouvons utiliser la méthode `AddMonths()` pour ajouter ou soustraire un certain nombre de mois à une date, ou encore la méthode `AddYears()` pour ajouter ou soustraire un certain nombre d'années.
+Lors du calcul de dates dans le futur ou dans le passé, il est important de comprendre les différentes nuances de chaque méthode utilisée. Par exemple, lors de l'utilisation de DateTime.AddYears(), la date résultante sera calculée en tenant compte des années bissextiles. Cependant, lors de la soustraction de jours de DateTime.Today, les années bissextiles ne seront pas prises en compte, ce qui peut entraîner des résultats incorrects.
 
-De plus, la classe `DateTime` dispose d'une propriété `Now` qui nous permet d'obtenir la date et l'heure actuelles, et d'une propriété `Today` qui nous renvoie la date actuelle sans l'heure. Nous pouvons également utiliser la méthode `Parse()` pour convertir une chaîne de caractères en objet `DateTime`.
-
-Avec ces outils, nous pouvons facilement calculer toutes sortes de dates dans le futur ou dans le passé en fonction de nos besoins.
+Une autre chose à prendre en compte est la manipulation des zones horaires et des changements d'heure lors du calcul de dates dans le futur ou dans le passé. Il est recommandé d'utiliser les méthodes de la classe TimeZone pour gérer ces cas.
 
 ## Voir aussi
 
-- [Cours de C# sur OpenClassrooms](https://openclassrooms.com/fr/courses/4875796-programmez-en-oriente-objet-avec-c)
-- [Documentation Microsoft sur la classe DateTime en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime?view=netcore-3.1)
+- [Microsoft Documentation on DateTime structure](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [C# Date and Time tutorial by Tutorialspoint](https://www.tutorialspoint.com/csharp/csharp_date_time.htm)
+- [DateTime class in C# by GeeksforGeeks](https://www.geeksforgeeks.org/datetime-class-in-c-sharp/)

@@ -1,27 +1,40 @@
 ---
-title:                "Javascript: यादृच्छिक संख्याएं उत्पन्न करना"
+title:                "Javascript: अनियमित संख्याएं उत्पन्न करना"
+simple_title:         "अनियमित संख्याएं उत्पन्न करना"
 programming_language: "Javascript"
-category:             "Numbers"
+category:             "Javascript"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# क्यों
+# Kyun
 
-क्या आप अक्सर प्रोग्रामिंग में यादें जुटाने की जगह ऊर्जा खर्च करने की बजाय अपने कोड को स्वयं ऐसे बना सकते हैं जो जितने बार आप उन्हें निष्पादित करो, उनमें से हर बार अलग नंबर उत्पन्न कर देगा? यह आपको एक यादगार संख्या जरूर उत्पन्न करेगा लेकिन आपको उसे संभालने की ज़रूरत नहीं होगी! ऐसा कैसे कर सकते हैं? वहां इस समस्या का हल है जिसे हम जेनरेटिंग रैंडम नंबर्स के रूप में जानते हैं।
+Random numbers ka upyog kaaran randomization aur unpredictability hai. Ye shayad ek game me score ka random selection ho ya fir security ke liye passwords generate karne me upyogi ho. Kisi bhi situation me, random numbers ka Feature Javascript me bahut hi upyogi hai.
 
-## कैसे करें
+# Kaise Kare
+
+Javascript me Math object ke andar ek built-in function hai `Math.random()`. Is function ko use karke, hum random numbers generate kar sakte hai. Example ke liye, agar hume 1 se 10 tak ke numbers me se koi bhi ek random number generate karna hai, toh hum ye code use kar sakte hai:
 
 ```Javascript
-// एक नंबर जेनरेट करें 1 से 100 के बीच
-let randomNumber = Math.floor(Math.random()*100) + 1;
+var randomNumber = Math.floor(Math.random() * 10) + 1;
 console.log(randomNumber);
-// नतीजा उदाहरण रूप में इस तरह होगा: 58
 ```
 
-यहां हमने `Math.random()` और `Math.floor()` मेथड का उपयोग किया है। `Math.random()` हमें 0 और 1 के बीच एक डेसिमल नंबर देगा और `Math.floor()` हमें उसे निकटतम पूर्णांक तक घटायेगा (यानी कड़ी में लेना)। उसके बाद, हम 1 से 100 के बीच एक नंबर चुनते हैं। `+1` उसे 1 से 100 के बीच होने के लिए बदल देता है। अंत में, हम `randomNumber` को लॉग करते हैं जो नतीजे के रूप में हमें एक रैंडम नंबर देगा।
+Is code se, hum ek random number generate karenge jo 1 se lekar 10 tak ke beech me hoga. `Math.floor()` function hume number ko round karne me madad karta hai aur `Math.random()` hume 0 se 1 tak ke numbers me se koi bhi ek number generate karne me help karta hai. Iska output ke roop me, hum console me kuch aisa dekhege:
 
-## गहराई में जाएं
+> 7
 
-जब हम जेनरेटिंग रैंडम नंबर्स के बारे में बात करते हैं, तो हम आमतौर पर प्रोग्रामिंग में सभी पहलुओं को समझते हैं। यह काम आसान हो सकता है लेकिन असल विश्लेषण चाहिए तो हम शूरुआ
+# Gehraai Se Jaane
+
+Random number generation ek important topic hai programming me aur isse samajhna bahut hi important hai. Isliye, hum thode aur details me jaanege.
+
+Math object ke andar, ek aur function hai `Math.floor()`. Is function ki help se, hum decimal values ko bhi round kar sakte hai aur pure integers generate kar sakte hai. Agar hum `Math.floor()` ke jagah `Math.ceil()` function ko use karte hai, toh hum decimal numbers ko round kar sakte hai.
+
+Ek aur important topic hai seed values. Seed value ek starting point hoti hai random number generation ki process ke liye. Agar hum kisi particular seed value ko use karte hai, toh hum hamesha same random numbers generate kar sakte hai. Isse hume predictions aur debugging me madad milti hai.
+
+# Dekhiye Bhi
+
+- [MDN Web Docs- Math.random()](https://developer.mozilla.org/hi/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Tutorialspoint - Generating random numbers in Javascript](https://www.tutorialspoint.com/generating-random-number-between-1-and-10-in-javascript)

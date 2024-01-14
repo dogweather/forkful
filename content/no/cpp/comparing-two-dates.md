@@ -1,62 +1,65 @@
 ---
-title:                "C++: Sammenligne to datoer"
+title:                "C++: Sammenligning av to datoer"
+simple_title:         "Sammenligning av to datoer"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-Denne bloggen vil lære deg hvordan du kan sammenligne to datoer ved hjelp av C++ programmeringsspråket. Selv om dette kan virke som en enkel oppgave, er det nyttig å forstå hvordan dette fungerer for å kunne håndtere datoer på en mer avansert måte i fremtidige prosjekter.
-
 ## Hvorfor
 
-Å sammenligne to datoer kan være nyttig for å sortere eller filtrere data etter dato. Dette kan være spesielt viktig i finansbransjen eller ved bruk av tidssensitive data. Derfor er det viktig å kunne håndtere datoer på en effektiv måte ved å sammenligne dem.
+Sammenligning av to datoer er en vanlig oppgave i programmering, spesielt når det kommer til å håndtere datoer og tidsstempel. Det kan være nyttig å vite hvordan man sammenligner to datoer for å sortere data eller for å kontrollere om en dato ligger før eller etter en annen.
 
-## Hvordan gjøre det
+## Hvordan
 
-Vi vil nå se på to datoer som skal sammenlignes, "dato1" og "dato2". Først må vi definere disse datoene ved å bruke "tm" structen som er innebygd i C++.
-
-```C++
-tm dato1 = { 0 };
-tm dato2 = { 0 };
-```
-
-Deretter må vi fylle ut verdier for dag, måned og år for hver dato. Dette kan gjøres ved hjelp av structens variabler "tm_mday" for dag, "tm_mon" for måned og "tm_year" for år. Det må også legges til 1900 i år-variabelen for å få den korrekte datoen.
+I C ++ kan du sammenligne to datoer ved hjelp av Operator Overloading, som tillater at operatøren ">" og "<" brukes for å sammenligne objekter. La oss se på et eksempel på hvordan du kan sammenligne to datoer i kode:
 
 ```C++
-dato1.tm_mday = 10;
-dato1.tm_mon = 8;
-dato1.tm_year = 2021 - 1900;
+// Inkluderer nødvendige biblioteker
+#include <iostream>
+#include <string>
+#include <chrono>
 
-dato2.tm_mday = 15;
-dato2.tm_mon = 8;
-dato2.tm_year = 2021 - 1900;
-```
+// Definerer en funksjon for å sammenligne to datoer
+bool compareDates(std::chrono::system_clock::time_point date1, std::chrono::system_clock::time_point date2) {
+    return (date1 < date2);
+}
 
-Nå kan vi sammenligne disse to datoene ved å bruke funksjonen "difftime" som returnerer antall sekunder mellom to datoer. Dette kan uttrykkes i dager ved å dele antallet sekunder på 86400 (24 timer * 60 min * 60 sek).
+// Hovedfunksjonen
+int main()
+{
+    // Oppretter to datoer ved hjelp av chrono biblioteket
+    std::chrono::system_clock::time_point date1 = std::chrono::system_clock::now();
+    std::chrono::system_clock::time_point date2 = std::chrono::system_clock::now() + std::chrono::hours(24);
 
-```C++
-int diff = difftime(mktime(&dato1), mktime(&dato2)) / 86400;
+    // Kaller på funksjonen for å sammenligne datoene og skriver ut resultatet
+    if (compareDates(date1, date2)) {
+        std::cout << "Date 1 is earlier than Date 2";
+    } else {
+        std::cout << "Date 2 is earlier than Date 1";
+    }
 
-if (diff == 0) {
-    cout << "Datoene er like." << endl;
-} else if (diff < 0) {
-    cout << "Dato1 kommer før Dato2." << endl;
-} else {
-    cout << "Dato2 kommer før Dato1." << endl;
+    return 0;
 }
 ```
 
-Resultatet vil bli "Dato1 kommer før Dato2.", siden 10. august kommer før 15. august.
+Output:
+```
+Date 1 is earlier than Date 2
+```
+
+Som du kan se, brukes < og >-operatørene for å sammenligne datoene, og resultatet avhenger av hvilken dato som ligger først. Du kan også bruke andre operatører som >= og <= for å sammenligne datoer.
 
 ## Dypdykk
 
-I dypdykket vil vi se på hvordan "difftime" funksjonen fungerer. Denne funksjonen returnerer antall sekunder fra to gitt datoer, uttrykt som et "double" tall. Det er derfor viktig å konvertere dette til ønsket tidsenhet, som i vårt tilfelle var dager.
+Nå som du vet hvordan du sammenligner to datoer, kan det være nyttig å forstå hvordan datoenes format påvirker sammenligningsprosessen. I C ++ kan datoer representeres på flere måter, for eksempel ved hjelp av time_t- eller tm-strukturer. Det er viktig å være klar over hvilket format du arbeider med når du sammenligner datoer, da dette kan påvirke resultatet.
 
-Vi bruker også funksjonen "mktime" som konverterer "tm" structen til en tidsvariabel som kan håndteres av "difftime" funksjonen.
+Et annet viktig poeng å merke seg er at tidssone kan påvirke sammenligningen av datoer. Når du sammenligner datoer, sammenligner du faktisk tidspunktet for de to datoene, og hvis de er i forskjellige tidssoner, kan dette føre til uventede resultater. Derfor er det viktig å være bevisst på tidssone når du arbeider med datoer og tidsstempel.
 
-## Se Også
+## Se også
 
-- [C++ Reference - difftime](https://www.cplusplus.com/reference/ctime/difftime/)
-- [C++ Reference - mktime](https://www.cplusplus.com/reference/ctime/mktime/)
+- [C ++ time_t](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
+- [C ++ chrono bibliotek](https://en.cppreference.com/w/cpp/chrono)

@@ -1,33 +1,55 @@
 ---
-title:                "Swift: Att läsa in matning från kommandoraden"
+title:                "Swift: Läsa in kommandoradsargument"
+simple_title:         "Läsa in kommandoradsargument"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-#Varför
-Att läsa in kommandoradsargument är en viktig del av att bli en effektiv Swift programmerare. Genom att kunna hantera externa inmatningar kan du skriva program som är mer flexibla och användbara för dina användare.
+##Varför##
+I Swift-programmering är det vanligt att ha en dialog och samverkan med användaren. Att läsa kommandoradsargument kan ge programmet möjlighet att ta emot inmatning eller påverkas av användarens val. Det här blogginlägget kommer att utforska hur man läser kommandoradsargument i Swift.
 
-#Så här gör du
-För att läsa kommandoradsargument i Swift, behöver du använda `CommandLine.arguments` som är en inbyggd array som innehåller alla inmatade argument från kommandoraden. Du kan använda `for-loop` för att iterera igenom arguments och sedan använda dessa värden i ditt program.
+##Så här gör du##
+För att läsa kommandoradsargument i Swift behöver du först importera Foundation-modulen. Sedan kan du använda CommandLine-objektet för att få åtkomst till de olika argumenten som skickas till programmet.
 
 ```Swift
-for argument in CommandLine.arguments{
+import Foundation
+
+// Hämtar argumenten som en array av strängar från kommandoraden
+let arguments = CommandLine.arguments
+
+// Skriver ut de olika argumenten på en ny rad
+for argument in arguments {
     print(argument)
 }
 ```
-När du kör detta program och ger det argument från kommandoraden, kommer den att skriva ut varje argument på en egen rad.
 
-Om du vill hämta ett specifikt argument från listan kan du använda indexering. `CommandLine.arguments[0]` skulle till exempel returnera det första argumentet som matats in.
+Om vi till exempel kör programmet med följande kommandoradsargument: `swift read-arguments.swift argument1 argument2` så kommer utmatningen att se ut så här:
 
-#Djupdykning
-För att förstå mer om hur kommandoradsargument fungerar i Swift, är det viktigt att förstå att de är av typen `String`. Det betyder att du måste konvertera dem till andra datatyper om du vill använda dem som sådana.
+```
+argument1
+argument2
+```
 
-Du kan också använda ett tredjepartsbibliotek, såsom `CommandLineKit`, för att göra inläsningen av argumenten enklare och mer robust. Detta bibliotek tillåter dig till exempel att definiera vilken typ av data ett argument ska vara (som till exempel `Int` eller `Bool`).
+##Djupdykning##
+När du läser kommandoradsargument kan du också ange ett index för att hämta ett specifikt argument. Om du till exempel bara vill hämta det andra argumentet som skickas in kan du använda syntaxen `arguments[1]` eftersom index börjar med 0.
 
-#Se även
-- [Dokumentation om CommandLine i Swift](https://developer.apple.com/documentation/swift/commandline)
-- [CommandLineKit på GitHub](https://github.com/jatoben/CommandLine)
-- [Tutorial på reading command line arguments i Swift](https://medium.com/xcblog/command-line-arguments-in-swift-c9868fd85402)
+```Swift
+import Foundation
+
+let arguments = CommandLine.arguments
+
+// Hämtar andra argumentet som skickas in
+let argument2 = arguments[1]
+
+print(argument2)
+```
+
+Om vi nu kör programmet med samma kommandoradsargument som tidigare kommer utmatningen bara att visa `argument2`.
+
+##Se även##
+- [Beskrivning av CommandLine-objektet i Swift](https://developer.apple.com/documentation/foundation/commandline)
+- [Mer information om Swift-programmering](https://developer.apple.com/swift/)

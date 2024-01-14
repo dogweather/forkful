@@ -1,42 +1,53 @@
 ---
 title:                "Arduino: Skriva en textfil"
+simple_title:         "Skriva en textfil"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Att kunna skriva en textfil är en viktig färdighet för alla Arduino-programmerare. Det gör det möjligt att spara och lagra viktig information och data för användning i dina projekt. Det kan också hjälpa till med felsökning och felrapportering.
+Att skriva en textfil kan vara en användbar del av din Arduino programmeringsupplevelse. Det ger dig möjlighet att spara data och information på ett enkelt sätt, vilket kan vara användbart för projekt som kräver lagring av variabler eller sensoravläsningar.
 
-# Hur man gör
+## Hur man gör
 
-För att skriva en textfil på Arduino behöver du först skapa en ny instans av klassen "File". Sedan kan du använda funktionen "open" för att öppna en ny fil. Till exempel:
+För att skriva en textfil på din Arduino, använd "File" biblioteket. Börja med att inkludera biblioteket i din kod:
 
-```arduino
-File minFil = SD.open("mitttextdokument.txt", FILE_WRITE);
+```Arduino
+#include <SPI.h>
+#include <SD.h>
 ```
 
-Genom att ange "FILE_WRITE" som andra argumentet kommer filen att öppnas för skrivning. Om du vill öppna en befintlig fil för att läsa, behöver du bara ändra argumentet till "FILE_READ". Nu när filen är öppen kan du skriva text till den med hjälp av funktionen "println". Till exempel:
+Därefter måste du initialisera SD-kortet och öppna en textfil på SD-kortet:
 
-```arduino
-minFil.println("Jag älskar att programmera med Arduino!");
+```Arduino
+File textfil = SD.open("min_filstig.txt", FILE_WRITE);
 ```
 
-För att spara filen och stänga den kan du använda funktionen "close". Det är viktigt att komma ihåg att stänga filen efter att du är klar med den.
+Nu kan du skriva i textfilen med funktionen "println()":
 
-# Djupdykning
+```Arduino
+textfil.println("Det här är en ny rad i min textfil.");
+```
 
-Det finns några viktiga saker att tänka på när du skriver en textfil på Arduino. För det första är det viktigt att se till att du inte öppnar för många filer samtidigt eftersom det kan orsaka minnesproblem. Det är också viktigt att stänga filer när du är klar med dem för att frigöra minne.
+När du är klar med att skriva i filen, ska du stänga den med "close()"-funktionen:
 
-En annan viktig sak att tänka på är filnamnet och var du lagrar filen. Om du använder ett SD-kort, se till att du använder det korrekta filsystemet för att kunna läsa och spara filer. Det är också bra att använda unika filnamn för varje fil du skapar för att undvika konflikter eller överlappning.
+```Arduino
+textfil.close();
+```
 
-En sista viktig punkt är att förstå vilken typ av data du sparar. Om du vill spara numeriska värden måste du konvertera dem till text med hjälp av funktionen "toString". Om du inte gör det kan data sparas på ett ofullständigt sätt.
+## Djupdykning
 
-# Se också
+För att skriva en textfil med mer avancerade funktioner, titta på "File" bibliotekets dokumentation. Du kan till exempel kontrollera om en fil redan finns på SD-kortet med "exists()" funktionen eller skapa en ny mapp för din textfil med "mkdir()" funktionen.
 
-- [Filbiblioteket i Arduino](https://www.arduino.cc/en/Reference/SD)
-- [Öppna filer på SD-kort med Arduino](https://www.arduino.cc/en/Tutorial/ReadWrite)
-- [Filskrivningsövning med Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite)
+Kom också ihåg att filnamnet och sökvägen måste anpassas efter dina behov. Du kan använda variabler i filnamnet vilket gör det möjligt att dynamiskt skapa olika filer baserat på olika värden.
+
+## Se även
+
+- [Filbibliotekets dokumentation](https://www.arduino.cc/en/Reference/SD)
+- [SD-kortet anslutet till Arduino](https://www.arduino.cc/en/Guide/ArduinoMKRSd)
+- [Markbrott](https://www.markdownguide.org/)

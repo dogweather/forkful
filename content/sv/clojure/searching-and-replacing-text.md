@@ -1,49 +1,44 @@
 ---
-title:                "Clojure: Söka och ersätta text"
+title:                "Clojure: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+En vanlig uppgift inom programmering är att söka och ersätta text i en given fil eller sträng. Det kan bero på att man vill korrigera stavfel, byta ut vissa ord eller helt enkelt göra en snabb ändring i en stor mängd text. Men varför skulle man behöva göra det i Clojure?
 
-I dagens digitala värld är det ofta nödvändigt att kunna söka och byta ut text i stora mängder av data. Det kan handla om att korrigera stavfel i en text, ändra formatet på ett dokument eller helt enkelt ersätta ett ord med ett annat. I denna bloggpost kommer vi gå igenom hur du kan lösa detta i Clojure, ett funktionellt programmeringsspråk som blivit alltmer populärt i de senaste åren.
+## How To
 
-## Hur man gör
-
-För att söka och byta ut text i Clojure kan du använda funktionen "replace" som tar emot tre argument: en sträng som du vill söka igenom, en söksträng och en ersättningssträng. Här är ett enkelt exempel:
-
-```Clojure
-(def str "Hej, jag heter Alice")
-(replace str "Alice" "Bob")
-```
-
-Outputen från detta kommer vara "Hej, jag heter Bob" då vi ersätter söksträngen "Alice" med "Bob". Det är även möjligt att söka och ersätta mer avancerade mönster med hjälp av reguljära uttryck. Till exempel, om vi vill byta ut alla siffror i en sträng med bokstäver, kan vi använda följande kod:
+Sök och ersätt funktionen i Clojure är enkel och kraftfull tack vare användningen av reguljära uttryck. För att söka efter en viss textsträng i en fil eller sträng använder man sig av `re-seq` funktionen tillsammans med ett reguljärt uttryck och den text man vill söka i. Till exempel om vi vill hitta alla förekomster av ordet "häst" i en fil kan vi använda följande kod:
 
 ```Clojure
-(def str "123 abc 456")
-(replace str #"\d" "X")
+(def fil-innehåll (slurp "minfil.txt"))  ; läser in hela filens innehåll som en sträng
+(re-seq #"\bhäst\b" fil-innehåll) ; söker efter ordet häst i filinnehållet
 ```
-
-Outputen blir då "XXX abc XXX" där alla siffror har ersatts med "X".
-
-## Djupdykning
-
-För att förstå mer om hur sökning och ersättning fungerar i Clojure kan vi titta på implementeringen av "replace" funktionen. Det finns flera olika sätt att göra det på, men en enkel lösning skulle kunna se ut så här:
+Output:
+```
+("häst" "häst" "häst") ; antal förekomster av ordet "häst"
+```
+För att ersätta alla förekomster av ordet "häst" med "katt" kan man använda sig av `re-find` tillsammans med `re-replace` funktionen. Detta gör att vi kan söka efter en textsträng och samtidigt byta ut den. Koden skulle se ut så här:
 
 ```Clojure
-(defn replace [str search replace]
-  (->> (seq str) ; konverterar strängen till en sekvens av tecken
-    (map #(if (= % search) replace %)) ; byter ut tecknen som matchar söksträngen med ersättningstecknet
-    (apply str))) ; konverterar sekvensen tillbaka till en sträng
+(re-replace #"häst" "katt" fil-innehåll)
 ```
+Output:
+```
+"katt äter morötter och gräs" ; ursprungliga filinnehållet med alla förekomster av "häst" bytta mot "katt"
+```
+I exempelkoden ovan har vi använt `#` före vårt reguljära uttryck, detta betyder att vi skapar en reguljär uttrycksliteral som är en effektivare och snabbare metod jämfört med `re-find` som tar emot en regexp-sträng.
 
-I denna kod används funktionerna "seq" för att konvertera strängen till en sekvens av tecken, "map" för att byta ut tecknen och "apply" för att återgå till en sträng igen. Dessa funktioner är grundläggande inom funktionell programmering och finns tillgängliga i Clojure.
+## Deep Dive
+I Clojure kan man också använda sig av `re-pattern` funktionen för att kompilera en regexp-sträng till ett pattern objekt. Detta kan skapa en prestandaförbättring om man behöver söka efter samma reguljära uttryck flera gånger. Man kan också använda sig av `re-matcher` funktionen för att hitta ytterligare information om den sökta texten, till exempel vilken position i texten den finns på.
 
-## Se även
-
-- Officiell Clojure hemsida: https://clojure.org/
-- Reguljära uttryck i Clojure: https://www.braveclojure.com/regular-expressions/
-- Bygg- och utvecklingsverktyg för Clojure: https://leiningen.org/
+## Se också
+- [The Clojure cheat sheet](https://clojure.org/api/cheatsheet): En snabb referensguide för Clojure.
+- [ClojureDocs](https://clojuredocs.org/): En online samling av Clojure dokumentation och exempel.
+- [Mastering Regular Expressions](https://regex.info/book.html): En guide för att lära sig reguljära uttryck på djupet.

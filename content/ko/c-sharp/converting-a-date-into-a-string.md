@@ -1,35 +1,58 @@
 ---
 title:                "C#: 날짜를 문자열로 변환하기"
+simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-한국어 버전
 
-일정을 문자열로 변환하는 일에 참여하는 이유는 무엇일까요? 이는 프로그래밍에서 매우 일반적인 과제 중 하나입니다. 일정을 문자열로 표현하면 다른 기능과 조합하여 강력한 프로그램을 만들 수 있습니다. 이렇게 표현하는 방법은 매우 유연하며 문제를 해결하는 데 매우 유용합니다.
+날짜를 문자열로 변환하는 일이 필요한 이유는 다양합니다. 예를 들어, 사용자에게 날짜 정보를 표시하거나 데이터베이스에 저장하기 위해 날짜를 문자열로 변환할 수 있습니다. C#에서는 날짜를 문자열로 변환하기 위한 다양한 방법을 제공하기 때문에, 우리는 자유롭게 원하는 방식으로 날짜를 문자열로 변환할 수 있습니다.
 
-## 이와 같이
-코딩 예제와 "```C# ... ```" 코드블록 내에서의 샘플 출력입니다.
+## 방법
+
+C#에서 날짜를 문자열로 변환하는 가장 간단한 방법은 ```ToString()``` 함수를 사용하는 것입니다. 아래의 예제 코드를 참고해 주세요.
 
 ```C#
-DateTime now = DateTime.Now;
-string dateToString = now.ToString();
-Console.WriteLine(dateToString);
-// 출력: 2021-05-04 10:30:00
+DateTime today = DateTime.Today;
+string stringDate = today.ToString();
+Console.WriteLine(stringDate);
+
+// 출력 결과:
+// 11/18/2021 12:00:00 AM
 ```
 
-매우 쉽죠? 날짜를 문자열로 변환하기 위해 사용할 수 있는 여러 가지 방법이 있습니다. 이 예제에서는 기본 `ToString` 메서드를 사용했지만, 서식 지정 문자열을 사용하거나 날짜 형식을 직접 지정하는 방법도 있습니다. 아래 링크에서 더 많은 정보를 확인할 수 있습니다.
+우리가 기대한 대로, 날짜가 문자열로 변환되어 출력되었습니다. 날짜를 원하는 형식으로 표시하기 위해서는 ```ToString()``` 함수의 매개변수에 형식을 지정해 주어야 합니다. 아래의 예제 코드를 참고해 주세요.
 
-## 깊은 곳으로
-날짜를 문자열로 변환하는 데는 많은 내부적인 처리 과정이 있습니다. 날짜 형식, 로컬 또는 UTC 시간, 다국어 지원 등 여러 가지 요소를 고려해야 합니다. 또한 분명히 `ToString` 메서드는 매우 강력하고 유연한 기능을 제공합니다. 따라서 이를 효과적으로 이용하면 더 많은 기능을 가진 프로그램을 만들 수 있습니다.
+```C#
+DateTime today = DateTime.Today;
+string stringDate = today.ToString("MM/dd/yyyy");
+Console.WriteLine(stringDate);
 
-## 이와 관련하여
-다른 관련 정보를 확인해보세요. 아래 링크에서 더 많은 내용을 확인할 수 있습니다.
+// 출력 결과:
+// 11/18/2021
+```
 
-1. [DateTime.ToString 메서드 - C# 및 .NET for Beginners](https://csharp.today/csharp-datetime-tostring-method/)
-2. [.NET 날짜 표기법 및 날짜 형식 문자열 참조 - Microsoft Docs](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/custom-date-and-time-format-strings)
-3. [Why is converting a DateTime to a string such a common task in C#? - Stack Overflow](https://stackoverflow.com/questions/10705905/why-is-converting-a-datetime-to-a-string-such-a-common-task-in-c)
+또 다른 방법으로는 ```String.Format()``` 함수를 사용하는 것입니다. 이 함수를 사용하면, 문자열 안에서 직접 형식을 지정할 수 있습니다. 아래의 예제 코드를 참고해 주세요.
+
+```C#
+DateTime today = DateTime.Today;
+string stringDate = String.Format("오늘은 {0:MM월 dd일 yyyy년} 입니다.", today);
+Console.WriteLine(stringDate);
+
+// 출력 결과:
+// 오늘은 11월 18일 2021년 입니다.
+```
+
+## 딥 다이브
+
+C#에서는 날짜를 문자열로 변환하기 위해 다양한 형식을 제공합니다. 그 중 가장 일반적으로 사용되는 형식은 "MM/dd/yyyy" 형식입니다. 하지만, 우리가 원하는 대로 날짜를 형식화하기 위해서는 사용 가능한 형식을 이해해야 합니다. 아래의 링크를 통해 날짜 형식에 대해 더 자세히 알아보세요.
+
+## 참고 자료
+
+- [C# 날짜 형식 지정 방법](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/custom-date-and-time-format-strings)
+- [코딩 시작하기: 날짜와 시간 다루기](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/dates-and-times/)

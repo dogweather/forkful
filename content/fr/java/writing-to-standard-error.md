@@ -1,50 +1,50 @@
 ---
-title:                "Java: Écrire vers l'erreur standard"
+title:                "Java: Écrire dans la sortie d'erreur standard."
+simple_title:         "Écrire dans la sortie d'erreur standard."
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi écrire vers la sortie d'erreur standard ?
 
-L'écriture sur la sortie d'erreur standard, également connue sous le nom de standard error, est une pratique courante en programmation Java. Cette méthode permet aux développeurs de gérer efficacement les erreurs et les exceptions dans leur code.
+Il est important pour les programmeurs Java de comprendre l'importance d'écrire vers la sortie d'erreur standard ou stderr (standard error) lors de la création de leurs programmes. Voici pourquoi.
 
-## Comment faire
+## Comment faire ?
 
-Pour écrire sur la sortie d'erreur standard en Java, vous pouvez utiliser la méthode suivante:
-
-```Java
-System.err.println("Message d'erreur à afficher");
-```
-
-Cette méthode affichera le message d'erreur spécifié dans la console en couleur rouge, ce qui le distinguera du reste de la sortie standard.
-
-Voici un exemple de sortie:
-
-```
-Erreur: Impossible de se connecter à la base de données
-```
-
-Il est également possible d'écrire directement sur la sortie d'erreur standard en utilisant un objet de type PrintStream, comme ceci:
+L'écriture vers la sortie d'erreur standard est très simple en Java. Utilisez simplement la méthode ```System.err.println()``` dans votre code pour écrire un message dans la sortie d'erreur standard. Voici un exemple de code :
 
 ```Java
-PrintStream err = System.err;
-err.println("Message d'erreur à afficher");
+public class Main {
+    public static void main(String[] args) {
+        System.err.println("Ceci est un message d'erreur !");
+    }
+}
 ```
 
-Cette méthode offre une flexibilité supplémentaire, car vous pouvez spécifier un emplacement différent pour le message d'erreur en utilisant la méthode `err.println()`.
+Et voici le résultat que vous obtiendrez dans la sortie d'erreur standard :
 
-## Analyse approfondie
+```
+Ceci est un message d'erreur !
+```
 
-L'écriture sur la sortie d'erreur standard est une pratique utile pour gérer les erreurs dans votre code Java. Cela permet de différencier clairement les messages d'erreur des autres sorties et facilite le débogage. De plus, cela aide les utilisateurs à comprendre pourquoi une erreur s'est produite lors de l'exécution de votre programme.
+Vous pouvez également utiliser la méthode ```System.err.print()``` pour écrire sans retour à la ligne. Vous pouvez également utiliser l'objet ```System.err``` pour écrire directement vers la sortie d'erreur standard comme ceci :
 
-Il est important de noter que vous ne devriez utiliser la sortie d'erreur standard que pour les erreurs réelles et non pour afficher des messages de débogage ou de diagnostic. Pour ces derniers, utilisez plutôt la sortie standard avec `System.out.println()`. Cela évitera toute confusion lors de l'exécution du programme.
+```Java
+System.err.append("Ceci est un autre message d'erreur !");
+```
+
+## Plongée en profondeur
+
+La sortie d'erreur standard est une fenêtre importante pour les programmeurs Java lorsqu'ils rencontrent des erreurs dans leur code. Lorsqu'une exception est levée, elle est généralement écrite dans la sortie d'erreur standard pour informer le programmeur de l'erreur et de son emplacement dans le code. L'écriture vers la sortie d'erreur standard est également utile pour le débogage de code, car cela peut aider à identifier les erreurs et les problèmes dans le code.
+
+Il est également important de noter que la sortie d'erreur standard est différente de la sortie standard (stdout). La sortie standard est utilisée pour afficher les résultats normaux du programme, tandis que la sortie d'erreur standard est utilisée pour afficher les erreurs et les avertissements.
 
 ## Voir aussi
 
-- [Documentation sur la classe PrintStream](https://docs.oracle.com/javase/8/docs/api/java/io/PrintStream.html)
-- [Article sur l'utilisation de System.err.println() en Java](https://www.journaldev.com/19194/system-err-println-vs-system-out-println-in-java)
-
-En utilisant correctement la sortie d'erreur standard dans votre code Java, vous pouvez améliorer la qualité et la lisibilité de votre programme. N'hésitez pas à l'utiliser pour gérer les erreurs et à consulter les liens ci-dessus pour en savoir plus sur cette pratique.
+- [Documentation officielle de Java sur System.err](https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err)
+- [Guide de débogage en Java](https://www.baeldung.com/java-debugging)
+- [Utilisation de la sortie d'erreur standard en Java](https://www.geeksforgeeks.org/java-io-printstream-println-method-with-examples/)

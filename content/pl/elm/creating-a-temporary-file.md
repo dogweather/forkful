@@ -1,45 +1,55 @@
 ---
 title:                "Elm: Tworzenie pliku tymczasowego"
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Czasami programiści muszą tworzyć tymczasowe pliki w swoich projektach z różnych powodów, na przykład tymczasowe dane, tymczasowe pamięci cache lub pliki tymczasowe do testowania kodu. W tym artykule omówimy, dlaczego warto używać tymczasowych plików w języku Elm.
+Tworzenie tymczasowych plików jest ważnym aspektem programowania, ponieważ umożliwia nam tymczasowe przechowywanie danych lub wyników obliczeń. Jest to szczególnie przydatne w przypadku tworzenia aplikacji internetowych, gdzie często potrzebujemy zapisać dane do pliku, ale nie chcemy ich trwale przechowywać na serwerze. Elm oferuje prosty sposób na tworzenie tymczasowych plików, co ułatwia nam pracę z danymi w naszych aplikacjach. 
 
-## Jak
+## Jak to zrobić?
 
-Aby stworzyć tymczasowy plik w Elm, należy wykorzystać funkcję `File.Temp.file` z pakietu `elm/file`. Poniżej znajduje się przykładowy kod:
-
-```elm
-import File.Temp exposing (file)
-import File exposing (toFile)
-
--- tworzenie pliku tymczasowego w aktualnym folderze
-myTempFile = File.Temp.file "temp.txt"
-
--- konwertowanie do pliku
-myFile = toFile myTempFile
-```
-
-Po uruchomieniu powyższego kodu, zostanie utworzony tymczasowy plik `"temp.txt"` w aktualnym folderze. Run this  When running this code, you will see the following output:
+Aby stworzyć tymczasowy plik w Elm, musimy użyć funkcji `File.temp` z modułu `File`. Funkcja ta przyjmuje dwa argumenty: nazwę pliku oraz jego zawartość. W poniższym przykładzie stworzymy tymczasowy plik o nazwie "temp.txt" zawierający tekst "To jest przykładowa zawartość pliku":
 
 ```
-<SUCCESS> Plik temp.txt został utworzony.
+Elm File.temp "temp.txt" "To jest przykładowa zawartość pliku"
 ```
 
-## Wnikliwa analiza
+Możemy też użyć funkcji `File.write` do zapisania danych do utworzonego przez nas pliku:
 
-Powyższy przykład jest bardzo prosty, ale warto dowiedzieć się więcej o tworzeniu tymczasowych plików. Funkcja `File.Temp.file` przyjmuje dwa argumenty: nazwę pliku i opcjonalną lokalizację, w której należy go utworzyć. Jeśli nie podamy lokalizacji, zostanie utworzony w aktualnym folderze. 
+```
+Elm File.write "temp.txt" "Nowa zawartość pliku"
+```
 
-Funkcja `File.Temp.file` zwraca wartość typu `Result`, który może zawierać albo wartość `Ok`, gdy operacja jest wykonana poprawnie, albo błąd, gdy wystąpi jakikolwiek problem. Możemy wykorzystać wzorce dopasowań do obsłużenia obu tych przypadków w przykładowym kodzie. Dodatkowo, możemy także użyć funkcji `File.Temp.tempDirectory` do uzyskania ścieżki do folderu tymczasowego, w którym można tworzyć pliki tymczasowe.
+Aby odczytać zawartość tymczasowego pliku, możemy użyć funkcji `File.read`:
+
+```
+Elm File.read "temp.txt"
+```
+
+W wyniku otrzymamy tekst "Nowa zawartość pliku". Po zakończeniu pracy z plikiem, możemy go usunąć za pomocą funkcji `File.delete`:
+
+```
+Elm File.delete "temp.txt"
+```
+
+## W głębi programowania
+
+Tworzenie tymczasowych plików w Elm bazuje na funkcjonalności modułu `File`. Warto zdawać sobie sprawę z kilku istotnych elementów przy korzystaniu z tej funkcjonalności:
+
+1. Pliki tymczasowe są usuwane automatycznie po zakończeniu działania naszej aplikacji.
+2. Domyślnie pliki tymczasowe są zapisywane w tej samej lokalizacji, co aplikacja.
+3. Możemy określić inną lokalizację poprzez podanie pełnej ścieżki dostępu w nazwie pliku.
+
+Tworzenie tymczasowych plików jest bardzo przydatną umiejętnością w programowaniu, a dzięki prostym funkcjom dostępnym w Elm, możemy to zrobić w łatwy i bezpieczny sposób.
 
 ## Zobacz także
 
-1. Dokumentacja pakietu `elm/file` (https://package.elm-lang.org/packages/elm/file/latest/)
-2. Przykłady wykorzystania tymczasowych plików w Elm (https://github.com/elm-explorations/file/tree/1.0.2/examples)
-3. Poradnik dotyczący działania na plikach w Elm (https://giannopoulos.dev/blog/2020/05/01/handling-files-in-elm/)
+* [Dokumentacja Elm o tymczasowych plikach](https://guide.elm-lang.org/io/files.html)
+* [Tutorial dotyczący obsługi plików w Elm](https://dev.to/rtfeldman/elm-files-without-ports-a-walkthrough-of-how-to-talk-to-external-files-1kja)

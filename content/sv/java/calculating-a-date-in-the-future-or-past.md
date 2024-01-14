@@ -1,7 +1,9 @@
 ---
-title:                "Java: Beräkning av ett datum i framtiden eller förflutna"
+title:                "Java: Beräkna ett datum i framtiden eller i det förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller i det förflutna"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,55 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att beräkna datum i framtiden eller förflutna kan vara en användbar funktion för att hantera tidssensitive information eller att planera för händelser i framtiden. Det kan vara särskilt användbart för att upprätthålla deadlines eller för att hålla koll på åldern för olika händelser.
+Att kunna beräkna ett datum i framtiden eller det förflutna kan vara väldigt användbart i många olika situationer. Till exempel kan det vara till hjälp för att planera framtida händelser eller för att spåra händelser som redan har inträffat.
 
 ## Hur man gör det
 
-För att beräkna ett datum i framtiden eller förflutna behöver vi använda oss av en kombination av datatyper och inbyggda funktioner i Java. Låt oss ta en titt på ett exempel för att förtydliga det:
+För att beräkna ett datum i framtiden eller förflutna behöver man använda sig av klassen `LocalDate` från Java API. Det finns flera olika metoder som kan användas för att beräkna ett datum, beroende på vilka parametrar man vill använda.
 
-````java
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+Här är ett exempel på hur man beräknar ett datum 10 dagar framåt från nuvarande datum:
 
-public class DateCalculator {
-  public static void main(String[] args) {
-    // Vi väljer ett specifikt datum att utgå ifrån
-    LocalDate startDate = LocalDate.of(2020, 5, 15);
-    
-    // Vi använder oss av en DateTimeFormatter för att definiera formatet på datumet
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    
-    // Vi kan sedan använda oss av LocalDate's metod plusDays för att beräkna ett datum i framtiden eller förflutna
-    // I det här fallet lägger vi till 10 dagar till vårt startdatum
-    LocalDate futureDate = startDate.plusDays(10);
-    
-    // Vi kan också använda minusDays för en beräkning i förflutna
-    LocalDate pastDate = startDate.minusDays(10);
-    
-    // Slutligen skriver vi ut resultaten i det definierade formatet med hjälp av DateTimeFormatter
-    System.out.println(formatter.format(futureDate));
-    System.out.println(formatter.format(pastDate));
-  }
-}
-````
+```Java
+LocalDate today = LocalDate.now();// Nuvarande datum
 
-Körningsresultat:
+LocalDate futureDate = today.plusDays(10); // Beräknar datumet 10 dagar framåt
 
-```
-25/05/2020
-05/05/2020
+System.out.println(futureDate); // Skriver ut resultatet: "2020-09-16"
 ```
 
-Som vi kan se kan vi enkelt beräkna ett datum i framtiden eller förflutna genom att använda oss av Java's inbyggda funktioner.
+För att beräkna ett datum i det förflutna kan man använda `minusDays()` istället för `plusDays()`.
 
 ## Djupdykning
 
-Om du vill ha mer avancerade beräkningar kan du också använda dig av andra klasser som är tillgängliga i java.time-paketet, såsom Period och Duration. Dessa klasser tillåter mer exakta beräkningar beroende på dina specifika behov.
+Metoderna `plusDays()` och `minusDays()` är bara två av många som finns tillgängliga för att beräkna datum. Det finns även metoder för att beräkna datum baserat på månader, år och veckor.
 
-Du kan också använda dig av olika metoder för att manipulera datumet, såsom plusWeeks(), plusMonths() eller plusYears(). Utforska dessa funktioner för att hitta den bästa lösningen för ditt specifika projekt.
+En annan användbar funktion är `with()` som kan användas för att ändra ett specifikt datumattribut, exempelvis att byta ut månaden till en annan månad.
 
-## Se också
+## Se även
 
-- [Java Dokumentation: LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Tutorial: Beräkna datum i Java](https://www.baeldung.com/java-date-difference)
-- [Java Date and Time API – Handling of Time and Date](https://www.baeldung.com/java-8-date-time-intro)
+- [Java API - LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
+- [Oracle Java Tutorials - Dates and Time](https://docs.oracle.com/javase/tutorial/datetime/index.html)
+- [Java Date and Time API Tutorial](https://www.baeldung.com/java-8-date-time-intro)

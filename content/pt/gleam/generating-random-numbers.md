@@ -1,57 +1,48 @@
 ---
-title:                "Gleam: Geração de números aleatórios"
+title:                "Gleam: Gerando números aleatórios"
+simple_title:         "Gerando números aleatórios"
 programming_language: "Gleam"
-category:             "Numbers"
+category:             "Gleam"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios em Gleam?
+## Por que gerar números aleatórios?
 
-Gerar números aleatórios é uma tarefa extremamente útil em programação, especialmente em jogos, simulações e aplicações criptográficas. Em Gleam, podemos utilizar o módulo `Random` para gerar números aleatórios de forma simples e eficaz.
+Gerar números aleatórios é uma tarefa comumente realizada em programação para uma variedade de propósitos. Esses números podem ser usados em jogos, simulações, criptografia e muitas outras aplicações. A capacidade de gerar números aleatórios é uma habilidade importante para qualquer programador.
 
 ## Como fazer:
 
-Podemos gerar números aleatórios em Gleam utilizando a função `int` do módulo `Random` e fornecendo os limites desejados. Por exemplo, para gerar um número aleatório entre 1 e 10, podemos utilizar o código a seguir:
+Gerar números aleatórios em Gleam é uma tarefa fácil e pode ser feita de diversas maneiras. Uma abordagem simples é usar a função `rand.int` para gerar um número inteiro aleatório em um intervalo específico. Por exemplo:
 
-```
-Gleam import Random
+````Gleam
+let num = rand.int(1, 10)
+````
 
-let random_number = int(1, 10)
+Isso irá gerar um número aleatório entre 1 e 10, incluindo ambos os números.
 
-Random.generate(random_number)
+Outra opção é usar a função `rand.float` para gerar um número decimal aleatório em um intervalo específico. Por exemplo:
 
-```
+````Gleam
+let num = rand.float(1.0, 10.0)
+````
 
-Esse código irá gerar um número inteiro aleatório entre 1 e 10 e armazená-lo na variável `random_number`. Em seguida, utilizamos a função `generate` do módulo `Random` para imprimir o resultado na tela. Ao executar o código, obteremos uma saída semelhante a esta:
+Isso irá gerar um número aleatório entre 1.0 e 10.0.
 
-```
-6
-```
-
-Podemos também utilizar a função `float` para gerar números aleatórios decimais. Basta fornecermos o limite inferior e superior desejado. Por exemplo:
-
-```
-let random_decimal = float(0.0, 1.0)
-
-Random.generate(random_decimal)
-```
-
-Isso irá gerar um número decimal aleatório entre 0 e 1 e imprimi-lo na tela.
+Existem também outras funções disponíveis, como `rand.bool` para gerar valores booleanos aleatórios e `rand.bytes` para gerar uma lista de bytes aleatórios.
 
 ## Mergulho Profundo:
 
-O módulo `Random` oferece diversas funções para gerar números aleatórios com diferentes tipos e limites, como por exemplo:
+Para uma compreensão mais profunda de como a geração de números aleatórios funciona em Gleam, é importante entender que essa função é baseada em um gerador de números pseudoaleatórios que utiliza uma semente (seed) para gerar os números. A semente é um valor inicial que é usado como base para a geração de números. Por padrão, o gerador de números em Gleam usa a hora atual como semente, mas é possível especificar uma semente manualmente usando a função `rand.with_seed`.
 
-- `int_uniform(start, end)` para gerar um número inteiro uniformemente distribuído entre os limites fornecidos.
-- `float_normal(mean, sd)` para gerar um número decimal com distribuição normal, utilizando a média e o desvio padrão desejados.
-- `int_seed(seed)` para gerar um número inteiro a partir de uma semente específica.
+Além disso, o módulo `Rand` em Gleam também oferece funções para gerar números aleatórios com diferentes distribuições, como a Distribuição Normal, a Distribuição de Poisson e a Distribuição Binomial.
 
-Também é possível utilizar a função `Random.seed()` para definir uma semente padrão e garantir que a geração de números aleatórios seja sempre a mesma, útil para testes e debugging.
+## Veja também:
 
-## Veja Também:
+Para saber mais sobre a geração de números aleatórios em Gleam e como aplicá-la em suas próprias aplicações, confira os recursos abaixo:
 
-- Documentação oficial do módulo `Random` em Gleam: https://gleam.run/documentation/stdlib/random
-- Tutorial sobre como gerar números aleatórios em Gleam: https://cleibsonalves.github.io/tutorial-gerando-numeros-aleatorios-em-gleam/#/
-- Exemplos práticos de uso do módulo `Random`: https://github.com/gleam-lang/example-apps/blob/master/examples/random/random.gleam
+- Documentação oficial da função `Rand`: https://gleam.run/modules/gleam_std.Rand.html
+- Tutorial sobre números aleatórios em Gleam: https://dev.to/gleam_tuts/how-to-generate-random-numbers-in-gleam-2nh1
+- Exemplos de uso de geração de números aleatórios em Gleam: https://github.com/gleam-lang/gleam_stdlib/blob/master/test/rand_test.gleam

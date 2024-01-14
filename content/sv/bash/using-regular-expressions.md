@@ -1,7 +1,9 @@
 ---
 title:                "Bash: Användning av reguljära uttryck"
+simple_title:         "Användning av reguljära uttryck"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/using-regular-expressions.md"
 ---
 
@@ -9,32 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Regular expressions är ett användbart verktyg för att förbättra effektiviteten och precisionen i din Bash-programmering. De tillåter dig att söka efter mönster i textsträngar och utföra olika åtgärder baserat på dessa mönster.
+Reguljära uttryck är ett kraftfullt verktyg inom Bash-programmering som gör det möjligt att söka, matcha och manipulera text på ett enkelt och effektivt sätt. Genom att lära sig att använda reguljära uttryck, kan du spara tid och arbete när du arbetar med strängar och filer inom Bash.
 
-## Så här använder du det
+## Hur man använder reguljära uttryck i Bash
 
-För att använda regular expressions i Bash, behöver du först förstå syntaxen för att skriva dem. De kan innefatta specialtecken som * och +, som betyder "noll eller fler" respektive "en eller fler". För att söka efter ett visst mönster, kan du använda kommandot `grep` tillsammans med en regular expression.
-
-Ett exempel på hur man kan använda en regular expression i Bash är att söka efter alla filer som slutar på ".txt" i en mapp. Detta kan göras med följande kommando:
+För att använda reguljära uttryck i Bash behöver du först förstå den grundläggande syntaxen och reglerna för hur de fungerar. För att söka och matcha ett uttryck i en text måste du använda kommandot `grep` tillsammans med ett reguljärt uttryck. Här är ett exempel på hur man söker efter alla ord som börjar med bokstaven "s" i en textfil:
 
 ```Bash
-ls | grep ‘\.txt$’
+cat textfil.txt | grep '^s'
+```
+Output:
+```
+sopa
+sol
+sjukhus
+```
+För att söka efter flera bokstäver eller ord kan du använda hakparenteser [] för att skapa en mönstergrupp. Till exempel, om du vill söka efter alla ord som börjar med antingen "hej" eller "håll" kan du använda följande reguljära uttryck:
+
+```Bash
+cat textfil.txt | grep '^(hej|håll)'
+```
+Output:
+```
+hejda
+hej
+hållbart
+hållplats
 ```
 
-Outputen från detta kommer att visa alla filer som slutar på .txt. Detta är ett användbart verktyg när du behöver arbeta med specifika filtyper i en mapp.
+Det går också att använda reguljära uttryck för att ersätta text i en fil. Du kan göra det med hjälp av kommandot `sed` och det reguljära uttrycket inom en sista grupp. Här är ett exempel på hur man ersätter alla instanser av orden "god morgon" med "hej" i en textfil:
 
-## Djupdykning
+```Bash
+sed -i 's/god morgon/hej/g' textfil.txt
+```
 
-Det finns många olika mönster och syntaxer som kan användas i regular expressions. Det kan ta lite övning att bli bekväm med dem, men det är definitivt värt det i långa loppet. Till exempel, använda * för att söka efter flera olika mönster, eller använd räckviddstecken [a-z] för att hitta alla bokstäver i en viss intervall.
+Det finns många fler möjligheter att använda reguljära uttryck inom Bash-programmering. Genom att lära dig mer om dess syntax och användningsområden kan du effektivisera ditt arbete och lösa problem på ett smidigare sätt.
 
-Du kan också använda regular expressions för att matcha och extrahera specifika delar av en textsträng. Genom att använda parenteser runt de delar av mönstret som du vill extrahera, kan du sedan använda variabler för att komma åt dessa delar för att utföra olika åtgärder.
+## Djupdykning i reguljära uttryck
+
+Reguljära uttryck är en del av POSIX-standard och används i många olika programmeringsspråk och verktyg. Inom Bash finns dock vissa begränsningar och skillnader i hur de tolkas jämfört med andra språk. Till exempel, så måste man använda en omvänd snedstreck innan specialtecken såsom +, (), {} för att tolkas korrekt.
+
+Det finns också olika metakaraktärer som kan användas för olika syften i reguljära uttryck. Till exempel, används ^ för att matcha början av en rad, $ för att matcha slutet, * för att matcha noll eller flera gånger av ett uttryck och + för att matcha en eller flera gånger. Mer information om olika metakaraktärer och hur de kan användas finns tillgängligt i Rusells bok "The GNU Linux Command Line". 
 
 ## Se även
 
-Här är några användbara resurser för att lära dig mer om regular expressions och hur du kan använda dem i din Bash-programmering:
-
-- [En grundläggande guide till användning av regular expressions i Bash](https://www.linode.com/docs/development/regular-expressions-examples-bash/)
-- [En komplett guide till regular expressions på Linux](https://www.linuxjournal.com/content/bash-extended-globbing)
-- [RegExtract - ett praktiskt verktyg för att testa och experimentera med regular expressions](https://regex101.com/)
-
-Lycka till med att använda regular expressions i din Bash-programmering! Du kommer snart att upptäcka hur kraftfullt detta verktyg kan vara för att effektivisera ditt arbete och förbättra din kodningsförmåga.
+- [The GNU Linux Command Line](http://www.linuxcommand.org/tlcl.php)
+- [Bash Regex tutorial](https://ryanstutorials.net/regular-expressions-tutorial/)
+- [Bash Quick Reference Guide](http://tldp.org/LDP/abs/html/x9644.html)

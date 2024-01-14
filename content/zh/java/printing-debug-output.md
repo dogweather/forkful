@@ -1,43 +1,44 @@
 ---
 title:                "Java: 打印调试输出"
+simple_title:         "打印调试输出"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-本文将详细讲解Java程序员为何需要打印调试输出，如何进行打印调试输出，以及深入了解如何打印调试输出。
+为什么：为什么会需要打印调试输出？在开发过程中，打印调试输出可以帮助我们查看代码的执行过程中的各种变量的值，以便于我们更好地理解程序的运行情况和进行错误分析。
 
-## 为什么
-
-打印调试输出在开发过程中扮演着重要的角色。它可以帮助开发人员跟踪代码，排除错误，并提供程序的正确运行信息。
-
-## 如何进行打印调试输出
-
-首先，在需要调试的地方添加```System.out.println()```语句，它可以将想要打印的信息输出到控制台。例如：
+如何做到：我们可以使用Java语言提供的`System.out.println()`语句来输出调试信息。例如：
 
 ```Java
-String name = "Maggie";
-System.out.println("姓名：" + name);
+int num1 = 5;
+int num2 = 7;
+System.out.println("num1的值为：" + num1);
+System.out.println("num2的值为：" + num2);
 ```
 
-上述代码将会在控制台打印出“姓名：Maggie”。这样就可以很容易地查看程序运行过程中的变量值，从而帮助我们发现潜在的问题。
+输出结果为：
 
-## 深入了解打印调试输出
-
-除了简单地打印变量值之外，打印调试输出还可以帮助我们更好地理解代码的执行流程。例如，使用```System.err.println()```可以将信息输出到标准错误流，这样可以让我们在调试时更容易区分不同类型的输出信息。
-
-此外，我们还可以使用断言（assert）来进行调试。断言类似于条件语句，当表达式为假时，会抛出AssertionError异常，并输出我们提供的错误信息。例如：
-
-```Java
-int age = 20;
-assert age == 18 : "年龄不符合要求";
+```
+num1的值为：5
+num2的值为：7
 ```
 
-如果age的值不为18，程序将会输出“年龄不符合要求”。
+这样，我们就可以清楚地看到num1和num2的值，从而判断程序的运行是否符合我们的预期。
 
-## 参考链接
+深入了解：在实际开发中，我们可能会遇到复杂的调试需求，比如想要打印出对象的所有属性值，这时候可以利用Java中的`toString()`方法来实现。同时，我们也可以通过使用调试工具来更加方便地输出和追踪调试信息。
 
-- [Java调试技巧：如何打印输出变量](https://www.runoob.com/java/java-print-var.html)
-- [Java 断言（Assertion）](https://www.runoob.com/java/java-assertions.html)
+## 参考资料
+
+- [Java: print debugging statement](https://stackoverflow.com/a/19600751)
+- [Java Tutorials: Debugging](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/andbolts/bugs.html)
+- [JVM Debugging tips and techniques](https://www.javaworld.com/article/2077844/jvm-debugging-tips-and-techniques.html)
+
+## 参见
+
+- [Java语言入门教程](https://www.w3cschool.cn/java/)
+- [Java编程思想](https://book.douban.com/subject/2130190/)
+- [Java编程实践](https://book.douban.com/subject/30402848/)

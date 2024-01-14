@@ -1,7 +1,9 @@
 ---
-title:                "Python: Extrahera delsträngar"
+title:                "Python: Extrahera substrängar"
+simple_title:         "Extrahera substrängar"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/extracting-substrings.md"
 ---
 
@@ -9,49 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Substringutvinning, eller att extrahera en del av en sträng, är en mycket användbar funktion i Python för att manipulera och behandla textdata. Det gör det möjligt för användare att enkelt hitta och manipulera specifika delar av en textsträng, vilket kan spara tid och göra koden mer effektiv.
+Är du nyfiken på hur man kan hämta ut delsträngar från en sträng i Python? Då har du kommit rätt! Läs vidare för att lära dig mer om denna användbara kodteknik.
 
-## Hur man gör
+## Hur man gör det
 
-För att extrahera substrings i Python, använda sig av slice-funktionen med följande syntax: `[start:stop:step]`. Startargumentet specificerar var substrängen ska börja och stopargumentet specificerar var den ska sluta. Stegargumentet används för att välja hur många tecken som ska hoppas över i varje steg.
+För att hämta ut delsträngar från en sträng i Python kan vi använda funktionen `substring()`. Se exemplet nedan för att se hur den kan användas i praktiken:
 
-```python
-# Exempel på substrängutvinning från en variabel:
-text = "Det här är en textsträng"
-print(text[4:10])              # Output: är en
-print(text[:7])                 # Output: Det här
-print(text[11:])               # Output: textsträng
+```Python
+# Skapa en sträng
+str = "Detta är en sträng"
+
+# Hämta en del av strängen från index 8 till slutet av strängen
+delstr = str[8:]
+
+# Skriv ut delsträngen
+print(delstr)
+
+# Output: en sträng
 ```
 
-```python
-# Substrängutvinning från en given text:
-print("Python är ett populärt programmeringsspråk"[7:13])       # Output: populärt
-```
+Som du kan se är det enkelt och smidigt att hämta delsträngar från en sträng i Python. Genom att använda index kan du välja vilka delar av strängen du vill hämta ut.
 
 ## Djupdykning
 
-Förutom slicefunktionen kan substrängutvinning också göras med hjälp av de inbyggda metoderna `find()` och `index()`. Dessa metoder söker igenom en sträng för en given delsträng och returnerar indexet för den första förekomsten. Om delsträngen inte hittas, returneras -1.
+För att förstå hur `substring()`-funktionen fungerar i Python, behöver vi först förstå konceptet med index. I Python börjar index alltid på 0, vilket betyder att den första karaktären i en sträng har index 0, den andra har index 1 och så vidare.
 
-```python
-# Exempel på substrängutvinning med `find()` och `index()`:
-text = "Denna textsträng innehåller igen"
-print(text.find("inne"))    # Output: 20
-print(text.index("innehåller"))  # Output: 18
-print(text.find("finns inte"))   # Output: -1
-print(text.index("finns inte"))  # Raises error
-```
+När vi använder `str[start:end]` i en sträng, hämtar vi en delsträng från den givna startpositionen till slutet av strängen eller till den givna slutpositionen. Om end inte är specificerat kommer delsträngen att inkludera alla karaktärer från och med startpositionen till slutet av strängen.
 
-Substrängutvinning är också användbar för att manipulera och omvandla textsträngar. Till exempel, om man vill byta ut ett visst ord eller tecken med ett annat, kan man använda sig av slicefunktionen och konkatenera strängarna.
-
-```python
-# Exempel på manipulering av text med substrängutvinning:
-text = "Jag gillar bananer"
-ny_text = text[:5] + "älskar" + text[5:12]
-print(ny_text)      # Output: Jag älskar bananer
-```
+Vi kan också använda negativa index för att hämta delsträngar. Om vi använder `str[start:-end]` kommer delsträngen att inkludera alla karaktärer från startpositionen till slutet av strängen minus de sista n karaktärerna, där n är värdet av end.
 
 ## Se även
 
-- [Python Slice Notation](https://docs.python.org/3/tutorial/introduction.html#strings)
-- [String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [The Power of Slicing in Python](https://www.geeksforgeeks.org/python-strings/)
+- [String Methods in Python](https://www.programiz.com/python-programming/methods/string)
+- [How to Extract Substrings in Python](https://www.datacamp.com/community/tutorials/python-string-methods)
+- [Python String Methods Cheat Sheet](https://www.pythonforbeginners.com/cheatsheet/python-string-methods-cheat-sheet)

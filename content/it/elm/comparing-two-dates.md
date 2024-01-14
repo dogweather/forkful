@@ -1,41 +1,40 @@
 ---
 title:                "Elm: Confrontare due date"
+simple_title:         "Confrontare due date"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-La comparazione di due date è una funzionalità essenziale per gestire e manipolare date in modo efficace e preciso. Grazie all'utilizzo di Elm, è possibile eseguire facilmente questa operazione senza dover gestire manualmente le complessità delle date.
+Quando si lavora con date in un'applicazione Elm, può essere utile confrontare due date per vedere quale delle due sia precedente o successiva. Imparare come fare questo può rendere il tuo codice più efficiente e preciso.
 
-## Come fare
-Per iniziare, dobbiamo prima importare il modulo `Date` di Elm nella nostra applicazione. Questo modulo ci permette di creare oggetti `Date` e utilizzare le sue funzioni per manipolarle e confrontarle.
+## Come Fare
+Per confrontare due date in Elm, è necessario prima convertire le date in formato Time e poi utilizzare la funzione `compare` per determinare la loro relazione. Di seguito è riportato un esempio di codice che mostra come fare ciò:
 
+```Elm
+import Time
+...
+date1 : Date
+date2 : Date
+
+-- Converte le date in Timestamp
+timestamp1 = Time.toPosix date1
+timestamp2 = Time.toPosix date2
+
+-- Confronta i timestamp utilizzando la funzione compare
+comparison = Time.compare timestamp1 timestamp2
+
+-- Output: LT (menor que), GT (mayor que), o EQ (igual)
 ```
-Elm import Date exposing (Date)
-```
-
-Dopo l'importazione, possiamo creare due oggetti `Date` da confrontare. Ad esempio, per confrontare la data odierna con quella di ieri, possiamo utilizzare i seguenti codici:
-
-```
-Elm today = Date.fromIsoString "2021-05-10"
-Elm yesterday = Date.fromIsoString "2021-05-09"
-
-Elm Date.compare yesterday today
-```
-
-Questo codice ci restituirà il valore `-1`, indicando che la data di ieri è precedente a quella di oggi. Possiamo sfruttare questo valore per eseguire determinate operazioni in base al risultato del confronto.
 
 ## Approfondimento
-Il modulo `Date` di Elm ci offre molte altre funzionalità utili per lavorare con le date. Possiamo utilizzare la funzione `Date.fromPosix` per creare un oggetto `Date` da un timestamp Unix, oppure la funzione `Date.fromTime` per creare una data a partire da un oggetto `Time` di Elm.
+La funzione `compare` è molto utile per confrontare due date, ma è importante notare che può essere applicata anche ad altri tipi di dati come numeri, stringhe o booleani. Inoltre, ci sono altre funzioni utili per lavorare con date in Elm, come `add`, `sub`, `round` ed `hoursSince` che ti permettono di fare calcoli e modifiche alle date in modo semplice e intuitivo.
 
-Inoltre, possiamo utilizzare la funzione `Date.toIsoString` per convertire la nostra data in formato ISO, o la funzione `Date.toTime` per ottenere l'oggetto `Time` corrispondente alla data.
-
-Con l'utilizzo delle funzioni e delle operazioni di confronto del modulo `Date`, possiamo gestire e manipolare le date in modo semplice e preciso nella nostra applicazione Elm.
-
-## Vedi anche
-- Documentazione ufficiale del modulo `Date` di Elm: https://package.elm-lang.org/packages/elm/time/latest/
-- Articolo di approfondimento sulle operazioni di confronto delle date in Elm: https://medium.com/elm/how-to-compare-dates-in-elm-90a6ef5caec6 
-- Esempi di codice per la manipolazione delle date in Elm: https://dev.to/kumssi/date-manipulation-in-elm-with-example-3dja
+## Vedi Anche
+- [Documentazione ufficiale di Elm sulle Date](https://package.elm-lang.org/packages/elm/time/latest/Time)
+- [Tutorial su come manipolare le date in Elm](https://eriktim.github.io/how-to/2018/07/17/dates-in-elm.html)
+- [Esempi di applicazioni Elm che utilizzano date](https://github.com/sporto/elm-datepicker)

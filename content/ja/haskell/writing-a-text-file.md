@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: テキストファイルの作成"
+title:                "Haskell: 「テキストファイルを作成する」"
+simple_title:         "「テキストファイルを作成する」"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/writing-a-text-file.md"
 ---
 
@@ -9,35 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-テキストファイルを書くことに興味があるかもしれませんが、それはコンピュータサイエンスやプログラミングの世界で非常に重要なスキルです。テキストファイルを書くことにより、データを保存、編集、および共有することができます。テキストファイルを書くことで、コードを保存してバックアップすることもできます。
+テキストファイルを書くことにエンゲージする理由はさまざまです。プログラマーならば、プログラムのソースコードを記述するために、テキストファイルを使用することがよくあります。また、エディターやコマンドラインツールなど、様々なアプリケーションでテキストファイルが使用されます。そのため、テキストファイルを上手に書ける技術は、プログラマーにとって重要なスキルとなります。
 
-## 方法
+## テキストファイルを書く方法
 
-テキストファイルを書くにはいくつかの方法がありますが、ここではHaskellの方法を紹介します。まず、テキストファイルを扱うためには`Text`モジュールをインポートする必要があります。次に、`writeFile`関数を使用してファイルに書き込みます。以下は、テキストファイルに文字列を書き込む例です。
-
-```Haskell
-import System.IO
-
-main = do
-  writeFile "sample.txt" "こんにちは、世界！"
-```
-
-ファイルを開き、内容を確認すると、`こんにちは、世界！`という文字列が書き込まれています。また、ファイルを編集する場合は`appendFile`関数を使用して、文字列を追加することができます。
+テキストファイルを書くためには、まずはHaskellでのファイル操作を理解する必要があります。以下のコードは、ファイルを作成し、テキストを書き込み、ファイルを閉じるという基本的な手順を示しています。
 
 ```Haskell
 import System.IO
 
 main = do
-  appendFile "sample.txt" "またお会いしましょう！"
+  -- ファイルを作成し、ハンドルを取得する
+  handle <- openFile "test.txt" WriteMode
+  -- テキストを書き込む
+  hPutStrLn handle "こんにちは、世界！"
+  -- ファイルを閉じる
+  hClose handle
 ```
 
-ファイルを再度開き、内容を確認すると、`こんにちは、世界！またお会いしましょう！`という文字列が追加されていることがわかります。
+上記のコードを実行すると、`test.txt`という名前のファイルが作成され、中に「こんにちは、世界！」というテキストが書き込まれます。
 
-## 突き詰める
+## テキストファイルのさらなる掘り下げ
 
-テキストファイルを書くときには、いくつかの重要な点に気をつける必要があります。まず、ファイルをオープンし、書き込むか追加するかを決める必要があります。また、ファイルを開く際は、ファイルが既に存在しているかどうかを確認する必要があります。既に存在している場合は、ファイルを消去するか上書きする必要があります。また、ファイル操作を行う際は、例外処理を行うように心がける必要があります。これらの観点を把握し、テキストファイルの書き込みを行うことが重要です。
+テキストファイルを書く際、エンコーディングや改行コードなど、さまざまな問題に直面することがあります。また、テキストファイルを読み書きする際に、Haskell特有の構文を使用する方法もあります。これらの詳細についてを知ることで、より複雑なテキストファイルを扱うことができるようになります。
 
-## 関連情報
-
-* [Haskellの`Text`モジュールについて](https://hackage.haskell.org/package/base/docs/Data-Text.html)
-* [Haskellのファイル操作について](https://wiki.haskell.org/Handling_files)
+## See Also
+- [Haskellでのファイル操作について](https://www.tweag.io/blog/2019-01-14-files-in-haskell/)
+- [Haskellでの文字列操作について](https://haskell.online/css/file/)
+- [Haskell I/Oライブラリの公式ドキュメント](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base/System-IO.html)

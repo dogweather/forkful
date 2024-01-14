@@ -1,46 +1,51 @@
 ---
-title:                "C#: Beräkning av ett datum i framtiden eller förflutnan"
+title:                "C#: Beräkning av ett datum i framtiden eller det förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller det förflutna"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför?
 
-Det finns många olika situationer där det kan vara nödvändigt att kunna räkna ut ett datum långt in i framtiden eller ett datum som har passerat. Till exempel när man bokar en resa eller planerar ett evenemang. Därför är det användbart att kunna använda sig av C# för att räkna ut sådana datum.
+Att kunna beräkna ett datum i framtiden eller det förflutna kan vara en användbar funktion vid programmering. Med denna kunskap kan du skapa algoritmer som hjälper dig att förutsäga händelser eller skapa tidsspecifika funktioner i ditt program.
 
-## Så här gör man
-
-För att kunna räkna ut ett datum i framtiden eller förflutet i C#, behöver man först och främst känna till den nuvarande dagen. Detta kan man enkelt få genom att använda DateTime.Now-funktionen. Sedan kan man använda sig av C# Date and Time-funktionerna för att utföra olika beräkningar och få fram det datum man önskar.
+## Så här gör du
 
 ```C#
-// Kodexempel för att räkna ut ett datum 30 dagar framåt i tiden
-
-DateTime nu = DateTime.Now;
-DateTime omTrettioDagar = nu.AddDays(30);
-Console.WriteLine("Datumet om trettio dagar är: " + omTrettioDagar.ToShortDateString());
-
-// Output: Datumet om trettio dagar är: xx/xx/xxxx (30 dagar framåt i tiden)
-
-// Kodexempel för att räkna ut ett datum 60 dagar bakåt i tiden
-
-DateTime nu = DateTime.Now;
-DateTime forraManad = nu.AddMonths(-2);
-Console.WriteLine("Datumet för två månader sedan var: " + forraManad.ToShortDateString());
-
-// Output: Datumet för två månader sedan var: xx/xx/xxxx (60 dagar tillbaka i tiden)
+// Kodexempel för att beräkna ett datum i framtiden
+DateTime today = DateTime.Today; // Skapar ett objekt för dagens datum
+int daysToAdd = 30; // Anger antal dagar att lägga till
+DateTime futureDate = today.AddDays(daysToAdd); // Beräknar ett datum 30 dagar framåt
+Console.WriteLine("Datumet 30 dagar framåt är: " + futureDate); // Skriver ut resultatet
 ```
+```C#
+// Kodexempel för att beräkna ett datum i det förflutna
+DateTime today = DateTime.Today; // Skapar ett objekt för dagens datum
+int daysToSubtract = 14; // Anger antal dagar att subtrahera
+DateTime pastDate = today.AddDays(-daysToSubtract); // Beräknar ett datum 14 dagar bakåt
+Console.WriteLine("Datumet 14 dagar tillbaka är: " + pastDate); // Skriver ut resultatet
+```
+
+Resultat för kodexemplen ovan:
+```
+Datumet 30 dagar framåt är: 30/3/2021
+Datumet 14 dagar tillbaka är: 2/3/2021
+```
+
+Att beräkna datum i svenska format kan göras genom att använda `ToString()` metoden med en formatsträng. Exempelvis: `Console.WriteLine(futureDate.ToString("dd/MM/yyyy"));` för att få datumet i formatet DD/MM/YYYY.
 
 ## Djupdykning
 
-I C# finns det olika funktioner man kan använda sig av för att räkna ut både datum i framtiden och förflutet. En av de vanligaste är DateTime-funktionen .AddDays(), som låter oss lägga till eller subtrahera ett visst antal dagar från ett visst datum. Man kan också använda sig av .AddMonths() och .AddYears() för att räkna ut datum baserat på månader eller år.
+När du beräknar ett datum i framtiden eller det förflutna, måste du vara medveten om eventuell förändring av datum och tid beroende på vilken tidszon du befinner dig i. Det är också viktigt att välja rätt formatsträng när du skriver ut datumet för att undvika förvirring eller felaktig tolkning.
 
-Det finns också möjlighet att använda sig av .AddHours() och .AddMinutes() för att räkna ut ett tidsspann framåt eller bakåt i tiden.
+Det finns också andra funktioner som kan användas för att manipulera datum, som `AddMonths()` för att lägga till månader istället för dagar, eller `AddYears()` för att lägga till år. Det är viktigt att förstå hur dessa funktioner fungerar och vilken effekt de har på ett datumobjekt.
 
 ## Se även
 
-- [Microsoft C# DateTime Class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [C# Date and Time Functions](https://www.tutorialspoint.com/csharp/csharp_date_time.htm)
-- [DateTime.AddHours() Method](https://www.geeksforgeeks.org/c-sharp-datetime-addhours-method/)
+- [Microsoft dokumentation om DateTime Class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [YouTube Video: Date and Time in C# - Working with DateTime](https://www.youtube.com/watch?v=0ep5zepeP0Q)
+- [Java Programming Blog Post (om du vill jämföra med Java)](https://mycodingramblings.wordpress.com/2019/07/25/calculating-future-dates-in-java/)

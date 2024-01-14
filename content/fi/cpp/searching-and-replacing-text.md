@@ -1,55 +1,106 @@
 ---
 title:                "C++: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Tekstin etsiminen ja korvaaminen on tärkeä osa ohjelmoinnin prosessia, sillä se auttaa meitä muokkaamaan ja parantamaan koodia helposti ja nopeasti. Tekstin etsiminen ja korvaaminen on myös erittäin hyödyllistä, kun haluamme tehdä laajoja muutoksia koodiin, ilman että joudumme tekemään niitä manuaalisesti.
+Vaihtoehtoisen tekstin löytäminen ja vaihtaminen on tärkeä osa ohjelmoinnin prosessia, koska se säästää aikaa ja vaivaa. Sen avulla voit nopeasti korjata tiettyjä merkkijonoja tai muuttaa kokonaisten tiedostojen sisältöä.
 
-## Miten?
+## Kuinka
 
-Tekstin etsiminen ja korvaaminen on helppoa ja vaivatonta C++-ohjelmointikielellä. Voimme käyttää ```find()``` ja ```replace()``` funktioita, jotka ovat osa STL-kirjastoa.
+Yksi tapa etsiä ja korvata tekstiä C++:lla on käyttää `find` ja `replace` -funktioita. Seuraavassa esimerkissä korvaamme kaikki "koira" sanan "kissa" "teksti.txt" tiedostossa:
 
-Esimerkiksi, jos haluamme etsiä ja korvata kaikki "hello" -merkit "hei", voimme tehdä sen seuraavasti:
-
-```
+```C++
 #include <iostream>
+#include <fstream>
 #include <string>
 
 using namespace std;
 
-int main() {
-    string teksti = "hello world!";
-    cout << teksti << endl;
-    
-    // Etsii ja korvaa merkkijonon "hello" merkkijonolla "hei"
-    teksti.replace(teksti.find("hello"), 5, "hei");
-    
-    cout << teksti << endl;
-    
+int main()
+{
+    string teksti;
+    ifstream tiedosto("teksti.txt");
+    string etsi = "koira";
+    string korvaa = "kissa";
+
+    while (getline(tiedosto, teksti))
+    {
+        size_t kohta = teksti.find(etsi);
+        if (kohta != string::npos)
+        {
+            teksti.replace(kohta, etsi.length(), korvaa);
+        }
+        cout << teksti << endl;
+    }
+    tiedosto.close();
+
     return 0;
 }
 ```
 
-Tämän koodin ulostulo olisi: "hei world!". Huomaathan, että ```replace()``` funktiossa on kolme parametria: ensimmäinen on haettavan merkkijonon alkuindeksi, toinen on korvattavan merkkijonon pituus ja kolmas on korvaava merkkijono.
+Esimerkin tuloste olisi:
 
-Voimme myös käyttää ```replace()``` funktiota poistaaksemme merkkijonon, jolloin korvaava merkkijono olisi tyhjä.
+```
+Tänään näin kissan puistossa.
+Kissa haukkuu puistossa.
+Minulla on kaksi kissaa kotona.
+```
 
-## Syväsukellus
+## Syvempi sukellus
 
-Tekstin etsiminen ja korvaaminen on erittäin hyödyllistä, kun työskentelemme isojen tekstimassojen kanssa, kuten tiedostojen käsittelyssä. Voimme myös käyttää säännöllisiä lausekkeita tekstien etsimiseen ja korvaamiseen, mikä tekee prosessista vielä tehokkaamman.
+`find` ja `replace` -funktiot toimivat etsimällä ja korvaamalla vain yhden merkkijonon kerrallaan. Jos haluat korvata useita merkkijonoja kerralla, voit käyttää `stringstream` -luokkaa ja `while` -silmukkaa. Tässä esimerkissä korvaamme sekä "koira" sanan että "kissa" sanan "eläin" sanalla:
 
-Säännölliset lausekkeet ovat merkkijonoja, jotka kuvaavat tiettyjä haku- tai korvaussääntöjä. Voimme käyttää niitä laajempien, monimutkaisempien merkkijonojen etsimiseen ja korvaamiseen.
+```C++
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+int main()
+{
+    string teksti;
+    ifstream tiedosto("teksti.txt");
+    string etsi[] = {"koira", "kissa"};
+    string korvaa[] = {"eläin", "eläin"};
+    stringstream ss;
+
+    while (getline(tiedosto, teksti))
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            size_t kohta = teksti.find(etsi[i]);
+            if (kohta != string::npos)
+            {
+                teksti.replace(kohta, etsi[i].length(), korvaa[i]);
+            }
+        }
+        cout << teksti << endl;
+    }
+    tiedosto.close();
+
+    return 0;
+}
+```
+
+Esimerkin tuloste olisi sama kuin aiemmin: 
+
+```
+Tänään näin eläimen puistossa.
+Eläin haukkuu puistossa.
+Minulla on kaksi eläintä kotona.
+```
 
 ## Katso myös
 
-- [C++ Standard Library (CPPreference)](https://en.cppreference.com/w/cpp/string/basic_string/replace)
-- [Säännöllisten lausekkeiden opas (W3Schools)](https://www.w3schools.com/cpp/cpp_regex.asp)
-- [Säännöllisten lausekkeiden käyttö C++:ssa (GeeksforGeeks)](https://www.geeksforgeeks.org/regular-expression-in-c-c/)
-
-Kiitos lukemisesta! Toivottavasti tämä artikkeli auttaa sinua tekstin etsimisessä ja korvaamisessa C++:ssa. Muista kokeilla erilaisia käyttötapoja ja pääset varmasti alkuun nopeasti. Onnea koodaamiseen!
+- [CPPReference: std::basic_string::find](https://en.cppreference.com/w/cpp/string/basic_string/find)
+- [CPPReference: std::basic_string::replace](https://en.cppreference.com/w/cpp/string/basic_string/replace)

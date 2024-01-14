@@ -1,43 +1,66 @@
 ---
 title:                "Kotlin: 텍스트 파일 작성하기"
+simple_title:         "텍스트 파일 작성하기"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-텍스트 파일을 작성하는 것에 참여하는 이유는 무엇일까요? 일상 생활에서는 다양한 이유로 텍스트 파일을 작성하게 됩니다. 이 포스트에서는 그 이유와 함께 Kotlin을 사용해 텍스트 파일을 작성하는 방법을 알아보겠습니다.
 
-## 사용 방법
+텍스트 파일을 만드는 것에 관심이 있는 사람들에게는 일상적인 일이다. 파일에 정보를 저장하고 정리할 수 있기 때문에 개발자들에게 유용하다. 
 
-텍스트 파일을 작성하는 방법은 다양하지만, 여기서는 Kotlin에서 가장 간단하게 작성할 수 있는 방법을 알아보겠습니다. 먼저, 다음과 같은 코드 블록을 사용하여 파일을 만듭니다.
+## 만드는 법
 
-```Kotlin
-val myFile = File("myfile.txt")
-```
-
-위의 코드는 Kotlin에서 파일을 만드는 가장 기본적인 방법입니다. 그 다음으로는 파일을 작성할 데이터를 정의합니다.
+Kotlin에서 텍스트 파일을 만드는 것은 매우 쉽다. 먼저, ```FileWriter``` 클래스를 사용하여 새로운 파일을 만든다. 그런 다음 생성한 파일을 이용하여 데이터를 입력하고 저장한다. 아래의 예제를 참고하자.
 
 ```Kotlin
-val data = "안녕하세요? Kotlin 프로그래밍을 배워봅시다!"
+import java.io.File
+import java.io.FileWriter
+
+fun main() {
+    val fileName = "newFile.txt"
+    val file = FileWriter(fileName)
+
+    file.write("안녕하세요! 이것은 텍스트 파일입니다.")
+    file.close()
+    
+    println("$fileName 파일이 성공적으로 만들어졌습니다.")
+}
 ```
 
-마지막으로 파일에 데이터를 쓰는 코드를 작성합니다.
+위의 코드를 실행하면 현재 작업 디렉토리에 "newFile.txt"라는 이름의 파일이 생성될 것이다. 파일을 열어보면 "안녕하세요! 이것은 텍스트 파일입니다."라는 내용이 포함되어 있는 것을 확인할 수 있다.
+
+## 심화 공부
+
+텍스트 파일을 만드는 방법 뿐만 아니라 파일에 추가적인 데이터를 입력하는 방법도 알아보자.
 
 ```Kotlin
-myFile.writeText(data)
+import java.io.File
+import java.io.FileWriter
+
+fun main() {
+    val fileName = "existingFile.txt"
+    val file = FileWriter(fileName, true)
+
+    file.append("여기에 추가할 내용을 입력합니다.")
+    file.close()
+    
+    println("$fileName 파일에 내용이 성공적으로 추가되었습니다.")
+}
 ```
 
-코틀린에서는 간단하게 위와 같은 코드 블록만으로도 텍스트 파일을 작성할 수 있습니다. 이제 파일을 실행하면, "myfile.txt"라는 파일이 생성되고 "안녕하세요? Kotlin 프로그래밍을 배워봅시다!" 라는 내용이 포함되어 있음을 확인할 수 있습니다.
+위의 코드에서는 ```FileWriter``` 생성자의 두 번째 매개변수로 ```true``` 값을 넘겨줌으로써 기존 파일에 내용을 추가할 수 있다. 이를 통해 파일에 여러 번의 입력을 할 수 있는 여러 가지 방법을 시도해보길 바란다.
 
-## 딥 다이브
+## 더 알아보기
 
-Kotlin에서 텍스트 파일을 작성하는 방법은 이렇게 간단하지만, 좀 더 딥 다이브를 해보면 더 많은 정보를 얻을 수 있습니다. 예를 들어, `FileWriter` 클래스를 사용하면 파일을 만들고 데이터를 쓰는 과정을 하나의 코드 블록으로 처리할 수 있습니다. 또한 파일 경로를 바꾸거나 파일을 읽는 방법 등 다양한 기능도 사용할 수 있습니다.
+Kotlin 공식 문서에서 파일 관련 클래스들에 대해 더 자세하게 알아볼 수 있다. [자바 클래스와의 상호 운용성](https://kotlinlang.org/docs/interop.html)에 관한 글도 참고하면 좋다.
 
-## 참고 자료
+## 관련 링크
 
-- 코틀린 공식 문서 (https://kotlinlang.org/docs/home.html)
-- Kotlin Koans (https://play.kotlinlang.org/koans/overview)
-- 코틀린으로 파일 입출력하기 (https://medium.com/@lazysoul/kotlin-%ED%8C%8C%EC%9D%BC-%EC%9E%85%EC%B6%9C%EB%A0%A5-%EC%83%9D%EC%84%B1-f202cf231466)
+- [Kotlin 공식 문서: 파일 관련 클래스](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/) 
+- [자바 클래스와의 상호 운용성](https://kotlinlang.org/docs/interop.html)
+- [Kotlin에서 파일 다루기](https://velog.io/@bsmoon2100/Kotlin%EC%9D%98-%ED%8C%8C%EC%9D%BC-%EB%8B%A4%EB%A3%A8%EA%B8%B0)

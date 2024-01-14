@@ -1,43 +1,45 @@
 ---
-title:                "Arduino: Extraindo subcadeias"
+title:                "Arduino: Extraindo subcadeias de caracteres"
+simple_title:         "Extraindo subcadeias de caracteres"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings no Arduino?
+## Por que extrair substrings?
 
-Muitas vezes, quando estamos trabalhando com strings no Arduino, precisamos manipulá-las de forma mais específica. É nesse momento que a extração de substrings se torna útil. Ao invés de trabalhar com a string inteira, podemos selecionar apenas um pedaço dela e utilizá-lo para realizar determinada tarefa.
+Extrair substrings pode ser útil ao trabalhar com textos longos em projetos de Arduino. Pode permitir que você manipule efetivamente partes específicas do texto, em vez de ter que lidar com toda a string de uma só vez.
 
-## Como fazer isso no Arduino
+## Como fazer
 
-Para extrair substrings no Arduino, podemos utilizar a função `substring()`. Ela recebe dois parâmetros: o índice inicial e o índice final desejado para a substring. Podemos também salvar a substring em uma nova variável, para facilitar seu uso posteriormente.
-
-```
-Arduino String string = "Exemplo de string";
-Arduino String substring = string.substring(3, 9);
-
-Serial.println(substring); // Saída: emplo d
-```
-
-Neste exemplo, selecionamos a partir do quarto caractere até o nono da string original e salvamos essa substring na variável `substring`.
-
-## Mergulhando mais fundo
-
-É importante lembrar que o índice inicial da substring é contado a partir do zero. Além disso, podemos usar um único parâmetro para extrair uma substring a partir de um índice até o final da string, como mostrado no exemplo a seguir:
+Para extrair uma substring em Arduino, você precisará usar a função ```substring()```. Esta função aceita dois argumentos: o índice inicial e o tamanho da substring desejada. Por exemplo, para extrair uma substring de 5 caracteres a partir do índice 2, você usaria o seguinte código:
 
 ```
-Arduino String string = "Outro exemplo de string";
-Arduino String substring = string.substring(6);
-
-Serial.println(substring); // Saída: exemplo de string
+String texto = "Olá mundo!";
+String sub_texto = texto.substring(2,5);
+Serial.println(sub_texto);
 ```
 
-Também é possível utilizar valores negativos para os parâmetros, como `substring(-3, -1)` para extrair os três últimos caracteres da string original.
+A saída deste código seria "á mu", já que a substring começa no segundo caractere (índice 2) e tem um tamanho de 5 caracteres.
+
+## Mergulho profundo
+
+Se você quiser extrair uma substring com base em um padrão específico, em vez de índices numéricos, pode utilizar a função ```indexOf()``` para encontrar a posição do padrão e, em seguida, utilizar isso como o índice inicial para a função ```substring()```. Por exemplo:
+
+```
+String texto = "Meu nome é João.";
+int inicio = texto.indexOf("nome");
+String nome = texto.substring(inicio, inicio + 4);
+Serial.println(nome);
+```
+
+A saída deste código seria "nome", pois é a substring contendo o padrão "nome" na variável "texto".
 
 ## Veja também
 
-- Documentação oficial do Arduino para a função substring: https://www.arduino.cc/reference/pt/language/variables/data-types/string/functions/substring/
-- Tutorial sobre manipulação de strings no Arduino: https://www.filipeflop.com/blog/manipulando-strings-no-arduino/
+- [Documentação da função substring() do Arduino](https://www.arduino.cc/reference/pt/language/variables/data-types/string/functions/substring/)
+- [Vídeo explicando extração de substrings no Arduino](https://www.youtube.com/watch?v=irPvR2-yBCA)
+- [Exemplos de código para extrair substrings em projetos de Arduino](https://www.tinkercad.com/search?q=arduino%20substring&type=circuits&sort=trend)

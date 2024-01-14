@@ -1,68 +1,76 @@
 ---
-title:                "C#: Écrire un fichier texte"
+title:                "C#: Écriture d'un fichier texte"
+simple_title:         "Écriture d'un fichier texte"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Pourquoi écrire un fichier texte en programmation C#?
+## Pourquoi écrire un fichier texte?
 
-Écrire un fichier texte peut être une tâche utile en programmation C#. Cela peut vous aider à stocker et à manipuler des données en utilisant du texte brut, ce qui peut être plus facile à gérer que d'autres formats de données. Dans cet article, nous allons découvrir comment écrire un fichier texte en utilisant du code C#.
+Les fichiers texte sont utilisés dans de nombreux programmes informatiques pour stocker des données. En écrivant un fichier texte, vous pouvez créer un enregistrement permanent de vos données ou de vos résultats de programme pour une utilisation future. Cela peut être particulièrement utile pour la sauvegarde ou le partage de données importantes.
 
-Comment faire:
+## Comment écrire un fichier texte en C#?
 
-Pour écrire un fichier texte en C#, vous devez utiliser la classe File et la méthode AppendAllText (). Voici un exemple de code qui peut vous aider à écrire un fichier texte:
+L'écriture d'un fichier texte en C# est assez simple grâce à la classe `StreamWriter`. Tout d'abord, vous devrez ajouter `using System.IO;` en haut de votre code pour utiliser cette classe. Ensuite, vous devrez déclarer une instance de `StreamWriter` en utilisant le chemin de votre fichier texte comme paramètre. Enfin, vous pouvez écrire du contenu dans le fichier texte à l'aide de la méthode `Write` ou `WriteLine`.
 
-```C#
-// Définition du chemin du fichier
-string cheminFichier = @"C:\MonFichier.txt";
-
-// Écriture du texte dans le fichier
-File.AppendAllText(cheminFichier, "Bonjour le monde!");
-```
-
-Ceci va créer un fichier texte nommé "MonFichier.txt" dans votre dossier C: avec le texte "Bonjour le monde!" écrit à l'intérieur.
-
-Pour ajouter du contenu supplémentaire dans ce fichier, vous pouvez utiliser à nouveau la méthode AppendAllText() en passant le chemin du fichier et le nouveau texte à ajouter.
+Voici un exemple de code en C# pour écrire un fichier texte:
 
 ```C#
-// Ajouter du texte supplémentaire
-File.AppendAllText(cheminFichier, "Comment ça va?");
+using System;
+using System.IO;
+
+class Program
+{
+  static void Main()
+  {
+    //Déclaration de l'instance StreamWriter
+    StreamWriter sw = new StreamWriter("monTexte.txt");
+
+    //Ecriture de contenu dans le fichier texte
+    sw.WriteLine("Bonjour!");
+    sw.WriteLine("Voici un exemple de fichier texte en C#.");
+    sw.Close(); //N'oubliez pas de fermer le StreamWriter après l'utilisation
+    
+    //Vérification du contenu du fichier texte en utilisant un StreamReader
+    StreamReader sr = new StreamReader("monTexte.txt");
+    Console.WriteLine(sr.ReadToEnd()); //Ecrit le contenu du fichier dans la console
+    sr.Close(); //Ferme le StreamReader après utilisation
+  }
+}
 ```
 
-Cela va ajouter la phrase "Comment ça va?" à la fin du fichier texte.
+Dans cet exemple, nous avons créé un fichier texte appelé "monTexte.txt" et avons écrit deux lignes de contenu à l'aide de la méthode `WriteLine`. En utilisant un `StreamReader`, nous avons ensuite vérifié que notre texte a été correctement écrit dans le fichier en le lisant et en l'affichant dans la console.
 
-Plutôt que d'ajouter du texte, vous pouvez également utiliser la méthode AppendAllLines() pour ajouter un tableau de lignes à votre fichier texte. Voici un exemple de code:
+## Plongeon en profondeur: écrire et formater un fichier texte
+
+En plus d'écrire du contenu simple dans un fichier texte, vous pouvez également le formater en utilisant des caractères spéciaux et des méthodes de formatage de chaîne. La méthode `WriteLine` accepte un paramètre optionnel de formatage qui peut être utilisé pour contrôler l'alignement, la largeur et la précision de la valeur écrite.
+
+Voici un exemple de code qui utilise les méthodes de formatage pour écrire un tableau de valeurs dans un fichier texte:
 
 ```C#
-// Définition du tableau de lignes à ajouter
-string[] nouvellesLignes = { "Je vais bien, merci!", "Et toi?" };
+using System;
+using System.IO;
 
-// Ajouter les lignes au fichier
-File.AppendAllLines(cheminFichier, nouvellesLignes);
+class Program
+{
+  static void Main()
+  {
+    //Déclaration de l'instance StreamWriter
+    StreamWriter sw = new StreamWriter("monTableau.txt");
+
+    //Ecriture d'un tableau de valeurs
+    sw.WriteLine("Nombre 1: {0,-10}Nombre 2: {1,-10}Nombre 3: {2,-10}", 10, 20.5, 30.789);
+    sw.Close(); //Ferme le StreamWriter après utilisation
+  }
+}
 ```
 
-Cela va ajouter les deux nouvelles lignes à la fin du fichier texte.
+Dans cet exemple, nous utilisons les paramètres `{0,-10}`, `{1,-10}` et `{2,-10}` qui indiquent respectivement que la première, deuxième et troisième valeur écrite doivent être alignées à gauche avec une largeur de 10 caractères.
 
-Plutôt que d'ajouter du contenu à la fin du fichier, vous pouvez également utiliser la méthode WriteAllText() pour écrire du nouveau contenu dans le fichier et écraser tout ce qui était déjà présent. Voici un exemple de code:
-
-```C#
-// Écraser le contenu et écrire du nouveau texte
-string nouveauTexte = "Ceci est un nouveau texte";
-File.WriteAllText(cheminFichier, nouveauTexte);
-```
-
-Cela va remplacer tout le contenu du fichier texte avec la phrase "Ceci est un nouveau texte".
-
-Plongée en profondeur:
-
-Maintenant que nous avons vu comment écrire un fichier texte en utilisant du code C#, vous pouvez explorer d'autres possibilités offertes par la classe File et les différentes méthodes disponibles. Vous pouvez également utiliser la classe StreamWriter pour avoir plus de contrôle sur la manière dont vous écrivez du texte dans le fichier.
-
-Voir aussi:
-
-- Documentation de Microsoft sur la classe File en C# : https://docs.microsoft.com/fr-fr/dotnet/api/system.io.file?view=net-5.0
-- Tutoriel sur l'écriture et la lecture de fichiers texte en C# : https://www.codeproject.com/Articles/4157322/Csharp-Read-and-Write-Text-Files-in-a-Few-Simple-L
-
-Nous espérons que cet article vous a été utile pour comprendre comment écrire un fichier texte en programmation C#. N'hésitez pas à explorer d'autres options et à pratiquer pour mieux maîtriser cette tâche importante en développement de logiciels.
+## Voir aussi:
+- [Documentation Microsoft pour la classe StreamWriter en C#](https://docs.microsoft.com/fr-fr/dotnet/api/system.io.streamwriter?view=netcore-3.1)
+- [Tutoriel vidéo pour écrire et lire des fichiers texte en C#](https://www.youtube.com/watch?v=6-lPW191z8Y)

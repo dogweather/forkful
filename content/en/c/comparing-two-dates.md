@@ -1,7 +1,9 @@
 ---
 title:                "C recipe: Comparing two dates"
+simple_title:         "Comparing two dates"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/comparing-two-dates.md"
 ---
 
@@ -9,83 +11,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Comparing dates is a common task in many programming projects, especially when dealing with events or scheduling. It allows you to determine the chronological order of events and make decisions based on date comparisons. In this blog post, we will explore how to compare two dates in the C programming language.
+You may be wondering why someone would want to compare two dates in a C programming language. Well, dates are a crucial component in many applications and being able to compare them can help with tasks like sorting data or checking for overlaps in schedules. In this blog post, we will discuss how to compare two dates in C and dive deeper into the process.
 
 ## How To
 
-First, we need to understand how dates are represented in C. Dates are often stored as integers in the format of `YYYYMMDD`, where `YYYY` is the year, `MM` is the month, and `DD` is the day. For example, January 1st, 2020 would be represented as `20200101`.
-
-To compare two dates, we first need to have two date variables. Let's call them `date1` and `date2`. We can compare them using simple if-else statements and logical operators.
+To start, let's declare two variables to hold our dates. We will use a structure called "date" that has three integer members: day, month, and year.
 
 ```C
-if (date1 > date2) {
-  printf("Date 1 is later than Date 2");
+struct date {
+  int day;
+  int month;
+  int year;
+};
+
+// Initializing two variables, date1 and date2
+struct date date1 = {28, 7, 2021};
+struct date date2 = {12, 6, 2021};
+
+// Comparing dates using if statements
+if (date1.year > date2.year) {
+  printf("date1 is later than date2");
 }
-else if (date1 < date2) {
-  printf("Date 1 is earlier than Date 2");
+else if (date1.year < date2.year) {
+  printf("date1 is earlier than date2");
 }
-else {
-  printf("Date 1 and Date 2 are the same");
+else { // if years are equal
+  if (date1.month > date2.month) {
+    printf("date1 is later than date2");
+  }
+  else if (date1.month < date2.month) {
+    printf("date1 is earlier than date2");
+  }
+  else { // if months are equal
+    if (date1.day > date2.day) {
+      printf("date1 is later than date2");
+    }
+    else if (date1.day < date2.day) {
+      printf("date1 is earlier than date2");
+    }
+    else { // if days are equal
+      printf("Date1 and date2 are the same");
+    }
+  }
 }
 ```
 
-Depending on the comparison, either "Date 1 is later than Date 2", "Date 1 is earlier than Date 2", or "Date 1 and Date 2 are the same" will be printed to the console.
+Let's break down the logic behind this code. We are using three if statements to compare the years, months, and days of the two dates. If one date has a greater value in any category, it is considered to be later or earlier than the other date. If all values are equal, then the dates are the same.
 
-We can also compare dates using the `difftime()` function from the `time.h` library. This function calculates the difference in seconds between two dates.
+Here is the expected output for our two sample dates:
 
 ```C
-#include <stdio.h>
-#include <time.h>
-
-int main() {
-  time_t date1 = time(NULL); // current date in seconds
-  time_t date2 = 1585718400; // April 1st, 2020 in seconds
-
-  double diff = difftime(date1, date2); // difference in seconds
-  printf("Difference between Date 1 and Date 2 is %f seconds", diff);
-  
-  return 0;
-}
+date1 is later than date2
 ```
 
-The output will be "Difference between Date 1 and Date 2 is 1585718400 seconds", which is equivalent to approximately 49 years.
+You can also use this logic to compare two dates using different variables, such as the current date and a user-inputted date.
 
 ## Deep Dive
 
-In some cases, we may need to compare specific components of dates, such as the year, month, or day. To do this, we can use the `tm` structure from the `time.h` library.
+Now let's dive deeper into comparing two dates in C. The key concept to understand is that dates can be converted into an integer value using a specific formula. This allows for easier comparison since integers can be easily compared with primitive operators like < and >.
 
-```C
-#include <stdio.h>
-#include <time.h>
-
-int main() {
-  // current date and time
-  time_t now = time(NULL);
-  
-  struct tm *local = localtime(&now); // Local time
-  struct tm *utc = gmtime(&now); // UTC time
-  
-  // Print current year, month, and day in each time zone
-  printf("Local: %d-%d-%d\n", local->tm_year + 1900, local->tm_mon + 1, local->tm_mday);
-  printf("UTC: %d-%d-%d\n", utc->tm_year + 1900, utc->tm_mon + 1, utc->tm_mday);
-  
-  return 0;
-}
-```
-
-The output will be something like:
+The formula for converting a date into an integer value is as follows:
 
 ```
-Local: 2020-04-16
-UTC: 2020-04-16
+integer date value = (year * 10000) + (month * 100) + day;
 ```
 
-We can compare the individual components of the dates using logical operators, just like we did in the first example.
+For example, if we have a date of July 28, 2021, the integer value would be calculated as:
+
+```
+2021 * 10000 = 20210000
+7 * 100 = 700
+20210000 + 700 = 20210700
+20210700 + 28 = 20210728
+```
+
+This produces a unique integer value for each date, allowing for easy comparison.
 
 ## See Also
 
-To learn more about dates and time in C, check out these resources:
+Now that you know how to compare two dates in C, you can explore more about dates and time in the C programming language. Here are some helpful links:
 
-- [C Programming Tutorial: Date and Time Functions](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [The `time.h` header](https://www.codingunit.com/c-tutorial-the-time-h-header)
-- [Date and Time in C](https://www.programiz.com/c-programming/c-date-time)
+- [Date and Time Functions in C](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+- [Date and Time in C Programming Language](https://www.geeksforgeeks.org/c-programming-language/#Dates-and-Time)
+- [Handling Date and Time in C Language](https://www.includehelp.com/c-programming-questions/handling-date-and-time-in-c-programming-language.aspx)

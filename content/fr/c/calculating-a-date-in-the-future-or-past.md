@@ -1,7 +1,9 @@
 ---
-title:                "C: Calcul d'une date dans le futur ou le passé"
+title:                "C: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,83 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Dans le développement de logiciels, il est parfois nécessaire de calculer des dates dans le futur ou le passé. Cela peut être utile pour planifier des événements, gérer des tâches à exécuter ou même pour des raisons de débogage.
+Calculer une date dans le passé ou dans le futur peut être extrêmement utile en programmation. Cela peut être utilisé pour automatiser des tâches telles que la planification des rappels ou la création de calendriers.
 
 ## Comment faire
 
-Pour calculer une date dans le futur, vous aurez besoin des informations suivantes:
-- La date actuelle
-- Le nombre de jours à ajouter à la date actuelle
+La première étape pour calculer une date dans le futur ou dans le passé est de déterminer quelle date de référence vous souhaitez utiliser. Cela peut être la date en cours ou une date spécifique définie par l'utilisateur.
 
-Utilisant ces informations, vous pouvez utiliser les fonctions de la bibliothèque *time.h* pour ajouter les jours à la date actuelle et obtenir la date souhaitée. Voici un exemple de code en utilisant ces fonctions:
+Ensuite, vous devez déterminer le nombre de jours à ajouter ou soustraire à cette date de référence. Vous pouvez utiliser la fonction `time()` pour obtenir le nombre de secondes écoulées depuis le 1er janvier 1970 et le diviser par le nombre de secondes dans une journée (86400) pour obtenir le nombre de jours.
 
-```C
-#include <stdio.h>
-#include <time.h>
+Enfin, vous pouvez utiliser les fonctions `gmtime()` et `asctime()` pour convertir le nombre de jours en une structure de date et l'afficher dans un format lisible pour l'utilisateur.
 
-int main() {
-  // Obtenez la date actuelle
-  time_t t = time(NULL);
-  struct tm *today = localtime(&t);
-  
-  // Ajouter 5 jours à la date actuelle
-  today->tm_mday += 5;
-  
-  // Convertir en temps UNIX
-  time_t future_date = mktime(today);
-
-  // Imprimer la date dans un format lisible
-  printf("La date dans 5 jours est: %s", ctime(&future_date));
-
-  return 0;
-}
-```
-
-La sortie de ce programme sera:
-
-```
-La date dans 5 jours est: Sat Aug 22 14:26:05 2020
-```
-
-Pour calculer une date dans le passé, le principe est le même, sauf que vous devez soustraire les jours au lieu de les ajouter. Voici un exemple de code:
+Voici un exemple de code en C pour calculer une date dans le futur et l'afficher au format DD/MM/AAAA :
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-  // Obtenez la date actuelle
-  time_t t = time(NULL);
-  struct tm *today = localtime(&t);
-
-  // Soustraire 10 jours à la date actuelle
-  today->tm_mday -= 10;
-
-  // Convertir en temps UNIX
-  time_t past_date = mktime(today);
-
-  // Imprimer la date dans un format lisible
-  printf("La date il y a 10 jours était: %s", ctime(&past_date));
-
+  // Date actuelle
+  struct tm *date_actuelle;
+  time_t temps_actuel = time(NULL);
+  date_actuelle = localtime(&temps_actuel);
+  
+  // Nombre de jours à ajouter
+  int jours = 5;
+  
+  // Calcul de la date dans le futur
+  date_actuelle->tm_mday += jours;
+  time_t temps_futur = mktime(date_actuelle);
+  date_actuelle = localtime(&temps_futur);
+  
+  // Affichage de la date au format DD/MM/AAAA
+  printf("Date dans %d jours : %02d/%02d/%d\n", jours, date_actuelle->tm_mday, date_actuelle->tm_mon + 1, date_actuelle->tm_year + 1900);
+  
   return 0;
 }
 ```
 
-La sortie de ce programme sera:
+Voici la sortie de ce programme :
 
 ```
-La date il y a 10 jours était: Thu Aug 07 14:28:21 2020
+Date dans 5 jours : 03/01/2022
 ```
 
 ## Plongée en profondeur
 
-Calculer une date dans le futur ou le passé peut sembler simple, mais il y a quelques points à prendre en compte pour obtenir des résultats précis.
+Le calcul d'une date dans le futur ou dans le passé peut sembler simple, mais il y a plusieurs facteurs à prendre en compte. Par exemple, il peut être nécessaire de vérifier si l'année est bissextile pour ajuster le nombre de jours dans le mois de février.
 
-Tout d'abord, il est important de comprendre que les dates sont stockées en temps UNIX, qui est le nombre de secondes écoulées depuis le 1 janvier 1970. Cela signifie que si vous ajoutez ou soustrayez des jours, vous modifiez également le temps en secondes et donc le fuseau horaire. Par conséquent, il est important de convertir la date en temps UNIX avant de l'ajuster et de la reconvertir en une date lisible. Vous pouvez également utiliser les fonctions de la bibliothèque *localtime* ou *gmtime* pour ajuster le fuseau horaire en conséquence.
+De plus, il est important de noter que ce calcul peut varier selon les langages de programmation et les bibliothèques utilisées. Par exemple, en utilisant la bibliothèque `<chrono>` en C++, le calcul de la date dans le futur peut être effectué en utilisant des objets de type `duration` et `time_point`.
 
-De plus, faites attention aux dates spéciales telles que les années bissextiles. Vous devrez peut-être prendre en compte ces détails lors du calcul de la date.
+Il est également important de se rappeler que le temps et les dates sont souvent sujets à des différences et des complications en raison de facteurs tels que les fuseaux horaires et les changements d'heure.
 
 ## Voir aussi
 
-- [Tutoriel C: Gestion de dates et d'horloges](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [Documentation officielle de la bibliothèque time.h](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/time.h.html)
+- [Documentation officielle sur la bibliothèque <time.h> en C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Calcul d'une date dans le futur à l'aide de la bibliothèque <chrono> en C++](https://www.geeksforgeeks.org/get-date-time-in-seconds-using-c-chrono-library/)
+- [Différences entre les fuseaux horaires en programmation](https://www.howtogeek.com/323390/how-to-handle-time-zones-in-computer-programs/)

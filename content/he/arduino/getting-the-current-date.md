@@ -1,63 +1,53 @@
 ---
-title:                "Arduino: קבלת התאריך הנוכחי"
+title:                "Arduino: לקבלת תאריך נוכחי - קבלת התאריך הנוכחי"
+simple_title:         "לקבלת תאריך נוכחי - קבלת התאריך הנוכחי"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## על מה
+# למה
+ידע תאריך נוכחי יכול להיות מאוד שימושי בפרויקט Arduino שלכם. הוא מאפשר לכם ליצור תכניות שימושיות שתוכלו להשתמש בהן בהתאם לתאריך, כגון מערכות לשעות או ביקורות יומיות.
 
-ישנם מצבים רבים שבהם חשוב לקבל את התאריך הנוכחי בתכלית במחשבך או בפרויקט הארדווינו שלך. למשל, אם אתה מפעיל חיישנים או שעונים, תוכל להשתמש בתאריך כדי לצפות במידע מדויק יותר בקשר לזמן שנאסף.
-
-## איך לעשות את זה
-
-מקבל תאריך נוכחי בארדוינו הוא מצוין פשוט וקל לביצוע. הנה קוד קצר שיעזור לך להתחיל:
+# איך לעשות זאת
+ניתן לקבל את התאריך הנוכחי בקלות באמצעות מכשיר RTC (Real-Time Clock). נתחיל עם הכנה קוד ב Arduino IDE:
 
 ```Arduino
-#include <Time.h>
+#include <Wire.h>
+#include <RTClib.h>
 
-void setup() {
-  Serial.begin(9600); // פתיחת קוויר טורד מהשרת לעמוד
-  setTime(14, 00, 00, 1, 1, 2020); // קביעת התאריך הנוכחי
+RTC_DS1307 rtc; // יצירת אובייקט RTC עבור RTC DS1307
+
+void setup () {
+  Serial.begin(9600); // התחלת חיבור למסך מוניטור סידרתי
+  rtc.begin(); // התחלת חיבור לשעון RTC
 }
 
-void loop() {
-  digitalClockDisplay();
-}
-
-void digitalClockDisplay() {
-  // הפקודה הזו תציג את התאריך הנוכחי בפורמט דיגיטלי בקוויר הטורד
-  Serial.print(hour());
-  printDigits(minute());
-  printDigits(second());
-  Serial.print(" ");
-  Serial.print(day());
-  Serial.print(" ");
-  Serial.print(month());
-  Serial.print(" ");
-  Serial.print(year());
-  Serial.println(); 
-}
-
-void printDigits(int digits) {
-  // פקודה להדפסת מספר דו ספרתי לקוויר טורד
-  Serial.print(":");
-  if(digits < 10)
-    Serial.print('0');
-  Serial.print(digits);
+void loop () {
+  DateTime now = rtc.now(); // קבלת תאריך ושעה נוכחיים ממכשיר RTC
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.print(now.day(), DEC);
+  Serial.print(' ');
+  Serial.print(now.hour(), DEC);
+  Serial.print(':');
+  Serial.print(now.minute(), DEC);
+  Serial.print(':');
+  Serial.print(now.second(), DEC);
+  Serial.println();
 }
 ```
 
-כאשר אתה מריץ את הקוד הזה, התאריך הנוכחי יוצג בפורמט דיגיטלי בלוח הטורד.
+כאשר אתם מעתיקים ומדביקים את הקוד ל Arduino IDE שלכם, לא לשכוח להוסיף את הספריות הנדרשות לקובץ הגלאבליינסטון.
 
-## מעמקים
+אחרי שתקמלו ותעלו את הקוד למכשיר שלכם, תוכלו לראות במסך המוניטור סידרתי את התאריך והשעה הנוכחים.
 
-כדי לקבל תאריך נוכחי בארדוינו, אתה צריך להתחבר למודול RTC (Real Time Clock). ישנם מודולים שונים זמינים בשוק שיעזרו לך להתחבר למודול RTC שלך בקלות. דבר נוסף שחשוב לשים לב אליו הוא הגדרת התאריך עם הצגה של השעון שלך. זה יכול להיות מעט מורכב כיוון שהגדרת השעון כרוכה בשימוש באטריביור חיצוני.
+# טיפול מעמיק
+לקבלת תאריך ושעה אינם מספיקים רק לצורך הצגה על מסך המוניטור. אתם יכולים להשתמש בתאריכים הנוכחיים לביצוע פעולות אחרות כמו קבלת זמן פתיחת וסגירת דלתות או נתינת אתר תפוקת התמונה של מצלמה. כדי לעשות זאת, יש להשתמש בספריית DS1307RTC כדי לקבל את ההרכבים הנכונים מתוך התאריך והשעה הנוכחיים ולהשתמש באחדים מהם בקוד שלכם.
 
-## ראו גם
-
-- [Tutorial on using the DS3231 RTC module with Arduino](https://howtomechatronics.com/tutorials/arduino/arduino-ds3231-real-time-clock-tutorial/)
-- [Arduino Time Library Documentation](https://www.arduino.cc/en/Reference/Time)
-- [Real Time Clock Modules on Amazon](https://www.amazon.com/s?k=
+זוהי פרטי

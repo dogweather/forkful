@@ -1,59 +1,53 @@
 ---
 title:                "Ruby: Utilizando expresiones regulares"
+simple_title:         "Utilizando expresiones regulares"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué utilizar expresiones regulares en Ruby?
+## Por qué
 
-Las expresiones regulares son una herramienta útil en la programación de Ruby que permite buscar y manipular patrones dentro de strings. Con su uso, podemos realizar tareas de búsqueda, validación y reemplazo de manera más eficiente y precisa.
+Si eres un programador de Ruby, probablemente hayas escuchado sobre las expresiones regulares. Estas son secuencias de caracteres que permiten realizar búsquedas y manipulaciones en cadenas de texto de una manera muy poderosa. Aunque puede parecer intimidante al principio, dominar las expresiones regulares puede ahorrarte una cantidad significativa de tiempo y energía en tus proyectos.
 
-## ¿Cómo utilizar expresiones regulares en Ruby?
+## Cómo hacerlo
 
-El uso de expresiones regulares en Ruby es relativamente sencillo y consiste en utilizar una combinación de caracteres especiales y símbolos para crear un patrón a ser buscado dentro de un string.
+Para utilizar expresiones regulares en Ruby, debes seguir los siguientes pasos:
 
-Un ejemplo básico sería utilizar el método `match` para buscar una coincidencia con una expresión regular en un string específico:
+1. Importa el módulo Regexp usando `require 'regexp'`
+2. Define tu expresión regular usando la sintaxis `/expresión/`
+3. Aplica la expresión regular usando uno de los métodos de cadena de Ruby, como `match()` o `scan()`
 
-```Ruby
-texto = "Hola mundo"
-expresion_regular = /mundo/
-
-puts texto.match(expresion_regular)
-
-# Output: mundo
-```
-
-También se pueden utilizar los métodos `sub` y `gsub` para reemplazar parte de un string con una expresión regular:
+Veamos un ejemplo práctico. Digamos que tienes una lista de correos electrónicos y quieres filtrar solo los que terminan en ".com". Utilizando expresiones regulares, puedes hacerlo de la siguiente manera:
 
 ```Ruby
-texto = "Hola mundo ¿Cómo estás?"
-expresion_regular = /¿Cómo estás/
-nuevo_texto = texto.gsub(expresion_regular, "bien")
-
-puts nuevo_texto
-
-# Output: Hola mundo bien
+require 'regexp'
+emails = ["user1@domain.com", "user2@domain.net", "user3@domain.com"]
+emails.each do |email|
+  if email.match(/\.com$/) # $ representa el final de la cadena
+    puts email
+  end
+end
 ```
 
-Existen muchos más métodos y técnicas avanzadas para utilizar expresiones regulares en Ruby, por lo que se recomienda investigar y experimentar para descubrir todas sus posibilidades.
+Este código imprimirá los dos primeros correos electrónicos, ya que solo ellos cumplen con la expresión regular.
 
-## Profundizando en el uso de expresiones regulares
+## Inmersión profunda
 
-Las expresiones regulares en Ruby se pueden utilizar de diferentes maneras, por ejemplo:
+Ahora que ya sabes cómo utilizar expresiones regulares básicas en Ruby, es importante profundizar un poco más para manejar casos más complejos. Algunos conceptos que debes tener en cuenta incluyen:
 
-- Utilizar el operador `=~` para encontrar una coincidencia en un string.
-- Utilizar los delimitadores `/.../` para crear una expresión regular.
-- Utilizar el método `scan` para buscar todas las coincidencias de un patrón en un string.
-- Utilizar los métodos `split` y `partition` para dividir un string en base a una expresión regular.
-- Utilizar los grupos de captura `(...)` para almacenar partes de una coincidencia y utilizarlos en el reemplazo.
+- Caracteres especiales: hay ciertos caracteres, como `*` o `+`, que tienen un significado especial en expresiones regulares y deben escaparse con `\` para que se interpreten literalmente.
+- Clases de caracteres: puedes utilizar `[ ]` para especificar un conjunto de caracteres. Por ejemplo, `[aeiou]` coincidirá con cualquier vocal.
+- Grupos y capturas: puedes agrupar ciertos patrones utilizando `()` y luego acceder a ellos con `$1`, `$2`, etc.
+- Modificadores: puedes utilizar varios modificadores al final de tu expresión regular para hacerla insensible a mayúsculas y minúsculas, entre otras cosas.
 
-Es importante mencionar que las expresiones regulares en Ruby siguen una sintaxis específica, por lo que es recomendable revisar la documentación oficial para conocer todas las posibilidades y detalles.
+Para obtener más información sobre estos conceptos y otros trucos útiles, te recomendamos revisar la documentación oficial de Ruby sobre expresiones regulares en [este enlace](https://ruby-doc.org/core-2.7.2/Regexp.html).
 
 ## Ver también
 
-- [Documentación oficial de expresiones regulares en Ruby](https://ruby-doc.org/core-3.0.0/Regexp.html)
-- [Tutorial de expresiones regulares en Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Expresiones regulares en Ruby: trucos y consejos](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Tutorial básico sobre expresiones regulares en Ruby](https://medium.com/@wizardofmath/regex-for-all-827806351791)
+- [Documentación oficial sobre expresiones regulares en Ruby](https://ruby-doc.org/core-2.7.2/Regexp.html)
+- [Expresiones regulares en Ruby: consejos y trucos](https://blog.appsignal.com/2018/08/21/regex-on-ruby-the-good-the-bad-and-the-ugly.html)

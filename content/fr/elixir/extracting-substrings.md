@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Extraction de sous-chaînes"
+simple_title:         "Extraction de sous-chaînes"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/extracting-substrings.md"
 ---
 
@@ -9,36 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Vous vous trouvez face à une chaîne de caractères très longue et vous avez besoin d'en extraire une partie précise ? Ne cherchez plus, extrayez simplement des sous-chaînes en utilisant Elixir !
+L'extraction de sous-chaînes est utile pour manipuler et traiter des chaînes de caractères dans vos programmes Elixir. Cela peut être particulièrement utile pour extraire des informations spécifiques d'une chaîne, comme un nom de fichier ou une date.
 
 ## Comment faire
 
-Pour extraire une sous-chaîne en Elixir, utilisez la fonction `String.slice` en lui passant en paramètres la chaîne d'origine, l'indice de départ et l'indice de fin de la sous-chaîne souhaitée. Par exemple:
+L'extraction de sous-chaînes en Elixir est facile grâce à la fonction `String.slice/3`. Vous pouvez spécifier l'index de début et de fin de la sous-chaîne que vous souhaitez extraire. Voici un exemple de code pour extraire les trois premiers caractères d'une chaîne :
 
-```Elixir
-my_string = "Bonjour le monde!"
-sub_string = String.slice(my_string, 8, 11)
-IO.puts sub_string
-# Output: le m
+```elixir
+str = "Bonjour"
+new_str = String.slice(str, 0, 3)
 ```
 
-Vous pouvez également extraire des sous-chaînes en utilisant des expressions régulières avec la fonction `String.split`. Par exemple:
+Cela renvoie la sous-chaîne "Bon". Vous pouvez également utiliser des index négatifs pour compter à partir de la fin de la chaîne. Par exemple, `String.slice(str, -3, -1)` renvoie la sous-chaîne "our".
 
-```Elixir
-my_string = "Ceci est un exemple."
-sub_string = String.split(my_string, ~r/ est/)
-IO.inspect sub_string
-# Output: ["Ceci ", " un exemple."]
+Vous pouvez également spécifier un tableau d'index, ce qui vous permet d'extraire plusieurs sous-chaînes à la fois. Par exemple :
+
+```elixir
+str = "Hello World"
+indexes = [6, -5]
+new_str = String.slice(str, indexes)
 ```
+
+Cela renvoie un tableau avec les sous-chaînes "World" et "Wor".
 
 ## Plongée en profondeur
 
-Il est important de noter que la fonction `String.slice` utilise l'indexation en zéro, ce qui signifie que le premier caractère d'une chaîne est à l'indice 0. De plus, l'indice de fin n'est pas inclus dans la sous-chaîne résultante.
+La fonction `String.slice/3` utilise des index Unicode pour gérer les caractères non ASCII. Ainsi, si vous avez des chaînes contenant des caractères spéciaux ou des émojis, cette fonction garantit que les sous-chaînes sont extraites correctement.
 
-De plus, Elixir dispose d'autres fonctions utiles pour manipuler les chaînes, telles que `String.replace`, `String.trim`, et bien d'autres encore. Il est recommandé de consulter la documentation officielle pour découvrir toutes les possibilités offertes par Elixir pour traiter les chaînes de caractères.
+De plus, si vous avez besoin de manipuler des sous-chaînes qui ne sont pas délimitées par un nombre fixe de caractères, vous pouvez utiliser la fonction `String.split/2` pour diviser une chaîne en sous-chaînes en utilisant un délimiteur personnalisé.
 
 ## Voir aussi
 
-- [Documentation officielle d'Elixir sur les chaînes de caractères](https://hexdocs.pm/elixir/String.html)
-- [Blog post "Manipulation des chaînes de caractères en Elixir"](https://spin.atomicobject.com/2020/02/24/string-manipulation-elixir/)
-- [Vidéo "Tutoriel Elixir - Manipulation de chaînes de caractères"](https://www.youtube.com/watch?v=c_TeYrX7EJU)
+- Documentation officielle Elixir pour String.slice/3 : https://hexdocs.pm/elixir/String.html#slice/3
+- Plus d'exemples d'utilisation de l'extraction de sous-chaînes en Elixir : https://elixirschool.com/fr/lessons/basics/binary-and-strings/
+- Utilisation des index Unicode en Elixir : https://elixirschool.com/fr/lessons/advanced/unicode/

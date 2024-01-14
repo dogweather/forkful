@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Tests schreiben"
+title:                "Gleam: Testen schreiben"
+simple_title:         "Testen schreiben"
 programming_language: "Gleam"
-category:             "Testing and Debugging"
+category:             "Gleam"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/writing-tests.md"
 ---
 
@@ -9,46 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In der Welt des Programmierens ist es wichtig, effiziente und fehlerfreie Code zu schreiben. Eine bewährte Methode, um sicherzustellen, dass der Code einwandfrei funktioniert und verwendbar ist, sind Tests. In diesem Beitrag werden wir uns genauer anschauen, warum das Schreiben von Tests in Gleam von Vorteil ist.
+Das Schreiben von Tests ist ein wesentlicher Bestandteil jeder Entwicklungsarbeit. Es stellt sicher, dass der Code zuverlässig funktioniert und mögliche Fehler frühzeitig erkannt werden können. Außerdem kann es dabei helfen, zukünftige Änderungen oder Erweiterungen einfacher und sicherer durchzuführen.
 
-## Wie
+## Wie geht man vor?
 
-Gleam bietet eine eingebaute Testbibliothek, die das Schreiben von Tests leicht und effizient macht. Zunächst müssen wir diese in unserem Programm importieren:
+Die Testfunktionen in Gleam werden mit dem ```gleam_test``` Modul erstellt. Zum Beispiel könnte eine Funktion zum Testen einer einfachen Addition folgendermaßen aussehen:
 
-```Gleam
-import gleam/test
-```
-
-Als nächstes definieren wir unsere eigentlichen Tests, indem wir eine Funktion schreiben und sie mit der Attribut `#[test]` versehen:
-
-```Gleam
-#[test]
-pub fn add_test() {
-  assert.equal(10, add(6, 4))
-}
-
-#[test]
-pub fn subtract_test() {
-  assert.equal(2, subtract(8, 6))
+``` gleam_test
+Additionstest-funktion() {
+  assert_equal(2, 1 + 1)
 }
 ```
 
-Hier sehen wir, dass wir mit dem `assert.equal`-Befehl die erwarteten Ergebnisse unserer Funktionen überprüfen können. Wir können auch weitere Assertions hinzufügen, um sicherzustellen, dass unsere Funktionen in verschiedenen Szenarien richtig funktionieren.
+Der Befehl ```assert_equal``` wird verwendet, um zwei Werte zu vergleichen und sicherzustellen, dass sie gleich sind. In diesem Fall wird überprüft, ob die Addition von 1 und 1 tatsächlich 2 ergibt. Ist dies nicht der Fall, wird ein Fehler angezeigt.
 
-Um unsere Tests auszuführen, verwenden wir den Befehl `gleam test` in der Konsole. Wenn alle Tests erfolgreich sind, sehen wir eine Erfolgsmeldung. Wenn ein Test fehlschlägt, werden wir über den Grund informiert und können unseren Code entsprechend anpassen.
+Darüber hinaus können auch Fehlerfälle getestet werden, indem ```gleam_test``` Funktionen mit dem ```test_case``` Makro erstellt werden. Hier ein Beispiel für eine Funktion, die sicherstellt, dass eine Division durch Null einen Fehler auslöst:
 
-## Deep Dive
+``` gleam_test
+Division durch Null () {
+  test_case("Sollte einen Fehler werfen") {
+    assert_error(_, 1 / 0)
+  }
+}
+```
 
-Jetzt, wo wir wissen, wie man Tests in Gleam schreibt, werden wir tiefer in das Thema eintauchen. Hier sind einige Tipps, die beim Schreiben von Tests hilfreich sein können:
+Wie man sehen kann, ermöglicht es Gleam, präzise und effektive Tests zu schreiben, um die Funktionalität des Codes zu überprüfen.
 
-- Schreibe Tests, bevor du den entsprechenden Code entwickelst. Auf diese Weise weißt du sofort, ob dein Code richtig funktioniert, sobald er fertig ist.
-- Vermeide es, Daten oder Funktionen direkt in deinen Tests zu verwenden. Stattdessen sollten wir Mock-Daten oder -Funktionen erstellen, um sicherzustellen, dass unsere Tests unabhängig von anderen Teilen des Codes sind.
-- Führe regelmäßig Tests durch, besonders wenn du neue Funktionen hinzufügst oder vorhandenen Code änderst, um sicherzustellen, dass keine unerwarteten Fehler auftreten.
+## Tieferer Einblick
 
-Das Schreiben von effektiven Tests kann dazu beitragen, die Qualität und Zuverlässigkeit deines Codes zu verbessern und dazu beitragen, Probleme frühzeitig zu erkennen und zu beheben.
+Zusätzlich zu den grundlegenden Funktionen für das Testen von Werten und Fehlern bietet Gleam auch die Möglichkeit, bestimmte Eigenschaften zu überprüfen. Hierfür kann das Modul ```gleam_quickcheck``` verwendet werden. Mit QuickCheck können Eigenschaften des Codes überprüft werden, indem zufällige Eingabedaten generiert und geprüft werden, ob die Ausgabe den erwarteten Eigenschaften entspricht.
+
+Außerdem können Gleam Testfunktionen auch mit bestimmten Bedingungen oder Annahmen versehen werden, um noch genauere Überprüfungen durchzuführen. Dies macht es möglich, komplexe Anforderungen an den Code zu testen und sicherzustellen, dass er in allen möglichen Szenarien funktioniert.
 
 ## Siehe auch
 
-- [Gleam Dokumentation über Tests](https://gleam.run/book/testing.html)
-- [Fünf Tipps für das Schreiben von guten Tests](https://www.oreilly.com/library/view/five-tips-for/9781491935223/)
-- [Warum Tests so wichtig sind](https://www.softwaretestingnews.co.uk/why-testing-important/)
+- Offizielle Dokumentation zu Tests in Gleam: https://gleam.run/book/testing.html
+- Einführung in QuickCheck für Gleam: https://www.notion.so/gleamrun/QuickCheck-b36b20e11d8f4ec7b60b7e10d518e607
+- Beispielprojekt mit umfassenden Tests in Gleam: https://github.com/gleam-lang/gleam_binary_tree

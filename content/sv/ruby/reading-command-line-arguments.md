@@ -1,65 +1,49 @@
 ---
-title:                "Ruby: Läsa kommandoradsargument"
+title:                "Ruby: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
+## Varför
 
-Det finns många anledningar till varför man skulle vilja läsa inkommande kommandoradsargument i ett Ruby-program. Det kan hjälpa dig att skriva mer interaktiva och anpassningsbara program, samla data från användare eller automatisera processer. Det är också en användbar färdighet för att ha i din programmeringsverktygslåda.
+Kommandoradsargument är en viktig aspekt av programmering som kan hjälpa dig att skräddarsy och kontrollera ditt program utan att ständigt behöva ändra koden. Genom att läsa på om kommandoradsargument kan du göra dina program mer dynamiska och anpassningsbara.
 
-# Hur man gör
+## Hur man gör
 
-Att läsa kommandoradsargument i Ruby är ganska enkelt. Du behöver bara använda ARGV-objektet och dess metoder för att samla in argumenten. Här är ett exempel på kod:
+För att läsa kommandoradsargument i ett Ruby-program, börjar du med att skriva in "ARGV" i din kod. Detta är en array som innehåller argumenten som skickas till ditt program från kommandoraden. Du kan sedan iterera genom arrayen eller använda specifika index för att hämta specifika argument.
 
-```Ruby
-# Sparar alla argument i en array
-arguments = ARGV
-
-# Skriver ut det första argumentet
-puts "Hej #{arguments[0]}!"
-```
-
-Om du kör detta program med kommandot `ruby hello.rb världen` kommer det att skriva ut "Hej världen!". Det är värt att notera att det första elementet i ARGV-objektet alltid är namnet på programmet som körs.
-
-Du kan också använda ARGV-metoden `shift` för att ta bort det första argumentet från arrayen och få ut alla resterande argument. Här är ett exempel:
-
-```Ruby
-# Sparar alla argument i en array
-arguments = ARGV
-
-# Skriver ut alla argument förutom det första
-puts "Hej #{arguments.shift}!"
-
-# Skriver ut alla återstående argument
-arguments.each do |argument|
-  puts "#{argument} är också här!"
+``` ruby
+ARGV.each do |arg|
+  puts "Argument: #{arg}"
 end
 ```
 
-Kör detta med samma kommando som ovan och det kommer att skriva ut "Hej världen!", följt av "världen är också här!".
+Om du till exempel kör ditt program med kommandot "ruby program.rb hello world", kommer output att bli:
 
-# Djupdykning
-
-ARGV-objektet innehåller också den ursprungliga kommandoradssträngen som skickades in till programmet. Detta kan vara användbart om du vill hitta ett specifikt argument eller göra mer avancerade manipulationer med kommandoradsargumenten.
-
-En annan användbar funktion är att du kan använda ARGV för att ange förväntat antal argument och skriva ut ett felmeddelande om användaren skickar in fel antal argument. Till exempel:
-
-```Ruby
-# Kontrollerar om antalet argument är 2
-if ARGV.length != 2
-  puts "Vänligen ange två argument."
-else
-  # Lager logik för att använda de två argumenten
-end
+```
+Argument: hello
+Argument: world
 ```
 
-Med detta i åtanke kan du nu börja utforska alla möjligheter som läsning av kommandoradsargument erbjuder dig när du skriver dina Ruby-program.
+Du kan också använda index för att hämta specifika argument. Om du vill hämta det andra argumentet (i det här fallet "world") kan du använda ARGV[1].
 
-# Se även
+``` ruby
+puts "Andra argumentet: #{ARGV[1]}"
+```
 
-- [Dokumentation för ARGV-objektet](https://ruby-doc.org/core-2.6.5/ARGF.html)
-- [Exempel på kommandoradsargument i Ruby-program](https://www.rubyguides.com/2012/02/ruby-command-line-arguments/)
+## Djupdykning
+
+Det finns många olika sätt att använda och hantera kommandoradsargument i Ruby. Du kan till exempel använda flaggor för att lägga till specifika funktioner till ditt program eller använda gem för att underlätta läsning och hantering av argumenten.
+
+Det är också viktigt att notera att ARGV inte bara kan användas för att läsa kommandoradsargument från en terminal. Det kan också läsas från andra filer eller inputströmmar. Det är en kraftfull och allsidig funktion i Ruby-programmering.
+
+## Se även
+
+- [Ruby Dokumentation: Kommandoradsargument](https://ruby-doc.org/docs/ProgrammingRuby/html/tut_stdtutorial.html)
+- [Ruby CLI Gem](https://github.com/cldwalker/hirb-unicode)
+- [Användning av ARGV i Ruby-program](https://dev.to/iriskosari/argv-in-ruby-20j7)

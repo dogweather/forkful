@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: חיפוש והחלפה של טקסט"
+title:                "Arduino: חיפוש והחלפת טקסט"
+simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/arduino/searching-and-replacing-text.md"
 ---
 
@@ -9,34 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה:
 
-למה לחפש ולהחליף טקסט? דבר ראשון, זה יכול לחסוך המון זמן ועבודה בניסיונות לכתוב קוד. בנוסף, זה יכול לסייע לנו לנהל עלות נמוכה יותר על יישומים מכאניים ולגזור על חומרים נדרשים לעבודה.
+מחלקת הטכנולוגיות גודלת תמיד במהירות ואנשים רבים מתחילים ללמוד איך לתכנת בשפת ארדוינו. אחת הכישרונות החשובים שאדם יכול ללמוד הוא איך מחליף טקסט בשפת תכנות זו. במאמר זה ניתן תיכנן כיצד לגשת לחיפוש והחלפת טקסט בשפת ארדוינו.
 
-## איך לעשות זאת:
+## איך לעשות:
 
-כאשר מדובר בטקסט, ישנן שתי אפשרויות לחיפוש והחלפתו: “חיפוש” ו”החלקה”.
+הנה דוגמא לקוד שאנחנו נערוך כדי לעשות חיפוש והחלפת טקסט על סטרימטפס דרך ממשק מחשב:
 
-באמצעות פונקציות חיפוש תוכלו לחפש מחרוזת קבועה בתוך מחרוזת אחרת ולאתר את מיקומה, תמיד אל תשכחו להתאים את הפורמט במחרוזת שלכם למחרוזת המחפשת באמצעות תווים או regex.
-
-בבאמצעות פונקציות החלפה, תוכלו למצוא ולהחליף חלקים של מחרוזת בחלקים אחרים. למשל, ניתן להחליף כמה אותיות במילה או להחליף מחרוזות שלמות.
-
-נהדר! עכשיו שאתם מבינים את המושג, בואו נראה כמה דוגמאות קוד כדי להמחיש את השימוש של פונקציות חיפוש והחלפה ב־Arduino:
-
-```arduino
-String myString = "Hello World";
-myString.replace("World", "Arduino");
-Serial.println(myString); // פלט: Hello Arduino
-```
-
-```arduino
-String myString = "This is a test string";
-if (myString.indexOf("test") >= 0) { // אתר מיקום של המחרוזת "test"
-  myString.replace("test", "example");
+```Arduino 
+while(serial.available()){
+  String input = serial.readString();
+  input.replace("Hello", "שלום");
+  Serial.println(input); 
 }
-Serial.println(myString); // פלט: This is a example string
 ```
 
-כדי ללמוד עוד על פונקציות חיפוש והחלפה, תוכלו לעיין בתיעוד של ארדואינו ולהתנסות עם דוגמאות נוספות.
+כאן אנחנו משתמשים בפונקציית replace שמחליפה את המילה "Hello" עם המילה "שלום". את הטקסט שנדרש לחיפוש והחלפה ניתן לשנות לפי הצורך. במקרה שלנו, אנחנו מדפיסים את הטקסט המעודכן על ידי השתמשות בפונקציית println.
 
-## מעמקים נמוכים:
+## העמקה:
 
-כעת, אתם בנוים עם פונקציות חיפוש והחלפה ב־Arduino, נוכל לעבור לשימושים יותר מתקדמים כדי לעשות דברים נוספים עם
+כדי להבין טוב יותר כיצד להחליף טקסט בשפת ארדוינו, יש להבין שישנן פונקציות טקסט מובנות בשפה זו. אחת הפונקציות החשובות הינה replace המאפשרת לחלוף מחרוזת אחת לאחרת. ישנן גם פונקציות נוספות כמו substring שמאפשרת לקבל חלק מהמחרוזת המקורית. כדי להשתמש בפונקציות אלו ניתן להוסיף את הספרייה String המגדירה את כל הפונקציות הנוספות לטקסט.
+
+## ראה גם:
+
+- [Documentation for Arduino String library](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+- [Tutorial on using String functions in Arduino](https://www.tutorialspoint.com/arduino/arduino_strings.htm)
+- [Guide to using search and replace in C++](https://www.cplusplus.com/reference/string/string/replace/)

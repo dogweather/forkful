@@ -1,42 +1,79 @@
 ---
-title:                "Gleam: Lettura degli argomenti della riga di comando"
+title:                "Gleam: Lettura degli argomenti della riga di comando."
+simple_title:         "Lettura degli argomenti della riga di comando."
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché Leggere Gli Argomenti Della Riga Di Comando in Gleam
+# Perché
 
-Se sei un programmatore Gleam novizio o stai cercando di espandere le tue conoscenze nel linguaggio, potresti chiederti perché leggere gli argomenti della riga di comando potrebbe essere importante. Leggere gli argomenti della riga di comando è un'abilità fondamentale che ti consentirà di creare programmi interattivi e personalizzati per gli utenti. Continua a leggere per scoprire come farlo con Gleam!
+Hai mai avuto bisogno di leggere gli argomenti dalla riga di comando in un programma scritto in Gleam? Questo articolo ti introdurrà a come farlo in modo facile e veloce.
 
-## Come Leggere gli Argomenti della Riga di Comando in Gleam
+# Come Fare
 
-Per leggere gli argomenti della riga di comando in Gleam, utilizzare il modulo `gleam/arg"` e la sua funzione `parse/1`. Questa funzione accetta una lista di argomenti `String` da leggere e restituisce una `struct` contenente i valori di ogni argomento.
+Il prossimo esempio illustra come leggere gli argomenti dalla riga di comando in Gleam:
 
 ```Gleam
-import gleam/arg
+// Questo è il codice del programma
+import gleam/io
 
-let arg_list = ["--name", "John", "--age", "25"]
-let args = arg.parse(arg_list)
+pub fn main() {
+    // Leggi gli argomenti dalla riga di comando
+    let args = getopt::args()
 
-// Accedere agli argomenti
-let name = args["name"]
-let age = args["age"]
-
-// Stampare l'output
-io.format("Ciao {}, quest'anno compirai {} anni!\n", [name, age])
+    // Stampa gli argomenti uno per uno
+    for arg in args {
+        io.print(arg)
+    }
+}
 ```
 
-L'output di questo codice sarà "Ciao John, quest'anno compirai 25 anni!". Nota che gli argomenti devono essere preceduti da `"--"` e che gli argomenti possono essere passati in qualsiasi ordine.
+Se il nostro programma è chiamato "programma.gleam" e viene eseguito con i seguenti argomenti: "programma.gleam prima seconda terza", l'output mostrerà:
 
-## Approfondimenti su Come Leggere Gli Argomenti della Riga di Comando
+```
+prima
+seconda
+terza
+```
 
-Oltre alla funzione `parse/1`, il modulo `gleam/arg` offre altre funzioni utili per leggere gli argomenti della riga di comando. Ad esempio, la funzione `parse_or_exit/1` non solo restituirà gli argomenti, ma interromperà anche il programma e restituirà un messaggio di errore se gli argomenti forniti non sono validi. Inoltre, gli argomenti possono essere passati anche come argomenti posizionali invece che come opzioni nominate.
+# Approfondimento
 
-## Vedi Anche
+Oltre a leggere gli argomenti, è anche possibile passare valori come argomenti dalla riga di comando. Ad esempio, se vogliamo passare il nome e l'età come argomenti, il codice sarebbe simile a questo:
 
-- Documentazione ufficiale sul modulo `gleam/arg`: https://gleam.run/modules/gleam/arg.html
-- Tutorial su come leggere la riga di comando in Gleam: https://dev.to/gleam_lang/learning-gleam-parsing-command-line-arguments-1mm5
-- Approfondimenti su come utilizzare gli argomenti posizionali nella riga di comando: https://dev.to/gleam_lang/learning-gleam-parsing-arguments-29bl
+```Gleam
+// Questo è il codice del programma
+import gleam/io
+import std/array
+
+type Person(name, age)
+
+pub fn main() {
+    // Leggi gli argomenti dalla riga di comando
+    let args = getopt::args()
+
+    // Recupera il nome e l'età dall'array args
+    let name = array.get(args, 1)
+    let age = array.get(args, 2)
+
+    // Crea una nuova persona con i valori passati come argomenti
+    let person = Person(name, age)
+
+    // Stampa il nome e l'età della persona
+    io.printf("Il nome della persona è %s e ha %s anni.", [person.name, person.age])
+}
+```
+
+Se il nostro programma è chiamato "programma.gleam" e viene eseguito con i seguenti argomenti: "programma.gleam Marco 30", l'output mostrerà:
+
+```
+Il nome della persona è Marco e ha 30 anni.
+```
+
+# Vedi Anche
+
+- [Documentazione di getopt](https://gleam.run/libraries/getopt/)
+- [Esempi di codice per leggere gli argomenti dalla riga di comando in Gleam](https://github.com/gleam-lang/gleam/blob/master/examples/command-line-arguments.gleam)

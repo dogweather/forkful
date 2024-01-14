@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "Javascript"
-category:             "Getting Started"
+category:             "Javascript"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/starting-a-new-project.md"
 ---
 
@@ -9,43 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Der Beginn eines neuen Projekts kann eine aufregende und lohnende Erfahrung für jeden Programmierer sein. Es bietet die Möglichkeit, neue Fähigkeiten zu erlernen und kreative Ideen zum Leben zu erwecken. Das Starten eines neuen Projekts kann auch dazu beitragen, die Fähigkeiten von Programmierern zu verbessern und sie auf dem neuesten Stand der Technik zu halten.
+Es gibt viele Gründe, warum man sich auf ein neues Javascript Programmierprojekt einlassen möchte. Vielleicht möchten Sie eine neue Fähigkeit erlernen, ein bestehendes Programm verbessern oder einfach nur aus Spaß an der Programmierung etwas Neues erschaffen. Egal aus welchem Grund, ein neues Projekt kann eine aufregende und lohnende Herausforderung sein.
 
 ## Wie man anfängt
 
-Um ein neues Projekt zu beginnen, gibt es einige wichtige Schritte, die befolgt werden müssen. Zunächst muss man sich für eine Programmiersprache entscheiden, in der das Projekt umgesetzt werden soll. Für diesen Blogpost haben wir uns für Javascript entschieden, da es eine der beliebtesten Programmiersprachen ist und eine enorme Vielseitigkeit bietet.
+Bevor Sie mit der Programmierung beginnen, müssen Sie sicherstellen, dass Sie die notwendigen Werkzeuge haben. Zunächst benötigen Sie einen Texteditor oder eine integrierte Entwicklungsumgebung (IDE), um Ihren Code zu schreiben. Beliebte Optionen sind Visual Studio Code oder Atom. Außerdem benötigen Sie eine aktuelle Version von Node.js, um Ihr Javascript-Programm ausführen zu können.
 
-Als nächstes müssen wir eine Arbeitsumgebung einrichten. In Javascript können wir dies mit dem Befehl `npm init` tun, der eine package.json-Datei erstellt. Diese Datei enthält alle Informationen über das Projekt, wie z.B. den Namen, die Version und die Abhängigkeiten.
+Sobald Sie Ihre Werkzeuge eingerichtet haben, können Sie mit dem eigentlichen Codieren beginnen. Hier ist ein einfaches Beispiel, um eine "Hallo Welt!"-Nachricht auszugeben:
 
-Sobald die Arbeitsumgebung eingerichtet ist, können wir mit dem eigentlichen Codieren beginnen. Hier sind einige Beispiele für grundlegende Javascript-Codeblöcke, die in der Konsole ausgeführt werden können:
-
-```javascript
-// Ausgabe einer einfachen Nachricht in der Konsole
+```Javascript
 console.log("Hallo Welt!");
-
-// Berechnung der Summe von zwei Zahlen
-let num1 = 5;
-let num2 = 10;
-console.log(num1 + num2);
-
-// Überprüfung, ob eine Zahl größer als 10 ist
-if(num1 > 10){
-	console.log("Zahl ist größer als 10.");
-} else{
-	console.log("Zahl ist kleiner als 10.");
-}
 ```
 
-## Tiefergehende Informationen
+Wenn Sie diesen Code ausführen, sollte die Nachricht "Hallo Welt!" in der Konsole erscheinen.
 
-Eine wichtige Komponente beim Starten eines neuen Projekts ist das Erstellen eines guten Plans. Es ist wichtig, das Projekt sorgfältig zu planen und sich klar über die Ziele und Anforderungen im Klaren zu sein. Eine weitere wichtige Entscheidung ist die Wahl des richtigen Frameworks oder der richtigen Bibliothek, falls diese benötigt werden.
+## Tiefere Einblicke
 
-Um den Code gut strukturiert und leicht verständlich zu halten, sollten wir uns auch mit bewährten Praktiken wie der Verwendung von Kommentaren, Variablenbenennungskonventionen und Versionierung auskennen.
+Wenn Sie tiefer in die Welt der Javascript-Programmierung eintauchen möchten, gibt es eine Vielzahl von Ressourcen, die Ihnen dabei helfen können. Online-Tutorials, Bücher oder Community-Websites wie Stack Overflow können Ihnen dabei helfen, Ihre Fähigkeiten zu verbessern und Probleme zu lösen.
 
-Es ist auch wichtig, Testfälle zu schreiben und regelmäßig zu überprüfen, ob der Code fehlerfrei läuft. Dies kann helfen, Probleme frühzeitig zu erkennen und dem Projekt eine hohe Qualität zu verleihen.
+Ein wichtiger Aspekt beim Programmieren ist auch die Verwendung von Versionskontrollsystemen wie Git. Diese ermöglichen es Ihnen, Ihre Fortschritte zu verfolgen, Änderungen zu verwalten und mit anderen Entwicklern zusammenzuarbeiten.
+
+Es ist auch hilfreich, sich mit den gängigen Frameworks und Bibliotheken auseinanderzusetzen, die in der Javascript-Entwicklung verwendet werden, wie z.B. React, Angular oder jQuery.
+
+Insgesamt gibt es viele Möglichkeiten, um Ihr Javascript-Können zu verbessern und erfolgreich an neuen Projekten zu arbeiten. Seien Sie kreativ, experimentieren Sie und vergessen Sie nicht, Hilfe und Unterstützung von der Community zu suchen.
 
 ## Siehe auch
 
-- [Einführung in Javascript](https://www.w3schools.com/js/)
-- [Grundlagen des Programmierens](https://www.codecademy.com/learn/learn-how-to-code)
-- [Javascript Best Practices](https://www.sitepoint.com/27-best-practices-for-improving-javascript-performance/)
+- [Node.js](https://nodejs.org/en/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Atom](https://atom.io/)
+- [Stack Overflow](https://stackoverflow.com/)
+- [Git](https://git-scm.com/)
+- [React](https://reactjs.org/)
+- [Angular](https://angular.io/)
+- [jQuery](https://jquery.com/)

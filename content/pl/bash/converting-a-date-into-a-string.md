@@ -1,7 +1,9 @@
 ---
 title:                "Bash: Konwertowanie daty na ciąg znaków"
+simple_title:         "Konwertowanie daty na ciąg znaków"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/converting-a-date-into-a-string.md"
 ---
 
@@ -9,37 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja daty na ciąg znaków jest niezbędna w wielu programach i skryptach Bash. Może to być przydatne, gdy chcesz zapisać datę jako część nazwy pliku lub wyświetlić ją w czytelny sposób dla użytkownika. W tym artykule dowiesz się, jak w prosty sposób przeprowadzić tę konwersję.
+Konwersja daty na ciąg znaków jest niezbędnym elementem w wielu skryptach Bash. Wiele systemów operacyjnych i innych narzędzi używa danych w formacie tekstowym, dlatego jest ważne umieć przetwarzać datę w taki sposób.
 
 ## Jak to zrobić
 
-Getting the current date:
+Zaczniemy od prostego przykładu, w którym konwertujemy obecną datę na ciąg znaków. W Bash możemy wykorzystać polecenie `date` oraz opcję `+%m/%d/%Y`, która ustala format wyjściowy na miesiąc/dzień/rok.
+
 ```Bash
-current_date=$(date +"%Y-%m-%d")
-echo $current_date
+# Przykładowy skrypt 
+current_date=$(date '+%m/%d/%Y')
+echo "Dzisiaj jest $current_date"
 ```
-Output:
-```
-2021-06-26
-```
-Konwertowanie daty na ciąg znaków:
+
+Wynikiem wywołania tego skryptu będzie "Dzisiaj jest 06/26/2021". Naturalnie, możemy zmienić format daty według własnych preferencji, używając innych opcji dostępnych w poleceniu `date`, takich jak `+%A` dla pełnego nazwy dnia tygodnia lub `+%H:%M` dla godziny i minut.
+
+## Pogłębione zagadnienia
+
+Podstawowa konwersja daty jest prosta i przydatna w codziennych skryptach, ale istnieją także inne możliwości. Bash oferuje wiele wbudowanych funkcji, takich jak `strftime`, która pozwala na bardziej zaawansowane manipulowanie datą i czasem. Ta funkcja pozwala na dostosowywanie formatu wyjściowego do własnych potrzeb, wykorzystując specjalne znaki, np. `%m` dla miesiąca w postaci liczby lub `%b` dla nazwy miesiąca w postaci skróconej.
+
 ```Bash
-date_as_string=$(date +"%A, %B %d, %Y")
-echo $date_as_string
-```
-Output:
-```
-Saturday, June 26, 2021
+# Przykład z wykorzystaniem strftime 
+current_date=$(strftime "%M %b %Y" $(date +"%s"))
+echo "To jest $current_date"
 ```
 
-## Deep Dive
-
-Konwersja daty na ciąg znaków wymaga użycia funkcji `date` wraz z odpowiednią opcją formatowania, wyrażoną przez  znak procentu `%`. W przykładach wykorzystujemy opcję `%Y`, aby zwrócić rok, `%m` dla miesiąca, a `%d` dla dnia. Dzięki temu możemy otrzymać datę w różnych formatach, jakie tylko sobie wymarzymy.
-
-Ponadto, funkcja `date` może również przyjmować argumenty, takie jak `-d` dla daty, której chcemy dokonać konwersji. W ten sposób możemy uzyskać ciągi znaków dla różnych dat niż bieżąca.
+W wyniku powyższego skryptu otrzymamy "To jest 14 Jun 2021". Kombinując ze specjalnymi znakami i korzystając z wbudowanych funkcji, możemy uzyskać dokładnie taki format daty, jaki potrzebujemy.
 
 ## Zobacz także
 
-- [Przydatne opcje funkcji `date` w Bash](https://www.computerhope.com/unix/bash/date.htm)
-- [Dokumentacja funkcji `date` w Bash](https://www.man7.org/linux/man-pages/man1/date.1.html)
-- [Formatowanie daty w Bash](https://bash.cyberciti.biz/guide/Date_formatting)
+- [Dokumentacja polecenia date w Bash](https://www.gnu.org/software/coreutils/date)
+- [Kompletny przewodnik po konwersji daty w Bash](https://blog.learningtree.com/pl/konwersja-daty-w-bash/)
+- [Skrypty daty i czasu w Bash](https://www.baeldung.com/linux/bash-date-commands)

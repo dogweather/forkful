@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Mallia vastaavien merkkien poisto"
+title:                "Clojure: Mallia vastaavien merkkien poistaminen"
+simple_title:         "Mallia vastaavien merkkien poistaminen"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,38 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi kukaan haluaisi poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Yksi syy voisi olla, että haluat puhdistaa tekstisi ja poistaa ylimääräiset tai turhat merkit.
+Miksi joku haluaisi poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Usein tämä tapahtuu, kun tarvitsemme muuttaa tai puhdistaa dataa, joka sisältää ylimääräisiä tai tarpeettomia merkkejä.
 
-## Kuinka
+## Kuinka se tehdään
 
-Tekeminen tämä on yksinkertaista käyttämällä Clojuren `clojure.string/replace`-toimintoa. Koodin kirjoittaminen tällä tavalla vaatii muutaman askeleen:
+Poistaaksesi merkit vastaavat kaavaa, voit käyttää `replace`-funktiota yhdessä `re-seq`-funktion kanssa. `replace` korvaa kaikki vastaavat merkit toisella merkillä tai tyhjällä merkkijonolla. `re-seq` kerää kaikki kaavan mukaiset merkit listaksi.
 
-```
-Clojure (require '[clojure.string :as string])
+```Clojure
+;; Määritellään muuttuja, joka sisältää tiedot, joista haluamme poistaa välilyönnit
 
-(def teksti "Tämä on esimerkki, jossa haluan poistaa kaikki numerot 12345.")
-(def kaava #"[0-9]+")
+(def data "He ll o wo rl d")
 
-(defn poista-merkit [teksti kaava]
-  (string/replace teksti kaava ""))
+;; Luo listan välilyönneistä
 
-(poista-merkit teksti kaava)
-```
+(def whitespaces " ")
 
-Tämä koodiesimerkki käyttää `string/replace`-toimintoa poistaa kaikki numerot, jotka vastaavat kaavaa `#"[0-9]+"`. Lopputuloksena tekstisi on "Tämä on esimerkki, jossa haluan poistaa kaikki numerot."
+;; Korvaa välilyönnit tyhjillä merkkijonoilla
 
-## Syventyvä tarkastelu
+(replace data whitespaces "")
 
-Voit käyttää myös säännöllisiä lausekkeita poistamaan merkkejä, jotka vastaavat tiettyä kaavaa. Esimerkiksi, jos haluat poistaa kaikki välilyönnit, voit käyttää `#"\s+"`-kaavaa. Tämä korvaa kaikki välilyönnit tekstillä "":
-
-```
-(poista-merkit "Tämä on esimerkki, jossa haluan poistaa kaikki välilyönnit." #"\s+")
+;; Tulostaa "HelloWorld"
 ```
 
-Lopputulos on teksti "Tämäonesimerkki,jossahaluanpoistaakaikkivälilyönnit."
+Voit myös käyttää säännöllisiä lausekkeita poistaaksesi haluamasi kaavan mukaiset merkit. Esimerkiksi, jos haluat poistaa kaikki numerot datasta, voit käyttää `[0-9]`-kaavaa.
+
+```Clojure
+(def data "Text with 1 number")
+
+(replace data #"[0-9]" "")
+
+;; Tulostaa "Text with number"
+```
+
+## Syvällisempi sukellus
+
+Poistaessa merkkejä vastaavalla kaavalla, on tärkeää ymmärtää säännöllisiä lausekkeita. Voit käyttää erilaisia kaavoja sen perusteella, mitä haluat poistaa, kuten eri merkkejä tai merkkijonoja. Lisäksi `replace`- ja `re-seq`-funktiot ovat hyödyllisiä yhdistettynä säännöllisten lausekkeiden kanssa.
 
 ## Katso myös
 
-- [Clojure-kielen virallinen verkkosivusto](https://clojure.org/)
-- [Clojure String-kirjaston dokumentaatio](https://clojure.github.io/clojure/clojure.string-api.html)
-- [Säännölliset lausekkeet Clojuressa](https://clojuredocs.org/clojure.core/re-seq)
+- [ClojureDocs: replace](https://clojuredocs.org/clojure.core/replace)
+- [ClojureDocs: re-seq](https://clojuredocs.org/clojure.core/re-seq)
+- [Regular Expression Tutorial](https://regexone.com/) (säännöllisten lausekkeiden opas)

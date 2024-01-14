@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Zamiana ciągu znaków na małe litery"
+title:                "TypeScript: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,28 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Istnieje wiele sytuacji, kiedy potrzebujemy zamienić ciąg znaków na małe litery. Na przykład może to być potrzebne przy weryfikacji danych użytkownika, aby uniknąć błędów związanych z wielkością liter. Jest to również ważne w przypadku porównywania ciągów znaków, ponieważ znaki nie są zależne od wielkości. W tym blogu dowiesz się, jak prostym sposobem możesz przekształcić ciąg znaków na małe litery w języku TypeScript.
+Konwersja tekstu na małe litery jest częstym zadaniem w programowaniu, szczególnie w tworzeniu aplikacji internetowych. Jest to ważne, ponieważ tablice znakowe są wrażliwe na wielkość liter, co może utrudnić porównywanie i sortowanie danych. Konwertowanie tekstu na małe litery pozwala na spójność i ułatwia pracę z tekstem w różnych językach.
 
-## Jak to zrobić
+## Jak to zrobić?
 
 ```TypeScript
-let str: string = "PRZYKŁADOWY CIĄG ZNAKÓW"
-console.log(str.toLowerCase());
+let text: string = "Hello World!";
+let lowerCase: string = text.toLowerCase();
+console.log(lowerCase); // output: hello world!
 ```
-**Wynik:**
-```
-przykładowy ciąg znaków
-```
-W powyższym przykładzie utworzyliśmy zmienną str zawierającą nasz przykładowy ciąg znaków. Następnie użyliśmy metody `toLowerCase()` aby przekształcić ciąg znaków na małe litery. Metoda ta zwraca nowy ciąg znaków, więc musimy go przypisać do zmiennej, jeśli chcemy go wykorzystać w dalszej części kodu.
 
-## Deep Dive
+Możemy użyć wbudowanej metody `toLowerCase()` na zmiennej tekstowej, aby przekonwertować ją na małe litery. Ta metoda zwraca nowy łańcuch znaków z małymi literami, a oryginalny tekst pozostaje bez zmian.
 
-Dokładniej rzecz biorąc, metoda `toLowerCase()` przekształca wszystkie wielkie litery w ciągu znaków na ich odpowiedniki małych liter. Jest to przydatne w przypadku języków, w których są różnice między małymi i dużymi literami, takich jak język polski. Metoda ta również pomija znaki specjalne oraz liczby, ponieważ nie mają one odpowiadających sobie małych i wielkich liter.
+## Głębsza analiza
 
-Ponadto, w języku TypeScript, istnieje również metoda `toUpperCase()` która wykonuje odwrotną operację - przekształca wszystkie litery w ciągu na duże litery.
+Konwertowanie tekstu na małe litery zależy od używanego języka programowania. W przypadku TypeScript, wbudowana metoda `toLowerCase()` wymaga wykorzystania klasy `String`, która jest obiektem globalnym. Metoda ta jest często wykorzystywana wraz z innymi funkcjami, takimi jak `toUpperCase()` czy `trim()`, co umożliwia dokładniejszą manipulację tekstem.
+
+Jednym z ważnych aspektów konwertowania tekstu na małe litery jest obsługa znaków nielatynowskich. Na przykład, w językach takich jak turecki, niektóre litery mają swoją "małą wersję", która jest inna niż zwykła litera o mniejszej wielkości. W takim przypadku użycie metody `toLowerCase()` może spowodować nieoczekiwane wyniki, dlatego ważne jest zapoznanie się z wyjątkami w danym języku.
 
 ## Zobacz również
 
-- Dokumentacja Microsoft na temat konwersji znaków: https://docs.microsoft.com/pl-pl/dotnet/api/system.string.tolower
-- Przykładowy kod z wykorzystaniem toLowerCase(): https://www.tutorialspoint.com/typescript/typescript_string_tolowercase.htm 
-- Porównanie między metodami toLowerCase() i toUpperCase(): https://www.freecodecamp.org/news/how-to-convert-a-string-to-uppercase-or-lowercase-in-javascript-49930eea3b8c/
+- [Dokumentacja TypeScript - Klasy String](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [JavaScript.info - String Methods](https://javascript.info/string-methods)
+- [MDN Web Docs - String.prototype.toLocaleLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)

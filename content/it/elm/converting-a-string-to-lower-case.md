@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Convertire una stringa in minuscolo"
+simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elm/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,41 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Con la programmazione sempre più diffusa, è importante imparare a utilizzare tutti gli strumenti disponibili per semplificare il processo di sviluppo. Uno di questi strumenti è il convertitore di stringhe in minuscolo in Elm. In questo post, esploreremo il motivo per cui è utile e come utilizzarlo correttamente.
+Convertire una stringa in minuscolo può essere utile quando si vuole standardizzare l'input degli utenti, rendere più semplici le operazioni di confronto tra stringhe o semplicemente per uniformità nella presentazione dei dati.
 
-## Come convertire una stringa in minuscolo
+## Come fare
 
-Per utilizzare il convertitore di stringhe in minuscolo in Elm, è necessario seguire alcuni semplici passaggi. Prima di tutto, è necessario importare il modulo String alla parte superiore del tuo file di codice. Questo modulo contiene tutte le funzioni necessarie per manipolare le stringhe in Elm.
-
-Una volta importato il modulo, puoi utilizzare la funzione `toLower`, che accetta una stringa come argomento e restituisce la stessa stringa in minuscolo. Ecco un esempio di codice:
+Per convertire una stringa in minuscolo in Elm, si può utilizzare la funzione `String.toLower`. Ecco un esempio di codice:
 
 ```Elm
-import String exposing (toLower)
-
-stringa = "ELM PROGRAMMING È DIVERTENTE"
-stringaInMinuscolo = toLower stringa
-
--- Output: elm programming è divertente
+stringa = "CIAO A TUTTI"
+String.toLower stringa
 ```
 
-Come puoi vedere, la funzione `toLower` ha convertito con successo la stringa in minuscolo. Ora puoi utilizzare la variabile `stringaInMinuscolo` nel tuo codice come desideri.
+L'output di questo codice sarà:
+
+```Elm
+"ciao a tutti"
+```
+
+Possiamo anche passare direttamente la stringa come argomento della funzione, senza dover prima crearne una variabile:
+
+```Elm
+String.toLower "SALVE A TUTTI"
+```
+
+E l'output sarà lo stesso. 
 
 ## Approfondimento
 
-Mentre il processo di conversione di una stringa in minuscolo sembra semplice, ci sono alcuni aspetti che possono essere interessanti da esplorare. Innanzitutto, è importante notare che la funzione `toLower` non modifica effettivamente la stringa originale, ma restituisce una nuova stringa in minuscolo. Ciò è importante perché molte funzioni in Elm sono "puramente funzionali", il che significa che non modificano gli argomenti passati ma restituiscono un nuovo valore.
+È importante notare che la funzione `String.toLower` è di fatto una chiamata al sistema operativo per l'esecuzione di una particolare funzione di conversione. Questo significa che il suo comportamento potrebbe variare a seconda del sistema operativo su cui viene eseguito il codice.
 
-Inoltre, la funzione `toLower` non funziona solo con le lettere dell'alfabeto. Puoi usarla anche con altri caratteri, come i numeri, i simboli e anche gli emoji! Ad esempio:
+Inoltre, va tenuto presente che la conversione avviene in base alle regole della locale (lingua) impostata nel sistema. Ad esempio, se si utilizza una locale italiana, la conversione di una stringa come "HELLO" risulterà "hello". Ma se si utilizza una locale francese, il risultato sarà "héllö". 
 
-```Elm
-toLower "123 $ ELM" == "123 $ elm"
-toLower "HAPPY 😊" == "happy 😊"
-```
-
-Infine, è importante notare che il processo di conversione in minuscolo non è semplicemente una sostituzione dei caratteri maiuscoli con quelli minuscoli. Ci sono alcune eccezioni per alcune lingue e diacritici, quindi è importante fare attenzione quando si utilizza questa funzione con stringhe contenenti caratteri speciali.
+È anche possibile utilizzare la funzione `String.toLowerAscii` per convertire la stringa solo in caratteri ASCII, ignorando quelli accentati. 
 
 ## Vedi anche
 
-- La documentazione ufficiale sulla funzione [toLower](https://package.elm-lang.org/packages/elm-lang/core/latest/String#toLower)
-- Una guida dettagliata sull'utilizzo dei moduli in Elm: [Guide ai Moduli](https://guide.elm-lang.org/imports/)
-
-Con queste informazioni, ora sei pronto per utilizzare il convertitore di stringhe in minuscolo in Elm per semplificare il tuo processo di sviluppo. Buon coding!
+- Documentazione Elm su `String.toLower`: https://package.elm-lang.org/packages/elm/core/latest/String#toLower
+- Altre funzioni di conversione delle stringhe: https://package.elm-lang.org/packages/elm/core/latest/String#module
+- Articolo sulla gestione delle locale in Elm: https://guide.elm-lang.org/appendix/i18n.html

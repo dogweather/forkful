@@ -1,22 +1,34 @@
 ---
-title:                "Fish Shell: एक पाठ फ़ाइल लिखना"
+title:                "Fish Shell: एक टेक्स्ट फाइल लिखना"
+simple_title:         "एक टेक्स्ट फाइल लिखना"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun
-Text file likhne mai kya fayda hai? Text file  hume important information ya instructions ko aasani se store aur access karne ka option deta hai. Yeh badiya tarika hai apne programming projects aur daily tasks ko organized rakhne ka.
+## क्यूं
 
-## Kaise Kare
-Text file likhne ke liye, sabse pehle Fish Shell ko apne system mai install karna hoga. Phir terminal ko open kare aur ```touch``` command ka use karke file create kare. File create hone ke baad apni text ko file mai type kar de. Example ke liye, ```touch hello.txt``` command ka use karke ek text file create kare. Phir file mai hello world likh kar save kare. Ab file ko open karne ke liye, ```cat hello.txt``` command ka use kare. Aapko output mai "Hello world" likha hua milega. Simple!
+टेक्स्ट फाइल लिखने में शामिल होने का कारण सिर्फ 1-2 वाक्यों में बताएं.
 
-## Deep Dive
-Text file likhne ke liye bahut saare formats available hai, jaise ki .txt, .md, .sh, .py, etc. Fish Shell mai ```touch``` command ka use file create karne ke liye hota hai. Is command ke baad file naam ka use bhi kiya jaa sakta hai jaise ki ```touch hello.txt```. File create karne ke baad kisi bhi text editor ya terminal se text ko file mai type kar sakte hai. Text file mai koi bhi text, instructions, code ya other information likh sakte hai aur use save karke later use kar sakte hai.
+## कैसे करें
 
-## Dekhiye Bhi
-1. [Fish Shell ki official website](https://fishshell.com/)
-2. [Fish Shell ke basics aur commands](https://www.digitalocean.com/community/tutorials/an-introduction-to-the-fish-shell)
-3. [Text file likhna sikhein](https://www.tutorialspoint.com/unix/unix-file-management.htm)
+```Fish Shell ...
+echo "इस तरह आप एक नयी टेक्स्ट फाइल बना सकते हैं" > newfile.txt
+```
+
+आप ऐसे कोड ब्लॉक में सेम्पल आउटपुट देख सकते हैं जो आपको टेक्स्ट फाइल बनाने के लिए कमांड दिखाता है.
+
+## गहराई में जाएं
+
+टेक्स्ट फाइल लिखने के बारे में अधिक जानकारी के लिए, आप टेक्स्ट फाइल कैसे लिखें और कैसे स्ट्रिंग को फाइल में लिखें के बारे में और भी कई विस्तृत जानकारी पा सकते हैं. आप टेक्स्ट फाइलों को कैसे ब्राउज़ कर सकते हैं और कैसे उन्हें अन्य फाइलों में इंपोर्ट और एक्सपोर्ट कर सकते हैं.
+
+## देखें भी
+
+"अन्य सहायक आर्टिकल्स के लिए ये लिंक्स देखें:"
+
+- [Fish Shell के बेसिक्स सीखें](https://www.howtohindi.com/fish-shell-ke-basic-sikhe/)
+- [ताजा तरीकों से टेक्स्ट फाइल को कैसे एक्सेस करें](https://www.hinditechgyan.com/how-to-access-text-files-with-new-methods/)
+- [टेक्स्ट फाइल क्या होती है और इसका उपयोग कैसे किया जाता है](https://www.makeuseof.com/text-file-what-is-it/)

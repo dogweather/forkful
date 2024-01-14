@@ -1,75 +1,65 @@
 ---
 title:                "C++: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "C++"
-category:             "Numbers"
+category:             "C++"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：生成随机数有什么用处？
-生成随机数在编程中的作用十分重要。它可以用于测试程序的稳定性和边缘情况，也可以用于创建随机模拟实验。此外，随机数也被用于创建唯一的ID或者密码，并且在游戏开发中也十分常见。
+"为什么"本文将介绍如何在C++中生成随机数字，并通过代码示例和深入探讨解释这一过程的原理和意义。 C++是一种流行的编程语言，经常被用于编写大型和复杂的程序，而随机数字生成是一个广泛应用的技术。
 
-## 如何生成随机数
+## 为什么
+
+生成随机数字在编程中是一个常见的需求。它可以被用来创建各种功能，例如游戏中的随机事件、数据加密、模拟实验、密码生成等。随机数字可以让程序变得更加有趣和多样化，也可以提高程序的安全性。
+
+## 如何实现
+
+在C++中生成随机数字需要使用标准库中的随机数生成器（rand()）函数。该函数需要一个种子作为输入，种子可以是任意的整数值，通常使用系统时间作为种子，这样每次程序运行时都会生成不同的随机数字序列。下面是一个简单的示例代码：
 
 ```C++
 #include <iostream>
-#include <cstdlib> //包含了rand()和srand()函数
-#include <ctime>   //包含了time()函数，用于设置seed值
+#include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
-int main(){
-    
-    //设置seed值，可以保证每次运行程序时生成的随机数是不同的
+int main() {
+    // 设置种子为系统时间
     srand(time(0));
-    
-    //生成一个介于0到99之间的随机数
-    int num = rand() % 100;
-    
-    //打印随机数
-    cout << "随机数为：" << num << endl;
-    
+
+    // 生成5个随机数
+    for (int i = 0; i < 5; i++) {
+        // 使用取模运算来限制随机数的范围
+        int num = rand() % 1000;
+        // 输出随机数
+        cout << num << " ";
+    }
+
     return 0;
 }
 ```
 
-输出结果：
+输出结果可能为：
 
 ```
-随机数为：42
+845 3 267 517 942
 ```
 
-更复杂的情况下，我们也可以生成一个指定范围内的随机数，比如生成一个1到10之间的随机数。
+## 深入探讨
 
-```C++
-//生成一个介于1到10之间的随机数
-int num = 1 + rand() % 10;
-```
-
-我们也可以生成一个浮点数，比如生成一个0到1之间的随机小数。
-
-```C++
-//生成一个0到1之间的随机小数
-float num = rand() / (float)RAND_MAX;
-```
-
-## 深入了解
-
-在生成随机数的过程中，还有一些概念需要我们深入了解。首先是seed值，它决定了随机数的起点，也就是说如果seed值相同，那么生成的随机数也将是相同的。通常情况下，我们可以使用当前的时间作为seed值，这样每次重新运行程序时都会有不同的seed值。
-
-其次是伪随机数。由于计算机的算法实现的原因，所谓的随机数并不是真正意义上的随机，而是伪随机。这意味着生成的随机数有一定的规律可循，但对于一般的应用来说已经足够。
-
-最后是随机数的分布。比如使用rand()函数所生成的随机数，其分布并非是均匀的，也就是说不同的数出现的概率并不相同。如果需要均匀分布的随机数，可以使用一些其他的算法实现。
+随机数字生成是一个涉及到概率论的复杂问题。在计算机中，所有的随机数字实际上都是通过一系列确定性的计算得到的。因此，我们所说的“随机”实际上是一种伪随机的概念。C++标准库中的随机数生成器使用了线性同余法来生成伪随机数字。该方法使用一个乘数、一个加数和一个模数来计算下一个随机数，其中模数控制了随机数的范围。由于种子的不同，最终生成的随机数序列也会有所不同。
 
 ## 参考资料
 
-- [C++ 随机数生成](https://zh.cppreference.com/w/cpp/numeric/random)
-- [C 深入理解伪随机数生成算法](https://baike.baidu.com/item/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E3%80%81%E6%9C%BA%E7%A8%8B%E7%94%9F%E6%88%90%E7%AE%97%E6%B3%95)
-- [轻松学习 C++ 中的随机数生成机制](https://www.jianshu.com/p/bc64542c885b)
+- [cplusplus.com - rand()](http://www.cplusplus.com/reference/cstdlib/rand/)
+- [GeeksforGeeks - Generating Random Numbers in C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+- [Wikipedia - Pseudorandom Number Generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
 
 ## 参见
 
-- [C++ for Beginners](https://www.programiz.com/cpp-programming)
-- [如何使用随机数进行游戏开发](https://www.gamedev.net/tutorials/programming/general-and-gameplay-programming/generating-random-numbers-r1174/)
-- [随机数的应用场景](http://www.ccrint.com/algorithm/rand01/)
+- [精通C++随机数生成器](https://www.zhihu.com/question/265768392)
+- [如何在C++中生成随机数](https://www.jianshu.com/p/8b7f8af82ea6)
+- [随机数生成器的原理与实现](https://www.jianshu.com/p/809a67025b20)

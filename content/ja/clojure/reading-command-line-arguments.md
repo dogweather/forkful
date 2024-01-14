@@ -1,29 +1,44 @@
 ---
-title:                "Clojure: コンピュータプログラミングのための「コマンドライン引数の読み込み」"
+title:                "Clojure: コンピュータ・プログラミングの記事「コマンドライン引数の読み込み」"
+simple_title:         "コンピュータ・プログラミングの記事「コマンドライン引数の読み込み」"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-＃＃なぜ
-コマンドライン引数を読み込むことについて学ぶのは重要です。プログラムをより動的に制御したり、ユーザーの入力に基づいて処理を行ったりするために必要です。
+## なぜ
 
-＃＃方法
-コマンドライン引数を読み込むには、`main`関数内で`args`パラメーターを使用します。例えば、以下のように入力値を出力するプログラムを作成することができます。
+コマンドライン引数を読み取ることは、プログラムをより動的にし、より多くのユーザーのニーズに応えることを可能にします。
 
-`` `Clojure
-(defn -main [& args]
-  (println "入力値は：" args))
+## 使い方
+
+コマンドライン引数を読み取るには、```clojure
+(System/getProperty "sun.java.command")
+``` のように、Javaのプロパティを使用することができます。また、```clojure
+(System/getProperty "clojure.args")
+``` でも同じ結果を取得できます。
+
+例えば、以下のコードを実行すると：
+
+```clojure
+(defn greet [name]
+  (println (str "Hello " name "!")))
+
+(defn -main []
+  (let [args (System/getProperty "sun.java.command")]
+    (greet (nth args 0))))
 ```
 
-入力値が`java -jar myprogram.jar input1 input2`の場合、出力は`入力値は： (input1 input2)`となります。
+コマンドラインから```java -jar example.jar "John"``` というコマンドを実行すると、"Hello John!"という出力が得られます。このように、コマンドライン引数を受け取って、それを関数に渡すことで、より柔軟なプログラムを作ることができます。
 
-＃＃深い潜り込み
-コマンドライン引数を読み込むことで、プログラムをより動的に制御できます。`getopts`関数を使用すると、引数をオプションとして受け取ることができます。また、`clojure.tools.cli`ライブラリを使用すると、より多くのオプションや引数を処理できるようになります。詳細については、公式ドキュメントを参照してください。
+## ディープダイブ
 
-＃＃参考リンク
-- 公式ドキュメント：https://clojure.org/reference/java_command_line_tools
-- `getopts`関数の使用方法：https://stackoverflow.com/questions/47492213/clojure-command-line-arguments
-- `clojure.tools.cli`ライブラリの使用方法：https://github.com/clojure/tools.cli
+Javaのプロパティを使用してコマンドライン引数を読み取る方法は、オペレーティングシステムやツールによって異なる場合があります。そのため、より複雑なコマンドライン引数の取得を行う場合は、[tools.cli](https://github.com/clojure/tools.cli)や[clj-opts](https://github.com/gliderlabs/clj-opts)などのライブラリを使用することをおすすめします。
+
+## その他
+
+[Javaのpropertiesを使用する方法](https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html)<br>
+[tools.cliのドキュメント](https://github.com/clojure/tools.cli/wiki/Creating-a-command-line)

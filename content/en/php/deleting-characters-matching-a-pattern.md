@@ -1,58 +1,45 @@
 ---
 title:                "PHP recipe: Deleting characters matching a pattern"
+simple_title:         "Deleting characters matching a pattern"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-There are times when we may need to delete certain characters from a string that matches a specific pattern in our PHP code. This can be a useful technique in cleaning up data or manipulating strings for various purposes. In this blog post, we will explore how to delete characters matching a pattern in PHP.
+Have you ever encountered a situation where you needed to remove certain characters from a string in your PHP code? Perhaps it was a pesky line break or a special character causing unwanted formatting. Whatever the case, deleting characters matching a certain pattern can be a useful tool in your PHP programming arsenal.
 
 ## How To
+To delete characters matching a pattern in PHP, we can use the `preg_replace()` function. Let's take a look at an example:
 
-To delete characters matching a pattern in PHP, we will use the `preg_replace()` function. This function searches a string for a specific pattern and replaces it with a different string. Let's take a look at an example:
+```
+<?php 
+$string = "Hello, [World]! How are you?";
+$new_string = preg_replace("/\[.*?\]/", "", $string);
+echo $new_string;
 
-```PHP
-$text = "Hello, [world]!";
-$clean_text = preg_replace("/[^\w\s]/", "", $text);
-
-echo $clean_text;
+// Output: Hello, ! How are you?
+?>
 ```
 
-In this example, we have a string with special characters such as brackets and an exclamation mark. We want to remove these characters and only keep letters, numbers, and spaces. The `preg_replace()` function takes two parameters - the pattern to search for and the replacement string. In our pattern, we use the brackets `[]` to specify the range of characters we want to keep, and the caret `^` to indicate negation. This means that all characters except for letters, numbers, and spaces will be replaced with an empty string. The output of this code will be:
+In this example, we use the `preg_replace()` function to remove any characters between square brackets, including the brackets themselves. Let's break down the parameters of this function:
+- The first parameter is the regular expression pattern we want to match. In this case, we use the opening bracket, followed by any number of characters, followed by the closing bracket.
+- The second parameter is the replacement string, which we leave empty since we want to delete the matched characters.
+- The third parameter is the original string that we want to perform this operation on.
 
-```PHP
-Hello world
-```
-
-We can also use regular expressions in our pattern to match more complex patterns. For example, let's say we want to remove all numbers from a string. We can use the `\d` pattern which matches any digit from 0-9. 
-
-```PHP
-$text = "I have 3 cats and 2 dogs";
-$clean_text = preg_replace("/\d/", "", $text);
-
-echo $clean_text;
-```
-
-The output of this code will be:
-
-```PHP
-I have  cats and  dogs
-```
-
-We can use this technique to remove any characters or patterns that we do not want in our strings.
+The `preg_replace()` function returns a new string with the matched characters removed, but it does not modify the original string. That's why we assign the result to a new variable `$new_string` and then echo it out.
 
 ## Deep Dive
+The `preg_replace()` function uses regular expressions (regex) to find and replace text in a string. Regular expressions are a powerful pattern matching tool that allows us to specify patterns of characters we want to search for in a string.
 
-When using regular expressions in our `preg_replace()` function, it's important to understand different modifiers that can affect the outcome. For example, the `i` modifier makes the pattern case-insensitive, `g` makes it search globally, and `m` makes it multi-line. You can read more about useful modifiers in the [PHP documentation](https://www.php.net/manual/en/reference.pcre.pattern.modifiers.php).
+In our example, we used the `.*?` pattern to match any number of characters, including spaces and special characters, between the brackets. The `?` modifier makes this pattern non-greedy, meaning it will stop matching as soon as it finds the first closing bracket.
 
-It's also worth mentioning that using regular expressions can be more resource-intensive than other string manipulation techniques. So if you are working with large amounts of data, it's important to keep this in mind and consider alternative solutions.
+If you want to learn more about regular expressions and how to use them in PHP, [this tutorial](https://www.php.net/manual/en/function.preg-replace.php#example-826) from the official PHP documentation is a great place to start.
 
 ## See Also
-
-- [PHP preg_replace() function documentation](https://www.php.net/manual/en/function.preg-replace.php)
-- [Regex Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/php)
-- [PHP string manipulation functions](https://www.w3schools.com/php/php_ref_string.asp)
+- [PHP documentation on preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
+- [Regular Expressions 101: A Beginner's Guide](https://www.regular-expressions.info/tutorial.html)
+- [Regex Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)

@@ -1,7 +1,9 @@
 ---
 title:                "Gleam recipe: Converting a string to lower case"
+simple_title:         "Converting a string to lower case"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,33 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Converting a string to lower case is a common task in most programming languages. It is especially useful when dealing with user input or comparing strings in a case-insensitive manner. In Gleam, this can be achieved easily with a built-in function.
+Converting a string to lower case is a common task in programming, especially when dealing with user inputs or comparing strings for equality. By converting all characters to lower case, we eliminate the issue of case sensitivity and make it easier to handle strings in our code.
 
 ## How To
 
-To convert a string to lower case in Gleam, we can use the `String.to_lower` function. Here is a simple example:
+To convert a string to lower case in Gleam, we can use the `string.to_lower` function. Let's take a look at an example:
 
 ```Gleam
-import gleam/string
-
-let my_string = "HeLLo WoRlD"
-let lower_string = String.to_lower(my_string)
-
-// Output: "hello world"
+let name = "John"
+let lower_case_name = string.to_lower(name)
 ```
 
-As you can see, the `to_lower` function takes in a string as an argument and returns a new string with all characters converted to lower case. This function can also be used to convert individual characters to lower case, in case you ever need to do so.
+In this code, we first declare a string variable `name` with the value of "John". Then, we use the `string.to_lower` function to convert the string to lower case and assign the result to a new variable `lower_case_name`. The output of this example would be "john".
+
+We can also use this function to directly convert user inputs to lower case. For example:
+
+```Gleam
+let input = IO.read_line()
+let lower_case_input = string.to_lower(input)
+```
+
+Here, we use the `IO.read_line()` function to prompt the user for input, which we then convert to lower case using `string.to_lower` and assign to the `lower_case_input` variable.
 
 ## Deep Dive
 
-Under the hood, Gleam's `String.to_lower` function uses the `Unicode.CaseMapping.fold` function to handle all possible unicode characters. This ensures that the conversion is done accurately for all languages and character sets.
+In Gleam, strings are represented as `string` terms, which are actually lists of Unicode code points. When we use the `string.to_lower` function, it iterates through each code point in the string and converts any uppercase letters to their lowercase equivalents.
 
-Furthermore, the `to_lower` function also takes into account any locale-specific transformations that may be required, making it a robust and reliable way to convert strings to lower case.
+One thing to note is that this function only works with Unicode code points, so if you are dealing with non-Unicode characters, you may need to use a different approach.
+
+Another useful function when working with strings in Gleam is `string.to_upper`, which does the opposite of `string.to_lower` and converts all characters to uppercase.
 
 ## See Also
 
-Here are some other useful links for working with strings in Gleam:
-
-- Official Gleam documentation on strings: https://gleam.run/book/core_string.html
-- Unicode support in Gleam: https://gleam.run/book/unicode.html
-- Working with locales in Gleam: https://gleam.run/book/locales.html
+- Gleam Documentation: https://gleam.run/documentation/
+- Learn Gleam - Basics: https://gleam.run/book/basics
+- String Manipulation in Gleam: https://gleam.run/book/strings

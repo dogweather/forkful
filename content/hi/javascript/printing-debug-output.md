@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: डीबग आउटपुट प्रिंट करना"
+simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/printing-debug-output.md"
 ---
 
@@ -9,28 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-जेसे हम सभी जानते हैं की JavaScript एकी सबसे पोपुलर और सबसे काम के programming languages हे। लेकिन कई बार हमारे कोड में गलती हो जाती है और हमें पता ही नहीं चलता की गलती कहा हुई है या कौनसा कोड कहा execute नहीं हो रहा। ऐसे में हम print करके debug output के माध्यम से हमें error का पता लगा सकते हैं। इसलिए debug output printing दूसरे types के debugging से ज्यादा आसानलिखित-है।
+प्रोग्रामिंग में डिबग आउटपुट प्रिंट करने का मुख्य कारण है कोड में दिख रही समस्याओं को पहचानना और सुधार करना। डिबग आउटपुट से समस्याओं का पता लगाना बहुत आसान होता है और सही समाधान ढूंढने में मदद करता है।
 
 ## कैसे करें
 
-```javascript
-console.log("Debug output आपको काफी मदद कर सकता है।");
+जावास्क्रिप्ट में डिबग आउटपुट प्रिंट करने के लिए हम `console.log()` फंक्शन का इस्तेमाल कर सकते हैं। यह फंक्शन किसी भी परमेटर को आउटपुट के रूप में प्रिंट करता है।
+
+```Javascript
+// स्ट्रिंग प्रिंट करने का उदाहरण
+let name = "अमित";
+console.log("मेरा नाम है " + name);
+
+// नंबर प्रिंट करने का उदाहरण
+let age = 25;
+console.log("मेरी उम्र " + age + " साल है।");
 ```
 
-जैसे की ऊपर दिखाया गया है की आप console.log() का उपयोग करके आसानी से debug output print कर सकते हैं। कोड में जहा भी आपको लगता है की error हो रहा है उसके ठीक नीचे console.log() को लिखिए और आप गलती को ढूंढ सकते हैं। 
+इसके अलावा, हम ओब्जेक्ट्स और एरे को भी प्रिंट कर सकते हैं।
 
-```javascript
-let firstName = "John";
-let lastName = "Doe";
-console.log("firstName: ", firstName);
-console.log("lastName: ", lastName);
+```Javascript
+// ऑब्जेक्ट प्रिंट करने का उदाहरण
+let person = {
+    name: "अमित",
+    age: 25,
+    country: "भारत"
+}
+console.log(person);
 
-let fullName = firstName + lastName; // This will cause an error
-console.log("fullName: ", fullName);
+// एरे प्रिंट करने का उदाहरण
+let names = ["अमित", "रोहित", "अनुष्का"];
+console.log(names);
 ```
 
-इस उदाहरण में, हमें मालूम है की error कहा है - लास्ट लाइन में fullName वैरियेबल का मूल्य जोडिये कि जगह। और हमारे कंसोल एउटपुट में दिखाया गया है क्योकि हमने उस वैरियेबल का मूल्य print कराया था। आप अपने कोड में जितने बार आपको लगे तबतक आप console.log() को लिख सकते हैं। इससे आपका debugging process बहुत ही सादे हो जाता है।
+इस तरह से हम विभिन्न प्रकार की डाटा टाइप्स को आउटपुट के रूप में प्रिंट कर सकते हैं।
 
 ## गहराई में
 
-Debug output printing का उपयोग करने से आपको गलती को सही करने के लिए काफी मदद मिलती है। इससे आपको पता चलता है की किस लाइन में error हुई है और आप उसे ठीक कर सकते हैं। इससे आपका काम भी आसान हो जाता है क्योकि आपको
+डिबग आउटपुट को प्रिंट करने से हमें कोड के विभिन्न हिस्सों की गहराई में जाने का एक अच्छा तरीका मिलता है। प्रिंट किए गए डेटा से हम अपने कोड के गलत भागों को पहचान सकते हैं और उन्हें सुधार सकते हैं। इससे हमें कोड को बेहतर बनाने में मदद मिलती है।
+
+## द

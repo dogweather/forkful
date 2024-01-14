@@ -1,51 +1,40 @@
 ---
 title:                "Fish Shell: Comenzando un nuevo proyecto"
+simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Fish Shell"
-category:             "Getting Started"
+category:             "Fish Shell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por Qué?
 
-¿Alguna vez has querido empezar un proyecto desde cero pero no sabes por dónde empezar? Con la ayuda de Fish Shell, puedes crear y configurar rápidamente nuevos proyectos de programación para que puedas ponerte manos a la obra en tu próximo desafío.
+Iniciar un nuevo proyecto puede ser emocionante y desafiante al mismo tiempo. Puede ser una oportunidad para aprender nuevas habilidades, resolver un problema existente o simplemente expresar tu creatividad. Sea cual sea la razón, el uso de Fish Shell puede hacer que la creación de tu proyecto sea más eficiente y fluida.
 
-## Cómo hacerlo
+## Cómo
 
-Empezar un proyecto nuevo en Fish Shell es tan fácil como seguir estos pasos:
+Para comenzar un nuevo proyecto con Fish Shell, sigue estos pasos:
 
-1. Crea un nuevo directorio para tu proyecto usando el comando `mkdir`.
-2. Ingresa a ese directorio con `cd` y luego inicializa un nuevo repositorio con `git init`.
-3. Crea un archivo de configuración de Fish Shell con `touch config.fish` para establecer tus preferencias de entorno.
+1. Abre tu terminal y escribe ```fish```, esto iniciará Fish Shell.
+2. Crea un nuevo directorio para tu proyecto con el comando ```mkdir nombre_del_proyecto```.
+3. Ingresa al directorio recién creado con ```cd nombre_del_proyecto```.
+4. Crea un archivo ```README.md``` para describir tu proyecto con el comando ```touch README.md```.
+5. Escribe el contenido de tu archivo README.md con tu editor de texto preferido.
 
-Dentro del archivo `config.fish`, puedes personalizar tu promt con el comando `set -U fish_prompt "Mi Proyecto >"`. También puedes establecer alias útiles para comandos largos y tediosos, como `alias gc='git commit'`.
-
-```Fish Shell
-set -U fish_prompt "Mi Proyecto >"
-alias gc='git commit'
-```
-
-Esto te ahorrará tiempo y esfuerzo en el futuro al escribir comandos repetitivos.
+¡Y ahí lo tienes! Has iniciado un nuevo proyecto con Fish Shell.
 
 ## Profundizando
 
-Empezar un proyecto nuevo no se trata solo de configurar el entorno correcto, sino también sobre la organización y estructura del proyecto en sí. Una buena práctica es dividir tu código en diferentes archivos y carpetas, para mantenerlo limpio y fácil de navegar.
+Fish Shell ofrece varias características que pueden ser útiles para iniciar un nuevo proyecto. Por ejemplo, puedes utilizar el comando ```mkdir -p carpeta1/carpeta2``` para crear una estructura de carpetas en una sola línea. También puedes usar el operador ```&&``` para encadenar comandos y realizar tareas en secuencia.
 
-En Fish Shell, puedes crear fácilmente nuevos archivos usando `touch` y nuevas carpetas con `mkdir`. Además, puedes utilizar el comando `echo` para escribir contenido en un archivo desde la línea de comandos.
+Además, Fish Shell tiene una función de autocompletar que puede ahorrarte tiempo al escribir comandos largos. Simplemente presiona la tecla ```Tab``` para completar automáticamente el comando o la ruta del archivo.
 
-Por ejemplo, si queremos crear un archivo `main.py` en una carpeta llamada `codigo`, podríamos escribir los siguientes comandos:
+Explora todas las funciones de Fish Shell y descubre cómo puedes integrarlas en tu flujo de trabajo al iniciar un nuevo proyecto.
 
-```Fish Shell
-mkdir codigo
-touch codigo/main.py
-echo "print('¡Hola Mundo!')" > codigo/main.py
-```
+## Ver También
 
-Esto creará la carpeta y el archivo con el código escrito en el mismo comando. ¡Simple y eficiente!
-
-## Ver también
-
-- Documentación oficial de Fish Shell: https://fishshell.com/docs/current/index.html
-- Guía de inicio rápido de Fish Shell para principiantes: https://medium.com/@jaxzin/fish-shell-quick-start-guide-for-beginners-3cfd5b0639c7
-- Revisa más alias útiles para Fish Shell: https://github.com/fish-shell/awesome-fish
+- [Página oficial de Fish Shell](https://fishshell.com/)
+- [Documentación de Fish Shell](https://fishshell.com/docs/)
+- [Tutorial de Fish Shell en español](https://medium.com/@emiliorios/tutorial-fish-el-shell-m%C3%A1s-amigable-y-productivo-del-planeta-3039df62e746)

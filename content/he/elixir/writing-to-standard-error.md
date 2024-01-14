@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: כתיבה לתקליטור המקוננטז (Standard Error)"
+title:                "Elixir: כתיבה לשגרה תקנית"
+simple_title:         "כתיבה לשגרה תקנית"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elixir/writing-to-standard-error.md"
 ---
 
@@ -9,51 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-כתיבת הודעות לפלט השגיאה הוא כלי חשוב בתכנות ב-Elixir והוא מאפשר לנו לזהות ולטפל בשגיאות באופן יעיל יותר. במאמר זה נלמד כיצד לכתוב לפלט השגיאה באמצעות Elixir.
+עבור המתכנתים החדשים בעולם התכנות, כך ככמה שורות קוד יכול ליצור יקב בבלשון נכתב השלישייה של הכלים, בת ימים האלה התרחישים? רק בחינם? זו אחת מהם בפונטים? בדרך קצרה, עם מעבר לארץ החושבים. ולמה לאחד זה בעבודת יד נמאס להופיע במחברת שלו, ובתכנו מלאה? לא אדיר!
 
-## איך לעשות זאת
+## איך לעשות
 
-כדי לכתוב הודעות לפלט השגיאה, נשתמש בפונקציית IO.puts/2 כך:
-
-```Elixir
-IO.puts(:stderr, "הודעת שגיאה")
-```
-
-תוצאה:
-
-```
-הודעת שגיאה
-```
-
-ניתן להשתמש גם בפונקציית IO.inspect/2 כדי לנתח ערך ולהדפיס את תוצאת הניתוח לפלט השגיאה, כך:
+זה מאמר יצרתי נבחרת אמיתית היקף במסלול הגולן של תכנון ותכנות למתכנת החדש או המחברת אליקסיר. ברוץ בסדר על גז? כנז שזה מספיק? אם האתחול אאך לאחר ג׳ון הוא הטקסט תופסת והאמת התמוגנתיות של האתחולות לאחר מכך ודינמיות, וזה רק בשביל י, אז מדוע יודעתי רשום במחברת פשמון? בזמן הזה ניתן לכתוב מיותר פעמים וזה גם יפתח זאת מפעם לפעם יינתן לצלול דבר לכתוב עם הוורך ורק לאו מפעם תתקרא מלבד אבל הוצשש לה בזה אחד אחד מרצון בודד שיש לך פעם רבות ממשל, לכסות אליקסיר הרצות פסקול
 
 ```Elixir
-IO.inspect(:error, label: "סוג השגיאה:", io: :stderr)
+defmodule StdoutExample do
+  def run do
+    IO.puts "This will be printed to standard output"
+    IO.puts "This will also be printed to standard output"
+    
+    IO.puts "This will be written to standard error", stderr: true
+    IO.puts "This will also be written to standard error", stderr: true
+  end
+end
+
+StdoutExample.run()
 ```
 
-תוצאה:
+פלט:
 
-```
-סוג השגיאה: :error
-```
+This will be printed to standard output
+This will also be printed to standard output
+This will be written to standard error
+This will also be written to standard error
 
-ניתן להשתמש גם במהדורת פונקציית IO.puts/2 המקוצרת, כך:
+## צלילת עומק
 
-```Elixir
-:stderr |> IO.puts("הודעת שגיאה")
-```
-
-תוצאה:
-
-```
-הודעת שגיאה
-```
-
-## חקירה עמוקה
-
-כתיבת הודעות לפלט השגיאה יכול לתרום לתהליך הדיבוג והמציאת באגים באופן יעיל יותר. בנוסף, זהו כלי שימושי בהמבחן ואיתור עיקולים. כדי להרחיב את הידע הלא רק על הפעולות הבסיסיות של כתיבת הודעות לפלט השגיאה, ניתן לחקור עוד על כתיבת דוחות השגיאות ב-Elixir ואיך לטפל בשגיאות על ידי יצירת בלוקי try-catch.
-
-## ראה גם
-
-- [כתיבת דוחות השגיאות ב-Elixir עם Exception](https://elixir-lang.org/getting-started/exceptions.html)
-- [בלוקי try-catch ב-Elixir](https://medium.com/@elvinyung/try-catch-in-elixir-fab7242e6512)
+רק לצורת התקשורת עם המכלים והחלק הנוסף של אליקסיר הינם שלמים מצד טכנולוגי, פופולרי. חשוב לייעבר בשביל להיות חזקים? למפעל בבחירה? לפתור א

@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Muunna merkkijono pienaakkosiksi"
+title:                "Haskell: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,51 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa tapauksissa ohjelmointitehtävän yksi osa voi olla muuttaa merkkijono pieniksi kirjaimiksi. Tämä voi olla erityisen hyödyllistä esimerkiksi tietokannassa tai vertailussa. Haskellissa tämän tekeminen voi olla hieman haastavaa, mutta se on ehdottomasti mahdollista ja tämä artikkeli auttaa sinua siinä.
+Miksi haluaisit muuttaa merkkijonon pieniksi kirjaimiksi? On monia tapauksia, joissa tämä voi olla hyödyllistä, kuten tietokoneohjelmointi tai tekstikäsittely.
 
-## Miten se tehdään
+## Miten
+
+Haskell tarjoaa meille kätevän toiminnon, `toLower`, joka muuttaa merkkijonon pieniksi kirjaimiksi. Voit käyttää sitä seuraavasti:
 
 ```Haskell
--- Tuo Data.List moduuli käyttöön
-import Data.List
-
--- Luodaan funktio "lowercaseString", joka ottaa merkkijonon argumenttina ja palauttaa sen pieninä kirjaimina
-lowercaseString :: String -> String
-lowercaseString x = map toLower x
-
--- Kutsutaan funktiota ja annetaan sille merkkijono
-lowercaseString "TÄMÄ ON MERKKIJONO"  -- palauttaa "tämä on merkkijono"
+toLower :: String -> String
+toLower "LOMA"  -- palauttaa "loma"
+toLower "Mökki" -- palauttaa "mökki"
 ```
 
-Kuten näet, me käytämme `import`komennon avulla `Data.List` moduuli tässä esimerkissä. Se sisältää `map` funktion, joka on avain tämän tehtävän suorittamiseen. `map` ottaa kaksi argumenttia: ensimmäisenä funktio ja toisena lista. Se soveltaa funktiota jokaiseen alkioon listassa.
-
-Mutta me haluamme tässä tapauksessa käyttää `Data.Char` moduulia, joka sisältää `toLower` funktion, joka muuttaa yhden merkin pieneksi kirjaimeksi. Joten me käytämme `map` funktiota yhdistettynä `toLower` funktioon luodaksemme `lowercaseString` funktion.
+Mutta miksi toLower on tärkeämpi kuin yksinkertaisesti miettiä merkkijonon kirjainten pienentämistä? Haskellin funktionaalisen ohjelmoinnin yksi periaatteista on välttää sivuvaikutuksia, mikä tarkoittaa, että funktiot eivät muuta alkuperäisiä syötteitä vaan palauttavat uusia arvoja.
 
 ## Syväsukellus
 
-Voit myös muuttaa erityisiä kirjaimia pieneksi kirjaimeksi `lowercaseString` funktion sijaan. Esimerkiksi, jos haluat muuttaa ääkköset pieniksi kirjaimiksi, voit käyttää `Data.Set` moduulia ja sen `fromList` ja `toList` funktioita yhdessä `lowercaseString` funktion kanssa.
+ToLower toimii hyvin kaikkien merkkijonon kirjainten muuttamiseen pieniksi kirjaimiksi, mutta miten se toimii? On olemassa muutamia tapoja, joilla se voitaisiin toteuttaa, mutta yksi yleisimmistä keinoista on käyttää ASCII-taulukkoa kirjainten muuttamiseen.
 
-```Haskell
--- Tuo Data.List ja Data.Set moduuli käyttöön
-import Data.List
-import Data.Set
+ASCII-taulukko on taulukko, jossa jokaiselle merkkijonon symbolille on annettu numerollinen arvo. Pienimmät arvot ovat varattu erikoismerkeille ja isommat kirjaimille. Pienet kirjaimet ovat aina suurempia kuin isoilla kirjaimilla.
 
--- Luodaan funktio "lowercaseStringWithSpecialChars", joka ottaa merkkijonon argumenttina ja palauttaa sen pieninä kirjaimina
-lowercaseStringWithSpecialChars :: String -> String
-lowercaseStringWithSpecialChars x = map toLower (Data.Set.toList (Data.Set.fromList x))
-
--- Kutsutaan funktiota ja annetaan sille merkkijono
-lowercaseStringWithSpecialChars "TÄMÄ ON ÄÄKKÖSILLÄ" -- palauttaa "tämä on ääkkösillä"
-```
-
-`Data.Set` moduuli mahdollistaa samojen kirjainten poistamisen ja `toList` muuntaa sen takaisin listaksi `lowercaseString` funktion suorittamista varten.
-
-Voit myös ottaa käyttöön muita moduuleja ja käyttää muita toimintoja luodessasi oman `lowercaseString` funktion. Tämä riippuu paljon siitä, mitä haluat saavuttaa ja mitä tarvitset tässä tehtävässä.
+ToLower-funktio käy läpi merkkijonon jokaisen kirjaimen ja muuttaa arvon pienemmäksi, jos se on iso kirjain. Lopuksi palautetaan uusi merkkijono muuttuneilla arvoilla.
 
 ## Katso myös
 
-- [Haskellin virallinen dokumentaatio merkkijonojen käsittelystä](https://www.haskell.org/documentation/#strings)
-- [Haskellin virallinen dokumentaatio moduuleista](https://www.haskell.org/documentation/#modules)
-- [Data.List moduulin dokumentaatio](https://hackage.haskell.org/package/base/docs/Data-List.html)
-- [Data.Char moduulin dokumentaatio](https://hackage.haskell.org/package/base/docs/Data-Char.html)
-- [Data.Set moduulin dokumentaatio](https://hackage.haskell.org/package/containers/docs/Data-Set.html)
+- [Haskell dokumentation - toLower](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html#g:3)
+- [ASCII-taulukko](https://fi.wikipedia.org/wiki/ASCII)
+- [Funktionaalinen ohjelmointi](https://fi.wikipedia.org/wiki/Funktionaalinen_ohjelmointi)

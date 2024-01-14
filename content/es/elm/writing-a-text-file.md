@@ -1,67 +1,49 @@
 ---
-title:                "Elm: Redacción de un archivo de texto"
+title:                "Elm: Escribiendo un archivo de texto"
+simple_title:         "Escribiendo un archivo de texto"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-¡Hola a todos!
+## Por qué
 
-Hoy vamos a hablar sobre cómo escribir un archivo de texto en Elm. Puede que te preguntes, "¿por qué debería preocuparme por escribir un archivo de texto en Elm?" Bueno, hay muchas razones por las que podrías querer hacerlo. Por ejemplo, puede que quieras guardar datos de tu programa en un archivo para poder acceder a ellos más tarde o para compartirlos con otros usuarios. ¡Así que empecemos!
+Escribir un archivo de texto es una de las tareas más comunes para los programadores de Elm. Puede ser utilizado para almacenar datos, configuraciones y otros tipos de información importante para su aplicación.
 
-## ¿Por qué?
+## Cómo
 
-Hay muchas razones por las que alguien podría querer escribir un archivo de texto en Elm. Una de las razones más comunes es guardar datos que tu programa necesita para funcionar correctamente. Esto puede incluir datos generados por el usuario, como preferencias o selecciones de configuración, o datos que tu programa recopila, como puntuaciones en un juego o resultados de una encuesta. También puede ser útil escribir un archivo de texto para compartir datos con otros usuarios o para guardar copias de seguridad de tus datos.
+Crear un archivo de texto en Elm es muy sencillo. Primero, debes importar el módulo `Text` en tu archivo. Luego, puedes utilizar la función `text` para crear un valor de texto. Aquí tienes un ejemplo:
 
-## Cómo hacerlo
+```Elm
+import Text
 
-Ahora veamos cómo escribir un archivo de texto en Elm. En primer lugar, necesitarás importar el módulo `Html.Events` para poder manejar eventos como hacer clic en un botón. También necesitarás importar el módulo `Json.Encode` para poder codificar tus datos en formato JSON para guardarlos en el archivo de texto.
-
-```
-import Html.Events exposing (onClick)
-import Json.Encode exposing (encode)
+miTexto = Text.text "¡Hola mundo!"
 ```
 
-Luego, puedes crear un botón en tu vista que llame a una función que escriba el archivo de texto cuando se haga clic en él. En este ejemplo, llamaremos a la función `writeTextFile` cuando el botón sea presionado.
+Esto creará un valor de texto que contiene la frase "¡Hola mundo!". Puedes asignar este valor a una variable y utilizarlo en otras partes de tu código.
 
-```
-view : Model -> Html Msg
-view model = 
-    div [] 
-        [ button [ onClick WriteTextFile ] [ text "Escribir archivo de texto" ]
-        , -- otras partes de tu vista 
-        ]
-```
+Si quieres guardar este texto en un archivo, puedes utilizar la biblioteca `elm/file` para escribir en un archivo específico. Aquí tienes un ejemplo:
 
-A continuación, definiremos la función `writeTextFile` que tomará los datos que quieres escribir en el archivo como parámetro.
+```Elm
+import File
+import Text
 
-```
- writeTextFile : String -> Cmd Msg
- writeTextFile dataToWrite =
-     Cmd.map FileSaved (Html.Events.file (encode dataToWrite))
+escribirArchivo = 
+  File.write "mi-archivo.txt" (Text.text "¡Hola mundo!")
 ```
 
-Como puedes ver, usamos la función `file` del módulo `Html.Events` para crear un comando que abrirá una ventana de "guardar como" en el navegador del usuario. También usamos la función `encode` del módulo `Json.Encode` para convertir nuestros datos a formato JSON antes de escribirlos en el archivo.
+Este código creará un archivo llamado "mi-archivo.txt" en la misma carpeta donde se encuentra tu archivo Elm y escribirá la frase "¡Hola mundo!" en él.
 
-Por último, necesitamos manejar el mensaje `FileSaved` que se enviará cuando el archivo se haya guardado exitosamente.
+## Deep Dive
 
-```
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-    case msg of
-        FileSaved ->
-            (model, Cmd.none)
-```
+Ahora que ya sabes cómo escribir un archivo de texto en Elm, hablemos un poco más sobre algunas de sus características. El módulo `Text` en Elm proporciona varias funciones útiles para trabajar con texto, como `toUpper` para convertir un texto en mayúsculas y `lines` para dividir un texto en líneas individuales.
 
-¡Y eso es todo! Ahora ya sabes cómo escribir un archivo de texto en Elm. ¡Puedes probar tu programa y ver cómo se guarda el archivo!
-
-## Profundizando
-
-Si quieres aprender más sobre cómo escribir un archivo de texto en Elm, recomendamos leer la documentación oficial sobre `Html.Events.file` y `Json.Encode`. También puedes explorar otras opciones para guardar datos en Elm, como la base de datos `IndexedDB` o los servicios de almacenamiento en la nube.
+Además, la biblioteca `elm/file` también ofrece funcionalidades avanzadas para manejar archivos, como crear y eliminar directorios, leer y escribir archivos binarios, y mucho más.
 
 ## Ver también
 
-- [Documentación oficial de Elm sobre Html.Events.file](https://package.elm-lang.org/packages/elm/html/latest/Html-Events#file)
-- [Documentación oficial de Elm sobre Json.Encode](https://package.elm-lang.org/packages/elm/json/latest/Json-Encode)
+- [Documentación oficial de Elm Text](https://package.elm-lang.org/packages/elm/core/latest/Text)
+- [Documentación oficial de Elm File](https://package.elm-lang.org/packages/elm/file/latest/)

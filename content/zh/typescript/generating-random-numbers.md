@@ -1,44 +1,44 @@
 ---
 title:                "TypeScript: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "TypeScript"
-category:             "Numbers"
+category:             "TypeScript"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么生成随机数
-如今，随机数在计算机编程中变得越来越重要。它们可以用来创建随机游戏，保护密码，做数据分析等等。生成随机数可以增加程序的难度和安全性，保证每次运行程序都能得到不同的结果。
+## 为什么
 
-## 如何生成随机数
+随机数在编程中扮演着重要的角色，它可以用来模拟随机事件，生成随机密码，以及用于游戏等各种应用场景。生成随机数可以让你的程序更加灵活，增加趣味性，让用户有不同的体验。在TypeScript中，我们可以轻松地生成随机数并应用于不同的项目中。
+
+## 如何做
+
+通过使用TypeScript内置的Math对象中的函数，我们可以轻松地实现随机数的生成。首先，我们需要声明一个变量来接收随机数，然后通过Math对象中的函数来生成随机数，最后将其打印出来。下面是一个简单的例子：
+
 ```TypeScript
-// 导入Math库
-import { Math } from "tsmath";
-
-// 生成0-1之间的随机数
 let randomNum = Math.random();
+console.log(randomNum);
+```
 
-// 生成指定范围内的随机整数
+这段代码会生成一个0到1之间的随机小数，并将其打印在控制台上。如果你想要生成指定范围内的随机整数，可以使用Math.floor()函数将随机小数取整，然后再乘以范围值。下面是一个生成1到10之间的随机整数的示例：
+
+```TypeScript
 let randomInt = Math.floor(Math.random() * 10) + 1;
+console.log(randomInt);
 ```
 
-输出示例:
-```
-randomNum = 0.547
-randomInt = 8
-```
+这样就可以生成一个1到10之间的随机整数。除了Math.random()和Math.floor()外，Math对象中还有其他用于生成随机数的函数，比如Math.round()用于四舍五入，Math.ceil()用于向上取整，Math.trunc()用于去除小数部分等等。通过组合使用这些函数，我们可以实现更多有趣的随机数生成。
 
-## 深入探讨随机数生成
-生成随机数的方法有很多种，每种方法都有其优缺点。常用的方法包括伪随机数生成器和真随机数生成器。伪随机数生成器基于一个初始值，之后每次运行都会按照确定的步骤生成相同的序列。而真随机数生成器则利用外部因素如游戏中的骰子或物理现象来产生真正的随机数。
+## 深入探讨
 
-另外，在生成随机数时也要注意其分布情况，以保证数值的均匀性。一般来说，我们希望生成的随机数能够近似于均匀分布，这样才能更好地实现随机的效果。
+虽然我们在上面提到了使用Math对象中的函数来生成随机数，但是这些函数并不是真正意义上的“随机”，而是伪随机。它们根据一个种子值来生成一系列看起来随机的结果，但是这些结果实际上是可以预测的。所以在一些安全性要求较高的场景，我们需要使用专门的加密类来生成真正意义上的随机数。
 
-## 查看更多资料
-- [Math库文档](https://www.typescriptlang.org/docs/handbook/declaration-files/by-example/library.html)
-- [伪随机数生成器和真随机数生成器的比较](https://www.geeksforgeeks.org/pseudo-random-vs-true-random-number-generator/)
-- [如何生成均匀分布的随机数](https://www.quora.com/What-is-the-best-way-to-generate-uniformly-distributed-random-numbers)
+此外，在生成大量随机数时，为了避免重复出现相同的值，我们可以使用shuffle算法来打乱已有的数组，然后取出打乱后的第一个值作为随机数。这样可以更有效地生成独特的随机数，避免出现重复。
 
-## 参考资料
-- [Random Number Generation in TypeScript](https://blog.bitsrc.io/random-number-generation-in-typescript-7633d550e671)
-- [The Importance of Randomness in Programming](https://medium.com/@olenicksoftware/the-importance-of-randomness-in-programming-719d0346e3ac)
-- [The Art of Randomness in Programming](https://www.techrepublic.com/blog/software-engineer/the-art-of-randomness-in-programming/)
+## 参考链接
+
+- [TypeScript官方文档：Math对象](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#new-built-in-types-math)
+- [真正随机数生成器的介绍](https://stackify.com/random-number-generator/)
+- [用JavaScript实现Fisher-Yates shuffle算法](https://www.javascripttutorial.net/array/javascript-shuffle-array/)

@@ -1,60 +1,75 @@
 ---
-title:                "Elixir: 生成随机数"
+title:                "Elixir: 产生随机数"
+simple_title:         "产生随机数"
 programming_language: "Elixir"
-category:             "Numbers"
+category:             "Elixir"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么：为什么要生成随机数
+为什么：
 
-随机数在编程中扮演着重要的角色，它们可以用于模拟现实世界中的随机事件或者用于加密算法。在Elixir编程中，生成随机数可以帮助我们更轻松地处理一些问题，并且让程序更加有趣。
+产生随机数在编程中是非常有用的。它可以帮助我们创建各种各样的游戏和应用程序，也可以用于测试和模拟数据。
 
-## 如何生成随机数
+## 如何操作：
 
-要在Elixir中生成随机数，我们可以使用内置的Random模块。首先，我们需要导入该模块，然后调用Random.uniform/2函数并传入一个范围值来产生一个随机数。
+首先，我们需要在代码中导入Elixir的“Random”模块。然后，我们使用`random.uniform/2`函数来生成随机数。以下是一个简单的示例，生成1到10之间的随机数：
 
-```elixir
+```
+Elixir
+
 import Random
 
-# 生成一个1到10之间的随机数
-Random.uniform(1, 10)
-#=> 7
+Random.uniform(1,10)
+
 ```
 
-我们也可以传入一个浮点数作为范围值来生成随机的小数。
+输出可能会是6，3，9等等。
 
-```elixir
-# 生成一个0到1之间的随机小数
-Random.uniform(0.0, 1.0)
-#=> 0.3456
+我们也可以使用`random.seed/0`函数来设置随机数的种子值，以确保每次运行程序时都会得到相同的随机数。例如：
+
+```
+Elixir
+
+import Random
+
+Random.seed(:elixir)
+
+Random.uniform(1,5)
+
 ```
 
-除了uniform/2函数，Random模块还提供了其他一些用于生成随机数的函数，如Random.int/1、Random.float/1和Random.seed/1等。
+每次运行的输出都会是相同的数字，例如3，4，2。
 
-## 深入了解随机数生成
+## 深入了解：
 
-在计算机科学中，真正的随机数是不存在的。所有的随机数都是由一个随机数生成器算法计算出来的。因此，对于同一个种子值，随机数生成器总是会生成相同的随机数序列。在Elixir中，我们可以通过Random.seed/1函数来设置随机数生成器的种子值。
+在Elixir中，随机数是根据“伪随机数生成器”算法生成的。它们使用一个种子值来确定生成的随机数序列，因此，如果我们使用相同的种子值，我们将始终得到相同的随机数序列。
 
-```elixir
-# 设置种子值为123，之后对于同一个种子值，都会生成相同的随机数序列
-Random.seed(123)
-#=> :ok
-Random.uniform(1, 10)
-#=> 6
-Random.uniform(1, 10)
-#=> 3
+同时，我们还可以使用`random.int/2 `函数来生成随机的整数，`random.float/2`函数来生成随机的小数。
+
+另外，我们可以使用`random.uniform/3`函数来生成指定个数的随机数列表，例如：
+
+```
+Elixir
+
+import Random
+
+Random.uniform(1,10,5)
+
 ```
 
-另外，Elixir的随机数生成器是基于Mersenne Twister算法实现的，它可以生成高质量的随机数序列。我们还可以使用Random.api_seed/0函数来获取当前的随机数种子值。
+输出可能会是[3,6,8,4,2]，其中5表示生成5个随机数。
 
-## 参考链接
+## 请参考：
 
-- 关于Elixir中Random模块的官方文档：https://hexdocs.pm/elixir/Random.html
-- Mersenne Twister随机数算法的介绍：https://en.wikipedia.org/wiki/Mersenne_Twister
+- Elixir官方文档中关于随机数的介绍: https://elixir-lang.org/getting-started/random-numbers.html
+- Elixir的“Random”模块文档: https://hexdocs.pm/elixir/Random.html
+- 关于伪随机数生成器的更多信息: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
 
-## 参见
+请参考：
 
-- Elixir的官方网站：https://elixir-lang.org/
-- Elixir的中文社区网站：http://elixir-cn.com/
+- Elixir官方文档中关于随机数的介绍: https://elixir-lang.org/getting-started/random-numbers.html
+- Elixir的“Random”模块文档: https://hexdocs.pm/elixir/Random.html
+- 关于伪随机数生成器的更多信息: https://en.wikipedia.org/wiki/Pseudorandom_number_generator

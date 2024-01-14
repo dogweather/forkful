@@ -1,7 +1,9 @@
 ---
-title:                "C#: Skriving til standardfeil"
+title:                "C#: Skriver til standardfeil"
+simple_title:         "Skriver til standardfeil"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/writing-to-standard-error.md"
 ---
 
@@ -9,44 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å kunne skrive til standardfeil er en viktig ferdighet i C# programmering. Det lar deg gi brukerne dine verdifull informasjon om feil og unntak som kan oppstå under kjøring av programmet ditt. Dette kan gjøre feilsøking og debugging mye enklere og mer effektivt.
+Å skrive til standardfeil er en vanlig praksis for utviklere som ønsker å fange eventuelle feil eller unntak som oppstår under kjøringen av et program. Det lar deg enkelt spore og feilsøke problemer under utviklingsprosessen.
 
 ## Hvordan
 
-For å skrive til standardfeil i C#, kan du bruke Console.Error.WriteLine() metoden. Denne metoden tar inn en streng som argument og skriver den ut til standardfeilstrømmen. Her er et enkelt eksempel:
+Du kan skrive til standardfeil ved hjelp av Console klasse i C#. Her er en enkel kode som fanger en exception og skriver den til standardfeil:
 
 ```C#
-Console.Error.WriteLine("Dette er en feilmelding");
+try {
+    // din kode
+}
+catch (Exception e) {
+    Console.Error.WriteLine("Feil oppsto: " + e.Message);
+}
 ```
 
-Når dette kjøres, vil strengen "Dette er en feilmelding" bli skrevet til standardfeilstrømmen, som vanligvis er konsollen. Merk at måten du skriver til standardfeil på er den samme som for standardutgang, men i stedet for Console.WriteLine() bruker du Console.Error.WriteLine().
-
-Du kan også skrive til standardfeil ved å bruke Console.SetError()-metoden. Dette lar deg endre standardfeilstrømmen til en annen strøm, som for eksempel en fil eller en nettverkstilkobling. Her er et eksempel på hvordan dette kan gjøres:
-
-```C#
-// Opprett en filstrøm for standardfeil
-FileStream errorStream = new FileStream("error.log", FileMode.OpenOrCreate, FileAccess.Write);
-
-// Endre standardfeilstrømmen til å peke på filstrømmen
-Console.SetError(errorStream);
-
-// Skriv en feilmelding til standardfeil
-Console.Error.WriteLine("Dette er en feilmelding som blir skrevet til error.log");
-
-// Husk å lukke filstrømmen når du er ferdig
-errorStream.Close();
-```
-
-Svært ofte vil du ønske å skrive til både standardutgang og standardfeil. Dette kan enkelt gjøres ved å bruke Console.WriteLine() og Console.Error.WriteLine() i kombinasjon. Da vil både standardutgang og standardfeilstrømmen bli skrevet til, men standardfeil vil bli skrevet i rødt for å skille det fra standardutgangen.
+Når programmet kjøres, vil output bli vist i rødt i konsollen og inneholde feilmeldingen fra unntaket. Dette gjør det enklere å identifisere problemet og fikse det.
 
 ## Dypdykk
 
-Det er viktig å merke seg at feil som oppstår under kjøring av et program automatisk blir skrevet til standardfeil, så du trenger ikke nødvendigvis å bruke Console.Error.WriteLine() for å få informasjon om feil. Det er bare når du ønsker å gi brukeren spesifikk informasjon om en feil eller unntak i koden din at du vil bruke denne metoden.
+Å skrive til standardfeil er spesielt nyttig når du vil logge informasjon om unntak som oppstår under programkjøringen. Med metoden `WriteLine` fra `Console.Error`-objektet kan du også skrive ut andre typer informasjon til standardfeil, for eksempel advarselsmeldinger eller statusoppdateringer.
 
-Å skrive til standardfeil er også nyttig når du jobber med flertrådede applikasjoner. Hver tråd har sin egen standardutgang og standardfeilstrøm, så ved å skrive til standardfeil kan du få informasjon om eventuelle feil i de individuelle trådene.
+Det er også verdt å nevne at standardfeil kan kobles til andre outputstrømmer, for eksempel filer eller nettverksporter, som gjør det mulig å lagre feilinformasjon på en mer permanent måte.
 
-## Se Også
+## Se også
 
-- [C# Console Error] (https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
-- [C# Console SetError()] (https://docs.microsoft.com/en-us/dotnet/api/system.console.seterror)
-- [Debugging in C#] (https://docs.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour)
+- [C# Console Klasse](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=netcore-3.1)
+- [Unntakshåndtering i C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/exceptions/)
+- [Feilsøking i C#](https://docs.microsoft.com/en-us/dotnet/games/introduction-to-debugging-in-csharp/)

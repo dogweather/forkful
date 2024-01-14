@@ -1,64 +1,50 @@
 ---
 title:                "Kotlin recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Writing Tests Is Essential in Kotlin Programming
+## Why
 
-As programmers, we always strive to produce high-quality and bug-free code. However, it can be challenging to ensure that our code is functioning correctly and efficiently, especially as our projects grow larger and more complex. This is where writing tests comes in. Writing tests allows us to catch bugs and errors early on in the development process, making debugging and maintaining our code much more manageable. Tests also serve as documentation for our code, making it easier for other developers to understand and work with in the future.
+As a developer, writing tests may seem like an extra step in the coding process and it can be tempting to skip them. However, writing tests is an important practice that can save time and prevent bugs from causing major issues in your code. In this blog post, we will delve into the importance of writing tests and how to do so effectively in Kotlin.
 
-## How To Write Tests in Kotlin
+## How To
 
-Writing tests in Kotlin is a straightforward and efficient process. Let's take a look at an example of a simple test for a function that calculates the sum of two numbers:
+Writing tests in Kotlin is fairly straightforward and follows a similar structure to other programming languages. Let's take a look at an example of a simple function that adds two numbers and how we can write a test for it:
 
-```Kotlin
-fun sum(a: Int, b: Int): Int {
+```kotlin
+fun addNumbers(a: Int, b: Int): Int {
     return a + b
 }
+```
 
-// Test
-fun testSum() {
-    val result = sum(5, 10)
-    assert(result == 15)
-    println("Test passed!")
+To test this function, we first need to create a test case using the `@Test` annotation. Within the test case, we can use the `assertEquals()` function to check if the output of our `addNumbers` function matches the expected result.
+
+```kotlin
+@Test
+fun testAddNumbers() {
+    val result = addNumbers(5, 10)
+    assertEquals(15, result)
 }
 ```
 
-In this example, we have a function called `sum` that takes in two `Int` parameters and returns their sum. The test function, `testSum`, first calls the `sum` function with the values 5 and 10 and then uses the `assert` function to check if the `result` variable is equal to 15. If the assertion is true, the test is considered passed, and a success message is printed.
+Now, when we run our test, we will get a passing result since the output of our `addNumbers` function matches the expected result. Writing tests like this not only ensures that our code is functioning correctly but also serves as a form of documentation for future reference.
 
-You can also use Kotlin's built-in testing framework, JUnit, to write more comprehensive tests. Here's an example of using JUnit in a simple test class:
+## Deep Dive
 
-```Kotlin
-import org.junit.Test
-import org.junit.Assert.*
+Writing tests also allows us to catch bugs early on in the development process. By writing tests for each function, we can easily pinpoint any errors and fix them before they cause bigger issues in our code.
 
-class CalculatorTest {
-    @Test
-    fun testSum() {
-        val calculator = Calculator()
-        val result = calculator.sum(5, 10)
-        assertEquals(15, result)
-    }
-}
-```
+Additionally, tests can help with the overall structure and design of our code. By writing tests, we are forced to think about different scenarios and edge cases, resulting in cleaner and more robust code.
 
-In this test, we create an instance of a `Calculator` class and use its `sum` method to calculate the sum of 5 and 10, then assert that the result is equal to 15 using the `assertEquals` function. By using JUnit, we can create more complex tests with multiple assertions and setup/teardown methods.
-
-## Deep Dive into Writing Tests in Kotlin
-
-When writing tests in Kotlin, there are a few best practices to keep in mind. First, it's essential to have a good balance between writing enough tests to cover all possible scenarios and not over-testing your code. It's also crucial to keep your tests independent and isolated, meaning one test should not depend on the results of another.
-
-Another aspect to consider when writing tests is code coverage. Code coverage measures the percentage of your code that is executed during tests. A higher code coverage means that more of your code has been tested, giving you more confidence in the quality of your code. Kotlin has built-in support for code coverage in both IntelliJ and Android Studio, making it easier to track and improve your code coverage.
-
-Lastly, it's essential to regularly review and update your tests as your codebase evolves. As you make changes to your code, ensure that your tests are still valid, and add new tests to cover any new functionality. This will help maintain the effectiveness and accuracy of your tests.
+It's also worth noting that writing tests is not a one-time task. As our code evolves and new features are added, we should also update and add tests accordingly to ensure that everything continues to function as expected.
 
 ## See Also
 
-- [Kotlin Testing Documentation](https://kotlinlang.org/docs/testing.html)
-- [JUnit Documentation](https://junit.org/junit5/docs/current/user-guide/)
-- [Code Coverage in IntelliJ](https://www.jetbrains.com/help/idea/code-coverage.html)
-- [Code Coverage in Android Studio](https://developer.android.com/studio/test/coverage)
+- [Unit Testing in Kotlin](https://kotlinlang.org/docs/tutorials/https://kotlinlang.org/docs/tutorials/unittests.html)
+- [The Art of Writing Testable Code](https://medium.com/@victorsavkin/testability-4230e4abc3c5)
+- [Test-Driven Development in Kotlin](https://www.raywenderlich.com/5493-test-driven-development-in-kotlin)

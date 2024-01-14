@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Convirtiendo una cadena a minúsculas"
+simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,64 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Aprender a convertir una cadena de texto a minúsculas es esencial para cualquier programador de Elixir. Esta habilidad te permitirá manipular cadenas de texto de una manera más eficiente y mejorar la calidad de tus aplicaciones.
+En la programación de Elixir, a menudo es necesario manipular y transformar cadenas de caracteres. Una de las tareas más comunes es convertir una cadena a minúsculas. Esto puede ser útil para comparar cadenas de manera más precisa o para formatear la salida de datos.
 
 ## Cómo hacerlo
 
-```elixir
-# Creamos una cadena de texto
-string = "Elixir es increíble"
+Para convertir una cadena a minúsculas en Elixir, podemos utilizar la función `String.downcase/1`. Aquí hay un ejemplo de cómo usar esta función:
 
-# Utilizamos la función String.downcase() para convertir la cadena a minúsculas
-String.downcase(string)
-
-# Output: "elixir es increíble"
+```Elixir
+String.downcase("HELLO WORLD") # salida: "hello world"
 ```
 
-Puedes usar esta función para trabajar con cadenas de texto que contengan letras mayúsculas, minúsculas y caracteres especiales. Además, puedes aplicarla a concatenaciones de cadenas de texto o utilizarla en combinación con otras funciones para manipular de manera aún más eficiente tus cadenas de texto.
+En este ejemplo, pasamos una cadena en mayúsculas a la función `String.downcase/1` y recibimos una cadena en minúsculas como salida.
+
+Podemos usar esta función para transformar una cadena en cualquier idioma, ya que Elixir es compatible con Unicode. Por ejemplo, si queremos convertir una cadena en español a minúsculas, también funcionará correctamente:
+
+```Elixir
+String.downcase("HOLA MUNDO") # salida: "hola mundo"
+```
 
 ## Profundizando
 
-La función `String.downcase()` es una forma sencilla de convertir una cadena de texto a minúsculas, pero también hay otras formas de lograr el mismo resultado. Por ejemplo, puedes utilizar la función `String.to_lower()` que, además de convertir a minúsculas, también se encarga de manejar los caracteres acentuados.
+Detrás de escena, la función `String.downcase/1` utiliza la función `String.downcase/2` con un segundo argumento de `:default`. Este argumento es un atajo para especificar la tabla de conversión de mayúsculas y minúsculas por defecto. Si quieres más control sobre la conversión, también puedes utilizar otras opciones, como `:en` o `:es` para especificar idiomas diferentes.
 
-También puedes utilizar patrones e incluso el operador `|>` para encadenar varias funciones y convertir una cadena de texto a minúsculas de forma más compleja.
+Podemos ver cómo se utiliza `:default` en el módulo `String` de Elixir:
 
-¡Explora diferentes opciones y encuentra la forma que mejor se adapte a tus necesidades!
-
-## Ver también
-
-- Documentación oficial de Elixir: https://elixir-lang.org/getting-started/string.html#downcasing-strings
-- Ejemplos de conversión de strings en Elixir: https://hexdocs.pm/elixir/String.html#module-downcasing-and-upcasing
-
-## Option 2:
-
-## Por qué
-
-Saber cómo convertir una cadena de texto a minúsculas es fundamental para cualquier persona interesada en aprender Elixir. Esta habilidad te permitirá manipular de forma eficiente cadenas de texto y mejorar la calidad de tus aplicaciones.
-
-## Cómo hacerlo
-
-```elixir
-# Creamos una cadena de texto
-texto = "Elixir es genial"
-
-# Utilizamos la función String.downcase() para convertir la cadena a minúsculas
-String.downcase(text)
-
-# Output: "elixir es genial"
+```Elixir
+@conversion_tables %{
+  # ... otros idiomas
+  :default => %{
+    0x01c4 => 0x01c6,
+    0x01c5 => 0x01c6,
+    # ... otras conversiones
+    },
+    ...
+  }
 ```
 
-Esta función puede ser aplicada en cadenas de texto que contengan mayúsculas, minúsculas y caracteres especiales. Además, puedes utilizarla en concatenaciones de cadenas de texto o combinarla con otras funciones para manipular tus cadenas de texto de manera más eficiente.
-
-## Profundizando
-
-La función `String.downcase()` es una forma sencilla de convertir una cadena de texto a minúsculas, pero también existen otras opciones para lograr el mismo resultado. Por ejemplo, puedes utilizar `String.to_lower()` que, además de convertir a minúsculas, maneja los caracteres acentuados.
-
-Además, puedes utilizar patrones e incluso el operador `|>` para encadenar varias funciones y realizar una conversión más compleja de una cadena de texto a minúsculas.
-
-¡Explora diferentes opciones y encuentra la que mejor se adapte a tus necesidades!
+Esto significa que cuando especificamos `:default` como un argumento en `String.downcase/2`, se aplicará la tabla de conversión correspondiente a nuestro idioma. Si necesitamos diferentes conversiones, por ejemplo, para un idioma que no está soportado por defecto, podemos definir nuestras propias tablas de conversión de mayúsculas y minúsculas.
 
 ## Ver también
-
-- Documentación oficial de Elixir: https://elixir-lang.org/getting-started/string.html#downcasing-strings
-- Ejemplos de conversión de strings en Elixir: https://hexdocs.pm/elixir/String.html#module-downcasing-and-upcasing
+- [Documentación de Elixir sobre la función `String.downcase/1`](https://hexdocs.pm/elixir/String.html#downcase/1)
+- [Guía de Elixir para trabajar con cadenas](https://elixir-lang.org/getting-started/string-operations.html)
+- [Ejemplos de uso de `String.downcase/1` en la práctica](https://stackoverflow.com/questions/46934515/simply-downcasing-an-atom-to-lowercase-in-elixir)

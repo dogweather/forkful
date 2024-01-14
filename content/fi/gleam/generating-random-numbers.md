@@ -1,7 +1,9 @@
 ---
 title:                "Gleam: Satunnaislukujen luominen"
+simple_title:         "Satunnaislukujen luominen"
 programming_language: "Gleam"
-category:             "Numbers"
+category:             "Gleam"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/generating-random-numbers.md"
 ---
 
@@ -9,35 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä miksi voi olla hyödyllistä generoida satunnaisia numeroita ohjelmointityössä. Voit käyttää niitä esimerkiksi testaamiseen, pelien luomiseen tai salausalgoritmien kehittämiseen.
+Satunnaislukujen generointi on tärkeä osa monia ohjelmia ja sovelluksia, joita käytämme päivittäin. Se voi auttaa arvonta- ja arpajaissovelluksissa, satunnaisen sisällön luomisessa tietokonepeleihin ja jopa satunnaisen datan luomisessa testaukseen. Gleam-ohjelmointikieli tarjoaa tehokkaat työkalut satunnaislukujen generointiin, mikä tekee siitä loistavan vaihtoehdon tähän tarkoitukseen.
 
 ## Kuinka
 
-Gleam-lohkareiden avulla on helppoa ja nopeaa generoida satunnaisia numeroita. Alla on esimerkkejä koodista ja tulosteista.
+Gleam tarjoaa useita sisäänrakennettuja toimintoja satunnaislukujen luomiseen. Yksi yksinkertaisimmista tavoista on käyttää `random` -funktiota. Alla on esimerkki, jossa luodaan satunnainen kokonaisluku välillä 1-10:
 
 ```Gleam
-let random_number = Random.int(1, 10) // Generoi satunnaisen kokonaisluvun väliltä 1-10
+let satunnainen = random.int(1, 10)
 ```
+
+Tämä koodi palauttaa arvon, kuten 7 tai 2, jokainen suorituskerta. Voit myös generoida tietyn määrän satunnaislukuja kerrallaan `random.ints` -funktiolla:
 
 ```Gleam
-let random_float = Random.float(0.0, 1.0) // Generoi satunnaisen liukuluvun väliltä 0.0-1.0
+let satunnaiset_luvut = random.ints(5, 1, 10)
 ```
 
-```Gleam
-let random_bool = Random.bool() // Generoi satunnaisen totuusarvon 
-```
+Tämä koodi palauttaisi listan, jossa on viisi satunnaista kokonaislukua välillä 1-10, kuten esimerkiksi `[3, 9, 6, 4, 8]`.
 
-```Gleam
-let random_string = Random.string(8) // Generoi satunnaisen merkkijonon, jonka pituus on 8 merkkiä
-```
+## Syventävä tarkastelu
 
-Tässä vain muutama esimerkki, mutta Gleam tarjoaa myös muita tapoja generoida satunnaisia lukuja erilaisilla parametreilla.
-
-## Syvempi sukellus
-
-Gleam käyttää Mersenne Twister -algoritmia satunnaisten lukujen generoimiseen. Tämä algoritmi on yleisesti käytössä monissa ohjelmointikielissä ja se on todettu luotettavaksi ja nopeaksi.
+Gleam tarjoaa myös muita hyödyllisiä toimintoja satunnaislukujen generointiin. Voit esimerkiksi käyttää `random.float` -funktiota luodaksesi satunnaisen liukuluvun välillä 0.0-1.0. Jos haluat määrittää tarkan numeron desimaalipaikkoja, voit käyttää `random.float_with_precision` -funktiota. Voit myös luoda satunnaisen merkkijonon tietystä merkkien joukosta `random.from_chars` tai satunnaisen elementin listalta `random.from_list`.
 
 ## Katso myös
 
-- [Gleamin virallinen dokumentaatio](https://gleam.run/documentation)
-- [Mersenne Twister -algoritmi](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- Gleamin virallinen dokumentaatio: https://gleam.run/
+- Satunnaislukujen generointi Pythonilla: https://www.python.org/
+- Satunnaislukujen merkitys ohjelmoinnissa: https://medium.com/

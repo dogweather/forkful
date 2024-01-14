@@ -1,53 +1,45 @@
 ---
-title:                "Arduino: Wyciąganie podciągów"
+title:                "Arduino: Ekstrakcja podciągów."
+simple_title:         "Ekstrakcja podciągów."
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego wykorzystywać wyciąganie podłańcuchów?
 
-Z pewnością wielu z nas miało już taki problem - musimy przetworzyć pewien tekst, ale interesują nas tylko pewne jego fragmenty. Albo chcemy odseparować część tekstu od reszty i wykorzystać ją do innego celu. W takich sytuacjach bardzo przydatne jest umiejętne wydobycie podciągów - czyli fragmentów tekstu - z płytki Arduino. Dzięki temu możemy dokonać dokładnej analizy, porównania lub wykorzystania tylko wybranych informacji w naszym projekcie.
+W programowaniu dla Arduino często napotykamy sytuacje, w których potrzebujemy wyodrębnić pewną część tekstu lub liczby z większego ciągu znaków. Wtedy właśnie przydaje się umiejętność wyciągania podłańcuchów. Pozwala ona na łatwe i precyzyjne pobieranie tylko tych informacji, które są dla nas istotne. W tym artykule dowiesz się, jak dokonać takiego wyciągania przy użyciu języka Arduino.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby wydobyć podciągi z tekstu na płytki Arduino, wystarczy wykorzystać kilka prostych funkcji. W pierwszej kolejności musimy wykorzystać funkcję `substring()`, która zwraca tylko określony fragment tekstu. Należy podać jej dwa parametry: pierwszy to indeks, od którego chcemy rozpocząć wydobycie podciągu, a drugi to indeks końcowy, gdzie chcemy zakończyć. Aby wyświetlić wydobrany podciąg, możemy wykorzystać funkcję `Serial.println()`.
+W celu wyciągnięcia podłańcucha z ciągu znaków w języku Arduino możemy skorzystać z funkcji ```substring()```. Przykładowe użycie tej funkcji wygląda następująco:
 
-```Arduino
-// Przykład 1
-String tekst = "To jest przykładowy tekst.";
-String podciag = tekst.substring(3, 10); // wynikiem będzie "jest pr"
-Serial.println(podciag); // wyświetli tylko "jest pr"
+```arduino
+String tekst = "Witaj, świecie!";
+String podlacuch = tekst.substring(7, 14);
+Serial.println(podlacuch);
 ```
 
-Kolejną przydatną funkcją jest `indexOf()`, która pozwala znaleźć indeks pierwszego wystąpienia danego znaku lub ciągu znaków. Dzięki temu możemy łatwo znaleźć początek danego wyrazu lub frazy w tekście.
+Kod ten spowoduje wyświetlenie na monitorze szeregu znaków "świecie!", ponieważ wybrane zostały tylko znaki od 7 do 14 (licząc od zera). Możemy również wyciągnąć podłańcuch z końca ciągu znaków, podając tylko jedną liczbę do funkcji, np. ```substring(15)```. W takim przypadku zostaną wyświetlone znaki od podanej pozycji do końca tekstu.
 
-```Arduino
-// Przykład 2
-String data = "01.01.2020";
-int indeks = data.indexOf("."); // indeks będzie równy 2
-int dzien = data.substring(0, indeks).toInt(); // wydobycie dnia jako liczby całkowitej
-Serial.println(dzien); // wyświetli 1
+## Deep Dive
+
+Funkcja ```substring()``` może przyjąć dwa argumenty: początkową i końcową pozycję. Możemy również podać tylko jeden argument, a wtedy zostanie wybrany podłańcuch od podanej pozycji do końca ciągu znaków. Jest to bardzo przydatna funkcja, ponieważ pozwala na precyzyjne pobieranie interesujących nas informacji z tekstu. Pamiętajmy jednak, że indeksy znaków zawsze liczymy od zera, więc pierwsza pozycja tekstowa będzie miała indeks 0.
+
+Możemy także użyć funkcji ```length()``` w celu sprawdzenia długości tekstu i wykorzystać to przy pobieraniu podłańcuchów. Np. jeśli chcemy wyciągnąć końcowe 10 znaków z tekstu, możemy napisać kod:
+
+```arduino
+String tekst = "Bardzo długi tekst";
+int dlugosc = tekst.length();
+String podlacuch = tekst.substring(dlugosc-10, dlugosc);
 ```
 
-Możemy również wykorzystać funkcję `lastIndexOf()` do znalezienia indeksu ostatniego wystąpienia określonego znaku lub ciągu znaków w tekście. To, w połączeniu z `substring()`, pozwala na odwrócenie tekstu lub przejście do końca danego wyrazu lub frazy.
+Tym razem jako argumenty funkcji podaliśmy długość tekstu pomniejszoną o 10, co spowoduje wybranie ostatnich 10 znaków.
 
-```Arduino
-// Przykład 3
-String imie = "Jan Kowalski";
-int indeks = imie.lastIndexOf(" "); // indeks będzie równy 3
-String nazwisko = imie.substring(indeks + 1); // wydobycie tylko nazwiska
-Serial.println(nazwisko); // wyświetli "Kowalski"
-```
+# Zobacz także
 
-## Głębszy zanurzenie
-
-W praktyce, dokonując wydobycia podciągów z tekstu, musimy odporność na różne błędy i wyjątki. Na przykład, gdy nie możemy znaleźć określonego znaku lub podciągu w tekście, funkcja `substring()` zwróci pustą wartość, a `indexOf()` lub `lastIndexOf()` zwrócą wartość -1. Dlatego warto zawsze sprawdzać, czy otrzymane wartości są poprawne.
-
-Innym ważnym aspektem jest wydajność. Wykorzystywanie wielu funkcji `substring()`, `indexOf()`, `lastIndexOf()` itp. w pętli lub w dużym tekście może spowolnić działanie naszego projektu. W takim wypadku lepiej byłoby użyć bardziej zaawansowanych algorytmów, takich jak wykorzystanie wskaźników lub wyrażeń regularnych.
-
-## Zobacz również
-
-- [Dokumentacja języka Arduino dotycząca funkcji String](https://www.arduino.cc/reference/en/language/variables/data
+- [Dokumentacja języka Arduino](https://www.arduino.cc/reference/en/language/functions/strings/substring/)
+- [Tutorial o wyciąganiu podłańcuchów w języku C++](https://www.programiz.com/cpp-programming/library-function/cstring/substr)

@@ -1,82 +1,52 @@
 ---
-title:                "Javascript: Wyszukiwanie i zamienianie tekstu"
+title:                "Javascript: Wyszukiwanie i zamiana tekstu"
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego 
+## Dlaczego
 
-W dzisiejszym poście omówimy zagadnienie wyszukiwania i zamiany tekstu w języku JavaScript. Jest to niezwykle ważne narzędzie w programowaniu, które pozwala na szybką i precyzyjną modyfikację tekstu w naszym kodzie. Jeśli chcesz dowiedzieć się więcej o tej funkcji i jak jej używać, to ten artykuł jest dla Ciebie!
+Programowanie to dziedzina, która wymaga nie tylko wiedzy i umiejętności, ale także nieustannego poszukiwania i przetwarzania danych. W przypadku różnych projektów często zachodzi potrzeba dokonywania zmian w dużych zbiorach tekstu. W takich sytuacjach bardzo przydatne okazują się narzędzia do wyszukiwania i zamiany tekstu. W artykule tym przyjrzymy się temu zagadnieniu oraz omówimy jakie narzędzia są dostępne w języku Javascript.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-### Przygotowanie danych
+Do wykonania operacji wyszukiwania i zamiany tekstu w języku Javascript możemy użyć kilku różnych metod. Jedną z najpopularniejszych jest metoda `replace()`, która pozwala na podmianę wyrażenia regularnego na inny ciąg znaków. Przykład użycia tej metody wygląda następująco:
 
-Zanim przejdziemy do kodowania, musimy przygotować nasze dane. Załóżmy, że mamy tekst, w którym chcemy zamienić litery "a" na "e".
-
-```javascript
-let tekst = "Programowanie jest zabawa";
+```Javascript
+let tekst = "Jestem programistą, zajmuję się tworzeniem aplikacji webowych.";
+let nowyTekst = tekst.replace(/programistą/g, "developerem");
 ```
 
-Teraz możemy przejść do właściwej części - zamiany tekstu.
+W powyższym przykładzie wykorzystaliśmy wyrażenie regularne `/programistą/g`, które wyszukuje wszystkie wystąpienia słowa "programistą". Następnie używając metody `replace()` zamieniliśmy to słowo na "developerem". Wynik tego działania zapisaliśmy do zmiennej `nowyTekst`, która będzie zawierała tekst "Jestem developerem, zajmuję się tworzeniem aplikacji webowych.".
 
-### Wyszukiwanie i zamiana
+Inną przydatną metodą jest `split()`, która pozwala na rozdzielenie tekstu na tablicę znaków na podstawie określonego separatora. Przykład użycia tej metody wygląda następująco:
 
-W JavaScript mamy specjalną funkcję, która pozwala nam na wyszukiwanie oraz zamianę tekstu w zadanym ciągu znaków. Jest to metoda `replace()` i wygląda ona następująco:
-
-```javascript
-let nowyTekst = tekst.replace('a', 'e');
-console.log(nowyTekst);
+```Javascript
+let tekst = "Jestem programistą, zajmuję się tworzeniem aplikacji webowych.";
+let tekstTablica = tekst.split(",");
 ```
 
-W wyniku dostaniemy:
+W powyższym przykładzie używając metody `split(",")` podzieliliśmy tekst na dwie części na podstawie przecinka, dzięki czemu w wyniku otrzymaliśmy tablicę z dwoma elementami: "Jestem programistą" oraz "zajmuję się tworzeniem aplikacji webowych.".
 
-```
-Progrmowanie jest zebew
-```
+## Wnikliwa Analiza
 
-Jak widzimy, wszystkie litery "a" zostały zamienione na "e".
+Większość metod służących do wyszukiwania i zamiany tekstu w języku Javascript wykorzystuje wyrażenia regularne. Są to specjalne ciągi znaków, które pozwalają na precyzyjne określenie wzorów wyszukiwania. Podstawowymi elementami wyrażeń regularnych są tak zwane "metaznaki", czyli znaki o specjalnym znaczeniu. Przykładowe metaznaki to:
 
-### Używanie wyrażeń regularnych
+- `.` - oznacza dowolny pojedynczy znak
+- `*` - oznacza dowolną ilość wystąpień danego znaku lub zestawu znaków
+- `+` - oznacza jeden lub więcej wystąpień danego znaku lub zestawu znaków
+- `?` - oznacza zero lub jeden wystąpienie danego znaku lub zestawu znaków
 
-Możemy również użyć wyrażeń regularnych, aby wyszukać i zmienić tekst. Na przykład, jeśli chcemy zamienić wszystkie samogłoski na znaki "*", możemy użyć poniższego kodu:
+Ponadto wyrażenia regularne w języku Javascript umożliwiają również wykorzystanie tzw. grup, czyli fragmentów wyrażenia, które można wyodrębnić za pomocą nawiasów. Przykład wykorzystania grupy wygląda następująco:
 
-```javascript
-let nowyTekst2 = tekst.replace(/[aeiou]/g, '*');
-console.log(nowyTekst2);
-```
-
-W wyniku dostaniemy:
-
-```
-Pr*gr*m*wn**e j*st z*b*w*
+```Javascript
+let tekst = "Witaj, nazywam się John";
+let imie = tekst.replace(/Witaj, nazywam się ([A-Z][a-z]+)/, "$1");
 ```
 
-### Zachowanie orginalnego tekstu
-
-Jeśli chcemy zachować oryginalny tekst i stworzyć nowy, zmodyfikowany, możemy to zrobić za pomocą składni z użyciem wyrażenia regularnego:
-
-```javascript
-let nowyTekst3 = tekst.replace(/[g]/, 'G');
-console.log(nowyTekst3);
-console.log(tekst); // oryginalny tekst zostaje niezmieniony
-```
-
-W wyniku dostaniemy:
-
-```
-Programowanie jest zGbawa
-Programowanie jest zabawa
-```
-
-## Deep Dive
-
-Metoda `replace()` jest wyjątkowo przydatna, ponieważ daje nam wiele możliwości. Możemy wyszukiwać konkretny tekst, wyrażenia regularne, a także użyć funkcji zwrotnej do bardziej zaawansowanego przetwarzania tekstu. Polecam prześledzić dokumentację, aby poznać wszystkie jej funkcjonalności.
-
-## Zobacz także
-
-- [Dokumentacja metody replace()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/replace)
-- [Poradnik wyrażeń regularnych w JavaScript](https://kursjs.pl/kurs/regex/regex.php)
+W powyższym przykładzie wykorzystaliśmy grupę `([A-Z][a-z]+)`, która odpowiada jednemu wyrazowi z

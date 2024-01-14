@@ -1,53 +1,39 @@
 ---
-title:                "Java: Skriver en tekstfil"
+title:                "Java: Å skrive en tekstfil"
+simple_title:         "Å skrive en tekstfil"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Å skrive en tekstfil kan være en essensiell del av programmering. Ved å lagre data på en tekstfil, kan du enkelt lese og manipulere informasjonen senere. Dette kan være nyttig for å lagre brukerinput, lagre data mellom programmer, eller bare for å holde orden på informasjon.
+## Hvorfor 
+
+Det å skrive en tekstfil i Java kan være en viktig del av programmering. Det kan være nyttig for å lagre data eller kommunisere med brukere.
 
 ## Hvordan
-For å skrive en tekstfil i Java, kan du følge disse enkle stegene:
 
-```Java
-//importer filbiblioteket
-import java.io.FileWriter;
+For å skrive en tekstfil i Java, kan du bruke klassene `File` og `FileWriter`. Først må du opprette en ny `File`-instans og angi filbanen og navnet på filen du vil skrive. Deretter må du opprette en `FileWriter`-instans og bruke `write()`-metoden til å skrive teksten du ønsker å lagre i filen. Til slutt må du bruke `close()`-metoden for å lagre og lukke filen.
 
-public class SkrivTekstfil {
-
-    public static void main(String[] args) {
-        //definer filnavn og tekst som skal skrives
-        String filnavn = "min_tekstfil.txt";
-        String tekst = "Dette er en tekst som skal skrives til fil.";
-        
-        try {
-            //åpne en filskriver og skriv data til fil
-            FileWriter filskriver = new FileWriter(filnavn);
-            filskriver.write(tekst);
-            
-            //lukk filskriveren
-            filskriver.close();
-            System.out.println("Fil skrevet vellykket.");
-            
-        } catch (Exception e) {
-            System.out.println("Kunne ikke skrive til fil: " + e.getMessage());
-        }
-    }
-}
+```
+Java
+  File fil = new File("minFil.txt");
+  FileWriter skriver = new FileWriter(fil);
+  skriver.write("Dette er en tekstfil skrevet i Java!");
+  skriver.close();
 ```
 
-Når programmet kjøres, vil en fil med navnet "min_tekstfil.txt" bli opprettet i samme mappe som Java-filen. Teksten som ble definert i koden vil bli skrevet til filen.
+Dette vil opprette en ny tekstfil med tittelen "minFil.txt" på rotmappen til prosjektet ditt. Du kan også angi en spesifikk filbane hvis du vil at filen skal lagres et annet sted.
 
-## Deep Dive
-Det er viktig å huske på at når du skriver til en tekstfil, vil all eksisterende data bli overskrevet. For å legge til informasjon i en eksisterende tekstfil, kan du bruke en filskriver som åpner i "append" modus: `FileWriter(filnavn, true)`. Dette vil sørge for at ny data blir lagt til på slutten av filen, i stedet for å overskrive all eksisterende data.
+## Dypdykk
 
-Du kan også formatere teksten din mens du skriver til fil ved å bruke metoder som `filskriver.write("Tekst", 0, 3)` som vil skrive kun de første tre bokstavene av teksten til filen.
+Det er viktig å huske på at når du bruker `FileWriter`, vil all eksisterende tekst i filen bli erstattet med den nye teksten du skriver. Hvis du vil legge til tekst i en eksisterende fil, kan du bruke `FileWriter`'s andre konstruktør, som tar inn en boolean verdi. Hvis du setter denne til `true`, vil teksten bli lagt til i slutten av filen i stedet for å erstatte eksisterende tekst.
+
+Det er også viktig å huske på at når du bruker `FileWriter`, må du håndtere eventuelle unntak som kan oppstå, for eksempel hvis filen ikke kan opprettes eller skrives til. Dette kan gjøres ved å bruke try/catch-blokker eller kaste unntak.
 
 ## Se også
-- Java Dokumentasjon for filskriving: https://docs.oracle.com/javase/tutorial/essential/io/file.html
-- En guide til å skrive til fil i Java: https://www.w3schools.com/java/java_files_create.asp
-- Lesing og skriving til tekstfiler i Java: https://www.geeksforgeeks.org/different-ways-reading-writing-text-file-java/
+
+- [Java File-klassen](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html)
+- [Java FileWriter-klassen](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileWriter.html)

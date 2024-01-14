@@ -1,7 +1,9 @@
 ---
-title:                "C#: Uzyskiwanie bieżącej daty"
+title:                "C#: Pobieranie bieżącej daty"
+simple_title:         "Pobieranie bieżącej daty"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/getting-the-current-date.md"
 ---
 
@@ -9,41 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli programujesz w języku C#, prawdopodobnie często potrzebujesz aktualnej daty w swoim kodzie. Mogą być różne powody, na przykład potrzeba wyświetlenia aktualnego czasu w aplikacji lub sprawdzenia czy dany plik został ostatnio zmodyfikowany. Dlatego dzisiaj przyjrzymy się temu, jak pobrać aktualną datę w języku C#.
+Obecna data i godzina są niezwykle ważne w programowaniu. Nie tylko pozwala to na śledzenie postępu działania programu, ale również na wyświetlanie aktualnych informacji dla użytkownika. Dlatego warto poznać sposoby pobierania bieżącej daty za pomocą języka C#.
 
-## Jak To Zrobić
+## Jak to zrobić
 
 ```C#
-DateTime currentDate = DateTime.Now;
+// Pobranie bieżącej daty i godziny
+DateTime now = DateTime.Now;
+Console.WriteLine(now);
+
+// Pobranie tylko daty
+DateTime currentDate = DateTime.Now.Date;
 Console.WriteLine(currentDate);
+
+// Pobranie tylko godziny
+DateTime currentTime = DateTime.Now.TimeOfDay;
+Console.WriteLine(currentTime);
 ```
 
-Kod powyżej pokazuje najprostszy sposób na uzyskanie aktualnej daty w języku C#. Najpierw tworzymy obiekt typu `DateTime` o nazwie `currentDate` używając metody `DateTime.Now`, która zwraca bieżącą datę i czas. Następnie wyświetlamy tę datę na ekranie za pomocą `Console.WriteLine`.
+W powyższych przykładach wykorzystaliśmy klasę DateTime, która jest wbudowana w język C#. Aby uzyskać bieżącą datę i godzinę, wystarczy wywołać metodę `Now()` na tej klasie. Możemy również wykorzystać metody `Date` i `TimeOfDay`, aby uzyskać tylko datę lub godzinę.
 
-Jeśli chcemy wyświetlić jedynie datę bez czasu, możemy użyć metody `DateTime.Today`. Kod będzie wyglądał tak:
+## Dogłębna analiza
 
-```C#
-DateTime currentDate = DateTime.Today;
-Console.WriteLine(currentDate);
-```
+Klasa DateTime oferuje wiele innych metod, które pomogą w manipulacji danymi dotyczącymi daty i godziny. Na przykład, możemy użyć metod `Add()` lub `Substract()` do dodawania lub odejmowania określonej liczby dni, godzin lub minut od bieżącej daty. Możemy też porównywać daty za pomocą metod `Equals()` lub `CompareTo()`. W przypadku pracy z międzynarodowymi danymi, warto wykorzystać metody `ToUniversalTime()` lub `ToLocalTime()` do przekształcania stref czasowych.
 
-W tym przypadku metoda `DateTime.Today` również zwraca obiekt typu `DateTime`, ale z ustawionym czasem na północ (00:00:00). Jeśli chcesz wyświetlić datę w innym formacie, możesz skorzystać z metody `ToString()` i podać odpowiedni format jako parametr. Na przykład:
+## Zobacz też
 
-```C#
-DateTime currentDate = DateTime.Now;
-Console.WriteLine(currentDate.ToString("dd/MM/yyyy"));
-```
-
-Wynik powyższego kodu będzie wyświetlał datę w postaci "dd/MM/yyyy" (np. 26/08/2021).
-
-## Deep Dive
-
-Pobieranie aktualnej daty w języku C# może być nieco bardziej skomplikowane, jeśli potrzebujesz wykonać jakieś operacje związane z czasem, na przykład sprawdzenia różnicy między dwoma datami. W takich przypadkach warto poznać pewne przydatne metody z klasy `DateTime`, takie jak `Add()`, `Subtract()` czy `Compare()`.
-
-Możesz też poszerzyć swoją wiedzę o datach i czasie w C#, korzystając z klasy `TimeSpan`, która reprezentuje określony interwał czasowy. W połączeniu z klasą `DateTime`, możesz wykonywać różnego rodzaju operacje na datach i czasach, na przykład obliczanie różnicy między nimi lub dodawanie/odejmowanie pewnej ilości czasu do danej daty.
-
-## Zobacz Również
-
-- [Dokumentacja Microsoft o klasie DateTime](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-5.0)
-- [Przykłady użycia klasy DateTime](https://www.c-sharpcorner.com/UploadFile/mahesh/datetimesamples11232005061825AM/datetimesamples.aspx)
-- [Wszystko o pracy z czasem w C#](https://www.tutorialsteacher.com/csharp/csharp-datetime)
+- [Dokumentacja Microsoft dla klasy DateTime](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=netcore-3.1)
+- [Poradnik dla początkujących w programowaniu w języku C#](https://sjp.pl/C%23)
+- [Kurs programowania w języku C# na platformie Codecademy](https://www.codecademy.com/learn/learn-c-sharp)

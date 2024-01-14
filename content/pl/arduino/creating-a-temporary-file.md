@@ -1,62 +1,68 @@
 ---
-title:                "Arduino: Tworzenie pliku tymczasowego"
+title:                "Arduino: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego warto tworzyć tymczasowe pliki w programowaniu Arduino?
+ Tworzenie tymczasowych plików jest niezbędne w programowaniu Arduino, gdyż pozwala nam na tymczasowe przechowywanie danych lub wyników obliczeń. W ten sposób możemy uniknąć zapełnienia pamięci urządzenia, co może spowodować problemy z działaniem naszego projektu.
 
-Tworzenie tymczasowego pliku jest nieodłączną częścią programowania Arduino. Jest to przydatna umiejętność, ponieważ pozwala na tworzenie, przechowywanie i odczytywanie danych, które są potrzebne tylko w danym momencie wykonywania programu. W ten sposób można zaoszczędzić pamięć i zasoby mikrokontrolera.
+## Jak to zrobić?
 
-## Jak to zrobić
-
-Aby utworzyć tymczasowy plik w Arduino, należy wykonać kilka kroków:
-
-1. Zacznij od zainicjowania zmiennej, która będzie przechowywać nazwę pliku. Na przykład ```String tempFile = "dane.txt";```
-2. Następnie otwórz plik za pomocą funkcji ```File temp = SD.open(tempFile, FILE_WRITE);``` Co jest nazwą pliku i trybem działania (w tym przypadku zapis).
-3. Możesz teraz pisać do pliku, używając funkcji ```temp.println("To jest przykładowy tekst.");```
-4. Aby zamknąć plik, należy wywołać funkcję ```temp.close();```
-
-Oto przykładowy kod, który tworzy tymczasowy plik i odczytuje z niego dane:
+Tworzenie tymczasowego pliku w programowaniu Arduino jest bardzo proste. Możemy to zrobić przy użyciu funkcji ```ArduinoFile::createTempFile()```. Kod poniżej przedstawia przykładowe użycie tej funkcji:
 
 ```Arduino
-#include <SD.h> // Includujemy bibliotekę SD
+#include <Arduino.h>
+#include <SPI.h>
+#include <SD.h>
 
-String tempFile = "dane.txt"; // Inicjalizacja nazwy pliku
+File tempFile; //definiowanie zmiennej dla tymczasowego pliku
 
 void setup() {
-  Serial.begin(9600); // Inicjalizujemy komunikację szeregową
-  SD.begin(8); // Inicjujemy moduł SD na pinie 8
-  File temp = SD.open(tempFile, FILE_WRITE); // Tworzymy nowy plik o podanej nazwie i trybie zapisu
-  temp.println("To jest przykładowy tekst."); // Zapisujemy dane do pliku
-  temp.close(); // Zamykamy plik
+  Serial.begin(9600);
+  SD.begin(10); //inicjalizacja karty SD na pinie 10
 }
 
 void loop() {
-  File temp = SD.open(tempFile); // Otwieramy plik w trybie odczytu
-  while (temp.available()) { // Odczytujemy plik linia po linii, dopóki nie osiągniemy końca pliku
-    String line = temp.readStringUntil('\n'); // Odczytujemy linię i zapisujemy ją w zmiennej
-    Serial.println(line); // Wysyłamy linię przez port szeregowy
+  if (SD.exists("dane.txt")) { //sprawdzanie czy plik istnieje na karcie SD
+    File myFile = SD.open("dane.txt"); //odczyt pliku 
+    while (myFile.available()) { 
+      Serial.write(myFile.read()); //wypisanie odczytanego pliku na monitor szeregowy
+    }
+    myFile.close(); //zamykanie pliku
+  } else {
+    Serial.println("Nie znaleziono pliku.");
   }
-  temp.close(); // Zamykamy plik
-  delay(1000); // Odczekujemy 1 sekundę przed powtórzeniem pętli
+  delay(1000);
+
+  //tworzenie tymczasowego pliku i wypisanie danych
+  tempFile = SD.open("temp.txt", FILE_WRITE); //otwieranie tymczasowego pliku w trybie zapisu
+  if (tempFile) {
+    byte data = 1;
+    tempFile.println("Wartość zmiennej data wynosi: " + String(data)); //zapisanie wartości zmiennej do pliku
+    tempFile.close(); //zamykanie pliku
+  }
+  else {
+    Serial.println("Błąd tworzenia pliku.");
+  }
 }
 ```
 
-Powyższy przykład wyświetli w konsoli szeregowej tekst "To jest przykładowy tekst." co sekundę. Proszę zauważyć, że można zmienić nazwę pliku i/lub tryb funkcji `SD.open()` w celu dostosowania go do własnych potrzeb.
+W wyniku uruchomienia powyższego kodu na monitorze szeregowym pojawią się dane z pliku "dane.txt", a także komunikat o utworzeniu tymczasowego pliku "temp.txt" i zapisane w nim dane.
 
 ## Deep Dive
+Tworzenie tymczasowego pliku jest szczególnie przydatne w przypadku, gdy musimy tymczasowo przechować dane lub wyniki obliczeń. Po zakończeniu pracy z plikiem, warto go usunąć przy użyciu funkcji ```ArduinoFile::remove()```.
 
-Podczas tworzenia tymczasowego pliku w Arduino jest kilka rzeczy, które warto pamiętać:
+W przypadku gdy projekt wymaga częstego tworzenia i usuwania tymczasowych plików, warto także zastosować funkcje ```ArduinoFile::rewind()``` i ```ArduinoFile::seek()```, które pozwalają na szybsze i bardziej efektywne operacje na pliku.
 
-- Nazwa pliku musi być unikatowa dla każdego zapisanego pliku. W przeciwnym razie funkcja `SD.open()` może zwrócić błąd lub nadpisać wcześniej utworzony plik o tej samej nazwie.
-- Pamiętaj o zamknięciu pliku za pomocą funkcji `temp.close()`, aby zapobiec awarii systemu plików.
-- Możesz również odczytać dane z pliku w trybie binarnym, a nie tekstowym, używając funkcji `File.read()` i `File.write()`.
-- Więcej informacji na temat biblioteki SD można znaleźć na stronie [oficjalnej dokumentacji Arduino](https://www.arduino.cc/en/Reference/SD) lub korzystając z funkcji `help()` w Arduino IDE.
+Podsumowując, tworzenie tymczasowych plików jest ważnym elementem w programowaniu Arduino, który pozwala na przechowywanie danych i optymalizację wykorzystania pamięci urządzenia.
 
-## Zobacz również
-
-- [Oficjalna dokumentacja Arduino o tworzeniu plików](https://www.arduino.cc/en/Tutorial/Libra
+## Zobacz także
+- Dokumentacja funkcji createTempFile(): https://www.arduino.cc/reference/en/libraries/arduino-sdio/arduinofile/createtempfile/
+- Przykładowy projekt wykorzystujący tworzenie tymczasowych plików: https://create.arduino.cc/projecthub/robertb/vumetertemp-a8c86f
+- Wideo opisujące tworzenie i używanie tymczasowych plików w programowaniu Arduino: https://www.youtube.com/watch?v=BywZpMtkx8U&ab_channel=LearnRobotics

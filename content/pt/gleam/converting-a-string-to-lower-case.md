@@ -1,64 +1,37 @@
 ---
-title:                "Gleam: Convertendo uma string para letras minúsculas"
+title:                "Gleam: Convertendo uma string para minúsculas."
+simple_title:         "Convertendo uma string para minúsculas."
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
 
-Seja por necessidade de comparação com outras strings ou para simplificar o processamento de dados, converter uma string para caracteres minúsculos é uma tarefa comum em qualquer linguagem de programação, incluindo Gleam.
+Se você é um programador Gleam, provavelmente está sempre procurando maneiras eficientes de manipular strings. Converter uma string para letras minúsculas é uma tarefa comum em muitos projetos, e entender como fazer isso em Gleam pode economizar tempo e esforço.
 
 ## Como fazer
 
-Existem várias maneiras de converter uma string para minúsculas em Gleam. Vamos dar uma olhada em duas abordagens diferentes utilizando a função `to_lower_case()`.
-
-### Usando uma biblioteca externa
-
-Para aqueles que preferem utilizar bibliotecas externas, a biblioteca `gleam_strings` possui uma função `to_lower_case()` que pode ser usada da seguinte forma:
+A função `String.to_lower` é usada para converter uma string para letras minúsculas. Veja um exemplo prático abaixo:
 
 ```Gleam
-// Importar a biblioteca gleam_strings
-import gleam_strings
-
-// Definir uma string
-let string = "Gleam Programming Rocks!"
-
-// Converter para minúsculas
-let lower_case_string = gleam_strings.to_lower_case(string)
-
-// Imprimir o resultado
-io.println(lower_case_string)
-
-// Saída: "gleam programming rocks!"
+let string = "ESTE TEXTO SERÁ CONVERTIDO!"
+let lower_case = String.to_lower(string)
 ```
 
-### Utilizando a função nativa da linguagem
+O valor resultante da variável `lower_case` será "este texto será convertido!". Como você pode ver, todos os caracteres maiúsculos foram transformados em minúsculos.
 
-Gleam também possui uma função nativa para conversão de strings para minúsculas, que pode ser utilizada da seguinte forma:
+Existem também funções para converter apenas a primeira letra de uma string em minúscula, como `String.lower_first` ou `String.capitalize`. Experimente e veja qual atende às suas necessidades específicas.
 
-```Gleam
-// Definir uma string
-let string = "Gleam Programming Rocks!"
+## Mergulho profundo
 
-// Converter para minúsculas
-let lower_case_string = string.to_lower_case()
+Você pode estar se perguntando como a função `String.to_lower` trabalha internamente. Basicamente, ela percorre cada caractere na string e usa a tabela ASCII para determinar se ele é uma letra maiúscula. Se for o caso, o caractere é modificado para sua versão minúscula. Esse processo é realizado para cada caractere da string até que ela seja completamente convertida em letras minúsculas.
 
-// Imprimir o resultado
-io.println(lower_case_string)
-
-// Saída: "gleam programming rocks!"
-```
-
-## Aprofundando
-
-Ao converter uma string para minúsculas, é importante ter em mente que esse processo não é simplesmente substituir todos os caracteres maiúsculos pelos seus equivalentes minúsculos. Existem casos em que a conversão pode ser mais complexa, como, por exemplo, quando a string contém caracteres com acentos.
-
-Além disso, é sempre recomendável analisar a documentação da função que está sendo utilizada, como parâmetros opcionais que possam afetar o resultado final.
+É importante lembrar que, assim como a maioria das funções de string, a função `String.to_lower` retorna uma nova string e não modifica a string original. Isso significa que você precisará atribuir o resultado a uma nova variável.
 
 ## Veja também
 
-- Documentação da função `to_lower_case()`: https://gleam.run/documentation/stdlib/string#to_lower_case
-- Documentação da biblioteca `gleam_strings`: https://hexdocs.pm/gleam_strings/api-reference.html
+- Documentação oficial sobre strings em Gleam: https://gleam.run/documentation/guides/strings/

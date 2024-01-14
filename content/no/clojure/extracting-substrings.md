@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Ekstrahering av delstrenger"
+title:                "Clojure: Uthenting av delstrenger"
+simple_title:         "Uthenting av delstrenger"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/extracting-substrings.md"
 ---
 
@@ -9,36 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Når du jobber med tekstbehandling i Clojure, kan du ofte ha behov for å hente ut deler av en streng (substring). Dette kan være nyttig for å manipulere data eller for å få en bedre forståelse av teksten. I denne bloggposten vil vi dykke dypere ned i hvordan vi kan ekstrahere substrings i Clojure, og hvorfor det kan være nyttig.
+Å utvinne substringer er en nyttig teknikk som gjør det mulig å manipulere tekststrenger på en effektiv måte. Den tillater oss å hente ut deler av en streng basert på spesifikke kriterier, noe som kan være svært nyttig i mange programmeringsscenarier.
 
 ## Hvordan
 
-Det første vi må gjøre er å importere funksjonen "subs" fra "clojure.string" biblioteket. Deretter kan vi bruke "subs" til å hente ut en delstreng basert på en plassering og lengde:
+For å utvinne substringer i Clojure, bruker vi funksjonen "subs". Denne funksjonen tar inn en streng som første argument og to tall som representerer start- og sluttposisjonen til substringsen du ønsker å ekstrahere.
 
 ```Clojure
-(require '[clojure.string :as str])
-
-(def tekst "Denne teksten er ment for å demonstrere substring funksjonen.")
-
-(str/subs tekst 6 13) ; dette vil returnere "teksten"
+(def streng "Dette er en teststreng")
+(subs streng 5 7)
 ```
 
-Vi kan også bruke "subs" til å hente ut en delstreng basert på et bestemt mønster. For eksempel, hvis vi ønsker å hente ut alle ord som starter med bokstaven "d" fra en tekst, kan vi gjøre følgende:
+Outputen av koden ovenfor vil være "er", siden den henter ut delen av strengen fra posisjon 5 (startende fra 0) til posisjon 7, uten å inkludere siste tegn. Dette kan også gjøres ved hjelp av negative tall, hvor -1 vil representere siste tegn i strengen.
 
 ```Clojure
-(def tekst "Ord som starter med bokstaven d er for eksempel dette og dette.")
-
-(str/subs tekst #"(d\w+)") ; dette vil returnere "dette og dette"
+(subs streng 5 -4)
 ```
+
+Outputen av koden over vil være "er en t", som er delen av strengen som starter på posisjon 5 og slutter på posisjon -4.
 
 ## Dypdykk
 
-Nå når vi har sett på noen eksempler på hvordan vi kan bruke "subs" funksjonen, la oss dykke dypere inn i hva som skjer under overflaten. Den første parameteren som vi gir til "subs" er strengen vi ønsker å hente ut delstrenger fra. Den andre parameteren er plasseringen hvor vi ønsker å starte (den første bokstaven vil være 0). Den tredje parameteren er lengden på delstrengen vi ønsker å hente ut.
+I tillegg til å bruke "subs" funksjonen, kan vi også bruke "substring" funksjonen for å ekstrahere substringer i Clojure. Denne funksjonen tar inn en streng som første argument, og to tall som representerer start- og sluttposisjonen til substringen. Forskjellen her er at "substring" funksjonen inkluderer siste tegn i resultatet.
 
-Hvis vi bruker et regex-mønster som andre parameter, vil "subs" returnere alle matchende delstrenger. Merk at "subs" funksjonen er null-basert, som betyr at første match vil være på indeks 0.
+```Clojure
+(substring streng 5 7)
+```
 
-## Se Også
+Outputen vil være "er ", hvorav det siste mellomrommet er inkludert fra strengen.
 
-- [Clojure Documentation - String Functions](https://clojuredocs.org/clojure.string/subs)
-- [Clojure Cookbook - Extracting Substrings](https://clojure-cookbook.github.io/string/extracting-substrings.html)
-- [Regular Expressions in Clojure](https://luminusweb.com/docs/clojure/regular-expressions.html)
+## Se også
+
+- [Clojure Docs subs](https://clojuredocs.org/clojure.core/subs)
+- [Clojure Docs substring](https://clojuredocs.org/clojure.core/substring)

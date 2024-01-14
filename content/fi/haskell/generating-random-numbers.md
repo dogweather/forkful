@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Satunnaisten numeroiden luominen"
+title:                "Haskell: Sattumanvaraisten numeroiden generointi"
+simple_title:         "Sattumanvaraisten numeroiden generointi"
 programming_language: "Haskell"
-category:             "Numbers"
+category:             "Haskell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/generating-random-numbers.md"
 ---
 
@@ -9,51 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit käyttää satunnaislukujen generaattoria Haskell-ohjelmoinnissa? Satunnaisuus on tärkeä osa monia ohjelmia ja algoritmeja, koska se mahdollistaa ennustamattomuuden ja monipuolisuuden. Satunnaislukujen avulla voidaan esimerkiksi luoda erilaisia tietoaineistoja testausta varten tai simuloida todellisia tilanteita.
+Ohjelmoijat voivat käyttää satunnaislukuja monissa eri ohjelmoinnin osa-alueissa, kuten peleissä, simuloinneissa ja salausalgoritmeissa.
 
 ## Miten
 
-Haskell tarjoaa valmiin kirjaston satunnaislukujen generointiin, nimeltään "System.Random". Ensimmäiseksi on tuotava kyseinen kirjasto moduuliksi ja määriteltävä random-luku generaattori.
+Satunnaislukujen generoiminen on helppoa Haskellissa, sillä siinä on valmiina funktio `random` ja `randomR`, jotka generoivat satunnaislukuja eri tavoin.
 
 ```Haskell
 import System.Random
 
--- Luodaan random-luku generaattori annetulla siemenarvolla
-randomGen :: Int -> StdGen
-randomGen seed = mkStdGen seed
+-- Generoi satunnaisluku väliltä 1-10.
+randomNumber1 :: Int
+randomNumber1 = randomRIO (1, 10)
 
--- Generoidaan 10 satunnaista lukua väliltä 1-100
-randomNumbers :: StdGen -> [Int]
-randomNumbers gen = take 10 $ randomRs (1,100) gen
+-- Generoi satunnaisluku väliltä 50-100.
+randomNumber2 :: Int
+randomNumber2 = randomR (gRandom 50 100)
+
+-- Generoi satunnainen True tai False arvo.
+randomBool :: Bool
+randomBool = random gBool
 ```
 
-Yllä olevassa koodiesimerkissä luodaan ensin random-luku generaattori annetulla siemenarvolla käyttäen "mkStdGen" funktiota. Sitten luodaan "randomNumbers" funktio, joka ottaa parametriksi generaattorin ja palauttaa listan 10 satunnaista lukua väliltä 1-100 käyttäen "randomRs" funktiota. Tässä tapauksessa funktio palauttaa aina saman listan, jos sitä kutsutaan samalla siemenarvolla.
-
-## Syvemmälle
-
-Haskellin "System.Random" kirjasto tarjoaa monia erilaisia funktioita ja työkaluja satunnaislukujen generointiin erilaisin rajoituksin ja tarkkuuksin. Esimerkiksi käyttämällä "split" funktiota, voidaan yhdestä generaattorista luoda kaksi uutta generaattoria, jotka tuottavat erilaisia satunnaislukuja.
-
-```Haskell
-import System.Random
-
--- Luodaan alkuperäinen random-luku generaattori
-gen :: StdGen
-gen = mkStdGen 1234
-
--- Jaetaan generaattori kahteen uuteen 
-(gen1, gen2) = split gen
-
--- Generoidaan 5 satunnaista lukua ensimmäisellä generaattorilla
-numbers1 = take 5 $ randomRs (1,10) gen1
-
--- Generoidaan 5 satunnaista lukua toisella generaattorilla
-numbers2 = take 5 $ randomRs (1,10) gen2
+```
+>>> randomNumber1
+7
+>>> randomNumber2
+78
+>>> randomBool
+False
 ```
 
-Tässä tapauksessa "numbers1" ja "numbers2" listat ovat erilaiset, vaikka ne ovatkin generoitu samasta alkuperäisestä generaattorista.
+## Syventyvä tarkastelu
+
+Haskellissa satunnaislukujen generointi perustuu oletuksena "satunnaisgeneraattoriin" (random number generator), joka ottaa sisäänsä "siemenarvon" (seed), josta se generoi sarjan satunnaislukuja. Sama siemenarvo tuottaa aina saman sarjan satunnaislukuja, joten oikeassa käytössä siemenarvo tulisi vaihtaa joka kierroksella, esimerkiksi käyttäjän antaman satunnaisen arvon pohjalta.
+
+Lisäksi Haskellissa on mahdollista käyttää myös puhtaampaa satunnaislukugeneraattoria, jonka avulla voidaan tuottaa satunnaislukuja funktionaalisen ohjelmoinnin periaatteiden mukaisesti.
 
 ## Katso myös
 
-- [Haskellin random-kirjaston dokumentaatio](https://hackage.haskell.org/package/random)
-- [Haskellin opetusmateriaali (suomeksi)](http://www.cs.helsinki.fi/u/glinden/HyOpinnot/Harjoitukset/haskell/hask_intro.php)
-- [Haskellin perusteet (englanniksi)](https://www.haskell.org/tutorial/)
+- [Haskellin virallinen dokumentaatio satunnaislukujen generoinnista](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/random/System-Random.html)
+- [Ohjeita satunnaislukujen generointiin Haskellissa](http://www.csee.umbc.edu/~olano/s2002c36/ch06.1.pdf)

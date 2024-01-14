@@ -1,40 +1,56 @@
 ---
-title:                "Elixir: Pääkomennon argumenttien lukeminen"
+title:                "Elixir: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: 
+## Miksi lukea komentoriviparametrejä
 
-Jos haluat oppia paremmin hallitsemaan ohjelmiasi, on tärkeää ymmärtää kuinka luet komentoriviparametrejä. Tämä auttaa sinua luomaan dynaamisempia ja monipuolisempia ohjelmia Elixir-ohjelmointikielen avulla.
+Komentoriviparametrit ovat tärkeitä monissa Elixir-ohjelmissa, koska ne antavat mahdollisuuden tarjota lisätoimintoja ohjelman käyttäjille. Lukemalla komentoriviparametrejä voit tehdä ohjelmasi vieläkin monipuolisemmaksi ja helpommaksi käyttää. Näin voit parantaa käyttäjäkokemusta ja tarjota enemmän vaihtoehtoja ohjelman käyttäjille.
 
-## Kuinka:
+## Kuinka lukea komentoriviparametrejä
 
-Komentoriviparametrien lukeminen Elixirissa on helppoa ja suoraviivaista. Käytetään esimerkkinä yksinkertaista ohjelmaa, joka tulostaa käyttäjän antaman nimen komentoriviltä.
+Komentoriviparametrien lukeminen Elixirillä on helppoa. Voit käyttää ```OptionParser```-moduulia, joka tarjoaa valmiin tavan lukea ja käsittellä parametrejä. Voit aloittaa luomalla uuden ```OptionParser```-olion ja määrittää sille haluamasi parametrit.
 
 ```
-Elixir yksinkertainen.exs Saija
+# Luodaan uusi OptionParser-olio
+parser = OptionParser.new
 
-nimi = IO.argv |> hd()
-IO.puts "Hei, #{nimi}!"
+# Lisätään parametri "username"
+parser.add(:username, "Käyttäjänimi")
+
+# Lisätään parametri "autocomplete", joka ottaa vastaan Boolean-arvon
+parser.add(:autocomplete, "Automaattinen täydennys", types: [boolean])
+
+# Luetaan parametrit käyttäjältä
+options = parser.parse(ARGV)
 ```
 
-Käynnistä ohjelma komentoriviltä komennolla ```elixir yksinkertainen.exs Saija```. Tämä tulostaa "Hei, Saija!" konsoliin.
+Kun olet lisännyt kaikki tarvittavat parametrit ja lukenut ne käyttäjältä, voit käyttää ```options```-muuttujaa saadaksesi parametrien arvot.
 
-## Syväkellunta:
+```
+# Saadaan käyttäjänimi
+username = options[:username]
 
-Kun ajamme edellä esitetyn yksinkertaisen ohjelman, huomaamme että commantoriviparametrit tallennetaan Elixirin ```IO.argv``` muuttujaan. Tämä muuttuja on lista, joten voi olla hyödyllistä käyttää Elixirin listafunktioita, kuten ```head()```, ```tail()```, ```length()``` jne.
+# Saadaan boolean-arvo automaattiselle täydennykselle
+autocomplete = options[:autocomplete]
+```
 
-Voit myös lisätä ehtoja ohjelmaan, jotta voit suorittaa erilaisia toimintoja eri komentoriviparametrien avulla.
+Voit myös määrittää oletusarvoja parametreille ja käyttää ehtolauseita parametrien käsittelyyn.
 
-Esimerkiksi, voit tarkistaa onko parametrien lukumäärä oikea ennen kuin suoritat tiettyjä toimintoja. Voit myös käyttää komentoriviparametreja ohjelman asetusten määrittämiseen, kuten tiedostonimet tai käyttäjän antamat asetukset.
+## Syvällinen sukellus komentoriviparametreihin
 
-## Katso myös:
+Komentoriviparametrien lukeminen ```OptionParser```-moduulilla on erittäin hyödyllistä, sillä se tarjoaa valmiin tavan lukea ja käsittellä parametrejä. Voit myös käyttää muita tapoja lukea parametreja, kuten käyttämällä ```System.argv```.
 
-- [Elixirin IO-moduuli](https://hexdocs.pm/elixir/IO.html)
-- [Elixirin listaoperaatiot](https://elixir-lang.org/getting-started/keywords-and-maps.html#list-operations)
-- [Komentoriviparametrien käsittely Elixirissa](https://dev.to/yyiki/komentoriviparametrien-kaesittely-elixirissa-26op)
-- [Elixirin virallinen sivusto](https://elixir-lang.org/)
+On tärkeää huomata, että komentoriviparametrien lukeminen ei ole aina välttämätöntä, mutta se voi tehdä ohjelmastasi käyttäjäystävällisemmän ja lisätä sen monipuolisuutta.
+
+## Katso myös
+
+- [Elixirin virallinen dokumentaatio OptionParserista](https://hexdocs.pm/elixir/OptionParser.html)
+- [Elixir Forum: How to read command line arguments](https://elixirforum.com/t/how-to-read-command-line-arguments/8217)
+- [Medium: Introduction to Elixir command line argument parsing](https://medium.com/@noahhlw/introduction-to-elixir-command-line-argument-parsing-b09b91d8c108)

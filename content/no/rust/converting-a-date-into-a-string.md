@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Konvertere en dato til en streng"
+title:                "Rust: Konvertering av en dato til en streng"
+simple_title:         "Konvertering av en dato til en streng"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/converting-a-date-into-a-string.md"
 ---
 
@@ -9,35 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Mange programmeringsprosjekter krever at man må konvertere en dato til en streng (string) for å vise den på en lesbar måte for brukeren. Dette er spesielt viktig i applikasjoner som inneholder kalendere eller tidslinjer. I Rust, kan dette gjøres ved hjelp av standardbibliotekets `DateTime` og `format` moduler. I denne bloggposten skal vi utforske hvordan man kan konvertere en dato til en streng i Rust.
+Rust er et kraftig og svært populært programmeringsspråk, og å kunne konvertere en dato til string er en grunnleggende ferdighet for enhver Rust-utvikler. Det lar deg enkelt lese og manipulere datoer i dine programmer og prosjekter.
 
-## Hvordan gjøre det
+## Slik gjør du det
 
-Først må vi importere `DateTime` og `format` modulene fra Rusts standardbibliotek:
-
-```Rust
-use std::time::DateTime;
-use std::time::Instant;
-use std::str::FromStr;
-```
-
-Deretter må vi definere en dato ved hjelp av `DateTime` sin `from_str` funksjon og angi den ønskede datoformaten ved hjelp av `format` sin `parse` funksjon:
+For å konvertere en dato til en string i Rust, kan du bruke standard biblioteket `chrono`. Før du begynner, må du legge til `chrono` til avhengighetene dine i `Cargo.toml` filen din:
 
 ```Rust
-let date = DateTime::from_str("2021-05-31T15:30:00.00000000Z").unwrap();
-let formatted_date = date.format("%d.%m.%Y kl. %H:%M").to_string();
+[dependencies]
+chrono = "0.4"
 ```
 
-Til slutt må vi konvertere datoen til en streng ved hjelp av `to_string` funksjonen og lagre den i en variabel.
+Deretter kan du importere biblioteket i Rust-filen din ved å legge til følgende linje:
+
+```Rust
+use chrono::{DateTime, Datelike, NaiveDate, Utc};
+```
+
+Nå kan vi konvertere en dato til en string ved å først opprette en `DateTime`-verdi ved hjelp av `Local::now()`-funksjonen, som returnerer nåværende dato og tid i lokal tidssone. Deretter kan vi bruke `format()`-metoden for å konvertere den til ønsket stringformat.
+
+```Rust
+let now = Local::now();
+println!("{}", now.format("%Y-%m-%d"));
+```
+
+Dette vil resultere i følgende output:
+
+```bash
+2021-10-25
+```
+
+Det er også en rekke andre formateringsalternativer tilgjengelig, for eksempel `%d.%m.%Y` for å få datoen i formatet "25.10.2021". Du kan også spesifisere tidssone og dato og tid med mer nøyaktighet ved å bruke `Utc::now()` i stedet for `Local::now()`.
 
 ## Dypdykk
 
-Nå som vi har konvertert datoen til en streng, kan vi også formatere den på ulike måter. For eksempel kan vi endre rekkefølgen på dag, måned og år ved å bruke `%m.%d.%Y` istedenfor `%d.%m.%Y` i formatstrengen. Vi kan også inkludere månedsnavnet ved å bruke `%B` og årstallet uten forkortelse ved å bruke `%Y` istedenfor `%y`.
+Nå som du har lært hvordan du konverterer en dato til en string i Rust, kan det være nyttig å dykke litt dypere og se på hvordan `chrono` biblioteket fungerer. Det er basert på konseptet av tre typer datoer: `DateTime`, `Date` og `Time`. `DateTime` er den komplette datoen og tiden, mens `Date` og `Time` representerer bare hver for seg. Dette gjør det mulig å arbeide med disse verdiene separat og legge dem sammen for å få en `DateTime`-verdi.
 
-Det er også viktig å merke seg at `format` modulen støtter å formatere datoer på ulike språk. Dette kan gjøres ved å spesifisere språkkoden i formatstrengen, for eksempel `%d.%m.%Y` for norsk og `%m/%d/%Y` for engelsk.
+En annen viktig ting å merke seg er at alle datoer i `chrono` er i UTC-tidssone. Dette sikrer riktig behandling av datoer og tider uansett hvor i verden en bruker befinner seg.
 
 ## Se også
 
-- [Official Rust documentation for DateTime](https://doc.rust-lang.org/std/time/struct.DateTime.html)
-- [Official Rust documentation for format module](https://doc.rust-lang.org/std/fmt/index.html)
-- [Date and time formatting in Rust](https://www.educative.io/blog/rust-tutorial-datetime)
+- [Chrono dokumentasjon](https://docs.rs/chrono/0.4.19/chrono/)
+- [Offisiell Rust nettside](https://www.rust-lang.org/no-NO/)
+- [Rust subreddit](https://www.reddit.com/r/rust/)

@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Att göra en sträng stor"
+title:                "Ruby: Kapitalisering av en sträng"
+simple_title:         "Kapitalisering av en sträng"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/capitalizing-a-string.md"
 ---
 
@@ -9,49 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Det är väldigt vanligt att man behöver konvertera en sträng så att första bokstaven i varje ord är stor. Det kan vara för att presentera information eller bara för estetiskt syfte. I denna blogginlägg kommer vi att lära oss hur man gör det med Ruby-programmeringsspråket.
+Att kunna omvandla strängar till versaler är en viktig del av Ruby-programmering. Det kan hjälpa till att förbättra användbarheten och presentationen av ditt program och göra det mer lättläst. Du kan också använda det för att lösa specifika problem med strängmanipulering. 
 
+## Såhär går det till
 
-## Hur man gör
-
-För att börja, måste vi först definiera en sträng som vi vill ändra. Låt oss använda "hej världen" som ett exempel.
-
-```Ruby
-sträng = "hej världen"
-```
-Nu, för att konvertera strängen med stor bokstav på varje ord, kan vi använda metoden "capitalize".
+För att omvandla en sträng till versaler, använder vi metoden `upcase`. Det är en inbyggd metod i Ruby som enkelt konverterar alla bokstäver i en sträng till versaler. Låt oss ta en titt på ett enkelt exempel:
 
 ```Ruby
-sträng.capitalize
+strang = "hej allihopa!"
+
+puts strang.upcase
 ```
 
-Detta kommer att ge oss följande utmatning:
+Output: HEJ ALLIHOPA!
+
+Som du kan se så omvandlades alla bokstäver i strängen till versaler. Nu kanske du undrar vad som händer med å, ä och ö. Detta beror på att den `upcase` metoden bara gäller för bokstäver inom det engelska alfabetet. Om du vill att även å, ä och ö ska omvandlas till versaler, kan du använda metoden `mb_upcase`, vilket hanterar unicode-tecken.
 
 ```Ruby
-"Hej världen"
-```
+strang = "hej på dej!"
 
-Om du vill ändra endast den första bokstaven i hela strängen kan du använda metoden "capitalize!".
-
-```Ruby
-sträng.capitalize!
+puts strang.mb_upcase
 ```
-Nu kommer strängen att bli permanent ändrad till:
+Output: HEJ PÅ DEJ!
 
-```Ruby
-"Hej världen"
-```
+Som du ser så behåller `mb_upcase` även å, ä och ö i sin omvandling.
 
 ## Djupdykning
 
-Om vi gräver lite djupare i hur metoden "capitalize" fungerar, kommer vi att märka att det i själva verket konverterar endast den första bokstaven i varje ord, medan resten av bokstäverna förblir oförändrade. Om strängen innehåller en accent eller specialtecken, kommer de fortfarande att behållas efter konverteringen.
+För att förstå varför `upcase` inte fungerar för å, ä, och ö inom det engelska alfabetet, behöver vi förstå skillnaden mellan en byte och ett unicode-tecken. Ett byte är en åtta-bitars enhet som används för att representera en enda symbol i ett teckenkodningssystem. Å andra sidan är unicode-tecken en universal standard som möjliggör representation av alla möjliga skrifttecken. För att hantera å, ä, och ö, som är unicode-tecken, behöver vi använda den speciella metoden `mb_upcase` för att säkerställa att de också konverteras till versaler.
 
-Det finns också en annan metod som heter "titleize" som fungerar på liknande sätt som "capitalize", förutom att den också konverterar alla mellanrum till "-" tecken. Detta kan vara användbart om du till exempel vill skapa en URL från en sträng.
+För att förstå mer om teckenkodning och dess betydelse inom Ruby-programmering, kan du läsa mer här [1][teckenkodning-wikipedia] och här [2][ruby-teckenkodning].
 
 ## Se även
 
-Här är några användbara länkar för att lära dig mer om strängmanipulation i Ruby:
+Här hittar du mer information om teckenkodning och andra användbara Ruby-metoder.
 
-- [Ruby dokumentation för metoden "capitalize"](https://ruby-doc.org/core-2.6.1/String.html#method-i-capitalize)
-- [En handledning om strängmanipulation i Ruby](https://www.digitalocean.com/community/tutorials/how-to-use-string-manipulation-methods-in-ruby)
-- [En
+[teckenkodning-wikipedia]: https://sv.wikipedia.org/wiki/Teckenkodning
+[ruby-teckenkodning]: https://www.ruby-lang.org/sv/documentation/faq/8/#encoding

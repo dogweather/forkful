@@ -1,33 +1,40 @@
 ---
 title:                "Fish Shell: टेस्ट लिखना"
+simple_title:         "टेस्ट लिखना"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## इसलिए
-व्यापार डेवलपमेंट में सबसे महत्वपूर्ण कामों में से एक है अपने सॉफ्टवेयर में बग्स को ढूंढना और उन्हें दूर करना। उन बग्स को संशोधित करने के लिए, टेस्टिंग प्रक्रिया एक अनिवार्य चरण है। यहां हम फिश शेल प्रोग्रामिंग के माध्यम से टेस्ट को कैसे लिख सकते हैं, इस बारे में चर्चा करेंगे।
+## क्यों
+
+तुम कोई भी programming language सीखते हो तो tests का महत्व काफी अधिक होता है। किसी application को मुकामल बनाने से पहले tests लिखना आपके code को स्पष्ट और reliable बनाएगा और आपको बग्स को ठीक करने में मदत करेगा।
 
 ## कैसे करें
-```Fish Shell में टेस्ट लिखना बहुत आसान है। सबसे पहले, हम `set -l` कमांड का उपयोग करके टेस्ट के लिए एक चर का नाम सेट कर सकते हैं। फिर हम `test` कमांड का उपयोग करके अस्तित्व रखने या निकटता जांच सकते हैं। नीचे एक उदाहरण है:
+
 ```Fish Shell
-
-set -l name "John Doe"
-
-test $name = "John Doe"
-echo $status
-# इसका आउटपुट 0 होना चाहिए, क्योंकि दोनों मान बराबर हैं
-
-test $name = "Jane Doe"
-echo $status
-# इसका आउटपुट 1 होना चाहिए, क्योंकि मान अलग हैं
+# उदाहरण
+echo "नमस्ते, दुनिया!"
+# आउटपुट: नमस्ते, दुनिया!
 ```
 
-इस तरह से हम चर और उसके मान को टेस्ट कर सकते हैं। इसके अलावा, हम `not` कमांड का भी उपयोग कर सकते हैं जो एक टेस्ट को उल्टा दिखाता है, यानि 0 की जगह 1 या उम्पाइर कर देता है।
+टेस्ट लिखने के लिए, आपको `Fish Shell` का उपयोग करके `assert` कमांड को जोड़ना होगा। यह कमांड दो values को compare करता है और अगर वे equal नहीं हैं तो एक error message देता है। नीचे दिए गए example को follow करके आप टेस्ट कर सकते हो:
 
-## गहराई तक जाएं
-टेस्ट को समझने के लिए और अधिक गहराई तक जाने के लिए, हम फिश शेल के स्कोपिंग और वेबसाइट टेस्टिंग के बारे में भी अधिक जान सकते हैं। इन लिंक्स में से एक चेक आउट करें:
+```Fish Shell
+begin
+  assert 1 -eq 2 "1 should equal 2"
+end
+```
 
-- फिश शेल स्कोपिंग और माउस स
+## गहराई में जाएं
+
+टेस्ट लिखने में गहराई में जाने से आपको टेस्ट के बारे में और अधिक जानकारी होगी। आप अलग-अलग data types, functions और loops को टेस्ट कर सकते हो। आपको अपने code को organize करके उनके परीक्षण के लिए reusable tests लिखने की सलाह दी जाती है। आप अपने code के साथ संबंधित issues को ट्रैक करने के लिए test suites भी बना सकते हो।
+
+## देखें भी
+
+- [Fish Shell का documentation](https://fishshell.com/docs/current/)
+- [Fish Shell से सम्बंधित tutorials](https://fishshell.com/docs/current/tutorial.html)
+- [Fish Shell और test suites](https://fishshell.com/docs/current/tutorial.html#advanced-testing-with-suite)

@@ -1,52 +1,42 @@
 ---
 title:                "C: 텍스트 파일 작성하기"
+simple_title:         "텍스트 파일 작성하기"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-문자 파일을 쓰는 이유는 복잡한 데이터를 저장하고 공유하기 위함입니다.
+텍스트 파일을 작성하는 이유는 프로그래밍에서 매우 중요합니다. 이것은 정보를 저장하고 나중에 사용하기 위해 파일에 데이터를 저장하는 방법입니다. 또는 프로그램을 실행할 때마다 동일한 결과를 얻기 위해 코드를 저장하는 방법입니다.
 
-## 하는 법
+## 어떻게
 
-아래 코드 블록을 통해 코딩 예제와 출력 결과를 확인할 수 있습니다.
+텍스트 파일을 작성하기 위해 C 코드를 사용하는 방법은 간단합니다. 먼저 `file.h` 라이브러리를 포함하고 `fopen()`함수를 사용하여 파일을 열어야 합니다. 그런 다음 `fprintf()` 함수를 사용하여 파일에 데이터를 작성할 수 있습니다.
 
 ```C
 #include <stdio.h>
- 
-int main() {
-    // 파일 포인터 생성
-    FILE *fp;
-    
-    // 파일 열기
-    fp = fopen("sample.txt", "w");
-    
-    // 데이터 쓰기
-    fprintf(fp, "여러분, 안녕하세요!");
-    
-    // 파일 닫기
-    fclose(fp);
-    
-    return 0;
+#include <file.h>
+
+void main() {
+    FILE *file = fopen("output.txt", "w"); // output.txt 파일을 열고 쓰기 모드로 설정합니다.
+    fprintf(file, "안녕하세요!"); // 파일에 "안녕하세요!" 라는 데이터를 작성합니다.
+    fclose(file); // 파일을 닫습니다.
 }
 ```
 
-위 코드는 "sample.txt"라는 파일을 새로 생성하고, 그 안에 "여러분, 안녕하세요!"라는 문장을 쓰는 간단한 예제입니다. 이제 해당 파일을 열어보면 정확히 입력한 문장이 저장되어 있는 것을 확인할 수 있습니다.
+위의 예시 코드를 실행하면, `output.txt` 파일에 "안녕하세요!" 라는 데이터가 작성됩니다.
 
-## 깊이 파고들기
+## 깊은 이해
 
-문자 파일을 쓰는 것은 기본적으로 파일을 생성하고 그 안에 데이터를 쓰는 과정입니다. 이 과정에서 특정 오류에 대한 처리, 파일에 접근하는 방식 등 다양한 요소가 포함될 수 있습니다. 또한 파일을 읽는 방법과 비슷한 구조를 가진다는 점에서 파일 입출력에 대한 개념을 확장하는 데도 도움이 됩니다. 따라서 프로그래밍을 좀 더 깊이 이해하고 싶은 분들은 문자 파일을 쓰는 과정에 대해 더욱 자세히 공부해보시는 것도 좋은 방법입니다.
+프로그래밍에서 텍스트 파일을 작성하는 것은 매우 중요합니다. 텍스트 파일을 사용하여 데이터를 저장하고 다른 프로그램에서 이를 읽어들일 수 있으며, 코드를 저장하여 나중에 재사용할 수 있습니다. 
+또한 파일을 열고 닫음으로써 프로그램이 파일을 자동으로 메모리에서 제거할 수 있습니다. 이것은 프로그램을 더욱 효율적으로 만들어 줍니다.
 
-## See Also
+# 참고
 
-[파일 입출력 기초 in C](https://www.geeksforgeeks.org/basics-file-handling-c/)
-
-[Writing Files in C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-
-[Exploring the C file input/output library](https://www.harding.edu/fmccown/internetexplorer/cio/)
-
-감사합니다!
+- [C 파일 관리](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [파일 처리하기](https://dojang.io/mod/page/view.php?id=744)
+- [파일 입출력 강좌](http://schoolofweb.net/blog/posts/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%ED%8C%8C%EC%9D%BC%EC%9D%BD%EC%B6%9C%EB%A0%A5/)

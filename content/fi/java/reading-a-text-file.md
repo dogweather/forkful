@@ -1,49 +1,64 @@
 ---
-title:                "Java: Tekstitiedoston lukeminen"
+title:                "Java: Tiedoston lukeminen"
+simple_title:         "Tiedoston lukeminen"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi lukea teksti tiedostoja Java-ohjelmoinnin yhteydessä?
+## Miksi tekstitiedostojen lukeminen on tärkeää?
 
-Teksti tiedostot ovat yleinen tapa tallentaa ja jakaa tietoa ohjelmoinnin maailmassa. Ne voivat sisältää tekstejä, lukuarvoja, merkkejä ja jopa muita tiedostoja. Java-ohjelmoijana, sinun on tärkeää olla tietoinen siitä, miten lukea teksti tiedostoja ja käsitellä niiden sisältöä koodissa.
+Tekstiedostojen lukeminen on välttämätöntä monissa ohjelmointiprojekteissa, sillä ne tarjoavat helpon tavan tallentaa ja lukea tietoja. Ne ovat myös erittäin hyödyllisiä tekstin käsittelyyn liittyvissä tehtävissä, kuten tietojen muokkaamisessa ja analysoinnissa.
 
-## Näin teet sen
+## Miten lukea tekstitiedosto Javassa?
 
-Java-ohjelmointikielessä on sisäänrakennettuja toimintoja, joiden avulla voit lukea ja käsitellä teksti tiedostoja. Alla on esimerkki koodista, kuinka voit lukea tiedoston nimeltä "teksti.txt".
+Javan File-luokka tarjoaa helpon tavan lukea ja kirjoittaa tekstitiedostoja. Seuraavassa esimerkissä näytämme, miten voit lukea tiedoston sisällön ja tulostaa sen näytölle:
 
 ```Java
-// Tuo tarvittavat kirjastot
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
-// Luo uusi tiedosto-olio ja avaa se lukemista varten
-File tiedosto = new File("teksti.txt");
-FileReader lukija = new FileReader(tiedosto);
+public class TextFileReader {
+    public static void main(String[] args) {
+        // Luodaan uusi File-objekti ja annetaan sille tiedoston nimi
+        File file = new File("tekstitiedosto.txt");
+        
+        try {
+            // Luodaan uusi Scanner-objekti tiedoston lukemiseen
+            Scanner scanner = new Scanner(file);
 
-// Luetaan kaikki teksti ja tallennetaan se javan omalla "char" tyyppisellä muuttujalla
-int merkki;
-while ((merkki = lukija.read()) != -1) {
-  char c = (char)merkki; // Muuta "int" tyyppinen merkki "char" tyyppiseksi
-  // Tee halutut toimenpiteet luetulle merkille
+            // Luetaan tiedoston sisältö ja tulostetaan se näytölle
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                System.out.println(line);
+            }
+
+            // Suljetaan Scanner-objekti
+            scanner.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("Tiedostoa ei löytynyt.");
+        }
+    }
 }
-
-// Sulje tiedosto lukemisen jälkeen
-lukija.close();
 ```
 
-Tämä koodi esimerkki luo ensin tarvittavat tulot (input) toiminnot ja tiedostoon viittaavat oliot. Sitten se lukee tiedoston sisällön merkki kerrallaan, tallentaa sen "char" muuttujaan ja suorittaa halutut toimenpiteet luetulle merkille. Lopuksi tiedosto suljetaan lukemisen jälkeen.
+Tulostus:
+```
+Tervetuloa lukemaan tekstitiedostoa!
+Tässä on esimerkki tiedostosta.
+Voit muokata ja lisätä tähän haluamiasi tekstejä.
+```
 
-## Syvällisempi tarkastelu
+## Syvempää tietoa tekstitiedostojen lukemisesta
 
-On tärkeää muistaa, että teksti tiedostot voivat sisältää monenlaisia merkkejä ja niiden lukeminen Java-ohjelmassa vaatii oikeanlaisen koodauksen. Tämä tarkoittaa, että sinun tulee huolehtia siitä, että tiedosto tallennetaan ja luetaan samassa koodauksessa. Voit myös tarvittaessa asettaa koodauksen manuaalisesti luku- tai kirjoitusprosessin yhteydessä.
+Tekstiedostojen lukeminen Javassa perustuu lukijan (esim. Scanner) käyttöön, joka lukee tiedostosta merkki kerrallaan. Javan FileReader-luokka lukee tiedoston tavu kerrallaan, joka tarjoaa hieman tehokkaamman tavan lukea suurikokoisia tiedostoja. Voit myös käyttää Javan Path-luokkaa pääsemään käsiksi tiedostopolkuun ja tiedoston nimeen.
 
 ## Katso myös
 
-- [Java-opas - Tiedostojen käsittely](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [Codecademy - Java tiedostojen lukeminen ja kirjoittaminen](https://www.codecademy.com/learn/learn-java/modules/learn-java-files)
-- [Baeldung - Tiedostojen lukeminen ja kirjoittaminen Javassa](https://www.baeldung.com/java-read-file)
+- Java File-luokka: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
+- Java Scanner-luokka: https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
+- Javan tiedostonhallinta: https://docs.oracle.com/javase/tutorial/essential/io/file.html

@@ -1,60 +1,44 @@
 ---
-title:                "C: 명령 줄 인수 읽기."
+title:                "C: 컴퓨터 프로그래밍: 명령 줄 인수 읽기"
+simple_title:         "컴퓨터 프로그래밍: 명령 줄 인수 읽기"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+커맨드 라인 인수를 읽는 방법을 배우는 것은 효율적인 프로그래밍을 위해 필수적입니다.
 
-우리가 프로그래밍 할 때, 종종 프로그램 실행 시 데이터를 전달하고 싶은 경우가 있습니다. 그러나 이러한 데이터는 코드 내에 하드 코딩되어 있지 않기 때문에 외부에서 가져와야 합니다. 이때, 커맨드 라인 인수를 사용할 수 있습니다. 이 블로그 포스트에서는 이러한 커맨드 라인 인수를 읽는 방법에 대해 알아보겠습니다.
+## 방법
+커맨드 라인 인수를 읽는 방법은 간단합니다. 다음과 같은 코드를 작성하면 됩니다.
 
-## 사용 방법
-
-커맨드 라인 인수를 읽는 방법은 간단합니다. "argc"와 "argv"라는 두 가지 매개변수를 가진 메인 함수를 사용하면 됩니다. argc는 커맨드 라인에 입력된 인자의 수를 의미합니다. 호스트 운영체제에 따라 달라질 수 있지만, 일반적으로 나머지 인자는 "argv"로 전달됩니다.
-
-아래는 C 언어를 사용하여 간단한 프로그램을 작성한 예시입니다. 코드 내에 "```"로 감싸진 부분은 실제 코드입니다.
-
-```
-#include <stdio.h>
-
+```C
 int main(int argc, char *argv[]) {
-    int i;
-
-    printf("전달된 인수의 수: %d\n", argc);
-    for (i = 0; i < argc; i++) {
+    // 커맨드 라인 인수 출력
+    for (int i = 0; i < argc; i++) {
         printf("인수 %d: %s\n", i, argv[i]);
     }
-
     return 0;
 }
 ```
 
-위 코드를 "sample.c"라는 파일로 저장하고 컴파일 후 실행하면, 커맨드 라인에 입력한 인자들이 출력됩니다. 예를 들어, "sample.exe hello world"라는 커맨드를 입력하면 아래와 같은 출력을 볼 수 있습니다.
+위 코드를 실행하면 인수 0에는 프로그램의 실행 경로가, 인수 1부터는 사용자가 입력한 인수들이 출력됩니다. 예를 들어, `./program argument1 argument2`와 같이 입력하면 인수 0에는 `./program`이, 인수 1에는 `argument1`이, 인수 2에는 `argument2`가 출력됩니다.
 
-```
-전달된 인수의 수: 3
-인수 0: sample.exe
-인수 1: hello
-인수 2: world
-```
+위 방법 말고도 `getopt` 함수를 사용하여 더 유연하게 인수를 읽을 수 있습니다.
 
-## 딥 다이브
+## 심층 분석
+커맨드 라인 인수는 사용자로부터 입력을 받아 프로그램을 실행할 때 매우 유용하게 사용됩니다. 개발자는 사용자가 입력한 인수들을 분석하여 프로그램의 동작을 다르게 조절할 수 있습니다. 또한, 커맨드 라인 인수를 사용하면 프로그램의 테스트를 더 쉽게 할 수 있습니다. 예를 들어, 프로그램을 실행할 때 다른 인수를 입력하면서 프로그램이 정상적으로 동작하는지 확인할 수 있습니다.
 
-실제로 커맨드 라인 인수를 읽는 작업은 더 복잡합니다. 이러한 인수는 텍스트로서만 전달되기 때문에 이를 다른 데이터 타입으로 변환하는 작업이 필요합니다. 또한, 예외 상황에 대한 처리 및 인수의 순서에 따라 다른 동작을 하는 경우도 고려해야 합니다.
-
-이러한 세부 사항에 대해서는 더 깊이 공부해야 합니다. 더 깊이 공부하기 위해서는 "getopt" 함수나 "argp" 라이브러리를 참고하시기 바랍니다.
-
-## 더 알아보기
-
-- [커맨드 라인 인수를 읽는 방법](https://modoocode.com/108)
-- [C언어 커맨드 라인 인수](https://codescracker.com/cpp/cpp-command-line-arguments.htm)
-- [getopt 함수](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
-- [argp 라이브러리](https://www.gnu.org/software/libc/manual/html_node/Argp.html)
+커맨드 라인 인수를 사용할 때 주의해야 할 점은 입력된 인수들의 타입을 정확하게 맞추는 것입니다. 예를 들어, `atoi` 함수를 사용하여 문자열 타입의 인수를 정수로 변환할 수 있지만, 입력된 인수가 정수가 아닌 경우 프로그램에서 오류가 발생할 수 있습니다. 따라서 개발자는 사용자가 입력할 수 있는 모든 경우를 예상하고 그에 맞는 예외처리를 해주어야 합니다.
 
 ## 참고 자료
+- [C언어 커맨드 라인 인수 읽기](https://www.joinc.co.kr/w/Site/system_programing/File/File_IO#AEN853)
+- [getopt 함수 정리](https://black-live.tistory.com/13)
+- [커맨드 라인 인수 사용 예제](https://github.com/jhyeok0220/C_Language/blob/master/%5BSTD%5D03_C%EC%96%B8%EC%96%B4/%5BSTD%5D03_%EC%BB%A4%EB%A7%A8%EB%93%9C%20%EB%9D%BC%EC%9D%B8%20%EC%9D%B8%EC%88%98.c)
 
-- [메르 링의 C 프로그래밍](https://www.Linux-mag.com/id/3972/)
-- [문제 해결을 위한 프로그래밍, 2판](https://book.naver.com/bookdb/book_detail.nhn?bid=1229799)
+## 참고 자료 (See Also)
+- [C언어 메모리 관리](https://www.joinc.co.kr/w/man/2/malloc)
+- [데이터 타입 변환](https://modoocode.com/12)

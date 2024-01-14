@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Leyendo un archivo de texto"
+simple_title:         "Leyendo un archivo de texto"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/reading-a-text-file.md"
 ---
 
@@ -9,48 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Si eres un programador de Elixir, entonces probablemente ya estés familiarizado con la importancia de trabajar con archivos de texto en tus proyectos. Pero si eres nuevo en el lenguaje o solo estás buscando una forma más eficiente de manejar archivos de texto en Elixir, este artículo es para ti.
+Aprender a leer archivos de texto es una habilidad importante para cualquier programador de Elixir. Con esta habilidad, podrás leer y procesar grandes cantidades de datos de manera eficiente, lo que te permitirá crear aplicaciones más robustas y eficaces.
 
 ## Cómo hacerlo
 
-Leer un archivo de texto es una tarea sencilla en Elixir gracias al módulo `File`. Primero, necesitas especificar la ruta del archivo y luego usar la función `read!` para obtener el contenido del mismo.
+Primero, necesitas crear una ruta al archivo de texto que deseas leer. Luego, puedes utilizar la función `File.open/2` para abrir el archivo y leer su contenido. Aquí hay un ejemplo de código en Elixir que muestra cómo hacerlo:
 
-Por ejemplo, supongamos que tenemos un archivo llamado "ejemplo.txt" que contiene el siguiente texto:
+```Elixir
+archivo = "ruta/al/archivo.txt"
+{:ok, archivo} = File.open(archivo)
 
-```
-¡Hola, mundo!
-Este es un ejemplo de archivo de texto en Elixir.
-```
-
-Para leer este archivo en Elixir, haríamos lo siguiente:
-
-```
-contents = File.read!("ejemplo.txt")
+IO.puts File.read(archivo)
 ```
 
-Luego, si queremos imprimir el contenido del archivo en la consola, podríamos hacerlo de la siguiente manera:
-
-```
-IO.puts(contents)
-```
-
-El resultado en la consola sería:
-
-```
-¡Hola, mundo!
-Este es un ejemplo de archivo de texto en Elixir.
-```
+Este código primero asigna la ruta del archivo de texto a la variable `archivo` y luego utiliza la función `File.open/2` para abrir el archivo y asignarlo a la misma variable. Luego, utiliza la función `IO.puts` para imprimir el contenido del archivo en la consola.
 
 ## Profundizando
 
-Aunque la función `read!` nos permite leer fácilmente el contenido de un archivo de texto, hay algunas cosas a tener en cuenta al trabajar con archivos en Elixir. Por ejemplo, si el archivo es muy grande, puede ser más eficiente usar la función `stream!` en lugar de `read!`, ya que esta última carga todo el contenido en memoria, mientras que `stream!` proporciona una forma de leer el archivo en fragmentos (o "streams").
+Al leer un archivo de texto en Elixir, es importante tener en cuenta el tamaño del archivo. Si el archivo es demasiado grande, leerlo y almacenarlo en la memoria puede ralentizar tu aplicación y potencialmente causar errores. Para manejar archivos grandes, puedes utilizar las funciones `IO.stream/2` y `Enum.each/2` junto con un bloque `do` en lugar de la función `IO.puts`. Esto te permite leer el archivo línea por línea y procesar cada línea de forma individual, evitando así el almacenamiento de todo el contenido del archivo en la memoria.
 
-También es importante tener en cuenta que diferentes sistemas operativos tienen diferentes convenciones de final de línea (EOL). En Elixir, podemos especificar la convención que queremos usar al leer o escribir en un archivo mediante el uso del parámetro `:eol` en nuestras funciones.
+### Vinculación dinámica
+
+Además de leer archivos de texto estáticos, también puedes utilizar la función `File.stream!/2` para leer archivos de forma dinámica. Esto significa que puedes pasar una ruta de archivo como un argumento y leer diferentes archivos dependiendo de las entradas del usuario. Esto es especialmente útil si estás creando una aplicación que necesita leer diferentes archivos según la ubicación del usuario o sus preferencias personales.
 
 ## Ver también
 
-Si quieres aprender más sobre el manejo de archivos de texto en Elixir, puedes consultar estos recursos adicionales:
-
-- [Documentación oficial sobre el módulo File en Elixir](https://hexdocs.pm/elixir/File.html)
-- [Tutorial sobre el manejo de archivos en Elixir](https://www.freecodecamp.org/news/learn-elixir-by-creating-a-timezone-converter-622576de863b/)
-- [Video tutorial sobre el manejo de archivos en Elixir](https://www.youtube.com/watch?v=97ciOT10S-8)
+- [Documentación de Elixir sobre lectura de archivos](https://hexdocs.pm/elixir/File.html#content)
+- [Artículo en español sobre procesamiento de archivos en Elixir](https://apuntes.develoteca.com/2018/08/05/procesando-archivos-de-texto-en-elixir/)

@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Sammenligning av to datoer"
+simple_title:         "Sammenligning av to datoer"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/comparing-two-dates.md"
 ---
 
@@ -9,55 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sammenligne to datoer er en vanlig oppgave i mange programmeringsprosjekter. Når du arbeider med tidsbaserte data, kan det være nyttig å vite hvordan du skal sammenligne to datoer for å kunne håndtere dem riktig.
+Å sammenligne to datoer kan være nyttig når du ønsker å filtrere data eller organisere informasjon etter dato. Det kan hjelpe deg å forstå når noe skjedde og få en bedre oversikt over tidsbaserte hendelser.
 
 ## Hvordan
 
-For å sammenligne to datoer i Elm, bruker vi funksjonen `Date.compare` som tar inn to datoer og returnerer en `Order` som kan være `LT` (mindre enn), `EQ` (lik) eller `GT` (større enn). Her er et eksempel på hvordan du kan sammenligne to datoer:
+For å sammenligne to datoer i Elm kan du bruke funksjonen `compare` fra [`Time`](https://package.elm-lang.org/packages/elm/time/latest/Time) pakken. Denne funksjonen tar to datoer som parametere og returnerer et `Comparison`-verdi som kan være `LT` (mindre enn), `EQ` (lik) eller `GT` (større enn). Her er et eksempel på hvordan du kunne sammenligne to datoer og deretter skrive ut resultatet:
 
-```Elm
-date1 = Date.fromCalendarDate 2020 11 15
-date2 = Date.fromCalendarDate 2020 11 20
+```elm
+import Time exposing (Date, Day, Month, Year, compare)
+import Time.Format as Format
 
-Date.compare date1 date2
--- output: LT
+dato1 : Date
+dato1 = Date.fromDate 2021 Jan 1
+
+dato2 : Date
+dato2 = Date.fromDate 2021 Jan 2
+
+sammenligning : Comparison
+sammenligning = compare dato1 dato2
+
+output : String
+output =
+    "Dato 1 er " ++ case sammenligning of
+        LT -> "mindre enn"
+        EQ -> "lik"
+        GT -> "større enn"
+    ++ " dato 2."
+
+main : Html msg
+main =
+    text (Format.format Date.rfc3339 dato1 ++ " " ++ output)
 ```
 
-I dette eksempelet er `date1` mindre enn `date2` siden den kommer først i tidslinjen.
+Dette eksemplet vil resultere i følgende utskrift:
 
-Hvis du trenger å sammenligne kun datoene og ikke tidspunktene, kan du bruke funksjonen `Date.toDays`. Denne funksjonen konverterer datoene til antall dager siden 1970-01-01 og gjør det enklere å sammenligne dem. Her er et eksempel på hvordan du kan bruke `Date.toDays`:
-
-```Elm
-date1 = Date.fromCalendarDate 2020 11 15
-date2 = Date.fromCalendarDate 2020 11 20
-
-Date.toDays date1
--- output: 18512
-
-Date.toDays date2
--- output: 18517
+```shell
+2021-01-01T00:00:00+00:00 Dato 1 er mindre enn dato 2.
 ```
-
-Igjen ser vi at `date1` er mindre enn `date2`.
 
 ## Dypdykk
 
-Når vi sammenligner to datoer, er det viktig å tenke på hvordan vi håndterer tidssoner. Elm har en innebygd `Time`-modul som tar vare på tidszoner, men hvis du ønsker å ignorere tidsforskjeller, kan du bruke funksjonen `Date.toTime` som konverterer datoen til millisekunder siden UNIX-epoken (1970-01-01 00:00:00). Her er et eksempel på how vi kan bruke denne funksjonen:
+I tillegg til å bruke `compare` funksjonen, kan du også bruke `DateTime` modulen fra [`Time.Extra`](https://package.elm-lang.org/packages/elm/time-extra/latest/Time-Extra-DateTime) pakken for å utføre mer avanserte operasjoner med datoer. Denne modulen tilbyr funksjoner som `diffInDays` for å finne antall dager mellom to datoer, eller `addToTime` for å legge til et gitt antall dager eller måneder til en dato.
 
-```Elm
-date1 = Date.fromCalendarDate 2020 11 15
-date2 = Date.fromCalendarDate 2020 11 20
-
-Date.toTime date1
--- output: 1605436800000
-
-Date.toTime date2
--- output: 1605897600000
-```
-
-Selv om datoene er fra samme dag, er de forskjellige hvis vi tar hensyn til tidsforskjeller.
+Det er også verdt å merke seg at Elm ikke har en egen dato og tidsstempel datatype, men i stedet bruker det `Date`, `Time` og `DateTime` verdityper fra [`Time`](https://package.elm-lang.org/packages/elm/time/latest/Time) pakken. Dette kan være noe å være oppmerksom på når du arbeider med datoer og klokkeslett i Elm.
 
 ## Se også
 
-- [Elm Time module documentation](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Date and Time in Elm by Héctor Ramón](https://becoming-functional.com/date-and-time-in-elm-26cbd0549d98)
+- [Elm Time package documentation](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Elm Time Extra package documentation](https://package.elm-lang.org/packages/elm/time-extra/latest/)
+- [Elm Date and Time guide](https://guide.elm-lang.org/architecture/effects/time.html)

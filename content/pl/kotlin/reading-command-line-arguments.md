@@ -1,43 +1,47 @@
 ---
 title:                "Kotlin: Odczytywanie argumentów wiersza poleceń"
+simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-Jeśli planujesz rozwijać swoją wiedzę i umiejętności w zakresie programowania w języku Kotlin, z pewnością należy zapoznać się z możliwościami czytania argumentów wiersza poleceń. Dzięki temu zyskasz umiejętność dynamicznego zarządzania swoim kodem i zwiększysz swoją produktywność. Czytanie argumentów wiersza poleceń może być wykorzystane w różnych projektach, od prostych skryptów po duże i złożone aplikacje.
+
+Czy kiedykolwiek słyszałeś o przekazaniu argumentów przez wiersz poleceń do swojego programu? Jeśli tak, być może zastanawiasz się, dlaczego jest to potrzebne lub przydatne. W tym artykule dowiesz się, dlaczego warto poznać tę funkcję w języku Kotlin.
 
 ## Jak to zrobić
-Aby czytać argumenty wiersza poleceń w języku Kotlin, wykorzystaj metodę `args` z obiektu `main` w swoim pliku `Main.kt`. Poniższy przykład kodu pokazuje, jak uzyskać dostęp do pojedynczych argumentów i wypisać je na ekranie:
+
+Poznanie przekazywania argumentów przez wiersz poleceń w języku Kotlin jest bardzo proste. Wystarczy użyć wbudowanej funkcji "args" w głównym pliku programu. Poniżej przedstawiony jest przykładowy kod, który drukuje wszystkie przekazane argumenty w terminalu:
 
 ```Kotlin
 fun main(args: Array<String>) {
-    // pobranie pierwszego argumentu
-    val firstArgument = args[0]
-    println("Pierwszy argument to: $firstArgument")
-
-    // pobranie drugiego argumentu
-    val secondArgument = args[1]
-    println("Drugi argument to: $secondArgument")
+    for (arg in args) {
+        println(arg)
+    }
 }
 ```
 
-Pamiętaj, że indeksy w tablicy `args` zaczynają się od 0, więc pierwszy argument będzie dostępny pod indeksem `0`, drugi pod `1`, itd. Możesz również użyć pętli `for` do iteracji przez wszystkie argumenty, na przykład:
+Jeśli uruchomisz ten program z argumentami "Hello", "world!", to w konsoli uzyskasz następujący wynik:
 
-```Kotlin
-for (argument in args) {
-    println(argument)
-}
+```
+Hello
+world!
 ```
 
-Powyższy kod wypisze na ekranie wszystkie argumenty wpisane przy uruchamianiu programu. Dzięki temu możesz dynamicznie przetwarzać dane wejściowe i dostosowywać działanie aplikacji do różnych scenariuszy.
+## Deep Dive
 
-## Głębsze spojrzenie
-Istnieją również inne sposoby na czytanie argumentów wiersza poleceń w języku Kotlin. Niektóre z nich wymagają bibliotek zewnętrznych, które oferują zaawansowane funkcje, takie jak parsowanie argumentów pod kątem określonych flag lub użycie specjalnej składni. Jednak wykorzystanie metody `args` jest wystarczające dla podstawowych potrzeb i wydajniejsze w przypadku prostych zastosowań.
+W języku Kotlin możesz przekazywać argumenty wiersza poleceń nie tylko podczas uruchamiania programu, ale także w trakcie jego działania. Na przykład, jeśli użyjesz funkcji "readLine" w celu wprowadzenia argumentów przez użytkownika, zostaną one przekazane jako argumenty wiersza poleceń. Takie podejście może być bardzo przydatne, zwłaszcza w przypadku aplikacji konsolowych.
+
+Ponadto, możesz również określić typy danych argumentów wiersza poleceń, co ułatwia ich przetwarzanie. Na przykład, jeśli wiesz, że oczekiwane argumenty będą liczbami, możesz użyć funkcji "toInt" lub "toDouble" do ich przekonwertowania przed dalszym przetwarzaniem.
 
 ## Zobacz również
-- Dokumentacja języka Kotlin: [Czytanie argumentów wiersza poleceń](https://kotlinlang.org/docs/reference/basic-types.html#command-line-arguments)
-- Poradnik na blogu AndroidPortal: [Obsługa argumentów wiersza poleceń w języku Kotlin](https://androidportal.pl/kotlin/obsLuga-argumentow-wiersza-polecen-w-jezyku-kotlin/)
+
+Jeśli chcesz dowiedzieć się więcej o przekazywaniu argumentów przez wiersz poleceń w języku Kotlin, polecam zapoznać się z dokumentacją języka oraz innych poradników dostępnych online:
+
+- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/reference/command-line.html
+- Poradnik wideo na YouTube: https://www.youtube.com/watch?v=bw-cXwFWfWY
+- Artykuł na blogu Medium: https://medium.com/@thomasviana/kotlin-command-line-arguments-e7bd02f64ada

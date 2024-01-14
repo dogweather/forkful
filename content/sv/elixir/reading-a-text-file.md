@@ -1,39 +1,54 @@
 ---
-title:                "Elixir: Läsa en textfil"
+title:                "Elixir: Läsning av en textfil"
+simple_title:         "Läsning av en textfil"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför?
+## Varför
 
-Att läsa och använda textfiler är en viktig del av programmering, oavsett vilket språk du använder. I den här bloggposten kommer vi att titta närmare på hur du kan läsa en textfil med Elixir och vad du kan göra med den informationen.
+Att läsa en textfil kan vara en viktig uppgift i en Elixir-applikation. Genom att kunna läsa data från en fil kan vi få tillgång till information som är viktigt för vår applikation. Det kan vara allt från användardata till konfigurationsinställningar.
 
-## Så här gör du
+## Hur
 
-För att läsa en textfil i Elixir använder vi funktionen `File.read!`. Denna funktion tar ett argument som är sökvägen till den textfil som du vill läsa. Du kan också använda `File.read` för att få tillbaka en tuple där den första delen är ett boolean som indikerar om filen lästes korrekt eller inte, och den andra delen är själva filinnehållet.
-
-Här är ett exempel som läser en textfil med namnet "exempel.txt" och skriver ut innehållet:
+För att läsa en textfil i Elixir, används funktionen File.read/1. Den tar en filväg som argument och returnerar en tuple med resultatet. Här är ett exempel på hur vi skulle kunna läsa en textfil som innehåller namn på användare och deras ålder:
 
 ```Elixir
-filinnehåll = File.read!("exempel.txt")
-IO.puts(filinnehåll)
+contents = File.read("anvandare.txt")
+
+IO.puts("Användare:")
+io.puts(contents)
 ```
 
-Om din textfil är strukturerad på ett specifikt sätt, till exempel med rader av information separerade med ett visst tecken, kan du också använda funktionen `File.stream!` för att strömma filinnehållet och sedan använda Elixirs funktioner för listor och strängar för att bearbeta innehållet på ett mer avancerat sätt.
+Detta kodexempel öppnar filen "anvandare.txt" och tilldelar innehållet i filen till en variabel. Sedan printar det ut innehållet i filen i terminalen. Om vi antar att innehållet i "anvandare.txt" är:
+
+```
+Lisa, 25
+Pelle, 30
+```
+
+Skulle outputen bli:
+
+```
+Användare:
+Lisa, 25
+Pelle, 30
+```
+
+Det finns också andra funktioner som kan användas för att läsa en textfil, som File.read!/1 som kastar ett error om filen inte hittas och File.stream!/1 som skapar en ström av data från filen. Genom att läsa på om olika filrelaterade funktioner i Elixir, kan vi hitta den som passar bäst för våra specifika behov.
 
 ## Djupdykning
 
-Det finns många saker du kan göra med informationen som du läser in från en textfil. Du kan manipulera datan, filtrera ut specifika delar, och till och med skriva ut den i ett nytt format. Med Elixir finns det en uppsjö av funktioner och moduler som du kan utforska och använda för att arbeta med textfiler och göra dem till en viktig del av din utveckling.
+När vi läser en textfil i Elixir, är filen inte direkt läsbar för vår applikation. Istället blir filens innehåll en binärsträng, vilket kräver att vi hanterar datan på rätt sätt för att kunna använda den. Ofta måste vi omvandla binärsträngen till en lista av strängar för att få utdata i rätt format.
 
-Ett annat användningsområde för att läsa från textfiler är att skapa skript som kan automatisera olika uppgifter, som till exempel att sammanställa data eller styra andra processer baserat på informationen som finns i filen.
+Det är också viktigt att hantera eventuella fel som kan uppstå vid läsning av filen, som till exempel att filen inte finns eller att den har felaktigt formaterade data. Genom att använda funktioner som File.read!/1 eller att inkludera felhanteringslogik i vår kod, kan vi säkerställa att vår applikation hanterar dessa fall på ett bra sätt.
 
-## Se också
+## Se även
 
-- [Elixir Dokumentation om `File`](https://hexdocs.pm/elixir/File.html)
-- [Elixir Dokumentation om `IO`](https://hexdocs.pm/elixir/IO.html)
-- [Elixir Dokumentation om listor och strängar](https://hexdocs.pm/elixir/Kernel.html#string-and-char-lists)
-
-Tack för att du läste den här bloggposten. Tillåt dig att fortsätta utforska och ta reda på hur mycket mer du kan göra med textfiler i Elixir!
+- [Filhantering i Elixir](https://elixir-lang.org/getting-started/io-and-the-file-system.html)
+- [Dokumentation för File-modulen](https://hexdocs.pm/elixir/File.html)
+- [Elixir för nybörjare](https://www.youtube.com/watch?v=u0lboLNVDNk) (på svenska)

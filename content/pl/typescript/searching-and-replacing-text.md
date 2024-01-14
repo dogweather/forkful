@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Wyszukiwanie i zamiana tekstu"
+title:                "TypeScript: Szukanie i zastępowanie tekstu"
+simple_title:         "Szukanie i zastępowanie tekstu"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/searching-and-replacing-text.md"
 ---
 
@@ -9,45 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek znalazłeś się w sytuacji, gdzie musiałeś zmienić kilka słów lub fraz w swoim kodzie? Może to była zmiana nazwy zmiennej lub poprawienie błędu w tekście. Bez względu na powód, wyszukiwanie i zastępowanie tekstu jest niezwykle pomocne w programowaniu. Pozwala na szybkie i efektywne wprowadzanie zmian w kodzie oraz oszczędza czas i wysiłek programisty.
+Dlaczego ktoś miałby chcieć przeszukiwać i zmieniać tekst? W codziennym życiu, często musimy modyfikować dokumenty lub pliki tekstowe, aby spełniały nasze potrzeby. Przeszukiwanie i zastępowanie tekstu jest jednym z najbardziej przydatnych narzędzi programistycznych, które może przyspieszyć naszą pracę i usunąć frustrację z manualnego edytowania tekstu.
 
 ## Jak to zrobić
 
-Aby przeszukiwać i zamieniać tekst w TypeScript, możemy użyć funkcji `replace()`. Ta metoda przyjmuje dwa argumenty: pierwszy to szukany tekst, a drugi to tekst, który ma zostać wstawiony w miejsce znalezionego tekstu. Najbardziej przydatną opcją w tej funkcji jest dodanie flagi globalnej, dzięki której przeszukiwanie będzie obejmować cały tekst, a nie tylko pierwsze znalezione wystąpienie. Poniżej znajduje się przykładowy kod wykorzystujący funkcję `replace()`.
+Aby przeszukiwać i zastępować tekst w TypeScript, musimy użyć podstawowej metody `replace()` na dowolnym ciągu znaków. Poniższy przykład pokazuje, jak przeszukać i zastąpić wszystkie wystąpienia słowa "hello" w ciągu znaków "hello world" na "hi".
 
 ```TypeScript
-const text = 'Cześć, nazywam się Jan, mam 25 lat.';
-const newText = text.replace(/Jan/g, 'Anna');
-// Nowy tekst: Cześć, nazywam się Anna, mam 25 lat.
+let text: string = "hello world";
+console.log(text.replace("hello", "hi"));
 ```
 
-Jak widać powyżej, szukamy słowa "Jan" za pomocą wyrażenia regularnego `/Jan/` i zastępujemy je słowem "Anna". Dzięki dodaniu flagi globalnej `g`, funkcja `replace()` przeszuka cały tekst i zamieni wszystkie wystąpienia.
+Output: `hi world`
 
-## Deep Dive
-
-Istnieje wiele różnych zastosowań funkcji `replace()` w TypeScript. Możemy na przykład użyć jej do zmiany wielkości liter w wyrazach, wykasowania znaków specjalnych lub dodania prefiksu do wyrazów. Poniżej znajdują się przykładowe kody prezentujące te możliwości.
+Możemy także wykorzystać wyrażenie regularne, aby wykonać bardziej zaawansowane wyszukiwanie i zastępowanie. W tym przykładzie, zamienimy wszystkie litery "a" na "b" w ciągu "Abracadabra".
 
 ```TypeScript
-// Zmiana wielkości liter
-const text = 'Programowanie jest super!';
-const newText = text.replace(/super/, 'SUPER');
-// Nowy tekst: Programowanie jest SUPER!
-
-// Usunięcie znaków specjalnych
-const text = 'F#^a@n%t^a$s#t&y!';
-const newText = text.replace(/[\^@%#&]/g, '');
-// Nowy tekst: Fantasy!
-
-// Dodanie prefiksu
-const text = 'Pies, kot, chomik';
-const newText = text.replace(/(\w+)/g, 'moj$1');
-// Nowy tekst: mojPies, mojKot, mojChomik
+let text: string = "Abracadabra";
+console.log(text.replace(/a/g, "b"));
 ```
 
-Dodatkowo, możemy także użyć funkcji `replace()` w połączeniu z funkcją `match()`, która zwraca tablicę znalezionych wyrażeń, aby przeszukiwać i zastępować bardziej złożone wzorce.
+Output: `Bbrbcbdbbrb`
 
-## Zobacz też
+## Głębszy zanurzenie
 
-- [Dokumentacja funkcji `replace()`](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/replace)
-- [Wzorce regularne w TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Funkcja `match()` w TypeScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Globalne/String/match)
+Podczas korzystania z metody `replace()`, chcemy być świadomi kilku ważnych rzeczy. Pierwszą z nich jest to, że metoda ta zwraca nowy ciąg znaków i nie modyfikuje oryginalnego. Warto również pamiętać, że metoda ta jest case-sensitive, co oznacza, że jest wrażliwa na wielkość liter.
+
+Inną przydatną rzeczą jest to, że w przypadku użycia wyrażenia regularnego, możemy również przekazać funkcję jako drugi argument metody `replace()`. Funkcja ta będzie wywoływana dla każdego dopasowania wyrażenia regularnego i jej zwrócony wynik zostanie użyty do zastąpienia dopasowanych znaków. Pozwala to na bardziej elastyczne i zaawansowane przetwarzanie tekstu.
+
+## Zobacz także
+
+- [Dokumentacja dla metody `replace()` w TypeScript](https://www.typescriptlang.org/docs/handbook/string-based-types.html#the-string-replace-method)
+- [Wprowadzenie do wyrażeń regularnych w projektowaniu stron internetowych](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)

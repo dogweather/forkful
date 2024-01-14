@@ -1,29 +1,42 @@
 ---
 title:                "PHP: 문자열의 길이 찾기"
+simple_title:         "문자열의 길이 찾기"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
-가끔은 문자열의 길이를 알아야 할 때가 있습니다. 예를 들어, 사용자가 입력한 비밀번호가 최소한 8자리 이상이어야 한다면, 그것을 검증하기 위해 문자열의 길이를 알 수 있어야 할 것입니다.
+왜: 문자열의 길이를 찾는 것에 대해 이유를 설명합니다.
 
-## 하는 방법
+문자열의 길이를 찾는 것은 다양한 이유로 필요할 수 있습니다. 예를 들어, 입력받은 사용자 이름이나 이메일 주소의 길이를 확인하여 유효성 여부를 검사할 수 있습니다. 또는 특정한 문자열의 길이를 제한하고 싶을 때 유용합니다.
+
+## 어떻게
+
+생각보다 문자열의 길이를 찾는 것은 간단한 작업입니다. PHP의 내장 함수인 `strlen()`을 사용하면 됩니다. 아래는 예제 코드와 실행 결과입니다.
+
 ```PHP
 <?php
-$str = "안녕하세요";
-echo strlen($str); // 이 코드는 문자열 "안녕하세요"의 길이인 5를 출력합니다.
-?>
+
+// 문자열의 길이를 출력하는 예제
+$name = "홍길동";
+echo "이름의 길이는 " . strlen($name) . "입니다.";
 ```
 
-위의 예시 코드에서는 PHP 내장 함수인 `strlen()`을 사용하여 문자열의 길이를 구하는 방법을 보여줍니다. 이 함수는 인자로 받은 문자열의 길이를 반환해 줍니다. 참고로, 한글의 경우에는 영문과 달리 각 글자가 2바이트로 이루어져 있기 때문에, 실제로 10바이트의 길이를 가지지만, `strlen()` 함수는 글자 수를 기준으로 길이를 반환해 줍니다.
+실행 결과:
+```
+이름의 길이는 3입니다.
+```
 
-## 깊이 파헤치기
-`strlen()` 함수는 매우 간단하고 유용한 함수이지만, 때로는 약간의 오류를 발생시킬 수 있습니다. 예를 들어, 문자열의 길이를 구하는 것이 아닌, 바이너리 데이터의 길이를 구하려 할 때 `strlen()`은 원하는 결과를 제공하지 못할 수 있습니다. 이럴 때에는 `mb_strlen()` 함수를 사용하는 것이 좋습니다. 이 함수는 문자열의 실제 길이를 확인하여 올바른 값을 반환해 줍니다.
+## 딥 다이브
 
-# 같이 보기
-- [PHP 문자열 함수](https://www.php.net/manual/en/ref.strings.php)
-- [PHP mb_strlen() 함수 문서](https://www.php.net/manual/en/function.mb-strlen.php)
-- [한글 문자열에서의 문자열 길이 구하기 (in Stack Overflow)](https://stackoverflow.com/questions/16805543/how-to-get-string-length-of-hangul-in-php)
+`strlen()` 함수는 문자열의 실제 길이를 반환합니다. 이 함수는 문자열에서 유효한 글자의 개수를 세는 것으로, 공백이나 특수 문자는 제외됩니다. 만약 한글을 사용하는 경우, 한 글자가 2바이트로 취급되기 때문에 한 글자당 2바이트를 반환합니다.
+
+PHP의 다른 내장 함수인 `mb_strlen()`은 다중 바이트 문자를 올바르게 계산하여 문자열의 길이를 반환합니다. 위 예제에서 `strlen()`을 `mb_strlen()`으로 바꾸면 올바른 결과를 얻을 수 있습니다.
+
+## See Also
+
+- PHP `strlen()` 함수 문서: https://www.php.net/manual/en/function.strlen.php
+- PHP `mb_strlen()` 함수 문서: https://www.php.net/manual/en/function.mb-strlen.php

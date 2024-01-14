@@ -1,36 +1,52 @@
 ---
-title:                "Swift: 提取子字符串"
+title:                "Swift: 从计算机编程到提取子串"
+simple_title:         "从计算机编程到提取子串"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要提取子字符串
+## 为什么
 
-当我们处理字符串时，有时候只需要获取其中一部分内容，而不需要整个字符串。这时候就需要用到提取子字符串的功能。通过提取子字符串，我们可以更灵活地处理数据，提高代码的可读性和效率。
+提取字符串是编程中常见的任务，它允许我们从一个长的字符串中提取出我们需要的部分。这个过程被称为“提取子字符串”，在Swift中，我们可以使用一些方法来实现这一点。
 
-## 如何实现提取子字符串
+## 怎么做
 
-在Swift中，我们可以使用`substring`方法来提取子字符串。该方法接受两个参数，第一个参数是子字符串的起始位置，第二个参数是子字符串的长度。具体的语法如下所示：
+让我们假设我们有一个包含电子邮件地址的长字符串。我们想要从中提取出用户名部分。下面是一个简单的实现过程：
 
-```swift
-let str = "Hello, World!"
-let subStr = str.substring(from: 7, length: 5)
-print(subStr) // Output: World
+```Swift 
+let str = "johndoe@example.com"
+let username = str[str.startIndex...str.firstIndex(of: "@")!]
+print(username) // "johndoe"
 ```
 
-在上面的例子中，我们提取了字符串中从第七位开始，长度为五位的子字符串。可以看到，我们可以轻松地通过指定起始位置和长度来提取需要的子字符串。
+我们首先使用字符串的`startIndex`方法来获取整个字符串的开头位置。然后，通过`firstIndex(of: "@")`方法来获取`@`符号的位置，并将其作为结束位置。最后，我们通过使用`subscript`来截取出我们需要的子字符串。
 
-## 深入理解子字符串提取
+还有其他方法可以实现相同的功能，比如使用`prefix`和`suffix`方法来提取出前几个字符或后几个字符。
 
-在Swift中，字符串和子字符串是两种不同的数据类型。字符串是不可变的，而子字符串是可变的。这意味着当我们提取子字符串时，实际上是在创建一个新的可变子字符串，而不是改变原来的字符串。这也是为什么我们不能直接通过索引来修改原来的字符串。
+```Swift
+let str = "Hello World"
+let prefix = str.prefix(5) // "Hello"
+let suffix = str.suffix(5) // "World"
+```
 
-另外，根据提取的位置和长度不同，我们可能会遇到一些异常情况。比如，当起始位置大于字符串的长度时，会发生错误。因此，在实际应用中，我们应当谨慎处理提取子字符串的边界情况，以避免出现意外错误。
+除了上面提到的方法，我们还可以使用`range`来指定一个范围来提取子字符串。
 
-# 参考链接
+```Swift
+let str = "Welcome to Swift"
+let range = str.index(str.startIndex, offsetBy: 11)..<str.endIndex
+let result = str[range] // "Swift"
+```
 
-- [Swift官方文档 - 字符串](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Swift官方文档 - Collection类型](https://docs.swift.org/swift-book/LanguageGuide/CollectionTypes.html)
-- [Swifter - 深入理解字符串、子字符串及其操作](https://swifter.tips/string-substring/)
+## 深入了解
+
+除了上面提到的方法，我们还可以通过使用`unicodeScalars`和`utf8`来处理字符串中的Unicode字符和UTF-8编码。另外，我们还可以使用正则表达式来提取符合特定模式的子字符串。
+
+## 参考资料
+
+- [Swift官方文档 - 字符串和字符](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Swift字符串教程](https://www.tutorialspoint.com/swift/swift_strings.htm)
+- [使用Swift解析字符串](https://www.hackingwithswift.com/articles/214/how-to-parse-a-string-using-swift)

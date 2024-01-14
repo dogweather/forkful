@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Obliczanie daty w przyszłości lub przeszłości"
+title:                "Kotlin: Obliczanie daty w przyszłości lub przeszłości."
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości."
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,37 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Programowanie może być trudne, ale czasem warto wykorzystać je do obliczania dat w przeszłości lub przyszłości. Przydatne może to być na przykład podczas pracy z aplikacjami kalendarza lub budowania narzędzi do planowania czasu.
+Liczenie daty w przyszłości lub przeszłości może być przydatne w różnych sytuacjach, na przykład w tworzeniu aplikacji lub skryptów, które wymagają uwzględnienia różnych dat. Odczytanie lub ustalenie daty za pomocą kodu może także być przydatne w celu uproszczenia procesów.
 
 ## Jak to zrobić
 
-Aby obliczyć datę w przeszłości lub przyszłości w języku Kotlin, należy wykorzystać klasę `LocalDate` z pakietu `java.time`. Poniżej przedstawimy przykłady kodu, jak wykorzystać tę klasę do obliczenia daty z pominięciem różnych czynników jak np. uwzględnianie dnia tygodnia czy ilości dni w miesiącu.
-
-### Obliczanie daty w przeszłości
-
-W poniższym przykładzie obliczymy datę 30 dni temu od dzisiejszej daty:
+W celu obliczenia daty w przyszłości lub przeszłości w języku Kotlin, można użyć klasy `Calendar`, `LocalDate` lub `LocalDateTime`. W poniższych przykładach użyto klasy `Calendar`.
 
 ```Kotlin
-val today = LocalDate.now() // dzisiejsza data
-val pastDate = today.minusDays(30) // obliczenie daty 30 dni temu
-println(pastDate) // zostanie wyświetlona data sprzed 30 dni
+    // Dla daty za 7 dni
+    val calendar = Calendar.getInstance()
+    calendar.add(Calendar.DATE, 7)
+    val futureDate = calendar.time
+
+    // Dla daty za 2 tygodnie
+    val calendar = Calendar.getInstance()
+    calendar.add(Calendar.WEEK_OF_YEAR, 2)
+    val futureDate = calendar.time
+
+    // Dla daty za 3 miesiące
+    val calendar = Calendar.getInstance()
+    calendar.add(Calendar.MONTH, 3)
+    val futureDate = calendar.time
+
+    // Dla daty w przeszłości, np. 5 lat temu
+    val calendar = Calendar.getInstance()
+    calendar.add(Calendar.YEAR, -5)
+    val pastDate = calendar.time
 ```
 
-### Obliczanie daty w przyszłości
-
-Natomiast w tym przykładzie obliczymy datę 2 tygodnie w przyszłości od dzisiejszej daty:
-
+Output:
 ```Kotlin
-val today = LocalDate.now() // dzisiejsza data
-val futureDate = today.plusWeeks(2) // obliczenie daty 2 tygodnie w przyszłości
-println(futureDate) // zostanie wyświetlona data za 2 tygodnie
+    // Dla daty za 7 dni
+    Mon Jun 21 16:18:45 CEST 2021
+
+    // Dla daty za 2 tygodnie
+    Sat Jul 03 16:18:45 CEST 2021
+
+    // Dla daty za 3 miesiące
+    Sat Sep 11 16:18:45 CEST 2021
+
+    // Dla daty w przeszłości, np. 5 lat temu
+    Thu Jun 04 16:18:45 CEST 2015
 ```
 
 ## Głębszy wgląd
 
-Klasa `LocalDate` posiada również wiele innych przydatnych metod do obliczania dat w przeszłości i przyszłości, takich jak `minusMonths`, `minusYears`, `plusMonths` czy `plusYears`. Dodatkowo, możliwe jest również uwzględnienie dnia tygodnia przy obliczeniach, wykorzystując metodę `minus` lub `plus` z parametrem określającym ilość dni.
+Klasy `Calendar`, `LocalDate` i `LocalDateTime` oferują wiele metod do manipulowania datami, takich jak `add()`, `subtract()`, `isLeapYear()` czy `get()`. Jest to szczególnie przydatne w bardziej zaawansowanych operacjach związanych z datami.
+
+Ponadto, w celu dokładnego zrozumienia działania tych instrukcji, ważne jest zrozumienie pojęć takich jak strefy czasowe i formaty dat, które mogą mieć wpływ na wynik działania.
 
 ## Zobacz również
 
-- [Dokumentacja języka Kotlin dla klasy LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/) 
-- [Poradnik o obliczaniu dat z wykorzystaniem pakietu java.time w języku Kotlin](https://dev.to/mkraska/how-to-use-java-time-with-kotlin-4d6n)
+- <https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html>
+- <https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date-time.html>
+- <https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date.html>
+
+Dzięki użyciu wiedzy z tego artykułu, można sprawnie manipulować datami w aplikacjach Kotlin. Pamiętaj, aby dokładnie zapoznać się z dokumentacją i eksperymentować z różnymi metodami, aby lepiej zrozumieć ich działanie.

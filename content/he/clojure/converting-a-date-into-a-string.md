@@ -1,63 +1,44 @@
 ---
 title:                "Clojure: המרת תאריך למחרוזת"
+simple_title:         "המרת תאריך למחרוזת"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-על למה: להסביר ב-1-2 משפטים *למה* מישהו ירצה להמיר תאריך למחרוזת.
+## למה:
 
-## לאיך לכתוב קוד:
- להמחר את הפלט של הקוד תוך שמירה על הפורמט מתאים בתוך בלוקי קוד "רצף..." קוד אקווריאלי.
+למה כדאי ללמוד כיצד להמיר תאריך למחרוזת בקלות וביעילות היישמות? כי השימוש בתאריך וזמן הינו חלק חשוב ממנגזרתי התוכנה, ולמידתו תעזור לנו ליצור קוד יתר הדימיון ונקי.
 
-```Clojure
-(defn convert-date [date]
-  (str (get date :month) "/" (get date :day) "/" (get date :year)))
+## כיצד לעשות:
 
-(def sample-date {:month 04 :day 21 :year 2021})
-
-(convert-date sample-date)
-
-```
-
-תוצאה: "04/21/2021"
-
-## העברה לרמה הבאה:
- למעמד יותר עמוק על הפונקציונליות של המרה של תאריך למחרוזת. מידע נוסף על תכונות נוספות של מרה תאריכים למחרוזת יכול לסייע לפתרון בעיות עתידיות.
-
-### דוגמאות נוספות:
-1) שימוש בפונקציות נוספות כגון (format-time) עם השתמשות בתבניות שונות למיקוד בתאריך.
-
-שם פונקציה: 
+באמצעות השימוש בשפת Clojure, נוכל בקלות להמיר תאריך למחרוזת על ידי שימוש בפונקציות פנימיות בשפה זו. למטה תוכלו למצוא כמה דוגמאות כיצד לעשות זאת בקוד והפלט המתקבל מכל דוגמה.
 
 ```Clojure
-(defn convert-date-custom [date format]
-  (format-time format date))
+;; ייבוא הספריה לטיפול בתאריכים
+(require '[clj-time.core :as t])
+;; המרת תאריך למחרוזת
+(t/format (t/now) "dd/MM/yyyy")
+;; הפלט: "28/06/2021"
+
+;; המרת תאריך למחרוזת + הוספת זמן
+(t/format (t/plus (t/now) (t/day 10)) "dd/MM/yyyy HH:mm")
+;; הפלט: "08/07/2021 16:05"
+
+;; המרת תאריך למחרוזת + הגדלת החודש
+(t/format (t/plus-months (t/now) 3) "MMMM yyyy")
+;; הפלט: "September 2021"
 ```
 
-שימוש בתבנית:
+## Deep Dive:
 
-```Clojure
-(format-time "MM/dd/YY" sample-date)
-```
+כדי להמיר תאריך למחרוזת באופן מדויק, ניתן להשתמש בפונקציות הפנימיות הנגישות בשפת Clojure. כל תאריך מיוצג כ-"משחק של דמיון" ולכן אנו יכולים לתמצת את הפונקציות הדרושות להמרתו למחרוזת בצורה יעילה ונקייה. בנוסף, ישנן ספריות נוספות ותוספים לשפה שיכולים לסייע בהמרת תאריך למחרוזת בדרכים שונות, כך שיש לנו מגוון אפשרויות לבחירה.
 
-תוצאה: "04/21/21"
+## ראה גם:
 
-2) שימוש בפונקציות להמרת ערכים מספריים למחרוזת כדי לשלב ערכים נוספים כמו יום בשבוע או שעה.
-
-שם פונקציה:
-
-```Clojure
-(defn convert-date-extra [date]
-  (str (get date :month) "/" (get date :day) "/" (get date :year) " at " (format-time "hh:mm a" sample-date)))
-```
-
-תוצאה: "04/21/2021 at 09:00 PM"
-
-## לראות גם:
-למידע נוסף על פונקציות שקשורות למרה של תאריך למחרוזת, יש לראות את הקישורים הבאים:
-
-- [הדרכה לבניית אפליקציות תוך שימוש בשפת Clojure](https://www.ipix.co.il/todgeetfa/2)
-- [Java ו-Clojure – אפשרויות תפוסה של שימוש משותף](https://www.geektime.co.il/clojure-truth-2)
+- https://clojuredocs.org/clojure.java-time/format
+- https://github.com/clj-time/clj-time
+- https://github.com/gchp/Pretty-Time-Clj

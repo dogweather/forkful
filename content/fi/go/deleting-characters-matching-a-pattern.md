@@ -1,7 +1,9 @@
 ---
-title:                "Go: Kirjailu tietokoneohjelmointi: Kaavan mukaisten merkkien poistaminen"
+title:                "Go: Mallia vastaavien merkkien poistaminen"
+simple_title:         "Mallia vastaavien merkkien poistaminen"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,36 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Päätöntä näppäinten naputtelua kaipaavan on vaikea ymmärtää, miksi joku haluaisi poistaa tietyn kuviomäärityksen mukaiset merkit Go-ohjelmoinnissa. Kyseessä saattaa kuitenkin olla tarpeellinen toiminto datan käsittelyssä, jota käsitellään tulevassa osiossa.
+Jotkut ohjelmoijat saattavat tarvita poistaa merkkejä, jotka vastaavat tiettyä mallia. Tämä voi olla hyödyllistä esimerkiksi tietojen puhdistamisessa tai tiettyjen merkkitietojen etsimisessä. Tässä artikkelissa kerromme, miten tämä voidaan toteuttaa Go-ohjelmointikielellä.
 
-## Miten
+## Miten tehdä
 
-Go-kielellä on useita tapoja poistaa merkkejä kuviomäärityksen perusteella. Tässä on yksi esimerkki, jossa poistetaan kaikki välilyönnit annetusta merkkijonosta ja tulostetaan lopputulos.
+Voit poistaa merkkejä, jotka vastaavat tiettyä mallia, käyttämällä "regexp" -pakettia. Tämä paketti tarjoaa laajan valikoiman työkaluja, joita voit käyttää merkkihakuihin ja korvaamiseen.
+
+Esimerkiksi voimme luoda yksinkertaisen ohjelman, joka poistaa kaikki numerot sisältävät merkit merkkijonosta:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "regexp"
 )
 
 func main() {
-	str := "Go-kieli on loistava!"
-	fmt.Println(strings.ReplaceAll(str, " ", ""))
-}
+    // Luodaan säännöllinen lauseke, joka vastaa kaikkia numeroita
+    regex := regexp.MustCompile("[0-9]+")
 
-// Output: Gokielionloistava!
+    // Testimerkkijono
+    str := "Tämä on esimerkkimerkkijono, jossa on 123 numeroa."
+
+    // Käytetään FindAllString -funktiota löytämään kaikki numerot
+    matches := regex.FindAllString(str, -1)
+
+    // Tulostetaan alkuperäinen merkkijono ja numerot sen sisällä
+    fmt.Println("Alkuperäinen merkkijono:", str)
+    fmt.Println("Numerot:", matches)
+
+    // Poistetaan numerot merkkijonosta ja tulostetaan puhdistettu versio
+    cleanStr := regex.ReplaceAllString(str, "")
+    fmt.Println("Puhdistettu merkkijono:", cleanStr)
+}
 ```
 
-On tärkeää muistaa, että tällä tavoin voidaan poistaa vain yksi merkkijono kerrallaan. Jos halutaan poistaa esimerkiksi sekä välilyönnit että välimerkit, täytyy käyttää useampia ReplaceAll-funktioita tai esimerkiksi Regular Expression -ratkaisua.
+Tuloste:
 
-## Syvempi sukellus
+```
+Alkuperäinen merkkijono: Tämä on esimerkkimerkkijono, jossa on 123 numeroa.
+Numerot: [123]
+Puhdistettu merkkijono: Tämä on esimerkkimerkkijono, jossa on numeroa.
+```
 
-Mikäli halutaan ymmärtää paremmin, miten merkkien poistaminen kuvion perusteella tapahtuu Go-kielessä, täytyy perehtyä Regular Expression (reguläärilausekkeet) -käsitteeseen. Tämä mahdollistaa monimutkaisempien kuviomääritysten käytön ja tarkempaan kontrollointiin poistettavien merkkien suhteen.
+## Syvempää sukellusta
+
+Säännöllisillä lausekkeilla on monia erilaisia käyttötarkoituksia ja ne voivat olla erittäin hyödyllisiä datan käsittelyssä ja analysoinnissa. Go:n "regexp" -paketti tarjoaa useita erilaisia toimintoja, joita voit käyttää monimutkaisempien mallien löytämiseen ja korvaamiseen.
 
 ## Katso myös
 
-- [Go-kielin virallinen verkkosivusto](https://golang.org/)
-- [Regular Expression -tutoriaali](https://regexone.com/)
-- [Go-kieleen perehtyminen Askolan kunnan avoimen datan avulla](https://github.com/askolanvapaakaupunki/askola-opendata)
+- [Go:n "regexp" -paketin virallinen dokumentaatio](https://golang.org/pkg/regexp/)
+- [Säännölliset lausekkeet - Wikipedia (suomeksi)](https://fi.wikipedia.org/wiki/S%C3%A4%C3%A4nn%C3%B6llinen_lauseke)
+- [15 Tavallista säännöllistä lauseketta](https://www.guru99.com/regular-expressions.html)

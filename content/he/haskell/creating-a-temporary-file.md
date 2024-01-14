@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: יצירת קובץ זמני"
+simple_title:         "יצירת קובץ זמני"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/creating-a-temporary-file.md"
 ---
 
@@ -9,31 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## מדוע
 
-יצירת קובץ זמני היא פעולה חיונית בתכנות בשפת Haskell ויש לה מגוון יישומים נרחבים. ניתן להשתמש בקובץ זמני כדי לשמור נתונים שנערכו או להשתמש בהם בתהליכים נפרדים של התכנית.
+יצירת קובץ זמני היא פעולה חשובה ומועילה למתכנתים בהאסקל. היצירה של קובץ זמני מאפשרת לנו לשמור נתונים אותם אנחנו צריכים לשימוש זמני או לתוכניות טסטים.
 
-## איך לעשות זאת
+## כיצד לבצע
 
-כדי ליצור קובץ זמני בשפת Haskell, ניתן להשתמש בפונקציית 'withSystemTempFile' המאפשרת ליצור קובץ זמני ולבצע פעולות עליו בתוך הפונקציה. לדוגמה:
-
-```Haskell
-import System.IO
+`` `haskell
 import System.IO.Temp
 
+main :: IO ()
 main = do
-  withSystemTempFile "temp.txt" $ \h temp -> do
-    hPutStrLn temp "זהו קובץ זמני"
-    hFlush temp
-    hGetContents temp >>= putStrLn
-```
+  tempFile <- openTempFile "" "myTempFile.txt"
+  hPutStrLn tempFile "Hello World!"
+  hClose tempFile
+`` `
 
-פלט התוכנית הנ"ל יהיה `זהו קובץ זמני`.
+הקוד הזה משתמש בפונקציה `openTempFile` מספרית `System.IO.Temp` כדי ליצור קובץ זמני עם שם המקובל בתוך המשתנה `tempFile`. פונקציית `hPutStrLn` משמשת לכתיבת מחרוזת "Hello World!" לקובץ הזמני. סוף סוף, `hClose` משתמש בכדי לסגור את הקובץ ולשמור אותו.
 
-## העומק
+מה שתראו פה הוא קובץ בשם "myTempFile.txt" עם התוכן "Hello World!" תחת התיקייה הארכיבית "tmp" בתיקיית הנוכחית.
 
-קובץ זמני בשפת Haskell מייצג קובץ שמנוי עליו נמסרת העובדה שאין צורך בו לאחר שהתכנית הסתיימה. בשפת Haskell, ניתן להשתמש בקובץ זמני כדי לשמור נתונים שנערכו במהלך התכנית ולאחר מכן למחוק אותו.
+## טעינה עמוקה
 
-פונקציית 'withSystemTempFile' משתמשת בפונקציות 'openTempFile' ו-'openBinaryTempFile' כדי ליצור את הקובץ הזמני. הפונקציה 'openTempFile' מוסיפה ספרה אקראית אחת לשם הקובץ כאשר 'openBinaryTempFile' מוסיפה ספרה אקראית מיוחדת לשם הקובץ כדי למנוע חזרות. לפונקציית 'openTempFile' יש את הספרה הנוספת 'r', מה שמאפשר לקרוא את הקובץ כאשר לפונקציית 'openBinaryTempFile' אין את הספרה הזאת מה שאומר שאין באפשרותך לצפות בתוכן הקובץ עד לשמירת המידע הנכון.
+יצירת קובץ זמני היא פעולה יעילה כשאתם עובדים עם נתונים גדולים וברצונכם לתבוע ניתוב או לבטל אותם מהמחשב. כמו כן, במתרחש עקב שגיאות בתכנות או בקוד עצמו, יצירת קובץ זמני יכולה להיות תוספת הבטחתית כדי למנוע מחיקה בעייתית של נתונים חשובים.
 
 ## ראה גם
 
-- [מדריך על קבצים זמניים בשפת Haskell](https://www.haskell.org/cabal/users-guide/developing-packages.html#temp
+- [תיעוד האסקל System.IO.Temp מספרית] (https://hackage.haskell.org/package/base-4.14.0.0/docs/System-IO-Temp.html)
+- [מדריך לכתיבת קוד מהיר ויעיל בהאסקל] (https://haskell.org/haskellwiki/Performance)
+- [למד האסקל בתמונות - סדרת מדריכים] (https://learnyouahaskell.com/)

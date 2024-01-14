@@ -1,7 +1,9 @@
 ---
 title:                "Python: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,50 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å konvertere en streng til små bokstaver er en vanlig oppgave i Python-programmering. Dette kan være nyttig når du ønsker å sammenligne to strenger uten å ta hensyn til store og små bokstaver, eller for å sikre ensartethet i dataene dine. Ved å lære hvordan du gjør dette, kan du utvide kunnskapen din om grunnleggende strengmanipulasjon og forbedre programmene dine.
+Det er mange grunner til å ønske å konvertere en streng til små bokstaver i Python. Det kan være for å gjøre en streng sammenlignbar med en annen, for å lage en mer lesbar utskrift, eller for å standardisere input fra brukeren. Uansett årsak, å kunne konvertere en streng til små bokstaver er en nyttig ferdighet for enhver Python-programmerer.
 
-## Hvordan å gjøre det
+## Hvordan
 
-For å konvertere en streng til små bokstaver i Python, kan du bruke metoden `lower()`. Denne metoden konverterer alle store bokstaver i en streng til små bokstaver. La oss se på et eksempel:
+Konvertere en streng til små bokstaver i Python er enkelt. Ved hjelp av ```lower()``` funksjonen kan du enkelt gjøre dette.
 
-```python
-streng = "HEI PÅ DEG"
+```Python
+streng = "DETTE ER EN STRENG"
 print(streng.lower())
 ```
 
-Dette vil gi oss følgende output:
+Dette vil skrive ut ```"dette er en streng"```, med alle bokstavene i små bokstaver. Du kan også lagre den nye strengen i en variabel, hvis du ønsker det.
 
-```python
-hei på deg
+```Python
+streng = "Dette er en streng"
+liten_streng = streng.lower()
+print(liten_streng)
 ```
 
-Som du kan se, har alle de store bokstavene i strengen blitt omgjort til små. Du kan også bruke metoden `casefold()`, som i tillegg til å konvertere store bokstaver, også håndterer spesielle tegn og diakritiske tegn. Denne metoden er nyttig når du ønsker å sammenligne to strenger, da den også tar hensyn til forskjeller i tegnsetting og diakritiske tegn.
+Du kan også bruke ```lower()``` funksjonen på variabelnavnet direkte, uten å lagre den nye strengen i en egen variabel.
 
-```python
-streng1 = "Åge"
-streng2 = "Age"
-
-print(streng1.lower() == streng2.lower())
-print(streng1.casefold() == streng2.casefold())
+```Python
+streng = "Dette er en streng"
+print(streng.lower())
 ```
 
-Dette vil gi oss følgende output:
+Output vil fortsatt være ```"dette er en streng"```.
 
-```python
-False
-True
-```
-
-Som du kan se, er den første sammenligningen ikke sann, da forskjellen i diakritiske tegn gjør en forskjell. Men med `casefold()` blir begge sammenligningene sanne.
+Det er viktig å huske at ```lower()``` funksjonen kun konverterer alfabetiske bokstaver til små bokstaver. Tall, symboler og mellomrom vil ikke bli påvirket.
 
 ## Dypdykk
 
-Nå som du har lært grunnleggende om å konvertere en streng til små bokstaver, la oss se på noen ting du bør være klar over når du bruker disse metodene. Først og fremst, husk at konverteringen er ikke-destruktiv, noe som betyr at den ikke endrer den originale strengen, men heller returnerer en kopi av strengen med de nye endringene.
+I bunn og grunn bruker ```lower()``` funksjonen ```str.lower()``` metoden. Dette betyr at metoden ```lower()``` er spesifikk for strenger og kan ikke brukes på andre datatyper. 
 
-Du bør også være oppmerksom på at disse metodene bare fungerer for ASCII-tegn, og ikke for alle språk. For å kunne håndtere ikke-ASCII-tegn, må du bruke et annet bibliotek eller en annen metode. Videre, hvis du ønsker å konvertere en streng til store bokstaver, kan du bruke metoden `upper()` på samme måte som `lower()` ble brukt.
+Det finnes også en lignende funksjon kalt ```casefold()```, som tar hensyn til spesielle bokstaver i ulike språk. Dette kan være nyttig hvis du jobber med flerspråklige tekster.
+
+Det er også verdt å merke seg at strenger i Python er uforanderlige. Dette betyr at du ikke kan endre bokstavene i en streng direkte. Derfor vil ```lower()``` funksjonen returnere en ny streng, og ikke endre den opprinnelige strengen.
 
 ## Se også
 
-- [Python String Methods](https://www.w3schools.com/python/python_ref_string.asp)
-- [Intro to Programming with Python](https://www.udacity.com/course/introduction-to-python--ud1110)
-- [Official Python Documentation](https://docs.python.org/3/library/stdtypes.html#sttring-methods)
+- [Python's offisielle dokumentasjon for ```lower()``` funksjonen](https://docs.python.org/3/library/stdtypes.html#str.lower)
+- [Mer informasjon om strenger i Python](https://www.w3schools.com/python/python_strings.asp)
+- [En introduksjon til Python-programmering på norsk](https://www.informatikk-mooc.no/course/python)

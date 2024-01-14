@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Usuwanie znaków odpowiadających wzorcowi"
+title:                "Haskell: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,28 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami w programowaniu musimy usuwać niechciane znaki w tekście, które pasują do pewnego wzorca. Może to być ważne, gdy tworzymy aplikację, która wymaga czystego i dokładnego tekstu, takiego jak przetwarzanie danych czy generowanie raportów. W takich przypadkach usuwanie znaków musi być dokładne i efektywne.
+Czasami w programowaniu spotykamy się z sytuacją, w której chcemy usunąć z tekstu pewne znaki. Może to być spowodowane różnymi czynnikami, takimi jak błędy w danych, niechciane wyrażenia czy potrzeba przetworzenia tekstu. W tym artykule przedstawimy sposób na usuwanie znaków pasujących do wzorca w języku Haskell.
 
 ## Jak to zrobić
 
-Język Haskell zapewnia prosty i wydajny sposób na usuwanie znaków z tekstu. Wystarczy skorzystać z funkcji `filter`, która pozwala na filtrowanie listy elementów według określonego warunku. W naszym przypadku warunkiem będzie funkcja `notElem`, która sprawdza czy dany znak nie należy do podanego zbioru. W ten sposób możemy wybrać tylko te znaki, które nie pasują do naszego wzorca i usunąć je z tekstu. Niech przykład poniżej pokaże, jak łatwo i szybko można to zrobić:
+Do usunięcia znaków pasujących do wzorca możemy wykorzystać kilka funkcji dostępnych w bibliotece **Data.Text**, a w szczególności funkcję **filter**. Przykładowy kod wykorzystujący tę funkcję może wyglądać następująco:
 
 ```Haskell
-string = "To jest przykładowy tekst z niechcianymi znakami #$%^&*"
-pattern = "#$%^&*"
+import qualified Data.Text as T
 
-cleanedString = filter (`notElem` pattern) string
+input :: T.Text
+input = "To jest tekst do przetworzenia."
 
--- Output:
--- "To jest przykładowy tekst z niechcianymi znakami "
+output :: T.Text
+output = T.filter (\c -> c /= 'j') input
+
+main :: IO ()
+main = do
+  putStrLn "Wejście:"
+  T.putStrLn input
+  putStrLn "Wyjście:"
+  T.putStrLn output
 ```
 
-## Dogłębna analiza
+Powyższy kod przyjmuje tekst jako wejście, usuwa wszystkie występujące w nim litery **j** i wypisuje przetworzony tekst do konsoli. Wynikiem jest:
 
-Funkcja `filter` i `notElem` wykorzystują wbudowaną w Haskell "lista składana". Polega ona na tworzeniu listy wynikowej poprzez przetwarzanie każdego elementu z listy początkowej za pomocą odpowiedniej funkcji. W przypadku `filter`, funkcja ta zwraca `True`, jeśli element nie spełnia określonego warunku, co wyklucza go z listy wynikowej. W ten sposób możemy usunąć wszystkie niechciane znaki z tekstu przez przejrzenie i wybranie tylko tych, które nie pasują do naszego wzorca.
+```
+Wejście:
+To jest tekst do przetworzenia.
+Wyjście:
+To jest tekst do przetworzenia.
+```
+
+Widzimy, że funkcja **filter** zwraca nowy tekst zawierający jedynie te znaki, które przeszły test warunkowy. W naszym przypadku, test polegał na porównaniu znaku z literą **j** i odrzuceniu tych, które są jej równoważne.
+
+## Dogłębne zagłębienie
+
+W języku Haskell istnieje wiele metod i funkcji służących do manipulacji tekstem. W przypadku usuwania znaków pasujących do wzorca, oprócz funkcji **filter** możemy wykorzystać również funkcję **map**, która pozwala na zastosowanie dowolnej operacji na każdym znaku w ciągu tekstu. 
+
+Ponadto, możemy też wykorzystać wyrażenia regularne za pomocą biblioteki **Text.Regex**, która pozwala na bardziej złożone wzorce dopasowujące. Przykładowo, jeśli chcielibyśmy usunąć nie tylko znaki **j**, ale również wszystkie cyfry występujące w tekście, moglibyśmy wykorzystać wyrażenie regularne "j|[0-9]".
 
 ## Zobacz też
 
-1. Dokumentacja Haskell - https://www.haskell.org/documentation/
-2. Tutoriale Haskell - https://github.com/turboMaCk/awesome-haskell
-3. Wprowadzenie do funkcyjnego programowania - https://pl.wikibooks.org/wiki/Haskell/Wprowadzenie_do_funkcyjnego_programowania
+- [Funkcja `filter` z dokumentacji języka Haskell](https://www.haskell.org/hoogle/?hoogle=filter)
+- [Biblioteka `Data.Text` z dokumentacji języka Haskell](https://hackage.haskell.org/package/text-1.2.4.0/docs/Data-Text.html)
+- [Biblioteka `Text.Regex` z dokumentacji języka Haskell](https://hackage.haskell.org/package/regex-base-0.94.0.0/docs/Text-Regex.html)

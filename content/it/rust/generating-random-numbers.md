@@ -1,39 +1,50 @@
 ---
 title:                "Rust: Generazione di numeri casuali"
+simple_title:         "Generazione di numeri casuali"
 programming_language: "Rust"
-category:             "Numbers"
+category:             "Rust"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Scegliere di generare numeri casuali è una scelta comune per molti programmatori, poiché spesso è necessario per creare algoritmi o testare funzionalità di un programma. Imparare come farlo in Rust può essere molto utile per chi vuole sviluppare in questo linguaggio.
+Ci sono molti motivi per cui potresti voler generare numeri casuali in un programma Rust. Forse stai sviluppando un gioco e hai bisogno di una funzione per generare posizioni casuali o valori di vite per i giocatori. O forse stai lavorando su un algoritmo di machine learning che richiede dati casuali per l'addestramento. In ogni caso, generare numeri casuali è un'abilità molto utile da avere quando si programma in Rust.
 
 ## Come fare
-
-Rust offre diversi modi per generare numeri casuali, ma il più comune è utilizzare il modulo `rand`. Per iniziare, è necessario importare il modulo nel tuo codice.
-
-```Rust
-use rand::Rng;
-```
-
-Una volta importato, puoi utilizzare il metodo `gen_range` per generare un numero casuale compreso tra due valori specificati. Ad esempio, se volessi generare un numero casuale compreso tra 1 e 10, il codice sarebbe il seguente:
+Per generare numeri casuali in Rust, può essere utilizzata la libreria standard `std::rand`. Includila nel tuo progetto aggiungendo questa linea all'inizio del tuo file Rust:
 
 ```Rust
-let num = rand::thread_rng().gen_range(1, 11);
-println!("Il numero casuale è: {}", num);
+use std::rand;
 ```
 
-Il metodo `gen_range` utilizza un generatore di numeri casuale globale chiamato `thread_rng` per ottenere i numeri casuali. Ciò garantisce che i numeri generati siano veramente casuali. Inoltre, è possibile specificare anche un terzo parametro per indicare il passo tra i numeri generati.
+Una volta inclusa la libreria, puoi utilizzare la funzione `rand::random()` per generare un numero intero casuale.
+
+```Rust
+let random_number: i32 = rand::random();
+```
+
+Se vuoi specificare un range di numeri tra cui generare, puoi utilizzare il metodo `gen_range()`:
+
+```Rust
+let random_number: i32 = rand::thread_rng().gen_range(1, 100);
+```
+
+Questo genererà un numero intero casuale compreso tra 1 e 100. Assicurati di importare `rand::Rng` per poter utilizzare il metodo `thread_rng()`.
+
+```Rust
+use std::rand::Rng;
+```
+
+È anche possibile generare numeri casuali di altri tipi, come `f32` o `char`. Per ulteriori informazioni su come specificare un tipo di numero casuale, consulta la documentazione della libreria `std::rand`.
 
 ## Approfondimento
+La generazione di numeri casuali è una tecnica molto importante in programmazione e può essere utilizzata in molti contesti diversi. Ma è anche un problema complesso. La libreria `std::rand` utilizza un algoritmo basato su XORShift, che è considerato molto veloce ma non completamente casuale. Inoltre, la generazione di numeri casuali può comportare alcune difficoltà quando si tratta di testare il codice.
 
-Se vuoi approfondire ulteriormente il funzionamento dei numeri casuali in Rust, è possibile utilizzare il modulo `rand` per generare numeri secondo diverse distribuzioni, come la distribuzione di Gauss o di Poisson. Inoltre, è possibile utilizzare un generatore di numeri casuale non basato sulla libreria standard di Rust, come ad esempio `rand_pcg`, che offre un miglior controllo sui numeri generati.
+Se vuoi saperne di più su come funziona la generazione di numeri casuali e sui diversi algoritmi utilizzati, ti consiglio di leggere la documentazione della libreria `rand` e di fare ulteriori ricerche sulla teoria e la pratica della generazione di numeri casuali.
 
 ## Vedi anche
-
-- [La documentazione ufficiale di Rust su generazione di numeri casuali](https://doc.rust-lang.org/rand/rand/index.html)
-- [Un tutorial su come generare numeri casuali in Rust](https://www.youtube.com/watch?v=qSvDcx59wLU)
-- [Una raccolta di esempi pratici di generazione di numeri casuali in Rust](https://rust-random.github.io/book/guide-start.html)
+- [Documentazione della libreria std::rand](https://doc.rust-lang.org/std/rand/)
+- [Articolo sulla teoria della generazione di numeri casuali in informatica](https://en.wikipedia.org/wiki/Random_number_generation)
+- [Codice di esempio per la generazione di numeri casuali in Rust](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=8919eff6800e88c3983770979e8bd1ea)

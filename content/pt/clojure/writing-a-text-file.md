@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Escrevendo um arquivo de texto"
+simple_title:         "Escrevendo um arquivo de texto"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/writing-a-text-file.md"
 ---
 
@@ -9,49 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que escrever um arquivo de texto?
 
-Escrever um arquivo de texto pode ser uma tarefa simples, mas é extremamente útil quando se trata de armazenar informações ou configurar um programa. Além disso, ao usar uma linguagem funcional como Clojure, a escrita de arquivos de texto pode ser feita de forma elegante e concisa.
+Escrever um arquivo de texto pode ser útil para armazenar informações e dados importantes de forma organizada e fácil de acessar. Além disso, pode ser uma maneira eficiente de compartilhar informações com outras pessoas ou sistemas.
 
-## Como fazer
+## Como fazer:
 
-Para escrever um arquivo de texto em Clojure, podemos usar a função "spit", que recebe como parâmetros o caminho do arquivo e o conteúdo que será escrito. Por exemplo:
-
-```Clojure
-(spit "arquivo.txt" "Olá, mundo!")
-```
-
-Com isso, criamos um arquivo chamado "arquivo.txt" que contém o texto "Olá, mundo!".
-
-Podemos também usar o operador ">>" para adicionar conteúdo a um arquivo já existente, como mostrado no exemplo abaixo:
+Para escrever um arquivo de texto em Clojure, você pode usar a função `spit`. Ela permite que você escreva uma string em um arquivo especificado, como mostrado no exemplo abaixo:
 
 ```Clojure
-(>> "arquivo.txt" "Isso é um texto adicionado ao arquivo!")
+(spit "exemplo.txt" "Olá mundo!")
 ```
 
-Outra opção é usar a função "with-open" para garantir que o arquivo seja fechado após a escrita. Veja o exemplo:
+Isso criaria um arquivo de texto chamado "exemplo.txt" com a frase "Olá mundo!" dentro dele. Além disso, você também pode usar a função `slurp` para ler o conteúdo de um arquivo de texto.
 
 ```Clojure
-(with-open [arq (writer "arquivo.txt")]
-  (.write arq "Este texto é escrito dentro do bloco 'with-open'"))
+(slurp "exemplo.txt")
 ```
 
-## Mergulho profundo
+Isso retornaria a string "Olá mundo!".
 
-Quando escrevemos um arquivo de texto, podemos especificar o tipo de codificação que será utilizado, se o arquivo será criado se não existir, entre outras configurações. Para isso, podemos passar mapas como argumentos para a função "spit".
+## Explorando mais a fundo:
 
-Por exemplo, para escrever um arquivo usando a codificação UTF-8 e criá-lo caso ele não exista, podemos usar o seguinte código:
+Além das funções `spit` e `slurp`, existem outras maneiras de trabalhar com arquivos de texto em Clojure, como usar bibliotecas específicas ou utilizar algumas funções mais avançadas da linguagem. É importante pesquisar e experimentar para descobrir a melhor abordagem para o seu projeto específico.
 
-```Clojure
-(spit "arquivo.txt" "Conteúdo do arquivo" {:encoding "UTF-8" :append false})
-```
+## Veja também:
 
-Também é possível usar a função "slurp" para ler o conteúdo de um arquivo de texto, e a função "read-string" para transformar esse conteúdo em uma estrutura de dados do Clojure. Veja o exemplo:
+Aqui estão alguns links úteis para saber mais sobre como trabalhar com arquivos de texto em Clojure:
 
-```Clojure
-(def texto (slurp "arquivo.txt"))
-(def dados (read-string texto))
-```
-
-## Veja também
-
-- [Documentação oficial do Clojure sobre escrita de arquivos](https://clojuredocs.org/clojure.core/spit)
-- [Tutorial de Clojure para iniciantes em português](https://www.tundebabzy.com/pt/tutorials/clojure/collections)
+- [Documentação oficial da função `spit`](https://clojuredocs.org/clojure.core/spit)
+- [Documentação oficial da função `slurp`](https://clojuredocs.org/clojure.core/slurp)
+- [Exemplo de uso de biblioteca específica para manipular arquivos de texto em Clojure](https://github.com/clojure-cookbook/clojure-cookbook/tree/master/04_file-io/4-03_reading-a-file-into-a-string)

@@ -1,35 +1,55 @@
 ---
 title:                "Haskell: Läsning av en textfil"
+simple_title:         "Läsning av en textfil"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att läsa en textfil är en viktig del av programmering, oavsett vilket språk man använder. Det är ett sätt att läsa och behandla data som är sparat i en textfil, och det kan vara användbart för att hämta information eller skapa en ny fil med specifikt innehåll.
 
-## Så här gör du
-För att läsa en textfil i Haskell behöver du först öppna filen med funktionen `openFile`, som tar två argument: filnamn och åtkomstläge. Det finns flera åtkomstlägen, men de två vanligaste är `ReadMode` för att läsa en befintlig fil och `WriteMode` för att skapa en ny fil.
+Att läsa en textfil är en grundläggande färdighet inom programmering och kan vara särskilt användbar när man vill lagra och behandla stora mängder data. Det är också ett bra sätt att förstå hur man kan använda Haskell för att interagera med filsystemet.
+
+## Hur man gör det
+
+För att läsa en textfil i Haskell behöver vi använda oss av ett par funktioner från modulen "System.IO". Vi börjar med att importera modulen och sedan öppna filen genom att använda "openFile" funktionen:
 
 ```Haskell
 import System.IO
+
 main = do
-    handle <- openFile "exempel.txt" ReadMode
-    contents <- hGetContents handle
-    putStrLn contents
-    hClose handle
+  handle <- openFile "textfil.txt" ReadMode
 ```
 
-I exemplet ovan öppnar vi en fil med namnet "exempel.txt" i läge `ReadMode` och använder sedan funktionen `hGetContents` för att läsa filens innehåll och spara det i variabeln `contents`. Sedan skriver vi ut innehållet med `putStrLn` och stänger filen med `hClose`.
+Vi kan antingen ange en absolut sökväg till filen eller om filen ligger i samma mapp som Haskell-filen kan vi bara skriva filnamnet. Den andra parametern "ReadMode" anger att vi enbart vill läsa från filen, inte skriva eller ändra i den.
+
+När filen är öppnad har vi tillgång till variabeln "handle" som representerar vår fil. För att faktiskt läsa från filen använder vi funktionen "hGetLine" som läser en rad från filen och returnerar den som en sträng:
+
+```Haskell
+line <- hGetLine handle
+```
+
+Vi kan sedan skriva ut raden eller göra vad vi vill med den. När vi är klara behöver vi stänga filen igen för att frigöra resurserna, vilket vi gör med "hClose" funktionen:
+
+```Haskell
+hClose handle
+```
 
 ## Djupdykning
-Det finns flera andra funktioner och sätt att läsa en textfil i Haskell, såsom att läsa rad för rad med `hGetLine`, läsa en given mängd tecken med `hGet`, eller läsa filen i strömmande format med `hGetContents`. Det är även möjligt att använda Haskell's `File` typ för att manipulera och behandla filen som ett objekt.
 
-En viktig aspekt att tänka på när man läser en textfil i Haskell är att man måste hantera eventuella fel som kan uppstå, såsom om filen inte finns eller om filen inte har rätt behörigheter. Det är därför viktigt att förstå och hantera felhantering i Haskell.
+Förutom "hGetLine" finns det även andra funktioner för att läsa från filer, som "hGetChar" för att läsa en enskild tecken eller "hGetContents" för att läsa in hela filens innehåll som en sträng.
+
+Det är också möjligt att läsa in filen direkt till en lista med funktionen "words", som delar upp en sträng i sin delar baserat på ett separatortecken. Till exempel kan vi läsa in varje ord i filen till en lista med hjälp av följande kod:
+
+```Haskell
+str <- hGetContents handle
+let wordsList = words str
+```
 
 ## Se även
-- [Haskell's System.IO modul](https://hackage.haskell.org/package/base/docs/System-IO.html)
-- [Haskell's File typ](https://hackage.haskell.org/package/base/docs/System-IO.html#g:2)
-- [En detailed guide till att läsa och skriva filer i Haskell](https://www.tutorialspoint.com/haskell/haskell_input_output.htm)
+
+- [Haskell-dokumentation om filhantering](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
+- [En tutorial om filhantering i Haskell](http://learnyouahaskell.com/input-and-output#files-and-streams)

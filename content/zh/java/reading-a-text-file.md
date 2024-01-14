@@ -1,43 +1,44 @@
 ---
 title:                "Java: 读取文本文件"
+simple_title:         "读取文本文件"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么阅读文本文件
+##为什么阅读文本文件
 
-如果您是一名Java程序员，并且正在努力学习如何处理文本文件，那么您来对地方了！阅读文本文件是Java编程中非常重要的一部分，因为它允许您访问并操作文本数据。当您掌握了文本文件的读取技巧后，您将能够轻松地处理各种类型的文本信息，从而提升您的编程技能。
+阅读文本文件是在Java编程中非常常见的任务。当处理带有文本信息的文件时，文本文件的解析和读取是必不可少的。通过阅读文本文件，我们可以轻松地从文本文件中提取信息，并将其用于我们的程序中。因此，学习如何读取文本文件对于任何想要提高其Java编程技能的人都是必不可少的。
 
-# 如何阅读文本文件
+##如何阅读文本文件
 
-阅读文本文件的方法相对简单，可以通过使用Java的Input流来实现。首先，我们需要创建一个File对象，指向我们要读取的文本文件。然后，我们可以使用BufferedReader类来读取文本文件的内容，并将其存储在String变量中。最后，我们可以使用While循环来一次读取一行文本，并将其打印出来。示例代码如下所示：
+阅读文本文件的第一步是要创建一个File对象，它包含文本文件的路径。然后，我们可以使用Java提供的BufferedReader类来读取文件中的内容。以下是一个简单的Java代码示例：
 
 ```Java
-File file = new File("textfile.txt"); //创建一个指向文本文件的File对象
-BufferedReader br = new BufferedReader(new FileReader(file)); //使用BufferedReader类来读取文本文件的内容
+File file = new File("file.txt");
+BufferedReader br = new BufferedReader(new FileReader(file));
 
-String line; //创建一个String变量用于存储每行的文本
-
-while((line = br.readLine()) != null){ //使用While循环来逐行读取文本文件的内容
-  System.out.println(line); //打印每行文本
+String line;
+while ((line = br.readLine()) != null) {
+    System.out.println(line);
 }
 
-br.close(); //关闭BufferedReader
+br.close();
 ```
 
-该代码的输出结果将会将文本文件的内容一行一行地打印出来，从而达到阅读文本文件的目的。
+上面的代码将打开名为`file.txt`的文本文件，并将其内容按行打印到控制台。我们可以根据需要对文本进行各种处理，比如转换为其他数据类型或者进行搜索和替换操作。
 
-# 深入了解
+##深入探讨文本文件读取
 
-阅读文本文件这一主题还有很多深入的内容可以探讨，比如如何处理编码格式不同的文本文件、如何读取特定行或特定字符、如何将文本文件的内容存储到数组或集合等等。如果您想要进一步学习关于阅读文本文件的内容，我们推荐您查阅Java官方文档或相关书籍，以便更加全面地掌握该技能。
+除了上面提到的简单示例，我们还可以使用更高级的Java类来读取和处理文本文件。比如，使用Scanner类可以方便地按照指定规则分隔文本。
 
-# 参考链接
+另外，我们还可以处理不同编码格式的文本文件。Java提供了`Charset`类来处理不同的编码类型，可以使我们的程序在读取和写入文本文件时更加灵活和可靠。
 
-- [Java官方文档](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-- [《Java核心技术卷一》书籍](https://book.douban.com/subject/26880667/)
-- [《Java编程思想》书籍] (https://book.douban.com/subject/2130190/)
+##也可以看看
 
-# 参考链接
+- [Java文本文件读取指南](https://www.cnblogs.com/linlinism/p/8996417.html)
+- [使用Java读写文本文件](https://blog.csdn.net/pooky18765/article/details/9145642)
+- [Java Charset类介绍](https://www.runoob.com/java/java-charset.html)

@@ -1,7 +1,9 @@
 ---
 title:                "Python recipe: Extracting substrings"
+simple_title:         "Extracting substrings"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/extracting-substrings.md"
 ---
 
@@ -9,77 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Substring extraction is a common task in string manipulation that allows us to isolate specific parts of a larger string. Whether you're working on data cleaning, text processing, or any other programming project involving strings, knowing how to extract substrings can save you time and effort.
+Extracting substrings in Python can be a useful skill for any programmer to have. It allows you to work with smaller parts of a string, rather than the entire string itself. This can come in handy when you want to manipulate or analyze specific sections of text within a larger string.
 
 ## How To
 
-To extract a substring, we will use the `slice` function in Python. This function takes in two arguments, the starting and ending indices of the substring we want to extract. Let's take a look at a simple example:
+To extract a substring in Python, we can use the built-in `slice()` function. Here's a simple example:
 
 ```Python
-# create a string
-my_string = "Hello, world!"
-
-# extract the substring "world"
-substring = my_string[7:12]
-
-# print the output
+my_string = "Hello World"
+substring = my_string[6:]
 print(substring)
 ```
+**Output: World**
 
-The output of this code block will be `world`, as expected. It's important to note that the first index is inclusive, meaning it will be included in the substring, while the second index is exclusive, meaning it will not be included. In the example above, the 7th index is the letter "w" and the 12th index is the letter "d", so the substring will include the letters from index 7 up to, but not including, index 12.
+In this example, we used the `slice` function to extract the substring starting at index 6 and continuing until the end of the string. The `slice` function takes in two arguments, the starting index and the ending index, separated by a colon. If the starting index is left blank, it will start at the beginning of the string. Similarly, if the ending index is left blank, it will go until the end of the string.
 
-We can also use negative indices to extract substrings. Negative indices count backwards from the end of the string, with -1 representing the last character. Let's see this in action:
-
-```Python
-# create a string
-my_string = "Hello, world!"
-
-# extract the substring "Hello"
-substring = my_string[0:5]
-
-# print the output
-print(substring)
-```
-
-The output of this code block will be `Hello`, as expected. We can use the shortcut `[:5]` to indicate that we want to start at the beginning of the string and go up to, but not including, index 5. We can also use the shortcut `[5:]` to indicate that we want to start at index 5 and go all the way to the end of the string.
-
-In addition, we can use the `slice` function with a third argument, the step size. This allows us to skip over characters in our substring. Let's take a look at an example:
+We can also specify a step size within the `slice` function to extract every nth character. Here's an example:
 
 ```Python
-# create a string
-my_string = "Hello, world!"
-
-# extract the substring "Hlool"
+my_string = "Hello World"
 substring = my_string[::2]
-
-# print the output
 print(substring)
 ```
+**Output: HloWrd**
 
-The output of this code block will be `Hlool`, as expected. The step size of 2 means we will only take every other character from the original string.
+In this example, we are starting at the beginning of the string and going until the end, with a step size of 2. This means that we are extracting every other character from the string.
 
 ## Deep Dive
 
-While the examples above show the basic usage of the `slice` function, there are many more ways to extract substrings in Python. For example, we can use a negative step size to reverse the string:
+When extracting substrings, it's important to keep in mind that indexing in Python starts at 0. This means that the first character of a string has an index of 0, the second character has an index of 1, and so on. This can sometimes cause confusion when trying to extract substrings, so it's important to pay close attention to the index values.
 
-```Python
-# create a string
-my_string = "Hello, world!"
-
-# extract the substring "dlrow"
-substring = my_string[::-1]
-
-# print the output
-print(substring)
-```
-
-The output of this code block will be `dlrow`, as expected.
-
-We can also use the `index()` or `find()` methods to find the index of a specific character in a string and use that index in our `slice` function to extract a substring. Another option is to use regular expressions to extract more complex substrings based on patterns.
+Additionally, the `slice` function is just one way to extract substrings in Python. Other methods such as using the `substring()` method or regular expressions can also be used, depending on your specific needs.
 
 ## See Also
 
-- [Python Documentation: String Methods](https://docs.python.org/3/library/string.html)
-- [RealPython: The Ultimate Guide to Substrings in Python](https://realpython.com/python-substring/)
-- [GeeksforGeeks: String indexing in Python](https://www.geeksforgeeks.org/python-string-indexing/)
-- [W3Schools: Python String Methods](https://www.w3schools.com/python/python_ref_string.asp)
+For more information on working with substrings in Python, check out these helpful resources:
+
+- [Python String Methods](https://www.w3schools.com/python/python_ref_string.asp)
+- [Python Regular Expressions](https://www.geeksforgeeks.org/python-regex/)
+
+Now that you know how to extract substrings in Python, go ahead and give it a try in your own code. It's a valuable skill to have in your programming toolbox. Happy coding!

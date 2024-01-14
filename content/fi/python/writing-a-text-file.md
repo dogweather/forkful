@@ -1,7 +1,9 @@
 ---
-title:                "Python: Tiedostotiedon kirjoittaminen"
+title:                "Python: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/writing-a-text-file.md"
 ---
 
@@ -9,45 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittaminen on tärkeä osa Python-ohjelmointia, sillä se mahdollistaa tiedon tallentamisen muistiin ja sen jakamisen muille. Tekstitiedoston kirjoittaminen on nopea ja helppo tapa tallentaa tietoa, jota voidaan käyttää myöhemmin ohjelmassa.
+Tekstitiedostojen kirjoittaminen on tärkeä osa Python-ohjelmoinnin oppimista. Se on tapa tallentaa ja järjestää tietoa pysyvästi sekä jakaa sitä muiden kanssa.
 
 ## Miten
 
-Tekstitiedoston kirjoittaminen Pythonissa on yksinkertaista. Alla olevassa esimerkissä käytetään "with" -lauseketta, jonka avulla voimme avata tiedoston ja kirjoittaa siihen haluamamme sisällön. 
+Käytännön esimerkki: Tallennetaan lista nimistä tekstitiedostoon nimeltä "henkilöt.txt".
 
 ```Python
-with open("tiedosto.txt", "w") as tiedosto:
-    tiedosto.write("Tervetuloa ohjelmointiblogiin!")
+# Luodaan lista henkilöiden nimistä
+henkilot = ["Maria", "Juhani", "Anna", "Mikko"]
+
+# Avataan tiedosto kirjoitusmoodissa, lisätään "w" sulkeiden loppuun
+tiedosto = open("henkilöt.txt", "w")
+
+# Kirjoitetaan jokainen nimi omalle riville tiedostoon
+for nimi in henkilot:
+    tiedosto.write(nimi + "\n")
+
+# Suljetaan tiedosto
+tiedosto.close()
+
+# Tulostetaan viesti onnistuneesta tallennuksesta
+print("Tiedosto 'henkilöt.txt' tallennettu!")
+
+# Lopputulos:
+# Tiedosto 'henkilöt.txt' tallennettu!
 ```
 
-Tämä yksinkertainen koodinpätkä avaa tiedoston nimeltä "tiedosto.txt" ja kirjoittaa siihen valitun lauseen. Huomaa, että käytämme "w" -parametria, joka tarkoittaa, että kirjoitamme tiedostoon uutta sisältöä. Jos haluat lisätä jo olemassa olevaan tiedostoon, voit käyttää "a" -parametria.
+## Syvällisemmin
 
-Voimme myös halutessamme käyttää "with" -lauseketta määrittämään tiedoston nimen.
+Tekstitiedostoja kirjoitettaessa on tärkeää muistaa muutamia asioita. Ensinnäkin, tiedoston avaaminen "w" tilassa tarkoittaa sitä, että kaikki olemassa olevat tiedot tiedostossa poistetaan ja uudet tiedot kirjoitetaan sen tilalle. Tiedoston avattuasi muista sulkea se `close()` komennolla.
 
-```Python
-nimi = "blogi.txt"
-
-with open(nimi, "w") as tiedosto:
-    tiedosto.write("Tämä on hyödyllistä tietoa blogistani!")
-```
-Tuloksena on uusi tiedosto nimeltä "blogi.txt", jossa on haluttu sisältö.
-
-## Syvempi sukellus
-
-Voimme myös lisätä uusia rivejä tiedostoon käyttämällä "\n" -merkkiä. Tämä auttaa pitämään tiedoston selkeämpänä ja helposti luettavana.
-
-```Python
-with open("tiedosto.txt", "w") as tiedosto:
-    tiedosto.write("Tervetuloa ohjelmointiblogiin!\n")
-    tiedosto.write("Tässä opit uusia ohjelmointitaitoja.")
-```
-
-Lopputuloksena olevassa tiedostossa on kaksi erillistä riviä, joista toinen sisältää kiinteän lauseen ja toinen muuttuvan muuttujan arvon.
+Voit myös avata tiedoston lukutilassa "r" ja lisätä uutta tietoa tiedoston loppuun `append()` komennolla. Samoin voit lukea tiedoston sisällön `read()` komennolla.
 
 ## Katso myös
 
-Tässä artikkelissa opit kirjoittamaan tekstitiedostoja Pythonissa. Jatka opiskelua ja tutustu muihin Pythonin tiedostokäsittelyyn liittyviin aiheisiin osoitteessa:
-
-- [Pythonin viralliset dokumentaatiot](https://docs.python.org/3/library/io.html)
-- [Real Pythonin artikkeli: "Pythonin tiedostokäsittely"](https://realpython.com/read-write-files-python/)
-- [TechVidvanin opetusohjelma: "Python - Tiedoston käsittely"](https://techvidvan.com/tutorials/python-file-handling/)
+- [Pythonin tekstikäsittely](https://www.python.org/dev/peps/pep-0008/#code-lay-out)
+- [Markdown-kieli](https://daringfireball.net/projects/markdown/)

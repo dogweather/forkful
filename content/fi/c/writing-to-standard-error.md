@@ -1,7 +1,9 @@
 ---
-title:                "C: Kirjoittaminen standarivirheelle"
+title:                "C: Standardivirhe kirjoittaminen."
+simple_title:         "Standardivirhe kirjoittaminen."
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/writing-to-standard-error.md"
 ---
 
@@ -9,35 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittamalla standardivirheeseen, voit ohjelmassasi näyttää virheilmoituksia ja varoitussanomia, jotka auttavat sinua vianjäljityksessä. Tämä on tärkeä osa ohjelmointia ja auttaa sinua löytämään ja korjaamaan mahdolliset virheet.
+Ohjelman kirjoittaminen ei ole vain koodien naputtelua, vaan myös virheiden korjaamista ja vianmääritystä. Kirjoittamalla standard erroriin voimme helposti löytää ja tarkistaa virheitä ohjelmassamme.
 
-## Näin teet sen
+## Miten
 
-Ohjelmassasi, voit käyttää funktion `fprintf` ja antaa toisena parametrinaan `stderr`-merkkijonon. Alla on yksinkertainen esimerkki, jossa kirjoitetaan virheilmoitus standardivirheeseen:
+Kuvitellaan, että meillä on yksinkertainen ohjelma, joka laskee kahden luvun summan ja tulostaa sen näytölle. Tässä tapauksessa mahdollisia virheitä voivat olla esimerkiksi yritettäessä jakaa nollalla tai syötettyjen lukujen ollessa merkkijonoja. Mutta kuinka kirjoittaa nämä virheilmoitukset standard erroriin?
+
+Se tapahtuu käyttämällä funktion `fprintf` avulla standard erroriin. Tämä funktio ottaa parametreikseen tiedoston osoittimen ja merkkijonon, jonka haluamme tulostaa. Tiedoston osoitin `stderr` tarkoittaa standard erroria.
 
 ```C
-#include <stdio.h>
-
-int main() {
-  fprintf(stderr, "Virhe: Tiedostoa ei löydy\n");
-  return 0;
-}
+fprintf(stderr, "Virhe: Syötetty luku ei ole numero!\n");
 ```
 
-Tämän ohjelman ajaessa saat seuraavan tulosteen:
+Yllä olevassa esimerkissä tulostamme virheilmoituksen, jos käyttäjä syöttää merkkijonon sijasta luvun. Tämän ansiosta voimme helposti tunnistaa virheen ja korjata sen ohjelmassa.
 
-```
-Virhe: Tiedostoa ei löydy
-```
+## Syvemmälle
 
-## Syvempi sukellus
+Standard erroriin kirjoittaminen antaa meille mahdollisuuden ohjata virheilmoituksia erilliseen paikkaan kuin ohjelman normaali tulostus käyttämällä `stdout`-tiedostoa. Kun ohjelma pyörii esimerkiksi taustalla palvelimena, standard errorista tulostetut virheilmoitukset voidaan ohjata virhelokiin, jotta ne voidaan tarkistaa myöhemmin.
 
-Standardivirheeseen kirjoittaminen eroaa tavallisesta tulostamisesta siksi, että se ei ole sidottu tiettyyn kanavaan, kuten näyttöön tai tiedostoon. Tämä tekee siitä hyödyllisen virheiden käsittelyssä, koska voit ohjata virheilmoituksesi eri tarkoituksiin riippuen siitä, missä ohjelmasi suoritetaan.
-
-Lisäksi on tärkeää hallita standardivirheen tulostusta, jotta se ei sekoitu tavallisen tulostuksen kanssa. Voit suorittaa virheen ohjauksen käyttäen `stderr`-kanavaa ja samalla tulostaa tavallinen teksti `stdout`-kanavalle.
+`stderr`-muuttuja on myös hyödyllinen silloin kun meidän tarvitsee kirjoittaa virheilmoituksia funktioissa, joilla ei ole pääsyä `main`-funktioon. Voimme esimerkiksi kutsua `fprintf`-funktiota kirjoittamaan virheilmoituksia tiedostoista, jotka eivät avaudu oikein.
 
 ## Katso myös
 
-- [C-funktioiden dokumentointi](https://www.tutorialspoint.com/c_standard_library/index.htm)
-- [Virheiden käsittely C-ohjelmoinnissa](https://www.geeksforgeeks.org/error-handling-c-programs/)
-- [Standardivirheen käyttö C-ohjelmoinnissa](https://www.gnu.org/software/libc/manual/html_node/Standard-Error-Output.html)
+- [Virheenhallinta C-kielisissä ohjelmissa](https://www.cs.fsu.edu/~myers/c++/notes/errors.html)
+- [Standard error C-dokumentaatiossa](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_73/rtref/stder.htm)

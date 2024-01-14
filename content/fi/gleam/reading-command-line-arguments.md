@@ -1,45 +1,55 @@
 ---
-title:                "Gleam: Komentoriviparametrien lukeminen"
+title:                "Gleam: Lukeminen komentoriviparametreista"
+simple_title:         "Lukeminen komentoriviparametreista"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Oletko koskaan huomannut, että kun suoritat ohjelmasi terminaalissa, voit lisätä siihen lisätoimintoja kirjoittamalla komentoriviparametreja? Gleam-ohjelmointikieli tarjoaa mahdollisuuden lukea näitä komentoriviparametreja ja hyödyntää niitä ohjelmasi toiminnassa. Tässä blogikirjoituksessa kerromme, miksi haluat ehdottomasti tutustua tähän ominaisuuteen.
+Miksi lukisin komentoriviparametreja Gleam-ohjelmoinnin avulla? Käytössä on monia erilaisia tapoja, joilla voit optimoida ja tehostaa ohjelmasi toimintaa ja komentoriviparametrit ovat yksi niistä. Tässä blogikirjoituksessa käsittelemme kuinka voit lukea komentoriviparametreja Gleam-ohjelmoinnissa ja miten se voi auttaa sinua ohjelmasi kehittämisessä.
 
-## Kuinka?
+## Kuinka tehdä
+
+Komentoriviparametrien lukeminen Gleamissa on helppoa ja nopeaa. Voit käyttää siihen standardikirjastosta löytyvää `Command.Args` -moduulia. Se tarjoaa kätevän tavan lukea komentoriviltä saadut parametrit ja käsitellä niitä. Käytämme tässä esimerkkinä yksinkertaista ohjelmaa, joka tulostaa käyttäjän antaman nimen tervehdyksenä.
 
 ```Gleam
-module Hakija {
+import Gleam.String
 
-import gleam/io
-import gleam/strings
-
-pub fn main(arguments) {
-  strings.split(arguments, " ") 
-  |> io.printf("Komentoriviparametreja: %s") 
+pub fn main() {
+  let args = Command.Args.parse()
+  
+  let name = case args {
+    command::result(value) -> value
+    command::exception(err) -> {
+      let _ = erlang::error_logger(format("Virhe: {}", format("{:?}", err)))
+      "nimetön"
+    }
+    _ -> "nimetön"
+  }
+  
+  let greeting = String.concat("Hei ", name, "!")
+  erlang::io::format(greeting)
 }
-``` 
-
-Tämä yksinkertainen koodiesimerkki näyttää, kuinka voit lukea komentoriviparametreja Gleam-ohjelmassa. Käyttämällä split-toimintoa voit jakaa parametrit eri osiksi ja hyödyntää niitä ohjelman suorituksessa. Tässä esimerkissä ohjelma tulostaa yksinkertaisesti kaikki parametrit.
-
-```
-$ gleam run hakija.gleam ensimmäinen toinen kolmas
-Komentoriviparametreja: ["ensimmäinen", "toinen", "kolmas"]
 ```
 
-## Syvempi sukellus
+Käyttäessämme komentoriviparametreja tämän ohjelman kanssa, voimme syöttää nimen parametrina komentoriville seuraavasti:
 
-Komentoriviparametrien lukeminen on hyödyllistä, kun haluat esimerkiksi ajaa saman ohjelman eri parametreilla tai muokata ohjelman toimintaa parametrien avulla. Voit myös tarkistaa, mitä parametreja käyttäjä antaa ohjelmallesi ja toimia sen mukaan.
+```
+$ hello_world Titi
+```
 
-Voit lukea lisää Gleamin komentoriviparametreista virallisesta dokumentaatiostamme: [https://gleam.run/manual/command-line-arguments.html](https://gleam.run/manual/command-line-arguments.html)
+Tämä tulostaa komentorivin seuraavan rivin: `Hei Titi!`.
+
+## Syventävä sukellus
+
+Kuten näemme esimerkissä, `Command.Args` -moduuli tarjoaa kätevän tavan lukea ja käsitellä komentoriviltä saadut parametrit. Voit myös määrittää oletusarvoja, jos käyttäjä ei anna parametria, ja tarkastella tarkemmin virhetilanteita. Lisätietoja tästä moduulista voit löytää Gleamin dokumentaatiosta.
 
 ## Katso myös
 
-- [Gleamin virallinen dokumentaatio](https://gleam.run)
-- [Gleam-yhteisön keskustelufoorumi](https://forum.gleam.run)
-- [Gleam-pikaopas](https://gleam.run/getting-started.html)
+- [Gleamin dokumentaatio](https://gleam.run/book/getting-started)
+- [Erlangin komentorivi- ja argumenttikäsittelyn dokumentaatio](https://erlang.org/doc/man/erl.html#command-line-arguments)

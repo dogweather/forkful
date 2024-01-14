@@ -1,49 +1,45 @@
 ---
-title:                "Bash: 패턴과 일치하는 문자 삭제하기"
+title:                "Bash: 패턴과 일치하는 문자 삭제"
+simple_title:         "패턴과 일치하는 문자 삭제"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-"Pattern"와 일치하는 문자를 삭제하는 것이 왜 유용한지 궁금하신가요? 이 글에서는 Bash 프로그래밍에서 이 작업을 하는 이유와 방법에 대해 알아보겠습니다.
+패턴과 일치하는 문자를 삭제하는 작업을 왜 할까요? 이 작업은 파일이나 문자열을 정제하고 원하는 형식으로 만들기 위해 필요합니다. 예를 들어, 이 작업을 통해 로그 파일에서 불필요한 정보를 제거하거나 특정 문자열을 바꿀 수 있습니다.
 
-## 방법
+## 어떻게 해야 할까요?
 
-Bash에서 "Pattern"과 일치하는 문자를 삭제하는 방법은 매우 간단합니다. 아래 코드 블록을 참고해보세요.
+Bash 쉘 스크립트를 사용하여 패턴과 일치하는 문자를 삭제하는 방법을 알아보겠습니다. 먼저, ```sed``` 명령어를 사용하여 문자열을 수정합니다. 다음 예제를 살펴보면서 이해해봅시다.
 
 ```Bash
-# "Example"라는 파일에서 "Pattern"과 일치하는 문자 삭제하기
-sed -i 's/Pattern//g' Example
+# 파일에서 패턴과 일치하는 문자를 삭제하는 예제
+sed '/패턴/d' 파일명
 ```
-위 코드를 실행하면 "Example" 파일에서 "Pattern"과 일치하는 문자가 모두 삭제됩니다. 아래는 삭제 전후의 예시 출력입니다.
 
-**입력: Example 파일**
+위의 예제에서는 ```/패턴/d``` 부분에서 패턴을 지정합니다. 이렇게 하면 해당 파일에서 패턴과 일치하는 모든 문자열을 삭제할 수 있습니다. 다음은 실제로 적용된 예제와 결과를 보여줍니다.
+
 ```Bash
-# "HelloPattern, world!"
-# "PatternDelete this line"
-# "This line won't be affected"
-```
-**삭제 후 출력: Example 파일**
-```Bash
-# "Hello, world!"
-# "Delete this line"
-# "This line won't be affected"
+# "Hello"라는 문자열을 포함한 파일에서 "Hello" 문자열을 삭제하는 예제
+sed '/Hello/d' file.txt
+
+# 결과: "Hello" 문자열이 포함된 모든 라인이 삭제된 파일을 출력합니다.
 ```
 
-## 깊게 파헤치기
+이와 같은 방법으로 원하는 패턴의 문자열을 삭제할 수 있습니다. 그리고 ```sed``` 명령어에서는 더 복잡한 패턴 매칭을 위해 정규표현식을 사용할 수도 있습니다.
 
-자세한 내용은 [Bash 스크립트에서 sed 명령어를 사용하여 문자 삭제하기](https://www.linux.com/learn/using-sed-delete-empty-lines-file)라는 링크에서 확인할 수 있습니다. 이 글에서는 sed 명령어를 사용하는 다양한 방법과 실제 사용 예시를 다루고 있습니다.
+## 심층 분석
 
-## 참고자료
+더 심층적으로 패턴과 일치하는 문자를 삭제하는 방법에 대해 알아보겠습니다. ```sed``` 명령어를 사용한 예제에서는 한 줄을 기준으로 패턴을 삭제했지만, 여러 줄에 걸친 패턴 삭제도 가능합니다. 이를 위해서는 ```sed``` 명령어 옵션 중 ```-n```을 사용합니다. 이렇게 하면 ```sed``` 명령어는 모든 줄을 출력하지 않고 지정한 패턴과 일치하는 줄만 출력합니다.
 
-- [간결하고 강력한 Bash 스크립트 작성하기](https://linuxhint.com/write_useful_bash_script/)
-- [Bash 프로그래밍을 위한 유용한 리소스 모음](https://wiki.bash-hackers.org/)
-- [Bash 공식 문서 보기 (영문)](https://www.gnu.org/software/bash/manual/bash.html)
+또한 ```sed``` 명령어에서는 ```p``` 옵션을 사용하여 패턴과 일치하는 줄을 복사한 후 출력할 수 있습니다. 이렇게 함으로써 원하는 패턴을 쉽게 찾을 수 있습니다.
 
-## 참조
+## 관련 자료
 
-위 글은 [주요 키워드] 글에서 참고한 내용을 바탕으로 작성되었습니다. 자세한 내용은 해당 글을 참고해주세요.
+- [sed 명령어 문서](https://www.gnu.org/software/sed/manual/sed.html)
+- [정규표현식 강의 영상 (한국어)](https://www.youtube.com/watch?v=t_htCPoN-Qw)

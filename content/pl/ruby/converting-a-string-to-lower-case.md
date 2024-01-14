@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Zmiana ciągu znaków na małe litery"
+title:                "Ruby: Konwertowanie ciągu znaków na małe litery."
+simple_title:         "Konwertowanie ciągu znaków na małe litery."
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,50 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zastanawiałeś się dlaczego w programowaniu tak często trzeba zmieniać wielkość liter w łańcuchach znaków? Przykładowo, gdy potrzebujemy porównać dwa teksty, musimy upewnić się, że zostały wpisane dokładnie tak samo, nawet jeśli użytkownik przypadkowo użyje małych lub wielkich liter. Dlatego konwersja łańcuchów znaków na tylko jedną wielkość liter jest bardzo ważnym elementem programowania i jest nieodzowna w wielu projektach.
+W tym wpisie chciałbym przybliżyć Wam temat konwersji ciągu znaków na małe litery w języku Ruby. Dowiecie się, dlaczego jest to przydatne i jak to zrobić przy użyciu kilku prostych linii kodu.
 
 ## Jak to zrobić
 
-Jeśli potrzebujesz zmienić wszystkie litery w stringu na małe, możesz skorzystać z metody `downcase`. Przykład kodu w Ruby wygląda następująco:
+W celu przekształcenia ciągu znaków na małe litery, używamy metody `downcase`. Możemy ją wywołać na dowolnym stringu i zwróci ona nowy string z wszystkimi literami w małym formacie. Przykładowy kod wyglądałby następująco:
 
 ```Ruby
-string = "PROGRAMOWANIE"
-puts string.downcase
+str = "Hello World!"
+puts str.downcase
 ```
 
-W tym przykładzie używam zmiennej `string` z wartością "PROGRAMOWANIE". Metoda `downcase` zmieni wszystkie litery na małe, więc wynikiem wyświetlonym na ekranie będzie "programowanie".
+Output: `hello world!`
 
-Jeśli chcesz zmienić tylko pierwszą literę w tekście na małą, możesz użyć metody `capitalize`. Przykład przy użyciu tego samego stringu wyglądałby tak:
+Możemy również wywołać tę metodę na stałej, na przykład:
 
 ```Ruby
-puts string.capitalize
-# Wynik: Programowanie
+CONSTANT = "UPPERCASE"
+puts CONSTANT.downcase
 ```
 
-Możesz też użyć metody `swapcase`, która zamieni wszystkie małe litery na duże i odwrotnie. Przykład:
+Output: `uppercase`
+
+Warto również wiedzieć, że ta metoda nie tylko konwertuje duże litery na małe, ale także pozostawi niezmienione znaki specjalne oraz numeryczne. Dzięki temu nie musimy martwić się o przypadkowe usunięcie lub zmianę innych znaków niż litery.
+
+## Głębszy wgląd
+
+Metoda `downcase` używana jest głównie do porównywania stringów bez uwzględniania wielkości liter. Dzięki temu mamy pewność, że nawet jeśli użytkownik wpisze słowo z małych liter, a my oczekujemy wielkich, nasz program i tak wykona poprawne porównanie.
+
+Jednakże, warto zaznaczyć, że ta metoda jest zależna od aktualnego ustawienia lokalizacji językowej. Dlatego, jeśli chcemy mieć pewność, że wszystkie litery zostaną przekształcone na małe, możemy użyć metody `unicode_normalize` wraz z `downcase`. Oto przykładowy kod:
 
 ```Ruby
-string = "Programowanie w RuBy"
-puts string.swapcase
-# Wynik: pROGRAMOWANIE W rUbY
+str = "ŁĄKA"
+puts str.unicode_normalize(:nfkc).downcase
 ```
 
-## Głębsze zagadnienia
+Output: `łąka`
 
-Wszystkie wymienione metody (`downcase`, `capitalize` i `swapcase`) zmieniają wielkość liter tylko na poziomie znaków alfabetu łacińskiego. Jeśli użyjesz ich na znakach spoza tego zakresu, nie wywołają one żadnych zmian. Na przykład, w języku polskim znaki diakrytyczne, takie jak "ą", "ś" czy "ł" nie są zamieniane na małe odpowiedniki przez metody `downcase` czy `capitalize`.
+## Zobacz również
 
-W takich przypadkach, warto sięgnąć po metodę `downcase` z parametrem `Unicode`, która będzie działać na znakach spoza zakresu ASCII. Przykład:
-
-```Ruby
-string = "Życie jest piękNe"
-puts string.downcase(:unicode)
-# Wynik: życie jest piękne
-```
-
-## Zobacz też
-
-- [Dokumentacja Ruby - String](https://ruby-doc.org/core-2.7.2/String.html)
-- [Metody edycji łańcuchów znaków w Ruby](https://www.youtube.com/watch?v=WF8JkiMIXpE)
-- [Tutorial: Szczegółowe omówienie metod dla łańcuchów znaków w Ruby](https://www.rubyguides.com/2018/04/string-methods/)
-
-Dzięki temu przewodnikowi powinieneś mieć podstawową wiedzę na temat konwersji łańcuchów znaków na małe litery w Ruby. Pamiętaj, że istnieje wiele innych metod, które mogą się przydać w pracy z tekstem, więc zawsze warto korzystać z dokumentacji i eksperymentować z różnymi funkcjami programowania.
+1. [Dokumentacja Ruby o metodzie downcase](https://ruby-doc.org/core-2.5.0/String.html#method-i-downcase)
+2. [Porównywanie Stringów w języku Ruby](https://devstyle.pl/2011/02/26/porownywanie-stringow-w-ruby/) (po polsku)
+3. [Metody stringów w języku Ruby](https://www.tutorialspoint.com/ruby/ruby_strings.htm) (po angielsku)

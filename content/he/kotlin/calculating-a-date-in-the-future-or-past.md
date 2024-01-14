@@ -1,7 +1,9 @@
 ---
 title:                "Kotlin: חישוב תאריך בעתיד או בעבר"
+simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,27 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-מחשבתם אי פעם כיצד ניתן לחשב תאריך בעתיד או בעבר באמצעות קוד? הייתם יכולים להשתמש בכך כדי לנהל את חייכם בצורה יותר מאורגנת או למתג את אפליקציות ניידות שלכם? במאמר זה נלמד כיצד לבצע חישוב של תאריך בעתיד או בעבר באמצעות שפת התכנות Kotlin.
+מחישוב תאריך בעתיד או בעבר יכול להיות מועיל עבור תכניות, אפליקציות ואתרים שמתעסקים עם זמינות מוצרים או אירועים בתאריכים מקובלים, כמו חגים, מועדי לידה ועוד. בכתבה זו נלמד כיצד לכתוב קוד Kotlin שיאפשר לנו לחשב תאריך בעתיד או בעבר ולהציג את התוצאות למשתמש.
 
-## כיצד לעשות זאת
+## איך לעשות את זה
 
-כדי לבצע חישוב של תאריך בעתיד או בעבר, ניתן להשתמש בטכניקה המבוססת על תאריך ההיום וביחידות זמן שתרצו להוסיף או להפחית ממנו. למשל, אם תרצו לחשב תאריך של שבוע לפני זמן מסוים, תוכלו להשתמש בפונקציה `LocalDate.now().minusWeeks(1)` בשפת Kotlin.
-
-ניתן להשתמש גם בממשקים נוספים, כגון הפונקציה `plus` או `minus`, כדי להוסיף או להפחית יחידות זמן מתאריך מסוים. כדי לקבל את התאריך המבוקש בפורמט מסוים, ניתן להשתמש בממשק `DateTimeFormatter` ולהגדיר את הפורמט המבוקש כפרמטר.
-
-כדי להבין כיצד להשתמש בכל אחת מהטכניקות האלו בקוד, הנה דוגמאות של קטעי קוד בשפת Kotlin:
+נתחיל עם דוגמה פשוטה של חישוב תאריך בעתיד בקוד Kotlin:
 
 ```Kotlin
-// חישוב תאריך של חודש לפני זמן מסוים
-val pastDate = LocalDate.now().minusMonths(1)
-println("תאריך החודש שעבר $pastDate")
+// הגדרת תאריך התחלה וכמות הימים למחשב
+val startDate = LocalDate.now()
+val numOfDays = 30 
 
-// חישוב תאריך של שנה לפני זמן מסוים והצגת התאריך בפורמט המבוקש
-val pastYear = LocalDate.now().minusYears(1)
-val dateFormatter = DateTimeFormatter.ofPattern("d/M/yyyy")
-println("תאריך השנה שעבר ${pastYear.format(dateFormatter)}")
+// חישוב התאריך המבוקש בעתיד
+val endDate = startDate.plusDays(numOfDays)
+
+// הודפסת התאריך המבוקש למשתמש
+println("התאריך המבוקש הוא: $endDate")
+```
+הפלט של הקוד הנ"ל יהיה:
+
+```
+התאריך המבוקש הוא: 2020-05-13
 ```
 
-## חפירה עמוקה
+כעת, נרחיב את הקוד כך שיאפשר למשתמש להזין תאריך התחלה ומספר ימים בשביל לחשב תאריך בעתיד:
 
-החישוב של תאריך בעתיד או בעבר מבוסס על תאריך היום והשימוש בפונקציות של יחידות ז
+```Kotlin
+// קליטת תאריך התחלה מהמשתמש
+println("אנא הכנס תאריך התחלה בפורמט dd/MM/yyyy:")
+val input = readLine()!!
+
+// המרת תאריך המחרוזת לטיפוס LocalDate
+val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+val startDate = LocalDate.parse(input, formatter)
+
+// קליטת המספר המייצג את מספר הימים
+println("אנא הכנס מספר ימים:")
+val numOfDays = readLine()!!.toInt()
+
+// חישוב התאריך המבוקש בעתיד
+val endDate = startDate.plusDays(numOfDays)
+
+// הודפסת התאריך המבוקש למשתמש
+println("התאריך המבוקש הוא: $endDate")
+```
+
+כעת, אם נרצה לחשב תאריך בעבר, נוכל להשתמש בפונקציות `minusDays()` ו- `minusMonths()` במקום `plusDays()` ו- `plusMonths()`.
+
+## כיוון עמוק
+
+כדי לחשב תאריך בעתיד או בעבר, השתמשנו בטיפוס LocalDate הכולל מתודות ש

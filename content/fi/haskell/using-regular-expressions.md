@@ -1,42 +1,74 @@
 ---
-title:                "Haskell: Säännöllisten lausekkeiden käyttö"
+title:                "Haskell: Säännöllisten lausekkeiden käyttäminen"
+simple_title:         "Säännöllisten lausekkeiden käyttäminen"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi käyttää säännöllisiä lausekkeita?
+# Miksi käyttää regulaaarisia lausekkeita?
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä työkaluja, kun käsitellään merkkijonoja. Ne mahdollistavat monimutkaisten etsintä- ja korvaustoimintojen suorittamisen helposti ja tehokkaasti. Käyttämällä säännöllisiä lausekkeita voidaan esimerkiksi tarkistaa, vastaavatko syötteet tietylle muotolle tai suorittaa laaja kirjo hakutoimintoja, kuten merkkijonojen haku ja muuttaminen.
+Jos olet koskaan joutunut etsimään tiettyä merkkijonoa tekstistä tai halunnut korvata kaikki esiintymät jollakin toisella merkkijonolla, olet todennäköisesti törmännyt käsitteeseen "regulaariset lausekkeet". Nämä ovat erittäin hyödyllisiä työkaluja, joita voit käyttää helpottamaan tiettyjen merkkijonojen käsittelyä ohjelmoinnissa.
 
-# Miten käyttää säännöllisiä lausekkeita Haskellissa?
+## Miten käyttää regulaaarisia lausekkeita Haskellissa?
 
-Säännölliset lausekkeet ovat kiinteä osa Haskellin standardikirjastoa ja niiden käyttö on helppoa. Ensimmäiseksi tulee tuoda ```Text.Regex.Posix``` moduuli, jossa säännöllisten lausekkeiden toiminnot sijaitsevat. Tämän jälkeen voidaan käyttää joko ```=~``` tai ```=~~``` operaattoria säännöllisen lausekkeen ja syötteen vertailuun.
+Haskellissa regulaaarisia lausekkeita käsitellään `Text.Regex.Posix` -kirjaston avulla. Voit aloittaa käyttämällä `=~` -funktiota, joka tarkistaa, vastaako merkkijono sille annettua säännöllistä lauseketta.
 
-Esimerkiksi, jos haluamme tarkistaa vastaako syöte muotoa "ABC123", käytämme seuraavaa koodia:
-
-```Haskell
-import Text.Regex.Posix 
-
-checkPattern :: String -> Bool
-checkPattern input = input =~ "ABC123"
-```
-
-Tämän jälkeen voimme suorittaa funktiota käyttämällä esimerkiksi seuraavaa syötettä:
+`example.hs`
 
 ```Haskell
-checkPattern "ABC123" --> True
+import Text.Regex.Posix
+
+main = do
+  let str = "Tämä on esimerkki"
+  let regex = "esimerkki"
+  if str =~ regex :: Bool
+    then putStrLn "Löytyi!"
+    else putStrLn "Ei löytynyt."
 ```
 
-# Syvemmät tiedot säännöllisten lausekkeiden käytöstä
+```Haskell
+Löytyi!
+```
 
-Säännöllisten lausekkeiden mallikieli on tiivis ja tehokas, mutta samalla myös monimutkainen. Sen opetteleminen ja vakioiden ja ominaisuuksien ymmärtäminen voi vaatia aikaa ja harjoittelua. Yksi huomionarvoinen seikka on se, että Haskellin säännölliset lausekkeet noudattavat POSIX-standardia, mikä voi poiketa joistakin muista ohjelmointikielistä.
+Voit myös käyttää regulaarisia lausekkeita korvaamaan tiettyjä merkkijonoja `subRegex` -funktiolla.
 
-Voit opetella säännöllisten lausekkeiden syvempiä ominaisuuksia ja käyttötapoja tutustumalla POSIX-standardiin tai lukemalla lisätietoja Haskellin dokumentaatiosta.
+```Haskell
+import Text.Regex.Posix
 
-# Katso myös
+main = do
+  let str = "Tämä on esimerkki"
+  let regex = "esimerkki"
+  let replacement = "esimerkkilause"
+  let newStr = subRegex (makeRegex regex) str replacement
+  putStrLn newStr
+```
 
-- [Haskellin tekstikäsikirja, säännölliset lausekkeet](https://hackage.haskell.org/package/regex-posix-0.95.2/docs/Text-Regex-Posix.html)
-- [POSIX-säännölliset lausekkeet](https://www.regular-expressions.info/posix.html)
+```Haskell
+Tämä on esimerkkilause
+```
+
+## Syvempi sukellus regulaaaristen lausekkeiden käyttöön
+
+Regulaaaristen lausekkeiden kanssa on monia erilaisia symboleja ja merkityksiä, joten niiden oppiminen voi tuntua aluksi hämmentävältä. On hyödyllistä tutkia esimerkkejä ja kokeilla erilaisia säännöllisiä lausekkeita, jotta ymmärtäisit paremmin niiden toimintaa.
+
+Voit myös hyödyntää `=~` -funktion tarjoamaa syntaksin muotoilua, jossa voit käyttää `::` -operaattoria asettaaksesi muuttujalle tietyn tyyppisen arvon. Tämä auttaa varmistamaan, että säännöllinen lauseke vastaa oikeaa tyyppiä.
+
+```Haskell
+let str = "12345"
+if str =~ "^[0-9]+$" :: Bool
+  then putStrLn "Sisältää vain numeroita!"
+  else putStrLn "Sisältää muita merkkejä."
+```
+
+```Haskell
+Sisältää vain numeroita!
+```
+
+## Katso myös
+
+- [Haskellin virallinen dokumentaatio regulaaarisista lausekkeista](https://www.haskell.org/onlinereport/stdprelude.html#l:Rld-260420103302)
+- [Regulaaristen lausekkeiden opas (englanniksi)](https://www.regular-expressions.info/)

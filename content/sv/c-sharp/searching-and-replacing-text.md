@@ -1,36 +1,44 @@
 ---
-title:                "C#: Söka och ersätta text"
+title:                "C#: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Många programmerare stöter på situationer där de behöver byta ut en viss text i kod eller andra textfiler. Det kan vara på grund av stavningsfel, ändringar i krav eller bara för att göra koden mer läsbar. Sökning och ersättning av text är ett enkelt och effektivt sätt att snabbt göra ändringar i stora mängder text.
 
-## Så gör du
-För att söka och ersätta text i C# kan du använda metoden "Replace" i klassen "String". Nedan följer ett exempel på hur du kan använda denna metod:
+Att söka och ersätta text är en vanlig uppgift inom programmering. Det kan spara tid och göra det lättare att hantera stora mängder text. Med hjälp av C# kan du enkelt automatisera denna process och göra ditt arbete mer effektivt.
+
+## Hur man gör
+
+För att söka och ersätta text i C#, kan du använda dig av metoden `Replace` som finns tillgänglig för alla strängar. Denna metod tar in två parametrar: den första är den text som ska ersättas och den andra är ersättningstexten. Om du vill ersätta allt förekomst av en viss sträng i en större textmängd kan du använda dig av `Replace`-metoden på följande sätt:
 
 ```C#
-// Skapar en sträng att söka och ersätta i
-string text = "Hej och välkommen till mitt program!";
-// Söker efter ordet "välkommen" och ersätter det med "bye"
-string newText = text.Replace("välkommen", "bye");
-// Skriver ut den nya strängen
-Console.WriteLine(newText);
-
-// Output: Hej och bye till mitt program!
+string myText = "Hej, mitt namn är Johan";
+string replacedText = myText.Replace("Johan", "Anna");
+Console.WriteLine(replacedText); // Utskrift: "Hej, mitt namn är Anna"
 ```
 
-I detta exempel söker vi efter ordet "välkommen" i strängen och ersätter det med ordet "bye". Resultatet skriver vi sedan ut i konsolen. Det är viktigt att komma ihåg att metoden "Replace" söker och ersätter exakt matchande text. Om vi bara hade sökt efter "välkommen" skulle inte ordet "välkommen" i början av strängen ha blivit ersatt.
+Du kan också inkludera fler parametrar i `Replace`-metoden för att göra sök- och ersättningsprocessen mer specifik. Till exempel kan du ange att du bara vill ersätta texten om den är skriven med stora bokstäver. Du kan också använda dig av reguljära uttryck för att göra mer komplexa sökningar och ersättningar. Nedan finns ett exempel på hur du kan göra en mer specifik sökning och ersättning:
+
+```C#
+string myText = "Hej, jag heter Johan och jag gillar att programmera";
+string replacedText = myText.Replace("Johan", "Anna", StringComparison.OrdinalIgnoreCase); // Ersätter endast textskiftningar som är skrivna med annan bokstavskombination
+Console.WriteLine(replacedText); // Utskrift: "Hej, jag heter Anna och jag gillar att programmera"
+```
 
 ## Djupdykning
-Metoden "Replace" har flera olika överlagringar som gör det möjligt att närmare specificera vilken text som ska sökas och ersättas. Till exempel kan man ange en startposition för sökningen, ange en begränsning på antalet ersättningar eller använda en annan klass som implementerar gränssnittet "IEqualityComparer" för att definiera hur jämförelser av text ska utföras.
 
-Det finns också andra sätt att söka och ersätta text i C#, som att använda klassen "Regex" i namespace "System.Text.RegularExpressions". Detta är mer avancerat och erbjuder mer avancerade möjligheter, till exempel mönstermatchning och olika slag av ersättningar. Så om du behöver göra mer avancerade sök- och ersättningsoperationer, kan det vara värt att undersöka denna klass.
+Det finns många olika sätt att använda sig av sök- och ersättningsfunktionen i C# och det är viktigt att förstå hur man kan anpassa dem efter sina behov. En sak som är viktig att notera är att `Replace`-metoden endast returnerar den modifierade strängen och inte ändrar den ursprungliga strängen. Om du vill ändra den ursprungliga strängen måste du tilldela resultatet av `Replace`-metoden till den variabel som innehåller den ursprungliga strängen.
+
+För mer information och möjligheter kring sök- och ersättningsfunktionen i C#, kan du titta närmare på dokumentationen för `Replace`-metoden och utforska olika reguljära uttryck.
 
 ## Se även
-- [String.Replace Method (Microsoft Documentation)](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace)
-- [Regex Class (Microsoft Documentation)](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex)
+
+- [C# dokumentation för Replace-metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace)
+- [Reguljära uttryck i C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Exempel för sök och ersätt i C#](https://www.c-sharpcorner.com/UploadFile/mahesh/search-and-replace-a-substring-from-a-string-in-C-Sharp/)

@@ -1,35 +1,37 @@
 ---
 title:                "PHP: 日付を文字列に変換する"
+simple_title:         "日付を文字列に変換する"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/php/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+「日付を文字列に変換する」の理由について：日付を文字列に変換するメソッドを使うことで、データベースやファイルなどで扱いやすい形式にデータを整えることができます。
 
-日付を文字列に変換することについて興味がある方へ、調べてみました。
-
-## 方法
-
-「date_format」関数を使って、日付を文字列に変換する方法をご紹介します。
+## 日付を文字列に変換する方法
 
 ```PHP
-<?php
-$date = date_create('2021-10-20');
-echo date_format($date, 'Y年m月d日'); //出力結果：2021年10月20日
-echo date_format($date, 'M d, Y'); //出力結果：Oct 20, 2021
-?>
+// 日付を文字列に変換する
+$date = date('Y-m-d', strtotime('2020-01-01'));
+echo $date; // 出力: 2020-01-01
+
+// 自分でフォーマットを指定する
+$date = date('m/d/Y', strtotime('2020-01-01'));
+echo $date; // 出力: 01/01/2020
 ```
 
-## ディープダイブ
+## 日付を文字列に変換する深い情報
 
-日付を文字列に変換する際、よく使われる「date」関数や「strftime」関数の違いや使い方について掘り下げています。また、文字列のフォーマットをカスタマイズする方法や注意点についても詳しく解説しています。
+日付を文字列に変換する際には、自分でフォーマットを指定することもできます。また、`strtotime()`関数を使うことで、指定した日付をタイムスタンプに変換できます。さらに、フォーマットに使用するパラメータを調べる際には、PHPの公式ドキュメントを参考にすることをおすすめします。
 
-## 参考リンク
+## 詳しく知りたい方へ
 
-- [PHP: date_format 関数](https://www.php.net/manual/ja/function.date-format.php)
-- [PHP: date 関数](https://www.php.net/manual/ja/function.date.php)
-- [PHP: strftime 関数](https://www.php.net/manual/ja/function.strftime.php)
-- [Date and Time Formats - PHP Manual](https://www.php.net/manual/en/datetime.format.php)
+PHPの公式ドキュメントを参考に、さまざまなフォーマットのパラメータについて学ぶことができます。
+
+## 関連リンク
+
+- [PHPの公式ドキュメント：日付と時刻のフォーマット](https://www.php.net/manual/ja/function.date.php)
+- [PHPの公式ドキュメント：strtotime()関数](https://www.php.net/manual/ja/function.strtotime.php)

@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Leyendo argumentos de línea de comandos"
+title:                "Elm: Leyendo argumentos de línea de comando."
+simple_title:         "Leyendo argumentos de línea de comando."
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/reading-command-line-arguments.md"
 ---
 
@@ -9,71 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Leer argumentos de línea de comandos puede ser una habilidad muy valiosa para cualquier programador de Elm. Esto permite que los programas interactúen con el usuario de una manera más dinámica y personalizada, mejorando la experiencia del usuario final.
+Antes de profundizar en cómo leer argumentos de línea de comandos en Elm, es importante comprender por qué es una habilidad útil para cualquier programador. Al leer y procesar argumentos de línea de comandos, puedes hacer que tus programas sean más flexibles y adaptables a diferentes situaciones. Además, al permitir que los usuarios proporcionen información directamente al ejecutar el programa, se puede crear una mejor experiencia para el usuario final.
 
 ## Cómo hacerlo
 
-Para leer argumentos de línea de comandos en Elm, debemos utilizar la función `Html.programWithFlags` y pasarle una función encargada de manejar dichos argumentos. Veamos un ejemplo:
+Para leer argumentos de línea de comandos en Elm, utilizaremos la función `Elm.System.args` que se encuentra en el módulo `Platform.Cmd`. Esta función devuelve una lista de cadenas que representan los argumentos proporcionados al ejecutar el programa. Por ejemplo:
 
-```elm
-module Main exposing (..)
-
-import Html exposing (text)
-import Html.App as Html
-import Html.Events exposing (onInput)
+```Elm
+import Platform.Cmd
 
 main =
-  Html.programWithFlags
-    { init = init
-    , update = update
-    , subscriptions = subscriptions
-    , view = view
-    }
+  Platform.Cmd.attempt argsReceived
 
-type alias Model =
-  { name : String }
+argsReceived result =
+  case result of
+    Ok args ->
+      -- Utiliza la lista de args para realizar acciones
 
-init : (Model, Cmd msg)
-init =
-  (Model "", Cmd.none)
-
-type Msg
-  = Update String
-
-update : Msg -> Model -> (Model, Cmd msg)
-update msg model =
-  case msg of
-    Update name ->
-      ( { model | name = name }, Cmd.none )
-
-subscriptions : Model -> Sub Msg
-subscriptions _ =
-  Sub.none
-
-view : Model -> Html Msg
-view model = 
-  text ("Hello " ++ model.name)
-
+    Err error ->
+      -- Maneja el error, como por ejemplo si no se proporcionaron argumentos
 ```
 
-El ejemplo anterior nos muestra cómo inicializar, actualizar y visualizar una aplicación que recibe argumentos de línea de comandos. La función `init` establece un modelo con un campo `name` de tipo `String`, el cual será utilizado para almacenar el argumento pasado por el usuario. La función `update` se encarga de actualizar el modelo de acuerdo al mensaje recibido (en este caso, el valor del argumento). Y finalmente, la función `view` muestra un saludo personalizado utilizando el valor del argumento en el modelo.
+En el ejemplo anterior, utilizamos la función `attempt` para manejar tanto un resultado exitoso (`Ok`) como un error (`Err`). Podemos acceder a la lista de argumentos a través del parámetro `args` en el caso de `Ok`. A partir de ahí, podemos realizar cualquier acción que necesitemos con los argumentos proporcionados.
 
-Para probar este ejemplo, podemos ejecutar el siguiente comando en la terminal:
+## Profundizando más
 
-`elm make Main.elm --output=app.js`
+Además de la función `args`, el módulo `Platform.Cmd` también proporciona otras funciones útiles para trabajar con argumentos de línea de comandos en Elm, como `flag`, `intFlag` y `flagAndArgs`. Estas funciones nos permiten procesar argumentos específicos de diferentes tipos, como cadenas, enteros y listas.
 
-Luego, podemos ejecutar el archivo JavaScript generado y pasarle un argumento utilizando el comando:
-
-`node app.js "Juan"`
-
-Esto debería mostrar en la terminal el mensaje "Hello Juan".
-
-## Profundizando
-
-Ahora que sabemos cómo leer argumentos de línea de comandos en Elm, podemos explorar más a fondo cómo utilizar esta funcionalidad en nuestras aplicaciones. Algunas ideas para probar podrían ser: utilizar múltiples argumentos, validar los argumentos recibidos, y utilizar la librería `elm/parser` para parsear argumentos más complejos.
+También es importante recordar que al leer y procesar argumentos de línea de comandos, siempre debemos validar y sanitizar los datos para evitar posibles vulnerabilidades de seguridad en nuestro programa.
 
 ## Ver también
 
-- [Documentación oficial de Elm sobre command line arguments](https://guide.elm-lang.org/interop/command_line.html)
-- [Ejemplo de lectura de argumentos de línea de comandos de Elm en GitHub](https://github.com/elm/compiler/blob/2cc270265444ff0a77278970cdea2ae3dc18c8eb/hints/report-node-version.elm#L19)
-- [Tutorial de Elm sobre cómo leer y validar argumentos de línea de comandos](https://elmprogramming.com/elm-command-line-args.html)
+Para obtener más información sobre cómo trabajar con argumentos de línea de comandos en Elm, puedes consultar los siguientes recursos:
+
+- Documentación oficial de Elm: [https://elm-lang.org/docs](https://elm-lang.org/docs)
+- Ejemplo de código en línea: [https://ellie-app.com/new](https://ellie-app.com/new)
+- Comunidad de Elm en línea: [https://discourse.elm-lang.org/](https://discourse.elm-lang.org/)

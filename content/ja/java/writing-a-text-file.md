@@ -1,53 +1,81 @@
 ---
 title:                "Java: テキストファイルの作成"
+simple_title:         "テキストファイルの作成"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ書く？
+# なぜテキストファイルを書くのか
 
-テキストファイルを作成することは、プログラミングにおいて非常に重要です。テキストファイルを使用することで、データを読み書きすることができ、プログラムの実行を制御することができます。
+テキストファイルを作成することは、プログラマーにとって非常に役に立ちます。例えば、設定ファイルやログファイルを作成したり、データを永続的に保存するために使用します。テキストファイルは、プログラムを実行するために必要な情報を保存するための便利な方法です。
 
 ## 作り方
 
-テキストファイルを作成するには、まずファイルをオープンして文字を書き込み、最後にファイルを閉じる必要があります。以下はJavaでのサンプルコードです。
+テキストファイルをJavaで作る方法はとても簡単です。最初に、ファイルを作成するための必要なクラスをインポートします。
 
 ```Java
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+```
 
-public class WriteToFile {
-  public static void main(String[] args) {
-    try {
-      // ファイルをオープン
-      FileWriter fileWriter = new FileWriter("sample.txt");
+次に、作成したいテキストファイルの名前を指定します。
 
-      // 文字を書き込む
-      fileWriter.write("こんにちは、世界！");
+```Java
+String fileName = "sample.txt";
+```
 
-      // ファイルを閉じる
-      fileWriter.close();
-    } catch (IOException e) {
-      System.out.println("エラーが発生しました。");
-      e.printStackTrace();
-    }
-  }
+そして、ファイルオブジェクトを作成し、ファイルを作成する準備をします。
+
+```Java
+File file = new File(fileName);
+```
+
+ファイルを作成するためのファイルクラスのインスタンスを作成したら、ファイルを書き込むためのファイルライターを作成します。
+
+```Java
+try {
+    FileWriter writer = new FileWriter(file);
+} catch (IOException e) {
+    e.printStackTrace();
 }
 ```
 
-上記のコードを実行すると、"sample.txt"というファイルが作成され、その中に"こんにちは、世界！"という文字が書き込まれます。
+そして、実際にファイルに書き込みます。
 
-## より深く知る
+```Java
+try {
+    writer.write("これはテキストファイルに書き込まれたテキストです。");
+    writer.close();
+} catch (IOException e) {
+    e.printStackTrace();
+}
+```
 
-テキストファイルを作成する際には、エラー処理をしっかりと行うことが重要です。また、ファイル形式によっては特定の文字コードを指定する必要がある場合があります。詳細はJavaの公式ドキュメントを参照してください。
+これで、指定したファイル名でテキストファイルが作成され、その中には指定したテキストが書き込まれます。
 
-## 詳細はこちらを参考にしてください
+## 深い掘り下げ
 
-[Javaの公式ドキュメント](https://docs.oracle.com/javase/jp/)
+テキストファイルを作成する方法についてはこの記事で十分に説明しましたが、それだけではありません。テキストファイルを開く、読み込む、編集するための他の便利な方法もあります。Javaの標準ライブラリには、これらのタスクを簡単に行うための多くのクラスやメソッドが用意されています。さらに、外部ライブラリを使用することで、より高度な機能を持つテキストファイル処理が可能になります。
 
-[テキストファイルの作成方法](https://www.javadrive.jp/start/file/index1.html)
+# 参考リンク
 
-[文字コードの指定について](https://docs.oracle.com/javase/jp/8/docs/api/java/io/OutputStreamWriter.html)
+- [Javaでファイルを作成する - geeksforgeeks.org](https://www.geeksforgeeks.org/java-program-create-file/)
+- [Javaでテキストファイルを作成する - javatpoint.com](https://www.javatpoint.com/java-filewriter-class)
+- [Javaでテキストファイルを読み書きする方法 - baeldung.com](https://www.baeldung.com/java-write-to-file)
+- [Apache Commons IO - commons.apache.org](https://commons.apache.org/proper/commons-io/) (高度なテキストファイル処理のための外部ライブラリ) 
+
+# 参考資料
+
+- [Javaでファイルを作成する方法 - tutorialspoint.com](https://www.tutorialspoint.com/java/java_files_io.htm)
+- [Javaでファイルの読み書きを行う - java2novice.com](https://www.java2novice.com/java-file-io-operations/read-write-file/)
+- [Javaでファイルを読み書きする方法 - journaldev.com](https://www.journaldev.com/246/java-file-read-write)
+- [Java.io.File - docs.oracle.com](https://docs.oracle.com/javase/7/docs/api/java/io/File.html) (Javaの公式ドキュメント) 
+
+# これを参考にする
+
+- Javaでテキスト

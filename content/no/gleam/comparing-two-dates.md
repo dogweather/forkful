@@ -1,48 +1,50 @@
 ---
 title:                "Gleam: Sammenligning av to datoer"
+simple_title:         "Sammenligning av to datoer"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
+Gleam for å sammenligne to datoer
+
+Å programmere handler ofte om å håndtere og manipulere data. I mange tilfeller er en av de viktigste dataene å håndtere datoer. Datoer blir brukt til å planlegge hendelser, spore tidsavhengige data og løse utfordringer som bare dukker opp på bestemte datoer. Derfor er det viktig å kunne sammenligne to datoer når man jobber med programmering. I denne bloggposten vil vi utforske hvordan du kan gjøre dette ved hjelp av Gleam.
+
 ## Hvorfor
-I denne bloggposten vil vi utforske hvordan vi kan sammenligne to datoer ved hjelp av Gleam. Dette kan være nyttig i mange situasjoner, som for eksempel å finne ut om en bestemt dato kommer før eller etter en annen, eller å beregne antall dager mellom to datoer. 
+
+Å sammenligne to datoer kan være nyttig for å bestemme om en dato kommer før eller etter en annen. Dette er spesielt nyttig for å filtrere data, planlegge oppgaver eller holde styr på betalingsfrister. Ved å sammenligne to datoer kan du automatisere disse oppgavene og spare deg for manuell beregning og feil.
 
 ## Hvordan
-Vi starter med å importere Gleams `Calendar` modul, som gir oss tilgang til funksjonalitet for å håndtere datoer og klokkeslett. Deretter kan vi bruke `Calendar.compare_dates` funksjonen til å sammenligne to datoer som parametere. 
+
+For å sammenligne to datoer i Gleam kan du bruke funksjonen `Date.compare`. Denne funksjonen tar inn to `Date`-argumenter og returnerer en `Order`-enumverdi som enten er `Less`, `Equal` eller `Greater`. La oss se på et eksmpel:
 
 ```Gleam
-import Gleam.Calendar
+let start_date = Date.new(2021, 07, 15)
+let end_date = Date.new(2021, 07, 20)
 
-let dato_1 = Calendar.Date.new(2019, 1, 5)
-let dato_2 = Calendar.Date.new(2020, 1, 5)
-
-let resultat = Calendar.compare_dates(dato_1, dato_2)
-
-IO.println(resultat) // Skriver ut "-1" siden dato 1 kommer før dato 2
+let comparison = Date.compare(start_date, end_date)
 ```
 
-Vi kan også bruke `Calendar.days_between` funksjonen for å beregne antall dager mellom to datoer: 
+I dette eksempelet vil `comparison`-variabelen inneholde verdien `Less`, siden `start_date` kommer før `end_date`.
 
-```Gleam
-import Gleam.Calendar
+Du kan også sammenligne datoer basert på tidsavhengige parametere, som for eksempel måned eller år. Dette kan gjøres ved hjelp av funksjonene `Date.compare_month` og `Date.compare_year`. Disse funksjonene tar inn samme argumenter som `Date.compare` og returnerer også en `Order`-enumverdi.
 
-let dato_1 = Calendar.Date.new(2019, 1, 5)
-let dato_2 = Calendar.Date.new(2020, 1, 5)
+## Dypdykk
 
-let antall_dager = Calendar.days_between(dato_1, dato_2)
+Når du jobber med datoer kan du også støte på behovet for mer komplekse sammenligninger, som å sjekke om en dato ligger mellom to andre datoer eller om en dato er på en spesifikk ukedag. Dette kan gjøres ved hjelp av biblioteket `gleam_dates` som gir ekstra funksjoner for å håndtere datoer. Du kan enkelt legge til dette biblioteket i ditt prosjekt ved å inkludere følgende linje i `gleam.toml`-filen:
 
-IO.println(antall_dager) // Skriver ut "365"
+```
+[dependencies]
+gleam_dates = { git = "https://github.com/gleam-lang/gleam-dates.git", tag = "v0.4.0" }
 ```
 
-## Dypt dykk
-I Gleam er datoer representert som en `Calendar.Date`-rekord med tre felter: `year`, `month` og `day`. Dette gjør det enkelt å hente ut individuelle deler av datoen og sammenligne dem. 
+For mer informasjon om hvordan du kan bruke dette biblioteket, kan du se på dokumentasjonen på [GitHub-siden](https://github.com/gleam-lang/gleam-dates).
 
-Det er også verdt å merke seg at fuzzy matching av datoer ikke er støttet i Gleam. Dette betyr at datoer må være nøyaktig like for å bli ansett som like når de sammenlignes. 
+## Se Også
 
-## Se også
-- [Offisiell dokumentasjon for Gleam Calendar modulen](https://gleam.run/modules/calendar)
-- [Stack Overflow: Sammenligne datoer i Gleam](https://stackoverflow.com/questions/56756472/comparing-dates-in-gleam) 
-- [Github: Eksempler på bruk av Gleam Calendar modulen](https://github.com/gleam-lang/gleam/blob/master/examples/calendar.gleam)
+* [Offisiell dokumentasjon for Gleam](https://gleam.run/)
+* [Gleam Playground](https://play.gleam.run/)
+* [Gleam-dates biblioteket på GitHub](https://github.com/gleam-lang/gleam-dates)

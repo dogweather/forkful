@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Skrive tester"
+title:                "Kotlin: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/writing-tests.md"
 ---
 
@@ -9,43 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive tester kan virke som en ekstra byrde når man allerede har mye kode å skrive, men det er en viktig praksis som kan hjelpe deg å lage bedre og mer pålitelig kode på lang sikt.
+Å skrive tester er en viktig del av å være en effektiv programmerer. Det hjelper deg å sikre at koden din fungerer som den skal og reduserer bugs og feil i produksjon.
 
 ## Hvordan
 
-For å skrive tester i Kotlin, kan du bruke et rammeverk som JUnit eller Spek. La oss se på et enkelt eksempel ved hjelp av JUnit:
+For å skrive tester i Kotlin, må du først importere JUnit-biblioteket. Deretter kan du lage en testklasse ved å legge til "@RunWith (JUnit4 :: class)" over klassenavnet og "@Test" over testmetodene.
 
 ```Kotlin
-class CalculatorTest {
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.junit.runners.JUnit4
 
-    private val calculator = Calculator()
-
-    @Test
-    fun `adds two numbers`() {
-        val result = calculator.add(2, 3)
-        assertEquals(5, result)
-    }
+@RunWith(JUnit4::class)
+class TestClass {
 
     @Test
-    fun `subtracts two numbers`() {
-        val result = calculator.subtract(5, 2)
-        assertEquals(3, result)
+    fun testMethod(){
+        // test kode her
     }
 }
 ```
 
-Her har vi en enkel testklasse som tester to funksjoner i en kalkulator som regner ut sum og differanse mellom to tall. Vi kan se at testmetodene er annotert med ```@Test``` for å indikere at de er tester, og vi bruker en assert-funksjon for å sjekke om resultatet er som forventet.
+Innenfor testmetoden kan du bruke ulike asserter for å sjekke at resultatene er som forventet. For eksempel kan du bruke "assertEquals" for å sammenligne to verdier og "assertTrue" for å sjekke om en betingelse er sann.
 
-Når vi kjører disse testene, vil vi få output som viser om testene har gått gjennom eller om det er noe som har feilet. Dette gjør det enkelt å oppdage og fikse eventuelle bugs i koden.
+```Kotlin
+@Test
+fun testMethod(){
+    val num1 = 5
+    val num2 = 10
+
+    assertEquals(15, num1 + num2)
+    assertTrue(num1 < num2)
+}
+```
+
+Du kan også bruke "assertEquals" for å sammenligne utskrift fra metoder med forventede resultater.
+
+```Kotlin
+@Test
+fun testMethod(){
+    val output = methodToTest()
+    assertEquals("the expected output", output)
+}
+```
 
 ## Deep Dive
 
-Skrive tester kan også hjelpe deg å bedre forstå koden din. Ved å tenke på hva som skal testes, kan du oppdage områder av koden din som kanskje er mer komplisert enn de trenger å være. Testene kan også fungere som dokumentasjon for koden din og hjelpe nye utviklere å forstå hvordan koden fungerer.
+Når du skriver tester, er det viktig å tenke på forskjellige scenarier og ikke bare teste positivt. Du bør også teste for feilinndata og håndtering av unntak.
 
-Det er også viktig å merke seg at selv om du har en godt testet kodebase, må du fortsatt fortsette å skrive og vedlikeholde tester for å sikre at koden forblir pålitelig i fremtiden.
+Det er også viktig å organisere testene dine på en logisk måte, kanskje ved å ha en testklasse for hver klasse du tester.
+
+Husk også å oppdatere og vedlikeholde testene mens du gjør endringer i koden. Dette sikrer at testene er i samsvar med den oppdaterte koden.
 
 ## Se også
 
-- [Introduksjon til JUnit](https://junit.org/junit5/docs/current/user-guide/)
-- [Spek dokumentasjon](https://spekframework.org/docs/latest/)
-- [Kotlin Testing](https://kotlinlang.org/docs/testing.html)
+- [JUnit dokumentasjon](https://junit.org/junit5/docs/current/user-guide/)
+- [Kotlin Testing dokumentasjon](https://kotlinlang.org/docs/reference/testing.html)
+- [TDD (Test Driven Development) guide på norsk](https://www.tdd-guide.com/)

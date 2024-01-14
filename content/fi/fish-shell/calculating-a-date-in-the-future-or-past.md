@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä"
+title:                "Fish Shell: Ajan laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Ajan laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,51 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi laskisin tulevan tai menneen päivän Fish Shell ohjelmoinnilla? Päivämäärän laskeminen voi olla hyödyllistä esimerkiksi laskuissa, tapahtumien suunnittelussa tai muissa sovelluksissa, jotka tarvitsevat tietoa ajasta.
+Erityisesti sovelluskehittäjien ja tietotekniikan harrastajien on usein tarpeen laskea tietty päivämäärä tulevaisuudessa tai menneisyydessä. Tämä voi johtua esimerkiksi muistutusten asettamisesta tai aikaleimojen tallentamisesta tiedostoihin. Joten, miksi ei tekisi sitä helposti Fish Shell -ohjelmoinnin avulla? Lue eteenpäin löytääksesi kuinka.
 
-## Miten
+## Kuinka
 
-Fish Shell tarjoaa helpon tavan laskea tulevan tai menneen päivän käyttämällä `date` komentoa. Tässä esimerkissä lasketaan päivämäärä 7 päivää tulevaisuuteen ja tulostetaan se konsoliin:
-
-```Fish Shell
-date -d "+7 days"
-```
-
-Tulostus:
-
-```
-Fri Jan 10 17:41:10 EET 2020
-```
-
-Samalla tavalla voit laskea myös menneen päivän antamalla negatiivisen päivien määrän. Esimerkiksi, jos haluat tietää millainen päivä oli 100 päivää sitten, käytä tätä komentoa:
+Fish Shell tarjoaa monia hyödyllisiä toimintoja päivämäärän laskemiseen tulevaisuudessa tai menneisyydessä. Yksi tapa tehdä tämä on käyttämällä `date` -komennon `--date` -asetusta yhdessä halutun päivän tai ajan määrittämisen kanssa. Esimerkiksi, jos haluamme laskea päivän päivämäärästä kolme päivää eteenpäin, voimme käyttää seuraavaa komentoa:
 
 ```Fish Shell
-date -d "-100 days"
+date --date="3 days" "+%d/%m/%Y"
 ```
 
-Tulostus:
+Mikä tuottaa seuraavan tulosteen:
 
 ```
-Mon Sep 23 17:41:10 EEST 2019
+26/09/2021
 ```
 
-Voit myös asettaa tietyn päivämäärän lähtökohdaksi laskuille antamalla päivämääräyksen muodossa `yyyy-mm-dd`. Esimerkiksi, jos haluat laskea päivämäärän 30 päivää 1.1.2020 jälkeen, käytä tätä komentoa:
+Vastaavasti voimme laskea päivämäärän kolme päivää taaksepäin käyttämällä `--date` -asetusta negatiivisen numeron kanssa:
 
 ```Fish Shell
-date -d "2020-01-01 +30 days"
+date --date="-3 days" "+%d/%m/%Y"
 ```
 
-Tulostus:
+Joka tuottaa tuloksen:
 
 ```
-Sat Feb 01 17:41:10 EET 2020
+20/09/2021
 ```
 
-## Syvemmälle
+## Syventyminen
 
-Fish Shellin `date` komento tukee myös muita vaihtoehtoja, kuten eri aikavyöhykkeiden ja kelloaikojen asettamista. Voit tutustua näihin vaihtoehtoihin käyttämällä komentoa `man date`.
+Fish Shellin `date` -komennolla on monia muita käyttökelpoisia vaihtoehtoja päivämäärän määrittämiseen ja muotoiluun. Esimerkiksi voit käyttää `--date` -asetusta lisäämällä tai vähentämällä päiviä, viikkoja, kuukausia tai vuosia tai jopa määrittämällä tietyn päivämäärän, kuten `25/12/2021`. Voit myös muuttaa tulosteen muotoa lisäämällä `%` -merkin jälkeen halutun muotoilumerkin, kuten `%A` päivän nimen näyttämiseksi. Lisätietoja vaihtoehdoista löytyy `date` -komennon manuaalisivulta.
 
 ## Katso myös
 
-- [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/cmds/date.html)
-- [30 päivää koodausta - Fish Shellin perusteet](https://30paivaa.koodiaapinen.fi/fish-shellin-perusteet/)
+Lisätietoja Fish Shellin `date` -komennosta ja sen vaihtoehdoista löytyy seuraavista linkeistä:
+
+- Manuaalisivu: `man date` (englanniksi)
+- Fish Shellin dokumentaatio: https://fishshell.com/docs/current/cmds/date.html (englanniksi)
+- Linux-käyttäjille: https://www.howtogeek.com/412383/how-to-use-linuxs-datum-date-command/ (englanniksi)
+- Mac-käyttäjille: https://www.howtogeek.com/281459/how-to-use-the-date-command-on-linux/ (englanniksi)

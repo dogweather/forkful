@@ -1,49 +1,46 @@
 ---
 title:                "Java: Encontrando o comprimento de uma string."
+simple_title:         "Encontrando o comprimento de uma string."
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Por que
+## Por que
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação Java, pois fornece informações valiosas sobre os dados que estamos manipulando. Saber o tamanho da string pode nos ajudar a validar entradas do usuário, formatar saídas de acordo com um limite de caracteres e realizar várias operações de manipulação de strings de maneira eficiente.
+Às vezes, quando estamos programando em Java, precisamos saber o tamanho de uma string para poder trabalhar com ela de forma eficiente. É por isso que é importante entender como encontrar o comprimento de uma string em Java.
 
-##Como Fazer
+## Como Fazer
 
-Para encontrar o comprimento de uma string em Java, podemos usar o método length() da classe String. Vamos ver um exemplo simples:
+Encontrar o comprimento de uma string em Java é muito simples. Basta usar o método `length()` da classe `String`:
 
-`` `Java
-String nome = "Maria";
-int tamanho = nome.length ();
+```Java
+String minhaString = "Olá, mundo!";
+int tamanho = minhaString.length();
+System.out.println(tamanho); // Output: 12
+```
 
-System.out.println ("O nome tem" + tamanho + "caracteres");
-`` `
+Neste exemplo, declaramos uma variável do tipo `String` chamada `minhaString` com o valor "Olá, mundo!". Em seguida, usamos o método `length()` para encontrar o tamanho da string e atribuí-lo à variável `tamanho`. Por fim, imprimimos o resultado usando o método `println()` da classe `System`.
 
-A saída deste código será "O nome tem 5 caracteres". Podemos ver que o método length() retorna o número de caracteres na string, incluindo espaços em branco.
+É importante lembrar que o método `length()` retorna o tamanho da string, incluindo espaços em branco. Se quisermos contar apenas os caracteres da string, podemos usar o método `replace()` para remover os espaços em branco antes de encontrar o tamanho:
 
-Também podemos usar o método length() para verificar se uma string está vazia. Por exemplo:
+```Java
+String minhaString = "Olá, mundo!";
+int tamanho = minhaString.replace(" ", "").length();
+System.out.println(tamanho); // Output: 10
+```
 
-`` `Java
-String nome = "";
-int tamanho = nome.length ();
+## Deep Dive
 
-if (tamanho == 0) {
-    System.out.println ("A string está vazia");
-}
-`` `
+Internamente, a classe `String` em Java armazena suas strings em um array de caracteres. Para encontrar o comprimento, o método `length()` simplesmente retorna o tamanho do array. Por isso, a complexidade desse método é O(1), o que significa que ele é muito eficiente e rápido.
 
-A saída será "A string está vazia", pois o método length() retorna 0 para uma string vazia.
+Também é importante ressaltar que a classe `String` é imutável em Java, ou seja, uma vez que uma string é criada, seu valor não pode ser alterado. Por isso, cada vez que fazemos uma operação que muda o valor de uma string, na verdade estamos criando uma nova e deletando a antiga. Isso pode impactar o desempenho do nosso código, especialmente em casos onde precisamos verificar o comprimento de uma string várias vezes.
 
-##Mergulho Profundo
+## Veja Também
 
-Agora que sabemos como usar o método length() para encontrar o comprimento de uma string, é importante entender como ele funciona por baixo dos panos. O método length() retorna o valor do atributo "count" na classe String, que é atualizado sempre que a string é alterada.
-
-É importante lembrar que o método length() só pode ser usado em objetos String e não pode ser chamado em matrizes. Além disso, ele conta o número de caracteres Unicode na string, o que pode ser diferente do número de caracteres visíveis.
-
-##Veja Também
-- Documentação do método length(): https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--
-- Tutorial de manipulação de strings em Java: https://www.geeksforgeeks.org/strings-in-java/
-- Diferenças entre caracteres e bytes em Java: https://www.baeldung.com/java-char-byte-conversions
+- [Documentação do método length()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length--)
+- [Tutorial de Strings em Java](https://www.baeldung.com/java-strings)
+- [Discussão sobre imutabilidade de Strings em Java](https://stackoverflow.com/questions/8798403/string-is-immutable-what-exactly-is-the-meaning/8798447#8798447)

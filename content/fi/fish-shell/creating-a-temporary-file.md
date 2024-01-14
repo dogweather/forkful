@@ -1,51 +1,49 @@
 ---
-title:                "Fish Shell: Väliaikaisen tiedoston luominen"
+title:                "Fish Shell: Väliaikaistiedoston luominen"
+simple_title:         "Väliaikaistiedoston luominen"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi luoda väliaikainen tiedosto?
+## Miksi?
 
-On monia syitä, miksi haluat luoda väliaikaisen tiedoston Fish Shell -ohjelmoinnissa. Ne voivat vaihdella tallennettavan datan määrästä ja tarkoituksesta. Joissakin tapauksissa on hyödyllistä tallentaa väliaikainen tiedosto muistuttaakseen, että käyttäjä on jo suorittanut tietyn toiminnon tai käyttäneet tiettyä ohjelmaa. Toisissa tapauksissa väliaikainen tiedosto voi olla väliaikainen varastointialue, kun odotetaan jonkin toisen tehtävän valmistumista. Riippumatta syystä, luominen väliaikaisesta tiedostosta voi olla hyödyllistä Fish Shellin ohjelmoijalle.
+Temporary files ovat hyödyllisiä monissa ohjelmoinnin tilanteissa. Kun luomme tilapäistiedoston, voimme tallentaa väliaikaisesti tietoja jotka poistetaan kun ohjelma suorittaa loppuun. Tämä auttaa muistin hallinnassa ja estää turhia tietovuotoja.
 
-## Kuinka luoda väliaikainen tiedosto Fish Shellillä?
+## Kuinka luoda tilapäistiedosto Fish Shell -ohjelmassa?
 
-On olemassa muutamia tapoja luoda väliaikainen tiedosto Fish Shellin avulla. Alla on muutamia esimerkkejä ja niiden tulostukset Markdown-muodossa.
+```Fish Shell
+set temp (mktemp)
+echo "Tervetuloa, tämä on tilapäistiedosto" > $temp
+cat $temp
+```
 
-````Fish Shell
-# Luodaan tyhjä väliaikainen tiedosto
-touch $TMPDIR/temporary.txt
-echo "Väliaikainen tiedosto luotu!"
-````
+Tulostus:
+```Fish Shell
+Tervetuloa, tämä on tilapäistiedosto
+```
 
-- Tulostus: Väliaikainen tiedosto luotu!
+Voit myös määrittää tilapäistiedoston tiedostopäätteen käyttämällä komentoa "mktemp -p":
 
-````Fish Shell
-# Luodaan väliaikainen tiedosto, jossa on tekstiä
-echo "Tämä on väliaikainen tiedosto." > $TMPDIR/textfile.txt
-cat $TMPDIR/textfile.txt
-````
+```Fish Shell
+set temp (mktemp -p .temp)
+cat $temp
+```
 
-- Tulostus: Tämä on väliaikainen tiedosto.
+Tulostus:
+```Fish Shell
+Tervetuloa, tämä on tilapäistiedosto
+```
 
-````Fish Shell
-# Luodaan väliaikainen tiedosto, joka käyttää prosessin ID:tä nimenä
-set name (echo (pid))
-touch $TMPDIR/$name.txt
-echo "Väliaikainen tiedosto luotu nimellä $name"
-````
+## Syvemmälle tilapäistiedostojen luomiseen Fish Shell -ohjelmassa
 
-- Tulostus: Väliaikainen tiedosto luotu nimellä 12345.txt (jos prosessin ID on 12345).
-
-## Syvempi sukellus väliaikaisten tiedostojen luomiseen
-
-Fish Shell tarjoaa monia hyödyllisiä työkaluja väliaikaisten tiedostojen luomiseen. Yllä esitetyt esimerkit ovat vain jäävuoren huippu, eikä niitä välttämättä tarvita kaikissa tilanteissa. On tärkeää ymmärtää, miksi väliaikaisia tiedostoja luodaan ja miten niitä voidaan käyttää tehokkaasti Fish Shellin ohjelmoinnissa. Lisäksi on hyödyllistä ottaa huomioon turvallisuusnäkökohdat, kun luodaan väliaikaisia tiedostoja ja varmistaa, että ne poistetaan turvallisesti käytön jälkeen.
+Fish Shell tarjoaa useita vaihtoehtoja tilapäistiedostojen luomiseen, kuten "mktemp", "tempfile" ja "tmpfile". Jokaisella näistä on erilaisia etuja ja haittoja, jotka sinun tulisi tutkia ennen valitsemista. Lisäksi voit hallita tilapäistiedostoja myös manuaalisesti, esimerkiksi määrittämällä tietyn tiedostonimen ja poistamalla sen käsin.
 
 ## Katso myös
-
-- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/)
-- [Ohjeet väliaikaisten tiedostojen luomiseen Bashilla](https://linuxize.com/post/bash-create-temporary-file/)
-- [Väliaikaisten tiedostojen turvallisuus ja poistaminen](https://www.cyberciti.biz/faq/linux-delete-all-files-in-directory/)
+- [Fish-komentotietokirja: Temporary Files](https://fishshell.com/docs/current/commands.html#temporary-files)
+- [Fish-komentotietokirja: mktemp](https://fishshell.com/docs/current/commands.html#mktemp)
+- [Fish-komentotietokirja: tempfile](https://fishshell.com/docs/current/commands.html#tempfile)
+- [Fish-komentotietokirja: tmpfile](https://fishshell.com/docs/current/commands.html#tmpfile)

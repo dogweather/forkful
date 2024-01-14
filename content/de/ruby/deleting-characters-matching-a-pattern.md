@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Löschen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,30 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Löschen von Zeichen in einem Text oder einer Zeichenfolge, die einem bestimmten Muster entsprechen, kann eine nützliche Fähigkeit in der Ruby-Programmierung sein. Es kann helfen, Textdaten zu bereinigen oder spezifische Teile des Textes zu entfernen, die nicht benötigt werden. In diesem Blog-Artikel werden wir uns ansehen, wie man Zeichen, die einem bestimmten Muster entsprechen, in Ruby löschen kann.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Programmierung nützlich sein, um ungewünschte Zeichen aus einem String zu entfernen oder Daten zu bereinigen.
 
-## Wie es geht
+## Wie geht das?
 
-Um Zeichen in Ruby zu löschen, die einem bestimmten Muster entsprechen, verwenden wir die `delete`-Methode. Diese Methode akzeptiert ein Argument, das die Zeichen enthält, die gelöscht werden sollen, sowie optional ein zweites Argument, das das Ersatzzeichen angibt, das anstelle der gelöschten Zeichen verwendet werden soll.
+Um Zeichen in einem String zu löschen, die einem bestimmten Muster entsprechen, können wir die `.gsub()` Methode in Ruby verwenden. Wir übergeben ihr das Muster, das wir suchen, und ersetzen es durch einen leeren String. Hier ist ein Beispiel:
 
-Ein Beispiel könnte folgendermaßen aussehen:
-
-```
-text = "Hallo Welt!"
-puts text.delete("l") # Output: Hao We!
-puts text.delete("l", "LL") # Output: HaLLo WeLLt!
+```Ruby
+string = "Hallo Welt!"
+neuer_string = string.gsub(/[A-Z]/, "")
+puts neuer_string # => a o elt!
 ```
 
-In diesem Beispiel löschen wir alle "l"-Zeichen aus dem Text und ersetzen sie mit "LL". Die `delete`-Methode kann auch mit regulären Ausdrücken verwendet werden, um komplexere Muster zu löschen.
+Wie wir sehen können, wurden alle Großbuchstaben im String gelöscht, da wir dieses Muster in unserer `.gsub()` Methode verwendet haben. Hier ist noch ein Beispiel, um alle Zahlen aus einem String zu entfernen:
 
-## Ein tieferer Einblick
+```Ruby
+string = "Heute ist der 15. Juli"
+neuer_string = string.gsub(/\d/, "")
+puts neuer_string # => Heute ist der  . Juli
+```
 
-Um die `delete`-Methode besser zu verstehen, werfen wir einen Blick auf ihre Funktionsweise im Hintergrund. Diese Methode basiert auf der `tr`-Methode, die das Ersetzen von Zeichen durch andere Zeichen ermöglicht. Wenn wir also `delete` verwenden, führt Ruby im Grunde genommen dieselben Schritte aus wie bei der Verwendung von `tr`, mit dem Unterschied, dass wir die Ersatzzeichen nicht angeben, sondern sie einfach löschen.
+In diesem Beispiel haben wir das Muster `\d` verwendet, das für eine beliebige Zahl steht. Dadurch werden alle Zahlen in unserem String gelöscht.
 
-Ein weiteres wichtiges Detail ist, dass die `delete`-Methode nicht nur auf Strings, sondern auch auf Arrays angewendet werden kann. In diesem Fall werden alle Elemente gelöscht, die dem angegebenen Muster entsprechen.
+## Tiefer tauchen
+
+Wir haben bisher nur einfache Beispiele betrachtet, aber `.gsub()` kann noch viel mehr! Sie kann auch mit sogenannten regulären Ausdrücken (`Regexp`) arbeiten, die es uns ermöglichen, komplexere Muster anzugeben. Zum Beispiel könnten wir alle Wörter in einem String löschen, die mit einem Vokal beginnen:
+
+```Ruby
+string = "Ich mag Äpfel und Orangen"
+neuer_string = string.gsub(/\b[aeiou]\w+/, "")
+puts neuer_string # => Ich g gestern und
+```
+
+In diesem Beispiel haben wir das Muster `\b[aeiou]\w+` verwendet, das für ein Wort steht, das mit einem Vokal beginnt und danach beliebige Zeichen enthält. Durch das Voranstellen des Zeichens `\b` stellen wir sicher, dass wir nur ganze Wörter und nicht Teilwörter löschen.
 
 ## Siehe auch
 
-* [Ruby String Dokumentation](https://ruby-doc.org/core-3.0.0/String.html)
-* [Reguläre Ausdrücke in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
-* [Ruby Array Dokumentation](https://ruby-doc.org/core-3.0.0/Array.html)
+- https://ruby-doc.org/core-2.6.3/String.html#method-i-gsub
+- https://www.rubyguides.com/2019/02/ruby-gsub-method/
+- https://www.geeksforgeeks.org/ruby-strings-gsub-function/

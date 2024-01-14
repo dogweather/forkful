@@ -1,59 +1,65 @@
 ---
 title:                "Javascript recipe: Writing a text file"
+simple_title:         "Writing a text file"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Writing a text file may not seem like the most exciting or glamorous task in the world of programming, but it is a fundamental skill that can be incredibly useful in many different scenarios. Whether you're looking to store data for later use or simply want to practice your coding abilities, knowing how to write a text file is a valuable skill to have in your arsenal.
+
+Writing text files is an essential skill for any programmer, as it allows for easily storing and accessing data without the use of a database. Whether you need to save user preferences, log data, or simply store information for later use, writing a text file is a valuable tool in your programming arsenal.
 
 ## How To
 
-To begin, let's take a look at the basic structure of a text file. A text file consists of a sequence of characters organized in a certain way to represent information. In JavaScript, we can use the built-in `fs` module to create and write to a text file. Let's see how this works with a simple coding example:
+To write a text file in Javascript, we can use the built-in `fs` module. We first require the module at the top of our code:
 
 ```Javascript
-//Require the fs module
 const fs = require('fs');
-
-//Create a new text file called "output.txt"
-fs.writeFile('output.txt', 'This is a sample text.', (err) => {
-  //If an error occurs, throw an error
-  if (err) throw err;
-
-  //If no error, log a success message
-  console.log('Text file successfully created and written to!');
-});
 ```
 
-In the example above, we first require the `fs` module and then use the `writeFile` method to create a new text file called "output.txt" and write the string "This is a sample text." to it. We also provide a callback function to handle any errors and print a success message if the file is successfully written.
-
-Now, let's see how we can read and print the contents of our newly created text file using the `readFile` method:
+Next, we use the `fs.writeFile()` method to create a new file and write data to it. The method takes three parameters: the file name, the data to be written, and a callback function. The callback function will be executed once the file has been successfully written.
 
 ```Javascript
-//Read contents of "output.txt" file
-fs.readFile('output.txt', 'utf8', (err, data) => {
-  //If an error occurs, throw an error
-  if (err) throw err;
-
-  //If no error, print contents of file
-  console.log(data);
+fs.writeFile('textFile.txt', 'Hello World!', (err) => {
+    if (err) throw err;
+    console.log('The file has been saved!');
 });
 ```
 
-In the second code block, we use the `readFile` method to read the contents of our text file and print it to the console. We also specify the character encoding as `utf8` to ensure we get the expected output.
+In the above example, we are creating a new file named `textFile.txt` and writing the string "Hello World!" to it. If an error occurs, such as the file already exists, the callback function will throw an error. Otherwise, the console will log a success message.
+
+To add data to an existing file, we can use the `fs.appendFile()` method instead, which takes the same parameters as `fs.writeFile()` but appends the data to the end of the file instead of overwriting it.
+
+```Javascript
+fs.appendFile('textFile.txt', ', have a great day!', (err) => {
+    if (err) throw err;
+    console.log('The data has been added to the file!');
+});
+```
 
 ## Deep Dive
 
-While the examples above cover the basics of writing a text file in JavaScript, there are a few other things to keep in mind when working with text files. Here are a few key points to remember:
+Although writing text files in Javascript is a relatively straightforward task, there are a few things to keep in mind. 
 
-- When writing to a text file, if the given file name already exists, it will be overwritten. To avoid this, we can use the `appendFile` method instead to add new content to the end of the file.
-- We can also specify the character encoding when reading a text file using the `readFile` method. This allows us to properly handle files containing non-English characters or other special characters.
-- When working with large files, it is important to use the `createWriteStream` and `createReadStream` methods to prevent memory issues.
+First, when using the `fs.writeFile()` and `fs.appendFile()` methods, the file name must include the file extension (e.g. `.txt`, `.js`, etc). If not specified, the file extension will default to `.txt`.
+
+Secondly, these methods will create a new file if one with the same name does not already exist. However, if a file with the same name does exist, it will be overwritten with the new data. To avoid accidentally overwriting data, it's crucial to check for existing files before writing to them.
+
+Lastly, when writing and appending to files, we can use string interpolation to make our code more dynamic. For example:
+
+```Javascript
+let name = 'John';
+fs.writeFile('textFile.txt', `Hello ${name}!`, (err) => {...});
+```
+In this example, we are using the value of the `name` variable to dynamically generate the data to write to the file.
 
 ## See Also
-- [Node.js File System documentation](https://nodejs.org/api/fs.html)
-- [Writing files with Node.js](https://stackabuse.com/writing-files-with-node-js/)
-- [Reading and writing files in Node.js](https://www.digitalocean.com/community/tutorials/reading-and-writing-files-in-node-js)
+- [Node.js fs Module Documentation](https://nodejs.org/api/fs.html)
+- [MDN Web Docs on Writing Files with Node.js](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Node_server_without_framework/Writing_files)
+- [Tutorial: Writing and Reading Files in Node.js](https://www.digitalocean.com/community/tutorials/nodejs-reading-and-writing-files)
+
+By learning how to write text files in Javascript, you'll have a powerful tool at your disposal for handling data in your projects. So go ahead and give it a try in your next project!

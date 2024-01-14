@@ -1,51 +1,52 @@
 ---
 title:                "C#: Читання текстового файлу"
+simple_title:         "Читання текстового файлу"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/c-sharp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-##Чому
-Читання текстового файлу є важливою навичкою в програмуванні, оскільки дозволяє отримувати та обробляти великі обсяги даних. Це особливо корисно для роботи зі структурованими даними, такими як CSV або JSON файли.
+## Чому
 
-##Як
-Для читання текстового файлу використовується клас `StreamReader`, який забезпечує зручний інтерфейс для читання послідовності символів з файлу. Приклад коду для читання файлу та виведення його вмісту на консоль можна побачити нижче:
+Програмістам часто доводиться стикатися з обробкою великих обсягів даних, які зберігаються у текстових файлах. Чи треба читати всю цю інформацію вручну? Ні! З допомогою С#, ви можете легко і швидко зчитувати текстові файли та обробляти їх дані за допомогою програмування.
+
+## Як це зробити
+
+Для початку, вам знадобиться клас `StreamReader` для читання текстового файлу. Нижче наведений приклад коду з використанням цього класу:
 
 ```C#
 using System;
 using System.IO;
 
-namespace FileReading
+class Program
 {
-    class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        // Відкриваємо текстовий файл для читання
+        using (StreamReader file = new StreamReader("test.txt"))
         {
-            // Відкриваємо файл для читання
-            using (StreamReader sr = new StreamReader("file.txt"))
+            // Файл зчитується рядок за рядком
+            string line;
+            while ((line = file.ReadLine()) != null)
             {
-                // Читаємо файл по рядках доки не досягнемо кінця файлу
-                while (!sr.EndOfStream)
-                {
-                    // Зчитуємо рядок з файлу
-                    string line = sr.ReadLine();
-                    // Виводимо рядок на консоль
-                    Console.WriteLine(line);
-                }
+                // Виводимо рядок на консоль
+                Console.WriteLine(line);
             }
         }
     }
 }
 ```
 
-Після запуску програми на консоль буде виведено вміст файлу `file.txt`.
+Вищевказаний код відкриє файл з назвою "test.txt" та виведе його вміст на консоль. Зверніть увагу на ключове слово `using`, яке дозволяє автоматично закрити файл після встановлення з'єднання.
 
-##Глибше
-Крім читання рядків з текстового файлу, `StreamReader` має багато інших корисних методів, наприклад, `Read()`, `ReadBlock()`, `Peek()`, які дозволяють читати символи або блоки символів з файлу. Крім того, можна вказати кодування файлу при створенні `StreamReader`, щоб правильно читати текст з файлу.
+## Занурення у глибину
 
-##Дивіться також
-- [Документація C# для класу StreamReader](https://docs.microsoft.com/uk-ua/dotnet/api/system.io.streamreader)
-- [Робота з текстовими файлами в C#](https://metanit.com/sharp/tutorial/11.1.php)
-- [Порівняння методів читання файлів в C#](https://devblogs.microsoft.com/premier-developer/reading-files-in-csharp/)
+Крім методу `ReadLine()`, клас `StreamReader` має багато інших корисних методів для читання текстових файлів. Наприклад, метод `ReadToEnd()` дозволяє зчитати весь файл зразу, а метод `Read()` дозволяє зчитувати по одному символу за раз. Детальніше про ці методи та їх використання можна дізнатися в [офіційній документації](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-5.0).
+
+## Дивіться також
+
+- [Офіційна документація Microsoft для класу StreamReader](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-5.0)
+- [Туторіал по роботі з текстовими файлами в C#](https://www.c-sharpcorner.com/article/reading-and-writing-text-file-using-streamreader-and-streamwriter-in-c-sharp/)

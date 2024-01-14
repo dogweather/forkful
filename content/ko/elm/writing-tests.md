@@ -1,53 +1,105 @@
 ---
-title:                "Elm: 테스트 작성하기"
+title:                "Elm: 프로그래밍 테스트 작성"
+simple_title:         "프로그래밍 테스트 작성"
 programming_language: "Elm"
-category:             "Testing and Debugging"
+category:             "Elm"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 Elm에서 테스트를 작성해야 하는가?
 
-프로그래밍을 할 때 우리는 종종 버그를 발견하게 됩니다. 이러한 버그로 인해 소프트웨어가 예기치 않게 동작하거나 시스템이 충돌할 수 있습니다. 이러한 문제들을 방지하기 위해서는 **테스트**가 필수적입니다. 테스트를 작성함으로써 이메일을 보낼 때나 웹사이트를 만들 때 쉽게 예측할 수 없는 버그를 발견할 수 있습니다.
+안녕하세요! Elm 개발자 여러분들, 오늘은 Elm에서 테스트를 작성하는 이유에 대해 알아보려고 합니다.
 
-## 어떻게 작성할까요?
+대부분의 개발자들이 테스트 코드를 작성하기 귀찮아 하지만, 테스트 코드는 프로그램을 안정적으로 유지하고 개발 과정에서 버그를 미리 발견할 수 있는 중요한 요소입니다. 또한 Elm에서는 테스트 코드를 작성함으로써 보다 신뢰성 있는 코드를 작성할 수 있으며, 유지보수가 더욱 쉬워집니다. 그러니까, Elm 프로젝트에서는 꼭 테스트 코드를 작성하는 것을 권장합니다!
 
-테스트를 작성하는 것은 어려울 수 있지만, Elm 언어를 사용하면 쉽게 작성할 수 있습니다. 아래의 코드 블록을 보면서 함께 따라해보세요.
+## 작성 방법
 
-```elm
-import Html exposing (div, text)
+이제 실제로 Elm에서 테스트 코드를 작성해보도록 하겠습니다. Elm의 테스트 모듈을 사용하면 간단하고 쉽게 테스트 코드를 작성할 수 있습니다.
 
+먼저, 다음과 같이 테스트 모듈을 불러옵니다.
 
--- 테스트를 위한 add 함수
-add : Int -> Int -> Int
-add x y =
-    x + y
+```
+Elm.Test
+```
 
+그리고 다음과 같이 `test` 함수를 사용하여 테스트를 정의할 수 있습니다.
 
-main =
-    div []
-        [ text (toString (add 2 3)) -- 결과는 5가 나와야 합니다.
+```
+test "테스트 이름" <|
+    \() -> 
+        ...
+```
+
+위의 코드에서 `테스트 이름` 부분에는 테스트의 이름을 입력하고, `\()` 부분에는 테스트 코드를 작성하면 됩니다.
+
+그리고 마지막으로 `Test.suite` 함수를 사용하여 테스트 스위트를 만들 수 있습니다.
+
+```
+Test.suite "테스트 스위트 이름"
+    [ test "첫 번째 테스트" <|
+        \() -> 
+            ...
+    , test "두 번째 테스트" <|
+        \() -> 
+            ...
+    ]
+```
+
+위의 코드에서 `테스트 스위트 이름` 부분에는 테스트 스위트의 이름을 입력하고, `[ ]` 안에는 앞서 작성한 테스트들의 리스트를 입력하면 됩니다.
+
+자, 이제 실제로 예제 코드를 작성해보도록 하겠습니다.
+
+```
+module Example exposing (..)
+
+import Html exposing (..)
+import Elm.Test
+
+square : Int -> Int
+square x =
+    x * x
+
+failureError : Elm.Test.FailureCase
+failureError =
+    Elm.Test.error "제곱 결과가 예상과 다릅니다."
+
+five : Elm.Test.OkCase
+five =
+    Elm.Test.ok "5의 제곱은 25입니다."
+        (square 5)
+        25
+
+six : Elm.Test.OkCase
+six =
+    Elm.Test.ok "6의 제곱은 36입니다."
+        (square 6)
+        36
+
+suite : Test.Test
+suite =
+    Test.suite "제곱 함수 테스트"
+        [ five
+        , six
+        , failureError
         ]
+
+main : Program Never Model Msg
+main =
+    Html.text "테스트 결과를 확인하려면 Console을 열어보세요."
 ```
 
-위의 코드를 실행하면 `5`가 나와야 합니다. 하지만 새로운 버전의 `add` 함수를 아래와 같이 변경하면 결과는 `6`이 나와야 합니다.
+위의 코드에서는 `square` 함수를 테스트하고 있습니다. `failureError`는 의도적으로 실패하는 테스트를 위한 함수이며, `five`와 `six`는 제대로 작동하는 경우를 위한 함수입니다.
+
+마지막으로 `main` 함수에서는 테스트 결과를 Console에서 확인할 수 있도록 설정하였습니다. 코드를 실행해보면 다음과 같이 테스트 결과가 출력됩니다.
 
 ```
-add : Int -> Int -> Int
-add x y =
-    x + y + 1
-```
+테스트 스위트 지수 함수 테스트
 
-이렇게 테스트를 작성하면 어떤 버그가 발생하는지 쉽게 알 수 있습니다.
+Ok (명령어 {command = (), description = "5의 제곱은 25입니다."})
+Ok (명령어 {command = (), description = "6의 제곱은 36입니다."})
+Expected (error "예상과 다른 제곱 결과" <fakeOuterFunction>-:1:1)
 
-## 깊이 파고들기
-
-물론 테스트는 프로그래밍에 대해 깊이 이해하고 있는 것을 요구합니다. 하지만 Elm 언어를 사용하면 테스트를 쉽게 작성할 수 있습니다. 이 외에도 Elm 언어에는 테스트를 작성하기 위한 다양한 함수와 기능들이 있습니다. 더 깊이 공부하면서 더욱 효율적인 테스트를 작성해보세요.
-
-## 더 알아보기
-
-"See Also"로 추가로 알아볼만한 링크들을 모아보았습니다.
-
-- [Elm 공식 홈페이지](https://elm-lang.org/)
-- [Elm 테스트 관련 문서](https://guide.elm-lang.org/testing/)
+11개 테스트에 실패하였습니다.

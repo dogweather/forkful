@@ -1,69 +1,67 @@
 ---
 title:                "Arduino: Å skrive en tekstfil"
+simple_title:         "Å skrive en tekstfil"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor: Skriving av tekstfiler med Arduino
+## Hvorfor
 
-Å skrive en tekstfil med Arduino kan være veldig nyttig for å lagre variabler, data eller sensoravlesninger. Tekstfiler kan også brukes til å kommunisere med andre enheter eller systemer, for eksempel en datamaskin. Ved å kunne skrive tekstfiler med Arduino kan du utvide funksjonaliteten og bruksområdene til prosjektet ditt.
+Det å skrive en tekstfil med Arduino kan være nyttig i mange sammenhenger. Det kan for eksempel være en måte å lagre sensoravlesninger eller annen data for senere bruk, eller å kommunisere med et eksternt display eller lagringsenhet. Uansett hva grunnen måtte være, er det viktig å vite hvordan man gjør det riktig.
 
-## Slik gjør du det: Eksempelkoding og utdata
+## Hvordan
 
-For å skrive en tekstfil med Arduino trenger du en SD-kortmodul og et SD-kort. Først må du initialisere SD-kortet og åpne en fil med ønsket navn ved hjelp av "SD.begin()" og "SD.open()" funksjonene. Deretter kan du skrive til filen ved hjelp av "SD.write()" eller "SD.println()" funksjonene. Her er en enkel kode som illustrerer dette:
+Først må du åpne et nytt Arduino-prosjekt og importere biblioteket "SD" ved å skrive følgende kode i starten av skissen din:
 
 ```Arduino
-#include <SPI.h>
 #include <SD.h>
+```
 
-File file; // Definerer en fil
+Deretter må du initialisere SD-kortet ved å skrive følgende kode:
 
-void setup() {
-  // Sett opp seriell kommunikasjon og initialiser SD kortet
-  Serial.begin(9600);
-  while (!Serial) {} // Venter på tilkobling
-
-  Serial.print("Initialisering av SD-kort...");
-  if (!SD.begin(4)) { // Bruker pin 4 til å kommunisere med SD-kortmodulen
-    Serial.println("Initiering mislyktes!");
-    return;
-  }
-  Serial.println("SD-kortet er klart.");
-
-  // Åpner en fil med navnet "data.txt"
-  file = SD.open("data.txt", FILE_WRITE);
-  if (file) {
-    Serial.println("Fil åpnet.");
-  }
-}
-
-void loop() {
-  // Skriver til filen og skriver ut til seriell kommunikasjon
-  file.println("Dette er en test.");
-  Serial.println("Dette er en test.");
-
-  delay(500);
-
-  // Lukker filen
-  file.close();
-
-  // Starter på nytt og åpner filen igjen
-  // Dette vil overskrive det som allerede finnes i filen
-  file = SD.open("data.txt", FILE_WRITE);
+```Arduino
+if (!SD.begin(chipSelect)) {
+  Serial.println("Feil ved initialisering av SD-kortet");
+  return;
 }
 ```
 
-Etter å ha lastet opp koden til Arduino, kan du åpne seriell monitor for å se utdataen. Du bør se at teksten blir skrevet både til filen og til seriell monitor.
+Her erstatter du "chipSelect" med den pinnen du har valgt å bruke for å kommunisere med SD-kortet ditt. Deretter kan du begynne å skrive til tekstfilen ved å åpne en filstrøm og bruke "println" -funksjonen til å skrive det du vil til tekstfilen:
 
-## Dykk dypere: Mer informasjon om skriving av tekstfiler
+```Arduino
+File dataFile = SD.open("data.txt", FILE_WRITE);
+if (dataFile) {
+  dataFile.println("Dette er en test");
+  dataFile.close();
+}
+```
 
-Merk at kodeeksempelet ovenfor kun illustrerer det grunnleggende for å skrive en tekstfil med Arduino. Det finnes mange flere funksjoner og metoder som kan brukes til å håndtere tekstfiler mer avansert, for eksempel å lese eller slette innhold i filen. Det kan være lurt å lese dokumentasjonen til biblioteket du bruker for å skrive tekstfiler med Arduino for å få en dypere forståelse av mulighetene.
+Når du er ferdig, må du huske å lukke filstrømmen og SD-kortet ved å bruke følgende kode:
+
+```Arduino
+dataFile.close();
+SD.end();
+```
+
+### Eksempel 1: Lagring av sensoravlesninger
+
+Dette eksempelet viser hvordan du kan lagre sensoravlesninger til en tekstfil på SD-kortet. Først må du konfigurere sensoren og initialisere SD-kortet som vist ovenfor. Deretter kan du lese av sensoren og lagre verdiene i en variabel. Til slutt skriver du verdien til tekstfilen.
+
+### Eksempel 2: Kommunikasjon med eksternt display
+
+Hvis du ønsker å kommunisere med et eksternt display ved hjelp av en tekstfil, kan du følge trinnene ovenfor for å skrive til tekstfilen og deretter lese av filen og vise innholdet på displayet.
+
+## Dypdykk
+
+Når du skriver en tekstfil med Arduino, må du være oppmerksom på noen viktige ting. For det første må du sørge for at du har valgt riktig pinne for å kommunisere med SD-kortet ditt. Hvis du velger feil pinne, vil ikke koden fungere. For det andre må du passe på å lukke filstrømmen og SD-kortet når du er ferdig for å unngå eventuelle problemer med å lese og skrive til filen senere.
+
+En annen ting å huske på er at SD-kortet må være formatert som FAT16 eller FAT32 for at Arduino skal kunne lese og skrive på det. Hvis du har problemer med å få koden til å fungere, kan det være lurt å kontrollere at SD-kortet ditt er formatert riktig.
 
 ## Se også
 
-- [SD-biblioteket for Arduino](https://www.arduino.cc/en/Reference/SD)
-- [SD-kortmodulen](https://www.arduino.cc/en/Tutorial/ReadWrite)
-- [Bibliotek for å håndtere tekstfiler](https://www.arduino.cc/en/Reference/FileIO)
+- [Arduino SD-bibliotek](https://www.arduino.cc/en/reference/SD)
+- [Tutorial: SD-kort og Arduino](https://www.arduino.cc/en/Tutorial/ReadWrite)

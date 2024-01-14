@@ -1,7 +1,9 @@
 ---
 title:                "Elm recipe: Writing a text file"
+simple_title:         "Writing a text file"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/writing-a-text-file.md"
 ---
 
@@ -9,71 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Text files are a basic but important tool in any programming language, and that includes Elm. Writing text files allows you to store information in a format that is easily readable and editable by both humans and computers. With Elm, you can easily create and manipulate text files to suit your needs, whether it's for storing data or producing output for your application.
+Writing a text file may seem like a simple task, but it can actually have a big impact on your programming experience. By creating structured and organized text files, you can easily store and access data within your program. This can lead to more efficient coding and ultimately, a better overall program.
 
 ## How To
 
-To create a text file in Elm, you will need to use the `elm/file` package. First, import the `File` and `Bytes` modules:
+To create a text file in Elm, you can use the `text` function from the `Html` library. This function takes in a string as its argument and returns a `Html Msg` that can be used to display the text on your webpage.
 
-```Elm
-import File
-import Bytes
+```
+import Html exposing (text)
+
+main =
+  text "Hello, world!"
 ```
 
-Next, you will need to define a `File` type in your model, which will be responsible for storing the file's data:
+This code will display the text "Hello, world!" on your webpage. You can also use the `text` function with variables to display dynamic content.
 
-```Elm
-type alias Model =
-    { file : File.File
-    ...
-    }
+```
+import Html exposing (text)
+
+name = "John"
+
+main =
+  text ("Hello, " ++ name ++ "!")
 ```
 
-To create a new file, use the `File.new` function, passing in the file name and data (in bytes) as arguments. You can use the `Bytes.Encode.string` function to encode a string as bytes:
-
-```Elm
-newFile = File.new "example.txt" (Bytes.Encode.string "Hello world!")
-```
-
-To write data to an existing file, use the `File.write` function, passing in the file and data as arguments:
-
-```Elm
-writeFile = File.write existingFile (Bytes.Encode.string "New data!")
-```
-
-To read data from a file, use the `File.read` function. This function returns a `Task` that can be used to handle the file's data:
-
-```Elm
-readFile =
-    Task.perform
-        (\result ->
-            case result of
-                Ok data ->
-                    -- Do something with the file data
-
-                Err error ->
-                    -- Handle the error
-        )
-        (File.read existingFile)
-```
-
-Once you have completed your operations on the file, you can save it by calling the `File.save` function:
-
-```Elm
-saveFile = File.save existingFile
-```
+This will display the text "Hello, John!" on your webpage. You can also use `text` in conjunction with other HTML functions to create more complex displays.
 
 ## Deep Dive
 
-Behind the scenes, the `elm/file` package utilizes the Browser's `File` and `Blob` APIs to handle the creation, reading, and writing of text files. This ensures that the package is cross-platform compatible and can be used in both web and desktop environments.
+In Elm, text files can also be used for localization and internationalization purposes. By storing all your text in one file, it becomes easier to translate and update your program for different languages.
 
-Additionally, the `File.listDirectory` function allows you to obtain a list of files from a specified directory, and the `File.delete` function can be used to remove a file from the system.
+Additionally, Elm has a built-in `toString` function that automatically converts values into strings. This can be useful when writing text files that contain data from variables or functions.
 
 ## See Also
 
-For more information on the `elm/file` package and other useful tools for working with files in Elm, check out the following links:
-
-- [Elm File package documentation](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Guide to File IO in Elm](https://dev.to/marvs/file-io-in-elm-caf)
-- [Elm Bytes library documentation](https://package.elm-lang.org/packages/elm/bytes/latest/)
-- [Elm File Example](https://github.com/jxxcarlson/elm-file-example)
+- [Official Elm Language Guide](https://guide.elm-lang.org)
+- [Elm Packages](https://package.elm-lang.org)
+- [Elm Slack Community](https://elmlang.slack.com)

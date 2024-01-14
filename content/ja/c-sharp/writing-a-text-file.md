@@ -1,57 +1,49 @@
 ---
-title:                "C#: テキストファイルの作成"
+title:                "C#: テキストファイルの書き方"
+simple_title:         "テキストファイルの書き方"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+テキストファイルを作成することのメリットはたくさんあります。たとえば、プログラムで使用するデータを整理したり、テキスト文書を作成したりすることができます。また、過去のデータを保管するためにもテキストファイルを使用することができます。
 
-テキストファイルを書くことの利点は何でしょうか？プログラミングを学ぶ上で、テキストファイルを書くことは非常に重要です。その理由を見てみましょう。
-
-## 書き方
-
-C#を使用してテキストファイルを書く方法を紹介します。以下はコードブロック内での例と出力です。
+## 作り方
+まずはテキストファイルを作成するために必要なC#コードを書きましょう。以下は基本的な例です。
 
 ```C#
 using System;
 using System.IO;
 
-class Program
+// ファイルを作成し、テキストを書き込む
+using (StreamWriter writer = new StreamWriter("example.txt")) 
 {
-    static void Main()
-    {
-        // テキストファイルを作成する
-        using (StreamWriter writer = File.CreateText("sampletxt.txt"))
-        {
-            writer.WriteLine("こんにちは、世界！");
-            writer.WriteLine("これはテキストファイルです。");
-        }
+    writer.WriteLine("こんにちは、世界！");
+}
 
-        // テキストファイルを読み込む
-        StreamReader reader = new StreamReader("sampletxt.txt");
-        while (reader.Peek() >= 0)
-        {
-            Console.WriteLine(reader.ReadLine());
-        }
-        reader.Close();
+// ファイルからテキストを読み込む
+using (StreamReader reader = new StreamReader("example.txt")) 
+{
+    string line;
+    while ((line = reader.ReadLine()) != null) 
+    {
+        Console.WriteLine(line);
     }
 }
 ```
 
-出力:
-
-```
-こんにちは、世界！
-これはテキストファイルです。
-```
+実行すると、"example.txt"ファイルに"こんにちは、世界！"という文字列が書き込まれ、プログラムから読み取ったテキストがコンソールに出力されます。
 
 ## 深堀り
+テキストファイルを作成する際には、さまざまなオプションも利用することができます。たとえば、ファイルの拡張子や文字エンコーディングを指定することができます。また、ファイルに追記する際には`StreamWriter`コンストラクタの第二引数に`true`を渡すことで、既存のファイルに追記することができます。
 
-テキストファイルを書くことについてもっと詳しく知りたいですか？テキストファイルは、文字列やデータを格納するための簡単で使いやすい方法です。プログラムからテキストファイルを読み書きすることで、ファイルを保存したり読み込んだりすることができます。さらに、テキストファイルを使用すると、複数のプログラム間でデータを共有することができます。
+さらに詳しい情報を学びたい方は、マイクロソフトの公式ドキュメントやオンラインのチュートリアルを参考にしてください。
 
-## 参考リンク
-
-- [C# ファイルを使用したテキストデータの読み書き](https://howtoprogramwithjupyter.c
+## 関連情報
+- [C#によるテキストファイルの作成](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/file-system/how-to-write-to-a-text-file)
+- [C#でファイルの読み書きをする方法](https://www.javadrive.jp/csharp/file/index1.html)
+- [C# ファイル操作の基礎](https://www.sejuku.net/blog/6109)

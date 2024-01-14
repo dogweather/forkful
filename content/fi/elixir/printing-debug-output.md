@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Debug-tulosteen tulostaminen"
+title:                "Elixir: Tulostuksen virheenjäljitys"
+simple_title:         "Tulostuksen virheenjäljitys"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/printing-debug-output.md"
 ---
 
@@ -9,46 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tiedämme kaikki sen tunteen, kun koodimme ei toimi ja emme ymmärrä miksi. Tässä tapauksessa debug-tulostus voi olla hyödyllinen työkalu. Se auttaa meitä ymmärtämään tarkemmin ohjelmamme toimintaa ja löytämään mahdolliset virheet.
+Koodin debuggaaminen voi olla haastavaa, varsinkin kun yritetään löytää virheitä suuremmassa koodipohjassa. Elixir tarjoaa kuitenkin huiman kätevän tavan näyttää debug outputia ohjelman ajon aikana, joten miksi ei hyödyntäisi tätä mahdollisuutta?
 
-## Miten
+## Miten tehdä se
 
-Ensimmäiseksi tarvitsemme `IO` moduulin. Tämä moduuli sisältää kaiken tarvittavan debug-tulostuksen tekemiseen. Käytämme `IO.inspect` funktiota, joka ottaa parametriksi haluamamme arvon ja tulostaa sen konsoliin.
-
-```Elixir
-IO.inspect("Hei maailma")
-```
-
-Tämä yksinkertainen esimerkki tulostaa tekstin "Hei maailma" konsoliin. Voimme myös antaa useampia arvoja, joita haluamme tarkastella, kuten lista tai kartta.
+Debug outputin näyttäminen Elixirissä on helppoa. Käytä yksinkertaisesti `IO.inspect()`-funktiota ja lisää sille argumentiksi haluamasi muuttuja tai arvo. Voit jopa antaa `IO.inspect()`-funktiolle useamman kuin yhden argumentin, mikä näyttää useamman arvon kerralla.
 
 ```Elixir
-lista = [1, 2, 3]
-kartta = %{nimi: "John", ikä: 30}
-IO.inspect(lista, kartta)
+name = "Pekka"
+age = 30
+IO.inspect(name)
+# Output: "Pekka"
+IO.inspect(name, age)
+# Output: "Pekka", 30
 ```
 
-Tämä tulostaa sekä listan että kartan sisällön konsoliin.
-
-## Syväsukellus
-
-`IO.inspect` funktiolla on myös muita hyödyllisiä vaihtoehtoja. Voimme esimerkiksi määrittää, haluammeko nähdä tulostuksen vain kerran, suorituskokonaisuuden aikana vai joka kierroksella.
-
-Voimme myös käyttää `:label` argumenttia, jonka avulla voimme antaa nimen tulostukselle ja siten helpottaa sen tunnistamista ohjelmamme suorituksen aikana. Esimerkiksi:
+Voit myös tulostaa kompleksisempia rakenteita, kuten listoja tai mappeja. Käytä silloin `IO.inspect()`-funktiolle `:label`-argumenttina `:pretty`-arvoa, jotta tuloste on helposti luettavissa.
 
 ```Elixir
-IO.inspect(nimi, label: "Nimi")
+my_list = [1, 2, 3, 4]
+IO.inspect(my_list, label: :pretty)
+# Output: [1, 2, 3, 4]
 ```
 
-Tulostuksesta tulee näyttämään tältä:
+## Syvempi sukellus
 
-```bash
-Nimi: "John"
+`IO.inspect()`-funktiolla on myös muita hyödyllisiä argumentteja, kuten `:color` ja `:char_lists`, jotka mahdollistavat värien ja merkkijonojen käytön tulosteessa.
+
+Voit myös käyttää `IO.inspect()`-funktiota funktion sisällä, jolloin voit nähdä funktion suoritustiedot ja mahdolliset virheet helposti.
+
+```Elixir
+def my_function(arg1, arg2) do
+  IO.inspect(arg1)
+  IO.inspect(arg2)
+  # Muita toimintoja
+end
 ```
-
-On myös mahdollista käyttää `:pretty` argumenttia, joka muotoilee tulostuksen helpommin luettavaksi. Ja jos haluat poistaa debug-tulostukset kokonaan, voit yksinkertaisesti korvata `IO.inspect` funktion `:nopretty` argumentilla.
 
 ## Katso myös
 
-- [Elixir IO moduuli](https://hexdocs.pm/elixir/IO.html)
-- [Elixir Debug-tulostus](https://elixir-lang.org/getting-started/debugging.html)
-- [Elixir Code BEAM](https://www.erlang-solutions.com/blog/erlang-and-elixir-debugging-and-the-code-beam.html)
+- [Elixir Dokumentaatio - Debugging](https://elixir-lang.org/getting-started/debugging.html)
+- [ElixirSchool - Debugging](https://elixirschool.com/en/lessons/advanced/debugging/)
+- [Elixir Forum - IO.inspect() discussion](https://elixirforum.com/t/elixir-i-o-inspect-vs-pipes/2236)

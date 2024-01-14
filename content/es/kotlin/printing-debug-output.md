@@ -1,38 +1,47 @@
 ---
 title:                "Kotlin: Imprimiendo salida de depuración"
+simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-A menudo, cuando estamos desarrollando una aplicación, encontramos errores o comportamientos inesperados en nuestro código. Para solucionar estos problemas, una herramienta muy útil es imprimir mensajes de debug en la consola. Esto nos permite ver lo que está sucediendo en cada paso de nuestro código y nos ayuda a identificar el origen del problema.
+## Por Qué
 
-## Cómo hacerlo
-En Kotlin, podemos imprimir mensajes de debug utilizando la función `println()` seguida del mensaje que deseamos imprimir. Por ejemplo:
+La impresión de la salida de depuración es una herramienta valiosa para los programadores. Con ella, podemos ver los valores de nuestras variables y realizar un seguimiento del flujo de nuestro código. Esto puede ayudarnos a identificar posibles errores y a entender mejor lo que está sucediendo en nuestro programa.
 
-```Kotlin
-println("Iniciando función foo")
-```
+## Cómo Hacerlo
 
-Esto imprimirá en la consola el mensaje "Iniciando función foo". Además, también podemos utilizar la función `print()` para imprimir el mensaje sin agregar un salto de línea al final.
-
-Otra forma de imprimir mensajes de debug es utilizando la función `Log.d()` de la librería de Android. Esta función nos permite especificar etiquetas para nuestros mensajes y también nos da información sobre la clase, método y línea de código donde se realizó la impresión del mensaje. Un ejemplo de su uso sería:
+En Kotlin, podemos imprimir la salida de depuración utilizando la función `println()`. Veamos un ejemplo de cómo imprimir una cadena de texto y el valor de una variable:
 
 ```Kotlin
-Log.d("MainActivity", "Iniciando función foo en la línea 10")
+val nombre = "María"
+
+println("¡Hola, $nombre!") // Salida: ¡Hola, María!
+println("El valor de nombre es $nombre") // Salida: El valor de nombre es María
 ```
 
-## Deep Dive
-Es importante tener en cuenta que imprimir demasiados mensajes de debug puede sobrecargar nuestra consola y dificultar la lectura de los resultados. Por eso, es recomendable utilizarlo de forma estratégica, enfocándonos en las partes del código que estamos tratando de solucionar.
+Podemos ver que utilizamos la sintaxis `$variable` para incluir el valor de la variable en la cadena de texto. Esto nos permite imprimir valores dinámicos en nuestra salida de depuración.
 
-También es importante tener en cuenta que los mensajes de debug solo deben utilizarse durante el desarrollo y no deben incluirse en la versión final de la aplicación.
+También podemos utilizar la función `print()` para imprimir sin agregar una nueva línea al final. Y si queremos imprimir los valores de múltiples variables en una sola línea, podemos utilizar la función `print()` varias veces y agregar la función `println()` al final para agregar una nueva línea.
 
-Una forma útil de realizar debugging en Kotlin es utilizar breakpoints en nuestro código y utilizar el modo de debugging en nuestro IDE. Esto nos permite pausar la ejecución del programa en un punto específico y examinar el estado de las variables en ese momento.
+## Profundizando
 
-## Ver también
-- [Debugging en Kotlin](https://kotlinlang.org/docs/tutorials/command-line.html#debugging)
-- [Cómo mejorar tus habilidades de debugging en Kotlin](https://blog.kotlin-academy.com/https-medium-com-antonioleiva-how-to-improve-your-debugging-skills-using-kotlin-9d936c91c3f2)
-- [Cómo utilizar la función Log en Kotlin](https://developer.android.com/reference/android/util/Log.html)
+Cuando imprimimos valores de variables, es importante tener en cuenta los tipos de datos. Si intentamos imprimir una variable de tipo `Int` sin convertirla a `String`, obtendremos un error. Podemos solucionar esto utilizando la función `toString()`:
+
+```Kotlin
+val num = 42
+
+println("El número es " + num) // Error: Type mismatch
+println("El número es " + num.toString()) // Salida: El número es 42
+```
+
+También podemos utilizar la función `debug()` para imprimir información de depuración más detallada, como el nombre de la función y la línea de código donde se encuentra la impresión. Esto puede ser útil para identificar rápidamente dónde se está imprimiendo la salida en nuestro código.
+
+## Ver También
+
+- [Documentación oficial de Kotlin sobre la función `println()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/io/println.html)
+- [Tutorial de Kotlin sobre la depuración](https://kotlinlang.org/docs/tutorials/command-line.html#debugging)

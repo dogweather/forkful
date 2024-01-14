@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Merkkijonon muuttaminen isoin kirjaimin"
+title:                "Bash: Merkkijonon ensimmäisen kirjaimen suurennus"
+simple_title:         "Merkkijonon ensimmäisen kirjaimen suurennus"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/capitalizing-a-string.md"
 ---
 
@@ -9,36 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä, miksi joku haluaisi käyttää Bash-ohjelmointia. Bash-ohjelmointi on yksi suosituimmista ohjelmointityökaluista Linux-käyttöjärjestelmän käyttäjille, sillä se on helppo oppia ja käyttää. Yksi yleinen tehtävä Bash-ohjelmoinnissa on merkkijonojen suur- tai pientekirjoittaminen. Tässä blogikirjoituksessa keskitymme nimenomaan siihen, miten merkkijonon voi muuttaa isoiksi kirjaimiksi.
+ On monia syitä miksi joku haluaisi muuttaa merkkijonon ensimmäisen kirjaimen isompaan kirjaimeen. Se voi olla osa suurempaa Bash-ohjelmaa, jossa tarvitaan yhtenäistä muotoilua merkkijonon kanssa tai se voi vain olla osa henkilökohtaista tyyliä.
 
-## Kuinka tehdä se
+## Miten
 
-Bash-ohjelmoinnin avulla merkkijonon suur- tai pientekirjoittaminen on helppo tehtävä. Tämä tapahtuu erityisen komennon avulla, nimeltään "tr". Seuraavassa esimerkissä näet, kuinka voit käyttää tätä komentoa muuttaaksesi merkkijonon "Hello World!" isoiksi kirjaimiksi:
-
-```Bash
-echo "Hello World!" | tr '[:lower:]' '[:upper:]'
-```
-
-Tämän komennon avulla merkkijono "Hello World!" muutetaan muotoon "HELLO WORLD!". Tämä johtuu siitä, että "tr"-komento muuttaa jokaisen kirjaimen merkkijonossa vastaavaan toiseen. Ensimmäinen joukko määrittelee pienet kirjaimet ja toinen joukko suuret kirjaimet.
-
-Voit myös käyttää "tr"-komentoa muuttamaan merkkijonon toisinpäin, eli suuriksi kirjaimiksi pieniksi kirjaimiksi. Seuraavassa esimerkissä näet, kuinka tämä tehdään:
+ Muuttaaksesi merkkijonon ensimmäinen kirjain isompaan kirjaimeen Bashilla, voit käyttää `tr`-komentoa yhdessä `tr 'a-z' 'A-Z'` -syötteen kanssa. Tämä muuttaa jokaisen kirjaimen isompaan kirjaimeen ja palauttaa uuden merkkijonon. Alla on esimerkki ja siihen liittyvä tulos:
 
 ```Bash
-echo "Hello World!" | tr '[:upper:]' '[:lower:]'
+$ tr 'a-z' 'A-Z' <<< "tämä on esimerkki"
+TÄMÄ ON ESIMERKKI
 ```
 
-Esimerkin tulostus olisi "hello world!".
+Voit myös käyttää `sed`-komennon `s`-toimintoa korvaamaan ensimmäisen kirjaimen isommalla kirjaimella. Alla on esimerkki ja siihen liittyvä tulos:
 
-## Syvempää tietoa
+```Bash
+$ sed 's/^./\U&/' <<< "tämä on esimerkki"
+Tämä on esimerkki
+```
 
-Monet Bash-ohjelmoijat saattavat ihmetellä, miksi "tr"-komennon käskyt "[:lower:]" ja "[:upper:]" kirjoitetaan juuri tuolla tavalla. Tämä johtuu siitä, että Bash käyttää POSIX-standardia, joka määrittelee nämä merkinnät merkistöjen luokille. Merkistöjen luokkia käytetään määrittelemään, mitä merkkejä halutaan muuttaa. Esimerkiksi jos haluat muuttaa vain tietyn maan merkkijonon merkkejä, voit käyttää merkistöluokkaa, joka vastaa tuon maan merkkejä.
+On myös hyödyllistä ottaa huomioon, että merkkijonot voivat sisältää muuttujia ja voi olla tarpeellista käyttää erilaisia muotoilumahdollisuuksia sen mukaan, mitä tarkalleen halutaan.
 
-Toinen hyvä ominaisuus, joka liittyy "tr"-komennon käyttöön, on säännöllisten lausekkeiden käyttö. Säännölliset lausekkeet mahdollistavat monimutkaisempien merkistöjen määrittämisen, tietyille "tr"-komennon suorittamille muutoksille.
+## Syvällinen sukellus
+
+Bashin `tr`-komento ottaa vastaan kaksi merkkijonoa, joista ensimmäinen määrittää millä merkeillä on korvattava ja toinen millä. Näin ollen `tr 'a-z' 'A-Z'` tarkoittaa, että kaikki merkit välillä a-z korvataan toisella merkkijonolla A-Z. Tämä toiminto tunnetaan myös nimellä transliteraatio.
+
+`sed`-komennossa ensimmäinen osa `s` määrittää mitä halutaan korvata ja toinen osa määrittää millä halutaan korvata. `\U` muuttaa valitun kirjaimen isommaksi ja `&` tarkoittaa muokattavaa merkkiä.
 
 ## Katso myös
 
-Tässä blogikirjoituksessa kävimme läpi yhden tavan muuttaa merkkijonon isoiksi tai pieniksi kirjaimiksi Bash-ohjelmoinnilla. On kuitenkin monia muita tapoja tehdä tämä sama tehtävä. Suosittelemme tutustumaan seuraaviin linkkeihin, joissa voit löytää lisätietoa ja muita vaihtoehtoisia tapoja käsitellä merkkijonoja Bashilla.
-
-- Täydellinen Bash-ohjelmointiopas (englanniksi): https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html 
-- Säännölliset lausekkeet Bashissa (englanniksi): https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Regular_Expressions 
-- Bash-kirjasto, j
+- Opas Bashin `tr`-komennosta (englanniksi): https://www.tutorialspoint.com/unix_commands/tr.htm
+- Bashin `sed`-komennon dokumentaatio (englanniksi): https://www.gnu.org/software/sed/manual/sed.html

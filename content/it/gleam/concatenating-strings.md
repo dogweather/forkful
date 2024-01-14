@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Unione di stringhe"
+title:                "Gleam: Concatenazione di stringhe"
+simple_title:         "Concatenazione di stringhe"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/concatenating-strings.md"
 ---
 
@@ -9,42 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Concatenare le stringhe è un'operazione fondamentale nella programmazione. Ci permette di unire più stringhe per creare una nuova stringa. Questo è utile quando si vuole creare un messaggio personalizzato che includa informazioni dinamiche o quando si vuole unire vari pezzi di testo.
+Hai mai incontrato una situazione in cui hai bisogno di unire due o più stringhe in un'unica stringa? Forse stai creando un sistema di gestione delle scorte e devi unire il nome del prodotto con la quantità disponibile per visualizzarlo come un'unica stringa. O forse stai creando un gioco e devi unire il nome del personaggio con il suo livello per mostrare al giocatore. Indipendentemente dal motivo, concatenare le stringhe è un'operazione molto comune nella programmazione e con questo post imparerai come farlo in Gleam.
 
 ## Come fare
 
-Per concatenare le stringhe in Gleam, è possibile utilizzare il simbolo "+" o la funzione `"~"string.concat()`. Vediamo un esempio:
+In Gleam, per concatenare le stringhe, possiamo utilizzare l'operatore `++`. Questo operatore ci consente di unire due o più stringhe in una sola stringa. Ecco un esempio:
 
 ```Gleam
-let nome = "Marco"
-let saluto = "Ciao"
-
-let messaggio = saluto + " " + nome
-// oppure
-let messaggio2 = string.concat(saluto, " ", nome)
-
-debug.(messaggio) // output: Ciao Marco
-debug.(messaggio2) // output: Ciao Marco
+let nome_prodotto = "Maglietta"
+let disponibilita = 10
+IO.println("Ci sono " ++ disponibilita ++ " " ++ nome_prodotto ++" disponibili")
 ```
 
-Come si può vedere, entrambi i metodi producono lo stesso risultato. È importante notare che quando si utilizza il simbolo "+", è necessario assicurarsi di aggiungere uno spazio bianco tra le stringhe in modo da ottenere una corretta formattazione del testo.
+Questo darà come output:
 
-Le stringhe in Gleam sono immutabili, quindi è necessario creare una nuova stringa per aggiungere del testo. Tuttavia, possiamo combinare più stringhe in una volta utilizzando la funzione `~"string.concat()`:
+> Ci sono 10 Magliette disponibili
+
+Possiamo anche concatenare più di due stringhe, semplicemente aggiungendo più operatori `++`. Ad esempio:
 
 ```Gleam
-let list_personalizza = ["Benvenuto", "nel", "nostro", "blog"]
-
-let messaggio_personalizzato = string.concat(...list_personalizza)
-debug.(messaggio_personalizzato) // output: Benvenuto nel nostro blog
+let nome = "Giovanni"
+let cognome = "Bianchi"
+let saluto = "Ciao, mi chiamo " ++ nome ++ " " ++ cognome
+IO.println(saluto)
 ```
 
-## Approfondimenti
+Questo darà come output:
 
-Nel nostro esempio precedente, abbiamo utilizzato l'operatore spread `...` per passare tutti gli elementi della lista come argomenti alla funzione `~"string.concat()`. Inoltre, è possibile concatenare non solo le stringhe, ma anche variabili di altri tipi di dati, come numeri, booleani, ecc.
+> Ciao, mi chiamo Giovanni Bianchi
 
-Inoltre, è importante tenere a mente che l'operazione di concatenazione può essere costosa da un punto di vista delle prestazioni, specialmente se si lavora con un grande numero di stringhe. In questi casi, è consigliato utilizzare il tipo di dati `io.Appendable` per ottenere prestazioni migliori.
+## Approfondimento
+
+Grazie all'operatore `++` possiamo anche concatenare le stringhe con altri tipi di dato come numeri o booleani. Tuttavia, dobbiamo prestare attenzione al tipo di dati che stiamo unendo, poiché Gleam è fortemente tipizzato e richiede che i tipi siano compatibili. Ad esempio, non possiamo unire una stringa con un numero direttamente, ma possiamo convertire il numero in una stringa utilizzando il modulo `String` e poi concatenarlo.
+
+Ecco un esempio di concatenazione di una stringa con un numero:
+
+```Gleam
+let nome = "Maria"
+let eta = 25
+let presentazione = "Ciao, mi chiamo " ++ nome ++ " e ho " ++ String.from_int(age) ++ " anni"
+IO.println(presentazione)
+```
+
+Questo darà come output:
+
+> Ciao, mi chiamo Maria e ho 25 anni
 
 ## Vedi anche
 
-- Documentazione ufficiale di Gleam sulla manipolazione delle stringhe: https://gleam.run/documentation/core/string.html
-- Una guida completa su come utilizzare i tipi di dati in Gleam: https://dev.to/gleam/gleam-101-types-18km
+- [Documentazione ufficiale di Gleam sulle stringhe](https://gleam.run/book/core-stdlib#Strings)
+- [Come utilizzare gli operatori in Gleam](https://gleam.run/blog/operator-precedence)
+- [Tutorial su come utilizzare stringhe in Gleam](https://www.tutorialspoint.com/gleam/gleam_strings.htm)

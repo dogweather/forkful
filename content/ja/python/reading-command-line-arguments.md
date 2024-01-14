@@ -1,71 +1,44 @@
 ---
-title:                "Python: コンピュータプログラミング上読み込みコマンドライン引数"
+title:                "Python: コンピュータプログラミングの記事名：コマンドライン引数の読み取り"
+simple_title:         "コンピュータプログラミングの記事名：コマンドライン引数の読み取り"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜ
 
-コマンドライン引数を読み取ることによって、あなたのPythonプログラミングスキルをさらに高めることができます。また、複雑なユーザー入力を必要とするプログラムを作成することもできます。この記事では、コマンドライン引数の読み取り方について説明します。
+Pythonを使ったプログラミングをする際、コマンドライン引数を読み取ることは非常に重要です。コマンドライン引数を正しく読み取ることにより、より動的なプログラムを作成することができます。
 
-## ハウツー
+## 方法
 
-Pythonでコマンドライン引数を読み取るのは非常に簡単です。まず、sysモジュールをインポートします。そして、sys.argvを使用して、コマンドライン引数がリストとして取得できます。
-
-```Python
-import sys
-
-args = sys.argv
-```
-
-上記のコードでは、コマンドライン引数がargsという変数にリストとして格納されます。プログラムを実行する際に、引数を指定することができます。
-
-```shell
-python myprogram.py arg1 arg2
-```
-
-例えば、上記のようにコマンドラインで実行すると、argsのリストには['myprogram.py', 'arg1', 'arg2']という値が格納されます。
-
-## ディープダイブ
-
-コマンドライン引数を読み取る際に、特に注意するべき点は二つあります。
-
-1. リストの最初の要素には実行ファイル名が格納される
-2. 入力された引数は全て文字列として取得される
-
-上記のコードを使えば、コマンドライン引数をリストとして取得できるため、簡単に操作することができます。例えば、特定の引数が指定されているかどうかを確認することができます。
+コマンドライン引数を読み取るために、sysモジュールを使用します。以下のようにコードを書くことで、コマンドライン引数を読み取ることができます。
 
 ```Python
 import sys
 
+# Pythonファイル名と引数を格納するリストを作成
 args = sys.argv
 
-if 'arg1' in args:
-    # 引数が指定されている場合の処理
+# 引数を取得してプログラムに応じた処理を実行する
+if len(args) == 2:
+    # 引数が1つの場合の処理
+    print("こんにちは、{}さん！".format(args[1]))
 else:
-    # 引数が指定されていない場合の処理
+    print("こんにちは、名無しのエンジニアさん！")
 ```
 
-また、リストのスライスを使えば、必要な引数だけを抜き出すこともできます。
+上記の例では、コマンドラインで引数を指定することで、プログラムが動的に振る舞うようになります。例えば、コマンドラインで"python hello.py John"と入力することで、"こんにちは、Johnさん！"という出力を得ることができます。
 
-```Python
-import sys
+## 詳細を掘り下げる
 
-args = sys.argv
+コマンドライン引数を読み取る方法には様々なバリエーションがあります。例えば、argparseモジュールを使用することで、より複雑なコマンドライン引数を受け取ることができます。また、コマンドライン引数を使用する際にはエラー処理も重要です。例えば、ユーザーが引数を間違って入力しても、エラーメッセージを出してプログラムを正しく動かすようにすることができます。
 
-# 第二引数以降のみを抜き出す
-arguments = args[1:]
+## See Also
 
-# 第二引数のみを抜き出す
-argument = args[1]
-```
-
-コマンドライン引数を読み取ることで、プログラムの柔軟性を高めることができます。ぜひ、試してみてください！
-
-## 参考リンク
-
-- Python公式ドキュメント: https://docs.python.org/ja/3/library/sys.html
-- Real Pythonのチュートリアル: https://realpython.com/command-line-arguments-python/
+- [Pythonの公式ドキュメント - sysモジュール](https://docs.python.org/ja/3/library/sys.html)
+- [Pythonの公式ドキュメント - argparseモジュール](https://docs.python.org/ja/3/howto/argparse.html)
+- [Pythonの公式ドキュメント - エラー処理](https://docs.python.org/ja/3/tutorial/errors.html)

@@ -1,61 +1,85 @@
 ---
 title:                "Javascript recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-As developers, we often focus on writing code to make sure our applications run smoothly and efficiently. But have you ever thought about the importance of writing tests? Writing tests might seem like an extra step, but in fact, they play a crucial role in ensuring the quality of our code and preventing potential bugs.
+## Why Writing Tests is Important in Javascript Programming
 
-## How To
-Writing tests using Javascript might seem daunting at first, but it's actually fairly straightforward. Let's take a look at an example of a simple function and how we can write a test for it.
+When it comes to writing code, whether it's for a personal project or a professional one, it's important to ensure that it works correctly and efficiently. This is where testing comes in. Writing tests allows us to identify and fix any bugs or errors in our code before it's deployed, saving us time and effort in the long run.
 
+## How To Write Tests in Javascript
+
+Writing tests in Javascript can be done using various testing libraries such as Mocha, Jasmine, or Jest. For this example, we will be using Mocha.
+
+First, we need to install Mocha using npm:
 ```Javascript
-//Function to check if a number is even
-const isEven = (num) => {
-  return num % 2 === 0;
-}
+npm install --save-dev mocha
 ```
 
-To write a test for this function, we can use a testing framework like Jest. First, we need to install Jest in our project using `npm install --save-dev jest`. Then, we can create a separate test file for our function.
-
+Next, we need to create a test file where we will write our tests. In this example, we will create a file called "calculator.test.js":
 ```Javascript
-//Test for isEven function
-const isEven = require('./isEven');
+const assert = require('assert');
+const calculator = require('../calculator');
 
-test('should return true if number is even', () => {
-  expect(isEven(4)).toBe(true);
+describe('Calculator', () => {
+  it('should add two numbers correctly', () => {
+    assert.equal(calculator.add(2, 5), 7);
+  });
+
+  it('should subtract two numbers correctly', () => {
+    assert.equal(calculator.subtract(10, 3), 7);
+  });
+
+  it('should multiply two numbers correctly', () => {
+    assert.equal(calculator.multiply(4, 5), 20);
+  });
+
+  it('should divide two numbers correctly', () => {
+    assert.equal(calculator.divide(20, 5), 4);
+  });
 });
-
-test('should return false if number is odd', () => {
-  expect(isEven(5)).toBe(false);
-});
 ```
 
-In the first test, we check if the function returns true for an even number, and in the second test, we check if it returns false for an odd number. Running the test using `jest` in the terminal will show us the output of the tests, which should all pass.
+In this test file, we import the assert library which allows us to make assertions about our code. We then import our calculator module which contains our functions for adding, subtracting, multiplying, and dividing.
 
-```
-PASS ./isEven.test.js
-✓ should return true if number is even (5ms)
-✓ should return false if number is odd (1ms)
-PASS src/isEven.js
-✓ should return true if number is even
-✓ should return false if number is odd
+We then use the "describe" function to group our tests and provide a description for the test suite. Inside the "it" functions, we write our individual tests and use the "assert.equal" function to check if the expected output matches the actual output of our calculator functions.
+
+To run these tests, we can use the following command:
+```Javascript
+npm test
 ```
 
-## Deep Dive
-Now that we have a basic understanding of how to write tests, let's take a deeper look at why they are important. Writing tests helps us catch bugs early on in the development process, saving us time and effort in the long run. It also allows us to make changes to our code with confidence, knowing that we have tests in place to ensure that our changes don't break anything.
+If all the tests pass, we should get an output similar to this:
+```Javascript
+> calculator@1.0.0 test
+> mocha "calculator.test.js"
+Calculator
+  ✓ should add two numbers correctly
+  ✓ should subtract two numbers correctly
+  ✓ should multiply two numbers correctly
+  ✓ should divide two numbers correctly
 
-In addition, tests serve as a form of documentation for our code. They show us how our code should be used and what kind of output we can expect. This can be especially helpful when working on a team or revisiting old code.
+4 passing (6ms)
+```
 
-Furthermore, writing tests can also lead to better code. When we write tests, we are forced to think about different scenarios and edge cases, which can help us write more robust and error-free code.
+## Deep Dive into Writing Tests
+
+In order to write effective tests, it's important to understand the concept of test-driven development (TDD). This approach encourages writing tests before writing any code, ensuring that the code is developed to meet the expected outcomes.
+
+When writing tests, it's important to consider different scenarios and edge cases. This helps in identifying potential bugs and ensuring that the code is robust and reliable.
+
+It's also important to have a good test coverage, which means testing as much of the code as possible. This helps in catching any errors that may arise from any changes made to the code.
 
 ## See Also
-Interested in learning more about writing tests? Check out these resources for further reading:
 
-- [The Importance of Writing Automated Tests](https://medium.com/javascript-scene/the-importance-of-writing-automated-tests-in-javascript-cea1f85e8ea5)
-- [Getting Started with Jest](https://jestjs.io/docs/en/getting-started)
-- [Why Test-Driven Development (TDD)?](https://www.oreilly.com/library/view/practical-test-driven-development/9781784393906/ch01s02.html)
+- [Mocha](https://mochajs.org/)
+- [Jasmine](https://jasmine.github.io/)
+- [Jest](https://jestjs.io/)
+
+In conclusion, writing tests is an important aspect of Javascript programming. It not only helps in identifying and fixing bugs but also ensures that our code is reliable and efficient. By following test-driven development and considering different scenarios, we can create robust and high-quality code.

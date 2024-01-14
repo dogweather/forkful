@@ -1,43 +1,67 @@
 ---
-title:                "C: वर्तमान तारीख प्राप्त करना"
+title:                "C: वर्तमान तिथि प्राप्त करना"
+simple_title:         "वर्तमान तिथि प्राप्त करना"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों 
+## Kyon
 
-क्या आप कभी सोचा है कि किसी भी सिस्टम में वर्तमान तारीख को प्राप्त करने के पीछे का कारण क्या हो सकता है? वैसे तो हर कोडर को इससे अनजान है, लेकिन यह एक आवश्यक विशेषता है जो किसी भी सिस्टम प्रोग्रामिंग में आवश्यक होता है। इस लेख में हम बताएंगे कि प्रोग्रामिंग में वर्तमान तारीख को कैसे प्राप्त किया जा सकता है।
+Aaj kal, duniya bhaut fast paced hai aur hume har cheez ko instantly jaanna hota hai. Is liye, kaafi baar hume apni application mein current date ka use karna padta hai. Isse hum apne users ko accurate aur up to date information provide kar sakte hai.
 
-## कैसे करें
+## Kaise Karein
 
-**ध्यान दें:** इस आर्टिकल में हम C प्रोग्रामिंग के बारे में चर्चा करेंगे। सिस्टम की भाषा या यूनिकोड कोडिंग में गलतियां हो सकती हैं जो आपको संख्याओं और वर्णमाला में समस्याओं का सामना करने के लिए मजबूर कर सकती हैं।
+Current date prapt karne ke liye, hum C programming ka use kar sakte hai. C language mein "time.h" header file ko include karne se hum time-related functions ko access kar sakte hai. Isme se ek function "time()" hai jo hume current date aur time ka epoch format (seconds since January 1, 1970 UTC) return karta hai.
 
-अपने C कोड में इन्सर्ट करें:
-```C
-#include <stdio.h>
-#include <time.h>
+```
+# include <stdio.h>
+# include <time.h>
 
-int main () {
-   // स्थान का निर्देश - C भाषा का कोड अपने प्राइमस B में इनिशियलाइज़ स्थिति को खोजता है।
-   time_t rawtime;
-   struct tm * timeinfo;
-   char buffer[80];
-   // समय और दिनांक का आवश्यक फीक्स करें:
-   time ( &rawtime );
-   timeinfo = localtime ( &rawtime );
-   // फोर्म प्रिंट ऑफ (बफर, लेंग्थ, फॉर्म, समय इनफो)
-   strftime (buffer,80,"%d-%m-%Y %I:%M:%S%p.",timeinfo);
-   // आउटफुट:
-   printf("%s\n",buffer);
-   return 0;
+int main()
+{
+    time_t current_time;
+    time(&current_time); // functions mein pass by reference hoti hai, isliye "&" use kiya hai
+
+    printf("Epoch format: %ld\n", current_time);
+
+    return 0;
 }
 ```
 
-**आउटपुट*: 24-08-2021 03:52:30AM
+Is code ke output ke roop mein, hum current date aur time ka epoch format dekh sakte hai. Lekin, is format ko padhna aur samajhna thoda mushkil ho sakta hai.
 
-## दीप डाइव
+## Gehri Jhaank
 
-स्थानांतरणीय समय आश्वस्त करने के लिए सिस्टम को कुछ विशेष ध्यान देना चाहिए। आम तौर पर यह कोड समय और तारीख कार्रवाई का उपयोग करता है, लेकिन उन्हें चिड़
+Epoch format ka calculation ek specific time base par hota hai, jo ki January 1, 1970 UTC hai. Iske alawa, current date ko human-readable format mein display karne ke liye hum "struct tm" datatype ka use kar sakte hai. Iss structure mein hum specific components like day, month, year, hour, minute, second ko store kar sakte hai.
+
+```
+# include <stdio.h>
+# include <time.h>
+
+int main()
+{
+    time_t current_time;
+    time(&current_time);
+
+    // localtime() function current time ko apne local time zone ke hisaab se convert karta hai
+    struct tm *local_time = localtime(&current_time);
+
+    printf("Current date & time: %s", asctime(local_time));
+
+    return 0;
+}
+```
+
+Is code ke output mein hum current date aur time ko humare local time zone ke hisaab se dekh sakte hai.
+
+## Dekhiye Bhi
+
+Agar aapko C programming mein current date ko manipulate karne ke aur functions ke bare mein aur jaankari chahiye toh "time.h" header file ke official documentation ko refer kar sakte hai. Aur agar aapko specific project mein current date ka use karna hai, toh aapko "strftime()" function ko utilize karna padega. Is function mein hum date aur time ko humare desired format mein convert kar sakte hai.
+
+- [time.h header file documentation](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [strftime() function in C](https://www.geeksforgeeks.org/strftime-function-in-c/)
+- [Epoch time calculator](https://www.epochconverter.com/)

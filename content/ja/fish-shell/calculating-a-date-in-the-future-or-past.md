@@ -1,53 +1,47 @@
 ---
-title:                "Fish Shell: 将来や過去の日付の計算。"
+title:                "Fish Shell: 未来または過去の日付の計算"
+simple_title:         "未来または過去の日付の計算"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+どのような日付を過去や未来に計算する必要があるのか、簡単に説明します。
 
-日付を計算するのはスケジュールを管理するためにとても重要です。未来の何日後や過去の日付を計算することで、予定を立てることができます。
+## 方法
+```Fish Shell```を使用して、日付を計算するためのコーディング例とサンプル出力を以下に示します。
 
-## 作り方
+### 過去の日付を計算する
+たとえば、10日前の日付を計算したい場合、以下のように入力します。
 
-Fish Shellの便利なコマンド「date -d」を使うことで、簡単に日付を計算することができます。まずは、計算したい日付を指定し、その後に計算したい日付のフォーマットを指定します。例えば、3日後の日付を計算するには、次のように入力します。
-
-```Fish Shell
-date -d '3 days'
+```
+set today (date -u +"%m%d")
+set ten_days_ago (math $today - 10)
+set date (date -ud "$ten_days_ago" +"%Y-%m-%d")
+echo $date
 ```
 
-このコマンドを実行すると、今日の日付から3日後の日付が表示されます。また、さまざまな日付フォーマットを指定することもできます。例えば、mm/dd/yyの形式で表示するには、次のように入力します。
+出力は、現在の日付から10日前の日付がYYYY-MM-DDの形式で表示されます。
 
-```Fish Shell
-date -d '3 days' '+%m/%d/%y'
+### 未来の日付を計算する
+同様に、10日後の日付を計算するには、以下のコードを使用します。
+
+```
+set today (date -u +"%m%d")
+set ten_days_later (math $today + 10)
+set date (date -ud "$ten_days_later" +"%Y-%m-%d")
+echo $date
 ```
 
-このようにすることで、3日後の日付を「03/12/20」という形式で表示することができます。
+出力は、同じく現在の日付から10日後の日付がYYYY-MM-DDの形式で表示されます。
 
-## 深く掘り下げる
+## 詳細
+日付を計算する際に使われる```date```コマンドは様々なオプションがあり、特定の日付や時刻のフォーマットや、タイムゾーンの設定も可能です。また、```math```コマンドを使用することで、日付の計算を簡単に行うことができます。
 
-日付の計算にはさまざまなオプションがあり、これらを組み合わせることでより複雑な日付の計算を行うことができます。例えば、10日後の日付の月の最終日を計算するには、次のように入力します。
-
-```Fish Shell
-date -d '10 days' '1 month'
-```
-
-このコマンドを実行すると、月の最終日である「31」が表示されます。また、特定の日付から何日後や何日前の日付を計算することも可能です。例えば、2020年3月12日から200日後の日付を計算するには、次のように入力します。
-
-```Fish Shell
-date -d '200 days' '2020-3-12'
-```
-
-このコマンドを実行すると、2020年3月12日から200日後の日付である「9-28-20」が表示されます。
-
-## 関連情報
-
-もし日付を計算する際に困った時は、以下のリンクを参考にしてみてください。
-
-- [Fish Shellチートシート](https://github.com/Nemoshk/fish-cheatsheet)
-- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/cmds/date.html)
-
-[to_md_toc]: en_US.markdown_toc
+## 参考リンク
+- [Fish Shell公式ドキュメント](https://fishshell.com/docs/current/index.html)
+- [日付と時刻を操作する方法](https://qiita.com/nishina555/items/7ea9587c2c2a42a9aa1f)

@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Die Länge eines Strings berechnen"
+title:                "Haskell: Die Länge eines String finden"
+simple_title:         "Die Länge eines String finden"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/haskell/finding-the-length-of-a-string.md"
 ---
 
@@ -9,24 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Finden der Länge eines Strings kann ein nützlicher Schritt sein, wenn man mit Textverarbeitung in Haskell programmiert. Es ermöglicht es uns, die Größe von Strings zu bestimmen und die richtige Logik für unsere Code zu implementieren.
+Das Finden der Länge eines Strings ist eine grundlegende Funktion, die bei der Verarbeitung von Textdaten unerlässlich ist. Es ermöglicht uns, die Größe des Textes zu bestimmen und ihn entsprechend zu manipulieren.
 
-## Wie geht das
+## Wie es geht
 
-Um die Länge eines Strings in Haskell zu finden, können wir die Funktion ```length``` verwenden. Diese Funktion nimmt einen String als Eingabe und gibt die Anzahl der Zeichen im String zurück. Hier ist ein Beispielcode, um die Länge des Strings "Hallo Welt" zu finden:
+Um die Länge eines Strings in Haskell zu finden, können wir die vordefinierten Funktionen `length` oder `Data.Text.length` verwenden. Hier ein Beispiel:
 
 ```Haskell
-length "Hallo Welt"
+-- Input String
+text = "Das ist ein Beispieltext"
+
+-- Verwendung der Funktion length
+print (length text) --> 23
+
+-- Verwendung der Funktion Data.Text.length
+import Data.Text (length)
+print (length text) --> 23
 ```
 
-Die Ausgabe dieses Codes wird ```10``` sein, da der String 10 Zeichen enthält, einschließlich Leerzeichen.
+Wir können auch eine eigene Funktion schreiben, um die Länge eines Strings zu finden. Hier ist ein Beispiel, das die Rekursion verwendet:
 
-## Tiefer Einblick
+```Haskell
+-- Definieren einer Funktion zur Findung der Länge eines Strings
+lengthCustom :: String -> Int
+lengthCustom [] = 0 -- Basisfall
+lengthCustom (x:xs) = 1 + lengthCustom xs
 
-Die Funktion ```length``` ist Teil der Standardbibliothek von Haskell, daher muss sie nicht importiert werden, um sie zu verwenden. Sie kann jedoch auch auf andere Arten implementiert werden, um die Länge eines Strings zu finden. Eine Möglichkeit besteht darin, eine rekursive Funktion zu schreiben, die jedes Zeichen im String zählt und eine Zählvariable erhöht, bis sie das Ende des Strings erreicht. Eine andere Möglichkeit besteht darin, eine Liste von Zeichen in einen String umzuwandeln und dann die Funktion ```length``` auf diese Liste anzuwenden. Weitere Informationen zu diesen Implementierungen findest du in der offiziellen Haskell-Dokumentation.
+-- Aufruf der Funktion
+print (lengthCustom text) --> 23
+```
+
+## Tiefeneintauchen
+
+Die Funktion `length` gibt uns die Anzahl der Buchstaben im String zurück. Wenn wir jedoch die Anzahl der Wörter in einem String finden möchten, müssen wir etwas zusätzliche Arbeit leisten. Eine Möglichkeit ist, den String in eine Liste von Wörtern zu zerlegen und dann die Länge dieser Liste zu finden.
+
+```Haskell
+-- Definieren einer Funktion zur Findung der Anzahl der Wörter in einem String
+countWords :: String -> Int
+countWords text = length (words text)
+
+-- Aufruf der Funktion
+print (countWords text) --> 4
+```
 
 ## Siehe auch
 
-- [Haskell-Dokumentation zu length](https://www.haskell.org/hoogle/?hoogle=length)
-- [Rekursion in Haskell](https://de.wikibooks.org/wiki/Haskell/kurs/Schleifen#Rekursion)
-- [Strings in Haskell](https://wiki.haskell.org/String)
+- [Haskell Crashkurs für Anfänger](https://medium.com/de-de/free-code-camp/haskell-5-minuten-crashkurs-f%C3%BCr-anf%C3%A4nger-98b53d0abff4)
+- [Offizielle Haskell-Dokumentation](https://www.haskell.org/documentation/)
+- [String Verarbeitung in Haskell](https://www.haskell.org/tutorial/strings.html)

@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Futur oder Vergangenheitsdatum berechnen"
+title:                "Arduino: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,48 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Berechnung eines Datums in der Zukunft oder Vergangenheit kann hilfreich sein, um Zeitintervalle zu bestimmen oder Ereignisse zu planen. Mit Arduino ist dies möglich, und in diesem Blog-Beitrag werden wir uns ansehen, wie man dies umsetzen kann.
+Das Berechnen von Daten in der Zukunft oder Vergangenheit kann für verschiedene Anwendungen nützlich sein, wie z.B. für die Steuerung von Zeitabläufen oder das Erstellen von Alarmen. Mit der Arduino-Programmierung können Sie solche Berechnungen bequem durchführen.
 
-## How To
+## So geht's
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, kann man die `DateTime` Bibliothek in Arduino verwenden. Diese stellt verschiedene Funktionen zur Verfügung, um mit Datum und Uhrzeit zu arbeiten.
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen Sie zuerst das aktuelle Datum mit den Funktionen "day()", "month()" und "year()" erhalten und in Variablen speichern. Anschließend können Sie die gewünschte Anzahl von Tagen zu diesem Datum hinzufügen oder davon abziehen, um das zukünftige oder vergangene Datum zu berechnen.
+
+Hier ist ein Beispiel für die Berechnung des Datums in 30 Tagen:
 
 ```Arduino
-#include <DateTime.h>
+int currentDay = day(); //speichert den aktuellen Tag in einer Variable
+int currentMonth = month(); //speichert den aktuellen Monat in einer Variable
+int currentYear = year(); //speichert das aktuelle Jahr in einer Variable
 
-void setup() {
-  // Datum und Uhrzeit festlegen (Jahr, Monat, Tag, Stunde, Minute, Sekunde)
-  DateTime jetzt(2020, 04, 20, 12, 00, 00);
+int futureDay = currentDay + 30; //berechnet den zukünftigen Tag
+int futureMonth = currentMonth; //der Monat bleibt gleich
+int futureYear = currentYear; //das Jahr bleibt gleich
 
-  // Datum in der Zukunft berechnen (z.B. 30 Tage später)
-  DateTime zukunft = jetzt + TimeSpan(30, 0, 0, 0);
-  // Datum in der Vergangenheit berechnen (z.B. 2 Monate und 5 Tage vorher)
-  DateTime vergangenheit = jetzt - TimeSpan(0, 2, 5, 0);
-
-  // Ausgabe des berechneten Datums (Tag, Monat, Jahr)
-  Serial.print(zukunft.day()).print(".");
-  Serial.print(zukunft.month()).print(".");
-  Serial.println(zukunft.year());
-  Serial.print(vergangenheit.day()).print(".");
-  Serial.print(vergangenheit.month()).print(".");
-  Serial.println(vergangenheit.year());
+//falls der zukünftige Tag größer als die Anzahl der Tage im Monat ist, wird das Datum entsprechend angepasst
+if (futureDay > 30) {
+  futureDay -= 30; //subtrahiert die Anzahl der Tage im Monat
+  futureMonth++; //erhöht den Monat um eins
 }
 
-void loop() {
-
+//falls der zukünftige Monat größer als 12 ist, wird auch das Jahr entsprechend angepasst
+if (futureMonth > 12) {
+  futureMonth = 1; //setzt den Monat auf 1 (Januar)
+  futureYear++; //erhöht das Jahr um eins
 }
+
+//gibt das zukünftige Datum im seriellen Monitor aus
+Serial.print("Das Datum in 30 Tagen ist: ");
+Serial.print(futureDay);
+Serial.print(".");
+Serial.print(futureMonth);
+Serial.print(".");
+Serial.println(futureYear);
 ```
 
-Der obige Code demonstriert, wie man mit der `DateTime` Bibliothek ein Datum in der Zukunft und Vergangenheit berechnen kann. Dabei wird zuerst ein `DateTime`-Objekt für das aktuelle Datum und die Uhrzeit erstellt. Anschließend kann man mithilfe der `TimeSpan` Klasse ein Zeitintervall angeben, welches auf das aktuelle Datum addiert oder subtrahiert werden soll. Das Ergebnis wird dann in einem neuen `DateTime`-Objekt gespeichert und kann auf verschiedene Arten ausgegeben werden.
+Der oben genannte Code kann natürlich an Ihre spezifischen Anforderungen und Bedürfnisse angepasst werden, je nachdem, welche Berechnung Sie durchführen möchten.
 
-## Deep Dive
+## Tiefergehende Informationen
 
-Die `DateTime` Bibliothek basiert auf dem Unix-Zeitformat, welches die Anzahl der Sekunden seit dem 1. Januar 1970 um 00:00 Uhr UTC angibt. Dadurch ist es möglich, Datumsberechnungen mit hoher Genauigkeit durchzuführen. Die Bibliothek stellt neben den oben genannten Funktionen auch weitere nützliche Methoden zur Verfügung, um beispielsweise auf Wochentage oder Zeitintervalle zu prüfen.
+Es gibt auch andere Möglichkeiten, einen Zeitraum zu einem Datum hinzuzufügen oder abzuziehen, wie z.B. die Verwendung der "Time" Bibliothek oder der "millis()" Funktion. Ebenso können Sie verschiedene Bedingungen einbauen, um auch mit Schaltjahren umzugehen.
 
-Man sollte jedoch beachten, dass Arduino keine Batterie oder Echtzeituhr besitzt, um die Zeit auch bei einem Neustart des Systems beizubehalten. Daher muss man das aktuelle Datum und die Uhrzeit bei jedem Start des Systems manuell setzen oder ein externes Modul verwenden.
+Es ist wichtig zu beachten, dass die Arduino-Uhrzeit in Millisekunden seit dem Hochfahren des Boards gezählt wird und nicht auf das tatsächliche Datum und die Uhrzeit basiert. Daher kann es zu Ungenauigkeiten kommen, wenn das Board längere Zeit eingeschaltet bleibt. In diesem Fall müssen Sie die Uhrzeit möglicherweise über das Internet oder eine externe RTC (Real-Time-Clock) aktualisieren.
 
 ## Siehe auch
 
-- [Offizielle Dokumentation der `DateTime` Bibliothek](https://github.com/PaulStoffregen/DateTime)
-- [Beitrag im Arduino Forum zu Datumsberechnungen](https://forum.arduino.cc/index.php?topic=43462.0)
-- [Tutorial zur Verwendung von Arduino mit einer Echtzeituhr](https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit?view=all)
+- [Using Time and Date in Arduino](https://www.arduino.cc/reference/en/libraries/time/)
+- [Millisecond Time Library for Arduino](https://playground.arduino.cc/Code/Millis/)
+- [How to Add Time and Date to Your Arduino Projects](https://www.makerguides.com/arduino-time-date-tutorial/)

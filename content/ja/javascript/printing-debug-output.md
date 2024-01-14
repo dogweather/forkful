@@ -1,36 +1,43 @@
 ---
-title:                "Javascript: デバッグ出力の印刷"
+title:                "Javascript: デバッグ出力のプリント"
+simple_title:         "デバッグ出力のプリント"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜデバッグ出力を利用するのか
+## なぜデバッグ出力を出力するのか
 
-デバッグ出力を有効にすることで、コードの実行中に発生するエラーやデータの値を確認し、問題を特定することができます。これにより、より効率的にデバッグ作業を行うことができます。
+Javascriptプログラムを実行する際、コンソールを通じてエラーやデバッグ情報を出力することができます。このデバッグ出力は開発者にとって非常に重要であり、プログラムのバグを発見し、修正するのに役立ちます。
 
-## デバッグ出力の方法
+## 方法
 
-デバッグ出力を有効にするには、`console.log()`メソッドを使用します。これにより、任意の値をコンソールに出力することができます。
+デバッグ出力を出力するには、console.log()関数を使用します。以下のようなコードを書くことで、任意のデータをコンソールに出力することができます。
 
 ```Javascript
-console.log("Hello World!"); // 文字列の出力
-console.log(10 + 5); // 計算結果の出力
-console.log(true); // ブール値の出力
+var name = "John";
+var age = 25;
+
+console.log("Name: " + name);
+console.log("Age: " + age);
 ```
 
-上記のように、`console.log()`メソッドを使用することで、コードの実行中に確認したい値を簡単に出力することができます。
+上記のコードを実行すると、コンソールには以下のような出力が表示されます。
 
-## デバッグ出力の詳細
+```
+Name: John
+Age: 25
+```
 
-デバッグ出力を利用して問題を特定する際には、さまざまな値を出力してみることが重要です。また、`console.log()`メソッド以外にも、`console.error()`や`console.warn()`などのメソッドを使用することで、エラーや警告を出力することもできます。
+## 深堀り
 
-さらに、出力したデータを整形するために、テンプレートリテラルや`JSON.stringify()`メソッドを使用することもできます。これにより、より詳細な情報を取得することができます。
+デバッグ出力を使用することで、開発者はプログラムの実行中に何が起きているのかを把握することができます。これは、コードのデバッグやバグの発見に役立ちます。また、デバッグ出力を使用することで、プログラムのパフォーマンスや実行時間などの重要な情報を収集することもできます。
 
-## 参考リンク
+## さらに見る
 
-- [入門：デバッグを行う - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Debugging)
-- [コンソールでデバッグ | Web Fundamentals | Google Developers](https://developers.google.com/web/tools/chrome-devtools/console/?hl=ja)
-- [console.log() - JavaScript | MDN](https://developer.mozilla.org/ja/docs/Web/API/Console/log)
+- [Console APIドキュメント](https://developer.mozilla.org/ja/docs/Web/API/console)
+- [デバッグ出力のベストプラクティス](https://www.javascript.com/blog/debugging-javascript-tips-and-tools)
+- [コンソールを使ったデバッグの方法](https://www.freecodecamp.org/news/a-guide-to-javascript-console-commands/)

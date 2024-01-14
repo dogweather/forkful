@@ -1,48 +1,72 @@
 ---
-title:                "Gleam: 랜덤 숫자 생성하기"
+title:                "Gleam: 랜덤 숫자 생성"
+simple_title:         "랜덤 숫자 생성"
 programming_language: "Gleam"
-category:             "Numbers"
+category:             "Gleam"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 랜덤 숫자 생성에 참여해야 할까요?
+## 왜
 
-난수는 컴퓨터 과학 분야에서 중요한 개념입니다. 랜덤 숫자 생성은 시뮬레이션, 보안, 게임 등 다양한 분야에서 필수적으로 사용되는 기술입니다. 이번 블로그 포스트에서는 Gleam 프로그래밍 언어로 랜덤 숫자를 생성하는 방법을 알아보겠습니다.
+난수 생성에 참여하는 이유는 무엇일까요? 난수는 컴퓨터 프로그램에서 매우 중요합니다. 게임에서 적, 카드 게임에서 카드 순서, 테스트 데이터 생성 등 다양한 용도로 사용될 수 있습니다. 따라서 난수를 만드는 것은 컴퓨터 프로그래밍에서 필수적인 요소입니다.
 
-## 어떻게 하면 될까요?
+## 만드는 방법
 
-어떤 프로그래밍 언어를 사용하든지 랜덤 숫자를 생성하는 방법은 거의 비슷합니다. 우선 Gleam의 random 모듈을 import합니다. 그리고 generate 함수를 사용하여 랜덤 숫자를 생성합니다. 아래는 Gleam 코드로 작성된 예시입니다.
-
-```Gleam
-import random
-
-random.generate() // 출력 예: 0.564738291
-```
-
-위 예시는 0에서 1 사이의 랜덤한 소수를 생성합니다. 만약 0에서 10 사이의 정수를 생성하고 싶다면 아래와 같이 코드를 작성할 수 있습니다.
+Gleam은 다양한 방법으로 난수를 생성할 수 있습니다. 가장 간단한 방법은 `random.float` 함수를 사용하는 것입니다. 이 함수는 0과 1 사이의 난수를 생성합니다.
 
 ```Gleam
-import random
+import gleam/random
+import gleam/string
 
-random.generate_int(0, 10) // 출력 예: 7
+let random_number = random.float()
+string.print("Random number: ", random_number)
 ```
 
-그 외에도, 문자열, 튜플, 리스트 등 다양한 타입의 랜덤 데이터를 생성할 수 있습니다. 자세한 내용은 Gleam 공식 문서를 참고해 주세요.
+출력 예시:
 
-## 깊게 파고들기
+```
+Random number: 0.4892796162425797
+```
 
-랜덤 숫자를 생성하는 알고리즘에는 여러 가지가 있지만, 가장 대표적인 방법은 난수 발생기를 사용하는 것입니다. 난수 발생기는 무작위로 숫자를 생성하는 장치이며, 시드(seed) 값을 기준으로 난수를 생성합니다. 시드 값이 같으면 같은 순서로 랜덤한 숫자를 생성하므로, 다양한 시드 값을 사용하여 보다 다양한 결과를 얻을 수 있습니다.
+더 복잡한 난수를 생성하고 싶다면 `random.int` 함수를 사용할 수 있습니다. 이 함수는 인자로 최솟값과 최댓값을 받아 해당 범위 내의 난수를 생성합니다.
 
-## 더 읽어보기
+```Gleam
+import gleam/random
+import gleam/string
 
-이번 블로그 포스트에서는 Gleam 프로그래밍 언어로 랜덤 숫자를 생성하는 방법을 살펴보았습니다. Gleam 외에도 다양한 프로그래밍 언어에서 랜덤 숫자를 생성하는 방법이 있으니 참고해 보시기 바랍니다.
+let random_number = random.int(1, 10)
+string.print("Random number between 1 and 10: ", random_number)
+```
 
-* [Python에서 랜덤 숫자 생성하기](https://wikidocs.net/3057)
-* [Java에서 랜덤 숫자 생성하기](https://www.geeksforgeeks.org/generating-random-numbers-in-java/)
-* [C에서 랜덤 숫자 생성하기](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
+출력 예시:
 
-## 참고
+```
+Random number between 1 and 10: 7
+```
 
-https://gleam.run/modules/random.html
+## 깊이 파헤치기
+
+Gleam에서 난수를 만드는 방법은 매우 다양합니다. `random.float` 함수는 실제로는 `random.int` 함수를 활용하여 구현됩니다. `random.int` 함수에 인자로 0과 최댓값 사이의 정수를 주면 그 값에 1을 더한 후 최종적으로 0부터 그 값 사이의 난수를 생성합니다. 이를 활용하면 `random.float` 함수를 직접 구현해볼 수 있습니다.
+
+```Gleam
+import gleam/random
+import gleam/math
+
+fn float() -> Float {
+  let max = 1.0
+  let int = random.int(0, math.f64_to_int(max))
+  math.int_to_f64(int) / max
+}
+```
+
+## 부가 정보
+
+- [Gleam 공식 문서: 난수 생성하기](https://gleam.run/documentation/stdlib/random#float)
+- [Gleam 공식 문서: 수학 함수 사용하기](https://gleam.run/documentation/stdlib/math#int_to_f64)
+
+## 더 알아보기
+
+위에서 소개한 `random.float`와 `random.int` 함수는 예측 가능한 난수를 생성합니다. 만약 완벽하게 무작위성을 보장하는 난수가 필요하다면 더 복잡한 방식의 난수 생성 알고리즘을 사용해야 합니다. 예를 들어, Linear Congruential Generator (LCG)나 Mersenne Twister 알고리즘을 사용할 수 있습니다. 하지만 이 알고리즘들은 구현하기가 더 까다롭기 때문에 간단하고 예측 가능한 `random.float` 함수를 사용하는 것이 좋습니다.

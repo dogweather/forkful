@@ -1,52 +1,46 @@
 ---
 title:                "TypeScript: Odczytywanie argumentów wiersza poleceń"
+simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Programowanie w języku TypeScript może być różnorodne i wymagać wielu umiejętności, ale jednym z podstawowych elementów jest umiejętność czytania argumentów wiersza poleceń. Niektórzy programiści mogą uważać to za zbędne lub trudne, ale prawda jest taka, że ​​umiejętność czytania argumentów wiersza poleceń może znacznie ułatwić pracę z programami w trybie konsolowym.
+Każdy programista wie, że w świecie programowania czasem trzeba mieć możliwość dostosowania działania programu w zależności od zmiennych warunków zewnętrznych. W przypadku aplikacji konsolowych, jednym z najprostszych sposobów na to jest używanie argumentów wiersza poleceń. Pozwala to na przekazywanie programowi informacji w momencie wywołania go, co może znacznie ułatwić pracę i uczynić program bardziej elastycznym. W tym artykule dowiesz się, jak czytać argumenty wiersza poleceń w języku TypeScript.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby czytać argumenty wiersza poleceń w języku TypeScript, należy użyć wbudowanego modułu "process". Ten moduł umożliwia dostęp do wszystkich argumentów przekazanych podczas uruchamiania programu. Poniżej przedstawiono przykładowy kod, który przedstawia, jak odczytać argumenty wiersza poleceń i wyświetlić je w konsoli.
+Aby odczytać argumenty wiersza poleceń w TypeScript, najpierw musimy zainstalować i skonfigurować odpowiednie narzędzia. Przede wszystkim, potrzebujemy odpowiedniej wersji Node.js na naszej maszynie. Następnie, możemy zainstalować pakiet commander za pomocą managera pakietów npm, wpisując w terminalu komendę:
 
 ```TypeScript
-const args = process.argv.slice(2);
-console.log(args);
+npm install commander
 ```
 
-W tym przykładzie zmienna "args" zawiera tablicę wszystkich argumentów przekazanych wierszu poleceń. Dzięki temu możemy łatwo operować na przekazywanych argumentach i wykorzystać je w naszym programie. Poniżej znajduje się przykładowy wynik wyświetlony w konsoli.
+Teraz, możemy przejść do tworzenia pliku TypeScript, w którym będziemy czytać argumenty wiersza poleceń. Pamiętaj, aby ustawić konfigurację kompilatora, aby wykorzystywał moduł "commonjs". Następnie, możemy zaimportować pakiet commander i utworzyć nową instancję klasy Command. W jej konstruktorze, możemy przekazać aliasy oraz opisy argumentów, które chcemy obsługiwać. Na przykład:
 
-```
-node index.ts argument1 argument2 argument3
+```TypeScript
+import {Command} from 'commander';
+
+const program = new Command();
+
+program
+  .option('-f, --file <filePath>', 'ścieżka do pliku')
+  .option('-d, --debug', 'włącz tryb debugowania')
+  .parse(process.argv);
 ```
 
-Wyjście:
-```
-[ 'argument1', 'argument2', 'argument3']
-```
+Na koniec, wywołujemy metodę `parse()`, przekazując jej tablicę argumentów wiersza poleceń, otrzymaną dzięki obiektowi `process`, który znajduje się w module "node". Teraz, możemy odczytać wartości naszych argumentów korzystając z właściwości obiektu `program`. Na przykład, jeśli użytkownik wpisze w terminalu komendę "node index.js -f test.txt -d", będziemy mogli odwołać się do wartości argumentów poleceniami `program.file` oraz `program.debug`.
 
 ## Deep Dive
 
-Warto zauważyć, że pierwszy element tablicy "process.argv" zawsze będzie zawierał ścieżkę do aplikacji Node.js, a drugi element będzie zawierał ścieżkę do uruchomionego pliku. Dzięki temu nasze działania mogą być dostosowane do różnych środowisk uruchomieniowych.
+Powyżej przedstawiliśmy najprostszy przykład użycia pakietu commander. Jednak, biblioteka ta oferuje wiele innych funkcjonalności, takich jak obsługa wyjątków czy walidacja argumentów. Możliwości jest wiele, a dokładny opis ich działania można znaleźć w oficjalnej dokumentacji.
 
-Ponadto, do manipulacji argumentami wiersza poleceń możemy wykorzystać również wbudowany moduł "yargs". Ten moduł wykorzystuje strukturę linii poleceń i umożliwia łatwiejsze i bardziej elastyczne parsowanie argumentów. Przykładowy kod wykorzystujący moduł "yargs" mogłby wyglądać tak:
+## Zobacz też
 
-```TypeScript
-import yargs from 'yargs';
-
-const args = yargs(process.argv.slice(2)).argv;
-console.log(args);
-```
-
-W ten sposób możemy dodatkowo przypisać wartości i opcje do poszczególnych argumentów, co czyni nasz kod bardziej przejrzystym i dostępnych dla innych deweloperów.
-
-## Zobacz również
-
-- [Dokumentacja wbudowanego modułu "process"](https://nodejs.org/api/process.html)
-- [Dokumentacja modułu "yargs"](https://www.npmjs.com/package/yargs)
+- [Oficjalna dokumentacja pakietu commander](https://www.npmjs.com/package/commander)
+- [Dokumentacja dla modułu "node" - obiekt process](https://nodejs.org/dist/latest-v8.x/docs/api/process.html)

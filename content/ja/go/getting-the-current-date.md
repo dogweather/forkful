@@ -1,67 +1,69 @@
 ---
 title:                "Go: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ日付を取得するのか？
+## なぜ
 
-プログラミングにおいて、現在の日付を取得することは重要なタスクの一つです。Go言語では、現在の日付を取得する方法が非常に簡単であり、使いやすいライブラリがたくさんあります。さあ、Go言語で現在の日付を取得する方法を学びましょう！
+Goプログラミングの魅力の一つに、時間や日付を簡単に取得できることがあります。日付が必要なアプリケーションを作成する際に、Go言語の日付の取得機能を活用することで、コーディングをスムーズに進めることができます。
 
-## Go言語で日付を取得する方法
+## 方法
 
-日付を取得する方法にはいくつかの方法がありますが、今回は標準ライブラリである`time`パッケージを使用する方法を紹介します。まずは以下のように`time`パッケージをインポートします。
+まず、Go言語で日付を取得するためには、標準ライブラリの"time"パッケージを使用します。具体的には、`Now()`関数を使用することで現在時刻を取得することができます。
 
-```
-import "time"
-```
+```Go
+package main
 
-次に、現在の日付を取得するには`time.Now()`関数を使用します。その後、取得した日付を表示するために`fmt`パッケージをインポートし、`Printf()`関数を使用します。
+import (
+    "fmt"
+    "time"
+)
 
-```
-currentDate := time.Now()
-fmt.Printf("Current date is: %v\n", currentDate)
-```
-
-もし日付の形式を変更したい場合は、`Format()`関数を使用することで指定した形式で日付を取得することができます。
-
-```
-currentDate := time.Now()
-dateString := currentDate.Format("2006-01-02")
-fmt.Printf("Current date is: %v\n", dateString)
+func main() {
+    currentTime := time.Now()
+    fmt.Println("今日の日付は、", currentTime.Format("2006年01月02日です。"))
+}
 ```
 
-上記のコードを実行すると、現在の日付が`2006-01-02`の形式(年-月-日)で表示されます。心配しないでください、この形式を決めたのはGo言語の開発者ではなく、一般的な日付のフォーマットが難しすぎるという理由からです。
+上記のコードを実行すると、現在の日付を`YYYY年MM月DD日`の形式で出力します。
 
-## 深堀り：日付を取得する方法
+また、特定の日付を指定して取得することもできます。例えば、2021年4月1日の日付を取得する場合は、`Date()`関数を使用します。
 
-`time`パッケージには日付を取得するだけでなく、日付の計算や比較を行うための便利な関数があります。例えば、今日から1ヶ月後の日付を取得するには以下のように`AddDate()`関数を使用します。
+```Go
+package main
 
-```
-currentDate := time.Now()
-nextMonth := currentDate.AddDate(0, 1, 0) // 1年後の日付を取得
-fmt.Printf("Next month is: %v\n", nextMonth)
-```
+import (
+    "fmt"
+    "time"
+)
 
-また、日付の比較をする場合は`Equal()`や`Before()`、`After()`などの関数を使用することで簡単に比較ができます。
-
-```
-currentDate := time.Now()
-otherDate := time.Date(2020, time.January, 1, 0, 0, 0, 0, time.UTC)
-fmt.Println("Is current date before 2020/01/01 ?", currentDate.Before(otherDate)) // trueを出力
+func main() {
+    currentDate := time.Date(2021, 4, 1, 0, 0, 0, 0, time.UTC)
+    fmt.Println("指定した日付は、", currentDate.Format("2006年01月02日です。"))
+}
 ```
 
-さらに詳しい情報や他の便利な関数については、公式ドキュメントを参照してください。
+出力結果は以下のようになります。
 
-## ぜひ参考にしてみてください！
+```bash
+指定した日付は、 2021年04月01日です。
+```
 
-今回はGo言語で現在の日付を取得する方法について紹介しました。簡単なコードで日付を取得し、さまざまな日付操作ができるので、ぜひ参考にしてみてください！
+## 詳細を調べる
 
-## 関連リンク
+日付の取得については、Go言語の公式ドキュメントに詳しく記載されています。`Now()`や`Date()`以外にも、曜日やタイムゾーンの取得など、様々な用途で使用できる関数が存在します。
 
-- timeパッケージのドキュメント：https://golang.org/pkg/time/
-- 日付のフォーマットに関する記事：https://yourbasic.org/golang/format-parse-string-time-date-example/
-- 日付比較に関する解説：https://golangcode.com/date-comparisons/
+また、日付のフォーマットについても詳しく説明されており、カスタマイズすることで自分の希望通りの形式で日付を出力することができます。
+
+## 他にも参考になるリソース
+
+- [Go言語公式ドキュメント](https://go.dev/)
+- [A Tour of Go 日付と時刻](https://go-tour-jp.appspot.com/basics/16)
+- [無闇イコール無駄！？Go における時間パッケージの活用法](https://ferret-plus.com/8566)
+- [Go で日付の扱い方をマスターしよう](https://quotesmeme.com/programming/golang-date-format-date-format-golang-date-format-examples-e6b38d4e891c?gi=881ce2961aeb)

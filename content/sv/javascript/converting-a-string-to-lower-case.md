@@ -1,35 +1,41 @@
 ---
-title:                "Javascript: Omvandla en sträng till gemener"
+title:                "Javascript: Konvertera en sträng till gemener"
+simple_title:         "Konvertera en sträng till gemener"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att konvertera en sträng till gemener är en vanlig uppgift när man arbetar med Javascript. Det kan komma till nytta när man behöver jämföra strängar eller när man vill justera användarinput för att säkerställa konsistens.
+
+Att konvertera en sträng till gemener kan vara användbart när man vill jämföra två strängar utan att ta hänsyn till om de är skrivna med stora eller små bokstäver.
 
 ## Hur man gör det
-Du kan enkelt konvertera en sträng till gemener genom att använda metoden `toLowerCase()`. Se nedan för ett exempel:
+
+För att konvertera en sträng till gemener i Javascript kan du använda metoden .toLowerCase() tillsammans med din strängvariabel.
+
 ```Javascript
-var str = "Hej Världen!";
-var lowerStr = str.toLowerCase();
-console.log(lowerStr);
-// Output: "hej världen!"
+let sträng = "HEJ HEJ";
+console.log(sträng.toLowerCase());
 ```
 
-Du kan också använda `toLowerCase()` tillsammans med en variabel, som i exemplet nedan:
+Output: hej hej
+
 ```Javascript
-var name = "Anna";
-var lowerName = name.toLowerCase();
-console.log("Hej, " + lowerName + "!");
-// Output: "Hej, anna!"
+let sträng = "Hello World";
+console.log(sträng.toLowerCase());
 ```
 
-## En djupdykning
-När du använder `toLowerCase()` skapar du en ny sträng som innehåller samma tecken som den ursprungliga strängen, men alla bokstäver är omvandlade till gemener. Detta kan vara användbart när du vill ignorera skillnader i storlek när du jämför strängar.
+ Output: hello world
 
-## Se också
-- [Javascript String toLowerCase() metod](https://www.w3schools.com/jsref/jsref_tolowercase.asp)
-- [String.prototype.toLowerCase() MDN-dokumentation](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+## Djupdykning
+
+Metoden .toLowerCase() ändrar alla stora bokstäver i en sträng till gemener. Den är dock inte anpassad för specifika språk och kan därför ge olika resultat beroende på vilken teckenkodning som används. Till exempel kan bokstaven "Å" i det svenska alfabetet ändras till "å" eller "ä" beroende på teckenkodning. Detta kan leda till problem när man jämför strängar och förväntar sig exakt matchning.
+
+## Se även
+
+- [String.prototype.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Unicode och teckenkodning i JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

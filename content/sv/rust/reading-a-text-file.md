@@ -1,50 +1,51 @@
 ---
 title:                "Rust: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Rost är ett relativt nytt programmeringsspråk som har fått ett stort uppsving på senare år och har blivit ett populärt val för många utvecklare. Ett av de områden där Rost verkligen skiner är hanteringen av textfiler. Om du någonsin har behövt läsa innehållet i en textfil i ett program, kommer du att vilja läsa denna artikel för att lära dig hur man gör det på ett enkelt sätt med Rost.
-
 ## Varför
-Att läsa en textfil är en vanlig uppgift som kan behövas för att bearbeta data eller för att skapa innehåll för en webbapplikation. Med Rost är det möjligt att läsa textfiler på ett effektivt sätt tack vare det robusta standardbiblioteket och de inbyggda funktionerna för filhantering. Om du vill lära dig hur man kan använda Rost för att läsa textfiler, fortsätt läsa!
 
-## Hur man gör
-För att läsa en textfil i Rost, behöver du först importera standardbibliotekets "io" modul och öppna filen med hjälp av "File" struct. Sedan kan du använda "read_to_string" funktionen för att läsa in innehållet i filen som en sträng.
+Att läsa en textfil kan verka som en enkel uppgift, men med Rusts kraftfulla funktioner och prestanda kan det leda till bättre och snabbare program. Läs vidare för att lära dig mer om hur du kan använda Rust för att läsa och hantera textfiler.
+
+## Så här gör du
+
+För att läsa en textfil i Rust behöver du först skapa en "File" variabel som är kopplad till den specifika textfilen. Detta kan göras med hjälp av "File::open()" funktionen.
 
 ```Rust
-use std::io::prelude::*;
-use std::fs::File;
-
-let mut fil = Fil::öppna("exempel.txt")?;
-låt mut innehåll = String::ny();
-fil.read_to_string(&mut innehåll)?;
+let file = File::open("textfil.txt");
 ```
 
-När du har läst in filens innehåll kan du sedan bearbeta det på olika sätt beroende på dina behov. Till exempel kan du dela upp innehållet i rader eller ord för att analysera det.
-
-## Djupdykning
-Att läsa textfiler kan ibland bli komplicerat om de innehåller speciella tecken eller är större än datorns minnesgräns. För att hantera detta kan du använda "BufReader" för att läsa in filen block för block och undvika överbelastning av minnet. Du kan också använda "lines" funktionen för att läsa in filen rad för rad istället för allt på en gång.
+Nästa steg är att skapa en "BufReader" som hjälper till att läsa filen rad för rad. För att göra detta använder vi "BufReader::new()" funktionen och förser den med vår "File" variabel.
 
 ```Rust
-use std::io::BufReader;
-use std::io::prelude::*;
-use std::fs::File;
+let reader = BufReader::new(file);
+```
 
-let fil = Fil::öppna("stor_fil.txt")?;
-låt buffertläsare = BufReader::ny(fil);
-för rad i buflenlinjer (). {
-    // gör något med raden
+Nu kan vi använda en "for-loop" för att läsa igenom varje rad i filen och skriva ut den på skärmen.
+
+```Rust
+for line in reader.lines() {
+    let line = line.unwrap();
+    println!("{}", line);
 }
 ```
 
-Ett annat tips är att använda "try!" funktionen för att hantera eventuella fel som kan uppstå vid läsning av filen.
+## Djupdykning
 
-## Se också
-* Rost standardbibliotekets filhanteringsdokumentation (https://doc.rust-lang.org/std/fs/index.html)
-* En djupare förståelse för filhantering i Rost (https://dzone.com/articles/file-handling-in-rust)
+En av de största fördelarna med att läsa en textfil i Rust är möjligheten att läsa och hantera filen på ett säkert och effektivt sätt. Med hjälp av Rusts "match" uttryck och "Result" typ kan vi kontrollera för eventuella fel under läsprocessen och hantera dem på ett strukturerat sätt.
 
-Tack för att du läst vår guide för att läsa textfiler med Rost. Förhoppningsvis har du nu en bättre förståelse för hur man kan hantera filer i detta kraftfulla programmeringsspråk. Glöm inte att utforska fler möjligheter för filhantering och fortsätta lära dig mer om Rost!
+Det är också möjligt att läsa enbart en del av en textfil istället för hela filen. Detta kan utföras med hjälp av "seek" funktionen som flyttar läspositionen till en specifik punkt i filen.
+
+Genom att kombinera dessa tekniker kan du skriva robusta och effektiva program för att läsa och hantera textfiler.
+
+## Se även
+
+- [Officiell Rust dokumentation för att läsa filer](https://doc.rust-lang.org/std/fs/struct.File.html)
+- [Rust By Example - Filhantering](https://doc.rust-lang.org/stable/rust-by-example/std_misc/file.html)
+- [Läs filer med BufReader i Rust](https://levelup.gitconnected.com/reading-files-line-by-line-in-rust-17d1c2a0b8e7)

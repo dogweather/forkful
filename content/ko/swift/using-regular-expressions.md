@@ -1,50 +1,46 @@
 ---
-title:                "Swift: 정규 표현식 사용하기"
+title:                "Swift: 정규 표현식을 사용하는 방법"
+simple_title:         "정규 표현식을 사용하는 방법"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+# 왜 정규 표현식을 사용해야 할까요?
 
-정규표현식을 사용하는 이유는 복잡한 문자열 패턴을 쉽게 처리하기 위해서입니다. 정규표현식은 매우 강력한 도구이며 여러분의 코드를 간결하고 효율적으로 만듭니다.
+정규 표현식은 문자열에서 패턴을 찾아내고 대체 또는 추출하는 데 유용한 도구입니다. 예를 들어, 이메일 주소나 전화번호, 우편번호 등의 형식을 검증하거나 특정 단어나 문구를 찾는 등의 작업에 쉽게 사용할 수 있습니다.
 
-## 어떻게 해야 할까요?
+# 사용 방법
 
-정규표현식을 사용하여 문자열에서 특정 패턴을 찾는 방법은 매우 간단합니다. 먼저, 다음과 같이 ```Swift let pattern = "apple"``` 패턴을 정의합니다.
-
-```Swift
-let pattern = "apple"
-```
-
-그런 다음, ```~.match(text: String)``` 메서드를 사용하여 특정 텍스트에서 패턴을 찾을 수 있습니다. 예를 들어, "I love eating apples!" 이라는 텍스트에서 패턴을 찾기 위해서는 다음과 같이 코드를 작성할 수 있습니다.
+정규 표현식을 사용하는 첫 번째 단계는 패턴을 정의하는 것입니다. 우선 `$`로 시작하고 `$`로 끝나는 정규 표현식 패턴 문자열을 생성합니다. 이 때, 패턴에 맞는 문자열이 있는지 찾아보고 싶은 원본 문자열을 입력합니다.
 
 ```Swift
-let text = "I love eating apples!"
-let results = pattern.match(text: text)
-print(results) // Output: ["apple"]
+let pattern = "^A\\d{2,3}$"
+let original = "A123"
+
+let result = original.range(of: pattern, options: .regularExpression)
+if let range = result {
+    print("\(original)는 정규 표현식 패턴 \(pattern)에 맞습니다.")
+} else {
+    print("\(original)는 정규 표현식 패턴 \(pattern)에 맞지 않습니다.")
+}
+
+//result: A123는 정규 표현식 패턴 ^A\\d{2,3}$에 맞습니다.
 ```
 
-위 코드를 실행하면 이 코드에서 "apple"이라는 패턴을 발견한 것을 볼 수 있습니다.
+위 예시에서는 `^`로 시작하고 `\`를 이용해서 `\d`는 숫자를, `{}`는 개수를 정의합니다. 따라서 `A`로 시작하고 숫자 2~3개가 있는 문자열에 매칭됩니다.
 
-## 깊이 알아보기
+# 자세히 알아보기
 
-정규표현식은 강력한 도구이지만 항상 사용하기는 쉽지 않을 수 있습니다. 특히, 복잡한 패턴을 다룰 때는 더욱 그렇습니다. 따라서 몇 가지 유용한 팁을 공유하고자 합니다.
+만약 정규 표현식을 자세히 공부하고 싶다면, 다음 사이트를 참고해보세요.
+- [Swift에서 정규 표현식 사용하기](https://zeddios.tistory.com/325)
+- [정규 표현식을 사용한 문자열 작업하는 방법](https://learnappmaking.com/regex-swift-how-to)
 
-첫째, 패턴은 여러 개의 특수 문자를 사용하여 정의할 수 있습니다. 예를 들어, ```"a.b"``` 패턴을 정의하면 "a"와 "b" 사이에 어떤 문자가 오더라도 패턴이 일치하도록 할 수 있습니다.
+# 관련 자료
 
-둘째, 정규표현식은 옵셔널한 문자를 표현할 수 있습니다. 예를 들어, ```"a*"[^"b"]``` 패턴은 "a"로 시작하고 다음에 아무 문자가 올 수 있지만 "b"는 제외하도록 정의할 수 있습니다.
-
-셋째, 정규표현식에는 모든 문자를 일치시키는 메타 문자인 "."이 있습니다. 따라서 모든 문자와 일치시키고 싶을 때는 다음과 같이 간단한 패턴을 사용할 수 있습니다.
-
-```Swift
-let pattern = "."
-```
-
-## 같이 보기
-
-- [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [Regular Expression 101](https://regex101.com)
-- [Swift Regular Expressions Tutorial](https://www.raywenderlich.com/316-regular-expressions-tutorial-getting-started-with-nsregularexpression)
+- [Regular Expressions in Swift - WWDC 2016](https://developer.apple.com/videos/play/wwdc2016/408/)
+- [Swift by Sundell - Regular expressions in Swift](https://www.swiftbysundell.com/articles/regular-expressions-in-swift/)
+- [Regex in Swift with NSRegularExpression](https://www.appcoda.com/swift-regular-expression/)

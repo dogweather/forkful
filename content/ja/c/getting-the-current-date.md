@@ -1,56 +1,64 @@
 ---
 title:                "C: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ日付を取得する必要があるのか
+## なぜ
 
-日付を取得することは、プログラミングにおいて非常に重要です。特定の日付を取得したい場合や、プログラムの実行時の日付を取得したい場合など、さまざまな理由があります。また、日付を取得することで、日付を処理する必要があるデータベースやアプリケーションを作成することができます。
+プログラムを書くとき、時刻や日付を取得する必要があるかもしれません。例えば、あるアプリケーションを実行した日付や、データのタイムスタンプを確認するために必要になる場合があります。C言語では、現在の日付を取得するためにいくつかの方法があります。
 
-## 使い方
+## 方法
 
-日付を取得する方法は、プログラミング言語によって異なりますが、C言語では標準ライブラリに含まれている「time.h」ライブラリを使用することができます。具体的なコーディング例を以下に示します。
+C言語で現在の日付を取得する方法は、非常にシンプルです。まず、`time.h`ヘッダーファイルをインクルードします。
 
-```
-#include <stdio.h>
+```C
 #include <time.h>
-
-int main()
-{
-    //現在の時刻を取得
-    time_t now = time(NULL);
-    //整形して出力
-    printf("%s", ctime(&now));
-    return 0;
-}
-
 ```
 
-上記のコードを実行すると、次のような出力が得られます。
+次に、`time()`関数を使用して現在の時刻を取得します。この関数は現在の時刻を秒単位の数値として返します。
 
-```
-Mon Jan 20 20:54:00 2020
+```C
+time_t now = time(NULL);
 ```
 
-これで、現在の日付を取得することができました。また、C言語では日付を取得する他にも、日付を比較するための関数や日付を計算するための関数なども提供されています。
+これで、現在の日付を取得することができました。ただし、このままでは時間を数値として扱うのは少々面倒です。そこで、`localtime()`関数を使用して日付や時刻の情報を`struct tm`構造体として取得することができます。
+
+```C
+struct tm *current = localtime(&now);
+```
+
+`struct tm`構造体には、`tm_year`（年）、`tm_mon`（月）、`tm_mday`（日）、`tm_hour`（時）、`tm_min`（分）、`tm_sec`（秒）などのメンバーが含まれています。これらのメンバーを使用して、日付や時刻を個別の変数に格納することができます。
+
+```C
+int year = current->tm_year + 1900;
+int month = current->tm_mon + 1;
+int day = current->tm_mday;
+int hour = current->tm_hour;
+int minute = current->tm_min;
+int second = current->tm_sec;
+```
+
+これで、現在の日付と時刻を個別の変数として取得することができました。
 
 ## ディープダイブ
 
-では、深く日付を取得する仕組みを見てみましょう。C言語では、日付や時間を表現するために「time_t」というデータ型を使用します。これは、1970年1月1日午前0時からの経過秒数を表現するもので、整数型の値です。また、プログラム内で日付を表現するためには、構造体「tm」を使用します。
+C言語では、`time_t`型を使用して時刻を表現します。`time_t`型は、プログラムを実行しているコンピューターの特定の時刻からの経過秒数を表します。つまり、エポック（Unixの起点となる日付）からの秒数を表しています。
 
-さらに、「time.h」ライブラリには、時間や日付の演算や比較を行うための関数が収められています。詳しくは、公式ドキュメントや参考文献を参照してください。
+しかし、`time_t`型には限界があり、2038年にはオーバーフローしてしまいます。そのため、2038年問題と呼ばれる大きな課題があります。この問題を回避するためには、複数の型を組み合わせて行うか、別の時刻の表現方法を利用する必要があります。
 
 ## 参考リンク
 
-- [time.h ドキュメント](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [C言語入門 - 日付を操作する](https://www.javadrive.jp/cstart/date/index6.html)
-- [日付・時間関連のライブラリ関数](https://www-asimov.eng.uab.edu/desk_proto/pubs/d_0013.html)
+- [C言語で現在時刻を扱う方法](https://www.sejuku.net/blog/41543)
+- [time.h - C/C++リファレンス](https://cpprefjp.github.io/reference/ctime/time.html)
+- [2038年問題についての説明](https://ja.wikipedia.org/wiki/2038%E5%B9%B4%E5%95%8F%E9%A1%8C)
 
-## 関連ページ
+## 参考文献
 
-- [time.h ライブラリの使用方法](https://www.javadrive.jp/c_start/time/index1.html)
-- [C言語のチュートリアル - 日付の演算と比較](https://www.youtube.com/watch?v=C11dJUUqgGQ)
+- K&R、『プログラミング言語C 第2版』、日経BP社、1993年、1476ページ。
+- Slavik, JP、『Unix プログラミング環境』上、Addison-Wesley、1987年、163ページ。

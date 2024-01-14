@@ -1,38 +1,37 @@
 ---
-title:                "Elixir: Konvertering av streng til små bokstaver"
+title:                "Elixir: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å konvertere en tekststreng til små bokstaver (lower case) er en vanlig oppgave i mange programmeringsspråk, inkludert Elixir. Dette kan være nyttig for å sikre ensartethet og unngå feil når man sammenligner eller behandler tekststrenger.
+Å konvertere en streng til små bokstaver kan være nyttig for å sikre konsistens og nøyaktighet i koden din, spesielt når du jobber med data som bruker forskjellige bokstavstørrelser.
 
-# Hvordan
-
-For å konvertere en tekststreng til små bokstaver i Elixir, kan man bruke funksjonen `String.downcase/1`:
+## Hvordan
 
 ```Elixir
 iex> String.downcase("ELIXIR")
 "elixir"
 ```
 
-Man kan også bruke den til å konvertere en hele liste med tekststrenger samtidig ved å bruke `Enum.map/2`:
-
 ```Elixir
-iex> list = ["PROGRAMMERING", "ER", "GØY"]
-iex> Enum.map(list, &String.downcase/1)
-["programmering", "er", "gøy"]
+iex> String.downcase("HeLLo WorLD")
+"hello world"
 ```
 
-# Dypdykk
+## Dykk dypere
 
-Når man bruker `String.downcase/1`, vil den kontrollere hver enkelt bokstav i tekststrengen og erstatte alle store bokstaver med tilsvarende små bokstaver. Dette inkluderer også spesielle bokstaver i forskjellige alfabet, som for eksempel Æ, Ø og Å i det norske alfabetet. Det er viktig å være oppmerksom på at denne funksjonen kun konverterer bokstaver og ikke andre tegn, som tall eller symboler.
+Når du bruker funksjonen `String.downcase/1`, konverteres hver enkelt bokstav i strengen til sin tilsvarende små bokstav. Dette gjøres ved hjelp av Unicode-standardene, som håndterer spesielle bokstaver og tegn i tillegg til de vanlige alfabetbokstavene.
 
-# Se også
+For å ta det et steg videre kan du også bruke funksjonen `String.downcase!/1` for å konvertere strengen til små bokstaver uten å opprette en ny kopi. Dette kan være nyttig for å spare på minne og forbedre ytelsen i koden din.
 
-- Offisiell Elixir dokumentasjon: https://hexdocs.pm/elixir/String.html#downcase/1
-- "Gjør deg kjent med Elixir" kurs (på norsk): https://www.udemy.com/course/gjor-deg-kjent-med-elixir/?referralCode=A74A95FA9E95006E8327
+## Se også
+
+- [Elixir String Modulen](https://hexdocs.pm/elixir/String.html)
+- [Unicode Standardene](https://www.unicode.org/standard/standard.html)

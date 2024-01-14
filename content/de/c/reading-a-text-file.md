@@ -1,66 +1,71 @@
 ---
-title:                "C: Das Lesen einer Textdatei"
+title:                "C: Textdatei lesen"
+simple_title:         "Textdatei lesen"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
+Textdateien sind ein häufig verwendeter Datentyp in der Programmierung, insbesondere in der C-Programmierung. Das Lesen von Textdateien kann eine nützliche Fähigkeit sein, um Daten aus externen Quellen in Ihr Programm zu integrieren. In diesem Blogbeitrag werden wir uns damit beschäftigen, wie man Textdateien in C liest.
 
-Das Lesen von Textdateien ist ein häufiges Szenario in der Programmierung. Textdateien werden verwendet, um Daten zu speichern, die später von einem Programm gelesen und verarbeitet werden können. Das Lesen von Textdateien ist eine wichtige Fähigkeit, die jeder Programmierer beherrschen sollte.
-
-# Wie es funktioniert
-
-Um eine Textdatei in C zu lesen, müssen wir zunächst die notwendigen Bibliotheken einbinden. Eine schnelle Google-Suche kann Ihnen dabei helfen, die spezifischen Bibliotheken für Ihr Betriebssystem zu finden.
-
-Sobald die notwendigen Bibliotheken eingebunden sind, können wir mit dem eigentlichen Lesen der Datei beginnen. Hier ist ein Beispielcode, der eine Textdatei mit dem Namen "test.txt" liest und ihren Inhalt auf der Konsole ausgibt:
+## Wie geht es
+Um eine Textdatei in C zu lesen, sind einige Schritte erforderlich. Zuerst müssen Sie eine Verbindung zur Datei herstellen, dann müssen Sie die Datei öffnen und schließlich müssen Sie den Inhalt der Datei lesen. Wir werden diese Schritte im Folgenden detailliert beschreiben.
 
 ```C
 #include <stdio.h>
-#include <stdlib.h>
-
 int main()
 {
+    // Datei-Zeiger erstellen
     FILE *datei;
-    char c;
 
-    // Öffne die Datei "test.txt" im Lesemodus
-    datei = fopen("test.txt", "r");
+    // Datei öffnen
+    datei = fopen("beispiel.txt", "r");
 
-    // Überprüfe, ob das Öffnen erfolgreich war
+    // Überprüfen, ob Datei geöffnet wurde
     if (datei == NULL)
     {
         printf("Fehler beim Öffnen der Datei!");
-        exit(1);
+        return 1;
     }
 
-    // Solange das Dateiende noch nicht erreicht ist, lese Zeichen für Zeichen
-    while ((c = fgetc(datei)) != EOF)
+    // Variablen zum Lesen der Datei erstellen
+    char zeile[100];
+
+    // Datei zeilenweise lesen und ausgeben
+    while (fgets(zeile, 100, datei) != NULL)
     {
-        // Gib jedes Zeichen auf der Konsole aus
-        printf("%c", c);
+        printf("%s", zeile);
     }
 
-    // Schließe die Datei
+    // Datei schließen
     fclose(datei);
 
     return 0;
 }
 ```
 
-Das obige Beispiel öffnet die Textdatei "test.txt" im Lesemodus und liest sie Zeichen für Zeichen. Mit dem `fgetc()` Befehl können wir auf das nächste Zeichen in der Datei zugreifen. Die Schleife läuft solange, bis das Dateiende erreicht ist. Der Rückgabewert der `fgetc()` Funktion ist der gelesene Buchstabe als `char` Typ. Dieser wird dann auf der Konsole ausgegeben.
+In diesem Beispiel öffnen wir eine Textdatei namens "beispiel.txt" und lesen sie zeilenweise mit der Funktion `fgets()`. Die `while`-Schleife wird so lange ausgeführt, bis das Ende der Datei erreicht ist. Schließlich wird die Datei mit `fclose()` wieder geschlossen.
 
-# Tiefergehende Informationen
+Die Ausgabe für diese Datei könnte so aussehen:
 
-Das Lesen von Textdateien kann auch komplexer gestaltet werden, indem man zum Beispiel bestimmte Zeichen oder Wörter sucht oder die Datei Schritt für Schritt durchsucht. Dafür gibt es verschiedene Funktionen in C, wie zum Beispiel `fgets()` oder `fscanf()`, die nützlich sein können.
+```
+Das ist Zeile 1
+Das ist Zeile 2
+Das ist Zeile 3
+```
 
-Außerdem müssen wir beachten, dass während des Lesens von Dateien möglicherweise Fehler auftreten können. Daher ist es wichtig, die Funktion `ferror()` zu verwenden, um zu prüfen, ob ein Fehler aufgetreten ist.
+## Eine tiefergehende Erklärung
+Beim Lesen einer Textdatei in C gibt es einige wichtige Konzepte zu beachten. Der erste ist die Verwendung von `FILE`-Pointern, die es uns ermöglichen, eine Verbindung zu einer Datei herzustellen. Der zweite ist die Verwendung von Zeichenarrays für das Lesen von Daten aus der Datei. Und schließlich gibt es einige Funktionen, die wir verwenden können, um Daten aus der Datei zu lesen, wie zum Beispiel `fgets()`, `fscanf()` und `getc()`.
 
-Es gibt auch verschiedene Möglichkeiten, Textdateien zu schreiben, zu bearbeiten und zu löschen, die im Zusammenhang mit dem Lesen wichtig sein können. Eine gründlichere Auseinandersetzung mit diesen Themen kann daher von Vorteil sein.
+Es ist auch wichtig zu beachten, dass beim Öffnen einer Datei zwei erste Argumente in `fopen()` verwendet werden. Der erste ist der Dateiname und der zweite gibt den Modus an, in dem die Datei geöffnet wird. In unserem Beispiel verwenden wir "r" für den Lesezugriff auf die Datei, aber es gibt auch andere Modi wie "w" für den Schreibzugriff oder "a" für das Anhängen von Daten an eine Datei.
 
-# Siehe auch
+Für eine detailliertere Erklärung der einzelnen Funktionen und Konzepte empfehle ich Ihnen, weitere Ressourcen zu konsultieren, die am Ende dieses Artikels aufgeführt sind.
 
-- [C-Programmierungstutorial (auf Deutsch)](https://www.c-howto.de/)
-- [Bibliotheksreferenz für die C-Programmierung](https://www.cplusplus.com/reference/cstdio/) (Englisch)
+## Siehe auch
+- [C-Programmierung: Lesen von Dateien](https://www.studytonight.com/c/file-handling-in-c.php)
+- [C-Programmierung: Dateien öffnen und schließen](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [C-Dokumentation: Funktionen zum Lesen von Dateien](https://en.cppreference.com/w/c/io/fopen)

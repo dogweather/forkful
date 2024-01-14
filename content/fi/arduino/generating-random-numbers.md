@@ -1,43 +1,45 @@
 ---
-title:                "Arduino: Satunnaislukujen generointi"
+title:                "Arduino: Satunnaisten lukujen luominen"
+simple_title:         "Satunnaisten lukujen luominen"
 programming_language: "Arduino"
-category:             "Numbers"
+category:             "Arduino"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi?
 
-Kuvittele, että sinulla on Arduino-projekti, joka vaatii satunnaisia numeroita. Ehkä haluat simulaattorin tai arpajaisen pienen pelin osaksi. Tässä tapauksessa random number generator on juuri se mitä tarvitset! Se on hyödyllinen ja hauska tapa lisätä arvaamattomuutta ja mielenkiintoa projektiisi.
+Monet Arduino-projektit vaativat satunnaisia lukuja, kuten arpajaiset tai pelit. Satunnaisuus lisää jännitystä ja vaihtelua projekteihin. Onneksi Arduinon kirjastossa on helppokäyttöinen toiminto satunnaislukujen luomiseksi.
 
-## Kuinka
+# Kuinka?
 
-Koodin kirjoittaminen on helppoa ja nopeaa Arduino-ohjelmointiympäristössä. Vain muutamalla rivillä koodia voit luoda random number generatorin:
-
-```Arduino
-int randomNum = random(0, 10); // Generoi satunnaisen numeron välillä 0 ja 10
-
-Serial.println(randomNum); // Tulostaa satunnaisen numeron sarjaporttiin
-```
-
-Tässä esimerkissä käytetään `random()` -funktiota, joka ottaa kaksi parametria: minimi- ja maksimiarvot halutulle numeron välille. Voit muuttaa näitä lukuja tarpeidesi mukaan.
-
-Voit myös käyttää `randomSeed()` -funktiota, jos haluat asettaa oman alkunumerosi. Tämä on hyödyllistä esimerkiksi, kun haluat generoida samat satunnaiset numerot jokaisella käynnistyksellä.
+`Arduino -kirjasto tarjoaa alustan satunnaislukujen luomiselle. Tämä tapahtuu käyttämällä `random()` -funktiota ja määrittämällä haluttu vaihteluväli.` Arduino -funktio tuottaa kokonaislukuja (integers), mutta se voidaan muuntaa halutuksi muotoon.`
 
 ```Arduino
-randomSeed(123); // Asettaa alkunumeron 123:ksi
-int randomNum = random(0, 10); // Generoi uuden satunnaisen numeron välillä 0 ja 10, mutta se pysyy samana jokaisella käynnistyksellä
+int satunnaisluku = random(1, 100); // luo kokonaisluvun väliltä 1-100
+float satunnaisluku = random(0.0, 1.0); // luo liukuluvun väliltä 0.0-1.0
 ```
 
-## Syvempi sukellus
+Tässä esimerkissä luomme satunnaisen ledin syttyneen vaihtelemaan 15-30 minuutin välein.
 
-Random number generatorin taustalla on pseudorandom-algoritmi, joka tuottaa tiettyä logiikkaa noudattaen satunnaisia numeroita. Tämän vuoksi vaikka tuloksena olevat numerot ovatkin sattumanvaraisia, ne eivät ole täysin arvaamattomia. Tämä on tärkeää huomioida, jos luot esimerkiksi arpajaispelin, jossa tarvitaan täydellistä arvaamattomuutta.
+```Arduino
+int minuutit = random(15, 30);
+delay(minuutit * 60000); // muutetaan minuutit millisekunneiksi
+digitalWrite(LED_PIN, HIGH); // ledi syttyy
+```
 
-Voit myös tutkia muita `random()` -funktion vaihtoehtoja, kuten `randomSeed()` -funktion jatkoksi luotuja `srandom()` ja `randomize()` -funktioita. Näiden käyttö voi mahdollistaa erilaisten arvojen generoimisen ja mahdollisesti paremman satunnaisuuden.
+# Syvemmälle
 
-## Katso myös
+Arduino käyttää sisäistä satunnaislukugeneraattoriaan (`randomSeed()`) luodakseen satunnaislukuja.` Tämä funktio luo uuden alkuarvon (`seed`), joka perustuu laitteen sisäiseen kelloon.` Tämä varmistaa, että saamme jokaisella kerralla erilaisen satunnaisluvun.`
 
-- [Arduino Reference: random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Blogipostaus: Tehtävä 1 – Random numero mikrokontrollerilla](https://roionalts.wordpress.com/2013/06/04/tehtava-1-random-numero-mikrokontrollerilla/)
-- [Arduino Random Numbers: Building a Better Random Function](https://forum.arduino.cc/index.php?topic=437149.0)
+Voit myös määrittää `randomSeed()` -funktion manuaalisesti antamalla sille halutun alkuarvon, mikä on hyödyllistä testauksessa tai tiettyjen lukujen generoimisessa.
+
+` Arduino tarjoaa myös muita satunnaisuutta liittyviä funktioita, kuten `randomSeed()` -funktio, joka luo jatkuvasti satunnaisia lukuja.` Näitä funktioita voi tutkia lisää Arduinon dokumentaatiosta.
+
+# Katso myös
+
+- [Arduino -kirjaston dokumentaatio Satunnainen](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Käyttäjäkysymys Stack Overflow -sivustolla satunnaislukujen luomisesta Arduinolla](https://stackoverflow.com/questions/12702260/how-to-generate-a-random-number-in-arduino)
+- [Instructables -opas satunnaislukujen käytöstä Arduinossa](https://www.instructables.com/id/Using-Random-Numbers-With-Arduino/)

@@ -1,53 +1,43 @@
 ---
-title:                "C#: Ekstrakcja podciągów"
+title:                "C#: Wycinanie podciągów"
+simple_title:         "Wycinanie podciągów"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Często podczas programowania musimy pracować ze stringami, czyli ciągami znaków. Jedną z przydatnych operacji na stringach jest wyciąganie podciągów, czyli fragmentów tekstu. W tym wpisie dowiesz się, dlaczego wyciąganie podciągów może być przydatne i jak to zrobić w języku C#.
+Często w programowaniu musimy manipulować tym, co nazywamy "łańcuchami znaków" - czyli ciągami liter, cyfr i innych symboli. Czasami potrzebujemy wyodrębnić część tego łańcucha, np. aby uzyskać tylko imię osoby z pełnego adresu e-mail. W takim przypadku przydaje się funkcja "SubString", która pozwala na wybranie określonej części łańcucha, oraz obliczenie jego długości. W tym artykule dowiesz się, jak wykorzystać tę funkcję w języku C#.
 
 ## Jak to zrobić
-
-Do wyciągania podciągów w języku C# możemy użyć metody Substring(). Przyjmuje ona dwa parametry: początkowy indeks oraz długość podciągu. Dzięki temu możemy określić, z którego indeksu chcemy zacząć wyciągać podciąg i jakiej długości ma być ten podciąg.
-
-```C#
-// Przykładowy string
-string name = "Katarzyna";
-
-// Wyciągnięcie podciągu zaczynającego się od indeksu 2 o długości 6
-string substring = name.Substring(2, 6);
-
-// Wyświetlenie wyniku
-Console.WriteLine(substring);
-// Output: tarzyn
-```
-
-Możemy także wykorzystać indeksy ujemne, aby wyciągać podciągi od końca stringa.
+Aby skorzystać z funkcji "SubString" w C#, musimy najpierw utworzyć zmienną typu "string", czyli łańcucha znaków. Będziemy też potrzebowali zmiennej oznaczającej pozycję, od której chcemy wyodrębnić łańcuch, oraz zmiennej określającej długość tego fragmentu. Poniżej przedstawiam przykładowy kod, wykorzystujący funkcję "SubString" do wyodrębnienia imienia ze stringa zawierającego imię i nazwisko:
 
 ```C#
-// Przykładowy string
-string phrase = "C# to jest super język";
+string imieNazwisko = "Jan Kowalski";
 
-// Wyciągnięcie podciągu zaczynającego się od przedostatniego indeksu o długości 8
-string substring = phrase.Substring(phrase.Length - 2, 8);
+string imie = imieNazwisko.SubString(0, 3); //w tym przypadku wybieramy pierwsze 3 znaki
 
-// Wyświetlenie wyniku
-Console.WriteLine(substring);
-// Output: język
+Console.Write(imie);
 ```
 
-Pamiętajmy, że indeksowanie w języku C# zaczyna się od 0, więc jeśli chcemy wyciągnąć pierwszy znak ze stringa, powinniśmy podać indeks 0.
+Ten kod wyświetli nam na ekranie "Jan", ponieważ funkcja "SubString" zwraca fragment łańcucha od podanej pozycji (pierwszy parametr), o określonej długości (drugi parametr). Jeśli chcesz wybierać fragmenty łańcucha w oparciu o inne warunki, zapoznaj się z dokumentacją dotyczącą funkcji "SubString" w języku C#.
+
+Możesz również wykorzystać funkcję "SubString" do obliczenia długości wybranego fragmentu. W tym celu należy przypisać wynik funkcji do zmiennej typu "int", np:
+
+```C#
+string imieNazwisko = "Jan Kowalski";
+
+int dlugoscImienia = imieNazwisko.SubString(0, 3).Length;
+
+Console.Write(dlugoscImienia); //wyświetli wartość 3
+```
 
 ## Deep Dive
+Funkcja "SubString" w języku C# jest bardzo pomocna, gdy potrzebujemy wyodrębnić część łańcucha znaków. Jednak warto pamiętać, że działanie tej funkcji może być różne, w zależności od wykorzystywanej implementacji języka. W przypadku C#, funkcja "SubString" wybiera fragment łańcucha, licząc od pozycji 0. Inne języki mogą działać w inny sposób, dlatego warto dokładnie zapoznać się z dokumentacją podczas korzystania z tej funkcji w różnych językach.
 
-Metoda Substring() działa na zasadzie "od-czego-do-czego", czyli podajemy początkowy indeks oraz długość podciągu, który chcemy wyciągnąć. Możemy również użyć tylko jednego parametru - początkowego indeksu, wtedy Substring() wyciągnie podciąg od podanego indeksu do końca stringa. Istnieje także druga wersja metody, która przyjmuje tylko dwa parametry - początkowy indeks oraz zmienną typu boolean, która określa czy chcemy zwrócić podciąg od danego indeksu włącznie czy wyłącznie.
-
-## Zobacz też
-
-- [Dokumentacja metody Substring() w języku C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.substring?view=net-5.0)
-- [Szybki przewodnik po operacjach na stringach w C#](https://krispin-gs.github.io/strukturydanych/string/cSharp strings.html)
+## Zobacz również
+- Dokumentacja funkcji "SubString" w języku C# (https://docs.microsoft.com/pl-pl/dotnet/api/system.string.substring?view=net-5.0)
+- Inne funkcje służące do manipulacji łańcuchami znaków w języku C# (https://docs.microsoft.com/pl-pl/dotnet/api/system.string?view=net-5.0)

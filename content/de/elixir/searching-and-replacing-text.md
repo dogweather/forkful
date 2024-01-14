@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Suchen und Ersetzen von Text"
+title:                "Elixir: Textsuche und -ersetzung"
+simple_title:         "Textsuche und -ersetzung"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/searching-and-replacing-text.md"
 ---
 
@@ -9,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Suchen und Ersetzen von Text ist eine häufige Aufgabe beim Programmieren. Elixir bietet eine Vielzahl an Funktionen und Methoden, die diese Aufgabe erleichtern. In diesem Blog-Beitrag werden wir uns genauer anschauen, wie man Text in Elixir suchen und ersetzen kann.
+Haben Sie schon einmal lange Texte bearbeitet und dabei bestimmte Wörter oder Phrasen durch andere ersetzt? Oder mussten Sie schon mal Fehler in Ihrem Code finden und beheben? Mit Elixir können Sie diese Aufgaben schnell und einfach erledigen, dank der Suchen-und-Ersetzen-Funktion.
 
-## How To
+## Wie funktioniert das?
 
-Um Text in Elixir zu suchen und zu ersetzen, gibt es mehrere Optionen. Eine Möglichkeit ist die ```String.replace/3``` Funktion, die Teil des Elixir Standard-Library ist. Diese Funktion akzeptiert drei Argumente: einen Elixir String, ein Muster (wie eine reguläre Ausdruck) und eine Ersetzungszeichenkette. Im folgenden Beispiel suchen wir nach allen Vokalen (a, e, i, o, u) in einem String und ersetzen sie durch das Zeichen "X":
+Die Suchen-und-Ersetzen-Funktion in Elixir basiert auf dem `String.replace/4`-Befehl. Dabei gibt es vier Argumente, die Sie angeben müssen:
 
+- Der ursprüngliche String, in dem gesucht werden soll.
+- Das Muster, das gesucht und durch ein anderes Muster ersetzt werden soll.
+- Das Muster, durch das das erste Muster ersetzt werden soll.
+- Optionen für die Suche und den Ersatz.
+
+Im Folgenden finden Sie ein Beispielcode mit einem Text, in dem wir nach bestimmten Wörtern suchen und diese durch andere ersetzen:
+
+```Elixir
+text = "Ich liebe Elixir. Elixir ist so leistungsstark und funktionsreich."
+neuer_text = String.replace(text, "Elixir", "Programmiersprache")
 ```
-iex> String.replace("Hello World", ~r/[aeiou]/, "X")
-"HXllX Wxrld"
-```
 
-Eine andere Möglichkeit ist die ```Regex.replace/3``` Funktion, die Teil des Elixir Regex-Moduls ist. Diese Funktion funktioniert ähnlich wie ```String.replace/3```, akzeptiert jedoch auch reguläre Ausdrücke als Ersetzungsmuster. Im folgenden Beispiel ersetzen wir alle Vokale durch das Zeichen "X" und konvertieren den ursprünglichen String gleichzeitig in Großbuchstaben:
+Die Ausgabe des Codes wäre dann: "Ich liebe Programmiersprache. Programmiersprache ist so leistungsstark und funktionsreich." Wie Sie sehen können, wurden alle Vorkommnisse des Wortes "Elixir" durch "Programmiersprache" ersetzt.
 
-```
-iex> Regex.replace("Hello World", ~r/[aeiou]/, "X", global: true, insert_case: :upper)
-"HXLLX WXRLD"
-```
+## Tiefer in die Materie eintauchen
 
-Die ```String.replace/3``` und ```Regex.replace/3``` Funktionen sind nur zwei Möglichkeiten, wie man Text in Elixir suchen und ersetzen kann. Es gibt auch andere Funktionen wie ```String.replace_leading/3``` und ```String.replace_trailing/3```, die speziell für das Ersetzen von Teilstrings am Anfang oder Ende eines Strings entwickelt wurden. Es kann hilfreich sein, sich die offizielle Dokumentation anzusehen, um mehr über diese Funktionen und ihre Verwendung zu erfahren.
+Im obigen Beispiel haben wir nur Wörter im String ersetzt, aber es gibt noch viele weitere Optionen, die Sie bei der Suche und dem Ersatz von Text in Elixir verwenden können. Einige dieser Optionen sind:
 
-## Deep Dive
+- Die Option `count`, um anzugeben, wie viele Vorkommnisse ersetzt werden sollen.
+- Die Option `regex`, um ein reguläres Ausdrucksmuster zu verwenden.
+- Die Option `case_insensitive`, um die Suche nicht auf Groß- und Kleinschreibung zu beschränken.
 
-Bei der Suche und dem Ersatz von Text ist es wichtig zu verstehen, wie reguläre Ausdrücke funktionieren. Elixir verwendet dieselbe Syntax für reguläre Ausdrucke wie Perl und Ruby. Reguläre Ausdrücke sind ein leistungsstarkes Werkzeug zum Suchen und Ersetzen von Text in Elixir. Sie können komplexe Muster definieren und ermöglichen es uns, in Strings nach bestimmten Mustern zu suchen, anstatt nur nach expliziten Zeichenketten.
-
-Im obigen Beispiel haben wir den regulären Ausdruck ```~r/[aeiou]/``` verwendet, um nach Vokalen zu suchen. Dieser Ausdruck besteht aus einem sogenannten Charakterklasse ```[aeiou]```, die alle Vokale im Alphabet darstellt. Das vorangestellte Tilde-Zeichen ```~r``` zeigt an, dass es sich um einen regulären Ausdruck handelt, und der nachfolgende Schrägstrich markiert den Anfang und das Ende des Ausdrucks.
-
-Es gibt noch viele weitere wichtige Konzepte und Funktionen, die beim Suchen und Ersetzen von Text in Elixir relevant sind, wie z.B. das Verwenden von Backreferences, das Ignorieren von Groß- und Kleinschreibung und die Verwendung von sogenannten lookaround Operatoren. Für eine tiefere Auseinandersetzung mit regulären Ausdrücken in Elixir empfehle ich die Lektüre des offiziellen Elixir Guides zu diesem Thema.
+Sie können auch die Musternutzung bei der Suche einschränken, indem Sie das Muster in Anführungszeichen setzen oder angeben, wo das Muster genau im String vorkommen muss.
 
 ## Siehe auch
 
-- [Offizielle Elixir Dokumentation](https://hexdocs.pm/elixir/String.html#replace/3)
-- [Erfahren Sie mehr über reguläre Ausdrücke in Elixir](https://hexdocs.pm/elixir/Regex.html)
+- Offizielle Elixir-Dokumentation zu `String.replace/4`: https://hexdocs.pm/elixir/String.html#replace/4
+- Ein interaktives Tutorial zu Elixir mit Beispielen für die Suche und den Ersatz von Text: https://elixir-lang.org/getting-started/case-cond-and-functions.html#string-replacement
+
+Vielen Dank fürs Lesen und viel Spaß beim Ausprobieren der Suchen-und-Ersetzen-Funktion in Elixir!

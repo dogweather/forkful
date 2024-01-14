@@ -1,7 +1,9 @@
 ---
-title:                "C: Convertir une date en chaîne de caractères."
+title:                "C: Transformer une date en chaîne de caractères."
+simple_title:         "Transformer une date en chaîne de caractères."
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c/converting-a-date-into-a-string.md"
 ---
 
@@ -9,48 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La conversion d'une date en chaîne de caractères est une fonctionnalité courante dans de nombreux programmes car elle permet de représenter une date de manière plus lisible pour les utilisateurs. Cela peut également faciliter la manipulation et la comparaison de dates dans le code.
+Il est courant dans les programmes informatiques de devoir gérer des dates et d'afficher ces dates sous forme de chaînes de caractères. La conversion d'une date en une chaîne de caractères peut sembler banale, mais c'est en fait une étape cruciale pour présenter les informations de manière lisible pour les utilisateurs.
 
 ## Comment faire
 
-Pour convertir une date en chaîne de caractères en C, nous pouvons utiliser la fonction `strftime()` de la librairie `time.h`. Elle permet de formater une date selon un modèle spécifié et de la stocker dans un tableau de caractères.
+Pour convertir une date en une chaîne de caractères en C, il existe plusieurs options. Voici quelques exemples de code qui peuvent être utilisés:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    // Créer une struct tm avec une date spécifique
-    struct tm date = {.tm_year = 2020, .tm_mon = 11, .tm_mday = 15}; 
-    
-    // Définir le modèle de formatage
-    char format[] = "%d/%m/%Y";
-    
-    // Définir une taille suffisamment grande pour stocker la chaîne de caractères de la date
-    char str_date[12];
-    
-    // Utiliser strftime pour convertir la date en chaîne
-    strftime(str_date, 12, format, &date);
-    
-    // Afficher la date sous forme de chaîne
-    printf("La date est : %s\n", str_date);
-    
+    // Obtenir la date et l'heure actuelles 
+    time_t now = time(NULL);
+
+    // Convertir la date en chaîne de caractères 
+    char* date = ctime(&now);
+
+    // Afficher la date 
+    printf("La date et l'heure actuelles sont: %s", date);
+
     return 0;
 }
 ```
 
-#### Output:
+En utilisant la fonction ctime de la bibliothèque time, nous pouvons facilement convertir la date en une chaîne de caractères lisible.
+
+```C
+#include <stdio.h>
+#include <time.h>
+
+int main() {
+    // Déclarer une structure tm pour stocker la date et l'heure 
+    struct tm date;
+
+    // Remplir la structure avec la date et l'heure souhaitées 
+    date.tm_mday = 1; // jour 
+    date.tm_mon = 0; // mois 
+    date.tm_year = 2020; // année 
+    date.tm_hour = 11; // heure 
+    date.tm_min = 30; // minutes 
+    date.tm_sec = 0; // secondes 
+
+    // Convertir la date en chaîne de caractères 
+    char date_str[30];
+    strftime(date_str, sizeof(date_str), "%A, %d %B %Y, %H:%M:%S", &date);
+
+    // Afficher la date 
+    printf("La date et l'heure choisies sont: %s", date_str);
+
+    return 0;
+}
 ```
-La date est : 15/11/2020
-```
+
+En utilisant la fonction strftime, nous pouvons formater la date selon notre préférence avant de la convertir en chaîne de caractères.
 
 ## Plongée en profondeur
 
-La fonction `strftime()` utilise un modèle de formatage pour déterminer comment la date doit être représentée en chaîne de caractères. Ce modèle contient des balises spéciales qui seront remplacées par les valeurs correspondantes de la date. Par exemple, `%d` pour le jour du mois, `%m` pour le mois, `%Y` pour l'année complète, etc.
-
-Il existe également des options pour modifier le format des valeurs, comme par exemple `%02d` pour afficher un nombre sur 2 chiffres, en ajoutant un zéro devant si nécessaire. Il est important de bien se référer à la documentation pour utiliser les bonnes balises et options en fonction de nos besoins.
+La conversion d'une date en une chaîne de caractères peut paraître simple, mais il y a en réalité beaucoup de choses à prendre en compte. Par exemple, le format de la date peut varier en fonction des préférences régionales ou de la langue de l'utilisateur. Il est donc important de comprendre les différentes fonctions et options disponibles pour la conversion de dates en chaînes de caractères en C.
 
 ## Voir aussi
 
-- [La documentation de la fonction `strftime()`](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [Un tutoriel détaillé sur la conversion de dates en C](https://www.coders-hub.com/2015/07/c-program-to-convert-date-into-string.html)
+- [Documentation officielle de la bibliothèque time en C](https://www.gnu.org/software/libc/manual/html_node/Date-and-Time-Functions.html)
+- [Documentation officielle de la fonction strftime en C](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+- [Différents formats de date en C](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.html)

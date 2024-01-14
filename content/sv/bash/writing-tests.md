@@ -1,61 +1,58 @@
 ---
-title:                "Bash: Skriva tester"
+title:                "Bash: Att skriva tester"
+simple_title:         "Att skriva tester"
 programming_language: "Bash"
-category:             "Testing and Debugging"
+category:             "Bash"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
+## Varför
 
-I dagens snabbrörliga och krävande programmeringsvärld är det viktigt att ha en välstrukturerad och pålitlig kod. En viktig del av detta är att skriva tester för att säkerställa att koden fungerar som den ska. Läs vidare för att ta reda på varför det är viktigt att skriva tester i Bash-programmering och hur man gör det.
+Att skriva tester är en viktig del av att utveckla programvara. Det hjälper till att upptäcka buggar och fel i koden, vilket leder till en mer robust och tillförlitlig produkt. Det är även ett sätt att garantera att koden fungerar som den ska även vid framtida ändringar eller uppdateringar.
 
-##Så här gör du
+## Hur man gör
 
-När det kommer till att skriva tester i Bash-programmering finns det två huvudsakliga sätt att göra det: manuellt och automatiskt. Ett manuellt test är när du som programmerare kör din kod och kontrollerar att den arbetar korrekt. Detta kan vara väldigt tidskrävande och ineffektivt, särskilt när koden blir mer komplex. Istället föreslår vi att du använder dig av automatiska tester som körs av en testsvit.
-
-För att skriva en automatisk testsvit i Bash måste du först skapa en fil med all kod som ska testas. Låt oss säga att du har en funktion som heter "add_numbers" som tar två tal som argument och returnerar deras summa. Du skulle då skapa en fil "add_numbers.sh" och skriva följande kod:
+För att skriva tester i Bash, används kommando-kommandot `test` eller dess synonym `[` följt av ett uttryck eller villkor att utvärdera. Här är ett exempel på detta:
 
 ```Bash
 #!/bin/bash
 
-add_numbers() {
-    result=$(( $1 + $2 ))
-    echo $result
-}
+# Testa om ett tal är större än 10
+tal=15
 
-```
-
-Därefter behöver du skapa en fil specifikt för dina tester, till exempel "test_add_numbers.sh". I denna fil kan du skriva en testsvit som ser ut så här:
-
-```Bash
-#!/bin/bash
-
-# Kontrollerar om "add_numbers" returnerar rätt summa för två positiva tal
-expected_result=7
-actual_result=$(bash add_numbers.sh 3 4)
-
-if [ $expected_result -eq $actual_result ]
+if [ $tal -gt 10 ]
 then
-    echo "Test Passed"
-else
-    echo "Test Failed"
+    echo "Talet är större än 10."
 fi
 ```
 
-Som du kan se definierar vi först det förväntade resultatet, som i detta fall är summan av 3 och 4 (7). Sedan kör vi funktionen och sparar resultatet i en variabel. Slutligen jämför vi det förväntade resultatet med det faktiska och skriver ut om testet passerades eller misslyckades.
+I detta exempel använder vi `if`-satsen för att kontrollera om villkoret att `tal` är större än 10 är sant. Om det är sant, skrivs meddelandet "Talet är större än 10" ut. Om villkoret inte är sant, så skrivs inget ut.
 
-Du kan också skapa fler tester för att täcka olika scenarier, såsom negativa tal eller felaktiga datatyper som argument. Detta ger dig en grundligare och pålitligare testsvit för din kod.
+En annan användbar metod för att skriva tester är att använda `&&` och `||` operatorerna. Dessa används för att köra vissa kommandon bara om ett villkor är uppfyllt eller icke-uppfyllt.
 
-##Dyk ner i detaljerna
+```Bash
+#!/bin/bash
 
-Skrivandet av tester i Bash kan verka komplicerat, särskilt om du är ny till programmering. Men med lite övning och efter att ha förstått syntaxen blir det snabbt en naturlig och viktig del av din arbetsprocess. Ett annat tips är att söka efter tutorials och guider på nätet för att få en bättre förståelse för hur man skriver effektiva tester.
+# Kontrollera om katalogen "library" existerar, och om det gör det, gå in i den.
+test -d library && cd library
 
-En annan viktig aspekt av att skriva tester är att göra det till en vanlig del av din programmeringsrutin. Testsuiter bör köras efter varje ändring i koden för att snabbt upptäcka eventuella buggar som kan påverka funktionaliteten. Detta sparar tid och energi i det långa loppet.
+# Kontrollera om filen "readme.md" existerar, och om det gör det, skriv ut dess innehåll.
+test -f readme.md && cat readme.md
+```
 
-##Se också
+Här använder vi `test` för att kontrollera om en katalog eller fil existerar. Om den gör det, utförs det andra kommandot efter `&&`-tecknet.
 
-- [Bash Guide](https://www.gnu.org/software/bash/manual/bash.html)
-- [Tutorial: Writing Bash Tests](https://erikanapoletano.com/tutorial-writing-tests-for-your-bash-scripts/)
-- [Introduction to Test Driven Development (TDD)](https://medium.freecodecamp.org/test-driven-development-what-it-is-and-what-it-is-not-41fa6bca02a2)
+## Djupdykning
+
+Det finns många olika sätt att skriva tester i Bash-skript, och det bästa sättet att lära sig är att fortsätta öva och experimentera. Några tips för effektiva tester inkluderar att vara så specifik som möjligt i dina villkor så att du inte får falskt positiva resultat, och att använda `&&` och `||` på ett strategiskt sätt för att skriva mer kompakt kod.
+
+Ett annat viktigt koncept är att använda variabler för att lagra värden som ska utvärderas i tester. Detta gör det lättare att ändra villkoren i framtiden utan att behöva ändra själva testet.
+
+## Se även
+
+- [Bash Test Command på Linuxize](https://linuxize.com/post/bash-test-command/)
+- [Bash Manual om "test" kommandot](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
+- [Bash Scripting på Wikibooks](https://en.wikibooks.org/wiki/Bash_Shell_Scripting)

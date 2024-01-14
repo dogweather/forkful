@@ -1,47 +1,34 @@
 ---
 title:                "Elm: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pisać do standardowego wyjścia błędów
+## Dlaczego
 
-Inżynierowie programiści często używają standardowego wyjścia błędów w celu wyświetlenia informacji o błędach i ostrzeżeń w trakcie działania programu. Jest to przydatne narzędzie do debugowania i poprawiania kodu. Oprócz tego, pisanie do standardowego wyjścia błędów jest również ważne ze względów bezpieczeństwa, ponieważ informuje użytkowników o potencjalnych problemach w aplikacji.
+Programowanie w Elm jest pozbawione wielu typowych błędów, które często występują w innych językach. Jednakże, czasami nadal możemy potrzebować wyjątkowej funkcjonalności. W takich sytuacjach, zapisywanie do błędu standardowego może być bardzo pomocne. W tym artykule dowiemy się dlaczego warto to robić.
 
-## Jak napisać do standardowego wyjścia błędów w Elm
+## Jak to zrobić
 
-W Elm, aby napisać do standardowego wyjścia błędów, możemy użyć funkcji `Debug.crash`. Przyjmuje ona argument typu `String` i zwraca wartość typu `Never`, co oznacza, że ta funkcja nigdy nie zwraca żadnego wyniku.
-
-```Elm
-import Debug exposing (crash)
-
-main = 
-    result = 5 / 0 -- dzielenie przez zero wygeneruje błąd
-    Debug.crash "Nie można dzielić przez zero"
-```
-
-W powyższym przykładzie, gdy wywołana zostanie funkcja `crash`, wygenerowany zostanie błąd na standardowym wyjściu błędów z przekazanym przez nas komunikatem.
-
-Możemy również wykorzystać funkcję `Debug.log` do wyświetlania informacji o błędach i ostrzeżeń. Ta funkcja przyjmuje dwa argumenty: `String` i wartość dowolnego typu, który chcemy wyświetlić. Zwraca ona ten sam typ wartości, co argument drugi.
+Aby zapisać do błędu standardowego, możemy skorzystać z funkcji `Debug.log` dostępnej w module `Debug`. Na przykład:
 
 ```Elm
-import Debug exposing (log)
-
-main = 
-    result = 5 / 0 -- dzielenie przez zero wygeneruje błąd
-    Debug.log "Wynik dzielenia" result
+Debug.log "Debug message" "This is the debug output"
 ```
 
-## Głębszy wgląd w pisanie do standardowego wyjścia błędów
+Spowoduje to wyświetlenie wiadomości "Debug message" w razie użycia opcji debugowania podczas kompilacji w przeglądarce. Wynik zmiennej "This is the debug output" zostanie wyświetlony w konsoli błędów.
 
-W Elm, standardowe wyjście błędów jest obsługiwane przez funkcję `Platform.sendToApp`. Jest to funkcja wbudowana w Elm i nie jest przeznaczona do używania poza platformą. Pozwala ona na wysłanie komunikatu do aplikacji, gdzie może być obsłużony przez programistę.
+## Głębszy wgląd
 
-Ponadto, możemy również wykorzystać funkcję `Task.perform` do obsługi błędów i ostrzeżeń w naszej aplikacji Elm. Ta funkcja przyjmuje dwa argumenty: `Result error value` i funkcję do obsługi błędów (znajdująca się w drugim argumencie). W ten sposób możemy dokładnie kontrolować, co dzieje się z błędami w naszej aplikacji.
+Korzystanie z `Debug.log` jest szczególnie przydatne przy debugowaniu kodu, kiedy potrzebujemy śledzić wartości poszczególnych zmiennych i funkcji. Pozwala to na bardziej precyzyjne zlokalizowanie ewentualnych błędów i usprawnienie procesu rozwiązywania problemów. Jednak należy pamiętać, że funkcja ta jest przeznaczona tylko do celów debugowania i nie powinna być używana w kodzie produkcyjnym.
 
-## Zobacz również
-- [Elm - Debug Module](https://package.elm-lang.org/packages/elm/core/latest/Debug)
-- [Elm - Using Debug.log](https://guide.elm-lang.org/debugging/debugging_concepts.html)
-- [Elm - Error Handling with Task and Result](https://guide.elm-lang.org/error_handling/)
+## Zobacz też
+
+- Dokumentacja Elm: https://elm-lang.org/docs
+- Przewodnik po języku Elm: https://guide.elm-lang.org/
+- Artykuł o tym jak pisać bezpieczny kod w Elm: https://engineering.pivotal.io/post/guaranteed-functional-reactive-programming-in-elm-part-3/

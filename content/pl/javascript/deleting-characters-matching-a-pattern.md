@@ -1,33 +1,51 @@
 ---
-title:                "Javascript: Usuwanie znaków odpowiadających wzorcowi"
+title:                "Javascript: Usuwanie znaków pasujących do wzoru"
+simple_title:         "Usuwanie znaków pasujących do wzoru"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto usuwać znaki pasujące do wzorca
+## Dlaczego
 
-Czasami, podczas tworzenia programów, możemy natknąć się na sytuację, w której chcemy usunąć konkretne znaki z łańcucha tekstowego. Może to być potrzebne, na przykład, podczas filtrowania danych lub sprawdzania walidacji. W takich przypadkach, usunięcie znaków pasujących do wzorca może znacznie ułatwić nam pracę i zwiększyć wydajność naszego kodu.
+Czasami w programowaniu może wystąpić potrzeba usunięcia znaków zgodnie z pewnym wzorcem. To może być konieczne podczas pracy z tekstem lub w celu oceny danych wejściowych. W tym wpisie dowiesz się, jak łatwo zaimplementować taką funkcjonalność w języku JavaScript.
 
 ## Jak to zrobić
 
-Najbardziej efektywnym sposobem na usunięcie znaków pasujących do wzorca jest użycie metody `replace()` w połączeniu z wyrażeniem regularnym. Załóżmy, że chcemy usunąć wszystkie spacje z łańcucha tekstowego. W tym przypadku, wyrażeniem regularnym będzie `/ /g` (spacja między ukośnikami oznacza wystąpienie pojedynczej spacji, a flaga `g` oznacza globalne wyszukiwanie). Następnie, wywołując metodę `replace()` na naszym łańcuchu tekstowym, przekazujemy jako pierwszy argument nasze wyrażenie regularne, a jako drugi pusty łańcuch tekstowy. To spowoduje usunięcie wszystkich spacji z tekstu.
+W celu usunięcia wszystkich znaków zgodnie z pewnym wzorcem, użyjemy funkcji `replace()` i wykorzystamy wyrażenie regularne. Przykładowy kod dla tego zadania wyglądałby następująco:
 
 ```Javascript
-let text = "To jest przykładowy tekst.";
-let pattern = / /g;
-let result = text.replace(pattern, "");
-console.log(result); // Output: Tojestprzykładowytekst.
+let string = "Ala ma kota 123";
+let newString = string.replace(/[a-z0-9]/gi, "");
+
+console.log(newString); // W tym przykładzie powinno wyświetlić się: "  "
 ```
 
-## Głębszy zanurzenie
+Powyższy przykład pokazuje, że dzieki wyrażeniu regularnemu `[a-z0-9]` wszystkie litery oraz cyfry zostaną usunięte z tekstu. Jeśli chcemy usunąć tylko litery, możemy użyć wyrażenia `[a-z]`.
 
-Wyrażenia regularne są potężnym narzędziem w programowaniu, pozwalającym na precyzyjne manipulowanie tekstami. W przypadku usuwania znaków pasujących do wzorca, przydatne mogą być różne symbole, jak na przykład `+` (oznacza powtórzenia), `^` (oznacza negację) czy `[]` (oznacza grupę znaków do dopasowania). Możliwości jest wiele, dlatego warto przejrzeć dokumentację i eksperymentować z wyrażeniami regularnymi, aby lepiej zrozumieć ich działanie.
+ ## Głębsza analiza
 
-## Zobacz także
+Funkcja `replace()` wykonuje jedynie pierwsze dopasowanie, dlatego jeśli chcielibyśmy usunąć wszystkie znaki zgodnie z wzorcem, musimy dodać flagę `g` (global) do wyrażenia regularnego. Jest to szczególnie przydatne, gdy posiadamy więcej niż jedno wystąpienie znaków, które chcemy usunąć.
 
-- [Dokumentacja wyrażeń regularnych w Javascript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Tutorial o wyrażeniach regularnych w Javascript](https://www.youtube.com/watch?v=95sQiSyIWHI)
-- [Kurs o podstawach wyrażeń regularnych w Javascript](https://www.codecademy.com/learn/introduction-to-javascript)
+Dodatkowo, poprzez użycie flagi `i` (case-insensitive), możemy zignorować wielkość liter w tekście. Zatem jeśli naszym wzorcem jest jedynie `a`, a chcemy usunąć wszystkie wystąpienia zarówno litery `A` jak i `a`, użyjemy wyrażenia `[a]` oraz flagi `i`.
+
+Kolejnym przydatnym sposobem manipulacji tekstem jest wykorzystanie funkcji `split()` oraz `join()`. Pierwsza służy do podziału tekstu na tablicę, a druga do ponownego połączenia tej tablicy w jeden ciąg znaków. Przykładowy kod wyglądałby następująco:
+
+```Javascript
+let string = "Ala ma kota 123";
+let newString = string.split("").filter(char => char !== " ").join("");
+
+console.log(newString); // W tym przykładzie także wyświetli się: "Alamakota123"
+```
+
+W powyższym przykładzie, dodatkowo używamy funkcji `filter()` w celu usunięcia spacji z tekstu. Dzięki temu, możemy kontrolować, jakie znaki zostaną usunięte zgodnie z naszym wzorcem.
+
+## Zobacz również
+
+- [Dokumentacja funkcji replace() na MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Wprowadzenie do wyrażeń regularnych w JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Dokumentacja funkcji split() na MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+- [Dokumentacja funkcji join() na MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join)

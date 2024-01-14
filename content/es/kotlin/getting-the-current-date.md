@@ -1,63 +1,74 @@
 ---
 title:                "Kotlin: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-Obtener la fecha actual es una tarea común en la programación. Con Kotlin, podemos hacerlo de manera eficiente y sencilla.
+## Por Qué
 
-## Cómo hacerlo
-Para obtener la fecha actual en Kotlin, podemos utilizar la clase `LocalDate` de la biblioteca estándar de Java. Primero, debemos importarla en nuestro código:
-```
+En la programación, a menudo necesitamos obtener la fecha y hora actual en nuestro código para realizar ciertas tareas y funciones. Puede ser para registrar la fecha de un evento, programar acciones en un momento específico, o simplemente para mostrar la fecha actual en una interfaz de usuario. Afortunadamente, en Kotlin hay una manera sencilla de obtener la fecha actual en nuestro código. En esta publicación, exploraremos cómo hacerlo.
+
+## Cómo Obtener la Fecha Actual en Kotlin
+
+Para obtener la fecha actual en Kotlin, podemos usar la clase `java.time.LocalDate` incluida en la API de Java. Esta clase nos permite crear una instancia de fecha actual utilizando una de sus funciones estáticas `now()`. Luego, podemos obtener el día, mes y año actual de esta instancia y utilizarlos en nuestro código. Veamos un ejemplo de cómo hacerlo:
+
+```Kotlin
+//Importamos la clase LocalDate de la API de Java
 import java.time.LocalDate
-```
 
-Luego, podemos llamar al método `now()` para obtener la instancia de la fecha actual:
-```
+//Creamos una instancia de fecha actual
 val fechaActual = LocalDate.now()
+
+//Obtenemos el día, mes y año actual de la instancia
+val diaActual = fechaActual.dayOfMonth
+val mesActual = fechaActual.monthValue
+val añoActual = fechaActual.year
+
+//Mostramos la fecha actual en consola
+println("Hoy es $diaActual/$mesActual/$añoActual") 
 ```
 
-Podemos imprimir esta fecha en la consola de la siguiente manera:
+Si ejecutamos este código, obtendremos el siguiente resultado:
+
 ```
-println(fechaActual)
+Hoy es 21/09/2021
 ```
 
-El resultado será algo como esto:
-```
-2020-11-09
+También podemos obtener la hora actual utilizando la clase `java.time.LocalTime` de la misma manera. Aquí hay un ejemplo de cómo hacerlo:
+
+```Kotlin
+//Importamos la clase LocalTime de la API de Java
+import java.time.LocalTime
+
+//Creamos una instancia de hora actual
+val horaActual = LocalTime.now()
+
+//Obtenemos la hora, minuto y segundo actual de la instancia
+val horaActual = horaActual.hour
+val minutoActual = horaActual.minute
+val segundoActual = horaActual.second
+
+//Mostramos la hora actual en consola
+println("La hora actual es $horaActual:$minutoActual:$segundoActual") 
 ```
 
-También podemos obtener la fecha en un formato específico utilizando el método `format()`. Por ejemplo, si queremos el formato día/mes/año, podemos hacer lo siguiente:
+El resultado de este código será similar a:
+
 ```
-val fechaFormateada = fechaActual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
-println(fechaFormateada)
+La hora actual es 15:30:50
 ```
 
-La salida será:
-```
-09/11/2020
-```
+## Profundizando en la Obtención de la Fecha Actual
 
-## Deep Dive
-Si queremos obtener más información de la fecha actual, podemos utilizar los métodos de la clase `LocalDate`. Algunos ejemplos son `getDayOfWeek()`, `getMonth()` y `getYear()`, que nos devolverán el día de la semana, el mes y el año, respectivamente.
+La clase `java.time.LocalDate` tiene muchas más funciones útiles que podemos utilizar para obtener información detallada sobre la fecha actual, como el día de la semana, el número de semana del año, entre otras. También podemos utilizar diferentes formatos de fecha y hora, como `DateTimeFormatter`, para mostrar la fecha actual de diferentes maneras. Para obtener más información sobre todas las posibilidades que ofrece la clase `java.time.LocalDate`, siempre se puede consultar la documentación en línea.
 
-Además, podemos realizar operaciones con fechas, como agregar o restar días, semanas, meses o años. Por ejemplo, si queremos obtener la fecha dentro de una semana, podemos hacer lo siguiente:
-```
-val fechaProximaSemana = fechaActual.plusWeeks(1)
-println(fechaProximaSemana)
-```
+## Ver También
 
-La salida será:
-```
-2020-11-16
-```
-
-También es importante tener en cuenta que la clase `LocalDate` representa una fecha en formato ISO-8601, es decir, en el formato AAAA-MM-DD. Esto facilita la comparación de fechas y hace que sea más fácil trabajar con ellas.
-
-## Ver también
-- [Documentación de la clase LocalDate en la biblioteca estándar de Java](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Artículo sobre cómo trabajar con fechas en Kotlin](https://www.baeldung.com/kotlin/dates)
+- [Documentación de la clase LocalDate] (https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Documentación de la clase LocalTime] (https://docs.oracle.com/javase/8/docs/api/java/time/LocalTime.html)
+- [Guía oficial de Kotlin sobre fechas y horas] (https://kotlinlang.org/docs/datetime/)

@@ -1,41 +1,55 @@
 ---
-title:                "Gleam: Vérification de l'existence d'un répertoire"
+title:                "Gleam: Vérifier si un répertoire existe"
+simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Si vous êtes un développeur Gleam, vous savez probablement qu'il est important de vérifier si un répertoire existe avant de tenter de le manipuler dans votre code. Mais pourquoi est-il si important de le faire ?
+Lorsque vous programmez, il peut être utile de vérifier si un répertoire existe avant de continuer avec votre code. Cela peut vous éviter des erreurs et des problèmes avec vos fichiers. Dans cet article, nous allons expliquer comment faire cette vérification en utilisant le langage de programmation Gleam.
 
-La principale raison est de s'assurer que votre code ne se heurte à des erreurs ou des exceptions en essayant de manipuler un répertoire inexistant. Cela peut également vous faire gagner du temps en évitant de traiter des erreurs inutiles et en vous assurant que votre code fonctionne correctement dès le départ.
+## Comment faire
 
-# Comment faire
-
-Heureusement, vérifier l'existence d'un répertoire en Gleam est assez simple. Vous pouvez utiliser la fonction `FileSystem.exists/1` en spécifiant le chemin du répertoire que vous voulez vérifier. Voici un exemple de code :
+Pour vérifier si un répertoire existe en Gleam, vous pouvez utiliser la fonction `os.file_exists`. Elle prend en paramètre le chemin complet du répertoire que vous souhaitez vérifier et retourne un booléen indiquant s'il existe ou non.
 
 ```Gleam
-import gleam/fs
-let directory = "./mon_repertoire/"
-let exists = fs.exists(directory)
+// Vérifie si le répertoire "/mon/dossier/exemple" existe
+let existe = os.file_exists("/mon/dossier/exemple")
+
+if existe {
+  // Si le répertoire existe, effectuez une action
+  ...
+} else {
+  // Si le répertoire n'existe pas, effectuez une autre action
+  ...
+}
 ```
 
-Dans cet exemple, nous importons le module `gleam/fs` qui contient la fonction `exists/1` dont nous avons besoin. Nous définissons ensuite une variable `directory` contenant le chemin du répertoire que nous voulons vérifier. Enfin, nous utilisons la fonction `exists/1` pour vérifier si ce répertoire existe et stockons le résultat dans la variable `exists`.
+Il est également possible d'utiliser la fonction `os.dir_exists` si vous souhaitez spécifiquement vérifier l'existence d'un répertoire et non d'un fichier.
 
-Si le répertoire existe, la variable `exists` vaudra `true`, sinon elle vaudra `false`. Vous pouvez ensuite utiliser cette information dans votre code pour décider de la suite des opérations à effectuer.
+```Gleam
+// Vérifie si le répertoire "/mon/dossier/exemple" existe
+let existe = os.dir_exists("/mon/dossier/exemple")
 
-# Plongée en profondeur
+if existe {
+  // Si le répertoire existe, effectuez une action
+  ...
+} else {
+  // Si le répertoire n'existe pas, effectuez une autre action
+  ...
+}
+```
 
-Si vous souhaitez en savoir plus sur la vérification de l'existence d'un répertoire en Gleam, voici quelques points à retenir :
+## Plongée profonde
 
-- La fonction `exists/1` de `gleam/fs` renvoie un `Result` contenant un `Ok` si le répertoire existe, ou un `Err` si une erreur s'est produite.
-- Vous pouvez également utiliser la fonction `exists_file/1` si vous voulez vérifier l'existence d'un fichier plutôt que d'un répertoire.
-- Si vous travaillez avec un répertoire spécifique, vous pouvez préciser un filtre en utilisant la fonction `FileSystem.list/2` pour obtenir une liste des fichiers et dossiers dans ce répertoire. Vous pouvez ensuite parcourir cette liste pour vérifier si un certain fichier ou dossier existe.
+La fonction `os.file_exists` et `os.dir_exists` utilisent le système de fichiers sous-jacent de votre ordinateur pour vérifier l'existence du répertoire. Elle renvoie un booléen en fonction de la réponse du système de fichiers. Si vous rencontrez des problèmes avec ces fonctions, il est possible que le problème soit avec le système de fichiers plutôt qu'avec votre code.
 
-# Voir aussi
+## Voir aussi
 
-- Documentation officielle sur la fonction `FileSystem.exists/1` : https://gleam.run/modules/gleam_fs#exists/1
-- Tutoriel sur la manipulation des fichiers et répertoires en Gleam : https://gleam.run/book/tutorials/files.html
+- Documentation officielle de Gleam sur les fonctions `os.file_exists` et `os.dir_exists`: https://gleam.run/documentation/stdlib/os.html#function.file_exists
+- Exemples de projets utilisant la vérification d'existence de répertoires en Gleam: https://github.com/search?q=language%3Agleam+os.file_exists&type=Code

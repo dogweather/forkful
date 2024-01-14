@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+title:                "Javascript: Tulevaisuuden tai menneen päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneen päivämäärän laskeminen"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,38 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä, miksi joku saattaisi haluta laskea tietyn päivämäärän tulevaisuudessa tai menneisyydessä. Saattaa olla tarpeellista suunnitella tulevia tapahtumia tai muistaa menneitä tapahtumia. Matkustaessa saattaa myös olla hyödyllistä tietää, mikä päivä on tulevaisuudessa tai menneisyydessä.
+Miksi joku haluaisi laskea tulevaisuuden tai menneisyyden päivämäärän? On monia tapauksia, joissa tämä toiminto olisi hyödyllinen, kuten laskut, aikataulujen luominen tai yksinkertaisesti kuriositeettina.
 
-## Kuinka tehdä
+## Näin teet sen
 
-Matematiikkaa käyttämällä ja muutamalla yksinkertaisella Javascript-koodilla, voimme laskea halutun päivämäärän tulevaisuudessa tai menneisyydessä. Ensimmäisenä meille täytyy asettaa lähtöpäivämäärä ja sitten laskea montako päivää haluamme lisätä tai vähentää. Käytämme Date-objektia ja sen sisäänrakennettuja funktioita kuten getDate(), getMonth() ja getFullYear(), jotta voimme käsitellä päivämääriä helposti.
+Laskeminen tulevaisuuden tai menneisyyden päivämäärää JavaScriptillä on suhteellisen helppoa. Tarvitset vain Date-olion ja haluamasi päivien määrän, jonka haluat lisätä (tulevaisuutta) tai vähentää (menneisyyttä). Esimerkiksi, jos haluat lisätä 10 päivää nykyiseen päivään, voit käyttää seuraavaa koodia:
 
-```Javascript 
-//asetetaan lähtöpäivämäärä 
-var lahtoPaiva = new Date(2021, 7, 1); 
-
-//lasketaan montako päivää etsimämme päivämäärä on lähtöpäivämäärästä
-var montakoPaivaa = 30; 
-
-//lasketaan tulevaan päivämäärän käyttämällä getDate(), getMonth() ja getFullYear()
-var tulevaPaiva = lahtoPaiva.getDate() + montakoPaivaa; 
-var tulevaKuukausi = lahtoPaiva.getMonth(); 
-var tulevaVuosi = lahtoPaiva.getFullYear(); 
-
-//tulostetaan tuleva päivämäärä 
-console.log("Tuleva päivämäärä: " + tulevaPaiva + "." + tulevaKuukausi+ "." + tulevaVuosi); 
+```Javascript
+const nykyinenPaiva = new Date();
+nykyinenPaiva.setDate(nykyinenPaiva.getDate() + 10);
+console.log(nykyinenPaiva);
 ```
 
-Tämä koodi tulostaisi "Tuleva päivämäärä: 31.7.2021". Vastaavasti voimme myös laskea menneen päivämäärän vähentämällä päiviä lähtöpäivämäärästä.
+Tämä koodi luo uuden Date-olion nykyisestä päivästä ja lisää siihen 10 päivää. Tulostus näyttää tulevaisuuden päivämäärän, joka on 10 päivää nykyisen päivän jälkeen.
 
-## Syventävä tieto 
+Voit myös vähentää päiviä muuttamalla plussamerkin miinusmerkiksi ```nykyinenPaiva.getDate() - 10```.
 
-Javascriptin Date-objektilla on monia muita sisäänrakennettuja funktioita, joita voimme käyttää tulevien tai menneiden päivämäärien laskemisessa. Voimme myös lisätä tai vähentää muita aikayksiköitä, kuten tunteja, minuutteja tai sekunteja.
+## Syvemmälle
 
-On myös hyödyllistä muistaa, että Javascript käyttää UTC (Universal Coordinated Time) aikavyöhykettä Date-objektissa. Voimme käyttää Javascriptin sisäänrakennettuja funktioita, kuten getTimezoneOffset(), muuttaaksemme UTC-aikaa paikalliseen aikaan.
+Date-olioon liittyy monia hyödyllisiä metodteja, kuten getDate(), getMonth(), ja getFullYear(), jotka palauttavat päivämäärän, kuukauden ja vuoden. Voit myös käyttää näitä metodeja laskeaksesi haluamasi päivämäärän tarkalleen.
+
+Lisäksi, voit käyttää myös muotoilusymboleja, kuten ```%d``` ja ```%m```, tulostamaan päivämäärät ja kuukaudet numeroina. Tämä voi olla hyödyllistä, jos haluat luoda aikatauluja tai otteluita varten.
+
+Voit myös käyttää Date-olion toista konstruktoria asettaaksesi tietyn päivämäärän ja ajan. Esimerkiksi, voit asettaa tulevaisuuden päivämäärän ja ajan seuraavasti:
+
+```Javascript
+const tulevaPaiva = new Date(2022, 4, 2, 13, 30, 0);
+console.log(tulevaPaiva);
+```
+
+Tämä koodi luo Date-olion, joka edustaa tulevaa päivämäärää ja aikaa 2. toukokuuta, 2022 klo 13:30. Huomaa, että kuukaudet aloittavat numerosta 0, joten tammikuu on 0 ja joulukuu on 11.
 
 ## Katso myös
 
-- [Javascript Date-objektin dokumentaatio](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools: Javascript Date-objektin esimerkkejä](https://www.w3schools.com/js/tryit.asp?filename=tryjs_date)
-- [Javascriptin aikavyöhykkeiden hallinta](https://www.digitalocean.com/community/tutorials/how-to-handle-date-time-data-in-javascript)
+- [MDN: Date](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [JavaScript.info: Date and time](https://javascript.info/date)
+- [W3Schools: JavaScript Date Object](https://www.w3schools.com/js/js_dates.asp)

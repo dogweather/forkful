@@ -1,59 +1,72 @@
 ---
-title:                "C++: Å skrive tester"
+title:                "C++: Skriving av tester"
+simple_title:         "Skriving av tester"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
 
-Å skrive tester i C++ kan virke som en unødvendig og tidkrevende oppgave. Men i virkeligheten kan det være en svært nyttig praksis for å sikre kvaliteten og stabiliteten til koden din. Ved å skrive tester kan du oppdage feil og bugs i koden din tidlig, noe som sparer deg for mye hodebry og tid i fremtiden.
+Å skrive tester når du programmerer kan virke som en ekstra og unødvendig trinn, men det er faktisk en viktig del av utviklingsprosessen. Tester hjelper deg å sikre at koden din fungerer som forventet, og kan også bidra til å identifisere og fikse feil før de blir et større problem. 
 
-## Hvordan
+## Slik gjør du det 
 
-Det første trinnet for å skrive tester er å inkludere en testramme i prosjektet ditt. En populær testramme for C++ er Google Test. Deretter kan du begynne å skrive tester ved å lage funksjoner som tester ulike deler av koden din. Her er et eksempel på hvordan du kan skrive en enkel test for å sjekke om to tall er like:
+Det er flere måter å skrive tester på, men vi vil fokusere på C++ språket i denne artikkelen. La oss ta for oss et enkelt eksempel på en funksjon som sjekker om et tall er et partall eller ikke: 
 
-```C++
-#include <gtest/gtest.h>
+```C++ 
+#include <iostream> 
 
-TEST(TestEqual, CheckEqual) {
-  int a = 5;
-  int b = 5;
-  EXPECT_EQ(a, b); // forventer at a og b er like
+bool erPartall(int tall) {
+  if (tall % 2 == 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-int main(int argc, char** argv) {
-  testing::InitGoogleTest(&argc, argv); // initialiserer testrammen
-  return RUN_ALL_TESTS(); // kjører alle tester i prosjektet
+int main() {
+  int input;
+  std::cout << "Skriv inn et heltall: ";
+  std::cin >> input;
+
+  if (erPartall(input)) {
+    std::cout << input << " er et partall.";
+  } else {
+    std::cout << input << " er et oddetall.";
+  }
+
+  return 0;
 }
 ```
 
-Kjøringen av denne testen vil gi følgende output:
+I dette eksemplet bruker vi en enkel funksjon for å sjekke om et tall er et partall eller ikke. Men hvordan kan vi teste denne funksjonen for å sikre at den fungerer som den skal? Vi kan skrive en enkel testfunksjon som denne: 
 
+```C++ 
+void testErPartall() {
+  assert(erPartall(2) == true);
+  assert(erPartall(3) == false);
+  assert(erPartall(1) == false);
+  assert(erPartall(0) == true);
+}
+
+int main() {
+  testErPartall();
+  return 0;
+}
 ```
-[==========] Running 1 test from 1 test case.
-[----------] Global test environment set-up.
-[----------] 1 test from TestEqual
-[ RUN      ] TestEqual.CheckEqual
-[       OK ] TestEqual.CheckEqual (0 ms)
-[----------] 1 test from TestEqual (0 ms total)
 
-[----------] Global test environment tear-down
-[==========] 1 test from 1 test case ran. (0 ms total)
-[  PASSED  ] 1 test.
-```
+Her bruker vi `assert` kommandoen for å sjekke om vår funksjon returnerer riktig verdi for ulike input. Hvis alle disse testene passerer, kan vi være sikre på at vår funksjon fungerer som den skal. Dette er spesielt nyttig hvis du gjør større endringer i koden din, da du kan kjøre testene dine igjen for å sikre at alt fortsatt fungerer som forventet.
 
-Du kan se at testen har blitt kjørt og bestått siden de to tallene var like.
+## Dykk dypere 
 
-## Dypdykk
+Selv om dette eksemplet er enkelt, gir det et godt innblikk i hvordan du kan skrive tester for koden din. Det er også flere verktøy og rammeverk tilgjengelig for å hjelpe deg med å skrive og kjøre tester, som for eksempel Google Test og Catch2. Det er også viktig å huske på at å skrive tester ikke bare handler om å finne feil, men også om å utvikle bedre og mer pålitelig kode.
 
-Det finnes mange forskjellige typer tester du kan skrive, som for eksempel enhetstester, integrasjonstester og ytelsestester. Det er viktig å velge den riktige typen tester for ditt spesifikke prosjekt. Ved å inkludere tester som dekker alle deler av koden din, kan du være sikker på at koden din fungerer som forventet og at eventuelle endringer ikke påvirker funksjonaliteten til andre deler av koden.
+## Se også 
 
-Å skrive gode tester tar tid og krever en grundig forståelse av koden din. Men det er en investering som definitivt er verdt det i det lange løp. Med gode tester kan du være trygg på at koden din vil fungere som forventet og at du har en solid grunnmur for eventuelle fremtidige endringer.
-
-## Se også
-
-- [Google Test dokumentasjon](https://github.com/google/googletest/blob/master/googletest/docs/primer.md)
-- [12 beste C++ testrammer](https://www.descasio.com/blog/the-top-12-c-test-frameworks-for-unit-and-functional-testing/)
+- [Google Test](https://github.com/google/googletest)
+- [Catch2](https://github.com/catchorg/Catch2)
+- [Test-Driven Development with C++](https://www.amazon.com/Test-Driven-Development-C-Kent-Beck/dp/0321146530) (bok)

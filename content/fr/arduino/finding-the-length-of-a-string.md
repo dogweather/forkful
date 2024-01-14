@@ -1,47 +1,43 @@
 ---
-title:                "Arduino: Trouver la longueur d'une chaîne de caractères"
+title:                "Arduino: Trouver la longueur d'une chaîne"
+simple_title:         "Trouver la longueur d'une chaîne"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Il y a plusieurs raisons pour lesquelles on pourrait vouloir trouver la longueur d'une chaîne de caractères en Arduino. Cela peut être utile pour traiter des entrées de l'utilisateur, pour effectuer des comparaisons de chaînes ou pour compter le nombre de caractères dans une chaîne.
+Si vous êtes un passionné de l'Arduino, vous savez que la programmation joue un rôle crucial dans la création de projets intéressants et fonctionnels. Une des choses les plus courantes que vous aurez à faire en programmation est de trouver la longueur d'une chaîne de caractères. Bien que cela puisse sembler simple au premier abord, c'est une compétence importante à maîtriser car elle peut être utilisée dans une variété de projets et de situations.
 
-## Comment faire
+## Comment faire 
 
-Pour trouver la longueur d'une chaîne en Arduino, nous pouvons utiliser la fonction `length()`. Cette fonction prend en paramètre une chaîne de caractères et renvoie le nombre de caractères dans celle-ci. Voici un exemple de code Arduino et sa sortie :
+Pour trouver la longueur d'une chaîne de caractères en utilisant l'Arduino, vous devrez utiliser une fonction appelée ```length```. Cette fonction prend une chaîne de caractères en entrée et renvoie le nombre de caractères qu'elle contient.
 
-```Arduino
-String myString = "Bonjour";
-int length = myString.length();
-Serial.println(length);
-
-// Output: 7
-```
-
-Nous pouvons également utiliser la fonction `strlen()` qui fonctionne de la même manière. Toutefois, cette fonction n'est pas disponible pour les chaînes de caractères définies avec la classe `String`. Nous devons donc utiliser des tableaux de caractères (`char`) et la fonction `strcpy()` pour copier la chaîne dans ce tableau, comme le montre l'exemple suivant :
+Pour illustrer cela, voici un exemple de code qui utilise la fonction ```length``` pour trouver la longueur de la chaîne "Bonjour Arduino !" :
 
 ```Arduino
-char myString[] = "Bonjour";
-int length = strlen(myString);
-Serial.println(length);
-
-// Output : 7
+String chaine = "Bonjour Arduino !";
+Serial.println(chaine.length());
 ```
 
-Il est important de noter que cette fonction renverra le nombre de caractères dans la chaîne, y compris l'espace, les chiffres et les caractères spéciaux.
+Dans cet exemple, la fonction ```length``` est utilisée pour renvoyer le nombre de caractères présents dans la chaîne "Bonjour Arduino !". Lorsque vous téléversez ce code sur votre carte Arduino, vous verrez le résultat s'afficher dans le moniteur série.
 
 ## Plongée en profondeur
 
-La fonction `length()` utilise en réalité la méthode `size()` qui est définie dans la classe `String`. Cette méthode parcourt la chaîne de caractères et utilise la fonction `strlen()` pour calculer la taille. Si vous utilisez la fonction `length()` sur une chaîne vide, elle renverra toujours 1 car elle compte le caractère de fin de chaîne.
+Maintenant que vous savez comment utiliser la fonction ```length```, voyons comment cela fonctionne en interne. En réalité, la fonction ```length``` est une méthode de la classe ```String```. Cela signifie qu'elle peut être utilisée pour n'importe quelle chaîne de caractères créée à l'aide de la classe ```String```.
 
-## Voir aussi
+Lorsque vous utilisez la fonction ```length```, elle parcourt la chaîne de caractères et compte le nombre de caractères avant de le renvoyer en tant que résultat. Cela signifie que la fonction doit parcourir toute la chaîne, ce qui peut prendre plus de temps si la chaîne est très longue. C'est pourquoi il est important d'utiliser cette fonction avec parcimonie dans votre code.
 
-- [Documentation officielle sur la fonction `length()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/length/)
-- [Documentation officielle sur la fonction `strlen()`](https://www.arduino.cc/reference/en/language/functions/strings/strlen/)
-- [Documentation officielle sur la classe `String`](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Tutorial YouTube sur la manipulation de chaînes en Arduino](https://www.youtube.com/watch?v=I5IplsZ_vmc)
+## Voir aussi 
+
+Pour en savoir plus sur la fonction ```length``` et sur d'autres méthodes utiles de la classe ```String```, vous pouvez consulter les liens suivants :
+
+- [Documentation officielle d'Arduino pour la classe String](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Un tutoriel en français sur la manipulation de chaînes de caractères avec l'Arduino](https://wiki.mchobby.be/index.php?title=Prog-Arduino-Strings&oldid=16043)
+- [Un forum de discussion sur les chaînes de caractères en programmation avec l'Arduino](https://forum.arduino.cc/index.php?topic=174348.0)
+
+En utilisant la fonction ```length``` et en comprenant son fonctionnement en profondeur, vous serez mieux équipé pour créer des projets passionnants avec votre Arduino. N'hésitez pas à explorer d'autres fonctions et techniques de programmation pour améliorer vos compétences et créer des projets encore plus intéressants. Bonne chance !

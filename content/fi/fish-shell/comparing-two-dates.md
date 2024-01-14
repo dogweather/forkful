@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Kahden päivämäärän vertailu"
+title:                "Fish Shell: Verrataan kahta päivämäärää."
+simple_title:         "Verrataan kahta päivämäärää."
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/comparing-two-dates.md"
 ---
 
@@ -9,32 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit vertailla kahta päivämäärää Fish Shell -ohjelmoinnilla? Ehkä sinulla on ohjelma, jossa tarvitset päivämäärätietoja ja haluat tarkistaa, ovatko ne samat tai kuuluuko toinen päivämäärä toisen välille.
+Miksi vertailla kahta päivämäärää? Päivämäärien vertailu voi olla hyödyllistä esimerkiksi sovelluksissa, joissa halutaan tarkistaa, onko jokin tapahtuma tapahtunut ennen tai jälkeen tiettyä päivämäärää, tai vertailla eri ajanjaksoja.
 
-## Miten?
+## Miten
 
-Vertailemalla kahta päivämäärää Fish Shellillä käytetään `date` -toimintoja. Voit käyttää esimerkiksi `date --date="01/01/2021"` -komennolla määrittääksesi haluamasi päivämäärän ja sitten käyttää `date +%s` saadaksesi päivämäärän Unix-aikaleimaksi. Vertaillaaksesi kahta päivämäärää, voit käyttää `-gt`, `-ge`, `-eq`, `-le` tai `-lt` operaattoreita riippuen siitä, haluatko verrata päivämääriä esimerkiksi suurempaan, pienempään tai yhtä suureen.
-
-Seuraava esimerkki vertailee kahta päivämäärää ja tulostaa "true" jos ensimmäinen päivämäärä on ennen toista tai "false" jos päivämäärät ovat samoja tai toinen päivämäärä on ensimmäisen jälkeen:
+Päivämäärien vertailu Fish Shellissa on helppoa ja vaivatonta. Käytämme tähän tarkoitukseen `date` komentoa, joka pystyy muuttamaan annetun päivämäärän UNIX-aikamerkistä haluttuun muotoon. Seuraavassa esimerkissä vertailemme kahta päivämäärää, joista toinen on nykyhetki ja toinen on tuleva päivä.
 
 ```Fish Shell
-set first_date (date --date="01/01/2021" +%s)
-set second_date (date --date="06/01/2021" +%s)
+$ date +%s  # Tulostaa nykyhetken UNIX-aikamerkistä
+1622467781
+$ date -d "Jan 01 2022" +%s  # Tulostaa tulevan päivän UNIX-aikamerkistä
+1641022800
+```
 
-if test $first_date -lt $second_date
-    echo "true"
-else
-    echo "false"
+Käytämme vertailussa komentoja `-ge` ja `-lt`, jotka tarkoittavat "greater than or equal" ja "less than". Näiden avulla voimme vertailla kahta päivämäärää ja nähdä, kumpi niistä on aikaisempi tai myöhäisempi.
+
+```Fish Shell
+$ if test (date +%s) -lt (date -d "Jan 01 2022" +%s)  # Jos nykyhetki on ennen tammikuuta 2022
+      echo "Tammikuu 2022 ei ole vielä alkanut"
+  end
+```
+
+Tässä tapauksessa tulostaisimme "Tammikuu 2022 ei ole vielä alkanut", koska nykyhetki (1622467781) on pienempi kuin tulevan päivän UNIX-aikamerkki (1641022800).
+
+## Syvempi sukellus
+
+Päivämäärien vertailu ei rajoitu vain kahteen päivämäärään, vaan voimme myös vertailla useita päivämääriä keskenään. Tähän tarvitaan hieman enemmän koodausta, mutta jälleen kerran Fish Shell tekee sen helpoksi.
+
+```Fish Shell
+set dates "2020-01-01 2021-03-15 2019-11-05"  # Luodaan lista päivämääristä
+for date in $dates  # Käydään läpi jokainen päivämäärä listassa
+    if test (date +%s) -ge (date -d $date +%s)  # Jos nykyhetki on myöhemmin tai sama päivämäärä kuin listassa oleva päivämäärä
+        echo $date "on tai ennen nykyhetkeä"
+    else 
+        echo $date "on jälkeen nykyhetken"
+    end
 end
 ```
 
-Tämä koodi tulostaa "true" koska ensimmäinen päivämäärä on ennen toista.
-
-## Syvemmälle
-
-Päivämäärien vertailu Fish Shellissä käyttää Unix-aikaleimoja, joten on tärkeää olla varovainen, kun koodaat ja tarkistaa, että vertailu tapahtuu oikeassa formaatissa. Voit myös käyttää muita `date` -toimintoja, kuten `date -s` muuttaaksesi päivämäärää ja `-d` saadaksesi päivämäärän Unix-aikaleimaksi.
+Tässä esimerkissä tulostamme jokaisen päivämäärän ja tarkistamme, onko se myöhäisempi vai aikaisempi kuin nykyhetki. Voimme myös käyttää muita vertailukomentoja, kuten `-gt` ja `-le`, joiden avulla voimme verrata päivämääriä tarkemmin.
 
 ## Katso myös
 
-- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Unix-aikaleiman selitys](https://www.epochconverter.com/)
+Näiden esimerkkien lisäksi voit tutustua Fish Shellin `date` komennon dokumentaatioon ja kokeilla muita tapoja vertailla päivämääriä. Voit myös ottaa syvemmän sukelluksen UNIX-aikamerkistä ja sen käytöstä päivämäärien kanssa. Alla muutamia hyödyllisiä linkkejä:
+
+- [Fish Shell: date](https://fishshell.com/docs/current/cmds/date.html)
+- [MORE UNIX: Understanding and Using Time on Linux](https://www.linux.com/topic/desktop

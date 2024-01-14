@@ -1,65 +1,68 @@
 ---
 title:                "Haskell: 获取当前日期"
+simple_title:         "获取当前日期"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么：获取当前日期的原因
+## 为什么
 
-在编程中，我们经常需要使用当前的日期来进行各种操作，比如生成文件名、记录日志等。Haskell提供了一种简便的方法来获取当前日期，让我们来看一下如何实现吧！
+在编写程序时，获取当前日期是一个常见的需求。无论是记录日志、创建文件名或是实现时间敏感的业务逻辑，都需要使用到当前日期信息。因此，了解如何在Haskell中获取当前日期是非常重要的。
 
-# 如何使用Haskell获取当前日期
+## 如何做
 
-我们可以使用标准库中的`Data.Time`来获取当前日期。首先，让我们导入该模块：
+在Haskell中，我们可以使用`Data.Time`模块来获取当前日期。首先，我们需要导入这个模块：
 
 ```Haskell
 import Data.Time
 ```
 
-然后，我们可以使用`getCurrentTime`函数来获取当前的日期和时间：
+然后，我们可以使用`getCurrentTime`函数来获取当前日期和时间的`UTCTime`类型值。这个函数的返回类型是`IO UTCTime`，所以我们需要使用`do`表达式来获取具体的日期和时间值：
 
 ```Haskell
-getCurrentTime :: IO UTCTime
+currentTime <- getCurrentTime
 ```
 
-请注意，`getCurrentTime`函数会返回一个`IO`类型的值，这意味着它在执行时会进行副作用，我们可以使用`<-`操作符来获取其返回的值：
+我们可以使用`formatTime`函数将`UTCTime`类型的值格式化为想要的格式。例如，我们可以将其格式化为年-月-日的形式：
 
 ```Haskell
-current <- getCurrentTime
+let formattedDate = formatTime defaultTimeLocale "%Y-%m-%d" currentTime
 ```
 
-接下来，我们可以使用`utctDay`函数来获取日期，并使用`show`函数来将日期转换成字符串：
+最后，我们可以使用`putStrLn`函数来打印出当前日期：
 
 ```Haskell
-let today = utctDay current
-let dateString = show today
+putStrLn formattedDate
 ```
 
-现在，我们可以将日期打印出来，查看结果：
+完整的代码如下：
 
 ```Haskell
-putStrLn dateString
+import Data.Time
+
+main = do
+  currentTime <- getCurrentTime
+  let formattedDate = formatTime defaultTimeLocale "%Y-%m-%d" currentTime
+  putStrLn formattedDate
 ```
 
-运行程序，你会得到类似于`2021-09-15`的日期字符串。太简单了吧！
+运行结果：
 
-# 深入了解获取当前日期
-
-在Haskell中，日期被表示为`Day`类型，它是一个整数，表示自公元前4713年1月1日以来的天数。我们可以使用`toGregorian`函数将`Day`类型的日期转换成`(year, month, day)`的元组，让我们来试试看：
-
-```Haskell
-let (year, month, day) = toGregorian today
-putStrLn $ show year ++ "年" ++ show month ++ "月" ++ show day ++ "日"
+```
+2021-10-16
 ```
 
-输出会变成类似于`2021年9月15日`的字符串。如果你想要获取当前的时间，你可以使用`utctDayTime`函数，它会返回一个`DiffTime`类型的值，表示从午夜以来的秒数。你可以使用`show`函数将其转换为字符串，类似于前面的例子。
+## 深入了解
 
-现在，你已经学会如何获取当前日期和时间了！如果你想要更多了解日期和时间的相关操作，你可以查看Haskell的`Data.Time`文档。祝你在编程中使用日期顺利～
+Haskell中的`Data.Time`模块实现了一个名为`UTCTime`的类型，代表了世界标准时间（UTC），它是一个世界各地都使用的时间标准。通过使用`UTCTime`类型，我们可以保证在任何时区都能获取到相同的当前日期和时间。
 
-# 同样查阅
+除了`getCurrentTime`函数，`Data.Time`模块还提供了其他一些函数来获取不同格式的日期和时间值，详情可参考[官方文档](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)。
 
-- [Haskell `Data.Time`文档](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Haskell官方网站](https://www.haskell.org/)
+## 参考链接
+
+- [Haskell官方文档](https://www.haskell.org/documentation/)
+- [Data.Time模块文档](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)

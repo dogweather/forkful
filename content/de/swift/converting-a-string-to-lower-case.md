@@ -1,7 +1,9 @@
 ---
-title:                "Swift: String in Kleinbuchstaben umwandeln"
+title:                "Swift: Umwandlung eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,35 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Konvertieren einer Zeichenfolge in Kleinbuchstaben ist eine nützliche Fähigkeit, die jeder Swift-Programmierer beherrschen sollte. Dies ermöglicht es, Texte zu formatieren und zu vergleichen und macht den Code insgesamt sauberer und lesbarer.
+Es gibt viele Gründe, warum Sie eine Zeichenkette in Kleinbuchstaben umwandeln möchten. Zum Beispiel können Sie so sicherstellen, dass alle Benutzereingaben einheitlich verarbeitet werden, unabhängig davon, ob der Benutzer Groß- oder Kleinbuchstaben verwendet.
 
-## Wie man es macht
+## Wie geht es
 
-Um eine Zeichenfolge in Kleinbuchstaben umzuwandeln, können wir die `lowercased()` Methode verwenden. Dies funktioniert sowohl für einzelne Zeichenfolgen als auch für String-Arrays.
+Es gibt verschiedene Möglichkeiten, eine Zeichenkette in Kleinbuchstaben umzuwandeln. Eine einfache Methode ist die Verwendung der ``String``-Methode ``lowercased()``. Hier ist ein Beispielcode:
 
 ```Swift
-
-let string = "DIESEN TEXT IN KLEINBUCHSTABEN KONVERTIEREN"
-print(string.lowercased())
-// output: diesen text in kleinbuchstaben konvertieren
-
-let stringArray = ["Apple", "BANANA", "ORANGE"]
-for fruit in stringArray {
-    print(fruit.lowercased())
-}
-// output: apple, banana, orange
+let name = "John Doe"
+let lowercaseName = name.lowercased()
+print(lowercaseName)
 ```
 
-## Tiefer Blick
+Die Ausgabe wird sein:
 
-Wenn wir uns den Code genauer ansehen, werden wir feststellen, dass die `lowercased()` Methode eine *neue* Zeichenfolge zurückgibt, anstatt die vorhandene zu ändern. Das bedeutet, dass wir das Ergebnis in einer neuen Variablen speichern müssen, wenn wir die konvertierte Zeichenfolge verwenden möchten.
+```
+john doe
+```
 
-Eine andere Möglichkeit, eine Zeichenfolge in Kleinbuchstaben zu konvertieren, ist die Verwendung der `localizedLowercase` Eigenschaft. Diese Methode berücksichtigt die Sprach- und Regionseinstellungen des Benutzers und konvertiert die Zeichenfolge entsprechend.
+Wie Sie sehen, wird die ursprüngliche Zeichenkette, ``John Doe``, in eine neue Zeichenkette umgewandelt, die ausschließlich Kleinbuchstaben enthält.
+
+Wenn Sie jedoch nur bestimmte Teile einer Zeichenkette in Kleinbuchstaben konvertieren möchten, können Sie die ``String``-Methode ``capitalized()`` in Kombination mit der Methode ``capitalized(with:)`` verwenden. Hier ist ein Beispielcode:
+
+```Swift
+let sentence = "Ich liebe es, Swift zu programmieren"
+let lowercaseSentence = sentence.lowercased()
+let sentenceWithCapitalizedFirstLetter = lowercaseSentence.capitalized(with: Locale.current)
+print(sentenceWithCapitalizedFirstLetter)
+```
+
+Die Ausgabe wird sein:
+
+```
+Ich liebe es, swift zu programmieren
+```
+
+In diesem Beispiel wird die gesamte Zeichenkette in Kleinbuchstaben umgewandelt und dann wird die erste Buchstaben jeder Wort des Satzes großgeschrieben.
+
+## Tiefere Einblicke
+
+Wenn Sie tiefer in die Umwandlung von Zeichenketten in Kleinbuchstaben eintauchen möchten, gibt es einige Dinge zu beachten. Zum Beispiel gibt es Unterschiede in der Art und Weise, wie verschiedene Sprachen bestimmte Buchstaben in Groß- und Kleinbuchstaben umwandeln. Deshalb kann es hilfreich sein, die Methode ``lowercased(with:)`` zu verwenden und eine bestimmte Region anzugeben, um die Umwandlung korrekt durchzuführen.
+
+Eine weitere Sache, die es zu beachten gilt, ist die Berücksichtigung von Sonderzeichen und Akzenten in Zeichenketten während der Umwandlung. Mit Swift gibt es jedoch einfache Möglichkeiten, diese zu erkennen und die Umwandlung entsprechend anzupassen.
+
+Insgesamt gibt es viele Aspekte, die bei der Umwandlung von Zeichenketten in Kleinbuchstaben zu beachten sind. Es ist daher wichtig, sich damit vertraut zu machen und zu verstehen, wie sie in Ihrem spezifischen Anwendungsfall korrekt eingesetzt werden können.
 
 ## Siehe auch
 
-Hier sind noch einige nützliche Ressourcen, um mehr über die Arbeit mit Zeichenfolgen in Swift zu erfahren:
-
-- [Swift Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Apple Developer Documentation: String](https://developer.apple.com/documentation/foundation/string)
-- [Hacking with Swift: How to use string interpolation in Swift](https://www.hackingwithswift.com/articles/141/how-to-use-string-interpolation-in-swift)
+- [Dokumentation von Apple über die ``String``-Methode ``lowercased()``](https://developer.apple.com/documentation/foundation/string/2893955-lowercased)
+- [Dokumentation von Apple über die ``String``-Methode ``capitalized(with:)``](https://developer.apple.com/documentation/foundation/string/1654413-capitalized)
+- [Tutorial zur Textmanipulation in Swift](https://www.raywenderlich.com/5485-text-manipulation-tutorial-for-ios-how-to-translate-strings-formatting-for-localization)

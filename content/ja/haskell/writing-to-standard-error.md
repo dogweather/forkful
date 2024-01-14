@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: 標準エラーに書き込む"
+title:                "Haskell: 「標準エラーへの書き込み」"
+simple_title:         "「標準エラーへの書き込み」"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/writing-to-standard-error.md"
 ---
 
@@ -9,27 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-なぜ私たちは標準エラーに書き込むのでしょうか。ハスケルのプログラミングでは、標準エラーは重要な役割を果たします。それは、デバッグやエラー処理など、プログラムの動作を確認するのに役立つからです。この記事では、標準エラーに書き込むことの重要性について説明します。
+コンピュータープログラミングをするために、標準エラーに書き込むことが必要な場合があります。たとえば、バグが発生した際にエラーメッセージを表示するために使われることがあります。
 
 ## 方法
 
-まず、```Haskell System.IO``` モジュールをインポートする必要があります。その後、```stderr``` 関数を使用して標準エラーにデータを書き込むことができます。以下は、```"Hello World!"``` を標準エラーに書き込む例です。
-
 ```Haskell
-import System.IO
-
-main = do
-  hPutStrLn stderr "Hello World!"
+printToStdErr :: IO ()
+printToStdErr = do
+    hPutStrLn stderr "エラーメッセージ"
+    hFlush stderr
 ```
 
-このコードを実行すると、ターミナル上に ```Hello World!``` というメッセージが表示されます。この出力が標準エラーに書き込まれたものです。
+このように、Haskellでは `stderr` を使って標準エラーに書き込むことができます。また、上記のコードでは `hFlush` を使ってエラーメッセージを即座に出力するようにしています。
 
 ## 深堀り
 
-標準エラーを使用すると、プログラムのエラーをより正確に把握することができます。通常、標準エラーは標準出力とは別のチャンネルで出力されるため、プログラムの実行結果だけでなく、エラーメッセージも別々に確認することができます。また、標準エラーへの書き込みはバッファリングされないため、リアルタイムでデータを表示することができます。さらに、標準エラーにはテキスト以外のデータも出力することができ、エラーが発生した際にデバッグに役立ちます。
+標準エラーに書き込むことで、プログラムの実行中に起こるエラーをユーザーに伝えることができます。`stderr` は常にエラーメッセージを表示するために使われるわけではありませんが、必要となる場面で役立つ重要な機能です。
 
-## 関連記事
+## 参考リンク
 
-- [Haskellers - System.IO](https://www.haskell.org/onlinereport/io.html#sys-io)
-- [Learn You a Haskell - Input and Output](http://learnyouahaskell.com/input-and-output)
-- [Haskell Wiki - Writing to stderr](https://wiki.haskell.org/Writing_to_stderr)
+- [Haskell入門](https://qiita.com/nosix/items/101378cc2bd1539aec3c)
+- [標準入出力とファイル入出力](http://mmatsubara.hatenablog.com/entry/2016/03/17/111921)
+- [Haskellでデバッグする方法](http://ai-ya-no.diary.jp/posts/2015/06/12/haskell%E3%81%A7%E3%83%87%E3%83%90%E3%83%83%E3%82%B0%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/)

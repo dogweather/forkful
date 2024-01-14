@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell recipe: Generating random numbers"
+simple_title:         "Generating random numbers"
 programming_language: "Fish Shell"
-category:             "Numbers"
+category:             "Fish Shell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/generating-random-numbers.md"
 ---
 
@@ -9,40 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Generating random numbers is a common task in programming that is essential for various applications such as creating randomized tests, simulations, and games. By understanding how to generate random numbers using the Fish Shell, you can add an element of unpredictability to your code.
+If you've ever needed to generate random numbers for a project or game, you may have realized that it can be a tedious and time-consuming task. That's where Fish Shell comes in. With its built-in random number generation function, you can easily generate random numbers without having to write your own code.
 
 ## How To
 
-Coding a simple command to generate a random number in Fish Shell is straightforward. The syntax is as follows:
+To generate a random number in Fish Shell, you can use the `random` command followed by the upper limit of the desired range. For example, if you want a random number between 1 and 10, you would use the following code:
 
-```Fish Shell
-echo (math —random)
+```
+Fish Shell
+random 10
 ```
 
-The output of this command will be a random decimal value between 0 and 1.
+The output would be a random number between 1 and 10, such as 6 or 9. You can also use variables in the upper limit if you want a more dynamic range. For instance, if you want a random number between 1 and a user-defined maximum, you can use a variable like this:
 
-To generate a random integer within a specific range, we can add parameters to the `math-random` command. For example, if we want to generate a random number between 1 and 10, we can modify the command to this:
-
-```Fish Shell
-echo (math —random —min=1 —max=10)
+```
+Fish Shell
+random $maximum
 ```
 
-The output from this command will be a random integer between 1 and 10.
+You can also specify a lower limit by using the `--lower-bound` flag. For example, if you want a random number between 50 and 100, you would use the following code:
 
-We can also use the `seq` command to generate a list of random numbers. The syntax is as follows:
-
-```Fish Shell
-seq 10 | math —random
+```
+Fish Shell
+random --lower-bound 50 100
 ```
 
-This command will generate 10 random decimal values and output them on separate lines.
+The output would be a random number between 50 and 100, such as 72 or 98.
 
 ## Deep Dive
 
-Behind the scenes, the Fish Shell uses a pseudo-random number generator (PRNG) to generate random numbers. A PRNG is an algorithm that uses a seed value to generate a sequence of numbers that appear random. However, since the algorithm is deterministic, the same seed value will produce the same sequence of numbers. In Fish Shell, the seed value is based on the current time, meaning that every time you run the command, you will get a different sequence of numbers.
+The random number generation function in Fish Shell uses the Xorshift128+ algorithm, which is a fast and efficient method for generating random numbers. This algorithm generates high-quality random numbers with a long period, making it ideal for applications where a large number of random numbers are needed.
+
+Furthermore, Fish Shell also has the ability to generate random strings using the `random string` command. This is particularly useful for generating unique IDs or passwords. You can specify the length of the string and even use special characters if needed.
 
 ## See Also
 
-- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
-- [Generating Random Numbers in Other Programming Languages](https://www.geeksforgeeks.org/generating-random-numbers-in-java/)
-- [Understanding Pseudo-Random Number Generators](https://www.khanacademy.org/computing/computer-science/cryptography/crypt/v/understanding-pseudo-random-number-generators)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/)
+- [Xorshift128+ Algorithm](https://en.wikipedia.org/wiki/Xorshift#xorshift*_128.2B)

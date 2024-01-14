@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Einen Textdatei schreiben"
+title:                "Elm: Das Verfassen einer Textdatei"
+simple_title:         "Das Verfassen einer Textdatei"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/writing-a-text-file.md"
 ---
 
@@ -9,72 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Schreiben wir eine Textdatei in Elm? In der heutigen Programmierwelt ist es wichtig, die Fähigkeit zu haben, mit verschiedenen Dateitypen zu interagieren. Das Schreiben von Textdateien kann uns helfen, Daten zu speichern, zu organisieren und für zukünftige Verwendung zu sichern.
+Das Schreiben von Textdateien ist ein grundlegender Teil der Programmierung in Elm. Durch das Erstellen von Textdateien können wir Informationen speichern, organisieren und jederzeit wieder abrufen. Dies ist besonders hilfreich, wenn wir mit großen Datenmengen arbeiten oder unser Programm mit externen Anwendungen integrieren möchten.
 
-## Wie Geht's
+## Wie geht es?
 
-Um eine Textdatei in Elm zu schreiben, müssen wir zuerst die Pakete "elm/file" und "elm/html" importieren. Dann erstellen wir eine Funktion, die die Datei erstellt und den Inhalt hinzufügt. Schließlich können wir unsere Funktion aufrufen und die Textdatei wird erstellt. Hier ist ein Beispielcode:
+Um eine Textdatei in Elm zu schreiben, müssen wir zunächst die "text" Funktion aus dem "elm/core"-Paket importieren. Dann können wir diese Funktion verwenden, um den Textinhalt zu erstellen und in eine Datei zu schreiben. Hier ist ein Beispielcode:
 
-```Elm
-module Main exposing (..)
+```
+import Text exposing (text)
 
-import Html exposing (Html)
-import File
-import File.Encode as Encode
-
--- Funktion zum Erstellen einer Textdatei
-createFile : String -> File
-createFile content =
-    File.write "meineDatei.txt" content
-
--- Rufe die Funktion auf und übergebe den Inhalt der Datei
-main : Html msg
 main =
-    let
-        file = createFile "Das ist der Inhalt der Datei."
-    in
-        Html.text "Datei wurde erstellt!"
-
--- Ausgabe: "Datei wurde erstellt!"
+    text "Dies ist ein Beispieltext."
 ```
 
-Um zu überprüfen, ob unsere Datei erfolgreich erstellt wurde, können wir den Inhalt der Datei lesen und ausgeben. Hier ist ein Beispielcode:
+Das Ergebnis wird in einer Datei namens "output.txt" gespeichert. Wir können auch angeben, in welchen Ordner die Datei gespeichert werden soll, indem wir den Dateipfad zusammen mit dem Dateinamen angeben:
 
-```Elm
--- Funktion zum Lesen des Inhalts einer Datei
-readFile : File -> String
-readFile file =
-    File.input "meineDatei.txt" "UTF-8"
-        |> RemoteData.fromResult
-        |> RemoteData.mapMaybe identity
-        |> RemoteData.fold
-            (always "-- Datei konnte nicht gelesen werden --")
-            identity
-
--- Rufe die Funktion auf und gebe den Inhalt in der Konsole aus
-main : Html msg
-main =
-    let
-        file = createFile "Das ist der Inhalt der Datei."
-        content = readFile file
-    in
-        Html.div
-            []
-            [ Html.text content ]
-
--- Ausgabe: "Das ist der Inhalt der Datei."
 ```
+import Text exposing (text)
+
+main =
+    text "Dies ist ein Beispieltext."
+        
+outputFile = "/Users/MyName/Desktop/output.txt"
+```
+
+Im obigen Beispiel wird die Datei im Ordner "Desktop" unter dem Dateinamen "output.txt" gespeichert. Natürlich können wir auch einen dynamischen Dateinamen erstellen, indem wir Variablen verwenden.
 
 ## Tiefer Einblick
 
-Das Schreiben von Textdateien in Elm kann komplexer werden, wenn wir ein bestimmtes Format oder Struktur benötigen. In solchen Fällen können wir die Pakete "elm/parser" und "elm/regex" nutzen, um die Daten zu analysieren und in das gewünschte Format zu konvertieren.
+Die "text" Funktion allein ermöglicht es uns, Text in eine Datei zu schreiben. Aber in manchen Fällen möchten wir vielleicht auch zusätzliche Informationen wie Zahlen oder Datentypen in unsere Datei einfügen. Hier können wir die Funktion "toString" verwenden, um unsere Daten in einen String umzuwandeln, der dann von der "text" Funktion verwendet werden kann. Zum Beispiel:
 
-Ein weiterer wichtiger Faktor beim Schreiben von Textdateien ist die Behandlung von Sonderzeichen und Codierung. Mit dem Paket "elm/bytes" können wir unsere Daten in Bytes konvertieren und sicherstellen, dass keine unerwarteten Zeichen oder Fehler auftreten.
+```
+import Text exposing (text)
 
-## Siehe Auch
+main =
+    let
+        number = 42
+    in
+        text (toString number)
+```
 
-- [Elm Datei Paket](https://package.elm-lang.org/packages/elm/file/latest/)
-- [Elm HTML Paket](https://package.elm-lang.org/packages/elm/html/latest/)
-- [Elm Parser Paket](https://package.elm-lang.org/packages/elm/parser/latest/)
-- [Elm Regex Paket](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Elm Bytes Paket](https://package.elm-lang.org/packages/elm/bytes/latest/)
+Dies wird die Zahl "42" in die Datei schreiben. Wir können auch komplexere Datentypen wie Listen oder benutzerdefinierte Typen in Strings umwandeln und dann in die Datei schreiben.
+
+## Siehe auch
+
+* [Elm Dokumentation zur text Funktion](https://package.elm-lang.org/packages/elm/core/latest/Text)
+* [Tutorial zur Dateiverwaltung in Elm](https://www.elm-tutorial.org/en/03-subs-cmds/05-command.html)
+* [Beispielprojekt zum Schreiben von Textdateien mit Elm](https://github.com/elm/projects/tree/master/write-text-file)

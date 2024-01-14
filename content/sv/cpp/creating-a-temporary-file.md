@@ -1,43 +1,70 @@
 ---
 title:                "C++: Skapa en tillfällig fil"
+simple_title:         "Skapa en tillfällig fil"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför skapa en temporär fil?
+## Varför
+Att skapa en tillfällig fil är en vanlig teknik inom C++ programmering. Det är användbart när du behöver tillfälligt lagra data eller spara resultaten av en beräkning. Dessutom kan tillfälliga filer användas för att hantera tillgång till resurser som filer eller databaser.
 
-Att skapa en temporär fil är en vanlig teknik inom C++ programmering för att hantera data som behöver tillfälligt lagras. Det kan vara användbart i situationer där man vill undvika att permanent ändra eller förstöra befintliga filer, till exempel när man bearbetar stora mängder data eller när man behöver skapa en temporär fil som endast är relevant för en specifik körning av programmet.
-
-## Hur man skapar en temporär fil
-
-Att skapa en temporär fil i C++ är enkelt och görs genom att använda standardbiblioteksfunktionen `tmpnam()`. Den returnerar en unik filnamn som kan användas för att skriva och läsa data från filen. Nedan finns ett exempel på hur man kan använda denna funktion:
+## Så här går du tillväga
+Här är en enkel kod som visar hur man skapar och använder en tillfällig fil:
 
 ```C++
-#include <cstdio>
+#include <iostream>
+#include <fstream> // inkludera den nödvändiga biblioteket för filmanipulering
 
 int main() {
-  char* filename = tmpnam(nullptr); // Skapa ett unikt filnamn
-  FILE* fp = fopen(filename, "w"); // Öppna fil i skrivläge
-  fprintf(fp, "Hej från min temporära fil!"); // Skriv data till filen
-  fclose(fp); // Stäng filen när man är klar
-  remove(filename); // Ta bort den temporära filen
-  return 0;
+    // Skapa en objekt av typen ofstream för att skriva till en fil
+    std::ofstream temp_file;
+    // Använd std::tmpnam för att generera ett unikt namn för den tillfälliga filen
+    char file_name[L_tmpnam];
+    std::tmpnam(file_name);
+
+    // Öppna den tillfälliga filen för skrivning
+    temp_file.open(file_name);
+
+    // Skriv några rader till den tillfälliga filen
+    temp_file << "Detta är en tillfällig fil som skapats i C++!" << std::endl;
+    temp_file << "Den kan användas för att spara data eller resultat av beräkningar." << std::endl;
+
+    // Stäng filen
+    temp_file.close();
+
+    // Öppna den tillfälliga filen för läsning
+    std::ifstream in_file(file_name);
+
+    // Läs innehållet i den tillfälliga filen och skriv ut det på skärmen
+    std::cout << "Innehållet i den tillfälliga filen:" << std::endl;
+    std::cout << in_file.rdbuf() << std::endl;
+
+    // Stäng filen
+    in_file.close();
+
+    // Radera den tillfälliga filen
+    std::remove(file_name);
+
+    return 0;
 }
 ```
+Följande utdata genereras av koden ovan:
 
-När koden ovan körs, kommer filen att skapas och texten "Hej från min temporära fil!" kommer att skrivas till filen. Sedan stängs filen och tas bort för att inte längre vara tillgänglig på filsystemet.
+```
+Innehållet i den tillfälliga filen:
+Detta är en tillfällig fil som skapats i C++!
+Den kan användas för att spara data eller resultat av beräkningar.
+```
 
-## Djupdykning i skapandet av temporära filer
+## Fördjupning
+I koden ovan användes funktionen `std::tmpnam` för att generera ett unikt namn för den tillfälliga filen. Detta är en enkel och bekväm metod, men den har en nackdel: det finns en risk för att två processer skapar filer med samma namn vid nästan exakt samma tidpunkt. För att undvika detta kan man istället använda funktionen `std::tmpfile`, som automatiskt genererar ett unikt filnamn och skapar en tom fil med det namnet.
 
-I bakgrunden använder funktionen `tmpnam()` olika metoder för att skapa ett unikt filnamn. Det kan till exempel baseras på process-ID, tidsstämpel eller andra systemparametrar. Dessa filnamn kommer alltid att vara unika, även om flera processer körs samtidigt.
+En annan viktig aspekt att tänka på när man hanterar tillfälliga filer är att se till att de raderas när de inte längre behövs. Annars riskerar man att få en mängd oanvända filer som tar upp onödig plats på hårddisken. I koden ovan användes funktionen `std::remove` för att radera den tillfälliga filen efter att den hade använts. Det är också en god praxis att kontrollera om filen verkligen har raderats efteråt.
 
-När en temporär fil skapas, lagras den vanligtvis i den temporära mappen på operativsystemet. Detta är en speciell mapp som används för att lagra temporära filer som inte behövs för en längre tid. Det är viktigt att notera att dessa temporära filer kan tas bort av operativsystemet när de inte längre behövs, så det är viktigt att stänga och ta bort filen när man är klar med den.
-
-# Se även
-
-- [C++ Standardbibliotek](https://en.cppreference.com/w/cpp/filesystem/temporary_directory_path)
-- [PHP - Skapa temporär fil](https://www.php.net/manual/en/function.tempnam.php)
-- [Java - Skapa temporär fil](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-)
+## Se även
+- [C++ filhantering](https://www.programiz.com/cpp-programming/files-input-output)
+- [C++ temporära filer](https://www.techiedelight.com/create-temporary-files-cpp/)

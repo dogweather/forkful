@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Wyszukiwanie i zastępowanie tekstu"
+title:                "Fish Shell: Wyszukiwanie i zamiana tekstu"
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/searching-and-replacing-text.md"
 ---
 
@@ -9,34 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często zdarza się, że przy pracy z tekstem, musimy dokonać pewnych zmian w jego zawartości. Może to być zmiana wybranego słowa na inne, lub nawet całkowite usunięcie zbędnego tekstu. W takich sytuacjach bardzo przydatne jest narzędzie do wyszukiwania i zastępowania tekstu. W tym artykule pokażemy, w jaki sposób można wykorzystać Fish Shell do tego celu.
+Jeśli często pracujesz z tekstem w programowaniu, to z pewnością spotkałeś się z potrzebą znajdowania i zamiany określonych fragmentów. Możliwe, że miało to miejsce nawet wkrótce po tym, jak nauczyłeś się podstaw programowania. Bez względu na to, czy jesteś początkującym czy doświadczonym programistą, pewnie zgodzisz się z nami, że znajdowanie i zamiana tekstu jest nieodłączną częścią wielu projektów. W tym wpisie dowiesz się, w jaki sposób wykorzystać polecenie ```sed``` wraz z narzędziem Fish Shell, aby wygodnie przeprowadzać operacje wyszukiwania i zamiany tekstu.
 
 ## Jak to zrobić
 
-Aby zacząć korzystać z funkcjonalności wyszukiwania i zastępowania tekstu w Fish Shell, należy użyć polecenia `sed`. Polecenie to pozwala na przeszukiwanie plików oraz wprowadzanie zmian w wybranych fragmentach tekstu. Poniżej przedstawiamy przykładowy kod, który znajduje wszystkie wystąpienia słowa `hello` w pliku `text.txt` i zamienia je na `world`:
+Fish Shell posiada wbudowane wsparcie dla poleceń wywołanych z poziomu bazy danych. Jednym z tych poleceń jest ```sed``` - narzędzie do przeprowadzania operacji na tekście. Aby go wykorzystać, wystarczy wpisać polecenie w terminalu i przekazać mu odpowiednie parametry.
 
-```Fish Shell
-sed -i 's/hello/world/g' text.txt
+Poniżej przedstawiamy przykładowe polecenie, które znajduje wszystkie wystąpienia słowa "kot" w pliku ```tekst.txt``` i zamienia je na "pies":
+
+```
+sed -i 's/kot/pies/g' tekst.txt
 ```
 
-Po wykonaniu tego polecenia, w plikui `text.txt` wszystkie instancje słowa `hello` zostaną zastąpione przez `world`.
+W powyższym przykładzie użycie opcji ```-i``` oznacza, że zmiany zostaną dokonane bezpośrednio w pliku, zamiast wypisania wyniku na ekranie.
 
-Możemy również użyć polecenia `sed` do zmiany tylko wybranych części tekstu. Przykładowo, chcemy zamienić wszystkie litery `a` na `b` tylko w linijce, która zawiera słowo `example`. W tym celu możemy wykorzystać polecenie `sed` w następujący sposób:
+## Deep Dive
 
-```Fish Shell
-sed -i '/example/s/a/b/g' text.txt
-```
+Polecenie ```sed``` oferuje wiele możliwości i opcji, dzięki którym możemy dokładnie określić, jakie wyrażenia chcemy wyszukać i zamienić. Możemy między innymi wykorzystać flagi, aby określić zakres linii, na którym ma zostać przeprowadzona zmiana, lub zastosować wyrażenia regularne, aby bardziej dokładnie dopasować szukane słowa.
 
-Dzięki temu, wszystkie litery `a` w linijce z wyrażeniem `example` zostaną zamienione na `b`, a pozostałe części pliku pozostaną niezmienione.
+Żeby przetestować różne opcje polecenia ```sed```, polecamy skorzystać z dokumentacji Fish Shell oraz przeglądać przykłady na forach lub blogach programistycznych. W ten sposób możesz przystosować polecenie do swoich konkretnych potrzeb i dokładnie rozumieć, jak działa.
 
-## Głębsza analiza
+## Zobacz też
 
-Polecenie `sed` oferuje wiele możliwości dzięki wykorzystaniu wyrażeń regularnych. Możemy na przykład wykorzystać flagę `g` w poleceniu `sed` aby zamienić wszystkie wystąpienia wybranego słowa lub znaku w całym pliku, a nie tylko jedno. Możemy także wykorzystać flagę `i` aby ignorować wielkość liter. Dzięki temu, polecenie będzie wyszukiwać i zastępować tekst niezależnie od tego, czy jest napisany z małych czy dużych liter.
+- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/cmds/sed.html)
+- [Przykłady użycia polecenia sed w Fish Shell](https://www.baeldung.com/linux/sed-replace-string)
+- [Przewodnik po wyrażeniach regularnych w poleceniu sed](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
 
-Polecenie `sed` jest bardzo przydatnym narzędziem w Fish Shell, które pozwala na szybkie i proste wyszukiwanie i zastępowanie tekstu. Warto zapoznać się z bogatymi możliwościami tego polecenia, aby ułatwić sobie pracę z tekstem.
-
-## Zobacz również
-
-1. Oficjalna dokumentacja Fish Shell: https://fishshell.com/docs/current/
-2. Dokumentacja polecenia `sed`: https://www.gnu.org/software/sed/manual/sed.html
-3. Artykuł o wyrażeniach regularnych: https://www.regular-expressions.info/
+Dziękujemy, że przeczytałeś ten wpis. Mamy nadzieję, że teraz czujesz się pewniej w używaniu polecenia ```sed``` w swoich projektach. W razie potrzeby zawsze możesz wrócić do tego artykułu lub zapoznać się z innymi narzędziami tekstowymi oferowanymi przez Fish Shell.

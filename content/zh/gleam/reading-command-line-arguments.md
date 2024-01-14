@@ -1,44 +1,58 @@
 ---
 title:                "Gleam: 读取命令行参数"
+simple_title:         "读取命令行参数"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：阅读命令行参数是一项重要的编程技能，它可以帮助你构建更强大的应用程序，同时提高你的技能水平。无论你是初学者还是有经验的开发者，掌握阅读命令行参数都是至关重要的。
+# 为什么
 
-如何进行：以下是一个使用Gleam语言编写的基本例子，它展示了如何读取和处理命令行参数，并输出到控制台。注意，你需要在终端中运行该程序，输入参数并按下回车键才能看到结果。
+如果你是一名Gleam程序员，你可能已经听说过命令行参数。它们可以帮助你的程序在运行时从命令行接受输入，并根据这些输入执行特定的操作。阅读命令行参数是一个重要的技能，无论你是在开发命令行工具还是构建网络应用程序。
+
+# 如何
+
+阅读命令行参数的方法很简单。首先，在你的Gleam文件中导入'gleam/io'模块：
 
 ```Gleam
-import gleam/io.Console
-
-fn main() {
-    args = Console.args
-    Console.print_line("你输入的参数是：")
-    Console.print_line(args)
-}
+import gleam/io
 ```
 
-深度挖掘：阅读命令行参数的最佳方法是使用标准库中的`gleam/io`模块。它提供了各种函数和方法来读取命令行参数，并进行必要的类型转换和格式化。你也可以自己编写函数来处理特定的参数格式，以满足你的需求。
+然后，使用'io/parse_arguments'函数来解析命令行参数，并将参数存储在一个变量中：
 
-另外，你还可以探索如何处理错误或异常情况，例如处理无效的参数输入或缺少必要的参数。在这里，你可以使用`gleam/error`模块来捕获和处理这些异常，从而优化你的应用程序的健壮性。
+```Gleam
+args = io/parse_arguments()
+```
 
-此外，如果你想进一步学习有关阅读命令行参数的知识，请查阅Gleam官方文档，并参考其他有关编程语言的相关资源，从中提取关键信息并将其应用到Gleam代码中。
+现在，你可以使用变量'args'来访问每个命令行参数。例如，如果你的程序需要接受一个名字作为参数，你可以使用'args'来获取这个名字，如下所示：
 
-相关阅读：下面是一些有用的链接，帮助你更深入地了解如何使用Gleam语言读取和处理命令行参数。
+```Gleam
+name = args["name"]
+```
 
-- [Gleam官方文档](https://gleam.run/documentation/)
-- [官方Gleam库：gleam/io](https://gleam.run/documentation/standard_library/#gleam-io)
-- [Gleam示例仓库：命令行参数](https://github.com/gleam-lang/examples/tree/master/command-line-arguments)
+最后，你可以在程序中使用这个名字来执行你想要的操作。当你从命令行运行你的程序，你可以在命令行中使用'--name'参数来提供名字，如下所示：
 
-另外，你也可以在[Gleam社区版块](https://discourse.gleam.run)上与其他开发者交流，分享你的经验和问题，并从他们的回复中学习更多关于Gleam的知识。
+```shell
+gleam run program_name.gleam --name="John"
+```
 
-此文结束于：欢迎探索Gleam语言更多的特性，祝你编程愉快！ 
+在这个例子中，程序将获取到名字"John"，并在运行时使用它来执行相关的操作。
 
-## 参考链接：
+# 深入了解
 
-- [官方Gleam教程：命令行参数](https://gleam.run/book/tutorials/command-line-arguments.html)
-- [使用Gleam读取命令行参数的实际案例](https://medium.com/@gleam/run-good-fast-how-i-use-gleam-to-write-cli-tools-d3d20707cf6f)
-- [Gleam社区版块](https://discourse.gleam.run)
+除了上面提到的基本用法，阅读命令行参数还可以有更多的用途，例如：
+
+- 使用默认值：如果命令行中没有提供某个参数，你可以使用'io/parse_arguments_with_defaults'函数来设置默认值，以确保程序的正常运行。
+- 错误处理：如果命令行参数的格式不正确，或者缺少必要的参数，你可以使用'io/parse_arguments_with_error_handling'函数来捕获错误并进行处理。
+- 更复杂的参数：除了简单的字符串参数，你还可以通过使用'gleam/struct'来创建结构体来解析和使用更复杂的命令行参数。
+
+了解更多关于命令行参数的用法和函数，请查阅官方文档。
+
+# 同时查看
+
+- [Offical Gleam Documentation](https://gleam.run/documentation/)
+- [Gleam Github Repository](https://github.com/gleam-lang/gleam)
+- [A Beginner's Guide to Gleam Programming](https://dev.to/alexburgos/a-beginner-s-guide-to-gleam-programming-5i6g)

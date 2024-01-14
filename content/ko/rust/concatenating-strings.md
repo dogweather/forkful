@@ -1,7 +1,9 @@
 ---
 title:                "Rust: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/concatenating-strings.md"
 ---
 
@@ -9,48 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-문자열  연결(concatenation) 을 실습하는 것의 이유는 Rust의 효율적이고 강력한 방식을 사용하여 문자열을 다루는 것을 배우기 위함입니다.
+사람들이 문자열을 연결하는 것에 참여하는 이유는 무엇일까요? Rust는 높은 속도와 안정성을 제공하는 언어로, 문자열을 빠르고 효율적으로 처리할 수 있기 때문입니다.
 
-## 어떻게
+## 어떻게 진행해야 할까?
 
-우선, Rust 를 설치하고 실행시키세요. 그리고 다음과 같이 `main.rs` 파일을 만들어서 문자열 연결을 해보세요.
+아래의 코드 예제를 참고하면 Rust에서 문자열을 연결하는 방법을 알 수 있습니다.
 
 ```Rust
 fn main() {
-  let string1 = "안녕하세요";
-  let string2 = "Rust 프로그래밍을 배워봅시다!";
-  let result = string1.to_string() + " " + string2;
-
-  println!("{}", result);
+    let mut str1 = String::from("Hello");
+    let str2 = "world";
+    str1.push_str(str2);
+    println!("{}", str1);
 }
 ```
 
-위의 코드를 실행하면 다음과 같은 출력을 볼 수 있습니다.
+출력은 `Helloworld`가 됩니다. `push_str()` 함수를 사용하여 첫 번째 문자열에 두 번째 문자열을 연결한 후 결과를 출력하는 간단한 예제입니다.
 
-```
-안녕하세요 Rust 프로그래밍을 배워봅시다!
-```
+## 깊게 들어가기
 
-위의 코드에서 `result` 변수를 보면, 문자열을 연결하기 위해 `+` 연산자를 사용하고 있음을 알 수 있습니다. 이렇게 함으로써 우리는 간단하게 두 개의 문자열을 연결할 수 있습니다.
-
-## 더 깊이 들어가보기
-
-문자열 연결 작업은 Rust에서 여러 가지 방식으로 할 수 있습니다. 위의 예제에서는 `to_string` 함수를 사용해 문자열로 변환한 뒤 `+` 연산자를 사용했습니다. 하지만 이보다 더 효율적이고 강력한 방식으로도 할 수 있습니다.
-
-예를 들어, `String::from` 함수를 사용해서 두 개의 문자열을 연결할 수도 있습니다. 또는 `format!` 매크로를 사용하여 여러 개의 변수를 문자열 내에 삽입하고 연결할 수도 있습니다.
-
-자세한 정보는 [Rust 공식 문서](https://doc.rust-lang.org/std/string/)를 참고하시기 바랍니다.
+문자열을 연결하는 방법에 대해 더 깊이 알아보겠습니다. Rust의 `String` 타입은 UTF-8을 지원하며, `push_str()` 함수를 사용하여 문자열을 뒤에 연결할 수 있습니다. 또한 `format!()` 매크로를 사용하여 다수의 문자열을 연결하는 것도 가능합니다.
 
 ## 더 알아보기
 
-다른 Rust 기초 개념을 배우고 싶다면 다음의 링크들을 참고해보세요.
+이외에도 Rust에서는 문자열을 배열 형태로 다룰 수 있는 `Vec<char>` 타입을 제공하고 있으며, `chars()` 메서드를 사용하여 문자 하나씩 처리할 수 있습니다.
 
-- [변수 선언](https://doc.rust-lang.org/stable/book/ch03-01-variables-and-mutability.html)
-- [함수](https://doc.rust-lang.org/stable/book/ch03-03-how-functions-work.html)
-- [컬렉션](https://doc.rust-lang.org/stable/book/ch08-00-common-collections.html)
+## 동일한 주제를 다루는 다른 블로그 글들
 
-## 참고 자료
+- [Rust에서 문자열 연결하는 방법](https://rust-lang-ja.github.io/the-rust-programming-language-ja/1.6/book/strings.html)
+- [Rust에서의 문자열 처리 최적화](https://blog.logrocket.com/optimizing-string-processing-in-rust/)
+- [Rust 웹 개발에서의 문자열 처리](https://medium.com/@iamoverrated/rust-web-development-part-2-express-yourself-string-processing-in-rust-a69874b3c5f2)
 
-- [Rust 공식 문서](https://www.rust-lang.org/learn)
-- [노마드 코더의 Rust 강좌](https://youtu.be/zF34dRivLOw)
-- [Rust 프로그래밍 기초 강의](https://www.youtube.com/watch?v=8kaduiI-JZY)
+# See Also
+
+- [Rust 공식 문서 (한국어)](https://www.rust-lang.org/ko/)
+- [Rust 커뮤니티 포럼](https://users.rust-lang.org/)

@@ -1,64 +1,47 @@
 ---
-title:                "Java: 编写测试"
+title:                "Java: 写测试"
+simple_title:         "写测试"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么写测试？
+## 为什么
 
-在编写任何代码时，测试都是非常重要的环节。写测试可以帮助我们发现潜在的BUG，并且在代码更改后验证代码的正确性。这可以大大提高代码的质量和可靠性。
+测试是每个开发人员都应该掌握的重要技能。通过编写测试，您可以验证您的代码是否按照预期工作，并且可以在代码中发现潜在的问题。这有助于提高代码的质量和可维护性，并帮助您更好地组织和管理代码。此外，检查测试覆盖率还可以提供对代码覆盖率的概述，从而帮助您确定需要更多测试的区域。
 
-# 如何写测试？
+## 如何
 
-为了简单起见，我们将使用Java语言来展示如何编写测试。下面是一个简单的示例，我们将编写一个测试来验证一个数字是否为偶数：
+首先，创建一个新的Java项目，并为每个类创建对应的测试类。通常，测试类的命名格式为 “[被测试类名]Test”。接下来，确保您已经导入了Junit库。然后，使用Junit4中的`@Test`注释来标记测试方法。您可以在测试方法中编写针对不同输入情况的测试用例，并使用断言来验证预期的输出结果。下面是一个基本的测试类示例：
 
-```Java
-// 导入JUnit库
-import org.junit.Test;
+```
+Java
+import org.junit.*;
 import static org.junit.Assert.*;
 
-// 定义测试类
-public class NumberTest {
-
-	// 定义测试方法
-	@Test
-	public void testIsEven() {
-		// 设置输入值
-		int num = 6;
-		// 设置预期结果
-		boolean expected = true;
-		// 调用被测试方法
-		boolean result = Number.isEven(num);
-		// 验证结果是否与预期相同
-		assertEquals(expected, result);
-	}
+public class CalculatorTest {
+    @Test
+    public void testAddition() {
+        Calculator calculator = new Calculator();
+        assertEquals(10, calculator.add(5, 5));
+    }
 }
 ```
 
-在上面的代码中，我们首先导入了JUnit库，在编写测试时会用到它。然后，我们定义了一个测试类，并在其中定义了一个测试方法，命名为`testIsEven`。在这个方法中，我们设置了输入值`num`为6，设置了预期结果`expected`为true，并调用了被测试的方法`isEven`。最后，我们使用`assertEquals`方法来验证实际结果`result`是否与预期结果相同。
+在上面的例子中，我们创建了一个名为Calculator的测试类，并使用`@Test`注释来标记`testAddition`方法。在方法中，我们创建了一个Calculator对象，并调用其`add`方法来计算5加5的结果。最后，我们使用`assertEquals`断言来验证计算结果是否为我们预期的值10。如果测试成功，测试方法将会通过，否则将会抛出异常。您可以根据需要编写其他测试方法，并使用不同的断言来验证不同的情况。
 
-如果我们运行这个测试，应该会得到通过的结果。但是，如果我们将输入值改为一个奇数，再次运行测试，应该会得到失败的结果，并且会提示输入值不是偶数。这就说明我们的测试是有效的，可以帮助我们发现潜在的问题。
+## 深入探讨
 
-# 深入了解
+测试是一个广泛的话题，有很多不同的方法和工具可以帮助您编写有效的测试。除了单元测试之外，还有集成测试和端到端测试，它们可以用于测试不同层面的代码。此外，还有其他的测试工具，比如Mockito和Selenium，可以帮助您模拟对象和自动化浏览器测试。另外，您还可以使用代码覆盖率工具来衡量您的测试覆盖率，并发现可能需要增加测试的区域。精确的测试可以帮助您提高代码质量，并减少错误。
 
-除了使用JUnit库外，还有许多其他的测试框架可以帮助我们编写更加复杂的测试。同时，还可以利用Mock对象来模拟一些外部依赖，使我们能够更加灵活地进行测试。
+## 参考资料
 
-另外，编写好的测试不仅可以帮助我们发现问题，还可以作为文档来理解代码、作为教学示例来学习代码。因此，写测试是非常值得花费时间和精力的。
+- [JUnit官方网站](https://junit.org/junit4/)
+- [Mockito官方文档](https://javadoc.io/static/org.mockito/mockito-core/3.11.2/org/mockito/Mockito.html)
+- [Selenium官方文档](https://www.selenium.dev/documentation/)
+- [代码覆盖率工具：Jacoco](https://www.eclemma.org/jacoco/)
 
-# 参考链接
-
-- JUnit官方文档：https://junit.org/junit5/docs/current/user-guide/
-- Mockito官方文档：https://site.mockito.org/
-- 为什么写测试？：https://www.guru99.com/testing-why-test.html
-- 测试驱动开发（TDD）教程：https://www.tutorialspoint.com/software_testing_dictionary/test_driven_development.htm
-
-# 参见
-
-以上是编写测试的基本介绍，希望能给你提供帮助。如果想学习更多关于Java编程的知识，可以参考以下资源：
-
-- Java入门教程：https://www.runoob.com/java/java-tutorial.html
-- 如何在IntelliJ中编写Java程序：https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html
-- Java编程视频教程：https://www.bilibili.com/video/BV1NJ411h7hL
+## 参考链接

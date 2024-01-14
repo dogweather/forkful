@@ -1,50 +1,49 @@
 ---
-title:                "TypeScript: Generowanie losowych liczb"
+title:                "TypeScript: Tworzenie losowych liczb"
+simple_title:         "Tworzenie losowych liczb"
 programming_language: "TypeScript"
-category:             "Numbers"
+category:             "TypeScript"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego Powinieneś Używać Generatora Losowych Liczb w TypeScript
+## Dlaczego
 
-Czy kiedykolwiek potrzebowałeś wylosować losowe liczby w swoim kodzie TypeScript? Może zastanawiałeś się, po co to jest potrzebne lub jak to zrobić? W tym artykule dowiesz się, dlaczego warto używać generatora losowych liczb w języku TypeScript i jak to zrobić.
+Generowanie losowych liczb może być bardzo przydatne w programowaniu. Może to pomóc w tworzeniu losowych symulacji, losowego wybierania elementów, generowania unikalnych identyfikatorów i wielu innych zastosowań.
 
 ## Jak To Zrobić
 
-Aby wygenerować losowe liczby w TypeScript, możesz użyć metody `Math.random()`. Poniżej znajduje się przykładowy kod wykorzystujący tę metodę:
+Aby wygenerować losową liczbę w TypeScript, możesz użyć funkcji `Math.random()`, która zwraca liczbę zmiennoprzecinkową między 0 a 1. Aby uzyskać większą liczbę, możesz pomnożyć ją przez maksymalną wartość, którą chcesz uzyskać. Na przykład, jeśli chcesz uzyskać losową liczbę między 1 a 10, możesz pomnożyć wynik przez 10 i dodać 1, co wygląda następująco:
 
 ```TypeScript
-// Wygenerowanie losowego numeru od 1 do 10
-const randomNum = Math.floor(Math.random() * 10) + 1;
-
-console.log(randomNum); // Wyświetli losową liczbę między 1 a 10
+let randomNumber: number = Math.random() * 10 + 1;
+console.log(randomNumber); // output: 7.23958242
 ```
 
-W powyższym kodzie, wykorzystaliśmy metodę `Math.floor()` do zaokrąglenia wygenerowanej liczby w dół oraz dodaliśmy wartość `1`, aby uniknąć wygenerowania zera. Dzięki temu, otrzymujemy losową liczbę z zakresu od 1 do 10.
-
-Możesz również wygenerować losowe liczby z ustalonego zakresu, np. od 50 do 100:
+Możesz również użyć funkcji `Math.floor()`, aby zaokrąglić liczby w dół i otrzymać całkowitą liczbę. Na przykład, jeśli chcesz wygenerować losową liczbę między 1 a 10, możesz użyć funkcji `Math.floor()` w następujący sposób:
 
 ```TypeScript
-// Wygenerowanie losowego numeru od 50 do 100
-const randomNum = Math.floor(Math.random() * 51) + 50;
-
-console.log(randomNum); // Wyświetli losową liczbę między 50 a 100
+let randomNumber: number = Math.floor(Math.random() * 10) + 1;
+console.log(randomNumber); // output: 9
 ```
 
-Zauważ, że musimy dodać 1 do szerokości zakresu (w tym przypadku 51), aby uniknąć wygenerowania liczby równej 0.
+Możesz również zastosować te techniki do generowania losowego indeksu lub elementu z tablicy. Na przykład, jeśli masz tablicę z imionami i chcesz wylosować jedno z nich, możesz użyć funkcji `Math.floor()` w następujący sposób:
 
-## Wnikliwe Spostrzeżenia
+```TypeScript
+let names: string[] = ["Anna", "Jan", "Kasia", "Marek"];
+let randomIndex: number = Math.floor(Math.random() * names.length);
+let randomName: string = names[randomIndex];
+console.log(randomName); // output: Marek
+```
 
-Korzystanie z generatora losowych liczb w TypeScript może być przydatne w wielu sytuacjach. Przykładowo, można go wykorzystać do generowania unikalnych identyfikatorów, losowej kolejności wyświetlania danych lub do symulowania losowych zdarzeń w aplikacji.
+## Głębsza Analiza
 
-Jednak, należy pamiętać, że metoda `Math.random()` generuje liczby pseudolosowe, co oznacza, że choć wydają się być losowe, mogą powtarzać się po pewnym czasie. Jeśli potrzebujesz 100% losowych liczb, warto skorzystać z zewnętrznej biblioteki do generowania liczb prawdziwie losowych.
+Funkcja `Math.random()` wykorzystuje algorytm pseudolosowy do generowania liczb. Oznacza to, że wygenerowane liczby nie są prawdziwie losowe, ale są wystarczająco losowe dla większości zastosowań programistycznych. Jeśli potrzebujesz większej losowości, możesz użyć zewnętrznych bibliotek lub uruchomić funkcję `Math.random()` wiele razy i mieszać wyniki.
 
 ## Zobacz Również
 
-Jeśli chcesz dowiedzieć się więcej o tym, jak generować losowe liczby w innych językach programowania, możesz zajrzeć do poniższych artykułów:
-
-- [Generating Random Numbers in JavaScript](https://www.digitalocean.com/community/tutorials/how-to-generate-random-numbers-in-javascript#using-math-random)
-- [Random Numbers in Python](https://www.geeksforgeeks.org/generating-random-numbers-in-python/)
-- [Generating Random Numbers in C#](https://www.c-sharpcorner.com/article/gene
+- Dokumentacja Math.random() w przewodniku po języku TypeScript (https://www.typescriptlang.org/docs/handbook/numbers.html#random)
+- Generowanie losowych liczb z TypeScript w 5 prostych krokach (https://ninjalearn.com/typescript-random-number/)
+- Zastosowania funkcji random w programowaniu (https://www.geeksforgeeks.org/generating-random-number-infinity-using-javascript-math-random-function/)

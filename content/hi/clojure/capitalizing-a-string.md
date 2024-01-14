@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: स्ट्रिंग को प्रथम अक्षर से लिखना"
+title:                "Clojure: स्ट्रिंग कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग कैपिटलाइज़ करना"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/capitalizing-a-string.md"
 ---
 
@@ -9,22 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-यदि आप Clojure में नए हैं, तो आपने शायद देखा होगा कि कई कोडिंग प्रोजेक्ट में एक शब्द को शुद्ध कपिटलाइज किया जाता है। यह कई वयोग कोतिन शब्दों की पहचान करने में मदद कर सकता है और देखने में भी अच्छा लगता है। इस लेख में हम जानेंगे कि Clojure में स्ट्रिंग कैपिटलाइज कैसे करें।
+हैलो हिन्दी पाठकों! आज हम आपको बताएँगे कि स्ट्रिंग केपिटलाइज करना क्यों एक महत्वपूर्ण कार्य हो सकता है। यदि आपने कभी लूप या शर्टकट शब्दों का उपयोग किया है, तो आप जानते होंगे कि इनमें से अधिकांश शब्दों को केपिटलाइज रखना होता है जिससे पढ़ने में आसानी हो। इसलिए, स्ट्रिंग को केपिटलाइज करना अपने कोड को और भी जोड़ाव और अच्छी तरह से संगठित करता है।
 
-## कैसे
+## कैसे करें
 
 ```Clojure
-;; एक कपिटलाइज्ड स्ट्रिंग बनाने के लिए, uppercase फ़ंक्शन का उपयोग करें
-(println (uppercase "hello world")) ;; हेल्लो वर्ल्ड
+(defn capitalize [str]
+  (clojure.string/capitalize str))
+
+;; उपयोग: (capitalize "mera naam hindi hai")
+;; परिणाम: "Mera naam hindi hai" 
 ```
 
-आप देख सकते हैं कि एक सादा से "hello world" स्ट्रिंग को उपर्केस में बदलकर हमने कैपिटलाइज किया है। इसके अलावा, आप lowercase, capitalize या titleize भी उपयोग कर सकते हैं जो स्ट्रिंग को अनुसार बदलते हैं।
+इस उदाहरण में हमने `clojure.string/capitalize` फ़ंक्शन का उपयोग किया है जो कि दिया गया स्ट्रिंग को प्रथम अक्षर उपर करता है। हम यह भी देख सकते हैं कि इसमें स्ट्रिंग के बाकी अक्षर अपनी मूल रूप में ही रहते हैं।
 
-## गहराई में
+## डीप डाइव
 
-Clojure में कैपिटलाइज करने की दृष्टि से यह सबसे थोड़ा समस्या है कि यह अक्षरों की उत्पत्ति के साथ अलग-अलग टाइम्स निर्धारित करता है कि वे शब्द को कैसे कैपिटलाइज करें। इसका मतलब है कि यदि आप "iPhone" या "Walmart" स्ट्रिंग को कैपिटलाइज करते हैं, तो आपको उसे "Iphone" और "Walmart" में बदलना होगा। इसके लिए सबसे अच्छा रास्ता config फ़ंक्शन का उपयोग करना है जो आपको अलग-अलग capitalization के लिए मानदंड निर्दिष्ट करता है।
+ज्यादातर प्रोग्रामर्स केपिटलाइज फ़ंक्शन का उपयोग स्ट्रिंग को प्रथम अक्षर उपर रखने के लिए करते हैं, लेकिन कभी-कभी हमें स्ट्रिंग के प्रत्येक अक्षर को उपर करना भी होता है। ऐसे मामलों में हम `clojure.string/upper-case` फ़ंक्शन का भी उपयोग कर सकते हैं।
 
-## देखें अभी
-- [Clojure strings tutorial](https://clojure.org/guides/learn/syntax#_strings)
-- [Clojure string functions](http://clojure-doc.org/articles/language/strings.html)
-- [Configuring capitalization in Clojure](https://lambdaisland.com/blog/2020-01-14-configuring-capitalization-in-clojure)
+अतिरिक्त रूप से, स्ट्रिंग को केपिटलाइज करने के लिए कई और तरीकों का भी उपयोग किया जा सकता है, जैसे `clojure.string/join` और `clojure.string/replace`। प्रयोग करें और खुद से भी इसका अनुभव करें!
+
+## देखें भी
+
+यद

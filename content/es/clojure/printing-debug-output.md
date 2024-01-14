@@ -1,69 +1,44 @@
 ---
-title:                "Clojure: Imprimiendo salida de depuración"
+title:                "Clojure: Imprimiendo la salida de depuración"
+simple_title:         "Imprimiendo la salida de depuración"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué imprimir salidas de depuración en Clojure
 
-Imprimir mensajes de depuración es una técnica comúnmente utilizada en programación para identificar y solucionar errores en el código. Esta práctica permite a los desarrolladores obtener una mejor comprensión de cómo se están ejecutando sus programas y qué valores están siendo procesados en cada paso. En esta publicación, aprenderemos cómo imprimir mensajes de depuración en Clojure y cómo puede ayudarnos en nuestro proceso de desarrollo.
+Imprimir salidas de depuración en el código es una técnica fundamental para identificar errores y solucionar problemas en nuestra aplicación. En este post, te mostraremos cómo utilizar esta herramienta en tus proyectos de Clojure y cómo te puede ayudar en tu proceso de desarrollo.
 
 ## Cómo hacerlo
 
-Imprimir mensajes de depuración en Clojure es muy sencillo. Simplemente podemos utilizar la función `println` y pasarle como argumento el valor que queremos imprimir. Por ejemplo:
+Imprimir salidas de depuración es bastante simple en Clojure. Solo necesitas utilizar la función `println` para imprimir el valor de una variable o una expresión en la consola. Por ejemplo:
 
 ```Clojure
-(let [num 5]
-  (println "El valor de num es:" num))
+(def usuario "Juan")
+(println usuario)
 ```
 
-La salida de este código sería:
-
-```
-El valor de num es: 5
-```
-
-Podemos incluso imprimir varios valores en una sola línea, separándolos por comas:
+Este código imprimirá en la consola "Juan" como resultado. Además, puedes utilizar la función `prn` para imprimir de forma más legible ciertos tipos de datos, como listas o mapas. Por ejemplo:
 
 ```Clojure
-(println "El valor de num es:" num ", y el valor de otro es:" otro)
+(def mascotas ["gato" "perro" "conejo"])
+(prn mascotas)
 ```
 
-La salida de este código sería:
+Este código imprimirá en la consola "(\"gato\" \"perro\" \"conejo\")" como resultado.
 
-```
-El valor de num es: 5, y el valor de otro es: "texto"
-```
+## Inmersión profunda
 
-## Profundizando
+Existen diferentes técnicas y métodos para imprimir salidas de depuración en Clojure. Por ejemplo, también puedes utilizar la macro `spit` para escribir la salida en un archivo de texto o la librería `tools.logging` para imprimir mensajes de error con diferentes niveles de severidad.
 
-Además de `println`, también podemos utilizar otras funciones como `pr` y `pprint` para imprimir mensajes de depuración en diferentes formatos. Por ejemplo, `pr` imprime de forma más legible para los humanos, mientras que `pprint` nos permite controlar la indentación y la presentación de los datos impresos. También podemos utilizar la macro `ensure` para imprimir un mensaje de error si una condición no se cumple. Por ejemplo:
-
-```Clojure
-(ensure condition "Error: La condición no se cumple")
-```
-
-Otra técnica útil es utilizar el operador `>>` para imprimir un valor y continuar ejecutando el código. Por ejemplo:
-
-```Clojure
-(>> (println "Este mensaje se imprimirá")
-    (println "Este también")
-    (+ 1 2))
-```
-
-La salida de este código sería:
-
-```
-Este mensaje se imprimirá
-Este también
-3
-```
+Además, es importante tener en cuenta que imprimir salidas de depuración puede tener un impacto en el rendimiento de tu aplicación, por lo que es recomendable utilizarlo solo en casos necesarios y eliminarlo en la versión final del código.
 
 ## Ver también
 
-- [Documentación oficial de Clojure sobre mensajes de depuración](https://clojure.org/reference/other_functions#Debugging_Forms)
-- [Artículo sobre técnicas avanzadas de depuración en Clojure](https://medium.com/@vvkchandra/top-5-debugging-techniques-in-clojure-ba31de40b829)
-- [Artículo sobre la importancia de los mensajes de depuración en el proceso de desarrollo](https://blog.jetbrains.com/idea/2012/09/why-debug/)
+- [Documentación oficial de print y println en Clojure](https://clojure.github.io/clojure/clojure.core-api.html#print)
+- [Uso de spit en Clojure](https://clojuredocs.org/clojure.core/spit)
+- [Librería tools.logging en Clojure](https://github.com/clojure/tools.logging)

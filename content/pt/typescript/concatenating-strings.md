@@ -1,51 +1,67 @@
 ---
-title:                "TypeScript: Concatenando strings"
+title:                "TypeScript: Unindo strings"
+simple_title:         "Unindo strings"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que usar a concatenação de strings
-A concatenação de strings é uma técnica comum e útil na programação TypeScript. É utilizada para combinar duas ou mais strings em uma só, permitindo que você crie mensagens dinâmicas e personalize a saída do seu código. 
+## Por que concatenar strings em TypeScript?
 
-## Como fazer
-Para concatenar strings em TypeScript, você pode utilizar o operador `+` ou o método `concat()`. Veja abaixo alguns exemplos de como utilizar essas duas formas:
+Concatenar strings é uma tarefa comum em programação, especialmente em TypeScript. É útil quando se deseja combinar várias strings em uma única e, assim, criar mensagens dinâmicas ou construir URLs.
 
-```TypeScript 
-// Utilizando o operador +
-let nome = "Maria";
-let sobrenome = "Silva";
-let nomeCompleto = nome + " " + sobrenome;
-console.log(nomeCompleto); // Output: Maria Silva
+## Como fazer isso em TypeScript
 
-// Utilizando o método concat()
-let texto1 = "Olá";
-let texto2 = "mundo";
-let textoCompleto = texto1.concat(" ", texto2);
-console.log(textoCompleto); // Output: Olá mundo 
-```
-
-Como mostrado nos exemplos acima, a concatenação de strings permite que você adicione espaço entre as palavras ou caracteres especiais, como emojis ou símbolos, entre as strings.
-
-## Mergulho profundo
-Além dos métodos mencionados, existem outras formas de concatenar strings em TypeScript. Você pode utilizar a template string, indicada pelo sinal de crase (`), que permite que você insira variáveis dentro da string utilizando a sintaxe `${ variavel }`. Veja um exemplo desse método abaixo:
+Em TypeScript, a concatenação de strings pode ser feita de várias maneiras. Uma delas é usando o operador `+`, como mostrado abaixo:
 
 ```TypeScript
-// Utilizando template string
-let idade = 30;
-let mensagem = `Eu tenho ${idade} anos.`;
-console.log(mensagem); // Output: Eu tenho 30 anos.
+let nome = 'Maria';
+let saudacao = 'Olá';
+
+console.log(nome + ', ' + saudacao); // Saída: Maria, Olá
 ```
 
-Também é importante lembrar que é possível concatenar mais de duas strings ao mesmo tempo, basta adicionar cada uma delas na ordem que deseja que elas apareçam. Além disso, é possível utilizar a concatenação de strings com outros tipos de dados, como números ou booleanos. 
+Outra opção é usar a função `concat()`:
 
-A concatenação de strings pode ser muito útil em diferentes situações, como na criação de mensagens personalizadas e na manipulação de dados em geral. É importante entender os diferentes métodos disponíveis e escolher o mais adequado para cada caso.
+```TypeScript
+let sobrenome = 'Silva';
+
+console.log(nome.concat(' ', sobrenome)); // Saída: Maria Silva
+```
+
+Além disso, é possível usar template literals, que permitem a interpolação de variáveis em strings:
+
+```TypeScript
+console.log(`${nome} ${sobrenome}`); // Saída: Maria Silva
+```
+
+## Profundidade sobre a concatenação de strings
+
+Vale ressaltar que, ao usar o operador `+` para concatenar strings, o TypeScript realiza uma conversão implícita para o tipo `string` caso algum dos valores seja numérico. Por exemplo:
+
+```TypeScript
+let idade = 25;
+let frase = 'Eu tenho ' + idade + ' anos';
+
+console.log(frase); // Saída: Eu tenho 25 anos
+```
+
+No entanto, essa conversão implícita pode levar a resultados indesejados e ainda causar erros. Portanto, é importante estar ciente disso e, se necessário, converter explicitamente os valores para string antes da concatenação.
+
+Outra dica importante é que, ao trabalhar com grandes quantidades de strings, é mais eficiente concatená-las usando o método `join()` em um array. Isso é especialmente útil se as strings já estiverem em um array ou se forem geradas em um loop. Veja o exemplo:
+
+```TypeScript
+let cores = ['vermelho', 'azul', 'amarelo'];
+let texto = cores.join(', ');
+
+console.log(texto); // Saída: vermelho, azul, amarelo
+```
 
 ## Veja também
-Se você quer se aprofundar ainda mais no assunto, confira os links abaixo para mais informações sobre a concatenação de strings em TypeScript:
 
-- [Documentação oficial do TypeScript sobre strings](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [Tutorial sobre concatenação de strings em TypeScript](https://www.javatpoint.com/typescript-string-concatenation)
-- [Vídeo explicando como utilizar a template string em TypeScript](https://www.youtube.com/watch?v=VuS_mGrlvt8)
+- [Documentação do TypeScript sobre string concatenation](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#string-literal-types)
+- [Artigo do site codeburst sobre a concatenação de strings em TypeScript](https://codeburst.io/how-to-concatenate-strings-in-typescript-ed706e2f2c7b)
+- [Vídeo do canal Codevolution no YouTube sobre string concatenation em TypeScript](https://www.youtube.com/watch?v=hvj_PZv5l8E)

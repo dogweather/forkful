@@ -1,44 +1,44 @@
 ---
-title:                "Fish Shell: Écrire vers l'erreur standard"
+title:                "Fish Shell: Écriture vers l'erreur standard"
+simple_title:         "Écriture vers l'erreur standard"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire vers l'erreur standard en Fish Shell
+## Pourquoi 
 
-Il peut être utile d'écrire vers l'erreur standard en programmation pour mieux comprendre les problèmes d'exécution de votre code. Cela peut également vous aider à déboguer plus efficacement en identifiant les erreurs plus rapidement.
+L'écriture sur la sortie d'erreur standard, ou "standard error" en anglais, est une pratique importante dans la programmation en Fish Shell. Cela permet aux programmeurs de signaler des erreurs ou des informations importantes aux utilisateurs lors de l'exécution d'un programme.
 
-## Comment faire
+## Comment faire 
 
-Voici un exemple de code utilisant la syntaxe Fish Shell pour écrire vers l'erreur standard :
-
-```Fish Shell
-function mon_script
-    echo "Bonjour le monde !" >&2
-end
-```
-
-Et voici le résultat que vous obtiendrez en exécutant cette fonction :
+Pour écrire sur la sortie d'erreur standard en utilisant Fish Shell, vous pouvez utiliser la commande `echo` suivie de l'option `-e` pour activer l'interprétation des caractères spéciaux et l'option `-s` pour écrire sur la sortie d'erreur standard. Par exemple : 
 
 ```
-$ mon_script
-Bonjour le monde !
+echo -e "Une erreur est survenue ! \n" >&2
 ```
 
-Comme vous pouvez le voir, le message "Bonjour le monde !" est écrit vers l'erreur standard, symbolisée par le signe ">&2" à la fin de la commande "echo". Cela signifie que le message sera affiché en rouge dans votre terminal, ce qui le distingue des messages écrits vers la sortie standard.
+Cela écrira le message "Une erreur est survenue !" sur la sortie d'erreur standard, qui sera affiché à l'utilisateur.
 
-## Approfondissement
+## Plongée en profondeur 
 
-Maintenant que vous savez comment écrire vers l'erreur standard en Fish Shell, voici quelques informations supplémentaires pour mieux comprendre cet outil :
+La sortie d'erreur standard est un flux réservé pour l'affichage des messages d'erreur, de débogage et d'informations importantes. Elle est séparée de la sortie standard pour permettre une gestion plus précise des données.
 
-- La commande ">&2" peut également être utilisée pour écrire des erreurs vers l'erreur standard dans des scripts Bash.
-- Vous pouvez rediriger l'erreur standard vers un fichier en utilisant l'opérateur "2>" suivi du nom du fichier dans lequel vous souhaitez enregistrer les erreurs. Cela peut être utile pour créer des fichiers de journalisation ou de débogage.
-- L'erreur standard est souvent utilisée pour afficher des messages d'erreur ou des avertissements à l'utilisateur.
+Dans Fish Shell, vous pouvez utiliser le symbole `2>` pour rediriger la sortie d'erreur standard vers un fichier ou un autre flux. Vous pouvez également utiliser `&>` pour rediriger à la fois la sortie standard et la sortie d'erreur standard vers le même endroit.
 
-# Voir aussi
+Par exemple, pour rediriger la sortie d'erreur standard vers un fichier nommé "erreurs.log", vous pouvez utiliser la commande suivante : 
 
-- [La syntaxe Fish Shell complète](https://fishshell.com/docs/current/index.html)
-- [Un guide détaillé sur les redirections en Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_redirects)
+```
+ls -l /dossier/inexistant 2> erreurs.log
+```
+
+Cela créera un fichier contenant les informations d'erreur provenant de la commande `ls`. Vous pouvez ensuite utiliser la commande `cat` pour afficher le contenu du fichier d'erreurs.
+
+## Voir aussi 
+
+- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Tutoriel sur la redirection de la sortie en Fish Shell](https://dev.to/kojinkai/how-to-redirect-the-output-75c)
+- [Forum Fish Shell](https://github.com/fish-shell/fish-shell/discussions)

@@ -1,81 +1,109 @@
 ---
 title:                "C++ recipe: Calculating a date in the future or past"
+simple_title:         "Calculating a date in the future or past"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Calculating a date in the future or past can be a useful tool for various applications such as scheduling events, calculating deadlines, or even creating a countdown timer.
+# Why
 
-## How To
+Have you ever needed to calculate a date in the future or past in your C++ program? Maybe you want to schedule an event or keep track of deadlines. Whatever the reason may be, knowing how to calculate dates in C++ can come in handy for a variety of applications.
 
-To calculate a date in the future or past, the first step is to select a starting date. This can be done by creating a `struct` in C++ that holds the necessary information for the date, such as the day, month, and year.
+# How To
 
-```C++
-// Creating a struct for the date
-struct Date {
-  int day;
-  int month;
-  int year;
-};
-```
-
-Next, we will need to define two functions, one for adding days to a given date and another for subtracting days. These functions will take in the `Date` struct as a parameter and return a new `Date` struct with the updated date.
+Calculating dates in C++ involves some simple arithmetic and utilizing the date and time functions provided by the language. Let's take a look at some examples:
 
 ```C++
-// Function to add days to a date
-Date addDays(Date currentDate, int daysToAdd) {
-    // Logic to add days to the current date
-    // ...
-    return updatedDate;
+// Example 1: Calculating a date in the future
+#include <iostream>
+#include <ctime>
+
+int main() {
+    // Get current date
+    time_t now = time(0);
+    tm *currentDate = localtime(&now);
+
+    int futureDays = 7; // Number of days to add to current date
+
+    // Calculate future date
+    tm *futureDate = localtime(&now);
+    futureDate->tm_mday += futureDays;
+
+    // Convert future date to string
+    char str[20];
+    strftime(str, 20, "%m/%d/%Y", futureDate);
+
+    std::cout << "Today's date: " << strftime("%m/%d/%Y", currentDate) << std::endl;
+    std::cout << "Future date: " << str << std::endl;
+
+    return 0;
 }
 
-// Function to subtract days from a date
-Date subtractDays(Date currentDate, int daysToSubtract) {
-    // Logic to subtract days from the current date
-    // ...
-    return updatedDate;
+/*
+Output:
+Today's date: 04/14/2021
+Future date: 04/21/2021
+*/
+```
+
+In this example, we utilized the `time()` function to get the current date and time, and then used the `localtime()` function to convert it into a `tm` struct which holds the date and time components. We then simply added the desired number of days to the current date and converted the result back to a string using `strftime()`.
+
+```C++
+// Example 2: Calculating a date in the past
+#include <iostream>
+#include <ctime>
+
+int main() {
+    // Get current date
+    time_t now = time(0);
+    tm *currentDate = localtime(&now);
+
+    int pastDays = 14; // Number of days to subtract from current date
+
+    // Calculate past date
+    tm *pastDate = localtime(&now);
+    pastDate->tm_mday -= pastDays;
+
+    // Convert past date to string
+    char str[20];
+    strftime(str, 20, "%m/%d/%Y", pastDate);
+
+    std::cout << "Today's date: " << strftime("%m/%d/%Y", currentDate) << std::endl;
+    std::cout << "Past date: " << str << std::endl;
+
+    return 0;
 }
 
+/*
+Output:
+Today's date: 04/14/2021
+Past date: 03/31/2021
+*/
 ```
 
-To calculate a future date, we can simply call the `addDays()` function with the desired number of days to add to the starting date.
+This example follows a similar approach as the previous one, except we subtracted the desired number of days from the current date to get a date in the past.
 
-```C++
-// Calculating a future date
-Date startingDate = {15, 5, 2021};
-Date futureDate = addDays(startingDate, 10);  // Adding 10 days to the starting date
+# Deep Dive
 
-// Output: futureDate = {25, 5, 2021}
-```
+The `tm` struct used in the examples above contains the following members which are relevant to calculating dates:
 
-On the other hand, to calculate a past date, we can call the `subtractDays()` function with the desired number of days to subtract from the starting date.
+- `tm_sec` - seconds after the minute (0-60)
+- `tm_min` - minutes after the hour (0-59)
+- `tm_hour` - hours since midnight (0-23)
+- `tm_mday` - day of the month (1-31)
+- `tm_mon` - months since January (0-11)
+- `tm_year` - years since 1900
+- `tm_wday` - days since Sunday (0-6)
+- `tm_yday` - days since January 1st (0-365)
+- `tm_isdst` - indicates whether daylight saving time is in effect
 
-```C++
-// Calculating a past date
-Date startingDate = {25, 5, 2021};
-Date pastDate = subtractDays(startingDate, 10);  // Subtracting 10 days from the starting date
+By manipulating these members, we can calculate dates in the past or future by adding or subtracting the desired number of days, months, or even years.
 
-// Output: pastDate = {15, 5, 2021}
-```
-
-## Deep Dive
-
-While the above approach works for basic calculations, there are some factors to consider when calculating dates in the future or past. These include leap years, differing number of days in each month, and adjusting for the end of a month or year.
-
-To account for leap years, we can use the `year` value in our `Date` struct to determine if the current year is a leap year. If it is, we need to account for the extra day in February.
-
-Additionally, we need to consider the varying number of days in each month. To do this, we can use a switch statement to check the `month` value in our `Date` struct and adjust the days accordingly.
-
-Lastly, when calculating a date in the past, we need to be mindful of adjusting for the end of a month or year. For example, if we were to subtract 10 days from February 29, we would end up with February 19 instead of February 19 in a non-leap year.
-
-By taking these factors into account and making necessary adjustments in our functions, we can ensure more accurate date calculations.
-
-## See Also
-
-- [Check Date Calculations in C++](https://www.codeproject.com/Articles/8222/Check-date-validity-logic-with-C)
-- [Date and Time in C++](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
-- [Date and Time Functions in C++](https://www.geeksforgeeks.org/date-and-time-functions-in-cpp/)
+# See Also
+- [C++ Reference - Date and Time Functions](http://www.cplusplus.com/reference/ctime/)
+- [GeeksforGeeks - Calendar Functions in C++](https://www.geeksforgeeks.org/calendar-functions-in-c/)
+- [TutorialsPoint - Date and Time in C++](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)

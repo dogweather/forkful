@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,40 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Ibland när vi kodar, kommer vi över problem som kräver att vi tar bort vissa bokstäver eller tecken från en textsträng. Det kan vara för att filtrera ut oönskade tecken eller för att bearbeta data på ett mer effektivt sätt. I sådana fall är det användbart att kunna ta bort tecken som matchar ett visst mönster.
+Det kan finnas flera anledningar till att man vill ta bort karaktärer som matchar ett visst mönster. Det kan till exempel vara för att rensa upp data eller för att komma åt specifika delar av en textsträng.
 
-## Hur man gör det
+## Såhär gör du
 
-I TypeScript finns det flera inbyggda metoder som kan användas för att ta bort tecken som matchar ett visst mönster från en textsträng. Vi kommer att titta på några av dessa metoder nedan.
-
-Först och främst har vi `replace()` metoden som kan användas för att ersätta tecken som matchar ett visst mönster med en annan text. Syntaxen för denna metod är `textsträng.replace(mönster, nyText)`. Här är några exempel på hur man kan använda `replace()` metoden:
+För att ta bort karaktärer som matchar ett mönster i TypeScript, kan du använda metoden `replaceAll()` tillsammans med reguljära uttryck. Här är ett exempel:
 
 ```TypeScript
-// Ersätt alla chatrrr med ett tomt tecken
-"chatrrr".replace(/a/g, "") // returnerar "chr"
-
-// Ersätt första förekomsten av tecknet a med ett utropstecken
-"abcd".replace(/a/, "!") // returnerar "!bcd"
+let str = "Detta är en textsträng som innehåller många vokaler."
+let newStr = str.replaceAll(/[aeiouyåäö]/g, "")
+console.log(newStr)
 ```
 
-En annan metod som kan användas för att ta bort tecken som matchar ett visst mönster är `split()` metoden. Denna metod delar en sträng vid varje förekomst av ett visst tecken, vilket resulterar i en array av delar av strängen. Här är ett exempel på hur man kan använda `split()` metoden för att ta bort alla mellanslag från en sträng:
-
-```TypeScript
-"Hello World".split(" ") // returnerar ["Hello", "World"]
+Output:
+```
+Dtts r n txtstrng sm nnhållr mng knsn vklr.
 ```
 
-Slutligen har vi `slice()` metoden som kan användas för att returnera en del av en sträng baserat på start- och slutindex. Om vi till exempel vill ta bort de första tre tecknen från en sträng kan vi använda följande kod:
+I exemplet ovan används `[aeiouyåäö]` för att matcha alla vokaler. `g` står för "global" och betyder att det matchande mönstret ska appliceras på hela strängen.
 
-```TypeScript
-"abcdefg".slice(3) // returnerar "defg"
-```
+## Djupdykning
 
-## Djupgående
+När man använder reguljära uttryck för att ta bort karaktärer, finns det olika symboler och mönster man kan använda sig av för att få mer precist resultat. Till exempel kan man använda `^` för att matcha tecken i början av en sträng, `$` för tecken i slutet, och `.` för att matcha ett valfritt tecken.
 
-Det finns flera andra metoder i TypeScript som kan användas för att ta bort tecken som matchar ett visst mönster, såsom `substring()`, `splice()` och `trim()`. Det är viktigt att förstå hur dessa metoder fungerar och när det är lämpligt att använda dem för att uppnå önskat resultat.
+Man kan även använda `|` för att matcha flera olika mönster, och `()` för att gruppera mönster tillsammans.
+
+För en mer omfattande guide över reguljära uttryck i TypeScript, se gärna dessa resurser:
+
+- https://www.typescriptlang.org/docs/handbook/regular-expressions.html
+- https://regex101.com
 
 ## Se även
 
-- [Officiell dokumentation för replace() metoden i TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#replace)
-- [W3Schools guide till regelbundna uttryck i JavaScript](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [Stack Overflow fråga om att ta bort tecken från en sträng i TypeScript](https://stackoverflow.com/questions/51125260/remove-number-from-a-string-using-type-script)
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+- https://www.regular-expressions.info

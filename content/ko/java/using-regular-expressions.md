@@ -1,39 +1,56 @@
 ---
-title:                "Java: 정규 표현식 사용하기"
+title:                "Java: 그 정규식 사용하기"
+simple_title:         "그 정규식 사용하기"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 사용해야 하는가?
+## 왜
 
-정규 표현식을 사용하는 주된 이유는 간단하다. 이는 문자열을 검색, 매칭, 치환 등 다양한 작업을 더 쉽고 효율적으로 처리할 수 있게 해준다.
+정규식(Regular Expressions)을 사용하는 이유는 간단합니다. 정규식은 문자열에서 원하는 패턴을 찾고 추출하는 뛰어난 도구입니다. 예를 들어, 이메일 주소와 전화번호를 입력받아서 형식에 맞는지를 확인하려면 정규식을 사용하면 훨씬 더 효율적으로 처리할 수 있습니다.
 
 ## 사용 방법
 
-정규 표현식을 사용하는 방법은 간단하다. 모든 문자열을 다루기 위해서는 먼저 정규 표현식 객체를 생성해야 한다.
+정규식을 사용하기 위해서는 우선 `java.util.regex` 패키지를 import해야 합니다. 그 다음, `Pattern` 클래스를 사용하여 원하는 패턴을 지정하고, `Matcher` 클래스를 사용하여 입력받은 문자열에서 패턴을 찾아내는 작업을 할 수 있습니다. 예를 들어, 주민등록번호가 `123456-1234567` 형식을 갖고 있는지를 확인하는 코드는 다음과 같습니다.
+```java
+import java.util.regex.*;
 
-```Java
-// 정규 표현식 객체 생성
-Pattern pattern = Pattern.compile("ab+c");
+String pattern = "\\d{6}-\\d{7}"; // 주민등록번호 패턴
+String input = "123456-1234567"; // 입력받은 주민등록번호
 
-// 문자열 검색
-Matcher matcher = pattern.matcher("abbbc");
-boolean result = matcher.matches(); // 결과: true
+Pattern p = Pattern.compile(pattern); // 패턴 지정
+Matcher m = p.matcher(input); // 입력받은 문자열과 패턴을 비교하는 Matcher 객체 생성
+
+if (m.matches()) {
+	System.out.println("주민등록번호 형식에 맞습니다.");
+} else {
+	System.out.println("주민등록번호 형식이 아닙니다.");
+}
 ```
+위 코드를 실행하면 "주민등록번호 형식에 맞습니다."라는 결과가 출력됩니다.
 
-이처럼 생성한 정규 표현식 객체를 이용해 검색, 매칭, 치환 등 다양한 작업을 수행할 수 있다.
+## 깊이 파고들기
 
-## 깊게 파헤치기
+정규식에는 다양한 메타 문자들이 존재하며, 이를 활용하여 더 복잡한 패턴을 찾아낼 수 있습니다. 예를 들어, `.`은 어떤 문자 하나를 대체하며, `*`은 이전에 올 문자가 0개 또는 그 이상 반복되는 것을 의미합니다. 이런 메타 문자를 조합하여 이메일 주소가 양식에 맞는지를 검사하는 코드를 작성할 수 있습니다.
+```java
+String pattern = "\\w+@\\w+\\.[a-z]+"; // 이메일 주소 패턴
+String input = "example123@mail.com"; // 입력받은 이메일 주소
 
-정규 표현식은 다양한 메타 문자를 사용해 더 복잡하고 효율적인 규칙을 만들 수 있다. 이를 이용하면 올바른 문법을 가진 문자열만 검색하거나, 패턴을 추출하거나, 문자열을 원하는 형식에 맞춰 변경하는 등 다양한 작업을 할 수 있다.
+Pattern p = Pattern.compile(pattern); // 패턴 지정
+Matcher m = p.matcher(input); // 입력받은 문자열과 패턴을 비교하는 Matcher 객체 생성
 
-또한 정규 표현식은 Java 뿐만 아니라 다른 언어에서도 사용할 수 있는 범용적인 도구이다. 그러므로 정규 표현식에 대한 이해는 프로그래머로서 중요한 능력이 될 수 있다.
+if (m.matches()) {
+	System.out.println("올바른 이메일 주소 형식입니다.");
+} else {
+	System.out.println("올바른 이메일 주소 형식이 아닙니다.");
+}
+```
+위 코드를 실행하면 "올바른 이메일 주소 형식입니다."라는 결과가 출력됩니다.
 
-## 또 다른 정보
+## [관련 자료](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
 
-- [정규 표현식 문법 안내](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)
-- [정규 표현식 사용 예제](https://www.baeldung.com/java-regex)
-- [정규 표현식 온라인 테스트 도구](https://regexr.com)
+- [Java 정규식 패키지 문서](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html

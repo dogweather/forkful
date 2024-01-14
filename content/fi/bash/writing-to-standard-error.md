@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Kirjoittaminen standardivirheeseen"
+title:                "Bash: Kirjoittaminen standardi virheisiin."
+simple_title:         "Kirjoittaminen standardi virheisiin."
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-to-standard-error.md"
 ---
 
@@ -9,29 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kirjoittaminen standardivirheeseen (STDERR) on erittäin tärkeä taito Bash ohjelmoijalle. Se antaa mahdollisuuden ohjata virheilmoituksia ja poikkeuksia erilliseen kanavaan, joka ei sekoitu ohjelman normaaliin tulostukseen. Tämä tekee virheenkorjauksesta helpompaa ja auttaa löytämään ja korjaamaan ohjelmien ongelmia nopeammin.
+Kun ohjelmoit Bash-kielellä, voit käyttää komentoja, joilla voit hallita tiedostojärjestelmää ja suorittaa tehtäviä käyttöjärjestelmässä. Näiden toimenpiteiden tulokset voi usein ohjata standarditähtitteeseen, mutta miksi haluaisit tehdä niin? Standarditähtitteen käyttö voi olla hyödyllistä, kun haluat tallentaa tietoa, jota et halua näyttää tavalliselle käyttäjälle tai tallentaa virheilmoituksia suorituksen aikana.
 
-## Miten
+## Kuinka
 
-Bash-koodissa, voit kirjoittaa standardivirheeseen käyttäen ">&2" operaattoria. Tämä ohjaa stdandardin tulosteen (STDOUT) standardivirheeseen, jolloin virheilmoitukset tulostuvat STDERR-kanavaan. Seuraavassa esimerkissä käytämme komentoa "ls" ja ohjaamme virheilmoitukset standardivirheeseen:
-
-```Bash
-ls -d /home/user/non-existing-directory/ >&2
-```
-
-Tämä komento tulostaa virheilmoituksen "ls: cannot access '/home/user/non-existing-directory/': No such file or directory" STDERR-kanavaan. Voit myös tulostaa omia virheilmoituksia käyttämällä "echo" komentoa ja ohjaamalla sen STDERR-kanavaan, kuten alla olevassa esimerkissä:
+Standarditähtitteen käyttö on yksinkertaista. Voit ohjata tulosteen käyttäen "> /dev/stderr" -merkintää komennon lopussa. Esimerkiksi, jos haluat näyttää virheilmoituksen käyttäjälle:
 
 ```Bash
-echo "Error! File not found." >&2
+ls /tuntematon/hakemisto > /dev/stderr
 ```
 
-Tämä tulostaa "Error! File not found." virheilmoituksen STDERR-kanavaan. Muista, että oletusarvoisesti kaikki virheilmoitukset ja poikkeukset menevät STDOUT-kanavaan, joten jokaisen komennon jälkeen kannattaa käyttää ">&2" varmistaaksesi, että ne ohjataan oikeaan kanavaan.
+Tämä kääntää hakukuulustelun Bash-kielelle ja ohjaa tuloksen suoraan standarditähtitteeseen. Tämän jälkeen näet virheilmoituksen, joka kertoo, että hakemistoa ei löydy.
 
-## Syvällinen tutustuminen
+## Syventävä sukellus
 
-Kirjoittaminen standardivirheeseen on erittäin hyödyllinen tekniikka, kun halutaan säätää Bash-skriptejä ja ohjelmia. Se erottaa virheilmoitukset ja poikkeukset muusta tulostuksesta, jolloin analysointi ja korjaaminen on helpompaa. Lisäksi, STDOUT ja STDERR voidaan ohjata eri paikkoihin, joten voit tallentaa ne lokitiedostoon ja tutkia niitä myöhemmin.
+Standarditähtitteen käyttö voi olla hyödyllistä myös skriptejä kirjoittaessa. Voit lisätä skriptiin tarkoituksella virheen, jotta voit testata, miten se käsittelee virheitä. Voit myös käyttää standarditähtitteen kautta tulostettuja virheilmoituksia hallitaksesi skriptin suorituksen kulkua ja suorittaa haluttuja toimenpiteitä virheiden kohdatessa.
+
+On myös tärkeää muistaa, että standarditähtitteeseen ohjattu tulostus ei näy tavalliselle käyttäjälle. Näin voit suojata tärkeitä tietoja ja estää epätoivottujen tietojen näkyvyyden.
 
 ## Katso myös
 
-- [BASH ohjelmointikieli](https://www.tldp.org/LDP/abs/html/)
-- [BASH ohjeet](https://www.gnu.org/software/bash/manual/bash.html)
+- [Redirecting Standard Error](https://www.tecmint.com/redirect-stdout-and-stderr-to-file-in-linux/): Ohjeita standarditähtitteen ohjaamiseen tiedostoon Linux-käyttöjärjestelmässä.
+- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/bash-script.php): Opas Bash-skriptien kirjoittamiseen, jossa käsitellään myös standarditähtitteen käyttöä.
+- [Bash Operators](https://www.tldp.org/LDP/abs/html/ops.html): Tietoa erilaisista Bash-kielessä käytetyistä operaattoreista, mukaan lukien standarditähtitee merkintöjen käyttö.

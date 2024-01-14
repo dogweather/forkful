@@ -1,7 +1,9 @@
 ---
-title:                "Java: Sammenføyning av tekststrenger"
+title:                "Java: Sammenføyning av strenger"
+simple_title:         "Sammenføyning av strenger"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/concatenating-strings.md"
 ---
 
@@ -9,48 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Noen ganger i programmering trenger vi å kombinere flere tekststrenger til en enkelt, lengre streng. Dette prosessen kalles "concatenation" på engelsk, eller "konkatenering" på norsk. Det kan være nyttig når vi for eksempel ønsker å skrive ut en tekst med variabler, eller når vi trenger å bygge URLer.
+Å kombinere strenger, også kjent som konkatinasjon, er et viktig konsept i Java-programmering. Det lar deg sette sammen flere strenger for å lage en lengre streng, som er nyttig for å lage dynamiske meldinger, visning av data og mye mer.
 
-## Slik gjør du det
+## Hvordan
 
-Å konkatenerer strenger i Java er enkelt, og kan gjøres på flere måter. En måte er å bruke operatøren "+" for å legge sammen to strenger. Se eksempelet under:
-
-```Java
-String navn = "Ingrid";
-String etternavn = "Nilsen";
-
-String navnSammen = navn + etternavn; // Resultatet blir "IngridNilsen"
-```
-
-En annen måte er å bruke String-metoden `concat()`. Her passer det også å inkludere en variabel og en konstant tekststreng:
+For å konkatinere strenger i Java, bruker vi "+" -operatøren. Dette lar oss kombinere to eller flere strenger til en enkelt streng. La oss se på et eksempel:
 
 ```Java
-String navn = "Ole";
-String alder = "30 år";
-
-String tekst = navn.concat(" er ").concat(alder); // Resultatet blir "Ole er 30 år"
+String navn = "Per";
+String alder = "30";
+String informasjon = navn + " er " + alder + " år gammel.";
+System.out.println(informasjon);
 ```
 
-Merk at det også går an å bruke `concat()`-metoden sammen med numeriske variabler ved å konvertere dem til strenger først.
+Output:
+```
+Per er 30 år gammel.
+```
 
-## Dypere dykk
+Vi ser her at vi kombinert tre strenger (variabler) og skapte en lengre streng ved å bruke "+" -operatøren. Merk at mellomrom og tegn må inkluderes i de originale strengene for å få ønsket format i den kombinerte strengen.
 
-I Java blir hver streng representert som et objekt av typen `String`. Når vi bruker operatøren "+" eller `concat()`-metoden, blir det egentlig laget et nytt objekt med den sammenslåtte strengen. Dette skjer fordi strenger i Java er uforanderlige, så det gamle objektet kan ikke bare endres.
+## Deep Dive
 
-Derfor kan det være mer effektivt å bruke `StringBuilder`-klassen til å utføre konkatenering. Denne klassen lar deg endre strenger i stedet for å lage nye objekter hele tiden. Her er et eksempel på hvordan det kan gjøres:
+I tillegg til "+" -operatøren, kan vi også bruke `concat` -funksjonen for å konkatinere strenger i Java. Dette fungerer på samme måte som "+" -operatøren, men vi må huske å legge til en variabel først som skal lagre den kombinerte strengen. Se et eksempel nedenfor:
 
 ```Java
-StringBuilder sb = new StringBuilder();
-
-sb.append("Hei, ").append("er du ").append("klar for helgen?"); // Resultatet blir "Hei, er du klar for helgen?"
-
-String resultat = sb.toString(); // Konverterer StringBuilder-objektet til en vanlig streng og lagrer det i en variabel
+String navn = "Kari";
+String alder = "25";
+String konkatinert = navn.concat(" er ").concat(alder).concat(" år gammel.");
+System.out.println(konkatinert);
 ```
 
-Bruken av `StringBuilder` er spesielt nyttig når vi trenger å konkatenerer mange strenger, for eksempel i en løkke.
+Output:
+```
+Kari er 25 år gammel.
+```
+
+En annen viktig ting å huske på er at i Java er strenger uforanderlige (immutable), det betyr at hvis vi endrer på en streng, vil det opprettes en helt ny streng i minnet. Dette kan påvirke ytelsen til programmet vårt, spesielt når vi jobber med store strenger. Derfor, hvis du jobber med store mengder av data og kombinering av strenger, kan det være lurt å bruke `StringBuilder`-klassen som er optimalisert for å håndtere slike operasjoner.
 
 ## Se også
 
-- [Java String Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java StringBuilder Documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
-- [Java String Concatenation Tutorial](https://www.baeldung.com/java-string-concatenation)
+- [Java dokumentasjon: String concatenation](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
+- [Tutorialspoint: Java - Strings](https://www.tutorialspoint.com/java/java_strings.htm)
+- [GeeksforGeeks: String concatenation in Java](https://www.geeksforgeeks.org/concatenation-in-java/)

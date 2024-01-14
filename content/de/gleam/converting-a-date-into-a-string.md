@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Umwandlung eines Datums in eine Zeichenfolge"
+title:                "Gleam: Umwandlung eines Datums in einen String"
+simple_title:         "Umwandlung eines Datums in einen String"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/converting-a-date-into-a-string.md"
 ---
 
@@ -9,36 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Konvertieren von einem Datum in eine Zeichenfolge ist oft notwendig, um die Daten in einem verständlichen Format anzuzeigen oder zu speichern. Zum Beispiel kann es hilfreich sein, ein Datum als Teil eines Dateinamens zu formatieren oder es in einer E-Mail zu verwenden.
+Die Konvertierung von Daten in Strings ist ein wichtiger Schritt beim Entwickeln von Software. Durch die Umwandlung eines Datums in einen String können wir Daten in einem bestimmten Format darstellen und weiterverarbeiten. In diesem Beitrag werden wir uns die unterschiedlichen Möglichkeiten ansehen, wie man ein Datum in einem Gleam-Programm zu einem String umwandeln kann.
 
-## Wie man es macht
+## Wie geht man vor?
 
-Die Gleam-Programmiersprache bietet einfache Möglichkeiten, ein Datum in eine lesbare Zeichenfolge umzuwandeln. Das folgende Beispiel zeigt, wie man das aktuelle Datum in das Format "TT.MM.JJJJ" umwandeln kann:
+Die Konvertierung eines Datums in Gleam ist dank der eingebauten Funktionen und Typen relativ einfach. Im Folgenden finden Sie einige Beispiele, die Ihnen den Einstieg erleichtern sollen:
 
 ```Gleam
-// Importiere das Date-Modul
-import date.{Format, today}
+import gleam/datetime as datetime
 
-// Konvertiere das aktuelle Datum in ein String-Format
-let date_string =
-  today()
-  |> Format.to_string("%d.%m.%Y")
+let date = datetime.Date.create(2021, 9, 12)
 
-// Gib das Ergebnis aus
-IO.print(date_string) // => 02.03.2021
+let string1 = datetime.Date.format("%d %B %Y", date)
+let string2 = datetime.Date.to_iso_8601(date)
+let string3 = datetime.Date.to_string(date)
+
+// Output:
+//
+// string1 = "12 September 2021"
+// string2 = "2021-09-12"
+// string3 = "12-09-2021"
 ```
 
-Natürlich können auch andere Datumsformate verwendet werden, wie im [Gleam Date Modul] (https://gleam.run/modules/date.html) beschrieben wird.
+In dem obigen Beispiel verwenden wir die `format`-Funktion, um das Datum im gewünschten Format auszugeben. Wir können auch die Funktionen `to_iso_8601` und `to_string` verwenden, um das Datum in ein ISO-8601-konformes Format oder in das Gleam-Standardformat umzuwandeln.
 
-## Tieferer Einblick
+## Tiefergehende Untersuchung
 
-Bei der Konvertierung eines Datums in eine Zeichenfolge gibt es einige wichtige Dinge zu beachten. Zum Beispiel sollte man immer die Zeitzone des Datums angeben, um Verwirrungen zu vermeiden. Außerdem können auch verschiedene Datums- und Zeitformate verwendet werden, je nach Anforderungen und Standards.
+Die `format`-Funktion kann auch weitere Optionen für die Formatierung von Datum und Uhrzeit akzeptieren. Hier ist eine Tabelle mit einigen der häufigsten Optionen:
 
-Ein weiterer wichtiger Faktor ist die Performance. Wenn man viele Datums-Konvertierungen in seinem Code verwendet, sollte man auf effiziente Methoden zurückgreifen, um die Ausführungsgeschwindigkeit zu optimieren. Gleam bietet dafür viele hilfreiche Tools und Funktionen.
+| Option  | Beschreibung                                    |
+|---------|-------------------------------------------------|
+| %Y      | 4-stellige Jahreszahl                           |
+| %y      | 2-stellige Jahreszahl                           |
+| %m      | Monat als 2-stellige Zahl                       |
+| %B      | Monatsname (z.B. "September")                   |
+| %b      | Abgekürzter Monatsname (z.B. "Sep")             |
+| %d      | Tag des Monats als 2-stellige Zahl              |
+| %A      | Wochentag (z.B. "Sonntag")                      |
+| %a      | Abgekürzter Wochentag (z.B. "So")               |
+| %H      | Stunde (24-Stunden-Format)                      |
+| %I      | Stunde (12-Stunden-Format)                      |
+| %M      | Minute                                          |
+| %S      | Sekunde                                         |
+
+Weitere Informationen zu den verschiedenen Formatierungsoptionen finden Sie in der Gleam-Dokumentation zu [DateTime.Format](https://gleam.run/language/datetime#DateTime.Format).
+
+Es ist auch wichtig zu beachten, dass die Konvertierung von Datums- und Zeitangaben immer unter Berücksichtigung der Zeitzone erfolgt. Gleam bietet hierfür den Typ `DateTime.Offset` an, der verwendet werden kann, um Datum und Uhrzeit mit einer bestimmten Zeitzone zu verknüpfen.
 
 ## Siehe auch
 
-- [Gleam Date Modul] (https://gleam.run/modules/date.html)
-- [Gleam String Format Modul] (https://gleam.run/modules/string.html#string-format)
-
-Vielen Dank fürs Lesen! Wir hoffen, dass dieser Artikel hilfreich für Sie war und Ihnen dabei geholfen hat, Dates in Strings in Gleam zu konvertieren. Vergessen Sie nicht, die oben verlinkten Ressourcen zu konsultieren, um noch mehr über die Möglichkeiten von Gleam zu erfahren. Happy coding!
+- [Gleam-Dokumentation zu DateTime](https://gleam.run/language/datetime)
+- [Blogbeitrag zum Thema Gleam-Datums- und Zeitmanipulation](https://devblog.avdi.codes/2021/02/23/gleam-dates-and-time/)

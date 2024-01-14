@@ -1,83 +1,44 @@
 ---
-title:                "Rust: 「2つの日付の比較」"
+title:                "Rust: 「二つの日付を比較する」"
+simple_title:         "「二つの日付を比較する」"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-
-プログラマーであるなら、日付を比較する機会は多いはずです。例えば、ある日付が別の日付よりも過去か未来かを判断する必要がある場合や、特定の日付範囲内にあるデータを取得する必要がある場合などです。Rustは、日付を比較する際に非常に強力であり正確な言語です。そのため、この記事ではRustを使って日付を比較する方法を紹介します。
+Rustは、安全性とパフォーマンスを両立したプログラミング言語です。そのため、日付の比較を行う際にも優れた選択肢となります。この記事では、Rustを使って日付を比較する方法についてご紹介します。
 
 ## 方法
+まず、比較したい日付を`chrono`ライブラリを使用してDateTime型に変換します。次に、比較演算子（`<`,`<=`,`>`,`>=`,`==`,`!=`）を使って日付の大小を比較することができます。
 
-まずは、日付を比較するためには、`DateTime`ライブラリを使用する必要があります。次のように、プロジェクトに`DateTime`を追加します。
+例えば、2021年1月1日と2020年12月31日を比較したい場合、以下のようなコードを記述します。
 
-```Rust
-[dependencies]
-datetime = "0.4"
 ```
+use chrono::{DateTime, Local, Duration, Weekday, NaiveDate};
+let first_date = Local.ymd(2021, 1, 1).and_hms(0, 0, 0);
+let second_date = Local.ymd(2020, 12, 31).and_hms(0, 0, 0);
 
-`DateTime`ライブラリを使用すると、日付オブジェクトを作成して比較することができます。例えば、2つの日付を比較するプログラムを以下のように記述することができます。
-
-```Rust
-extern crate datetime;
-
-use datetime::{Date, Datelike};
-
-fn main() {
-    let date1 = Date::from_ymd(2021, 12, 25);
-    let date2 = Date::from_ymd(2022, 1, 1);
-
-    if date1 < date2 {
-        println!("date1 is before date2");
-    } else if date1 > date2 {
-        println!("date1 is after date2");
-    } else {
-        println!("Both dates are the same");
-    }
+if first_date > second_date {
+    println!("1月1日>12月31日");
+} else if first_date < second_date {
+    println!("1月1日<12月31日");
+} else {
+    println!("同じ日付です");
 }
 ```
 
-上記のコードを実行すると、出力結果は以下のようになります。
+上記のコードを実行すると、コンソールには「1月1日>12月31日」というメッセージが表示されます。
 
-```
-date1 is before date2
-```
+## ディープダイブ
+日付を比較する際には、タイムゾーンの影響を考慮することも重要です。Rustでは、タイムゾーンを指定してDateTime型を作成することができます。また、`chrono`ライブラリには、日付や時刻の計算を行うための多くの便利なメソッドが用意されています。
 
-このように、`<`、`>`、`=`演算子を使用して日付を比較することができます。
+さらに、日付や時刻を表すデータ型には、`DateTime`以外にも`NaiveDate`や`NaiveDateTime`などがあり、それぞれの特徴や使い分けについても学ぶことができます。
 
-また、日付を比較する際には、`chrono`ライブラリも便利です。`chrono`ライブラリを使用すると、日付をより詳細に操作することができます。例えば、以下のように使用することができます。
-
-```Rust
-extern crate chrono;
-
-use chrono::prelude::*;
-
-fn main() {
-    let dt1 = NaiveDate::from_ymd(2021, 12, 25);
-    let dt2 = NaiveDate::from_ymd(2022, 1, 1);
-
-    if dt1 < dt2 {
-        println!("dt1 is before dt2");
-    } else if dt1 > dt2 {
-        println!("dt1 is after dt2");
-    } else {
-        println!("Both dates are the same");
-    }
-}
-```
-
-出力結果は同じく、以下のようになります。
-
-```
-dt1 is before dt2
-```
-
-## 詳細
-
-日付を比較する際には、注意しなければならない点があります。それは、日付オブジェクトに含まれるタイムゾーンの扱いです。Rustでは、デフォルトでローカルタイムゾーンが使用されるため、異なるタイムゾーンの日付を比較すると正確な結果が得られない場合があります。そのため、日付オブジェクトを比較する前に、必要に応じて同じタイムゾーンに変換する必要があります。
-
-また、日付だけでなく、日付と時刻を比較することもできます。しかし、その場合はさらに注意が必要です。なぜなら、同じタイムゾーンの中でも、サマータイムやダブルサマータイムなどの影
+## さらに見る
+- [Rustの中の日付と時刻](https://doc.rust-lang.org/std/time/index.html)
+- [Rustでのタイムゾーンの扱い](https://docs.rs/chrono/0.4.19/chrono/index.html)
+- [パフォーマンス重視の日時比較方法](https://stackoverflow.com/questions/31427011/comparing-datetimes-in-rust)

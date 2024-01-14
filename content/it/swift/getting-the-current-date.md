@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Ottenere la data corrente"
+title:                "Swift: Ottenere la data attuale"
+simple_title:         "Ottenere la data attuale"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/getting-the-current-date.md"
 ---
 
@@ -9,34 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Oggi parliamo di un concetto fondamentale nella programmazione di Swift: ottenere la data corrente. Perché dovresti interessarti a questa funzione? Semplice, è essenziale per qualsiasi applicazione che deve gestire il tempo.
+Ci sono diverse ragioni per cui un programmatore potrebbe voler ottenere la data corrente nel suo codice Swift. Può essere utile per tenere traccia dei tempi di esecuzione dei programmi, per creare log di eventi o per fornire informazioni temporali ai propri utenti.
 
 ## Come fare
 
-Per ottenere la data corrente in Swift, possiamo utilizzare la classe `Date` e il suo inizializzatore `init()` che prende in input l'ora attuale. Possiamo poi usare un oggetto `DateFormatter` per formattare la data nel modo desiderato. Vediamolo in azione:
+Per ottenere la data corrente in Swift, è possibile utilizzare l'oggetto `Date`. Possiamo creare un'istanza di questa classe utilizzando il costruttore di default, che ci darà la data e l'ora attuali nel nostro fuso orario locale. Ad esempio:
 
 ```Swift
-let dataCorrente = Date()
-let formattatore = DateFormatter()
-
-formattatore.dateFormat = "dd/MM/yyyy" // Impostiamo il formato desiderato
-let dataFormattata = formattatore.string(from: dataCorrente) // Convertiamo la data in una stringa formattata
-
-print(dataFormattata) // Stampa ad esempio: 01/01/2021
+let currentDate = Date()
+print(currentDate)
 ```
 
-In questo esempio, abbiamo ottenuto la data corrente e l'abbiamo formattata nel formato giorno/mese/anno. Possiamo modificare il formato semplicemente cambiando la stringa del `dateFormat` dell'oggetto `DateFormatter`.
+Questo produrrà un output simile a questo: `2021-06-15 16:37:13 +0000`. Tieni presente che l'ora mostrata sarà diversa a seconda del tuo fuso orario.
+
+Possiamo anche impostare un fuso orario diverso utilizzando l'oggetto `TimeZone`, ad esempio:
+
+```Swift
+let usTimeZone = TimeZone(identifier: "America/New_York")
+let currentDate = Date()
+let dateFormatter = DateFormatter()
+dateFormatter.timeZone = usTimeZone
+dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+print(dateFormatter.string(from: currentDate))
+```
+
+Questo produrrà un output simile a questo: `2021-06-15 12:37:13`.
 
 ## Approfondimento
 
-Ora che abbiamo visto come ottenere la data corrente, è importante capire come funziona il concetto di data in Swift. Date in Swift sono rappresentate da un valore di tempo assoluto e non dipendono dal fuso orario o dal calendario dell'utente. Quindi è importante assicurarsi di gestire correttamente la conversione in fuso orario locale e il formato della data per l'utente.
-
-Una data in Swift può anche essere rappresentata come componente di data, come anno, mese, giorno, ora, minuti e secondi. Possiamo accedere a questi componenti tramite la classe `Calendar` utilizzando il metodo `component(_:from:)`.
-
-Per maggiori informazioni e approfondimenti sulla gestione delle date in Swift, consulta la documentazione ufficiale di Apple e gli altri articoli sul nostro blog.
+Il motivo per cui abbiamo usato `dateFormatter` nel secondo esempio è perché l'oggetto `Date` non ha una rappresentazione visiva predefinita in Swift. Puoi usare un oggetto `DateFormatter` per formattare la stringa in un formato più leggibile. Inoltre, puoi utilizzare il metodo `DateFormatter.string(from: Date)` per ottenere la stringa formattata dalla data.
+ 
+Vale la pena notare che l'oggetto `Date` rappresenta solo la data e l'ora in un determinato istante. Se vuoi lavorare con date specifiche, come il tuo compleanno o una data di scadenza, dovresti utilizzare l'oggetto `Calendar` e i suoi metodi per creare date e confrontarle tra loro.
 
 ## Vedi anche
 
-- [Documentazione ufficiale Apple su Date](https://developer.apple.com/documentation/foundation/date)
-- [Tutorial di Ray Wenderlich su Date in Swift](https://www.raywenderlich.com/7181016-dates-and-times-in-swift-getting-started)
-- [Altro articolo sul nostro blog: Gestire i fusi orari in Swift](https://linkalaltroarticolo.it)
+- [Documentazione Apple su Date](https://developer.apple.com/documentation/foundation/date)
+- [Documentazione Apple su DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Tutorial su come lavorare con date in Swift](https://betterprogramming.pub/how-to-work-with-dates-in-swift-8dafca19a1ca)

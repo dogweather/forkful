@@ -1,7 +1,9 @@
 ---
-title:                "Go: Rozpoczynanie nowego projektu"
+title:                "Go: Rozpoczynając nowy projekt"
+simple_title:         "Rozpoczynając nowy projekt"
 programming_language: "Go"
-category:             "Getting Started"
+category:             "Go"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/starting-a-new-project.md"
 ---
 
@@ -9,13 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Go jest językiem programowania, który stał się bardzo popularny wśród programistów ze względu na swoją prostotę, wydajność i łatwość w nauce. Jeśli szukasz nowego wyzwania lub chcesz ulepszyć swoje umiejętności programistyczne, rozpoczęcie nowego projektu w Go może być świetnym pomysłem.
+Rozpoczęcie nowego projektu jest ważną częścią nauki języka Go. Pozwala ono na praktykowanie podstawowych umiejętności i poszerzanie wiedzy o programowaniu w tym języku. Ponadto, tworzenie własnych projektów może być również świetnym sposobem na wykorzystanie kreatywności i rozwoju umiejętności problem solving.
 
-## Jak to zrobić
+## Jak zacząć
 
-W celu rozpoczęcia nowego projektu w Go, należy najpierw zainstalować kompilator Go oraz edytor kodu. Możesz pobrać najnowszą wersję Go ze strony oficjalnej lub skorzystać z menedżera pakietów jak np. Homebrew dla systemów macOS.
-
-Po zainstalowaniu Go, tworzenie projektu jest bardzo proste. Wystarczy utworzyć nowy folder, a następnie otworzyć go w edytorze kodu. W pierwszej linii pliku dodajemy deklarację paczki, np. `package main`. Następnie możemy już zacząć pisać nasz kod. Oto przykładowy program w Go wypisujący tekst w konsoli:
+Aby rozpocząć nowy projekt w języku Go, wystarczy utworzyć nowy plik z rozszerzeniem `.go` oraz zainicjować moduł przez wpisanie w terminalu komendy `go mod init nazwa_projektu`. Następnie, można zacząć pisać kod wewnątrz pliku, wykorzystując różne pakiety oraz funkcje dostępne w języku Go. Poniżej znajduje się przykładowy kod, który wyświetli napis "Witaj świecie!" na ekranie:
 
 ```Go
 package main
@@ -23,22 +23,20 @@ package main
 import "fmt"
 
 func main() {
-  fmt.Println("Witaj, świecie!")
+    fmt.Println("Witaj świecie!")
 }
 ```
 
-Po napisaniu kodu, możemy skompilować nasz program używając komendy `go build` w terminalu. Aby uruchomić skompilowany program, wystarczy wpisać jego nazwę w terminalu i nacisnąć Enter.
+Można również wykorzystać zewnętrzne biblioteki, korzystając z menadżera modułów `go get` oraz importując je w kodzie. Należy jednak pamiętać, aby sprawdzać licencję oraz popularność danej biblioteki, aby uniknąć problemów w przyszłości.
 
-## Wnikliwa Analiza
+## Deep Dive
 
-Przed rozpoczęciem nowego projektu w Go warto przeczytać oficjalną dokumentację języka i zapoznać się z jego składnią oraz funkcjami. Ważne jest również zrozumienie podstawowych pojęć i koncepcji w Go, takich jak paczki, funkcje i zmienne.
+Rozpoczęcie nowego projektu w języku Go może być nieco przytłaczające dla początkujących. Dlatego warto zacząć od prostych projektów, aby opanować podstawy języka oraz strukturę plików i pakietów. Następnie, można stopniowo przechodzić do bardziej zaawansowanych projektów i wykorzystywać różne funkcje i pakiety dostępne w języku.
 
-Rozpoczęcie nowego projektu w Go może być również dobrym sposobem na naukę programowania równoległego, którego Go jest silnie wspierającym językiem. Istnieją w nim funkcje i konstrukcje umożliwiające wykorzystanie wielu procesorów jednocześnie, co może przyspieszyć wykonywanie kodu.
+Warto również pamiętać o testowaniu kodu oraz dokumentowaniu go poprzez wykorzystanie komentarzy oraz narzędzi takich jak `godoc`.
 
 ## Zobacz także
 
-- Oficjalna strona języka Go: https://golang.org/
-- Dokumentacja języka Go: https://golang.org/doc/
-- Kurs programowania w Go: https://tour.golang.org/welcome/1
-- Oficjalny blog Go: https://blog.golang.org/
-- Pakiety Go dostępne w bibliotece: https://pkg.go.dev/
+- [Oficjalna dokumentacja języka Go](https://golang.org/doc/)
+- [Lista popularnych bibliotek w języku Go](https://github.com/avelino/awesome-go)
+- [Kurs programowania w języku Go (w języku polskim)](http://www.golang-book.com/books/intro)

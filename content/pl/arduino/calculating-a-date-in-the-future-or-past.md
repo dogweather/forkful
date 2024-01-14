@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Obliczanie daty w przyszłości lub przeszłości"
+title:                "Arduino: Obliczanie daty w przyszłości lub w przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub w przeszłości"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,44 +11,111 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Obliczanie daty w przeszłości lub przyszłości może być użyteczne w wielu projektach z użyciem Arduino. Na przykład, można wykorzystać je do zaprogramowania alarmu, który będzie działał tylko w wybranym czasie lub do kontrolowania czasu trwania projektu.
+W dzisiejszych czasach wiele projektów i urządzeń zależy od czasu. Od automatycznych systemów nawadniania ogrodów po inteligentne termometry, wiele urządzeń musi działać w odpowiednich momentach. Aby zapewnić dokładność i precyzję, często musimy wyliczyć daty w przyszłości lub z przeszłości. W tym artykule dowiesz się, jak to zrobić za pomocą Arduino.
 
-## Jak to zrobić
+## Jak to robić
 
-Aby obliczyć datę w przeszłości lub przyszłości za pomocą Arduino, wystarczy skorzystać z wbudowanej biblioteki "Time". Poniżej przedstawiony jest kod, który oblicza datę 10 dni w przyszłości od dzisiaj:
+Arduino oferuje kilka sposobów na wyliczanie dat w przyszłości lub przeszłości. Możesz wykorzystać bibliotekę "Time" lub napisać własną funkcję. Poniżej przedstawiam przykłady z użyciem biblioteki "Time" oraz z własną funkcją.
 
-```Arduino
+```
+## Arduino przykład z użyciem biblioteki "Time"
+
 #include <Time.h>
 
 void setup() {
-  // inicjuj czas
-  setTime(14, 0, 0, 1, 1, 2019);
-  
-  // pobierz aktualny czas
-  time_t now = now();
-  
-  // dodać 10 dni do aktualnego czasu
-  time_t future = now + (10 * 24 * 60 * 60);
-  
-  // ustaw format i wyświetl przyszłą datę
   Serial.begin(9600);
-  Serial.print(day(future));
-  Serial.print("/");
-  Serial.print(month(future));
-  Serial.print("/");
-  Serial.print(year(future));
+
+  // Ustawia aktualną datę i czas
+  setTime(17, 30, 0, 1, 1, 2020);
 }
 
-void loop() {}
+void loop() {
+  // Wyświetla aktualną datę i czas
+  Serial.print("Aktualna data i czas: ");
+  Serial.print(day());
+  Serial.print("/");
+  Serial.print(month());
+  Serial.print("/");
+  Serial.print(year());
+  Serial.print(" ");
+  Serial.print(hour());
+  Serial.print(":");
+  if (minute() < 10) {
+    Serial.print("0");
+  }
+  Serial.print(minute());
+  Serial.print(":");
+  if (second() < 10) {
+    Serial.print("0");
+  }
+  Serial.println(second());
+
+  // Wylicza datę w przyszłości o 2 dni
+  time_t futureDate = now() + (2 * 24 * 60 * 60);
+  Serial.print("Data za 2 dni: ");
+  Serial.print(day(futureDate));
+  Serial.print("/");
+  Serial.print(month(futureDate));
+  Serial.print("/");
+  Serial.println(year(futureDate));
+
+  // Wylicza datę w przeszłości o 2 lata
+  time_t pastDate = now() - (2 * 365 * 24 * 60 * 60);
+  Serial.print("Data sprzed 2 lat: ");
+  Serial.print(day(pastDate));
+  Serial.print("/");
+  Serial.print(month(pastDate));
+  Serial.print("/");
+  Serial.println(year(pastDate));
+
+  delay(1000);
+}
 ```
 
-Wysłany zostanie następujący wynik: "11/1/2019", oznaczający datę 10 dni od dzisiaj.
+```
+## Arduino przykład z własną funkcją
 
-## Pogłębione badanie
+#include <Time.h>
 
-Aby lepiej zrozumieć, jak działa obliczanie daty w przeszłości lub przyszłości w Arduino, warto zapoznać się z kolekcją funkcji dostępnych w bibliotece "Time". Dzięki nim możemy uzyskać dostęp do różnych części daty, takich jak dzień, miesiąc czy rok. Ponadto, można także zmieniać ustawienia czasu, takie jak strefa czasowa czy format wyświetlania.
+// Funkcja do wyliczenia daty w przeszłości lub przyszłości
+time_t calculateDate(int days, int months, int years, bool future) {
+  // Ustawia aktualną datę i czas
+  setTime(17, 30, 0, 1, 1, 2020);
 
-## Zobacz też
+  // Wyliczenie daty w przyszłości lub przeszłości
+  if (future) {
+    return now() + (days * 24 * 60 * 60) + (months * 30 * 24 * 60 * 60) + (years * 365 * 24 * 60 * 60);
+  } else {
+    return now() - (days * 24 * 60 * 60) - (months * 30 * 24 * 60 * 60) - (years * 365 * 24 * 60 * 60);
+  }
+}
 
-- [Dokumentacja biblioteki "Time" dla Arduino](https://www.arduino.cc/en/Reference/Time)
-- [Przykładowy projekt z użyciem obliczania daty w przeszłości i przyszłości](https://create.arduino.cc/projecthub/ninjaCoders/arduino-date-time-168b82)
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Wyświetla aktualną datę i czas
+  Serial.print("Aktualna data i czas: ");
+  Serial.print(day());
+  Serial.print("/");
+  Serial.print(month());
+  Serial.print("/");
+  Serial.print(year());
+  Serial.print(" ");
+  Serial.print(hour());
+  Serial.print(":");
+  if (minute() < 10) {
+    Serial.print("0");
+  }
+  Serial.print(minute());
+  Serial.print(":");
+  if (second() < 10) {
+    Serial.print("0");
+  }
+  Serial.println(second());
+
+  // Wylicza datę w przyszłości o 5 dni, 2 miesiące i 2 lata
+  time_t futureDate = calculateDate(5, 2, 2, true);
+  Serial.print("Data za 2 lata, 2 miesiące i 5 dni: ");
+  Serial.print(day

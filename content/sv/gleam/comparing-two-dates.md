@@ -1,31 +1,44 @@
 ---
-title:                "Gleam: Jämförelse av två datum"
+title:                "Gleam: Jämföra två datum"
+simple_title:         "Jämföra två datum"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att jämföra två datum är en viktig del av många programmeringsprojekt. Det kan hjälpa till att kontrollera om ett datum kommer före eller efter ett annat, eller om de är lika.
 
-Att jämföra två datum är en vanlig uppgift inom programmering. Det är användbart för att kontrollera om ett datum ligger före eller efter ett annat, eller om de två datumen är lika. Oavsett vilken typ av program du utvecklar, är det viktigt att ha en bra förståelse för hur man gör detta.
+## Hur man gör det
+Att jämföra två datum i Gleam är ganska enkelt. Här är ett exempel på hur du kan göra det:
 
-## Hur man gör 
+```
+Gleam.mod
+import gleam/datetime.{Date}
 
-```Gleam
-Date.comparison(Date.new(2021, 01, 01), Date.new(2020, 12, 31))
+pub fn compare_dates(date1: Date, date2: Date) {
+   if Date.is_before(date1, date2) {
+      // date1 är innan date2
+   } else if Date.is_equal(date1, date2) {
+      // date1 och date2 är samma dag
+   } else {
+      // date1 är efter date2
+   }
+}
 ```
 
-Detta kodblock visar hur man använder den inbyggda funktionen "comparison" i Gleam för att jämföra två datum. Funktionen tar två datum som argument och returnerar ett heltal som indikerar hur de förhåller sig till varandra. Om det första datumet är tidigare än det andra kommer resultatet att vara -1, om det kommer efteråt blir det 1 och om de båda är samma kommer det att vara 0.
+I detta exempel använder vi funktionerna `Date.is_before` och `Date.is_equal` för att jämföra två datum och utföra en åtgärd baserat på resultatet.
 
-## Deep Dive
+## Djupdykning
+När du jämför två datum bör du också vara medveten om hur tidszoner och sommartid påverkar resultatet. I Gleams standardbibliotek finns även funktioner för att hantera dessa situationer, såsom `Date.adjust_for_timezone` och `Date.adjust_for_summertime`.
 
-Att jämföra datum kan verka enkelt, men det finns vissa saker att tänka på för att undvika fel. En viktig aspekt är att se till att båda datumen har samma format, annars kan jämförelsen ge ett felaktigt resultat.
+## Se också
+För mer information om hur du hanterar datum i Gleam, se dessa länkar:
 
-En annan viktig detalj är att datumet måste konverteras till GMT-tid innan det kan jämföras, eftersom olika tidszoner och sommartider kan påverka resultatet. Detta kan åstadkommas genom att använda funktionen "DateTime.to_gmt".
+- [Gleam dokumentation för datetime](https://gleam.run/documentation/std-lib-datetime/)
+- [Gleam-datum-paketet](https://github.com/gleam-lang/gleam-date)
 
-## Se även
-
-- Gleams inbyggda datumfunktioner: https://gleam.run/docs/std/datetime/
-- En guide om hur man jämför datum i andra programmeringsspråk: https://www.w3schools.com/sql/func_sqlserver_formats.asp
+Tack för att du läste! Fortsätt lära dig och utveckla med Gleam! 🚀

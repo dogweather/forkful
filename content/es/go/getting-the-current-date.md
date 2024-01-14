@@ -1,7 +1,9 @@
 ---
 title:                "Go: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/getting-the-current-date.md"
 ---
 
@@ -9,56 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué obtener la fecha actual en Go
 
-Puede parecer un concepto simple, pero obtener la fecha actual es una tarea importante en el desarrollo de cualquier programa. Ya sea para mostrar la fecha en una interfaz de usuario, registrar eventos en un sistema, o simplemente para realizar cálculos basados en la fecha actual, siempre es útil tener acceso a esta información.
+Una de las tareas más comunes al programar es obtener la fecha y hora actuales. Ya sea para mostrarla en una interfaz de usuario o para realizar cálculos con fechas, es una funcionalidad básica en cualquier aplicación. En este artículo, aprenderemos cómo obtener la fecha actual en Go de forma sencilla y eficiente.
 
-## Cómo obtener la fecha actual en Go
+## Cómo hacerlo
 
-En Go, obtener la fecha actual es bastante sencillo gracias al paquete `time` y su función `Now()` que permite recuperar la fecha y hora actual en un formato específico. A continuación, se muestra un ejemplo de código que imprime la fecha actual en formato `DD/MM/YYYY`:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	currentTime := time.Now()
-	date := currentTime.Format("02/01/2006")
-	fmt.Println("La fecha actual es:", date)
-}
-```
-
-La salida de este programa sería: `La fecha actual es: 28/05/2021`. En este ejemplo, se utiliza el formato `02/01/2006` ya que en Go, el formato de fecha se define usando el formato de referencia `Mon Jan 2 15:04:05 MST 2006`.
-
-Otro ejemplo sería obtener la hora actual en formato `HH:MM:SS`, para ello se puede utilizar el siguiente código:
+En Go, podemos obtener la fecha actual utilizando la función `Now()` del paquete `time`. Esta función devuelve un objeto `Time` que contiene la fecha, hora y zona horaria actuales. Veamos un ejemplo:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	currentTime := time.Now()
-	time := currentTime.Format("15:04:05")
-	fmt.Println("La hora actual es:", time)
+    today := time.Now()
+    fmt.Println("Fecha actual: ", today)
 }
 ```
 
-La salida sería: `La hora actual es: 14:28:35`.
+El código anterior nos dará como resultado algo similar a: `Fecha actual:  2021-03-26 15:30:00.7002462 +0000 UTC m=+0.000000001`. Podemos utilizar los métodos `Day()`, `Month()` y `Year()` del objeto `Time` para obtener la fecha en un formato más legible. Por ejemplo:
 
-## Profundizando en la obtención de la fecha actual en Go
+```Go
+fmt.Printf("Hoy es %d de %s del %d", today.Day(), today.Month(), today.Year())
+```
 
-Además de poder obtener la fecha y hora actuales, el paquete `time` cuenta con otras funciones útiles como `Parse()` que permite convertir una cadena de texto en formato de fecha a un objeto de tipo `time.Time`. También existe la función `Add()` que permite agregar o restar una cantidad de tiempo determinada a una fecha específica.
+Esto nos dará como resultado: `Hoy es 26 de March del 2021`.
 
-Una cosa importante a tener en cuenta es que la fecha y hora obtenida con `Now()` se basa en el huso horario del sistema, por lo que puede ser diferente a la fecha y hora actual en otras zonas horarias. Para obtener la fecha y hora en una zona horaria específica, se puede utilizar la función `LoadLocation()` para obtener una ubicación especificada y luego usar la función `In()` para convertir la fecha y hora al huso horario deseado.
+También podemos utilizar el método `Format()` para obtener la fecha en un formato específico. Por ejemplo:
+
+```Go
+//Obtener la fecha en formato "día/mes/año"
+fmt.Println("Fecha actual: ", today.Format("02/01/2006"))
+```
+
+Este código nos dará como resultado: `Fecha actual: 26/03/2021`.
+
+## Profundizando
+
+Go cuenta con una serie de métodos y funciones que nos permiten trabajar con fechas de forma eficiente. Por ejemplo, podemos sumar o restar días, meses o años utilizando el método `Add()`, o podemos comparar dos fechas utilizando el método `Before()` o `After()`. También podemos obtener la diferencia de tiempo entre dos fechas con el método `Sub()`.
+
+Además, Go nos permite trabajar con diferentes zonas horarias utilizando el paquete `time`, lo que resulta muy útil en aplicaciones que deben manejar fechas y horas en diferentes lugares del mundo.
+
+En resumen, Go cuenta con una serie de herramientas para trabajar con fechas de forma sencilla y eficiente, permitiéndonos realizar tareas comunes como obtener la fecha actual o realizar cálculos con fechas de forma rápida y precisa.
 
 ## Ver también
 
-- Documentación oficial de time en Go: https://golang.org/pkg/time/
-- Tutorial sobre formateo de fecha en Go: https://programming.guide/go/format-parse-string-time-date-example.html
-- Herramientas de timezone para Go: https://github.com/go-playground/locales
+- [Paquete time en la documentación oficial de Go](https://golang.org/pkg/time/)
+- [Tutorial: cómo trabajar con fechas en Go](https://yourbasic.org/golang/time-format-parse-string-timestamp/)
+- [Ejemplo práctico: cómo utilizar diferentes zonas horarias en Go](https://dev.to/nicolasiensen/managing-timezones-in-golang-with-standard-library-5a2)

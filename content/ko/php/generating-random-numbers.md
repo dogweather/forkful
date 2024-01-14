@@ -1,36 +1,41 @@
 ---
-title:                "PHP: 랜덤 숫자 생성하기"
+title:                "PHP: 난수 생성하기"
+simple_title:         "난수 생성하기"
 programming_language: "PHP"
-category:             "Numbers"
+category:             "PHP"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-난수 생성에 참여할 이유는 무엇인가요? 
-
-난수 생성은 프로그래밍에서 매우 중요한 역할을 합니다. 난수는 보안, 시뮬레이션 및 게임 등 다양한 분야에서 사용됩니다. 프로그래밍에서 가장 흥미로운 부분 중 하나는 난수를 생성하는 과정이며, 이를 통해 우리는 다양한 수학적 과정과 알고리즘을 배울 수 있습니다. 따라서 난수 생성은 프로그래밍을 배우는 과정에서 중요한 부분입니다.
+PHP에서 임의의 숫자를 생성하는 것에 대해 관심이 생길 수 있습니다. 이를 통해 새로운 콘텐츠를 만들거나 데이터를 랜덤하게 처리할 수 있습니다.
 
 ## 방법
 
+PHP에서 임의의 숫자를 생성하는 방법은 매우 간단합니다. 다음 코드를 사용하면 됩니다.
+
 ```PHP
-<?php
-// rand() 함수를 사용하여 1부터 10까지의 난수 생성
-echo rand(1, 10) . "\n";
-// 출력 결과는 예: 8
-?>
+// 랜덤한 숫자를 생성하는 예제
+$number = rand(1, 10); // 1에서 10 사이의 숫자를 랜덤하게 선택
+
+// 랜덤한 숫자와 문자열을 조합하는 예제
+$randomString = "Your lucky number for today is " . rand(1, 100); // 1에서 100 사이의 숫자를 랜덤하게 선택하여 문자열과 조합
+echo $randomString; // 예시 출력: Your lucky number for today is 42
 ```
 
-PHP에서 난수를 생성하는 가장 간단한 방법은 `rand()` 함수를 사용하는 것입니다. 이 함수는 두 개의 매개변수를 가지며, 첫 번째 매개변수는 난수의 최소값을, 두 번째 매개변수는 최대값을 나타냅니다. 위 예제에서는 1부터 10까지의 난수를 생성했습니다. `rand()` 함수 외에도, `mt_rand()` 함수와 `random_int()` 함수를 사용하여 난수를 생성할 수 있습니다.
+위의 예제는 `rand()` 함수를 사용하여 랜덤한 숫자를 생성하는 방법을 보여줍니다. 첫 번째 매개변수는 가장 작은 숫자이고, 두 번째 매개변수는 가장 큰 숫자입니다. 따라서 위의 예제에서는 1부터 10까지의 숫자를, 또 다른 예제에서는 1부터 100까지의 숫자를 랜덤하게 선택합니다.
 
 ## 딥 다이브
 
-난수를 생성하는 알고리즘 중 하나는 선형 합동 발생기 (Linear Congruential Generator)입니다. 이 알고리즘은 현재 시간 및 이전에 생성된 난수를 사용하여 새로운 난수를 생성합니다. 또 다른 알고리즘은 메르센 트위스터 (Mersenne Twister) 알고리즘입니다. 이 알고리즘은 최근에 가장 널리 사용되는 난수 생성 알고리즘 중 하나입니다. 난수 생성은 간단해 보이지만, 컴퓨터 과학 분야에서 여러 가지 문제와 연관되어 있습니다. 따라서 프로그래머는 난수를 사용할 때 항상 주의를 기울여야 합니다.
+PHP에서 임의의 숫자를 생성하는 방법은 여러 가지가 있습니다. `rand()` 함수 외에도 `mt_rand()` 함수, `random_int()` 함수 등이 있습니다. 또한 각 함수마다 다양한 매개변수를 사용할 수 있고, 보안 측면에서 추천되는 함수가 있으므로 사용하기 전에 알아두는 것이 좋습니다.
 
-## 참고 자료
+또한, PHP에서는 버전에 따라 난수 생성 방식이 달라질 수 있으므로 원하는 대로 숫자를 생성하지 못하는 경우가 있을 수 있습니다. 이 때는 `phpinfo()` 함수를 사용하여 PHP 버전과 난수 생성 방식을 확인한 뒤 적절한 함수를 선택하여 사용해야 합니다.
 
-- [PHP 공식 문서 - 난수 생성](https://www.php.net/manual/en/function.rand.php)
-- [선형 합동 발생기 (Wikipedia)](https://en.wikipedia.org/wiki/Linear_congruential_generator)
-- [메르센 트위스터 (Wikipedia)](https://en.wikipedia.org/wiki/Mersenne_Twister)
+# 참고 자료
+
+- [PHP 공식 문서 - 임의의 숫자 생성](https://www.php.net/manual/en/function.rand.php)
+- [Randomness in PHP - Secure random numbers](https://paragonie.com/blog/2016/05/how-generate-secure-random-numbers-in-various-programming-languages#advice-php)
+- [Learn PHP with Codecademy - Random Numbers](https://www.codecademy.com/learn/learn-php/modules/introduction-to-php/cheatsheet)

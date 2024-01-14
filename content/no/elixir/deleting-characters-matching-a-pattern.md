@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Slette tegn som matcher et mønster"
+simple_title:         "Slette tegn som matcher et mønster"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,36 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Noen ganger må vi gjøre endringer i våre Elixir-programmer for å forbedre ytelsen eller forenkle koden. En måte å gjøre dette på er å slette tegn som matcher et visst mønster. Dette kan bidra til å rydde opp i koden og gjøre den mer lesbar.
+Å slette tegn som matcher et mønster i programmering er en nyttig ferdighet som kan hjelpe deg med å rydde opp i tekstbaserte data og effektivisere arbeidsflyten din. Dette kan være nyttig når du jobber med store tekstfiler eller behandler brukerinndata.
 
 ## Hvordan
 
-Å slette tegn som matcher et mønster kan gjøres ved hjelp av Elixir's `String.replace/3`-funksjon. La oss si at vi har en streng som inneholder tall og vi ønsker å slette alle tall fra 0 til 5.
+Det er flere måter å slette tegn som matcher et mønster i Elixir. En enkel måte er å bruke `Regex.replace/3`-funksjonen, som tar inn tre argumenter: regex-mønsteret du vil matche, erstatningsstrengen og teksten du vil søke i. 
 
-```Elixir
-input = "Jeg har 3 hester, 5 katter og 2 hunder"
-String.replace(input, ~r/[0-5]/, "") # "Jeg har  ,   katter og  hunder"
+```
+Elixir
+Regex.replace(~r/hat/, "hatt", "Jeg har en blå hat.")
 ```
 
-Vi bruker et regulært uttrykk for å matche alle tall fra 0 til 5 og bytter dem ut med en tom streng. Dette gjør at alle tall blir slettet fra originalstrengen.
+Dette vil gi følgende output:
 
-Vi kan også bruke `[...]` for å spesifisere hvilke tegn vi vil slette. La oss slette alle tegn i et alfabet fra a til c:
-
-```Elixir
-input = "Jeg elsker Elixir!"
-String.replace(input, ~r/[a-c]/, "") # "Jeg elsker lixir!"
+```
+"Jeg har en blå hatt."
 ```
 
-På denne måten kan vi enkelt slette enkelttegn, tall eller symboler som passer til vårt definerte mønster.
+Du kan også bruke regex-flagg for å gjøre søket ditt mer presist, for eksempel ved å ignorere store og små bokstaver. For å gjøre dette, bruk `:caseless`-flagget:
+
+```
+Elixir
+Regex.replace(~r/hat/, "hatt", "Jeg har en blå Hat.", opts: [:caseless])
+```
+
+Dette vil også gi følgende output:
+
+```
+"Jeg har en blå hatt."
+```
 
 ## Dypdykk
 
-Når vi bruker regulære uttrykk for å matche et mønster, kan vi også bruke spesielle symboler for å utvide søket vårt. For eksempel kan vi bruke `.` for å matche ethvert tegn, `+` for å matche en eller flere forekomster av et tegn og `*` for å matche null eller flere forekomster. Dette gjør det mulig å lage mer komplekse søkemønstre.
+Når du sletter tegn som matcher et mønster, kan du også bruke regex-grupper til å erstatte deler av teksten din med variabler. For eksempel:
 
-Vi kan også bruke `^` og `$` for å matche begynnelsen og slutten av en streng. Dette kan være nyttig når vi vil slette noe som ligger i starten eller slutten av en streng.
+```
+Elixir
+Regex.replace(~r/([a-z])n([a-z])/, "\\1m\\2", "Jeg liker å spise bananer.")
+```
+
+Dette vil gjøre at bokstavene "n" og "e" byttes ut med "m" og "a", og du vil få følgende output:
+
+```
+"Jeg liker å spise bamanar."
+```
+
+Regex er en kraftig teknikk som kan brukes til å søke og manipulere tekst på mange forskjellige måter. Det er verdt å utforske alle de forskjellige funksjonene og regex-flaggene for å finne ut hva som fungerer best for deg og ditt prosjekt.
 
 ## Se også
 
-- [Elixir string manipulation](https://elixir-lang.org/getting-started/basic-types.html#string-manipulation)
-- [Regular expressions in Elixir](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir string module](https://hexdocs.pm/elixir/String.html)
+- [Offisiell Elixir-dokumentasjon om Regex](https://hexdocs.pm/elixir/Regex.html)
+- [Enkel introduksjon til regex i Elixir](https://www.erlang-solutions.com/blog/regexes-in-elixir-a-tutorial.html)
+- [Elixir School sin guide til regex](https://elixirschool.com/lessons/basics/regex/)

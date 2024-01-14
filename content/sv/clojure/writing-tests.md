@@ -1,45 +1,65 @@
 ---
 title:                "Clojure: Att skriva tester"
+simple_title:         "Att skriva tester"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför##
 
-Att skriva tester är ett viktigt steg i utvecklingen av robusta och pålitliga program. Genom att skapa tester kan du säkerställa att din kod fungerar som avsett och minska risken för buggar och fel i produktion.
+Att skriva tester i Clojure är en viktig del av att utveckla en pålitlig och robust kodbas. Genom att skriva tester kan du säkerställa att din kod fungerar som den ska och att eventuella förändringar inte leder till oväntade buggar eller buggar som tidigare fungerade kod. Dessutom kan det hjälpa till att identifiera problem i koden tidigt, vilket sparar tid och resurser på lång sikt.
 
-## Hur man gör det
+##Så här##
 
-För att skriva tester i Clojure behöver du först och främst en förståelse för funktionell programmering, då Clojure är ett funktionellt språk. Ett enkelt exempel på ett funktionellt test är att skapa en funktion som tar in två tal och returnerar deras summa. 
-
-```Clojure
-(defn sum [a b]
-  (+ a b))
-
-(sum 2 2) ; => 4
-```
-
-Här kan vi sedan skapa ett test för att säkerställa att funktionen alltid returnerar rätt summa:
+För att skriva tester i Clojure använder du biblioteket "clojure.test", som är en del av standardbiblioteket. Det första steget är att importera det i ditt projekt:
 
 ```Clojure
-(deftest test-sum
-  (is (= 4 (sum 2 2)))
-  (is (= 10 (sum 5 5))))
-
-(run-tests) ; => Test passes
+(ns my-project.core-test
+  (:require [clojure.test :refer [deftest is]]))
 ```
 
-Genom att använda assert-funktionen `is` och jämföra resultatet av `sum` med det förväntade värdet kan vi enkelt testa vår funktion.
+För att skapa ett test använder du funktionen "deftest" och ger det ett unikt namn som beskriver vad testet testar:
 
-## Djupdykning
+```Clojure
+(deftest my-addition-test
+  ...)
+```
 
-Att skriva tester handlar inte bara om att bekräfta att koden fungerar, utan också om att förbättra din kod. Genom att skriva tester tvingas du att tänka på alla möjliga scenarier och undvika potentiella buggar i framtiden. Dessutom blir det mycket lättare att upptäcka fel och buggar när du har en uppsättning tester som kontrollerar din kod regelbundet.
+Inuti testet kan du använda funktionen "is" för att göra påståenden om din kod:
 
-## Se även
+```Clojure
+(deftest my-addition-test
+  (is (= (+ 2 2) 4))
+  (is (= (+ 2 3) 5)))
+```
 
-- [ClojureDocs](https://clojuredocs.org)
-- [Clojure for the Brave and True](https://www.braveclojure.com/)
-- [Test-Driven Development i Clojure](https://medium.com/@startupjs/test-driven-development-in-clojure-8096d4ebb1d4)
+När du är klar med dina tester kan du köra dem genom att kalla på funktionen "run-tests" i din testfil:
+
+```Clojure
+(defn -main []
+  (run-tests))
+```
+
+Det här kommer att köra alla dina tester och visa resultatet av dem.
+
+##Djupdykning##
+
+När du skriver tester i Clojure kan du använda ett antal olika funktioner för att göra påståenden om din kod. Här är några av de vanligaste:
+
+- "is" - Kontrollerar om två uttryck är lika.
+- "is-not" - Kontrollerar om två uttryck inte är lika.
+- "throws?" - Kontrollerar om ett uttryck kastar ett undantag.
+- "throws-with-msg?" - Kontrollerar om ett undantag kastas med ett visst meddelande.
+- "throws-with-cause?" - Kontrollerar om ett undantag kastas med en viss orsak.
+
+För mer information och exempel, se Clojure-testets dokumentation [här](https://clojure.github.io/clojure/clojure.test-api.html).
+
+##Se även##
+
+- [Clojure-testets dokumentation](https://clojure.github.io/clojure/clojure.test-api.html)
+- [The Clojure Cookbook - Writing Tests](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/14_testing/14_03_writing_tests.adoc)
+- [Testing in Clojure - A Beginner's Guide](https://blog.usejournal.com/testing-in-clojure-a-beginners-guide-891d92810c3a)

@@ -1,63 +1,59 @@
 ---
-title:                "Bash: Drucken von Fehlerausgaben"
+title:                "Bash: Ausgabe von Debug-Informationen drucken"
+simple_title:         "Ausgabe von Debug-Informationen drucken"
 programming_language: "Bash"
-category:             "Testing and Debugging"
+category:             "Bash"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Debugging ist eine unverzichtbare Fähigkeit für jeden Programmierer. Durch das Drucken von Debug-Ausgaben können Sie Schritt für Schritt den Ablauf Ihres Codes verfolgen und potenzielle Fehlerquellen identifizieren. Es ist ein nützliches Werkzeug, um komplexe Programmierprobleme zu lösen und die Effizienz Ihrer Arbeit zu verbessern.
+Debug-Ausgabe ist ein wichtiger Teil des Programmierens, da sie bei der Identifizierung und Behebung von Fehlern in Ihrem Code hilft. Durch das Drucken von Nachrichten und Variablenwerten während der Ausführung Ihres Codes können Sie besser verstehen, was in Ihrem Programm passiert und wo der Fehler liegt. Es ist ein effektiver Weg, um Ihre Codequalität zu verbessern und Probleme schneller zu lösen.
 
-# Wie man Debug-Ausgaben in Bash schreibt
+## Wie man es macht
 
-Um Debug-Ausgaben in Bash zu schreiben, verwenden Sie einfach den Befehl `echo`, gefolgt von der Information, die Sie ausgeben möchten. Zum Beispiel:
+Die Ausgabe von Debug-Nachrichten in Bash ist einfach und kann mit dem `echo` Befehl durchgeführt werden. Hier ist ein Beispiel, um eine Nachricht auszugeben, die bestätigt, dass ein bestimmter Teil des Codes erfolgreich ausgeführt wurde:
 
-```
-echo "Dies ist eine Debug-Ausgabe"
-```
-
-Sie können auch Variablen in Ihren Debug-Ausgaben verwenden, um genauere Informationen über den Zustand Ihres Codes zu erhalten. Verwenden Sie in diesem Fall den Befehl `printf` und die Platzhalter `%s` oder `%d` für Zeichenketten bzw. Zahlen. Zum Beispiel:
-
-```
-name="Max Mustermann"
-age=25
-printf "Benutzer: %s | Alter: %d" $name $age
+```Bash
+echo "Der Code wurde erfolgreich ausgeführt!"
 ```
 
-Dies würde folgende Ausgabe generieren:
+Sie können auch Variablenwerte ausgeben, um zu überprüfen, ob diese den erwarteten Wert haben. Zum Beispiel:
 
-```
-Benutzer: Max Mustermann | Alter: 25
-```
-
-Debug-Ausgaben können auch in Schleifen verwendet werden, um den Wert von Variablen bei jedem Schleifendurchlauf anzuzeigen. Auf diese Weise können Sie Fehler schneller erkennen und beheben. Hier ist ein Beispiel:
-
-```
-for i in {1..10}
-do
-  echo "Aktueller Wert von i: $i"
-done
+```Bash
+name="Max"
+echo "Mein Name ist $name."
 ```
 
-Dies würde 10 Debug-Ausgaben generieren, die den aktuellen Wert von `i` bei jedem Schleifendurchlauf anzeigen.
-
-# Tiefgehende Analyse
-
-Es ist wichtig zu beachten, dass Debug-Ausgaben für temporäre Zwecke verwendet werden sollten und nicht Teil des endgültigen Codes sein sollten. Daher ist es ratsam, die Befehle `echo` oder `printf` auszukommentieren oder zu entfernen, sobald der Fehler behoben ist.
-
-Eine andere Möglichkeit, Debug-Ausgaben zu erfassen, ist die Verwendung von `>>` und `2>&1` in Kombination mit dem Befehl `tee`. Dies ermöglicht es Ihnen, die Ausgabe Ihrer Debug-Ausgaben in eine separate Datei zu speichern, anstatt sie auf dem Bildschirm anzuzeigen. Zum Beispiel:
+Die Ausgabe erscheint dann folgendermaßen:
 
 ```
-echo "Fehlermeldung" 2>&1 | tee debug.log
+Mein Name ist Max.
 ```
 
-Dieser Befehl speichert die Debug-Ausgabe in der Datei `debug.log`, während sie gleichzeitig auf dem Bildschirm angezeigt wird.
+Wenn Sie mehrere Variablen ausgeben möchten, können Sie das `printf` Befehl verwenden. Dies ist besonders nützlich, wenn Sie komplexe Variablenwerte haben, die formatiert werden müssen. Hier ist ein Beispiel, um den Wert von zwei Variablen auszugeben:
 
-# Siehe auch
+```Bash
+age=28
+balance=1000.50
+printf "Ich bin %d Jahre alt und mein Kontostand beträgt %.2f Euro." $age $balance
+```
 
-- [Bash Debugging Techniken](https://www.linuxjournal.com/content/bash-debugging-techniques)
-- [Debugging in Bash: Tipps und Tricks](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html)
-- [Debugging Bash Skripte mit set -x](https://www.shell-tips.com/bash/debugging-bash-scripts/)
+Die Ausgabe lautet dann:
+
+```
+Ich bin 28 Jahre alt und mein Kontostand beträgt 1000.50 Euro.
+```
+
+## Tiefer eintauchen
+
+Zusätzlich zu den grundlegenden Ausgabetechniken können Sie auch Formatierungsoptionen verwenden, um die Ausgabe Ihrer Debug-Nachrichten zu verbessern. Diese können in der offiziellen Bash-Dokumentation gefunden werden. Sie können auch benutzerdefinierte Funktionen erstellen, die das Debugging erleichtern, indem Sie die Ausgabe mit zusätzlichen Informationen wie Zeitstempel und Dateinamen versehen. Eine andere Möglichkeit ist die Verwendung des `set -x` Befehls, um einen Shell-Trace-Modus zu aktivieren, der alle ausgeführten Befehle anzeigt.
+
+## Siehe auch
+
+- Offizielle Bash-Dokumentation: https://www.gnu.org/software/bash/manual/
+- Benutzerdefinierte Debug-Funktionen: https://emdentec.com/blog/bash-debug-german/
+- Shell-Trace-Modus: https://ss64.com/bash/set.html

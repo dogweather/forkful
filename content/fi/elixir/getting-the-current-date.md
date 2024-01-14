@@ -1,53 +1,50 @@
 ---
-title:                "Elixir: Nykyisen päivämäärän hakeminen"
+title:                "Elixir: Päivämäärän haku"
+simple_title:         "Päivämäärän haku"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-Oletko koskaan tarvinnut nykyistä päivämäärää Elixir-ohjelmassasi? Onko sinun tarvinnut laskea päiviä tai tarkistaa, mitä päivämäärä on tiettynä päivänä? Elixir tarjoaa helpon ja tehokkaan tavan saada nykyinen päivämäärä ohjelmaasi. Se on erityisen hyödyllinen sovelluksissa, jotka käsittelevät ajanjaksoja tai jotka haluavat tallentaa käyttäjän tekemiä toimintoja tiettyyn päivämäärään.
-
 ## Miksi
 
-Kuten mainittu, Elixirin avulla voit helposti päästä käsiksi nykyiseen päivämäärään ohjelmasi aikana. Se voi myös olla hyödyllinen sovelluksissa, jotka tarjoavat ulkoisia rajapintoja, jotka vaativat aikastemppeleitä. Riippuen siitä mitä käsittelet, päivämäärän käyttö voi olla välttämätöntä joissain tilanteissa.
+Tervetuloa lukemaan blogipostausta Elixir-ohjelmoinnista! Tässä artikkelissa käsittelemme sitä, miksi olisi hyödyllistä hakea nykyinen päivämäärä ohjelmointikielellä.
+
+Tärkein syy tähän on, että useissa ohjelmointiprojekteissa on tarpeen saada tietoa nykyisestä päivästä. Tämä voi liittyä esimerkiksi tiettyihin aikapohjaisiin suorituksiin tai raporttien luomiseen.
 
 ## Miten
 
-Elixirissä päivämäärä voidaan hakea kahdella eri tavalla: `Date.utc_today/0` tai `DateTime.utc_now/0`. Ensimmäinen palauttaa päivämäärän `Date` muodossa, kun taas jälkimmäinen palauttaa päivämäärän ja ajan `DateTime` muodossa. Huomaa, että molemmat käyttävät UTC-aikavyöhykettä, joten sinun täytyy muuntaa se haluamaasi aikavyöhykkeeseen, mikäli se on tarpeen.
+Elixir-ohjelmointikielellä nykyisen päivämäärän saaminen on helppoa. Käytämme tähän tarkoitukseen `Date.utc_today()` -funktiota, joka palauttaa nykyisen päivän tiedot UTC-aikavyöhykkeellä.
 
-```elixir
-# Date.utc_today/0
-iex> Date.utc_today()
-~D[2021-04-07]
+```Elixir
+date = Date.utc_today()
+IO.inspect date
 
-# DateTime.utc_now/0
-iex> DateTime.utc_now()
-~U[2021-04-07 10:00:00Z]
+# Tulostus:
+# ~D[2021-01-01]
 ```
 
-Huomaa myös, että molemmat metodit hyväksyvät parametrina halutun aikavyöhykkeen merkkijonona, mikäli haluat muuntaa päivämäärän heti oikeaan aikavyöhykkeeseen.
+Voit myös tallentaa päivämäärän muuttujaan ja käyttää sitä muissa toiminnoissa. Voit esimerkiksi saada päivän numeron ja viikonpäivän nimen käyttämällä `Date.day` ja `Date.day_of_week` -funktioita.
 
-## Syvällinen sukellus
+```Elixir
+day = Date.day(date)
+day_name = Date.day_of_week(date)
 
-Päivämäärän hakemisen taustalla Elixir käyttää Erlangin `calendar` moduulia. Tämä moduuli tarjoaa runsaasti työkaluja päivämäärien ja aikojen käsittelyyn. Esimerkiksi voit tarkistaa mikä päivä on tiettynä päivänä ja kuukautena käyttämällä `:calendar.date_to_day_of_the_week/3` funktiota.
-
-```elixir
-iex> :calendar.date_to_day_of_the_week(2021, 4, 7)
-1
+IO.puts "Tänään on #{day_name}, #{day}"
+# Tulostus: Tänään on perjantai, 1
 ```
 
-Tämä palauttaa numeron 1, koska 1. huhtikuuta 2021 oli torstai. Voit myös muuttaa päivämäärän haluamaasi muotoon `:calendar.format/2` funktiolla.
+## Syvempi sukellus
 
-```elixir
-iex> :calendar.format("{YYYY, MMMM dd}", ~D[2021-04-07])
-"2021, April 07"
-```
+On tärkeää huomata, että `Date.utc_today()` -funktio palauttaa päivämäärän UTC-aikavyöhykkeellä. Jos haluat saada päivämäärän paikallisessa aikavyöhykkeessä, voit käyttää `Date.today()` -funktiota ja antaa parametrina oman aikavyöhykkeesi.
 
-Nämä ovat vain muutamia esimerkkejä siitä, mikä kaikki on mahdollista päivämäärien käsittelyssä Elixirissä. Suosittelemme tutustumaan tarkemmin `calendar` moduuliin ja sen tarjoamiin funktioihin.
+Lisäksi, jos haluat käsitellä tietoa nykyajassa, voit käyttää `DateTime.utc_now()` -funktiota. Tämä palauttaa tietueen, joka sisältää nykyisen päivämäärän ja kellonajan UTC-aikavyöhykkeellä.
 
 ## Katso myös
 
-- [Elixirin virallinen dokumentaatio päivämäärän käsittelyyn](https://hexdocs.pm/elixir/DateTime.html)
-- [Kalenteri-moduulin dokumentaatio (englanniksi)](http://erlang.org/doc/man/calendar.html)
+- [Elixirin virallinen dokumentaatio päivämäärien käsittelystä](https://hexdocs.pm/elixir/DateTime.html)
+- [Aikavyöhykkeet Elixirissä](https://elixirschool.com/blog/time-and-date-in-elixir/)
+- [Elixirin sisäänrakennetut `Date` ja `DateTime` -moduulit](https://elixir-lang.org/docs/stable/elixir/Date.html)

@@ -1,67 +1,38 @@
 ---
 title:                "Haskell: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+## 왜
 
-문자열 합치기를 하는 이유는 프로그래밍에서 유용하기 때문입니다. 문자열을 합치면 원하는 형식으로 새로운 문자열을 만들 수 있고, 데이터를 처리하거나 출력할 때 매우 편리합니다.
+문자열을 더하는 것을 배우는 것이 왜 중요한지 궁금했나요? 문자열을 더하는 것은 프로그램에서 자주 발생하는 작업 중 하나입니다. 예를 들면 사용자로부터 입력을 받아서 메시지를 출력할 때, 여러 개의 문자열을 이어서 보여주는 경우가 많아요.
 
-## 어떻게?
+## 방법
 
-Haskell에는 문자열 합치기를 위한 여러 가지 방법이 있습니다. 가장 간단한 방법은 `++` 연산자를 사용하는 것입니다. 예를 들어, "Hello"와 "World"라는 두 문자열을 합치면 "Hello World"가 됩니다. 이를 아래의 코드 블록을 통해 확인해보세요.
-
-```Haskell
-"Hello" ++ "World"
-```
-
-Output:
-"Hello World"
-
-또 다른 방법은 `concat` 함수를 사용하는 것입니다. 이 함수는 리스트 안에 있는 모든 문자열을 합쳐 하나의 문자열로 만들어줍니다. 아래의 코드 블록을 통해 확인해보세요.
+우선 Haskell 설치가 되어있어야 해요. 그리고 이어서 `ghci` 콘솔 창을 열어서 아래 예제 코드를 입력해보세요.
 
 ```Haskell
-concat ["Learn", " ", "Haskell"]
+"Hello" ++ " " ++ "world" -- "Hello world"
+
+"1" ++ "1" -- "11"
+
+"a" ++ "b" ++ "c" -- "abc"
 ```
 
-Output:
-"Learn Haskell"
+보시는 것처럼 `++`를 사용하면 문자열을 이어서 출력할 수 있어요. 이때 양쪽에 있는 문자열을 합치는 것이므로, 기존의 문자열이 수정되지는 않아요.
 
-여러 개의 문자열을 합칠 때는 `$` 연산자를 사용해서 중첩된 괄호 없이도 쉽게 합칠 수 있습니다. 이를 아래의 코드 블록을 통해 확인해보세요.
+## 딥 다이브
 
-```Haskell
-"Hello" ++ " " ++ "World"
-```
+`++` 연산자는 내부에서 어떻게 작동할까요? Haskell에서는 문자열을 단순히 문자들의 리스트로 처리합니다. 따라서 `++`는 두 리스트를 이어서 새로운 리스트를 만드는 함수입니다. 이 함수는 두 경우로 나뉩니다. 하나는 빈 리스트와 문자열을 이어주는 경우, 다른 하나는 마지막 글자를 제외한 문자열을 받아서 마지막 글자를 추가해주는 경우입니다.
 
-Output:
-"Hello World"
+다른 언어에서는 문자열을 이어주는 함수가 따로 존재할 수도 있지만, Haskell에서는 문자열을 리스트로 취급하므로 일관성있게 `++` 함수를 사용할 수 있어요.
 
-또 다른 방법으로는 `foldl` 함수를 사용하는 것입니다. 이 함수는 리스트 안에 있는 숫자를 더할 때 처럼, 문자열을 합칠 때도 사용할 수 있습니다. 아래의 코드 블록을 통해 확인해보세요.
+## 관련 자료
 
-```Haskell
-foldl (++) "" ["Hello", " ", "World"]
-```
-
-Output:
-"Hello World"
-
-## 깊이 들어가기
-
-Haskell에서 문자열은 단순히 문자들의 리스트로 간주됩니다. 따라서 문자열을 합칠 때에는 리스트 안에 있는 원소들을 합치는 것과 동일한 방식으로 진행됩니다. `++` 연산자나 `concat` 함수는 내부적으로 `foldl` 함수를 사용하기 때문에, 이 또한 리스트의 각 항목들을 합쳐가며 최종적으로 문자열을 만들어냅니다.
-
-## 더 알아보기
-
-* [Learn You a Haskell](http://learnyouahaskell.com/chapters) - 이 사이트에는 Haskell의 기초부터 고급 개념까지 다양한 내용이 담겨있습니다.
-* [Real World Haskell](http://book.realworldhaskell.org/) - 이 책은 실제로 사용 가능한 어플리케이션을 만들기 위한 실용적인 정보를 제공합니다.
-* [Haskell Wiki](https://wiki.haskell.org/) - 헤스켈에 관련된 다양한 정보와 자료를 제공하는 위키입니다.
-
----
-
-## 관련 링크
-
-* [Haskell 공식 홈페이지](https://www.haskell.org/)
-* [Haskell 한국 사용자 협회](http://www.haskell.kr/)
+[Learn You a Haskell](http://learnyouahaskell.com/), [Haskell String concatenation](https://www.geeksforgeeks.org/haskell-string-concatenation/), [Real World Haskell](http://book.realworldhaskell.org/)

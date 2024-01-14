@@ -1,50 +1,57 @@
 ---
 title:                "Python: Löschen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+**Warum:** Eines der grundlegenden Konzepte beim Programmieren ist die Manipulation von Zeichenketten. In diesem Blog-Beitrag werden wir darüber sprechen, wie man mithilfe von Python bestimmte Zeichen, die einem bestimmten Muster entsprechen, löschen kann.
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in verschiedenen Situationen nützlich sein. Zum Beispiel könnte es helfen, unerwünschte Zeichen aus einer Textdatei zu entfernen, oder beim Scraping von Daten aus dem Internet den Text zu bereinigen.
+**Wie man es macht:** Es gibt verschiedene Möglichkeiten, Zeichenketten in Python zu bearbeiten, aber wir werden uns hier auf die Verwendung der `re` Bibliothek konzentrieren, die für "regular expressions" (reguläre Ausdrücke) steht. Mit regulären Ausdrücken können wir Muster definieren und in einer Zeichenkette nach Übereinstimmungen suchen. Schauen wir uns mal ein Beispiel an:
 
-## Wie man es macht
-
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann mit Hilfe von regulären Ausdrücken in Python durchgeführt werden. Hier ist ein einfaches Beispiel, das alle Zahlen aus einem String entfernt:
-
-```Python
+```
 import re
-text = "Dies ist ein Beispiel123 Text"
-clean_text = re.sub('[0-9]+', '', text)
-print(clean_text)
+
+text = "Hallo! Wie geht es dir? Ich heiße Lisa."
+pattern = "[aeiouyAEIOUY]" # Definiert das Muster für Vokale
+result = re.sub(pattern, "", text)
+print(result) # Output: Hll! W ght s dr? ch hß Ls.
 ```
 
-Die Ausgabe wäre: "Dies ist ein Beispiel Text". In diesem Beispiel wird die Funktion `re.sub()` verwendet, um alle Zahlen aus dem String zu entfernen. Das erste Argument gibt das Muster an, nach dem gesucht werden soll (hier `[0-9]+` für jede beliebige Ziffer), das zweite Argument ist der String, in dem gesucht werden soll, und das dritte Argument ist der String, der anstelle des gefundenen Musters eingefügt werden soll.
+Hier haben wir das Muster `[aeiouyAEIOUY]` definiert, welches alle Vokale (Groß- und Kleinbuchstaben) in einer Zeichenkette erkennt. Dann haben wir die `sub()` Funktion von `re` verwendet, um alle Übereinstimmungen mit einem leeren String zu ersetzen, wodurch wir die Vokale aus dem Text entfernen. Dieses einfache Beispiel zeigt, wie nützlich reguläre Ausdrücke sein können, um Zeichenketten zu bearbeiten.
 
-Eine weitere nützliche Methode ist `re.findall()`, die alle Vorkommnisse eines Musters in einem String in einer Liste zurückgibt. Hier ist ein Beispiel, das alle Wörter mit mindestens vier Buchstaben aus einem String extrahiert:
+**Tiefere Einblicke:** Jetzt, da wir ein grundlegendes Verständnis für die Verwendung von regulären Ausdrücken haben, können wir uns tiefer damit beschäftigen, wie man Zeichenketten manipuliert, indem man bestimmte Zeichen basierend auf einem Muster löscht. Hier sind einige weitere Bespiele dafür, wie man `sub()` verwenden kann:
 
-```Python
-import re
-text = "Dies ist ein Beispiel123 Text with English words"
-words = re.findall('[a-zA-Z]{4,}', text)
-print(words)
+```
+text = "Brause ist blau"
+# Löscht alle Leerzeichen
+result = re.sub("\s", "", text)
+print(result) # Output: Brauseistblau
+
+text = "1, 2, 3, 4, 5"
+# Löscht alle Zahlen
+result = re.sub("\d", "", text)
+print(result) # Output: ", , , , "
+
+text = "The quick brown fox jumps over the lazy dog"
+# Löscht alle Konsonanten
+result = re.sub("[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]", "", text)
+print(result) # Output: e i o o u o e e a y o
+
+text = "Passwort: $1xT2yZ3a"
+# Löscht alle Sonderzeichen
+result = re.sub("[!@#$%^&*()_+=`~{}|\[\]:'\"<>?,./\-]", "", text)
+print(result) # Output: Passwort1xT2yZ3a
 ```
 
-Die Ausgabe wäre: `['Dies', 'ist', 'Beispiel', 'Text', 'with', 'English', 'words']`. In diesem Beispiel wird das Muster `[a-zA-Z]{4,}` verwendet, um nach Wörtern mit mindestens vier Buchstaben zu suchen.
+Man kann sehen, dass mit der Verwendung von regulären Ausdrücken sehr vielfältige Operationen auf Zeichenketten angewendet werden können. Das Erlernen und Verwenden von regulären Ausdrücken kann also sehr mächtig sein, wenn es darum geht, Zeichenketten zu bearbeiten.
 
-## Tieferer Einblick
+**Siehe auch:** Wenn du mehr über reguläre Ausdrücke und deren Anwendung in Python erfahren möchtest, findest du hier einige hilfreiche Links:
 
-Um besser zu verstehen, wie reguläre Ausdrücke in Python funktionieren, ist es hilfreich, sich mit den verschiedenen Metazeichen und Ausdrücken vertraut zu machen. Dazu gehören zum Beispiel `+` für ein oder mehrere Vorkommnisse, `*` für null oder mehr Vorkommnisse und `[ ]` für eine Gruppe von Zeichen. Es gibt auch spezielle Sequenzen wie `\d` für eine beliebige Ziffer und `\w` für ein beliebiges alphanumerisches Zeichen.
-
-Eine weitere wichtige Methode, die es sich anzusehen lohnt, ist `re.compile()`, mit der man einen regulären Ausdruck kompilieren und wiederverwenden kann. Dies kann insbesondere bei der Verarbeitung großer Mengen an Texten nützlich sein.
-
-Für eine detaillierte und umfassende Erklärung zu regulären Ausdrücken in Python empfehlen wir die offizielle Dokumentation unter [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html).
-
-## Siehe auch
-
-- [Eine Einführung in reguläre Ausdrücke in Python](https://realpython.com/regex-python/)
-- [RegExr - Ein interaktiver Regulärer-Ausdruck Tester für Python](https://regexr.com/)
-- [RegEx Cheat Sheet für Python](https://cheatography.com/mutanclan/cheat-sheets/python-regular-expression-regex/)
+- Offizielle Python Dokumentation zur `re` Bibliothek: https://docs.python.org/3/library/re.html
+- Ein Tutorial zur Verwendung von regulären Ausdrücken in Python: https://www.datacamp.com/community/tutorials/python-regular-expression-tutorial
+- Reguläre Ausdrücke Cheat Sheet für Python: https://www.debuggex.com/cheatsheet/regex/python

@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Konwertowanie ciągu znaków na małe litery"
+title:                "Kotlin: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,36 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja ciągu znaków na małe litery jest bardzo przydatna w programowaniu i może pomóc nam w wielu sytuacjach. Przeczytaj ten artykuł, aby dowiedzieć się, dlaczego jest to ważna umiejętność i jak ją osiągnąć w języku Kotlin.
+Jeśli korzystasz z języka Kotlin, prawdopodobnie już wiesz, że jest to język bardzo intuicyjny i przyjazny dla programistów. Jednym z jego wielu przydatnych funkcji jest możliwość konwertowania ciągów znaków na małe litery. W tym artykule dowiesz się, dlaczego warto wykorzystywać tę funkcję i jak ją użyć w swoich projektach.
 
 ## Jak to zrobić
 
-W języku Kotlin mamy do dyspozycji kilka opcji, aby przekonwertować ciąg znaków na małe litery. Najprostszą i najczęściej używaną jest metoda `toLowerCase()`. Sprawdźmy jak ją wykorzystać w praktyce:
+Konwertowanie ciągów znaków na małe litery w Kotlinie jest bardzo proste, ponieważ język ten posiada wbudowaną metodę o nazwie "toLowerCase()". Ta metoda przyjmuje ciąg znaków i zwraca nowy ciąg zawierający wszystkie litery w małej formie.
 
 ```Kotlin
-val name = "JAN KOWALSKI"
-println(name.toLowerCase())
+val tekst = "KOTLIN"
+val tekstMalymiLiterami = tekst.toLowerCase()
+
+println(tekstMalymiLiterami) // wypisze "kotlin" na konsolę
 ```
 
-**Output:** jan kowalski
-
-Możemy również skorzystać z metody `lowercase()` lub `lowercase(Locale.getDefault())` aby uwzględnić ustawienia regionalne. Przykład:
+Możesz również użyć tej metody z połączeniu z metodą "replace()" do zamiany wyłącznie wielkich liter na małe.
 
 ```Kotlin
-val greeting = "Witaj Świecie"
-println(greeting.lowercase())
-println(greeting.lowercase(Locale.getDefault()))
+val zdanie = "To Jest Przykład"
+val zdanieMalymiLiterami = zdanie.replace("[A-Z]".toRegex(), { it.value.toLowerCase() })
+
+println(zdanieMalymiLiterami) // wypisze "to jest przykład" na konsolę
 ```
 
-**Output:** witaj świat
-witaj świat
+## Deep Dive
 
-## Głębszy wgląd
-
-Każdy znak w języku Unicode ma odpowiadającą mu dużą i małą wersję. Podczas konwersji ciągu na małe litery, metoda `toLowerCase()` korzysta z informacji o kodowaniu Unicode, aby wybrać odpowiednią wersję znaku. Dlatego też zaleca się używać tej metody zamiast standardowej metody `toLowerCase()` dostępnej w języku Java, która może nie uwzględniać pełnego zestawu znaków Unicode.
+Podczas konwertowania ciągów znaków na małe litery, warto mieć świadomość różnic kulturowych i językowych. Metoda "toLowerCase()" działa zgodnie z zasadami gramatyki języka angielskiego, więc nie może zapewnić poprawnego działania dla innych języków. Jeśli pracujesz z kodowaniem Unicode, warto zwrócić uwagę na to, że niektóre znaki mogą zachować swoją wielkość.
 
 ## Zobacz też
 
-- Dokumentacja Kotlin na temat konwersji ciągów na małe litery: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html
-- Przewodnik dla początkujących na temat konwersji ciągów w języku Kotlin: https://kotlinlang.org/docs/basic-types.html#strings
-- Przykładowe zastosowania konwersji ciągów na małe litery: https://stackoverflow.com/questions/29210391/convert-string-to-lower-case-in-java-but-use-the-string-class
+- Dokumentacja w języku Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html
+- Przykłady wykorzystania metody "toLowerCase()": https://www.jetbrains.com/help/kotlin/basic-types.html#strings
+- Wpływ różnych języków i kultur na konwersję stringów: https://blog.caseyliss.com/2017/10/8/capitalization-insensitivity

@@ -1,68 +1,99 @@
 ---
-title:                "C++: Sjekke om en mappe eksisterer."
+title:                "C++: Forrige sjekk av eksistensen til en mappe"
+simple_title:         "Forrige sjekk av eksistensen til en mappe"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Enten du er en erfaren C++ utvikler eller en nybegynner, kan det være nyttig å vite hvordan du sjekker om en mappe eksisterer i ditt program. Dette gjør det mulig å utføre forskjellige oppgaver, som å navigere til en bestemt mappe eller sjekke om en fil er på riktig plassering.
+Når man jobber med å programmere i C++, er det viktig å kunne sjekke om en mappe eksisterer før man fortsetter kodingen. Dette sikrer at programmet er robust og kan håndtere uventede situasjoner, som for eksempel hvis en nødvendig fil er flyttet eller slettet.
 
-# Hvordan gjøre det
+## Hvordan
 
-Det å sjekke om en mappe eksisterer i C++ krever bruk av en innebygd funksjon som heter `opendir()`. Denne funksjonen tar inn en tekststreng som representerer mappen du ønsker å sjekke. Her er et eksempel på hvordan dette kan gjøres:
+Det finnes forskjellige metoder for å sjekke om en mappe eksisterer i C++. En av de mest vanlige er å bruke `std::filesystem::exists` funksjonen, som sjekker om en filbane peker mot en eksisterende fil eller mappe. Se eksemplet nedenfor:
 
 ```C++
-// inkluder nødvendige biblioteker
 #include <iostream>
-#include <dirent.h>
-using namespace std;
+#include <filesystem>
 
-int main() {
-    // definer mappen som skal sjekkes
-    string mappe = "/bruker/navn/program/";
+namespace fs = std::filesystem;
+  
+int main()
+{
+    // Oppretter en ny filbane som peker mot en eksisterende mappe
+    fs::path folderPath = "C:/Brukere/Navn/Dokumenter/";
 
-    // forsøk å åpne mappen og lagre returverdien
-    DIR* retur = opendir(mappe.c_str());
-
-    // sjekk om returverdien er lik NULL
-    if (retur == NULL) {
-        // mappen eksisterer ikke, gi brukeren en feilmelding
-        cout << "Mappen eksisterer ikke!" << endl;
-    } else {
-        // mappen eksisterer, gi brukeren en bekreftelse
-        cout << "Mappen eksisterer!" << endl;
-        // husk å lukke mappen etter at du er ferdig med å sjekke
-        closedir(retur);
+    // Sjekker om mappen eksisterer
+    if (fs::exists(folderPath))
+    {
+        std::cout << "Mappen eksisterer" << std::endl;
     }
-    
+    else
+    {
+        std::cout << "Mappen eksisterer ikke" << std::endl;
+    }
     return 0;
 }
 ```
 
-Koden vil forsøke å åpne mappen som er definert i `mappe` variabelen. Hvis mappen ikke eksisterer, vil `opendir()` returnere en NULL-verdi, som betyr at vi kan gi en feilmelding til brukeren. Ellers, hvis mappen eksisterer, vil vi få en bekreftelse og lukke mappen igjen.
+Eksempelutdata:
 
-## Dypdykk
+```
+Mappen eksisterer
+```
 
-Når du sjekker om en mappe eksisterer, kan det være nyttig å vite at `opendir()` funksjonen også tar inn flere argumenter. For eksempel, hvis du kun ønsker å sjekke om mappen eksisterer og ikke åpne den, kan du bruke `access()` funksjonen i stedet. Her er et eksempel på hvordan det kan gjøres:
+Det er også mulig å sjekke om en mappe eksisterer ved å bruke `stat` funksjonen, som returnerer informasjon om en fil eller mappe. Hvis det ikke er mulig å hente informasjon om filen eller mappen, betyr det at den ikke eksisterer. Se eksemplet nedenfor:
 
 ```C++
-// sjekk om mappen eksisterer uten å åpne den
-if (access(mappe.c_str(), F_OK) == 0) {
-    // mappen eksisterer, gi brukeren en bekreftelse
-    cout << "Mappen eksisterer!" << endl;
-} else {
-    // mappen eksisterer ikke, gi brukeren en feilmelding
-    cout << "Mappen eksisterer ikke!" << endl;
+#include <iostream>
+#include <sys/stat.h>
+
+int main()
+{
+    // Oppretter en filbane som peker mot en eksisterende mappe
+    const char* folderPath = "C:/Brukere/Navn/Dokumenter/";
+
+    // Oppretter en struct for å lagre informasjon om mappen
+    struct stat info;
+
+    // Henter informasjon fra mappen og lagrer det i structen
+    if(stat(folderPath, &info) != 0) 
+    {
+        // Hvis mappen ikke eksisterer, vil denne kodesnutten kjøre
+        std::cout << "Mappen eksisterer ikke" << std::endl;
+    }
+    else if(info.st_mode & S_IFDIR) 
+    {
+        // Hvis mappen eksisterer, vil denne kodesnutten kjøre
+        std::cout << "Mappen eksisterer" << std::endl;
+    }
+    else 
+    {
+        std::cout << "Mappen eksisterer ikke" << std::endl;
+    }
+
+    return 0;
 }
 ```
 
-Her bruker vi `access()` funksjonen som tar inn to argumenter: en tekststreng som representerer mappen, og en funksjonell modus som forteller hvilken operasjon som skal utføres på mappen. `F_OK` modus betyr at vi kun ønsker å sjekke om mappen eksisterer.
+Eksempelutdata:
 
-# Se også
+```
+Mappen eksisterer
+```
 
-- [C++ Dokumentasjon: opendir()](https://www.cplusplus.com/reference/cstdio/opendir/)
-- [Programiz: How to Check if a Directory Exists in C++](https://www.programiz.com/cpp-programming/files-directories-check-existence)
+## Dykk Dypere
+
+Det er viktig å merke seg at når man sjekker om en mappe eksisterer, betyr det ikke nødvendigvis at den er tilgjengelig for å bli brukt. Det kan være flere årsaker til dette, som for eksempel rettigheter eller skrivebeskyttelse. Derfor bør man alltid sjekke at man faktisk kan utføre operasjoner på mappen, og ikke bare at den eksisterer.
+
+Et annet viktig poeng er at hvis man bruker `stat` funksjonen, er det viktig å merke seg hvilken platform man jobber på. Denne metoden fungerer annerledes på forskjellige operativsystemer, og det kan være nødvendig å inkludere forskjellige biblioteker eller bruke andre funksjoner for å få ønsket resultat.
+
+## Se Også
+
+- [std::filesystem::exists dokumentasjon (engelsk)](https://en.cppreference.com/w/cpp/filesystem/exists)
+- [stat dokumentasjon (engelsk)](http://man7.org/linux/man-pages/man2/stat.2.html)

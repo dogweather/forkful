@@ -1,55 +1,45 @@
 ---
-title:                "Gleam: Convertendo uma data em uma string"
+title:                "Gleam: Convertendo uma data em uma cadeia de caracteres"
+simple_title:         "Convertendo uma data em uma cadeia de caracteres"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma data em uma string?
+## Por que Converter uma Data em String?
 
-Conversão de tipos de dados é uma tarefa comum na programação. Converter uma data em uma string é útil quando você precisa exibir a data de uma maneira legível para o usuário ou armazenar a data em um formato específico.
+Converter uma data em string pode ser uma tarefa muito útil em programação, especialmente quando se trabalha com dados relacionados a datas. Isso permite que o programador tenha maior controle e flexibilidade sobre como a data será apresentada no código e em interfaces de usuário.
 
-## Como fazer
+## Como Fazer
 
-A linguagem de programação Gleam oferece uma maneira fácil de converter uma data em uma string. Vamos ver um exemplo de código que pega a data atual e a converte em uma string no formato "dd/mm/aaaa":
+Para converter uma data em string no Gleam, primeiro é necessário definir a data no formato desejado. Isso pode ser feito com a função `now()` para obter a data atual ou com a função `Date.from_gregorian(year, month, day)` para criar uma data específica.
 
-```
-Gleam
-import Time.DateTime
+Uma vez que a data esteja definida, podemos usar a função `Date.to_string(date)` para convertê-la em uma string. Por exemplo:
 
-let data_atual = DateTime.now()
-let data_string = DateTime.to_string(data_atual, "%d/%m/%Y")
-```
+```Gleam
+let data = Date.now()
+let data_string = Date.to_string(data)
 
-Aqui, importamos o módulo "Time.DateTime", que nos permite trabalhar com datas. Em seguida, usamos a função "now()" para obter a data e hora atuais. Em seguida, usamos a função "to_string()" para converter a data em uma string no formato desejado.
-
-Aqui está o resultado do código acima:
-
-```
-"01/01/2021"
+// data_string será algo como "2021-05-20T13:45:24+00:00"
 ```
 
-Você também pode especificar uma data específica para converter em uma string. Por exemplo, se quisermos converter a data de 25 de dezembro de 2020 em uma string no formato "mm/dd/yy", podemos fazer o seguinte:
+O formato padrão para a função `Date.to_string()` é o [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), mas é possível especificar um formato personalizado, como mostrado abaixo:
 
+```Gleam
+let data = Date.now()
+let data_string = Date.to_string(data, "%d/%m/%Y")
+
+// data_string será algo como "20/05/2021"
 ```
-Gleam
-import Time.DateTime
 
-let data_especifica = DateTime.from_iso8601("2020-12-25")
-let data_string = DateTime.to_string(data_especifica, "%m/%d/%y")
-```
+## Mergulho Profundo
 
-E o resultado seria: "12/25/20".
-
-## Profundidade do assunto
-
-Na linguagem Gleam, o formato da string de data é especificado usando códigos de formatação, como "%d" para o dia, "%m" para o mês ou "%Y" para o ano. Existem muitos códigos de formatação diferentes disponíveis para você escolher, e você também pode inserir texto adicional na string para personalizá-la ainda mais.
-
-Além disso, o módulo "Time.DateTime" oferece outras funções úteis para manipular datas, como "add_seconds()" para adicionar segundos a uma data, "subtract_days()" para subtrair dias de uma data e "to_utc()" para converter uma data em UTC.
+Além de converter uma data em uma string em um formato específico, o Gleam também nos permite fazer operações com datas, como adicionar ou subtrair dias, semanas, meses ou anos. Isso é feito com a função `Date.add_time(date, time)` ou `Date.sub_time(date, time)`, onde `time` é uma struct do tipo `Time` que especifica a quantidade de tempo que deve ser adicionada ou subtraída.
 
 ## Veja também
 
-- Documentação oficial Gleam sobre manipulação de datas e horas: https://gleam.run/libraries/time
-- Tutorial de Gleam sobre manipulação de datas e horas: https://dev.to/ggburr/tutorial-time-in-gleam-36ml
+- [Documentação Gleam sobre datas](https://gleam.run/documentation/stdlib/date.html)
+- [Tutorial sobre manipulação de datas com Gleam](https://dreamsimilia.com/gleam-date-manipulation/)

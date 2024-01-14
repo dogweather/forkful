@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: テストを作成する"
+title:                "Ruby: テストの書き方"
+simple_title:         "テストの書き方"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/writing-tests.md"
 ---
 
@@ -9,45 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜテストを書くのか
 
-プログラムを書く際に、テストを書くことは非常に重要です。それでなくても難しいプログラミング作業ですが、テストを書かないとバグが発生しやすくなります。テストを書くことで、プログラムのバグを見つけることができ、将来的な問題を防ぐことができます。
+プログラミングにおいて、バグを見つけることは常に難しい作業です。しかし、テストを書くことでその不可能性を可能なものにすることができます。テストを書くことで、コードが期待通りに動作するかどうかを自動的に確認することができ、バグを迅速かつ効率的に見つけることができます。
 
-## テストの書き方
+## どのようにテストを書くか
 
-テストを書く方法は簡単です。まずはテストするファイルを作成し、必要なライブラリをインポートします。次に、テストするコードを作成し、期待される結果を表すアサーションを追加します。最後に、テストを実行するコマンドを入力し、テストが通過するかどうかを確認します。
+テストを書くための基本的な方法を以下のコードブロックを用いて説明します。
 
 ```Ruby
-require 'test/unit'
-
-def add(a, b)
-  a + b
-end
-
-class AddTest < Test::Unit::TestCase
-  def test_add
-    result = add(5, 7)
-    assert_equal(12, result)
+# テストを行うクラスの作成
+class Test
+  # テストを実行するメソッド
+  def execute_test
+    # テスト結果が期待通りの場合、成功と表示する
+    if 1 + 1 == 2
+      puts "テスト成功！"
+    else
+      puts "テスト失敗..."
+    end
   end
 end
+
+# テストクラスのインスタンスを作成
+test = Test.new
+
+# execute_testメソッドを実行
+test.execute_test
+
+# 実行結果は以下のように表示される
+# テスト成功！
 ```
 
-テストを実行すると、以下のような結果が表示されます。
+## テストを書くにあたっての詳細
 
-```
-1 tests, 1 assertions, 0 failures, 0 errors, 0 skips
-```
+テストを書く際には、以下のポイントに注意することが重要です。
 
-これでテストの書き方は完了です。簡単でしょう？
+- バグが発生しないようにすることが目的であるため、テストはきちんと動作する正しいコードをテストすることが重要です。
+- テストを書く際には、予想されるすべてのケースをカバーすることが重要です。可能な限り多くのケースを想定してテストを実行することが重要です。
+- テストを書くことで、コードの修正やリファクタリングを行った際にも安心して変更を行うことができます。テストが通過すれば、コードの変更によってバグが発生していないことが保証されるためです。
 
-## 深堀り
+## 詳しくは以下を参考にしてください
 
-テストを書く際には、いくつかのポイントに気をつける必要があります。まず、テストのカバレッジが高いことが重要です。つまり、テストでカバーするコードの割合が高ければ高いほど、バグを見つけることができる可能性が高まります。また、適切なアサーションを使用することも重要です。間違ったアサーションを使用すると、テストが通過してもバグが見つからない可能性があります。
+- [Rubyのテストを書く方法](https://www.sejuku.net/blog/56963)
+- [RSpecによるRailsのテスト](https://railstutorial.jp/chapters/modeling_users?version=5.1#sec-i_want_to_test_my_models)
+- [Test Driven Development(TDD)とは](https://www.ogis-ri.co.jp/otc/hiroba/technical/tdd/)
+- [テストに関するRubyコーディング規約](https://rubocop.readthedocs.io/en/stable/cops_testing/)
 
-また、テストは継続的に実行することが推奨されます。自動化されたテストを定期的に実行することで、バグを早期に発見することができます。さらに、テストを書くことでプログラムの振る舞いを理解することができます。テストを通じて、プログラムのどの部分が機能していないのかを特定し、修正することができます。
+## 関連リンク
 
-## 参考資料
-
-- [Rubyでテストを書く方法についての紹介記事](https://www.rubyguides.com/2015/11/writing-an-easy-or-simple-test-suite/#how-to-write-an-easy-test-suite)
-- [テストカバレッジについての説明記事](https://techacademy.jp/magazine/21853)
-- [プログラムのテストについての詳細な説明記事](https://wa3.i-3-i.info/diff330test_lang.html)
-
-## 参考資料
+- [Rubyでのテスト自動化について学ぶ](https://railstutorial.jp/chapters/modeling_users?version=5.1#top)
+- [プロフェッショナルRails開発者のためのRSpec入門](http://gihyo.jp/book/2016/978-4-7741-8086-1)

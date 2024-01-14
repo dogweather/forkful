@@ -1,48 +1,70 @@
 ---
 title:                "C# recipe: Printing debug output"
+simple_title:         "Printing debug output"
 programming_language: "C#"
-category:             "Testing and Debugging"
+category:             "C#"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why 
+## Why
 
-As a programmer, you have probably encountered errors in your code at some point. When this happens, it can be helpful to print out certain values or messages to track down the source of the problem. This is where printing debug output comes in handy. It allows you to see the inner workings of your code and identify any issues that may be causing errors. In this blog post, we will discuss the importance of printing debug output in C# programming.
+Debugging is an essential part of the software development process. However, sometimes it can be challenging to identify and fix errors in our code. That's where printing debug output comes in handy. By printing out messages and values at different points in our code, we can get a better understanding of how our program is running and pinpoint potential issues.
 
-##How To 
+## How To
 
-To print debug output in C#, we can use the `Console.WriteLine()` method. This method takes in a string as its input and displays it in the console window. Let's take a look at an example:
+To print debug output in C#, we can use the `Console.WriteLine()` method. This method takes in a string as an argument and displays it in the console window when our code is executed. Let's take a look at an example:
 
 ```C#
-//Printing a simple message
-string message = "Hello World!";
-Console.WriteLine(message);
-
-//Printing variable values
-int number = 5;
-Console.WriteLine("The value of number is: " + number);
-
-//Formatting output with placeholders
-double salary = 5000.50;
-Console.WriteLine("My monthly salary is: ${0}", salary);
+int num = 5;
+Console.WriteLine("The value of num is: " + num);
 ```
 
-The above examples demonstrate how we can use the `Console.WriteLine()` method to print out different types of data in the console window. This can be useful for debugging purposes as well as general information output for the user.
+When we run this code, we will see the following output in our console:
 
-##Deep Dive 
+```
+The value of num is: 5
+```
 
-Now, let's dive deeper into printing debug output. In addition to the `Console.WriteLine()` method, C# also provides the `Debug.WriteLine()` method for printing debug messages. The main difference between these two methods is that the `Debug.WriteLine()` method is only executed when the code is in debug mode, whereas `Console.WriteLine()` is executed regardless of the build mode.
+We can also use formatting to make our output more informative. For example, we can use placeholders in our string and pass in variables as arguments like this:
 
-Another useful feature of the `Debug.WriteLine()` method is that you can pass in an additional parameter to specify the name of the file and line number where the debug message is coming from. This can be helpful for tracking down which part of the code is causing the error.
+```C#
+string name = "John";
+int age = 30;
+Console.WriteLine("My name is {0} and I am {1} years old.", name, age);
+```
 
-Additionally, you can use conditional statements along with the `Debug.WriteLine()` method to only print out the debug message when a certain condition is met. This can save us from cluttering the console window with excessive debug messages.
+This will produce the following output:
 
-##See Also 
+```
+My name is John and I am 30 years old.
+```
 
-- [C# Debugging Techniques](https://docs.microsoft.com/en-us/visualstudio/debugger/debug-csharp)
-- [Debugging in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-in-visual-studio)
-- [Using Output and Debug Windows in Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/using-the-output-and-debug-windows-in-visual-studio?view=vs-2019)
+We can also print out the values of objects using the `ToString()` method. For example:
 
-In conclusion, printing debug output is an important aspect of C# programming, especially when it comes to troubleshooting errors. With the `Console.WriteLine()` and `Debug.WriteLine()` methods, we can easily print out relevant information and track down the source of any issues in our code. Give it a try in your next programming project and see how it can improve your debugging process!
+```C#
+Person person = new Person("Jane", 25);
+Console.WriteLine("Person info: " + person.ToString());
+```
+
+This will print out the values of the `person` object, which would be something like:
+
+```
+Person info: Name: Jane, Age: 25
+```
+
+## Deep Dive
+
+Printing debug output is not only useful for identifying and fixing errors, but it can also help us understand the flow of our program and make sure it is running as expected. We can use it to see the values of variables at different points in our code, which can be especially helpful in complex loops or conditional statements.
+
+We can also use conditional statements or breakpoints to selectively print out debug output. For example, we can use an `if` statement to only print a message if a certain condition is met. This can help us narrow down our search for an error to a specific code block.
+
+Furthermore, we can use debug output to log information about our program's execution, such as the start and end of a function or the values of specific variables before and after a certain operation. This can be helpful for performance optimization or troubleshooting.
+
+## See Also
+
+- [Debugging in C#](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-csharp?view=vs-2019)
+- [C# String Interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
+- [C# ToString() Method](https://docs.microsoft.com/en-us/dotnet/api/system.object.tostring?view=net-5.0)

@@ -1,39 +1,45 @@
 ---
 title:                "Kotlin: Das Schreiben einer Textdatei"
+simple_title:         "Das Schreiben einer Textdatei"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Schreiben von Textdateien ist ein unverzichtbarer Bestandteil der Programmierung. Es ermöglicht es uns, Daten zu speichern und sie später wieder abzurufen. Es ist auch eine effiziente Möglichkeit, große Datenmengen zu verarbeiten und zu analysieren.
 
-## Wie geht man dabei vor?
-Das Schreiben einer Textdatei in Kotlin ist ganz einfach. Zunächst müssen wir eine Variable erstellen, die den Namen und den Pfad der Textdatei enthält. Dann können wir die Datei mit Hilfe der `FileWriter`-Klasse öffnen und den Inhalt mit der `write()`-Methode in die Datei schreiben. Hier ist ein Beispielcode:
+Textdateien sind ein grundlegender Bestandteil der Programmierung. Sie bieten eine einfache und effiziente Möglichkeit, Daten zu speichern und zu organisieren. Durch das Schreiben von Textdateien können Entwickler ihre Programme erweitern und anpassen, um Daten langfristig zu speichern oder bestimmte Aufgaben auszuführen.
 
-```kotlin
-val file = File("meineDatei.txt")
-val writer = FileWriter(file)
-writer.write("Hallo, Welt!")
-writer.close()
+## How To
+
+Das Erstellen einer Textdatei in Kotlin ist relativ einfach. Zunächst müssen Sie eine Variable erstellen, die den Namen und Speicherort der Datei enthält. Dann verwenden Sie die Methode "createNewFile()" und übergaben die Variable als Parameter. Anschließend können Sie die Datei mit dem BufferedWriter in Kotlin öffnen und den Inhalt schreiben. Hier ist ein Beispielcode:
+
+ ```Kotlin
+// Erstellen einer Datei mit dem Namen "Textdatei.txt" 
+ val datei = File("Textdatei.txt")
+// Erstellen einer neuen Datei 
+ datei.createNewFile()
+ // Öffnen der Datei mit BufferedWriter 
+ val schreiber = BufferedWriter(FileWriter(datei))
+// Schreiben von Inhalten 
+ schreiber.write("Dies ist ein Beispieltext für unsere Textdatei.")
+ // Schließen der Datei 
+ schreiber.close()
 ```
+Nachdem Sie die Datei erstellt und den Inhalt geschrieben haben, wird sie an dem von Ihnen angegebenen Speicherort gespeichert. In diesem Beispiel würden Sie die Datei mit dem Namen "Textdatei.txt" im selben Ordner finden, in dem sich Ihr Kotlin-Programm befindet.
 
-Das obige Beispiel erstellt eine Textdatei mit dem Namen "meineDatei.txt" und schreibt den Text "Hallo, Welt!" hinein. Verwenden Sie die `close()`-Methode, um die Datei nach dem Schreiben zu schließen und die Änderungen zu speichern.
+Die Ausgabe der Textdatei würde wie folgt aussehen:
+Dies ist ein Beispieltext für unsere Textdatei.
 
-## Eintauchen
-Beim Schreiben von Textdateien gibt es einige wichtige Dinge zu beachten. Eine davon ist das Handling von Fehlern. In unserem obigen Beispiel haben wir die `close()`-Methode im Falle eines Fehlers nicht verwendet. Dies kann dazu führen, dass die Daten nicht vollständig in die Datei geschrieben werden oder die Datei fehlerhaft wird. Daher ist es wichtig, immer die `close()`-Methode in einem `try-catch`-Block zu verwenden, um mögliche Fehler abzufangen und zu behandeln.
+## Deep Dive
 
-Eine andere wichtige Sache ist das Encoding der Datei. Standardmäßig verwendet `FileWriter` das System-Encoding, was in einigen Fällen zu Problemen führen kann. Deshalb ist es empfehlenswert, das Encoding explizit in der `FileWriter`-Klasse anzugeben. Zum Beispiel:
-
-```kotlin
-val writer = FileWriter(file, "UTF-8")
-```
-
-Zusätzlich dazu gibt es noch viele weitere Methoden und Eigenschaften, die beim Schreiben von Textdateien verwendet werden können. Durch die Einarbeitung in diese Funktionen können Sie Ihre Textdateien noch umfangreicher und funktionaler gestalten.
+Es gibt auch Möglichkeiten, spezifische Informationen in eine Textdatei zu schreiben. Mit der Methode "append()" können Sie Inhalte an eine bereits vorhandene Datei anhängen. Wenn Sie eine große Datenmenge haben, können Sie auch den BufferedReader verwenden, um die Daten zeilenweise zu lesen. Mit der Methode "delete()" können Sie eine Textdatei vollständig löschen.
 
 ## Siehe auch
-- [Kotlin Referenz für Dateien](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Offizielle Kotlin Dokumentation](https://kotlinlang.org/docs/home.html)
-- [Tutorial: Textdateien in Kotlin schreiben](https://www.journaldev.com/17357/kotlin-write-to-file)
+
+- [Offizielle Dokumentation von Kotlin für die Verwendung von Textdateien](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+- [Ein Tutorial zur Verwendung von Textdateien in Kotlin](https://www.raywenderlich.com/783130-text-files-in-kotlin-i-o-and-strings-getting-started)
+- [Weiterführende Informationen zur Verwendung von Textdateien in der Programmierung](https://www.codecademy.com/articles/file-extensions)

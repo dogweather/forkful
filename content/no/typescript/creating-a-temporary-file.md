@@ -1,42 +1,104 @@
 ---
-title:                "TypeScript: Oppretting av midlertidig fil"
+title:                "TypeScript: Å opprette en midlertidig fil"
+simple_title:         "Å opprette en midlertidig fil"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-I denne artikkelen vil vi se på hvordan man kan opprette midlertidige filer i TypeScript. Midlertidige filer er nyttige når man trenger å lagre midlertidig data eller når man ønsker å slette data etter en viss tid. Dette kan være nyttig for å redusere belastningen på serveren eller for å sikre at sensitiv informasjon ikke blir lagret for lenge.
+Det å opprette midlertidige filer kan være nyttig når man trenger å lagre data midlertidig under kjøring av et program. Dette kan være for å organisere og strukturere data, eller for å sikre at dataene ikke blir permanent lagret på systemet.
 
-## Hvordan lage en midlertidig fil i TypeScript
-For å opprette en midlertidig fil i TypeScript, kan vi bruke Node.js' `fs`-modul. Følgende kode viser hvordan man kan opprette en midlertidig fil ved hjelp av `fs.mkdtempSync()`-metoden:
-
-```TypeScript
-import * as fs from 'fs';
-const tempPath = fs.mkdtempSync('tmp-');
-console.log(tempPath);
-```
-
-Denne koden vil opprette en midlertidig mappe i det gjeldende arbeidsområdet og returnere banen til mappen. Merk at mappeprefikset `tmp-` brukes for å angi at det er en midlertidig mappe. Dette kan endres etter behov. 
-
-Hvis man vil lagre data i den midlertidige filen, kan man bruke `fs.writeFileSync()`-metoden. Denne metoden tar imot en filbane og data som skal skrives til filen. Følgende kode viser hvordan man kan lagre data til den midlertidige filen:
+## Hvordan
+For å opprette en midlertidig fil i TypeScript, kan man bruke Node.js' `fs` modul. Først må man importere modulen ved å legge til følgende linje øverst i koden:
 
 ```TypeScript
 import * as fs from 'fs';
-const tempPath = fs.mkdtempSync('tmp-');
-const data = 'Dette er en midlertidig fil.';
-fs.writeFileSync(`${tempPath}/myfile.txt`, data);
 ```
 
-## Dykk dypere inn i midlertidige filer
-Det er flere ting man bør vurdere når man jobber med midlertidige filer i TypeScript. For det første, vil filen slettes automatisk når Node.js-prosessen avsluttes. Dette betyr at det ikke er nødvendig å slette filen manuelt.
+Deretter kan man bruke `fs`'s `tmpfile()` metode for å opprette en midlertidig fil og returnere dens bane:
 
-I tillegg er det viktig å være oppmerksom på sikkerhet når man bruker midlertidige filer. Hvis filen inneholder sensitiv informasjon, bør man sørge for å slette filen så snart den ikke lenger er nødvendig for å unngå at uautoriserte får tilgang til informasjonen.
+```TypeScript
+const tempFilePath: string = fs.tmpfile();
+```
 
-En annen ting å huske på er at midlertidige filer kan være nyttige for å redusere belastningen på serveren, men de kan også føre til rotete lagring av data hvis de ikke håndteres riktig. Derfor bør man alltid være nøye med å slette midlertidige filer når de ikke lenger er nødvendige.
+Man kan også angi en prefix eller suffiks for å gi filen et unikt navn ved å bruke `options` parametere:
+
+```TypeScript
+const tempFilePath: string = fs.tmpfile({
+    prefix: 'temp_',
+    suffix: '.txt'
+});
+```
+
+Hvis man ønsker å skrive til den midlertidige filen, kan man bruke `writeFile()` metoden som følgende:
+
+```TypeScript
+fs.writeFile(tempFilePath, 'Dette er en midlertidig fil', (err) => {
+    if (err) {
+        throw err;
+    }
+
+    console.log('Data skrevet til midlertidig fil');
+});
+```
+
+Når man er ferdig med å bruke den midlertidige filen, kan man slette den ved å bruke `unlink()` metoden:
+
+```TypeScript
+fs.unlink(tempFilePath, (err) => {
+    if (err) {
+        throw err;
+    }
+
+    console.log('Midlertidig fil slettet');
+});
+```
+
+Et komplett eksempel på opprettelse og bruk av en midlertidig fil i TypeScript kan se slik ut:
+
+```TypeScript
+import * as fs from 'fs';
+
+// Oppretter en midlertidig fil med suffix '.txt'
+const tempFilePath: string = fs.tmpfile({ suffix: '.txt' });
+
+// Skriver data til filen
+fs.writeFile(tempFilePath, 'Dette er en midlertidig fil', (err) => {
+    if (err) {
+        throw err;
+    }
+
+    console.log('Data skrevet til midlertidig fil');
+});
+
+// Sletter filen når man er ferdig med å bruke den
+fs.unlink(tempFilePath, (err) => {
+    if (err) {
+        throw err;
+    }
+
+    console.log('Midlertidig fil slettet');
+});
+```
+
+Output av koden vil være:
+
+```bash
+Data skrevet til midlertidig fil
+Midlertidig fil slettet
+```
+
+## Dypdykk
+Når man oppretter en midlertidig fil, vil operativsystemet automatisk velge en plassering for filen basert på systemets innstillinger. Man kan også angi en spesifikk plassering ved å bruke `tmpdir` parameter i `tmpfile()` metoden og gi den en gyldig bane.
+
+I tillegg kan man også angi andre options som f.eks. `encoding` og `mode` for å spesifisere filens encoding og tillatelser.
+
+Det er også viktig å merke seg at den midlertidige filen vil bli automatisk slettet når programmet termineres eller når man kaller `unlink()` metoden.
 
 ## Se også
-- [Node.js FileSystem API](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
-- [Temporary file - Wikipedia](https://en.wikipedia.org/wiki/Temporary_file)
+- [Node.js fs-modulen dokumentasjon](https://nodejs.org/api/fs.html)
+- [Temporary folder for any OS in Node.js](https://stackoverflow.com/questions/31039653/temporary-folder-for-any-os-in-nodejs)

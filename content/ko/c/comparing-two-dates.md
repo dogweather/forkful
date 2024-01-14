@@ -1,7 +1,9 @@
 ---
-title:                "C: 두 날짜 비교"
+title:                "C: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/comparing-two-dates.md"
 ---
 
@@ -9,58 +11,80 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-날짜 비교를 하는 이유는 무엇일까요? 프로그램을 만들거나 데이터를 분석할 때, 날짜가 중요한 역할을 합니다. 따라서 두 날짜를 비교하는 것은 필수적입니다.
+우리는 프로그래밍을 할 때 종종 두 개의 날짜를 비교해야 합니다. 예를 들어 사용자의 생일과 현재 날짜를 비교하거나, 두 개의 이벤트가 언제 일어났는지 비교하려고 할 때가 있습니다. 이러한 날짜 비교는 우리가 코딩을 할 때 자주 사용되는 기술 중 하나입니다. 그렇기 때문에 우리는 두 날짜를 비교하는 방법을 알아야 합니다.
 
-## 하는 방법
+## 어떻게
 
-C 프로그래밍에서는 두 날짜를 비교하는 것이 간단합니다. 아래 코드를 참고해보세요.
+우선 두 개의 날짜를 나타내는 변수를 설정합니다. 그리고 우리는 `if` 문을 통해 두 날짜가 같은지, 또는 어떤 날짜가 더 큰지를 확인할 수 있습니다. 예를 들어, 먼저 두 변수의 년도를 비교하고, 만약 년도가 같다면 월을 비교하고 다시 만약 월이 같다면 일을 비교하는 식으로 진행할 수 있습니다.
 
 ```C
-#include <stdio.h>
+int date1_year = 1995;
+int date1_month = 12;
+int date1_day = 22;
 
-int main() {
-	// 날짜 비교를 위한 변수 설정
-	int year1 = 2021;
-	int month1 = 9;
-	int day1 = 1;
-	int year2 = 2020;
-	int month2 = 8;
-	int day2 = 31;
+int date2_year = 2021;
+int date2_month = 9;
+int date2_day = 27;
 
-	// 첫 번째 날짜가 더 큰 경우
-	if (year1 > year2 || (year1 == year2 && month1 > month2) || (year1 == year2 && month1 == month2 && day1 > day2)) {
-		printf("%d년 %d월 %d일이 %d년 %d월 %d일보다 더 큽니다.\n", year1, month1, day1, year2, month2, day2);
-	}
-	// 두 번째 날짜가 더 큰 경우
-	else if (year2 > year1 || (year2 == year1 && month2 > month1) || (year2 == year1 && month2 == month1 && day2 > day1)) {
-		printf("%d년 %d월 %d일이 %d년 %d월 %d일보다 더 큽니다.\n", year2, month2, day2, year1, month1, day1);
-	}
-	// 두 날짜가 같은 경우
-	else {
-		printf("%d년 %d월 %d일과 %d년 %d월 %d일은 같은 날짜입니다.\n", year1, month1, day1, year2, month2, day2);
-	}
-
-	return 0;
+if (date1_year > date2_year) {
+    printf("Date 1 is later than Date 2");
+} else if (date1_year < date2_year) {
+    printf("Date 2 is later than Date 1");
+} else {
+    if (date1_month > date2_month) {
+        printf("Date 1 is later than Date 2");
+    } else if (date1_month < date2_month) {
+        printf("Date 2 is later than Date 1");
+    } else {
+        if (date1_day > date2_day) {
+            printf("Date 1 is later than Date 2");
+        } else if (date1_day < date2_day) {
+            printf("Date 2 is later than Date 1");
+        } else {
+            printf("The two dates are the same");
+        }
+    }
 }
 ```
 
-위 코드를 실행하면 다음과 같은 결과가 나옵니다.
+위의 코드를 실행하면 다음과 같은 결과가 나옵니다.
 
+```C
+Date 2 is later than Date 1
 ```
-2021년 9월 1일이 2020년 8월 31일보다 더 큽니다.
+
+## 깊게 살펴보기
+
+두 개의 날짜를 비교할 때, 우리는 변수에 직접 날짜를 입력할 수도 있지만, `struct`를 사용하여 좀 더 구조적으로 표현할 수도 있습니다. 예를 들어, 다음과 같이 `struct`를 정의할 수 있습니다.
+
+```C
+struct date {
+    int year;
+    int month;
+    int day;
+};
 ```
 
-이를 통해 두 날짜를 비교하는 방법을 알 수 있습니다. 단순히 년, 월, 일이 더 큰지 작은지 비교하는 것으로도 충분합니다.
+또는 특정 날짜를 나타내는 변수를 선언할 때 `struct`를 사용할 수도 있습니다.
 
-## 깊이 들어가기
+```C
+struct date my_birthday = {1995, 12, 22};
+```
 
-C 언어에서는 날짜를 비교하기 위해 비교 연산자인 `>`, `<`, `==`를 사용합니다. 그리고 논리 연산자인 `&&`를 사용하여 년, 월, 일이 모두 같아야 동일한 날짜로 판단하도록 할 수 있습니다. 이러한 기본 개념 외에도 다양한 방법으로 날짜를 비교할 수 있으며, 프로그램에 따라 적합한 방법을 선택할 수 있습니다.
+또한 복수 개의 날짜를 비교해야 할 때는 배열을 사용할 수도 있습니다.
 
-## 관련 자료
+```C
+struct date events[3] = {{2021, 9, 27}, {2021, 11, 3}, {2022, 1, 1}};
+```
 
-날짜 비교에 대한 더 자세한 내용은 아래 링크를 참고해보세요.
+이렇게 `struct`를 사용하면 우리는 날짜 비교를 더 직관적이고 구조적으로 할 수 있습니다. 따라서 더 깊이 있는 프로그래밍을 할 때 유용하게 사용할 수 있습니다.
 
-- [C 프로그래밍 날짜/시간](https://dojang.io/mod/page/view.php?id=346)
-- [Compare Two Dates in C with Examples](https://www.sanfoundry.com/c-programming-examples-comparing-two-dates/)
-- [C 언어 기초 - 날짜와 시간 다루기](https://shfun.tistory.com/593)
-- [The Basics of Date Comparison in C](https://www.techwalla.com/articles/the-basics-of-date-comparison-in-c)
+## 또 다른 정보
+
+- [C 비교 연산자](https://dojang.io/mod/page/view.php?id=392)
+- [C struct 구조체](https://dojang.io/mod/page/view.php?id=391)
+- [C 배열](https://dojang.io/mod/page/view.php?id=405)
+
+## 참고
+
+위의 코드와 결과는 예시일 뿐이

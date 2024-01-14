@@ -1,7 +1,9 @@
 ---
-title:                "Go: 標準エラーへの書き込み"
+title:                "Go: 「標準エラーに書き込む」"
+simple_title:         "「標準エラーに書き込む」"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/go/writing-to-standard-error.md"
 ---
 
@@ -9,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-プログラミングにおいて、エラー処理は非常に重要です。コンソール画面に表示されるエラーメッセージは、開発者にとって非常に役に立ちます。様々な言語で使われているGo言語でも、エラーメッセージを出力する方法があります。今回は、標準エラー出力について紹介します。
+標準エラー出力に書き込む理由は、エラーのデバッグやログ出力など、アプリケーションの開発やテストに欠かせないものです。
 
 ## 方法
 
-標準エラー出力は、`os.Stderr`を使用して出力することができます。例えば、以下のようにコードを記述することで、エラーメッセージを出力することができます。
+Go言語では、標準ライブラリの`log`パッケージを使用することで標準エラー出力に書き込むことができます。例えば、以下のコードを使用すると、"error occurred"というメッセージが標準エラー出力に書き込まれます。
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "os"
+	"log"
+	"os"
 )
 
 func main() {
-    fmt.Fprint(os.Stderr, "エラーメッセージ")
+	log.SetOutput(os.Stderr)
+	log.Println("error occurred")
 }
 ```
 
-上記のコードを実行すると、コンソール画面に「エラーメッセージ」という文字列が出力されます。
+実行結果は次のようになります。
 
-## 深堀り
+```
+error occurred
+```
 
-Go言語では、標準出力と標準エラー出力が分けられています。標準出力は、一般的なメッセージを出力する際に使用します。一方、標準エラー出力は、エラーメッセージを出力する際に使用します。このように分けることで、エラーメッセージがすぐにわかるようになっています。
+## ディープダイブ
 
-また、`fmt`パッケージの`Fprint`関数以外にも、`Fprintln`や`Fprintf`などの関数もあります。それぞれ、異なる出力方法が可能ですので、詳しく知りたい方は公式ドキュメントを参照してください。
+標準エラー出力に書き込む際には、`log`パッケージの他にも`fmt`パッケージを使用する方法もあります。しかし、`fmt`パッケージではフォーマットされた文字列を標準エラー出力に書き込むため、性能上の問題が発生する可能性があります。そのため、できる限り`log`パッケージを使用することが推奨されています。
 
-## 詳しくはこちら
+## 参考リンク
 
-- [fmtパッケージドキュメント](https://golang.org/pkg/fmt/)
-- [標準エラー出力について](https://gobyexample.com/stderr)
-- [例外処理について](https://blog.golang.org/error-handling-and-go)
-
-## 参考文献
-
-［[Using os.Stderr for efficient logging](https://stackoverflow.com/a/29260008)］by [Dave Cheney](https://stackoverflow.com/users/6209/dave-cheney) - [Stack Overflow](https://stackoverflow.com/)に投稿された回答の一部を引用しました。
+- https://golang.org/pkg/log/
+- https://golang.org/pkg/fmt/
+- https://blog.golang.org/stderr-redirect
+- https://www.digitalocean.com/community/tutorials/using-logs-to-monitor-your-application-in-go
+- https://www.calhoun.io/5-tips-for-logging-in-go/

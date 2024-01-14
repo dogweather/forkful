@@ -1,45 +1,40 @@
 ---
-title:                "Swift: 「標準エラーへの書き込み」"
+title:                "Swift: 「標準エラーに書き込む」"
+simple_title:         "「標準エラーに書き込む」"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+今回は、Swiftプログラミングにおいて「スタンダードエラー」を書き込む理由について説明していきます。
 
-エラーメッセージを標準エラー出力に書き込むことの意義を説明します。
+## Why
 
-エラーメッセージを標準エラー出力に書き込むことは、デバッグや問題の特定に役立ちます。また、実行中のプログラムでエラーが発生した場合に、ユーザーにエラーの原因を伝えることができます。
+スタンダードエラーを書き込むことには、デバッグやエラー処理を行う際に役立ちます。エラーメッセージをスタンダードエラーに書き込むことで、プログラムの実行中に発生したエラーを確認することができます。
 
-## 使い方
+## How To
 
-以下は、Swiftで標準エラー出力にエラーメッセージを書き込む方法の例です。
+スタンダードエラーに書き込むには、```stderr```を使用します。以下のようにコードを記述することで、任意のメッセージをスタンダードエラーに書き込むことができます。
 
-```
-Swift guard let file = FileManager.default.contents(atPath: "notExistingFile") else {
-    fatalError("ファイルが見つかりませんでした")
-}
+```Swift
+import Darwin
 
-// program continues...
-```
+let message = "エラーが発生しました。"
 
-上記のコードでは、`FileManager`を使用して指定したファイルを読み込み、その結果を`guard`文でオプショナル型の変数`file`に代入しています。もしファイルが見つからない場合は、`fatalError`関数を使用してエラーメッセージを標準エラー出力に書き込みます。
-
-実行すると、以下のような結果になります。
-
-```
-Fatal error: ファイルが見つかりませんでした
+fputs(message, stderr)
 ```
 
-## 深堀り
+実行すると、コンソールには何も表示されませんが、スタンダードエラーにはメッセージが書き込まれます。
 
-標準エラー出力に書き込まれるエラーメッセージは黄色で表示され、標準出力に書き込まれたものよりも目立ちます。これは、標準エラー出力がエラーメッセージのみを表示するように設計されているためです。
+## Deep Dive
 
-また、標準エラー出力に書き込まれるエラーメッセージは、ファイルやコマンドラインでプログラムを実行した際に、ファイルにリダイレクトすることなく直接ターミナル上に表示することができます。
+スタンダードエラーに書き込むことで、エラー処理をより細かく行うことができます。例えば、特定のエラーが発生した時にはプログラムを停止させたい場合には、```exit(EXIT_FAILURE)```を使用することでプログラムを終了させることができます。
 
-## 参考
+また、```stderr```はエラーメッセージ以外にも、警告やログなどのメッセージを書き込むのにも使用することができます。
 
-- [Swift Language Guide - Standard Library](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID340)
-- [Apple Developer Documentation - Logging and Diagnostic Messages](https://developer.apple.com/documentation/xcode/logging_and_diagnostic_messages)
+See Also
+- [Swift 公式ドキュメント](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html#ID494)
+- [Stanford オンラインコース「Developing iOS 9 Apps with Swift」](https://itunes.apple.com/app/id1089643302?mt=8)

@@ -1,21 +1,52 @@
 ---
 title:                "C: 日付を文字列に変換する"
+simple_title:         "日付を文字列に変換する"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは、プログラマーの皆様！今回のブログでは、日付を文字列に変換する方法についてお話しします。日付を文字列に変換する理由や、具体的なコーディング例をご紹介するので、ぜひ読んでみてください。
+こんにちは、読者の皆さん。今回は、日付を文字列に変換する方法についてお話ししたいと思います。プログラミングで日付を扱う際には、変換する必要がある場合があります。では、なぜ日付を文字列に変換する必要があるのでしょうか？
 
-## なぜ日付を文字列に変換するのか
+## なぜ
 
-日付はコンピューター上では特定のフォーマットで扱われますが、人間にとっては読みづらい場合があります。例えば、「2021年5月1日」という日付は、コンピューター上では「2021-05-01」と表記されます。しかし、この表記方法は、人間にとっては馴染みがなく、読みづらいかもしれません。そのため、日付を文字列に変換することで、人間がより理解しやすい形式で扱うことができるようになります。
+プログラムで作業する際には、日付を文字列として表示したい場合がよくあります。例えば、日付をファイル名やデータベースのフィールド名に含める必要があるときや、ユーザーに日付をわかりやすく表示する必要があるときなどです。
 
-## 日付を文字列に変換する方法
+## 手順
 
-以下のようなコードを使用することで、日付を文字列に変換することができます。
+DateTime構造体を使って、日付を文字列に変換することができます。まずは```DateTime```構造体を宣言して、次のように初期化します。
+
+```C
+DateTime date = {year, month, day, hour, minute, second};
+```
+
+日付を文字列に変換するには、```strftime()```関数を使います。この関数は、指定したフォーマットに従って、日付を文字列に変換してくれます。例えば、日付をyyyy/mm/ddの形式に変換するには、次のようにコードを書きます。
+
+```C
+char str[20];
+strftime(str, 20, "%Y/%m/%d", &date);
+```
+
+これで、変数```str```にyyyy/mm/ddの形式で日付が文字列として格納されます。もし、特定の言語における月や曜日の表記を使いたい場合は、```setlocale()```関数でその言語を指定してから```strftime()```関数を使うことで、その言語に合わせた形式で日付が表示されます。
+
+## 深堀り
+
+日付を文字列に変換する際に、よく使われるフォーマットにはいくつか種類があります。例えば、dd/mm/yyyyやyyyy-mm-ddなどがあります。また、```strftime()```関数では、年や月、日を数字ではなく文字列で表現することもできます。例えば、月をJanやFebruaryではなく、数字の1や2で表すこともできます。
+
+日付を扱う際には、タイムゾーンの考慮やうるう年の判定などにも注意が必要です。また、さまざまなフォーマットに対応するためには、```strftime()```関数の扱い方を覚えておくことが重要です。
+
+## 参考リンク
+
+- [DateTime structure (C) - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netframework-4.8)
+- [strftime() function (C) - Microsoft Docs](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/strftime-wcsftime-strftime-l-wcsftime-l?view=vs-2019)
+- [C program to convert date into string - GeeksforGeeks](https://www.geeksforgeeks.org/program-to-convert-date-into-string/)
+
+## 見てみる
+
+ここでは、日付を文字列に変換するためのプログラムを実際に試してみることができます。実行結果を見ながら、どのようにプログラムを書けば良いのかを理解することができるかもしれません。
 
 ```C
 #include <stdio.h>
@@ -23,49 +54,8 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 int main()
 {
-   // 現在の日付を取得
-   time_t now;
-   time(&now);
-
-   // 変換用のバッファーを用意
-   char buffer[80];
-
-   // 日付を文字列に変換
-   strftime(buffer, 80, "%Y年%m月%d日", localtime(&now));
-
-   // 変換した文字列を出力
-   printf("%s\n", buffer);
-   return 0;
-}
-```
-
-上記のコードを実行すると、次のような出力が得られます。
-
-```
-2021年05月01日
-```
-
-この例では、現在の日付を取得し、それを文字列に変換しています。さらに、変換する文字列のフォーマットも指定することができます。例えば、`%Y年%m月%d日`というフォーマットは、4桁の年、2桁の月、2桁の日で表される形式です。
-
-## 日付を文字列に変換するための深い理解
-
-日付を文字列に変換するには、`strftime()`という関数を使用します。この関数は、引数として指定したフォーマットに従って、日付を指定したバッファーに書き込む仕組みになっています。最も一般的なフォーマット指定子は、以下の通りです。
-
-- `%Y`：4桁の年
-- `%m`：2桁の月
-- `%d`：2桁の日
-- `%H`：24時間表記の時
-- `%M`：2桁の分
-- `%S`：2桁の秒
-
-また、上記の例では、`localtime()`という関数も使用しています。これは、現在の日付を取得するために必要な関数です。
-
-## おわりに
-
-今回は、日付を文字列に変換する方法についてご紹介しました。お役に立てることを願っています。もし、より詳しい情報を知りたい方は、以下のリンクをご参照ください。
-
-## 関連リンク
-
-- [C言語日本語リファレンス strftime()関数](https://www9.plala.or.jp/sgwr-t/c/sec28.html#perl_strftime)
-- [C言語入門 strftime()関数](https://www.wagavulin.jp/entry/2012/08/16/160602)
-- [C言語日本語リファレンス
+    // 日付を入力
+    int year = 2020;
+    int month = 4;
+    int day = 6;
+    int

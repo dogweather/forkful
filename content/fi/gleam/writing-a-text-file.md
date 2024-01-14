@@ -1,78 +1,36 @@
 ---
-title:                "Gleam: Tiedoston kirjoittaminen"
+title:                "Gleam: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi kirjoittaisit Gleam-tekstitiedoston?
+## Miksi
 
-Jos olet ohjelmoija, joka haluaa laajentaa taitojaan ja oppia uutta kieltä, Gleam voi olla loistava valinta. Yksi Gleamin ominaisuuksista on sen kyky käsitellä tekstitiedostoja, mikä tekee siitä täydellisen työkalun tekstin käsittelyyn ohjelmissasi.
+Monet meistä, jotka oppivat koodaamaan, alkavat tavallisesti tekemään pieniä projekteja, kuten luomaan yksinkertaisia ohjelmia tai verkkosivuja. Yksinkertainen tekstieditorin käyttö on tässäkin vaiheessa tärkeää, sillä se auttaa meitä ymmärtämään, kuinka tiedostot tallennetaan ja miten koodi vaikuttaa tiedoston sisältöön.
 
-Kuinka kirjoittaa Gleam-tekstitiedosto?
+## Kuinka tehdä
 
-Kirjoittaminen Gleam-tekstitiedosto on helppoa! Aloita luomalla uusi teksti-tiedosto ja varmista, että olet tallentanut sen mitä tahansa nimeä ja lisännyt ".gleam" tiedostopäätteen. Sitten voit aloittaa kirjoittamisen!
-
-```Gleam
-# This is a Gleam text file
-# Let's write some text!
-Teksti = "Tervetuloa Gleam-tekstitiedoston maailmaan!"
-näytä(Teksti)
-```
-
-Tulostus:
-```
-Tervetuloa Gleam-tekstitiedoston maailmaan!
-```
-
-Syöte ja tuloste voidaan myös tallentaa muuttujiin ja käyttää niitä myöhemmin ohjelmassa.
+Gleam-ohjelmointikielen avulla voit helposti luoda ja tallentaa tekstitiedostoja. Alla on esimerkki koodista, joka luo uuden tekstitiedoston nimeltä "esimerkki.txt" ja tallentaa siihen tekstin "Hei Maailma!".
 
 ```Gleam
-# This is a Gleam text file
-# Let's write some text!
-Teksti = "Tervetuloa Gleam-tekstitiedoston maailmaan!"
-KaksinkertainenTeksti = Teksti + Teksti
-näytä(KaksinkertainenTeksti)
+kekkeri = "Hei Maailma!"
+
+gleam:file.write("esimerkki.txt", kekkeri)
 ```
 
-Tulostus:
-```
-Tervetuloa Gleam-tekstitiedoston maailmaan!
-Tervetuloa Gleam-tekstitiedoston maailmaan!
-```
+Ajaessamme tätä koodia, se luo uuden tekstitiedoston kanssa nimen "esimerkki.txt" nykyiseen työskentelyhakemistoon ja kirjoittaa sen sisältöksi "Hei Maailma!".
 
-Voit myös lisätä muuttujiin käyttäen Gleamin mallilauseita. Esimerkiksi voit lisätä uuden rivin tekstin loppuun käyttämällä "muokkaa()" funktiota:
+## Syvällinen sukellus
 
-```Gleam
-# This is a Gleam text file
-# Let's write some text!
-Teksti = "Tervetuloa Gleam-tekstitiedoston maailmaan!"
-muokkaa(Teksti, "Tämä on uusi rivi")
-näytä(Teksti)
-```
+Tekstitiedostojen luominen ja tallentaminen on tärkeä taito jokaiselle Gleam-ohjelmoijalle. On tärkeää muistaa, että tekstitiedostoilla voi olla erilaisia muotoiluja, kuten HTML tai CSV, ja Gleamilla on erityisiä kirjastoja näiden luomiseen ja käsittelyyn. Myös tekstitiedostojen lukeminen ja muokkaaminen on taito, joka on hyödyllinen mille tahansa ohjelmoijalle.
 
-Tulostus:
-```
-Tervetuloa Gleam-tekstitiedoston maailmaan!
-Tämä on uusi rivi
-```
+## Katso myös
 
-Syöte kannattaa myös aina varmistaa käyttämällä "tarkista()" funktiota, joka tarkistaa, jos syöte vastaa tiettyä kriteeriä.
-
-Syvällisempi tieto Gleam-tekstitiedoston kirjoittamisesta
-
-Gleamilla on myös muita hyödyllisiä funktioita, kuten "luoTiedosto()" ja "kirjoitaTiedostoon()", jotka antavat sinulle mahdollisuuden luoda ja kirjoittaa tiedostoja ohjelmissasi. Voit myös käyttää "avaaTiedosto()" ja "lueRivi()" funktioita lukeaksesi olemassa olevan tekstitiedoston sisältöä.
-
-Joten, jos haluat oppia lisää tekstitiedostojen käsittelystä Gleamilla, suosittelemme tutustumaan Gleamin virallisiin dokumentaatioihin ja oppaisiin.
-
-Katso myös
-
-Tutustu näihin hyödyllisiin resursseihin saadaksesi lisätietoja Gleamin käytöstä:
-
-- Gleamin virallinen dokumentaatio (englanniksi): https://gleam.run/
-
-- Gleamin GitHub-sivusto (englanniksi): https://github.com/gleam-lang/gleam
-
-- Gleam-tutorial (englanniksi): https://gleam.run/tour/
+- [Gleam-ohjelmointikielen virallinen sivusto](https://gleam.run/)
+- [Gleamin dokumentaatio tekstitiedoston käsittelyyn](https://gleam.run/documentation/libraries/files/)
+- [Esimerkkejä tekstitiedoston käytöstä Gleamilla](https://github.com/gleam-lang/gleam/tree/master/examples/files)

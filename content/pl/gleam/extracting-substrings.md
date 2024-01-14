@@ -1,42 +1,32 @@
 ---
-title:                "Gleam: Ekstrakcja podciągów"
+title:                "Gleam: Wycinanie podciągów"
+simple_title:         "Wycinanie podciągów"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-W dzisiejszych czasach wiele aplikacji i narzędzi wymaga przetwarzania tekstów w celu wydobycia konkretnych fragmentów informacji. W tym przypadku bardzo przydatnym narzędziem jest ekstrakcja podciągów. W tym artykule dowiesz się, dlaczego jest to ważna umiejętność w programowaniu i jak jej używać w języku Gleam.
+Często w procesie pisania kodu napotykamy sytuacje, w których musimy wyodrębnić pewien fragment tekstu z większego ciągu znaków. W takich przypadkach wykorzystanie funkcji do wycinania podciągów może być niezwykle pomocne.
 
 ## Jak to zrobić
-
-Aby wykonać ekstrakcję podciągów w Gleam, użyjemy funkcji `substr`, która przyjmuje trzy argumenty: ciąg znaków, indeks początkowy i długość. Dzięki temu możemy łatwo wybrać interesujące nas fragmenty tekstu.
-
-Przykładowo, chcemy wydobyć słowo "programowanie" z ciągu znaków "Uczę się programowania w języku Gleam". W tym przypadku użylibyśmy funkcji `substr` z argumentami "Uczę się programowania w języku Gleam", 9 i 13 (początkowy indeks i długość słowa).
-
-Użycie tej funkcji może wyglądać następująco:
+Aby wyodrębnić substring z tekstu w języku Gleam, należy skorzystać z funkcji `String.slice()`, podając jej jako argument indeks początkowy oraz końcowy wycięcia. Przykładowy kod wyglądałby następująco:
 
 ```Gleam
-substr("Uczę się programowania w języku Gleam", 9, 13)
+let text = "Witaj, Gleam!"
+let substring = String.slice(text, 7, 12) // wynik: "Gleam"
 ```
 
-Wynikiem będzie ciąg znaków "programowania", który możemy wykorzystać dalej w naszym kodzie.
+Możemy również ustawić indeks końcowy na `String.length(text)` aby pobrać podciąg od wybranego indeksu do końca tekstu. W przypadku gdy nie znamy dokładnych długości tekstu, możemy wykorzystać funkcję `String.split()` do podzielenia tekstu na wybrane znaki specjalne lub słowa.
 
-## Głębsza analiza
+## Deep Dive
+Funkcja `String.slice()` wykorzystuje indeksowanie znaków Unicode, co oznacza, że możemy bez problemu wyodrębnić podciągi z tekstów w różnych językach. Ponadto, argumenty funkcji mogą przyjmować także wartości ujemne, co pozwala nam wybierać znaki od końca tekstu.
 
-Funkcja `substr` jest przydatna nie tylko do wyodrębniania słów z ciągów znaków, ale także do wycinania konkretnych fragmentów tekstu. Możemy zmienić wartość drugiego argumentu, aby zacząć ekstrakcję od innego miejsca w ciągu, lub zmienić trzeci argument, aby wyciąć dłuższy lub krótszy fragment. Funkcja ta jest również bezpieczna, ponieważ nie wywołuje błędów w przypadku przekroczenia długości ciągu znaków.
+Jednym z zastosowań funkcji do wycinania podciągów może być np. sprawdzanie czy dany fragment tekstu istnieje w większym tekście.
 
-Pamiętaj, że w języku Gleam wszystkie ciągi znaków są niemutowalne, co oznacza, że ​​funkcja `substr` nie zmienia oryginalnego ciągu, ale zwraca nowy ciąg zawierający wybrany fragment.
-
-## Zobacz również
-
-Jeśli chcesz dowiedzieć się więcej o funkcji `substr` w języku Gleam, sprawdź poniższe linki:
-
-- Dokumentacja funkcji `substr` w języku Gleam: [https://gleam.run/core/string.html#substr](https://gleam.run/core/string.html#substr)
-- Przykładowy projekt wykorzystujący ekstrakcję podciągów w Gleam: [https://github.com/username/example-gleam-project](https://github.com/username/example-gleam-project)
-- Artykuł o innych przydatnych narzędziach do przetwarzania ciągów znaków w języku Gleam: [https://medium.com/gleam-lang/string-manipulation-in-gleam-xxx](https://medium.com/gleam-lang/string-manipulation-in-gleam-xxx)
-
-Dziękujemy za przeczytanie tego artykułu i mam nadzieję, że dowiedziałeś się czegoś nowego na temat ekstrakcji podciągów w języku Gleam. Do zobaczenia następnym razem!
+## Zobacz także
+- Dokumentacja funkcji `String.slice()`: https://gleam.run/core/string.html#slice
+- Wyciąganie podciągów z wykorzystaniem pattern matchingu: https://blog.carbonfive.com/2019/03/01/pattern-matching-in-gleam/

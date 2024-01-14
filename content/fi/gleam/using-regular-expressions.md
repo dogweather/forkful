@@ -1,47 +1,52 @@
 ---
-title:                "Gleam: Säännöllisten lausekkeiden käyttö"
+title:                "Gleam: Säännöllisen ilmaisujen käyttö"
+simple_title:         "Säännöllisen ilmaisujen käyttö"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-### Miksi käyttää säännöllisiä lausekkeita Gleam-ohjelmoinnissa?
+## Miksi
 
-Säännölliset lausekkeet ovat tehokas työkalu tekstien käsittelyyn ja haun suorittamiseen Gleam-ohjelmoinnissa. Niiden avulla voimme löytää ja muokata tiettyjä merkkijonoja nopeasti ja helposti. Ne ovat erityisen hyödyllisiä, kun käsittelemme suuria määriä dataa ja meidän täytyy suorittaa monimutkaisia hakuja tai muokkauksia.
+Kun ohjelmointia tehdään Gleamilla, monissa tilanteissa tarvitaan joukko toimintoja, joilla voidaan käsitellä merkkijonoja ja suorittaa hakuja ja muutoksia niissä. Tämä on silloin, kun regular expression (säännölliset lausekkeet) astuvat kuvaan.
 
-### Kuinka käyttää säännöllisiä lausekkeita Gleam-ohjelmoinnissa?
+## Kuinka käyttää
 
-Gleam tarjoaa sisäänrakennetun moduulin nimeltä `Regex`, joka sisältää kaikki tarvittavat toiminnot säännöllisten lausekkeiden käyttämiseen. Ensimmäiseksi meidän täytyy tuoda tämä moduuli tiedostoomme.
+Regular expressionin käyttäminen Gleamilla on helppoa ja tehokasta. Alla on esimerkki funktiosta, joka etsii annetussa merkkijonossa kaikki numerot ja palauttaa ne listana:
 
-```
-import Regex
-```
-
-Säännöllisen lausekkeen luomiseksi käytämme `Regex.make`-funktiota ja annamme sille kaksi parametria: säännöllisen lausekkeen ja sen valitsimen. Valitsin määrittää, kuinka laajasti säännöllinen lauseke otetaan huomioon haussa. Esimerkiksi jos käytämme valitsinta `global`, haku tehdään kaikilta merkkijonoilta, ei vain ensimmäiseltä.
-
-```
-let pattern = Regex.make("gleam", Regex.global)
+```Gleam
+fn find_numbers(str) {
+  r: Regex.from_str("\\d+")
+  matches: Regex.find_all(r, str)
+  List.map(matches, { match | String.to_int(match) })
+}
 ```
 
-Seuraavaksi voimme käyttää `Regex.replace`-funktiota muuttaaksemme säännöllisen lausekkeen osumat joksikin toiseksi merkkijonoksi. Voimme myös käyttää `Regex.match`-funktiota tarkistaaksemme, löytyykö säännöllinen lauseke annetusta merkkijonosta.
+Tässä esimerkissä käytetään Regex-moduulia, joka tarjoaa joukon toimintoja regular expressionien luomiseen ja käyttämiseen. Funktio `Regex.find_all` etsii annetusta merkkijonosta kaikki kohtaamaista regular expressionia vastaavat osat ja palauttaa ne listana. Tämän jälkeen `List.map`-funktio käy läpi listan ja muuttaa jokaisen kohteen merkkijonosta kokonaisluvuksi `String.to_int`-funktion avulla.
 
+Yllä olevan funktion käyttö näyttäisi tältä:
+
+```Gleam
+numbers: find_numbers("Osoitteestani löytyy 123 456 kaupunkia.")
+// numbers = [123, 456]
 ```
-let result = Regex.replace(pattern, "Gleam is the best programming language!", "Elixir")
-let match = Regex.match(pattern, "I love Gleam programming language!")
-```
 
-### Syvällinen tutustuminen säännöllisten lausekkeiden käyttöön Gleam-ohjelmoinnissa
+Gleam tarjoaa myös muita käteviä toimintoja, kuten `Regex.replace`, jolla voidaan korvata annetussa merkkijonossa olevat osat uudella tekstillä. Voit lukea lisää regular expressionien käytöstä Gleamilla [Gleamin virallisesta dokumentaatiosta](https://gleam.run/documentation).
 
-Säännöllisten lausekkeiden käyttö Gleamissa on samanlaista kuin muissakin ohjelmointikielissä, mutta Gleam tarjoaa turvallisuutta ja luettavuutta parantavia ominaisuuksia. Ensinnäkin, kaikki säännölliset lausekkeet tarkistetaan Gleamissa käännösaikana, joten mahdolliset virheet havaitaan aikaisin. Lisäksi Gleamissa on vahva tyyppijärjestelmä, joka auttaa meitä varmistamaan, että käytämme oikeita parametreja ja että tulokset ovat oikean tyyppisiä.
+## Syväsukellus
 
-Toiseksi, Gleamissa säännölliset lausekkeet käsitellään muuttumattomina tietorakenteina, mikä tarkoittaa, että muokatessamme säännöllistä lauseketta se palauttaa uuden säännöllisen lausekkeen sen sijaan, että muokkaisi alkuperäistä. Tämä on tärkeää, koska meidän täytyy olla tarkkoja siitä, ettei alkuperäistä dataa muuteta vahingossa.
+Regular expressionit voivat vaikuttaa aluksi hankalilta ymmärtää, mutta niiden käyttö on todella hyödyllistä ja tehokasta ohjelmoinnissa. Niiden avulla voidaan suorittaa monimutkaisiakin hakuja ja muutoksia merkkijonoissa ja niiden avulla säästetään paljon aikaa ja vaivaa.
 
-### Katso myös
+Muutamia hyödyllisiä vinkkejä ja tarkennuksia regular expressionien käyttöön:
 
-- [Gleam-kielen virallinen verkkosivusto](https://gleam.run/)
-- [Gleam-kielen dokumentaatio](https://gleam.run/documentation)
-- [Regex-moduulin dokumentaatio](https://gleam.run/modules/regex/latest/)
+- Regular expressioneja voidaan käyttää myös `String`-moduulin funktioissa, kuten `String.contains` ja `String.split`.
+- Gleamissa regular expressionien käytössä kannattaa käyttää `\`-merkkiä escape-sekvenssinä, joka viittaa merkkiin, joka tarvitsee erityiskohtelua, kuten `+` tai `.`.
+- Gleamissa regular expressionit käsitellään `String`-tyyppisinä, mutta muista muuttaa halutut osat `String`-tyypiksi ennen niiden käyttöä.
 
-Kiitos lukemisesta ja onnea säännöllisten lausekkeiden käyttöön Gleam-ohjelmoinnissa!
+## Katso myös
+
+- [Gleamin virallinen dokumentaatio](https://glean.run/documentation)
+- [Regex-moduulin dokumentaatio](https://gleam.run/modules/regex/latest/Regex.html)

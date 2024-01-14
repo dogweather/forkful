@@ -1,7 +1,9 @@
 ---
-title:                "C: Användning av reguljära uttryck"
+title:                "C: Reply: Använda regelbundna uttryck"
+simple_title:         "Reply: Använda regelbundna uttryck"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/using-regular-expressions.md"
 ---
 
@@ -9,51 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Regular expressions är ett kraftfullt verktyg som låter dig söka och manipulera textsträngar på ett precist sätt. Genom att lära dig hur man använder dem kan du effektivisera din kodning och lösa problem som skulle vara svårare att hantera på andra sätt.
+I dagens moderna programmeringsvärld är det viktigt att kunna uttrycka sig på ett enkelt och effektivt sätt. Reguljära uttryck, eller regular expressions som det kallas på engelska, är ett verktyg som kan hjälpa dig att göra just detta. Med hjälp av reguljära uttryck kan du enkelt söka och manipulera textsträngar, vilket sparar tid och gör koden mer lättläst. 
 
-## Hur man gör
+## Hur man använder reguljära uttryck i C
 
-För att använda regular expressions i C är det första steget att inkludera `regex.h` biblioteket. Sedan kan du använda funktionerna `regcomp()` och `regexec()` för att kompilera och utföra dina uttryck. Ett enkelt exempel skulle kunna se ut såhär:
+För att använda reguljära uttryck i din C-kod behöver du inkludera biblioteket "regex.h". Därefter kan du använda regex-funktionerna för att utföra sökningar och manipulationer på dina textsträngar. Nedan följer några enkla exempel på hur du kan använda reguljära uttryck i din C-kod.
 
 ```C
-#include <stdio.h>
 #include <regex.h>
 
-int main()
-{
-    regex_t regex;
-    char str[] = "Hej! Vilken underbar dag det är idag.";
+int main() {
+    regex_t rgx;
+    char str[] = "Jag älskar att koda i C!";
+    char pattern[] = "koda";
 
-    regcomp(&regex, "underbar", 0);
-    int match = regexec(&regex, str, 0, NULL, 0);
+    // Kompilera reguljärt uttryck
+    regcomp(&rgx, pattern, 0);
 
-    if (!match)
-    {
-        printf("Matchning funnen!\n");
+    // Utför sökning
+    int match = regexec(&rgx, str, 0, NULL, 0);
+
+    // Skriv ut resultat
+    if (match == 0) {
+        printf("Hittade matchning för '%s'!\n", pattern);
+    } else {
+        printf("Ingen matchning för '%s' hittades.\n", pattern);
     }
-    else
-    {
-        printf("Matchning inte funnen.\n");
-    }
 
-    regfree(&regex);
+    // Rensa upp minne
+    regfree(&rgx);
 
     return 0;
 }
 ```
 
-I detta exempel använder vi `regcomp()` för att kompilera vårt uttryck, "underbar", och sedan använder vi `regexec()` för att söka efter det i strängen `str`. Om en matchning hittas så skrivs "Matchning funnen!" ut, annars skrivs "Matchning inte funnen." ut.
+Överstående kod kompilerar ett reguljärt uttryck för att leta efter ordet "koda" i strängen "Jag älskar att koda i C!". Om en matchning hittas skrivs ett meddelande ut. Det är också viktigt att komma ihåg att rensa upp minnet med hjälp av "regfree" efter att du har använt regex-funktionerna.
 
-Man kan också använda andra funktioner som `regerror()` för att hantera eventuella felmeddelanden, samt `regfree()` för att rensa minnet som används för uttrycket. Det finns också flera olika teckenklasser och modifierare som kan användas för att göra uttrycken mer avancerade och exakta.
+## En djupdykning i reguljära uttryck
 
-## Djupdykning
+Det finns en hel del mönster och symboler som kan användas i reguljära uttryck för att göra sökningar och manipulationer mer avancerade. Här följer några av de vanligaste symbolerna och dess betydelse:
 
-Regular expressions kan vara mycket komplexa och det finns mycket att lära när det gäller att använda dem på ett effektivt sätt. Det kan vara värt att lära sig mer om grundläggande uttryck och vanliga användningsfall, samt andra avancerade funktioner som till exempel att fånga eller ersätta delar av en textsträng.
+- `^` - Motsvarar början av en sträng
+- `$` - Motsvarar slutet av en sträng
+- `.` - Motsvarar en godtycklig enskild karaktär
+- `*` - Motsvarar 0 eller fler förekomster av föregående uttryck
+- `+` - Motsvarar 1 eller fler förekomster av föregående uttryck
+- `?` - Motsvarar 0 eller 1 förekomst av föregående uttryck
+- `()` - Skapar en grupp av uttryck som kan refereras till senare
 
-Det är också bra att hålla sig uppdaterad om eventuella förändringar i syntax eller funktioner, då dessa kan variera mellan olika språk och versioner. Det finns också många online-resurser och böcker som kan hjälpa dig att få en djupare förståelse för hur man använder regular expressions.
+Om du vill lära dig mer om reguljära uttryck och hur du kan använda dem i din C-kod, rekommenderar jag att du kollar på länkarna nedan under "Se också".
 
-## Se även
+## Se också
 
-- [Regex Tutorial](https://regexone.com/)
-- [The GNU C Library - Regular Expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- [Mastering Regular Expressions book](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)
+- Regelbundna uttryck - Wikipedia (https://sv.wikipedia.org/wiki/Regelbundna_uttryck)
+- regex.h - C Standard Library (https://en.wikipedia.org/wiki/Standard_C_library#Regular_expression_std.2C_ERE_and_BRE_functions)
+- RegExr - Regex-testare och referens (https://regexr.com/)

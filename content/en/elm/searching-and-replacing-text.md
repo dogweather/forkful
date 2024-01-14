@@ -1,7 +1,9 @@
 ---
 title:                "Elm recipe: Searching and replacing text"
+simple_title:         "Searching and replacing text"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/searching-and-replacing-text.md"
 ---
 
@@ -9,36 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Searching and replacing text is a fundamental task in programming. It allows you to quickly and efficiently update large amounts of code without having to manually make changes one by one. Using Elm's powerful search and replace functions can save you time and effort in your coding workflow.
+As programmers, we often find ourselves needing to make changes to our code. This could be to fix bugs, improve performance, or simply make updates. One common task is searching and replacing text. This allows us to efficiently make multiple changes at once, saving us time and effort.
 
 ## How To
 
-First, import the String module in your code by adding `import String` at the top. This will give you access to various functions for manipulating strings, including `replace` which we will use for search and replace.
+Searching and replacing text in Elm is a simple task. There are a few different ways to approach it, depending on your specific needs. Let's take a look at some examples using the `String.replace` function:
 
 ```
-import String
+Elm 0.19.1
 
-text = "Hello World! This is a sample text."
+String.replace "world" "Elm" "Hello world!" == "Hello Elm!"
 
-newText = String.replace "Hello" "Hi" text
+String.replace "o" "e" "Hello world!" == "Helle werld!"
 ```
 
-In the above code, we are using the `replace` function to replace all instances of "Hello" with "Hi" in the `text` variable. The result is stored in the `newText` variable, which would be "Hi World! This is a sample text." You can use this code in your Elm applications to replace specific words or phrases within strings.
+In the first example, we are replacing the word "world" with "Elm" in the string "Hello world!". The function returns the modified string "Hello Elm!". In the second example, we are replacing the letter "o" with "e", resulting in "Helle werld!". As you can see, the `String.replace` function takes three arguments: the text to be replaced, the replacement text, and the original string.
+
+Another way to approach searching and replacing text is using regular expressions. Elm has a regex library that we can use to search for patterns in strings. Let's take a look at an example using the `Regex.replace` function:
+
+```
+Elm 0.19.1
+
+import Regex exposing (replace, regex)
+
+Regex.replace (regex "\\d+") (\_ -> "number") "I have 3 apples and 5 oranges." == "I have number apples and number oranges."
+```
+
+In this example, we are using a regular expression to search for any digits in the string and replacing them with the word "number". This allows us to make changes to a string based on a specific pattern, rather than a specific text.
 
 ## Deep Dive
 
-The `replace` function in Elm has a few optional parameters that allow for more advanced search and replace operations. For example, you can specify a starting index for the search, or limit the number of replacements made. Additionally, you can use regular expressions in place of simple strings for more complex search patterns.
+When searching and replacing text, it's important to pay attention to the order of the arguments in the function. The first argument is the text or pattern to be replaced, while the second argument is the replacement text. It's also worth noting that these functions are case sensitive, so "hello" and "Hello" would be considered different texts.
+
+One way to use the `String.replace` function in a more dynamic way is by using the `words` function. This function splits a string into a list of words, making it easier to manipulate individual words. Let's take a look at an example:
 
 ```
-text = "abc123xyzabc123"
-regex = Regex.fromString "abc[\\d]+"
-newText = String.replace regex "replacement" text
+Elm 0.19.1
+
+words "Hello world!" == ["Hello", "world!"]
 ```
 
-In this code, we are using the `Regex` module to perform a search and replace using a regular expression. The result is "replacementxyzreplacement", replacing all instances of "abc" followed by one or more digits with "replacement".
+Now we can apply the `String.replace` function to the individual words in the list, rather than the whole string.
 
 ## See Also
 
-- Official Elm Documentation for String Module: https://package.elm-lang.org/packages/elm/core/latest/String
-- Learn Regex the Easy Way: https://github.com/zeeshanu/learn-regex
-- Online Regex Tester: https://regex101.com/
+- [Elm String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm Regex Package](https://package.elm-lang.org/packages/elm/regex/latest/)

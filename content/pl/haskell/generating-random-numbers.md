@@ -1,54 +1,66 @@
 ---
 title:                "Haskell: Generowanie losowych liczb"
+simple_title:         "Generowanie losowych liczb"
 programming_language: "Haskell"
-category:             "Numbers"
+category:             "Haskell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Generowanie losowych liczb jest niezbędne w wielu programowaniu, szczególnie w przypadku symulacji, testowania i gier. W Haskellu możemy wykorzystać wbudowaną bibliotekę `System.Random`, aby uzyskać dostęp do wydajnego generatora liczb losowych.
+Z pewnością wiele z was słyszało o generowaniu liczb losowych w programowaniu, ale dlaczego jest ono tak ważne? Jest to krytyczny element wielu algorytmów i programów, który pozwala na tworzenie różnych wariantów, a także symulowanie prawdziwego świata. Generowanie łatwo dostępnych liczb losowych w Haskellu jest nie tylko przydatne, ale także bardzo proste.
 
 ## Jak to zrobić
+Do generowania liczb losowych w Haskellu możemy użyć wielu różnych funkcji z pakietu `System.Random`. Poniższy kod pokazuje przykładowe użycie funkcji `randomR` do wygenerowania losowej liczby całkowitej z podanego zakresu:
 
-Aby użyć biblioteki `System.Random`, musimy najpierw ją zaimportować, dodając `import System.Random` na początku naszego pliku Haskell. Następnie możemy skonstruować nasz generator losowy, używając funkcji `mkStdGen`, np. `let gen = mkStdGen 42`, gdzie 42 jest naszym ziarnem, które wyznacza początkowy stan generatora.
-
-Aby wygenerować pojedynczą losową liczbę typu `Int`, możemy użyć funkcji `random`, np. `let (randomNum, newGen) = random gen :: (Int, StdGen)`, gdzie `randomNum` to wygenerowana liczba, a `newGen` to aktualizowany generator. Następnie możemy użyć aktualizowanego generatora, aby wygenerować kolejną liczbę.
-
-Jeśli chcemy wygenerować losową liczbę z określonego zakresu, możemy użyć funkcji `randomR`, np. `let (randomNum, newGen) = randomR (1, 10) gen :: (Int, StdGen)`, gdzie `1` i `10` są odpowiednio najmniejszą i największą możliwą wartością. Możemy również wygenerować liczby zmiennoprzecinkowe używając funkcji `randomRIO`, która zwraca wynik w kontekście `IO`.
-
-Możemy również wygenerować losową wartość typu `Bool` przy użyciu funkcji `randomIO`, która zwraca `True` lub `False` w kontekście `IO`.
-
-Przykładowy kod:
-
-```
+```Haskell
 import System.Random
 
--- konstrukcja generatora losowego
-let gen = mkStdGen 42
+randomNumber :: IO Int
+randomNumber = randomR (1, 10)
 
--- generowanie pojedynczej liczby
-let (randomNum, newGen) = random gen :: (Int, StdGen)
-
--- generowanie liczby z określonego zakresu
-let (randomNum, newGen) = randomR (1, 10) gen :: (Int, StdGen)
-
--- generowanie liczby zmiennoprzecinkowej
-randomDouble <- randomRIO (0.0, 1.0) :: IO Double
-
--- generowanie wartości typu Bool
-randomBool <- randomIO :: IO Bool
+main :: IO ()
+main = do
+    number <- randomNumber
+    print number
 ```
 
-## Głębsze zagadnienia
+Powyższy kod wygeneruje losową liczbę całkowitą z zakresu od 1 do 10 i wypisze ją na ekranie. Możemy również użyć funkcji `random` do wygenerowania wartości typu `Double`. Poniższy kod pokazuje, jak wygenerować losową liczbę zmiennoprzecinkową z przedziału od 0 do 1:
 
-Biblioteka `System.Random` używa algorytmu generatora liczb pseudolosowych o nazwie "Mersenne Twister", który jest jednym z najbardziej popularnych i wydajnych algorytmów w tej dziedzinie. Algorytm ten jest oparty na liniowym sprężynowym generowaniu liczb pseudolosowych i zapewnia dobrą równomierność wygenerowanych liczb.
+```Haskell
+import System.Random
 
-Warto również zwrócić uwagę na to, że generator losowy jest w stanie produkować tylko liczby "pseudo" losowe, co oznacza, że wyniki mogą być przewidywalne, jeśli znamy początkowy stan generatora. Dlatego też ważne jest, aby używać odpowiednio dużych ziaren, aby uzyskać jak największą losowość.
+randomNumber :: IO Double
+randomNumber = random
 
-## Zobacz też
+main :: IO ()
+main = do
+    number <- randomNumber
+    print number
+```
 
-- Dokumentacja biblioteki `System.Random` w [Hoogle](https://hoogle.haskell.org/package/random-1.2.0/docs/System-Random.html)
-- Strona internetowa Algorytmu "Mersenne Twister" [http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html)
+Pamiętajmy, że każde wywołanie funkcji `random` lub `randomR` zwraca wartość typu IO, dlatego musimy użyć funkcji `do` i `<-` aby wydobyć wygenerowaną wartość.
+
+## Wnikliwa obserwacja
+Generowanie liczb losowych w programowaniu jest często wykorzystywane do losowego wybierania elementów z listy lub do symulacji zdarzeń losowych. W języku Haskell istnieje również możliwość generowania losowych wartości typów zdefiniowanych przez użytkownika, co może być bardzo przydatne w niektórych sytuacjach.
+
+Możemy również ustawić ziarno (seed) dla generatora liczb losowych, aby uzyskać deterministyczne wyniki. W tym celu możemy użyć funkcji `mkStdGen` i przekazać jej dowolną liczbę całkowitą. Poniższy kod pokazuje, jak generować losowe wartości z ustalonym ziarnem:
+
+```Haskell
+import System.Random
+
+main :: IO ()
+main = do
+    let seed = mkStdGen 42   -- ustawiamy ziarno na 42
+    let randomNumber = randomR (1, 100) seed :: (Int, StdGen) -- wygeneruj liczbę całkowitą z zakresu od 1 do 100 wraz z informacją o nowym ziarnie
+    print randomNumber     -- wyświetlamy wygenerowaną liczbę i nowe ziarno
+```
+
+Jedną z zalet ustawiania ziarna jest możliwość powtarzalności wygenerowanych wyników, co może być przydatne w celach testowania aplikacji.
+
+## Zobacz także
+* [Dokumentacja pakietu `System.Random`](https://hackage.haskell.org/package/random/docs/System-Random.html)
+* [Tutorial o generowaniu liczb losowych w Haskellu](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/guide-to-random-numbers)
+* [Przykłady użycia w okolicy rand](https://stackoverflow.com/questions/24894498/haskell-10-million-generations-and-checking-all-numbers-for-a-pattern)

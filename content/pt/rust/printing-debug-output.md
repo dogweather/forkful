@@ -1,60 +1,85 @@
 ---
-title:                "Rust: Imprimindo saídas de depuração"
+title:                "Rust: Saida de depuração de impressão"
+simple_title:         "Saida de depuração de impressão"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que imprimir saída de depuração em Rust?
+## Por que imprimir saída de depuração no Rust é importante
 
-A impressão de saída de depuração é uma técnica comum e útil para verificar o funcionamento interno de um programa. Ao imprimir valores específicos em momentos importantes do código, é possível identificar e corrigir erros com mais facilidade. Em Rust, a impressão de saída de depuração também é conhecida como "impressão de depuração de controle". Agora, vamos aprender como fazer isso!
+Imprimir saída de depuração é uma prática útil para ajudar a entender o comportamento do seu código e encontrar possíveis erros. No Rust, isso é especialmente importante devido às suas características de segurança e baixo nível, que podem tornar a depuração mais desafiadora.
 
-# Como fazer:
+## Como fazer
 
-```Rust
-fn main() {
-    let nome = "Rust";
-    let versao = 1.55;
-    println!("Iniciando programa com {} versão {}...", nome, versao);
-}
-```
-
-Neste exemplo, usamos a função `println!` para imprimir uma mensagem com alguns valores de variáveis. O `!` indica que estamos usando uma macro em vez de uma função comum. Isso é importante para a impressão de saída de depuração, pois permite que usemos formatos de impressão mais avançados, como veremos a seguir.
+Para imprimir saída de depuração no Rust, você pode usar a macro `println!()`. Ela funciona de maneira semelhante à função `printf()` da linguagem C e pode ser usada para imprimir valores de variáveis, estruturas e até mesmo mensagens de texto simples. Veja um exemplo abaixo:
 
 ```Rust
-fn main() {
-    let temperatura = 24.5;
-    let velocidade = 10;
-    println!("A temperatura é {:.2}°C e a velocidade é {}km/h", temperatura, velocidade);
-}
+let nome = "João";
+
+println!("Olá, meu nome é {}", nome);
 ```
 
-Neste exemplo, usamos o formato `:.2` para limitar a saída da temperatura a dois números decimais após a vírgula. Isso é útil para impressão de valores numéricos com mais precisão. Também podemos usar um `:?` para imprimir valores de tipos de dados complexos, como estruturas ou vetores.
-
-# Mergulho profundo:
-
-Além dos formatos básicos como `{}` e `{:#}`, Rust também oferece uma macro `dbg!` para impressão de saída de depuração. Esta macro automaticamente imprime o valor e o nome da variável em que está sendo usado. Por exemplo:
+A saída seria "Olá, meu nome é João" no console. Você também pode imprimir mais de uma variável, usando múltiplas chaves na mensagem:
 
 ```Rust
-fn main() {
-    let idade = 30;
-    let nome = "João";
-    dbg!(idade, nome);
+let idade = 25;
+
+println!("Olá, meu nome é {} e tenho {} anos", nome, idade);
+```
+
+A saída seria "Olá, meu nome é João e tenho 25 anos".
+
+Além da macro `println!()`, você também pode usar `eprintln!()` para imprimir saída de erro e `dbg!()` para imprimir valores de maneira mais detalhada. Não se esqueça de importar a macro que deseja usar no início do seu código, como mostrado abaixo:
+
+```Rust
+use std::println; // importar macro println!() do módulo std
+
+let x = 10;
+
+println!("O valor de x é {}", x);
+```
+
+## Mergulho Profundo
+
+Quando você está depurando seu código no Rust, pode ser necessário imprimir valores de tipos de dados personalizados, como uma estrutura ou enum. Para isso, você pode implementar a trait `Debug` nos seus tipos de dados customizados. Isso permite que você use a macro `{:?}` para imprimir uma representação mais detalhada dos seus valores.
+
+Veja um exemplo de uma estrutura implementando a trait `Debug`:
+
+```Rust
+#[derive(Debug)] // derivação da trait Debug
+struct Pessoa {
+    nome: String,
+    idade: u8,
+    altura: f32,
 }
+
+let joao = Pessoa {
+    nome: String::from("João"),
+    idade: 25,
+    altura: 1.75,
+};
+
+println!("Detalhes da pessoa: {:?}", joao); // use a macro {:?} para imprimir a estrutura
 ```
 
-Isso imprimiria:
+E a saída seria algo como "Detalhes da pessoa: Pessoa { nome: "João", idade: 25, altura: 1.75 }".
 
+Outra dica útil é usar a opção `?` após a macro `println!()` para lidar com possíveis erros durante a impressão. Isso pode ser feito da seguinte maneira:
+
+```Rust
+use std::fs::File;
+
+let arquivo = File::open("arquivo.txt");
+
+println!("Conteúdo do arquivo: {:?}", arquivo?); // o uso de ? lidará com possíveis erros
 ```
-[src/main.rs:4] idade = 30
-[src/main.rs:5] nome = "João"
-```
 
-Isso pode ser muito útil quando estamos tentando rastrear bugs em programas maiores e mais complexos. Além disso, Rust também oferece ferramentas de depuração mais avançadas, como o uso do cargo com plataformas de integração contínua.
+## Veja também
 
-# Veja também:
-- [Documentação oficial de Rust sobre impressão de saída de depuração](https://doc.rust-lang.org/std/macro.dbg.html)
-- [Tutorial sobre impressão de saída de depuração em Rust](https://www.educative.io/blog/rust-debugging-print-macros)
-- [Vídeo explicando técnicas de depuração em Rust](https://www.youtube.com/watch?v=TlDdbuu0oA4)
+- [Documentação oficial do Rust sobre saída de depuração](https://doc.rust-lang.org/book/ch05-01-defining-structs.html#defining-and-instantiating-structs)
+- [Vídeo tutorial sobre saída de depuração em Rust](https://www.youtube.com/watch?v=T1lMkvF_AOQ)
+- [Artigo sobre traits do Rust para imprimir valores de maneira customizada](https://dev.to/steadylearner/how-and-why-to-use-the-trait-debug-in-rust-g4m)

@@ -1,37 +1,60 @@
 ---
-title:                "PHP: Kapitalisera en sträng"
+title:                "PHP: Att Kapitalisera en Sträng"
+simple_title:         "Att Kapitalisera en Sträng"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför
-Ibland behöver vi konvertera en sträng så att den börjar med en stor bokstav. Detta kan vara för att göra den mer läsbar eller för att följa specifika konventioner inom programmering.
+## Varför
 
-# Hur man gör
-Att konvertera en sträng till stora bokstäver i PHP är enkelt med hjälp av funktionen `ucfirst()`. Denna funktion tar emot en sträng som parameter och returnerar en ny sträng där den första bokstaven är stor. Här är ett exempel:
+Att kapitalisera en sträng är en viktig funktion inom PHP-programmering för att vi vill kunna ändra textsträngar på ett effektivt sätt. Det kan vara användbart för att formatera text, skapa rubriker eller för att matcha en viss standard i en databas.
 
-```PHP
-$str = "hallå världen";
-echo ucfirst($str); // Output: Hallå världen
-```
+## Hur man gör
 
-För att konvertera varje ord i en sträng till stora bokstäver kan vi använda funktionen `ucwords()`. Den tar också en sträng som parameter och returnerar en ny sträng där varje ord börjar med en stor bokstav. Här är ett exempel:
+För att kapitalisera en sträng i PHP, kan du använda funktionen "ucwords()". Detta kommer att förvandla den första bokstaven i varje ord i en sträng till en stor bokstav.
 
 ```PHP
-$str = "hej på dig";
-echo ucwords($str); // Output: Hej På Dig
+$str = "hej, jag heter john smith";
+echo ucwords($str);
 ```
+Output: Hej, Jag Heter John Smith
 
-# Djupdykning
-Det finns även andra funktioner och metoder inom PHP som kan användas för att konvertera en sträng till stora bokstäver. Till exempel `strtoupper()` som returnerar en sträng där alla bokstäver är stora eller `mb_convert_case()` som kan hantera flerspråkiga strängar.
+För att helt kapitalisera en sträng, kan du använda funktionen "strtoupper()". Detta kommer att förvandla alla bokstäver i en sträng till stora bokstäver.
 
-Det är också viktigt att notera att olika språk och plattformar kan ha olika standarder för att konvertera strängar till stora bokstäver. Det är därför viktigt att se över dokumentationen för det specifika språket eller plattformen du arbetar med.
+```PHP
+$str = "välkommen till min blogg";
+echo strtoupper($str);
+```
+Output: VÄLKOMMEN TILL MIN BLOGG
 
-# Se även
-- [PHP's officiella dokumentation för ucfirst()](https://www.php.net/manual/en/function.ucfirst.php)
-- [PHP's officiella dokumentation för ucwords()](https://www.php.net/manual/en/function.ucwords.php)
-- [PHP's officiella dokumentation för strtolower()](https://www.php.net/manual/en/function.strtolower.php)
-- [MB_STRING-dokumentationen för mb_convert_case()](https://www.php.net/manual/en/function.mb-convert-case.php)
+Det finns också möjlighet att bara kapitalisera första bokstaven i en sträng med hjälp av "ucfirst()". Detta kan vara användbart om du vill skapa rubriker eller förnamn.
+
+```PHP
+$str = "jennifer aniston";
+echo ucfirst($str);
+```
+Output: Jennifer aniston
+
+## Deep Dive
+
+En annan viktig funktion inom PHP är "mb_convert_case()". Med denna funktion kan du ange vilken typ av kapitalisering du vill ha för en sträng, som "MB_CASE_TITLE" för att göra alla första bokstäver i varje ord stora.
+
+```PHP
+$str = "hur annonserar jag min blogg?";
+echo mb_convert_case($str, MB_CASE_TITLE, "UTF-8");
+```
+Output: Hur Annonserar Jag Min Blogg?
+
+Det är också viktigt att komma ihåg att språket påverkar hur en sträng kapitaliseras. Om du jobbar inom ett annat språk än engelska, kan du använda "setlocale()" för att ställa in rätt språk och därmed få önskad kapitalisering.
+
+## Se även
+
+- [PHP Manual: ucwords()](https://www.php.net/manual/en/function.ucwords.php)
+- [PHP Manual: strtoupper()](https://www.php.net/manual/en/function.strtoupper.php)
+- [PHP Manual: ucfirst()](https://www.php.net/manual/en/function.ucfirst.php)
+- [PHP Manual: mb_convert_case()](https://www.php.net/manual/en/function.mb-convert-case.php)
+- [PHP Manual: setlocale()](https://www.php.net/manual/en/function.setlocale.php)

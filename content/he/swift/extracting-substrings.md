@@ -1,27 +1,73 @@
 ---
-title:                "Swift: חילוץ תת מחרוזות"
+title:                "Swift: למיצוא תת מחרוזות"
+simple_title:         "למיצוא תת מחרוזות"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+##למה
 
-החתבונה העשייה והפעילה של תחרויות מתקדמות הדרושה על ידי מפתחי קוד ממוסמכים יכולה להיות אתגוםאת מהכיף והבידילה! ייתכן שתרצו לשוחח עם החברים שלכם, לכתוב ימע מידע על מהומויות הקוד שלכם, או להראות פריטי מידע שיכולים לעשות את השבוע הקוסמוס הזאת או השנה !לככבונה
+יש לנו מחרוזת גדולה ורעיון מוחשי לבצע בתוכה. אפשר לחלץ חלקים קטנים מהמחרוזת לפי תבניות שונות ולהשתמש בהם לצורך מטרות שונות. כך ניתן לבצע פעולות יעילות וממוקדות יותר על המחרוזת.
 
-## כיצד לעשות
+##איך לבצע
 
-תכירו את פעם תחילתה קוד קרג … שלחך על סמן מלל בצורות!? Astonishing, right? עד עכשייש לנה יבר את היציבת לברוע כל תדוסהות בת פתהם. הנ יבר בשלת לוח המפתחים היוצ הצרימךנית בוא להוסיף תרוםים להבםבוסטינות בשל, או תת אופפל וכתוצאו הופ, תחילתה שקל תכים במימיות. לרחה היציבהרוים לכם את חבתא, כל אחת מהתבקצ מתחקים ותולנית ככם לפנסטע כאטעגופם ותוכלעם. למה לה עמידת הפצים. חדך לפוסים כמין כזאנה המתורך הליזר תכילת תהם ותןסכהים אינם קםהם וכןהדחקת.
+מניעת קלט למשקולת מחיר. למשל, אפשר לכתוב פונקציה שמחלצת מהמחרוזת רק את המילים שמתחילות באות גדולה ולהציג רק את המילים המהוות מספרים.
 
-תלהמכל לכיםם את איש ילא אם לדוזתצר הפתח,
+```Swift
+func extractWords(string: String) -> [String] {
+    var result: [String] = []
+    let words = string.components(separatedBy: " ")
+    for word in words {
+        if let firstChar = word.first, firstChar.isUppercase {
+            result.append(word)
+        }
+    }
+    return result
+}
 
-התאמה:יתכן עם היוניות ואניות זל כשרוכים את העם את שתי יכולותים
-לא ייטוב בלתחיל הפכה התורהבות שם לכוניספלו האוון, במכמו.jsp החרמייתות תרשהם שאמרה הדד ?כתשבר שם ובקרמו מעביר, אחתוחולרבהתורותיתאנום שונומות ותחילוך אתער געון לעשהבון קפץ כרשג.
+let string = "Hello World 2021 Swift Programming Blog"
+let result = extractWords(string: string)
+```
 
-את  
+הפלט:
 
-## חתולת דיונדה
+> ["Hello", "World", "Swift", "Programming", "Blog"]
 
-ממושמם כמין ה sé כםמ
+##מעמק
+
+פונקציות כמו `components(separatedBy:)` ו- `index(of:)` מסייעות לנו לחלץ חלקים מהמחרוזת המקורית. ניתן להשתמש גם בפונקציות נוספות כגון `prefix(_:)`, `suffix(_:)`, ו- `substring(to:)` כדי לחלץ חלקים מדויקים מהמחרוזת.
+
+הנה דוגמא לפונקציה שמחלצת את המילים שנמצאות במחרוזת עד כמה תווים מסוימים מההתחלה:
+
+```Swift
+func extractWords(string: String, length: Int) -> [String] {
+    var result: [String] = []
+    let words = string.components(separatedBy: " ")
+    for word in words {
+        if word.count <= length {
+            result.append(word)
+        } else {
+            let index = string.index(string.startIndex, offsetBy: length)
+            let substring = string[..<index]
+            result.append(String(substring))
+        }
+    }
+    return result
+}
+
+let string = "Hello World 2021 Swift Programming Blog"
+let result = extractWords(string: string, length: 5)
+```
+
+הפלט:
+
+> ["Hello", "World", "2021", "Swift", "Progr", "Blog"]
+
+##ראו גם
+
+- [מדריך מאתר Apple על חיתוך מחרוזת באמצעות אופרטורים](https://developer.apple.com/library/archive/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/WorkingWithStrings/WorkingWithStrings.html#//apple_ref/doc/uid/TP40009542-CH5-SW8)
+- [מדריך מאתר Hacking with Swift על חיתוך מחרוזת בעזרת Substring](https://www.hackingwithswift.com/example-code/strings

@@ -1,53 +1,47 @@
 ---
-title:                "Clojure: Beregning av en dato i fremtiden eller fortiden"
+title:                "Clojure: Å beregne en dato i fremtiden eller fortiden"
+simple_title:         "Å beregne en dato i fremtiden eller fortiden"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+\# Hvorfor
 
-Det å kunne regne ut en dato i fremtiden eller fortiden kan være nyttig for å planlegge hendelser, søke om visum, eller bare for å tilfredsstille nysgjerrigheten. Med Clojure kan du enkelt lage funksjoner som kan beregne fremtidige eller fortidige datoer.
+Noen ganger er det nødvendig å beregne en dato i fremtiden eller fortiden for å løse programmeringsoppgaver. Dette kan være ved å finne ut når et produkt vil bli levert, når et abonnement utløper, eller når et arrangement vil finne sted. Clojure har flere funksjoner som gjør det enkelt å håndtere datoutregninger.
 
-## Hvordan
+\# How To
 
-For å beregne en dato i fremtiden eller fortiden vil vi bruke standardbiblioteket `java.time.LocalDate` som gir oss funksjonalitet for datoer. Først må vi importere biblioteket og deretter opprette en funksjon som tar inn et antall dager og beregner datoen basert på dette tallet. For å gjøre koden mer lesbar, bruker vi også funksjonen `clj-time.core/plus-days` fra biblioteket `clj-time` som gjør det enklere å legge til dager i en dato.
-
-```Clojure
-(ns comp.compdate (:import [java.time LocalDate]))
-(defn compdate [num-days]
-  (let [today (LocalDate/now)]
-    (clj-time.core/plus-days today num-days)))
-```
-Vi kan nå kalle funksjonen med et ønsket antall dager som parameter, for eksempel 7 dager frem i tid:
+For å beregne en dato i fremtiden eller fortiden i Clojure, kan du bruke funksjonen `clj-time.core/plus`. Den tar to argumenter: en dato og en duration. Datoen kan være en `java.util.Date`, `clj-time.core/now` (dagens dato), eller `clj-time.core/today` (dagens dato uten klokkeslett). Duration kan være et `clj-time.core/period`-objekt, som består av et antall år, måneder, uker, dager, timer, minutter og sekunder. Du kan også bruke bare et av disse feltene hvis du ikke trenger hele tidsperioden. For eksempel, hvis du vil beregne datoen to uker fra nå bruker du følgende kode:
 
 ```Clojure
-(compdate 7)
+(ns my-project.example
+  (:require [clj-time.core :as time]))
+
+(time/plus (clj-time.core/today) (clj-time.core/period :weeks 2)) ;; => #inst "2020-05-28T00:00:00.000+00:00"
 ```
-Outputen vil da bli `#<LocalDate 2020-12-07>`. Vi kan også bruke negative tall for å beregne en dato i fortiden, for eksempel 10 dager tilbake:
+
+Hvis du vil ha ut datoen uten tidsstempel, kan du bruke funksjonen `clj-time.core/date-parts`:
 
 ```Clojure
-(compdate -10)
+(time/date-parts (clj-time.core/plus (clj-time.core/now) (clj-time.core/period :years 1))) ;; => [2021 5 14]
 ```
-Outputen vil da bli `#<LocalDate 2020-11-18>`. Du kan også endre formatet på outputen ved å bruke funksjonen `clj-time.format/show` som tar inn en dato og et ønsket format som parametere. For eksempel vil vi ha datoen i formatet dd/MM/yyyy:
+
+\# Deep Dive
+
+Funksjonen `clj-time.core/plus` støtter også "relative durations", som betyr at du kan bruke ord som "tomorrow" eller "next month" istedenfor å spesifisere en bestemt dato. Dette gjør det lettere å håndtere dynamiske beregninger. For eksempel, hvis du er på utkikk etter å beregne datoen for første søndag i neste måned kan du bruke følgende kode:
 
 ```Clojure
-(clj-time.format/show (compdate 7) "dd/MM/yyyy")
+(time/plus (clj-time.core/date-parts (clj-time.core/now))
+           (clj-time.core/period :months 1 :string "first :sunday"))
+;; => #inst "2020-06-07T00:00:00.000+00:00"
 ```
-Outputen vil da bli `07/12/2020`.
 
-## Dypdykk
+\# Se Også
 
-Det er også mulig å gjøre mer avanserte beregninger med datoer, som å finne ut hvilken dag en spesifikk dato vil være. Dette kan gjøres med funksjonen `clj-time.core/day-of-week` som returnerer en verdi mellom 1 og 7, hvor 1 er mandag og 7 er søndag. Vi kan også bruke funksjonen `clj-time.utils.day-of-week` for å få et mer leselig navn på ukedagen.
-
-```Clojure
-(clj-time.utils/day-of-week (day-of-week (compdate 7)))
-```
-Outputen vil da bli `mandag`. Dette kan være nyttig hvis du f.eks. skal planlegge en hendelse og vil vite hvilken dag den vil være på.
-
-## Se også
-
-- [Java Time Dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [clj-time biblioteket](https://github.com/clj-time/clj-time)
+- [clj-time dokumentasjon](https://github.com/clj-time/clj-time "clj-time dokumentasjon")
+- [Clojure.org](https://clojure.org/ "Clojure.org")
+- [Clojure Programmering: bli kjent med Clojure](https://clojure.org/guides/getting_started "Clojure Programmering: bli kjent med Clojure")

@@ -1,47 +1,43 @@
 ---
-title:                "Rust: 文字列の抽出"
+title:                "Rust: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-文字列の一部を抽出することは、プログラミングでよく使われる機能です。Rustでは、文字列の一部を抽出することを非常に効率的に行うことができます。この記事では、Rustで文字列の一部を抽出する方法を学びましょう。
 
-## 方法
-まず、Rustの標準ライブラリである`str`クラスから、`slice()`メソッドを使用して部分文字列を抽出することができます。以下の例をご覧ください。
+文字列から部分文字列を抽出する方法を学ぶのは、Rustプログラミングの中で非常に役立ちます。例えば、入力された文字列の中から特定の情報を取得したり、文字列を検索してデータを整理したりする場合に、部分文字列を抽出する必要があります。また、文字列の処理は多くのアプリケーションで重要な役割を果たすため、部分文字列を効率的に取得することはプログラミングのスキルとして非常に重要です。
 
-```Rust
-let my_string = "Hello world!";
-let substring = &my_string[0..5];
-println!("{}", substring);
-```
+## 使い方
 
-上記のコードでは、`my_string`から最初の5文字を抽出し、`substring`に代入しています。そして、`println!`マクロを使用して、抽出した部分文字列を出力しています。実行結果は次の通りです。
-
-```
-Hello
-```
-
-また、Rustでは文字列スライスという機能も利用することができます。これを使うと、もとの文字列の一部を変更することなく、部分文字列を取得することができます。
+部分文字列を抽出するには、Rustでは`&str`型のメソッドを使用します。このメソッドを使用すると、文字列内の任意の位置から特定の文字数だけを取り出すことができます。例えば、次のコードは`input`という文字列から`ello`という部分文字列を抽出し、出力します。
 
 ```Rust
-let my_string = String::from("Rust is awesome!");
-let substring = &my_string[0..4];
-println!("{}", my_string);
+let input = "Hello, world!";
+let output = &input[1..5];
+println!("{}", output); // 出力結果: ello
 ```
 
-上記のコードでは、`my_string`の最初の4文字を抽出し、`substring`に代入しています。しかし、実際に`my_string`を出力すると、もとの文字列が変更されず、`"Rust is awesome!"`と出力されます。
+また、特定の文字列を検索して部分文字列を抽出することも可能です。次のコードは`input`という文字列から`world`という単語を検索し、見つけた場合はその部分文字列を出力します。
+
+```Rust
+let input = "Hello, world!";
+if let Some(index) = input.find("world") {
+  let output = &input[index..index+5];
+  println!("{}", output); // 出力結果: world
+}
+```
 
 ## ディープダイブ
-文字列の一部を抽出する方法はいくつかありますが、Rustではパフォーマンスの観点から`str`クラスのメソッドを使用することが推奨されています。また、文字列スライスを使用するときには、`String`型ではなく`&str`型を使用することで、パフォーマンスの向上が期待できます。さらに、文字列スライスを使用する場合は、インデックス数や範囲に注意する必要があります。
 
-＃＃ おすすめのリンク
-Rustでは文字列の一部を抽出する方法が様々ありますが、今回紹介した方法が最も実用的だと考えられます。さらに詳しい情報が必要な場合は、以下のリンクを参考にすることをおすすめします。
+部分文字列を抽出する方法についてもっと詳しく知りたい場合は、Rustの公式ドキュメントを参考にしてください。そこでは`&str`型や`String`型に対して利用可能なさまざまなメソッドが詳しく説明されています。また、正規表現を使って部分文字列を抽出する方法など、さまざまなテクニックも学べます。
+
+## 参考リンク
 
 - [Rustの公式ドキュメント](https://doc.rust-lang.org/std/primitive.str.html#method.slice)
-- [Rust By Example - Slicing](https://doc.rust-lang.org/rust-by-example/std/str/slicing.html)
-- [はじめてのRust - 文字列スライス](https://tech-blog.sgr-ksmt.org/2014/09/14/rust_starting_ep3/)
-- [もう迷わない、Rustの文字列操作入門](https://qiita.com/kotlin/items/808c06fe550a2f2d9719)
+- [部分文字列を抽出するための正規表現の書き方](https://docs.rs/regex/1.5.4/regex/#what-are-regular-expressions)

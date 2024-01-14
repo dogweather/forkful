@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Utskrift av debuggutdata"
+title:                "Rust: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/printing-debug-output.md"
 ---
 
@@ -9,37 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva kod är inte alltid en enkel uppgift och ibland behöver vi hjälp för att hitta buggar och fel i vår kod. Ett bra sätt att göra detta är genom att skriva ut felsökningsmeddelanden, eller "debug output", i vår kod. Det kan hjälpa oss att förstå hur vår kod fungerar och hitta eventuella problem som behöver lösas.
+I många programmeringsspråk är det vanligt att använda utskrift och felmeddelanden för att felsöka kod. Men i Rust, är det inte lika vanligt. Så varför skulle man vilja använda sig av debug-utskrifter i Rust?
 
-## Hur man gör det
+Att skriva ut till konsolen kan vara ett användbart verktyg för att se vad som händer i din kod i realtid. Det kan hjälpa dig att förstå hur olika värden ändras medan koden körs och kan vara till stor hjälp vid felsökning.
 
-För att skriva ut felsökningsmeddelanden behöver vi använda ett inbyggt makro i Rust som kallas "println!". Det fungerar på samma sätt som "print" eller "println" i andra programmeringsspråk, men har några extra funktioner som är specifika för Rust.
+## Hur du gör
 
-Enklast är att använda detta makro inuti en "main" funktion, men det kan också användas på andra platser i koden. Här är ett exempel på hur du kan skriva ut ett meddelande:
+För att skriva ut debug-utskrifter i Rust behöver du använda dig av makron "println!" eller "dbg!". Dessa makron tar in variabler och värden som ska skrivas ut och skriver sedan ut dem till konsolen.
 
-```
-fn main() {
-    let num = 5;
-    println!("Värdet på num är {}", num);
-}
-```
+```Rust
+let num = 42;
+println!("Talet är: {}", num);
+// Output: Talet är: 42
 
-Körexemplet skulle ge följande output:
-
-```
-Värdet på num är 5
+dbg!(num);
+// Output: [src/main.rs:5] num = 42
 ```
 
-"{}" fungerar som en platsmarkör där värdet av "num" kommer att ersätta platsmarkören när koden körs.
+Du kan även använda dig av "eprintln!" eller "edbg!" för att skriva till standard error istället för standard output.
 
 ## Djupdykning
 
-Det finns flera sätt att anpassa hur ett felsökningsmeddelande ser ut, till exempel genom att inkludera datatypen eller ändra formateringen av värdena. Detta kan vara användbart när vi behöver skriva ut mer komplex data.
+I Rust finns det olika typer av utskriftsmakro, såsom "print!", "println!", "eprint!" och "eprintln!". Skillnaden mellan dem är att "println!" och "eprintln!" lägger till en radbrytning efter varje utskrift, medan "print!" och "eprint!" inte gör det.
 
-En annan användbar funktion är "eprintln!" som kan användas för att skriva ut felmeddelanden. Detta gör det lättare att hitta och åtgärda eventuella fel i koden.
+Vidare, när du använder makron "dbg!" eller "edbg!", används makronet "format!" internt för att skapa den sträng som ska skrivas ut. Detta kan vara användbart om du vill skapa egna debug-utskrifter och behöver mer kontroll över formateringen.
 
 ## Se även
 
-- [Rust makroer](https://doc.rust-lang.org/book/ch19-06-macros.html)
-- [Syntax Guide för println! Makrot](https://doc.rust-lang.org/std/macro.println.html)
-- [Rust felsökning](https://rust-lang.github.io/rustup/concepts/debugging.html)
+- [Rust dokumentation om debugging](https://doc.rust-lang.org/std/macro.dbg.html)
+- [Debugging i Rust med Visual Studio Code](https://dev.to/creativcoder/debugging-rust-with-vs-code-3mjs)
+- [Debugging i Rust med GDB](https://medium.com/@dguntur/code-debugging-in-rust-2f1c3a792f67)

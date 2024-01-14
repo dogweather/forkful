@@ -1,34 +1,51 @@
 ---
-title:                "Swift: Alimerkkijonojen erottaminen"
+title:                "Swift: Alirangon erottaminen"
+simple_title:         "Alirangon erottaminen"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Substringien erottamisen hyödyt
+## Miksi
 
-Substringit eli osajonot ovat tärkeitä osia monissa ohjelmoinnin tehtävissä, kuten tekstinkäsittelyssä ja tiedon etsimisessä. Substringien erottaminen mahdollistaa tietyn osan tekstin käsittelyä erikseen, ja siten helpottaa monimutkaisia ohjelmointitehtäviä.
+Substringien erottaminen on tärkeä osa Swift-ohjelmointia, sillä se mahdollistaa merkkijonojen tarkemman käsittelyn. Näin voit esimerkiksi etsiä tiettyjä sanoja tai lauseita tekstistäsi helpommin.
 
-## Näin teet sen: Koodiesimerkkejä ja tulosteita
+## Miten
+
+Substringien erottaminen Swiftissä on yksinkertaista. Voit käyttää `substring()`-funktiota, joka ottaa parametreikseen halutun merkkijonon ja sen enimmäispituuden. Tämän jälkeen voit käyttää alku- ja loppuindeksejä määritelläksesi, missä kohtaa merkkijonosta haluat ottaa substringin. Katso esimerkki alla:
 
 ```Swift
-let teksti = "Tämä on esimerkki tekstistä."
-let alku = teksti.index(teksti.startIndex, offsetBy: 5)
-let loppu = teksti.index(teksti.endIndex, offsetBy: -7)
-let osajono = teksti[alku..<loppu]
+// Alkuperäinen merkkijono
+let teksti = "Tämä on esimerkki merkkijonosta"
 
-print(osajono) // tulostaa "on esimerkki teksti"
+// Splitataan teksti välilyöntien kohdalta
+let sanat = teksti.components(separatedBy: " ")
+
+// Tulostetaan kaikki sanat yhdessä rivissä
+print(sanat.joined(separator: " "))
+
+// Tulostaa: Tämä on esimerkki merkkijonosta
+
+// Otetaan substring "esimerkki" käyttäen alku- ja loppuindeksejä
+let esimerkki = teksti.substring(from: 8, to: 16)
+
+// Tulostetaan substring "esimerkki"
+print(esimerkki)
+
+// Tulostaa: esimerkki
 ```
 
-Yllä oleva koodiesimerkki osoittaa, miten voit käyttää `index` -funktiota määrittämään halutun substringin alku- ja loppukohta. Tämän jälkeen voit käyttää `range` toimintoa erottamaan kyseisen osajonon ja tulostamaan sen.
+## Syväsukellus
 
-## Sukella syvemmälle: Substringien erottamisen tiedostaminen
+Substringien erottaminen on hyödyllistä myös esimerkiksi silloin, kun haluat muuttaa osan merkkijonosta toiseksi. Voit esimerkiksi korvata tietyt sanat tai merkit toisilla haluamillasi sanoilla tai merkeillä. Voit myös käyttää erilaisia metodeja, kuten `prefix()` ja `suffix()` erottaaksesi merkkijonon alku- ja loppuosat.
 
-Substringien erottamisessa on tärkeää kiinnittää huomiota alku- ja loppupisteiden määrittämiseen, sillä virheellisillä koodeilla voi olla merkittäviä vaikutuksia lopullisiin tuloksiin. Lisäksi on tärkeää ymmärtää, miten `index` ja `range` -funktiot toimivat, jotta voit käyttää niitä tehokkaasti.
+Merkkijonojen käsittely ja substringien erottaminen ovat tärkeitä taitoja, joita jokaisen Swift-kehittäjän tulisi hallita. Ne avaavat uusia mahdollisuuksia koodin käsittelyyn ja tekevät siitä tehokkaampaa.
 
 ## Katso myös
 
-* [Strings - Apple Developer Documentation](https://developer.apple.com/documentation/swift/strings)
-* [Substring - Apple Developer Documentation](https://developer.apple.com/documentation/swift/substring)
+- [Swiftin virallinen dokumentaatio substringien erottamiselle](https://developer.apple.com/documentation/swift/string/1539162-substring)
+- [Tietoa merkkijonojen käsittelystä Swiftissä](https://www.swift-programming-4-you.com/manipulating-strings.html)
+- [Esimerkkejä substringien erottamisesta käyttäen eri metodeja](https://www.tutorialspoint.com/extracting-substrings-in-swift)

@@ -1,59 +1,49 @@
 ---
-title:                "Haskell: Leser kommandolinjeargumenter"
+title:                "Haskell: Lesing av kommandolinjeargumenter"
+simple_title:         "Lesing av kommandolinjeargumenter"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Hvorfor bør noen interessere seg for å lese kommandolinje-argumenter? Det er viktig å kunne lese og behandle denne informasjonen for å kunne skrive effektive og fleksible programmer.
 
-## Hvordan
-Det finnes flere måter å lese kommandolinje-argumenter på i Haskell, men følgende metode vil være den enkleste og mest fleksible. Først må vi importere System.Environment og bruke getArgs funksjonen for å lagre de argumentene som programmet mottar fra kommandolinjen.
+Hvorfor bry seg med å lese kommandolinjeargumenter? Det kan være nyttig når du ønsker å gi programmene dine forskjellige input uten å endre koden hver gang.
 
-```Haskell
-import System.Environment --importerer nødvendig modul
-main = do
-  args <- getArgs -- lagrer argumentene i en liste kalt args
-  print args -- printer listen med argumenter
-```
+## Slik gjør du det
 
-La oss si at vi kaller programmet vårt med følgende kommandolinje-argumenter:
-```Haskell
-./program arg1 arg2 arg3
-```
-
-Da vil utskriften bli:
-```Haskell
-["arg1", "arg2", "arg3"]
-```
-
-Som vi kan se, har getArgs-funksjonen lagret argumentene i en liste med strenger. Dette gjør det enkelt å arbeide med dem videre i koden.
-
-## Dykk dypere
-Det finnes også en annen måte å lese kommandolinje-argumenter på, ved hjelp av getProgName og getArgs-funksjonene. Denne metoden gir oss også mulighet til å arbeide med programmets navn i tillegg til argumentene.
+Å lese kommandolinjeargumenter i Haskell er enkelt. Først må du importere System.Environment-modulen. Deretter kan du bruke funksjonen getArgs for å hente argumentene som ble gitt til programmet ditt. Her er et eksempel:
 
 ```Haskell
 import System.Environment
+
 main = do
-  progName <- getProgName
-  args <- getArgs
-  print ("Programnavn: " ++ progName)
-  print ("Argumenter: " ++ show args)
+    args <- getArgs
+    putStrLn ("Første argument: " ++ head args)
+    putStrLn ("Andre argument: " ++ args !! 1)
 ```
 
-Kjører vi programmet med samme argumenter som ovenfor, vil utskriften bli:
-```Haskell
-Programnavn: program
-Argumenter: ["arg1", "arg2", "arg3"]
+`getArgs` returnerer en liste av strenger, der hvert element i listen er et argument gitt fra kommandolinjen. I eksempelet over bruker vi `head` og `!!`-operatorene for å få tak i de første to argumentene og skrive dem ut til konsollen.
+
+Så når du kjører dette programmet fra kommandolinjen, for eksempel med argumentene "Hei" og "Haskell", vil outputen være:
+
+```
+Første argument: Hei
+Andre argument: Haskell
 ```
 
-Vi kan også bruke funksjonen `lookupEnv` fra System.Posix.Env til å sjekke om et visst kommandolinje-argument er definert. På denne måten kan vi gjøre programmet mer robust og unngå unødvendige feil.
+Du kan også bruke funksjonen `length` for å få totalt antall argumenter gitt til programmet ditt, og deretter bruke en løkke for å få tak i alle argumentene.
+
+## Dykk dypere
+
+Nå som du vet hvordan du kan lese kommandolinjeargumenter, kan du begynne å bruke dette i mer komplekse programmer. For eksempel kan du ta inn brukerinput og bruke det som argumenter til funksjoner eller algoritmer.
+
+Det er også viktig å være oppmerksom på at rekkefølgen på argumentene i `getArgs`-listen vil være den samme som rekkefølgen de ble gitt fra kommandolinjen. Dette kan være viktig hvis du skal lese inn forskjellige typer data, som for eksempel tall eller tekst.
 
 ## Se også
-- [Dokumentasjon for System.Environment-modulen](https://hackage.haskell.org/package/base/docs/System-Environment.html)
-- [Tutorial om arbeid med kommandolinje-argumenter i Haskell](https://www.tutorialspoint.com/what-are-command-line-arguments-in-haskell)
 
-Takk for at du leste denne bloggposten om lesing av kommandolinje-argumenter i Haskell. Vi håper du har lært noe nyttig og fått en bedre forståelse for dette konseptet. Lykke til med å implementere det i dine egne programmer!
+- [Haskell.org sin guide til kommandolinjeargumenter](https://www.haskell.org/onlinereport/haskell2010/haskellch11.html)
+- [Haskell Wikibooks sin guide til system IO](https://en.wikibooks.org/wiki/Haskell/Input_and_output)

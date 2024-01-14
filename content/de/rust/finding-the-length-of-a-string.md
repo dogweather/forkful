@@ -1,68 +1,47 @@
 ---
-title:                "Rust: Die Länge eines Strings finden"
+title:                "Rust: Die Länge eines Strings finden."
+simple_title:         "Die Länge eines Strings finden."
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum 
 
-In diesem Blogpost geht es um die Länge von Strings und wie sie in Rust programmiert werden kann. Das Wissen darüber ist unerlässlich für alle, die mit Strings in ihren Programmen arbeiten. Also lass uns loslegen und herausfinden, wie wir die Länge eines Strings in Rust finden können!
+Das Finden der Länge eines Strings mag auf den ersten Blick wie eine einfache Aufgabe erscheinen, aber es ist ein wichtiger Teil des Programmierens. Indem man die Länge eines Strings kennen und verwenden kann, kann man komplexe Algorithmen und Datenstrukturen bauen.
 
-## Wie geht das?
+## Wie geht man vor
 
-Um die Länge eines Strings in Rust zu finden, können wir die integrierte Funktion `len()` verwenden. Diese Funktion gibt die Anzahl der Bytes des Strings zurück. Hier ist ein einfaches Beispiel:
-
-```Rust
-let string = "Hallo Welt";
-let length = string.len();
-println!("{}", length);
-```
-
-Die Ausgabe wäre `10`, da der String "Hallo Welt" aus 10 Bytes besteht.
-
-Es ist wichtig zu beachten, dass die `len()` Funktion die Anzahl der Bytes und nicht der Buchstaben zählt. Da Rust UTF-8 als Standard-Encoding verwendet, können Buchstaben mit mehr als einem Byte belegt sein.
-
-Um die Anzahl der Buchstaben im String zu zählen, können wir die `chars()` Methode verwenden und dann die `count()` Funktion anwenden. Hier ein Beispiel:
+Um die Länge eines Strings in Rust zu finden, gibt es eine eingebaute Funktion namens `len()`. Diese Funktion gibt die Anzahl der Unicode-Scalar-Werte eines Strings zurück, was der Anzahl der Buchstaben im String entspricht. Schauen wir uns ein einfaches Beispiel an:
 
 ```Rust
-let string = "Hello World";
-let char_count = string.chars().count();
-println!("{}", char_count);
-```
-
-Die Ausgabe wäre wiederum `11`, da der String aus 11 Buchstaben besteht.
-
-## Tiefer eintauchen
-
-Es ist auch möglich, die Anzahl der Bytes eines bestimmten Zeichens in einem String zu finden. Dafür können wir die `char_indices()` Methode verwenden, die eine Iterator-Schnittstelle zurückgibt. Hier ein Beispiel:
-
-```Rust
-let string = "Hello 🌎";
-for (i, c) in string.char_indices() {
-    println!("Index: {}, Zeichen: {}", i, c);
+fn main() {
+    let my_string = String::from("Hallo");
+    println!("Die Länge meines Strings ist {}", my_string.len());
 }
-
 ```
 
-Die Ausgabe sieht folgendermaßen aus:
+Die Ausgabe dieses Codes wird `Die Länge meines Strings ist 5` sein. Wie man sehen kann, gibt `len()` die Anzahl der Buchstaben im String zurück, unabhängig von der tatsächlichen Anzahl von Bytes, die der String belegt.
 
-```
-Index: 0, Zeichen: H
-Index: 1, Zeichen: e
-Index: 2, Zeichen: l
-Index: 3, Zeichen: l
-Index: 4, Zeichen: o
-Index: 5, Zeichen:  
-Index: 6, Zeichen: 🌎
+Ein weiteres wichtiges Konzept beim Finden der Länge eines Strings ist, dass Unicode-Scalar-Werte verschiedene Längen haben können. Zum Beispiel hat das deutsche Umlaut `ä` einen Unicode-Scalar-Wert von 228, während das englische `a` einen Unicode-Scalar-Wert von 97 hat. Dies bedeutet, dass die Länge von Strings mit Umlauten möglicherweise nicht der tatsächlichen Anzahl von Zeichen entspricht. Hier ist ein Beispiel, das dies veranschaulicht:
+
+```Rust
+fn main() {
+    let my_string = String::from("Hällo");
+    println!("Die Länge meines Strings ist {}", my_string.len());
+}
 ```
 
-Wie du sehen kannst, gibt es für das Emoji 🌎 mehrere Byte-Indizes. Dies liegt daran, dass es aus zwei Bytes besteht.
+Die Ausgabe dieses Codes wird `Die Länge meines Strings ist 5` sein, obwohl es nur 4 Zeichen im String gibt. Dies liegt daran, dass der Umlaut `ä` einen Unicode-Scalar-Wert von 228 hat, was von `len()` mitgezählt wird.
+
+## Tiefergehend
+
+Ein wichtiger Punkt beim Finden der Länge eines Strings in Rust ist das Verständnis der Unicode-Darstellung. Rust verwendet UTF-8-Codierung, was bedeutet, dass Sonderzeichen und Umlaute mehr als ein Byte belegen können. Bei der Verwendung von `len()` wird jedoch die Anzahl der Unicode-Scalar-Werte zurückgegeben, unabhängig von der tatsächlichen Anzahl von Bytes. Dies bedeutet, dass die Länge eines Strings in Rust immer die Anzahl der Zeichen zurückgibt, während die tatsächliche Anzahl von Bytes variiert.
 
 ## Siehe auch
 
-- Die offizielle Rust Dokumentation zur `len()` Funktion: https://doc.rust-lang.org/std/primitive.str.html#method.len
-- Ein Artikel über UTF-8 und Strings in Rust: https://wiki.sei.cmu.edu/confluence/display/RUST/STR+36%3A+Ensure+that+the+length+of+a+string+is+what+is+expected
-- Die offizielle Rust Dokumentation zur `chars()` Methode: https://doc.rust-lang.org/std/string/struct.String.html#method.chars
+- [Offizielle Dokumentation von Rust zur Funktion len()](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
+- [Tutorial von Rust zu Unicode und UTF-8](https://www.rust-lang.org/learn/strings#unicode-and-utf-8)

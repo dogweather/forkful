@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Satunnaislukujen luominen"
+title:                "Ruby: Satunnaisten lukujen generointi"
+simple_title:         "Satunnaisten lukujen generointi"
 programming_language: "Ruby"
-category:             "Numbers"
+category:             "Ruby"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/generating-random-numbers.md"
 ---
 
@@ -9,43 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi kukaan haluaisi luoda satunnaisia numeroita ohjelmoinnissa? Satunnaiset numerot ovat hyödyllisiä monissa eri tilanteissa, kuten arpajaisissa, peleissä ja tietokonealgoritmeissa. Niitä voidaan myös käyttää testaamisessa ja simulaatioissa luomaan erilaisia skenaarioita. Ruby tarjoaa helpon tavan luoda satunnaisia numeroita ohjelmien tarpeisiin.
+Miksi joku haluaisi käyttää satunnaislukugeneraattoria Ruby-ohjelmoinnissa? Satunnaislukujen luominen on tärkeä osa monia ohjelmointitehtäviä, kuten pelien kehittämistä tai kryptografian toteuttamista. 
 
-## Miten
+## Miten tehdä
 
-Käytä `rand`-metodia luodaksesi satunnaisen kokonaisluvun välillä 0 ja 10:
-
-```Ruby
-rand(11)
-```
-
-Tämä palauttaa satunnaisen numeron väliltä 0-10, mukaan lukien 0 ja 10. Voit myös käyttää `rand`-metodia luodaksesi satunnaisen desimaaliluvun väliltä 0 ja 1:
+Satunnaislukujen luomiseen on olemassa monia tapoja Rubyssa, mutta yleisimmin käytetyt ovat `rand` ja `srand` -funktiot. Seuraavassa on esimerkki koodista, joka generoi kolme satunnaista kokonaislukua välillä 1-10:
 
 ```Ruby
-rand()
+3.times do
+  puts rand(1..10)
+end
 ```
 
-Voit asettaa myös ylärajan `rand`-metodin argumentilla:
+Tämä koodi palauttaa seuraavanlaisen tulosteen:
+
+```
+6
+2
+9
+```
+
+Voit myös käyttää `srand` -funktiota asettamaan satunnaislukujen siemenen, jolloin sama koodi tuottaa aina saman tuloksen. Esimerkiksi:
 
 ```Ruby
-rand(1..100) # palauttaa satunnaisen numeron väliltä 1-100, mukaan lukien 1 ja 100
+srand 123
+3.times do
+  puts rand(1..10)
+end
 ```
 
-Voit myös käyttää `Random`-luokkaa, joka tarjoaa enemmän vaihtoehtoja satunnaisten numeroiden generoimiseen:
+Tulostus olisi tässä tapauksessa aina:
 
-```Ruby
-random = Random.new # Luo uuden Random-olion
-random.rand(50) # palauttaa satunnaisen numeron väliltä 0-50
-random.rand(1.5..2.5) # palauttaa satunnaisen desimaaliluvun väliltä 1.5-2.5
+```
+8
+10
+3
 ```
 
-## Syvempää tietoa
+## Syvällisempi sukellus
 
-Ruby käyttää satunnaisen numeron generoimiseen Mersenne Twister -algoritmia, joka voi tuottaa jopa 2^19937-1 erilaista satunnaista lukusarjaa. Tämä tekee siitä erittäin tehokkaan ja luotettavan tavan generoida satunnaisia numeroita ohjelmoinnissa.
+Satunnaislukujen generointi perustuu yleensä laskennallisiin algoritmeihin, jotka perustuvat aiempaan siemenarvoon tai satunnaislukujen sarjaan. Tämän vuoksi samalla siemenarvolla generoituja satunnaislukuja kutsutaan pseudo-satunnaisluvuiksi, sillä niiden syntymiseen on olemassa tietty säännönmukaisuus. 
 
-On myös tärkeää muistaa, että nämä numerot eivät ole täysin satunnaisia, vaan ne perustuvat ennustettavaan algoritmiin. Tämä tarkoittaa, että jos sinulla on tarpeeksi tietoa ja aikaa, voit ennustaa seuraavan satunnaisen numeron.
+Ruby käyttää Mersenne twister -algoritmia satunnaislukujen generointiin. Tämä algoritmi on hyvin tehokas ja luotettava, mutta on tärkeää muistaa, että satunnaislukujen luominen voi olla haasteellista ja tarpeisiin soveltuvaa algoritmia on harkittava tapauskohtaisesti.
 
 ## Katso myös
 
-- [Ruby:Satunnaiset numerot](https://ruby-doc.org/core-2.6/Random.html)
-- [Mersenne Twister -algoritmi](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- Ruby:n viralliset ohjelmointiohjeet: https://www.ruby-lang.org/en/documentation/ri/
+- Mersenne twister -generaattorin selitys: https://en.wikipedia.org/wiki/Mersenne_Twister

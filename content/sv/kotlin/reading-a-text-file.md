@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Läsa en textfil"
+title:                "Kotlin: Läsning av en textfil"
+simple_title:         "Läsning av en textfil"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/reading-a-text-file.md"
 ---
 
@@ -9,41 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att läsa en textfil är en grundläggande uppgift för många programmerare. Det gör det möjligt att bearbeta och använda information som är lagrad i en enkel och läsbar form. Om du vill lära dig hur man läser en textfil i Kotlin, fortsätt läsa!
+Att läsa en textfil kan vara en grundläggande del av många programmeringsprojekt. Genom att läsa en textfil kan du lättare analysera data, spara information eller till och med interagera med andra program. Så låt oss ta en titt på hur man kan läsa en textfil med hjälp av Kotlin!
 
-## Hur man gör det
+## Hur man gör
 
-För att läsa en textfil i Kotlin behöver du först skapa en File-objekt som representerar din fil. Du kan då använda File-objektets readText () metod för att läsa innehållet i filen som en sträng.
+För att läsa en textfil i Kotlin behöver du först definiera en `File`-variabel som pekar på den specifika filen du vill läsa. Detta kan göras med hjälp av `File`-klassen, som har en konstruktor som tar emot en sträng som representerar sökvägen till filen. Så här kan det se ut:
 
 ```Kotlin
-val fil = Fil("exempel.txt")
-val innehåll = fil.readText()
-print(innehåll)
+val file = File("minTextfil.txt")
 ```
 
-Om innehållet i din fil är formaterat med rader separerade av "ny rad" -tecken kan du dela upp strängen till en lista med hjälp av split () -metoden.
+Nästa steg är att öppna filen för läsning. För att göra det behöver vi skapa en instans av `BufferedReader`-klassen och använda `FileReader` för att öppna filen. Så här kan det se ut:
 
 ```Kotlin
-val fil = Fil("exempel.txt")
-val innehåll = fil.readText()
-val rader = innehåll.split("\n")
-for (rad in rader) {
-    print(rad)
+val bufferedReader = BufferedReader(FileReader(file))
+```
+
+Sedan, för att faktiskt läsa innehållet i filen, behöver vi använda `readLine()`-metoden på vår `bufferedReader`-variabel. Denna metod läser en rad åt gången och returnerar `null` när den når slutet av filen. Du kan använda en `while`-loop för att läsa alla rader i filen på följande sätt:
+
+```Kotlin
+var line = bufferedReader.readLine()
+while (line != null) {
+    println(line)
+    line = bufferedReader.readLine()
 }
 ```
 
+Detta kommer att skriva ut varje rad i filen till konsolen. Du kan naturligtvis göra vilken behandling du vill med varje rad beroende på dina behov.
+
 ## Djupdykning
 
-När du läser en textfil i Kotlin finns det några saker du bör tänka på. För det första måste du se till att filen faktiskt finns på den plats som du anger i File-objektet. Om filen inte finns, kommer en FileNotFoundException att kastas.
+Nu när vi har täckt det grundläggande, låt oss ta en närmare titt på vad som faktiskt händer bakom kulisserna när vi läser en fil. När vi använder `BufferedReader` och `FileReader` i kombination, använder vi faktiskt en teknik som kallas *buffring*. Detta innebär att data i filen läses in i en innehållsförteckning i minnet och sedan läses bit för bit när det behövs. Detta är mycket effektivare än att läsa hela filen på en gång, särskilt när filen är väldigt stor.
 
-För det andra är det viktigt att förstå att läsa en textfil är en synkron operation, vilket innebär att all kod som kommer efter att filinnehållet lästs kommer att vänta på att operationen är klar. Om du vill göra flera saker med filinnehållet samtidigt, kan du göra det genom att använda en AsyncTask eller andra trådhanteringsmekanismer.
-
-Slutligen ska man komma ihåg att stänga filen efter läsningen är klar. Detta görs enkelt genom att kalla close () -metoden på File-objektet.
+Vi använder också *exceptions* när vi läser filer. En exception är ett fel som uppstår i programmet och som kan hanteras på olika sätt. Om du till exempel försöker läsa en fil som inte finns, kommer en `FileNotFoundException` att kastas, vilket innebär att filen inte kunde hittas. Detta ger dig möjlighet att hantera felet på ett lämpligt sätt, till exempel genom att skriva ett meddelande till användaren eller försöka läsa en annan fil.
 
 ## Se även
 
-Här är några användbara länkar för att lära dig mer om hur man läser en textfil i Kotlin:
-
-- Kotlin.org - Filhantering: https://kotlinlang.org/docs/tutorials/kotlin-for-py/download-files.html
-- Tutorialspoint - Läsning och skrivning av filer med Kotlin: https://www.tutorialspoint.com/kotlin/kotlin_reading_and_writing_files.htm
-- Kotlin för Androidutvecklare - Att läsa och skriva filer: https://www.raywenderlich.com/182266/kotlin-for-android-an-introduction
+- [Kotlin documentation for File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+- [Kotlin documentation for BufferedReader](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-buffered-reader/)
+- [Kotlin documentation for FileNotFoundException](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file-not-found-exception/)

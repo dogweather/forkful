@@ -1,50 +1,44 @@
 ---
 title:                "Ruby: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere test è importante in Ruby
+## Perché
 
-Scrivere test è una pratica fondamentale per garantire che il nostro codice funzioni correttamente e senza bug. Inoltre, l'utilizzo di test ci aiuta a individuare eventuali problemi prima ancora che il codice venga messo in produzione.
+Scrivere test è una pratica fondamentale per garantire la qualità del codice e per facilitare la manutenzione a lungo termine. I test aiutano ad identificare eventuali bug e a prevenire regressioni del codice. Inoltre, sono uno strumento importante per la collaborazione tra i membri del team ed assicurano che ogni funzionalità del codice funzioni correttamente.
 
-## Come scrivere test in Ruby
+## Come
 
-Per scrivere test in Ruby, dobbiamo prima di tutto utilizzare un framework di test come RSpec o MiniTest. Vediamo un esempio utilizzando RSpec:
+Per scrivere test in Ruby, è necessario utilizzare un framework di testing come RSpec o MiniTest. Di seguito è riportato un esempio di codice di test che verifica se il metodo "sum" di una classe "Calculator" restituisce correttamente la somma di due numeri:
 
 ```Ruby
-# Definizione di un metodo che somma due numeri
+require 'minitest/autorun'
 
-def somma(a, b)
-    a + b
-end
+class CalculatorTest < MiniTest::Test
+  def setup
+    @calculator = Calculator.new
+  end
 
-# Testiamo il metodo
-
-RSpec.describe "somma" do
-    it "restituisce la corretta somma di due numeri" do
-        expect(somma(2, 4)).to eq(6)
-    end
+  def test_sum_method
+    assert_equal 4, @calculator.sum(2, 2)
+  end
 end
 ```
 
-In questo esempio, abbiamo definito un metodo e poi abbiamo scritto un test utilizzando RSpec per verificare che il metodo effettivamente restituisca la somma corretta dei due numeri. Utilizzando l'istruzione `expect`, possiamo affermare cosa ci aspettiamo come output dal nostro metodo. In questo caso, ci aspettiamo che la somma di 2 e 4 sia uguale a 6.
+L'output di questo test dovrebbe essere "PASS" poiché il valore atteso (4) è uguale al valore effettivo restituito dal metodo sum del calcolatore.
 
-## Approfondimento sulla scrittura dei test
+## Approfondimento
 
-La scrittura di test efficaci richiede anche di seguire alcuni principi e buone pratiche. In primo luogo, è importante avere una buona copertura dei test, ovvero testare il maggior numero possibile di casi possibili per il nostro codice. Inoltre, è importante scrivere test leggibili e mantenibili, in modo da poterli aggiornare facilmente in caso di modifiche al codice sorgente.
-
-Altri strumenti utili possono essere l'utilizzo di stub e mock, per simulare il comportamento di altre parti del codice nella fase di testing. Inoltre, possiamo anche utilizzare tool di coverage per verificare la percentuale di codice testata e individuare eventuali zone non coperte dai nostri test.
+Scrivere test efficaci richiede di comprendere il concetto di "Test-driven development" (TDD). Questo approccio prevede di scrivere i test prima di scrivere il codice effettivo, in modo da guidare il processo di sviluppo. In questo modo, ci si assicura che solo il codice necessario venga scritto per soddisfare i requisiti del test. Inoltre, TDD aiuta a mantenere un codice più modulare e facilmente testabile.
 
 ## Vedi anche
 
-- [RSpec Homepage](https://rspec.info/)
-- [MiniTest Homepage](https://github.com/seattlerb/minitest)
-- [SimpleCov Homepage](https://github.com/simplecov-ruby/simplecov)
-
-## Per ulteriori informazioni
-
-Se sei interessato ad approfondire l'argomento dei test in Ruby, ti consiglio di consultare la documentazione ufficiale dei framework di test e di continuare a leggere articoli e tutorial su questo tema. Ricorda sempre che scrivere test ti aiuterà a scrivere un codice più robusto e affidabile!
+- [RSpec Documentation](https://rspec.info/)
+- [MiniTest Documentation](https://guides.rubyonrails.org/testing.html)
+- [The Rspec Book](https://www.amazon.com/Rspec-Book-Behaviour-Development-Ruby-ebook/dp/B018PO7IUW)

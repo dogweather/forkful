@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Escrevendo testes"
+simple_title:         "Escrevendo testes"
 programming_language: "Elm"
-category:             "Testing and Debugging"
+category:             "Elm"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/writing-tests.md"
 ---
 
@@ -9,36 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que escrever testes em Elm?
 
-Escrever testes é uma parte importante do desenvolvimento de qualquer programa, e em Elm isso não é diferente. Testes ajudam a garantir que o código esteja funcionando corretamente, identificando possíveis erros e bugs antes mesmo deles acontecerem. Além disso, testes ajudam a documentar o código, facilitando a compreensão para outros desenvolvedores.
+Testes são uma parte crucial do processo de desenvolvimento de software, e o Elm não é exceção. Eles ajudam a garantir que o código esteja funcionando como esperado e a identificar possíveis bugs. Além disso, testes bem escritos aumentam a confiança dos desenvolvedores no código e facilitam a manutenção e refatoração posteriormente. Portanto, se você quer produzir um código de qualidade e robusto, escrever testes em Elm é fundamental.
 
 ## Como escrever testes em Elm
 
-Para escrever testes em Elm, é necessário utilizar o pacote `elm-test`, que já vem incluído na linguagem. Primeiro, certifique-se de ter o pacote instalado em seu computador. Em seguida, crie um diretório `tests` em seu projeto para guardar seus testes.
+Antes de começar, certifique-se de ter instalado o [Elm Test](https://package.elm-lang.org/packages/elm-explorations/test/latest/) em seu projeto. Em seguida, crie um arquivo de teste separado para cada módulo que deseja testar, seguindo a convenção de nomenclatura `ModuleTests.elm`.
 
-A estrutura básica de um teste em Elm é a seguinte:
+```Elm
+import Main
+import Test exposing (..)
+import Expect exposing (..)
 
-```elm
-test "nome_do_teste" <|
-    \() ->
-        -- código a ser testado aqui
-        Expect.equal resultado_esperado resultado_atual
+main : Program Never Model Msg
+main =
+    describe "MeuModulo" -- nome do módulo a ser testado
+        [ test "Teste do meuFuncao" <|
+            \_ ->
+                let
+                    resultado = Main.meuFuncao 5 -- chame a função que deseja testar
+                in
+                Expect.equal resultado 25 -- resultado esperado
+        ]
 ```
 
-É importante notar que os testes são funções em Elm, e por isso devem ser transcritos utilizando a sintaxe de funções. No exemplo acima, utilizamos a função `test` para definir nosso teste, passando como argumento o nome do teste e uma função anônima, que contém o código a ser testado.
+No exemplo acima, importamos o módulo `Main` do nosso projeto e, em seguida, usamos a função `describe` para definir o nome do módulo que será testado. Em seguida, usamos a função `test` para criar um teste específico, onde chamamos nossa função `meuFuncao` com um argumento e usamos a função `Expect.equal` para verificar se o resultado é o esperado.
 
-Dentro da função anônima, utilizamos a função `Expect.equal` para comparar o resultado esperado com o resultado atual do código. Em caso de falha no teste, essa função irá retornar um erro indicando a diferença entre os dois valores.
+## Uma incursão profunda em escrever testes
 
-Após escrever seus testes, basta rodar o comando `elm-test` no diretório `tests` para executá-los.
+Quando escrevemos testes em Elm, é importante lembrar que estamos testando o **comportamento** do código, não apenas o **resultado**. Isso significa que queremos nos certificar de que a função está sendo chamada com os argumentos corretos e que está se comportando como o esperado. Portanto, é uma boa prática ter vários testes para cada função, abrangendo diferentes cenários de entrada e saída.
 
-## Aprofundando em escrever testes
+Além disso, é importante manter os testes atualizados à medida que o código é alterado. Se alguma funcionalidade for adicionada, os testes devem ser atualizados para garantir que ela esteja sendo testada corretamente. E se um bug for encontrado, um teste que simule o cenário do bug deve ser adicionado, a fim de evitar que ele volte a acontecer no futuro.
 
-Para criar uma suíte de testes mais robusta, é possível utilizar funções auxiliares como `Expect.notEqual`, `Expect.true`, `Expect.false`, entre outras, para testar diferentes tipos de valores e condições.
-
-Também é possível utilizar a biblioteca `elm-community/elm-test-extra` para ter acesso a funções adicionais, como testes de exceções e testes de funções que aceitam como argumento sinais de diferença de precisão para valores decimais.
-
-Outra dica é utilizar o módulo `Test.Random`, que permite a geração de dados aleatórios para testar funções mais complexas.
+Outra dica importante é usar o [QuickCheck](https://package.elm-lang.org/packages/elm-explorations/test/latest/Test-QuickCheck) para gerar dados aleatórios para testes. Isso pode ajudar a identificar possíveis problemas que não teriam sido encontrados apenas com testes manuais.
 
 ## Veja também
 
-- Documentação oficial do `elm-test`: https://package.elm-lang.org/packages/elm-explorations/test/latest/
-- Documentação do `elm-community/elm-test-extra`: https://package.elm-lang.org/packages/elm-community/elm-test-extra/latest/
+- [Introdução ao Elm Test](https://elmprogramming.com/intro-to-elm-test.html)
+- [Documentação oficial do Elm Test](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [Como escrever testes em Elm - Vídeo tutorial](https://www.youtube.com/watch?v=HMV0zpZ2o8Y)

@@ -1,60 +1,43 @@
 ---
 title:                "Swift: Escrevendo testes"
+simple_title:         "Escrevendo testes"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante?
+## Por que escrever testes em Swift é importante
 
-Escrever testes é uma parte crucial do processo de programação em Swift. Quando você escreve testes para o seu código, você está garantindo que ele funcione corretamente e que eventuais mudanças futuras não o quebrem. Além disso, testes bem escritos podem ajudar a identificar e corrigir bugs no seu código antes mesmo de enviá-lo para produção.
+Ao escrever código em Swift, é essencial testar o seu código para garantir que ele funcione corretamente. Escrever testes não apenas ajuda a encontrar e corrigir erros, mas também garante que o seu código continue funcionando conforme você adiciona novas funcionalidades. Além disso, testes bem escritos podem até mesmo servir como documentação para seu código.
 
 ## Como escrever testes em Swift
 
-Para escrever testes em Swift, você pode usar uma combinação de duas estruturas: o XCTest e o Quick. O XCTest é parte da própria linguagem Swift e é usado para escrever testes unitários. Já o Quick é uma estrutura de testes de comportamento que pode ser usada em conjunto com o XCTest para criar testes mais descritivos e fáceis de ler.
-
-Aqui está um exemplo simples de como escrever um teste usando o XCTest e o Quick:
+Para escrever testes confiáveis em Swift, você precisará usar o framework de teste XCTest. Ele é parte da biblioteca padrão da Apple e é fácil de aprender e usar. Aqui está um exemplo de um teste simples que verifica se uma função retorna o resultado correto:
 
 ```Swift
 import XCTest
-import Quick
-import Nimble
-
-class MinhaClasseSpec: QuickSpec {
-    override func spec() {
-        describe("Minha Classe") {
-            it("deve conter uma propriedade nome") {
-                let minhaClasse = MinhaClasse(nome: "Swift")
-                expect(minhaClasse.nome).to(equal("Swift"))
-            }
-        }
-    }
-}
-
-class MinhaClasse {
-    let nome: String
-    
-    init(nome: String) {
-        self.nome = nome
+ 
+class MathTests: XCTestCase {
+    func testAddition() {
+        let result = Math.addNumbers(x: 5, y: 7)
+        XCTAssertEqual(result, 12)
     }
 }
 ```
 
-Neste exemplo, estamos testando se nossa classe `MinhaClasse` contém uma propriedade `nome` com o valor "Swift". Primeiro, importamos as estruturas necessárias (XCTest, Quick e Nimble). Depois, criamos uma classe `QuickSpec` que irá conter nossos testes. Dentro do método `spec()`, usamos `describe` para descrever o comportamento que estamos testando e `it` para especificar o que esperamos que aconteça. No final, usamos o `expect` para comparar o valor esperado com o valor real.
+No código acima, importamos o framework XCTest e criamos uma classe de teste que herda de XCTestCase. Dentro da classe, criamos uma função de teste com o prefixo "test" e usamos o método XCTAssertEqual para verificar se o resultado da função Math.addNumbers é igual a 12. Se a condição não for atendida, o teste falhará.
 
-## Aprofundando nos testes em Swift
+## Mergulho profundo em testes
 
-Além da estrutura XCTest e do Quick, existem outras formas de escrever testes em Swift, como o SwiftCheck e o SnapshotTesting. Além disso, é importante conhecer os diferentes tipos de testes que podem ser escritos em Swift, como testes unitários, de integração e de interface do usuário. Cada um tem sua própria função e importância dentro do processo de testes.
+Uma das melhores práticas ao escrever testes é ter um teste para cada cenário possível. Isso ajuda a cobrir todas as possíveis entradas e saídas do seu código e a garantir que ele não falhe em situações inesperadas. Também é importante testar tanto casos positivos (quando o código funciona como esperado) quanto casos negativos (quando o código não funciona como esperado) para ter certeza de que seu código está robusto.
 
-Além disso, é importante entender como implementar boas práticas de testes em seu código, como criar mocks e stubs para testar dependências externas e como testar casos de borda e erros.
-
-Com um bom conhecimento sobre testes em Swift, você pode garantir que seu código seja mais robusto e confiável.
+Além disso, você pode usar os recursos do framework XCTest, como o XCTAssertThrowsError, para testar se uma função lança um erro corretamente. Isso é especialmente útil ao lidar com cenários de erro em seu código.
 
 ## Veja também
 
-- [Documentação oficial do XCTest](https://developer.apple.com/documentation/xctest)
-- [Documentação oficial do Quick](https://github.com/Quick/Quick)
-- [Tutorial sobre testes em Swift](https://www.raywenderlich.com/975-ios-unit-testing-and-ui-testing-tutorial)
-- [Tutorial sobre testes de interface do usuário em Swift](https://www.appcoda.com/uialertcontroller-swiftui/)
+- [Documentação do XCTest](https://developer.apple.com/documentation/xctest)
+- [Tutorial de introdução ao XCTest](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
+- [Práticas recomendadas para escrever testes em Swift](https://www.swiftbysundell.com/articles/unit-testing-best-practices-in-swift/)

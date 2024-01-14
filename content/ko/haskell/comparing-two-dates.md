@@ -1,49 +1,85 @@
 ---
 title:                "Haskell: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-날짜 비교는 프로그래밍에서 매우 일반적인 작업입니다. 날짜를 비교하면 특정 날짜 이전에 무슨 일이 발생했는지 또는 두 날짜의 차이를 계산할 수 있습니다. 날짜 비교는 일상 생활에서도 자주 사용되는 기능이기 때문에 학습하는 것이 중요합니다.
+두 날짜를 비교하는 일을 진행하게 될 이유는 무엇일까요? 예를 들어, 두 날짜 중 어느 날짜가 더 이전인지 알고 싶거나 특정 시간 간격을 계산하고 싶을 때에는 날짜를 비교하는 것이 필수적입니다. 이러한 요구사항은 프로그래밍에서도 주로 발생하므로 두 날짜를 비교하는 방법을 알아봅시다.
 
-# 방법
+## 어떻게
 
-날짜를 비교하는 방법은 간단합니다. 먼저 날짜 데이터를 정확하게 파싱하는 것이 중요합니다. Haskell에서는 `Date`나 `DateTime`와 같은 라이브러리를 사용하여 날짜를 쉽게 다룰 수 있습니다. 다음으로는 적절한 연산자를 사용하여 두 날짜를 비교하고 비교 결과를 출력하면 됩니다.
+우리는 Haskell 언어를 사용하여 두 날짜를 비교하는 방법을 알아볼 것입니다. 먼저, `import Data.Time.Calendar`를 통해 날짜와 관련된 함수를 불러옵니다.
+
+### 날짜 생성하기
+
+`fromGregorian` 함수를 사용하여 `year month day` 순서로 날짜를 생성합니다. 예를 들어, `fromGregorian 2021 11 18`은 2021년 11월 18일을 나타냅니다.
 
 ```Haskell
-import Data.Time.Clock
-import Data.Time.Calendar
-
--- 날짜 비교 예제
-date1 = fromGregorian 2021 03 10
-date2 = fromGregorian 2021 06 15
-
--- `dayNumber` 함수를 사용하여 두 날짜의 차이를 일 수로 계산
-dayNumber = diffDays date2 date1
-
--- 일 수 출력
-print dayNumber
+fromGregorian :: Integer -> Int -> Int -> Day
+-- fromGregorian year month day = Day
 ```
 
-위의 코드를 실행하면 다음과 같은 결과가 나옵니다.
+### 날짜 비교하기
 
+`compare` 함수를 사용하여 두 날짜를 비교할 수 있습니다. 이 함수는 `Ordering` 타입을 반환하며, `LT`, `EQ`, `GT` 중 하나의 값을 가집니다.
+
+```Haskell
+compare :: Day -> Day -> Ordering
+-- compare d1 d2 = Ordering
 ```
-97
+
+아래는 이를 응용한 예시입니다.
+
+```Haskell
+compareDates :: Day -> Day -> String
+compareDates d1 d2 =
+  case compare d1 d2 of
+    LT -> "First date is earlier than second date."
+    EQ -> "Both dates are the same."
+    GT -> "First date is later than second date."
+
+d1 = fromGregorian 2021 11 18
+d2 = fromGregorian 2021 11 19
+
+compareDates d1 d2 -- "First date is earlier than second date."
 ```
 
-이는 `dayNumber` 변수에 저장된 두 날짜의 차이가 97일이라는 의미입니다. 날짜를 비교할 때는 원하는 날짜 형식으로 데이터를 파싱하고, 정확한 연산자와 함수를 사용하는 것이 중요합니다.
+## 깊게 파고들기
 
-# 깊이 파헤치기
+우리는 위에서 `compare` 함수를 사용하여 두 날짜를 비교할 수 있다는 것을 알게 되었습니다. 이를 응용하면 두 날짜 간의 차이를 계산하는 것도 가능합니다. `diffDays` 함수를 사용하여 두 날짜 사이의 일 수 차이를 계산할 수 있습니다.
 
-날짜 비교를 하면서 발생할 수 있는 다양한 상황들을 더 자세히 살펴보겠습니다. Haskell에서는 `diffDays` 함수 외에도 `diffLocalTime` 함수를 사용하여 두 날짜 사이의 시간 차이를 계산할 수 있습니다. 또한 `fromGregorianValid` 함수를 사용하여 유효한 날짜인지 확인할 수도 있습니다. 더 많은 함수들을 사용하여 날짜 비교를 보다 정확하게 할 수 있습니다.
+```Haskell
+diffDays :: Day -> Day -> Integer
+-- diffDays d1 d2 = Integer
+```
 
-# 참고자료
+아래는 이를 응용한 예시입니다.
 
-- [Haskell 공식 문서 - 날짜 비교](https://hackage.haskell.org/package/time/docs/Data-Time-Clock.html)
-- [Learn You a Haskell - 날짜와 시간](http://learnyouahaskell.com/types-and-typeclasses#typeclasses-101)
-- [Real World Haskell - 날짜와 시간 다루기](http://book.realworldhaskell.org/read/using-typeclasses.html#date-and-time)
+```Haskell
+daysBetween :: Day -> Day -> String
+daysBetween d1 d2 =
+  let diff = abs (diffDays d1 d2)
+  in "Number of days between the two dates: " ++ show diff
+
+d1 = fromGregorian 2021 11 18
+d2 = fromGregorian 2021 11 20
+
+daysBetween d1 d2 -- "Number of days between the two dates: 2"
+```
+
+## 추가 자료
+
+위에서 다룬 내용 외에도 Haskell에서 날짜를 다루는 다양한 함수가 있습니다. 앞서 언급한 `Data.Time` 모듈 외에도 `Data.Time.Clock`, `Data.Time.Calendar.OrdinalDate` 등의 모듈에서도 유용한 함수들을 찾을 수 있습니다.
+
+## 참고 자료
+
+- [Haskell 공식 문서](https://www.haskell.org/documentation/)
+- [Haskell Date and Time Library](https://www.haskell.org/haskellwiki/Date_and_time_library)
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/)

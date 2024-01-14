@@ -1,70 +1,69 @@
 ---
-title:                "C: भविष्य या भूतकाल में एक तारीख की गणना"
+title:                "C: भविष्य या अतीत में दिनांक की गणना करना ।"
+simple_title:         "भविष्य या अतीत में दिनांक की गणना करना ।"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
-क्या आप आज किसी दिन की तारीख की पूर्व या भविष्य में कैलकुलेशन करने का काम करने वाले हो? अगर हाँ, तो आप सही जगह पर हैं! हम आपको बताएंगे कि C प्रोग्रामिंग में तारीख का कैलकुलेशन कैसे किया जाता है।
+क्यों: कोई व्यक्ति भविष्य या भूतकाल में तारीख की गणना करने में सक्रिय होना क्यों करेगा, इसका व्याख्यान केवल 1-2 वाक्यों में।
 
-## कैसे करे
-कैलकुलेशन करने के लिए, सबसे पहले हमें तीन पैरामीटरों को प्रोग्राम में पास करना होगा - साल, महीना और दिन। इन पैरामीटरों को एक संरचित डेटा टाइप में स्टोर किया जाता है। यहां, हम आपको कुछ उदाहरणों के साथ एक संपूर्ण कोड देंगे।
+## कैसे करें:
 
-```C
-#include <stdio.h>
+```
+#include<stdio.h>
+#include<stdlib.h>
 
-// Function to calculate future or past date
-void calculateDate(int year, int month, int day, int daysToAdd) {
-    int numDays[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; // number of days in each month
-    daysToAdd = daysToAdd % 365; // to handle days greater than 1 year
-    int newDay = day + daysToAdd;
-    if(year%4 == 0) // condition to check for leap year
-        numDays[1] = 29;
-    while(newDay > numDays[month-1]) { // to handle days greater than month
-        newDay -= numDays[month-1];
-        month++;
-        if(month > 12) {
-            month = 1;
-            year++;
-        }
-        if(year%4 == 0)
-            numDays[1] = 29;
-        else
-            numDays[1] = 28;
-    }
-    printf("New date: %02d/%02d/%04d", newDay, month, year); // printing the new date in dd/mm/yyy format
-}
+int main()
+{
+    int day, month, year;
+    int future_day, future_month, future_year;
+    int past_day, past_month, past_year;
 
-// Main function
-int main() {
-    int year, month, day, daysToAdd;
-    printf("Enter current date (dd mm yyyy): ");
+    // प्रभावों की सभी प्राथमिक भराइएं दर्ज करें
+    printf("आज का दिन, महीना और साल (उदा: 9 10 2021): ");
     scanf("%d %d %d", &day, &month, &year);
-    printf("\nEnter number of days to add: ");
-    scanf("%d", &daysToAdd);
-    calculateDate(year, month, day, daysToAdd); // function call
+
+    // भविष्य की तारीख का पता लगाएं
+    printf("भविष्य की तारीख की संख्या: ");
+    scanf("%d", &future_day);
+
+    // भविष्य की तारीख की गणना करें
+    future_month = month + (future_day / 30);
+    future_year = year + (future_month / 12);
+    future_day = future_day % 30;
+    future_month = future_month % 12;
+
+    // पश्चात्तम की तारीख का पता लगाएं
+    printf("पश्चात्तम की तारीख की संख्या: ");
+    scanf("%d", &past_day);
+
+    // पश्चात्तम की तारीख की गणना करें
+    past_month = month - (past_day / 30);
+    past_year = year - (past_month /12);
+    past_day = past_day % 30;
+    past_month = past_month % 12;
+
+    // परिणाम मुद्रित करें
+    printf("%d दिन बाद की तारीख: %d/%d/%d \n", future_day, future_month, future_year);
+    printf("%d दिन पहले की तारीख: %d/%d/%d \n", past_day, past_month, past_year);
+
     return 0;
 }
 ```
 
-**उत्पाद:**
-
-```C
-Enter current date (dd mm yyyy): 25 09 2021
-Enter number of days to add: 105
-
-New date: 08/01/2022
+प्रोग्राम लागू करने पर निम्नलिखित आउटपुट प्राप्त करें:
+```
+आज का दिन, महीना और साल (उदः: 9 10 2021): 18 10 2021
+भविष्य की तारीख की संख्या: 25
+पश्चात्तम की तारीख की संख्या: 12
+25 दिन बाद की तारीख: 12/11/2021
+12 दिन पहले की तारीख: 6/10/2021
 ```
 
-```C
-Enter current date (dd mm yyyy): 10 03 2020
-Enter number of days to add: 500
+## गहराई में जाएं:
 
-New date: 21/07/2021
-```
-
-## गहराई में जाएँ
-तारीख का कैलकुलेशन करना काफी आसान है। हमने पहले से ही देखा है कि ऐसे कई गुणक हैं जो एक साथ कैलकुलेशन के दौरान ध्यान में रख
+भविष्य या पश्चात्तम की तारीख की गणना करना बहुत ही उपयोगी हो सकता है। इससे आप

@@ -1,66 +1,64 @@
 ---
 title:                "Bash recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "Bash"
-category:             "Testing and Debugging"
+category:             "Bash"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Testing is an essential part of the software development process. It ensures that our code is functioning as expected and can catch any errors or bugs before they make it into production. Writing tests also helps to improve the overall quality and reliability of our code. In this blog post, we will discuss how to write tests in Bash programming.
+## Why Write Tests?
 
-## How To
-To write tests in Bash, we will be using the `test` command. This command evaluates an expression and returns a status code of either 0 (true) or 1 (false). Let's take a look at a simple example:
+When it comes to programming, writing tests is often seen as an extra step that developers can choose to take or ignore. However, writing tests can have numerous benefits and can greatly improve the quality of your code.
 
-```Bash
-# Create a file called test.sh
-touch test.sh
+First and foremost, tests allow you to identify and catch bugs early on in the development process. They act as a safety net, helping you catch any mistakes or errors before they make it to your production code. This can save you a lot of time and effort in debugging and troubleshooting later on.
 
-# Write a test for checking if a file exists
-if [ -f "test.sh" ]; then
-  echo "File exists!"
-else
-  echo "File does not exist!"
-fi
+Additionally, tests can serve as a form of documentation for your code. They can clearly outline the expected behavior of your functions and methods, making it easier for other developers to understand and work with your code. This can greatly improve collaboration and reduce confusion within a team.
+
+## How To Write Tests in Bash
+
+Now that we understand the importance of writing tests, let's dive into how to actually do it in Bash. The process of writing tests in Bash can be broken down into three steps: setting up, writing the tests, and running the tests.
+
+### Setting Up
+
+Before you can start writing your tests, you need to have a testing framework installed on your system. One popular option for Bash is [BATS](https://github.com/bats-core/bats-core). Once installed, you can create a new test file with the `.bats` extension.
+
+### Writing the Tests
+
+Tests in BATS follow a simple syntax:
+
+```
+@test "test name" {
+    # code to be tested
+    # assert statements
+}
 ```
 
-In this example, we are using the `-f` flag to check if the `test.sh` file exists. If it does, the `if` statement will return a status code of 0, and the `echo` statement will print "File exists!". Otherwise, the status code will be 1, and the `echo` statement will print "File does not exist!".
+Here's an example of a test that checks if a function returns the correct value:
 
-We can also use the `!` (not) operator to negate the expression, for example:
-
-```Bash
-# Check if a file does not exist
-if [ ! -f "test2.sh" ]; then
-  echo "File does not exist!"
-fi
+```
+@test "addition function" {
+    result=$(add 2 3)
+    [ "$result" -eq 5 ]
+}
 ```
 
-This will return a status code of 0 if the file does not exist and print "File does not exist!".
+### Running the Tests
 
-## Deep Dive
-The `test` command has many other flags that we can use to perform different checks and comparisons. For example, we can use the `-d` flag to check if a directory exists, the `-s` flag to check if a file is not empty, and the `-eq` flag to compare two numbers:
+To run your tests, simply use the `bats` command followed by the name of your test file. This will execute all the tests within that file and display the results.
 
-```Bash
-# Check if a directory exists and is not empty
-if [ -d "testdir" ] && [ -s "testdir" ]; then
-  echo "Directory exists and is not empty!"
-fi
+## Deep Dive into Writing Tests
 
-# Compare two numbers
-if [ $1 -eq $2 ]; then
-  echo "The numbers are equal!"
-fi
+While writing simple tests like the one shown above is a good start, there are many techniques and best practices that can make your tests more effective. Some tips for writing better tests include using descriptive test names, testing edge cases, and using setup and teardown functions.
 
-# Check for a substring match
-if [[ "$string" == *"$substring"* ]]; then
-  echo "Substring found in string!"
-fi
-```
-
-It is important to note that when comparing strings, we need to wrap them in double quotes to prevent unexpected behavior.
+It's also important to keep in mind that tests are not a replacement for proper code review and debugging. They should be used in conjunction with good programming practices to ensure high-quality and reliable code.
 
 ## See Also
-- [Bash test command documentation](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-- [Introduction to Bash scripting](https://www.tutorialspoint.com/unix/shell_scripting.htm)
-- [Writing tests in Bash using BATS](https://dev.to/carlosrufo/writing-tests-in-bash-using-bats-488a)
+
+- [BATS official documentation](https://github.com/bats-core/bats-core#usage)
+- [Benefits of Writing Tests](https://stackify.com/why-write-tests-benefits/)
+- [Tips for Writing Effective Tests](https://www.browserstack.com/guide/how-to-write-effective-automated-tests)
+
+By incorporating testing into your programming workflow, you can greatly improve the quality and maintainability of your code. So don't skip out on writing tests – your future self (and your team) will thank you!

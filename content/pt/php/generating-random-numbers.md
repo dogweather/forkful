@@ -1,47 +1,45 @@
 ---
-title:                "PHP: Gerando números aleatórios"
+title:                "PHP: Geração de números aleatórios"
+simple_title:         "Geração de números aleatórios"
 programming_language: "PHP"
-category:             "Numbers"
+category:             "PHP"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios em programação?
+# Por que gerar números aleatórios em programação PHP?
 
-Gerar números aleatórios é uma tarefa muito comum em programação, especialmente em jogos, sorteios e aplicações que requerem elementos imprevisíveis. Isso permite adicionar uma dose de imprevisibilidade e aleatoriedade às suas aplicações, tornando-as mais divertidas e interessantes para os usuários.
+Muitas vezes, em programação PHP, é necessário gerar números aleatórios para diversas finalidades. Seja para criar números de identificação ou para realizar sorteios, a geração de números aleatórios é uma funcionalidade importante que pode ser facilmente implementada em suas aplicações.
 
 ## Como gerar números aleatórios em PHP
 
-Gerar números aleatórios em PHP é uma tarefa simples e fácil. A linguagem possui uma função embutida chamada `rand()`, que pode ser usada para gerar números aleatórios dentro de um determinado intervalo.
-
-Vamos dar uma olhada em um exemplo:
+Para gerar números aleatórios em PHP, utilizamos a função `rand()` juntamente com um intervalo de valores. Por exemplo, se quisermos gerar um número aleatório entre 1 e 10, utilizamos o seguinte código:
 
 ```PHP
-<?php
-// Gerando um número aleatório entre 1 e 10
 $randomNumber = rand(1, 10);
-
-// Imprimindo o número gerado
-echo "O número aleatório é: " . $randomNumber;
+echo "Número aleatório gerado: " . $randomNumber;
 ```
 
-A saída desse exemplo pode ser algo como:
+A saída deste código pode ser, por exemplo, "Número aleatório gerado: 7". Podemos criar códigos mais complexos, como gerar uma senha aleatória com uma combinação de letras e números:
 
+```PHP
+$alphabet = 'abcdefghijklmnopqrstuvwxyz';
+$randomPassword = substr(str_shuffle($alphabet), 0, rand(6, 12));
+echo "Senha aleatória gerada: " . $randomPassword;
 ```
-O número aleatório é: 4
-```
 
-Você também pode utilizar outras funções, como `mt_rand()` e `random_int()`, para gerar números aleatórios mais seguros e imprevisíveis.
+A saída pode ser, por exemplo, "Senha aleatória gerada: c58op9". A combinação desses dois exemplos pode ser utilizada para criar diferentes tipos de códigos que envolvam números aleatórios.
 
-## Mergulho Profundo: Detalhes sobre a geração de números aleatórios
+## Aprofundando-se na geração de números aleatórios em PHP
 
-Embora seja uma tarefa simples em PHP, a geração de números aleatórios é uma atividade complexa por trás dos bastidores. Na verdade, não existem números verdadeiramente aleatórios em programação. Em vez disso, são utilizados algoritmos matemáticos que, juntamente com uma "semente" (um número de partida), geram uma sequência imprevisível de números.
+Ao utilizar a função `rand()`, é importante lembrar que ela depende de um gerador de números aleatórios (RNG) que é definido pelo sistema operacional ou ambiente de hospedagem. Em alguns casos, pode ocorrer de números não tão aleatórios serem gerados, o que pode comprometer a segurança de suas aplicações. Para garantir mais segurança, é possível utilizar a função `mt_rand()` que utiliza um gerador de números aleatórios melhorado.
 
-Além disso, é importante notar que a qualidade dos números gerados depende do algoritmo utilizado e da habilidade do programador em escolher adequadamente a semente e manipular os resultados da forma desejada.
+Também é importante mencionar que a função `rand()` e `mt_rand()` geram números pseudoaleatórios, ou seja, não são realmente aleatórios, mas sim uma sequência de números que parecem ser aleatórios. Para criar números verdadeiramente aleatórios, é necessário utilizar uma fonte externa de entropia, como arquivos ou dispositivos que fornecem valores aleatórios.
 
-## Veja também
+# Veja também
 
-- Documentação Oficial do PHP: [Gerar números aleatórios](https://www.php.net/manual/pt_BR/function.rand.php)
-- Tutorial da DigitalOcean: [Como gerar números aleatórios em PHP](https://www.digitalocean.com/community/tutorials/how-to-generate-random-numbers-in-php)
-- Artigo da GoHacking: [Segurança na geração de números aleatórios em PHP](https://gohacking.com/php-random-number-generator-security/)
+- [Documentação da função `rand()` em PHP](https://www.php.net/manual/pt_BR/function.rand.php)
+- [Documentação da função `mt_rand()` em PHP](https://www.php.net/manual/pt_BR/function.mt-rand.php)
+- [Artigo sobre segurança na geração de números aleatórios em PHP](https://www.php-fusion.co.uk/infusions/articles/documentation.php?cat_id=24&article_id=29)

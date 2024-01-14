@@ -1,74 +1,53 @@
 ---
-title:                "Haskell: Å få nåværende dato"
+title:                "Haskell: Å få gjeldende dato"
+simple_title:         "Å få gjeldende dato"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å få dagens dato kan være nyttig av en rekke årsaker når du driver med Haskell-programmering. Det kan for eksempel være nyttig for å lage tidstempler eller for å holde orden på ulike datoer i et program.
+Har du noen gang ønsket å få den nåværende datoen i programmene dine? Kanskje du trenger å lagre datoen for en hendelse eller bare vil vise den for brukeren din. Uansett årsaken, er det viktig å kunne hente dagens dato i Haskell.
 
 ## Hvordan
-
-Nå skal vi se på hvordan du kan få dagens dato i Haskell. Det finnes flere forskjellige måter å gjøre dette på, men vi skal se på to av de vanligste måtene.
-
-### Metode 1: Bruke Data.Time biblioteket
-
-Først må du importere Data.Time biblioteket ved å skrive ```import Data.Time``` øverst i programmet ditt. Deretter kan du bruke funksjonen ```getCurrentTime``` for å få dagens dato og tid. Eksempelvis:
+Først må vi importere `Data.Time` biblioteket ved å skrive følgende linje øverst i filen vår:
 
 ```Haskell
 import Data.Time
-
-getCurrentDate :: IO Day
-getCurrentDate = do
-    time <- getCurrentTime
-    return $ utctDay time
 ```
 
-Dette vil gi deg dagens dato i formatet ```Year-Month-Day```. Hvis du vil ha en mer spesifikk dato og tid, kan du bruke funksjonen ```parseTimeOrError``` og spesifisere ønsket format. For å få datoen i det engelske formatet ```Month/Day/Year```, kan du for eksempel gjøre følgende:
+Vi kan deretter bruke `getCurrentTime` -funksjonen for å få den nåværende datoen og klokkeslettet som en `UTCTime` -verdi. Dette kan gjøres ved å kalle funksjonen i en `IO` -handling og bruke `print` for å skrive ut resultatet:
 
 ```Haskell
-import Data.Time.Format
-import System.Locale
-
-getCurrentDate :: IO String
-getCurrentDate = do
-    time <- getCurrentTime
-    let format = "%m/%d/%Y"
-    return $ formatTime defaultTimeLocale format time
+getCurrentTime >>= print
 ```
 
-### Metode 2: Bruke System.Time biblioteket
+Dette vil skrive ut noe lignende dette:
 
-En annen måte å få dagens dato på er ved å bruke System.Time biblioteket. Dette kan være nyttig hvis du ikke ønsker å bruke Data.Time biblioteket av forskjellige årsaker.
+```
+2021-10-19 13:00:00.000000000 UTC
+```
 
-Først må du importere System.Time biblioteket ved å skrive ```import System.Time``` øverst i programmet ditt. Deretter kan du lage en funksjon som kaller på ```getClockTime``` og ```toUTCTime```, som i dette eksempelet:
+For å få en mer lesbar formatert dato, kan vi bruke funksjonen `formatTime` sammen med en `TimeLocale` for å angi format og språk. For eksempel, for å få datoen i formatet "dd.mm.yyyy", kan vi skrive:
 
 ```Haskell
-import System.Time
-
-getCurrentDate :: IO Day
-getCurrentDate = do
-    time <- getClockTime
-    return $ toUTCTime time
+getCurrentTime >>= print . formatTime defaultTimeLocale "%d.%m.%Y"
 ```
 
-Denne metoden vil også gi deg dagens dato i formatet ```Year-Month-Day```.
+Dette vil skrive ut noe lignende dette:
+
+```
+19.10.2021
+```
 
 ## Dypdykk
+Haskell har en rekke nyttige funksjoner for å jobbe med datoer og klokkeslett. For å få mer detaljert informasjon om en `UTCTime` -verdi, kan vi bruke funksjonen `getUTCTimeComponents` for å få en strukturert verdi som inneholder år, måned, dag, time, minutt, sekund og millisekund.
 
-Det er mye mer du kan gjøre med å få dagens dato i Haskell, for eksempel konvertere datoen til et annet format eller regne ut forskjeller mellom ulike datoer. Hvis du vil lære mer om hvordan du kan jobbe med datoer i Haskell, kan du sjekke ut følgende linker:
-
-- [Offisiell Haskell dokumentasjon om datoer og tid](https://www.haskell.org/documentation/)
-- [Stack Overflow diskusjon om å få dagens dato i Haskell](https://stackoverflow.com/questions/23661251/how-to-get-the-current-date-in-haskell)
-- [HaskellWiki side om å jobbe med datoer i Haskell](https://wiki.haskell.org/Working_with_Dates_and_Time)
-- [Haskell for dummies - Dato og tid](https://en.wikibooks.org/wiki/Haskell/DateTime)
+Videre kan vi bruke funksjonen `addUTCTime` for å legge til et bestemt antall sekunder til en `UTCTime` -verdi. Dette kan være nyttig for å beregne fremtidige eller tidligere datoer og klokkeslett.
 
 ## Se også
-
-- [Offisiell Haskell dokumentasjon](https://www.haskell.org/documentation/)
-- [Haskell for Dummies](https://en.wikibooks.org/wiki/Haskell)
-- [Stack Overflow diskusjon om Haskell-programmering](https://stackoverflow.com/questions/tagged/haskell)
+- [Offisiell dokumentasjon for Data.Time-biblioteket](https://hackage.haskell.org/package/time-1.9/docs/Data-Time.html)
+- [Haskell Wiki: Clocks og Time](https://wiki.haskell.org/Clocks_and_time)

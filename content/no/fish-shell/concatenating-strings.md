@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Sammenslåing av tekststrenger"
+title:                "Fish Shell: Sammenkobling av strenger"
+simple_title:         "Sammenkobling av strenger"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/concatenating-strings.md"
 ---
 
@@ -9,57 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sette sammen strenger, eller konkatenere, er en vanlig oppgave i programmering. Det lar deg kombinere flere strenger til en enkelt streng, som kan være nyttig for å formatere utdata eller bygge URL-er. I Fish Shell kan vi bruke kommandoen `string` for å konkatenere strenger.
+Å koble sammen eller "konsolidere" tekststrenger er en viktig konsept innenfor programmering. Dette lar deg kombinere flere strenger til en, noe som kan være nyttig for å lage dynamiske utskrifter eller bygge komplekse kommandoer.
 
 ## Slik gjør du det
 
-For å konkatenere strenger i Fish Shell, kan du bruke følgende syntaks:
+For å gjøre dette i Fish Shell, kan du bruke kommandoen `string join` etterfulgt av strengene du vil koble sammen. La oss si at vi vil koble sammen navnet og alderen til en person. Vi kan gjøre dette slik:
 
-```fish
-string concat "tekst1" "tekst2"
+```
+Fish Shell> set navn "Johan"
+Fish Shell> set alder "32"
+Fish Shell> string join $navn "er" $alder "år gammel"
 ```
 
-Dette vil gi utdata `tekst1tekst2`. Merk at vi må bruke anførselstegn rundt hver streng vi ønsker å konkatenere.
+Outputen vil være `Johan er 32 år gammel`. Her bruker vi `$` før variabelnavnet for å få verdien av variabelen, og "er" er den første strengen vår. 
 
-Du kan også kombinere variabler med strenger ved å bruke `$` tegnet og plassere variablene i en `string` kommando. For eksempel:
+Du kan også bruke `string split` for å bryte opp en streng basert på et gitt tegn. For eksempel:
 
-```fish
-set navn "John Doe"
-string concat "Hei $navn, velkommen til min blogg!"
+```
+Fish Shell> set mat "pølse,potet,salat"
+Fish Shell> string split "," $mat
 ```
 
-Dette vil gi utdata `Hei John Doe, velkommen til min blogg!`, der `navn` variabelen blir erstattet med verdien som er lagret i den.
+Outputen vil være en liste med hver matrett: `pølse potet salat`.
 
-Vi kan også konkatenere flere strenger samme i en `string` kommando ved å legge til flere argumenter, som i følgende eksempel:
+## Dypere dykk
 
-```fish
-string concat "Dette" "er" "en" "test."
+I tillegg til de grunnleggende kommandoene `string join` og `string split`, kan Fish Shell også utføre mer avanserte handlinger når det gjelder strenger. Dette inkluderer å finne og erstatte deler av en streng, invertere en streng og konvertere den til store eller små bokstaver.
+
+For å erstatte deler av en streng, kan du bruke `string replace` kommandoen. La oss si at vi har skrevet "Hello World" med en feil og ønsker å erstatte "World" med "Fish". Da kan vi bruke følgende kommando:
+
+```
+Fish Shell> string replace "Hello World" World Fish
 ```
 
-Dette vil gi utdata `Dette er en test.`
-
-## Dypdykk
-
-I tillegg til å bruke `string` kommandoen, kan man også bruke `echo` kommandoen til å konkatenere strenger. Dette gjøres ved å bruke `-s` flagget, som står for "separator". Så kan man spesifisere hvilket tegn som skal brukes som separator. For eksempel:
-
-```fish
-echo -s " " "Dette" "er" "en" "test."
-```
-
-Dette vil gi utdata `Dette er en test.`
-
-En annen måte å konkatenere strenger på er ved hjelp av `set` kommandoen og `string replace` kommandoen. Dette kan være nyttig hvis du vil endre en del av en streng før du konkatenere den. For eksempel:
-
-```fish
-set tall 123
-set tekst "Dette er et tall: 456"
-string concat "Dette er et tall: " (string replace "123" $tall $tekst)
-```
-
-Dette vil gi utdata `Dette er et tall: 456`, der tallet 123 blir erstattet med verdien lagret i `tall` variabelen.
+Outputen vil være `Hello Fish`. Du kan også bruke `string toupper` og `string tolower` for å konvertere strenger til henholdsvis store eller små bokstaver.
 
 ## Se også
 
-- [Offisiell Fish Shell dokumentasjon for string kommando](https://fishshell.com/docs/current/commands.html#string)
-- [Teknikker for å jobbe med tekststrenger i Fish Shell](https://blog.martinbuberl.com/working-with-strings-in-fish-shell/)
-- [Praktiske eksempler på å bruke `string` kommandoen](https://medium.com/@rajatm1104/concatenate-a-string-in-fish-shell-8d905d197b49)
+* [Offisiell Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+* [En guide til de mest brukte Fish Shell kommandoene](https://www.freecodecamp.org/news/fish-shell-tutorial/)
+* [En liste med nyttige Fish Shell plugins](https://github.com/Fisherman/plugin-list/wiki)

@@ -1,41 +1,50 @@
 ---
 title:                "Elm: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Czemu warto łączyć łańcuchy w języku Elm?
+## Dlaczego
 
-Często przy pisaniu oprogramowania potrzebujemy połączyć dwa czy więcej łańcuchów tekstu w jeden. W języku Elm mamy do dyspozycji funkcję `String.concat`, która zadanie to wykonuje w bardzo prosty sposób. W tym artykule pokażę Wam, jak skutecznie korzystać z tej funkcji.
+W programowaniu czasami musimy połączyć dwa lub więcej ciągów znaków, aby uzyskać jedną dłuższą linię tekstu. W tym przypadku, konkatenacja jest koniecznością.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-W celu połączenia łańcuchów w języku Elm należy skorzystać z funkcji `String.concat`, która przyjmuje jako argumenty dwie listy: pierwszą zawierającą łańcuchy, które chcemy połączyć, oraz drugą zawierającą łańcuchy oddzielające nasze łańcuchy z pierwszej listy.
-
-Przykładowo, jeśli chcemy połączyć łańcuchy "Hello" i "world" oraz oddzielić je spacją, możemy napisać:
+Możemy użyć operatora `++` aby połączyć (oraz ewentualnie przerwać) ciągi znaków. Na przykład:
 
 ```Elm
-String.concat ["Hello", "world"] " " -- output: "Hello world"
+"Hello " ++ "world"
 ```
 
-Warto zauważyć, że oddzielający łańcuch jest opcjonalny - jeśli go nie podamy, funkcja automatycznie wykorzysta pusty łańcuch jako separator.
+Output:
+```
+Hello world
+```
 
-Co więcej, możemy również połączyć więcej niż dwa łańcuchy:
+Jeśli chcemy połączyć więcej niż dwa ciągi znaków, musimy użyć funkcji `append` i podać jej listę ciągów. Na przykład:
 
 ```Elm
-String.concat ["Elm", "jest", "super", "!", "!"] " " -- output: "Elm jest super !!"
+append ["Hello", " ", "world"]
 ```
 
-## Głębszy wgląd
+Output:
+```
+Hello world
+```
 
-Podczas połączenia łańcuchów funkcja `String.concat` wykorzystuje funkcję `String.join`, która dokonuje faktycznego łączenia łańcuchów i oddzielania ich separators. Jest to przydatne szczególnie w przypadku, gdy  nasza pierwsza lista zawiera elementy innego typu niż łańcuchy, ponieważ funkcja `String.join` jest w stanie zamienić je na łańcuchy przed połączeniem.
+## Głębsza analiza
 
-Warto również zauważyć, że funkcja `String.concat` zwraca nowo utworzony łańcuch, a nie modyfikuje oryginalnych.
+Kiedy używamy operatora `++` lub funkcji `append`, interesujące rzeczy mogą się dziać pod spodem. W rzeczywistości, w tle, jest wykonywane wiele operacji połączeniowych, aby uzyskać oczekiwaną wartość. Dlatego, gdy używamy konkatencji w naszym kodzie, musimy pamiętać o wydajności i potencjalnych problemach związanych z wykorzystaniem dużej ilości połączeń.
 
 ## Zobacz również
 
-* Dokumentacja języka Elm o funkcji `String.concat`: https://package.elm-lang.org/packages/elm/core/latest/String#concat
-* Dokumentacja języka Elm o funkcji `String.join`: https://package.elm-lang.org/packages/elm/core/latest/String#join
+- [Dokumentacja Elm o połączeniach](https://package.elm-lang.org/packages/elm/core/latest/String#++)
+
+- [Przykłady konkatencji w Elm](https://github.com/elm-lang/elm-examples/tree/master/basics/strings)
+
+- [Poradnik o wydajności w Elm](https://dev.to/mrinkazuki/performance-tips-for-elm-beginners-1i0l)

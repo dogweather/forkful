@@ -1,64 +1,57 @@
 ---
-title:                "C: Busca e substituição de texto"
+title:                "C: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que utilizar busca e substituição de texto?
+## Por que
 
-A busca e substituição de texto é uma ferramenta útil e importante na programação em C. Ela permite que você encontre e altere determinadas partes do seu código de forma rápida e eficiente. Além disso, com essa função, é possível automatizar tarefas repetitivas e economizar tempo.
+O processo de busca e substituição de texto é uma técnica essencial em programação. Ele permite que desenvolvedores encontrem e modifiquem padrões específicos em um texto, tornando a manipulação de dados mais eficiente e precisa.
 
-## Como fazer busca e substituição de texto em C
+## Como fazer
 
-A sintaxe básica para a busca e substituição de texto em C é a seguinte:
+Existem várias maneiras de realizar busca e substituição de texto em linguagem C. Uma delas é utilizando a função `strstr()` para encontrar uma sequência de caracteres e a função `strcpy()` para copiar a nova sequência no lugar da antiga. Veja um exemplo abaixo:
 
-```
+```C
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-    char text[100];
-    char search[20];
-    char replace[20];
- 
-    printf("Digite o texto: ");
-    scanf("%s", &text);
- 
-    printf("Digite a palavra que deseja buscar: ");
-    scanf("%s", &search);
- 
-    printf("Digite a palavra que deseja substituir: ");
-    scanf("%s", &replace);
-    
-    // Usando a função 'strstr' para encontrar a posição da palavra a ser substituída
-    char *position = strstr(text, search); 
-    
-    // Usando a função 'strcpy' para copiar a parte do texto após a palavra a ser substituída
-    strcpy(position, replace); 
-    
-    // Imprimindo o resultado final
-    printf("O texto após a substituição é: %s", text);
- 
-    return 0;
+int main() {
+  char texto[] = "Este é um exemplo de busca e substituição de texto.";
+  char antigo[] = "busca";
+  char novo[] = "procura";
+  char *ponteiro;
+
+  ponteiro = strstr(texto, antigo);
+
+  if(ponteiro != NULL) {
+    strcpy(ponteiro, novo);
+  }
+
+  printf("%s", texto);
+
+  return 0;
 }
 ```
 
-Suponha que o usuário digite "Eu amo programação em C" como texto, "amo" como palavra de busca e "admiro" como palavra de substituição. O resultado final seria "Eu admiro programação em C".
+Saída:
+`Este é um exemplo de procura e substituição de texto.`
 
-## Mergulho Profundo na Busca e Substituição de Texto em C
+Com esse exemplo, podemos ver como é possível realizar uma busca e substituição em uma string. Mas lembre-se, esse é apenas um exemplo básico e existem outras maneiras de atingir o mesmo resultado.
 
-Na busca e substituição de texto, a função `strstr` é usada para encontrar a posição da palavra a ser substituída. Ela retorna um ponteiro para a primeira ocorrência da palavra dentro do texto. É importante salientar que, caso a palavra de busca não seja encontrada, a função retorna NULL.
+## Detalhes sobre busca e substituição de texto
 
-Em seguida, usamos a função `strcpy` para copiar a parte do texto que vem após a palavra a ser substituída. Essa parte do texto é adicionada ao ponteiro retornado pela função `strstr`. Então, a nova palavra é inserida nessa posição e a partir daí, o texto é impresso com a substituição feita.
+Além da função `strstr()`, existem outras funções em linguagem C que podem ser úteis para realizar busca e substituição de texto, como a `strchr()`, `strrchr()` e `strtok()`. Além disso, é importante ter conhecimento sobre expressões regulares e como utilizá-las para buscar padrões específicos em um texto.
 
-Outra função importante na busca e substituição de texto é a `sprintf`, que permite que você formate uma string e a salve em uma variável. Em vez de imprimir o resultado na tela, você pode salvar a nova string em uma variável e usá-la posteriormente em seu código.
+Outro ponto importante é ter cuidado ao substituir informações em um texto. É necessário garantir que a nova sequência de caracteres tenha o mesmo tamanho que a antiga, caso contrário, poderão ocorrer erros de memória.
 
-## Veja também
+## Ver também
 
-- [Tutorial de busca e substituição de texto em C](https://www.programiz.com/c-programming/examples/replace-character)
-- [Documentação oficial da função `strstr()`](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
-- [Diferentes opções de substituição de texto em C](https://c-for-dummies.com/blog/?p=869)
+- [Tutorial sobre expressões regulares em C](https://www.geeksforgeeks.org/regular-expressions-in-c-programming/)
+- [Função strstr() - Documentação oficial](https://www.cplusplus.com/reference/cstring/strstr/)
+- [Manipulação de strings em C - Documentação oficial](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

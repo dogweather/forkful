@@ -1,35 +1,40 @@
 ---
-title:                "Ruby: 문자열 대문자로 변환하기"
+title:                "Ruby: 문자열 대문자로 변경하기"
+simple_title:         "문자열 대문자로 변경하기"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜?
-문자열의 첫 글자를 대문자로 바꾸는 것이 왜 중요한지 궁금하신가요? 이번에는 Ruby의 대문자화 함수에 대해 알아보겠습니다!
+## 왜
 
-## 어떻게 하나요?
-문자열의 첫 글자를 대문자로 바꾸는 방법은 간단합니다. 바로 `capitalize` 함수를 사용하는 것입니다. 아래 예제 코드를 확인해보세요.
+문자열의 첫 글자를 대문자로 바꾸는 것이 왜 필요한지 궁금하신가요? 여러분들이 흔히 사용하는 그 로그인 버튼 혹은 회원가입 버튼을 예로 들어볼까요? 모두 첫 글자가 대문자로 시작하는데, 이는 사용자들이 더 쉽게 식별할 수 있도록 하기 위함입니다. 이러한 작은 디테일이 사용자 경험에 큰 영향을 줄 수 있습니다.
+
+## 어떻게
+
+Ruby는 이를 손쉽게 처리할 수 있는 다양한 방법을 제공합니다. 우선, `capitalize` 메소드를 사용하는 방법이 있습니다. 아래 코드를 통해 확인해보세요.
+
 ```Ruby
-string = "hello world"
-puts string.capitalize
+name = "john"
+puts name.capitalize # John
 ```
-출력 결과: `Hello world`
 
-## 심층적인 분석
-`capitalize` 함수는 문자열의 첫 글자를 대문자로 바꾸는 데에만 사용되는 것이 아니라 전체 문자열 중 첫 번째 단어의 첫 글자만 대문자로 바꾸는데에도 사용됩니다. 또한, 영문 이외의 다른 언어에서도 사용할 수 있습니다. 예를 들어, 영어가 아닌 언어의 경우, 다음과 같은 출력 결과가 나옵니다.
+그런데, 한 번에 모든 단어의 첫 글자를 대문자로 바꾸고 싶다면 `titleize` 메소드를 사용하면 됩니다. 예를 들어, `john smith`를 `John Smith`로 만들고 싶다면 아래와 같이 작성하면 됩니다.
+
 ```Ruby
-string = "여름"
-puts string.capitalize
+name = "john smith"
+puts name.titleize # John Smith
 ```
-출력 결과: `여름`
 
-## 더 알아보기
-`capitalize` 함수는 내부적으로 `gsub` 라는 메소드를 사용하여 첫 글자를 대문자로 바꾸는데, 이를 사용하지 않고 직접 구현하는 방법도 있습니다. 자세한 내용은 아래 링크를 확인해주세요.
+## 깊이 있는 정보
 
-## 관련 링크
-- [String#capitalize 메소드 문서](https://docs.ruby-lang.org/en/2.6.0/String.html#method-i-capitalize)
-- [String#capitalize 메소드 소스 코드](https://github.com/ruby/ruby/blob/master/string.c#L2745)
-- [Ruby의 대문자화 함수에 대해 알아보는 글](https://www.justinamon.com/code/capitalize-a-string-in-ruby-using-the-correct-encoding-for-i18n/)
+단순히 첫 글자를 대문자로 바꾼다는 것만이 `capitalize`의 역할은 아닙니다. 이 메소드는 알파벳이 아닌 언어의 첫 글자도 올바르게 변환할 수 있습니다. 또한, `capitalize`의 경우 두 번째 인자를 추가하여 특정 언어나 문화권에 맞는 대문자 변환을 할 수도 있습니다.
+
+## 참고자료
+
+- Ruby 공식 문서 (한국어): https://ruby-doc.org/core-2.7.1/doc/syntax/methods_rdoc.html#label-String+and+Symbol+Methods
+- 루비 도서관: https://ruby-library.com/
+- 깃허브 리포지토리: https://github.com/ruby/ruby/tree/ruby_2_7

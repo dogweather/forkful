@@ -1,41 +1,56 @@
 ---
-title:                "Java: Utskrift av debug-utdata"
+title:                "Java: Utskrift av felsökningsresultat"
+simple_title:         "Utskrift av felsökningsresultat"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Felsökningsutdata, eller "debug output" på engelska, kan vara en viktig del av att skriva en Java-applikation. Det hjälper dig att identifiera problem och fel i din kod, vilket i sin tur kan spara dig mycket tid och frustration.
+Att skriva ut felsökningsutdata är ett vanligt sätt för utvecklare att identifiera och åtgärda problem i deras kod. Genom att utskriftsprocessen kan man se exakt vad som händer vid varje steg i programmet och därmed enklare hitta fel och missar.
 
-## Hur man gör det
-Att skriva ut debug-utdata i Java är relativt enkelt. Du kan använda metoden `System.out.println()` för att skriva ut en sträng i konsolen. Du kan också använda `System.out.printf()` för att formatera din utdata på ett mer organiserat sätt. Här är ett exempel på hur båda dessa metoder kan användas:
+## Hur man gör
+För att skriva ut felsökningsutdata i Java, kan man använda sig av metoden "System.out.println()" som skriver ut en given sträng eller variabel till konsolen. Här kommer ett exempel:
 
-```Java
-// Skriv ut en enkel sträng
-System.out.println("Detta är debug-utdata");
+```java
+public class DebugPrinter {
 
-// Skriv ut en formaterad sträng
-String namn = "Alice";
-int ålder = 30;
-System.out.printf("%s är %d år gammal", namn, ålder);
+    public static void main(String[] args) {
+
+        // Skapa en variabel att skriva ut
+        String message = "Hej, världen!";
+
+        // Skriv ut variabeln
+        System.out.println(message);
+
+        // Använd också felsökningsutdata för att kontrollera variabler
+        int number1 = 5;
+        int number2 = 10;
+        int sum = number1 + number2;
+        System.out.println("Summan av " + number1 + " och " + number2 + " är " + sum);
+    }
+
+}
 ```
-
-Denna kod skulle producera följande utdata i konsolen:
-
+Output:
 ```
-Detta är debug-utdata
-Alice är 30 år gammal
+Hej, världen!
+Summan av 5 och 10 är 15
 ```
+Här ser vi hur vi kan skriva ut en enkel sträng samt använda felsökningsutdata för att kontrollera vad som händer med variabler i en beräkning.
 
-## Upp i detaljer
-Om du vill gå djupare in i ämnet finns det flera metoder och tekniker som kan hjälpa dig att skriva mer effektiv och läsbar debug-utdata. Till exempel kan du använda `System.err.println()` för att skriva ut felmeddelanden eller `System.console()` för att skriva ut text i en interaktiv konsol. Du kan också använda loggningsramverk som Log4j eller SLF4J för mer strukturerad och flexibel debug-utdata.
+## Djupdykning
+Att skriva ut felsökningsutdata kan vara ett effektivt sätt att förstå vad som händer i ens program, men det är också viktigt att använda den rätt. Här kommer några tips för att få ut mesta möjliga av felsökningsutdata i Java:
 
-Det är också viktigt att notera att för mycket debug-utdata kan påverka prestandan för din applikation, så det är viktigt att använda det med måtta och ta bort det när det inte längre behövs.
+- Använd tydliga och beskrivande meddelanden för att förstå vad som skrivs ut.
+- Undvik att skriva ut stora mängder data som kan göra konsolen ogenomtränglig.
+- Kombinera felsökningsutdata med andra verktyg som loggar eller debugger för att få en mer omfattande bild av ditt program.
+- Kom ihåg att ta bort eller kommentera ut alla felsökningsutdata innan du släpper din kod till en produktionsmiljö.
 
 ## Se även
-- [Java Debugging with IntelliJ](https://www.jetbrains.com/help/idea/debugging.html)
-- [Debugging in Java](https://docs.oracle.com/javase/10/tools/java.html#GUID-C7D6F792-FC4A-47CD-8658-662D1D678040)
-- [Java Logging Basics](https://www.baeldung.com/java-logging-intro)
+- [Java API-dokumentation](https://docs.oracle.com/javase/8/docs/api/)
+- [Debugging in Java: A Short Introduction](https://www.baeldung.com/java-debugging)
+- [Java Debugging with Eclipse](https://www.eclipse.org/community/eclipse_newsletter/2017/february/article2.php)

@@ -1,48 +1,44 @@
 ---
 title:                "Fish Shell: 创建临时文件"
+simple_title:         "创建临时文件"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+# 为什么会创建临时文件
 
-## 为什么要创建临时文件？
+临时文件是在计算机编程中经常用到的，它们可以帮助我们临时存储数据，以便在程序运行期间使用。临时文件也可用于控制资源的访问和管理，因此在Fish Shell编程中创建临时文件是很常见的。
 
-临时文件的创建可以帮助我们在编程过程中临时存储数据或者作为程序的中间文件，从而使我们的代码更加整洁、高效。
+## 如何创建临时文件
 
-# 如何
-
-## Fish Shell中创建临时文件的方法
-
-使用Shell中的 `mktemp` 命令可以方便地创建临时文件，示例如下：
+在Fish Shell编程中，要创建临时文件，可以使用内置的OMT命令。以下是一个例子：
 
 ```Fish Shell
-# 创建一个以 tmp 开头的临时文件
-mktemp -t tmp
-# 创建一个以 prefix 开头的临时文件
-mktemp -p prefix
+set temp_file (omt)
+echo "这是一个临时文件" >> $temp_file
+cat $temp_file
 ```
 
-当命令执行成功后，会返回创建的临时文件的完整路径。也可以使用 `echo $TMPDIR` 命令来查看系统设置的临时文件目录。
+这个例子中，我们首先使用`omt`命令来创建一个临时文件，然后使用`echo`命令将一些文本写入该文件，最后使用`cat`命令将临时文件的内容打印出来。
 
-## 示例输出
+## 深入了解创建临时文件
 
+除了使用内置的`omt`命令外，还有其他一些方法来创建临时文件。例如，我们可以使用`mktemp`命令来生成一个带有随机名称的临时文件，如下所示：
+
+```Fish Shell
+set temp_file (mktemp)
+echo "这是一个临时文件" >> $temp_file
+cat $temp_file
 ```
-/tmp/fishXXXXXX
-/prefix/fishXXXXXX
-```
 
-# 深入了解
-
-创建临时文件的方法可以根据需要进行更多的定制性设置，例如使用 `-d` 参数可以同时创建一个临时文件和对应的临时文件夹。同时，临时文件可以通过 `rm` 命令来清理，在程序结束时可以同时删除临时文件和对应的临时文件夹。
+除此之外，我们还可以使用`> /tmp/temp_file`这样的语法来创建临时文件，该文件会被保存在`/tmp`目录下。不过要注意的是，使用这种方法创建的临时文件并不会自动删除，需要我们手动删除。
 
 # 参考链接
 
-[Linux Shell-创建临时文件的一些方法](https://blog.csdn.net/csbhahaha/article/details/7627027)
-
-# 另请参阅
-
-[如何在Fish Shell中删除临时文件](https://blog.csdn.net/shadowfaxhmx/article/details/85622459)
+- [Fish Shell官方文档 操作临时文件](https://fishshell.com/docs/current/cmds/omt.html)
+- [Linux Shell编程：使用临时文件](https://www.linuxenclave.com/linux-shell-scripting-using-temporary-files/)
+- [Linux命令：mktemp](https://linuxize.com/post/linux-mktemp-command/)

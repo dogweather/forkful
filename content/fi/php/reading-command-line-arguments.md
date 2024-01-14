@@ -1,64 +1,67 @@
 ---
-title:                "PHP: Kommenttiriviparametrien lukeminen"
+title:                "PHP: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Ennen kuin sukellamme syvemmälle, on hyvä ymmärtää miksi lukisit komentoriviargumentteja PHP-kehittäjänä. Komentoriviargumentit ovat erittäin hyödyllisiä työkaluja, jotka voivat auttaa automatisoimaan prosesseja ja tekemään skriptien suorittamisesta helppoa ja nopeaa.
+# Miksi Käytämme PHP-ohjelmointia komentoriviparametrien lukemiseen?
 
-## Kuinka
-PHP:lla on monia tapoja lukea komentoriviargumentteja, mutta yksinkertaisin keino on käyttää `argv`-muuttujaa, joka sisältää taulukon kaikista komentoriviargumenteista. Esimerkiksi:
+Komentoriviparametrien lukeminen on tärkeä osa PHP-ohjelmointia. Se antaa meille mahdollisuuden suorittaa erilaisia toimintoja ohjelman suorituksen aikana, kuten määrittää haluttuja arvoja tai suorittaa erilaisia toimintoja riippuen siitä, mitä parametreja käyttäjä antaa ohjelmalle. Tämä tekee ohjelmistostamme interaktiivisemman ja monipuolisemman.
+
+## Kuinka käyttää PHP:ta komentoriviparametrien lukemiseen?
+
+PHP-ohjelmointikieli tarjoaa meille kolme tapaa lukea komentoriviparametreja: $_SERVER-muuttujan kautta, getopt-funktion ja getopt_long-funktion avulla. Käymme läpi jokaisen alla olevilla esimerkeillä ja näytämme, miten ne toimivat.
+
+### $_SERVER-muuttuja
+
+Muuttuja $_SERVER sisältää tietoja käyttäjän lähettämistä HTTP-pyyntöistä. Käytämme tätä muuttujaa lukemaan komentoriviparametreja seuraavasti:
 
 ```PHP
 <?php
-// Skriptin nimi on ensimmäinen komentoriviargumentti
-$script_name = $argv[0];
-
-// Tulostetaan kaikki muut argumentit yksi kerrallaan
-for ($i = 1; $i < count($argv); $i++) {
-    echo "$argv[$i]\n";
+// Esimerkki $_SERVER-muuttujan käytöstä
+foreach($_SERVER['argv'] as $param) {
+    echo $param . "\n";
 }
+?>
 ```
 
-Jos ajattelit skriptiä `php script.php argument1 argument2`, tulostus olisi seuraava:
+Tämä koodi tulostaa kaikki käyttäjän antamat parametrit riveittäin.
 
-```
-script.php
-argument1
-argument2
-```
+### getopt-funktio
 
-## Syväsukellus
-Voit myös käyttää `getopt()`-funktiota lukemaan komentoriviargumentteja nimellä ja arvolla. Tämä on hyödyllistä, kun haluat antaa komentoriville vaihtoehtoja, joilla on määritellyt arvot. Esimerkiksi:
+getopt-funktio on hyödyllinen, kun haluamme lukea vain tiettyjä parametreja ja suorittaa niihin liittyviä toimintoja. Se toimii siten, että ensimmäisenä argumenttina annetaan merkkijono, joka kertoo, mitkä parametrit haluamme lukea. Esimerkiksi merkkijono "hf:" tarkoittaa, että haluamme lukea parametrit -h ja -f, ja että -f-parametrille on määritelty arvo.
 
 ```PHP
 <?php
-// Asetetaan sallitut vaihtoehdot ja niiden arvot
-$shortopts = "f:";
-$longopts  = array(
-    "file:"
-);
+// Esimerkki getopt-funktion käytöstä
+$parameters = getopt("hf:");
 
-// Luetaan argumentit
-$options = getopt($shortopts, $longopts);
+if (array_key_exists("h", $parameters)) {
+    // Suoritetaan toiminto, jos käyttäjä on antanut -h parametrin
+}
 
-// Tulostetaan annettu tiedoston nimi
-echo "Annitut tiedostonimi: {$options['f']}\n";
-echo "Annitut tiedostonimi: {$options['file']}";
+if (array_key_exists("f", $parameters)) {
+    // Suoritetaan toiminto, jos käyttäjä on antanut -f parametrin
+    $file = $parameters["f"];
+}
+?>
 ```
 
-Jos ajattelit skriptiä `php script.php -f testi.txt --file=testi2.txt`, tulostus olisi seuraava:
+### getopt_long-funktio
 
-```
-Annitut tiedostonimi: testi.txt
-Annitut tiedostonimi: testi2.txt
-```
+getopt_long-funktio toimii samalla tavalla kuin getopt-funktio, mutta se tukee pidempiä parametreja. Se ottaa vastaan samat argumentit kuin getopt-funktio ja palauttaa samalla tavalla muotoillun taulukon.
+
+## Syvällisempi katsaus komentoriviparametrien lukemiseen
+
+Komentoriviparametrien lukeminen on hyödyllinen toiminto kaikentyyppisissä PHP-ohjelmoinnissa. Se antaa meille mahdollisuuden käyttää interaktiivisia työkaluja ja vaihtaa asetuksia ohjelmiston suorituksen aikana. Lisäksi parametrien lukeminen voi auttaa meitä tunnistamaan ja käsittelemään virheitä ohjelman suorituksen aikana.
 
 ## Katso myös
-- [PHP: `argv` -manuaalisivu](https://www.php.net/manual/en/reserved.variables.argv.php)
-- [PHP: `getopt()` -manuaalisivu](https://www.php.net/manual/en/function.getopt.php)
-- [Lyhyt ja ytimekäs opas komentoriviargumenttien käyttämiseen PHP-ohjelmoinnissa](https://www.scalingphpbook.com/blog/2012/04/05/using-command-line-arguments-in-php/)
+
+- [PHP:n virallinen dokumentaatio komentoriviparametrien lukemisen](https://www.php.net/manual/en/reserved.variables.server.php) osalta
+- [PHP:n getopt-funktion dokumentaatio](https://www.php.net/manual/en/function.getopt.php)
+- [PHP:n getopt_long-funktion dokumentaatio](https://www.php.net/manual/en/function.getopt-long.php)

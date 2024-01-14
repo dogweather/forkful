@@ -1,52 +1,57 @@
 ---
-title:                "Bash: Comprobando si un directorio existe"
+title:                "Bash: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Si eres un programador de Bash, es probable que te preguntes si una carpeta específica existe o no antes de realizar ciertas acciones en tu código. Puede ser tedioso y poco efectivo continuar con el resto del código si la carpeta no existe. Por eso, es importante saber cómo verificar la existencia de una carpeta en Bash.
+
+En programación, a menudo nos encontramos con la necesidad de comprobar si un directorio existe antes de realizar ciertas acciones en un script de Bash. Esto puede ser útil para evitar errores en el código o para asegurarnos de que el directorio necesario está presente antes de continuar con el flujo del programa. En esta entrada, vamos a explorar cómo comprobar si un directorio existe utilizando Bash.
 
 ## Cómo hacerlo
-Verificar si una carpeta existe en Bash es muy sencillo. Simplemente debemos utilizar el comando `test` con la opción `-d` seguida del nombre de la carpeta que queremos verificar. Por ejemplo:
+
+Existen varias formas de verificar si un directorio existe en Bash. Una de ellas es utilizar el comando `test` seguido de la opción `-d` para indicar que se quiere comprobar si un directorio existe y el nombre del directorio a comprobar. Por ejemplo:
 
 ```Bash
-test -d mi_carpeta
+test -d directorio/
 ```
 
-En este caso, si la carpeta "mi_carpeta" existe, el comando devolverá el valor verdadero (0) y si no existe, devolverá el valor falso (1). Podemos utilizar esta lógica en nuestro código Bash para tomar decisiones basadas en la existencia de la carpeta.
+Esta línea de código devolverá un código de salida 0 si el directorio existe y un código de salida 1 si no existe.
 
-También podemos hacer uso del comando `if` junto con el comando `test` para realizar una acción determinada si la carpeta existe. Por ejemplo:
+Otra forma de hacerlo es utilizando el comando `cd` seguido del nombre del directorio. Si el directorio existe, el comando se ejecutará de manera satisfactoria y devolverá un código de salida 0, mientras que si el directorio no existe, se devolverá un código de salida distinto de 0. Por ejemplo:
 
 ```Bash
-if test -d mi_carpeta; then
-  echo "La carpeta existe"
-fi
+cd directorio/  # en caso de existir, este comando funcionará correctamente
 ```
 
-En este caso, el código dentro del `if` solo se ejecutará si la carpeta existe.
+También es posible utilizar el comando `ls` para mostrar el contenido de un directorio y luego redirigir la salida a `/dev/null`, que es una ubicación invisible del sistema de archivos donde se descartan todos los datos redirigidos hacia ella. Si el directorio no existe, se producirá un error y se mostrará un mensaje, mientras que si existe, no se producirá ningún error y el comando se ejecutará de manera correcta.
+
+```Bash
+ls directorio/ > /dev/null # esta línea de código no mostrará ningún error si el directorio existe
+```
 
 ## Profundizando
-Como mencionamos anteriormente, el comando `test` con la opción `-d` es la forma más común de verificar la existencia de una carpeta en Bash. Sin embargo, existen otras opciones que pueden ser útiles en distintas situaciones:
 
-- `-e` nos permite verificar si un archivo o directorio existe.
-- `-L` nos permite verificar si un enlace simbólico existe.
-- `-s` nos permite verificar si un archivo o directorio tiene un tamaño mayor a cero bytes.
+Es importante tener en cuenta que el comando `test` y los códigos de salida mencionados anteriormente solo comprueban si el directorio existe o no, pero no dicen nada sobre los permisos de acceso al directorio. Si el usuario del script de Bash no tiene permisos suficientes para acceder al directorio, se obtendrá un código de salida distinto de 0 a pesar de que el directorio exista.
 
-Además, si queremos realizar una acción si la carpeta no existe, podemos utilizar el comando `!` antes de `test`. Por ejemplo:
+Además, también es posible utilizar una estructura de control condicional para realizar acciones diferentes según si el directorio existe o no. Por ejemplo:
 
 ```Bash
-if ! test -d mi_carpeta; then
-  mkdir mi_carpeta
+if [ -d directorio/ ]  # si el directorio existe
+then
+    echo "El directorio existe"
+else
+    echo "El directorio no existe"
 fi
 ```
 
-En este caso, si la carpeta "mi_carpeta" no existe, se creará automáticamente.
-
 ## Ver también
-Para más información sobre el comando `test`, puedes revisar la documentación oficial: https://www.gnu.org/software/coreutils/manual/html_node/test-invocation.html
 
-También puedes aprender más sobre otros comandos útiles en Bash en nuestra guía de comandos básicos: https://linuxconfig.org/bash-scripting-tutorial-for-beginners
+- [Cómo crear y eliminar directorios en Bash](https://www.ejemplo.com/crear-eliminar-directorios-bash)
+- [Cómo copiar y mover archivos en Bash](https://www.ejemplo.com/copiar-mover-archivos-bash)
+- [Documentación oficial de Bash](https://www.gnu.org/software/bash/)

@@ -1,60 +1,82 @@
 ---
-title:                "Python: 現在の日付を取得する"
+title:                "Python: 「現在の日付の取得」"
+simple_title:         "「現在の日付の取得」"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ今日の日付を取得する必要があるのか？
 
-Pythonを学んだり、使用したりしている皆さんは、日々現在の日付を取得する必要があることを知っています。例えば、今日の日付を表示したい、あるいは特定の日付と現在の日付を比較したい場合があります。この記事では、Pythonを使って現在の日付を取得する方法を解説します。
+Pythonの日付取得メソッドは、日付や時間に関する処理を行う上で非常に便利です。例えば、特定の日付のデータを取得したり、プログラム内でファイル名に日付を付けたりする場合に役立ちます。
 
-## 方法
+## 取得方法
 
-Pythonには、現在の日付を取得するための便利なモジュールがあります。それが`datetime`モジュールです。まずは、このモジュールをインポートしましょう。
+Pythonでは、標準ライブラリの「datetime」モジュールを使用することで、簡単に現在の日付を取得することができます。以下のコードを実行すると、今日の日付を取得することができます。
 
-```python
+```Python
 import datetime
+
+today = datetime.date.today()
+
+print(today)
 ```
+実行結果：
 
-次に、`datetime`モジュールから`today()`メソッドを使って現在の日付を取得します。そして、`strftime()`メソッドを使って日付を指定したフォーマットに変換します。例えば、次のようなコードになります。
+```2020-05-04```
 
-```python
-current_date = datetime.today().strftime('%Y-%m-%d')
-print(current_date)
+また、日付を任意の形式で取得することも可能です。例えば、年月日の順番に「/」を挟んで表示させたい場合は、以下のようにコードを修正します。
+
+```Python
+import datetime
+
+today = datetime.date.today()
+
+print(today.strftime("%Y/%m/%d"))
 ```
+実行結果：
 
-このコードを実行すると、現在の日付が`YYYY-MM-DD`のフォーマットで表示されます。
+```2020/05/04```
 
-さらに、日付を比較することもできます。例えば、次のようなコードを使って、現在の日付が指定した日付よりも後かどうかを判定することができます。
+## 深く掘り下げる
 
-```python
-specified_date = datetime.date(2021, 5, 1)
-if datetime.today().date() > specified_date:
-    print('現在の日付は指定した日付よりも後です。')
-else:
-    print('現在の日付は指定した日付よりも前です。')
+日付取得のメソッドは、PythonのDatetimeオブジェクトとして取得されます。これにより、日付や時間に関する様々な操作が可能になります。例えば、現在の日付と一週間後の日付を比較することができます。
+
+*今日は何曜日かを取得する方法*
+
+```Python
+import datetime
+
+today = datetime.date.today()
+
+print(today.strftime("%A"))
+
 ```
+実行結果：
 
-このように、Pythonを使って現在の日付を取得することができます。
+```Monday```
 
-## ディープダイブ
+*一週間後の日付を取得する方法*
 
-Pythonの`datetime`モジュールには、日付の計算やタイムゾーンの情報を取得するための多くの便利な関数やメソッドがあります。さらに、`calendar`モジュールを使うことで曜日や月の情報を取得することもできます。これらの機能を使うことで、より高度な日付操作が可能になります。
+```Python
+import datetime
+
+today = datetime.date.today()
+one_week_later = today + datetime.timedelta(days=7)
+
+print(one_week_later)
+```
+実行結果：
+
+```2020-05-11```
 
 ## 参考リンク
 
-- [Pythonで日付を扱う方法 (Qiita)](https://qiita.com/ubuntaka/items/749ce2d11984d7123e96)
-- [Pythonの日付と時刻を取得する方法 (プログラミング初心者入門講座)](https://www.javadrive.jp/python/time/index8.html)
-- [Pythonでカレンダーを表示する方法 (Qiita)](https://qiita.com/Kyou13/items/34a6a2d06b423d6997ba)
-
-## おわりに
-
-Pythonの`datetime`モジュールを使うことで、簡単に現在の日付を取得することができます。さらに、日付の計算やタイムゾーンの情報を取得することで、より便利に日付を操作することができます。ぜひこの記事を参考に、Pythonで日付を取得してみてください。
-
-## 関連リンク
-
-- [Markdown記法 (Qiita)](https://qiita.com/tbpgr/items/989c6badefff69377da7)
-- [Python資料集 (Python.jp)](https://www.python.jp/text/)
+- [Python datetimeモジュール公式ドキュメント](https://docs.python.org/ja/3/library/datetime.html)
+- [Python Datetimeオブジェクトの操作方法](https://note.nkmk.me/python-datetime-time-delta/)
+- [Python Datetimeで日付を任意の形式で取得する方法](https://note.nkmk.me/python-datetime-timestamp/)
+- [Python Datetimeオブジェクトを使用して一週間後の日付を取得する方法](https://note.nkmk.me/python-datetime-timedelta/)
+- [Python Datetimeオブジェクトを使用して曜日を取得する方法](https://note.nkmk.me/python-datetime-weekday/)

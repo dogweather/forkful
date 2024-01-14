@@ -1,43 +1,53 @@
 ---
 title:                "Elixir recipe: Generating random numbers"
+simple_title:         "Generating random numbers"
 programming_language: "Elixir"
-category:             "Numbers"
+category:             "Elixir"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# Why Generate Random Numbers in Elixir
 
-Generating random numbers is a common task in many programming languages, and Elixir is no exception. Being able to generate random numbers can be useful for creating unique identifiers, generating test data, or simulating random events in a program. In this blog post, we will explore how to generate random numbers in Elixir and the various options available to do so.
+In programming, generating random numbers can be useful for a variety of tasks such as generating test data, creating randomized elements in a game, or creating unique identifiers. In Elixir, there are built-in functions that make generating random numbers simple and efficient.
 
 ## How To
 
-To generate random numbers in Elixir, we can use the `:rand.uniform/1` function. This function takes in a range and returns a random number within that range. Let's see an example:
+To generate a random number in Elixir, we can use the `random.uniform/2` function, which takes in a range and returns a random number within that range.
 
-```Elixir
-:rand.uniform(1..10)
+```
+Elixir
+Random.uniform(1..10)
+# output: 7
 ```
 
-This code will generate a random number between 1 and 10. We can also use the `:rand.uniform/0` function to generate a random number between 0 and 1, like this:
+We can also generate a list of random numbers using the `Enum.map/2` function and the `random.uniform/2` function. The `Enum.map/2` function allows us to apply a function to each element in a list, in this case, generating a random number for each element.
 
-```Elixir
-:rand.uniform()
+```
+Elixir
+Enum.map([1,2,3,4,5], fn _ -> Random.uniform(1..10) end)
+# output: [6, 3, 9, 2, 8]
 ```
 
-We can also generate a list of random numbers using the `:rand.uniform/2` function. This function takes in a number n and a range and returns a list of n random numbers within that range. For example:
+We can also use `random.seed/1` to set a specific seed for our random number generation, making it easier to reproduce results in testing or debugging.
 
-```Elixir
-:rand.uniform(5, 1..100)
 ```
-
-This code will generate a list of 5 random numbers between 1 and 100. Additionally, we can use the `:rand.seed/1` function to set a seed for our random number generation. This ensures that the same sequence of random numbers will be generated every time we run our code, which can be useful for testing or debugging.
+Elixir
+random.seed(123)
+Random.uniform(1..10)
+# output: 2
+```
 
 ## Deep Dive
 
-Behind the scenes, Elixir uses the Erlang `:rand` module to generate random numbers. This module provides various functions for generating random numbers, including `uniform`, `uniform_s`, and `uniform_nd`. The `uniform` and `uniform_s` functions are the ones we have discussed above, while the `uniform_nd` function is used for generating multidimensional arrays of random numbers. Additionally, the `:rand` module allows us to set a seed, as we mentioned earlier, and also to specify a distribution for our random numbers, such as uniform, normal, or exponential.
+Elixir uses the Mersenne Twister algorithm for generating random numbers. This algorithm is known for its fast generation speed and high-quality randomness. It also supports parallelization, allowing for efficient generation of multiple random numbers at once.
+
+In addition to `random.uniform/2`, Elixir also provides functions for generating random binary data and random list permutations. The `random.seed/1` function also accepts an optional `:secure` option, which uses the system's cryptographic random number generator for even more secure random number generation.
 
 ## See Also
 
-- Elixir official documentation on random number generation: https://hexdocs.pm/elixir/Random.html
-- An in-depth article on the `:rand` module: https://joearms.github.io/2013/10/25/Erlang-s-random-number-generator.html
+- [Elixir Documentation for Random module](https://hexdocs.pm/elixir/Random.html)
+- [Mersenne Twister algorithm](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- [Elixir School - Random](https://elixirschool.com/en/lessons/basics/random/)

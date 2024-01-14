@@ -1,41 +1,40 @@
 ---
 title:                "Javascript: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää regular expressioneja?
+## Miksi käyttää säännöllisiä lausekkeita?
 
-Regular expressionit ovat erittäin hyödyllinen työkalu ohjelmoinnin maailmassa. Ne auttavat suorittamaan monimutkaisia hakukuvioita ja korvaamaan sekä muokkaamaan tekstiä tehokkaasti. Ne myös säästävät aikaa, kun etsitään tiettyjä merkkijonoja koodin joukosta.
+Säännölliset lausekkeet ovat hyödyllisiä työkaluja, kun haluat käsitellä ja etsiä tietoa tekstistä. Ne ovat erityisen käteviä, kun haluat löytää tietyn muotoisia sanoja tai ilmaisuja suuresta tekstimäärästä, kuten esimerkiksi luettelosta tai asiakirjasta.
 
-## Miten käyttää regular expressioneja?
+## Miten aloitat säännöllisten lausekkeiden käytön?
 
-```Javascript
-// Etsitään sanaa "tietokone" tekstistä ja tulostetaan sen indeksi
-const teksti = "Haluaisin ostaa uuden tietokoneen.";
-const regex = /tietokone/g;
-console.log(teksti.search(regex)); // output: 21
-```
-
-Tässä esimerkissä käytämme `search`-funktiota yhdessä regular expressionin kanssa löytääksemme ensimmäisen esiintymän sanasta "tietokone". Huomaa myös sana "g" regular expressionin lopussa, mikä tarkoittaa "globaalia" eli sitä, että haluamme löytää kaikki esiintymät.
+Säännöllisten lausekkeiden käyttö aloitetaan *regexp*-funktion avulla. Voit luoda uuden regexp-olion ja määrittää haluamasi hakuehdot sisään. Esimerkiksi voit etsiä kaikki sanat, jotka alkavat "a"-kirjaimella seuraavalla koodilla:
 
 ```Javascript
-// Korvataan sanat "tietokone" sanalla "läppäri"
-const uusiTeksti = teksti.replace(regex, "läppäri");
-console.log(uusiTeksti); // output: Haluaisin ostaa uuden läppärin.
+let regexp = new RegExp("^a\\w+"); // Hakee kaikki "a"-alkuiset sanat
 ```
 
-Tässä käytämme `replace`-funktiota korvataksemme kaikki esiintymät sanasta "tietokone" sanalla "läppäri". Näin voimme helposti muokata tekstiä tarpeidemme mukaan.
+Jos haluat etsiä useampia hakuehtoja, voit käyttää erilaisia säännöllisten lausekkeiden metodeja, kuten `.test()` tai `.match()`. Näillä metodeilla voit tarkistaa, täyttyvätkö hakuehdot tekstissä ja/tai palauttaa tulokset taulukkona tai muuna datana. Käytännön esimerkkejä löydät [täältä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
 
-## Syväsukellus regular expressioneihin
+## Syvempi sukellus säännöllisiin lausekkeisiin
 
-Regular expressioneja käyttäessä on tärkeää muistaa, että ne ovat erittäin tarkkoja ja pienikin virhe voi johtaa epätoivottuihin tuloksiin. Tästä syystä on hyvä lukea lisää niiden syntaksista ja toiminnasta ennen käyttöönottoa. On myös hyödyllistä kokeilla ja testata regular expressioneja eri tilanteissa, jotta niiden käyttö tulee luontevaksi.
+Säännöllisten lausekkeiden hallitseminen voi tuntua aluksi haastavalta, mutta niiden käytön oppiminen kannattaa. Voit saavuttaa säännöllisten lausekkeiden avulla monia asioita, kuten:
+
+- Yksinkertaistaa tekstin käsittelyä ja tarkistamista
+- Tehdä monimutkaisia muutoksia tekstiin
+- Parsia tietoa taulukoihin tai objekteihin helposti
+
+Hyvä tapa oppia säännöllisten lausekkeiden käyttöä on harjoitus: kokeile erilaisia hakuehtoja ja näet, miten ne vaikuttavat tuloksiin. Voit myös hyödyntää verkosta löytyviä oppaita ja oppimateriaaleja.
 
 ## Katso myös
 
-- [W3Schools: Regular Expressions](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-- [MDN web docs: Regular Expressions Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [Regexr: Learn, Build & Test RegEx](https://regexr.com/)
+- [MDN - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Kokonaisvaltainen opas säännöllisiin lausekkeisiin (englanniksi)](https://regexone.com/)
+- [W3Schools - Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)

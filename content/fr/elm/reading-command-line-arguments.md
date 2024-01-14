@@ -1,70 +1,71 @@
 ---
-title:                "Elm: Lecture des arguments de ligne de commande"
+title:                "Elm: La lecture des arguments en ligne de commande"
+simple_title:         "La lecture des arguments en ligne de commande"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
-Les arguments de la ligne de commande sont utilisés dans de nombreuses applications pour personnaliser le fonctionnement du programme. L'apprentissage de la lecture des arguments de ligne de commande en Elm peut être utile pour développer des applications plus flexibles et polyvalentes.
+## Pourquoi
+
+Chaque développeur a probablement rencontré le besoin de lire des arguments de ligne de commande à un moment donné dans son parcours de programmation. Cela peut sembler intimidant au premier abord, mais heureusement, Elm fournit une solution simple et efficace pour relever ce défi.
 
 ## Comment faire
-Pour lire les arguments de ligne de commande en Elm, il suffit d'utiliser la fonction `CommandLine.arguments` qui renvoie une liste de `String` représentant les arguments passés au programme. Voici un exemple de code:
+
+Pour lire des arguments de ligne de commande en Elm, nous allons utiliser la fonction `getArgs` du module `Platform.Cmd` ainsi que le module `Elm-Kernel` pour accéder à l'interface JavaScript. Voici un exemple de code utilisant ces deux éléments :
 
 ```Elm
--- Lecture des arguments de la ligne de commande
+import Platform.Cmd exposing (Cmd)
+import Html exposing (text)
+import Elm.Kernel.Platform exposing (load)
+
+main : Program () String ()
 main =
-    CommandLine.arguments
-        |> List.map Console.log
+    Html.program
+        { init = init
+        , update = update
+        , subscriptions = subscriptions
+        , view = view
+        }
+
+
+init : () -> ( String, Cmd () )
+init _ =
+    ( "", Platform.Cmd.getArgs )
+
+
+update : () -> String -> ( String, Cmd () )
+update _ arg =
+    ( "Les arguments de ligne de commande sont : " ++ arg, Cmd.none )
+
+
+subscriptions : () -> Sub () 
+subscriptions _ =
+    Sub.none
+
+
+view : String -> Html Msg 
+view arg =
+    text arg
 ```
 
-Si vous exécutez ce code avec les arguments `elm-make MyFile.elm`, la sortie sera une liste contenant `[ "elm-make", "MyFile.elm" ]`.
+Dans cet exemple, nous utilisons la fonction `getArgs` dans notre fonction `init` pour récupérer les arguments de ligne de commande et les stocker dans notre modèle. Ensuite, dans notre fonction `update`, nous pouvons utiliser ces arguments pour mettre à jour notre modèle ou effectuer toute autre action souhaitée.
 
-## En profondeur
-Outre la lecture des arguments de ligne de commande, il est également possible d'utiliser le module `CommandLine` pour définir des options avec des valeurs par défaut et des alias d'options. Cela peut être utile pour fournir des options de configuration à votre programme. Voici un exemple de code utilisant `CommandLine`.
+## Plongée en profondeur
 
-```Elm
-import CommandLine exposing (Command)
+Maintenant que nous avons vu comment utiliser la fonction `getArgs`, plongeons un peu plus en profondeur pour mieux comprendre comment elle fonctionne. En réalité, cette fonction utilise une API JavaScript sous-jacente pour récupérer les arguments de ligne de commande de l'application et les renvoyer sous forme de chaîne de caractères. Cela signifie que pour lire des arguments de ligne de commande en Elm, nous devons également avoir un script JavaScript lié à notre application.
 
-type alias Config =
-    { verbose : Bool
-    , port : Int
-    }
+Pour ce faire, nous allons utiliser le module `Elm-Kernel` pour accéder à l'interface JavaScript et appeler la fonction `load` pour charger un script externe. Ce script contiendra notre fonction JavaScript pour récupérer les arguments de ligne de commande et les renvoyer à notre application Elm.
 
--- Définition de l'option "--verbose" avec un alias "-v"
-verboseOption : Command Config
-verboseOption =
-  CommandLine.flagWithAliases
-    { aliases = [ "v" ]
-    , help = "Enable verbose mode."
-    , value = .verbose
-    , defaultValue = False
-    }
+## Voir aussi
 
--- Définition de l'option "--port" avec une valeur par défaut
-portOption : Command Config
-portOption =
-  CommandLine.option
-    { longName = "port"
-    , help = "Specify which port to run the server on."
-    , argument = CommandLine.int
-    , value = .port
-    , defaultValue = 8080
-    }
+Pour en savoir plus sur la lecture des arguments de ligne de commande en Elm, vous pouvez consulter la documentation officielle d'Elm ainsi que d'autres articles en ligne tels que :
 
--- Fonction principale utilisant les options définies
-main : CommandLine.ArgParser () Config
-main =
-    CommandLine.mapConfig Config
-        |> CommandLine.addOption portOption
-        |> CommandLine.addCommand verboseOption
+- [Documentation officielle d'Elm](https://guide.elm-lang.org)
+- [Article de blog sur la lecture des arguments de ligne de commande en Elm](https://www.dailydrip.com/blog/elm-argument-parsing)
+- [Exemple de projet GitHub utilisant la lecture des arguments de ligne de commande en Elm](https://github.com/elm/projects/tree/master/command-line-args)
 
-```
-
-Avec cette définition, vous pouvez maintenant exécuter votre programme en fournissant des options telles que `./MyProgram --verbose --port 3000`. Les options seront automatiquement parsées et la configuration correspondante sera renvoyée.
-
-# Voir aussi
-- [Documentation Elm sur la lecture des arguments de ligne de commande](https://package.elm-lang.org/packages/elm/core/latest/CommandLine)
-- [Guide Elm sur la gestion des paramètres et des options de ligne de commande](https://guide.elm-lang.org/managing_program_arguments.html)
+Maintenant que vous êtes familiarisé avec la lecture des commandes en ligne en Elm, vous pouvez l'incorporer dans vos projets et tirer parti de cette fonctionnalité pratique et essentielle.

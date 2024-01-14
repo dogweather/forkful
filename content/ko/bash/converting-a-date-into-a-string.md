@@ -1,7 +1,9 @@
 ---
 title:                "Bash: 날짜를 문자열로 변환하기"
+simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/converting-a-date-into-a-string.md"
 ---
 
@@ -9,56 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-날짜를 문자열로 변환하는 과정은 Bash 프로그래밍에서 매우 중요합니다. 날짜는 다양한 형식으로 사용되며 문자열로 변환하는 것은 날짜를 포맷팅하여 더 쉽게 사용할 수 있도록 해줍니다.
+날짜를 문자열로 변환하는 것에 대해 관심이 있는 이유는 여러 가지가 있을 수 있습니다. 일반적으로 날짜를 문자열로 변환하는 것은 텍스트 파일이나 로그 파일 등에 날짜를 기록하기 위한 필수적인 작업입니다. 또한 날짜를 문자열로 변환하면 원하는 포맷으로 날짜를 표시할 수 있어 가독성이 높아지고 데이터를 처리하는데도 용이합니다. 따라서 날짜를 문자열로 변환하는 것은 Bash 프로그래밍에서 매우 중요한 사용법 중 하나입니다.
 
 ## 어떻게
 
-다음은 날짜를 문자열로 변환하는 간단한 Bash 스크립트 예제입니다.
+우선 날짜를 문자열로 변환하기 전에, 프로그래머들은 날짜를 어떤 형식으로 표시할지 결정해야 합니다. 날짜를 표시하는 가장 일반적인 형식은 “yyyy-mm-dd”와 같은 포맷입니다. Bash에서는 date 명령어를 사용하여 날짜를 현재 시스템의 형식으로 표시할 수 있습니다. 다음은 “yyyy-mm-dd” 형식으로 날짜를 표시하는 예시입니다.
 
 ```Bash
-#!/bin/bash
-
-# 현재 날짜를 YYYY-MM-DD 형식으로 문자열로 변환
-current_date=$(date "+%Y-%m-%d")
-
-echo "오늘 날짜는 $current_date 입니다."
+date +"%Y-%m-%d"
 ```
 
-위 스크립트를 실행하면 다음과 같은 출력을 볼 수 있습니다.
+하지만 사용자는 원하는 다른 포맷으로 날짜를 표시할 수도 있습니다. 예를 들어 한국 형식의 날짜는 “yyyy년 mm월 dd일”이므로 다음과 같이 사용할 수 있습니다.
 
+```Bash
+date +"%Y년 %m월 %d일"
 ```
-오늘 날짜는 2021-10-15 입니다.
+
+또한 사용자가 원하는 날짜를 직접 설정하여 표시할 수도 있습니다. 다음 예시는 2021년 9월 1일의 날짜를 “mm/dd/yy” 형식으로 표시하는 방법입니다.
+
+```Bash
+date -d '2021-09-01' +"%m/%d/%y"
 ```
 
-날짜를 포맷팅하는데에는 `date` 명령어의 `%` 문자와 특정 문자를 조합하여 사용합니다. 이를 이용하여 원하는 형식으로 날짜를 문자열로 변환할 수 있습니다. 아래는 자주 사용되는 날짜 포맷문자들입니다.
+이렇게 설정한 날짜를 문자열로 변환하는 방법도 있습니다. 다음 예시는 2021년 9월 1일을 “September 1, 2021” 형태로 표시하는 방법입니다.
 
-- `%Y`: 연도 (예: 2021)
-- `%m`: 월 (예: 10)
-- `%d`: 일 (예: 15)
-- `%H`: 24시간 형식의 시간 (예: 10)
-- `%M`: 분 (예: 30)
-- `%S`: 초 (예: 45)
-- `%a`: 요일의 축약형 (예: Mon)
-- `%A`: 요일의 전체 이름 (예: Monday)
-- `%b`: 월의 축약형 (예: Jan)
-- `%B`: 월의 전체 이름 (예: January)
+```Bash
+date -d '2021-09-01' +"%B %-d, %Y"
+```
 
-더 많은 날짜 포맷문자들은 `man date` 명령어를 통해 확인할 수 있습니다.
+또한 사용자는 날짜와 시간 정보를 함께 문자열로 변환할 수도 있습니다. date 명령어에서 “%H”를 사용하면 24시간 형태의 시간을 “%I”를 사용하면 12시간 형태의 시간을 표시할 수 있습니다. 다음 예시는 2021년 9월 1일 13시 30분의 날짜와 시간을 “September 1, 2021 at 1:30 PM” 형태로 표시하는 방법입니다.
 
-## 딥 다이브
+```Bash
+date -d '2021-09-01 13:30:00' +"%B %-d, %Y at %-I:%M %p"
+```
 
-날짜 포맷팅에서 더 깊이 들어가 볼 수 있는 주제는 다양합니다. 예를 들어, 현재 시간을 기준으로 몇 시간 전/후의 날짜를 알아내는 방법이나 특정 날짜의 요일을 구하는 방법 등이 있습니다. 또한, 다양한 시간대를 고려해 날짜를 포맷팅하는 방법도 실무에서 유용하게 사용될 수 있습니다.
+더 많은 date 명령어의 옵션과 포맷을 사용하여 원하는 날짜와 시간 형태의 문자열로 변환할 수 있습니다.
 
-## 참고 자료
-- [Bash 날짜 포맷팅 관련 문서](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)
-- [Bash에서 날짜 구하기](https://www.shellhacks.com/get-current-date-time-bash-script-linux/)
-- [Bash 입문자를 위한 기본 명령어 모음](https://www.learnshell.org/)
-- [Bash 프로그래밍 기초](https://wiki.kldp.org/KoreanDoc/html/NewbieGuide/html/TheLinuxCommand_BashShell.html#SECT_3_4)
-- [Bash 스크립트 관련 자주 묻는 질문들](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_01.html)
+## Deep Dive
 
-## 참고 자료
+Bash에서 날짜를 문자열로 변환하는 방법에 대해 더 깊이 알아보겠습니다. date 명령어를 사용하여 날짜를 현재 시스템의 형태로 표시하는 것은 LC_TIME 환경 변수의 값에 따라 달라집니다. 따라서 사용자는 LC_TIME 환경 변수를 지정하여 다른 언어나 다른 지역의 날짜 형식을 표시할 수 있습니다.
 
-- [날짜 포맷팅 관련 문서](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)
-- [Bash에서 날짜 구하기](https://www.shellhacks.com/get-current-date-time-bash-script-linux/)
-- [Bash 입문자를 위한 기본 명령어 모음](https://www.learnshell.org/)
-- [Bash 프로그래밍 기초](https://wiki.kldp.org/KoreanDoc/html/NewbieGuide/html/TheLinuxCommand_BashShell.html
+또한 날

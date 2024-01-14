@@ -1,52 +1,70 @@
 ---
-title:                "Haskell: コマンドライン引数の読み取り"
+title:                "Haskell: コンピューター・プログラミングにおける「コマンドライン引数の読み込み」"
+simple_title:         "コンピューター・プログラミングにおける「コマンドライン引数の読み込み」"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why (なぜ)
+## なぜ
+プログラミングをする際に、コマンドライン引数を読み取ることは非常に重要です。引数を正しく読み取ることで、プログラムの挙動をカスタマイズしたり、ユーザーとやり取りすることができます。
 
-コマンドライン引数を読み取ることは、Haskellプログラミングにおける重要なスキルです。コマンドライン引数は、プログラムに実行時に渡す情報を提供するために使用されます。この記事では、コマンドライン引数の読み取り方について学び、その重要性を理解します。
-
-## How To (やり方)
-
-コマンドライン引数を読み取るには、getArgs関数を使用します。これは、コマンドライン引数を文字列のリストとして取得します。以下の例を参考にしてください。
+## 方法
+Haskellでコマンドライン引数を読み取る方法を見てみましょう。まず、"System.Environment"モジュールをインポートします。
 
 ```Haskell
-import System.Environment (getArgs)
+import System.Environment
+```
 
-main :: IO ()
+次に、"getArgs"関数を使って引数を取得します。この関数は、"IO [String]"という型を持っています。それでは、実際にコマンドライン引数を読み取る関数を作ってみましょう。
+
+```Haskell
+getCommandLineArgs :: IO [String]
+getCommandLineArgs = getArgs
+```
+
+このように定義した後、main関数内で"getCommandLineArgs"を呼び出し、引数を取得することができます。
+
+```Haskell
 main = do
-    args <- getArgs
-    putStrLn "コマンドライン引数:"
-    traverse putStrLn args
+    args <- getCommandLineArgs
+    putStrLn ("The arguments are: " ++ show args)
 ```
 
-上記の例では、`traverse`関数を使用して、リスト内のすべての要素を表示しています。以下のように実行することで、コマンドライン引数を読み取ることができます。
+では、"Hello World!"という文字列を引数としてプログラムを実行してみましょう。ターミナル上で以下のように入力します。
 
-```bash
-runhaskell myprogram.hs arg1 arg2 arg3
+```Shell
+runhaskell myProgram.hs "Hello World!"
 ```
 
-上記のコマンドを実行すると、以下のような出力が得られます。
+すると、プログラムは以下のような出力をします。
 
-```
-コマンドライン引数:
-arg1
-arg2
-arg3
+```Shell
+The arguments are: ["Hello World!"]
 ```
 
-## Deep Dive (深入り)
+無事に引数を読み取ることができましたね！
 
-コマンドライン引数を扱う際に注意するべきことがあります。まず、リストの最初の要素は、プログラム自体のパスになります。また、特定のデータ型に変換して使用したい場合は、型変換関数を使用する必要があります。例えば、文字列を整数に変換するには、`read`関数を使用します。
+## 深堀り
+コマンドライン引数をもっと詳しく見ていきましょう。上で紹介した"getArgs"関数は、実際には"IO [String]"という型を持っています。この型は、"IO"モナドを使用する必要があることを意味しています。Haskellでは、"IO"モナドを使用することで、実行時に副作用を持つ処理を行うことができます。
 
-また、`putStrLn`関数を使用すると、改行コードが自動的に追加されるため、コマンドライン引数を1行に表示するには、`putStr`関数を使用する必要があります。
+また、"getArgs"関数は実行時の引数をすべてリストとして返すため、引数を一つずつ取り出して処理する際には、リスト操作を行う必要があります。例えば、以下のように引数を１つずつ取り出し、それぞれの引数に対して処理を行う関数を作ることができます。
 
-## See Also (関連リンク)
+```Haskell
+processArg :: String -> IO ()
+processArg arg = putStrLn ("The argument is: " ++ arg)
 
-- [Haskellのコマンドライン引数の読み取り方](https://www.codementor.io/@julieoconnor/working-with-command-line-arguments-in-haskell-csuuydavh)
-- [Haskellドキュメント：Command Line Arguments](https://www.stackbuilders.com/tutorials/haskell/command-line-arguments/)
+main = do
+    args <- getCommandLineArgs
+    mapM_ processArg args
+```
+
+実行時の引数が複数ある場合でも、それぞれの引数に対して処理が行われます。
+
+## 参考リンク
+- [Haskellでのコマンドライン引数の読み取り](https://medium.com/@jonathandekhtiar/getting-command-line-options-in-haskell-d75be741c960)
+- [System.Environmentモジュールのドキュメント](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-Environment.html)
+- [Control.Monadモジュールのドキュメント](https://hackage.haskell.org/package/base-4.12.0.0/docs/Control-Monad.html)

@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Stampa della riga di debug"
+title:                "Ruby: Stampa dell'output di debug"
+simple_title:         "Stampa dell'output di debug"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/printing-debug-output.md"
 ---
 
@@ -9,26 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Spesso durante lo sviluppo di un programma in Ruby si possono presentare dei problemi di codice che non è semplice individuare con una semplice lettura. Qui l'utilizzo di output di debug può essere di grande aiuto: stampando a schermo informazioni sullo stato del codice è possibile capire dove si trova l'errore e come risolverlo.
+Stai scrivendo un codice Ruby e incontri un bug o un errore che non riesci a risolvere? La stampa di output di debug potrebbe essere la soluzione che stai cercando! Con qualche linea di codice strategicamente posizionata, puoi facilmente visualizzare variabili, valori e informazioni utili durante l'esecuzione del tuo programma.
 
-## Come fare
+## Come
 
-Per stampare output di debug in Ruby si può utilizzare il metodo `puts` seguito da una variabile, una stringa o un'espressione. Ad esempio:
+### Utilizzare il metodo "puts"
 
-```Ruby
-nome = "Mario"
-puts "Il nome è #{nome}"  # Stampa: Il nome è Mario
+Il metodo "puts" è un modo semplice e veloce per stampare un output di debug. Basta aggiungere la variabile o il valore che vuoi visualizzare all'interno del metodo. Ad esempio:
+
+```Ruby 
+puts "La variabile x contiene il valore #{x}"
 ```
 
-In questo caso viene stampata la stringa "Il nome è" seguita dal valore della variabile `nome`. In questo modo si possono stampare a schermo informazioni utili come il valore delle variabili, l'output di una funzione o il risultato di un'operazione.
+Questa linea di codice stamperà un messaggio con il valore attuale della variabile "x" durante l'esecuzione del programma.
 
-## Approfondimento
+### Utilizzare il metodo "p"
 
-Mentre l'utilizzo di `puts` è un modo molto semplice e immediato per stampare output di debug, esistono anche altri metodi più specifici per specificare il tipo di informazione che si vuole ottenere. Ad esempio, si può utilizzare `p` per stampare una rappresentazione più dettagliata di un oggetto o `print` per stampare senza andare a capo.
+Se vuoi una stampa più dettagliata, puoi utilizzare il metodo "p". Questo metodo stamperà il valore della variabile insieme al suo nome e al suo tipo di dato. Ad esempio:
 
-Inoltre, per avere un maggior controllo sugli output di debug, si può utilizzare il gem "pry" che permette di mettere in pausa l'esecuzione del codice e accedere a una console interattiva per eseguire comandi e testare il codice.
+```Ruby
+p x
+```
+
+Questa linea di codice stamperà qualcosa del tipo "x = 10 (Integer)".
+
+## Deep Dive
+
+Oltre ai metodi "puts" e "p", esistono anche altri modi per stampare un output di debug. Ad esempio, puoi utilizzare il metodo "pp" per stampare una struttura dati in modo più leggibile o il metodo "inspect" per visualizzare tutti gli attributi di un oggetto.
+
+Inoltre, puoi anche utilizzare la gemma "pry" per eseguire il debugging del tuo codice in modo più interattivo. Questa gemma consente di mettere il programma in pausa e di esplorare variabili e oggetti in un ambiente più dinamico.
 
 ## Vedi anche
 
-- La documentazione ufficiale di Ruby su `puts`: https://ruby-doc.org/core-3.0.2/IO.html#method-i-puts
-- Il gem "pry": https://github.com/pry/pry
+- https://www.tutorialspoint.com/ruby/ruby_debugger.htm
+- https://youtu.be/Pgvsje4Tpzc
+- https://davidvgalbraith.com/ruby/2014/guide-debbuging-ruby/
+- https://github.com/pry/pry

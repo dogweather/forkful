@@ -1,33 +1,51 @@
 ---
-title:                "Kotlin: Standardivirheen kirjoittaminen"
+title:                "Kotlin: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa standard error -virtaan?
+## Miksi
 
-Kirjoittaminen standard error -virtaan on hyödyllistä silloin, kun haluat saada tarkempaa tietoa ohjelmasi toiminnasta tai virhetilanteista. Se on myös kätevä tapa seurata koodin suorittamista ja mahdollistaa virheiden helpomman jäljittämisen.
+On monia syitä, miksi haluat kirjoittaa tietoja standard erroriin ohjelmassasi. Tärkein syy on se, että se auttaa sinua tunnistamaan ja korjaamaan virheitä ohjelmassasi. Standard erroria käytetään myös usein raportoimaan tärkeitä tapahtumia ohjelmassa, kuten poikkeuksia tai varoituksia.
 
-## Kuinka tehdä se Kotlinilla?
+## Miten
 
-Kotlinissa voidaan käyttää standardin kirjastoa `System.err` ja sen metodia `println()` virheilmoitusten kirjoittamiseen. Esimerkiksi:
+Kotlin-kielen avulla standard erroriin kirjoittaminen on helppoa. Seuraavassa on esimerkkejä siitä, miten voit kirjoittaa standard erroriin erilaisia tietoja ohjelmassasi:
 
 ```Kotlin
-System.err.println("Virheilmoitus tähän.")
+fun main() {
+    //Kirjoittaa merkkijonon standard erroriin
+    System.err.println("Tämä on virheen viesti.")
+
+    //Kirjoittaa virheen standard erroriin
+    try {
+        throw Exception("Tämä on virhe.")
+    } catch (e: Exception) {
+        System.err.println(e)
+    }
+}
 ```
 
-Tämä tulostaa virheilmoituksen standard error -virtaan ja se voidaan sitten lukea esimerkiksi konsolilta tai virhelokeista.
+Yllä oleva koodi tuottaa seuraavan tulosteen:
 
-## Syvempi sukellus
+```
+Tämä on virheen viesti.
+java.lang.Exception: Tämä on virhe.
+```
 
-Kun kirjoitat standard error -virtaan, tiedot tallentuvat erilliseen virtaan kuin tavalliset tulostukset. Tämä mahdollistaa virheilmoitusten erottamisen muusta ohjelman tulostuksesta ja helpottaa virheiden tunnistamista ja korjaamista.
+## Syvemmälle
 
-On myös tärkeää huomata, että standard error -virtaa ei tyhjennetä automaattisesti ohjelman suorituksen jälkeen, joten tarvittaessa se on puhdistettava käsin.
+Kun kirjoitat tietoja standard erroriin, on tärkeää huomata, että ne eivät näy suoraan ohjelman normaalissa tulosteessa. Tämä tarkoittaa, että standard out ja standard error voivat näyttää tuloksia eri järjestyksessä, mikä voi olla hyödyllistä virheiden selvittämisessä.
+
+Muista myös, että voit yhdistää standard errorin ja standard outin tulostukset yhteen käyttämällä `println()`-metodia. Tämä tarkoittaa sitä, että voit kirjoittaa sekä normaalin tulostuksen että virheiden viestit samalle riville.
 
 ## Katso myös
 
-- [Kotlinin virallinen dokumentaatio System.err:stä](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-system.err/)
-- [Jenkovin blogipostaus virheilmoitusten kirjoittamisesta standard error -virtaan Java-sovelluksissa](http://tutorials.jenkov.com/java-io/system-out-err.html)
+- [Kotlinin dokumentaatio standard errorin käsittelystä](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-system/index.html#err)
+- [Java-koodi standard errorin kirjoittamisesta](https://www.baeldung.com/java-write-to-system-error)
+- [Kotlin-kielen virallinen kotisivu](https://kotlinlang.org/)

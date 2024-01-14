@@ -1,71 +1,48 @@
 ---
 title:                "PHP: Generando números aleatorios"
+simple_title:         "Generando números aleatorios"
 programming_language: "PHP"
-category:             "Numbers"
+category:             "PHP"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué generar números aleatorios es importante para la programación
+## Por qué generar números aleatorios en la programación
 
-Generar números aleatorios es una habilidad esencial en la programación ya que permite crear funcionalidades como juegos, gestión de contraseñas, pruebas de software y muchas más. Además, es una forma efectiva de agregar emoción y aleatoriedad a cualquier aplicación o programa.
+Generar números aleatorios es una técnica comúnmente utilizada en programación para simular situaciones de azar o para crear diversidad en un conjunto de datos. Además, puede ser útil en juegos y en la creación de contraseñas seguras.
 
 ## Cómo generar números aleatorios en PHP
 
-Para generar números aleatorios en PHP, podemos utilizar la función `rand (inicio, final)` donde `inicio` y `final` son los números que deseamos que la función genere en un rango específico. Por ejemplo:
+En PHP, podemos generar números aleatorios utilizando la función `rand()`, que toma dos parámetros: el número mínimo y máximo que queremos generar. Por ejemplo, si queremos obtener un número aleatorio entre 1 y 10, podemos usar el siguiente código:
 
 ```PHP
-<?php
-echo "Número aleatorio entre 1 y 10: " . rand(1, 10);
-// Ejemplo de salida: Número aleatorio entre 1 y 10: 7
-?>
+$num = rand(1, 10);
+echo "El número aleatorio es: $num";
 ```
 
-También podemos utilizar la función `mt_rand (inicio, final)` que utiliza un mejor algoritmo para generar números aleatorios. A continuación, mostraremos cómo utilizarla:
+Esto imprimirá un número aleatorio en cada ejecución. También podemos utilizar esta función para generar una lista de números aleatorios utilizando un bucle `for` o `while`.
+
+Otra opción es utilizar la función `mt_rand()`, que utiliza un algoritmo diferente para generar números aleatorios y puede ser más rápido que la función `rand()` en algunas situaciones.
 
 ```PHP
-<?php
-echo "Número aleatorio entre 1 y 10: " . mt_rand(1, 10);
-// Ejemplo de salida: Número aleatorio entre 1 y 10: 9
-?>
+// Generar 5 números aleatorios entre 20 y 50
+for ($i = 0; $i < 5; $i++) {
+  $num = mt_rand(20, 50);
+  echo "Número #$i: $num";
+}
 ```
 
-Como podemos observar, ambas funciones aceptan un rango de números y generan un número aleatorio dentro de ese rango. Sin embargo, es importante tener en cuenta que la función `mt_rand` es más eficiente y recomendada para generar números aleatorios en PHP.
+Además, PHP también cuenta con funciones específicas para generar números aleatorios de punto flotante (`mt_rand()`) y para elegir un elemento aleatorio de un array (`array_rand()`).
 
 ## Profundizando en la generación de números aleatorios
 
-Existen diferentes formas de generar números aleatorios en PHP, como la función `rand` y `mt_rand`, pero también podemos utilizar la función `shuffle` para ordenar de forma aleatoria un array de números. Veamos un ejemplo:
+La generación de números aleatorios no es realmente aleatoria, ya que se basa en un algoritmo que utiliza un valor inicial (llamado "semilla") para calcular los números. Por esta razón, es importante elegir una buena semilla para obtener resultados más imprevisibles.
 
-```PHP
-<?php
-$numeros = array(1, 2, 3, 4, 5);
-shuffle($numeros);
-foreach ($numeros as $numero) {
-    echo $numero . " ";
-}
-// Ejemplo de salida: 2 4 3 1 5
-?>
-```
-
-También podemos utilizar la función `mt_srand` para establecer una semilla y así tener una secuencia de números aleatorios específica.
-
-```PHP
-<?php
-mt_srand(1000);
-echo "Número aleatorio: " . mt_rand(1, 10);
-// Ejemplo de salida: Número aleatorio: 3
-mt_srand(1000);
-echo "Número aleatorio: " . mt_rand(1, 10);
-// Ejemplo de salida: Número aleatorio: 3
-?>
-```
-
-En este caso, ambas llamadas a `mt_rand` generarán el mismo número debido a que se estableció una semilla específica. Esto puede ser útil para generar números aleatorios en una secuencia determinada durante las pruebas de un programa.
+También es importante tener en cuenta que los números generados por estas funciones no son realmente aleatorios, sino que siguen un patrón predecible. Por lo tanto, no deben ser utilizados en situaciones críticas donde se necesite verdadera aleatoriedad, como en sistemas de seguridad o de criptografía.
 
 ## Ver también
 
-- [Documentación de PHP sobre la función `rand`](https://www.php.net/manual/es/function.rand.php)
-- [Documentación de PHP sobre la función `mt_rand`](https://www.php.net/manual/es/function.mt-rand.php)
-- [Ejemplos prácticos de generación de números aleatorios en PHP](https://stackabuse.com/using-phps-rand-function-for-random-number-generation/)
-- [Tutorial de YouTube: Generar números aleatorios en PHP](https://www.youtube.com/watch?v=FtyJbMTZiLk)
+- Ejemplos de código de generación de números aleatorios en PHP: https://www.w3schools.com/php/func_math_rand.asp
+- Más información sobre la generación de números aleatorios en PHP: https://www.php.net/manual/es/function.mt-rand.php

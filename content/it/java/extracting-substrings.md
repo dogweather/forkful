@@ -1,40 +1,44 @@
 ---
-title:                "Java: Estrazione di sottostringhe"
+title:                "Java: Estrazione di sottostringhe."
+simple_title:         "Estrazione di sottostringhe."
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
-Estrazione di sottostringhe è un'operazione comune e utile nella programmazione Java. Ci sono molte situazioni in cui è necessario estrarre una parte di testo da una stringa più grande. Ad esempio, potresti voler ottenere il nome di un file da un percorso completo del file o estrarre un numero di telefono da una stringa di testo.
+## Perché
 
-# Come Fare
-Per estrarre una sottostringa da una stringa in Java, puoi utilizzare il metodo `substring()` della classe `String`. Questo metodo richiede due argomenti: l'indice di inizio e l'indice di fine della sottostringa desiderata.
+Se sei un programmatore Java, probabilmente avrai incontrato situazioni in cui hai bisogno di estrarre una parte di una stringa più lunga. Può sembrare un compito semplice, ma c'è molto di più dietro l'estrazione di substringhe. In questo post, esploreremo il concetto di estrarre substringhe in dettaglio e vedremo come può essere utile per te nel tuo lavoro di sviluppo.
 
-Ecco un esempio di codice che estrae una sottostringa dal nome completo di una persona e restituisce solo il cognome:
+## Come
 
-```Java
-String nomeCompleto = "Mario Rossi";
-String cognome = nomeCompleto.substring(6);
-System.out.println(cognome); // output: Rossi
+Estrarre substringhe in Java è possibile utilizzando il metodo `substring()` della classe `String`. Prende due parametri: l'indice iniziale e l'indice finale della parte della stringa che si desidera estrarre. Vediamo un esempio di come utilizzarlo:
+
+```
+String stringa = "Questo è un esempio di stringa";
+String sub = stringa.substring(10, 15);
+System.out.println(sub);
 ```
 
-Nell'esempio sopra, l'indice di inizio è 6 perché il primo carattere della stringa è un indice 0. Se vogliamo includere anche il nome, possiamo specificare l'indice di fine come 5, come mostrato di seguito:
+Questo codice stamperà "esemp" poiché stiamo estraendo la parte della stringa che va dall'indice 10 (incluso) all'indice 15 (escluso). Se volessimo invece estrarre solo una parte della stringa a partire da un certo indice, possiamo passare solo un parametro:
 
-```Java
-String cognome = nomeCompleto.substring(0, 5); // output: Mario
+```
+String stringa = "Questo è un esempio di stringa";
+String sub = stringa.substring(10);
+System.out.println(sub);
 ```
 
-# Approfondimento
-Oltre al metodo `substring()`, ci sono altri modi per estrarre sottostringhe in Java. Ad esempio, puoi utilizzare il metodo `split()` della classe `String` per dividere una stringa in base a un carattere o una espressione regolare specificata.
+In questo caso, verrà stampata la parte della stringa a partire dall'indice 10 fino alla fine. Puoi anche combinare questo metodo con altri metodi di manipolazione delle stringhe per ottenere il risultato desiderato.
 
-Inoltre, ci sono diverse classi nella libreria standard di Java che possono aiutarti a gestire le sottostringhe in modi più complessi, come ad esempio la classe `StringBuffer` o la classe `StringBuilder`.
+## Deep Dive
 
-# Vedi Anche
-Se sei interessato a saperne di più sull'estrazione di sottostringhe in Java, puoi consultare questi utili link:
+Se vuoi esplorare ulteriormente il concetto di estrarre substringhe, ci sono diverse cose che puoi considerare. Ad esempio, il metodo `substring()` non modifica la stringa originale, ma restituisce una nuova stringa. Inoltre, è possibile gestire eccezioni se l'indice fornito non esiste nella stringa originale. Inoltre, ci sono diversi modi per specificare gli indici per estrarre le substringhe, come utilizzare una variabile o una costante. Sperimenta con questi concetti per approfondire la tua comprensione della manipolazione delle stringhe in Java.
 
-- [Documentazione ufficiale di Java sul metodo `substring()`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#substring(int,int))
-- [Tutorial di W3Schools su come estrarre sottostringhe in Java](https://www.w3schools.com/java/java_strings_substrings.asp)
-- [Articolo su Baeldung sull'uso di classi come `StringBuffer` e `StringBuilder` per estrarre sottostringhe in Java](https://www.baeldung.com/java-substring)
+## Vedi anche
+
+- [Documentazione ufficiale di Java su `substring()`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-)
+- [Tutorial su come utilizzare `substring()`](https://www.tutorialspoint.com/java/java_string_substring.htm)
+- [Domande frequenti su `substring()`](https://www.geeksforgeeks.org/string-class-substring-method-in-java-with-examples/)

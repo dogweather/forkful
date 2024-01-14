@@ -1,40 +1,46 @@
 ---
-title:                "Gleam: 표준 에러에 쓰는 방법"
+title:                "Gleam: 표준 오류에 쓰는 것"
+simple_title:         "표준 오류에 쓰는 것"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-Stderr에 쓰기를 하는 이유는 프로그래밍 과정에서 디버깅에 유용하기 때문입니다. 예외 처리나 오류를 추적할 때, stderr에 출력 내용을 기록하면 문제를 해결하는 데 도움이 됩니다. 
 
-## 어떻게
-Gleam에서 stderr에 쓰기를 하는 방법은 매우 간단합니다. 우선 `gleam/io` 모듈을 import해야 합니다. 그 후 `stderr` 함수를 사용하여 원하는 문자열을 stderr에 쓸 수 있습니다. 아래는 예제 코드와 출력 결과입니다.
+표준 오류에 쓰기를 하는 이유는 무엇일까요? 
+
+보통 프로그래밍을 할 때에는 결과를 표준 출력으로 출력하곤 합니다. 하지만 때로는 오류가 발생했을 때 이를 표시하기 위해 표준 오류에 쓰기를 사용해야 할 수도 있습니다. 예를 들어, 디버깅을 할 때나 예외 처리를 할 때에는 이 기능이 유용하게 쓰일 수 있습니다.
+
+## 어떻게 하나요
+
+Gleam에서 표준 오류에 쓰기를 하는 방법은 매우 간단합니다. 다음 코드를 참고해주세요.
 
 ```Gleam
-import gleam/io
+import gleam/io as io 
 
-let my_error = "에러가 발생했습니다."
-stderr(my_error)
-```
-출력 결과:
-```
-에러가 발생했습니다.
+fn main() {
+  io.stderr.print("이 문장은 표준 오류에 출력됩니다.")
+}
 ```
 
-## 딥 다이브
-Gleam은 쓰기를 위한 오버로드된 함수인 `write`와 `writeln`도 제공합니다. `write` 함수는 문자열을 바로 쓸 수 있고, `writeln` 함수는 해당 문자열 뒤에 개행 문자를 추가하여 쓸 수 있습니다. 이러한 함수를 사용하면 더욱 효율적으로 stderr에 쓸 수 있습니다.
+위 코드는 "이 문장은 표준 오류에 출력됩니다."라는 메시지를 표준 오류에 출력하는 간단한 예시입니다. 실행하면 다음과 같은 결과가 나타납니다.
 
-또한, stderr에 쓴 내용을 파일로 저장하는 방법도 있습니다. `std/file` 모듈을 import하여 `File` 타입의 인스턴스를 생성한 후 `std/file/write` 함수를 사용하여 stderr의 출력 내용을 파일로 저장할 수 있습니다.
+```
+이 문장은 표준 오류에 출력됩니다.
+```
 
-## 참고
-* [Gleam 공식 문서](https://gleam.run/book/getting-started/installation.html)
-* [Gleam 표준 라이브러리 문서](https://gleam.run/lib/stdlib.html)
-* [Gleam 커뮤니티 포럼](https://forum.gleam.run/)
+위 코드에서 가장 중요한 부분은 `io.stderr.print`라는 함수입니다. 이 함수는 표준 오류에 바로 출력할 수 있도록 해줍니다.
 
-See Also
-## 더 알아보기
-* [Gleam에서 stderr 사용하기](https://gleam.run/2019/04/22/using-stderr-in-gleam.html)
-* [파일 입출력 관련 Gleam 예제 코드](https://github.com/technomancy/gleam/blob/master/lib/std/file.gleam)
+## 깊이 파기
+
+표준 오류에 쓰기를 하는 것은 간단해보이지만 실제로는 더 많은 일이 일어나고 있습니다. 하지만 많은 경우 이를 모르고 있어도 문제없이 사용할 수 있습니다. 하지만 깊이 파고들어 이에 대해 더 알아보고 싶다면 Gleam 공식 문서를 참고하는 것을 추천드립니다.
+
+## 더 보기
+
+- Gleam 공식 문서: https://gleam.run/documentation/
+- 표준 출력에 쓰기: https://kb.iu.edu/d/admm
+- 표준 오류에 쓰는 이유: https://stackoverflow.com/questions/600635/what-is-the-difference-between-stderr-and-stdout

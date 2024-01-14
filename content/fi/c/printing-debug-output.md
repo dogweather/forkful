@@ -1,7 +1,9 @@
 ---
-title:                "C: Virheenjäljitystulostaminen"
+title:                "C: Virheilmoitusten tulostaminen"
+simple_title:         "Virheilmoitusten tulostaminen"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/printing-debug-output.md"
 ---
 
@@ -9,35 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Joskus koodia kirjoittaessa voi ilmetä tilanteita, joissa tarvitaan tarkempaa tietoa siitä, miten koodi suorittaa kunkin tehtävänsä. Debug-tulostus on hyödyllinen työkalu, joka auttaa löytämään ja korjaamaan mahdollisia virheitä ohjelmassa.
+Debug-tulosteiden tulostaminen on erittäin tärkeä osa C-ohjelmointia, jota kaikki kehittäjät joutuvat tekemään. Tulosteiden tulostaminen voi auttaa tunnistamaan ja korjaamaan ohjelmassa olevia virheitä, mikä tekee siitä välttämättömän osan ohjelmien kehittämistä.
 
-## Miten tehdä
+## Kuinka
+
+Käytännössä debug-tulosteiden tulostaminen C-ohjelmassa tapahtuu käyttämällä printf-funktiota. Tämä funktio ottaa ensimmäisenä parametrina tulostusmuodon ja seuraavina parametreina tulostettavat arvot, näin:
 
 ```C
-#include <stdio.h>
-
-int main() {
-  int sum = 0;
-  // Luodaan debug-tulostus, joka näyttää jokaisen luvun, joka lisätään summaan
-  for (int i = 0; i < 10; i++) {
-    sum += i;
-    printf("Luku %d lisätty summaan\n", i);
-  }
-  // Tulostetaan summa
-  printf("Summa: %d\n", sum);
-
-  return 0;
-}
+printf("Arvo 1: %d, Arvo 2: %s", int_arvo, string_arvo);
 ```
 
-Tässä esimerkissä käytetään C:n `printf`-funktiota tulostamaan haluttu viesti koodin suorituksen aikana. Debug-tulosteet voidaan lisätä eri kohdille koodia tarpeen mukaan, jotta nähdään tarkemmin, miten koodin suoritus etenee.
+Tämä koodi vähentää ensin int_arvon, ja sitten string_arvon, ensimmäinen muunnetaan ja tulostetaan numeroksi prosenttimerkkiä seuraavan "d":n avulla, ja toinen merkkijonoksi "s":n avulla.
 
-## Syvempi sukellus
+Tämä on hyvä tapa tulostaa debug-tulosteita, koska se antaa sinulle mahdollisuuden tulostaa kunkin arvon erikseen. Voit myös lisätä kontrollirakenteita, kuten if-lausekkeita ja while-silmukoita, jotta voit säätää tulosteiden tulostamista tarpeittesi mukaan.
 
-Debug-tulostus on hyödyllinen ennen kaikkea ohjelman kehitysvaiheessa ja auttaa löytämään mahdollisia virheitä, kuten muuttujien arvojen muutoksia ja ohjausvirtoja. Kuitenkin, kun ohjelma on valmis, turhat debug-tulostukset tulisi poistaa, sillä ne voivat hidastaa ohjelman suoritusta.
+## Syväsukellus
+
+Printf-funktiota käyttävät monet muutkin C:n sisäänrakennetut funktiot, kuten strcpy ja scanf. Tämä johtuu siitä, että printf tarjoaa hyödyllisiä muotoilusymboleja, kuten "%d" ja "%s", jotta voit muuntaa muuttujat ja tulostaa ne oikeassa muodossa. Voit myös luoda omia muotoilusymboleja määrittelemällä makron, esimerkiksi:
+
+```C
+#define INT "["%d"]"
+
+printf(INT, int_arvo);
+```
+
+Näin voit määrittää ja käyttää omia muotoilusymbolejasi sopimaan tarpeisiisi.
 
 ## Katso myös
 
-- [What is Debugging and how to get started](https://www.guru99.com/debugging-principles.html)
-- [How to debug in C](https://www.cs.swarthmore.edu/~newhall/unixhelp/debuggingtips_C.html)
-- [Debugging in C - Techniques](https://www.tutorialcup.com/debugging/c-techniques.htm)
+- [C-kielen perusteet](https://www.w3schools.com/c/)
+- [C-kielen käsikirja](https://www.gnu.org/software/gnu-c-manual/gnu-c-manual.html)
+- [C-kielen debuggaaminen](https://stackoverflow.com/questions/18480470/how-to-debug-a-c-program-using-gdb-instructions)

@@ -1,42 +1,43 @@
 ---
 title:                "Swift: Berechnen eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnen eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-Warum man ein Datum in der Zukunft oder Vergangenheit berechnen sollte
+## Warum
+Warum sollte man sich mit der Berechnung eines Datums in der Zukunft oder Vergangenheit beschäftigen? Ganz einfach: Es kann sehr nützlich sein, um zeitbezogene Aufgaben in Programmen zu automatisieren.
 
-Das Berechnen von Datumswerten in der Vergangenheit oder Zukunft ist eine nützliche Fähigkeit für viele Programmieraufgaben. Zum Beispiel können wir damit Buchungsdaten für eine Reise oder spezifische Ereignisdaten hinzufügen.
-
-Wie man ein Datum in der Zukunft oder Vergangenheit berechnet
-
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, müssen wir die Klasse "Date" aus der Swift Standard Library verwenden. Diese Klasse enthält viele Funktionen, um mit Datumswerten zu arbeiten.
+## Wie
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, gibt es verschiedene Methoden in Swift. Eine Möglichkeit ist die Verwendung der Methode `dateByAdding` in der Klasse `NSDate`. Hier ein Beispiel, um 30 Tage zu einem gegebenen Datum hinzu zu addieren:
 
 ```Swift
-import Foundation // Importiere die Standard Library für Date
-
-// Verwende "+" um Tage zu addieren
-let zukunft = Date() + 7 // gibt das Datum in 7 Tagen aus
-print(zukunft) // Beispieloutput: 2021-07-09 15:00:00 +0000
-
-// Verwende "-" um Tage zu subtrahieren
-let vergangenheit = Date() - 5 // gibt das Datum vor 5 Tagen aus
-print(vergangenheit) // Beispieloutput: 2021-06-27 15:00:00 +0000
-
-// Benutze die DateComponents Klasse, um ein spezifisches Datum zu berechnen
-var datumsKomponenten = DateComponents() // Initialisiere die Klasse
-datumsKomponenten.month = 8 // Setze den Monat auf August
-datumsKomponenten.day = 15 // Setze den Tag auf 15
-datumsKomponenten.year = 2021 // Setze das Jahr auf 2021
-let benutzerdefiniertesDatum = Calendar.current.date(from: datumsKomponenten) // Verwende die Calendar Klasse, um ein Datum aus den Komponenten zu erstellen
-print(benutzerdefiniertesDatum) // Beispieloutput: 2021-08-15 15:00:00 +0000
+let calendar = NSCalendar.currentCalendar()
+let currentDate = NSDate()
+let futureDate = calendar.dateByAdding(.Day, value: 30, toDate: currentDate, options: [])
+print(futureDate)
 ```
+Dies wird das Datum 30 Tage in der Zukunft ausgeben.
 
-Tiefergehende Infos zur Berechnung von Datumswerten
+Um ein Datum in der Vergangenheit zu berechnen, können Sie einen negativen Wert verwenden. Zum Beispiel um 2 Monate und 5 Tage von einem gegebenen Datum abzuziehen:
 
-Swift verwendet intern das gregorianische Kalendersystem, um Datumswerte zu berechnen. Die Funktionen der Date Klasse ermöglichen eine einfache Handhabung von Datumsberechnungen. Es ist außerdem möglich, Daten in verschiedenen Zeitzonen zu berechnen und zu konvertieren.
+```Swift
+let calendar = NSCalendar.currentCalendar()
+let currentDate = NSDate()
+let pastDate = calendar.dateByAdding(.Month, value: -2, toDate: currentDate, options: [])
+pastDate = calendar.dateByAdding(.Day, value: -5, toDate: pastDate, options: [])
+print(pastDate)
+```
+Dies wird das Datum 2 Monate und 5 Tage in der Vergangenheit ausgeben.
 
-Eines ist jedoch wichtig zu beachten: Datumswerte in Swift sind immer in UTC-Zeitzone, was bedeutet, dass sie 0 Stunden voraus sind. Wenn man beabsichtigt, mit lokalen Zeitzonen zu arbeiten, muss man diese beim Berechnen von Datumswerten berücksichtigen oder die Zeitzon
+## Deep Dive
+Wenn Sie tiefer in die Welt der Datumsberechnungen einsteigen möchten, können Sie sich mit der Klasse `NSCalendar` vertraut machen. Diese bietet viele nützliche Methoden wie zum Beispiel `components:fromDate:` um einzelne Komponenten wie Tag, Monat oder Jahr von einem Datum zu erhalten.
+
+## Siehe auch
+- [NSCalendar Dokumentation](https://developer.apple.com/documentation/foundation/nscalendar)
+- [NSDate Dokumentation](https://developer.apple.com/documentation/foundation/nsdate)
+- [Swift Date Calculations Tutorial](https://www.raywenderlich.com/74890/swift-date-calculation-nscalendar-nsdatecomponents)

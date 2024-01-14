@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Écrire vers l'erreur standard"
+title:                "Javascript: Écriture vers l'erreur standard"
+simple_title:         "Écriture vers l'erreur standard"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/writing-to-standard-error.md"
 ---
 
@@ -9,29 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Lorsque vous écrivez du code, il est important de tenir compte des erreurs potentielles. Mais saviez-vous que vous pouvez également écrire des erreurs à des fins de débogage? Cela peut sembler contre-intuitif, mais écrire à l'erreur standard peut être un outil précieux pour comprendre et résoudre les problèmes dans votre code.
+L'écriture vers l'erreur standard est une pratique courante en programmation Javascript. Cela permet d'afficher des erreurs ou des messages de débogage dans la console du navigateur, ce qui peut aider les développeurs à identifier et à résoudre les problèmes dans leur code.
 
-## Comment procéder
+## Comment Faire
 
-Pour écrire à l'erreur standard en JavaScript, vous devez utiliser la méthode console.error(). Elle prend en paramètre le message que vous souhaitez écrire et l'affiche dans la console du navigateur ou de l'éditeur de code que vous utilisez. Voici un exemple pour illustrer son utilisation:
+Il existe plusieurs façons d'écrire vers l'erreur standard en Javascript, mais la méthode la plus courante est d'utiliser la fonction `console.error()`. Cette fonction prend un ou plusieurs arguments et affiche leur contenu dans la console en tant qu'erreur.
 
 ```Javascript
-console.error("Il y a eu une erreur!")
+console.error("Une erreur s'est produite.");
+console.error("Voici un objet: " + { id: 1, nom: "John" });
 ```
 
-Cela produira le message d'erreur "Il y a eu une erreur!" dans la console de votre navigateur ou de votre éditeur de code.
+Lorsque ces lignes de code sont exécutées, vous obtiendrez le résultat suivant dans la console:
 
-## Plongée plus profonde
+```
+Une erreur s'est produite.
+Voici un objet: [object Object]
+```
 
-Écrire à l'erreur standard peut sembler simple, mais il existe en réalité quelques subtilités à prendre en compte. Par exemple, si vous utilisez plusieurs méthodes console.error() dans votre code, les messages seront affichés dans l'ordre inverse de leur appel. Vous pouvez également inclure des variables dans votre message en utilisant la syntaxe ${variable}.
+Comme vous pouvez le voir, la fonction `console.error()` peut prendre n'importe quel type de données en argument, y compris des chaînes de caractères, des nombres, des tableaux ou même des objets.
 
-La méthode console.error() n'est pas la seule à écrire à l'erreur standard. Vous pouvez également utiliser console.warn() pour afficher des avertissements ou console.table() pour afficher des données sous forme de tableau.
+Une autre façon d'écrire vers l'erreur standard est d'utiliser `process.stderr.write()` si vous utilisez Node.js. Cette fonction permet également d'écrire des messages d'erreur dans la console.
 
-## Voir aussi
+```Javascript
+process.stderr.write("Une erreur s'est produite.");
+process.stderr.write("Voici un objet: " + { id: 1, nom: "John" });
+```
 
-Pour en savoir plus sur les méthodes de console en JavaScript, vous pouvez consulter ces ressources (en anglais):
+Le résultat sera le même que lors de l'utilisation de `console.error()`.
 
-- [Documentation MDN](https://developer.mozilla.org/en-US/docs/Web/API/Console)
-- [Article sur la console en JavaScript](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-console)
+## Deep Dive
 
-N'hésitez pas à explorer d'autres méthodes de console pour améliorer votre processus de débogage et faciliter votre travail en tant que développeur.
+La principale différence entre `console.error()` et `process.stderr.write()` est que la première utilise le gestionnaire de sortie du navigateur tandis que la seconde utilise le gestionnaire de sortie du système. Cela signifie que la fonction `console.error()` ne fonctionnera que dans le navigateur, tandis que `process.stderr.write()` ne fonctionnera que dans l'environnement Node.js.
+
+De plus, `console.error()` peut également être utilisé pour afficher des avertissements en plus des erreurs, en utilisant la fonction `console.warn()`. Cela peut être utile pour différencier les types de messages dans la console.
+
+## Voir Aussi
+
+Pour en savoir plus sur l'écriture vers l'erreur standard en Javascript, voici quelques liens utiles:
+
+- [Documentation officielle de console.error()](https://developer.mozilla.org/fr/docs/Web/API/Console/error)
+- [Documentation officielle de process.stderr.write()](https://nodejs.org/dist/latest-v14.x/docs/api/process.html#process_process_stderr)
+- [Guide de débogage de Chrome pour console](https://developers.google.com/web/tools/chrome-devtools/console#write)

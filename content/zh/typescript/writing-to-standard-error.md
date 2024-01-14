@@ -1,69 +1,38 @@
 ---
-title:                "TypeScript: 标准出错编程指南"
+title:                "TypeScript: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/typescript/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要写入标准错误
+为什么要写标准错误
+写标准错误是为了帮助程序员追踪和调试他们的代码中的错误。它可以提供有用的信息，比如程序在哪里发生了错误以及具体的错误信息。下面将介绍如何在TypeScript中写标准错误以及更深入的信息。
 
-你可能经常在阅读代码时遇到过`console.log()`这样的语句，在调试时它对于打印出变量的值非常方便。但有时候，我们可能想要输出一些警告信息或者错误信息，这时候就可以使用标准错误相关的方法。写入标准错误可以帮助我们更好地调试代码，定位问题，也可以作为向用户展示错误信息的一种方式。
-
-## 如何写入标准错误
-
-首先，让我们来看一下基本的写入标准错误的方法： `console.error()`。它接受一个参数，即要输出的信息，可以是字符串、数字、布尔值等。我们可以使用 TypeScript 来演示一下：
-
-```TypeScript
-console.error("这是一个错误信息");
-// Output: 这是一个错误信息
-console.error(404);
-// Output: 404
-console.error(true);
-// Output: true
+如何写标准错误
+```
+TypeScript console.error("这是一个标准错误示例");
 ```
 
-除了基本的输出方法，我们还可以使用 `console.warn()` 来输出警告信息，它和 `console.error()` 的用法类似。另外，我们也可以通过 `console.assert()` 来断言一些条件，并输出错误信息，如果条件不满足，则会输出信息。
+这个例子将在控制台输出一条错误信息：“这是一个标准错误示例”。当程序运行时，如果遇到错误，它将显示在控制台中。这是一个非常方便的调试方法，尤其是当程序变得复杂时。除了简单的文本，你也可以输出变量和对象的值来帮助定位错误。
 
-```TypeScript
-console.assert(1>2, "这里发生了一个错误");
-// Output: 这里发生了一个错误
+深入了解
+在TypeScript中，你可以使用console.error()函数来将信息输出到标准错误流。标准错误流是一个特殊的输出流，它通常会被重定向到控制台或者日志文件中。这使得标准错误成为追踪和调试程序错误的有用工具。
 
-console.assert(1===1, "这里发生了一个错误");
-// No output
-```
+另一个有用的函数是console.trace()，它可以显示程序执行过程中的函数调用栈。这样可以帮助你确定错误发生的原因和路径。此外，你也可以自定义标准错误流，比如将它重定向到文件中，以便在稍后阅读。
 
-## 深入了解
+参考资料
+请阅读以下链接来深入了解如何使用TypeScript的console.error()函数和标准错误流。
 
-在 TypeScript 中，我们也可以使用 `process.stderr` 来获取标准错误输出流，然后通过 `write()` 方法来写入信息。这种方式更加灵活，也更适合一些复杂的场景。
+[TypeScript的console模块文档](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html)
 
-```TypeScript
-import * as fs from "fs";
+[Tutorialspoint上的TypeScript标准错误教程](https://www.tutorialspoint.com/typescript/typescript_error_handling.htm)
 
-const errorStream = fs.createWriteStream("error.log");
-
-process.stderr.write("这条信息会被写入到 error.log 文件中", errorStream);
-```
-
-除了这些基本用法以外，我们还可以通过配置 `tsconfig.json` 文件中的 `--emitOnError` 选项来决定编译时是否将错误信息输出到标准错误。
-
-```
-// tsconfig.json
-
-{
-  "compilerOptions": {
-    "emitOnError": true
-  }
-}
-```
-
-## 参考链接
-
-- [TypeScript 文档: Console](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#console)
-- [MDN 文档: console.error()](https://developer.mozilla.org/en-US/docs/Web/API/Console/error)
-- [Node.js 文档: process.stderr](https://nodejs.org/dist/latest-v12.x/docs/api/process.html#process_process_stderr)
-
-## 参见
-
-- [Markdown 语法指南](https://markdown.cn/?spm=5176.100239.blogcont49270.10.nmQFJn)
+看看
+[See Also]
+- [TypeScript官方文档](https://www.typescriptlang.org/docs/home.html)
+- [TypeScript错误处理教程](https://www.tutorialspoint.com/typescript/typescript_error_handling.htm)
+- [TypeScript深入指南](https://www.typescriptlang.org/docs/handbook/advanced-types.html)

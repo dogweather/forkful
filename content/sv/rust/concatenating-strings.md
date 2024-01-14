@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/concatenating-strings.md"
 ---
 
@@ -9,51 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att sammanfoga strängar, eller concatenating strings på engelska, är en grundläggande del av programmering. Det är en viktig färdighet att ha i många olika program, särskilt när det kommer till att hantera text och data som användaren matar in.
+Concatenating, eller att sammanfoga, strängar är en vanlig uppgift vid programmering. Det är en metod för att sammanfoga flera strängar, eller ord, till en enda sträng. Detta kan vara användbart för att skapa dynamisk text, som till exempel för användargränssnitt eller loggar. På grund av dess vanliga förekomst är det en viktig färdighet för programmerare att ha.
 
-## Så här gör du
+## Hur man gör det
 
-För att sätta samman två strängar i Rust, kan du använda sig av "```Rust str1 + str2 ```" eller "```Rust format!(str1, str2) ```" beroende på ditt ändamål.
-
-**Exempel:**
+I Rust finns det flera sätt att utföra string concatenation, men det mest vanliga är att använda "format!" makron. Det här är en inbyggd makro som tar emot en formatteringssträng och en lista med värden, och returnerar en ny sträng som är sammansatt av dessa värden. Här är ett exempel på hur man skulle använda det:
 
 ```Rust
-let str1 = "Hej";
-let str2 = "världen!";
-let concatenated = str1 + str2;
-println!("Resultatet blir: {}", concatenated);
+let first_name = "Erika";
+let last_name = "Larsson";
+let full_name = format!("{} {}", first_name, last_name);
+println!("Välkommen, {}!", full_name);
 ```
 
-Output:
-
-```Rust 
-Resultatet blir: Hej världen!
-```
-
-**Annat exempel:**
-
-```Rust
-let number = 10;
-let str = "är mitt favorittal.";
-let concatenated = format!("{} {}", number, str);
-println!("Resultatet blir: {}", concatenated);
-```
-
-Output:
-```
-Resultatet blir: 10 är mitt favorittal.
-```
+Det här skulle skapa en ny sträng som heter "Erika Larsson" och sedan skriva ut "Välkommen, Erika Larsson!" i terminalen. I detta exempel används "{}" i formatteringssträngen för att indikera var värdena ska sättas in.
 
 ## Djupdykning
 
-I Rust så måste båda strängarna som sammanslås vara av samma typ, det vill säga att båda måste antingen vara `str` eller `String`. Detta är för att Rust är ett språk med statisk typning, vilket betyder att typerna på variablerna måste vara kända vid kompileringstid.
+I Rust finns det också andra metoder för string concatenation, såsom "push_str" och "push". Dessa är dock mindre effektiva eftersom de kräver att programmeraren måste skapa en ny sträng och sedan ändra den, vilket kan bli resurskrävande. "Format!" makron är därför en mer föredragen metod.
 
-En annan sak att tänka på är att sammanslåenden av strängar kan göra att prestandan påverkas om det görs i en loop eller på en stor mängd data. Detta beror på att vid varje iteration eller sammanfogning så skapas en ny sträng, vilket kan bli resurskrävande. Det är därför viktigt att optimera sin kod när det kommer till att hantera stora datamängder.
+En annan viktig aspekt att tänka på är att Rust har immutabla strängar som standard. Detta innebär att strängar inte kan ändras efter att de har skapats. Så när man sammanfogar strängar i Rust, måste man skapa en helt ny sträng istället för att bara lägga till på den befintliga, som man kanske skulle kunna göra i andra språk.
 
 ## Se även
 
-För mer information om att hantera strängar i Rust, kolla in dessa länkar:
-
-- [The Rust Programming Language](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [Concatenating strings in Rust](https://www.ameyalokare.com/rust/2017/10/12/rust-basics-of-concatenting-strings.html)
-- [String concatenation performance in Rust](https://stackoverflow.com/questions/27004792/string-concatenation-in-rust)
+- [Standard Library Documentation](https://doc.rust-lang.org/std/index.html)
+- [The Rust Book: Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)

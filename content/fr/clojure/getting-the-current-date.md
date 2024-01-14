@@ -1,80 +1,64 @@
 ---
 title:                "Clojure: Obtenir la date actuelle"
+simple_title:         "Obtenir la date actuelle"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/clojure/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Si vous êtes un développeur Clojure, vous savez probablement qu'il est essentiel de pouvoir interagir avec les dates dans votre code. Que vous manipuliez des données ou que vous créiez des applications en temps réel, il est souvent nécessaire d'obtenir la date et l'heure actuelles. Dans cet article, nous allons expliquer comment faire cela en utilisant Clojure.
+La récupération de la date actuelle est une tâche courante dans la programmation Clojure. Elle peut être utile pour afficher la date dans une interface utilisateur ou pour effectuer des calculs basés sur le temps.
 
-## Comment faire
+# Comment faire
 
-Pour obtenir la date et l'heure actuelles en Clojure, vous pouvez utiliser la fonction `now` du module `java.time.Clock`. Cette fonction renvoie un objet `java.time.Instant` représentant la date et l'heure actuelles. Voici un exemple de code montrant comment utiliser cette fonction :
-
-```Clojure
-(import [java.time Clock])
-
-(def current-date (Clock/now))
-
-(println current-date)
-```
-
-Lorsque vous exécutez ce code, vous verrez la date et l'heure actuelles imprimées dans la console :
-
-```
-2019-09-30T15:22:25.370Z
-```
-
-Vous pouvez également utiliser la fonction `zoneOffset` pour obtenir le décalage de fuseau horaire actuel :
+Pour obtenir la date actuelle en Clojure, nous pouvons utiliser la fonction `now` du package `java.time.LocalDateTime`.
 
 ```Clojure
-(def current-offset (.getOffset (Clock/now)))
+(import [java.time.LocalDateTime])
+
+(def date (LocalDateTime/now))
 ```
 
-Enfin, vous pouvez utiliser la fonction `LocalDate.now` du module `java.time` pour obtenir uniquement la date actuelle :
+La variable `date` contiendra maintenant un objet de type `java.time.LocalDateTime` représentant la date et l'heure actuelles.
+
+Pour afficher la date dans un format spécifique, nous pouvons utiliser la fonction `format` du package `java.time.format.DateTimeFormatter`.
 
 ```Clojure
-(import [java.time LocalDate])
+(import [java.time.format.DateTimeFormatter])
 
-(def current-date-only (LocalDate/now))
+(def formatter (DateTimeFormatter/ofPattern "dd/MM/yyyy"))
 
-(println current-date-only)
+(def date-formatted (LocalDateTime/format date formatter))
+
+(println date-formatted)
+;; Output: 14/10/2021
 ```
 
-La sortie de ce code sera simplement la date actuelle, sans l'heure :
-
-```
-2019-09-30
-```
-
-## Deep Dive
-
-Si vous souhaitez en savoir plus sur les différents formats de date et d'heure en Clojure, vous pouvez également utiliser la fonction `format` du module `java.time.format.DateTimeFormatter`. Cette fonction vous permet de formater votre date et votre heure selon vos préférences. Voici un exemple de code montrant comment utiliser cette fonction pour afficher la date actuelle au format "jour/mois/année" :
+Nous pouvons également obtenir la date dans un fuseau horaire spécifique en utilisant la méthode `atZone` du package `java.time.LocalDateTime` et en spécifiant le fuseau horaire souhaité.
 
 ```Clojure
-(import [java.time.format DateTimeFormatter])
+(def zone-id (java.time.ZoneId/of "Europe/Paris"))
 
-(def current-date-formatted (.format DateTimeFormatter/ofPattern "dd/MM/yyyy" (LocalDate/now)))
+(def date-paris (LocalDateTime/atZone date zone-id))
 
-(println current-date-formatted)
+(println date-paris)
+;; Output: 2021-10-14T10:00+02:00[Europe/Paris]
 ```
 
-La sortie de ce code sera la date actuelle au format "jour/mois/année" :
+# Plongée en profondeur
 
-```
-30/09/2019
-```
+Pour comprendre comment la fonction `now` fonctionne, nous pouvons examiner le code source de la classe `LocalDateTime` dans le package `java.time`.
 
-N'hésitez pas à explorer les différentes options de format disponibles dans le module `java.time.format.DateTimeFormatter` pour personnaliser encore plus vos dates et heures.
+Nous pouvons voir que `now` utilise la méthode statique `now()` de la classe `System` pour obtenir l'heure système en millisecondes, puis utilise la classe `java.time.Instant` pour créer un objet `Instant` représentant cette heure.
 
-## Voir aussi
+Ensuite, la méthode `ofInstant` est utilisée pour créer un objet `LocalDateTime` à partir de l'objet `Instant`.
 
-Pour en savoir plus sur les dates en Clojure, vous pouvez consulter les liens suivants :
+# Voir aussi
 
-- [Documentation officielle Clojure sur les dates et heures](https://clojure.org/reference/java_interop#Date_and_Time)
-- [Tutoriel YouTube sur l'utilisation des dates en Clojure](https://www.youtube.com/watch?v=PjclN7IyKsQ)
-- [Article Medium présentant plusieurs façons d'obtenir la date et l'heure actuelles en Clojure](https://medium.com/clojurians/3-ways-to-get-the-current-date-and-time-in-clojure-b28e08850df6)
+- [Documentation de `java.time.LocalDateTime`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+- [Documentation de `java.time.format.DateTimeFormatter`](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Documentation de `java.time.ZoneId`](https://docs.oracle.com/javase/8/docs/api/java/time/ZoneId.html)

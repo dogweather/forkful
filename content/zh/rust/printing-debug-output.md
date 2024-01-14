@@ -1,61 +1,69 @@
 ---
 title:                "Rust: 打印调试输出"
+simple_title:         "打印调试输出"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+为什么：打印调试输出是Rust程序员必须掌握的基本技能之一。它可以帮助我们检查程序中的错误，并且在调试过程中提供更多有用的信息。
 
-打印调试信息是编程中必不可少的一项技能。它可以帮助开发者理解程序运行中的细节，从而更容易地发现和解决bug。同时，它也能帮助开发者在代码中定位到特定的位置，提高调试效率。
+##为什么
 
-## 如何做
+打印调试输出是Rust程序员必须掌握的基本技能之一。它可以帮助我们检查程序中的错误，并且在调试过程中提供更多有用的信息。
 
-在Rust中，打印调试信息的方法非常简单。我们可以使用宏`println!`来将信息输出到标准输出。下面是一个简单的例子：
+##如何做
+
+打印调试输出在Rust中非常简单。我们可以使用`println!`宏来打印任何类型的值。例如：
 
 ```Rust
-let num = 10;
+let num = 5;
 println!("The value of num is {}", num);
 ```
 
-输出结果为：`The value of num is 10`
-
-我们可以在花括号内使用参数，这些参数会按顺序替换占位符`{}`，从而输出对应的值。同时，我们也可以使用多个占位符来输出多个值。
+这将打印出`The value of num is 5`。我们也可以打印多个变量，并在输出中使用不同的格式控制符。例如：
 
 ```Rust
-let name = "Mandarin";
-let age = 100;
-println!("My name is {}, I am {} years old.", name, age);
+let num1 = 5;
+let num2 = 10;
+let str = "Hello";
+println!("The value of num1 is {} and num2 is {}, and str is {}", num1, num2, str);
 ```
 
-输出结果为：`My name is Mandarin, I am 100 years old.`
-
-除了使用`println!`宏外，我们也可以使用`eprintln!`宏将信息输出到标准错误。这在调试时非常有用，因为标准错误会以红色显示，更容易被注意到。
-
-## 深入探究
-
-在Rust中，我们可以通过在字符串前面添加`#`来使用类似`println!`宏的`format!`宏。这允许我们使用类似C语言中`printf`函数的格式化字符串来输出信息。
+这将打印出`The value of num1 is 5 and num2 is 10, and str is Hello`。我们还可以使用调试格式控制符`{:?}`来打印复杂的数据类型，如结构体、数组或向量。例如：
 
 ```Rust
-let num = 1.23456;
-println!("The formatted value is {:#.2}", num);
+#[derive(Debug)]
+struct Person {
+    name: String,
+    age: u32,
+}
+
+let person = Person {
+    name: String::from("John"),
+    age: 25,
+};
+println!("Person details: {:?}", person);
 ```
 
-输出结果为：`The formatted value is 1.23`
+这将打印出`Person details: Person { name: "John", age: 25 }`。除了`println!`宏外，我们还可以使用`eprintln!`宏来将输出打印到标准错误输出流，这在处理错误时非常有用。
 
-我们也可以通过宏`dbg!`来打印变量的值及其类型。这在调试复杂数据结构时非常方便。
+##深入了解
+
+在Rust中，我们也可以使用`dbg!`宏来打印调试输出。它不仅会打印值，还会将调试信息打印到标准错误输出流中，以便在调试时更轻松地追踪值的来源。例如：
 
 ```Rust
-let vec = vec![1, 2, 3];
-println!("{:?}", vec);
+let num = 5;
+dbg!(num);
 ```
 
-输出结果为：`[1, 2, 3]`
+这将打印出`num = 5`。我们还可以使用`debug_assert!`宏来在调试时检查断言语句，以帮助我们更有效地排除错误。
 
-## 参考链接
+##另请参阅
 
-- Rust官方文档：[https://rust-lang.org/](https://rust-lang.org/)
-- Rust编程语言：[https://www.rust-lang.org/](https://www.rust-lang.org/)
-- Rust中文社区：[https://rust.cc/](https://rust.cc/)
+- [Rust官方指南-调试输出](https://doc.rust-lang.org/stable/book/ch05-01-defining-structs.html)
+- [Rust官方文档-调试宏](https://doc.rust-lang.org/std/macro.dbg.html)
+- [Rust官方文档-断言宏](https://doc.rust-lang.org/std/macro.debug_assert.html)

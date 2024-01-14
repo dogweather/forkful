@@ -1,7 +1,9 @@
 ---
-title:                "Python: Lettura degli argomenti della riga di comando"
+title:                "Python: Leggere gli argomenti della riga di comando"
+simple_title:         "Leggere gli argomenti della riga di comando"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/python/reading-command-line-arguments.md"
 ---
 
@@ -9,53 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Perché qualcuno dovrebbe leggere gli argomenti della riga di comando in Python? Bene, spesso può essere utile per fare del codice più flessibile, permettendo agli utenti di fornire input personalizzati senza dover modificare direttamente il codice sorgente.
+Scrivere un programma può essere un processo lungo e complesso, ma a volte è necessario essere in grado di interagire con esso a un livello più granulare. Una delle maniere principali di farlo è attraverso l'utilizzo degli argomenti della riga di comando. Questo articolo esplorerà il perché di questa pratica e come implementarla con Python.
 
 ## Come Fare
 
-Per leggere gli argomenti della riga di comando in Python, è necessario utilizzare il modulo `sys` che fornisce informazioni sul sistema e su come viene eseguito il codice Python. In particolare, la lista `sys.argv` contiene tutti gli argomenti forniti dall'utente quando il programma è stato avviato. Vediamo un esempio:
+Per leggere gli argomenti della riga di comando in Python, è necessario utilizzare il modulo `sys` che contiene una lista `argv` che rappresenta gli argomenti passati al programma. Vediamo un esempio di codice che stampa gli argomenti passati in un formato leggibile:
 
 ```
-# Codice Python per la lettura degli argomenti della riga di comando
-
+Python
 import sys
 
-# Stampa la lista degli argomenti forniti
-print("Gli argomenti forniti sono:", sys.argv)
+args = sys.argv
 
-# Stampa il numero totale degli argomenti
-print("Il numero totale degli argomenti è:", len(sys.argv))
-
-# Stampa il primo argomento (di solito il nome del file)
-print("Il primo argomento è:", sys.argv[0])
-
-# Stampa il secondo argomento (se presente)
-if len(sys.argv) > 1:
-    print("Il secondo argomento è:", sys.argv[1])
+for arg in args:
+    print("Argomento:", arg)
 ```
 
-Se eseguiamo questo codice con `python script.py arg1 arg2`, otterremo il seguente output:
+Se lanciassimo questo programma con il comando `python my_prog.py hello world`, vedremo il seguente output:
 
 ```
-Gli argomenti forniti sono: ['script.py', 'arg1', 'arg2']
-Il numero totale degli argomenti è: 3
-Il primo argomento è: script.py
-Il secondo argomento è: arg1
+Argomento: my_prog.py
+Argomento: hello
+Argomento: world
 ```
 
-## Approfondimento
+Come possiamo notare, il nome del file stesso è incluso nella lista degli argomenti. Per escluderlo, possiamo utilizzare il metodo `pop()` per rimuoverlo dalla lista. Inoltre, possiamo passare argomenti con uno spazio nel loro interno utilizzando virgolette sul terminale.
 
-Oltre alla lista degli argomenti forniti dall'utente, il modulo `sys` ci fornisce anche altre informazioni utili come:
+## Deep Dive
 
-- `sys.argv[0]`: il nome del file eseguito
-- `sys.stderr`: l'oggetto stream per la stampa degli errori
-- `sys.getdefaultencoding()`: l'encoding predefinito del sistema
-- E molti altri!
+Oltre alla semplice lettura degli argomenti passati al programma, è possibile utilizzare il modulo `argparse` per definire degli argomenti specifici che il programma deve accettare. Questo rende il codice più leggibile e permette all'utente di avere un'interazione più intuitiva con il programma.
 
-Per ulteriori informazioni, si consiglia di leggere la documentazione ufficiale del modulo `sys`.
+Ad esempio, possiamo definire un argomento opzionale '--language' utilizzando `argparse` e assegnare un valore di default:
+
+```
+Python
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--language", help="Seleziona la lingua desiderata", default="italiano")
+
+args = parser.parse_args()
+
+print("La lingua selezionata è:", args.language)
+```
+
+Se lanciassimo questo programma con il comando `python my_prog.py --language inglese`, vedremo il seguente output:
+
+```
+La lingua selezionata è: inglese
+```
+
+Tuttavia, se non passiamo alcun argomento, verrà utilizzata il valore di default "italiano". È anche possibile definire argomenti obbligatori, argomenti che accettano più valori e molti altri opzioni.
 
 ## Vedi Anche
 
-- [Documentazione ufficiale del modulo `sys`](https://docs.python.org/3/library/sys.html)
-- [Come leggere e analizzare gli argomenti della riga di comando in Python](https://www.tutorialspoint.com/python/python_command_line_arguments.htm)
-- [Come utilizzare il modulo `argparse` per creare una interfaccia a riga di comando in Python](https://realpython.com/command-line-interfaces-python-argparse/)
+Per ulteriori informazioni sull'utilizzo degli argomenti della riga di comando in Python, ti consigliamo di consultare la documentazione ufficiale sul modulo `sys` e `argparse`.
+
+- [Documentazione ufficiale di Python sul modulo sys](https://docs.python.org/3/library/sys.html)
+- [Documentazione ufficiale di Python sul modulo argparse](https://docs.python.org/3/library/argparse.html)

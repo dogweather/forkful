@@ -1,32 +1,48 @@
 ---
-title:                "Elm: Ein Datum in eine Zeichenkette umwandeln"
+title:                "Elm: Ein Datum in eine Zeichenfolge umwandeln"
+simple_title:         "Ein Datum in eine Zeichenfolge umwandeln"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Das Konvertieren eines Datums in einen String ist ein häufiger Schritt beim Programmieren von Webanwendungen. Es ermöglicht es uns, Daten in einem spezifischen Format anzuzeigen, das für die Benutzer leichter verständlich ist.
 
-## So geht's
-Das Konvertieren eines Datums in einen String ist in Elm einfach, da die Sprache eine integrierte Funktion dafür besitzt. Wir verwenden die `toString` Funktion, um ein Datum in einen String zu konvertieren. Hier ist ein Beispielcode, der ein Datum in das amerikanische Datumsformat umwandelt:
+Es gibt viele Situationen in der Entwicklung von Webanwendungen, in denen es notwendig ist, ein Datum in einem bestimmten Format anzuzeigen. Die Verwendung von Strings ist eine gängige Methode, um dies zu erreichen, und in diesem Blog-Beitrag werden wir uns ansehen, wie man in Elm ein Datum in einen String umwandeln kann.
+
+## Wie geht das?
+
+Um ein Datum in Elm in einen String umzuwandeln, müssen wir die Elm-Paketbibliothek "Time" verwenden. Zunächst müssen wir das Modul "Time" importieren, indem wir folgende Zeile in unserem Code hinzufügen:
 
 ```Elm
-import Date exposing (..)
-import Date.Format exposing (format)
-
-date = Date.fromCalendarDate 2021 3 24
-str = date |> format "mm/dd/yyyy"
--- 03/24/2021
+import Time
 ```
 
-In diesem Beispiel importieren wir das `Date` und `Date.Format` Modul und verwenden die `fromCalendarDate` Funktion, um ein Datum zu erstellen. Dann verwenden wir die `format` Funktion, um das Datum in das gewünschte Format zu konvertieren, in diesem Fall das amerikanische Datumsformat mit Monat/Tag/Jahr. Das Ergebnis wird in der Variable `str` gespeichert und kann dann in unserer Anwendung angezeigt werden.
+Als nächstes müssen wir eine Funktion namens "format" verwenden, die uns eine benutzerdefinierte Formatierung für unser Datum ermöglicht. Hier ist ein Beispiel, in dem wir ein Datum in ein Datum im Format "D // M // J" umwandeln:
 
-## Tiefergehende Informationen
-Die `format` Funktion akzeptiert einen zweiten Parameter, der das Format des Datums angibt. Dies ermöglicht es uns, das Datum in verschiedenen Formaten zu konvertieren, je nach unseren Anforderungen. Wir können auch die `Date` und `Date.Format` Module verwenden, um die Wochentage und Monate in verschiedenen Sprachen anzuzeigen. Weitere Informationen zu diesen Funktionen finden Sie in der Elm Dokumentation.
+```Elm
+dateAsString = Time.format "%d // %m // %Y" date
+```
+
+In diesem Fall ist "date" ein Datum im Elm-Format. Das Ergebnis der Konvertierung wird in der Variable "dateAsString" gespeichert.
+
+## Tiefgang
+
+Um zu verstehen, wie die "format" Funktion genau funktioniert, müssen wir uns die Datumsformatierung genauer ansehen. Das Modul "Time" bietet uns eine Reihe von Symbolen, die wir in unserer benutzerdefinierten Formatierung verwenden können. Hier sind einige gängige Symbole, die beim Konvertieren von Datumsformaten verwendet werden:
+
+- %Y: Vierstellige Jahreszahl
+- %m: Zweistellige Monatszahl
+- %d: Zweistelliger Tag im Monat
+- %H: Stunde im 24-Stunden-Format
+- %M: Minute
+- %S: Sekunde
+
+Es gibt noch viele weitere Symbole, die Sie in der offiziellen Dokumentation des "Time" -Moduls nachschlagen können.
 
 ## Siehe auch
-- [Elm Datum Dokumentation] (https://package.elm-lang.org/packages/elm/time/latest/)
-- [Formatieren von Datumsangaben in Elm] (https://dev.to/kadysz/how-to-format-dates-in-elm-gfc)
+
+- Python strftime reference: https://strftime.org/
+- Elm Time documentation: https://package.elm-lang.org/packages/elm/time/latest/Time

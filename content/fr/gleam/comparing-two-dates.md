@@ -1,50 +1,47 @@
 ---
 title:                "Gleam: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi?
+#Pourquoi
 
-Comparer deux dates peut sembler une tâche simple au premier abord, mais cela peut être très utile lors de la création d'applications qui gèrent des événements ou des tâches planifiées. En utilisant des fonctions de comparaison de dates, vous pouvez facilement déterminer si une date est antérieure, ultérieure ou égale à une autre date. Cela peut être particulièrement pratique lors de la mise en œuvre de validations de formulaire ou de fonctionnalités de rappel pour les tâches à effectuer dans le futur.
+Pourquoi comparer deux dates en utilisant Gleam? Lorsque vous travaillez avec des données temporelles dans votre code, il est important de pouvoir comparer ces dates pour effectuer des analyses, des calculs ou des opérations logiques. Gleam offre une syntaxe simple et efficace pour effectuer ces comparaisons, en minimisant le risque d'erreurs et en garantissant des résultats précis.
 
-## Comment faire?
+#Comment faire
 
-Pour comparer deux dates en Gleam, vous pouvez utiliser la fonction `DateTime.compare` suivie des deux dates que vous souhaitez comparer. Par exemple, si vous avez deux dates en tant que variables `date1` et `date2`, vous pouvez utiliser la syntaxe suivante pour les comparer :
-
-```Gleam
-DateTime.compare(date1, date2)
-```
-
-Cette fonction renverra une valeur indiquant si la première date est antérieure, ultérieure ou égale à la seconde date. Voici un exemple de sortie en utilisant un enregistrement de date :
+Pour comparer deux dates en Gleam, nous pouvons utiliser la fonction `DateTime.compare/2`. Cette fonction prend deux arguments de type `DateTime` et renvoie un résultat de type `Order`. Jetons un coup d'œil à un exemple de code utilisant cette fonction:
 
 ```Gleam
-let date1 = Date(2020, 12, 15)
-let date2 = Date(2020, 12, 10)
-DateTime.compare(date1, date2) // Retourne `after`
-DateTime.compare(date2, date1) // Retourne `before`
-DateTime.compare(date1, date1) // Retourne `equal`
+let date_1 = DateTime.from_parts(2000, 1, 1, 0, 0, 0, 0)
+let date_2 = DateTime.from_parts(2020, 1, 1, 0, 0, 0, 0)
+
+let order = DateTime.compare(date_1, date_2)
+
+case order {
+  Lt -> "date_1 est avant date_2"
+  Eq -> "date_1 est égale à date_2"
+  Gt -> "date_1 est après date_2"
+}
 ```
 
-Vous pouvez également utiliser cette fonction pour comparer des dates et des heures. Par exemple, si vous avez une date et une heure en tant que variables `datetime1` et `datetime2`, vous pouvez utiliser la syntaxe suivante pour les comparer :
+Dans cet exemple, nous créons deux objets `DateTime` représentant les dates du 1er janvier 2000 et du 1er janvier 2020. Ensuite, nous utilisons la fonction `DateTime.compare/2` pour comparer ces deux dates et stocker le résultat dans la variable `order`. Nous utilisons ensuite une expression `case` pour vérifier le résultat et imprimer un message approprié en fonction du résultat.
 
-```Gleam
-DateTime.compare(datetime1, datetime2)
-```
+La sortie de ce code serait "date_1 est avant date_2" car 2000 est une année antérieure à 2020.
 
-Cela renverra également une valeur indiquant si la première date et heure sont avant, après ou égales à la seconde. Vous pouvez également utiliser la fonction `DateTime.compare_duration` pour comparer des durées.
+#Plongée en profondeur
 
-## Plongée plus profonde
+En plus de la fonction `DateTime.compare/2`, Gleam propose également d'autres outils pour comparer des dates. Par exemple, la fonction `DateTime.is_same_day/2` permet de vérifier si deux dates sont le même jour ou non, tandis que la fonction `DateTime.difference_in_days/2` renvoie le nombre de jours entre deux dates.
 
-Le module gleam/datetime contient d'autres fonctions de comparaison de dates qui peuvent être utiles dans des cas spécifiques. Par exemple, `DateTime.is_same_year` vous permet de vérifier si deux dates appartiennent à la même année. `DateTime.is_before` et `DateTime.is_after` peuvent être utilisés pour vérifier si une date est avant ou après une autre, respectivement.
+Il est également possible de comparer des dates en tenant compte du fuseau horaire en utilisant la bibliothèque externe `timezonedb`, qui fournit des fonctions pour convertir les dates dans différents fuseaux horaires et effectuer des comparaisons en conséquence.
 
-Il est également important de noter que Gleam traite les dates et les heures dans un fuseau horaire spécifique, celui de l'UTC. Lors de la comparaison de dates, assurez-vous de prendre en compte les différences de fuseau horaire si cela est nécessaire pour votre application.
+#Voir aussi
 
-## Voir aussi
-
-- Documentation officielle Gleam pour la comparaison de dates : https://gleam.run/libraries/datetime.html#compare
-- Tutoriel sur les dates et heures en Gleam : https://medium.com/@gleamlang/dates-and-times-in-gleam-506e817c8a9e
-- Tutoriel sur la manipulation du fuseau horaire en Gleam : https://blog.moyogo.co/managing-timezones-gleam.html
+- [Documentation Gleam sur les dates et les heures](https://gleam.run/documentation/std/datetime/)
+- [Exemple de comparaison de dates avec Gleam](https://github.com/gleam-lang/example-datetime-compare)
+- [Bibliothèque externe `timezonedb` pour les comparaisons de dates avec les fuseaux horaires](https://docs.rs/timezonedb/0.14.0/timezonedb/)

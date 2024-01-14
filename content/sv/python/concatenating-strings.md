@@ -1,7 +1,9 @@
 ---
 title:                "Python: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/concatenating-strings.md"
 ---
 
@@ -9,51 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att sammanslå strängar är en viktig del av Python-programmering eftersom det låter dig skapa mer komplexa och dynamiska texter. Genom att lära dig hur man sammanslår strängar kan du öppna upp en helt ny värld av möjligheter när det gäller att manipulera och presentera text i dina program.
+Att sammanfoga eller "concatenate" strängar är en viktig del av Python-programmering. Det låter dig kombinera flera strängar till en större sträng för att skapa mer dynamiska och anpassade texter för dina program.
 
-## Så här gör du
+## Hur man gör
 
-Att sammanslå strängar i Python är enkelt. Det kräver bara användning av ett "+" tecken för att kombinera två strängar tillsammans. Låt oss titta på ett exempel:
+För att sammanfoga strängar i Python, använder man "+" operatorn för att lägga till den andra strängen till den första. Här är ett exempel:
 
 ```Python
-first_name = "Anna"
-last_name = "Svensson"
-
-# Skapa en sträng som innehåller både för- och efternamn
-full_name = first_name + " " + last_name
-
-print(full_name)
+str1 = "Hej"
+str2 = "världen!"
+str3 = str1 + str2
+print(str3)
 ```
+Output: Hej världen!
 
-Output:
-```
-Anna Svensson
-```
+Det är viktigt att komma ihåg att de två strängarna du försöker sammanfoga måste vara av samma datatyp, annars kommer koden att ge ett felmeddelande.
 
-Som vi kan se i exemplet ovan har vi använt "+" tecknet för att sammanslå tre strängar (förnamn, mellanslag och efternamn) och skapat en ny sträng som innehåller hela namnet. Detta är ett enkelt sätt att sammanslå strängar, men det finns fler sätt att göra det, som vi kommer att utforska i nästa avsnitt.
+Du kan också använda "join" funktionen för att sammanfoga flera strängar. Här är ett exempel där vi sammanfogar en lista av strängar till en större sträng med hjälp av kommatecken som skiljer dem åt:
+
+```Python
+str_list = ["Hej", "på", "dig", "världen!"]
+str3 = ",".join(str_list)
+print(str3)
+```
+Output: Hej,på,dig,världen!
+
+Det finns också möjlighet att formatera strängar med hjälp av "format" funktionen. Detta låter dig sätta in värden i en sträng från variabler eller användardata. Här är ett exempel där vi sätter in en variabel i en sträng:
+
+```Python
+name = "Emil"
+str3 = "Välkommen, {}".format(name)
+print(str3)
+```
+Output: Välkommen, Emil
 
 ## Djupdykning
 
-Förutom att använda "+" tecknet finns det flera andra sätt att sammanslå strängar i Python. Ett sätt är att använda "str.format()" funktionen, som låter dig ersätta delar av en sträng med variabler eller värden. Låt oss se hur det fungerar:
+En intressant aspekt av att sammanfoga strängar i Python är att det faktiskt inte skapar en ny sträng, utan returnerar en ny strängobjekt som innehåller de två ursprungliga strängarna. Detta kan vara viktigt att förstå när det gäller prestanda och minnesanvändning i större program.
 
-```Python
-first_name = "Anna"
-age = 30
+En annan viktig aspekt är att strängar är oföränderliga (immutable) i Python, vilket betyder att de inte kan ändras på plats. Detta innebär att om du försöker ändra en enstaka del av en sträng, kommer det att skapas en helt ny strängobjekt istället för att ändra den befintliga. Det här kan också påverka prestandan i ditt program om du arbetar med stora mängder data.
 
-# Skapa en sträng som inkluderar både namn och ålder
-greeting = "Hej, mitt namn är {} och jag är {} år gammal.".format(first_name, age)
-print(greeting)
-```
+## Se också
 
-Output:
-```
-Hej, mitt namn är Anna och jag är 30 år gammal.
-```
-
-Som vi kan se i exemplet ovan ersätter vi "{}" tecknen i strängen med värdet av variablerna "first_name" och "age" genom att använda "str.format()" funktionen. Detta är särskilt användbart när du behöver presentera variabler eller andra dynamiska värden i en sträng.
-
-## Se även
-
-- [Python.org - String Methods](https://docs.python.org/3/library/stdtypes.html#str)
-- [Real Python - How to Concatenate Strings in Python](https://realpython.com/python-f-strings/)
-- [Programiz - String Concatenation in Python](https://www.programiz.com/python-programming/string-concatenation)
+- [Officiell Python-dokumentation - Strings (str)](https://docs.python.org/sv/3.8/library/stdtypes.html#text-sequence-type-str)
+- [GeeksforGeeks - String Concatenation](https://www.geeksforgeeks.org/python-string-concatenation/)
+- [Real Python - Formatting Strings in Python](https://realpython.com/python-f-strings/)

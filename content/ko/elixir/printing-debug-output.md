@@ -1,36 +1,48 @@
 ---
-title:                "Elixir: 디버그 출력하기"
+title:                "Elixir: 디버그 출력 출력하기"
+simple_title:         "디버그 출력 출력하기"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 
+## 왜
 
-디버그 출력을 사용해야 하는 이유는 단순합니다. 문제를 해결하는 과정에서 코드의 흐름을 파악하고, 예상치 못한 버그를 발견하는 데 도움이 됩니다. 디버깅은 모든 프로그래머에게 중요한 기술이며, 디버그 출력은 이를 더욱 쉽게 만들어줍니다.
+디버그 출력을 프린트하는 이유는 코드에서 문제를 식별하고 수정하기 위해서 필요합니다. 이를 통해 코드의 로직을 이해하고 디버깅하는 데 도움이 됩니다.
 
-## 하는 법
+## 하는 방법
 
-디버그 출력은 `IO.inspect/2` 함수를 사용하여 쉽게 할 수 있습니다. 이 함수는 인자로 받은 데이터를 출력하고, 해당 값을 그대로 반환합니다. 아래 예시를 참고해 보세요.
-
-```elixir
-IO.inspect(10)
+```Elixir
+IO.inspect(some_variable)
 ```
-출력: 
+위와 같이 `IO.inspect` 함수를 사용하여 변수의 값을 출력할 수 있습니다. 또는 `IO.puts`를 사용하여 문자열을 출력할 수도 있습니다. 아래는 Elixir 코드에서 디버그 출력을 하는 예제입니다.
+
+```Elixir
+defmodule ExampleModule do
+  def some_function(some_argument) do
+    IO.inspect(some_argument)
+    some_processed_argument = some_argument + 1
+    IO.puts("Processed argument: #{some_processed_argument}")
+  end
+end
+
+ExampleModule.some_function(10)
+```
+위 코드의 출력 결과는 다음과 같을 것입니다.
 ```
 10
-10
+Processed argument: 11
 ```
 
-함수의 결과가 `10`이고, 함수 자체의 반환 값도 `10`인 것을 볼 수 있습니다. 기본값으로는 터미널에 출력되지만, `IO.inspect/2` 함수에 옵션 값을 설정하여 파일 등 다른 장소에 출력할 수도 있습니다.
+## 딥 다이브
 
-## 깊이 파고들기
+디버그 출력은 코드를 이해하는 데 매우 중요합니다. 이를 통해 프로그램의 흐름을 추적하고 변수의 값과 상태를 파악할 수 있습니다. 또한 디버그 출력을 이용하면 어떤 함수가 어떤 변수에 접근하는지를 확인하는 등 디버깅을 할 때 매우 유용합니다.
 
-디버그 출력은 여러 가지 옵션 값을 설정하여 더욱 유용하게 사용할 수 있습니다. 예를 들어, `label` 옵션을 사용하면 출력 값의 라벨을 지정할 수 있습니다. `color` 옵션을 사용하면 출력에 색상을 적용하여 눈으로 구분하기 쉽게 만들 수 있습니다. 자세한 내용은 공식 문서를 참고해 보세요.
+## 관련 자료
 
-## 참고
-
-- [Elixir 공식 문서 - 디버그 출력](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Elixir Koans - 디버그 출력](http://elixirkoans.io/debugging/2)
+- [Elixir 디버깅 가이드](https://elixir-lang.org/getting-started/debugging.html)
+- [IO 모듈 공식 문서](https://hexdocs.pm/elixir/IO.html)
+- [Elixir의 `IO.inspect`와 `IO.puts` 공식 문서](https://hexdocs.pm/elixir/IO.html#inspect/2)

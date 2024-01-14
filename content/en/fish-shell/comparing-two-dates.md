@@ -1,65 +1,72 @@
 ---
 title:                "Fish Shell recipe: Comparing two dates"
+simple_title:         "Comparing two dates"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
+## Why
+Date comparison is a common task in programming, especially when working with time-sensitive data. Being able to efficiently compare two dates can help streamline processes and ensure accurate results. In this blog post, we will explore how to compare two dates using the Fish Shell programming language.
 
-When working with dates in programming, it can be useful to compare them in order to determine which one is earlier, later, or if they are equal. This can be particularly helpful in sorting data or validating user input. In this blog post, we will explore how to compare two dates using the Fish Shell programming language.
+## How To
+To compare two dates in Fish Shell, we will use the `date` command, which allows us to manipulate and format date and time information. Here is an example of comparing two dates:
 
-##How To
-
-Comparing dates in Fish Shell is a simple process. You can use the `date` command to display the current date, and the `-d` option to specify a different date to compare. For example:
-
-```Fish Shell
-date -d "2021-01-01"
 ```
+set start_date (date -u -f "%Y-%m-%d" "2020-01-01")
+set end_date (date -u -f "%Y-%m-%d" "2020-01-05")
 
-This will display the date in the specified format. Now let's compare two dates and see the output:
-
-```Fish Shell
-if [ "2021-01-01" > "2020-12-31" ]
-  echo "2021-01-01 is later than 2020-12-31"
-else
-  echo "2021-01-01 is not later than 2020-12-31"
+if test $start_date -gt $end_date
+    echo "Start date is after end date"
 end
 ```
 
-The output will be:
+In this example, we use the `date` command to format the dates to the same format, `%Y-%m-%d`. Then, we use the `test` command with the `>` operator to compare the two dates. If the start date is after the end date, we print a message.
 
-`2021-01-01 is later than 2020-12-31`
+Another useful tool when working with dates is the `diff` command, which calculates the difference between two dates. For example:
 
-As you can see, the `>` symbol is used to indicate that the first date is later than the second one. Similarly, you can use `<` and `=` to check for earlier or equal dates.
+```
+diff (date -u "2020-01-01") (date -u "2020-01-05")
+```
 
-Another useful command for comparing dates is `date -s`, which allows you to specify a date in the shell. This can be helpful when comparing user input or dates from a file. Here's an example:
+This will return the difference between the two dates in seconds. To convert it to a more user-friendly format, we can use the `duration` function:
 
-```Fish Shell
-set mydate "2021-01-01"
-date -s $mydate
-if [ (date +%Y-%m-%d) > $mydate ]
-  echo "New date is set to a later date"
+```
+duration (diff (date -u "2020-01-01") (date -u "2020-01-05"))
+```
+
+This will return the difference as days, hours, minutes, and seconds.
+
+## Deep Dive
+When comparing dates, it is essential to consider time zones and daylight saving time. The `date` command allows us to specify the time zone using the `-u` flag. We can also use the `tzoffset` function to account for daylight saving time.
+
+```
+set start_date (date -u -f "%Y-%m-%d" "2020-01-01")
+set end_date (date -u -f "%Y-%m-%d" "2020-01-05")
+set tz (tzoffset "America/Los_Angeles")
+
+if test ($start_date + $tz) -gt ($end_date + $tz)
+    echo "Start date is after end date"
 end
 ```
 
-This script will set the date to January 1st, 2021 and then check if the current date is later than the one we entered. If it is, the output will be:
+Another factor to consider is leap years. The `date` command has built-in support for leap years. We can use the `%j` format to get the day of the year and compare it to determine if it is a leap year.
 
-`New date is set to a later date`
+```
+set start_date (date -u -f "%j" "2020-01-01")
+set end_date (date -u -f "%j" "2021-01-05")
 
-##Deep Dive
+if test $start_date -gt $end_date
+    echo "Start date is after end date"
+end
+```
 
-When comparing dates, it's important to keep in mind that the format of the date can affect the comparison. For example, using the format `DD-MM-YYYY` will give different results compared to `YYYY-MM-DD`. Make sure to use a consistent format for accurate comparisons.
+## See Also
+- Fish Shell date command: https://fishshell.com/docs/current/cmds/date.html
+- Fish Shell diff command: https://fishshell.com/docs/current/cmds/diff.html
+- Fish Shell duration function: https://fishshell.com/docs/current/cmds/duration.html
 
-Additionally, when using the `>` or `<` symbols, the comparison is done based on the string value of the dates. This means that dates with a higher number will be deemed later, even if they are technically earlier. For example, `2021-01-01` will be considered later than `2020-12-31` because `2` is higher than `1`.
-
-Finally, you can also use the `-d` option with the `date` command to specify a specific time along with the date. This can be useful for more precise comparisons, such as determining if one date is within a certain time range of another date.
-
-##See Also
-
-For more information on working with dates and times in Fish Shell, check out these links:
-
-- [Fish Shell documentation on `date` command](https://fishshell.com/docs/current/cmds/date.html)
-- [Stack Overflow thread on comparing dates in Fish Shell](https://stackoverflow.com/questions/55632433/how-do-i-compare-dates-in-the-fish-shell)
+By using the `date` command and other built-in functions, we can effectively compare two dates in Fish Shell and handle different factors such as time zones and leap years. Having a good understanding of date manipulation in Fish Shell can greatly improve our coding efficiency and accuracy.

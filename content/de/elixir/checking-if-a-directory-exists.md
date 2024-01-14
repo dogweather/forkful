@@ -1,38 +1,42 @@
 ---
-title:                "Elixir: Prüfen, ob ein Ordner existiert"
+title:                "Elixir: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Wenn Sie jemals in Ihrem Elixir-Projekt Dateien oder Ordner erstellen oder lesen müssen, werden Sie wahrscheinlich an einem Punkt auf die Notwendigkeit stoßen, zu überprüfen, ob ein bestimmter Ordner existiert. Dieser Prozess kann Ihnen helfen, Fehler in Ihrem Code zu vermeiden, indem Sie sicherstellen, dass die erforderlichen Ordner vorhanden sind, bevor Sie versuchen, mit ihnen zu arbeiten.
+Es gibt viele Gründe, warum man in der Elixir-Programmierung prüfen möchte, ob ein Verzeichnis existiert. Zum Beispiel kann es sein, dass man eine Datei in einem bestimmten Verzeichnis erstellen möchte, aber sicherstellen möchte, dass das Verzeichnis auch tatsächlich existiert. Oder man möchte vermeiden, dass ein Programm abstürzt, wenn versucht wird, auf ein nicht vorhandenes Verzeichnis zuzugreifen. In diesem Blogbeitrag werde ich erklären, wie man in Elixir überprüfen kann, ob ein Verzeichnis vorhanden ist.
 
-## Wie man es macht
+## Wie
 
-Das Überprüfen der Existenz eines Ordners in Elixir ist relativ einfach. Alles was Sie tun müssen, ist die Funktion `File.dir?/1` zu verwenden und den Pfad des zu überprüfenden Ordners als Argument einzugeben.
+In Elixir gibt es eine nützliche Funktion namens `File.exists?`, die verwendet werden kann, um zu überprüfen, ob eine bestimmte Datei oder ein Verzeichnis existiert. Diese Funktion gibt entweder `true` oder `false` zurück, abhängig davon, ob das angegebene Element vorhanden ist oder nicht.
 
-```Elixir
-File.dir?("ordner/Pfad")
-# => true
+Um zu überprüfen, ob ein Verzeichnis existiert, können wir einfach den Pfad zu dem Verzeichnis als Argument für die `File.exists?`-Funktion übergeben. Hier ist ein Beispiel:
+
+```elixir
+if File.exists?("/home/user/documents") do
+  # Führe Code aus, der auf das Verzeichnis zugreift
+else
+  # Führe Alternativcode aus, falls das Verzeichnis nicht existiert
+end
 ```
 
-Wenn der Ordner existiert, gibt die Funktion `true` zurück, andernfalls gibt sie `false` zurück.
+Wenn das Verzeichnis existiert, wird der Code innerhalb der `if`-Bedingung ausgeführt. Andernfalls wird der Code innerhalb des `else`-Blocks ausgeführt.
 
-## Tiefer Einblick
+## Deep Dive
 
-Wenn Sie sich fragen, wie genau die `File.dir?/1`-Funktion funktioniert, wirft ein Blick in das Elixir-Quellcode-Repository einige interessante Erkenntnisse auf:
+Es ist wichtig zu verstehen, dass die `File.exists?`-Funktion nur prüft, ob der angegebene Pfad existiert, unabhängig davon, ob es sich um ein Verzeichnis oder eine Datei handelt. Wenn Sie also sicherstellen möchten, dass es sich bei dem angegebenen Pfad um ein Verzeichnis handelt, können Sie die Funktion `File.dir?` verwenden. Diese Funktion gibt `true` zurück, wenn es sich bei dem angegebenen Pfad um ein Verzeichnis handelt, andernfalls gibt sie `false` zurück.
 
-- Die Funktion verwendet die `File.list_dir/1`-Funktion, um eine Liste der Ordner im angegebenen Pfad abzurufen.
-- Anschließend wird eine Liste der Dateien im angegebenen Pfad mit `File.stat!/1` erstellt.
-- Schließlich wird überprüft, ob der angegebene Ordner in der Liste der Ordner enthalten ist und gibt entsprechend `true` oder `false` zurück.
-
-Es ist auch erwähnenswert, dass bei der Verwendung der `File.dir?/1`-Funktion Pfade entweder absolut oder relativ sein können. Dies ermöglicht eine flexible Verwendung in verschiedenen Szenarien.
+Eine gute Praxis ist es, die `File.dir?`-Funktion zuerst zu verwenden, um sicherzustellen, dass der angegebene Pfad tatsächlich ein Verzeichnis ist, bevor die `File.exists?`-Funktion aufgerufen wird.
 
 ## Siehe auch
 
-- [Offizielle Elixir-Dokumentation zu Dateien](https://hexdocs.pm/elixir/File.html)
-- [Elixir-Quellcode-Repository](https://github.com/elixir-lang/elixir)
+- [Die offizielle Elixir-Dokumentation zur File-Module](https://hexdocs.pm/elixir/File.html)
+- [Ein Elixir Weekly Blogbeitrag über das Arbeiten mit Dateien und Verzeichnissen](https://elixirweekly.net/issues/working-with-files-and-directories-248837)
+- [Ein GitHub-Repository mit Beispielen zum Arbeiten mit Verzeichnissen in Elixir](https://github.com/alexfmsu/elixir_directory_examples)

@@ -1,86 +1,89 @@
 ---
-title:                "C: Merkkijonon muuntaminen isolla alkukirjaimella"
+title:                "C: Merkkijonon suurentaminen"
+simple_title:         "Merkkijonon suurentaminen"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi haluat käsitellä merkkijonoja ja muuttaa niitä isoihin kirjaimiin?
 
-Miksi haluaisit muuttaa merkkijonon ensimmäisen kirjaimen isoiksi kirjaimiksi? Yleensä tämä tehdään, jotta merkkijono voidaan esittää oikeassa muodossa, kuten henkilön nimi tai otsikko. 
+Monissa ohjelmointiprojekteissa on tarvetta muuttaa merkkijonojen kirjainkokoja, esimerkiksi jos haluat tulostaa käyttäjän antaman tekstin isoin kirjaimin tai vertailla kahta merkkijonoa, joissa toinen on isot kirjaimet ja toinen pienet. On myös mahdollista, että käytössäsi on jonkinlainen rajapinta, joka edellyttää merkkijonojen kirjainten muuttamista tiettyyn muotoon.
 
-## Miten
-
-Capitalization voi tuntua yksinkertaiselta tehtävältä, mutta on olemassa useita tapoja saavuttaa se C-ohjelmoinnissa. Tässä esimerkkejä koodista, joka muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi:
+## Miten: Esimerkkejä ja tulosteita koodilohkojen sisällä
 
 ```C
-// 1. Käyttäen ctype.h-kirjastoa
-#include <stdio.h>
-#include <ctype.h>
-
-void capitalize(char* word) {
-    if (word[0] != '\0') {
-        word[0] = toupper(word[0]);
-    }
-}
-
-int main() {
-    char name[] = "matti";
-    capitalize(name);
-    printf("Nimi isolla alkukirjaimella: %s\n", name);
-    return 0;
-}
-// Tulostus: Nimi isolla alkukirjaimella: Matti
-```
-
-```C
-// 2. Käyttäen string.h-kirjastoa
 #include <stdio.h>
 #include <string.h>
 
-void capitalize(char* word) {
-    if (word[0] != '\0') {
-        word[0] = toupper(word[0]);
-    }
+int main()
+{
+	char string[] = "Hei kaikille!"; //luodaan merkkijono
+	int length = strlen(string); //lasketaan merkkijonon pituus
+	char new_string[length+1]; //luodaan uusi merkkijono pidentyneelle merkkijonolle
+	
+	for (int i = 0; i < length; i++) //käydään läpi merkkijono
+	{
+		if (string[i] >= 'a' && string[i] <= 'z') //tarkistetaan onko kirjain pieni kirjain
+		{
+			new_string[i] = string[i] - 32; //muunnetaan pieni kirjain isot
+		}
+		else
+		{
+			new_string[i] = string[i]; //jos ei ole pieni kirjain, muunnetaan kirjain sellaisenaan
+		}
+	}
+	new_string[length] = '\0'; //lisätään merkkijonon loppuun lopetusmerkki
+	printf("%s", new_string); //tulostetaan uusi merkkijono
+	
+	return 0;
 }
-
-int main() {
-    char name[] = "matti";
-    capitalize(name);
-    printf("Nimi isolla alkukirjaimella: %s\n", name);
-    return 0;
-}
-// Tulostus: Nimi isolla alkukirjaimella: Matti
 ```
+ 
+Tulos:
+
+```
+HEI KAIKILLE!
+```
+
+Toinen esimerkki:
 
 ```C
-// 3. Käyttäen ominaisuuden vertailua
 #include <stdio.h>
+#include <ctype.h>
 
-void capitalize(char* word) {
-    if (word[0] >= 97 && word[0] <= 122) {
-        word[0] -= 32;
-    }
+int main()
+{
+	char string[] = "Tämä on tekstinä"; //luodaan merkkijono
+	
+	for (int i = 0; string[i] != '\0'; ++i) //käydään läpi merkkijono, kunnes tullaan lopetusmerkkiin
+  	{
+		string[i] = toupper(string[i]); //käytetään toupper-funktiota muuttamaan isot kirjaimet
+  	}
+  	
+  	printf("%s",string); //tulostetaan muutettu merkkijono
+  	
+  	return 0;
 }
-
-int main() {
-    char name[] = "matti";
-    capitalize(name);
-    printf("Nimi isolla alkukirjaimella: %s\n", name);
-    return 0;
-}
-// Tulostus: Nimi isolla alkukirjaimella: Matti
 ```
 
-## Syventävä tieto
+Tulos:
 
-Kaikissa esimerkeissä käytettiin char-tyyppistä merkkijonoa, mutta samaa logiikkaa voidaan soveltaa myös muihin tietotyyppeihin, kuten int tai double. Lisäksi huomioi, että esimerkit toimivat vain yhden sanan mittaisilla merkkijonoilla. Jos haluat muuttaa isoksi kirjaimeksi toisen tai useamman sanan, niiden välissä olevat välilyönnit tulee ottaa huomioon. 
+```
+TÄMÄ ON TEKSTINÄ
+```
 
-## Katso myös
+## Syventävä tieto: Lisätietoja merkkijonojen kirjainkoon muuttamisesta
 
-- [C:n ctype.h-kirjasto](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
-- [C:n string.h-kirjasto](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Char-tyypin dokumentaatio](https://www.cplusplus.com/reference/cstdlib/strtod/)
-- [String-tyypin dokumentaatio](https://www.cplusplus.com/reference/cstring/strcat/)
+On tärkeää muistaa, että eri ohjelmointikielillä voi olla erilaiset kirjainten käsittelyyn liittyvät funktiot ja kirjoitustavat. Esimerkiksi C-kielessä käytetään kirjainarvojen ASCII-koodauksia, kun taas esimerkiksi Javassa käytetään Unicode-arvoja.
+
+Merkkijonojen kirjainkoon muuttamiseen on myös muita vaihtoehtoisia tapoja, kuten käyttämällä kirjastoja, jotka tarjoavat valmiita funktioita isojen ja pienten kirjainten muuttamiseen. On tärkeää tutkia ja vertailla eri vaihtoehtoja ja valita sopiva tapa projektisi vaatimusten mukaan.
+
+## Katso myös:
+
+- [Ascii-koodaus](https://fi.wikipedia.org/wiki/Ascii)
+- [Unicode](https://fi.wikipedia.org/wiki/Unicode)
+- [toupper-funktio C-kielessä](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)

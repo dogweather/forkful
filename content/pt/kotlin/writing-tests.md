@@ -1,54 +1,40 @@
 ---
-title:                "Kotlin: Escrevendo testes"
+title:                "Kotlin: Escrevendo Testes"
+simple_title:         "Escrevendo Testes"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes em Kotlin?
+## Por que escrever testes é importante
 
-Quando estamos desenvolvendo um aplicativo ou sistema em Kotlin, é importante garantir que ele esteja funcionando corretamente e sem bugs. É aí que entram os testes! Escrever testes em Kotlin nos ajuda a identificar problemas em nosso código de forma mais rápida e eficiente, garantindo maior qualidade e confiabilidade em nossos projetos. Além disso, com a ajuda dos testes, podemos ter certeza de que o nosso código continuará funcionando corretamente mesmo após fazermos alterações futuras.
+Escrever testes é uma prática essencial na programação, pois garante que o seu código funciona corretamente e que alterações futuras não irão quebrá-lo. Além disso, testes bem escritos ajudam a identificar e corrigir erros de forma mais rápida e eficiente. 
 
 ## Como escrever testes em Kotlin
 
-Para escrever testes em Kotlin, podemos usar o framework de testes embutido no Kotlin, o JUnit. Vamos dar uma olhada em um exemplo simples de um teste de função usando o JUnit.
-
-```Kotlin
-fun somar(a: Int, b: Int) = a + b
-```
-
-Primeiro, vamos importar o JUnit na nossa classe de teste:
-
-```Kotlin
-import org.junit.Test
-```
-
-Em seguida, vamos criar o nosso teste da função somar:
+Para escrever testes em Kotlin, é necessário utilizar a biblioteca nativa de testes, JUnit. Primeiramente, declare uma função de teste utilizando a anotação `@Test` e, dentro dela, utilize a função `assertEquals()` para avaliar se o resultado obtido é igual ao esperado. Veja um exemplo abaixo:
 
 ```Kotlin
 @Test
-fun testSomar() {
-    val resultado = somar(2, 3)
-    assertEquals(5, resultado)
+fun testSum() {
+    val result = sum(2, 3)
+    assertEquals(5, result)
 }
 ```
 
-Aqui, usamos a anotação `@Test` para indicar que essa função é um teste. Dentro do teste, chamamos a função `somar()` passando os parâmetros 2 e 3 e em seguida, usamos a função `assertEquals()` para verificar se o resultado é igual a 5. 
+Neste caso, a função `sum()` está sendo testada e o resultado esperado é que a soma de 2 e 3 seja igual a 5. Além disso, é possível utilizar outras funções de comparação, como `assertTrue()` e `assertNotNull()`, de acordo com a necessidade do teste.
 
-Com a ajuda do JUnit, podemos criar testes para várias funções e lógicas dentro do nosso código, garantindo que tudo esteja funcionando corretamente.
+## Aprofundando-se na escrita de testes
 
-## Aprofundando nos testes em Kotlin
+Escrever testes é uma tarefa importante, mas pode se tornar ainda mais valiosa ao utilizar algumas boas práticas. É recomendado escrever testes antes mesmo de começar a implementar o código, pois isso ajuda a definir e compreender melhor os requisitos e comportamentos esperados. Além disso, é importante garantir a cobertura dos testes, ou seja, verificar se todos os possíveis cenários do código estão sendo testados. 
 
-Existem diversos tipos de testes que podemos escrever em Kotlin, como testes unitários, testes de integração e testes de aceitação. Cada um desses tipos de teste tem um propósito diferente e é importante entender em quais situações devemos utilizá-los.
-
-Além disso, é importante também seguir boas práticas ao escrever testes em Kotlin, como manter os testes independentes e cobrir todos os possíveis cenários. Esta prática não apenas nos ajuda a encontrar bugs de forma mais rápida, mas também contribui para um código mais organizado e de fácil manutenção.
+Outro ponto importante é a manutenção dos testes. Quando ocorrem alterações no código, é essencial atualizar os testes para garantir que eles ainda estejam avaliando o comportamento correto. Por fim, é válido mencionar a utilização de ferramentas de automação de testes, que podem ajudar a reduzir o tempo e o esforço investidos na escrita de testes.
 
 ## Veja também
 
-- [Documentação do JUnit para Kotlin](https://github.com/junit-team/junit4/wiki)
-- [Tutorial de testes em Kotlin usando o JUnit](https://www.baeldung.com/kotlin/junit-5-kotlin)
-- [Princípios de testes em Kotlin](https://blog.philipphauer.de/donts-writing-tests-kotlin/)
-
-Com a ajuda destes recursos, você pode aprofundar ainda mais seus conhecimentos em testes em Kotlin e se tornar um programador ainda melhor!
+- [JUnit User Guide](https://junit.org/junit5/docs/current/user-guide/)
+- [Writing Good Tests - Best Practices](https://codeburst.io/writing-good-tests-best-practices-using-bdd-162a37051da0)
+- [How to Write Better Tests](https://medium.com/javascript-scene/how-to-write-better-tests-fa683a5f44d5)

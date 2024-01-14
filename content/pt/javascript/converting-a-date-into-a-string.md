@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Convertendo uma data em string"
+title:                "Javascript: Convertendo uma data em uma string."
+simple_title:         "Convertendo uma data em uma string."
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/converting-a-date-into-a-string.md"
 ---
 
@@ -9,34 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que converter uma data em uma string?
 
-Converter uma data em uma string é uma tarefa muito comum em programação Javascript. Isso permite que as datas sejam exibidas de forma compreensível para os usuários, em um formato familiar, como "dd/mm/aaaa". Além disso, a conversão de uma data em uma string pode ser útil para armazenar datas em um banco de dados ou ao trabalhar com APIs que requerem datas em formato de string.
+Muitas vezes, durante o desenvolvimento de um projeto, é necessário trabalhar com datas. Ao imprimir ou exibir essas datas, é importante que elas estejam em um formato legível para os usuários. É aqui que surge a necessidade de converter uma data em uma string. Isso permite que a data seja exibida de forma mais compreensível e personalizável para os usuários.
 
-## Como converter uma data em uma string?
+## Como converter uma data em uma string
 
-Para converter uma data em uma string, podemos utilizar o método `toString()` do objeto `Date`. Este método irá retornar uma string contendo a data no formato padrão da sua localidade. Por exemplo:
-
-```Javascript
-let data = new Date();
-console.log(data.toString()); // Output: Seg Jun 28 2021 12:43:33 GMT-0300 (Horário Padrão de Brasília)
-```
-
-Podemos também especificar o formato desejado para a string utilizando os métodos `getDate()`, `getMonth()` e `getFullYear()` para obter o dia, mês e ano respectivamente. Em seguida, podemos concatenar esses valores com as barras "/" para obter o formato de data "dd/mm/aaaa". Por exemplo:
+Para converter uma data em uma string em Javascript, podemos utilizar o método integrado "toLocaleDateString()" que retorna a data em uma string de acordo com o idioma e configurações de data do usuário. Veja o exemplo abaixo:
 
 ```Javascript
 let data = new Date();
-let dia = data.getDate();
-let mes = data.getMonth() + 1;
-let ano = data.getFullYear();
-console.log(`${dia}/${mes}/${ano}`); // Output: 28/06/2021
+console.log(data.toLocaleDateString()); // Saída: DD/MM/AAAA (dependendo das configurações do usuário)
+```
+Este método é muito útil para exibir a data em forma de texto, mas pode ser limitado em questão de personalização. Para isso, podemos utilizar o método "toString()" que nos permite especificar um formato de data personalizado. Veja o exemplo abaixo:
+
+```Javascript
+let data = new Date();
+console.log(data.toString("MMMM dd, yyyy")); // Saída: Mês DD, AAAA (ex: janeiro 01, 2021)
 ```
 
-## Mergulhando mais fundo
+## Aprofundando na conversão de data em string
 
-Ao converter uma data em uma string, devemos estar atentos ao fuso horário e localidade do usuário. Isso pode afetar o formato da data e causar confusão nos valores dos dias e meses, pois nem todos os lugares utilizam o mesmo formato. Para evitar problemas, podemos utilizar os métodos `getUTCDate()`, `getUTCMonth()` e `getUTCFullYear()`, que trazem os valores universais da data sem levar em consideração o fuso horário e localidade do usuário.
+Ao trabalhar com datas em Javascript, é importante estar ciente dos diferentes formatos de data e como eles podem ser convertidos em strings. Além do método "toString()" e "toLocaleDateString()", existem outras maneiras de realizar essa conversão, como utilizando bibliotecas externas ou criando funções personalizadas.
 
-Além disso, também podemos utilizar bibliotecas de terceiros, como o Moment.js, que facilitam a manipulação de datas em Javascript e oferecem uma ampla variedade de opções para conversão de datas em string.
+Além disso, é importante estar atento às diferenças entre os padrões de datas nas diferentes regiões do mundo, pois isso pode afetar a forma como as datas são exibidas para os usuários.
 
 ## Veja também
 
-- [Documentação do método toString() no MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toString)
-- [Documentação do Moment.js](https://momentjs.com/)
+- [Documentação oficial do método toLocaleDateString em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+
+- [Artigo sobre conversão de datas em strings em Javascript](https://css-tricks.com/everything-you-ever-wanted-to-know-about-javascript-dates/)
+
+- [Biblioteca Moment.js para manipulação de datas em Javascript](https://momentjs.com/)

@@ -1,51 +1,41 @@
 ---
-title:                "Elm: नए परियोजना की शुरुआत"
+title:                "Elm: नया परियोजना शुरू करना"
+simple_title:         "नया परियोजना शुरू करना"
 programming_language: "Elm"
-category:             "Getting Started"
+category:             "Elm"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 # क्यों
+नया प्रोजेक्ट शुरू करने के लिए *क्यों* करना चाहिए सिर्फ 1-2 वाक्यों में व्याख्या करता है।
 
-नए प्रोजेक्ट शुरू करने में होने वाले लाभों के बारे में पढ़ने के लिए इस पोस्ट को लिखा गया है।
+नए प्रोजेक्ट की शुरुआत का मकसद हो सकता है क्योंकि आप एक नए भाषा सीखना चाहते हो, एक नया फ्रेमवर्क के साथ खेलना चाहते हो, या आप एक नया आईडिया अपनाना चाहते हो। कोई भी हो, Elm में आपको बहुत कुछ सीखने का मौका मिलेगा।
 
 # कैसे करें
+कोडिंग उदाहरण और "```Elm ... ```" कोड ब्लॉक्स के साथ नमूना आउटपुट।
 
 ```Elm
--- कोड का एक उदाहरण
-main =
-  text "नमस्ते, दुनिया!"
+-- यह एक नमूना Elm फ़ंक्शन है
+myFunction : Int -> Int
+myFunction num =
+    num + 1
 ```
 
-यह उदाहरण बताता है कि कैसे एल्म प्रोग्रामिंग में बेसिक टेक्निक्स का उपयोग करके "नमस्ते, दुनिया!" टेक्स्ट प्रिंट किया जाता है। 
+उपरोक्त कोड ब्लॉक में, हमने `myFunction` नाम की एक फ़ंक्शन बनाई है जो `Int` तर्क लेती है और उसे 1 के साथ जोड़ती है। यदि हम `myFunction 5` नामक फ़ंक्शन को प्रोह करते हैं, तो हमें `6` मिलेगा।
 
-# गहराई से जानें
+# गहराई में जाएं
+नए प्रोजेक्ट शुरू करने के लिए अधिक जानकारी।
 
-नए प्रोजेक्ट शुरू करने के लिए गहराई से जानें की अवधारणा के बारे में। यह स्तर प्रोग्राम स्ट्रक्चर, मॉड्यूल नियंत्रण और प्रयोगशीलता की बात करता है।
+- Elm गाइड: https://guide.elm-lang.org/
+- Elm रिपोज़िटरी: https://github.com/elm/compiler
+- Elm डॉक्यूमेंटेशन: https://elm-lang.org/docs
 
-# और भी पढ़ें
+# भी देखें
+इसके अलावा, आप इन रिपोज़िटरियों को भी देख सकते हैं:
 
-## दस प्रश्न प्रारंभिक एल्म प्रोग्रामिंग के लिए
-- https://guide.elm-lang.org/
-- https://www.freecodecamp.org/news/elm-for-beginners-a-step-by-step-guide-c3569c303817/
-- https://www.youtube.com/watch?v=3DAxCwMzS2Q
-
---- 
-
-## एल्म, फंक्शनल प्रोग्रामिंग और टाइप सिस्टम के बारे में अधिक जानें
-- https://elmprogramming.com/introduction.html
-- https://www.frontendmasters.com/courses/elm/
-- https://medium.com/@_rchaves_/functional-frontend-architecture-band-1-7df4aea914f6
-
----
-
-## एल्म प्रोग्रामिंग में एक सामान्य चाल और टिप्स के बारे में अधिक जानें
-- https://elmprogramming.com/lifecycle-and-practical-tips.html
-- https://www.youtube.com/watch?v=kEitFAY7Gc0
-- https://hackernoon.com/20-elm-code-snippets-that-will-make-you-a-more-productive-programmer-in-2019-df3rn30w
-
-# देखिए भी
-
-- [Translate this article into English](https://translate.google.com/)
+- Elm कोडिंग बेसिक्स: https://dennisreimann.de/articles/elm-basics.html
+- Elm जर्नल: https://dev-diorama.com/elm-journal/
+- Shivanshu Srivastava की Elm ब्लॉग: https://www.shivanshu.io/blog/tag/elm/

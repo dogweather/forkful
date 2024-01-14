@@ -1,35 +1,47 @@
 ---
-title:                "Elixir: コンピュータープログラミングの記事タイトル：コマンドライン引数の読み取り"
+title:                "Elixir: コンピューター・プログラミングにおける「コマンドライン引数の読み取り」"
+simple_title:         "コンピューター・プログラミングにおける「コマンドライン引数の読み取り」"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
-なぜ読み込みコマンドライン引数について学ぶべきなのでしょうか？コマンドライン引数はコマンドラインからプログラムに情報を渡すことを可能にします。例えば、プログラムにファイルを開くかどうかを指定するために、ファイルのパスを引数として渡すことができます。
+## なぜ
+コマンドライン引数を読み取ることの重要性は、Elixirプログラミングの基本的なスキルの1つです。コマンドライン引数をうまく活用することで、プログラムを実行する際の柔軟性が増し、よりパワフルなツールを作ることができます。
 
-##How To
-Elixirでは、コマンドライン引数を`System.argv`から取得することができます。例えば、以下のコードを実行すると、コマンドライン引数のリストが返されます。
-
-```Elixir
-IO.inspect System.argv
-```
-
-もしコマンドライン引数がある場合は、以下のような出力が得られるでしょう。
+## 方法
+以下は、コマンドライン引数を読み取るための簡単なElixirコードの例です。
 
 ```Elixir
-["program_name", "argument1", "argument2"]
+# コマンドライン引数を取得する
+args = System.argv
+
+# 最初の引数を取得する
+first = List.first(args)
+
+# 最後の引数を取得する
+last = List.last(args)
+
+# 引数を結合して出力する
+IO.puts "入力された引数は#{first}と#{last}です。"
 ```
 
-このように、`System.argv`は文字列のリストを返します。そして、リストの最初の要素には実行されているプログラムの名前が含まれています。
+上記のコードを実行すると、入力されたコマンドライン引数が表示されます。
 
-##Deep Dive
-コマンドライン引数を扱う際に注意すべき点がいくつかあります。まず、引数の数をチェックすることが重要です。もし必要な引数の数よりも少ない場合は、エラーを返すようにプログラムを設計する必要があります。また、引数には数値や文字列以外にも、オプションフラグなどの特殊な形式の引数が含まれることがあります。その場合は、正しく処理するようにコードを書く必要があります。
+```
+$ elixir example.exs 引数1 引数2
+入力された引数は引数1と引数2です。
+```
 
-さらに、コマンドライン引数をプログラム内で扱いやすくするために、Elixirでは`OptionParser`というモジュールを使用することができます。このモジュールを使うと、オプションフラグや引数の数を簡単にチェックすることができます。
+## ディープダイブ
+コマンドライン引数を読み取る際には、`System.argv`以外にも`OptionParser`モジュールを使う方法もあります。`OptionParser`を使うことで、より複雑な引数の解析やオプションの設定が可能になります。
 
-##See Also
-- [Elixir公式ドキュメント - System](https://hexdocs.pm/elixir/System.html)
-- [Elixir公式ドキュメント - OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+また、コマンドライン引数をうまく活用すると、ユーザーからの入力によってプログラムの動作を変えることができます。これは、動的なプログラムを作る上で重要なスキルです。
+
+## See Also
+- [Elixir Command Line Utilities](https://elixir-lang.org/getting-started/command-line.html)
+- [Elixir OptionParser Module](https://hexdocs.pm/elixir/OptionParser.html)
+- [Command Line Arguments in Elixir](https://www.educative.io/edpresso/command-line-arguments-in-elixir)

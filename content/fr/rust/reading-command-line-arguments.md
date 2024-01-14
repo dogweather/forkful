@@ -1,55 +1,52 @@
 ---
-title:                "Rust: Analyse d'arguments de ligne de commande"
+title:                "Rust: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Lecture des arguments de ligne de commande est un aspect important de la programmation en Rust. Cela permet aux utilisateurs de passer des paramètres spécifiques lors de l'exécution d'un programme, ce qui peut rendre l'expérience plus personnalisée et flexible. Dans cet article, nous expliquerons comment lire et utiliser les arguments de ligne de commande en Rust.
+Les arguments de ligne de commande sont un élément essentiel de la programmation Rust, permettant aux utilisateurs d'interagir avec un programme en passant des paramètres au moment de l'exécution. Comprendre comment lire ces arguments peut améliorer considérablement l'expérience du programme pour les utilisateurs finaux.
 
-## Comment faire
+# Comment faire
 
-Pour lire des arguments de ligne de commande dans Rust, nous utiliserons la fonction "args()" de la bibliothèque standard. Elle renvoie un vecteur contenant tous les arguments passés lors de l'exécution du programme. Voici un exemple de code :
+La lecture des arguments de ligne de commande en Rust est facile grâce à la fonction "args" dans le module "std::env". Voici un exemple de code qui imprime les arguments passés lors de l'exécution du programme :
 
 ```Rust
 use std::env;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    println!("Les arguments passés sont : {:?}", args);
+    for arg in env::args() {
+        println!("{}", arg);
+    }
 }
 ```
 
-Supposons que notre programme s'appelle "lecture_args", si nous l'exécutons de la manière suivante :
+Pour exécuter ce programme avec des arguments, vous pouvez utiliser la commande suivante :
 
-```
-./lecture_args hello world 123
-```
-
-Nous obtiendrons l'output suivant :
-
-```
-Les arguments passés sont : ["./lecture_args", "hello", "world", "123"]
+```bash
+$ ./mon_programme argument1 argument2
 ```
 
-Nous pouvons également accéder à des arguments spécifiques en utilisant la méthode "get()" du vecteur. Par exemple, si nous voulons accéder au second argument (dans ce cas, "world"), le code serait le suivant :
+Vous devriez voir l'affichage suivant :
 
-```Rust
-let deuxieme_arg = args.get(2).unwrap();
-println!("Le deuxième argument est : {}", deuxieme_arg);
+```bash
+argument1
+argument2
 ```
 
-## Plongée en profondeur
+# Plongée en profondeur
 
-La fonction "args()" de la bibliothèque standard est basée sur les arguments passés à la ligne de commande. Si nous voulons utiliser des arguments de manière plus complexe, comme les options et les valeurs, nous pouvons utiliser des bibliothèques externes telles que "clap" ou "structopt". Elles offrent des fonctionnalités avancées et une meilleure gestion des erreurs. Nous pouvons également convertir les arguments en différents types de données en utilisant des méthodes telles que "parse()", "to_owned()" ou "into()".
+Alors que notre exemple précédent est simple, il y a plus à apprendre sur la lecture des arguments de ligne de commande en Rust. Par exemple, il est important de comprendre la différence entre "env::args" et "env::args_os", qui retourne une collection d'objets "OsString" plutôt que de "String". De plus, il est également possible de déterminer le nom du programme lui-même avec la fonction "args_os".
 
-## Voir aussi
+Pour en savoir plus sur la lecture des arguments de ligne de commande en Rust, vous pouvez consulter la documentation officielle : https://doc.rust-lang.org/std/env/index.html
 
-- [Documentation officielle de Rust sur la fonction "args()"](https://doc.rust-lang.org/std/env/fn.args.html)
-- [Bibliothèque "clap" pour une gestion avancée des arguments](https://docs.rs/clap/2.33.1/clap/)
-- [Bibliothèque "structopt" pour une meilleure gestion des erreurs](https://docs.rs/structopt/0.3.24/structopt/)
+# Voir aussi
+
+- https://doc.rust-lang.org/book/ch12-00-an-io-project.html#reading-the-command-line-arguments
+- https://doc.rust-lang.org/rust-by-example/hello/print/print_debug.html

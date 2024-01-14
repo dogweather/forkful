@@ -1,7 +1,9 @@
 ---
-title:                "C#: Tekstin etsiminen ja vaihtaminen"
+title:                "C#: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/searching-and-replacing-text.md"
 ---
 
@@ -9,37 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi kuka tahansa haluaisi etsiä ja korvata tekstiä ohjelmointiprojektissaan? Yksinkertaisesti sanottuna, etsimis- ja korvaamistoiminnot voivat säästää paljon aikaa ja vaivaa. Sen sijaan, että kävisit manuaalisesti läpi tuhansia rivejä koodia korjatakseen yksittäisiä kirjoitusvirheitä, ohjelmoijat voivat käyttää etsi ja korvaa -toimintoa automaattisesti korjaamaan ja päivittämään tekstiä.
+Jokaiselle koodaajalle tulee vastaan tilanne, jossa haluat muuttaa saman tekstin esiintymän kaikkien paikkojen tietynlaiseksi. Se voi olla kirjoitusvirheen korjaus, tekstin muokkaaminen tai koodin refaktorointi. Tässä tapauksessa tarvitset tekstinsyötön hakutoiminnallisuuden, joka pystyy muuttamaan vain tietyn tekstikuvion esiintymät.
 
-## Miten
+## Kuinka
 
-Alla on esimerkki C#-koodista, joka näyttää, kuinka etsiä ja korvata tekstiä käyttäen Regular Expression -kirjastoa. Tämä esimerkki käy läpi tiedoston ja korvaa kaikki "tämä" -sanat painikkeeseen "se". Huomaa, että koodi on vain esimerkki, ja sitä voi muokata tarpeidesi mukaan.
-
-```C#
-using System;
-using System.Text.RegularExpressions; // Sisällytetään Regular Expression kirjasto
-
-string teksti = "Tämä on esimerkki, jossa etsitään ja korvataan sanoja.";
-Console.WriteLine($"Alkuperäinen teksti: {teksti}"); // Tulostaa alkuperäisen tekstin
-
-string korvattu = Regex.Replace(teksti, "tämä", "se"); // Käytetään Replace-metodia korvaamaan kaikki "tämä" sanat "se" sanalla
-Console.WriteLine($"Korjattu teksti: {korvattu}"); // Tulostaa korjatun tekstin
-```
-
-Esimerkkikoodin tulostus:
+C#:n Replace-metodi on täydellinen työkalu tämän tekemiseen. Se on osa string-tyyppiä ja se tarjoaa kätevän tavan korvata teksti tietyn kuvion kanssa. Voit käyttää sitä seuraavasti:
 
 ```
-Alkuperäinen teksti: Tämä on esimerkki, jossa etsitään ja korvataan sanoja.
-Korjattu teksti: Se on esimerkki, jossa etsitään ja korvataan sanoja.
+string teksti = "Tämä on esimerkki.";
+string uusiTeksti = teksti.Replace("esimerkki", "malli");
 ```
 
-## Syväsukellus
+Tämä koodi korvaa kaikki "esimerkki" -tekstin esiintymät "malli" -tekstillä ja uusiTeksti-muuttujassa on lopputulos, joka on "Tämä on malli." 
 
-Regular Expression -kirjasto on tehokas työkalu tekstien hakemiseen ja korvaamiseen. Se sisältää paljon erilaisia metodeja ja vaihtoehtoja, joiden avulla voit tarkentaa hakuasi ja tehdä erilaisia muutoksia tekstiin. Esimerkiksi voit määrittää, haluatko korvata vain ensimmäisen esiintymän vai kaikki esiintymät, haluatko tehdä kirjainkohtaisen vai kokonaisen sanan korvauksen jne.
+Voit myös käyttää Replace-metodia yhdessä IndexOf-metodin kanssa, jos haluat korvata vain tietyn esiintymän. Voit tehdä sen näin:
 
-On myös tärkeää huomata, että Regular Expression -kirjasto käyttää erityisiä merkintöjä (esimerkiksi sulkumerkit ja takaisinviitaukset) tarkoittamaan erityisiä hakuja ja korvauksia. Siksi on tärkeää ymmärtää nämä merkinnät ennen kuin aloitat etsimisen ja korvaamisen käyttämisen.
+```
+string teksti = "Olen menossa lomalle tänään.";
+int indeksi = teksti.IndexOf("lomalle");
+string uusiTeksti = teksti.Replace(teksti.Substring(indeksi, 7), "matkalle");
+```
+
+Tässä koodissa haetaan ensin "lomalle" -tekstin indeksi ja sen jälkeen Replace-metodilla korvataan tämä teksti "matkalle" -tekstillä.
+
+## Syvällinen sukellus
+
+Replace-metodi pystyy myös muotoilemaan tekstiä eri tavoin. Voit esimerkiksi käyttää sitä muuttamaan kirjaimien kokoa tai vaihtamaan isot ja pienet kirjaimet paikkaa. Seuraavassa on joitain esimerkkejä:
+
+```
+string teksti = "TÄMÄ on TEXTIä";
+string pienetKirjaimet = teksti.ToLower();
+string isotKirjaimet = teksti.ToUpper();
+```
+
+Tässä koodissa pienetKirjaimet-muuttujaan tallennetaan teksti pienin kirjaimin ja isotKirjaimet-muuttujaan tallennetaan teksti isoilla kirjaimilla.
+
+Lisäksi Replace-metodi tukee myös regular expressioneita, joka avaa vielä enemmän mahdollisuuksia tekstien muokkaamiseen.
 
 ## Katso myös
 
-* [Regular Expression kirjasto (C#)](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-* [C# syntaksi tutorial](https://www.codecademy.com/learn/learn-c-sharp)
+- [C# Replace-metodi (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
+- [C# IndexOf-metodi (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.string.indexof?view=net-5.0)
+- [C# Regular expressionit (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)

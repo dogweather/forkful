@@ -1,42 +1,36 @@
 ---
-title:                "Elm: Używanie wyrażeń regularnych"
+title:                "Elm: Korzystanie z wyrażeń regularnych"
+simple_title:         "Korzystanie z wyrażeń regularnych"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto używać wyrażeń regularnych?
+## Dlaczego
 
-Wyrażenia regularne są niezwykle przydatnym narzędziem w programowaniu, ponieważ umożliwiają nam precyzyjne i szybkie przetwarzanie tekstu. Mogą pomóc w wyszukiwaniu, weryfikowaniu i zmienianiu wzorców w tekście, co znacznie ułatwia pracę z danymi. Dlatego warto zapoznać się z tym narzędziem i nauczyć się go używać w swoich projektach.
+Regularne wyrażenia są narzędziem niezbędnym w programowaniu w Elm, pozwalającym na szybkie i precyzyjne manipulowanie ciągami znaków. Dzięki nim można skutecznie wyszukiwać, porównywać i modyfikować teksty wewnątrz aplikacji. Jest to szczególnie pomocne w przypadku filtrowania i przetwarzania dużej ilości danych.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Aby używać wyrażeń regularnych w języku Elm, należy najpierw zaimportować moduł `Regex`. Następnie można użyć funkcji `Regex.find` do wyszukiwania wyrażenia regularnego w tekście lub `Regex.replace` do zmieniania wzorca na nowy. Poniżej przedstawiam przykładowy kod z wykorzystaniem obu funkcji:
+Aby rozpocząć pracę z regularnymi wyrażeniami w Elm, należy zaimportować moduł Regex. Następnie można użyć funkcji Regex.find, aby znaleźć dopasowanie wyrażeniem regularnym w danym ciągu znaków. Na przykład:
 
-```elm
+```
 import Regex
 
-testString = "Wyrażenia regularne są super przydatne!"
-
--- Wyszukiwanie wystąpienia słowa "super" w tekście:
-Regex.find (Regex.regex "super") testString
--- Output: Ok (Just { match = "super" })
-
--- Zmiana słowa "super" na "niesamowite":
-Regex.replace (Regex.regex "super") (\_ -> "niesamowite") testString
--- Output: "Wyrażenia regularne są niesamowite przydatne!"
+Regex.find (Regex.regex "\\d{2}") "123 Elm Street"
 ```
 
-## Głębszy zanurzenie
+Wykorzystując wyrażenie regex "\\\d{2}", które oznacza dwa kolejne cyfry, funkcja zwróci dopasowanie "12". Istnieje wiele innych funkcji i kombinacji wyrażeń regularnych, które można wykorzystać w programowaniu w Elm.
 
-W języku Elm można wykorzystać wiele różnych funkcji i operatorów do pracy z wyrażeniami regularnymi. Na przykład, funkcja `Regex.contains` może być użyta do sprawdzania czy wyrażenie regularne występuje w tekście, a `Regex.split` do dzielenia tekstu na części według wzorca. Istnieją również specjalne symbole, takie jak `^` (oznaczający początek tekstu) i `$` (oznaczający koniec tekstu), które można wykorzystać do precyzyjnego określania gdzie ma wystąpić wzorzec.
+## Deep Dive
 
-Bardziej zaawansowane zastosowania wyrażeń regularnych w języku Elm mogą wymagać większej wiedzy na temat ich składni i złożoności. Warto więc zapoznać się z dokumentacją na stronie https://package.elm-lang.org/packages/elm/regex/latest/Regex oraz wykorzystać różnego rodzaju przykłady i tutoriale dostępne w Internecie.
+Wyrażenia regularne składają się z określonych znaków i wzorców, które pozwalają na wyszukiwanie określonych ciągów znaków. W Elm istnieje wiele opcji dotyczących flag i specjalnych znaków, które umożliwiają zaawansowane wyrażenia regularne. Należy pamiętać, że regularne wyrażenia są wieloplatformowe, więc umiejętność ich stosowania jest bardzo oczekiwana przez programistów.
 
-## Zobacz też
+## Zobacz także
 
-* Dokumentacja oficjalna języka Elm na temat wyrażeń regularnych: https://package.elm-lang.org/packages/elm/regex/latest/Regex
-* Instrukcja obsługi wyrażeń regularnych w Elm: https://www.elmprogramming.com/regular-expressions.html
-* Przykładowe zastosowania wyrażeń regularnych w języku Elm: https://www.youtube.com/watch?v=nU7y_pqz_aY
+- Oficjalna dokumentacja Elm do wyrażeń regularnych: https://package.elm-lang.org/packages/elm/regex/latest/
+- Przewodnik po wyrażeniach regularnych: https://regexone.com/
+- Narzędzie do testowania wyrażeń regularnych online: https://regex101.com/

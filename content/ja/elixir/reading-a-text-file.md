@@ -1,36 +1,60 @@
 ---
-title:                "Elixir: テキストファイルを読み込む"
+title:                "Elixir: テキストファイルを読む"
+simple_title:         "テキストファイルを読む"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-＃＃ なぜ
+Elixirでテキストファイルを読み取る方法
 
-テキストファイルを読むのに読み手にメリットがありますか？テキストは、エディターを通じてコードやデータを変更するのに非常に一般的な方法です。ファイルを読むことで、エディターで編集されたデータを入手できるだけでなく、コードやデータをバックアップすることもできます。
+## Why
+テキストファイルを読み取ることは、Elixirプログラミングの重要な部分です。ファイル読み取りを理解することによって、より多くのデータを処理し、より豊富なアプリケーションを作成することができます。
 
-＃＃ 方法
+## How To
+まずはファイルを開く必要があります。File.open関数を使用してファイルを開くことができます。
 
-Elixirでは、ファイルを読むためにFileモジュールを使用することができます。以下のコードは、readme.txtという名前のファイルを読み込んで、ファイル内のテキストをすべて表示する例です。
-
-```Elixir
-ファイル=ファイル.オープン！（「readme.txt」）
-contents = File.read！（file）
-IO.putputs（contents）
+```
+Elixir
+file = File.open("sample.txt")
 ```
 
-上記のコードを実行すると、readme.txtファイルの内容がターミナルに表示されます。
+以下のコードブロックでは、ファイル全体を1行ずつ読み取り、出力する方法を示しています。
 
-＃＃ ディープダイブ
+```
+Elixir
+File.stream!("sample.txt")
+|> Enum.each(fn line ->
+  IO.puts line
+end)
+```
+さらに、ファイルをインデックスごとに分割して読み取ることもできます。以下のコードブロックでは、リスト内包表記を使用してファイルを読み取り、出力する方法を示しています。
 
-ファイルを読むには、`File.read！`と`File.readline！`の2つの関数があります。`File.read！`はファイルのすべての内容を文字列として返し、`File.readline！`は1行ずつ読み込みます。また、ファイルを開く際にオプションを指定することもできます。例えば、`:write`オプションを指定すると、ファイルを書き込み可能なモードで開くことができます。詳細な情報については、Elixirの公式ドキュメントを参照してください。
+```
+Elixir
+file = File.open!("sample.txt")
+IO.puts [for i <- 1..5, do: File.get(file, i, :line)]
+```
 
-＃＃参照
+出力結果は以下のようになります。
 
-＃＃＃ わからないことがある場合や、詳しい情報を知りたい場合は、以下のリンクを参考にしてください。
+```
+"My name is Sakura."
+"Nice to meet you, Sakura."
+"How are you, Sakura?"
+"I'm doing great."
+"What about you?"
+```
 
-- Elixirの公式ドキュメント（https://elixir-lang.org/docs.html）
-- Fileモジュールのドキュメント（https://hexdocs.pm/elixir/File.html）
-- テキストファイルの読み書きについてのElixirフォーラムのディスカッション（https://elixirforum.com/t/reading-and-writing-to-a-text-file/2989）
+## Deep Dive
+Fileモジュールはさまざまな関数を提供しています。たとえば、ファイルの先頭や末尾から読み取ることができる関数があります。また、ファイルポインターを使用して任意の位置から読み取ることもできます。
+
+さらに、ファイルの内容をパースして、特定のデータを抽出することもできます。例えば、CSVファイルからデータを抽出することができます。また、ファイルへの書き込みやファイルの作成も可能です。
+
+## See Also
+- [Fileモジュールのドキュメント](https://hexdocs.pm/elixir/File.html)
+- [Elixirでファイルを操作する方法](https://elixirschool.com/jp/lessons/advanced/file-io/)
+- [ElixirのファイルI/O](https://www.sitepoint.com/elixir-file-io/)

@@ -1,38 +1,54 @@
 ---
-title:                "Haskell: Sjekke om en mappe eksisterer"
+title:                "Haskell: Å sjekke om en mappe eksisterer"
+simple_title:         "Å sjekke om en mappe eksisterer"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor?
+"## Hvorfor"
 
-I programmering er det ofte nødvendig å sjekke om en mappe eksisterer før man kan utføre handlinger på den. Dette kan være nyttig for å unngå feil og sikre at koden kjører som forventet. I denne bloggposten vil vi gå gjennom hvordan man kan sjekke om en mappe finnes i Haskell.
+Å sjekke om en mappe eksisterer kan være en viktig del av å lage pålitelige og funksjonelle programmer i Haskell. Det kan også hjelpe til med å organisere og håndtere datafiler på en effektiv måte.
 
-## Hvordan gjøre det
+"## Hvordan"
 
-For å sjekke om en mappe eksisterer i Haskell, kan man bruke funksjonen `doesDirectoryExist` fra modulen `System.Directory`. Denne funksjonen tar inn en streng med stien til mappen man ønsker å sjekke, og returnerer en boolsk verdi som indikerer om mappen eksisterer eller ikke. La oss se på et eksempel:
+For å sjekke om en mappe eksisterer, kan vi bruke funksjonen `doesDirectoryExist` fra `System.Directory`-modulen. Denne funksjonen tar inn en streng som representerer stien til mappen, og returnerer en `Bool`-verdi som indikerer om mappen eksisterer eller ikke.
+
+```Haskell
+import System.Directory  -- importerer modulen
+
+hoved :: IO ()
+hoved = do
+  eksisterer <- doesDirectoryExist "sti/til/mappe" -- sjekker om mappen eksisterer
+  if eksisterer
+    then putStrLn "Mappen eksisterer!"  -- hvis mappen eksisterer, skriv ut melding
+    else putStrLn "Mappen eksisterer ikke." -- hvis mappen ikke eksisterer, skriv ut melding
+```
+For å få en bedre forståelse av hvordan funksjonen `doesDirectoryExist` fungerer, kan vi også se på et eksempel på hvordan den håndterer feil. Hvis vi prøver å sjekke om en mappe som ikke eksisterer, vil funksjonen gi oss en `IOException`-feil. Vi kan håndtere denne feilen ved å bruke funksjonen `catch` fra `Control.Exception`-modulen.
 
 ```Haskell
 import System.Directory
+import Control.Exception
 
-main = do
-  exists <- doesDirectoryExist "mappen/min"
-  if exists
-    then putStrLn "Mappen eksisterer"
-    else putStrLn "Mappen eksisterer ikke"
+hoved :: IO ()
+hoved = do
+  result <- try $ doesDirectoryExist "sti/til/eksisterende/mappe" :: IO (Either IOException Bool)
+  case result of
+    Left _ -> putStrLn "Kunne ikke sjekke mappen."  -- håndterer IOException-feilen
+    Right eksisterer -> if eksisterer
+      then putStrLn "Mappen eksisterer!"
+      else putStrLn "Mappen eksisterer ikke."
 ```
 
-I dette eksempelet bruker vi `doesDirectoryExist` til å sjekke om mappen "mappen/min" finnes. Dersom den finnes, vil programmet skrive ut "Mappen eksisterer", ellers vil det skrive ut "Mappen eksisterer ikke". Enkel og grei måte å sikre at koden vår fungerer som den skal!
+"## Dykk dypere"
 
-## Dykk dypere
+For å kunne sjekke om en mappe eksisterer, bruker funksjonen `doesDirectoryExist` systemkallene `access` og `lstat` fra C. Dette betyr at funksjonen ikke bare sjekker om filen eksisterer, men også om brukeren har tilgang til mappen. Dette kan være nyttig for å sikre at programmet bare jobber med filer og mapper som tilhører brukeren, eller for å unngå uønskede operasjoner.
 
-Men hva skjer egentlig bak kulissene når vi kaller på `doesDirectoryExist`? I Haskell er det vanlig å bruke et konsept kalt "monads", som kan hjelpe oss å håndtere asynkrone eller potensielt feilfulle operasjoner, som for eksempel å sjekke om mappen vår eksisterer. Når vi bruker funksjonen `doesDirectoryExist`, kjøres operasjonen i en monad som håndterer eventuelle feil som kan oppstå. Dette kan kanskje virke litt komplisert, men det er faktisk ganske praktisk og effektivt når man blir vant til det.
+"## Se også"
 
-## Se også
-
-- [Dokumentasjon for System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Haskell monads for nybegynnere](https://blog.ssanj.net/posts/2014-09-23-A-Simple-Intro-to-Monads-for-Haskell-Programmers.html)
-- [En guide til Haskell for nybegynnere](https://www.haskell.org/documentation/)
+- [System.Directory-dokumentasjon](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Control.Exception-dokumentasjon](https://hackage.haskell.org/package/base/docs/Control-Exception.html)
+- [Learn You a Haskell-kapittel om håndtering av feil](https://learnyouahaskell.com/for-a-few-monads-more#exceptions)

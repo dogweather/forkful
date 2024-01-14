@@ -1,19 +1,21 @@
 ---
-title:                "Go: Translation: Conversion d'une chaîne de caractères en minuscules"
+title:                "Go: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi convertir une chaîne en minuscules en Go?
+## Pourquoi
 
-La conversion d'une chaîne en minuscules peut être utile pour la normalisation des données, la comparaison de chaînes sans tenir compte de la casse ou pour améliorer les performances lors de l'exécution de certaines opérations sur de grandes quantités de données.
+Il est courant en programmation de devoir manipuler des chaînes de caractères, et parfois, il peut être nécessaire de les convertir en lettres minuscules pour des raisons telles que la comparaison de chaînes. Dans cet article, nous allons explorer comment effectuer cette opération en utilisant le langage de programmation Go.
 
-## Comment le faire en Go
+## Comment faire
 
-La fonction `strings.ToLower()` peut être utilisée pour convertir une chaîne en minuscules en Go. Voici un exemple de code pour illustrer cela:
+Nous pouvons utiliser la fonction `strings.ToLower()` pour convertir une chaîne de caractères en lettres minuscules. Voici un exemple de code Go:
 
 ```Go
 package main
@@ -24,20 +26,21 @@ import (
 )
 
 func main() {
-	str := "JE SUIS UNE CHAÎNE EN MAJUSCULES"
-	lower := strings.ToLower(str)
-	fmt.Println(lower)
+	str := "Exemple de CHAÎNE de Caractères"
+	lowerCaseStr := strings.ToLower(str)
+	fmt.Println(lowerCaseStr)
 }
+
 ```
 
-Ceci affichera la sortie suivante: `je suis une chaîne en majuscules`.
+La sortie de ce code sera `exemple de chaîne de caractères`. Nous importons d'abord le package `strings` pour avoir accès à la fonction `ToLower()` et ensuite nous déclarons une variable `str` contenant une chaîne de caractères. Nous utilisons ensuite la fonction `ToLower()` sur cette variable et stockons le résultat dans une nouvelle variable `lowerCaseStr` qui sera ensuite imprimée.
 
 ## Plongée en profondeur
 
-En Go, les chaînes sont des tableaux de bytes, ce qui signifie qu'elles peuvent être facilement modifiées en convertissant les lettres en bytes correspondants et en soustrayant 32 pour les lettres majuscules afin d'obtenir les lettres correspondantes en minuscules. Cependant, l'utilisation de la fonction prédéfinie `strings.ToLower()` est généralement préférable pour des raisons de lisibilité, de maintenabilité et de performances.
+Lorsqu'une chaîne de caractères est convertie en lettres minuscules, il est important de comprendre comment cette opération est effectuée. En réalité, les chaînes de caractères dans Go sont des tableaux d'octets (bytes) et la fonction `ToLower()` itère à travers chaque octet et modifie ceux qui sont des lettres majuscules en les convertissant en lettres minuscules. Cette fonction prend également en compte les caractères spéciaux et les langues qui peuvent avoir des règles de conversion différentes.
 
-# Voir aussi
+## Voir aussi
 
-- Documentation officielle de Go sur les chaînes: https://golang.org/ref/spec#String_types
-- Tutoriel sur les chaînes en Go: https://gobyexample.com/strings
-- Comparaison de chaînes en Go: https://www.golangprograms.com/golang-compare-two-strings.html
+- [Documentation officielle de la fonction `ToLower()`](https://golang.org/pkg/strings/#ToLower)
+- [Tutoriel sur les chaînes en Go](https://www.tutorialspoint.com/go/go_strings.htm)
+- [Exemple de fonction de conversion de lettres majuscules en minuscules en Go](https://yourbasic.org/golang/convert-string-to-lower-upper-title-camel-case/)

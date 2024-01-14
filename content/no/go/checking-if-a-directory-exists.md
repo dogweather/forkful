@@ -1,52 +1,77 @@
 ---
-title:                "Go: Kontrollere om en mappe eksisterer"
+title:                "Go: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-### Hvorfor
+# Hvorfor
 
-Det å sjekke om en mappe eksisterer kan være en viktig del av programmeringen din. Det kan hjelpe deg med å sikre at programmet ditt kjører riktig og unngå feil som kan oppstå hvis mappen ikke finnes.
+Når vi utvikler programmer i Go, er det viktig å sørge for at koden vår er pålitelig og feilfri. En vanlig feil som kan oppstå er å prøve å aksessere en mappe som ikke eksisterer. Derfor er det viktig å kunne sjekke om en mappe faktisk eksisterer før man prøver å aksessere den.
 
-### Hvordan gjøre det
+# Hvordan
 
-Sjekke om en mappe eksisterer i Go er enkelt og greit. Du kan bruke funksjonen `Exists` fra `os` pakken til å sjekke om en mappe eksisterer eller ikke. La oss se på et eksempel:
+For å sjekke om en mappe eksisterer, bruker vi funksjonen `os.Stat()` og sjekker om den returnerer en feil eller ikke. Hvis det ikke er noen feil, betyr det at mappen eksisterer.
 
 ```Go
 package main
 
 import (
-  "fmt"
-  "os"
+    "fmt"
+    "os"
 )
 
 func main() {
-  path := "minMappe"
+    // Sjekker om mappen "test" eksisterer
+    _, err := os.Stat("test")
 
-  // Sjekker om mappen eksisterer
-  if _, err := os.Stat(path); err != nil {
-    if os.IsNotExist(err) {
-      fmt.Println("Mappen eksisterer ikke")
+    if err == nil {
+        fmt.Println("Mappen eksisterer")
     } else {
-      fmt.Println("Kunne ikke sjekke mappen")
+        fmt.Println("Mappen eksisterer ikke")
     }
-  } else {
-    fmt.Println("Mappen eksisterer")
-  }
 }
 ```
 
-Her bruker vi `os.Stat` for å sjekke om en mappe eksisterer. Hvis mappen ikke eksisterer, vil vi få en `os.IsNotExist` feil og vi kan skrive en passende melding. Hvis alt går bra, vil vi få en `nil` verdi, noe som betyr at mappen eksisterer.
+Output:
+```
+Mappen eksisterer ikke 
+```
 
-### Dypdykk
+# Dypdykk
 
-Hvis du vil lære mer om hvordan `os.Stat` funksjonen fungerer og hvordan den kan brukes til å sjekke andre filer eller mapper, kan du sjekke ut dokumentasjonen her: [https://golang.org/pkg/os/#Stat](https://golang.org/pkg/os/#Stat)
+Vi kan også bruke `os.IsExist()` og `os.IsNotExist()` funksjonene for å sjekke nærmere på resultatet av `os.Stat()`. Disse funksjonene returnerer henholdsvis `true` og `false` basert på mappens eksistensstatus.
 
-### Se også
+```Go
+package main
 
-- [https://golang.org/pkg/os/#IsNotExist](https://golang.org/pkg/os/#IsNotExist)
-- [https://golang.org/pkg/os/#Exists](https://golang.org/pkg/os/#Exists)
-- [https://gobyexample.com/directory-exists](https://gobyexample.com/directory-exists)
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    // Sjekker om mappen "test" eksisterer
+    info, err := os.Stat("test")
+
+    if os.IsExist(err) {
+        fmt.Printf("Filinformasjon: %+v", info)
+    } else if os.IsNotExist(err) {
+        fmt.Println("Mappen eksisterer ikke")
+    }
+}
+```
+
+Output:
+```
+Mappen eksisterer ikke
+```
+
+# Se også
+
+- [Offisiell dokumentasjon for `os.Stat()`](https://golang.org/pkg/os/#Stat)
+- [Golang tutorial: Sjekke om en fil eller mappe eksisterer](https://www.golangprograms.com/golang-program-to-check-if-a-file-exists-in-a-location.html)

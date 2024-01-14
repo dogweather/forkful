@@ -1,51 +1,50 @@
 ---
 title:                "C: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att lära sig hur man läser in kommandoradsargument är ett viktigt steg för att bli en skicklig C-programmerare. Genom att kunna använda dessa argument kan du skriva program som är mer flexibla och anpassningsbara, vilket är ett vanligt scenario i verkliga programmeringsprojekt. Genom att läsa denna bloggpost kommer du att förstå hur kommandoradsargument fungerar och hur du kan använda dem i dina egna program.
 
-Att kunna läsa kommandoradsargument är en viktig del av att behärska C-programmering. Genom att kunna läsa in parametrar via kommandoraden kan du göra dina program mer flexibla och anpassningsbara. Detta kan vara särskilt användbart om du vill skapa program som kan ta emot olika typer av input från användaren. Men varför ska man lägga tid och ansträngning på att lära sig detta? Låt oss ta en titt på fördelarna med att kunna läsa kommandoradsargument.
+## Så här gör du
 
-## Hur man gör
+För att läsa kommandoradsargument i C måste du först känna till funktionen `main`. Denna funktion tar emot två parametrar, `argc` och `argv`. `argc` är antalet argument som skickas till programmet, medan `argv` är en vektor av strängar som innehåller de faktiska argumenten.
 
-Att läsa kommandoradsargument i C är relativt enkelt. Först och främst behöver du inkludera <stdio.h> för att kunna använda funktionen "main" som är där vi kommer att läsa in argumenten. Sedan kan du läsa in argumenten genom att använda "argc" och "argv" variablerna. "argc" håller antalet argument som matats in och "argv" är en array som innehåller själva argumenten. Låt oss titta på ett exempel:
+För att ta reda på vad dessa argument är kan du använda en `for`-loop. Här är ett exempel på kod som skriver ut alla argument på en separat rad:
 
 ```C
 #include <stdio.h>
 
-int main(int argc, char* argv[]) {
-    for(int i = 0; i < argc; i++) {
+int main(int argc, char *argv[]) {
+    for (int i = 0; i < argc; i++) {
         printf("Argument %d: %s\n", i, argv[i]);
     }
     return 0;
 }
 ```
 
-I detta enkla program loopar vi igenom alla argument och skriver ut dem med hjälp av "printf" funktionen. Om vi kör detta program med kommandot "program --option1 arg1 arg2" så bör vi få utskriften:
+Om du kompilerar och kör detta program med kommandoradsargument, till exempel `./program arg1 arg2`, bör du få följande utmatning:
 
 ```
-Argument 0: program
-Argument 1: --option1
-Argument 2: arg1
-Argument 3: arg2
+Argument 0: ./program
+Argument 1: arg1
+Argument 2: arg2
 ```
-
-Som du ser så är "program" själva programmet som utförs, medan "-option1", "arg1" och "arg2" är argumenten som matats in.
 
 ## Djupdykning
 
-Nu när vi förstår grunderna av att läsa kommandoradsargument, låt oss titta på några mer avancerade användningsområden. En vanlig användning är att ge programmet olika inställningar eller alternativ baserat på argumenten. Till exempel kan du ha ett alternativ "-h" som visar en hjälpmeddelande eller "-v" som står för "verbose" och visar mer detaljerad information.
+En viktig sak att notera är att `argv[0]` alltid kommer att vara namnet på programmet. Det betyder också att `argc` alltid kommer att vara minst 1, även om du inte skickar några argument till programmet.
 
-En annan användning är för att hantera felaktiga argument. Om användaren matar in felaktiga argument till ditt program, kan du använda "argc" och "argv" för att ge en lämplig felhantering. Till exempel kan du skriva ut ett felmeddelande och avsluta programmet om användaren matar in för få argument.
-
-Det finns också möjlighet att lägga till värden för olika argument. Till exempel kan du ha ett alternativ "--input" som kräver att användaren även matar in ett värde efter det, till exempel "--input 5". Detta kan vara särskilt användbart för att göra ditt program mer anpassningsbart.
+En annan intressant funktion i C är `getopt`. Den ger dig möjlighet att hantera kommandoradsalternativ med flera flaggor. Du kan läsa mer om detta i dokumentationen för `getopt` eller söka efter exempel på nätet.
 
 ## Se även
 
-- [How to Parse Command Line Arguments in C](https://www.codeproject.com/Articles/7049/Quick-and-Dirty-Command-Line-argument-parse)
-- [Command Line Arguments in C](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Dokumentation för `getopt`](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
+- [En introduktion till kommandoradsargument i C](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
+- [En guide till `main`-funktionen i C](https://www.gnu.org/software/libc/manual/html_node/Function-Arguments.html#Function-Arguments)

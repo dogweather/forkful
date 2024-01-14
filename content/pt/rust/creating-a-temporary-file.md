@@ -1,40 +1,53 @@
 ---
-title:                "Rust: Gerando um arquivo temporário"
+title:                "Rust: Criando um arquivo temporário"
+simple_title:         "Criando um arquivo temporário"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário em Rust?
+## Por que criar um arquivo temporário com Rust?
 
-Criar um arquivo temporário pode ser útil em diversas situações ao escrever um código em Rust. Algumas razões comuns para criar um arquivo temporário incluem armazenar dados temporários, fazer testes, manipular arquivos grandes ou simplesmente para evitar sobrecarregar o armazenamento permanente.
+Muitas vezes, durante o desenvolvimento de um projeto em Rust, pode ser necessário criar um arquivo temporário para armazenar dados temporariamente. Isso pode ser útil para testar uma funcionalidade ou para lidar com grandes conjuntos de dados. Felizmente, Rust torna isso muito fácil de fazer com algumas linhas de código.
 
-## Como criar um arquivo temporário em Rust
+## Como criar um arquivo temporário com Rust
 
-Para criar um arquivo temporário em Rust, podemos usar a função `tempfile::tempfile()`. Esta função retorna um objeto `Result<File>`, que pode ser usado para escrever ou ler dados do arquivo temporário. Veja um exemplo abaixo:
+A primeira coisa que precisamos fazer é importar a biblioteca "tempfile", que nos permitirá criar um arquivo temporário. Em seguida, podemos usar a função "NamedTempFile::new()" para criar um novo arquivo temporário. Veja o código abaixo:
 
 ```Rust
 use std::io::prelude::*;
 use std::fs::File;
-use tempfile::tempfile;
+use std::io::Result;
 
-let mut temp_file = tempfile().expect("Não foi possível criar o arquivo temporário");
-temp_file.write_all(b"Este é um exemplo de conteúdo do arquivo temporário")
-    .expect("Não foi possível escrever dados no arquivo");
+use tempfile::NamedTempFile;
 ```
 
-Neste exemplo, usamos o `tempfile()` para criar o arquivo temporário e em seguida, usamos o método `write_all()` para escrever uma string no arquivo. Podemos também usar métodos como `read()` ou `seek()` para ler e manipular os dados no arquivo temporário.
+Em seguida, podemos escrever dados no arquivo temporário e, finalmente, imprimi-los na tela. Veja o exemplo abaixo:
 
-## Aprofundando no assunto
+```Rust
+let mut file = NamedTempFile::new()?;
+writeln!(file, "Este é um arquivo temporário criado com Rust!")?;
+println!("O seguinte conteúdo foi escrito no arquivo temporário:");
+println!("{}", &file_path);
+```
 
-Existem algumas coisas importantes a se ter em mente ao criar um arquivo temporário em Rust. Primeiro, sempre devemos checar o resultado da função `tempfile()` para garantir que o arquivo foi criado com sucesso. Caso contrário, podemos receber um erro ao tentar escrever ou ler dados no arquivo.
+A saída deve ser semelhante a:
 
-Também é importante lembrar que o arquivo temporário será automáticamente deletado quando o programa terminar de executar, então não precisamos nos preocupar em deletá-lo manualmente. Além disso, podemos especificar a extensão do arquivo temporário usando o método `suffix()` para facilitar o reconhecimento do arquivo.
+```
+O seguinte conteúdo foi escrito no arquivo temporário:
+/vari/folders/35/2k1_80cn2537h7bxr5z7l7c40000gn/T/rustlzglhvzor5gpfvo.txt
+```
+
+## Detalhando a criação de um arquivo temporário
+
+A função "NamedTempFile::new()" retorna um objeto que implementa a trait "Write", permitindo que escrevamos dados no arquivo temporário usando as funções "writeln!" ou "write!". Além disso, o arquivo é automaticamente apagado quando sua variável sai do escopo.
+
+Também é possível definir um prefixo e/ou sufixo para o nome do arquivo temporário, usando a função "NamedTempFile::with_prefix()" ou "NamedTempFile::with_suffix()". Isso pode ser útil para manter um padrão de nomenclatura em seus arquivos temporários.
 
 ## Veja também
 
-- [Documentação da função `tempfile()`](https://docs.rs/tempfile/3.2.0/tempfile/fn.tempfile.html)
-- [Exemplo de uso da biblioteca `tempfile`](https://gist.github.com/LuisHenrique01/00beee1099ca6e3fbea0de3d3b75a97f)
-- [Tutorial sobre manipulação de arquivos em Rust](https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html)
+- [Documentação da biblioteca "tempfile" em Rust](https://docs.rs/tempfile/3.2.0/tempfile/)
+- [Outras maneiras de lidar com arquivos temporários em Rust](https://www.reddit.com/r/rust/comments/c7wd9k/what_is_the_best_way_to_create_a_temporary_file/)

@@ -1,52 +1,55 @@
 ---
 title:                "C: Comparando duas datas"
+simple_title:         "Comparando duas datas"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que comparar duas datas em programação?
+## Por que Comparar Duas Datas?
 
-As datas são um elemento fundamental em muitos programas e projetos de software. Comparar duas datas pode ser uma tarefa comum em algumas situações, como verificar a idade de uma pessoa ou determinar o intervalo de tempo entre duas datas. Portanto, é importante saber como comparar duas datas em linguagem C.
+Comparar duas datas é uma tarefa comum na programação. Isso pode ser necessário para verificar se uma data é maior, menor ou igual a outra, ou para calcular a diferença entre duas datas. Além disso, pode ser útil para ordenar eventos em ordem cronológica, como em aplicações de calendário ou planejamento.
 
-## Como fazer a comparação em C?
+## Como Fazer Isso em C
 
-Para comparar duas datas em C, é necessário primeiro entender como as datas são representadas em um programa. Em linguagem C, as datas são armazenadas em variáveis do tipo `struct tm`, que contém informações como ano, mês, dia, entre outros. 
+Em C, podemos comparar duas datas utilizando a função `difftime()`, que calcula a diferença entre duas datas em segundos. Essa função possui a seguinte sintaxe:
 
-Para fazer a comparação, é possível utilizar as funções `difftime()` e `mktime()` da biblioteca `<time.h>`. A função `difftime()` calcula a diferença entre duas datas em segundos, enquanto a função `mktime()` cria um objeto de tempo a partir dos valores de uma `struct tm`.
+```
+double difftime(time_t data1, time_t data2);
+```
 
-```C
+Onde `data1` e `data2` são do tipo `time_t`, que é um tipo de dado utilizado para armazenar datas e horas em um formato específico.
+
+Abaixo, temos um exemplo de código que compara duas datas e imprime o resultado na tela:
+
+```
 #include <stdio.h>
 #include <time.h>
 
-int main(void) {
-  struct tm data1 = { .tm_year = 2020, .tm_mon = 10, .tm_mday = 1 }; // 01/10/2020
-  struct tm data2 = { .tm_year = 2021, .tm_mon = 10, .tm_mday = 1 }; // 01/10/2021
-
-  time_t t1 = mktime(&data1); // cria um objeto de tempo a partir da primeira data
-  time_t t2 = mktime(&data2); // cria um objeto de tempo a partir da segunda data
+int main(){
+  time_t data1 = time(NULL); // obtém data e hora atual
+  time_t data2 = 1577836800; // 01/01/2020
   
-  double diferenca = difftime(t2, t1); // calcula a diferença em segundos
-  int dias = (int) diferenca / (24 * 60 * 60); // converte para dias
+  double diferenca = difftime(data1, data2);
   
-  printf("Entre as duas datas há %d dias de diferença.", dias);
-
+  printf("A diferença entre as datas em segundos é: %f", diferenca);
+  
   return 0;
 }
 ```
 
-O código acima calcula a diferença em dias entre duas datas e imprime o resultado. No exemplo, a diferença é de 365 dias, já que a segunda data é um ano após a primeira.
+O resultado dessa comparação será a diferença em segundos entre a data atual e o dia 01/01/2020. Podemos utilizar essa informação para fazer comparações adicionais, como verificar se uma data é maior, menor ou igual a outra.
 
-## Aprofundando mais na comparação de datas
+## Profundidade da Comparação de Datas
 
-Além das funções mencionadas acima, existem outras maneiras de comparar datas em linguagem C, como utilizando operadores lógicos e condicionais. Também é importante estar atento às particularidades de cada linguagem, já que algumas podem ter funções específicas para comparação de datas.
+Além de utilizar a função `difftime()`, também é possível realizar comparações de datas utilizando a struct `tm`, presente na biblioteca `time.h`. Essa struct possui campos para armazenar informações sobre o ano, mês, dia, hora, entre outros dados. Com ela, podemos comparar cada um desses campos individualmente, o que pode ser útil em determinadas situações.
 
-Além disso, é necessário ter cuidado ao comparar datas em formatos diferentes, como datas com e sem horas, ou datas em fuso horário diferente. Isso pode afetar o resultado da comparação e gerar resultados inesperados.
+Além disso, vale lembrar que a função `difftime()` considera apenas a diferença entre duas datas em segundos, mas não leva em conta informações como fusos horários ou horário de verão. Portanto, é importante ter isso em mente ao realizar comparações entre datas em diferentes regiões ou períodos do ano.
 
-## Veja também
+## Veja Também
 
-- [Documentação da biblioteca time.h em linguagem C](https://www.gnu.org/software/libc/manual/html_node/Time.html)
-- [Como comparar datas em Java](https://www.devmedia.com.br/como-comparar-datas-em-java/28279)
-- [Manipulando datas e horas em Python](https://dicasdepython.com.br/como-manipular-datas-e-horas-em-python/)
+- [Tutorial: Trabalhando com Datas e Horas em C](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Documentação Oficial do C - time.h](https://www.tutorialspoint.com/c_standard_library/time_h.htm)

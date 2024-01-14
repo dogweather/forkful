@@ -1,61 +1,62 @@
 ---
-title:                "Clojure: Extrahera substrängar"
+title:                "Clojure: Utvinna substrängar"
+simple_title:         "Utvinna substrängar"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför extrahera substrängar?
 
-I många programmeringsprojekt finns det behov av att hämta ut delar av en sträng, istället för att bara använda hela strängen som den är. Detta kan till exempel vara för att manipulera data eller för att skapa mer dynamiska applikationer. I Clojure finns det enkla sätt att extrahera substrings från en sträng, vilket kan vara mycket användbart i många olika scenarion.
+När du arbetar med texter i Clojure kan du ibland behöva extrahera delar av en sträng, även kallad en substräng. Det kan vara för att söka igenom en sträng efter ett visst mönster eller för att manipulera den på ett specifikt sätt. I den här bloggposten kommer vi att gå igenom hur man extraherar substrängar i Clojure och kommer att ge några djupare kunskaper om ämnet.
 
-## Hur man gör
+## Hur man extraherar substrängar
 
-För att extrahera en substring från en sträng i Clojure, kan man använda funktionen `subs`. Den tar in två parametrar - den ursprungliga strängen och vilka index som substringen ska hämtas från. Till exempel:
-
-```Clojure
-(def sträng "Hej, det här är en teststräng.")
-
-(subs sträng 4 10)
-```
-
-Resultatet av detta skulle bli "det här", eftersom vi hämtar ut alla tecken från index 4 till index 10 (exklusive det sista tecknet). Detta fungerar även med negativa index, där den räknar bakifrån. Till exempel:
+I Clojure finns det flera sätt att extrahera substrängar. Ett vanligt sätt är att använda funktionen `subs`, som tar emot en sträng, en startposition och en slutposition som argument:
 
 ```Clojure
-(subs sträng -9 -1)
+(subs "Hej världen" 4 8)
 ```
+Output: `värld`
 
-Skulle resultera i "sträng" eftersom vi här hämtar ut de sista nio tecknen i strängen.
+Detta kodexempel tar en sträng och extraherar delen från position 4 till position 8, vilket i det här fallet är ordet "värld".
 
-För att bara hämta en del av en sträng, kan man använda funktionen `subs` tillsammans med funktionen `str/split`. Detta skulle till exempel kunna se ut såhär:
+En annan funktion för substrängs-extrahering är `substring`, som tar emot samma argument som `subs` men tar också emot ett ytterligare argument för att ange ett steg med vilket man kan hoppa över tecken:
 
 ```Clojure
-(def sträng "Hejsan, detta är en annan teststräng.")
-
-(-> sträng
-    (str/split #",")
-    first
-    (subs 3))
+(substring "Hej världen" 0 8 2)
 ```
+Output: `Hjävl`
 
-Det här skulle returnera "s", eftersom vi först delar upp strängen vid kommatecknet, tar första delen av den uppdelade strängen och sedan hämtar ut den tredje bokstaven från den delen.
+I det här fallet hoppas vi över varannan bokstav från startpositionen till slutpositionen.
 
-## Djupdykning
-
-När man extraherar substrings från en sträng, är det viktigt att vara medveten om hur Clojure behandlar unicode-tecken. Om man till exempel har en sträng med emoji, kan det vara lite knepigare att extrahera en del av den. Ett sätt att göra detta är att använda funktionen `seq` för att omvandla strängen till en sekvens av tecken och sedan ta ut delar av den. Till exempel:
+Du kan också använda `re-find` för att söka efter ett visst mönster i en sträng och extrahera substrängen som matchar det mönstret:
 
 ```Clojure
-(def sträng "Hej 😊, detta är en teststräng.")
-
-(subs (seq sträng) 4 10)
+(re-find #"l\d" "Lektion 9")
 ```
+Output: `l9`
 
-Det här skulle resultera i "😊, det", eftersom Clojure här ser alla tecken som individuella element i sekvensen och behandlar dem som sådana.
+I det här exemplet söker vi efter ett litet "l" följt av en siffra i strängen "Lektion 9" och `re-find` returnerar substrängen som matchar det mönstret.
+
+## Djupdykning i substrängsextrahering
+
+En viktig sak att tänka på när du extraherar substrängar är indexeringen. I Clojure (precis som i många andra programmeringsspråk) börjar indexeringen av en sträng på position 0, vilket betyder att det första tecknet i en sträng har index 0 och det sista tecknet har index "längden på strängen - 1".
+
+Du kan också använda funktionen `get` för att extrahera ett enskilt tecken från en sträng:
+
+```Clojure
+(get "Hej världen" 1)
+```
+Output: `e`
+
+Även om det finns flera olika sätt att extrahera substrängar i Clojure, är det viktigt att välja rätt funktion baserat på det specifika behovet och argumenten som behövs.
 
 ## Se även
 
-* [Clojure Docs: subs](https://clojuredocs.org/clojure.core/subs)
-* [Clojure Docs: seq](https://clojuredocs.org/clojure.core/seq)
-* [Clojure Docs: split](https://clojuredocs.org/clojure.string/split)
+- [Dokumentation för subs](https://clojuredocs.org/clojure.core/subs)
+- [Dokumentation för substring](https://clojuredocs.org/clojure.core/substring)
+- [Dokumentation för re-find](https://clojuredocs.org/clojure.core/re-find)

@@ -1,54 +1,58 @@
 ---
-title:                "Python: Tarkista onko hakemisto olemassa."
+title:                "Python: Tarkastetaan, onko hakemistoa olemassa"
+simple_title:         "Tarkastetaan, onko hakemistoa olemassa"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi tarkistaa onko hakemistoa olemassa?
 
-Eräs yleinen ongelma, joka voi tulla vastaan Python-ohjelmoinnissa, on se, että haluat tarkistaa, onko jokin kansio olemassa vai ei. Tämä voi olla tarpeellista esimerkiksi skannattaessa tiedostojärjestelmää tai tarkistaessa, pystyykö ohjelma suorittamaan tarvittavia toimintoja.
+On tärkeää tietää, onko hakemistoa olemassa, jotta voidaan varmistaa ohjelman sujuva toiminta ja estää mahdolliset virheet. Tarkistamalla ensin, onko hakemisto olemassa, voidaan välttää turhia ongelmia.
 
-## Kuinka tehdä
+## Kuinka tarkistaa olemassa oleva hakemisto Pythonilla
 
-Onneksi Pythonilla on sisäänrakennettu tapa tarkistaa, onko kansio olemassa. Tämä tapahtuu käyttämällä `os.path.exists()` -funktiota ja antamalla parametrina halutun kansion polku. Katso alla esimerkki, jossa tarkistetaan "tiedostot" -niminen kansio nykyisen työhakemiston sisältä:
+Tarkistamiseen on olemassa useita tapoja, mutta yksi kätevin ja yksinkertaisin tapa on käyttää `os` -kirjastoa ja sen `path.exists()` -funktiota. Tämä funktio tarkistaa, onko annettu polku olemassa ja palauttaa `True` tai `False` arvon sen perusteella. Katso alla olevaa koodiesimerkkiä:
 
-```python
+```Python
 import os
 
-if os.path.exists("tiedostot"):
-    print("Kansio on olemassa!")
-else:
-    print("Kansiota ei löytynyt.")
+# määritetään polku hakemistoon, jota halutaan tarkistaa
+polku = "/kansio/hakemisto"
+
+# tarkistetaan onko polku olemassa ja tallennetaan palautettu arvo muuttujaan
+onko_olemassa = os.path.exists(polku)
+
+# tulostetaan tulos
+print(onko_olemassa)
 ```
 
-**Tulostus:**
-
-```python
-Kansio on olemassa!
+Tulostus:
+```
+True
 ```
 
-Tämä tarkistus palauttaa `True` tai `False` riippuen siitä, löytyykö annettu kansio vai ei. Voit myös käyttää `try`-`except` -lohkoa käsittelemään mahdollisia virheitä, kuten esimerkissä alla:
+## Syvällisempi perehtyminen hakemistojen tarkistamiseen
 
-```python
+Vaikka `path.exists()` on kätevä ja helppokäyttöinen funktio, on hyvä tietää myös muita mahdollisia tapoja tarkistaa hakemistoja. Esimerkiksi `os.listdir()` -funktio palauttaa listan kaikista hakemiston tiedostoista ja kansioista, jotka voidaan sitten käydä läpi ja tarkistaa halutun hakemiston olemassaolo. Tämä voi olla hyödyllistä, jos halutaan tarkistaa hakemistoja, jotka eivät ole suoraan annetulla polulla.
+
+Lisäksi, jos halutaan luoda uusi hakemisto, mikäli sitä ei ole, voidaan käyttää `os.makedirs()` -funktiota, joka luo tarvittaessa myös välipolkuja. Esimerkiksi:
+
+```Python
 import os
 
-try:
-    if os.path.exists("tiedostot"):
-        print("Kansio on olemassa!")
-    else:
-        print("Kansiota ei löytynyt.")
-except OSError:
-    print("Kansiota ei pystytty tarkistamaan.")
+# määritetään polku uudelle hakemistolle
+polku = "/uusi_hakemisto/alihakemisto"
+
+# luodaan hakemisto ja välipolku tarvittaessa
+os.makedirs(polku)
 ```
-
-## Syvemmälle
-
-`os.path.exists()` -funktio toimii tarkistamalla, onko parametrina annetussa polussa oleva tiedosto tai kansio olemassa. Se ei sen sijaan tarkista, onko kyseisellä polulla myös oikeutta päästä tiedostoon tai kansioon. Tämän vuoksi on hyvä käyttää myös muita tarkistuksia, kuten `os.path.isdir()` tai `os.access()` -funktioita, mikäli tarvitaan tarkempaa tietoa tiedoston tai kansion ominaisuuksista.
 
 ## Katso myös
 
-- Python `os` -dokumentaatio (https://docs.python.org/3/library/os.html)
-- "Tiedostojen tarkastelu ja manipulointi Pythonilla" (https://realpython.com/working-with-files-in-python/)
+- `os` -kirjaston virallinen dokumentaatio: https://docs.python.org/3/library/os.html
+- `pathlib` -kirjasto, joka tarjoaa uudemman ja helpommin käytettävän tavan käsitellä polkuja: https://docs.python.org/3/library/pathlib.html
+- Lisätietoa Python-ohjelmoinnista ja hakemistojen käsittelystä: https://realpython.com/working-with-files-in-python/

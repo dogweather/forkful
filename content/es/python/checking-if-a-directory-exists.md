@@ -1,46 +1,44 @@
 ---
 title:                "Python: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías comprobar si un directorio existe?
+## ¿Por qué comprobar si un directorio existe?
 
-A veces, al escribir un programa en Python, es posible que necesites saber si un directorio específico existe en tu sistema de archivos. Esto puede ser útil para evitar errores o para realizar acciones específicas en función de si el directorio está presente o no. En esta publicación, exploraremos cómo podemos verificar la existencia de un directorio en Python.
+Comprobar si un directorio existe es una tarea esencial en la programación de Python, ya que permite verificar si un directorio o carpeta específica está presente en un sistema de archivos. Esto puede ser útil para asegurarse de que se esté accediendo al directorio correcto antes de realizar operaciones en él, como crear o borrar archivos.
 
-## Cómo comprobar si un directorio existe en Python
+## Cómo hacerlo
 
-Para comprobar si un directorio existe en Python, podemos utilizar la función `path.exists()` de la librería estándar `os`. Esta función acepta una ruta como argumento y devuelve `True` si existe un archivo o directorio en esa ruta, o `False` si no existe.
-
-Veamos un ejemplo de cómo podemos utilizar esta función:
+Comprobar si un directorio existe en Python es bastante sencillo gracias al módulo `os`. Primero, importamos el módulo en nuestro código:
 
 ```Python
 import os
-
-ruta = "/Users/usuario/MiProyecto/"
-
-if os.path.exists(ruta):
-    print("El directorio existe en la ruta especificada.")
-else:
-    print("El directorio no existe en la ruta especificada.")
 ```
 
-En este ejemplo, primero importamos la librería `os` para poder utilizar la función `path.exists()`. Luego, definimos una variable `ruta` que contiene la ruta del directorio que queremos comprobar. Luego, utilizamos un condicional `if` para verificar si el directorio existe o no. El resultado se imprimirá en la consola.
+Luego, utilizamos la función `path.exists()` del módulo `os` y le pasamos como argumento la ruta del directorio que queremos comprobar. Si el directorio existe, la función devolverá `True` y si no existe, devolverá `False`. Veamos un ejemplo:
 
-Si queremos verificar la existencia de un directorio en un sistema de archivos diferente, podemos proporcionar una ruta absoluta o usar la función `path.join()` de `os` para unir varios componentes de la ruta.
+```Python
+if os.path.exists("/ruta/al/directorio"):
+    print("El directorio existe")
+else:
+    print("El directorio no existe")
+```
 
-## Profundizando en la comprobación de la existencia de directorios
+En este ejemplo, estamos verificando si el directorio "/ruta/al/directorio" existe y mostrando un mensaje de acuerdo al resultado. Es importante tener en cuenta que esta función solo comprueba la existencia del directorio, no si es legible o si tenemos permisos para acceder a él.
 
-En algunos casos, puede ser necesario realizar una verificación más específica sobre un directorio. Por ejemplo, podemos querer saber si el directorio es realmente un directorio y no un archivo con el mismo nombre. En este caso, podemos utilizar la función `os.path.isdir()` que nos devolverá `True` si el camino dado es un directorio válido.
+## Inmersión profunda
 
-También podemos querer obtener información sobre los permisos del directorio. Para ello, podemos utilizar la función `os.access()` que acepta una ruta y un modo de acceso como argumentos y nos devuelve `True` si la ruta tiene los permisos adecuados.
+Existen otras funciones disponibles en el módulo `os` que nos permiten obtener más información sobre un directorio en particular. Por ejemplo, la función `listdir()` nos devuelve una lista de los archivos y directorios dentro de un directorio específico. Además, podemos utilizar la función `isdir()` para comprobar si un elemento en la lista es un directorio o no.
 
-Existen otras funciones en la librería `os` que nos pueden proporcionar más información sobre un directorio, como por ejemplo `os.stat()` que nos devuelve información detallada, como el tamaño y la fecha de creación del directorio.
+También podemos utilizar la biblioteca `pathlib` para trabajar con rutas y directorios de una manera más intuitiva y sencilla. Esta biblioteca es compatible con versiones de Python posteriores a la 3.4 y nos permite comprobar la existencia de un directorio usando la sintaxis de objetos.
 
 ## Ver también
 
-- Documentación de `os` en la librería estándar de Python: https://docs.python.org/es/3/library/os.html
-- Tutorial de DigitalOcean sobre la comprobación de la existencia de directorios en Python: https://www.digitalocean.com/community/tutorials/how-to-check-if-a-directory-exists-in-python-3-es
+- Documentación oficial del módulo `os`: https://docs.python.org/es/3/library/os.html
+- Documentación oficial de la biblioteca `pathlib`: https://docs.python.org/es/3/library/pathlib.html

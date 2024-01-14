@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: חישוב תאריך בעתיד או בעבר"
+simple_title:         "חישוב תאריך בעתיד או בעבר"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,32 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-למה להתעסק בחישוב תאריך בעתיד או בעבר? חישוב תאריך יכול להיות שימושי במגוון מקרים, כגון תכנות אירועים עתידיים או ייצור דוחות היסטוריים.
+חישוב תאריך בעתיד או בעבר הוא כלי חשוב בתכנות ב-Clojure כאשר יש לנו צורך לעבוד עם תאריכים בצורה מדויקה.
 
-## כיצד להשתמש
+## איך לעשות את זה
 
-המדריך הבא יראה לך כיצד לחשב את התאריך בעתיד או בעבר באמצעות שפת התכנות קלוז'ור. ניתן להשתמש בקוד המוצג כדי לבדוק בו זמנית את התאריך המבוקש לפי הפורמט הנתון.
+הנה כמה דוגמאות לחישוב תאריך בעתיד או בעבר בשפת Clojure:
 
-```Clojure
-(defn calculate-date [date time-offset]
-  (let [date (clj-time.coerce/from-date date)
-        calculated-date (clj-time.core/plus date time-offset)]
-    (clj-time.coerce/to-date calculated-date)))
-
-(calculate-date "2020-01-01" (clj-time.core/months 2))
-
-; Output: #inst "2020-03-01T00:00:00.000-00:00"
 ```
+Clojure (clj-lib.time/date-fn (clj-lib.time/today) 7 :days)
+```
+מפקסים את התאריך הנוכחי ומוסיפים 7 ימים אליו. הפלט יהיה תאריך אחד שבוע מהיום.
 
-קוד זה משתמש בפונקציות מהספריות clj-time ו-clj-time.coerce כדי להמיר את התאריך לפורמט של קלוז'ור ולחשב את התאריך המבוקש על ידי הוספת ה"מיכל" המבוקש לתאריך הנתון.
+```
+Clojure (clj-lib.time/date-fn (clj-lib.time/today) 2 :months)
+```
+מפקסים את התאריך הנוכחי ומוסיפים 2 חודשים אליו. הפלט יהיה תאריך אחד חודשים מהיום.
+
+```
+Clojure (clj-lib.time/date-fn (clj-lib.time/today) -1 :year)
+```
+מפקסים את התאריך הנוכחי ומחסירים שנה אחד ממנו. הפלט יהיה תאריך חצי שנה לפני היום.
+
+כמו כן, ניתן להשתמש גם בפונקציית `(clj-lib.time/date)` כדי לקבל תאריך ספציפי בעבור יום, חודש ושנה מסוימים.
 
 ## חפירה עמוקה
 
-חישוב תאריך בעתיד או בעבר הוא תהליך העוסק בטיפול בתאריכים כאובייקטים. בשפת קלוז'ור, כמו בשפות אחרות, קיימות מגוון ספריות וכלים שמסייעים בטיפול בתאריכים, כגון clj-time, java.time ו-Joda-Time.
-
-הפונקציות הקיימות במגוון הספריות נותנות יכולת לחשב את התאריך בעתיד או בעבר באמצעות פרמטרים כגון מידה של ימים, חודשים, שנים וכו'. את התאריך המבוקש ניתן להמיר לפורמט שלאחר מכן.
+כאשר אנחנו מפענחים תאריך בשפת Clojure, התאריך מיוצג כמספר שלם של ימים מה-1 לינואר 1970, שיקולו האפס. ניתן להשתמש בפונקציית `(clj-lib.time/date-fn)` כדי להוסיף או לחלק ימים, חודשים או שנים לתאריך ספציפי. כמו כן, ניתן להשתמש בפונקציית `(clj-lib.time/date)` כדי ליצור תאריך חדש לפי יום, חודש ושנה ספציפיים.
 
 ## ראה גם
 
-- [מדריך לפונקציות נתונים בקלוז'ור](https://github.com/funcool/codox)
-- [תיעוד שפת קלוז'ור](https://clojure.org/documentation)
+- [clj-lib.time ארכיון תיעוד](https://github.com/clj-lib/time)
+- [עשר מעטפות תאריך הכי פופולריות לשפות תכנות](https://www.sitepoint.com/top-10-date-time-manipulation-tools-and-libraries/)

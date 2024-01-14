@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Zmiana wielkości litery napisu"
+title:                "Clojure: Zmiana pierwszej litery na wielką w ciągu znaków"
+simple_title:         "Zmiana pierwszej litery na wielką w ciągu znaków"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/capitalizing-a-string.md"
 ---
 
@@ -9,61 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Niedawno natknąłem się na problem związany z koniecznością zmiany wielkości liter w ciągu znaków w moim programie Clojure. Musiałem wymusić, aby tylko pierwsza litera była wielka, a reszta małych liter. Zastanawiałem się, dlaczego ktoś w ogóle miałby się tego nauczyć? Cóż, istnieje wiele sytuacji, w których może być przydatne wykorzystanie tej funkcji, na przykład w celu poprawnej prezentacji danych lub wykorzystania jej w celu porównywania ciągów znaków.
+Dlaczego string powinien być pisany z wielkiej litery? Jest to często stosowana praktyka w programowaniu, aby poprawić czytelność i jednolitą formę w kodzie. Dodatkowo, niektóre funkcje w języku Clojure, takie jak `capitalize`, wymagają, aby pierwsza litera danego stringu była wielka.
 
-## Jak
+## Jak to zrobić
 
-### Za pomocą wbudowanej funkcji
-
-Clojure zapewnia nam wygodną wbudowaną funkcję o nazwie "capitalize", która zmienia pierwszą literę każdego słowa w ciągu znaków na wielką, a pozostałe na małe.
+Kodowanie stringa z wielką literę w języku Clojure jest bardzo proste i może być wykonane na kilka różnych sposobów. Przykładowe wykorzystanie `capitalize` wygląda następująco:
 
 ```Clojure
-(capitalize "jednostka testowa")
+(capitalize "witaj świecie") ; WYNIK: "Witaj świecie"
 ```
 
-Output: "Jednostka Testowa"
-
-### Poprzez własną funkcję
-
-Możemy również stworzyć własną funkcję, która będzie działać w podobny sposób. Najpierw musimy podzielić ciąg na pojedyncze słowa, a następnie zmienić pierwszą literę każdego słowa na wielką.
+Można również użyć funkcji `str/split` i `str/join` aby wykorzystać bibliotekę `clojure.string` do zmiany pierwszej litery na wielką:
 
 ```Clojure
-(defn capitalize-custom [string]
-  (->> (clojure.string/split string #" ")
-      (map clojure.string/capitalize)
-      (apply str)))
+(require '[clojure.string :as str])
+
+(-> "witaj świecie"
+  (str/split #" ")
+  (mapv #(str/capitalize %))
+  (str/join " ")) ; WYNIK: "Witaj Świecie"
 ```
 
-Wywołanie:
+## Głębszy wgląd
 
-```Clojure
-(capitalize-custom "jednostka testowa")
-```
+W języku Clojure wielkość liter ma znaczenie, ponieważ jest to język funkcyjny i funkcje są niemutowalne. Dlatego też, jeśli próbujesz zmienić wielkość liter w istniejącym stringu, zostanie stworzona nowa kopia z pożądanymi zmianami, a oryginalny string pozostanie bez zmian.
 
-Output: "Jednostka Testowa"
+Można również zauważyć, że funkcje `capitalize` i `str/capitalize` zwrócą string z pierwszą literą zmieniającą rozmiar w przypadku, gdy oryginalna litera jest mała, jednak nie zmieniają stringa, jeśli pierwsza litera jest już wielka. W takim przypadku można użyć funkcji `str/upper-case` aby zapewnić, że cały string będzie zapisany dużymi literami.
 
-## Głębsza analiza
+## Zobacz także
 
-Warto zauważyć, że funkcje "capitalize" i "capitalize-custom" nie zmieniają wielkości liter w słowach, które już są napisane wielkimi literami. Na przykład, jeśli nasz ciąg znaków wygląda tak: "Prosta Funkcja", to wynikiem będzie "Prosta Funkcja", a nie "Prosta funkcja". 
-
-Możemy jednak rozszerzyć naszą własną funkcję, aby również zmieniała wielkość liter w takich słowach. W tym celu możemy użyć funkcji "clojure.string/lower-case" w połączeniu z "clojure.string/capitalize" do zmiany wszystkich liter na małe, a następnie ponownie zmienić pierwszą literę na wielką.
-
-```Clojure
-(defn capitalize-custom [string]
-  (->> (clojure.string/split string #" ")
-    (map (fn [word] (clojure.string/capitalize (clojure.string/lower-case word))))
-    (apply str)))
-```
-
-Wywołanie:
-
-```Clojure
-(capitalize-custom "Prosta Funkcja")
-```
-
-Output: "Prosta Funkcja"
-
-## Zobacz również
-
-- https://clojuredocs.org/clojure.string/lower-case
-- https://clojuredocs.org/clojure.string/capitalize
+- [Dokumentacja języka Clojure dotycząca zmian liter](https://clojuredocs.org/clojure.string/capitalize)
+- [Oficjalna strona języka Clojure](https://clojure.org/)
+- [Poradnik dla początkujących w języku Clojure](https://learnxinyminutes.com/docs/pl-pl/clojure-pl/)

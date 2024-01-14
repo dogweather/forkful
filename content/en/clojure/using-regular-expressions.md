@@ -1,55 +1,51 @@
 ---
 title:                "Clojure recipe: Using regular expressions"
+simple_title:         "Using regular expressions"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Regular expressions, also known as regex, are a powerful tool for text processing and manipulation. Whether you're trying to extract specific information from a large text file or validate user input in a web application, regular expressions can make your life easier by providing a concise and flexible way to search within strings.
+
+Regular expressions are powerful tools that allow developers to manipulate and extract data from text in a precise and efficient manner. They can be used in a variety of scenarios such as data cleaning, text parsing, and string validation. Adding regular expressions to your programming toolkit can greatly enhance your ability to work with textual data.
 
 ## How To
-Using regex in Clojure is simple and efficient. Let's take a look at some examples to see how it works.
 
-```
-Clojure
-;; Define a string
-(def input "This is a sample string 123")
+To use regular expressions in Clojure, we first need to import the `clojure.string` library which contains helpful functions for working with strings. We can do this by including the following line at the top of our Clojure file:
 
-;; Search for a specific pattern and return a boolean value
-(re-find #"string" input)
-;; Output: true
-
-;; Search for a specific pattern and return the first occurrence
-(re-find #"\d+" input)
-;; Output: "123"
-
-;; Search for a specific pattern and return all occurrences
-(re-seq #"\w+" input)
-;; Output: ("This" "is" "a" "sample" "string" "123")
+```Clojure
+(use 'clojure.string)
 ```
 
-As you can see, regex is used within the `re-find` and `re-seq` functions, with the first argument being the pattern to search for, and the second argument being the string to search within. The `#` symbol before the pattern indicates that it should be treated as a regex rather than a string.
+Let's take a simple example of extracting all the numbers from a string. We can use the `re-find` function and a regular expression pattern to do this. In the code block below, we have a string containing both alphabets and numbers. The regular expression `#"\d+"` matches any sequence of one or more digits.
+
+```Clojure
+(def example-string "abc123def456ghi789")
+(re-find #"\d+" example-string)
+; Output: "123"
+```
+
+We can also use regular expressions to replace parts of a string with a different value. The `replace` function takes a regular expression pattern and a replacement string as arguments. In the code block below, we replace all occurrences of the word "world" with "universe" in our example string.
+
+```Clojure
+(replace #"\bworld\b" "universe" "Hello world, hello world")
+; Output: "Hello universe, hello universe"
+```
 
 ## Deep Dive
-Regex patterns can be as simple or as complex as you need them to be. Here are some common symbols and rules to help you build powerful regex patterns:
 
-- `.`: matches any single character
-- `*`: matches zero or more occurrences of the preceding character
-- `+`: matches one or more occurrences of the preceding character
-- `?`: matches zero or one occurrences of the preceding character
-- `^`: matches the beginning of a string
-- `$`: matches the end of a string
-- `[]`: specify a range of characters to match
-- `()`: group characters or patterns together
-- `|`: matches either the expression to the left or the expression to the right
-- `\`: escape character to match special characters like `$` and `(`
+Regular expressions in Clojure are written using the `#""` syntax, where the regular expression pattern is enclosed in quotes. Certain characters have special meanings in regular expressions, such as `+`, `*`, and `?`, which indicate repetition. To match these characters literally, we need to escape them using a backslash (`\`).
 
-It's also important to note that regex is case-sensitive by default, but you can use the `re-matches` function to ignore case sensitivity.
+One of the most commonly used functions for working with regular expressions is `re-find`. This function takes a regular expression pattern and a string, and returns the first match. It also has the `re-seq` function which returns all matches in a sequence.
+
+For a more comprehensive understanding of regular expressions in Clojure and their syntax, check out the official documentation [here](https://clojure.org/guides/learn/regular_expressions). Additionally, there are many online resources and tutorials available for learning regular expressions in general.
 
 ## See Also
-- [Clojure Regex Library Documentation](https://clojure.github.io/at-at/regex.html)
-- [Regex Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Regex Testing Tool](https://regex101.com/)
+
+- [Official documentation for regular expressions in Clojure](https://clojure.org/guides/learn/regular_expressions)
+- [Regular Expressions 101](https://regex101.com/) - A useful online tool for testing and building regular expressions.
+- [Mastering Regular Expressions](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) - A comprehensive guide book to mastering regular expressions.

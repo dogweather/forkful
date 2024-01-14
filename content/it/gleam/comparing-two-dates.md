@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Confrontare due date"
+title:                "Gleam: Confronto tra due date"
+simple_title:         "Confronto tra due date"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/comparing-two-dates.md"
 ---
 
@@ -9,34 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La comparazione di due date è uno strumento importante per i programmatori, in quanto consente di verificare facilmente la relazione temporale tra due eventi o dati.
+Comparare due date è una parte essenziale della programmazione in Gleam. Sapere come farlo ti permette di gestire in modo efficiente le date nel tuo codice e di ottenere sempre i risultati desiderati.
 
-## Come fare
+## Come Fare
 
-Per confrontare due date in Gleam, è possibile utilizzare la funzione `DateTime.compare()` che accetta due argomenti di tipo `DateTime` e restituisce un valore `Ordering`. Questo è un tipo di dato che rappresenta la relazione tra due valori e può essere `Less`, `Equal` o `Greater` a seconda che il primo valore sia rispettivamente precedente, uguale o successivo al secondo.
-
-Ecco un esempio di codice che utilizza la funzione `DateTime.compare()`:
+Per comparare due date in Gleam, è necessario prima creare due variabili di tipo `Date`. Puoi farlo utilizzando la funzione `Date.new`.
 
 ```Gleam
-let now = DateTime.now()
-let birthday = DateTime.make(1990, April, 25)
+let prima_data = Date.new(2021, 12, 25)
+let seconda_data = Date.new(2022, 1, 1)
+```
 
-let relationship = DateTime.compare(now, birthday)
+Una volta che hai le tue due date, puoi utilizzare l'operatore di uguaglianza `==` per confrontarle. Ecco un esempio che verifica se le due date sono uguali.
 
-case relationship {
-    Equal -> "Today is your birthday!"
-    Less -> "Your birthday has passed."
-    Greater -> "Your birthday is still to come."
+```Gleam
+if prima_data == seconda_data {
+  io.print("Le due date sono uguali")
+} else {
+  io.print("Le due date sono diverse")
 }
 ```
 
-L'output del codice sopra sarà `Your birthday has passed.` se il giorno di oggi è successivo al 25 aprile 1990.
+Se vuoi invece sapere quale delle due date è antecedente, puoi utilizzare l'operatore `<` o `>`. Ecco un esempio che confronta le due date e stampa il risultato.
 
-## Approfondimenti
+```Gleam
+if prima_data < seconda_data {
+  io.print("La prima data è antecedente alla seconda")
+} else {
+  io.print("La seconda data è antecedente alla prima")
+}
+```
 
-È importante notare che la funzione `DateTime.compare()` non tiene conto del fuso orario, ma confronta solo le date nella stessa scala temporale. Inoltre, è possibile utilizzare altri metodi come `DateTime.add()`, `DateTime.sub()` e `DateTime.diff()` per manipolare le date e ottenere informazioni più dettagliate sulla relazione temporale tra di esse.
+## Approfondimento
 
-## Vedi anche
+Per confrontare due date in modo più preciso, puoi utilizzare la funzione `Date.compare` che restituisce un valore `Ordering` che può essere `Less`, `Equal` o `Greater`. Questo ti permette di gestire anche casi in cui le due date sono molto simili.
 
-- [La documentazione di Gleam sulla data e l'ora](https://gleam.run/documentation/stdlib/datetime/)
-- [Un articolo su come gestire le date in Gleam](https://medium.com/@gleamlang/how-to-handle-dates-in-gleam-355fe4b39d4e)
+```Gleam
+let prima_data = Date.new(2021, 12, 25, 12, 30, 0)
+let seconda_data = Date.new(2021, 12, 25, 12, 30, 30)
+
+let ordine = Date.compare(prima_data, seconda_data)
+
+if ordine == Ordering.Equal {
+  io.print("Le due date sono uguali")
+} else if ordine == Ordering.Less {
+  io.print("La prima data è precedente alla seconda")
+} else {
+  io.print("La seconda data è precedente alla prima")
+}
+```
+
+## Vedi Anche
+
+- Documentazione ufficiale di Gleam sulle date
+- Tutorial su come manipolare le date in Gleam
+- Esempi di codice su GitHub che utilizzano la manipolazione delle date

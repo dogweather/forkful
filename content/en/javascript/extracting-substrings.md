@@ -1,7 +1,9 @@
 ---
 title:                "Javascript recipe: Extracting substrings"
+simple_title:         "Extracting substrings"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/extracting-substrings.md"
 ---
 
@@ -9,43 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a programmer, one of the most common tasks we face is manipulating strings. And sometimes, we may need to extract a specific part of a string for further processing. This is where the concept of extracting substrings comes in. It allows us to extract a portion of a string based on certain conditions and use it in our code.
+Have you ever needed to extract a specific part of a string in your Javascript code? Maybe you just needed the first few characters or wanted to isolate a certain word. Whatever the reason, knowing how to extract substrings can be a useful skill for any Javascript programmer.
 
 ## How To
 
-To extract substrings in Javascript, we can use the built-in substring() method. It takes two parameters: the starting index and the ending index of the substring. For example:
+To extract a substring in Javascript, we can use the `slice()` method. This method takes two parameters - the starting index and the ending index of the substring we want to extract. For example:
 
 ```Javascript
 let str = "Hello World";
-let substr = str.substring(6, 11);
-console.log(substr); // Output: "World"
+let substring = str.slice(0, 5);
+
+console.log(substring); // Output: Hello
 ```
 
-In this example, we start extracting from index 6 (which corresponds to the letter "W" in "World") and end at index 11. It's important to note that the ending index is not included in the substring.
+In the above example, we used `slice()` to extract the first 5 characters of the string "Hello World" and stored it in the `substring` variable.
 
-We can also omit the second parameter and the substring will be extracted from the starting index till the end of the string. For instance:
+We can also use negative numbers as the parameters for `slice()`, which count from the end of the string. For instance:
 
 ```Javascript
-let substr = str.substring(3); // Output: "lo World"
+let str = "Javascript is awesome";
+let substring = str.slice(-7);
+
+console.log(substring); // Output: awesome
 ```
 
-Additionally, we can use negative numbers to count from the end of the string. For example, using -1 as the starting index will extract the last character of the string.
-
-```Javascript
-let str = "Hello World";
-let lastChar = str.substring(-1); // Output: "d"
-```
+In this case, we extracted the last 7 characters of the string "Javascript is awesome" and stored it in the `substring` variable.
 
 ## Deep Dive
 
-Under the hood, the substring() method creates a new substring by copying characters from the original string based on the given parameters. It's worth mentioning that this method does not change the original string, but returns a new one instead.
+Behind the scenes, the `slice()` method uses the string's index to determine which characters to extract. The first character of a string has an index of 0, the second character has an index of 1, and so on. This helps us understand why in the first example, we used an ending index of 5 to extract the first 5 characters - because the starting index counts as the first character.
 
-Another important thing to note is that the substring() method only works with positive indices. If we try to use a negative index as the starting position, it will be treated as 0.
+Additionally, if the ending index is not specified, the `slice()` method will extract all characters from the starting index to the end of the string. For example:
 
-Moreover, the substring() method is different from the slice() method in that it cannot handle negative indices or swap the starting and ending positions. It also does not accept regular expressions as parameters.
+```Javascript
+let str = "Apple";
+let substring = str.slice(2);
+
+console.log(substring); // Output: ple
+```
+
+In this case, we only specified a starting index of 2, so the `slice()` method extracted all characters from index 2 until the end of the string.
 
 ## See Also
 
-- [MDN Web Docs on substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [W3Schools Tutorial on Substrings in JavaScript](https://www.w3schools.com/jsref/jsref_substring.asp)
-- [DevDocs Documentation on String Manipulation in JavaScript](https://devdocs.io/javascript/global_objects/string)
+- [String.prototype.slice() - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [Substring Extracting in Javascript - W3Schools](https://www.w3schools.com/jsref/jsref_slice_string.asp)

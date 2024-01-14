@@ -1,47 +1,60 @@
 ---
-title:                "C#: Das aktuelle Datum erhalten"
+title:                "C#: Das Aktuelle Datum erhalten"
+simple_title:         "Das Aktuelle Datum erhalten"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
+Bevor wir uns in die Details des aktuellen Datums stürzen, lassen Sie mich Ihnen sagen, warum Sie das überhaupt wissen möchten. Das aktuelle Datum ist eine häufig verwendete Information in der Programmierung, besonders wenn es um die Verwaltung von Benutzereingaben oder die Verfolgung von Ereignissen geht.
 
-In der heutigen Welt der Programmierung gibt es viele verschiedene Szenarien, in denen Sie möglicherweise das aktuelle Datum und die aktuelle Uhrzeit benötigen. Dies kann für die Verfolgung von Transaktionen, das Planen von Aufgaben oder sogar für die Ausführung von automatisierten Aktionen erforderlich sein. Egal aus welchem ​​Grund, das Abrufen des aktuellen Datums ist eine wichtige Funktion, die jeder Programmierer beherrschen sollte.
-
-## Wie man das aktuelle Datum bekommt
-
-Um das aktuelle Datum in C# zu bekommen, können Sie die integrierte `DateTime` Klasse verwenden. Diese Klasse enthält verschiedene Methoden, die es Ihnen ermöglichen, das aktuelle Datum auf verschiedene Weise abzurufen. Hier sind einige Beispiele:
-
-````C#
-// Gibt das aktuelle Datum und die aktuelle Uhrzeit zurück
+# Wie geht das?
+Um das aktuelle Datum in C# zu erhalten, gibt es eine Vielzahl von Optionen. Eine Möglichkeit ist die Verwendung der `DateTime`-Struktur, die in der .NET Framework-Klasse enthalten ist. Schauen wir uns ein Beispiel an:
+```c#
 DateTime now = DateTime.Now;
 Console.WriteLine(now);
-// Output: 3/31/2021 11:24:06 AM
-
-// Gibt das aktuelle Datum zurück
+```
+Dieses Beispiel verwendet die `Now`-Eigenschaft der `DateTime`-Struktur, um das aktuelle Datum und die Uhrzeit zu erhalten. Dies wird dann in der Konsole ausgegeben, so dass Sie das Ergebnis sehen können. Dieses Ergebnis wird in einem Format wie diesem angezeigt:
+```
+3/17/2021 10:00:00 AM
+```
+Wenn Sie nur das Datum ohne die Uhrzeit benötigen, können Sie die `Today`-Eigenschaft verwenden. Sie funktioniert auf die gleiche Weise wie die `Now`-Eigenschaft, gibt jedoch nur das Datum zurück. Hier ist ein Beispiel:
+```c#
 DateTime today = DateTime.Today;
 Console.WriteLine(today);
-// Output: 3/31/2021
+```
+Das Ergebnis würde in diesem Fall nur das Datum enthalten, ohne die Uhrzeit:
+```
+3/17/2021 12:00:00 AM
+```
+Eine andere Alternative ist die Verwendung der `DateTimeOffset`-Struktur, die es Ihnen ermöglicht, das Datum und die Uhrzeit in verschiedenen Zeitzonen zu erhalten. Hier ist ein Beispiel:
+```c#
+DateTimeOffset now = DateTimeOffset.Now;
+Console.WriteLine(now);
+```
+Das Ergebnis hier enthält die vollständige Zeitzoneinformation, wie z.B. die Verschiebung von der UTC-Zeitzone:
+```
+3/17/2021 7:00:00 AM -07:00
+```
 
-// Gibt die aktuelle Uhrzeit zurück
-DateTime currentTime = DateTime.Now.TimeOfDay;
-Console.WriteLine(currentTime);
-// Output: 11:24:06.6672805
-````
+# Tiefer Einblick
+Jetzt wissen Sie, wie Sie das aktuelle Datum in C# erhalten. Aber wussten Sie auch, dass Sie das Datum und die Uhrzeit auch manipulieren können? Die `DateTime`- und `DateTimeOffset`-Strukturen bieten eine Vielzahl von Methoden, um das Datum und die Uhrzeit auf verschiedene Weise zu ändern. Sie können z.B. den Monat oder das Jahr ändern, einen bestimmten Tag hinzufügen oder subtrahieren oder sogar die Zeitzone anpassen.
 
-Wie Sie sehen, können Sie mit der `DateTime` Klasse das aktuelle Datum und die aktuelle Uhrzeit in verschiedenen Formaten abrufen. Sie können auch spezifizieren, in welcher Zeitzone Sie das Datum abrufen möchten. Wenn Sie beispielsweise ein Programm für Benutzer auf der ganzen Welt schreiben, ist es wichtig, die Zeitzone zu berücksichtigen, damit das Datum und die Uhrzeit korrekt angezeigt werden.
+Eine wichtige Sache zu beachten ist, dass die `DateTime`- und `DateTimeOffset`-Strukturen unveränderlich sind, was bedeutet, dass sie nicht direkt geändert werden können. Stattdessen gibt jede Methode, die das Datum ändert, eine neue Instanz zurück. Hier ist ein Beispiel, das das Hinzufügen von 5 Tagen zum aktuellen Datum zeigt:
+```c#
+DateTime newDate = DateTime.Now.AddDays(5);
+Console.WriteLine(newDate);
+```
+Das Ergebnis wäre das Datum, das 5 Tage in der Zukunft liegt:
+```
+3/22/2021 10:00:00 AM
+```
 
-## Deep Dive
-
-Wenn Sie tiefer in die Welt des Datums und der Zeit in C# eintauchen möchten, können Sie auch die `DateTimeOffset` und `TimeZoneInfo` Klassen erkunden. Diese bieten weitere Funktionen und Möglichkeiten, um das Datum und die Uhrzeit zu verarbeiten.
-
-Eine wichtige Sache, die Sie beachten sollten, ist, dass das aktuelle Datum und die Uhrzeit immer auf dem lokalen Computer basieren. Wenn Sie sich auf verschiedenen Computern in verschiedenen Zeitzonen befinden, können das Datum und die Uhrzeit abweichen. Es ist daher wichtig, dies bei der Verarbeitung von Datum und Uhrzeit in Ihrem Code zu berücksichtigen.
-
-## Siehe auch
-
-- Offizielle Dokumentation für die `DateTime` Klasse in C#: https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0
-- Ein Tutorial für die Verarbeitung von Datum und Uhrzeit in C#: https://www.tutorialspoint.com/csharp/csharp_date_time.htm
-- Eine Liste von häufig gestellten Fragen zu Datum und Uhrzeit in C#: https://www.c-sharpcorner.com/blogs/how-to-work-with-date-and-time-in-c-sharp-c-sharp-corner-faq1
+# Siehe auch
+- [Microsoft Docs - DateTime Struktur](https://docs.microsoft.com/de-de/dotnet/api/system.datetime?view=net-5.0)
+- [Microsoft Docs - DateTimeOffset Struktur](https://docs.microsoft.com/de-de/dotnet/api/system.datetimeoffset?view=net-5.0)
+- [Tutorialspoint - C# Datetime Manipulation](https://www.tutorialspoint.com/csharp/csharp_datetime_manipulation.htm)

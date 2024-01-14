@@ -1,58 +1,46 @@
 ---
 title:                "C++: Começando um novo projeto"
+simple_title:         "Começando um novo projeto"
 programming_language: "C++"
-category:             "Getting Started"
+category:             "C++"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto de programação?
+## Por que?
 
-Se você é um programador experiente ou apenas está começando na área, pode surgir a dúvida de por que iniciar um novo projeto. A resposta é simples: criar algo novo e desafiador é uma ótima maneira de aprimorar suas habilidades e expandir seu conhecimento em programação.
+Startar um novo projeto de programação pode ser uma tarefa desafiadora, mas também pode ser uma experiência emocionante e gratificante. Ao criar um novo projeto, você tem a oportunidade de aprender novas habilidades, resolver problemas e expressar sua criatividade. Além disso, criar projetos pode ser uma forma de aprimorar suas habilidades de programação e construir um portfólio para futuras oportunidades profissionais.
 
-Além disso, a criação de um novo projeto também pode ser uma forma de colocar em prática ideias e conceitos que você aprendeu, fortalecendo seu entendimento e confiança na linguagem de programação escolhida.
+## Como fazê-lo
 
-## Como começar um novo projeto em C++?
+Começar um novo projeto de programação pode parecer intimidante, mas não precisa ser. Aqui estão alguns passos simples para você começar:
 
-Para começar um novo projeto em C++, é necessário ter um compilador instalado na sua máquina, como o MinGW ou o Visual Studio. Em seguida, basta seguir os passos abaixo:
+1. Escolha uma linguagem de programação: Antes de criar um projeto, é importante decidir em qual linguagem de programação você deseja trabalhar. Alguns exemplos populares incluem C++, Java e Python.
 
-- **Passo 1:** Crie uma pasta para seu projeto e dê um nome significativo para ela.
+2. Defina o escopo do projeto: Decida qual será o foco do seu projeto e quais recursos ele deve ter. Isso ajudará a manter o projeto organizado e a evitar que ele se torne muito complexo.
 
-- **Passo 2:** Dentro da pasta do projeto, crie um arquivo com extensão ".cpp" que será o arquivo fonte do seu programa.
+3. Crie um ambiente de desenvolvimento: Instale as ferramentas necessárias, como um compilador e um ambiente de desenvolvimento integrado (IDE), para começar a escrever seu código.
 
-- **Passo 3:** Abra o arquivo em um editor de texto ou IDE de preferência e comece a escrever o código do seu projeto.
+4. Comece a codificar: Agora é hora de começar a escrever seu código. Use as estruturas básicas da linguagem escolhida, como loops e condicionais, para construir sua aplicação.
 
-Veja um exemplo de código em C++ que exibe a clássica frase "Hello, world!":
+5. Teste e depure: É importante testar seu código regularmente para garantir que ele funcione corretamente e consertar quaisquer erros ou bugs que possam surgir durante o processo de codificação.
 
-```C++
-#include <iostream>
+## Profundando
 
-int main() {
-	std::cout << "Hello, world!";
-	
-	return 0;
-}
-```
+Existem muitas coisas a serem consideradas ao iniciar um novo projeto de programação, especialmente se você é um iniciante. Aqui estão algumas dicas adicionais para ajudá-lo a ter sucesso:
 
-Ao compilar e executar esse código, o resultado será:
+- Não tenha medo de procurar ajuda: Se você ficar preso em algum ponto, não hesite em procurar ajuda de outros programadores ou em usar recursos online, como fóruns ou tutoriais. Aprender com os outros é uma parte importante do processo de desenvolvimento de projetos.
 
-```
-Hello, world!
-```
+- Faça uso de bibliotecas e frameworks: Ao invés de reinventar a roda, faça uso de bibliotecas e frameworks existentes para ajudá-lo a construir seu projeto de forma mais eficiente.
 
-## Aprofundando-se na criação de um novo projeto em C++
-
-Antes de iniciar um novo projeto em C++, é importante definir alguns fatores, como o objetivo do projeto, quais bibliotecas e recursos serão necessários e qual será a estrutura básica do código.
-
-É fundamental também seguir as boas práticas de programação, como a organização e documentação adequada do código, além de realizar testes e depuração para garantir que o programa funcione corretamente.
-
-Outro ponto importante é escolher um padrão de código e seguir a mesma formatação no seu projeto, facilitando a leitura e manutenção do código.
-
-Com essas dicas iniciais em mente, você estará pronto para explorar todas as possibilidades e desafios que um novo projeto em C++ pode lhe proporcionar.
+- Faça anotações e documente seu código: Sempre documente seu código para que você possa se lembrar de como ele funciona, e faça anotações sobre decisões de design e soluções para problemas que surgirem durante o processo.
 
 ## Veja também
 
-- [Tutorial: Como instalar o MinGW no Windows](https://medium.com/@aandreaspereira/tutorial-instalando-o-mingw-e-o-vscode-no-windows-10-3c386b70057e)
-- [Curso completo de C++ (em português)](https://www.youtube.com/playlist?list=PL0meOo1sQqXc7k43mqSHIzFtAqIkI741W)
-- [Blog de programação em C++ (em português)](http://cpequeno.com)
+Aqui estão alguns links úteis para ajudá-lo a começar seu próximo projeto de programação em C++:
+
+- [Tutorial de C++ para iniciantes](https://www.cplusplus.com/doc/tutorial/)
+- [Documentação oficial do C++](https://docs.microsoft.com/pt-br/cpp/cpp/)
+- [Fórum de discussão da comunidade C++](https://www.reddit.com/r/cpp/)

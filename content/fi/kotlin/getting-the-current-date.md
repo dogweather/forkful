@@ -1,55 +1,60 @@
 ---
-title:                "Kotlin: Päivämäärän haku"
+title:                "Kotlin: Hanki nykyinen päivämäärä"
+simple_title:         "Hanki nykyinen päivämäärä"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Ota selvää nykyisestä päivämäärästä
+## Miksi
 
-Nykyisen päivämäärän hakeminen voi olla hyödyllistä monessa ohjelmoinnin tilanteessa. Se voi auttaa sinua esimerkiksi luomaan raportteja, seuraamaan projektien edistymistä tai näyttämään käyttäjälle viimeisen päivitysajan.
+Miksi haluaisit saada nykyisen päivämäärän ohjelmassa? Päivämäärää ja aikaa käytetään usein ohjelmoinnissa erilaisiin tarkoituksiin, kuten aikaleimojen tallentamiseen, tapahtumien seuraamiseen ja tapahtumien ajoittamiseen. On tärkeää pystyä hallitsemaan päivämäärää ja aikaa, jotta ohjelmat toimivat oikein.
 
-## Kuinka: Esimerkkejä koodista ja tulosteista
+## Miten
 
-```Kotlin
-// Hae nykyinen päivämäärä
-val currentDate = Date()
-
-// Tulosta nykyinen päivämäärä
-println(currentDate)
-
-// Hae nykyinen päivämäärä ja aika
-val currentDateTime = LocalDateTime.now()
-
-// Tulosta nykyinen päivämäärä ja aika
-println(currentDateTime)
-```
-
-Tässä esimerkissä käytämme Kotlinin `Date`-luokkaa nykyisen päivämäärän hakemiseen ja tulostamiseen. Voit myös käyttää `LocalDateTime`-luokkaa, joka sisältää myös tiedon ajasta.
-
-## Syvällinen sukellus
-
-Voit myös muokata nykyistä päivämäärää lisäämällä tai vähentämällä päiviä, kuukausia, vuosia tai sekunteja. Tätä varten voit käyttää `Calendar`-luokkaa ja sen metodeja, kuten `add` ja `roll`.
+Kotlin tarjoaa helpon tavan saada nykyinen päivämäärä koodissa. Voit käyttää `LocalDate` -luokkaa saadaksesi nykyisen päivämäärän Java 8: n `java.time` -kirjastosta.
 
 ```Kotlin
-// Hae nykyinen päivämäärä
-val currentDate = Date()
+import java.time.LocalDate
 
-// Luo uusi Calendar-instanssi ja aseta siihen nykyinen päivämäärä
-val calendar = Calendar.getInstance()
-calendar.time = currentDate
-
-// Lisää yksi päivä
-calendar.add(Calendar.DATE, 1)
-
-// Tulosta tuleva päivämäärä
-println(calendar.time)
+val today = LocalDate.now()
+println(today)
 ```
+
+Tämä koodinpätkä tuottaa seuraavan tulosteen:
+
+```text
+2021-10-05
+```
+
+Voit myös asettaa halutun aikavyöhykkeen käyttämällä `ZoneId` -luokkaa ja `ZonedDateTime` -luokkaa.
+
+```Kotlin
+import java.time.LocalDate
+import java.time.ZoneId
+import java.time.ZonedDateTime
+
+val zoneId = ZoneId.of("Europe/Helsinki")
+val today = ZonedDateTime.now(zoneId)
+println(today)
+```
+
+Tämä tuottaa seuraavan tulosteen:
+
+```text
+2021-10-05T09:45:00.953379300+03:00[Europe/Helsinki]
+```
+
+## Syväkatsaus
+
+Päivämäärän ja ajan käsittely on tärkeä osa ohjelmointia. Kotlinin `LocalDate` -luokka tarjoaa helpon tavan käsitellä ja hallita päivämääriä. Voit myös käyttää lisäkirjastoja, kuten `java.time.zone` tai `java.time.chrono`, saadaksesi lisätoimintoja ja tuen eri aikavyöhykkeille ja kalentereille.
 
 ## Katso myös
 
-- [Kotlinin virallinen Dokumentaatio](https://kotlinlang.org/docs/reference/datetime.html)
-- [Java Calendar Dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [LocalDateTime Dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+- [Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/)
+- [Java 8 `java.time` -kirjasto](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Java 8 `java.time.zone` -kirjasto](https://docs.oracle.com/javase/8/docs/api/java/time/zone/package-summary.html)
+- [Java 8 `java.time.chrono` -kirjasto](https://docs.oracle.com/javase/8/docs/api/java/time/chrono/package-summary.html)

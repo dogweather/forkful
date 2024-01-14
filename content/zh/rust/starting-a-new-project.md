@@ -1,21 +1,49 @@
 ---
 title:                "Rust: 开始一个新项目"
+simple_title:         "开始一个新项目"
 programming_language: "Rust"
-category:             "Getting Started"
+category:             "Rust"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/rust/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么会去开始一个新项目？可能是因为对Rust语言的兴趣、想要学习新的编程语言、或者需要一个高效的解决方案来构建大型应用程序。
+# 为什么选择Rust进行编程？
 
-如何开始：首先，您需要从官方网站下载并安装Rust编译器。然后，您可以建立自己的项目文件夹，并使用命令行工具来初始化项目。下一步，您可以使用任何喜欢的文本编辑器来编写代码，并使用```Rust ... ```代码块来展示Rust语言的语法。最后，您可以使用Rust编译器来编译并运行您的程序。
+Rust是一种高性能、安全可靠的编程语言，它拥有现代化的语法和强大的工具，使得它成为了许多开发者的首选。如果你正在考虑开始一个新的项目，那么Rust可能是一个不错的选择。
 
-深入了解：在开始一个新的项目之前，还有一些重要的事项需要注意。首先，您需要确定项目的目的，并制定清晰的计划和目标。其次，您需要考虑使用哪些模块和库来实现您的项目需求。最后，您需要遵循Rust的最佳实践，并使用合适的数据结构和算法来最大化程序的性能。
+## 如何使用Rust编程
 
-请参阅：如果您想要深入学习Rust语言，您可以查看官方文档或者参考一些优秀的教程。同时，您也可以加入Rust社区，与其他开发者交流经验和学习更多有趣的项目。
+首先，你需要在你的计算机上安装Rust编程语言。你可以通过Rust官方网站提供的安装程序来完成这个步骤。安装完成后，你可以在命令行工具中使用"rustc"命令来编译和运行Rust程序。
 
-请参阅：
-- 官方Rust语言文档：https://www.rust-lang.org/
-- Rust学习网站：https://learnxinyminutes.com/docs/zh-cn/rust-cn/
-- Rust中文社区：https://www.rust.cc/
+下面是一个使用Rust编写的简单程序示例：
+
+```Rust
+fn main() {
+    println!("Hello, world!");
+}
+```
+
+这个程序将输出"Hello, world!"的内容。你可以在命令行中使用"rustc"命令来编译并运行它。
+
+## 深入了解如何开始一个新项目
+
+在开始一个新的项目前，你需要先了解一些基本的Rust编程概念，例如变量、函数、条件语句和循环等。你可以通过阅读官方的文档来学习这些概念，也可以参考一些优秀的Rust编程书籍。
+
+另外，你还需要了解如何使用Rust的包管理工具Cargo来管理项目依赖和构建。通过使用Cargo，你可以轻松地将第三方库集成到你的项目中。
+
+最后，良好的代码结构和规范也是一个成功项目的重要因素。你可以参考Rust官方提供的Rust代码风格指南来编写高质量的代码。
+
+## 参考资料
+
+- Rust官方网站：https://www.rust-lang.org/
+- Rust官方文档：https://doc.rust-lang.org/
+- Rust生态系统：https://crates.io/
+- Rust代码风格指南：https://doc.rust-lang.org/1.2.0/style/
+- 优秀的Rust编程书籍推荐：https://github.com/brson/rust-anthology/blob/master/master-list.md
+
+# 参见
+
+- Rust语言中文网站：https://www.rust-lang-cn.org/
+- Rust中文社区论坛：https://learnku.com/rust

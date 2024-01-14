@@ -1,58 +1,50 @@
 ---
 title:                "Fish Shell: Generando números aleatorios"
+simple_title:         "Generando números aleatorios"
 programming_language: "Fish Shell"
-category:             "Numbers"
+category:             "Fish Shell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-¡Bienvenidos programadores a este nuevo artículo sobre programación en Fish Shell! En esta ocasión, hablaremos sobre algo muy útil e interesante: cómo generar números aleatorios en nuestro código. En esta publicación, aprenderemos por qué es importante utilizar esta función, cómo implementarla en Fish Shell y profundizaremos en cómo funciona. ¡Así que comencemos!
-
 ## Por qué
-Generar números aleatorios puede ser muy útil en programación. Puede ser utilizado para crear contraseñas aleatorias, tomar decisiones aleatorias en un juego o para cualquier aplicación que requiera un elemento de aleatoriedad. Además, en el mundo de la programación, siempre es importante tener herramientas versátiles y la generación de números aleatorios es definitivamente una de ellas.
+
+Generar números aleatorios es una herramienta muy útil en la programación para realizar tareas como crear contraseñas seguras, simular eventos aleatorios o generar datos de pruebas. En este blog post, te mostraremos cómo puedes generar números aleatorios en Fish Shell de una manera sencilla y eficiente.
 
 ## Cómo
-En Fish Shell, podemos utilizar el comando `math random` para generar números aleatorios. Por ejemplo, si queremos generar un número aleatorio entre 1 y 10, simplemente escribimos lo siguiente:
 
-```
-fish
-set numero (math random 1 10)
-echo Numero aleatorio: $numero
-```
+````Fish Shell
+#Generar un número entero aleatorio entre 0 y 10
+set random_num (random 11)
+echo $random_num
 
-El resultado se verá así:
+#Generar un número decimal aleatorio entre 0 y 1
+set random_dec (math 1 \* (rand -g 1))
+echo $random_dec
 
-```
-Numero aleatorio: 7
-```
+#Generar un número aleatorio entre un rango personalizado
+set min 50
+set max 100
+set random_num (random $min $max)
+echo $random_num
+````
 
-Podemos incluso utilizar esta función para generar contraseñas aleatorias, ya que podemos especificar el rango de caracteres que queremos incluir. Por ejemplo, si queremos una contraseña con 8 caracteres alfanuméricos, podemos escribir lo siguiente:
+En el primer ejemplo, utilizamos la función `random` para generar un número entero aleatorio entre 0 y 10. Luego, lo imprimimos en pantalla utilizando el comando `echo`. 
 
-```
-fish
-set password (math random -c alphanum 8)
-echo Contraseña aleatoria: $password
-```
+En el segundo ejemplo, utilizamos la función `math` junto con `rand` para generar un número decimal aleatorio entre 0 y 1. Multiplicamos el resultado por 1 para asegurarnos de que el número sea decimal y utilizamos el modificador `-g` para indicar que queremos un número entre 0 y 1 en lugar de un número entero.
 
-El resultado podría ser algo como esto:
+Finalmente, en el tercer ejemplo, utilizamos variables para especificar un rango personalizado y generar un número aleatorio entre ese rango. Puedes ajustar el rango cambiando los valores de las variables `min` y `max`.
 
-```
-Contraseña aleatoria: CSV3y2p9
-```
+## Deep Dive
 
-¡Y así de simple es generar números aleatorios en Fish Shell!
+Fish Shell utiliza el generador de números pseudoaleatorios `mt19937` de clase Mersenne Twister para generar números aleatorios. Este generador es considerado uno de los más fiables y eficientes en la generación de secuencias de números aleatorios.
 
-## Profundizando
-Si quieres entender más a fondo cómo funciona la generación de números aleatorios en Fish Shell, aquí te dejo algunos detalles interesantes.
-
-- El comando `math random` utiliza una implementación de la librería C del algoritmo de generación de números pseudoaleatorios de Mersenne Twister. Esto significa que los números generados no son verdaderamente aleatorios, sino que siguen un patrón predecible a través de una semilla específica.
-- Se pueden especificar diferentes opciones de caracteres en el argumento `-c` para generar contraseñas con distintos tipos de caracteres como letras, números, símbolos, entre otros.
-- La semilla utilizada por defecto en `math random` se basa en el tiempo del sistema, pero también se puede especificar una semilla personalizada con el argumento `-s`.
+Para obtener un número entero aleatorio entre 0 y N, Fish Shell utiliza la función `mt_rand` que toma como argumento el número superior del rango. Por ejemplo, si queremos generar un número aleatorio entre 0 y 10, utilizaremos `mt_rand(11)`. Luego, la función `rand` utiliza los números generados por `mt_rand` y los escala al rango deseado.
 
 ## Ver también
-- [Documentación oficial de Fish Shell sobre el comando `math random`](https://fishshell.com/docs/current/cmds/random.html)
-- [Artículo sobre la generación de números aleatorios en Shell Script](https://www.linuxjournal.com/content/random-numbers-bash)
-- [Otro ejemplo de cómo generar contraseñas aleatorias en Fish Shell](https://stackoverflow.com/questions/8069062/how-to-create-a-random-string-using-fish-shell)
 
-¡Y eso es todo por hoy! Espero que hayan aprendido algo nuevo y que puedan incorporar la generación de números aleatorios en sus proyectos futuros. ¡Hasta la próxima, programadores!
+- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/cmds/rand.html)
+- [Mersenne Twister en Wikipedia](https://es.wikipedia.org/wiki/Mersenne_Twister)
+- [Tutorial de Fish Shell en español](https://medium.com/@alesanchezr/tutorial-de-fish-shell-en-espa%C3%B1ol-22134da415f5)

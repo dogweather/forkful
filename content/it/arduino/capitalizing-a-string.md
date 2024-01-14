@@ -1,34 +1,37 @@
 ---
-title:                "Arduino: Maiuscolare una stringa"
+title:                "Arduino: Capitalizzare una stringa"
+simple_title:         "Capitalizzare una stringa"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Capitare una stringa potrebbe sembrare una cosa semplice, ma in realtà può essere utile in molte applicazioni. Ad esempio, potrebbe essere necessario convertire un input dall'utente tutto in maiuscolo per garantire che corrisponda a una determinata parola chiave o per facilitare la ricerca dei dati.
+Molti progetti di Arduino richiedono la manipolazione di stringhe di testo, ma a volte è necessario modificare solo la prima lettera di una parola o frase in maiuscolo. In questo caso, è utile conoscere come capitalizzare una stringa di testo in Arduino. 
 
 ## Come fare
-
-Per capitalizzare una stringa su Arduino, è possibile utilizzare la funzione `toUpperCase()`. Di seguito è riportato un esempio di codice che prende una stringa di input dall'utente e la converte in maiuscolo utilizzando questa funzione:
+Per capitalizzare una stringa in Arduino, è necessario utilizzare la funzione `toupper()`. Inizialmente, si deve dichiarare la stringa da modificare e poi utilizzare un ciclo `for` per iterare attraverso ogni carattere della stringa. All'interno del ciclo, utilizzare la funzione `toupper()` per convertire ogni carattere in maiuscolo. Di seguito, è un esempio di codice che capitalizza la stringa "ciao mondo" e la stampa su seriale.
 
 ```Arduino
-String input = Serial.readString(); //legge l'input dall'utente
-input.toUpperCase(); // converte la stringa in maiuscolo
-Serial.print("La stringa in maiuscolo è: ");
-Serial.println(input); // stampa il risultato
+String stringa = "ciao mondo";
+for (int i = 0; i < stringa.length(); i++) {
+  stringa[i] = toupper(stringa[i]);
+}
+Serial.println(stringa);
 ```
 
-Il risultato di questa operazione sarà la stringa originale, ma tutta in maiuscolo. Ad esempio, se l'utente inserisse "ciao", il risultato sarebbe "CIAO".
+Il risultato sarà:
+
+```Arduino
+CIAO MONDO
+```
 
 ## Approfondimento
-
-La funzione `toUpperCase()` fa parte della classe String di Arduino. Essa utilizza la tabella ASCII per convertire i caratteri in maiuscolo. Ciò significa che tutti i caratteri alfanumerici e la maggior parte dei caratteri speciali saranno convertiti correttamente, ma potrebbero esserci alcune eccezioni con caratteri di lingue diverse dall'inglese. Inoltre, questa funzione non modifica la stringa originale, ma restituisce una nuova stringa in maiuscolo.
+La funzione `toupper()` utilizzata nell'esempio fa parte della libreria standard di C++. Essa accetta un carattere come parametro e restituisce il corrispondente carattere maiuscolo. Tuttavia, questa funzione non modifica il valore originale del carattere, ma ne restituisce solo una copia modificata. Per questo motivo, è necessario assegnare il risultato della funzione a una variabile o utilizzarlo direttamente come parametro in una funzione di output, come `Serial.println()`. 
 
 ## Vedi anche
-
-- [`toUpperCase()` su Arduino.cc](https://www.arduino.cc/reference/it/language/variables/data-types/stringfunctions/touppercase/)
-- [Tabella ASCII](https://www.ascii.cl/)
+- [Documentazione di Arduino su la funzione `toupper()`](https://www.arduino.cc/reference/en/language/variables/data-types/toupper/)
+- [Esempi di codice di Arduino](https://www.arduino.cc/en/Tutorial/HomePage)

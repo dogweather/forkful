@@ -1,7 +1,9 @@
 ---
 title:                "C: Skrive en tekstfil"
+simple_title:         "Skrive en tekstfil"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/writing-a-text-file.md"
 ---
 
@@ -9,37 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det å skrive en tekstfil ved hjelp av C-programmering kan være en utfordrende, men nyttig oppgave. Det gir deg muligheten til å programmere en fil som inneholder tekst som kan leses og behandles av datamaskinen. Dette kan være nyttig for å lagre data, lage rapporter, og mye mer. Det er også en viktig ferdighet å ha som en C-programmerer.
+Det å skrive en tekstfil er en vanlig oppgave i programmering. Det kan være nødvendig å lagre data eller resultatene av et program til en fil, eller å lese data fra en fil for å bruke i koden. Det kan også være nyttig for å kommunisere med andre programmer eller mellom ulike plattformer. Uansett årsak, er det viktig å forstå hvordan man skriver en tekstfil i C-programmering. 
 
-## Hvordan
+## Hvordan du gjør det
 
-For å skrive en tekstfil i C, må du først åpne en filstrøm ved hjelp av fopen() -funksjonen. Du må også bestemme hva slags modus du ønsker å åpne filen i, enten for lesing, skriving eller begge deler. Her er et eksempel på hvordan du kan åpne en fil for skriving:
-
-```C
-FILE *fp;
-fp = fopen("minfil.txt", "w");
-```
-
-Nå som filstrømmen er åpnet, kan du skrive til filen ved hjelp av fprintf() -funksjonen. Denne funksjonen lar deg skrive forskjellige typer data til filen, for eksempel tekststrenger, tall og variabler. Her er et eksempel på hvordan du kan skrive til filen:
+Det første vi må gjøre er å åpne en fil ved hjelp av `fopen()`-funksjonen. Denne funksjonen tar to argumenter, filnavnet og handlingen (som for eksempel `w` for å skrive til filen). Hvis filen allerede eksisterer, vil den åpnes. Hvis ikke, vil en ny fil bli opprettet. Her er et eksempel:
 
 ```C
-fprintf(fp, "Dette er en tekst som blir skrevet til filen. \n");
+FILE *textfil = fopen("minfil.txt", "w");
 ```
 
-Til slutt må du huske å lukke filstrømmen ved hjelp av fclose() -funksjonen når du er ferdig med å skrive til filen. Dette sikrer at alle dataene blir lagret riktig og at filen blir frigjort fra minnet. Her er et eksempel på hvordan du kan lukke filstrømmen:
+Vi erklærer en peker `textfil` av typen `FILE`, og bruker `fopen()`-funksjonen for å åpne filen `minfil.txt` i skrivemodus.
+
+For å faktisk skrive til filen, bruker vi `fprintf()`-funksjonen. Denne funksjonen tar tre argumenter: filpekeren, en formatteringsstreng og dataene vi ønsker å skrive. Her er et eksempel:
 
 ```C
-fclose(fp);
+fprintf(textfil, "Dette er en tekst som skal skrives til filen. %d\n", 42);
 ```
 
-## Dykk dypere
+Vi bruker `%d`-formatet for å skrive tallet `42` til filen. Vi kan også bruke `%s` for å skrive en streng, `%f` for et flyttall, og flere andre formater. Det er viktig å lese dokumentasjonen for de ulike formatene for å sikre korrekt bruk.
 
-Å skrive en tekstfil innebærer mer enn bare å åpne, skrive og lukke filen. Det finnes forskjellige moduser du kan åpne filen i, avhengig av hva du ønsker å gjøre med den. For eksempel kan du åpne en fil for lesing ved hjelp av "r"-modus, slik at du kan lese eksisterende tekst fra filen. I tillegg kan du også bruke "a"-modus for å legge til tekst i slutten av filen, i stedet for å skrive over eksisterende data.
+Til slutt lukker vi filen ved å kalle `fclose()`-funksjonen.
 
-I tillegg til å skrive til filen, er det også mulig å lese fra en tekstfil ved hjelp av fgets() -funksjonen. Dette lar deg lese en linje av tekst fra filen og lagre den i en variabel. Du kan også bruke fscanf() -funksjonen for å lese spesifikke typer data fra filen, som for eksempel tall.
+```C
+fclose(textfil);
+```
+
+## Dypdykk
+
+Det er viktig å merke seg at filer må åpnes og lukkes riktig for å unngå feil og problemer. Det er også mulig å lese fra en fil ved hjelp av `fscanf()`-funksjonen, men dette vil bli dekket i en annen artikkel.
+
+En annen viktig ting å huske på er at når man skriver til en fil, vil eksisterende data i filen bli overskrevet. Hvis man ønsker å legge til data til en eksisterende fil, kan man bruke `a` som handling i `fopen()`-funksjonen.
+
+En interessant funksjon for å skrive flere linjer i en fil er `fputs()`. Denne funksjonen tar to argumenter, en streng og en filpeker, og skriver strengen direkte til filen. Dette kan være nyttig for å organisere data på bestemte måter i filen.
 
 ## Se også
 
-- [C-programmering: En begynnerguide](https://www.ntnu.no/wiki/kalkulus/cprog/)
-- [C-filbehandling](https://www.studytonight.com/c/file-handling-in-c)
-- [Mer om fopen() -funksjonen](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
+- [Dokumentasjon for fopen()](https://www.programiz.com/c-programming/library-function/stdio.h/fscanf)
+- [Eksempel på å skrive til fil](https://www.geeksforgeeks.org/write-data-file-c/)
+- [Dokumentasjon for fprintf() formatstrenger](https://www.cplusplus.com/reference/cstdio/printf/)

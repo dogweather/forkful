@@ -1,68 +1,61 @@
 ---
-title:                "Ruby: Unendo stringhe"
+title:                "Ruby: Concatenazione di stringhe"
+simple_title:         "Concatenazione di stringhe"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-Il concatenamento di stringhe è un concetto fondamentale nella programmazione Ruby. Consiste nel combinare due o più stringhe per formarne una sola. Questa operazione è essenziale per creare output personalizzati, manipolare i dati e svolgere altre operazioni che richiedono la modifica delle stringhe.
+La concatenazione di stringhe è una delle operazioni fondamentali della programmazione, essenziale per creare stringhe più lunghe e dinamiche. Utilizzando questo concetto, è possibile manipolare e combinare diverse stringhe per ottenere l'output desiderato.
 
-# Come fare
+## How To
 
-Il concatenamento di stringhe è un'operazione semplice che può essere eseguita in diversi modi in Ruby. Ecco alcuni esempi:
+Per concatenare due o più stringhe in Ruby, è possibile utilizzare l'operatore "+" o il metodo ".concat". Vediamo un esempio:
 
 ```Ruby
-# Utilizzando l'operatore +
-nome = "Maria"
+nome = "Marco"
 cognome = "Rossi"
-nome_completo = nome + cognome
-puts nome_completo # Output: MariaRossi
+saluto = "Ciao " + nome + " " + cognome
+puts saluto
+```
 
-# Utilizzando il metodo concat
-nome = "Maria"
+In questo caso, abbiamo utilizzato l'operatore "+" per unire le stringhe "Ciao", "Marco" e "Rossi", ottenendo l'output "Ciao Marco Rossi". È importante notare che gli spazi tra le parole sono stati aggiunti manualmente all'interno dell'operatore.
+
+Possiamo ottenere lo stesso risultato utilizzando il metodo ".concat", che unisce le stringhe senza aggiungere alcuno spazio tra di esse:
+
+```Ruby
+nome = "Marco"
 cognome = "Rossi"
-nome.concat(" ").concat(cognome)
-puts nome # Output: Maria Rossi
-
-# Utilizzando il metodo <<
-nome = "Maria"
-nome << " "
-nome << "Rossi"
-puts nome # Output: Maria Rossi
+saluto = "Ciao".concat(nome, cognome)
+puts saluto
 ```
 
-Come si può vedere dagli esempi, sia l'operatore + che i metodi concat e << possono essere utilizzati per concatenare le stringhe. È importante notare che l'operatore + restituirà una nuova stringa mentre i metodi concat e << modificheranno la stringa originale.
+L'output sarà ancora una volta "Ciao MarcoRossi", in quanto i metodi ".concat" agiscono direttamente sulla stringa "Ciao" senza aggiungere ulteriori spazi.
 
-# Approfondimento
-
-È possibile concatenare qualsiasi tipo di dato in Ruby, non solo le stringhe. Ad esempio, è possibile concatenare interi, float, booleani e persino oggetti.
+Oltre all'operatore "+" e al metodo ".concat", è possibile utilizzare anche il metodo ".<<". Vediamo un altro esempio:
 
 ```Ruby
-# Concatenamento di interi
-numero1 = 123
-numero2 = 456
-puts numero1 + numero2 # Output: 579
-
-# Concatenamento di oggetti
-oggetto1 = "ruby "
-oggetto2 = "programming"
-puts oggetto1 + oggetto2 # Output: ruby programming
+nome = "Marco"
+cognome = "Rossi"
+saluto = "Ciao ".concat(nome).<<(" ").concat(cognome)
+puts saluto
 ```
 
-Inoltre, Ruby offre anche il metodo .to_s che può essere utilizzato per convertire altri tipi di dato in stringhe prima di concatenarle.
+In questo caso, abbiamo utilizzato il metodo ".<<" per aggiungere uno spazio tra la stringa "Ciao" e la variabile "nome", e nuovamente il metodo ".concat" per unire anche la variabile "cognome".
 
-```Ruby
-# Utilizzando il metodo .to_s
-numero = 123
-puts "L'anno corrente è " + numero.to_s # Output: L'anno corrente è 123
-```
+## Deep Dive
 
-# Vedi anche
+La concatenazione di stringhe è possibile grazie al concetto di "stringa mutabile" in Ruby. Ciò significa che le stringhe possono essere modificate e manipolate, a differenza di altri tipi di dato immutabili come i numeri interi. Questo rende la concatenazione di stringhe un'operazione semplice e molto flessibile da utilizzare.
 
-- [Concatenamento di stringhe in Ruby](https://www.rubyguides.com/2019/05/concatenate-strings-in-ruby/)
-- [Ruby String class documentation](https://ruby-doc.org/core/String.html)
-- [Ruby concatenation operator documentation](https://ruby-doc.org/core-2.6/String.html#method-i-252B)
+Inoltre, è possibile concatenare non solo stringhe, ma anche altri tipi di dati come numeri o booleani. Tuttavia, in questi casi è necessario convertire i valori in stringhe utilizzando il metodo ".to_s".
+
+## See Also
+
+- [Documentazione di Ruby su stringhe](https://ruby-doc.org/core-2.7.1/String.html)
+- [Tutorial su concatenazione di stringhe in Ruby](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
+- [Esercizi pratici di concatenazione di stringhe in Ruby](https://www.hackerrank.com/domains/ruby?filters%5Bsubdomains%5D%5B%5D=ruby-strings)

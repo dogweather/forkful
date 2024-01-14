@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: Conversione di una stringa in minuscolo"
+simple_title:         "Conversione di una stringa in minuscolo"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,50 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Molte volte ci troviamo di fronte alla necessità di convertire una stringa in minuscolo nel nostro codice Arduino. Questo può essere utile per confrontare due stringhe in maniera più precisa o per gestire i dati in modo uniforme. In questa guida impareremo come eseguire questa operazione in modo semplice ed efficiente.
+Spesso quando scriviamo codice su Arduino, dobbiamo gestire stringhe di testo. In alcune situazioni, potrebbe essere necessario convertire il testo in lettere minuscole per facilitare la manipolazione dei dati. In questo articolo, vedremo come convertire una stringa in lettere minuscole utilizzando il linguaggio di programmazione di Arduino.
 
 ## Come fare
 
-```Arduino
-String stringa = "TEStO Di ProVa"; // Stringa originale
-stringa.toLowerCase(); // Converte la stringa in minuscolo
+Per convertire una stringa in lettere minuscole su Arduino, abbiamo bisogno di utilizzare una funzione chiamata `toLowerCase()`. Questa funzione è disponibile nella libreria standard Arduino String.h e viene utilizzata per convertire una stringa in lettere minuscole.
 
-Serial.println(stringa); // Stampa "testo di prova" sulla serial monitor
-```
-
-In questo esempio, la funzione `toLowerCase()` viene utilizzata per convertire la variabile `stringa` in minuscolo. È importante notare che questa funzione modifica la stringa originale, quindi assicurati di avere una copia di backup se necessario.
-
-Un altro esempio può essere quello di utilizzare la funzione `toLowerCase()` all'interno di un loop per gestire l'input utente:
+Ecco un esempio di codice che mostra come utilizzare la funzione `toLowerCase()`:
 
 ```Arduino
-Serial.println("Inserisci una parola in maiuscolo: ");
-while (Serial.available() == 0); // Attendiamo finché l'utente non inserisce qualcosa
+#include <String.h>
 
-String input = Serial.readString(); // Legge la stringa inserita dall'utente
-Serial.print("La parola in minuscolo è: ");
-Serial.println(input.toLowerCase()); // Converte la parola in minuscolo e la stampa sulla serial monitor
+void setup() {
+  Serial.begin(9600);
+  
+  String str = "QUESTA È UNA STRINGA IN MAIUSCOLO";
+  
+  Serial.println("Stringa originale: " + str);
+  Serial.println("Stringa convertita in minuscolo: " + str.toLowerCase());
+}
+
+void loop() {
+  
+}
 ```
 
-Nell'esempio sopra, l'utente inserisce una parola in maiuscolo e tramite la funzione `toLowerCase()`, viene convertita in minuscolo e stampata sulla serial monitor.
+In questo esempio, abbiamo dichiarato una variabile `String` chiamata `str` con una stringa in maiuscolo come valore. Successivamente, tramite la funzione `toLowerCase()`, abbiamo convertito la stringa in lettere minuscole e stampato il risultato utilizzando `Serial.println()`.
+
+L'output di questo codice sarà il seguente:
+
+```Arduino
+Stringa originale: QUESTA È UNA STRINGA IN MAIUSCOLO
+Stringa convertita in minuscolo: questa è una stringa in maiuscolo
+```
+
+Come puoi vedere, la funzione `toLowerCase()` ha convertito correttamente la stringa in lettere minuscole.
 
 ## Approfondimento
 
-Se abbiamo bisogno di gestire stringhe con caratteri speciali o accentati, potremmo dover utilizzare la libreria `ctype.h` per avere una conversione corretta. Ad esempio:
+Oltre alla funzione `toLowerCase()`, ci sono anche altre opzioni per convertire una stringa in lettere minuscole su Arduino. Ad esempio, puoi utilizzare la funzione `toCharArray()` per convertire la stringa in un array di caratteri e successivamente convertire ogni carattere in lettera minuscola utilizzando la funzione `tolower()`. Questo metodo potrebbe essere utile se devi manipolare ogni carattere individualmente.
 
-```Arduino
-#include <ctype.h>
-
-String stringa = "CIAO!";
-for (int i = 0; i < stringa.length(); i++) {
-  stringa[i] = tolower(stringa[i]); // Utilizza la funzione tolower() per convertire ogni carattere della stringa in minuscolo
-}
-Serial.println(stringa); // Stampa "ciao!" sulla serial monitor
-```
-
-La funzione `tolower()` è definita nella libreria `ctype.h` e ci permette di convertire ogni carattere della stringa in minuscolo, anche quelli speciali o accentati.
+Inoltre, è importante notare che la funzione `toLowerCase()` è sensibile alla lingua e alle impostazioni regionali del tuo dispositivo Arduino. Quindi, se hai bisogno di una conversione accurata per una specifica lingua, potresti dover utilizzare un approccio diverso.
 
 ## Vedi anche
 
-- [Guida alle stringhe in Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/toascii/)
-- [Libreria ctype.h di Arduino](https://www.arduino.cc/reference/en/libraries/ctype/)
-- [Tutorial su come utilizzare le stringhe in Arduino](https://www.tutorialspoint.com/arduino/arduino_strings.htm)
+- [Documentazione ufficiale di Arduino String.h](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Funzione toLowerCase() - Tutorialspoint](https://www.tutorialspoint.com/arduino/arduino_string_tolowercase.htm)
+- [Funzione toCharArray() - Arduino Project Hub](https://create.arduino.cc/projecthub/Nassir/toconvert-a-string-into-char-array-4a0c67)

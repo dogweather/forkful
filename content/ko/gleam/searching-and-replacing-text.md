@@ -1,50 +1,45 @@
 ---
-title:                "Gleam: 텍스트 검색 및 바꾸기"
+title:                "Gleam: 텍스트 검색 및 대체"
+simple_title:         "텍스트 검색 및 대체"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-Gleam로 텍스트 검색 및 교체하는 방법
+Gleam 프로그래밍 블로그 – Gleam에서 텍스트 검색 및 교체하는 방법
 
 ## 왜?
 
-텍스트 검색 및 교체는 프로그래밍에서 매우 중요한 기술입니다. 이를 통해 코드나 문서에서 원하는 텍스트를 쉽게 찾고 수정할 수 있습니다. Gleam에서는 이를 위해 다양한 기능을 제공합니다.
+텍스트 검색과 교체는 매우 일반적이고 기본적인 프로그래밍 기술입니다. 예를 들어, 당신이 특정 단어 또는 구문을 찾아서 바꾸어야 한다면, 일일이 모든 단어를 찾고 바꾸는 것은 매우 번거롭고 오류를 발생시킬 수 있습니다. Gleam은 간단하고 효율적으로 텍스트를 검색하고 교체하는 기능을 제공하여 코드 작성을 더 쉽고 효율적으로 만들어줍니다.
 
-## 어떻게 하나요?
+## 사용 방법
 
-Gleam에서는 문자열에서 특정 패턴을 찾아 교체할 수 있는 강력한 기능을 제공합니다. 예를 들어, 다음과 같은 문자열이 있다고 가정해보겠습니다.
-
-```Gleam
-let str = "Hello, world!"
-```
-
-이 문자열에서 "Hello"라는 단어를 "Hi"로 바꾸고 싶다면 다음과 같이 작성할 수 있습니다.
+Gleam에서 텍스트 검색과 교체는 매우 간단합니다. 아래의 예제 코드를 참조하여 실제로 어떻게 동작하는지 확인해보세요:
 
 ```Gleam
-let replaced_str = String.replace(str, "Hello", "Hi")
+// 문자열에서 "Hello"를 "안녕하세요"로 변경하기
+let message = "Hello there!"
+let updated_message = message.replace("Hello", "안녕하세요")
+// updated_message: "안녕하세요 there!"
+
+// 리스트에서 특정 요소를 검색하고 제거하기
+let fruits = ["apple", "banana", "orange"]
+let updated_fruits = fruits.replace("banana", "")
+// updated_fruits: ["apple", "orange"]
 ```
 
-그러면 "Hi, world!"라는 문자열이 출력됩니다. 또한 여러 개의 단어를 동시에 바꿀 수도 있습니다. 예를 들어, "Hello"를 "Hi"로, "world"를 "Gleam"으로 바꾸고 싶다면 다음과 같이 작성할 수 있습니다.
+위 예제에서 볼 수 있듯이, `.replace(검색어, 교체할_값)` 함수를 사용하여 텍스트를 검색하고 교체할 수 있습니다. 또한 문자열 뿐만 아니라 리스트에서도 동일한 방식으로 사용할 수 있습니다.
 
-```Gleam
-let replaced_str = String.replace(str, ["Hello", "world"], ["Hi", "Gleam"])
-```
+## 깊이 있는 탐구
 
-그러면 "Hi, Gleam!"이라는 문자열이 출력됩니다.
+Gleam에서 텍스트 검색과 교체는 어떻게 동작할까요? 이를 이해하기 위해서는 Gleam에서 문자열을 다루는 방식을 알아야 합니다. Gleam에서 문자열은 실제로는 단순한 byte 배열로 표현됩니다. 문자열 내부에서 검색 및 교체가 발생하면, Gleam은 바이트 배열을 조작하여 검색어를 찾고 교체할 값을 삽입합니다. 이러한 과정은 매우 빠르고 효율적으로 동작하도록 최적화되어 있습니다.
 
-이 외에도 Gleam에서는 더 복잡한 검색과 교체를 위한 다양한 함수를 제공합니다. 자세한 내용은 아래의 "## 깊이 파보기"를 참고하시기 바랍니다.
+또한 Gleam에서는 정규식을 사용하여 텍스트를 검색하고 교체하는 기능도 제공합니다. 정규식을 사용하면 더욱 정교한 검색 및 교체를 할 수 있습니다.
 
-## 깊이 파보기
+## 참고 자료
 
-Gleam에서는 검색과 교체를 위한 다양한 함수를 제공합니다. 예를 들어, 정규표현식을 사용하여 특정 패턴을 검색하고 교체할 수 있는 함수도 있습니다. 또한 대소문자를 구분하지 않는 검색이나 특정 언어의 규칙에 따라 문자열을 변환하는 함수도 있습니다. 이 외에도 Gleam에서는 검색과 교체를 위한 다양한 고급 기능을 제공하니, 깊이 파보기를 통해 더 많은 기능을 알아보시기 바랍니다.
-
-## 더 알아보기
-
-Gleam 공식 홈페이지: https://gleam.run/
-
-Gleam 공식 문서: https://gleam.run/documentation
-
-Gleam GitHub 저장소: https://github.com/gleam-lang/gleam
+- [Gleam 공식 문서 – 문자열 함수](https://gleam.run/documentation/std_lib/string.html)
+- [Gleam 공식 문서 – 정규식 함수](https://gleam.run/documentation/std_lib/regex.html)

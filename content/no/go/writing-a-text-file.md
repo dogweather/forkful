@@ -1,7 +1,9 @@
 ---
-title:                "Go: Å skrive en tekstfil."
+title:                "Go: Skriver en tekstfil"
+simple_title:         "Skriver en tekstfil"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/writing-a-text-file.md"
 ---
 
@@ -9,54 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive en tekstfil kan være en nyttig oppgave for utviklere, spesielt i Go-programmering. Det lar oss lagre og organisere data på en enkel og lett tilgjengelig måte. I denne bloggposten vil vi se nærmere på hvordan man skriver en tekstfil i Go.
+Å skrive en tekstfil kan virke som en enkel og utdatert aktivitet, men i programmering kan det være svært nyttig. En tekstfil kan lagre data som kan være tilgjengelig for din Go-applikasjon når som helst, og kan også brukes til å eksportere data til andre programmer.
 
 ## Hvordan
 
-For å skrive en tekstfil i Go, må vi først opprette en filobjekt og angi ønsket filnavn og plassering. Dette gjøres ved hjelp av `os.Create()` -funksjonen, som tar inn navnet på filen som argument og returnerer et filobjekt.
+Det første trinnet for å skrive en tekstfil i Go er å opprette en fil ved hjelp av `os.Create ()` funksjonen. Deretter kan du skrive data til filen ved hjelp av `fmt.Fprintf()` funksjonen. La oss se på et eksempel:
 
-```Go
-f, err := os.Create("tekstfil.txt")
-
-if err != nil {
-  fmt.Println(err)
-}
-
-defer f.Close()
 ```
+package main
 
-Vi bruker `defer` -nøkkelordet for å sørge for at filen blir lukket etter at vi har gjort operasjoner på den.
+import (
+    "fmt"
+    "os"
+)
 
-Neste steg er å skrive innholdet til filen. Dette gjøres ved å bruke `WriteString()` -metoden til filobjektet. Denne metoden tar inn en streng som argument og skriver den til filen.
-
-```Go
-_, err = f.WriteString("Hei verden!")
-
-if err != nil {
-  fmt.Println(err)
+func main() {
+    file, err := os.Create("minTekstfil.txt") //Opprettelse av filen "minTekstfil.txt"
+    if err != nil {
+        fmt.Println(err) //Hvis det oppstår en feil, skriv den ut
+        return
+    }
+    defer file.Close() //Lukk filen når programmet er ferdig
+    fmt.Fprintf(file, "Dette er en tekst som vil bli skrevet til filen.") //Skriv tekst til filen
 }
 ```
 
-For å lagre endringene og lukke filen, bruker vi `Sync()` -metoden.
-
-```Go
-err = f.Sync()
-
-if err != nil {
-  fmt.Println(err)
-}
-```
-
-Nå har vi en fullstendig tekstfil med innholdet "Hei verden!" lagret på den angitte plasseringen.
+Når du kjører dette programmet, vil du opprette en ny fil kalt "minTekstfil.txt" med teksten som ble skrevet til den. Du kan endre teksten og prøve å kjøre programmet igjen for å se at den gamle teksten blir overskrevet.
 
 ## Dypdykk
 
-Ved å bruke `Write()` -metoden i stedet for `WriteString()` kan vi skrive binære data til tekstfilen. Dette lar oss lagre mer kompleks informasjon som for eksempel tall eller boolske verdier.
+For å skrive mer kompleks data til en tekstfil, kan du bruke `bufio` pakken i Go. Denne pakken lar deg lese og skrive data med buffere, noe som kan være mer effektivt. Du kan også bruke `io/ioutil` pakken for å skrive til en tekstfil med mindre kode.
 
-Vi kan også inkludere mer avanserte funksjoner som å skrive til bestemte linjer i filen eller å skrive til filen i tillegg til å legge til nytt innhold.
+En annen ting å huske på når du jobber med tekstfiler er å håndtere eventuelle feil som kan oppstå. Dette er spesielt viktig når du arbeider med filer som allerede eksisterer, siden de kan være skrivebeskyttet eller utilgjengelige.
 
 ## Se også
 
-- [Go offisiell dokumentasjon for filbehandling](https://golang.org/pkg/os/)
-- [En grundig guide til filbehandling i Go](https://tutorialedge.net/golang/reading-writing-files-in-go/)
-- [En oversikt over ulike måter å skrive til fil i Go](https://www.calhoun.io/writing-to-files-in-go/)
+- Les en tekstfil i Go: https://golang.org/pkg/os/#Stat
+- Manipuler data med buffere i Go: https://golang.org/pkg/bufio/
+- Skriv til en fil med `io/ioutil` pakken: https://golang.org/pkg/io/ioutil/

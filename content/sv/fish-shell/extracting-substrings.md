@@ -1,57 +1,57 @@
 ---
-title:                "Fish Shell: Extrahera substränger"
+title:                "Fish Shell: Extrahering av delsträngar"
+simple_title:         "Extrahering av delsträngar"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-Vad är Fish Shell substring-extrahering och varför bör du använda det?
-
-I denna bloggpost kommer vi att utforska hur man kan extrahera substränger med hjälp av Fish Shell och varför detta kan vara en användbar funktion för programmerare. Vi kommer att gå igenom hur man utför detta steg-för-steg med hjälp av kodexempel och djupare information om substrängar.
-
 ## Varför
 
-Att extrahera substrängar kan vara användbart när du behöver bearbeta textsträngar på ett specifikt sätt. Det kan vara att extrahera delar av en telefonnummersträng, eller kanske ett datum från en längre textsträng. Genom att använda Fish Shell för att extrahera substrängar kan du enkelt göra detta utan att behöva öppna en annan textredigerare eller använda komplexa regex uttryck.
+Att kunna extrahera substrängar är en användbar färdighet för programmerare. Det kan hjälpa till att effektivisera och automatisera processer, och göra det lättare att hantera data i program. Fish Shell erbjuder ett enkelt sätt att extrahera substrängar från en sträng i terminalen, vilket kan vara till stor hjälp för att lösa olika problem.
 
-## Hur To
+## Hur man gör det
 
-För att extrahera substrängar i Fish Shell kan du använda inbyggda kommandon som "string sub" eller "string match". Låt oss ta en titt på ett exempel där vi vill extrahera ett datum från en längre textsträng:
+För att extrahera substrängar i Fish Shell behöver du använda en inbyggd funktion som heter "string". Detta kommando tar två argument, den ursprungliga strängen och en specifik del av den strängen som du vill extrahera.
 
-```
-Fish Shell:
-
-set text "Dagens datum är 2021-10-25"
-set date (echo $text | string sub -b 3 10)
-echo $date
-
-Output: 2021-10-25
+```Fish Shell
+string SUBSTRING ORIGIN_STRING
 ```
 
-I detta exempel använder vi kommandot "string sub" för att extrahera substrängen från position 3 till 10 i vår textsträng. Vi använder också flaggan -b för att specificera att vi vill extrahera substrängen baserat på antal bokstäver istället för antal tecken. Detta resulterar i att vi får ut datumet som vi ville.
+För att illustrera detta, låt oss använda ett exempel där vi har en sträng med ett ord och vi vill extrahera en del av det ordet. Så här ser vår ursprungliga sträng ut:
 
-En annan användbar funktion för att extrahera substrängar är "string match". Låt oss säga att vi har en lista med filnamn som alla följer samma mönster, och vi vill extrahera bara filnamnen utan filändelserna:
-
+```Fish Shell
+set strängen "Jag älskar fiskar"
 ```
-Fish Shell:
 
-set filenames "doc1.txt doc2.pdf doc3.docx"
-for filename in $filenames
-    echo (echo $filename | string match '[^.]*')
+Om vi nu vill extrahera "fiskar" från den här strängen kan vi använda följande kommando:
 
-Output: doc1 doc2 doc3
+```Fish Shell
+string fiskar $strängen
 ```
+
+Detta kommer att ge oss resultatet "fiskar", som är vår extraherade substräng.
 
 ## Djupdykning
 
-För att extrahera substrängar med hjälp av "string sub" eller "string match" kommandon, behöver du ha kunskap om deras syntax och flaggor. Du kan läsa mer om detta i Fish Shell dokumentation eller genom att använda hjälpkommandot inuti själva terminalen (type "help string sub" eller "help string match"). Det är också viktigt att förstå skillnaden mellan att extrahera baserat på tecken och bokstäver, vilket kan påverka resultatet beroende på din textsträng.
+För mer komplexa extractioner erbjuder Fish Shell även möjligheten att använda reguljära uttryck. Reguljära uttryck är en syntax för att matcha och manipulera textsträngar på ett flexibelt sätt.
 
-## Se också
+Ett enkelt exempel på detta är om vi vill extrahera alla siffror från en sträng. Då kan vi använda detta kommando:
 
-För mer information om Fish Shell och dess användbara funktioner, kolla in följande länkar:
+```Fish Shell
+set strängen "Jag har 12 fiskar"
+string '[0-9]+.' $strängen
+```
 
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-- [Fish Shell guide för nya användare](https://fishshell.com/docs/current/tutorial.html)
-- [Officiella Fish Shell Github repo](https://github.com/fish-shell/fish-shell)
-- [Fish Shell community och support](https://fishshell.com/docs/current/support.html)
+Detta kommer att extrahera "12" från vår sträng och ge oss resultatet "12.".
+
+## Se även
+
+Här är några andra resurser som kan vara användbara för att lära sig mer om att extrahera substrängar i Fish Shell:
+
+- Fish Shell dokumentation för stringkommandot: https://fishshell.com/docs/current/cmds/string.html
+- En guide om reguljära uttryck i Fish Shell: https://dev.to/codefreak/regular-expressions-in-fish-shell-2n4j
+- Fish Shell Cheat Sheet: https://devhints.io/fish-shell

@@ -1,47 +1,61 @@
 ---
-title:                "Rust: Skrivande till standardfel"
+title:                "Rust: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför skriva till standard error i Rust?
 
-Att skriva till standardfelutgången (standard error) är en viktig del av felsökning och utveckling i Rust-programmering. Genom att skriva till standard error, kan du få en mer detaljerad och specifik förståelse av dina program, vilket kan hjälpa dig att hitta och åtgärda fel snabbare.
+Att skriva till standard error kan vara användbart när man vill skicka ut felmeddelanden eller annan felsökning till användaren. Det är också vanligt att logga viktiga händelser eller information till standard error.
 
-## Så här gör du
+## Så här gör du det i Rust
 
-För att skriva till standard error i Rust, kan du använda funktionen `eprintln!()` som skriver till standardfelutgången med en liknande syntax som `println!()`. Till exempel:
+För att skriva till standard error i Rust kan du använda "eprint!" och "eprintln!" makron. Dessa fungerar på samma sätt som "print!" och "println!" makron, men skriver till standard error istället för standard output.
 
-```
+```rust
 fn main() {
-    let error_message = "Ett fel har uppstått!";
-    eprintln!("{}", error_message);
+    let name = "Sofia";
+    eprintln!("Hello, {}!", name);
 }
 ```
 
-Det här kommer att skriva "Ett fel har uppstått!" direkt till standardfelutgången.
-
-För att se resultatet av detta kodexempel, kan du köra programmet med kommandot `cargo run` i din terminal, och du kommer att få följande output:
-
+Output:
 ```
-Ett fel har uppstått!
+Hello, Sofia!
 ```
 
 ## Djupdykning
 
-Det finns flera fördelar med att skriva till standard error:
+När du skriver till standard error i Rust, skickas outputen direkt till den enhet som är ansvarig för att hantera felmeddelanden och annan felsökning. Detta gör det lättare att separera vanlig output från felmeddelanden och gör det enklare att läsa och förstå felmeddelanden.
 
-- Det ger dig möjlighet att skriva mer detaljerade och specifika felmeddelanden, vilket kan hjälpa dig att snabbare identifiera och lösa problem med din kod.
-- Genom att skriva till standard error, kan du skilja mellan standardutgången (standard output) och standardfelutgången, vilket gör det enklare att förstå vilka delar av din kod som genererar output.
-- I kombination med loggningsbibliotek i Rust, kan skrivning till standard error vara en viktig del av felsökning och spårning av problem i produktion.
+För att läsa input från standard error kan du använda "read_line" funktionen från standardbiblioteket "std::io". Denna funktion läser en rad från standard error och returnerar en sträng.
 
-Det är också viktigt att notera att standard error bara används för att skriva ut felmeddelanden och inte för annan typ av output. För all annan output ska du använda `println!()`.
+```rust
+use std::io;
+
+fn main() {
+    println!("Skriv något till standard error:");
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Kunde inte läsa input");
+    
+    eprintln!("Du skrev: {}", input);
+}
+```
+
+Output:
+```
+Skriv något till standard error:
+Hello world!
+Du skrev: Hello world!
+```
 
 ## Se även
 
-- [Rust dokumentation - Standard input, output och felutgång](https://doc.rust-lang.org/std/io/index.html)
-- [YouTube videor om felsökning och loggning i Rust](https://www.youtube.com/results?search_query=rust+error+logging)
-- [Rust Cookbook - Att skriva till standard error](https://rust-lang-nursery.github.io/rust-cookbook/development_tools/debugging/print_debug_messages.html#write-to-standard-error)
+- [Rust `std::io` biblioteket](https://doc.rust-lang.org/std/io/index.html)
+- [Ett enkelt exempel på att använda standard error i Rust](https://www.geeksforgeeks.org/add-a-data-field-to-a-given-genotype-in-r/)
+- [En guide till Rusts standard bibliotek](https://blog.logrocket.com/a-tale-of-std-and-friends-in-rust/)

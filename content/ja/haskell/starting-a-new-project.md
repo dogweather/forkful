@@ -1,37 +1,61 @@
 ---
 title:                "Haskell: 新しいプロジェクトを始める"
+simple_title:         "新しいプロジェクトを始める"
 programming_language: "Haskell"
-category:             "Getting Started"
+category:             "Haskell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ 
+プログラミングをやり始める理由はさまざまですが、新しいプロジェクトを始めることでより深く学習することができます。Haskellは素晴らしい言語であり、新しいプロジェクトを始めることでその力を実感することができます。
 
-プログラミングの世界では常に新しいプロジェクトが生まれています。新しいプロジェクトを始める理由は人それぞれでしょう。しかし、新しいプロジェクトを始めることで、新しいアイデアを実現したり、スキルを磨いたり、社会に貢献することができるかもしれません。
+## プロジェクトを始める方法
+まずは、Haskellプロジェクトを始めるために必要なものをインストールしましょう。次に、お持ちのテキストエディタで新しいファイルを作成し、Haskellのコードを書き始めましょう。
 
-## はじめに
+```Haskell
+-- Main.hsという新しいファイルを作成します。
+-- ここにコードを書いていきます。
+```
 
-Haskellは純粋関数型プログラミング言語の一つであり、強力な型システムを持っています。今回は、Haskellを使って新しいプロジェクトを始める方法を紹介します。
+新しいプロジェクトを始める際には、最も基本的な「Hello World」プログラムを書くことから始めましょう。
 
-まずは、Haskellのコードを書くために必要な環境を整えましょう。Haskellの開発環境をインストールするためには、[Haskell Platform](https://www.haskell.org/platform/)をダウンロードしてインストールする必要があります。また、[Atom](https://atom.io/)や[Visual Studio Code](https://code.visualstudio.com/)などのエディターを使用することをおすすめします。
+```Haskell
+-- Main.hsに以下のコードを書きます。
+main = putStrLn "Hello World"
 
-プロジェクトを始める前に、まずはプロジェクトの目的を明確にしましょう。どのような問題を解決するのか、どのような機能を実装するのか、どのようなユーザーを対象にするのか、などを考えることが重要です。目的が明確になれば、コードを書く際の方針も定まりやすくなります。
+-- コンパイルして実行します。
+-- ターミナルで以下のコマンドを実行します。
+-- ghc Main.hs -o hello
+-- ./hello と入力すると、"Hello World"と表示されます。
+```
+
+さらに、Haskellの強力な型システムを活用しながら、新しいプロジェクトを作成することができます。例えば、以下のようにリストの要素を足し合わせる関数を作成することができます。
+
+```Haskell
+-- Main.hsに以下のコードを書きます。
+mySum :: [Int] -> Int
+mySum [] = 0
+mySum (x:xs) = x + mySum xs
+
+main = do
+    let numbers = [1,2,3]
+    putStrLn $ "The sum of " ++ show numbers ++ " is " ++ show (mySum numbers)
+
+-- コンパイルして実行します。
+-- ターミナルで以下のコマンドを実行します。
+-- ghc Main.hs -o sum
+-- ./sum と入力すると、"The sum of [1,2,3] is 6"と表示されます。
+```
 
 ## ディープダイブ
-
-新しいプロジェクトを始める際、まずはルートディレクトリーを作成し、その中に```src```と```test```のディレクトリーを作成しましょう。```src```ディレクトリーには、プロジェクトのコードを格納し、```test```ディレクトリーにはテストコードを格納します。
-
-次に、プロジェクトの依存関係を管理するために、[Cabal](https://www.haskell.org/cabal/)を使用します。```cabal init```コマンドを実行すると、プロジェクト用のCabalパッケージが作成されます。このパッケージには、プロジェクトの設定や依存関係などが記述されています。
-
-さらに、Haskellのコードを書く際には、```ghci```コマンドを使用してREPLを起動することもできます。REPLを使用すると、コードを実行しながら試行錯誤することができます。
-
-最後に、Haskellには豊富なライブラリーが用意されていますので、必要な機能を実装する際には、事前に調べて使いやすいライブラリーがあれば積極的に活用するようにしましょう。
+新しいプロジェクトを始める際には、Haskellのモジュールシステムやパッケージマネージャーを活用することも重要です。また、HackageやGitHubなどのコミュニティリソースを活用しながら、より大きなプロジェクトを始めることも可能です。さらに、Haskellの関数型プログラミングのパラダイムや型クラスなど、興味深いトピックを学習することもできます。
 
 ## See Also
-
-- [Haskell公式サイト](https://www.haskell.org/)
-- [Haskell入門サイト](https://www.learnyouahaskell.com/)
-- [Real World Haskell](http://book.realworldhaskell.org/)
-- [Haskell Reddit](https://www.reddit.com/r/haskell_jp/)
+- [Haskell プログラミングガイド](https://www.stackage.org/haddock/guide.html)
+- [Haskell School of Music](http://haskell.cs.yale.edu/?post_type=publication&p=112)
+- [Real World Haskell](http://book.realworldhaskell.org/read/)
+- [Hackage](https://hackage.haskell.org/) 
+- [GitHub](https://github.com/)

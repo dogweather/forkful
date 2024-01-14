@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Verificando se um diretório existe"
+simple_title:         "Verificando se um diretório existe"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/checking-if-a-directory-exists.md"
 ---
 
@@ -9,33 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que verificar se um diretório existe?
 
-Verificar se um diretório existe é uma tarefa comum em programação. Isso é importante porque permite que o programa faça verificações e tome decisões com base na presença ou ausência de um diretório específico no sistema de arquivos.
+A verificação da existência de um diretório é necessária em diversas situações de programação. Por exemplo, quando se deseja criar um novo diretório, é importante saber se ele já existe para evitar conflitos e erros. Além disso, a verificação de diretórios também pode ser útil para garantir que um determinado caminho de diretório existe antes de realizar alguma operação com ele.
 
-## Como fazer
+## Como fazer a verificação em TypeScript
 
-Verificar se um diretório existe em TypeScript é relativamente simples. Primeiro, precisamos importar o módulo "fs" (File System) para ter acesso às funções relacionadas ao sistema de arquivos.
-
-```TypeScript
-import * as fs from "fs";
-```
-
-Em seguida, podemos usar a função "existsSync" para verificar se um diretório existe no caminho especificado. Esta função retorna um valor booleano, true se o diretório existir e false se não existir.
+Para fazer a verificação de um diretório em TypeScript, podemos utilizar a função "fs.existsSync()" do módulo "fs". Veja um exemplo abaixo:
 
 ```TypeScript
-const directoryExists = fs.existsSync("caminho/do/diretório");
-console.log(directoryExists); // Saída: true ou false
+import * as fs from 'fs';
+
+// Verificação de um diretório existente
+const directoryPath = './diretorio';
+if (fs.existsSync(directoryPath)) {
+    console.log('O diretório existe!');
+} else {
+    console.log('O diretório não existe!');
+}
+
+// Verificação de um diretório inexistente
+const directoryPath = './diretorio_inexistente';
+if (fs.existsSync(directoryPath)) {
+    console.log('O diretório existe!');
+} else {
+    console.log('O diretório não existe!');
+}
+
 ```
 
-## Deep Dive
+A saída para esse código será:
 
-Ao verificar se um diretório existe, é importante entender o que pode interferir no resultado. Algumas coisas a serem consideradas são:
+```
+O diretório existe!
+O diretório não existe!
+```
 
-- Erros de permissão: se o programa não tiver permissão para acessar o diretório, a função "existsSync" retornará false.
-- Caminho absoluto vs caminho relativo: é importante fornecer o caminho correto para o diretório. Se o caminho for relativo, ele será resolvido em relação à localização do arquivo TypeScript. Se for absoluto, ele deve ser fornecido da forma exata.
-- Erros de digitação: verifique se o caminho fornecido está correto e livre de erros de digitação, pois isso pode resultar em um resultado inesperado.
+## Como funciona a verificação de diretórios
+
+A função "fs.existsSync()" retorna "true" caso o diretório exista e "false" caso não exista. Ela recebe como parâmetro o caminho do diretório que se deseja verificar. Além disso, também é possível fazer a verificação de arquivos utilizando a função "fs.existsSync()".
 
 ## Veja também
 
-- [Documentação do módulo fs](https://nodejs.org/api/fs.html)
-- [Tutorial: Como usar o módulo fs em TypeScript](https://www.digitalocean.com/community/tutorials/nodejs-fs-module-typescript)
-- [Artigo: Sistema de arquivos em Node.js](https://www.luiztools.com.br/post/tutorial-de-node-js-sistema-de-arquivos/)
+- Documentação oficial do módulo "fs": https://nodejs.org/api/fs.html
+- Exemplo de verificação de arquivos em TypeScript: https://stackoverflow.com/questions/40599583/typescript-verify-if-folder-exists

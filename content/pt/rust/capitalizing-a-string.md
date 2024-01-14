@@ -1,49 +1,52 @@
 ---
-title:                "Rust: Capitalizando uma String"
+title:                "Rust: Capitalizando uma string"
+simple_title:         "Capitalizando uma string"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que capitalizar uma string?
+## Por que
 
-Capitalizar uma string pode ser útil em diversas situações. Por exemplo, quando estamos trabalhando com nomes próprios ou títulos, é importante que a primeira letra esteja em maiúscula. Além disso, capitalizar uma string pode ser um requisito para o funcionamento de alguns algoritmos ou APIs.
+Capitalize é uma função importante em muitas linguagens de programação, incluindo Rust. Ele permite que você converta uma string para que a primeira letra de cada palavra seja maiúscula. Isso é útil em muitos contextos, como na criação de títulos ou na formatação de dados.
 
-## Como fazer?
+## Como fazer
 
-Em Rust, podemos capitalizar uma string usando o método `to_uppercase()`. Veja um exemplo abaixo:
+Para capitalizar uma string em Rust, você pode usar o método `to_title_case()` da biblioteca `str`, que é importado automaticamente para cada arquivo Rust. Aqui está um exemplo de como usá-lo em um programa simples:
 
-```Rust
-let string = "olá mundo";
-let string_capitalizada = string.to_uppercase();
-println!("String original: {}", string);
-println!("String capitalizada: {}", string_capitalizada);
+```rust
+fn main() {
+    let my_string = "hello world";
+    let capitalized = my_string.to_title_case();
+    println!("{}", capitalized); // Saída: Hello World
+}
 ```
 
-A saída deste código seria:
+Você também pode usar a macro `title_case` da biblioteca `strum`, que é útil para formatar strings em conformidade com regras de capitalização específicas, como para nomes próprios ou títulos. Aqui está um exemplo:
 
+```rust
+use strum::title_case::title_case;
+
+fn main() {
+    let my_string = "the dark knight";
+    let capitalized = title_case(my_string);
+    println!("{}", capitalized); // Saída: The Dark Knight
+}
 ```
-String original: olá mundo
-String capitalizada: OLÁ MUNDO
-```
 
-## Aprofundando-se
+## Uma análise mais profunda
 
-Ao usar o método `to_uppercase()`, é importante ter em mente que ele irá capitalizar todas as letras da string, incluindo as já maiúsculas. Para evitar isso, podemos usar o método `to_lowercase()` primeiro.
+A função `to_title_case()` usa as regras do título do livro "The Chicago Manual of Style", que é amplamente utilizado na indústria editorial. Isso inclui recursos como lidar com acrônimos, palavras com hifens e pontuações especiais.
 
-Outro ponto interessante é que o método `to_uppercase()` só funciona corretamente com caracteres ASCII. Se sua string contiver caracteres Unicode, é necessário usar o método `chars()` para iterar sobre cada caractere e aplicar a capitalização individualmente.
+Já a macro `title_case` permite que você especifique suas próprias regras de capitalização através de um enum especializado, que pode ser útil em situações onde você precisa formatar strings de acordo com outras convenções de escrita.
 
-## Veja também
+Em geral, é importante lembrar que a capitalização é sensível à cultura e pode variar em diferentes idiomas. Certifique-se de considerar esses aspectos ao trabalhar com strings em suas aplicações Rust.
 
-Para mais informações sobre como trabalhar com strings em Rust, confira a documentação da linguagem:
+## Ver também
 
-- [Documentação do tipo String em Rust](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Tutorial sobre strings em Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)
-
-Se você quer aprender mais sobre Rust, confira estes recursos:
-
-- [Rust Brasil - Comunidade de desenvolvedores brasileiros em Rust](https://rust-br.org/)
-- [Rust by Example - Uma coleção de exemplos práticos em Rust](https://doc.rust-lang.org/rust-by-example/index.html)
-- [The Rust Programming Language - Livro oficial sobre Rust](https://doc.rust-lang.org/book/)
+- Documentação oficial da função `to_title_case()`: https://doc.rust-lang.org/std/primitive.str.html#method.to_title_case
+- Documentação oficial da macro `title_case`: https://docs.rs/strum/0.12.0/strum/title_case/index.html
+- Site do "The Chicago Manual of Style": http://www.chicagomanualofstyle.org/home.html

@@ -1,65 +1,63 @@
 ---
-title:                "C#: Das Lesen einer Textdatei"
+title:                "C#: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Das Lesen von Textdateien ist eine grundlegende und wichtige Fähigkeit in der Programmierung. Es ermöglicht uns, Informationen aus einer externen Datei in unser Programm zu laden und sie zu verarbeiten. Dies kann hilfreich sein, um große Datenmengen zu verarbeiten oder um die Benutzerfreundlichkeit unserer Anwendung zu verbessern, indem wir Konfigurationen oder Einstellungen aus einer Datei lesen.
 
-Das Lesen von einer Textdatei ist eine grundlegende Fähigkeit für alle Programmierer. Es ermöglicht uns, Daten aus externen Quellen in unsere Programme zu integrieren und zu verarbeiten. In dieser Blog-Post werden wir uns genauer anschauen, wie wir eine Textdatei in C# lesen können und warum es eine wichtige Fähigkeit ist, die jeder Programmierer wissen sollte.
-
-## Wie man eine Textdatei in C# liest
-
-Zuerst müssen wir eine Verbindung zur Textdatei herstellen. Dazu können wir die `FileStream` Klasse verwenden und den Dateipfad als Argument übergeben.
+## Wie macht man es?
+Das Lesen von Textdateien in C# ist relativ einfach. Wir verwenden dazu die Klasse `StreamReader` aus dem Namespace `System.IO`. Zunächst müssen wir einen `StreamReader`-Objekt erstellen und ihm den Pfad zur Datei übergeben, die wir lesen möchten. Anschließend können wir die Methode `ReadLine()` verwenden, um jeweils eine Zeile aus der Datei zu lesen. Wir schreiben einfach eine Schleife, die solange läuft, bis das Ende der Datei erreicht ist, und jedes Mal die gelesene Zeile ausgibt. Hier ist ein Beispielcode:
 
 ```C#
-FileStream fileStream = new FileStream("C:/Users/MeineDatei.txt", FileMode.Open);
-```
+using System;
+using System.IO;
 
-Als nächstes müssen wir den `StreamReader` initialisieren, um den Text in der Datei zu lesen.
-
-```C#
-StreamReader reader = new StreamReader(fileStream);
-```
-
-Wir können nun die Methode `ReadLine()` verwenden, um den Inhalt der Datei Zeile für Zeile zu lesen und in einer Variablen zu speichern.
-
-```C#
-string line = reader.ReadLine();
-```
-
-Dieser Vorgang kann in einer Schleife durchgeführt werden, um alle Zeilen in der Textdatei zu lesen.
-
-```C#
-while(!reader.EndOfStream)
+namespace LesenTextdatei
 {
-    string line = reader.ReadLine();
-    Console.WriteLine(line);
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Erstelle einen StreamReader und weise ihm den Pfad zur Datei zu
+            StreamReader reader = new StreamReader(@"C:\MeineDatei.txt");
+            
+            // Schleife, die solange läuft bis das Ende der Datei erreicht ist
+            while (!reader.EndOfStream)
+            {
+                // Lese eine Zeile aus der Datei und gib sie aus
+                string line = reader.ReadLine();
+                Console.WriteLine(line);
+            }
+            
+            // Schließe den StreamReader
+            reader.Close();
+            
+           Console.ReadKey();
+        }
+    }
 }
 ```
 
-Die Ausgabe hier ist eine einfache Konsolenausgabe, aber je nach Bedarf können wir den gelesenen Text auch in einem Array oder einer anderen Datenstruktur speichern.
+Die Ausgabe wird je nach Inhalt der Textdatei unterschiedlich sein. Hier ist ein Beispiel für eine Textdatei mit den Inhalten "Hallo" und "Welt":
 
-## Tiefergehende Informationen über das Lesen von Textdateien
-
-Beim Lesen von Textdateien gibt es einige Dinge zu beachten. Zum einen ist es wichtig, die Datei nach dem Lesen immer wieder zu schließen. Dazu können wir die Methode `Close()` aufrufen oder den `StreamReader` in einem `using`-Block verwenden, der automatisch die Datei schließt, wenn wir aus dem Block herausgehen.
-
-```C#
-using (StreamReader reader = new StreamReader(fileStream))
-{
-    // Code zum Lesen der Datei
-}
+```shell
+Hallo
+Welt
 ```
 
-Eine weitere wichtige Überlegung ist die Behandlung von Fehlern. Beim Lesen einer Datei kann es zu Fehlermeldungen kommen, wenn die Datei nicht gefunden wird oder nicht lesbar ist. Daher ist es wichtig, entsprechende Fehlerbehandlungen in unserem Code zu implementieren.
+## Tiefer in die Materie eintauchen
+Um eine Textdatei in C# zu lesen, gibt es einige zusätzliche Dinge zu beachten. Zum Beispiel müssen wir darauf achten, die richtige Codierung (z.B. UTF-8 oder ANSI) zu verwenden, um die Datei richtig zu lesen. Auch die Verwendung von `using`-Blöcken ist empfehlenswert, um sicherzustellen, dass der `StreamReader` ordnungsgemäß geschlossen wird, selbst wenn während des Lesens eine Ausnahme auftritt.
+
+Eine weitere Sache, die man wissen sollte, ist, wie man Daten aus einer Textdatei verarbeitet. Man kann beispielsweise eine Liste erstellen und jeweils die gelesenen Zeilen in die Liste hinzufügen, um später darauf zuzugreifen.
 
 ## Siehe auch
-
-- [C# Dokumentation über das Lesen von Textdateien](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file)
-- [Eine Einführung in die Grundlagen der Dateiverarbeitung in C#](https://www.tutorialspoint.com/csharp/csharp_file_io.htm)
-- [Einen CSV-Parser in C# schreiben](https://www.codeproject.com/Articles/415732/Reading-and-Writing-CSV-Files-in-Csharp)
-
-Durch das Lesen von Textdateien in C# können wir unsere Programme um zusätzliche Funktionalitäten erweitern und Daten effektiv verarbeiten. Es ist eine wichtige Fähigkeit, die uns als Programmierer dabei helfen kann, unsere Projekte zu verbessern und zu skalieren. Mit den richtigen Kenntnissen und Werkzeugen können wir problemlos Textdateien in unsere C#-Anwendungen einbinden und nutzen.
+- [Dokumentation von StreamReader (Microsoft)](https://docs.microsoft.com/de-de/dotnet/api/system.io.streamreader?view=net-5.0)
+- [C# Tutorial: Lesen von Textdateien (Tutorialspoint)](https://www.tutorialspoint.com/csharp/csharp_file_io.htm)
+- [Die verschiedenen Codierungen verstehen (Microsoft)](https://docs.microsoft.com/de-de/dotnet/standard/base-types/character-encoding)

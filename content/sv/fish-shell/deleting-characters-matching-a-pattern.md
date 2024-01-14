@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Radera tecken som matchar ett mönster"
+title:                "Fish Shell: Radering av tecken som matchar ett mönster"
+simple_title:         "Radering av tecken som matchar ett mönster"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,28 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att ta bort tecken som matchar ett mönster kan vara användbart när man vill rensa en text eller fil från oönskat innehåll. Det kan också vara praktiskt när man vill ändra eller anpassa en text baserat på ett visst mönster.
+Att ta bort tecken som matchar ett mönster är en användbar funktion inom Fish Shell som kan hjälpa dig att effektivisera ditt program. Detta kan till exempel vara användbart om du behöver rensa bort oönskade tecken i ett dokument eller om du vill manipulera text på ett smidigt sätt.
 
-## Hur man gör det
+## Så här gör du
 
-För att ta bort tecken som matchar ett mönster i Fish Shell kan man använda kommandot `string equal`. Detta kommando tar två parametrar: en variabel som innehåller textsträngen som ska modifieras, och ett mönster som beskriver vilka tecken som ska tas bort. Här är ett exempel på hur man kan använda detta kommando:
+För att ta bort tecken som matchar ett visst mönster kan du använda kommandot `string replace`. Detta kommando tar tre argument: det första är mönstret som ska matchas, det andra är det tecken som ska ersättas och det tredje är den befintliga texten som du vill manipulera. Här är ett exempel på hur du kan använda det:
 
 ```Fish Shell
-
-set text "Hej, det här är en text med onödiga tecken som ska tas bort."
-set pattern "*ödiga tecken*"
-string equal --regex -r text $pattern
-
+string replace hund katt "jag äger en hund"
 ```
 
-Efter att detta kommando har utförts kommer variabeln `text` att ha reducerats till: "Hej, det här är en textom ska tas bort."
+I detta fall kommer kommandot att byta ut alla förekomster av ordet "hund" med ordet "katt" i textsträngen "jag äger en hund". Detta skulle ge följande output:
 
-## Djupdykning
+```
+jag äger en katt
+```
 
-Mönstret som anges i `string equal` kommandot kan bestå av reguljära uttryck (regex), som ger en mer avancerad granskning av texten. Detta gör att man kan ta bort tecken som matchar ett visst mönster, oavsett platsen i texten. Det finns också olika flaggor som kan användas för att ändra hur matchningen utförs. Mer information om reguljära uttryck och flaggor finns i Fish Shells officiella dokumentation.
+Du kan även använda reguljära uttryck för att matcha ett mer komplicerat mönster. Till exempel kan du använda `.*` för att matcha alla tecken före och efter ett visst ord. Här är ett exempel på hur du kan använda det:
+
+```Fish Shell
+string replace ".* äger en" "har en" "jag äger en hund"
+```
+
+Detta skulle ge följande output:
+
+```
+har en hund
+```
+
+## Utforska djupare
+
+För mer komplexa användningar kan du använda `string sub` istället för `string replace`. Detta kommando har möjlighet att ta emot en lista av reguljära uttryck och ersättningssträngar, vilket ger dig ännu mer kontroll över vilka tecken som ska manipuleras och hur de ska ersättas. Du kan läsa mer om detta på Fish Shells dokumentationsida.
 
 ## Se också
 
-- [Fish Shell dokumentation om string equal](https://fishshell.com/docs/current/cmds/string-equal.html)
-- [Grundläggande regex för Fish Shell](https://fishshell.com/docs/current/tutorial.html#tutorial-regex)
-- [Tutorial om reguljära uttryck för Shell-kommandon](https://www.shellscript.sh/regular-expressions.html#comparison) (på engelska)
+1. Fish Shell - https://fishshell.com
+2. Fish Shell dokumentation - https://fishshell.com/docs/current/cmds.html#string-cmds
+3. Reguljära uttryck - https://en.wikipedia.org/wiki/Regular_expression

@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Recherche et remplacement de texte"
+simple_title:         "Recherche et remplacement de texte"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/searching-and-replacing-text.md"
 ---
 
@@ -9,37 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La recherche et le remplacement de texte sont une tâche courante dans le développement de logiciels. Cela peut être utile pour corriger des erreurs, mettre à jour des informations ou simplement pour ajouter des modifications dans un document. Dans cet article, nous allons explorer comment effectuer cette tâche en utilisant le langage de programmation Rust.
+La recherche et remplacer du texte est une tâche courante en programmation, et il est important de savoir comment le faire efficacement. En utilisant le langage de programmation Rust, vous pouvez facilement manipuler du texte grâce à diverses méthodes et fonctions.
 
 ## Comment faire
 
-Nous allons utiliser la bibliothèque standard "Regex" de Rust pour effectuer la recherche et le remplacement de texte. Tout d'abord, nous devons l'importer dans notre code avec la déclaration suivante :
+Tout d'abord, vous devez importer la bibliothèque standard de Rust pour travailler avec du texte: `std::prelude::*`. Ensuite, vous pouvez utiliser la méthode `replace` pour remplacer un motif donné dans une chaîne avec une autre chaîne. Voici un exemple de code qui remplace "bonjour" par "salut" dans une chaîne donnée:
 
 ```Rust
-use regex::Regex;
+let phrase = "Bonjour, comment ça va?";
+let nouvelle_phrase = phrase.replace("bonjour", "salut");
+println!("{}", nouvelle_phrase);
 ```
 
-Ensuite, nous pouvons créer une expression régulière en utilisant la méthode "Regex::new()", qui prend en paramètre la chaîne de caractères que nous voulons rechercher. Par exemple, si nous voulons rechercher toutes les occurrences du mot "hello" dans une chaîne de caractères, nous pouvons utiliser la ligne de code suivante :
-
-```Rust
-let regex = Regex::new("hello")?;
-```
-
-Ensuite, nous pouvons utiliser la méthode "replace_all()" pour effectuer le remplacement de texte. Cette méthode prend deux paramètres : la chaîne de caractères de remplacement et la chaîne de caractères sur laquelle effectuer la recherche. Par exemple, pour remplacer toutes les occurrences de "hello" par "bonjour", notre code serait le suivant :
-
-```Rust
-let replaced_string = regex.replace_all("Hello, comment ça va ?", "bonjour");
-println!("{}", replaced_string); // affichera "Bonjour, comment ça va ?"
-```
+La sortie de ce code sera "Salut, comment ça va?". Vous pouvez également utiliser les méthodes `find` et `replace_range` pour remplacer une sous-chaîne spécifique dans une chaîne.
 
 ## Plongée en profondeur
 
-L'expression régulière utilisée pour effectuer la recherche peut être plus complexe en utilisant des métacaractères pour définir des modèles d'appariement spécifiques. Par exemple, le métacaractère "." peut être utilisé pour représenter n'importe quel caractère, et le métacaractère "*" pour représenter n'importe quel nombre de caractères. Le langage de recherche et de remplacement peut également être utilisé pour rechercher un modèle spécifique de caractères, tels que les chiffres ou les lettres majuscules.
+En plus des méthodes mentionnées ci-dessus, Rust a également une fonctionnalité appelée "patterns de capture". Cela vous permet de trouver des parties spécifiques d'une chaîne qui correspondent à un modèle donné et de les remplacer par une autre chaîne. Voici un exemple de code qui remplace les lettres `c` et `d` par `x` et `y` respectivement:
 
-La bibliothèque Regex de Rust offre également des méthodes supplémentaires telles que "captures()", qui renvoie les captures spécifiées dans l'expression régulière, et "find()", qui renvoie la première occurrence trouvée d'une chaîne de caractères correspondant à l'expression régulière.
+```Rust
+let phrase = "abcdefg";
+let nouvelle_phrase = regex::Regex::new("(c)(d)").unwrap().replace_all(&phrase, "(x)(y)");
+println!("{}", nouvelle_phrase);
+```
+
+La sortie de ce code sera "abxefg". Vous pouvez également utiliser des expressions régulières pour des recherches et des remplacements plus complexes.
 
 ## Voir aussi
 
-- [Documentation de la bibliothèque Regex de Rust](https://docs.rs/regex/1.4.5/regex/)
-- [Tutoriel pour les expressions régulières en Rust](https://blog.burntsushi.net/ripgrep/regex/)
-- [Comparaison des bibliothèques de recherche et de remplacement de texte en Rust](https://crates.io/crates/regex/0.1.80?version=0.2.9)
+- [Documentation officielle de Rust sur les chaînes de caractères](https://doc.rust-lang.org/std/string/index.html)
+- [Guide de programmation sur la manipulation de text en Rust](https://www.excelsior-cjh.com/blog/programmation/rust/rust-manipulation-du-texte/)
+- [Développer un programme de recherche et remplacement avec Rust](https://www.asciiarmor.com/post/text_manipulation_in_rust/)

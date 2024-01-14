@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: Lecture d'un fichier texte"
+simple_title:         "Lecture d'un fichier texte"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/reading-a-text-file.md"
 ---
 
@@ -9,40 +11,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'utilisation de fichiers texte est essentielle pour stocker et accéder à de grandes quantités de données dans vos projets Arduino. Que vous ayez besoin de stocker des données de capteurs, de créer des menus ou tout simplement de stocker du texte dans votre projet, la lecture de fichiers texte est une compétence importante à avoir.
+Si vous êtes nouveau dans le monde de la programmation Arduino, vous pourriez être curieux de savoir comment lire un fichier texte en utilisant cette plateforme. Obtenir des données à partir d'un fichier texte peut être utile pour une variété de projets, comme le stockage de valeurs de capteurs ou la lecture de configurations préétablies pour votre système.
 
-## Comment
+## Comment faire
 
-La première étape pour lire un fichier texte dans votre projet Arduino est de créer un objet File à l'aide de la fonction `SD.open()`. Cela vous permet d'ouvrir le fichier et d'y accéder pour la lecture. Ensuite, vous pouvez utiliser la fonction `read()` pour lire le contenu du fichier et le stocker dans une variable. Voici un exemple de code pour lire un fichier texte nommé "texte.txt" :
+Pour lire un fichier texte en utilisant Arduino, vous devrez suivre ces étapes :
 
-```Arduino
+1. Connectez votre Arduino à votre ordinateur via un câble USB.
+
+2. Ouvrez l'IDE Arduino et créez une nouvelle esquisse.
+
+3. Utilisez la fonction ```SD.begin()``` pour initialiser la carte SD et la fonction ```SD.open()``` pour ouvrir le fichier texte.
+
+4. Utilisez la fonction ```readLine()``` pour lire chaque ligne du fichier et stocker la valeur dans une variable. N'oubliez pas de convertir la valeur en la bonne unité, si nécessaire.
+
+5. Répétez cette étape pour chaque ligne de texte que vous souhaitez lire.
+
+6. Enfin, fermez le fichier en utilisant la fonction ```SD.close()``` et affichez les données lues sur le moniteur série à l'aide de la fonction ```Serial.println()```.
+
+Voici un exemple de code qui lit trois valeurs de température stockées dans un fichier "temp.txt" sur la carte SD :
+
+```
+#include <SPI.h>
 #include <SD.h>
 
-File monFichier;
+File configFile;
+float temperature1;
+float temperature2;
+float temperature3;
 
-// Ouverture du fichier
-monFichier = SD.open("texte.txt");
+void setup() {
+  // initialise la communication série
+  Serial.begin(9600);
 
-// Lecture du contenu du fichier
-while (monFichier.available()) {
-  char character = monFichier.read();
-  // Faire quelque chose avec le contenu du fichier
+  // initialise la carte SD
+  SD.begin(10);
+
+  // ouvre le fichier texte en lecture seule
+  configFile = SD.open("temp.txt");
+
+  // lit chaque ligne du fichier et stocke la valeur dans une variable
+  temperature1 = configFile.readFloat();
+  temperature2 = configFile.readFloat();
+  temperature3 = configFile.readFloat();
+
+  // ferme le fichier
+  configFile.close();
+
+  // affiche les valeurs sur le moniteur série
+  Serial.print("Température 1 : ");
+  Serial.println(temperature1);
+  Serial.print("Température 2 : ");
+  Serial.println(temperature2);
+  Serial.print("Température 3 : ");
+  Serial.println(temperature3);
 }
 
-// Fermeture du fichier
-monFichier.close();
+void loop() {
+  // le code ici ne sera pas exécuté car nous ne réalisons qu'une seule lecture au début
+}
 ```
 
-Cette méthode fonctionne pour les fichiers texte simples, mais que faire si vous avez besoin de lire des fichiers avec une structure plus complexe, comme un CSV ou un JSON ? Pour cela, nous vous recommandons d'utiliser des bibliothèques spécifiques telles que "CSV" ou "ArduinoJSON" pour faciliter la lecture de ces types de fichiers. Vous pouvez trouver des exemples de code sur les sites respectifs de ces bibliothèques.
+L'exemple de code ci-dessus suppose que les trois valeurs de température dans le fichier sont stockées en tant que valeurs de type ```float```. Vous devrez peut-être utiliser une fonction différente pour convertir la valeur dans le bon format.
 
 ## Plongée en profondeur
 
-Lors de la lecture de fichiers texte, il est important de comprendre comment les données sont stockées et comment les lire correctement. Les fichiers texte sont des séquences de caractères, donc lors de la lecture de ces fichiers, vous devez prendre en compte les sauts de ligne et les caractères spéciaux. De plus, assurez-vous d'utiliser la bonne méthode de lecture en fonction du type de données stockées dans votre fichier.
+Il existe d'autres fonctions pour la lecture de fichiers texte sur la carte SD, telles que ```SD.exists()``` pour vérifier si un fichier existe et ```SD.remove()``` pour supprimer un fichier existant. Vous pouvez également utiliser la bibliothèque ```SD.h``` pour écrire des données dans un fichier texte.
+
+De plus, il existe des bibliothèques tierces qui peuvent faciliter la lecture de fichiers texte, comme la bibliothèque ```SimpleSDAudio``` qui permet de lire des fichiers audio à partir de la carte SD.
+
+Il est également important de noter que la lecture de fichiers texte à partir d'une carte SD peut être un processus relativement lent, en particulier si vous lisez de grandes quantités de données à chaque itération de la boucle. Il est donc important de prendre en compte le temps de lecture dans la conception de votre projet.
 
 ## Voir aussi
 
-- [Documentation officielle sur la lecture de fichiers texte avec Arduino](https://www.arduino.cc/en/Reference/SDopen)
-- [Bibliothèque CSV pour la lecture de fichiers CSV](https://github.com/rodan/davidz) 
-- [Bibliothèque ArduinoJSON pour la lecture de fichiers JSON] (https://arduinojson.org/)
-
-En utilisant ces informations et en explorant différentes bibliothèques, vous serez en mesure de lire et de traiter des fichiers texte dans vos projets Arduino avec facilité. Alors n'hésitez pas à utiliser cette compétence pour améliorer vos projets et leur ajouter une touche de complexité !
+- [Tutoriel du projet Arduino officiel sur la lecture de fichiers texte](https://www.arduino.cc/en/Tutorial/DataReader)
+- [Documentation officielle de la bibliothèque SD pour Arduino](https://www.arduino.cc/en/Reference/SD)
+- [Bibliothèque SimpleSDAudio pour lire des fichiers audio à partir de la carte SD](https://github.com/earlephilhower/ESP8266Audio)

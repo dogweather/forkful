@@ -1,44 +1,65 @@
 ---
-title:                "Elm: 표준 오류에 쓰는 방법"
+title:                "Elm: 표준 오류 출력에 쓰기"
+simple_title:         "표준 오류 출력에 쓰기"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+# 왜 standard error를 사용하는가?
 
-왜 우리는 Elm에서 표준 오류에 쓰는 일에 관심이 있을까요? 여러분이 작업하는 코드 중에 오류가 발생하게 되면, 프로그램이 중단되고 오류 메시지가 출력됩니다. 이때 표준 오류에 쓰는 것은 이 오류를 파악하고 디버깅하는 데에 매우 유용합니다.
+일반적으로 프로그램을 작성하다 보면 디버깅이 필요할 때가 있습니다. 이때 특정 부분의 문제를 찾거나 실행 중에 발생한 오류를 수정하기 위해서는 오류가 발생한 곳을 찾아내야 합니다. Elm에서는 이를 돕기 위해 standard error를 사용합니다.
 
-## 어떻게 하나요?
+# 어떻게 사용할까?
 
-우리는 ```Debug``` 모듈과 함께 오류를 출력할 수 있습니다. 이를 위해서는 먼저 해당 모듈을 ```import```해야 합니다. 그리고 ```Err``` 함수를 사용하여 오류를 생성하고, ```log``` 함수를 사용하여 해당 오류를 출력할 수 있습니다.
+## 예제 1: 정수 덧셈
 
 ```Elm
-import Debug
+sum : Int -> Int -> Int
+sum a b =
+    a + b
 
-Debug.log "오류 메시지" (Debug.crash "이 오류를 파악하기 위한 내용")
+main =
+    Debug.log "결과값:" (sum 3 5)
 ```
 
-위의 코드를 실행하면, 표준 오류에 다음과 같은 출력이 됩니다.
+위의 코드는 `sum` 함수를 정의하고, `main` 함수에서 결과값을 표시하는 예제입니다. `Debug.log` 함수를 사용하여 결과값을 출력하고, 실행 결과는 아래와 같습니다.
 
-```bash
-오류 메시지: 이 오류를 파악하기 위한 내용
+```
+결과값: 8
 ```
 
-## 깊게 들어가보기
+여기서 `Debug.log` 함수는 `Int` 값을 받아서 standard error에 출력하는 역할을 합니다.
 
-왜 우리는 ```Debug``` 모듈을 사용해야 하는 걸까요? 이 모듈을 사용하면, 프로그램이 컴파일되지 않더라도 오류 메시지를 출력할 수 있습니다. 이는 디버깅에 매우 유용하며, 오류를 찾는 데에 큰 도움이 됩니다.
+## 예제 2: 리스트의 인덱스 접근
 
-또한 ```Debug.userError``` 함수를 사용하여, 사용자 정의 오류 메시지를 출력할 수도 있습니다. 이 함수는 사용자가 원하는 오류 메시지를 생성하여, 이를 표준 오류에 출력합니다.
+```Elm
+list : List String
+list =
+    [ "사과", "바나나", "딸기", "포도" ]
 
-더 자세한 정보는 Elm 문서를 참고해주세요.
+main =
+    Debug.log "인덱스 2번째 값:" (List.get 2 list)
+```
 
-# 더 알아보기
+위의 코드는 `list`에 저장된 과일 이름 중 2번째 값인 "딸기"를 출력하는 예제입니다. `List.get` 함수를 사용하여 리스트의 특정 인덱스 값을 가져오고, 결과값은 아래와 같습니다.
 
-더 많은 정보를 찾고 싶다면, 아래 링크를 참고해주세요.
+```
+인덱스 2번째 값: Just "딸기"
+```
 
-- [Elm 문서 - 표준 오류 출력하기](https://guide.elm-lang.org/error_handling/debugging.html)
-- [Elm 디버깅 툴 - 시각적인 디버깅을 위한 도구](https://github.com/jheisenbug/elm-debug)
-- [Elm 슬랙 - 코더들간의 소통 공간](https://elmlang.herokuapp.com/)
+위에서와 마찬가지로 `Debug.log` 함수가 standard error에 결과값을 출력합니다.
+
+# 자세히 살펴보기
+
+`Debug.log` 함수는 말 그대로 결과값을 로그에 출력하는 역할을 합니다. Elm 코드를 실행할 때, `fun main ->` 뒤에 있는 코드 부분이 실행되고, 이때 `Debug.log` 함수가 사용되었다면 결과값이 standard error에 출력됩니다. 이를 이용하여 코드의 실행 결과를 확인하거나, 특정 값을 추적할 수 있습니다. 또한 `Debug.log` 함수를 사용하지 않는 경우에는 결과값이 standard error에 출력되지 않으므로, 코드를 실행할 때 꼭 확인해야 합니다.
+
+# 관련 자료
+
+- See Also:
+    - [Elm 공식 가이드](https://guide.elm-lang.org/)
+    - [Elm 커뮤니티 포럼](https://discourse.elm-lang.org/)
+    - [Elm 책 추천 5선](https://openbookshelf.org/book/5election-5-elm-books)

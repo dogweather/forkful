@@ -1,7 +1,9 @@
 ---
-title:                "Swift: स्ट्रिंग को छोटे अक्षर में रूपांतरित करना"
+title:                "Swift: स्ट्रिंग को लोअर केस में रूपांतरित करना"
+simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरित करना"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,40 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-कोडिंग में स्ट्रिंग को लोअर केस में बदलने का उद्देश्य हिंदी पाठकों को साथ देगा।
+एक्स्टंशन्ड्रोज़ स्ट्रिंग को प्रभावी ढंग से लोअर केस में परिवर्तित करने में आपको क्या लाभ हो सकता है।
 
 ## कैसे करें
 
-```Swift
-let str = "HELLO"
-let lowerCaseStr = str.lowercased()
-print(lowerCaseStr)
+मेनिपुलेशन के द्वारा स्ट्रिंग को लोअर केस में परिवर्तित करने के लिए, आपको निम्नलिखित तरीकों का अनुसरण करना होगा:
 
-// Output: hello
+```Swift
+let string = "Hello World"
+let lowercasedString = string.lowercased()
+
+print(lowercasedString) // output: hello world
 ```
 
-यहां हमने `lowercased()` फ़ंक्शन का इस्तेमाल किया है जो हमारी स्ट्रिंग को लोअर केस में बदल देता है। यह बहुत ही आसान और स्पष्ट है, जो हमारे कोड को और भी सरल बनाता है।
+इस उदाहरण में, हमने "lowercased" फंक्शन का उपयोग किया है जो स्ट्रिंग को लोअर केस में परिवर्तित करता है। इसके अतिरिक्त, हम "String" डेटा टाइप के एक्स्टेंशन "lowercased" भी प्रयोग कर सकते हैं।
+
+आप अपनी कस्टम फंक्शन भी बना सकते हैं जो स्ट्रिंग को लोअर केस में परिवर्तित करता है, जैसे:
+
+```Swift
+extension String {
+    func convertToLowercase() -> String {
+        return self.lowercased()
+    }
+}
+
+let string = "Hello World"
+let lowercasedString = string.convertToLowercase()
+
+print(lowercasedString) // output: hello world
+```
 
 ## गहराई में जाएं
 
-स्ट्रिंग को लोअर केस में बदलने का एक अन्य तरीका `lowercased()` के साथ स्ट्रिंग को स्प्लिट करके कैसे किया जा सकता है। इसमें हम `components(separatedBy:)` फ़ंक्शन का इस्तेमाल करेंगे जो स्पेस द्वारा स्प्लिट करता है और लोअर केस में बदल देता है।
+"lowercased" फंक्शन से हम स्ट्रिंग को लोअर केस में परिवर्तित कर सकते हैं लेकिन इसमें क्या होता है।
 
-```Swift
-let str = "HELLO WORLD"
-let lowerCaseStr = str.components(separatedBy: " ").map{$0.lowercased()}.joined(separator: " ")
-print(lowerCaseStr)
-
-// Output: hello world
-```
-
-यह एक थोड़ी लंबी प्रक्रिया है, लेकिन इससे हमारी स्ट्रिंग में दिए गए स्पेस को क्रॉस चेक करते हुए स्पष्ट लोअर केस में बदल सकते हैं।
+स्ट्रिंग को लोअर केस में परिवर्तित करने के लिए, हम स्ट्रिंग में से सभी अक्षरों को लोअर केस में बदलते हैं और विशेष वाक्यांश जो मूल स्ट्रिंग में हैं अभी भी वहीं रहते हैं। यह आपके स्ट्रिंग प्रोसेसिंग को सरल बनाता है और आप इसका अनुप्रयोग अपनी आवश्यकताओं के अनुसार कर सकते हैं।
 
 ## देखें भी
 
-- [Apple Documentation on `lowercased()`](https://developer.apple.com/documentation/swift/string#//apple_ref/swift/string/methods/lowercased)
-
-- [Apple Documentation on `components(separatedBy:)`](https://developer.apple.com/documentation/swift/string/3126538-components)
-
-- [Hacking with Swift - How to lowercase a string](https://www.hackingwithswift.com/example-code/strings/how-to-lowercase-a-string-using-localizedcapitalized-and-lowercased)
-
-यहां आप अधिक सीख सकते हैं कि स्ट्रिंग को लोअर केस में बदलने का और भी तरीके क्या हो सकते हैं और दोनों फ़ंक्शन को समझने के लिए और सुविधाएँ कैसे उनको उपयोग में ले सकते हैं।
+आपको अधिक स्ट्रिंग के सम्बन्धित विषयों में जानने के लिए निम्नलिखित लिंकों पर जाना

@@ -1,7 +1,9 @@
 ---
-title:                "Go: Tulostuksen virhelähdön tulostaminen"
+title:                "Go: Ohjelmointi: Vianmääritystulostuksen tekeminen"
+simple_title:         "Ohjelmointi: Vianmääritystulostuksen tekeminen"
 programming_language: "Go"
-category:             "Testing and Debugging"
+category:             "Go"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/printing-debug-output.md"
 ---
 
@@ -9,29 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä, miksi voisi hyödyntää debug-tulostuksen käyttöä Go-ohjelmoinnissa. Se voi auttaa ratkaisemaan virheitä ja vianmäärityksessä sekä parantaa ohjelman tehokkuutta. 
+Kun ohjelmoimme Go:lla, on usein tarpeen tarkistaa, mitä tapahtuu koodissamme ja miksi se toimii tietyllä tavalla. Tässä tilanteessa on hyödyllistä käyttää debug-ulostulon tulostamista nähdäksemme, mitä tietoja ja arvoja sovelluksemme käsittelee.
 
-## Ohjeet
+## Miten
 
-Debug-tulostuksen käyttö on helppoa Go-koodissa. Se voidaan tehdä kahdella tavalla: 
+Käytettäessä Go:n `fmt` -pakettia, meillä on helppo tapa tulostaa debug-merkkijonoja ja arvoja. Voimme käyttää `Printf` -metodia ja interpoloida halutut arvot merkkijonoon.
 
-1. Käyttämällä "fmt" -pakettia: ```Go 
-fmt.Println("Debug-tulostus") 
+```Go
+package main
+
+import "fmt"
+
+func main() {
+  name := "Jenni"
+  age := 28
+  
+  fmt.Printf("Hei, olen %s ja olen %d vuotta vanha", name, age)
+}
 ```
 
-2. Käyttämällä log-kirjastoa: ```Go 
-log.Println("Debug-tulostus") 
+Tämä tulostaisi seuraavan merkkijonon konsolille:
+
+```Go
+Hei, olen Jenni ja olen 28 vuotta vanha
 ```
 
-Näiden kahden tavan välillä ei ole suurta eroa, joten voit valita oman mieltymyksesi mukaan. 
+Voimme myös käyttää `Sprintf` -metodia, jos haluamme tallentaa debug-merkkijonon muuttujaan sen sijaan, että tulostaisimme sen konsolille suoraan.
 
-Debug-tulostuksen avulla voit tulostaa muuttujien, sisäisten funktioiden ja muiden tietojen arvoja, mikä auttaa sinua ymmärtämään, mitä koodisi tekee ja mikä aiheuttaa mahdollisia virheitä. 
+```Go
+package main
 
-## Syväsukellus 
+import "fmt"
 
-Debug-tulostuksen käyttöön on monia syvällisiä tapoja, joista voit oppia lisää. Voit esimerkiksi käyttää log-kirjastoa erilaisten tasojen (esim. info, virhe, varoitus) asettamiseksi tai lisätä aikaleimat tulosteisiisi. Voit myös tutkia "reflect" -pakettia, joka mahdollistaa laajemman ja tarkemman tietojen tarkastelun debug-tulostuksen kautta. 
+func main() {
+  name := "Jenni"
+  age := 28
+  
+  debug := fmt.Sprintf("Hei, olen %s ja olen %d vuotta vanha", name, age)
+  fmt.Println(debug)
+}
+```
 
-## Katso myös 
+Tämä tulostaisi saman merkkijonon kuin edellisessä esimerkissä.
 
-- (Go-pakettien käyttöönotto)[https://golang.org/doc/code.html]
-- (Go-opas ja virheenkorjaus)[https://learnxinyminutes.com/docs/fi-fi/go-fi/]
+## Syvempi sukellus
+
+`fmt` -paketin lisäksi Go:ssa on myös muita tapoja tulostaa debug-ulostulot. Voimme käyttää `log` -pakettia tai `panic` -funktiota saadaksemme lisätietoja sovelluksemme suorituksesta.
+
+Lisäksi voimme käyttää `reflect` -paketin `ValueOf` -metodia tutkiaksemme rakenteita ja niiden arvoja ohjelmamme sisällä.
+
+## Katso myös
+
+- [Go fmt -paketti](https://golang.org/pkg/fmt/)
+- [Go log -paketti](https://golang.org/pkg/log/)
+- [Go reflect -paketti](https://golang.org/pkg/reflect/)
+- [Go panic -funktio](https://golang.org/pkg/builtin/#panic)

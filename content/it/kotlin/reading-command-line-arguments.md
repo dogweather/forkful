@@ -1,7 +1,9 @@
 ---
 title:                "Kotlin: Leggere gli argomenti della riga di comando"
+simple_title:         "Leggere gli argomenti della riga di comando"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/reading-command-line-arguments.md"
 ---
 
@@ -9,33 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Lettura degli argomenti della riga di comando in Kotlin è una parte importante della programmazione, poiché consente di interagire con il programma in modo più dinamico e personalizzato.
+Spesso, quando scriviamo programmi, abbiamo bisogno di leggere delle informazioni in ingresso. Queste informazioni possono essere inserite tramite la riga di comando e per questo è importante saperle gestire correttamente. In questo articolo vedremo come leggere gli argomenti della riga di comando utilizzando Kotlin.
 
 ## Come fare
 
-Per leggere gli argomenti della riga di comando in Kotlin, si può utilizzare la funzione `main()` con il parametro `args: Array<String>` che rappresenta gli argomenti forniti all'avvio del programma. Di seguito un esempio di codice che stampa gli argomenti ricevuti:
+Per leggere gli argomenti della riga di comando in Kotlin, possiamo utilizzare la classe `args` che ci fornisce una lista di stringhe con tutti gli argomenti passati al nostro programma. Vediamo un semplice esempio:
 
 ```Kotlin
 fun main(args: Array<String>) {
-    println("Gli argomenti forniti sono: ")
+    // Stampiamo gli argomenti passati alla riga di comando
     for (arg in args) {
         println(arg)
     }
 }
 ```
 
-Esempio di output:
+Se ad esempio eseguiamo il programma passando come argomenti "ciao" e "mondo":
+
+```Kotlin
+$ kotlin MyClass.kt ciao mondo
 ```
-Gli argomenti forniti sono:
-arg1
-arg2
+
+Otterremo in output:
+
+```
+ciao
+mondo
+```
+
+Possiamo anche accedere ad un argomento specifico utilizzando la sintassi `args[posizione]` dove `posizione` indica la posizione dell'argomento nella riga di comando, partendo da 0. Ad esempio, se vogliamo stampare solo il secondo argomento:
+
+```Kotlin
+fun main(args: Array<String>) {
+    // Stampiamo solo il secondo argomento passato alla riga di comando
+    println(args[1])
+}
+```
+
+Se eseguiamo il programma con gli stessi argomenti di prima, otterremo in output:
+
+```
+mondo
 ```
 
 ## Approfondimento
 
-Per utilizzare gli argomenti della riga di comando in modo più avanzato, si possono utilizzare le funzioni disponibili nella libreria `kotlin.system`, come ad esempio `args.drop(n)` per scartare i primi `n` argomenti, `args.contains("valore")` per verificare se un determinato valore è presente tra gli argomenti o ancora `args.joinToString()` per convertirli in una stringa separata da uno specifico delimitatore.
+Oltre alla semplice lettura degli argomenti della riga di comando, possiamo anche controllare il numero di argomenti passati utilizzando la proprietà `size` della classe `args` e gestire eventuali errori. Ad esempio:
+
+```Kotlin
+fun main(args: Array<String>) {
+    // Controlliamo che siano stati passati almeno 2 argomenti
+    if (args.size < 2) {
+        println("Errore: devono essere passati almeno 2 argomenti")
+    } else {
+        // Stampiamo gli argomenti passati
+        for (arg in args) {
+            println(arg)
+        }
+    }
+}
+```
+
+Vediamo quindi che è importante gestire in modo corretto gli argomenti della riga di comando, soprattutto quando si lavora con programmi più complessi.
 
 ## Vedi anche
 
-- Documentazione ufficiale di Kotlin sulla lettura degli argomenti della riga di comando: https://kotlinlang.org/docs/tutorials/command-line.html
-- Tutorial su come utilizzare gli argomenti della riga di comando in Kotlin: https://www.baeldung.com/kotlin/command-line-arguments
+Se vuoi approfondire ulteriormente l'argomento, ti consiglio di dare un'occhiata a questi articoli:
+
+- [Documentazione ufficiale di Kotlin - Command Line Arguments](https://kotlinlang.org/docs/command-line.html)
+- [Tutorial di Medium - How to Read Command Line Arguments in Kotlin](https://medium.com/@kotlindroid/how-to-read-command-line-arguments-in-kotlin-b19291513eee)

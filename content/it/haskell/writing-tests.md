@@ -1,54 +1,55 @@
 ---
 title:                "Haskell: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché scrivere test in Haskell?
 
-Scrivere test di programmazione è un processo importante per garantire che il nostro codice funzioni correttamente e che eventuali modifiche non rompano funzionalità esistenti. I test ci permettono di avere maggiore sicurezza e fiducia nel nostro codice.
+Scrivere test può sembrare noioso e dispendioso di tempo, ma in realtà è un'attività molto importante per qualsiasi linguaggio di programmazione, compreso Haskell. I test ci permettono di verificare l'integrità del nostro codice e di individuare eventuali bug, evitando così problemi maggiori una volta che il nostro programma è in produzione. Inoltre, scrivere test ci aiuta a comprendere meglio il nostro codice e a tenere traccia dei cambiamenti che apportiamo.
 
-## Come
+## Come scrivere test in Haskell
 
-Scrivere test in Haskell è semplice e diretto. Iniziamo creando una nuova cartella per il nostro progetto e creiamo un file `tests.hs` all'interno di essa. Utilizzeremo il framework di test `HUnit`, quindi è necessario importarlo come segue:
+Per scrivere test in Haskell, è necessario utilizzare un modulo chiamato "Test.HUnit", che fornisce funzioni utili per creare e eseguire test. Di seguito è riportato un esempio di codice che utilizza HUnit per testare una semplice funzione addizione:
 
 ```Haskell
 import Test.HUnit
+
+-- Definizione della funzione "addizione"
+addizione :: Int -> Int -> Int
+addizione x y = x + y
+
+-- Test della funzione con due input diversi
+testAddizione = TestCase (assertEqual "1+2 should be equal to 3" 3 (addizione 1 2))
+testAddizione2 = TestCase (assertEqual "-5+10 should be equal to 5" 5 (addizione (-5) 10))
+
+-- Lista dei test da eseguire
+tests = TestList [TestLabel "testAddizione" testAddizione, TestLabel "testAddizione2" testAddizione2]
+
+-- Esecuzione dei test
+main = do
+    runTestTT tests
 ```
 
-Possiamo quindi iniziare a scrivere il nostro primo test utilizzando la funzione `assertEqual`, che confronta il valore atteso con il valore ottenuto. Ad esempio, se vogliamo testare la funzione `double` che raddoppia un numero, il nostro test potrebbe essere così:
+L'output che otterremo dall'esecuzione di questo programma sarà:
 
-```Haskell
-testDouble = TestCase (assertEqual "La funzione double non funziona correttamente" 8 (double 4))
+```bash
+Cases: 2 attempted, 2 successes
+Counts {cases = 2, tried = 2, errors = 0, failures = 0}
 ```
 
-Per eseguire questo test, dobbiamo creare una suite di test utilizzando la funzione `TestList` e passare tutti i test che vogliamo eseguire come argomento. Ad esempio, possiamo creare una suite che contiene solo il nostro testDouble:
+Possiamo vedere che entrambi i test sono stati superati, il che significa che la nostra funzione "addizione" funziona correttamente per questi due input. In caso di errori, HUnit ci indicherà quale test è fallito e quale era il risultato aspettato.
 
-```Haskell
-tests = TestList [testDouble]
-```
+## Approfondimenti su come scrivere test in Haskell
 
-Infine, possiamo eseguire effettivamente la suite di test utilizzando la funzione `runTestTT`:
-
-```Haskell
-main = runTestTT tests
-```
-
-Eseguendo questo programma, vedremo l'output che ci dirà se il nostro test ha avuto successo o meno. Nel nostro caso, il testDouble dovrebbe avere successo poiché la funzione `double` raddoppia correttamente il numero 4.
-
-## Deep Dive
-
-Scrivere test ci permette di avere una migliore comprensione del nostro codice, in quanto dobbiamo pensare al possibile input e output della nostra funzione. Inoltre, ci aiuta a identificare e correggere eventuali bug o problemi nel codice prima che essi si manifestino in produzione.
-
-Un altro aspetto importante dei test è che ci permettono di effettuare modifiche al codice con maggiore sicurezza, in quanto possiamo eseguire i test per verificare che tutti i cambiamenti non abbiano introdotto bug o comportamenti indesiderati.
-
-Inoltre, scrivere test ci aiuta a sviluppare codice più modulare e manutenibile. Infatti, se il nostro codice è ben testato, possiamo facilmente identificare dove e come apportare modifiche senza dover rischiare di rompere funzionalità esistenti.
+Oltre ad HUnit, esistono altre librerie utili per scrivere test in Haskell, come ad esempio "QuickCheck", che ci permette di generare automaticamente una grande quantità di input differenti per testare la nostra funzione. Inoltre, essere in grado di scrivere test in Haskell significa capire meglio i concetti di immutabilità e funzioni pure, fondamentali nella programmazione funzionale.
 
 ## Vedi anche
-
-- [HUnit QuickCheck](https://hackage.haskell.org/package/HUnit-QuickCheck) - una estensione per HUnit che permette di scrivere test proprietari usando il framework QuickCheck.
-- [Sito ufficiale di Haskell](https://www.haskell.org/) - per maggiori informazioni su Haskell e la programmazione funzionale in generale.
-- [Documentazione di HUnit](https://hackage.haskell.org/package/HUnit) - per una maggiore comprensione dei concetti e delle funzioni utilizzate in questo post.
+- [Documentazione ufficiale di HUnit](https://hackage.haskell.org/package/HUnit)
+- [QuickCheck su Hackage](https://hackage.haskell.org/package/QuickCheck)
+- [Esempio di test con QuickCheck](https://www.fpcomplete.com/blog/2017/07/functional-quickcheck-30-in-minutes/)

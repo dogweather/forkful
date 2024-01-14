@@ -1,27 +1,50 @@
 ---
 title:                "Swift: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-Det å koble sammen strenger er en viktig ferdighet for enhver Swift-programmerer. Det lar deg kombinere ulike tekstbiter for å lage dynamiske meldinger og beskrivelser i programmene dine.
+## Hvorfor
+Noen ganger er det nødvendig å sette sammen flere strenger til én lang streng i Swift-programmering. Dette kan være nyttig for å lage dynamiske strenger som inneholder variabel data, som for eksempel en brukers navn eller alder, ved siden av fast tekst. Slik kan du enkelt tilpasse meldinger og informasjon i appen din.
 
-# Slik gjør du det
-```swift
-let navn = "Marie"
-let alder = 25
-let intro = "Hei, jeg heter \(navn) og jeg er \(alder) år gammel."
-print(intro)
+## Hvordan
+Det er flere måter å konkatenerer strenger i Swift på, men den enkleste metoden er å bruke operatøren `+` eller kommandoen `append()`. La oss se på et eksempel:
+
+```Swift
+let navn = "Ingrid"
+let alder = 29
+print("Hei, mitt navn er " + navn + " og jeg er " + String(alder) + " år gammel.")
 ```
-Output: Hei, jeg heter Marie og jeg er 25 år gammel.
 
-# Dykk dypere
-Når vi kombinerer strenger ved hjelp av innsettingsoperatøren `\()`, gjør Swift en rekke bak-kulissene endringer for oss. Det oppretter en ny streng ved å kopiere begge de eksisterende strengene og deretter sette dem sammen. Dette kan være en viktig ting å vite når du jobber med store tekstdata som kan føre til ytelsesproblemer.
+Dette vil resultere i en utskrift av "Hei, mitt navn er Ingrid og jeg er 29 år gammel." ved hjelp av `+`-operatøren. Ved å bruke `append()`-kommandoen, kan vi skrive det samme eksemplet som:
 
-# Se også
-- [Offisiell Swift-dokumentasjon](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Swift blogs](https://swift.org/blog/)
+```Swift
+var personInfo = "Hei, mitt navn er "
+personInfo.append(navn)
+personInfo.append(" og jeg er ")
+personInfo.append(String(alder))
+personInfo.append(" år gammel.")
+print(personInfo)
+```
+
+Dette vil også gi utskriften vår.
+
+## Dykk dypere
+I Swift er det også mulig å interpolere strenger ved hjelp av `\(variable)`. Dette betyr at i stedet for å bruke `+` eller `append()`, kan vi inkludere variabler direkte i strengene våre. La oss se på et eksempel:
+
+```Swift
+let favorittMat = "pizza"
+print("Jeg elsker å spise \(favorittMat) til middag.")
+```
+
+Dette vil gi utskriften vår av "Jeg elsker å spise pizza til middag." Som du kan se, gjør dette det enklere å inkludere og formatere variabler i strengene våre.
+
+## Se også
+* [Swift String and Character documentation](https://developer.apple.com/documentation/swift/string)
+* [Free Swift tutorials and resources](https://www.hackingwithswift.com)
+* [Swift docs på norsk](https://swiftlang.nga.gov.au)

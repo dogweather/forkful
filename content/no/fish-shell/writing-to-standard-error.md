@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Skriver til standardfeil"
+title:                "Fish Shell: Å skrive til standardfeil"
+simple_title:         "Å skrive til standardfeil"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/writing-to-standard-error.md"
 ---
 
@@ -9,38 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Innen programmering er det viktig å kunne håndtere feil, og dette gjelder spesielt når det kommer til å programmere med Fish Shell. En måte å håndtere feil på er å skrive til standard error (stderr) i stedet for standard output (stdout). Dette kan være nyttig for å fange og behandle eventuelle feilmeldinger som kan oppstå under kjøring av et program.
+Å skrive til standard error er en viktig del av feilsøking og debugging i Fish Shell. Det lar deg få informasjon om eventuelle feil eller problemer som oppstår under kjøring av et program.
 
 ## Slik gjør du det
 
-For å skrive til standard error i Fish Shell, kan du bruke kommandoen `echo` etterfulgt av teksten du ønsker å skrive til stderr, og så rute det til stderr ved hjelp av symbolet `>`.
+For å skrive til standard error kan du bruke kommandoen `echo` etterfulgt av `.`, som representerer standard error-strømmen. For eksempel:
 
-```Fish Shell
-echo "Dette er en feilmelding" > stderr
+```
+Fish Shell $ echo "Dette er en feilmelding" 1>&2
 ```
 
-Dette vil skrive teksten "Dette er en feilmelding" til standard error. Du kan også bruke `>`-symbolet sammen med andre kommandoer som kan generere feil, for eksempel `ls`:
+Dette vil skrive ut teksten "Dette er en feilmelding" til standard error, som kan sees ved å bruke `2>` operatøren. Her er et eksempel på hvordan dette ser ut i terminalen:
 
-```Fish Shell
-ls filsomikkeeksisterer > stderr
+```
+Dette er en feilmelding
 ```
 
-Dette vil skrive feilmeldingen "ls: cannot access 'filsomikkeeksisterer': No such file or directory" til standard error.
+## Dypdykk
 
-## Dykk dypere
+Når du skriver til standard error, er det viktig å vite forskjellen mellom standard error og standard output. Standard error brukes spesifikt for feilmeldinger og kan skille seg fra standard output som brukes til normal utskrift av informasjon.
 
-Skriving til standard error kan også være nyttig for å skrive ut feil fra et skript eller program. For å få tak i feilmeldinger fra et skript, kan du bruke kommandoen `2>&1` for å rute både stderr og stdout til samme sted.
+Du kan også kombinere skriving til standard error og standard output ved å bruke `2>&1` operatøren. Dette vil sende både standard error og standard output til det samme stedet. For eksempel:
 
-```Fish Shell
-./skript.sh 2>&1
 ```
-
-Dette lar deg fange og håndtere eventuelle feilmeldinger som skriptet kan generere.
+Fish Shell $ echo "Feilmelding" 2>&1
+Feilmelding
+```
 
 ## Se også
 
-Hvis du ønsker å lære mer om hvordan du håndterer feil i Fish Shell, kan disse ressursene være nyttige:
-
-- [Fish Shell dokumentasjon om stderr](https://fishshell.com/docs/current/tutorial.html#err)
-- [Fish Shell Stack Overflow forum](https://stackoverflow.com/questions/tagged/fish)
-- [Fish Shell Slack-samfunn](https://fishshell.com/docs/current/tutorial.html#slack)
+- [Fish Shell offisiell nettside](https://fishshell.com/)
+- [Dokumentasjon for å skrive til standard error i Fish Shell](https://fishshell.com/docs/current/tutorial.html#error-output)
+- [En oversikt over Fish Shell kommandoer og syntax](https://fishshell.com/docs/current/commands.html)

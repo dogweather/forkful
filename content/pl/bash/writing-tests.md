@@ -1,50 +1,70 @@
 ---
 title:                "Bash: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "Bash"
-category:             "Testing and Debugging"
+category:             "Bash"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego pisanie testów jest ważne?
+## Dlaczego pisać testy?
 
-Testowanie jest integralną częścią procesu tworzenia oprogramowania i pomaga zapewnić jakość i niezawodność kodu. Dzięki pisaniu testów możemy upewnić się, że nasz kod działa zgodnie z oczekiwaniami. Jest to szczególnie ważne w większych projektach, gdzie zmiany w kodzie mogą mieć nieoczekiwaną lub niepożądaną konsekwencję.
+Pisanie testów jest niezbędnym elementem w procesie programowania, ponieważ pozwala nam zweryfikować poprawność naszego kodu i zapobiegać błędom w przyszłości. Odpowiednie testowanie jest kluczowe dla zachowania wysokiej jakości naszych aplikacji.
 
-# Jak to zrobić?
+## Jak pisać testy w Bash?
 
-Aby napisać testy w Bash, musimy zacząć od zdefiniowania funkcji testowych. Funkcje te powinny zawierać instrukcje warunkowe do porównywania oczekiwanych wyników z faktycznymi wynikami naszego kodu. Możemy również użyć słowa kluczowego `assert` do sprawdzenia poprawności poszczególnych aspektów naszego kodu.
-
-```Bash
-# Przykładowa funkcja testowa z użyciem assert
-test_function {
-    expected_result=2
-    actual_result=$(bash_script.sh)
-    assert "$expected_result" "$actual_result"
-}
-```
-
-Możemy również zdefiniować testy jednostkowe, które umożliwią nam testowanie pojedynczych funkcji lub części kodu naszego programu. Aby to zrobić, musimy użyć poleceń takich jak `grep` lub `wc`, aby uzyskać określony wynik z wyjścia naszego programu i porównać go z oczekiwanym wynikiem.
+Pisanie testów w Bash jest prostsze niż się wydaje. Możemy wykorzystać polecenia `test` lub `[[ ]]` do sprawdzania warunków logicznych. Przykładowy kod wyglądałby następująco:
 
 ```Bash
-# Przykładowa funkcja testowa dla określonej funkcji
-unit_test {
-    expected_result="Hello World"
-    actual_result=$(echo "Hello World")
-    if [ "$expected_result" == "$actual_result" ]; then
-        echo "Test zakończony sukcesem!"
-    else
-        echo "Test zakończony niepowodzeniem!"
-    fi
-}
+#!/bin/bash
+
+string="Hello world"
+
+# Testowanie czy zmienna jest niepusta
+test -n "$string"
+# Output: 0 (true)
+
+# Testowanie czy zmienna jest pusta
+test -z "$string"
+# Output: 1 (false)
+
+# Testowanie warunku if-else
+if [[ "$string" == "Hello" ]]; then
+  echo "Zmienna równa się 'Hello'"
+else
+  echo "Zmienna nie równa się 'Hello'"
+fi
+# Output: Zmienna nie równa się 'Hello'
 ```
 
-# Głębsze zanurzenie
+W powyższym przykładzie użyliśmy polecenia `test` do sprawdzania, czy zmienna `string` jest pusta lub niepusta. Następnie wykorzystaliśmy warunek `if-else` z użyciem operatora `==` do porównania zmiennej z danym ciągiem znaków.
 
-Podczas pisania testów w Bash, istotnym elementem jest umiejętność tworzenia złożonych i precyzyjnych asercji. Możemy również wykorzystać polecenia takie jak `exit` lub `return` do przerwania kodu w przypadku wystąpienia nieoczekiwanego wyniku. Dodatkowo, warto również zwrócić uwagę na przypisywanie zmiennych i funkcji do zmiennych.
+## Głębszy wgląd w pisanie testów
 
-# Zobacz także
+Tworzenie testów w Bash może być nieco skomplikowane, gdy musimy testować więcej zaawansowane warunki. W takich przypadkach przydatne mogą być polecenia `grep` i `awk`, które umożliwiają przeszukiwanie i analizowanie plików tekstowych. Przykładowy kod wyglądałby następująco:
 
-- [Bash Testing: Fast, Simple Unit Tests with Bash Test Runner](https://www.compose.com/articles/bash-testing-pro-tip-use-bash-test-runner/)
-- [Bash Automated Testing System](https://bats-core.readthedocs.io/en/latest/)
-- [Testing in bash. Write your own test framework without any dependency](https://medium.com/@nilnandanand/testing-in-bash-bc24f8dfccc8)
+```Bash
+#!/bin/bash
+
+# Pobranie listy plików o rozszerzeniu .txt
+files=$(ls *.txt)
+
+# Użycie polecenia grep do przeszukania wszystkich plików zawierających słowo "test"
+echo "$files" | grep "test"
+# Output: test1.txt, test2.txt
+
+# Użycie polecenia awk do wyświetlenia drugiej kolumny z tekstu (dzieląc go na pola za pomocą "-")
+echo "test-1 test-2" | awk -F "-" '{print $2}'
+# Output: 2
+```
+
+W powyższym przykładzie użyliśmy polecenia `ls` do pobrania listy plików z określonym rozszerzeniem. Następnie, za pomocą `grep` i `awk`, przefiltrowaliśmy i analizowaliśmy dane, aby uzyskać pożądane informacje.
+
+## Zobacz również
+
+- [Bash Guide](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+- [Testing in Bash](http://wiki.bash-hackers.org/commands/classictest)
+- [grep Man Page](https://linux.die.net/man/1/grep)
+- [awk Man Page](https://linux.die.net/man/1/awk)

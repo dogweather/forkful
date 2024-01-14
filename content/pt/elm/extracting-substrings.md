@@ -1,52 +1,46 @@
 ---
-title:                "Elm: Extraindo subcadeias"
+title:                "Elm: Extraindo Substrings"
+simple_title:         "Extraindo Substrings"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em Elm?
+## Por que utilizar a extração de substrings em Elm?
 
-Extrair substrings é um processo bastante comum em programação. Pode ser necessário quando você deseja obter partes específicas de uma string maior, ou quando precisa fazer manipulação de dados mais complexa. Em Elm, a manipulação de strings é feita de forma segura e imutável, o que torna o processo de extrair substrings ainda mais vantajoso.
+A extração de substrings é uma técnica muito útil ao trabalhar com strings em Elm. Isso permite que você obtenha pedaços específicos de uma string maior, facilitando o processamento de dados e a criação de algoritmos mais precisos.
 
-## Como fazer
+## Como fazer a extração de substrings em Elm
 
-Para extrair substrings em Elm, usamos a função `slice`, que trabalha com duas posições de índice da string original. Os dois índices são fornecidos como argumentos da função, e a substring resultante é retornada como um novo valor. Vejamos um exemplo:
+Para extrair uma substring em Elm, você precisará da função `String.slice` que recebe três argumentos: a string original, o índice inicial e o índice final. Por exemplo:
 
-```Elm
-slice 2 5 "banana" -- retorna "nan"
 ```
-
-No exemplo acima, o primeiro argumento `2` corresponde à posição inicial da substring, enquanto o segundo argumento `5` corresponde à posição final. É importante notar que o índice começa em zero e a posição final não é incluída na substring resultante.
-
-Podemos usar também valores negativos para os índices, que são contados a partir do final da string. Por exemplo:
-
-```Elm
-slice -3 -1 "banana" -- retorna "an"
+Elm.String.slice "Hello World!" 0 4
 ```
+Isso retornará a substring "Hello" da string original.
 
-Não se preocupe se os índices fornecidos forem maiores que o tamanho da string original. Nesse caso, a função simplesmente retorna a string original.
+Você também pode utilizar números negativos para o índice final, o que irá contar os caracteres a partir do final da string. Por exemplo:
 
-```Elm
-slice 0 20 "banana" -- retorna "banana"
 ```
-
-## Deep Dive
-
-Além da função `slice`, Elm também oferece a função `substring`, que possui uma assinatura ligeiramente diferente:
-
-```Elm
-substring : Int -> Int -> String -> String
+Elm.String.slice "Hello World!" 6 -1
 ```
+Isso retornará a substring "World" da string original.
 
-Como podemos ver, esta função requer um argumento adicional - a string original. No entanto, ela possui a mesma funcionalidade da função `slice`.
+## Aprofundando na extração de substrings em Elm
 
-Além disso, é importante mencionar que as funções `slice` e `substring` são apenas alguns exemplos de como podemos extrair substrings em Elm. Existem outras funções disponíveis, como `left`, `right` e `mid`, que também podem ser úteis em diferentes situações.
+Além da função `String.slice`, o pacote `elm/chars` também oferece a função `slice`, que permite extrair substrings com base em caracteres, em vez de índices numéricos. Isso pode ser útil quando você tem uma string com caracteres multibyte, como acentos e emojis.
+
+Você também pode utilizar a função `String.words` para dividir uma string em substrings com base nos espaços em branco. Por exemplo:
+
+```
+Elm.String.words "Hello World!"
+```
+Isso retornará uma lista de strings ["Hello", "World!"].
 
 ## Veja também
 
-- Documentação oficial Elm sobre funções de strings: https://package.elm-lang.org/packages/elm/core/latest/String
-- Tutorial Elm: Manipulando strings de forma segura: https://dev.to/kmetter/tutorial-elm-manipulating-strings-safely-1ffc
-- Exemplos de uso de funções de strings em Elm: https://www.programming-idioms.org/idiom/61/substring-with-boundaries/780/elm
+- Documentação do pacote `elm/chars`: https://package.elm-lang.org/packages/elm/chars/latest/
+- Documentação sobre a função `String.words`: https://package.elm-lang.org/packages/elm/core/latest/String#words

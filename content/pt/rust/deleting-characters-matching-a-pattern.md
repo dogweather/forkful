@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Excluindo caracteres que correspondem a um padrão."
+title:                "Rust: Excluindo caracteres que correspondem a um padrão"
+simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,46 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Existe uma tarefa comum de edição de texto que é deletar caracteres em um determinado padrão. Essa ação pode ser realizada manualmente, mas em linguagens de programação como o Rust, existem maneiras mais eficientes de lidar com o problema.
+O Rust é uma linguagem de programação moderna e eficiente que vem ganhando cada vez mais popularidade entre os desenvolvedores. Uma das suas principais vantagens é o seu sistema de tipos fortemente estático, que evita diversos erros de programação e garante uma maior segurança no desenvolvimento de software. Além disso, o Rust também permite a utilização de linguagens de script, o que facilita muito a criação de programas com tarefas repetitivas, como a exclusão de caracteres que correspondem a um determinado padrão.
 
 ## Como fazer
 
-Para começar, vamos definir nosso texto de exemplo e o padrão que queremos deletar:
+Se você deseja excluir caracteres que seguem um padrão específico em alguma string em Rust, existem algumas opções que você pode utilizar. Uma delas é a função `replace` da biblioteca padrão do Rust, que pode ser usada da seguinte forma:
 
 ```Rust
-let texto = "Esta é uma string de exemplo que contém alguns caracteres desnecessários.";
-let padrao = "a"; // vamos deletar todas as letras "a" do texto
+let string = String::from("Olá, mundo!");
+let novo_string = string.replace("l", "");
+
+println!("{}", novo_string);
 ```
 
-Para deletar os caracteres que correspondem ao padrão, podemos usar o método `replace` da biblioteca padrão do Rust:
+Neste exemplo, estamos substituindo todos os caracteres "l" da string por uma string vazia, ou seja, excluindo-os. O resultado será "Oá, mundo!", pois os caracteres "l" foram removidos.
 
-```Rust 
-let novo_texto = texto.replace(padrao, "");
-println!("{}", novo_texto);
+Outra opção é utilizar a biblioteca de expressões regulares do Rust, `regex`, que oferece um conjunto de ferramentas poderosas para lidar com padrões em strings. Veja um exemplo de como excluir todos os números de uma string utilizando expressões regulares:
+
+```Rust
+use regex::Regex;
+
+let string = String::from("123Olá456, mundo!");
+let re = Regex::new(r"[0-9]").unwrap();
+let novo_string = re.replace_all(&string, "");
+
+println!("{}", novo_string);
 ```
 
-Isso imprimirá o novo texto sem os caracteres correspondentes ao padrão:
+O resultado será "Olá, mundo!", pois todos os números foram excluídos da string original. Vale ressaltar que a utilização de expressões regulares pode ser mais complexa do que a função `replace`, mas oferece uma grande flexibilidade para lidar com diferentes padrões.
 
-```
-Est é um string de exemplo que contém alguns caracteres desnecessários.
-```
+## Viagem profunda
 
-Se o seu texto é mutável, é possível usar o método `retain` para modificar o texto atual:
+Para entender melhor como é feita a exclusão de caracteres em Rust, é importante saber como a linguagem lida com strings. Diferentemente de outras linguagens, onde as strings são mutáveis e podem ser modificadas diretamente, em Rust elas são imutáveis e podem se tornar bem mais complexas de se trabalhar. Por isso, quando desejamos excluir caracteres de uma string em Rust, na verdade estamos criando uma nova string a partir da original, sem os caracteres que desejamos eliminar.
 
-```Rust 
-texto.retain(|c| c != 'a');
-println!("{}", texto);
-```
-
-## Deep Dive
-
-No código acima, usamos a função de ordenação `retain` do Rust, que filtra nossos caracteres com base em uma condição. No nosso caso, queríamos manter apenas os caracteres que não correspondiam ao padrão que queríamos deletar.
-
-É importante notar que o método `replace` é mais indicado para textos pequenos, pois ele aloca uma nova `String` para o novo texto. Já o método `retain` modifica diretamente o texto existente, o que pode ser mais eficiente para textos maiores.
-
-Outra opção para deletar caracteres em um padrão é usar regex (expressões regulares), que permitem que você faça buscas mais complexas em um texto. O Rust possui uma biblioteca `regex` que pode ser usada para isso.
+Além disso, é importante entender como as strings são representadas em memória em Rust. Elas são armazenadas como um vetor de bytes, e cada caractere da string ocupa uma certa quantidade de bytes, dependendo do seu tipo e da codificação utilizada. Isso significa que, ao excluir um caractere, é preciso recalcular a posição de todos os caracteres seguintes na string. Por isso, a exclusão de caracteres pode ser uma operação custosa em termos de desempenho em strings muito extensas.
 
 ## Veja também
-- [Documentação da biblioteca padrão do Rust](https://doc.rust-lang.org/std)
-- [Tutorial de regex no Rust](https://blog.mediapart.fr/howard-guinaldo/blog/121017/rust-regex-tutorial)
-- [Referência das funções `replace` e `retain`](https://doc.rust-lang.org/std/string/index.html#method.retain)
+
+- Documentação da função `replace`: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
+- Documentação da biblioteca `regex`: https://docs.rs/regex/1.4.2/regex/
+- Tutorial sobre expressões regulares em Rust: https://docs.rs/regex/1.4.1/regex/#syntax

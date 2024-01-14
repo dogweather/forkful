@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/writing-to-standard-error.md"
 ---
 
@@ -9,36 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Warum
 
-Das Schreiben auf den Standardfehler (Standard Error) ist ein wichtiger Teil der Programmierung in Ruby. Es ermöglicht uns, Fehlermeldungen und andere wichtige Informationen während der Ausführung unseres Codes zu überwachen und zu erfassen. In diesem Blogbeitrag werden wir uns genauer anschauen, warum es wichtig ist, auf den Standardfehler zu schreiben.
+Das Schreiben auf den Standardfehler-Ausgabestrom ist eine wichtige Technik beim Schreiben von Ruby-Programmen. Es ermöglicht Ihnen Fehlermeldungen, Warnungen und anderen wichtigen Output anzuzeigen, die für die Fehlerbehandlung und das Debugging Ihres Codes unerlässlich sind.
 
-# So geht's
+# Wie geht man vor
 
-Das Schreiben auf den Standardfehler ist in Ruby ganz einfach. Wir verwenden einfach den Befehl `STDERR.puts`. Lass uns ein Beispiel anschauen:
+Um auf den Standardfehler-Ausgabestrom zu schreiben, können Sie die built-in Methode `warn` verwenden. Sie akzeptiert als Argumente eine beliebige Anzahl an Strings oder Objekten und gibt diese auf dem Standardfehler-Kanal aus. Ein Beispiel:
 
-```ruby
-STDERR.puts "Dies ist eine Fehlermeldung"
+```Ruby
+warn "Dies ist eine Warnung"
+warn 12345
 ```
 
-Wenn wir diesen Code ausführen, wird die Ausgabe auf dem Standardfehler ausgegeben, anstatt auf dem Standardausgang wie üblich. Dies hilft uns, Fehlermeldungen und andere wichtige Informationen sofort zu erkennen.
+Die Ausgabe sieht dann so aus:
 
-Eine weitere Möglichkeit, auf den Standardfehler zu schreiben, ist die Verwendung des `raise`-Befehls. Wenn wir `raise` ohne einen Fehler übergeben, wird automatisch eine `RuntimeError` erzeugt und auf den Standardfehler geschrieben.
-
-```ruby
-raise "Dies ist eine RuntimeError"
+```Ruby
+# Dies ist eine Warnung
+# 12345
 ```
-
-Der Output wird ähnlich aussehen wie der Output vom `STDERR.puts`-Befehl.
 
 # Tiefere Einblicke
 
-Das Schreiben auf den Standardfehler ermöglicht es uns, Fehlermeldungen zu erfassen und zu überwachen. Es ist besonders nützlich beim Debuggen von Code oder bei der Entwicklung von komplexen Anwendungen. Indem wir Fehlermeldungen auf den Standardfehler schreiben, können wir sicherstellen, dass sie von anderen Teilen unseres Codes erfasst und verarbeitet werden können.
+Während das Schreiben auf den Standardfehler-Ausgabestrom einfach erscheint, gibt es einige wichtige Details zu beachten. Zum Beispiel, dass die `warn` Methode die Objekte in der Reihenfolge ausgibt, in der sie als Argumente übergeben wurden. Außerdem ist es wichtig zu wissen, dass die Ausgabe auf dem gleichen Kanal erfolgt wie das Standard Error Level des Prozesses.
 
-Darüber hinaus ist es eine gute Praxis, auf den Standardfehler zu schreiben, wenn wir Ausnahmen (Exceptions) erfassen und behandeln. Indem wir die Ausnahme auf den Standardfehler schreiben, stellen wir sicher, dass sie nicht einfach verschluckt wird und wir sie untersuchen können.
-
-Insgesamt ist das Schreiben auf den Standardfehler eine wichtige Fähigkeit für jeden Ruby-Entwickler. Es ermöglicht uns, unseren Code besser zu verstehen und Probleme effektiver zu beheben.
+Wenn Sie mehr über das Lesen und Schreiben auf verschiedenen Ausgabeströmen in Ruby erfahren möchten, lesen Sie bitte die offizielle Dokumentation: https://ruby-doc.org/core-2.6.3/IO.html
 
 # Siehe auch
 
-- [The Ruby Standard Library Documentation](https://ruby-doc.org/stdlib-2.7.0/libdoc/logger/rdoc/Logger.html)
-- [Ruby Exceptions and Exception Handling](https://www.rubyguides.com/2019/05/ruby-exception-handling/)
-- [Ruby for Beginners](https://ruby-for-beginners.rubymonstas.org/)
+- Offizielle Ruby-Dokumentation über das Lesen und Schreiben von Ausgabeströmen: https://ruby-doc.org/core-2.6.3/IO.html
+- Ein praktisches Beispiel für das Schreiben auf den Standardfehler-Ausgabestrom: https://www.rubyguides.com/2018/10/standard-error-ruby/
+- Verwendung von `warn` vs. `puts` in Ruby: https://stackoverflow.com/questions/29837005/proper-use-of-warn-vs-puts-in-ruby

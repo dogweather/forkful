@@ -1,49 +1,41 @@
 ---
-title:                "Clojure: 从命令行读取参数"
+title:                "Clojure: 阅读命令行参数"
+simple_title:         "阅读命令行参数"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么会读取命令行参数
+## 为什么
 
-读取命令行参数是一种常见的编程技术，可以帮助程序员在执行代码时从终端接收和处理用户输入。它能够提高程序的灵活性和交互性，使得程序更容易被用户使用。在本文中，我们将学习如何在Clojure中读取命令行参数以及深入了解这一过程。
+有时候，在编写程序的过程中，我们需要从命令行中获取参数来控制程序的行为。这样可以让程序更加灵活，并且可以根据不同的参数做出不同的响应。因此，学习如何读取命令行参数是非常重要的。
 
-# 如何做到
+## 如何
 
-在Clojure中，我们可以使用```*command-line-args*```变量来读取命令行参数。它是一个字符串列表，其中每个元素都是一个命令行参数。让我们来看一个简单的示例代码：
+使用Clojure读取命令行参数非常简单，只需要使用`command-line-args`函数就可以了。例如，我们想要从命令行中获取用户名和密码，可以编写如下代码：
 
 ```Clojure
-(defn greet [name]
-  (println "Hello" name))
-
-(defn -main [& args]
-  (doseq [arg *command-line-args*]
-    (greet arg)))
+(def username (nth *command-line-args* 0))
+(def password (nth *command-line-args* 1))
 ```
 
-这段代码定义了一个叫做```greet```的函数，用来打印出问候语。接着，我们在```-main```函数中使用了```doseq```循环来遍历```*command-line-args*```变量中的每个命令行参数，并将其作为参数传递给```greet```函数。现在，让我们从终端运行这段代码，并给它传入几个参数：
+然后在命令行中运行程序时，可以通过在程序名后面加上用户名和密码来传递参数。例如：`java -jar myprogram.jar alice 123456`。程序就会将`alice`和`123456`分别赋值给`username`和`password`变量。
 
-```
-$ clj -m example.clj John Mary Bob
+可以看到，使用`command-line-args`函数可以轻松地读取命令行参数，并且还可以通过索引来获取不同的参数值。
 
-Hello John
-Hello Mary
-Hello Bob
-```
+## 深入探讨
 
-可以看到，程序成功读取并处理了我们传入的命令行参数，并打印出了对应的问候语。你也可以在程序中根据需要使用这些参数来进行其他操作。
+除了使用`command-line-args`函数读取命令行参数之外，Clojure还提供了`*command-line-args*`变量来获取所有的命令行参数。这个变量是一个字符串列表，可以通过`nth`函数来读取其中的值。
 
-# 深入了解
+另外，我们也可以通过使用`clojure.java.io/files`命名空间中的`command-line`函数来读取命令行参数。该函数会返回一个关联数组，包含了所有的命令行参数及其对应的值。
 
-在深入了解读取命令行参数的过程之前，我们需要了解一下命令行的基本结构。当我们在终端中输入一条命令时，比如```clj -m example.clj John Mary```，实际上是在告诉操作系统执行一个由多个单词（命令、参数等）组成的命令，而这些单词之间通过空格来分隔。因此，在Clojure中，我们可以通过访问```*command-line-args*```变量来获取这些单词，并使用它们来编写更加灵活和交互式的程序。
+总的来说，读取命令行参数在Clojure中是非常简单的，我们可以根据自己的需求来选择使用哪种方式。
 
-此外，我们可以通过使用```command-line-opts```函数来获取命令行中的可选参数。这个函数会将命令行中的可选参数转换为一个关联数组（可以理解为键值对集合），方便我们在程序中进行使用。如果你想要更深入了解如何使用```command-line-opts```函数，可以查看相关文档和实践一下。
+## 另请参阅
 
-# 参考链接
-
-- [Clojure官方文档](https://clojure.org/)
-- [Clojure Cookbook: Reading Command-Line Arguments](https://www.oreilly.com/library/view/clojure-cookbook/9781449366148/ch05.html)
-- [Clojure Programming/Building Command Line Applications](https://en.wikibooks.org/wiki/Clojure_Programming/Building_Command_Line_Applications)
+- [Clojure官方文档](https://clojure.org/reference/java_interop#command-line-options)
+- [如何编写命令行程序（英文）](https://hackernoon.com/how-to-make-a-command-line-program-in-clojure-4c8d1f8a2a19)
+- [命令行参数的处理（英文）](https://purelyfunctional.tv/article/reading-command-line-args-clojure/)

@@ -1,47 +1,50 @@
 ---
-title:                "Javascript: Lendo argumentos da linha de comando"
+title:                "Javascript: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
+## Por que
 
-Ler argumentos da linha de comando é uma habilidade importante para qualquer programador. Isso permite que você crie programas interativos que possam receber entradas do usuário sem a necessidade de uma interface gráfica. Além disso, é uma forma mais eficiente de executar seu programa, pois você pode passar parâmetros diretamente na linha de comando ao invés de editá-los no código.
+Você já se perguntou como os programas conseguem receber informações do usuário através da linha de comando? Isso é possível graças aos argumentos de linha de comando. Aprender a ler esses argumentos pode expandir suas habilidades de programação e tornar seus programas mais interativos.
 
 ## Como fazer
 
-Para ler argumentos da linha de comando em Javascript, usamos o objeto `process.argv`. Este objeto contém um array de argumentos passados na linha de comando, incluindo o caminho do executável usado para chamar o programa. Confira o código abaixo para um exemplo básico:
+Para começar a ler os argumentos da linha de comando em Javascript, precisamos acessar o objeto `process`. Podemos usar a função `process.argv` para obter uma lista com os argumentos fornecidos pelo usuário. Vamos ver um exemplo simples:
 
 ```Javascript
-// programa de exemplo para ler argumentos da linha de comando
-
-// imprime todos os argumentos passados na linha de comando
-console.log(process.argv);
-
-// imprime o segundo argumento, que é o primeiro após o caminho do arquivo
-console.log(process.argv[2]);
+// lendo argumentos da linha de comando
+let args = process.argv;
+console.log(args);
 ```
 
-Agora, se chamarmos este programa da seguinte forma: `node programa.js argumento1 argumento2`, a saída será a seguinte:
+Se executarmos este código no terminal usando o comando `node`, o resultado será uma lista com os argumentos fornecidos, sendo o primeiro elemento o caminho para o arquivo de execução e os demais os argumentos fornecidos pelo usuário. Por exemplo, se executarmos o seguinte comando:
 
 ```
-["caminho/do/executavel", "caminho/do/arquivo/programa.js", "argumento1", "argumento2"]
-argumento1
+node index.js argumento1 argumento2 argumento3
 ```
 
-Observe que o primeiro elemento do array é sempre o caminho do executável.
+o resultado seria:
 
-## Mergulho Profundo
+```
+[ 'caminho/para/o/arquivo/index.js', 'argumento1', 'argumento2', 'argumento3' ]
+```
 
-Além de ler argumentos simples passados na linha de comando, também é possível passar parâmetros com chaves e valores. Para isso, você precisará usar alguma biblioteca de terceiros, como o `yargs` ou o `minimist`. Essas bibliotecas facilitam a identificação e obtenção dos parâmetros passados na linha de comando.
+A partir dessa lista, você pode acessar cada argumento individualmente usando seu índice, por exemplo `args[2]` retornaria `argumento2`. Dessa forma, você pode utilizar informações fornecidas pelo usuário em seu programa Javascript.
 
-Outra coisa importante a saber é que os argumentos da linha de comando são sempre do tipo `string`, mesmo que você passe um número como argumento. Por isso, é necessário converter o tipo de dados conforme necessário.
+## Mergulho profundo
 
-## Veja Também
+Além da lista de argumentos, o objeto `process` também oferece outras informações úteis, como `process.argv0` (caminho absoluto para o executável Node.js), `process.cwd()` (caminho para o diretório de trabalho atual) e `process.env` (variáveis de ambiente). É importante ressaltar que os argumentos fornecidos sempre serão do tipo string, portanto, se precisar de um tipo diferente, como um número, será necessário convertê-lo.
 
-- [Documentação oficial do `process.argv`](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- [Biblioteca `yargs`](https://www.npmjs.com/package/yargs)
-- [Biblioteca `minimist`](https://www.npmjs.com/package/minimist)
+## Veja também
+
+- [Documentação do objeto Process no Node.js](https://nodejs.org/dist/latest-v14.x/docs/api/process.html)
+- [Tutorial de leitura de argumentos da linha de comando em Javascript](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-node-js)
+- [Vídeo explicando como ler argumentos da linha de comando em Javascript](https://www.youtube.com/watch?v=o_fTUchHBPs)
+
+Agora que você sabe como ler argumentos da linha de comando em Javascript, experimente implementar essa funcionalidade em seus próximos projetos e veja como ela pode melhorar a interatividade dos seus programas. Divirta-se programando!

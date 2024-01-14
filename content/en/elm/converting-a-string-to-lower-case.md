@@ -1,7 +1,9 @@
 ---
 title:                "Elm recipe: Converting a string to lower case"
+simple_title:         "Converting a string to lower case"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,36 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-String manipulation is a fundamental aspect of programming, and one commonly used operation is converting a string to lower case. This can be useful in various scenarios, such as comparing two strings without worrying about capitalization or generating user-friendly output.
+Converting a string to lower case is a common task in programming, especially when dealing with user input. It ensures consistency and simplifies comparisons between strings.
 
 ## How To
 
-Before diving into the code, it's important to note that strings in Elm are immutable, meaning they cannot be modified directly. Instead, a new string with the desired changes needs to be created. With that in mind, let's see how we can convert a string to lower case in Elm:
+Converting a string to lower case in Elm is a straightforward process. First, we need to import the `String` module:
 
-```Elm
+```elm
 import String exposing (toLower)
-
-toLower "Elm Programming" -- Outputs "elm programming"
 ```
 
-As seen in the code, the `toLower` function from the `String` module takes in a string as input and returns the lower case version of that string. It handles all special characters and accented letters as well.
+Next, we can use the `toLower` function to convert a string to lower case. Let's see an example:
 
-```Elm
-toLower "STRIng convertER 123" -- Outputs "string converter 123"
+```elm
+toLower "Hello World" -- Output: "hello world"
 ```
 
-The `toLower` function also works with non-alphabetical characters, such as numbers, symbols, and spaces.
+We can also use the `toLower` function on a list of characters, which can be useful when dealing with user input:
+
+```elm
+toLower ['E', 'L', 'M'] -- Output: "elm"
+```
+
+As you can see, the function returns a string in all lowercase letters.
 
 ## Deep Dive
 
-For those interested in understanding the inner workings of the `toLower` function, here's a deeper look at how it handles string conversion.
+Behind the scenes, the `toLower` function iterates through each character in the string and uses the Unicode lowercasing algorithm to convert it to lower case. This ensures that all characters, including special characters from different languages, are correctly converted.
 
-The `toLower` function works by iterating through each character in the original string and checking if it is a capital letter. If so, it uses the `Char.toCode` function to get the Unicode code point for that character, adds 32 to it (which is the difference between the ASCII code for upper and lower case letters), and then converts it back to a character using the `Char.fromCode` function.
+One important thing to note is that the `toLower` function does not modify the original string, but instead returns a new string in lowercase. This is because strings in Elm are immutable, meaning they cannot be changed after they are created.
 
-This process is repeated for each character in the string, and the resulting characters are combined to create the lower case version of the original string.
+Another thing to consider is that the `toLower` function only works on ASCII characters. If you need to convert non-ASCII characters to lower case, you can use the `map` function to apply the `toLower` function to each character in the string.
 
 ## See Also
 
-- Official Elm Documentation for String Module: https://package.elm-lang.org/packages/elm/core/latest/String
-- Interactive String manipulation tool: https://elm-lang.org/0.19.1/tools/make-elm-value
-- Article on String techniques in Elm: https://dev.to/jfmengels/extended-real-world-example-of-using-elm-for-web-trading-pace-calculator-3hee
+- [String.lowercase function - Elm documentation](https://package.elm-lang.org/packages/elm-lang/core/latest/String#lowercase)
+- [Unicode Lowercasing Algorithm](https://unicode.org/versions/Unicode13.0.0/ch03.pdf#page=144)

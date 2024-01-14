@@ -1,44 +1,43 @@
 ---
-title:                "Clojure: 正規表現の使用"
+title:                "Clojure: 正規表現の使用法"
+simple_title:         "正規表現の使用法"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-使用正規表現の理由:
+## なぜ
 
-正規表現は、文字列を検索や置換したりといったテキスト処理を行うために非常に便利なツールです。また、パターンを用いて文書を高度にマッチングすることも可能です。Clojureで正規表現を使用することで、テキスト処理の速度が向上し、コードをよりクリーンに保つことができます。
+正規表現を使う理由は非常に多くあります。例えば、文字列の検索や置換を効率的に行うことができます。また、データのパターンマッチングにも使われます。正規表現は柔軟なツールであり、多くのプログラミング言語でサポートされています。
 
-方法:
+## 使い方
 
-正規表現は、さまざまな方法で使用できます。まずは、```regex```関数を使用してパターンを定義し、```re-find```や```re-groups```などの関数を使用してテキスト処理を行います。以下は、```re-find```を使用して文字列内の数値を抽出する例です。
-
-```Clojure
-(defn find-numbers [text]
-  (re-find #"\d+" text))
-
-(find-numbers "今日の気温は22度です。")
-;; => "22"
-```
-
-さらに、正規表現を用いて文字列を置換することもできます。例えば、以下のように```re-seq```を使用して、文字列内の全ての空白を除去することができます。
+正規表現はClojureで簡単に実装することができます。まず、`re-matches`関数を使って正規表現を表す文字列と検索対象の文字列を渡します。「Hello」のような文字列を入力すると、"Hello, World!"のような文字列でマッチングするかどうかを確認することができます。
 
 ```Clojure
-(defn remove-spaces [text]
-  (apply str (re-seq #"\S" text)))
-
-(remove-spaces "Hello World")
-;; => "HelloWorld"
+(re-matches #"Hello" "Hello, World!")
+;;=> "Hello"
+(re-matches #"Hello" "こんにちは、世界！")
+;;=> nil
 ```
 
-深堀り:
+更に、`re-seq`関数を使うことで、正規表現にマッチする部分文字列をすべて抽出することもできます。例えば、"Hello, 123!"という文字列から数字の部分だけを抽出するには、次のようにします。
 
-正規表現をより理解するために、以下のリンクを参考にすることをお勧めします。
+```Clojure
+(re-seq #"[0-9]+" "Hello, 123!")
+;;=> ("123")
+```
 
-見る価値あり:
+## ディープダイブ
 
-- [Clojure 正規表現チュートリアル](https://www.tutorialspoint.com/clojure/clojure_regular_expressions.htm)
-- [正規表現クイックシート](https://www.rexegg.com/regex-quickstart.html)
-- [Clojure 正規表現リファレンス](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/re-find)
+正規表現は文字列のパターンマッチングにおいて非常に強力なツールです。しかし、正規表現をうまく使いこなすには、パターンの作成において少しの工夫が必要です。例えば、`.*`のようなワイルドカードを使うことで、任意の文字列を表すことができます。
+
+## 参考リンク
+- [正規表現チュートリアル](https://regexone.com)
+- [Clojure正規表現ドキュメント](https://clojure.org/reference/regular_expressions)
+- [正規表現の実践的な使い方](https://www.regular-expressions.info/tutorial.html)
+
+# 参考文献

@@ -1,62 +1,44 @@
 ---
-title:                "Fish Shell: Scrittura di test"
+title:                "Fish Shell: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché scrivere test? 
+Scrivere test è uno dei migliori modi per assicurarsi che il codice che scriviamo funzioni correttamente. Ci aiuta a identificare eventuali errori o bug prima che possano creare problemi più seri nel nostro programma.
 
-Scrivere test è un importante processo nello sviluppo di un programma. I test ci permettono di verificare che il nostro codice funzioni correttamente e aiutano a prevenire bug e errori nel software finale. Inoltre, i test possono migliorare la qualità del codice e rendere il processo di debugging più efficiente.
-
-## Come fare
-
-Scrivere test nel Fish Shell può sembrare intimidatorio all'inizio, ma seguendo questi semplici passi, sarai in grado di scrivere test efficaci per il tuo codice.
-
-1. Definisci le tue funzioni: Inizia creando le tue funzioni nel Fish Shell. Per fare ciò, utilizzeremo il comando `function`.
+## Come scrivere test in Fish Shell 
+Scrivere test in Fish Shell è semplice e intuitivo. Utilizzando il comando "test", possiamo verificare le nostre aspettative su variabili, espressioni e comandi. Vediamo un esempio:
 
 ```Fish Shell
-function somma
-    # Qui inseriremo il codice per la nostra funzione di somma
-end
+set fruit "apple"
+test $fruit = "apple"
 ```
 
-2. Scrivi i tuoi test: Ora che hai le tue funzioni definite, puoi scrivere i test per verificare che esse funzionino correttamente. Utilizzeremo il comando `test` per eseguire i test.
+Il comando "set" ci permette di assegnare il valore "apple" alla variabile "fruit". Poi, con il comando "test", verifichiamo se il valore di "fruit" è effettivamente "apple". Se tutto va bene, non vedremo alcun output. Tuttavia, se modifichiamo il valore della variabile, ad esempio con "set fruit "banana"", il comando "test" fallirà e ci mostrerà un messaggio di errore.
+
+Un altro esempio potrebbe essere il seguente:
 
 ```Fish Shell
-test "Il risultato della somma di 2 e 2 è 4"  # Descrizione del test
-    somma 2 2 # Chiamiamo la nostra funzione di somma con i parametri 2 e 2
-    or eq $status 0 # Verifichiamo che il codice di uscita sia 0 (successo)
-    or eq $result 4 # Verifichiamo che il risultato sia effettivamente 4
-end
+mkdir temp_folder
+touch temp_folder/file.txt
+test -f temp_folder/file.txt
 ```
 
-3. Esegui i tuoi test: Una volta scritti i tuoi test, puoi eseguirli utilizzando il comando `fish` seguito dal nome del file contenente i tuoi test.
+Qui, creiamo una nuova cartella chiamata "temp_folder" e un file al suo interno. Poi, con il comando "test", verifichiamo se il file esiste nella cartella. Se il file è effettivamente presente, non vedremo alcun output.
 
-```Fish Shell
-fish test_file.fish # Sostituisci "test_file.fish" con il nome effettivo del file contenente i tuoi test
-```
+## Approfondimento sui test 
+Scrivere test è un ottimo modo per garantire la qualità e la stabilità del nostro codice. Inoltre, ci aiuta a trovare errori e bug in modo rapido ed efficiente. È importante anche scrivere test per le funzioni più critiche del nostro programma, per assicurarci che sempre funzionino correttamente.
 
-Se tutti i test hanno esito positivo, vedrai questo output:
+In Fish Shell, esistono diverse tecniche per scrivere test più avanzati, come ad esempio l'utilizzo di blocchi "if" e "end" o l'utilizzo di espressioni regolari. Se vuoi approfondire ulteriormente l'argomento, ti consiglio di dare un'occhiata alla documentazione ufficiale di Fish Shell o ad alcuni tutorial online.
 
-```
-[SUCCESS] Il risultato della somma di 2 e 2 è 4
-```
-
-## Approfondimento
-
-Scrivere test efficaci richiede un po' di pratica e familiarità con il Fish Shell. Ecco alcuni consigli e suggerimenti per aiutarti nel processo:
-
-- Usa nomi descrittivi per i tuoi test: Ciò ti aiuterà a comprendere meglio quali sono i test che stai eseguendo e cosa si aspetta di ottenere.
-
-- Utilizza il comando `or` per combinare più asserzioni: In questo modo, puoi scomporre un test più complesso in più parti più semplici da gestire e debuggare.
-
-- Esplora le funzionalità avanzate del Fish Shell: Il Fish Shell offre una vasta gamma di funzionalità e strumenti interessanti che puoi utilizzare per scrivere test più avanzati e completi. Esplora la documentazione ufficiale per saperne di più.
-
-## Vedi anche
-
-- [Documentazione ufficiale del Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guida introduttiva ai test nel Fish Shell](https://github.com/fish-shell/fish-shell/wiki/Testing-Guide)
-- [Esplorare il Fish Shell: come scrivere funzioni](https://dev.to/destinyrose00/exploring-fish-shell-writing-functions-a1e)
+## Vedi anche 
+- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/index.html
+- Tutorial su Fish Shell: https://www.digitalocean.com/community/tutorials/how-to-use-fish-shell-on-a-vps
+- Come scrivere test in Bash: https://www.linuxjournal.com/content/return-values-bash-functions
+- Espressioni regolari in Fish Shell: https://fishshell.com/docs/current/index.html#patterns

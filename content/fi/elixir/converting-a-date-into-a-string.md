@@ -1,34 +1,46 @@
 ---
 title:                "Elixir: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
- Monet Elixir-ohjelmoijat joutuvat jossain vaiheessa törmäämään päivämäärän ja merkkijonon konvertointiin. Tämän lukemattoman kerran tehdyn tehtävän motivaatio voi vaihdella - työnantajan vaatimusten täyttämiseen, kansainvälisen standartin noudattamiseen tai yleisesti ottaen päivämäärän esittämiseen muodossa, joka on helppo lukea ja ymmärtää. 
+## Miksi?
 
-## Miten
-Voit muuntaa päivämäärän merkkijonoksi erilaisilla tavoilla Elixirissä. Yksinkertaisin tapa on käyttää tiivistelmäfunktiota `to_string`. Tässä on esimerkki:
+Miksi haluaisit muuttaa päivämäärän merkkijonoksi? Usein tämä on tarpeen muun muassa tietokannan kanssa työskennellessä tai kun sinun täytyy näyttää päivämäärä käyttäjälle selkeässä muodossa.
+
+## Kuinka?
+
 ```Elixir
-DateTime.utc_now() |> to_string()
+Date.to_string(Date.utc_today())
 ```
-<img src="https://i.imgur.com/1rXtITF.png" alt="output" width="250"/>
 
-Voit myös muuttaa muotoa ja määrittää tarkemman päivämäärän esitysmuodon lisäämällä toisen parametrin `to_string` -funktioon. Esimerkiksi `to_string(DateTime.utc_now(), "{ISO}")` antaa tuloksena ISO 8601 -muotoisen päivämäärän. Katso tarkemmat ohjeet Elixirin dokumentaatiosta.
+Tämä koodi muuttaa tänään olevan päivämäärän UTC-ajassa merkkijonoksi. 
 
-Mikäli haluat tarkemman hallinnan päivämäärän konvertoinnissa, voit myös käyttää `naive_datetime` -funktiota, joka ottaa parametrina päivämäärän tiedot, kuten vuoden, kuukauden ja päivän. Tämän jälkeen voit käyttää haluamiasi muotoilumerkkejä `strftime`-funktiolla luodaksesi haluamasi päivämäärän esitysmuodon.
+```Elixir
+"UTC Today: 2019-11-10"
+```
 
-Kiinnitettäköön huomiota siihen, että päivämäärän muuntaminen merkkijonoksi ja takaisin voi vaikuttaa alkuperäiseen päivämäärään, etenkin UTC-ajan ja aikavyöhykkeiden osalta. On hyvä olla tietoinen tästä mahdollisesta ongelmasta ja käyttää sitä sopivanlaisissa tilanteissa.
+Voit myös halutessasi muuttaa päivämäärän haluamaasi muotoon. Esimerkiksi:
 
-## Syvempi sukellus
-Elixirin `to_string` -funktio on täysin riippuvainen `DateTime` -moduulista, joka tarjoaa useita metodeja päivämäärän hallintaan ja muuntamiseen. Kannattaa tutustua tähän moduuliin tarkemmin, jotta voit löytää itsellesi sopivimman ratkaisun päivämäärän esittämiseen.
+```Elixir
+Date.to_string(Date.utc_today(), "{YYYY}-{MM}-{DD}") 
+```
 
-Toinen vaihtoehto päivämäärän muuttamiseen merkkijonoksi on käyttää `Calendar` -moduulia, joka tarjoaa monipuolisemman tavan käsitellä päivämääriä. Tämä moduuli sisältää myös `Calendar.ISO` -muotoilumerkin, joka on hyödyllinen päivämäärän muotoilussa.
+Palauttaa päivämäärän tänään muodossa "2019-11-10".
+
+## Syväsukellus
+
+Merkkijonoksi muuttamisen toiminta perustuu pohjimmiltaan Elixirin Date-moduulin toimintaan. Date-moduuli tarjoaa useita funktioita, joilla voi muuttaa päivämäärän eri muodoiksi, esimerkiksi Date.to_iso8601 ja Date.to_ical.
+
+Voit myös käyttää Elixirin hienoa hakukyselykirjastoa, kuten Timexiä, joka tarjoaa lisämahdollisuuksia päivämäärän käsittelyyn.
 
 ## Katso myös
-- [Elixirin dokumentaatio DateTime-moduulille](https://hexdocs.pm/elixir/DateTime.html)
-- [Elixirin dokumentaatio Calendar-moduulille](https://hexdocs.pm/elixir/Calendar.html)
-- [ISO 8601 standardi](https://en.wikipedia.org/wiki/ISO_8601)
+
+- [Elixirin virallinen dokumentaatio Date-moduulista](https://elixir-lang.org/docs/master/elixir/Date.html)
+- [Timex-kirjasto](https://github.com/bitwalker/timex)
+- [GenDate-kirjasto](https://github.com/securomessage/gendate)

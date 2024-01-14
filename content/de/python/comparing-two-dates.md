@@ -1,7 +1,9 @@
 ---
-title:                "Python: Vergleichen von zwei Daten"
+title:                "Python: Vergleich von zwei Datum"
+simple_title:         "Vergleich von zwei Datum"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/comparing-two-dates.md"
 ---
 
@@ -9,51 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In der Programmierung ist es oft notwendig, verschiedene Daten miteinander zu vergleichen. Dies kann zum Beispiel bei der Bestimmung von Zeitspannen oder der Überprüfung von Daten auf Gültigkeit hilfreich sein. In diesem Blogbeitrag werde ich erklären, wie man in Python zwei Datumsangaben vergleichen kann.
+Das Vergleichen von zwei Daten ist ein grundlegender Aspekt der Programmierung, der uns dabei hilft, bestimmte Datumsangaben zu analysieren oder zu verarbeiten. Dies kann hilfreich sein, um beispielsweise Fristen zu überprüfen oder um zu sehen, ob ein Ereignis in der Vergangenheit oder Zukunft liegt.
 
-## How To
+## Wie geht man vor
 
-Um zwei Daten in Python zu vergleichen, können wir das Modul `datetime` verwenden. Zunächst müssen wir jedoch zwei Datumsobjekte erstellen, die verglichen werden sollen. Dies können wir mit der Methode `datetime.strptime()` tun, indem wir das entsprechende Datum und das Datumsformat als Argumente übergeben.
+Die Vergleiche von Daten werden mithilfe von speziellen Operatoren durchgeführt. Im Folgenden wird gezeigt, wie man die verschiedenen Arten von Vergleichen durchführt.
+
+### Gleichheit
+
+Um zu prüfen, ob zwei Daten identisch sind, kann der Gleichheitsoperator "=="" verwendet werden. Dieser gibt ein Boolean-Ergebnis zurück, also entweder True oder False, je nachdem ob die Daten gleich oder unterschiedlich sind.
+
+```Python
+date1 = "2020-10-05"
+date2 = "2020-10-05"
+
+if date1 == date2:
+    print("Die Daten sind gleich!")
+```
+
+Output: Die Daten sind gleich!
+
+### Größer als/ kleiner als
+
+Um festzustellen, ob ein Datum größer oder kleiner ist als ein anderes Datum, können die Vergleichsoperatoren " > " und " < " verwendet werden. Diese funktionieren ähnlich wie beim Vergleich von Zahlen.
+
+```Python
+date1 = "2020-09-01"
+date2 = "2020-09-15"
+
+if date2 > date1:
+    print("Das zweite Datum liegt in der Zukunft!")
+```
+
+Output: Das zweite Datum liegt in der Zukunft!
+
+### Differenz
+
+Um die Differenz zwischen zwei Daten zu berechnen, sollten diese zuerst in ein Datumsformat umgewandelt werden. Anschließend können sie subtrahiert werden, um die Anzahl der Tage dazwischen zu erhalten.
 
 ```Python
 import datetime
 
-date1 = datetime.datetime.strptime('01.01.2021', '%d.%m.%Y')
-date2 = datetime.datetime.strptime('31.12.2020', '%d.%m.%Y')
+date1 = "2020-07-01"
+date2 = "2020-07-10"
+
+difference = datetime.datetime.strptime(date2, "%Y-%m-%d") - datetime.datetime.strptime(date1, "%Y-%m-%d")
+print("Die Differenz beträgt", difference.days, "Tage.")
 ```
 
-Anschließend können wir die Methoden `date1.year`, `date1.month` und `date1.day` verwenden, um auf die einzelnen Teile des Datums zuzugreifen. Mit diesen Werten können wir dann verschiedene Vergleichsoperationen durchführen, zum Beispiel die Gleichheit oder die Reihenfolge der Daten überprüfen.
+Output: Die Differenz beträgt 9 Tage.
 
-```Python
-if date1 == date2:
-    print('Die Daten sind gleich.')
+## Tiefergehender Einblick
 
-if date1 > date2:
-    print('Datum 1 liegt nach Datum 2.')
+Bei der Verarbeitung von Daten ist es wichtig zu beachten, dass die Reihenfolge der Zahlen in einem Datum von Bedeutung ist. Beim Vergleichen und Berechnen von Daten muss daher immer auf die korrekte Datumsformatierung geachtet werden.
 
-if date1 < date2:
-    print('Datum 1 liegt vor Datum 2.')
-```
-
-Die möglichen Vergleichsoperatoren sind `==` (gleich), `!=` (ungleich), `>` (größer), `<` (kleiner), `>=` (größer oder gleich) und `<=` (kleiner oder gleich).
-
-## Deep Dive
-
-Wenn wir genauer betrachten, wie Python Datumsangaben intern speichert, wird deutlich, warum sie so einfach vergleichen können. Python speichert Datumsangaben als Anzahl der vergangenen Tage seit dem 1. Januar 1970 in Form von ganzen Zahlen. Dadurch können Daten einfach als Zahlen miteinander verglichen werden.
-
-Um dies zu verdeutlichen, betrachten wir folgendes Beispiel:
-
-```Python
-date1 = datetime.datetime.strptime('01.01.2021', '%d.%m.%Y')
-date2 = datetime.datetime.strptime('01.01.2020', '%d.%m.%Y')
-
-print(date1 - date2)
-```
-
-Die Ausgabe dieses Codes ist `366 days, 0:00:00`, da ein Schaltjahr dazwischen liegt. Wenn wir jedoch `366 days` in Tagen umrechnen, erhalten wir den Wert `366`, was der Differenz in Tagen zwischen den beiden Daten entspricht. Dadurch wird deutlich, wie Python Datumsangaben vergleicht.
+Ein weiterer wichtiger Aspekt beim Vergleichen von Daten ist die Berücksichtigung von Zeitangaben. Dies kann insbesondere bei der Überprüfung von Fristen oder Ereignissen relevant sein.
 
 ## Siehe auch
 
-- [Python-Dokumentation zu datetime](https://docs.python.org/de/3/library/datetime.html)
-- [Python-Datumsformatierung](https://strftime.org/)
-- [Vergleichsoperatoren in Python](https://www.python-kurs.eu/python3_operatoren.php)
+- [Python-Dokumentation: Datetime-Modul](https://docs.python.org/de/3/library/datetime.html)
+- [Python-Dokumentation: Vergleichsoperatoren](https://docs.python.org/de/3/reference/expressions.html#comparisons)
+- [Real Python Blog: "Working with Datetime Objects in Python"](https://realpython.com/python-datetime/)

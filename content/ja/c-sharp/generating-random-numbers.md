@@ -1,40 +1,52 @@
 ---
-title:                "C#: 「ランダム数値の生成」"
+title:                "C#: 生成するランダムな数"
+simple_title:         "生成するランダムな数"
 programming_language: "C#"
-category:             "Numbers"
+category:             "C#"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ乱数を生成する必要があるのか？
+## なぜランダムな数字を生成するのか
 
-プログラミングで乱数を生成することは、ゲームやランダムなデータを必要とするアプリケーションを作成する際に非常に役立ちます。乱数は、プログラムにおける予期せぬバリエーションを作成し、より面白いものに変えることができるのです。
+ランダムな数字を生成することは、さまざまなソリューションやアルゴリズムを作成する際に必要です。例えば、ゲーム開発や暗号学においてランダムな要素を取り入れたい場合に使用されます。ランダムな数字を生成することで、より多様なシナリオやパターンを作り出すことができます。
 
-## 生成方法
+## 作り方
 
-乱数を生成するためには、C#言語におけるRandomクラスを使用します。まず、Randomクラスのインスタンスを作成し、その後、Nextメソッドを使って乱数を得ることができます。
+ランダムな数字を生成するには、C#プログラミング言語の標準ライブラリである"System.Random"クラスを使用します。
 
-```C#
-// Randomクラスのインスタンスを作成
-Random random = new Random();
+```
+using System;
 
-// 0から10の間の乱数を生成
-int randomNumber = random.Next(0, 10);
+class Program
+{
+    static void Main()
+    {
+		// ランダムな数字を生成するためのSystem.Randomクラスのインスタンスを作成する
+        Random rand = new Random();
 
-// 結果の出力
-Console.WriteLine("ランダムな数字は：" + randomNumber);
+        // 1から10までの範囲からランダムな数字を生成する
+        int number = rand.Next(1, 11);
+
+        Console.WriteLine("ランダムな数字: " + number);
+    }
+}
 ```
 
-上記のコードの場合、生成される乱数は毎回異なる値が得られます。また、同じ値が重複する可能性もあります。
+上記のコードを実行すると、1から10までの範囲からランダムな数字がコンソールに表示されます。毎回実行するたびに、異なる数字が表示されることを確認しましょう。
 
-## 詳細を探る
+## ディープダイブ
 
-Randomクラスは、内部的に現在の時刻をシード値として使用しているため、毎回異なる乱数が得られるのです。また、RandomクラスにはさまざまなオーバーロードされたNextメソッドがあり、引数を変えることでさまざまな範囲の値を生成することができます。さらに、乱数を生成する前にシード値を指定することも可能です。
+System.RandomクラスのNext()メソッドは、引数として最小値と最大値を指定することで、その範囲内からランダムな整数を生成します。また、NextDouble()メソッドを使用することで、0以上1未満の範囲からランダムな小数を生成することも可能です。
 
-# このようにして乱数を生成することで、もっと楽しいプログラミング体験をすることができます。ぜひ試してみてください！
+さらに、ランダムな乱数列を生成するにはSeed値を指定する必要があります。Seed値は、ランダムな数字を生成するアルゴリズムに使用される初期値であり、同じSeed値を指定することで同じ乱数列が生成されます。
 
-## さらに読む
+以上のように、ランダムな数字を生成する方法はさまざまありますが、そのすべてが正確な乱数列を生成するとは限りません。厳密な暗号学的な用途では、専門的な乱数生成器を使用することをお勧めします。
 
-- [C#のRandomクラスのドキュメント](https://docs.microsoft.com/ja-jp/dotnet/api/system.random?view=netcore-3.1)
-- [乱数生成についての詳しい解説](https://ja.wikipedia.org/wiki/%E4%B9%B1%E6%95%B0%E7%94%9F%E6%88%90)
+## 関連リンク
+
+- [Microsoft Docs - Random Class (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.random)
+- [C# リファレンス - System.Random クラス](https://docs.microsoft.com/ja-jp/dotnet/api/system.random)
+- [C# ランダムな数字を生成する方法](https://www.tutunon.com/csharp-random-number-generator/)

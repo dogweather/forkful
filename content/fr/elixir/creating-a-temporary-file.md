@@ -1,52 +1,46 @@
 ---
-title:                "Elixir: Création d'un fichier temporaire"
+title:                "Elixir: Créer un fichier temporaire"
+simple_title:         "Créer un fichier temporaire"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi créer un fichier temporaire en Elixir ?
 
-Créer un fichier temporaire peut sembler anodin, mais c'est en fait une pratique très utile lorsque vous travaillez avec des données temporaires dans vos applications Elixir. Que ce soit pour stocker des données temporaires utilisées par votre application ou pour effectuer des tests, créer un fichier temporaire peut vous éviter bien des tracas.
+Créer un fichier temporaire peut être utile dans de nombreuses situations de programmation en Elixir. Cela peut être nécessaire pour stocker temporairement des données, effectuer des opérations de manipulation de fichiers ou simplement pour des tâches de test et de débogage.
 
-## Comment faire
+# Comment créer un fichier temporaire en Elixir
 
-Il existe plusieurs façons de créer un fichier temporaire en utilisant Elixir. Voici deux exemples différents avec leur sortie respective :
+Pour créer un fichier temporaire en Elixir, nous pouvons utiliser la fonction `File.tmp` fournie par le module `File`. Cette fonction prend en paramètre le préfixe du nom du fichier et le suffixe, et retourne un tuple contenant le chemin et le descripteur de fichier.
 
-```elixir
-# Créer un fichier temporaire vide avec la bibliothèque standard File
-temp_file = File.tempfile()
-
-# Imprimer le chemin vers le fichier temporaire
-IO.inspect(temp_file.path)
-
-# Créer un fichier temporaire avec du contenu en utilisant la bibliothèque standard Tempfile
-content = "Ceci est un exemple de contenu pour notre fichier temporaire."
-temp_file2 = Tempfile.write!(content)
-
-# Lire le contenu du fichier temporaire
-IO.inspect(File.read!(temp_file2.path))
+```Elixir
+{file_path, file_descriptor} = File.tmp("temp_", ".txt")
 ```
 
-Sortie :
+Nous pouvons ensuite utiliser le descripteur de fichier pour écrire des données dans le fichier temporaire.
 
-```elixir
-"/var/folders/yx/_58t5c313g5cjr7xsq4z09t80000gn/T/elixir20170330-24343-1w2wvq"
-"Ceci est un exemple de contenu pour notre fichier temporaire."
+```Elixir
+file_descriptor |> IO.write("Hello world")
 ```
 
-Comme vous pouvez le voir, vous pouvez utiliser les modules standard `File` ou `Tempfile` pour créer des fichiers temporaires et interagir avec eux. Ces modules rendent le processus très simple et vous permettent de gérer facilement les fichiers temporaires que vous avez créés.
+Une fois que nous avons fini d'utiliser le fichier, nous pouvons le supprimer en utilisant la fonction `File.rm`.
 
-## Plongée en profondeur
+```Elixir
+File.rm(file_path)
+```
 
-Créer un fichier temporaire en utilisant la bibliothèque standard `File` est une option très simple, mais il existe également des bibliothèques tierces qui peuvent offrir des fonctionnalités supplémentaires. Par exemple, la bibliothèque `Tempfile` vous permet de spécifier un préfixe pour vos fichiers temporaires, de les créer dans un répertoire spécifique ou même de les supprimer automatiquement après une certaine période de temps.
+# Un aperçu plus détaillé de la création d'un fichier temporaire
 
-Il est également important de noter que les fichiers temporaires ne sont pas automatiquement supprimés une fois que votre application a terminé de les utiliser. Vous devez donc prendre soin de les supprimer manuellement une fois qu'ils ne sont plus nécessaires. Vous pouvez le faire en utilisant la fonction `File.rm/1` ou en utilisant la bibliothèque `Tempfile` pour supprimer automatiquement les fichiers après un certain temps.
+Lorsque nous utilisons la fonction `File.tmp`, Elixir crée un fichier dans le répertoire temporaire du système d'exploitation en utilisant le préfixe et le suffixe fournis. Cela garantit que le nom du fichier est unique et évite les conflits avec d'autres fichiers existants.
 
-## Voir aussi
+En plus du chemin et du descripteur de fichier, la fonction `File.tmp` renvoie également une liste de fichiers temporaires créés. Cela peut être utile si nous devons créer plusieurs fichiers temporaires dans une même opération.
 
-- [Documentation officielle de la bibliothèque Tempfile](https://hexdocs.pm/tempfile/Tempfile.html)
-- [Documentation officielle de la bibliothèque File](https://hexdocs.pm/elixir/File.html)
-- [Article sur les fichiers temporaires en Elixir](https://medium.com/@joejamesmetcalf/working-with-temporary-files-in-elixir-bc2a1e40c563)
+# Voir aussi
+
+- [Documentation Elixir sur la création de fichiers temporaires](https://hexdocs.pm/elixir/File.html#tmp/2)
+- [Tutoriel sur la manipulation de fichiers en Elixir](https://elixir-lang.org/getting-started/io-and-the-file-system.html)
+- [Article sur les avantages de l'utilisation de fichiers temporaires](https://www.perforce.com/blog/vcs/4-reasons-track-temporary-files-perforce)

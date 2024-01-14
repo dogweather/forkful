@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Convirtiendo una cadena a minúsculas"
+title:                "Javascript: Convirtiendo un string a minúsculas"
+simple_title:         "Convirtiendo un string a minúsculas"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,29 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Si eres un programador Javascript, probablemente ya sepas que las cadenas de texto son una parte importante de tu código. Pero, ¿alguna vez te has preguntado por qué a veces es necesario convertir una cadena a minúsculas? La respuesta es simple: a veces, necesitamos que nuestra lógica de programación no distinga entre mayúsculas y minúsculas en una cadena de texto.
+Convertir una cadena de texto a minúsculas es una tarea común en la programación y puede ser útil para diversas aplicaciones, como búsqueda y comparación de cadenas.
 
 ## Cómo hacerlo
 
-Para convertir una cadena a minúsculas en Javascript, podemos utilizar el método `toLowerCase()` en la cadena. Este método devuelve una nueva cadena con todas las letras convertidas a minúsculas. Veamos un ejemplo:
+Para convertir una cadena de texto a minúsculas en Javascript, se puede utilizar el método `toLowerCase()` de la clase String. Este método devuelve una nueva cadena en minúsculas, sin modificar la cadena original.
 
 ```Javascript
-let cadena = "¡Hola a todos!";
-cadena = cadena.toLowerCase();
-console.log(cadena); // output: ¡hola a todos!
+let cadena = "ESTE ES UN EJEMPLO";
+let cadenaMinusculas = cadena.toLowerCase();
+
+console.log(cadenaMinusculas);
+// salida: este es un ejemplo
 ```
 
-En este ejemplo, la variable `cadena` se convierte a minúsculas y se guarda en la misma variable, pero también podríamos guardarla en una nueva variable. También es importante tener en cuenta que este método no afecta a la cadena original, sino que devuelve una nueva cadena con los cambios aplicados.
+Este método también puede ser útil en la validación de entradas de usuario, ya que permite convertir cualquier entrada a minúsculas antes de compararla con una cadena predefinida, evitando así errores por mayúsculas y minúsculas.
+
+```Javascript
+let contraseña = "Secreto123";
+let contraseñaUsuario = "secreto123";
+
+if (contraseñaUsuario.toLowerCase() === contraseña.toLowerCase()) {
+  console.log("Contraseña correcta!");
+} else {
+  console.log("Contraseña incorrecta!");
+}
+// salida: Contraseña correcta!
+```
 
 ## Profundizando
 
-El método `toLowerCase()` es sensible a idiomas, lo que significa que puede tener resultados diferentes dependiendo del idioma en el que trabajes. Por ejemplo, en inglés, la letra "I" mayúscula se convierte en "i" minúscula, mientras que en turco, la letra "I" mayúscula se convierte en "ı", una letra diferente. Esto se debe al concepto de "mayúsculas y minúsculas" es algo que varía entre idiomas.
+Es importante tener en cuenta que el método `toLowerCase()` solo convierte caracteres en mayúsculas del alfabeto en caracteres en minúsculas. Los caracteres especiales, números o símbolos no se verán afectados.
 
-También es importante tener en cuenta que el método `toLowerCase()` solo convierte letras en minúsculas, no otros caracteres como los símbolos o los números.
+Además, en algunas aplicaciones puede ser necesario utilizar el método `toLocaleLowerCase()` en lugar de `toLowerCase()`, ya que esto tendrá en cuenta las diferencias de mayúsculas y minúsculas según el idioma especificado.
+
+Es importante también tener en cuenta que estos métodos no modifican la cadena original, sino que devuelven una nueva cadena en minúsculas, por lo que si se desea guardar el resultado en una variable, se deberá asignar el valor devuelto.
 
 ## Ver también
 
-- [Método toLowerCase() - Documentación en línea de Javascript] (https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Diferencias de mayúsculas y minúsculas en diferentes idiomas] (https://en.wikipedia.org/wiki/Letter_case#Languages_with_both_a_binary_and_an_aplphabetically_ordered_case)
-
-¡Esperamos que este artículo haya sido útil para entender por qué a veces necesitamos convertir cadenas a minúsculas en Javascript y cómo podemos hacerlo de manera efectiva!
+- [Documentación de MDN sobre toLowerCase()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Otros métodos útiles de la clase String en Javascript](https://www.w3schools.com/js/js_string_methods.asp)
+- [Ejemplos prácticos de conversión de cadenas a minúsculas en Javascript](https://medium.com/@mayer13/5-ways-to-convert-string-to-lower-case-in-javascript-edfe9cd9b470)

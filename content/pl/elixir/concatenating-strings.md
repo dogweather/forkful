@@ -1,48 +1,51 @@
 ---
 title:                "Elixir: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
+Ciągłe łączenie ciągów znaków jest nieodzownym elementem wielu programów Elixir. Pozwala to na tworzenie dynamicznych tekstów, które mogą zmieniać się w zależności od różnych warunków i zmiennych. Jest to również wygodny sposób na tworzenie interfejsów użytkownika czy generowanie raportów. W tym artykule dowiecie się, dlaczego jest to ważne i jak tego dokonać.
 
-Często w programowaniu Elixirem będziesz potrzebował połączyć ciągi znaków w jedną zmienną. Może to być potrzebne do wyświetlenia wiadomości na ekranie lub tworzenia adresów URL. W artykule tym pokażę, jak prosto można to zrobić w Elixirze.
-
-## Jak To Zrobić
-
-W Elixirze do konkatenacji stringów mamy dwa sposoby - operator `<>` i funkcję `String.concat/2`. Zobaczmy najpierw przykład z użyciem operatora:
+## Jak to zrobić
+Aby połączyć dwa ciągi znaków w Elixir, możemy skorzystać z funkcji `<>`. W poniższym przykładzie używamy go do połączenia imienia i nazwiska w jedną zmienną:
 
 ```Elixir
-string1 = "Hello"
-string2 = "world!"
+first_name = "Anna"
+last_name = "Kowalska"
 
-concatenated_string = string1 <> " " <> string2
+full_name = first_name <> " " <> last_name
+
+IO.puts(full_name)
+# Wynik: "Anna Kowalska"
 ```
 
-W rezultacie zmienna `concatenated_string` będzie zawierać tekst "Hello world!".
+Jak widać, użycie `<>` pozwala nam na połączenie kilku ciągów znaków w jedną zmienną. Możemy także połączyć więcej niż dwa ciągi znaków jednocześnie.
 
-Teraz przejdźmy do przykładu z użyciem funkcji `String.concat/2`:
+Aby dokonać konkatenacji większej liczby ciągów, możemy skorzystać z funkcji `Enum.reduce/3`. Dzięki niej możemy iteracyjnie łączyć elementy listy w jedną zmienną, co jest przydatne np. w przypadku tworzenia listy zakupów czy wierszy danych do pliku CSV:
 
 ```Elixir
-string1 = "Witaj"
-string2 = "świecie!"
+items = ["jajka", "mleko", "chleb", "masło"]
 
-concatenated_string = String.concat([string1, " ", string2])
+shopping_list = Enum.reduce(items, "", fn item, result ->
+  result <> item <> ", "
+end)
+
+IO.puts(shopping_list)
+# Wynik: "jajka, mleko, chleb, masło, "
 ```
 
-W obu przypadkach używamy znaku spacji jako separatora, ale może to być dowolny znak lub nawet pusty string.
+## Deep Dive
+Funkcja `<>` w rzeczywistości jest odmianą funkcji `Kernel.<>/2`, która jest częścią języka Elixir. Pozwala ona na łączenie różnych typów danych, np. liczb z ciągami znaków. Jednak zaleca się unikanie takich operacji, ponieważ może to prowadzić do błędów i niepożądanych zachowań.
 
-## Głębsze Zanurzenie
+Funkcja `Enum.reduce/3` jest często używana do łączenia większej liczby ciągów, ponieważ pozwala na iteracyjne łączenie, co jest wygodniejsze i bardziej wydajne. Jednak może również być używana do innych operacji na listach, takich jak sumowanie wartości czy filtrowanie elementów.
 
-W Elixirze konkatenacja stringów jest wydajniejsza niż w innych językach programowania, ponieważ jest wykonywana w czasie kompilacji, a nie wykonania. Oznacza to, że nie trzeba się martwić o wydajność, gdy używamy konkatenacji w pętlach lub w innych miejscach, gdzie wykonuje się wiele operacji na stringach.
-
-Warto również wiedzieć, że operator `<>` jest przeciążony dla większości typów danych, więc można go stosować nie tylko do stringów, ale także np. do list czy map.
-
-## Zobacz Również
-
-- Dokumentacja operatora `<>`: https://hexdocs.pm/elixir/operators.html#concatenation-operator-
-- Dokumentacja funkcji `String.concat/2`: https://hexdocs.pm/elixir/String.html#concat/2
-- Blog o Elixirze po polsku: https://elixir.pl/
+## Zobacz także
+- [Dokumentacja funkcji Kernel.<>/2](https://hexdocs.pm/elixir/Kernel.html#/2)
+- [Dokumentacja funkcji Enum.reduce/3](https://hexdocs.pm/elixir/Enum.html#reduce/3)
+- [Artykuł na temat łączenia ciągów znaków w Elixirze](https://andrewtimberlake.com/blog/elixir-string-concatenation)

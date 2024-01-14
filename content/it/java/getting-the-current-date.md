@@ -1,49 +1,52 @@
 ---
-title:                "Java: Ottenere la data corrente."
+title:                "Java: Ottenere la data corrente"
+simple_title:         "Ottenere la data corrente"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/java/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Una delle funzionalità più utili nella programmazione è la capacità di ottenere la data corrente. Ciò può essere utile per registrare l'ora in cui è stato eseguito un programma, per generare report o semplicemente per visualizzare la data sullo schermo. In questo post, vedremo come ottenere la data corrente in Java.
 
-## Come
-In Java, per ottenere la data corrente, dobbiamo utilizzare la classe `Date` dal package `java.util`. Dopo aver importato la classe, possiamo istanziarla semplicemente con `new Date()`. Vediamo un esempio pratico:
+La data corrente è un aspetto fondamentale della programmazione in Java, in quanto fornisce informazioni utili per diverse attività, come ad esempio la gestione di eventi, l'ordinamento di dati e la creazione di log di sistema. Inoltre, è essenziale per garantire che un'applicazione funzioni correttamente e in modo sincronizzato con il resto del sistema.
 
-```Java
-import java.util.Date;
+## Come fare
 
-public class CurrentDate {
-  public static void main(String[] args) {
-    Date now = new Date(); // istanzia l'oggetto Date
-    System.out.println(now); // stampa la data corrente
-  }
-}
-```
-
-L'esempio sopra restituirà l'output seguente: `Tue Nov 02 18:35:33 EST 2021`. Possiamo notare che la data è formattata in modo specifico. Possiamo modificare il formato utilizzando la classe `SimpleDateFormat`, specificando il pattern desiderato. Ad esempio, se volessimo visualizzare solo la data nel formato "dd/MM/yyyy":
+Ci sono diverse opzioni per ottenere la data corrente in Java. Una delle più semplici è utilizzare la classe `LocalDate` del package `java.time`:
 
 ```Java
-import java.util.Date;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 
-public class CurrentDate {
-  public static void main(String[] args) {
-    Date now = new Date(); 
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-    System.out.println(sdf.format(now)); // output: 02/11/2021
-  }
-}
+LocalDate dataCorrente = LocalDate.now();
+System.out.println(dataCorrente);
 ```
 
-## Deep Dive
-Ora, andiamo più in profondità e capiamo come funziona il processo di ottenere la data corrente. La classe `Date` rappresenta un'istante specifico nel tempo, misurato in millisecondi. Quando viene istanziata, viene impostata con la data e l'ora attuali del sistema. Ogni volta che viene rappresentata su uno schermo o stampata, viene utilizzato il fuso orario predefinito del sistema.
+Il codice sopra restituirà la data corrente nel formato standard ISO, ossia YYYY-MM-DD. È anche possibile formattarla in modo personalizzato utilizzando un oggetto `DateTimeFormatter`, ad esempio:
 
-Per ottenere una data diversa dalla data corrente, possiamo utilizzare il costruttore `Date` che accetta un valore `long`, rappresentante il numero di millisecondi passati dal 1 gennaio 1970. Inoltre, possiamo utilizzare il metodo `setTime()` per impostare una data specifica a un oggetto `Date` esistente.
+```Java
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-## Vedere anche
-- [Java Date documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Java SimpleDateFormat documentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+LocalDate dataCorrente = LocalDate.now();
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY");
+String dataFormattata = dataCorrente.format(formatter);
+System.out.println(dataFormattata);
+```
+
+In questo caso, la data verrà stampata nel formato specificato, come ad esempio 13/01/2021.
+
+Altre opzioni per ottenere la data corrente includono l'utilizzo delle classi `Date` e `Calendar`, che sono state introdotte prima della versione 8 di Java e sono ancora supportate per ragioni di compatibilità. Tuttavia, si consiglia di utilizzare le classi del package `java.time`, che sono più moderne e offrono una maggiore flessibilità e facilità d'uso.
+
+## Approfondimento
+
+Per comprendere meglio come ottenere la data corrente in Java, è importante capire il concetto di timezone (fuso orario). Quando si ottiene la data corrente, questa è sempre legata al fuso orario del sistema in cui è eseguita l'applicazione. Ad esempio, se si esegue il codice su un computer che si trova in Italia, la data corrente verrà restituita nel fuso orario GMT+1.
+
+È possibile specificare manualmente il fuso orario utilizzando la classe `ZonedDateTime`. Inoltre, è importante considerare le possibili differenze tra i fusi orari di diversi sistemi in cui l'applicazione può essere eseguita.
+
+## Vedi anche
+
+- Documentazione ufficiale di Java sulla classe `LocalDate`: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+- Guida completa ai fusi orari in Java: https://www.baeldung.com/java-time-zones

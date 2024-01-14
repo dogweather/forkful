@@ -1,69 +1,42 @@
 ---
 title:                "Fish Shell recipe: Concatenating strings"
+simple_title:         "Concatenating strings"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-
-Are you tired of manually combining strings in your Fish Shell programming? Well, fret not because concatenating strings is here to save the day! By combining different pieces of text, you can create more dynamic and versatile output in your Fish Shell scripts. In this blog post, we'll show you how to easily concatenate strings in Fish Shell and why it's such a game-changer.
+## Why 
+Concatenating strings may seem like a simple task, but it can be incredibly useful in programming. By combining different strings, you can create dynamic and customized outputs that can be used in various applications. Whether you are a beginner or an experienced programmer, understanding how to concatenate strings in Fish Shell can greatly enhance your coding abilities.
 
 ## How To
+To concatenate strings in Fish Shell, we use the `string combine` command. This command takes two or more strings as arguments and combines them into a single string. Let's look at an example:
 
-Coding in Fish Shell is known for its simplicity and ease of use, and concatenating strings is no different. Here's how you can do it in just three easy steps:
+```
+Fish Shell > set name "John"
+Fish Shell > set greeting "Hello, "
+Fish Shell > string combine $greeting $name
+Hello, John
+```
 
-1. First, let's define two strings that we want to concatenate:
-```
-set first "Hello"
-set last "World!"
-```
-2. Next, we'll use the `string join` command to combine our strings and assign it to a new variable:
-```
-set concatenated (string join "" $first $last)
-```
-In this example, we used the empty string `""` as a separator, but you can use any character or text between the two strings. 
+In this example, we have created two strings - `name` and `greeting` - and then used the `string combine` command to combine them into a personalized greeting. Notice how we used the `$` symbol before each string name to access their values. This is known as variable expansion and allows us to use variables as arguments in commands.
 
-3. Lastly, to see the result of our concatenation, we'll use the `echo` command:
+We can also concatenate strings without using variables. Take a look at this example:
+
 ```
-echo $concatenated
+Fish Shell > string combine "The " "sky " "is " "blue."
+The sky is blue.
 ```
-This will output "HelloWorld!", the combined result of our two strings. 
+
+Here, we simply passed each string as an argument to the `string combine` command without using variables. We can also use more than two strings in the command, making it a versatile tool for string manipulation.
 
 ## Deep Dive
+Under the hood, Fish Shell uses the `string join` function to concatenate strings. This function takes a delimiter as its first argument and joins the remaining arguments with that delimiter. The `string combine` command simply makes use of this function, making it easier to use for concatenation.
 
-Now that you know how to concatenate strings in Fish Shell, let's take a deeper look into the different ways you can do it. Firstly, you can use the plus sign `+` to combine two strings, just like in many other programming languages:
-```
-set first "Fish "
-set last "Shell"
-set concatenated $first + $last
-```
-This will output "Fish Shell". 
-
-Secondly, you can also use a `for` loop to concatenate multiple strings:
-```
-set fruits "apple" "banana" "orange"
-set concatenated (for fruit in $fruits
-    string join " / " $fruit
-```
-
-Lastly, you can even use `string match` to combine strings in a specific pattern. For example, to create a CSV row from a list of data:
-```
-set data "John" "Doe" "40"
-set concatenated (string match "," $data)
-```
-This will output "John,Doe,40".
-
-The possibilities are endless with concatenating strings in Fish Shell, and with some creativity, you can use it for all kinds of tasks.
+It's also worth noting that the `string combine` command can be used with any type of string, whether it's a single word or a phrase enclosed in quotes. This makes it a useful command for handling different types of strings in various scenarios.
 
 ## See Also
-
-Curious to learn more about Fish Shell or want to enhance your Fish Shell skills? Check out these helpful resources:
-
-- [Official Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [Fish Shell tutorial on YouTube](https://www.youtube.com/watch?v=JIX4oe5CXm0)
-- [Fish Shell community forum](https://github.com/fish-shell/fish-shell/discussions)
-
-Happy concatenating!
+For more information on string concatenation in Fish Shell, check out the official [documentation](https://fishshell.com/docs/current/cmds/string_combine.html). You can also explore other useful Fish Shell commands in the [user guide](https://fishshell.com/docs/current/).

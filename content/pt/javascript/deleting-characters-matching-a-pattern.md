@@ -1,50 +1,48 @@
 ---
-title:                "Javascript: Excluindo caracteres que coincidem com um padrão"
+title:                "Javascript: Apagando caracteres que correspondem a um padrão"
+simple_title:         "Apagando caracteres que correspondem a um padrão"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-Por que Excluir Caracteres Correspondentes a um Padrão?
+## Por que
 
-Em algumas situações de programação, é necessário realizar a exclusão de caracteres que correspondam a um determinado padrão. Isso pode ser útil em tarefas de formatação de texto, validação de dados ou até mesmo para melhorar a performance de um algoritmo. Neste artigo, aprenderemos como fazer isso em Javascript.
+Às vezes, ao trabalhar com uma string em Javascript, pode ser necessário remover certos caracteres seguindo um determinado padrão. Isso pode ser útil na validação de formulários, no tratamento de dados ou na manipulação de strings.
 
-Como Fazer
+## Como Fazer
 
-Para excluir caracteres que correspondam a um padrão em Javascript, precisamos utilizar expressões regulares. Isso nos permite buscar por determinados padrões de caracteres em uma string e realizar alterações conforme necessário.
-
-Vamos dar um exemplo prático. Digamos que temos uma string contendo uma série de números e desejamos excluir todos os caracteres que não sejam numéricos. Podemos fazer isso utilizando a seguinte expressão regular:
+Para remover caracteres que correspondam a um padrão específico em uma string, podemos usar a função `replace()` em conjunto com expressões regulares. Por exemplo, vamos remover todos os caracteres numéricos de uma string:
 
 ```Javascript
-let string = "1a2b3c4d5e6f";
-string = string.replace(/[^0-9]/g, "");
-console.log(string); // saída: 123456
+let str = "ESte3 é u2m e2xemplo de st3ri4ng co4m núme7ros.";
+let newStr = str.replace(/[0-9]/g, "");
+console.log(newStr);
 ```
+O output será: "Este é um exemplo de string com números."
 
-Neste exemplo, utilizamos o método `replace` para substituir todos os caracteres que não sejam números por uma string vazia `""`. O modificador `g` indica que a busca deve ser global, ou seja, todos os caracteres que correspondam ao padrão devem ser alterados.
+Neste exemplo, usamos a expressão regular `[0-9]` que representa qualquer dígito numérico de 0 a 9. Usando a flag `g` ao final da expressão, garantimos que todos os caracteres que correspondam a esse padrão serão removidos da string.
 
-Além disso, também podemos utilizar as expressões regulares em conjunto com a função `filter` para excluir caracteres de um array que não correspondam ao padrão desejado. Veja o exemplo abaixo:
+Além disso, podemos usar outros métodos junto com expressões regulares para tornar as manipulações mais precisas. Por exemplo, a expressão `/[\w]/g` corresponde a qualquer caracter alfanumérico. Assim, podemos remover apenas letras maiúsculas de uma string utilizando o método `replace()` em conjunto com a função `toUpperCase()`:
 
 ```Javascript
-let array = ["abc123", "456def", "789ghi"];
-array = array.filter(item => item.match(/^[0-9]+$/));
-console.log(array); // saída: ["456", "789"]
+let str = "ESte 3 é u2m e2xemplo de st3ri4ng";
+let newStr = str.replace(/[A-Z]/g, "").toUpperCase();
+console.log(newStr);
 ```
+O output seria: "  3 é 2 2 3 4".
 
-Neste caso, utilizamos a função `match` para verificar se a string contém apenas números. Se sim, ela é adicionada ao novo array. Caso contrário, é ignorada.
+## Deep Dive
 
-Profundidade
+Usar expressões regulares em conjunto com a função `replace()` permite uma manipulação mais precisa de strings. Além disso, é possível utilizar flags para tornar a expressão case-insensitive (ignorando maiúsculas e minúsculas) ou para substituir todas as ocorrências do padrão, mesmo que sejam repetidas na mesma string.
 
-As expressões regulares em Javascript são extremamente versáteis e podem ser utilizadas em diversas situações, não apenas para excluir caracteres correspondentes a um padrão. Podemos utilizar também para buscar, substituir, validar, entre outras funções.
+Existem muitas outras possibilidades e combinações de expressões regulares para manipular strings em Javascript. É importante experimentar e praticar para se familiarizar com essa poderosa ferramenta.
 
-Além disso, as expressões regulares podem conter diversas opções de modificadores e metacaracteres, o que permite criar padrões cada vez mais específicos e avançados.
+## Veja Também
 
-Portanto, é importante dedicar um tempo para aprender e se familiarizar com o uso das expressões regulares em Javascript, pois elas podem ser muito úteis no dia a dia de um programador.
-
-Veja Também
-
-- [Expressões Regulares em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [String.prototype.replace()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Array.prototype.filter()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
+- [MDN web docs: String.prototype.replace()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [MDN web docs: Regular Expressions](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [W3Schools: JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)

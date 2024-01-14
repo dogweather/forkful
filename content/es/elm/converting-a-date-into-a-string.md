@@ -1,48 +1,95 @@
 ---
 title:                "Elm: Convirtiendo una fecha en una cadena"
+simple_title:         "Convirtiendo una fecha en una cadena"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# ¿Por qué convertir una fecha en una cadena en Elm?
 
-Convertir fechas en cadenas de texto es una habilidad esencial en la programación en Elm. Esto permite que las fechas se puedan mostrar de manera legible en aplicaciones web y facilita el manejo de datos de fechas en su código.
+Convertir una fecha en una cadena puede ser útil en varias situaciones, como mostrar la fecha en un formato específico o comparar fechas en una aplicación. En este artículo, exploraremos cómo hacerlo en Elm de manera sencilla y eficiente.
 
 ## Cómo hacerlo
 
-Para convertir una fecha en una cadena de texto en Elm, se utilizará la función `Date.toString`. Esta función toma una fecha y la convierte en una cadena de texto utilizando un formato específico. Por ejemplo, si tenemos la fecha 11 de mayo de 2021, se podría convertir a una cadena de texto en el formato "dd/MM/yyyy" utilizando el siguiente código:
+En Elm, podemos convertir una fecha en una cadena utilizando la función `toString` del módulo `Date`. Veamos un ejemplo:
 
 ```Elm
-import Date
-import DateTime exposing (Day(..))
+import Date exposing (toString)
+import Time exposing (utc)
 
-Date.toString
-    { day = 11
-    , month = May
-    , year = 2021
-    }
-    dd/MM/yyyy
+date = utc 2021 10 15
 
--- Output: "11/05/2021"
+toString date -- "2021-10-15"
 ```
 
-También se pueden utilizar otras funciones, como `Date.fromTime` y `Date.fromMillis`, para convertir un tiempo en una fecha antes de utilizar la función `toString`.
+En este ejemplo, importamos los módulos `Date` y `Time` y creamos una fecha utilizando la función `utc` que toma como argumentos el año, mes y día. Luego, utilizamos la función `toString` para convertir la fecha en una cadena con el formato "año-mes-día".
 
-## Deep Dive
+Podemos manipular la fecha antes de convertirla en una cadena. Por ejemplo, si queremos mostrar la fecha en formato "día/mes/año", podemos hacerlo utilizando la función `toDayMonthYear` del módulo `Date`:
 
-En programación, trabajar con fechas puede ser complicado debido a la variedad de formatos y formas de representarlas. Es por eso que es importante entender cómo funcionan las funciones de conversión de fechas en Elm.
+```Elm
+import Date exposing (toString, toDayMonthYear)
+import Time exposing (utc)
 
-Por ejemplo, la función `Date.fromTime` toma un `Time` como argumento y devuelve un valor `Result`. Este valor puede ser `Err` si la conversión no es válida o `Ok` si se puede crear una fecha a partir del tiempo proporcionado.
+date = utc 2021 10 15
 
-Por otro lado, la función `Date.fromMillis` toma un número entero que representa los milisegundos desde el 1 de enero de 1970 y devuelve una fecha en formato `Result`. También es importante tener en cuenta cómo funciona la función `TimeZone.offsetFromUtc`, ya que esto afectará la conversión de la fecha en diferentes zonas horarias.
+toString (toDayMonthYear date) -- "15/10/2021"
+```
 
-En resumen, comprender cómo funcionan estas funciones de conversión de fechas es esencial para manejar de manera eficiente y precisa los datos de fechas en sus aplicaciones en Elm.
+Otra opción es utilizar la función `fromTime` del módulo `Date` para crear una fecha a partir de un valor de tiempo y luego convertirla en una cadena:
+
+```Elm
+import Date exposing (toString, fromTime)
+import Time exposing (posixToMillis, utc)
+
+timestamp = posixToMillis 1634300400
+
+date = fromTime timestamp
+
+toString date -- "2021-10-15"
+```
+
+## Profundizando en la conversión de fechas a cadenas
+
+Al convertir una fecha en una cadena, es importante tener en cuenta el formato en el que queremos mostrarla. Por ejemplo, si queremos mostrar el nombre del mes en lugar de su número, podemos usar la función `toMonthName` del módulo `Date`:
+
+```Elm
+import Date exposing (toString, toDayMonthYear, toMonthName)
+import Time exposing (utc)
+
+date = utc 2021 10 15
+
+toString (toDayMonthYear date) -- "15/10/2021"
+toString (toMonthName date) -- "October 15, 2021"
+```
+
+Además, podemos utilizar la función `toIso8601` del módulo `Date` para obtener la fecha en formato ISO 8601, que es un estándar internacional para mostrar fechas y horas:
+
+```Elm
+import Date exposing (toString, toIso8601)
+import Time exposing (utc)
+
+date = utc 2021 10 15
+
+toString date -- "2021-10-15"
+toString (toIso8601 date) -- "2021-10-15T00:00:00+00:00"
+```
+
+En muchos casos, también puede ser útil convertir una fecha en una cadena para realizar comparaciones entre fechas. En Elm, podemos utilizar la función `toTime` del módulo `Date` para obtener la fecha como un valor de tiempo, que luego podemos comparar utilizando operadores como `>`, `<` o `==`:
+
+```Elm
+import Date exposing (toTime)
+
+date1 = toTime (utc 2021 10 15)
+date2 = toTime (utc 2021 10 20)
+
+date2 > date1 -- True
+```
 
 ## Ver también
 
-- [Documentación oficial sobre fechas en Elm](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Guía sobre cómo manejar fechas en Elm](https://medium.com/elm-shorts/dates-and-time-in-elm-6ffdfa4ee802)
-- [Ejemplo práctico de conversión de fecha en Elm](https://dev.to/azizhp/converting-dates-to-text-in-elm-3da2)
+- Documentación oficial de Elm sobre el módulo Date: https://package.elm-lang.org/packages/elm/time/latest/Date
+- Artículo sobre cómo manejar fechas y horas en Elm: https://thoughtbot.com/blog/handling-dates-and-times-in-elm

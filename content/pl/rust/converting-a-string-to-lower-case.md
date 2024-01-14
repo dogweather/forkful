@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Konwersja ciągu znaków na małe litery"
+title:                "Rust: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,51 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja tekstu na małe litery jest częstym problemem, z którym spotykamy się w codziennej pracy programistycznej. Powodem może być np. potrzeba porównania dwóch ciągów znaków bez uwzględnienia wielkości liter. W takich sytuacjach konieczne jest przekształcenie tekstu na małe litery. W tym artykule dowiesz się jak to zrobić w języku Rust.
+Konwersja tekstu na małe litery jest ważnym elementem programowania w języku Rust. Dzięki temu możemy dokonać porównań i operacji na tekście w sposób niezależny od wielkości liter, co jest bardzo przydatne w wielu zastosowaniach. Dlatego warto poznać techniki konwertowania tekstu na małe litery w Rust.
 
 ## Jak to zrobić
 
-W języku Rust istnieją różne metody konwertowania tekstu na małe litery, a każda może być wybrana w zależności od potrzeb. Jedną z najłatwiejszych i najczęściej używanych jest metoda `to_lowercase()`.
+Konwersja tekstu na małe litery w Rust jest bardzo prosta i wykorzystuje funkcję `to_lowercase()`. Przykładowy kod wyglądałby następująco:
 
 ```Rust
-let text = "HELLO WORLD";
-let lower_case = text.to_lowercase();
-
-println!("{}", lower_case);
-
-// Output: hello world
+let text = "PRZYKŁADOWY TEKST";
+println!("{}", text.to_lowercase());
 ```
 
-Jeśli chcemy zachować oryginalną wartość zmiennej `text`, możemy użyć metody `to_lowercase()` w połączeniu z `borrow()`.
+Kod ten zwróci nam przekonwertowany tekst, czyli "przykładowy tekst". Funkcja ta działa na typach `String` oraz `&str`, więc możemy ją użyć w zależności od potrzeb. Poniżej przedstawione są dwa przykłady z użyciem obu typów:
 
 ```Rust
-let mut text = "HELLO WORLD".to_string();
-let lower_case = text.to_lowercase().borrow();
+let string = String::from("PRZYKŁADOWY TEKST");
+println!("{}", string.to_lowercase());
 
-println!("{}", text);
-
-// Output: HELLO WORLD
+let str = "PRZYKŁADOWY TEKST";
+println!("{}", str.to_lowercase());
 ```
 
-Aby uzyskać dostęp tylko do pierwszej litery w małej formatce, można użyć metody `make_ascii_lowercase()`.
+Zwrócone zostaną odpowiednio wyniki "przykładowy tekst" dla zmiennej `string` oraz "przykładowy tekst" dla zmiennej `str`.
+
+## Deep Dive
+
+Funkcja `to_lowercase()` wykorzystuje standard Unicode do konwersji tekstu na małe litery. Jest to bardzo ważne w przypadku języków, które używają innych alfabetów niż alfabet łaciński. Ponadto, dzięki wykorzystaniu standardu Unicode, funkcja ta jest odporna na różne kodowania znaków.
+
+W przypadku gdy potrzebujemy dokonać konwersji tylko części tekstu, możemy użyć funkcji `get()` w połączeniu z funkcją `to_lowercase()`. Poniżej przedstawiony jest przykład, w którym konwertowane są tylko pierwsze trzy znaki tekstu:
 
 ```Rust
-let mut text = "Hello world".to_string();
-text.make_ascii_lowercase();
-
-println!("{}", text);
-
-// Output: hello world
+let text = "PRZYKŁADOWY TEKST";
+println!("{}S", text.get(0..3).unwrap().to_lowercase());
 ```
 
-## Vertigo
+Kod ten zwróci nam wynik "przS", ponieważ tylko pierwsze trzy znaki zostały przekonwertowane na małe litery.
 
-Proces konwersji tekstu na małe litery w języku Rust można nazwać "vertigo" (od ang. vertiginous - zawrotny). Jest to nawiązanie do struktury danych przechowującej małe litery, która przypomina schody lub spiralę.
+## Zobacz również
 
-Tak naprawdę proces konwersji wygląda trochę bardziej skomplikowanie, ponieważ język Rust nie operuje na samym tekście, a na indeksach i offsetach do niego. Dzięki temu jest w stanie dokonać zmiany na poziomie rekordu, a nie tylko pojedynczego znaku.
-
-## Zobacz także
-
-- [Dokumentacja języka Rust](https://www.rust-lang.org/)
-- [Przykładowy projekt w języku Rust](https://github.com/rust-lang/rustlings)
-- [Poradnik dla początkujących w języku Rust](https://doc.rust-lang.org/book/)
+- Dokumentacja funkcji `to_lowercase()` w języku Rust: https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase
+- Przykładowe programy w języku Rust: https://github.com/rust-lang/rust-by-example
+- Kurs programowania w języku Rust: https://www.udemy.com/course/rust-beginner/

@@ -1,35 +1,45 @@
 ---
-title:                "Clojure: Ein String großschreiben"
+title:                "Clojure: Verkettung eines Strings"
+simple_title:         "Verkettung eines Strings"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Es gibt viele Gründe, warum man in der Programmierung oft aufgefordert wird, einen String in Großbuchstaben zu konvertieren. Zum Beispiel bei der Eingabe von Benutzerdaten, bei der Validierung von Passwörtern oder bei der Formatierung von Ausgabemeldungen. Egal aus welchem Grund, die Fähigkeit, Strings zu groß zu schreiben, ist eine wichtige Fähigkeit, die jeder Programmierer beherrschen sollte. 
+Die Funktion `capitalize` in Clojure wird verwendet, um einen String in Großbuchstaben zu konvertieren. Dies kann hilfreich sein, wenn man zum Beispiel einen Namen oder einen Titel in einem Satz hervorheben möchte.
 
-## Wie man es macht
+# Wie es geht
 
-Die Lösung dieses Problems ist in Clojure relativ einfach, da die Programmiersprache eine eingebaute Funktion bereitstellt, um Strings in Großbuchstaben zu konvertieren.
-
-Um einen String in Großbuchstaben zu konvertieren, müssen wir die Funktion `clojure.string/upper-case` verwenden. Diese Funktion nimmt einen String als Eingabe und gibt den gleichen String in Großbuchstaben zurück. Schauen wir uns ein Beispiel an:
+Die Verwendung von `capitalize` ist sehr einfach. Zunächst müssen wir jedoch das `clojure.string`-Modul importieren, da sich diese Funktion in diesem Modul befindet.
 
 ```Clojure
-(clojure.string/upper-case "hallo Welt")  ;=> "HALLO WELT"
+(require '[clojure.string :as str])
 ```
 
-Wie in diesem Beispiel zu sehen ist, wird der String "hallo Welt" in Großbuchstaben konvertiert. Dies gilt unabhängig von der ursprünglichen Schreibweise des Strings.
+Nun können wir die Funktion `capitalize` verwenden, indem wir den zu konvertierenden String als Argument übergeben.
 
-## Tiefentauchen
+```Clojure
+(str/capitalize "ich bin ein String")
+```
 
-Nun wissen wir, wie man Strings in Großbuchstaben konvertieren kann, aber wie genau funktioniert die `clojure.string/upper-case` Funktion hinter den Kulissen? 
+Das Ausgaberesultat ist "Ich bin ein String". Falls wir jedoch nur den ersten Buchstaben eines Satzes groß schreiben wollen, können wir die Funktion `capitalize-first` verwenden.
 
-Diese Funktion verwendet intern die Java-Methode `toUpperCase()`, die einen String in Großbuchstaben umwandelt. Einer der Vorteile von Clojure ist, dass es einfach ist, in die zugrunde liegende Java-Schicht einzutauchen, um zu verstehen, wie die Funktionen arbeiten.
+```Clojure
+(str/capitalize-first "ich bin ein Satz.")
+```
 
-## Siehe auch
+Das Ausgaberesultat ist "Ich bin ein Satz." Dies kann hilfreich sein, wenn wir einen String in ein korrektes Format bringen wollen, bevor wir ihn beispielsweise in einer Datenbank speichern.
 
-- [Clojure Docs zu String Funktionen](https://clojuredocs.org/clojure.string)
-- [Java String Dokumentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toUpperCase())
+# Tieferer Einblick
+
+Die `capitalize`-Funktion macht sich intern eine Verwaltung von Unicode-Text zu Nutze. Sie nutzt die Funktion `Character/isLowerCase` um zu überprüfen, ob ein Buchstaben ein Kleinbuchstabe ist und wendet daraufhin die entsprechende Konvertierung an. Diese Funktion ermöglicht somit auch die Konvertierung von Nicht-ASCII Buchstaben.
+
+# Siehe auch
+
+- [Offizielle Dokumentation für `clojure.string`](https://clojuredocs.org/clojure.string)
+- [Unicode-Zeichen in Clojure](https://clojure.org/reference/unicode)

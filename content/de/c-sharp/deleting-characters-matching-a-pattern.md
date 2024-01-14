@@ -1,7 +1,9 @@
 ---
-title:                "C#: Entfernen von Zeichen, die einem Muster entsprechen."
+title:                "C#: Löschen von Zeichen, die einem Muster entsprechen"
+simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,46 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Warum
 
-Es gibt verschiedene Gründe, warum man als Programmierer*in Charaktere löschen möchte, die einem bestimmten Muster entsprechen. Zum Beispiel kann es sein, dass man Daten bereinigen muss, bevor man sie weiterverarbeiten kann. Oder man möchte unerwünschte Zeichen aus einer Benutzereingabe entfernen, um die Sicherheit der Anwendung zu verbessern. In diesem Blog-Beitrag werde ich zeigen, wie man mithilfe von C# Charaktere löschen kann, die einem bestimmten Muster entsprechen.
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist eine nützliche Fähigkeit im Bereich der Programmierung. Es kann dabei helfen, unerwünschte oder fehlerhafte Daten zu bereinigen und ordnungsgemäße Formate sicherzustellen. In diesem Blog-Beitrag werden wir uns genauer damit beschäftigen, wie man in C# Zeichen löschen kann, die einem bestimmten Muster entsprechen.
 
-# Wie geht das?
+# Wie geht man vor?
 
-Um Charaktere zu löschen, die einem bestimmten Muster entsprechen, können wir die Methode `Remove()` aus der Klasse `String` verwenden. Diese Methode gibt eine neue Zeichenfolge zurück, in der alle Vorkommen des angegebenen Musters entfernt wurden. Hier ist ein Beispielcode, der alle Zahlen aus einer Zeichenfolge entfernt:
+Um in C# Zeichen zu löschen, die einem bestimmten Muster entsprechen, kann man die Methode `Replace()` verwenden. Diese Methode erwartet zwei Parameter: das Muster, das ersetzt werden soll, und durch was es ersetzt werden soll. In unserem Beispiel wollen wir alle Vokale aus einem gegebenen Wort löschen. Wir verwenden daher das Muster `[aeiou]` und lassen es durch einen leeren String ersetzen.
 
 ```C#
-string input = "Abc123Def456";
-string output = input.Remove("123");
+string word = "Hallo";
+string modifiedWord = word.Replace("[aeiou]", "");
 
-Console.WriteLine(output); // Ausgabe: "AbcDef"
+Console.WriteLine(modifiedWord);
 ```
 
-In diesem Beispiel wird die Methode `Remove()` auf der Eingabezeichenfolge `input` angewendet, wobei das Muster "123" als Parameter übergeben wird. Die neue Zeichenfolge `output` wird dann ohne alle Vorkommen von "123" sein.
+Die Ausgabe unseres Codes wird `Hll` sein, da alle Vokale aus dem Wort "Hallo" gelöscht wurden.
 
 # Tiefergehende Informationen
 
-Man kann auch angeben, an welcher Position in der Eingabezeichenfolge das Muster beginnen soll, indem man einen zusätzlichen Parameter mit der Startposition angibt:
-
-```C#
-string input = "Abc123Def456";
-string output = input.Remove("123", 3); // Startposition 3
-
-Console.WriteLine(output); // Ausgabe: "AbcDef456"
-```
-
-In diesem Beispiel wird das Muster "123" erst ab der dritten Position in der Zeichenfolge gelöscht. Die Startposition wird dabei als zweites Argument in der Methode `Remove()` übergeben (beginnend bei 0 für das erste Zeichen).
-
-Außerdem gibt es auch die Möglichkeit, anzugeben, wie viele Zeichen vom Muster gelöscht werden sollen, indem man einen weiteren Parameter mit der Länge angibt:
-
-```C#
-string input = "Abc123Def456";
-string output = input.Remove("123", 3, 2); // Startposition 3, Länge 2
-
-Console.WriteLine(output); // Ausgabe: "AbcDef456"
-```
-
-In diesem Beispiel wird das Muster "123" ab der dritten Position in der Zeichenfolge gelöscht und dabei nur die ersten beiden Zeichen des Musters entfernt.
+Die `Replace()` Methode kann auch mit regulären Ausdrücken verwendet werden. Reguläre Ausdrücke sind Muster, die verwendet werden, um Text zu durchsuchen und damit bestimmte Zeichen zu finden oder zu ersetzen. Sie können sehr hilfreich sein, um komplexe Muster zu implementieren und das Löschen von Zeichen zu vereinfachen. In unserem obigen Beispiel könnten wir beispielsweise auch alle Zahlen aus einem String löschen, indem wir das Muster `[0-9]` verwenden.
 
 # Siehe auch
 
-- [MSDN Dokumentation zu der Methode `Remove()`](https://docs.microsoft.com/en-us/dotnet/api/system.string.remove?view=net-5.0)
-- [Weitere Möglichkeiten, Zeichenfolgen in C# zu bearbeiten](https://www.c-sharpcorner.com/UploadFile/mahesh/string-manipulation-in-C-Sharp/#:~:text=Remove()%20method%3A-,The%20Remove()%20method,StartingIndex%2C%20int%20MaxLength)%20method)
+- [C# String.Replace() Methode] (https://docs.microsoft.com/en-us/dotnet/api/System.String.Replace?view=netcore-3.1)
+- [Reguläre Ausdrücke in C#] (https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [C# Tutorials] (https://www.c-sharpcorner.com/learn/c-sharp-tutorials/)

@@ -1,41 +1,50 @@
 ---
-title:                "Arduino: Lausekkeen pituuden löytäminen"
+title:                "Arduino: Merkkijonon pituuden löytäminen"
+simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi on tärkeää löytää merkkijonon pituus?
+Arduino - Kuinka löytää merkkijonon pituus
 
-Merkkijonon pituuden löytäminen on tärkeä osa ohjelmointia, sillä se auttaa meitä hallitsemaan ja muokkaamaan tekstipohjaista dataa. Esimerkiksi voi olla tarpeellista tietää, kuinka monta merkkiä tai sanaa mahtuu tiettyyn muuttujaan tai käyttöliittymään.
+## Miksi?
 
-# Miten: Koodiesimerkkejä merkkijonon pituuden löytämiseen Arduino-ympäristössä
+Monissa ohjelmoinnin projekteissa saattaa olla tarvetta saada selville merkkijonon pituus. Se voi olla tarpeellista esimerkiksi tekstien käsittelyssä tai erilaisten syötteiden tarkistuksessa. Onneksi Arduinoilla tämä on helppoa ja tänään me katsomme kuinka se tehdään.
 
-```arduino
-String teksti = "Tervetuloa!";
+## Kuinka?
 
-// Lasketaan merkkijonon pituus ja tulostetaan se sarjaväylään
-int pituus = teksti.length();
-Serial.println(pituus);
+```Arduino
+String merkkijono = "Tervetuloa lukijat!";
 
-// Voimme myös tulostaa vain osan merkkijonosta, esimerkiksi ensimmäiset 5 merkkiä
-Serial.println(teksti.substring(0, 5));
+int pituus = merkkijono.length(); //palauttaa pituuden, joka tässä tapauksessa on 21
+
+Serial.println(pituus); //tulostaa 21 sarjaporttiin
 ```
 
-Tuloste: 
+Näin yksinkertaisesti voit saada selville merkkijonon pituuden. Ensimmäisessä rivissä luodaan String-olio, johon tallennetaan käsiteltävä merkkijono. Toisessa rivissä käytetään `length()`-metodia, joka palauttaa merkkijonon pituuden. Lopuksi tulostetaan tulos sarjaporttiin. Kokeile muuttaa merkkijonoa ja huomaa miten pituus muuttuu.
+
+Jos haluat tarkistaa merkkijonon pituuden ennen sen tallentamista String-olioon, voit käyttää `strlen()`-funktiota. Se palauttaa merkkijonon pituuden numerona, joten se ei toimi suoraan String-olioiden kanssa.
+
+```Arduino
+char merkkijono[] = "Hei maailma!";
+
+int pituus = strlen(merkkijono); //palauttaa 12
+
+Serial.println(pituus); //tulostaa 12 sarjaporttiin
 ```
-11
-Terve
-```
 
-# Syvempi sukellus: Tietoa merkkijonon pituuden löytämisestä
+## Syventyvä matka
 
-Merkkijonon pituus lasketaan oletuksena kaikkien merkkien mukaan, myös välilyönnit ja erikoismerkit lasketaan mukaan. On myös mahdollista käyttää muita metodeja, kuten ```.trim()``` ja ```.remove()``` joiden avulla voidaan muokata merkkijonoa ennen sen pituuden laskemista. Lisätietoa näistä ja muista hyödyllisistä string-metodeista löydät [Arduino String -dokumentaatiosta](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/).
+Merkkijonon pituuden löytämiseen liittyy muutamia tärkeitä asioita, joita kannattaa pitää mielessä. Ensinnäkin, String-oliot käyttävät muistia tehokkaammin ja niiden käsittely on helpompaa kuin tavallisilla merkkijonoilla. Toiseksi, merkkijonon pituus ei sisällä nollamerkkiä, joten esimerkiksi merkkijonon "Hello" pituus on 5 eikä 6.
 
-# Katso myös
+Kannattaa myös huomioida, että String-olioon liittyy lukuisia muita hyödyllisiä metodeja, joita kannattaa tutkia, kuten `substring()` ja `charAt()`, joilla voi esimerkiksi jakaa merkkijonon osiin tai etsiä tiettyjä merkkejä.
 
-- [Merkkijonojen käyttö Arduino-ohjelmoinnissa - opetusvideo](https://www.youtube.com/watch?v=_JNE0jJyt54)
-- [Arduino-ohjelmointikurssi - merkkijonot](https://www.arduino.cc/en/Tutorial/StringLength)
-- [Miten ohjelmoida merkkijonoja Arduinolla](https://create.arduino.cc/projecthub/charlee/arduino-tutorial-how-to-use-strings-f88a95)
+## Katso myös
+
+- [Arduino String Documentation](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [C String Functions](https://www.programiz.com/c-programming/library-function/string.h)
+- [Arduino String vs. C String](https://forum.arduino.cc/index.php?topic=255361.0)

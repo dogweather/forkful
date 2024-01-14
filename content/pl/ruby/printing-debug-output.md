@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Wydrukowanie wyników debugowania."
+title:                "Ruby: Wydrukowanie komunikatów debugowania"
+simple_title:         "Wydrukowanie komunikatów debugowania"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/printing-debug-output.md"
 ---
 
@@ -9,38 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Każdy programista, niezależnie od stopnia zaawansowania, musi czasem śledzić kod i znaleźć błędy. Właśnie wtedy przydaje się wydrukowanie informacji na temat przebiegu kodu, czyli tzw. "debug output". Pozwala to na lepsze zrozumienie działania programu i szybsze znalezienie ewentualnych błędów.
+Programowanie to nie tylko pisanie kodu, ale również rozwiązywanie problemów. Aby skutecznie zarządzać swoim kodem i znaleźć ewentualne błędy, ważne jest umiejętne korzystanie z printowania debug output. Pozwala to nam zobaczyć, co dzieje się wewnątrz programu i jakie wartości przyjmuje nasze zmienne. W tym artykule pokażemy Ci, dlaczego warto korzystać z tej techniki.
 
 ## Jak to zrobić
 
-Najprostszym sposobem na wyświetlenie debug output jest użycie metody "puts", która wypisze przekazany jej argument na ekranie. Możemy także wykorzystać specjalną metodę "p" lub "print", która również można znaleźć w dokumentacji języka Ruby.
+Istnieje wiele różnych metod na printowanie debug output w języku Ruby. Najprostszym sposobem jest użycie metody `puts` i podanie jej zmiennej lub ciągu znaków. Przykładowy kod wyglądałby następująco:
 
 ```Ruby
-puts "Hello World"
-p "Debug output"
-print "Output without newline"
+x =  5
+puts "Wartość zmiennej x: #{x}"
 ```
 
-W powyższych przykładach widzimy, że każda z tych metod działa w podobny sposób, ale ma pewne różnice, które mogą mieć znaczenie w zależności od sytuacji.
+Wynikiem będzie wydruk w konsoli: `Wartość zmiennej x: 5`. 
 
-## Głębszy zanurzenie
-
-Ponieważ wyświetlanie debug output jest tak powszechnie stosowaną techniką, istnieje wiele sposobów na dostosowanie go do własnych potrzeb. Na przykład możemy użyć metody "p" zamiast "puts" w celu uzyskania dokładniejszej informacji na temat typu i wartości wyświetlanych danych. Możemy również dodać warunek, dzięki któremu debug output będzie wyświetlany tylko wtedy, gdy będzie spełniony.
+Możemy również wykorzystać metodę `p`, która wypisze nam zawartość zmiennej w sposób bardziej przejrzysty. Przykładowy kod:
 
 ```Ruby
-p 123                 # wyświetli: 123
-puts [1, 2, 3]        # wyświetli: 1
-                      #            2
-                      #            3
-puts 123 if true      # wyświetli: 123
-
-p 123 if false        # nie wyświetli niczego
+fruit = "jabłko"
+p "Owoce dostępne w koszyku: #{fruit}"
 ```
 
-Ponadto, poza standardowym wyświetlaniem danych, możemy również korzystać z różnych gemów i bibliotek, które oferują bardziej zaawansowane metody debugowania. Przykładem może być popularny gem "pry", który umożliwia interaktywne wyświetlanie i manipulację danymi w czasie wykonywania programu.
+Wynik: `"Owoce dostępne w koszyku: "jabłko"`. 
 
-## Zobacz także
+Jeśli chcemy wyświetlić więcej informacji, możemy wykorzystać metodę `pp`, która wypisze nam zawartość zmiennej w formacie YAML. Przykładowy kod:
 
-- ["Debugowanie w Ruby" na stronie DZone](https://dzone.com/articles/a-debugging-tutorial-for-ruby)
-- ["Praktyczny poradnik debugowania w Ruby" na stronie Medium](https://medium.com/rubyinside/practical-guide-debugging-ruby-b6f6db8dbc97)
-- ["Przydatne techniki debugowania w Ruby" na stronie RubyGuides](https://www.rubyguides.com/2019/09/ruby-debugging/)
+```Ruby
+require 'pp'
+
+students = ["Anna", "Jan", "Kasia"]
+pp "Lista studentów: #{students}"
+```
+
+Wynik:
+
+```Ruby
+"Lista studentów: [\"Anna\", \"Jan\", \"Kasia\"]"
+```
+
+## Głębsze zanurzenie
+
+Debug output jest nie tylko pomocny przy znalezieniu błędów, ale także może być użyteczny w celu zrozumienia, co dzieje się wewnątrz naszego programu. Możemy na przykład wyprintować zawartość zmiennych w różnych momentach wykonania programu, aby zobaczyć, jak zmieniają się ich wartości. Wykorzystując różne metody printowania, możemy zapoznać się z różnymi sposobami prezentacji danych i wybrać ten, który będzie dla nas najbardziej czytelny i przydatny.
+
+## Zobacz również
+
+- [Dlaczego warto używać printowania debug output](https://www.rubyguides.com/2019/01/ruby-debugging/)
+- [List of Ruby Debuggers](https://www.rubyguides.com/2019/03/ruby-debuggers/)
+- [Jak czytać i rozumieć kod programów w Ruby](https://blog.faelixiablog.pl/jak-czyta%C4%87-i-interpretowa%C4%87-kod-program%C3%B3w-ruby-401a1db327c3)

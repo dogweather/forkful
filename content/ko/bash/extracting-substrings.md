@@ -1,45 +1,66 @@
 ---
-title:                "Bash: 부분 문자열 추출하기"
+title:                "Bash: 부분 문자열 추출"
+simple_title:         "부분 문자열 추출"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-서브스트링을 추출하는 이유는 무엇일까요? 이 작업은 문자열에서 특정 문자 또는 단어를 찾기 위해 자주 사용되며 유용한 정보를 추출하는 데 도움이 됩니다.
+## 왜 substring을 추출하는 것이 중요한가요?
 
-## 하우투
+subtring 추출은 Bash 프로그래밍에서 매우 유용한 기능입니다. 예를 들어, 파일 이름에서 확장자를 제거하거나, 문자열에서 특정 부분만 추출하는 등의 작업을 할 수 있습니다. 이를 통해 자동화된 작업을 효율적으로 수행할 수 있으며, 코드를 간결하고 가독성 있게 만들 수 있습니다.
 
-서브스트링을 추출하는 방법은 간단합니다. 다음의 Bash 코드를 사용하면 됩니다.
+# 하는 방법
+
+## 코드 예시
 
 ```Bash
-# 문자열 변수 정의
-str="이것은 문자열 예제입니다"
-
-# 서브스트링 추출
-echo ${str:0:6} # 출력 : 이것은
-echo ${str:6} # 출력 : 문자열 예제입니다
+# 파일 이름에서 확장자 추출
+filename="example.txt"
+extension="${filename##*.}"
+echo $extension # 결과: txt
 ```
 
-위의 코드에서 `${str:start:length}` 형식으로 사용하며, `start` 위치부터 `length` 길이만큼의 서브스트링을 추출합니다. `start` 위치는 0부터 시작하며, `length`를 생략하면 `start` 위치부터 문자열 끝까지 추출합니다.
+```Bash
+# 다른 문자열에서 특정 부분만 추출
+string="Hello, world!"
+substring="${string:0:5}"
+echo $substring # 결과: Hello
+```
 
-## 딥 다이브
+## 샘플 출력
 
-서브스트링 추출에 대해 더 깊이 알아보겠습니다. Bash는 다음과 같은 방법으로 서브스트링을 추출할 수 있습니다.
+위의 예시 코드를 실행한 결과는 다음과 같습니다.
 
-- `${str:start:length}` : 앞서 언급한 방법으로 추출
-- `${str: -start:length}` : 문자열의 뒤에서부터 `start` 위치부터 `length` 길이만큼 추출 (공백도 포함)
-- `${str: -start:-end}` : 뒤에서부터 `start` 위치부터 `end` 위치까지 추출
-- `${str#substring}` : `substring`과 일치하는 처음의 부분 문자열을 제거하고 나머지 문자열을 반환
-- `${str%substring}` : `substring`과 일치하는 마지막의 부분 문자열을 제거하고 나머지 문자열을 반환
+```
+txt
+Hello
+```
 
-더 자세한 내용은 [Bash 서브스트링 추출 방법](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)을 참고하세요.
+# 딥 다이브
 
-## 봐도 좋아요
+## substring 추출의 원리
 
-- [Bash String Manipulation](https://www.linuxjournal.com/content/bash-string-manipulation): Bash에서 문자열을 조작하는 방법에 대해 자세하게 설명한 글입니다.
-- [Bash String Operations](https://www.gnu.org/software/bash/manual/html_node/String-Operations.html): Bash에서 제공하는 다양한 문자열 처리 방법을 설명한 공식 문서입니다.
-- [Bash Substring Explained with Examples](https://www.shell-tips.com/bash/substring-extraction/): Bash에서 서브스트링을 추출하는 다양한 방법과 예제를 제공하는 글입니다.
+substring 추출은 변수에서 지정한 부분을 제거하고 남은 부분을 반환하는 것입니다. 이를 위해 다양한 방법을 사용할 수 있지만, 주로 변수 확장(parameter expansion)을 이용합니다. 위의 코드 예시에서 사용된 `${variable##pattern}`은 변수의 끝에서부터 지정한 pattern과 일치하는 부분을 모두 제거한 뒤 남은 값을 반환합니다.
+
+## 더 많은 기능들
+
+substring 추출에는 다양한 옵션이 있으며, 사용자가 원하는 상황에 맞게 적절한 방식을 선택할 수 있습니다. 예를 들어, 변수의 시작 부분에서부터 일치하는 패턴의 모든 부분을 제거하고 싶다면 `${variable#pattern}`을 사용할 수 있습니다. 더 자세한 정보는 Bash 공식 문서를 참고하시기 바랍니다.
+
+# 관련 정보
+
+## 관련 링크들
+
+- [Bash 공식 문서](https://www.gnu.org/software/bash/manual/)
+- [Bash substring 추출 예제](https://linuxhint.com/substring_in_bash/)
+- [Linux 셸 스크립팅 튜토리얼](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+
+# 이 문서는...
+
+- 주제: substring 추출하는 방법
+- 왜 이런 기능이 필요한지, 코드 예시와 샘플 출력, 그리고 딥 다이브와 관련 링크를 제공하여 Bash 프로그래밍에서 substring 추출이 어떻게 유용한지 알려주는 문서입니다.

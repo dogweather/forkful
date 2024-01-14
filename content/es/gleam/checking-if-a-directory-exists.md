@@ -1,38 +1,58 @@
 ---
 title:                "Gleam: Comprobando si existe un directorio"
+simple_title:         "Comprobando si existe un directorio"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-¿Te has preguntado alguna vez si un directorio existe en tu programa de Gleam? Puede parecer una pregunta trivial, pero en realidad es un problema común en la programación. Saber cómo verificar la existencia de un directorio es esencial para asegurarse de que tu código funcione correctamente y evitar errores.
+
+Cuando estás escribiendo un programa en Gleam, es importante asegurarte de que tu código sea robusto y pueda manejar todas las posibles situaciones. Una de estas situaciones es verificar si un directorio existe antes de intentar acceder a él. En esta publicación, aprenderemos cómo hacer eso usando el lenguaje de programación Gleam.
 
 ## Cómo hacerlo
-En Gleam, verificar la existencia de un directorio es muy sencillo. Solo necesitas utilizar la función `std.fs.dir_exists/1` y pasarle como argumento la ruta del directorio que quieres comprobar. Por ejemplo:
+
+Comencemos por importar el módulo `os` que nos permitirá acceder a las funciones del sistema operativo.
 
 ```Gleam
-let existe = std.fs.dir_exists("/mi/directorio")
+import os
 ```
 
-Esta función devolverá `true` si el directorio existe, o `false` si no existe.
-
-Pero, ¿qué ocurre si quieres comprobar si un directorio existe dentro de otro directorio? En ese caso, puedes utilizar la función `std.fs.join/2` para unir las rutas de ambos directorios y pasarla como argumento a `std.fs.dir_exists/1`, como se muestra a continuación:
+A continuación, definiremos una función llamada `check_directory` que tomará como argumento una ruta de directorio y devolverá un valor `bool` indicando si el directorio existe o no.
 
 ```Gleam
-let existe = std.fs.dir_exists(std.fs.join("/mi/directorio", "subdirectorio"))
+pub fn check_directory(directory) {
+  let result = os.dir_exists(directory)
+  result
+}
 ```
 
-¿Qué pasa si el directorio que queremos comprobar está dentro de un subdirectorio de un subdirectorio? No hay problema, solo necesitas utilizar `std.fs.join/2` tantas veces como sea necesario para construir la ruta correcta.
+Luego, podemos llamar a esta función y pasarle una ruta de directorio como parámetro. Aquí hay un ejemplo donde intentamos verificar si el directorio "docs" existe en la carpeta actual y luego imprimimos un mensaje en consecuencia.
+
+```Gleam
+let directory = "./docs"
+let exists = check_directory(directory)
+if exists {
+  println("¡El directorio existe!")
+} else {
+  println("El directorio no existe.")
+}
+```
+
+Si ejecutamos este código, obtendremos el siguiente resultado:
+
+```
+¡El directorio existe!
+```
 
 ## Profundizando
-Si quieres saber más sobre cómo funciona la función `std.fs.dir_exists/1`, puedes consultar su documentación en [este enlace](https://gleam.run/std/fs.html#dir_exists). Allí encontrarás información sobre cómo maneja los errores y el formato de las rutas.
 
-Además, si necesitas trabajar con directorios y archivos en general, te recomendamos echar un vistazo a las funciones de la librería estándar [`std.fs`](https://gleam.run/std/fs.html) y explorar todo lo que puedes hacer con ellas.
+Ahora que sabemos cómo verificar si un directorio existe en Gleam, es importante entender cómo funciona esta función. El módulo `os` utiliza funciones de bajo nivel proporcionadas por el sistema operativo para acceder a los archivos y directorios del sistema. El método `dir_exists` se comunica con el sistema operativo para comprobar si el directorio especificado existe o no. Si el directorio existe, devuelve un valor `true` y si no, devuelve un valor `false`.
 
 ## Ver también
-- [Documentación de `std.fs.dir_exists/1`](https://gleam.run/std/fs.html#dir_exists)
-- [Funciones de la librería `std.fs`](https://gleam.run/std/fs.html)
-- [Ejemplos de código de Gleam](https://github.com/gleam-lang/gleam/blob/master/examples)
+
+- [Documentación del módulo Gleam os](https://gleam.run/modules/standard-lib/os/)
+- [Funciones del sistema operativo en Gleam](https://gleam.run/book/stdlib-filesystem#operating-system-functions)

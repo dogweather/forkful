@@ -1,54 +1,55 @@
 ---
-title:                "Elixir: Väliaikaistiedoston luominen"
+title:                "Elixir: Väliaikaisen tiedoston luominen"
+simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi luoda väliaikainen tiedosto Elixir-ohjelmoinnissa?
 
-Jokainen meistä on varmasti joutunut jossain vaiheessa luomaan väliaikaisen tiedoston, joka tarvitaan vain hetken aikaa. Tämä on yleinen tarve, esimerkiksi tiedon tallentamiseen, kunnes se siirretään pysyvään tallennuspaikkaan tai kun luodaan väliaikainen varmuuskopio. Tiedoston luominen vain hetkeksi voi tuntua turhalta, mutta se voi olla hyödyllistä monissa tilanteissa. Elixirillä voit helposti luoda väliaikaisen tiedoston ja tässä blogikirjoituksessa opit, miten se tehdään.
+Väliaikaisten tiedostojen luominen voi olla hyödyllistä, kun halutaan tallentaa väliaikaisia tietoja, jotka eivät ole välttämättömiä ohjelman toiminnalle. Esimerkiksi väliaikaiseen tiedostoon voi tallentaa väliaikaisesti laskennallisia tuloksia tai väliaikaisesti käsiteltäviä tietoja, jotka poistetaan käytön jälkeen. Elixir-ohjelmoinnissa väliaikaisten tiedostojen luominen on helppoa ja kätevää.
 
-## Miten
+## Miten luoda väliaikainen tiedosto Elixir-ohjelmoinnissa?
 
-Elixirillä voit luoda väliaikaisen tiedoston helposti käyttämällä `File` moduulia. Voit käyttää `File.open!/2` funktiota ja antaa parametreiksi tiedoston nimen ja halutun toiminnon.
-
-```Elixir
-File.open!("temp.txt", [:write])
-```
-
-Tämä luo uuden tiedoston nimeltä `temp.txt`, johon voit kirjoittaa haluamasi tiedot. Voit myös käyttää muita toimintoja, kuten `:read` tai `:append`, tarpeidesi mukaan.
-
-Voit myös määrittää haluamasi hakemiston, johon tiedosto luodaan, antamalla `path` parametrin funktiolle.
+Väliaikaisen tiedoston luominen Elixir-ohjelmoinnissa tapahtuu `:tempfile`-moduulin avulla. Tämä moduuli tarjoaa toiminnallisuuden luoda väliaikainen tiedosto ja palauttaa sen polun. Tiedostolle voi myös asettaa halutun nimen, ja sen voi luoda halutussa hakemistossa.
 
 ```Elixir
-File.open!("temp.txt", [:write], path: "/kansio")
+{:ok, path} = :tempfile.open("prefix", "tmp")
 ```
 
-Kun luotu tiedosto ei ole enää tarpeellinen, voit käyttää `File.rm/1` funktiota poistaaksesi sen.
+Tässä esimerkissä luodaan väliaikainen tiedosto käyttämällä `:tempfile`-moduulin `open`-funktiota, ja annetaan tiedostolle nimeksi "prefix" ja hakemistoksi "tmp". Tämän jälkeen tiedoston polku tallennetaan `path`-muuttujaan.
+
+Väliaikaisen tiedoston voi myös poistaa käytön jälkeen `:file`-moduulin `delete`-funktion avulla.
 
 ```Elixir
-File.rm("temp.txt")
+:file.delete(path)
 ```
 
-Jos haluat luoda väliaikaisen tiedoston, johon voit tallentaa dataa ja johon vain tietyt prosessit voivat kirjoittaa, voit käyttää `Tempfile` moduulia. Tämä luo turvallisen tiedoston, johon ainoastaan siihen liitetty prosessi voi kirjoittaa.
+Kokonaisia tiedostoja voi myös lukea ja kirjoittaa käyttäen `:file`-moduulin funktioita `read` ja `write`.
 
 ```Elixir
-file = Tempfile.open("temp.txt")
-file.write("Tämä on väliaikainen tiedosto.")
-file.close
+{:ok, file} = File.open(path, [:write]) # Avataan tiedosto kirjoitusta varten
+IO.write(file, "Hello World!") # Kirjoitetaan tiedostoon
+File.close(file) # Suljetaan tiedosto
+
+{:ok, file} = File.open(path, [:read]) # Avataan tiedosto lukemista varten
+IO.puts(IO.read(file)) # Tulostetaan tiedoston sisältö
+File.close(file) # Suljetaan tiedosto
 ```
 
-## Syvällinen sukellus
+## Syvällisempi sukellus väliaikaisten tiedostojen luomiseen Elixir-ohjelmoinnissa
 
-File moduulin lisäksi Elixirillä on myös `Path` ja `Path.wildcard/2` funktiot, joiden avulla voit luoda väliaikaisia tiedosto- ja hakemistopolkuja.
+Väliaikaisten tiedostojen luominen Elixir-ohjelmoinnissa tapahtuu käyttäen `:tempfile`-moduulia ja sen `open`-funktiota. Funktion avulla voidaan määrittää tiedoston nimi, hakemisto sekä muut parametrit, kuten tiedoston luomisen tapa (esimerkiksi aikaleiman perusteella).
 
-Jos haluat tiedon tallentamiseen käyttää jotain muuta kuin tiedostoa, voit käyttää `GenServer` moduulia. Tämä antaa sinulle mahdollisuuden luoda prosessi, joka tallentaa dataa muistiin väliaikaisesti ja poistuu, kun se ei enää ole tarpeellinen.
+Väliaikainen tiedosto luodaan käyttöjärjestelmän väliaikaiseen hakemistoon, mikäli hakemistoa ei ole erikseen määritetty. Tiedoston nimeen voi myös lisätä etuliitteen ja/tai jälkiliitteen `:tempfile`-moduulin avulla.
 
-## Katso myös
+Väliaikaisen tiedoston luominen voi myös vaatia käyttöoikeuksia. Tämän takia Elixir-ohjelmoijan tulee huomioida, että ohjelmalla on tarvittavat oikeudet tiedoston luomiseen ja poistamiseen.
 
-- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/File.html)
-- [Elixir School -opas tiedostonhallintaan](https://elixirschool.com/en/lessons/basics/file/)
-- [Tempfile moduulin dokumentaatio](https://hexdocs.pm/elixir/Tempfile.html)
+# Katso myös
+
+- `:tempfile`-moduulin dokumentaatio: https://hexdocs.pm/elixir/Tempfile.html
+- `:file`-moduulin dokumentaatio: https://hexdocs.pm/elixir/File.html

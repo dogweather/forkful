@@ -1,48 +1,46 @@
 ---
-title:                "TypeScript: 日付の取得方法"
+title:                "TypeScript: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+プログラミングにおいて現在の日付を取得する必要がある理由を簡単に説明します。
 
-日付を取得することの利点を教えます。日付は、多くのプログラミングに欠かせない情報です。例えば、予約システムやタイムスタンプ、タイムゾーンの設定など、多くのアプリケーションが日付を使っています。今回は、TypeScriptを使って日付を取得する方法をご紹介します。
+人々はしばしば、日付を記録したり、期限を設定したり、特定の日付と比較したりする必要があります。それゆえ、現在の日付を取得することは、より効率的にタスクを実行する上で重要な役割を果たします。
 
 ## 方法
-
-まずは、日付を取得する前に使用するDateオブジェクトを作成する必要があります。そのために、以下のコードを使用します。
-
-```TypeScript
-const currentDate: Date = new Date();
-```
-
-上記のコードでは、現在のタイムゾーンを使用してDateオブジェクトが作成されます。もし、特定のタイムゾーンを使用したい場合には、以下のようにすることができます。
+TypeScriptを使用して、現在の日付を取得する方法を以下のコーディング例と共に紹介します。
 
 ```TypeScript
-const currentDate: Date = new Date("2021-08-25T09:00:00.000+09:00");
+// 現在の日付を新しいDateオブジェクトとして取得する
+let currentDate = new Date();
+
+// 年、月、日を取得する
+let year = currentDate.getFullYear();
+let month = currentDate.getMonth() + 1; // 0から始まるため、+1する必要がある
+let day = currentDate.getDate();
+
+// 現在の日付を指定したフォーマットで表示する
+let formattedDate = `${month}/${day}/${year}`;
+console.log(formattedDate); // 10/1/2021と表示される
 ```
 
-次に、年、月、日などの特定の情報を取得する方法をご紹介します。下記のコードを参考にしてください。
+このように、Dateオブジェクトを使用することで簡単に現在の日付を取得し、必要に応じてフォーマットすることができます。
 
-```TypeScript
-const year: number = currentDate.getFullYear();
-const month: number = currentDate.getMonth() + 1;
-const day: number = currentDate.getDate();
-```
+## ディープダイブ
+DateオブジェクトはJavaScriptの組み込みオブジェクトの一つであり、日付や時刻を扱うために便利なメソッドを多数持っています。
 
-上記のコードでは、Dateオブジェクトから現在の年、月、日を取得しています。JavaScriptのDateオブジェクトには、さまざまなメソッドがあり、詳細については公式ドキュメントを参照してください。
+例えば、現在の時刻を取得するには`getHours()`や`getMinutes()`といったメソッドが使用できます。また、他の日付と比較する際には`getTime()`を使用することで、日付を数値として取得することができます。
 
-## 深く掘り下げる
+さらに、Dateオブジェクトを使用すると、タイムゾーンの設定や夏時間の考慮も自動的に行うことができます。
 
-Dateオブジェクトには、タイムスタンプやタイムゾーン、月初めや月末など、さまざまな情報を取得するためのメソッドがあります。また、Dateオブジェクトの値を比較することで、日付の計算を行うこともできます。
-
-さらに、外部ライブラリを使用することで、より高度な日付処理を行うこともできます。Moment.jsやDay.jsなど、多くのライブラリが日付処理に特化しています。
-
-## See Also
-
-- [JavaScript Dateオブジェクトのドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js公式サイト](https://momentjs.com/)
-- [Day.js公式サイト](https://day.js.org/)
+## 併せて読みたい
+- [TypeScript公式ドキュメント：Dateオブジェクト](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-9.html#date-and-time-types)
+- [MDN：Dateオブジェクト](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScriptで現在の日時を扱う方法](https://qiita.com/teradonburi/items/e87b71e0803072b53c17)（日本語）

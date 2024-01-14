@@ -1,42 +1,47 @@
 ---
 title:                "Haskell: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi 
 
-Haskell-ohjelmoinnin yksi tärkeimmistä osa-alueista on merkkijonojen liittäminen. Tämä tarkoittaa, että voit yhdistää useita merkkijonoja yhdeksi kokonaisuudeksi. Tämä on erittäin hyödyllistä, kun haluat esimerkiksi näyttää käyttäjälle yhdistetyn tekstin tai tallentaa tiedostoja nimillä, jotka koostuvat useista merkkijonoista.
+Stringien yhdistäminen on tärkeä osa ohjelmoinnin ja erityisesti Haskellin opiskelua, koska se auttaa meitä luomaan dynaamisia ja monipuolisia merkkijonoja. Tämä taito antaa meille mahdollisuuden tehdä monimutkaisempia ja rikkaampia sovelluksia, jotka voivat käsitellä laajempia määrin informaatiota.
 
 ## Miten tehdä
 
-Merkkijonojen liittämiseen Haskellissa on muutama eri tapa. Yksi vaihtoehto on käyttää `++`-operaattoria, joka yhdistää kaksi merkkijonoa. Esimerkiksi, jos haluat yhdistää merkkijonot "Hei" ja "maailma", voit tehdä sen seuraavasti:
+Yhdistämällä merkkijonoja Haskellissa on monia erilaisia tapoja. Yksi tapa on käyttää `++` operaattoria, joka yhdistää kaksi merkkijonoa yhteen. Toinen vaihtoehto on käyttää `concat` funktiota, joka yhdistää listan merkkijonoista yhdeksi merkkijonoksi. Alla on esimerkkejä molemmista menetelmistä:
 
 ```Haskell
-"Hei" ++ "maailma"
+-- `++` operaattori
+"Hello " ++ "world" -- Output: "Hello world"
+
+-- `concat` funktio
+concat ["Hello ", "world"] -- Output: "Hello world"
 ```
 
-Tämän koodin tulosteena on "Heimaailma". Huomaa, että välissä ei ole välilyöntiä, joten on hyvä muistaa lisätä se tarvittaessa.
-
-Toinen tapa liittää merkkijonoja on käyttää `concat`-funktiota. Tämä funktio voi ottaa vastaan useita merkkijonoja ja yhdistää ne yhdeksi. Esimerkiksi:
+Toinen tapa yhdistää merkkijonoja on käyttää `intercalate` funktiota, joka ottaa kaksi argumenttia: erottimen ja listan merkkijonoista. Tämä funktio yhdistää merkkijonot yhdeksi merkkijonoksi erottimella erotettuna. Alla on esimerkki:
 
 ```Haskell
-concat ["Hei", " ", "maailma"]
+-- `intercalate` funktio
+intercalate " " ["Hello", "world"] -- Output: "Hello world"
 ```
 
-Tämä tuottaa saman tuloksen kuin edellinen esimerkki. Voit myös käyttää `concat`-funktiota listalle, joka sisältää merkkijonoja, kuten tässä tapauksessa.
+Lisäksi Haskellissa on myös `foldl` ja `foldr` funktiot, jotka voivat yhdistää listan merkkijonoja joko vasemmalta tai oikealta. Näiden kahden funktion avulla voit luoda omia tapoja yhdistää merkkijonoja.
 
 ## Syvempi sukellus
 
-Haskellissa merkkijonojen liittäminen on tehokasta, sillä ne ovat käytännössä vain lista merkkejä. Tämä tarkoittaa, että merkkijonoja voi käsitellä samoin kuin listoja ja käyttää monia samoja funktioita ja operaattoreita. Esimerkiksi `++`-operaattori toimii myös listoille ja `concat`-funktio voi yhdistää myös ei-merkkijonoista koostuvia listoja.
+Yhdistäminen on yksi monista tärkeistä taidoista Haskellissa, ja se on myös olennainen osa funktionaalista ohjelmointia. Yhdistämisen avulla voimme luoda monimutkaisempia ja abstraktimpia sovelluksia, joissa on vähemmän toistoa ja virheitä. Lisäksi yhdistäminen voi auttaa meitä hallitsemaan ja muokkaamaan merkkijonoja eri tavoin, mikä antaa meille enemmän joustavuutta ja luovuutta ohjelmoinnissa.
 
-Merkkijonojen liittämiseen liittyy myös joitakin käytännön vinkkejä. Esimerkiksi, jos sinulla on suuri määrä merkkijonoja, jotka haluat yhdistää, olisi parempi käyttää `Data.Text`-moduulin `intercalate`-funktiota, joka on optimoitu suuremmille datamäärille.
+Yhdistämistä voidaan myös käyttää monella eri tavalla, kuten muotoilussa ja tekstin käsittelyssä. Esimerkiksi voimme käyttää yhdistämistä lisätäksemme välilyöntejä tekstin ympärille tai yhdistää erilaisia ​​merkkijonoja luodaksemme kompleksisempia lauseita.
 
 ## Katso myös
 
-- [Haskellin merkkijonojen liittäminen Dokumentaatio](https://www.haskell.org/onlinereport/standard-prelude.html#cat)
-- [Data.Text-moduulin dokumentaatio](https://hackage.haskell.org/package/text/docs/Data-Text.html)
-- [Haskellin perusteet - oppimateriaali merkkijonot osio](https://github.com/mooc-fi/haskell-perusteet/tree/master/tehtavat/Merkkijonot)
+- [Haskellin dokumentaatio merkkijonoista](https://www.haskell.org/onlinereport/standard-prelude.html#t%3AString)
+- [Haskellin tyyppiturvallinen merkkijonojen käsittely](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+- [Merkkijonojen yhdistäminen eri kielillä](https://en.wikipedia.org/wiki/Concatenation)

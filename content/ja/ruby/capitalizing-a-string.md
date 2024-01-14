@@ -1,51 +1,37 @@
 ---
-title:                "Ruby: 文字列の大文字変換"
+title:                "Ruby: 文字列の大文字化"
+simple_title:         "文字列の大文字化"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+文字列を大文字にすることに関わる理由は、メッセージや文書を強調したい場合や、データの整理や分類をする際に役立ちます。
 
-文字列を大文字にすることにも意味がありますか？その理由を説明します！
-
-文字列を大文字にすることは、テキストを見やすくするためや、検索エンジンでの検索を容易にするために行われます。例えば、あなたの名前を大文字で書くことで、あなたの名前を探すのが簡単になります。また、日本語の場合、英語と比べて大文字と小文字の区別がないため、大文字にすることでテキストを強調することができます。
-
-## やり方
-
-文字列を大文字にするには、Rubyのcapitalizeメソッドを使用します。下の例を参考にしてください。
+## 方法
+文字列を大文字にするには、Rubyのcapitalizeメソッドを使用します。下記のコード例をご確認ください。
 
 ```Ruby
-name = "yamada taro"
-puts name.capitalize
+# 変数に文字列を代入する
+str = "hello world"
+
+# capitalizeメソッドを使用して大文字に変換する
+str.capitalize
+
+# 出力結果: "Hello world"
 ```
-
-出力結果は "Yamada taro" になります。
-
-文字列だけでなく、変数やメソッド名にもcapitalizeメソッドを使用することができます。しかし、大文字にするには文字列が英語である必要があります。日本語の場合、発音が変わるため、使うことができません。
 
 ## 深堀り
+文字列を大文字にする際、空白や句読点などの特殊文字も大文字に変換されることに注意してください。また、日本語の文字列を大文字に変換する場合は、Stringクラスのcapitalizeメソッドではなく、UnicodeUtilsライブラリの方法を使用する必要があります。詳細は下記のリンクをご参照ください。
 
-実は、Rubyのcapitalizeメソッドは文字列の先頭文字を大文字にするだけでなく、先頭以外の文字を全て小文字にします。例えば、"YAMADA Taro"という文字列をcapitalizeすると、"Yamada taro" になります。
+## 参考リンク
+- [RubyのStringクラスAPI](https://docs.ruby-lang.org/ja/latest/class/String.html#I_CAPITALIZE)
+- [UnicodeUtilsライブラリ](https://github.com/lang/unicode_utils)
+- [文字列操作のチートシート](https://qiita.com/jnchito/items/268ae0059c98a3fce68b)
 
-また、文字列全体を大文字にするには、upcaseメソッドを使用します。下の例を参考にしてください。
-
-```Ruby
-name = "yamada taro"
-puts name.upcase
-```
-
-出力結果は "YAMADA TARO" になります。
-
-## 今後も参考にしてね
-
-この記事を読んで、文字列を大文字にする方法を学びました。UNIXコマンドやJavaScriptでも同じことができるので、ぜひ練習してみてください。
-
-<!-- Japanese See Also -->
-## 関連記事
-
-- [Rubyの公式ドキュメント: String#capitalize](https://docs.ruby-lang.org/ja/latest/method/String/i/capitalize.html)
-- [文字列を大文字に変換する方法 - TECHacademyマガジン](https://techacademy.jp/magazine/10150)
-- [Rubyで文字列を大文字に変換する方法 - Qiita](https://qiita.com/hypermkt/items/df4c95850763e39e88be)
+## 参考文献
+- ["Rubyではじめるプログラミング" by 松前洋一郎・嶋田淳](https://www.amazon.co.jp/dp/4797383925/ref=cm_sw_r_tw_dp_U_x_rV3lBbSCR6CJC)

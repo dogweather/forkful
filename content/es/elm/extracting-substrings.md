@@ -1,52 +1,38 @@
 ---
-title:                "Elm: Extrayendo subcadenas"
+title:                "Elm: Extractando subcadenas"
+simple_title:         "Extractando subcadenas"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué extraer subcadenas en Elm?
+# Por qué extraer subcadenas en Elm es útil
 
-Extraer subcadenas es una tarea común en la programación, especialmente cuando se trabaja con texto. En Elm, esta funcionalidad se puede lograr de forma fácil y eficiente utilizando algunos de sus métodos predefinidos. En este artículo, exploramos por qué es útil extraer subcadenas en Elm y cómo hacerlo de manera efectiva.
+Extraer subcadenas, o porciones de una cadena de texto, es una tarea común en programación. En Elm, esta funcionalidad puede ser muy útil para manipular datos y obtener la información que necesitamos de manera eficiente. A continuación, veremos cómo utilizarla en tus proyectos.
 
-## Cómo extraer subcadenas en Elm
+## Cómo hacerlo
 
-Extraer subcadenas en Elm es un proceso sencillo que se puede realizar utilizando la función `String.slice` o el operador `String.left`. Ambos métodos aceptan dos argumentos: el índice de inicio y el índice de finalización de la subcadena que se desea extraer. Por ejemplo, si queremos extraer la subcadena "Elm" de la cadena "¡Hola Elm!", podemos usar la función `String.slice` de la siguiente manera:
+Para extraer una subcadena en Elm, utilizamos la función `String.slice start end string`. Esta función recibe tres argumentos: `start`, que es la posición donde queremos comenzar a extraer la subcadena, `end`, que es la posición donde queremos terminar la extracción, y `string`, que es la cadena de texto original.
 
-```Elm
-String.slice 6 8 "¡Hola Elm!" -- devuelve "Elm"
-```
+Por ejemplo, si tenemos la cadena "Hola mundo" y queremos extraer la subcadena "mundo", podemos hacerlo utilizando la función `String.slice 5 9 "Hola mundo"`, ya que la letra "m" está en la posición 5 y la "o" está en la posición 9. El resultado sería "mundo".
 
-O podemos usar el operador `String.left`, que es una forma más abreviada de lograr lo mismo:
+También podemos utilizar esta función para obtener un número específico de caracteres a partir de una posición. Por ejemplo, si queremos obtener los tres primeros caracteres de la cadena "Elm es divertido", podemos utilizar `String.slice 0 3 "Elm es divertido"` y el resultado sería "Elm".
 
-```Elm
-"¡Hola Elm!" |> String.left 3 -- devuelve "Elm"
-```
+Si queremos extraer una subcadena a partir del final de la cadena original, podemos utilizar números negativos en `start` y `end`. Por ejemplo, si queremos extraer la subcadena "divertido" de la cadena "Elm es divertido", podemos hacerlo con `String.slice -8 -1 "Elm es divertido"`, ya que la "d" está en la posición -8 y la "o" está en la posición -1.
 
-Ambos métodos también pueden aceptar argumentos negativos, lo que nos permite comenzar a extraer desde el final de la cadena hacia atrás. Por ejemplo, si queremos extraer la subcadena "Elm" de la cadena "¡Hola Elm!" pero comenzando desde el final, podemos hacerlo así:
+## Profundizando
 
-```Elm
-String.slice -3 -1 "¡Hola Elm!" -- devuelve "Elm"
-```
+Además de la función `String.slice`, Elm ofrece otras funciones para trabajar con subcadenas. Por ejemplo, `String.left n string` nos permite obtener los primeros `n` caracteres de una cadena, mientras que `String.right n string` nos devuelve los últimos `n` caracteres.
 
-Estos métodos también pueden ser útiles si queremos extraer una parte específica de una URL o de un nombre de archivo. Por ejemplo, si queremos extraer el nombre del archivo de una URL, podemos usar el operador `String.left` de la siguiente manera:
+También podemos utilizar `String.drop n string` para eliminar los primeros `n` caracteres de una cadena y `String.dropRight n string` para eliminar los últimos `n` caracteres.
 
-```Elm
-"https://miweb.com/ejemplo.html" |> String.left 14 -- devuelve "ejemplo.html"
-```
-
-## Profundizando en la extracción de subcadenas
-
-Más allá de la función `String.slice` y el operador `String.left`, Elm también tiene otros métodos que podemos utilizar para extraer subcadenas de manera más específica. Por ejemplo, la función `String.leftMap` nos permite aplicar una función a cada carácter de la subcadena extraída. Esto puede ser útil para realizar operaciones en cada carácter de una palabra o para transformar una subcadena en una lista de caracteres. También existe la función `String.leftWhile` que nos permite extraer la subcadena hasta que se cumpla una determinada condición.
-
-Si necesitamos extraer una subcadena basada en un patrón, podemos utilizar la función `String.split` que nos permite dividir una cadena en una lista de subcadenas basadas en un carácter o conjunto de caracteres. Incluso podemos usar la función `String.contains` para verificar si una subcadena específica se encuentra dentro de otra cadena.
+Otras funciones útiles incluyen `String.take n string`, que nos permite obtener los primeros `n` caracteres de una cadena y descartar el resto, y `String.takeRight n string`, que hace lo mismo pero con los últimos `n` caracteres.
 
 ## Ver también
 
-- [Documentación oficial de Elm sobre la extracción de subcadenas](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
-- [Artículo de blog sobre la manipulación de cadenas en Elm](https://yalishizhude.github.io/2017/05/29/string-in-elm.html)
-- [Repositorio de ejemplos de Elm en GitHub](https://github.com/elm/example)
-
-¡Ahora ya sabes cómo extraer subcadenas en Elm y puedes incorporar esta funcionalidad en tus proyectos de manera eficiente! ¡Sigue explorando y aprovechando al máximo el lenguaje de programación funcional más amigable!
+- Documentación oficial de Elm sobre `String.slice`: https://package.elm-lang.org/packages/elm/core/latest/String#slice
+- Tutorial de Elm para principiantes: https://guide.elm-lang.org/
+- Ejemplos de código en Elm: https://github.com/elm/projects/1

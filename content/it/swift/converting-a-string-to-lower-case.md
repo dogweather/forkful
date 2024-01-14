@@ -1,35 +1,50 @@
 ---
 title:                "Swift: Convertire una stringa in minuscolo"
+simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché 
+## Perché
 
-Convertire una stringa in minuscolo può essere utile quando si vuole standardizzare il testo, rendendolo tutto in caratteri minuscoli per facilitare la comparazione tra stringhe.
+Convertire una stringa in minuscolo può essere utile per confrontare e manipolare i dati, come ad esempio nella ricerca di corrispondenze o nella formattazione di input. In Swift, ci sono diverse funzioni disponibili per eseguire questa conversione in modo efficiente.
 
-## Come Fare
+## Come fare
 
-```Swift
-let stringa = "QUESTA STRINGA CONTIENE CARATTERI MAIUSCOLI"
-let stringaInMinuscolo = stringa.lowercased()
+Per convertire una stringa in minuscolo in Swift, si può utilizzare la funzione `lowercased()` su una variabile di tipo stringa. Ad esempio:
 
-print(stringaInMinuscolo)
+``` Swift
+let stringa = "Ciao Mondo!"
+let minuscola = stringa.lowercased()
+
+print(minuscola)
+// output: ciao mondo!
 ```
 
+Si può anche utilizzare la funzione `lowercased()` direttamente su una costante o sulla stringa in input di una funzione o di un metodo.
+
+``` Swift
+let maiuscola = "HELLO WORLD!".lowercased()
+print(maiuscola)
+// output: hello world!
+
+func stampaInMinuscolo(_ stringa: String) {
+  print(stringa.lowercased())
+}
+
+stampaInMinuscolo("MIA FRASE IN MINUSCOLO")
+// output: mia frase in minuscolo
 ```
-questa stringa contiene caratteri maiuscoli
-```
 
-## Approfondimento
+## Approfondimenti
 
-La funzione `lowercased()` è disponibile su tutti gli oggetti di tipo `String` in Swift. Utilizzando questa funzione, il computer esegue una trasformazione della stringa, sostituendo tutti i caratteri maiuscoli con i corrispondenti caratteri minuscoli. È importante notare che questa funzione non modifica la variabile originale, ma restituisce una nuova stringa in minuscolo.
+Quando si utilizza la funzione `lowercased()` in Swift, è importante ricordare che questa non solo converte tutte le lettere in minuscolo, ma anche tutti i caratteri speciali e di punteggiatura. Inoltre, in alcune lingue come il tedesco, potrebbe esserci una conversione errata delle lettere maiuscole se si utilizzano determinati caratteri speciali. Per ulteriori informazioni su come gestire queste situazioni, si consiglia di consultare la documentazione ufficiale di Apple su String e Character.
 
-## Vedi Anche
-
-- [Documento ufficiale di Apple su le stringhe in Swift](https://developer.apple.com/documentation/swift/string)
-- [Approfondimento sulle funzioni di manipolazione delle stringhe](https://medium.com/ios-os-x-development/swift-strings-and-characters-46fa021fe8a6)
-- [Funzioni di conversione delle stringhe in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-convert-a-string-to-integer)
+## Vedi anche
+- Documentazione di Apple su String e Character: https://developer.apple.com/documentation/swift/string
+- Altro articolo su come manipolare le stringhe in Swift: https://medium.com/better-programming/manipulating-strings-in-swift-c35732d46acc
+- Esempi pratici di utilizzo della funzione `lowercased()` su Stack Overflow: https://stackoverflow.com/questions/42448787/lowercasing-a-string-in-swift-how-it-differs-from-objective-c

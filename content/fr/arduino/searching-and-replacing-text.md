@@ -1,58 +1,42 @@
 ---
 title:                "Arduino: Recherche et remplacement de texte"
+simple_title:         "Recherche et remplacement de texte"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Quand vous écrivez du code pour votre projet Arduino, il peut arriver que vous ayez besoin de modifier ou remplacer une partie du texte pour le rendre plus précis ou fonctionnel. Dans cet article, nous allons vous montrer comment utiliser la fonction de recherche et de remplacement dans votre code Arduino.
+Vous êtes peut-être en train de travailler sur un projet Arduino et vous vous rendez compte que vous avez besoin de remplacer du texte dans votre code. Peut-être que vous avez accidentellement utilisé le mauvais nom pour une variable ou que vous avez besoin de modifier une constante. Quelle que soit la raison, il est important de savoir comment effectuer cette tâche facilement et efficacement.
 
 ## Comment faire
 
-Pour commencer, nous devons d'abord ajouter la bibliothèque "String" à notre code en utilisant la ligne suivante :
+Heureusement, avec Arduino, il existe une fonction simple pour rechercher et remplacer du texte dans votre code. Il suffit d'utiliser ```replace()``` en spécifiant le texte à rechercher et le texte de remplacement.
+
+Par exemple, si vous avez une variable nommée ```nombre``` et que vous souhaitez la remplacer par ```valeur```, vous pouvez utiliser la ligne de code suivante :
 
 ```Arduino
-#include <String.h>
+replace(nombre, valeur)
 ```
 
-Ensuite, nous déclarons une variable de type "String" qui contiendra notre texte d'origine :
-
-```Arduino
-String texte = "Bonjour tout le monde.";
-```
-
-Maintenant, nous pouvons utiliser la fonction "replace()" pour remplacer une partie du texte. Par exemple, si nous voulons remplacer "tout le" par "les", nous pouvons utiliser la ligne suivante :
-
-```Arduino
-texte.replace("tout le", "les");
-```
-
-Lorsque nous imprimons la variable "texte", nous obtiendrons le résultat suivant :
-
-```
-Bonjour les monde.
-```
-
-Nous pouvons également utiliser la fonction "indexOf()" pour rechercher la position d'un mot ou d'une phrase spécifique dans notre texte. Par exemple :
-
-```Arduino
-int position = texte.indexOf("monde");
-```
-
-Cela nous donnera la position du mot "monde" dans notre texte, dans ce cas, la valeur de "position" sera de 11.
+Cela remplacera toutes les occurrences de ```nombre``` par ```valeur``` dans votre code. Vous pouvez également utiliser cette fonction pour remplacer du texte dans une chaîne de caractères ou une chaîne de texte.
 
 ## Plongée en profondeur
 
-Il est important de noter que la fonction "indexOf()" recherche le texte dans notre variable en commençant par l'indice 0. Cela signifie que la première lettre de notre texte aura une position de 0, et ainsi de suite. De plus, la fonction "replace()" ne changera que la première occurrence du texte spécifié.
+La fonction ```replace()``` est basée sur le type de données String en Arduino. Cela signifie que vous pouvez également utiliser toutes les méthodes disponibles pour les objets String, telles que ```indexOf()``` pour trouver la position d'une chaîne de caractères.
 
-Il est également possible d'utiliser des boucles pour rechercher et remplacer du texte de manière itérative dans une chaîne de caractères plus grande.
+De plus, si vous avez besoin de remplacer des caractères spéciaux dans votre code, vous pouvez utiliser des échappements de caractères tels que ```\n``` pour une nouvelle ligne ou ```\t``` pour une tabulation.
 
-## Voir aussi
+Il est également important de noter que la fonction ```replace()``` ne modifie pas la chaîne de caractères initiale, elle en crée une nouvelle. Si vous souhaitez modifier la chaîne d'origine, vous pouvez utiliser la méthode ```replace()``` en assignant le résultat à la chaîne d'origine.
 
-- Référence officielle d'Arduino : https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- Tutoriel sur les chaînes de caractères dans Arduino : https://www.technipages.com/arduino-string-how-to
-- Exemples de codes pour la fonction "replace()" : https://www.techonthenet.com/arduino/functions/string/replace.php
+# Voir aussi
+
+Pour en savoir plus sur les fonctions et méthodes disponibles pour la manipulation de chaînes de caractères en Arduino, vous pouvez consulter les ressources suivantes :
+
+- [Documentation officielle Arduino pour l'objet String](https://www.arduino.cc/reference/fr/language/variables/data-types/stringobject/)
+- [Tutorialspoint : Les chaînes de caractères en Arduino](https://www.tutorialspoint.com/arduino/arduino_strings.htm)
+- [Site officiel d'Arduino en français](https://www.arduino.cc/en/Tutorial/Strings)

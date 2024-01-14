@@ -1,35 +1,44 @@
 ---
-title:                "Rust: Перевірка наявності каталогу"
+title:                "Rust: Перевірка наявності директорії"
+simple_title:         "Перевірка наявності директорії"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Чому
+## Чому
 
-Перевірка наявності директорії є важливою частиною програмування на українській мові Rust. Це дозволяє перевірити, чи існує певна директорія перед виконанням деяких дій, що може запобігти помилкам програми.
+Перевірка існування директорії є важливою частиною багатьох програм, оскільки вона дозволяє перевірити наявність необхідних файлів та зберегти час і зусилля користувачів.
 
-# Як
+## Як
 
 ```Rust
-use std::path::Path;
-let directory = Path::new("шлях/до/директорії");
-if directory.exists() {
-    println!("Директорія існує!");
-} else {
-    println!("Директорія не знайдена.");
+use std::fs;
+
+fn main() {
+    let directory = "my_directory";
+    let result = fs::metadata(directory); // перевірка метаданих для директорії
+    match result {
+        Ok(_) => println!("Директорія існує"), // якщо директорія існує
+        Err(_) => println!("Директорія не існує"), // якщо директорія не існує
+    }
 }
 ```
 
-Цей код заснований на бібліотеці `std::path::Path`, яка надає функцію `.exists()`, що перевіряє наявність файлу або директорії за заданим шляхом. Якщо директорія існує, то виводиться повідомлення про це, в іншому випадку - повідомлення про її відсутність. 
+Приклад виходу:
 
-# Глибоке занурення
+```
+Директорія існує
+```
 
-Перевірка наявності директорії може бути корисною для багатьох сценаріїв, наприклад, при роботі з файловою системою або при створенні нової директорії. Також важливо зазначити, що метод `.exists()` є потенційною дірою в безпеці програми, оскільки директорія може бути видалена чи перейменована за час перевірки. Тому важливо оберігатись із цим методом у критичних випадках.
+## Deep Dive
 
-# Дивіться також
+У Rust є кілька способів перевірити наявність директорії. Найпростіший спосіб - використання функції `fs::metadata()` з модуля `fs`. Ця функція повертає `std::io::Result<fs::Metadata>`, що містить інформацію про директорію, включаючи дату та час створення, розмір та дозволи на доступ. Обробка цього результату, як показано в прикладі вище, дозволяє вивести повідомлення про існування чи неіснування директорії.
 
-- [Розділ про роботу з файлами в офіційній документації Rust](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html#reading-input)
-- [Бібліотека `std::fs` для роботи з файловою системою в Rust](https://doc.rust-lang.org/std/fs/index.html)
+## See Also
+
+- [Документація зі стандартної бібліотеки Rust](https://doc.rust-lang.org/std/fs/fn.metadata.html)
+- [Блок-схема контролю перевірки директорії у Rust](https://app.diagrams.net/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=directory_existence_checker.drawio#R7VtbS6KwjGbT7I%2F7owo3dHD2qcRQcba5GkkMjaToHDYZBg6cU1GpbuoDNWuVtpsQ2xWItJcnxQiYuRN88TnVwoh%2Be8C2NhKDkDXeH8r2ecGYuNLNj0x6fLGvBPHVsO91iS9010jXSZNIyA1N6a7ys2leNjSQZUS8nkwIIsTqJ0oTtHgdOSG%2FjodBLoA0o8gRC9PGDnsSqWHE3M110mwkvAGR8Fh1B%2F5c%2FhFZDMaZxS5Hz2CseSVzf8FtKkGCpckOKOgQeR4Md84D1f%2BYKnrTPi4cyZJpJXqVfPpMgt7N1MQjUh0TH2ut72R%2BYBXWeGVj6PUbA1dgACJJxxQgPvPx5Oq%2B%2FQhTM5Nltp0pSlLUJZfP9NoDTVm5c8q2wFSzehhsyOh4BsxHegpG9wbw0EE35sP9pj%2FnRj%2BqzJsp%2BOhSZAeCbmOVDCO6FFvNYJKISezjfDHwKjZifH0CrWYZX5su4YBAdzZjWmTsCjmF5S9zcv3mTh0mxy%2FQ8%2BPLwGF62

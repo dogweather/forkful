@@ -1,54 +1,50 @@
 ---
-title:                "Javascript: Merkkijonon pituuden löytäminen"
+title:                "Javascript: Näytön pituuden löytäminen"
+simple_title:         "Näytön pituuden löytäminen"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi etsiä merkkijonon pituus? 
+Miksi: Miksi joku haluaisi selvittää merkkijonon pituuden?
 
-Merkkijonon pituuden löytäminen on yksi yleisimmin käytetyistä toiminnoista ohjelmoinnissa. Se on hyödyllistä esimerkiksi kun haluat tarkistaa, että käyttäjän antama syöte on tietyn mittainen tai kun haluat käsitellä tietystä pituudesta olevia merkkijonoja. Tässä blogikirjoituksessa opimme, kuinka löytää merkkijonon pituus ja mitä muuta siihen liittyy.
+Merkkijonot ovat tärkeitä tietorakenteita, jotka sisältävät tekstiä tai merkkejä. Näitä merkkijonoja käytetään laajasti ohjelmoinnissa, joten on tärkeää ymmärtää niiden ominaisuudet, kuten pituus. Pituuden selvittäminen auttaa meitä ymmärtämään ja manipuloimaan merkkijonoja paremmin ohjelmoinnissa.
 
-## Kuinka tehdä
+Miten: Koodiesimerkkejä ja tulosteita.
 
-Ensinnäkin, meidän täytyy ymmärtää, että merkkijonot ovat JavaScriptissä luokkaa **String** ja niillä on oma sisäinen ominaisuus **length**, joka kertoo merkkijonon pituuden. Voimme käyttää tätä ominaisuutta seuraavasti:
-
-```javascript
-let merkkijono = "Tervetuloa lukemaan blogia!";
-console.log(merkkijono.length); // Tulostaa merkkijonon pituuden, tässä tapauksessa 28
-```
-
-Tässä esimerkissä luomme muuttujan **merkkijono** ja tallennamme siihen haluamamme merkkijonon. Sitten käytämme sisäistä **length** ominaisuutta ja tulostamme sen konsoliin.
-
-Voimme myös käyttää **length** ominaisuutta suoraan ilman muuttujaa:
+Jos haluat selvittää merkkijonon pituuden Javascriptissä, voit käyttää *length* -ominaisuutta. Tämä ominaisuus antaa meille merkkijonon pituuden numeromuodossa.
 
 ```javascript
-console.log("Moi".length); // Tulostaa merkkijonon pituuden, tässä tapauksessa 3
+let sana = "Tervetuloa!";
+console.log(sana.length); //tulostaa 11
 ```
 
-## Syväsukellus
-
-Merkkijonon pituuden löytäminen voi vaikuttaa yksinkertaiselta, mutta se voi myös aiheuttaa joitakin yllätyksiä. Esimerkiksi tyhjä merkkijono näyttää olevan pituudeltaan 0, mutta se ei olekaan niin yksinkertainen. Tässä esimerkki:
+Huomaa, että tämä ominaisuus ei laske pelkästään kirjaimia, vaan myös välimerkkejä ja välilyöntejä. Se myös huomioi erikoismerkit, kuten ääkköset.
 
 ```javascript
-console.log("".length); // Tulostaa 0
+let lause = "Olen ohjelmoija 🚀";
+console.log(lause.length); //tulostaa 18
 ```
 
-Näyttääkö siltä, että pituus on nolla? Todellisuudessa kyseessä on yksi tyhjä merkki, joka ei näy. Tämä tarkoittaa, että tyhjän merkkijonon pituus ei ole oikeasti nolla, vaan yksi.
-
-Entä mitä tapahtuu, kun annamme **length** ominaisuuden muille datatyypeille, kuten numerolle? Yllätykseksemme, se näyttää myös toimivan:
+Voit myös käyttää *length* -ominaisuutta yhdistettynä *toString* -metodiin, jos haluat muuttaa pituuden numeron merkkijonoksi.
 
 ```javascript
-let numero = 5687;
-console.log(numero.length); // Tulostaa 4
+let nimi = "Maria";
+console.log("Olen " + nimi.length.toString() + " kirjainta pitkä"); //tulostaa "Olen 5 kirjainta pitkä"
 ```
 
-Tämä johtuu siitä, että JavaScript muuttaa numeron automaattisesti merkkijonoksi, jolloin sen pituus voidaan laskea. Tämä voi aiheuttaa ongelmia, jos haluat tarkistaa käyttäjän antaman syötteen pituuden, sillä käyttäjä voi antaa vahingossa numeron ajattelematta, että sen pituus lasketaan myös. Tässä tapauksessa voit käyttää **typeof** operaattoria tarkistaaksesi, onko syöte merkkijono vai ei.
+Syötteestä riippuen *length* -ominaisuuden käyttö voi vaihdella hieman, mutta sen peruskäyttö on sama.
 
-## Katso myös 
+Deep Dive: Syvemmälle merkkijonojen pituuden selvittämisen taustatietoihin
 
-- [MDN - String.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length) 
-- [W3Schools - JavaScript String length Property](https://www.w3schools.com/jsref/jsref_length_string.asp) 
-- [tutorialspoint - JavaScript String Length Property](https://www.tutorialspoint.com/javascript/js_string_length.htm)
+Merkkijonot ovat Javascriptissä merkkijonoina tallennettuja merkkijonoja. Jokaisella merkkijonolla on oma pituus ja siihen liittyvä *length* -ominaisuus. Tämä ominaisuus on peräisin *String.prototype* -objektilta, joka antaa meille pääsyn kaikkiin merkkijonomenetelmiin.
+
+Merkkijonon pituus mitataan merkkien määränä. Tämä tarkoittaa, että *length* -ominaisuus laskee jokaisen merkin, mukaan lukien erikoismerkit ja välilyönnit. Tämä on tärkeää ottaa huomioon, kun käytät sitä ohjelmoinnissa.
+
+See Also (Katso myös):
+
+- https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/length
+- https://www.w3schools.c

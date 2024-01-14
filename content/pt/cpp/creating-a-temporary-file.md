@@ -1,49 +1,63 @@
 ---
 title:                "C++: Criando um arquivo temporário"
+simple_title:         "Criando um arquivo temporário"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário em C++?
+## Porquê Criar um Ficheiro Temporário em C++
 
-Sempre que estamos trabalhando em um programa em C++, é comum que precisemos armazenar informações em arquivos. Isso pode ser para salvar dados temporários, fazer backups ou até mesmo criar logs para facilitar a depuração do código. A criação de arquivos temporários é uma técnica específica que pode ser muito útil em algumas situações. Neste artigo, vamos explorar por que e como criar um arquivo temporário em C++.
+Criar um ficheiro temporário é uma técnica útil frequentemente usada em programação C++. Isto permite-nos armazenar dados de forma temporária durante a execução do nosso programa, e é especialmente útil quando precisamos de guardar dados temporários em memória sem alterar o nosso ficheiro original. Neste artigo, vamos mergulhar no mundo dos ficheiros temporários em C++ e aprender como os podemos criar.
 
-## Como criar um arquivo temporário em C++
+## Como Criar um Ficheiro Temporário em C++
 
-Para criar um arquivo temporário em C++, precisamos incluir a biblioteca `fstream` e utilizar a função `tmpfile()`. Essa função irá gerar um arquivo temporário e retornar um ponteiro para seu descritor. A partir daí, podemos utilizar as funções de leitura e escrita de arquivos normalmente, usando o descritor temporário gerado pela função `tmpfile()`.
+Criar um ficheiro temporário pode ser feito facilmente com o uso da biblioteca padrão C++ `fstream`. Em primeiro lugar, precisamos de incluir a biblioteca no nosso código.
 
 ```C++
-#include <fstream>
-
-int main() {
-
-    // cria um arquivo temporário e retorna um ponteiro para seu descritor
-    FILE* tempFile = tmpfile();
-
-    // escreve uma string no arquivo temporário
-    fprintf(tempFile, "Olá, este é um arquivo temporário!");
-
-    // fecha o arquivo temporário
-    fclose(tempFile);
-
-    return 0;
-}
+#include <fstream> 
 ```
 
-Ao executar o programa, não veremos nenhum arquivo criado no disco rígido. Isso acontece porque os arquivos temporários são armazenados apenas na memória RAM, tornando-os ideais para armazenar informações temporárias que não precisam ser salvas permanentemente.
+Em seguida, podemos usar a função `tmpfile()` para criar o nosso ficheiro temporário. Esta função retorna um apontador para o nosso ficheiro temporário, que podemos usar para escrever e ler dados.
 
-## Detalhando a criação de arquivos temporários em C++
+```C++
+FILE* tempFile = tmpfile();
+```
 
-Além da função `tmpfile()`, existem outras opções para criar arquivos temporários em C++. Podemos utilizar também a função `tmpnam()` que irá gerar um nome para o arquivo temporário, mas não irá criá-lo automaticamente. Nesse caso, é necessário utilizar o nome gerado para criar o arquivo com a função `fopen()` e, em seguida, manipulá-lo normalmente.
+Agora que temos o nosso ficheiro temporário, podemos escrever e ler dados como se estivéssemos a trabalhar com um ficheiro normal. Aqui está um exemplo simples de como escrever e ler uma linha de texto no nosso ficheiro temporário:
 
-Outra alternativa é a função `tempnam()` que permite especificar um diretório para a criação do arquivo temporário. Além disso, podemos utilizar a função `mkstemp()` que permite especificar o nome do arquivo temporário e cria automaticamente o arquivo especificado.
+```C++
+// Escrever no ficheiro temporário
+fprintf(tempFile, "Olá mundo!");
 
-## Veja também
+// Ler do ficheiro temporário
+char buffer[100];
+fgets(buffer, 100, tempFile);
+```
 
-Para saber mais sobre a criação de arquivos temporários em C++, confira os seguintes links:
-- [Documentação oficial da função `tmpfile()`](https://en.cppreference.com/w/cpp/io/c/tmpfile)
-- [Exemplos de uso da função `tmpfile()`](https://www.geeksforgeeks.org/tmpfile-function-in-c/)
-- [Tutorial sobre a criação de arquivos temporários em C++](https://www.guru99.com/cpp-file-reading-writing.html)
+Depois de terminarmos de usar o nosso ficheiro temporário, é importante fechá-lo utilizando a função `fclose()`.
+
+```C++
+fclose(tempFile);
+```
+
+E voilà, agora temos um ficheiro temporário criado e podemos usá-lo para armazenar dados temporariamente durante a execução do nosso programa.
+
+## Profundando no Mundo dos Ficheiros Temporários
+
+Os ficheiros temporários não são apenas úteis para armazenar dados temporários, mas também para ajudar a gerir recursos no nosso programa. Quando criamos um ficheiro temporário, o sistema operativo atribui-lhe automaticamente um nome exclusivo e garante que este é eliminado automaticamente no final da execução do nosso programa.
+
+Um aspeto importante a ter em conta é que, por vezes, o nosso programa pode terminar inesperadamente ou de forma abrupta, o que pode deixar o nosso ficheiro temporário pendente no sistema. É por isso que é importante verificar se o ficheiro temporário foi eliminado no início da execução do nosso programa e, caso contrário, certificar-nos de que é eliminado corretamente utilizando a função `remove()`.
+
+## Vê Também
+
+Se quiseres saber mais sobre a criação e uso de ficheiros temporários em C++, podes consultar estes recursos úteis:
+
+- [Documentação da biblioteca fstream em cppreference.com](https://en.cppreference.com/w/cpp/header/fstream)
+- [Como criar e utilizar ficheiros temporários em C++](https://www.tutorialspoint.com/how-to-create-and-use-temporary-files-in-cplusplus)
+- [Vantagens e desvantagens de utilizar ficheiros temporários em C++](https://www.educative.io/edpresso/advantages-and-disadvantages-of-using-temporary-files-in-cplusplus)
+
+Esperamos que este artigo te tenha dado uma melhor compreensão sobre a criação e uso de ficheiros temporários em C++. Agora estás pronto para usá-los em teus próprios programas e tirar proveito dos seus benefícios. Boa sorte!

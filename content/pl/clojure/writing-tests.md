@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/writing-tests.md"
 ---
 
@@ -9,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Testowanie jest nieodłącznym elementem procesu programowania. Pisząc testy, możemy upewnić się, że nasz kod działa zgodnie z oczekiwaniami i uniknąć błędów, co przekłada się na lepszą jakość naszych aplikacji. W ten sposób także poprawiamy swoje umiejętności pisania kodu, ponieważ testowanie wymaga od nas myślenia w sposób bardziej zorganizowany i dokładny.
+Testowanie jest nieodłączną częścią pisania aplikacji w Clojure. Napisanie testów pomaga w upewnieniu się, że kod działa poprawnie i przewiduje możliwe błędy. Pomaga również w utrzymaniu kodu i łatwiejszym wprowadzaniu zmian w przyszłości. 
 
 ## Jak to zrobić
 
-Aby napisać testy w Clojure, możemy skorzystać z biblioteki [clojure.test](https://clojuredocs.org/clojure.test). Przykładowy kod testujący wyglądałby tak:
+Aby stworzyć testy w Clojure, potrzebujesz użycia funkcji *deftest* oraz *is* z biblioteki *clojure.test*. Przykładowy kod poniżej będzie testował funkcję, która zwraca sumę dwóch liczb:
 
 ```Clojure
-(ns example.core-test
-  (:require [clojure.test :refer :all]
-            [example.core :refer :all]))
-
-(deftest add-numbers-test
-  (is (= 4 (add-numbers 2 2))))
-
-(deftest multiply-numbers-test
-  (is (= 10 (multiply-numbers 5 2))))
-
-(run-tests)
-
+(deftest test-addition
+  (is (= 8 (addition 3 5)))
+  (is (= 11 (addition 6 5)))
+)
 ```
 
-Powyższy kod testuje funkcje `add-numbers` i `multiply-numbers`, sprawdzając czy zwracają one poprawne wyniki dla podanych argumentów. Po uruchomieniu testów otrzymamy informację, czy testy przeszły pomyślnie, czy też nie. Jeśli któryś z testów nie przejdzie, oznacza to, że nasza funkcja nie działa poprawnie i musimy ją poprawić.
+Po uruchomieniu tych testów, jeśli funkcja *addition* działa poprawnie, otrzymamy wynik:
 
-## Głębszy zanurzenie
+```Clojure
+Testing user
+Ran 2 tests containing 4 assertions.
+0 failures, 0 errors.
+=> {:testing 2, :success 2, :expected 4, :assert 4, :deftest 1}
+```
 
-Pisanie testów w Clojure polega głównie na wykorzystywaniu makr dostępnych w bibliotece `clojure.test`, takich jak `deftest` czy `is`. Możemy także tworzyć własne makra do testowania naszych funkcji, co pozwala nam na większą elastyczność w sposobie tworzenia testów.
+To oznacza, że wszystkie asercje przeszły i nasza funkcja działa poprawnie.
 
-Warto także pamiętać o tzw. "mockowaniu" (ang. mocking), czyli symulowaniu pewnych elementów naszego kodu w celu przetestowania innych funkcji. Biblioteka [midje](https://github.com/marick/Midje) jest przykładem narzędzia, które ułatwia nam to zadanie.
+## Deep Dive
+
+Pisanie testów w Clojure może być skomplikowane, ponieważ wymaga użycia makr, aby sprawdzić czy asercje zostały spełnione. Dlatego ważne jest, aby zawsze korzystać z biblioteki *clojure.test*, która dostarcza narzędzia do przeprowadzania testów w sposób poprawny i czytelny.
+
+Jednym z powodów, dla których warto pisać testy jest to, że pozwala to na łatwiejsze wprowadzanie zmian w kodzie w przyszłości. Ponadto, testy mogą służyć jako dokumentacja dla innych programistów, którzy będą pracować nad projektem.
 
 ## Zobacz również
 
-- [Oficjalna dokumentacja Clojure](https://clojure.org/)
-- [Clojure docs - test library](https://clojuredocs.org/clojure.test)
-- [Clojure for the Brave and True - rozdział o testowaniu](https://www.braveclojure.com/testing/)
+- [Dokumentacja biblioteki clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
+- [Livestream: Testowanie funkcji w Clojure](https://www.youtube.com/watch?v=RWlGnL7r_Xk)
+- [Artykuł: "Testowanie w Clojure"](https://jaxenter.de/testen-mit-clojure-tutorial-34678)

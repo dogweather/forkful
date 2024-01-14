@@ -1,39 +1,34 @@
 ---
 title:                "Gleam: Convertire una stringa in minuscolo"
+simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+**Perché:**
 
-Convertire una stringa in minuscolo può essere utile in tante situazioni diverse, come ad esempio per facilitare il confronto tra stringhe o per rendere il testo uniforme.
+Il processo di conversione di una stringa in lettere minuscole è un'operazione comune nella programmazione. Ciò è utile per uniformare i dati in un sistema e semplificare il confronto e la ricerca all'interno delle stringhe.
 
-## Come fare
+**Come Fare:**
 
-Per convertire una stringa in minuscolo in Gleam, possiamo utilizzare il metodo `String.to_lowercase` e fornire come argomento la stringa da convertire. Possiamo poi visualizzare il risultato utilizzando la funzione `IO.println` come mostrato nell'esempio seguente:
+Per convertire una stringa in lettere minuscole in Gleam, è possibile utilizzare il metodo `string.to_lower()` come mostrato nell'esempio seguente:
 
 ```Gleam
-my_string = "STRINGA IN MAIUSCOLO"
-IO.println(String.to_lowercase(my_string))
+let stringa = "CIAO AMICI"
+let stringa_minuscola = stringa.to_lower()
 ```
+Output: "ciao amici"
 
-Questo codice stamperà a schermo "stringa in maiuscolo".
+È importante notare che il metodo `to_lower()` converte solo le lettere ASCII in minuscolo, quindi le lettere accentate o caratteri speciali potrebbero non essere convertiti correttamente. Se si utilizzano stringhe contenenti caratteri non ASCII, è possibile utilizzare il metodo `to_utf8_lowercase()` per una conversione completa di tutti i caratteri in lettere minuscole.
 
-## Approfondimento
+**Approfondimento:**
 
-Il metodo `String.to_lowercase` si basa sull'algoritmo Unicode standard per la conversione di una stringa in minuscolo. Ciò significa che funziona correttamente anche per caratteri speciali o di diverse lingue.
+La conversione di una stringa in lettere minuscole può sembrare un'operazione semplice, ma è importante comprendere come funzionano le lettere nei diversi sistemi di codifica. In UTF-8, per esempio, ci sono due tipi di lettere minuscole: quelle che possono essere rappresentate con un unico byte e quelle che richiedono più byte. Ciò significa che il metodo `to_lower()` potrebbe dover spacchettare un carattere in più byte per convertire correttamente le lettere minuscole nei sistemi di codifica multi-byte.
 
-Ad esempio, in alcune lingue come il tedesco, alcune lettere quando convertite in minuscolo possono avere dei caratteri speciali aggiuntivi, come accenti o puntini. Il metodo `String.to_lowercase` gestisce automaticamente questi casi e restituisce il risultato corretto.
-
-Inoltre, se vogliamo convertire solo la prima lettera di una stringa in minuscolo, possiamo utilizzare il metodo `String.to_lowercase_first`, che restituirà una nuova stringa con la prima lettera convertita ma mantenedo le altre lettere inalterate.
-
-## Vedi anche
-
-- Documentazione ufficiale di Gleam su come lavorare con le stringhe: [https://gleam.run/book/core-modules#strings](https://gleam.run/book/core-modules#strings)
-
-- Altri esempi di conversione di stringhe in minuscolo in Gleam: [https://github.com/gleam-lang/gleam-examples/blob/master/string_manipulation/string_case.gleam](https://github.com/gleam-lang/gleam-examples/blob/master/string_manipulation/string_case.gleam)
-
-- Blog post su come utilizzare l'algoritmo Unicode per la conversione di stringhe in minuscolo: [https://unicode.org/faq/casemap_charprop.html](https://unicode.org/faq/casemap_charprop.html)
+**Vedi Anche:**
+- Documentazione ufficiale di Gleam sulla conversione delle stringhe: https://gleam.run/doc/types/string
+- Esempi di utilizzo del metodo `to_lower()` su Codewars: https://www.codewars.com/kata/5728203b7fd8f24ebe0001f7/solutions/gleam

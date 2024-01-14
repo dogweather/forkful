@@ -1,47 +1,48 @@
 ---
 title:                "Fish Shell: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać testy w Fish Shell?
+## Dlaczego
 
-Testy są niezbędnym elementem każdego programu, a pisząc je w Fish Shell możemy mieć pewność, że nasza aplikacja będzie działać poprawnie. Dodatkowo, dzięki testom zyskujemy większą pewność i łatwiej nam odnaleźć ewentualne błędy w kodzie.
+Testowanie jest ważnym elementem w procesie pisania kodu. Wielu programistów uważa, że jest to nudne i czasochłonne, ale w rzeczywistości może przynieść wiele korzyści. W tym artykule dowiesz się, dlaczego warto poświęcić trochę czasu na pisanie testów.
 
-## Jak pisać testy w Fish Shell
+## Jak to zrobić
 
-```Fish Shell
-# Tworzenie testu przy użyciu funkcji "test-equal"
-test-equal "Przykładowy test" "hello world" "hello world"
+Pisanie testów w języku Fish Shell jest bardzo proste i intuitywne. Wystarczy, że podążysz za kilkoma prostymi krokami:
 
-# Kod, który zostanie uruchomiony jeśli test nie przejdzie
-if not status-is-success
-  echo "Test nie powiódł się" 
+1. Zdefiniuj funkcję, którą chcesz przetestować. Na przykład:
+
+```
+function add_numbers
+    echo $argv[1] + $argv[2]
 end
 ```
 
-W powyższym przykładzie użyto funkcji "test-equal" do sprawdzenia czy łańcuch "hello world" jest równy samemu sobie. Jeśli test przejdzie, funkcja "status-is-success" zwróci wartość 0, w przeciwnym razie wyświetli się informacja o niepowodzeniu.
+2. Napisz testy dla swojej funkcji. Możesz to zrobić używając konstrukcji `test` wraz z wywołaniem Twojej funkcji i oczekiwanym wynikiem. Na przykład:
 
-Możemy także wykorzystać instrukcje "set" oraz "test" do tworzenia bardziej skomplikowanych testów:
-
-```Fish Shell
-set -l number 5
-test $number -eq 5
+```
+test '1 plus 2 should equal 3' expect add_numbers 1 2 = '3'
 ```
 
-W powyższym przypadku, jeśli wartość zmiennej "number" jest równa 5, funkcja "test" zwróci wartość 0, co oznacza powodzenie testu.
+3. Uruchom testy, wpisując w terminalu `fish my_tests.fish`, gdzie `my_tests.fish` to nazwa Twojego pliku z testami.
 
-## Deep Dive: Jak pisać testy w Fish Shell
+## Deep Dive
 
-Pisanie testów w Fish Shell jest bardzo proste i intuicyjne. Możemy wykorzystać różne funkcje, takie jak "test-equal" czy "test", aby sprawdzać czy nasz kod działa poprawnie. Warto także stosować instrukcję "status-is-success", która pozwala nam na obsługę błędów w przypadku niepowodzenia testu.
+Testowanie w Fish Shell może wydawać się proste, ale istnieje wiele dodatkowych opcji i możliwości, które warto poznać. Dzięki temu będziesz w stanie pisać jeszcze lepsze i bardziej kompleksowe testy. Oto kilka wskazówek na temat tego, jak możesz jeszcze ulepszyć swoje testy:
 
-Warto także zwrócić uwagę na fakt, że funkcje testowe są bardzo przydatne podczas pracy w zespole, ponieważ pozwalają nam na szybkie i skuteczne weryfikowanie kodu.
+- Użyj dyrektywy `--verbose`, aby uzyskać więcej informacji o przebiegu testów.
+- Wykorzystaj funkcję `ok` do sprawdzania warunków w testach.
+- Stosuj różne operatorów porównania, takie jak `=` lub `-ne`, aby przetestować różne przypadki.
 
 ## Zobacz także
 
-- [Dokumentacja Fish Shell - test](https://fishshell.com/docs/current/cmds/test.html)
-- [Przewodnik po Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Narzędzia do testowania w Fish Shell](https://fishshell.com/docs/current/tutorial.html#testing_tools)
+- [Dokumentacja Fish Shell na temat testowania](https://fishshell.com/docs/current/cmds/test.html)
+- [Poradnik na temat pisania testów w Fish Shell](https://medium.com/@daveyarwood/testing-shell-scripts-8187158b9e97)
+- [Przydatne wskazówki i triki dotyczące testowania w języku Fish Shell](https://github.com/jichu4n/basic_shell_testing_examples/blob/master/examples/fish_examples/fish_test_examples.md)

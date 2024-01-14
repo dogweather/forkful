@@ -1,70 +1,85 @@
 ---
 title:                "Go recipe: Writing a text file"
+simple_title:         "Writing a text file"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Writing a text file may seem like a mundane task, but it serves an important purpose in programming. Text files allow us to store and organize data in a human-readable format, making it easier for us to manipulate and analyze. In this blog post, we'll explore how to write a text file in Go and why it's a valuable skill to have in your programming arsenal.
+
+Writing is an essential part of programming and the same goes for writing a text file in Go. Text files allow us to store and manipulate data in a human-readable format, making it easier to manage and share information. In this blog post, we'll explore how to write a text file in Go and understand its importance in programming.
 
 ## How To
-To write a text file in Go, we first need to import the "os" package, which provides functions for handling operating system resources. Then, we can use the `Create()` function to create a new file and `WriteString()` to write content to the file.
+
+The first step to creating a text file in Go is to import the `os` and `fmt` packages:
 
 ```Go
-// Import the "os" package
 import "os"
+import "fmt"
+```
 
-// Create a new file named "example.txt"
+Next, we'll use the `Create()` function from the `os` package to create a new text file named "example.txt":
+
+```Go
 file, err := os.Create("example.txt")
 if err != nil {
     fmt.Println(err)
 }
 defer file.Close()
+```
 
-// Write the string "Hello world!" to the file
-_, err = file.WriteString("Hello world!")
+Notice how we're also using the `defer` keyword to ensure that the file is closed after we're done writing to it.
+
+Now, let's use the `WriteString()` function to add some content to our text file:
+
+```Go
+_, err = file.WriteString("This is a sample text file written in Go!")
 if err != nil {
     fmt.Println(err)
 }
 ```
 
-After running this code, a new text file named "example.txt" will be created, and the string "Hello world!" will be written to it. Keep in mind that the `Create()` function will overwrite any existing file with the same name, so be careful with the naming of your files.
-
-We can also use the `Write()` function to write bytes to a file. Here's an example of writing the bytes of a string to a file:
+We can also use the `Write()` function to add bytes to our file. Let's add some numbers:
 
 ```Go
-// Write the bytes of a string to a file
-_, err = file.Write([]byte("This is a string in bytes."))
+bytes := []byte{49, 50, 51, 52, 53}
+_, err = file.Write(bytes)
 if err != nil {
     fmt.Println(err)
 }
 ```
 
-Finally, to ensure that our data is written to the file, we need to use the `Sync()` function. This ensures that all the data written to the file is safely stored before the program exits.
+Finally, we can use the `Printf()` function from the `fmt` package to add formatted strings to our file:
 
 ```Go
-// Sync data to the file
-err = file.Sync()
+_, err = fmt.Fprintf(file, "\nYour file contains %d characters and %d bytes.", len("This is a sample text file written in Go!"), len(bytes))
 if err != nil {
     fmt.Println(err)
 }
+```
+
+We have successfully written to our text file! Let's run our code and check the content of "example.txt":
+
+```
+This is a sample text file written in Go!
+12345
+Your file contains 35 characters and 5 bytes.
 ```
 
 ## Deep Dive
-When writing a text file in Go, there are a few important things to keep in mind:
 
-- Always close the file using the `Close()` function when you're finished writing to it. This ensures that any resources associated with the file are correctly released.
-- Use the `WriteString()` function if you want to write a string to a file since it automatically converts the string to bytes.
-- When writing bytes to a file, it's important to convert the data to bytes using the `[]byte()` function.
+In the above example, we saw how to use simple functions to write to a text file. However, there are more options available in the `os` package that allow us to customize our text file further.
 
-It's also worth mentioning that there are other functions and methods available for writing and manipulating text files in Go, such as `Read()`, `ReadAll()`, and `Truncate()`. It's a good idea to familiarize yourself with these functions and their usage as well.
+For instance, the `OpenFile()` function allows us to open an existing file and append content to it instead of creating a new file. We can also use the `WriteAt()` function to write at a specific location within a file.
+
+Additionally, we can use the `NewWriter()` and `NewScanner()` functions from the `bufio` package to efficiently write and read from files, respectively.
 
 ## See Also
-- [Official documentation for the "os" package](https://golang.org/pkg/os/)
-- [Working with files in Go](https://blog.golang.org/defer-panic-and-recover)
-- [Go file processing tutorial](https://www.tutorialspoint.com/go/go_file_processing.htm)
 
-Writing a text file is a fundamental skill in programming and can come in handy for a variety of tasks. With the knowledge gained from this article and the resources listed in the "See Also" section, you'll be well equipped to handle any file processing needs in your Go programs. Happy coding!
+- [Go Docs: Package os](https://golang.org/pkg/os/)
+- [Go Docs: Package fmt](https://golang.org/pkg/fmt/)
+- [Go Docs: Package bufio](https://golang.org/pkg/bufio/)

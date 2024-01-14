@@ -1,46 +1,39 @@
 ---
-title:                "Gleam: Utskrift av felsökningsutdata"
+title:                "Gleam: Utskrift av felanalys"
+simple_title:         "Utskrift av felanalys"
 programming_language: "Gleam"
-category:             "Testing and Debugging"
+category:             "Gleam"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 # Varför
+En av de viktigaste delarna av programmering är att kunna felsöka koden. Att kunna skriva ut debug-utmatning är ett värdefullt verktyg för att förstå vad som händer i koden och hitta eventuella fel. Det är en enkel och effektiv metod som kan användas under utvecklingsprocessen.
 
-Att kunna identifiera och lösa buggar i kod är en viktig del av programmering och kan vara en utmanande uppgift. Att skriva ut debug-utmatning är ett användbart verktyg för att kunna undersöka och förstå vad som händer i koden, och därmed underlätta felsökning.
+## Hur man gör
+För att skriva ut debug-utmatning i Gleam kan du använda funktionen `debug.print` och ange det du vill skriva ut som argument. Till exempel, om du vill skriva ut en sträng, kan du använda följande kod:
 
-## Så här gör du
-
-För att skriva ut debug-utmatning i Gleam kan du använda funktionen `debug!()` som tar emot en parameter. Till exempel:
-
-```
-Gleam.debug!("Värdet på variabeln är:", variabel)
-```
-
-Denna kod kommer att skriva ut texten "Värdet på variabeln är:" följt av värdet på den angivna variabeln.
-
-Du kan också skriva ut flera värden på samma gång genom att använda en lista som parameter:
-
-```
-Gleam.debug!("Värdena på variablerna är:", [variabel1, variabel2, variabel3])
+```Gleam
+let str = "Hej värld!"
+debug.print(str)
 ```
 
-Genom att använda debug-utmatning kan du få information om variabler, funktioner och uttryck i din kod, vilket kan hjälpa dig att upptäcka och åtgärda eventuella problem.
+Detta kommer att skriva ut "Hej värld!" i terminalen eller på annan utmatningsplats, beroende på hur du kör koden.
 
-## Djupdykning
+Om du vill ha ännu mer detaljerad information kan du använda `debug.print_all` som tar emot ett element och skriver ut alla dess egenskaper. Du kan också använda `debug.inspect` för att få en formaterad utskrift av ett element, vilket kan vara särskilt användbart för att felsöka komplexa datastrukturer.
 
-När man använder debug-utmatning är det viktigt att känna till att uttryck som skrivs ut kommer att påverka prestandan i din kod. Detta beror på att utmatningen kräver extra resurser för att kunna skrivas ut och visas på skärmen. Därför bör du bara använda debug-utmatning när det verkligen behövs, och ta bort den när du inte längre behöver den.
+## Deep Dive
+För att förstå hur debug-utmatning fungerar i Gleam, är det viktigt att förstå att det är en del av det inbyggda biblioteket `gleam_debug`. Detta bibliotek ger funktioner för att skriva ut text, nummer, booleska värden och andra typer av data.
 
-Det är också viktigt att inte använda debug-utmatning i produktionskoden eftersom den kan avslöja kritisk information om din kod och dina system som kan utnyttjas av obehöriga.
+En annan intressant funktion i `gleam_debug` är `debug.trace`, som skriver ut information om varje körningsvarv i koden. Detta kan vara användbart för att förstå vilka delar av koden som har utförts och i vilken ordning.
 
-## Se även
+Så använd debug-utmatning för att felsöka din Gleam-kod och hitta eventuella problem!
 
-Här är några användbara länkar för att lära dig mer om debug-utmatning i Gleam:
+# See Also
+Här är några användbara resurser för att lära dig mer om debugging i Gleam:
 
-- [Dokumentation för debug funktionen i Gleam](https://gleam.run/documentation/stdlib/debug)
-- [En guide till felsökning i Gleam](https://medium.com/swlondon-fel/felsökning-i-gleam-367a70e155f4)
-- [Diskussion om användningen av debug-utmatning i olika scenarier](https://github.com/gleam-lang/gleam/issues/305)
-
-Lycka till med debugging i Gleam!
+- Officiell Gleam dokumentation om felsökning: https://gleam.run/book/tips-and-tricks.html#debugging
+- En guide till hur man felsöker i Gleam: https://medium.com/gleam-lang/another-guide-to-debugging-with-gleam-65ac455ca02e
+- GitHub-repository för `gleam_debug`: https://github.com/gleam-lang/gleam_debug

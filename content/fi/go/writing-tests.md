@@ -1,72 +1,53 @@
 ---
 title:                "Go: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Go"
-category:             "Testing and Debugging"
+category:             "Go"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi testaaminen on tärkeää Go-ohjelmoinnissa?
 
-On tärkeää, että ohjelmistokehittäjät kirjoittavat testejä ohjelmakoodiinsa. Testien avulla voidaan varmistaa, että koodi toimii oikein ja vähentää bugeja ohjelmassa.
+Testaamisen kirjoittaminen on tärkeä osa Go-ohjelmointia, koska se auttaa löytämään ja korjaamaan virheitä ennen kuin ohjelma julkaistaan tuotantoon. Tämä auttaa välttämään käyttäjien kohtaamia ongelmia ja parantaa ohjelman laatua yleisesti.
 
-## Kuinka
+## Kuinka kirjoittaa testejä Go-ohjelmissa
 
-Testien kirjoittaminen Go-kielellä on helppoa ja selkeää. Alla on esimerkkejä ja tulosteita koodinpätkässä "```Go ... ```".
-
-```Go
-// Esimerkki yksinkertaisesta testistä
-func TestCalculateTotal(t *testing.T) {
-    total := calculateTotal(50, 10)
-
-    if total != 60 {
-        t.Errorf("Odottamaton tulos! Halusimme 60, mutta saimme %f", total)
-    }
-}
-
-// Tuloste:
-// --- FAIL: TestCalculateTotal (0.00s)
-//     main_test.go:7: Odottamaton tulos! Halusimme 60, mutta saimme 55
+Testien kirjoittaminen Go-ohjelmissa on suhteellisen helppoa. Voit käyttää sisäänrakennettua "testing" -pakettia ja sen mukana tulevia toimintoja helpottaaksesi testien luomista. Alla on yksinkertainen esimerkki:
 
 ```
+package main
 
-```Go
-// Esimerkki testifunktion käyttämisestä
-func TestMultiply(t *testing.T) {
-    testCases := []struct {
-        input1 int
-        input2 int
-        expectedOutput int
-    }{
-        {2, 5, 10},
-        {10, 0, 0},
-        {-3, 7, -21},
-    }
+import (
+    "testing"
+)
 
-    for _, tc := range testCases {
-        output := multiply(tc.input1, tc.input2)
-
-        if output != tc.expectedOutput {
-            t.Errorf("Odottamaton tulos! Halusimme %d, mutta saimme %d", tc.expectedOutput, output)
-        }
+// Testataan kahden numeron yhteenlaskua
+func TestAddition(t *testing.T) {
+    result := 2 + 3
+    if result != 5 {
+        t.Errorf("Yhteenlasku väärin, odotettiin 5 mutta saatiinkin %d", result)
     }
 }
-
-// Tuloste:
-// --- PASS: TestMultiply (0.00s)
 ```
 
-## Syvempää tietoa
+Kuten näet, testifunktio aloitetaan "Test" -sanalla ja sen jälkeen tulee testattavan toiminnon nimi. Tämän jälkeen voit määrittää haluamasi testit ja niiden odotetut tulokset. Jos testi ei tuota odotettua lopputulosta, voit käyttää "t.Errorf()" -funktiota ilmoittamaan virheestä.
 
-Testejä voi kirjoittaa monella eri tavalla ja testausstrategia kannattaa valita projektikohtaisesti. Alla on muutama hyvä resurssi testien kirjoittamiseen Go-kielellä:
+Suorittaaksesi testit, voit käyttää "go test" -komentoa terminaalissa. Tämä näyttää tulokset, ja jos kaikki testit suoritettiin onnistuneesti, saat viestin "ok" konsolista.
 
-- [Go:n virallinen dokumentaatio testauksesta](https://golang.org/pkg/testing/)
-- [GoTest-sivusto, jossa on paljon vinkkejä ja esimerkkejä testien kirjoittamisesta Go-kielellä](https://gotest.tools/)
-- [Go-koodin testauksen paras käytäntö -artikkeli](https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742)
+## Syvällisempi sukellus testien kirjoittamiseen
+
+Testien kirjoittaminen Go-ohjelmissa tarjoaa paljon mahdollisuuksia. Voit käyttää erilaisia testaustyökaluja, kuten "goconvey" tai "testify", jotka helpottavat testien kirjoittamista ja näyttävät selkeämmin testien tuloksia.
+
+Lisäksi voit käyttää "benchmarks" -toimintoa testaamaan ohjelmasi suorituskykyä ja optimoimaan sitä. Voit myös hyödyntää "mocking" -tekniikkaa simuloimaan ulkoisia riippuvuuksia testien aikana.
+
+Testit myös auttavat dokumentoimaan koodiasi ja helpottavat muiden kehittäjien ymmärtämistä ja ylläpitämistä. Ne myös mahdollistavat ohjelmasi skaalautumisen ja kehittymisen luotettavasti.
 
 ## Katso myös
 
-- [Mitä ovat yksikkötestit ja miksi niitä tarvitsemme?](https://www.oreilly.com/library/view/97-things-every/9780596809495/ch01.html)
-- [Toinen blogipostaus testien kirjoittamisesta Go-kielellä](https://medium.com/@simonritchie/why-is-writing-unit-tests-so-important-yc-q-of-the-week-d41c1cf467d6)
-- [Go-koodin testauksen esimerkkien hakemisto GitHubissa](https://github.com/golang-standards/project-layout/tree/master/testing)
+- [Go-kieltojen sisäänrakennettu "testing" -paketti](https://golang.org/pkg/testing/)
+- [GoConvey - testaustyökalu Go-kielen projekteihin](https://github.com/smartystreets/goconvey)
+- [Testify - helppokäyttöinen kirjasto testien kirjoittamiseen Go-kielen projekteissa](https://github.com/stretchr/testify)
+- [Go-lang.orgin testauksen opas](https://golang.org/doc/code.html#Testing)

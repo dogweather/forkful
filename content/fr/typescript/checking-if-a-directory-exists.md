@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Vérification de l'existence d'un répertoire"
+title:                "TypeScript: Vérifier l'existence d'un répertoire"
+simple_title:         "Vérifier l'existence d'un répertoire"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/checking-if-a-directory-exists.md"
 ---
 
@@ -9,34 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il est important de vérifier l'existence d'un répertoire lors de la programmation TypeScript car cela permet de s'assurer que votre code peut traiter toutes les situations possibles, y compris lorsque le répertoire cible n'existe pas.
+Il est important lors de la programmation de vérifier si un répertoire existe avant de l'utiliser. Cela peut éviter des erreurs ou des bogues dans votre code et améliorer l'efficacité de votre programme.
 
-## Comment faire
+## Comment Faire
 
-La vérification de l'existence d'un répertoire peut être facilement réalisée en utilisant les méthodes natives de TypeScript. Voici un exemple de code pour vérifier si un répertoire existe :
+Pour vérifier si un répertoire existe en TypeScript, vous pouvez utiliser la méthode `existsSync` de la bibliothèque `fs`. Voici un exemple de code :
 
 ```TypeScript
-function checkDirectory(directoryName: string) {
-    if(fs.existsSync(directoryName)) {
-        console.log(`Le répertoire ${directoryName} existe.`);
-    } else {
-        console.log(`Le répertoire ${directoryName} n'existe pas.`);
-    }
-}
+import * as fs from 'fs';
 
-checkDirectory("monRepertoire");
+if (fs.existsSync('/chemin/vers/le/répertoire')) {
+  console.log('Le répertoire existe !');
+} else {
+  console.log('Le répertoire n\'existe pas !');
+}
 ```
 
-Lorsque vous exécutez ce code, la sortie sera soit "Le répertoire monRepertoire existe." ou "Le répertoire monRepertoire n'existe pas." en fonction de la présence ou de l'absence du répertoire spécifié.
+Si le répertoire existe, la console affichera "Le répertoire existe !". Sinon, elle affichera "Le répertoire n'existe pas !". Vous pouvez également utiliser cette méthode pour vérifier l'existence d'un fichier en remplaçant le chemin du répertoire par celui du fichier.
 
-## Plongez plus en profondeur
+## Plongée en Profondeur
 
-Maintenant que vous savez comment vérifier si un répertoire existe, vous pouvez aller plus loin en manipulant le répertoire lui-même. Vous pouvez utiliser la méthode `mkdir()` pour créer un nouveau répertoire ou `rmdir()` pour le supprimer. Vous pouvez également utiliser `readdir()` pour afficher le contenu d'un répertoire existant.
+Si vous souhaitez en savoir plus sur la vérification de l'existence d'un répertoire, voici quelques points importants à noter :
 
-Cependant, n'oubliez pas de toujours vérifier l'existence d'un répertoire avant de tenter de le manipuler pour éviter les erreurs dans votre code.
+- La méthode `existsSync` renvoie un booléen, ce qui signifie que vous pouvez l'utiliser dans une condition `if` comme dans l'exemple précédent.
+- Cette méthode peut également être utilisée de manière asynchrone avec la méthode `exists` de la bibliothèque `fs` qui prend en paramètre un callback pour gérer le résultat de la vérification.
+- Si vous souhaitez créer un nouveau répertoire, vous pouvez utiliser la méthode `mkdirSync` de la bibliothèque `fs` en vérifiant d'abord si le répertoire n'existe pas déjà.
 
-## Voir aussi
+## Voir Aussi
 
-- [Documentation officielle de TypeScript](https://www.typescriptlang.org/docs/)
-- [Guide de démarrage avec TypeScript](https://www.tutorialspoint.com/typescript/typescript_quick_guide.htm)
-- [Gestion des fichiers et répertoires avec TypeScript](https://morioh.com/p/a0af96b6c830)
+- [Documentation sur la méthode `existsSync` de la bibliothèque `fs`](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
+- [Documentation sur les méthodes `exists` et `mkdirSync` de la bibliothèque `fs`](https://nodejs.org/api/fs.html#fs_fs_exist_path_callback)
+- [Article sur la gestion des erreurs en TypeScript](https://codeburst.io/error-handling-in-type-script-85a2b97a9ae2)

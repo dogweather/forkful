@@ -1,64 +1,71 @@
 ---
-title:                "Rust: Concatenando cadenas"
+title:                "Rust: Uniendo cadenas de texto"
+simple_title:         "Uniendo cadenas de texto"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# ¡Aprende a concatenar cadenas en Rust!
+## Por qué
 
-## ¿Por qué concatenar cadenas?
-
-La concatenación de cadenas es una tarea común en la programación. En Rust, se refiere a la unión de dos o más cadenas de texto para formar una cadena más larga. Esto puede ser útil para construir mensajes de error, crear URL dinámicas o simplemente para mostrar resultados en la pantalla.
+¿Alguna vez te has encontrado en la situación en la que necesitas unir múltiples cadenas de texto en una sola? Ya sea para mostrar un mensaje personalizado o para construir una URL dinámica, la concatenación de cadenas es una habilidad esencial para cualquier programador. En este blog post, te enseñaremos cómo concatenar cadenas en Rust de manera eficiente y efectiva.
 
 ## Cómo hacerlo
 
-La sintaxis básica para concatenar cadenas en Rust es usando el operador `+`. Por ejemplo:
+¡No te preocupes, concatenar cadenas en Rust es muy sencillo! Primero, debes importar el módulo `String` para poder trabajar con cadenas en tu código:
+
+```Rust
+use std::string::String;
+```
+
+Ahora, puedes utilizar el operador `+` para unir dos cadenas y crear una nueva. Por ejemplo:
+
+```Rust
+let nombre = "María";
+let apellido = "González";
+let nombre_completo = nombre + apellido;
+
+println!("Hola, mi nombre es {}", nombre_completo); 
+// Salida: Hola, mi nombre es María González
+```
+
+También puedes utilizar el método `push_str()` para añadir una cadena al final de otra, modificando directamente la cadena original:
+
+```Rust
+let mut saludo = String::from("Hola");
+saludo.push_str("amigos!");
+
+println!("{}", saludo); // Salida: Hola amigos!
+```
+
+Otra forma de concatenar cadenas es utilizando el método `format()`, que te permite combinar varias cadenas y valores de manera más fácil y legible:
 
 ```Rust
 let nombre = "Juan";
-let apellido = "Pérez";
-let nombre_completo = nombre + " " + apellido;
+let edad = 25;
+let saludo = format!("Hola, mi nombre es {} y tengo {} años", nombre, edad);
 
-println!("¡Hola, {}!", nombre_completo);
+println!("{}", saludo); 
+// Salida: Hola, mi nombre es Juan y tengo 25 años
 ```
 
-Este código imprimirá: `¡Hola, Juan Pérez!`. Como puedes ver, el operador `+` se utiliza para unir las cadenas y se puede utilizar tantas veces como sea necesario.
+## Profundizando
 
-Sin embargo, en Rust también existe el tipo de dato `String` que permite la mutabilidad y el almacenamiento de cadenas de texto más largas. En lugar de usar el operador `+`, para concatenar cadenas de texto más largas se puede utilizar el método `push_str()` de este tipo de dato. Por ejemplo:
+Si bien la concatenación de cadenas parece una tarea sencilla, en realidad puede tener un impacto en el rendimiento de tu código. Rust tiene un concepto llamado _ownership_, que se encarga de administrar la memoria de manera eficiente y evitar errores como fugas de memoria o acceso a memoria no válido. Cuando concatenas cadenas en Rust, estás creando una nueva cadena en la memoria y copiando cada una de las cadenas originales. Esto puede ser costoso en términos de rendimiento.
 
-```Rust
-let mut mensaje = String::from("¡Hola, ");
-let nombre = "María";
+Para mitigar este problema, Rust también ofrece el tipo `String`, que es una cadena dinámica y mutable que puede crecer a medida que se le añaden valores. Al utilizar este tipo en lugar de cadenas estáticas, sólo se copiará la referencia a la cadena en lugar de su contenido, mejorando el rendimiento de tu código.
 
-mensaje.push_str(nombre);
-mensaje.push_str("!");
+Otra opción para mejorar la concatenación de cadenas es utilizar la macro `format!()`, que te permite crear una cadena formateada sin tener que crear nuevas cadenas en la memoria.
 
-println!("{}", mensaje);
-```
-
-Este código imprimirá: `¡Hola, María!`. Como se puede ver, primero se crea una variable `String` vacía y luego se va agregando texto utilizando el método `push_str()`. Esto puede ser útil si no se conocen de antemano las cadenas que se van a concatenar.
-
-## Profundizando en la concatenación de cadenas
-
-En Rust, la concatenación de cadenas puede ser más compleja cuando se trata de tipos de datos diferentes. Por ejemplo, si se intenta concatenar una cadena literal (`&str`) con una variable `String`, se obtendrá un error de tipo. Esto es debido a la diferencia en sus respectivos tipos de datos.
-
-Para solucionar esto, se puede utilizar el método `to_owned()` para convertir la cadena literal a un tipo `String` antes de concatenarlos juntos. Por ejemplo:
-
-```Rust
-let apellido = "Gómez";
-let primer_nombre = String::from("Ana");
-let mensaje = primer_nombre + " " + apellido.to_owned(); // Se convierte a String
-
-println!("{}", mensaje);
-```
-
-Este código imprimirá: `Ana Gómez`. También es importante tener en cuenta que la concatenación de cadenas puede ser más lenta en Rust, ya que el compilador realiza comprobaciones de seguridad adicionales para garantizar que no se produzcan problemas de memoria.
+En resumen, al concatenar cadenas en Rust, siempre debemos tener en cuenta el costo de rendimiento y elegir la opción más adecuada según nuestras necesidades.
 
 ## Ver también
 
-- [Documentación oficial de Rust sobre la concatenación de cadenas](https://doc.rust-lang.org/std/string/struct.String.html#string-concatenation)
-- [Guía rápida de Rust para principiantes](https://www.rust-lang.org/learn)
-- [Ejercicios prácticos para practicar Rust](https://www.codewars.com/?language=rust)
+- [Documentación oficial sobre cadenas en Rust](https://doc.rust-lang.org/std/string/)
+- [Rust By Example: Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
+- [Ejemplos de concatenación de cadenas en Rust](https://www.techiediaries.com/rust-string-concatenation-examples/)
+
+¡Ahora que sabes cómo concatenar cadenas en Rust, no hay límites para lo que puedes crear! Practica y sigue aprendiendo sobre este poderoso lenguaje de programación. ¡Hasta la próxima!

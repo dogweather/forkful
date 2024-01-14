@@ -1,37 +1,41 @@
 ---
-title:                "Gleam: 서브스트링 추출하기"
+title:                "Gleam: 부분 문자열 추출하기"
+simple_title:         "부분 문자열 추출하기"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
 
-문자열에서 부분 문자열을 추출하는 것이 왜 유용한지 궁금하신가요? 이번 블로그 포스트에서는 그 이유와 함께 Gleam 언어를 사용하여 문자열에서 부분 문자열을 추출하는 방법을 알려드리겠습니다.
+문자열에서 부분 문자열을 추출하는 것은 많은 이유로 유용합니다. 그것을 사용하여 특정 단어나 문구를 찾아내거나 문자열의 길이를 줄이는 것이 가능합니다.
 
-## 하우 투
+## 어떻게
 
-첫 번째 단계는 Gleam 언어를 이용해 추출하고자 하는 부분 문자열이 포함된 문자열을 정의하는 것입니다. 그 후에는 인덱스 값을 이용하여 원하는 부분 문자열을 추출할 수 있습니다. 아래는 이러한 과정을 보여주는 간단한 코드 예시와 실행 결과입니다.
+Gleam에서는 `String` 모듈에서 `slice` 함수를 사용하여 부분 문자열을 추출할 수 있습니다. 아래는 `slice` 함수를 이용한 예제 코드입니다.
 
 ```Gleam
-let string = "안녕하세요, Gleam 언어입니다."
-let substring = string[8..12]
+let original_string = "이것은 Gleam입니다."
 
-//출력 결과: Gleam
+let substring = original_string |> String.slice(5, 10)
+
+// 출력: "Gleam"
 ```
 
-위의 코드 예시에서는 문자열에서 인덱스 8부터 12까지의 값인 "Gleam" 부분 문자열을 추출하고 있습니다. 이와 같은 방법으로 원하는 부분 문자열을 추출할 수 있습니다.
+위의 예제 코드에서 `slice` 함수는 첫 번째 인자로 시작 인덱스, 두 번째 인자로 종료 인덱스를 받습니다. 그리고 해당 범위에 있는 부분 문자열을 리턴합니다.
 
-## 딥 다이브
+인덱스는 0부터 시작하며, 음수 값도 가능합니다. 음수 값의 경우, 뒤에서부터 인덱싱이 이루어집니다. 예를 들어, `-1`을 인자로 줄 경우, 맨 뒤의 문자를 선택합니다.
 
-부분 문자열을 추출하는 것은 문자열 처리와 관련된 다양한 작업에서 유용하게 사용될 수 있습니다. 예를 들어, 데이터를 분석하거나 특정 단어를 검색하는 등의 작업에서 부분 문자열을 추출하여 더욱 효율적으로 작업할 수 있습니다. 또한, Gleam 언어에서는 다양한 문자열 처리 함수를 제공하기 때문에 부분 문자열을 추출하는 데에도 매우 유용합니다.
+## 깊게 들어가기
 
-## See Also
+`slice` 함수에는 세 번째 인자로 스텝(step) 값을 받을 수 있습니다. 스텝 값은 기존 문자열에서 건너뛰며 부분 문자열을 구성하는데 사용됩니다. 예를 들어, `slice(0, 10, 2)`는 0부터 시작하는 인덱스에서 2칸씩 건너뛰면서 10번째 인덱스까지의 부분 문자열을 리턴합니다.
 
-- Gleam 언어 공식 문서: [https://gleam.run/documentation/](https://gleam.run/documentation/)
-- Gleam 언어 개발자 포럼: [https://forum.gleam.run/](https://forum.gleam.run/)
-- Gleam 언어 GitHub 저장소: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)
+또한, Gleam에서는 부분 문자열을 변경하기 위한 `set_slice` 함수도 제공합니다. 예를 들어, `set_slice(original_string, 5, 10, "Elixir")`는 `original_string` 변수에서 5번째 인덱스부터 10번째 인덱스까지의 부분 문자열을 변경하는 것입니다.
 
-이번 포스트에서 소개한 Gleam 언어의 부분 문자열 추출 기능 외에도 더욱 많은 기능과 라이브러리를 활용하여 다양한 작업을 수행할 수 있습니다. Gleam 언어를 사용하면 데이터 처리와 관련된 작업을 더욱 쉽고 효율적으로 수행할 수 있으니, 궁금하신 분들은 Gleam 언어 공식 문서나 개발자 포럼 등을 참고해보시기 바랍니다.
+## 관련 글들
+
+- [Gleam 공식 문서의 String 모듈 섹션](https://gleam.run/core/string.html)
+- [How to Use Gleam’s String Module](https://dev.to/kennethlum93/how-to-use-gleam-s-string-module-4e1g)

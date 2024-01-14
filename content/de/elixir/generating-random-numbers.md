@@ -1,36 +1,57 @@
 ---
-title:                "Elixir: Erzeugung von Zufallszahlen"
+title:                "Elixir: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Elixir"
-category:             "Numbers"
+category:             "Elixir"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-#Warum
+## Warum
 
-Warum sollte man sich überhaupt mit der Generierung von Zufallszahlen beschäftigen? Nun, Zufallszahlen werden oft in der Programmierung verwendet, um verschiedene Ergebnisse und Verhaltensweisen in Programmen zu erzeugen. Sie können zum Beispiel zur Simulation von Spielen, für kryptografische Zwecke oder zur Erzeugung von eindeutigen IDs verwendet werden.
+Elixir ist eine Programmiersprache, die auf der dynamischen Funktionssprache Erlang basiert. Sie bietet viele nützliche Funktionen, die es Entwicklern ermöglichen, effiziente und zuverlässige Anwendungen zu schreiben. Eine dieser Funktionen ist die Fähigkeit, Zufallszahlen zu generieren. Warum sollte man sich also mit der Generierung von Zufallszahlen in Elixir beschäftigen? Nun, Zufallszahlen sind von entscheidender Bedeutung in vielen Anwendungen, wie beispielsweise bei der Entwicklung von Spielen, dem Testen von Algorithmen oder dem Erstellen von Sicherheitstokens. In diesem Blog-Beitrag werden wir uns ansehen, wie man in Elixir Zufallszahlen generiert und einige interessante Anwendungen dafür erfahren.
 
-##Wie funktioniert es?
+## Wie geht das?
 
-In Elixir gibt es verschiedene Möglichkeiten, um Zufallszahlen zu generieren. Eine Möglichkeit ist die Verwendung der `:random` Modul, der verschiedene Funktionen bietet, um Zufallszahlen zu erzeugen. Hier ist ein Beispielcode für die Erzeugung einer Zufallszahl zwischen 1 und 10:
+Um Zufallszahlen in Elixir zu generieren, verwenden wir die `:rand`-Funktion. Diese Funktion akzeptiert eine beliebige Anzahl von Argumenten und liefert eine Liste von Zufallszahlen zurück. Schauen wir uns ein Beispiel an:
 
 ```Elixir
-:random.uniform(1, 10)
+:rand.uniform(100)  #=> 75
+:rand.uniform(100)  #=> 43
 ```
 
-Die Ausgabe könnte zum Beispiel `7` sein.
+In diesem Beispiel haben wir die Funktion `:rand.uniform/1` verwendet, um zufällige Zahlen zwischen 0 und 100 zu generieren. Jedes Mal, wenn wir die Funktion aufrufen, erhalten wir eine andere Zufallszahl zurück. Wir können auch einen Bereich angeben, aus dem die Zufallszahlen generiert werden sollen, indem wir ein Minimum und Maximum als Argumente übergeben:
 
-Der `:random` Modul bietet auch Funktionen für die Erzeugung von Zufallszahlen mit bestimmten Verteilungen, wie zum Beispiel der Gaußschen Verteilung oder der gleichmäßigen Verteilung.
+```Elixir
+:rand.uniform(50, 100)  #=> 82
+:rand.uniform(50, 100)  #=> 53
+```
 
-##Tiefergehende Infos
+Um eine Liste von Zufallszahlen zu erhalten, können wir die Funktion `:rand.uniform/2` mehrmals aufrufen und die erzeugten Zahlen in eine Liste einfügen:
 
-Die Random Number Generation (RNG) ist ein komplexes Thema in der Informatik und es gibt viele verschiedene Algorithmen und Techniken, um Zufallszahlen zu erzeugen. Elixir verwendet den Mersenne-Twister-Algorithmus, um Zufallszahlen zu generieren. Dieser Algorithmus ist sehr effizient und erzeugt hochwertige Zufallszahlen.
+```Elixir
+list = [:rand.uniform(100), :rand.uniform(100), :rand.uniform(100)]
+#=> [71, 14, 96]
+```
 
-Es ist auch wichtig zu wissen, dass Zufallszahlen, die von einem Computer erzeugt werden, nicht wirklich "zufällig" sind, da sie von Programmen erstellt werden. Sie sind jedoch stark genug für die meisten Anwendungen, bei denen eine gewisse Zufälligkeit erforderlich ist.
+Alternativ können wir auch die Hilfsfunktion `:rand.seed/1` verwenden, um die Generierung von Zufallszahlen mit einer bestimmten Startnummer zu beginnen. Dies ist besonders nützlich, wenn wir möchten, dass unsere Zufallszahlen in verschiedenen Iterationen eines Programms konsistent bleiben.
 
-#Siehe auch
+```Elixir
+:rand.seed(1234)
+list = [:rand.uniform(100), :rand.uniform(100), :rand.uniform(100)]
+#=> [88, 13, 57]
+```
 
-- [Elixir's official documentation on random](https://hexdocs.pm/elixir/Random.html)
-- [A blog post on RNG algorithms in computer science](https://www.tutorialspoint.com/Random-Number-Algorithms-in-Computer-Science)
-- [A tutorial on generating random numbers in Elixir](https://elixirstatus.com/p/CkCy-how-to-generate-random-numbers-in-elixir)
+Jetzt, wo wir wissen, wie man Zufallszahlen in Elixir generiert, schauen wir uns genauer an, wie diese Funktion unter der Haube funktioniert.
+
+## Tiefergehende Informationen
+
+Elixir verwendet eine Pseudozufallszahlengenerator (PRNG), um Zufallszahlen zu generieren. Dieser Generator berechnet Zufallszahlen anhand eines Anfangswerts, der als "Seed" bezeichnet wird. Dieser Seed wird dann verwendet, um eine Folge von Zahlen zu generieren, die als zufällig erscheinen. Der interessante Teil ist, dass wir die gleiche Folge von Zahlen erhalten, wenn wir denselben Seed und dieselbe Anzahl von Aufrufen verwenden. Dies ist der Grund, warum wir den Seed mit der Funktion `:rand.seed/1` setzen können, um konsistente Zufallszahlen zu erhalten. Eine wichtige Sache zu beachten ist jedoch, dass die Generierung von Zufallszahlen nur so gut ist wie der PRNG, der verwendet wird. In der Praxis verwendet Elixir einen PRNG-Algorithmus namens "Mersenne Twister", der als ausreichend zufällig und effizient angesehen wird.
+
+## Siehe auch
+
+- Offizielle Elixir Dokumentation: https://hexdocs.pm/elixir/rand.html
+- Artikel über den Mersenne Twister Algorithmus: https://en.wikipedia.org/wiki/Mersenne_Twister
+- Elixir Forum Diskussion über das Setzen von Seeds: https://elixirforum.com/t/what-happens-when-setting-seeds-to-generate-random-numbers/36624

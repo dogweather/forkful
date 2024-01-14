@@ -1,41 +1,50 @@
 ---
 title:                "Arduino: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi etsiä ja korvata tekstiä Arduino-ohjelmoinnissa?
 
-On monia tilanteita, jolloin Arduinon ohjelmassa täytyy tehdä tekstin etsimistä ja korvaamista. Tämä voi olla tarpeellista esimerkiksi jotta saadaan haluttu muotoilu tai tietynlainen tietojen käsittely.
+Etsiminen ja korvaaminen ovat tärkeitä toimintoja missä tahansa ohjelmoinnissa, myös Arduino-ohjelmoinnissa. Ne voivat auttaa säästämään aikaa ja vaivaa, kun haluamme muuttaa tekstin esimerkiksi useissa tiedostoissa samanaikaisesti. Ohjelmoinnissa on tärkeää tehdä prosessi mahdollisimman tehokkaaksi, ja etsimisen ja korvaamisen hyödyntäminen on yksi tapa tehdä niin Arduino-ohjelmoinnissa.
 
-## Kuinka
+## Miten: Esimerkki etsimisen ja korvaamisen käytöstä Arduinon ohjelmoinnissa
 
-Arduino tarjoaa useita tapoja etsiä ja korvata tekstiä. Yksi tapa on käyttää `replace()`-funktiota, joka korvaa kaikki halutut merkkijonot toisilla. Esimerkiksi seuraava koodinpätkä korvaa kaikki "Hei" sanat "Moi" sanoiksi:
-
-```Arduino
-String teksti = "Hei maailma! Hei kaikille!";
-teksti.replace("Hei", "Moi");
-Serial.println(teksti); //tulostaa "Moi maailma! Moi kaikille!"
-```
-
-Toinen tapa on käyttää `indexOf()` ja `substring()` -funktioita yhdessä. `indexOf()` etsii haluttua merkkijonoa ja palauttaa sen indeksin, kun taas `substring()` hakee tietyn alueen merkkijonosta. Seuraava koodinpätkä korvaa ensimmäisen "Hei" sanan "Moi" sanalla:
+Arduino-ohjelmoinnissa voimme käyttää sisäänrakennettua "String" -luokkaa etsimään ja korvaamaan tekstiä. Alla on esimerkki, jossa etsimme ja korvaamme tekstiä "hello" tekstin "world" kanssa:
 
 ```Arduino
-String teksti = "Hei maailma! Hei kaikille!";
-int indeksi = teksti.indexOf("Hei"); //etsii "Hei" sanan indeksin
-teksti = teksti.substring(0, indeksi) + "Moi" + teksti.substring(indeksi + 3);
-//otetaan tekstistä osat ennen ja jälkeen "Hei" sana ja yhdistetään ne "Moi" sanaan
-Serial.println(teksti); //tulostaa "Moi maailma! Hei kaikille!"
+#include <string.h>
+
+String myString = "Hello, world!";
+myString.replace("hello", "world");
+
+Serial.println(myString);
 ```
 
-## Syvempi sukellus
+Tämä koodi tulostaa "Hello, world!", sillä se on korvannut "hello" tekstillä "world". Voimme myös etsiä ja korvata tekstiä tietystä kohdasta, kuten seuraavassa esimerkissä:
 
-Etsimistä ja korvaamista tekstistä voidaan tehdä myös käyttämällä vakiona olevia String funktioita, kuten `startsWith()` ja `endsWith()` sekä `replaceFirst()` ja `replaceAll()`. Näitä funktioita kannattaa tutkia lisää voidakseen valita parhaan vaihtoehdon kuhunkin tilanteeseen.
+```Arduino
+#include <string.h>
+
+String myString = "Hello there, world!";
+myString.replace(6, 11, "friends");
+
+Serial.println(myString);
+```
+
+Tämä koodi tulostaa "Hello friends, world!", sillä se on korvannut tekstin "there" tekstillä "friends" välillä 6-11. Huomaa, että merkkijonon indeksointi alkaa numerosta 0, joten "H" on indeksissä 0 ja "d" on 14.
+
+## Syvempi sukellus: Etsimisen ja korvaamisen tekniikat Arduino-ohjelmoinnissa
+
+Etsiminen ja korvaaminen voidaan toteuttaa myös käyttämällä erilaisia kirjastoja, kuten "TextUtils". Tämän kirjaston avulla voimme käyttää säännöllisiä lausekkeita ja muita kehittyneitä tekniikoita tekstimuutoksien tekemiseen. Lisäksi voimme käyttää for-silmukoita ja merkkijonon jakamista toiminnoissa, jotka sisältävät tekstin muokkaamista. On tärkeää tutkia erilaisia tekniikoita ja kirjastoja, jotta voimme valita parhaan työkalun halutun tuloksen saavuttamiseksi.
 
 ## Katso myös
 
-- Arduino String-funktioiden opas: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/
-- Vakiona olevat String-objektit: https://www.arduino.cc/en/Tutorial/TextStringObjects
+- [String.replace() - Arduino Reference (englanniksi)](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [TextUtils - Arduino Library (englanniksi)](https://www.arduinolibraries.info/libraries/text-utils)
+- [Regular Expressions -w3schools (englanniksi)](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)

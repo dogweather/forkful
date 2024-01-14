@@ -1,7 +1,9 @@
 ---
 title:                "Swift: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/writing-a-text-file.md"
 ---
 
@@ -9,76 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tervetuloa lukemaan uutta blogipostia suomenkielisille Swift-ohjelmoijille. Tässä artikkelissa puhumme siitä, miksi kirjoittaisimme teksti-tiedostoja ohjelmoimisessa ja miten se tapahtuu. Toivottavasti löydät tästä postauksesta hyödyllistä tietoa ja vinkkejä omiin ohjelmointiprojekteihisi.
+Tekstitiedoston kirjoittaminen on tärkeä osa Swift-ohjelmointia, sillä se mahdollistaa tietojen tallentamisen ja jakamisen eri sovellusten ja käyttäjien välillä. Se myös auttaa organisoimaan ja hallitsemaan tietoja selkeästi ja helposti.
 
-## Miten tehdä
+## Näin teet sen
 
-Teksti-tiedostojen kirjoittaminen Swiftillä on melko yksinkertaista, ja siihen on useampi tapa. Yksinkertaisin tapa on käyttää "FileHandle" -luokkaa, joka mahdollistaa tiedostoon kirjoittamisen ja lukemisen.
+Käyttöliittymäkomponentit ovat tärkeä osa tekstitiedoston kirjoittamista. Voit esimerkiksi luoda tekstikentän, johon käyttäjä syöttää haluamansa tiedot. Tämän jälkeen voit tallentaa tiedot tekstifileeseen seuraavanlaisella koodilla:
 
-```
-let fileManager = FileManager.default
-    
-// Luodaan uusi teksti-tiedosto
-let fileURL = fileManager.homeDirectoryForCurrentUser.appendingPathComponent("uusiTiedosto.txt")
-    
+```Swift
+let text = "Terve, maailma!"
+let filename = "tervetuloa.txt"
+
 do {
-    // Avataan tiedosto kirjoittamista varten
-    let fileHandle = try FileHandle(forWritingTo: fileURL)
-    
-    // Kirjoitetaan tiedostoon tekstiä
-    let teksti = "Tämä on esimerkki tekstistä."
-    fileHandle.write(teksti.data(using: .utf8)!)
-    
-    // Suljetaan tiedosto
-    fileHandle.closeFile()
+    let documentsDirectoryURL = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+    let fileURL = documentsDirectoryURL.appendingPathComponent(filename).appendingPathExtension("txt")
+    print("Tiedosto tallennettu osoitteeseen: \(fileURL)")
+
+    try text.write(to: fileURL, atomically: true, encoding: .utf8)
 } catch {
-    print("Virhe tiedoston kirjoittamisessa: \(error)")
+    print("Tiedoston tallennus ei onnistunut: \(error)")
 }
 ```
 
-Jos haluat lisätä tekstiä olemassa olevaan tiedostoon, voit käyttää "FileHandle" -luokkaa uudelleen ja lisätä "tiedostonKirjoitustila" -parametrin avulla olemassa olevaan tiedostoon kirjoittamisen.
+Kun suoritat tämän koodin, teksti tallentuu "tervetuloa.txt" -nimiseen tiedostoon dokumenttikansioon. Voit myös lukea ja muokata tekstifileitä käyttämällä vastaavia metodeja.
 
-```
-let tiedostonKirjoitustila = fileHandle.seekToEndOfFile()
-fileHandle.write(teksti.data(using: .utf8)!)
-```
+## Syväsukellus
 
-Voit myös käyttää "OutputStream" -luokkaa, joka antaa sinulle enemmän hallintaa tiedostoon kirjoittamisessa.
+Tekstitiedostojen muuttaminen on myös helppoa Swiftissä. Voit esimerkiksi lisätä uuden rivin tekstifileeseen seuraavalla tavalla:
 
-```
-let fileManager = FileManager.default
+```Swift
+let newLine = "\nUusi rivi!"
+let fileURL = documentsDirectoryURL.appendingPathComponent(filename).appendingPathExtension("txt")
+
+// Tarkistetaan ettei tiedoston sisältö ole tyhjä
+if let fileContents = try? String(contentsOf: fileURL, encoding: .utf8) {
+  // Lisätään uusi rivi tiedoston sisältöön
+  let updatedContent = fileContents + newLine
     
-// Luodaan uusi teksti-tiedosto
-let fileURL = fileManager.homeDirectoryForCurrentUser.appendingPathComponent("uusiTiedosto.txt")
-    
-do {
-    // Avataan tiedosto kirjoittamista varten
-    let tiedostonRikkiolmu = try OutputStream(url: fileURL, append: false)
-    
-    tiedostonRikkiolmu.open()
-    
-    // Kirjoitetaan tiedostoon tekstiä
-    let teksti = "Tämä on esimerkki tekstistä."
-    let kirjoitusTuloste = teksti.data(using: .utf8) ?? Data()
-    kirjoitusTuloste.withUnsafeBytes({
-        tiedostonRikkiolmu.write($0, maxLength: kirjoitusTuloste.count)
-    })
-    
-    // Suljetaan tiedosto
-    tiedostonRikkiolmu.close()
-} catch {
-    print("Virhe tiedoston kirjoittamisessa: \(error)")
+  do {
+    // Tallennetaan päivitetty sisältö takaisin tiedostoon
+    try updatedContent.write(to: fileURL, atomically: true, encoding: .utf8)
+  } catch {
+    print("Tiedoston muokkaus ei onnistunut: \(error)")
+  }
 }
 ```
 
-## Syvä sukellus
-
-Teksti-tiedostojen kirjoittamisen lisäksi voit myös käyttää Swiftiä muihin tiedostoon liittyviin toimintoihin, kuten tiedoston kopiointiin, poistamiseen ja lukemiseen. Voit myös käyttää "String" -luokkaa helpottamaan tekstin muokkaamista.
-
-On myös tärkeää huomata, että tiedostojen kirjoittamiseen liittyy aina virheiden käsittely, jotta ohjelma ei kaatuilisi, jos jotain menee vikaan.
+Jos haluat lisätä uuden rivin tiedoston alkuun, voit käyttää metodia `write(to:atomically:encoding:)` sen sijaan, että käyttäisit `String(contentsOf:encoding:)` ja `write(to:options:)` -metodeja.
 
 ## Katso myös
 
-- [Swiftin virallinen opas teksti-tiedostojen käsittelyyn](https://developer.apple.com/documentation/foundation/file_management/writing_data_to_a_file)
-- [Swiftin virallinen opas tiedostojen käsittelyyn](https://developer.apple.com/documentation/foundation/file_management)
-- [Swiftin virallinen opas virheiden käsittelystä](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
+* [Apple Developer Documentation - File System Basics](https://developer.apple.com/documentation/foundation/file_system_basics)
+* [Swift.org - Swift Language Guide](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)

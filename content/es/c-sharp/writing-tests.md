@@ -1,48 +1,59 @@
 ---
 title:                "C#: Escribiendo pruebas"
+simple_title:         "Escribiendo pruebas"
 programming_language: "C#"
-category:             "Testing and Debugging"
+category:             "C#"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué escribir pruebas en programación
 
-Escribir pruebas es una práctica clave en el mundo de la programación, ya que permite asegurarse de que nuestro código funcione correctamente y sin errores. Además, es una forma eficiente de detectar y solucionar problemas en una etapa temprana del proceso de desarrollo.
+Escribir pruebas en tu código puede parecer una tarea tediosa y poco emocionante, pero en realidad es una práctica muy importante para garantizar que tu programa funcione correctamente. Las pruebas te ayudan a detectar errores y problemas antes de que lleguen a los usuarios finales. Además, te permite realizar cambios en tu código de forma segura sin preocuparte por romper funcionalidades existentes.
 
-## Cómo hacerlo
+## Cómo escribir pruebas en C#
 
-Para escribir pruebas en C#, es necesario utilizar un marco de pruebas como NUnit o xUnit. A continuación, se presenta un ejemplo de cómo escribir una simple prueba de suma en NUnit:
+El lenguaje C# cuenta con una amplia variedad de herramientas y funciones que pueden ayudarte a escribir pruebas efectivas. A continuación, te mostraré un ejemplo de cómo escribir una prueba sencilla en C# utilizando la biblioteca de pruebas NUnit.
 
 ```C#
-[TestFixture]
-public class CalculadoraTests
+[Test]
+public void TestSuma()
 {
-    [Test]
-    public void Suma_DosNumeros_ValorEsperado()
-    {
-        // Arrange
-        Calculadora calculadora = new Calculadora();
+    // Definimos los valores de entrada
+    int numero1 = 10;
+    int numero2 = 5;
 
-        // Act
-        int resultado = calculadora.Sumar(2, 3);
+    // Llamamos a la función que queremos probar
+    int resultado = Suma(numero1, numero2);
 
-        // Assert
-        Assert.AreEqual(5, resultado);
-    }
+    // Verificamos si el resultado es el esperado
+    Assert.AreEqual(15, resultado);
 }
 ```
 
-En este caso, se utiliza la clase `Calculadora` que contiene el método `Sumar` que realiza la operación deseada. En la prueba, se crea una instancia de la clase y se invoca el método con los parámetros adecuados. Luego, se utiliza `Assert` para verificar si el resultado es el esperado. En este ejemplo, si el resultado obtenido es 5, la prueba pasa exitosamente.
+En este ejemplo, estamos probando la función `Suma` que toma dos números y devuelve su suma. Definimos los valores de entrada y luego llamamos a la función, obteniendo el resultado esperado. Luego, utilizamos la función `Assert.AreEqual` para verificar que el resultado obtenido sea igual al esperado.
 
-## Profundizando
+Al utilizar una biblioteca de pruebas como NUnit, puedes automatizar la ejecución de tus pruebas y obtener resultados rápidamente, lo que hace que el proceso sea más eficiente y eficaz.
 
-Al escribir pruebas, es importante tomar en cuenta ciertos aspectos, como por ejemplo la cobertura de código. Esto se refiere a la cantidad de código que está siendo ejecutado por las pruebas. Se recomienda que la cobertura sea lo más cercana posible al 100%, ya que esto garantiza que todas las líneas de código están siendo probadas. Además, es importante tener en cuenta los distintos tipos de pruebas, como las de unidad, integración y funcionales, y utilizarlas de manera adecuada en el proceso de desarrollo.
+## Profundizando en la escritura de pruebas
+
+Además de utilizar herramientas y bibliotecas de pruebas, hay algunos conceptos importantes que debes tener en cuenta al escribir pruebas en C#. Algunos de ellos son:
+
+- Pruebas unitarias: estas pruebas se centran en probar una sola unidad de código, como una función o clase en particular. Son útiles para detectar errores a nivel de código y asegurar que cada unidad funciona correctamente.
+- Cobertura del código: se refiere a la cantidad de código que está siendo ejecutado durante las pruebas. Una cobertura alta indica que estás probando la mayoría de las funcionalidades de tu programa.
+- Mocking: es una técnica que permite simular objetos y comportamientos en tus pruebas, lo que facilita el aislamiento de las unidades de código que estás probando.
+
+Tomarse el tiempo para comprender estos conceptos y utilizarlos en tus pruebas puede ayudarte a escribir pruebas más completas y efectivas.
 
 ## Ver también
 
-- [NUnit](https://nunit.org/)
-- [xUnit](https://xunit.net/)
-- [Cobertura de código en C#](https://docs.microsoft.com/es-es/dotnet/visual-studio/test/understand-code-coverage-results?view=vs-2019)
-- [Tipos de pruebas en el desarrollo de software](https://www.codeproject.com/Articles/1256524/A-Deep-Dive-Into-Types-of-Testing-In-Software-Deve)
+Aquí te dejamos algunos enlaces útiles para seguir aprendiendo sobre cómo escribir pruebas en C#:
+
+- [Documentación de NUnit](https://nunit.org/)
+- [Pruebas unitarias en C#](https://docs.microsoft.com/en-us/visualstudio/test/walkthrough-creating-and-running-unit-tests-for-managed-code)
+- [Introducción a la cobertura del código en C#](https://dzone.com/articles/how-to-get-started-with-code-coverage-for-c)
+- [Pruebas de regresión con mocks en C#](https://www.c-sharpcorner.com/article/mocking-in-unit-testing-in-c-sharp/)
+
+¡Sigue practicando y escribiendo pruebas en tu código para mejorar la calidad de tu software!

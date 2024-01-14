@@ -1,39 +1,46 @@
 ---
 title:                "C++: Escrevendo testes"
+simple_title:         "Escrevendo testes"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante para o desenvolvimento de software?
+## Por que escrever testes é importante para programadores?
 
-Escrever testes é uma parte crucial do processo de desenvolvimento de software. Ao escrever testes, podemos garantir que nosso código funciona corretamente e que quaisquer alterações futuras não quebrarão o código existente. Além disso, testes bem escritos podem ajudar a identificar e corrigir erros antes mesmo da implementação do código em produção, economizando tempo e recursos.
+Escrever testes é uma parte essencial da programação. Ao testar nosso código, podemos identificar e corrigir bugs e problemas antes que nosso programa seja lançado ou usado por outros. Além disso, escrever testes ajuda a garantir que nosso código seja capaz de lidar com situações inesperadas e melhora a qualidade geral do nosso trabalho.
 
-## Como escrever testes em C++?
+## Como escrever testes em C++
 
-Para escrever testes em C++, podemos usar a biblioteca de testes padrão do C++ chamada "gtest". Primeiro, devemos incluir o arquivo de cabeçalho "gtest.h" em nosso código. Em seguida, podemos definir nossas funções de teste usando a macro "TEST (test_suite_name, test_name)". Com a ajuda de várias macros, podemos verificar as condições de teste desejadas e gerar a saída correspondente.
-
-Um exemplo simples de função de teste pode ser o seguinte:
+Escrever testes em C++ pode parecer uma tarefa assustadora, mas com a estrutura certa, pode ser muito fácil. Aqui está um exemplo simples de um teste usando a biblioteca Catch2:
 
 ```C++
-TEST (MathTest, SumTest) {
-    EXPECT_EQ(5, sum(2, 3)); // verifica se 2 + 3 é igual a 5
-    EXPECT_EQ(0, sum(5, -5)); // verifica se 5 + (-5) é igual a 0
+
+#define CATCH_CONFIG_MAIN
+#include <catch2/catch.hpp>
+
+// Função para adicionar dois números
+int addNumbers(int a, int b) {
+    return a + b;
 }
+
+TEST_CASE( "Somando dois números", "[adicionar]" ) {
+    REQUIRE( addNumbers(2, 3) == 5 );
+}
+
 ```
 
-Aqui, o primeiro parâmetro da macro "TEST" é o nome da suíte de testes e o segundo parâmetro é o nome do teste. As macros "EXPECT_EQ" e "EXPECT_EQ" são usadas para verificar se o valor retornado por nossa função de teste corresponde ao valor esperado. Se todos os testes passarem com sucesso, a saída será "OK", caso contrário, a saída mostrará quais testes falharam e qual era o valor esperado.
+O código acima usa a biblioteca Catch2 para definir um teste com o nome "Somando dois números" que verifica se a função `addNumbers` retorna o resultado correto. Ao executar este teste, se o resultado for diferente de 5, o teste falhará e nos informará qual resultado foi retornado. É assim que os testes nos ajudam a encontrar e corrigir bugs em nosso código.
 
-## Considerações ao escrever testes
+## Aprofundando nos testes
 
-Ao escrever testes em C++, é importante garantir que nossos testes sejam independentes uns dos outros e também sejam fáceis de entender e manter. Devemos incluir testes para cenários de sucesso, bem como para possíveis cenários de erro. Além disso, devemos lembrar de verificar todas as condições relevantes para o nosso código, para garantir uma cobertura de teste adequada.
-
-Outra consideração importante é seguir boas práticas de programação enquanto escrevemos nosso código de teste. Isso inclui manter nossos testes pequenos e específicos, usar nomes descritivos para funções de teste e adicionar anotações para tornar a leitura e a manutenção dos testes mais fáceis.
+Escrever testes não é apenas sobre verificação de resultados. Também é importante testar as diferentes possibilidades e cobrir o máximo de código possível. Por exemplo, podemos adicionar testes para diferentes tipos de entrada, como números negativos ou zero, e também testar situações de erro, como valores inválidos sendo passados para uma função. Quanto mais testarmos nosso código, maior a chance de encontrar e corrigir problemas antes que eles se tornem um grande obstáculo.
 
 ## Veja também
 
-- [Documentação oficial do gtest](https://github.com/google/googletest)
-- [Tutorial de testes em C++](https://www.guru99.com/cpp-unit-testing.html)
-- [Melhores práticas de testes em C++](https://www.experitest.com/blog/best-practices-for-unit-testing-in-c/)
+- [Documentação da biblioteca Catch2](https://github.com/catchorg/Catch2/blob/master/docs/Readme.md)
+- [Tutorial de teste de unidade em C++](https://devblogs.microsoft.com/cppblog/unit-testing-in-visual-studio-made-easy/)
+- [Tutorial de teste de unidade usando a biblioteca Boost.Test](https://www.boost.org/doc/libs/1_76_0/libs/test/doc/html/index.html)

@@ -1,46 +1,34 @@
 ---
 title:                "Ruby: Convertire una stringa in minuscolo"
+simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-Convertire una stringa in lettere minuscole può essere utile quando si vuole uniformare il testo in un documento o quando si vuole fare una ricerca su una stringa senza dover tenere conto delle lettere maiuscole.
+La conversione di una stringa in caratteri minuscoli è utile quando si vuole avere una stringa nel formato più comune, in modo da poterla facilmente confrontare o manipolare.
 
 ## Come fare
 
-Per convertire una stringa in lettere minuscole in Ruby, basta utilizzare il metodo `downcase`:
-
 ```Ruby
-stringa = "Questa Stringa Ha lettere MAIUSCOLE"
-puts stringa.downcase
+stringa = "RUBY PROGRAMMAZIONE"
+puts(stringa.downcase)
 ```
 
-Questo produrrà l'output: "questa stringa ha lettere maiuscole".
-
-Inoltre, è possibile utilizzare questo metodo anche su una variabile che contiene un input dell'utente:
-
-```Ruby
-puts "Inserisci una parola:"
-parola = gets.chomp
-puts "La parola in minuscolo è: #{parola.downcase}"
-```
-
-In questo caso, l'utente inserirà una parola e il programma restituirà la stessa parola in minuscolo.
+Questo codice produrrà l'output "ruby programmazione". Come si può notare, la funzione `downcase` viene applicata alla variabile `stringa` e ritorna una nuova stringa in minuscolo.
 
 ## Approfondimento
 
-Il metodo `downcase` è un metodo di stringa che trasforma tutte le lettere in caratteri minuscoli. In confronto, il metodo `upcase` trasforma le lettere in caratteri maiuscoli.
+La funzione `downcase` è una caratteristica del tipo String in Ruby ed è uno dei molti metodi disponibili per manipolare le stringhe. Ci sono anche altri metodi come `upcase` per trasformare una stringa in maiuscolo e `capitalize` per far iniziare una stringa con la prima lettera maiuscola.
 
-Inoltre, è importante notare che in Ruby esiste il concetto di "codifica" di un carattere, che determina come deve essere rappresentato all'interno di una stringa. Poiché esistono diverse codifiche, può accadere che un carattere maiuscolo in una codifica venga convertito in un carattere minuscolo in un'altra.
-
-Un altro metodo utile per trasformare una stringa è `swapcase`, che scambia le lettere maiuscole con quelle minuscole e viceversa.
+Inoltre, la conversione in minuscolo di una stringa può essere utile quando si lavora con input dell'utente. Ad esempio, se l'utente inserisce la stringa "ProGraMMaZIone" e si vuole che il programma funzioni correttamente anche in questo caso, si può utilizzare la funzione `downcase` per trasformare la stringa in "programmazione" e poi confrontarla con altre stringhe.
 
 ## Vedi anche
 
-- [Metodo `upcase` di Ruby](https://ruby-doc.org/core-2.7.1/String.html#method-i-upcase)
-- [Metodo `swapcase` di Ruby](https://ruby-doc.org/core-2.7.1/String.html#method-i-swapcase)
+- [Documentazione Ruby sulle stringhe](https://www.ruby-lang.org/it/documentation/quickstart/2/)
+- [Metodi disponibili per le stringhe in Ruby](https://www.rubyguides.com/2018/02/ruby-string-methods/)

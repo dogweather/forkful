@@ -1,42 +1,42 @@
 ---
 title:                "Gleam: 计算未来或过去的日期"
+simple_title:         "计算未来或过去的日期"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要计算未来或过去的日期
+# 为什么
 
-有时我们需要计算未来或过去的日期，如在创建日历或计划活动时。使用Gleam编程语言可以轻松地完成这个任务。
+如果您正在编写一个任务安排应用程序或日历应用程序，计算未来或过去日期会非常有用。例如，您可以使用Gleam编程语言来计算特定日期的到期日期或下一次重复事件的日期。
 
-## 如何进行计算
+# 如何进行
+
+首先，您需要导入`gleam/time`库，并为所需日期创建一个`gleam/time/Date`类型的变量。例如，如果您想要计算一年后的日期，您可以这样写：
+
 ```Gleam
-// 计算未来日期，参数为年、月、日
-let future_date = Date.add(2021, 9, 20)
+import gleam/time
+import gleam/time/Date
 
-// 计算过去日期，参数为年、月、日
-let past_date = Date.add(-3, 5, 14)
-
-// 输出结果
-IO.print("未来日期：${future_date}\n")
-IO.print("过去日期：${past_date}\n")
+let today = time.now()
+let one_year_from_today = Date.shift(
+  today,
+  Date.Add.Month(12)
+)
 ```
 
-以上代码将会输出如下结果：
-```
-未来日期：2021年9月20日
-过去日期：2018年5月14日
-```
+以上代码在`today`变量中存储了当天日期，并在`one_year_from_today`变量中存储了一年后的日期。您可以根据您的需求，使用`Date.shift`函数来计算任何未来或过去日期。
 
-## 深入探讨
+# 深入探讨
 
-在Gleam中，日期是一个结构体，它包含年、月、日等属性。我们可以使用Date.add函数来对日期进行计算，该函数接受年、月、日作为参数，并返回一个日期结构体。
+Gleam的`gleam/time`库提供了多种方便的函数，可以帮助您计算未来或过去的日期。比如，`Date.Add.Months`可以用来增加指定的月数，`Date.Subtract.Days`可以用来减少指定的天数。您还可以使用`Date.diff`函数来计算两个日期之间的时间差。
 
-此外，Gleam还提供了其他日期操作函数，如Date.subtract用于计算两个日期之间的差值，Date.compare用于比较两个日期的先后顺序等。
+此外，Gleam还提供了`gleam/time/Calendar`模块，其中包含了各种日历相关的函数，可以帮助您更精确地计算日期，例如考虑闰年的影响。
 
 # 参考链接
-- [Gleam官方文档](https://gleam.run/core/date/)
-- [Gleam日期操作代码示例](https://github.com/gleam-lang/gleam/blob/main/examples/date/examples/README.md)
-- [Gleam日期操作相关讨论](https://github.com/gleam-lang/gleam/issues/332)
+
+- [Gleam time库文档](https://gleam.run/modules/math)
+- [Gleam Calendar模块文档](https://gleam.run/modules/calendar)

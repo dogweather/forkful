@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Alirivien erottaminen"
+title:                "Clojure: Alipalamerkkien erottaminen."
+simple_title:         "Alipalamerkkien erottaminen."
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/extracting-substrings.md"
 ---
 
@@ -9,42 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Substringin paloittelu (engl. 'extracting substrings') on tärkeä taito Clojure-ohjelmoinnissa, sillä se mahdollistaa tehokkaan ja tarkan datan käsittelyn. Oli sitten kyseessä teksti, numero tai lista, substringien avulla voit helposti valita halutut osat datasta ja käsitellä niitä haluamallasi tavalla.
+Miksi joku haluaisi käyttää substringien louhintaan Clojurea? Substringien louhinta on tärkeä osa tietojenkäsittelyä, jossa tietyn osan tiedosta halutaan erottaa ja käsitellä erikseen. Clojurella voit tehdä tämän helposti ja tehokkaasti.
 
-## Miten
+## Kuinka
 
-Substringin paloittelun käyttöönotto onnistuu kätevästi Clojuren sisäänrakennetun `subs`-funktion avulla. Tämän funktion avulla voit luoda uuden merkkijonon, joka koostuu valituista osista alkuperäisestä merkkijonosta.
-
-```Clojure
-(def teksti "Tervetuloa Clojure-maailmaan!")
-
-(subs teksti 4 14) ; tulostaa "tuloa Cloj"
-(subs teksti 17) ; tulostaa "a-maailmaan!"
-```
-`subs` ottaa vastaan kolme argumenttia: merkkijonon, aloitusindeksin ja lopetusindeksin. Jos lopetusindeksiä ei anneta, `subs` käyttää merkkijonon loppua.
-
-`subs`-funktion lisäksi voit myös käyttää `slice`-funktiota, joka toimii samalla tavalla kuin `subs`, mutta käyttää indeksien sijaan aloitus- ja lopetusarvoja.
+Clojuren `subtring`-funktio tarjoaa helpon tavan louhia tai erottaa osa tekstistä. Alla on yksinkertainen esimerkki, jossa haemme substringin merkkien "Clojure" välillä olevasta lauseesta "Tämä on lause Clojurella".
 
 ```Clojure
-(def lista [1 2 3 4 5])
-
-(slice lista 1 3) ; tulostaa [2 3]
-(slice lista 3) ; tulostaa [4 5]
+(println (subs "Tämä on lause Clojurella" 10 17))
+;; tuottaa tuloksen "Clojure"
 ```
 
-## Syvereihin
-
-Syvennytään hieman tarkemmin substringien paloitteluun Clojuren sisällä. Aiemmin mainitut `subs` ja `slice` ovat hyödyllisiä yksinkertaisiin substringitoimintoihin, mutta jos tarvitset monimutkaisempia toimintoja, voi olla hyvä tutustua `re-seq`-funktioon. Tämän funktion avulla voit etsiä merkkijonosta kaikki halutut alimerkkijonot käyttämällä säännöllisiä lausekkeita.
+Voit myös käyttää `substring`-funktiota samalla tavalla:
 
 ```Clojure
-(def teksti2 "Tänään on lauantai")
-
-(re-seq #"^[^aeiou]+" teksti2) ; tulostaa ("T" "n")
+(println (substring "Tämä on lause Clojurella" 9 16))
+;; tuottaa tuloksen "Clojure"
 ```
 
-Tässä esimerkissä säännöllinen lauseke etsii merkkijonosta kaikki kirjaimet, jotka eivät ole vokaaleja, ja palauttaa nämä alimerkkijonot listana.
+Voit myös käyttää negatiivisia indeksejä määrittääksesi aloitus- ja lopetusindeksit loppupäästä.
+
+```Clojure
+(println (substring "Tämä on lause Clojurella" 9 -2))
+;; tuottaa tuloksen "Clojure"
+```
+
+## Syvemmälle
+
+Substringin louhiminen ei rajoitu pelkästään yhden sanan palauttamiseen. Voit myös käyttää regex-malleja löytääksesi tiettyjä osia tekstistä. Esimerkiksi, voit käyttää `re-find`-funktiota saadaksesi ensimmäisen löydetyn substringin, joka vastaa regex-mallia.
+
+```Clojure
+(def lause "Ohjelmointikieli Clojure on suosittu funktionaalinen kieli")
+
+(println (re-find #"[Cc]lojure" lause))
+;; tuottaa tuloksen "Clojure"
+```
+
+Samoin voit käyttää `re-seq`-funktiota saadaksesi kaikki löydetyt substringit regex-mallin perusteella.
+
+```Clojure
+(def lause "Ohjelmointikieli Clojure on suosittu funktionaalinen kieli")
+
+(println (re-seq #"[a-z]+" lause))
+;; tuottaa tuloksen ("Clojure" "on" "suosittu" "funktionaalinen" "kieli")
+```
 
 ## Katso myös
 
-- [Clojure dokumentaatio](https://clojure.org/reference/strings)
-- [säännölliset lausekkeet Clojurella](https://clojure.org/guides/regular_expressions)
+- [Clojure dokumentaatio](https://clojure.org/)
+- [Regex-mallit Clojurella](https://clojuredocs.org/clojure.core/re-seq)

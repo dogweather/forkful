@@ -1,76 +1,64 @@
 ---
-title:                "Arduino: 날짜를 문자열로 변환하기"
+title:                "Arduino: 날짜를 문자열로 변환하는 방법"
+simple_title:         "날짜를 문자열로 변환하는 방법"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜: 날짜를 문자열로 변환하는 것에 참여하는 이유는?
+## 왜
 
-날짜를 문자열로 변환하는 것은 Arduino 프로그래밍에서 매우 유용합니다. 예를 들어, 센서를 이용해 얻은 날짜 정보를 표시하고 싶을 때, 날짜를 문자열로 변환할 수 있다면 쉽게 표시할 수 있습니다. 또는 시간과 관련된 다른 작업을 할 때도 도움이 될 수 있습니다. 여러분이 무엇을 하고 싶든, 날짜를 문자열로 변환하는 것은 더 쉬운 일이 될 것입니다.
+날짜를 문자열로 변환하는 방법을 살펴보는 것은 Arduino 프로그래밍에서 중요한 기술입니다. 날짜를 문자열로 변환함으로써 날짜 형식의 유연성이 크게 향상되며, 다양한 출력 방식을 효과적으로 처리할 수 있습니다.
 
-# 사용 방법:
+## 방법
 
-1. **날짜 정보 설정하기**: 날짜와 시간을 표현하는 변수를 설정해야 합니다. 예를 들어, `int day = 24`, `int month = 12`, `int year = 2020`, `int hour = 18`, `int minute = 30`, `int second = 0` 과 같이 변수를 설정할 수 있습니다.
+아래의 ```Arduino``` 코드 블록에서는 날짜를 문자열로 변환하는 간단한 예제를 살펴볼 수 있습니다. 이 코드를 실행하면 날짜를 원하는 형식의 문자열로 출력할 수 있습니다.
 
-```
-Arduino
-int day = 24;
-int month = 12;
-int year = 2020;
-int hour = 18;
-int minute = 30;
-int second = 0;
-```
+```Arduino
+// 현재 날짜를 얻기 위해 time 라이브러리를 사용합니다.
+#include <TimeLib.h>
 
-2. **문자열 변수 설정하기**: `String` 함수를 사용해 문자열로 변환한 날짜 정보를 저장할 변수를 설정합니다. 예를 들어, `String date = "";`를 사용할 수 있습니다.
+void setup() {
+  // USB 시리얼 통신을 활성화합니다.
+  Serial.begin(9600);
 
-```
-Arduino
-String date = "";
-```
+  // 시간 라이브러리를 초기화합니다.
+  setTime(0, 0, 0, 1, 1, 2020); // (시, 분, 초, 일, 월, 년)
 
-3. **날짜를 문자열로 변환하기**: `String` 변수에 `Int` 변수를 연결하는 방법을 사용해 날짜를 문자열로 변환합니다. 예를 들어, `date = String(month) + "/" + String(day) + "/" + String(year) + " " + String(hour) + ":" + String(minute) + ":" + String(second);` 와 같은 방법으로 날짜를 문자열로 변환할 수 있습니다.
+  // 날짜를 문자열로 변환하여 출력합니다.
+  Serial.println( String(dateToStr(month()), DEC) + "/" + String(dateToStr(day()), DEC) + "/" + String(dateToStr(year()), DEC) );
 
-```
-Arduino
-date = String(month) + "/" + String(day) + "/" + String(year) + " " + String(hour) + ":" + String(minute) + ":" + String(second);
-```
+}
 
-4. **문자열 출력하기**: `Serial.println()` 함수를 사용해 문자열을 시리얼 모니터에 표시할 수 있습니다. 예를 들어, `Serial.println(date);`를 사용하면 `12/24/2020 18:30:00`과 같은 형식으로 시리얼 모니터에 날짜가 표시됩니다.
+void loop() {
+
+}
 
 ```
-Arduino
-Serial.println(date);
-```
 
-# 딥 다이브:
+위의 코드에서는 시간 라이브러리의 ```dateToStr()``` 함수를 사용하여 날짜를 문자열로 변환합니다. 이 함수는 날짜 값을 첫 번째 매개변수로 받으며, 두 번째 매개변수인 수의 밑수(base)를 지정할 수 있습니다. 위의 예제에서는 10진수로 변환하여 출력하도록 설정하였습니다.
 
-*날짜를 문자열로 변환하는 더 많은 방법이 있는지 궁금하십니까?*
-
-날짜를 문자열로 변환하는 다른 방법 중에는 `sprintf()` 함수를 사용하는 방법이 있습니다. 이 함수는 C 언어에서 사용되는 가변 인수 함수로서, 다양한 형식의 값을 하나의 문자열로 합쳐주는 역할을 합니다. 다음은 `sprintf()` 함수를 사용해 날짜를 문자열로 변환하는 예제 코드입니다.
+출력 결과는 다음과 같습니다.
 
 ```
-Arduino
-#include <stdio.h>
-
-int day = 24;
-int month = 12;
-int year = 2020;
-int hour = 18;
-int minute = 30;
-int second = 0;
-
-char date[20];
-sprintf(date, "%02d/%02d/%04d %02d:%02d:%02d", month, day, year, hour, minute, second);
+1/1/2020
 ```
 
-위의 코드는 이전 예제와 동일한 결과를 출력하지만, 더 많은 형식을 제공할 수 있기 때문에 더 유용합니다.
+이처럼, 날짜를 문자열로 변환하는 데에는 직접적인 방법 외에도 다양한 방법이 있습니다. 예를 들어, 유니버셜 코디트 시간(Unix Epoch Time)과 같은 특정 형식의 날짜 값을 문자열로 변환하는 것도 가능합니다. 이에 대한 자세한 내용은 더 깊은 탐구(Deep Dive) 섹션에서 살펴보겠습니다.
 
-# 비슷한 작업 참고:
+## 더 깊은 탐구
 
-- [Arduino String 함수](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
-- [sprintf() 함수 정보](https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm)
-- [C
+날짜를 문자열로 변환하는 것은 Arduino 프로그래밍에서 자주 사용되는 기술 중 하나입니다. 따라서 다양한 방법이 존재하며, 이해하는 것이 중요합니다.
+
+시간 라이브러리에서는 날짜 형식을 사용자가 원하는 대로 출력할 수 있는 다양한 함수를 제공합니다. 이 외에도 날짜 및 시간 관련 라이브러리를 추가하거나, 직접 날짜 값을 특정 형식의 문자열로 변환하는 함수를 작성할 수도 있습니다. 따라서 날짜를 문자열로 변환하는 방법에 대한 탐구를 통해 Arduino 프로그래밍 실력을 증진시킬 수 있습니다.
+
+## 더 알아보기
+
+[Time 라이브러리](https://www.arduino.cc/reference/en/libraries/time/)  
+
+[Time 라이브러리 예제](https://www.arduino.cc/en/Tutorial/BuiltInExamples/Time)  
+
+[날짜 형식 관련 라이브러리 참고](https://www.arduino.cc/en/Tutorial/SerialCallResponseASCII)

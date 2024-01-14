@@ -1,36 +1,37 @@
 ---
 title:                "Swift: יצירת קובץ זמני"
+simple_title:         "יצירת קובץ זמני"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/swift/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## על מי
+## למה
 
-יצירת קובץ זמני יכול להיות מועילה כאשר אנחנו צריכים ליצור ולשדרג קבצים במהלך תהליך מתפתח או כאשר אנחנו מבנהים מערכות פטנט.
+יצירת קובץ זמני היא כלי חשוב בתוך תהליך פיתוח התוכנה על מנת לספק סביבת עבודה בטוחה יותר ולמנוע כשלונות במקרים מסוימים.
 
 ## איך לעשות
 
-כאשר אנחנו יוצרים קובץ זמני בעזרת פרוטוקול `NSTemporaryDirectory ()` ומתודה `URLByAppendingPathComponent`:
+כדי ליצור קובץ זמני בשפת Swift, ניתן להשתמש בפונקציית `NSTemporaryDirectory()` ולהשתמש בנתיב זמני זה כקו יצירה עבור הקובץ. לדוגמה:
 
 ```Swift
-let tempDir = NSTemporaryDirectory()
-let tempURL = URL(fileURLWithPath: tempDir)
-    .appendingPathComponent("myTempFile")
-    .appendingPathExtension("txt")
-print(tempURL.path)
+let tempDirectory = NSTemporaryDirectory()
+let tempFilePath = tempDirectory + "example.txt"
 ```
 
-כאשר נריץ קוד זה, יתווסף לנו קובץ זמני במחיצת /tmp עם שם הקובץ "myTempFile.txt" וכתובת URL מלאה לקובץ זה תופיע במסך.
+לאחר מכן, יש להשתמש בפונקציית `FileManager.default.createFile(atPath:)` כדי ליצור את הקובץ הזמני. כעת, ניתן לבצע כל פעולות הרצויות על הקובץ הזמני ולשמור אותו בנתיב הזמני כדי להבטיח שהקובץ יימחק מהמערכת לאחר השימוש.
 
-## העמקה
+## Deep Dive
 
-כאשר אנחנו יוצרים קובץ זמני עם שם קובץ ייחודי, הקובץ יתווסף למחיצת /tmp עם השם שציינו. תוכלו גם לבחור לשנות את התוסף שצמחנו לקובץ זמני עם `appendingPathExtension` לתוסף אחר או לשנות את המיקום של הקובץ עם `appendingPathComponent`.
+יצירת קובץ זמני יכולה להיות חיונית במספר מקרים כגון כאשר נדרשת סביבת עבודה זמנית עבור בדיקות או פעולות מיוחדות. בנוסף, יצירת קובץ זמני יכולה לשמש ככלי מניעה במקרים שבהם מערכת הפעלה אינה מאפשרת גישה ישירה לקבצים רגילים.
 
-## ראו גם
+בנוסף ליצירת קובץ זמני, חשוב גם לבצע תהליך של השמת תווים שונים בכדי לבטל אותו לאחר שימוש. כך ניתן להבטיח שהקובץ לא יימחק על ידי תוכניות ניקוי או שדיפולטרים שמחפשים קפיצות תווים.
 
-[מדריך לברירת המחדל של קבצים שמוחקים עצמם שבמחיצת הזמן ב-iOS](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW23)
+## ראה גם
 
-[מדריך לשימוש במצב אמת ב-iOS שבו קבצים זמניים ישארו זמינים בכל המחיצות](https://www.hackingwithswift.com/example-code/foundation/how-to-create-a-temporary-file-the-right-way)
+- [כתבות נוספות בנושא פיתוח תוכנה עם Swift](https://www.iosacademy.io/tag/swift/)
+- [מדריך חדשני לשפת תכנות Swift](https://www.udemy.com/course/learn-swift-programming-language/?referralCode=6E74DF3679103A1C9098)
+- [פלנגוייסט - השקעות ונכסים

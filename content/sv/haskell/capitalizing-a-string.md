@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Stor bokstavsättning av en sträng"
+title:                "Haskell: Stora versaler för en sträng"
+simple_title:         "Stora versaler för en sträng"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/capitalizing-a-string.md"
 ---
 
@@ -9,39 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kapitalisera en sträng är en vanlig uppgift för många programmerare, oavsett vilket programspråk de arbetar med. Det är ett enkelt sätt att ändra utseendet på en textsträng och göra den mer lättläslig eller önskad.
+Att kapitalisera en sträng är en vanlig uppgift i programmering. Det kan vara användbart för att få ut en sträng med stora bokstäver, vilket ofta används i rubriker och andra viktiga delar av en applikation. I denna bloggpost kommer vi att utforska hur man skriver en funktion för att kapitalisera en sträng i Haskell.
 
-## Så här
+## Hur man gör
 
-För att kapitalisera en sträng i Haskell finns det flera olika metoder som kan användas. Nedan följer några exempel på hur detta kan göras:
+För att kapitalisera en sträng i Haskell kan du använda en inbyggd funktion som heter `toUpper`. Den tar en enskild bokstav och returnerar den motsvarande versalen. Med hjälp av denna funktion kan vi skriva en funktion för att kapitalisera en hel sträng. Här är ett exempel på hur det skulle kunna se ut:
 
-```Haskell
--- Metod 1: Använda inbyggd funktion 'map'
-map toUpper "hej världen" -- output: "HEJ VÄRLDEN"
-
--- Metod 2: Använda rekursion och inbyggda funktioner
+```
 capitalize :: String -> String
 capitalize [] = []
-capitalize (x:xs) = toUpper x : (capitalize xs)
--- Användning: capitalize "hej världen" -- output: "HEJ VÄRLDEN"
+capitalize (x:xs) = toUpper x : capitalize xs
 
--- Metod 3: Använda punktnotation på en inbyggd funktion
-import Data.Char (toUpper)
-toUpper <$> "hej världen" -- output: "HEJ VÄRLDEN"
+main = do
+  putStrLn "Skriv in en sträng: "
+  str <- getLine
+  putStrLn ("Kapitaliserad sträng: " ++ capitalize str)
 ```
 
-Som du kan se finns det flera sätt att kapitalisera en sträng. Det viktiga är att förstå hur de olika funktionerna och metoderna fungerar och välja den som passar bäst för den specifika uppgiften.
+I detta exempel definieras funktionen `capitalize` vilken tar emot en sträng (av typen `String`) som argument. I det första mönstermatchningsmönstret kontrolleras om den givna strängen är tom, i så fall returneras en tom sträng. I det andra mönstermatchningsmönstret tar vi första bokstaven av strängen och använder `toUpper` för att göra det till en versal. Sedan rekursivt anropas funktionen igen med resten av strängen (exklusive den första bokstaven) genom att använda rekursion (som förklaras mer detaljerat i sektionen "Deep Dive").
 
-## Djupdykning
+I huvudfunktionen `main` använder vi `getLine` för att få en input-sträng från användaren och sedan skriver ut den kapitaliserade strängen med hjälp av `putStrLn`.
 
-För att förstå kapitalisering av strängar i Haskell på en djupare nivå är det viktigt att ha grundläggande kunskaper om datatyper och funktioner. I Haskell, precis som i andra funktionella programspråk, är strängar listor av tecken, vilket är anledningen till att vi kan använda funktioner som `map` och rekursion för att manipulera dem.
+Om vi kör detta program med en input-sträng som "hej, världen!" kommer output att vara "Hej, världen!".
 
-Funktionen `toUpper` är också otroligt användbar för att konvertera en bokstav till versal. Genom att använda den tillsammans med andra funktioner i Haskell-kärnbiblioteket kan vi konstruera en mängd olika strängoperationer, inklusive kapitalisering.
+## Deep Dive
 
-Det är också viktigt att notera att kapitalisering av strängar kan ha olika utfall beroende på det aktuella språket som används i Haskell-programmet. Till exempel kan den inbyggda funktionen `map` kapitalisera versaler korrekt på engelska, men kan behöva anpassas för andra språk som har särskilda tecken och diakritiska markeringar.
+Rekursion är en viktig del av många funktioner i Haskell. I vårt exempel gör vi rekursiva anrop till `capitalize` för att bearbeta varje bokstav i strängen. Det första anropet kapitaliserar första bokstaven, och sedan fortsätter anropen rekursivt med resten av strängen tills vi når en tom sträng.
 
-## Se också
+Det finns också andra metoder för att kapitalisera en sträng i Haskell, som att använda funktionen `map` tillsammans med `toUpper`. Detta skulle se ut så här:
 
-- [Haskell-tutorial på svenska](https://www.haskell.org/documentation/och-andra-strategier-for-att-lara-sig-haskell/)
-- [Officiell dokumentation för Data.Char-modulen](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
-- [Tips för att skriva lättläslig Haskell-kod](https://chrisdone.com/posts/beautiful-haskell-style/)
+```
+capitalize :: String -> String
+capitalize str = map toUpper str
+```
+
+Med hjälp av `map` kan vi applicera `toUpper` på varje enskild bokstav i strängen och få tillbaka en kapitaliserad sträng.
+
+## Se även
+
+- [Haskell.org](https://www.haskell.org) - Officiell webbplats för Haskell och dess dokumentation.
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/) - En populär onlinebok för att lära sig Haskell.
+- [Haskell - En introduktion](https://www.programmica.com/2018/10/04/haskell-en-introduktion/) - En annan Haskell-bloggpost på vår sida (tillgänglig på svenska).

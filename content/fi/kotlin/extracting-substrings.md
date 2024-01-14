@@ -1,48 +1,62 @@
 ---
-title:                "Kotlin: Alaryhdyksien erottaminen"
+title:                "Kotlin: Irrottamien alimerkkijonojen hakeminen"
+simple_title:         "Irrottamien alimerkkijonojen hakeminen"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: 
+## Miksi
 
-Miksi joku haluaisi käyttää substringsien poimintaa? Onko se välttämätöntä tai hyödyllistä ohjelmoinnissa? 
+Substringien erottelemista käytetään usein silloin, kun halutaan käsitellä vain tietty osa merkkijonosta tai suorittaa toimintoja tietyllä alueella. Tämä voi säästää aikaa ja vaivaa, kun työskennellään merkkijonojen kanssa.
 
-Yksi syy voisi olla tehostaa koodia ja tehdä siitä helpommin luettavaa. Substringsien poimiminen tarkoittaa, että voit erottaa tarvittavan tiedon suuremmasta merkkijonosta ja käsitellä sitä erillisenä osana. Tämä on tärkeää, kun haluat käsitellä vain tietyn osan merkkijonosta, eikä koko merkkijonoa.
+## Kuinka
 
-## Miten:
+Merkkijonon lopullinen luettelo muodostuu seuraavista toimenpiteistä:
 
-```Kotlin
-val merkkijono = "Tämä on esimerkkimerkkijono"
-val alkuSubString = merkkijono.substring(0, 4)
-println(alkuSubString)
-
-// Output: Tämä
-```
-
-Kotlinin `substring()`-funktio hyväksyy kaksi parametria; alkuindeksin ja loppuindeksin. Näiden avulla voit määrittää, mistä kohdasta haluat poimia substringsin. Alkuindeksi alkaa 0:sta ja loppuindeksi on merkkijonon pituus vähennettynä yhdellä.
-
-Voit myös käyttää `substringAfter()` ja `substringBefore()` funktioita, jos haluat poimia merkkijonon tietyn kohdan jälkeen tai ennen.
+1. Alusta: Määritä ensin, mistä alkaen haluat ottaa merkkijonon osan.
 
 ```Kotlin
-val merkkijono = "Hyvää päivää, maailma!"
-val jälkeenSubstring = merkkijono.substringAfter(",")
-println(jälkeenSubstring)
-
-// Output: maailma!
+val s = "Tämä on esimerkki lauseesta"
+val alkuindeksi = 5
 ```
 
-## Syvempi sukellus: 
+2. Loppu: Määritä sitten, mihin asti haluat merkkijonon osan ulottuvan.
 
-Substringsien poimiminen on hyödyllistä myös silloin, kun käsitellään syötteitä käyttäjältä. Voit esimerkiksi pyytää käyttäjää syöttämään puhelinnumeron ja sen jälkeen poimia numerot ja tarkistaa, ovatko ne oikeassa muodossa.
+```Kotlin
+val loppuindeksi = 9
+```
 
-Lisäksi `substring()`-funktio on hyödyllinen silloin, kun haluat luoda uusia merkkijonoja. Voit esimerkiksi luoda uuden sähköpostiosoitteen lisäämällä käyttäjän nimen jonon loppuun.
+3. Huomioi, että indeksit alkavat nollasta, joten oikean lopullisen merkkijonon saamiseksi sinun on vähennettävä 1 alku- ja loppuindeksistä.
 
-## Katso myös:
+```Kotlin
+val lopullinen = s.substring(alkuindeksi, loppuindeksi - 1)
+println(lopullinen)
+```
 
-- [Kotlinin viralliset dokumentaatiot substringien poimimisesta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
-- [Kotlin String API Cheat Sheet](https://medium.com/@harivigneshjayapalan/kotlin-string-api-cheat-sheet-part1-a818c0db5d16)
-- [Kotlin Quick Reference Guide](https://www.programiz.com/kotlin/substring)
+Tämä tuottaa seuraavan tulosteen:
+
+```Kotlin
+on e
+```
+
+Se on siinä! Olet luonut pienen osan alkuperäisestä merkkijonosta.
+
+## Syvällinen tarkastelu
+
+Jotta ymmärtäisimme paremmin, miten substringien erottelu tapahtuu, on tutkittava hieman syvemmälle. Kun kutsumme [substring()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html) -metodia, se luo uuden merkkijonon alkuperäisestä merkkijonosta käyttämällä annettuja indeksejä. Substringilta otettu merkkijono on siis kopio alkuperäisestä merkkijonosta, ja kaikki siihen tehdyt muutokset eivät vaikuta alkuperäiseen merkkijonoon.
+
+Voit myös käyttää substringia parametrien sijasta vain yhdellä indeksillä, mikä tarkoittaa, että se luo uuden merkkijonon valitsemasta indeksistä loppuun asti.
+
+On myös tärkeää huomata, että substringin indeksit voivat olla negatiivisia, mikä tarkoittaa, että numerointi tapahtuu merkkijonon lopusta. Esimerkiksi indeksi -1 tarkoittaa merkkijonon viimeistä merkkiä ja -3 merkkijonon kolmanneksi viimeistä merkkiä.
+
+## Katso myös
+
+- [Substringin käyttö Kotlinissa](https://www.baeldung.com/kotlin/substring)
+- [Kotlinin viralliset dokumentaatiot substringista](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+- [Merkkijonojen käsittely Kotlinissa](https://www.tutorialkart.com/kotlin/strings-in-kotlin/)
+
+Kiitos lukemisesta ja toivottavasti tämä auttoi sinua ymmärtämään substringien erottelua paremmin. Tehokkaasti koodausta!

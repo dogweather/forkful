@@ -1,7 +1,9 @@
 ---
 title:                "Java: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/writing-tests.md"
 ---
 
@@ -9,58 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monet ohjelmointiprojektit ovat suuria ja monimutkaisia, ja niissä voi tulla helposti virheitä. Testien kirjoittaminen auttaa varmistamaan, että koodi toimii odotetusti ja estää haitallisten virheiden pääsyä tuotantoympäristöön.
+Testien kirjoittaminen on tärkeä osa Java-ohjelmointia, sillä se auttaa varmistamaan, että koodi toimii oikein ja se on helposti ylläpidettävissä. Lisäksi testien avulla pystytään havaitsemaan mahdolliset virheet ja puutteet koodissa ennen sen julkaisemista.
 
-## Miten
+## Kuinka
 
-### Asennus
-
-Voit aloittaa testien kirjoittamisen käyttämällä testausta tukevaa sovellusta, kuten JUnitia. Asenna JUnit Mavenin kautta lisäämällä seuraava riippuvuus ```pom.xml```-tiedostoon:
+Testien kirjoittaminen Java-ohjelmointikielellä on helppoa ja vaatii vain muutamia perusaskelia. Ensinnäkin, sinun tarvitsee sisällyttää JUnit-testaustyökalu projektisi riippuvuuksiin. Tämän jälkeen voit käyttää JUnitin @Test -annotaatioita testien luomiseen. 
 
 ```Java
-<dependency>
-  <groupId>org.junit.jupiter</groupId>
-  <artifactId>junit-jupiter-api</artifactId>
-  <version>5.7.2</version>
-</dependency>
-```
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-Voit myös asentaa sen IntelliJ:n avulla valitsemalla "File" ja sitten "Project Structure". Valitse "Modules" ja sitten "Dependencies". Napsauta "+"-painiketta ja valitse JUnit riippuvuus.
+public class CalculatorTest {
 
-### Testiluokan luominen
-
-Aloita kirjoittamalla uusi testiluokka, jossa voit kirjoittaa testejä koodiisi. Voit tehdä tämän luomalla uuden ```Test```-luokan, jonka nimi alkaa sanalla "Test". Esimerkiksi jos koodisi luokan nimi on "Calculator", niin testiluokan nimi olisi "CalculatorTest". Voit myös käyttää ```Crtl+Shift+T``` pikanäppäintä luodaksesi uuden testiluokan.
-
-### Testimetodien luominen
-
-Jokainen testiluokka voi sisältää useita testimetodeja, jotka testaavat eri osia koodistasi. Näiden metodien on noudatettava seuraavia sääntöjä:
-
-- Metodin nimen alussa tulee olla sana "test", esim. testAdd()
-- Metodin on palautettava ```void```
-- Metodin ei tulisi hyväksyä parametreja
-- Metodin tulisi aloittaa annotaatiolla ```@Test```
-
-Tässä esimerkissä testataan laskimen ```add()```-metodia:
-
-```Java
-@Test
-void testAdd() {
-  Calculator calc = new Calculator();
-  int result = calc.add(2, 3);
-  assertEquals(5, result);
+	@Test
+	public void testAddition() {
+		Calculator calc = new Calculator();
+		int result = calc.add(2, 3);
+		assertEquals(5, result);
+	}
 }
 ```
 
-### Testien suorittaminen
+Yllä olevassa esimerkissä luomme yksinkertaisen testin, joka testaa laskimen lisäysmetodia. @Test -annotaatio kertoo JUnitille, että tämä metodi on testi, jonka tulee suorittaa tarkistettava laskenta ja Assert-metodi vertaa odotettua ja palautettua tulosta. 
 
-Voit suorittaa testit napsauttamalla hiiren oikealla painikkeella testiluokkaa ja valitsemalla "Run `CalculatorTest`". Voit myös napsauttaa vihreää "Run"-näppäintä koodissa olevan nuolen vieressä. Näet sitten IntelliJ:ssä testien läpäisemisen tai mahdolliset virheilmoitukset.
+## Deep Dive
 
-## Syväsukellus
+Testien kirjoittaminen on tehokas tapa varmistaa, että koodisi toimii halutulla tavalla. Lisäksi se auttaa myös parantamaan koodin laatua ja ylläpidettävyyttä. Hyvät testit kattavat kaikki mahdolliset rajatapaukset ja huomioivat myös virheiden käsittelyn.
 
-Testien kirjoittaminen auttaa sinua löytämään virheitä koodissasi aiemmin ja korjaamaan ne ennen kuin ne päätyvät tuotantoympäristöön. Se säästää aikaa ja minimoi koodinmuutosten riskin. Testojen avulla voit myös helposti havaita ja korjata mahdollisia sivuvaikutuksia, jotka voivat aiheuttaa hankalia virheitä tuotannossa.
+JUnit ei ole ainoa Java-ohjelmointikielen testaustyökalu, vaan on olemassa myös muita vaihtoehtoja, kuten TestNG ja Mockito. Näitä työkaluja voi käyttää yhdessä JUnitin kanssa saadaksesi monipuolisemmat testit ja testaustaustan.
 
-On myös tärkeää muistaa, että testit eivät välttämättä kata kaikkia mahdollisia tapauksia, ja siksi on tärkeää jatkuvasti parantaa testikattavuutta. Tämän avulla voit varmistua siitä, että koodisi tekee oikean asian jokaisessa mahdollisessa tilanteessa.
+On myös tärkeää muistaa, että testien kirjoittaminen ei ole vain kertaluontoinen tapahtuma, vaan niitä tulee päivittää ja ylläpitää koodin muuttuessa ja kehittyessä.
 
 ## Katso myös
-- [JUnit käyttöönotto](https://www.jetbrains.com/help/idea/junit.html#test-creation)
-- [Testattavan koodin kirjoittaminen](https://devexp.io/writing-testable-code
+
+- [JUnit Documentation](https://junit.org/junit4/)
+- [TestNG Documentation](https://testng.org/doc/)
+- [Mockito Documentation](https://site.mockito.org/)

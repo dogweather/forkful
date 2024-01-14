@@ -1,50 +1,38 @@
 ---
 title:                "Clojure: Kahden päivämäärän vertailu"
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-***
+## Miksi
+Vertaamalla kahta päivämäärää voidaan tarkastella ajanjaksojen välillä tapahtuneita muutoksia, kuten päiviä, tunteja ja sekunteja.
 
-## Miksi vertailla kahta päivämäärää?
-
-Päivämäärät ovat oleellinen osa lähes jokapäiväistä työskentelyä. Niiden vertaileminen on tärkeää esimerkiksi tapahtumien järjestämiseksi aikajärjestykseen tai sopivien matkojen varaamiseksi. Clojuren avulla tämä tehtävä onnistuu helposti ja vaivattomasti.
-
-## Miten tehdä vertailu Clojurella?
-
-Vertailemalla kahta päivämäärää tarkoituksenmukaiseen tapaan, on tärkeää käyttää oikeita funktioita ja metodeja. Tässä esimerkissä käytämme Clojuren `java.time`-kirjastoa. Se mahdollistaa päivämäärien vertailun eri muodoissaan.
+## Miten tehdä
+Vertailemalla kahta päivämäärää, voit käyttää Clojuren sisäänrakennettuja funktioita, kuten `compare` ja `days-between`. Katso alla olevat esimerkit ja lähtöarvot:
 
 ```Clojure
-(ns vertaa-päivämäärää
-  (:import [java.time LocalDate]))
+;; Vertaa kahta päivämäärää
+(compare (java.util.Date. 2019 1 1) (java.util.Date. 2020 1 1))
 
-;; Määritellään kaksi päivämäärää
-(def ensimmäinen-pvm (LocalDate/of 2021 5 31))
-(def toinen-pvm (LocalDate/parse "2021-06-01"))
+;; Palauttaa positiivisen arvon, jos päivämäärä 1 on suurempi kuin päivämäärä 2
+;; Palauttaa negatiivisen arvon, jos päivämäärä 1 on pienempi kuin päivämäärä 2
+;; Palauttaa nollan, jos päivämäärät ovat samat
 
-;; Vertaillaan päivämääriä
-(if (.equals ensimmäinen-pvm toinen-pvm)
-  (println "Päivämäärät ovat samat")
-  (if (< ensimmäinen-pvm toinen-pvm)
-    (println "Ensimmäinen päivämäärä on ennen toista")
-    (println "Toinen päivämäärä on ennen ensimmäistä")))
+;; Laske päivien määrä kahden päivämäärän välillä
+(days-between (java.util.Date. 2019 1 1) (java.util.Date. 2020 1 1))
+
+;; Palauttaa 365 päivää
 ```
 
-Tulostus:
-
-```
-Toinen päivämäärä on ennen ensimmäistä
-```
-
-## Syvällinen tarkastelu vertaamisesta
-
-Clojuren `java.time`-kirjaston avulla on mahdollista vertailla päivämääriä eri muodoissa, kuten esimerkiksi vuosissa, kuukausissa ja päivissä. Vertailemalla kahta päivämäärää, voidaan myös tarkastella niiden eroja ja tutkia niiden yhtäläisyyksiä. `java.time`-kirjasto tarjoaa kattavan valikoiman funktioita ja metodeja päivämäärien käsittelyyn ja vertailuun.
+## Syvällinen sukellus
+Verrattaessa kahta päivämäärää, on huomioitava aikavyöhykkeet. Voit käyttää `with-time-zone` -funktiota määrittääksesi aikavyöhykkeen, jolla haluat vertailun tapahtuvan. Lisäksi `java.util.Date` ei tue millisekuntien vertailua, joten käyttö `java.time.Instant` voi olla parempi vaihtoehto.
 
 ## Katso myös
-
-- [Java Time - ClojureDocs](https://clojuredocs.org/clojure.java-time)
-- [How to Work with Dates and Times in Clojure](https://www.braveclojure.com/do-things-with-time/)
-- [Java Time API - Oracle](https://docs.oracle.com/javase/tutorial/datetime/index.html)
+- [Clojuren virallinen dokumentaatio päivämäärien vertailusta](https://clojuredocs.org/clojure.core/compare)
+- [Java 8 Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Blogiartikkeli päivämäärävertailusta Clojurella](https://stevenmiller888.github.io/mind-how-to-work-with-dates-in-clojure.html)

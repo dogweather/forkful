@@ -1,73 +1,50 @@
 ---
-title:                "Bash: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+title:                "Bash: Muuttaminen merkkijonoksi pienaakkosiksi"
+simple_title:         "Muuttaminen merkkijonoksi pienaakkosiksi"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Miksi haluat muuntaa merkkijonon pieniksi kirjaimiksi? Tämä voi olla hyödyllistä esimerkiksi silloin, kun haluat vertailla merkkijonoja tai etsiä tiettyä sanaa merkkijonosta.
+On monia syitä, miksi saattaisit haluta muuttaa merkkijonon pieniksi kirjaimiksi. Yksi yleinen syy voi olla vertailun helpottaminen tai tietokannan kanssa työskentely, jossa kirjainten koko on merkityksellistä.
 
-## Miten?
+## Kuinka tehdä
 
-### Bash-komentorivi
-
-Voit käyttää Bash-komentorivillä `tr`-komennolla pienentämään kaikki merkkijonossa olevat kirjaimet.
+Käytännön esimerkkejä merkkijonon muuttamisesta pieniksi kirjaimiksi Bash-skriptillä:
 
 ```Bash
-merkkijono="TÄMÄ ON ESIMERKKI"
-echo "$merkkijono" | tr '[:upper:]' '[:lower:]'
-```
+str="TÄMÄ ON TESTI"
+lowercase=$(tr '[:upper]' '[:lower]' <<< $str)
+echo $lowercase
 
-Tämä tulostaa:
+# Tulostaa: tämä on testi
+```
 
 ```Bash
-tämä on esimerkki
+array=("EKSKLUSIIVINEN" "PÄÄSY" "BLOGIIN")
+
+for i in "${array[@]}"
+do
+  lowercase=$(tr '[:upper:]' '[:lower:]' <<< $i)
+  echo $lowercase
+done
+
+# Tulostaa:
+# eksklusiivinen
+# pääsy
+# blogiin
 ```
 
-Voit myös käyttää `awk`-komennolla pienentämään vain tiettyä osaa merkkijonosta, esimerkiksi toisen sanan.
+## Syvällisempi tarkastelu
 
-```Bash
-merkkijono="TÄMÄ ON ESIMERKKI"
-echo "$merkkijono" | awk '{ print tolower($2) }'
-```
-
-Tämä tulostaa:
-
-```Bash
-on
-```
-
-### Bash-skripti
-
-Voit myös luoda Bash-skriptin, joka muuntaa merkkijonon pieniksi kirjaimiksi käyttäen `tr`-komennon sijaan `sed`-komentoa.
-
-```Bash
-#!/bin/bash
-
-echo "Anna merkkijono:"
-read merkkijono
-
-pieni_merkkijono=$(echo $merkkijono | sed 's/.*/\L&/')
-
-echo "$pieni_merkkijono"
-```
-
-Skripti kysyy käyttäjältä merkkijonoa ja tulostaa sen pienissä kirjaimissa.
-
-## Syvällisempi sukellus
-
-Merkkijonon muuntaminen pieniksi kirjaimiksi ei ole monimutkaista, mutta voit syventää ymmärrystäsi siitä, miten muuntaminen tapahtuu.
-
-`tr`-komennolla muuntaminen perustuu merkkilistaan, johon määritetään merkit, jotka muunnetaan pieniksi kirjaimiksi ja merkit, joita ei muunneta. Voit tutustua tarkemmin merkkilistojen rakentamiseen `man tr`-komennolla.
-
-`sed`-komennolla tapahtuva muuntaminen perustuu säännöllisiin lausekkeisiin. Esimerkiksi `[A-Z]` tarkoittaa kaikkia isoja kirjaimia ja `(?<!\\)\L` muuntaa edellisen säännöllisen lausekkeen mukaiset merkit pieniksi kirjaimiksi. Voit lukea lisää säännöllisistä lausekkeista `man sed`-komennolla.
+Bash-skripti käyttää tr-komentoa (tai translate), joka vaihtaa merkkijonon kaikki isot kirjaimet pieniksi kirjaimiksi. Se tekee tämän käyttämällä kirjainluokkia, jotka määritellään hakasulkeissa. Esimerkiksi [A-Z] tarkoittaa kaikkia isoja kirjaimia ja [a-z] kaikkia pieniä kirjaimia.
 
 ## Katso myös
 
-- [Bash-komentorivin perusteet](https://www.datacamp.com/community/tutorials/bash-shell-tutorial)
-- [Merkkilistojen rakentaminen `tr`-komennossa](https://www.computerhope.com/unix/utr.htm)
-- [Säännölliset lausekkeet `sed`-komennossa](https://linuxhint.com/regex_sed_command/)
+- [Bashin tr-komento](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- [Kuinka käsitellä merkkijonoja Bashilla](https://linuxconfig.org/how-to-handle-string-data-in-bash)

@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Die Länge eines Strings finden"
+title:                "Ruby: Die Länge eines Strings finden."
+simple_title:         "Die Länge eines Strings finden."
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/finding-the-length-of-a-string.md"
 ---
 
@@ -9,47 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Länge einer Zeichenkette zu finden, ist eine wichtige Fähigkeit für jeden, der mit Ruby programmiert. Es ermöglicht uns, die Größe einer Zeichenkette zu ermitteln und darauf basierend unsere Programme anzupassen. In dieser Blog-Post werden wir die verschiedenen Methoden zur Ermittlung der String-Länge in Ruby untersuchen.
+Strings sind ein grundlegender Bestandteil der meisten Programmiersprachen, einschließlich Ruby. Es ist wichtig zu wissen, wie man die Länge eines Strings bestimmen kann, um effektiv mit ihnen umgehen zu können.
 
-## Wie funktioniert es
+## Wie geht's
 
-Um die Länge einer Zeichenkette in Ruby zu finden, gibt es mehrere Möglichkeiten. Die einfachste Methode ist die Verwendung der `length`-Methode. Diese Methode gibt die Anzahl der Zeichen in einer Zeichenkette zurück.
-
-Ein Beispielcode könnte so aussehen:
+Um die Länge eines Strings zu finden, können wir die `.length` Methode in Ruby verwenden. Hier ist ein einfaches Beispiel:
 
 ```Ruby
-name = "Max Mustermann"
-puts name.length
-
-# Output: 15
+string = "Hallo Welt"
+puts string.length
 ```
 
-Wie wir sehen können, gibt die `length`-Methode die Anzahl der Zeichen in der `name`-Variablen zurück, die in diesem Fall 15 beträgt.
+Dies würde die Ausgabe `10` zurückgeben, da der String "Hallo Welt" 10 Zeichen lang ist.
 
-Eine weitere Möglichkeit ist die Verwendung der `size`-Methode. Diese funktioniert genauso wie die `length`-Methode und gibt ebenfalls die Anzahl der Zeichen zurück. Der einzige Unterschied ist, dass `size` auch auf anderen Datentypen wie Arrays und Hashes verwendet werden kann.
+Wir können auch die `.size` Methode verwenden, um die Länge eines Strings zu ermitteln. Diese Methode gibt jedoch die Anzahl der Bytes zurück, die der String belegt. In den meisten Fällen sollte dies kein Problem darstellen, aber es ist wichtig, dies im Hinterkopf zu behalten, wenn du mit Dateien oder speziellen Zeichen arbeitest.
 
 ```Ruby
-text = "Dies ist ein Beispieltext."
-puts text.size
-
-# Output: 27
+string = "Hola Mundo"
+puts string.size
 ```
 
-## Tiefere Einblicke
+Dies würde ebenfalls `10` zurückgeben, da sowohl `.length` als auch `.size` die Anzahl der Zeichen im String zurückgeben.
 
-Wusstest du, dass die `length`- und `size`-Methoden in Ruby tatsächlich auf der `size`-Methode des `Enumerable`-Moduls basieren? Dies bedeutet, dass sie auf jeder Klasse verfügbar sind, die das `Enumerable`-Modul verwendet, wie zum Beispiel Arrays oder Hashes.
+## Tiefer Einblick
 
-Außerdem gibt es auch die Möglichkeit, die `bytesize`-Methode zu verwenden, um die Anzahl der Bytes einer Zeichenkette zurückzugeben. Diese Methode ist besonders nützlich, wenn du mit multibyte-Zeichen arbeitest, da sie die richtige Anzahl an Bytes zurückgibt, anstatt nur die Anzahl der Zeichen zu zählen.
+Um besser zu verstehen, wie Strings in Ruby funktionieren, können wir uns die interne Implementierung der `.length` Methode ansehen. Diese Methode verwendet das `String#capi_length` Rückrufobjekt, das die Länge des Strings mithilfe von C-Code bestimmt. Dies macht die Ausführung effizienter, indem es die Verarbeitungsgeschwindigkeit erhöht.
 
-```Ruby
-text = "äöü"
-puts text.bytesize
-
-# Output: 6
-```
+Die `.length` Methode kann auch auf Arrays angewendet werden, um ihre Länge zu bestimmen. Dies liegt daran, dass Strings in Ruby im Grunde genommen ein spezieller Typ von Array sind.
 
 ## Siehe auch
 
-- [Offizielle Ruby Dokumentation zur String-Klasse](https://ruby-doc.org/core-2.6/String.html)
-- [Tutorial zur String-Manipulation in Ruby](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
-- [Praktische Anwendungen von Strings in Ruby](https://medium.com/rubycademy/string-methods-in-ruby-a811dc7c8c92)
+- [Ruby Strings Dokumentation](https://ruby-doc.org/core-2.6.3/String.html)
+- [Codecademy Ruby Kurs](https://www.codecademy.com/learn/learn-ruby)
+- [Ruby Spezifikationen](https://github.com/ruby/spec)

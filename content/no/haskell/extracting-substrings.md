@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Ekstrahering av understrenger"
+title:                "Haskell: Uttrekking av understrenger"
+simple_title:         "Uttrekking av understrenger"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/extracting-substrings.md"
 ---
 
@@ -9,35 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å jobbe med tekstbehandling er en viktig del av å være en Haskell-programmerer. Et vanlig problem som kan oppstå er å trenge å trekke ut visse deler av en tekststreng, eller substrings som det heter på engelsk. Derfor er det viktig å være kjent med hvordan man kan gjøre dette i Haskell for å effektivt behandle tekst.
+Å utvinne substrings, eller delmønstre, fra en streng er en viktig oppgave i dataprogrammering. Det lar oss manipulere og behandle tekst på en mer effektiv og presis måte.
 
 ## Hvordan
 
-Effektivt å trekke ut substrings i Haskell kan gjøres ved å bruke funksjonen `take` og `drop`. Disse funksjonene tar inn et tall og en tekststreng som argumenter, og returnerer henholdsvis de første eller siste tegnene av strengen basert på tallet som er gitt. Her er et eksempel på hvordan funksjonene kan brukes:
+Det finnes flere forskjellige måter å extrahere substrings i Haskell. En av de mest brukte er funksjonen `take` som lar oss hente ut et bestemt antall tegn fra en streng. For eksempel, hvis vi har en streng `tekst = "Hei, dette er en streng"`, kan vi bruke følgende kode for å hente de første 5 tegnene:
 
-```Haskell
--- Definerer en tekststreng
-tekst = "Dette er en tekststreng."
-
--- Trekker ut de første 10 tegnene
-substring1 = take 10 tekst
--- Output: "Dette er e"
-
--- Trekker ut de siste 10 tegnene
-substring2 = drop (length tekst - 10) tekst
--- Output: "tekststreng."
+```
+tekst = "Hei, dette er en streng"
+take 5 tekst
 ```
 
-Ved å bruke `take` og `drop` kan man altså enkelt trekke ut deler av en tekststreng basert på plasseringen i strengen.
+Dette vil gi oss følgende output:
 
-## Dypdykk
+```
+Hei, 
+```
 
-I tillegg til `take` og `drop`, finnes det også en rekke andre nyttige funksjoner for å håndtere substrings i Haskell. Blant annet kan `takeWhile` og `dropWhile` brukes for å trekke ut tegn basert på et gitt kriterium, for eksempel hvis de skal være tall eller bokstaver.
+En annen måte å extrahere substrings på er ved å bruke funksjonen `drop`, som lar oss fjerne et bestemt antall tegn fra starten av en streng. For eksempel, hvis vi ønsker å fjerne de første 4 tegnene fra `tekst`-strengen, kan vi bruke følgende kode:
 
-Det finnes også funksjoner som `words` og `lines` som kan brukes til å dele en tekststreng opp i ord eller linjer. Dette kan være nyttig hvis man for eksempel ønsker å telle antall ord eller linjer i en tekst.
+```
+drop 4 tekst
+```
+
+Dette vil gi oss følgende output:
+
+```
+ dette er en streng
+```
+
+Vi kan også bruke funksjonen `substring` for å hente ut en del av en streng basert på start- og sluttposisjon. For eksempel, hvis vi ønsker å hente ut ordet "dette" fra `tekst`-strengen, kan vi bruke følgende kode:
+
+```
+substring 5 9 tekst
+```
+
+Dette vil gi oss følgende output:
+
+```
+dette
+```
+
+## Dype dypdykk
+
+I tillegg til funksjonene nevnt ovenfor, finnes det flere andre måter å extrahere substrings i Haskell på. For eksempel, kan vi bruke mønstermatching og listekomprehensjon for å hente ut deler av en streng basert på mønstre eller betingelser. Det finnes også spesielle biblioteker som for eksempel `Text.Regex` som lar oss bruke regulære uttrykk for å finne og manipulere deler av en streng.
 
 ## Se også
 
-- [Haskell Strings - Extracting substrings](https://www.tutorialspoint.com/haskell_strings/haskell_strings_extracting_substrings.htm)
-- [Haskell Strings - Advanced operations](https://www.tutorialspoint.com/haskell_strings/haskell_strings_advanced_operations.htm)
-- [Official Haskell documentation - String functions](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html)
+- [Haskell hovedside](https://www.haskell.org/)
+- [Haskell wiki](https://wiki.haskell.org/)
+- [Haskell dokumentasjon](https://hackage.haskell.org/)

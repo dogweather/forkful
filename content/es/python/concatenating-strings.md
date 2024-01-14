@@ -1,7 +1,9 @@
 ---
-title:                "Python: Uniendo cadenas de texto"
+title:                "Python: Concatenando cadenas"
+simple_title:         "Concatenando cadenas"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/concatenating-strings.md"
 ---
 
@@ -9,56 +11,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Concatenar strings es una herramienta esencial en la programación de Python ya que nos permite combinar varias cadenas de caracteres en una sola. Esto puede ser útil en muchas situaciones, como la creación de mensajes personalizados, la manipulación de datos y la generación de reportes.
+El concatenar cadenas de texto es una habilidad clave en la programación de Python, ya que te permite combinar varias cadenas en una sola, creando mensajes personalizados y estructuras de código más dinámicas y flexibles.
 
-## Cómo hacerlo
+## Cómo
 
-El proceso de concatenación de strings en Python es bastante sencillo. Primero, debemos tener dos o más strings que queremos unir. Luego, utilizamos el operador `+` para concatenarlas juntas. Por ejemplo:
+Para concatenar cadenas en Python, utilizamos el operador `+`. Veamos un ejemplo sencillo:
 
 ```Python
-string1 = "Hola"
-string2 = "mundo"
-string3 = string1 + " " + string2
-print(string3)
+nombre = "Juan"
+apellido = "Pérez"
+nombre_completo = nombre + " " + apellido
+
+print(nombre_completo)
 ```
 
-Este código producirá la salida "Hola mundo" al imprimir el valor de `string3`. Si queremos agregar más strings, simplemente seguimos utilizando el operador `+`. Por ejemplo:
+El código anterior imprimirá "Juan Pérez" en la consola. Como se puede observar, utilizamos el operador `+` para combinar las diferentes cadenas en una sola.
+
+Pero, ¿qué pasa si queremos agregar un número al final de la cadena? En ese caso, tendríamos que convertir el número a una cadena utilizando la función `str()`:
 
 ```Python
-string1 = "¡Hola!"
-string2 = "¿Cómo estás?"
-string3 = string1 + " " + string2 + " Yo estoy bien."
-print(string3)
-```
+mensaje = "El número de teléfono de " + nombre + " es " + str(numero)
 
-La salida de este código será "¡Hola! ¿Cómo estás? Yo estoy bien." También podemos utilizar la función `format()` para concatenar strings y variables juntos. Por ejemplo:
-
-```Python
-nombre = "María"
-edad = 25
-mensaje = "Hola, mi nombre es {} y tengo {} años.".format(nombre, edad)
 print(mensaje)
 ```
 
-La salida de este código será "Hola, mi nombre es María y tengo 25 años."
+La salida sería "El número de teléfono de Juan es 123456789". Como se puede ver, utilizamos la función `str()` para convertir el número a una cadena antes de concatenarlo con las otras cadenas.
 
-También podemos utilizar el método `join()` para concatenar listas de strings. Por ejemplo:
+También podemos utilizar la función `format()` para realizar concatenaciones en una forma más legible y estructurada. Veamos un ejemplo:
 
 ```Python
-lista_nombres = ["Juan", "María", "Pedro"]
-nombres_completos = ", ".join(lista_nombres)
-print(nombres_completos)
+edad = 25
+mensaje = "Mi nombre es {} y tengo {} años".format(nombre, edad)
+
+print(mensaje)
 ```
-La salida de este código será "Juan, María, Pedro". Como puedes ver, el método `join()` nos permite especificar el separador que deseamos utilizar entre los strings, en este caso una coma y un espacio.
 
-## Profundización
+En este caso, utilizamos llaves `{}` como espacios reservados para las variables, y luego utilizamos la función `format()` para reemplazar esas llaves con los valores de las variables.
 
-Ahora que ya sabemos cómo concatenar strings en Python, es importante entender que este proceso puede ser más complejo en ciertas situaciones. Por ejemplo, si queremos concatenar una gran cantidad de strings, puede ser más eficiente utilizar la clase `StringIO`, que evita la creación de strings intermedios en memoria.
+## Deep Dive
 
-También es importante tener en cuenta que los strings son inmutables en Python, lo que significa que no podemos modificarlos una vez que han sido creados. Por esta razón, cuando concatenamos una gran cantidad de strings, se está creando una nueva cadena en memoria cada vez que utilizamos el operador `+`. En estos casos, es mejor utilizar la función `join()` o la clase `StringIO` para mejorar el rendimiento de nuestro código.
+La función `format()` también nos permite especificar el formato en el que queremos mostrar las variables. Por ejemplo, podemos especificar cuántos decimales queremos mostrar para un número:
 
-## Vea también
+```Python
+precio = 50.99
+mensaje = "El precio es de {:.2f} dólares".format(precio)
 
-- [Documentación oficial de Python sobre strings](https://docs.python.org/es/3/tutorial/introduction.html#strings)
-- [Explicación más detallada sobre la concatenación de strings en Python](https://www.geeksforgeeks.org/python-string-concatenation/)
-- [Más ejemplos de uso de la función `join()`](https://www.w3schools.com/python/ref_string_join.asp)
+print(mensaje)
+```
+
+La salida sería "El precio es de 50.99 dólares", ya que utilizamos `:.2f` para indicar que queremos mostrar solo dos decimales del precio.
+
+Otra forma de concatenar cadenas es utilizando el operador `%`, que funciona de manera similar a la función `format()`. Veamos un ejemplo:
+
+```Python
+peso = 75.6
+mensaje = "Mi nombre es %s y peso %.1f kilogramos" % (nombre, peso)
+
+print(mensaje)
+```
+
+En este caso, utilizamos `%s` para indicar que queremos insertar una cadena y `%f` para indicar un número con decimales. Luego, especificamos los valores correspondientes entre paréntesis.
+
+## Ver también
+
+- [Documentación oficial de Python sobre concatenación de cadenas](https://docs.python.org/es/3/tutorial/introduction.html#concatenation)
+- [Tutorial de W3Schools sobre concatenación de cadenas en Python](https://www.w3schools.com/python/python_strings_concatenate.asp)
+- [Artículo de Programación Python sobre formateo de cadenas](https://www.programacionpython.com/formatear-cadenas-en-python/)

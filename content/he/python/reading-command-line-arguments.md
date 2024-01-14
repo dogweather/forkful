@@ -1,54 +1,36 @@
 ---
-title:                "Python: קריאת ארגומנטים ממשק שורת הפקודה"
+title:                "Python: קריאת ארגומנטים משורת הפקודה"
+simple_title:         "קריאת ארגומנטים משורת הפקודה"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/python/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+##למה:
+קבלת כרטיסי מפקד מביאה ערך מוסף לתוכניות שלנו ומאפשרת לנו להתאים את הקוד שלנו למידרגות שונות של התוכנית. כמו כן, קבלת כרטיסי מפקד מאפשרת לנו להתאים את התוכנית לצרכים של משתמשי התוכנית.
 
-מדוע כדאי לקרוא ארגומנטי שורת הפקודה בפייתון? כאשר אנו כותבים תוכניות בפייתון, רוב הפעמים נתקלים בצורך לפענח פרמטרים מהפקודה המשתמשת בתוכנית שלנו. בכתבה זו נלמד כיצד לקרוא ארגומנטים מהפקודה ולהשתמש בהם בעזרת פייתון.
-
-## כיצד לעשות זאת
-
-היכן מבקשים מאתנו לקלוט ארגומנטים מהפקודה? ניתן לעשות זאת באמצעות חלק משמעותי בספריית התקשורת בסיסית או בעזרת המודול `argparse` המאפשר לנו לקבוע ארגומנטים צפויים ולדלג לאיתור הארגומנטים שהמשתמש רשם. הנה כמה דוגמאות לשימוש בספריית תקשורת בסיסית ובמודול `argparse` בפייתון:
+##איך לעשות את זה:
+לקבלת כרטיסי מפקד בפייתון ניתן להשתמש בפונקציה sys.argv. הנה דוגמא פשוטה של כיצד לקבל כרטיסי מפקד מהמשתמש:
 
 ```Python
 import sys
 
-# קריאת ארגומנטים בספריית תקשורת בסיסית
-args = sys.argv
-print("נתוני הפקודה:", args)
-
-# קריאת ארגומנטים בעזרת אמצעי `argparse`
-import argparse
-
-# יצירת אובייקט ArgumentParser
-parser = argparse.ArgumentParser(description='קריאת ארגומנטים מהפקודה')
-
-# הגדרת ארגומנטים צפויים לתוכנית
-parser.add_argument('--name', help='שם המשתמש')
-parser.add_argument('--age', help='גיל המשתמש')
-parser.add_argument('--location', help='מיקום המשתמש')
-
-# קבלת הארגומנטים שהמשתמש הכניס
-args = parser.parse_args()
-print("שם:", args.name)
-print("גיל:", args.age)
-print("מיקום:", args.location)
+print("הכנס את הפרמטרים:")
+print(sys.argv)
+```
+והנה התוצאה שנקבל:
+```Python
+הכנס את הפרמטרים:
+['program_name.py', 'arg1', 'arg2', 'arg3']
 ```
 
-כלאחרי הרצת תמונה של הפקודה `python reading_command_line_arguments.py --name John --age 25 --location New York` נקבל את הפלט הבא:
+בדוגמא זו, הפקודה שהרצנו היא "python program_name.py arg1 arg2 arg3", כאשר "program_name.py" הוא שם התוכנית ו-"arg1", "arg2" ו-"arg3" הם הפרמטרים שהוספנו בכרטיסי המפקד.
 
-```
-נתוני הפקודה: ['reading_command_line_arguments.py', '--name', 'John', '--age', '25', '--location', 'New York']
-שם: John
-גיל: 25
-מיקום: New York
-```
+##מעמקים נמוכים:
+בנוסף לכיצד לקבל כרטיסי מפקד, ניתן גם לשלוט על כיצד הם ייוצגו בפונקציה sys.argv. ניתן להגדיר את סדר הפרמטרים שיימסרו ואת הנתיב לתוכנית הראשית. למשל, ניתן להשתמש בספריית argparse המאפשרת לנו להגדיר פרמטרים בצורה מדויקת ולהכיל בהם בדיקת תקינות.
 
-## התעמקות
-
-הכתבה קיבלה תוכנה מוסכמת: כיצד מסכ
+##ראה גם:
+למידע נוסף על שימוש בכרטיסי מפקד בפייתון, ניתן להסתכל על המדריך המפורט של מודול ה-sys ב[אתר הרשמי של פייתון](https://docs.python.org/3/library/sys.html) וב[מדריך המפקדים של argparse](https://docs.python.org/3/howto/argparse.html).

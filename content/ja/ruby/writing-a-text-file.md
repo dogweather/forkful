@@ -1,51 +1,43 @@
 ---
-title:                "Ruby: テキストファイルの作成"
+title:                "Ruby: テキストファイルを書く"
+simple_title:         "テキストファイルを書く"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜテキストファイルを書くのか
 
-テキストファイルを書くことの利点は多々あります。例えば、プログラムやスクリプトで必要なデータを保存することができたり、ログファイルに出力することでエラーの追跡がしやすくなったりします。また、人間が読みやすい形式でデータを保存できることも特に重要な利点の一つです。
+テキストファイルを書くことはプログラム開発において必要不可欠です。それによってプログラムが実行される際に必要な情報を提供することができ、より効率的なコーディングを実現することができます。
 
-## 作り方
+## 書き方
 
-Rubyでテキストファイルを作る方法はいくつかありますが、ここでは`File`クラスを使用する方法を紹介します。まずは以下のように`File`クラスの`open`メソッドを使用してファイルを作成します。
-
-```Ruby
-file = File.open("my_file.txt", "w")
-```
-
-上の例では`my_file.txt`という名前のファイルを作成しています。そして、次のように`write`メソッドを使ってファイルに書き込む内容を指定します。
+テキストファイルを書くには、Rubyの`File`クラスを使用します。以下のように`File.open`メソッドを使用して新しいファイルを作成し、内容を書き込むことができます。
 
 ```Ruby
-file.write("This is a text file written using Ruby.")
+File.open("sample.txt", 'w') do |file|
+  file.write("こんにちは、世界！")
+end
 ```
 
-最後に、ファイルを閉じるために`close`メソッドを使用します。
+上記の例では、`sample.txt`というファイルを作成し、その中に「こんにちは、世界！」というテキストを書き込んでいます。最後には必ずファイルを閉じるようにしてください。
 
-```Ruby
-file.close
-```
+## 深堀り
 
-これで`my_file.txt`に指定した内容が書き込まれます。
+テキストファイルを書く際に特に注意するべきポイントは、使用する文字コードです。特に日本語の場合、UTF-8という文字コードを指定することが重要です。これは、日本語だけでなく多言語に対応し、文字化けが起こりにくいためです。
 
-## ディープダイブ
+また、ファイルにデータを書き込む前に、事前にファイルが存在するかどうかを確認し、存在しない場合は作成するようにすることも重要です。これにより、エラーが発生する可能性を減らすことができます。
 
-テキストファイルを書く際には、ファイルの文字エンコーディングや改行コードにも注意が必要です。また、ファイルを開く際にはエラーが発生する可能性があるため、エラー処理も適切に行う必要があります。さらに、ファイルの読み書きを行う方法やオプションについても学ぶことができます。
+## 参考リンク
 
-## もっと詳しく知るには
+- [Rubyの公式ドキュメント - Fileクラス](https://docs.ruby-lang.org/ja/latest/class/File.html)
+- [Rubyとテキストファイルの読み書き](https://qiita.com/kyohsuke/items/c34708e0f5b2962e8a29) 
+- [文字コードを知ることの重要性](https://business.takamatsu-glc.ac.jp/chiwaki/2019/01/17/02/) 
 
-- [Rubyによるファイルの読み書き方法](https://qiita.com/sukeirom/items/a9835d2e5b6540eba90e)
-- [組み込みクラスFile - Rubyリファレンスマニュアル](https://docs.ruby-lang.org/ja/latest/class/File.html)
-- [Ruby 2.6.2 マニュアル - File](https://docs.ruby-lang.org/ja/latest/class/File.html)
-- [Rubyでファイル入出力を楽しもう](https://qiita.com/kiyokiyo_kzsby/items/512f5d87f41f45d16d7f)
+## 参考
 
-## 関連記事
-
-- [Rubyとは？初心者にわかりやすく解説！](https://www.sejuku.net/blog/75942)
-- [Rubyの基礎とよく使われる文法を理解する](https://www.ruby-lang.org/ja/documentation/ruby-from-other-languages/basic-syntax/)
-- [Rubyでプログラミングを学ぶならこれを読め！](https://www.1x1connect.com/column/study/ruby/index.html)
+- [GitHubでのMarkdownの使い方](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) 
+- [Markdownの基本文法について](https://gist.github.com/mignonstyle/083c9e1651d7734f84c99b8cf49d57fa)

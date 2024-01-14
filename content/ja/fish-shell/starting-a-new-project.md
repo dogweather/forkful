@@ -1,43 +1,70 @@
 ---
-title:                "Fish Shell: 新しいプロジェクトを開始する"
+title:                "Fish Shell: 新しいプロジェクトを始める"
+simple_title:         "新しいプロジェクトを始める"
 programming_language: "Fish Shell"
-category:             "Getting Started"
+category:             "Fish Shell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-新しいプロジェクトを始める理由は様々ですが、多くの場合は新しいアイデアを実現したいという思いや挑戦したいという意欲があります。また、プロジェクトを始めることで、新しいスキルや知識を習得することもできます。
+新しいプロジェクトを始める理由はたくさんあります。新しい技術を学ぶため、興味のある分野にチャレンジするため、あるいは単に新しいアプリケーションを作りたいためなど、色々な理由があるでしょう。
 
-## 手順
+## やり方
 
-プロジェクトを始めるには、まずはFish Shellをインストールする必要があります。次に、プロジェクトのディレクトリを作成し、その中にコーディングを開始するためのファイルを作成します。以下のコードを使用して、新しいプロジェクトのディレクトリを作成しましょう。
+まずはFish Shellをインストールしましょう。次に、新しいプロジェクトのディレクトリを作成します。例えば、`my-project`という名前で作成します。
 
-```Fish Shell
-mkdir my_project
-cd my_project
+```
+Fish Shell> mkdir my-project
 ```
 
-次に、コーディングを開始するためのファイルを作成します。例えば、Pythonのプロジェクトを始める場合は、以下のコマンドを使用します。
+新しいプロジェクトのディレクトリに移動し、空のファイルを作ります。ここでは、`index.js`という名前のファイルを作成します。
 
-```Fish Shell
-touch main.py
+```
+Fish Shell> cd my-project
+Fish Shell> touch index.js
 ```
 
-これでプロジェクトの準備が整いました。あとは、必要なコードを作成していきましょう。
+次に、作成したファイルを開き、好きなエディタでコードを書き始めます。
 
-## 深堀り
+```
+Fish Shell> nano index.js
+```
 
-新しいプロジェクトを始めるときには、気をつけるべきことがいくつかあります。まずは、プロジェクトの目的を明確にすることが重要です。何を作成するのか、どのような機能が必要なのかを把握し、それに合わせてコーディングを行うことが大切です。
+例として、`Hello World`を出力するだけの簡単なプログラムを書いてみましょう。
 
-また、プロジェクトを始める前に、使用する言語やフレームワークのドキュメントやチュートリアルを確認することも重要です。これにより、必要な知識を身につけることができ、よりスムーズなプロジェクトの進行が可能になります。
+```
+console.log("Hello World");
+```
 
-さらに、プロジェクトを始める前にソフトウェアのバージョン管理を行うこともおすすめです。バージョン管理をすることで、プロジェクトの進捗を管理し、後から変更や修正を簡単に行うことができます。
+上記のコードを保存してから、実行してみましょう。
 
-## See Also
+```
+Fish Shell> node index.js
+```
 
-- [Fish Shellの公式ウェブサイト](https://fishshell.com/)
-- [新しいプロジェクトを始める前に知っておきたいこと](https://www.dreamtown-tech.com/column/programming/new-project/)
-- [プログラミング初心者のための基礎知識](https://paiza.jp/works/cs/primer)
+ターミナルに`Hello World`というメッセージが表示されれば、プログラムが正しく実行されています。
+
+## ディープダイブ
+
+新しいプロジェクトを始める時、最初の一歩が重要です。プロジェクトの目的や構成をよく考えることが、成功のカギです。また、チームでプロジェクトを進める場合は、コミュニケーションを密にすることも重要です。
+
+新しいプロジェクトを始める際、以下の点も意識しておきましょう。
+
+- プロジェクトの目的やゴールを明確にする
+- 使用する技術や言語を決める
+- コーディング規約を決める
+- バージョン管理システムを導入する
+
+これらのポイントを意識することで、プロジェクトの管理や進行がスムーズになります。
+
+## 参考リンク
+
+- [Fish Shell公式サイト](https://fishshell.com/)
+- [Fish Shellチュートリアル](https://fishshell.com/docs/current/tutorial.html)
+- [Node.js公式サイト](https://nodejs.org/en/)
+- [Node.jsチュートリアル](https://www.tutorialspoint.com/nodejs/index.htm)
+- [GitHubの使い方](https://www.atlassian.com/git/tutorials/what-is-git)

@@ -1,7 +1,9 @@
 ---
 title:                "Java: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,27 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit muuttaa merkkijonon pieniksi kirjaimiksi? Yksi syy voisi olla, että haluat vertailla merkkijonoja ilman, että isot ja pienet kirjaimet vaikuttavat vertailuun. Toinen syy voisi olla, että käyttäjät syöttävät tietoja eri tavoin ja haluat muuttaa ne yhtenäiseen muotoon esimerkiksi tietokantaa tai hakutoimintoa varten.
+Usein ohjelmoinnissa tarvitaan erilaisten tekstien käsittelyä. Yksi tärkeä osa tästä on tekstin muuntaminen pieniksi kirjaimiksi, minkä avulla voidaan helpottaa esimerkiksi syötteiden vertailua ja hakemista. Java-ohjelmoinnissa tähän tarkoitukseen löytyy valmiina funktio, joka muuntaa merkkijonon pieniksi kirjaimiksi.
 
-## Näin teet sen
+## Miten
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi on helppoa Java-ohjelmoinnissa. Käytä yksinkertaisesti `.toLowerCase()`-metodia merkkijonon perässä. Tässä on esimerkki koodista:
+Muuntamalla merkkijono pieniksi kirjaimiksi käytetään Java-ohjelmoinnissa toLowercase funktiota. Seuraava esimerkki näyttää miten tämä tapahtuu:
 
 ```Java
-String s = "TÄMÄ ON MERKKIJONO";
-String lowerCase = s.toLowerCase();
-System.out.println(lowerCase);
+String teksti = "HELLO WORLD";
+String muunnettu = teksti.toLowerCase();
+System.out.println(muunnettu);
 ```
 
-Tämä tulostaisi "tämä on merkkijono" konsolille. Huomaa, että alkuperäisen merkkijonon arvo ei muutu, vaan `.toLowerCase()`-metodi palauttaa uuden merkkijonon.
+Tulostus: hello world
 
-## Syvällisemmin
+Funktio muuntaa kaikki merkkijonon kirjaimet pieniksi kirjaimiksi ja palauttaa uuden merkkijonon. Tällä tavalla tekstin käsittely on helpompi toteuttaa ja eri syötteiden vertailu on tarkempaa.
 
-Merkkijonon muuttaminen pieniksi kirjaimiksi perustuu Unicode-standardiin. Jokaisella kirjaimella on omaa vastaava pieni kirjain ja `.toLowerCase()`-metodi käyttää tätä tietoa muuttaessaan merkkijonon kirjaimia.
+## Syvempi sukellus
 
-On myös huomioitava, että kun käytetään esimerkiksi suomen kieltä, niin tiettyjen kirjainten muuttaminen pieniksi kirjaimiksi voi antaa erilaisen lopputuloksen kuin signaalia käytettäessä. Tämä johtuu siitä, että suomen kielen aakkoset eivät ole samassa järjestyksessä kuin englannin kielen vastaavat kirjaimet.
+Tarkemmin funktiossa toLowercase käytetään Unicode-standardia, joka mahdollistaa erilaisten kirjoitusmuotojen huomioimisen. Unicode-standardi huomioi myös sellaiset kirjaimet, jotka eivät perinteisesti ole näkyvissä näppäimistöllä, kuten aksentit ja erikoismerkit. Tämä tekee funktiosta toLowercase luotettavan ja monipuolisen.
+
+On myös hyvä huomata, että funktio ei muokkaa alkuperäistä merkkijonoa vaan palauttaa uuden muunnetun merkkijonon. Tämä tarkoittaa sitä, että mikäli alkuperäistä merkkijonoa tarvitaan vielä myöhemmin ohjelmassa, se säilyy muuttumattomana.
 
 ## Katso myös
 
-- [Java String-luokka](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Unicode-taulukko](http://unicode.org/charts/)
+- Java String Class: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
+- Unicode Standard: https://unicode.org/standard/standard.html

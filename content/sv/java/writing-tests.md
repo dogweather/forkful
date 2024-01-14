@@ -1,57 +1,54 @@
 ---
 title:                "Java: Att skriva tester"
+simple_title:         "Att skriva tester"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför Skriva Tester Och Hur
-
-Det är ingen hemlighet att skriva tester är en viktig del av programmering. Men varför är det så viktigt och hur bör man gå till väga för att implementera tester i sin kod? I denna bloggpost kommer jag att förklara varför tester är nödvändiga och ge konkreta exempel på hur man kan skriva dem i Java.
-
 ## Varför
 
-Att skriva tester ger en trygghet och säkerhet till koden man utvecklar. Genom att testa koden regelbundet kan man hitta och rätta till buggar och felaktigheter innan de blir ett stort problem. Det sparar inte bara tid och pengar, utan ger också en mer robust och pålitlig kodbas. Dessutom är det ett viktigt verktyg för att säkerställa att koden fungerar som den ska och att den inte påverkar andra delar av programmet.
+Att skriva tester som en del av programmets utveckling kan kännas som en tråkig och onödig uppgift. Men sanningen är att tester är mycket viktiga för att säkerställa att koden fungerar som den ska och för att upptäcka eventuella fel och buggar innan de når slutanvändaren. Det sparar tid och krångel i det långa loppet och ger en bättre produkt.
 
-## Hur
+## Hur du gör det
 
-För att skriva tester i Java används ofta ett testramverk som JUnit. Det är en öppen källkodsbibliotek för enhetstester som är enkelt att använda och integrera med din kod. Här är ett enkelt exempel på hur man skriver ett test i Java:
+Att skriva tester i Java är inte svårt, speciellt om du redan är bekant med språket. Det finns ett inbyggt bibliotek kallat JUnit som gör det enkelt att skriva tester och köra dem. Här är ett enkelt exempel på hur du kan testa en metod som lägger ihop två tal:
 
-```java
-// Importera JUnit ramverk
-import org.junit.Test;
-
-// En enkel testklass
-public class MittProgramTest {
-	
-	// Testmetod som kör en assert som jämför två strängar
-	@Test
-	public void testMittProgram() {
-		String str1 = "Hej";
-		String str2 = "Hej";
-		Assert.assertEquals(str1, str2);
-	}
+```Java
+public class Calculator {
+    public int add(int num1, int num2) {
+        return num1 + num2;
+    }
 }
 ```
 
-I detta exempel skapas en ny testklass som innehåller en testmetod. Metoden använder sig av Assert-klassen i JUnit för att jämföra två strängar och se om de är lika. Om de är det, går testet igenom, annars blir det ett felmeddelande.
+```Java
+import org.junit.Test;
 
-Det här är bara ett enkelt exempel och det finns många olika sätt att skriva tester på beroende på vad man vill testa. Men grundprincipen är densamma - man skapar testfall som kontrollerar att koden fungerar som den ska.
+public class CalculatorTest {
+    @Test
+    public void testAdd() {
+        Calculator calculator = new Calculator();
+        assertEquals(4, calculator.add(2, 2));
+    }
+}
+```
 
-## Deep Dive
+I det här exemplet skapar vi en klass som har en metod för att addera två tal. Sedan skapar vi en testklass som använder JUnit för att köra ett test och kontrollera att resultatet av additionen är korrekt. Genom att skriva fler tester för olika scenarier kan vi ytterligare säkerställa att metoden fungerar som den ska.
 
-För att skriva bra tester är det viktigt att tänka på några saker. För det första bör testerna vara självständiga och inte haberoende av andra tester. Det är också viktigt att testa alla olika fall av en kod. Det kan vara frestande att bara testa det man tror ska fungera, men det är lika viktigt att testa det som man tror inte ska fungera.
+## Djupdykning
 
-Det finns också andra testramverk som är värda att titta på, som Mockito för att skapa mock-objekt och PowerMockito för att testa statiska och privata metoder.
+Att skriva bra tester handlar inte bara om att täcka alla delar av koden, utan också om att skriva lättlästa och strukturerade tester. Det är viktigt att ge testerna tydliga namn och att skriva dem så att de enkelt kan förstås av andra utvecklare. Det är också viktigt att testa både positiva och negativa scenarier för att säkerställa att koden hanterar felaktiga indata på rätt sätt.
 
-## Se även
+En annan viktig del av att skriva tester är att fortsätta att utöka dem när koden utvecklas och uppdateras. Tester ska inte bara skrivas en gång och sedan lämnas åt sitt öde. Genom att fortsätta att förbättra och lägga till tester kan vi undvika att introducera nya fel när vi gör ändringar i koden.
 
-Här är några användbara länkar för att lära dig mer om enhetstestning i Java:
+## Se också
 
-- [JUnit](https://junit.org/junit5/)
-- [Mockito](https://site.mockito.org/)
-- [PowerMockito](https://github.com/powermock/powermock)
+Här är några användbara länkar för att lära dig mer om att skriva tester i Java:
 
-Genom att använda tester i din kod kan du förbättra kvaliteten och tillförlitligheten och på sikt spara både tid och pengar. Så var inte rädd för att börja skriva tester och utforska olika verktyg som kan hjälpa dig på vägen. Lycka till!
+- [JUnit officiella hemsida](https://junit.org/junit5/)
+- [Baeldung's JUnit 5 tutorial](https://www.baeldung.com/junit-5)
+- [Effective Java av Joshua Bloch](https://www.amazon.com/Effective-Java-3rd-Joshua-Bloch/dp/0134685997)

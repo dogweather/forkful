@@ -1,41 +1,41 @@
 ---
 title:                "Gleam: 创建临时文件"
+simple_title:         "创建临时文件"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么会有人一定要创建一个临时文件呢？很多时候，在编程中我们需要暂时存储一些数据，但是不需要长期保留。这时候就可以用临时文件来解决这个问题。
+# 为什么要创建临时文件？
 
-如何：下面是一个简单的示例代码，演示如何在Gleam中创建一个临时文件。
+在编程过程中，我们经常会遇到需要临时存储数据的情况。这时候，创建一个临时文件就可以帮助我们临时保存数据，以便后续使用。临时文件的创建和使用可以让我们的程序更加灵活和高效。
+
+## 如何创建临时文件？
+
+在Gleam中，我们可以通过`create_temporary_file`函数来创建临时文件。首先，我们需要导入`std/os`模块，然后使用`create_temporary_file`函数指定临时文件的前缀和后缀。例如：
+
 ```Gleam
-import gleam
-import gleam/os/temporary
-
-fn main() {
-    let temp_file = temporary.create() // 创建一个临时文件
-    let temp_path = temporary.path(temp_file) // 获取临时文件的路径
-    let temp_contents = "这是一个临时文件" // 要写入到临时文件中的内容
-    let _ = file.write(temp_path, temp_contents) // 将内容写入临时文件
-    let temp_read = file.read(temp_path) // 从临时文件中读取内容
-    file.delete(temp_file) // 删除临时文件
-    match temp_read {
-        Ok(data) -> println("临时文件中的内容是：#{data}")
-        Err(_) -> println("无法读取临时文件")
-    }
-}
+// 导入std/os模块
+import std/os
+// 创建临时文件
+let temp_file = std/os.create_temporary_file("data_", ".txt")
+// 向临时文件写入数据
+std/io.write(temp_file, "Hello Gleam!")
 ```
 
-深入了解：创建临时文件的原理其实很简单，就是操作系统会分配一块内存空间来保存数据，并且给这个临时文件一个唯一的名称。当我们不需要这个临时文件时，可以直接删除它，这样可以节省磁盘空间和系统资源。
+上面的例子中，我们使用`create_temporary_file`函数创建了一个名为`data_`，后缀为`.txt`的临时文件。然后通过`std/io.write`函数向这个临时文件写入数据。最后，我们可以通过`std/fs`模块中的`read_file`函数来读取这个临时文件的内容。
 
-另外，还有一些其他的选项可以用来创建临时文件。比如可以指定临时文件的名称前缀和后缀，也可以设置临时文件存放的目录。这些选项可以通过函数参数来指定，具体的使用方法可以参考官方文档。
+## 深入了解临时文件
 
-## 参考链接：
-- Gleam官方文档：https://gleam.run/core/file.html#temporary
-- 关于临时文件的更多介绍：https://en.wikipedia.org/wiki/Temporary_file
+除了上面介绍的创建临时文件的方法，我们还可以通过Gleam标准库中的其他函数来创建临时文件，比如`create_temporary_file_path`和`create_temporary_file_directory`。同时，我们还可以使用`delete_temporary_file`函数来删除临时文件。
 
-### 参见
-- 关于Gleam其他功能的介绍：https://gleam.run/
-- 关于编程中常用的临时文件的用处：https://www.tutorialspoint.com/what-is-temp-file.htm
+此外，我们还可以通过指定临时文件的创建位置和权限来更加灵活地控制临时文件的创建。了解这些细节可以帮助我们更好地管理和使用临时文件。
+
+# 查看更多
+
+- [Gleam官方文档](https://gleam.run/documentation/)
+- [Gleam std/os模块文档](https://gleam.run/documentation/std/os.html)
+- [Gleam std/fs模块文档](https://gleam.run/documentation/std/fs.html)

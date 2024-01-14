@@ -1,52 +1,61 @@
 ---
-title:                "C++: 计算字符串的长度"
+title:                "C++: 查找字符串的长度"
+simple_title:         "查找字符串的长度"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-计算字符串的长度是编程中常见的操作，它可以帮助我们更有效地处理文本数据。无论是用于字符串匹配、输入验证还是在游戏开发中，掌握如何找到字符串的长度都是必不可少的技能。在接下来的文章中，我们将介绍如何使用C ++来计算字符串的长度，并深入了解这个操作的原理。
+# 为什么
 
-## 如何实现
-在C ++中，我们可以使用标准库中的`length()`函数来计算字符串的长度。下面是一个简单的例子，展示了如何使用该函数：
+在编写C++程序时，我们经常需要对字符串进行操作，包括获取字符串的长度。通过获取字符串的长度，我们可以更好地掌握字符串的属性，并根据需要进行进一步的处理。因此，了解如何找到字符串的长度是非常重要的。在本文中，我将向大家介绍如何使用C++语言来找到字符串的长度，并深入探讨一些相关的知识点。
+
+# 如何找到字符串的长度
+
+要找到字符串的长度，我们可以使用C++中的内置函数`length()`。该函数的作用是返回所输入字符串的长度，单位为字符数。让我们来看一个简单的例子：
+
 ```C++
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-int main()
-{
-    string myString = "Hello World";
-    int length = myString.length();
-    cout << "Length of the string is: " << length << endl;
+int main() {
+    string str = "你好，世界！";
+    int len = str.length();
+
+    cout << "字符串的长度为：" << len << "个字符。" << endl;
 
     return 0;
 }
 ```
-输出结果将是：
+
+输出结果为：
+
 ```
-Length of the string is: 11
-```
-你也可以使用`size()`函数来计算字符串的长度，它与`length()`函数的功能相同。例如：
-```C++
-int length = myString.size();
+字符串的长度为：6个字符。
 ```
 
-## 深入了解
-计算字符串的长度实际上是遍历字符串并统计字符的数量。一个简单的方法是使用循环来遍历字符串中的每个字符，并在循环结束时计算字符的数量。此外，C ++中的字符串实际上是一种字符数组，因此你也可以使用数组的长度来计算字符串的长度。
+上面的例子中，我们首先声明了一个字符串变量`str`，并将一个字符串赋值给它。然后通过调用`length()`函数获取字符串的长度，并将结果赋值给整型变量`len`。最后，我们使用`cout`语句将结果输出到屏幕上。
 
-另外值得注意的是，计算字符串的长度时，会将空格和其他特殊字符也计算在内。这就意味着，如果你的字符串包含空格，那么空格也会被计算在内，从而影响字符串的长度。因此，在进行字符串匹配等操作时，需要注意字符串中的空格数量。
+除了使用`length()`函数，我们也可以使用C++中的另一个内置函数`size()`来获取字符串的长度。两者的作用都相同，只是名称不同而已。
 
-## 参考链接
-- [C++ String Length](https://www.geeksforgeeks.org/length-or-size-of-string-in-c/) - 一个更详细的关于计算字符串长度的教程。
-- [C++ Standard Library](https://www.cplusplus.com/reference/string/) - C ++中字符串相关的标准库函数和相关信息。
-- [C++ Tutorial: Strings](https://www.programiz.com/cpp-programming/string) - 一个简明的C ++字符串教程，包含更多关于字符串操作的内容。
+# 深入探讨
 
-## 参考链接
-- [C++ String Length](https://www.geeksforgeeks.org/length-or-size-of-string-in-c/) - 一个更详细的关于计算字符串长度的教程。
-- [C++ Standard Library](https://www.cplusplus.com/reference/string/) - C ++中字符串相关的标准库函数和相关信息。
-- [C++ Tutorial: Strings](https://www.programiz.com/cpp-programming/string) - 一个简明的C ++字符串教程，包含更多关于字符串操作的内容。
+在C++中，字符串的长度是以`int`类型来表示的，因此字符串的最大长度也受到`int`类型的限制。如果字符串的长度超过了`int`类型的最大值，那么就无法正确地获取字符串的长度。并且，在C++中，字符串的长度不包括末尾的空字符`\0`。也就是说，如果一个字符串的长度为5，那么它实际上包含6个字符（包括最后的空字符）。
+
+此外，对于Unicode编码的字符串，使用`length()`函数获取的长度可能并不准确。因为Unicode编码中的一些字符可能占用2个或更多个字节，与ASCII编码中的每个字符占用一个字节不同。因此，要正确地获取Unicode字符串的长度，我们可以使用`wchar_t`类型来声明字符串变量，并调用`wstring`类中的`length()`函数来获取长度。
+
+# 参考资料
+
+- [C++中获取字符串长度的几种方法](https://zhuanlan.zhihu.com/p/79496333)
+- [C++中获取字符串长度的各种方法](https://www.jianshu.com/p/e4b0c47a011b)
+- [C++字符串：length()和size()的区别](https://blog.csdn.net/guotianqing/article/details/52689917)
+
+# 参见
+
+- [C++ string类](https://www.runoob.com/cplusplus/cpp-string.html)
+- [C++基础：string类的使用](https://www.cnblogs.com/liangliangx/p/4599555.html)

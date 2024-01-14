@@ -1,65 +1,53 @@
 ---
-title:                "Fish Shell: Lecture des arguments de ligne de commande"
+title:                "Fish Shell: La lecture des arguments de ligne de commande"
+simple_title:         "La lecture des arguments de ligne de commande"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
 
-Si vous êtes un développeur, vous savez probablement déjà l'importance de la ligne de commande dans votre travail quotidien. Mais saviez-vous que vous pouvez utiliser des arguments de ligne de commande pour rendre vos scripts encore plus puissants et flexibles? Dans cet article, nous allons examiner comment lire les arguments de ligne de commande dans Fish Shell et comment en tirer le meilleur parti dans vos projets.
+La lecture des arguments de ligne de commande est une compétence importante pour tout programmeur. Cela permet de gérer facilement et efficacement les entrées de l'utilisateur, ce qui est essentiel dans de nombreux projets de programmation.
 
 ## Comment faire
 
-Pour lire les arguments de ligne de commande dans Fish Shell, vous pouvez utiliser la variable spéciale `$argv`. Cette variable contient une liste des arguments passés à votre script, avec le premier argument étant `$argv[1]`, le deuxième étant `$argv[2]`, et ainsi de suite.
+Pour lire les arguments de ligne de commande dans Fish Shell, nous pouvons utiliser la commande intégrée `set -x`. Voici un exemple de code et sa sortie :
 
-````Fish Shell
-#!/usr/bin/fish
+```
+Fish Shell $ set -x arg1 arg2 arg3
+```
 
-# Lire et afficher le premier argument
-echo "Le premier argument est: $argv[1]"
+```Fish Shell 
+\x arg1 
+\x arg2 
+\x arg3
+```
 
-# Afficher une erreur si aucun argument n'est passé
-if test -z "$argv"
-    echo "Veuillez fournir au moins un argument!"
-    exit 1
-end
-````
+Comme vous pouvez le voir, la commande `set -x` sépare les arguments par des lignes commençant par `\x`, ce qui rend la lecture des arguments très facile et claire.
 
-Supposons que vous enregistrez ce script sous le nom `test.fish` et l'exécutez en utilisant `fish test.fish argument1 argument2`. Vous verrez alors la sortie suivante:
+## Plongée en profondeur
 
-````Shell
-Le premier argument est: argument1
-````
+Il est important de noter que la commande `set -x` permet également de lire les arguments sous forme de tableau en utilisant l'option `-a`. Cela peut être utile dans certaines situations pour manipuler les arguments de manière plus avancée.
 
-Vous pouvez également utiliser la fonction `count` pour vérifier le nombre d'arguments passés à votre script:
+Nous pouvons également utiliser la commande `count` pour connaître le nombre d'arguments passés à notre script. Voici un exemple :
 
-````Fish Shell
-#!/usr/bin/fish
+```Fish Shell
+Fish Shell $ count $argv
+```
 
-# Nombre d'arguments
-echo "Nombre d'arguments: (count $argv)"
-````
+```Fish Shell
+3
+```
 
-La sortie de ce script sera:
+En utilisant cette commande, nous pouvons facilement vérifier si le bon nombre d'arguments a été passé à notre script et prendre les mesures appropriées en cas de nombre incorrect.
 
-````Shell
-Nombre d'arguments: 2
-````
+# Voir aussi
 
-Maintenant que vous pouvez lire les arguments de ligne de commande dans Fish Shell, vous pouvez les utiliser pour rendre vos scripts plus dynamiques et réutilisables. Vous pouvez également les combiner avec d'autres fonctions Shell pour une meilleure expérience de développement.
+Voici quelques ressources utiles pour en savoir plus sur la lecture des arguments de ligne de commande en Fish Shell :
 
-## Deep Dive
-
-En plus de la variable `$argv`, il existe également des options intégrées dans Fish Shell pour travailler avec des arguments de ligne de commande. Par exemple, vous pouvez utiliser la fonction `argv` pour récupérer une liste complète des arguments passés à votre script, ou `argv0` pour récupérer le nom du script en cours d'exécution.
-
-De plus, vous pouvez utiliser `set -l` pour définir une variable locale à l'intérieur d'un script, ce qui peut être très utile pour traiter des arguments spécifiques.
-
-Pour en savoir plus sur la lecture des arguments de ligne de commande dans Fish Shell, vous pouvez toujours vous référer à la documentation officielle de Fish Shell ou explorer d'autres scripts et projets existants pour voir comment ils utilisent des arguments de ligne de commande.
-
-## Voir aussi
-
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Exemples de scripts Fish Shell](https://github.com/fish-shell/fish-shell/tree/main/examples)
+- Documentation officielle de Fish Shell pour la commande `set` : [lien](https://fishshell.com/docs/current/cmds/set.html)
+- Tutoriel sur la lecture des arguments de ligne de commande en Fish Shell : [lien](https://medium.com/@alexanderstepanov/how-to-write-bash-shell-scripts-faster-with-less-effort-682282b725f3)

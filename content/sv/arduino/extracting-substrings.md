@@ -1,47 +1,51 @@
 ---
 title:                "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Substrings, eller delsträngar, är en vanlig del av programmering som är användbar för att söka och manipulera text. Genom att extrahera substrings kan du få ut specifika delar av en textsträng och använda dem för olika ändamål, som att filtrera data eller skapa nycklar för databaser.
 
-## Hur man gör
-Det finns flera olika sätt att extrahera substrings i Arduino-programmering. Ett sätt är att använda funktionen "substring()", vilket låter dig ange en startposition och en längd för den delsträng du vill extrahera. Här är ett exempel där vi extraherar de tre första tecknen från en textsträng:
+Att extrahera substrängar (delsträngar) är ett användbart verktyg inom Arduino-programmering för att hantera och manipulera strängar. Genom att välja ut en del av en sträng kan du bearbeta en specifik del av data för att sedan använda den i ditt program.
+
+## Hur
+
+För att extrahera substrängar behöver du först använda funktionen `substring()`. Detta gör det möjligt att välja en del av en befintlig sträng genom att ange start- och slutpositionen för den önskade delen.
 
 ```Arduino
-String text = "Hej alla!"; // Skapa en textsträng
-String substring = text.substring(0,3); // Extrahera de första tre tecknen
-Serial.println(substring); // Skriv ut delsträngen (kommer att visa "Hej")
+String str = "Hej! Jag heter Arduino.";
+// Extrahera "Arduino" från strängen
+String substr = str.substring(16, 23);
+// Skriv ut substrängen "Arduino"
+Serial.println(substr); // Output: "Arduino"
 ```
 
-Du kan också använda operatorn "[]" för att extrahera en del av en textsträng. Detta gör du genom att ange önskad position eller intervall inom hakparenteserna. Här är ett exempel där vi extraherar de två sista tecknen från en textsträng:
+Du kan också använda variabler för att definiera start- och slutpositionerna för substrängen, vilket ger mer flexibilitet i ditt program.
 
 ```Arduino
-String text = "Hej alla!";
-String substring = text[6]; // Extrahera ett enskilt tecken (inkluderar mellanslag)
-Serial.println(substring); // Skriv ut delsträngen (kommer att visa "!")
-```
-
-Det går också att använda "indexOf()" funktionen för att hitta en specifik del av en textsträng och sedan extrahera den. Här är ett exempel där vi hittar positionen för mellanslaget och sedan extraherar all text efter det:
-
-```Arduino
-String text = "Hej alla!";
-int position = text.indexOf(" "); // Hitta positionen för mellanslaget
-String substring = text.substring(position + 1); // Extrahera text efter mellanslaget
-Serial.println(substring); // Skriv ut delsträngen (kommer att visa "alla!")
+// Definiera variabler för start- och slutposition
+int startPos = 16;
+int endPos = 23;
+// Extrahera substrängen från variablerna
+String substr = str.substring(startPos, endPos);
+// Skriv ut substrängen "Arduino"
+Serial.println(substr); // Output: "Arduino"
 ```
 
 ## Deep Dive
-För de som vill fördjupa sig ytterligare i ämnet finns det flera andra sätt att extrahera substrings i Arduino. Det finns till exempel en funktion som heter "charAt()", som låter dig hämta ett tecken baserat på dess position i textsträngen.
 
-Det går också att använda en "for"-loop för att iterera genom en textsträng och extrahera en delsträng för varje steg. Detta kan vara användbart för att hantera längre texter eller om du behöver göra flera olika substrings-extraktioner i samma program.
+För att välja en del av en sträng måste du förstå hur teckenindexering fungerar. Varje tecken i en sträng har en unik plats eller position, som kallas index. Indexeringen börjar alltid från 0, vilket betyder att det första tecknet i en sträng har index 0, det andra tecknet har index 1 och så vidare.
+
+Så om du vill extrahera en del av en sträng måste du veta start- och slutpositionen baserat på teckenindexeringen. Genom att använda funktionen `substring()` kan du sedan välja ut en del av strängen och använda den i ditt program.
 
 ## Se också
-- [Officiell Arduino reference för substring](https://www.arduino.cc/en/Reference/StringSubstring)
-- [Tutorial om att använda substrings i Arduino](https://www.arduino.cc/en/Tutorial/StringSubstring)
-- [Forumtråd med flera exempel på substring-extraktion i Arduino](https://forum.arduino.cc/index.php?topic=670009.0)
+
+För mer information och exempel på hur du kan använda funktionen `substring()`, kolla in följande länkar:
+
+- [Arduino Reference: substring()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- [Tutorial: Using Substrings in Arduino](https://www.allaboutcircuits.com/technical-articles/using-substrings-in-c-programming-with-arduino/)

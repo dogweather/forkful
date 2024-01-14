@@ -1,107 +1,58 @@
 ---
 title:                "C++ recipe: Searching and replacing text"
+simple_title:         "Searching and replacing text"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Searching and replacing text is a common task in programming that allows for efficient and accurate text manipulation. It can be especially useful when working on large projects with a lot of repetitive code. In this blog post, we will explore how to use C++ to easily search and replace text in your code.
+Searching and replacing text is a common task in programming, especially when working with large amounts of data. It allows for quick and efficient editing of text, making it a valuable tool for developers.
 
 ## How To
+To perform a simple search and replace task in C++, we can use the `replace()` function from the `<algorithm>` library. This function takes in three parameters: a beginning iterator, an ending iterator, and a value to replace.
 
-First, let's take a look at some basic examples of searching and replacing text using C++ code.
-
-### Simple String Replacement
-
-To replace a specific string in your code, you can use the `replace` function from the standard library `string` header. This function takes three parameters: the starting position, the number of characters to replace, and the new string to insert. Let's see an example:
-
-```C++
+````C++
 #include <iostream>
-#include <string>
-
-using namespace std;
+#include <algorithm>
 
 int main() {
-  string sentence = "Coding is fun!";
-  
-  // Replace "fun" with "challenging"
-  sentence.replace(11, 3, "challenging"); 
-  cout << sentence << endl; // output: Coding is challenging!
-  
-  return 0;
+    std::string text = "Hello world!";
+    std::replace(text.begin(), text.end(), 'o', 'e');
+    std::cout << text << std::endl;
+    return 0;
 }
-```
+````
 
-### Multiple Replacements
+Output: `Helle werld!`
 
-If you want to replace multiple occurrences of a specific string, you can use a loop to iterate through the string and use the `replace` function for each instance. For example:
+We can also use regular expressions with the `regex_replace()` function from the `<regex>` library to perform more complex search and replace tasks. Regular expressions allow for pattern matching in strings, making it a powerful tool for text manipulation.
 
-```C++
+````C++
 #include <iostream>
-#include <string>
-
-using namespace std;
+#include <regex>
 
 int main() {
-  string sentence = "Hello hello hello!";
-  string to_search = "hello";
-  string replacement = "hi";
-  
-  // Loop through the string and replace all instances
-  size_t pos = 0;
-  while ((pos = sentence.find(to_search, pos)) != string::npos) {
-    sentence.replace(pos, to_search.length(), replacement);
-    pos += replacement.length();
-  }
-  
-  cout << sentence << endl; // output: Hi hi hi!
-  
-  return 0;
+    std::string text = "Hello world!";
+    std::regex reg("o");
+    std::string new_text = std::regex_replace(text, reg, "e");
+    std::cout << new_text << std::endl;
+    return 0;
 }
-```
+````
 
-### Case-Insensitive Search
-
-By default, the `replace` function searches for the exact case of the specified string. However, if you want to perform a case-insensitive search, you can use the `find` function and pass in a case-insensitive version of the search string. For example:
-
-```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-  string sentence = "Is c++ case-sensitive?";
-  string to_search = "c++";
-  string replacement = "C++";
-  
-  // Find and replace regardless of case
-  size_t pos = sentence.find(to_search, 0);
-  while (pos != string::npos) {
-    sentence.replace(pos, to_search.length(), replacement);
-    pos = sentence.find(to_search, pos + replacement.length());
-  }
-  
-  cout << sentence << endl; // output: Is C++ case-sensitive?
-  
-  return 0;
-}
-```
+Output: `Helle werld!`
 
 ## Deep Dive
+When using regular expressions, there are various modifiers and special characters that can be used to refine the search criteria. Some commonly used ones include `*` for zero or more occurrences of a character, `+` for one or more occurrences, `.` for any character, `[]` for a list of characters, and `()` for grouping. Regular expressions also have modifiers such as `*?` for non-greedy matching and `?` for optional matching.
 
-There are many different methods for searching and replacing text in C++, such as using regular expressions or using the `substr` function. It is important to understand the different options and choose the most efficient method based on your specific needs and the size of your codebase.
-
-When replacing text, it is also important to consider any unintended consequences, such as replacing a substring within a larger string that should not be altered. Additionally, it is important to handle input validation and error handling to ensure the desired replacements are made accurately.
+It is important to be aware of the potential performance impact of using regular expressions for large amounts of data. In some cases, it may be more efficient to use simple string methods for search and replace tasks.
 
 ## See Also
-
-- [C++ String manipulation](https://www.geeksforgeeks.org/c-string-manipulation-class-applications/)
-- [C++ Regular Expressions](https://www.geeksforgeeks.org/regular-expressions-in-c-c/)
-- [C++ Standard Library string header](https://www.cplusplus.com/reference/string/)
-
-Thank you for reading! I hope this blog post was helpful in understanding how to effectively search and replace text in your C++ code. Happy coding!
+- [C++ replace() function documentation](https://www.cplusplus.com/reference/algorithm/replace/)
+- [C++ regex_replace() function documentation](https://www.cplusplus.com/reference/regex/regex_replace/)
+- [Regular expressions in C++](https://www.geeksforgeeks.org/regular-expressions-in-c-c/)
+- [Performance impact of using regular expressions](https://softwareengineering.stackexchange.com/questions/223514/performance-impact-of-using-regular-expressions)

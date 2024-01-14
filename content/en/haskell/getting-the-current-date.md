@@ -1,7 +1,9 @@
 ---
 title:                "Haskell recipe: Getting the current date"
+simple_title:         "Getting the current date"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/getting-the-current-date.md"
 ---
 
@@ -9,57 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In today's digital age, it's important to be able to accurately keep track of time and dates. Whether you're building a scheduling app, creating a time-sensitive program, or simply curious about the current date, knowing how to get the current date in Haskell can be incredibly useful. In this blog post, we'll explore the different methods for obtaining the current date in Haskell.
+In today's digital age, it's become a common practice for developers to include the current date in their programs or applications. Knowing the current date can be useful for various reasons such as time stamping data, scheduling tasks, or even just displaying the date for user interface purposes. In this blog post, we'll explore how to get the current date using Haskell programming language.
 
 ## How To
 
-To get the current date in Haskell, we can use the `getCurrentTime` function from the `Data.Time.Clock` module. This function returns the current time in the `IO` monad, which means it can interact with the outside world. Here's an example of how we can use this function:
+Getting the current date in Haskell is a simple process that involves using the built-in `Data.Time` module. Within this module, there are several functions that allow us to work with dates and times. The most commonly used function for getting the current date is `getCurrentTime`, which returns the current date and time as a data type called `UTCTime`. Let's take a look at an example:
 
 ```Haskell
-import Data.Time.Clock
+import Data.Time
+
+currentDate :: IO UTCTime
+currentDate = getCurrentTime
 
 main :: IO ()
 main = do
-  currentTime <- getCurrentTime
-  putStrLn $ "The current date is: " ++ show (utctDay currentTime)
+  current <- currentDate
+  putStrLn $ "Today's date is: " ++ show (utctDay current)
+  putStrLn $ "Current time is: " ++ show (utctDayTime current)
 ```
 
-Running this code will print out the current date in the format `YYYY-MM-DD`. For example, if today's date is January 1st, 2022, the output would be `The current date is: 2022-01-01`.
+Running this code will output something like this:
 
-We can also use the `getZonedTime` function from the `Data.Time.LocalTime` module to get the current time in a specific time zone. Here's an example:
-
-```Haskell
-import Data.Time.LocalTime
-
-main :: IO ()
-main = do
-  currentTime <- getZonedTime
-  putStrLn $ "The current time in New York is: " ++ show (zonedTimeToLocalTime currentTime)
+```
+Today's date is: 2021-01-01
+Current time is: 12:00:00 AM UTC
 ```
 
-This code will print out the current time in New York. Keep in mind that the time zone will depend on your system settings. You can also use the `getCurrentTimeZone` function to get the current time zone.
+In this code snippet, we first import the `Data.Time` module and define a function called `currentDate` which uses the `getCurrentTime` function to retrieve the current date and time. Then, in the `main` function, we use the `utctDay` function to extract just the date from the `UTCTime` data type and the `utctDayTime` function to get the current time. We then print these values to the console using `putStrLn`.
 
 ## Deep Dive
 
-Under the hood, the `getCurrentTime` function uses the POSIX `gettimeofday` function to get the current time in seconds and microseconds since 1970-01-01 00:00:00 UTC. It then converts this to a `UTCTime` data type in Haskell. This allows us to perform various operations on the time, such as adding or subtracting seconds, minutes, or even days.
+Now, let's take a deeper look at the `Data.Time` module and some other useful functions for working with dates. The `UTCTime` data type is a representation of a specific point in time, but sometimes we may need to work with different time zones. To do this, we can use the `ZonedTime` data type which also includes information about the time zone.
 
-We can also use the `formatTime` function from the `Data.Time.Format` module to format the current time in a specific way. For example, if we want to print out the current date in the format `Day, Month Year`, we can use the following code:
+Another useful function for getting the current date is `getCurrentTimeZone`, which returns the time zone of the current system. Then, we can use the `utcToLocalTime` function to convert the `UTCTime` value to a `ZonedTime` value based on the specified time zone. Here's an example:
 
 ```Haskell
-import Data.Time.Clock
-import Data.Time.Format
-import System.Locale
+import Data.Time
+
+currentDate :: IO ZonedTime
+currentDate = do
+  zone <- getCurrentTimeZone
+  utcCurrent <- getCurrentTime
+  return $ utcToLocalTime zone utcCurrent
 
 main :: IO ()
 main = do
-  currentTime <- getCurrentTime
-  putStrLn $ "The current date is: " ++ formatTime defaultTimeLocale "%A, %B %e %Y" (utctDay currentTime)
+  current <- currentDate
+  putStrLn $ "Today's date and time in your time zone is: " ++ show current
 ```
 
-This code will print out the current date in a more readable format, such as `Sunday, January 1 2022`.
+This will output something like this:
+
+```
+Today's date and time in your time zone is: 2021-01-01 12:00:00 AM EST
+```
 
 ## See Also
 
-- [Haskell Docs: Data.Time.Clock](https://hackage.haskell.org/package/time/docs/Data-Time-Clock.html)
-- [Haskell Docs: Data.Time.LocalTime](https://hackage.haskell.org/package/time/docs/Data-Time-LocalTime.html)
-- [Learn You a Haskell: Input and Output](http://learnyouahaskell.com/input-and-output)
+- [Haskell Data.Time module documentation](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Working with dates and times in Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/pick-of-the-week/simple-formatting-with-the-time-format-library)
+- [Time zones in Haskell](https://www.programminghunk.com/2020/05/timezones-in-haskell.html)

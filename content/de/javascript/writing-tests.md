@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/writing-tests.md"
 ---
 
@@ -9,44 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Tests zu schreiben ist ein wichtiger Aspekt beim Entwickeln von Javascript Anwendungen. Sie helfen dabei, Bugs frühzeitig zu erkennen, die Qualität des Codes zu verbessern und die Stabilität der Anwendung zu gewährleisten. Außerdem können Tests dabei helfen, Vertrauen in den Code aufzubauen und die Wartbarkeit des Systems zu erhöhen.
+Das Schreiben von Tests gehört zu den grundlegenden Aufgaben eines jeden Programmierers. Tests helfen dabei, Fehler in Code frühzeitig zu erkennen und somit die Qualität und Stabilität von Anwendungen zu verbessern. In diesem Blog-Beitrag werden wir uns genauer damit beschäftigen, warum es wichtig ist, Tests zu schreiben und wie man sie effektiv nutzen kann.
 
-## Wie das geht
+## Wie man Tests schreibt
 
-Um Tests in Javascript zu schreiben, gibt es verschiedene Frameworks wie zum Beispiel Jest, Mocha oder Jasmine. Für dieses Beispiel werden wir Jest verwenden. Zunächst müssen wir Jest installieren, dies geht entweder über npm oder yarn:
+Um Tests zu schreiben, gibt es verschiedene Frameworks und Bibliotheken, die man verwenden kann. In diesem Beispiel werden wir das weit verbreitete Testing-Framework Jest verwenden. Um loszulegen, müssen wir zuerst Jest über den Paketmanager unserer Wahl installieren.
 
-```
-npm install jest
-```
-
-oder
-
-```
-yarn add jest
+```Javascript
+npm install jest --save-dev
 ```
 
-Anschließend können wir unsere erste Testdatei erstellen, zum Beispiel `calculator.test.js`:
+Nach der Installation können wir unsere Tests im `__test__` Verzeichnis unseres Projekts erstellen. Jedem Test muss eine Funktion mit dem Namen `test` zugewiesen werden und wir können Assertions verwenden, um zu überprüfen, ob das erwartete Ergebnis erreicht wurde.
 
-```
-const calculator = require('./calculator');
-
-test('adds 1 + 2 to equal 3', () => {
-  expect(calculator.add(1, 2)).toBe(3);
+```Javascript
+// Addition.test.js
+test('Adds 1 + 2 to equal 3', () => {
+  expect(1 + 2).toBe(3);
 });
 ```
+Um unsere Tests auszuführen, können wir das Kommando `npm test` verwenden. Jest wird dann alle Dateien im `__test__` Verzeichnis ausführen und uns mitteilen, ob die Tests erfolgreich waren oder nicht.
 
-In diesem Beispiel importieren wir unsere `calculator` Funktion und führen dann einen Test aus, der erwartet, dass die Addition von 1 und 2 den Wert 3 ergibt. Wenn wir den Test jetzt laufen lassen, wird er erfolgreich sein. Wenn wir jedoch die `add`-Funktion ändern, sodass sie jetzt 1 und 2 zu 4 addiert, wird der Test fehlschlagen und uns darauf aufmerksam machen, dass etwas nicht stimmt.
+## Eine tiefergehende Untersuchung
 
-## Tiefer in die Materie
+Tests sind nicht nur hilfreich, um Fehler zu erkennen, sondern sie sind auch nützlich für die Dokumentation von Code. Indem man Tests schreibt, erfasst man automatisch die erwarteten Ergebnisse und kann somit auch in Zukunft schnell überprüfen, ob der Code noch immer die gewünschten Ergebnisse liefert.
 
-Es gibt verschiedene Arten von Tests, die wir schreiben können, um sicherzustellen, dass unser Code wie erwartet funktioniert. Zum Beispiel gibt es Unit-Tests, die einzelne Funktionen oder Module testen, und Integrationstests, die überprüfen, ob verschiedene Teile der Anwendung korrekt zusammenarbeiten.
+Zusätzlich bieten Tests auch eine Form der Sicherheit bei der Entwicklung von neuen Features oder Refactoring von Code. Wenn die Tests fehlschlagen, ist dies ein Hinweis darauf, dass etwas im Code geändert wurde, das dazu führt, dass das erwartete Ergebnis nicht mehr erreicht wird.
 
-Es gibt auch verschiedene Testing Tools und Techniken, wie zum Beispiel Mocking, um externe Abhängigkeiten zu simulieren, oder Test Driven Development (TDD), bei dem Tests vor dem eigentlichen Code geschrieben werden.
-
-Es ist wichtig, beim Schreiben von Tests auch auf gute Testabdeckung zu achten, sodass möglichst alle Szenarien abgedeckt werden und Bugs frühzeitig erkannt werden können.
+Ein weiterer Vorteil von Tests ist, dass sie helfen können, Bugs zu vermeiden und somit die allgemeine Qualität des Codes zu verbessern. Durch das Schreiben von Tests werden verschiedene Teile des Codes automatisch durchlaufen, was dazu beiträgt, mögliche Fehler aufzudecken.
 
 ## Siehe auch
 
-- [Jest Dokumentation](https://jestjs.io/docs/getting-started)
-- [Mocha Webseite](https://mochajs.org/)
-- [Jasmine Dokumentation](https://jasmine.github.io/)
+- [Jest Dokumentation](https://jestjs.io/docs/en/getting-started)
+- [Einführung in das Testen von JavaScript mit Jest](https://opensource.com/article/20/3/javascript-testing-jest)
+- [Warum Tests schreiben?](https://medium.com/@js_tutorthewhy/why-test-your-code-dc86ab78b9da)

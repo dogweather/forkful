@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Generazione di numeri casuali"
+title:                "Arduino: (Generare numeri casuali)"
+simple_title:         "(Generare numeri casuali)"
 programming_language: "Arduino"
-category:             "Numbers"
+category:             "Arduino"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/generating-random-numbers.md"
 ---
 
@@ -9,28 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Il generatore di numeri casuali è uno strumento utile per creare varietà e casualità nei progetti di Arduino. Può essere utilizzato per creare giochi, animazioni o contenuti multimediali interattivi.
+Generare numeri casuali è un'attività utilizzata in molti progetti di Arduino per aggiungere un elemento di casualità e rendere i loro dispositivi più divertenti e interessanti. Con l'utilizzo del comando "random()", è possibile creare numeri casuali che possono essere utilizzati in una varietà di modi per migliorare il proprio progetto.
 
-## Come fare
+## Come
 
-Per generare numeri casuali in Arduino, è possibile utilizzare la funzione ```random(min, max)```, che restituisce un numero intero compreso tra il valore minimo e massimo specificato. Ad esempio, se si vuole generare un numero casuale tra 1 e 10, il codice sarebbe:
+Per generare numeri casuali con Arduino, è necessario utilizzare la funzione "random()", che restituisce un numero casuale compreso tra 0 e il numero massimo specificato meno 1. Ecco un esempio di come utilizzare questa funzione per generare un numero casuale compreso tra 1 e 10:
 
-```Arduino
-int numero = random(1, 10); 
+```
+Arduino random(1, 11);  // numero massimo specificato meno 1
+
+Serial.println(random); // stampa il numero casuale generato sulla console
 ```
 
-È importante anche impostare il seme del generatore di numeri casuali utilizzando la funzione ```randomSeed()```, in modo da ottenere numeri differenti ogni volta che si esegue il programma.
+Esempio di output:
 
-## Approfondimento
+```
+7
+```
 
-La funzione ```random(min, max)``` utilizza un algoritmo chiamato "linear congruential generator" (LCG) per generare i numeri casuali. Questo algoritmo utilizza una formula matematica per produrre una sequenza pseudo-casuale di numeri, che a loro volta sono influenzati dal seme impostato.
+In questo esempio, il valore massimo è stato impostato a 11 perché il comando "random()" restituisce un numero compreso tra 0 e il valore massimo meno 1. In questo modo, possiamo ottenere un numero casuale compreso tra 1 e 10.
 
-È importante notare che questa sequenza di numeri non è veramente casuale, ma piuttosto prevedibile e ripetibile se si utilizza lo stesso seme. Tuttavia, per scopi pratici, la maggior parte degli utilizzi di numeri casuali in progetti di Arduino non richiedono un alto grado di casualità.
+## Deep Dive
 
-Un'altra opzione per generare numeri casuali più "casuali", è utilizzare un componente esterno come il sensore di luce o di temperatura, poiché questi valori possono variare in modo imprevedibile e possono essere utilizzati come seme per il generatore di numeri casuali.
+I numeri casuali generati con Arduino sono in realtà numeri pseudocasuali, ossia sono generati utilizzando un algoritmo matematico predefinito che produce una sequenza di numeri apparentemente casuale. Questi numeri possono essere influenzati da fattori esterni, come il rumore elettromagnetico presente nell'ambiente, ma non sono veramente casuali.
 
-## Vedi anche
+Per ottenere numeri più casuali, è possibile utilizzare un sensore esterno, come un sensore di luce o di temperatura, come seme per l'algoritmo di generazione dei numeri casuali.
 
-- [Funzione random() - Documentazione di Arduino](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Come generare numeri casuali in Arduino - Tutorial di programmazione C ++](https://www.arduino.cc/en/Tutorial/Foundations/RandomNumbers)
-- [Algoritmo LCG - Wikipedia](https://it.wikipedia.org/wiki/Linear_congruential_generator)
+## See Also
+
+Ecco alcuni link utili per approfondire l'utilizzo di numeri casuali in progetti di Arduino:
+
+- [Tutorial su come utilizzare il comando "random()" di Arduino](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Utilizzo di un sensore di luce come seme per generare numeri casuali](https://www.instructables.com/random-number-generator-using-a-photoresistor-and/)
+- [Utilizzo di un sensore di temperatura come seme per generare numeri casuali](https://www.instructables.com/Temperature-Rand-o-Lux/)

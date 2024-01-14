@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/concatenating-strings.md"
 ---
 
@@ -9,82 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Concatenation jest niezbędnym elementem w programowaniu TypeScript i pozwala na łączenie ciągów znaków, czyli tekstowych danych, w jedną całość. Jest to szczególnie przydatne w przypadku, gdy potrzebujemy stworzyć dynamiczny komunikat lub wyświetlić dane użytkownika.
+Concatenating stringów jest niezbędnym narzędziem w każdym języku programowania, a TypeScript nie jest tu wyjątkiem. W tym artykule dowiesz się, dlaczego warto nauczyć się tej operacji i jak ją wykonać.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-W TypeScript, możemy łatwo połączyć dwa lub więcej ciągów znaków przy użyciu operatora `+` lub metody `concat()`.
-
-```TypeScript
-const firstName: string = "Jan";
-const lastName: string = "Kowalski";
-
-// używając operatora +
-const fullName: string = firstName + " " + lastName;
-console.log(fullName); // output: "Jan Kowalski"
-
-// używając metody concat()
-const fullName2: string = firstName.concat(" ", lastName);
-console.log(fullName2); // output: "Jan Kowalski"
-```
-
-W powyższym przykładzie widzimy, że możemy również połączyć więcej niż dwa ciągi znaków jednocześnie.
+Aby połączyć dwa lub więcej stringów w TypeScript, używamy operatora `+` lub funkcji `concat()`. Przykładowe użycie wygląda następująco:
 
 ```TypeScript
-const language1: string = "Type";
-const language2: string = "Script";
-const language3: string = "JavaScript";
+let string1 = "Hello";
+let string2 = "World";
+console.log(string1 + " " + string2); // Output: Hello World
 
-// łączenie trzech ciągów znaków
-const languages: string = language1 + language2 + language3;
-console.log(languages); // output: "TypeScriptJavaScript"
+let string3 = string1.concat(string2);
+console.log(string3); // Output: HelloWorld
 ```
 
-Możemy również wykorzystać interpolację szablonową (template literals), aby łączyć ciągi znaków w bardziej wygodny sposób.
+W pierwszym przykładzie używamy operatora `+` do połączenia dwóch zmiennych typu string i wyświetlamy wynik za pomocą funkcji `console.log()`. W drugim przykładzie używamy funkcji `concat()` na zmiennej `string1` i przekazujemy do niej jako argument zmienną `string2`, a następnie wyświetlamy wynik. W obu przypadkach otrzymujemy pożądany rezultat - połączone stringi.
 
-```TypeScript
-const animal: string = "pies";
-const sound: string = "szczeka";
-
-// interpolacja szablonowa
-const sentence: string = `Mój ${animal} ${sound}.`;
-console.log(sentence); // output: "Mój pies szczeka."
-```
+Warto również zauważyć, że używając operatora `+`, możemy łączyć nie tylko zmienne typu string, ale również inne typy danych, takie jak liczby czy booleany. Jednak w przypadku funkcji `concat()`, wszystkie argumenty muszą być typu string.
 
 ## Deep Dive
 
-Podczas łączenia ciągów znaków, ważne jest, aby pamiętać, że wynik będzie zawsze typu `string`, niezależnie od typu zmiennych, które łączymy.
+Podczas wykonywania operacji concatenacji, możemy również użyć interpolacji stringów, czyli wstawiania wartości zmiennych bezpośrednio wewnątrz stringa. W TypeScript służy do tego operator `${}`. Przykładowo:
 
 ```TypeScript
-const number1: number = 2;
-const number2: number = 3;
+let name = "John";
+let age = 25;
 
-const result1: string = number1 + number2;
-console.log(result1); // output: "5"
-
-const result2: string = "2" + "3";
-console.log(result2); // output: "23"
+console.log(`${name} is ${age} years old.`); // Output: John is 25 years old.
 ```
 
-Ponadto, łącząc ciągi znaków, możemy również użyć metod takich jak `slice()` czy `substring()` aby manipulować poszczególnymi częściami łączonego tekstu.
+Możemy również użyć funkcji `concat()` w połączeniu z interpolacją stringów, aby uzyskać bardziej elastyczne i czytelne rozwiązanie. Przykładowy kod wyglądałby tak:
 
 ```TypeScript
-const sentence: string = "To jest przykładowe zdanie.";
+let name = "John";
+let age = 25;
 
-// używając metody slice()
-const part1: string = sentence.slice(0, 8);
-console.log(part1); // output: "To jest"
+let sentence = `My name is ${name} and I am ${age} years old.`
+let fullSentence = "Hello, ".concat(sentence);
 
-// używając metody substring()
-const part2: string = sentence.substring(10, 19);
-console.log(part2); // output: "przykładowe"
+console.log(fullSentence); // Output: Hello, My name is John and I am 25 years old.
 ```
 
-Ważne jest również, aby pamiętać o znakach specjalnych, takich jak `\n` czy `\t`, które mogą być również łączone w ciągi znaków.
+Podczas łączenia stringów warto również uważać na formatowanie. Jeśli chcemy, aby wynik był w jednej linii, musimy odpowiednio zapisywać stringi lub użyć specjalnych funkcji, takich jak `trim()` czy `replace()`, aby usunąć dodatkowe białe znaki lub znaki specjalne.
 
-## Zobacz też
+## Zobacz Również
 
-- [Dokumentacja TypeScript - String Operators](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string-operators)
-- [W3Schools - TypeScript String Methods](https://www.w3schools.com/JSREF/jsref_obj_string.asp)
-
-Dzięki połączeniu ciągów znaków, możemy skutecznie manipulować tekstowymi danymi w naszych programach. Pamiętajmy jednak o odpowiedniej manipulacji i użyciu odpowiednich metod, aby uniknąć błędów.
+- [Dokumentacja TypeScript na temat operacji stringowych](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [Tutorial na temat interpoalacji stringów w TypeScript](https://www.typescripttutorial.net/typescript-tutorial/typescript-string-interpolation/#:~:text=Interpolation%20is%20a%20way%20to,url%20or%20any%20other%20expression.)
+- [Inne operacje na stringach w TypeScript](https://www.geeksforgeeks.org/typescript-string-operations/)

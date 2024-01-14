@@ -1,47 +1,69 @@
 ---
-title:                "Javascript: 테스트 작성"
+title:                "Javascript: 테스트 작성하기"
+simple_title:         "테스트 작성하기"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 테스트를 작성할까요?
+코드를 작성하면서, 우리는 자주 코드가 제대로 동작하는지 확인하고 싶어합니다. 테스트를 작성하면, 우리는 코드의 여러 부분을 간단한 방법으로 검증할 수 있고, 코드의 품질을 보장할 수 있습니다.
 
-코드 테스트를 작성하는 이유는 단순입니다. 안정성과 신뢰성 있는 코드를 제공하기 위함입니다.
-
-## 방법
-
-코드 테스트를 작성하는 방법은 간단합니다. Javascript에서 코드를 작성하고 테스트를 실행하는 예시를 아래 코드 블록으로 확인하실 수 있습니다.
+## 작성하는 방법
+우리는 `assert` 함수를 사용하여 테스트를 작성할 수 있습니다. 이 함수는 Boolean 값과 함께 비교하여 코드의 결과를 검증합니다. 예를 들어, 우리가 아래와 같은 코드를 가지고 있다고 합시다.
 
 ```Javascript
-// 덧셈 함수 테스트
-function sum(a, b) {
+function add(a, b) {
   return a + b;
 }
 
-// 예상 결과값: 5
-console.log(sum(2,3));
-
-// 예상 결과값: 11
-console.log(sum(5,6));
+const result = add(2, 3);
 ```
 
-위 코드에서는 덧셈 함수를 정의한 후, 예상 결과값을 기대하여 `console.log()`를 이용해 테스트하고 있습니다. 정상적으로 동작하는 경우 예상 결과값과 실제 결과값이 일치하여 테스트 성공으로 간주할 수 있습니다.
+우리는 `assert` 함수를 사용하여 이 함수가 제대로 동작하는지 확인할 수 있습니다.
 
-## 심층 분석
+```Javascript
+assert(result === 5); // 테스트 통과
+```
 
-코드 테스트를 작성하면서 더 깊게 알아야 할 내용이 있습니다. 예를 들어, `assert` 함수를 사용하면 원하는 예상 값과 실제 값이 일치하는지 확인할 수 있습니다. 또한, `expect` 문법을 사용하면 코드가 예상한 결과를 반환하는지 여부를 검사할 수 있습니다. 이를 통해 더 간편하고 정확한 테스트를 작성할 수 있습니다.
+하지만 `assert` 함수만으로는 우리가 어떤 값이 잘못되었는지 알 수 없습니다. 이 때는 `expect` 함수를 사용하여 더 자세한 정보를 얻을 수 있습니다. 예를 들어,
 
-## 참고 자료
+```Javascript
+expect(add(2, 3)).toBe(5); // 테스트 통과
+expect(add(2, 2)).toBe(5); // 테스트 실패
+```
 
-- [JavaScript 테스트 프로그래밍 기초](https://d2.naver.com/helloworld/6423756)
-- [테스트 주도 개발 (TDD)](https://edykim.com/ko/post/introduction-to-tdd/)
-- [Jest를 이용한 자바스크립트 테스트 코드 작성하기](https://jeonghwan-kim.github.io/2018/05/28/javascript-test.html)
+`expect` 함수는 결과 값이 `toBe` 함수의 인자와 일치하는지를 확인합니다. 또한 `expect` 함수는 `not` 함수와 함께 사용하여 결과 값이 일치하지 않는지를 확인할 수도 있습니다.
 
-## 참고 자료
+```Javascript
+expect(add(2, 2)).not.toBe(5); // 테스트 통과
+```
 
-- [JavaScript Testing 101](https://d2.naver.com/helloworld/6423756)
-- [Test-Driven Development (TDD)](https://edykim.com/en/post/introduction-to-tdd/)
-- [Writing JavaScript test code using Jest](https://jeonghwan-kim.github.io/2018/05/28/javascript-test.html)
+마지막으로, 우리는 `describe` 함수를 사용하여 여러 테스트들을 그룹화할 수 있습니다. 예를 들어,
+
+```Javascript
+describe("add 함수", () => {
+  it("두 수를 더합니다.", () => {
+    expect(add(2, 2)).toBe(4); // 테스트 통과
+  });
+  
+  it("두 개의 매개변수가 없으면 NaN을 반환합니다.", () => {
+    expect(add()).toBe(NaN); // 테스트 통과
+  });
+});
+```
+
+## 깊게 들어가기
+테스트를 작성할 때에는 다양한 함수들을 사용할 수 있습니다. 위에서 언급한 `assert`와 `expect` 외에도, `toBe` 함수 대신 `toEqual` 함수를 사용하여 깊은 비교를 할 수 있습니다. 또는 `toThrow` 함수를 사용하여 예외 상황을 검증할 수도 있습니다. 테스트를 작성할 때, 자주 사용될 수 있는 함수들을 익혀두는 것이 좋습니다.
+
+## 또 다른 정보들
+- [Jest 공식 문서](https://jestjs.io/docs/en/using-matchers)
+- [Mocha 공식 문서](https://mochajs.org/#getting-started)
+- [Jasmine 공식 문서](https://jasmine.github.io/tutorials/your_first_suite)
+
+## 함께 보기
+- [ES6 문법 정리](https://github.com/Cho-S/project-pig/blob/master/ES6%20%EB%AC%B8%EB%B2%95.md)
+- [Javascript 비동기 처리](https://github.com/Cho-S/project-pig/blob/master/Asynchronous%20Javascript.md)

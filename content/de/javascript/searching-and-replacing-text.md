@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: Textsuche und -ersetzung"
+simple_title:         "Textsuche und -ersetzung"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/searching-and-replacing-text.md"
 ---
 
@@ -9,43 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Suchen und Ersetzen von Text ist ein wichtiger Teil der Programmierung. Es ermöglicht uns, schnell und effizient Fehler zu beheben, bestimmte Teile des Codes zu ändern oder Daten zu aktualisieren. Mit JavaScript können wir diese Funktionen einfach in unsere Programme integrieren und somit eine bessere Kontrolle über unseren Code haben.
+Suchen und Ersetzen von Text im Programmieren ist ein nützliches Werkzeug, um effizient fehlerhafte oder veraltete Texte in einem Code zu ersetzen. Dies kann dazu beitragen, die Lesbarkeit und Funktionalität des Codes zu verbessern.
 
-## Wie funktioniert es
+## Wie man es macht
 
-Es gibt mehrere Möglichkeiten, um Text in JavaScript zu suchen und zu ersetzen. Wir nutzen dazu die Funktion `replace()`, die in der String-Klasse eingebaut ist. Das folgende Beispiel zeigt, wie wir alle Vorkommnisse eines bestimmten Textes in einem String ersetzen können:
+Die Grundidee beim Suchen und Ersetzen von Text in Javascript ist, dass man nach einem bestimmten Text sucht und ihn durch einen anderen ersetzt. Dies kann entweder in einem bestimmten Bereich oder im gesamten Code durchgeführt werden. Zum Beispiel kann man alle Vorkommnisse von "Hund" durch "Katze" ersetzen oder nur innerhalb einer bestimmten Funktion.
 
-```
-let text = "Dies ist ein Beispieltext, der einige Fehler enthält.";
-let neuerText = text.replace("Fehler", "Änderungen");
+```Javascript
+// Einfaches Beispiel für die Verwendung von String.replace()
+let string = "Ich habe einen Hund namens Max.";
+let newString = string.replace("Hund", "Katze");
 
-console.log(neuerText); // Ausgabe: "Dies ist ein Beispieltext, der einige Änderungen enthält."
-```
-
-Wir können auch eine reguläre Ausdrucksübereinstimmung verwenden, um gezieltere Suchen und Ersetzungen durchzuführen. Zum Beispiel können wir alle Zahlen in einem String durch Nullen ersetzen, indem wir folgenden Code verwenden:
-
-```
-let text = "Ich habe 3 Äpfel, 2 Birnen und 5 Orangen.";
-let neuerText = text.replace(/[0-9]/g, "0");
-
-console.log(neuerText); // Ausgabe: "Ich habe 0 Äpfel, 0 Birnen und 0 Orangen."
+console.log(newString);
+// Ausgabe: "Ich habe eine Katze namens Max."
 ```
 
-Es gibt auch die Möglichkeit, eine Funktion als zweites Argument anzugeben, die den Übereinstimmungen verschiedene Aktionen zuweisen kann. In diesem Beispiel geben wir allen Vokalen in einem String den entsprechenden Vokal aus der zweiten Hälfte des Alphabets aus:
+Man kann auch reguläre Ausdrücke verwenden, um nach bestimmten Mustern oder Zeichenfolgen zu suchen und zu ersetzen. Hier ist ein Beispiel, bei dem alle Zahlen in einer Zeichenfolge durch Sternchen ersetzt werden:
 
+```Javascript
+let string = "Ich gehe am 01. Dezember zum Sport.";
+let newString = string.replace(/[0-9]/g, "*");
+
+console.log(newString);
+// Ausgabe: "Ich gehe am **. Dezember zum Sport." 
 ```
-let text = "JavaScript";
-let neuerText = text.replace(/[aeiou]/g, (vokal) => String.fromCharCode(vokal.charCodeAt(0) + 5));
 
-console.log(neuerText); // Ausgabe: "PhfwwdVyf%"
+Es ist auch möglich, den ersetzten Text dynamisch aus einer Funktion zu generieren. Hier ist ein Beispiel, bei dem das aktuelle Datum als Ersatz für einen Platzhalter verwendet wird:
+
+```Javascript
+let string = "Heute ist [current_date].";
+let newString = string.replace("[current_date]", new Date().toDateString());
+
+console.log(newString);
+// Ausgabe: "Heute ist Sat Sep 26 2020."
 ```
 
-## Tieferes Eintauchen
+## Tiefergehende Informationen
 
-Um effizienter mit der `replace()`-Funktion umgehen zu können, können wir auch einige zusätzliche Parameter verwenden. Zum Beispiel können wir `i` hinzufügen, um die Suche nach Texten unabhängig von Groß- und Kleinschreibung zu machen, oder `g` für eine globale Suche, die alle Übereinstimmungen im String ersetzt. Wir können auch Callback-Funktionen verwenden, um die Übereinstimmungen individuell zu bearbeiten. Eine detaillierte Anleitung finden Sie in der offiziellen [Dokumentation von JavaScript](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replace).
+Für komplexere Aufgaben des Suchens und Ersetzens von Text gibt es in Javascript auch die Methode String.replaceAll(), die seit dem ES2021 Update verfügbar ist. Diese Methode ermöglicht es, alle Vorkommnisse eines Musters auf einmal zu ersetzen, anstatt nur das erste oder alle nach der ersten Suche.
+
+Es ist auch wichtig zu beachten, dass bei der Verwendung von regulären Ausdrücken beim Ersetzen die Groß- und Kleinschreibung berücksichtigt wird. Wenn man dies vermeiden möchte, kann man die Flags "g" und "i" verwenden, um die Suche global und case-insensitive zu gestalten.
 
 ## Siehe auch
 
-- [String-Klasse von JavaScript](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String)
-- [Reguläre Ausdrücke in JavaScript](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Grundlegendes zu JavaScript](https://developer.mozilla.org/de/docs/Web/JavaScript)
+Hier sind einige Links, die dir helfen können, mehr über das Suchen und Ersetzen von Text in Javascript zu erfahren:
+
+- [MDN Web Docs: String.replace()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [MDN Web Docs: String.replaceAll()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)
+- [W3Schools: JavaScript Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)

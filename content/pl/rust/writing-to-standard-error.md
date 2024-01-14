@@ -1,54 +1,44 @@
 ---
 title:                "Rust: Pisanie do standardowego błędu"
+simple_title:         "Pisanie do standardowego błędu"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego?
 
-Pisanie do błędu standardowego jest częstym wyzwaniem dla programistów w języku Rust. Jest to przydatna umiejętność, która może pomóc w debugowaniu kodu i wykrywaniu błędów w programie. Ponadto, jest to również ważne z punktu widzenia wydajności i prawidłowego działania aplikacji. W tym blogu dowiecie się, dlaczego warto poświęcić czas na naukę pisania do błędu standardowego w języku Rust.
+Pisanie do standardowego błędu może wydawać się niepotrzebnym lub nawet irytującym zadaniem podczas programowania w Rust. Jednak jest to ważna praktyka, która może pomóc w diagnozowaniu błędów i ułatwić debugowanie programów. W tym artykule dowiesz się, dlaczego warto pisać do standardowego błędu i jak to zrobić w języku Rust.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Pisanie do błędu standardowego w języku Rust jest proste i wymaga zaledwie kilku linijek kodu. Przykładowy kod można znaleźć poniżej:
+Pisanie do standardowego błędu w języku Rust jest proste i wymaga użycia metody ``eprintln!``. Przykładowy kod wyglądałby następująco:
 
 ```Rust
-use std::io::Write;
-
 fn main() {
-    writeln!(std::io::stderr(), "Przykładowy błąd").expect("Nie można zapisać do standardowego błędu!");
+    let name = "Kasia";
+    let age = 25;
+    eprintln!("Witaj, nazywam się {} i mam {} lat.", name, age);
 }
 ```
 
-Powyższy kod wykorzystuje metodę `writeln` z modułu `io` do wypisania tekstu do błędu standardowego. Warto zauważyć, że musimy zaimportować moduł `Write` aby móc korzystać z tej metody. Dzięki temu, nasze wyjście jest sformatowane w sposób przejrzysty i łatwy do odczytania. Poniżej znajduje się przykładowy output:
+Output tego kodu wyglądałby następująco:
 
-```
-Przykładowy błąd
-```
-
-## Głębsza analiza
-
-Wraz z powyższym przykładem, jesteśmy w stanie wypisać proste wiadomości do błędu standardowego. Jednak, warto pamiętać, że możemy również wypisać wartości zmiennych czy nawet całe informacje o błędach. W tym celu, możemy wykorzystać makra dostępne w języku Rust, takie jak `println` czy `eprintln`. Przykładowo, jeśli chcemy wypisać wartość zmiennej `x` do błędu standardowego, możemy użyć poniższego kodu:
-
-```Rust
-eprintln!("Wartość zmiennej x wynosi: {}", x);
+```text
+Witaj, nazywam się Kasia i mam 25 lat.
 ```
 
-Ponadto, możemy również użyć konsoli deweloperskiej (ang. debug console) aby wyświetlić dokładniejszą informację o błędzie. Jest to przydatne przy debugowaniu aplikacji i znajdowaniu dokładnego punktu w którym wystąpił błąd. Aby tego dokonać, wystarczy zmodyfikować nasz kod w ten sposób:
+## Deep Dive
 
-```Rust
-eprintln!("Nie udało się zainicjalizować zmiennej: {:?}, error: {}", x, error);
-```
+Standardowy błąd jest jednym z trzech strumieni wyjścia w języku Rust, obok standardowego wyjścia i standardowego wyjścia błędów. Różni się on od pozostałych dwóch tym, że jest pisany do konsoli błędów, zamiast do standardowego wyjścia. Dzięki temu, nawet w przypadku wystąpienia błędów, informacje są wyświetlane w odpowiednim miejscu, a program może kontynuować swoje działanie. Oczywiście, pisanie do standardowego błędu nie powinno być wykorzystywane jako główna metoda raportowania błędów w programie, jednak może być bardzo przydatne w procesie debugowania i analizy kodu.
 
-Powyższy kod wyświetli nam informację o wartości zmiennej `x` oraz błędzie `error`. Jest to tylko przykład możliwości jakie daje nam pisanie do błędu standardowego w języku Rust.
+## Zobacz też
 
-## Zobacz także
+Jeśli chcesz dowiedzieć się więcej o standardowym wyjściu, standardowym wyjściu błędów i innych aspektach pisania w Rust, polecamy zapoznanie się z poniższymi linkami:
 
-Jeśli chcecie jeszcze bardziej zgłębić temat pisania do błędu standardowego w języku Rust, zapoznajcie się z poniższymi linkami:
-
-- [Dokumentacja Rust](https://doc.rust-lang.org/std/io/trait.Write.html)
-- [Samouczek Rust](https://doc.rust-lang.org/book/ch12-00-an-io-project.html)
-- [Forum Rust](https://users.rust-lang.org/t/writing-to-stderr/37039)
+- https://doc.rust-lang.org/std/io/struct.Stderr.html
+- https://doc.rust-lang.org/book/ch01-03-hello-cargo.html#inputoutput
+- https://doc.rust-lang.org/book/ch08-01-vectors.html

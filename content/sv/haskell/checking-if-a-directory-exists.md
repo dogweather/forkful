@@ -1,43 +1,42 @@
 ---
 title:                "Haskell: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att kontrollera om en mapp existerar är en viktig del av att skapa stabila och pålitliga program. Genom att ha ett sätt att hantera fall där en mapp kanske inte finns, kan du undvika kraschar och felmeddelanden.
 
-## Hur man gör
-Det finns flera sätt att kontrollera om en mapp existerar i Haskell. Ett enkelt sätt är att använda "doesDirectoryExist" funktionen från "System.Directory" modulen. Denna funktion tar en sökväg som argument och returnerar en Bool, True om mappen existerar och False annars.
+Det kan finnas många anledningar till varför någon skulle vilja veta om en viss mapp eller katalog existerar. Det kanske är för att kontrollera om en fil ska sparas på rätt plats, eller för att se om en viktig resurs är tillgänglig innan man fortsätter med ett program. Oavsett orsaken är det en viktig del av programmering att kunna hantera sådana situationer. I Haskell är det enkelt att kontrollera om en mapp existerar eller inte.
 
-```Haskell
-import System.Directory
+## Hur man gör det
 
--- Kontrollera om mappen "test" existerar
-doesDirectoryExist "test"
--- Output: False
-```
-
-En annan metod är att använda "listDirectory" funktionen. Denna funktion returnerar en lista av alla filer och mappar i en given sökväg. Genom att använda "filter" funktionen kan du sedan kontrollera om en specifik mapp är i listan.
+För att kontrollera om en mapp eller katalog existerar i Haskell kan du använda funktionen `doesDirectoryExist` från modulen `System.Directory`. Här är ett enkelt exempel som visar hur den kan användas:
 
 ```Haskell
 import System.Directory
 
--- Hämta en lista av alla filer och mappar i "test" mappen
-listDirectory "test"
--- Output: ["file1.txt", "file2.txt", "subdir"]
-
--- Kontrollera om "subdir" mappen finns i listan
-elem "subdir" $ listDirectory "test"
--- Output: True
+main = do
+    exists <- doesDirectoryExist "minmapp"
+    if exists
+        then putStrLn "Mappen finns!"
+        else putStrLn "Mappen finns inte."
 ```
+
+I detta exempel kontrollerar vi om mappen "minmapp" existerar på vår dator. Om den gör det, skriver vi ut ett meddelande som bekräftar det. Om den inte existerar skriver vi istället ut ett annat meddelande. En enkel men användbar funktion!
 
 ## Djupdykning
-En annan viktig aspekt att tänka på när du kontrollerar om en mapp existerar är eventuella rättighetsproblem. Om ditt program inte har rättigheter att läsa en viss mapp kan "doesDirectoryExist" funktionen ge ett felaktigt resultat. Det är också viktigt att notera att både "doesDirectoryExist" och "listDirectory" funktionen använder sig av "IO" monaden, vilket innebär att du behöver använda en "do" notation för att använda dessa funktioner.
 
-## Se också
-- [System.Directory dokumentation](https://hackage.haskell.org/package/base-4.15.1.0/docs/System-Directory.html)
-- [Guide för hantering av filer och mappar i Haskell](https://www.codementor.io/@meatflavour/an-introduction-to-working-with-files-in-haskell-31mwx6rh6l)
+Nu när vi vet hur man kontrollerar om en mapp eller katalog existerar i Haskell kan vi titta lite närmare på hur funktionen `doesDirectoryExist` fungerar. Den tar en sträng, som är sökvägen till mappen eller katalogen som ska kontrolleras, som argument och returnerar sedan en boolesk värde som indikerar om mappen existerar eller inte. Om sökvägen är relativ, så utgår den från den aktuella arbetsmappen. Om sökvägen är absolut, så används den direkt. Detta innebär också att sökvägen måste anges i rätt form beroende på det operativsystem som används.
+
+Funktionen `doesDirectoryExist` är också rekursiv och kommer att söka igenom alla undermappar för att kontrollera om de också existerar. Om åtkomsträttigheter hindrar åtkomst till någon av undermapparna, så kommer funktionen att returnera `False` oavsett om mappen faktiskt existerar eller inte.
+
+## Se även
+
+- [Haskell.org - Working with Directories](https://www.haskell.org/hoogle/?hoogle=directory)
+- [Haskell for Mac - File System Interaction](http://haskellformac.com/guides/basics/filesystem.html)
+- [HaskellWiki - System.Directory](https://wiki.haskell.org/System.Directory)

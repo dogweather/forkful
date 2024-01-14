@@ -1,58 +1,66 @@
 ---
-title:                "PHP: 온소트 파일 만들기"
+title:                "PHP: 임시 파일 생성"
+simple_title:         "임시 파일 생성"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜 만들까요?
 
-임시 파일 생성에 참여하는 *왜* 누군가에 대해 1-2 문장으로 설명합니다.
+일시적인 파일을 생성하는 이유는 다양합니다. 예를 들어, 우리는 PHP 프로그래밍에서 종종 파일을 다루거나 읽어야 할 때가 있습니다. 이러한 파일을 생성할 때, 파일이 데이터를 저장하거나 임시적인 작업에 사용될 수 있습니다.
 
-임시 파일을 생성하는 것은 PHP 프로그래밍에서 매우 유용합니다. 대개 이런 파일들은 일시적으로 사용되며 다른 프로그램이나 프로세스에서 읽거나 쓰기에 사용됩니다. 예를 들어, 파일을 다운로드하거나 데이터베이스를 업데이트하는 동안 매우 유용합니다.
+## 만드는 방법
 
-## 사용 방법
+가장 간단한 방법은 `tempnam()` 함수를 사용하는 것입니다. 이 함수는 임시 파일의 이름과 경로를 반환합니다.
 
-PHP의 `tempnam()` 함수는 임시 파일을 생성하는 데 큰 도움이 됩니다. 이 함수는 첫 번째 매개 변수로 사용할 임시 파일 경로, 두 번째 매개 변수로 접두사 및 세 번째 매개 변수로 임시로 접근 가능한 디렉토리 위치를 사용합니다. 예를 들어:
-
-```PHP
-$temp_file = tempnam('/tmp', 'my_temp_file_'); // /tmp/my_temp_file_qsObqT
+```
+<?php
+$filename = tempnam(sys_get_temp_dir(), "temp");
+echo $filename;
+?>
 ```
 
-임시 파일 이름은 임시 파일 경로와 접두사로 생성되고 유일한 이름이 보장됩니다. 이제 이 파일에 데이터를 쓰거나 기존 파일의 데이터를 읽을 수 있습니다.
+위의 코드는 현재 시스템의 임시 디렉토리에 "temp"라는 이름의 임시 파일을 생성하고 그 이름을 출력합니다. 아래는 예상되는 출력 결과입니다.
 
-```PHP
-$data = 'This is a sample data to write to the temp file';
-$file_handle = fopen($temp_file, 'w');
-fwrite($file_handle, $data);
-fclose($file_handle);
-
-// Output: 52 (bytes written)
+```
+/tmp/temp2345
 ```
 
-또는 기존 파일에서 데이터를 읽을 수 있습니다.
+또 다른 방법은 `tmpfile()` 함수를 사용하는 것입니다. 이 함수는 임시 파일의 파일 포인터를 반환합니다.
 
-```PHP
-$file_handle = fopen($temp_file, 'r');
-$data = fread($file_handle, filesize($temp_file));
-fclose($file_handle);
-echo $data;
-
-// Output: This is a sample data to write to the temp file
+```
+<?php
+$file = tmpfile();
+?>
 ```
 
-## 깊이 파고들기
+위의 코드는 현재 시스템의 임시 디렉토리에 파일을 생성하고 파일 포인터를 변수에 할당합니다.
 
-`tempnam()` 함수는 임시 파일을 생성하는 가장 간단한 방법입니다. 하지만 더 세부적으로 제어하고 싶다면 `tmpfile()` 함수를 사용할 수 있습니다. 이 함수는 임시 파일을 메모리에 생성하고 파일 포인터를 반환합니다. 따라서 파일이 생성되지 않거나 다른 프로세스에 의해 열리는 것을 방지할 수 있습니다. 또한 `fopen()` 함수를 사용하여 임시 파일을 열기 전에 `unlink()` 함수를 사용하여 파일을 삭제할 수도 있습니다.
+## 깊이 살펴보기
 
-## 가비지 컬렉션
+우리는 `tempnam()` 함수를 사용할 때, 임시 파일의 이름만 반환되며 파일 자체가 생성되지 않습니다. 따라서 이 파일에 데이터를 저장하려면 `fopen()` 함수를 사용하여 파일을 열어야 합니다.
 
-임시 파일 생성 후 반드시 `unlink()` 함수를 사용하여 파일을 삭제하는 것이 좋습니다. 이는 해당 파일이 더 이상 필요하지 않을 때 가비지 컬렉션이 발생하여 디스크 공간을 비울 수 있도록 합니다.
+```
+<?php
+$filename = tempnam(sys_get_temp_dir(), "temp");
+$file = fopen($filename, "w");
+fwrite($file, "This is a temporary file.");
+fclose($file);
+?>
+```
 
-## 보충 자료
+위의 코드는 임시 파일을 생성하고 데이터를 입력한 후 파일을 닫습니다.
 
-- [PHP 공식 문서 - `tempnam()` 함수](https://www.php.net/manual/en/function.tempnam.php)
-- [PHP 공식 문서 - `tmpfile()` 함수](https://www.php.net/manual/en/function.tmpfile.php)
-- [PHP 공식 문서 - `unlink()` 함수](https://www.php.net/manual/en/function.unlink.php)
+## 더 알아보기
+
+임시 파일을 생성하는 것은 PHP 프로그래밍에서 자주 사용되는 기능입니다. 그러므로 `tempnam()` 함수와 `tmpfile()` 함수를 잘 익히는 것이 중요합니다. 또한, 임시 파일을 사용하는 다양한 방법들을 더 알아보고 싶다면 아래 링크들을 참고해보세요.
+
+## 더 많은 정보
+
+- [PHP 공식 문서 - `tempnam()` 함수](https://www.php.net/manual/kr/function.tempnam.php)
+- [PHP 공식 문서 - `tmpfile()` 함수](https://www.php.net/manual/kr/function.tmpfile.php)
+- [w3schools - PHP 파일 관리](https://www.w3schools.com/php/php_file.asp)

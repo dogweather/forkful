@@ -1,37 +1,48 @@
 ---
 title:                "Elm recipe: Generating random numbers"
+simple_title:         "Generating random numbers"
 programming_language: "Elm"
-category:             "Numbers"
+category:             "Elm"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-Generating random numbers is a common task in computer programming, often used for games, simulations, and data analysis. By using randomly generated numbers, we can add an element of unpredictability and variation to our programs. This can make them more realistic, interesting, and even more secure.
+# Why: Exploring the Fun and Functionality of Random Numbers in Elm
 
-## How To
-To generate random numbers in Elm, we can use the `Random` module. First, we need to import it:
-```elm
-import Random
+Have you ever wanted to add some unpredictability to your Elm programs? Look no further than the power of random numbers! Not only can they add a touch of excitement to your code, but they also have practical applications in games, simulations, and much more.
+
+# How To: Generating Random Numbers in Elm
+
+To get started with random numbers in Elm, we first need to import the Random module. Then, we can use the `generate` function to create a random number generator. Here's an example of generating a random integer between 1 and 10:
+
+```Elm
+import Random exposing (..)
+
+randomNumGenerator : Random.Generator Int
+randomNumGenerator =
+  generate (Int.range 1 10)
+
+randomNum : Int
+randomNum =
+  Random.generate randomNumGenerator
 ```
-Next, we can use the `generate` function to create a random number within a specific range. For example, let's generate a random number between 1 and 10:
-```elm
-Random.generate (\_ -> Random.int 1 10)
-```
-This will return a `Cmd Int` object, which can be used in our `update` function to modify our model. We can also use `map` to convert the `Cmd Int` to a `Msg` that can be handled by our `update` function:
-```elm
-Random.generate (\_ -> Random.int 1 10)
-    |> Cmd.map SetRandomNumber
-```
-In this example, we have a `SetRandomNumber` message that takes an `Int` parameter, which we can use in our `update` function to set the random number in our model.
 
-## Deep Dive
-Behind the scenes, the `Random` module uses a pseudo-random number generator (PRNG) to generate our random numbers. This means that the numbers are not truly random, but rather follow a deterministic algorithm based on a seed value. By providing a seed value, we can control and reproduce the sequence of generated numbers.
+In this code, we first define a generator that uses the `Int` range function to specify a range of numbers. Then, we use the `generate` function to actually create a random number based on that generator. Now, every time the `randomNum` variable is called, a different integer between 1 and 10 will be generated.
 
-If we want to generate more complex data structures, such as lists or custom types, we can use `Random.Generator` to create a generator for our desired structure and then use `Random.generate` to produce a value from the generator.
+We can also use the `generate` function to create random numbers of different types, including floats, booleans, and even lists. Check out the [official Elm documentation](https://package.elm-lang.org/packages/elm/random/latest/Random#generate) for more examples and details.
 
-## See Also
-- [Elm documentation on Random](https://package.elm-lang.org/packages/elm/random/latest/)
-- [Article on the importance of random numbers in programming](https://medium.com/@bmbouter/random-numbers-in-computer-programs-are-important-ebcb3a28d8b9)
-- [Tutorial on generating random numbers in Elm with examples](https://www.elm-tutorial.org/en/01-foundations/online-06-random.html)
+# Deep Dive: Understanding Randomness in Elm
+
+The `generate` function in Elm uses a seed to generate pseudo-random numbers. This means that the same seed will always produce the same sequence of random numbers. However, by changing the seed, we can get a different sequence of numbers.
+
+Why is this important? Well, it allows us to create reproducible results in our programs. This is especially useful in testing and debugging scenarios. We can also use different seeds to create different "playthroughs" of our programs, adding even more variety to our applications.
+
+# See Also
+
+For more information on random numbers in Elm, check out these helpful links:
+
+- [Official Elm Random Module Documentation](https://package.elm-lang.org/packages/elm/random/latest/Random)
+- [Article: Using Random Numbers in Elm](https://thoughtbot.com/blog/generating-random-values-in-elm)
+- [Tutorial: Understanding Randomness in Elm](https://becoming-functional.com/understanding-randomness-in-elm-7d2f51c6c416)

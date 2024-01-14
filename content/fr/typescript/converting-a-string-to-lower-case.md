@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Conversion d'une chaîne en minuscules"
+title:                "TypeScript: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,39 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La conversion de chaîne de caractères en minuscules peut être utile lors de la manipulation de données dans un programme TypeScript. Cela peut faciliter la recherche et la comparaison de chaînes de caractères sans tenir compte de la casse.
+Il est souvent nécessaire de convertir une chaîne de caractères en minuscules dans le cadre du développement de logiciels. Cela peut être utile pour comparer des chaînes de caractères de manière insensible à la casse ou pour simplement rendre une chaîne plus lisible pour l'utilisateur.
 
 ## Comment faire
 
-Il existe plusieurs façons de convertir une chaîne de caractères en minuscules en TypeScript. Voici quelques exemples :
+Pour convertir une chaîne de caractères en minuscules en TypeScript, il suffit d'utiliser la méthode `toLowerCase()` sur la chaîne en question. Voici un exemple de code et sa sortie :
 
 ```TypeScript
-let texte = "Bonjour le Monde!";
-console.log(texte.toLowerCase());
-// sortie : bonjour le monde!
+let chaine = "Bonjour le Monde!";
+console.log(chaine.toLowerCase()); // affiche "bonjour le monde!"
 ```
 
-```TypeScript
-let mot = "EXEMPLE";
-console.log(mot.toLocaleLowerCase());
-// sortie : exemple
-```
+Comme vous pouvez le voir, la méthode `toLowerCase()` a converti toutes les lettres en minuscules.
 
-```TypeScript
-let phrase = "ceci est un EXEMPLE";
-console.log(phrase.toLowerCase());
-// sortie : ceci est un exemple
-```
+## Approfondissement
 
-## Plongée plus profonde
+En TypeScript, la méthode `toLowerCase()` utilise les règles de conversion Unicode pour déterminer quelle lettre doit être mise en minuscule. Cela signifie que la conversion peut différer en fonction de la langue ou de l'alphabet utilisé. Par exemple, la lettre "İ" en turc sera convertie en "i" en minuscule, alors qu'en anglais, elle sera convertie en "i̇".
 
-La méthode `toLowerCase()` est une fonction intégrée en TypeScript qui transforme une chaîne de caractères en minuscules. Elle utilise les règles de mise en minuscules de la locale actuelle de l'utilisateur, ce qui peut varier en fonction de la langue et de la région.
-
-Il est important de noter que la méthode `toLowerCase()` ne modifie pas la chaîne de caractères d'origine, mais renvoie plutôt une nouvelle chaîne de caractères avec la conversion en minuscules. Ainsi, si vous souhaitez utiliser la chaîne de caractères en minuscules, vous devrez la stocker dans une nouvelle variable.
-
-De plus, la méthode `toLowerCase()` ne fonctionne que sur les caractères de l'alphabet. Les symboles et caractères spéciaux resteront inchangés.
+De plus, il est important de noter que la méthode `toLowerCase()` ne modifie pas la chaîne originale, mais retourne une nouvelle chaîne convertie. Si vous souhaitez modifier la chaîne originale, il faudra la réaffecter à la variable d'origine.
 
 ## Voir aussi
 
-- [Documentation sur la méthode toLowerCase() de TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#lowercasing)
-- [Autres méthodes de manipulation de chaînes de caractères en TypeScript](https://www.typescriptlang.org/docs/handbook/strings.html#string-manipulation-using-string-methods)
+- [Documentation officielle TypeScript pour la méthode `toLowerCase()`](https://www.typescriptlang.org/docs/handbook/strings.html#string-operations)
+- [Article sur les règles de conversion Unicode pour la méthode `toLowerCase()`](https://unicode.org/reports/tr21/#Case_Folding)
+- [Article sur les différences de traitement de la casse dans différentes langues](https://en.wikipedia.org/wiki/Letter_case#Language-specific_differences)

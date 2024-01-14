@@ -1,72 +1,60 @@
 ---
 title:                "PHP recipe: Extracting substrings"
+simple_title:         "Extracting substrings"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why Extracting Substrings is Useful in PHP Programming
 
-Are you new to PHP programming and wondering what extracting substrings means? Or are you just looking to improve your skills? Whatever the case may be, extracting substrings is an essential skill to have in your programming toolkit. Substrings are portions of a larger string, and being able to extract them allows you to manipulate data and perform various tasks effectively. So, let's dive into how you can do it!
+Substring extraction is a useful tool in PHP programming as it allows for the manipulation of specific portions of a string. This can be beneficial when working with large strings and needing to extract certain data or when trying to modify a portion of a string without affecting the rest.
 
-## How To 
-Extracting substrings is a straightforward process in PHP. The `substr()` function is used to extract a specific portion of a string based on the starting point and length of the substring. Let's take a look at an example:
-
-```PHP
-$string = "Hello World!";
-$substr = substr($string, 0, 5);
-
-echo $substr; // Outputs "Hello"
-```
-
-In this example, we have a string "Hello World!", and we use the `substr()` function to extract the first five characters, starting from the index 0. The output of this code would be "Hello". 
-
-You can also extract substrings from the end of a string by using a negative starting point. For example:
+## How To Extract Substrings in PHP
 
 ```PHP
-$string = "Hello World!";
-$substr = substr($string, -6);
+// Example string
+$string = "Welcome to my blog!";
 
-echo $substr; // Outputs "World!"
+// Using substr() to extract substring at index 11 with a length of 5
+$substring = substr($string, 11, 5);
+echo $substring; // Output: blog!
 ```
 
-In this example, we extract the last six characters from the string "Hello World!" starting from the end. The output will be "World!".
-
-You can also use the `strpos()` function to find the position of a specific character or substring within a string and then use that position in the `substr()` function to extract a substring. For example:
+In the above example, we use the substr() function which takes in three parameters: the string we want to extract from, the starting index of the substring, and the length of the substring. By specifying a starting index and length, we can extract a specific portion of the original string.
 
 ```PHP
-$string = "Hello World!";
-$position = strpos($string, "W");
+// Example string
+$string = "Check out my website at www.example.com";
 
-$substr = substr($string, $position);
-
-echo $substr; // Outputs "World!"
+// Using strpos() and substr() to extract substring after "www."
+$index = strpos($string, "www.") + 4; // Finds index of the start of "www."
+$substring = substr($string, $index); // Extracts substring starting at index 12
+echo $substring; // Output: www.example.com
 ```
-In this example, we find the position of the letter "W" within the string "Hello World!" and use it to extract the substring starting from that position. The output will be "World!".
 
-You can also use the `str_replace()` function to replace specific substrings within a string with another substring. For example:
+In this example, we use a combination of the strpos() and substr() functions. With strpos(), we find the starting index of "www." and add 4 to account for the length of "www." itself. Then, we use substr() to extract the rest of the string starting from that index.
+
+## Deep Dive: Understanding the Substr() Function
+
+The substr() function is a powerful tool that can do more than just extract substrings. It can also be used to replace and insert portions of a string.
 
 ```PHP
-$string = "Hello World!";
-$modified = str_replace("World", "Universe", $string);
+// Example string
+$string = "Hello, world!";
 
-echo $modified; // Outputs "Hello Universe!"
+// Using substr() to replace "world" with "PHP"
+$modified_string = substr_replace($string, "PHP", 7, 5);
+echo $modified_string; // Output: Hello, PHP!
 ```
 
-In this example, we use the `str_replace()` function to replace the substring "World" with "Universe" within the string "Hello World!". The output will be "Hello Universe!".
+In this example, we use the substr_replace() function which takes in five parameters: the original string, the string we want to replace with, the starting index of the replacement, the length of the replacement, and an optional parameter for any inserted substring. Here, we replace "world" with "PHP" starting at index 7 and with a length of 5.
 
-## Deep Dive
+## See Also
 
-Now that you have an understanding of how to extract substrings, here are some additional things to keep in mind:
-
-- The `substr()` function is case-sensitive, so remember to consider the case when extracting a substring.
-- If the length parameter is not specified, the `substr()` function will extract the substring starting from the given position until the end of the string.
-- You can also use a variable instead of hardcoded values for the starting position and length of the substring.
-- Take advantage of other string functions, like `strlen()` to determine the length of a string, and `strrev()` to reverse a string, when extracting substrings.
-
-See Also
-- Official PHP Manual for [substr()](https://www.php.net/manual/en/function.substr.php), [strpos()](https://www.php.net/manual/en/function.strpos.php) and [str_replace()](https://www.php.net/manual/en/function.str-replace.php)
-- [String Functions in PHP](https://www.w3schools.com/php/php_ref_string.asp) from W3Schools
-- [Mastering PHP substr() Function with Examples](https://www.codeofaninja.com/2016/04/mastering-php-substr-function-with-examples.html) by CodeofaNinja
+- [PHP: substr()](https://www.php.net/manual/en/function.substr.php)
+- [PHP: substr_replace()](https://www.php.net/manual/en/function.substr-replace.php)
+- [PHP: string functions](https://www.php.net/manual/en/ref.strings.php)

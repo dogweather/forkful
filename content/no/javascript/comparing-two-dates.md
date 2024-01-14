@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: Sammenligning av to datoer"
+simple_title:         "Sammenligning av to datoer"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/comparing-two-dates.md"
 ---
 
@@ -9,75 +11,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Sammenligning av datoer i Javascript er nyttig for å filtrere og sortere data som inneholder datoer, for eksempel en liste over arrangementer eller transaksjonsdata.
+Når man jobber med datoer i Javascript, kan det ofte være behov for å sammenligne to datoer. Dette kan være nyttig for å finne ut om en dato er tidligere, senere eller lik en annen dato. Å sammenligne datoer er også viktig for å sortere dem i riktig rekkefølge eller for å filtrere ut bestemte datoer i en liste.
 
 ## Hvordan
 
-Det er flere metoder for å sammenligne to datoer i Javascript. En av de vanligste inkluderer å bruke ```Date``` objektet og metoden ```getTime()``` for å konvertere datoene til millisekunder og deretter sammenligne dem.
+For å sammenligne to datoer i Javascript, bruker vi de innebygde metoder for `Date`-objektet. Vi begynner med å opprette to datoer som vi vil sammenligne:
 
 ```Javascript
-let date1 = new Date('2020-10-15');
-let date2 = new Date('2020-10-20');
+let dato1 = new Date(2020, 5, 1);
+let dato2 = new Date(2020, 3, 15);
+```
 
-console.log(date1.getTime()); // 1602724800000
-console.log(date2.getTime()); // 1603156800000
+Vi kan så sammenligne disse to datoene ved å bruke følgende operatorer:
 
-if (date1.getTime() > date2.getTime()) {
-    console.log('date1 er etter date2');
-} else if (date1.getTime() === date2.getTime()) {
-    console.log('date1 er lik date2');
-} else {
-    console.log('date1 er før date2');
+- `>` står for større enn
+- `<` står for mindre enn
+- `>=` står for større enn eller lik
+- `<=` står for mindre enn eller lik
+- `===` står for lik
+
+La oss se på noen eksempler på hvordan vi kan bruke disse operatorene:
+
+```Javascript
+// Sjekker om dato1 er senere enn dato2
+if (dato1 > dato2) {
+  console.log("Dato1 er senere enn dato2");
+}
+
+// Sjekker om dato2 er tidligere enn dato1
+if (dato2 < dato1) {
+  console.log("Dato2 er tidligere enn dato1");
+}
+
+// Sjekker om dato1 er lik dato2
+if (dato1 === dato2) {
+  console.log("Dato1 er lik dato2");
 }
 ```
 
-Dette vil resultere i følgende output:
-
-```
-date1 er før date2
-```
-
-En annen metode er å bruke ```Date``` objektets metoder som ```getFullYear()```, ```getMonth()```, ```getDate()``` og sammenligne individuelle deler av datoen.
-
-```Javascript
-let date1 = new Date('2020-10-15');
-let date2 = new Date('2020-10-20');
-
-if (date1.getFullYear() > date2.getFullYear()) {
-    console.log('date1 er etter date2');
-} else if (date1.getFullYear() === date2.getFullYear()) {
-    if (date1.getMonth() > date2.getMonth()) {
-        console.log('date1 er etter date2');
-    } else if (date1.getMonth() === date2.getMonth()) {
-        if (date1.getDate() > date2.getDate()) {
-            console.log('date1 er etter date2');
-        } else if (date1.getDate() === date2.getDate()) {
-            console.log('date1 er lik date2');
-        } else {
-            console.log('date1 er før date2');
-        }
-    } else {
-        console.log('date1 er før date2');
-    }
-} else {
-    console.log('date1 er før date2');
-}
-```
-
-Dette vil også resultere i følgende output:
-
-```
-date1 er før date2
-```
+Vi kan også bruke disse operatorene i kombinasjon med `if-else`-setninger for å utføre ulike handlinger avhengig av resultatet av sammenligningen. Vi kan også bruke metoden `getTime()` for å konvertere datoen til millisekunder, noe som gjør det enklere å sammenligne datoen med andre verdier.
 
 ## Dypdykk
 
-Det er viktig å være oppmerksom på at sammenligning av datoer kan være utfordrende på grunn av tidssoner og ulike formater for datoobjekter i forskjellige miljøer. Det er også viktig å merke seg at to like datoer kan være forskjellige på millisekunderivå, og derfor bør man være forsiktig med å bruke streng sammenligning (```===```) i slike tilfeller.
+Når vi sammenligner datoer i Javascript, er det viktig å være klar over at det kan være noen fallgruver. På grunn av hvordan datoer er lagret og tolket i Javascript, kan to tilsynelatende like datoer likevel bli ansett som ulike.
 
-En annen ting å huske på er at Javascript støtter datoer tilbake til år 0, men noen eldre nettlesere kan ikke støtte dette og kan gi uforutsette resultater ved sammenligning. Derfor kan det være hensiktsmessig å bruke tredjepartsbiblioteker som Moment.js for å håndtere datoer og unngå slike problemer.
+For eksempel vil følgende kode returnere `false`:
+
+```Javascript
+let dato1 = new Date(2020, 5, 1);
+let dato2 = new Date(2020, 5, 1);
+console.log(dato1 === dato2); //false
+```
+
+Dette skjer fordi to `Date`-objekter vil kun bli ansett som like hvis de refererer til samme objekt i hukommelsen. Hvis vi heller sammenligner verdien av `getTime()`-metoden, vil koden returnere `true`:
+
+```Javascript
+let dato1 = new Date(2020, 5, 1);
+let dato2 = new Date(2020, 5, 1);
+console.log(dato1.getTime() === dato2.getTime()); //true
+```
+
+Det er også viktig å være klar over at datoer ofte tolkes forskjellig i ulike deler av verden. For eksempel vil `new Date(2020, 0, 1)` representere 1. januar 2020 i mange land, mens det i USA vil representere 31. desember 2019 på grunn av tidsforskjellen.
 
 ## Se også
 
-- [Moment.js dokumentasjon](https://momentjs.com/docs/)
-- [W3Schools tutorial om å sammenligne datoer i Javascript](https://www.w3schools.com/js/js_dates.asp)
-- [Medium artikkel om sammenligning av datoer i Javascript](https://medium.com/better-programming/how-to-compare-2-dates-in-javascript-ca5bfc0e31b6)
+- [Date object - MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Comparing dates in JavaScript - Stack Overflow](https://stackoverflow.com/questions/49682382/comparing-dates-in-node-js-in-different-timezones)

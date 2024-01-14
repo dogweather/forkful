@@ -1,73 +1,66 @@
 ---
 title:                "PHP recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "PHP"
-category:             "Testing and Debugging"
+category:             "PHP"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why Write Tests in PHP
-Writing tests is an essential aspect of web development in PHP. It may seem tedious and time-consuming in the beginning, but in the long run, it helps in creating robust and error-free code. Tests not only ensure that the code is working as expected but also provide confidence in the code's functionality. In this blog post, we will explore the process of writing tests in PHP to help you understand its importance and benefits.
+## Why
 
-## How To Write Tests in PHP
-Writing tests in PHP can be done by using various frameworks such as PHPUnit, Codeception, and Behat, to name a few. In this section, we will focus on PHPUnit, which is the most widely used testing framework for PHP.
+Writing tests is an essential part of any software development process. It helps ensure the quality and functionality of your code, catches bugs early on, and saves time in the long run. In this blog post, we will explore the importance of writing tests and how to approach it.
 
-To get started with PHPUnit, you need to have a basic understanding of PHPUnit's structure, which includes:
+## How To
 
-- Assertions: These are the methods that check whether the expected and actual values are equal.
-- Test Cases: These are the classes containing the actual tests to be executed.
-- Test Suite: This is a collection of test cases that can be executed together.
-- Test Runner: This is the command-line tool that executes the tests and displays the results.
-
-To create a test case, we need to create a new class and extend it from the PHPUnit_Framework_TestCase class. Let's create a simple test case to check the functionality of a basic math function.
+To start writing tests, you will need a PHP testing framework. One popular option is PHPUnit, which has a comprehensive set of tools for unit testing. Let's look at an example of a simple test using PHPUnit:
 
 ```PHP
 <?php
-use PHPUnit_Framework_TestCase as TestCase;
 
-class MathTest extends TestCase
+use PHPUnit\Framework\TestCase;
+
+class CalculatorTest extends TestCase
 {
     public function testAddition()
     {
-        $result = add(2, 3);
+        $calculator = new Calculator();
+        $result = $calculator->add(2, 3);
         $this->assertEquals(5, $result);
     }
 }
-
-function add($a, $b)
-{
-    return $a + $b;
-}
 ```
 
-In the above example, we have created a test case for a function that adds two numbers and used the `assertEquals` assertion to check the result. Now, we can run our test case using the test runner and get the following output:
+In this test, we are creating an instance of a Calculator class and using the `assertEquals()` method to check if the result of adding 2 and 3 is equal to 5. If the test fails, it means there is an error in our code and we need to fix it.
+
+PHPUnit also provides other helpful methods like `assertGreaterThan()` and `assertNotEmpty()` for different types of tests. It's important to write multiple tests for each function to cover different scenarios and edge cases.
+
+Running the test will give us the following output:
 
 ```
-PHPUnit 4.8.9 by Sebastian Bergmann and contributors.
+PHPUnit 9.5.1 by Sebastian Bergmann and contributors.
 
-.
+.                                                                   1 / 1 (100%)
 
-Time: 41 ms, Memory: 8.00Mb
+Time: 00:00.002, Memory: 4.00 MB
 
 OK (1 test, 1 assertion)
 ```
 
-We can also write multiple tests in one test case and execute them together using a test suite. This allows us to test different scenarios for a specific function or class.
+This means our test was successful, and our code is working as expected. If we change the expected result in our test to anything other than 5, the test will fail with a helpful message, allowing us to quickly fix the issue.
 
-## Deep Dive into Writing Tests
-Writing tests not only helps in catching errors but also plays a crucial role in refactoring and maintaining code. It becomes easier to make changes to the codebase when we have a set of tests to ensure that the functionality remains intact.
+## Deep Dive
 
-Some tips for writing effective tests in PHP include:
+When writing tests, it's essential to consider different factors that can affect the functionality of your code. For example, what if a user enters an invalid input? What if there is an error in a third-party library that your code is dependent on? Writing tests for these scenarios can prevent unexpected errors and ensure the stability of your code.
 
-- Use descriptive test names to make them more readable.
-- Write independent tests, so the results of one test do not affect the others.
-- Utilize data providers to avoid writing repetitive tests for multiple input values.
-- Aim to cover all the possible scenarios and edge cases in your tests.
+Another important aspect of writing tests is test coverage. It's not enough to have a few tests that pass; you need to have a comprehensive test suite that covers all parts of your code. This includes testing for different input values, handling exceptions, and checking edge cases.
 
-It is also essential to regularly run the tests and keep them updated to ensure the code's integrity. With continuous integration becoming an industry standard, writing tests has become a crucial aspect of the development process.
+It's also crucial to write tests for both your application code and your testing code. This ensures that your tests are accurate and reliable. Additionally, following a test-driven development (TDD) approach, where tests are written before the code, can greatly improve the quality of your code and reduce the chances of introducing bugs.
 
 ## See Also
+
 - [PHPUnit documentation](https://phpunit.de/documentation.html)
-- [Codeception](https://codeception.com/)
-- [Behat](https://behat.org/)
+- [Test-driven development: what it is and what it is not](https://medium.com/@jasonrigden/test-driven-development-what-it-is-and-what-it-is-not-91107b3c206a)
+- [Why code coverage is important](https://medium.com/@bryzzzl/why-code-coverage-is-important-bc969f21205f)

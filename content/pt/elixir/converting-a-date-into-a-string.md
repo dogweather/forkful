@@ -1,42 +1,50 @@
 ---
-title:                "Elixir: Transformando uma data em uma sequência de caracteres"
+title:                "Elixir: Convertendo uma data em uma string"
+simple_title:         "Convertendo uma data em uma string"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que converter uma data em uma string?
+# Por que converter uma data em uma string em Elixir?
 
-Converter uma data em uma string é uma tarefa comum na programação, especialmente em Elixir. Isso pode ser útil para exibir a data de uma forma mais legível para o usuário final, ou para fazer comparações e cálculos mais precisos.
+Converter uma data em uma string pode ser útil em muitas situações, como exibição de datas em formato legível ou armazenamento de dados em um banco de dados. Em Elixir, existem várias maneiras de realizar essa conversão, cada uma com suas próprias vantagens e desvantagens. Neste artigo, vamos explorar as diferentes opções para converter uma data em uma string em Elixir.
 
 ## Como fazer
 
-Em Elixir, existem várias maneiras de converter uma data em uma string. A forma mais simples é usando a função `to_string/1`, que pega uma data e a converte em uma string no formato "YYYY-MM-DD". Veja um exemplo abaixo:
+Existem várias maneiras de converter uma data em uma string em Elixir, dependendo de suas necessidades específicas. Vamos dar uma olhada em algumas opções com exemplos de código e saídas.
 
-```Elixir
-iex> date = ~D[2021-01-01]
-iex> to_string(date)
-"2021-01-01"
+### Utilizando o módulo `DateTime`
+
+O módulo `DateTime` é uma das maneiras mais comuns de trabalhar com datas em Elixir. Para converter uma data em uma string, podemos usar o método `format`, que nos permite especificar o formato da string de saída. Por exemplo:
+
+```elixir
+DateTime.utc_now() |> DateTime.to_string("|MM/dd/yyyy|")
 ```
+**Saída:** "|06/25/2021|"
 
-Para formatar a data de uma forma específica, podemos usar a biblioteca `Calendar` e suas funções `local_time/0` e `strftime!/2`. Você pode fornecer um formato personalizado usando os códigos de formatação, como `%Y` para o ano, `%m` para o mês e `%d` para o dia. Veja um exemplo abaixo:
+Ao usar o caractere `|` como delimitador, podemos aplicar um formato personalizado à data. No exemplo acima, usamos `MM` para representar o mês e `dd` para representar o dia. Para obter uma lista completa de opções de formatação disponíveis, consulte a documentação oficial.
 
-```Elixir
-iex> date = ~D[2021-01-01]
-iex> Calendar.local_time(date) |> Calendar.strftime!("%d/%m/%Y")
-"01/01/2021"
+### Utilizando o módulo `Calendar`
+
+Outra opção é utilizar o módulo `Calendar`, que possui uma função específica para converter uma data em uma string. O método `to_string` nos permite especificar o formato da saída, semelhante ao exemplo anterior.
+
+```elixir
+Calendar.local_time() |> Calendar.to_string("{YYYY}-{MM}-{DD}")
 ```
+**Saída:** "2021-06-25"
 
-## Mergulho profundo
+Neste exemplo, usamos opções semelhantes, como `YYYY` para o ano, `MM` para o mês e `DD` para o dia. Você também pode adicionar outras opções, como `hh` para a hora ou `mm` para os minutos.
 
-Ao converter uma data em uma string, é importante ter em mente a localidade e o fuso horário em que o código será executado. Elixir usa a biblioteca `Timex` para lidar com esses aspectos de data e hora, e é altamente recomendado usá-la ao trabalhar com datas em uma aplicação.
+## Profundidade
 
-Outro fator importante é a validação da entrada. Certifique-se de que a data fornecida seja válida, caso contrário, o código pode gerar erros ou resultados imprecisos.
+Ao converter uma data em uma string, é importante ter em mente que diferentes opções de formatação podem resultar em resultados diferentes. Por exemplo, o formato `dd` pode retornar o dia com um único ou duplo dígito, dependendo da data. Além disso, certifique-se de estar trabalhando com o fuso horário correto ao utilizar o módulo `DateTime`.
 
 ## Veja também
 
-- [Documentação do módulo Calendar](https://hexdocs.pm/elixir/Calendar.html)
-- [Documentação do módulo Timex](https://hexdocs.pm/timex/Timex.html)
-- [Blog post sobre formatação de datas em Elixir](https://gorails.com/blog/working-with-dates-and-times-in-elixir)
+- Documentação oficial do módulo DateTime: https://hexdocs.pm/elixir/DateTime.html 
+- Documentação oficial do módulo Calendar: https://hexdocs.pm/elixir/Calendar.html 
+- Formatação de datas e horas em Elixir: https://www.fluentinelixir.com/blog/date-and-time-formatting-in-elixir/

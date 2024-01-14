@@ -1,48 +1,47 @@
 ---
 title:                "Gleam: Å finne lengden til en streng"
+simple_title:         "Å finne lengden til en streng"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å finne lengden på en streng er en viktig oppgave i programmering. Det kan hjelpe deg med å håndtere tekst og data på en mer effektiv måte. Det kan også være nyttig når du jobber med tekstbehandling og dataanalyse. Her skal vi se på hvordan du kan finne lengden på en streng ved hjelp av Gleam-programmeringsspråket.
+Å finne lengden til en streng kan være en viktig og nyttig oppgave i programmering, spesielt når du jobber med tekstbehandling. Det kan hjelpe deg med å manipulere og analysere data, samt utføre bestemte handlinger basert på lengden til en streng.
 
 ## Hvordan
 
-Først må du forstå hva en streng er. En streng er en samling av tegn, vanligvis bokstaver og tall, som danner en tekst. For å finne lengden på en streng i Gleam, kan du bruke funksjonen `count` (tell). Denne funksjonen tar inn en streng som argument og returnerer antall tegn i strengen. La oss se på et eksempel:
+For å finne lengden til en streng ved hjelp av Gleam-programmeringsspråket, kan du følge disse enkle trinnene:
 
-```Gleam
-let streng = "Hei, verden!"
-let lengde = String.count(streng)
+```
+Gleam import intern as core
+
+// Definer en streng
+let streng = "Hei verden!"
+
+// Bruk funksjonen core.String.length til å finne lengden til strengen
+let lengde = core.String.length(streng)
+
+// Skriv ut lengden
+Gleam io.format("Lengden til strengen er {}", [lengde])
 ```
 
-I dette eksemplet definerer vi først en streng med teksten "Hei, verden!" og kaller deretter `count`-funksjonen for å få lengden av strengen. I dette tilfellet vil variabelen `lengde` bli satt til 13, siden det er 13 tegn i teksten.
+Konsollutgang: Lengden til strengen er 11
 
-Du kan også bruke `count`-funksjonen til å finne lengden på en streng som ikke er lagret i en variabel. For eksempel:
+Som du kan se, bruker vi funksjonen `core.String.length` for å finne lengden til strengen `Hei verden!`. Denne funksjonen tar inn en streng som argument og returnerer lengden som et heltall.
 
-```Gleam
-let lengde = String.count("Dette er en streng")
-```
+## Dypdykk
 
-I dette tilfellet vil `lengde`-variabelen bli satt til 19.
+I Gleam's `core` -modul finner vi flere funksjoner som kan være nyttige når du jobber med strenger. For eksempel har vi `core.String.count` -funksjonen som kan telle hvor mange ganger et bestemt tegn eller en streng dukker opp i en annen streng. Vi har også `core.String.slice` -funksjonen som kan hjelpe deg med å hente ut en del av en streng basert på et gitt start- og sluttpunkt.
 
-## Dykking dypere
+For å lære mer om de ulike funksjonene som er tilgjengelige i `core` -modulen for å jobbe med strenger, kan du sjekke ut documentasjonen på Gleams offisielle nettside.
 
-Det er viktig å merke seg at `count`-funksjonen returnerer antall tegn og ikke antall ord. Hvis du vil finne antall ord i en streng, må du først splitte strengen opp i en liste av ord, og deretter telle antall elementer i listen. Her er en kodebit som viser hvordan du kan gjøre det:
+## Se også
 
-```Gleam
-let streng = "Dette er en lang streng med flere ord"
-let ordliste = String.split(streng, " ") // Splitt strengen på mellomrom
-let antall_ord = List.length(ordliste) // Tell antall elementer i listen
-```
-
-I dette eksemplet deler vi først strengen opp ved hjelp av `split`-funksjonen og angir et mellomrom som skilletegn. Dette resulterer i en liste av ord i variabelen `ordliste`. Deretter kaller vi `length`-funksjonen for å få antall ord i listen, som i dette tilfellet vil være 7.
-
-# Se også
-
-- [Offisiell Gleam-dokumentasjon for strenger](https://gleam.run/documentation/std/string/)
-- [Gleam-repositoriet på GitHub](https://github.com/gleam-lang/gleam)
+- [Gleam Dokumentasjon](https://gleam.run/documentation/)
+- [Offisiell Gleam-nettside](https://gleam.run/)
+- [Github repository for Gleam](https://github.com/gleam-lang/gleam)

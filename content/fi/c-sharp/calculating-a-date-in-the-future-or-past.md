@@ -1,7 +1,9 @@
 ---
-title:                "C#: Tulevan tai menneen päivämäärän laskeminen"
+title:                "C#: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+simple_title:         "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,37 +11,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi joku haluaa laskea tulevaisuuden tai menneen päivämäärän? Se voi olla hyödyllistä esimerkiksi projektien suunnittelussa tai tulevien tapahtumien järjestämisessä. Myös tietokoneohjelmien ja -sovellusten kehittäjät saattavat tarvita tätä toiminnallisuutta.
+Joskus ohjelmoinnissa tarvitaan laskemaan tietty päivämäärä menneisyydessä tai tulevaisuudessa. Tämä voi tapahtua esimerkiksi laskutaulukoiden luomiseksi tai päivämääräperusteisten muistutusten tekemiseksi.
 
 ## Miten
 
-Laskutoimitus tulevaisuuden tai menneen päivämäärän laskemiseen on helppo toteuttaa C#-kielellä. Seuraavat koodilohkot näyttävät esimerkkejä laskutoimituksista ja niiden tulosteista.
-
 ```C#
-// Laske päivämäärä +2 vuotta nykyhetkestä
-DateTime tulevaPaiva = DateTime.Today.AddYears(2);
-Console.WriteLine(tulevaPaiva);
-// Tuloste: 23.12.2022
+using System;
 
-// Laske päivämäärä -1 kuukausi nykyhetkestä
-DateTime tulevaPaiva = DateTime.Today.AddMonths(-1);
-Console.WriteLine(tulevaPaiva);
-// Tuloste: 23.10.2020
+DateTime tanaan = DateTime.Today;
+DateTime tulevaPaiva = tanaan.AddMonths(3); // lisätään kolme kuukautta nykyiseen päivämäärään
+DateTime menneemPaiva = tanaan.AddYears(-2); // vähennetään kaksi vuotta nykyisestä päivämäärästä
 
-// Laske päivämäärä +5 päivää nykyhetkestä
-DateTime tulevaPaiva = DateTime.Today.AddDays(5);
-Console.WriteLine(tulevaPaiva);
-//Tuloste: 28.09.2021
+Console.WriteLine("Päivämäärä kolmen kuukauden päästä: " + tulevaPaiva.ToShortDateString());
+Console.WriteLine("Päivämäärä kaksi vuotta sitten: " + menneemPaiva.ToShortDateString());
 ```
 
-## Uppoaminen syvemmälle
+Tulostus:
 
-C#-kielen DateTime-luokassa on monta eri metodia, jotka mahdollistavat päivämäärän laskemisen tulevaisuuteen tai menneeseen. Lisäksi luokassa on hyödyllisiä ominaisuuksia, kuten DateTime.Now, joka palauttaa nykyhetken päivämäärän ja kellonajan.
+```
+Päivämäärä kolmen kuukauden päästä: 01.03.2022
+Päivämäärä kaksi vuotta sitten: 22.09.2019
+```
 
-Myös erilaiset aikavyöhykkeet ja kesä- ja talviaika vaikuttavat päivämäärien laskemiseen, joten on tärkeää huolehtia siitä, että käytetään oikeaa aikavyöhykettä ja päivämäärien välisiä eroja.
+Voit myös asettaa tietyn päivämäärän laskentaan käyttämällä `DateTime`-parametrejä:
+
+```C#
+DateTime syntymapaiva = new DateTime(1995, 1, 15); // päivämäärä syntymäpäivälleni
+DateTime tulevaSynttari = syntymapaiva.AddYears(1); // lisätään yksi vuosi syntymäpäivään
+
+Console.WriteLine("Seuraava syntymäpäivä: " + tulevaSynttari.ToShortDateString());
+```
+
+Tulostus:
+
+```
+Seuraava syntymäpäivä: 15.01.2022
+```
+
+## Syvällinen sukellus
+
+Voit myös laskea päivämäärän tietynä päivänä viikossa käyttämällä `DayOfWeek`-enumerointia ja `AddDays`-metodia:
+
+```C#
+DateTime tanaan = DateTime.Today;
+DateTime tulevaMaanantai = tanaan.AddDays(8 - (int)tanaan.DayOfWeek); // lisätään päiviä nykyiseen päivämäärään niin, että seuraava maanantai saadaan
+DateTime tulevaPerjantai = tanaan.AddDays(12 - (int)tanaan.DayOfWeek); // lisätään päiviä niin, että seuraava perjantai saadaan
+
+Console.WriteLine("Seuraava maanantai: " + tulevaMaanantai.ToShortDateString());
+Console.WriteLine("Seuraava perjantai: " + tulevaPerjantai.ToShortDateString());
+```
+
+Tulostus:
+
+```
+Seuraava maanantai: 04.10.2021
+Seuraava perjantai: 08.10.2021
+```
+
+Käytännöllisiä `DateTime`-metodeja ja enumerointeja löytyy lisää Microsoftin dokumentaatiosta.
 
 ## Katso myös
 
-- [DateTime-luokka C#-dokumentaatiossa](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
-- [Päivämäärän tarkistus C#-ohjelmoinnissa](https://www.c-sharpcorner.com/article/date-validation-in-C-Sharp/)
-- [Aikavyöhykkeiden hallinta C#-ohjelmoinnissa](https://www.educative.io/edpresso/how-to-manage-time-zones-in-csharp)
+- [Microsoftin DateTime-dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime?view=net-5.0)
+- [Perusohjeet päivämäärien laskemiseen C#-kielellä](https://keystrokecountdown.com/blog/2019/11/05/c-sharp-date-calculations/) (englanniksi)

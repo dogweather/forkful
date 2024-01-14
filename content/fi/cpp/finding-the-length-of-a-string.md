@@ -1,7 +1,9 @@
 ---
 title:                "C++: Merkkijonon pituuden löytäminen"
+simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/finding-the-length-of-a-string.md"
 ---
 
@@ -9,62 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi joku haluaisi löytää merkkijonon pituuden? On monia tilanteita, joissa tarvitsemme tätä tietoa esimerkiksi kun käsittelemme käyttäjän antamia syötteitä tai kun haluamme tarkistaa, että merkkijono mahtuu määriteltyyn muuttujan kokoon.
+Miksi haluaisimme etsiä merkkijonon pituutta? Todennäköisesti jossain vaiheessa ohjelmointia joudumme käsittelemään merkkijonoja ja niiden ominaisuuksia. Merkkijonon pituuden löytäminen on tärkeä taito, jota tarvitaan monissa ohjelmointitehtävissä.
 
 ## Miten
 
-Merkkijonojen pituuden löytäminen on varsin helppoa C++:ssa. Käytämme siihen standardikirjaston funktiota, joka on nimeltään `size()`. Alla on esimerkki, miten sitä käytetään:
+Merkkijonon pituus voidaan helposti löytää käyttämällä `length()` -funktiota. Tämä funktio palauttaa merkkijonon pituuden kokonaislukuna.
 
-```
+```C++ 
 #include <iostream>
 #include <string>
 
-int main() {
-  // Määritellään merkkijono
-  std::string s = "Tämä on esimerkkilause.";
+using namespace std;
 
-  // Tulostetaan merkkijonon pituus
-  std::cout << "Merkkijonon pituus on " << s.size() << " merkkiä." << std::endl;
-
-  return 0;
+int main()
+{
+    string s = "Tämä on esimerkki";
+    cout << "Merkkijonon pituus on: " << s.length() << endl;
 }
 ```
+**Output:**
+Merkkijonon pituus on: 18
 
-Tämä koodi tulostaa seuraavan tekstin: "Merkkijonon pituus on 22 merkkiä."
+## Syvempi sukellus
 
-## Syväsukellus
-
-Kun katsomme tarkemmin `size()`-funktiota, huomaamme, että se palauttaa `size_t` tietotyypin arvon. Tämä tarkoittaa, että se palauttaa merkkijonon pituuden kokonaislukuna. On myös hyvä muistaa, että merkkijonon pituus sisältää myös välilyöntimerkit ja muut erikoismerkit.
-
-Jos haluamme käyttää merkkijonon pituutta ehtolauseissa tai muissa laskutoimituksissa, voimme tallentaa sen muuttujaan ja käyttää sitä tarpeen mukaan.
-
-```
-#include <iostream>
-#include <string>
-
-int main() {
-  // Määritellään merkkijono
-  std::string s = "Tämä on esimerkkilause.";
-
-  // Tallennetaan merkkijonon pituus muuttujaan
-  size_t pituus = s.size();
-
-  // Käytetään muuttujaa ehtolauseessa
-  if (pituus < 50) {
-    std::cout << "Merkkijono on sopivan lyhyt." << std::endl;
-  }
-  
-  // Käytetään muuttujaa laskussa
-  std::cout << "Merkkijonon pituus on " << pituus * 2 << " merkkiä, kun se tuplataan." << std::endl;
-
-  return 0;
-}
-```
-
-Tämä koodi tulostaa seuraavan tekstin: "Merkkijono on sopivan lyhyt." sekä "Merkkijonon pituus on 44 merkkiä, kun se tuplataan."
+Miksi käyttää `length()` -funktiota sen sijaan, että laskettaisiin merkkien määrä itse? Tähän on useita syitä. Ensinnäkin, käyttämällä valmiiksi määriteltyä funktiota säästämme aikaa ja vaivaa, sillä funktio on optimoitu ja tehokas. Toiseksi, se takaa oikean tuloksen, sillä mukana tulevat turvatoimet välttävät virheellisiä laskutoimituksia. Lisäksi, jos käytämme esimerkiksi `for` -silmukkaa merkkijonon läpikäymiseen, `length()` -funktion käyttö helpottaa koodin ymmärtämistä ja vähentää virheiden mahdollisuutta.
 
 ## Katso myös
 
-- [C++ Ohjelmointiopas](https://www.tutorialspoint.com/cplusplus/index.htm)
-- [C++ Merkkijonot](https://www.geeksforgeeks.org/c-string-class-and-its-applications/)
-- [C++ Standardikirjasto](https://en.cppreference.com/w/cpp/header)
+- [Stringin käyttö C++:ssa](https://www.cplusplus.com/doc/tutorial/ntcs/)
+- [Merkkijonojen käsittely C++:ssa](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)
+- [Funktioiden käyttö C++:ssa](https://www.geeksforgeeks.org/functions-in-cpp/)

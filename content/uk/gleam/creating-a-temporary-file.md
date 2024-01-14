@@ -1,7 +1,9 @@
 ---
 title:                "Gleam: Створення тимчасового файлу"
+simple_title:         "Створення тимчасового файлу"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/gleam/creating-a-temporary-file.md"
 ---
 
@@ -9,74 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Створення тимчасового файлу є універсальним інструментом у всіх програмувальних мовах, також у Gleam. Тимчасові файли зберігають даний протягом обробки даних, а потім автоматично видаляються, що забезпечує більш ефективне використання ресурсів.
+Генерація тимчасових файлів є необхідним елементом для багатьох програм, тому цей пост допоможе вам зрозуміти, як створювати ці файли для використання у вашому коді.
 
-## Як
+## Як створити тимчасовий файл
 
-Для створення тимчасового файлу у Gleam, ми можемо використати вбудовану функцію `gleam_core.file_system.temp_file`. Перш ніж натиснути на жовту кнопку "Запустити" нижче, подумайте про область застосування тимчасового файлу і вставте свої власні дані у зазначений код:
-
-```Gleam
-import gleam_core.file_system
-
-file, error = gleam_core.file_system.temp_file()
-
-case (file, error) {
-  (Ok(file), _) -> io.print(file.path)
-  (_, Err(message)) -> io.print("Помилка: " ++ message)
-}
-```
-
-Вихідний код українською мовою виглядатиме наступним чином:
+Існує кілька способів створення тимчасових файлів у Gleam. Один з них - використання вбудованої функції `File.temp()`, яка створює файл у вказаній директорії з унікальним іменем.
 
 ```Gleam
-імпорт gleam_core.file_system
+import gleam/file
 
-файл, помилка = gleam_core.file_system.temp_file()
+// Створюємо тимчасовий файл у тимчасовій директорії
+let temp_file = file.temp("temp_dir")
 
-випадок (файл, помилка) {
-  (Ok(файл), _) -> io.print(файл.path)
-  (_, Err(message)) -> io.print("Помилка: " ++ повідомлення)
-}
+// Перевіряємо чи файл був створений
+file.exists(temp_file) // true
+
+// Видаляємо тимчасовий файл після виконання програми
+file.delete(temp_file)
+
 ```
 
-Після запуску програми, ви отримаєте шлях до створеного тимчасового файлу, який можна використовувати подальше для обробки даних.
-
-## Vertlieb
-
-Специфікації Gleam дають можливість більш детально опанувати тему створення тимчасових файлів. Наприклад, ви можете вказати префікс тимчасового файлу або вказати, чи має файл бути створеним у тимчасовій папці чи у вказаній користувацькій папці.
+Ще одним способом є використання модуля `Tempfile` з бібліотеки `gleam/os`, який дозволяє створювати тимчасовий файл з потоком даних.
 
 ```Gleam
-import gleam_core.file_system
+import gleam/os
+import gleam/io/tempfile
 
-file, error = gleam_core.file_system.temp_file(
-  prefix: "temp-",
-  dir: "/home/user/documents"
-)
+let write_data = "Hello, world!"
 
-case (file, error) {
-  (Ok(file), _) -> io.print(file.path)
-  (_, Err(message)) -> io.print("Помилка: " ++ message)
-}
+// Використовуємо Tempfile модуль з gleam/os бібліотеки
+Tempfile.with_file(
+  // Вказуємо передати дані для запису
+  write_data,
+  // Тимчасовий файл буде створений у поточній директорії
+  fn tempfile -> {
+    // Користуємося файлом для запису даних
+    gleam/os.write_file(tempfile, write_data)
+    // Повертаємо дані, що були записані у файл
+    gleam/os.read_file(tempfile)
+  }
+) // "Hello, world!"
+
 ```
 
-Українською мовою, той же код виглядатиме так:
+## Глибоке дослідження
 
-```Gleam
-імпорт gleam_core.file_system
+Використання функції `File.temp()` базується на системному виклику `mkstemp()`, який створює тимчасовий файл з унікальним іменем. Це гарантує, що імена файлів будуть унікальними і не будуть конфліктувати з іншими файлами в системі.
 
-файл, помилка = gleam_core.file_system.temp_file(
-  prefix: "temp-",
-  dir: "/доминиця/користувач/документи"
-)
+Також важливо врахувати, що тимчасові файли будуть видалені після закриття програми або після виклику функції `file.delete()`.
 
-випадок (файл, помилка) {
-  (Ok(файл), _) -> io.print(файл.path)
-  (_, Err(message)) -> io.print("Помилка: " ++ повідомлення)
-}
-```
+## Дивись також
 
-## Дивіться також
-
-- [Офіційна документація Gleam](https://gleam.run)
-- [Стаття про працю з файловою системою у Gleam](https://dev.to/codedge/working-with-files-in-gleam-5ain)
-- [Кодовий приклад зі створенням тимчасового файлу на GitHub](https://github
+- [Документація Gleam про тимчасові файли](https://gleam.run/core/file.html#temp)
+- [Документація Gleam про бібліотеку gleam/os](https://gleam.run/stdlib/gleam-os.html)
+- [Офіційний сайт Gleam](https://gleam.run/)

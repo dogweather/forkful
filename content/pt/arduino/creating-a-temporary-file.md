@@ -1,87 +1,66 @@
 ---
-title:                "Arduino: Criando um arquivo temporário."
+title:                "Arduino: Criando um arquivo temporário"
+simple_title:         "Criando um arquivo temporário"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que criar um arquivo temporário com Arduino?
+## Por que criar um arquivo temporário para o Arduino?
 
-Criar um arquivo temporário pode ser útil em diversas situações, principalmente quando se deseja armazenar dados temporariamente durante a execução de um programa. Esses arquivos são apagados automaticamente após o uso, o que economiza espaço na memória do Arduino.
+Criar um arquivo temporário pode ser uma tarefa muito útil em programação, especialmente para as pessoas que trabalham com Arduino. Um arquivo temporário é um arquivo que é criado para armazenar informações temporárias, que não são necessárias para serem salvas permanentemente. Esses arquivos podem ser úteis para realizar cálculos complexos, armazenar dados temporários ou até mesmo testar uma nova função.
 
 ## Como criar um arquivo temporário com Arduino
 
-Para criar um arquivo temporário com Arduino, primeiro precisamos utilizar a biblioteca "SD" que permite a comunicação com cartões SD. Em seguida, devemos escolher um nome para o arquivo temporário e definir o seu tamanho. Veja um exemplo de código:
-
-```
-#include <SD.h>             // Incluindo a biblioteca SD
-
-File arquivo;               // Criando uma variável para o arquivo
-int tamanho = 100;          // Definindo o tamanho do arquivo
-
-void setup(){
-    Serial.begin(9600);     // Inicializando a comunicação serial
-    arquivo = SD.open("temp.txt", FILE_WRITE);    // Criando o arquivo temporário
-    if (arquivo){           // Verificando se o arquivo foi criado com sucesso
-        Serial.println("Arquivo temporário criado com sucesso!");
-    }
-    else {                  // Caso o arquivo não tenha sido criado
-        Serial.println("Erro ao criar arquivo temporário!");
-    }
+```Arduino
+#include <SPI.h>
+#include <SD.h>
+String nomeArquivo = "tempfile.txt";
+void setup() {
+  //inicializa o cartão SD
+  Serial.begin(9600);
+  if (!SD.begin()) {
+    Serial.println("Erro ao iniciar o cartão SD");
+    return;
+  }
+  Serial.println("Inicialização do cartão SD bem sucedida");
+  // cria o arquivo temporário
+  File arquivoTemporario = SD.open(nomeArquivo, FILE_WRITE);
+  // verifica se o arquivo foi aberto corretamente
+  if (arquivoTemporario) {
+    Serial.println("Novo arquivo temporário criado");
+    // escreve algumas informações no arquivo
+    arquivoTemporario.println("Hello!");
+    arquivoTemporario.println("Este é um arquivo temporário");
+    arquivoTemporario.println("Criando com sucesso usando Arduino");
+    // fecha o arquivo
+    arquivoTemporario.close();
+  } 
+  else {
+    Serial.println("Erro ao criar o arquivo temporário");
+  }
 }
-
-void loop(){
-    // Realize alguma tarefa com os dados a serem armazenados no arquivo temporário
-    
-    // Escreva os dados no arquivo
-    arquivo.println("Dados a serem armazenados...");
-    delay(1000);
-    
-    // Feche o arquivo
-    arquivo.close();
-}
-```
-
-## Aprofundando no assunto
-
-Caso seja necessário criar um arquivo temporário com mais de uma variável, podemos utilizar a função "sprintf()" para formatar os dados antes de escrevê-los no arquivo. Essa função funciona de forma semelhante a um "printf()", onde podemos especificar o tipo de dado e a variável correspondente para formatá-lo. Veja um exemplo:
-
-```
-#include <SD.h>             // Incluindo a biblioteca SD
-
-File arquivo;               // Criando uma variável para o arquivo
-int valor1 = 10;            // Definindo as variáveis a serem armazenadas
-float valor2 = 3.14;
-
-void setup(){
-    Serial.begin(9600);     // Inicializando a comunicação serial
-    arquivo = SD.open("temp.txt", FILE_WRITE);    // Criando o arquivo temporário
-    if (arquivo){           // Verificando se o arquivo foi criado com sucesso
-        Serial.println("Arquivo temporário criado com sucesso!");
-    }
-    else {                  // Caso o arquivo não tenha sido criado
-        Serial.println("Erro ao criar arquivo temporário!");
-    }
-}
-
-void loop(){
-    // Realize alguma tarefa com os dados a serem armazenados no arquivo temporário
-    
-    // Formate os dados antes de escrevê-los no arquivo
-    char buffer[50];                    // Definindo um buffer para armazenar os dados formatados
-    sprintf(buffer, "%d, %.2f", valor1, valor2);  // Formatando os dados na ordem: int, float
-    arquivo.println(buffer);            // Escrevendo os dados no arquivo
-    delay(1000);
-    
-    // Feche o arquivo
-    arquivo.close();
+void loop() {
+  // não faz nada no loop principal
 }
 ```
+
+```
+Inicialização do cartão SD bem sucedida
+Novo arquivo temporário criado
+```
+
+Este pequeno código mostra como criar um arquivo temporário chamado "tempfile.txt" usando um módulo SD e escrevendo algumas informações nele. Lembre-se de alterar o nome do arquivo para o que melhor se adapta ao seu projeto.
+
+## Aprofundando-se na criação de um arquivo temporário
+
+Criar um arquivo temporário é uma tarefa simples com o Arduino, mas é importante entender por que e quando você pode precisar dela. Existem várias situações em que pode ser útil criar um arquivo temporário, como armazenar dados temporários para processar um algoritmo ou registrar informações de teste durante o desenvolvimento de um projeto. Além disso, é importante lembrar de sempre fechar o arquivo após a sua utilização, para evitar problemas de memória e corrupção de dados.
 
 ## Veja também
 
-- Documentação oficial da biblioteca SD para Arduino: https://www.arduino.cc/en/Reference/SD
-
-- Exemplo de projeto utilizando arquivos temporários com Arduino: https://create.arduino.cc/projecthub/parambirs/arduino-data-logger-with-timestamp-996b6d
+- [Tutorial de como criar um arquivo temporário com Arduino](https://www.arduino.cc/en/Tutorial/ReadWrite)
+- [Documentação oficial da biblioteca SD para Arduino](https://www.arduino.cc/en/reference/SD)
+- [Exemplo de projeto usando arquivo temporário com Arduino](https://create.arduino.cc/projecthub/Electronoobs/sd-oled-door-alert-with-arduino-5e331e)

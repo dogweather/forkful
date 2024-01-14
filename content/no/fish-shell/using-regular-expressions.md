@@ -1,41 +1,35 @@
 ---
 title:                "Fish Shell: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Regular expressions, eller regulære uttrykk, er et kraftig verktøy for tekstbehandling og datahåndtering. Det kan hjelpe deg med å søke, filtrere og manipulere tekst på en mer avansert og effektiv måte. Dette kan være spesielt nyttig for utviklere, dataanalytikere og andre som jobber med store mengder tekst og data.
+Hvis du ofte jobber med tekstbehandling og ønsker å effektivisere din arbeidsflyt, kan du dra nytte av å lære å bruke regex med Fish Shell. Regular expressions er en kraftig tekstbehandlingsverktøy som lar deg søke, erstatte og manipulere tekst basert på et mønster. Dette kan være nyttig når du for eksempel skal gjøre større endringer i en tekstfil eller når du skal finne og erstatte flere forekomster av et ord eller uttrykk.
 
-# Hvordan
+## Hvordan
 
-For å bruke regulære uttrykk i Fish Shell, må du først forstå grunnstrukturer som brukes til å representere tekstmønstre. La oss for eksempel si at vi vil finne alle e-postadresser i en tekstfil.
+For å bruke regular expressions i Fish Shell, må du først åpne terminalen og navigere til mappen hvor filen du ønsker å arbeide med befinner seg. Deretter kan du bruke kommandoen ```cntl-v``` for å starte med å skrive mønsteret du ønsker å finne eller erstatte. For eksempel, hvis du ønsker å finne alle forekomster av ordet "fisk" i en tekst, kan du skrive mønsteret ```fisk``` og trykke ```enter```.
 
-```
-Fish Shell kodeblokk:
+For å erstatte et mønster, kan du bruke kommandoen ```sed ```, som står for "stream editor". Dette er en vanlig kommando brukt i både Linux og Unix-systemer for å søke og erstatte tekst basert på et mønster. Med Fish Shell, kan du bruke denne kommandoen til å gjøre endringer i enkelte filer eller en hel mappe på en gang, avhengig av kommandoen du bruker.
 
-set emails (pcregrep -o "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}" file.txt)
-echo $emails
-```
+Et annet nyttig verktøy for å arbeide med regex er ```grep```, som står for "global regular expression print". Denne kommandoen lar deg søke etter mønstre i en fil eller en hel mappe og kan også kombineres med andre kommandoer for å gjøre mer avanserte og detaljerte søk.
 
-I dette eksempelet bruker vi kommandoen "pcregrep" som står for "Perl Compatible Regular Expression grep". Vi oppgir regex-mønsteret som skal matches, i dette tilfellet en standard e-postadresse. Deretter bruker vi uttrykket "set emails" for å lagre resultatet i en variabel, som vi kan bruke senere. Til slutt skriver vi ut alle e-postadressene ved å bruke kommandoen "echo" og variabelen vår.
+## Dypdykk
 
-# Dypdykk
+Når du begynner å mestre regex med Fish Shell, kan du også utforske mer avanserte funksjoner som fangstgrupper, kvantifisering og karakterklasser. Dette kan gi deg enda mer kontroll over teksten du arbeider med og hjelpe deg å finne og erstatte mønstre mer effektivt.
 
-Regulære uttrykk kan være ganske komplekse og ha mange forskjellige muligheter. Her er noen tips for å hjelpe deg med å bli mer effektiv med regex i Fish Shell:
+Det er også viktig å huske på at regex kan være forskjellig fra programmeringsspråk til programmeringsspråk. Så hvis du allerede har kjennskap til regex fra før, kan det være lurt å lese litt mer om hvordan det fungerer i Fish Shell spesifikt.
 
-- Bruk Flag-completion: Fish Shell har en innebygd funksjon for å fullføre valgflagg ved hjelp av "Tab"-tasten, noe som gjør det enklere å huske alle mulighetene.
+## Se også
 
-- Bruk forsvarlig: Dette vil vise deg et vindu med alle resulterende treff for et gitt regex-mønster, slik at du kan inspisere og bekrefte resultatene før du fortsetter med behandlingen.
-
-- Bruk regex tester: Det er mange online verktøy du kan bruke til å teste og feilsøke regex-mønstrene dine før du bruker dem i Fish Shell.
-
-# Se også
-
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Regulære uttrykk referanse](https://www.regular-expressions.info/)
-- [Fish Shell - Nyttige triks og tips](https://fishshell.com/docs/current/tutorial.html)
+- [Fish Shell sin offisielle nettside](https://fishshell.com/)
+- [En omfattende tutorial for å lære mer om regex](https://regexone.com/)
+- [Intro to Regular Expressions on Fish Shell]()
+- [Bruke regex i tekstbehandling med Fish Shell](https://www.linux.com/training-tutorials/using-regular-expressions-text-processing-fish-shell/)

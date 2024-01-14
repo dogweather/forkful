@@ -1,29 +1,38 @@
 ---
 title:                "Fish Shell: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa teksti-tiedosto Fish Shellilla
+## Miksi
 
-Kirjoittaminen ja tallentaminen teksti-tiedostoja Fish Shellilla on hyödyllistä, kun haluat tallentaa ja jakaa tietoja ja koodia helposti. Se on myös tehokas tapa järjestää ja hallita projekteja.
+Tekstitiedoston kirjoittaminen voi olla hyödyllistä esimerkiksi, kun haluat tallentaa tietoa pysyvästi tai luoda skriptin toistuvien tehtävien suorittamiseen.
 
-## Kuinka tehdä se
+## Kuinka tehdä
+
+Fish Shell tarjoaa helpon tavan kirjoittaa tekstitiedostoja. Voit käyttää 'echo' -komentoa yhdessä '>>' -merkin kanssa tallentaaksesi tiedoston sisällön tekstiksi. On myös tärkeää huomata, että voit käyttää '>>' -symbolia luodaksesi uuden tiedoston, ja '>>>' symbolia lisätäksesi sisältöä jo olemassa olevaan tiedostoon.
 
 ```Fish Shell
-echo "Tervetuloa Fish Shellin oppaaseen!" > esimerkki.txt  # Luo uuden teksti-tiedoston nimeltä "esimerkki.txt" ja kirjoita siihen teksti
-cat esimerkki.txt  # Tulostaa teksti-tiedostossa olevan sisällön
+# Luodaan uusi tiedosto nimeltä 'esimerkki.txt'
+echo "Tämä on esimerkki tekstistä" >> esimerkki.txt
+
+# Lisätään uusi rivi olemassa olevaan tiedostoon 'esimerkki.txt'
+echo "Tämä on uusi rivi" >>> esimerkki.txt
 ```
 
-## Syvemmälle pinnan alle
+Tämän komennon suorittamisen jälkeen voit nähdä, että tiedoston 'esimerkki.txt' sisältö on päivittynyt vastaavasti.
 
-Fish Shellilla on monia hyödyllisiä komentoja, joita voit käyttää teksti-tiedostojen luomiseen ja muokkaamiseen. Voit käyttää myös erilaisia lisätyökaluja, kuten "&&" ja ">>" operaattoreita, jotka lisäävät joustavuutta ja tehokkuutta ohjelmointiin.
+## Syvennä
 
-See Also:
+Tekstitiedoston kirjoittaminen voi vaikuttaa yksinkertaiselta, mutta on tärkeää ymmärtää, miten tiedostojen kirjoittaminen toimii käyttöjärjestelmän näkökulmasta. Kun käytät 'echo' komentoa >>-merkillä, Fish Shell lisää uuden rivin tiedoston pääteleen. Tämä tarkoittaa, että jos et anna uutta riviä komennon jälkeen, se saattaa lisätä uuden rivin ja tehdä tiedoston lukemisen vaikeammaksi.
 
-[Kuinka luoda ja muokata tekstitiedostoja Fish Shellilla](https://fishshell.com/docs/current/tutorial.html#file-redirection-and-pipes)
+## Katso myös
 
-[Fish Shellin hallintalaitteet ja toiminnot](https://fishshell.com/docs/current/commands.html)
+- [Fish Shell dokumentaatio](https://fishshell.com/docs/current/index.html)
+- [Opas tekstiedistämiseen Fish Shellilla](https://www.digitalocean.com/community/tutorials/how-to-do-string-manipulation-in-fish-shell-scripts)
+- [Fish Shellin erikoismerkkien opas](https://fishshell.com/docs/current/tutorial.html#tutorial-special-vars)

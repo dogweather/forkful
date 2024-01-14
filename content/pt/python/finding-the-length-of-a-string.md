@@ -1,39 +1,54 @@
 ---
 title:                "Python: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Encontrar o Comprimento de uma String?
-Encontrar o comprimento de uma string é uma habilidade essencial na programação Python. Ao saber o comprimento de uma string, você pode determinar quantos caracteres ela contém e usá-lo em lógicas como iteração e busca em substrings. É uma das tarefas básicas que todo programador deve dominar.
+## Por que: Entendendo a Importância de Encontrar o Comprimento de uma String
 
-## Como Fazer
-Para encontrar o comprimento de uma string em Python, vamos usar a função `len()`, que é uma função interna da linguagem. Veja um exemplo simples:
-```Python
-nome = "Maria"
-comprimento = len(nome)
+Ao trabalhar com programação em Python, é muito comum lidar com strings - que são conjuntos de caracteres. Para poder manipular essas strings de forma eficiente, é importante saber o seu comprimento. Encontrar o comprimento de uma string pode ser útil em diversas situações, como por exemplo, para validar o input do usuário ou para fazer operações matemáticas com esses valores. Neste artigo, exploraremos como encontrar o comprimento de uma string em Python.
+
+## Como Fazer: Encontrando o Comprimento de uma String em Python
+
+Em Python, podemos usar a função `len()` para encontrar o comprimento de uma string. Esta função aceita um argumento, que deve ser uma string, e retorna o número de caracteres presentes nessa string. Veja um exemplo de código abaixo:
+
+```python
+frase = "Olá, mundo!"
+comprimento = len(frase)
 print(comprimento)
 ```
-**Saída:** 5
-
-Neste exemplo, definimos uma string chamada `nome` e usamos a função `len()` para determinar seu comprimento. Em seguida, o valor do comprimento é impresso na tela. Simples, não é?
-
-Vamos ver outro exemplo mais avançado. Suponha que temos um programa que pede ao usuário para digitar seu nome e, em seguida, o saúda pelo nome. Usando a função `input()`, podemos capturar o que o usuário digitou e, em seguida, encontrar o comprimento do nome antes de imprimir a saudação.
-```Python
-nome = input("Digite seu nome: ")
-comprimento = len(nome)
-print("Olá " + nome + ", seu nome tem " + str(comprimento) + " letras!")
+**Saída:**
 ```
-**Entrada:** Maria\
-**Saída:** Olá Maria, seu nome tem 5 letras!
+13
+```
 
-## Deep Dive
-Em Python, a função `len()` usa o protocolo de special method `__len__()` para determinar o comprimento de um objeto. Isso significa que você pode usar a função `len()` em outros tipos de dados, como listas, dicionários e até mesmo em objetos personalizados, desde que eles implementem o método `__len__()`. Portanto, a função `len()` é mais versátil do que se pode pensar à primeira vista.
+Neste exemplo, definimos uma variável chamada `frase` que contém a string "Olá, mundo!" e em seguida, usamos a função `len()` para encontrar o seu comprimento e armazenamos o resultado na variável `comprimento`. Por fim, imprimimos esse valor na tela.
+
+Além disso, é importante ressaltar que a função `len()` também pode ser usada para encontrar o comprimento de outros tipos de dados, como listas e dicionários. Veja um exemplo abaixo:
+
+```python
+lista = [1, 2, 3, 4, 5]
+comprimento_lista = len(lista)
+print(comprimento_lista)
+```
+**Saída:**
+```
+5
+```
+
+## Mergulho Profundo: Entendendo como a Função `len()` Funciona
+
+Agora que já sabemos como usar a função `len()` para encontrar o comprimento de uma string em Python, vamos entender um pouco mais sobre como ela funciona. Em Python, cada tipo de dado é representado por uma classe, e essas classes possuem diferentes métodos e propriedades. No caso das strings, a classe `str` possui o método `__len__()`, que é responsável por retornar o comprimento dessa string. Isso significa que quando usamos a função `len()`, na verdade estamos acessando esse método por trás dos panos.
+
+Vale ressaltar que a função `len()` só funciona com objetos que possuem o método `__len__()`, o que inclui strings, listas, tuplas, dicionários, entre outros.
 
 ## Veja Também
-- [Documentação Oficial do Python sobre a Função `len()` (em inglês)](https://docs.python.org/3/library/functions.html#len)
-- [Tutorial em Vídeo do Python para Iniciantes - Função `len()` (em português)](https://www.youtube.com/watch?v=1Gx3fOoelz0)
-- [Livro "Introdução à Programação com Python" - Capítulo sobre Função `len()` (em português)](https://novatec.com.br/livros/introprogpython/len-de-strings-inteiros-e-listas/)
+
+- [Documentação oficial do Python sobre a função len()](https://docs.python.org/3/library/functions.html#len)
+- [Tutorial sobre strings em Python](https://realpython.com/python-strings/)
+- [Artigo sobre as diferentes formas de encontrar o comprimento de uma string](https://www.techbeamers.com/python-string-length/#Finding_Length_of_String_in_Python_Language)

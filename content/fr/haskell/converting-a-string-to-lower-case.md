@@ -1,39 +1,42 @@
 ---
-title:                "Haskell: Conversion d'une chaîne en minuscules"
+title:                "Haskell: Convertir une chaîne en minuscule"
+simple_title:         "Convertir une chaîne en minuscule"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi
+Il y a plusieurs raisons pour lesquelles vous pourriez vouloir convertir une chaîne de caractères en lettres minuscules en utilisant Haskell. Une des raisons pourrait être pour normaliser les données avant de les comparer ou pour rendre l'affichage plus cohérent.
 
-Il existe plusieurs raisons pour lesquelles on a besoin de convertir une chaîne de caractères en minuscules en programmation Haskell. La plus évidente est pour l'affichage de texte en minuscules afin d'améliorer la lisibilité pour les utilisateurs. Cela peut également être utile lors de la comparaison de chaînes de caractères, car cela assure une comparaison précise et uniforme.
+# Comment faire
+Pour convertir une chaîne de caractères en lettres minuscules en Haskell, vous pouvez utiliser la fonction `toLower` du module `Data.Char`. Cela peut être fait en utilisant la structure suivante dans votre code :
 
-## Comment faire
+```
+import Data.Char (toLower)
 
-La conversion de chaînes de caractères en minuscules peut être facilement réalisée en utilisant la fonction "map" combinée avec la fonction intégrée "toLower". Voici un exemple de code pour cela :
+-- Définition de la fonction de conversion
+convertToLower :: String -> String
+convertToLower str = map toLower str
 
-```Haskell
-import Data.Char (toLower) # Import de la fonction toLower pour pouvoir l'utiliser
-
-toLowerString :: String -> String # Fonction pour convertir une chaîne de caractères en minuscules
-toLowerString str = map toLower str # Utilisation de la fonction map avec toLower pour la transformation
+-- Exemple d'utilisation
+main = print (convertToLower "Haskell est super")
 ```
 
-Le résultat de cette fonction sera la chaîne de caractères en minuscules. Par exemple, si on applique cette fonction à "Haskell", le résultat sera "haskell".
+La sortie de ce code sera `haskell est super`, où toutes les lettres ont été converties en minuscules. Vous pouvez également utiliser la fonction `toLower` pour convertir chaque caractère individuellement. Par exemple :
 
-## Plongée en profondeur
+```
+main = print (toLower 'A')
+```
 
-La fonction "map" est utilisée pour appliquer une fonction à chaque élément d'une liste. Dans notre cas, la fonction "toLower" est appliquée à chaque caractère de la chaîne. Cela signifie que la fonction traverse la chaîne de caractères et applique la fonction "toLower" à chaque caractère.
+Cela produira `a` comme sortie.
 
-Il est important de noter que la conversion en minuscules dans Haskell est basée sur le standard Unicode, ce qui signifie que les caractères accentués et autres caractères spéciaux seront également convertis en minuscules.
+# Plongée profonde
+Il est important de noter que la fonction `toLower` ne fonctionne que pour les caractères de l'alphabet anglais. Si vous avez besoin de convertir des caractères d'autres langues en lettres minuscules, vous devrez utiliser une autre méthode. Vous pouvez également combiner la fonction `toLower` avec d'autres fonctions du module `Data.Char` pour manipuler davantage vos données.
 
-Il est également possible de personnaliser la fonction "toLower" en utilisant des bibliothèques externes pour gérer les caractères spéciaux dans différentes langues. Cela peut être utile lors de la manipulation de données multilingues.
-
-## Voir aussi
-
-- [Documentation de la fonction map en Haskell](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)
-- [Documentation de la fonction toLower en Haskell](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toLower)
-- [Guide de documentation pour la manipulation de chaînes de caractères en Haskell](https://wiki.haskell.org/Strings)
+# Voir aussi
+- [Documentation officielle du module Data.Char](https://hackage.haskell.org/package/base/docs/Data-Char.html)
+- [Guide de référence rapide de Haskell pour convertir des chaînes de caractères](http://bfpg.github.io/haskell/linguistics/2015/03/03/haskell-quicksheet-string-and-bytestring-case-conversion.html)

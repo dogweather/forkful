@@ -1,46 +1,42 @@
 ---
 title:                "C++: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego pisać testy w C++?
+# Dlaczego warto pisać testy w programowaniu?
 
-Pisanie testów jest ważnym krokiem w procesie programowania w języku C++. Dzięki temu możemy zweryfikować poprawność działania naszego kodu i zapewnić jego niezawodność. Testy pomagają również w łatwym i szybkim znajdowaniu błędów, co przekłada się na efektywność pracy programisty.
+Testy są nieodłączną częścią procesu tworzenia oprogramowania. Pomagają nam weryfikować poprawność naszego kodu i zapobiegać błędom, a także ułatwiają późniejsze prace związane z modyfikacją lub rozszerzaniem aplikacji. W tym artykule dowiesz się, dlaczego warto pisać testy w C++ i jak to zrobić.
 
-## Jak pisać testy w C++?
+## Jak to zrobić?
 
-Do napisania testów w C++ możemy wykorzystać bibliotekę Google Test (GTest). W pierwszej kolejności należy zainstalować tę bibliotekę na swoim komputerze. Następnie, w pliku źródłowym naszego programu, należy dołączyć plik nagłówkowy "gtest/gtest.h" za pomocą dyrektywy "#include". Kolejnym krokiem jest zdefiniowanie testów za pomocą makr "TEST" i "TEST_F" oraz wywołanie funkcji "RUN_ALL_TESTS()" w funkcji main.
-
-Przykładowy kod testu wyglądałby następująco:
+Jedną z metod tworzenia testów w C++ jest wykorzystanie biblioteki do testowania np. Google Test lub Boost.Test. Poniżej przedstawione są przykładowe funkcje testujące z wykorzystaniem biblioteki Google Test.
 
 ```C++
-#include <gtest/gtest.h>
-
-TEST(NazwaTestu, PrzypadekTestowy) {
-  // kod testujący
-  ASSERT_TRUE(true);
+TEST(DodawanieTest, SprawdzPoprawnoscWyniku) {
+    ASSERT_EQ(4, 2+2); // asercja sprawdzająca równość oczekiwanego wyniku z rzeczywistym
 }
 
-TEST_F(NazwaKlasyTestowej, PrzypadekTestowy) {
-  // kod testujący dla metod zdefiniowanych w klasie
-  ASSERT_EQ(2, klasa.metoda(1));
+TEST(SortowanieTest, SprawdzSortowanieRosnace) {
+    int tablica[] = {4, 2, 6, 1, 8, 5};
+    std::sort(tablica, tablica+6); // sortowanie tablicy rosnąco
+    ASSERT_TRUE(std::is_sorted(tablica, tablica+6)); // asercja sprawdzająca, czy tablica jest posortowana
 }
-
-RUN_ALL_TESTS();
 ```
 
-Po uruchomieniu powyższego kodu, otrzymamy informację o wynikach testów - czy wszystkie testy zostały wykonane poprawnie, czy wystąpiły błędy oraz szczegółowe wyniki dla każdego testu.
+By uruchomić testy, należy utworzyć nowy projekt z wykorzystaniem wybranej biblioteki, a następnie wkleić powyższe funkcje do odpowiedniego pliku i uruchomić.
 
-## Głębszy przegląd pisania testów w C++
+## Głębokie zanurzenie
 
-Pisanie testów w C++ wymaga umiejętności tworzenia efektywnych i precyzyjnych testów. Ważne jest aby pamiętać o przygotowaniu rzeczywistych przypadków testowych, aby testy najlepiej odwzorowywały rzeczywiste zachowanie programu. Kolejnym ważnym aspektem jest kontrolowanie zależności pomiędzy różnymi testami, aby uniknąć niepotrzebnej powtarzalności.
+Warto pamiętać, że testy powinny być równie starannie pisane, co kod produkcyjny. Muszą być czytelne, przejrzyste i dobrze nazwane. Należy również zadbać o pokrycie testami różnych przypadków, aby uniknąć błędów w różnych scenariuszach działania aplikacji. Ważne jest również regularne wykonywanie testów w trakcie rozwoju projektu, aby szybko wykrywać ewentualne błędy.
 
-## Zobacz również
+## Zobacz także
 
-- Oficjalna dokumentacja do biblioteki Google Test (https://google.github.io/googletest/)
-- Przykłady używania biblioteki GTest (https://github.com/google/googletest/tree/master/googletest/samples)
-- Wprowadzenie do pisania testów w języku C++ (https://www.toptal.com/developers/blog/writing-cpp-unit-tests-with-googletest)
+- [Przykład wykorzystania Google Test](https://github.com/google/googletest/blob/master/googletest/samples/sample1_unittest.cc)
+- [Dokumentacja biblioteki Boost.Test](https://www.boost.org/doc/libs/1_69_0/libs/test/doc/html/boost_test/getting_started/for_more_experienced.html)
+- [24 grudnia – testowanie w programowaniu](https://agatagorska.com/advent-of-code-24-grudnia-testowanie-w-programowaniu/)

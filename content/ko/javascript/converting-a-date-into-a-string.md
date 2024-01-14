@@ -1,50 +1,44 @@
 ---
 title:                "Javascript: 날짜를 문자열로 변환하기"
+simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜?
+# 왜
 
-개발자의 입장에서 날짜와 시간을 처리하는 것은 매우 중요합니다. 또한, 날짜와 시간을 문자열로 변형하는 것은 많은 경우에 필요합니다. 이 블로그 글에서는 날짜를 문자열로 변환하는 방법을 알아보고, 이를 왜 해야 하는지 알아보겠습니다.
+자바스크립트 프로그래밍을 하면서 날짜를 문자열로 변환하는 방법에 대해 알고 싶은 이들이 있을 수 있습니다. 이 기능은 일상적으로 많이 사용되지는 않지만, 날짜를 다른 데이터와 함께 출력하거나 비교할 때 도움이 됩니다. 자바스크립트에서 날짜를 문자열로 변환하는 이유를 알아보겠습니다.
 
-## 어떻게?
+# 어떻게
 
-```Javascript
-const today = new Date();
+자바스크립트에서 날짜를 문자열로 변환하는 방법에는 여러 가지가 있습니다. 우선, Date 객체의 toDateString() 메소드를 사용하여 날짜 객체를 문자열로 변환할 수 있습니다. 예를 들어,
 
-// Date 객체를 문자열로 변환하기
-const dateAsString = today.toString();
-console.log(dateAsString); // "Tue Sep 28 2021 17:30:47 GMT+0900 (Korea Standard Time)"
-
-// 날짜 포맷을 원하는 형식으로 지정하기 
-const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-const customDate = today.toLocaleDateString('ko-KR', options);
-console.log(customDate); // "2021년 9월 28일 화요일"
-
-// 다양한 날짜 포맷 예시
-const date1 = today.toLocaleDateString('en-US'); 
-console.log(date1); // "9/28/2021"
-
-const date2 = today.toLocaleDateString('ja-JP'); 
-console.log(date2); // "2021/9/28"
-
-const date3 = today.toLocaleDateString('fr-FR'); 
-console.log(date3); // "28/09/2021"
-
+```javascript
+let today = new Date(); // 현재 날짜 객체 생성
+let dateStr = today.toDateString(); // toDateString() 메소드 사용
+console.log(dateStr); // "Mon May 31 2021"
 ```
 
-위의 예시 코드를 보면, ```Date``` 객체의 ```toString()``` 메소드를 사용하면 그대로 날짜 객체의 문자열 표현을 얻을 수 있습니다. 또한, 원하는 형식으로 날짜 포맷을 지정할 수도 있습니다. 이는 다국어 지원이 필요한 경우 유용하게 사용할 수 있습니다.
+또는 toISOString() 메소드를 사용하면 날짜를 ISO 형식의 문자열로 변환할 수도 있습니다. 예를 들어,
 
-## 딥 다이브
+```javascript
+let today = new Date(); // 현재 날짜 객체 생성
+let dateStr = today.toISOString(); // toISOString() 메소드 사용
+console.log(dateStr); // "2021-05-31T05:00:00.000Z"
+```
 
-자바스크립트의 ```Date``` 객체는 날짜와 시간을 다루는 매우 유용한 기능을 제공합니다. 이 객체를 사용하면, 날짜와 시간을 이용한 계산이나 표현이 매우 편리해집니다. 또한, 문자열로 변환하면서 날짜 포맷을 지정할 수 있다는 것도 큰 장점입니다. 따라서, 개발자들은 자주 사용하는 기능 중 하나인 날짜를 문자열로 변환하는 기능을 잘 숙지할 필요가 있습니다.
+또는 Moment.js와 같은 라이브러리를 사용하여 더 다양한 날짜 포맷을 생성할 수도 있습니다.
 
-## See Also
+# 딥 다이브
 
-- [MDN Date](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [DateFormat.js](https://formatjs.io/docs/core-concepts/icu-syntax/)
-- [Convert Date to String in JavaScript](https://stackabuse.com/how-to-convert-a-date-to-string-in-javascript/)
+날짜를 문자열로 변환하는 방법은 자바스크립트에서 기본적으로 제공하는 toDateString() 메소드를 사용하는 것이 가장 간단합니다. 그러나 이를 사용할 때 주의할 점이 있습니다. 바로 로컬 시간대를 기준으로 변환된다는 것입니다. 따라서 다른 사용자들이 다른 시간대에 있을 경우, 변환된 문자열이 다를 수 있습니다. 이를 해결하기 위해서는 Moment.js와 같은 라이브러리를 사용하거나 Date 객체의 메소드를 활용하여 UTC 시간대를 기준으로 날짜를 변환하는 방법을 알아보는 것이 좋습니다.
+
+# 이어보기
+
+- [Date 객체 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js 라이브러리](https://momentjs.com/)
+- [자바스크립트 날짜 다루기](https://www.daleseo.com/js-date-basic/)

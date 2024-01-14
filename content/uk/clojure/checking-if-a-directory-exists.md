@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Перевірка існування директорії"
+title:                "Clojure: Перевірка наявності каталогу"
+simple_title:         "Перевірка наявності каталогу"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/checking-if-a-directory-exists.md"
 ---
 
@@ -9,38 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Перевірка існування директорії є важливою частиною програмування, оскільки це дозволяє перевірити наявність необхідних файлів та директорій перед виконанням деяких операцій, що зменшує ризик виникнення помилок у програмі.
+Провірка існування папки є важливим кроком в програмуванні. Це дає можливість перевірити наявність файлів або папок, щоб забезпечити плавне виконання програми і уникнути будь-яких помилок.
 
-## Як це зробити
-
-Для перевірки, чи існує директорія, можна використати функцію `file-seq`, яка повертає послідовність файлів та директорій у вказаній шляху. Наприклад:
+## Як виконати
 
 ```Clojure
-(def directory "/home/user/example/dir")
+(require '[clojure.java.io :as io])
 
-(def files (file-seq directory))
-
-(println files)
+(defn check-directory [directory]
+  (if (.isDirectory (io/file directory))
+    (println (str "Папка " directory " існує."))
+    (println (str "Папки " directory " не існує."))))
 ```
 
-Вище вказане приклад виведе на екран всі файли та директорії, що знаходяться у шляху `/home/user/example/dir`.
-
-## Глибоке занурення
-
-Функція `file-seq` також може бути використана з путем до файлу або символьним посиланням. Це означає, що ви можете перевірити наявність конкретного файлу, а не просто директорії. Наприклад:
+Викликати цю функцію з певною директорією, щоб перевірити її існування:
 
 ```Clojure
-(def file "/home/user/example/dir/test.txt")
-
-(def files (file-seq file))
-
-(println files)
+(check-directory "/home/user/example_directory")
 ```
 
-Цей код виведе на екран інформацію про файл `test.txt`, якщо він існує у зазначеній директорії.
+Вихідний текст буде залежати від того, чи існує ця папка. Наприклад:
 
-## Дивись також
+```Clojure
+"Папка /home/user/example_directory існує."
+```
 
-- [Офіційна документація Clojure](https://clojure.org/)
-- [Як зробити перевірку наявності файлу у Clojure](https://stackoverflow.com/questions/15985110/how-to-check-if-a-file-exists-in-clojure)
-- [Приклади використання `file-seq` у Clojure](https://gist.github.com/aaronbieber/2470157)
+або
+
+```Clojure
+"Папки /home/user/example_directory не існує."
+```
+
+## Глибші дивування
+
+Під час провірки існування папки, ми використовуємо функцію `isDirectory` з бібліотеки `java.io`. Ця функція повертає істину, якщо файл або папку існує або була створена.
+
+Також варто зазначити, що ця функція повертає `false`, якщо файл або папка існує, але вона недоступна для зчитування. Це може стати проблемою при отриманні даних з цієї папки.
+
+## Дивіться також
+
+- [Цікаві функції Clojure для роботи з файлами та папками](https://lambdaduck.com/clojure/working-with-files-and-directories/)
+- [Офіційна документація Clojure для бібліотеки `java.io`](https://clojuredocs.org/clojure.java.io)

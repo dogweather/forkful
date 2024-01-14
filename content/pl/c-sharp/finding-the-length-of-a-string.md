@@ -1,46 +1,44 @@
 ---
-title:                "C#: Znajdywanie długości ciągu znaków"
+title:                "C#: Znalezienie długości ciągu znaków"
+simple_title:         "Znalezienie długości ciągu znaków"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego:
+## Dlaczego
 
-Często przy pisaniu kodu w języku C# zdarza się nam potrzeba znalezienia długości ciągu znaków. Może to być konieczne, aby upewnić się, że wprowadzane dane są odpowiedniej długości lub aby przetwarzać je w dalszej części programu. W tym artykule dowiesz się, jak znaleźć długość ciągu znaków w C#.
+Często zdarza się, że w trakcie programowania musimy operować na różnych napisach. Przydaje się wtedy znajomość długości tych napisów, aby móc efektywnie manipulować nimi w kodzie. W tym artykule dowiesz się jak w prosty sposób obliczać długość stringów w języku C#.
 
-## Jak to zrobić:
+## Jak To Zrobić
 
-W języku C# istnieje kilka sposobów na znalezienie długości ciągu znaków. Jednym z nich jest użycie metody Length, która jest dostępna dla typu danych string. Przykładowy kod wyglądałby następująco:
+Aby obliczyć długość stringa w C#, możemy skorzystać z metody `Length`. Przykładowo, jeśli chcemy wyświetlić długość napisu "Hello World", możemy to zrobić za pomocą poniższego kodu:
 
-```C#
-string imie = "Kasia";
-int dlugosc = imie.Length;
-Console.WriteLine("Długość imienia to " + dlugosc + " znaków.");
+```C# 
+string text = "Hello World";
+Console.WriteLine("Długość napisu to: " + text.Length);
 ```
 
-Output: *Długość imienia to 5 znaków.*
-
-Innym sposobem jest użycie metody ToCharArray, która zamienia ciąg znaków na tablicę typu char. Następnie można wykorzystać właściwość Length dla tej tablicy, aby uzyskać długość ciągu. Przykładowy kod wyglądałby następująco:
+W wyniku otrzymamy wartość 11, ponieważ string składa się z 11 znaków (w tym spacja). Metoda `Length` zwraca wartość całkowitą, więc możemy wykorzystać ją również do warunków logicznych:
 
 ```C#
-string nazwisko = "Nowak";
-char[] tablica = nazwisko.ToCharArray();
-int dlugosc = tablica.Length;
-Console.WriteLine("Długość nazwiska to " + dlugosc);
+string name = "Anna";
+if (name.Length > 5)
+{
+    Console.WriteLine("Twoje imię jest dość długie!");
+}
 ```
 
-Output: *Długość nazwiska to 5.*
+W tym przykładzie, jeśli imię będzie dłuższe niż 5 znaków, zostanie wyświetlona odpowiednia wiadomość.
 
-## Deep Dive:
+## Deep Dive
 
-W tle obu metod znajduje się właściwie taka sama logika. W przypadku użycia metody Length dla typu string, najpierw musimy przekonwertować ciąg znaków na tablicę char, a następnie liczyć elementy w tej tablicy. Metoda ToCharArray wykonuje te same kroki, ale dodatkowo tworzy nową tablicę, co może spowodować pewne narzuty wydajnościowe w przypadku dużych ciągów.
+Warto zauważyć, że metoda `Length` liczy również znaki specjalne, takie jak spacje, przecinki czy kropki. W przypadku, gdy chcemy pominąć te znaki, możemy skorzystać z metody `Trim` lub zignorować je w pętli za pomocą warunku `if`.
 
-Inną ciekawą rzeczą jest to, że właściwość Length w języku C# nie jest metodą, ale polem, co oznacza, że nie wymaga ona nawiasów po jej nazwie. Jest to tzw. pole zdefiniowane i jest to właśnie ono, które służy do przechowywania informacje o długości ciągu znaków.
+## Zobacz również
 
-## Zobacz też:
-
-- [Dokumentacja języka C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
-- [Tutorial: String Length and Substrings in C#](https://www.educative.io/edpresso/string-length-and-substrings-in-csharp)
+- Dokumentacja Microsoft o metodzie `Length`: https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netcore-3.1
+- Przykłady użycia metody `Length`: https://www.c-sharpcorner.com/blogs/how-to-find-length-of-the-string-in-c-sharp-programming1

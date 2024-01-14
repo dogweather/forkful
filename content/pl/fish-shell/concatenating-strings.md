@@ -1,55 +1,43 @@
 ---
-title:                "Fish Shell: Łączenie łańcuchów znaków"
+title:                "Fish Shell: Łączenie ciągów tekstowych"
+simple_title:         "Łączenie ciągów tekstowych"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
+Wielu programistów często potrzebuje łączyć dwa lub więcej ciągów tekstu w jeden, w celu utworzenia nowego ciągu lub wyświetlenia danych w czytelny sposób. W tym artykule dowiesz się, jak wykorzystać polecenie concatenation w Fish Shell, aby skutecznie manipulować ciągami tekstowymi.
 
-Złączanie ciągów znaków jest powszechnym zadaniem w programowaniu. Pozwala na łączenie różnych elementów tekstu w jeden większy ciąg, co jest przydatne w wielu przypadkach. W tym artykule dowiesz się, jak to zrobić w środowisku Fish Shell.
+## Jak to zrobić
+Wykonanie konkatenacji w Fish Shell jest bardzo proste - wystarczy użyć operatora plus (+) między dwoma ciągami tekstowymi. Przykładowy kod pokazujący ten proces wygląda następująco:
 
-## Jak
+```Fish Shell
+echo "Cześć" + " " + "świecie"
+```
+Wynik wyświetli się jako "Cześć świat" po użyciu polecenia echo. Możemy również przypisać wynik konkatenacji do zmiennej i wykorzystać ją później w kodzie.
 
-Do złączania ciągów używamy komendy `string join`. Poniżej znajdują się przykładowe kody oraz wyniki wykorzystania tej komendy w środowisku Fish Shell. 
-
+```Fish Shell
+set przywitanie "Cześć" + " " + "świecie"
+echo $przywitanie
 ```
-Fish Shell - połączone ciągi znaków przy użyciu "string join"
-```
-
-```
-string join ";" "Kot" "łapie" "myszy"   # Output: Kot;łapie;myszy
-```
-
-```
-string join " " "Witaj" "na" "świecie"   # Output: Witaj na świecie
-```
-
-Możesz również używać zmiennej do złączania ciągów. Przykładowo:
-
-```
-set kolor "niebieski"
-set predmiot "pióro"
-string join " " $kolor $predmiot   # Output: niebieski pióro
-```
+W tym przypadku zmienna "przywitanie" zawiera ciąg tekstowy "Cześć świat", który następnie jest wyświetlany przez polecenie echo.
 
 ## Deep Dive
+Podczas konkatenacji ciągów tekstowych należy pamiętać o kilku ważnych kwestiach. Po pierwsze, polecenie concatenation można stosować tylko między dwoma ciągami tekstowymi - nie można łączyć ciągów z innymi typami danych, takimi jak liczby czy zmienne typu boolean.
 
-Funkcja `string join` pozwala na łączenie ciągów znaków przy użyciu separatora. Można to zrobić poprzez podanie separatora jako pierwszego argumentu w komendzie. Jeśli nie zostanie on podany, domyślnym separatorem jest spacja.
+Kolejną ważną rzeczą jest kolejność wykonywania polecenia. Jeśli będziemy używać operatora plus (+) między dwoma ciągami tekstowymi, to będzie również działać jako operator arytmetyczny i wykonać dodawanie. Aby uniknąć takiej sytuacji, należy użyć nawiasów, aby wyraźnie określić, że chcemy skonkatenować dwa ciągi, a nie wykonać dodawanie.
 
-Innym sposobem złączania ciągów jest użycie pętli `for`. Przykładowo, jeśli mamy listę przedmiotów, możemy połączyć je w jeden dłuższy ciąg używając pętli oraz funkcji `string join`. Poniżej znajduje się kod oraz wynik wykorzystania tego sposobu:
-
+```Fish Shell
+echo "5" + "2"  # Wynik: 7
+echo ("5" + "2")  # Wynik: 52
 ```
-set przedmioty "długopis" "zeszyt" "linijka"
-for przedmiot in $przedmioty
-    string join ", " $przedmiot  # Output: długopis, zeszyt, linijka
-end
-```
+W przypadku użycia innych operatorów niż plus (+), takich jak minus (-) lub gwiazdka (*), polecenie concatenation nie zadziała i otrzymamy błąd.
 
-## Zobacz również
-
+## Zobacz także
 - Dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
-- Przykłady użycia funkcji `string join`: https://fishshell.com/docs/current/cmds/string.join.html
-- Inne przydatne komendy w środowisku Fish Shell: https://fishshell.com/docs/current/cmds/
+- Przykłady zastosowania konkatenacji w Fish Shell: https://fishshell.com/docs/current/tutorial.html#combining
+- Wideo tutorial o konkatenacji w Fish Shell: https://www.youtube.com/watch?v=JhKztLpl5yk

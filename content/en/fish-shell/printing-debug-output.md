@@ -1,96 +1,54 @@
 ---
 title:                "Fish Shell recipe: Printing debug output"
+simple_title:         "Printing debug output"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+##Why
 
-Debugging is an essential part of any programming process, and it helps us identify and fix errors in our code. However, sometimes the process can be challenging, especially when dealing with large programs. One way to make debugging easier is by using print statements to output information about the program's execution. This allows us to see the values of variables and the flow of the program, making it easier to identify and fix any issues.
+At first glance, printing debug output may seem like a tedious task with little benefit. However, as developers, it is crucial to have a deep understanding of our code and to be able to troubleshoot any potential errors. This is where printing debug output becomes a valuable tool. By printing out the value of certain variables or the execution of specific functions, we can gain valuable insights and catch any bugs early on in the development process.
 
-## How To
+##How To
 
-To print debug output in Fish Shell, we can use the `echo` command. Let's say we have a simple program that calculates the area of a rectangle:
+To print debug output in Fish Shell, we can use the `echo` command. This command takes in a string or a variable and prints it to the terminal. Let's take a look at a simple example:
 
-```
-Fish Shell 
-# Define variables
-set width 5
-set length 10
-
-# Calculate area
-set area ($length * $width)
-
-# Print debug output
-echo "Length: $length"
-echo "Width: $width"
-echo "Area: $area"
+```Fish Shell
+set my_variable "Hello from Fish Shell!"
+echo $my_variable
 ```
 
-When we run this program, we will see the following output:
+In the above code, we first create a variable called `my_variable` and set its value to "Hello from Fish Shell!". Then, we use the `echo` command to print out the value of our variable. This will result in the following output in the terminal:
 
-```
-Length: 10
-Width: 5
-Area: 50
+```Output
+Hello from Fish Shell!
 ```
 
-We can also use the `printf` command to format our output. For example, if we want to add some text to our debug output, we can use the following code:
+We can also use `echo` within loops or functions to print out the values of different variables at different stages of our code. This allows us to track the execution of our code and spot any potential issues.
 
-```
-Fish Shell
-# Define variables
-set width 5
-set length 10
+##Deep Dive
 
-# Calculate area
-set area ($length * $width)
+Printing debug output can also be helpful when working with more complex data structures, such as arrays or dictionaries. We can use the `printf` command to format our output in a more readable way. For example:
 
-# Print debug output
-printf "The length of the rectangle is: %s \n" $length
-printf "The width of the rectangle is: %s \n" $width
-printf "The area of the rectangle is: %s \n" $area
+```Fish Shell
+set my_array (seq 1 5)
+printf "The array is: %s\n" $my_array
 ```
 
-This will give us the following output:
+In this code, we first create an array with values from 1 to 5 using the `seq` command. Then, we use the `printf` command to print out the array's values in a formatted manner. The `%s` represents where the array values will be inserted in the string, and the `\n` adds a line break after each element. This will result in the following output:
 
-```
-The length of the rectangle is: 10 
-The width of the rectangle is: 5 
-The area of the rectangle is: 50 
+```Output
+The array is: 1 2 3 4 5
 ```
 
-Using print statements allows us to see the values of variables at different points in our program's execution and helps us understand the flow of our code.
+By using `echo` and `printf` with different formatting options, we can easily print out the values of more complex data structures for debugging purposes.
 
-## Deep Dive
+##See Also
 
-In Fish Shell, we can also use the `sprintf` command to format our output and save it to a variable. For example, if we want to save the debug output of our rectangle program to a variable, we can use the following code:
-
-```
-Fish Shell
-# Define variables
-set width 5
-set length 10
-
-# Calculate area
-set area ($length * $width)
-
-# Format debug output
-set debug_output (sprintf "The length of the rectangle is: %s \n The width of the rectangle is: %s \n The area of the rectangle is: %s \n" $length $width $area)
-
-# Print debug output
-echo $debug_output
-```
-
-This will give us the same output as our previous example, but now it is saved in the `debug_output` variable, which we can use in our program.
-
-Another useful command for debugging in Fish Shell is the `pstack` command. This allows us to see the current stack trace, which shows us the functions or commands that were called leading up to an error or issue in our code. We can use this to pinpoint the exact location of the problem and debug more efficiently.
-
-## See Also
-
-- [Fish Shell documentation on debugging](https://fishshell.com/docs/current/commands.html#debugging)
-- [Fish Shell tutorial on debugging](https://fishshell.com/docs/current/tutorial.html#debugging)
-- [Using Debugging Tools in Fish Shell](https://medium.com/swlh/using-debugging-tools-in-fish-shell-fcd508f44e4d)
+- Official Fish Shell Documentation for `echo` and `printf`: https://fishshell.com/docs/current/commands.html#echo and https://fishshell.com/docs/current/commands.html#printf
+- A Beginner's Guide to Debugging in Fish Shell: https://codementor.io/@jamesezechukwu/a-beginner-s-guide-to-debugging-in-fish-shell-svjs6p8lv
+- Debugging in Fish Shell: https://www.rabartu.net/posts/debugging-in-fish-shell/

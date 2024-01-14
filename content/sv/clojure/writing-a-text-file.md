@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Att skriva en textfil"
+title:                "Clojure: Skriva en textfil"
+simple_title:         "Skriva en textfil"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/writing-a-text-file.md"
 ---
 
@@ -9,32 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva en textfil är en grundläggande och viktig del av programmering. Det är ett enkelt sätt att lagra, organisera och tillgängliggöra textbaserad data för dina program.
+Att skriva en textfil kan vara en användbar färdighet för alla som vill lära sig programmera och skapa datorprogram. Det ger dig möjlighet att skriva och lagra information på ett enkelt sätt som kan läsas av både människor och datorer.
 
 ## Hur man gör det
 
-Det finns flera sätt att skriva en textfil i Clojure, men ett vanligt sätt att göra det är genom att använda `spit` funktionen. Här är ett exempel på hur man skulle skriva en textfil som heter "test.txt" med innehållet "Hej världen":
+För att skriva en textfil i Clojure behöver du bara en textredigerare och tillgång till Clojure-överflödet. Börja med att öppna en textredigerare som till exempel Notepad eller Emacs. Skriv sedan din kod i redigeraren enligt Clojure-syntaxen. När du är nöjd med din kod kan du spara filen med ett namn och lägga till filändelsen .clj så att den kan läsas av Clojure-överflödet.
 
-```
-Clojure (spit "test.txt" "Hej världen")
+```Clojure
+(print "Hej världen!")
 ```
 
-Efter att ha kört denna kod, kommer en ny textfil "test.txt" att skapas i samma mapp som ditt Clojure-skript. Om du öppnar filen, kommer du att se att den innehåller texten "Hej världen".
+Detta exempel skriver ut texten "Hej världen!" när du kör det i Clojure-överflödet. Ett annat nyttigt verktyg är "println" som automatiskt lägger till en radbrytning efter texten.
+
+```Clojure
+(println "Välkommen till min blogg!")
+```
+
+Detta exempel skriver ut texten "Välkommen till min blogg!" på en egen rad.
 
 ## Djupdykning
 
-En textfil är en fil som innehåller textdata i sin råa form. Det kan vara allt från en enkel textsträng till en stor mängd data. Med Clojure, kan du skriva textfiler med hjälp av olika inbyggda funktioner och även genom att använda externa bibliotek.
+När du skriver en textfil i Clojure kan du använda en rad olika funktioner och datastrukturer. En vanlig sådan struktur är listor, som representeras med parenteser och innehåller olika värden eller funktioner. Ett annat exempel är map, där du kan associera nycklar med värden.
 
-En annan användbar funktion för att skriva textfiler är `slurp` som kan användas för att läsa innehållet från en befintlig fil och sedan skriva ut det i en annan fil. Till exempel:
-
-```
-Clojure (spit "output.txt" (slurp "input.txt"))
+```Clojure
+(def person {:namn "Anna" :ålder 30 :titel "Programmerare"})
 ```
 
-Denna kod kommer att läsa innehållet från filen "input.txt" och skriva ut det i filen "output.txt".
+Detta exempel skapar en map med information om en person. Du kan få åtkomst till enskilda värden genom att använda en punkt och nyckelns namn, till exempel "person.namn" för att få ut namnet "Anna".
 
-## Se också
+## Se även
 
-- [Clojure Dokumentation om filhantering](https://clojuredocs.org/clojure.java.io)
-- [En guide för att komma igång med Clojure](https://www.clojure.org/guides/getting_started)
-- [En överblick av Clojurens syntax](https://clojure.org/about/functional_programming)
+- [Clojure Dokumentation](https://clojure.org/guides/learn/syntax)
+- [Clojure Överflöde](https://clojure.org/guides/learn/functions)
+- [Textredigerare för Clojure](https://clojure.org/guides/getting_started#_text_editors)

@@ -1,35 +1,41 @@
 ---
 title:                "Kotlin: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego korzystać z wyrażeń regularnych?
 
-Regular expressions (wyrażenia regularne) są nieodłącznym narzędziem w programowaniu. Pozwalają one na przetwarzanie i manipulowanie tekstowymi danymi w sposób precyzyjny i szybki. Dzięki nim możemy wykonywać skomplikowane operacje na stringach, co jest bardzo przydatne w przypadku analizy tekstu czy weryfikacji poprawności formularzy. Poznajmy więc, dlaczego warto nauczyć się korzystać z wyrażeń regularnych w języku Kotlin.
+Wyrażenia regularne są niezwykle przydatnym narzędziem w programowaniu. Pozwalają one na wykonywanie złożonych operacji na tekstach, takich jak wyszukiwanie, zamiana czy walidacja danych. Dzięki nim można szybko i efektywnie przetwarzać duże ilości tekstu, co przekłada się na oszczędność czasu i pracy. Warto więc zapoznać się z wyrażeniami regularnymi, aby móc w pełni wykorzystać ich możliwości w swoich projektach.
 
-## Jak to zrobić
+## Jak używać wyrażeń regularnych w Kotlinie?
 
-Aby korzystać z regular expressions w Kotlin, wystarczy użyć wyrażenia ```Regex```. Przykładowo, aby sprawdzić czy dany string zawiera tylko cyfry, możemy użyć następującego kodu:
+Kotlin jest językiem programowania, który jest wyjątkowo wygodny w obsłudze wyrażeń regularnych. Można z nich korzystać za pomocą wbudowanej biblioteki Regex, która udostępnia szereg funkcji do manipulacji tekstami. Przykładowe użycie wyrażeń regularnych w Kotlinie wygląda następująco:
 
+```Kotlin
+val text = "Hello, world!" // Przykładowy tekst
+val regex = Regex("[A-Za-z]+") // Wyrażenie regularne, które dopasowuje wyrazy składające się tylko z liter
+val matches = regex.findAll(text) // Wyszukanie wszystkich dopasowań
+matches.forEach { match -> println(match.value) } // Wyświetlenie dopasowanych wyrazów
 ```
-val string = "12345"
-if (string.matches(Regex("\\d+"))) {
-    println("Ten string zawiera tylko cyfry.")
-}
-```
 
-Wynik powyższego kodu wyświetli się tylko wtedy, gdy string będzie się składał wyłącznie z cyfr. Aby dowiedzieć się więcej o funkcjach i metodach związanych z regular expressions, warto zapoznać się z oficjalną dokumentacją języka Kotlin. 
+Powyższy kod wyświetli na konsoli tylko wyrazy "Hello" i "world", ponieważ są one jedynymi wyrazami w tekście, które składają się tylko z liter.
 
-## Głębszy zanurzenie
+## Głębszy zanurzenie w wyrażeniach regularnych
 
-Wykorzystywanie wyrażeń regularnych może przydać się w wielu scenariuszach. Na przykład, możemy je wykorzystać do weryfikacji poprawności wprowadzonych przez użytkownika danych, takich jak numery telefonów, adresy email czy numery PESEL. Dodatkowo, regular expressions mogą być również używane w celu ekstrakcji informacji z tekstu. Są one wszechstronnym narzędziem, które mogą znacznie ułatwić pracę z tekstowymi danymi.
+Wyrażenia regularne są wysoce elastycznym narzędziem, które pozwala na precyzyjne manipulowanie tekstami. W Kotlinie można wykorzystywać szereg funkcji Regex, takich jak find(), matchEntire() czy replace(), aby jeszcze bardziej dostosować wyszukiwanie i manipulację tekstem.
+
+Ponadto, wyrażenia regularne pozwalają na wykonywanie złożonych operacji, np. wyszukiwania wzorców, które są trudne do opisania za pomocą tradycyjnego wyszukiwania tekstowego. Ponieważ Kotlin jest językiem obiektowym, można również tworzyć obiekty typu Regex i przekazywać je jako argumenty do funkcji, co zwiększa czytelność i łatwość w użyciu.
 
 ## Zobacz również
 
-- Dokumentacja języka Kotlin na temat regular expressions: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/
-- Przydatny generator wyrażeń regularnych: https://regexr.com/ 
-- Film edukacyjny o wyrażeniach regularnych w Kotlin: https://www.youtube.com/watch?v=6ZfuNTqbHE8
+Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych w Kotlinie, zapoznaj się z poniższymi linkami:
+
+- [Dokumentacja oficjalna](https://kotlinlang.org/docs/regular-expressions.html)
+- [Przewodnik po wyrażeniach regularnych w Kotlinie](https://www.baeldung.com/kotlin-regular-expressions)
+- [Kurs dla początkujących](https://kodejava.org/how-to-use-regular-expressions-in-kotlin/)

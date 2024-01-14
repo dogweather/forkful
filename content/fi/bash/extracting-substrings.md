@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Alimerkkijonojen erottaminen"
+title:                "Bash: Alimerkkijonojen erottelu"
+simple_title:         "Alimerkkijonojen erottelu"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/extracting-substrings.md"
 ---
 
@@ -9,34 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Substringien eristäminen on hyödyllinen taito, jota tarvitaan useimmissa Bash-ohjelmoinnin projekteissa. Se mahdollistaa tiettyjen merkkijonojen tai arvojen eristämisen suuremmista tekstimäärästä, mikä on erittäin hyödyllistä tietojen käsittelyssä ja analysoinnissa. 
+Substringien erottaminen on tärkeä osa Bash-ohjelmointia, sillä se mahdollistaa tiettyjen merkkijonojen erottamisen isommista kokonaisuuksista. Tämä voi olla erityisen hyödyllistä, kun haluat muokata tiettyä osaa merkkijonosta tai haluat käyttää vain pienen osan tietystä merkkijonosta.
 
-## Kuinka tehdä
+## Miten tehdä
 
-Käytä komentoa `cut` eristämään osia merkkijonoista. Esimerkiksi, jos haluat eristää puhelinnumeron tekstistä "Puhelinnumeroni on +358 123 456 789", voit käyttää seuraavaa koodia:
+Bash-ohjelmointikielessä voit käyttää komentoa `cut` erottaaksesi haluamasi osat merkkijonosta. Esimerkiksi jos haluat erottaa ensimmäisen sanan merkkijonosta, voit käyttää seuraavaa komentoa:
 
-```Bash 
-puhelinnumero="+358 123 456 789"
-leikattu_puhelinnumero=$(echo $puhelinnumero | cut -d " " -f 4)
-echo $leikattu_puhelinnumero
+```Bash
+cut -d " " -f 1 <<< "Tämä on esimerkki merkkijonosta"
 ```
 
-Tämä tulostaisi "123" terminaliin, sillä `cut`-komennolla leikataan puhelinnumerosta ensimmäiset kolme osaa (määritetty `-f` -flagilla) välilyöntien välillä (määritetty `-d` -flagilla).
+Tämä palauttaa vain ensimmäisen sanan, eli "Tämä", käyttäen välilyöntiä erotinmerkkinä (`-d`). Voit myös muuttaa delimiterin esimerkiksi pilkuksi vaihtamalla sen `-d` -valintaan.
 
-## Syvemmältä
+Voit myös erottaa osan merkkijonosta käyttäen `substring` -toimintoa Bashissa. Esimerkiksi:
 
-`cut`-komennon lisäksi on myös muita tapoja eristää substringeja Bash-ohjelmoinnissa. Esimerkiksi, voit käyttää `grep`-komentoa hakemaan tiettyjä merkkijonoja tekstimäärästä ja tallentaa sen muuttujaan:
-
-```Bash 
-syntymapaiva="Olen syntynyt 01.01.2000"
-eristetty_vuosi=$(echo $syntymapaiva | grep -Eo "[0-9]{4}")
-echo $eristetty_vuosi
+```Bash
+merkkijono="Tämä on esimerkki merkkijonosta"
+echo ${merkkijono:0:4}
 ```
 
-Tämä tulostaisi "2000" terminaliin, sillä `grep` etsii tekstimäärästä numeroyhdistelmiä, jotka koostuvat neljästä numerosta (`[0-9]{4}`). 
+Tämä palauttaa vain ensimmäisen neljännen merkin, eli "Tämä", merkkijonosta.
+
+## Syvällisempi sukellus
+
+Bash tarjoaa monia mahdollisuuksia erilaisten substringien erottamiseen. Voit esimerkiksi käyttää `grep` -komentoa etsiäksesi tietyn merkkijonon ja erottaa sen käyttämällä `cut` tai `substring` -toimintoa.
+
+Voit myös käyttää `awk` -komentoa monimutkaisempien substringien erottamiseen. `awk` käyttää erityistä syntaksia, jolla voit määrittää tietyn osan merkkijonosta.
 
 ## Katso myös
 
-- [Bash-komentorivin opas](https://debianhandbook.info/browse/fi-FI/stable/sect.shell-get.html)
-- [Leikkaa komentorivityökalu](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
-- [Grep-komento](https://www.gnu.org/software/grep/manual/grep.html)
+- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/manual/)
+- [Bashin AWK syntaksi -opas](https://www.pankajtanwar.in/basics-of-awk-command-in-linux/)
+- [Cut ja Substring -komennon käyttö Bashissa](https://linuxhint.com/cut-substring-bash/)

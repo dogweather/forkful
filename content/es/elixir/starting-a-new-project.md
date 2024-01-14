@@ -1,57 +1,49 @@
 ---
 title:                "Elixir: Comenzando un nuevo proyecto"
+simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Elixir"
-category:             "Getting Started"
+category:             "Elixir"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué
 
-Empezar un nuevo proyecto en Elixir puede ser una excelente opción para aquellos que buscan un lenguaje de programación funcional y altamente escalable. Con una sintaxis fácil de aprender y una comunidad activa, Elixir es una herramienta poderosa para crear aplicaciones robustas y eficientes.
+Comenzar un nuevo proyecto en un lenguaje de programación como Elixir puede ser una emocionante oportunidad para aprender nuevas habilidades y desarrollar aplicaciones eficientes y escalables. Además, Elixir ofrece muchas ventajas, como su capacidad para manejar concurrencia y su robusto sistema de tolerancia a fallas.
 
-## Cómo hacerlo
+# Cómo hacerlo
 
-Antes de comenzar a escribir código en Elixir, deberás asegurarte de tener instalado el runtime de Erlang y el sistema de construcción Mix. Una vez que tengas todo configurado, puedes seguir estos pasos para iniciar tu nuevo proyecto:
-
-1. Crea una nueva carpeta para tu proyecto.
-2. Abre una terminal y navega hasta la carpeta que acabas de crear.
-3. Ejecuta el comando `mix new nombre_del_proyecto` para generar una nueva estructura de proyecto con algunos archivos predefinidos.
-4. Navega a través de los archivos y edítalos según sea necesario para satisfacer tus necesidades.
-5. Para ejecutar tu proyecto, simplemente escribe `mix run` en la terminal.
-6. ¡Empieza a escribir tu código en Elixir y haz que tu proyecto cobre vida!
-
-Aquí hay un ejemplo básico de cómo imprimir "¡Hola mundo!" en la terminal usando Elixir:
+Para empezar con Elixir, es importante instalar el entorno de desarrollo adecuado y familiarizarse con la sintaxis básica del lenguaje. Aquí hay algunos ejemplos de código que pueden ayudarte a comenzar:
 
 ```Elixir
-defmodule Hola do
-  def mundo do
-    IO.puts "¡Hola mundo!"
-  end
+# Definir una función que suma dos números
+def sum(a, b) do
+  a + b
 end
 
-Hola.mundo()
+# Llamar a la función sum y mostrar el resultado
+IO.puts(sum(5, 3))
+# Output: 8
+
+# Crear una lista de números y utilizar una expresión lambda para multiplicar cada uno por 2
+list = [1, 2, 3, 4, 5]
+Enum.map(list, &(&1 * 2))
+# Output: [2, 4, 6, 8, 10]
 ```
 
-La salida de este código sería:
+Con práctica y exploración, podrás descubrir las muchas características útiles de Elixir, como la programación funcional y la manipulación de estructuras de datos inmutables.
 
-```
-¡Hola mundo!
-```
+# Profundizando
 
-## Profundizando
+Una vez que te sientas cómodo con la sintaxis y los conceptos básicos de Elixir, puedes profundizar en la creación de un nuevo proyecto. Esto incluye aprender cómo configurar un entorno de desarrollo adecuado, manejar dependencias con Mix (el gestor de paquetes de Elixir) y utilizar herramientas como Phoenix para construir aplicaciones web escalables.
 
-Al iniciar un nuevo proyecto en Elixir, es importante entender algunos conceptos clave como la inmutabilidad, la concurrencia y el patrón de diseño de OTP (Open Telecom Platform). Estos son los pilares sobre los que se construye Elixir, por lo que conocerlos te ayudará a escribir un código más eficiente y escalable.
+También es importante entender los principios de diseño de Elixir, como el uso de procesos y la comunicación entre ellos a través de mensajes. Esto es especialmente beneficioso en proyectos que requieren un alto rendimiento y tolerancia a fallas.
 
-La inmutabilidad se refiere a la idea de que los datos no deben cambiar una vez que se han creado, en lugar de eso, se deben crear nuevas versiones de los mismos. Esto ayuda a prevenir errores y hace que el código sea más fácil de razonar.
+# Ver también
 
-La concurrencia es una característica clave de Elixir que permite que varias tareas se ejecuten simultáneamente en un solo procesador. Esto se logra a través del uso de procesos livianos, que son mucho más eficientes que los hilos de los sistemas operativos. Esto permite que las aplicaciones escritas en Elixir manejen grandes cantidades de tareas de manera eficiente.
-
-El patrón de diseño de OTP es la forma en que Elixir organiza y estructura aplicaciones para asegurar que sean estables y escalables. Utiliza conceptos como la supervisión, que permite que una aplicación se recupere de errores de manera automática, y los GenServers, que son procesos de alto nivel que se encargan de procesar tareas específicas.
-
-## Ver también
-
-- [Documentación oficial de Elixir](https://elixir-lang.org/docs.html)
-- [Elixir School en español](https://elixirschool.com/es/)
-- [Lista de recursos de aprendizaje de Elixir en español](https://github.com/edgar/awesome-elixir-es)
+- [Instalación de Elixir](https://elixir-lang.org/install.html)
+- [Documentación oficial de Elixir](https://elixir-lang.org/getting-started/introduction.html)
+- [Phoenix Framework](https://www.phoenixframework.org/)
+- [Erlang OTP](https://www.erlang.org/docs)

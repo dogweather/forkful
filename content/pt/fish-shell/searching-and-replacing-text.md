@@ -1,40 +1,39 @@
 ---
-title:                "Fish Shell: Busca e substituição de texto"
+title:                "Fish Shell: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Utilizar a Shell de Peixe?
+## Por que utilizar busca e substituição de texto na Shell Fish?
 
-Muitas vezes, ao trabalhar com arquivos de texto, é necessário fazer mudanças rápidas e precisas nos conteúdos. A Shell de Peixe oferece uma maneira eficiente de realizar essa tarefa, economizando tempo e esforço. Neste artigo, vamos explorar como podemos utilizar a Shell de Peixe para buscar e substituir texto em nossos arquivos.
+A busca e substituição de texto é uma ferramenta poderosa na programação que permite aos usuários localizar e alterar determinados trechos de texto em um arquivo ou diretório. Isso pode economizar muito tempo e esforço, especialmente em projetos grandes com muitos arquivos. A Shell Fish possui uma função integrada embutida que facilita a realização da busca e substituição de texto.
 
-## Como Utilizar a Shell de Peixe para Buscar e Substituir Texto
+## Como fazer busca e substituição de texto na Shell Fish?
 
-```Fish Shell
-# Buscando e substituindo texto no terminal
-sed -i 's/antigo/novo/g' arquivo.txt
+Para utilizar a função de busca e substituição de texto na Shell Fish, primeiro você precisa abrir o terminal e navegar até o diretório onde está o arquivo que deseja alterar. Em seguida, digite o seguinte comando:
+
+```Shell Fish
+sed 's/palavra_antiga/nova_palavra' arquivo.txt
 ```
 
-Neste exemplo, usamos o comando "sed" para buscar e substituir todas as ocorrências da palavra "antigo" pela palavra "novo" no arquivo chamado "arquivo.txt". A opção "-i" indica que queremos que as mudanças sejam feitas diretamente no arquivo, em vez de imprimir o resultado no terminal.
+Isso irá substituir a "palavra_antiga" pela "nova_palavra" no arquivo "arquivo.txt". Você também pode usar curingas para substituir todas as ocorrências da palavra antiga. Por exemplo, se quiser substituir todas as letras "a" por "e" no arquivo, você pode usar o seguinte comando:
 
-```Fish Shell
-# Usando expressões regulares
-sed -i 's/[0-9]\{3\}/XXX/g' arquivo.txt
+```Shell Fish
+sed 's/a/e/g' arquivo.txt
 ```
 
-Aqui, usamos uma expressão regular para buscar e substituir todos os números de três dígitos no arquivo por "XXX". Isso pode ser útil para ocultar informações sensíveis, como números de telefone ou CPFs.
+## Explorando mais profundamente a busca e substituição de texto na Shell Fish
 
-## Profundidade no Uso de Busca e Substituição de Texto
+Além do uso básico de substituição de texto que foi mostrado acima, a Shell Fish também oferece outras opções e comandos úteis. Por exemplo, você pode especificar qual linha ou intervalo de linhas deseja substituir usando números de linha. Você também pode salvar as alterações feitas em um novo arquivo, em vez de substituir o arquivo original.
 
-A Shell de Peixe possui outras ferramentas além do comando "sed" que podem ser úteis para buscar e substituir texto. Por exemplo, o comando "grep" pode ser usado para buscar linhas de texto que correspondam a um padrão específico, enquanto o comando "awk" permite que você execute operações mais complexas em arquivos de texto.
+Para saber mais sobre todas as opções disponíveis e a sintaxe correta para a busca e substituição de texto na Shell Fish, você pode consultar a documentação oficial ou pesquisar por tutoriais online.
 
-Além disso, é possível criar scripts e funções personalizadas para automatizar tarefas de busca e substituição de texto em diferentes situações. Com um pouco de prática, a Shell de Peixe se torna uma ferramenta poderosa para manipulação de texto.
+## Veja também
 
-## Veja Também
-
-- [Tudo o que você precisa saber sobre a Shell de Peixe](https://fishshell.com/)
-- [Documentação oficial do comando "sed"](https://www.gnu.org/software/sed/manual/sed.html)
-- [Guia de expressões regulares na Shell de Peixe](https://fishshell.com/docs/current/tutorial.html#tutorial-regex)
+- Documentação oficial da Shell Fish: https://fishshell.com/docs/current/
+- Tutorial de busca e substituição de texto na Shell Fish: http://fishshell.net/docs/current/tutorial.html#substitution

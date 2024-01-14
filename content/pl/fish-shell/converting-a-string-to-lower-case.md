@@ -1,34 +1,60 @@
 ---
-title:                "Fish Shell: Konwertowanie ciągu znaków na małe litery"
+title:                "Fish Shell: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-### Dlaczego?
+## Dlaczego
 
-Jeśli jesteś programistką lub programistą, prawdopodobnie spotkałaś się z sytuacją, w której potrzebowałaś lub potrzebowałeś zamienić napis na małe litery. Czy to dla porównania ze wzorcem, czy dla ujednolicenia danych, konwersja ta jest niezbędna w wielu przypadkach. W tym wpisie dowiecie się, jak zrobić to w Fish Shell.
+Często w programowaniu potrzebujemy zmienić stringi na małe litery, niezależnie od tego jak są wprowadzone. W tym wpisie dowiesz się, jak łatwo wykonać tę operację w języku Fish Shell.
 
-### Jak to zrobić?
+## Jak to zrobić
 
-Możesz użyć wbudowanej funkcji `string tolower`, która konwertuje napis na małe litery. Spróbujmy to na praktycznym przykładzie:
+Aby przekonwertować string na małe litery w Fish Shell, możemy skorzystać z funkcji `string tolower`, która zwraca przekonwertowany tekst. Oto przykładowy kod:
 
 ```Fish Shell
-string tolower "PRZYKŁADOWY NAPIS"
+string tolower "JESTEM PRZESTRZEGANIEGŁUPICH zasad"
 ```
 
-Wynik wywołania tej funkcji będzie po prostu "przykładowy napis". Zauważmy, że funkcja ta jest nieczuła na to, czy w podanym napisie są już małe litery czy nie. Pozwala to na łatwe porównywanie napisów bez konieczności uwzględniania wielkości liter.
+Wynik wyświetli się w postaci:
 
-Jeśli jednak chcemy mieć pełną kontrolę nad konwersją, możemy użyć innych wbudowanych funkcji jak `string tolower-macron` lub `string tolower-accent`. Warto też zapoznać się z funkcją `string toupper`, która konwertuje napis na duże litery.
+```Fish Shell
+jestem przestrzeganiem głupich zasad
+```
 
-### Dogłębny wgląd
+Jeśli chcemy zmienić podaną wartość bezpośrednio, możemy skorzystać z wyrażenia regularnego `string match`, które będzie przypisywać zmienną z małymi literami, jak w poniższym przykładzie:
 
-W Fish Shell konwersja napisów oparta jest na standardowej bibliotece C dla języka C. Oznacza to, że funkcje te wykonują pewne operacje na poszczególnych znakach w napisie, np. zmiana wartości kodu ASCII na odpowiednią wartość dla małych liter. W przypadku użycia specjalnych znaków lub liter z akcentami, konwersja może być bardziej skomplikowana, dlatego też istnieją funkcje `tolower-macron` i `tolower-accent`, które obsługują te przypadki.
+```Fish Shell
+string value "JAk nAkAżCiwy ZawARTość"
+echo "$value" | string match -r ".*" --write-to value
+echo "$value"
+```
 
-### Zobacz także
+Powyższy kod wyświetli nam:
 
-- [Dokumentacja Fish Shell - String Manipulation](https://fishshell.com/docs/current/tutorial.html#tutorial-manip)
-- [Dokumentacja Fish Shell - String Functions](https://fishshell.com/docs/current/cmds/string.html)
-- [Poradnik programisty - Konwersja napisów na małe litery w Shell](https://www.shell-tips.com/2014/06/04/how-to-convert-uppercase-letters-to-lowercase-in-bash/)
+```Fish Shell
+jak nakażciwy zawartość
+```
+
+## Deep Dive
+
+Podczas wykorzystywania funkcji `string tolower` musimy być świadomi, że nie tylko zmienia się wielkość liter, ale również zmienia się struktura tekstu, a dokładniej modyfikuje się znaki niestandardowe i znaki diakrytyczne. Na przykład, litera `Ś` zostanie przekonwertowana na `ś`, a `ó` na `o`.
+
+Jeśli chcemy uniknąć tych zmian, możemy skorzystać z funkcji `string lowercase`, która tylko zmieni wielkość liter, ale zostawi resztę tekstu bez zmian. Przykład użycia tej metody może wyglądać następująco:
+
+```Fish Shell
+string value "JAk nAkAżCiwy ZawARTość"
+echo "$value" | string lowercase
+```
+
+Wynik będzie wyglądał identycznie jak w przykładzie dla funkcji `string match`.
+
+## Zobacz też
+
+- Dokumentacja Fish Shell na temat funkcji `string tolower`: https://fishshell.com/docs/current/cmds/tolower.html
+- Źródło wyrażeń regularnych: https://www.regular-expressions.info/

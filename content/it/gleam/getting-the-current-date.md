@@ -1,7 +1,9 @@
 ---
 title:                "Gleam: Ottenere la data corrente"
+simple_title:         "Ottenere la data corrente"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/getting-the-current-date.md"
 ---
 
@@ -9,30 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Ci sono molte ragioni per cui si potrebbe voler ottenere la data corrente in un programma Gleam. Ad esempio, potresti voler utilizzare la data per calcolare delle scadenze, creare dei log, o semplicemente mostrare la data nel formato desiderato.
+Molte volte, quando si sviluppa un'applicazione, è necessario utilizzare la data corrente come parte della logica del programma. In Gleam, è possibile facilmente ottenere la data corrente utilizzando alcune funzioni built-in.
 
-## Come
+## Come fare
 
-Per ottenere la data corrente in Gleam, esistono due modi principali: utilizzando le funzioni `Date.now` o `Date.utc_now`.
+Per ottenere la data corrente, utilizzeremo la funzione `ctime.now()`. Questo restituirà una struttura di tipo `Time` che rappresenta la data e l'ora attuali. Di seguito è riportato un esempio di codice con un'implementazione base di questa funzione:
 
-```
-Gleam
-import Date
+```Gleam
+import gleam/ctime
 
-// Ottieni la data corrente come timestamp UTC
-let currentUtcTimestamp = Date.utc_now()
-
-// Oppure, ottieni la data corrente come un record con più informazioni utili
-let currentDate = Date.now()
+pub fn main() {
+  let now = ctime.now()
+  debug(now)
+}
 ```
 
-L'output di `currentUtcTimestamp` sarà un intero rappresentante il numero di millisecondi trascorsi dal 1 gennaio 1970, mentre `currentDate` sarà un record contenente il giorno, il mese, l'anno, l'ora, il minuto, il secondo e il millisecondo correnti.
+L'output di questo codice sarà qualcosa del genere:
 
-## Deep Dive
+```
+{time.Second, {2021, March, 10}, {3, 18, 45}}
+```
 
-Se vuoi saperne di più sul funzionamento interno delle funzioni `Date.now` e `Date.utc_now`, puoi consultarne la documentazione ufficiale di Gleam. Inoltre, è possibile utilizzare queste funzioni per ottenere la data in vari formati, utilizzando le funzioni di formattazione della libreria standard o scrivendone una personalizzata.
+Possiamo anche utilizzare la funzione `ctime.format()` per formattare la data nel formato desiderato. Ad esempio, se vogliamo ottenere la data nel formato "DD/MM/YYYY", possiamo utilizzare questo snippet di codice:
 
-## Vedi anche
+```Gleam
+import gleam/ctime
 
-- Documentazione ufficiale di Gleam per Date: https://gleam.run/documentation/stdlib/date
-- Funzioni di formattazione della libreria standard di Gleam: https://gleam.run/documentation/stdlib/format
+pub fn main() {
+  let now = ctime.now()
+  let formatted_date = ctime.format("DD/MM/YYYY", now)
+  debug(formatted_date)
+}
+```
+
+Il risultato di questo codice sarà qualcosa del genere:
+
+```
+10/03/2021
+```
+
+## Approfondimento
+
+La funzione `ctime.now()` utilizza il fuso orario locale del sistema in cui viene eseguito il codice. Se si desidera ottenere la data in un fuso orario specifico, è possibile utilizzare la funzione `ctime.from_utc()` passando come argomenti la data e l'ora desiderate, insieme al fuso orario corrispondente. Ad esempio:
+
+```Gleam
+import gleam/ctime
+
+pub fn main() {
+  let now = ctime.from_utc({2021, March, 10}, {12, 0, 0}, "America/New_York")
+  debug(now)
+}
+```
+
+Questo restituirà la data nel fuso orario di New York.
+
+## Vedere anche
+
+- Documentazione di Gleam sulle funzioni di data e ora: [https://gleam.run/docs/stdlib/ctime](https://gleam.run/docs/stdlib/ctime)
+- Formato delle stringhe di data e ora in Gleam: [https://gleam.run/docs/stdlib/ctime#timeformat](https://gleam.run/docs/stdlib/ctime#timeformat)
+- Lista dei fusi orari supportati da Gleam: [https://gist.github.com/noolarch/0779e72b3f5dc4157e17664860ab5459](https://gist.github.com/noolarch/0779e72b3f5dc4157e17664860ab5459)

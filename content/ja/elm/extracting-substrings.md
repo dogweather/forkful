@@ -1,47 +1,44 @@
 ---
 title:                "Elm: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-なぜサブストリングを抽出した方が良いのか？
+## なぜ
+文字列の一部を取り出すことをする理由を説明します。
 
-サブストリングを抽出することが、Web開発やデータ処理を行う際に非常に有用です。特定のテキストや文字列から、必要な情報だけを抽出することができます。これにより、データの収集や整理がより効率的に行えます。
+文字列を取り出すことは、より柔軟なデータ処理を可能にし、必要な情報を的確に抽出するために役立ちます。また、テキスト処理や検索機能の実装にも必要になる場合があります。
 
-## How To
-サブストリングを抽出する方法をご紹介します。「```Elm ... ```」のコードブロックを使用し、実際のコーディング例と出力を確認していきましょう。
+## 使い方
+以下のコード例では、文字列から特定の部分を抽出する方法を示します。まず、 `Substring.substr` 関数を使用して、始点と終点のインデックスを指定します。次に、任意の変数に抽出した部分文字列を割り当てることができます。
 
-### 例題1: 文字列の一部を抽出する
-```
-Elm String.slice "Hello World" 6 11
-```
-```
-"Just"
-```
+```Elm
+import Substring
 
-この例では、String.sliceメソッドを使用して、"Hello World"という文字列から、インデックス6から11までの部分文字列を抽出しています。これにより、最初の単語"Hello"を除いた「World」という部分文字列が取得できます。
+sentence = "今日はいい天気です"
 
-### 例題2: 正規表現を使用して特定のパターンを抽出する
-```
-Elm Regex.find Regex.All "Hello 123 World" "([0-9]+)"
-```
-```
-Just [ "123" ]
+part = Substring.substr 3 6 sentence
+
+main = 
+  text part
+
 ```
 
-正規表現を使用することで、特定のパターンを持つ文字列を抽出することができます。上記の例では、"Hello 123 World"という文字列から数字の部分文字列を抽出しています。
+上記のコードを実行すると、抽出した部分文字列 "日はい" が出力されます。これをもとに、必要な処理を行うことができます。
 
-## Deep Dive
-サブストリングを抽出する方法についてもっと詳しく知りたい方は、[Elmの公式ドキュメント](https://elm-lang.org/docs)をご覧ください。また、[elm/regexパッケージ](https://package.elm-lang.org/packages/elm/regex/latest/)を使用することで、より高度な文字列抽出を行うことができます。
+また、より複雑な文字列処理を行う場合は、正規表現を使用することもできます。例えば、電話番号やメールアドレスを抽出する際には、正規表現を使用してパターンを指定することができます。
 
-## See Also
-参考情報:
+## ディープダイブ
+文字列の抽出には、さまざまな方法があります。例えば、 `Substring.left`や `Substring.right`を使用することで、文字列の一部を指定した長さで取り出すことができます。また、文字列内の特定の文字列を検索する際には、 `String.contains`関数を使用することもできます。
 
-- [Elmの公式ドキュメント](https://elm-lang.org/docs)
-- [elm/regexパッケージ](https://package.elm-lang.org/packages/elm/regex/latest/)
+文字列の抽出には、様々な状況や目的に合わせて適切な方法を選択する必要があります。より詳細を知りたい場合は、公式のドキュメントを参照することができます。
 
-サブストリングを抽出することで、より柔軟なデータ処理が可能になります。ぜひ、上記の方法を参考にしてみてください。
+## 参考リンク
+- [Elm Substring ドキュメント](https://package.elm-lang.org/packages/elm-lang/core/latest/Substring)
+- [正規表現チートシート](https://www.debuggex.com/cheatsheet/regex/elm)
+- [Elm公式ドキュメント](https://guide.elm-lang.org/)

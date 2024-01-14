@@ -1,59 +1,53 @@
 ---
 title:                "Arduino: Gerando números aleatórios"
+simple_title:         "Gerando números aleatórios"
 programming_language: "Arduino"
-category:             "Numbers"
+category:             "Arduino"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que gerar números aleatórios é importante para o seu projeto Arduino
+## Por Que
 
-Gerar números aleatórios é crucial em muitos projetos que envolvem a placa Arduino. Eles podem ser usados para criar padrões imprevisíveis ou para simular condições aleatórias em jogos e simulações. Além disso, a geração de números aleatórios também é útil em projetos de segurança, como sistemas de bloqueio ou autenticação.
+Você já se perguntou por que é importante ser capaz de gerar números aleatórios em um programa Arduino? Bem, há diversas aplicações úteis para isso! A geração de números aleatórios pode ser usada em jogos, sorteios, algoritmos de criptografia, máquinas de sorte e muito mais! É uma habilidade muito importante para quem deseja explorar e aprender mais sobre a programação em Arduino.
 
-## Como gerar números aleatórios em seu código Arduino
+## Como Fazer
 
-Para gerar números aleatórios em seu código Arduino, você precisará utilizar a função "random()". Esta função aceita dois parâmetros, o primeiro sendo o valor mínimo desejado e o segundo sendo o valor máximo desejado. Por exemplo, se você quiser gerar um número aleatório entre 0 e 10, seu código ficaria assim:
-
-```
-Arduino
-int numeroAleatorio = random(0, 10);
-```
-
-Você também pode gerar números aleatórios dentro de um loop, para obter uma série de valores aleatórios ao longo do tempo. Basta declarar a função "random()" dentro do seu loop e adicionar uma pausa para que os números não sejam gerados rapidamente demais.
+Para gerar números aleatórios em um programa Arduino, podemos utilizar a função ```random(min, max)```. Esta função retorna um número aleatório entre o valor mínimo (min) e o valor máximo (max) especificados. Podemos então utilizar esse número em nossas aplicações, como por exemplo:
 
 ```
-Arduino
-void loop(){
-  int numeroAleatorio = random(0, 10);
-  delay(100); //pausa de 100 milissegundos
-}
+Arduino random(1, 10);
+
+// Gera um número aleatório entre 1 e 10
 ```
 
-## Mergulhando mais fundo na geração de números aleatórios no Arduino
-
-A função "random()" não é realmente aleatória, pois ela utiliza um algoritmo matemático para gerar os números. No entanto, você pode torná-la mais aleatória ao usar um valor "semente" (seed) como parâmetro. Isso pode ser um valor fixo, como o tempo do sistema, ou um valor que varia, como a leitura de uma porta analógica.
+Podemos também utilizar a função ```randomSeed(seed)```, que inicializa o gerador de números aleatórios com um valor de semente (seed) específico. Isso garante que a sequência de números gerada seja diferente a cada execução do programa.
 
 ```
-Arduino
-//uso de um valor fixo como "semente"
-int numeroAleatorio = random(0, 10, 123);
+Arduino randomSeed(123);
 
-//uso de uma leitura da porta analógica como "semente"
-int semente = analogRead(A0);
-int numeroAleatorio = random(0, 10, semente);
+// Inicializa o gerador de números aleatórios com a semente 123
 ```
 
-Além disso, se você quiser gerar números aleatórios dentro de um intervalo específico, você pode utilizar a função "randomSeed()" para alterar o valor inicial do algoritmo. Isso pode ser feito em qualquer ponto do seu código.
+Além disso, é possível utilizar a função ```random(min, max, seed)```, que combina as funcionalidades das duas funções anteriores. Neste caso, a semente (seed) é utilizada para gerar o primeiro número aleatório, e a cada chamada da função, um novo número é gerado baseado no anterior.
 
 ```
-Arduino
-randomSeed(42); //altera o valor inicial do algoritmo
-int numeroAleatorio = random(0, 10);
+Arduino random(1, 10, 123);
+
+// Gera um número aleatório entre 1 e 10, iniciando com a semente 123
+// Cada nova chamada da função irá gerar um novo número baseado no anterior
 ```
 
-## Veja também
+## Diving Nutro
 
-- [Tutorial de geração de números aleatórios no Arduino (em inglês)](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Artigo sobre o uso de valores semente na geração de números aleatórios no Arduino (em inglês)](https://www.arduino.cc/reference/en/language/functions/random-numbers/randomseed/)
-- [Exemplo de projeto Arduino que utiliza geração de números aleatórios (em inglês)](https://create.arduino.cc/projecthub/ibnashahab/random-number-generator-using-arduino-293b5c)
+Para entendermos melhor como a função ```random``` gera os números aleatórios, precisamos entender um pouco sobre como os computadores trabalham com números. Na verdade, os computadores são capazes de gerar somente números pseudoaleatórios, ou seja, sequências aparentemente aleatórias, mas que são geradas por um algoritmo específico.
+
+A função ```random``` utiliza o algoritmo Mersenne Twister, um dos mais famosos geradores de números aleatórios. Ele foi criado em 1997 e é conhecido por ter um ciclo muito longo, o que significa que a sequência gerada é praticamente indistinguível de uma sequência verdadeiramente aleatória. Porém, é importante lembrar que ainda assim, trata-se de uma sequência determinística, gerada por um algoritmo.
+
+## Veja Também
+
+- Documentação oficial do Arduino sobre a função ```random```: https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
+- Mais informações sobre o algoritmo Mersenne Twister: https://en.wikipedia.org/wiki/Mersenne_Twister
+- Um exemplo prático de uso da função random em um jogo de dados: https://www.arduino.cc/en/tutorial/random-numbers

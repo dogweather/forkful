@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: अस्थायी फाइल बनाना"
+title:                "Haskell: अस्थायी फ़ाइल बनाना"
+simple_title:         "अस्थायी फ़ाइल बनाना"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/creating-a-temporary-file.md"
 ---
 
@@ -9,33 +11,14 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-अगर आप एक हैस्केल प्रोग्रामर हैं तो आपने temporary files के बारे में सुना होगा। ये एक common programming practice है जो हमें ध्यान रखना चाहिए। इस लेख में हम temporary files के बारे में गहराई से बात करेंगे।
+क्या आपने कभी अपने हास्केल प्रोग्राम में अस्थायी फ़ाइल बनाने के लिए विचार किया है? शायद किसी प्रोग्राम को चलाने के दौरान, आपको बहुत सारी डेटा को कम स्टोरेज स्पेस पर स्थान देने की ज़रूरत पड़ सकती है। या फिर आपको कुछ सामग्री या फ़ाइलों को प्रोग्राम से अलग होने की आवश्यकता हो सकती है। इन सभी स्थितियों में, अस्थायी फ़ाइलें आपको मदद कर सकती हैं। इस ब्लॉग पोस्ट में, हम जानेंगे कि हास्केल में अस्थायी फ़ाइलें कैसे बनाई जाती हैं और यह क्यों ज़रूरी हो सकती है।
 
-## कैसे करें
+## कैसे
 
-यदि आप हास्केल में temporary files बनाना चाहते हैं तो आपको `System.IO.Temp` मॉड्यूल का उपयोग करना होगा। ये मॉड्यूल temporary फ़ाइल को create, read और delete करने के लिए फ़ंक्शन प्रदान करता है।
-
-आइए हम एक example देखें जहाँ हम temporary file बनाकर उसमें कुछ लिखते हैं और फिर उसको पढ़ते हैं।
+अस्थायी फ़ाइलें बनाने के लिए, हम `System.IO` मॉड्यूल में दिए गए `withSystemTempFile` फ़ंक्शन का इस्तेमाल कर सकते हैं। यह फ़ंक्शन दो आर्ग्यूमेंट्स लेता है - एक `पथ` और एक `एक्शन`। `पथ` पैरामीटर में आप अपनी अस्थायी फ़ाइल को सुरक्षित रूप से संग्रहीत करने के लिए दिए गए पथ को देन सकते हैं। `एक्शन` पैरामीटर आपको आपकी अस्थायी फ़ाइल के साथ कुछ क्रियाएं करने की अनुमति देता है। नीचे दिए गए उदाहरण में, हम एक अस्थायी फ़ाइल बनाएंगे और उसमें कुछ सामग्री लिखेंगे। फिर हम उसे पढ़ेंगे और फ़ाइल को हटा देंगे।
 
 ```Haskell
-import System.IO.Temp (withSystemTempFile)
-import System.IO (hPutStrLn, hGetContents)
+import System.IO
 
-main = withSystemTempFile "example.txt" $ \path handle -> do
-    hPutStrLn handle "नमस्ते दुनिया!"
-    hGetContents handle >>= putStrLn
-```
-
-इस कोड का output नीचे दिया गया है:
-
-```
-नमस्ते दुनिया!
-```
-
-इस code में हमने `withSystemTempFile` फ़ंक्शन का उपयोग किया है जो दो arguments लेता है - एक temporary फ़ाइल का prefix और एक callback function। यह callback function temporary फ़ाइल का path और handle को लेता है जिसका हम उपयोग कर सकते हैं। हमने `hPutStrLn` function का उपयोग करके temporary फ़ाइल में लिखा है और फिर `hGetContents` फ़ंक्शन का उपयोग करके उसमें से text को पढ़ा है।
-
-## गहराई में
-
-Temporary files को create करने के कई तरीके हैं लेकिन वे सभी कुछ common features share करते हैं। जब temporary file create होता है तो वो system के default लोकेशन में जाता है। यदि आप इस default लोकेशन को override करना चाहते हैं तो आप `withSystemTempDirectory` फ़ंक्शन का उपयोग कर सकते हैं। भी temporary file को delete करने के लिए `removeFile` function का उपयोग कर सकते हैं।
-
-एक ऐसा
+-- फ़ंक्शन जो अस्थाई फ़ाइल बनाएगी और सामग्री लिखेगी
+action temp

@@ -1,46 +1,43 @@
 ---
 title:                "Haskell: Buscando y reemplazando texto"
+simple_title:         "Buscando y reemplazando texto"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-¿Alguna vez te has encontrado en la situación en la que tienes un gran bloque de texto y necesitas reemplazar una palabra o frase en todo él? Ya sea que estés escribiendo un ensayo, un código de programación o simplemente revisando un documento, reemplazar manualmente puede ser un proceso tedioso y propenso a errores. ¡Afortunadamente, hay una solución más eficiente utilizando Haskell!
+En la programación, a menudo nos encontramos con la necesidad de buscar y reemplazar texto en nuestro código. Esto puede ser debido a errores ortográficos, cambios en los requerimientos del proyecto, o simplemente para hacer nuestro código más legible. Afortunadamente, Haskell tiene una función incorporada que nos permite realizar esta tarea de una manera eficiente y confiable.
 
-## Cómo
-La búsqueda y reemplazo de texto en Haskell puede ser fácilmente lograda a través de la función `replace` en el módulo `Data.Text`. Esta función toma tres argumentos: la palabra o frase a reemplazar, la palabra o frase de reemplazo y el texto en el que se realizará la búsqueda y reemplazo. Aquí hay un ejemplo simple:
-
-```Haskell
-import Data.Text
-
-texto = "Me encanta programar en Haskell. Es un lenguaje elegante y poderoso."
-nuevoTexto = replace "Haskell" "Python" texto
-
-main = putStrLn nuevoTexto
-```
-
-En este caso, la salida será: "Me encanta programar en Python. Es un lenguaje elegante y poderoso."
-
-Para realizar una búsqueda y reemplazo en un archivo específico, podemos utilizar las funciones `readFile` y `writeFile` en conjunto con `replace`. Aquí hay un ejemplo:
+## Cómo hacerlo
+La función que utilizaremos para buscar y reemplazar texto en Haskell se llama `replace`. Esta función acepta tres parámetros: el texto a buscar, el texto de reemplazo y el texto original. Veamos un ejemplo de cómo usarlo:
 
 ```Haskell
-import Data.Text
-import System.IO
-
-main = do
-    texto <- readFile "texto.txt"
-    let nuevoTexto = replace "programación" "codificación" texto
-    writeFile "nuevoTexto.txt" nuevoTexto
-    putStrLn "¡Reemplazo de texto completado!"
+replace "perro" "gato" "Me gustan los perros"
 ```
 
-## Deep Dive
-Además de la función `replace`, hay otras opciones disponibles en Haskell para realizar búsquedas y reemplazos más complejas. Por ejemplo, si queremos reemplazar solo la primera aparición de una palabra o frase, podemos utilizar la función `replaceFirst`. También podemos utilizar expresiones regulares para realizar búsquedas y reemplazos más avanzados a través de funciones del módulo `Text.Regex`.
+Este código nos devolverá la cadena "Me gustan los gatos". Como puedes ver, la función `replace` es muy fácil de usar y nos ahorra mucho tiempo en la edición de texto en nuestro código.
+
+Otra forma de utilizar esta función es con el uso de variables. Por ejemplo:
+
+```Haskell
+let palabraABuscar = "adiós"
+let palabraDeReemplazo = "hola"
+let frase = "¡adiós amigos!"
+replace palabraABuscar palabraDeReemplazo frase
+```
+
+En este caso, obtendremos como resultado la cadena "¡hola amigos!". Como ves, podemos utilizar variables para hacer la función más reusable y dinámica.
+
+## Profundizando
+La función `replace` en realidad es una función de orden superior, lo que significa que también puede tomar una función como parámetro. Esto nos permite hacer reemplazos más complicados y personalizados. Por ejemplo, podríamos utilizar la función `map` para reemplazar cada carácter en una cadena por otro de manera específica.
+
+Otra característica interesante de `replace` es que también funciona con tipos de datos más complejos, como listas o tuplas. Esto nos permite buscar y reemplazar no solo texto, sino también listas de números o tipos de datos personalizados.
 
 ## Ver también
-- [Documentación oficial de Haskell](https://www.haskell.org/documentation/)
-- [Tutorial de búsqueda y reemplazo en Haskell](https://wiki.haskell.org/Regular_expressions)
-- [Ejemplos de código en Haskell](https://www.haskell.org/onlinereport/io.html)
+- Documentación oficial de la función `replace` en Haskell: https://www.haskell.org/hoogle/?hoogle=replace
+- Ejemplos de uso avanzado de la función `replace`: https://wiki.haskell.org/List_function_proposals_by_example%2B
+- Tutoriales de Haskell para principiantes: https://www.haskell.org/tutorial/

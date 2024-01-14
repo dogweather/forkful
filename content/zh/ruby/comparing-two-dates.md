@@ -1,48 +1,51 @@
 ---
 title:                "Ruby: 比较两个日期"
+simple_title:         "比较两个日期"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：比较两个日期在编程中是非常常见的任务，它可以帮助我们在处理时间数据时更加准确和高效。
+## 为什么
 
-如何做：实现日期比较有多种方法，这里我们将介绍使用 Ruby 编程语言进行比较的方法。下面是一个使用 `-` 操作符来比较两个日期的示例代码：
+ 对于初学者来说，比较两个日期可能听起来很复杂，但实际上，它是编程中一个重要且容易掌握的基础概念。通过比较两个日期，我们可以在程序中实现很多有用的功能，比如判断某个事件是否已经发生、计算给定时间段内的活动数量等等。
 
-```Ruby
-date_1 = Date.parse('2021-01-01')
-date_2 = Date.parse('2021-01-10')
+## 如何实现日期比较
 
-if date_1 < date_2
-  puts "日期 1 在日期 2 之前"
-elsif date_1 > date_2
-  puts "日期 1 在日期 2 之后"
-else
-  puts "两个日期相等"
-end
-```
-
-运行上面的代码，你会得到以下输出：
+在Ruby中，我们可以使用内置的```Date```类来比较两个日期。首先，我们需要引入该类：
 
 ```Ruby
-日期 1 在日期 2 之前
+require 'date'
 ```
 
-深入探讨：要理解日期比较的原理，我们需要了解日期是如何在计算机中表示的。在 Ruby 中，日期是以自公元前4713年的一月一日开始计算的“儒略日”的形式存储的。我们可以使用 `year`、`month` 和 `day` 来访问日期对象中的年、月和日信息。所以，当我们比较两个日期时，实际上是在比较它们对应的“儒略日”数值。
+然后，我们可以使用```Date.parse```方法来将字符串转换为日期对象。例如，我们要比较2021年1月1日和2021年1月2日两个日期，可以这样写：
 
-我们还可以通过 `DateTime` 类来实现日期比较，它是 `Date` 类的子类，可以处理更加复杂的日期和时间操作。详细的用法可以参考 Ruby 官方文档。
+```Ruby
+date1 = Date.parse("2021-01-01")
+date2 = Date.parse("2021-01-02")
+```
 
-另外，比较日期时还需要注意不同月份的天数不同，以及闰年的处理。
+接下来，我们可以使用```<```、```<=```、```>```、```>=```等运算符来比较这两个日期。例如，我们想要判断```date1```是否在```date2```之后，可以这样写：
 
-## 参考资料
+```Ruby
+date1 > date2  # 返回值为false
+```
 
-* [Ruby Date 类文档](https://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/Date.html)
-* [Ruby DateTime 类文档](https://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/DateTime.html)
-* [Ruby 日期和时间操作指南](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
+## 深入了解日期比较
 
-## 参见
+实际上，Ruby中的日期比较是基于每个日期表示为一个Julian Date（朱利安日期）的概念。Julian Date是一个从公元前4713年1月1日开始计算的连续天数，用来表示日期和时间。在Ruby中，我们也可以使用```Date#jd```方法来获取日期的Julian Date值。例如，我们想要获取2021年1月1日的Julian Date值，可以这样写：
 
-* [如何使用 Ruby 计算日期间隔](https://www.example.com/calculate-date-difference-ruby)
-* [Ruby 日期格式化指南](https://www.example.com/ruby-date-formatting)
+```Ruby
+Date.parse("2021-01-01").jd  # 返回值为2459215
+```
+
+通过比较日期的Julian Date值，我们可以实现更复杂的功能，比如计算时间段内的天数差、将日期转换为其他时间单位等等。
+
+## 参考链接
+
+- [Ruby官方文档 - Date类](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
+- [Faster Way to Calculate Julian Day in Ruby](https://www.earthdatascience.org/courses/earth-analytics-bootcamp/julian-day-in-ruby/)
+- [Julian Date - Wikipedia](https://en.wikipedia.org/wiki/Julian_day)

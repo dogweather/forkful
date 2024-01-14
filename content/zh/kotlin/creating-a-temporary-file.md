@@ -1,45 +1,38 @@
 ---
-title:                "Kotlin: 创建临时文件。"
+title:                "Kotlin: 创建临时文件"
+simple_title:         "创建临时文件"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/kotlin/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么创建临时文件
+## 为什么创建临时文件？
 
-在编写Kotlin程序时，有时候会需要在程序运行过程中创建临时文件。这种情况下，我们通常需要以一种灵活的方式来处理临时的数据，而临时文件则可以提供这样的功能。临时文件的创建可以让我们在不影响原始数据的情况下，在程序的执行过程中读取、写入和处理临时数据。
+当进行一些需要生成临时数据或保存临时文件的操作时，可能会需要创建临时文件。这样做可以避免对真实数据或文件的直接修改，同时也能够方便清理临时内容。
 
-# 如何创建临时文件
-
-要创建一个临时文件，我们可以使用 `createTempFile()` 函数。该函数可以接受两个参数，第一个参数是文件名前缀，第二个参数是文件名后缀。下面是一个简单的示例，展示了如何创建一个名为 "temp-file" 的临时文件，后缀为 ".txt"：
+## 如何创建临时文件？
 
 ```Kotlin
-val tempFile = createTempFile("temp-file", ".txt")
+val tempFile = File.createTempFile("kotlin", ".temp")
+println("临时文件名：${tempFile.name}")
 ```
 
-当我们执行完上述代码后，会在程序运行的临时文件夹中创建一个名为 "temp-fileXXXXXX.txt" 的文件，其中 "XXXXXX" 是随机生成的6位数。
+```kotlin
+临时文件名：kotlin8216587011387889281.temp
+```
 
-我们也可以指定临时文件需要存放的文件夹，只需要在 `createTempFile()` 函数的第三个参数中指定即可。
+这里使用了`createTempFile()`函数来创建一个临时文件。第一个参数是文件名的前缀，第二个参数是文件名的后缀。临时文件会在系统默认的临时目录中创建，并自动加上随机数字和时间戳作为文件名。
 
-除了创建临时文件，我们也可以使用 `createTempDirectory()` 函数来创建临时文件夹。
+## 深入探讨临时文件的创建
 
-# 深入探讨创建临时文件
+除了使用`createTempFile()`函数，还有其他一些方法可以创建临时文件。例如，可以使用`File()`类和`System.setProperty()`函数来指定临时目录和文件名的前缀和后缀。
 
-创建临时文件的过程实际上是在操作系统级别创建了一个空文件，并将其标记为 "临时" 文件。在程序执行结束后，系统会自动删除这些临时文件和文件夹，以确保不会占用系统的资源。
+临时文件的默认生命周期是随着程序的结束而消失。如果想要在程序运行期间保留临时文件，可以使用`tempFile.deleteOnExit()`函数来设置文件在程序结束时自动删除。
 
-我们也可以手动删除临时文件或文件夹，只需要调用 `delete()` 函数即可。另外，在特殊情况下，我们可以使用 `deleteOnExit()` 函数来设置临时文件或文件夹在程序结束后自动删除，这也是默认的设置。
+## 参考链接
 
-# 参考链接
-
-- [Kotlin官方文档：文件处理](https://www.kotlinlang.org/docs/reference/native/java-files.html)
-- [Kotlin官方文档：临时文件和文件夹](https://kotlinlang.org/docs/tutorials/java-interop.html#temporary-files-and-directories)
-- [Kotlin中文网：创建临时文件和文件夹](https://www.kotlincn.net/docs/reference/native/java-files.html#%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95)
-
-# 参见
-
-- [Kotlin官方文档：文件操作](https://kotlinlang.org/docs/reference/native/file-system.html)
-- [Kotlin官方文档：标记文件为临时文件](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-file/delete-on-exit.html)
-- [开源中国：Kotlin教程](https://kotlin.oschina.io/docs/reference/java-interop.html#java-io-classes)
-- [中国大学MOOC：Kotlin基础课程](https://www.icourse163.org/course/PKU-1002536002)
+- [File.createTempFile()文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
+- [如何使用 Kotlin 创建临时文件](https://www.baeldung.com/kotlin-create-temporary-file)

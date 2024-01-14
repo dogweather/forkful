@@ -1,45 +1,46 @@
 ---
 title:                "Arduino: Sletting av tegn som samsvarer med et mønster"
+simple_title:         "Sletting av tegn som samsvarer med et mønster"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Å slette tegn som matcher et mønster kan være nyttig når du jobber med å behandle og analysere tekst informasjon. Dette kan inkludere å fjerne uønsket eller ugyldig informasjon, eller å filtrere ut bestemte ord eller setninger.
 
-## Hvordan
-Å slette tegn som matcher et mønster i Arduino er enkelt med innebygde funksjoner som `replace()` og `remove()`. Her er et eksempel på hvordan du kan bruke disse funksjonene for å fjerne alle siffer fra en tekststreng og deretter skrive ut resultatet:
+Det kan være mange grunner til å ville slette tegn som passer til et bestemt mønster i Arduino-programmering. Det kan være for å rydde opp i data eller for å filtrere ut uønsket informasjon. Uansett årsak, kan dette være en nyttig ferdighet å ha på lager.
 
-```Arduino
-String tekst = "Lorem ipsum 123 dolor 456 sit amet";
-tekst.replace("123", "");
-tekst.replace("456", "");
-Serial.println(tekst); // Utskrift: "Lorem ipsum dolor sit amet"
-```
+## Slik gjør du det
 
-For å slette alle tegn som ikke er bokstaver, tall eller mellomrom, kan du bruke en if-setning og `remove()`-funksjonen:
+Det enkleste måten å slette tegn som passer til et mønster på, er å bruke funksjonen `replace()` i Arduino. Denne funksjonen lar deg erstatte et bestemt tegn eller en sekvens av tegn med et annet tegn eller en sekvens.
 
 ```Arduino
-String tekst = "Lorem ipsum 123? dolor 456! sit amet";
-for (int i = 0; i < tekst.length(); i++) {
-  if (!isAlphaNumeric(tekst.charAt(i)) && tekst.charAt(i) != ' ') {
-    tekst.remove(i);
-  }
-}
-Serial.println(tekst); // Utskrift: "Lorem ipsum 123 dolor 456 sit amet"
+// Eksempel på bruk av `replace()` for å slette tegn som passer til et mønster
+String string = "Hei, dette er en eksempeltekst!";
+string.replace("e", ""); // Denne koden vil slette alle forekomster av bokstaven "e" i teksten
+Serial.println(string); // Resultatet vil være "Hi, dtte r n eksmpltkst!"
 ```
 
-Det finnes også andre funksjoner som kan hjelpe deg med å slette tegn basert på bestemte kriterier, som for eksempel `substring()` og `trim()`. Det er viktig å merke seg at disse funksjonene vil endre den originale tekststrengen, så det kan være lurt å opprette en kopi av teksten før du begynner å slette tegn.
+Det er også mulig å bruke et regulært uttrykk (regex) for å slette tegn som passer til et mønster i en tekst. Dette gir større fleksibilitet og mulighet for mer avansert filtrering.
+
+```Arduino
+// Eksempel på bruk av regex i Arduino for å slette tegn som passer til et mønster
+String string = "Hei, dette er en eksempeltekst!";
+string = regexReplace(string, "e[ai]", ""); // Denne koden vil slette bokstaven "e" etterfulgt av enten "a" eller "i" i teksten
+Serial.println(string); // Resultatet vil være "Hi, dtte r en tekst!"
+```
 
 ## Dypdykk
-Arduino har et stort utvalg av innebygde funksjoner som gjør det enkelt å manipulere tekststrenger. I tillegg kan du også bruke regex (regular expressions) for å definere mer komplekse mønstre som skal slettes. Dette åpner for flere muligheter når det kommer til å behandle og analysere tekstinformasjon.
 
-Du kan også utforske forskjellige måter å slette tegn på ved å kombinere forskjellige funksjoner og metoder. Det er viktig å teste koden nøye for å sikre at den fungerer som ønsket og ikke endrer uønsket informasjon.
+Å kunne slette tegn som passer til et mønster krever en god forståelse av strenger og hvordan de fungerer i Arduino-programmering. Det er også viktig å ha grunnleggende kunnskap om regulære uttrykk og hvordan de kan brukes til å filtrere data.
+
+En ting å huske på er at `replace()`-funksjonen i Arduino bare vil erstatte det første mønsteret den finner i en tekst. Hvis du ønsker å slette alle forekomster, må du bruke en løkke og kjøre `replace()` flere ganger.
 
 ## Se også
-- [`replace()`-dokumentasjon](https://www.arduino.cc/reference/en/language/variables/string/functions/replace/)
-- [`remove()`-dokumentasjon](https://www.arduino.cc/reference/en/language/variables/string/functions/remove/)
-- [Regex-tutorial på Norsk](https://www.regular-expressions.info/tutorial.html)
+
+- [Arduino referanseside for `replace()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [Offisiell dokumentasjon for regex i Arduino](https://www.arduino.cc/reference/en/language/functions/regular-expressions/)
+- [RegExr - online verktøy for å teste og eksperimentere med regulære uttrykk](https://regexr.com/)

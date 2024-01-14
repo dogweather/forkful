@@ -1,38 +1,42 @@
 ---
-title:                "Python: Umwandlung eines Strings in Kleinbuchstaben"
+title:                "Python: Umwandeln eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Es gibt verschiedene Gründe, warum man in der Programmierung eine Zeichenfolge in Kleinschreibung umwandeln möchte. Dies kann dazu dienen, die Eingabe des Benutzers einheitlich zu gestalten oder bestimmte Zeichenketten einfacher zu vergleichen.
 
-## Wie geht man vor
-Um eine Zeichenfolge in Kleinbuchstaben umzuwandeln, gibt es in Python eine eingebaute Funktion namens `lower()`. Diese Funktion akzeptiert eine Zeichenfolge als Eingabe und gibt diese in Kleinschreibung zurück. Hier ist ein Beispielcode:
+Es gibt viele Gründe, warum man Strings in Python in Kleinbuchstaben konvertieren möchte. Einer der wichtigsten Gründe ist die Verarbeitung und Vergleichung von Daten, um sicherzustellen, dass alle Buchstaben auf die gleiche Weise formatiert sind und somit Vergleiche korrekt durchgeführt werden können.
 
-```python
-text = "HALLO"
-print(text.lower())
+## Wie
+
+Die Konvertierung eines Strings in Kleinbuchstaben ist in Python sehr einfach. Hier ist ein Beispielcode, der dies demonstriert:
+
+```Python
+# Erstelle einen String
+string = "HALLO, ICH BIN EINE STRING"
+
+# Konvertiere in Kleinbuchstaben und speichere es in einer neuen Variablen
+neuer_string = string.lower()
+
+# Gib den neuen String aus
+print(neuer_string)
 ```
 
-Dieses Stück Code gibt die Ausgabe `hallo` zurück. Es ist auch möglich, die `lower()` Funktion auf benutzerdefinierten Eingaben anzuwenden, zum Beispiel:
+Die Ausgabe dieses Codes wäre: "hallo, ich bin eine string". Wie Sie sehen können, wurden alle Buchstaben in Kleinbuchstaben umgewandelt.
 
-```python
-text = input("Bitte geben Sie einen Text ein: ")
-print(text.lower())
-```
-Ein Beispiel für die Ausgabe wäre, wenn der Benutzer "GUTEN Morgen" eingibt, würde die Ausgabe "guten morgen" sein. Dies kann besonders nützlich sein, wenn Sie eine Benutzereingabe auf bestimmte Schlüsselwörter oder Wörter überprüfen müssen.
+## Tiefere Einblicke
 
-## Tiefergehende Information
-Wenn wir uns tiefergehend mit der Umwandlung von Zeichenfolgen in Kleinbuchstaben befassen, gibt es einige Dinge zu beachten. Zum Beispiel, die `lower()` Funktion gibt immer eine neue Zeichenfolge zurück, ohne die ursprüngliche zu ändern. Es ist auch wichtig zu wissen, dass sich die Ausgabe der `lower()` Funktion je nach Sprache und Zeichensatz unterscheiden kann.
+Die `lower()` Methode, die auf Strings angewendet wird, verwendet die Standard Unicode Datenbank des Computers, um jeden Buchstaben in Kleinbuchstaben zu konvertieren. Dies bedeutet, dass auch Zeichen aus anderen Sprachen, die in der Unicode Datenbank enthalten sind, richtig umgewandelt werden.
 
-Eine andere Möglichkeit, eine Zeichenfolge in Kleinbuchstaben umzuwandeln, ist die Verwendung von `casefold()`, welche sich besonders für den Umgang mit Sonderzeichen eignet. Es gibt auch die Option, die Groß- und Kleinschreibung zu ignorieren, indem man die `lower()` Funktion mit `casefold()` kombiniert.
-
-Insgesamt ist die Umwandlung von Zeichenfolgen in Kleinbuchstaben ein einfacher und nützlicher Prozess in der Programmierung.
+Es ist auch wichtig zu wissen, dass die `lower()` Methode den ursprünglichen String nicht ändert, sondern stattdessen einen neuen String mit den konvertierten Buchstaben zurückgibt.
 
 ## Siehe auch
-- [Python Dokumentation über die `lower()` Funktion](https://docs.python.org/de/3/library/stdtypes.html#str.lower)
-- [Python Dokumentation über die `casefold()` Funktion](https://docs.python.org/de/3/library/stdtypes.html#str.casefold)
+
+- [Python String Methoden](https://www.python-kurs.eu/python3_string_methods.php)
+- [Unicode Datenbank](https://unicode.org/faq/utf_bom.html)

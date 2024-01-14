@@ -1,82 +1,64 @@
 ---
 title:                "Arduino: Att påbörja ett nytt projekt"
+simple_title:         "Att påbörja ett nytt projekt"
 programming_language: "Arduino"
-category:             "Getting Started"
+category:             "Arduino"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför
 
-Om du älskar elektronik eller programmering, är Arduino ett utmärkt verktyg för att kombinera båda dina intressen. Med en Arduino-mikrokontroller kan du skapa otroliga elektroniska projekt, från enklare LED-lampor till mer avancerade robotar.
+Att starta ett nytt Arduino-projekt kan vara en spännande utmaning som ger möjlighet att skapa egna unika elektroniska lösningar för olika ändamål. Det är också ett utmärkt sätt att lära sig programmering och elektronik på ett praktiskt sätt.
 
-## Hur man gör
+# Hur man gör
 
-För att komma igång behöver du en Arduino-mikrokontroller, ett USB-kabel och en dator. Du kan köpa en grundläggande Arduino starter kit som innehåller allt du behöver för dina första projekt.
+Arduino är en öppen källkodsplattform som är relativt lätt att komma igång med. För att börja behöver du en Arduino-mikrocontroller, en dator med Arduino-programvaran installerad och några grundläggande elektronikkomponenter som kretskort, kablar, LED-lampor och motstånd.
 
-### Blinka en LED-lampa
+För att skapa ditt första projekt kan du följa dessa steg:
 
-Första steget i att lära sig Arduino-programmering är att blinka en LED-lampa. Här är en enkel kod för att göra det:
+1. Anslut din Arduino till datorn med en USB-kabel.
+2. Öppna Arduino-programvaran och välj rätt modell av Arduino från verktygsfältet.
+3. Skriv din kod i det stora textfältet på programvaran. Kontrollera att det finns rätt tabbning och användning av semikolon för att undvika fel.
+4. Kompilera och ladda upp din kod till Arduino genom att klicka på "Ladda upp" -knappen.
+5. Se din kod i aktion genom att ansluta och testa de olika elektronikkomponenterna som du har anslutit till din Arduino.
+
+Här är ett enkelt kodexempel som blinkar en LED-lampa varje sekund:
 
 ```Arduino
-// Tilldela LED-lampans pin-nummer
+// Definiera vilken pinne LED-lampan är ansluten till
 int ledPin = 13;
 
 void setup() {
-  // Sätt upp pin-numret som en utgång
-  // Det betyder att vi ger en signal ut genom den
+  // Sätt LED-pinnen till OUTPUT-mode
   pinMode(ledPin, OUTPUT);
 }
 
 void loop() {
   // Tänd LED-lampan
   digitalWrite(ledPin, HIGH);
-  // Vänta i en sekund
+  // Vänta en sekund
   delay(1000);
   // Släck LED-lampan
   digitalWrite(ledPin, LOW);
-  // Vänta i en sekund
+  // Vänta en sekund
   delay(1000);
 }
 ```
 
-Om du laddar upp koden på din Arduino, borde du se LED-lampan blinka med en sekunds mellanrum.
+När detta är uppladdat och anslutet korrekt till din Arduino, bör du se LED-lampan blinka varje sekund.
 
-### Läs analoga värden från en potentiometer
+# Djupdykning
 
-En annan användbar funktion i Arduino är att kunna läsa analoga värden från sensorer som potentiometrar. Här är ett exempel på hur du kan göra det:
+När du väl har förstått grunderna i att skriva kod för Arduino är det dags att ge sig på ett mer avancerat projekt. Det finns många resurser online för att få idéer och lära sig nya färdigheter, som till exempel att skapa ett smart hemsystem eller bygga en robot.
 
-```Arduino
-// Tilldela potentiometerns pin-nummer
-int potPin = A0;
+En annan viktig del av att starta ett projekt är att förstå hur du kan kombinera olika elektronikkomponenter för att uppnå det du vill. Detta kan kräva grundläggande kunskaper om kretsdesign och användning av olika sensorer och aktuatorer.
 
-void setup() {
-  // Sätt upp serieläsning för att kunna läsa av värden från potentiometern
-  Serial.begin(9600);
-}
+Ett annat tips är att använda dig av open source-projekt. Dessa är projekt som är tillgängliga för allmänheten att använda, modifiera och bygga på. Genom att använda sådana projekt kan du lära dig av andras erfarenheter och få inspiration till dina egna projekt.
 
-void loop() {
-  // Läs av värdet från potentiometern
-  int potValue = analogRead(potPin);
-  // Skriv ut värdet i seriell monitor
-  Serial.println(potValue);
-}
-```
+# Se även
 
-Om du öppnar seriell monitor i Arduino IDE, borde du se analoga värden från potentiometern visas när du justerar den.
-
-## Utforska mer
-
-Det finns många resurser tillgängliga för att hjälpa dig lära dig mer om Arduino-programmering och elektronik i allmänhet. Du kan hitta tutorial-videor på YouTube, forum där du kan ställa frågor och få hjälp och många böcker på biblioteket eller på nätet.
-
-I början kan det vara överväldigande att starta ett nytt projekt, så en bra idé är att börja med enkla kretsar och sedan gradvis utöka dina kunskaper och projekt. Det finns också massor av färdiga projekt som du kan hitta online med detaljerade instruktioner för hur du kan bygga dem.
-
-## Se även
-
-Här är några användbara länkar för att komma igång med Arduino:
-
-- Officiell Arduino hemsida (https://www.arduino.cc/)
-- Arduino IDE (https://www.arduino.cc/en/Main/Software)
-- Arduino forum (https://forum.arduino.cc/)
-- Arduino tutorial på YouTube (https://www.youtube.com/watch?v=pLcn5vCbZBM)
+- [Officiell Arduino-hemsida](https://www.arduino.cc/)
+- [Arduino-hemsida på svenska](https://www.arduino.cc/)

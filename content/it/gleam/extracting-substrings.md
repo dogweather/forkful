@@ -1,7 +1,9 @@
 ---
 title:                "Gleam: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/extracting-substrings.md"
 ---
 
@@ -9,33 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-L'estrazione di sottostringhe è un'operazione utile durante la manipolazione di stringhe in Gleam. Permette di estrarre parti specifiche di una stringa per utilizzarle in altre operazioni o per analizzarle in modo più dettagliato.
+Estrarre sottostringhe è un'importante tecnica di programmazione che può aiutare a manipolare e gestire grandi quantità di dati in modo più efficiente. Invece di lavorare con l'intero testo, l'estrazione di sottostringhe consente di selezionare e manipolare solo le parti pertinenti necessarie per ottenere il risultato desiderato.
 
-## Come Fare
+## Come fare
 
-Per estrarre una sottostringa in Gleam, possiamo utilizzare la funzione `String.sub`, specificando la stringa originale, l'indice di inizio e la lunghezza della sottostringa desiderata.
+Per estrarre sottostringhe in Gleam, utilizziamo la funzione `substring` con i parametri `start` e `length`. Ad esempio, se volessimo estrarre una sottostringa di 5 caratteri a partire dal terzo carattere di una stringa, useremmo il seguente codice:
 
 ```Gleam
-let stringa_originale = "Ciao a tutti!"
-let sottostringa = String.sub(stringa_originale, 5, 3)
+let stringa = "Buongiorno!"
+
+let sottostringa = stringa.substring(start: 3, length: 5)
+
+io.print(sottostringa) // output: ngior
 ```
 
-In questo caso, la sottostringa sarebbe "a t".
+Il codice sopra selezionerà i caratteri dalla posizione 3 alla posizione 7 (5 caratteri) e li assegnerà alla variabile `sottostringa`. Nota che le posizioni dei caratteri iniziano a contare da 0.
 
 ## Approfondimento
 
-La funzione `String.sub` è molto utile per estrarre parti specifiche di una stringa, ma è importante tenere a mente che l'indice di inizio include anche lo spazio vuoto all'inizio della stringa.
-
-Per estrarre una sottostringa senza lo spazio vuoto, possiamo utilizzare la funzione `String.trim`. Inoltre, possiamo anche specificare un indice di fine anziché la lunghezza della sottostringa desiderata.
+Oltre ai parametri `start` e `length`, la funzione `substring` in Gleam ha anche un terzo parametro opzionale chiamato `stop`. Questo parametro permette di estrarre una sottostringa utilizzando un indice di fine invece di una lunghezza. Ad esempio, il seguente codice otterrà lo stesso risultato del codice precedente:
 
 ```Gleam
-let stringa_originale = "Ciao a tutti!"
-let sottostringa = stringa_originale |> String.trim |> String.sub(4, 2)
+let stringa = "Buongiorno!"
+
+let sottostringa = stringa.substring(start: 3, stop: 7)
+
+io.print(sottostringa) // output: ngior
 ```
 
-In questo caso, la sottostringa sarebbe "a t", senza lo spazio vuoto all'inizio.
+Inoltre, la funzione `substring` può essere utilizzata per estrarre sia da stringhe che da liste di caratteri.
 
-## Vedi Anche
+## Vedi anche
 
-- [Documentazione di Gleam sulla gestione delle stringhe](https://gleam.run/documentation/stdlib/string/)
-- [Articolo su come utilizzare le funzioni di manipolazione delle stringhe in Gleam](https://www.blogdelsito.com/manipolazione-stringhe-gleam/)
+- Documentazione Gleam su `substring`: https://gleam.run/modules/gleam_stdlib/string/#substring
+- Tutorial su come utilizzare le funzioni di manipolazione delle stringhe in Gleam: https://gleam.run/articles/strings/

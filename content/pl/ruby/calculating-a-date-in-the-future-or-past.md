@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Obliczanie daty w przyszłości lub przeszłości."
+title:                "Ruby: Obliczanie daty w przyszłości lub przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,50 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach korzystanie z daty jest nieodłączną częścią programowania. Często spotykamy się z potrzebą obliczenia daty przyszłej lub przeszłej w naszych projektach. W tym wpisie dowiesz się, jak to zrobić w języku Ruby.
+Dlaczego ktoś zechciałby obliczyć datę w przyszłości lub przeszłości? Może być wiele powodów, na przykład chcesz zaplanować wydarzenie lub sprawdzić, kiedy skończy się ważność dokumentu.
 
 ## Jak to zrobić
 
-Aby obliczyć datę w przyszłości lub przeszłości w języku Ruby, musimy użyć klasy `Date` i jej metody `new`. Przykład kodu:
+Aby obliczyć datę w przyszłości lub przeszłości w języku Ruby, należy użyć klasy `Date`. Najpierw musisz załadować bibliotekę:
 
-```
+```Ruby
 require 'date'
-
-current_date = Date.new(2021, 4, 20)
-
-# obliczamy datę 30 dni w przód
-future_date = current_date + 30
-puts future_date # wypisze 2021-05-20
-
-# obliczamy datę 60 dni wstecz
-past_date = current_date - 60
-puts past_date # wypisze 2021-02-19
 ```
 
-Mamy również możliwość wykorzystania klasy `Time` i jej metody `at` do określenia konkretnej godziny na przyszłą lub przeszłą datę:
+Następnie możesz użyć metody `today` dla obiektu `Date`, aby uzyskać aktualną datę:
 
-```
-require 'time'
-
-current_time = Time.now
-
-# obliczamy datę i godzinę 7 dni po aktualnym czasie
-future_datetime = current_time + (7 * 24 * 60 * 60)
-puts future_datetime # wypisze np. 2021-04-27 10:20:00 +0200
+```Ruby
+Date.today # Output: #<Date: 2021-09-01 ((2459462j, 0s, 0n), +0s, 2299161j)>
 ```
 
-W powyższych przykładach użyliśmy wartości liczbowych (np. 30 dni) do obliczenia daty, jednak możemy także wykorzystać metody `days`, `weeks`, `months` czy `years`, aby dokonać obliczeń bardziej precyzyjnie.
+Aby obliczyć datę w przyszłości, użyj metody `+` i podaj ilość dni, jakie chcesz dodać:
 
-## Deep Dive
+```Ruby
+Date.today + 7 # Output: #<Date: 2021-09-08 ((2459469j, 0s, 0n), +0s, 2299161j)>
+```
 
-Podczas obliczania daty w przyszłości lub przeszłości, warto zwrócić uwagę na to, że klasa `Date` i `Time` mają swoje limity. Dla daty, którą wprowadzamy, musi być odpowiednio zdefiniowany dzień, miesiąc i rok. Dlatego też, jeśli próbujemy obliczyć datę na przykład 30 lutego, otrzymamy błąd. 
+Aby obliczyć datę w przeszłości, użyj metody `-` i podaj ilość dni, jakie chcesz odjąć:
 
-Ponadto, jeśli chcemy obliczyć datę w przyszłości lub przeszłości, której dzisiaj nie ma (np. 30 września 2021), musimy dodać lub odjąć również rok, aby było to możliwe. 
+```Ruby
+Date.today - 14 # Output: #<Date: 2021-08-18 ((2459455j, 0s, 0n), +0s, 2299161j)>
+```
+
+## Dogłębna analiza
+
+Klasa `Date` w języku Ruby opiera się na kalendarzu gregoriańskim i obsługuje daty od 1 stycznia 4713 BC do 31 grudnia 9999 AD. Aby uzyskać więcej informacji na temat tej klasy i jej metod, możesz sprawdzić oficjalną dokumentację języka Ruby (https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html).
 
 ## Zobacz także
 
-Dowiedz się więcej o klasie `Date` i `Time` w języku Ruby, korzystając z poniższych linków:
-
-- [Dokumentacja Ruby o klasie Date](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
-- [Dokumentacja Ruby o klasie Time](https://ruby-doc.org/core-2.7.0/Time.html) 
-- [Artykuł o obliczaniu daty w Ruby](https://www.codingexplorer.com/calculate-date-with-ruby-date-time-library/)
+- https://www.cyberciti.biz/faq/how-to-get-current-date-time-in-ruby/
+- https://www.rubyguides.com/2015/05/working-with-dates-in-ruby/
+- https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html

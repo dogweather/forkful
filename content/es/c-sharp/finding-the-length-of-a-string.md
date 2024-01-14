@@ -1,7 +1,9 @@
 ---
 title:                "C#: Encontrando la longitud de una cadena"
+simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/finding-the-length-of-a-string.md"
 ---
 
@@ -9,43 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-¿Alguna vez has querido saber cuántos caracteres hay en una palabra o frase? En este artículo, aprenderás cómo encontrar la longitud de una cadena en C#. Esto es útil para muchas tareas de programación, como validar la entrada de un usuario o calcular el tamaño de una cadena para su almacenamiento.
+En la programación, muchas veces necesitamos trabajar con cadenas de texto. Una tarea común es encontrar la longitud o cantidad de caracteres en una cadena. En esta publicación, aprenderemos cómo hacerlo en C#.
 
 ## Cómo hacerlo
 
-Para encontrar la longitud de una cadena en C#, podemos utilizar la función `Length` de la clase `String`. Esta función devuelve el número de caracteres en una cadena como un entero. Aquí hay un ejemplo de cómo usarlo:
+Para encontrar la longitud de una cadena en C#, podemos utilizar el método `Length` de la clase `String`. Este método nos devolverá el número total de caracteres en la cadena. Veamos un ejemplo:
 
 ```C#
-string miCadena = "¡Hola Mundo!";
-int longitud = miCadena.Length;
-Console.WriteLine("La longitud de la cadena es: " + longitud); // salida: La longitud de la cadena es: 11
+string texto = "Hola Mundo!";
+Console.WriteLine("La longitud de la cadena es: " + texto.Length);
+
+// Salida:
+// La longitud de la cadena es: 11 
 ```
 
-En este ejemplo, hemos creado una cadena `miCadena` con la frase "¡Hola Mundo!" y luego usamos la función `Length` para obtener su longitud. Después, imprimimos el valor de la longitud en la consola.
-
-Pero, ¿qué pasa si queremos encontrar la longitud de una cadena que el usuario ingresa en tiempo de ejecución? En ese caso, podemos utilizar la función `ReadLine` de la clase `Console` para obtener la entrada del usuario y luego aplicar la función `Length` a esa entrada. Aquí hay un ejemplo:
+También podemos utilizar `Length` en combinación con un bucle `for` para iterar sobre cada caracter de la cadena y realizar alguna acción. Por ejemplo, podemos imprimir cada caracter en una línea separada:
 
 ```C#
-Console.WriteLine("Ingresa una palabra: ");
-string palabra = Console.ReadLine();
-int longitud = palabra.Length;
-Console.WriteLine("La longitud de la palabra es: " + longitud);
-```
+string texto = "Hola Mundo!";
+for(int i = 0; i < texto.Length; i++){
+    Console.WriteLine(texto[i]);
+}
 
-Este código primero le pide al usuario que ingrese una palabra, luego almacena la entrada en la variable `palabra`. Después, usamos la función `Length` para obtener la longitud de esa palabra y la imprimimos en la consola.
+// Salida:
+// H
+// o
+// l
+// a
+//  
+// M
+// u
+// n
+// d
+// o
+// !
+```
 
 ## Profundizando
 
-Ahora que sabes cómo encontrar la longitud de una cadena en C#, aquí hay algunas cosas importantes a tener en cuenta:
+Si queremos saber cómo funciona realmente el método `Length`, podemos buscar en la documentación de Microsoft para obtener más información. Según la documentación, `Length` utiliza un contador interno para determinar la longitud de la cadena, lo que lo hace más eficiente que calcular la longitud manualmente.
 
-- La función `Length` cuenta todos los caracteres de una cadena, incluyendo espacios en blanco y signos de puntuación.
-- Si una cadena está vacía, es decir, no tiene ningún carácter, su longitud será 0.
-- La función `Length` también funciona en cadenas con caracteres especiales, como letras acentuadas o emoji.
-
-Ahora tienes las herramientas para encontrar fácilmente la longitud de cualquier cadena en C#. ¡Empieza a explorar!
+También es importante tener en cuenta que `Length` devuelve el número de caracteres Unicode en la cadena, por lo que si hay caracteres especiales o emojis, la longitud puede ser mayor de lo que se espera.
 
 ## Ver también
 
-- [C# Strings](https://docs.microsoft.com/es-es/dotnet/csharp/tour-of-csharp/strings)
-- [La función Length de la clase String en C#](https://www.lawebdelprogramador.com/codigo/CSharp/3682-La-funcion-Length-de-la-clase-String-en-C.html)
-- [Cómo encontrar la longitud de una cadena en C#](https://parzibyte.me/blog/2021/08/12/cadenas-csharp-length/)
+- [Documentación de Microsoft sobre el método Length](https://docs.microsoft.com/es-es/dotnet/api/system.string.length)
+- [Tutorial de programación en C#](https://www.freecodecamp.org/espanol/news/aprenda-c-sharp-gratis-quien-sabe-tal-vez-consiga-un-trabajo/)
+- [Cómo utilizar for en C#](https://docs.microsoft.com/es-es/dotnet/csharp/language-reference/keywords/for)

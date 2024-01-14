@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Читання аргументів командного рядка"
+title:                "Rust: Читання аргументів командного рядка."
+simple_title:         "Читання аргументів командного рядка."
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/reading-command-line-arguments.md"
 ---
 
@@ -9,58 +11,77 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Програмування мовою Rust є однією з найпопулярніших та ефективних технологій у світі сьогодні. І одним з важливих аспектів програмування є робота з аргументами командного рядка. У цій статті ми розглянемо, чому це важливо та як правильно реалізувати цей процес.
+Командний рядок - це важливий інструмент у будь-якій мові програмування. Він дозволяє передавати параметри програмам під час запуску і змінювати їхню поведінку. У цій статті ми поглибимося в читанні аргументів командного рядка з використанням мови програмування Rust.
 
-## Як реалізувати
+## Як це зробити
 
-Для реалізації зчитування аргументів командного рядка ми будемо використовувати розширення "clap" (Command Line Argument Parser) для мови Rust. Це дозволяє нам легко та зручно зчитувати та обробляти аргументи з командної стрічки.
+Для читання аргументів командного рядка використовуються методи з бібліотеки стандартної бібліотеки Rust `std::env`. Нижче наведений приклад коду, який демонструє як це зробити:
 
 ```Rust
-use clap::{App, Arg};
+use std::env;
 
 fn main() {
-    let matches = App::new("my_program")
-        .version("1.0")
-        .author("John Smith")
-        .about("A simple program for reading command line arguments")
-        .arg(
-            Arg::with_name("input")
-                .short("i")
-                .long("input")
-                .value_name("FILE")
-                .help("Sets the input file")
-                .takes_value(true),
-        )
-        .arg(
-            Arg::with_name("output")
-                .short("o")
-                .long("output")
-                .value_name("FILE")
-                .help("Sets the output file")
-                .takes_value(true),
-        )
-        .get_matches();
-
-    // Зчитування значень аргументів
-    let input_file = matches.value_of("input").unwrap();
-    let output_file = matches.value_of("output").unwrap();
-
-    println!("Input file: {}, Output file: {}", input_file, output_file)
+    // Отримуємо аргументи командного рядка
+    let args: Vec<String> = env::args().collect();
+    
+    // Друкуємо перший аргумент
+    println!("Перший аргумент: {}", args[0]);
+    
+    // Друкуємо всі інші аргументи
+    for arg in args.iter().skip(1) {
+        println!("{}", arg);
+    }
 }
 ```
 
-Приклад запуску програми та виведення результату:
+Ви можете запустити цей код, передавши аргументи командного рядка під час запуску програми. Наприклад, якщо ви збираєтеся запустити програму з командного рядка і передати два аргументи, ваша команда може виглядати так: `./my_program arg1 arg2`.
 
+В результаті виведеться:
+
+```bash
+Перший аргумент: ./my_program
+arg1
+arg2
 ```
-$ ./my_program -i input.txt -o output.txt
-Input file: input.txt, Output file: output.txt
+
+## Поглиблене дослідження
+
+У більш складних сценаріях, вам може знадобитися більше функціональності для читання аргументів командного рядка. В такому разі, ви можете використати бібліотеку `clap`.
+
+Нижче наведений приклад коду, який використовує цю бібліотеку для парсингу аргументів командного рядка та виведення допомоги:
+
+```Rust
+use clap::{Arg, App};
+
+fn main() {
+    let matches = App::new("My Program")
+        .version("1.0")
+        .author("My Name")
+        .about("Це програма для демонстрації читання аргументів з використанням мови програмування Rust")
+        .arg(Arg::with_name("arg1")
+            .short("a")
+            .long("arg1")
+            .required(true)
+            .takes_value(true)
+            .help("Перший обов'язковий аргумент"))
+        .arg(Arg::with_name("arg2")
+            .short("b")
+            .long("arg2")
+            .required(false)
+            .takes_value(true)
+            .help("Другий необов'язковий аргумент"))
+        .get_matches();
+        
+    let arg1 = matches.value_of("arg1").unwrap();
+    
+    println!("Перший аргумент: {}", arg1);
+    
+    if let Some(arg2) = matches.value_of("arg2") {
+        println!("Другий аргумент: {}", arg2);
+    } else {
+        println!("Другий аргумент не був переданий");
+    }
+}
 ```
 
-## Глибоке дослідження
-
-Як ми бачимо з прикладу, використання розширення "clap" дозволяє нам легко створювати програми, які можуть приймати та обробляти аргументи з командної стрічки. Для більш глибокого розуміння цього процесу, рекомендується ознайомитися з документацією до розширення та додатковими прикладами його використання.
-
-## Дивись також
-
-- [Документація до розширення "clap"](https://docs.rs/clap/2.33.0/clap/)
-- [Приклади використання "clap" для реалізації зчитування аргументів командного рядка](https://github.com/clap-rs/clap/tree/v2.33.0/examples)
+Запустіть цей код та спробуйте різні способи передачі інформації з командного рядка, щоб

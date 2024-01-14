@@ -1,48 +1,55 @@
 ---
-title:                "Ruby: Att påbörja ett nytt projekt"
+title:                "Ruby: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "Ruby"
-category:             "Getting Started"
+category:             "Ruby"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-
-Att starta ett nytt programmeringsprojekt kan vara en spännande utmaning som kan leda till personlig tillfredsställelse och utveckling av nya färdigheter. Det kan också vara ett sätt att lösa ett problem eller skapa något meningsfullt som kan hjälpa andra. Oavsett orsaken är det viktigt att förstå grunderna och processen för att starta ett nytt projekt.
+# Varför
+ 
+Att starta ett nytt programmeringsprojekt kan verka överväldigande, men det kan också vara en spännande utmaning. Med Ruby som verktyg finns det många möjligheter att skapa kraftfulla och eleganta program. Läs vidare för att lära dig hur du sätter igång med ditt nya projekt!
 
 ## Hur man gör
+ 
+För att börja ett nytt Ruby-projekt behöver du först och främst ha Ruby installerat på din dator. Om du använder Windows kan du ladda ner Ruby installer här: https://rubyinstaller.org/. Om du använder Mac eller Linux så är det vanligtvis redan förinstallerat på din dator, annars kan du använda en pakethanterare som Homebrew eller apt-get för att installera Ruby.
 
-Att starta ett nytt projekt i Ruby kan verka överväldigande för nybörjare, men det behöver det inte vara. Det första steget är att se till att ha den senaste versionen av Ruby installerad på din dator. För att börja skapa din kodfil, skriv följande i Terminalen:
+När du har installerat Ruby behöver du välja en textredigerare för att skriva din kod. Det finns många olika alternativ som Sublime Text, Visual Studio Code eller Atom. Välj den som passar dig bäst och se till att det finns stöd för Ruby.
 
-```Ruby
-touch mitt_projekt.rb
-```
-
-Detta skapar en ny tom fil med namnet "mitt_projekt.rb". Nu kan du öppna den i din valda textredigerare och börja skriva din kod. Här är ett exempel på en enkel "Hello World!" kod i Ruby:
+Nu är det dags att börja koda! Nedan följer ett enkelt exempel på en "Hello World"-applikation i Ruby:
 
 ```Ruby
 puts "Hej världen!"
 ```
 
-När du är nöjd med din kod kan du köra den genom att skriva följande i Terminalen:
-
-```Ruby
-ruby mitt_projekt.rb
+I konsolen kommer du att se följande output:
+```
+Hej världen!
 ```
 
-Detta kommer att köra din kod och du borde se "Hej världen!" utskrivet i Terminalen. Ta dig tid att experimentera med olika funktioner och komponenter i Ruby och kom ihåg att alltid kommentera din kod för att göra den mer läsbar och förståelig för andra utvecklare.
+Du kan också spara koden i en fil med tillägget ".rb" och köra den från kommandoraden med kommandot `ruby hello.rb`. Du bör se samma output som tidigare.
 
 ## Djupdykning
+ 
+När du väl har börjat ditt projekt finns det några saker att tänka på för att hålla det organiserat och enkelt att följa. En av de viktigaste aspekterna är att använda versionhantering, som Git eller Github, för att hålla koll på ändringar i din kod och möjliggöra samarbete med andra utvecklare.
 
-Att starta ett nytt projekt handlar inte bara om att skriva kod, det är också viktigt att ha en planering och en övergripande förståelse för projektet. Innan du börjar skriva kod, ta dig tid att skapa en översiktlig design eller skapa ett flödesschema för ditt projekt. Detta hjälper dig att hålla din kod organiserad och lättare att navigera.
+En annan viktig aspekt är att skapa en bra filstruktur för ditt projekt. Detta gör det lättare att navigera och hitta rätt filer när ditt projekt växer. Det är också en bra idé att använda kommentarer i din kod för att förklara dess syfte och hjälpa andra att förstå den.
 
-Det är också viktigt att välja rätt verktyg för ditt projekt. I Ruby finns det många olika ramverk och bibliotek som kan underlätta utvecklingsprocessen. Utforska olika alternativ och välj det som passar bäst för ditt projekt.
+Se till att använda validatorer och tester för att säkerställa att din kod är korrekt och fungerar som den ska. Detta kan spara dig mycket tid och frustration senare i projektet.
 
-Slutligen, glöm inte att säkerhetskopiera din kod regelbundet. Detta kommer att säkerställa att du inte förlorar allt ditt arbete om en olycka skulle inträffa.
+Det finns många resurser online för att lära sig mer om Ruby-programmering och hur du kan förbättra ditt projekt. Här är några länkar som kan vara till hjälp:
 
-## Se även
+- Ruby's officiella hemsida: https://www.ruby-lang.org/sv/
+- Ruby on Rails Tutorial: https://www.railstutorial.org/
+- Ruby Gems: https://rubygems.org/
 
-- [Ruby offentliga dokumentation](https://www.ruby-lang.org/sv/documentation/)
-- [Ruby on Rails ramverk](https://rubyonrails.org/)
-- [Ruby gem repository](https://rubygems.org/)
+Fortsätt utforska och experimentera med Ruby för att utvecklas som programmerare och skapa fantastiska projekt!
+
+# Se även
+ 
+- [Ruby Style Guide](https://github.com/rubocop/ruby-style-guide)
+- [Ruby Best Practices](https://github.com/daustin777/ruby-best-practices)
+- [The Ruby Toolbox](https://www.ruby-toolbox.com/)

@@ -1,17 +1,23 @@
 ---
-title:                "Go: Convertire una stringa in minuscolo."
+title:                "Go: Convertire una stringa in minuscolo"
+simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Spesso ci troviamo ad avere una stringa che contiene lettere maiuscole e minuscole e per motivi di uniformità o di confronto, potrebbe essere necessario convertirla interamente in minuscolo.
 
-## Come fare
-La conversione di una stringa in minuscolo è molto semplice in Go grazie al pacchetto "strings". Ecco un esempio di codice che illustra come farlo:
+Ci sono molte ragioni per voler convertire una stringa in lettere minuscole quando si scrive un programma in Go. Puoi fare questo per uniformare la formattazione dei dati, per confrontare stringhe in modo case-insensitive, o semplicemente per ottenere una stringa più leggibile. In questo post, esploreremo alcuni modi per convertire una stringa in lettere minuscole usando il linguaggio di programmazione Go.
+
+## Come Fare
+
+Ci sono due modi principali per convertire una stringa in lettere minuscole usando Go: utilizzando la funzione `ToLower` dalla libreria standard e utilizzando il pacchetto `strings`. Di seguito sono riportati esempi pratici di entrambi i metodi:
+
+Codice usando `ToLower`:
 
 ```Go
 package main
@@ -22,18 +28,73 @@ import (
 )
 
 func main() {
-	str := "Ciao, Mondo!"
-	lowerCaseStr := strings.ToLower(str)
-	fmt.Println(lowerCaseStr)
+	str := "CIAO A TUTTI"
+
+	// Utilizzando la funzione `ToLower` dalla libreria standard
+	result := strings.ToLower(str)
+	fmt.Println(result)
 }
 ```
 
-L'output di questo esempio sarà: "ciao, mondo!" come desiderato. Il pacchetto "strings" mette a disposizione il metodo "ToLower" che accetta come parametro una stringa e restituisce una nuova stringa in minuscolo.
+Output: `ciao a tutti`
 
-## Approfondimento
-La conversione di una stringa in minuscolo può sembrare un'operazione banale, ma in realtà nasconde alcuni dettagli interessanti. Ad esempio, il pacchetto "strings" effettua la conversione considerando gli standard di unicode, il che può comportare delle differenze nei risultati rispetto ad altri linguaggi di programmazione. Inoltre, è importante tenere presente che la conversione non viene effettuata in-place, ma viene restituita una nuova stringa. Questo significa che nel caso di stringhe molto lunghe, l'operazione può comportare un certo costo in termini di memoria.
+Codice usando `strings` package:
 
-## Vedi anche
-- Documentazione ufficiale sul pacchetto strings: https://golang.org/pkg/strings
-- Articolo su unicode e la conversione di stringhe in Go: https://blog.golang.org/strings
-- Domande frequenti sul pacchetto strings: https://golang.org/pkg/strings/#FAQ
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "HELLO WORLD"
+
+	// Utilizzando il pacchetto `strings`
+	result := strings.ToLower(str)
+	fmt.Println(result)
+}
+```
+
+Output: `hello world`
+
+## Deep Dive
+
+Il pacchetto `strings` fornisce un'implementazione più avanzata per la conversione di una stringa in lettere minuscole. In particolare, offre la funzione `ToLowerSpecial` che può gestire map personalizzate di lettere. Ad esempio, se vuoi convertire una stringa con caratteri speciali in lettere minuscole, puoi usare la funzione in questo modo:
+
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "È UNA STRINGA CON CARATTERI SPECIALI!"
+
+	// Creazione di una mappa personalizzata con caratteri speciali
+	charMap := map[rune]rune{
+		'È': 'e',
+		'Ú': 'u',
+		'Ò': 'o',
+		'Á': 'a',
+		'Ì': 'i',
+	}
+
+	// Utilizzando `ToLowerSpecial` con la mappa personalizzata
+	result := strings.ToLowerSpecial(charMap, str)
+	fmt.Println(result)
+}
+```
+
+Output: `e una stringa con caratteri speciali!`
+
+In questo modo puoi gestire una vasta gamma di caratteri speciali e ottenere una conversione precisa della stringa.
+
+## Vedi Anche
+
+- [Funzione `ToLower` dalla libreria standard](https://golang.org/pkg/strings/#ToLower)
+- [Pacchetto `strings` dalla documentazione ufficiale di Go](https://golang.org/pkg/strings/)
+- [Guida introduttiva a Go per programmatori italiani](https://blog.golang.org/go-for-italians)

@@ -1,55 +1,54 @@
 ---
-title:                "Go: Usuwanie znaków pasujących do wzorca"
+title:                "Go: Usuwanie znaków odpowiadających wzorowi"
+simple_title:         "Usuwanie znaków odpowiadających wzorowi"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+#Dlaczego
 
-Napisanie programu to nie tylko pisane nowego kodu, ale także utrzymywanie i ulepszanie już istniejącego kodu. Czasami może być potrzebne usunięcie pewnych znaków z naszych danych źródłowych. W tym artykule dowiecie się, dlaczego i jak usunąć znaki pasujące do określonego wzorca za pomocą języka Go.
+Często w programowaniu zdarza się sytuacja, w której musimy usunąć pewne znaki z naszych danych. Na przykład, gdy tworzymy skrypt do przetwarzania plików, możemy chcieć usunąć wszystkie znaki specjalne z tekstu. W takich sytuacjach bardzo przydatną funkcją jest usuwanie znaków pasujących do wzorca, co pozwala nam szybko oczyścić dane i przystosować je do dalszego przetwarzania.
 
-## Jak To Zrobić
+#Jak to zrobić?
 
-Poniżej przedstawiamy przykłady kodu Go, który pokazuje, jak możemy usunąć znaki pasujące do określonego wzorca używając metody `ReplaceAllString()` z pakietu `regexp`. Przykład ten jest wyjaśniony krok po kroku i pokazuje w jaki sposób użyć tej metody w praktyce.
+W języku Go istnieje prosty sposób na usuwanie znaków pasujących do danego wzorca. Wystarczy użyć funkcji "ReplaceAllString" z pakietu "regexp". W poniższym przykładzie pokazane jest, jak usunąć wszystkie litery z tekstu:
 
 ```Go
-// Importowanie pakietów
+package main
+
 import (
-    "fmt"
-    "regexp"
+	"fmt"
+	"regexp"
 )
 
 func main() {
-    // Tworzenie wyrażenia regularnego
-    re := regexp.MustCompile(`[aeiou]+`)
-
-    // Tekst, z którego chcemy usunąć znaki pasujące do wzorca
-    text := "Golang jest niesamowitym językiem programowania!"
-
-    // Wywołanie metody ReplaceAllString()
-    newText := re.ReplaceAllString(text, "")
-
-    // Wypisanie wynikowego tekstu
-    fmt.Println(newText)
+	text := "To jest tekst z wieloma literami i znakami specjalnymi!"
+	reg := regexp.MustCompile("[a-zA-Z]")
+	cleanText := reg.ReplaceAllString(text, "")
+	fmt.Println(cleanText)
 }
 ```
 
-W powyższym przykładzie wyrażenie regularne `[aeiou]+` oznacza, że poszukujemy ciągów składających się z samych samogłosek. Metoda `ReplaceAllString()` zastąpi te znaki pustym stringiem, czyli w rezultacie usunie je z tekstu.
-
-### Przykładowy Output
+Po uruchomieniu kodu otrzymamy następujący wynik:
 
 ```
-Glng jst nsmwzm jzykn prgrmwng!
+ !,. 
 ```
 
-## Deep Dive
+Łańcuch tekstowy został oczyściony z wszystkich liter, a w jego miejsce pozostały tylko znaki specjalne. Warto zauważyć, że w przykładzie wykorzystany został wzorzec "a-zA-Z", który oznacza wszystkie litery od A do Z (zarówno małe, jak i duże). Możemy jednak dostosować ten wzorzec do naszych potrzeb, zmieniając litery na np. cyfry lub znaki specjalne.
 
-Aby lepiej zrozumieć jak działają wyrażenia regularne i metoda `ReplaceAllString()` w języku Go, warto przeczytać dokumentację na temat pakietu `regexp`. Możecie również wypróbować różne wyrażenia regularne i eksperymentować z nimi w celu osiągnięcia pożądanych wyników.
+#Głębszy wgląd
 
-## Zobacz Również
+Funkcja "ReplaceAllString" z pakietu "regexp" jest bardzo przydatna, ale warto uświadomić sobie, że jest to tylko jedna z wielu możliwości zastosowania wyrażeń regularnych w języku Go. Warto więc zapoznać się z innymi funkcjami z pakietu "regexp", takimi jak na przykład "FindStringSubmatch" czy "ReplaceAll". Dzięki temu będziemy mogli jeszcze bardziej rozbudować nasze skrypty i dostosować je do różnych przypadków.
 
-- [Dokumentacja pakietu regexp](https://pkg.go.dev/regexp)
-- [Przykładowe wyrażenia regularne w języku Go](https://regex101.com/library/Mqrf4J)
+#Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych w języku Go, polecamy zapoznać się z dokumentacją oraz innymi artykułami na ten temat:
+
+- Dokumentacja pakietu "regexp": https://golang.org/pkg/regexp/
+- "Wyrażenia regularne - jak działa pakiet 'regexp' w języku Go": https://blog.bugtrap.pl/post/wyrazenia-regularne-go/
+- "Jak i kiedy używać wyrażeń regularnych w języku Go": https://robertocantillo.com/blog/regex-golang/

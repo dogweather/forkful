@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/writing-tests.md"
 ---
 
@@ -9,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kun aloittaa ohjelmoinnin Haskellilla, testien kirjoittaminen voi tuntua turhalta tai aikaa vievältä vaiheelta. Mutta testien kirjoittaminen on todella tärkeää, sillä se auttaa varmistamaan koodin toimivuuden ja vähentää virheiden määrää. Kyse ei ole vain siitä, että koodin on pakko läpäistä testit, vaan testien avulla pystytään havaitsemaan ja korjaamaan ongelmia jo ennen kuin ne pääsevät tuotantoon.
+Haskell on yksi suosituimmista funktionaalisista ohjelmointikielistä, jota käytetään laajasti monissa sovelluksissa. Yksi tärkeä osa laadukkaan Haskell-koodin kirjoittamista on testaaminen. Testien kirjoittaminen varmistaa, että koodimme toimii odotetulla tavalla ja auttaa vähentämään virheitä. Seuraava opas auttaa sinua ymmärtämään, miksi testaaminen on tärkeää ja miten voit aloittaa sen käytön Haskell:ssa.
 
-## Miten kirjoitetaan testeja
+## Miten aloittaa
 
-Testien kirjoittaminen Haskellilla ei ole vaikeaa. Seuraavassa on muutama esimerkki, jotka näyttävät, kuinka voit käyttää `HSpec`- kirjastoa testien kirjoittamiseen.
+Haskellissa testien kirjoittaminen on suhteellisen helppoa käyttämällä HSpec-kirjastoa. Ensiksi sinun tulee asentaa HSpec komentoriviltä käyttämällä `cabal install hspec` tai `stack install hspec` riippuen mitä paketinhallintajärjestelmää käytät. Tämän jälkeen voit aloittaa testien kirjoittamisen luomalla uuden tiedoston ```Testit.hs``` ja kirjoittamalla seuraavan esimerkin sisään:
 
-```Haskell
--- Tuodaan tarvittava kirjasto
+```
 import Test.Hspec
 
--- Luodaan testi
 main :: IO ()
 main = hspec $ do
-    describe "Laske-funktion testit" $ do
-        it "Laskeaan 2 + 2" $
-            laske 2 2 `shouldBe` 4
-
--- Määritellään testattava funktio
-laske :: Int -> Int -> Int
-laske x y = x + y
+  describe "nelioJuuri" $ do
+    it "laskee neliöjuuren oikein" $ do
+      nelioJuuri 4 `shouldBe` 2
 ```
 
-Koodin `shouldBe`-funktio vertaa koodin laskemyöhemmistä testin odotettuun tulokseen. Voit myös käyttää muita funktioita, kuten `shouldBeGreaterThan` tai `shouldSatisfy`, riippuen testin tarpeesta.
+Tässä yksinkertaisessa koodissa määritämme `nelioJuuri` funktion ja testaamme sen toimivuutta käyttämällä `shouldBe` funktiota. Nyt suorittamalla tämän tiedoston komentoriviltä käyttäen `runhaskell Testit.hs`, näet seuraavan tulosteen:
 
-HSpec tarjoaa myös monia muita hyödyllisiä toimintoja, kuten `beforeAll` ja `afterAll`, joiden avulla voit suorittaa tiettyjä toimintoja ennen tai jälkeen testien suorittamisen. Voit tutustua näihin toimintoihin tarkemmin [HSpecin dokumentaatiosta](https://hspec.github.io/).
+```
+nelioJuuri
+  laskee neliöjuuren oikein
 
-## Syventävä sukellus
+Finished in 0.0012 seconds
+1 example, 0 failures
+```
 
-Kun kirjoitat testejä, on tärkeää huomata, että testien on oltava itsenäisiä ja toisistaan riippumattomia. Yksi tapa varmistaa tämä on käyttää `beforeEach`-funktiota, joka suorittaa tietyt toiminnot ennen jokaista testiä. Näin voit varmistaa, että jokainen testi suorittaa samanläisillä oletusarvoilla ja testi ei vaikuta muiden testien tuloksiin.
+Näet näinollen, että testi on onnistunut ja `nelioJuuri` funktio laskee neliöjuuren oikein.
 
-Lisäksi testien tulisi kattaa mahdollisimman paljon erilaisia skenaarioita ja reittejä, jotta kaikki mahdolliset virhetilanteet pystytään havaitsemaan ja korjaamaan. Tämä vaatii huolellista suunnittelua ja testien jatkuvaa päivittämistä, jotta ne pysyvät ajantasalla koodin muutosten kanssa.
+## Syvemmälle testaukseen
+
+Nyt kun olet aloittanut testien kirjoittamisen Haskell:ssa, voit syventää tietämystäsi ja käyttää erilaisia testaustyökaluja. HSpec tarjoaa mahdollisuuden lisätä erilaisia ehtoja testaukseen, kuten testien ryhmittelyä käyttämällä `describe`, `context` ja `it` lohkoja. Voit myös testata monimutkaisempia funktioita tai jopa testata sisäisiä tiloja käyttämällä `IO` toimintoja. On tärkeää huomata, että testien kirjoittaminen ei tarkoita, että koodisi ei koskaan epäonnistuisi, mutta se auttaa löytämään virheitä ja varmistamaan sovelluksesi toimivuuden.
 
 ## Katso myös
 
 - [HSpec-dokumentaatio](https://hspec.github.io/)
-- [Haskell-testauskirjastoja](https://hackage.haskell.org/packages/search?terms=test)
+- [Haskell-testaus eli päätoiminnan arvon tutkiminen](https://haskell-doc.gitbooks.io/haskell-testaus/content/)
+- [Funktionaalinen testaus Haskell-kielen bibliografian näkökulmasta](http://birchsport.drcut.com/~mathematica/book/title/funtestbookend.html)

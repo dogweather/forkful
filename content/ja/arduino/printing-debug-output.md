@@ -1,52 +1,48 @@
 ---
 title:                "Arduino: デバッグ出力の印刷"
+simple_title:         "デバッグ出力の印刷"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-#なぜ
-デバッグ出力をプリントすることに参加する理由を説明していること。
+## なぜデバッグ出力を行うのか
 
-##方法
-プリントしてデバッグする方法について説明するために、いくつかのコーディング例を紹介する。次に、実際の出力例を示すために、 " ```Arduino…``` "コードブロック内にサンプル出力を示す。
+デバッグ出力は、コードの動作を確認するために非常に便利です。Arduinoでプログラムを作成する際、何かがうまくいかない場合やコードに不具合がある場合、デバッグ出力を使用して変数の値やコードの実行状況を確認することができます。これにより、問題点を特定し、改善することができます。
+
+## 方法
+
+デバッグ出力を行うには、Serialライブラリを使用します。まず、`setup()`関数でSerialポートを開き、適切なボーレートを設定します。次に、`loop()`関数内で`Serial.println()`または`Serial.print()`を使用して、出力したい変数やメッセージを指定します。
 
 ```Arduino
-//コード例1：変数の値をプリントする
-int x = 5;
-Serial.print("変数xの値は： ");
-Serial.println(x);
-
-出力：
-変数xの値は： 5
-
-//コード例2：forループで配列の要素をプリントする
-int array[3] = {1, 2, 3};
-for(int i = 0; i < 3; i++){
-  Serial.print("配列の要素");
-  Serial.print(i);
-  Serial.print("の値は： ");
-  Serial.println(array[i]);
+void setup() {
+  Serial.begin(9600); //Serialポートを開き、ボーレートを設定する
 }
 
-出力：
-配列の要素0の値は： 1
-配列の要素1の値は： 2
-配列の要素2の値は： 3
+void loop() {
+  int sensorValue = analogRead(A0); //A0ピンからアナログ値を読み込む
+  Serial.println(sensorValue); //センサー値をシリアルモニターに出力する
+  delay(1000); //1秒待機する
+}
 ```
 
-##ディープダイブ
-デバッグ出力はコードを実行している間にコンピューターの内部の状態を表示するための重要なツールであり、問題を特定するのに役立ちます。デバッグ出力を使用することで、プログラムが期待どおりに動作するかどうかを確認し、必要に応じて変更を加えることができます。
+上記の例では、`sensorValue`変数の値を1秒ごとにシリアルモニターに出力しています。
 
-デバッグ出力を表示するには、 `Serial`オブジェクトの`print（）`や`println（）`メソッドを使用します。これらのメソッドの引数には、文字列または変数を含めることができます。`print（）`メソッドは引数をプリントし、改行なしで次の出力を続けます。一方、`println（）`メソッドは引数をプリントし、その後改行します。
+## ディープダイブ
 
-デバッグ出力にはさまざまな用途があります。たとえば、変数の値を表示して、プログラムが正しく動作しているかどうかを確認できます。また、条件分岐の処理の中でデバッグ出力を使用して、特定の条件が実行されたことを確認することができます。
+デバッグ出力を行う際には、`println()`と`print()`の違いを理解することが重要です。`println()`は出力の最後に改行を追加し、`print()`は改行を追加しないため、出力の見やすさが異なります。また、`println()`には複数の引数を指定することができ、それらを連結して出力することができます。
 
-デバッグ出力を使用して問題を特定したら、プログラムから削除することを忘れないようにしましょう。デバッグ出力はコンピューターのパフォーマンスに影響を与える可能性があるため、不要になったら削除することが重要です。
+さらに、`Serial.print()`と`Serial.println()`には`print()`と`println()`のように文字列や変数を直接指定する他に、`F()`マクロを使った文字列リテラルを指定することができます。これは、プログラムがメモリを節約するために有効な方法です。
 
-#参考
-- [Arduinoでデバッグする方法](https://www.arduino.cc/en/Tutorial/CommandParse)
-- [デバッグ出力のベストプラクティス](https://www.arduino.cc/en/Reference/StartupDebug)
-- [第2回：Arduinoでシリアル通信をする（デバッグ出力の方法）](https://deviceplus.jp/hobby/entry003/)
+## おわりに
+
+今回は、Arduinoでデバッグ出力を行う方法について紹介しました。デバッグ出力はコードの動作を確認するために役立つ重要なツールです。ぜひ、活用してスムーズなコード作成を目指しましょう！
+
+## 関連リンク
+
+- [Arduino 公式サイト](https://www.arduino.cc/)
+- [Arduino 日本語リファレンス](https://www.arduino.cc/reference/jp/)
+- [Serial.println()の使い方 - Qiita](https://qiita.com/icchi_h/items/38c3176fb652bd8c0b75)

@@ -1,62 +1,53 @@
 ---
-title:                "Kotlin: Lese en tekstfil"
+title:                "Kotlin: Lesing av en tekstfil."
+simple_title:         "Lesing av en tekstfil."
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Det er mange grunner til å lese en tekstfil i Kotlin. Kanskje du vil lagre eller behandle data fra en tekstfil, eller kanskje du vil lage et program som leser innholdet i en tekstfil og gjør noe med det. Uansett hva grunnen er, er det viktig å vite hvordan man leser en tekstfil riktig for å få ønsket resultat.
 
-Å kunne lese en tekstfil er en grunnleggende og viktig ferdighet for enhver programmerer. Det tillater deg å hente og behandle informasjon fra en fil på en enkel måte, og kan være nyttig i mange ulike programmeringsprosjekter.
+## Hvordan gjøre det
+Den enkleste måten å lese en tekstfil i Kotlin er å bruke `readLines()` funksjonen. Den tar inn filens navn som en parameter, leser innholdet i filen og returnerer en liste med hver linje som et element. Her er et eksempel på hvordan du kan bruke `readLines()` funksjonen:
 
-## Hvordan
+```Kotlin
+val file = File("minTekstfil.txt")
+val lines = file.readLines()
 
-For å lese en tekstfil i Kotlin, må du følge noen enkle steg:
+for (line in lines) {
+    println(line)
+}
+```
 
-1. Definer en ```File```-objekt som representerer filen du ønsker å lese:
-   
-   ```Kotlin
-   val fil = File("minfil.txt")
-   ```
+Dette eksempelet vil lese innholdet i filen "minTekstfil.txt" og skrive ut hver linje til konsollen. Du kan også bruke `FileReader` og `BufferedReader` klassene til å lese en tekstfil. Her er et eksempel på hvordan du kan gjøre det:
 
-2. Åpne filen for lesing ved hjelp av ```BufferedReader```-objektet:
-   
-   ```Kotlin
-   val bufferedReader = BufferedReader(FileReader(fil))
-   ```
+```Kotlin
+val file = File("minTekstfil.txt")
+val fileReader = FileReader(file)
+val bufferedReader = BufferedReader(fileReader)
+var line = bufferedReader.readLine()
 
-3. Les filen linje for linje ved hjelp av en ```while```-løkke:
-   
-   ```Kotlin
-   var linje: String?
-   while (bufferedReader.readLine().also { linje = it } != null) {
-       // gjør noe med hver linje, for eksempel skrive den ut
-       println(linje)
-   }
-   ```
+while (line != null) {
+    println(line)
+    line = bufferedReader.readLine()
+}
 
-4. Husk å lukke ```bufferedReader```-objektet når du er ferdig med å lese filen:
-   
-   ```Kotlin
-   bufferedReader.close()
-   ```
+bufferedReader.close()
+```
 
-5. Kjør koden din og se resultatet i konsollen. Hver linje fra filen vil bli skrevet ut.
-
-**Merk:** Det er også mulig å lese en tekstfil direkte inn i en streng ved hjelp av ```readText()```-metoden på ```File```-objektet.
+Dette eksempelet gjør det samme som det første eksemplet, men det bruker en annen tilnærming. Det er viktig å merke seg at når du leser en tekstfil, må du sørge for å lukke filen etter at du er ferdig med å lese den. Dette gjøres ved å kalle `close()` metoden på `BufferedReader` objektet.
 
 ## Dypdykk
+Når du leser en tekstfil, kan du også behandle og manipulere dataene på forskjellige måter. For eksempel kan du bruke `split()` funksjonen til å dele opp hver linje i mindre biter ved hjelp av et spesifikt tegn eller uttrykk. Dette kan være nyttig når du ønsker å lagre informasjonen i en database eller utføre beregninger på tall som er inkludert i tekstfilen.
 
-Det er flere ting du bør være oppmerksom på når du leser en tekstfil i Kotlin. Her er noen ekstra tips og triks:
-
-- Husk å håndtere eventuelle unntak som kan oppstå når du leser filen. Dette kan gjøres ved å legge til en ```try-catch```-blokk rundt kode som kan føre til et unntak.
-- Du kan også lese filer på internett ved hjelp av ```URL```-objektet og ```openStream()```-metoden.
-- Hvis filen du leser er stor, kan det være lurt å bruke ```readLines()```-metoden istedenfor å lese én linje om gangen. Denne metoden leser innholdet i filen som en liste av strenger, der hver streng representerer en linje i filen.
-- Du kan også lese filer med andre typer innhold, som for eksempel CSV-filer (komma-separerte verdier) eller XML-filer, ved hjelp av spesialiserte biblioteker.
+En annen måte å lese en tekstfil på er å bruke `readText()` funksjonen, som returnerer innholdet i filen som en enkelt streng. Dette kan være nyttig når du for eksempel ønsker å søke etter et bestemt ord eller uttrykk i filen.
 
 ## Se også
-
-- [Offisiell Kotlin-dokumentasjon for å lese filer](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-text.html)
-- [Kotlin Programming av Lawrence Angrave](https://www.amazon.com/Kotlin-Programming-Beginner-Lawrence-Angrave/dp/1788994012)
+- [Kotlin offisielle dokumentasjon](https://kotlinlang.org/docs/tutorials/kotlin-for-py/reading-files.html)
+- [How to Read a Text File using Kotlin](https://dzone.com/articles/how-to-read-a-text-file-using-kotlin)
+- [Working with Files in Kotlin](https://blog.kotlin-academy.com/working-with-files-in-kotlin-5e51bd4e1678?gi=9e3253a57a53)

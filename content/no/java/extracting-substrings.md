@@ -1,66 +1,67 @@
 ---
 title:                "Java: Utvinning av delstrenger"
+simple_title:         "Utvinning av delstrenger"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
+Ofte i programmering trenger man å jobbe med tekststrenger eller ord. Dette kan være alt fra å finne bestemte ord til å manipulere en hel tekststreng. Å kunne ekstrahere substringer fra en tekststreng er en viktig og nyttig ferdighet for enhver Java-programmerer. Det lar deg finne og bruke kun den delen av teksten du trenger, noe som kan spare deg for mye tid og arbeid.
 
-I dagens digitale verden er det en konstant strøm av tekst som blir produsert og delt med andre. Noen ganger kan du ønske å kun arbeide med en del av denne teksten, i stedet for å håndtere hele tekstdokumentet. Det er her utvinning av substrings kommer inn i bildet. Ved å ekstrahere deler av teksten, kan du enkelt manipulere og behandle den på en mer effektiv måte. I denne bloggposten vil vi utforske hvordan du kan utvinne substrings i Java-programmering.
-
-## Hvordan
-
-For å utvinne substrings i Java, må du først kjenne lengden på teksten og hvilken del av teksten du ønsker å utvinne. Du kan gjøre dette ved hjelp av `length()` metoden og `substring()` metoden.
+# Hvordan man gjør det
+Ekstrahering av substringer i Java er enkelt å implementere ved hjelp av den innebygde metoden `substring()`. Denne metoden gjør det mulig å hente ut en del av en tekststreng basert på startindeks og sluttindeks. La oss se på et eksempel:
 
 ```Java
-String tekst = "Hei, dette er en substring.";
-int lengde = tekst.length();
-String del = tekst.substring(4, lengde);
-System.out.println(del);
+String ord = "Hei alle sammen!";
+String del = ord.substring(4, 7);
+System.out.println("Del av ordet: " + del);
 ```
 
-Dette vil skrive ut: "dette er en substring." Det første argumentet i `substring()` metoden er startindeksen, mens det andre argumentet er sluttindeksen. Merk at sluttindeksen ikke er inkludert i den utvunnede substringen.
+Koden over vil gi følgende utskrift:
 
-Hvis du ønsker å utvinne fra et bestemt punkt til slutten av teksten, trenger du bare å angi startindeksen og utelate sluttindeksen.
+```
+Del av ordet: all
+```
+
+I dette eksempelet bruker vi `substring()`-metoden til å hente ut delen av ordet fra indeks 4 til 7, som tilsvarer "all" i teksten. Det er viktig å huske at Java bruker null-indeksering, noe som betyr at den første bokstaven i teksten har indeks 0.
+
+Det er også mulig å bruke `substring()`-metoden uten å spesifisere en sluttindeks. I så fall kommer den til å hente ut alle tegn fra startindeksen og frem til slutten av teksten. La oss se på et annet eksempel:
 
 ```Java
-String tekst = "Vi elsker Java-programmering!";
-String del = tekst.substring(12);
-System.out.println(del);
+String setning = "Jeg elsker å programmere i Java!";
+String del = setning.substring(12);
+System.out.println("Del av setningen: " + del);
 ```
 
-Dette vil skrive ut: "Java-programmering!" Du kan også bruke negative indekser for å utvinne fra slutten av teksten.
+Dette vil gi oss følgende utskrift:
+
+```
+Del av setningen: programmere i Java!
+```
+
+# Dypdykk
+Det finnes flere måter å bruke `substring()`-metoden på. I tillegg til å angi start- og sluttindeks, kan du også bruke `substring()` til å finne indexen til en bestemt streng inne i en tekststreng. Du kan gjøre dette ved å bruke `indexOf()`-metoden sammen med `substring()`. Et eksempel på dette kan se slik ut:
 
 ```Java
-String tekst = "Programmering er gøy!";
-int lengde = tekst.length();
-String del = tekst.substring(0, lengde-1);
-System.out.println(del);
+String tekst = "Dette er en tekststreng.";
+int indeks = tekst.indexOf("tekst");
+String del = tekst.substring(indeks);
+System.out.println("Del av teksten: " + del);
 ```
 
-Dette vil skrive ut: "Programmering er gøy" siden sluttindeksen er utelatt og dermed blir den siste bokstaven utelatt.
+Dette vil gi oss følgende utskrift:
 
-## Dypdykk
-
-I tillegg til å utvinne substrings, kan du også bruke metoden `indexOf()` for å finne hvor en bestemt tekst starter i en streng.
-
-```Java
-String tekst = "Java er et fantastisk programmeringsspråk";
-int indeks = tekst.indexOf("fantastisk");
-System.out.println(indeks);
+```
+Del av teksten: tekststreng.
 ```
 
-Dette vil skrive ut: 12, siden ordet "fantastisk" begynner på indeks nummer 12.
+Som du kan se bruker vi `indexOf()`-metoden til å finne indexen til ordet "tekst" i teksten. Deretter bruker vi denne indexen som startindeks til `substring()`-metoden for å hente ut resten av teksten etter dette ordet.
 
-Det er også viktig å merke seg at substrings i Java representeres ved bruk av `String`-klasse. Dette betyr at de er uforanderlige og kan ikke endres etter at de er opprettet. Hvis du ønsker å manipulere en substring, må du opprette en ny `String` som inneholder den ønskede endringen.
-
-## Se også
-
-For mer informasjon om utvinning av substrings og andre tekstmanipulasjonsmetoder i Java, kan du sjekke ut disse ressursene:
-
-- [Java - Manipulating Strings (engelsk)](https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html)
-- [Java.util.String - Oracle Docs (engelsk)](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [W3Schools - Java String Methods (norsk)](https://www.w3schools.com/java/java_ref_string.asp)
+# Se også
+- [String API i Java](https://docs.oracle.com/javase/9/docs/api/java/lang/String.html)
+- [Hvordan jobbe med tekst i Java](https://www.baeldung.com/java-text-tutorial)
+- [Java substring-metoden](https://www.w3schools.com/java/ref_string_substring.asp)

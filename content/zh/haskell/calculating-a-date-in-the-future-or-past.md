@@ -1,34 +1,60 @@
 ---
 title:                "Haskell: 计算未来或过去的日期"
+simple_title:         "计算未来或过去的日期"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-Learn Haskell - 认识Haskell
+# 为什么
 
-为什么：计算未来或过去日期是一项有用的技能，它可以帮助我们有效地安排时间和计划未来的任务。
+计算一个日期在未来或过去的原因可能各有不同，也许是想预测未来的重要事件，或者是对过去某个特殊时刻的回顾。无论是什么原因，使用Haskell来进行日期计算可以使整个过程更加简单和高效。
 
-如何计算日期：在Haskell中，我们可以使用Data.Time模块来计算日期。下面是一个简单的示例，在当前日期的基础上添加两周并输出结果。
+# 如何操作
+
+首先，我们需要使用Haskell的`time`库。这个库提供了许多有用的函数，可以帮助我们操作日期和时间。首先，让我们看一下如何通过当前日期来计算未来的日期。
 
 ```Haskell
 import Data.Time
 
-main :: IO ()
-main = do
-    currentTime <- getCurrentTime
-    let futureDate = addDays 14 (utctDay currentTime)
-    print futureDate
+-- 获取当前日期
+today :: IO Day
+today = utctDay <$> getCurrentTime
+
+-- 计算未来的日期
+futureDate :: Integer -> Day -> Day
+futureDate days current = addDays days current
+
 ```
 
-输出结果：2021-07-13
+上面的代码中，我们首先通过`Data.Time`模块中的`getCurrentTime`函数来获取当前日期和时间，然后使用`utctDay`函数从中提取出日期部分。接下来，我们定义了一个名为`futureDate`的函数，它接受一个整数参数和一个日期参数，并使用`addDays`函数来计算未来的日期。现在，让我们来测试一下这个函数。
 
-深入了解：我们可以通过组合`addDays`、`addMonths`和`addYears`等函数来计算复杂的日期。此外，我们还可以使用`diffDays`和`diffMonths`函数来比较两个日期之间的差距。这些函数在处理日期的过程中非常有用，并有助于我们更好地了解时间。
+```Haskell
+-- 测试未来日期计算
+main :: IO ()
+main = do
+  current <- today -- 获取当前日期
+  let future = futureDate 10 current -- 计算未来的日期
+  print future -- 输出未来的日期
+```
 
-另请参阅：
+现在，编译并运行这段代码，我们可以得到如下输出：
 
-- [Haskell官方文档](https://www.haskell.org/documentation/)
-- [Data.Time模块文档](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Haskell编程语言简介](https://www.geeksforgeeks.org/haskell-programming-language/#:~:text=Haskell%E7%94%B1%E4%B8%80%E4%B8%AA%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E5%99%A8%E5%89%8D%E7%BE%8E%E5%AD%A6Haskell%EB%B0%94%EB%A5%B4%E7%94%9F%E6%95%88%EF%BC%8C,%E5%8F%AF%E8%A7%A3%E5%86%B3%E7%9A%84%E5%92%8C%E5%93%88%E5%B8%8C%E5%B8%8C%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E3%80%82)
+```
+2021-10-31
+```
+
+这就是距离今天10天后的日期。同样的，我们也可以使用类似的方法来计算过去的日期。
+
+# 深入了解
+
+如果你想进一步了解Haskell中日期计算的原理，可以在[官方文档](https://hackage.haskell.org/package/time)中查看`Data.Time`模块的文档，里面包含了大量有用的信息和函数。此外，你也可以探索一下`time`库的源代码，这将更加深入地了解日期和时间在Haskell中是如何被处理和表示的。
+
+# 参考链接
+
+- [Haskell官网](https://www.haskell.org/)
+- [Hackage - Haskell软件包库](https://hackage.haskell.org/)
+- [日期计算实例代码](https://github.com/haskell/Time/blob/master/examples/Date.hs)

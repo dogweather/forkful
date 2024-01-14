@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Usuwanie znaków pasujących do wzorca"
+title:                "PHP: Usuwanie znaków pasujących do wzoru"
+simple_title:         "Usuwanie znaków pasujących do wzoru"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/php/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,46 +11,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Niektóre problemy programistyczne mogą wymagać usunięcia określonych znaków z ciągu tekstowego zgodnie z określonym wzorcem. To szczególnie ważne w przypadku analizy danych lub filtrowania informacji. W tym artykule dowiesz się, jak skutecznie i prosto usuwać znaki zgodnie z określonym wzorcem w języku PHP.
+Często zdarza się, że podczas pisania kodu PHP potrzebujemy usunąć pewne znaki z tekstu, które pasują do pewnego wzorca. Niektóre funkcje PHP, takie jak `preg_replace()`, pozwalają na to w prosty sposób. Jednak jest wiele różnych metod, które mogą być użyte w zależności od potrzeb i sytuacji. W tym artykule pokażemy kilka sposobów na usuwanie znaków dopasowujących się do wybranego wzorca.
 
 ## Jak to zrobić
 
-Aby usunąć znaki zgodnie z określonym wzorcem, musimy skorzystać z funkcji PHP `preg_replace()`. Przyjmuje ona trzy argumenty: wzorzec do wyszukania, tekst do zastąpienia oraz ciąg tekstowy, w którym chcemy dokonać zmian. Poniżej przedstawione jest prosty przykład kodu:
+#### Przykład 1:
 
 ```PHP
-$text = "Example string with unwanted characters";
-$clean_text = preg_replace("/[^a-zA-Z0-9]/", "", $text);
-echo $clean_text; // wypisze "Examplestringwithunwantedcharacters"
+<?php
+$text = "Ten tekst zawiera <em>ważne</em> informacje.";
+$pattern = "/<.*?>(.*?)<\/.*?>/i";
+$replacement = "$1";
+$new_text = preg_replace($pattern, $replacement, $text);
+
+echo $new_text;
 ```
 
-W powyższym przykładzie, za pomocą wyrażenia regularnego `/[^a-zA-Z0-9]/` usuwamy wszystkie znaki z wyjątkiem liter i cyfr. Możesz dostosować wzorzec według swoich potrzeb, aby usuwać konkretne znaki lub sekwencje znaków.
+##### Output:
 
-Możesz również użyć kilku wyrażeń regularnych jednocześnie, aby usunąć różne wzorce znaków. Poniżej znajduje się przykładowy kod:
+```
+Ten tekst zawiera ważne informacje.
+```
+
+Powyższy przykład pokazuje użycie funkcji `preg_replace()` do usunięcia wszystkich znaczników HTML `<em>` i `</em>` z tekstu, pozostawiając tylko treść zawartą wewnątrz nich.
+
+#### Przykład 2:
 
 ```PHP
-$text = "Example string with unwanted characters";
-$clean_text = preg_replace(["/[^a-z]/", "/[0-9]/"], "", $text);
-echo $clean_text; // wypisze "Examplestringwithunwantedcharacters"
+<?php
+$text = "12 stycznia";
+$pattern = "/[0-9]/";
+$replacement = "";
+$new_text = preg_replace($pattern, $replacement, $text);
+
+echo $new_text;
 ```
 
-W tym przypadku, używamy dwóch wyrażeń regularnych, aby usunąć wszystkie duże litery oraz cyfry.
+##### Output:
+
+```
+stycznia
+```
+
+W tym przykładzie użyliśmy funkcji `preg_replace()` z wyrażeniem regularnym, aby usunąć wszystkie cyfry z tekstu. Możemy również podać wiele różnych znaków do usunięcia, dodając je do nawiasów kwadratowych `[ ]` w wyrażeniu regularnym.
 
 ## Deep Dive
 
-Korzystanie z funkcji `preg_replace()` daje nam dużą elastyczność w usuwaniu znaków zgodnie z określonym wzorcem. Możemy na przykład wykorzystać znaki specjalne, aby dokładniej dopasować wzorzec. Oto kilka najczęściej używanych znaków specjalnych wraz z ich znaczeniem:
+Istnieje wiele funkcji w PHP, które pozwalają na usuwanie znaków dopasowujących się do wybranego wzorca. Poniżej wymieniamy kilka z nich:
 
-- `.` - dopasowuje dowolny pojedynczy znak (poza nową linią),
-- `*` - dopasowuje 0 lub więcej wystąpień poprzedniego znaku,
-- `+` - dopasowuje 1 lub więcej wystąpień poprzedniego znaku,
-- `?` - dopasowuje 0 lub 1 wystąpienie poprzedniego znaku,
-- `{n}` - dopasowuje dokładnie n wystąpień poprzedniego znaku,
-- `{n,}` - dopasowuje n lub więcej wystąpień poprzedniego znaku,
-- `{n,m}` - dopasowuje od n do m wystąpień poprzedniego znaku.
+- `preg_replace()` - funkcja, która pozwala na zastosowanie wyrażenia regularnego do znalezienia i usunięcia dopasowujących znaków z tekstu.
+- `str_replace()` - funkcja, która zastępuje podane znaki lub ciągi znaków innymi znakami lub ciągami znaków.
+- `trim()` - funkcja, która usuwa białe znaki z początku i końca tekstu.
+- `substr_replace()` - funkcja, która zastępuje ciąg znaków w określonym fragmencie tekstu.
+- `mb_ereg_replace()` - funkcja podobna do `preg_replace()`, ale obsługuje tekst w wielu językach.
 
-Najlepszym sposobem na zrozumienie sposobu działania wyrażeń regularnych jest po prostu je wypróbować i eksperymentować z różnymi kombinacjami.
+Ważne jest, aby wybrać odpowiednią funkcję w zależności od potrzeb i rodzaju tekstu, z którym mamy do czynienia.
 
 ## Zobacz także
 
-- [Dokumentacja funkcji `preg_replace()` w języku PHP](https://www.php.net/manual/en/function.preg-replace.php)
-- [Tutorial o wyrażeniach regularnych w języku PHP](https://www.tutorialrepublic.com/php-tutorial/php-regular-expressions.php)
-- [Darmowe narzędzie do testowania wyrażeń regularnych](https://regex101.com/)
+- [Dokumentacja PHP - preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
+- [10 Przykładów Używania Wyrażeń Regularnych w PHP](https://kursphp.com/przyklady/wyrazenia-regularne/)
+- [Usuwanie znaków HTML z ciągu tekstowego w PHP](https://easyprogramming.net/deleting-html-tags-php/)

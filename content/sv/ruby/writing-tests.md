@@ -1,46 +1,42 @@
 ---
 title:                "Ruby: Att skriva tester"
+simple_title:         "Att skriva tester"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför skriva tester i Ruby?
+## Varför
 
-Att skriva tester är en viktig del av programmering i Ruby. Tester hjälper till att säkerställa att koden fungerar som den ska, förbättrar kodkvaliteten och tillåter utvecklare att lättare identifiera och lösa eventuella fel och buggar.
+Att skriva tester är en viktig del av att skriva bra kod i Ruby. Genom att skriva tester kan du säkerställa att din kod fungerar korrekt och är robust. Det hjälper också till att förebygga buggar och minska risken för fel i ditt program.
 
-# Hur man skriver tester i Ruby
+## Hur man gör
 
-Det första steget för att börja skriva tester är att installera testningsverktyget "RSpec". Det är en av de mest populära testningsramverken för Ruby och kan enkelt installeras via "gem install rspec" kommandot.
-
-När du väl har RSpec installerat är det dags att skapa din första testfil. Här är ett exempel på en enkel testfil som testar en funktion som lägger ihop två tal:
+För att skriva tester i Ruby finns det ett inbyggt testramverk som heter Minitest. Detta ramverk ger en strukturerad och effektiv metod för att skapa och köra tester. Här är ett exempel på hur du kan skriva ett enkelt test:
 
 ```Ruby
-require_relative 'calculator.rb'
+require "minitest/autorun"
 
-RSpec.describe Calculator do
-  describe '#add' do
-    it 'adds two numbers correctly' do
-      calculator = Calculator.new # skapar ett nytt objekt av Calculator-klassen
-      result = calculator.add(2, 3) # anropar add-metoden och sparar resultatet i en variabel
-      expect(result).to eq(5) # förväntar oss att resultatet är lika med 5
-    end
+class CalculatorTest < Minitest::Test
+  def test_addition
+    result = 5 + 5
+    assert_equal 10, result
   end
 end
 ```
 
-Efter att ha skapat din testfil kan du köra den genom att skriva "rspec namn_pa_testfil.rb" i terminalen. Om allt fungerar som det ska, ska du få ett grönt godkännande från RSpec.
+I detta exempel testar vi additionsfunktionen i en kalkylator. Vi förväntar oss att resultatet ska vara 10 och använder metoden `assert_equal` för att jämföra detta med det faktiska resultatet av vår summering. Om testet är framgångsrikt visas "1 passed" i terminalen.
 
-# Djupdykning i skrivande av tester
+## Djupdykning
 
-När du väl har kommit igång med att skriva tester kan du lära dig mer om de olika typerna av tester som finns, såsom enhetstester, integrationstester och acceptanstester. Du kan också lära dig att använda fler funktioner och metoder inom RSpec för att skapa mer robusta tester.
+Att skriva tester handlar inte bara om att verifiera att ditt program fungerar som det ska, det handlar också om att skriva välstrukturerad och syntaktiskt korrekt kod. När du skriver tester, se till att följa konventionerna för din kodstil och håll testerna enkla och lättlästa. Detta kommer att göra dem enklare att underhålla och modifiera i framtiden.
 
-Ett annat viktigt koncept att förstå är "test-driven development" (TDD). Det innebär att skriva tester innan du faktiskt skriver koden för en funktion, vilket hjälper till att skapa mer stabil och kvalitativ kod.
+En annan viktig aspekt av att skriva tester är täckningsgraden. Detta innebär att du vill se till att alla delar av din kod har testats, så att du kan vara säker på att det fungerar som det ska. Minitest ger en täckningsrapport efter att du har kört dina tester, så du kan enkelt se vilka delar av din kod som behöver mer testning.
 
-# Se även
+## Se också
 
-- RSpec: https://rspec.info/
-- Test Driven Development in Ruby: https://medium.com/@jenweber/intro-to-tdd-test-driven-development-in-ruby-f565e3ea51f4
-- Ruby on Rails Tutorial: https://www.railstutorial.org/chapters/beginning
+- [Minitest dokumentation](https://github.com/seattlerb/minitest)
+- [The Ruby Testing Tutorial](https://www.activestate.com/blog/the-ruby-testing-tutorial-your-getting-started-guide/)

@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Radera tecken som matchar ett mönster"
+simple_title:         "Radera tecken som matchar ett mönster"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,32 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I denna bloggpost kommer vi att dyka in i hur man kan ta bort karaktärer som matchar ett visst mönster i Rust-programmeringsspråket. Det finns flera anledningar till varför man skulle vilja göra detta, till exempel att rensa bort onödiga tecken från en textsträng eller att filtrera användardata baserat på ett visst kriterium.
+Att ta bort tecken som matchar ett mönster kan vara användbart när man vill rensa en textsträng eller söka efter specifika tecken. Det kan också vara en del av en större algoritm för att filtrera eller manipulera data.
 
-## Hur man gör
+## Så här gör du
 
-För att ta bort karaktärer som matchar ett visst mönster i Rust, används en metod som kallas "trim_matches". Detta kommer att ta bort alla tecken från en given textsträng som stämmer överens med ett visst mönster som du anger. Låt oss titta på ett exempel:
+Det finns flera sätt att ta bort tecken som matchar ett mönster i Rust. Ett sätt är att använda sig av metoden `.replace()` tillsammans med det typen `&str`, som representerar en textsträng. Här är ett grundläggande exempel:
 
 ```Rust
-let text = "Hej! Hej! Hejsan!";
-let rensad_text = text.trim_matches('Hej');
-println!("Den rensade texten är: {}", rensad_text);
+let text = "Jag älskar att läsa böcker.";
+let ny_text = text.replace("älskar", "hatar");
+println!("Den nya texten: {}", ny_text);
 ```
 
-I detta exempel använder vi metoden "trim_matches" för att ta bort alla förekomster av ordet "Hej" från vår textsträng. Resultatet blir en rensad textsträng som ser ut så här: " ! Hejsan!". Detta kan vara användbart om du vill rensa bort vissa ord eller tecken från en textsträng innan du bearbetar den vidare.
+Output:
+```
+Den nya texten: Jag hatar att läsa böcker.
+```
+
+Om man istället vill ta bort alla mellanslag i en textsträng kan man använda en `for`-loop tillsammans med `.replace()`:
+
+```Rust
+let text = "Jag gillar att koda i Rust.";
+let mut ny_text = String::new();
+for char in text.chars() {
+    if char != ' ' {
+        ny_text.push(char);
+    }
+}
+println!("Den nya texten: {}", ny_text);
+```
+
+Output:
+```
+Den nya texten: JaggillaratkodaiRust.
+```
+
+Det finns också en funktion som heter `.trim_matches()` som kan användas för att ta bort tecken från början eller slutet av en textsträng. I följande exempel tas alla vokaler bort från början av texten:
+
+```Rust
+let text = "irriterande";
+let ny_text = text.trim_matches(['a', 'e', 'i', 'o', 'u'].as_ref());
+println!("Den nya texten: {}", ny_text);
+```
+
+Output:
+```
+Den nya texten: rriterande
+```
 
 ## Djupdykning
 
-Nu när vi har en grundläggande förståelse för hur metoden "trim_matches" fungerar, låt oss titta närmare på hur den faktiskt implementeras under huven. I Rust används ett datatyp som kallas "iteratorer" för att iterera över tecken i en textsträng. När vi använder metoden "trim_matches" skapas en iterator över hela textsträngen och sedan jämförs varje tecken med det mönster som vi har angett.
-
-Om tecknet matchar mönstret tas det bort från textsträngen. Om mönstret inte matchar tecknet, läggs det tillbaka i den rensade textsträngen. Detta fortsätter tills hela textsträngen har gåtts igenom och resultatet returneras.
-
-En annan viktig aspekt att notera är att metoden "trim_matches" är icke-muterande, vilket betyder att den inte ändrar den ursprungliga textsträngen utan skapar en ny rensad sträng som returneras. Detta är en viktig del av Rusts filosofi kring dataåtkomst, där det är viktigt att undvika oväntade ändringar i data utan att explicit ange det.
+Att ta bort tecken som matchar ett mönster kan vara mer komplicerat än bara dessa exempel. Det kan innebära att använda sig av reguljära uttryck eller att implementera en egen algoritm för att hantera specialfall. Det är också viktigt att tänka på prestanda när man ska ta bort tecken från en stor textsträng, eftersom det kan påverka hastigheten i programmet.
 
 ## Se även
 
-- [Rust dokumentation om trim_matches](https://doc.rust-lang.org/std/primitive.str.html#method.trim_matches)
-- [En guide till Rusts iteratorer](https://doc.rust-lang.org/std/iter/index.html)
-- [En introduktion till Rust](https://www.rust-lang.org/learn)
-
-Hoppas denna guide har varit användbar och gett en djupare förståelse för hur man tar bort karaktärer som matchar ett visst mönster i Rust. Fortsätt utforska och ha kul med Rusts kraftfulla funktioner!
+- [Rust Referens](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [Reguljära uttryck i Rust](https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html)
+- [Hantera textsträngar i Rust](https://www.educative.io/edpresso/what-is-the-use-of-the-string-in-rust)

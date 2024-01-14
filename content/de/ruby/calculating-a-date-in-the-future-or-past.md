@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,42 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Es gibt viele Gründe, warum jemand ein Datum in der Zukunft oder Vergangenheit berechnen möchte. Vielleicht planst du eine Reise und möchtest wissen, an welchem Datum du zurück sein wirst. Oder du musst ein Projekt mit einem bestimmten Fertigstellungsdatum planen. Mit Ruby kannst du ganz einfach Datumsberechnungen durchführen, die dir dabei helfen können, diese Aufgaben zu bewältigen.
+Die Berechnung von Datum und Uhrzeit ist ein wichtiger Teil jeder Programmiersprache, einschließlich Ruby. Es kann verwendet werden, um zukünftige oder vergangene Termine zu bestimmen, was besonders nützlich ist, wenn man mit Aufgabenplanung oder zeitbasierten Anwendungen arbeitet. In diesem Artikel werden wir uns ansehen, wie man mithilfe von Ruby ein Datum in der Zukunft oder Vergangenheit berechnen kann.
 
-## Wie man vorgeht
+## Wie man ein Datum in der Zukunft oder Vergangenheit berechnet
 
-In Ruby gibt es eine eingebaute Methode namens `DateTime`, die uns bei der Berechnung von Datumsangaben unterstützt. Zunächst müssen wir jedoch die Bibliothek `date` importieren, um auf diese Methode zugreifen zu können.
-
-**Beispiel 1:** Um das Datum von heute auszugeben, können wir folgenden Code verwenden:
+Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die Methode `advance` aus der Standardbibliothek `Date` verwenden. Sie nimmt mehrere Argumente an, einschließlich der Anzahl an Jahren, Monaten, Tagen, Stunden, Minuten und Sekunden, die hinzugefügt oder subtrahiert werden sollen. Schauen wir uns ein Beispiel an:
 
 ```Ruby
 require 'date'
-puts Date.today
+
+today = Date.today
+puts "Heute ist der #{today.day}. des #{today.month}. Monats im Jahr #{today.year}."
+
+future_date = today.advance(months: 3, days: 14)
+puts "In 3 Monaten und 14 Tagen ist der #{future_date.day}. des #{future_date.month}. Monats im Jahr #{future_date.year}."
 ```
 
-Dieser Code importiert die `date` Bibliothek und gibt dann die aktuelle Datum und Uhrzeit aus. Das Ergebnis sieht etwa so aus: `#<Date: 2021-10-15 ((2459491j,0s,0n),+0s,2299161j)>`
+In diesem Beispiel berechnen wir ein Datum, das 3 Monate und 14 Tage in der Zukunft liegt. Das Ergebnis sieht wie folgt aus:
 
-**Beispiel 2:** Wenn wir ein Datum in der Zukunft berechnen möchten, können wir das `DateTime` Objekt verwenden. Schau dir folgendes Beispiel an:
+```
+Heute ist der 8. des 10. Monats im Jahr 2021.
+In 3 Monaten und 14 Tagen ist der 22. des 1. Monats im Jahr 2022.
+```
+
+Wir können auch ein Datum in der Vergangenheit berechnen, indem wir negative Werte für die Argumente angeben. Hier ist ein Beispiel:
 
 ```Ruby
-require 'date'
-future_date = DateTime.now + 7
-puts "Das Datum in einer Woche ist: #{future_date}"
+past_date = today.advance(years: -2, months: -6)
+puts "Vor 2 Jahren und 6 Monaten war der #{past_date.day}. des #{past_date.month}. Monats im Jahr #{past_date.year}."
 ```
 
-Dieser Code importiert die `date` Bibliothek und berechnet dann das Datum von heute aus betrachtet plus 7 Tage. Das Ergebnis sieht etwa so aus: `Das Datum in einer Woche ist: 2021-10-22T00:00:00+00:00`
+Das Ergebnis sieht wie folgt aus:
 
-**ACHTUNG:** Stelle sicher, dass du bei der Datumsberechnung auch Schaltjahre berücksichtigst, um genaue Ergebnisse zu erhalten.
+```
+Vor 2 Jahren und 6 Monaten war der 8. des 4. Monats im Jahr 2019.
+```
 
-## Tiefere Einblicke
+## Tiefer eintauchen
 
-Es gibt viele weitere Methoden und Techniken, die du bei der Berechnung von Datum in Ruby verwenden kannst. Du kannst z. B. auch bestimmte Wochentage oder Zeitzonen berücksichtigen. Wenn du mehr über das Thema lernen möchtest, empfehle ich dir, folgende Links zu besuchen:
+In diesem Beispiel haben wir die Methode `advance` benutzt, um ein Datum in der Zukunft oder Vergangenheit zu berechnen. Diese Methode ist jedoch nicht die einzige Möglichkeit, dies zu tun. Alternativ können wir auch die Methode `+` benutzen und ein `Date`-Objekt mit einem Integer multiplizieren. Beide Methoden führen letztendlich zum gleichen Ergebnis.
 
-- [Offizielle Dokumentation zu `DateTime` in Ruby](https://ruby-doc.org/core-3.0.1/DateTime.html)
-- [Ein einfacher Guide zur Datumsberechnung in Ruby](https://www.rubyguides.com/2015/10/ruby-date-time-tutorial/)
-- [Ruby Datums- und Zeit-Manipulation Tipps und Tricks](https://www.codementor.io/@garethdwyer/ruby-date-and-time-manipulation-tips-and-tricks-part-2-4dmi6cvmu)
+Es ist auch wichtig anzumerken, dass diese Methoden nur in der Klasse `Date` verfügbar sind. Um ein Datum in der Vergangenheit oder Zukunft zu berechnen, das auch Uhrzeitangaben enthält, müssen wir die Klasse `DateTime` verwenden und die Methode `new` mit entsprechenden Argumenten aufrufen.
 
 ## Siehe auch
 
-- [Offizielle Ruby Dokumentation](https://www.ruby-lang.org/de/documentation/)
-- [Ruby Programmierung für Anfänger](https://www.ruby-lang.org/de/documentation/ruby-from-other-languages/to-ruby-from-python/)
+- [Date Klasse in der Ruby Dokumentation](https://ruby-doc.org/stdlib-2.7.4/libdoc/date/rdoc/Date.html)
+- [DateTime Klasse in der Ruby Dokumentation](https://ruby-doc.org/stdlib-2.7.4/libdoc/date/rdoc/DateTime.html)
+- [Ruby Guides: Zeit und Datum](https://www.rubyguides.com/2015/03/ruby-time/)

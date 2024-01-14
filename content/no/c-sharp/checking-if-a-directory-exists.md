@@ -1,7 +1,9 @@
 ---
-title:                "C#: Sjekke om en mappe eksisterer"
+title:                "C#: Kontrollere om en mappe eksisterer"
+simple_title:         "Kontrollere om en mappe eksisterer"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/checking-if-a-directory-exists.md"
 ---
 
@@ -9,32 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å sjekke om et katalog eksisterer er en viktig del av programmering. Det gjør det mulig for oss å håndtere ulike tilfeller som kan oppstå når vi jobber med våre programmer. Ved å sjekke om en katalog eksisterer, kan vi håndtere feil på en trygg og effektiv måte.
+Det er viktig å vite om en mappe eksisterer før du prøver å aksessere eller manipulere den. Dette sikrer at programmet ditt fungerer korrekt og ikke krasjer hvis mappen ikke eksisterer.
 
 ## Hvordan
 
-Vi kan enkelt sjekke om en katalog eksisterer ved å bruke metoden `Directory.Exists()` i C#. Dette er en innebygd funksjon som tar inn en streng som representerer katalogens bane, og returnerer en boolsk verdi som indikerer om katalogen eksisterer eller ikke.
+For å sjekke om en mappe eksisterer i C #, bruker du `Directory.Exists` metoden. Denne metoden tar inn en streng som representerer banen til mappen du vil sjekke, og returnerer en boolsk verdi som indikerer om mappen eksisterer eller ikke.
 
 ```C#
-// Sjekker om katalogen "Documents" eksisterer i "Min datamaskin"
-bool exists = Directory.Exists(@"C:\Min datamaskin\Documents");
+if (Directory.Exists("C:\\Users\\Desktop\\MyFolder")) {
+    Console.WriteLine("Mappen eksisterer.");
+} else {
+    Console.WriteLine("Mappen eksisterer ikke.");
+}
+```
 
-// Utskrift av resultatet
-Console.WriteLine(exists);
+Output:
+```
+Mappen eksisterer.
+```
 
-// Resultat: True
+Hvis mappen ikke eksisterer, kan du også opprette den ved hjelp av `Directory.CreateDirectory` metoden.
+
+```C#
+if (!Directory.Exists("C:\\Users\\Desktop\\MyFolder")) {
+    Directory.CreateDirectory("C:\\Users\\Desktop\\MyFolder");
+    Console.WriteLine("Mappen er opprettet.");
+} else {
+    Console.WriteLine("Mappen eksisterer allerede.");
+}
+```
+
+Output:
+```
+Mappen er opprettet.
 ```
 
 ## Dypdykk
 
-Når vi bruker `Directory.Exists()` metoden, er det viktig å merke seg at den også vil returnere `true` hvis katalogen er en filbane og ikke en mappe. Dette kan føre til uventede resultater hvis vi forventer at katalogen skal være en mappe.
+I tillegg til å sjekke om en mappe eksisterer, kan du også sjekke om en fil eksisterer på samme måte ved å bruke `File.Exists` metoden. Begge metodene bruker Windows API for å sjekke filsystemet, så de vil fungere riktig på alle operativsystemer som støttes av C #.
 
-En annen ting å merke seg er at denne metoden bare sjekker for eksistensen av en katalog og ikke nødvendigvis om vi har tilgang til den. Det er derfor viktig å sørge for å håndtere eventuelle unntak som kan oppstå.
+Det er også viktig å merke seg at selv om en mappe eller fil eksisterer når du sjekker, kan den fortsatt bli slettet eller flyttet av brukeren mens programmet ditt kjører. Så sørg for å håndtere eventuelle feil som kan oppstå i disse situasjonene.
 
-Vi kan også bruke `Directory.GetDirectories()` og `Directory.GetFiles()` metoder til å hente en liste over kataloger og filer i en angitt bane. Disse metodene vil også kaste unntak hvis vi ikke har tilgang til den angitte banen.
-
-## Se også
-
-- [Microsoft dokumentasjon om Directory.Exists() metoden](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
-- [C# Directory.Exists() eksempel på GeeksforGeeks](https://www.geeksforgeeks.org/check-if-a-directory-exists-in-a-path-in-c-sharp/)
-- [Se om jeg har tilgang til en fil eller katalog med C# blogginnlegg på norsk](https://blogg.example.com/se-om-jeg-har-tilgang-til-en-fil-eller-katalog-med-c-sharp.html)
+## Se Også
+- [Directory.Exists metode dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- [File.Exists metode dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.exists)
+- [Håndtering av feil i C#](https://www.tutorialspoint.com/csharp/csharp_exceptions.htm)

@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Att skriva tester"
+simple_title:         "Att skriva tester"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/writing-tests.md"
 ---
 
@@ -9,32 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Innan vi hoppar in i detaljerna av hur man skriver tester i Haskell, låt oss ta en titt på varför det är viktigt att göra det. Att skriva tester hjälper till att säkerställa att vårt program fungerar korrekt och att eventuella buggar upptäcks tidigt. Det är ett viktigt steg i utvecklingsprocessen som bidrar till att säkra kvaliteten på koden.
+Att skriva tester är en viktig del av att utveckla Haskell-kod. Det ger dig möjlighet att hitta och åtgärda buggar tidigt i utvecklingsprocessen och ger en extra säkerhetsnivå för din kod.
 
 ## Hur man gör
 
-För att skapa tester i Haskell, behöver vi först importera "Hspec" biblioteket. Därefter kan vi definiera våra tester genom att använda funktionen "describe" och specificera vilken del av koden vi vill testa. Sedan använder vi "it" funktionen för att beskriva vad som förväntas hända i vårt test och skriva vår kod. Låt oss se ett exempel nedan med en funktion som lägger till två tal:
+För att skriva tester i Haskell behöver du använda ett testbibliotek, som till exempel HUnit eller QuickCheck. Låt oss titta på ett exempel på hur man kan skriva och köra tester med HUnit.
 
 ```Haskell
-describe "add" $ do
-  it "returns the sum of two numbers" $ do
-    add 2 3 `shouldBe` 5
+-- Importera HUnit biblioteket
+import Test.HUnit
+
+-- En funktion som vi vill testa
+add :: Int -> Int -> Int
+add x y = x + y
+
+-- Testfall för funktionen add
+testAdd :: Test
+testAdd = TestCase $ assertEqual "Should be 10" (add 5 5) 10
+
+-- En grupp av testfall
+addTests :: Test
+addTests = TestList [testAdd]
+
+-- Köra testerna
+main :: IO Counts
+main = runTestTT addTests
 ```
 
-I denna kodspecifikation testar vi funktionen "add" och förväntar oss att den ska returnera rätt summa för två givna tal. Vi använder "shouldBe" för att jämföra det faktiska resultatet med det förväntade resultatet. Om de inte matchar, kommer vårt test att misslyckas och vi måste fixa vår kod.
+Överstående koddefinierar en funktion "add" och ett testfall som kontrollerar om funktionen ger önskat resultat. Testet körs sedan i huvudfunktionen.
 
 ## Djupdykning
 
-När vi skriver tester i Haskell, kan vi använda många olika funktioner och metoder för att säkerställa att vår kod fungerar som den ska. Vi kan använda "shouldBe" för att testa likhet, "shouldNotBe" för att testa olikhet, och "shouldSatisfy" för att testa en allmän sats. Vi kan också använda "pending" för att markera tester som ännu inte är implementerade och "after" för att köra kod efter tester.
+Haskell har ett starkt typsystem, vilket gör att kod som kompilerar oftast fungerar som förväntat. Men tester hjälper till att upptäcka fel som kanske inte syns vid en första anblick. Det är också bra att skriva tester för gränssnittet av din kod, eftersom dessa kan förändras i framtiden och det är viktigt att se till att allt fortfarande fungerar som det ska.
 
-Det finns också många andra bibliotek som kan hjälpa oss att skriva och köra tester i Haskell, som "QuickCheck" för slumpmässiga testscenarier och "HUnit" för enkel enhetstestning.
+## Se även
 
-## Se också
-
-Här är några användbara resurser för att lära dig mer om tester i Haskell:
-
-- Hspec dokumentation: https://hackage.haskell.org/package/hspec
-- "Testing in Haskell" guide: http://book.realworldhaskell.org/read/testing-and-quality-assurance.html
-- "A tutorial on Hspec" blogginlägg: https://vaibhavsagar.com/blog/2018/06/11/haskell-testing/
-
-Tveka inte att utforska dessa resurser och börja implementera tester i din egen Haskell-kod för att skapa en säkrare och buggfri programvara. Lycka till!
+- [HUnit](https://hackage.haskell.org/package/HUnit)
+- [QuickCheck](https://hackage.haskell.org/package/QuickCheck)
+- [Haskell Testing Best Practices](https://wiki.haskell.org/Testing_guidelines)

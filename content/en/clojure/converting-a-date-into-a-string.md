@@ -1,50 +1,50 @@
 ---
 title:                "Clojure recipe: Converting a date into a string"
+simple_title:         "Converting a date into a string"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-
-Converting a date into a string is a common task in programming, especially when working with dates and timezones. By converting a date into a string, we can easily display it in a human-readable format or use it in different operations such as comparing dates or performing calculations.
+## Why
+In any programming language, it is often necessary to convert dates into strings in order to display them in a more readable format. This is particularly relevant in user-facing applications where the date needs to be easily understood by a human.
 
 ## How To
-
-To convert a date into a string in Clojure, we can use the `str` function and the `clj-time` library. First, let's require the library and create a date object using the `now` function:
-
-```Clojure
-(require '[clj-time.core :as time])
-
-(def date (time/now))
-```
-
-Next, we can use the `format` function from the library to specify the output format we want for the date. For example, if we want the date to be displayed in the format "dd/MM/yyyy", we can use the following code:
+Converting a date into a string in Clojure is a relatively straightforward process. The `format` function can be used to specify the desired format and convert the date into a string. Let's take a look at an example:
 
 ```Clojure
-(time/format date "dd/MM/yyyy")
+(format "dd/MM/yyyy" (java.util.Date.))
 ```
 
-This will return a string with the current date in that format, for example: "11/10/2021".
+This code will return the current date in the format of day/month/year, for example, 06/12/2020. 
 
-We can also specify a timezone for the date by using the `at-time-zone` function. For example, if we want to convert the date into a string in the "Etc/GMT+8" timezone, we would use the following code:
+If you want to specify a different date, you can also use the `date-time` function, which takes in individual components of the date such as year, month, and day. Here's an example:
 
 ```Clojure
-(time/format (time/at-time-zone date "Etc/GMT+8") "dd/MM/yyyy")
+(format "y-MM-dd" (date-time 2020 12 6))
 ```
 
-This will return the date in the specified timezone. It is important to note that when converting a date into a string, the output will always be a string, even if the input date is a `DateTime` object.
+This code will return the same date but in the format of year-month-day, for example, 2020-12-06.
+
+Another useful function for date formatting is the `date` function, which takes in a long value representing the number of milliseconds since January 1, 1970, and returns a date in that format. Here's an example:
+
+```Clojure
+(format "E, MMM d, yyyy" (date 1607223820000))
+```
+
+This code will return the date December 6, 2020 in the format of day of week, month, day, and year, for example, Sun, Dec 6, 2020.
 
 ## Deep Dive
+In Clojure, dates are represented as Java objects of the java.util.Date class. This means that you can also use any Java libraries or methods for date formatting and manipulation in Clojure.
 
-The `format` function from the `clj-time` library uses the `DateTimeFormatter` class under the hood. This class provides many options for formatting dates and times, including specifying the language, timezones, and patterns for displaying the date. You can check out the full documentation for `DateTimeFormatter` on the [Clojure website](https://cljdoc.org/d/clj-time/clj-time/0.15.2/doc/clj-time.format/DateTimeFormatter).
+It is also important to consider time zones when converting dates into strings. Clojure offers the `clj-time` library, which provides functions for working with time zones and handling daylight saving time.
 
-Additionally, the `str` function used in our code block is a built-in function in Clojure that is used to concatenate strings. This means we can also use it to convert other data types into strings, such as numbers or boolean values.
+When formatting dates, it is important to pay attention to the symbols used. Some common symbols for formatting include `dd` for day, `MM` for month, `yyyy` for year, `E` for day of week, and `MMM` for month abbreviation.
 
 ## See Also
-
-- [Clj-time documentation](https://github.com/clj-time/clj-time)
-- [Clojure formatting strings documentation](https://clojure.org/guides/learn/language/strings#_formatting_strings)
-- [Java DateTimeFormatter class documentation](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Clojure date-time library](https://github.com/clj-time/clj-time)
+- [Java SimpleDateFormat class](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+- [Tutorial on date formatting in Clojure](https://mindviewinc.com/Books/TIJ4/OnLineSupplements.jar/date-format.html)

@@ -1,65 +1,51 @@
 ---
 title:                "Haskell recipe: Concatenating strings"
+simple_title:         "Concatenating strings"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-String concatenation is a fundamental concept in programming where we combine two or more strings into one. This can be useful when we need to display information to users or manipulate strings for data processing. In Haskell, string concatenation is a powerful tool that allows us to create new strings from existing ones.
+Concatenating strings is a fundamental operation in programming. It allows us to combine multiple pieces of text into one string, making it easier to manipulate and display information. This is especially useful when working with user input or generating dynamic output.
 
 ## How To
-
-To concatenate strings in Haskell, we can use the `++` operator. Let’s take a look at an example:
-
-```Haskell
-let firstWord = "Hello"
-let secondWord = "World"
-print (firstWord ++ secondWord)
-```
-
-The output of this code will be: `HelloWorld`
-
-We can also combine more than two strings by chaining multiple `++` operators:
+To concatenate strings in Haskell, we can use the `++` operator or the `concat` function. Let's take a look at some examples using these methods:
 
 ```Haskell
-let sentence = "The" ++ " quick" ++ " brown" ++ " fox"
-print sentence
+str1 = "Hello "
+str2 = "world!"
+str3 = str1 ++ str2
+-- Output: "Hello world!"
+
+str4 = concat ["Welcome ", "to ", "Haskell"]
+-- Output: "Welcome to Haskell"
 ```
 
-The output of this code will be: `The quick brown fox`
+In the first example, we use the `++` operator to combine the strings `str1` and `str2`. This operator works by appending the second string to the end of the first string. In the second example, we use the `concat` function to combine a list of strings into one. This can be useful when we have more than two strings to concatenate.
 
-We can also use string interpolation to dynamically concatenate strings. For example:
+We can also use the `++` operator and `concat` function on lists of characters. Let's see an example:
 
 ```Haskell
-let myName = "John"
-let age = 30
-let greeting = "Hello, my name is " ++ myName ++ " and I am " ++ show (age) ++ " years old!"
-print greeting
+char1 = ['H', 'e', 'l', 'l', 'o']
+char2 = ['w', 'o', 'r', 'l', 'd']
+char3 = char1 ++ char2
+-- Output: "Helloworld"
+
+char4 = concat [char1, char2]
+-- Output: "Helloworld"
 ```
 
-The `show` function is used to convert the integer value of `age` into a printable string. The output of this code will be: `Hello, my name is John and I am 30 years old!`
+As we can see, both methods work the same way with lists of characters. This means we can easily manipulate strings as lists of characters and then concatenate them back into strings.
 
 ## Deep Dive
+Under the hood, the `++` operator and `concat` function in Haskell use the `semigroup` typeclass to combine strings. This typeclass defines the `<>` operator, which is used for combining two values of the same type together. For strings, the `semigroup` instance uses the `++` operator to combine two strings.
 
-In Haskell, strings are represented as lists of characters. Therefore, string concatenation is essentially an operation on lists. This makes it easy to use functions like `map` and `filter` to manipulate strings.
-
-We can also use the `++` operator with empty strings to concatenate multiple strings together. For example:
-
-```Haskell
-let empty = ""
-let helloWorld = "Hello" ++ empty ++ "World"
-print helloWorld
-```
-
-The output of this code will be: `HelloWorld`
-
-Another important thing to note is that the `++` operator has a higher precedence than other operators in Haskell. This means that it will be evaluated first when used in conjunction with other operators. Therefore, it is important to use parentheses when necessary to avoid unexpected results.
+It's worth noting that in Haskell, strings are not treated as a special data type. They are simply a list of characters, which allows us to apply list operations to strings. This makes concatenation much more flexible and versatile compared to other programming languages.
 
 ## See Also
-- [Haskell Documentation on Strings](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html)
-- [Functional Programming in Haskell](https://wiki.haskell.org/Functional_programming)
-- [Haskell for Beginners](https://www.haskell.org/learn/)
+- Haskell String Documentation: https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html
+- Learn You a Haskell: http://learnyouahaskell.com/starting-out#strings-lists-and-tuples

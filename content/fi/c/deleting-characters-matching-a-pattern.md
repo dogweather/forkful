@@ -1,7 +1,9 @@
 ---
-title:                "C: Mallin mukaisten merkkien poistaminen"
+title:                "C: Kuviota vastaavien merkkien poistaminen"
+simple_title:         "Kuviota vastaavien merkkien poistaminen"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,40 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Poistamaan merkkejä mallin mukaan vastaavilta merkkijonoilta:
+Joskus ohjelmointiprosessissa voi esiintyä tarvetta poistaa merkkejä, jotka täsmäävät tiettyyn kaavaan. Tämä voi olla osa isompaa ohjelmointitehtävää tai yksinkertainen ratkaisu tietyn ongelman korjaamiseksi. Seuraavassa käsitellään lyhyesti, miten tämän voi tehdä C-kielellä.
 
-`cd test`
+## Miten
+
+C-kielessä on monia tapoja poistaa merkkejä, jotka osuvat tiettyyn kuvioon. Yksi yleisimmistä tavoista on käyttää standardikirjaston "string.h" -funktiota "strchr", joka löytää ensimmäisen esiintymän annetusta merkistöstä. Tämän jälkeen voidaan käyttää "strcpy" -funktiota, joka kopioi merkkijonon annettuun puskuriin ja jättää halutut merkit pois. Tässä on yksinkertainen esimerkki, joka poistaa kaikki 'a' merkit annetusta merkkijonosta:
+
 ```C
-char str[] = "tervetuloa";
-int i, j;
+#include <stdio.h>
+#include <string.h>
 
-// Poistetaan merkit, jotka vastaavat merkkijonoa "velo"
-for (i = 0; str[i] != '\0'; ++i) {
-    while (!(str[i] == 'v' 
-          && str[i+1] == 'e' 
-          && str[i+2] == 'l' 
-          && str[i+3] == 'o')) {
-        str[j++] = str[i];
+int main(void) {
+    // alustetaan merkkijono
+    char s[] = "Hei kaikki!";
+
+    // poistetaan merkit
+    char* result = strchr(s, 'a'); // löydetään ensimmäinen esiintymä 'a' merkille
+    if (result != NULL) { // jos merkki löytyi
+        strcpy(result, result+1); // kopioi merkkijono alkamisesta merkin jälkeen
     }
-    i = i + 3;
+
+    // tulostetaan lopputulos
+    printf("%s\n",s); // tulostaa "Hei kikki!"
+
+    return 0;
 }
-str[j] = '\0';
-
-printf("%s", str);
-
-// Tulostaa "tetua" 
 ```
 
-## Miten tehdä
+## Syvällisemmin
 
- Jotta voit poistaa merkkejä vastaavilta merkkijonoilta C-ohjelmointikielessä, sinun on käytettävä silmukkaa ja vertailtava jokaisen kirjaimen avulla, onko se osa haluttua merkkijonoa. Tämän jälkeen voit poistaa merkin käyttämällä toista silmukkaa ja siirtämällä seuraavat kirjaimet korvaamaan poistetun merkin. Lopuksi, voit asettaa loppuun nollamerkin varmistaaksesi, että merkkijono on oikeassa muodossa ilman poistettuja merkkejä.
-
-## Syvällinen sukellus
-
-Mikäli haluat poistaa merkkejä erilaisilta malleilta tai käyttää monimutkaisempia ehtoja, voit käyttää C-ohjelmointikielessä tarjolla olevia merkeistötyökaluja. Esimerkiksi `isalpha()`-funktio voi auttaa tunnistamaan, onko kyseessä kirjain, ja sitä voidaan käyttää ehtona poistaessasi merkkejä.
+Yllä olevassa esimerkissä käytetään vain yhtä merkkiä, mutta voit myös etsiä ja poistaa pidempiä merkkijonoja käyttämällä "strstr" -funktiota. Voit myös käyttää "strchr" ja "strcpy" -funktioita loopin sisällä, jotta voit poistaa kaikki halutut merkit merkkijonosta. On myös muita tapoja saavuttaa sama tulos, esimerkiksi käyttämällä "memmove" -funktiota, joka siirtää merkkijonon osia toisiin paikkoihin merkki kerrallaan.
 
 ## Katso myös
 
-- [C-ohjelmointikielen dokumentaatio](https://www.tutorialspoint.com/cprogramming/)
-- [C-merkkijonojen manipulointi](https://www.geeksforgeeks.org/c-programming-language/)
-- [Merkistöfunktiot C-ohjelmointikielessä](https://www.programiz.com/c-programming/library-function/ctype.h)
+- [string.h tutkimusohjelma](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [C string -opas](https://www.programiz.com/c-programming/c-strings)

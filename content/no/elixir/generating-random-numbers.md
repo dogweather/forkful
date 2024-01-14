@@ -1,42 +1,45 @@
 ---
 title:                "Elixir: Generering av tilfeldige tall"
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Elixir"
-category:             "Numbers"
+category:             "Elixir"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
-I denne bloggposten vil vi utforske hvordan man kan generere tilfeldige tall i Elixir. Å kunne generere tilfeldige tall kan være nyttig i mange ulike programmeringssammenhenger, som for eksempel spill, simuleringer eller ved å teste ulike funksjoner.
+## Hvorfor
+Å generere tilfeldige tall er en viktig del av mange programmeringsoppgaver. Enten du lager et spill, et statistikkverktøy eller en tilfeldig passordgenerator, trenger du ofte tilfeldige verdier for å gjøre programmet ditt mer dynamisk og interessant.
 
-##Hvordan
-Vi kan generere tilfeldige tall i Elixir ved hjelp av funksjonen ```Enum.random/1```. Denne funksjonen tar inn en liste eller et range og returnerer et tilfeldig element fra denne listen eller rangen.
+## Hvordan
+For å generere tilfeldige tall i Elixir kan du bruke funksjonen `:rand.uniform/1`. Denne funksjonen tar inn et heltall som argument, og returnerer et tilfeldig tall mellom 0 og det gitte tallet (ikke inkludert).
 
-For eksempel, for å generere et tilfeldig tall mellom 1 og 10, kan vi bruke følgende kode:
-
-```
-Elixir
-Enum.random(1..10)
+```Elixir
+:rand.uniform(10) # Output: 5
+:rand.uniform(100) # Output: 77
 ```
 
-Dette vil returnere et tilfeldig tall mellom 1 og 10 hver gang koden kjøres.
+Du kan også generere tilfeldige flyttall med `:rand.uniform/0`, som returnerer et tall mellom 0 og 1.
 
-Vi kan også generere tilfeldige flåttall ved å bruke funksjonen ```:rand.uniform/1```. Denne funksjonen tar inn et tall og returnerer et tilfeldig tall mellom 0 og tallet.
-
-```
-Elixir
-:rand.uniform(100)
+```Elixir
+:rand.uniform() # Output: 0.5243899131402998
+:rand.uniform() # Output: 0.19642607551113634
 ```
 
-Dette vil generere et tilfeldig tall mellom 0 og 100 hver gang koden kjøres.
+For å generere tilfeldige tall innenfor et gitt område, kan du bruke funksjonen `:rand.uniform/2`. Denne funksjonen tar to argumenter - det første er starten på området, og det andre er slutten på området. Den returnerer et tilfeldig tall mellom disse to verdiene.
 
-##Dypdykk
-Bak kulissene genererer Elixir tilfeldige tall ved hjelp av en uniform fordeling. Dette betyr at hvert tall har samme sannsynlighet for å bli returnert. Elixir bruker også en generator kalt Mersenne Twister for å generere disse tilfeldige tallene.
+```Elixir
+:rand.uniform(20, 40) # Output: 34
+:rand.uniform(10, 50) # Output: 29
+```
 
-Det er også mulig å sette en "seed" når man genererer tilfeldige tall i Elixir. Dette betyr at man kan få de samme tilfeldige tallene hver gang koden kjøres, noe som kan være nyttig for testing.
+## Dypdykk
+Under overflaten, bruker Elixir `:rand.uniform/1` funksjonen faktisk `:rand.uniform/2` internt, med start på 0 og det gitte tallet som slutten på området. Dette betyr at den første varianten er mer effektiv, og bør brukes når det er mulig.
 
-##Se også
-- [Dokumentasjon for Elixir's tilfeldige tall funksjoner](https://hexdocs.pm/elixir/Enum.html#random/1)
-- [Artikkel om tilfeldige tall i Elixir av Jose Valim](https://www.josevalim.com/elixir-random-numbers/)
-- [So treff du brukar Mersenne Twister gjennom Elixir](https://dailyelixir.com/post/so-brukar-du-mersenne-twister-gjennom-elixir/)
+Elixir har også en `:rand.seed/1` funksjon som tar et heltall som argument, og lar deg sette en startverdi for tilfeldighetsgeneratoren. Dette er nyttig hvis du vil ha en forutsigbar sekvens av tilfeldige tall, eller hvis du vil kunne gjenskape en spesiell sekvens senere.
+
+## Se også
+- [Elixir Offisiell Dokumentasjon om tilfeldige tall](https://hexdocs.pm/elixir/1.12/Random.html)
+- [Elixir School om tilfeldige tall i Elixir](https://elixirschool.com/en/lessons/advanced/random/)
+- [Elixir Forum tråd om tilfeldige tall i Elixir](https://elixirforum.com/t/what-are-you-using-to-generate-random-numbers/36010)

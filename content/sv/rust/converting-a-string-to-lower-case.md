@@ -1,37 +1,42 @@
 ---
-title:                "Rust: Omvandla en sträng till små bokstäver"
+title:                "Rust: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-I många programmeringsprojekt har man behov av att konvertera en sträng till små bokstäver. Det kan vara för att göra sökningar eller jämförelser mer enhetliga eller för att skapa en enhetlig utdata. I denna artikel kommer vi att titta på hur man enkelt kan konvertera en sträng till små bokstäver i programmeringsspråket Rust.
+Att konvertera en sträng till små bokstäver är en vanlig operation inom textbehandling och kan vara användbart i många olika situationer. Genom att lära dig att göra detta i Rust kan du utöka din kunskap om språket och använda det i dina egna projekt.
 
 ## Hur man gör det
-
-För att konvertera en sträng till små bokstäver i Rust använder man funktionen `to_lowercase()`. Detta är en inbyggd funktion i standardbiblioteket som kan användas på en sträng för att returnera en ny sträng med alla bokstäver i små bokstäver. Nedan följer ett exempel på hur man kan använda funktionen:
+För att konvertera en sträng till små bokstäver i Rust, kan du använda funktionen `to_lowercase()` från standardbiblioteket. Här är ett enkelt exempel:
 
 ```Rust
-let string = String::from("DET HÄR ÄR EN STRÄNG MED STORA BOKSTÄVER");
-let new_string = string.to_lowercase();
-
-println!("{}", new_string);
-
-// Output: det här är en sträng med stora bokstäver
+let original_str = "Hej, SVERIGE!";
+let lowercase_str = original_str.to_lowercase();
+println!("{}", lowercase_str);
 ```
 
-Funktionen `to_lowercase()` tar emot en referens till en sträng och returnerar en ny sträng i små bokstäver. Detta betyder att den ursprungliga strängen förblir oförändrad och en ny sträng skapas med de konverterade bokstäverna.
+Output:
+
+```bash
+hej, sverige!
+```
+
+Som du kan se, så har funktionen `to_lowercase()` omvandlat alla bokstäver i den ursprungliga strängen till små bokstäver.
+
+Det är också värt att nämna att denna funktion inte endast fungerar för ASCII-tecken, utan även för andra språk som stöds av Unicode.
 
 ## Djupdykning
+Det finns flera olika sätt att konvertera en sträng till små bokstäver i Rust. Förutom `to_lowercase()` funktionen, kan du också använda standardbiblioteket `to_ascii_lowercase()` eller implementera din egen algoritm för detta ändamål.
 
-När man använder funktionen `to_lowercase()` är det viktigt att tänka på att den endast konverterar bokstäver som finns i ASCII-tabellen. Detta betyder att specialtecken eller bokstäver från andra språk kan behöva konverteras på andra sätt. Det är också viktigt att notera att konverteringen kan påverka prestandan i vissa fall, eftersom det kan innebära att en ny sträng måste skapas. Därför kan det vara bra att utföra tester på olika implementeringar för att hitta den som är mest effektiv för specifika syften.
+Det är också viktigt att komma ihåg att konverteringen till små bokstäver kan påverka prestandan i din kod. Om du behöver köra dina strängar igenom denna operation många gånger, så kan det vara värt att titta på alternativa lösningar för att inte påverka prestandan negativt.
 
-## Se också
-
-- [Rust dokumentation om `to_lowercase()`](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
-- [En diskussion om konvertering av specialtecken i Rust](https://stackoverflow.com/questions/31760928/how-can-i-convert-non-ascii-characters-from-a-string-to-their-ascii-counterpar)
-- [En benchmarking av olika metoder för att konvertera strängar i Rust](https://users.rust-lang.org/t/speeding-up-string-conversions-lower-upper-case/12135)
+## Se även
+- The Rust Programming Language Book: Strings
+- Rust Standard Library: `to_lowercase()`
+- Rust Standard Library: `to_ascii_lowercase()`

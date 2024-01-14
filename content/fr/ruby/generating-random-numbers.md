@@ -1,67 +1,30 @@
 ---
-title:                "Ruby: Génération de nombres aléatoires"
+title:                "Ruby: Création de nombres aléatoires"
+simple_title:         "Création de nombres aléatoires"
 programming_language: "Ruby"
-category:             "Numbers"
+category:             "Ruby"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi Générer des Nombres Aléatoires en Ruby
+##Pourquoi
 
-Générer des nombres aléatoires est un outil puissant en programmation pour diverses raisons. Que ce soit pour des jeux, des simulations ou des tests, la capacité de créer des valeurs aléatoires peut être très utile dans de nombreux projets. Dans cet article, nous allons explorer comment utiliser Ruby pour générer des nombres aléatoires et plonger plus profondément dans le fonctionnement de ces nombres.
+Générer des nombres aléatoires est un aspect important de la programmation car cela permet aux développeurs de créer des simulations, des jeux ou tout autre programme nécessitant une composante aléatoire. Cela peut également être utile dans les tests unitaires pour s'assurer que toutes les conditions sont prises en compte.
 
-## Comment faire
-Nous pouvons utiliser la méthode `rand` en Ruby pour générer des nombres aléatoires. La syntaxe de cette méthode est la suivante :
+##Comment faire
 
-```Ruby
-rand(max)
-```
+Pour générer des nombres aléatoires en Ruby, nous utilisons la méthode ``` rand() ```. Par défaut, cette méthode renvoie un nombre aléatoire entre 0 et 1, par exemple ``` 0.571824523 ```. Pour obtenir un nombre aléatoire dans une plage spécifique, nous pouvons utiliser l'argument ``` rand(max) ``` où ``` max ``` est le nombre maximum que nous voulons inclure. Par exemple, pour obtenir un nombre aléatoire entre 1 et 10, nous utiliserions ``` rand(10) + 1 ```. Il est également possible de spécifier une plage de nombres, par exemple ``` rand(1..100) ``` renverra un nombre aléatoire entre 1 et 100.
 
-Ici, `max` représente la valeur maximum que nous voulons générer. Par exemple, si nous voulons générer un nombre aléatoire entre 1 et 10, nous utiliserons `rand(10)`. Voici un exemple complet de code :
+Il est également possible de générer des entiers aléatoires en utilisant la méthode ``` rand(max).to_i ```, qui va arrondir le nombre renvoyé par la méthode ``` rand() ``` à un entier.
 
-```Ruby
-puts rand(10)
-puts rand(100)
-```
+##Plongée en profondeur
 
-Output:
-```
-6
-73
-```
+La méthode ``` rand() ``` utilise un générateur de nombres pseudos aléatoires, qui utilise une formule mathématique pour produire une séquence de nombres a priori aléatoires. Cependant, cette méthode peut être prévisible par des hackers ou des cybercriminels, surtout si elle est utilisée pour la génération de mots de passe ou de clés de chiffrement. Dans de tels cas, il est préférable d'utiliser une bibliothèque de génération de nombres aléatoires cryptographiquement sécurisée telle que ``` SecureRandom ```.
 
-Nous pouvons également utiliser `rand` avec des décimales en ajoutant un point décimal suivi du nombre de chiffres après la virgule. Par exemple, `rand(10.0)` générera un nombre aléatoire avec un chiffre après la virgule.
+##Voir aussi
 
-## Plongée plus profonde
-En utilisant `rand` seul, nous obtenons des nombres aléatoires qui sont générés avec une distribution uniforme, c'est-à-dire que toutes les valeurs ont la même probabilité d'être générées. Cependant, en ajoutant un argument optionnel `seed`, nous pouvons influencer le flux de nombres aléatoires générés.
-
-```Ruby
-puts 'Sans seed :'
-puts rand(10)
-puts rand(10)
-
-puts 'Avec seed :'
-puts srand(123)
-puts rand(10)
-puts rand(10)
-```
-
-Output :
-```
-Sans seed :
-6
-5
-Avec seed :
-123
-9
-9
-```
-
-Comme vous pouvez le voir, en utilisant `srand` avec la même valeur `seed`, nous obtenons toujours les mêmes nombres aléatoires. Cette méthode est utile lorsque nous voulons reproduire des résultats pour des tests ou des simulations.
-
-## Voir Aussi
-- [La documentation officielle de la méthode rand en Ruby](https://ruby-doc.org/core-2.6/Kernel.html#method-i-rand)
-- [Une explication détaillée sur la génération de nombres aléatoires en Ruby](https://www.sitepoint.com/random-numbers-in-ruby-an-overview/)
-
-En utilisant la méthode `rand` en conjonction avec `srand`, nous pouvons facilement générer des nombres aléatoires en Ruby pour une variété de projets. J'espère que cet article vous a été utile et que vous êtes maintenant bien équipé pour ajouter des nombres aléatoires à vos futurs projets en Ruby.
+- [Documentation officielle de Ruby sur la méthode rand()](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-rand)
+- [Documentation officielle de la bibliothèque SecureRandom](https://ruby-doc.org/stdlib-2.7.1/libdoc/securerandom/rdoc/SecureRandom.html)
+- [Article sur la sécurité de la génération de nombres aléatoires en Ruby](https://www.internet-technologies.eu/random-numbers-in-ruby/)

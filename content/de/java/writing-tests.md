@@ -1,42 +1,50 @@
 ---
 title:                "Java: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum Tests schreiben?
 
-Das Schreiben von Tests ist ein integraler Bestandteil der Java-Programmierung und sollte von jedem ernsthaften Entwickler praktiziert werden. Durch das Testen können Fehler und Probleme frühzeitig erkannt und behoben werden, was letztendlich zu einer besseren Codequalität und einer schnelleren Entwicklung führt.
+Tests sind ein wichtiger Bestandteil des Entwicklungsprozesses in der Java-Programmierung. Sie dienen dazu, die Qualität und Stabilität des Codes zu gewährleisten. Durch das Schreiben von Tests kann man sicherstellen, dass das Programm so funktioniert, wie es soll, und etwaige Fehler frühzeitig erkennen. Es hilft auch dabei, sich an die gewünschte Funktionalität zu halten und Verbesserungspotenziale aufzudecken.
 
-## Wie man Tests schreibt
+# Wie schreibt man Tests?
 
-Die Erstellung von Tests in Java ist relativ einfach und kann in nur wenigen Schritten durchgeführt werden. Zunächst müssen Sie eine Testklasse erstellen und die `@Test`-Annotation von JUnit hinzufügen. Innerhalb der Testklasse können dann Testmethoden geschrieben werden. Hier ist ein Beispielcode:
+Das Schreiben von Tests ist in Java relativ einfach und erfordert nur wenige Schritte. Zunächst muss man ein Test-Framework wie JUnit oder TestNG in das Projekt einbinden. Dann kann man die zu testenden Methoden schreiben und diese mit Assertions versehen, die überprüfen, ob das erwartete Ergebnis zurückgegeben wird. Hier ist ein Beispiel:
 
 ```Java
-import static org.junit.Assert.assertEquals;
+// Testklasse importieren
 import org.junit.Test;
 
-public class CalculatorTest {
+// Testklasse deklarieren
+public class MeineKlasseTest {
+
+    // Testmethode deklarieren
     @Test
-    public void testAddition() {
-        Calculator calc = new Calculator();
-        int result = calc.add(3, 5);
-        assertEquals(8, result);
+    public void testMethode() {
+        // Erwartetes Ergebnis definieren
+        int erwartet = 5;
+        // Methode aufrufen und Ergebnis speichern
+        int ergebnis = MeineKlasse.methode();
+        // Überprüfen, ob Ergebnis mit Erwartung übereinstimmt
+        assertEquals(erwartet, ergebnis);
     }
 }
-``` 
+```
 
-In diesem Beispiel wird die Testmethode `testAddition()` erstellt, um die `add()`-Methode der `Calculator`-Klasse zu testen. Mit der `assertEquals()`-Methode können wir überprüfen, ob das erwartete Ergebnis mit dem tatsächlichen Ergebnis übereinstimmt. 
+Dieser Codeblock zeigt eine typische Testklasse in JUnit. Es werden ein Testfall definiert, die zu testende Methode aufgerufen und das Ergebnis mit dem erwarteten Wert verglichen. Natürlich gibt es noch viele weitere Möglichkeiten, Tests zu schreiben, aber dies ist ein guter Einstieg.
 
-## Deep Dive
+# Tiefere Einblicke
 
-Tests zu schreiben ist nicht nur eine Methode, um zu überprüfen, ob der Code wie erwartet funktioniert. Durch das Schreiben von Tests werden auch bestimmte Prinzipien der Softwareentwicklung gefördert, wie z.B. Modulareität und Wiederverwendbarkeit. Eine umfassendere Auseinandersetzung mit dem Thema Tests kann zu einer Verbesserung der allgemeinen Programmierfähigkeiten führen.
+Das Schreiben von Tests hat viele Vorteile, die über die bloße Fehlererkennung hinausgehen. Mit der Zeit wächst der Testumfang und bildet eine Art Sicherheitsnetz, das verhindert, dass spätere Änderungen im Code unabsichtlich bestehende Funktionalität beeinflussen. Auch die Dokumentationseigenschaft von Tests sollte nicht unterschätzt werden. Sie dienen als lebendige Beispiele der Nutzung von Klassen und Methoden und können somit auch anderen Entwicklern als Orientierungshilfe dienen.
 
-## Siehe auch
+# Siehe auch
 
-- [JUnit Documentation](https://junit.org/junit5/docs/current/user-guide/)
-- [Writing Tests in Java - Tutorial](https://www.baeldung.com/java-junit-tests)
-- [The Art of Writing Good Code](https://medium.com/better-programming/the-art-of-writing-good-code-6ef0f603fb98?source=collection_home---4------8-----------------------&gi=e0f288702570)
+- [JUnit](https://junit.org/)
+- [TestNG](https://testng.org/)
+- [5 Gründe für das Schreiben von Tests](https://www.thoughtworks.com/insights/blog/5-reasons-why-you-should-write-tests)

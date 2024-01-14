@@ -1,31 +1,37 @@
 ---
-title:                "Arduino: 大文字を小文字に変換する"
+title:                "Arduino: 「文字列を小文字に変換する」"
+simple_title:         "「文字列を小文字に変換する」"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-文字列を小文字に変換する必要性は、プログラミングにおいて文字列を標準化し、比較や検索などの処理を行うためです。
+文字列を小文字に変換する必要があるのか？これはプログラミングにおいてとても便利な機能です。たとえば、入力された文字列が大文字でも検索や比較を行いやすくするため、または出力の一貫性を保つために使用されます。コード上で文字列を小文字に変換することで、より正確な結果が得られるでしょう。
 
 ## 方法
-Arduinoで文字列を小文字に変換するには、 `toLowerCase()` 関数を使用します。以下のコードを参考にしてください。
+文字列を小文字に変換するには、次のようなコードを使用します。
 
 ```Arduino
-String original_string = "THIS IS A STRING";
-String lowercase_string = original_string.toLowerCase();
-Serial.println(lowercase_string);
+// 変換前の文字列を定義
+String str = "HELLO WORLD";
+// 小文字に変換
+str.toLowerCase();
+// 変換後の文字列を出力
+Serial.println(str);
 ```
 
-出力結果：`this is a string`
+上記のコードを実行すると、シリアルモニターに"hello world"という出力が表示されます。このように、`toLowerCase()`メソッドを使用することで、文字列を簡単に小文字に変換することができます。
 
 ## 深堀り
-`toLowerCase()` 関数は指定された文字列を小文字に変換し、新しいStringオブジェクトを返します。元の文字列は変更されません。また、この関数は英字のみを小文字に変換します。ひらがなやカタカナなど、その他の文字は変換されません。
+Arduinoの`String`クラスには、さまざまなメソッドが用意されています。その中には、文字列を大文字や小文字に変換する`toUpperCase()`メソッドや`toLowerCase()`メソッドもあります。これらのメソッドは、ASCII文字の範囲内でのみ機能します。つまり、アルファベットや数字に限定されるということです。そのため、日本語などのマルチバイト文字や特殊文字は変換できません。
 
-## See Also
-- [Stringオブジェクトのドキュメント](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [toLowerCase() 関数のドキュメント](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/tolowercase/)
+また、文字列を変換する際には、元の文字列を上書きしてしまうことに注意が必要です。上記の例では、`toLowerCase()`メソッドを使用した後、元の文字列`"HELLO WORLD"`は小文字になります。そのため、必要に応じて新しい変数に代入するなどして、元の文字列を保持するようにしましょう。
 
-記事を読んでいただきありがとうございます。文字列を小文字に変換することで、より効率的なプログラミングが可能になります。ぜひ、この方法を活用してみてください。
+## 住みも見てください
+# 同様の記事を読んでみる：
+- [ArduinoのStringクラスのメソッドリファレンス（英語）](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [ASCIIコード（英語）](https://en.wikipedia.org/wiki/ASCII)

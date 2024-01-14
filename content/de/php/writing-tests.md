@@ -1,50 +1,54 @@
 ---
 title:                "PHP: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "PHP"
-category:             "Testing and Debugging"
+category:             "PHP"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/php/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum Tests in der Programmierung wichtig sind
+Sehr geehrte Leserinnen und Leser,
 
-Jeder Programmierer kennt das unangenehme Gefühl, wenn der Code, den man stundenlang geschrieben hat, plötzlich nicht mehr funktioniert und man keine Ahnung hat, wo der Fehler liegt. Das kann zu viel Frustration und Zeitverlust führen. Hier kommen Tests ins Spiel - sie können helfen, solche Fehler frühzeitig zu erkennen und zu vermeiden. Aber warum sind Tests in der Programmierung eigentlich so wichtig?
+In der Welt der PHP-Programmierung ist das Verfassen von Tests ein wichtiger Bestandteil. In diesem Blog-Beitrag werde ich Ihnen erklären, warum es so wichtig ist, Tests zu schreiben und wie Sie dies effektiv tun können.
 
-Tests sind eine Möglichkeit, den eigenen Code auf Herz und Nieren zu prüfen. Sie decken mögliche Fehler und Bugs auf und stellen sicher, dass das Programm wie erwünscht funktioniert. Außerdem sorgen sie für eine bessere Struktur im Code, da man sich intensiv mit jeder einzelnen Funktion auseinandersetzen muss, um sinnvolle Tests dafür zu schreiben. Das kann dabei helfen, Fehler von vornherein zu vermeiden.
+## Warum?
 
-# Wie man Tests in PHP schreibt
-Zunächst sollte man sich überlegen, welche Teile des Codes es wert sind, getestet zu werden. Oft macht es Sinn, sich auf die Kernfunktionalitäten zu konzentrieren und nicht zu viele unwichtige Details zu testen. Dann kann man mit dem Schreiben der eigentlichen Tests beginnen.
+Bevor wir uns mit dem "Wie" beschäftigen, sollten wir uns die Frage stellen, warum wir eigentlich Tests schreiben sollten. Die Antwort ist einfach: Tests helfen uns dabei, unsere Codequalität zu verbessern und Fehler zu vermeiden. Durch das Schreiben von Tests können wir sicherstellen, dass unser Code wie erwartet funktioniert und potenzielle Probleme frühzeitig erkennen. Außerdem erleichtern Tests die Zusammenarbeit mit anderen Entwicklern, da der Code besser getestet und dokumentiert ist.
 
-Ein Beispiel dafür könnte sein, dass man eine Funktion hat, die prüft, ob eine E-Mail-Adresse valide ist. Die Funktion könnte so aussehen:
+## Wie geht das?
+
+Um Tests in PHP zu schreiben, verwenden wir in der Regel ein Framework wie PHPUnit. Zuerst definieren wir unsere Testklasse und fügen dann einzelne Testmethoden hinzu. Hier ist ein Beispiel:
 
 ```PHP
-function validateEmail($email) {
-    return filter_var($email, FILTER_VALIDATE_EMAIL);
+class CalculatorTest extends PHPUnit\Framework\TestCase
+{
+    public function testAdd()
+    {
+        $calculator = new Calculator();
+        $result = $calculator->add(3, 5);
+        $this->assertEquals(8, $result);
+    }
 }
 ```
 
-Und so könnte ein Test dafür aussehen:
+In diesem Beispiel haben wir eine einfache Testmethode für eine `add()` Funktion des `Calculator` Objekts geschrieben. Wir können sicher sein, dass die Funktion richtig funktioniert, wenn die `assertEquals()` Methode kein Fehler zurückgibt.
 
-```PHP
-public function testValidateEmail() {
-    $this->assertTrue(validateEmail('test@test.com'), "Expecting 'true', email is valid");
-    $this->assertFalse(validateEmail('test@test'), "Expecting 'false', email is invalid");
-}
-```
+Um die Testmethode auszuführen, müssen wir unser Testskript ausführen. Nachdem die Tests ausgeführt wurden, erhalten wir ein Ergebnis, das uns anzeigt, ob die Tests bestanden oder fehlgeschlagen sind und welche Tests durchgeführt wurden. Dies ist besonders nützlich, wenn unser Code wächst und wir Hunderte von Tests haben.
 
-Mit diesen Tests kann man sicherstellen, dass die Funktion sowohl gültige als auch ungültige E-Mail-Adressen korrekt erkennt.
+## Tiefere Einblicke
 
-# Tiefere Einblicke in das Schreiben von Tests
-Tests können in verschiedenen Arten und Umfang geschrieben werden. Man kann beispielsweise Unit Tests schreiben, die einzelne Funktionen isoliert testen, oder Integration Tests, die das Zusammenspiel mehrerer Funktionen prüfen.
+Beim Schreiben von Tests gibt es einige Best Practices, die wir beachten sollten. Zum Beispiel sollten wir uns auf die Funktionen konzentrieren, die am meisten genutzt werden, und diese ausgiebig testen. Außerdem sollten unsere Tests ihre eigene Logik nicht testen, sondern nur die Logik des Codes überprüfen, den sie testen sollen.
 
-Außerdem gibt es verschiedene Frameworks und Tools, die das Schreiben und Ausführen von Tests erleichtern. Eine beliebte Wahl für PHP ist zum Beispiel PHPUnit.
+Außerdem können wir unsere Tests nutzen, um sogenannte "Edge Cases" zu testen, also ungewöhnliche Eingaben oder Situationen, die in unserem Code auftreten könnten. Dadurch stellen wir sicher, dass unser Code auch in solchen Fällen korrekt funktioniert. Es ist auch ratsam, unsere Tests regelmäßig auszuführen, um sicherzustellen, dass unser Code immer noch wie erwartet funktioniert, insbesondere wenn wir Änderungen vornehmen.
 
-Es ist auch wichtig zu beachten, dass Tests kontinuierlich gepflegt und aktualisiert werden sollten. Wenn sich im Code Änderungen ergeben, müssen auch die entsprechenden Tests angepasst werden.
+## Siehe auch
 
-Das Schreiben von Tests kann anfangs etwas zeitaufwendig sein, aber es lohnt sich auf lange Sicht. Es spart Zeit und Nerven, da man mögliche Fehler frühzeitig erkennt und behebt.
+- [PHPUnit Dokumentation](https://phpunit.de/documentation.html)
+- [The Art of Unit Testing in PHP](https://www.amazon.de/Art-Unit-Testing-PHP-Filler/dp/1617293733)
+- [Testing PHP Applications with Codeception](https://www.amazon.de/Testing-PHP-Applications-Codeception-Cest/dp/1617296031)
 
-# Siehe auch
-- [PHPUnit Dokumentation](https://phpunit.de/documentation.html) 
-- [Tutorial: Einführung in das Testen mit PHPUnit](https://www.codeception.com/docs/05-UnitTests) 
-- [The PHP Testing resource List](https://thephp.cc/directory/testing.html)
+Ich hoffe, dieser Blog-Beitrag hat Ihnen gezeigt, wie wichtig das Schreiben von Tests für unsere PHP-Projekte ist. Wenn Sie bisher noch keine Tests geschrieben haben, empfehle ich Ihnen, dies so schnell wie möglich zu ändern. Ihr zukünftiges Ich wird es Ihnen danken.
+
+Auf Wiedersehen und bis zum nächsten Mal!

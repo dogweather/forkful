@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Kirjoittaminen standardivirheeseen"
+title:                "Clojure: Tietokoneohjelmoinnin kirjoittaminen standardivirheeseen"
+simple_title:         "Tietokoneohjelmoinnin kirjoittaminen standardivirheeseen"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-to-standard-error.md"
 ---
 
@@ -9,41 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä, miksi kirjoittaa standardivirheeseen (standard error) Clojure-ohjelmoinnissa. Yksi tärkeimmistä on virheiden käsittely ja vianjäljitys. Kirjoittamalla standardivirheeseen, voit saada tietoa ohjelman suorituksen aikana tapahtuneista virheistä, mikä helpottaa niiden korjaamista ja estää mahdollisten ongelmien syntymistä.
+Miksi kirjoittaisit standardivirheeseen (standard error)? Jos haluat tallentaa virheilmoitukset, jotka voivat auttaa sinua löytämään ja korjaamaan ohjelmointivirheitä. Tämä on hyödyllinen vianetsintätyökalu, joka auttaa sinua ymmärtämään, mistä ohjelmassasi havaitut virheet johtuvat.
 
-## Kuinka tehdä se
+## Kuinka tehdä
 
-Standardivirheeseen kirjoittaminen Clojurella on hyvin yksinkertaista. Voit käyttää funktiota `println` ja antaa sille parametrina haluamasi viestin. Esimerkiksi:
-
-```Clojure
-(println "Tämä on esimerkki standardivirheen kirjoittamisesta.")
-```
-
-Tämä koodi tulostaa viestin "Tämä on esimerkki standardivirheen kirjoittamisesta." standardivirheeseen.
-
-Jos haluat lisätä tietoa virheeseen, voit käyttää funktiota `prn` ja antaa sille parametrina virheen koodin tai arvon. Esimerkiksi:
+Standardivirheeseen kirjoittaminen Clojuressa on yksinkertaista. Voit käyttää "System/err" toimintoa ja antaa sille haluamasi virheilmoituksen merkkijonona. Tämän jälkeen ohjelma tallentaa virheilmoituksen standardivirheeseen sen sijaan, että tulostaisi sen normaalisti.
 
 ```Clojure
-(prn "Virhekoodi: " 404)
+(System/err "Tämä on virheilmoitus, joka tallennetaan standardivirheeseen")
 ```
 
-Tulostaa "Virhekoodi: 404" standardivirheeseen. Tämä auttaa sinua tunnistamaan ja korjaamaan mahdollisia virheitä koodissasi.
-
-## Syvempi sukellus
-
-Standardivirheeseen kirjoittaminen Clojurella käyttää taustalla Java-luokkaa `System.err`, joka vastaa standardivirheen tulostamisesta. Clojuressa tämä luokkaa voidaan käyttää hyödyntämällä `java.lang.System` -moduulia.
-
-Voit myös asettaa muuttujan `*err*` ja kirjoittaa sen avulla standardivirheeseen. Esimerkiksi:
+Tässä on esimerkki tulosteesta, jonka saat, kun suoritat tämän koodin:
 
 ```Clojure
-(set! *err* (java.lang.System/getErr))
-(.println *err* "Tämä on esimerkki standardivirheen kirjoittamisesta.")
+Tämä on virheilmoitus, joka tallennetaan standardivirheeseen
 ```
 
-Tämä lähestymistapa saattaa vaikuttaa monimutkaisemmalta, mutta antaa enemmän hallintaa standardivirheeseen kirjoittamisessa. Voit esimerkiksi ohjata standardivirheen tulostuksen toiseen tiedostoon tai käsitellä sitä eri tavalla kuin standarditulostusta.
+## Syvemmälle
+
+On tärkeää huomata, että standardivirheeseen kirjoittaminen voi olla hyödyllistä vain silloin, kun ohjelma ei pysty jatkamaan normaalisti virheen jälkeen. Jos ohjelmasi kuitenkin kykenee jatkamaan, voi olla parempi käyttää "System/out" toimintoa, joka tallentaa tulosteen standarditulosteeseen.
+
+Kannattaa myös huomata, että standardivirheen sisältöä voidaan lukea ja käsitellä myös ohjelmassa. Voit käyttää "System/err-reader" -toimintoa ja "read-line" -toimintoa lukeaksesi standardivirheeseen tallennetun virheilmoituksen merkkijonona.
 
 ## Katso myös
 
-- Virheiden käsittely Clojurella: https://clojure.org/guides/errors
-- Java-luokka System.err: https://docs.oracle.com/javase/8/docs/api/java/lang/System.html
-- Moduuli java.lang.System: https://clojuredocs.org/clojure.core/java.lang/System
+- [Clojure.org: I/O](https://clojure.org/reference/io)
+- [System/err -toiminto](https://clojuredocs.org/clojure.java.io/system%2Ferr)
+- [Standard Input ja Output tulostusten ohjaaminen](https://clojure.org/reference/io#_redirecting_standard_input_and_output)

@@ -1,51 +1,63 @@
 ---
 title:                "Ruby recipe: Converting a date into a string"
+simple_title:         "Converting a date into a string"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Converting a date into a string may seem like a straightforward task, but it is an essential skill for any programmer working with dates and time in their Ruby projects. It allows for more readable and user-friendly date representations, making your code more accessible for others to understand.
+Converting a date into a string may seem like a trivial task in programming, but it has its own significance. In simple terms, it allows us to display a date in a more readable format for users, instead of just showing it as a numerical value. Whether it's for displaying birthdays, event dates, or scheduling tasks, converting dates into strings is an essential skill for any Ruby developer.
 
 ## How To
+Converting a date into a string can be done in a few simple steps using Ruby's built-in methods. First, we need to create a date object using the `Date` class, providing the specific date we want to work with. For example, `my_date = Date.new(2021, 9, 15)` would create a date object for September 15, 2021.
 
-To convert a date into a string in Ruby, we can use the `strftime` method. This method takes in a format string, which specifies how we want our date to be displayed.
+Next, we can use the `strftime` method to format the date into a string according to our desired format. For example, `my_date.strftime("%B %d, %Y")` would convert the date into a string in the format of Month-Day-Year, giving us "September 15, 2021".
+
+We can also use the `to_s` method to simply convert the date object into a string without any specific formatting. For example, `my_date.to_s` would give us "2021-09-15". 
+
+To display the date in the correct time zone, we can use the `localtime` method and specify the desired time zone like so: `my_date.localtime("America/New_York")`.
+
+Here's a code snippet showing these methods in action:
 
 ```Ruby
-# Current Date
-date = Date.today
+require 'date'
 
-# Convert to string using format "Day, Month Date, Year"
-puts date.strftime("%A, %B %d, %Y")
+my_date = Date.new(2021, 9, 15)
 
-# Output: Wednesday, July 21, 2021
+puts my_date.strftime("%B %d, %Y")
+## Output: September 15, 2021
+
+puts my_date.to_s
+## Output: 2021-09-15
+
+puts my_date.localtime("America/New_York")
+## Output: 2021-09-15 00:00:00 -0400
 ```
-
-The `%A` represents the full day name, `%B` represents the full month name, and `%d` represents the day of the month, while `%Y` represents the full year. You can also use other format codes to display the date in a different format. You can find a full list of format codes in the Ruby [documentation](https://ruby-doc.org/core-3.0.1/Time.html#method-i-strftime).
 
 ## Deep Dive
+Now, let's take a deeper dive into the `strftime` method. This method uses a special formatting syntax to convert the date into a string in a specific format. Some commonly used format specifiers are:
 
-Behind the scenes, the `strftime` method uses the `strftime` format codes to format the date and time according to the current locale. The `strftime` method can also be used with the `Time` and `DateTime` objects, in addition to the `Date` object.
+- `%a`: abbreviated weekday name (e.g. Wed)
+- `%A`: full weekday name (e.g. Wednesday)
+- `%b`: abbreviated month name (e.g. Sep)
+- `%B`: full month name (e.g. September)
+- `%d`: day of the month (01-31)
+- `%Y`: full year (e.g. 2021)
+- `%M`: minute (00-59)
+- `%H`: hour (00-23)
+- `%p`: AM/PM designation 
 
-One crucial thing to note is that the format string must be surrounded by single quotes. Otherwise, the string may be interpreted as something else, resulting in an error or unexpected output.
+We can also use `%m` for the month in numeric form (01-12) or `%w` for the day of the week as a number (0-6, with 0 being Sunday).
 
-Another interesting feature of the `strftime` method is that you can use it to parse a string into a date or time object.
+Additionally, we can add other characters or symbols in between the format specifiers to customize the output. For example, `my_date.strftime("%B %d, %Y is a %A")` would give us "September 15, 2021 is a Wednesday". 
 
-```
-# Parse string "2021-07-21" into a Date object
-Date.strptime("2021-07-21", "%Y-%m-%d")
-
-# Output: #<Date: 2021-07-21 ...>
-```
-
-This is useful when working with user input or data from an external source that may not be in the correct format. Additionally, the `strftime` method allows for formatting the date based on your timezone, which can be specified using the `in_time_zone` method.
+One thing to keep in mind is that `strftime` is a method for the `Time` class, but can also be used with the `Date` class. However, some format specifiers, like `%H` and `%M`, won't have any effect on a `Date` object since it does not have a time component.
 
 ## See Also
-
-- [Ruby Date and Time Documentation](https://ruby-doc.org/core-3.0.1/Date.html)
-- [Ruby DateTime Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/DateTime.html)
-- [Ruby Time Documentation](https://ruby-doc.org/core-3.0.1/Time.html)
+- [Ruby Date class documentation](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+- [Ruby Time class documentation](https://ruby-doc.org/core-3.0.0/Time.html)
+- [A beginner's guide to date formatting in Ruby](https://blog.appsignal.com/2018/08/21/ruby-magic-episode-8-dates-and-times-in-ruby-part-1.html)

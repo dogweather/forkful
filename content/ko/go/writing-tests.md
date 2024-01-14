@@ -1,47 +1,70 @@
 ---
-title:                "Go: 테스트 작성하기"
+title:                "Go: 프로그래밍에서 테스트 작성하기"
+simple_title:         "프로그래밍에서 테스트 작성하기"
 programming_language: "Go"
-category:             "Testing and Debugging"
+category:             "Go"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜: 테스트 작성에 참여하는 이유를 설명하는 1-2 문장.
+## 왜?
 
-프로그래밍은 복잡하고 예측할 수 없는 일이다. 그래서 우리는 우리의 코드가 예측 가능하고 버그가 없도록 하기 위해 테스트를 작성한다. 테스트를 작성하는 것은 우리의 코드를 더 신뢰하고 유지 관리하기 쉽게 만들어준다.
+Go 프로그래밍에서 테스트를 작성하는 이유는 코드의 정확성과 안정성을 보장하기 위해서입니다. 테스트를 통해 버그를 예방하고 파일을 깔끔하게 유지할 수 있습니다.
 
-## 어떻게: "```Go ...```" 코드 블록 안에 코딩 예제와 출력 결과.
+## 어떻게?
 
-예를 들어, 다음과 같은 간단한 Go 함수가 있다고 가정해보자:
+테스트 작성하기
 
 ```Go
-func Add(x, y int) int {
-    return x + y
+package main
+
+import (
+  "testing"
+  "github.com/stretchr/testify/assert"
+)
+
+func TestSum(t *testing.T) {
+  result := sum(2, 3)
+  expected := 5
+  assert.Equal(t, expected, result, "Sum() 함수 결과는 5여야 합니다.")
+}
+
+func TestSubtract(t *testing.T) {
+  result := subtract(5, 2)
+  expected := 3
+  assert.Equal(t, expected, result, "Subtract() 함수 결과는 3이여야 합니다.")
+}
+
+func sum(a, b int) int {
+  return a + b
+}
+
+func subtract(a, b int) int {
+  return a - b
 }
 ```
 
-이 함수는 두 정수를 더한 결과를 반환하는 역할을 한다. 이제 이 함수에 대한 테스트를 작성해보겠다:
+테스트 실행하기
 
-```Go
-func TestAdd(t *testing.T) {
-    result := Add(2, 3)
-    if result != 5 {
-        t.Error("Expected 5, got", result)
-    }
-}
+```
+go test
 ```
 
-이 테스트는 Add 함수가 기대한 대로 동작하는지 확인하는 역할을 한다. 만약 결과가 5가 아닐 경우 테스트를 실패시킨다.
+테스트 결과
 
-## 심층 분석: 테스트 작성에 대한 더 깊은 정보.
+```
+PASS
+ok      [패키지 경로]      0.007s
+```
 
-테스트를 작성할 때는 코드를 염두에 두고 표준 포맷을 따르는 것이 중요하다. 이를 통해 다른 개발자들도 쉽게 이해할 수 있고 코드를 유지 관리하기 쉽다. 또한, 헬퍼 함수를 사용하여 여러 테스트에서 반복되는 코드를 줄일 수도 있다.
+## 깊이 파고들기
 
-또한, 테스트를 작성하는 것은 단지 코드를 검증하는 것에 그치지 않는다. 테스트를 작성하면 코드를 디버깅할 때도 유용하게 사용할 수 있다. 예를 들어, 버그를 발견하면 쉽게 테스트를 만들어서 해당 버그를 재현할 수 있다.
+테스트 작성에는 다양한 방법이 있습니다. 위의 예시는 아주 간단한 유닛 테스트이며, 더 복잡한 테스트에는 모의 객체와 테이블 테스트를 사용할 수 있습니다. 또한 코드의 매니저로서의 역할도 테스트를 작성할 때 고려해야 하는 중요한 부분입니다.
 
-## 참고문헌: 다른 유용한 Go 프로그래밍 블로그와 자료들
+## 참고 자료
 
-- [Effective Go](https://golang.org/doc/effective_go.html) - Go 공식 문서의 효과적인 Go 코딩 스타일 안내서.
-- [Learn Go with Tests](https://github.com/quii/learn-go-with-tests) - Go 테스트 작성법을 배우기 위한 도움이 되는 예제들로 구성된 프로젝트.
-- [Testing in Go](https://medium.com/@matryer/testing-in-go-unit-tests-56b71cd5fed8) - Go 테스트 작성에 대한 자세한 가이드와 팁들을 담고 있는 블로그 포스트.
+- [GoLang.org: Test](https://golang.org/pkg/testing/)
+- [Medium: Go언어 테스트 코드 작성하기](https://medium.com/@daeseokhan88/go%EC%96%B8%EC%96%B4-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BD%94%EB%93%9C-%EC%9E%91%EC%84%B1%ED%95%98%EA%B8%B0-996069c7df82)
+- [디렉토리 구조를 매니징하는 Go 프로젝트의 테스트 케이스 추가법](https://blog.ysmood.org/unit-testing-in-golang/)

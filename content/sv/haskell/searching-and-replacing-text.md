@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Sökning och ersättning av text"
+title:                "Haskell: Söka och ersätta text"
+simple_title:         "Söka och ersätta text"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/searching-and-replacing-text.md"
 ---
 
@@ -9,51 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att söka och ersätta text är en viktig färdighet för programmerare, oavsett vilket språk de använder. Detta kan till exempel vara användbart när man vill hitta och ändra specifika delar av koden eller när man vill uppdatera stora mängder data på en gång.
+Att söka och ersätta text är en viktig del av programmering. Genom att lära sig hur man utför denna handling i Haskell kan du effektivisera ditt arbete och göra din kod mer läsbar.
 
 ## Hur man gör det
 
-För att söka och ersätta text i Haskell används funktionen `substitute`, som finns inbyggd i `Text`-modulen. Den tar tre argument: det mönster man vill söka efter, det man vill ersätta det med och den text som man vill söka i. Detta kan se ut såhär:
+För att söka och ersätta text i Haskell kan du använda funktionen `replace` från paketet `text`. Du behöver först importera detta paket med hjälp av kommandot `import qualified Data.Text as T`, vilket ger dig möjlighet att använda prefixet `T` för alla funktioner i paketet.
 
-```
-Haskell
-import Data.Text
+```Haskell
+import qualified Data.Text as T
 
--- Sök och ersätt "world" med "universe" i strängen "Hello world!"
-substitute "world" "universe" "Hello world!"
--- Output: "Hello universe!"
-```
+-- En enkel sträng att arbeta med
+let str = "Detta är en textsträng för exempel."
 
-Man kan även använda reguljära uttryck i mönstret, genom att använda funktionen `regex` från `Text.Regex`-modulen:
+-- Söker efter text och ersätter den med ny text
+let nyStr = T.replace "text" "textsträng" str
 
-```
-Haskell
-import Data.Text.Regex
-
--- Sök och ersätt alla förekomster av siffror i en sträng med "*"
-substitute (regex "[0-9]+") "*" "This is a string with 1 and 2"
--- Output: "This is a string with * and *"
+-- Skriver ut resultatet
+print nyStr
 ```
 
-Det är även möjligt att använda funktionen `replaceAll` för att söka och ersätta i alla förekomster av en viss text i en sträng, istället för bara den första. Detta kan göras på följande sätt:
+Output: `Detta är en textsträngsträng för exempel.`
 
-```
-Haskell
-import Data.Text
-
--- Ersätt alla "hello" med "hi" i strängen "hello hello hello"
-replaceAll "hello" "hi" "hello hello hello"
--- Output: "hi hi hi"
-```
+Observera att i Haskell är alla strängar representerade som värden av typen `Text` från paketet `text`, och inte som `String` som i många andra programmeringsspråk.
 
 ## Djupdykning
 
-För de som vill lära sig mer om hur man effektivt kan söka och ersätta text i Haskell så finns det flera olika moduler och funktioner som kan vara till hjälp. Till exempel är `Text.Regex`-modulen väldigt kraftfull när det kommer till att använda reguljära uttryck. Det finns även andra externa moduler som kan vara användbara, som till exempel `Text.Search` och `Text.Regex.TDFA`.
+För att förstå hur funktionen `replace` fungerar, låt oss titta på dess signatur:
+```Haskell
+replace :: Text -> Text -> Text -> Text
+```
 
-En annan viktig punkt att tänka på när det kommer till att söka och ersätta text är prestanda. Om man arbetar med stora mängder data och behöver söka och ersätta i flera olika strängar, kan det vara värt att undersöka vilken modul eller funktion som ger bäst resultat för ens specifika användning.
+Detta betyder att funktionen tar tre strängar som argument och returnerar en sträng. Det första argumentet är den text som ska sökas efter, det andra är den text som ska ersätta den och det tredje är den ursprungliga texten. Om det finns flera matchningar av den text som ska bytas ut, kommer alla dessa att ersättas.
 
-## Se även
+En viktig sak att notera är att funktionen `replace` är strängen anpassad och tar hänsyn till versaler och gemener i sin sökning.
 
-- https://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text.html
-- https://hackage.haskell.org/package/text-regex-1.0.0.3/docs/Data-Text-Regex.html
-- https://hackage.haskell.org/package/text-search-0.1.0.0/docs/Data-Text-Search.html
+## Se även (See Also)
+
+- [Officiell dokumentation för paketet `text`](https://hackage.haskell.org/package/text)
+- [En introduktion till Haskell för nybörjare](https://en.wikipedia.org/wiki/Haskell_(programming_language))
+- [Lär dig mer om vanliga strängoperationer i Haskell](https://haskell-lang.org/tutorial/strings)

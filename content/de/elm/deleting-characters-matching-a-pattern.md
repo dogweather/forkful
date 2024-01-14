@@ -1,47 +1,48 @@
 ---
-title:                "Elm: Löschen von Zeichen, die einem Muster entsprechen"
+title:                "Elm: Das Löschen von Zeichen, die einem Muster entsprechen."
+simple_title:         "Das Löschen von Zeichen, die einem Muster entsprechen."
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, kann in der Programmierung sehr nützlich sein, insbesondere wenn man mit umfangreichen Texten arbeitet. Mit Elm ist es möglich, diese Aufgabe auf einfache und effiziente Weise zu bewältigen.
+In der Programmierung gibt es oft Situationen, in denen man bestimmte Zeichen aus einer Zeichenfolge löschen möchte. Vielleicht müssen unerwünschte Leerzeichen entfernt werden oder bestimmte Zeichenfolgen entschlüsselt werden. In solchen Fällen ist es hilfreich zu wissen, wie man Zeichen löschen kann, die einem bestimmten Muster entsprechen.
 
-## Wie funktioniert es?
+# Wie geht's
 
-Um Zeichen zu löschen, die einem bestimmten Muster entsprechen, müssen wir zuerst einen regulären Ausdruck definieren, der dieses Muster beschreibt. Anschließend können wir die `Regex.replace` Funktion verwenden, um alle Vorkommen des Musters im Text zu entfernen.
-
-Ein Beispielcode könnte wie folgt aussehen:
+Es gibt verschiedene Möglichkeiten, um Zeichen zu löschen, die einem bestimmten Muster entsprechen. In Elm kann man zum Beispiel die Funktion "String.filter" verwenden. Hier ein Beispielcode, der alle Leerzeichen aus einer Zeichenfolge löscht:
 
 ```Elm
-import Regex
-
-text = "Hello, world! I am learning Elm."
-pattern = Regex.regex "[A-Z]"
-
-Regex.replace pattern text ""
+String.filter (\c -> c /= " ") "Hallo Welt" 
 ```
 
-Der obige Code würde alle Großbuchstaben aus dem Text löschen und das Ergebnis würde wie folgt aussehen:
+Die Ausgabe dieses Codes wäre "HalloWelt". Man kann auch ein reguläres Ausdrucksmuster verwenden, um bestimmte Zeichen zu löschen. Hier ein Beispiel, das alle Zahlen aus einer Zeichenfolge entfernt:
 
-`"ello, world! am earning lm."`
+```Elm
+String.filter (\c -> not (Char.isDigit c)) "123 Elm Programmierung" 
+```
 
-Mehr Beispiele und Informationen zu Regulären Ausdrücken in Elm finden Sie in der [offiziellen Dokumentation](https://elm-lang.org/docs/quick-start).
+Die Ausgabe wäre " Elm Programmierung".
 
-## Tiefergehende Erläuterung
+# Tiefere Einblicke
 
-Beim Löschen von Zeichen in Elm gibt es einige wichtige Dinge zu beachten. Zum einen beruht die Funktion `Regex.replace` auf dem `Maybe`-Typ, was bedeutet, dass sie möglicherweise kein Ergebnis zurückgibt, wenn zum Beispiel der verwendete reguläre Ausdruck nicht auf den Text zutrifft.
+In Elm basiert die Funktion "String.filter" auf der Funktion "List.filter", die Listen bearbeitet. Diese wiederum basiert auf der Funktion "filter", die in der funktionalen Programmiersprache Haskell verwendet wird. Diese Funktion nimmt eine Funktion und eine Liste als Parameter und gibt eine neue Liste zurück, die nur die Elemente der ursprünglichen Liste enthält, für die die Funktion "True" ergibt.
 
-Zum anderen können wir mit dem `group` Argument in der `Regex.replace` Funktion angeben, welcher Teil des regulären Ausdrucks wir im Endergebnis beibehalten möchten. Dadurch können wir gezielt bestimmte Zeichen aus unserem Text entfernen und den Rest beibehalten.
+Man kann auch die Funktion "String.break" verwenden, um eine Zeichenfolge in zwei Teile zu zerlegen, basierend auf einem bestimmten Muster. Zum Beispiel könnte man auf diese Weise einen Teil der Zeichenfolge entfernen und den anderen Teil behalten.
 
-Für eine genauere Erklärung und weitere Beispiele empfehlen wir einen Blick in das [Elm Guide Buch](https://guide.elm-lang.org/) zu werfen.
+```Elm
+String.break (\c -> c == " ") "Hallo Welt" 
+```
 
-## Siehe auch
+Die Ausgabe wäre ein Paar von Zeichenfolgen, in diesem Fall "Hallo" und "Welt". Diese Funktionen können sehr nützlich sein, um Zeichen zu manipulieren und auf bestimmte Weise aus einer Zeichenfolge zu entfernen.
 
-- [Offizielle Elm Dokumentation](https://elm-lang.org/docs)
-- [Elm Guide Buch](https://guide.elm-lang.org/)
-- [Regex in Elm - Traversy Media Tutorial](https://www.youtube.com/watch?v=00EYJx6iADI) (auf Englisch)
+# Siehe auch
+
+- Die offizielle Elm-Dokumentation zu String-Funktionen: https://package.elm-lang.org/packages/elm/core/latest/String
+- Eine Einführung in reguläre Ausdrücke in Elm: https://guide.elm-lang.org/appendix/regex.html
+- Weitere Beispiele und Anwendungsmöglichkeiten von String-Funktionen in Elm: https://medium.com/@lucamug/elm-has-a-pretty-good-string-package-6cc732b02f94

@@ -1,52 +1,40 @@
 ---
-title:                "Python: Iniciando um novo projeto"
+title:                "Python: Começando um novo projeto"
+simple_title:         "Começando um novo projeto"
 programming_language: "Python"
-category:             "Getting Started"
+category:             "Python"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que iniciar um novo projeto em Python?
+## Por que começar um novo projeto em Python?
 
-Iniciar um novo projeto em Python pode parecer uma tarefa assustadora no início, mas pode trazer muitos benefícios. Python é uma linguagem de programação versátil e popular, usada em muitas áreas, desde desenvolvimento web e científico até automação de processos e análise de dados. Começar um novo projeto em Python pode oferecer uma oportunidade para aprender e aprimorar suas habilidades de programação, além de criar algo valioso e útil no processo.
+Existem muitas razões pelas quais alguém pode querer iniciar um novo projeto em Python. Talvez você esteja interessado em aprender uma nova linguagem de programação ou precise de uma ferramenta específica para resolver um problema. Ou talvez você queira criar um aplicativo ou website para compartilhar com o mundo. Independentemente do motivo, Python é uma ótima escolha para o seu próximo projeto de programação.
 
-## Como fazer em Python
+## Como começar um novo projeto em Python
 
-Para começar um novo projeto em Python, primeiro é necessário ter o Python instalado no seu computador. Você pode baixá-lo gratuitamente no site oficial (www.python.org). Depois de instalado, você pode utilizar qualquer editor de texto ou IDE (ambiente de desenvolvimento integrado) para escrever e executar seu código. O código em Python é organizado em "módulos", que podem ser importados e usados em seu projeto. Veja um exemplo básico de código em Python abaixo:
+Começar um novo projeto em Python é relativamente simples. Primeiro, certifique-se de ter o Python instalado em seu computador. Em seguida, abra seu editor de código preferido e crie um novo arquivo com a extensão .py. Agora, é hora de escrever seu primeiro código Python.
 
-```python
-# Importar módulo "math" para usar funções matemáticas
-import math
-
-# Definir uma função para calcular o quadrado de um número
-def calcula_quadrado(x):
-    return x*x
-
-# Imprimir o quadrado de um número selecionado
-num = 5
-print("O quadrado de", num, "é:", calcula_quadrado(num))
-
-# Utilizar função "log" do módulo "math" para calcular o logaritmo de um número
-print("O log de", num, "é:", math.log(num))
+```Python
+print("Olá, mundo!")
 ```
 
-A saída deste código seria:
+Ao executar esse código, você deve ver a seguinte saída:
 
 ```
-O quadrado de 5 é: 25
-O log de 5 é: 1.6094379124341003
+Olá, mundo!
 ```
 
-Com este exemplo básico, você pode começar a explorar as possibilidades e funcionalidades do Python em seu novo projeto.
+Isso pode parecer simples, mas já é um ótimo começo! Agora você pode ir além e começar a aprender os conceitos básicos de Python, como tipos de dados, estruturas de controle e funções.
 
-## Detalhes sobre o início de um novo projeto
+## Mais informações sobre como começar um projeto em Python
 
-Antes de mergulhar de cabeça em seu novo projeto em Python, é importante ter uma planilha ou documento que descreva seus objetivos, estrutura do projeto e as etapas necessárias para alcançá-los. Isso pode ajudar a organizar suas ideias e manter o foco no desenvolvimento. Também é importante pesquisar e utilizar recursos online, como documentação oficial, fóruns de discussão e tutoriais, para ajudar a resolver eventuais problemas e aprimorar seu conhecimento em Python.
+Se você quiser mergulhar mais fundo na criação de um novo projeto em Python, existem muitos recursos disponíveis para ajudá-lo. Consulte a documentação oficial do Python para obter informações detalhadas sobre a linguagem e suas bibliotecas padrão. Além disso, existem muitos tutoriais e fóruns online onde você pode encontrar ajuda e compartilhar suas ideias e códigos com outros desenvolvedores.
 
 ## Veja também
 
-- [Documentação oficial do Python](https://docs.python.org/3/)
-- [Fórum de discussão do Python no Reddit](https://www.reddit.com/r/Python/)
-- [Lista de tutoriais do Python](https://wiki.python.org/moin/BeginnersGuide/Programmers)
-- [Comunidade Python no Brasil](https://python.org.br/)
+- [Documentação oficial do Python](https://docs.python.org/pt-br/3/)
+- [Fórum do Python](https://forum.python.org.br/)
+- [Python Brasil](https://python.org.br/)

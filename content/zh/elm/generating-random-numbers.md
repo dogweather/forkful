@@ -1,57 +1,57 @@
 ---
 title:                "Elm: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "Elm"
-category:             "Numbers"
+category:             "Elm"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么使用 Elm 生成随机数
+## 为什么
 
-在编程中，有时我们需要生成随机数来模拟真实世界的情况，或者用于游戏或其他应用程序中。在 Elm 中，我们可以轻松地通过内置的函数来生成随机数，并且这些随机数是安全和可靠的。接下来，让我们来看看如何在 Elm 中生成随机数吧！
+生成随机数在编程中经常被用到，它可以帮助我们创造具有随机性的数据，使程序更加有趣和真实。例如，游戏中的随机生成的地图、抽奖活动中的随机中奖、还有模拟实验中的随机设定等等。在本文中，我们将学习如何在 Elm 中生成随机数，让我们的程序更加生动有趣。
 
-## 如何生成随机数
+## 如何做
 
-首先，我们需要导入内置的 Random 包。然后，我们可以使用 `Random.generate` 函数来生成一个随机数，它需要一个 generator 作为参数。下面是一个简单的例子：
+要在 Elm 中生成随机数，首先我们需要引入 `Random` 模块。然后，我们可以使用 `generator` 函数来定义一个生成随机数的函数，它需要一个返回随机数的核心函数作为参数。下面是一个简单的例子：
 
-```
-Elm
-Random.generate (Random.int 1 10)
-```
+```Elm
+import Random exposing (..)
 
-以上代码将生成一个介于 1 到 10 之间的整数。我们也可以使用其他类型的随机数生成器，比如 `float` 和 `bool`。下面是一个使用 `float` 生成随机数的例子：
-
-```
-Elm
-Random.generate (Random.float 0 1)
+getRandomInt: Int 
+getRandomInt = 
+    Random.int 1 10
 ```
 
-以上代码将生成一个介于 0 到 1 之间的浮点数。我们也可以自定义生成器，来生成符合特定需求的随机数。例如，我们可以创建一个生成 1 到 100 之间的偶数的自定义生成器：
+上面的代码意思是定义一个名为`getRandomInt`的函数，它会在 1 到 10 之间随机返回一个整数。你可以根据自己的需求修改 `Random.int 1 10` 部分来生成不同范围的随机数。
 
+除了整数，我们还可以生成 `Bool`、`Char`、`Float` 等各种类型的随机数。如果想要生成自定义数据类型的随机数，我们可以使用 `map` 函数将随机数转换为我们想要的类型。例如，我们可以生成一个由 1 到 10 之间的整数构成的列表：
+
+```Elm
+import Random exposing (..)
+import List exposing (..)
+import Array exposing (..)
+
+getRandomList: Int -> List Int 
+getRandomList n = 
+    Random.list n (Random.int 1 10)
+
+-- 随机生成10个整数组成的列表
+myList: List Int 
+myList = getRandomList 10 
 ```
-Elm
-evenIntGenerator : Random.Generator Int
-evenIntGenerator =
-    Random.int 1 50
-        |> Random.map (\n -> n * 2)
 
-Random.generate evenIntGenerator
-```
+## 深入探讨
 
-以上代码将生成一个介于 1 到 100 之间的偶数。我们可以通过组合不同的生成器，来生成更加复杂的随机数。
+在 Elm 中，生成随机数的核心函数是 `generator`，它接受一个随机数生成器，并返回一个元组，其中包括一个生成的随机数和一个新的随机生成器。通过这种方式，我们可以保证每次生成的随机数都是独立的且不重复的。此外，`Random` 模块还提供了许多有用的辅助函数，方便我们生成不同类型的随机数。
 
-## 深入了解生成随机数
+在实际应用中，我们还可以利用 `Random` 模块和其他 Elm 库来生成更加复杂的随机数据，例如生成随机姓名、邮件地址、图片等。这些随机数据可以用于测试、填充表单数据等场景，为我们的程序增添更多的随机性和创意。
 
-在 Elm 中，随机数是通过生成器(generator)来产生的。生成器是一个函数，它接受一个随机数种子(seed)作为参数，并返回一个包含产生的随机数和新的种子的元组。这样的机制保证了每次调用生成器时，都会得到一个新的随机数。
+## 参考链接
 
-此外，编写的生成器应该是“纯函数”（pure function）。也就是说，它们不会产生副作用并且对于给定的输入始终返回相同的输出。这样可以确保我们生成的随机数是可靠和安全的。
-
-## 查看更多
-
-如果您对 Elm 中生成随机数的更多细节感兴趣，可以查看以下链接：
-
-- [使用 Elm 生成随机数官方文档（英文）](https://guide.elm-lang.org/architecture/random.html)
-- [Elm 文档中 Random 包的详细信息（英文）](https://package.elm-lang.org/packages/elm/random/latest/)
-
-感谢阅读本文，希望您可以顺利地在 Elm 中生成随机数。谢谢！
+- Elm 官方文档：https://elm-lang.org/docs/random
+- Elm Random 模块：https://package.elm-lang.org/packages/elm/random/latest/
+- Elm List 模块：https://package.elm-lang.org/packages/elm/core/latest/List
+- Elm Array 模块：https://package.elm-lang.org/packages/elm/core/latest/Array

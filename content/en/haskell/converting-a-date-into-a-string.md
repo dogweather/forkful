@@ -1,44 +1,65 @@
 ---
 title:                "Haskell recipe: Converting a date into a string"
+simple_title:         "Converting a date into a string"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-While working with dates in programming, it is often necessary to convert them into strings for better readability or to display them in a specific format. This is especially important when dealing with dates in user interfaces or reports.
+
+Have you ever needed to display a date in a specific format in your Haskell program? Maybe you want to display the date as a string, such as "December 1, 2021" or "12/1/21". In order to do this, you will need to convert a date into a string. In this blog post, we'll explore how to do just that in Haskell.
 
 ## How To
-To convert a date into a string in Haskell, we can use the `formatTime` function from the `Data.Time.Format` module. This function takes in two arguments - a format string and a date value, and returns a string representing the formatted date.
 
-Let's take a look at an example:
+To convert a date into a string in Haskell, we will use the `formatTime` function from the `Data.Time.Format` module. First, let's import the necessary modules:
 
 ```Haskell
 import Data.Time.Format
-import Data.Time.Clock
-import Data.Time.Calendar
-
--- Create a date value using the fromGregorian function
-myDate = fromGregorian 2021 05 21
-
--- Format the date into a string using the formatTime function
-output = formatTime defaultTimeLocale "%d %b, %Y" myDate
-
--- Print the output
-print output
+import Data.Time.LocalTime
 ```
 
-Running this code will output: `21 May, 2021` which is the formatted date in the specified format.
+Next, we will create a date value using the `fromGregorian` function from the `Data.Time.Calendar` module. This function takes in three arguments: the year, month, and day.
 
-The `formatTime` function also allows us to use different formatting options such as displaying the day with or without leading zeros, showing the time, and more. These options are specified in the format string by using placeholders for different date components, such as `%d` for the day, `%m` for the month, and so on.
+```Haskell
+let myDate = fromGregorian 2021 12 1
+```
+
+Now, we can use the `formatTime` function to convert our date into a string. This function takes in two arguments: a string that represents the desired format and the date value we created above.
+
+```Haskell
+let dateString = formatTime defaultTimeLocale "%B %e, %Y" myDate
+```
+
+In this example, we are using the `defaultTimeLocale` which represents the standard time format in your current location. The `%B` and `%e` are formatting codes that will be replaced with the month and day of the date respectively. The `%Y` represents the four-digit year.
+
+Now, let's print out the `dateString` variable to see our converted date:
+
+```Haskell
+putStrLn dateString
+```
+
+< Output: December 1, 2021 >
+
+You can try playing around with different formatting codes to achieve the desired date format.
 
 ## Deep Dive
-Behind the scenes, the `formatTime` function uses the `toGregorian` function to convert the date value into its corresponding year, month, and day components. It then applies these components to the specified format string to generate the desired output.
 
-It is worth noting that the format string is dependent on the current locale settings of the system. This means that the output of the function may differ based on the language or region settings of the system.
+Under the hood, the `formatTime` function uses the `showTime` function which converts the date value into the `String` type. The `showTime` function has the following type signature:
+
+```Haskell
+showTime :: FormatTime t => t -> TimeLocale -> String -> String
+```
+
+As you can see, it takes in three arguments similar to the `formatTime` function. The `FormatTime` class is defined in the `Data.Time.Format` module and contains different instances for various data types, such as `UTCTime` and `ZonedTime`.
+
+The `TimeLocale` is a record type that contains information about the specific date and time formats in your location. It is used to customize the output of the `formatTime` function.
 
 ## See Also
-- [Hackage - formatTime documentation](https://hackage.haskell.org/package/time/docs/Data-Time-Format.html#v:formatTime)
-- [Learn You a Haskell - Dates and Times](http://learnyouahaskell.com/dates-and-times)
+
+- [Hackage - Data.Time.Format](http://hackage.haskell.org/package/time/docs/Data-Time-Format.html)
+- [Hackage - Data.Time.LocalTime](https://hackage.haskell.org/package/time/docs/Data-Time-LocalTime.html)
+- [Haskell Wiki - Time and Date](https://wiki.haskell.org/Time_and_Date)

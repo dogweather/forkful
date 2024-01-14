@@ -1,43 +1,56 @@
 ---
 title:                "Haskell: Creando un archivo temporal"
+simple_title:         "Creando un archivo temporal"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué crear un archivo temporal en Haskell
+## Por qué crear un archivo temporal en Haskell
 
-Crear un archivo temporal puede ser una necesidad en algunas situaciones al programar en Haskell. Ya sea para realizar pruebas, almacenar datos temporales o compartir información entre diferentes funciones, saber cómo crear y trabajar con archivos temporales puede ser útil en diferentes escenarios. En este artículo, aprenderemos cómo crear y manipular archivos temporales en Haskell.
+Crear un archivo temporal es una práctica común en programación. Puede ser útil cuando necesitamos almacenar datos temporales antes de guardarlos permanentemente o cuando trabajamos con archivos grandes y no queremos saturar el disco duro. En este artículo, veremos cómo crear y manejar archivos temporales en Haskell.
 
 ## Cómo hacerlo
 
-Para crear un archivo temporal en Haskell, utilizaremos la librería System.Directory y su función "withSystemTempFile". En primer lugar, importaremos la librería en nuestro código:
+En Haskell, podemos crear un archivo temporal utilizando la función `withTempFile` del módulo `System.IO.Temp`. Esta función toma dos argumentos: la ubicación donde se creará el archivo temporal y una función que manejará el archivo. La función `withTempFile` creará y abrirá el archivo temporal, ejecutará la función dada y, una vez finalizada, eliminará automáticamente el archivo temporal.
+
+Veamos un ejemplo de cómo podríamos utilizar esta función para crear un archivo temporal y escribir en él:
 
 ```Haskell
-import System.Directory
+import System.IO.Temp (withTempFile)
+import System.IO (hPutStrLn, hClose)
+
+main = withTempFile "." $ \tmpFilePath tmpFileHandle -> do
+    hPutStrLn tmpFileHandle "¡Hola, mundo!"
+    hClose tmpFileHandle
 ```
 
-Luego, utilizaremos la función "withSystemTempFile", que toma como parámetros una cadena de texto con el patrón del nombre del archivo temporal y una función que tomará como argumento el nombre del archivo temporal creado. Por ejemplo, podemos crear un archivo temporal para guardar una lista de números aleatorios de la siguiente manera:
+En este ejemplo, utilizamos la función `withTempFile` para crear un archivo temporal en el directorio actual (`.`). Luego, utilizamos el manejador de archivo `tmpFileHandle` para escribir el texto "¡Hola, mundo!" en el archivo y finalmente lo cerramos con `hClose`.
+
+Podemos ejecutar este código y verificar que se haya creado el archivo temporal correctamente y que contenga el texto que escribimos.
+
+## Profundizando en la creación de archivos temporales
+
+Si deseamos tener más control sobre la creación y eliminación de archivos temporales, podemos utilizar las funciones `openTempFile` y `removeFile` del módulo `System.IO`. La función `openTempFile` toma como argumentos la ubicación y el prefijo del archivo temporal, y devuelve tanto el nombre como el manejador del archivo creado. Por otro lado, la función `removeFile` elimina un archivo dado su nombre.
+
+A continuación, un ejemplo de cómo utilizar estas dos funciones:
 
 ```Haskell
-withSystemTempFile "random-numbers.txt" $ \tempFilePath tempHandle -> do
-    let numbers = [5,2,8,3,9]
-    hPutStrLn tempHandle (show numbers)
-    hClose tempHandle
+import System.IO (openTempFile, removeFile, hPutStrLn, hClose)
+
+main = do
+    (tmpFilePath, tmpFileHandle)  <- openTempFile "." "temp-"
+    hPutStrLn tmpFileHandle "¡Hola, mundo!"
+    hClose tmpFileHandle
+    removeFile tmpFilePath
 ```
 
-Aquí, estamos creando un archivo temporal llamado "random-numbers.txt" y pasando la función anónima que toma como argumentos el nombre del archivo temporal y su manejador, para escribir los números en el archivo utilizando la función "hPutStrLn". Después de finalizar la escritura, cerramos el archivo temporal con "hClose".
-
-## Profundizando
-
-Crear un archivo temporal en Haskell implica una serie de pasos detrás de escena. En primer lugar, se genera un nombre único para el archivo temporal utilizando el patrón proporcionado. Luego, el archivo es creado en el directorio temporal del sistema operativo. Una vez terminado el uso del archivo, éste es eliminado automáticamente.
-
-Además, podemos utilizar la función "withSystemTempDirectory" para crear un directorio temporal en lugar de un archivo. Esta función toma como parámetros el patrón del nombre y una función que manipulará el directorio creado.
+Aquí, utilizamos `openTempFile` para crear un archivo temporal con el prefijo "temp-" en el directorio actual. Luego, escribimos en el archivo utilizando el manejador `tmpFileHandle`, lo cerramos y finalmente eliminamos el archivo utilizando su nombre `tmpFilePath`.
 
 ## Ver también
 
-- Documentación de la librería System.Directory: https://hackage.haskell.org/package/directory/docs/System-Directory.html
-- Tutorial de Haskell: https://www.haskell.org/tutorial/
-- Ejemplos de uso de archivos temporales en Haskell: https://github.com/vincente923/Manipulating-Files-in-Haskell/tree/master/TmpFile
+- Documentación oficial de `System.IO.Temp`: https://hackage.haskell.org/package/temporary/docs/System-IO-Temp.html
+- Guía de Haskell sobre creación de archivos temporales: https://wiki.haskell.org/Create_temporary_files

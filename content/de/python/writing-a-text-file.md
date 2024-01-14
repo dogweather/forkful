@@ -1,54 +1,44 @@
 ---
-title:                "Python: Eine Textdatei schreiben"
+title:                "Python: Das Schreiben einer Textdatei"
+simple_title:         "Das Schreiben einer Textdatei"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Textdateien sind ein grundlegender Bestandteil der Programmierung und helfen dabei, Daten zu speichern und zu organisieren. Sie bieten eine einfache Möglichkeit, Informationen dauerhaft zu speichern und zu bearbeiten. In diesem Blogbeitrag werden wir uns anschauen, wie man in Python Textdateien erstellt, und warum es für Programmierende wichtig ist, diese Fähigkeit zu beherrschen.
 
-Du magst vielleicht denken, dass das Schreiben einer Textdatei ein einfaches Konzept ist, aber es ist tatsächlich sehr nützlich in der Welt der Programmierung. Das Erstellen und Bearbeiten von Textdateien kann dir helfen, Daten zu speichern, zu organisieren oder zu teilen, was eine wichtige Fähigkeit für jeden Programmierer ist.
-
-## Wie
-
-Um eine Textdatei zu schreiben, musst du zunächst eine neue Datei erstellen. Mit Python kannst du dies mit dem Befehl ```open()``` tun. In diesem Beispiel nennen wir unsere Datei "meine_datei.txt":
+## Wie man eine Textdatei in Python schreibt
+In Python ist es sehr einfach, eine Textdatei zu erstellen und zu bearbeiten. Zunächst müssen wir eine Datei in unserem Code öffnen, um darauf zugreifen zu können. Wir verwenden dafür die ```open()``` Funktion und geben als ersten Parameter den Namen der Datei an, die wir erstellen möchten, und als zweiten Parameter den Modus "w" (für "write"), um die Datei zum Schreiben zu öffnen. Hier ist ein Beispielcode:
 
 ```Python
-f = open('meine_datei.txt', 'w')
+datei = open("meine_datei.txt", "w")
 ```
 
-Der zweite Parameter in der ```open()``` Funktion gibt an, dass wir die Textdatei zum Schreiben (`w` für "write") öffnen möchten. Nun kannst du mit dem Schreiben in die Datei beginnen. Hier ist ein Beispiel, wie man den Inhalt einer Datei definiert und in die erstellte Datei schreibt:
+Als nächstes können wir der Datei Text hinzufügen, indem wir die ```write()``` Funktion verwenden. Wir übergeben den Text, den wir hinzufügen möchten, als Parameter. Hier ist ein Beispiel:
 
 ```Python
-inhalt = "Hallo, dies ist ein Beispieltext."
-f.write(inhalt)
+datei.write("Hallo, dies ist meine erste Textdatei!")
 ```
 
-Du kannst auch mehrere Zeilen in die Datei schreiben, indem du den Befehl ```write()``` mehrmals verwendest. Vergiss jedoch nicht, am Ende jeden Satzes ein Zeilenumbruchsymbol (`\n`) hinzuzufügen. Zum Beispiel:
+Schließlich müssen wir die Datei schließen, um sicherzustellen, dass alle Änderungen gespeichert werden. Wir verwenden dafür die ```close()``` Funktion. Hier ist der vollständige Code, um eine Textdatei zu erstellen und Text hinzuzufügen:
 
 ```Python
-inhalt1 = "Hallo, dies ist die erste Zeile."
-inhalt2 = "Das ist die zweite Zeile."
-f.write(inhalt1 + "\n" + inhalt2)
+datei = open("meine_datei.txt", "w")
+datei.write("Hallo, dies ist meine erste Textdatei!")
+datei.close()
 ```
 
-Nachdem du deinen Text geschrieben hast, solltest du die Datei wieder schließen, damit die Änderungen gespeichert werden:
+## Tiefergehende Informationen
+Wenn es um die Erstellung von Textdateien in Python geht, gibt es einige wichtige Dinge zu beachten. Zunächst sollten nur Zeichenfolgen (Strings) in eine Textdatei geschrieben werden. Wenn man Zahlen oder andere Variablentypen hinzufügt, müssen diese zuerst in Zeichenfolgen umgewandelt werden. Es ist auch wichtig, die Datei immer zu schließen, damit alle Änderungen gespeichert werden.
 
-```Python
-f.close()
-```
-
-## Deep Dive
-
-Es gibt viele zusätzliche Dinge, die du beim Schreiben einer Textdatei in Python beachten solltest. Zum Beispiel kannst du die Funktion ```writelines()``` verwenden, um eine Liste von Strings in die Datei zu schreiben, anstatt jeden einzelnen String mit ``write()`` zu schreiben.
-
-Außerdem ist es wichtig, die Datei im richtigen Modus zu öffnen. Das `w` in unserem anfänglichen ```open()``` Befehl steht für "write" und überschreibt jeglichen existierenden Inhalt in der Datei. Wenn du die Datei öffnen und vorhandenen Inhalt behalten möchtest, solltest du stattdessen den Modus ```a``` für "append" verwenden.
-
-Und wenn du nur den Inhalt einer Textdatei lesen möchtest, kannst du den Modus ```r``` für "read" verwenden.
+Außerdem bietet Python verschiedene Modi zum Öffnen von Dateien. Der Modus "w" (für "write") überschreibt alle vorhandenen Daten in der Datei. Wenn man nur Daten hinzufügen möchte, kann man den Modus "a" (für "append") verwenden. Es gibt auch den Modus "r" (für "read"), der zum Lesen von Daten aus einer Textdatei verwendet wird.
 
 ## Siehe auch
-
-- [Python-Dokumentation zu ```open()```](https://docs.python.org/de/3/library/functions.html#open)
-- [Weitere Infos zur Textverarbeitung mit Python](https://www.python-kurs.eu/kurs.php?id=34)
+- [Python Dokumentation zu Textdateien](https://docs.python.org/de/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [W3Schools Tutorial zu Dateien in Python](https://www.w3schools.com/python/python_file_handling.asp)
+- [Real Python Tutorial zu Dateien in Python](https://realpython.com/read-write-files-python/)

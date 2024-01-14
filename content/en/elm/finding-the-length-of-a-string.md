@@ -1,50 +1,62 @@
 ---
 title:                "Elm recipe: Finding the length of a string"
+simple_title:         "Finding the length of a string"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Finding the length of a string may seem like a trivial task, but it is a crucial part of many programming tasks. In Elm, strings are an important data type that are commonly used to store and manipulate text. By being able to determine the length of a string, you can perform various operations like substring extraction, validation, and more. 
+When working with strings in Elm, one common task is finding the length of a string. This can be useful for a variety of reasons, such as checking the validity of user input or manipulating strings in different ways.
 
 ## How To
 
-To find the length of a string in Elm, we can use the built-in `String.length` function. Here's an example of how you can use it: 
+To find the length of a string in Elm, we can use the `String.length` function. Let's take a look at an example:
 
-```elm
-import String exposing (length)
+```Elm
+import String
 
 myString = "Hello, world!"
-lengthOfMyString = length myString
+
+String.length myString
 
 -- Output: 13
 ```
 
-In this code, we first import the `String` module, specifically the `length` function. Then, we declare a string variable called `myString` with the value "Hello, world!". Finally, we call the `length` function with `myString` as the argument, which returns the length of the string and assigns it to `lengthOfMyString`.
+In this example, we first import the `String` module which contains the `length` function. We then assign a string to the variable `myString` and pass it as an argument to the `String.length` function. The output is the length of the string, which in this case is 13.
 
-Another way to find the length of a string is by using the `String.length` function with the `String.fromList` function. Here's an example: 
+We can also directly use the `length` function without importing the `String` module, as it is a part of the Elm core library:
 
-```elm
-import String exposing (length, fromList)
+```Elm
+length "Hello, world!"
 
-myList = ['H', 'e', 'l', 'l', 'o']
-lengthOfMyList = length (fromList myList)
-
--- Output: 5
+-- Output: 13
 ```
 
-In this code, we first import both the `String` module and the `fromList` function. Then, we declare a list of characters called `myList` with the value "Hello". We then use the `fromList` function to convert the list to a string and pass it as an argument to the `length` function.
+## Deep Dive
 
-## Deep Dive 
+While the `String.length` function may seem straightforward, there are some intricacies to be aware of. For example, it counts each character in the string, including spaces, punctuation, and special characters. In the first example, the length of the string "Hello, world!" was 13, but if we were to add a space at the end, the length would become 14.
 
-Behind the scenes, the `String.length` function uses the `String.codePointOffset` function to determine the length of a string. This function counts the number of code points in a string, which is more accurate than simply counting the characters. This is because some characters, like emojis or special characters, can be represented by multiple code points. For example, the emoji "👋" is actually represented by two code points. Knowing this, we can see that the length of "👋" is 2, not 1.
+Additionally, the `length` function works with any type of string, whether it be letters, numbers, or even emojis.
 
-## See Also 
+```Elm
+length "12345"
 
-- Official Elm documentation for string functions: https://package.elm-lang.org/packages/elm-lang/core/latest/String
-- Tutorial on manipulating strings in Elm: https://guide.elm-lang.org/appendix/strings.html
-- Helpful guide on code points in Elm: https://discourse.elm-lang.org/t/declaring-a-code-point/3384
+-- Output: 5
+
+length "😊😊😊"
+
+-- Output: 3
+```
+
+It's also important to note that the `length` function is O(n), meaning that the time it takes to find the length of a string increases linearly as the string length increases. This is something to keep in mind when working with longer strings and considering performance.
+
+## See Also
+
+- Official Elm Documentation on `String.length`: https://package.elm-lang.org/packages/elm/core/latest/String#length
+- Examples of working with strings in Elm: https://dev.to/jfuentes/working-with-strings-in-elm-1l4d
+- A comprehensive guide to becoming an Elm master: https://medium.com/javascript-scene/the-elm-architecture-b4999d07b1d7

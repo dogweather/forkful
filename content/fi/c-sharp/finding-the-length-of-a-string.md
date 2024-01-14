@@ -1,7 +1,9 @@
 ---
 title:                "C#: Merkkijonon pituuden löytäminen"
+simple_title:         "Merkkijonon pituuden löytäminen"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/finding-the-length-of-a-string.md"
 ---
 
@@ -9,35 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Yksi yleisesti käytetyistä ohjelmoinnin tehtävistä on merkkijonon pituuden laskeminen. Tämä tehtävä on tärkeä monissa sovelluksissa, kuten tekstinkäsittelyohjelmissa, tietokannoissa ja verkkosivustoilla. Siksi on tärkeää ymmärtää, miten tämä tehtävä suoritetaan ja mitä vaihtoehtoja on käytettävissä.
+Miksi haluaisit löytää merkkijonon pituuden? Merkkijonot ovat olennainen osa ohjelmointia ja niitä käytetään usein tiedon tallentamiseen ja käsittelyyn. Merkkijonon pituuden selvittäminen voi auttaa sinua luomaan tehokkaampaa ja toimivampaa koodia.
 
-## Miten tehdä
-
-C#-kielen avulla voimme helposti saada merkkijonon pituuden laskemiseen tarvittavan tiedon. Tässä on esimerkki koodista, joka tulostaa käyttäjän antaman merkkijonon pituuden:
+## Miten
 
 ```C#
-//Kysytään käyttäjältä syötettä
-Console.WriteLine("Kirjoita jotain:");
-string input = Console.ReadLine();
-
-//Lasketaan merkkijonon pituus ja tulostetaan se
-int length = input.Length;
-Console.WriteLine("Merkkijonon pituus on " + length);
+string s = "Tämä on esimerkkimerkkijono";
+int length = s.Length;
+Console.WriteLine(length);
 ```
 
-Koodin suorittaminen antaa seuraavan tulosteen, jos käyttäjä antaa syötteeksi "Tämä on esimerkki":
+Tässä esimerkissä olemme määrittäneet muuttujan "s" ja tallentaneet siihen merkkijonon arvon. Käytämme sitten merkkijonon "Length" ominaisuutta saadaksemme merkkijonon pituuden ja tallentamaan sen muuttujaan "length". Lopuksi tulostamme pituuden konsoliin.
 
 ```
-Merkkijonon pituus on 18
+Ulostulo:
+27
 ```
 
-On myös useita muita tapoja saada merkkijonon pituus C#-kielellä. Voit esimerkiksi käyttää `String.Length` -ominaisuutta, joka palauttaa saman informaation. Tärkeintä on kuitenkin muistaa, että merkkijonojen pituus lasketaan kirjainten määrällä, mukaan lukien välilyönnit.
+Voit myös käyttää merkkijonon "Length" ominaisuutta suoraan tulostamalla sen ilman muuttujaa.
 
-## Syvällisempi tarkastelu
+```C#
+string s = "Tämä on esimerkkimerkkijono";
+Console.WriteLine(s.Length);
+```
 
-Merkkijonon pituus lasketaan C#-kielellä käyttäen `Length`-ominaisuutta, joka sisältyy `String`-luokkaan. Tämä ominaisuus palauttaa tiedon merkkien määrästä kyseisessä merkkijonossa. On hyvä muistaa, että merkkijonon pituus ei ole vakio, vaan se voi muuttua sen mukaan, kuinka paljon käyttäjä syöttää dataa. Myös `string`-luokka tarjoaa erilaisia metodeja ja ominaisuuksia merkkijonojen manipuloimiseksi, kuten `ToUpper()` ja `ToLower()`.
+```
+Ulostulo:
+27
+```
+
+## Syvällisempi sukellus
+
+Merkkijonon "Length" ominaisuus palauttaa kokonaislukuarvon, joka edustaa merkkijonossa olevien merkkien määrää. Se ei sisällä lopetusmerkkiä, joten jos haluat käyttää sitä jatkoukselle, sinun tulee lisätä yksi lisäyksikkö.
+
+Merkkijonon pituuden selvittäminen on tärkeää myös silloin, kun haluat tarkistaa, onko merkkijonossa tietty määrä merkkejä tai jos haluat helposti jakaa merkkijonon osiin sen pituuden perusteella.
 
 ## Katso myös
 
-- [Microsoftin dokumentaatio merkkijonon pituuden laskemisesta käyttäen C#-kieltä (englanniksi)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/how-to-determine-the-length-of-a-string)
-- [Codecademyn opetusmateriaali merkkijonojen käsittelystä C#-kielellä (englanniksi)](https://www.codecademy.com/learn/learn-c-sharp/modules/learn-csharp-methods/cheatsheet)
+- [C# merkkijonot](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
+- [Merkkijonon "Length" ominaisuus](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netcore-3.1)
+- [Miten luoda merkkijonon pohjaisia sivuja C#:llä](https://www.c-sharpcorner.com/uploadfile/553aa9/how-to-create-string-based-web-page-in-C-Sharp/)

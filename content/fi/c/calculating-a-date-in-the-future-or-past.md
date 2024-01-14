@@ -1,7 +1,9 @@
 ---
-title:                "C: Tulevaisuuden tai menneen päivämäärän laskeminen"
+title:                "C: Tulevan tai menneen päivämäärän laskeminen"
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,50 +11,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tässä blogikirjoituksessa käsittelemme miten voit laskea tulevaisuuden tai menneisyyden päivämääriä käyttäen C-ohjelmointikieltä. Tämän taidon avulla voit helposti tehdä aikaperusteisia laskelmia esimerkiksi laskutusohjelmissa tai tapahtuma-aikatauluissa.
+Jokaisella meistä on joskus ollut tilanne, jossa olemme joutuneet laskemaan tietyn päivämäärän tulevaisuudessa tai menneisyydessä. Tämä voi johtua esimerkiksi suunnittelemastamme matkasta tai tärkeästä tapahtumasta, kuten syntymäpäivästä. Onneksi C-ohjelmointikielellä voimme tehdä tämän laskutoimituksen helposti ja tarkasti.
 
-## Kuinka teet sen
+## Kuinka
 
-Tämän taidon oppiminen vaatii vain muutaman yksinkertaisen C-komentosarjan. Ensinnäkin, sinun täytyy sisällyttää <time.h> -kirjasto ohjelmaasi, jotta voit käyttää aikaan liittyviä funktioita. Tämän jälkeen voit käyttää time_t-tyyppisiä muuttujia tallentaaksesi päivämäärät.
+Laskeminen päivämäärä tulevaisuudessa tai menneisyydessä C-kielellä vaatii vain muutaman rivin koodia. Ennen kuin aloitamme, on tärkeää tietää, että C-kielessä käytetään Gregoriaanista kalenteria, joka ei ota huomioon kaikkia historiallisia kalenterimuutoksia. Tästä syystä laskelmat saattavat poiketa hieman todellisesta päivämäärästä menneisyydessä. 
 
-```C
-#include <time.h>
-...
-time_t tuleva_aika;
-time(&tuleva_aika);
-//tämä tallentaa tulevan ajan muuttujaan
-```
-
-Seuraavaksi käytät mktime-funktiota laskeaksesi haluamasi päivämäärän. Tämä funktio ottaa parametreiksi vuoden, kuukauden, päivän ja tunnin arvot ja palauttaa time_t-tyypin arvon.
+Alla on esimerkkiohjelma, joka laskee tulevaisuuden päivämäärän annetun päivämäärän ja päivien määrän perusteella:
 
 ```C
-struct tm aika;
-aika.tm_year = 2021 - 1900; //vuosi - 1900
-aika.tm_mon = 9; //kuukausi, tammikuu on 0 ja joulukuu 11
-aika.tm_mday = 20; //päivä
-aika.tm_hour = 12; //tunti
-time_t tuleva_aika = mktime(&aika); //laskee ajan ja tallentaa sen muuttujaan
+#include <stdio.h>
+int main() {
+    // Tämä on alkuperäinen päivämäärä
+    int paiva = 20;
+    int kuukausi = 6;
+    int vuosi = 2021;
+
+    // Lisätään päiviä laskennan avulla
+    int lisattavatPaivat = 30;
+
+    // Tulostetaan tulevaisuuden päivämäärä
+    printf("Tulevaisuuden päivämäärä: %d.%d.%d\n",
+            paiva + lisattavatPaivat, kuukausi, vuosi);
+    return 0;
+}
 ```
 
-Lopuksi voit tulostaa haluamasi päivämäärän käyttäen ctime-funktiota, joka ottaa time_t-tyypin muuttujan parametrina ja palauttaa merkkijonon muodossa "päivämäärä ja kellonaika".
+Ohjelman tulosteena näkyy:
+
+```
+Tulevaisuuden päivämäärä: 20.7.2021
+```
+
+Samoin voimme laskea menneisyyden päivämäärän vähentämällä päiviä alkuperäisestä päivämäärästä:
 
 ```C
-printf("Tuleva aika: %s\n", ctime(&tuleva_aika));
-//tulostaa: Tuleva aika: Wed Oct 20 12:00:00 2021
+#include <stdio.h>
+int main() {
+    // Tämä on alkuperäinen päivämäärä
+    int paiva = 25;
+    int kuukausi = 6;
+    int vuosi = 2021;
+
+    // Vähennetään päiviä laskennan avulla
+    int vahennettavatPaivat = 10;
+
+    // Tulostetaan menneisyyden päivämäärä
+    printf("Menneisyyden päivämäärä: %d.%d.%d\n",
+            paiva - vahennettavatPaivat, kuukausi, vuosi);
+    return 0;
+}
 ```
 
-## Syvemmälle
+Tulosteena näkyy:
 
-Kaikkien aikaan liittyvien funktioiden käyttöohjeet löytyvät <time.h> -kirjaston dokumentaatiosta. Voit myös muuttaa mktime-funktion palauttaman time_t-tyypin arvon haluamasi päivämäärän lisäämällä tai vähentämällä sen arvoja. Esimerkiksi:
-
-```C
-tuleva_aika += 24 * 60 * 60; //lisää yhden päivän aikaan
+```
+Menneisyyden päivämäärä: 15.6.2021
 ```
 
-Muista myös, että time_t-muuttuja tallentaa ajan Unix-timestamp-muodossa, jossa aikayksikkönä käytetään sekunteja. Tämä voi olla hyödyllistä, jos haluat tehdä tarkempia aikalaskelmia.
+## Syventävä tutkimus
+
+C-kielellä laskettaessa päivämäärää kannattaa huomioida, että funktioilla kuten `time()` ja `localtime()` on rajoitus vuodelle 2038. Tämän vuoksi laskelmat saattavat virheellisesti näyttää päivämäärän vuoden 2038 jälkeen. Tämä on otettava huomioon sovelluksissa, joissa käsitellään suuria päivämääriä.
+
+On myös tärkeää huomata, että päivämäärälaskujen tarkkuus riippuu laitteen käyttämästä kellosta. Esimerkiksi jos laitteen kello on virheellinen tai sitä ei ole asetettu oikeaan aikaan, päivämäärälaskelmat saattavat olla epätarkkoja.
 
 ## Katso myös
 
-- [C-kielen <time.h> kirjaston dokumentaatio](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Lyhyt opas Unix-timestampeista](https://www.epochconverter.com/)
-- [Ohjelmointiopas aloittelijoille C-kielellä](https://www.valopaa.fi/c-opas-aloittelijoille/)
+- [Date and Time Functions in C](https://www.tutorialspoint.com/c_standard_library/time

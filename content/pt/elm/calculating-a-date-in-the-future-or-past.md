@@ -1,48 +1,58 @@
 ---
-title:                "Elm: Calculando uma data no futuro ou passado"
+title:                "Elm: Calculando uma data no futuro ou no passado"
+simple_title:         "Calculando uma data no futuro ou no passado"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+##Porque
 
-Calculando uma data futura ou passada pode ser útil em diversas aplicações, desde a criação de um calendário até a determinação de prazos em projetos de software. Neste artigo, vamos explorar como realizar essa tarefa usando a linguagem de programação Elm.
+Cálculos de datas no futuro e passado são uma parte importante da programação em Elm. Eles permitem que os desenvolvedores trabalhem com diferentes cenários de tempo em seus aplicativos, como agendamento de tarefas ou exibição de eventos futuros.
 
-## Como Fazer
+##Como Fazer
 
-Para calcular uma data no futuro ou passado em Elm, podemos utilizar a biblioteca `elm/time`. Primeiro, precisamos importar essa biblioteca no início do nosso código:
- 
-```
-Elm import DateTime
-```
+Para calcular uma data no futuro ou passado em Elm, usamos a biblioteca `elm/time` que fornece funções úteis para manipulação de datas e horas. Para começar, importamos a biblioteca em nosso código:
 
-Em seguida, podemos utilizar a função `DateTime.fromDate` para criar uma data a partir de valores específicos para ano, mês e dia:
-```
-Elm DateTime.fromDate 2021 12 31
+```Elm
+import Time exposing (..)
 ```
 
-Para calcular uma data no futuro ou passado, usamos a função `DateTime.add` e, como argumentos, passamos a unidade de tempo desejada (como anos, meses ou dias) e o número de unidades:
+Agora, podemos usar as funções fornecidas pela biblioteca para realizar nossos cálculos. Por exemplo, para obter a data atual, usamos a função `now` e para adicionar um certo número de segundos a essa data, usamos a função `add`:
+
+```Elm
+-- obtenha a data atual
+now
+
+-- adicione 5 segundos à data atual
+add (seconds 5) now
 ```
-Elm DateTime.add DateTime.Month 3 (DateTime.fromDate 2021 12 31)
+
+O resultado dessas operações será do tipo `Time Posix` que representa um momento específico no tempo. Podemos então formatá-lo usando a função `toString` para exibir a data de forma mais legível:
+
+```Elm
+-- obtenha a data atual em formato de string
+toString now
 ```
-No exemplo acima, estamos adicionando 3 meses à data 31 de dezembro de 2021, resultando em 31 de março de 2022.
 
-Podemos também calcular uma data no passado, passando um número negativo como o número de unidades:
+Podemos até mesmo passar um formato específico como argumento para a função `toString`, como por exemplo:
+
+```Elm
+-- obtenha a data atual no formato "dia/mês/ano"
+toString (customFormat "%d/%m/%Y" now)
+-- output: "18/12/2020"
 ```
-Elm DateTime.add DateTime.Day -7 (DateTime.fromDate 2021 10 10)
-```
-No caso acima, estamos subtraindo 7 dias da data 10 de outubro de 2021, resultando em 3 de outubro de 2021.
 
-## Profundidade
+##Mergulho Profundo
 
-Ao usar a biblioteca `elm/time` para calcular datas no futuro ou passado, é importante ter em mente que ela leva em consideração os fusos horários. Portanto, é recomendável sempre fornecer o horário para evitar resultados inesperados.
+Ao lidar com datas e horas em Elm, é importante entender que a linguagem usa o tipo `Time Posix` para representar um momento específico no tempo. Isso é diferente de outras linguagens que usam um tipo de dados mais genérico, o que pode criar certa confusão.
 
-Além disso, podemos utilizar outras funções da biblioteca, como `DateTime.toYear`, `DateTime.toMonth`, `DateTime.toDay` para extrair informações específicas de uma data e `DateTime.toTime` para converter uma data em um timestamp Unix (um número inteiro que representa a quantidade de segundos desde 1º de janeiro de 1970).
+Além disso, a biblioteca `elm/time` também oferece funções como `daysInMonth` e `addGregorianYears`, que podem ser úteis ao trabalhar com cálculos de datas mais complexos.
 
-## Veja Também
+##Veja Também
 
 - Documentação oficial da biblioteca `elm/time`: https://package.elm-lang.org/packages/elm/time/latest/
-- Guia de Elm para iniciantes: https://guide.elm-lang.org/
+- Tutorial de Elm sobre manipulação de datas e horas: https://www.elm-tutorial.org/en/09-elm-time.html

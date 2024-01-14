@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Transformando uma data em uma string"
+title:                "Elm: Convertendo uma data em uma string"
+simple_title:         "Convertendo uma data em uma string"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/converting-a-date-into-a-string.md"
 ---
 
@@ -9,33 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que converter uma data em uma string?
 
-Converter uma data em uma string pode ser útil em várias situações, como exibir uma data em um formato específico ou armazená-la em um banco de dados. Ao converter a data para uma string, você pode personalizar sua apresentação de acordo com suas necessidades.
+Converter datas em strings é uma tarefa comum no desenvolvimento de aplicativos, especialmente quando se lida com exibição de datas para os usuários. Em Elm, essa conversão é uma função simples, mas pode ser muito útil para melhorar a experiência do usuário.
 
 ## Como fazer
 
-Para converter uma data em uma string em Elm, usamos a função `Date.toString` e especificamos o formato de saída desejado. Por exemplo, se quisermos exibir a data atual no formato "DD/MM/AAAA", podemos usar o seguinte código:
+Para converter uma data em uma string, podemos usar a função `Date.toString` do pacote `elm/time`.
 
 ```
-import Date exposing (toString)
-
-currentDate : Date.Date
-currentDate = Date.now
-
-formattedDate : String
-formattedDate = Date.toString "DD/MM/YYYY" currentDate
-
+elm install elm/time
 ```
 
-O resultado seria "26/06/2021", dependendo da data atual. O formato pode ser personalizado de acordo com suas preferências, utilizando as letras especificadas pela documentação do Elm.
+Em seguida, podemos utilizar a função para converter uma data em uma string no formato desejado. Por exemplo, se tivermos uma data no formato "YYYY-MM-DD", podemos converter para o formato brasileiro "DD/MM/YYYY" da seguinte forma:
+
+```
+import Date exposing (Date)
+import Time exposing (Date, toYear, toMonth, toDay)
+
+dateToString : Date -> String
+dateToString date =
+  let
+    day = toDay date
+    month = String.padLeft 2 '0' (toMonth date |> String.fromInt)
+    year = toYear date
+  in
+    day ++ "/" ++ month ++ "/" ++ year
+```
+
+A função `padLeft` é usada para adicionar um zero à esquerda caso o mês tenha apenas um dígito. Caso o formato desejado seja diferente, basta alterar a formatação do retorno.
 
 ## Profundidade
 
-Converter uma data em uma string pode não parecer complicado, mas existem algumas coisas importantes a serem consideradas. Por exemplo, o comportamento da função `Date.toString` pode variar dependendo da sua versão do Elm. É sempre importante verificar a documentação para garantir que o formato que você está utilizando seja compatível com a sua versão do Elm.
+Ao olhar para a fonte da função `Date.toString`, podemos ver que a conversão é feita de forma bastante simples, utilizando as funções `toYear`, `toMonth` e `toDay`.
 
-Além disso, é importante lembrar que a função `Date.toString` não pode converter datas vazias. Se você estiver trabalhando com datas que podem ser nulas, é importante tratar esse cenário antes de converter a data em uma string.
+Essas funções, por sua vez, utilizam uma série de cálculos matemáticos para obter o ano, mês e dia da data. Além disso, há também uma série de funções para lidar com fusos horários, que podem ser úteis em casos específicos.
+
+É importante notar que a formatação padrão da função `Date.toString` segue o padrão ISO 8601, que pode não ser o formato preferido para todos os casos. Por isso, é importante entender como funciona a conversão e adaptar de acordo com a necessidade.
 
 ## Veja também
 
-- Documentação oficial do Elm sobre `Date.toString`: <https://package.elm-lang.org/packages/elm/time/latest/Date#toString>
-- Artigo sobre formatação de datas em Elm: <https://korban.net/posts/elm/2018-08-04-elm-time-string-formatting/>
-- Fórum do Elm sobre dúvidas relacionadas a conversão de datas em strings: <https://discourse.elm-lang.org/t/date-tostring-format-tz/3507>
+- [Documentação oficial do pacote `elm/time`](https://package.elm-lang.org/packages/elm/time/latest/)
+- [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)

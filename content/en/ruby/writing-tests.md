@@ -1,51 +1,70 @@
 ---
 title:                "Ruby recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Writing tests may seem like an extra step in the coding process, but it can actually be a valuable tool for any developer. By writing tests, you can ensure that your code is functioning correctly and prevent potential errors or bugs in the future.
+
+Writing tests in Ruby can seem like a tedious and time-consuming task, but it is an essential step in the development process. Tests help catch bugs early on, ensure code quality, and make refactoring easier. They also serve as documentation for your code, making it easier for other developers to understand and maintain it. In short, writing tests helps create a more robust and reliable application in the long run.
 
 ## How To
-To write tests in Ruby, you can use the built-in testing library called "minitest". Let's take a look at an example of a simple test:
 
-```Ruby
-require "minitest/autorun"
+To write tests in Ruby, we will use the popular testing framework, RSpec. First, we need to install RSpec by running the following command in our terminal:
 
-# Define a class to be tested
-class Calculator
-  def add(a, b)
-    a + b
-  end
-end
+```
+gem install rspec
+```
 
-# Define a test class
-class TestCalculator < MiniTest::Test
-  # Define a test for the add method
-  def test_add
-    # Create an instance of the Calculator class
-    calculator = Calculator.new
-    
-    # Assert that the result of the add method is correct
-    assert_equal 4, calculator.add(2, 2)
+To create a new test file, we use the `rspec --init` command. This will generate a `spec` folder and `spec_helper.rb` file in your project. Inside the `spec` folder, we will create a new file with the `.rb` extension. Let's name it `calculator_spec.rb`. This is where we will write our tests for a simple `Calculator` class.
+
+```ruby
+# spec/calculator_spec.rb
+require "calculator"
+
+RSpec.describe Calculator do
+  describe "#add" do
+    it "returns the sum of two numbers" do
+      calculator = Calculator.new
+      result = calculator.add(2, 3)
+
+      expect(result).to eq(5)
+    end
   end
 end
 ```
 
-In this example, we first require the "minitest/autorun" library which allows us to use the MiniTest::Test class for writing tests. Next, we define a class called Calculator which contains a method called "add" that adds two numbers together. Then, we create a test class called TestCalculator which inherits from MiniTest::Test and contains a test method called "test_add". Within this test method, we create an instance of the Calculator class and use the "assert_equal" assertion to ensure that the result of the add method is correct. If the result is not equal to 4, the test will fail.
+In the code above, we first require our `Calculator` class, then define a `describe` block to group our tests. Within that, we have an `it` block to describe what our test is doing. In this case, we are testing the `add` method to ensure it returns the correct sum. Inside the `it` block, we create an instance of our `Calculator` class and call the `add` method with two numbers. Finally, we use the `expect` method to compare the result with our expected output using the `eq` matcher.
 
-To run this test, we can simply enter "ruby test_calculator.rb" in the terminal and it will output the test results. If all tests pass, you will see a dot for each test. If any tests fail, you will see an "F" and a failure message.
+To run our test, we use the `rspec` command in our terminal, which will give us an output like this:
+
+```ruby
+$ rspec
+
+Calculator
+  #add
+    returns the sum of two numbers
+
+Finished in 0.00199 seconds (files took 0.17178 seconds to load)
+1 example, 0 failures
+```
 
 ## Deep Dive
-In addition to using the "assert_equal" assertion, there are other assertions you can use in your tests such as "assert", "refute_equal", and "refute". You can also use setup and teardown methods to set up any necessary data before each test and clean up after each test. It's important to write tests that cover all possible scenarios and edge cases to ensure that your code is functioning correctly.
 
-Another helpful practice when writing tests is to use a code coverage tool, such as SimpleCov, to see which parts of your code are not being tested. This can help you identify any gaps in your test coverage and ensure that all of your code is being thoroughly tested.
+When writing tests, it's important to keep in mind the different types of tests we can write. Unit tests are used to test individual units of code, such as methods or classes. Integration tests are used to test how different units work together. And acceptance tests are used to test the entire application from a user's perspective.
+
+RSpec also provides different matchers to make our tests more flexible and readable. For example, we can use the `be_*` matcher to check for boolean values, the `change` matcher to monitor changes in objects, and the `have_*` matcher to check for specific attributes or methods.
+
+Besides using the built-in matchers, we can also create custom matchers to make our tests more specific to our application's needs. This can help avoid repeating code and make our tests more readable.
+
+It's also worth mentioning that while writing tests is important, we should also strive for quality code. Good code is easy to understand and test, which means writing clean, well-structured, and efficient code will make testing easier in the long run.
 
 ## See Also
-- [Ruby Testing for Beginners](https://rubyplus.com/articles/3571-How-to-Test-Ruby-Methods)
-- [The Benefits of Test-Driven Development in Ruby](https://blog.testlodge.com/benefits-test-driven-development-ruby/)
-- [Minitest Documentation](https://github.com/seattlerb/minitest)
+
+- [RSpec documentation](https://rspec.info/)
+- [Writing Effective Tests in Ruby](https://stackify.com/writing-good-ruby-tests/)

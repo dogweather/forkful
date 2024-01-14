@@ -1,72 +1,49 @@
 ---
-title:                "C++: Aloittaminen uusi projekti"
+title:                "C++: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "C++"
-category:             "Getting Started"
+category:             "C++"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Aloittaa uusi projekti
+## Miksi
 
-Oletko ajatellut aloittaa uuden ohjelmointiprojektin, mutta et tiedä mistä aloittaa? Ei hätää, tämä blogipostaus antaa sinulle vinkkejä ja esimerkkejä siitä, miten aloittaa uusi projekti helposti ja tehokkaasti!
+Miksi aloittaa uusi ohjelmointiprojekti? Uuden projektin aloittaminen antaa mahdollisuuden oppia uusia ohjelmointitaitoja ja kehittää olemassa olevia taitoja. Se myös antaa mahdollisuuden luoda jotain uutta ja hyödyllistä, joka voi auttaa muita tai tuoda iloa itselle.
 
-## Miten: Esimerkkejä ohjelmointikoodista
+## Kuinka aloittaa
 
-Aloittaminen uuden projektin ei tarvitse olla vaikeaa. Alla on esimerkki siitä, miten voit aloittaa C++-projektin ja tulostaa yksinkertaisen viestin:
-
-```C++
-#include <iostream>
-
-int main() {
-    std::cout << "Tervetuloa uuteen projektiin!" << std::endl;
-    return 0;
-}
-```
-
-Tämä koodinpätkä tulostaa konsoliin viestin "Tervetuloa uuteen projektiin!". Voit muokata viestiä mieleiseksesi ja lisätä siihen haluamiasi toimintoja.
-
-Entä jos haluat tehdä enemmän kuin vain tulostaa viestin? Esimerkiksi, jos haluat luoda yksinkertaisen laskimen, voit kirjoittaa koodin seuraavasti:
+Aloita uusi projekti luomalla uusi C++ tiedosto ja tallentamalla se haluamaasi kansioon. Kirjoita seuraava koodi tiedostoon ja tallenna se nimellä "helloWorld.cpp":
 
 ```C++
 #include <iostream>
 
+using namespace std;
+
 int main() {
-    float luku1, luku2;
-    char operaattori;
-    std::cout << "Syötä ensimmäinen luku: ";
-    std::cin >> luku1;
-    std::cout << "Syötä toinen luku: ";
-    std::cin >> luku2;
-    std::cout << "Syötä yhteen-, vähennys-, kerto- tai jakolasku (+, -, *, /): ";
-    std::cin >> operaattori;
-    if (operaattori == '+') {
-        std::cout << luku1 << " + " << luku2 << " = " << luku1 + luku2 << std::endl;
-    }
-    else if (operaattori == '-') {
-        std::cout << luku1 << " - " << luku2 << " = " << luku1 - luku2 << std::endl;
-    }
-    else if (operaattori == '*') {
-        std::cout << luku1 << " * " << luku2 << " = " << luku1 * luku2 << std::endl;
-    }
-    else if (operaattori == '/') {
-        std::cout << luku1 << " / " << luku2 << " = " << luku1 / luku2 << std::endl;
-    }
-    else {
-        std::cout << "Virheellinen operaattori!" << std::endl;
-    }
+    // Tulostaa "Hei maailma!" konsolille
+    cout << "Hei maailma!" << endl;
+
     return 0;
 }
 ```
 
-Tämä koodi luo yksinkertaisen laskimen, joka kysyy käyttäjältä kaksi lukua ja valitsee käyttäjän antaman operaattorin mukaan laskutoimituksen. Voit muokata tätä koodia lisäämällä uusia toimintoja ja laskutoimituksia.
+Tämä koodi käyttää ```iostream``` kirjastoa tulostamaan yksinkertaisen viestin, "Hei maailma!" konsolille. Suorita koodi ja tarkista, että se toimii oikein. Jos kaikki onnistuu, näet konsolilla "Hei maailma!".
 
-## Syvempi sukellus: Tietoa uuden projektin aloittamisesta
+Nyt voit alkaa lisäämään ja kehittämään omaa koodiasi tästä aloituspisteestä.
 
-Aloittaessa uuden projektin on tärkeää miettiä, mitä haluat saavuttaa projektiin. Ota huomioon seuraavat asiat:
+## Syvempi sukellus
 
-- Projektin tarkoitus: Mitä haluat saavuttaa projektilla? Onko se vain harjoittelua vai haluatko luoda jotain hyödyllistä?
+Uuden projektin aloittaminen vaatii suunnittelua ja pohdintaa. Ensimmäiseksi sinun täytyy päättää, mitä haluat toteuttaa projektissa. Voit miettiä esimerkiksi seuraavia kysymyksiä: Mitä haluat ohjelman tekevän? Mikä on sen tarkoitus? Käytätkö jotain ulkoista kirjastoa tai jo valmiiksi luotuja toimintoja?
 
-- Ohjelmointikieli: Päätä, millä ohjelmointikielellä haluat toteuttaa projekti. Voit valita jo osaamasi kielen tai opetella uutta kieltä.
+Kun olet päättänyt, mitä haluat toteuttaa, voit suunnitella ja kirjoittaa koodia. Muista myös testata ja korjata kaikki virheet ja varmistaa, että koodi toimii oikein.
 
-- Ohjelmointiympäristö: Valitse ohjelmointiympäristö, joka sopii parhaiten projektillesi. Esimerkiksi, jos haluat tehdä graafisen käyttöliittymän, voit valita C++:n sijaan Java-kielen ja käyttää esimerkiksi NetBeans-ymp
+Kun projekti on valmis, voit jakaa sen muiden kanssa tai jatkaa sen kehittämistä.
+
+## Katso myös
+
+- [C++ kirjastot](https://www.cplusplus.com/reference/)
+- [C++ oppaat ja tutoriaalit](https://www.learncpp.com/)
+- [C++ keskustelufoorumit](https://www.cplusplus.com/forum/)

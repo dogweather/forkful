@@ -1,45 +1,53 @@
 ---
-title:                "C: Imprimiendo salida de depuración"
+title:                "C: Impresión de salida de depuración."
+simple_title:         "Impresión de salida de depuración."
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué imprimir salida de depuración en tu programa C? 
+## ¿Por qué imprimir la salida de depuración es importante en programación?
 
-Imprimir salida de depuración es una práctica común en la programación en C. Esta técnica es útil para ayudar a los desarrolladores a encontrar errores o problemas en su código. Al imprimir información en diferentes puntos de tu programa, puedes rastrear dónde ocurren los errores y solucionarlos más fácilmente.
+Para cualquier programador, es esencial entender el funcionamiento interno de su código y poder detectar errores. Imprimir la salida de depuración es una técnica útil para identificar fallos en el código y facilitar el proceso de corrección. Además, puede ayudar a entender mejor el flujo de ejecución y optimizar el rendimiento de la aplicación.
 
-## Cómo hacerlo
+## Cómo imprimir la salida de depuración en C
 
-Para imprimir salida de depuración en tu programa C, puedes usar la función `printf` en la biblioteca estándar de C. Esta función toma una cadena de formato como primer argumento y cualquier número de argumentos adicionales que se imprimen de acuerdo al formato especificado en la cadena.
-
-```C
-printf("El valor de mi_variable es: %d", mi_variable);
-```
-
-En el ejemplo anterior, la cadena de formato "%d" indica que se imprimirá un número decimal y `mi_variable` es el valor que se imprimirá en su lugar.
-
-Otra forma útil de imprimir salida de depuración es usando la macro `assert` en la biblioteca `assert.h`. Esta macro evalúa una condición y, si es falsa, imprime un mensaje de error y termina la ejecución del programa.
+Imprimir la salida de depuración en C es muy sencillo. Simplemente se utiliza la función `printf()` para mostrar mensajes en la consola. Veamos un ejemplo:
 
 ```C
-int x = 5;
-assert(x > 10);
+#include <stdio.h>
+
+int main() {
+  int num1 = 10;
+  int num2 = 5;
+  
+  printf("El valor de num1 es %d y el de num2 es %d\n", num1, num2);
+  
+  return 0;
+}
 ```
 
-En este ejemplo, como la condición `x > 10` es falsa, se imprimirá un mensaje de error que te ayudará a encontrar rápidamente el problema en tu código.
+En este ejemplo, utilizamos la función `printf()` para mostrar los valores de las variables `num1` y `num2` en la consola. Al compilar y ejecutar el programa, obtendremos la siguiente salida:
 
-## Profundizando en la impresión de salida de depuración
+```
+El valor de num1 es 10 y el de num2 es 5
+```
 
-Además de simplemente imprimir valores de variables, también puedes incluir mensajes descriptivos en tu salida de depuración. Esto puede ser útil cuando tienes múltiples puntos de impresión en tu programa y quieres saber exactamente dónde se está imprimiendo cada valor.
+De esta manera, podemos ver fácilmente los valores de las variables en un determinado punto del programa.
 
-También puedes imprimir información sobre el valor de punteros o estructuras de datos en tu programa. Simplemente asegúrate de indicar el formato adecuado en la cadena de formato `printf` o `assert`.
+## Más información sobre imprimir la salida de depuración
 
-En general, imprimir salida de depuración es una herramienta poderosa para detectar y solucionar errores en tus programas C. Sin embargo, asegúrate de eliminar todas las impresiones de depuración antes de liberar tu programa a producción, ya que pueden afectar negativamente al rendimiento.
+Además de utilizar `printf()`, también podemos imprimir la salida de depuración a través de otros medios, como por ejemplo, un archivo de texto. Para hacer esto, se utiliza la función `fprintf()` en lugar de `printf()`.
+
+Además, también podemos imprimir mensajes de error utilizando la función `perror()`, lo que puede ser útil para detectar errores en tiempo de ejecución y facilitar su corrección.
+
+Es importante destacar que imprimir demasiada salida de depuración puede afectar el rendimiento de la aplicación, por lo que se recomienda utilizarla solo cuando sea necesario y eliminarla después de solucionar los errores.
 
 ## Ver también
 
-- [Depuración en C - Tutorialspoint](https://www.tutorialspoint.com/cprogramming/c_debugging.htm)
-- [Funciones de la biblioteca estándar de C - The GNU C Library](https://www.gnu.org/software/libc/manual/html_node/Standard-Functions.html)
-- [Macros assert en C - TechOnTheNet](https://www.techonthenet.com/c_language/standard_library_functions/assert_h/assert_h_macro.php)
+- [Documentación de printf en C](https://www.codingame.com/playgrounds/4242/funciones-y-punteros-en-c/printf)
+- [Tutorial de depuración en C](https://www.learn-c.org/en/Debugging)
+- [Cómo utilizar GDB para depurar programas en C](https://gdbgui.com/tutorials/debug-c-in-visual-studio-code)

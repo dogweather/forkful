@@ -1,7 +1,9 @@
 ---
-title:                "C++: Utskrift av felsökningsutdata"
+title:                "C++: Utskrift av felrapportering"
+simple_title:         "Utskrift av felrapportering"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/printing-debug-output.md"
 ---
 
@@ -9,40 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-När du utvecklar program kan det vara användbart att ha utskrift av felsökning för att hålla koll på vad som händer i ditt program och för att enkelt hitta och åtgärda eventuella problem.
+Att skriva kod är ofta en ganska komplex process som kan innehålla många olika steg och variabler. När du utvecklar ett program är det viktigt att du kan spåra och förstå vad som händer i koden för att kunna lösa problem och optimera prestanda. Ett sätt att göra detta är genom att använda debug output, eller utskrifter av information från programmet som hjälper dig att förstå vad som händer vid olika punkter i koden. I denna bloggpost kommer vi att utforska varför och hur du kan använda debug output i dina C++-program.
 
-## Hur man gör det
+## Så här gör du
 
-För att skriva ut felsökningsutmatning i C++ använder vi funktionen `cout` från standard biblioteket `iostream`. Vi behöver även inkludera detta bibliotek i början av vårt program med hjälp av `#include <iostream>`. Här är ett exempel på hur man skriver ut en sträng:
-
-```C++
-#include <iostream>
-
-int main() {
-    std::cout << "Hej världen!" << std:endl;
-    return 0;
-}
-```
-
-Detta kommer att skriva ut "Hej världen!" på skärmen. Vi kan även skriva ut variabler genom att inkludera dem i `cout`:
+För att börja använda debug output i dina C++-program behöver du först inkludera <iostream> biblioteket i din kod. Detta gör att du kan skriva ut text till konsolen eller terminalen. För att skriva ut en enkel sträng kan du använda "std::cout" tillsammans med utskriftsoperatören "<<" som i exemplet nedan.
 
 ```C++
 #include <iostream>
 
-int main() {
-    int tal = 100;
-    std::cout << "Mitt tal är " << tal << std::endl;
-    return 0;
+int main(){
+  std::cout << "Hej världen!" << std::endl;
+  return 0;
 }
 ```
 
-Detta kommer att skriva ut "Mitt tal är 100" på skärmen.
+Output:
+```
+Hej världen!
+```
 
-## En djupdykning
+Du kan också skriva ut variabler genom att använda variabelnamnen i "<<" operatorn.
 
-Att inkludera felsökningsutmatning i ditt program kan hjälpa dig att förstå vad som händer i ditt program och hitta eventuella fel. Det är en enkel och effektiv metod för felsökning och kan spara mycket tid i det långa loppet. Det är viktigt att komma ihåg att ta bort alla felsökningsutmatning när ditt program är färdigt för att undvika onödig kod och förbättra prestandan.
+```C++
+#include <iostream>
+
+int main(){
+  int x = 5;
+  std::cout << "värdet av x är: " << x << std::endl;
+  return 0;
+}
+```
+
+Output:
+```
+värdet av x är: 5
+```
+
+## Djupdykning
+
+Debug output kan vara väldigt användbart när du behöver förstå vad som händer i ditt program vid olika tidpunkter. Genom att skriva ut variabler, funktionernas resultat och andra viktiga punkter i koden, kan du enkelt följa koden och se om det händer några oönskade förändringar eller felaktiga värden. Detta kan hjälpa dig att hitta och lösa buggar och optimera din kod för bättre prestanda.
+
+Det finns också andra tekniker som du kan använda för att utforma mer avancerad debug output, såsom att använda loggningsbibliotek eller implementera din egen debug output-funktion. Detta kan vara särskilt användbart när du jobbar med större och mer komplexa projekt.
 
 ## Se även
 
-- [C++ - Standard bibliotek](https://www.cplusplus.com/reference/)
-- [Felsökningsutmatning i C++](https://www.learncpp.com/cpp-tutorial/15-introduction-to-debugging/)
+- [C++ Reference](https://www.cplusplus.com/reference/)
+- [Debugging in C++](https://www.tutorialspoint.com/cplusplus/cpp_debugging.htm)
+- [Logging and Debugging in C++](https://www.geeksforgeeks.org/logging-debugging-c-program/)

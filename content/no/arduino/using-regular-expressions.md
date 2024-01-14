@@ -1,49 +1,40 @@
 ---
 title:                "Arduino: Å bruke regulære uttrykk"
+simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
+Hvis du er interessert i å lage mer avanserte og effektive programmer på Arduino, kan det være lurt å lære mer om regulære uttrykk. Dette er et kraftig verktøy som kan hjelpe deg med å søke og manipulere tekst på en mer fleksibel måte.
 
-Å bruke regulære uttrykk i Arduino-programmering kan være en nyttig måte å håndtere og manipulere tekst. Det kan forenkle komplekse oppgaver som å søke etter spesifikke mønstre i en streng eller å filtrere ut uønsket data. Med regulære uttrykk kan du spare tid og få et mer effektivt program.
-
-# Slik gjør du det
-
-For å bruke regulære uttrykk i Arduino, må du først inkludere biblioteket "Regex" ved å bruke:
-
+## Hvordan
+Først må du importere biblioteket "RegExp" ved å legge til følgende linje i koden din:
 ```Arduino
-#include <Regex.h>
-``` 
-
-Deretter kan du definere et regulært uttrykk ved hjelp av funksjonen `Regex`:
-
-```Arduino
-Regex myRegex("pattern");
+#include <RegExp.h>
 ```
 
-I dette eksempelet vil "pattern" være mønsteret du ønsker å finne i en streng.
-
-Etter at du har definert uttrykket ditt, kan du bruke en av funksjonene som følger med "Regex" biblioteket for å søke etter eller manipulere tekst. For eksempel, hvis du vil søke etter et mønster i en tekststreng, kan du bruke `match()` funksjonen:
-
+Deretter kan du bruke funksjonene i dette biblioteket for å definere og søke etter regulære uttrykk. For eksempel, hvis du ønsker å finne alle tall i en streng, kan du bruke følgende kode:
 ```Arduino
-String input = "Det er 5 katter og 3 hundre i denne teksten.";
-Boolean result = myRegex.match(input);
+RegExp regex("\\d+");
+while(regex.find("Dette er tall 123 og 456")) {
+  Serial.println(regex.match());
+}
 ```
+Dette vil skrive ut 123 og 456 i Serial Monitor.
 
-I dette tilfellet vil `result` være sann hvis mønsteret ble funnet i strengen `input`, eller usann hvis det ikke ble funnet.
+## Dypdykk
+Regulære uttrykk følger et bestemt mønster for søk og manipulering av strenger. Det er forskjellige symboler og uttrykk du kan bruke for å definere mønsteret du ønsker å søke etter. For eksempel kan du bruke uttrykket " \d+" for å finne alle tall i en streng, der "\d" representerer et hvilket som helst tall og "+" betyr at det kan være flere tall etter hverandre.
 
-# Dypdykk
+Du kan også bruke regulære uttrykk til å erstatte deler av en streng, eller for å gjøre mer avanserte søk som tar hensyn til store og små bokstaver.
 
-Arduino har begrenset støtte for regulære uttrykk sammenlignet med andre programmeringsspråk, og kan ikke håndtere alle funksjoner og metoder som finnes i regex. Når du bruker regulære uttrykk i Arduino, må du huske på disse begrensningene og tilpasse uttrykkene dine deretter.
+Det er viktig å merke seg at regulære uttrykk kan være komplekse og ta litt tid å mestre, men det er absolutt verdt innsatsen for å forbedre programmene dine.
 
-En annen ting å merke seg er at regex-biblioteket bruker mye Arduino-minne, så det kan være lurt å bruke det med forsiktighet og unngå det hvis du allerede har et begrenset minne.
-
-# Se også
-
-- [Offisiell Arduino Regex biblioteksdokumentasjon](https://github.com/arduino-libraries/Regex)
-- [En guide til å bruke regulære uttrykk i Arduino](https://www.makeuseof.com/tag/using-regular-expressions-arduino/)
-- [Eksempler på bruken av regulære uttrykk i Arduino-prosjekter](https://maker.pro/arduino/projects/how-to-use-regular-expressions-in-your-arduino-sketches)
+## Se også
+- [Arduino på norsk](https://www.arduino.cc/reference/no/)
+- [RegExp biblioteket](https://github.com/kroimon/Arduino-RegExp)
+- [Regulære Uttrykk i Arduino](http://www.nbl.fi/~nbl8991/prog/Arduino-Regexp/RegexInArduino.html)

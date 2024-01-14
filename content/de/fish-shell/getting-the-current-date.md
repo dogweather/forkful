@@ -1,44 +1,42 @@
 ---
 title:                "Fish Shell: Das aktuelle Datum erhalten"
+simple_title:         "Das aktuelle Datum erhalten"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Es gibt viele Gründe, warum man das aktuelle Datum in seinem Fish Shell Programm nutzen möchte. Vielleicht möchtest du es als Teil eines Dateinamens verwenden oder als Teil einer automatisierten Backups-Routine. Egal aus welchem Grund, das Erlernen des Befehls zur Abfrage des aktuellen Datums kann deine Programmierfähigkeiten erweitern und dein Fish Shell-Erlebnis verbessern.
+Es mag zunächst ungewöhnlich erscheinen, aber es gibt tatsächlich viele Gründe, warum jemand das aktuelle Datum in sein Fish Shell-Programm einbinden möchte. Vielleicht möchten Sie eine automatische Datumsangabe in Ihre Shell-Befehle einfügen, ein Skript erstellen, das basierend auf dem aktuellen Datum verschiedene Aktionen ausführt, oder einfach nur aus Neugier wissen, welcher Tag heute ist.
 
-# Wie geht das?
+## Anleitung
 
-Um das aktuelle Datum im Fish Shell zu erhalten, musst du den Befehl `date` verwenden. Dieser Befehl akzeptiert verschiedene Formatierungsoptionen, um das Datum in deiner gewünschten Form anzuzeigen. Schauen wir uns einige Beispiele an:
-
-```Fish Shell
-date +"%d.%m.%Y"
-```
-Dieser Befehl gibt das aktuelle Datum im Format "Tag.Monat.Jahr" aus. Zum Beispiel `21.05.2021`.
+Um das aktuelle Datum im Fish Shell abzurufen, können Sie das Befehlszeilenwerkzeug 'date' verwenden. Dieser Befehl gibt das Datum im Format "Tag Monat Jahr" aus. Beispielsweise würde der Befehl "date" heute (24. September 2021) folgendes zurückgeben:
 
 ```Fish Shell
-date +"%A"
+Fr 24 Sep 2021
 ```
-Diese Zeile gibt den aktuellen Wochentag aus, z.B. `Freitag`.
 
-Es gibt viele verschiedene Formatierungsoptionen, die du ausprobieren kannst. Um eine vollständige Liste der verfügbaren Optionen zu sehen, kannst du den Befehl `man date` eingeben, um die man-Seite des Datei-Befehls aufzurufen.
-
-# Tiefere Einblicke
-
-Wenn du einen tieferen Einblick in die Welt der Datumsmethoden im Fish Shell erhalten möchtest, kannst du das `strftime`-Tool verwenden. Dieses Tool ermöglicht es dir, eigene benutzerdefinierte Datumsformate zu erstellen. Zum Beispiel:
+Wenn Sie das Datum in einem anderen Format erhalten möchten, können Sie die Option '-s' verwenden, gefolgt von dem von Ihnen gewünschten Format. Beispielsweise würde der Befehl "date -s "%d.%m.%Y"" heute (24. September 2021) folgendes zurückgeben:
 
 ```Fish Shell
-echo (strftime "%d. %B %Y" (language "de") (date))
+24.09.2021
 ```
 
-Dieser Befehl nutzt die strftime-Funktion, um das aktuelle Datum im Format "Tag. Monat Jahr" auszugeben, wobei der Monat in deutscher Sprache angezeigt wird. Du kannst auch andere Sprachen ausprobieren, indem du den entsprechenden Sprachcode anstelle von "de" verwendest.
+Es gibt viele verschiedene Optionen für das Datum, die Sie verwenden können, abhängig von Ihrem gewünschten Format. Für eine vollständige Liste der verfügbaren Optionen können Sie die Manpage des 'date'-Befehls aufrufen.
 
-# Sieh dir auch an
+## Tiefer Einblick
 
-- Offizielle Fish Shell Dokumentation für den `date` Befehl: [https://fishshell.com/docs/current/cmds/date.html](https://fishshell.com/docs/current/cmds/date.html)
-- Manpage für den `strftime`-Befehl: [https://fishshell.com/docs/current/cmds/strftime.html](https://fishshell.com/docs/current/cmds/strftime.html)
-- Eine Liste von verfügbaren Sprachcodes für die strftime-Funktion: [https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+Bei näherer Betrachtung ist das Abrufen des aktuellen Datums in Fish Shell etwas komplexer als es auf den ersten Blick erscheint. Tatsächlich ist das 'date'-Befehlszeilenwerkzeug Teil des Kerns des Betriebssystems und wird standardmäßig in den meisten Linux-Distributionen verwendet. Es verwendet die Systemzeit des Computers und formatiert sie entsprechend den von Ihnen angegebenen Optionen.
+
+Die Verwendung von 'date' zeigt auch die unglaubliche Flexibilität und Anpassungsfähigkeit von Fish Shell. Sie können es verwenden, um das Datum auf verschiedene Arten zu formatieren und in Ihre Skripte oder Befehle einbinden, um ihnen zusätzliche Funktionen zu verleihen.
+
+## Siehe auch
+
+- [Manpage des 'date'-Befehls](https://manpages.debian.org/latest/coreutils/date.1.en.html)
+- [Fish Shell-Dokumentation](https://fishshell.com/docs/current/index.html)
+- [Linuxize-Artikel über das Abrufen des aktuellen Datums in der Shell](https://linuxize.com/post/bash-get-current-date/)

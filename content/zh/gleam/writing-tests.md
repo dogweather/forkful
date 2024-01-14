@@ -1,56 +1,44 @@
 ---
 title:                "Gleam: 编写测试"
+simple_title:         "编写测试"
 programming_language: "Gleam"
-category:             "Testing and Debugging"
+category:             "Gleam"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要写测试
+为什么: 为什么要参与写测试？写测试能够帮助开发者在编写代码时发现错误，从而减少故障和维护时间。
 
-测试是软件开发过程中非常重要的一部分。它可以帮助我们确保代码的正确性和稳定性，避免出现意外的bug和问题。写测试可以大大提高我们的代码质量，保证软件的可靠性。所以，作为一名软件开发者，写测试是必不可少的步骤。
-
-## 如何写测试
-
-下面我们将介绍如何在Gleam中编写测试代码。
-
-首先，我们需要导入Gleam中的测试库：`import gleam/test/assert`
-
-然后，我们可以使用`assert`模块中提供的不同函数进行测试。例如，我们想要测试一个加法函数的正确性：
+如何: 以下是一个示例代码块，展示如何使用Gleam编写测试，并展示输出结果。
 
 ```Gleam
-assert.equal(4, my_module.add(2, 2))
+import gleam/test/assert
+import my_module
+
+suite "My Module Tests" {
+  test "add two numbers" {
+    assert.equal(my_module.add(2, 3), 5)
+  }
+
+  test "multiply two numbers" {
+    assert.equal(my_module.multiply(4, 5), 20)
+  }
+}
 ```
 
-在上面的示例中，我们使用`assert.equal()`函数来比较两个值是否相等。如果测试通过，我们会得到一个成功的输出；若测试失败，我们会得到一个失败的输出，并且会显示具体的错误信息。
+输出结果将会显示测试通过或失败的结果以及具体的失败信息。通过编写多个测试来覆盖代码的不同情况，可以确保代码在各种情况下都能正确运行。
 
-另外，我们也可以使用`assert`模块中的其他函数来测试代码的正确性，例如`assert.true()`和`assert.false()`来判断一个条件是否为真或为假。
+深入了解: 编写测试可以帮助开发者更加自信地修改和重构代码，因为他们可以通过运行测试来保证代码的正确性。此外，写测试还能够帮助开发者在添加新功能或修复bug时提前发现潜在的问题，从而提高开发效率和代码质量。
 
-## 深入了解测试
-
-在写测试的过程中，我们需要注意一些注意事项：
-
-- 编写简洁、明确的测试代码，避免冗余或复杂的逻辑。
-
-- 尽量覆盖所有可能的边界情况，确保代码的健壮性。
-
-- 使用可读性强的测试名称，方便他人阅读并理解代码功能。
-
-同时，我们也应该避免一些常见的测试错误，比如测试太过依赖于具体的实现细节，从而导致测试不稳定。
-
-最后，我们还可以使用可视化工具来帮助我们更直观地查看测试覆盖率和错误信息，如`mix test.watch`命令所提供的实时测试报告。
+另外，编写测试也是一种良好的编程习惯，能够让开发者在写代码时更加注重代码的可测试性和可维护性。
 
 ## 参考链接
 
 - Gleam官方文档：https://gleam.run/
+- GitHub：https://github.com/gleam-lang/gleam
+- 博客文章：https://www.gleam.run/news/writing-tests/
+- 视频教程：https://www.youtube.com/watch?v=Zxh55zOSbb8
 
-- Gleam测试库文档：https://gleam.run/documentation/testing/
-
-- Testing entry in the Mix command line tool：https://hexdocs.pm/mix/Mix.Tasks.Test.html
-
-## 参见
-
-- [Gleam中使用Erlang的OTP](https://example.com/gleam-otp)
-
-- [介绍Gleam中的错误处理](https://example.com/gleam-error-handling)
+看看这些资源可以帮助你更加深入地了解如何使用Gleam编写测试，并充分利用这项工具来改善你的代码质量！

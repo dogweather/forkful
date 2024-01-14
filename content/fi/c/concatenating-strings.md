@@ -1,60 +1,58 @@
 ---
-title:                "C: Töiden yhdistäminen"
+title:                "C: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Stringien liittäminen tai konkatenointi on tärkeä osa C-ohjelmointia, sillä se mahdollistaa useampien merkkijonojen yhdistämisen yhdeksi kokonaisuudeksi. Tämä kätevä toiminto helpottaa merkkijonojen käsittelyä ja mahdollistaa monimutkaistenkin tehtävien suorittamisen.
+Miksi kukaan haluaisi käyttää merkkijonojen yhdistämistä? Usein ohjelmoinnin yhteydessä käsitellään useita erillisiä merkkijonoja, ja joskus on tarpeellista yhdistää nämä merkkijonot yhdeksi suuremmaksi kokonaisuudeksi. Tämä voi tapahtua esimerkiksi silloin, kun halutaan luoda tekstipohjainen käyttöliittymä tai tallentaa käyttäjän syöttämät tiedot yhdeksi merkkijonoksi. Tässä blogikirjoituksessa käsittelemme, miten tämä onnistuu kätevästi C-ohjelmointikielessä.
 
-## Miten
+## Miten yhdistetään merkkijonoja C-kielellä
 
-Stringien liittäminen C-kielellä onnistuu helposti käyttämällä sisäänrakennettua funktiota `strcat()`. Tämä funktio toimii yksinkertaisesti lisäämällä toisen merkkijonon ensimmäisen loppuun ja palauttamalla yhdistetyn merkkijonon. Alla on esimerkki koodista ja sen tulosteesta:
-
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str1[50] = "Tämä on ";
-    char str2[] = "merkkijonojen";
-    printf("%s%s", str1, strcat(str1, str2));
-    return 0;
-}
-```
-*Tuloste: Tämä on merkkijonojen*
-
-Huomaa, että `strcat()` ei luo uutta merkkijonoa, vaan lisää merkkijonon `str1` loppuun. Jos haluat luoda uuden merkkijonon, joka sisältää kaksi yhdistettyä merkkijonoa, voit käyttää `sprintf()`-funktiota, kuten alla olevassa esimerkissä:
+C-kielellä merkkijonojen yhdistäminen tapahtuu kätevästi käyttäen `strcat()`-funktiota. Tämä funktio yhdistää kaksi merkkijonoa toisiinsa lisäämällä toisen merkkijonon perään ensimmäiseen merkkijonoon. Alla on esimerkki siitä, miten `strcat()`-funktiota käytetään:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
 int main() {
-    char str1[50] = "Tämä on ";
-    char str2[] = "merkkijonojen";
-    char str3[100];
-    sprintf(str3, "%s%s", str1, str2);
-    printf("%s", str3);
+    char nimi[] = "Hanna";
+    char sukunimi[] = "Hämäläinen";
+    strcat(nimi, sukunimi);
+    printf("Koko nimi on: %s", nimi);
     return 0;
 }
 ```
-*Tuloste: Tämä on merkkijonojen*
 
-On myös tärkeää huomata, että merkkijonot tulee määrittää tarpeeksi suuriksi, jotta ne mahtuvat yhdistettyyn merkkijonoon. Muuten voi tapahtua tietojen ylikirjoitusta ja ohjelma saattaa kaatua.
+Tämän koodin suorituksen jälkeen `nimi`-merkkijono sisältää arvon "HannaHämäläinen". Jos haluamme lisätä välilyönnin merkkijonojen väliin, voimme käyttää `strcat()`-funktion sijaan `strncat()`-funktiota, joka lisää myös määritetyn määrän merkkejä lähdeviite-merkkijonon perään.
 
-## Syvempi sukellus
+C-kielessä on myös mahdollisuus yhdistää merkkijonoja käyttämällä toisena vaihtoehtona `sprintf()`-funktiota. Tätä funktiota käytettäessä merkkijonossa voi yhdistää myös muita muuttujia, kuten kokonaisluvut, desimaaliluvut tai merkkitietoja. Alla on esimerkki siitä, miten `sprintf()`-funktiota voidaan käyttää:
 
-C-kielessä merkkijonot ovat taulukoita, joiden viimeinen merkki on aina `\0`. Tämä nollamerkki toimii merkkijonon loppumerkkinä ja mahdollistaa merkkijonon käsittelyn C:ssä. Kun käytät `strcat()`-funktiota, se etsii merkkijonon viimeistä `\0`-merkkiä ja lisää toisen merkkijonon sen jälkeen.
+```C
+#include <stdio.h>
+#include <string.h>
 
-Vaikka konkatenointi onkin kätevä toiminto, se on myös aikaa vievä ja tehoton tapa käsitellä merkkijonoja. Mikäli tarvitset suurta määrää merkkijonojen yhdistämistä, voi olla parempi käyttää dynaamisia merkkijonoja, joiden käsittely on paljon nopeampaa.
+int main() {
+    char kaupunki[] = "Helsinki";
+    int vuosi = 2020;
+    char kuukausi[] = "heinäkuu";
+    char paivamaara[50];
+    sprintf(paivamaara, "Tänään on %s %i. %s %i", kaupunki, vuosi, kuukausi, vuosi);
+    printf("%s", paivamaara);
+    return 0;
+}
+```
 
-# Katso myös
+Tämän koodin suorituksen jälkeen `paivamaara`-merkkijonossa on arvo "Tänään on Helsinki 2020. heinäkuu 2020".
 
-- [strcat() opetusohjelma](https://www.geeksforgeeks.org/strcat-function-in-c/)
-- [sprintf() opetusohjelma](https://www.geeksforgeeks.org/sprintf-in-c/)
-- [C-merkkijonot opetusohjelma](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+## Syvällisempiä tietoja merkkijonojen yhdistämisestä
+
+Merkkijonojen yhdistämisessä on tärkeää huomioida, että lähtö- ja lopputuloksen tulee olla molemmat kelvollisia merkkijonoja. Jos esimerkiksi yhdistettävien merkkijonojen lopusta puuttuu nul-merkki, yhdistämisen tulos ei ehkä ole haluttu. Tämän vuoksi on tärkeää varmistaa, että käytetyt merkkijonot ovat oikean pituisia ennen yhdistämistä.
+
+Samoin tulee huomioida, että käytetyt merkkijonot eivät ylitä kiintiöitä

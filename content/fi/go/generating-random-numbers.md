@@ -1,60 +1,49 @@
 ---
-title:                "Go: Satunnaislukujen luominen"
+title:                "Go: Sattumanvaraisten numeroiden tuottaminen"
+simple_title:         "Sattumanvaraisten numeroiden tuottaminen"
 programming_language: "Go"
-category:             "Numbers"
+category:             "Go"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Monissa ohjelmointiprojekteissa on tarve käyttää satunnaislukuja, oli kyse sitten pelin pisteiden arpomisesta tai todennäköisyyksien laskemisesta. Go tarjoaa helpon ja tehokkaan tavan generoida satunnaislukuja, mikä tekee siitä suositun vaihtoehdon tässä asiassa.
+Monta kertaa ohjelmoinnin aikana tarvitsemme satunnaisia numeroita. Esimerkiksi simulaatioissa, arvonnassa tai pelien kehittämisessä. Onneksi Go-kielessä on helppo tapa generoida satunnaisluvut tarpeidemme mukaan.
 
-## Kuinka se tehdään?
+## Miten
 
-Go-kielellä satunnaislukujen luominen on yksinkertaista. Käytämme `rand`-pakettia, joka tarjoaa erilaisia toimintoja satunnaislukujen generoimiseen. Tässä esimerkissä luomme viisi satunnaislukua väliltä 1-100:
+Go-kielessä satunnaisluvut generoidaan rand-paketin avulla. Käytettävä funktio on `Intn`, joka ottaa parametrikseen halutun maksimiarvon ja palauttaa satunnaisen kokonaisluvun väliltä 0 ja annettu maksimiarvo -1 välillä.
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "math/rand"
-    "time"
+	"fmt"
+	"math/rand"
+	"time"
 )
 
 func main() {
-    // Asetetaan generoijan siemeneksi nykyisen ajan sekunnit
-    rand.Seed(time.Now().Unix())
-
-    // Käytetään for-silmukkaa luomaan viisi satunnaislukua
-    for i := 0; i < 5; i++ {
-        // Kutsutaan rand.Intn() funktiota, joka palauttaa satunnaisen luvun väliltä 0-99
-        // Lisätään tähän 1, jotta saamme lukujen väliltä 1-100
-        fmt.Println(rand.Intn(100) + 1)
-    }
+	rand.Seed(time.Now().UnixNano()) // Asetetaan satunnainen siemen jokaisella suorituskerralla
+	fmt.Println(rand.Intn(100)) // Generoidaan satunnainen luku väliltä 0-99
 }
 ```
 
-Esimerkin tulostus voisi näyttää tältä:
+Esimerkissä käytämme myös `Seed`-funktiota, joka asettaa satunnaisen siemenen jokaisen suorituksen alussa. Tämä tekee satunnaisluvuista vieläkin satunnaisempia.
 
-```
-81
-12
-45
-23
-97
-```
+## Syvemmälle
 
-Kuten näemme, saamme joka kerta ohjelman suorittaessa uuden satunnaisen luvun. Toistan: `rand.Seed()`-funktiolla asetetaan generoijan siemeneksi nykyisen ajan sekunnit, jotta saamme joka kerta erilaisen satunnaislukusarjan. Tämän vuoksi on tärkeää asettaa siemen ennen satunnaislukujen luomista.
+Go-kielessä tapahtuu monia taustaprosesseja satunnaisluvun generoimisen aikana. Ensinnäkin se luo pseudo-satunnaisen sekvenssin käyttämällä Xorshift-algoritmia. Tämä algoritmi on nopea ja tuottaa hyvin jakautuneita satunnaislukuja.
 
-## Syvemmältä satunnaislukujen luomiseen
+Toiseksi, `Seed`-funktio käyttää Unix-aikaa satunnaisen siemenen luomiseksi. Tämä takaa, että jokainen suoritus saa erilaisen satunnaisen sekvenssin.
 
-Jos haluat syvällisempää tietoa satunnaislukujen generoinnista Go-kielellä, voit tutustua Go:n `math/rand`-pakettiin ja sen tarjoamiin erilaisiin toimintoihin. Voit myös käyttää `time`-pakettia erilaisten siementen asettamiseen. Kannattaa myös tutustua pseudoruuhuisiin, jotka ovat algoritmeja satunnaisluvun luomiseen.
+Lisäksi, jos haluat generoida satunnaislukuja jonkin tietyn algoritmin mukaan, voit luoda oman `Source`-tyypin ja käyttää sitä `New`-funktion avulla.
 
 ## Katso myös
 
-- [Go:n rand-paketin dokumentaatio](https://golang.org/pkg/math/rand/)
-- [Go:n time-paketin dokumentaatio](https://golang.org/pkg/time/)
-- [Pseudoruhien vertailu Go:ssa](https://github.com/dgryski/go-pcg)
+- Dokumentointi: https://golang.org/pkg/math/rand/
+- Pseudo-satunnainen sekvenssi Xorshift-algoritmillä: https://en.wikipedia.org/wiki/Xorshift
+- Ohjeet satunnaisen siementämisen parhaista käytännöistä: https://stackoverflow.com/questions/12321133/golang-random-number-generator-how-to-seed-properly

@@ -1,49 +1,50 @@
 ---
 title:                "Gleam: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは、Gleamプログラミングコミュニティの皆さん！私のブログに来てくれてありがとう。今日は、正規表現の使い方について話していきたいと思います。正規表現は、文字列に対してパターンマッチングを行うための強力なツールです。文字列を扱うプログラミングに携わる方々にとって、正規表現は必須のスキルになります。
+## なぜ使うのか
 
-## Why
-正規表現を使う理由は様々です。例えば、特定のパターンを持つ文字列を検索したり、置換したりするのに役立ちます。また、複雑な文字列の操作を簡単に行えるため、効率的にプログラムを書くことができます。正規表現をマスターすることで、より堅牢なプログラムを作ることができるでしょう。
+正規表現を使用する理由はたくさんありますが、主な理由は文字列のパターンを検索したり置換したりするためです。例えば、特定のメールアドレスや電話番号を含む文章を探したり、HTMLタグを削除したりする場合に便利です。
 
-## How To
-正規表現を使用するためには、Gleamのstringモジュールにある`Regex`モジュールをインポートする必要があります。それから、パターンにマッチするかどうかをチェックする`match()`関数を使います。下記のコード例を参考にしてみてください。
+## 使い方
+
+正規表現を使用するには、まず`re`モジュールをインポートする必要があります。次に、`match`関数を使用して指定したパターンに対するテキストのマッチングを実行します。以下の例では、テキストからメールアドレスを抽出する方法を示します。
 
 ```Gleam
-import string/regex
+import re
 
-// パターンを定義
-let pattern = #"[0-9]"#
+email_pattern = "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+"
 
-// マッチするかをチェック
-let is_match = string/regex.match(pattern, "Hello, 123")
+text = "私のメールアドレスはabc123@example.comです。"
 
-// 出力
-if is_match {
-    // マッチした場合の処理
-    do something
-} else {
-    // マッチしなかった場合の処理
-    do something else
-}
+match(email_pattern, text)
+
 ```
 
-上記の例では、文字列の中に数字が含まれているかどうかをチェックしています。また、`Regex`モジュールには他にも便利な関数がありますので、ぜひ公式ドキュメントを参照してみてください。
+上記のコードを実行すると、`"abc123@example.com"`というメールアドレスが抽出されます。また、`replace`関数を使用すれば、パターンにマッチした部分を置換することもできます。
 
-## Deep Dive
-正規表現を使用する際に注意することもあります。例えば、マッチした文字列を取得する際には正規表現のグループ化を行う必要があります。また、正規表現のパフォーマンスも重要なテーマです。より高速にプログラムを実行するためには、正しいパターンの使い方や最適化する方法を知る必要があります。それでも、正規表現は強力なツールであることに変わりはありません。学ぶ価値があります。
+## ディープダイブ
 
-## See Also
-もっと正規表現について学びたい方は、下記のリンクを参照してみてください。
+正規表現にはさまざまな機能やパターンがあります。例えば、`*`や`+`のようなメタ文字を使用することで、任意の文字数の繰り返しを表現することができます。また、`?`を使用することで、パターンの一部があってもなくてもマッチするようにすることもできます。さらに、グループ化を行うことで、複数のパターンを同時にマッチさせることができるようになります。
 
-- Gleam公式ドキュメント: https://gleam.run/documentation/
-- 正規表現チュートリアル（日本語）: https://www.javadrive.jp/regex/
-- 正規表現テストツール: https://regex101.com/
+正規表現の詳細な使い方やパターンの種類については、[Gleam公式ドキュメント](https://gleam.run/docs/?redirect_to=https%3A%2F%2Fgleam.run%2Fblog%2Fregex%2F)を参考にしてください。
 
-それでは、楽しんで正規表現を使いこなしてくださいね！
+## 併せて参考にしてほしいリンク
+
+- [正規表現チートシート](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf)
+- [正規表現のデバッグ方法](https://rubular.com/)
+- [Pythonの正規表現チュートリアル](https://docs.python.org/ja/3/howto/regex.html)
+
+## 参考文献
+
+- [Gleam公式ドキュメント](https://gleam.run/docs/?redirect_to=https%3A%2F%2Fgleam.run%2Fblog%2Fregex%2F)
+- [正規表現チートシート](https://www.rstudio.com/wp-content/uploads/2016/09/RegExCheatsheet.pdf)
+- [正規表現のデバッグ方法](https://rubular.com/)
+- [Pythonの正規表現チュートリアル](https://docs.python.org/ja/3/howto/regex.html)

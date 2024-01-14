@@ -1,7 +1,9 @@
 ---
 title:                "Ruby recipe: Finding the length of a string"
+simple_title:         "Finding the length of a string"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/finding-the-length-of-a-string.md"
 ---
 
@@ -9,45 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a beginner in Ruby programming, it can be overwhelming to learn all the different concepts and methods. However, one basic task that you will frequently encounter when working with strings is finding the length of a string. This may seem like a simple task, but understanding how to properly find the length of a string is an essential building block in becoming proficient in Ruby.
+Have you ever wondered how computer programs are able to determine the length of a string of text? Or why this seemingly simple task is necessary in programming? As it turns out, finding the length of a string is a fundamental skill in computer programming and can be very useful in various situations. In this blog post, we will explore why and how to find the length of a string using the Ruby programming language.
 
 ## How To
 
-To find the length of a string in Ruby, you can use the `.length` or `.size` method. Let's take a look at an example:
+To find the length of a string in Ruby, we can use the `length` method. Let's take a look at a simple example:
 
 ```Ruby
-my_string = "Hello World"
-puts my_string.length
+str = "Hello, world!"
+puts str.length
+
+# Output: 13
 ```
 
-The output of this code will be `11`, which is the number of characters in the string including the space between "Hello" and "World". Similarly, you can also use the `.size` method to get the same result.
+In the example above, we first declare a variable `str` and assign it a string value of "Hello, world!" We then use the `length` method to determine the length of the string and print it out. The output we get is 13 because the string contains 13 characters, including the space and exclamation mark.
+
+We can also use the `length` method on user input. Let's say we want to create a program that counts the characters in a user's name. We can do so using this code:
 
 ```Ruby
-my_string = "Hello World"
-puts my_string.size
+puts "Please enter your name:"
+name = gets.chomp
+puts "Your name has #{name.length} characters."
 ```
 
-Another way to find the length of a string is by using the `size` method with the `to_a` method. This will convert the string into an array of characters, and then you can use the `size` method on the array to find the length.
-
-```Ruby
-my_string = "Hello World"
-puts my_string.to_a.size
-```
+In the example above, we first prompt the user to enter their name and store it in a variable `name`. Then, we use the `length` method to determine the length of the string and print it out along with a message. Give it a try by running this code in your own Ruby environment!
 
 ## Deep Dive
 
-Now that we have covered the basics of finding the length of a string, let's dive deeper into the inner workings of these methods.
+Under the surface, the `length` method is actually calling the `size` method, which in turn uses the `length` method of the underlying data structure of the string. This is just one of the many examples of the convenience and efficiency of Ruby's built-in methods. Additionally, the `length` method can be used on different data types, such as arrays and hashes, to determine the number of items in them.
 
-The `.length` and `.size` methods are both built-in methods for strings in Ruby, which means you do not need to require any additional libraries to use them. These methods work by counting the number of characters in the string, including spaces and special characters. Therefore, the return value will always be an integer.
-
-It's important to note that these methods work on Unicode strings, which means that each character in the string is counted equally regardless of the language or symbol used.
+It is worth noting that the `length` method gives the number of characters in a string, not the number of words. To count the number of words, we can use the `split` method to split the string into an array of words and then use the `length` method on the resulting array.
 
 ## See Also
-
-To learn more about working with strings in Ruby, check out the following resources:
-
-- [Ruby String Documentation](https://ruby-doc.org/core-2.7.1/String.html)
-- [Ruby Strings Tutorial on Codecademy](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-string-methods)
-- [Ruby String Basics on Ruby Guides](https://www.rubyguides.com/2018/07/ruby-string-basics/)
-
-Now that you have a better understanding of how to find the length of a string in Ruby, go ahead and practice using these methods in your own code. Keep learning and exploring the world of Ruby!
+- [Ruby String Documentation](https://ruby-doc.org/core/String.html#method-i-length)
+- [Ruby Array Documentation](https://ruby-doc.org/core/Array.html#method-i-length)
+- [Ruby Hash Documentation](https://ruby-doc.org/core/Hash.html#method-i-length)

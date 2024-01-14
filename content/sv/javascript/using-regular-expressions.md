@@ -1,54 +1,39 @@
 ---
-title:                "Javascript: Användning av reguljära uttryck"
+title:                "Javascript: Att använda reguljära uttryck"
+simple_title:         "Att använda reguljära uttryck"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför: Användning av reguljära uttryck i Javascript
+## Varför använda reguljära uttryck?
 
-Reguljära uttryck är ett kraftfullt verktyg som kan användas för att söka och matcha textmönster i en sträng i Javascript. Dessa uttryck kan användas för att filtrera och manipulera textdata på ett effektivt sätt. Genom att använda reguljära uttryck kan du optimera din kod och göra den mer läsbar och effektiv.
+Reguljära uttryck är en kraftfull uppfinning inom webbutveckling som hjälper till att söka och matcha specifika mönster i en textsträng. Genom att använda reguljära uttryck kan du på ett effektivt sätt validera användarinput, söka igenom stora datamängder och ersätta delar av en textsträng med annan text. Det är ett oumbärligt verktyg för att hantera och manipulera text i JavaScript-kod.
 
-## Så här använder du reguljära uttryck i Javascript
+## Hur man använder reguljära uttryck
 
-För att använda reguljära uttryck, måste du först deklarera ett reguljärt uttryck objekt och sedan använda dess metoder för att söka och matcha strängar. Här är ett exempel på hur man söker efter en specifik fras i en textsträng:
-
-```Javascript
-let text = "Det var en gång en hackare som kodade reguljära uttryck.";
-let pattern = /reguljära uttryck/; // deklarera uttrycket
-let result = pattern.exec(text); // sök efter matchningen
-console.log(result[0]); // output: "reguljära uttryck"
-```
-
-I detta exempel använde vi objektmetoden `exec()` för att söka efter en matchning av uttrycket i strängen. Detta returnerar en array med alla matchningar som hittats, i detta fall bara en matchning.
-
-Du kan också använda reguljära uttryck för att ersätta text i en sträng. I följande exempel ersätter vi alla förekomster av ordet "hackare" med "utvecklare":
+För att använda reguljära uttryck i JavaScript måste du först skapa ett RegExp-objekt. Detta kan göras genom att antingen använda en reguljär uttrycksliteral med ett framåtsnedstreck (`/`) eller genom att använda RegExp-konstruktorn. Låt oss ta en titt på ett exempel som matchar en e-postadress i en textsträng:
 
 ```Javascript
-let text = "Det var en gång en hackare som kodade reguljära uttryck.";
-let pattern = /hackare/; // deklarera uttrycket
-let result = text.replace(pattern, "utvecklare"); // ersätt matchningar
-console.log(result); // output: "Det var en gång en utvecklare som kodade reguljära uttryck."
+let emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+)/;
+let text = "Kontakta mig på john@example.com för mer information.";
+let match = text.match(emailRegex);
+console.log(match[0]); // john@example.com
 ```
 
-## Djupdykning: Tips för att effektivt använda reguljära uttryck
+I exemplet ovan skapar vi ett RegExp-objekt som matchar den vanligaste typen av e-postadresser. Vi använder sedan metoden `match()` för att söka efter en matchning i `text`-variabeln och få ut en referens till själva matchen i `match`-variabeln. I vårt fall kommer detta att vara e-postadressen i textsträngen.
 
-Här är några tips för att förbättra användningen av reguljära uttryck i din Javascript-kod:
+Men reguljära uttryck kan även användas för att göra mer avancerade matchingar och ersättningar. Till exempel kan du matcha alla ord i en textsträng som börjar med en viss bokstav eller innehåller ett visst ord. Det finns många olika reguljära uttrycksmönster att utforska och det är en bra idé att prova olika variationer för att bli bekväm med dem.
 
-- Använd `g` modifier för att söka efter alla matchningar i en sträng.
-- Använd `i` modifier för att göra sökningen fall-ignorant.
-- Använd karaktärsklasser för att matcha en grupp av tecken, t.ex. `[a-z]` för alla små bokstäver.
-- Använd `*` för att matcha ett eller flera förekomster av ett tecken eller ett uttryck.
-- Använd `+` för att matcha ett eller flera förekomster av ett tecken eller ett uttryck, men utan att matcha en tom sträng.
-- Använd `?` för att göra ett tecken eller ett uttryck tillvalt.
-- Använd `^` för att matcha början av en sträng.
-- Använd `$` för att matcha slutet av en sträng.
+## Djupdykning i reguljära uttryck
 
-Det finns många fler modifierare och symboler som du kan använda för att skräddarsy dina reguljära uttryck för olika situationer. Det bästa sättet att lära sig använda reguljära uttryck effektivt är genom att öva och experimentera med dem.
+Utöver grundläggande användning kan reguljära uttryck även användas för att kategorisera och kvantifiera mönster, vilket gör dem ännu kraftfullare. Till exempel kan du matcha en viss mängd bokstäver, siffror eller tecken med hjälp av kvantifierare som `+` (en eller fler), `*` (noll eller fler) och `?` (noll eller en). Du kan även använda karaktärsklasser som `[a-z]` för att matcha alla små bokstäver och `[0-9]` för att matcha alla siffror i en textsträng. Det finns många olika metakaraktärer och specialsekvenser som kan användas för att göra mer avancerade matchningar och ersättningar. För mer information kan du kolla in [denna guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) från Mozilla Developer Network.
 
-## Se också
+## Se även
 
-- [Reguljära uttryck i Javascript](https://developer.mozilla.org/sv/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Regex101](https://regex101.com/) - en användbar webbplats för att testa och experimentera med reguljära uttryck.
+- [RegExp reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- [Regular expressions for beginners](https://www.w3schools.com/js/js_regexp.asp)
+- [Regular expressions cheatsheet](https://www.debuggex.com/cheatsheet/regex/javascript)

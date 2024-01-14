@@ -1,70 +1,51 @@
 ---
-title:                "Haskell: Capitalización de una cadena"
+title:                "Haskell: Capitalizar una cadena"
+simple_title:         "Capitalizar una cadena"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/haskell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué capitalizar una cadena en Haskell?
+## ¿Por qué capitalizar una cadena de texto en Haskell?
 
-Capitalizar una cadena en Haskell es un proceso bastante común al trabajar con cadenas de texto. La capitalización consiste en convertir la primera letra de cada palabra en mayúscula, lo que puede ser útil para mejorar la legibilidad o para cumplir con ciertos estándares de formato. En esta publicación, aprenderemos cómo capitalizar una cadena en Haskell y profundizaremos en los conceptos detrás de este proceso.
+A menudo, al trabajar con lenguajes de programación, nos encontramos con la necesidad de modificar un string para que tenga un aspecto específico. En el caso de Haskell, la capitalización de una cadena es una práctica común para mejorar la presentación de datos y facilitar su lectura.
 
-## Cómo hacerlo
+## Cómo hacerlo en Haskell
 
-Hay varias formas de capitalizar una cadena en Haskell, pero una de las más comunes es utilizando la función `toUpper` del módulo `Data.Char`. Esta función toma un carácter como entrada y devuelve el mismo carácter en mayúscula.
-
-```Haskell
-import Data.Char (toUpper)
-
-toUpper 'a' -- devuelve 'A'
-```
-
-Para capitalizar una cadena completa, podemos utilizar la función `map` para aplicar la función `toUpper` a cada carácter de la cadena.
+Para capitalizar una cadena en Haskell, podemos utilizar la función `toUpper` del módulo `Data.Char`. Esta función recibe como parámetro un carácter y devuelve su versión en mayúscula. Podemos aplicar `toUpper` a cada uno de los caracteres de la cadena utilizando la función `map`.
 
 ```Haskell
-import Data.Char (toUpper)
+import Data.Char
 
-capitalize :: String -> String
-capitalize str = map toUpper str
-
-capitalize "hola mundo" -- devuelve "HOLA MUNDO"
+-- función que capitaliza una cadena
+capitalizeString :: String -> String
+capitalizeString = map toUpper
 ```
 
-Otra opción es utilizar la función `unwords` junto con `map` para capitalizar cada palabra en una cadena.
+Veamos ahora un ejemplo de cómo se utiliza esta función:
 
-```haskell
-import Data.Char (toUpper)
-
-capitalizeWords :: String -> String
-capitalizeWords str = unwords $ map capitalize $ words str
-
-capitalizeWords "hola mundo" -- devuelve "Hola Mundo"
+```Haskell
+ghci> capitalizeString "hola mundo"
+"HOLA MUNDO"
 ```
 
-## Profundizando en la capitalización de cadenas
+Como podemos ver, nuestra función `capitalizeString` toma una cadena en minúsculas y devuelve una cadena en mayúsculas. También podemos aplicar esta función a cadenas que contengan caracteres especiales:
 
-Como podemos ver en los ejemplos anteriores, capitalizar una cadena en Haskell es una tarea relativamente sencilla. Sin embargo, es importante tener en cuenta que la función `toUpper` solo funciona para caracteres individuales y no para cadenas completas.
-
-Por lo tanto, al aplicarla a una cadena, primero debemos separarla en una lista de caracteres y luego volver a unirlos después de aplicar la función `toUpper`. Además, debemos tener en cuenta la codificación de caracteres utilizada en nuestra cadena, ya que puede afectar el resultado de la función `toUpper`.
-
-También podemos aprovechar las ventajas de la programación funcional para crear una función más general que pueda capitalizar cualquier letra en una cadena. Por ejemplo, podemos utilizar la función `zipWith` para combinar dos listas y aplicar una función a cada par de elementos.
-
-```haskell
-import Data.Char (isLower, toUpper)
-
-capitalize :: String -> String
-capitalize str = zipWith toCapitalize str [0..]
-    where toCapitalize char index = if index == 0 || (isLower char) then toUpper char else char
-
-capitalize "hola mundo" -- devuelve "Hola Mundo"
+```Haskell
+ghci> capitalizeString "¡hola mundo!"
+"¡HOLA MUNDO!"
 ```
 
-En este ejemplo, utilizamos la función `isLower` para determinar si un carácter es una letra minúscula y la condición del `if` para asegurarnos de que solo se capitalice la primera letra de cada palabra.
+## Profundizando en la capitalización de cadenas en Haskell
+
+La función `capitalizeString` que hemos creado sólo funciona para cadenas que contienen caracteres ASCII. Sin embargo, Haskell nos ofrece herramientas para manejar cadenas con caracteres Unicode, como la función `toUpper` del módulo `Data.Text`, que soporta caracteres de diferentes lenguajes.
+
+También es importante mencionar que, al utilizar la función `map` para aplicar `toUpper` a cada carácter de una cadena, estamos generando una nueva cadena en mayúsculas y dejando la original intacta en memoria. En cambio, si utilizamos la función `map` del módulo `Data.Text`, que funciona con estructuras más eficientes, podemos modificar la cadena original sin necesidad de crear una nueva.
 
 ## Ver también
 
-- [Funciones de caracteres en Haskell](https://www.haskell.org/tutorial/characters.html)
-- [Funciones de listas en Haskell](https://www.haskell.org/tutorial/characters.html)
-- [Aprenda Haskell en 10 minutos](https://wiki.haskell.org/Learn_Haskell_in_10_minutes)
+- [Documentación del módulo `Data.Char` en Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+- [Documentación del módulo `Data.Text` en Haskell](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)

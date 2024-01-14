@@ -1,83 +1,37 @@
 ---
-title:                "Haskell: Zapisywane dużymi literami łańcucha"
+title:                "Haskell: Zmiana wielkości liter w ciągu znaków"
+simple_title:         "Zmiana wielkości liter w ciągu znaków"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-**Dlaczego**
+# ## Dlaczego
 
-Cześć czytelnicy! Dziś chcę podzielić się z Wami pewnym ciekawym zagadnieniem w języku Haskell - jak zamieniać pierwszą literę w ciągu znaków na wielką literę. Może nie wydaje się to niczym spektakularnym, ale czasem taki prosty zabieg może ułatwić nam pracę programistyczną lub usprawnić wygląd naszego kodu. Zapraszam do lektury!
+Jeśli jesteś programistą Haskell, pewnie zastanawiasz się, dlaczego kiedykolwiek chciałbyś zmienić wielkość liter w ciągu znaków. Cóż, istnieje wiele powodów dla których mógłbyś tego potrzebować. Może chcesz podkreślić ważne słowa w swoim tekście, albo dostosować wyświetlanie informacji na ekranie. Niezależnie od przyczyny, nauka jak zmienić wielkość liter w Haskell jest wiedzą, którą warto posiąść.
 
-**Jak to zrobić**
+ # ## Jak to zrobić
 
-Zacznijmy od tego, że w Haskellu ciągi znaków są traktowane jako listy znaków. Dzięki temu mamy dostęp do wielu funkcji, które działają na listach i mogą nam pomóc w zamienianiu liter na duże. Jedną z takich funkcji jest `toUpper`, która zamienia znak na dużą literę.
+Aby zmienić wielkość liter w ciągu znaków, użyj funkcji `toUpper` lub `toLower`. Oba te funkcje przyjmują pojedynczy znak i zwracają jego odpowiednik w odpowiedniej wielkości liter. Przykładowo, aby zmienić wszystkie litery w ciągu na wielkie, możesz użyć funkcji `map` wraz z funkcją `toUpper`. Oto przykładowy kod:
 
 ```Haskell
-import Data.Char (toUpper)
+import Data.Char
 
 capitalize :: String -> String
-capitalize [] = [] // jeśli lista jest pusta, zwracamy pustą listę
-capitalize (x:xs) = toUpper x : xs // zamieniamy pierwszy znak na dużą literę i dołączamy resztę listy 
+capitalize str = map toUpper str
 ```
 
-Przykładowe wywołanie tej funkcji wyglądałoby tak:
+Wywołując funkcję `capitalize` na tekście "haskell", otrzymasz wynik "HASKELL". Podobnie, aby zmienić wszystkie litery na małe, możesz użyć funkcji `toLower`.
 
-```Haskell
-capitalize "haskell" 
-```
+ # ## Głębsze wgląd
 
-Output:
-```Haskell
-"Haskell"
-```
+Jeśli chcesz poznać bardziej zaawansowane sposoby zmiany wielkości liter, możesz rozważyć użycie funkcji `capitalizeFirst` lub `capitalizeWords` z pakietu `text`. Funkcja `capitalizeFirst` zmienia tylko pierwszą literę w ciągu na wielką, natomiast `capitalizeWords` zmienia pierwszą literę każdego słowa. Innym sposobem jest użycie funkcji `toTitle` z pakietu `stringprep`, która zmienia na wielkie litery wszystkie wyrazy w ciągu, poza wyrazami znajdującymi się pomiędzy apostrofami.
 
-Proste, prawda? A co jeśli chcemy zamienić na dużą nie tylko pierwszą literę, ale również każdą kolejną literę w ciągu? W takim przypadku możemy wykorzystać funkcję `map`, która wywoła daną funkcję na każdym elemencie listy.
+ # ## Zobacz też
 
-```Haskell
-import Data.Char (toUpper)
-
-capitalizeAll :: String -> String
-capitalizeAll = map toUpper // skrócony zapis funkcji
-```
-
-Przykładowe wywołanie:
-
-```Haskell
-capitalizeAll "haskell" 
-```
-
-Output:
-```Haskell
-"HASKELL"
-```
-
-**Deep dive**
-
-Istnieją również inne metody zamieniania liter na duże w Haskellu. Jedną z nich jest użycie notacji `{}` wraz z funkcją `map`, która umożliwia wywoływanie wielu funkcji na raz.
-
-```Haskell
-import Data.Char (toUpper)
-
-capitalizeAll :: String -> String
-capitalizeAll = map $ toUpper . toUpper
-```
-
-Dodatkowo, jeśli chcemy mieć pewność, że nasze ciągi znaków są bezpieczne i nie zawierają znaków, których nie chcemy zamieniać, możemy wykorzystać funkcję `filter`, która wybierze tylko odpowiednie znaki do zmiany.
-
-```Haskell
-import Data.Char (toUpper, isLetter)
-
-capitalizeSafe :: String -> String
-capitalizeSafe = map toUpper . filter isLetter
-```
-
-Oczywiście to tylko jedne z wielu możliwości, jakie daje nam funkcjonalny język Haskell. Zachęcam do eksperymentowania i odkrywania nowych sposobów na ten proste, ale przydatne zadanie.
-
-**Zobacz również**
-
-- [Funkcja `toUpper` z pakietu *Data.Char*](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html#v:toUpper)
-- [Funkcja `map` z pakietu *Data.List*](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#v:map)
-- [Funkcja `filter` z pakietu *Data.List*](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#v:filter)
+- [Dokumentacja funkcji toUpper i toLower](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html#v:toUpper)
+- [Funkcje z pakietu text do zmieniania wielkości liter](https://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text-CaseConversion.html)
+- [Funkcja toTitle z pakietu stringprep](https://hackage.haskell.org/package/stringprep-1.1.1/docs/Data-StringPrep-Prop-W4-NamePrep-CaseFolding.html)

@@ -1,44 +1,47 @@
 ---
-title:                "TypeScript: Calculando uma data no futuro ou passado"
+title:                "TypeScript: Calculando uma data no futuro ou passado."
+simple_title:         "Calculando uma data no futuro ou passado."
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por quê
 
-Algumas vezes precisamos calcular uma data no futuro ou no passado em nossos programas TypeScript. Isso pode ser necessário para agendar tarefas ou para calcular o tempo desde uma determinada data. Felizmente, com o TypeScript, calcular datas é bastante simples e direto.
+Calcular uma data no futuro ou no passado pode ser uma tarefa útil em muitas aplicações, como por exemplo em um calendário ou em uma reserva de viagem. É importante entender como fazê-lo para que você possa escrever códigos eficientes e precisos.
 
 ## Como fazer
 
-Vamos começar com um exemplo básico de como calcular uma data futura. Suponha que queremos saber qual será a data daqui a 7 dias a partir de hoje. Podemos usar a função `Date` do TypeScript para criar um novo objeto de data e adicionar 7 dias a ele usando o método `getDate()`:
+Para calcular uma data no futuro ou no passado em TypeScript, é necessário utilizar a classe `Date` e seus métodos `getDate()`, `getMonth()` e `getFullYear()` para obter os valores atuais de uma data. Em seguida, podemos utilizar o método `setFullYear()` para definir um novo ano, `setMonth()` para definir um novo mês e `setDate()` para definir um novo dia. 
+
+Por exemplo, se queremos calcular uma data 3 anos no futuro, podemos fazer da seguinte maneira:
 
 ```TypeScript
-let today = new Date();
-let futureDate = new Date(today.getDate() + 7);
-console.log(futureDate);
-// Output: Sun Apr 26 2020 19:21:38 GMT-0700 (Pacific Daylight Time)
+let dataAtual = new Date(); // Obtém a data atual
+dataAtual.setFullYear(dataAtual.getFullYear() + 3); // Define o ano para 3 anos no futuro
+console.log(`Data daqui a 3 anos: ${dataAtual}`); // Saída: Data daqui a 3 anos: Sun Sep 26 2021 15:16:09 GMT-0300 (Horário Padrão de Brasília)
 ```
 
-Podemos também calcular uma data no passado, subtraindo dias em vez de adicioná-los:
+Da mesma forma, se queremos calcular uma data 2 meses e 5 dias no passado, podemos utilizar os métodos `setMonth()` e `setDate()`:
 
 ```TypeScript
-let today = new Date();
-let pastDate = new Date(today.getDate() - 14);
-console.log(pastDate);
-// Output: Tue Apr 07 2020 19:24:29 GMT-0700 (Pacific Daylight Time)
+let dataAtual = new Date(); // Obtém a data atual
+dataAtual.setMonth(dataAtual.getMonth() - 2); // Define o mês para 2 meses atrás
+dataAtual.setDate(dataAtual.getDate() - 5); // Define o dia para 5 dias atrás
+console.log(`Data de 2 meses e 5 dias atrás: ${dataAtual}`); // Saída: Data de 2 meses e 5 dias atrás: Thu Jul 16 2020 15:16:09 GMT-0300 (Horário Padrão de Brasília)
 ```
 
-Também é importante notar que o método `getDate()` retorna a data atual como um número, então podemos adicionar ou subtrair esse número para calcular datas dentro do mesmo mês. No entanto, se quisermos calcular datas em meses diferentes, precisamos usar outros métodos, como `setMonth()` ou `setFullYear()`.
+## Mergulho profundo
 
-## Mergulho Profundo
+Além dos métodos mencionados acima, a classe `Date` também possui outros métodos úteis para realizar cálculos de datas, como por exemplo `getTime()`, que retorna o número de milissegundos desde 1 de janeiro de 1970, e `setTime()`, que permite configurar uma data utilizando esse valor em milissegundos.
 
-Por baixo dos panos, o TypeScript usa o objeto `Date` padrão do JavaScript para realizar cálculos de datas. Esse objeto oferece uma variedade de métodos para manipular datas, como `setDate()` e `setFullYear()`. Além disso, o TypeScript também fornece uma forma mais confiável de trabalhar com datas, validando automaticamente dados inválidos e suportando fusos horários diferentes.
+Outro conceito importante para entender ao calcular datas é o `Time Zone` (fuso horário), que pode afetar o resultado final dependendo da localização do usuário. Portanto, é importante sempre levar em conta o `Time Zone` ao trabalhar com datas e certificar-se de utilizar o formato UTC ao armazenar dados.
 
 ## Veja também
 
-- [Documentação oficial do TypeScript sobre Date](https://www.typescriptlang.org/docs/handbook/declaration-files/by-example.html#working-with-other-javascript-libraries)
-- [Artigo sobre como trabalhar com datas no TypeScript](https://blog.shovonhasan.com/using-javascript-date-object-in-typescript/)
-- [Um guia completo para manipulação de datas no TypeScript](https://dev.to/aralroca/a-guide-to-date-and-time-manipulation-in-typescript-1lib)
+- Documentação oficial do TypeScript sobre a classe `Date`: https://www.typescriptlang.org/docs/handbook/classes.html#classes
+- Tutorial sobre manipulação de datas em TypeScript: https://www.educba.com/typescript-date/
+- Livro "TypeScript: A Angular Developer's Guide" do autor Yakov Fain - capítulo sobre `Date` e `Time Zone`: https://www.manning.com/books/typescript-angula

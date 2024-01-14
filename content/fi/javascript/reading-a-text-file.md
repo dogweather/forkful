@@ -1,45 +1,59 @@
 ---
-title:                "Javascript: Tiedostotiedoston lukeminen"
+title:                "Javascript: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi lukea tiedostoa Javascript-ohjelmointia varten?
 
-Tiedostojen lukeminen on olennainen osa ohjelmoinnin maailmaa, ja se voi olla tarpeen monissa tilanteissa. Lukemalla tiedostoja voit saada tarvittavia tietoja ja käsitellä niitä edelleen oman ohjelmasi sisällä. Tässä artikkelissa opit, miten voit lukea tekstiä sisältäviä tiedostoja käyttäen Javascriptiä.
+Tiedostojen lukeminen on tärkeä osa ohjelmointia, sillä se antaa mahdollisuuden käsitellä suuria määriä dataa sekä tallentaa ja lukea tiedostoja. Tämä on oleellista esimerkiksi silloin, kun halutaan tallentaa käyttäjän syöttämiä tietoja tai lukea ulkoisia resursseja, kuten kuva- tai tekstitiedostoja.
 
-## Miten
+## Kuinka lukea tekstitiedostoa Javascriptillä?
 
-```Javascript
-const fs = require('fs'); // tuo "fs" moduuli
-const data = fs.readFileSync('tiedostonimi.txt', 'utf8'); // lataa ja lue tiedoston sisältö
-
-console.log(data); // tulostaa tiedoston sisällön konsoliin
-```
-
-Tämä yksinkertainen esimerkki käyttää Node.js:n tarjoamaa "fs" moduulia, joka tarjoaa tarvittavat toiminnot tiedostojen lukemiseen. Ensimmäisellä rivillä tuomme em. moduulin ja tallennamme sen muuttujaan "fs". Seuraavaksi käytämme "fs"-muuttujaa "readFileSync" -funktion kautta, joka lukee tiedoston sisällön ja tallentaa sen "data"-muuttujaamme. Lopuksi tulostamme tiedoston sisällön konsoliin, jotta voimme nähdä sen.
+Tiedostojen lukeminen Javascriptillä onnistuu käyttäen Node.js:ää tai selainpohjaista JS-ympäristöä. Seuraavassa on esimerkki koodista, jolla voit lukea ja tulostaa tekstitiedoston sisällön selainkonsolille:
 
 ```Javascript
-const fs = require('fs'); // tuo "fs" moduuli
-const data = fs.readFileSync('tiedostonimi.txt', 'utf8'); // lataa ja lue tiedoston sisältö
+// Luodaan uusi XMLHttpRequest-olio
+var xhr = new XMLHttpRequest();
 
-data.split('\n').forEach(function(line) { // pilkkoo tiedoston sisällön riveiksi ja loopataan läpi jokainen rivi
-    console.log(line); // tulostaa yhden rivin kerrallaan
-});
+// Määritetään tapahtumankäsittelijä saadulle vastaukselle
+xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        // Tulostetaan vastauksen tekstisisältö konsolille
+        console.log(xhr.responseText);
+    }
+};
+
+// Avataan yhteys ja lähetetään GET-pyyntö tiedostolle
+xhr.open("GET", "esimerkki.txt", true);
+xhr.send();
+```
+Esimerkkitiedosto "esimerkki.txt" sisältää esimerkkitekstiä, ja tämä koodi lukee sen ja tulostaa konsolille sen sisällön.
+
+## Syväsukellus tiedostojen lukemiseen
+
+Tiedostojen lukeminen voidaan toteuttaa myös käyttäen Node.js:ää ja sen sisäänrakennettua "fs" moduulia. Tämä mahdollistaa tiedoston lukemisen ja sisällön käsittelyn suoraan Javascript-tiedoston sisällä, esimerkiksi seuraavalla tavalla:
+
+```Javascript
+// Vaaditaan fs-moduuli
+const fs = require('fs');
+
+// Luetaan tiedoston sisältö muuttujaan
+var sisalto = fs.readFileSync('esimerkki.txt', 'utf8');
+
+// Tulostetaan sisältö konsolille
+console.log(sisalto);
 ```
 
-Tämä toinen esimerkki näyttää, miten voit käsitellä tiedoston sisältöä ja tehdä siitä enemmän kuin vain tulostaa sen konsoliin. Käytämme samaa koodia kuin ensimmäisessä esimerkissä, mutta tällä kertaa kutsutaan "split" -funktiota, joka jakaa tiedoston sisällön riviksi "\n" -merkin kohdalta. Tämän jälkeen käytämme "forEach" -funktiota loopataksemme läpi jokaisen rivin ja tulostamme sen konsoliin.
-
-## Syvällinen sukellus
-
-Tiedostojen lukeminen sisältää paljon muutakin kuin vain pelkän sisällön tulostamisen. Voit esimerkiksi käyttää "fs" moduulia myös tekemään muutoksia tiedostoon, kuten kirjoittamaan uutta sisältöä tai poistamaan vanhaa. Voit myös käyttää erilaisia funktioita, kuten "existsSync", joka antaa tiedon, onko haluamasi tiedosto olemassa vai ei. On myös huomioitava, että eri ohjelmointikielimillä on erilaisia tapoja lukea tiedostoja, joten kannattaa tutustua omaan kieliisi erilaisiin toimintoihin.
-
-Markdown teksti, jota luet juuri nyt, on myös yksi tapa kirjoittaa tekstejä ja dokumentoida koodia. Kannattaa tutustua myös Markdowniin ja opetella sen käyttöä.
+Tämä esimerkki lukee "esimerkki.txt" tiedoston sisällön ja tallentaa sen muuttujaan nimeltä "sisalto". Sen jälkeen se tulostaa sisällön konsolille.
 
 ## Katso myös
 
-- [Node.js "fs" moduulin dokumentaatio](https://nodejs.org/api/fs.html)
-- [Markdown ohjeet](https://www.markdownguide.org/)
+- [Node.js dokumentaatio](https://nodejs.org/en/docs/)
+- [XMLHttpRequest-olio](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- [fs-moduuli](https://nodejs.org/api/fs.html)

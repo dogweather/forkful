@@ -1,7 +1,9 @@
 ---
 title:                "Bash recipe: Checking if a directory exists"
+simple_title:         "Checking if a directory exists"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/checking-if-a-directory-exists.md"
 ---
 
@@ -9,64 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a programmer, it is common to encounter situations where you need to check if a directory exists before performing certain operations. This is important because your code should be able to handle different scenarios, including when the directory you need does not exist.
+If you're a programmer who works with Bash, there may come a time when you need to check if a directory exists. This could be useful, for example, in a script that needs to create a new directory only if the specified directory does not already exist.
 
 ## How To
 
-To check if a directory exists in Bash, there are a few options to choose from depending on your requirements. One way is to use the ```-d``` flag with the ```test``` command. This command checks if a given path is a directory or not, and returns a boolean value.
+To check if a directory exists in Bash, we can use the ```-d``` flag with the ```test``` command. The syntax would look like this:
 
-```
-if test -d /path/to/directory; then
-  echo "The directory exists!"
+```Bash
+if [ -d <directory_path> ]; then
+  echo "Directory exists!"
 else
-  echo "The directory does not exist."
+  echo "Directory does not exist!"
 fi
 ```
 
-Another way is to use the ```-e``` flag with the ```test``` command, which checks if the given path exists or not. This can be useful since directories are also considered as files in Linux.
+Let's break down what's happening here. The ```test``` command is used to evaluate conditions and return a status code. The ```-d``` flag specifically checks if the given path is a directory. So, if the directory exists, the status code will be 0 (True) and the first statement will be executed. If the directory does not exist, the status code will be 1 (False) and the second statement will be executed.
+
+Here's a sample output for a directory that exists:
 
 ```
-if test -e /path/to/directory; then
-  echo "The directory exists!"
-else
-  echo "The directory does not exist."
+Directory exists!
+```
+
+And here's a sample output for a directory that does not exist:
+
+```
+Directory does not exist!
+```
+
+You can also include this check in a conditional and use it to perform other actions, such as creating the directory if it doesn't exist. Here's an example:
+
+```Bash
+if [ ! -d <directory_path> ]; then
+  mkdir <directory_path>
+  echo "Directory created!"
 fi
 ```
 
-You can also use the ```-d``` flag with the ```[``` built-in command, which is essentially the same as using the ```test``` command.
-
-```
-if [ -d /path/to/directory ]; then
-  echo "The directory exists!"
-else
-  echo "The directory does not exist."
-fi
-```
-
-Lastly, you can use the ```-d``` flag with the ```[[``` keyword, which is a more modern and powerful version of the ```[``` command and supports some additional features.
-
-```
-if [[ -d /path/to/directory ]]; then
-  echo "The directory exists!"
-else
-  echo "The directory does not exist."
-fi
-```
+In this case, the ```!``` operator before the ```-d``` flag negates the condition, so the statement will only be executed if the directory does not exist.
 
 ## Deep Dive
 
-Behind the scenes, the ```-d``` and ```-e``` flags work by checking the given path against the filesystem's inode table. If the path exists and is a directory, it will return a successful exit code (0), otherwise, it will return an error code (1).
+Behind the scenes, the ```-d``` flag with the ```test``` command actually checks for the existence of a directory file descriptor. It does this by using a system call (```stat()``` in Linux) to retrieve information about the file. If the retrieved information indicates that the file is a directory, then the directory exists.
 
-It is worth noting that symbolic links to directories will also return a successful exit code, so if you specifically want to check for a *regular* directory, you may need to use the ```-d``` flag with the ```readlink``` command to follow any symbolic links and then compare the output.
+It's worth noting that the ```-d``` flag will also return 0 for symbolic links that point to directories. So if you need to check for the actual existence of a directory, you may need to add an additional check using the ```-L``` flag to exclude symbolic links. The syntax would look like this:
 
-```
-if [[ $(readlink -f /path/to/link) == /path/to/directory ]]; then
-  echo "The link points to a regular directory!"
+```Bash
+if [ -d <directory_path> ] && [ ! -L <directory_path> ]; then
+  # Do something
 fi
 ```
 
 ## See Also
 
-- [Bash Manual - Conditional Expressions](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Conditional-Expressions)
-- [Linux Shell Scripting Tutorial - File Test Operators](https://www.shellscript.sh/test.html)
-- [BashTutorial.net - Testing in Bash](https://www.bashtutorial.net/special-variables/shell-test-operators.html)
+- [Bash test command documentation](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
+- [Linux stat system call documentation](https://man7.org/linux/man-pages/man2/stat.2.html)

@@ -1,7 +1,9 @@
 ---
-title:                "Java: Ein Datum in der Zukunft oder Vergangenheit berechnen"
+title:                "Java: Berechnung eines Datums in der Zukunft oder Vergangenheit."
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit."
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,42 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Berechnung von zukünftigen oder vergangenen Daten ist eine wichtige Fähigkeit in der Programmierung, die in vielen Anwendungsfällen benötigt wird. Es ermöglicht uns, präzise Zeiten für Aufgaben, Ereignisse oder Prozesse zu planen und zu verwalten.
+Das Berechnen von zukünftigen oder vergangenen Datumswerten ist ein wichtiger Teil der Programmierung, der in vielen Anwendungsfällen erforderlich ist. Zum Beispiel können Sie Daten in einer Anwendung nach einem bestimmten Zeitraum filtern oder ein automatisiertes System erstellen, das Erinnerungen für bevorstehende Termine sendet. In diesem Blog-Beitrag werden wir uns ansehen, wie man mit Java einfach Datumswerte in der Zukunft oder Vergangenheit berechnet.
 
-## Wie man es macht
+## Wie geht das
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die `LocalDate` Klasse aus der Java 8 Date and Time API verwenden. Zuerst müssen wir ein heutiges Datum festlegen, indem wir die `now()` Methode aufrufen:
-
-```Java
-LocalDate today = LocalDate.now();
-```
-
-Dann können wir mithilfe der `plus()` und `minus()` Methoden ein zukünftiges bzw. vergangenes Datum berechnen. Zum Beispiel, um 4 Tage in die Zukunft zu berechnen, können wir Folgendes tun:
+Die Klasse `LocalDate` aus dem Java 8 Paket `java.time` macht die Arbeit der Berechnung von Datumswerten extrem einfach. Um ein zukünftiges Datum zu berechnen, können Sie die `plus` Methode verwenden und eine bestimmte Anzahl von Jahren, Monaten, Tagen und sogar Wochen angeben. Zum Beispiel:
 
 ```Java
-LocalDate futureDate = today.plusDays(4);
+// Zwei Jahre in die Zukunft berechnen
+LocalDate zukunft = LocalDate.now().plusYears(2);
+
+// Ein Monat und eine Woche in die Zukunft berechnen
+LocalDate zukunft = LocalDate.now().plusMonths(1).plusWeeks(1);
 ```
 
-Auf ähnliche Weise können wir ein Datum in der Vergangenheit berechnen, indem wir die `minus()` Methode verwenden. Zum Beispiel, um 2 Monate in der Vergangenheit zu berechnen, können wir Folgendes tun:
+Um ein Datum in der Vergangenheit zu berechnen, können Sie die `minus` Methode mit denselben Parametern verwenden. Sehen wir uns ein Beispiel an:
 
 ```Java
-LocalDate pastDate = today.minusMonths(2);
+// Ein Jahr und drei Monate in die Vergangenheit berechnen
+LocalDate vergangenheit = LocalDate.now().minusYears(1).minusMonths(3);
+
+// Sie können auch negative Werte angeben, um in die Vergangenheit zu gehen
+LocalDate vergangenheit = LocalDate.now().minusWeeks(-2);
 ```
 
-Wir können auch andere Zeitangaben wie Stunden, Wochen oder Jahre verwenden, um die Berechnung durchzuführen.
-
-## Tiefergehende Informationen
-
-Wenn wir ein detailliertes Datum mit Angaben wie Jahr, Monat und Tag berechnen möchten, können wir auch die `LocalDate.of()` Methode verwenden. Zum Beispiel, um den 20. April 2022 zu berechnen, können wir Folgendes tun:
+Es ist auch möglich, Datumsbereiche zu berechnen, indem man die `plus` oder `minus` Methode auf ein bereits berechnetes Datum anwendet. Schauen wir uns ein Beispiel dafür an:
 
 ```Java
-LocalDate specificDate = LocalDate.of(2022, 4, 20);
+// Aktuelles Datum berechnen
+LocalDate heute = LocalDate.now();
+
+// Datum für 5 Jahre in der Zukunft berechnen
+LocalDate zukunft = heute.plusYears(5);
+
+// Datumsbereich für die nächsten 30 Tage berechnen
+LocalDate in30Tagen = heute.plusDays(30);
+
+// Datumsbereich für die letzten 2 Wochen berechnen
+LocalDate vor2Wochen = heute.minusWeeks(2);
 ```
 
-Es ist auch möglich, unterschiedliche Zeitzonen und Kalendersysteme zu berücksichtigen, indem wir die entsprechenden Klassen aus der Java 8 Date and Time API verwenden.
+## Tiefergehende Analyse
+
+Die `LocalDate` Klasse enthält noch viele weitere nützliche Methoden für die Arbeit mit Datumswerten. Beispielsweise können Sie mit der `getDayOfWeek()` Methode den Wochentag eines bestimmten Datums abrufen oder mit der `isLeapYear()` Methode prüfen, ob es sich um ein Schaltjahr handelt.
+
+Es ist auch möglich, ein Datum aus einer Zeichenkette zu parsen und in ein `LocalDate` Objekt umzuwandeln. Hier ist ein Beispiel:
+
+```Java
+// Datum aus einer Zeichenkette parsen
+String datumZeichenkette = "2021-12-31";
+LocalDate datum = LocalDate.parse(datumZeichenkette);
+
+// Das Datum ist jetzt ein LocalDate Objekt
+// Sie können nun die oben genannten Methoden anwenden
+```
+
+Abschließend ist es wichtig zu beachten, dass das Berechnen von Datumswerten keine triviale Aufgabe ist und es auch Abweichungen in verschiedenen Zeitzonen und Kalendersystemen geben kann. Es ist daher immer ratsam, die Dokumentation der `LocalDate` Klasse und des `java.time` Pakets zu konsultieren, um genau zu verstehen, wie diese Berechnungen durchgeführt werden.
 
 ## Siehe auch
 
-- [Offizielle Dokumentation von Java 8 zu Date and Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Tutorial zu Datum und Zeit in Java 8](https://www.baeldung.com/java-8-date-time-intro)
-- [Java-Dokumentation zu LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java 8 `LocalDate` Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java 8 `java.time` Paket Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Java 8 Datum und Uhrzeit Tutorial](https://docs.oracle.com/javase/tutorial/datetime/overview/index.html)

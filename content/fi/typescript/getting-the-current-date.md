@@ -1,82 +1,40 @@
 ---
-title:                "TypeScript: Nykyisen päivämäärän hakeminen"
+title:                "TypeScript: Nykyisen päivämäärän hakeminen."
+simple_title:         "Nykyisen päivämäärän hakeminen."
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Ehkä olet joskus miettinyt, mikä päivämäärä on tänään. Ehkä sinulla on projekti, jossa tarvitset tietoa nykyisestä päivämäärästä. Tämä ohje auttaa sinua saamaan nykyisen päivämäärän TypeScript-koodisi avulla.
+
+Aloita päiväsi TypeScriptilla! Päivämäärän hakeminen on yksi yleisimmistä ohjelmointitehtävistä ja se on erityisen hyödyllinen, kun haluat tallentaa tai näyttää tämänhetkisen päivämäärän.
 
 ## Miten
-Päivämäärän saamiseksi on olemassa useita erilaisia tapoja TypeScriptissä, mutta yksi yksinkertaisimmista on käyttää Date-objektia. Voit luoda uuden Date-objektin `new Date()`, joka antaa nykyisen päivämäärän ja ajan. Voit myös antaa halutun päivämäärän ja ajan parametreina `new Date(year, month, day, hours, minutes, seconds)`. Katso esimerkki alla olevassa koodilohkossa.
 
 ```TypeScript
-// Luo uusi Date-objekti nykyisestä päivämäärästä
-const nykyinenPaivamaara = new Date();
+// Luodaan uusi Date-olio
+const tänään: Date = new Date();
 
-// Tulosta päivämäärä konsoliin
-console.log(nykyinenPaivamaara);
+// Käytetään Date-olion metodeja saadaksemme haluttu muotoiltu päivämäärä
+console.log(tänään.getDate() + "." + (tänään.getMonth()+1) + "." + tänään.getFullYear());
+// Tulostaa esimerkiksi 22.4.2021
 
-// Luo uusi Date-objekti tiettyyn päivämäärään ja aikaan
-const tulevaPaivamaara = new Date(2021, 11, 24, 18, 30, 0);
-
-// Tulosta päivämäärä ja aika konsoliin
-console.log(tulevaPaivamaara);
+// Käytetään toista metodia saadaksemme päivämäärän ja ajan
+console.log(tänään.toLocaleString());
+// Tulostaa esimerkiksi "22.4.2021, 11:30:12"
 ```
 
-Koodin tulostama tulos olisi seuraava:
+## Syvällinen tarkastelu
 
-```
-Mon Nov 16 2020 18:04:28 GMT+0200 (Eastern European Standard Time)
-Fri Dec 24 2021 18:30:00 GMT+0200 (Eastern European Standard Time)
-```
-
-Voit myös käyttää Date-objektin erilaisia metodeita saadaksesi tarkempia tietoja päivämäärästä, kuten esimerkiksi `.getFullYear()` saadaksesi vuoden tai `.getMonth()` saadaksesi kuukauden numeron. Katso alla oleva esimerkki:
-
-```TypeScript
-// Hae vuosi nykyisestä päivämäärästä
-const vuosi = nykyinenPaivamaara.getFullYear();
-
-// Tulosta vuosi konsoliin
-console.log(vuosi);
-
-// Hae kuukauden numero (tammikuu on 0, joten lisää yksi)
-const kuukausi = nykyinenPaivamaara.getMonth() + 1;
-
-// Tulosta kuukausi konsoliin
-console.log(kuukausi);
-```
-
-Yllä olevan koodin tulostama tulos olisi seuraava:
-
-```
-2020
-11
-```
-
-## Syvimmät syövereet
-Date-objekti perustuu UTC-aikaan (Coordinated Universal Time), joka on vakioaika ympäri maailman. Kun tulostat Date-objektin konsoliin, saat tulokseksi UTC-aian. Voit kuitenkin muuntaa sen haluamaasi aikaan käyttämällä Date-objektin `.toLocaleString()`-metodia ja antamalla haluamasi aikavyöhykkeen parametrina.
-
-```TypeScript
-// Aseta päivämääräksi tulevaPaivamaara
-const nykyinenPaivamaara = tulevaPaivamaara;
-
-// Muunna päivämäärä haluttuun aikavyöhykkeeseen
-const muunnettuPaivamaara = nykyinenPaivamaara.toLocaleString('fi-FI', {timeZone: 'Europe/Helsinki'});
-
-// Tulosta muunnettu päivämäärä konsoliin
-console.log(muunnettuPaivamaara);
-```
-
-Yllä olevan koodin tulostama tulos olisi:
-
-```
-24.12.2021, 18:30:00
-```
+Päivämäärän hakeminen liittyy vahvasti Date-olion toimintaan TypeScriptissä. Date-olion avulla voit tarkastella ja muokata päivämääriä ja aikoja. Date-olion konstruktori voi ottaa parametreikseen päivämäärän, kuukauden, vuoden ja/tai ajan, mutta jos et anna sille mitään parametreja, se käyttää automaattisesti nykyhetkeä. Date-olion metodeilla voit tarkastella ja manipuloida päivämäärää ja aikaa haluamallasi tavalla. Lisätietoa Date-oliosta ja sen mahdollisuuksista voit lukea [virallisesta dokumentaatiosta.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
 ## Katso myös
-- [Date-objektin dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScriptin viralliset
+
+- [Date-olion virallinen dokumentaatio](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScriptin perusteet](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+- [Vinkkejä TypeScriptin käyttöön](https://www.freecodecamp.org/news/how-to-crush-it-in-typescript-a585cbd0437a/)
+- [JavaScriptin ajastinten käyttö Date-olion kanssa](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Timers)

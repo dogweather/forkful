@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Convertire una stringa in minuscolo"
+simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,29 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Sempre più spesso, durante la scrittura di codice Haskell, ci si trova ad avere la necessità di convertire una stringa in lettere minuscole. Questo può essere utile per confrontare stringhe in modo case-insensitive, oppure per uniformare un input da parte dell'utente.
+Ci sono molte situazioni in cui potresti aver bisogno di convertire una stringa in minuscolo durante la programmazione Haskell. Ad esempio, potresti avere una stringa di input che devi confrontare con altre stringhe o semplicemente vuoi che l'output venga visualizzato in minuscolo. Indipendentemente dal motivo, conoscere come eseguire questa operazione può essere molto utile per rendere il tuo codice più flessibile e performante.
 
-## Come Fare
+## Come fare
 
-Per convertire una stringa in lettere minuscole in Haskell, possiamo utilizzare la funzione "toLower" del modulo "Data.Char". Questa funzione accetta come parametro una singola lettera e la converte in minuscolo. Per applicare questa funzione a una stringa, possiamo utilizzare la funzione "map", che applica una determinata funzione ad ogni elemento di una lista.
+Per convertire una stringa in minuscolo in Haskell, puoi utilizzare la funzione `toLower` della libreria `Data.Char`. Ecco un esempio di codice:
 
 ```Haskell
-import Data.Char
+import Data.Char (toLower)
 
--- Definiamo una stringa di esempio 
-stringaIniziale = "TiPiCa Italia"
+main = do
+    nome <- getLine
+    let nomeMinuscolo = map toLower nome
+    putStrLn nomeMinuscolo
+```
 
--- Applichiamo la funzione "toLower" a ogni carattere della stringa 
-stringaFinale = map toLower stringaIniziale 
+Output:
 
--- Output: "tipica italia"
+```Haskell
+> Simone
+simone
 ```
 
 ## Approfondimento
 
-Ma come funziona esattamente la funzione "toLower"? In realtà, questa funzione è solamente una convenienza per la funzione "toLower" definita all'interno del modulo "Data.Char". Questa funzione accetta come parametro un carattere Unicode e lo converte in minuscolo, se possibile. In questo modo, la funzione "toLower" può essere utilizzata per qualsiasi tipo di carattere, non solo lettere dell'alfabeto, rendendola estremamente versatile.
+La funzione `toLower` è in grado di gestire sia caratteri Unicode che ASCII. Se la stringa di input contiene caratteri speciali, questi verranno mantenuti nella loro forma minuscola. Inoltre, puoi utilizzare questa funzione anche per convertire solo una parte della stringa (ad esempio, una singola parola) anziché l'intera stringa. Puoi anche combinare la funzione `toLower` con altre funzioni per eseguire operazioni più complesse, come la rimozione di caratteri non alfanumerici o la formattazione del testo.
 
-## Vedi Anche
+## Vedi anche
 
-- [Documentazione della funzione "toLower"](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toLower)
-- [Documentazione del modulo "Data.Char"](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
+- [Tutorial su Haskell](https://hackage.haskell.org/packages/rdfs/docs/techinc/tutorial-Char.html)
+- [Documentazione ufficiale di Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/base-4.14.1.0/Data-Char.html#v:toLower)
+- [Esempi pratici di utilizzo di toLower](https://stackoverflow.com/questions/27478897/how-to-implement-a-function-that-makes-all-characters-in-a-string-lowercase-in)

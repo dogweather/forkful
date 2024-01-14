@@ -1,54 +1,50 @@
 ---
 title:                "Swift: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-
-Kirjoitettaessa koodia, testien lisääminen on usein tehtävä, joka jätetään viimeiseksi. Mutta testien kirjoittaminen jo koodin luomisen alkuvaiheessa voi säästää paljon aikaa ja vaivaa myöhemmin. Testit auttavat varmistamaan, että koodi toimii oikein ja estävät mahdollisia virheitä. Ne myös helpottavat koodin hahmottamista ja ylläpitämistä. Lue lisää testien kirjoittamisesta tässä blogissa.
+Testien kirjoittaminen on tärkeä osa ohjelmointia, sillä se auttaa varmistamaan koodin toimivuuden ja vähentää virheitä. Se myös parantaa koodin luettavuutta ja ylläpidettävyyttä.
 
 ## Miten
-
-Testien kirjoittamisen aloittaminen Swiftissä on helppoa. Tässä on esimerkki, kuinka voit luoda yksinkertaisen testin funkcionaliteetille:
-
-```Swift
-func laskeSumma(_ numero1: Int, _ numero2: Int) -> Int {
-    return numero1 + numero2
-}
-
-let tulos = laskeSumma(5, 3)
-print(tulos)
-```
-
-Koodi tulostaa luvun 8, mikä on odotettu tulos. Nyt voimme luoda testin, joka vahvistaa tämän tuloksen:
+Seuraavassa esimerkissä näytämme, kuinka voit kirjoittaa yksikkötestin Swiftillä käyttäen XCTest-kirjastoa. Oletetaan, että meillä on funktio, joka laskee kahden luvun summan ja haluamme varmistaa sen toimivuuden.
 
 ```Swift
-func testLaskeSumma() {
-    let tulos = laskeSumma(5, 3)
-    assert(tulos == 8, "Tuloksen pitäisi olla 8.")
+//Luodaan testiluokka
+class TestiLuokka: XCTestCase {
+	
+	//Määritellään testifunktio
+	func testiFunktio() {
+		
+		//Määritellään syötteet
+		let luku1 = 5
+		let luku2 = 10
+		
+		//Suoritetaan funktio
+		let summa = laskeSumma(luku1: luku1, luku2: luku2)
+		
+		//Varmistetaan, että funktio palauttaa oikean tuloksen
+		XCTAssertEqual(summa, 15)
+	}
+	
+	//Funktio, jonka haluamme testata
+	func laskeSumma(luku1: Int, luku2: Int) -> Int {
+		return luku1 + luku2
+	}
 }
-
-testLaskeSumma()
 ```
 
-Kun suoritat tämän testin, sinun pitäisi nähdä konsolissa ilmoitus "Testi suoritettu onnistuneesti." Tämä tarkoittaa, että koodimuutoksesi eivät ole vaikuttaneet haluttuun lopputulokseen ja että testi toimii oikein.
+Kun suoritamme tämän testin, se palauttaa tuloksen "Testi toimi!", mikä tarkoittaa, että testi on onnistunut ja funktio toimii halutusti.
 
-## Syväsukellus
-
-Testien kirjoittaminen Swiftissä on tärkeä osa koodin laadun varmistamista. Ne auttavat estämään virheitä ja tekevät koodin ylläpidosta sujuvampaa. Testien avulla voit myös testata monimutkaisia toimintoja ja varmistaa, että kaikki reunatapaukset on otettu huomioon.
-
-Testien kirjoittamisen lisäksi on tärkeää myös varmistaa, että koodi on helposti testattavissa ja että sinulla on tehokas testausjärjestelmä. Swiftissä on käytettävissä useita testaustyökaluja, kuten Xcode ja XCTest. Nämä työkalut tarjoavat helpotusta testien kirjoittamiseen ja suorittamiseen.
+## Syvemmälle
+Testien kirjoittamisesta löytyy paljon lisätietoa verkosta, kuten hyödyllisiä vinkkejä ja suosituksia. On myös tärkeää huomata, että testien kirjoittaminen ei ole vain yksikkötestejä, vaan siihen sisältyy myös integraatiotestit ja järjestelmätestit.
 
 ## Katso myös
-
-- [Swiftin testausdokumentaatio] (https://developer.apple.com/documentation/xctest/testing_swift_code)
-- [Hyviä käytäntöjä Swift-testien kirjoittamiseen] (https://www.swiftbysundell.com/articles/unit-testing-in-swift/)
-- [Testien priorisointi Swiftissä] (https://www.vadimbulavin.com/swift-unit-testing-tips-and-tricks/)
-
----
-
-## Katso myös
+- https://www.raywenderlich.com/709-ios-unit-testing-and-ui-testing-tutorial
+- https://developer.apple.com/documentation/xctest

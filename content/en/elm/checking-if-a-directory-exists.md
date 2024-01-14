@@ -1,7 +1,9 @@
 ---
 title:                "Elm recipe: Checking if a directory exists"
+simple_title:         "Checking if a directory exists"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/checking-if-a-directory-exists.md"
 ---
 
@@ -9,60 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-In Elm programming, checking if a directory exists is an essential task. Whether you are building a web application or working on a project, being able to verify if a directory exists is crucial for proper file management and organization. Additionally, it can prevent errors and improve the overall functionality of your code.
+Have you ever needed to check if a directory exists in your Elm program? Maybe you want to handle different scenarios depending on whether a directory is present or not. Or perhaps you want to make sure a specific directory is created before performing certain actions. Whatever the reason may be, knowing how to check if a directory exists in Elm can come in handy in various situations.
 
 ## How To
 
-To check if a directory exists in Elm, we can use the `Directory.exists` function. This function takes in a `String` representing the directory path and returns a `Task` value. We can then use `Task.andThen` to handle the result of the task and perform further actions.
-
-Let's take a look at an example of how this works:
+To check if a directory exists in Elm, we can use the FileSystem module from the elm/file package. First, we need to import the module at the top of our Elm file.
 
 ```Elm
-import Task
-import Directory
-
-checkDirectory : String -> Task x Bool
-checkDirectory path =
-    Directory.exists path
-        |> Task.map (\exists -> exists)
-
-main : Task x ()
-main =
-    checkDirectory "home/project/myDirectory"
-        |> Task.andThen (\exists ->
-            if exists then
-                Task.succeed "Directory exists!"
-            else
-                Task.fail "Directory does not exist."
-        )
+import FileSystem exposing (exists)
 ```
 
-In this code, we import the necessary modules, define a function `checkDirectory` that takes in a `String` representing the directory path, and use the `exists` function to check for its existence. We then use `Task.andThen` to handle the result of the task and either succeed with a message stating the directory exists or fail if it does not.
+Next, we can call the `exists` function, passing in the path of the directory we want to check. This function will return a `Task Bool`, which represents an asynchronous operation that will eventually produce a Boolean value.
 
-Now, let's try running this code and see the output:
-
-```
-Directory exists!
-```
-
-As expected, since we used a valid directory path, the task is successful and we get a message indicating the directory exists.
-
-But what if we try to check for a directory that does not exist? Let's see the output:
-
-```
-Directory does not exist.
+```Elm
+checkDirectoryExists : Task Bool
+checkDirectoryExists =
+  exists "path/to/directory"
 ```
 
-Again, the task is handled accordingly and we get an error message stating the directory does not exist.
+We can then use `Task.perform` to handle the outcome of the `exists` task. In case of success, the `perform` function will execute the `Result.withDefault` function, which will return a default value of `False` if the task fails or the Boolean value if it succeeds.
+
+```Elm
+directoryExists : Bool
+directoryExists =
+  Task.perform (Result.withDefault False) checkDirectoryExists
+```
+
+If the directory exists, the `directoryExists` value will be `True`. Otherwise, it will be `False`.
 
 ## Deep Dive
 
-Behind the scenes, the `exists` function uses the `FileSystem` module from Elm's standard library. This module provides access to the local file system and allows us to perform tasks such as checking for file or directory existence, creating new files or directories, and reading or writing to existing files.
-
-The `exists` function is actually built on top of the `FileSystem.request` function, which takes in a `Request` type and returns a `Task` value. This `Request` type can be used to specify the type of operation we want to perform on the file system, such as checking for existence, reading from a file, or writing to a file. By using `Directory.exists` and `FileSystem.request` together, we can create more complex file management systems and perform various operations on directories.
+Internally, the `exists` function uses the `Stat` module from the elm/file package to get information about the given path and check if it is a directory or not. If the path does not exist, the task will fail, and we will receive a `False` value. Otherwise, the task will succeed, and we will receive a `True` value.
 
 ## See Also
 
-- [Elm Documentation - FileSystem](https://package.elm-lang.org/packages/elm/file/latest/FileSystem)
-- [Elm Documentation - Task](https://package.elm-lang.org/packages/elm/core/latest/Task)
-- [Elm in Action by Richard Feldman](https://www.manning.com/books/elm-in-action)
+Here are some useful resources for further reading on checking if a directory exists in Elm:
+
+- [Elm file package documentation](https://package.elm-lang.org/packages/elm/file/latest/)
+- [FileSystem module source code](https://github.com/elm/file/blob/latest/src/FileSystem.elm)
+- [Stat module source code](https://github.com/elm/file/blob/latest/src/Stat.elm)

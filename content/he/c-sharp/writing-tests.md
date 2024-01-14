@@ -1,53 +1,54 @@
 ---
-title:                "C#: כתיבת בדיקות"
+title:                "C#: כתיבת מבחנים"
+simple_title:         "כתיבת מבחנים"
 programming_language: "C#"
-category:             "Testing and Debugging"
+category:             "C#"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-מדוע:
-כתיבת בדיקות לקוד היא חשובה כיוון שהיא מאפשרת לנו להעריך את תכונותיו של הקוד ולוודא שהוא פועל כצפוי. היא עוזרת לנו לזהות בעיות כבר בשלב מוקדם יותר ולתקן אותן לפני שהן מפגיעות בתפקוד של האפליקציה.
+# מדוע
 
-איך לכתוב בדיקות:
+ברכישה לכתוב בדיקות יש לפתוח קוד שבו ניתן לבצע בדיקה על הקוד בכדי לוודא שהוא עובד תקין. כתיבת בדיקות מאפשרת למתכנת להיות בטוח שהקוד שהוא כותב עובד כפי שצריך וכן מאפשר לו לזהות בעיות ולתקן אותן בכתיבת הקוד.
+
+# איך לכתוב בדיקות בסגנון C#
+
+כדי לכתוב בדיקות בסגנון C# ניתן לעקוב אחר השלבים הבאים:
+
+- צור כיתת מבדק עבור הקוד שתרצה לבדוק.
+- הגדר משתנים וצור פונקציות שתכתב את הקוד שתשתמש בעת בדיקת הקוד.
+- הרץ את הפונקציות ובדוק את התוצאות כדי לוודא שהקוד פועל כצפוי.
+- יש לכתוב מעקב אחרי הבדיקות ולהפעיל אותן בכל פעם שנרצה לבדוק שהקוד עדיין עובד כראוי.
+
+קוד דוגמה:
+
 ```C#
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-
-namespace Calculator.Test
+// ייצוא משתנים מתוך המשתנים הנכונים ותמיד מתחילים מ- Test
+[Test]
+public void Export_Data_Checks_Variables()
 {
-    [TestClass]
-    public class MathTest
-    {
-        [TestMethod]
-        public void Add_InputTwoInt_GetSum()
-        {
-            // Arrange
-            int num1 = 5;
-            int num2 = 10;
-            int expected = 15;
-            var math = new Math();
-
-            // Act
-            int result = math.Add(num1, num2);
-
-            // Assert
-            Assert.AreEqual(expected, result);
-        }
-    }
+    DataExporter exporter = new DataExporter();
+    exporter.ExportData();
+    Assert.AreEqual(10, exporter.TotalData);
+    Assert.IsTrue(exporter.IsExported);
 }
 ```
-כאן אנו כותבים טסט פשוט לפונקציה המכאיבה שלנו, Add. אנו יוצרים משתנים לפי ארגומנטים לפונקציה ומצפים לתוצאה נכונה. לאחר מכן, אנו קוראים לפונקציה ומוודאים שהתוצאה זהה לתוצאה הצפויה באמצעות Assert.
 
-עמוק יותר:
-כשאנו כותבים בדיקות, חשוב לראות כללי עבודה של הקוד ולמצוא בעיות שעשויות להופיע. חשוב לבדוק מגוון של סיטואציות ולוודא שהקוד עובד כצפוי גם כאשר נתונים נמצאים במצב קיצון. כמו כן, חשוב לכתוב בדיקות טובות כדי לוודא שהן יתפקדו בכל פעם שמריצים אותן.
+תוצאת המתקדמת:
 
-ראו כמה פנטזיות של וידאו עבור תרגול כתיבת סקריפט שטיפת גופר:
-- https://www.youtube.com/watch?v=O86UiOxQV5E
-- https://www.youtube.com/watch?v=xp0WlD7KZp8
-- https://www.youtube.com/watch?v=RKTtsIR726I
+```C#
+TotalData: 10
+IsExported: true
+```
 
-כדי ללמוד עוד על כתיבת בדיקות לקוד ב- C#, ניתן לבדוק את המדריך המפורט כאן:
-- https://docs.microsoft.com/en-us/visualstudio/test/writing-unit-tests-for-csharp?view=vs-2019
-- https://stackify.com/unit-testing-basics-best-practices/
+# העמקה
+
+כתיבת בדיקות היא חלק מאוד חשוב בתכנות כי היא מאפשרת למתכנת לזהות בעיות כבר בשלב המבנה ולאחר מכן לתקן אותן. בנוסף, כתיבת בדיקות מסייעת בתחזוקת הקוד וביכולת להתאים אותו לצרכי המקוריים.
+
+בנוסף לכתיבת בדיקות פרטיות, יתר על כן מומלץ להשתמש בכלי Automate Testing כמו Nunit כדי לאפשר ללא עבורכם לאכת בדיקות באופן אוטומטי.
+
+# ראו גם
+
+- [Nunit על GitHub](https://github.com/n

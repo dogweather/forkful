@@ -1,7 +1,9 @@
 ---
 title:                "Arduino recipe: Writing to standard error"
+simple_title:         "Writing to standard error"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/writing-to-standard-error.md"
 ---
 
@@ -9,29 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Writing to standard error may seem like an insignificant task, but it can actually be quite useful for debugging and error handling in Arduino programming. By printing messages to standard error, you can easily keep track of what's happening in your code and identify any issues that may arise.
+Writing to standard error is an essential skill for Arduino programmers. It allows you to easily debug and troubleshoot your code, helping you identify and fix errors quickly. By understanding how to write to standard error, you can improve the efficiency and accuracy of your code.
 
 ## How To
 
-To write to standard error in Arduino, you can use the `Serial` object and the `Serial.println()` function. Here's an example code block that shows how to print a message to standard error:
+To write to standard error in Arduino, you will need to use the `Serial.println()` function. This function takes in a string or variable as an argument and prints it to the serial monitor. Here is an example code:
 
 ```Arduino
-Serial.println("This is an error message.");
+int num = 5;
+
+Serial.println("The value of num is: ");
+Serial.println(num);
 ```
 
-By default, the message will be printed to the serial monitor. However, you can also redirect the output to a different device, such as a computer terminal, by using the `Serial.begin()` function with a specific baud rate.
+The output of this code will be:
 
-Once you've redirected the output, you can easily view any error messages that are printed during the execution of your code. This can be especially useful if you're working with complex logic or multiple sensors and want to keep track of their behavior.
+```
+The value of num is:
+ 5
+```
+
+As you can see, the variable `num` is printed to the serial monitor. This is the most basic way of writing to standard error. You can also use `Serial.print()` to print without a new line, or use concatenation to print multiple values in one line. Here is an example:
+
+```Arduino
+int a = 10;
+int b = 5;
+
+Serial.println("The sum of a and b is: " + a + b);
+```
+
+The output of this code will be:
+
+```
+The sum of a and b is: 15
+```
+
+Another helpful technique is to use `Serial.write()` to print non-string data types, such as integers, as bytes instead of converting them to text.
 
 ## Deep Dive
 
-In addition to debugging and error handling, writing to standard error can also be helpful for logging data in your Arduino projects. By printing information to standard error, you can create a simple log file that can be accessed later for analysis or troubleshooting.
+To truly understand writing to standard error, it's important to know the difference between `Serial.print()` and `Serial.println()`. The former prints the specified data without a new line, while the latter prints with a new line character at the end.
 
-It's important to note that standard error is different from standard output, which is what is typically used for printing messages in Arduino. Standard error is specifically designed for displaying error messages and should not be used for regular program output.
+Additionally, understanding serial communication is crucial in learning how to write to standard error. The serial monitor is essentially a virtual connection between your computer and the Arduino board, allowing you to send and receive data. Writing to standard error helps you track the data being sent from your Arduino board to the serial monitor.
 
 ## See Also
 
-- [Serial.println() reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Redirect Arduino output to serial monitor or other device](https://www.impulseadventure.com/elefootprint/arduino-serial-output-fmt.html)
-- [Using the Standard Library in Arduino](https://www.arduino.cc/reference/en/#structure)
-- [Arduino Serial Communication Basics](https://embedded.fm/blog/2016/3/2/arduino-serial-communication-basics)
+For more information on writing to standard error, check out these resources:
+
+- [Arduino Serial Communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Arduino Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Arduino Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [Serial Communication in Arduino](https://maker.pro/arduino/tutorial/arduino-serial-communication-everything-you-need-to-know)

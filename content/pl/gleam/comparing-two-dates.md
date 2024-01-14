@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Porównywanie dwóch dat"
+title:                "Gleam: Porównywanie dwóch dat."
+simple_title:         "Porównywanie dwóch dat."
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/comparing-two-dates.md"
 ---
 
@@ -9,46 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Porównywanie dwóch dat jest powszechnym wyzwaniem podczas programowania i może być trudne dla wielu programistów. Jednak znalezienie skutecznej i prostszej metody może pomóc w rozwiązaniu tego problemu. W tym blogu dowiesz się, jak porównać dwie daty w języku programowania Gleam.
+Porównywanie dwóch dat jest często jednym z kroków w analizie danych. Może to pomóc w ustaleniu kolejności zdarzeń lub w wykryciu wzorców w danych czasowych. W tym poście dowiesz się, jak porównywać daty w języku programowania Gleam.
 
 ## Jak to zrobić
 
-Porównywanie dwóch dat w Gleam jest proste dzięki wykorzystaniu modułu `DateTime`. Aby porównać dwa daty, wystarczy użyć następującego kodu:
+Zacznijmy od utworzenia dwóch dat w języku Gleam:
 
 ```Gleam
-DateTime.compare(first_date, second_date)
+let first_date = Date.create(2021, 10, 1)
+let second_date = Date.create(2021, 9, 15)
 ```
 
-Wywołanie tej funkcji zwróci jedną z trzech wartości: `DateTime.Equal`, `DateTime.Greater` lub `DateTime.Less`, w zależności od tego czy pierwsza data jest równa, większa lub mniejsza od drugiej.
+Następnie możemy wykorzystać funkcję `lt` (less than), aby sprawdzić, czy pierwsza data jest wcześniejsza niż druga:
 
-Aby lepiej zrozumieć sposób działania tej funkcji, przyjrzyjmy się poniższemu przykładowi:
-
-```Gleam
-import gleam/datetime.{ compare, Equal, Greater, Less }
-
-fn main() {
-  let date_1 = DateTime.new(2021, 1, 1)
-  let date_2 = DateTime.new(2022, 1, 1)
-
-  let result = compare(date_1, date_2)
-
-  case result {
-    Equal -> println("Obie daty są równe")
-    Greater -> println("Pierwsza data jest późniejsza niż druga")
-    Less -> println("Pierwsza data jest wcześniejsza niż druga")
-  }
+ ```Gleam
+if Date.lt(first_date, second_date) {
+  // wykonaj kod, jeśli pierwsza data jest wcześniejsza
+} else {
+  // wykonaj kod, jeśli druga data jest wcześniejsza lub są równe
 }
 ```
 
-W tym przykładzie `result` będzie miało wartość `Greater`, ponieważ pierwsza data jest późniejsza niż druga. Następnie w zależności od tego, jaka wartość zostanie zwrócona, wyświetlimy odpowiedni komunikat.
+Możesz również użyć funkcji `gt` (greater than) lub `eq` (equal to), aby porównać daty na podstawie odpowiednio większości lub równości.
 
-## Deep Dive
+Możliwe jest również porównywanie dat z dokładnością do godziny, minuty i sekundy. W tym przypadku możesz użyć funkcji `lt_datetime`, `gt_datetime` lub `eq_datetime`.
 
-Jeśli chcesz dowiedzieć się więcej o porównywaniu dat w Gleam, możesz przejrzeć dokumentację modułu `DateTime`. Tam znajdziesz informacje o innych funkcjach, które mogą być przydatne przy porównywaniu dat, np. funkcja `is_after?`, która sprawdza czy pierwsza data jest późniejsza niż druga.
+## Zagłębione informacje
 
-Pamiętaj również, aby dokładnie znać format daty, który jest akceptowany przez funkcje w module `DateTime`. Szczegóły na ten temat również znajdziesz w dokumentacji.
+Podczas porównywania dat w Gleam należy pamiętać o zastosowaniu odpowiednich formatów danych, takich jak rok-miesiąc-dzień lub rok-miesiąc-dzień-godzina-minuta-sekunda. Możesz również wykorzystać funkcje takie jak `date_from_rfc3339` lub `parse_iso8601_datetime` do konwersji różnych formatów dat do postaci obsługiwanej przez Gleam.
 
-## Zobacz także
+Warto również pamiętać, że porównywanie dat może być problematyczne w przypadku różnych stref czasowych lub formatów z różną dokładnością. W takich przypadkach należy dokładnie przetestować swoje rozwiązanie i odpowiednio dostosować funkcje porównujące.
 
-- Dokumentacja modułu `DateTime` w języku programowania Gleam: https://gleam.run/modules/date_time.html
-- Porównywanie dat w innym języku programowania: https://www.w3schools.com/js/js_dates.asp
+## Zobacz również
+
+- [Dokumentacja Gleam o porównywaniu dat](https://gleam.run/std/date/docs.html#comparing-dates)
+- [Przewodnik po języku Gleam](https://gleam.run/book/index.html)
+- [Komparator dat w języku Gleam](https://github.com/matthieume/g-date-compare)

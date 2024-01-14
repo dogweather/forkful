@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Päivämäärän muuttaminen merkkijonoksi."
+title:                "Swift: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/converting-a-date-into-a-string.md"
 ---
 
@@ -9,40 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa ohjelmointiprojekteissa on tarve muuttaa päivämäärä merkkijonoksi, jotta se voidaan esittää käyttäjille tai tallentaa tietokantaan. Tässä blogikirjoituksessa käymme läpi, miten tämä onnistuu Swift-ohjelmointikielellä.
+Monissa tilanteissa tarvitaan muuttaa päivämäärä merkkijonoksi Swift-ohjelmoinnissa. Tämä voi olla esimerkiksi tarpeen, kun halutaan näyttää päivämäärä käyttäjälle tai tallentaa päivämäärä tietokantaan. Tässä blogikirjoituksessa käymme läpi miten tämä voidaan tehdä kätevästi Swiftillä.
 
-## Miten
+## Miten tehdä
 
-Päivämäärän muuttaminen merkkijonoksi onnistuu helposti Swiftillä. Tässä esimerkissä luomme ensin päivämäärä-muuttujan ja määritämme sille tietyn päivämäärän.
-
-```Swift
-let date = Date()
-```
-
-Seuraavaksi käytämme DateFormatter-luokkaa määrittämään, millaisessa muodossa haluamme näyttää päivämäärän.
+Monet ohjelmoijat käyttävät DateFormatter-luokkaa muuttaessaan päivämäärän merkkijonoksi. Tämä luokka mahdollistaa päivämäärän muotoilun halutulla tavalla ja tarjoaa myös monia muita hyödyllisiä toimintoja, kuten päivämäärän muuntamisen toiseen aikavyöhykkeeseen tai kielelle.
 
 ```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd"
-```
-
-Lopuksi kutsumme DateFormatterin string(from:) -metodia, joka palauttaa päivämäärän merkkijonona halutussa muodossa.
-
-```Swift
-let dateString = dateFormatter.string(from: date)
-print(dateString)
-// Output: 2021-04-04
+let date = Date() // Luo uuden päivämäärän
+let dateFormatter = DateFormatter() // Luo uuden DateFormatter-instanssin
+dateFormatter.dateStyle = .medium // Asettaa päivämäärän muotoilun tyylin
+let dateString = dateFormatter.string(from: date) // Muuntaa päivämäärän merkkijonoksi
+print(dateString) // Tulostaa esimerkiksi "22.4.2021"
 ```
 
 ## Syvempi sukellus
 
-DateFormatter-luokka tarjoaa monia erilaisia vaihtoehtoja päivämäärän ja ajan muuttamiseen haluttuun muotoon. Voit esimerkiksi lisätä tunnit, minuutit ja sekunnit päivämäärään antamalla dateFormat-muuttujalle seuraavanlaisen arvon: "yyyy-MM-dd HH:mm:ss". Voit myös muuttaa päivämäärän ja ajan merkkijonoksi yhdellä kertaa antamalla seuraavanlaisen arvon dateFormat-muuttujalle: "yyyy-MM-dd HH:mm:ss Z".
+Päivämäärän muuttaminen merkkijonoksi ei ole aina yksinkertaista. Esimerkiksi eri kielillä on erilaiset tavat ilmaista päivämäärä. Tässä tapauksessa voit käyttää Locale-luokkaa, joka määrittää maan ja kulttuurin, jossa ohjelmaa käytetään. Tällöin päivämäärä muualta tuleva käyttäjä näkee päivämäärän omalla kielellään.
 
-DateFormatter-luokan lisäksi Swiftillä on mahdollista käyttää myös DateComponentsFormatter-luokkaa, jolla voi muuttaa esimerkiksi ajan sekunneiksi, minuuteiksi ja tunneiksi.
+```Swift
+let date = Date() // Luo uuden päivämäärän
+let dateFormatter = DateFormatter() // Luo uuden DateFormatter-instanssin
+dateFormatter.dateStyle = .medium // Asettaa päivämäärän muotoilun tyylin
+dateFormatter.locale = Locale(identifier: "fi_FI") // Asettaa suomen kielen käyttöön
+let dateString = dateFormatter.string(from: date) // Muuntaa päivämäärän merkkijonoksi
+print(dateString) // Tulostaa esimerkiksi "22. huhtikuuta 2021"
+```
 
 ## Katso myös
 
-- [DateFormatter-luokan dokumentaatio Swiftin virallisilla verkkosivuilla](https://developer.apple.com/documentation/foundation/dateformatter)
-- [DateFormatter-tutoriaali Ray Wenderlichin verkkosivuilla](https://www.raywenderlich.com/1481-nsdateformatter-tutorial-for-beginners-with-swift)
-
-Kiitos lukemisesta ja onnea päivämäärän muuttamiseen haluamaasi muotoon Swiftillä!
+- [Apple Developer Documentation - DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- [Swift by Sundell - Formatting dates in Swift](https://www.swiftbysundell.com/tips/formatting-dates-in-swift/)
+- [Swift Tips - Easy date formatting in Swift with NaturalLanguage](https://swifttips365.com/2018/01/10/easy-date-formatting-in-swift-with-naturallanguage/)

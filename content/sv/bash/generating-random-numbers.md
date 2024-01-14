@@ -1,32 +1,45 @@
 ---
-title:                "Bash: Generering av slumpmässiga nummer"
+title:                "Bash: Generering av slumpmässiga tal"
+simple_title:         "Generering av slumpmässiga tal"
 programming_language: "Bash"
-category:             "Numbers"
+category:             "Bash"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför 
+## Varför
+Att generera slumpmässiga nummer är en användbar och rolig funktion i Bash-programmering. Det låter dig skapa en slumpmässig element för spel, skapa testdata, eller helt enkelt för att lägga till variation i dina program. Det är också en bra övning för att förbättra dina programmeringsfärdigheter.
 
-Att generera slumpmässiga nummer kan vara väldigt användbart för många olika ändamål. Det kan användas för att testa program, skapa unika lösenord, eller till och med för spel och underhållning.
+## Hur man gör
+Först måste du använda kommandot ```shuf``` för att generera slumpmässiga nummer. Detta kommando blandar inmatningsraderna och skriver ut en slumpmässig ordning av dem. Om du använder flaggan ```-i``` kan du ange ett intervall av nummer som ska genereras. Till exempel:
+``` Bash
+shuf -i 1-10
+```
+Detta kommer att generera 10 slumpmässiga nummer mellan 1 och 10.
 
-## Så här gör du 
+Om du vill generera slumpmässiga tal med decimaler, kan du använda kommandot ```bc``` tillsammans med ```shuf```. Till exempel:
+``` Bash
+shuf -i 5-15 | xargs -I {} echo 'scale=2; {}/10' | bc
+```
+Detta kommer att generera 10 slumpmässiga decimaltal mellan 0,5 och 1,5.
 
-För att generera slumpmässiga nummer i Bash, kan du använda dig av kommandot "shuf". Detta kommando slumpar om innehållet i en fil eller en lista. Här är ett exempel på hur du kan använda det för att generera slumpmässiga nummer mellan 1 och 10: 
+Du kan också använda Bash-variabler för att generera slumpmässiga nummer inuti ett skript. Till exempel:
+``` Bash
+num=$((RANDOM%100))
+echo $num
+```
+Detta kommer att generera ett slumpmässigt heltal mellan 0 och 99.
 
-```Bash 
-shuf -i 1-10 -n 1 
-``` 
+## Djupdykning
+Det finns olika metoder för att generera slumpmässiga nummer i Bash, men de flesta av dem använder sig av ett pseudoslumpmässigt nummergenerator. Det betyder att resultaten inte är helt slumpmässiga, utan följer en algoritm. För att få mer exakta slumpmässiga nummer, kan du använda tjänster som RANDOM.org som använder verkligt slumpmässiga nummergeneratorer.
 
-Detta kommer att slumpmässigt välja ett nummer mellan 1 och 10 och skriva ut det på skärmen. Du kan också ange antalet nummer du vill generera genom att ändra värdet på "-n" parameter. Till exempel, om vi ändrar värdet till 5 kommer det att generera 5 slumpmässiga nummer istället för bara ett. 
+Det är också viktigt att komma ihåg att kommandot ```RANDOM``` använder sig av systemets klocka för att generera slumpmässiga tal. Om det inte finns någon klocka eller om klockan är justerad, kan det resultera i icke-slumpmässiga nummer.
 
-## Djupdykning 
+Dessutom kan du kombinera flera kommandon för att generera mer komplexa slumpnummer, som till exempel att generera slumpmässiga bokstäver eller ord genom att använda ```shuf``` med alfabetet som inmatning.
 
-Det finns många olika sätt att generera slumpmässiga nummer i Bash, inklusive användning av andra kommandon som "od" och "awk". Det är också möjligt att generera slumpmässiga strängar istället för bara numeriska värden. Detta kan vara särskilt användbart för att skapa unika lösenord. 
-
-## Se även 
-
-- [Random Number Generation in Bash](https://www.shell-tips.com/2010/06/14/introduction-to-random-numbers/)
-- [Generating Passwords in Bash](https://linuxconfig.org/generating-your-own-random-passwords-on-the-linux-command-line)
-- [Bash Built-in Commands](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Builtins)
+## Se även
+- [En guide till grundläggande Bash-programmering](https://www.makeuseof.com/tag/bash-script-beginners-guide/)
+- [Bash-dokumentationen](https://www.gnu.org/software/bash/)
+- [Hämta slumpmässiga nummer från RANDOM.org](https://www.random.org/)

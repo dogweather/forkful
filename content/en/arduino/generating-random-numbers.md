@@ -1,41 +1,56 @@
 ---
 title:                "Arduino recipe: Generating random numbers"
+simple_title:         "Generating random numbers"
 programming_language: "Arduino"
-category:             "Numbers"
+category:             "Arduino"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/arduino/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Generating random numbers can be a valuable tool in Arduino programming. It allows for creating unpredictable and varied inputs for your projects, making them more engaging and versatile. Additionally, it can add an element of surprise to your code, making it more interesting for both you and your audience.
+Random numbers are essential in various applications such as statistical analysis, cryptography, and simulations. As an Arduino enthusiast, understanding how to generate random numbers can enhance your projects and make them more unpredictable and secure.
 
 ## How To
+Generating random numbers in Arduino is relatively straightforward. Follow these steps to get started:
 
-To generate random numbers in Arduino, we can use the built-in function `random()`, which takes in two arguments for the range of numbers you want to generate. For example, `random(0, 10)` would generate a random number between 0 and 9. Let's see an example:
+1. Import the `ArduinoRandom.h` library by adding `#include <ArduinoRandom.h>` at the top of your sketch.
 
-```Arduino
-int randomNumber = random(0, 10); //generate a random number between 0 and 9
-Serial.println(randomNumber); //print the generated number to the serial monitor
+2. Declare a `RandomSeed` by calling the `arduinorandom_seed()` function.
+
+   ```arduino
+   ArduinoRandomSeed();
+   ```
+
+3. Generate a random number within a specific range by using the `arduinorandom()` function. For example, to generate a random number between 0 and 10, use the following code:
+
+   ```arduino
+   int randomNumber = arduinorandom(0, 10);
+   ```
+
+4. Print the generated random number to the serial monitor by using the `Serial.println()` function:
+
+   ```arduino
+   Serial.println(randomNumber);
+   ```
+
+5. Upload the code to your Arduino board and open the serial monitor to see the output.
+
+Sample output:
+
 ```
-
-The output would look something like this:
-
+4
 ```
-3 //randomly generated number
-```
-
-You can also use the `random()` function to generate random numbers for specific data types, such as floats and characters. For floats, you can use `random(0.0, 10.0)` to generate a random float between 0.0 and 9.9. For characters, you can use `random('a', 'z')` to generate a random lowercase character between a and y. Make sure to check the documentation for the full list of supported data types and their corresponding arguments.
 
 ## Deep Dive
+Behind the scenes, the `arduinorandom()` function uses a **pseudo-random number generator** (PRNG) algorithm called the *Linear Congruential Generator* (LCG). This algorithm involves multiplying the previous random number by a constant, adding another constant, and taking the modulo of the result to get the next random number.
 
-The `random()` function in Arduino uses a pseudo-random number generator algorithm called the "Mersenne Twister". This algorithm generates numbers that appear to be random, but are actually deterministic. This means that the same sequence of numbers will be generated every time you run your code. To prevent this, we can use the `randomSeed()` function to set a "seed" value, making the random numbers more unpredictable. The `randomSeed()` function takes in a number as its argument, and it is recommended to use an analog input pin for the seed value to introduce some randomness to the sequence. Additionally, you can also use `randomSeed(analogRead(A0))` to use the analog value from pin A0 as the seed value.
+To generate a truly random number, use an external hardware component such as a noise source or a geiger counter. This method is known as **true random number generation** (TRNG) and provides a higher level of unpredictability compared to PRNG.
+
+It is important to note that while TRNG provides a better level of randomness, it can be slower and more costly to implement compared to PRNG. Therefore, it is essential to consider the specific needs of your project before deciding which method to use.
 
 ## See Also
-
-For more information on generating random numbers in Arduino, check out the following resources:
-
-- [Arduino Reference - random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Arduino Project Hub - How to Generate Random Numbers in Arduino](https://create.arduino.cc/projecthub/ruchir1674/generating-random-numbers-in-arduino-890252)
-- [Arduino Forum - How to Use randomSeed()?](https://forum.arduino.cc/index.php?topic=38443.0)
+- [Arduino Official Website](https://www.arduino.cc/)
+- [ArduinoRandom Library GitHub Repository](https://github.com/chkarloz/ArduinoRandom)
+- [Understanding Random Number Generators](https://www.random.org/randomness/)

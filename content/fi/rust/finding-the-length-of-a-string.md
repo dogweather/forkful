@@ -1,48 +1,55 @@
 ---
-title:                "Rust: Merkkijonon pituuden löytäminen"
+title:                "Rust: Näin löydät merkkijonon pituuden"
+simple_title:         "Näin löydät merkkijonon pituuden"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Merkkijonon pituuden etsiminen Rustilla
+## Miksi: Miksi etsiä tekstin pituus?
 
-Rust on alati kasvava ja suosittu ohjelmointikieli, joka tarjoaa turvallisuutta, nopeutta ja vakautta kevyellä syntaksilla. Monet kielen ominaisuudet tekevät siitä suositun vaihtoehdon monille ohjelmoijille. Yksi näistä ominaisuuksista on sen kyky käsitellä merkkijonoja tehokkaasti. Tämän takia on tärkeää ymmärtää, kuinka Rustilla voidaan löytää merkkijonon pituus ja miksi se on hyödyllistä.
+Rust on suosittu ja suorituskykyinen ohjelmointikieli, joka tunnetaan erityisesti sen nopeudesta ja luotettavuudesta. Yksi hyödyllisimmistä ominaisuuksista Rustissa on sen tarjoama helppo tapa löytää tekstin pituus. Tämä on hyödyllistä monissa tilanteissa, esimerkiksi tiedostojen käsittelyssä tai käyttäjän syötteiden tarkistamisessa.
 
-## Kuinka: Koodin esimerkkejä ja näytä tulokset käyttäen "```Rust ... ```"-koodeja
+## Kuinka: Esimerkkejä koodista ja tulostuksista
 
-Aloittamiseksi voimme käyttää Rustin vakiofunktiota `len()` löytääksemme merkkijonon pituuden. Käyttämällä tätä funktiota, meidän tarvitsee vain antaa parametrinä haluttu merkkijono ja tuloksena saamme sen pituuden. Alla on esimerkki:
-
-```Rust
-let x = String::from("Moi maailma!");
-let pituus = x.len();
-println!("Merkkijonon pituus on: {}", pituus);
-```
-
-Tuloksena saamme: `Merkkijonon pituus on: 13`. Voimme myös käyttää `len()` funktiota suoraan merkkijonolle ilman, että tarvitsee tallentaa sitä muuttujaan:
+Yksi tapa löytää tekstin pituus Rustissa on käyttää "len" -funktiota, joka palauttaa tekstin merkkien määrän. Esimerkiksi seuraava koodi näyttää, kuinka tulostaa tekstin "Hei maailma" pituus:
 
 ```Rust
-let pituus = "Tämä on vain esimerkki".len();
-println!("Merkkijonon pituus on: {}", pituus);
+fn main() {
+    let teksti = "Hei maailma";
+    let pituus = teksti.len();
+    println!("Tekstin pituus on {}", pituus);
+}
 ```
 
-Tuloksena saamme: `Merkkijonon pituus on: 22`.
+Tämä tulostaa:
 
-## Syvällisempiä tietoja merkkijonon pituuden löytämisestä
+`Tekstin pituus on 11`
 
-Käyttämällä `len()` funktiota Rustissa, saamme takaisin merkkijonon pituuden tavuina. Tämä tarkoittaa, että jokainen Unicode-merkki lasketaan yhdeksi tavuksi. Mutta mitä jos haluamme laskea merkkien määrän sen sijaan, että laskemme tavujen määrän? Tässä tapauksessa voimme käyttää `chars()` funktiota, joka antaa meille merkkien määrän. Alla on esimerkki:
+Toinen asia, jota kannattaa tietää, on että tekstiä voi myös käsitellä "byte"-tasoilla. Tämä tarkoittaa, että voit käyttää "len_bytes" -funktiota, joka palauttaa tekstin pituuden tavuina. Esimerkiksi seuraava koodi näyttää, kuinka tulostaa saman tekstin pituus tavuina:
 
 ```Rust
-let x = String::from("Hei");
-let chars = x.chars().count();
-println!("Merkkien määrä: {}", chars);
+fn main() {
+    let teksti = "Hei maailma";
+    let pituus = teksti.len_bytes();
+    println!("Tekstin pituus on {} tavua", pituus);
+}
 ```
 
-Tuloksena saamme: `Merkkien määrä: 3`. Tämä voi olla hyödyllistä, jos haluamme laskea merkkien määrän esimerkiksi käyttäjän syöttämässä merkkijonossa.
+Tämä tulostaa:
+
+`Tekstin pituus on 11 tavua`
+
+## Syväsukellus: Tietoa tekstin pituuden löytämisestä
+
+Rustissa tekstin pituus lasketaan tavuina, ei merkkeinä, koska se käyttää Unicode-standardia. Tämä tarkoittaa, että esimerkiksi kirjainten "ä" ja "ö" pituus on kaksi tavua. Tämä on tärkeä huomioitava, jos haluat käsitellä tekstejä eri tavoilla.
+
+Lisäksi Rustin len-funktio palauttaa "usize"-tyypin, joka kuvaa tietokoneen muistin osoittimen koon. Tämä voi aiheuttaa ongelmia suurempien tekstien käsittelyssä, sillä "usize" -tyypin maksimi on erilainen eri käyttöjärjestelmissä.
 
 ## Katso myös
 
-- [Rustin virallinen dokumentaatio merkkijonojen käsittelystä](https://doc.rust-lang.org/std/string/index.html)
-- [Rustin opetusohjelma merkkijonojen käsittelystä](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
+- [Rustin dokumentaatio tekstin pituuden löytämisestä](https://doc.rust-lang.org/std/primitive.str.html#method.len)
+- [Rust-opetusohjelma Merkkijonot](https://doc.rust-lang.org/book/ch08-02-strings.html)

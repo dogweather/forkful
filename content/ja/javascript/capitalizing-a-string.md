@@ -1,51 +1,50 @@
 ---
 title:                "Javascript: 文字列の大文字化"
+simple_title:         "文字列の大文字化"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ文字列を大文字にするのか
+## なぜ
 
-文字列の大文字化を行う理由はさまざまです。一般的な理由としては、入力された文字列をタイトルや見出しのように大文字で表示したい場合や、ユーザーの入力ミスを修正したい場合、あるいは入力された文字列をデータベースに保存する前に正規化したい場合などがあります。
+## なぜ文字列をキャピタライズするのか
+
+文字列のキャピタライズとは、最初の文字を大文字にすることを意味します。例えば、"hello"という文字列を"Hello"に変えることです。このような処理を行う理由は、文字列のフォーマットを統一させるためです。例えば、データベースから取得した名前を表示する際に、全ての名前を大文字で表示したいといった場合に使用されます。
 
 ## 方法
 
-大文字化するには、標準のJavascript関数である`toUpperCase()`を使用します。これは、文字列のすべての文字を大文字に変換するというシンプルな機能を持っています。
+文字列をキャピタライズするには、一般的な方法として、組み込みのメソッドである`toUpperCase()`を使用します。以下の例をご覧ください。
 
-```
-Javascript
-let str = "hello world";
-console.log(str.toUpperCase()); // HELLO WORLD
-```
-
-また、正規表現を使用して、特定の文字列やパターンのみを大文字に変換する方法もあります。
-
-```
-Javascript
-let str = "hello world";
-console.log(str.replace(/world/gi, "WORLD")); // hello WORLD
+```Javascript
+let name = "japan";
+let capitalized_name = name.toUpperCase();
+console.log(capitalized_name); // JAPAN
 ```
 
-このように、`toUpperCase()`を使用するか、正規表現を組み合わせて使用するかは、大文字化する文字列やパターンによって異なります。適切な方法を選択してください。
+また、複数の単語から成る文字列をキャピタライズする場合は、以下のように関数を定義して使用することもできます。
+
+```Javascript
+function capitalizeString(str) {
+  let words_array = str.toLowerCase().split(" ");
+  let capitalized_array = words_array.map(word => word.charAt(0).toUpperCase() + word.slice(1));
+  return capitalized_array.join(" ");
+}
+
+let sentence = "hello world";
+let capitalized_sentence = capitalizeString(sentence);
+console.log(capitalized_sentence); // Hello World
+```
 
 ## ディープダイブ
 
-`toUpperCase()`関数は、ES6以前のバージョンでも使用できるように定義されているプロトタイプメソッドです。しかし、内部でどのように動作しているかを知ることは重要です。
+文字列をキャピタライズする方法は、見た目の統一だけではなく、プログラム上でも重要です。例えば、文字列を比較する際に大文字と小文字を区別しないようにするためにも、キャピタライズすることが必要です。また、多言語対応のアプリケーションで、特定の言語の文字列をキャピタライズする場合にも役立ちます。
 
-この関数は、ASCII文字列に対して正確に動作するように設計されていますが、Unicode文字列に対しては異なる結果をもたらす可能性があります。これは、Unicode文字列には複数のバージョンが存在するためで、例えばトルコ語では"i"が"İ"ではなく"i"に変換されます。
+## また見る
 
-このようなケースでは、正規化やカスタム関数を使用し、より確実な結果を得ることができます。
-
-## その他の参考記事
-
-- [文字列の大文字化について学ぶ](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [文字列の大文字化と小文字化の違い](https://jisho.org/)
-- [トルコ語での大文字化と小文字化の挙動](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase#workflow_of_toUpperCase)
-
-### さらに見る
-
-- [Unicodeについて学ぶ](https://unicode.org/)
-- [正規化について学ぶ](https://www.regular-expressions.info/unicode.html)
+- [JavaScriptのUpperCaseメソッド](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [文字列をキャピタライズする方法](https://medium.com/@peterchang_82818/how-to-capitalize-the-first-letter-of-a-string-in-javascript-eb161e7085ba)
+- [文字列操作に関するドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String)

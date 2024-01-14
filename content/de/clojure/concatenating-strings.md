@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Zusammenführen von Zeichenfolgen"
+title:                "Clojure: Verkettung von Zeichenfolgen"
+simple_title:         "Verkettung von Zeichenfolgen"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/concatenating-strings.md"
 ---
 
@@ -9,45 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Konkatenation von Zeichenfolgen (englisch: string) ist eine wichtige Fähigkeit, die in vielen Programmiersprachen verwendet wird, einschließlich Clojure. Durch die Verkettung von Zeichenfolgen können wir Texte und Variablen miteinander kombinieren und so dynamische Ausgaben erzeugen. In diesem Beitrag werden wir uns ansehen, wie man Strings in Clojure verketten kann.
+Das Verketten von Strings ist in der Programmierung eine sehr gängige und nützliche Aufgabe. Es ermöglicht uns, mehrere String-Werte zu einer Zeichenfolge zusammenzufügen und so komplexe Textausgaben zu erstellen. In diesem Blog-Beitrag werden wir uns genauer damit befassen, wie man Strings in Clojure verbinden kann und warum es eine wichtige Fähigkeit ist, die jeder Programmierer beherrschen sollte.
 
-## Wie man Strings in Clojure verketten kann
+## Wie geht das?
 
-Die Verkettung von Strings in Clojure ist sehr einfach und erfordert nur die Verwendung des Operators `str` sowie die Angabe der zu verkettenen Zeichenfolgen in Klammern. Hier ist ein Beispiel:
-
-```Clojure
-(str "Hallo" "Welt!") ; Ausgabe: "HalloWelt!"
-```
-
-Wie wir sehen können, werden die beiden übergebenen Zeichenfolgen ohne Leerzeichen verkettet. Wenn wir Leerzeichen oder andere Zeichen in die Ausgabe einfügen möchten, können wir dies mit dem `str` Operator tun, indem wir die Leerzeichen oder Zeichen in Anführungszeichen als eigene Zeichenfolge übergeben. Zum Beispiel:
+Um Strings in Clojure zu verknüpfen, gibt es die Funktion "str". Sie nimmt beliebig viele Argumente entgegen und gibt den resultierenden String zurück. Schauen wir uns ein simples Beispiel an:
 
 ```Clojure
-(str "Hallo" " " "Welt!") ; Ausgabe: "Hallo Welt!"
+(str "Hallo" "," "welt") => "Hallo, welt"
 ```
 
-Wir können auch Variablen in die Verkettung einbeziehen, indem wir sie als Argumente an den `str` Operator übergeben. Zum Beispiel:
+Wie man sieht, kann man nicht nur einzelne Worte, sondern auch Zeichensymbole und Zahlen miteinander verknüpfen. Die Reihenfolge der Argumente bestimmt dabei auch die Reihenfolge im resultierenden String.
+
+Zudem gibt es noch die Funktion "join", die ähnlich wie "str" funktioniert, aber auch ein Trennzeichen zwischen den Strings einfügen kann. Schauen wir uns dazu ein Beispiel an:
 
 ```Clojure
-(def name "Maria")
-(str "Mein Name ist" name "!") ; Ausgabe: "Mein Name ist Maria!"
+(join "-" ["Das" "ist" "ein" "Beispiel"]) => "Das-ist-ein-Beispiel"
 ```
 
-## Tief tauchen
+In diesem Beispiel haben wir die Funktion "join" verwendet, um aus einem Vektor von Strings einen zusammenhängenden String zu erstellen. Dabei haben wir als Trennzeichen das Minuszeichen verwendet.
 
-Clojure bietet auch die Funktion `str-join`, mit der wir eine Liste von Zeichenfolgen durch ein spezifisches Trennzeichen verkettet können. Hier ist ein Beispiel:
+## Tiefer Einblick
 
-```Clojure
-(str-join "-" ["Mai" "Juni" "Juli"]) ; Ausgabe: "Mai-Juni-Juli"
-```
+Bei der Verkettung von Strings müssen wir darauf achten, dass wir auch bestimmte Typen in String-Werte umwandeln. So kann es zum Beispiel vorkommen, dass wir eine Zahl als Teil eines Strings haben und diese in einen String-Wert umwandeln müssen, um sie mit anderen Strings zu verbinden. Dafür gibt es in Clojure die Funktion "str" und auch die Funktion "format", die Formatierungen wie in der Programmiersprache C ermöglicht.
 
-Wir können auch eine bedingte Verkettung von Zeichenfolgen mit der Funktion `str-if` durchführen, bei der wir eine Bedingung angeben und angeben, was verknüpft werden soll, wenn die Bedingung erfüllt ist. Hier ist ein Beispiel:
-
-```Clojure
-(str-if true "Bonjour" "Hello") ; Ausgabe: "Bonjour"
-(str-if false "Bonjour" "Hello") ; Ausgabe: "Hello"
-```
+Ein weiterer wichtiger Aspekt ist die Effizienz beim Verketten von Strings. In Clojure werden Strings als unveränderliche Datentypen angesehen, was bedeutet, dass jeder String generell eine neue Kopie des Originals erstellen muss, um die Verkettung durchzuführen. Um dies zu vermeiden, ist es ratsam, größere Strings als Puffer zu verwenden und diese dann mit den gewünschten Werten zu füllen.
 
 ## Siehe auch
 
-- [Offizielle Clojure Dokumentation](https://clojure.org/guides/string_concatenation)
-- [Clojure-Online-Tutorial](https://www.clojure.com/guides/learning-the-ropes/string-concatenation)
+- [Clojure Dokumentation zu String Manipulation](https://clojure.org/reference/java_interop#compatibility)
+- [Vergleich von "str" und "join" Funktionen in Clojure](https://stuartsierra.com/2008/05/29/stringbuilder-for-clojure)
+- [Weitere Tipps zur Optimierung von String-Verkettungen in Clojure](https://martintrojer.github.io/clojure/2016/04/09/shifting-to-clojure-part-03-string-concatenation.html)

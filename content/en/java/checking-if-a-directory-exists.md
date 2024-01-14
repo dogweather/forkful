@@ -1,41 +1,66 @@
 ---
 title:                "Java recipe: Checking if a directory exists"
+simple_title:         "Checking if a directory exists"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/java/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Whether you are a beginner or an experienced Java programmer, you may encounter a situation where you need to check if a directory exists. This is an important step to ensure the smooth execution of your code and avoid any potential errors.
+
+When working with files and directories in Java, it is important to check if a directory exists before performing any operations on it. This can prevent errors and ensure that the program runs smoothly without any unexpected interruptions.
 
 ## How To
-Checking for the existence of a directory in Java is a simple task. First, import the necessary packages:
-```Java 
+
+To check if a directory exists in Java, we can use the `exists()` method from the `File` class. Here's an example code:
+
+```Java
 import java.io.File;
-```
-Next, create a new File object and pass in the directory path as a parameter:
-```Java 
-File directory = new File("C:/Users/User/Documents");
-```
-Then, use the `exists` method to check if the directory exists:
-```Java 
-if(directory.exists()) {
-    System.out.println("Directory exists");
-} else {
-    System.out.println("Directory does not exist");
+
+public class DirectoryCheckExample {
+
+    public static void main(String[] args) {
+        // Specify the path of the directory to be checked
+        String dirPath = "C:/Users/User/Documents/JavaProject";
+
+        // Create a File object
+        File directory = new File(dirPath);
+
+        // Check if the directory exists
+        if (directory.exists()) {
+            // If exists, print a success message
+            System.out.println("Directory exists!");
+        } else {
+            // If doesn't exist, print an error message
+            System.out.println("Directory does not exist.");
+        }
+    }
 }
 ```
-The output will depend on whether the directory exists or not.
+
+Running this code will give the following output:
+
+```Java
+Directory exists!
+```
+
+In case the directory does not exist, the output will be:
+
+```Java
+Directory does not exist.
+```
 
 ## Deep Dive
-Behind the scenes, the `exists` method uses the `FileSystem` class to access the underlying file system and check for the existence of the directory. It also checks if the user has the necessary permissions to access the directory. If not, the method will return false, even if the directory actually exists.
 
-It's worth noting that the `exists` method only checks for the existence of a directory, not its type (e.g. file or folder). To determine if the path refers to a file or a directory, you can use the `isFile` and `isDirectory` methods respectively.
+Under the hood, the `exists()` method checks if the specified `File` object exists in the file system. It returns a boolean value, `true` if the file exists and `false` if it doesn't.
+
+It is important to note that just because a directory exists, it doesn't necessarily mean that we have access to it. The `exists()` method only checks for the existence of the file, not its permissions. To check for permissions, we can use the `canRead()` and `canWrite()` methods.
 
 ## See Also
-For more information on working with directories in Java, check out these links:
-- [Oracle Java Docs: File Class](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
-- [GeeksforGeeks: Java Program to Check if a File or Directory Exists](https://www.geeksforgeeks.org/java-program-to-check-if-a-file-or-directory-exists/)
-- [Baeldung: Checking for the Existence of a Directory in Java](https://www.baeldung.com/java-check-directory-exists)
+
+- [Java File Class Documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [How to Create and Delete Directories in Java](https://www.baeldung.com/java-create-delete-directory)
+- [Working with Files and Directories in Java](https://www.geeksforgeeks.org/working-with-files-in-java/)

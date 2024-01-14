@@ -1,43 +1,51 @@
 ---
 title:                "Javascript: 디버그 출력하기"
+simple_title:         "디버그 출력하기"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 디버그 출력을 사용해야하는가?
+# 왜
 
-디버그 출력은 개발하는 동안 코드의 동작을 이해하고 문제를 해결하는데 매우 유용합니다. 특히 오류 메시지가 없을 때, 디버그 출력을 통해 코드가 어떻게 동작하는지와 어디서 문제가 발생하는지를 파악할 수 있습니다.
+디버그 출력을 생성하는 것은 개발자에게 매우 중요합니다. 이것은 코드의 실행 과정을 쉽게 이해하고 문제를 해결하는 데 도움이 됩니다. 또한 디버그 출력을 생성하여 코드의 동작을 시각적으로 확인할 수 있습니다.
 
-## 디버그 출력하는 방법
+## 방법
 
-디버그 출력을 사용하는 가장 간단한 방법은 `console.log()` 함수를 사용하는 것입니다. 이 함수는 괄호 안에 입력된 값을 콘솔에 출력합니다. 예를 들어:
-
-```Javascript
-var x = 5;
-console.log(x);
-```
-
-위의 코드를 실행하면 콘솔에 `5`가 출력됩니다. 또한 여러 변수나 값들을 함께 출력할 수도 있습니다.
+디버그 출력을 생성하는 가장 간단한 방법은 `console.log()`를 사용하는 것입니다. 이 함수는 인자를 콘솔에 출력하는 역할을 합니다. 예를 들어:
 
 ```Javascript
-var x = 5;
-var y = 10;
-console.log("x의 값: " + x + ", y의 값: " + y);
+let num1 = 10;
+let num2 = 20;
+console.log(num1 + num2);
 ```
 
-위의 코드를 실행하면 콘솔에 `x의 값: 5, y의 값: 10`이 출력됩니다.
+위의 예시에서 `console.log()`는 30을 콘솔에 출력합니다.
 
-## 디버그 출력의 깊은 곳 탐구
+또 다른 방법은 디버그 출력을 콘솔 대신 HTML 문서에 출력하는 것입니다. 이렇게 하려면 `document.write()` 함수를 사용하면 됩니다. 예를 들어:
 
-디버그 출력을 통해 코드의 실행 흐름을 구체적으로 확인할 수 있습니다. `console.log()`를 여러 곳에 사용하여 코드를 실행하면 어떤 부분에서 값이 변경되었는지, 어떤 함수가 호출되었는지 등의 정보를 얻을 수 있습니다. 또한 조건문 안에 `console.log()`를 사용하여 조건이 충족되었을 때 값이 어떻게 바뀌는지도 확인할 수 있습니다.
+```Javascript
+let name = "John";
+document.write("Welcome, " + name);
+```
 
-디버그 출력을 사용하는 것은 코드를 디버깅하는 과정에서 매우 유용합니다. 디버깅 중에는 `console.log()`를 여러 곳에 추가하고 필요에 따라 제거하는 방식으로 코드를 분석하면서 문제를 해결할 수 있습니다.
+위의 예시에서 `document.write()`는 "Welcome, John"을 문서에 출력합니다.
 
-## 이어서 보기
+마지막으로, 디버그 출력을 콘솔 대신 외부 파일에 저장할 수도 있습니다. 이렇게 하려면 Node.js와 같은 서버사이드 Javascript 환경에서 파일 시스템 모듈을 사용하면 됩니다.
 
-- [웹 개발자를 위한 JavaScript 디버깅 가이드](https://www.toptal.com/javascript/guide-to-javascript-debugging)
-- [브라우저 콘솔 디버깅 기술 요령](https://developer.chrome.com/docs/devtools/javascript/)
-- [JavaScript 디버깅에 대한 MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function)
+## 깊이 들어가기
+
+디버그 출력을 생성하는 것은 쉬운 작업처럼 보이지만, 실제로는 개발자에게 중요한 역할을 합니다. 디버그 출력을 사용하여 코드의 실행 과정을 디버그하고, 문제를 해결하고, 코드의 동작을 확인하는 데 도움이 됩니다.
+
+더 나아가서, 디버그 출력을 사용하여 코드의 성능을 최적화하는 데에도 도움이 됩니다. 예를 들어, 코드 실행 중에 어떤 변수가 얼마나 자주 변경되는지 확인할 수 있습니다. 이를 통해 불필요한 변수의 변경을 최소화하여 코드의 실행 속도를 향상시킬 수 있습니다.
+
+## 관련 자료
+
+자바스크립트 디버깅을 더 깊이 이해하고 싶다면 아래 링크를 참고하세요:
+
+- [Mozilla Developer Network: 디버깅 개요](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/debugger)
+- [코드스쿼드 블로그: 자바스크립트 디버깅 네 가지 방법](https://www.codesquad.kr/blog/javascript-debugging-4-methods/)
+- [컴퓨터코드: 디버거 사용하기](https://www.computercoda.com/p/323/javascript-debugger.html)

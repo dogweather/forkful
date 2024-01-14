@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Ein Datum in einen String umwandeln"
+simple_title:         "Ein Datum in einen String umwandeln"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/converting-a-date-into-a-string.md"
 ---
 
@@ -9,50 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Konvertieren von Datumsangaben in Strings ist eine häufige Aufgabe beim Programmieren und kann für verschiedene Zwecke verwendet werden, z.B. für die Darstellung von Datumswerten in Benutzeroberflächen oder für die Speicherung von Datumswerten in Datenbanken. In diesem Blogbeitrag werden wir uns ansehen, wie man mit Elixir einfach Datumsangaben in Strings umwandeln kann.
+Das Konvertieren von Datum in einen String ist eine häufige Aufgabe in der Elixir-Programmierung. Es ermöglicht uns, Daten in einem leicht lesbaren Format auszugeben und macht es einfacher, sie mit anderen zu teilen. Erfahre in diesem Blog-Post, wie du ein Datum in einen String umwandeln kannst.
 
-## Wie geht man vor
+## Wie geht's?
 
-Um eine Datumsangabe in einen String umzuwandeln, gibt es einige Funktionen in Elixir, die wir verwenden können.
-
-### Mit der Funktion `to_string/2`
-
-Die einfachste Möglichkeit besteht darin, die Funktion `to_string/2` zu verwenden, die uns erlaubt, ein Datum zusammen mit einem Formatierungsmuster zu übergeben und den entsprechenden String zurückzuerhalten.
-
-Beispiel:
+Lass uns zunächst einen Blick auf das `Date`-Modul in Elixir werfen. Mit diesem Modul haben wir Zugriff auf eine Reihe von Funktionen, die uns helfen, mit Datumswerten zu arbeiten. Eine dieser Funktionen ist `to_string/1`, die ein Datum in einem String im Format YYYY-MM-DD zurückgibt.
 
 ```Elixir
-to_string(~D[2021-06-15], "{YYYY}-{MM}-{DD}")
-# Ausgabe: "2021-06-15"
+Date.to_string(~D[2020-12-01])
 ```
+Ausgabe: "2020-12-01"
 
-In diesem Beispiel haben wir ein Datum im Format `~D[YYYY-MM-DD]` übergeben und das Formatierungsmuster `"{YYYY}-{MM}-{DD}"`, das uns den String `2021-06-15` zurückgibt.
-
-### Mit der Funktion `Calendar.ISO.format/2`
-
-Eine andere Möglichkeit besteht darin, die Funktion `Calendar.ISO.format/2` zu verwenden, die eine breitere Palette von Formatierungsmustern unterstützt und die Konvertierung auch für andere Kalenderformate ermöglicht.
-
-Beispiel:
+Wir können auch eine benutzerdefinierte Formatierung für unseren String angeben, indem wir die Funktion `to_string/2` verwenden und ein Formatierungsmuster angeben.
 
 ```Elixir
-Calendar.ISO.format(~D[2021-06-15], "{YYYY}-{M}-{D}")
-# Ausgabe: "2021-6-15"
+Date.to_string(~D[2020-12-01], "{YYYY}/{MM}/{DD}")
 ```
+Ausgabe: "2020/12/01"
 
-Im Vergleich zur vorherigen Funktion erhalten wir in diesem Fall eine etwas andere Ausgabe, da wir das Formatierungsmuster `"{YYYY}-{M}-{D}"` verwendet haben, das die Monatsangabe als einfache Zahl (6 statt 06) darstellt.
+Es ist auch möglich, ein `DateTime`-Objekt in einen String umzuwandeln. Hierfür verwenden wir die Funktion `to_string/1` im `DateTime`-Modul und geben ein Dateiformat als Parameter an.
 
-### Weitere Optionen
+```Elixir
+DateTime.to_string(~U[2020-12-01 12:30:00Z], "{YYYY}-{M}-{D}T{H}:{M}")
+```
+Ausgabe: "2020-12-01T12:30"
 
-Es gibt noch weitere Funktionen und Optionen in Elixir, um Datumsangaben in Strings zu konvertieren, wie z.B. die Funktion `Timex.format/2` aus dem Timex Package oder die Module `Date` und `DateTime` aus der Elixir Standardbibliothek.
+## Deep Dive
 
-## Tiefere Einblicke
+Die Funktion `to_string/2` im `Date`-Modul akzeptiert auch einen optionalen Zeitzonenparameter. Standardmäßig wird die lokale Systemzeit verwendet, aber wir können auch eine bestimmte Zeitzone angeben, indem wir ein `DateTime`-Objekt als Parameter übergeben.
 
-Bei der Konvertierung von Datumsangaben in Strings gibt es verschiedene Faktoren zu beachten, wie z.B. die unterschiedlichen Dateiformate (ISO, Amerikanisches Format, etc.) oder die Berücksichtigung von Zeit- und Zeitzone-Informationen.
+```Elixir
+DateTime.to_string(~U[2020-12-01 12:00:00], "{YYYY}-{MM}-{DD}T{H}:{M}", "America/New_York")
+```
+Ausgabe: "2020-12-01T12:00"
 
-Wenn du mehr über die Konvertierung von Datumsangaben in Strings mit Elixir erfahren möchtest, empfehlen wir dir, dich mit den verschiedenen Funktionen und Optionen vertraut zu machen und dich auch mit den verschiedenen Kalenderformaten auseinanderzusetzen.
+Wenn wir uns das Ergebnis genau ansehen, werden wir feststellen, dass die Zeit um eine Stunde versetzt ist. Das liegt daran, dass die Zeitzone "America/New_York" eine Stunde hinter der Systemzeit liegt.
+
+Es ist auch möglich, eine Zeitzone als Atom anzugeben. Dies ist hilfreich, wenn wir die Zeitzone in einer Konfigurationsdatei speichern und sie dann in unseren Code einbinden möchten.
 
 ## Siehe auch
 
-- [Elixir Date and Time](https://elixirschool.com/de/lessons/advanced/datetime/)
-- [Elixir Timex Package](https://hexdocs.pm/timex/Timex.html)
-- [Elixir Standardbibliothek - Date und DateTime Module](https://hexdocs.pm/elixir/Kernel.Date.html)
+[Date-Modul Dokumentation](https://hexdocs.pm/elixir/Date.html)
+
+[DateTime-Modul Dokumentation](https://hexdocs.pm/elixir/DateTime.html)
+
+[Zeitzonen in Elixir](https://dev.to/adelcambre/getting-to-know-time-zones-in-elixir-3ed1)

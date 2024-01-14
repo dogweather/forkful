@@ -1,34 +1,29 @@
 ---
 title:                "Bash: Sletting av tegn som matcher et mønster"
+simple_title:         "Sletting av tegn som matcher et mønster"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Det kan være flere grunner til å slette tegn som matcher et visst mønster i Bash-programmering. Noen ganger kan det være nødvendig for å manipulere tekststrenger eller variabler, mens andre ganger kan det være en del av en større kodeprosess for å filtrere eller sortere data.
 
-Å slette tegn som matcher et mønster er en viktig ferdighet for å håndtere tekstbehandlingsoppgaver i Bash-programmering. Dette kan hjelpe deg med å forenkle og automatisere oppgaver som involverer å håndtere store mengder tekstfiler.
+## Hvordan
+Vi kan bruke Bash-kommandoen "sed" for å slette tegn som matcher et gitt mønster. La oss si at vi har en liste med telefonnumre i forskjellige formater, for eksempel "(123)456-7890" og "123-456-7890". Vi ønsker å fjerne parentesene og bindestreken og bare beholde tallene. Vi kan gjøre dette ved å kjøre følgende kommando:
 
-## Slik gjør du det
+```Bash
+sed 's/[()-]//g' < phone_numbers.txt
+```
 
-For å slette tegn som matcher et spesifikt mønster, kan du bruke kommandoen `sed` (stream editor). Her er et eksempel på hvordan du kan slette alle tall fra en tekstfil:
+Her bruker vi "sed" kommandoen med s-erstatningsfunksjonen, etterfulgt av mønsteret vi vil erstatte (parentes og bindestrek) og deretter erstatningen (tom streng). "g" -flagget er også lagt til for å slette alle forekomster av mønsteret i hver linje. Resultatet vil være en liste med bare tall i forskjellige formater.
 
-````Bash
-sed 's/[0-9]//g' tekstfil.txt
-````
-
-I dette eksempelet bruker vi `sed` til å erstatte alle tall, representert av mønsteret `[0-9]`, med ingenting (altså sletter dem). Det siste argumentet "g" betyr å gjøre det på alle forekomstene i teksten. Outputet vil være den samme teksten, men nå uten tall.
-
-## Dypdykk
-
-Kommandoen `sed` er en kraftig verktøy for å håndtere tekstfiler i Bash-programmering. Ved å bruke regex (regular expression) mønstre, kan du spesifisere hvilke tegn du vil slette, erstatte eller beholde. Dette gjør det mulig å håndtere komplekse filer på en enkel og effektiv måte.
-
-I tillegg til `sed` kan du også bruke andre kommandoer som `tr` (translate) og `awk` (pattern scanning and text processing) til å slette tegn basert på mønstre. Utforske disse verktøyene vil hjelpe deg å bli en mer effektiv og avansert Bash-programmerer.
+## Dykk dypere
+For mer avanserte manipulasjoner, kan vi også bruke regulære uttrykk i kombinasjon med "grep" kommandoen for å slette tegn som matcher et bestemt mønster. Dette åpner opp muligheten til å lage mer komplekse søkemønstre og gjøre mer presis tekstbehandling.
 
 ## Se også
-
-* [Bash sed kommando dokumentasjon](https://www.gnu.org/software/sed/manual/sed.html)
-* [Bash tr kommando dokumentasjon](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
-* [Bash awk kommando dokumentasjon](https://www.gnu.org/software/gawk/manual/gawk.html)
+- [Linuxize - Using sed to Delete Lines Matching a Specific Pattern](https://linuxize.com/post/using-sed-to-delete-lines-matching-a-specific-pattern/)
+- [linux.die.net - sed command examples](https://linux.die.net/man/1/sed)

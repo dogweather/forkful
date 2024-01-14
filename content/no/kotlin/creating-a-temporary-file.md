@@ -1,41 +1,51 @@
 ---
 title:                "Kotlin: Lage en midlertidig fil"
+simple_title:         "Lage en midlertidig fil"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Temporary files er en viktig del av moderne programmering, spesielt når det gjelder å håndtere midlertidig data eller å sikre programkjøringen. Ved å skrive Kotlin-kode for å lage midlertidige filer, kan du enkelt håndtere disse situasjonene og forbedre funksjonaliteten til ditt program.
 
-I denne bloggposten skal vi se nærmere på hvordan man kan lage en midlertidig fil i Kotlin, og hvorfor det kan være nyttig i visse situasjoner. 
+## Hvordan
+Det finnes flere måter å lage en midlertidig fil i Kotlin på. La oss ta en titt på to av de mest vanlige metodene.
 
-Noen ganger trenger man å opprette en midlertidig fil på datamaskinen sin for å lagre informasjon som bare trengs for en kort periode, for eksempel under prosessen med å skrive en større applikasjon. Dette kan være nyttig for å frigjøre systemressurser og holde orden på filhåndteringen i kodebasen. 
+Først må du importere klassen som er nødvendig for å lage en midlertidig fil:
 
-## Slik Gjør du
-
-For å opprette en midlertidig fil i Kotlin kan du bruke File.createTempFile() metoden, som vil automatisk lage en unik filnavn og plassere filen i systemets midlertidige filmappe. Du kan også spesifisere et prefiks og en suffiks for filnavnet, og hvor filen skal plasseres, ved hjelp av metoden File.createTempFile(prefix, suffix, directory). 
-
-Her er et eksempel på hvordan du kan opprette en midlertidig fil og skrive til den ved hjelp av FileOutputStream-objektet:
-
-```
-Kotlin
-val tempFile = File.createTempFile("temp", ".txt")
-val data = "Dette er en midlertidig fil"
-val outputStream = FileOutputStream(tempFile)
-outputStream.use {
-    it.write(data.toByteArray())
-}
+```Kotlin
+import java.io.File
 ```
 
-Etter at koden over har blitt kjørt, vil en midlertidig fil med navnet "tempXXXX.txt" (hvor XXXX er en unik nummerkombinasjon) bli opprettet i systemets midlertidige filmappe. Innholdet "Dette er en midlertidig fil" vil også være skrevet til filen. 
+### Metode 1: createTempFile()
+Den enkleste måten å lage en midlertidig fil i Kotlin er ved å bruke funksjonen `createTempFile()`. Denne funksjonen tar inn tre parametere: et prefix for filnavnet, et suffix for filnavnet og en filbane der den midlertidige filen skal lagres. Prefix og suffix er valgfrie, og hvis ingen blir gitt, vil en standardverdi bli brukt.
 
-## Dykk Dypere
+```Kotlin
+val temporaryFile = File.createTempFile("temp_", ".txt", "/path/to/directory")
+```
 
-Når man lager en midlertidig fil, vil den automatisk bli slettet når programmet avsluttes eller når filen blir stengt. Dette er for å hindre at unødvendige filer blir liggende igjen på datamaskinen. Men i noen tilfeller kan det være ønskelig å beholde filen eller slette den manuelt. Dette kan gjøres ved å sette filen til å ikke være en midlertidig fil ved hjelp av metoden File.deleteOnExit(). Filen vil da ikke bli slettet når programmet avsluttes, og man kan slette den manuelt når det trengs. 
+I eksempelet ovenfor blir en midlertidig fil opprettet med prefikset "temp_" og suffixet ".txt". Filen vil bli lagret i mappen "/path/to/directory" og vil ha et unikt nummer som er generert automatisk.
 
-## Se Også
+### Metode 2: writeFileToTemp()
+Den andre metoden er å bruke funksjonen `writeFileToTemp()`. Denne funksjonen tar inn én parameter: et filnavn. Funksjonen vil opprette en midlertidig fil med det angitte navnet og returnere en `File`-objekt som kan brukes til å skrive data til filen.
 
-- [Java File.createTempFile() dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Kotlin FileOutputStream dokumentasjon](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file-output-stream.html)
+```Kotlin
+val temporaryFile = File("my_temp_file.txt")
+val fileToWrite = temporaryFile.writeFileToTemp("my_temp_file.txt")
+```
+
+I dette eksempelet blir en tom midlertidig fil med navnet "my_temp_file.txt" opprettet. Deretter blir en `File`-objekt returnert, som vi kan bruke til å skrive data til den midlertidige filen.
+
+## Deep Dive
+Når en midlertidig fil blir opprettet, vil den bli lagret i systemets temp-mappe. Denne mappen er vanligvis skjult og er forskjellig fra system til system. Det kan derfor være lurt å hente banen til denne mappen ved hjelp av `System.getProperty("java.io.tmpdir")`. På denne måten vil du ha en universell måte å få tak i banen til temp-mappen på, uavhengig av operativsystem.
+
+En annen ting å merke seg er at midlertidige filer ikke blir slettet automatisk. Det er derfor viktig å sørge for å slette dem når de ikke lenger er nødvendige. Dette kan gjøres ved å kalle `delete()`-funksjonen på `File`-objektet.
+
+## Se også
+- [Official Kotlin documentation on temporary files](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
+- [Java.io.File documentation](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Creating temporary files in Java](https://www.baeldung.com/java-temporary-file)

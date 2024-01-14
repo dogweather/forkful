@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/finding-the-length-of-a-string.md"
 ---
 
@@ -9,44 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Encontrar o comprimento de uma string é uma tarefa comum na programação, especialmente quando estamos lidando com strings de entrada de usuários ou manipulando texto em nossos scripts. Conhecer o comprimento de uma string pode nos ajudar a fazer validações de entrada ou realizar cortes precisos em nossos dados. Neste artigo, vamos descobrir como podemos encontrar facilmente o comprimento de uma string usando o Fish Shell.
+Às vezes, precisamos saber o tamanho de uma string em nosso código para realizar operações específicas. O Fish Shell oferece uma maneira simples e eficaz de encontrar o comprimento de uma string usando alguns comandos básicos.
 
-## Como Fazer
+## Como fazer
 
-Para encontrar o comprimento de uma string usando o Fish Shell, podemos utilizar o comando `string length`. Este comando retorna o número de caracteres em uma string. Vamos dar uma olhada em alguns exemplos para entender melhor seu funcionamento.
+Para encontrar o comprimento de uma string no Fish Shell, você pode usar o comando `count`. Basta digitar o comando seguido da string entre aspas para obter o resultado. Veja um exemplo abaixo:
 
-```Fish Shell
-$ string length "Olá mundo"
-10
-$ string length "óculos 🕶️"
-11
-$ string length "12345"
-5
+```
+Fish Shell
+count "Olá, mundo!"
+
+12
 ```
 
-Podemos ver que o comando `string length` funciona com qualquer tipo de string, seja com letras, números ou até mesmo emojis. Além disso, ele também conta os espaços em branco e caracteres especiais.
+Neste exemplo, a string dentro das aspas tem 12 caracteres, incluindo espaços e pontuações.
 
-Outra forma de encontrar o comprimento de uma string é utilizando a função `count` em conjunto com o caractere coringa `.`. Isso nos permitirá contar quantas vezes o caractere se repete na string, o que, no caso de strings, será o número de caracteres.
+Você também pode usar o recurso de expansão de variáveis do Fish Shell para encontrar o comprimento de uma variável. Vamos ver um exemplo:
 
-```Fish Shell
-$ count . "Olá mundo"
-10
-$ count . "óculos 🕶️"
-11
-$ count . "12345"
-5
+```
+set mensagem "Esta é uma mensagem"
+count $mensagem
+
+23
 ```
 
-Agora que já sabemos como encontrar o comprimento de uma string, podemos utilizá-lo em nossos scripts para facilitar a manipulação de dados e validações de entrada.
+Observe que usamos o cifrão antes do nome da variável para indicar ao Fish Shell que queremos expandi-la antes de usar o comando `count`.
 
-## Mergulho Profundo
+## Mergulho profundo
 
-Em alguns casos, a função `count` pode ser mais eficiente do que o comando `string length`, pois ela não precisa percorrer toda a string, apenas contar as ocorrências de um caractere. Além disso, podemos passar um critério de busca como segundo argumento, o que possibilita contagem de caracteres específicos.
+O Fish Shell possui uma função embutida chamada `string length`, que também pode ser usada para encontrar o comprimento de uma string. Essa função é particularmente útil se você deseja armazenar o resultado em uma variável para uso posterior.
 
-Outra dica é que o caractere `.` pode ser substituído por qualquer outro caractere ou sequência de caracteres, o que pode ser particularmente útil em situações específicas.
+Veja um exemplo:
 
-## Veja Também
+```
+set comprimento (string length "Fish Shell")
 
-- [Documentação do Fish Shell - Comando `string length`](https://fishshell.com/docs/current/cmds/string-length.html)
-- [Documentação do Fish Shell - Função `count`](https://fishshell.com/docs/current/cmds/count.html)
-- [Tutorial do Fish Shell (em português)](https://terminalroot.com.br/fish)
+11
+```
+
+Observe que agora nós armazenamos o resultado em uma variável chamada "comprimento" usando parênteses e sem precisar usar o cifrão antes da variável.
+
+## Veja também
+
+Aqui estão algumas referências úteis sobre como encontrar o comprimento de uma string no Fish Shell:
+
+- [Documentação oficial do Fish Shell sobre o comando `count`](https://fishshell.com/docs/current/cmds/count.html)
+- [Dica rápida: Encontrando o comprimento de uma string no Fish Shell](https://dev.to/thebitflare/quick-tip-finding-the-length-of-a-string-in-fish-shell-1g6o)
+- [Vídeo tutorial do Fish Shell sobre o comando `string length`](https://www.youtube.com/watch?v=fZOfThb0Y0w)

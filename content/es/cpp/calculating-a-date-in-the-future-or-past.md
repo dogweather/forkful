@@ -1,7 +1,9 @@
 ---
-title:                "C++: Calculando una fecha en el futuro o pasado"
+title:                "C++: Calculando una fecha en el futuro o en el pasado"
+simple_title:         "Calculando una fecha en el futuro o en el pasado"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,71 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Calcular fechas en el futuro o en el pasado puede ser una tarea importante en la programación, especialmente cuando se trata de planificar eventos o automatizar tareas. Con la ayuda de un código bien escrito, es posible generar fechas precisas y ahorrar tiempo y esfuerzo en el proceso.
+¿Alguna vez te has preguntado cómo puedes saber una fecha específica en el futuro o en el pasado? ¡Programando en C++ puedes hacerlo fácilmente! En este post te explicaremos cómo puedes calcular una fecha con tan solo unas líneas de código.
 
 ## Cómo hacerlo
 
-Para calcular una fecha en el futuro o en el pasado, primero se necesita una fecha inicial y una cantidad de tiempo en días, meses o años. A continuación, se puede utilizar la clase `std::chrono::time_point` de la biblioteca estándar de C++ para obtener una estructura `tm` con los detalles de la fecha deseada.
+Primero, debes asegurarte de incluir la biblioteca de fecha y hora de C++ en tu programa:
 
 ```C++
-#include <iostream>
-#include <chrono>
-using namespace std::chrono;
-
-// Función para calcular una fecha en el futuro o en el pasado
-void calcularFecha(time_t fechaInicial, int cantidadTiempo, int tipoTiempo) {
-
-    // Crear un objeto time_point a partir de la fecha inicial
-    time_point<system_clock> timePunto(fechaInicial);
-
-    // Calcular la fecha final utilizando la función `time_point` `operator+=`
-    timePunto += duration<int, std::ratio<86400>>(cantidadTiempo*tipoTiempo);
-
-    // Convertir el objeto `time_point` a la estructura `tm`
-    time_t fechaFinal = system_clock::to_time_t(timePunto);
-    tm *fecha = localtime(&fechaFinal);
-
-    // Imprimir la fecha en un formato legible
-    std::cout << "La fecha calculada es: " << fecha->tm_mday << "/" << fecha->tm_mon+1 << "/" << fecha->tm_year+1900 << std::endl;
-}
-
-int main() {
-    // Fecha inicial: 1 de enero de 2021
-    time_t fechaInicial = time(nullptr);
-    tm *fecha = localtime(&fechaInicial);
-    fecha->tm_mday = 1;
-    fecha->tm_mon = 0;
-    fecha->tm_year = 121;
-
-    // Calculando 10 días en el futuro
-    calcularFecha(fechaInicial, 10, 1);
-
-    // Calculando 6 meses en el pasado
-    calcularFecha(fechaInicial, 6, -30);
-
-    // Calculando 2 años en el futuro
-    calcularFecha(fechaInicial, 2, 365);
-
-    return 0;
-}
+#include <ctime>
 ```
 
-El resultado de ejecutar el código anterior será:
+A continuación, necesitas declarar las variables para el día, el mes y el año:
 
-```
-La fecha calculada es: 11/1/2021
-La fecha calculada es: 1/7/2020
-La fecha calculada es: 1/1/2023
+```C++
+int dia, mes, año;
 ```
 
-## Más información
+Luego, puedes utilizar la función `time_t` para obtener la fecha y hora actual:
 
-Para calcular fechas en el futuro o en el pasado en C++, es importante tener en cuenta la precisión de los cálculos. Por ejemplo, si se desea calcular una fecha en años, pero la cantidad de tiempo especificada es un número decimal, el resultado puede no ser tan preciso como se espera. Además, también es importante tener en cuenta la zona horaria en la que se desea calcular la fecha.
+```C++
+time_t fecha_actual = time(0);
+```
 
-En general, el uso de la biblioteca estándar de C++ y sus clases `time_point` y `duration` puede facilitar la tarea de calcular fechas en el futuro o en el pasado de manera precisa y eficiente.
+Después de eso, puedes utilizar la función `localtime` para obtener la fecha y hora local actual:
+
+```C++
+struct tm* fecha_local = localtime(&fecha_actual);
+```
+
+Ahora, puedes modificar la fecha y hora utilizando la función `mktime`:
+
+```C++
+struct tm fecha_deseada = *fecha_local; // En este ejemplo, estamos usando la fecha actual como fecha deseada
+fecha_deseada.tm_mday += 5; // Sumamos 5 días a la fecha actual
+fecha_deseada.tm_mon += 1; // Sumamos 1 mes a la fecha actual
+fecha_deseada.tm_year += 1; // Sumamos 1 año a la fecha actual
+```
+
+Finalmente, puedes imprimir la fecha deseada utilizando la función `strftime`:
+
+```C++
+char fecha[80];
+strftime(fecha, 80, "%d/%m/%y", &fecha_deseada);
+std::cout << "La fecha deseada es: " << fecha << std::endl;
+```
+
+Y ¡listo! Ahora sabes cómo calcular una fecha en el futuro o en el pasado utilizando C++.
+
+## Profundizando
+
+Si quieres profundizar más en el tema, puedes investigar sobre la forma en que C++ maneja las fechas y horas utilizando la estructura `tm` y las funciones `time`, `localtime`, `mktime` y `strftime`.
+
+También puedes aprender sobre otras funciones y técnicas que puedes utilizar para trabajar con fechas y horas, como la función `difftime`, que calcula la diferencia en segundos entre dos fechas, o la biblioteca boost::date_time, que proporciona una gran cantidad de funcionalidades para trabajar con fechas y horas.
 
 ## Ver también
-
-- [Documentación de la biblioteca estándar de C++ sobre fechas y tiempo](https://en.cppreference.com/w/cpp/chrono)
-- [Tutorial sobre la biblioteca `std::chrono` en C++](https://www.learncpp.com/cpp-tutorial/38-stdchrono/)  
-- [Ejemplos de cálculos de fechas utilizando C++](https://www.techiedelight.com/calculate-add-years-dates-cpp/)
+- [Documentación de fechas y horas en C++](https://en.cppreference.com/w/cpp/chrono)
+- [C++ date_time library](https://www.boost.org/doc/libs/1_70_0/doc/html/date_time.html)

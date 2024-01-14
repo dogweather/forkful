@@ -1,93 +1,58 @@
 ---
-title:                "C#: Å finne lengden på en streng"
+title:                "C#: Å finne lengden av en streng"
+simple_title:         "Å finne lengden av en streng"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c-sharp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-Blogginnlegg om programmering i C# for casual lesere
+## Hvorfor
 
-##Hvorfor
-Å finne lengden på en tekststreng er en vanlig oppgave i programmering og kan være nyttig for å manipulere data eller vise informasjon til brukere. I dette blogginnlegget vil vi se nærmere på hvordan vi kan finne lengden på en streng i C#.
+For mange programmerere kan det å finne lengden til en streng virke som en enkel oppgave. Men det er faktisk en viktig del av å utvikle effektive og pålitelige applikasjoner. Ved å vite lengden til en streng kan man håndtere tekstbehandling og datastrukturering mer effektivt. Derfor er det viktig å forstå hvordan man kan finne lengden til en streng ved hjelp av C#.
 
-##Slik gjør du det
-```C#
-// Definerer en tekststreng
-string tekst = "Dette er en tekststreng.";
+## Slik gjør du det
 
-// Bruker .Length attributtet for å finne lengden
-Console.WriteLine("Lengden av tekststrengen er: " + tekst.Length);
-
-//Output: Lengden av tekststrengen er: 24
-```
-
-Vi kan også bruke en løkke til å telle antall tegn i en tekststreng:
+For å finne lengden til en streng i C#, kan du bruke metoden ".Length". Denne metoden returnerer antall tegn i strengen, inkludert mellomrom og spesialtegn.
 
 ```C#
-// Definerer en tekststreng
-string tekst = "Dette er en tekststreng.";
-
-// Definerer en variabel for å holde tellingen
-int lengde = 0;
-
-// Løkke som teller antall tegn
-for (int i = 0; i < tekst.Length; i++)
-{
-    lengde++;
-}
-
-Console.WriteLine("Lengden av tekststrengen er: " + lengde);
-
-//Output: Lengden av tekststrengen er: 24
+string navn = "Jan";
+int lengde = navn.Length;
+Console.WriteLine("Lengden til strengen er: " + lengde);
 ```
+Output: Lengden til strengen er: 3
 
-Vi kan også bruke metoden `.Count()` for å finne lengden på en tekststreng. Denne metoden tar inn et betinget uttrykk som argument og teller hvor mange ganger uttrykket er oppfylt i tekststrengen.
+Det er også mulig å hente lengden til en streng som input fra brukeren. Dette kan gjøres ved å bruke metoden "Console.ReadLine()" som returnerer en streng. Deretter kan du bruke ".Length" metoden for å finne lengden til den innleste strengen.
 
 ```C#
-// Definerer en tekststreng
-string tekst = "Dette er en tekststreng.";
-
-// Bruker .Count() metoden
-Console.WriteLine("Lengden av tekststrengen er: " + tekst.Count());
-
-//Output: Lengden av tekststrengen er: 24
+Console.WriteLine("Skriv inn en setning:");
+string setning = Console.ReadLine();
+int lengde = setning.Length;
+Console.WriteLine("Lengden til strengen er: " + lengde);
 ```
+Output: Lengden til strengen er: 12 (hvis brukeren skrev inn "Hei, dette er en setning")
 
-##Dypdykk
-Hvis vi ønsker å ekskludere mellomrom fra tellingen av tegn, kan vi bruke `.Trim()` metoden i kombinasjon med `.Length` attributtet.
+Ved å bruke ".Length" metoden, kan du også finne lengden til strenger som er lagret i en liste (List) eller et array (Array). For å gjøre dette, må du først hente ut elementet fra listen eller arrayet, og deretter bruke ".Length" metoden.
 
 ```C#
-// Definerer en tekststreng
-string tekst = "Dette er en tekststreng.";
-
-// Bruker .Trim() metoden for å fjerne mellomrom
-int lengde = tekst.Trim().Length;
-
-Console.WriteLine("Lengden av tekststrengen uten mellomrom er: " + lengde);
-
-//Output: Lengden av tekststrengen uten mellomrom er: 20
+List<string> frukt = new List<string>() {"eple", "banan", "kiwi"};
+int lengde = frukt[1].Length;
+Console.WriteLine("Lengden til strengen er: " + lengde);
 ```
+Output: Lengden til strengen er: 5 (da "banan" ble hentet fra listen)
 
-Det kan også være nyttig å vite at `.Length` attributtet returnerer en `int` verdi, altså et heltall. Hvis vi ønsker å bruke lengden i en matematisk operasjon, kan det være nødvendig å konvertere det til et desimaltall ved å bruke `Convert.ToDouble()`.
+## Dykk dypere
 
-```C#
-// Definerer en tekststreng
-string tekst = "Dette er en tekststreng.";
+I C# er en streng en samling av tegn som er lagret i en array. Når du bruker ".Length" metoden, returnerer den egentlig antall elementer i arrayet, som tilsvarer lengden til strengen. Det kan være nyttig å forstå denne bakgrunnen for å bedre forstå hvordan metoden fungerer.
 
-// Konverterer lengden til et desimaltall
-double lengde = Convert.ToDouble(tekst.Length);
+Det er også verdt å merke seg at "lengden" til en streng kan være annerledes enn antall bokstaver i strengen. Dette skyldes at visse spesialtegn og emoji bruker flere byte og derfor telles som flere elementer i arrayet.
 
-// Ganger lengden med 2
-double dobbelLengde = lengde * 2;
+For å håndtere dette, kan man bruke metoden ".ToCharArray" som konverterer strengen til en array av tegn. Deretter kan man bruke ".Length" metoden til å finne antall bokstaver i strengen.
 
-Console.WriteLine("Dobbelt så lang tekststreng: " + dobbelLengde);
+## Se også
 
-//Output: Dobbelt så lang tekststreng: 48
-```
-
-##Se også
-[Microsoft Docs om String.Length Eigenskap](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=net-5.0)\
-[Microsoft Docs om String.Count Metode](https://docs.microsoft.com/en-us/dotnet/api/system.string.count?view=net-5.0)\
-[Tutorialspoint om C# Strings](https://www.tutorialspoint.com/csharp/csharp_strings.htm)
+- [C# String.Length Property](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=net-5.0)
+- [C# String.ToCharArray Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.tochararray?view=net-5.0)
+- [C# Arrays and Lists](https://www.c-sharpcorner.com/article/arrays-and-lists-in-c-sharp/) (på engelsk)

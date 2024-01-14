@@ -1,56 +1,48 @@
 ---
-title:                "C#: テストの書き方"
+title:                "C#: テストを書く"
+simple_title:         "テストを書く"
 programming_language: "C#"
-category:             "Testing and Debugging"
+category:             "C#"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜテストを書くのか
+## なぜ？
+プログラミングにおいて、テストは非常に重要です。テストを書くことで、ソフトウェアのバグを検出しやすくなり、コードの品質を向上させることができます。
 
-プログラマにとって、テストは非常に重要です。テストを書くことで、コードの品質を保証し、バグを早期に発見することができます。さらに、テストを書くことでコードのリファクタリングや変更が容易になり、開発プロセスをスムーズに進めることができます。
-
-##テストの書き方
-
-テストを書くには、いくつかの方法がありますが、C#言語では「```C# ... ```」のコードブロックを使用することでテストを書くことができます。例えば、以下のようにテストを書くことができます。
+## 方法
+テストを書くには、まずテストフレームワークを選択します。本記事では、C#で書かれたテストを実行するための「NUnit」を使用します。以下のコードを参考に、どのようにNUnitを使用するかを説明します。
 
 ```C#
-// テスト用のクラス
-public class Calculator {
+// まず、必要なNUnitライブラリをインストールする必要があります。
+using NUnit.Framework;
 
-    // 足し算のメソッド
-    public int Add(int num1, int num2) {
-        return num1 + num2;
-    }
-}
+// 以下のように、テストクラスを作成します。
+public class CalculatorTests
+{
+    // テストケースごとに、[Test]属性を付けたメソッドを作成します。
+    // メソッドの名前は適宜変更してください。
+    [Test]
+    public void Add_TwoIntegers_ReturnsSum()
+    {
+        // テストするメソッドを呼び出し、結果を変数に代入します。
+        int result = Calculator.Add(3, 5);
 
-// テストクラス
-[TestClass]
-public class CalculatorTest {
-
-    [TestMethod]
-    public void TestAdd() {
-        // インスタンスを作成
-        Calculator calc = new Calculator();
-        
-        // テスト対象のメソッドを呼び出し
-        int result = calc.Add(2, 3);
-        
-        // 期待値と実際の値を比較
-        Assert.AreEqual(5, result);
+        // Assertクラスを使用して、テストケースの期待値と実際の結果を比較します。
+        // テストが成功した場合は何も起こりませんが、失敗した場合は例外が発生します。
+        Assert.AreEqual(8, result);
     }
 }
 ```
 
-このように、テスト用のクラスとテストクラスを作成し、テスト対象のメソッドを呼び出し、期待値と実際の値を比較することでテストを実行することができます。
+上記のように、NUnitを使用してテストを書くことで、コードが期待通りに動作するかを簡単に確認することができます。
 
-##テストの深堀り
+## 深く掘り下げる
+テストを書く際には、いくつかのルールに従うことが重要です。例えば、テストケースごとにメソッドを作成し、テストするデータに応じて名前を付けること、断言する値について明確にすることなどが挙げられます。また、テストカバレッジと呼ばれる概念を使用して、コードのどの部分をテストしているかを可視化することも重要です。
 
-テストを書く際には、いくつかのポイントに注意する必要があります。まず、テストケースを網羅的に書くことが重要です。あらゆるケースをテストすることで、バグを発見しやすくなります。また、テスト対象のメソッドの返り値やエラーハンドリングなど、細かい部分もテストすることでコードの安定性を保つことができます。さらに、テストコードもコードと同じようにリファクタリングすることで、テストの保守性を高めることができます。
-
-##参考リンク
-
-- [C#でのユニットテストの書き方](https://techacademy.jp/magazine/24963)
-- [テスト駆動開発](https://ja.wikipedia.org/wiki/テスト駆動開発)
-- [C#のテストフレームワーク「NUnit」公式サイト](https://nunit.org/)
+## 参考になるリンク
+- [NUnit公式サイト](https://nunit.org/)
+- [NUnitドキュメント](https://docs.nunit.org/)
+- [テストカバレッジについての記事（英語）](https://www.softwaretestinghelp.com/test-coverage-measurement-in-software-testing/)

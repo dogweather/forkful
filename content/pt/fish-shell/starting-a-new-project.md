@@ -1,63 +1,45 @@
 ---
 title:                "Fish Shell: Começando um novo projeto"
+simple_title:         "Começando um novo projeto"
 programming_language: "Fish Shell"
-category:             "Getting Started"
+category:             "Fish Shell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porque
+## Por que usar a Fish Shell para começar um novo projeto?
 
-Este artigo irá mostrar o quão fácil pode ser começar um novo projeto utilizando o Fish Shell. Com o recurso de autocomplete integrado e a estrutura simples de comandos, o Fish Shell torna o processo de criação e gerenciamento de projetos mais eficiente e produtivo. Para aqueles que desejam aumentar sua produtividade e simplificar o desenvolvimento, seguir esses passos simples em Fish Shell é fundamental.
+Se você é um programador que adora trabalhar com linhas de comando e busca por uma shell mais intuitiva, completa e fácil de usar, a resposta é simples: a Fish Shell é a escolha perfeita para você. Com recursos como auto-completar com sugestões, uma linguagem de scripting simples e poderosa e uma comunidade ativa, a Fish Shell é a ferramenta ideal para iniciar um novo projeto e aumentar sua produtividade.
 
-## Como Fazer
+## Como usar a Fish Shell para iniciar um novo projeto
 
-Para começar, abra o seu Terminal e inicie o Fish Shell digitando ```fish```.
+Para utilizar a Fish Shell, você precisa primeiro instalá-la no seu sistema. Dependendo do seu sistema operacional, isso pode ser feito facilmente através do gerenciador de pacotes, como o apt-get no Ubuntu ou o Homebrew no Mac. Depois de instalada, basta abrir o terminal e digitar "fish" para iniciar a sua nova shell.
 
-Para criar um novo diretório para o seu projeto, use o comando ```mkdir``` seguido pelo nome do diretório desejado, como por exemplo: 
+Uma das principais características da Fish Shell é o recurso de auto-completar com sugestões. Isso significa que a shell irá sugerir possíveis comandos e argumentos à medida que você digita, economizando seu tempo e prevenindo erros. Por exemplo, se você digitar "cd D" e pressionar a tecla Tab, a shell irá sugerir automaticamente o diretório "Documents" caso ele exista no seu sistema.
 
-```
-mkdir novo_projeto
-```
+Outra funcionalidade importante é a linguagem de scripting da Fish Shell, que é baseada em comandos e funções simples. Por exemplo, para criar uma função que liste os arquivos de uma determinada pasta, basta digitar o seguinte código no terminal:
 
-Em seguida, navegue para o novo diretório usando o comando ```cd```.
+```Fish Shell
 
-```
-cd novo_projeto
-```
-
-Agora, usando o recurso de autocomplete do Fish Shell, vamos criar um arquivo de texto dentro do diretório recém-criado. Digite ```vim``` e pressione a tecla TAB duas vezes. O Fish Shell mostrará uma lista de opções de comandos que começam com "vim". Selecione a opção ```vim``` e pressione a tecla ENTER.
-
-```
-vim novo_arquivo.txt
+function listar
+ls $argv
+end
 ```
 
-Isso abrirá o editor de texto Vim. Adicione seu código ou texto desejado e salve o arquivo pressionando as teclas ```esc``` e depois ```:wq``` (salvar e sair). Para executar um comando, basta digitá-lo diretamente no Terminal.
+Ao chamar a função "listar" com o nome da pasta como argumento, a shell irá executar o comando "ls" e listar todos os arquivos daquela pasta. Além disso, a Fish Shell possui uma extensa documentação e uma comunidade ativa, o que facilita o aprendizado e a resolução de possíveis problemas.
 
-```
-ls
-```
+## Mais informações sobre iniciar um novo projeto com a Fish Shell
 
-Isso listará todos os arquivos e diretórios no diretório atual, incluindo o novo arquivo que você criou.
+Além dos recursos já mencionados, a Fish Shell também oferece outras funcionalidades que podem tornar o processo de iniciar um novo projeto mais eficiente. Uma delas é a capacidade de criar e gerenciar aliases, que são comandos personalizados que podem substituir sequências mais longas de comandos.
 
-## Profundidade
+Além disso, a Fish Shell também suporta a utilização de plugins, que são pequenos programas desenvolvidos pela comunidade para adicionar novas funcionalidades à shell. Com isso, é possível personalizar ainda mais a sua experiência de uso.
 
-Embora seja fácil criar um novo projeto usando o Fish Shell, também é importante entender os recursos e comandos adicionais que ele oferece. Alguns comandos úteis para gerenciar e trabalhar com projetos em Fish Shell são:
+## Veja também
 
-- ```cp```: copiar arquivos e diretórios
-- ```rm```: excluir arquivos e diretórios
-- ```mv```: mover arquivos e diretórios
-- ```cat```: exibir o conteúdo de um arquivo
-- ```grep```: pesquisar por uma determinada palavra ou expressão em um arquivo
-- ```echo```: imprimir uma mensagem ou variável na saída
+- [Documentação oficial da Fish Shell] (https://fishshell.com/docs/current/)
+- [Repositório do projeto no GitHub] (https://github.com/fish-shell/fish-shell)
+- [Comunidade de usuários da Fish Shell] (https://fishshell.com/community.html)
 
-Além disso, Fish Shell possui vários plugins disponíveis para melhorar ainda mais o processo de desenvolvimento e gerenciamento de projetos. É possível encontrar e instalar esses plugins usando o gerenciador de pacotes do Fish Shell, o ```fisher```.
-
-## Veja Também
-
-- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [Fisher plugin manager](https://github.com/jorgebucaran/fisher)
-- [10 beginner-friendly Fish Shell commands](https://geekflare.com/fish-shell-commands/)
-
-Agora que você conhece os fundamentos de como iniciar um novo projeto em Fish Shell, pode explorar ainda mais e encontrar maneiras de personalizar e otimizar ainda mais seu fluxo de trabalho. Com uma interface amigável e recursos poderosos, o Fish Shell é uma ótima opção para desenvolvedores que desejam aumentar sua produtividade e eficiência. Experimente e veja como ele pode melhorar sua experiência de programação.
+Agora que você conhece um pouco mais sobre a Fish Shell, não perca mais tempo e comece a utilizá-la em seus projetos. Sua produtividade e facilidade na linha de comando certamente irão aumentar. Até a próxima!

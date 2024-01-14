@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Lukemassa komentorivin argumentteja"
+title:                "Bash: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/reading-command-line-arguments.md"
 ---
 
@@ -9,26 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Bash-ohjelmoinnissa käytetyistä komentoriviparametreista kannattaa lukea nähdäkseen kuinka tehokkaasti voit käsitellä ja suorittaa ohjelmia kanssakäymisessä tietokoneen kanssa.
+Miksi joku haluaisi lukea komentorivin argumentteja? Komentorivi on voimakas työkalu, joka voi auttaa sinua automatisoimaan tehtäviä ja tehdä suuria määriä työtä lyhyessä ajassa. Lukemalla komentorivin argumentteja, voit tehdä skriptejä ja ohjelmia entistä joustavammiksi ja tehokkaammiksi. Joten, jos olet kiinnostunut parantamaan ohjelmointitaitojasi ja nopeuttamaan päivittäistä työtäsi, tämä artikkeli on sinulle!
 
-## Kuinka tehdä
+## Miten
 
-Komentoriviparametrit voidaan lukea merkkijonoilla ` "$" `.
+Luultavasti olet jo käyttänyt komentoriviä ja kirjoittanut joitakin yksinkertaisia komentoja, kuten "ls" tai "cd". Mutta kuinka voit lukea ja hyödyntää käyttäjän antamia komentorivin argumentteja? Se on helppoa! Tässä on esimerkki:
 
 ```Bash
-# Scripti lukee komentoriviparametreja
-nimi="$1" # Ensimmäinen komentoriviparametri tallennetaan muuttujaan nimi
-echo "Hei, $nimi!" # Tulostetaan tervehdys käyttäen parametrina annettua nimeä 
+#!/bin/bash
+# Tässä skriptissä hyödynnetään komentorivin argumentteja.
+# Käyttäjä syöttää nimensä ja iän komentoriville.
+
+echo "Tervetuloa, $1! Olet $2 vuotta vanha."
 ```
 
-Suorittaessasi skriptin ja toimitat ensimmäisenä parametrina oman nimesi, tulostetaan viesti "Hei, [nimesi]!" Tämä osoittaa, kuinka helposti voit käyttää komentoriviparametreja osana ohjelmaasi.
+Skriptissä käytetään "echo" komentoa, jonka avulla tulostetaan käyttäjän antamat argumentit. $1 edustaa ensimmäistä argumenttia eli käyttäjän nimeä ja $2 toista argumenttia eli ikää. 
 
-## Syvällisempi sukellus
+Joten, jos suoritat tämän skriptin seuraavalla tavalla:
 
-Komentoriviparametreihin liittyy myös muita ominaisuuksia, kuten erilaisten parametrien lukeminen ja niiden arvojen muokkaaminen. Voit myös hyödyntää valmiita komentoja, kuten `getopts` ja `shift`, tehokkaasti komentoriviparametrien käsittelyyn.
+```Bash
+bash tervehdys.sh Johanna 25
+```
+
+Saat seuraavan tulosteen:
+
+```Bash
+Tervetuloa, Johanna! Olet 25 vuotta vanha.
+```
+
+Nyt voit jo arvata, kuinka voit lukea minkä tahansa määrän komentorivin argumentteja ja käyttää niitä skriptisi sisällä. Kaikenlaiset manipuloinnit ja tietojen käsittely voidaan tehdä komentorivin argumenttien avulla.
+
+## Syvemmälle
+
+Haluatko tietää enemmän komentorivin argumenteista ja niiden käytöstä? Voit esimerkiksi käyttää "getopts" komentoa, jolla voit antaa parametrejä komentoriville ja valita niistä tarvittavat. Voit myös käyttää "shift" komentoa siirtääksesi argumentteja ja tarkistaa niitä eri tavalla. On monia muita käyttökelpoisia temppuja ja kikkoja, joita voit oppia lukemalla lisää aiheesta tai kokeilemalla itse.
 
 ## Katso myös
 
-- [Bash-opas (suomeksi)](https://jannekallio.fi/koulutus/bash-perusteet/)
-- [Bash-skriptit (englanniksi)](https://devhints.io/bash)
-- [Bash-parametrien käyttöohje (englanniksi)](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameters.html)
+Lue lisää Bash-ohjelmoinnista ja komentorivin käytöstä näistä linkeistä:
+
+- [Bash-sivusto](https://www.gnu.org/software/bash/)
+- [Bash-kirja](http://www.tldp.org/LDP/abs/html/)
+- [Komentorivin argumentit Linuxissa](https://www.linux.com/training-tutorials/arguments-and-variables-bash/)

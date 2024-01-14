@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/writing-tests.md"
 ---
 
@@ -9,46 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man sich die Mühe machen, Tests in Ruby zu schreiben? Die Antwort ist einfach: Tests sorgen für eine höhere Codequalität und helfen dabei, Fehler frühzeitig zu erkennen und zu beheben. Sie sparen also letztendlich Zeit und Nerven beim Entwickeln und Refaktorisieren von Code.
+In der Welt der Softwareentwicklung gibt es eine Vielzahl von Programmiersprachen und -methoden, die verwendet werden können, um qualitativ hochwertigen Code zu erstellen. Eine davon ist Ruby, eine dynamische Programmiersprache, die für ihre Benutzerfreundlichkeit und Lesbarkeit bekannt ist. Aber warum sollte man Tests in Ruby schreiben? Nun, Tests helfen dabei, Fehler in unserem Code zu finden und zu beheben, bevor sie sich auf die Funktionalität unserer Anwendung auswirken. Sie ersparen uns auch Zeit und Mühe, da wir nicht manuell jeden Bereich unseres Codes überprüfen müssen. In diesem Artikel werden wir uns genauer damit befassen, wie man Tests in Ruby schreibt und warum sie für jeden Entwickler unerlässlich sind.
 
-## How to
+## Wie man Tests in Ruby schreibt
 
-Um Tests in Ruby zu schreiben, verwenden wir das bekannte Framework "RSpec". Beginnen wir mit einem einfachen Beispiel, einem Test für eine einfache Rechenfunktion:
+Die Syntax für Tests in Ruby ist einfach und intuitiv. In der Regel verwendet man dazu das Ruby Testing Framework "MiniTest", das in der Standardbibliothek von Ruby enthalten ist. Um eine Testklasse zu erstellen, müssen wir zunächst eine neue Datei mit der Dateiendung ".rb" erstellen und sie in unserer Ruby-Anwendung importieren. Innerhalb dieser Datei erstellen wir dann eine Klasse mit dem Namen "Test" und erweitern sie von der Klasse "Minitest::Test". Hier ist ein Beispiel:
 
-```ruby
-# Definiere die Methode "add" und gebe die Summe von a und b zurück
-def add(a, b)
-  return a + b
+```Ruby
+require 'minitest/autorun'
+
+class Test < Minitest::Test
+  # Testmethoden hier einfügen
 end
+```
+Nun können wir Testmethoden innerhalb dieser Klasse definieren, die jeweils mit "test_" beginnen. Hier ist ein Beispiel für eine Testmethode, die überprüft, ob die Summe von zwei Zahlen korrekt berechnet wird:
 
-# Der Test mit RSpec
-describe "add" do
-  it "addiert zwei Zahlen und gibt das Ergebnis zurück" do
-    result = add(3, 5)
-    expect(result).to eq(8)
-  end
+```Ruby
+def test_summe_von_zwei_zahlen
+  assert_equal 7, 3 + 4  # Expected, Actual
 end
 ```
 
-Wenn wir diesen Code ausführen, sollte der Test erfolgreich sein und wir erhalten eine grüne Bestätigung. Wenn wir nun versehentlich einen Fehler in der `add` Methode eingebaut haben, wird der Test fehlschlagen und uns auf den Fehler hinweisen.
-
-Das `RSpec` Framework bietet uns noch viele weitere Möglichkeiten, um Tests zu schreiben und zu strukturieren. Es lohnt sich also, sich näher damit zu beschäftigen und die vielfältigen Funktionen zu nutzen, um die Qualität des Codes zu verbessern.
+Wir verwenden hier die Methode "assert_equal", um zu überprüfen, ob die erwartete Ausgabe mit der tatsächlichen Ausgabe übereinstimmt. Wenn dies nicht der Fall ist, wird der Test fehlschlagen und uns mitteilen, wo der Fehler aufgetreten ist. Es gibt auch andere nützliche Methoden für das Testen von Code, wie zum Beispiel "assert_nil" oder "assert_raises". Eine vollständige Liste findet man in der Dokumentation von MiniTest.
 
 ## Deep Dive
 
-Es gibt einige wichtige Best Practices, die es zu beachten gilt, wenn man Tests in Ruby schreibt. Hier sind einige Tipps, die dir helfen können, qualitativ hochwertige Tests zu erstellen:
+Nun, da wir wissen, wie man Tests in Ruby schreibt, lassen Sie uns etwas tiefer in das Konzept des Testens eintauchen. Tests sind in der Regel in zwei Kategorien unterteilt: Unit-Tests und Integrationstests. Unit-Tests überprüfen einzelne Methoden oder Klassen, während Integrationstests die Zusammenspiel von verschiedenen Komponenten unserer Anwendung testen. Beide sind wichtig, um sicherzustellen, dass unser Code gut getestet und zuverlässig ist.
 
-- Schreibe testspezifische Setup-Methoden, um die Testfälle vorzubereiten und zu vermeiden, dass sich der Code im Test wiederholt.
-- Verwende aussagekräftige Bezeichner für deine Tests, um deren Verständlichkeit zu erhöhen.
-- Versuche, deine Tests unabhängig voneinander zu gestalten. Ein Test sollte nicht von einem anderen abhängig sein.
-- Mache dir Gedanken darüber, welche Fälle du testen musst und welche nicht. Es macht keinen Sinn, jeden einzelnen Teil deines Codes zu testen.
+Eine gute Praxis beim Schreiben von Tests ist auch das "Arrange-Act-Assert"-Muster, bei dem wir den Code in drei Teile unterteilen: das Anordnen (Arrange), das Ausführen (Act) und das Überprüfen (Assert). Das Anordnen bezieht sich auf das Einrichten von Vorbedingungen für unseren Test, das Ausführen auf die Ausführung der zu testenden Methode und das Überprüfen auf das Überprüfen der erwarteten Ausgabe.
 
-Indem du diese Best Practices befolgst, kannst du sicherstellen, dass deine Tests effektiv sind und dir bei der Entwicklung von stabilem und wartbarem Code helfen.
+Eine weitere wichtige Sache beim Testen ist die Codeabdeckung. Das bedeutet, wie viel Prozent unseres Codes durch Tests abgedeckt wird. Wir sollten immer versuchen, eine hohe Codeabdeckung zu erreichen, um sicherzustellen, dass unser Code gut getestet ist.
 
-## Sieh auch
+## Siehe auch
 
-- [RSpec Dokumentation](https://rspec.info/documentation/)
-- [Ruby Testing Best Practices](https://github.com/testdouble/contributing-tests/wiki/Ruby-Testing-Best-Practices)
-- [Einführung in das Testen mit RSpec](https://semaphoreci.com/community/tutorials/getting-started-with-rspec)
-
-Danke, dass du meinen Blogbeitrag gelesen hast. Ich hoffe, du hast einen Einblick in die Welt des Testens in Ruby erhalten. Viel Spaß beim Schreiben von qualitativ hochwertigen Tests!
+- Einführung in MiniTest: https://www.rubyguides.com/2018/07/minitest/
+- Ruby Testing Guide: https://www.rubyguides.com/2018/07/make-ruby-tests/
+- Die offizielle MiniTest Dokumentation: https://ruby-doc.org/stdlib-2.4.1/libdoc/minitest/rdoc/MiniTest.html

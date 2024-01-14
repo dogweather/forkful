@@ -1,47 +1,43 @@
 ---
 title:                "Clojure: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "Clojure"
-category:             "Numbers"
+category:             "Clojure"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-### 为什么：生成随机数的重要性
-生成随机数在编程中起着重要作用，可以帮助我们模拟实际情况，测试算法，以及增加程序的复杂度。
+# 为什么要生成随机数？
 
-### 如何生成随机数
-在Clojure中，我们可以使用内置函数`rand`来生成随机数。接受一个参数作为随机数的上限，返回一个0到上限之间的随机数。例如，我们可以使用以下代码来生成一个0到10之间的随机数：
-```Clojure
-(rand 10)
-```
-运行结果可能如下：
-```
-5.7745985435835
-```
-另外，我们也可以使用`do`表达式来生成多个随机数。`do`表达式可以将多条代码组合在一起，在这个例子中，我们将生成两个0到10之间的随机数：
-```Clojure
-(do
-  (rand 10)
-  (rand 10))
-```
-运行结果可能如下：
-```
-9.2252402383943
-6.7632631975952
-```
-如果我们想要返回一个整数，我们可以使用`int`函数来将随机数转换为整数。例如，我们可以使用以下代码来生成一个0到10之间的整数：
-```Clojure
-(int (rand 10))
-```
-运行结果可能如下：
-```
-8
-```
-### 深入了解生成随机数
-Clojure中的随机数生成是基于Java中的随机数生成器。这意味着如果我们想要生成特定范围的随机数，我们可以使用Java中的`Random`类。另外，我们也可以使用`seed`函数来设置随机数生成器的种子。
+在编程的世界里，随机数是一个非常重要的概念。它可以被用来模拟现实世界中的随机事件，帮助我们创建可重复的代码，甚至可以构建随机性的游戏。无论是什么原因，生成随机数都是非常有用的技巧，让我们来看看如何在Clojure中实现它。
 
-### 另请参阅
-- [Clojure官方文档](https://clojure.org/)
-- [Java随机数生成器文档](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html)
-- [如何使用Clojure中的随机数生成器](https://www.baeldung.com/java-random-list-element)
+## 如何生成随机数？
+
+在Clojure中，我们可以使用`(rand)`函数来生成一个0到1之间的随机数。如果想要生成一个指定范围内的随机整数，则可以使用`(rand-int n)`函数，其中 n 为范围。下面是一个例子：
+
+```Clojure
+(rand) ; => 0.7480682118451838
+
+(rand-int 10) ; => 7
+```
+
+如果我们想要生成一组随机数，可以使用`for`函数和`range`函数来实现。下面的代码将生成10个随机数，并将它们存储在一个列表中。
+
+```Clojure
+(for [x (range 10)]
+  (rand)) ; => (0.40134497126876535 0.05613902643835942 0.9254182569730625 0.5003199372819021 0.6432034908278608 0.5797597669106045 0.930961409594252 0.7520485869047621 0.8341718954541113 0.5105994259117965)
+```
+
+## 深入研究生成随机数
+
+在计算机科学中，真正的随机数是不存在的，因为计算机只能按照指令执行，无法真正地产生随机数。因此，计算机科学家们使用伪随机数来模拟真正的随机性。伪随机数是通过一个特定的算法来生成的，这个算法需要一个种子值来作为输入。种子值是生成随机数的起点，相同的种子值会产生相同的随机数序列。在Clojure中，我们可以通过`(random-seed n)`函数来设置种子值。
+
+除了上面提到的函数，Clojure中还有一些其他的函数来帮助我们生成随机数。例如，`(shuffle coll)`函数可以随机打乱一个集合元素的顺序，`(<)`, `(<=)`, `(>)`, `(>=)`函数可以帮助我们判断两个值的大小关系，`(rand-nth coll)`函数可以随机选择一个集合中的元素。
+
+# 另请参阅
+
+- [Clojure官方文档 - 随机数](https://clojure.org/reference/java_interop#random-numbers)
+- [Clojure维基百科 - 随机数发生器](https://en.wikipedia.org/wiki/Random_number_generation_in_Clojure)
+- [Clojure Cookbook - 生成随机数](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/08_data/8-12_random_numbers.md)

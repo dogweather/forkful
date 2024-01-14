@@ -1,68 +1,47 @@
 ---
-title:                "C#: 将来または過去の日付の計算"
+title:                "C#: 未来または過去の日付の計算"
+simple_title:         "未来または過去の日付の計算"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ日付を計算するのか
+## なぜ
 
-日常生活やビジネスにおいて、将来の日付や過去の日付を計算する必要があることがあります。例えば、誕生日や結婚記念日の追跡や、契約書の期限確認などです。C#を用いて日付を計算することで、正確で効率的な処理が可能になります。
+あなたは過去や未来の日付を計算したい時がありますか？それは例えば、誕生日やイベントの日付を計算したい場合や、期限を設定する際に必要になるかもしれません。C#プログラミング言語を使うことで、簡単に日付の計算ができます。
 
-## 日付の計算方法
+## 方法
 
-C#ではDateTimeクラスを使用して日付の計算が行えます。具体的なコーディング例を示します。
+日付を計算するには、DateTimeクラスを使用します。まずは以下のコードを参照してください。
 
-```
-using System;
+```C#
+// 現在から100日後の日付を計算する
+DateTime now = DateTime.Now;
+DateTime futureDate = now.AddDays(100);
+Console.WriteLine("100日後の日付は：" + futureDate);
 
-namespace DateCalculation
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // 今日の日付を取得
-            DateTime today = DateTime.Today;
-
-            // 10日後の日付を計算
-            DateTime futureDate = today.AddDays(10);
-
-            // 10日前の日付を計算
-            DateTime pastDate = today.AddDays(-10);
-
-            // 結果を出力
-            Console.WriteLine("今日の日付は: " + today.ToString("MM/dd/yyyy"));
-            Console.WriteLine("10日後の日付は: " + futureDate.ToString("MM/dd/yyyy"));
-            Console.WriteLine("10日前の日付は: " + pastDate.ToString("MM/dd/yyyy"));
-
-            Console.ReadLine();
-        }
-    }
-}
-
+// 現在から5年後の日付を計算する
+DateTime fiveYearsLater = now.AddYears(5);
+Console.WriteLine("5年後の日付は：" + fiveYearsLater);
 ```
 
-上記のコードを実行すると、今日の日付から10日後と10日前の日付が計算され、以下のように出力されます。
+上記のコードを実行すると、現在の日付から100日後や5年後の日付が計算され出力されます。DateTimeクラスには、他にもAddMonthsやAddHoursなどさまざまなメソッドがあり、様々な日付の計算が可能です。また、日付のフォーマットを指定することもできます。
 
-```
-今日の日付は: 11/17/2021
-10日後の日付は: 11/27/2021
-10日前の日付は: 11/07/2021
-```
+## 深堀り
 
-## 日付計算の詳細解説
+日付を計算する際には、プラスやマイナスで指定した期間を日付に加えることで計算しています。DateTimeクラスは、元の日付を変更するのではなく新しいインスタンスを返すため、元のデータを保持することができます。そのため、計算を繰り返すことができるのです。
 
-日付を計算する際には、DateTimeクラスのAddDaysメソッドを使用します。このメソッドは、引数に指定した日数を加算または減算して計算結果を返します。
+さらに、DateTimeクラスにはParseやTryParseのメソッドもあり、文字列型の日付を変換してDateTime型の日付に変換することもできます。
 
-さらに、DateTimeクラスにはAddMonthsやAddYearsといったメソッドもあり、日付の月や年を加算または減算することも可能です。加算や減算する前後の日付の範囲や、閏年における計算結果なども考慮されているため、日付計算の精度が高くなります。
+## 参考リンク
 
-## 関連リンク
+- [Microsoft Docs：DateTime クラス](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime?view=netcore-3.1)
+- [CODEGIRL：C#での日付計算の方法](https://www.codegirl.co.jp/the-way-to-calculate-dates-in-c/)
+- [C# 入門：日付処理の基礎](https://www.c-sharpcorner.com/UploadFile/af66b7/date-time-in-C-Sharp/)
 
-- [C# DateTimeクラスのドキュメント](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
-- [C#ニューララーニング日本語ドキュメント](https://docs.microsoft.com/ja-jp/dotnet/csharp/)
+## 他の記事を見る
 
-See Also:
-リンクのリストをここに記載
+- [プログラミング初心者へのアドバイス](https://github.com/akicho8/blog-casual/blob/master/posts/newbies_advice.md)

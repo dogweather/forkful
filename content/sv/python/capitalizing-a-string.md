@@ -1,7 +1,9 @@
 ---
-title:                "Python: Kapitalisera en sträng"
+title:                "Python: Att kapitalisera en sträng."
+simple_title:         "Att kapitalisera en sträng."
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/capitalizing-a-string.md"
 ---
 
@@ -9,52 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I denna bloggpost kommer vi att prata om hur man kapitaliserar en sträng i Python. Det kan låta som en enkel uppgift, men det finns faktiskt flera olika sätt att göra det på och det kan vara användbart i olika programmeringsscenarier.
+Att ha möjligheten att konvertera en sträng till stora bokstäver kan vara användbart när man vill göra en text mer lättläst och betona vissa ord eller fraser. Det är också en vanlig funktion inom datahantering, speciellt när man arbetar med strängar inom programmering.
 
-## Så här gör du
+## Hur man gör det
 
-För att kapitalisera en sträng i Python kan du använda antingen inbyggda metoder eller skriva din egen funktion. Här är ett exempel på hur du kan göra det med inbyggda metoderna `upper()` och `capitalize()`:
-
-```Python
-# Skapa en sträng:
-string = "hej, jag är en sträng"
-
-# Använda metoden upper() för att kapitalisera hela strängen:
-print(string.upper()) # HEJ, JAG ÄR EN STRÄNG
-
-# Använda metoden capitalize() för att kapitalisera första bokstaven:
-print(string.capitalize()) # Hej, jag är en sträng
-```
-
-Om du vill skriva din egen funktion kan du använda dig av `split()` för att dela upp strängen i ord och sedan använda `capitalize()` på varje ord. Här är ett exempel på en sådan funktion:
+Det finns flera olika sätt att omvandla en sträng till stora bokstäver i Python, beroende på vilken version du använder. Här är två olika exempel på hur man kan göra det:
 
 ```Python
-def capitalize_string(string):
-    # Dela upp strängen i ord:
-    words = string.split()
+# Exempel 1: Med hjälp av inbyggda metoden upper()
+text = "hej alla svenskar!"
+print(text.upper()) # output: HEJ ALLA SVENSKAR!
 
-    # Skapa en tom lista för de kapitaliserade orden:
-    capitalized_words = []
-
-    # Loopa igenom orden och använda capitalize() på varje ord:
-    for word in words:
-        capitalized_words.append(word.capitalize())
-
-    # Returnera de kapitaliserade orden som en sträng:
-    return " ".join(capitalized_words)
-
-# Använda den egna funktionen på vår sträng:
-print(capitalize_string(string)) # Hej, Jag Är En Sträng
+# Exempel 2: Genom att loopa igenom varje tecken och omvandla dem
+text = "välkommen till sverige!"
+new_text = ""
+for character in text:
+    new_text += character.upper()
+print(new_text) # output: VÄLKOMMEN TILL SVERIGE!
 ```
 
-Som du kan se i koden ovan finns det olika sätt att kapitalisera en sträng i Python, så det är viktigt att hitta det sätt som passar bäst för ditt specifika projekt och behov.
+En annan viktig sak att komma ihåg är att när man arbetar med strängar i Python, är att de är immutable, vilket betyder att de inte kan ändras. Så när du omvandlar en sträng till stora bokstäver, kommer en ny sträng att skapas och den ursprungliga kommer att vara oförändrad.
 
-## Gå djupare
+## Djupdykning
 
-För att förstå hur `upper()` och `capitalize()` fungerar i Python är det bra att ha en grundläggande förståelse för strängar och metoder. En sträng är i grunden en sekvens av tecken, och genom att använda inbyggda metoder kan vi ändra och manipulera dessa tecken på olika sätt. `upper()` kommer, som namnet antyder, kapitalisera hela strängen och `capitalize()` kommer att endast kapitalisera första bokstaven. Men det finns många andra metoder som kan vara användbara vid arbetet med strängar, som till exempel `lower()`, `replace()` och `strip()`.
+Att kunna konvertera en sträng till stora bokstäver är en användbar funktion som kan användas i olika scenarier. Men det finns några saker att tänka på när man använder denna funktion:
+
+- Omvandlingen kommer att påverka alla bokstäver i strängen, även siffror och specialtecken.
+- Omvandlingen tar inte hänsyn till språk- och lätagiltiga regler. Till exempel kommer den tyska bokstaven "ß" att omvandlas till "SS".
+- Omvandlingen kan påverka bokstäver som redan är i versaler, beroende på vilken metod som används.
+
+Om du vill ha mer kontroll över konverteringen, finns det också möjlighet att använda sig av bibliotek som `unicodedata` för att hantera specialtecken och språkspecifika regler för versaler och gemener.
 
 ## Se även
 
-- [Python.org - String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Tutorialspoint - String Methods in Python](https://www.tutorialspoint.com/python/python_strings.htm)
-- [Real Python - Working with Strings in Python 3](https://realpython.com/python-strings/)
+- [Python 3 dokumentation: Strängmetoder](https://docs.python.org/sv/3/library/stdtypes.html#string-methods)
+- [Real Python: How to Capitalize Strings in Python](https://realpython.com/python-string-formatting/)

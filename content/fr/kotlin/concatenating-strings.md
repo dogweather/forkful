@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Concaténation de chaînes de caractères"
+title:                "Kotlin: Concaténer des chaînes de caractères"
+simple_title:         "Concaténer des chaînes de caractères"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/concatenating-strings.md"
 ---
 
@@ -9,52 +11,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Concaténer des chaînes de caractères est une tâche courante dans la programmation Kotlin. Cela permet de combiner différentes chaînes de caractères pour former une nouvelle chaîne qui contient toutes les informations nécessaires. Cela peut être utile pour afficher des messages à l'utilisateur, pour l'assemblage de documents dynamiques ou pour une variété d'autres tâches de manipulation de textes.
+L'une des compétences de base en programmation est la manipulation de chaînes de caractères. Que ce soit pour afficher du texte à l'écran, créer des messages personnalisés ou même stocker des informations, les chaînes de caractères sont un élément essentiel de tout programme. Une manière de manipuler efficacement les chaînes de caractères est la concaténation, qui consiste à combiner plusieurs chaînes en une seule. Dans cet article, nous allons en apprendre plus sur la concatenation de strings en Kotlin et pourquoi c'est important pour les programmeurs.
 
 ## Comment faire
 
-Pour concaténer des chaînes de caractères en Kotlin, vous pouvez utiliser l'opérateur `+`, les fonctions `plus()` ou `plusAssign()`, ou encore la méthode `concat()`.
+En utilisant Kotlin, la concatenation de strings est très simple. Tout d'abord, nous allons définir deux chaînes de caractères séparées avec un signe plus, comme ceci :
 
 ```Kotlin
-// Utilisation de l'opérateur +
-val a = "Bonjour"
-val b = "tout le monde"
-val c = a + " " + b // c = "Bonjour tout le monde"
-
-// Utilisation de la fonction plus()
-val x = "Hello"
-val y = "world"
-val z = x.plus(" ").plus(y) // z = "Hello world"
-
-// Utilisation de la fonction plusAssign()
-var msg = "Bonjour"
-msg += " tout le monde" // msg = "Bonjour tout le monde"
-
-// Utilisation de la méthode concat()
-val firstName = "John"
-val lastName = "Doe"
-val fullName = firstName.concat(" ", lastName) // fullName = "John Doe"
+val firstName = "Jean-Philippe"
+val lastName = "Martin"
 ```
 
-L'utilisation de l'une de ces méthodes produit le même résultat : une nouvelle chaîne de caractères contenant la concaténation des chaînes d'origine.
-
-## Deep Dive
-
-Il est important de noter que, bien que la concaténation de chaînes de caractères soit une opération utile, elle peut être gourmande en termes de performances si elle est utilisée de manière intensive. Cela est dû au fait que chaque fois qu'une nouvelle chaîne est créée, la mémoire doit être allouée pour stocker la nouvelle chaîne et les deux chaînes d'origine doivent être copiées.
-
-Pour éviter des problèmes de performances, vous pouvez utiliser la classe `StringBuilder` qui permet de concaténer efficacement plusieurs chaînes de caractères sans les copier à chaque fois.
+Ensuite, pour les concaténer, nous allons simplement utiliser le signe plus pour les combiner en une seule chaîne, comme ceci :
 
 ```Kotlin
-val builder = StringBuilder()
-builder.append("Bonjour")
-builder.append(" tout le monde")
-val result = builder.toString() // result = "Bonjour tout le monde"
+val fullName = firstName + lastName
 ```
 
-L'utilisation de `StringBuilder` peut grandement améliorer les performances lors de la concaténation de chaînes de caractères, en particulier si vous travaillez avec de grandes quantités de données.
+Maintenant, si nous voulons afficher cette valeur, nous pouvons utiliser la fonction `println()` avec la variable `fullName` comme paramètre :
+
+```Kotlin
+println(fullName)
+```
+
+Ce qui va afficher `Jean-PhilippeMartin` à l'écran. Nous pouvons également concaténer des valeurs de types différents, comme ceci :
+
+```Kotlin
+val age = 30
+println("Mon âge est : " + age)
+```
+
+Ce qui va afficher `Mon âge est : 30` à l'écran.
+
+## Plongée en profondeur
+
+En plus de la concatenation simple avec le signe plus, Kotlin propose également une méthode appelée `plus()` pour combiner des chaînes de caractères. Elle peut être utilisée ainsi :
+
+```Kotlin
+val firstName = "Jean-Philippe"
+val lastName = "Martin"
+val fullName = firstName.plus(lastName)
+```
+
+Et le résultat sera le même qu'avec l'opérateur plus. De plus, Kotlin offre également la possibilité d'utiliser des chaînes de formatage avec la fonction `format()`. Cela permet de créer des chaînes dynamiques en insérant des valeurs à partir de variables :
+
+```Kotlin
+val age = 30
+val fullName = "Jean-Philippe Martin"
+val message = "Bonjour, je m'appelle %s et j'ai %d ans".format(fullName, age)
+println(message)
+```
+
+Ce qui va afficher `Bonjour, je m'appelle Jean-Philippe Martin et j'ai 30 ans` à l'écran.
 
 ## Voir aussi
 
-- [Documentation Kotlin sur la concaténation de chaînes de caractères](https://kotlinlang.org/docs/basic-types.html#strings)
-- [Article sur la classe `StringBuilder` en Kotlin](https://www.baeldung.com/kotlin/stringbuilder)
-- [Vidéo sur les performances de la concaténation de chaînes en Kotlin](https://www.youtube.com/watch?v=diUcJ5nwHkU)
+Pour en savoir plus sur la manipulation de chaînes de caractères en Kotlin, voici quelques liens utiles :
+
+- [Documentation officielle sur la classe String de Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Tutoriel sur la concatenation de strings en Kotlin](https://www.programiz.com/kotlin-programming/strings)
+- [Vidéo explicative sur la concatenation en Kotlin](https://www.youtube.com/watch?v=bwjVEjoEPDA)
+
+Maintenant que vous savez comment concaténer des chaînes de caractères en Kotlin, vous pouvez utiliser cette compétence dans vos programmes pour créer des chaînes dynamiques et personnalisées. N'oubliez pas de pratiquer et d'explorer d'autres fonctionnalités de manipulation de chaînes en Kotlin pour devenir un·e expert·e en la matière. Bon codage !

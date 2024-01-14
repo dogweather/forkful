@@ -1,44 +1,40 @@
 ---
 title:                "Javascript: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-Extraer subcadenas de una cadena de caracteres es una herramienta común y útil en la programación. Puede ayudarnos a manipular y analizar cadenas de texto de manera más efectiva, lo que puede ser especialmente útil en proyectos web que involucren formularios, validación de datos y búsqueda de patrones.
+## Por qué extraer subcadenas en programación Javascript
+
+La extracción de subcadenas, también conocida como subcadena, es una técnica común en programación que implica seleccionar una parte de una cadena de texto más grande. Hay varias razones por las que alguien podría querer extraer subcadenas en Javascript, incluyendo la manipulación de datos, la validación de información o la creación de una interfaz de usuario dinámica.
 
 ## Cómo hacerlo
-La forma más sencilla de extraer subcadenas en Javascript es utilizando el método `substring()`. Este método toma dos índices como argumentos y devuelve la subcadena ubicada entre esos índices. Por ejemplo:
+
+Para extraer subcadenas en Javascript, se utiliza el método `substring ()`, que toma dos parámetros: el índice de inicio y el índice final de la subcadena deseada. Aquí hay un ejemplo de cómo extraer una subcadena de una cadena de texto:
 
 ```Javascript
-let cadena = "Esta es una cadena de texto";
-cadena.substring(0, 4); // devuelve "Esta"
-cadena.substring(5, 7); // devuelve "es"
-cadena.substring(11); // devuelve "cadena de texto"
+let texto = "Hola, ¡bienvenido a mi blog!";
+let subcadena = texto.substring(6, 15);
+console.log(subcadena); // salida: ¡bienvenido
 ```
-Es importante tener en cuenta que los índices comienzan en cero y que el segundo argumento es opcional. Si no se especifica, el método devolverá la subcadena desde el índice especificado hasta el final de la cadena.
 
-Otra forma de extraer subcadenas es utilizando el método `slice()`, que funciona de manera similar a `substring()`, pero permite utilizar índices negativos para indicar la posición desde el final de la cadena.
-
-```Javascript
-let cadena = "Esta es una cadena de texto";
-cadena.slice(-5); // devuelve "texto"
-cadena.slice(11, -6); // devuelve "cadena"
-cadena.slice(5, -14); // devuelve "es"
-```
+En este ejemplo, el índice de inicio es 6 porque "¡bienvenido" comienza en la sexta posición en la cadena de texto y el índice final es 15 porque la subcadena debe terminar antes de "a" en "blog".
 
 ## Profundizando
-Existen otras formas de extraer subcadenas en Javascript, como utilizar expresiones regulares, el método `split()` o el operador de acceso a cadenas `[]`. También es importante tener en cuenta que los índices pueden ser utilizados con otros métodos de manipulación de cadenas, como `replace()` o `indexOf()`.
 
-También es posible extraer múltiples subcadenas utilizando un bucle y almacenarlas en un array para posteriormente utilizarlas en nuestro código. Esto puede ser especialmente útil en proyectos que involucren la traducción de cadenas a diferentes idiomas, donde se deben extraer partes específicas de la cadena original.
+Además del método `substring ()`, también se puede utilizar el método `slice ()` para extraer subcadenas en Javascript. La diferencia entre estos dos métodos es que `slice ()` toma un índice negativo como parámetro, lo que le permite comenzar a contar desde el final de la cadena.
+
+También es posible utilizar un solo parámetro con `substring ()` o `slice ()`, lo que significa que la subcadena comenzará desde el índice proporcionado hasta el final de la cadena.
+
+En caso de necesitar una subcadena específica de una cadena de texto basada en un patrón, se puede utilizar el método `match ()` junto con una expresión regular para extraerla.
 
 ## Ver también
-- [Documentación oficial de Mozilla sobre el método `substring()` en Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Método `substring()` vs `slice()` en Javascript (en inglés)](https://love2dev.com/blog/javascript-substring-slice/)
-- [Manipulación de cadenas en Javascript (en inglés)](https://www.freecodecamp.org/news/javascript-string-manipulation/#:~:text=JavaScript%20string%20manipulation%20refers%20to,characters%20in%20a%20string%20literal.)
-- [Ejemplos de uso de subcadenas en proyectos web (en inglés)](https://www.w3schools.com/TAGS/tryit.asp?filename=tryhtml_input_testpattern)
 
-¡Feliz programación! 🚀
+- Tutorial de Javascript para principiantes: https://www.w3schools.com/js/
+- Documentación oficial de Javascript: https://developer.mozilla.org/es/docs/Web/JavaScript
+- Ejemplos prácticos de extracción de subcadenas en Javascript: https://www.programiz.com/javascript/examples/?subTopicId=substring

@@ -1,42 +1,45 @@
 ---
 title:                "Bash: Lesing av en tekstfil"
+simple_title:         "Lesing av en tekstfil"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Hvorfor bør du lese denne bloggposten om Bash programmering? Det korte svaret er fordi det er en nyttig og kraftig ferdighet å ha, spesielt for systemadministratorer og utviklere. Bash er et kommandolinjeverktøy som brukes til å automatisere oppgaver og behandle store mengder tekstfiler effektivt. Ved å lære å lese en tekstfil med Bash, vil du kunne håndtere og manipulere data på en effektiv måte.
+Når man jobber med Bash-programmering, vil man ofte støte på situasjoner der man må lese informasjon fra en tekstfil. Dette kan være for å hente inn data, behandle informasjon eller for å automatisk generere rapporter. Å kunne lese en tekstfil er derfor en viktig ferdighet å ha i verktøykassen når man driver med Bash-programmering.
 
-# Hvordan gjøre det
+## Hvordan
 
-For å kunne lese en tekstfil med Bash, trenger du noen grunnleggende kommandoer og syntaks. Her er et eksempel på hvordan du kan lese en tekstfil med Bash:
+Å lese en tekstfil i Bash er enkelt og kan gjøres ved å bruke kommandoen "cat". Denne kommandoen viser innholdet i en tekstfil direkte i terminalen. For å lese innholdet og lagre det i en variabel kan man bruke kommandoen "read" og peke til tekstfilen. For eksempel:
 
 ```Bash
-#!/bin/bash
+tekstfil="mitttekstfil.txt"
 while read line
 do
-    echo $line
-done < tekstfil.txt
+  # gjør noe med hver linje i tekstfilen
+  echo $line # for eksempel skriv ut linjen i terminalen
+done < "$tekstfil"
 ```
 
-La oss bryte dette ned. Først starter vi med å inkludere "shebang" linjen, som forteller systemet at dette er et Bash-skript. Deretter bruker vi en løkke, "while", som vil iterere over hver linje i tekstfilen. Inne i løkken bruker vi "echo" kommandoen til å skrive ut hver linje. Til slutt bruker vi "<" operatøren til å lese data fra tekstfilen og sende den til løkken.
+Dette vil lese hver linje i tekstfilen og gjøre en handling med den. Man kan også lese innholdet i en tekstfil på en mer spesifikk måte ved å bruke grep-kommandoen. For eksempel hvis man kun vil lese linjer som starter med "Navn:", kan man bruke dette uttrykket:
 
-Etter å ha kjørt dette skriptet, vil du kunne se hver linje i tekstfilen skrevet ut i terminalen. Dette er en enkel, men nyttig måte å lese en tekstfil på med Bash.
+```Bash
+grep "Navn:" mitttekstfil.txt
+```
 
-# Dypdykk
+Dette er et enkelt eksempel, men med grep-kommandoen kan man utnytte regulære uttrykk for å lese mer spesifikt fra en tekstfil.
 
-For å forstå mer av hva som faktisk skjer når vi leser en tekstfil med Bash, må vi gå litt dypere. Når du bruker "<" operatøren, kalles det for en "redirigeringsoperatør". Dette betyr at dataene fra tekstfilen blir sendt til "stdin" (standard inngang) som blir lest av løkken vår. Løkken vil lese hver linje fra "stdin" til variabelen "line", og deretter utføre de nødvendige handlingene.
+## Dypdykk
 
-En annen viktig ting å merke seg er bruken av "while" løkken. Mens den leser hver linje fra tekstfilen, vil den også sjekke om det er flere linjer igjen. Hvis det ikke er flere linjer, vil den stoppe.
+Når man leser en tekstfil i Bash, kan det være nyttig å vite at det finnes forskjellige metoder for å lese innholdet. I tillegg til "cat" og "read" kan man også bruke kommandoen "awk" og "sed" for å lese og manipulere innholdet i en tekstfil. Disse kommandoene gir mer avanserte muligheter for å filtrere og behandle data fra en tekstfil. Det kan være lurt å lese mer om disse kommandoene og å øve seg på dem for å bli en mer effektiv Bash-programmerer.
 
-# Se også
+## Se også
 
-For å lære mer om Bash programmering og tekstbehandling, sjekk ut disse ressursene:
-
-- [Bash Cheat Sheet (Bash kortkommandoer) by Devhints](https://devhints.io/bash)
-- [How to Read a File Line by Line in Bash (Hvordan lese en fil linje for linje med Bash) by Linuxize](https://linuxize.com/post/bash-read-file/)
-- [The Linux Command Line (Linux kommandolinjen) by William E. Shotts, Jr.](http://linuxcommand.org/tlcl.php)
+- [Bash-programmering](https://en.wikipedia.org/wiki/Bash_%28Unix_shell%29)
+- [Lesing av filer i Bash](https://linuxize.com/post/bash-read-file/)
+- [Bash-grep kommandoen](https://www.geeksforgeeks.org/grep-command-in-linux-unix-with-examples/)

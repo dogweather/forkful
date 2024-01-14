@@ -1,57 +1,40 @@
 ---
-title:                "PHP: Comprobando si existe un directorio"
+title:                "PHP: Verificando si existe un directorio"
+simple_title:         "Verificando si existe un directorio"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué comprobar si existe un directorio en PHP?
+## Por qué
 
-Comprobar si un directorio existe antes de realizar cualquier operación en él es una buena práctica de programación. Esto puede evitar errores y asegurar que su código funcione correctamente. Imagine tratar de manipular un archivo o carpeta que no existe, esto podría resultar en una interrupción en el flujo de su programa. Por eso, es importante verificar la existencia de un directorio antes de realizar cualquier acción en él.
+¿Alguna vez te has preguntado si un directorio específico existe en tu código de PHP? Puede que te hayas encontrado en una situación en la que necesitas asegurarte de que un directorio esté presente antes de realizar ciertas operaciones en tu código. En esta publicación, aprenderemos cómo comprobar si un directorio existe en PHP y por qué es útil hacerlo.
 
 ## Cómo hacerlo
 
-Para comprobar si un directorio existe en PHP, podemos utilizar la función `is_dir()`. Esta función toma como parámetro la ruta de la carpeta que deseamos verificar y devuelve `true` si existe y `false` si no. Veamos un ejemplo:
+Para comprobar si un directorio existe en PHP, podemos utilizar la función `is_dir()` seguida del nombre del directorio como parámetro. Esta función devolverá `true` si el directorio existe y `false` si no existe. Veamos un ejemplo:
 
 ```PHP
- $directorio = "archivos";
-
- if(is_dir($directorio)){
-     echo "El directorio $directorio existe.";
- } else {
-     echo "El directorio $directorio no existe.";
- }
-
- // Output: El directorio archivos existe.
+if (is_dir('imagenes')) {
+    echo '¡El directorio existe!';
+} else {
+    echo 'El directorio no existe';
+}
 ```
 
-Además, podemos utilizar la función `is_file()` para comprobar si un archivo específico existe dentro del directorio. Esta función también devuelve `true` o `false` según sea el caso. Veamos un ejemplo:
+Si el directorio "imagenes" existe en el mismo directorio que nuestro archivo PHP, el código de arriba imprimirá "¡El directorio existe!" de lo contrario, imprimirá "El directorio no existe".
 
-```PHP
- $directorio = "archivos";
- $archivo = "documento.txt";
+## Deep Dive
 
- if(is_file($directorio."/".$archivo)){
-     echo "El archivo $archivo existe en el directorio $directorio.";
- } else {
-     echo "El archivo $archivo no existe en el directorio $directorio.";
- }
+En PHP, también podemos utilizar la función `file_exists()` para comprobar si un directorio existe. Sin embargo, esta función también puede comprobar si existe un archivo con el mismo nombre que el directorio. Por lo tanto, es importante especificar el directorio en lugar de solo el nombre en la función.
 
- // Output: El archivo documento.txt existe en el directorio archivos.
-```
+Otra forma de verificar si un directorio existe es utilizando la función `scandir()`, que devuelve una lista de todos los archivos y directorios dentro de un directorio dado. Si el directorio que estamos buscando no aparece en la lista, significa que no existe.
 
-## Profundizando
+## Véase también
 
-Para aquellos que deseen investigar más sobre el tema, es importante tener en cuenta que la función `is_dir()` también puede devolver `true` si el parámetro pasado es un archivo y no un directorio. Esto se debe a que la función verifica tanto la existencia de un directorio como de un archivo con ese nombre.
-
-Otra forma de comprobar la existencia de un directorio es mediante la función `file_exists()`, que también devuelve `true` o `false` según la existencia de un archivo o directorio en una ruta específica.
-
-Es importante mencionar que, al manipular archivos o directorios en PHP, es necesario tener en cuenta los permisos de acceso y la carpeta de trabajo actual. Estos pueden afectar el resultado de las funciones mencionadas.
-
-## Ver también
-
-- Documentación oficial de PHP: https://www.php.net/manual/es/function.is-dir.php
-- Ejemplos de uso de `is_dir()`: https://www.php.net/manual/es/function.is-dir.php#example-3816
-- Más información sobre permisos de archivos y directorios: https://www.digitalocean.com/community/tutorials/como-configurar-permisos-de-acceso-y-propiedad-en-php-es
+- [Documentación de PHP sobre la función is_dir()](https://www.php.net/manual/es/function.is-dir.php)
+- [Más información sobre la función file_exists()](https://www.php.net/manual/es/function.file-exists.php)
+- [Ejemplos de la función scandir()](https://www.php.net/manual/es/function.scandir.php)

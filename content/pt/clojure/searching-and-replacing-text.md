@@ -1,46 +1,38 @@
 ---
-title:                "Clojure: Busca e substituição de texto"
+title:                "Clojure: Procurando e substituindo texto"
+simple_title:         "Procurando e substituindo texto"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que usar o Clojure para pesquisar e substituir texto?
+# Por que fazer substituições de texto em Clojure
 
-Ao trabalhar com programação, muitas vezes precisamos manipular grandes quantidades de texto. Uma das tarefas mais comuns é a de procurar e substituir certas palavras ou frases em um texto. Nesses casos, o uso do Clojure pode facilitar muito o processo, graças à sua sintaxe concisa e poderosa.
+Fazer substituições de texto é uma tarefa comum em programação, seja para corrigir erros ou para transformar dados de uma forma específica. Em Clojure, existem várias maneiras de realizar essa tarefa, o que torna a linguagem uma ótima opção para quem precisa lidar com manipulação de texto.
 
-# Como fazer isso?
+## Como fazer substituições de texto em Clojure
 
-Primeiramente, importe a biblioteca `clojure.string`, que nos permite trabalhar com strings de forma eficiente. Na maioria dos casos, utilizaremos a função `replace`, que recebe três parâmetros: a string original, a expressão regular para a qual desejamos substituir e o resultado da substituição. Por exemplo:
-
-```Clojure
-(require '[clojure.string :as str])
-(str/replace "Olá, meu nome é João!" #"João" "Maria")
-```
-
-Nesse caso, o resultado será: "Olá, meu nome é Maria!".
-
-Podemos também usar uma função de substituição customizada, utilizando a função `clojure.string/replace-with`. Se quisermos, por exemplo, substituir todas as vogais de uma palavra por um asterisco, podemos fazer o seguinte:
+Existem duas principais funções em Clojure para substituir texto: `replace` e `replace-first`. Ambas recebem como parâmetros uma expressão regular e a string de substituição. Vamos ver como elas funcionam em um exemplo:
 
 ```Clojure
-(require '[clojure.string :as str])
-(str/replace-with #"[aeiou]" "programação" (fn [match] "*"))
+(println (replace #"mundo" "Hello mundo" "World"))
+; Saída: Hello World
+(println (replace-first #"\d+" "Eu tenho 2 maçãs e 3 bananas"))
+; Saída: Eu tenho maçãs e 3 bananas
 ```
 
-O resultado será: "pr*g*r*m***".
+No primeiro exemplo, usamos a função `replace` para substituir a palavra "mundo" por "World" na string "Hello mundo". Já no segundo exemplo, usamos a função `replace-first` para substituir o primeiro número (\d+) por uma string vazia, removendo-o da frase.
 
-# Aprofundando-se
+## Mais informações sobre substituições de texto em Clojure
 
-Além das funções mencionadas acima, o Clojure também nos oferece diversas outras possibilidades para trabalhar com strings. Podemos, por exemplo, utilizar a função `str/split` para dividir uma string em um vetor, utilizando um determinado caractere como separador. Ou a função `str/trim` para remover espaços vazios no início e no final de uma string.
+Em Clojure, as expressões regulares são escritas entre aspas duplas e precedidas por um `#`. Além disso, a função `replace` substitui todas as ocorrências da expressão regular, enquanto a função `replace-first` substitui apenas a primeira ocorrência.
 
-Outra técnica muito útil é a utilização de `regex` para substituir textos em locais específicos. A função `str/replace-first` aceita uma expressão regular e substitui apenas a primeira ocorrência encontrada, enquanto `str/replace-last` substitui a última ocorrência.
+Outra funcionalidade interessante é a possibilidade de usar grupos na expressão regular e referenciá-los na string de substituição. Para isso, basta utilizar `\1`, `\2`, etc. para substituir o primeiro, segundo, etc. grupo.
 
-# Veja também
+## Veja também
 
-- Documentação oficial da biblioteca string do Clojure: https://clojure.github.io/clojure/clojure.string-api.html
-- Como usar regex em Clojure: https://www.mkyong.com/clojure/clojure-regex/
-- Outros exemplos de como manipular strings em Clojure: https://medium.com/better-programming/5-tricks-to-manipulate-strings-in-clojure-like-a-pro-8f9daf544e26
-
-Esperamos que esse artigo tenha mostrado algumas das formas práticas de como o Clojure pode nos ajudar a realizar tarefas de manipulação de texto de forma eficiente. Com um pouco de prática, você estará dominando essas técnicas e poupando tempo em seus projetos de programação.
+- Documentação oficial do Clojure para substituições de texto: https://clojuredocs.org/clojure.core/replace
+- Tutorial sobre substituições de texto em Clojure: https://www.baeldung.com/clojure/regex-replace

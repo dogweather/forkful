@@ -1,68 +1,52 @@
 ---
 title:                "Elixir recipe: Converting a string to lower case"
+simple_title:         "Converting a string to lower case"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Have you ever needed to convert a string to lower case in Elixir? Whether you're working with user input or manipulating data, converting strings to lower case can be a useful skill to have. In this blog post, we'll take a look at why you might want to do this and how to accomplish it in Elixir.
+As we dive into the world of Elixir programming, one common task we encounter is converting strings to lower case. This may seem like a simple task, but it can have huge implications in ensuring data consistency and compatibility within our code. In this blog post, we will explore the reasons why we may need to convert strings to lower case and how to do it in Elixir.
 
 ## How To
-
-Converting a string to lower case in Elixir is simple thanks to the `String.downcase/1` function. Let's take a look at some examples below:
+To convert a string to lower case in Elixir, we can use the `String.downcase/1` function. Let's see an example:
 
 ```Elixir
 string = "HELLO WORLD"
-String.downcase(string)
-# Output: "hello world"
-
-another_string = "eLiXir iS fUn!"
-String.downcase(another_string)
-# Output: "elixir is fun!"
+lower_case_string = String.downcase(string)
 ```
 
-As you can see, the `String.downcase/1` function takes in a string as an argument and returns the string in all lowercase letters.
+The `String.downcase/1` function takes in a string as its argument and returns a lower case version of the string. In this case, `lower_case_string` will be equal to "hello world".
 
-However, it's important to note that this function only works for ASCII characters. If you need to handle Unicode characters, you can use the `String.downcase/2` function and pass in the `:ascii` option. Let's take a look at an example:
+But what if we want to convert a string to lower case without creating a new variable? We can use the `String.downcase!/1` function, which modifies the string in-place.
 
 ```Elixir
-string = "ÉLIXIR"
-String.downcase(string, :ascii)
-# Output: "éllixir" 
+mutable_string = "HELLO WORLD"
+String.downcase!(mutable_string)
 ```
 
-You can also use the `String.downcase/1` function on a string that contains multiple words. Let's see how it works:
+In this example, `mutable_string` will now be equal to "hello world".
+
+Now, let's see how this works with special characters and accents.
 
 ```Elixir
-string = "Hello World"
-String.downcase(string)
-# Output: "hello world"
+string = "ÁÉÍÓÚ"
+lower_case_string = String.downcase(string)
 ```
+
+The `lower_case_string` will now be equal to "áéíóú". As we can see, the function also converts accented characters to their lower case equivalents.
 
 ## Deep Dive
+Behind the scenes, the `String.downcase/1` function uses the `:unicode` module to convert the string to lower case. This ensures that we can handle different languages and special characters without any issues.
 
-Now, let's dive a bit deeper into how the `String.downcase/1` function works. Behind the scenes, this function is actually using the `String.to_lower/1` function. This function takes in a char list and returns a new list with all the characters converted to lower case.
-
-It's important to understand that Elixir strings are represented as lists of integers, with each integer representing a character in the string. Here's an example of how to manually convert a string to lower case using the `String.to_lower/1` function:
-
-```Elixir
-string = "UPPER"
-lower_string = String.to_lower([string])
-# Output: [117, 112, 112, 101, 114] 
-```
-
-As you can see, the characters in the original string have been converted to their corresponding integer values. You can use the `Enum.map/2` function to convert the list of integers back into a string:
-
-```Elixir
-lower_string |> Enum.map(&([&1])) |> Enum.join()
-# Output: "upper"
-```
+It is also important to note that the `String.downcase/1` and `String.downcase!/1` functions are not just limited to ASCII characters. They can handle any character in the unicode range.
 
 ## See Also
+- [Elixir String documentation](https://hexdocs.pm/elixir/String.html#downcase/1)
+- [Unicode module documentation](https://hexdocs.pm/elixir/Unicode.html)
 
-- Official Elixir documentation on `String.downcase/1`: https://hexdocs.pm/elixir/String.html#downcase/1
-- Elixir School tutorial on Strings: https://elixirschool.com/lessons/basics/strings/
+In this blog post, we learned why converting strings to lower case is important and how to do it in Elixir using the `String.downcase/1` and `String.downcase!/1` functions. We also explored how these functions handle special characters and their underlying implementation using the `:unicode` module. Happy coding!

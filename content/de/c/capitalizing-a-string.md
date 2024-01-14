@@ -1,44 +1,62 @@
 ---
-title:                "C: String in Großbuchstaben umwandeln"
+title:                "C: Großschreibung eines Zeichens:"
+simple_title:         "Großschreibung eines Zeichens:"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
-Es gibt viele Gründe, warum man in der C-Programmierung eine Zeichenkette großschreiben möchte. Vielleicht müssen bestimmte Wörter oder Sätze in Großbuchstaben angezeigt werden, um sie besser hervorzuheben. Oder es könnte Teil einer Validierungsprozedur sein, um sicherzustellen, dass bestimmte Eingaben immer in Großbuchstaben sind. Egal aus welchem Grund, das Großschreiben einer Zeichenkette ist eine nützliche Fähigkeit in der C-Programmierung.
+## Was ist das Ziel des Großschreibung von Zeichenfolgen?
 
-## Wie geht das
-Es gibt verschiedene Möglichkeiten, eine Zeichenkette in C groß zu schreiben. Eine Möglichkeit ist die Verwendung der Standard-C-Bibliotheksfunktion `toupper()`, die ein einzelnes Zeichen in einen Großbuchstaben umwandelt. Hier ist ein Beispielcode:
+Das Ziel des Großschreibens von Zeichenfolgen ist es, die Darstellung von Text zu verbessern und ihn leichter lesbar zu machen. Durch die Verwendung von Groß- und Kleinschreibung können wichtige Wörter oder Passagen hervorgehoben werden, um die Bedeutung des Textes zu verdeutlichen.
+
+## Wie funktioniert die Großschreibung in C?
+
+In der Programmiersprache C gibt es verschiedene Methoden, um Zeichenfolgen zu verändern. Eine Möglichkeit ist die Verwendung der Funktion `toupper()`, welche jeden Buchstaben einer Zeichenfolge in Großbuchstaben umwandelt. Diese Funktion benötigt als Argument den ASCII-Wert des zu ändernden Zeichens.
+
+Ein Beispiel für die Verwendung von `toupper()` wäre folgender Code:
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
-int main() {
-   char string[] = "Hallo Welt";
-   int i;
-
-   for(i = 0; string[i] != '\0'; i++) {
-      string[i] = toupper(string[i]);
-   }
-
-   printf("Die zeichenkette in Großbuchstaben lautet: %s", string);
-   return 0;
+int main(void)
+{
+    char s[50];
+    
+    printf("Geben Sie eine Zeichenfolge ein: ");
+    fgets(s, 50, stdin);
+    
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        s[i] = toupper(s[i]);
+    }
+    
+    printf("Die Großschreibung der eingegebenen Zeichenfolge lautet: %s\n", s);
+    
+    return 0;
 }
 ```
 
-Die Ausgabe dieses Codes sollte die Zeichenkette "HALLO WELT" sein.
+**Ausgabe:**
 
-Eine andere Möglichkeit ist die Verwendung von Schleifen und Bedingungen, um jeden Buchstaben einzeln zu überprüfen und gegebenenfalls in einen Großbuchstaben umzuwandeln. Dies ist etwas komplexer, aber ermöglicht mehr Kontrolle und Anpassungsmöglichkeiten für spezielle Fälle.
+```
+Geben Sie eine Zeichenfolge ein: Hallo Welt
+Die Großschreibung der eingegebenen Zeichenfolge lautet: HALLO WELT
+```
 
-## Tiefere Einblicke
-Die `toupper()` Funktion akzeptiert nur einen einzelnen Buchstaben als Argument und gibt den entsprechenden Großbuchstaben zurück. Wenn Sie jedoch eine ganze Zeichenkette in Großbuchstaben umwandeln möchten, müssen Sie sie in einer Schleife durchlaufen und jeden Buchstaben einzeln umwandeln. Es gibt auch eine ähnliche Funktion namens `tolower()` für die Umwandlung in Kleinbuchstaben.
+Es ist wichtig zu beachten, dass die Funktion `toupper()` nur Buchstaben in der ASCII-Range konvertiert. Zeichen wie Zahlen oder Sonderzeichen bleiben unverändert.
 
-Es ist wichtig zu beachten, dass die Funktionen `toupper()` und `tolower()` nur für Buchstaben des ASCII-Zeichensatzes funktionieren. Wenn Sie Zeichen einer anderen Sprache verwenden, z.B. mit Akzenten oder Umlauten, müssen Sie möglicherweise eine andere Methode verwenden.
+## Tiefergehende Informationen über die Großschreibung
+
+Bei der Großschreibung von Zeichenfolgen gibt es noch weitere Aspekte zu beachten. Zum Beispiel gibt es in der deutschen Sprache Buchstaben, die mit bestimmten diakritischen Zeichen wie Umlauten und Akzenten versehen sind. Diese werden bei der Konvertierung zu Großbuchstaben in ASCII-Werten oft nicht korrekt umgewandelt.
+
+Ein weiterer wichtiger Punkt ist die Unterstützung von Unicode in modernen Programmiersprachen wie C. Unicode ermöglicht die Darstellung von Zeichen aus verschiedenen Sprachen und Schriftsystemen, die außerhalb der ASCII-Range liegen. Um sicherzustellen, dass die Großschreibung in Unicode korrekt funktioniert, müssen geeignete Bibliotheken eingebunden werden.
 
 ## Siehe auch
-- [String Funktionen in C](https://www.tutorialspoint.com/c_standard_library/c_function_string_h.htm)
-- [ASCII-Code-Tabelle](https://www.ascii-code.com/)
+
+- [ASCII-Tabelle](https://www.ascii-code.com/)
+- [Unicode-Bibliothek für C](https://www.gnu.org/software/libunistring/)

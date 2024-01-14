@@ -1,45 +1,78 @@
 ---
-title:                "Gleam: 比较两个日期"
+title:                "Gleam: Please forgive and correct me, if I made mistakes.比较两个日期"
+simple_title:         "Please forgive and correct me, if I made mistakes.比较两个日期"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-日期比较是一个很常见的编程任务，它可以帮助我们判断某个日期是在另一个日期之前还是之后。例如，我们可以用日期比较来判断某个人的生日是否已经过去，从而发送生日祝福。在Gleam语言中，有一个方便的方法来进行日期比较，让我们来看看如何使用它吧！
+# 为什么要比较两个日期？
 
-## 如何
+在编程中，经常需要比较两个日期来确定时间先后顺序或者计算时间差。比如在开发电商平台时，需要判断订单生成的先后顺序，来决定发货的优先级。因此，学会如何比较两个日期是非常有用的。今天我们就来探讨一下在 Gleam 中如何比较两个日期。
+
+## 如何比较两个日期？
+
+比较两个日期可以使用标准库中的 `Time` 模块下的 `compare` 函数。该函数接受两个 `Time` 类型的参数，如果第一个日期早于第二个日期，则返回 `-1`，如果两个日期相同，则返回 `0`，如果第一个日期晚于第二个日期，则返回 `1` 。
+
 ```Gleam
-import Time.Date
+import Time
 
-let today = Time.Date.now()
-let birthday = Time.Date.from_ymd(1990, 8, 18)
+let date1 = Time.now()
+let date2 = Time.add_days(Time.now(), 2)
 
-let is_before = Time.Date.is_before(birthday, today)
-let is_after = Time.Date.is_after(birthday, today)
+let result = Time.compare(date1, date2)
 
-IO.print("今天是生日吗？: $(birthday),$(if is_before { "是的！" } else { "不是。" })")
-IO.print("生日已经过了吗？: $(birthday),$(if is_after { "是的！" } else { "还没到呢。" })")
-
+// result 的值为 -1，因为 date1 比 date2 早两天
 ```
 
-运行以上代码，我们可以得到类似如下的输出：
+你也可以使用条件表达式来比较两个日期：
 
+```Gleam
+if date1 < date2 {
+  // do something
+} else if date1 == date2 {
+  // do something
+} else {
+  // do something
+}
 ```
-今天是生日吗？: 1990-08-18,是的！
-生日已经过了吗？: 1990-08-18,还没到呢。
+
+还可以利用 `Time` 模块下的 `diff` 函数来计算两个日期之间的时间差。该函数接受两个 `Time` 类型的参数，返回一个 `Time.Delta` 类型的结果，包含了天数、小时数、分钟数和秒数的差值。
+
+```Gleam
+import Time
+
+let date1 = Time.parse("2021-05-01 00:00:00", "%Y-%m-%d %H:%M:%S")
+let date2 = Time.now()
+
+let diff = Time.diff(date1, date2)
+
+// diff 的值为
+// Time.Delta(
+//   days: 3,
+//   hours: 12,
+//   minutes: 30,
+//   seconds: 0,
+// )
 ```
 
-从上面的例子中，我们可以看到如何使用Gleam语言中的日期模块来比较两个日期。我们可以通过调用`Time.Date.is_before(date1, date2)`来判断日期`date1`是否在日期`date2`之前，同理也可以使用`Time.Date.is_after(date1, date2)`来判断是否在之后。
+## 深入探讨比较两个日期
 
-## 深入探讨
-除了上面提到的两个方法外，Gleam语言中的日期模块还提供了其他方便的函数来进行日期比较，如`Time.Date.is_same(date1, date2)`用于判断两个日期是否相同，`Time.Date.is_leap_year(date)`用于判断某个日期是否是闰年等等。
+在 Gleam 中，日期和时间被表示为 `Time` 类型，其内部实际上是一个整数，代表自 UTC 时间 1970 年 1 月 1 日 00:00:00 以来经过的秒数。这种表示方法使得比较两个日期变得简单明了，而且可以方便地进行时间计算。
 
-此外，Gleam还支持自定义格式的日期比较，通过`Time.Date.parse(format, date)`函数可以将字符串解析为日期对象，从而更灵活地进行比较。了解更多关于Gleam日期模块的信息，可以查看官方文档。
+值得注意的是，Gleam 中的日期不包含时区信息，所以需要在使用时手动转换成本地时区。同时，由于不同的时区可能有不同的夏令时规则，所以在处理跨时区的日期时需要格外小心。
 
 ## 参考链接
-- [Gleam官方文档 - 日期模块](https://gleam.run/book/core_modules.html#time-and-date)
-- [Gleam官方仓库](https://github.com/gleam-lang/gleam)
-- [Gleam中文社区](https://www.gleam-lang.org.cn/)
+
+- [官方标准库文档 - Time 模块](https://gleam.run/core/time.html)
+- [Gleam 语言文档 - 日期和时间](https://gleam.run/book/timers-and-time.html)
+- [Gleam 标准库源码 - Time 模块](https://github.com/gleam-lang/std/blob/master/lib/core/Time.gleam)
+
+# 参见
+
+- [在 Gleam 中获取当前时间](https://example.com)
+- [如何在 Gleam 中格式化日期和时间](https://example.com)
+- [处理跨时区日期的注意事项](https://example.com)

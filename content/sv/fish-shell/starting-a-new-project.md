@@ -1,39 +1,32 @@
 ---
-title:                "Fish Shell: Att påbörja ett nytt projekt"
+title:                "Fish Shell: Att börja ett nytt projekt"
+simple_title:         "Att börja ett nytt projekt"
 programming_language: "Fish Shell"
-category:             "Getting Started"
+category:             "Fish Shell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
-Att starta ett nytt programmeringsprojekt kan kännas överväldigande och tidskrävande, men med hjälp av Fish Shell kan processen förenklas och bli mer effektiv. Denna guide är avsedd för svenska läsare som vill lära sig mer om hur man kan använda Fish Shell för att snabbt komma igång med ett nytt projekt.
+## Varför
 
-##Hur man gör
-För att börja ett nytt projekt med Fish Shell, behöver du följa följande steg:
+När man ska påbörja ett nytt programmeringsprojekt kan det vara lätt att känna sig överväldigad, speciellt om man inte är bekant med verktygen som används. Men genom att använda Fish Shell kan du förenkla och förbättra ditt kodande. Läs vidare för att lära dig hur du kan använda Fish Shell för att starta ett nytt projekt!
 
-1. Öppna din terminal och navigera till den plats där du vill skapa ditt projekt.
-2. Skriv "mkdir" följt av namnet på ditt projekt och tryck sedan på Enter för att skapa en ny mapp för ditt projekt.
-3. Ändra till ditt nya projekts mapp genom att skriva "cd" följt av namnet på mappen.
-4. Nu är det dags att starta Fish Shell genom att skriva "fish" i terminalen och trycka på Enter.
-5. Skriv sedan "touch README.md" för att skapa en fil som kommer att fungera som en beskrivning och guide för ditt projekt.
-6. Nu är det dags att börja koda! Använd "vim" kommandot för att öppna den nya README.md filen och börja skriva din kod.
+## Så här gör du
 
-```Fish Shell
-fish
-touch README.md
-vim README.md
-```
+För att börja ett nytt projekt i Fish Shell behöver du först och främst skapa en ny mapp där ditt projekt kommer att lagras. Därefter kan du öppna upp Fish Shell och navigera till den nya mappen genom att använda kommandot "cd". Om du exempelvis har skapat mappen "nyttprojekt" på skrivbordet kan du skriva "cd Skrivbord/nyttprojekt" i Fish Shell.
 
-När du är klar med att skriva din kod, tryck på Esc och skriv ":wq" för att spara och avsluta filen.
+Efter att du har navigerat till rätt mapp kan du börja skapa filer genom att använda kommandot "touch". Till exempel, om du vill skapa en fil som heter "index.html" kan du skriva "touch index.html" i Fish Shell. Du kan också använda andra kommandon som "mkdir" för att skapa nya mappar eller "echo" för att skriva ut text till en fil.
 
-##Djupdykning
-Det finns många olika sätt att använda Fish Shell för att förenkla processen att starta ett nytt projekt. En av de mest användbara funktionerna är autofullständighet, vilket gör att Fish Shell kan förutse och slutföra dina kommandon, filnamn och sökvägar baserat på tidigare inmatningar. Du kan också lägga till egna kommandon och genvägar för att snabbt navigera och utföra uppgifter i ditt projekt.
+För en mer interaktiv upplevelse kan du även använda verktyget "mate" som öppnar en textredigerare där du kan skriva och redigera din kod. Till exempel "mate index.html" för att öppna "index.html" i textredigeraren.
 
-För att lära dig mer om Fish Shell och dess funktioner, kan du läsa mer på deras officiella hemsida https://fishshell.com/ eller gå igenom dokumentationen https://fishshell.com/docs/current/index.html.
+## Djupdykning
 
-##Se också
-- [Fish Shell hemsida](https://fishshell.com/)
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-- [Guide för Fish Shell på svenska](https://fishshell.com/docs/current/index.html#other-languages)
+Fish Shell erbjuder också många andra funktioner som kan vara användbara när man ska starta ett nytt projekt. Du kan till exempel använda "tab-completion" genom att trycka på tab-knappen när du skriver in en fil eller mapp för att slutföra kommandot automatiskt. Du kan också använda redirection, pipes och andra avancerade kommandon för att manipulera data och filer på ett effektivt sätt.
+
+## Se även
+
+- Fish Shell's officiella hemsida: https://fishshell.com/
+- En introduktionsguide till Fish Shell: https://devdojo.com/tutorials/getting-started-with-fish-shell
+- En fullständig lista över Fish Shell's kommandon: https://fishshell.com/docs/current/commands.html

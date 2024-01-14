@@ -1,61 +1,48 @@
 ---
 title:                "Fish Shell: Concatenando cadenas"
+simple_title:         "Concatenando cadenas"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué
-Muchas veces, al escribir un programa en Fish Shell, necesitamos combinar o unir varias cadenas de texto para formar una nueva, ya sea para mostrar información al usuario o para almacenarla en una variable. Por eso, aprender a concatenar cadenas es una habilidad esencial para cualquier programador en Fish Shell.
+## Por qué
+
+La concatenación de cadenas es una técnica importante en la programación que permite combinar múltiples cadenas de texto en una sola. Esto es útil para crear mensajes personalizados, mostrar datos de forma clara o simplemente para unir diferentes pedazos de texto. Aprender a concatenar cadenas en Fish Shell es una habilidad valiosa para cualquier programador. 
 
 ## Cómo hacerlo
-Para concatenar cadenas en Fish Shell, utilizamos el operador `+`. Esto nos permite unir dos o más cadenas y obtener una nueva cadena combinada. Veamos un ejemplo:
 
-```fish
-set nombre "Juan"
-set apellido "Pérez"
-set nombre_completo $nombre + " " + $apellido
+```Fish Shell 
+set nombre "María"
+set apellido "García"
+set nombre_completo $nombre" "$apellido
 echo $nombre_completo
 ```
-Salida: `Juan Pérez`
 
-En este ejemplo, hemos creado dos variables, `nombre` y `apellido`, y luego las hemos concatenado con el operador `+` para crear una nueva variable `nombre_completo`. Al imprimir su valor, obtenemos la cadena combinada "Juan Pérez".
+Este código define dos variables, `nombre` y `apellido`, y luego las concatena con un espacio en blanco en la variable `nombre_completo`. Al usar el commando `echo`, podemos imprimir el valor de `nombre_completo` en la terminal, que mostrará "María García".
 
-También podemos concatenar más de dos cadenas a la vez. En ese caso, el operador `+` se utilizará para unir la primera y segunda cadena, y luego el resultado se unirá con la tercera cadena, y así sucesivamente. Por ejemplo:
+Esta técnica también funciona con cadenas de caracteres, no solo con variables, como se muestra a continuación:
 
-```fish
-set saludo "Hola,"
+```Fish Shell 
+set mensaje "¡Hola! Mi nombre es "
 set nombre "Juan"
-set apellido "Pérez"
-set despedida "¡Hasta pronto!"
-set mensaje $saludo + " " + $nombre + " " + $apellido + ". " + $despedida
-echo $mensaje
+echo $mensaje$nombre
 ```
-Salida: `Hola, Juan Pérez. ¡Hasta pronto!`
 
-Como se puede ver, hemos concatenado cuatro cadenas diferentes para formar un mensaje completo. Este es solo uno de los muchos ejemplos de cómo podemos utilizar la concatenación de cadenas en Fish Shell.
+Este código resultará en "¡Hola! Mi nombre es Juan" impreso en la terminal. Como puedes ver, podemos combinar variables y cadenas de texto para crear mensajes personalizados.
 
-## Profundizando
-Cuando concatenamos cadenas en Fish Shell, es importante tener en cuenta que todas las cadenas deben tener el mismo tipo de comillas. Por ejemplo, si una cadena comienza con comillas dobles, todas las demás deben ser del mismo tipo. Esto asegura que los espacios entre cadenas sean interpretados correctamente.
+## Una mirada más profunda
 
-También hay un operador de concatenación abreviado, `+=`, que nos permite agregar una nueva cadena al final de una variable existente sin tener que volver a asignar su valor completo. Por ejemplo:
+La concatenación de cadenas en Fish Shell se realiza utilizando el operador `+` o utilizando la sintaxis de `$variable1$variable2` como vimos en los ejemplos anteriores. Además, también se pueden usar múltiples operadores en una sola expresión, lo que permite la concatenación de más de dos cadenas.
 
-```fish
-set nombre "Juan"
-set apellido "Pérez"
-set nombre_completo $nombre
-echo $nombre_completo
-set nombre_completo += " " + $apellido
-echo $nombre_completo
-```
-Salida: `Juan`  
-`Juan Pérez`
+Otro aspecto importante a tener en cuenta es que al concatenar cadenas de texto, no se agrega ningún espacio entre ellas automáticamente, por lo que es necesario agregar espacios en blanco de forma manual si es necesario.
 
-Esta es una forma útil de agregar información a una cadena existente sin tener que reescribir todo.
+## Ver también
 
-# Ver también
-- [Fish Shell documentation on strings](https://fishshell.com/docs/current/tutorial.html#strings)
-- [Fish Shell string manipulation](https://fishshell.com/docs/current/tutorial.html#string-manipulation)
-- [More examples of string concatenation in Fish Shell](https://www.linuxtricks.fr/wiki/concatenation-de-chaines-de-caracteres-en-fish-shell)
+- [Guía de referencia básica de Fish Shell](https://fishshell.com/docs/current/tutorial.html)
+- [Documentación de concatenación de cadenas en Fish Shell](https://fishshell.com/docs/current/cmds/set.html#cmd-set)
+
+¡Espero que hayas aprendido cómo concatenar cadenas en Fish Shell con este artículo! ¡Ahora podrás utilizar esta habilidad en tus proyectos de programación y mejorar la funcionalidad de tus scripts!

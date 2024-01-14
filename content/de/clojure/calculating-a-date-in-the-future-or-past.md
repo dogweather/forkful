@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Clojure: Berechnung eines Datums in der Vergangenheit oder Zukunft"
+simple_title:         "Berechnung eines Datums in der Vergangenheit oder Zukunft"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,42 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Berechnen von Datum in der Vergangenheit oder Zukunft kann in vielen Fällen sehr nützlich sein, z.B. um den Liefertermin für ein Paket zu bestimmen oder um eine Erinnerung für einen Termin in Zukunft zu setzen. Um diese Aufgabe mit Leichtigkeit zu bewältigen, ist es hilfreich, ein klares Verständnis der Programmiersprache Clojure zu haben.
+Das Berechnen von Daten in der Zukunft oder Vergangenheit ist eine nützliche Fähigkeit in der Programmierung, insbesondere in der Clojure-Sprache. Es kann bei der Erstellung von Kalender- oder Terminverwaltungsprogrammen oder bei der Berechnung von längeren Zeitspannen für statistische Analysen hilfreich sein.
 
-## Wie man es macht
+## Wie
 
-Um ein Datum in der Zukunft zu berechnen, können wir die "plus" Funktion verwenden. Angenommen, wir möchten 30 Tage zum aktuellen Datum hinzufügen, können wir dies wie folgt tun:
-
-```Clojure
-(plus (local-date) (days 30))
-```
-
-Dies gibt uns das Datum 30 Tage nach dem heutigen Datum zurück. Wir können auch negative Werte verwenden, um ein Datum in der Vergangenheit zu berechnen. Zum Beispiel, um das Datum vor 2 Monaten zu erhalten, können wir Folgendes tun:
+Um ein zukünftiges oder vergangenes Datum in Clojure zu berechnen, verwenden wir die "plus" Funktion aus dem "clojure.java.time" Paket. Wir geben das aktuelle Datum als Argument und verwenden dann die "plus" Funktion, um eine bestimmte Anzahl von Tagen, Monaten oder Jahren zu addieren oder subtrahieren.
 
 ```Clojure
-(plus (local-date) (months -2))
+(require '[clojure.java.time :as t])
+
+;; Berechnung eines Datums in der Zukunft
+(t/plus (t/local-date) {:days 5 :months 1 :years 2})
+=> #object[java.time.LocalDate 0x2cf241f "04.09.2022"]
+
+;; Berechnung eines Datums in der Vergangenheit
+(t/plus (t/local-date) {:days -10 :months -2 :years -1})
+=> #object[java.time.LocalDate 0x381d2f8f "17.02.2018"]
 ```
 
-Dies gibt uns das Datum vor 2 Monaten zurück.
+## Deep Dive
 
-## Tiefer tauchen
-
-Clojure hat auch integrierte Funktionen, um bestimmte Tage in einer Woche oder Monat zu berechnen. Zum Beispiel die Funktion "day-of-week" gibt uns einen numerischen Wert für den Wochentag eines bestimmten Datums zurück, wobei 1 für Sonntag und 7 für Samstag steht. Die Funktion "month-of-year" gibt uns den numerischen Wert für den Monat eines Datums zurück, wobei 1 für Januar und 12 für Dezember steht.
+Die "plus" Funktion kann auch mit anderen Zeiteinheiten wie Stunden, Minuten oder Sekunden verwendet werden. Außerdem können wir auch spezifische Daten auswählen, z.B. das Datum in einer anderen Zeitzone berechnen.
 
 ```Clojure
-(day-of-week (local-date)) ;; Gibt uns den numerischen Wert für den heutigen Wochentag zurück
-(month-of-year (local-date)) ;; Gibt uns den numerischen Wert für den aktuellen Monat zurück
+;; Berechnung einer Uhrzeit in der Zukunft
+(t/plus (t/local-time) {:hours 3 :minutes 40 :seconds 15})
+=> #object[java.time.LocalTime 0x33a32e3e "12:33:26"]
+
+;; Berechnung einer Uhrzeit in einer anderen Zeitzone
+(t/plus (t/local-date-time (t/local-date)) {:minutes 30 :zone "Europe/Berlin"})
+=> #object[java.time.LocalDateTime 0xc026dfd "30.07.2021T16:00:00"]
 ```
 
-Mit diesen Funktionen können wir noch präziser ein Datum in der Vergangenheit oder Zukunft berechnen. Zum Beispiel, um den letzten Montag des nächsten Monats zu erhalten, können wir dies tun:
+Es ist auch möglich, ein bestimmtes Datum oder eine bestimmte Uhrzeit direkt zu einem anderen Datum oder einer anderen Uhrzeit hinzuzufügen. Dazu verwenden wir die "plus-days", "plus-months", "plus-years", "plus-hours", "plus-minutes" und "plus-seconds" Funktionen.
 
 ```Clojure
-(plus (last (monday-of-month (local-date) (plus (local-date) (months 1)))))
-```
+(t/plus-days (t/local-date) 10)
+=> #object[java.time.LocalDate 0x1572529e "08.08.2021"]
 
-Dieses Beispiel mag komplex erscheinen, aber es zeigt, dass die Kombination verschiedener Funktionen einen genaueren Ergebnis liefern kann.
+(t/plus-hours (t/local-time) 2)
+=> #object[java.time.LocalTime 0xf57596d "19:02:13"]
+```
 
 ## Siehe auch
 
-- [Clojure-Dokumentation zu Datumsfunktionen](https://clojure.github.io/clojure/java-time/index.html)
-- [Beispiele für Datumskalkulationen mit Clojure](https://www.baeldung.com/java-8-date-time-intro)
+- Offizielle Clojure-Dokumentation zu "clojure.java.time": https://clojure.github.io/java.time-api/
+
+- Nützliche Bibliothek für Datum- und Uhrzeitberechnungen in Clojure: https://github.com/clj-time/clj-time

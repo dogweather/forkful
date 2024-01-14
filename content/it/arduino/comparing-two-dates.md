@@ -1,56 +1,59 @@
 ---
-title:                "Arduino: Confronto tra due date"
+title:                "Arduino: Confrontare due date"
+simple_title:         "Confrontare due date"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché
-C'è un motivo comune per comparare due date quando si programma con Arduino, ad esempio per controllare se un evento è avvenuto prima o dopo una data specifica. In questo articolo imparerai come fare questo confronto in modo efficiente utilizzando il linguaggio di programmazione di Arduino.
+## Perché
 
-##Come Fare
-Per confrontare due date con Arduino, è necessario prima impostare le date come variabili. Ad esempio, si può utilizzare la funzione di data e ora integrata di Arduino per impostare la data come variabile.
+Ci sono molti motivi per cui qualcuno potrebbe voler confrontare due date nel loro programma Arduino. Potresti voler controllare se una data è più recente di un'altra per attivare una funzione, o forse vuoi semplicemente registrare la differenza di tempo tra due eventi. Quale che sia il tuo motivo, imparare a confrontare due date nel tuo codice Arduino può essere un'abilità utile da avere.
 
-```Arduino
-#include <TimeLib.h>
-int giorno = 28;
-int mese = 9;
-int anno = 2021;
+## Come fare
+
+Per confrontare due date nel tuo sketch Arduino, dovrai utilizzare la classe `DateTime` della libreria `Time`. Questa classe permette di creare oggetti data e utilizzarli per eseguire operazioni come il confronto. Ecco un esempio di come puoi confrontare due date:
+
 ```
+#include <Time.h>
 
-Una volta impostate le date come variabili, è possibile utilizzare l'operatore Booleano "maggiore di" e "minore di" per confrontare le date. Ad esempio, se si vuole controllare se la data è successiva al 28 Settembre 2021, si può utilizzare il seguente codice:
+void setup() {
+  // Inizializza la libreria Time
+  setTime(8, 30, 0, 1, 1, 2019); // imposta la data corrente al 1 gennaio 2019 alle ore 8:30
+}
 
-```Arduino
-if (giorno > 28 && mese == 9 && anno == 2021) {
-  // Codice da eseguire se la condizione è vera
+void loop() {
+  // Definiamo due date da confrontare
+  DateTime data1(2019, 1, 1, 8, 30, 0); // 1 gennaio 2019 alle ore 8:30
+  DateTime data2(2019, 1, 1, 12, 0, 0); // 1 gennaio 2019 alle ore 12:00
+
+  // Confrontiamo le due date
+  if (data1 < data2) {
+    Serial.println("La data 1 è precedente alla data 2");
+  } else if (data1 > data2) {
+    Serial.println("La data 2 è precedente alla data 1");
+  } else {
+    Serial.println("Le due date sono uguali");
+  }
+
+  delay(1000); // attende un secondo prima di ripetere il confronto
 }
 ```
 
-È importante notare che l'utilizzo dell'operatore Booleano "uguale a" è necessario per confrontare le variabili dei mesi e degli anni.
+L'output di questo sketch sarà il seguente:
 
-##Deep Dive
-È possibile andare più in profondità nel confronto di due date utilizzando la struttura di dati "struct" di Arduino. Questo permette di creare una variabile che combina giorno, mese e anno in una sola variabile, rendendo il confronto più semplice.
-
-```Arduino
-struct Data {
-  int giorno;
-  int mese;
-  int anno;
-};
-
-Data data1 = {28, 9, 2021};
-Data data2 = {30, 9, 2021};
-
-if (data2.giorno > data1.giorno && data2.mese == data1.mese && data2.anno == data1.anno) {
-  // Codice da eseguire se la data2 è successiva alla data1
-}
+```
+La data 1 è precedente alla data 2
 ```
 
-##Vedi Anche
-- [Cosa è Arduino?](https://it.wikipedia.org/wiki/Arduino)
-- [Documentazione di TimeLib](https://www.arduino.cc/reference/en/libraries/timelib/)
-- [Approfondimenti su utilizzo delle strutture di dati in Arduino](https://www.programming-electronics-diy.xyz/2017/10/explaining-struct-in-arduino.html)
+## Approfondimento
 
-Buona programmazione con Arduino!
+Quando si tratta di confrontare due date, ci sono alcuni dettagli che è importante tenere a mente. Ad esempio, è importante considerare il formato delle date che si stanno confrontando. Se le date sono definite con un formato diverso, il confronto potrebbe non funzionare correttamente. Inoltre, la classe `DateTime` offre anche la possibilità di confrontare solo parti specifiche delle date, come il giorno o il mese. Assicurati di esplorare tutte le opzioni offerte dalla libreria `Time` per essere sicuro di utilizzare il metodo più adatto alle tue esigenze.
+
+## Vedi anche
+
+- [Libreria Time](https://github.com/PaulStoffregen/Time)
+- [Guida ai confronti in Arduino](https://www.arduino.cc/reference/en/language/structure/comparison-operators/)

@@ -1,51 +1,48 @@
 ---
-title:                "Bash: Extraindo subcadeias"
+title:                "Bash: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que extrair subcadeias de caracteres é útil
 
-Extração de subcadeias é uma habilidade essencial para qualquer programador de Bash. Com ela, você pode facilmente extrair trechos específicos de uma string, permitindo que você manipule e utilize dados de forma mais eficiente em seus scripts.
+Extrair subcadeias de caracteres é uma técnica útil em programação Bash para obter partes específicas de uma string maior. Isso pode ser útil em diversas situações, como manipulação de dados, formatação de strings e filtragem de informações.
 
-## Como Fazer
+## Como fazer a extração de substrings
 
-Para extrair uma subcadeia de uma string em Bash, você pode usar o operador de substituição de padrões `${string#substring}`. Isso irá remover a substring do início da string. Se você quiser remover a substring do final da string, você pode usar o operador `${string%substring}`.
+Para extrair substrings em Bash, utilizamos o comando `cut` seguido de opções que indicam o início e fim da substring desejada. Por exemplo, se quisermos extrair os três primeiros caracteres de uma string, podemos usar o comando `cut -c 1-3`. O `1-3` indica que queremos os caracteres que vão do primeiro ao terceiro.
 
-Por exemplo, se tivermos a string `Hello World`, e quisermos extrair apenas a palavra `World`, podemos usar o seguinte código:
-
-```Bash
-string="Hello World"
-substring="Hello "
-echo ${string#substring}
-```
-
-Isso irá imprimir `World`, pois a substring `Hello ` será removida do início da string.
-
-Além disso, se você quiser extrair uma subcadeia baseada em sua posição, pode usar a sintaxe `${string:position:length}`. Isso irá retornar os caracteres da string a partir da posição especificada, com o comprimento especificado. Se o comprimento não for especificado, a subcadeia irá até o final da string.
-
-Por exemplo, se tivermos a string `Bash Programming`, e quisermos extrair apenas a palavra `Programming`, podemos usar o seguinte código:
+Veja um exemplo de código abaixo:
 
 ```Bash
-string="Bash Programming"
-echo ${string:5}
+# definindo a string
+string="Programação Bash é divertida"
+
+# extraindo as três primeiras letras
+substring=$(echo $string | cut -c 1-3)
+echo $substring
+# saída: Pro
 ```
 
-Isso irá imprimir `Programming`, pois o primeiro parâmetro especifica a posição a partir da qual queremos extrair a substring.
+Também é possível utilizar o `cut` para extrair a substring a partir de uma posição específica. Por exemplo, se quisermos extrair os caracteres a partir do sétimo, podemos usar `cut -c 7-`. O `-` sozinho indica que queremos todos os caracteres a partir da sétima posição.
 
-Você também pode combinar esses métodos para extrair substrings mais complexas e realizar tarefas específicas em seus scripts.
+Além disso, o `cut` também permite extrair substrings baseadas em delimitadores, utilizando a opção `-d`. Um exemplo disso seria extrair apenas o domínio de um endereço de e-mail, utilizando o `@` como delimitador.
 
-## Mergulho Profundo
+## Aprofundando na extração de substrings
 
-A extração de subcadeias pode ser ainda mais poderosa quando combinada com outras ferramentas do Bash, como loops e arrays. Combinando esses recursos, você pode facilmente processar grandes quantidades de dados e extrair informações relevantes diretamente de suas strings.
+O comando `cut` também possui outras opções que permitem uma maior flexibilidade na extração de substrings. Por exemplo, podemos utilizar a opção `-f` para extrair campos específicos de uma string, delimitados por espaços ou tabs.
 
-Além disso, existem muitas implementações diferentes de extração de substrings em Bash, permitindo que você escolha a sintaxe mais adequada para cada situação específica.
+Outra opção útil é o `-s`, que permite ignorar linhas que não possuem o delimitador especificado. Isso pode ser útil quando estamos trabalhando com arquivos de dados com linhas inconsistentes.
 
-## Veja Também
+Com um pouco de prática e compreensão dessas opções, podemos extrair substrings de maneira eficiente e flexível em nossos scripts Bash.
 
-- [The Bash Guide to Using Variables](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameters.html)
-- [Bash String Manipulation](https://www.bashguru.com/2010/12/string-manipulation-in-bash.html)
-- [AWK String Functions](https://www.tutorialspoint.com/awk/awk_string_functions.htm)
+## Veja também
+
+[A documentation on the `cut` command](https://www.computerhope.com/unix/ucut.htm)
+
+[A Bash tutorial on string manipulation](https://linuxconfig.org/bash-scripting-tutorial-for-beginners#h1--working-with-strings)

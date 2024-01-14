@@ -1,55 +1,64 @@
 ---
 title:                "C: 将日期转换为字符串"
+simple_title:         "将日期转换为字符串"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要将日期转换为字符串？
+## 为什么
 
-在编程中，经常会遇到将日期转换为字符串的需求。这样做的好处是可以将日期以可读性高的方式展示给用户，让用户更容易理解和解读。在本文中，我们将通过实例展示如何使用C语言将日期转换为字符串，帮助读者更好地掌握这一过程。
+有时候，在编程的过程中，我们需要将日期转换成字符串。这可能是因为我们需要将日期显示给用户，或者将它保存到文件中。无论何种原因，日期转换成字符串是一项常见的任务，而且对于学习C语言的初学者来说也是一项重要的技能。
 
-## 如何实现日期转换为字符串？
+## 如何
 
-首先，我们需要使用C语言中的时间函数`ctime()`来获取当前日期时间。然后，通过使用字符串格式化函数`strftime()`，我们可以将日期时间转换为可读性高的字符串格式。下面是一个简单的例子：
+下面是一个简单的示例，演示如何使用C语言将日期转换成字符串：
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main() {
+int main()
+{
+    // 获取当前日期和时间
+    time_t now = time(NULL);
 
-  time_t now;
-  struct tm *local;
-  char date_string[50];
+    // 将日期转换为字符串
+    char date_string[30];
+    strftime(date_string, 30, "%Y-%m-%d %H:%M:%S", localtime(&now));
 
-  time(&now); // 获取当前日期时间
-  local = localtime(&now); // 转换成本地时间格式
-  strftime(date_string, 50, "%B %d, %Y %H:%M:%S", local); // 将日期时间格式化为字符串
-  printf("当前日期时间为：%s", date_string);
+    // 打印字符串
+    printf("当前日期时间为：%s\n", date_string);
 
-  return 0;
+    return 0;
 }
 ```
 
-运行以上代码会得到类似于`October 10, 2021 12:30:00`的字符串。我们还可以根据需要自行定义字符串的格式，如`%d/%m/%Y`将会显示为`10/10/2021`。在实际应用中，我们也可以通过用户输入的方式来获取日期，并将其转换为字符串格式。
+输出结果可能是这样的：
 
-## 深入了解日期转换为字符串
+```
+当前日期时间为：2021-12-01 16:30:00
+```
 
-在深入研究日期转换为字符串的过程中，我们需要了解C语言中的时间相关函数。除了`ctime()`和`strftime()`，还有一些其他的函数可用于获取和操作日期时间，如`localtime()`、`mktime()`、`difftime()`等。此外，我们也可以通过改变系统的时区和日期格式，来影响日期转换的结果。有了这些知识，我们就可以更灵活地进行日期转换并处理相关问题。
+让我们来解析一下上面的代码。首先，我们使用C标准库中的`time()`函数来获取当前日期和时间。然后，使用`strftime()`函数将日期转换为字符串，并指定了日期格式为`%Y-%m-%d %H:%M:%S`，即年-月-日 时:分:秒。最后，使用`printf()`函数将字符串打印出来。
+
+除了上面的例子，我们还可以通过改变日期格式来获得不同的输出。例如，如果我们想要将日期转换成指定语言的字符串，可以使用`setlocale()`函数来设置语言环境，并使用对应语言的日期格式。
+
+## 深入了解
+
+在C语言中，日期实际上是以一个整数来表示的，即从1970年1月1日开始经过的秒数。因此，将日期转换成字符串实际上是将一个整数值格式化成一定的形式。
+
+在C语言中，还有一个重要的日期库，即`<ctime>`。它提供了许多用于处理日期和时间的函数，例如计算时间差、比较日期、检查闰年等等。如果想要深入了解日期与时间在C语言中的处理，可以进一步学习这个库。
 
 ## 参考链接
 
-- [C语言时间函数介绍](https://www.runoob.com/cprogramming/c-date-time.html)
-- [C语言字符串格式化函数介绍](https://www.runoob.com/cprogramming/c-function-strftime.html)
-- [C语言时间处理常用函数总结](https://cwf529.github.io/2018/05/17/C++/Common-time-manipulation-functions-in-C++/)
-- [C语言日期转换实例](https://codetanblog.com/2016/11/20/C%E8%AF%AD%E8%A8%80%E4%BB%A3%E7%A0%81%E5%AE%9E%E4%BE%8B-%E6%97%B6%E9%97%B4%E8%BD%AC%E6%8D%A2/)
-- [如何通过C语言获取用户输入的日期并转换为字符串](https://www.geeksforgeeks.org/convert-struct-tm-to-string-in-c-language/) 
+- [C标准库文档](https://www.cplusplus.com/reference/)
+- [C语言实例教程：日期和时间](https://www.runoob.com/cprogramming/c-examples-date.html)
+- [如何学习C语言](https://www.zhihu.com/question/19803556)
 
 ## 参见
 
-- [时间和日期转换相关知识](https://www.w3schools.com/cpp/cpp_date.asp)
-- [C语言中的时间函数文档](https://www.gnu.org/software/libc/manual/html_node/Calendar-Time-Functions.html)
-- [各平台上的日期格式化指令](https://docs.microsoft.com/en-us/cpp/c-runtime-library/format-specification-syntax-printf-and-wprintf-functions?view=msvc-160)
+- [日期和时间格式化指令](https://www.cplusplus.com/reference/ctime/strftime/)

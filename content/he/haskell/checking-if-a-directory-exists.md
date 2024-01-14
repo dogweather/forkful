@@ -1,49 +1,53 @@
 ---
-title:                "Haskell: מאמתים אם תיקייה קיימת"
+title:                "Haskell: לבדיקה אם ספרייה קיימת"
+simple_title:         "לבדיקה אם ספרייה קיימת"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה?
+## למה
 
-ביקורת קוד מורכבת עוזרת להבטיח שהתיקייה שאנו מנסים לטעון קיימת במערכת ההפעלה שלנו. זה מאפשר לנו לבנות קוד בטוח ומהיר יותר, ביותר קלות כאשר נמצא בשלב תכנות ומסיימים כרגע.
+בעולם של תכנות בHaskell, אחד הדברים החשובים להבנה היא לבדוק אם תיקייה קיימת. במאמר הזה, אני אסביר למה זה חשוב ואיך לבצע זאת בקוד.
 
-## כיצד לבדוק אם תיקייה קיימת בקוד Haskell
+## איך לבדוק אם תיקייה קיימת
 
-אם ברצונכם לבדוק האם תיקייה מסוימת קיימת במערכת ההפעלה, תוכלו להשתמש בפונקציה `doesDirectoryExist` בספריה של `System.Directory`.
+```Haskell
+import System.Directory
 
-```
-Haskell
-import System.Directory (doesDirectoryExist)
-
-main :: IO ()
 main = do
-    dirExists <- doesDirectoryExist "path/to/directory"
+    -- אנו משתמשים בפונקציה doesDirectoryExist
+    let path = "path/to/directory"
+    dirExists <- doesDirectoryExist path
+    -- אם התיקייה קיימת, הערך של dirExists יהיה True, אחרת יהיה False
     if dirExists
-        then putStrLn "The directory exists."
-        else putStrLn "The directory does not exist."
+        then putStrLn "התיקייה קיימת!"
+        else putStrLn "התיקייה לא קיימת."
 ```
 
-תוצאה:
-
-```
-The directory exists.
-```
-
-אם התיקייה לא קיימת במערכת ההפעלה, תקבלו את ההודעה הבאה:
-
-```
-The directory does not exist.
+פלט:
+``` 
+התיקייה קיימת!
 ```
 
-## העמקה נוספת
+## מקורות מעמיקים
 
-ביקורת קוד עם `System.Directory` שימושית גם לזיהוי אם תיקייה מסוימת היא באמת תיקייה או קובץ רגיל. זה יכול להיות שימושי במצבים כמו קריאת קבצים או ביצוע פעולות במשתנים שמייצגים מסלולים לתיקיות.
+בנוסף לפונקציה doesDirectoryExist, ישנן עוד פונקציות קשורות לבדיקת תיקיות בחבילת System.Directory של Haskell. נתמקד בכמה מהן:
 
-## ראו גם
+- `createDirectory` - יוצר תיקייה חדשה בעלת השם שנשלח כפרמטר
+- `removeDirectory` - מוחק תיקייה ריקה
+- `copyDirectory` - מעתיקת תיקייה ותוכןיה לתוך תיקייה אחרת
+- `renameDirectory` - מחליף את שם התיקייה המקורי לשם חדש
 
-- [דוקומנטציית `System.Directory`](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [ביקורת קוד ב-Haskell עבור מתחילים](https://www.haskell.org/tutorial/basics.html)
+כדי להשתמש בפונקציות הללו, נצטרך לייבא אותן מהחבילה System.Directory ולהתאים את הפרמטרים לפי המטרה שלנו.
+
+## ראה גם
+
+בנוסף לחבילת System.Directory, ישנן עוד חבילות בHaskell שמספקות מנגנוני בדיקת תיקיות, כגון:
+- `directory` - חבילה שמספקת פונקציות נוספות לניהול תיקיות, תתי תיקיות וקבצים.
+- `filepath` - חבילה שמספקת פונקציות לניהול מסלולי קבצים ותיקיות, והמרתה ביניהם.
+
+את החבילות הללו כדאי להתרשם מהתיעוד שנמצא באתר הרשמי של Haskell.

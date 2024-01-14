@@ -1,43 +1,44 @@
 ---
 title:                "Javascript: Extraction de sous-chaînes"
+simple_title:         "Extraction de sous-chaînes"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi utiliser l'extraction de sous-chaînes (substrings) en Javascript?
 
-Si vous êtes un programmeur JavaScript, vous avez probablement rencontré un problème où vous aviez besoin de rechercher et d'extraire une partie spécifique d'une chaîne de caractères. Cela pourrait être des éléments tels qu'un nom, un numéro de téléphone, ou une adresse e-mail. Dans ces cas, il est utile de savoir comment extraire des sous-chaînes de caractères.
+L'extraction de sous-chaînes est une technique couramment utilisée en programmation Javascript pour récupérer une partie spécifique d'une chaîne de caractères. Cela peut être utile dans de nombreux cas, tels que la manipulation de données saisies par l'utilisateur ou la recherche de mots clés dans un texte.
 
-# Comment faire
+## Comment le faire en pratique
 
-Voici un exemple de code qui utilise la méthode `substring()` pour extraire une sous-chaîne à partir d'une chaîne de caractères :
+Pour extraire une sous-chaîne en Javascript, nous pouvons utiliser deux méthodes: `substring()` et `slice()`. Voyons un exemple pratique:
 
-```Javascript
-let fullName = "Jean Dupont";
-let firstName = fullName.substring(0, 4);
-console.log(firstName); // Output: Jean
+```
+// Définir une chaîne de caractères
+let str = "Je suis un programmeur Javascript";
+
+// Utiliser la méthode substring()
+let sub1 = str.substring(10, 20);
+console.log(sub1); // "programmeur"
+
+// Utiliser la méthode slice()
+let sub2 = str.slice(3);
+console.log(sub2); // "suis un programmeur Javascript"
 ```
 
-La méthode `substring()` prend deux paramètres : l'index de départ et l'index de fin de la sous-chaîne à extraire. Dans notre exemple, nous avons commencé à l'index 0 (le premier caractère) et nous avons fini à l'index 4 (le caractère avant le 4ème index).
+Dans cet exemple, nous avons défini une chaîne de caractères et extrait une sous-chaîne en utilisant les méthodes `substring()` et `slice()`. La première méthode utilise deux paramètres pour indiquer les positions de début et de fin de la sous-chaîne à extraire, tandis que la seconde prend un seul paramètre pour indiquer la position de début et extrait le reste de la chaîne.
 
-Si vous souhaitez extraire une sous-chaîne à partir d'un index spécifique jusqu'à la fin de la chaîne, vous pouvez simplement ne spécifier qu'un seul paramètre comme ceci :
+## Plongeons plus profondément
 
-```Javascript
-let email = "johndoe@email.com";
-let domain = email.substring(9);
-console.log(domain); // Output: email.com
-```
+Il est important de noter que les index de chaîne en Javascript commencent à zéro. Cela signifie que le premier caractère d'une chaîne aura un index de 0, le deuxième aura un index de 1, et ainsi de suite. De plus, nous pouvons également utiliser des valeurs négatives pour indiquer des positions à partir de la fin de la chaîne. Par exemple, si nous voulons extraire les trois derniers caractères d'une chaîne, nous pouvons utiliser `slice(-3)`.
 
-# Plongée en profondeur
+Un autre avantage de l'extraction de sous-chaînes est la possibilité de combiner différentes méthodes pour obtenir les résultats souhaités. Par exemple, nous pouvons utiliser à la fois `substring()` et `indexOf()` pour extraire une sous-chaîne à partir d'un mot clé spécifique dans une grande chaîne de caractères.
 
-Il est important de noter que la méthode `substring()` ne modifie pas la chaîne d'origine, mais renvoie plutôt une nouvelle chaîne avec la sous-chaîne extraite. De plus, les index de la méthode commencent à zéro, donc le premier caractère est à l'index 0, le deuxième à l'index 1, et ainsi de suite.
-
-En plus de `substring()`, il existe d'autres méthodes utiles pour extraire des sous-chaînes de caractères en JavaScript, telles que `slice()` et `substr()`. Toutefois, `substring()` est souvent la méthode préférée car elle a une syntaxe plus simple et plus facile à comprendre.
-
-# Voir aussi
-
-- Documentation officielle de la méthode `substring()` : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/substring
-- Comparaison entre les méthodes `substring()`, `slice()` et `substr()` : https://www.educative.io/edpresso/the-differences-between-substr-slice-and-substring-in-javascript
+## Voir aussi
+- [Documentation sur la méthode substring() en Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/substring)
+- [Documentation sur la méthode slice() en Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/slice)
+- [Autres méthodes de manipulation de chaînes de caractères en Javascript](https://www.datacamp.com/community/tutorials/15-string-manipulation-in-javascript)

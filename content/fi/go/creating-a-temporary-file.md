@@ -1,63 +1,59 @@
 ---
-title:                "Go: Väliaikaisen tiedoston luominen"
+title:                "Go: Tilapäistiedoston luominen"
+simple_title:         "Tilapäistiedoston luominen"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi luoda tilapäisiä tiedostoja?
 
-Monesti ohjelmoijat joutuvat tekemään väliaikaisia tiedostoja, jotka eivät ole tarpeen ohjelman suorituksen jälkeen. Tämä voi olla esimerkiksi väliaikainen tallennusohjelma, joka käsittelee tietoja ennen niiden lähettämistä. Tässä blogikirjoituksessa kerromme, miksi ja miten voit luoda väliaikaisia tiedostoja Go-ohjelmoinnilla.
+Luodaanpa tilapäinen tiedosto Go-ohjelmoinnin kautta. Usein ohjelmia kehitettäessä, tarvitaan väliaikainen tiedosto johon tallentaa tietoja. Tämä on hyödyllistä esimerkiksi testauksessa, kun tarvitaan väliaikaista tallennustilaa eri vaiheiden suorittamiseen.
 
-## Kuinka luoda väliaikainen tiedosto Go-ohjelmoinnilla
+## Kuinka luoda tilapäinen tiedosto
 
-Go-ohjelmoinnissa väliaikaisen tiedoston luominen on suhteellisen helppoa. Voit käyttää standardikirjaston io/ioutil-pakettia luodaksesi ja käsitelläksesi tiedostoja.
+Loikataan suoraan esimerkin pariin. Alla oleva esimerkki luo väliaikaisen tiedoston nimeltä "testi.txt" ja tallentaa siihen tekstin "Tämä on tilapäinen tiedosto." Sen jälkeen tiedosto suljetaan ja poistetaan:
 
 ```Go
-import "io/ioutil"
+package main
 
-// Luodaan väliaikainen tiedosto käyttäen ioutil.TempFile-funktiota
-file, err := ioutil.TempFile("", "esimerkki")
-if err != nil {
-  fmt.Println(err)
-}
-defer os.Remove(file.Name())
+import (
+    "fmt"
+    "io/ioutil"
+    "os"
+)
 
-// Kirjoitetaan tiedostoon haluttu tieto
-fmt.Println("Kirjoitetaan dataa tiedostoon", file.Name())
-testdata := []byte("Hello, maailma!")
-if _, err := file.Write(testdata); err != nil {
-  fmt.Println(err)
+func main() {
+    // Luodaan tilapäinen tiedosto
+    f, err := ioutil.TempFile("", "testi.txt")
+
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+
+    // Kirjoitetaan teksti tiedostoon
+    text := "Tämä on tilapäinen tiedosto."
+    f.Write([]byte(text))
+
+    // Suljetaan ja poistetaan tiedosto
+    f.Close()
+    os.Remove(f.Name())
 }
 ```
 
-Tämän koodin suorittamisen jälkeen olet luonut väliaikaisen tiedoston, jonka nimi alkaa "esimerkki" ja pidät muuttujassa "file". Voit käyttää tätä tiedostoa esimerkiksi tallentamaan väliaikaisen datan ja sen jälkeen lähettää tiedoston tai poistaa sen ohjelman suorituksen lopuksi. Alla oleva koodipätkä osoittaa, kuinka voit lukea tiedoston sisällön ja tulostaa sen konsolille.
+Yllä olevan esimerkin suorittamisen jälkeen, koodin pitäisi luoda ja poistaa tilapäinen tiedosto nimeltä "testi.txt". Voit tarkistaa tämän esimerkiksi avaamalla tiedostonhallinnan ja etsimällä tiedoston nimellä "testi.txt".
 
-```Go
-// Luetaan ja tulostetaan tiedoston sisältö
-data, err := ioutil.ReadFile(file.Name())
-if err != nil {
-  fmt.Println(err)
-}
-fmt.Println(string(data))
+## Syväsukellus tilapäisten tiedostojen luomiseen
 
-// Output: Hello, maailma!
-```
+Tilapäisten tiedostojen luominen voi olla hyödyllistä myös silloin kun halutaan tallentaa väliaikaista tietoa tai piilottaa tietoja muilta käyttäjiltä. Esimerkiksi Go-ohjelma voi luoda tilapäisen tiedoston, tallentaa siihen arkaluonteista tietoa ja poistaa sen lopuksi, jolloin tieto ei jää muiden nähtäväksi.
 
-## Syvemmälle väliaikaisen tiedoston luomiseen
-
-Go:n ioutil.TempFile-funktio luo tiedoston hakemistoon, joka on määritetty standardiympäristömuuttujalla "TMPDIR". Jos tätä muuttujaa ei ole määritetty, se käyttää oletushakemistoa "/tmp". Jos haluat määrittää halutun hakemiston, voit antaa sen parametrina funktiolle. Esimerkiksi:
-
-```Go
-os.Setenv("TMPDIR", "/koti/kayttajanimi/tmp/") // Määritetään maksimitilaa
-file, err := ioutil.TempFile("", "esimerkki")
-```
-
-Voit myös käyttää ioutil.TempDir-funktiota luodaksesi väliaikaisen hakemiston sijaan tiedostoa, jos se on sinulle hyödyllisempää.
+Tilapäisten tiedostojen luomiseen on myös olemassa erilaisia vaihtoehtoja ja parametreja, jotka voivat vaikuttaa tiedoston luontiin ja poistamiseen. Lisätietoa näistä vaihtoehdoista löytyy Go-kielen virallisesta dokumentaatiosta.
 
 ## Katso myös
 
-- [Go:n offikaalit dokumentaatiot ioutil.TempFile](https://golang.org/pkg/io/ioutil/#TempFile)
-- [Iotil.TempFile-koodiesimerkit](https://gobyexample.com/temporary-files)
+- [Go-kielen virallinen dokumentaatio](https://golang.org/doc/)
+- [Syvä sukellus asiakkaiden luomiseen Go:lla](https://blog.suzannechurchill.com/golang-file-server/)

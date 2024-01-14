@@ -1,7 +1,9 @@
 ---
-title:                "C++: 랜덤 숫자 생성하기"
+title:                "C++: 랜덤 수 생성하기"
+simple_title:         "랜덤 수 생성하기"
 programming_language: "C++"
-category:             "Numbers"
+category:             "C++"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/cpp/generating-random-numbers.md"
 ---
 
@@ -9,38 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-난수 생성에 관심을 갖는 이유는 무엇일까요? 난수는 가위바위보를 할 때 나오는 선택의 결과와 같이 예측할 수 없는 부분이 있는 모든 분야에서 유용하게 사용될 수 있습니다.
+컴퓨터 프로그래밍을 할 때, 우리는 가끔 **무작위**한 숫자가 필요할 때가 있습니다. 예를 들어, 로또 번호를 선택하거나 게임에서 랜덤하게 아이템을 생성하는 등의 상황에서 랜덤한 숫자가 필요할 수 있습니다. 이를 위해서 우리는 **난수 생성기**를 사용하여 무작위한 숫자를 만들어낼 수 있습니다. 이번에는 C++에서 어떻게 난수를 생성할 수 있는지 살펴보겠습니다.
 
-## 어떻게 하나요?
+## 방법
 
-난수를 생성하는 가장 간단한 방법은 C++의 ```rand()``` 함수를 사용하는 것입니다. 이 함수는 0부터 RAND_MAX 사이의 난수를 생성해줍니다. 여기서 RAND_MAX는 C++ 표준 라이브러리에서 정의된 최대 난수 값입니다. 다음은 ```rand()``` 함수를 이용해 0부터 10까지의 난수를 생성하는 예시 코드입니다.
+먼저, C++에서는 `<cstdlib>`라이브러리를 사용하여 난수를 생성할 수 있습니다. 이 라이브러리에는 `rand()`라는 함수가 있어서 랜덤 숫자를 생성할 수 있습니다. 다음 예제를 살펴보세요.
 
-``` C++
+```C++
 #include <iostream>
 #include <cstdlib>
+using namespace std;
 
 int main() {
-  int random_num = rand() % 11; // 0부터 10까지의 난수 생성
-  std::cout << "난수가 생성되었습니다: " << random_num << std::endl;
-  return 0;
+    // 0에서 9까지의 무작위한 숫자 출력하기
+    cout << rand() % 10 << endl;
+    
+    // 1에서 6까지의 무작위한 숫자 출력하기 (주사위처럼)
+    cout << rand() % 6 + 1 << endl;
+    
+    // 0에서 99까지의 무작위한 숫자 출력하기
+    cout << rand() % 100 << endl;
+    
+    return 0;
 }
 ```
 
-위 코드를 실행하면 아래와 같은 결과를 얻을 수 있습니다.
+이 프로그램을 실행하면 각각의 `cout`문에서 무작위한 숫자가 출력될 것입니다. 하지만 무작위한 숫자를 출력할 때마다 프로그램을 다시 실행하면 같은 숫자가 나오게 됩니다. 이는 `rand()` 함수가 실행될 때마다 **시드(seed)**라는 숫자를 이용하여 무작위한 숫자를 생성하기 때문입니다. 만약 시드가 같다면 같은 숫자가 생성되겠죠?
 
+따라서 우리는 `srand()` 함수를 이용하여 시드를 변경할 수 있습니다. 이 함수는 예제처럼 `time`을 이용하여 시간을 시드로 사용할 수 있습니다. 이렇게 하면 매번 실행할 때마다 다른 시드가 생성되어 다른 숫자가 나오게 됩니다.
+
+```C++
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+    // 시간을 시드로 사용하여 무작위한 숫자 출력하기
+    srand(time(0));
+    cout << rand() << endl;
+    
+    return 0;
+}
 ```
-난수가 생성되었습니다: 8
-```
 
-하지만 위의 예시 코드는 항상 똑같은 난수를 생성하기 때문에 정말로 난수인가 싶을 수 있습니다. 따라서 보다 더 복잡한 난수를 원한다면 C++ 라이브러리에서 제공하는 다른 함수들을 이용해야 합니다. 예를 들어, ```srand()``` 함수를 사용해 난수의 시드 값을 설정하거나, ```uniform_int_distribution``` 클래스를 이용해 특정 범위 내에서 균등한 난수를 생성할 수 있습니다. 더 자세한 내용은 아래 "깊이 파고들기" 섹션을 참고해주세요.
+이제 실행할 때마다 다른 숫자를 생성할 수 있게 됩니다.
 
-## 깊이 파고들기
+## 딥 다이브
 
-난수를 생성하는 방법은 여러 가지가 있습니다. 그 중에서도 C++ 라이브러리에서 제공하는 랜덤 넘버 발생 메커니즘 중 가장 안전한 방법은 "어디에도 연관성이 없는" 랜덤 비트를 사용하는 것입니다. 이를 쉽게 이해하기 위해 랜덤 숫자 발생기는 "플레이아웃 머신"으로 생각하면 됩니다. 기본적으로 일련의 알고리즘을 통해 조금 느릴 수는 있지만 충분히 큰 주기를 갖도록 정상적으로 초기화된 상태에서 튜브 안의 중어터 비트를 제공하는 내부 온자를 사용해서 마치 무작위로 난수를 섞고 발행하는 것과 같습니다. 따라서 시드 값과 난수 발생기가 초기화된 상태와 동일한 비트를 사용하면 언제나 같은 결과를 얻을 수 있습니다. 그렇기 때문에 사용자는 발생기를 초기화하는 데에 충분한 비트를 제공하는 것만으로도 코드를 정상적으로 작동할 수 있도록 하는 조건을 지키면 됩니다.
+이제 C++에서 난수 생성을 할 수 있는 방법을 알게 되었습니다. 하지만 `rand()` 함수는 완벽한 난수를 생성해주지는 못합니다. 왜냐하면 우리가 생성 가능한 숫자의 범위가 정해져 있기 때문입니다. 보통 컴퓨터에서 생성할 수 있는 무작위한 숫자는 0에서 2의 32승-1까지입니다. 따라서 원하는 숫자 범위를 지정하려면 일정한 계산을 해주어야 합니다.
+
+또한 `rand()` 함수는 **유사 난수**를 생성한다는 단점도 있습니다. 즉, 일정한 패턴을 가지는 난수를 생성한다는 뜻입니다. 이러한 문제를 해결하기 위해 다른 난수 생성 알고리즘을 사용할 수 있습니다. 하지만 이는 딥 다이브에 해당하므로 여기서는 다루지 않겠습니다.
 
 ## 참고
 
-- [C++ Reference - rand()](https://en.cppreference.com/w/cpp/numeric/random/rand)
-- [C++ Reference - srand()](https://en.cppreference.com/w/cpp/numeric/random/srand)
-- [C++ Reference - uniform_int_distribution](https://en.cppreference.com/w/cpp/numeric/random/uniform_int_distribution)
-- [Understanding Random Number Generators in C++](https://www.codeproject.com/Articles/1181775/Understanding-Random-Number-Generators-in-Cplusplus)
+- [C++ Reference - rand()](https://www.cplusplus.com/reference/cstdlib/rand/)
+- [

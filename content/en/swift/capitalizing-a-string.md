@@ -1,50 +1,80 @@
 ---
 title:                "Swift recipe: Capitalizing a string"
+simple_title:         "Capitalizing a string"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Capitalizing strings in Swift may seem like a simple task, but it can have a big impact on the visual presentation of your code. By capitalizing strings, you can make your code more readable and organized, making it easier to navigate and understand.
+
+Capitalizing a string may seem like a simple task, but it can be a useful tool in string manipulation. It allows for easier readability and presentation of data to the user. In this blog post, we will explore the different methods of capitalizing a string in Swift.
 
 ## How To
-To capitalize a string in Swift, you can use the `capitalized` property. This property converts the first character of each word in a string to uppercase, while keeping the rest of the characters lowercase.
+
+First, let's start with the most basic way of capitalizing a string using the `capitalized` property. This will capitalize the first letter of each word in the string.
 
 ```Swift
-let name = "john doe" 
-
-print(name.capitalized) // Output: John Doe
+let message = "hello world"
+print(message.capitalized)
 ```
 
-You can also use the `uppercased` and `lowercased` methods to convert the entire string to uppercase or lowercase respectively.
+Output: "Hello World"
+
+If you want to capitalize only the first letter of the entire string, you can use the `capitalizedFirst` method.
 
 ```Swift
-let word = "hello world"
-
-print(word.uppercased()) // Output: HELLO WORLD
-print(word.lowercased()) // Output: hello world
+let message = "hello world"
+print(message.capitalizedFirst)
 ```
 
-Another option is to use the `capitalizingFirstLetter()` function, which capitalizes the first character of a string.
+Output: "Hello world"
+
+If you want to capitalize every letter in the string, you can use the `uppercased` method.
 
 ```Swift
-func capitalizingFirstLetter(_ string: String) -> String {
-    return string.prefix(1).capitalized + string.dropFirst()
-}
-
-print(capitalizingFirstLetter("hello")) // Output: Hello
+let message = "hello world"
+print(message.uppercased)
 ```
+
+Output: "HELLO WORLD"
+
+Another method for capitalizing the first letter of each word is by using `components(separatedBy:)` and `map` functions.
+
+```Swift
+let message = "hello world"
+let capitalizedWords = message.components(separatedBy: " ").map({String($0.prefix(1)).uppercased() + String($0.dropFirst())})
+let newMessage = capitalizedWords.joined(separator: " ")
+print(newMessage)
+```
+
+Output: "Hello World"
+
+Lastly, you can also use the `String` initializer to capitalize a string. This method allows you to specify which letters to capitalize.
+
+```Swift
+let message = "hello world"
+let newMessage = String(message.prefix(1)).uppercased() + String(message.dropFirst())
+print(newMessage)
+```
+
+Output: "Hello world"
 
 ## Deep Dive
-It's important to note that the `capitalized` property and `uppercased`/`lowercased` methods only work on strings that are entirely composed of letters. If your string contains numbers or special characters, it will be left unchanged.
 
-Additionally, these methods use the Unicode standard to determine capitalization, meaning they may not produce the desired results for certain characters in non-English languages.
+As we can see, there are many different ways to capitalize a string in Swift. When using the `uppercased` method, it is important to note that it will capitalize all letters in the string, including special characters and numbers. This may not be desired in certain situations.
 
-If you want more control over capitalization, you can use the `replaceSubrange(_:with:)` method to manually replace specific characters in a string with their capitalized counterparts.
+When using the `capitalized` method, it is important to keep in mind that it capitalizes the first letter of each word, so words like "iPhone" or "McDonald's" will be capitalized incorrectly.
+
+Using the `String` initializer method allows for more control over which letters to capitalize, but it can be more lengthy and may not be suitable for large strings.
 
 ## See Also
-- [Apple Documentation on Capitalizing Strings](https://developer.apple.com/documentation/swift/string/1774151-capitalized)
-- [Hacking with Swift Article on Capitalizing Strings](https://www.hackingwithswift.com/example-code/strings/how-to-capitalise-the-first-letter-of-a-string)
+
+For more information on string manipulation in Swift, check out these resources:
+
+- [Apple's Swift String Documentation](https://developer.apple.com/documentation/swift/string)
+- [Hacking with Swift's String Capitlization Tutorial](https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-the-first-letter-of-a-string)
+- [Swift Education's Manipulating Strings in Swift Tutorial](https://www.simpleswiftguide.com/manipulating-strings-in-swift-tutorial/)

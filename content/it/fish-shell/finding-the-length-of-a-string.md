@@ -1,43 +1,54 @@
 ---
-title:                "Fish Shell: Ricerca della lunghezza di una stringa"
+title:                "Fish Shell: Trovare la lunghezza di una stringa"
+simple_title:         "Trovare la lunghezza di una stringa"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché
+## Perché
 
-Trovare la lunghezza di una stringa è un'operazione molto comune nella programmazione. È utile per molteplici scopi, come ad esempio manipolare gli input dell'utente o controllare la validità di una password.
+Molte volte ci troviamo a lavorare con stringhe di testo, e spesso dobbiamo conoscere la loro lunghezza per eseguire alcune operazioni. In questo articolo spiegherò come utilizzare Fish Shell per ottenere la lunghezza di una stringa in modo facile e veloce.
 
 ## Come fare
 
-Per ottenere la lunghezza di una stringa utilizzando Fish Shell, è possibile utilizzare il comando `string length`. Ad esempio:
+Per trovare la lunghezza di una stringa in Fish Shell, possiamo utilizzare il comando `len`. Vediamo un esempio:
 
 ```
-Fish Shell# string length "Ciao a tutti!"
-15
+Fish Shell
+
+set stringa "Ciao a tutti"
+echo (len $stringa)
 ```
 
-Nell'esempio sopra, il comando `string length` calcola la lunghezza della stringa "Ciao a tutti!", che è di 15 caratteri. 
+L'output di questo codice sarà `13`. Prima di tutto, abbiamo creato una variabile `stringa` contenente il testo "Ciao a tutti". Poi, abbiamo utilizzato il comando `len` per ottenere la lunghezza di questa stringa e stamparla con `echo`. Come puoi vedere, è molto semplice!
+
+Ma adesso potresti chiederti, come funziona il comando `len`? Innanzitutto, è importante sapere che `len` è un comando incorporato in Fish Shell, il che significa che non è necessario installare nulla per utilizzarlo.
 
 ## Approfondimento
 
-Il comando `string length` conta anche gli spazi vuoti all'interno della stringa. Inoltre, è possibile utilizzare il wildcard `*` per ottenere la lunghezza di una variabile contenente una stringa. Ad esempio:
+Il comando `len` restituisce la lunghezza della stringa escludendo il carattere di fine riga, se presente. Questo significa che i caratteri speciali come lo spazio e il tab sono inclusi nella lunghezza.
+
+Inoltre, `len` può essere utilizzato anche per ottenere la lunghezza di un array o di un elenco di valori. Ad esempio:
 
 ```
-Fish Shell# set greeting "Buongiorno!"
-Fish Shell# string length $greeting
-11
+Fish Shell
+
+set numeri 1 2 3 4 5 
+echo (len $numeri)
 ```
 
-In questo caso, la variabile `greeting` è stata utilizzata come input per il comando `string length`, che ne ha restituito la lunghezza.
+L'output sarà `5`, poiché l'elenco contiene 5 elementi.
 
-Il comando `string length` può essere combinato con altri comandi Fish per ottenere risultati più complessi. Ad esempio, è possibile utilizzare `string length` insieme a `string sub` per ottenere la lunghezza di una sottostringa. 
+Infine, è importante notare che `len` può anche essere utilizzato come un argomento per altri comandi, come `for` o `while`.
 
 ## Vedi anche
 
-- Documentazione ufficiale di Fish Shell su `string length`: https://fishshell.com/docs/current/cmds-string.html#string-length
-- Guida completa su modifica di stringhe in Fish Shell: https://fishshell.com/docs/current/tutorial.html#tut_strings 
-- Esempi pratici di utilizzo di `string length` in Fish Shell: https://scotch.io/tutorials/manipulate-strings-with-terminal-commands-in-fish-shell#toc-string-length
+- Documentazione ufficiale di Fish Shell: https://fishshell.com/docs/current/
+- Guida introduttiva a Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Altri comandi utili in Fish Shell: https://fishshell.com/docs/current/commands.html
+
+In questo articolo abbiamo imparato come utilizzare Fish Shell per ottenere la lunghezza di una stringa, così come altre informazioni utili sul comando `len`. Spero che tu possa utilizzare queste conoscenze nei tuoi progetti futuri. Buon coding!

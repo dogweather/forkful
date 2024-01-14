@@ -1,75 +1,56 @@
 ---
 title:                "Python recipe: Getting the current date"
+simple_title:         "Getting the current date"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why
+## Why
 
-One of the most essential functions in any programming language is the ability to work with dates and times. Whether you're creating a calendar application or tracking user activity, having the current date at your disposal is crucial. In this blog post, we'll explore how to get the current date using Python.
+As we go about our daily lives, we often need to keep track of the current date. But manually checking and updating the date on every device we use can quickly become a tedious and time-consuming task. That's where Python comes in to save the day! With just a few lines of code, we can easily get the current date and automate this process.
 
-# How To
+## How To
 
-Getting the current date in Python is a simple process that can be achieved using the built-in `datetime` module. In order to access this module, we first need to import it into our code:
+To get the current date in Python, we will be using the built-in `datetime` module. First, we need to import the module into our program:
 
 ```Python
 import datetime
 ```
 
-Once we have imported the `datetime` module, we can use the `datetime` object to get the current date. This object has a method called `today()` which returns the current date as a date object:
+Next, we can use the `datetime.now()` function to get the current date and time. We can store this value in a variable and then use the `date()` method to extract just the date from the datetime object:
 
 ```Python
-current_date = datetime.datetime.today()
+current_date = datetime.now().date()
+print(current_date)
 ```
 
-We can then print the current date to the console using the `print()` function:
+Running this code will give us the current date in the format `YYYY-MM-DD`. But what if we want to display the date in a different format? We can use the `strftime()` method to format the date according to our preferences. For example, if we want to display the date in the format `DD/MM/YYYY`, we can use the following code:
 
 ```Python
-print("Today's date is: " + str(current_date))
-```
-
-The output of this code will be something like this:
-
-```
-Today's date is: 2021-08-10 15:30:00.281404
-```
-
-If we want to format the output in a specific way, we can use the `strftime()` method. This method takes in a format string as an argument and returns a string representation of the current date according to that format. For example, if we want the date to be displayed as "08/10/21", we can use the format "%m/%d/%y" (month/day/year) as follows:
-
-```Python
-current_date = datetime.datetime.today()
-formatted_date = current_date.strftime("%m/%d/%y")
+current_date = datetime.now().date()
+formatted_date = current_date.strftime('%d/%m/%Y')
 print(formatted_date)
 ```
 
-The output of this code will be:
+The `strftime()` method takes a formatting string as an argument which specifies how the date should be displayed. You can find a list of formatting options in the official Python documentation.
 
+## Deep Dive
+
+Now that we know how to get the current date in Python, let's take a deeper look at the `datetime` module. This module offers a wide range of functions to manipulate dates and times. For example, we can use the `timedelta` class to perform date calculations. This class allows us to add or subtract a specific number of days, weeks, or even months from a given date. Here's an example of subtracting 7 days from the current date:
+
+```Python
+previous_week = datetime.now().date() - datetime.timedelta(days=7)
+print(previous_week)
 ```
-08/10/21
-```
 
-You can find a list of all the available format codes for the `strftime()` method in the [Python documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior).
+We can also compare dates using the comparison operators, such as `<` or `>`. This can be useful when we want to check if a certain date comes before or after another date.
 
-# Deep Dive
+## See Also
 
-Now that we know how to get the current date using Python, let's take a closer look at the `datetime` module. This module provides many useful functions for working with date and time objects. Let's explore some of the most commonly used ones:
-
-- `today()` - returns the current date and time as a `datetime` object.
-- `date()` - returns the date part of a `datetime` object (year, month, day).
-- `time()` - returns the time part of a `datetime` object (hour, minute, second, microsecond).
-- `weekday()` - returns the day of the week as an integer (Monday is 0 and Sunday is 6).
-- `ctime()` - converts a `datetime` object into a string in the format "Day Month dd hh:mm:ss yyyy".
-- `strftime()` - formats a `datetime` object according to a specified format string.
-
-For a more in-depth understanding of the `datetime` module and its methods, refer to the [official Python documentation](https://docs.python.org/3/library/datetime.html).
-
-# See Also
-
-- [Python datetime module documentation](https://docs.python.org/3/library/datetime.html)
-- [Python strftime() method documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
-- [Real Python article on working with dates and times](https://realpython.com/python-datetime/)
-
-Now that you know how to get the current date in Python, you can start incorporating this functionality into your own projects. Keep exploring the `datetime` module to discover even more ways to work with dates and times in your code. Happy coding!
+- [Python documentation on datetime module](https://docs.python.org/3/library/datetime.html)
+- [strftime formatting options](https://strftime.org/)
+- [timedelta class documentation](https://docs.python.org/3/library/datetime.html#datetime.timedelta)

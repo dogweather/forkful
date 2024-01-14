@@ -1,33 +1,49 @@
 ---
-title:                "Kotlin: स्ट्रिंग को माज़बूत करना"
+title:                "Kotlin: स्ट्रिंग को पूँजीकरण देना"
+simple_title:         "स्ट्रिंग को पूँजीकरण देना"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyu
+हेलो दोस्तों! स्वागत है आपका हमारे प्रोग्रामिंग ब्लॉग पोस्ट पर। अगर आप कोतलिन का उपयोग करते हैं और उसमें नए हैं, तो आज का लेख आपके लिए बहुत ही महत्वपूर्ण हो सकता है। हम आज कोतलिन में गिनी जानी वाली एक महत्वपूर्ण टेक्निक के बारे में बात करेंगे - उसके नए हाशिये करने का तरीका।
 
-Kotlin mein string ka capitalization karna aam baat hai kyunki ye bahut saari situations mein kaam aata hai jaise user input ko uniform banane ya fir strings ko visually alag dikhane ke liye.
+## क्यों?
 
-## Kaise Kare
+अक्सर हमें एक स्ट्रिंग के पहले अक्षर को बड़ा करने की आवश्यकता होती है। इसे कैपिटलाइज करना कहते हैं। उदाहरण के तौर पर, "hello" शब्द को कैपिटलाइज करने से "Hello" शब्द बन जाता है। इसे करने से हमारे प्रोग्राम में एक अलग तरह का छाप दिखाई देता है और स्ट्रिंग को पढ़ने में भी आसानी होती है।
 
-Capitalization ek string ko modify karne ka ek tareeka hai. Kotlin mein iske liye ```capitalize()``` aur ```toUpperCase()``` functions hote hain. Neeche diye gaye code blocks mein inka istemal kaise kiya ja sakta hai:
+## कैसे करें?
+
+कोतलिन में इस काम को करने के लिए हमारे पास बहुत से विकल्प हैं। प्रथम अनुमान हम इसे परमेटरिज्ड कंस्ट्रक्टर्स का प्रयोग कर सकतें हैं। इसमें हम एक स्ट्रिंग पास करते हैं जो कैपिटलाइज करना है।
 
 ```Kotlin
-val str = "hello, world!"
+var string = "hello"
+var capitalizedString = string.capitalize()
+println(capitalizedString)
 
-println(str.capitalize()) // Output: Hello, world!
-println(str.toUpperCase()) // Output: HELLO, WORLD!
+// Output: Hello
 ```
 
-## Gehraai mein Jaae
+दूसरा तरीका हम यूज कर सकते हैं वह है String Templates का। इसमें हम $ के इस्तेमाल से अपनी स्ट्रिंग को कैपिटलाइज कर सकते हैं।
 
-Jab hum string ko uppercase karte hain, toh yeh function sabhi characters ko uppercase mein convert kar deta hai. Lekin capitalize function mein pehla character uppercase ban jata hai aur baaki characters as-is rehte hain. Isliye agar hum chahe toh capitalize ke saath dusre functions jaise ```toLowerCase()``` ka bhi istemal kar sakte hain.
+```Kotlin
+var string = "hello"
+var capitalizedString = "${string.capitalize()}"
+println(capitalizedString)
 
-## Dekhein Bhi
+// Output: Hello
+```
 
-- Kotlin String Functions: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html
-- Capitalization in Kotlin: https://www.javatpoint.com/kotlin-string-function
-- String Manipulation in Hindi: https://www.geeksforgeeks.org/strings-in-kotlin/
+हम ये काम भी एक सदिया तरीके से कर सकते हैं। एक सदिया अपरेटर्स का प्रयोग करके।
+
+```Kotlin
+var string = "hello"
+var capitalizedString = string.first().toUpperCase() + string.substring(1)
+
+// Output: Hello
+```
+
+## गहर

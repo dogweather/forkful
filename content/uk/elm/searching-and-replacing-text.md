@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Пошук та заміна тексту"
+simple_title:         "Пошук та заміна тексту"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/elm/searching-and-replacing-text.md"
 ---
 
@@ -9,78 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Найчастіше, нам потрібно виконувати пошук та заміну деякого тексту у великих проектах або розробках. Elm мова програмування дозволяє це робити швидко та ефективно, що дуже корисно для нашої роботи.
+Заміна тексту - це важлива функція для програмістів, яка дозволяє легко і швидко замінити певні фрази або символи у текстових документах чи коді програм. Це дозволяє ефективніше працювати з великими обсягами даних і забезпечує точність під час редагування.
 
 ## Як це зробити
 
-Для пошуку та заміни тексту в Elm ми можемо використовувати функцію `String.replace` у комбінації з регулярними виразами (RegExp).
+Для заміни тексту в програмі Elm можна використовувати функцію `String.replace`, яка приймає наступні параметри: вираз, який потрібно замінити, новий вираз і текст, у якому потрібно замінити. Наприклад:
 
 ```Elm
-import String
-
--- Змінна з початковим рядком
-originalString = "Привіт, Elm!"
-
--- Результат заміни рядка Elm на рядок JavaScript
-replacedString = String.replace (RegExp.fromText "Elm") "JavaScript" originalString
-
--- Вивід результату на екран
-main = replacedString
+String.replace "/" "-" "12/05/2020"
 ```
 
-Вищезазначений код виведе на екран рядок "Привіт, JavaScript!".
+Результатом буде рядок "12-05-2020".
 
-Ми також можемо використовувати функцію `String.replace` у комбінації з функцією `String.contains` для заміни всіх входжень певного тексту у рядку.
+Можна також використовувати команду `replaceAll`, яка дозволяє заміняти все входження певного символу або фрази у тексті. Наприклад:
 
 ```Elm
-import String
-
--- Змінна з початковим рядком
-originalString = "Привіт, світ! Привіт, Elm!"
-
--- Результат заміни рядка Привіт на Хаюхай
-replacedString = List.foldl
-		( \_ str -> String.replace (RegExp.fromText "Привіт") "Хаюхай" str
-		)
-		originalString
-		(Text.words originalString)
-
--- Вивід результату на екран
-main = replacedString
+String.replaceAll "o" "a" "Hello World"
 ```
 
-Вищезазначений код виведе на екран рядок "Хаюхай, світ! Хаюхай, Elm!".
+Виходом буде рядок "Hella Warld".
 
-## Глибокий занурення
+## Глибокий аналіз
 
-У Elm також є можливість використовувати регулярні вирази з допомогою пакету `elm-tools/parser`. Це дозволяє більш гнучко працювати з рядками та виконувати складніші задачі заміни тексту.
+Під час заміни тексту важливо враховувати деякі моменти, щоб уникнути помилок. Наприклад, якщо потрібно замінити частину тексту, але цей текст також входить у частину, яку не потрібно заміняти, можуть виникнути неочікувані результати.
 
-```Elm
-import Regex exposing (replace, regex)
-import Parser exposing ((|.),word, repeat, spaces, succeed, run)
+Також слід пам'ятати, що заміна тексту змінює початковий рядок, тому варто зберігати оригінальний текст у іншій змінній, якщо він буде потрібен в подальшому.
 
--- Парсер для заміни рядка Elm на JavaScript
-parser = succeed (replace (regex "Elm") "JavaScript")
-	|. spaces
-	|. word "Привіт"
-	|. spaces
-	|. repeat (word "світ") Nothing
-	|. spaces
+## Дивіться також
 
-originalString = "Привіт світ. Elm Привіт світ, Elm!"
-
--- Результат заміни рядка Elm на JavaScript
-replacedString = run parser originalString
-
--- Вивід результату на екран
-main = case replacedString of
-	Ok str -> str
-	Err err -> "Помилка: " ++ err
-```
-
-Вищезазначений код виведе на екран рядок "Привіт світ. JavaScript Привіт світ, JavaScript!".
-
-## Дивись також
-
-- [Документація Elm](https://guide.elm-lang.org/)
-- [Експлуатуйте потужність регулярних виразів у Elm](https://www.elm-tutorial.org/en/08-custom-types/02-regexp.html)
+- [Офіційна документація Elm](https://guide.elm-lang.org/)
+- [Стаття про роботу з текстом в Elm](https://thoughtbot.com/blog/search-and-replace-in-elm)
+- [Відеоурок з заміни тексту у програмі Elm](https://www.youtube.com/watch?v=EcpPHm6OcRE)

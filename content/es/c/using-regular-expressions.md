@@ -1,54 +1,75 @@
 ---
-title:                "C: Usando expresiones regulares"
+title:                "C: Utilizando expresiones regulares"
+simple_title:         "Utilizando expresiones regulares"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## Por qué utilizar expresiones regulares en programación
 
-Las expresiones regulares son una herramienta poderosa en el mundo de la programación. Nos permiten buscar y manipular patrones dentro de un texto, ahorrándonos tiempo y esfuerzo. ¡Sigue leyendo para descubrir cómo utilizarlas en C!
+Las expresiones regulares son una herramienta poderosa en la programación que nos permiten buscar y manipular patrones de texto de manera eficiente. Son especialmente útiles cuando se desea validar o procesar grandes cantidades de información en un programa.
 
-## Cómo usar expresiones regulares en C
+## Cómo utilizar expresiones regulares en C
 
-Primero, necesitamos incluir la biblioteca estándar `regex.h` en nuestro código. Luego, podemos usar la función `regcomp()` para compilar nuestra expresión regular y la función `regexec()` para ejecutarla en un texto. Por ejemplo:
+En C, podemos utilizar expresiones regulares a través de la biblioteca estándar <regex.h>. Primero, debemos declarar una variable del tipo "regex_t" que almacene nuestra expresión regular y luego compilarla con la función "regcomp()". A continuación, podemos utilizar la función "regexec()" para comparar nuestra expresión con una cadena de texto y obtener resultados como el número de coincidencias y su posición.
 
 ```C
 #include <stdio.h>
 #include <regex.h>
 
-int main() {
-    char *text = "¡Hola a todos!";
-    regex_t regex;
-    regmatch_t matches[1];
-    
-    //compilamos la expresión regular
-    regcomp(&regex, "Hola", 0);
-    
-    //buscamos la coincidencia en el texto
-    regexec(&regex, text, 1, matches, 0);
-    
-    //imprimimos el resultado
-    printf("La palabra 'Hola' está en las posiciones %d - %d", matches[0].rm_so, matches[0].rm_eo);
-    
-    return 0;
+int main(void) 
+{
+  // Declarar e inicializar variables
+  regex_t regex;
+  char str[] = "¡Hola! Mi nombre es Juan.";
+  int reti;
+
+  // Compilar la expresión regular
+  reti = regcomp(&regex, "Hola.*Juan", 0);
+  if (reti) 
+  {
+    printf("No se pudo compilar la expresión regular\n");
+    exit(1);
+  }
+
+  // Comparar la expresión con la cadena de texto
+  reti = regexec(&regex, str, 0, NULL, 0);
+  if (!reti) 
+  {
+    printf("¡La expresión coincide con la cadena de texto!\n");
+  } 
+  else if (reti == REG_NOMATCH) 
+  {
+    printf("La expresión no coincide con la cadena de texto\n");
+  } 
+  else 
+  {
+    printf("Error al ejecutar la expresión regular\n");
+    exit(1);
+  }
+
+  // Liberar memoria y finalizar programa
+  regfree(&regex);
+
+  return 0;
 }
 ```
 
-Este código imprimirá "La palabra 'Hola' está en las posiciones 1 - 4", ya que la palabra "Hola" se encuentra en esas posiciones dentro del texto.
+La salida de este programa sería:
+"¡La expresión coincide con la cadena de texto!"
 
-## Profundizando en el uso de expresiones regulares
+## Una mirada más profunda a las expresiones regulares en C
 
-Además de buscar patrones simples, las expresiones regulares nos permiten utilizar métodos más avanzados, como la búsqueda de patrones que se repiten un número específico de veces, la búsqueda de patrones opcionales y la agrupación de patrones. También podemos usar diferentes caracteres especiales, como `^` para denotar que un patrón debe estar al principio del texto, o `$` para denotar que debe estar al final.
+Además de las funciones mencionadas anteriormente, la biblioteca <regex.h> también nos proporciona una serie de funciones para realizar operaciones más complejas con expresiones regulares, como repeticiones, agrupaciones y búsqueda de subcadenas. También es importante tener en cuenta que esta biblioteca utiliza la sintaxis POSIX para expresiones regulares, lo que puede diferir de otras implementaciones que hayamos utilizado previamente.
 
-Si deseamos una mayor flexibilidad en nuestra búsqueda, podemos usar la función `regcomp()` con el argumento `REG_EXTENDED` para habilitar el uso de sintaxis extendida.
-
-¡Explora y experimenta con diferentes expresiones regulares para descubrir todo lo que puedes lograr con ellas!
+En general, es recomendable consultar la documentación oficial para familiarizarse con todas las funciones disponibles y sus respectivos parámetros. También es útil practicar con diferentes ejemplos para comprender mejor el funcionamiento de las expresiones regulares en C.
 
 ## Ver también
 
-- [Expresiones regulares en C - Documentación de GNU](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- [Tutorial de expresiones regulares en C - Jacob Sorber](https://youtu.be/VrT3TRDDE4M)
-- [Práctica creando expresiones regulares en C - HackerRank](https://www.hackerrank.com/challenges/valid-regex/problem)
+- [Guía de expresiones regulares en C](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions-in-C.html)
+- [Documentación de <regex.h> en CPlusPlus](https://www.cplusplus.com/reference/regex/)
+- [Tutorial de Regex en C en Programando paso a paso](https://programando.pasosdevelocidad.com/2020/08/expresiones-regulares-en-c-con-un-ejemplo-practico/)

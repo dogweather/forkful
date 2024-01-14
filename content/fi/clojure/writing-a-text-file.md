@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Tekstitiedoston kirjoittaminen"
+simple_title:         "Tekstitiedoston kirjoittaminen"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/writing-a-text-file.md"
 ---
 
@@ -9,46 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tekstin kirjoittaminen on tärkeä osa ohjelmointia, sillä se mahdollistaa datan tallentamisen ja käsittelyn helpommin. Lisäksi tekstitiedoston avulla voi luoda käyttäjäystävällisiä ohjelmia.
+Miksi joku haluaisi kirjoittaa tekstifilen Clojurella? Textfiles ovat kätevä tapa tallentaa ja jakaa tietoa, kuten tekstejä, listaamista ja dataa. Ne tarjoavat myös mahdollisuuden monipuolisiin manipulointeihin ja muokkauksiin.
 
-## Miten
-
-Tekstin kirjoittaminen Clojurella on yksinkertaista. Tässä on esimerkki, kuinka voit luoda uuden tekstitiedoston ja kirjoittaa siihen tekstin:
+## Kuinka tehdä
 
 ```Clojure
-(with-open [file (clojure.java.io/writer "testi.txt")]
-    (.write file "Tervetuloa ohjelmoimaan Clojurella!"))
+(def file (slurp "tekstifile.txt")) ; lataa tekstitiedoston "tekstifile.txt"
+
+(println file) ; tulostaa tekstin tekstifile.txt
 ```
 
-Tämän jälkeen tekstitiedosto "testi.txt" sisältää tekstin "Tervetuloa ohjelmoimaan Clojurella!".
+## Syvällisempi sukellus
 
-## Syvällinen sukellus
+Textfilen luominen Clojurella alkaa yksinkertaisella "slurp" -funktiolla, joka lataa tiedoston sisällön muuttujaan. Tämän jälkeen voit käyttää muuttujaa tulostamaan, muokkaamaan tai tallentamaan tietoa.
 
-Clojure tarjoaa mahdollisuuden kirjoittaa monimutkaisempiakin tekstitiedostoja. Voit esimerkiksi käyttää Clojuren lukijoita ja kirjoittajia (readers and writers) luodaksesi CSV-tiedostoja tai jopa JSON-tiedostoja.
-
-Esimerkiksi, luodaan JSON-tiedosto, joka sisältää listan henkilöistä heidän nimiensä ja ikänsä kanssa:
+Voit myös käyttää "spit" -funktiota luodaksesi uuden tekstitiedoston ja tallentaa siihen haluamasi sisällön.
 
 ```Clojure
-(require '[clojure.data.json :as json])
-
-(def henkilot [{:nimi "Matti" :ika 30}
-               {:nimi "Maija" :ika 28}])
-
-(with-open [writer (clojure.java.io/writer "henkilot.json")]
-  (.write writer (str (json/write-str henkilot))))
+(spit "uusi_teksti.txt" "Tämä on uusi tekstifile luotu Clojurella")
 ```
-
-Tämän jälkeen voit nähdä "henkilot.json" -tiedostossa JSON-muotoisen listan:
-
-```JSON
-[{"nimi": "Matti", "ika": 30},
-{"nimi": "Maija", "ika": 28}]
-```
-
-Tämä on vain yksi esimerkki siitä, kuinka tekstiä voidaan käyttää monipuolisesti Clojurella.
 
 ## Katso myös
 
-1. [Clojuren tekstien käsittely](https://clojuredocs.org/clojure.string)
-2. [Lisätietoa Clojuressa tekstin käsittelystä](https://www.braveclojure.com/sequences/)
-3. [JSON-tiedostojen luominen Clojurella](https://clojuredocs.org/clojure.data.json)
+- [Clojure - dokumentaatio](https://clojure.org/)
+- [Tekstifilejen luominen Clojurella](https://github.com/clojure-cookbook/clojure-cookbook/blob/master/02_language/7_reading-and-writing.texts/7_03_writing_md.md)

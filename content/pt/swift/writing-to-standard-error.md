@@ -1,41 +1,34 @@
 ---
-title:                "Swift: Escrevendo para o erro padrão"
+title:                "Swift: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever no erro padrão?
+## Por que escrever para o erro padrão?
 
-Escrever no erro padrão, também conhecido como standard error, é um processo importante para a depuração e rastreamento de erros em um programa Swift. Ao imprimir mensagens de erro no erro padrão, você pode identificar e corrigir problemas no código com mais facilidade.
+Escrever para o erro padrão, ou standard error, pode ser útil para diagnosticar e corrigir erros em um programa Swift. Ao escrever mensagens de erro específicas para o erro padrão, podemos identificar problemas e realizar depurações mais precisas.
 
-## Como fazer isso?
+## Como fazer?
 
-O Swift possui uma função integrada para escrever no erro padrão, chamada `print(_:to:)`. Esta função aceita dois argumentos: a mensagem de erro a ser impressa e a saída desejada, que no nosso caso é o erro padrão. O código a seguir mostra como usá-la:
+Podemos escrever para o erro padrão utilizando a função `print(_:to:)` e especificando `stderr` no parâmetro `to`. Veja um exemplo abaixo:
 
 ```Swift
-let errorMessage = "Erro na linha 23: variável não inicializada."
-print(errorMessage, to: &standardError)
+print("Erro: Valor inválido.", to: &stderr)
 ```
 
-Ao rodar esse código, a mensagem de erro será impressa no console ou terminal, dependendo de onde você estiver executando seu programa. O output será algo parecido com:
-
-```bash
-Erro na linha 23: variável não inicializada.
-```
+O código acima irá imprimir a mensagem de erro no console, no entanto, ela será destacada em vermelho para indicar que é uma mensagem de erro. O console pode ser encontrado na área de depuração do Xcode.
 
 ## Mergulho profundo
 
-Além da função `print(_:to:)`, o Swift também possui a estrutura `FileHandle`, que fornece uma maneira mais avançada de escrever no erro padrão. Esta estrutura possui métodos específicos para lidar com a saída de erro, como `write(_:Data)`, que aceita uma string ou array de bytes como argumento para ser escrito no erro padrão. Você também pode usar o método `seek(toOffset:)` para especificar um local específico na saída do erro e sobrescrever o que foi escrito anteriormente.
-
-Vale ressaltar que a saída do erro padrão pode ser redirecionada para um arquivo ou outro dispositivo, se necessário. Isso pode ser feito usando a função `dup2(_:Int32,_:Int32)`. No entanto, este é um assunto mais avançado e não será abordado neste artigo.
+O erro padrão, ou standard error, é uma corrente de saída que é usada para imprimir mensagens de erro em vez de dados regulares. Ele é diferente do erro de saída padrão, o standard output, que é usado para a exibição normal de dados. Ao usar o `print(_:to:)` para escrever no erro padrão, estamos garantindo que a mensagem de erro será exibida de forma distinta das mensagens regulares no console.
 
 ## Veja também
 
-Para aprender mais sobre como trabalhar com o erro padrão em Swift, você pode consultar os seguintes recursos:
-
-- [Documentação oficial do Swift sobre o objeto `FileHandle`](https://developer.apple.com/documentation/foundation/filehandle)
-- [Tutorial sobre saída de erro em Swift](https://theswiftdev.com/mastering-stdout-stderr-in-swift/)
-- [Outra abordagem para escrever no erro padrão em Swift](https://www.swiftbysundell.com/articles/standard-output-in-swift/)
+- [Documentação oficial do Swift sobre a função `print(_:to:)`](https://developer.apple.com/documentation/swift/1541053-print)
+- [Artigo sobre o uso do erro padrão em depurações de código em Swift](https://www.hackingwithswift.com/example-code/language/how-to-send-errors-to-the-debugger-using-custom-strings)
+- [Tutorial sobre como lidar com erros em Swift](https://www.swiftbysundell.com/articles/handling-errors-in-swift/)

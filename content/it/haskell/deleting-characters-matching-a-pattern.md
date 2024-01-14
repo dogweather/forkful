@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Cancellazione di caratteri corrispondenti a un modello"
+title:                "Haskell: Eliminare i caratteri corrispondenti a un determinato schema"
+simple_title:         "Eliminare i caratteri corrispondenti a un determinato schema"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,37 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-C'è un'operazione comune nella programmazione che spesso ci troviamo ad affrontare: la cancellazione di caratteri che corrispondono a un determinato modello. Ma perché dovremmo farlo? A volte è necessario pulire i dati inseriti dagli utenti, altre volte dobbiamo manipolare stringhe complesse per ottenere i risultati desiderati. In ogni caso, avere gli strumenti per eliminare facilmente i caratteri di cui non abbiamo bisogno può fare la differenza nel nostro lavoro di sviluppo.
+Ci sono diversi motivi per cui si potrebbe voler eliminare dei caratteri corrispondenti a un determinato modello. Ad esempio, potresti essere alle prese con dati corrotti o errati e voler ripulire il tuo dataset prima di utilizzarlo in una analisi o un'altra operazione. Oppure potresti avere una stringa di testo lunga e desiderare di eliminarne una parte che segue uno schema specifico.
 
 ## Come fare
 
-Fortunatamente, Haskell offre un modo semplice ed elegante per gestire la cancellazione di caratteri che corrispondono a un modello utilizzando la funzione `filter`. Questa funzione prende come input una funzione di predicato e una lista, e restituisce una nuova lista contenente solo gli elementi che soddisfano il predicato. Per esempio, se volessimo eliminare tutte le vocali da una stringa, potremmo utilizzare il predicato `not . (`elem` "aeiou")`, che restituisce `True` solo quando il carattere non è una vocale, come mostrato di seguito:
+Per eliminare i caratteri corrispondenti a un certo modello in Haskell, è possibile utilizzare la funzione `filter` combinata con l'operatore `(/=)`, che permette di filtrare una lista mantenendo solo gli elementi che non soddisfano una determinata condizione. Ad esempio, se volessimo eliminare tutte le vocali dalla stringa "Ciao!", il codice sarebbe il seguente:
 
 ```Haskell
-filteredString = filter (not . (`elem` "aeiou")) "Ciao, come stai?"
+eliminaVocali :: String -> String
+eliminaVocali stringa = filter (/= 'a') (filter (/= 'e') (filter (/= 'i') (filter (/= 'o') (filter (/= 'u') stringa))))
 ```
 
-L'output di questa esecuzione sarebbe "C, cm st?"
-
-Un altro modo per eliminare i caratteri è utilizzare la funzione `delete` del modulo `Data.List`. Questa funzione prende come input un elemento e una lista e restituisce una nuova lista in cui viene eliminato il primo elemento che corrisponde a quello dato. Utilizzando `delete`, potremmo eliminarlo caratteri `"a"` e `"e"` dalla nostra stringa in questo modo:
-
-```Haskell
-deletedString = delete 'a' $ delete 'e' "Ciao, come stai?"
-```
-
-E l'output sarebbe lo stesso di quello precedente.
+Il risultato sarebbe `"C!"`, in quanto la funzione `filter` elimina tutti i caratteri che non sono le vocali "a", "e", "i", "o" o "u".
 
 ## Approfondimento
 
-Ora che abbiamo visto come implementare rapidamente la cancellazione di caratteri che corrispondono a un determinato modello, è importante comprendere che le funzioni come `filter` e `delete` non modificano direttamente i dati di input, ma creano una nuova lista con i risultati filtrati o eliminati. Pertanto, è necessario assegnare l'output di queste funzioni a una nuova variabile se si vuole accedere ai risultati filtrati o eliminati.
-
-Inoltre, esiste un modo per combinare più funzioni in una sola per ottenere lo stesso risultato. Ad esempio, per eliminare sia le vocali che le virgole dalla stringa, potremmo utilizzare il seguente codice:
+Nell'esempio precedente, abbiamo utilizzato `filter` in modo annidato per eliminare più caratteri. Tuttavia, esiste una soluzione più elegante utilizzando la funzione `any`, che permette di verificare se un elemento della lista soddisfa una determinata condizione. Il codice sarebbe il seguente:
 
 ```Haskell
-eliminatedString = filter (not . (`elem` "aeiou")) . delete ',' "Ciao, come stai?"
+eliminaVocali :: String -> String
+eliminaVocali stringa = filter (not .(`any` "aeiou"))
 ```
+
+La funzione `not` serve a invertire il risultato dell'espressione booleana ottenuta da `any`. Inoltre, abbiamo utilizzato una stringa come parametro per `any`, cosa che ci permette di controllare la presenza di più caratteri senza dover aggiungere più funzioni `filter` annidate.
 
 ## Vedi anche
 
-- [Haskell Wiki - Introduzione alle liste](https://wiki.haskell.org/Lists_Introduction)
-- [Haskell Hoogle - Riferimento alle funzioni del modulo Data.List](https://hoogle.haskell.org/?hoogle=Data.List)
+- [Funzioni di ordine superiore in Haskell](https://www.senicar.net/156/funzioni-altezza-ordinamento-haskell/)
+- [Funzioni di stringa in Haskell](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-String.html)

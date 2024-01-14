@@ -1,19 +1,21 @@
 ---
 title:                "Go: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Go"
-category:             "Testing and Debugging"
+category:             "Go"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför: Varför du bör använda debug-utskrift i ditt Go-programmering.
 
-Att skriva kod är en process som är full av utmaningar och ibland kan det vara svårt att hitta fel och buggar i vår kod. För att enkelt hitta och åtgärda dessa problem kan vi använda oss av debug-utskrifter. I denna blogginlägg ska vi utforska hur man kan använda debug-utskrifter i Go-programmering.
+För att lösa problem och felsöka koden är det ofta nödvändigt att få utskrifter av variabler och steg i koden. Detta hjälper till att förstå vad som händer i koden och var eventuella fel uppstår. Det kan också vara användbart för att få en överblick över en komplex kodbas.
 
-## Hur man gör
+## Hur man gör: Kodexempel och utskriftsresultat inuti kodblock med "```Go ... ```"
 
-För att skriva ut debug-meddelanden i Go kan vi använda oss av funktionen `fmt.Printf()`. Denna funktion används för att skriva ut en formaterad sträng till standardutdata. Låt oss ta en titt på ett exempel där vi behöver debugga vår kod:
+För att skriva ut ett värde i Go använder man funktionen "fmt.Println()". Till exempel:
 
 ```Go
 package main
@@ -21,26 +23,50 @@ package main
 import "fmt"
 
 func main() {
-    total := 0
-    for i := 0; i < 10; i++ {
-        total += i
-    }
-    fmt.Printf("Totalt värde: %d\n", total)
+  name := "Anna"
+  fmt.Println("Hej", name)
+  // Utskrift: Hej Anna
 }
 ```
 
-I detta exempel skriver vi ut värdet på den totala summan i vår loop. Detta kan vara en hjälpsam utskrift för att följa värdet på `total` variabeln och se om det stämmer med våra förväntningar.
+För att använda variabler i utskrifter, använd "%v" i strängen och placera sedan variabeln efteråt inuti en annan parentes. Till exempel:
 
-Det finns också en annan funktion i Go som heter `log.Print()`. Denna funktion skriver ut en sträng till standardutdata, men dessutom inkluderar den tidsstämpel och filinformation om var utskriften skedde. Detta kan vara särskilt användbart när man debuggar flera delar av kod och vill hålla reda på vilka utskrifter som är relaterade till vilken del av koden.
+```Go
+package main
 
-## Fördjupning
+import "fmt"
 
-Att använda debug-utskrifter i Go kan vara en enkel och effektiv metod för att hitta och åtgärda buggar. Dock bör man tänka på att det kan vara lätt hänt att glömma bort att ta bort utskrifterna innan man skickar in sin kod för produktion. Detta kan leda till oönskade utskrifter och eventuellt minska prestandan på vår applikation.
+func main() {
+  age := 27
+  fmt.Println("Jag är %v år gammal.", age)
+  // Utskrift: Jag är 27 år gammal.
+}
+```
 
-Det finns också andra sätt att debugga vår kod, som t.ex. att använda debugger-verktyg eller loggningsramverk. Det är viktigt att hitta den metod som passar bäst för vår kod och arbetssätt.
+För att få ut mer information om en variabel, kan man använda "%T" för att få ut datatypen och "%#v" för att få ut hela variabeln med dess namn och värde inuti en parentes. Till exempel:
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+  number := 5
+  fmt.Printf("%T\n", number)
+  // Utskrift: int
+
+  fmt.Printf("%#v\n", number)
+  // Utskrift: 5
+}
+```
+
+## Djupdykning: Mer information om debug-utskrift i Go
+
+Det finns olika funktioner för debug-utskrifter i Go utöver "fmt.Println()". Till exempel kan man använda "log.Println()" för att få utskrifter som inkluderar datum och tid, och "fmt.Sprintf()" för att spara utskriftsresultatet i en variabel istället för att skriva ut det direkt.
+
+Det finns också olika formatteringsalternativ som "%d" för heltal och "%f" för flyttal. Mer information om dessa och andra funktioner för debug-utskrift i Go finns i dokumentationen för "fmt" paketet.
 
 ## Se också
 
-- [Officiell Go-dokumentation om fmt](https://golang.org/pkg/fmt/)
-- [How to Debug Go Programs](https://www.digitalocean.com/community/tutorials/how-to-debug-go-programs)
-- [Debugging Techniques in Go](https://medium.com/@enricofoltran/debugging-techniques-in-go-d337195fc865)
+- [Dokumentation för "fmt" paketet](https://golang.org/pkg/fmt/)
+- [Go Språkspecifikation](https://golang.org/ref/spec)

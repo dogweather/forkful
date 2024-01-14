@@ -1,49 +1,41 @@
 ---
-title:                "Java: ランダムナンバーの生成"
+title:                "Java: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "Java"
-category:             "Numbers"
+category:             "Java"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/java/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜランダムな数字を生成するのか？
 
-ランダムな数値を生成することの利点をご存知ですか？この記事では、なぜランダムな数値を生成することが重要であるかを説明します。
+ランダムな数字を生成することは、プログラミングの世界では非常によく使用されるテクニックです。このようにランダムな数字を生成することで、プログラムの予測性を排除し、さまざまなパターンやバリエーションを生み出すことができます。また、データのランダム性をテストするためにも使用されます。
 
-## ランダムな数値を生成する方法
+## 生成方法
 
-Javaでは、ランダムな数値を生成するための便利な方法がたくさんあります。例えば、Mathクラスのrandom()メソッドやRandomクラスを使用する方法などがあります。下記にそれぞれのコーディング例とサンプル出力を掲載します。
+Javaでランダムな数字を生成する簡単な方法は、`Random()`クラスを使用する方法です。以下のコードブロックを参考にしてください。
 
-```Java
-// Mathクラスのrandom()メソッドを使用する例
-double randomNumber = Math.random();
-System.out.println("ランダムな数値：" + randomNumber);
-
-// Randomクラスを使用する例
-Random rand = new Random();
-int randomInt = rand.nextInt(10);
-System.out.println("10以下のランダムな整数：" + randomInt);
+``` java
+Random random = new Random();
+int randomNumber = random.nextInt();
+System.out.println(randomNumber);
 ```
+上記のコードでは、`Random()`クラスのインスタンスを作成し、`nextInt()`メソッドを使用してランダムな整数を生成し、`println()`メソッドを使用してその値を出力しています。
 
-実行結果：
+## 深堀り
 
-```
-ランダムな数値：0.3736403225463508
-10以下のランダムな整数：7
-```
+ランダムな数字を生成する方法はさまざまありますが、実際には完全にランダムな数字を生成することは不可能です。ランダムな数字を生成するために使用されるアルゴリズムは事前に決まっており、そのシード値に基づいてランダムな数列が生成されます。このため、同じシード値を使用すると同じランダムな数字が生成されます。
 
-## ランダムな数値を生成する際の詳細
+また、`Random()`クラスの場合、シード値を指定しない場合は現在の時刻が使用されますが、同じ数列が生成される可能性があります。このため、よりランダムな数字を生成したい場合は、シード値を設定することが推奨されます。
 
-ランダムな数値を生成する際には、乱数ジェネレーターと呼ばれるアルゴリズムが使用されます。これらのアルゴリズムには、線形合同法やメルセンヌ・ツイスター法などがあります。ただし、これらのアルゴリズムは完全にランダムな数値を生成するわけではないので、注意が必要です。
+# 参考リンク
 
-## 参考リンク
+- [JavaのRandomクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- [ランダムな数値の生成方法についてのブログ記事](https://mynavi-agent.jp/it-knowledge/random/)
+- [疑似乱数と本当のランダムな数値の違いについての解説](https://news.mynavi.jp/article/zeropython-29/)
 
-- [Java Mathクラスのrandom()メソッドのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/Math.html#random--)
-- [Java Randomクラスのドキュメント](https://docs.oracle.com/javase/jp/8/docs/api/java/util/Random.html)
-- [乱数ジェネレーターについての詳細な解説](https://ja.wikipedia.org/wiki/%E4%B9%B1%E6%95%B0%E3%82%B8%E3%82%A7%E3%83%8D%E3%83%AC%E3%83%BC%E3%82%BF%E3%83%BC)
+# 参考
 
-## 関連リンク
-
-- [Javaの基本的なコーディングルール](https://qiita.com/opengl-8080/items/b78d101b1b371eee4d6a)
-- [ランダムな数値を生成する他の方法](https://techacademy.jp/magazine/48091)
+[Translator for Markdown Plugin for IntelliJ IDEA](https://plugins.jetbrains.com/plugin/11746-translator-for-markdown)

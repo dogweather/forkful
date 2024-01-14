@@ -1,38 +1,39 @@
 ---
-title:                "Javascript: Slette tegn som matcher et mønster"
+title:                "Javascript: Sletting av karakterer som matcher et mønster"
+simple_title:         "Sletting av karakterer som matcher et mønster"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor slette tegn som matcher et mønster?
 
-Mange ganger kan det hende at vi trenger å fjerne deler av en tekst som samsvarer med et bestemt mønster. Dette kan være nyttig når man ønsker å rense opp i en tekst, for eksempel når man jobber med input fra brukere. Å kunne slette karakterer som matcher et mønster i Javascript kan være en verdifull evne for enhver utvikler.
+Å slette tegn som matcher et bestemt mønster er en vanlig oppgave for mange utviklere i Javascript. Dette kan være nyttig når man ønsker å fjerne uønskede eller feilaktige tegn fra en tekststreng, eller når man trenger å filtrere ut data basert på et bestemt mønster. Ved å lære denne teknikken, kan du forbedre effektiviteten og funksjonaliteten til koden din.
 
 ## Hvordan gjøre det
 
-For å slette karakterer som matcher et mømster i Javascript, kan vi bruke metoden `replace()` sammen med regulære uttrykk (regex). La oss se på et eksempel:
+For å slette tegn som matcher et mønster, kan du bruke metoden `replace()` i Javascript. Denne metoden tar to parametere: det første er det mønsteret du ønsker å matche, og det andre er hva du ønsker å erstatte det mønsteret med. La oss se på et eksempel:
 
 ```Javascript
-let tekst = "Hei, jeg heter Emma og jeg elsker Javascript";
-let nyTekst = tekst.replace(/e+/g, "");
-console.log(nyTekst);
+let tekst = "Hei! Dette er en tekst med tall: 12345";
+let pattern = /\d/g;
+let nyTekst = tekst.replace(pattern, '');
+console.log(nyTekst); // Resultat: Hei! Dette er en tekst med tall:
 ```
 
-Her bruker vi `replace()`-metoden sammen med regex `/e+/g` for å slette alle forekomster av én eller flere bokstaver "e" i teksten. Outputen vil være "Hi, jg htr Emma og jg lskr Javasript".
+I dette eksempelet bruker vi metoden `replace()` sammen med det regulære uttrykket `\d`, som matcher alle tall i teksten. Vi erstatter disse tallene med en tom streng, og får dermed en tekst uten tall.
 
-Det er også mulig å kombinere regex med andre string metoder, som for eksempel `match()` for å finne ut hvilke deler av teksten som matcher mønsteret.
+## Dykk dypere
 
-## Dypdykk
+Det regulære uttrykket `\d` referer til en hvilken som helst tallverdi i teksten. Men hva om du ønsker å matche et bestemt tall eller en kombinasjon av tall? Da kan du bruke spesifikke tallverdier i uttrykket, som for eksempel `\d{4}`, som vil matche kun tall med fire siffer.
 
-Regex er en kraftig funksjon som kan brukes til å finne og manipulere tekst på en effektiv måte. Det finnes mange forskjellige mønstre som kan brukes i regex, og noen kan virke forvirrende og komplekse. Det er derfor viktig å øve seg og få en god forståelse av hvordan regex fungerer for å kunne utnytte det på best mulig måte.
-
-Et annet viktig poeng å huske på er at regex er case-sensitive, det vil si at store og små bokstaver skiller mellom mønstrene. For å unngå dette kan man bruke flagget `i` etter regex, som vil gjøre søket case-insensitive.
+Du kan også kombinere flere uttrykk, for eksempel ved å matche både tall og bokstaver. Et eksempel på dette kan være `/[\dA-Za-z]/`, som vil matche både tall og alle bokstaver, uansett om de er store eller små.
 
 ## Se også
 
-- [W3Schools - JavaScript Strings](https://www.w3schools.com/js/js_strings.asp)
-- [Regex Tutorial - A Quick Guide to Regular Expressions in Javascript](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
-- [MDN - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Javascript Documentation - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Regular Expressions Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/javascript) 
+- [W3Schools - Javascript Regular Expressions](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)

@@ -1,52 +1,62 @@
 ---
-title:                "Kotlin: Slå ihop strängar"
+title:                "Kotlin: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-I Kotlin-programmering är det väldigt vanligt att behöva kombinera flera strängar för att skapa en längre sträng. Detta kan vara till exempel för att skapa en textsträng som ska skrivas ut i en logg eller för att visa en dynamiskt genererad sträng i en användargränssnitt. I den här bloggposten kommer vi att titta närmare på hur man kan kombinera strängar i Kotlin.
+Att sammanfoga strängar är en vanlig operation i många programmeringsspråk, inklusive Kotlin. Det används för att kombinera flera strängar till en enda lång sträng, vilket kan vara användbart för att skapa dynamisk text i en applikation, såsom meddelanden eller rapporter.
 
 ## Hur man gör det
+Det finns flera sätt att sammanfoga strängar i Kotlin, och jag ska visa dig här några av dem med hjälp av kodexempel och utmatningar.
 
-För att kombinera flera strängar i Kotlin använder man operatorn `+` eller funktionen `plus()`. Operatorn `+` används för att lägga till två strängar och returnerar en ny sträng som innehåller båda de ursprungliga strängarna. Här är ett exempel på hur man använder operatorn `+` för att kombinera två strängar:
-
-```Kotlin
-val firstName = "Johan"
-val lastName = "Andersson"
-val fullName = firstName + " " + lastName
-```
-
-I det här exemplet kombineras strängarna "Johan" och "Andersson" för att skapa den längre strängen "Johan Andersson". Det är viktigt att notera att det finns ett extra mellanslag mellan förnamn och efternamn i kombineringssträngen. Detta beror på att inget mellanslag ingår i variablerna firstName och lastName och måste därför läggas till manuellt.
-
-Man kan också använda funktionen `plus()` för att kombinera flera strängar. Funktionen `plus()` tar en parameter av typen `String` och returnerar en ny sträng som kombinerar den befintliga strängen med den angivna parametern. Här är samma exempel som ovan, fast med användning av `plus()`:
+Först kan vi använda operatorn `+` för att kombinera två eller flera strängar.
 
 ```Kotlin
-val firstName = "Johan"
-val lastName = "Andersson"
-val fullName = firstName.plus(" ").plus(lastName)
+val förnamn = "Anna"
+val efternamn = "Andersson"
+val fullständigtNamn = förnamn + efternamn
+println(fullständigtNamn)
 ```
+
+Utmatning: `Anna Andersson`
+
+Vi kan också använda funktionsmetoden `plus()` för att sammanfoga strängar.
+
+```Kotlin
+val nummer1 = "10"
+val nummer2 = "20"
+val summa = nummer1.plus(nummer2)
+println(summa)
+```
+
+Utmatning: `1020`
+
+Det finns också en mer effektiv metod för att sammanfoga många strängar, och det är genom att använda `StringBuilder` -klassen.
+
+```Kotlin
+val livsfilosofier = arrayOf("Carpe", "Diem", "Leva", "Livet")
+val byggherre = StringBuilder()
+for (livsfilosofi in livsfilosofier) {
+    byggherre.append(livsfilosofi)
+}
+val mening = byggherre.toString()
+println(mening)
+```
+
+Utmatning: `CarpeDiemLevaLivet`
 
 ## Djupdykning
+Det är viktigt att notera att i Kotlin är strängar oföränderliga, vilket betyder att när en sträng har skapats kan den inte ändras. Därför kommer varje manipulation av en sträng att skapa en ny sträng istället för att ändra den befintliga strängen. Detta är anledningen till varför `StringBuilder` används för att sammanfoga många strängar, eftersom den kan bygga upp en sträng genom att lägga till delar utan att skapa en ny sträng varje gång.
 
-När man kombinerar flera strängar med operatorn `+` skapas en ny sträng varje gång. Detta kan bli ineffektivt vid större mängder data och orsaka onödig minnesallokering. För att undvika detta kan man istället använda sig av funktionen `StringBuilder`. `StringBuilder` är en effektivare metod att kombinera strängar eftersom den inte skapar en ny sträng varje gång man lägger till data, utan istället bygger på en befintlig sträng. Här är ett exempel på hur man kan använda `StringBuilder` för att kombinera flera strängar:
-
-```Kotlin
-val firstName = "Johan"
-val lastName = "Andersson"
-val fullName = StringBuilder(firstName)
-        .append(" ")
-        .append(lastName)
-        .toString()
-```
-
-Det är viktigt att avsluta med att anropa `toString()`-funktionen för att få ut en slutgiltig sträng från `StringBuilder`.
+En annan intressant sak att notera är att vid sammanfogning av icke-String-objekt till en sträng, kommer objektets `toString()` -metod att anropas automatiskt.
 
 ## Se även
-
-- [Kotlin String Interpolation](https://kotlinlang.org/docs/strings.html#string-interpolation)
-- [Google Kotlin style guide](https://developer.android.com/kotlin/style-guide)
+- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#string-literals)
+- [Kotlin StringBuilder](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string-builder/index.html)
+- [Java StringBuilder vs String Concatenation Performance](https://webtechie.be/post/2019-02-03-java-stringbuilder-vs-string-concatenation-performance/)

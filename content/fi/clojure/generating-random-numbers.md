@@ -1,46 +1,48 @@
 ---
-title:                "Clojure: Satunnaisten lukujen generointi"
+title:                "Clojure: Sattumanvaraisten lukujen luominen"
+simple_title:         "Sattumanvaraisten lukujen luominen"
 programming_language: "Clojure"
-category:             "Numbers"
+category:             "Clojure"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi käyttää satunnaislukugeneraattoria?
+## Miksi
 
-Satunnaislukugeneraattorit ovat tärkeä osa ohjelmoinnin maailmaa, ja niitä käytetään monissa erilaisissa sovelluksissa ja ohjelmointikielissä. Clojure on yksi näistä kielistä ja silläkin on omat satunnaislukugeneraattorinsa. Miksi sitten haluaisit käyttää satunnaislukugeneraattoria Clojure-ohjelmointisi kanssa? Yksinkertaisesti sanottuna, satunnaislukugeneraattorit mahdollistavat satunnaisuuden ja arvaamattomuuden ohjelmassasi. Tämä voi olla hyödyllistä esimerkiksi simulaatioissa tai pelien kehittämisessä.
+On monia syitä, miksi Clojure-ohjelmoijat hyödyntävät satunnaislukujen generointia. Se voi auttaa luomaan satunnaisia testitietoja, simuloimaan sattumanvaraista käyttäytymistä tai jopa lisäämään viihdyttävyyttä pelinkehityksessä.
 
-# Kuinka käyttää satunnaislukugeneraattoria Clojuressa?
+## Kuinka
 
-Jos haluat käyttää Clojuren sisäänrakennettua satunnaislukugeneraattoria, voit käyttää funktiota ```(rand)```. Tämä funktio tuottaa pseudosatunnaiseen lukuun desimaaliluvun väliltä 0 ja 1. Jos haluat määrittää haluamasi arvojen välisen alueen, voit käyttää funktiota ```(rand-nth [aloitus lopetus])```, jossa aloitus ja lopetus ovat haluamasi lukujen rajat. Voit myös käyttää Clojuren ```random```-kirjastoa, joka tarjoaa enemmän vaihtoehtoja satunnaislukujen generointiin. Esimerkiksi voit käyttää funktiota ```(rand-int 100)``` tuottaaksesi satunnaisen kokonaisluvun väliltä 0 ja 99. Alla on esimerkkikoodia satunnaislukujen generoinnista ja sen tuottamasta tulosteesta:
+Satunnaislukujen generointi Clojurella on helppoa. Voit käyttää Clojuren sisäänrakennettuja funktioita, kuten (rand) tai (rand-int), jotka generoivat desimaali- tai kokonaislukuja välillä 0-1 tai haluamasi välillä. Voit myös määrittää siemenarvon, jotta saat saman satunnaislukujen järjestyksen jokaisella suorituskerralla.
 
 ```Clojure
-;; tuottaa pseudosatunnaisen luvun väliltä 0 ja 1
-(rand)
+(rand) ; 0.599144716243095
 
-;; tuottaa kokonaisluvun väliltä 0 ja 99
-(rand-int 100)
+(rand-int 10) ; 5
 
-;; tuottaa satunnaisen luvun väliltä 1 ja 10
-(rand-nth [1 10])
+(rand 2 10) ; 8.067517024084043
+
+(rand 2 10 :seed 123) ; 7.98540171249794
 ```
 
-Tuloste:
+Voit myös käyttää (rand-nth) funktiota valitsemaan satunnaisen alkion vektorista tai listasta.
 
-```
-0.743517076636204
+```Clojure
+(rand-nth ["Hei" "Hello" "Bonjour"]) ; "Hei"
 
-64
-
-7
+(rand-nth [1 2 3 4 5]) ; 3
 ```
 
-# Syventävä tieto satunnaislukujen generoinnista
+## Syvempi sukellus
 
-Satunnaislukujen generointi ei ole täysin satunnaista, vaan kyseessä on oikeasti pseudosatunnaislukugenerointi. Tämä tarkoittaa sitä, että generoitu luku seuraa tiettyä kaavaa ja on toistettavissa. Clojuren ```rand```-funktio käyttää **Mersenne Twister** -algoritmia generoidakseen satunnaisia lukuja. Tämä algoritmi on suosittu ja tehokas pseudo-satunnaislukugeneraattori monissa ohjelmointikielissä, ja se on myös testattu laajasti.
+Clojuren satunnaislukufunktioita perustuvat Java-kieleen. Käytännössä ne hyödyntävät Mersenne Twister -generaattoria luodakseen hyvälaatuisia satunnaislukuja. Voit myös käyttää Java Random-luokkaa, jos tarvitset tarkempaa kontrollia.
 
-# Katso myös
-- [Clojuren dokumentaatio - Random](https://clojuredocs.org/clojure.core/rand)
-- [Clojuren dokumentaatio - Random library](https://clojuredocs.org/clojure.core/rand-int)
-- [Mersenne Twister - Wikipedia (englanniksi)](https://en.wikipedia.org/wiki/Mersenne_Twister)
+Satunnaislukufunktioilla on kuitenkin myös joitakin rajoituksia. Niitä ei esimerkiksi tule käyttää salaussovelluksissa, sillä ne eivät ole täysin satunnaisia ja siksi eivät ole turvallisia salauksessa.
+
+## Katso myös
+
+- [Clojuren virallinen dokumentaatio satunnaislukufunktioista](https://clojuredocs.org/clojure.core/rand)
+- [Mersenne Twister -generaattorin selitys](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- [Java Random-luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)

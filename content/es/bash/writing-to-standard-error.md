@@ -1,47 +1,44 @@
 ---
-title:                "Bash: Escribiendo en error estándar"
+title:                "Bash: Escritura en la salida de error estándar"
+simple_title:         "Escritura en la salida de error estándar"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Qué
+## ¿Por qué deberías escribir en la salida de error estándar (stderr)?
 
-Escribir en el error estándar en Bash es una habilidad importante para cualquier programador. Al hacer uso de esta técnica, podemos mostrar mensajes de error y depuración en nuestros programas para facilitar el proceso de identificación y solución de problemas.
+La mayoría de los programas de Bash escriben sus errores en la salida de error estándar (stderr) en lugar de en la salida estándar (stdout). Esto se debe a que stderr está diseñado específicamente para mostrar mensajes de error, mientras que stdout se utiliza para mostrar resultados y salidas normales del programa. Escribir en stderr puede ser útil cuando estás depurando un programa y quieres ver los mensajes de error en tiempo real.
 
-## Cómo Hacerlo
+## Cómo escribir en la salida de error estándar
 
-Para escribir en el error estándar en Bash, utilizamos el comando `>&2` seguido de un mensaje entre comillas. Por ejemplo:
-
-```Bash
-echo "Este es un mensaje de error" >&2
-```
-
-Este comando enviará el mensaje especificado al error estándar en lugar de a la salida estándar. Si ejecutamos este comando en nuestro terminal, no veremos nada impreso en la pantalla, ya que el error estándar no se muestra por defecto. Sin embargo, si combinamos este comando con la redirección del error estándar a un archivo, podemos crear un archivo de registro de errores.
+Para escribir en stderr en Bash, simplemente tienes que agregar "2>" al final del comando que quieras ejecutar. Por ejemplo, si queremos ver los errores de un comando de copia, podemos escribir:
 
 ```Bash
-ls archivos_noexistentes 2> registro_errores.txt
+cp archivo_inexistente.txt archivo_nuevo.txt 2> errores.txt
 ```
 
-Este comando ejecutará el comando `ls` con una entrada inválida y redireccionará cualquier mensaje de error al archivo `registro_errores.txt`.
-
-## Profundizando
-
-En ocasiones, podemos encontrarnos con la necesidad de mostrar mensajes de error personalizados en nuestros scripts de Bash. Para hacer esto, podemos utilizar el comando `exit` seguido de un número de salida. Por convención, se utiliza el número `1` para indicar errores generales y números mayores para errores específicos. Por ejemplo:
+Esto redirigirá todos los mensajes de error a un archivo llamado "errores.txt" en lugar de imprimirlos en la terminal. También puedes redirigir stderr a stdout utilizando "2>&1". Así que si queremos ver tanto los resultados como los errores de nuestro comando de copia, podemos escribir:
 
 ```Bash
-if [ $# -eq 0 ]; then
-  echo "Debe proporcionar un parámetro" >&2
-  exit 1
-fi
+cp archivo_inexistente.txt archivo_nuevo.txt 2>&1
 ```
 
-Este script comprueba si se proporciona un parámetro en la línea de comandos y si no, muestra un mensaje de error personalizado y finaliza la ejecución con un estado de salida `1`.
+Puedes probar esto con diferentes comandos y ver cómo funciona cada vez.
 
-## Ver También
+## Profundizando en la salida de error estándar
 
-- [Documentación Oficial de Bash sobre Redirecciones] (https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [Tutorial de Programación de Bash para Principiantes] (https://ryanstutorials.net/bash-scripting-tutorial/bash-script.php)
-- [Guía de Depuración de Bash] (https://www.linuxjournal.com/content/debugging-bash-scripts)
+Es importante mencionar que stderr no sólo se utiliza para mostrar mensajes de error, sino también para mostrar otros tipos de mensajes importantes, como advertencias o mensajes de estado. Además, stderr no está limitado a ser redirigido a un archivo, sino que también puede ser utilizado para enviar mensajes a otros procesos.
+
+Otra cosa a tener en cuenta es que stderr y stdout son tratados de manera diferente por Bash. Por ejemplo, si ejecutas un programa en el que la salida de error provoca que el programa se detenga, puedes encontrar que la salida se intercala en la pantalla, lo cual puede ser difícil de leer. Esto se debe a que Bash no tiene un mecanismo para sincronizar stdout y stderr. Puedes solucionar esto utilizando el comando "tee" para duplicar la salida en un archivo y en la pantalla al mismo tiempo.
+
+En resumen, escribir en la salida de error estándar puede ser útil en múltiples situaciones para depurar y gestionar los mensajes de error de un programa. Asegúrate de probar diferentes métodos de redirección y de entender cómo Bash trata a stderr para evitar confusiones en tus programas.
+
+## Ver también
+
+- [Documentación de Bash sobre la salida de error estándar](https://www.gnu.org/software/bash/manual/html_node/Redirections.html) 
+- [Tutorial de Bash sobre la salida de error estándar](https://www.howtogeek.com/435903/what-is-teaching-kids-to-code-on-a-raspberry-pi/) 
+- [Explicación de stackoverflow sobre la diferencia entre stderr y stdout](https://stackoverflow.com/questions/230751/how-to-display-stderr-with-colour-on-screen)

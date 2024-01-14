@@ -1,41 +1,36 @@
 ---
-title:                "Gleam: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+title:                "Gleam: Muunna merkkijono pienaakkosiksi"
+simple_title:         "Muunna merkkijono pienaakkosiksi"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-Miksi haluaisit muuttaa merkkijonon pieniksi kirjaimiksi? On olemassa monia syitä, kuten tiedon normalisointi, käyttäjän syötteen vakioiminen tai mahdollisten bugien välttäminen suur- ja pienikirjaimien sekoittumisessa.
+On hyödyllistä joskus muuttaa merkkijono pieniksi kirjaimiksi, esimerkiksi jos haluat vertailla kahta merkkijonoa ja haluat että kirjainkoko ei vaikuta vertailuun. Tämä on erityisen tärkeää suomenkielellä, jossa on paljon erikoismerkkejä ja aakkosia.
 
-## Kuinka
+## Kuinka?
 
-Kääntäminen merkkijonosta pieneksi on yksinkertaista Gleam-ohjelmointikielellä. Sinun tarvitsee vain käyttää Funktioa `String.to_lower`. Tässä on yksinkertainen esimerkki koodinpätkä, joka muuttaa annetun merkkijonon pieniksi kirjaimiksi ja tulostaa sen:
-
-```
-Gleam
-pub fn main() {
-  let merkkijono = "Tämä ON EtSITTy MERKKIJONo"
-  let uusi_merkkijono = String.to_lower(merkkijono)
-  io.println(uusi_merkkijono)
+```Gleam
+fn main() {
+  let s = "Tämä On Merkkijono"
+  let lower_case = String.to_lower_case(s)
+  io.println(lower_case)
 }
-
-// Output: "tämä on etsitty merkkijono"
 ```
 
-Gleamissä on myös mahdollista muuttaa merkkijono suuriksi kirjaimiksi käyttämällä Funktiota `String.to_upper`.
+Tulostus: ```tämä on merkkijono```
 
 ## Syvällinen sukellus
 
-Kun käytät Funktiota `String.to_lower`, Gleam muuttaa merkkijonon Unicode-merkistön mukaisesti pieniksi kirjaimiksi. Tämä eroaa monista muista ohjelmointikielistä, jotka luottavat ASCII-aakkoston muuttamiseen.
+Gleamilla on valmiina funktio `String.to_lower_case`, joka ottaa parametrina merkkijonon ja palauttaa uuden merkkijonon, jossa kaikki kirjaimet on muutettu pieniksi kirjaimiksi. Tämä on kätevä tapa välttää kirjainkoosta johtuvia ongelmia, kun käsitellään merkkijonoja.
 
-Lisäksi Gleamillä on myös funktiot `String.to_title_case` ja `String.to_capital_case`, jotka muuttavat merkkijonon alkukirjaimen tai jokaisen sanan ensimmäisen kirjaimen suureksi.
+Gleamin merkkijonot ovat myös Unicode-yhteensopivia, mikä tarkoittaa sitä että funktio `String.to_lower_case` osaa käsitellä myös erikoismerkkejä ja eri kielten aakkosia oikein.
 
 ## Katso myös
 
-- [Gleamin virallinen sivusto](https://gleam.run/)
-- [Gleamin dokumentaatio](https://gleam.run/book/index.html)
-- [Gleamin Github-repositorio](https://github.com/gleam-lang/gleam)
+- [Gleam Document

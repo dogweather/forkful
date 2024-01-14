@@ -1,73 +1,81 @@
 ---
-title:                "C++: Conversion d'une chaîne de caractères en minuscules"
+title:                "C++: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Souvent dans la programmation, nous avons besoin de manipuler des chaînes de caractères. Il peut arriver que ces chaînes contiennent des lettres en majuscules et en minuscules mélangées. Pour assurer la cohérence et la simplicité dans nos opérations de traitement de données, il peut être utile de convertir ces chaînes en minuscules, afin que toutes les lettres soient uniformes. Cela peut également faciliter la comparaison de chaînes et la recherche de certains caractères.
 
-## Comment Faire
-La conversion d'une chaîne de caractères en minuscules peut sembler complexe à première vue, mais c'est en fait assez simple avec le bon code. Voici un exemple en C++ :
+Il y a plusieurs raisons pour lesquelles vous pourriez avoir besoin de convertir une chaîne de caractères en minuscules dans votre code C++. Cela peut vous permettre de uniformiser l'affichage du texte, de faciliter la comparaison de chaînes de caractères ou encore de rendre votre code plus lisible.
 
-```C++
+## Comment faire
+
+Pour convertir une chaîne de caractères en minuscules en C++, vous pouvez utiliser la fonction `tolower()` de la bibliothèque standard `<cctype>`. Voici un exemple de code pour illustrer son utilisation :
+
+```c++
 #include <iostream>
 #include <string>
-#include <algorithm> // cette librairie contient la fonction transform
+#include <cctype>
 
 using namespace std;
-
-int main()
-{
-    string str = "Bonjour le monde!";
-
-    // Utilisation de la fonction transform pour convertir en minuscules
-    transform(str.begin(), str.end(), str.begin(), ::tolower);
-
-    cout << str; // output : bonjour le monde!
-
-    return 0;
-}
-```
-
-Dans cet exemple, nous utilisons la fonction `transform` de la librairie `<algorithm>` pour convertir la chaîne `str` en minuscules. La syntaxe de la fonction est la suivante :
-
-`transform (début, fin, début, ::tolower)`
-
-Elle prend en paramètres le début et la fin de la chaîne à convertir, le début de la chaîne de sortie (qui peut être la même que la chaîne d'entrée) et la fonction `::tolower`, qui convertit chaque caractère en minuscule.
-
-## Plongée Profonde
-La fonction `transform` utilisée dans notre exemple utilise une fonction de transformation prédéfinie (comme `::tolower`), mais il est également possible de créer sa propre fonction de transformation personnalisée. Voici un exemple qui convertit uniquement la première lettre d'une chaîne en majuscule et le reste en minuscules :
-
-```C++
-#include<iostream>
-#include<string>
-#include<algorithm>
-
-using namespace std;
-
-// Définition de la fonction de transformation personnalisée
-char toTitleCase(char c) {
-    if (c >= 'a' && c <= 'z') {
-        return c - 32; // conversion en majuscule
-    }
-    return c; // retourne le caractère sans modification
-}
 
 int main() {
-    string str = "bIeNvEnUe aU mOnDe!";
-    // Utilisation de la fonction transform avec la fonction de transformation personnalisée
-    transform(str.begin(), str.end(), str.begin(), toTitleCase);
-    cout << str; // output : Bienvenue au monde!
+    // Déclaration d'une chaîne de caractères
+    string str = "Hello World";
+
+    // Parcourir chaque caractère de la chaîne et le convertir en minuscule
+    for (int i = 0; i < str.length(); i++) {
+        str[i] = tolower(str[i]);
+    }
+
+    // Affichage de la chaîne convertie en minuscules
+    cout << str << endl;
+
     return 0;
 }
 ```
 
-En utilisant une fonction de transformation personnalisée, nous pouvons avoir un contrôle plus précis sur la conversion de la chaîne en minuscules.
+Output:
+`hello world`
 
-## Voir Aussi
-- [Documentation sur la fonction transform en C++](https://www.cplusplus.com/reference/algorithm/transform/)
-- [Autres méthodes pour convertir une chaîne en minuscules en C++](https://www.geeksforgeeks.org/converting-strings-lowercase-uppercase-c/)
+Vous pouvez également utiliser la fonction `transform()` de la bibliothèque `<algorithm>` pour convertir une chaîne de caractères en minuscules de manière plus efficace. Voici un autre exemple de code pour vous montrer son utilisation :
+
+```c++
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    // Déclaration d'une chaîne de caractères
+    string str = "Bonjour le Monde";
+
+    // Utilisation de la fonction transform() pour convertir la chaîne en minuscules
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
+
+    // Affichage de la chaîne convertie en minuscules
+    cout << str << endl;
+
+    return 0;
+}
+```
+
+Output:
+`bonjour le monde`
+
+## Plongée en profondeur
+
+Les fonctions `tolower()` et `transform()` ne sont pas les seules façons de convertir une chaîne de caractères en minuscules en C++. Vous pouvez également écrire votre propre fonction en utilisant des boucles et des conditions pour parcourir chaque caractère de la chaîne et le convertir en minuscule. Cependant, il est important de noter que ces deux fonctions de la bibliothèque standard sont plus rapides et plus efficaces.
+
+De plus, il est possible de convertir non seulement les caractères alphanumériques, mais aussi les caractères spéciaux en minuscules en utilisant les fonctions de la bibliothèque standard.
+
+## Voir aussi
+
+- [Documentation de la fonction `tolower()`](https://www.cplusplus.com/reference/cctype/tolower/)
+- [Documentation de la fonction `transform()`](https://www.cplusplus.com/reference/algorithm/transform/)

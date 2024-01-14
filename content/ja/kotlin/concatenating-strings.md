@@ -1,64 +1,62 @@
 ---
-title:                "Kotlin: 文字列の結合"
+title:                "Kotlin: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
-文字列を連結することに関心を持つのはなぜでしょうか。文字列の連結は、プログラミングにおいて非常に重要な機能の一つです。コードを効率的に書くためには、文字列を連結してデータを処理する必要があります。
+# なぜ文字列を連結するのか
 
-## 方法
-Kotlinでは、文字列を連結するために「+」演算子を使用します。以下は、簡単なコード例です。
+文字列を連結することは、アプリケーションやプログラムを開発する際に非常に重要な操作です。文字列を結合することにより、複数の情報を1つの文字列としてまとめることができます。これにより、情報を効率的に扱うことができます。
 
-```Kotlin
-val str1 = "Hello"
-val str2 = "World"
-val result = str1 + " " + str2
-println(result)
-```
+## 連結する方法
 
-上記のコードを実行すると、次のような出力が得られます。
-
-```
-Hello World
-```
-
-ここでは、2つの変数「str1」および「str2」に値を割り当て、それらの値を「+」演算子を使用して連結し、新しい変数「result」に割り当てています。そして、「println」関数を使用してresultの値を出力しています。
-
-さらに、Kotlinでは「StringBuilder」クラスを使用して複数の文字列を連結することもできます。以下は、その例です。
+Kotlinでは、文字列を結合するために+演算子を使用します。以下の例では、2つの文字列を結合して出力する方法を示します。
 
 ```Kotlin
-val sb = StringBuilder()
-sb.append("Hello")
-sb.append(" ")
-sb.append("World")
-val result = sb.toString()
-println(result)
+val name = "田中"
+val greeting = "こんにちは"
+println(name + greeting)
 ```
 
-これにより、同じ結果が得られますが、より効率的に文字列を連結できます。
+出力結果は「田中こんにちは」となります。
 
-## ディープダイブ
-文字列の連結に関して、さらに詳しく見てみましょう。文字列を連結することで、複数の文字列を結合した新しい文字列を作成できます。また、文字列以外の値を文字列に変換してから連結することもできます。
+Kotlinでは、さまざまなデータ型を文字列に変換する「toString()」メソッドも使用することができます。例えば、数値を文字列として結合することも可能です。
 
-文字列の連結では、「+」演算子を使用することが最も一般的ですが、文字列を大量に連結する場合は、StringBuilderクラスを使用することでより効率的に処理することができます。
+```Kotlin
+val age = 30
+val message = "私は" + age.toString() + "歳です"
+println(message)
+```
 
-## その他の記事
-「時短テクニック：Kotlinの文字列連結方法」  
-https://www.howkaku.com/kotlin/string-concatenation
+出力結果は「私は30歳です」となります。
 
-「Kotlinプログラミングの基本：文字列の連結」  
-https://dev.classmethod.jp/articles/kotlin-basic-type-string/
+## 深堀り
 
-「文字列の連結の効率性を向上させる方法」  
-https://proandroiddev.com/make-efficiency-strategies-of-java-concatenation-in-kotlin-world-cb262820a2d5
+Kotlinでは文字列の結合についてもっと深く理解することができます。さまざまな方法で文字列を結合することができるため、開発者にとって非常に柔軟な言語です。
+
+例えば、Kotlinでは文字列テンプレートを使用することで、文字列の中に変数を埋め込むことができます。文字列テンプレートを使うと、文字列を結合する際に + 演算子を使用する必要がなくなり、コードがより簡潔になります。
+
+また、文字列リテラル内で文字列の結合も可能です。以下のように、$を使用して変数を直接文字列に埋め込むことができます。
+
+```Kotlin
+val food = "ラーメン"
+println("私は今日、$foodを食べました")
+```
+
+出力結果は「私は今日、ラーメンを食べました」となります。
 
 ## 参考リンク
-「Kotlin Strings」  
-https://kotlinlang.org/docs/reference/basic-types.html#string
 
-「Java StringBuilderクラス」  
-https://docs.oracle.com/javase/jp/1.5.0/docs/api/java/lang/StringBuilder.html
+- [Kotlin文字列結合方法](https://qiita.com/ngsw_taro/items/7092cda7e30f7be91a71)
+- [Kotlin文字列結合の仕組み](https://www.atmarkit.co.jp/ait/articles/2006/17/news026.html)
+- [Kotlin公式ドキュメント - 文字列とテンプレート](https://kotlinlang.org/docs/basic-types.html#strings)
+
+# 関連記事
+
+- [Kotlinで文字列を分割する方法](https://www.linktocoding.com/posts/223)
+- [Kotlinの基礎 - 文字列操作について学ぶ](https://www.guru99.com/strings-stringbuilder-stringbuffer-in-kotlin.html)

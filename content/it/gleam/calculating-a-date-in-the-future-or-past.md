@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Calcolo di una data nel futuro o nel passato"
+title:                "Gleam: Calcolare una data nel futuro o nel passato"
+simple_title:         "Calcolare una data nel futuro o nel passato"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,46 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Calcolare una data nel futuro o nel passato può essere utile per diverse ragioni. Ad esempio, si potrebbe desiderare di sapere quando un progetto sarà completato o quando si raggiungerà un'età specifica. Inoltre, la capacità di calcolare una data in modo accurato può semplificare la pianificazione e la gestione del tempo.
+Sempre è utile sapere come calcolare una data futura o passata per pianificare eventi o riunioni. Con Gleam, è un gioco da ragazzi!
 
-## Come fare
+## Come Fare
 
-Per calcolare una data nel futuro o nel passato utilizzando Gleam, è necessario utilizzare il modulo `Datetime` che fornisce diverse funzioni utili per la gestione delle date. Ecco un esempio di codice utilizzando il modulo `Datetime` per calcolare una data nel futuro di 7 giorni:
-
-```Gleam
-let today = Polyglot.Datetime.now()
-let future_date = Polyglot.Datetime.add_days(today, 7)
-IO.println("La data tra 7 giorni sarà: " ++ Polyglot.Datetime.format(future_date, "%d/%m/%Y"))
-```
-
-L'output di questo codice sarà:
-
-```
-La data tra 7 giorni sarà: 26/04/2021
-```
-
-Per calcolare una data nel passato, possiamo invece utilizzare la funzione `subtract_days` del modulo `Datetime`. Ecco un esempio di codice che calcola la data di 15 giorni fa:
+Per calcolare una data in futuro o passato, possiamo utilizzare la funzione `Date.add` o `Date.subtract`. Ad esempio, se vogliamo aggiungere 3 giorni alla data corrente, possiamo scrivere:
 
 ```Gleam
-let today = Polyglot.Datetime.now()
-let past_date = Polyglot.Datetime.subtract_days(today, 15)
-IO.println("La data di 15 giorni fa è stata: " ++ Polyglot.Datetime.format(past_date, "%d/%m/%Y"))
+let data_corrente = Date.now()
+let data_futura = Date.add(data_corrente, 3, Date.Unit.Day)
+
+Debug.to_string(data_futura) // Output: "2021-11-08T09:00:00Z"
 ```
 
-L'output di questo codice sarà:
+Allo stesso modo, se vogliamo sottrarre 2 settimane dalla data corrente, possiamo scrivere:
 
+```Gleam
+let data_corrente = Date.now()
+let data_passata = Date.subtract(data_corrente, 2, Date.Unit.Week)
+
+Debug.to_string(data_passata) // Output: "2021-10-25T09:00:00Z"
 ```
-La data di 15 giorni fa è stata: 01/04/2021
-```
+
+Possiamo anche specificare l'unità di tempo desiderata come terzo argomento della funzione, come mostrato negli esempi sopra.
 
 ## Approfondimento
 
-Calcolare una data nel futuro o nel passato può risultare più complesso di quanto si pensi, in quanto bisogna considerare fattori come le diverse lunghezze dei mesi e degli anni, i giorni bisestili e le eventuali differenze di fuso orario. Inoltre, ci possono essere casi in cui è necessario calcolare la data in base a una specifica data di riferimento, anziché utilizzare semplicemente la data odierna.
+Gleam offre anche altre funzioni per manipolare le date, come `Date.diff` per calcolare la differenza tra due date e `Date.compare` per confrontare due date. Inoltre, è possibile specificare il fuso orario nella creazione di una nuova data utilizzando `Date.from_timestamp` o `Date.from_fields`.
 
-Per affrontare tutte queste sfide, il modulo `Datetime` di Gleam fornisce diverse funzioni e formati per rendere più semplice e precisa la gestione delle date. Inoltre, è importante fare attenzione a utilizzare i formati di data e ora corretti al fine di evitare errori di calcolo.
+## Vedi Anche
 
-## Vedi anche
-
-- Documentazione ufficiale del modulo `Datetime` di Gleam: https://gleam.run/documentation/stdlib/core/Polyglot.Datetime.html
-- Una guida su come calcolare una data nel futuro utilizzando JavaScript: https://www.w3schools.com/js/js_date_methods.asp
-- Informazioni sulle diverse operazioni che possono essere eseguite sulle date in Java: https://www.tutorialspoint.com/java8/java8_date_time.htm
+- [Documentazione su Date in Gleam](https://gleam.run/documentation/std/datetime/)
+- [Tutorial su Gleam per principianti](https://medium.com/@gleamlang/gleam-language-building-an-api-f1c2b7909b96)
+- [Esempi di progetti in Gleam](https://github.com/gleam-lang/awesome-gleam)

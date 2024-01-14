@@ -1,57 +1,41 @@
 ---
 title:                "Gleam recipe: Deleting characters matching a pattern"
+simple_title:         "Deleting characters matching a pattern"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Deleting characters matching a pattern is a common task in programming that can help streamline processes and remove unwanted or unnecessary data. By removing characters that follow a specific pattern, code can be cleaner, more efficient, and easier to understand.
+
+Deleting characters matching a pattern can be a useful task when working with text data. It allows for easy manipulation of strings and can save time and effort when cleaning up data.
 
 ## How To
-To delete characters matching a pattern in Gleam, you can use the `String.replace` function. This function takes in three arguments: the original string, the pattern to match, and the replacement string.
+
+To delete characters matching a pattern in Gleam, we can use the `replace` function from the `String` module. This function takes in a string, pattern, and replacement string as arguments. Here's an example of how we can use it:
 
 ```
-Gleam
-
-let original_string = "Hello, World!"
-let modified_string = String.replace(original_string, ",", "")
-
-# Output: "Hello World!"
+String.replace("Hello, World!", ",", "")
 ```
 
-In the above example, we use the `String.replace` function to remove the comma from the original string. The third argument is an empty string, indicating that we want to delete the matched pattern.
-
-You can also use regular expressions in the pattern argument to match more complex patterns. For example, to remove all numbers from a string, you can use the regex `#[0-9]+#` to match any number and replace it with an empty string.
+This code will return the string "Hello World!" as the `,` character is deleted from the original string. We can also use regular expressions as our pattern to match and delete certain characters. For example:
 
 ```
-Gleam
-
-let original_string = "I have 5 apples and 3 bananas"
-let modified_string = String.replace(original_string, "#[0-9]+#", "")
-
-# Output: "I have apples and bananas"
+String.replace_regex("Hello, World!", "[^a-zA-Z0-9 ]", "")
 ```
 
-It's important to note that `String.replace` only replaces the first matched pattern. To replace all instances, you can use `String.replace_all`.
-
-```
-Gleam
-
-let original_string = "I really love love love programming"
-let modified_string = String.replace_all(original_string, "love", "enjoy")
-
-# Output: "I really enjoy enjoy enjoy programming"
-```
+This code will remove all characters except for letters, numbers, and spaces from the string, resulting in "Hello World" as the output.
 
 ## Deep Dive
-Under the hood, `String.replace` and `String.replace_all` use the `String.replace_range` function, which takes in the index range to replace. This allows for more customization, as you can specify exactly which characters you want to replace.
 
-Additionally, Gleam also offers the `String.filter` function, which allows you to delete characters based on a condition. This can be useful for removing specific characters, such as all non-alphabetic characters.
+When working with the `replace` function, it's important to keep in mind that it creates a new string instead of modifying the original one. This means that we need to assign the result of the `replace` function to a new variable if we want to use it later in our code.
+
+Additionally, using regular expressions as our pattern opens up a wide range of possibilities for matching and deleting characters. We can use special characters and quantifiers in our regular expression to make it more specific, such as `*` to match any number of a certain character or `+` to match one or more of a certain character.
 
 ## See Also
-- Official Gleam Documentation on `String.replace`: https://gleam.run/documentation/std/string.html#replace
-- Regular Expressions Tutorial: https://www.regular-expressions.info/
-- Gleam Standard Library `String` module: https://gleam.run/documentation/std/string.html
+
+- Official Gleam documentation on `String.replace`: https://gleam.run/docs/stdlib/string#replace
+- Regular Expressions tutorial: https://regexone.com/

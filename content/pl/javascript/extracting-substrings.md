@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: Wycinanie podciągów"
+simple_title:         "Wycinanie podciągów"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/extracting-substrings.md"
 ---
 
@@ -9,36 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego?
 
-Czasami w programowaniu konieczne jest wydobycie fragmentu z tekstu lub ciągu znaków. Może to być potrzebne do porównania, edycji lub wykorzystania w inny sposób. W takich sytuacjach użyteczna jest operacja zwana wydobyciem podciągu (ang. substring).
+Wyciąganie podciągów jest jedną z podstawowych umiejętności w programowaniu Javascript. Pozwala nam na manipulowanie tekstami i wyodrębnianie z nich potrzebnych nam informacji. To też często jedna z pierwszych zagadnień, które pojawiają się na drodze każdego młodego programisty. Dlatego warto się z tym tematem zapoznać i nauczyć się go stosować.
 
-## Jak to zrobić?
-
-Aby wydobyć podciąg za pomocą JavaScript, musimy użyć wbudowanej funkcji `substring()`. Podajemy dwa parametry - początek i koniec wybranego fragmentu. Na przykład, jeśli chcemy wydobycie podciągu z drugiego do czwartego znaku z ciągu "Hello World!", nasz kod może wyglądać tak:
+## Jak to zrobić? 
 
 ```Javascript
-let text = "Hello World!";
-let substring = text.substring(2, 5);
-console.log(substring); // wynik: "llo"
+const tekst = "To jest przykładowy tekst.";
+const podciag = tekst.substring(3,9);
+console.log(podciag);
 ```
 
-Możemy również podać tylko jeden parametr - początek. Wtedy zwrócony zostanie podciąg od tego miejsca do końca oryginalnego tekstu. Przykład:
+W powyższym przykładzie wykorzystujemy funkcję `substring()`, która ma dwa parametry - indeks początkowy i indeks końcowy. W wyniku otrzymujemy podciąg, który zaczyna się od 3 znaku i kończy na 9. W naszym przypadku będzie to "jest".
+
+Dodatkowo, funkcja `substring()` jest wyjątkowo użyteczna w połączeniu z metodą `indexOf()`, która pozwala nam na znalezienie indeksu danego znaku lub słowa w tekście. Dzięki temu możemy precyzyjniej wybrać interesujący nas podciąg.
 
 ```Javascript
-let text = "Hello World!";
-let substring = text.substring(5);
-console.log(substring); // wynik: " World!"
+const tekst = "To jest przykładowy tekst.";
+const index = tekst.indexOf("przykładowy"); //zwraca wartość 7
+const podciag = tekst.substring(index, tekst.length);
+console.log(podciag);
 ```
 
-Pamiętajmy, że indeksowanie znaków w JavaScript zaczyna się od 0, więc pierwszy znak ma indeks 0.
+W efekcie otrzymamy podciąg, który zaczyna się od słowa "przykładowy" i kończy się na końcu tekstu - w naszym przypadku będzie to całe zdanie "przykładowy tekst".
 
-## Deep Dive
+## Głębszy wgląd
 
-Funkcja `substring()` jest często używana do manipulacji i edycji tekstów w JavaScript. Jest to jednak tylko jedna z wielu dostępnych metod. Innymi przydatnymi funkcjami są `slice()`, `substr()` czy `replace()`. W zależności od naszych potrzeb, możemy wybrać odpowiednią do danego zadania funkcję.
+Podczas pracy z funkcją `substring()`, warto pamiętać o różnicach między indeksami liczb a indeksami znaków. W przypadku indeksów liczb, pierwszy znak ma indeks 0, a ostatni n-1 (gdzie n to długość tekstu). Natomiast w przypadku indeksów znaków, pierwszy znak jest oznaczany jako 1, a ostatni jako n.
 
-Warto również wiedzieć, że `substring()` działa tylko na typie danych "string", dlatego jeśli chcemy wykonać operację na innym typie, np. liczbie, musimy najpierw przekonwertować go na string za pomocą funkcji `toString()`.
+Kolejną przydatną funkcją jest `substr()` - działa podobnie jak `substring()`, ale przyjmuje tylko dwa parametry - indeks początkowy i długość podciągu.
 
-## Zobacz także
+W przypadku pracy z dłuższymi tekstami, warto również zwrócić uwagę na różnice między metodą `substring()` a `slice()`. Ta druga działa w podobny sposób, ale pozwala na podanie indeksów ujemnych, co ułatwia wybieranie podciągów od końca tekstu.
 
-1. Dokumentacja wbudowanej funkcji `substring()` w JavaScript: https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/substring
-2. Porównanie różnych funkcji do manipulacji stringami w JavaScript: https://www.w3schools.com/js/js_string_methods.asp
-3. Przykłady zastosowań wydobycia podciągu w praktyce: https://www.geeksforgeeks.org/extracting-substrings-from-a-string-in-javascript/
+## Zobacz również
+
+Jeśli chcesz pogłębić swoją wiedzę na temat manipulowania tekstami w Javascript, warto zapoznać się z tymi artykułami:
+
+- [Manipulowanie tekstami w Javascript](https://javascript.info/string)
+- [Metody pracy z tekstem w Javascript](https://www.w3schools.com/js/js_string_methods.asp)
+
+Pamiętaj, że jedyną skuteczną metodą nauki jest praktyka, więc nie wahaj się tworzyć własnych przykładów i eksperymentować z funkcjami `substring()`, `substr()` i `slice()`. Powodzenia!

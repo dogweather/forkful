@@ -1,45 +1,57 @@
 ---
-title:                "Javascript: Tulostuksen virheenkorjaustulosteet"
+title:                "Javascript: Vianmääritystulostus tietokoneohjelmoinnissa"
+simple_title:         "Vianmääritystulostus tietokoneohjelmoinnissa"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi ohjelmoijien tulisi käyttää debug-tulostusta?
+## Miksi
 
-Debug-tulostus on tärkeä työkalu ohjelmoijille, sillä se auttaa selvittämään ohjelmien virheitä ja ongelmia. Kun ohjelma ei toimi odotetulla tavalla, debug-tulostus voi antaa tärkeää tietoa siitä, mistä ongelma johtuu ja auttaa korjaamaan sen.
+Usein kehittäjät joutuvat korjaamaan ohjelmointivirheitä, joita voi olla haastavaa paikantaa koodista. Käyttämällä debuggaustoimintoja ja tulostamalla debuggaustietoja koodiin, voit helpommin havaita ja korjata nämä virheet. Tai ehkä haluat yksinkertaisesti tarkistaa tietokannan tulokset tai muuttujien arvot koodin suorituksen aikana. Ei väliä mikä on syysi, tulostamisella debug-tietoja voi olla paljon hyötyä ohjelmointiprosessissa.
 
-## Miten käyttää debug-tulostusta
+## Miten
 
-Debug-tulostuksen käyttö on melko yksinkertaista. Ensinnäkin, sinun tulee sisällyttää koodiisi print-komento, joka tulostaa haluamasi tiedot. Esimerkiksi:
-
-```Javascript
-console.log("Tervetuloa debuggaamaan ohjelmaa!");
-```
-
-Tämä tulostaa konsoliin "Tervetuloa debuggaamaan ohjelmaa!".
-
-Voit myös tulostaa muuttujien arvoja debug-tulostuksen avulla, mikä voi auttaa hahmottamaan ohjelman toimintaa. Esimerkiksi:
+Tulostaminen debug-tietoja JavaScriptissä on helppoa. Voit käyttää `console.log()` -funktiota tulostamaan viestejä komentotulkkauksessa tai selaimen konsolissa. Voit myös käyttää `console.error()` tulostamaan virheviestejä tai `console.warn()` varoitusviestejä.
 
 ```Javascript
-let nimi = "Maija";
-console.log("Hei " + nimi + ", tervetuloa sivustolle!");
+console.log("Tämä on debug-viesti"); // Tulostaa "Tämä on debug-viesti" komentotulkkaukseen tai selaimen konsoliin.
+let numero = 10;
+console.log("Muuttujan arvo on: " + numero); // Tulostaa "Muuttujan arvo on: 10".
+console.error("Virhe: yhtäsuuruusmerkki puuttuu laskutoimituksesta"); // Tulostaa virheviestin komentotulkkaukseen tai selaimen konsoliin.
+console.warn("Varoitus: muuttuja ei ole alustettu"); // Tulostaa varoitusviestin komentotulkkaukseen tai selaimen konsoliin.
 ```
 
-Tämä tulostaisi "Hei Maija, tervetuloa sivustolle!".
+Voit myös tulostaa debug-tietoja suoraan HTML-sivulle käyttämällä `document.write()` -funktiota. Tämä on hyödyllistä, jos haluat tarkistaa muuttujien arvoja sivun suorituksen aikana.
 
-## Syventävä tietoa debug-tulostuksesta
+```Javascript
+document.write("Muuttujan arvo on: " + numero); // Tulostaa "Muuttujan arvo on: 10" suoraan HTML-sivulle.
+```
 
-Debug-tulostuksen käyttö voi olla hyödyllistä myös silloin, kun sinulla on monimutkaisempi koodi, jota on vaikea hahmottaa ohjelman toimiessa. Voit tulostaa debug-tulostuksia vaiheittain koodin suorituksen aikana saadaksesi paremman kuvan siitä, miten ohjelma toimii.
+## Syvempi sukellus
 
-Debug-tulostuksen avulla voit myös selvittää, missä kohtaa koodia virhe tapahtuu ja mitkä muuttujat vaikuttavat siihen. Tämä voi säästää paljon aikaa virheiden etsinnässä ja korjaamisessa.
+Tulostamalla debug-tietoja voit nähdä tarkalleen, mitä tapahtuu koodissasi suorituksen aikana. Voit käyttää ehtolausekkeita ja `console.assert()` -funktiota tulostamaan viestejä vain tietyissä tilanteissa. Esimerkiksi:
 
-Lopuksi, on tärkeää muistaa poistaa debug-tulostukset lopullisesta koodista, sillä ne voivat hidastaa ohjelman suoritusta ja tehdä koodista sekavan.
+```Javascript
+let luku = 5;
+
+console.assert(luku > 10, "Virhe: lukuarvo on liian pieni"); // Tulostaa virheviestin vain, jos luku on alle 10.
+```
+
+Voit myös käyttää `console.group()` ja `console.groupEnd()` -funktioita ryhmitelläksesi ja selkeyttääksesi debug-viestejäsi.
+
+```Javascript
+console.group("Laskutoimitukset");
+console.log("2 + 2 = " + (2+2));
+console.log("5 * 3 = " + (5*3));
+console.groupEnd(); // Ryhmä päättyy tähän.
+```
 
 ## Katso myös
 
-- [Debuggausopas Javascriptille](https://www.w3schools.com/js/js_debugging.asp)
-- [Debug-tulostuksen käyttö Node.js:ssä](https://nodejs.org/de/docs/guides/debugging-getting-started/)
-- [Vianmäärityksen perusteet ohjelmoinnissa](https://www.codingdojo.com/blog/20-pro-tips-and-tools-for-debugging-any-code)
+- [MDN - Console API](https://developer.mozilla.org/en-US/docs/Web/API/console)
+- [Kehittäjäopas: debuggaaminen JavaScriptissä](https://www.w3schools.com/js/js_debugging.asp)
+- [Debuggaus vinkkejä ja temppuja JavaScriptille](https://www.sololearn.com/learn/JavaScript/224/)

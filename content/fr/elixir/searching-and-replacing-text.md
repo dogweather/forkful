@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Recherche et remplacement de texte"
+simple_title:         "Recherche et remplacement de texte"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/searching-and-replacing-text.md"
 ---
 
@@ -9,45 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Dans le monde de la programmation, il est courant de travailler avec de grands volumes de texte et de devoir le modifier ou le remplacer. C'est là que la recherche et le remplacement de texte entrent en jeu. Dans cet article, nous allons explorer comment effectuer cette tâche en utilisant le langage de programmation Elixir.
+L'utilisation de la recherche et du remplacement de texte est un aspect essentiel de la programmation en Elixir. Cela permet de modifier et de mettre à jour rapidement et facilement du texte dans les fichiers de code, ce qui peut être particulièrement utile lors de la refacturation de grandes bases de code. Dans cet article, nous allons explorer comment effectuer des recherches et des remplacements de texte en Elixir.
 
 ## Comment faire
 
-La fonction de remplacement de texte en Elixir s'appelle `String.replace/3`. Elle prend trois arguments : la chaîne de caractères initiale, le texte à remplacer et le texte de remplacement. Voici un exemple de son utilisation :
+Pour effectuer des recherches et des remplacements de texte en Elixir, nous pouvons utiliser la fonction `String.replace/4`. Elle prend quatre arguments : la chaîne de caractères initiale, la chaîne à rechercher, la chaîne de remplacement et des options de recherche. Voici un exemple de code :
 
 ```Elixir
-texte_initial = "Bonjour le monde"
-texte_remplace = "le monde"
-texte_remplacement = "l'univers"
-
-nouveau_texte = String.replace(texte_initial, texte_remplace, texte_remplacement)
-
-IO.puts(nouveau_texte)
+phrase = "Bonjour le monde!"
+nouvelle_phrase = String.replace(phrase, "Bonjour", "Salut")
+IO.puts(nouvelle_phrase)
 ```
 
-Ce code va remplacer "le monde" par "l'univers" dans la chaîne de caractères `texte_initial` et imprimer le nouveau texte "Bonjour l'univers". 
+Cet exemple nous donne la sortie suivante : `Salut le monde!`. Comme vous pouvez le constater, la fonction `String.replace` a remplacé "Bonjour" par "Salut" dans la chaîne initiale.
 
-Il est également possible d'utiliser des expressions régulières pour effectuer des recherches et remplacements plus complexes. Par exemple, pour remplacer toutes les occurrences de lettres avec des chiffres :
+Il est également possible de spécifier des options de recherche pour une recherche et un remplacement plus précis. Par exemple, en utilisant l'option `:global`, la fonction remplacera toutes les occurrences de la chaîne à rechercher dans la chaîne initiale.
 
-```Elixir
-texte = "La réponse est 42"
+## Plongée en profondeur
 
-nouveau_texte = texte
-|> String.replace(~r/[a-zA-Z]/, "4")
-|> String.replace(~r/ ans /, "4")
+En plus de la fonction `String.replace/4`, Elixir offre également la fonction `String.replace_all/4`, qui fonctionne de la même manière, mais prend en charge des expressions régulières pour la chaîne à rechercher.
 
-IO.puts(nouveau_texte)
-
-# Résultat : "4 4 42"
-```
-
-## Plongée profonde
-
-Derrière les coulisses, la fonction `String.replace/3` utilise des fonctions de la bibliothèque standard Elixir telles que `Enum.reduce/3` et `String.upcase/1` pour faire le travail. Cela montre la puissance et la flexibilité du langage Elixir pour gérer les chaînes de caractères.
-
-De plus, pour des recherches et remplacements plus complexes, vous pouvez utiliser la bibliothèque Regex en Elixir pour créer des expressions régulières plus avancées et ainsi améliorer la précision de vos recherches et remplacements.
+De plus, Elixir dispose également de la macro `sigil_r/2` qui peut être utilisée pour effectuer des recherches et des remplacements de texte en utilisant une syntaxe plus claire.
 
 ## Voir aussi
 
-- [Documentation officielle d'Elixir sur les chaînes de caractères](https://hexdocs.pm/elixir/String.html)
-- [Documentation officielle d'Elixir sur la bibliothèque Regex](https://hexdocs.pm/elixir/Regex.html)
+- Documentation sur `String.replace`: https://hexdocs.pm/elixir/String.html#replace/4
+- Documentation sur `String.replace_all`: https://hexdocs.pm/elixir/String.html#replace/4
+- Documentation sur `sigil_r`: https://hexdocs.pm/elixir/Kernel.SpecialForms.html#sigil_R/2
+
+Merci d'avoir lu cet article sur la recherche et le remplacement de texte en Elixir ! N'hésitez pas à explorer ces différentes options et à les utiliser dans votre code pour rendre votre travail plus efficace et plus agréable.

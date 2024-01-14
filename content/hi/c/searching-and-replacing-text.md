@@ -1,51 +1,55 @@
 ---
-title:                "C: टेक्स्ट को खोजना और बदलना"
+title:                "C: टेक्स्ट खोजना और प्रतिस्थापन करना"
+simple_title:         "टेक्स्ट खोजना और प्रतिस्थापन करना"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## वजह
-यदि आप टेक्स्ट की खोज और बदलाव का सामना करना चाहते हैं, तो आपको प्रोग्रामिंग में दृष्टि से इससे बहुत फायदा होगा।
+## क्यों
+
+क्या आपने कभी टेक्स्ट में एक शब्द को दूसरे शब्द से बदलने की आवश्यकता महसूस की है? कई बार इस समस्या का सामना करने के लिए आपको पूरे दस्तावेज़ों या कोड फाइलों को नए शब्दों से बदलने की ज़रूरत हो सकती है। लेकिन क्या आपने कभी सोचा है कि ऐसे काम को कितना आसान बनाना हो सकता है? यह सब करने के लिए आपको सिर्फ एक छोटा सा कोड लिखना होगा जिसे हम 'search and replace' कहते हैं। अगर आप C प्रोग्रामिंग समझते हैं तो इस तरह के कोड लिखना आपके लिए बहुत ही आसान हो सकता है।
 
 ## कैसे करें
+
+यदि आपने कभी पहले से कोई प्रोग्रामिंग भाषा जैसे C में कोड लिखा है तो आप search and replace के बारे में बहुत सीख चुके होंगे। हालांकि अगर आप नए हैं, तो आपको चिंता करने की ज़रूरत नहीं है। आपको सिर्फ इस प्रकार का छोटा सा कोड लिखना होगा जो हमारे example.c नाम के फाइल में दिए गए है।
+
 ```C
 #include <stdio.h>
 
 int main() {
-    // टेक्स्ट स्ट्रिंग
-    char str[] = "हिंदी टेक्स्ट";
 
-    // खोज का विकल्प
-    char search = 'ट';
+    // Initializing variables
+    char text[] = "मैं एक प्रोग्रामर हूं";
+    char find[] = "प्रोग्रामर";
+    char replace[] = "नाज़दीकी दोस्त";
 
-    // बदलने का विकल्प
-    char replace = 'प';
+    // Using a loop to search and replace
+    for (int i = 0; text[i] != '\0'; i++) {
 
-    // खोज और बदलाव का लूप
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] == search)
-            str[i] = replace;
-    }
+        // Checking if current character matches with the first character of find string
+        if (text[i] == find[0]) {
 
-    // परिणाम दिखाएं
-    printf("बदलाव किया गया टेक्स्ट: %s", str);
+            int j, start = i, found = 1;
 
-    return 0;
-}
-```
+            // Checking if all characters in find match with the text
+            for (j = 0; find[j] != '\0'; j++) {
 
-### आउटपुट:
-```
-बदलाव किया गया टेक्स्ट: हिंदी पेक्स्
-```
+                // If mismatch is found, set found flag to false and break the loop
+                if (text[i] != find[j]) {
+                    found = 0;
+                    break;
+                }
 
-## गहराई में जाएं
+                i++; // Incrementing i to match with next character of find
+            }
 
-टेक्स्ट को खोज और बदलने का काम बहुत आसान लग सकता है, लेकिन इसमें गहराई समझने से बहुत फायदा होता है। जब हम कोडिंग के रूप में इस कोलेज के स्तर पर देखते हैं, तो हम प्रोग्राम्स के समझे सुलभ बदलावों को कार्यान्वित कर सकते हैं। यह में न केवल आपको प्रोफेशनल लगाता है, बल्कि आपको ज्यादा सकारात्मक रूप से सोचना स्किल को देता है।
+            // If found flag is true, replace the matched characters with replace string
+            if (found == 1) {
+                for (j = start; find[j - start] != '\0'; j++)
+                    text[j] = replace[j - start];
 
-## देखें भी
-- [स्ट्रिंग मैनिपुलेसन के बारे में सी प्रोग्रामिंग कोस्येन्स्स](https://www.freecodecamp.org/news/string-manipulation-in-c-programming-with-examples/)
-- [हिंदी स्ट्रिंग मैनिपुलेसन के बारे में](https://www.udebug.com/HINDISTRINGS)
+                i = start + j - start - 1; // Updating i to new position after the

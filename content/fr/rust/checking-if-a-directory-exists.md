@@ -1,57 +1,74 @@
 ---
-title:                "Rust: Vérifier l'existence d'un répertoire"
+title:                "Rust: Vérifier l'existence d'un répertoire."
+simple_title:         "Vérifier l'existence d'un répertoire."
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Lors de la programmation, il est souvent nécessaire de vérifier si un dossier existe avant d'effectuer certaines actions. En utilisant Rust, un langage de programmation moderne et performant, vous pouvez facilement intégrer cette fonctionnalité à votre code.
+Dans le processus de développement logiciel, il est souvent nécessaire de vérifier si un répertoire existe avant d'effectuer une action spécifique. En utilisant le langage de programmation Rust, il est possible de le faire de manière efficace et fiable. Dans cet article, nous allons expliquer pourquoi cette vérification est importante et comment la réaliser en utilisant Rust.
 
 ## Comment faire
 
-Pour vérifier si un dossier existe en Rust, vous pouvez utiliser la méthode `Path::exists()` de la bibliothèque standard. Elle renvoie un booléen indiquant si le chemin spécifié existe ou non.
+En utilisant la bibliothèque standard de Rust, il est très facile de vérifier si un répertoire existe. Tout d'abord, nous devons importer la bibliothèque `std::fs` à l'aide de la déclaration `use` suivante :
 
 ```Rust
-use std::path::Path;
+use std::fs;
+```
+
+Ensuite, pour vérifier si un répertoire existe, nous utilisons la fonction `metadata()` de la bibliothèque `std::fs` en lui passant le chemin du répertoire à vérifier en paramètre. Si la fonction renvoie une erreur, cela signifie que le répertoire n'existe pas. Sinon, cela signifie que le répertoire existe et nous pouvons procéder à l'action souhaitée. Voici un exemple de code :
+
+```Rust
+use std::fs;
 
 fn main() {
-    let path = Path::new("/chemin/vers/le/dossier"); // remplacez par le chemin que vous souhaitez vérifier
-
-    if path.exists() {
-        println!("Le dossier existe !");
+    if let Err(_) = fs::metadata("/chemin/vers/le/répertoire") {
+        println!("Le répertoire n'existe pas.");
     } else {
-        println!("Le dossier n'existe pas.");
+        println!("Le répertoire existe.");
     }
 }
 ```
 
-Si vous préférez obtenir une réponse précise sur le type de fichier, vous pouvez utiliser la méthode `Path::is_dir()` pour vérifier si le chemin spécifié est bien un dossier.
+Dans cet exemple, nous utilisons le mot-clé `if let` pour gérer le résultat de la fonction `metadata()` qui renvoie un type `Result`, soit une erreur, soit un succès.
+
+## Plongée en profondeur
+
+La fonction `metadata()` renvoie un type `Result` qui est un type énuméré avec deux variantes : `Ok` (succès) et `Err` (erreur). Pour gérer ces deux valeurs, on peut utiliser le mot-clé `match` qui nous permet d'exécuter du code spécifique en fonction de la valeur renvoyée par la fonction. Voici un exemple :
 
 ```Rust
-use std::path::Path;
+use std::fs;
 
 fn main() {
-    let path = Path::new("/chemin/vers/le/dossier"); // remplacez par le chemin que vous souhaitez vérifier
-
-    if path.is_dir() {
-        println!("Le chemin spécifié est bien un dossier !");
-    } else {
-        println!("Le chemin spécifié n'est pas un dossier.");
+    match fs::metadata("/chemin/vers/le/répertoire") {
+        Ok(_) => println!("Le répertoire existe."),
+        Err(_) => println!("Le répertoire n'existe pas."),
     }
 }
 ```
 
-## Plongée dans les détails
+Dans cet exemple, nous n'avons pas besoin d'utiliser le mot-clé `let` car nous n'avons pas besoin de stocker la valeur renvoyée par la fonction `metadata()`.
 
-Lorsque vous utilisez la méthode `Path::exists()`, il est important de garder à l'esprit que cette méthode renvoie également `true` si le chemin spécifié correspond à un fichier. Si vous n'êtes pas certain que le chemin pointe vers un dossier, vous pouvez utiliser la méthode `Path::is_dir()` pour vous assurer que le chemin est bien un dossier.
+Il est également possible d'utiliser la fonction `fs::create_dir()` pour créer un répertoire s'il n'existe pas déjà. Voici un exemple :
 
-Il est également possible de vérifier si un dossier existe à l'aide de la bibliothèque externe `std::fs`. Cette bibliothèque fournit une fonction `metadata()` qui renvoie des informations sur le fichier ou le dossier spécifié. Vous pouvez ensuite utiliser la méthode `is_dir()` sur ces informations pour vérifier si le chemin est bien un dossier.
+```Rust
+use std::fs;
+
+fn main() {
+    if let Err(_) = fs::create_dir("/chemin/vers/le/répertoire") {
+        println!("Impossible de créer le répertoire.");
+    } else {
+        println!("Le répertoire a été créé.");
+    }
+}
+```
 
 ## Voir aussi
 
-- [Documentation officielle de Rust](https://doc.rust-lang.org/std/fs/fn.metadata.html)
-- [Article sur la vérification de l'existence d'un fichier en Rust](https://blog.ophir.dev/post/4/retour-sur-la-verifcation-de-lexistence-dans-un-dossier-en-rust)
+- [La bibliothèque standard de Rust](https://doc.rust-lang.org/std/)
+- [La gestion des erreurs en Rust](https://doc.rust-lang.org/book/ch09-00-error-handling.html)

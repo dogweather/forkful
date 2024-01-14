@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Säännöllisten ilmaisujen käyttö"
+title:                "Elm: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/using-regular-expressions.md"
 ---
 
@@ -9,28 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi käyttää säännöllisiä lausekkeita?
 
-Säännölliset lausekkeet ovat tärkeä osa ohjelmoinnin maailmaa, sillä ne tarjoavat tehokkaan tavan hakea ja muokata tekstiä. Ne ovat erityisen hyödyllisiä silloin, kun tarvitsemme tarkkoja hakuja ja muokkauksia tekstissä. Elm-ohjelmointikielessä käytävät säännölliset lausekkeet ovat erittäin tehokkaita ja niitä kannattaa opetella käyttämään.
+Säännölliset lausekkeet ovat erittäin kätevä työkalu löytää ja muokata tiettyjä merkkijonoja tai tekstejä. Ne ovat hyödyllisiä esimerkiksi tietokantojen kyselyissä, lomakkeiden validoinnissa tai tiedostojen käsittelyssä. Säännölliset lausekkeet voivat säästää paljon aikaa ja vaivaa, sillä ne mahdollistavat tehokkaan ja joustavan tekstinmuokkauksen.
 
-## Kuinka käyttää säännöllisiä lausekkeita Elm-ohjelmoinnissa
+## Kuinka käyttää säännöllisiä lausekkeita Elm-ohjelmoinnissa?
 
-Säännöllisten lausekkeiden käyttö Elm-ohjelmoinnissa tapahtuu Regex-moduulin avulla. Moduuli tarjoaa useita funktioita, jotka mahdollistavat säännöllisten lausekkeiden käytön. Seuraavan esimerkin avulla voit helposti ymmärtää, kuinka säännöllisiä lausekkeita käytetään Elm-ohjelmoinnissa:
+Säännölliset lausekkeet ovat osa Elm:n yleistä `Regex`-kirjastoa, joten niiden käyttöönotto on hyvin yksinkertaista. Alla on esimerkkejä koodinpätkiä, jotka näyttävät kuinka säännöllisiä lausekkeita voi käyttää eri tilanteissa. 
 
-```Elm
-import Regex
+### Tekstin löytäminen
 
--- Etsitään sana "tervetuloa" tekstistä ja korvataan se sanalla "hei"
-teksti = "Tervetuloa Elm-maailmaan!"
-uusiTeksti = Regex.replace (Regex.regex "tervetuloa") (always "hei") teksti
--- Tulos: "Hei Elm-maailmaan!"
+```
+--etsi sana "tervetuloa" annetusta merkkijonosta
+let tervetuloa = Regex.fromString "tervetuloa"
+
+--tarkista, löytyykö tekstistä sana "tervetuloa"
+Regex.find tervetuloa "Tervetuloa uuteen kotiin!" == Just { matched = "tervetuloa"
+, index = 0
+, submatches = [] }
 ```
 
-Tässä esimerkissä tuodaan ensin Regex-moduuli ja määritellään sitten teksti, jossa haetaan ja korvataan sana. Käytämme Regex.replace-funktiota, joka ottaa ensimmäisenä parametrina etsittävän lausekkeen (Regex.regex) ja toisena parametrina muutoksen, joka halutaan tehdä (always "hei"). Lopuksi tallennamme uuden tekstin muuttujaan ja sen tuloksena saamme halutun lopputuloksen.
+### Tekstin muokkaaminen
 
-## Syvemmälle säännöllisten lausekkeiden käyttöön
+```
+--muuta kaikki numerot tekstissä "*2" -merkkijonoksi
+let muokkaus = Regex.fromString "[0-9]+"
 
-Säännöllisten lausekkeiden syvemmän ymmärtämisen kannalta on hyödyllistä tutustua Regex-moduulin tarjoamiin eri funktioihin ja niiden käyttötapoihin. Voit esimerkiksi käyttää Regex.find-funktiota, joka hakee tietystä tekstistä ensimmäisen osuman halutulle säännölliselle lausekkeelle. Voit myös käyttää Regex.split-funktiota, joka jakaa tekstin säännöllisen lausekkeen perusteella osiin.
+--palauttaa tekstin "2*2*3"
+Regex.replace muokkaus (\match -> "*2") "1*2*3" == "*2*2*3"
+```
+
+### Säännöllisten lausekkeiden yhdistäminen
+
+```
+--yhdistä sana "tervetuloa" ja "uusi koti"
+let yhdistetty = Regex.fromString "(tervetuloa).*(uusi koti)"
+
+--tarkista, löytyykö tekstistä molemmat sanat ja missä järjestyksessä
+Regex.find yhdistetty "Tervetuloa uuteen kotiin!" == Just { matched = "Tervetuloa uuteen kotiin"
+, index = 0
+, submatches = [{ matched = "Tervetuloa"
+                , index = 0 }
+              , { matched = "uuteen kotiin"
+                , index = 11 }]
+```
+
+## Syvempää tietoa säännöllisten lausekkeiden käytöstä
+
+Säännöllisten lausekkeiden käyttö vaatii hieman tutustumista RegExp-määrittelyyn ja sen eri elementteihin. Tarkempaa tietoa löytyy esimerkiksi [MDN:n sivuilta](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions) sekä [Elm:n virallisesta dokumentaatiosta](https://package.elm-lang.org/packages/elm/regex/latest/).
 
 ## Katso myös
 
-- Elm-kielessä käytettävät säännölliset lausekkeet: https://package.elm-lang.org/packages/elm/regex/latest/
-- Säännöllisten lausekkeiden opas: https://www.regular-expressions.info/
+- [Elm:n virallinen dokumentaatio](https://guide.elm-lang.org/)
+- [MDN:n sivut säännöllisistä lausekkeista](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)

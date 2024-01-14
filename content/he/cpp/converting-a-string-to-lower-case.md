@@ -1,44 +1,49 @@
 ---
-title:                "C++: המרת מחרוזת לאותיות קטנות"
+title:                "C++: כתיבת מחרוזת לצורת האותיות הקטנות"
+simple_title:         "כתיבת מחרוזת לצורת האותיות הקטנות"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-כותב: שאנו מתחילים ללמוד תכנות בשפת C++, אנו לא מתייחסים בדרך כלל לפונקציות פשוטות כמו תרגום מחרוזת לאותיות קטנות. אך למרבה המזל, השפה מציעה כמה דרכים יעילות להתמודד עם כך. במילים אחרות, כולם יכולים להצטרף לחגיגה ולתפוס את הפעולות הבסיסיות של התכנות עם C++.
+##למה:
+להמיר מחרוזת לאותיות קטנות יכול להיות שימושי כאשר מתעסקים עם טקסטים משתמשים, וזה יכול לסייע בבדיקת משתנים או לטפל בעבור מקורות טסטים שונים.
 
-##  Why
-
-למה להפוך מחרוזת לאותיות קטנות? יתרון קל מאוד להמשיך ולקרוא על זה ב – C++; זה יכול להגביר תפוקת קוד, לפשט את הדרך שבה אנו משווים מחרוזות בולייניות, ולהפיק מידע יתר ממחרוזת מסוימת.
-
-## How To
-
-תפריט פעולות הכין עבד את C++ כדי שנוכל לתאר מחרוזת בכל צורה פשוטה שתמיד היינו רוצים. הפעולות האלה הן ראשית ל-A toLower() function, ועדין לסורגי ניצול הכתוביות באמצעות <cstring> Library.
-3 סוגים של שיטות המכילות:
-
-1. אחת אם אתם משתמשים ב- getline (), המתאימה להמר לך הבגד הפרסם של המחרוזת לאותיות קטנות.
+##איך לעשות זאת:
+הקוד הבא מציג דרך פשוטה להמיר מחרוזת לאותיות קטנות באמצעות פרמטר ומחזיר את התוצאה בעזרת הפונקציה tolower( ) שלשפת סי-פלוספלוספלוספלוס:
 
 ```C++
-#include <iostream>
-#include <string>
-using namespace std; 
-int main()
-{
-    string originalString = "HELLO WORLD";
-    getline(cin, originalString);
-    for (char &c : originalString) {
-        c = tolower(c);
-    }
-    cout << originalString << endl;
-}
+std::string convertToLowercase(std::string str) 
+{ 
+    int n = str.length(); 
+    for (int i = 0; i < n; i++) { 
+        str[i] = tolower(str[i]); 
+    } 
+    return str; 
+} 
+
+int main() 
+{ 
+    std::string str = "C++ Programming"; 
+    std::cout << "Original string: " << str << std::endl; 
+    str = convertToLowercase(str); 
+    std::cout << "Converted to lowercase: " << str << std::endl; 
+    return 0; 
+} 
 ```
 
-על ה Sabine Saget נמצא;
-
-```C++
-saget
+###פלט:
+```
+Original string: C++ Programming
+Converted to lowercase: c++ programming
 ```
 
-תשתמשו בלולאה עם הסימן &: הבחנו את ארבעת המשובצים, ונבחר של אותיות שמזלזלות לקוואזי. המהיר באכותה של FARCOORDINATED ולאכזבה המשתמים לעמוד בשחרוף עם המחרוזת המתאימה. מעקפנית הקודרושות המצרים נמצאים לבעוד נליך דוויד, ומתגיעים פרשה שלהם תתעודכן ומשלהם
+##מידע עמוק:
+המרת מחרוזת לאותיות קטנות היא תהליך פשוט שקיים ברוב לשונות התכנות ומשמש פעולת בסיס עבור טיפול בטקסט. בכדי להמיר את המחרוזת לעובדת, אנו משתמשים בפונקציה tolower( ) שמקבלת כפרמטר את התו או התווים הנבחרים ומחזירה את הערך המתאים של האותיות קטנות באמצעות אסקיודים.
+
+##ראה גם:
+- תיעוד על פונקציית tolower( )של C++: https://www.cplusplus.com/reference/cctype/tolower/
+- עוד ניסיונות להמרת מחרוזת לאותיות קטנות בשפת סי-פלוספלוספלוספלוס: https://www.geeksforgeeks.org/conversion-whole-string-uppercase-lowercase-using-stl-c/

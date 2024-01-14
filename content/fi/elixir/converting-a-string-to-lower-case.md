@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Merkkijonon muuntaminen pieniksi kirjaimiksi"
+title:                "Elixir: Muunna merkkijono pieniksi kirjaimiksi"
+simple_title:         "Muunna merkkijono pieniksi kirjaimiksi"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,52 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Yksi yleisimmistä ohjelmointitehtävistä on muuttaa merkkijono pienikirjaimiseksi. Tämä voidaan tehdä useilla eri ohjelmointikielillä, mutta tänään keskitymme Elixirin tapaan muuttaa merkkijono pienikirjaimiseksi.
+Miksi haluaisit muuntaa merkkijonon pieniksi kirjaimiksi Elixir-ohjelmoinnissa? Pienet kirjaimet ovat käteviä esimerkiksi vertaillessa tekstejä, sillä ne tarjoavat tarkemmat vertailukriteerit kuin isoilla kirjaimilla.
 
-## Kuinka
+## Miten
 
-Elixirissa merkkijonon muuttaminen pienikirjaimiseksi on hyvin yksinkertaista käyttämällä "String.downcase" -funktiota. Se ottaa argumenttina merkkijonon ja palauttaa version, jossa kaikki kirjaimet ovat pienikirjaimisia. Alla on esimerkki:
-
-```Elixir
-String.downcase("TÄMÄ ON MERKKIJONO!") 
-```
-
-Tulos tulee olemaan:
+Merkkijonon muuntaminen pieniksi kirjaimiksi Elixir:ssä on helppoa. Käytä vain `String.downcase` funktiota ja anna muunnettava merkkijono sen argumenttina. Seuraavassa esimerkissä muutamme merkkijonon "TEKSTI" pieniksi kirjaimiksi:
 
 ```Elixir
-"tämä on merkkijono!"
+String.downcase("TEKSTI")
 ```
 
-Voit myös muuttaa merkkijonon ensimmäisen kirjaimen pienikirjaimiseksi käyttämällä "String.capitalize" -funktiota.
+Tämä tuottaa tuloksen "teksti". Voit myös käyttää `String.downcase/1` muotoa funktiosta, jolloin voit muuttaa useita merkkijonoja pieniksi kirjaimiksi samalla kertaa. Alla on esimerkki, jossa muutamme useita merkkijonoja kerralla:
 
 ```Elixir
-String.capitalize("merkkijono") 
+String.downcase(["TEKSTI1", "TEKSTI2", "TEKSTI3"])
 ```
 
-Tulos tulee olemaan:
+Tämä tuottaa tuloksen ["teksti1", "teksti2", "teksti3"]. Voit myös tallentaa muunnetut merkkijonot uuteen muuttujaan:
 
 ```Elixir
-"Merkkijono"
+muunnettu_merkkijono = String.downcase("TEKSTI")
 ```
 
-## Syvempi syvennys
+## Syvemmälle
 
-Elixirin "String.downcase" -funktio käyttää Unicode-tietokantoja, jotta se voi käsitellä monikielisiä merkkijonoja ja erikoismerkkejä oikein. Tämä tarkoittaa, että voit muuttaa minkä tahansa merkkijonon pienikirjaimiseksi, olipa se sitten suomen, ruotsin tai minkä tahansa muun kielen kielellä.
+Miten tämä kaikki oikeastaan toimii? Pieni kirjain vastaa ASCII-koodia 97 ja iso kirjain vastaa ASCII-koodia 65. Käytännössä `String.downcase` funktio käy läpi merkkijonon merkit ja tarkistaa jokaisen merkin ASCII-koodin. Jos merkin koodi on välillä 65-90, se muunnetaan pieneksi kirjaimeksi lisäämällä siihen 32. Muut merkit säilyvät ennallaan.
 
-Jos haluat muuttaa vain osan merkkijonosta pienikirjaimiseksi, voit käyttää "String.slice" ja "String.downcase" -funktioita yhdessä. Alla on esimerkki, jossa muutamme vain ensimmäisen sanan pienikirjaimiseksi.
-
-```Elixir
-String.slice("TÄMÄ ON MERKKIJONO!", 0..3) |> String.downcase
-```
-
-Tulos tulee olemaan:
-
-```Elixir
-"tämä ON MERKKIJONO!"
-```
+Elixir:ssä merkkijonot ovat todellisuudessa listoja merkeistä, mikä tekee niiden käsittelystä erityisen helppoa. `String.downcase` funktio muuntaa nämä merkkilistat automaattisesti pieniksi kirjaimiksi käsittelemisen aikana.
 
 ## Katso myös
 
-- Elixirin virallinen dokumentaatio merkkijonojen käsittelystä: https://hexdocs.pm/elixir/String.html
-- Elixirin oppimateriaali suomeksi: https://terokarvinen.com/2020/elixir-tiivis-opas-terokarvinenfi-luku0/
-- Elixirin viralliset verkkosivut: https://elixir-lang.org/
+- [String.downcase](https://hexdocs.pm/elixir/String.html#downcase/1)
+- [ASCII](https://fi.wikipedia.org/wiki/ASCII)

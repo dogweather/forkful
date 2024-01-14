@@ -1,40 +1,36 @@
 ---
 title:                "Gleam: Läsning av kommandoradsargument"
+simple_title:         "Läsning av kommandoradsargument"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att läsa kommandoradsargument kan vara en viktig del av att skriva effektiva och användarvänliga Gleam-program. Genom att läsa kommandoradsargument kan du ge din användare möjlighet att anpassa programmet efter deras specifika behov och preferenser. Detta gör också att programmet blir mer mångsidigt och användbart för en bredare publik.
 
-## Hur man gör det
-För att läsa kommandoradsargument i Gleam så behöver du använda funktionen `CommandLine.arguments()` som returnerar en lista av strängar. Dessa strängar representerar de argument som användaren har skrivit in när de startar programmet.
+Att läsa in kommandoradsargument kan vara en viktig del av att skapa effektiva och användbara Gleam-program. I denna bloggpost kommer vi att utforska hur man på ett enkelt sätt kan integrera kommandoradsargument i sina Gleam-program.
 
-Här är ett exempel på hur man kan använda `CommandLine.arguments()` i ett Gleam-program:
+## Så här gör du
+
+För att läsa in kommandoradsargument i Gleam använder vi funktionen `gleam/io.CommandLine.parse_args()`. Denna funktion tar emot en lista med strängar (kommandoradsargumenten) och returnerar en lista med tupler innehållande både namnet på argumentet och dess värde.
 
 ```Gleam
-function main(_arguments) {
-    arguments |> List.iter(print)
-}
+list = ['-n', '5', '-s', 'Hello']
+options = io.CommandLine.parse_args(list)
 ```
-I det här exemplet använder vi `List.iter()` för att iterera igenom listan av argument och skriva ut dem med `print()` funktionen. Om vi skulle köra detta program från kommandoraden med argumenten `hello world` så skulle output bli:
 
-```
-hello
-world
-```
-Detta visar att vi enkelt kan få tillgång till och använda kommandoradsargument i vårt Gleam-program.
+I exemplet ovan kommer `options` att innehålla `[{name: "-n", value: "5"}, {name: "-s", value: "Hello"}]`. Vi kan sedan använda oss av dessa värden i vårt program, till exempel för att sätta antalet iterationer eller hälsningsmeddelandet.
 
-## Fördjupning
-När du läser kommandoradsargument så finns det även möjlighet att göra det mer robust genom att använda en tredjepartsbibliotek som till exempel [Commando](https://github.com/RefugeesWelcome/gleam-commando). Detta kan hjälpa dig att hantera felaktiga eller ogiltiga argument och ge en bättre användarupplevelse.
+## Djupdykning
 
-Det är också värt att nämna att `CommandLine.arguments()` endast ger åtkomst till de argument som användaren skriver in när de startar programmet. Om du vill ha möjlighet att läsa argument under själva körningen av programmet så kan du använda [Environment](https://github.com/gleam-lang/environment) biblioteket.
+För de som är mer intresserade av hur kommandoradsargument fungerar i Gleam, så kan vi titta lite närmare på funktionen `gleam/io.CommandLine.parse_args()`. Denna funktion tar emot en variabel av typen `list(string)` och returnerar en variabel av typen `list({name: string, value: string})`. Den loopar igenom listan av strängar och tittar på varje enskilt argument. Om argumentet börjar med ett `-` så betraktas det som ett namn på ett kommandoradsargument, och värdet som följer kommer att vara värdet för detta argument. Om argumentet inte börjar med ett `-` betraktas det som ett värde till det föregående kommandoradsargumentet.
+
+Vi kan också använda `gleam/io.CommandLine.has_option()` för att enkelt kolla om ett visst argument finns med i listan eller inte.
 
 ## Se även
-- [Gleam Commando](https://github.com/RefugeesWelcome/gleam-commando)
-- [Gleam Environment](https://github.com/gleam-lang/environment)
 
-Vi hoppas att denna guide har hjälpt dig att förstå hur du kan läsa kommandoradsargument i Gleam och hur det kan hjälpa dig att skapa mer anpassningsbara och användbara program. Lycka till med din programmering!
+- Gleam-dokumentation för `gleam/io.CommandLine`: [https://gleam.run/documentation/standard_library#gleamioCommandLine](https://gleam.run/documentation/standard_library#gleamioCommandLine) 
+- Enkel introduktion till command line arguments på YouTube: [https://www.youtube.com/watch?v=8zXVELs8kL4](https://www.youtube.com/watch?v=8zXVELs8kL4)

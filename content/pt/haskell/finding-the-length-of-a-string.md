@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Encontrando o comprimento de uma string."
+title:                "Haskell: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/finding-the-length-of-a-string.md"
 ---
 
@@ -9,35 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação. Saber como fazer isso pode ser útil em uma variedade de cenários, desde a manipulação de dados até a formatação de saída. Além disso, é um bom exercício para fortalecer suas habilidades em Haskell.
+Existem muitos cenários em que precisamos descobrir o comprimento de uma string em Haskell, desde validar inputs do usuário até manipular texto em um programa. Saber como encontrar o comprimento de uma string é uma habilidade essencial para qualquer programador em Haskell.
 
 ## Como fazer
 
-A função `length` em Haskell pode ser usada para encontrar o comprimento de uma string. Aqui está um exemplo simples de como usá-la:
+Existem algumas maneiras diferentes de encontrar o comprimento de uma string em Haskell. Vamos começar com a abordagem mais simples, usando a função `length`:
 
-```Haskell
-main = do
-    let str = "Olá, mundo!"
-    putStrLn ("O comprimento da string é: " ++ (show (length str)))
+```
+Haskell> length "Olá mundo!"
+11
 ```
 
-A saída deste código será `O comprimento da string é: 12`, indicando que a string possui 12 caracteres. Agora, vamos ver um exemplo um pouco mais complexo que envolve a entrada do usuário:
+Essa função é uma das funções de alta ordem mais básicas em Haskell e é definida da seguinte maneira:
 
-```Haskell
-main = do
-    putStrLn "Digite uma palavra:"
-    str <- getLine
-    putStrLn ("A palavra " ++ str ++ " tem " ++ (show (length str)) ++ " letras.")
+```
+length :: [a] -> Int
+length [] = 0
+length (_:xs) = 1 + length xs
 ```
 
-Ao executar este código e digitar uma palavra, a saída será algo como `A palavra casa tem 4 letras.` Isso mostra como a função `length` pode ser usada em conjunto com outras funções e entrada do usuário para obter resultados úteis.
+A função `length` recebe uma lista e retorna o comprimento dessa lista como um número inteiro. A primeira linha da definição de tipo mostra que essa função é polimórfica e pode lidar com listas de qualquer tipo.
+
+Além da função `length`, existem outras maneiras de encontrar o comprimento de uma string em Haskell. Uma opção é usar a função `foldl`, que pode ser implementada da seguinte maneira:
+
+```
+myLength :: [a] -> Int
+myLength xs = foldl (\acc x -> acc + 1) 0 xs
+```
+
+A função `foldl` reduz uma lista aplicando uma função a cada elemento e acumulando o resultado. Neste caso, a função simplesmente adiciona 1 ao acumulador a cada iteração, resultando no comprimento final da lista.
 
 ## Mergulho profundo
 
-Embora a função `length` seja bastante simples, existem algumas coisas interessantes por trás dela. Por exemplo, ela pode ser usada em listas de outros tipos de dados, como números ou booleanos. Além disso, a função é implementada de forma recursiva em Haskell, o que pode ser um bom ponto de discussão para entender melhor como ela funciona.
+Ao usar a função `length`, é importante ter em mente que ela percorre a lista inteira, o que pode ser um problema para listas longas. Uma solução para isso é usar a função `foldl'` do módulo `Data.List`, que é otimizada para evitar chamadas recursivas desnecessárias.
+
+Outro ponto importante é a diferença entre strings e listas de caracteres em Haskell. Em Haskell, uma string é simplesmente uma lista de caracteres, portanto, as funções de lista, como `length` e `foldl`, podem ser usadas diretamente em strings.
+
+Além disso, é possível usar a sintaxe de lista de compreensão com strings em Haskell, tornando mais fácil para os programadores trabalhar com elas. Por exemplo, podemos encontrar o comprimento de uma string usando a seguinte expressão:
+
+```
+lengthStr :: String -> Int
+lengthStr str = sum [1 | _ <- str]
+```
 
 ## Veja também
 
-- [Tutorial de Haskell](https://www.haskell.org/tutorial/)
-- [Documentação da função length](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:length)
-- [Exercícios práticos de programação em Haskell](http://www.inf.ufg.br/~eden/teaching/plc/Lista-exercicios-Haskell.pdf)
+- [Documentação do Haskell](https://www.haskell.org/documentation/)
+- [Funções de alta ordem em Haskell](https://wiki.haskell.org/Function)
+- [Manipulação de strings em Haskell](https://wiki.haskell.org/Strings_as_lists)

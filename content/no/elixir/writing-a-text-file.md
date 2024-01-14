@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Å skrive en tekstfil"
+title:                "Elixir: Skrive en tekstfil"
+simple_title:         "Skrive en tekstfil"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/writing-a-text-file.md"
 ---
 
@@ -9,44 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive en tekstfil er en viktig del av programmering, og det er spesielt nyttig i Elixir. Det lar deg enkelt organisere og lagre data, noe som kan være nyttig for senere bruk.
+Velkommen til bloggen vår! I dag skal vi snakke om en grunnleggende, men viktig funksjonalitet i Elixir - å skrive en tekstfil. Å skrive en tekstfil kan virke som en enkel oppgave, men det kan være svært nyttig i mange programmeringsscenarier. La oss se nærmere på hvorfor.
 
-## Hvordan skrive en tekstfil i Elixir
+Å skrive en tekstfil lar deg lagre data og informasjon på en organisert måte. Dette kan være alt fra en liste over brukere til resultater fra et dataanalyseprogram. Dette gir deg muligheten til å hente og bearbeide data senere. Å kunne lagre og lese data fra en tekstfil er også en grunnleggende ferdighet som er viktig å kunne for å skrive mer komplekse programmer.
 
-Det første du må gjøre er å åpne en terminal og starte en Elixir-sesjon. Deretter kan du følge disse trinnene for å skrive en tekstfil:
+## Hvordan
 
-1. Opprett en ny tekstfil ved å bruke `File.open/2`-funksjonen. Du kan gi den et navn og velge å skrive til den nye filen eller overskrive en eksisterende.
+For å skrive en tekstfil i Elixir, må vi først åpne en ny fil ved hjelp av `File.open/2` funksjonen. Her kan vi gi filen et navn og spesifisere om vi ønsker å skrive eller lese fra filen. La oss se på et eksempel:
 
-```Elixir
-{:ok, file} = File.open("min_fil.txt", [:write])
+```
+File.open("min_fil.txt", [:write], fn(file) ->
+  IO.write(file, "Dette er en tekstfil skrevet med Elixir!")
+end)
 ```
 
-2. Skriv inn data i filen ved å bruke `IO.write/2`-funksjonen. Du kan også bruke `IO.puts/2` hvis du vil legge til en ekstra linje etter hvert skrevet innhold.
+Her åpner vi en fil kalt "min_fil.txt" og spesifiserer at vi vil skrive til den ved å bruke `:write` parameter. `IO.write` funksjonen lar oss skrive en streng til filen. Etter å ha kjørt koden, vil en ny fil "min_fil.txt" bli opprettet og inneholde teksten vår.
 
-```Elixir
-IO.write(file, "Dette er en tekstfil")
-IO.puts(file, "med flere linjer")
-```
+## Dypdykk
 
-3. Lukk filen ved å bruke `IO.close/1`-funksjonen. Dette sikrer at all data blir lagret og lukker filen for videre redigering.
+Nå som vi har lært hvordan vi skriver en tekstfil, la oss dykke dypere inn i dette emnet. I Elixir, kan vi også endre eksisterende tekstfiler ved å bruke `:append` parameter i `File.open/2` funksjonen. Dette lar oss legge til ny informasjon til slutten av en eksisterende fil.
 
-```Elixir
-IO.close(file)
-```
-
-## Dykk dypere
-
-Når du skriver en tekstfil i Elixir, er det også flere ting du bør være klar over:
-
-- Hvis du ikke angir modus når du åpner en fil, vil den automatisk åpne i leseskrivermodus. Dette kan føre til at data blir overskrevet hvis du ikke er forsiktig.
-- Du kan også bruke `File.write/2`-funksjonen for å skrive data direkte til en fil uten å åpne en filreferanse.
-- Hvis du vil legge til nytt innhold i en eksisterende fil, kan du bruke `File.append/2`-funksjonen.
-- Det er også mulig å skrive binære data til en fil ved å bruke `IO.binwrite/2`-funksjonen.
+Vi kan også bruke `IO.gets` funksjonen til å lese en fil linje for linje. Denne funksjonen returnerer hver linje som en streng som vi kan lagre eller behandle videre. Vi kan også bruke `IO.read` for å lese hele filen som en streng.
 
 ## Se også
 
-Hvis du vil lære mer om å skrive tekstfiler i Elixir, kan du sjekke ut disse ressursene:
-
-- [Elixir Dokumentasjon om åpning og skriving av filer](https://hexdocs.pm/elixir/File.html#open/2)
-- [Elixir Skrive Data til fil](https://elixirschool.com/lessons/basics/io/)
-- [Elixir Skrive og Les og binære data](https://elixir-lang.org/getting-started/io-and-the-file-system.html#bytes-and-char-lists)
+- [Elixir Docs: File](https://hexdocs.pm/elixir/File.html)
+- [Elixir School: File Module](https://elixirschool.com/en/lessons/basics/file/)
+- [Elixir Forum: Writing to a file](https://elixirforum.com/t/writing-to-a-file/4626)

@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Skapa slumpmässiga tal"
+title:                "Arduino: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Arduino"
-category:             "Numbers"
+category:             "Arduino"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/generating-random-numbers.md"
 ---
 
@@ -9,59 +11,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att generera slumpmässiga tal är en nyckelkomponent i många Arduino projekt. Detta kan vara användbart för att skapa variation i en loop eller för att simulera naturliga processer. Det kan också användas för att skapa slumpmässiga beslut i olika applikationer.
+Att generera slumpmässiga nummer är en vanligt förekommande uppgift inom Arduino-programmering. Det kan användas för spel, lottdragningar eller för att skapa variation i ett program. I denna bloggpost kommer vi att titta närmare på hur man enkelt kan generera slumpmässiga nummer med hjälp av Arduino.
 
-## Så här gör du
+## Hur man gör det
 
-För att generera slumpmässiga tal i Arduino, används funktionen "random(min, max)" där "min" är det lägsta värdet och "max" är det högsta värdet som det slumpmässiga talet kan ha. Nedan följer ett exempel på kod som genererar fem slumpmässiga tal mellan 0 och 10:
+För att generera slumpmässiga nummer behöver vi använda oss av en funktion som heter ```random()```. Den här funktionen tar två argument, det lägsta och högsta värdet som det slumpmässiga numret kan vara.
+
+Låt oss till exempel säga att vi vill generera ett slumpmässigt nummer mellan 1 och 10. Vi skulle då skriva:
 
 ```Arduino
-void setup() {
-    Serial.begin(9600); //startar seriell kommunikation
-}
+random(1,10); // Detta kommer att ge ett slumpmässigt nummer mellan 1 och 10
+```
 
-void loop() {
-    //genererar fem slumpmässiga tal och skickar dem till den seriella monitor för att visa resultatet
-    for (int i = 0; i < 5; i++) {
-        int num = random(0, 10) //generera ett slumpmässigt tal mellan 0 och 10
-        Serial.print("Slumpmässigt tal: ");
-        Serial.println(num); //skriv ut det slumpmässiga talet
-    }
-    delay(1000); //vänta en sekund innan nästa loop
+Vi kan också kombinera ```random()``` med en variabel för att använda det genererade numret i vårt program. Till exempel:
+
+```Arduino
+int num = random(1,10); // Genererar ett slumpmässigt nummer mellan 1 och 10 och sparar det i variabeln "num"
+```
+
+Här är ett komplett exempel på hur man kan använda ```random()``` för att blanda en spelkortlek. Koden kommer att generera ett slumpmässigt kort mellan 1 och 52 och skriva ut vilket nummer som representerar vilket kort:
+
+```Arduino
+int kort = random(1,52); // Genererar ett slumpmässigt tal mellan 1 och 52 och sparar det i variabeln "kort"
+
+if(kort <= 13){ // Om talet är mindre än eller lika med 13, så är det en spader.
+  Serial.println("Spader " + String(kort));
+}
+else if(kort <= 26){ // Om talet är mellan 14 och 26, så är det en hjärter.
+  Serial.println("Hjärter " + String(kort-13));
+}
+else if(kort <= 39){ // Om talet är mellan 27 och 39, så är det en klöver.
+  Serial.println("Klöver " + String(kort-26));
+}
+else{ // Om talet är mellan 40 och 52, så är det en ruter.
+  Serial.println("Ruter " + String(kort-39));
 }
 ```
-Output:
+
+Outputen kan se ut så här:
+
 ```
-Slumpmässigt tal: 8
-Slumpmässigt tal: 2
-Slumpmässigt tal: 0
-Slumpmässigt tal: 7
-Slumpmässigt tal: 9
+Ruter 8
 ```
 
 ## Djupdykning
 
-Arduino använder en pseudoslumpgenerator för att generera slumpmässiga tal. Detta betyder att talen inte är helt slumpmässiga, utan de genereras utifrån ett startvärde. Detta startvärde kallas "seed" på engelska och kan ändras för att få olika sekvenser av slumpmässiga tal.
-
-Om man inte specificerar ett "seed"-värde i koden så används vanligtvis det aktuella millis() värde som startvärde. Detta värde ökar med en millisekund varje gång funktionen körs, vilket betyder att en ny serie av tal genereras varje gång koden startar om.
-
-För att ändra "seed"-värdet och få en annan sekvens av slumpmässiga tal kan du använda funktionen "randomSeed()" tillsammans med ett tal som argument. Till exempel, om du vill få samma sekvens av slumpmässiga tal varje gång koden körs kan du använda millisekundvärdet vid kön/setup, som nedan:
+Om du vill ha ännu mer kontroll över de slumpmässiga numrena som genereras, kan du använda ```randomSeed(seed)```. Detta gör att du kan "fröa" slumpgeneratorn med en specifik början och på så sätt få samma följd av slumpmässiga nummer varje gång du kör koden. Här är ett exempel:
 
 ```Arduino
-void setup() {
-    randomSeed(millis()); //använd aktuellt millisec-värde som "seed"
-    //resten av koden
-}
+randomSeed(1234); // "Sår" slumpgeneratorn med numret 1234
 
-void loop() {
-    //resten av koden
-}
+// Kör sedan koden som genererar slumpmässiga nummer
 ```
-
-Det finns även andra sätt att generera slumpmässiga tal med mer komplexitet, till exempel genom att använda externa kretsar eller sensorer.
 
 ## Se även
 
-- [Arduino referens för random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [YouTube-tutorial om att generera slumpmässiga tal i Arduino](https://www.youtube.com/watch?v=z4wHYJxg54g)
-- [Projektidéer med användande av slumpmässiga tal i Arduino](https://create.arduino.cc/projecthub?by=part&type=tutorial&difficulty=&category=random-numbers&part_id=8232&sort=trending)
+- [Arduino Reference - random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Arduino Project Hub - Random Number Generator using Arduino and a Potentiometer](https://create.arduino.cc/projecthub/Annydm/random-number-generator-d0332d)
+- [Instructables - Random Number Generator using Arduino and a Keypad](https://www.instructables.com/Random-Number-Generator-Using-Arduino-and-Keypad/)

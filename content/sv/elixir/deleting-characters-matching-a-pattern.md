@@ -1,41 +1,12 @@
 ---
-title:                "Elixir: Radera tecken som matchar ett mönster"
+title:                "Elixir: Att ta bort tecken som matchar ett mönster"
+simple_title:         "Att ta bort tecken som matchar ett mönster"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-I Elixir-programmering kan det vara nödvändigt att ta bort tecken som matchar ett visst mönster, till exempel när man arbetar med strängar eller listor. Detta kan hjälpa till att rensa upp data eller förbereda det för vidare bearbetning. I denna bloggpost kommer vi att gå igenom hur man kan ta bort tecken som matchar ett visst mönster i Elixir-programmering.
-
-## Hur man gör
-För att ta bort tecken som matchar ett mönster behöver vi använda oss av funktionen `String.replace/4` i Elixir. Denna funktion tar in fyra argument: den ursprungliga strängen, det mönster vi vill matcha, det mönster vi vill byta ut de matchande tecknen med, och slutligen en flagga som talar om huruvida matchning ska ske globalt eller inte.
-
-```
-iex> String.replace("Hejsan på dig!", "a", "")
-=> "Hjsn på dig!"
-```
-
-Vi kan även använda reguljära uttryck i mönstret som en mer avancerad form av matchning. Till exempel kan vi ta bort alla siffror från en sträng genom att använda reguljära uttrycken `[:digit:]` i vårt mönster.
-
-```
-iex> String.replace("Det finns 10 kor på gården.",~r/[:digit:]/,"")
-=> "Det finns kor på gården."
-```
-
-## Djupdykning
-Förutom att ta bort tecken som enkelt matchar ett visst mönster, kan vi också använda oss av uttryck för att göra mer komplexa substitutioner. Till exempel kan vi använda uttryck för att ändra på ordningen av tecken eller ta bort ord från en sträng.
-
-En annan användbar funktion för att hantera strängar i Elixir är `String.split/2`, som delar upp en sträng baserat på ett visst separator-tecken eller mönster.
-
-```
-iex> String.split("hej,värld", ",")
-=> ["hej", "värld"]
-```
-
-## Se även
-- [Elixir dokumentation för String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
-- [Elixir dokumentation för reguljära uttryck](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir dokumentation för String.split/2](https://hexdocs.pm/elixir/String.html#split/2)
+## Varför Har du någonsin stött på en situation där du behövt ta bort tecken som matchar ett visst mönster i din Elixir-kod? Det finns flera anledningar till varför detta kan behövas, till exempel om du vill rensa bort onödiga mellanslag i en sträng eller filtrera ut vissa tecken från en lista. I den här bloggposten kommer jag att gå igenom hur du på ett effektivt sätt kan ta bort tecken som matchar ett visst mönster i Elixir-programmering.  ## Så här gör du Det finns flera olika sätt att göra detta på i Elixir, men den enklaste metoden är att använda funktionen "String.replace". Detta tillåter oss att ersätta alla tecken som matchar ett visst mönster med en annan sträng eller ta bort dem helt. Vi kan också använda regexp-uttryck för att mer specifikt välja vilka tecken som ska tas bort. Här är ett exempel på hur du kan använda String.replace för att ta bort alla mellanslag i en sträng: ```Elixir str = "Hej! Det här är en teststräng" String.replace(str, " ", "") ``` Output: "Hej!Dethärenteststräng" Som du kan se har alla mellanslag tagits bort från strängen och endast bokstäverna och utropstecknet finns kvar. Detta är bara ett enkelt exempel och det finns många andra sätt att använda String.replace för att ta bort tecken som matchar ett visst mönster.  ## Djupdykning Om du vill ha mer kontroll över vilka tecken som tas bort kan du använda regexp-uttryck för att specificera vilka tecken som ska tas bort eller behållas. Till exempel kan du använda "String.replace" tillsammans med ett regexp-uttryck för att ta bort alla siffror från en sträng: ```Elixir str = "Det finns 123 äpplen i trädet" String.replace(str, ~r/[0-9]/, "") ``` Output: "Det finns äpplen i trädet" I detta exempel använder vi ~r/[0-9]/ för att specificera att alla siffror i strängen ska tas bort. Detta ger oss en mer specifik kontroll över vilka tecken som tas bort och kan vara användbart i mer komplexa scenarier.  ## Se även Om du vill lära dig mer om regexp-uttryck och hur de kan användas för att manipulera strängar i Elixir kan du titta på följande resurser: - [Elixir School](https://elixirschool.com/en/lessons/basics/pattern-matching/#regular-expressions) - [Regex i Elixir](https://elixirschool.com/en/lessons/basics/pattern-matching/#regular-expressions) - [Officiell Elixir-dokumentation om regexp](https://hexdocs.pm/elixir/Regex.html) För mer information om andra användbara Elixir-funktioner och programmeringstips, besök gärna min blogg på [www.exampleblog.com](http://www.exampleblog.com).  ## Se även Om du vill lära dig mer om regexp-uttryck och hur de kan användas för att manipulera strängar i Elixir kan du titta på följande resurser: - [Elixir School](https://elixirschool.com/sv/lessons/basics/pattern-matching/#regular-expressions) - [Regex i Elixir](https://elixirschool.com/sv/lessons/basics/pattern-matching/#regular-expressions) - [Officiell Elixir-dokumentation om regexp](https://hexdocs.pm/elixir/Regex.html) För mer information om andra användbara Elixir-funktioner och programmeringstips, besök gärna min blogg på [www.exampleblog.com](http://www.exampleblog.com).

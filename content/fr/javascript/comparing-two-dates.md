@@ -1,58 +1,57 @@
 ---
-title:                "Javascript: Comparaison de deux dates"
+title:                "Javascript: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi comparer deux dates en JavaScript?
+##Pourquoi
 
-Comparer deux dates en JavaScript est une pratique courante dans le développement web. Cela permet de vérifier si une date est antérieure ou postérieure à une autre, ou encore de calculer la différence entre deux dates. Dans cet article, nous allons vous montrer comment comparer efficacement deux dates en utilisant du code JavaScript.
+Comparer deux dates est une tâche courante dans la programmation Javascript. Cela peut être utile pour vérifier si une date est antérieure ou ultérieure à une autre, pour calculer la différence entre deux dates, ou pour trier des données en fonction des dates. Comprendre comment comparer deux dates peut améliorer vos compétences en programmation et vous permettre de créer des fonctions plus avancées.
 
-## Comment le faire?
+##Comment faire
 
-Tout d'abord, il est important de comprendre que les dates en JavaScript sont représentées par des objets Date. Pour comparer deux dates, nous allons donc utiliser les méthodes et propriétés de ces objets.
-
-Voici un exemple de code qui compare deux dates:
+Pour comparer deux dates en Javascript, nous pouvons utiliser l'opérateur de comparaison ">", "<", ">=", "<=" ou la méthode `getTime()`. Voyons quelques exemples concrets:
 
 ```Javascript
-let date1 = new Date(); //crée une date correspondant à la date et à l'heure actuelles
-let date2 = new Date("2021-01-01"); //crée une date correspondant au 1er janvier 2021
+// Créer deux dates à comparer
+const date1 = new Date("October 6 2021");
+const date2 = new Date("October 15 2021");
 
-//comparaison des dates en utilisant les méthodes getTime() et getTimezoneOffset()
-if(date1.getTime() > date2.getTime()){
-    console.log("La date 1 est plus récente que la date 2");
-}
-else if(date1.getTime() === date2.getTime()){
-    console.log("Les deux dates sont identiques");
-}
-else{
-    console.log("La date 2 est plus récente que la date 1");
-}
+// Utiliser l'opérateur de comparaison pour vérifier si date1 est antérieure à date2
+console.log(date1 < date2); // Output: true
 
-//affichage de la différence entre les deux dates en nombre de jours
-let difference = Math.abs(date1.getTime() - date2.getTime());
-let jours = difference / (1000 * 3600 * 24);
-console.log(`Il y a ${jours} jours entre les deux dates`);
+// Utiliser la méthode getTime() pour obtenir le nombre de millisecondes depuis le 1er janvier 1970
+const time1 = date1.getTime();
+const time2 = date2.getTime();
+
+// Comparer les nombres de millisecondes
+if (time1 > time2) {
+  console.log("La date 1 est ultérieure à la date 2");
+} else {
+  console.log("La date 1 est antérieure à la date 2");
+}
+// Output: La date 1 est antérieure à la date 2
 ```
 
-Dans cet exemple, nous utilisons les méthodes getTime() pour obtenir le temps en millisecondes depuis le 1er janvier 1970, et getTimezoneOffset() pour prendre en compte les éventuels décalages horaires. Ensuite, nous utilisons des conditions pour déterminer si une date est antérieure, postérieure ou identique à l'autre, ainsi que la méthode abs() pour calculer la différence entre les deux dates.
+Dans cet exemple, nous avons utilisé l'opérateur de comparaison `<` pour vérifier si la date1 est antérieure à la date2. Nous avons également utilisé la méthode `getTime()` pour comparer les dates en utilisant leur valeur en millisecondes.
 
-## Plongée en profondeur
+##Plongée en profondeur
 
-Il est également possible de comparer des dates en utilisant des opérateurs de comparaison (>, <, ===). Cependant, cela peut poser des problèmes à cause des décalages horaires et de la façon dont JavaScript traite les objets Date. Il est donc recommandé d'utiliser les méthodes getTime() et getTimezoneOffset () pour une comparaison plus précise.
+Lorsque nous comparons des dates en Javascript, il est important de comprendre comment les dates sont représentées dans le langage. En Javascript, les dates sont stockées en tant que nombres de millisecondes écoulées depuis le 1er janvier 1970 à minuit GMT. Cela signifie que les dates antérieures à cette date auront une valeur en millisecondes négative et les dates ultérieures auront une valeur positive.
 
-De plus, il est important de noter que les mois en JavaScript commencent à partir de 0, donc janvier est représenté par 0, février par 1, et ainsi de suite. Cela peut causer des erreurs lors de la comparaison de dates si on ne fait pas attention.
+De plus, lors de la comparaison, Javascript convertit les dates en nombre de millisecondes avant de les comparer. Cela peut entraîner des résultats inattendus si les dates ont des heures différentes. Par exemple, la date "October 6 2021, 00:00:00" sera considérée comme étant antérieure à la date "October 6 2021, 12:00:00", même si elles sont le même jour.
 
-Une autre chose à prendre en compte est que certaines méthodes de comparaison peuvent renvoyer une valeur en heures, en minutes ou en secondes, selon les paramètres choisis. Il est donc important de bien lire la documentation officielle de JavaScript afin de comprendre le comportement de chaque méthode et de l'adapter en conséquence dans votre code.
+Il est donc important de prendre en compte ces différences lors de la comparaison de dates en Javascript.
 
-Enfin, il est toujours recommandé de tester votre code avec différentes dates et scénarios pour vous assurer qu'il fonctionne correctement dans toutes les situations.
+##Voir aussi
 
-## Voir aussi
+- [Documentation MDN sur les objets Date en Javascript](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date)
+- [Comparaison de dates en Javascript](https://www.digitalocean.com/community/tutorials/how-to-compare-dates-in-javascript)
+- [Opérateurs de comparaison en Javascript](https://www.tutsmake.com/compare-dates-javascript/#JavaScript_Operators_for_Date_Comparison)
 
-- [Documentation officielle sur les objets Javascript Date](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date)
-- [Différentes façons de comparer des dates en Javascript](https://flaviocopes.com/how-to-compare-dates-javascript/)
-
-En utilisant les méthodes et les connaissances présentées dans cet article, vous serez en mesure de comparer efficacement des dates en JavaScript. N'hésitez pas à explorer davantage et à approfondir vos connaissances sur les objets Date afin de les utiliser au mieux dans votre code.
+En utilisant les connaissances que nous avons acquises dans cet article, vous serez en mesure de comparer efficacement des dates en Javascript et de mieux comprendre le fonctionnement du langage. Cela vous aidera à améliorer vos compétences en programmation et à créer des fonctions plus avancées dans vos projets. N'hésitez pas à consulter les liens ci-dessus pour en savoir plus sur les objets Date et les opérateurs de comparaison en Javascript.

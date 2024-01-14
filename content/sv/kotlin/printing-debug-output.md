@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Utskrift av felsökningsutdata"
+title:                "Kotlin: Utmatning av felsökningsresultat"
+simple_title:         "Utmatning av felsökningsresultat"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/printing-debug-output.md"
 ---
 
@@ -9,46 +11,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-I många programmeringsprojekt är det ofta nödvändigt att felsöka och hitta buggar i koden. Då är det viktigt att kunna använda en effektiv metod för att felsöka och förstå vad som händer i koden. Det är här utskrift av debug-utdata kommer in i bilden. Genom att skriva ut värden och variabler vid olika stadier av programkörningen kan vi enklare spåra och identifiera eventuella fel.
+Felsökning är en viktig del av programmering som hjälper till att hitta och lösa problem i koden. Genom att skriva ut debug-utskrifter kan man enkelt få insikt i vad som händer i programmet vid olika punkter under körningen.
 
-## Hur man gör
+## Så här gör du
 
-För att skriva ut debug-utdata i Kotlin kan vi använda oss av funktionen `println()`. Detta gör att vi kan skriva ut text och värden direkt till konsolen. Här är ett exempel på hur vi kan använda oss av detta:
-
-```Kotlin
-// Skriver ut ett meddelande
-println("Hej världen!")
-
-// Skriver ut värdet av en variabel
-val namn = "Sara"
-println(namn)
-
-// Skriver ut resultatet av en beräkning
-val summa = 5 + 3
-println("Summan är $summa")
-```
-
-Det är också möjligt att skriva ut debug-utdata till en fil istället för konsolen. Detta kan vara användbart om du behöver spara utdatan för senare analys. Detta kan göras genom att använda en `PrintWriter` och skriva ut till en `File`:
+För att skriva ut debug-utskrifter i Kotlin kan man använda en enkel inbyggd funktion kallad `println()`. Denna funktion tar emot ett värde som argument och skriver ut det till konsolen. Till exempel:
 
 ```Kotlin
-val utmatningFilstig = File("debug-utmatning.txt")
-val printWriter = PrintWriter(utmatningFilstig) 
-
-// Skriver ut till filen
-printWriter.println("Felet har inträffat i linje 10")
-printWriter.close()
+val name = "Johan"
+val age = 30
+println("Hej, mitt namn är $name och jag är $age år gammal.")
 ```
 
-## Fördjupning
+Detta kommer att skriva ut följande i konsolen:
 
-Att använda utskrift av debug-utdata är ett effektivt sätt att felsöka och förstå din kod. Genom att välja ut specifika värden och variabler att skriva ut vid olika punkter i koden kan du enklare spåra och fixa eventuella fel. Det är också bra att använda denna metod för att förbättra din förståelse för hur din kod fungerar.
+```
+Hej, mitt namn är Johan och jag är 30 år gammal.
+```
 
-En annan fördel med att använda utskrift av debug-utdata är att det kan vara till hjälp i teamarbete. Om flera personer arbetar på samma projekt kan utskrift av debug-utdata bidra till att snabba upp felsökningen och undvika onödig stress.
+Man kan också skriva ut flera värden genom att separera dem med kommatecken inom samma `println()` funktion. Till exempel:
+
+```Kotlin
+val num1 = 10
+val num2 = 5
+println("Summan av $num1 och $num2 är ${num1 + num2}.")
+```
+
+Detta kommer att skriva ut följande:
+
+```
+Summan av 10 och 5 är 15.
+```
+
+## Djupdykning
+
+För att få mer detaljerad information om vad som händer i programmet kan man använda funktionen `print()` istället för `println()`. Skillnaden är att `print()` inte lägger till en ny rad efter utskriften, vilket innebär att flera utskrifter kommer att visas på samma rad. Till exempel:
+
+```Kotlin
+val num1 = 10
+val num2 = 5
+print("Nummer 1 är $num1, ")
+print("Nummer 2 är $num2 och ")
+print("summan är ${num1 + num2}.")
+```
+
+Detta kommer att skriva ut följande:
+
+```
+Nummer 1 är 10, Nummer 2 är 5 och summan är 15.
+```
+
+Det är också möjligt att formatera utskriften för att göra den mer läslig. Detta kan göras genom att använda `println()` och `print()` med formattecken som `%s` för strängar, `%d` för heltal, `%f` för flyttal och så vidare. Till exempel:
+
+```Kotlin
+val name = "Sara"
+val age = 25
+val height = 1.65
+println("%s är %d år gammal och är %.2f meter lång.".format(name, age, height))
+```
+
+Detta kommer att skriva ut följande:
+
+```
+Sara är 25 år gammal och är 1.65 meter lång.
+```
 
 ## Se även
 
-Här är några andra resurser som kan vara till hjälp när du lär dig mer om utskrift av debug-utdata i Kotlin:
+För mer information om felsökning i Kotlin och användningen av `println()` och `print()`, besök gärna följande länkar:
 
-- [Debugging and logging in Kotlin](https://www.raywenderlich.com/6408-debugging-and-logging-in-kotlin)
-- [Debugging Tool for Kotlin](https://blog.jetbrains.com/kotlin/2013/09/debugging-tools-for-kotlin/)
-- [Kotlin cheat sheet](https://kotlinlang.org/docs/reference/idioms.html#logging)
+- https://kotlinlang.org/docs/reference/basic-types.html#string-templates
+- https://www.jetbrains.com/help/idea/debugging.html#debugConsole
+- https://www.baeldung.com/kotlin-printing-debug-output

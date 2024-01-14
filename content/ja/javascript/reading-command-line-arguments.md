@@ -1,43 +1,48 @@
 ---
-title:                "Javascript: コンピュータプログラミング記事タイトル: コマンドライン引数の読み取り"
+title:                "Javascript: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは、JavaScriptプログラマーのみなさん！
-
-今日は、コマンドライン引数を読み込む方法についてお話ししたいと思います。コマンドライン引数を読み込むことは、プログラミング中に頻繁に使用される重要な機能です。プログラムをより効率的かつ柔軟に実行するためには、コマンドライン引数の読み込み方を知っておくことが重要です。
-
 ## なぜ
 
-コマンドライン引数を読み込むことで、ユーザーが実行する際にプログラムにオプションやパラメーターを与えることができます。これにより、プログラムの動作や結果をユーザーが自由に決めることができます。また、コマンドライン引数を読み込むことで、同じプログラムでも異なるオプションやパラメーターを与えることで、柔軟にプログラムを変更することができます。
+コマンドライン引数を読み取ることは、プログラムをより柔軟にするために非常に重要です。特定のパラメーターを指定することで、プログラムの挙動を変更することができます。例えば、ユーザーがプログラムに与える入力の形式を変更することができます。
 
-## 方法
+## 使い方
 
-コマンドライン引数を読み込むには、Node.jsの```process.argv```を使用します。これは、実行されたコマンドラインから入力された全ての引数を配列として取得することができます。例えば、以下のコードを実行すると、```node app.js info1 info2```というコマンドライン引数が与えられた場合、それぞれ```process.argv[2]```と```process.argv[3]```にinfo1とinfo2が入ります。
+コマンドライン引数は、プログラムの起動時に与えられるパラメーターです。コマンドライン引数を読み取るには、`process.argv`という特殊なオブジェクトを使用します。以下のコードは、コマンドライン引数を出力する簡単なプログラムの例です。
 
 ```Javascript
-console.log(process.argv[2]); // info1
-console.log(process.argv[3]); // info2
+// process.argvの中身を出力する
+console.log(process.argv);
 ```
 
-さらに、より複雑なコマンドライン引数を読み込むためには、```npm```パッケージである```minimist```を使用することができます。これは、より柔軟なオプションの指定やエラーハンドリングを行うことができるようになります。
+実際にプログラムを実行してみると、以下のように出力されるでしょう。
+
+```
+$ node index.js hello world
+[ '/usr/local/bin/node', '/Users/user/Desktop/index.js', 'hello', 'world' ]
+```
+
+この例では、`node`コマンドを使用して`index.js`ファイルを実行し、`hello`と`world`という2つの引数を与えています。`process.argv`には、最初に`node`コマンドのパス、次に実行しているファイルのパス、そして与えた引数が順番に格納されています。
 
 ## 深堀り
 
-コマンドライン引数を読み込む際に注意する点として、文字列として受け取る場合は型変換を行う必要があります。また、オプションやパラメーターの指定方法についても、ユーザーが使いやすいように工夫することが重要です。
+もっと詳しく説明すると、`process.argv`は実は配列であることがわかります。なので、配列のメソッドを使用することでコマンドライン引数をより柔軟に扱うことができます。例えば、次のコードは与えられた引数の数を出力するプログラムです。
 
-## 参考文献
+```Javascript
+// process.argvの要素数を出力する
+console.log(process.argv.length - 2);
+```
 
-- [Node.js documentation - process.argv](https://nodejs.org/api/process.html#process_process_argv)
-- [minimist - npm](https://www.npmjs.com/package/minimist)
+実際に実行してみると、引数の数に応じて出力結果が変化します。また、`process.argv`の要素をループ処理することで、より高度なプログラムを作ることも可能です。
 
-それでは、コマンドライン引数の読み込み方を学んで、より効率的なプログラミングを楽しんでください！
+## See Also
 
-## 関連リンク
-
-- [Node.jsドキュメンテーション - process.argv](https://nodejs.org/api/process.html#process_process_argv)
-- [minimist - npm](https://www.npmjs.com/package/minimist)
+- [Node.jsのドキュメント - process.argv](https://nodejs.org/api/process.html#process_process_argv)
+- [コマンドライン引数を扱う方法（Qiita）](https://qiita.com/babie/items/db718a6d241b3966110c)

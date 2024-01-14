@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Wyszukiwanie i zastępowanie tekstu"
+title:                "Elixir: Wyszukiwanie i zamiana tekstu"
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/searching-and-replacing-text.md"
 ---
 
@@ -9,36 +11,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego?
 
-Wielu programistów codziennie musi wykonywać operacje wyszukiwania i wymiany tekstu w swoim kodzie. Dzięki Elixirowi można to robić szybko i efektywnie, co zmniejsza ilość pracy i pozwala skupić się na ważniejszych zadaniach.
+Jeśli jesteś programistą lub programistką Elixir, na pewno zetknąłeś się z sytuacją, w której musiałeś/musiałaś zmienić pewien fragment tekstu w swoim kodzie. To bardzo częsta potrzeba w świecie programowania, ponieważ kod ulega zmianom i często potrzebujemy dostosować go do nowych wymagań. Dzięki prostym narzędziom dostępnym w Elixir, te zmiany mogą być szybkie i bezbolesne, co ułatwia nam pracę i pozwala oszczędzić wiele czasu. W tym artykule dowiesz się, jak w prosty sposób wyszukiwać i zmieniać tekst w kodzie Elixir.
 
 ## Jak to zrobić?
 
-Kodowanie w Elixirze jest bardzo intuicyjne i czytelne. Aby wykonać wyszukiwanie i wymianę tekstu, należy użyć funkcji `String.replace/3`. Przykładowy kod może wyglądać następująco:
+W Elixir mamy do dyspozycji funkcję `String.replace/3`, która umożliwia nam przeszukiwanie tekstu i jego zmianę. Składnia funkcji wygląda następująco:
 
 ```Elixir
-text = "Witaj, świecie!"
-text = String.replace(text, "świecie", "tu")
-IO.puts(text)
+String.replace(text, pattern, replacement)
 ```
-**Output:** "Witaj, tu!"
 
-Aby wykonać wymianę wszystkich wystąpień danego tekstu, należy dodać opcję `global: true`:
+Gdzie `text` to tekst, w którym chcemy przeprowadzić zmiany, `pattern` to wzorzec, który chcemy znaleźć, a `replacement` to tekst, który chcemy wstawić w miejsce znalezionego wzorca.
+
+Przykładowo, jeśli mamy następujący tekst:
 
 ```Elixir
-text = "25 grudnia to święto Bożego Narodzenia!"
-text = String.replace(text, "święto", "wolne", global: true)
-IO.puts(text)
+"Kocham Elixir"
 ```
-**Output:** "25 grudnia to wolne Bożego Narodzenia!"
 
-## Głębszy zanurzenie
+i chcemy zmienić słowo "Elixir" na "programowanie", możemy użyć funkcji `String.replace/3` w ten sposób:
 
-Elixir oferuje również wiele innych funkcji do manipulacji tekstem, takich jak `String.split/2` czy `String.capitalize/1`. Ze względu na dynamiczną naturę języka, można śmiało eksperymentować z różnymi funkcjonalnościami i dostosować je do swoich potrzeb.
+```Elixir
+String.replace("Kocham Elixir", "Elixir", "programowanie")
+```
 
-Należy również zauważyć, że Elixir jest językiem funkcyjnym, więc wszystkie operacje na tekście wykonują się na kopii oryginalnego tekstu, co zapobiega niepożądanym zmianom.
+W efekcie otrzymamy tekst:
 
-## Zobacz również
+```Elixir
+"Kocham programowanie"
+```
 
-- Dokumentacja Elixir: https://elixir-lang.org/getting-started/introduction.html
-- Oficjalny poradnik Elixir: https://elixir-lang.org/getting-started/introduction.html
-- Przykładowe kody i projekty w Elixirze: https://github.com/elixir-lang/elixir
+Możemy również użyć funkcji wewnątrz innej funkcji, na przykład w pozycji argumentu, co pozwala nam wprowadzać zmiany bezpośrednio w naszym kodzie. Przykładowo, jeśli mamy listę z nazwami funkcji, możemy użyć `Enum.map/2` wraz z `String.replace/3` do zmiany nazwy na pisane małymi literami:
+
+```Elixir
+["Funkcja1", "Funkcja2", "Funkcja3"] 
+|> Enum.map(&String.replace(&1, &1, String.downcase(&1)))
+```
+
+W wyniku otrzymamy listę z elementami:
+
+```Elixir
+["funkcja1", "funkcja2", "funkcja3"]
+```
+
+## Wielokrotne zmiany
+
+Czasami może się zdarzyć, że potrzebujemy przeprowadzić wiele zmian w jednym tekście. W takiej sytuacji przydatna będzie funkcja `String.replace/4`, która pozwala na przeprowadzenie wielu zmian za pomocą listy par klucz-wartość.
+
+```Elixir
+String.replace("Java jest dobra", [{"Java", "Elixir"}, {"dobra", "niesamowita"}])
+```
+
+W efekcie otrzymamy tekst:
+
+```Elixir
+"Elixir jest niesamowita"
+```
+
+## Deep Dive
+
+W Elixir mamy również dostęp do bardziej zaawansowanych funkcji, takich jak `Regex.replace/3`, która pozwala nam na przeszukiwanie tekstu za pomocą wyrażeń regularnych. W przypadku dużych i skomplikowanych zmian, korzystanie z wyrażeń regularnych może być preferowane, ponieważ daje nam większą kontrolę nad tym, co chcemy znaleźć i zmienić.
+
+## Zobacz także
+
+- Dokumentacja: https://hexdocs.pm/elixir/String.html#replace/3
+- Poradnik o wyrażeniach regularnych w Elixir: https://dev.to/mttrs/regex-in-elixir-3gdi

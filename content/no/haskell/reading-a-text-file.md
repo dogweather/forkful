@@ -1,40 +1,36 @@
 ---
-title:                "Haskell: Lesing av en tekstfil"
+title:                "Haskell: Å lese en tekstfil"
+simple_title:         "Å lese en tekstfil"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Velkommen til min blogg om Haskell-programmering! I dag skal vi snakke om lesing av tekstfiler i Haskell. Så hvorfor skal du bry deg om dette? Vel, som en programmerer, vil du ofte ha behov for å lese data fra en tekstfil for å behandle det videre i programmet ditt. Derfor er det viktig å forstå hvordan man leser tekstfiler i Haskell.
 
-Å lese en tekstfil er en vanlig oppgave i programmering, og kan være nyttig for å hente informasjon fra en ekstern datakilde. I Haskell, kan dette gjøres enkelt ved å bruke innebygde funksjoner og metoder.
-
-## Slik gjør du det
-
-For å lese en tekstfil i Haskell, må du først åpne filen ved hjelp av "openFile" funksjonen. Dette vil gi deg et "handle" objekt som representerer filen. Deretter kan du bruke funksjoner som "hGetLine" for å lese en linje av teksten om gangen, eller "hGetContents" for å lese hele teksten på én gang.
-
-```Haskell
-import System.IO
-
-main = do
-  handle <- openFile "tekstfil.txt" ReadMode
-  tekst <- hGetContents handle
-  putStrLn tekst
+## Hvordan
+For å lese en tekstfil i Haskell, må vi først åpne filen og deretter lese innholdet. Vi kan gjøre dette ved hjelp av "openFile" funksjonen. La oss se på et eksempel:
 
 ```
+main = do
+    handle <- openFile "tekstfil.txt" ReadMode
+    contents <- hGetContents handle
+    putStrLn contents
+    hClose handle
+```
 
-Koden over åpner en tekstfil ved navn "tekstfil.txt" i lesemodus, leser innholdet og skriver det ut i terminalen.
+Vi åpner her filen "tekstfil.txt" og bruker "hGetContents" funksjonen for å lese innholdet og lagre det i variabelen "contents". Deretter skriver vi ut innholdet ved hjelp av "putStrLn" funksjonen. Til slutt lukker vi filen ved å bruke "hClose" funksjonen. Ved å kjøre denne koden, vil vi få utskrevet innholdet i tekstfilen på skjermen.
 
-## Dykk dypere
+## Dypdykk
+La oss nå se nærmere på hvordan "hGetContents" funksjonen fungerer. Denne funksjonen returnerer en streng med hele innholdet i filen, men den leser ikke alt på en gang. I stedet leser den innholdet i filen etter behov, dvs når vi kaller på "putStrLn" funksjonen. Dette gjør at vi kan lese store filer uten å belaste minnet unødvendig.
 
-Haskell har mange innebygde funksjoner som gjør det enkelt å jobbe med tekstfiler. For eksempel kan du bruke "withFile" funksjonen for å sikre at filen lukkes etter at du er ferdig med å lese den. Du kan også bruke funksjoner som "hGetChar" for å lese et tegn om gangen, eller "hIsEOF" for å sjekke om du har nådd slutten av filen.
-
-Men det er også mulig å lese tekstfiler på en mer avansert måte ved å bruke funksjoner som "lines" for å lese hver linje inn i en liste, eller "words" for å lese hvert ord inn i en annen liste. Dette kan være nyttig hvis du trenger å manipulere dataene før du skriver dem ut.
+En annen tilnærming for å lese tekstfiler i Haskell er å bruke "readFile" funksjonen. Denne funksjonen tar inn filnavnet som parameter og returnerer også en streng med innholdet i filen. Forskjellen er at "readFile" funksjonen leser hele filen på en gang og lagrer det i minnet. Derfor kan dette føre til problemer hvis filen er veldig stor.
 
 ## Se også
-
-- [Offisiell Haskell dokumentasjon](https://www.haskell.org/documentation/)
-- [Haskell Wikibook](https://en.wikibooks.org/wiki/Haskell)
-- [Haskell Programmeringsspråk](https://www.haskell.org/)
+- [Haskell dokumentasjon om lesing av tekstfiler](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html#v:hGetContents)
+- [En tutorial om lesing av tekstfiler i Haskell](https://www.tutorialspoint.com/haskell/haskell_reading_files.htm)
+- [En utfyllende forklaring om hvordan "hGetContents" funksjonen fungerer](https://wiki.haskell.org/I/O_utilities#Function_hGetContents)

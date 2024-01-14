@@ -1,42 +1,41 @@
 ---
 title:                "Java: Imprimindo saída de depuração"
+simple_title:         "Imprimindo saída de depuração"
 programming_language: "Java"
-category:             "Testing and Debugging"
+category:             "Java"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/java/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração?
+Por que imprimir saída de depuração pode ser útil
+--
+Ao fazer a programação em Java, pode ser útil imprimir a saída de depuração para entender os passos do código e encontrar erros. Isso pode ajudar a identificar qual parte do código está causando problemas e encontrar uma solução mais rapidamente. Além disso, também pode ser utilizado para verificar valores de variáveis em diferentes partes do código.
 
-Imprimir saída de depuração é uma prática comum entre os desenvolvedores de Java. Ela é útil para entender o fluxo de execução do código e encontrar possíveis erros ou bugs.
+Como imprimir saída de depuração em Java
+--
+Para imprimir saída de depuração em Java, podemos usar o método `System.out.println()` seguido de uma mensagem ou expressão que desejamos imprimir. Por exemplo:
 
-## Como fazer
-
-A impressão de saída de depuração em Java é feita utilizando o método "System.out.println()". Este método permite que você imprima mensagens de texto ou variáveis ​​para a saída do sistema.
-
-Um exemplo simples de saída de depuração:
-
-```
-Java
-int numero = 10;
-System.out.println("O número é: " + numero);
+```Java
+System.out.println("Iniciando o programa de cálculo");
 ```
 
-A saída deste código seria: "O número é: 10". Isso permite que o desenvolvedor verifique se o valor da variável está correto e, se houver algum erro, identificá-lo com mais facilidade.
+Isso imprimirá a mensagem "Iniciando o programa de cálculo" na saída do console. Também podemos imprimir o valor de uma variável:
 
-É importante lembrar de remover todas as saídas de depuração antes de finalizar o código, pois elas podem afetar negativamente o desempenho do programa em produção.
+```Java
+int idade = 25;
+System.out.println("A idade é: " + idade);
+```
 
-## Detalhes técnicos
+Isso imprimirá "A idade é: 25" na saída do console. É importante notar que ao concatenar uma variável com uma String, precisamos usar o operador `+`. Além disso, também podemos imprimir a saída de depuração em diferentes partes do código para verificar a mudança nos valores da variável.
 
-Existem algumas técnicas avançadas para imprimir saída de depuração em Java, como o uso de expressões lambda no método "System.out.format()". Este método permite que você imprima valores formatados, facilitando a leitura e análise do código.
+Aprofundando na impressão de saída de depuração
+--
+Além do método `System.out.println()`, também podemos utilizar outros métodos da classe `System` para imprimir saída de depuração. Algumas opções incluem `System.out.print()` para imprimir sem quebrar linha, `System.err.println()` para imprimir saída de erro, e `System.out.printf()` para formatar a saída. Também podemos usar a biblioteca `java.util.logging` para criar logs de depuração mais detalhados.
 
-Também é possível redirecionar a saída de depuração para arquivos de log, o que pode ser útil para depurar problemas em ambientes de produção.
-
-Além disso, existem bibliotecas de terceiros que podem fornecer funcionalidades adicionais para impressão de saída de depuração, como a biblioteca "Log4j".
-
-## Veja também
-
-- [Documentação oficial do Java para System.out.println()](https://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html#println())
-- [Como imprimir saída de depuração em Java](https://www.baeldung.com/java-print-debugging)
-- [Uma visão geral do depurador de Java](https://www2.cs.duke.edu/csed/java/javanotes6/c13/debugger.html)
+Veja também
+--
+- [Java Tutorial: System.out, System.err, and System.in Streams](https://docs.oracle.com/javase/tutorial/essential/io/cl.html)
+- [How to print all variables names and values at debug-time?](https://stackoverflow.com/questions/1554760/how-to-print-all-variables-names-and-values-at-debug-time)
+- [Java Debugging with Eclipse - Print and Watch](https://www.javatpoint.com/debugging-by-print-and-watch)

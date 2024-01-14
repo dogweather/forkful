@@ -1,49 +1,43 @@
 ---
-title:                "Elm: Encontrando o comprimento de uma string."
+title:                "Elm: Encontrando o comprimento de uma sequência"
+simple_title:         "Encontrando o comprimento de uma sequência"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que
+## Por que
 
-Ao trabalhar com programação, muitas vezes nos deparamos com a necessidade de encontrar o tamanho de uma string. Isso pode ser útil em diversas situações, como validação de dados ou manipulação de texto.
+Ao trabalhar com programação, muitas vezes precisamos manipular e analisar cadeias de caracteres (strings). Uma tarefa comum é encontrar o comprimento (length) de uma string, que pode ser útil em diversas situações, como validação de formulários e manipulação de dados.
 
-# Como fazer
+## Como fazer
 
-Para encontrar o comprimento de uma string em Elm, podemos utilizar a função "length" da biblioteca String. Veja um exemplo:
+Para encontrar o comprimento de uma string em Elm, utilizamos a função `String.length`. Veja um exemplo abaixo:
 
-```
-import String
+```Elm
+nomeCompleto : String
+nomeCompleto = "João da Silva"
 
-titulo = "Eu amo programar em Elm"
-tamanho = String.length titulo
+tamanhoNome : Int
+tamanhoNome = String.length nomeCompleto
 
-Html.text (String.fromInt tamanho) -- Output: 26
-```
-
-Como podemos ver, a função "length" retorna um inteiro que representa o comprimento da string fornecida. Neste caso, a string "Eu amo programar em Elm" possui 26 caracteres.
-
-Também é possível encontrar o tamanho de uma string com a notação de ponto. Veja outro exemplo:
-
-```
-titulo = "Eu amo programar em Elm"
-tamanho = titulo.length
-
-Html.text (String.fromInt tamanho) -- Output: 26
+-- O resultado será 14, já que a string tem 14 caracteres
 ```
 
-# Mergulho profundo
+É importante lembrar que, em Elm, a função `String.length` retorna um valor do tipo `Int`. Portanto, se quisermos usar o resultado em uma expressão, devemos converter para `Float` usando a função `toFloat` ou arredondar para baixo usando `floor`.
 
-Ao trabalhar com a função "length" em Elm, é importante lembrar que ela conta o número de caracteres, incluindo espaços em branco e caracteres especiais. Por exemplo, se utilizarmos a string "Eu amo Elm", o resultado será 9, incluindo o espaço entre "amo" e "Elm".
+## Mergulho Profundo
 
-Também é importante notar que, assim como em outras linguagens de programação, a indexação de strings em Elm começa no número 0. Isso significa que o primeiro caractere de uma string terá o índice 0, o segundo terá o índice 1 e assim por diante.
+Ao utilizar a função `String.length`, é importante ter em mente que ela conta o número de caracteres, e não o número de palavras. Por exemplo, se tivermos a string `"casa de praia"`, o resultado será 13, pois há um espaço em branco entre as palavras.
 
-Por fim, é possível utilizar a função "length" em conjunto com outras funções da biblioteca String, como "slice" e "concat", para manipulação e formatação de strings de maneira eficiente.
+Além disso, a função `String.length` também conta caracteres especiais, como acentos e cedilhas. Portanto, caso precise contar apenas as letras, é necessário remover esses caracteres antes de encontrar o comprimento da string.
 
-# Veja também
+## Veja também
 
-- Documentação da função "length" em Elm: https://package.elm-lang.org/packages/elm/core/latest/String#length
-- Tutorial de Elm em português: https://devsquad.com.br/tutorial-de-elm-em-portugues/
+- Documentação oficial sobre a função `String.length` em Elm: https://package.elm-lang.org/packages/elm/core/latest/String#length
+- Como remover caracteres especiais de uma string em Elm: https://stackoverflow.com/questions/33665026/remove-special-characters-in-a-string-with-elm
+- Como converter de `Int` para `Float` em Elm: https://package.elm-lang.org/packages/elm/core/latest/Basics#toFloat
+- Como arredondar um número para baixo em Elm: https://package.elm-lang.org/packages/elm/core/latest/Basics#floor

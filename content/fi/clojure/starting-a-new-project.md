@@ -1,41 +1,41 @@
 ---
 title:                "Clojure: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Clojure"
-category:             "Getting Started"
+category:             "Clojure"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi aloittaa uusi projekti?
 
-Uuden projektin aloittaminen voi tuntua pelottavalta ja hankalalta, mutta Clojuren avulla se voi olla helpompaa kuin luulitkaan! Clojuren yksinkertainen syntaksi ja vahva yhteisö auttavat sinua luomaan laadukkaita ja skaalautuvia sovelluksia.
+On monia syitä aloittaa uusi projekti Clojure-ohjelmointikielen avulla. Clojure on dynaaminen ohjelmointikieli, joka on suosittu sekä aloittelijoiden että kokeneiden ohjelmoijien keskuudessa. Sen yksinkertainen syntaksi ja tehokkaat ominaisuudet tekevät siitä ihanteellisen valinnan uuden projektin aloittamiseen.
 
-## Kuinka aloittaa
+## Miten aloitat uuden projektin
 
-Clojuren asentaminen on helppoa, sillä se toimii monilla alustoilla ja sillä on monia työkaluja, kuten Leiningen ja Boot, jotka auttavat projektin hallinnassa. Tässä esimerkissä käytämme Leiningeniä.
-
-```Clojure
-lein new app minun_projekti
-```
-
-Tämä luo uuden projektikansion nimeltä "minun_projekti", jossa on valmiina "src" ja "test" hakemistot, joissa voit aloittaa koodauksen.
+Ensimmäinen askel uuden Clojure-projektin aloittamiseen on asentaa Leiningen-työkalu. Tämä mahdollistaa projektin hallinnan ja riippuvuuksien asentamisen helposti. Alla on esimerkki Clojure-ohjelman luomisesta ja ajamisesta:
 
 ```Clojure
+lein new app uusi-projekti
+cd uusi-projekti
 lein run
 ```
 
-Tämä komento käynnistää projektisi ja voit nyt nähdä tulosteen konsolissa.
+Tämä luo uuden projektin nimeltä "uusi-projekti" ja suorittaa sen. Voit myös luoda uuden kirjaston käyttämällä komentoa "lein new lib".
 
-## Syvempää tietoa
+Seuraavaksi voit muokata Clojure-tiedostoja käyttämällä suosittuja kehitystyökaluja, kuten Atomia tai Emacsia. Voit myös käyttää komentoriviä suorittamaan ja testaamaan koodia.
 
-Uuden Clojure-projektin aloittaminen on helppoa, mutta sen tarkempi ymmärtäminen vaatii hieman tutkimusta. Voit kuitenkin hyödyntää Clojuren laajaa yhteisöä ja dokumentaatiota, joka auttaa sinua oppimaan lisää kielen ominaisuuksista ja parhaista käytännöistä.
+## Syvällinen sukellus uuden projektin aloittamiseen
 
-Voit myös hyödyntää Clojuren monipuolisia kirjastoja ja työkaluja erilaisten ominaisuuksien toteuttamiseen. Clojuren yksinkertainen syntaksi mahdollistaa myös muiden ohjelmointikielten, kuten Java ja JavaScript, integroinnin.
+Uuden Clojure-projektin aloittaminen voi tuntua hieman ylivoimaiselta ensikertalaiselle. On tärkeää ymmärtää, että projektin rakenteella on suuri rooli projektin onnistumisessa. Hyvä tapa aloittaa on tutustua Leiningenin dokumentaatioon ja oppia, mitä kukin hakemisto ja tiedosto projektissa tekee.
+
+Lisäksi on hyödyllistä tutustua Clojure-kirjastoihin ja niiden dokumentaatioon, jotta voit valita sopivimmat työkalut projektisi tarpeisiin. Voit myös liittyä Clojure-yhteisöihin, kuten Clojure Slackiin tai Redditin Clojure-yhteisöön, joilta voit saada apua ja neuvoja projektisi kanssa.
 
 ## Katso myös
 
-- [Clojuren viralliset sivut](https://clojure.org/)
-- [Clojuren aloittelijan opas](https://clojure.org/guides/getting_started)
-- [Leiningen-työkalun dokumentaatio](https://leiningen.org/)
-- [Clojars - kirjastojen jakopalvelu](https://clojars.org/)
+- [Leiningenin dokumentaatio](https://leiningen.org/)
+- [Clojure-kirjastot](https://clojuredocs.org/libraries)
+- [Clojure Slack](https://clojurians.slack.com/)
+- [Reddit Clojure-yhteisö](https://www.reddit.com/r/Clojure/)

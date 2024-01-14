@@ -1,7 +1,9 @@
 ---
 title:                "Kotlin: Commencer un nouveau projet"
+simple_title:         "Commencer un nouveau projet"
 programming_language: "Kotlin"
-category:             "Getting Started"
+category:             "Kotlin"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/starting-a-new-project.md"
 ---
 
@@ -9,27 +11,69 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Beaucoup de gens se demandent pourquoi démarrer un nouveau projet en Kotlin. Voici la réponse : Kotlin est un langage de programmation moderne et puissant qui est de plus en plus populaire auprès des développeurs. Il offre de nombreuses fonctionnalités avancées qui permettent de créer des applications robustes et efficaces.
+Si vous êtes passionné par la programmation et que vous cherchez toujours à apprendre de nouvelles choses, alors vous pourriez envisager de démarrer un nouveau projet en Kotlin. Ce langage de programmation moderne et polyvalent offre de nombreuses possibilités et peut être un excellent moyen de développer vos compétences et votre expérience en tant que développeur.
 
-## Comment faire
+## Comment Faire
 
-Si vous êtes prêt à commencer un nouveau projet en Kotlin, il est important de comprendre les bases du langage. Voici quelques exemples de code pour vous aider à démarrer :
+Voici un exemple de code Kotlin pour démarrer un projet simple:
 
 ```Kotlin
 fun main() {
-    println("Bonjour !")
+    // Déclarer et initialiser une variable entière
+    val number = 5 
+    // Déclarer et initialiser une variable chaîne de caractères
+    val message = "Bonjour le monde!" 
+
+    // Afficher la valeur des variables dans la console
+    println("La valeur de number est $number")
+    println("Le message est: $message")
 }
 ```
- 
-Cet exemple montre comment créer une fonction qui imprime simplement le message "Bonjour !" Une fois que vous avez compris comment écrire du code en Kotlin, vous pouvez commencer à explorer toutes les fonctionnalités avancées telles que les classes, les fonctions de haut niveau et les extensions de fonctions. Nous vous suggérons de commencer par les tutoriels officiels de Kotlin afin de vous familiariser avec le langage.
 
-## Plongeon en profondeur
+La sortie de ce code sera la suivante:
+```
+La valeur de number est 5
+Le message est: Bonjour le monde!
+```
 
-Lorsque vous démarrez un nouveau projet en Kotlin, il est important de décider quelle architecture vous souhaitez utiliser. Vous pouvez opter pour l'approche traditionnelle MVC ou expérimenter avec l'architecture MVVM qui est de plus en plus populaire parmi les développeurs Kotlin. Assurez-vous également de choisir les bonnes bibliothèques et frameworks pour votre projet, en gardant à l'esprit les performances et la maintenabilité.
+Vous pouvez également utiliser Kotlin pour créer une interface utilisateur graphique en utilisant la bibliothèque Jetpack Compose. Voici un exemple de code pour afficher une simple liste de tâches dans une application:
 
-## Voir aussi
+```Kotlin
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-- [Tutoriels officiels Kotlin](https://kotlinlang.org/docs/tutorials/)
-- [Architecture MVVM en Kotlin](https://medium.com/mindorks/mvvm-architecture-in-android-kotlin-foundation-data-binding-retrofit-for-beginners-cc6320a75e41)
-- [Bibliothèques et frameworks populaires en Kotlin](https://kotlin.link/)
-- [Guide de style officiel Kotlin](https://kotlinlang.org/docs/reference/coding-conventions.html)
+        setContent {
+        MaterialTheme {
+            val tasks = listOf("Faire le ménage", "Faire les courses", "Aller à la gym")
+
+            LazyColumn {
+                items(tasks) { task ->
+                    Text(text = task, modifier = Modifier.padding(16.dp))
+                }
+            }
+            }
+        }
+    }
+}
+```
+
+La sortie de cette application sera une liste de tâches affichée à l'écran:
+
+- Faire le ménage
+- Faire les courses
+- Aller à la gym
+
+## Plongée en Profondeur
+
+Avant de commencer votre projet en Kotlin, il est important de définir clairement les objectifs et les fonctionnalités que vous souhaitez inclure. Vous devriez également prendre le temps de vous familiariser avec les caractéristiques uniques de Kotlin, telles que la nullabilité des types, les fonctions d'extension et la programmation orientée objet.
+
+De plus, il est essentiel de vous familiariser avec les principaux outils de développement pour Kotlin, tels que IntelliJ IDEA et Android Studio, ainsi que les différentes bibliothèques disponibles pour développer des applications mobiles ou web en utilisant Kotlin.
+
+## Voir Aussi
+
+Vous pouvez consulter ces liens pour en savoir plus sur Kotlin et commencer votre voyage de développement en utilisant ce langage passionnant:
+
+- [Site officiel de Kotlin](https://kotlinlang.org)
+- [Cours de Kotlin sur Udemy](https://www.udemy.com/course/kotlin-for-android-developers)
+- [Tutoriels Kotlin sur YouTube](https://www.youtube.com/playlist?list=PLsyeobzWxl7rooJFZhc3qPLwVROovGCfh)

@@ -1,79 +1,69 @@
 ---
 title:                "C: Überprüfen, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-#Warum
+## Warum
 
-Als Programmierer ist es oft notwendig, zu überprüfen, ob ein bestimmtes Verzeichnis vorhanden ist, bevor man versucht, auf Dateien oder Daten innerhalb dieses Verzeichnisses zuzugreifen. Dies ist wichtig, um sicherzustellen, dass das Programm ordnungsgemäß funktioniert und keine unerwünschten Fehler verursacht.
+Wenn Sie sich mit der Programmiersprache C beschäftigen, kann es vorkommen, dass Sie überprüfen müssen, ob ein bestimmter Verzeichnispfad existiert oder nicht. Dies kann nützlich sein, um sicherzustellen, dass Ihr Programm korrekt funktioniert und keine unerwarteten Fehler auftreten. In diesem Artikel werden wir besprechen, wie Sie in C überprüfen können, ob ein Verzeichnis existiert.
 
-#Wie überprüft man, ob ein Verzeichnis existiert
+## Wie geht es
 
-Die einfachste Möglichkeit, dies in C zu tun, ist die Verwendung der Funktion "opendir()" zusammen mit einer Bedingung, um zu überprüfen, ob das Verzeichnis erfolgreich geöffnet wurde. Hier ist ein Beispielcode:
+Um zu überprüfen, ob ein Verzeichnis existiert, können Sie die Funktion `opendir()` aus der Standardbibliothek `dirent.h` verwenden. Diese Funktion öffnet einen Verzeichnisstrom und gibt einen Zeiger auf den Strom zurück. Wenn der Verzeichnisstrom erfolgreich geöffnet wurde, wird kein NULL-Wert zurückgegeben. Andernfalls wird NULL zurückgegeben und Sie können anhand dieser Rückgabe entscheiden, ob das Verzeichnis existiert oder nicht.
 
-```
+```C
 #include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
 #include <dirent.h>
 
 int main() {
-    DIR *dir = opendir("mydirectory");
+    // Öffnen des Verzeichnisstroms
+    DIR *dir = opendir("/home/mydir");
     
-    if (dir) {
-        // Verzeichnis existiert
-        printf("Verzeichnis existiert\n");
+    // Überprüfen, ob der Verzeichnisstrom erfolgreich geöffnet wurde
+    if (dir != NULL) {
+        printf("Das Verzeichnis existiert! \n");
+        // Schließen des Verzeichnisstroms
         closedir(dir);
-    } else if (ENOENT == errno) {
-        // Verzeichnis existiert nicht
-        printf("Verzeichnis existiert nicht\n");
-        // Hier können Aktionen ausgeführt werden, um das Verzeichnis zu erstellen
     } else {
-        // Ein anderer Fehler ist aufgetreten
-        printf("Fehler beim Öffnen des Verzeichnisses\n");
+        printf("Das Verzeichnis existiert nicht! \n");
     }
+    
     return 0;
 }
 ```
 
-Beim ersten Ausführen dieses Codes wird "Verzeichnis existiert nicht" ausgegeben, da das Verzeichnis "mydirectory" noch nicht existiert. Wenn Sie dann das Verzeichnis erstellen und den Code erneut ausführen, wird "Verzeichnis existiert" ausgegeben.
+Die Ausgabe dieses Beispiels sollte "Das Verzeichnis existiert nicht!" sein, da wir hier versuchen, auf das Verzeichnis "/home/mydir" zuzugreifen, das möglicherweise nicht vorhanden ist.
 
-#Tiefere Einblicke
+## Tiefer eintauchen
 
-Wenn Sie es vorziehen, eine Funktion zu verwenden, die explizit überprüft, ob ein Verzeichnis vorhanden ist, können Sie die Funktion "access()" verwenden, die in der "unistd.h" Bibliothek definiert ist. Diese Funktion überprüft, ob auf ein bestimmtes Verzeichnis zugegriffen werden kann, indem sie die Berechtigungen überprüft. Wenn das Verzeichnis vorhanden ist und die Zugriffsrechte richtig gesetzt sind, wird die Funktion "access()" "0" zurückgeben. Andernfalls wird sie "-1" zurückgeben.
+Es ist wichtig zu beachten, dass die Überprüfung, ob ein Verzeichnis existiert, nicht unbedingt bedeutet, dass das Verzeichnis auch tatsächlich zugänglich ist. Möglicherweise fehlen bestimmte Berechtigungen oder das System kann aus anderen Gründen nicht auf das Verzeichnis zugreifen. Daher ist es ratsam, zusätzliche Überprüfungen durchzuführen, um sicherzustellen, dass das Verzeichnis nicht nur existiert, sondern auch zugänglich ist.
 
-Hier ist ein Beispielcode:
+Eine Möglichkeit, dies zu tun, ist die Verwendung der Funktion `access()` aus der Headerdatei `unistd.h`. Diese Funktion ermöglicht es Ihnen, Berechtigungen für einen bestimmten Pfad zu überprüfen. Wenn Sie beispielsweise überprüfen möchten, ob ein bestimmtes Verzeichnis lesbar ist, könnten Sie Folgendes tun:
 
-```
+```C
 #include <stdio.h>
 #include <unistd.h>
 
 int main() {
-    // Beispiel für ein vorhandenes Verzeichnis
-    if (access("mydirectory", 0) != -1) {
-        printf("Verzeichnis existiert\n");
+    // Überprüfen, ob Verzeichnis lesbar ist
+    if (access("/home/mydir", R_OK) == 0) {
+        printf("Das Verzeichnis ist lesbar!");
     } else {
-        printf("Verzeichnis existiert nicht\n");
+        printf("Das Verzeichnis ist nicht lesbar!");
     }
     
-    // Beispiel für ein nicht vorhandenes Verzeichnis
-    if (access("nonexistentdir", 0) != -1) {
-        printf("Verzeichnis existiert\n");
-    } else {
-        printf("Verzeichnis existiert nicht\n");
-    }
     return 0;
 }
 ```
 
-Dieser Code gibt "Verzeichnis existiert" für "mydirectory" und "Verzeichnis existiert nicht" für "nonexistentdir" aus.
+## Siehe auch
 
-#Siehe auch
-
-- [Liste der C Bibliotheken](https://de.wikipedia.org/wiki/Liste_von_C-Bibliotheken)
-- [Verzeichnis erstellen in C](https://www.educative.io/edpresso/how-to-create-a-directory-in-c)
-- [Übersicht über Datei- und Verzeichnisoperationen in C](https://dev.to/victoria/overview-of-file-and-directory-operations-in-c-l8b)
+- Die offizielle Dokumentation der Funktion `opendir()`: https://man7.org/linux/man-pages/man3/opendir.3.html
+- Weitere Informationen zur Funktion `access()`: https://linux.die.net/man/2/access
+- Eine Anleitung zur Verwendung von Datei- und Verzeichnisfunktionen in C: https://www.cprogramming.com/tutorial/c/lesson9.html

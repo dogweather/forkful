@@ -1,7 +1,9 @@
 ---
 title:                "Rust: בדיקת קיום תיקייה"
+simple_title:         "בדיקת קיום תיקייה"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/checking-if-a-directory-exists.md"
 ---
 
@@ -9,40 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-כדי לוודא שתיקיית העבודה קיימת וניתן לגשת אליה. זה יכול להיות שימושי בפרויקטי פיתוח שבהם קובצים מפורסמים לתיקייה זו.
+האם אתם נתקלים במצבים שבהם אתם צריכים להבין אם תיקייה קיימת במקום מסוים במחשב שלכם? כמו במצבים שבהם אתם רוצים ליצור תיקייה חדשה אבל רוצים לוודא שהתיקייה לא קיימת כבר? במאמר הזה נלמד כיצד לבדוק אם תיקייה קיימת ב-Rust ונבין למה זה חשוב.
 
+## כיצד לעשות זאת
 
-## איך לבדוק אם תיקייה קיימת ב-Rust
+בכדי לבדוק האם תיקייה קיימת ב-Rust, נצטרך להשתמש בפונקציה נקראת `Path::is_dir()` שמקבלת את הנתיב של התיקייה כפרמטר ומחזירה בערך בוליאני המציין האם התיקייה קיימת או לא. לפניכם תוצאה נכונה של קוד שהוסבר:
 
-המתקדם ביותר הולך על ידי שימוש בפונקציית `fs::metadata` כדי לקבל נתוני מטא-פרטים על הקובץ או התיקייה. הנה דוגמא קטנה:
+```Rust
+use std::path::Path;
+
+fn main() {
+  let dir_path = Path::new("my_directory");
+  if dir_path.is_dir() {
+    println!("The directory exists!");
+  } else {
+    println!("The directory does not exist");
+  }
+}
+```
+
+אם תיקיית "my_directory" קיימת, המסר "The directory exists!" יודפס למסך. אחרת, יודפס "The directory does not exist". כעת נראה דוגמה נוספת של תרגיל שבו אנו בודקים אם אנו יכולים ליצור תיקייה עם אותו השם של התיקייה שבדקנו אם היא קיימת:
 
 ```Rust
 use std::fs;
 
 fn main() {
-    let file = fs::metadata("תיקיית העבודה").expect("לא ניתן לגשת לתיקייה");
-    println!("{:?}", file.is_dir()); // יציאה צפויה: תמיד true או false
+  let dir_path = Path::new("my_directory");
+  if dir_path.is_dir() {
+    println!("Can't create directory, it already exists");
+  } else {
+    fs::create_dir(dir_path).unwrap();
+    println!("Directory created successfully");
+  }
 }
 ```
 
-כפי שניתן לראות, אנו בודקים אם האובייקט `file` המכיל את נתוני מטא-פרטים הוא תיקייה או לא על ידי שימוש בפונקציה `is_dir`. אם התיקייה קיימת, הפלט יהיה `true` ואם לא, הפלט יהיה `false`.
+במקרה זה, אם התיקייה "my_directory" קיימת, יודפס מסר התראה שלא ניתן ליצור את התיקייה כיוון שהיא כבר קיימת. אחרת, התיקייה תיווצר בהצלחה וידפס מסר ההודעה "Directory created successfully".
 
-כמו כן, אם אתם מעוניינים לבדוק אם קיימת תיקייה מסוימת בתוך תיקיית העבודה הנוכחית, ניתן להשתמש בפונקציית `fs::read_dir` כדי לקבל את רשימת הקבצים והתיקיות הקיימים בתיקייה זו. הנה דוגמא:
+## בירור מעמיק
 
-```Rust
-use std::fs;
-
-fn main() {
-    let paths = fs::read_dir("תיקיית העבודה").expect("לא ניתן לגשת לתיקייה");
-    for path in paths {
-        let dir = path.as_ref().unwrap();
-        println!("לתיקייה-שם: {}", dir.file_name().to_string_lossy());
-    }
-}
-```
-
-בקוד הזה אנו משתמשים בלולאה כדי לעבור על רשימת הקבצים והתיקיות הקיימים בתיקיית העבודה ומדפיסים את שמותיהם.
-
-## מבוא עמוק
-
- ב-Rust, כדי לבדוק אם תיקייה קיימת אנו משתמשים בפונקציות של המודול `std::fs` וכן בתכונות של אובייקטים נת
+ניתן גם לבדוק אם תיקייה קיימת באמצעות הפונקציות `Path::exists()` ו-`Path::is_file()`. פונקציית `Path::exists()` מחזירה בוליאני המציין האם ה

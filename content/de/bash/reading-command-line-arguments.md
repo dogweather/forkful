@@ -1,52 +1,52 @@
 ---
-title:                "Bash: Das Lesen von Befehlszeilenargumenten"
+title:                "Bash: Lesen von Befehlszeilenargumenten"
+simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum 
 
-In der Welt der Programmierung gibt es eine Vielzahl von Werkzeugen und Technologien. Eines davon ist die Bash-Programmierung, die für die Arbeit mit der Bash-Befehlszeile verwendet wird. Eine wichtige Fähigkeit bei der Bash-Programmierung ist das Lesen von Befehlszeilenargumenten. In diesem Blog-Beitrag werden wir uns genau anschauen, warum es wichtig ist, diese Fähigkeit zu beherrschen.
+Das Lesen und Verstehen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für jeden, der sich mit der Bash-Programmierung beschäftigt. Es ermöglicht die Verwendung von Befehlszeilenoptionen, die Programmabläufe steuern und die Effizienz des Codes verbessern können.
 
-## Wie geht das?
+## How To 
 
-Das Lesen von Befehlszeilenargumenten ist eine Methode, die es uns ermöglicht, Eingaben von Benutzern zu akzeptieren und diese in unserem Code zu verarbeiten. Wir verwenden dafür das `$@` Variable in Bash, die alle Befehlszeilenargumente als einzelne Wörter speichert.
+Befehlszeilenargumente werden durch die Verwendung von speziellen Variablen in der Bash-Skriptdatei aufgenommen. Die gebräuchlichste Variable ist "$1", die das erste Argument nach dem Skriptnamen repräsentiert. Weitere Argumente können durch die Verwendung von "$2", "$3" usw. abgerufen werden. 
 
-Um dies zu veranschaulichen, betrachten wir ein einfaches Beispiel. Angenommen, wir haben ein Skript mit dem Namen `hello.sh`, das eine persönliche Begrüßung ausgibt. Hier ist der Code dafür:
-
-```Bash
-#!/bin/bash
-echo "Hallo $1, wie geht es dir?"
-```
-
-Um dieses Skript auszuführen, benötigen wir einen Befehlszeilenargument, der unseren Namen enthält. Wir können dies tun, indem wir folgenden Befehl ausführen:
+Das folgende Beispiel zeigt, wie ein Skript mithilfe von Befehlszeilenargumenten aufgerufen werden kann: 
 
 ```Bash
-./hello.sh "Max"
+#!/bin/bash 
+echo "Das Skript wurde mit folgenden Argumenten aufgerufen:" 
+echo "Das erste Argument ist: $1" 
+echo "Das zweite Argument ist: $2" 
+echo "Das dritte Argument ist: $3" 
 ```
 
-Der Output würde dann wie folgt aussehen:
+Wenn dieses Skript als "argumente.sh" gespeichert und mit den Argumenten "Hallo Welt" aufgerufen wird, lautet die Ausgabe: 
 
-```Bash
-Hallo Max, wie geht es dir?
+```
+$ ./argumente.sh Hallo Welt 
+Das Skript wurde mit folgenden Argumenten aufgerufen: 
+Das erste Argument ist: Hallo 
+Das zweite Argument ist: Welt 
+Das dritte Argument ist: 
 ```
 
-Hier sehen wir, wie das Befehlszeilenargument `Max` an die Variable `$1` übergeben wurde und in unserem Output verwendet wurde.
+Beachten Sie, dass das Leerzeichen als Trennzeichen zwischen den Argumenten verwendet wird. Wenn ein Argument Leerzeichen enthält, muss es in Anführungszeichen gesetzt werden, um als einzelnes Argument erkannt zu werden. 
 
-## Tiefergehende Informationen
+## Deep Dive 
 
-Das Lesen von Befehlszeilenargumenten ermöglicht es uns, dynamischere und interaktivere Skripte zu schreiben. Wir können verschiedene Szenarien und Eingaben von Benutzern berücksichtigen und unser Skript entsprechend anpassen.
+Es gibt viele nützliche Funktionen und Techniken, die verwendet werden können, um Befehlszeilenargumente in Bash-Skripten zu lesen. Zum Beispiel können die in "$@" gespeicherten Argumente verwendet werden, um alle Argumente als Liste abzurufen. Auch können Bedingungen und Schleifen verwendet werden, um bestimmte Argumente zu überprüfen oder zu durchlaufen.
 
-Es gibt auch verschiedene Möglichkeiten, mit Befehlszeilenargumenten umzugehen, wie zum Beispiel das Überprüfen auf die Anzahl der Argumente oder das Verarbeiten von Optionen. Eine tiefere Auseinandersetzung mit diesen Themen würde den Rahmen dieses Blog-Beitrags sprengen, aber es ist definitiv ein wichtiger Aspekt der Bash-Programmierung, der es wert ist, weiter erforscht zu werden.
+Es gibt jedoch auch einige Dinge zu beachten beim Lesen von Befehlszeilenargumenten in Bash. Zum Beispiel können leere Argumente oder Sonderzeichen wie "*" Probleme verursachen. Es ist daher wichtig, immer auf eine sichere Eingabebehandlung zu achten und sicherzustellen, dass das Skript nicht anfällig für Sicherheitsrisiken ist.
 
-## Siehe auch
+## Siehe auch 
 
-- [Bash-Argumentverarbeitung](https://www.tldp.org/LDP/abs/html/internalvariables.html#ARGLIST)
-- [Bash-Parametererweiterungen](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
-
-Schlussfolgerung
-
-Das Lesen von Befehlszeilenargumenten ist eine grundlegende Fähigkeit in der Bash-Programmierung, die es uns ermöglicht, interaktive Skripte zu schreiben und Benutzereingaben zu verarbeiten. Wir haben in diesem Blog-Beitrag einige Beispiele gesehen und einen Einblick in die verschiedenen Möglichkeiten bekommen, wie wir Befehlszeilenargumente nutzen können. Wir hoffen, dass dieser Beitrag dazu beigetragen hat, Ihr Verständnis für dieses wichtige Konzept zu vertiefen.
+- [Bash-Referenzhandbuch: Lesen und Verwenden von Befehlszeilenargumenten](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion)
+- [Bash-Skripte schreiben: Verwendung von Befehlszeilenargumenten](https://www.shellscript.sh/command-line.html)
+- [10 praktische Beispiele für die Verwendung von Befehlszeilenargumenten in Bash-Skripten](https://linuxhint.com/argument_handling_bash/)

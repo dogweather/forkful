@@ -1,44 +1,48 @@
 ---
-title:                "C: डिबग आउटपुट प्रिंट करना"
+title:                "C: डीबग प्रिंटिंग"
+simple_title:         "डीबग प्रिंटिंग"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun
+## क्यों
+डीबग आउटपुट को प्रिंट करने का कार्य क्यों करना है, यह केवल 1-2 वाक्यों में समझाया जा सकता है।
 
-Kabhi kabhi hum apne program mein kuch gadbad ho jaati hai aur humme pata nahi hota ki kya chal raha hai. Iske liye, hum debug output ka istemaal karte hain. Debug output ki madad se hum apne program ke har step ko dekh sakte hain aur kisi issue ko identify kar sakte hain. Isse humme apne program ko sahi tarike se chalane mein madad milti hai. 
-
-## Kaise Karein
-
-Debug output ka istemaal karne ke liye, hum `printf` function ka upyog karte hain. Is function ka istemaal humme apne program mein kuch values ya variables ko print karne ki anumati deta hai. Yahan hum ek simple example dekhenge:
+## कैसे करें
+आउटपुट को प्रिंट करने के लिए आपको कोड में `printf()` या `fprintf()` फंक्शन का उपयोग करना होगा। यहां एक उदाहरण है:
 
 ```C
-#include <stdio.h> 
-int main() 
-{ 
-    int num1 = 5;
-    int num2 = 10;
-    printf("The value of num1 is %d\n", num1);
-    printf("The value of num2 is %d\n", num2);
-    return 0; 
-} 
+#include <stdio.h>
+
+int main()
+{
+    int num = 10;
+    char str[] = "Hello World!";
+    
+    // Printing integer variable
+    printf("Value of num is %d\n", num);
+    // Printing string variable
+    printf("String: %s\n", str);
+    
+    return 0;
+}
 ```
-Is code mein humne `printf` function ka istemaal kiya hai aur `num1` aur `num2` variables ke values ko print kiya hai. Is tarah se hum apne program ke different sections mein output ko dekh sakte hain aur kisi issue ko identify kar sakte hain.
 
-## Gehraai Mein Jaaen
+आउटपुट:
+```
+Value of num is 10
+String: Hello World!
+```
+इस उदाहरण में, हमने `printf()` फंक्शन का उपयोग करके एक नंबर और एक स्ट्रिंग को प्रिंट किया है। आप इस तरह से किसी भी प्रकार की वेरिएबल को प्रिंट कर सकते हैं।
 
-Debug output ka istemaal karna ek bahut hi useful technique hai jisme hum apne program ko aur bhi gehraai se samajh sakte hain. Hum apne program mein `printf` statement ko multiple baar use kar sakte hain aur different variables aur values ko compare kar sakte hain. Isse humme kisi specific issue ko pinpoint karne mein madad milti hai.
+## गहराई में पता करें
+जब आप अपने कोड में डीबग आउटपुट स्टेटमेंट डालते हैं, तो आप अपने प्रोग्राम के भागों को सुलझा सकते हैं और अपने कोड को सही कर सकते हैं। यह आपको एक अधिक सक्रिय डेवलपर बनाता है। आप डीबग आउटपुट को इस्तेमाल करके अपने कोड के कई दुबारा चलने की जरूरत नहीं होती।
 
-Iske alawa, hum apne program mein `#ifdef` aur `#ifndef` pre-processor directives ka istemaal karke bhi debug output enable aur disable kar sakte hain. Agar hum debug output ko disable karna chahte hain, toh hum `#ifdef` directive ka upyog karte hain, aur agar enable karna chahte hain toh `#ifndef` ka upyog karte hain.
-
-## Dekhen Bhi
-
-Ab aap jaan chuke hain ki debug output kya hai aur kaise aap iska upyog kar sakte hain. Agar aap aur gehraai se jaana chahte hain toh neeche diye gaye articles ko padh sakte hain:
-
-- [Difference between printf and fprintf in C programming](https://www.geeksforgeeks.org/difference-printf-fprintf-c-language/)
-- [A Visual Explanation of C Used in a Printf Statement](https://www.youtube.com/watch?v=1jXNAGogKqI)
-
-Dhanyawaad!
+## देखें भी
+* [डीबग आउटपुट का उपयोग करने के लिए पूरा गाइड](https://www.tutorialspoint.com/cprogramming/c_input_output.htm)
+* [डीबगिंग सिर्फ दूर तक नहीं है](https://medium.com/@saigowthamr/mail-me-if-you-are-lost-during-debugging-cf1bba78bf63)
+* [कोड को कैसे डीबग करें](https://www.javatpoint.com/cpp-debugging-program)

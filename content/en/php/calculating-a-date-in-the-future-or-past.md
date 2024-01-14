@@ -1,46 +1,43 @@
 ---
 title:                "PHP recipe: Calculating a date in the future or past"
+simple_title:         "Calculating a date in the future or past"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/php/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Have you ever needed to calculate a date in the future or past while coding in PHP? Maybe you are building a scheduling application or need to display future event dates. Whatever the reason may be, learning how to effectively calculate dates in PHP can save you time and make your code more efficient.
+Calculating dates in the future or past is a common task in programming, especially when working with events or scheduling. Being able to accurately determine a date in the future or past allows for better organization and planning in various projects.
 
 ## How To
-Calculating dates in PHP is actually quite simple, thanks to the built-in Date and Time functions. To calculate a date in the past or future, we first need to create a Date object using the `date_create()` function. We can then use the `date_modify()` function to add or subtract any amount of time from the original date. Let's take a look at an example:
+To calculate a date in the future or past, you will need to start with the current date and then use PHP's date functions to manipulate it. For example, if you want to calculate a date 5 days in the future, you can use the `strtotime()` function to add 5 days to the current date.
 
 ```
 <?php
-$date = date_create("2021-01-01");
-date_modify($date, "+7 days");
-echo date_format($date, "Y-m-d");
+
+$current_date = date('Y-m-d'); // Get current date
+$future_date = date('Y-m-d', strtotime('+5 days', strtotime($current_date))); // Calculate date 5 days in the future
+echo $future_date; // Output: 2021-07-06
 ```
-
-This code will output `2021-01-08`, which is 7 days after the original date of January 1st, 2021. As you can see, we used the `date_modify()` function to add 7 days to the original date. We can also use this function to subtract time, by using a `-` before the amount (e.g. `"-2 weeks"`).
-
-We can also use the `strtotime()` function to modify dates. This can be useful if we want to add or subtract more specific increments, such as 2 weeks and 3 days. Let's take a look at an example:
+Similarly, if you want to calculate a date in the past, you can use the `strtotime()` function with a negative value. For instance, to get the date 2 weeks ago, you can use `-2 weeks` as the second parameter.
 
 ```
 <?php
-$date = date_create("2021-01-01");
-date_modify($date, "2 weeks 3 days");
-echo date_format($date, "Y-m-d");
-```
 
-This code will output `2021-01-17`, which is 2 weeks and 3 days after the original date. As you can see, we used the `date_modify()` function with a specific increment to modify the date.
+$current_date = date('Y-m-d'); // Get current date
+$past_date = date('Y-m-d', strtotime('-2 weeks', strtotime($current_date))); // Calculate date 2 weeks ago
+echo $past_date; // Output: 2021-06-15
+```
 
 ## Deep Dive
-While these examples give a basic understanding of how to calculate dates in PHP, there are many more functions and methods that can be used for more complex calculations. For example, the `DateTime` class has a `diff()` method that allows you to find the difference between two dates, as well as the `add()` and `sub()` methods for adding or subtracting time. It's important to also consider the use of timezones and daylight saving time when calculating dates, as this can affect the results.
+PHP offers a variety of date functions that can be used to perform different calculations. Some of the commonly used ones include `strtotime()`, `date()`, `strtotime()` and `mktime()`. It's important to pay attention to the format of the date when using these functions as it can affect the result.
 
-In addition, using the `mktime()` function allows you to create a Unix timestamp, which can then be converted into a date using the `date()` function. This can be useful for comparing dates and performing more advanced calculations.
-
-Overall, calculating dates in PHP may seem daunting at first, but with some practice and knowledge of the built-in Date and Time functions, it becomes a valuable skill to have in your programming toolbox.
+Another important thing to note is that PHP's date functions are dependent on the server's time zone. It's recommended to set the correct time zone in your PHP settings to avoid any discrepancies in date calculations.
 
 ## See Also
-- [PHP Manual: Date and Time Functions](https://www.php.net/manual/en/ref.datetime.php)
-- [W3Schools PHP Date and Time](https://www.w3schools.com/php/php_date.asp)
-- [PHP DateTime class](https://www.php.net/manual/en/class.datetime.php)
+- PHP date functions: https://www.php.net/manual/en/ref.datetime.php
+- Formatting date and time in PHP: https://www.php.net/manual/en/function.date.php
+- Setting time zone in PHP: https://www.php.net/manual/en/function.date-default-timezone-set.php

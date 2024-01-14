@@ -1,40 +1,51 @@
 ---
 title:                "Fish Shell: Jämförande av två datum"
+simple_title:         "Jämförande av två datum"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför 
+Att jämföra två datum är en användbar funktion inom Fish Shell som kan hjälpa dig att organisera och hantera dina filer och projekt bättre. Det kan även vara användbart för att säkerställa att du inte råkar arbeta med föråldrade filer eller glömmer viktiga frister.
 
-Att jämföra två datum är en vanlig uppgift inom programmering, och kan vara användbart för att sortera och filtrera data, eller för att kontrollera om vissa åtgärder ska utföras baserat på datum. I denna bloggpost kommer vi att utforska hur man jämför två datum i Fish Shell.
+# Hur man gör
+För att börja jämföra två datum i Fish Shell, behöver du använda kommandot "date" följt av de två datum du vill jämföra. Se till att skriva datumen i formatet "ÅÅÅÅ/MM/DD" för att undvika förvirring.
 
-## Så här gör du
-
-För att jämföra två datum i Fish Shell, behöver vi först konvertera dem till formatet som Fish Shell förstår. Detta kan göras med hjälp av `date` kommandot och flaggorna `-f` för att ange formatet och `-j` för att returnera datumet i Unix-timestamp format. Låt oss titta på ett exempel:
-
-```
-set start_date (date -f %Y-%m-%d -j 2021-01-01)
-set end_date (date -f %Y-%m-%d -j 2021-12-31)
+```Fish Shell
+date 2019/05/01
+date 2020/10/15
 ```
 
-I detta exempel har vi definierat två variabler som innehåller start- och slutdatum i Unix-timestamp format. Nu kan vi jämföra dem med hjälp av Fish Shell's `test` kommando och flaggan `-gt` för större än. Om startdatumet är större än slutdatumet, kommer testet att returnera `true`:
+Detta kommer att returnera ett resultat som jämför de två datumen och visar vilket av dem som är tidigare.
 
 ```
-test $start_date -gt $end_date; echo $status
+ons 01 maj 2019 00:00:00 CEST
+tor 15 okt 2020 00:00:00 CEST
 ```
 
-Outputen av detta kommer att vara `1`, vilket betyder att testet returnerade `false`.
+Det är viktigt att notera att Fish Shell använder ditt lokala tidsformat för att visa resultatet, så resultatet kan se annorlunda ut beroende på var du befinner dig i världen.
 
-## Djupdykning
+# Djupdykning
+Förutom att bara jämföra två datum kan du också använda Fish Shell för att beräkna skillnaden mellan dem. Detta kan vara särskilt användbart när du behöver hålla koll på hur många dagar som återstår till en viktig deadline.
 
-När du jämför två datum i Fish Shell, är det viktigt att se till att de är i samma format. Om de har olika format, kommer jämförelsen att ge felaktiga resultat. Dessutom bör man vara medveten om att datumen kan inkludera tidsinformation, vilket kan påverka jämförelsen. Det är alltid bäst att konvertera datumen till Unix-timestamp format för att undvika felaktigheter.
+Ett exempel på hur du kan göra detta är genom att använda kommandot "date -d" följt av datumen du vill jämföra. Resultatet kommer att visa hur många dagar det är mellan datumen.
 
-Det finns också andra sätt att jämföra datum i Fish Shell, såsom att använda `sort` kommandot med flaggan `-n` för numeriskt sorterade och sedan välja det första eller sista värdet för att jämföra med det önskade datumet.
+```Fish Shell
+date -d 2020/01/01 -d 2020/01/15
+```
 
-## Se även
+```
+14
+```
 
-- [Fish Shell Date Kommando](https://fishshell.com/docs/current/commands.html#date)
-- [Unix Timestamp](https://www.unixtimestamp.com/index.php)
+Du kan också göra mer komplicerade jämförelser genom att använda standard Unix-verktyg som "diff" eller "grep" tillsammans med "date" kommandot.
+
+# Se även
+Här är några användbara länkar för att lära dig mer om hur du jämför datum i Fish Shell:
+- [Fish Shell dokumentation](https://fishshell.com/docs/current/cmds/date.html)
+- [Jämföra tidsintervall i Fish Shell](https://fishshell.com/docs/current/cmds/seq.html#comparing-time-intervals)
+- [Beräkna skillnaden mellan två datum i Fish Shell](https://askubuntu.com/questions/921529/how-do-i-calculate-the-difference-between-two-dates)

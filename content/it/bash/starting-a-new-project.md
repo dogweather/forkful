@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Iniziare un nuovo progetto"
+title:                "Bash: Avviare un nuovo progetto"
+simple_title:         "Avviare un nuovo progetto"
 programming_language: "Bash"
-category:             "Getting Started"
+category:             "Bash"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/bash/starting-a-new-project.md"
 ---
 
@@ -9,47 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Ci sono molte ragioni per iniziare un nuovo progetto con Bash. Potresti voler automatizzare un compito ripetitivo, creare uno script per semplificare il tuo lavoro quotidiano o semplicemente aumentare le tue abilità di programmazione. Indipendentemente dal motivo, imparare a programmare in Bash può essere molto utile e divertente.
+Sei pronto per iniziare un nuovo progetto di programmazione ma non sai da dove cominciare? Questo articolo è qui per aiutarti ad affrontare la programmazione di Bash con sicurezza e competenza.
 
-## Come fare
+## Come si fa
 
-Per iniziare un nuovo progetto in Bash, è necessario seguire alcuni passaggi fondamentali:
-
-1. Assicurarsi di avere Bash installato sul proprio computer. Puoi verificare la versione di Bash utilizzando il comando `bash --version` nel terminale.
-2. Scegliere un editor di testo per scrivere il codice. Alcune delle opzioni più comuni sono `vim`, `nano` o `emacs`.
-3. Creare un nuovo file con l'estensione `.sh` per indicare che si tratta di uno script Bash.
-4. Aggiungere la prima riga di codice `#!/bin/bash` per indicare al sistema che l'eseguibile corretto per interpretare il codice è Bash.
-5. Scrivere il codice all'interno del file utilizzando la sintassi di Bash. Ad esempio, per stampare un messaggio a schermo, è possibile utilizzare il comando `echo`.
-6. Salvare il file e renderlo eseguibile con il comando `chmod +x <nome file>`.
-7. Avviare lo script con il comando `./<nome file>`.
-
-Ecco un esempio di codice Bash che stampa un semplice messaggio di saluto:
+Per iniziare un nuovo progetto di programmazione Bash, segui questi semplici passi:
 
 ```Bash
-#!/bin/bash
+#1. Crea una nuova directory per il tuo progetto
+mkdir nuovo_progetto
 
-echo "Ciao a tutti!"
+#2. Entra nella directory appena creata
+cd nuovo_progetto
+
+#3. Crea un nuovo file di script Bash
+touch script.sh
+
+#4. Aggiungi i permessi di esecuzione al tuo file di script
+chmod +x script.sh
+
+#5. Apri il tuo file di script con un editor di testo, come nano o vim, e inizia a scrivere il tuo codice
+nano script.sh
 ```
 
-L'output dovrebbe essere:
+Una volta che hai scritto il tuo codice, puoi eseguirlo direttamente dalla riga di comando utilizzando il seguente comando:
 
-`Ciao a tutti!`
+```Bash
+./script.sh
+```
 
-Ovviamente, questo è solo un esempio molto semplice. Con la pratica e l'esplorazione di altre funzioni e comandi, si può imparare a creare script più complessi e utili.
+Ecco un esempio di output che potresti vedere:
 
-## Approfondimenti
+```Bash
+Benvenuti al mio nuovo progetto di Bash!
+```
 
-Una buona pratica quando si inizia un nuovo progetto con Bash è suddividerlo in funzioni, in modo da renderlo più organizzato e facile da gestire. Inoltre, è importante leggere la documentazione ufficiale di Bash per familiarizzare con la sintassi e le funzioni disponibili.
+## Approfondimento
 
-Inoltre, ci sono molti tutorial e risorse online che possono aiutare a imparare Bash. Ecco alcuni link utili per iniziare:
+Ora che hai iniziato il tuo nuovo progetto di programmazione Bash, ecco alcuni consigli per approfondire la tua conoscenza:
 
-- [Documentazione ufficiale di Bash](https://www.gnu.org/software/bash/)
-- [Tutorial di Bash di Linuxize](https://linuxize.com/post/bash-tutorial/)
-- [Bash Scripting Tutorial di LinuxConfig](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Lynda.com corso su Bash](https://www.lynda.com/Bash-tutorials/Up-Running-Bash-Scripting/142989-2.html)
+- Utilizza i commenti per rendere il tuo codice più leggibile e comprensibile per te stesso e per gli altri collaboratori del progetto.
+- Usa le variabili per rendere il tuo codice più flessibile e riutilizzabile.
+- Sperimenta con i loop e le condizioni per automatizzare processi ripetitivi o creare logiche di decisione all'interno del tuo codice.
+- Impara a scrivere funzioni per suddividere il tuo codice in blocchi gestibili e facili da testare.
+- Esplora la vasta gamma di comandi e funzioni disponibili in Bash per ampliare le tue possibilità di programmazione.
+
+Con un po' di pratica e perseveranza, sarai in grado di padroneggiare la programmazione Bash e creare progetti sempre più complessi e interessanti.
 
 ## Vedi anche
 
-- [Primi passi con Bash su Linux di DigitalOcean (in italiano)](https://www.digitalocean.com/community/tutorials/the-linux-command-line-for-beginners-prime-passi)
-- [Introduzione a Bash su Medium (in italiano)](https://medium.com/swlh/introduzione-a-bash-1-737b329a797a) 
-- [Impara a programmare in Bash su Codecademy (in inglese)](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
+- [Documentazione ufficiale di Bash](https://www.gnu.org/software/bash/)
+- [Tutorial di Bash di Linuxize](https://linuxize.com/post/bash-scripting-tutorial/)
+- [Comandi utili di Bash di Tecmint](https://www.tecmint.com/useful-linux-bash-one-line-scripts/)
+- [Esercizi di programmazione Bash di LinuxHint](https://linuxhint.com/100_bash_exercises/)

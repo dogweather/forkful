@@ -1,50 +1,53 @@
 ---
-title:                "Javascript: Uniendo cadenas de texto"
+title:                "Javascript: Uniendo cadenas de caracteres"
+simple_title:         "Uniendo cadenas de caracteres"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué concatenar cadenas de texto en Javascript
+## Por qué
 
-Si eres nuevo en la programación en Javascript, es posible que te preguntes por qué necesitas concatenar cadenas de texto. La respuesta es simple: para combinar diferentes cadenas y crear una cadena más larga y compleja. Esto es especialmente útil cuando trabajas con datos dinámicos o cuando necesitas formatear una salida específica.
+En la programación de Javascript, a menudo necesitamos combinar diferentes cadenas de texto para crear mensajes o información más compleja. La concatenación de cadenas es una técnica útil que nos permite unir diferentes cadenas de texto en una sola. 
 
 ## Cómo hacerlo
-Para concatenar cadenas de texto en Javascript, puedes utilizar el operador de suma `+` o el método `concat()`. Veamos un ejemplo de cada uno:
+
+La concatenación de cadenas en Javascript es bastante sencilla. Podemos utilizar el operador "+" para unir dos o más cadenas de texto. Por ejemplo:
 
 ```Javascript
-// Utilizando el operador +
-
-let nombre = "María";
+let nombre = "Sofía";
 let apellido = "González";
 let nombreCompleto = nombre + " " + apellido;
 
-console.log(nombreCompleto);
-//output: María González
+console.log(nombreCompleto); // Output: Sofía González
 ```
+
+En este ejemplo, utilizamos el operador "+" para concatenar las variables "nombre" y "apellido" en la variable "nombreCompleto". Al imprimir esta variable en la consola, obtenemos como resultado la cadena "Sofía González".
+
+También podemos concatenar cadenas con valores numéricos. En ese caso, los valores numéricos se convierten en cadenas antes de ser concatenados. Por ejemplo:
 
 ```Javascript
-// Utilizando el método concat()
+let precio = "$";
+let monto = 50.99;
+let precioFinal = precio + monto;
 
-let ciudad = "Madrid";
-let país = "España";
-let ubicación = ciudad.concat(", ", país);
-
-console.log(ubicación);
-//output: Madrid, España
+console.log(precioFinal); // Output: $50.99
 ```
 
-En el primer ejemplo, estamos concatenando dos variables para crear una cadena con el nombre completo de una persona. Nota cómo utilizamos el operador `+` para unir las diferentes cadenas y también agregamos un espacio en blanco entre ellas para que la salida se vea correctamente formateada.
+En este caso, la variable "monto" se convierte en una cadena antes de ser concatenada con la variable "precio".
 
-En el segundo ejemplo, estamos usando el método `concat()` para concatenar dos cadenas con una coma y un espacio en el medio. Este método es especialmente útil cuando necesitas agregar diferentes elementos a una cadena, ya que puedes pasar varios argumentos separados por comas.
+## Profundizando
 
-## Profundizando un poco más
-Si bien el operador `+` y el método `concat()` son las formas más comunes de concatenar cadenas de texto en Javascript, también existen otras opciones, como el método `join()` o incluso el uso de plantillas de cadenas. Además, es importante saber que Javascript es un lenguaje de tipado dinámico, lo que significa que también puedes concatenar cadenas y otros tipos de datos, como números o booleanos.
+La concatenación de cadenas puede ser muy útil cuando necesitamos crear mensajes dinámicos en nuestra aplicación. Además del operador "+", también podemos utilizar la función "concat()" para concatenar cadenas. Ambas opciones son igualmente válidas, pero a menudo se prefiere el uso del operador "+" por ser más sencillo y legible.
 
-Otro aspecto a tener en cuenta es que, en algunas situaciones, concatenar cadenas puede no ser la mejor opción. Por ejemplo, si trabajas con grandes cantidades de datos, puede ser más eficiente utilizar un `array` y luego unir sus elementos con el método `join()`. Es importante tener en cuenta el rendimiento y la legibilidad de tu código al decidir cómo manejar tus cadenas de texto.
+Además, es importante tener en cuenta que al concatenar cadenas, podemos utilizar diferentes tipos de comillas (simples, dobles o invertidas) dentro de la cadena sin ningún problema. Esto nos permite utilizar comillas en medio de un texto sin interrumpir la concatenación.
 
 ## Ver también
-- [Documentación de MDN para concatenar cadenas en Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [Artículo sobre plantillas de cadenas en Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/template_strings)
+
+Si quieres seguir aprendiendo sobre cadenas en Javascript, te recomendamos estos recursos:
+
+- [Función concat en W3Schools](https://www.w3schools.com/jsref/jsref_concat_string.asp)
+- [Manipulación de cadenas en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String)

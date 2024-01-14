@@ -1,35 +1,49 @@
 ---
 title:                "Bash: Porównywanie dwóch dat"
+simple_title:         "Porównywanie dwóch dat"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
-
-Jeśli jesteś programistą Bash i zajmujesz się manipulacją datami, na pewno niejednokrotnie zdarzyło Ci się konieczność porównywania dwóch dat. Dzięki temu artykułowi dowiesz się, jak to zrobić w prosty sposób oraz jakie funkcje Bash mogą Ci w tym pomóc.
+Porównywanie dat może wydawać się prostym zadaniem, ale może być bardzo przydatne w programowaniu. Jest to nie tylko jedna z podstawowych funkcji w Bash, ale również przydatna w wielu innych językach programowania. Pozwala nam na ustalenie, czy jedna data jest wcześniejsza, późniejsza lub równa drugiej dacie. W tym artykule dowiemy się, jak porównywać daty w Bash i jakie są najczęstsze zastosowania tego narzędzia.
 
 ## Jak to zrobić
-
-Porównywanie dwóch dat w Bash jest dość proste i może być zrobione na kilka różnych sposobów. Jednym z najbardziej popularnych jest utworzenie dwóch zmiennych z datami oraz użycie funkcji `date` do ich formatowania. Następnie porównujemy je za pomocą operatora `>` lub `<` w warunku `if`. Przykładowy kod można zobaczyć poniżej:
+Porównywanie dat w Bash jest bardzo proste. Wystarczy wykorzystać operator porównania `[[ ... ]]` oraz opcję `<` lub `>` w połączeniu z poleceniem `test`. Przykładowe użycie wyglądałoby następująco:
 
 ```Bash
-first_date="2020-05-15"
-second_date="2020-05-20"
-
-if [[ `date -d "$first_date" +"%Y%m%d"` > `date -d "$second_date" +"%Y%m%d"` ]]; then
-  echo "$first_date jest późniejszą datą od $second_date"
+if [[ "2020-01-01" < "2020-02-01" ]]; then
+    echo "Pierwsza data jest wcześniejsza od drugiej"
 fi
 ```
-W powyższym przykładzie użyliśmy funkcji `date` z flagą `-d` do formatowania daty w odpowiednim formacie. Następnie za pomocą operatora `` ` `` wykonujemy te komendy i porównujemy uzyskane wartości. Jeśli pierwsza data jest większa od drugiej, wykonujemy naszą akcję (w tym przypadku wyświetlamy komunikat).
 
-## Głębsze zanurzenie
+W powyższym kodzie porównujemy dwie daty i w zależności od wyniku, wyświetlamy odpowiedni komunikat. Pamiętajmy, że porównanie działa tylko wtedy, gdy obie daty są w formacie `YYYY-MM-DD`.
 
-Podczas porównywania dat warto pamiętać o kilku rzeczach. Po pierwsze, należy używać odpowiedniego formatu daty, aby porównanie było poprawne. Drugim ważnym aspektem jest uwzględnienie różnych wartości, takich jak czas czy strefa czasowa. W Bash można użyć funkcji `--reference` do porównywania daty z plikiem, co może być pomocne w niektórych przypadkach.
+Możemy również porównywać daty z bieżącą datą lub dzisiejszą datą. Wykorzystujemy do tego polecenie `date` wraz z opcją `%F` do uzyskania daty w formacie `YYYY-MM-DD`. Przykładowy kod wyglądałby następująco:
 
-## Zobacz także
+```Bash
+if [[ $(date +%F) > "2020-12-31" ]]; then
+    echo "Bieżąca data jest późniejsza od podanej daty"
+fi
+```
+W powyższym przykładzie, jeśli dzisiejsza data jest późniejsza od 31.12.2020, pojawi się odpowiedni komunikat.
 
-- Dokumentacja funkcji `date` w Bash: https://linux.die.net/man/1/date
-- Przydatne skrypty Bash do pracy z datami: https://gist.github.com/joelarson4/7486674
+## Deep Dive
+Aby bardziej zgłębić temat porównywania dat, warto wiedzieć, że w Bash możemy też określać różnicę między dwoma datami. W tym celu możemy wykorzystać polecenie `date` wraz z opcją `%s`, które zwraca liczbę sekund od 1 stycznia 1970 roku. Przykładowy kod wyglądałby tak:
+
+```Bash
+first_date=$(date -d "2020-01-01" +%s)
+second_date=$(date -d "2020-02-01" +%s)
+
+echo $(( second_date - first_date ))
+```
+Powinniśmy otrzymać wynik równy 2678400, co odpowiada liczbie sekund w miesiącu styczeń. Możemy również porównywać różnice w liczbach sekund między datami, a nie same daty.
+
+## Zobacz również
+- [Dokumentacja Bash o porównywaniu liczb i ciągów tekstowych](https://tldp.org/LDP/abs/html/comparison-ops.html)
+- [Porównywanie dat w Python](https://realpython.com/python-datetime/)
+- [Porównywanie dat w C++](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)

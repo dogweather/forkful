@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/finding-the-length-of-a-string.md"
 ---
 
@@ -9,43 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu potrzebujemy sprawdzić długość tekstu, czy to do celów wyświetlania, czy do manipulowania nim. W Fish Shell jest wiele sposobów na znalezienie długości ciągu tekstowego. W tym artykule dowiesz się, jak to zrobić.
+Znajdowanie długości ciągu znaków jest ważnym aspektem programowania. Może to być przydatne do sprawdzania poprawności wprowadzanych danych, tworzenia pętli lub podczas manipulacji tekstem. W tym artykule opowiemy o tym, jak znaleźć długość ciągu znaków w języku Fish Shell.
 
 ## Jak to zrobić
 
-Istnieją dwa sposoby na znalezienie długości ciągu tekstowego w Fish Shell. Pierwszym sposobem jest użycie wbudowanej funkcji `count`:
+Aby znaleźć długość ciągu znaków w języku Fish Shell, musimy skorzystać z wbudowanej funkcji `string length`, która zwraca liczbę znaków w podanym ciągu. Przykładowe użycie tej funkcji wygląda następująco:
 
 ```
-Fish Shell Count
-
-fish
- 
-# 4
+Fish Shell> string length "Hello World"
+11
 ```
 
-Drugi sposób polega na użyciu flagi `--count` w poleceniu `string`.
+Jak widać, funkcja zwróciła liczbę 11, co jest dokładną długością naszego ciągu znaków "Hello World". Możemy także wykorzystać zmienną reprezentującą ciąg znaków, a nie podawać go bezpośrednio w funkcji. Na przykład:
 
 ```
-Fish Shell String Length
-
-set string "fish"
-
-string --count $string
- 
-# 4
+Fish Shell> set greeting "Cześć!"
+Fish Shell> string length $greeting
+6
 ```
 
-Oba te sposoby zwracają liczbę znaków w podanym ciągu tekstowym.
+W ten sposób możemy w łatwy sposób znaleźć długość dowolnego ciągu znaków w języku Fish Shell.
 
 ## Deep Dive
 
-Jeśli chcesz poznać więcej o znajdowaniu długości ciągu tekstowego w Fish Shell, warto wiedzieć, że można również użyć flagi `-r` w poleceniu `string` do odwrócenia podanego ciągu przed policzeniem długości. Ponadto, jeśli chcesz obliczyć długość wielu ciągów tekstowych na raz, możesz użyć polecenia `string split` w połączeniu z funkcją `count`.
+W języku Fish Shell możemy także wykorzystać efektywne i krótkie odwołania do elementów znajdujących się w naszym ciągu znaków. Na przykład, aby otrzymać ostatni znak w ciągu, możemy wykorzystać składnię `[-1]`, jak w przypadku poniższego przykładu:
 
-Sprawdzanie długości ciągu tekstowego może również być przydatne w tworzeniu warunków w skryptach Fish Shell.
+```
+Fish Shell> set word "Dzień dobry!"
+Fish Shell> echo $word[-1]
+!
+```
 
-## Zobacz również
+Podobnie, aby otrzymać pierwszy znak, możemy skorzystać z `[1]`:
 
-* Dokumentacja Fish Shell: https://fishshell.com/docs/current/
-* Funkcja `count`: https://fishshell.com/docs/current/cmds/count.html
-* Polecenie `string`: https://fishshell.com/docs/current/cmds/string.html
-* Polecenie `string split`: https://fishshell.com/docs/current/cmds/string-split.html
+```
+Fish Shell> echo $word[1]
+D
+```
+
+W ten sposób możemy łatwo przeglądać i manipulować znakami w naszym ciągu znaków.
+
+## Zobacz też
+- [Dokumentacja języka Fish Shell](https://fishshell.com/docs/current/)
+- [Przydatne komendy w języku Fish Shell](https://fishshell.com/docs/current/commands.html)

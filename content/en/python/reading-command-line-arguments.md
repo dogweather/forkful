@@ -1,7 +1,9 @@
 ---
 title:                "Python recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/reading-command-line-arguments.md"
 ---
 
@@ -9,39 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Learning how to read and utilize command line arguments is a valuable skill for any Python programmer. By understanding how to handle user input from the command line, you can create more dynamic and customizable programs. This can also make your code more user-friendly and easier to debug.
+When writing programs in Python, it's common to use command line arguments as inputs. These arguments allow users to pass in specific information when running the program, making it more versatile and customizable. Understanding how to read command line arguments is an important skill for any Python programmer.
 
 ## How To
 
-To read command line arguments in Python, you can use the `sys` module. Let's take a look at a simple example:
+To read command line arguments in Python, we can use the `sys` library, which provides access to system-specific parameters and functions. First, we import the library:
 
+```Python
+import sys
 ```
+
+Next, we can access the command line arguments using the `argv` variable from the `sys` library:
+
+```Python
+args = sys.argv
+```
+
+The `args` variable now stores a list of all the arguments passed in when running the program. We can access specific arguments by their index in the list, starting at 0. For example, if our program was called with the arguments `python program.py argument1 argument2`, we can access `argument1` by using `args[1]` and `argument2` by using `args[2]`.
+
+To see this in action, let's create a simple program that prints out the arguments passed in:
+
+```Python
 import sys
 
 args = sys.argv
-print("Number of arguments:", len(args))
-print("Argument list:", args)
+
+print("Arguments passed in: ", args)
+print("First argument: ", args[1])
+print("Second argument: ", args[2])
 ```
 
-In this code, we import the `sys` module and use the `argv` attribute to access a list of all the arguments passed in when running the Python script. We can then use the `len()` function to determine the number of arguments and the `print()` function to display the argument list.
-
-Let's say we save this code as `arguments.py` and run it in the command line with the arguments "hi" and "there" like this: `python arguments.py hi there`. The output would look like this:
+When we run this program with `python program.py hello world`, we get the following output:
 
 ```
-Number of arguments: 3
-Argument list: ['arguments.py', 'hi', 'there']
+Arguments passed in:  ['program.py', 'hello', 'world']
+First argument:  hello
+Second argument:  world
 ```
 
-We can see that the first argument is always the name of the Python script itself, followed by any additional arguments passed in.
-
-We can also access specific arguments by using their index in the list. For example, if we wanted to print out only the second argument ("hi") we could use `print(args[1])`.
+We can also manipulate the arguments in our program, such as converting them to integers or performing calculations with them.
 
 ## Deep Dive
 
-The `sys.argv` list includes both the script name and any arguments, but sometimes we may only want to access the arguments. In this case, we can use the `argparse` module, which allows us to specify what arguments we are expecting and gives us more control over how they are handled.
+While the `sys` library is a commonly used method for reading command line arguments, there are other libraries and methods available such as `argparse` and `getopt`. These provide more advanced functionalities and options for parsing and handling command line arguments.
 
-Another useful feature is being able to pass in arguments with specific flags or options, like `-v` for verbose output. These are often used in large programs or scripts where there may be many different arguments to handle.
+It's important to keep in mind that command line arguments can be sensitive to special characters or spaces, so proper handling and validation is necessary to avoid any unexpected errors.
+
+Additionally, command line arguments can also be used in conjunction with built-in libraries like `os` and `subprocess` for performing system-level tasks and executing external commands.
 
 ## See Also
-- [Python Documentation on `sys` module](https://docs.python.org/3/library/sys.html)
-- [Python Documentation on `argparse` module](https://docs.python.org/3/library/argparse.html)
+
+- [Python sys library documentation](https://docs.python.org/3/library/sys.html)
+- [Argparse tutorial](https://realpython.com/command-line-interfaces-python-argparse/)
+- [Command line arguments with getopt](https://www.geeksforgeeks.org/command-line-arguments-in-python/)
+- [Using command line arguments with os and subprocess](https://stackabuse.com/executing-shell-commands-with-python/)

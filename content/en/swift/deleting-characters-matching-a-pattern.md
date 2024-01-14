@@ -1,58 +1,36 @@
 ---
 title:                "Swift recipe: Deleting characters matching a pattern"
+simple_title:         "Deleting characters matching a pattern"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+##Why
+"Deleting characters matching a pattern" is a common task in Swift programming, especially when dealing with user input or text manipulation. Knowing how to efficiently delete these characters can save you time and frustration in your coding process.
 
-Sometimes when working with strings in Swift, we come across a situation where we need to delete specific characters or patterns from the string. This could be for various reasons, such as cleaning up user input or manipulating data. In this blog post, we will explore the concept of deleting characters matching a pattern in Swift and how it can be useful in our programming.
+##How To
+To delete characters matching a pattern, we can use the `replacingOccurrences(of:with:options:range:)` method available in the `NSString` class. It takes in 4 parameters: the pattern to be matched, the replacement string, options for the matching behavior, and the range of text to search within. Let's look at an example:
 
-## How To
+//Assuming we have the string "Hello, world!" and we want to delete all the vowels
+let str = "Hello, world!"
 
-To delete characters matching a pattern in Swift, we can use the `replacingOccurrences(of:with:)` method on a string. This method takes two parameters - the pattern we want to remove and the string we want to replace it with. Let's take a look at a simple example:
+//We use the `replacingOccurrences` method and specify "aeiou" as the pattern to be matched
+let newStr = str.replacingOccurrences(of: "aeiou", with: "", options: [.caseInsensitive], range: nil)
 
-```Swift
-let string = "Hello, World!"
-let modifiedString = string.replacingOccurrences(of: ",", with: "")
-print(modifiedString)
-```
+//Our output will be "Hll, wrld!" since all the vowels have been deleted
 
-In the above code, we use the `replacingOccurrences(of:with:)` method to remove the comma from the string and replace it with an empty string, effectively deleting it. The output of this code will be `Hello World!` since the comma was removed.
+It's important to note that the `options` parameter allows us to specify any additional matching options, such as ignoring case sensitivity. The `range` parameter is optional and can be used to specify a specific range of text to search within.
 
-We can also use this method to delete multiple characters matching a pattern. Let's see how we can remove all vowels from a string:
+##Deep Dive
+Behind the scenes, the `replacingOccurrences` method is actually using regular expressions to match the given pattern. This gives us a lot of flexibility in choosing the characters to be deleted. For example, we can use the `CharacterSet` class to specify a set of characters to be matched, instead of providing a specific string of characters. This is useful when dealing with user input that may vary in formatting.
 
-```Swift
-let string = "Swift is awesome!"
-let vowels = "aeiou"
-var modifiedString = string
-for char in vowels.characters {
-    modifiedString = modifiedString.replacingOccurrences(of: String(char), with: "")
-}
-print(modifiedString)
-```
+Another important aspect to consider is the performance of using regex. While it is a powerful tool, it can also be computationally expensive. Thus, it's important to test and optimize your code for efficient execution.
 
-Here, we first define a string containing all the vowels. Then we loop through each vowel and use the `replacingOccurences(of:with:)` method to remove it from the string. The output of this code will be `Swft s wsm!` since all vowels were deleted from the string.
-
-## Deep Dive
-
-Behind the scenes, the `replacingOccurrences(of:with:)` method uses regular expressions to find and replace patterns in a string. Regular expressions, or regex, is a powerful tool for pattern matching and manipulation in strings. It allows for more complex and dynamic pattern matching, such as using wildcards or patterns within the pattern.
-
-For example, we can use regex to remove all alphabetic characters from a string:
-
-```Swift
-let string = "H3ll0, my n4m3 is John"
-let modifiedString = string.replacingOccurrences(of: "[a-zA-Z]", with: "", options: .regularExpression)
-print(modifiedString)
-```
-
-In the above code, we use a regex pattern inside the `replacingOccurrences` method to remove all alphabetic characters from the string. The output of this code will be `3 0, 4 3`.
-
-## See Also
-
-- [The Swift Programming Language: Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [NSHipster: Regular Expressions](http://nshipster.com/nsregularexpression/)
-- [Swift.org: Regular Expressions](https://swift.org/blog/regex-and-strings/)
+##See Also
+- Apple Documentation on `replacingOccurrences(of:with:options:range:)`: https://developer.apple.com/documentation/foundation/nsstring/1411675-replacingoccurrences
+- A Beginner's Guide to Regular Expressions in Swift: https://www.raywenderlich.com/5769044-regular-expressions-tutorial-getting-started
+- Improve Your Swift Code Using NSRegularExpression: https://medium.com/pretty-swifty/improve-your-swift-code-using-nsregularexpression-bea619c422d3

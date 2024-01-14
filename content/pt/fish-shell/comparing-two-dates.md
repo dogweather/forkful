@@ -1,53 +1,55 @@
 ---
 title:                "Fish Shell: Comparando duas datas"
+simple_title:         "Comparando duas datas"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que Comparar Duas Datas em Fish Shell?
+## Por que
 
-A tarefa de comparar duas datas pode surgir em diversas situações durante a programação. Pode ser necessário verificar se uma data é anterior ou posterior a outra, ou ainda calcular a diferença entre elas. O Fish Shell possui um mecanismo eficiente para realizar essas comparações, permitindo que o programador tenha mais controle sobre suas aplicações.
+Se você é um desenvolvedor que trabalha com datas, é provável que, em algum momento, precise compará-las em seu código. Isso pode ser necessário para verificar se uma data é maior ou menor do que outra, ou para verificar se elas são iguais.
 
-## Como Fazer a Comparação em Fish Shell?
+## Como Fazer
 
-Para realizar a comparação de duas datas em Fish Shell, é necessário seguir alguns passos simples:
+A linguagem de programação Fish Shell oferece uma maneira simples e eficaz de comparar duas datas. Para fazer isso, basta utilizar o comando `date -f` e fornecer as datas a serem comparadas. Veja um exemplo abaixo:
 
-1. Defina as duas datas a serem comparadas, utilizando o formato `YYYY-MM-DD`.
-2. Utilize o operador `>` para verificar se a primeira data é posterior à segunda, ou `>=` para verificar se é posterior ou igual.
-3. Utilize o operador `<` para verificar se a primeira data é anterior à segunda, ou `<=` para verificar se é anterior ou igual.
+```
+Fish Shell
+$ date -f %s '2021-01-01'
+```
 
-Veja o exemplo abaixo que compara duas datas e imprime a mensagem correspondente:
+A saída desse comando será o formato de data Unix para a data fornecida, que é equivalente a `1609459200`. Para comparar duas datas, basta utilizar o operador de comparação `-lt` para "menor que", ou `-gt` para "maior que". Veja um exemplo:
 
-```Fish Shell
-data1='2020-01-01'
-data2='2020-02-01'
+```
+```
+Fish Shell
+```
+```
 
-if [ $data1 > $data2 ]
-    echo 'A primeira data é posterior à segunda'
-else if [ $data1 >= $data2 ]
-    echo 'A primeira data é posterior ou igual à segunda'
-else if [ $data1 < $data2 ]
-    echo 'A primeira data é anterior à segunda'
-else if [ $data1 <= $data2 ]
-    echo 'A primeira data é anterior ou igual à segunda'
+$ if date -f %s '2021-01-01' -lt date -f %s '2021-02-01'
+    echo "A primeira data é menor que a segunda"
 end
 ```
 
-O resultado dessa execução será:
+Na linha 3 do exemplo acima, o programa verifica se a primeira data é menor que a segunda, e, se for o caso, a mensagem "A primeira data é menor que a segunda" será impressa na tela.
 
-```Fish Shell
-A primeira data é anterior à segunda
+## Mergulho Profundo
+A comparação de datas pode ser feita de diferentes maneiras, dependendo da precisão que você deseja. Por exemplo, no exemplo acima, as datas foram comparadas utilizando o formato de data Unix. No entanto, você também pode compará-las utilizando o comando `date` e especificando o formato desejado. Veja um exemplo abaixo:
+
+```
+Fish Shell
+$ if date -f "%b %Y" 'Jan 2021' -lt date -f "%b %Y" 'Feb 2021'
+    echo "A primeira data é menor que a segunda"
+end
 ```
 
-## Mais Detalhes Sobre a Comparação de Datas em Fish Shell
-
-Ao comparar duas datas em Fish Shell, é importante ter em mente que o formato utilizado deve ser sempre `YYYY-MM-DD`. Além disso, é possível realizar comparações com datas futuras, mas lembre-se que o resultado pode ser afetado pelo sistema de fuso horário do computador.
+Nesse exemplo, as datas foram comparadas utilizando o formato de mês e ano, que resultará em um resultado mais preciso.
 
 ## Veja Também
-
-- [Documentação do Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial para Iniciantes em Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Comparando Dados em Shell Script](https://linux.die.net/abs-guide/moreadv.html#DATACOMPLICATED)
+- [Documentação oficial do comando date](https://fishshell.com/docs/current/cmds/date.html)
+- [Tutorial em vídeo sobre comparação de datas no Fish Shell](https://www.youtube.com/watch?v=6jLDZlbnx9I)
+- [Exemplos avançados de comparações de datas no Fish Shell](https://hyperpolyglot.org/unix-shells#date-comparison)

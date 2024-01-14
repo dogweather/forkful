@@ -1,48 +1,47 @@
 ---
-title:                "Ruby: Convirtiendo una fecha en una cadena"
+title:                "Ruby: Convirtiendo una fecha en una cadena de texto"
+simple_title:         "Convirtiendo una fecha en una cadena de texto"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
+Muchas veces en programación, necesitamos convertir una fecha en un formato en particular, como una cadena de texto. Esto puede ser útil para mostrar fechas en un formato más legible, para realizar búsquedas y comparaciones de fechas, o para almacenar la fecha en una base de datos.
 
-Si eres un programador principiante en Ruby, es posible que te hayas enfrentado al desafío de convertir fechas en cadenas de texto. Este proceso es común en la programación cuando necesitas mostrar una fecha en un formato específico o almacenarla en una base de datos. Afortunadamente, Ruby ofrece una variedad de métodos y opciones para ayudarte en esta tarea.
+## Cómo hacerlo
+Para convertir una fecha en una cadena de texto en Ruby, podemos usar el método `strftime`. Este método toma una fecha y un formato de conversión como argumentos y devuelve una cadena de texto con la fecha formateada. Por ejemplo:
 
-## Cómo convertir una fecha en una cadena de texto
-
-Hay varias formas de convertir una fecha en una cadena de texto en Ruby, pero aquí te mostraremos la forma más sencilla y popular. Utilizaremos el método `strftime` para formatear la fecha y luego convertirla en una cadena de texto.
-
-```
-today = Time.now
-puts today.strftime("%m/%d/%Y")
-# Output: 01/08/2021 (si hoy es 8 de enero de 2021)
-```
-En este ejemplo, utilizamos la variable `today` para almacenar la fecha actual y luego llamamos al método `strftime` con el formato deseado como argumento. En este caso, utilizamos `%m` para el número del mes, `%d` para el día del mes y `%Y` para el año. Puedes consultar la documentación de Ruby para ver otros formatos de fecha disponibles.
-
-Otra forma de convertir una fecha en una cadena de texto es utilizando el método `to_s`.
-
-```
-date = Date.new(2021, 1, 8)
-puts date.to_s
-# Output: 2021-01-08
+```Ruby
+date = Time.new(2021, 4, 15)
+puts date.strftime("%d/%m/%Y")
+# Salida: 15/04/2021
 ```
 
-Este método también te permite especificar un formato utilizando `strftime` como argumento.
+En este ejemplo, creamos una fecha utilizando la clase `Time` y luego utilizamos `strftime` con el formato `"%d/%m/%Y"` para obtener la fecha en el formato de día/mes/año.
 
-## Profundizando en la conversión de fechas a cadenas de texto
+Algunos formatos de conversión comunes son:
 
-Si deseas conocer más sobre el proceso de conversión de fechas a cadenas de texto en Ruby, hay algunos detalles importantes que debes tener en cuenta.
+- `%d` para el día del mes (01-31)
+- `%m` para el mes (01-12)
+- `%Y` para el año (con 4 dígitos)
+- `%H` para la hora (00-23)
+- `%M` para los minutos (00-59)
+- `%S` para los segundos (00-59)
 
-En primer lugar, cuando utilizas `strftime` para formatear una fecha, el resultado siempre será una cadena de texto. Sin embargo, cuando utilizas el método `to_s`, el resultado dependerá del objeto de fecha que estés utilizando. Por ejemplo, si utilizas una instancia de la clase `Date`, el resultado será una fecha en formato ISO (AAAA-MM-DD).
+Puedes encontrar una lista completa de formatos de conversión [aquí](https://www.rubyguides.com/2015/10/ruby-time/). Además, también puedes usar el método `strftime` en objetos `DateTime` y `Date` para convertir fechas en cadena de texto.
 
-Otro punto a considerar es que cuando utilizas diferentes formatos con `strftime`, puede haber una pequeña diferencia en el resultado. Por ejemplo, `%m` devolverá un mes con ceros a la izquierda (por ejemplo, 01 para enero), mientras que `%-m` devolverá el mes sin ceros a la izquierda (por ejemplo, 1 para enero).
+## Profundizando
+Si quieres profundizar en la conversión de fechas en Ruby, hay algunos conceptos que puedes explorar. Algunos de ellos son:
 
-En resumen, convertir una fecha en una cadena de texto en Ruby puede parecer un poco confuso al principio, pero con un poco de práctica, podrás dominar este proceso en poco tiempo.
+- Formatos locales: Puedes utilizar el método `setlocale` para establecer un idioma y región específicos para formatear las fechas en consecuencia.
+- Zonas horarias: Puedes utilizar la gema `TZInfo` para manejar diferentes zonas horarias al convertir fechas en cadena de texto.
+- Personalización de formatos: Además de los formatos de conversión predefinidos, también puedes crear tus propios formatos personalizados utilizando el método `DateTime#strftime` o `Time#strftime`.
 
 ## Ver también
-
-- [Documentación de Ruby sobre strftime](https://ruby-doc.org/core-2.7.2/Time.html#method-i-strftime)
-- [Más sobre la conversión de fechas en cadenas de texto en Ruby](https://stackoverflow.com/questions/18658781/how-to-convert-a-date-object-to-a-string-in-ruby)
+- [Documentación de Ruby sobre el método `strftime`](https://ruby-doc.org/core-2.7.2/Time.html#method-i-strftime)
+- [Tutorial de Ruby en español](http://tutoriales.programacion-entornos.net/2019/02/06/ruby-programacion/)
+- [Gema TZInfo](https://tzinfo.github.io/)

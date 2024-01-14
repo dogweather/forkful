@@ -1,57 +1,42 @@
 ---
-title:                "Elm: Utskrift av felsökningsinformation"
+title:                "Elm: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Elm"
-category:             "Testing and Debugging"
+category:             "Elm"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elm/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att skriva ut debug meddelanden är en viktig del av programmeringsprocessen, eftersom det ger feedback på hur koden körs och hjälper till att hitta eventuella fel. Det är också ett bra sätt att förstå varför en viss del av koden fungerar eller inte fungerar som förväntat.
 
-Att skriva kod är en process fylld av utmaningar och problem som måste lösas. Ibland kan det vara svårt att förstå vad som händer i koden och varför vissa fel inträffar. Att skriva ut debug-utdata kan hjälpa till att förbättra förståelsen av koden och effektivisera felsökningen.
-
-## Hur man gör
-
-För att skriva ut debug-utdata i Elm, använd funktionen `Debug.log` som tar emot en sträng och ett värde som ska skrivas ut. Till exempel:
+## Hur man gör det
+För att skriva ut debug meddelanden i Elm, kan man använda funktionen `Debug.log` som tar två argument: en sträng som beskriver meddelandet och ett värde som ska skrivas ut. Här är ett exempel på hur man kan använda funktionen:
 
 ```Elm
-Debug.log "Värde" 5
+import Debug exposing (log)
+
+myNumber = 5
+myString = "Hej!"
+
+log "Detta är en siffra" myNumber
+log "Detta är en sträng" myString
 ```
 
-Detta kommer att skriva ut "Värde: 5" i konsolen när programmet körs.
+Detta kommer att skriva ut följande i konsolen:
 
-Man kan även göra det mer dynamiskt genom att skriva ut värden från variabler eller funktioner:
-
-```Elm
-Debug.log "Variabel" minVariabel
-Debug.log "Funktion" (minFunktion argument)
+```
+Detta är en siffra: 5
+Detta är en sträng: Hej!
 ```
 
-Det är också möjligt att kombinera flera värden i en sträng:
-
-```Elm
-Debug.log "Värden" ("Var1: " ++ var1 ++ ", Var2: " ++ var2)
-```
-
-Detta kommer att skriva ut "Värden: Var1: värde1, Var2: värde2".
+Man kan också använda funktionen `Debug.toString` för att konvertera ett värde till en sträng, vilket är användbart om man vill skriva ut komplexa datatyper som listor eller tupler. Det är också möjligt att skriva ut flera värden samtidigt genom att använda en kommeraseparerad lista av värden som argument till `Debug.log`.
 
 ## Djupdykning
+När man använder debug meddelanden är det viktigt att notera att de bara skrivs ut i utvecklingsläge och inte i produktionsläge. Det är också viktigt att bara använda `Debug.log` för att få information om koden och inte som en del av den faktiska koden, eftersom funktionen kommer att köras även om koden aldrig används. Detta kan leda till onödig prestandaförlust.
 
-En viktig aspekt av att skriva debug-utdata är att hitta den rätta balansen mellan att ha tillräckligt med information för att förstå koden och att inte överväldigas av för mycket information. Det är viktigt att vara selektiv och noggrann med vilka uttryck som väljs för att skriva ut.
-
-En annan användbar funktion för debug-utdata är `Debug.todo` som används för att markera ställen i koden som behöver mer arbete eller implementering. Till exempel:
-
-```Elm
-todo "Fixa detta senare"
-```
-
-Detta är ett sätt att ge sig själv eller andra programmerare en påminnelse om att återkomma till det här stället i koden.
-
-Att använda debugger-verktyget i din webbläsare kan också vara en användbar metod för att få mer detaljerad information om vad som händer i koden. Detta kan hjälpa till att identifiera och lösa problem som inte kan lösas med debug-utdata.
-
-## Se också
-
-- [Elm Documentation - Debug](https://elm-lang.org/docs/debug)
-- [Debugging Elm](https://medium.com/@anne_mit_m/elm-debugging-2a73da9dcb2c)
-- [Debugging in Elm](https://www.elm-tutorial.org/sv/03_debugging/00_introduction.html)
+## Se även
+- Officiell Elm dokumentation för `Debug` modulen: https://package.elm-lang.org/packages/elm/core/1.0.0/Debug
+- Elm repl för att testa och experimentera med debug meddelanden: https://elm-lang.org/try

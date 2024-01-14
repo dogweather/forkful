@@ -1,67 +1,56 @@
 ---
 title:                "C: Creando un archivo temporal"
+simple_title:         "Creando un archivo temporal"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Qué
+## Por qué
 
-Los archivos temporales son una parte fundamental de la programación en C. Son archivos que se crean temporalmente durante la ejecución de un programa y se eliminan una vez que el programa termina de ejecutarse. Estos archivos son útiles para almacenar datos temporales o para realizar operaciones de procesamiento en segundo plano. En esta publicación, exploraremos cómo crear archivos temporales en C y por qué son importantes en el desarrollo de aplicaciones.
+Existen diversas razones por las cuales se puede necesitar crear un archivo temporal durante la programación en C. Por ejemplo, puede ser útil para almacenar datos temporales que no sean necesarios después de la ejecución del programa, o para realizar operaciones que requieran un archivo temporal como espacio de almacenamiento.
 
 ## Cómo hacerlo
 
-Para crear un archivo temporal en C, debemos utilizar la función `tmpfile()` que se encuentra en la biblioteca estándar `<stdio.h>`. Esta función nos devuelve un puntero a una estructura `FILE` que representa el archivo temporal. A continuación se muestra un ejemplo de código que crea un archivo temporal, escribe una cadena en él y luego lo lee para mostrar su contenido:
+Crear un archivo temporal en C es un proceso relativamente sencillo. Primero, se debe incluir la biblioteca estándar de entrada y salida de archivos (stdio.h). Luego, se utiliza la función `fopen()` para crear un nuevo archivo temporal con el nombre y formato especificado. Por ejemplo:
 
 ```C
 #include <stdio.h>
-
-int main(void)
-{
-    // Crear un archivo temporal
-    FILE *temp_file = tmpfile();
-    
-    // Comprobar si se pudo crear correctamente
-    if (temp_file == NULL)
-    {
-        printf("Error creating temporary file!");
-        return 1;
-    }
-    
-    // Escribir una cadena en el archivo temporal
-    fprintf(temp_file, "¡Hola, mundo!");
-    
-    // Volver al principio del archivo
-    rewind(temp_file);
-    
-    // Leer y mostrar el contenido del archivo
-    char str[15];
-    fscanf(temp_file, "%s", str);
-    printf("Temp file content: %s", str);
-    
-    // Cerrar y eliminar el archivo temporal
-    fclose(temp_file);
-    
-    return 0;
+int main() {
+    FILE *archivo;
+    archivo = fopen("temp.csv", "w+");
+    // código para escribir o leer en el archivo temporal
+    fclose(archivo);
 }
 ```
 
-La salida de este programa sería:
+En el ejemplo anterior, se crea un archivo temporal llamado "temp.csv" con permisos de escritura y lectura (`w+`), y luego se cierra el archivo con la función `fclose()`. Es importante cerrar correctamente el archivo después de su uso para liberar la memoria y evitar errores en la ejecución del programa.
 
+## Profundizando en la creación de archivos temporales
+
+Además de los permisos de escritura y lectura, existen otros modos en los que se puede abrir un archivo temporal, como solo lectura (`r`), anexar al final del archivo existente (`a`) o sólo escritura (`w`).
+
+También es posible especificar la ubicación del archivo temporal utilizando una ruta absoluta o relativa. Por defecto, el archivo se creará en el directorio de trabajo actual.
+
+Es importante recordar que los archivos temporales se borran automáticamente cuando se cierran con la función `fclose()`. Sin embargo, si se desea eliminar el archivo antes de la finalización del programa, se puede utilizar la función `remove()` para hacerlo. Por ejemplo:
+
+```C
+#include <stdio.h>
+int main() {
+    FILE *archivo;
+    archivo = fopen("temp.csv", "w+");
+    // código para escribir o leer en el archivo temporal
+    remove("temp.csv"); // elimina el archivo temporal
+}
 ```
-Temp file content: ¡Hola, mundo!
-```
 
-## Inmersión Profunda
+## Ver también
 
-Cuando se crea un archivo temporal en C, en realidad se crea un archivo en la carpeta temporal del sistema operativo. Esto se puede verificar usando la función `tmpnam()` que nos devuelve un nombre de archivo único para un archivo temporal. Además, se puede especificar una ruta personalizada para el archivo temporal utilizando la función `tmpfile()`. Es importante tener en cuenta que estos archivos temporales son eliminados automáticamente una vez que el programa termina su ejecución.
+- [Función `fopen()` en C](https://www.lawebdelprogramador.com/foros/C-Visual-C/1025812-Documentacion-sobre-la-funcion-fopen.html)
+- [Uso de archivos temporales en C](https://www.programacion.com.py/escritorio/c/uso-de-archivos-temporales-en-c)
+- [Biblioteca estándar de entrada y salida de archivos en C](https://es.cppreference.com/w/c/io)
 
-También es importante mencionar que, aunque los archivos temporales son útiles para almacenar datos temporales, no se recomienda su uso para almacenar datos sensibles ya que pueden ser accesibles por otros programas o usuarios en el sistema.
-
-## Ver También
-
-- Documentación de la función `tmpfile()`: https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm
-- Ejemplo de código para crear y utilizar un archivo temporal en C: https://www.geeksforgeeks.org/create-temporary-file-fopen-in-c/
-- Explicación sobre archivos temporales en C: https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/apis/tmpfile.htm
+¡Esperamos que esta información te sea útil en tu experiencia de programación en C! Recuerda siempre cerrar correctamente tus archivos temporales para asegurar un buen funcionamiento del programa. ¡Happy coding!

@@ -1,50 +1,59 @@
 ---
 title:                "Javascript recipe: Getting the current date"
+simple_title:         "Getting the current date"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-In today's digital world, accurate and up-to-date information is crucial, especially when it comes to conducting operations or making decisions based on time-sensitive data. In the realm of programming, getting the current date is an essential task, and understanding how to do it can improve the functionality and reliability of any application or website.
+
+Have you ever needed to know the current date for a project? Maybe you're building a to-do app and want to display the date for each task, or you need to track when a certain task was completed. Whatever the reason, getting the current date is a basic but essential task in programming.
 
 ## How To
-Getting the current date in JavaScript is a simple yet powerful process that involves utilizing the built-in Date object. To get started, all you need to do is declare a new instance of the Date object and assign it to a variable, like this:
 
-```javascript
+Getting the current date in Javascript is actually quite simple. There is a built-in Date object that we can use to access the current date and time. Here's an example:
+
+```Javascript
+// create a new Date object
 let currentDate = new Date();
+// get the current date and time
+console.log(currentDate);
+// output: Sat Aug 07 2021 09:00:00 GMT+0000 (Coordinated Universal Time)
 ```
 
-You can also specify a specific date and time by passing in the year, month, day, hour, minute, and second parameters to the Date constructor, like this:
+In the example above, we created a new Date object called `currentDate` and then used the `console.log()` function to output the current date and time. The output will vary depending on your current timezone, but it will follow the same format.
 
-```javascript
-let specificDate = new Date(2021, 9, 15, 12, 30, 45);
+What if we want to display the current date in a specific format, such as "DD/MM/YYYY"? We can use the `getDate()`, `getMonth()`, and `getFullYear()` methods to access and format the specific parts of the date. Here's an example:
+
+```Javascript
+// create new Date object
+let currentDate = new Date();
+// get date, month, and year
+let date = currentDate.getDate();
+let month = currentDate.getMonth() + 1; // +1 because getMonth() starts at 0 for January
+let year = currentDate.getFullYear();
+// format the date as DD/MM/YYYY
+let formattedDate = `${date}/${month}/${year}`;
+console.log(formattedDate);
+// output: 7/8/2021
 ```
 
-To output the current date, you can use the `getDate()`, `getMonth()`, and `getFullYear()` methods, respectively, to retrieve the day, month, and year of the date stored in the Date instance. Here's an example:
-
-```javascript
-console.log(currentDate.getDate()); // Output: 15
-console.log(currentDate.getMonth()); // Output: 9 (October)
-console.log(currentDate.getFullYear()); // Output: 2021
-```
-
-In addition, there are various other methods to retrieve the current time, day of the week, and even milliseconds. Check out the "Deep Dive" section for more information.
+As you can see, we used string interpolation to format the date and concatenated the day, month, and year in the desired order.
 
 ## Deep Dive
-The Date object in JavaScript is a powerful tool that allows for precise manipulation and retrieval of date and time information. Here are some additional methods that can be used to get various details from a Date instance:
 
-- `getDay()` - Returns the day of the week (0 for Sunday, 1 for Monday, etc.)
-- `getHours()` - Returns the hour value (from 0 to 23)
-- `getMinutes()` - Returns the minute value (from 0 to 59)
-- `getSeconds()` - Returns the second value (from 0 to 59)
-- `getMilliseconds()` - Returns the millisecond value (from 0 to 999)
+The Date object in Javascript has many other useful methods for accessing and manipulating dates. Some of these methods include `getDay()` (to get the day of the week as a number), `getTime()` (to get the time in milliseconds since January 1, 1970), and `setDate()` (to set a specific date). You can check out the full list of methods on the [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) for more information.
 
-In addition to these methods, the Date object also has setters that allow for easy modification of the current date and time. For example, you can use the `setDate()` method to change the day of the month or the `setFullYear()` method to change the year. These setters are useful when working with date calculations or creating custom date formats.
+It's also important to note that the Date object in Javascript is based on the client's system time, so it may differ from the actual current date and time if the system time is incorrect. This can be a potential issue when working with time-sensitive data, so it's always a good idea to check and handle any discrepancies.
 
 ## See Also
-- [MDN Web Docs - Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Date and time in JavaScript](https://javascript.info/date)
-- [W3Schools - JavaScript Dates](https://www.w3schools.com/js/js_dates.asp)
+
+- [MDN Web Docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [w3schools: JavaScript Date Object](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+- [Javascript.info: Date and time](https://javascript.info/date)
+
+Now that you know how to get the current date in Javascript, you can confidently add this functionality to your projects. Keep exploring and experimenting with the Date object to see all the possibilities for working with dates in Javascript. Happy coding!

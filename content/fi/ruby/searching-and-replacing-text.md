@@ -1,52 +1,46 @@
 ---
 title:                "Ruby: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi 
 
-Joskus ohjemointikoodissa on tarpeen korvata tekstiä toisella, esimerkiksi korjataksesi kirjoitusvirheitä tai muuttaaksesi tiettyjä termejä koodissasi. Tämä voi säästää paljon aikaa ja vaivaa, kun käsittelet suuria kooditiedostoja.
+Tekstien etsiminen ja korvaaminen on tärkeä osa Ruby-ohjelmointia. Se auttaa meitä löytämään ja muokkaamaan tiettyjä sanoja tai lauseita koodissamme, mikä tekee siitä helpompaa ja tehokkaampaa. 
 
-## Miten
+# Kuinka 
 
-Ruby:ssa on useita tapoja etsiä ja korvata tekstiä. Yksi tapa on käyttää `gsub`-metodia, joka korvaa kaikki esiintymät haluamallasi tekstillä. Esimerkiksi, jos haluat korvata kaikki "hello" tekstit "hei", voit käyttää seuraavaa koodia:
-
-```Ruby
-string = "Hello world"
-string.gsub!("hello", "hei")
-puts string
-```
-
-Tämän koodin tulostus olisi "Hei world". Voit myös etsiä ja korvata tekstiä rajatulla määrällä esiintymiä käyttämällä `sub`-metodia:
+Ruby-kielellä voit suorittaa tekstien etsimisen ja korvaamisen yksinkertaisesti käyttämällä `gsub` -metodia. Se ottaa vastaan kaksi argumenttia: ensimmäisenä etsittävän tekstin ja toisena korvaavan tekstin. Alla on esimerkki koodista ja sen tulosteesta:
 
 ```Ruby
-string = "Hello world"
-string.sub!("hello", "hei")
-puts string
+# Luodaan muuttuja, joka sisältää lauseen: "Tämä on Ruby-ohjelmointia."
+text = "Tämä on Ruby-ohjelmointia."
+
+# Etsitään ja korvataan "ohjelmointia" sanalla "kielen."
+teksti.gsub! ("ohjelmointia", "kielen")
+
+# Tulostetaan muokattu lause
+puts teksti 
+
 ```
 
-Tämän koodin tulostus olisi "Hei world" vain ensimmäisellä esiintymällä.
+Tulostus: "Tämä on Ruby-kielen."
 
-## Syvällinen sukellus
+Tämä esimerkki osoittaa, kuinka helposti tekstin etsiminen ja korvaaminen onnistuu käyttämällä `gsub` -metodia. Voit myös käyttää `gsub` -metodia muuttujien ja olioiden sisällä, jotta voit vaihtaa tekstiä dynaamisesti ohjelman suorituksen aikana. 
 
-Kun käytät `gsub`- ja `sub`-metodeja, voit myös antaa sille lohkoa, joka määrittelee tarkemman korvaussäännön. Lohkon tulisi ottaa parametri, joka edustaa korvatun tekstin. Voit myös käyttää erityisiä kaavailemia regex-sääntöjä määrittämään millaiset tekstit korvataan.
+# Syvällisempi sukellus 
 
-Esimerkiksi, jos haluat vaihtaa kaikki numerot *x*:ään, ja lisätä sitten numeron eteen ja jälkeen asteriskit, voit käyttää seuraavaa koodia:
+On tärkeää huomata, että `gsub` -metodi muokkaa tai korvaa alkuperäisen muuttujan sisältöä. Jos haluat säilyttää alkuperäisen muuttujan ja tehdä korvauksen kopioon siitä, voit käyttää `gsub` -metodin sijaan `gsub!`. Tämä takaa, että alkuperäinen muuttuja ei muutu.
 
-```Ruby
-string = "1 2 3 4 5"
-string.gsub!(/\d/, 'x')
-string.gsub!(/(x)/, '*\1*')
-puts string
-```
+Lisäksi `gsub` -metodi voi hyödyntää myös säännöllisiä lausekkeita. Tämä antaa sinulle enemmän mahdollisuuksia monimutkaisempiin ja yksityiskohtaisempiin etsintöihin ja korvauksiin. Voit myös käyttää `gsub` -metodia yhdessä `gsub!` -metodin kanssa, jotta voit muokata alkuperäistä muuttujaa ja samalla käyttää säännöllisiä lausekkeita. Syvällisemmät säännöllisten lausekkeiden opetusohjelmat ovat kuitenkin niiden oman aiheensa, joten suosittelemme tutustumaan niihin erikseen, jos haluat oppia lisää.
 
-Tämän koodin tulostus olisi "*x* *x* *x* *x* *x*".
+# Katso myös 
 
-## Katso myös
-
-- [Ruby dokumentaatio: String Class](https://ruby-doc.org/core-3.0.0/String.html)
-- [Ruby Regex Tutorial](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Ruby - Dokumentaatio tekstien etsimisestä ja korvaamisesta](https://ruby-doc.org/core-2.5.0/String.html#method-i-gsub)
+- [Ruby-oppitunti säännöllisiä lausekkeita varten](https://rubylearning.com/satishtalim/ruby_regular_expressions.html)
+- [Ruby - Ruby on Rails Tutorial: Tekstien etsiminen ja korvaaminen](https://www.railstutorial.org/book/rails_flavored_ruby)

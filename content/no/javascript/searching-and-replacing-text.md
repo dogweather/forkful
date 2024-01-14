@@ -1,45 +1,45 @@
 ---
-title:                "Javascript: Søke og erstatte tekst"
+title:                "Javascript: Søking og utskifting av tekst"
+simple_title:         "Søking og utskifting av tekst"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-##Hvorfor
+## Hvorfor
 
-Det kan være mange grunner til å ønske å søke og erstatte tekst i Javascript. Kanskje du vil endre alle forekomster av et bestemt ord til et annet, eller kanskje du ønsker å formatere tekst på en spesiell måte. Uansett hva grunnen er, kan søking og erstatning av tekst være en nyttig ferdighet å ha når du jobber med Javascript.
+Å bytte ut tekst i et prosjekt kan være en viktig del av å forbedre koden din, organisere informasjonen din eller gjøre batch-oppdateringer. Ved å bruke JavaScript, kan du enkelt utføre søk og erstatninger i tekstfiler. Dette kan hjelpe deg med å spare tid og forbedre effektiviteten din som utvikler.
 
-##Slik gjør du det
+## Hvordan
 
-For å søke og erstatte tekst i Javascript, kan du bruke metoden `replace` på en streng. Denne metoden tar to argumenter: den første er hva du ønsker å søke etter, og den andre er hva du ønsker å erstatte det med. La oss se på et eksempel:
-
-```Javascript
-let tekst = "Hei verden!";
-let endretTekst = tekst.replace("Hei", "Hallo");
-console.log(endretTekst);
-```
-
-I dette eksempelet bruker vi `replace`-metoden for å erstatte "Hei" med "Hallo" i strengen tekst. Outputen vil bli "Hallo verden!".
-
-Det er også mulig å bruke regulære uttrykk i `replace`-metoden for å gjøre mer avanserte søk og erstatninger. Et regulært uttrykk er en måte å beskrive et mønster som en streng kan matche. La oss se på et eksempel der vi erstatter alle tall i en streng med "X":
+For å utføre en søk og erstatning i en tekstfil med JavaScript, kan du bruke metoden `replace()`. Her er et eksempel på hvordan du kan erstatte et ord i en tekst med et annet ord:
 
 ```Javascript
-let tall = "123456";
-let endretTall = tall.replace(/[0-9]/g, "X");
-console.log(endretTall);
+let tekst = "Jeg elsker å kode i JavaScript!";
+let nyTekst = tekst.replace("elsker", "digger");
+// nyTekst vil nå være "Jeg digger å kode i JavaScript!"
 ```
 
-I dette eksempelet bruker vi `[0-9]` for å matche alle tall i strengen ved å bruke et regulært uttrykk. Det siste argumentet `g` betyr global, som betyr at alle forekomster av mønsteret skal bli erstattet. Outputen vil bli "XXXXXX".
+Du kan også bruke regulære uttrykk for å gjøre enda mer komplekse søk og erstatninger. Her er et eksempel på hvordan du kan erstatte alle små bokstaver i en tekst med store bokstaver:
 
-##Dypdykk
+```Javascript
+let tekst = "dette er en tekst med små bokstaver.";
+let nyTekst = tekst.replace(/[a-z]/g, match => match.toUpperCase());
+// nyTekst vil nå være "DETTE ER EN TEKST MED SMÅ BOKSTAVER."
+```
 
-Å bruke regulære uttrykk i `replace`-metoden kan være veldig nyttig, spesielt når du ønsker å gjøre mer avanserte søk og erstatninger. Det finnes mange forskjellige mønstre du kan bruke i regulære uttrykk, og det kan være lurt å bruke et nettsted som regex101.com for å teste ut og utvikle dine egne uttrykk.
+Som du kan se, bruker vi her `replace()`-metoden kombinert med et regulært uttrykk for å matche alle små bokstaver og deretter bytte dem ut med tilsvarende store bokstaver.
 
-Det kan også være nyttig å vite at `replace`-metoden ikke endrer originalstrengen, den returnerer en ny streng med de nødvendige endringene. Derfor må du lagre resultatet i en ny variabel, som vi gjorde i eksemplene våre.
+## Dypdykk
 
-##Se også
+Det er viktig å merke seg at `replace()`-metoden bare vil erstatte det første tilfellet av søket i teksten. Hvis du ønsker å erstatte alle forekomster, må du bruke et regulært uttrykk med flagget `g` (global).
 
-- [MDN Web Docs - replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [regex101.com](https://regex101.com/)
+Det er også viktig å ta hensyn til forskjellen mellom datatypene `string` og `RegExp` når du bruker regulære uttrykk. Du kan ikke bruke `match()`-metoden på en variabel av datatypen `string`, så du må sørge for å alltid bruke regulære uttrykk når du skal utføre søk og erstatning.
+
+## Se også
+
+- [MDN Web Docs: replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

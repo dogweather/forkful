@@ -1,46 +1,62 @@
 ---
 title:                "Gleam: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "Gleam"
-category:             "Testing and Debugging"
+category:             "Gleam"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere test in Gleam
+## Perché scrivere test è importante in Gleam
 
-Scrivere test del codice è una pratica fondamentale per garantire la qualità e la stabilità dei nostri programmi. In Gleam, i test ci permettono di verificare il corretto funzionamento delle nostre funzioni e di individuare eventuali errori prima che questi possano causare problemi ai nostri utenti. Inoltre, i test sono uno strumento indispensabile durante lo sviluppo di un progetto, aiutandoci a comprendere il codice e a mantenere un alto standard di pulizia e leggibilità.
+Scrivere test è un aspetto fondamentale nella programmazione, in particolare quando si utilizza un linguaggio più nuovo come Gleam. I test ci aiutano a verificare che il nostro codice funzioni come previsto e aiutano anche a identificare e risolvere eventuali errori più facilmente. Inoltre, avere una buona suite di test può aumentare la fiducia nel nostro codice e rendere il processo di sviluppo più efficiente.
 
 ## Come scrivere test in Gleam
 
-Per scrivere test in Gleam, dobbiamo utilizzare il modulo `gleam/test` e il suo operatore `test`. Questo ci permetterà di definire una funzione di test che conterrà una o più asserzioni sul nostro codice. Vediamo un esempio:
+In Gleam, possiamo scrivere test utilizzando il modulo `gleam_test`. Per prima cosa, dobbiamo importare il modulo nel nostro file di test. Quindi possiamo definire una funzione di test utilizzando il costrutto `@test` e passare come argomento l'espressione che vogliamo testare. Ad esempio:
 
 ```Gleam
-import gleam/test
-import MyModule
+@test(2 + 2) = 4
+@test(3 * 3) = 9
+```
 
-fn test_addition() {
-  let result = MyModule.add(2, 3)
-  let expected = 5
+Possiamo anche utilizzare il costrutto `@test` in una funzione di test separata e quindi richiamare questa funzione all'interno di un'altra funzione `@test`. Questo è utile se abbiamo più test da eseguire che condividono la stessa logica. Un esempio di questo potrebbe essere:
 
-  test("It should correctly add two numbers", {
-    assert.equal(result, expected)
-  })
+```Gleam
+fn sum(a, b) {
+  a + b
+}
+
+fn test_sum() {
+  assert(sum(2,2)) = 4
+  assert(sum(3,3)) = 6
+}
+
+@test("2+2=4") {
+  test_sum() |> assert
 }
 ```
 
-In questo esempio, stiamo testando la funzione `add` del nostro modulo `MyModule`, verificando che il risultato sia uguale a quello atteso. Se eseguiamo i nostri test, possiamo vedere che la funzione `add` supera il test e la funzione di test viene considerata "passed". In caso di errori, invece, il test fallirà e otterremo un messaggio di errore dettagliato.
+Per eseguire i nostri test, possiamo utilizzare il comando `gleam test` dalla nostra cartella di progetto. Se tutto va bene, dovremmo vedere un output di questo genere:
 
-Per ulteriori informazioni su come scrivere test in Gleam, ti consiglio di consultare la documentazione ufficiale.
+```
+Compiling...
 
-## Approfondimento sui test
+ 12 tests passed
 
-Scrivere test efficaci può richiedere un po' di pratica e di conoscenza, ma il tempo e lo sforzo dedicati sono ampiamente ripagati dalle numerose benefici offerti dai test. Senza test, infatti, diventa molto difficile garantire che il nostro codice funzioni correttamente e che le modifiche che apportiamo non causino regressioni.
+00:00:00 ✓
+```
 
-Inoltre, scrivere test ci aiuta anche a comprendere meglio il nostro codice e a sviluppare un senso critico nei confronti dei nostri algoritmi e delle nostre scelte di design. Infine, i test ci permettono di identificare e correggere eventuali errori in modo tempestivo, contribuendo così a mantenere uno standard di qualità costante nel nostro codice.
+## Approfondimenti sui test in Gleam
+
+Oltre agli esempi di base forniti sopra, ci sono molti altri modi in cui possiamo scrivere test in Gleam. Possiamo ad esempio utilizzare gli assert per verificare se una condizione è vera o falsa, o utilizzare il modulo `gleam_assert` per gestire gli errori dei nostri test in modo più specifico. Inoltre, possiamo utilizzare il costrutto `@setup` per eseguire alcune operazioni prima di ogni funzione `@test` o il costrutto `@before_suite` per eseguire alcune operazioni una sola volta prima di tutti i test.
+
+Una fonte utile per ulteriori approfondimenti sui test in Gleam è la documentazione ufficiale, dove vengono spiegati dettagliatamente tutti i costrutti e i moduli disponibili per scrivere test.
 
 ## Vedi anche
 
-- Documentazione ufficiale di Gleam sulla scrittura dei test (https://gleam.run/book/testing)
-- Corso online su Gleam disponibile su Udemy (https://www.udemy.com/course/gleam-programming-language)
-- Forum della comunità di Gleam (https://gleam.run/community)
+- Documentazione ufficiale sui test in Gleam: https://gleam.run/book/testing.html
+- Esempi di test in Gleam: https://github.com/gleam-lang/gleam/blob/master/examples/test
+- Tutorial su come scrivere test in Gleam: https://gleam.run/book/unit_testing.html

@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Verifica dell'esistenza di una directory"
+title:                "Haskell: Verificare se una directory esiste"
+simple_title:         "Verificare se una directory esiste"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/checking-if-a-directory-exists.md"
 ---
 
@@ -9,64 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Controllare l'esistenza di una directory è un'operazione fondamentale in programmazione Haskell. Ci permette di controllare se una specifica cartella esiste nel nostro sistema, e in caso contrario, di crearla per potervi scrivere o leggere file.
+La verifica dell'esistenza di una directory è un'operazione comune quando si lavora con file e cartelle all'interno di un progetto Haskell. Conoscere come effettuare questa verifica può aiutare a scrivere codice più robusto e gestire meglio eventuali errori.
 
-## Come Fare
+## Come fare
 
-Per controllare l'esistenza di una directory, possiamo utilizzare la funzione `doesDirectoryExist` del modulo `System.Directory`. Questa funzione prende come parametro una stringa contenente il percorso della directory che vogliamo controllare, e restituisce un valore booleano indicando se la directory esiste o meno.
+Per verificare se una directory esiste, è necessario utilizzare la funzione `doesDirectoryExist` del pacchetto `System.Directory`.
 
-```Haskell
+```
+-- Import del modulo System.Directory
 import System.Directory
-
--- Definizione del percorso della directory
-directoryPath = "C:\\Users\\utente\\Desktop\\documenti"
-
--- Chiamata alla funzione doesDirectoryExist
-doesExist = doesDirectoryExist directoryPath
-
--- Stampa del risultato
-main = do
-    putStrLn $ "La directory " ++ directoryPath ++ " esiste? " ++ show doesExist
 ```
 
-Questo codice restituirà il seguente output:
+La funzione `doesDirectoryExist` accetta come argomento una stringa che rappresenta il percorso della directory che si vuole controllare e restituisce un booleano che indica se la directory esiste o meno.
 
 ```
-La directory C:\Users\utente\Desktop\documenti esiste? True
+-- Verifica se la directory "progetto" esiste
+doesDirectoryExist "progetto"
+-- Output: True
 ```
 
-Se la directory non esiste, il risultato sarà `False`.
+Se si desidera verificare l'esistenza di una directory relativa al percorso attuale, si può utilizzare la funzione `getCurrentDirectory` per ottenere il percorso corrente e concatenarlo con il nome della directory da controllare.
+
+```
+-- Ottenere il percorso corrente
+currentDir <- getCurrentDirectory
+-- Verifica se la directory "documenti" esiste nel percorso corrente
+doesDirectoryExist (currentDir ++ "/documenti")
+-- Output: False
+```
 
 ## Approfondimento
 
-In Haskell, esistono diverse funzioni e librerie che ci permettono di controllare le directory in modo più approfondito. Ad esempio, con la funzione `listDirectory` del modulo `System.Directory`, possiamo ottenere una lista di tutte le sottodirectory presenti all'interno di una directory specifica.
+La funzione `doesDirectoryExist` utilizza l'API di sistema operativo per verificare l'esistenza di una directory. Ciò significa che il suo comportamento potrebbe variare a seconda del sistema operativo su cui viene eseguita l'applicazione.
 
-```Haskell
-import System.Directory
-
--- Definizione del percorso della directory
-directoryPath = "C:\\Users\\utente\\Desktop\\documenti"
-
--- Chiamata alla funzione listDirectory
-subDirectories = listDirectory directoryPath
-
--- Stampa del risultato
-main = do
-    putStrLn $ "Sottodirectories presenti in " ++ directoryPath ++ ": "
-    mapM_ putStrLn subDirectories
-```
-
-Questo codice restituirà il seguente output:
+Inoltre, è possibile utilizzare la funzione `getPermissions` del modulo `System.Posix.Files` per ottenere informazioni aggiuntive sulle autorizzazioni di una directory. Questo può essere utile per controllare se l'utente ha i permessi necessari per accedere alla directory o modificarla.
 
 ```
-Sottodirectories presenti in C:\Users\utente\Desktop\documenti:
-foto
-video
-musiche
+import System.Posix.Files
+
+-- Verifica se la directory "progetto" ha i permessi di scrittura
+writeable <- writable <$> getPermissions "progetto"
+-- Output: True
 ```
 
-## Vedi Anche
+## Vedi anche
 
-- [Documentazione ufficiale di Haskell su System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Tutorial su come lavorare con le directory in Haskell](https://wiki.haskell.org/Working_with_files)
-- [Domande frequenti su Haskell](https://wiki.haskell.org/FAQ)
+- [Documentazione completa della funzione `doesDirectoryExist`](https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:doesDirectoryExist)
+- [Documentazione completa della funzione `getPermissions`](https://hackage.haskell.org/package/unix/docs/System-Posix-Files.html#v:getPermissions)
+- [Tutorial su come gestire i file e le directory in Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/filesystem)

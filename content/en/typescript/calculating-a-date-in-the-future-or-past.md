@@ -1,66 +1,66 @@
 ---
 title:                "TypeScript recipe: Calculating a date in the future or past"
+simple_title:         "Calculating a date in the future or past"
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why: Calculating Dates in the Future or Past
+## Why
 
-Have you ever needed to calculate a date in the future or past in your TypeScript program? Perhaps you are creating a booking system and need to display dates for booking availability. Or maybe you are creating a countdown timer and need to calculate a future date to countdown towards. Whatever the reason may be, knowing how to accurately calculate dates in the future or past is a useful skill for any TypeScript programmer.
+As developers, we often need to work with dates in our code to perform various tasks. One common task is calculating a date in the future or past. This could be for tasks such as scheduling reminders, generating reports, or tracking user activity. Being able to accurately calculate dates is essential in creating efficient and functional programs.
 
-# How To: Coding Examples and Sample Output
+## How To
 
-Calculating dates in the future or past may seem like a complex task, but with TypeScript, it's actually quite simple. Let's take a look at some coding examples to see just how easy it can be.
+Calculating a date in the future or past may seem like a daunting task, but with TypeScript, it can be done easily and accurately. Let's take a look at a few examples of how to calculate a date using TypeScript.
 
-## Calculating a Date in the Future
-
-To calculate a date in the future, we can use the `Date` class in TypeScript. First, we need to create a new `Date` object with the current date as its value. Then, we can use the `setDate()` method to set the date to a future date by providing the number of days we want to add to the current date. Finally, we can use the `getFullYear()`, `getMonth()`, and `getDate()` methods to get the year, month, and day respectively.
-
-Here's an example of calculating a date 10 days into the future:
+First, we will need to import the `date-fns` library in our code. This library provides various functions for working with dates and times.
 
 ```TypeScript
-const currentDate = new Date();
-currentDate.setDate(currentDate.getDate() + 10);
-
-const year = currentDate.getFullYear();
-const month = currentDate.getMonth() + 1; // Note: Month is zero-indexed
-const day = currentDate.getDate();
-
-console.log(`The date 10 days from now is: ${day}/${month}/${year}`);
-// Output: The date 10 days from now is: 20/7/2021
+import { addDays } from 'date-fns';
 ```
 
-## Calculating a Date in the Past
-
-Calculating a date in the past follows a similar process as calculating a date in the future. However, this time we will use the `setDate()` method to subtract the number of days from the current date. We can also use the `getFullYear()`, `getMonth()`, and `getDate()` methods to get the year, month, and day respectively for the past date.
-
-Let's see an example of calculating a date 5 days in the past:
+To calculate a date in the future or past, we will use the `addDays` function. This function takes in two parameters - the date we want to start with, and the number of days we want to add (or subtract). Let's look at a simple example:
 
 ```TypeScript
+// Today's date
 const currentDate = new Date();
-currentDate.setDate(currentDate.getDate() - 5);
 
-const year = currentDate.getFullYear();
-const month = currentDate.getMonth() + 1; 
-const day = currentDate.getDate();
+// Calculate date 5 days in the future
+const futureDate = addDays(currentDate, 5);
 
-console.log(`The date 5 days ago was: ${day}/${month}/${year}`);
-// Output: The date 5 days ago was: 10/7/2021
+// Print the future date in the console
+console.log(futureDate); // Output: Sun Aug 08 2021 00:00:00 GMT+0530 (India Standard Time)
 ```
 
-# Deep Dive: The Date Object
+As you can see, by using the `addDays` function, we were able to easily calculate a date 5 days in the future. Similarly, we can also calculate dates in the past by passing in a negative number as the second parameter.
 
-The `Date` class in TypeScript is a built-in object that represents a specific moment in time. It has various methods for getting and setting different date components, such as the year, month, day, hour, minute, and second. It also has methods for comparing dates and working with timezones.
+```TypeScript
+// Today's date
+const currentDate = new Date();
 
-To learn more about the `Date` class and its methods, check out the TypeScript documentation for dates [here](https://www.typescriptlang.org/docs/handbook/2/objects.html#date).
+// Calculate date 3 days in the past
+const pastDate = addDays(currentDate, -3);
 
-# See Also
+// Print the past date in the console
+console.log(pastDate); // Output: Thu Jul 29 2021 00:00:00 GMT+0530 (India Standard Time)
+```
 
-- [Using Date and Time in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [TypeScript Handbook: Date](https://www.typescriptlang.org/docs/handbook/2/objects.html#date)
-- [How to Work with Dates and Time in TypeScript](https://www.sitepoint.com/working-with-dates-and-time-in-typescript/)
+Apart from `addDays`, the `date-fns` library also provides functions to add or subtract months, years, hours, minutes, and seconds from a given date. These functions work in a similar way to `addDays` and can be used according to our needs.
 
-Now that you have a better understanding of how to calculate dates in the future or past with TypeScript, put your knowledge into practice and start incorporating dates into your next project! Happy coding!
+## Deep Dive
+
+Behind the scenes, the `addDays` function uses the JavaScript `Date` object. The `Date` object represents a single moment in time and can be created with specific date and time values.
+
+When we pass a date parameter to the `addDays` function, it uses the `getTime()` method of the `Date` object to get the number of milliseconds passed since January 1, 1970, 00:00:00 UTC. It then adds (or subtracts) the specified number of days, converts it back to a `Date` object, and returns it.
+
+## See Also
+
+For a more in-depth understanding of the `date-fns` library and working with dates, check out the official documentation and some helpful resources below:
+
+- [date-fns Documentation](https://date-fns.org/docs/)
+- [Exploring Javascript's Object-Oriented Date and Time API - Smashing Magazine](https://www.smashingmagazine.com/2018/04/javascript-date-and-time-manipulation/)
+- [Moment.js vs date-fns: Which Is The Right Library To Use? - Scotch.io](https://scotch.io/tutorials/momentjs-vs-date-fns-which-is-reduxs-momentjs-replacement)

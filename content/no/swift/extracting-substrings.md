@@ -1,45 +1,87 @@
 ---
-title:                "Swift: Utvinning av delstrenger"
+title:                "Swift: Utdrag av substringer"
+simple_title:         "Utdrag av substringer"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-### Hvorfor
+# Hvorfor
 
-Hvorfor ville man ønske å ekstrahere substrings i Swift programmering? Ofte når vi jobber med tekstbehandling, er det nødvendig å få tak i deler av en tekststreng for å utføre ulike operasjoner på den. Ved å ekstrahere substrings kan man enkelt hente ut akkurat den informasjonen man trenger fra en lang tekststreng.
+Utdragsinndeling er en viktig del av Swift programmering. Det lar deg enkelt få tak i deler av en streng og manipulere den slik du vil. Dette er spesielt nyttig når du jobber med store mengder tekst og bare trenger å fokusere på en del av den. 
 
-### Hvordan gjør man det
+# Hvordan
 
-For å ekstrahere en substring i Swift, kan man bruke funksjonen `prefix(_:)` og `suffix(_:)`. Disse funksjonene tar inn en parameter som angir hvor mange tegn man ønsker å ekstrahere fra enten starten eller slutten av tekststrengen.
+For å begynne å utvinne delstrenger i Swift, må du først ha en streng å jobbe med. La oss si at vi har en streng som inneholder informasjon om en persons navn og alder: 
 
-```Swift
-let tekststreng = "Hei verden"
-let prefix = tekststreng.prefix(2)
-let suffix = tekststreng.suffix(3)
+```Swift 
+let streng = "Eirik, 25" 
+``` 
 
-print(prefix) // Output: He
-print(suffix) // Output: den
-```
+Hvis vi vil skille ut alderen og bruke den til å gjøre noe annet, kan vi bruke følgende kode: 
 
-Man kan også bruke funksjonen `substring(with:)` for å spesifisere et område (range) av tekststrengen man ønsker å ekstrahere. Denne funksjonen tar imot et `Range<String.Index>` objekt som parameter, og dette kan enkelt opprettes ved å angi start og sluttindekser for området man ønsker å ekstrahere.
+```Swift 
+let delstreng = streng.suffix(2) 
+print("Eirik er \(delstreng) år gammel") 
+``` 
 
-```Swift
-let navn = "Thomas"
-let subset = navn.substring(with: 1...3)
+Dette vil gi følgende utdata: 
 
-print(subset) // Output: hom
-```
+`Eirik er 25 år gammel` 
 
-### Dykk dypere
+Vi brukte "suffix" funksjonen for å få de to siste tegnene i strengen. Men vi kan også bruke "prefix" funksjonen for å få de to første tegnene: 
 
-En nyttig metode for å ekstrahere en substring er `dropFirst()` og `dropLast()` funksjonene. Disse funksjonene fjerner henholdsvis det første eller siste tegnet i tekststrengen og returnerer den resterende delen. Dette kan være spesielt nyttig når man skal fjerne for eksempel mellomrom i en tekststreng.
+```Swift 
+let delstreng = streng.prefix(5) 
+print("Eiriks navn er \(delstreng)") 
+``` 
 
-Man kan også bruke `split(separatedBy:)` funksjonen for å splitte tekststrengen inn i en array av substrings basert på et gitt tegn eller en gitt tekststreng.
+Dette vil gi følgende utdata: 
 
-### Se også
+`Eiriks navn er Eirik` 
 
-- [Offisiell Swift dokumentasjon om substring manipulation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID335)
-- [Utdypende guide om bruk av substring i Swift](https://www.hackingwithswift.com/articles/114/swift-strings-and-swift-substrings-a-complete-tutorial)
+Du kan også bruke "dropFirst" og "dropLast" funksjonene for å ekskludere en viss mengde tegn fra begynnelsen eller slutten av en streng. Her er et eksempel med "dropFirst": 
+
+```Swift 
+let delstreng = streng.dropFirst(7) 
+print("Alder: \(delstreng)") 
+``` 
+
+Dette vil gi følgende utdata: 
+
+`Alder: 25` 
+
+# Dypdykk 
+
+Når du jobber med mer komplekse strenger, kan du også bruke "index" funksjonen for å få tilgang til et bestemt tegn i strengen ved hjelp av et tall. For eksempel hvis vi har en streng med flere ord og vi vil ha det tredje ordet: 
+
+```Swift 
+let streng = "Dette er en test" 
+let delstreng = streng[streng.index(streng.startIndex, offsetBy: 8)...streng.index(streng.endIndex, offsetBy: -1)] 
+print("Tredje ord: \(delstreng)") 
+``` 
+
+Dette vil gi følgende utdata: 
+
+`Tredje ord: en` 
+
+Det er også mulig å bruke "range" for å få ut en del av en streng basert på en bestemt posisjon eller indeks. For eksempel: 
+
+```Swift 
+let range = streng.index(streng.startIndex, offsetBy: 5)...streng.index(streng.startIndex, offsetBy: 9) 
+let delstreng = streng[range] 
+print("Delstreng: \(delstreng)") 
+``` 
+
+Dette vil gi følgende utdata: 
+
+`Delstreng: er en` 
+
+# Se Også 
+
+- [Swift strings grundig guide - apple.com](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Substring dokumentasjon - apple.com](https://developer.apple.com/documentation/swift/substring)
+- [String dokumentasjon - apple.com](https://developer.apple.com/documentation/swift/string/)

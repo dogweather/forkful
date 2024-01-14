@@ -1,58 +1,60 @@
 ---
-title:                "Bash: Encontrando o comprimento de uma string"
+title:                "Bash: Encontrando o comprimento de uma string."
+simple_title:         "Encontrando o comprimento de uma string."
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Porque encontrar o comprimento de uma string no Bash
+## Por que
+Muitas vezes, ao programar em Bash, precisamos lidar com strings e saber o tamanho delas é essencial para manipular corretamente esses dados.
 
-Encontrar o comprimento de uma string é uma das tarefas básicas em programação, especialmente ao trabalhar com o Bash. Saber o comprimento de uma string pode ser útil para diferentes propósitos, desde validar entradas do usuário a manipular e formatar dados. Neste post, vamos mostrar como você pode encontrar o comprimento de uma string utilizando o Bash.
+## Como
+Para encontrar o tamanho de uma string em Bash, podemos usar o operador de substituição de parâmetro `${#string}`. Vamos ver um exemplo:
 
-## Como fazer
+```
+# Definir uma string
+frase="Olá, mundo!"
 
-Para encontrar o comprimento de uma string no Bash, você pode usar o comando `expr length`, seguido da string entre aspas. Por exemplo:
+# Encontrar o tamanho da string
+tamanho=${#frase}
 
-```Bash
-expr length "Hello world"
+# Imprimir o resultado
+echo "O tamanho da string é $tamanho"
 ```
 
-A saída seria `11`, pois a string "Hello world" possui 11 caracteres. Você também pode atribuir o resultado a uma variável, por exemplo:
+O resultado será:
 
-```Bash
-length=$(expr length "Hello world")
-echo $length
+```
+O tamanho da string é 12
 ```
 
-A saída seria novamente `11`. Outra opção é utilizar o operador `${#}`, seguido da string entre chaves. Por exemplo:
+## Deep Dive
+O operador `${#string}` retorna o comprimento da string em caracteres. Mas é importante notar que ele conta todos os caracteres, incluindo espaços em branco e caracteres especiais. Além disso, ele também pode ser usado para encontrar o tamanho de uma variável ou de um parâmetro.
 
-```Bash
-echo ${#"Hello world"}
+Também é possível usar o operador `${#string}` dentro de um loop para encontrar o tamanho de várias strings em um array. Por exemplo:
+
+```
+# Definir um array de strings
+frases=("O mundo é um livro e aqueles que não viajam leem apenas uma página." "No meio do inverno, finalmente aprendi que havia em mim um verão invencível.")
+
+# Percorrer o array e imprimir o tamanho de cada string
+for frase in "${frases[@]}"
+do
+    echo "O tamanho da string '$frase' é ${#frase}"
+done
 ```
 
-A saída seria novamente `11`. Agora que você sabe como encontrar o comprimento de uma string, vamos ver alguns exemplos de uso em diferentes situações.
+O resultado será:
 
-## Profundando
-
-Encontrar o comprimento de uma string é apenas o primeiro passo. Você também pode usar esse conhecimento para realizar outras tarefas no Bash. Por exemplo, você pode extrair um trecho específico de uma string utilizando o operador `${:}`, seguido do índice inicial e do comprimento desejado. Veja este exemplo:
-
-```Bash
-string="Hello world"
-echo ${string:3:5}
 ```
-
-A saída seria `lo wo`, pois o comando está pedindo para extrair a partir do índice 3 um trecho com 5 caracteres. Além disso, você também pode usar o comando `wc` para contar o número de palavras em uma string, como mostrado abaixo:
-
-```Bash
-string="Hello world"
-wc -w <<< $string
+O tamanho de 'O mundo é um livro e aqueles que não viajam leem apenas uma página.' é 63
+O tamanho de 'No meio do inverno, finalmente aprendi que havia em mim um verão invencível.' é 66
 ```
-
-A saída seria `2`, pois a string possui duas palavras. Existem diversas possibilidades quando se trata de manipular strings no Bash, e conhecer o comprimento dela é essencial para realizar essas tarefas.
 
 ## Veja também
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
-- [Tutorial de manipulação de strings no Bash](https://www.tutorialspoint.com/unix/unix-regular-expressions.htm)
-- [Referência rápida de comandos do Bash](https://devhints.io/bash)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Bash Scripting Tutorial](https://www.shellscript.sh/index.html)

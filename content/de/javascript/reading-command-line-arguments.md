@@ -1,76 +1,56 @@
 ---
-title:                "Javascript: Lesen von Befehlszeilenargumenten"
+title:                "Javascript: Lesen von Kommandozeilenargumenten"
+simple_title:         "Lesen von Kommandozeilenargumenten"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
+## Warum
 
-Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit in der Programmierung, die es uns ermöglicht, unser Programm auf verschiedene Wege auszuführen. Durch das Einlesen von Argumenten können wir unsere Anwendung flexibler gestalten und sie an die Bedürfnisse unserer Nutzer anpassen.
+Das Lesen von Befehlszeilenargumenten ist sehr praktisch, um die Interaktivität und Flexibilität eines JavaScript Programms zu erhöhen. Indem man Parameter direkt in der Befehlszeile eingibt, kann man das Verhalten des Codes beeinflussen und anpassen, ohne das Programm jedes Mal neu schreiben zu müssen.
 
-##Wie man Befehlszeilenargumente liest
+## Wie man Befehlszeilenargumente liest
 
-Um Befehlszeilenargumente in Javascript zu lesen, gibt es die `process.argv` Funktion. Diese gibt uns ein Array mit allen Argumenten zurück, die bei der Ausführung des Programms angegeben wurden. Ein Beispiel hierfür wäre:
+Das Lesen von Befehlszeilenargumenten ist in JavaScript relativ einfach und kann mit nur wenigen Codezeilen implementiert werden. Um eine Argumentvariabele zu erstellen, muss man die `process.argv` Funktion aufrufen. Diese gibt ein Array zurück, das alle Argumente enthält, die vom Benutzer in der Befehlszeile eingegeben wurden.
 
-```javascript
-const args = process.argv;
-
-console.log(args);
+```Javascript
+const arguments = process.argv;
 ```
 
-Wenn wir dieses Programm mit dem Befehl `node index.js arg1 arg2 arg3` ausführen, wird das Console-Log folgende Ausgabe produzieren:
+Um auf einzelne Argumente zuzugreifen, muss man einfach auf das entsprechende Index in dem Array zugreifen. Der Index 0 enthält dabei den Pfad zur Node.js-Installation und der Index 1 den Pfad zur ausführbaren JavaScript-Datei. Alle weiteren Argumente beginnen ab Index 2.
 
-```
-["node", "index.js", "arg1", "arg2", "arg3"]
-```
+```Javascript
+// Beispielaufruf: node script.js argument1 argument2
 
-Wie du sehen kannst, enthält das Array alle Argumente, die wir angegeben haben, einschließlich des Namens des ausführbaren Programms (`node`). Wir können nun auf die einzelnen Argumente zugreifen, indem wir auf die entsprechenden Indizes im Array zugreifen.
-
-```javascript
-const args = process.argv;
-
-console.log("Das erste Argument ist: " + args[2]);
-console.log("Das zweite Argument ist: " + args[3]);
-console.log("Das dritte Argument ist: " + args[4]);
+console.log(arguments[2]); // gibt 'argument1' aus
+console.log(arguments[3]); // gibt 'argument2' aus
 ```
 
-Die Ausgabe wird dann wie folgt aussehen:
+## Tieferer Einblick
 
-```
-Das erste Argument ist: arg1
-Das zweite Argument ist: arg2
-Das dritte Argument ist: arg3
-```
+Neben dem Lesen von einzelnen Argumenten gibt es auch die Möglichkeit, Optionen oder Flags bei der Eingabe zu verwenden. Diese können zusätzliche Informationen für das Programm enthalten und sind häufig durch das Vorzeichen "-" oder "--" gekennzeichnet.
 
-##Tiefere Einblicke
+Um auf solche Optionen zuzugreifen, bietet es sich an, eine Schleife zu verwenden, die durch das gesamte `process.argv` Array läuft. Dabei sollte man Wert auf eine gute Fehlerbehandlung legen, da fehlende oder falsch formatierte Argumente zu unerwarteten Fehlern führen können.
 
-Neben dem einfachen Einlesen von Argumenten mit `process.argv`, gibt es auch Möglichkeiten, die Argumente zu manipulieren und zu verarbeiten. Eine davon ist die Verwendung von `yargs`, einem npm-Paket, das uns bei der Verarbeitung von Befehlszeilenargumenten hilft.
+```Javascript
+// Beispielaufruf: node script.js --name Max --age 25
 
-Hier ist ein einfaches Beispiel, wie wir `yargs` in unser Programm einbinden können und wie es uns helfen kann, die eingegebenen Argumente zu verarbeiten:
-
-```javascript
-const yargs = require('yargs');
-
-const argv = yargs.argv;
-
-console.log("Die Summe deiner eingegebenen Argumente ist: " + (argv.arg1 + argv.arg2 + argv.arg3));
+for (let i = 2; i < arguments.length; i++) {
+    if (arguments[i] === '--name') {
+        // gibt den Wert der Option --name aus
+        console.log(arguments[i + 1]); // gibt 'Max' aus
+    } else if (arguments[i] === '--age') {
+        // gibt den Wert der Option -- age als Integer aus
+        console.log(parseInt(arguments[i + 1])); // gibt 25 aus
+    }
+}
 ```
 
-Wir können nun unser Programm mit dem Befehl `node index.js --arg1=2 --arg2=4 --arg3=6` ausführen und erhalten als Ausgabe:
-
-```
-Die Summe deiner eingegebenen Argumente ist: 12
-```
-
-Dieses Beispiel zeigt, wie wir mit Hilfe von `yargs` die Argumente direkt zu Zahlen konvertieren und sie dann weiter verarbeiten können.
-
-##Siehe auch
-
-- [Offizielle Dokumentation zur Verwendung von `process.argv`](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- [Npm-Paket `yargs`](https://www.npmjs.com/package/yargs)
-- [Tutorial zur Verwendung von `yargs`](https://www.digitalocean.com/community/tutorials/nodejs-getting-started-with-yargs)
-
-Viel Spaß beim Lesen und Programmieren!
+## Siehe auch
+- [Node.js process.argv Documentation](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [How to Read Command Line Arguments in Node.js](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-node-js-de) (Englisch)
+- [Commander.js: Library for creating CLI programs in Node.js](https://github.com/tj/commander.js) (Englisch)

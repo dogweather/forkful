@@ -1,59 +1,56 @@
 ---
-title:                "C++: Die Verkettung von Zeichenfolgen"
+title:                "C++: Zeichenfolgen verknüpfen"
+simple_title:         "Zeichenfolgen verknüpfen"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+## Warum?
 
-Die Verkettung von Zeichenfolgen (auch bekannt als String Concatenation) ist ein grundlegender Bestandteil der Programmierung in C++. Sie ermöglicht es, mehrere Zeichenfolgen zu einer einzigen zusammenzufügen, was besonders nützlich ist, wenn man dynamische Ausgaben erzeugen möchte. In diesem Blog-Beitrag werden wir uns genauer ansehen, wie man Strings in C++ verkettet und warum es wichtig ist, diese Technik zu beherrschen.
+Eine der grundlegendsten und häufigsten Aufgaben in der Programmierung ist die Manipulation von Strings. Das Zusammenfügen oder Concatenating von Strings ermöglicht es, mehrere Textteile zu einem Ganzen zusammenzusetzen. Dies kann in verschiedenen Anwendungsgebieten nützlich sein, wie zum Beispiel bei der Erstellung von dynamischen Ausgaben oder bei der Bearbeitung von Benutzereingaben.
 
-## Wie geht man vor
+## Wie geht das?
 
-Um Zeichenfolgen zu verketten, benötigt man den Operand ```+```, der auch für die Addition von numerischen Werten verwendet wird. Das liegt daran, dass Zeichenfolgen in C++ immer noch als Arrays von Zeichen behandelt werden. Im Folgenden wird ein Beispiel gezeigt, wie man zwei Zeichenfolgen verkettet:
+In C++ gibt es zwei Möglichkeiten, Strings miteinander zu verbinden: mit dem "+" Operator oder mit der Funktion "concat". Beide verwenden den Datentyp "string", um die Textstücke zu halten. Hier ist ein Beispiel für beide Methoden:
 
 ```C++
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 int main() {
-
-    // Zwei Zeichenfolgen werden erstellt
-    std::string str1 = "Hallo";
-    std::string str2 = "Welt";
-
-    // Die Verkettung wird mit dem Operand + durchgeführt
-    std::string result = str1 + str2;
-
-    // Das Ergebnis wird ausgegeben
-    std::cout << result;
-
+    // "+" Operator
+    string str1 = "Hello";
+    string str2 = "World!";
+    string result = str1 + " " + str2;
+    cout << result << endl;
+    
+    // "concat" Funktion
+    string text1 = "John";
+    string text2 = "Doe";
+    string fullName = text1.concat(" ").concat(text2);
+    cout << fullName << endl;
+    
     return 0;
 }
 ```
 
-Die Ausgabe dieses Codes lautet:
+Dieser Code wird die Strings "Hello World!" und "John Doe" ausgeben. Beachten Sie, dass sowohl der Operator als auch die Funktion die Strings zusammenfügen und eine neue verkettete Zeichenkette erstellen.
 
-```
-HalloWelt
-```
+## Tiefere Einblicke
 
-Wie man sehen kann, werden die beiden Zeichenfolgen zu einer einzigen zusammengefügt. Man kann auch mehrere Strings gleichzeitig verketten, indem man einfach weitere Operanden hinzufügt.
+Beim Zusammenführen von Strings mit dem "+" Operator oder der "concat" Funktion ist es wichtig zu beachten, dass beide Funktionen den ursprünglichen String nicht verändern. Stattdessen wird eine neue Zeichenkette erstellt, die anschließend verwendet oder gespeichert werden kann. Dies hilft, unerwünschte Änderungen an Originaltexten zu vermeiden.
 
-## Tiefergehende Informationen
-
-Es gibt verschiedene Techniken, um Strings in C++ zu verketten, je nachdem, was genau man erreichen möchte. Eine Möglichkeit ist die Verwendung der Funktion ```append()```, die es erlaubt, Strings an einen bereits vorhandenen String anzufügen.
-
-Um aber wirklich zu verstehen, wie Strings in C++ verkettet werden, ist es wichtig, das Konzept von Pointern und der Speicheradressierung zu verstehen. Da Zeichenfolgen in C++ als Char-Arrays behandelt werden, bezieht sich jede einzelne Zeichenfolge auf eine bestimmte Speicheradresse. So kann man zum Beispiel auch Strings verkettet werden, indem man die Speicheradressen von zwei Zeichenfolgen miteinander verknüpft.
-
-Um mehrere Strings effizient zu verketten, kann man auch die Funktion ```std::stringstream``` verwenden, die es erlaubt, verschiedene Datentypen zu Strings zu konvertieren und sie dann miteinander zu verketten.
-
-Insgesamt ist das Verständnis der Speicheradressierung und der verschiedenen Verkettungsmethoden von Zeichenfolgen ein wichtiger Teil der C++ Programmierung und kann dabei helfen, effizientere und dynamischere Programme zu schreiben.
+Außerdem können beide Methoden auch mehr als zwei Strings gleichzeitig zusammenfügen. Zum Beispiel können Sie mit dem "+" Operator mehrere Zeichenketten hintereinander anfügen, während Sie bei der "concat" Funktion eine beliebige Anzahl von Zeichenketten als Parameter übergeben können.
 
 ## Siehe auch
 
-* [C++ String concatenation](https://www.geeksforgeeks.org/string-concatenation-c/)
-* [String Concatenation with pointers](https://www.programiz.com/cpp-programming/pointers-strings)
-* [stringstream in C++](https://www.geeksforgeeks.org/stringstream-c-applications/)
+- [C++ Strings](https://www.cplusplus.com/reference/string/string/)
+- [C++ String Concatenation](https://www.programiz.com/cpp-programming/library-function/cplusplus-string-concat)
+
+Danke, dass Sie sich die Zeit genommen haben, diesen Beitrag über das Zusammenfügen von Strings in C++ zu lesen. Wir hoffen, dass Sie nun ein besseres Verständnis dafür haben, wie Sie Strings in Ihren Programmen effektiv verbinden können. Bis zum nächsten Mal!

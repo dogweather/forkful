@@ -1,60 +1,56 @@
 ---
-title:                "Elixir: 寻找字符串的长度"
+title:                "Elixir: 查找字符串的长度"
+simple_title:         "查找字符串的长度"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-##为什么
-有时候，在编程中我们需要知道一个字符串的长度。这可以帮助我们处理文本、验证用户输入或者进行排序。在Elixir中，有几种方法可以轻松地找到字符串的长度。
+## 为什么
 
-##如何
-在Elixir中，我们可以使用`String.length`函数来获取一个字符串的长度。让我们来看一个简单的例子：
+在编程中，我们经常需要操作字符串。有时候，我们需要知道一个字符串的长度。知道一个字符串的长度可以帮助我们正确地处理它，例如，限制用户输入的字符数或者追踪数据中特定字段的长度。在Elixir编程中，我们可以使用内置的函数来轻松地获得字符串的长度。接下来，我们将介绍如何使用Elixir来找到字符串的长度，以及背后的原理。
 
-```Elixir
-string = "Hello"
-IO.puts String.length(string)
-```
+## 如何做
 
-输出将是： 5
-
-另一种获得字符串长度的方法是使用`String.trim_leading`函数。这个函数将返回一个经过修剪后的字符串，然后我们可以使用`String.length`函数来获取修剪后的字符串的长度。让我们看一个例子：
+在Elixir中，我们可以使用String模块中的`length/1`函数来获得字符串的长度。它接受一个字符串作为参数，并返回该字符串的字符数。让我们来看一个例子：
 
 ```Elixir
-string = "  Hello  "
-trimmed_string = String.trim_leading(string)
-IO.puts String.length(trimmed_string)
+string = "Hello World"
+length = String.length(string)
+IO.puts(length)
 ```
 
-输出将是：5
+输出为:
 
-##深入探究
-在Elixir中，字符串实际上是一个由字符列表组成的列表。当我们使用`String.length`函数时，它会遍历字符串并计算字符的数量，最终返回字符串的长度。因此，它的运行时间是O(n)，其中n是字符串的长度。
+```
+11
+```
 
-除了使用`String.length`函数外，我们还可以自己实现一个函数来计算字符串的长度。让我们来看一个简单的例子：
+我们可以看到，`length/1`函数返回了字符串`"Hello World"`的长度11。让我们再来看一个更复杂的例子：
 
 ```Elixir
-defmodule MyString do
-  def get_length(string) do
-    length = 0
-    Enum.each(string, fn character ->
-      length = length + 1
-    end)
-    length
-  end
-end
-
-string = "Hello"
-IO.puts MyString.get_length(string)
+string = "你好，世界"
+length = String.length(string)
+IO.puts(length)
 ```
 
-输出将是：5
+输出为:
 
-在这个例子中，我们使用`Enum.each`函数来遍历字符串，并在每次循环中增加长度的计数器。这种方法的运行时间也是O(n)。
+```
+5
+```
 
-##参考
-* [`String.length` 文档](https://hexdocs.pm/elixir/String.html#length/1)
-* [`String.trim_leading` 文档](https://hexdocs.pm/elixir/String.html#trim_leading/2)
-* [Elixir 字符串教程](https://elixirschool.com/zh-hans/lessons/basics/basics/#%E5%AD%97%E7%AC%A6%E7%AA%97%E6%8E%A5)
+即使字符串中包含中文字符，`length/1`函数也能正确地返回长度。这说明Elixir对于不同的编码方式都有良好的支持。除了`length/1`函数，我们还可以使用`byte_size/1`函数来获取字符串的字节数。这在处理非ASCII字符时很有用。
+
+## 深入了解
+
+在Elixir中，字符串是以UTF-8编码的。这意味着，每个字符在内存中占用的字节数不同，取决于它的编码。因此，使用`length/1`函数获得的字符串长度实际上是它包含的字符数，并不完全等于它的字节数。例如，一个中文字符可能占用2-4个字节，但在使用`length/1`函数时，它仍然被计算为一个字符。因此，仅仅依靠字符数来处理字符串的长度可能会导致错误，特别是在涉及多字节字符的情况下。在这种情况下，最好使用`byte_size/1`函数来获得字符串的字节数。
+
+## 参考链接
+
+- [Elixir官方文档 - String模块](https://hexdocs.pm/elixir/String.html)
+- [Elixir官方文档 - byte_size/1函数](https://hexdocs.pm/elixir/Kernel.html#byte_size/1)
+- [Elixir官方文档 - length/1函数](https://hexdocs.pm/elixir/String.html#length/1)

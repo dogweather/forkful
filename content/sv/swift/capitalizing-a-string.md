@@ -1,55 +1,40 @@
 ---
-title:                "Swift: Kapitalisering av en sträng"
+title:                "Swift: Att Kapitalisera en Sträng"
+simple_title:         "Att Kapitalisera en Sträng"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför 
 
-I Swift-programmering är det ofta nödvändigt att kunna manipulera och formatera text. En vanlig uppgift är att ändra från små bokstäver till versaler eller vice versa. I den här bloggposten kommer vi att titta närmare på hur vi kan göra just detta i Swift, och varför det är användbart.
+Att kapitalisera en sträng kan vara användbart när man vill ändra utseendet på en textsträng, till exempel om man vill visa en rubrik eller ett namn med stor första bokstav. 
 
-## Så här gör du
+## Så här gör du 
 
-För att ändra en sträng till versaler i Swift, används metoden `uppercased()` som tillhör strängklassen. Enkelt uttryckt, metoden tar en sträng och returnerar en ny version av den med alla bokstäver som är stora. Här är ett exempel:
-
-```Swift
-let str = "hej alla från Sverige"
-print(str.uppercased())
+```Swift 
+let str = "hej och välkommen"
+print(str.capitalized) // Output: "Hej Och Välkommen"
 ```
 
-Output:
+Det enklaste sättet att kapitalisera en sträng i Swift är att använda metoden `capitalized`, vilken automatiskt omvandlar första bokstaven i varje ord till stor bokstav. Man kan också använda metoden `uppercased` för att göra hela strängen stor bokstav eller `lowercased` för att göra hela strängen små bokstäver. 
 
-```
-HEJ ALLA FRÅN SVERIGE
-```
-
-För att göra om strängen till små bokstäver används istället metoden `lowercased()`. Låt oss ta en titt på ett annat exempel:
-
-```Swift
-let name = "HANNAH"
-print(name.lowercased())
+```Swift 
+let str = "jag Älskar Att Programmera"
+print(str.uppercased()) // Output: "JAG ÄLSKAR ATT PROGRAMMERA"
+print(str.lowercased()) // Output: "jag älskar att programmera"
 ```
 
-Output:
+## Fördjupa dig
 
-```
-hannah
-```
+I Swift finns det flera metoder för att manipulera och ändra strängar. En av dessa är metoden `localizedCapitalized`, vilken tar hänsyn till språktillhörighet och kulturella normer när den kapitaliserar en sträng. Det går också att välja vilka tecken som ska anses som bokstäver genom att använda metoden `capitalized(with:)`. 
 
-## Djupdykning
-
-Att kunna formatera texten på detta sätt kan vara väldigt användbart, till exempel när man vill göra sökningar i en sträng oberoende av bokstavens storlek. Detta är särskilt användbart när man håller på med användarsökningar eller filtreringar.
-
-Ytterligare en användning av att göra om en sträng till versaler eller små bokstäver är för att göra output enhetlig, oavsett hur användaren matar in sin information. Detta hjälper till att undvika fel och förvirring.
+Det finns även möjlighet att använda `NSMutableString` för att ändra en sträng direkt utan att behöva skapa en ny sträng. Med hjälp av metoden `replaceCharacters(in:with:)` kan man till exempel byta ut vissa tecken med andra. 
 
 ## Se även
 
-Vill du lära dig mer om hur man manipulerar text i Swift? Kolla in dessa resurser:
-
-- [Officiell Swift-dokumentation om strängar](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Tutorial: How to Use String Manipulation in Swift](https://www.appcoda.com/swift-string-manipulation/)
-
-Lycka till med ditt Swift-programmerande!
+- [Apple Dokumentation om capitalizing strings](https://developer.apple.com/documentation/foundation/nsstring/1164307-capitalized)
+- [Blogginlägg om olika sätt att ändra strängar i Swift](https://www.hackingwithswift.com/articles/126/capitalizing-strings-in-swift)

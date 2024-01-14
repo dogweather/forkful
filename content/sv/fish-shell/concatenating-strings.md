@@ -1,42 +1,76 @@
 ---
-title:                "Fish Shell: Sammanslåning av strängar"
+title:                "Fish Shell: Sammanfogning av strängar"
+simple_title:         "Sammanfogning av strängar"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+I enkel kod, ibland måste du kombinera flera strängar tillsammans för att skapa en längre streng. Fish Shell går utöver bara grundläggande strängkonkaterning, och ger dig kraftfulla verktyg för att manipulera och hantera strängar på ett mer avancerat sätt.
 
-Att sammanfoga strängar är en viktig del av programmering och kan användas för att skapa mer dynamiska och flexibla koder. Det är en grundläggande teknik som är mycket användbar inom olika programmeringsspråk, inklusive Fish Shell.
-
-## Hur man gör det
-
-För att sammanfoga strängar i Fish Shell använder man sig av kommandot `string join` och angett vilket tecken som ska användas för att separera de olika strängarna. Här är ett exempel på hur man kan sammanfoga två strängar "Välkommen" och "till programmeringsvärlden!" med hjälp av ett mellanslag som separeringstecken:
+## Hur man gör
+För att konkatenera strängar i Fish Shell, använder du kommandot `string join`, följt av de strängar du vill kombinera. Till exempel:
 
 ```Fish Shell
-echo (string join " " "Välkommen" "till programmeringsvärlden!")
+string join "Hej" "pa" "dig!"
 ```
 
-Detta kommer att ge utdatan: `Välkommen till programmeringsvärlden!`.
+Outputen skulle vara:
 
-Det är också möjligt att använda vilket tecken som helst som separeringstecken, till exempel `|` eller `-`. Här är ett exempel på hur man kan använda `-` som separeringstecken:
+```
+Hej på dig!
+```
+
+Du kan också använda variabler i `string join` kommandot för att kombinera med andra strängar. Till exempel:
 
 ```Fish Shell
-echo (string join "-" "idag" "är" "det" "en" "bra" "dag")
+set namn "John"
+string join "Hej" $namn ", hur mår du?"
 ```
 
-Detta ger utdatan: `idag-är-det-en-bra-dag`.
+Outputen skulle vara:
+
+```
+Hej John, hur mår du?
+```
+
+Du kan till och med använda `string join` för att skapa strängar baserat på regulatoriska uttryck (regular expressions). Till exempel, om du ville ta bort alla vokaler från en sträng, kan du göra det med hjälp av `string join` på följande sätt:
+
+```Fish Shell
+set sträng "Hej pa dig!"
+set formateradstrang (string join "" (string match -r "[aeiou]" -r " " $sträng))
+echo $formateradstrang
+```
+
+Outputen skulle vara:
+
+```
+Hj p dg!
+```
 
 ## Djupdykning
+När du konkatenerar strängar i Fish Shell, används variabler som referenser till de ursprungliga strängarna. Detta innebär att om du ändrar en variabel senare, påverkas också slutsträngen. Till exempel:
 
-När man sammanfogar strängar är det viktigt att tänka på vilken typ av variabler som används. Om man försöker sammanfoga en sträng med en annan typ av variabel, som till exempel ett tal, kan det leda till oönskade resultat. Det är också viktigt att tänka på ordningen i vilken strängarna ska sammanfogas, eftersom detta påverkar utdatan.
+```Fish Shell
+set namn "Anna-Lena"
+set halsning "Hej " $namn
+set namn "Johan"
+echo $halsning
+```
 
-Det finns också andra användbara kommandon för att manipulera strängar i Fish Shell, som till exempel `string split` och `string length`. Genom att använda dessa kommandon tillsammans med `string join` kan man skapa mer avancerade och anpassningsbara koder.
+Outputen skulle vara:
+
+```
+Hej Johan
+```
+
+Detta händer eftersom `halsning` variabeln fortfarande refererar till `Anna-Lena` och inte har uppdaterats med den nya värdet på `namn`. Detta är en viktig sak att komma ihåg när du arbetar med strängkonkaterning i Fish Shell.
 
 ## Se även
-
-- [Fish Shell dokumentation om `string join`](https://fishshell.com/docs/current/cmds/join.html)
-- [En enkel guide till Fish Shell](https://dev.to/edge404/how-to-get-started-with-fish-shell-5b7l)
-- [GitHub-samling av användbara Fish Shell-kommandon](https://github.com/jorgebucaran/awesome-fish)
+* [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
+* [Guide till reguljära uttryck i Fish Shell](https://fishshell.com/docs/current/tutorial.html#tut_shallow_learning)
+* [Fish Shell community forum](https://github.com/fish-shell/fish-shell/discussions)

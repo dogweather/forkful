@@ -1,52 +1,51 @@
 ---
 title:                "Ruby: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+##Why
 
-编程有很多种方式来输出信息，其中一种是将信息打印到标准错误（standard error）流中。这种方法有时候也被称为“打印到屏幕底部”（printing to the bottom of the screen）或者“打印到控制台”（printing to the console），它可以通过代码中的`$stderr.puts`来实现。为什么要使用这种方法呢？现在就和我一起来探讨一下吧！
+为什么会写入到标准错误？
 
-## 如何使用
+当我们在编写程序时，经常会遇到各种错误，比如运行时错误、语法错误等。这些错误都会在控制台中显示，帮助我们调试代码。但是有时候，我们需要将错误信息记录下来，以便后续分析和处理。这时候，就会用到写入到标准错误的方法。
 
-首先，让我们来看一个简单的例子来使用`$stderr.puts`。假设我们有一个名为`hello.rb`的Ruby程序，它的内容如下：
+##How To
+
+在Ruby中，我们可以使用`$stderr`对象来将信息写入到标准错误。下面是一个示例代码：
 
 ```Ruby
-puts "Hello, world!"
-$stderr.puts "This is an error message."
+def divide(x, y)
+  if y == 0
+    $stderr.puts "除数不能为0"
+  else
+    puts x / y
+  end
+end
+
+divide(10, 0)
+#输出：除数不能为0
 ```
 
-运行这个程序，我们会得到以下输出：
+在上面的例子中，当除数为0时，我们会将错误信息写入到标准错误，而不是在控制台中输出。这样可以让我们知道出现了什么错误，并及时处理。
 
-```
-Hello, world!
-This is an error message.
-```
+##Deep Dive
 
-可以看到，`$stderr.puts`打印出的内容显示在了`puts`打印的内容的下面，而且字体颜色也有所不同。这样做有什么好处呢？首先，这能够让我们区分出来哪些信息是正常输出，哪些是错误信息，这样在调试程序时会更加方便。其次，这样的输出也可以帮助我们更快地定位到错误的位置，从而更快地解决问题。
+除了简单的将错误信息写入到标准错误，我们还可以通过`$stderr`对象的一些方法来对错误信息进行处理。例如，如果我们想将错误信息写入到文件中，可以使用`$stderr.reopen`方法来重新指定标准错误输出的位置。
 
-此外，我们还可以使用更多的`$stderr`方法来输出不同类型的错误信息，例如`$stderr.print`和`$stderr.write`。这些方法的具体用法可以根据你的需要来自行搜索。
+另外，我们还可以使用`$stderr.print`和`$stderr.printf`方法来格式化输出错误信息。这些方法和`puts`方法类似，但是可以让我们更灵活地控制输出的格式。
 
-## 深入了解
+##See Also
 
-要理解为什么会有标准错误流这一概念，就需要了解一下程序是如何运行的。当我们运行一个程序时，它会创建三个标准流，分别是标准输入（standard input）、标准输出（standard output）和标准错误（standard error）。标准输入通常指的是键盘输入，标准输出通常指的是屏幕输出，而标准错误则通常指的是程序的错误输出。
+了解更多有关写入到标准错误的资料，请参考以下链接：
 
-当程序发生错误时，我们希望能够将这些错误信息打印出来，而不是让它们留在程序内部。这就是标准错误流的作用，它将错误信息输出到屏幕，从而帮助我们更快地发现和解决问题。
+1. [Ruby官方文档](https://www.ruby-lang.org/en/documentation/)
+2. [标准错误（Standard Error）](https://ruby-doc.org/core-2.5.0/StandardError.html)
+3. [标准输出（Standard Output）和标准错误（Standard Error）的区别](https://www.huaweicloud.com/articles/a4764bf5ec97c48fba69ef78e05e93f3.html)
 
-## 参考资料
-
-- [Ruby Doc: Standard Error](https://ruby-doc.org/core-2.7.1/IOError.html#method-i-write)
-- [Understanding Standard Streams in Ruby](https://www.rubyguides.com/2015/07/ruby-standard-error/)
-- [Flushing Standard Output and Error Streams in Ruby](https://dev.to/nabeelvalapra/flushing-standard-output-and-error-streams-in-ruby-307p)
-- [Master the Ruby Standard Streams](https://www.rubyguides.com/2015/07/ruby-standard-streams/)
-
-## 参见
-
-- [Ruby Doc: Standard Error](https://ruby-doc.org/core-2.7.1/IOError.html#method-i-write)
-- [Ruby Doc: puts](https://ruby-doc.org/core-2.4.0/IO.html#method-i-puts)
-- [Ruby Doc: print](https://ruby-doc.org/core-2.4.0/IO.html#method-i-print)
-- [Ruby Doc: write](https://ruby-doc.org/core-2.4.0/IO.html#method-i-write)
+以上就是关于写入到标准错误的简要介绍，希望对大家有所帮助！

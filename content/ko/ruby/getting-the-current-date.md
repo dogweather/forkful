@@ -1,80 +1,67 @@
 ---
-title:                "Ruby: 현재 날짜 가져오기"
+title:                "Ruby: 현재 날짜 받아오기"
+simple_title:         "현재 날짜 받아오기"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-컴퓨터 프로그래밍에서 현재 날짜를 가져오는 것은 중요한 작업입니다. 프로그램을 작성하거나 데이터를 분석 할 때 현재 날짜가 필요한 경우가 많아질 수 있습니다. Ruby는 이를 처리하기 위해 내장 라이브러리를 제공하므로 매우 간단하게 작업할 수 있습니다.
+현재 날짜를 얻는 것이 왜 유용한지 궁금하신가요? 매일 매일 우리는 일과 업무를 하며 정확한 날짜를 알아야 할 때가 많습니다. 또한 여러분의 프로젝트에서도 날짜와 시간을 다루는 코드가 필요할 수 있습니다.
 
 ## 어떻게?
 
-Ruby에서 현재 날짜와 시간을 가져오는 방법은 매우 간단합니다. 우리는 `Time` 클래스를 사용할 것이며, `now` 메소드를 호출함으로써 현재 시간을 가져올 수 있습니다. 다음은 `Time` 클래스를 사용하여 현재 날짜와 시간을 출력하는 예제 코드입니다.
+Ruby는 현재 날짜를 얻기 위한 여러 가지 방법을 제공합니다. 그 중 가장 간단하고 일반적으로 사용되는 방법은 `Time.now` 메소드를 사용하는 것입니다.
+
+```Ruby
+puts Time.now
+```
+
+위의 코드를 실행하면 현재 시간과 날짜가 출력됩니다.
+
+```
+2019-09-24 09:00:00 +0900
+```
+
+출력된 형식을 변경하고 싶다면 `strftime` 메소드를 사용할 수 있습니다. 이 메소드는 날짜와 시간을 원하는 형식으로 포맷할 수 있도록 해줍니다.
+
+```Ruby
+puts Time.now.strftime("%Y년 %m월 %d일")
+```
+
+출력 결과:
+
+```
+2019년 09월 24일
+```
+
+## 깊이 파고들기
+
+우리가 사용하는 컴퓨터 시스템은 현재 시간을 추적하기 위해 "에포크(epoch)"라는 개념을 사용합니다. 에포크는 UTC 시간 기준으로 1970년 1월 1일 자정부터 흐른 시간을 초 단위로 표현하는 것입니다. 이 시간이 0이라는 것은 우리가 어떤 시간도 지정하지 않았다는 것을 의미합니다. 따라서 `Time.now` 메소드를 호출하면 시스템의 에포크 시간을 기준으로 현재 시간이 계산됩니다.
 
 ```ruby
-today = Time.now
-puts "Today's date is #{today}"
+puts Time.at(0)
 ```
 
-위 코드를 실행하면 다음과 같은 결과가 나옵니다.
+출력 결과:
 
 ```
-Today's date is 2021-06-21 16:46:25 +0900
-```
-위 코드에서 `#` 기호는 문자열 내에 Ruby 변수 값을 삽입하는 문자열 보간 기법을 사용합니다. 또한 우리는 `Time` 클래스의 `strftime` 메소드를 사용하여 날짜와 시간을 원하는 형식으로 포맷화 할 수 있습니다. 예를 들어, 우리가 오늘의 날짜를 `년-월-일` 형식으로 출력하려면 다음과 같이 코드를 작성할 수 있습니다.
-
-```ruby
-today = Time.now
-puts "Today's date is #{today.strftime('%Y-%m-%d')}"
+1970-01-01 09:00:00 +0900
 ```
 
-위 코드를 실행하면 다음과 같은 결과가 나옵니다.
+`Time.now` 메소드 대신 `Time.at` 메소드를 사용하면 에포크 시간을 변경하여 다른 날짜와 시간을 출력할 수 있습니다. 또한 `Time.now` 메소드와 마찬가지로 `strftime` 메소드를 사용할 수 있습니다.
 
-```
-Today's date is 2021-06-21
-```
+## 이외의 참고 링크들
 
-## 딥 다이브
+- [Ruby 공식 문서 - Time 클래스](https://ruby-doc.org/core-2.6.3/Time.html)
+- [루비를 시작하며 - 시간 다루기](https://www.ruby-lang.org/ko/documentation/quickstart/2/)
+- [Ruby 베이직 강좌 - 날짜와 시간 다루기](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)
 
-Ruby의 `Time` 클래스는 우리가 이용할 수 있는 다양한 메소드를 제공합니다. 여기서는 `now` 외에 다른 유용한 메소드들을 살펴보도록 하겠습니다.
+### 관련 링크
 
-### `year`
-
-`year` 메소드는 현재 연도를 정수 형태로 반환합니다. 이를 활용하여 `if` 문과 조합해 특정 연도에 해당하는 작업을 수행할 수 있습니다.
-
-```ruby
-today = Time.now
-if today.year == 2021
-    puts "This is the current year"
-end
-```
-
-위 코드를 실행하면 `This is the current year`라는 메시지가 출력됩니다. 만약 년도를 비교하는 작업을 자주 해야하는 경우라면 `==` 대신에 `===` 연산자를 사용하는 것이 더 간단한 방법일 수 있습니다.
-
-### `wday`
-
-`wday` 메소드는 주간의 일자를 숫자로 반환합니다. 0은 일요일을 의미하고, 1부터 6까지는 월요일부터 토요일을 의미합니다. 따라서 다음과 같은 코드를 작성하면 현재 요일에 따라 다른 작업을 수행할 수 있습니다.
-
-```ruby
-today = Time.now
-if today.wday == 0
-    puts "Today is Sunday"
-elsif today.wday == 6
-    puts "Today is Saturday"
-else
-    puts "Today is a weekday"
-end
-```
-
-위 코드를 실행하면 `Today is a weekday`라는 메시지가 출력됩니다.
-
-이처럼 `Time` 클래스를 활용하면 현재 날짜와 시간을 다루는 다양한 작업을 할 수 있습니다.
-
-## 관련 링크
-
-- [Ruby `Time` 클래스의 공식 문서](https://ruby-doc.org/core-3.0.0/Time.html)
-- [Ruby에서 현재 날짜와 시간 다루기: `strftime` 예제 코드](https://www.r
+- [Ruby에 날짜/시간 관련 메소드 정리하기](https://github.com/saevonwang/TIL/blob/master/blog-codes/ruby-time-now.rb)
+- [더 많은 Ruby 관련 포스팅들](http://rubykorean.blogspot.com/)

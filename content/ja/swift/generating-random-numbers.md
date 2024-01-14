@@ -1,47 +1,51 @@
 ---
-title:                "Swift: ランダムな数字の生成"
+title:                "Swift: ランダムな数を生成する"
+simple_title:         "ランダムな数を生成する"
 programming_language: "Swift"
-category:             "Numbers"
+category:             "Swift"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ
 
-ランダムな数字を生成することの *なぜ* について説明します。
+ランダムな数字を生成することの意義は、アプリやゲームでのバラエティやユーザーの興味を引くために活用することができます。また、デバッグやテストでの使用もできます。
 
-ランダムな数字を使用することで、アプリやゲームなどの様々な場面で楽しさや多様性を生み出すことができます。また、乱数を生成することで、データの調査やテストを行うことも可能です。
+## 生成方法
 
-## 方法
+ランダムな数字を生成するには、`arc4random_uniform()`という関数を使用します。以下のコードを使用することで、0から10までのランダムな整数が生成されます。
 
 ```Swift
-let randomInt = Int.random(in: 0..<10)
-print(randomInt)
+let randomNumber = arc4random_uniform(10)
+print(randomNumber)
+```
+出力例:
+```
+5
 ```
 
-上記のようなコードを使用して、0から9までのランダムな整数を生成することができます。このように、`random(in: ...)`を使用することで、指定した範囲のランダムな値を生成することができます。
+ランダムな小数を生成する場合は、`Double`型を使用します。
 
 ```Swift
-let randomDouble = Double.random(in: 0..<1)
+let randomDouble = Double(arc4random())/Double(UINT32_MAX)
 print(randomDouble)
 ```
+出力例: 
+```
+0.234567891
+```
 
-また、`Double`や`Float`などのように、特定のデータ型に対応するランダムな値を生成することもできます。
+## ディープダイブ
 
-## 深堀り
+ランダムな数字を生成する際には、シード値というデータを設定することもできます。これにより、同じシード値を使用すれば常に同じランダムな数字が生成されるため、アプリやゲームの再現性を確保することができます。
 
-Swiftでは、`random(in: ...)`を使用することでランダムな値を生成することができますが、実際にはどのように動いているのでしょうか？
+また、Swiftには`arc4random()`以外にも`arc4random_uniform()`, `arc4random_stir()`などの関数があります。それぞれ異なる方法でランダムな数字を生成することができるため、適切な関数を選択することが重要です。
 
-Swiftのランダムな値生成アルゴリズムは、メルセンヌ・ツイスター(Mersenne Twister)と呼ばれるアルゴリズムを使用しています。このアルゴリズムは長い周期を持つことで、様々な目的に使用されることができます。
+## 参考リンク
 
-さらに、`randomElement()`や`shuffle()`などのメソッドを使用することで、配列からランダムな要素を取得したり、配列の要素をランダムにシャッフルすることもできます。
-
-## はじめてのSwiftプログラミング
-
-今回はSwiftで数学的なランダムな数値を生成する方法について学びました。ランダムな値を使用して、より楽しいアプリやゲームを作ることができます。ぜひ、実際にコーディングしてみてください。
-
-## See Also
-- [Swift Documentation on Random Numbers](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html#ID330)
-- [An Introduction to Random Number Generators in Swift](https://www.raywenderlich.com/1469-an-introduction-to-random-number-generators-in-swift)
-- [Understanding Random Numbers in Swift](https://www.hackingwithswift.com/example-code/generation/understanding-random-numbers-in-swift)
+http://iosdeveloperzone.com/2014/10/14/generating-random-numbers-in-swift/
+https://developer.apple.com/documentation/swift/int/2995597-arc4random_uniform
+https://developer.apple.com/documentation/swift/int/2998886-arc4random_stir
+https://developer.apple.com/library/archive/documentation/Cocoa/Reference/Foundation/Miscellaneous/Foundation_Functions/index.html#//apple_ref/c/func/arc4random

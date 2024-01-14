@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Obliczanie daty w przyszłości lub przeszłości"
+title:                "Bash: Obliczanie daty w przyszłości lub przeszłości."
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości."
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,28 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Obliczanie daty w przeszłości lub przyszłości może być przydatne w wielu przypadkach, na przykład gdy chcesz ustawić przypomnienie lub zaprogramować automatyczne zadania. Jest to również przydatne w celu wykonywania obliczeń dat w skryptach Bash.
+W dzisiejszym świecie programowanie to nie tylko narzędzie dla specjalistów, ale także przydatna umiejętność dla każdego. Jednym z ważnych aspektów programowania jest możliwość manipulacji datami. Czasem musimy obliczyć datę w przyszłości lub w przeszłości na potrzeby naszej aplikacji lub projektu. W tym artykule dowiesz się jak w łatwy sposób obliczyć datę w języku Bash.
 
 ## Jak to zrobić
 
-```Bash
-# Przykład obliczenia daty 7 dni w przód
-future_date=$(date -d "+7 days" +%m/%d/%Y)
-echo $future_date
-# Output: 06/15/2021
+Aby obliczyć datę w przyszłości lub przeszłości w języku Bash, należy użyć komendy "date" wraz z odpowiednimi argumentami. Przykładowo, aby obliczyć datę za 5 dni:
 
-# Przykład obliczenia daty 30 dni wstecz
-past_date=$(date -d "-30 days" +%m/%d/%Y)
-echo $past_date
-# Output: 04/17/2021
+```Bash
+date -d "+5 days"
 ```
 
-## Pogłębiona analiza
+To samo możemy zrobić dla daty w przeszłości, dodając myślnik przed liczbą dni. Przykładowo, aby obliczyć datę sprzed 5 dni:
 
-Bash posiada wbudowany pakiet `date`, który pozwala na manipulowanie datami. Można użyć opcji `-d` w celu ustalenia przyszłej lub przeszłej daty. Można również użyć różnych opcji formatowania, aby uzyskać żądaną formę daty. Należy pamiętać, że niektóre dystrybucje Linux mogą różnić się w sposobie obsługi komendy `date`, więc należy sprawdzić dokumentację systemu, aby upewnić się, że używasz odpowiednich opcji.
+```Bash
+date -d "-5 days"
+```
 
-## Zobacz również
+Możemy także określić konkretny dzień, miesiąc lub rok. Należy wtedy użyć argumentów "-d" oraz "-yyyy" dla roku, "-mm" dla miesiąca i "-dd" dla dnia. Na przykład, aby obliczyć datę za 3 lata i 2 miesiące:
 
-- [Dokumentacja komendy date w Bash](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Manipulowanie datami w Bash](https://www.baeldung.com/linux/bash-date-command)
-- [Formatowanie dat w Bash](https://www.cyberciti.biz/faq/howto-get-current-date-time-in-bash-linux-shell-script/)
+```Bash
+date -d "3 year 2 month"
+```
+Możemy także używać różnych jednostek czasu, takich jak tygodnie, godziny, minuty, etc. Pełną listę argumentów i ich możliwości można znaleźć w dokumentacji komendy "date".
+
+## Głębszy wgląd
+
+W języku Bash możemy także użyć komendy "date" z argumentem "-s" do ustawienia konkretnej daty. Na przykład:
+
+```Bash
+date -s "2020-05-05 12:00:00"
+```
+Spowoduje ustawienie aktualnej daty na 5 maja 2020 roku o godzinie 12:00:00.
+
+Jednak warto pamiętać, że komenda "date" korzysta z ustawień systemu operacyjnego, więc zmiana daty może być ograniczona przez jego ustawienia.
+
+## Zobacz także
+
+- [Dokumentacja komendy date](http://www.tutorialspoint.com/unix_commands/date.htm)
+- [Inne przydatne komendy w języku Bash](https://kasia.codes/10-useful-bash-commands/)

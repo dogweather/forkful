@@ -1,88 +1,70 @@
 ---
-title:                "Python: 字符串连接"
+title:                "Python: 连接字符串"
+simple_title:         "连接字符串"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：字符串连接是编程中常用的技巧，它能够将多个字符串合并为一个字符串，为我们的代码提供更加灵活的处理方式。
+为什么：
 
-如何：使用Python中的加号运算符可以简单地实现字符串连接，如下所示：
+字符串连接是编程中常见的操作，它可以将多个字符串结合在一起，使得程序可以更灵活地处理文本数据。
 
-```Python
-# 创建字符串
-string1 = "Hello"
-string2 = "World"
+## 为什么要使用字符串连接？
 
-# 使用加号运算符实现字符串连接
-concatenated = string1 + string2
+字符串连接通常被用来构建复杂的文本输出，比如将用户的输入和固定文本结合起来生成个性化的输出。它也可以用于生成动态的文件名或者URL链接。不管是什么目的，字符串连接都为程序提供了必要的灵活性和可定制性。
 
-# 打印输出结果
-print(concatenated)
-```
+## 如何实现字符串连接？
 
-运行结果为：
-
-```
-HelloWorld
-```
-
-深入了解：在Python中，我们也可以使用`join()`方法来连接多个字符串，它接受一个可迭代对象作为参数，并在每个字符串之间插入指定的分隔符。示例如下：
+在Python中，使用加号`+`可以将两个字符串连接起来，例如：
 
 ```Python
-# 创建字符串列表
-strings = ["I", "love", "coding"]
-
-# 使用join()方法连接字符串，并以空格作为分隔符
-joined = " ".join(strings)
-
-# 打印输出结果
-print(joined)
+name = "王小明"
+greeting = "你好，"
+message = greeting + name
+print(message)
 ```
 
-运行结果为：
-
-```
-I love coding
-```
-
-另外，对于较长的字符串连接，我们也可以使用多行字符串（Triple-quoted strings）来实现，如下所示：
+输出结果为：
 
 ```Python
-# 创建三行字符串
-line1 = "Python is a great"
-line2 = "language for"
-line3 = "programming"
-
-# 使用并置运算符连接字符串
-concatenated = line1 + \
-               line2 + \
-               line3
-
-# 打印输出结果
-print(concatenated)
+你好，王小明
 ```
 
-运行结果为：
+如果需要连接多个字符串，可以使用`+`运算符多次连接，或者使用`join()`方法，例如：
 
+```Python
+fruits = ["苹果", "香蕉", "橘子"]
+output = "我喜欢吃" + fruits[0] + "、" + fruits[1] + "和" + fruits[2]
+print(output)
+
+output = "、".join(fruits)
+print("我喜欢吃" + output)
 ```
-Python is a great language for programming
+
+输出结果为：
+
+```Python
+我喜欢吃苹果、香蕉和橘子
+我喜欢吃苹果、香蕉、橘子
 ```
 
-参考链接：
+## 深入理解字符串连接
 
-- [Python字符串连接（官方文档）](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-- [Python字符串连接详解](https://www.runoob.com/w3cnote/python-strings-connection-via-joining.html)
+在Python中，字符串的连接操作其实是创建了一个新的字符串对象。每次使用`+`运算符连接字符串时，都会创建一个新的字符串对象，因此在循环中频繁使用字符串连接可能会产生大量的中间对象，影响程序的效率。为了避免这种情况，可以使用`join()`方法将字符串存储在一个列表中，再使用`join()`方法连接所有字符串。这样可以大大提高程序的效率。
 
-进一步阅读：
+此外，字符串连接时需要注意数据类型的一致性。如果连接的两个字符串中有一个属于数字类型，必须使用`str()`函数将其转为字符串后才能连接。
 
-- [Python字符串操作指南](https://realpython.com/python-strings/)
-- [Python字符串格式化指南](https://realpython.com/python-string-formatting/)
-- [Python字符串方法总结](https://www.cnblogs.com/yangyubo/archive/2012/09/19/2696131.html)
+## 参考资料
 
-请参考：
+- [Python官方文档 - 字符串文本序列](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+- [Python中字符连接的几种方式](https://blog.csdn.net/qq_33185991/article/details/80756204)
+- [Python字符串的连接方法](https://www.jianshu.com/p/aa2d81dd3857)
 
-- [关于Python字符串的更多用法（translated into Mandarin）](https://bbs.fishc.com/thread-56941-1-1.html)
-- [Python字符串连接技巧（translated into Mandarin）](https://blog.csdn.net/yusq8/article/details/79184523)
+## 参见
+
+- [将多个字符串连接起来的方法](https://www.runoob.com/python/python-strings.html)
+- [Python字符串处理](https://www.liaoxuefeng.com/wiki/1016959663602400/1017032075800480)

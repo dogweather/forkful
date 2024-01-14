@@ -1,7 +1,9 @@
 ---
-title:                "Go: Beräkning av ett datum i framtiden eller passerat"
+title:                "Go: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,36 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att räkna ut ett datum i framtiden eller förflutna kan vara användbart för att planera evenemang eller för att hålla koll på födelsedagar. Med Go-programmeringsspråket är det enkelt att beräkna datum med hjälp av inbyggda funktioner.
+Att beräkna ett datum i framtiden eller det förflutna kan vara användbart för att till exempel planera evenemang eller följa deadline för projekt. Med hjälp av Go programming kan du enkelt skriva kod som gör detta åt dig.
 
-## Hur man gör
+## Så här gör du
 
-För att beräkna ett datum i framtiden eller förflutna i Go använder man sig av tidenhetspaketet "time". Först måste man importera paketet genom att skriva ```Go
-import "time"``` i början av programmet.
+Först behöver du importera paketet "time" som innehåller funktioner för att hantera tid och datum. Sedan kan du använda funktionen "AddDate(years, months, days)" för att lägga till eller dra bort år, månader och dagar från ett specifikt datum.
 
-För att beräkna ett datum i framtiden kan man använda funktionen ```Go
-AddDate()``` tillsammans med dagar, månader och år som vill lägga till. Till exempel, om vi vill beräkna datumet tre månader framåt kan vi använda följande kod:
+Här är ett enkelt exempel på hur du kan räkna ut ett datum i framtiden:
+
 ```Go
-futureDate := time.Now().AddDate(0, 3, 0)
-fmt.Println(futureDate) // exempel output: 2022-02-19 22:07:00.2803962 +0100 CET m=+91.996585201
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    t := time.Now() //Hämtar aktuell tid
+    futureDate := t.AddDate(1, 0, 0) //Lägger till 1 år till aktuell tid
+    fmt.Println("Datumet om ett år kommer vara:", futureDate)
+}
 ```
 
-För att beräkna ett datum i förflutna använder man samma funktion, men med ett negativt antal dagar, månader eller år. Till exempel, om vi vill beräkna datumet ett år tillbaka kan vi använda följande kod:
+Körning av denna kod kommer att ge dig följande output: "Datumet om ett år kommer vara: 2022-07-22 15:59:14.220266979 +0200 CEST m=+365.000203684"
+
+Du kan också beräkna ett datum i det förflutna genom att använda negativa värden i "AddDate()". Här är ett exempel där vi räknar ut datumet för ett halvt år sedan:
+
 ```Go
-pastDate := time.Now().AddDate(-1, 0, 0)
-fmt.Println(pastDate) // exempel output: 2020-11-19 22:08:54.2793962 +0100 CET m=+86399.995185801
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    t := time.Now() //Hämtar aktuell tid
+    pastDate := t.AddDate(0, -6, 0) //Dra av 6 månader från aktuell tid
+    fmt.Println("Datumet för ett halvt år sedan var:", pastDate)
+}
 ```
+
+Outputen kommer att bli "Datumet för ett halvt år sedan var: 2020-01-22 15:59:14.332787894 +0100 CET m=-180.000097499"
 
 ## Djupdykning
 
-Go erbjuder även andra inbyggda funktioner för datumberäkning, såsom ```Go
-Date()``` och ```Go
-Parse()```. Dessutom finns det flera externa paket som erbjuder mer avancerade funktioner för datumhantering i Go.
+För att räkna ut ett datum i framtiden eller förflutna tar "AddDate()" funktionen hänsyn till antal dagar i varje månad och skottår. Till exempel, om du lägger till 1 månad till 31 januari kommer det resulterande datumet att vara 28 februari om det inte är ett skottår.
 
-En viktig aspekt att tänka på när man beräknar datum i Go är att Go använder sig av den gregorianska kalendern, vilket innebär att funktionerna kan bete sig annorlunda med andra tidsskalor eller kalendrar. Det är viktigt att ta hänsyn till detta vid användning av dessa funktioner.
+Man kan också använda funktionen "Date(year, month, day, hour, min, sec, nsec, loc)" för att skapa ett specifikt datum och sedan beräkna ett datum i förflutna eller framtiden utifrån det.
 
-## Se även
+## Se också
 
-- [Go dokumentation för tidenhetspaketet](https://golang.org/pkg/time/)
-- [Paketet "dateparse" för mer avancerad datumhantering i Go](https://github.com/araddon/dateparse)
-- [Alternativa kalenderpaket för Go](https://github.com/dovbysh/awesome-go-by-example-swe#dateTime)
+* https://golang.org/pkg/time/#AddDate
+* https://golang.org/pkg/time/#Date

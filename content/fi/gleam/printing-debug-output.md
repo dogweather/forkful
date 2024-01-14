@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Tulostaminen virheenkorjaustuloste"
+title:                "Gleam: Virheiden tarkistustulostus"
+simple_title:         "Virheiden tarkistustulostus"
 programming_language: "Gleam"
-category:             "Testing and Debugging"
+category:             "Gleam"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/printing-debug-output.md"
 ---
 
@@ -9,24 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Ihmisten luonteen mukaan me haluamme tietää, mitä tietokoneemme tekee ohjelmia suorittaessaan. Koodistamme saattaa löytyä virheitä, toimimattomia osia tai muuten vain haluamme nähdä, miksi ohjelma käyttäytyy juuri niin kuin käyttäytyy. Päästäksemme selville näistä asioista, meidän täytyy tulostaa debug-tietoa.
+Oletko ikinä joutunut kamppailemaan koodin kanssa ja toivonut voivasi tarkastella sen sisäistä toimintaa? Tämä on silloin, kun debug-tulosteiden käyttöön otto tulee tarpeeseen. Se antaa sinulle paremman käsityksen siitä, miten koodisi toimii ja auttaa sinua löytämään ja korjaamaan mahdollisia virheitä.
 
-## Kuinka tulostaa debug-tietoa
+## Kuinka
 
-Debug-tiedon tulostaminen on helppoa käyttäen Gleamia. Käytä yksinkertaisesti ```Gleam.debug```, ja tulosta haluamasi muuttujat tai tekstit.
+Gleam tarjoaa helpon tavan lisätä debug-tulosteita koodiisi. Voit käyttää `io.println`-funktiota tulostamaan haluamasi tiedot konsoliin. Voit myös käyttää muuttujien arvoja tai kutsua muita funktioita `io.format`-funktion kautta.
 
+```Gleam
+let nimi = "Matti"
+io.println("Tervehdys, {nimi}!")
 ```
-Gleam.debug("Hei, Gleam!");
-Gleam.debug(my_variable);
-```
 
-Tämä tulostaa konsoliin "Hei, Gleam!" ja muuttujan arvon.
+Tulostus: `Tervehdys, Matti!`
 
-## Syvempi sukellus
+## Syvemmälle
 
-Debug-tietoa voi olla hyödyllistä käyttää myös monimutkaisempien ohjelmien kanssa. Voit tulostaa tietoa monista eri muuttujista ja nähdä, mitä tapahtuu kunkin ohjelman osan suorittaessa. Voit myös vianetsiä virheitä ja optimoida ohjelman suoritusta debug-tiedon avulla.
+Debug-tulosteisiin liittyy usein myös joukko arvokkaita toimintoja, kuten logitiedostojen tallentaminen tai virheilmoitusten analysointi. Voit hyödyntää Gleamin vakio-ohjelmistonkirjastoja (stdlib) löytääksesi näille toiminnoille sopivia työkaluja.
+
+Lisäksi voit myös ohjelmoida omia debug-tulosteita varten suoraan Gleamin ominaisuuksien kautta. Tämä saattaa vaatia enemmän työtä, mutta kannattaa tutkia mahdollisuuksia jos haluat räätälöidä debug-tulosteen juuri itsellesi sopivaksi.
 
 ## Katso myös
 
-- [Ohjeet Gleam-koodin debuggaamiseen](https://gleam.run/articles/debugging-gleam/)
-- [Gleam-koodin dokumentaatio](https://gleam.run/documentation/)
+- Gleamin vakio-ohjelmistonkirjaston (stdlib) [dokumentaatio](https://gleam.run/stdlib/)
+- ["The Power of Debug Printing in Programming"](https://mattbrinton.com/the-power-of-debug-printing-in-programming/)
+- ["Debugging Tooltips for Language Designers"](https://www.infoq.com/presentations/debugging-tooltips-language-designers/) (esitelmä debug-tulosteista)

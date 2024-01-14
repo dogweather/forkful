@@ -1,59 +1,68 @@
 ---
 title:                "Python recipe: Concatenating strings"
+simple_title:         "Concatenating strings"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-As a programmer, you may come across situations where you need to join or combine two or more strings together. This process is known as string concatenation and it is a fundamental concept in any programming language, including Python. Understanding how to concatenate strings can greatly improve your ability to manipulate and organize data in your code. 
+Have you ever needed to combine two or more strings together in your Python code? Whether you're trying to create a dynamic message, build a URL, or simply display information, concatenating strings is a crucial skill to have in your programming arsenal.
 
-## How To 
+## How To
 
-In Python, you can concatenate strings using the plus sign (`+`) or the `format()` method. Let's take a look at some examples to see how this works:
-
-```Python
-# Concatenating strings using the plus sign
-print("Hello" + "World")
-# Output: HelloWorld
-
-# Concatenating strings using the `format()` method
-print("The {} brown {}".format("quick", "fox"))
-# Output: The quick brown fox
-```
-
-In the first example, we use the plus sign to join two strings ("Hello" and "World") together. In the second example, we use the `format()` method to insert the words "quick" and "fox" into the string at specific positions, denoted by the curly brackets. 
-
-You can also use the `+` and `format()` methods to concatenate more than two strings together. Keep in mind that the `format()` method is more versatile and allows you to insert variables and other data types into your strings. 
-
-## Deep Dive 
-
-In Python, strings are immutable, meaning they cannot be changed in place. This means that a new string object is created every time you perform a concatenation operation. To avoid creating multiple string objects, it is more efficient to use the `join()` method. This method takes in a list of strings and joins them together using a delimiter of your choice. 
-
-You can also use the `join()` method in conjunction with list comprehensions to concatenate multiple strings. Let's see an example:
+Concatenation in Python is the process of combining two or more strings into a single string. There are a few ways to do this, but the most common method is by using the addition (+) operator.
 
 ```Python
-# Using the `join()` method
-surnames = ["Smith", "Johnson", "Williams"]
-full_names = ", ".join(surnames)
-print(full_names)
-# Output: Smith, Johnson, Williams
+# Basic string concatenation
+string_1 = "Hello "
+string_2 = "world!"
+result = string_1 + string_2
+print(result) # Output: Hello world!
 
-# Concatenating using list comprehensions and the `join()` method
-greetings = ["Hello", "Hola", "Bonjour"]
-full_greetings = " / ".join([greeting.upper() for greeting in greetings])
-print(full_greetings)
-# Output: HELLO / HOLA / BONJOUR
+# Combining variables and strings
+name = "John"
+message = "Welcome to our website, " + name + "!"
+print(message) # Output: Welcome to our website, John!
 ```
 
-By using the `join()` method and list comprehensions, we can efficiently concatenate strings without creating multiple string objects. 
+You can also use the string formatting method, which allows for more flexibility and control over the final string. This is especially useful when you need to include variables or complex expressions within your string.
 
-## See Also 
-- [Python Documentation: String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [Real Python: Python String Concatenation](https://realpython.com/python-string-concatenation/)
-- [GeeksforGeeks: String Concatenation in Python](https://www.geeksforgeeks.org/python-string-concatenation/)
+```Python
+# String formatting
+name = "Emily"
+age = 27
+greeting = "Hi, my name is {} and I am {} years old.".format(name, age)
+print(greeting) # Output: Hi, my name is Emily and I am 27 years old.
+```
 
-Using these resources, you can continue to deepen your understanding of string concatenation in Python and explore other methods and techniques. Happy coding!
+Another method is using the string concatenation shortcut using the += operator. This allows you to concatenate strings in a single line of code and is often used in loops or when combining a large number of strings.
+
+```Python
+# Using the += operator
+text = ""
+for num in range(5):
+    text += str(num)
+print(text) # Output: 01234
+```
+
+## Deep Dive
+
+It's important to understand that in Python, strings are immutable objects, meaning they cannot be changed once they are created. This is why each time you concatenate strings, a new string object is created.
+
+You may also come across the term "string interpolation", which is often used to describe the process of combining variables and strings through string formatting. Understanding this terminology can help you better communicate and understand code written by others.
+
+Additionally, when concatenating a large number of strings, it is more efficient to use the join() method rather than the + operator. This method creates a list of strings and then joins them together using a specified separator. This prevents the creation of unnecessary string objects.
+
+## See Also
+
+Need more information on string concatenation in Python? Check out these helpful resources:
+
+- [Python String Concatenation](https://www.programiz.com/python-programming/string-concatenation)
+- [Python String Formatting](https://www.learnpython.org/en/String_Formatting)
+- [Understanding String Concatenation and Immutability in Python](https://realpython.com/python-strings/#string-mutation)
+- [String Operations in Python](https://docs.python.org/3/library/string.html#string-methods)

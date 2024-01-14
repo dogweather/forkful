@@ -1,7 +1,9 @@
 ---
 title:                "C: 텍스트 파일 읽기"
+simple_title:         "텍스트 파일 읽기"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/reading-a-text-file.md"
 ---
 
@@ -9,36 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-텍스트 파일을 읽는 것이 중요한 이유는 다양합니다. 우선, 많은 프로그램이 텍스트 파일을 읽고 사용하기 때문에 중요한 데이터 소스가 됩니다. 또한, 텍스트 파일을 읽는 것은 그 파일 안에 담겨있는 정보를 분석하고 처리할 수 있는 역량을 키워줍니다.
+텍스트 파일을 읽는 법을 알고 싶다면 C 프로그래밍 언어에 대한 이해도가 높아야 합니다. 그러므로 기초적인 C 프로그래밍 지식이 있는 분들에게 이 글을 추천합니다.
 
-## 하우 투
+## 어떻게
 
-텍스트 파일을 읽는 방법은 매우 간단합니다. 먼저, ```fopen()``` 함수를 사용해 파일을 열어줍니다. 그런 다음, ```fscanf()``` 함수를 사용해 파일에서 원하는 데이터를 읽어올 수 있습니다. 아래는 파일을 열고 내용을 출력하는 간단한 예제 코드입니다.
+텍스트 파일을 읽는 방법에 대해 알아보겠습니다. 먼저, fopen() 함수를 사용하여 파일을 열어야 합니다. 그 후, fgets() 함수를 사용하여 파일에서 각 줄을 읽는 것이 가능합니다. 아래 코드 예제를 참고해보세요.
 
 ```C
-#include <stdio.h>
+#include <stdio.h> // 표준 입출력 라이브러리를 포함합니다.
 
 int main() {
-    FILE* file = fopen("sample.txt", "r"); //sample.txt라는 파일을 읽기 전용으로 열기
-    char str[100]; //문자열을 넣을 버퍼 생성
+  // 파일을 읽기 모드로 엽니다.
+  FILE* file = fopen("example.txt", "r");
 
-    while(fscanf(file, "%s", str) != EOF) { //파일에서 문자열 읽어오기 --> 파일이 끝날 때까지 반복
-        printf("%s\n", str); //읽어온 문자열 출력
-    }
+  // 파일에서 각 줄을 읽습니다.
+  char line[100];
+  while (fgets(line, sizeof(line), file) != NULL) {
+    printf("%s", line); // 각 줄을 출력합니다.
+  }
 
-    fclose(file); //파일 닫기
-    return 0;
+  // 파일을 닫습니다.
+  fclose(file);
+  return 0;
 }
 ```
 
-위 코드를 실행하면 파일 안에 있는 데이터를 한 줄씩 출력할 수 있습니다.
+위 코드를 실행하면, "example.txt" 파일에 있는 내용이 한 줄씩 출력될 것입니다. 즉, 텍스트 파일을 한 줄씩 읽어오는 것이 가능합니다.
 
 ## 딥 다이브
 
-텍스트 파일을 읽는 방법은 여러 가지가 있습니다. ```fscanf()``` 함수를 사용하는 것 외에도, ```fgets()``` 함수를 사용하거나 파일 포인터를 이용해서 문자 하나씩 읽어오는 방법도 있습니다. 또한, 파일을 쓰기 모드로 열어서 텍스트를 파일 안에 쓸 수도 있습니다.
+텍스트 파일을 읽는 방법에 대해 더 깊이 알아보겠습니다. fgets() 함수를 사용할 때, 파일의 끝을 나타내는 EOF(end of file) 값을 확인해주어야 합니다. 또한, 파일을 열기 전에 fopen() 함수가 제대로 동작했는지 확인하는 것도 중요합니다. 파일 입출력과 관련된 더 자세한 내용은 다른 자료를 참고해보시기 바랍니다.
 
-참고하실만한 추가 정보: [C 파일 처리 기본 함수들](https://modoocode.com/186), [C 파일 처리 예제 코드](https://www.dreamy.pe.kr/zbxe/CodeClip/92152)
+## 또 다른 자료들
 
-## 더보기
-
-[C 언어 공식 문서](https://ko.wikipedia.org/wiki/C_%EC%96%B8%EC%96%B4), [C 파일 처리 관련 자세한 내용](https://ko.wikipedia.org/wiki/C_%ED%8C%8C%EC%9D%BC_%EC%B2%98%EB%A6%AC), [C 파일 입출력 레퍼런스](https://ko.wikipedia.org/wiki/C_%ED%8C%8C%EC%9D%BC_%EC%9E%85%EC%B6%9C%EB%A0%A5_%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4)
+- [C 파일 입출력](https://modoocode.com/153)
+- [C 프로그래밍 입문서](https://ko.wikipedia.org/wiki/C_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EC%9D%98_%EC%9E%85%EB%AC%B8)
+- [C언어 기초 강좌](http://tcpschool.com/c/intro)

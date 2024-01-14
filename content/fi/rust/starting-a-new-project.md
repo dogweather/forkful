@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Rust"
-category:             "Getting Started"
+category:             "Rust"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/starting-a-new-project.md"
 ---
 
@@ -9,30 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Rust on innovatiivinen ja tehokas ohjelmointikieli, joka on suunniteltu erityisesti järjestelmätason ohjelmointiin. Sen käyttö on kasvanut huomattavasti viime vuosina, ja se on saanut paljon suosiota ympäri maailmaa. Jos olet harkitsemassa uuden projektin aloittamista, Rust voi olla oikea valinta sinulle. Se tarjoaa paljon hyödyllisiä ominaisuuksia, jotka auttavat sinua rakentamaan nopean, turvallisen ja käyttöjärjestelmätason sovelluksen. Tässä blogikirjoituksessa jaamme tietoa siitä, miten aloitat uuden projektin Rustin avulla.
+Rust on moderni ja tehokas ohjelmointikieli, joka on suunniteltu erityisesti tietokonejärjestelmien kehittämiseen. Sen avulla voit luoda nopeita, turvallisia ja luotettavia ohjelmia, jotka ovat helppoja ylläpitää ja laajentaa. Aloittaminen uuden projektin kanssa Rustilla on siis loistava tapa aloittaa uusi seikkailu ohjelmointimaailmassa!
 
-## Miten aloittaa
+## Kuinka aloittaa
 
-Voit aloittaa uuden Rust-projektin käyttämällä Cargo-työkalua. Se toimii projektinhallintajärjestelmänä ja pakettienhallintajärjestelmänä, ja se on sisäänrakennettu Rust-asennukseen. Voit luoda uuden projektin komennolla `cargo new` ja antamalla sille nimen. Se luo valmiin hakemiston, jossa on esimerkkikoodia ja Cargo.toml-tiedosto, joka sisältää projektin määrittelyt. Voit käyttää tätä tiedostoa määrittääksesi projektisi riippuvuudet ja muut asetukset.
+Rustin asennus ja ympäristön valmistelu on helppoa, sillä se on täysin ilmainen ja avoimen lähdekoodin kieli. Voit ladata sen verkkosivustolta tai käyttää paketinhallintajärjestelmääsi, kuten Homebrew tai apt, asentaaksesi sen. Kun sinulla on Rust asennettuna, voit aloittaa uuden projektin seuraavilla komennoilla:
 
-Rust-projektin koodi kirjoitetaan `.rs`-tiedostoihin, ja ne voidaan ajaa komennolla `cargo run`. Voit myös käyttää `cargo build`-komennon luodaksesi suoritettavan tiedoston, joka voidaan suorittaa ilman Cargoa. Tässä on esimerkki yksinkertaisesta "Hello world" -ohjelmasta:
-
-```rust
-fn main() {
-    println!("Hei maailma!");
-}
+```Rust
+$ cargo new projekti_nimi
+$ cd projekti_nimi
 ```
 
-Kun ajat tämän komennolla `cargo run`, näet tulosteen "Hei maailma!".
+Tämä luo uuden projektikansion, jossa on valmiiksi asennettu kaikki tarvittavat tiedostot. Voit aloittaa koodaamisen suoraan tiedostoon "src/main.rs", joka sisältää pienen "Hello World" -esimerkin. Kun olet valmis, voit suorittaa projektin komennolla:
 
-## Syvempi sukellus
+```Rust
+$ cargo run
+```
 
-Jos haluat oppia lisää Rustin rakenteesta ja ominaisuuksista, voit tutkia sen dokumentaatiota ja käydä läpi opetusohjelmia ja esimerkkikoodeja. Voit myös liittyä Rust-yhteisöön ja osallistua keskusteluihin, saadaksesi lisätietoja ja apua. Yksi Rustin parhaista ominaisuuksista on sen aktiivinen ja yhteisöllinen ympäristö, johon voit luottaa uuden kielen oppimisessa.
+Voit myös luoda uusia kansion sisällä olevia tiedostoja ja lisätä ne "src" -kansioon. Muista lisätä myös ne "Cargo.toml" -tiedostoon, joka toimii projektisi asetusohjelmana.
 
-Aloittaessa uutta projektia Rustilla, on tärkeää hahmottaa sen vaatimukset ja tavoitteet selvästi. Rustin avulla voit rakentaa nopeaa ja tehokasta ohjelmistoa, mutta se vaatii sitoutumista ja paneutumista sen käyttöön. On myös tärkeää opetella oikeita ohjelmointitapoja, joilla voit hyödyntää Rustin ominaisuuksia täysimääräisesti ja rakentaa turvallista ja luotettavaa koodia.
+## Syvemmälle
+
+Rust tarjoaa monia käteviä ominaisuuksia, kuten automaattinen muistinhallinta, rinnakkaisuuden tuki ja vahva tyyppijärjestelmä. Se on myös suunniteltu niin, että siitä on helppoa tehdä tehokkaita ja nopeita ohjelmia ilman turvallisuudesta tinkimistä. Jos haluat perehtyä syvemmin Rustin ominaisuuksiin ja mahdollisuuksiin, suosittelemme lukemaan virallista oppimateriaalia sekä kokeilemaan erilaisia projekteja ja harjoituksia.
 
 ## Katso myös
 
-- [Rustin virallinen verkkosivusto](https://www.rust-lang.org/fi)
-- [Rust-oppaat ja opetusohjelmat](https://doc.rust-lang.org/stable/rust-by-example/)
-- [Rust-yhteisö](https://www.rust-lang.org/community)
+- [Rustin virallinen verkkosivusto](https://www.rust-lang.org)
+- [Rustin oppimateriaali](https://doc.rust-lang.org/book)
+- [Rust-ohjelmointiyhteisö Suomessa](https://forum.rust.fi)

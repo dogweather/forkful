@@ -1,27 +1,21 @@
 ---
-title:                "Kotlin: Começando um novo projeto"
+title:                "Kotlin: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Kotlin"
-category:             "Getting Started"
+category:             "Kotlin"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que iniciar um novo projeto?
+##Por que
 
-Iniciar um novo projeto em Kotlin é uma ótima maneira de expandir suas habilidades de programação e se manter atualizado com as tendências da indústria de tecnologia. Além disso, Kotlin é uma linguagem moderna e poderosa que permite o desenvolvimento de aplicativos para diversas plataformas, tornando-se uma escolha versátil para iniciar um novo projeto.
+Iniciar um novo projeto de programação pode ser uma tarefa desafiadora, mas também pode ser muito emocionante. Ao iniciar um novo projeto, você tem a oportunidade de aprender novas habilidades, resolver problemas criativos e construir algo que pode ter impacto no mundo. Então, por que não começar um novo projeto de Kotlin?
 
-## Como iniciar um novo projeto em Kotlin
+##Como fazer
 
-Começar um novo projeto em Kotlin é fácil e direto. Você precisará ter o IntelliJ IDEA instalado em seu computador, que é a principal IDE para o desenvolvimento em Kotlin. Se você ainda não tem o IntelliJ IDEA, pode baixá-lo gratuitamente no site oficial.
-
-Para criar um novo projeto, siga estes passos:
-
-1. Abra o IntelliJ IDEA e selecione "Create New Project" na tela inicial.
-2. Selecione "Kotlin" na lista de opções e clique em "Next".
-3. Escolha um nome para o seu projeto e o local onde deseja salvá-lo. Em seguida, clique em "Finish".
-
-Agora que você criou um novo projeto em Kotlin, podemos começar a escrever algum código!
+Para começar um novo projeto de Kotlin, você precisará seguir alguns passos simples. Primeiro, você precisa baixar e instalar o Kotlin em sua máquina. Você pode fazer isso seguindo as instruções em [kotlinlang.org](https://kotlinlang.org/). Depois de instalar o Kotlin, você pode usar sua IDE favorita para começar a escrever seu código. Aqui está um exemplo simples de Hello World em Kotlin:
 
 ```Kotlin
 fun main() {
@@ -29,26 +23,19 @@ fun main() {
 }
 ```
 
-Este é um exemplo simples de código em Kotlin. Ao executá-lo, a seguinte saída será exibida:
+Executando esse código, você deve ver a saída "Olá, mundo!" em seu console. Isso mostra como o Kotlin é conciso e fácil de usar.
 
-```
-Olá, mundo!
-```
+##Profundidade
 
-A partir daqui, você pode continuar a escrever e testar seu código para seu novo projeto em Kotlin.
+Quando se trata de iniciar um novo projeto em Kotlin, é importante ter uma boa compreensão dos principais conceitos da linguagem. Isso inclui aprender sobre a sintaxe e estrutura básica, bem como recursos avançados como a criação de classes e a implementação de conceitos de programação orientada a objetos. Além disso, aprender sobre as bibliotecas e frameworks disponíveis para Kotlin pode ajudá-lo a escolher as ferramentas certas para o seu projeto.
 
-## Aprofundando no início de um novo projeto
+##Veja também
 
-Ao iniciar um novo projeto em Kotlin, é importante seguir boas práticas de codificação e estruturar seu projeto de forma organizada. Aqui estão algumas dicas para garantir o sucesso do seu projeto:
+Aqui estão algumas referências úteis para você começar a aprender mais sobre Kotlin e iniciar novos projetos:
 
-- Use padrões de nomenclatura consistentes para suas variáveis, funções e classes.
-- Esteja familiarizado com as funcionalidades básicas da linguagem, como variáveis, funções, condicionais e loops.
-- Utilize as ferramentas disponíveis no IntelliJ IDEA, como o depurador e o gerenciador de dependências, para facilitar seu trabalho.
+- [Introdução ao Kotlin](https://kotlinlang.org/docs/reference/)
+- [Documentação da API do Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/)
+- [Tutoriais do Kotlin no YouTube](https://www.youtube.com/playlist?list=PLS0urDESKTPFqJLhwqHFoefEEx_GTMv1k)
+- [Projetos de exemplo em Kotlin no GitHub](https://github.com/KotlinBy/awesome-kotlin)
 
-Além disso, é sempre bom ter um objetivo claro em mente para o seu projeto e organizá-lo em etapas viáveis para evitar sobrecarregar-se. Com essas dicas em mente, você estará no caminho certo para iniciar um novo projeto bem-sucedido em Kotlin!
-
-## Veja também
-
-- [Documentação oficial do Kotlin](https://kotlinlang.org/docs/home.html)
-- [Documentação do IntelliJ IDEA para Kotlin](https://www.jetbrains.com/help/idea/kotlin.html)
-- [Exemplos de códigos em Kotlin](https://play.kotlinlang.org/byExample/overview)
+Não há dúvida de que iniciar um novo projeto em Kotlin pode ser desafiador, mas esperamos que esses recursos o ajudem a dar os primeiros passos. Com o tempo e a prática, você se tornará um mestre em Kotlin e poderá construir coisas incríveis. Boa sorte!

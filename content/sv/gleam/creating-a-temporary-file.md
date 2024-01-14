@@ -1,40 +1,46 @@
 ---
-title:                "Gleam: Skapa en temporär fil"
+title:                "Gleam: Skapa en tillfällig fil"
+simple_title:         "Skapa en tillfällig fil"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
+Gleam-programmering: Skapa tillfälliga filer för enkel och smidig kodning
+
 ## Varför
 
-Att skapa temporära filer är en vanlig uppgift inom programmering, särskilt när man arbetar med stora datamängder eller behöver hantera tillfällig data. Genom att använda Gleam kan du enkelt skapa temporära filer i ditt program för att säkerställa en smidig och effektiv datahantering.
+Att skapa tillfälliga filer kan vara en viktig del av att hantera data i ett Gleam-projekt. Genom att använda tillfälliga filer kan du enkelt spara temporära data och se till att din kod körs smidigt och utan problem.
 
 ## Hur man gör det
 
-För att skapa en temporär fil i Gleam kan du använda funktionen `temp_file` från modulen `gleam/file`. Här är ett enkelt exempel:
+För att skapa en tillfällig fil i Gleam, används funktionen "tmp_file.create". Detta tar emot en sträng som argument, som är sökvägen till den tillfälliga filen som ska skapas. Enkelt uttryckt använder funktionen "tmp_file.create" filen som ett buffertområde för den data du vill spara temporärt.
 
 ```Gleam
-import gleam/file.{temp_file}
-import gleam/filesystem.{write_file}
+let file_path = "/tmp/temp_data.csv"
+let tmp_file = tmp_file.create(file_path)
 
-let main = _ {
-  let temp_file = temp_file()
-  write_file(temp_file, "Detta är en temporär fil.")
-}
+tmp_file.write_line("This is temporary data to be saved")
+tmp_file.close()
 ```
 
-I exemplet ovan skapar vi en temporär fil genom att anropa `temp_file`-funktionen. Därefter använder vi den skapade filen för att skriva lite text med `write_file`-funktionen. När vi har använt filen kan vi sedan ta bort den med hjälp av `gleam/filesystem/delete_file`-funktionen.
+I detta exempel skapas en tillfällig fil med sökvägen "/tmp/temp_data.csv" och data sparas sedan till filen med funktionen "write_line". Slutligen stängs filen med funktionen "close" för att se till att all data är sparat.
 
-Output från koden ovan kommer att vara en ny temporär fil med innehållet "Detta är en temporär fil". Detta är ett enkelt exempel, men du kan använda samma princip för att skapa mer komplexa temporära filer med olika typer av data.
+## Djupdykning
 
-## Deep Dive
+När man skapar tillfälliga filer i Gleam, är det viktigt att förstå att filen faktiskt inte skapas förrän "create"-funktionen kallas. Det betyder också att om processen avbryts eller kraschar innan filen skapas, kommer ingen fil att skapas och din kod kommer att fortsätta utan problem.
 
-När du skapar en temporär fil i Gleam är det viktigt att förstå att filen endast är tillgänglig inom miljön där ditt program körs. Det betyder att om du till exempel skapar en temporär fil på din lokala dator, kommer den inte att vara tillgänglig om du kör ditt program på en server. Du kan också specificera var den temporära filen ska skapas genom att ange en sökväg som argument till `temp_file`-funktionen.
+Det är också möjligt att skapa flera tillfälliga filer inom en och samma process. Detta kan vara praktiskt om du behöver spara olika versioner av data eller om du arbetar med flera olika temporära filer samtidigt.
 
 ## Se även
 
-- [Gleam's modul för filhantering](https://gleam.run/modules/gleam/file.html)
-- [Gleam's modul för filsystem](https://gleam.run/modules/gleam/filesystem.html)
-- [Mer om grundläggande filhantering](https://www.howtogeek.com/348960/what-is-a-temporary-file-and-are-they-safe-to-delete/)
+Här är några användbara länkar för mer information om att skapa tillfälliga filer i Gleam:
+
+- [Gleam-dokumentationen om tillfälliga filer](https://gleam.run/documentation/guides/temporary-files)
+- [Gleam GitHub-repositorium](https://github.com/gleam-lang/gleam)
+- [Gleam Community Forum](https://community.gleam.run)
+
+Lycka till med din Gleam-programmering och ha kul med att skapa tillfälliga filer för enkel och smidig kodning!

@@ -1,65 +1,52 @@
 ---
 title:                "C++: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi kirjoittaa testeja?
+## Miksi
 
-Kirjoittaminen testeja on tärkeä osa ohjelmistokehitystä, koska se varmistaa koodin toimivuuden ja vähentää mahdollisia virheitä. Testien avulla voit myös helpommin tunnistaa ja korjata mahdollisia ongelmia koodissasi ennen kuin ne aiheuttavat vakavampia ongelmia.
+Kirjoittaminen testejä ohjelmistokehityksessä voi ensi näkemältä tuntua turhalta ja aikaa vievältä. Kuitenkin testien kirjoittaminen on tärkeä osa ohjelmiston laadun varmistamista ja vähentää virheiden riskiä tuotantokäytössä.
 
-## Miten: Esimerkkejä C++ koodin kera
+## Miten
 
-Testien kirjoittaminen C++:ssa on helppoa, kun tiedät mitä teet. Alla on muutamia esimerkkejä testein kirjoittamisesta koodiblokkien avulla.
+Alla olevassa koodiesimerkissä nähdään yksinkertainen funktio, joka summaa kaksi lukua ja palauttaa niiden tuloksen.
 
 ```C++
-#include <iostream>
-#include "functions.h"
-
-using namespace std;
-
-int main() {
-    // Luodaan testiluokka
-    class Test {
-        private:
-            int a, b;
-
-        public:
-            // Luodaan konstruktori
-            Test(int x, int y) {
-                a = x;
-                b = y;
-            }
-
-            // Testataan funktiota sum
-            int testSum() {
-                return sum(a, b);
-            }
-    };
-
-    // Määritetään testiluokan objekti
-    Test myTest(3, 7);
-
-    // Ajetaan testi ja tulostetaan tulos
-    cout << "Tulos: " << myTest.testSum();
+int sum(int a, int b) {
+    return a + b;
 }
-
-// Output:
-// Tulos: 10
 ```
 
-Edellä olevassa esimerkissä luomme testiluokan ja ajamme testin funktiolle "sum", joka lisää kaksi numeroa yhteen. Testi tulostaa oikean tuloksen, mikä tarkoittaa että funktiomme toimii odotetusti.
+Testien kirjoittamisen lähtökohtana on yleensä ajatella erilaisia syötteitä ja niiden odotettua tulosta. Tässä tapauksessa voimme esimerkiksi testata funktiota summaamaan negatiivisia lukuja:
 
-## Syväsukellus: Syvempää tietoa testeistä
+```C++
+int result = sum(-5, -10);
+// result = -15
+```
 
-Testien kirjoittaminen ei ainoastaan auta sinua havaitsemaan ja korjaamaan mahdollisia virheitä, vaan se myös auttaa sinua ymmärtämään koodiasi paremmin. Kirjoittamalla testejä, sinun täytyy ajatella koodiasi eri näkökulmista ja tarkkailla sen toimintaa erilaisilla syötteillä.
+Toinen hyvä testitapaus voisi olla testata funktiota summaamaan nollia:
 
-Testit myös auttavat sinua välttämään koodin muuttumista liian monimutkaiseksi. Kun tiedät tarkalleen mitä koodisi pitäisi tehdä, ei ole niin helppoa kirjoittaa ylimääräistä koodia tai tehdä tarpeettomia muutoksia.
+```C++
+int result = sum(0, 0);
+// result = 0
+```
+
+Näiden testitapausten avulla voimme varmistaa, että funktio palauttaa odotetut tulokset erilaisilla syötteillä. Näiden lisäksi olisi tärkeää testata myös esimerkiksi virheelliset syötteet, kuten merkkijonojen antaminen numeerisille parametreille.
+
+## Syvällisempi tarkastelu
+
+Testien kirjoittaminen vaatii huolellisuutta ja ajattelua eri mahdollisista skenaarioista. Yksinkertaiset testit eivät aina riitä, vaan on tärkeää myös miettiä testien kattavuutta ja mahdollisia reunatapauksia.
+
+Hyvät testit myös auttavat kehittäjää ymmärtämään koodinsa toimintaa ja havaitsemaan mahdolliset logiikkavirheet ennen niiden päätyminen tuotantokäyttöön.
 
 ## Katso myös
-- [C++ testaamisen aloittelijan opas](https://www.softwaretestinghelp.com/cpp-unit-testing-beginners-guide/)
-- [Miksi testaaminen on tärkeää ohjelmistokehityksessä](https://www.agilealliance.org/glossary/tdd/)
-- [C++:n testaaminen käyttäen Google Test frameworkia](https://github.com/google/googletest)
+
+- [Testien kirjoittaminen: Miksi, mitä ja miten?](https://www.taitotalo.com/blogi/2017/11/07/testien-kirjoittaminen/)
+- [Testauskulttuuri: miksi testata ja miten tehdä se oikein](https://www.softwaretestinghelp.com/fi/testing-culture/)
+- [Testiasiantuntijoiden vinkit testien kirjoittamiseen](https://www.taitotalo.com/blogi/2019/06/27/testien-kirjoittamisen-iloa-ja-tuskaa-testiasiantuntijoiden-vinkkeja/)

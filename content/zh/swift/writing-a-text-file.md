@@ -1,53 +1,72 @@
 ---
 title:                "Swift: 编写文本文件"
+simple_title:         "编写文本文件"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
-每个程序员都知道，编写代码是一项基本的技能。但是，除了编写代码，还有一项同样重要的技能是学会编写文本文件。编写文本文件可以让你存储和分享代码，并且在开发过程中也非常有用。
+##为什么
 
-## 如何进行
-编写文本文件的步骤非常简单。首先，打开一个文本编辑器，例如TextEdit，在Mac上，或者Notepad，在Windows上。然后，键入你要保存的代码，并将该文件存为“xxx.swift”。确保文件后缀名是“.swift”，这样文件就会被识别为Swift编程语言的文件。
+写文本文件是 Swift 编程中普遍的一项任务。它可以让我们以文本格式保存数据，并在需要时轻松地读取这些数据。例如，在开发一个记事本应用时，我们可能需要将用户的笔记保存在文本文件中，这样用户就可以在下次打开应用时继续编辑他们的笔记。同时，文本文件还可以供其他程序访问，从而实现数据共享。
+
+##如何
+
+写文本文件可以通过 Swift 的 FileManager 类来完成。首先，我们需要使用 FileManager.default 创建一个 FileManager 的实例。然后，使用该实例的 createFile(atPath:contents:attributes:) 方法来创建文本文件，并指定文件路径、要写入的内容和文件属性。代码示例如下：
 
 ```Swift
-//这是一个简单的Swift代码示例
-for i in 1...5 {
-    print(i)
+import Foundation
+
+// 创建 FileManager 实例
+let fileManager = FileManager.default
+
+// 指定文件路径
+let filePath = "textFile.txt"
+
+// 定义要写入的内容
+let fileContent = "这是一段文本文件的内容！"
+
+// 定义文件属性，例如创建日期、修改日期等（可选）
+let fileAttributes = [FileAttributeKey.creationDate: Date(), FileAttributeKey.modificationDate: Date()]
+
+// 使用 FileManager 实例创建文本文件，如果创建成功则打印成功信息
+if fileManager.createFile(atPath: filePath, contents: fileContent.data(using: .utf8), attributes: fileAttributes) {
+    print("文本文件创建成功！")
+} else {
+    print("文本文件创建失败！")
 }
 ```
 
-接下来，你就可以通过终端运行这个文件，使用以下命令：
+运行以上代码，我们就可以在当前路径下找到一个名为 textFile.txt 的文本文件，并且该文件的内容为 "这是一段文本文件的内容！"。如果需要读取文本文件的内容，可以使用 FileManager 的 contents(atPath:) 方法来实现。
 
-```
-swift xxx.swift
-```
+##深入了解
 
-如果一切顺利，你将看到代码输出的结果：
-
-```
-1
-2
-3
-4
-5
-```
-
-## 深入了解
-尽管编写文本文件非常简单，但有一些更高级的操作，可以帮助你更有效地写入文本文件。例如，你可以通过在文件中添加一些特殊字符来格式化文本，使其更易读。这些特殊字符包括反斜杠，制表符和换行符。你也可以使用文件路径来指定要保存的位置。
+除了使用 FileManager 类，我们还可以使用 Foundation 框架中的 NSString 类来写入文本文件。该类提供了 write(toFile:atomically:encoding:) 方法，通过指定文件路径、是否要原子写入（如果设置为 true，则会先将新文件写入临时文件，然后用临时文件替换旧文件。如果设置为 false，则直接写入旧文件。）以及编码方式（例如 utf8、utf16 等）来写入文本文件。代码示例如下：
 
 ```Swift
-//使用文件路径来指定保存位置
-let fileManager = FileManager.default
-let path = "path/to/file/xxx.swift"
-fileManager.createFile(atPath: path, contents: "This is a sample text in a file.", attributes: nil)
+import Foundation
+
+// 定义文件路径
+let filePath = "textFile.txt"
+
+// 定义要写入的内容
+let fileContent = "这是一段文本文件的内容！"
+
+// 使用 NSString 类写入文本文件，如果写入成功则打印成功信息
+if (try? fileContent.write(toFile: filePath, atomically: true, encoding: .utf8)) != nil {
+    print("文本文件写入成功！")
+} else {
+    print("文本文件写入失败！")
+}
 ```
 
-## 参考链接
-- [Swift中文文档](https://www.kotlia.net/docs/swift-in-chinese/)
-- [Swift发展简史](https://www.apple.com.cn/cn/swift/)
-- [Swift编程初学者指南](https://www.jianshu.com/p/2493d84108e5)
-- [文本文件的基础知识](https://zh.wikipedia.org/zh-hans/%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6)
+需要注意的是，无论是使用 FileManager 还是 NSString 类来写入文本文件，都需要指定文件路径，否则系统会将文件保存在临时文件夹中，且文件名是随机的。
+
+##参考链接
+
+- [FileManager - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
+- [NSString - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsstring)
+- [Creating and Writing to a File - Swift by Sundell](https://www.swiftbysundell.com/basics/creating-writing-to-files/)

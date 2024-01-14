@@ -1,7 +1,9 @@
 ---
-title:                "Rust: String großschreiben"
+title:                "Rust: Ein String großschreiben"
+simple_title:         "Ein String großschreiben"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/capitalizing-a-string.md"
 ---
 
@@ -9,32 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Warum sollte man string capitalization in Rust verwenden? Die Antwort liegt in der Notwendigkeit, eine klare und konsistente Darstellung von Zeichenketten zu gewährleisten. Indem man die ersten Buchstaben von Wörtern groß schreibt, können die Lesbarkeit und die Struktur von Texten verbessert werden.
+Warum solltest du dich mit dem Hauptbuchstaben eines Strings beschäftigen? Es gibt viele Gründe, aber einer der wichtigsten ist die Konsistenz. Wenn du in deinem Programm Logik hast, die davon ausgeht, dass alle Strings großgeschrieben sind, aber tatsächlich einige klein geschrieben sind, kann das zu unerwartetem Verhalten führen. Das Festlegen der Groß- oder Kleinschreibung von Strings kann auch dazu beitragen, Sicherheitslücken zu vermeiden.
 
-## Wie funktioniert es?
+## Wie geht das?
 
-Um eine Zeichenkette in Rust zu capitalisieren, muss man die Methode `.to_uppercase()`anwenden. Hier ist ein Beispielcode, der eine Zeichenkette in Großbuchstaben umwandelt:
+Es gibt mehrere Möglichkeiten, einen String in Rust großzuschreiben. Hier sind einige Beispielcodes mit den entsprechenden Ausgaben innerhalb von "```Rust ... ```" Codeblöcken:
+
+### Verwendung der `to_uppercase()` Methode
 
 ```Rust
-let s = "hallo";
-let s_capitalized = s.to_uppercase();
-Println!("Kapitalisierte Zeichenkette: {}", s_capitalized);
+let string = String::from("hallo welt");
+let capitalized = string.to_uppercase();
+println!("{}", capitalized); // Ausgabe: HALLO WELT
 ```
 
-Die Ausgabe wird wie folgt sein:
+### Mit Hilfe des `String::from_uppercase()` Konstruktors
 
+```Rust
+let string = String::from("hallo welt");
+let capitalized = String::from_uppercase(string);
+println!("{}", capitalized); // Ausgabe: HALLO WELT
 ```
-Kapitalisierte Zeichenkette: HALLO
+
+### Verwendung einer Schleife und `push()` Methode
+
+```Rust
+let mut string = String::from("hallo welt");
+let mut capitalized = String::new();
+for c in string.chars() {
+    capitalized.push(c.to_uppercase().next().unwrap());
+}
+println!("{}", capitalized); // Ausgabe: HALLO WELT
 ```
+
+Es gibt auch weitere Methoden wie `replace()` oder `chars()` und `map()` Kombinationen, die zum Großschreiben eines Strings in Rust verwendet werden können.
 
 ## Tiefere Einblicke
 
-Unter der Haube verwendet Rust das `Unicode Character Database (UCD)`, um zu bestimmen, welche Buchstaben in einer bestimmten Sprache groß geschrieben werden sollen. Das bedeutet, dass die Methode `.to_uppercase()` nicht nur für englische Texte funktioniert, sondern auch für andere Sprachen wie Deutsch, Französisch oder Spanisch.
-
-Zusätzlich ermöglicht Rust auch die Verwendung von `Unicode Normalization`, um eine Zeichenkette in eine bestimmte Form zu bringen, bevor sie capitalisiert wird. Das ist hilfreich, um sicherzustellen, dass die Zeichenkette konsistent und einheitlich formatiert ist.
+Wenn du dich fragst, warum in Rust keine standardmäßige Funktion zum Großschreiben von Strings vorhanden ist, liegt dies daran, dass Rust Strings auf Unicode basieren und es mehrere Möglichkeiten gibt, einen Buchstaben in Großschreibung zu setzen. Dies kann je nach Kontext und Sprache variieren. Daher überlässt Rust es den Entwicklern, die passende Methode für ihre spezifische Anwendung zu wählen.
 
 ## Siehe auch
 
-- [Rust String Dokumentation](https://doc.rust-lang.org/std/string/)
-- [UCD Offizielle Webseite](https://unicode.org/ucd/)
-- [Unicode Normalization in Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.nfc)
+- [Rust String Dokumentation](https://doc.rust-lang.org/std/string/struct.String.html)
+- [String Methoden in Rust](https://www.educative.io/edpresso/what-are-the-string-methods-in-rust)
+- [String Manipulation in Rust](https://www.rust-lang.org/learn/introduction#string-manipulation)

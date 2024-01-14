@@ -1,47 +1,46 @@
 ---
 title:                "C#: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "C#"
-category:             "Getting Started"
+category:             "C#"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi aloittaa uusi projekti
+## Miksi aloittaa uusi projekti?
 
-On monia syitä, miksi aloittaa uusi ohjelmointiprojekti, kuten oppia uusia taitoja, ratkaista ongelmia tai toteuttaa omia visioita. Se voi myös antaa sinulle mahdollisuuden työskennellä uusien teknologioiden ja työkalujen kanssa, jotka voivat kehittää osaamistasi ja parantaa CV:täsi.
+Moni meistä ohjelmoijista rakastaa uuden projektin aloittamista. Se antaa meille mahdollisuuden päästä luovuutemme valloilleen ja kehittää uusia taitoja. Uuden projektin aloittaminen voi myös olla hyvä tapa ratkaista ongelmia tai haasteita, jotka olemme kohdanneet työssämme. Se voi myös tarjota meille mahdollisuuden oppia uutta teknologiaa tai parantaa jo olemassa olevaa koodiamme.
 
-## Miten aloittaa
+## Kuinka aloittaa uusi projekti?
 
-Kun aloitat uuden C#-projektin, ensimmäinen askel on luoda uusi projekti Visual Studion kautta. Voit tehdä tämän valitsemalla "File" ja sitten "New Project". Valitse haluamasi projekti ja nimeä se. Tämän jälkeen voit aloittaa koodauksen luomalla uuden C#-tiedoston.
+Uuden projektin aloittaminen voi tuntua ylivoimaiselta tehtävältä, mutta se ei tarvitse olla. On tärkeää aloittaa tekemällä selkeä suunnitelma projektista ja päättää, mitä haluat saavuttaa. Sitten sinun tulee valita ohjelmointikieli ja kehitysympäristö, joka sopii parhaiten projektillesi. Esimerkiksi, jos haluat kehittää sovelluksen Windows-käyttöjärjestelmälle, kannattaa valita C# ja Visual Studio. 
+
+Aloita koodaamalla projektisi pohja ja aloita lisäämällä toiminnallisuuksia askel askeleelta. Voit hyödyntää valmiita kirjastoja ja avoimen lähdekoodin projekteja helpottaaksesi työtäsi. Varmista myös, että seuraat ohjelmointikäytäntöjä ja kirjoitat selkeää ja helppolukuista koodia. Alla on esimerkki yksinkertaisesta C# koodipätkästä, joka tulostaa "Hello World!" konsoliin:
 
 ```C#
 using System;
 
-namespace UusiProjekti
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Tervetuloa uuteen projektiin!");
-        }
+        Console.WriteLine("Hello World!");
     }
 }
 ```
 
-Tämän yksinkertaisen esimerkin avulla voit tulostaa viestin konsoliin ja varmistaa, että kaikki toimii oikein.
+Muista myös testata koodiasi useissa eri tilanteissa ja varmista, että se toimii odotetulla tavalla. Kun olet valmis, voit jakaa projektisi käyttäjien kanssa tai täyttää sille muut tavoitteesi.
 
-## Syvemmälle uuden projektin aloittamiseen
+## Syvempi sukellus uuden projektin aloittamiseen
 
-Uuden projektin aloittaminen vaatii enemmän kuin vain koodausta. Sinun on myös harkittava tarvittavia resursseja, kuten aikaa, työkaluja ja budjettia. On myös tärkeää suunnitella projekti etukäteen ja hahmotella sen tavoitteet ja vaatimukset.
+Kun olet aloittanut uuden projektin, on tärkeää pysyä motivoituneena ja kohdata mahdolliset haasteet rohkeasti. Työskentely käyttäjäpalautteen ja yhteistyön merkeissä voi auttaa projektin kehittämisessä ja antaa uusia ideoita siihen. Muista myös dokumentoida projektisi hyvin, jotta se on helppo ymmärtää ja muokata tulevaisuudessa.
 
-Toinen tärkeä tekijä on tiimityöskentely ja viestintä. Jos työskentelet yhdessä muiden kanssa, on tärkeää luoda selkeä kommunikaatiolinja ja vastuunjako.
-
-Lopuksi, muista pitää projekti järjestelmällisenä ja dokumentoituna. Hyvä organisaatio ja dokumentointi auttavat sinua ja tiimiäsi pysymään ajan tasalla ja välttämään mahdollisia ongelmia.
+Lopuksi, muista nauttia prosessista! Uuden projektin aloittaminen voi olla erittäin palkitsevaa ja voit oppia paljon matkan varrella.
 
 ## Katso myös
 
-- [C# – Ohjeet uuden projektin luomiseen Visual Studiolla](https://docs.microsoft.com/fi-fi/visualstudio/ide/quickstart-create-a-console-app)
-- [Uuden projektin suunnittelun perusteet](https://www.projectmanager.com/blog/how-to-plan-a-project-in-5-easy-steps)
-- [Hyvät dokumentointikäytännöt ohjelmistokehityksessä](https://www.involta.com/blog/last-minute-essential-documentation-tips-for-software-development-projects)
+- [Visual Studio:n aloitusopas](https://docs.microsoft.com/en-us/visualstudio/get-started/?view=vs-2019)
+- [C# opetusohjelmat](https://www.tutorialspoint.com/csharp/index.htm)
+- [GitHub julkaisualustana](https://github.com/)

@@ -1,52 +1,54 @@
 ---
 title:                "Gleam: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Gleam"
-category:             "Testing and Debugging"
+category:             "Gleam"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi: Miksi haluaisit kirjoittaa testejä?
+# Miksi Kirjoittaa Testejä?
 
-Kirjoittamalla testejä voit varmistaa, että koodisi toimii halutulla tavalla ja välttyä mahdollisilta virheiltä ja bugeilta tulevaisuudessa.
+Testaaminen on tärkeä osa ohjelmistokehitystä, sillä se varmistaa koodin toimivuuden ja vähentää virheiden riskiä. Testien kanssa työskentely myös auttaa kehittäjiä suunnittelemaan ja rakentamaan parempia ja luotettavampia ohjelmistoja.
 
-## Miten tehdä:
+# Kuinka Kirjoittaa Testejä Gleam-Ohjelmointikielillä?
 
-Gleamilla voit helposti kirjoittaa ja suorittaa testejä koodisi integroinnin varmistamiseksi. Katso esimerkiksi seuraavaa koodilohkoa:
+Testien kirjoittaminen Gleam-ohjelmointikielillä on hyvin yksinkertaista ja intuitiivista. Ensimmäiseksi sinun tulee määritellä testitapaukset `test`-funktioilla ja sen jälkeen suorittaa testit `run`-funktiolla.
 
 ```Gleam
-fn laske(n) {
-    if n == 0 {
-        0
-    } else {
-        n + laske(n - 1)
-    }
-}
-
-test "laske testi" {
-    expect(laske(5)).toEqual(15)
+test "Summa-funktio palauttaa oikean tuloksen" {
+  assert summa(2, 3) == 5
 }
 ```
 
-Tässä esimerkissä luodaan testi, joka varmistaa, että `laske`-funktio toimii odotetulla tavalla. Jos testi onnistuu, saat nähdä seuraavan outputin:
+`assert`-lauseen avulla voit tarkistaa, että haluttu tulos vastaa odotettua. Tämän jälkeen voit suorittaa testit ja nähdä niiden tulokset:
+
+```Gleam
+run([summa_test])
+```
+
+Tämän esimerkin tulisi palauttaa seuraava tulos:
 
 ```
-✅ laske testi
+Trepcudsumma-funktio palauttaa oikean tuloksen
+[OK] All 1 tests passed.
 ```
 
-Voit myös muokata funktion ja testin parametreja ja odotettuja tuloksia tarpeen mukaan.
+# Syvemmälle Testien Kirjoittamiseen
 
-## Syvällinen tarkastelu
+Testien kirjoittamiseen Gleam-ohjelmointikielillä liittyy paljon muitakin hyödyllisiä toimintoja, kuten esimerkiksi `case`-lauseet ja `setup`-funktiot. Nämä mahdollistavat monimutkaisempien testitapausten luomisen ja testien suorittamisen ennalta määritellyssä ympäristössä.
 
-Testien kirjoittaminen on tärkeä osa ohjelmointia, sillä se auttaa varmistamaan luotettavan ja toimivan koodin. Kun kirjoitat testejä, muista ottaa huomioon seuraavat asiat:
+Voit myös suorittaa yksittäisiä testejä `run`-funktiolla antamalla halutun testifunktion parametrina.
 
-- Testaa eri käyttötapauksia ja syötteitä varmistaaksesi, että koodisi käyttäytyy odotetulla tavalla.
-- Pyri kirjoittamaan selkeä ja ymmärrettävä testikoodi, jotta mahdollisten virheiden löytäminen ja korjaaminen on helpompaa.
-- Päivitä testejä aina kun teet muutoksia koodiin, jotta varmistat kaiken pysyvän toimivana.
+```Gleam
+run([summa_test], [summa_jaettu_jaollisella_test])
+```
 
-## Katso myös
+Syvemmälle Gleam-ohjelmointikielen testaamiseen ja sen tarjoamiin mahdollisuuksiin voit tutustua tarkemmin [Gleam-testausdokumentaatiosta](https://gleam.run/documentation/test/).
 
-- [The Gleam testing library](https://github.com/gleam-lang/testing)
-- [Unit testing in Gleam](https://gleam.run/book/testing.html#unit-testing)
-- [Writing tests in Gleam](https://gleam.run/articles/unit-tests)
+# Katso Myös
+
+- [Gleam-testausdokumentaatio](https://gleam.run/documentation/test/)
+- [Gleam-tutoriaali](https://gleam.run/tour/)

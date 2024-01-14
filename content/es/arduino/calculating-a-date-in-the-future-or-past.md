@@ -1,46 +1,68 @@
 ---
-title:                "Arduino: Calculando una fecha en el futuro o pasado"
+title:                "Arduino: Calculando una fecha en el futuro o en el pasado"
+simple_title:         "Calculando una fecha en el futuro o en el pasado"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué calcular fechas en el futuro o pasado?
+## Por qué
 
-El cálculo de fechas en el futuro o pasado es útil en proyectos de Arduino que requieren programar eventos en ciertos momentos específicos. Por ejemplo, puede ser útil para encender una luz en una fecha y hora determinadas o programar un sistema de riego para que se active en ciertos días.
+La programación en Arduino nos permite crear proyectos increíbles que pueden mejorar nuestras vidas de muchas maneras. Una de esas aplicaciones es el cálculo de una fecha en el futuro o pasado, lo cual puede ser útil para programar eventos o tareas.
 
 ## Cómo hacerlo
 
-Para calcular fechas en el futuro o pasado en Arduino, se pueden seguir los siguientes pasos:
+Para calcular una fecha en el futuro o pasado, primero necesitamos definir una fecha de referencia. En este caso, utilizaremos la función `millis()` de Arduino para obtener el tiempo actual en milisegundos.
 
-1. Definir una variable para almacenar la fecha actual.
-```Arduino
-DateTime fechaActual = now();
 ```
-2. Definir una variable para almacenar la fecha en el futuro o pasado.
-```Arduino
-DateTime fechaCalculada = DateTime(año, mes, día, hora, minuto, segundo);
+Arduino
+
+unsigned long tiempo_actual = millis();
 ```
-3. Usar la función `calculateOffset()` junto con las variables de fecha para obtener la diferencia en segundos.
-```Arduino
-int segundos = calculateOffset(fechaActual, fechaCalculada);
+
+Luego, podemos calcular una fecha en el futuro sumando una cantidad de milisegundos a la fecha de referencia. Por ejemplo, si queremos calcular la fecha exacta dentro de una semana, podemos sumar 604800000 milisegundos (7 días en milisegundos) al tiempo actual.
+
 ```
-4. Utilizar la función `setTime()` para establecer la fecha en el reloj de Arduino.
-```Arduino
-setTime(segundos);
+Arduino
+unsigned long fecha_futura = tiempo_actual + 604800000;
 ```
-5. ¡Listo! Ahora el reloj de Arduino estará configurado en la fecha y hora deseada.
+
+Para calcular una fecha en el pasado, podemos restar una cantidad de milisegundos a la fecha de referencia. Si queremos saber la fecha exacta hace un mes, restaremos 2592000000 milisegundos (30 días en milisegundos) al tiempo actual.
+
+```
+Arduino
+unsigned long fecha_pasada = tiempo_actual - 2592000000;
+```
+
+Una vez que tenemos la fecha en milisegundos, podemos convertirla a un formato legible para el usuario utilizando la función `millisToDateTime()` de la biblioteca ArduinoDateTime.
+
+```
+Arduino
+#include <ArduinoDateTime.h> // incluimos la biblioteca
+
+unsigned long fecha_futura = tiempo_actual + 604800000; // calculamos la fecha en el futuro
+DateTime fecha_legible = millisToDateTime(fecha_futura); // convertimos la fecha en milisegundos a un formato legible
+```
+
+Por último, podemos imprimir la fecha en el puerto serie para que podamos verla en el monitor serial.
+
+```
+Arduino
+// imprimimos la fecha en el puerto serie
+Serial.println("La fecha en el futuro es " + String(fecha_legible.month()) + "/" + String(fecha_legible.day()) + "/" + String(fecha_legible.year()));
+```
 
 ## Profundizando
 
-El cálculo de fechas en el futuro o pasado en Arduino se basa en la función `calculateOffset()`, que toma en cuenta la fecha actual y la fecha deseada para obtener la diferencia en segundos. Esta diferencia se utiliza luego con la función `setTime()` para establecer la fecha en el reloj de Arduino.
+Calcular una fecha en el futuro o pasado puede ser útil en aplicaciones de temporización, como encender y apagar luces automáticamente en un determinado día y hora. También puede ser útil en proyectos que involucren el registro de eventos en una fecha específica, como la recolección de datos meteorológicos.
 
-Es importante tener en cuenta que la precisión de la fecha y hora en Arduino depende del tipo de reloj utilizado. Por lo general, se recomienda utilizar un reloj de tiempo real (RTC) para obtener una mayor precisión en las fechas y horas programadas.
+Es importante tener en cuenta que este método de cálculo de fechas solo es preciso si el reloj interno de Arduino no se detiene o se reinicia. Si el Arduino se reinicia, el cálculo de fechas se reiniciará desde cero.
 
-## Ver también
+## Véase también
 
-- [Librería RTClib para Arduino](https://github.com/adafruit/RTClib)
-- [Tutorial: Controlando un sistema de riego con Arduino](https://create.arduino.cc/projecthub/Arnov_Sharma/control-your-water-supply-solenoird-valve-using-arduino-9a4618)
-- [Ejemplo de cálculo de fechas en Arduino](https://arduinohcs.files.wordpress.com/2012/07/calculating-time-in-arduino.pdf)
+- [Biblioteca ArduinoDateTime](https://github.com/arduino-libraries/ArduinoDateTime)
+- [Función millis() de Arduino](https://www.arduino.cc/reference/en/language/functions/time/millis/)
+- [Tutorial sobre cómo calcular fechas en el Arduino Forum](https://forum.arduino.cc/index.php?topic=712493.0)

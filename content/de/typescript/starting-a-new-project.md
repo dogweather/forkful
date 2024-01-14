@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Eine neue Projektarbeit beginnen"
+title:                "TypeScript: Ein neues Projekt beginnen"
+simple_title:         "Ein neues Projekt beginnen"
 programming_language: "TypeScript"
-category:             "Getting Started"
+category:             "TypeScript"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/starting-a-new-project.md"
 ---
 
@@ -9,35 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Es gibt viele Gründe, ein neues Programmierprojekt zu starten. Vielleicht möchtest du deine Fähigkeiten verbessern, ein bestimmtes Problem lösen oder ein persönliches Ziel erreichen. Wie auch immer, TypeScript ist eine großartige Wahl für dein nächstes Projekt, da es eine typisierte Sprache ist, die auf JavaScript aufbaut und die Entwicklung erleichtert.
+Das Erstellen eines neuen Projekts kann eine aufregende Herausforderung sein. Es ermöglicht es uns, unsere Fähigkeiten zu verbessern, unsere Kreativität auszudrücken und etwas Neues zu schaffen. Aber warum sollten wir uns überhaupt die Mühe machen, ein neues Projekt zu starten? Nun, es kann verschiedene Gründe geben, wie zum Beispiel die Lösung eines bestimmten Problems, das Erlernen einer neuen Technologie oder einfach nur aus Spaß an der Programmierung.
 
-## Anleitung
+## Wie geht es
 
-Um TypeScript in deinem Projekt zu verwenden, musst du zuerst die TypeScript-Compiler-Tools installieren. Dies kannst du im Terminal mit dem Befehl ```npm install -g typescript``` machen. Jetzt kannst du deine TypeScript-Dateien mit dem Befehl ```tsc``` kompilieren und die erzeugte JavaScript-Datei ausführen.
+Um ein neues TypeScript-Projekt zu erstellen, müssen wir zunächst die TypeScript-Sprachdateien installieren. Dazu verwenden wir den Node Package Manager (NPM) und führen den Befehl "npm install -g typescript" aus. Danach können wir unser Projektverzeichnis erstellen und die TypeScript-Dateien mit der Erweiterung ".ts" erstellen. Zum Beispiel:
 
-In TypeScript kannst du Variablen mit dem Schlüsselwort ```let``` definieren und Typen mit Doppelpunkten angeben, zum Beispiel ```let name: string = "Max"```. Hier gibt es noch weitere Datentypen wie zum Beispiel ```number```, ```boolean``` und ```any```, um nur einige zu nennen.
+```TypeScript
+// Initialisierung einer Variablen
+let name: string = "Max";
 
-Eine praktische Funktion in TypeScript ist die Möglichkeit, benutzerdefinierte Typen zu erstellen. Dies kannst du mit dem Schlüsselwort ```interface``` tun, um eine Schablone für ein Objekt zu definieren, zum Beispiel:
-
-```
-interface Person {
-  name: string;
-  age: number;
-  hasPets: boolean;
-}
+// Konsolenausgabe
+console.log("Hallo " + name);
 ```
 
-Jetzt kannst du eine Person mit diesen Eigenschaften erstellen und die Typisierung sorgt dafür, dass diese Eigenschaften beim Programmieren nicht versehentlich geändert werden.
+Um unseren Code auszuführen, müssen wir ihn zuerst in JavaScript kompilieren. Dazu verwenden wir den Befehl "tsc" in der Kommandozeile, gefolgt vom Namen unserer TypeScript-Datei. Sobald der Code kompiliert wurde, können wir ihn mit dem Befehl "node" ausführen und die Ausgabe, in diesem Fall "Hallo Max", in der Konsole sehen.
 
-## Tiefere Einblicke
+## Tiefer Einblick
 
-Bevor du dein neues Projekt startest, solltest du dir Gedanken darüber machen, wie du es strukturieren möchtest. TypeScript ist perfekt für die Verwendung mit dem Model-View-Controller (MVC) Entwurfsmuster, da es die Kapselung von Daten und Funktionen erleichtert.
+Bevor wir mit unserem Projekt beginnen, sollten wir uns einige wichtige Konzepte von TypeScript ansehen. Zum Beispiel die Unterstützung von statischen Typen, die es uns ermöglicht, Variablen und Funktionen mit bestimmten Datentypen zu deklarieren. Dies hilft uns, Fehler während der Entwicklungsphase zu vermeiden und unseren Code robuster zu machen. Darüber hinaus bietet TypeScript auch die Möglichkeit, Klassen und Schnittstellen zu verwenden, die uns bei der Strukturierung und Organisation unseres Codes helfen.
 
-Eine weitere wichtige Überlegung ist die Verwendung von Typen. Während es verlockend sein kann, überall den Typ ```any``` zu verwenden, solltest du versuchen, so viele konkrete Typen wie möglich zu verwenden, um sicherzustellen, dass dein Code gut gewartet werden kann.
-
-Schließlich, um das Beste aus TypeScript herauszuholen, solltest du dir die vielen verfügbaren Bibliotheken und Frameworks ansehen, die speziell für TypeScript entwickelt wurden. Diese können dir helfen, effizienter und strukturierter zu programmieren.
+Zusätzlich zu diesen Grundlagen gibt es viele weitere nützliche Funktionen und Konzepte in TypeScript, die wir entdecken können, während wir unser Projekt entwickeln. Es ist wichtig, die offizielle Dokumentation zu lesen und Tutorials zu folgen, um das Beste aus dieser Programmiersprache herauszuholen.
 
 ## Siehe auch
 
-- [Offizielle TypeScript-Dokumentation](https://www.typescriptlang.org/docs/home.html)
-- [Liste von TypeScript-Bibliotheken und Frameworks](https://awesome-typescript.com/)
+- Offizielle TypeScript-Dokumentation: https://www.typescriptlang.org/docs
+- TypeScript-Tutorials von MDN: https://developer.mozilla.org/en-US/docs/Web/JavaScript/TypeScript_tutorials
+- TypeScript-Beispielaufgaben auf GitHub: https://github.com/Microsoft/TypeScript-Quiz
+
+Danke, dass Sie sich die Zeit genommen haben, diesen Artikel zu lesen. Ich hoffe, er hat Ihnen einen Einblick in die Verwendung von TypeScript für Ihre nächsten Projekte gegeben. Happy coding!

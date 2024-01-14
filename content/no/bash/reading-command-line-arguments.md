@@ -1,42 +1,49 @@
 ---
 title:                "Bash: Lesing av kommandolinje-argumenter"
+simple_title:         "Lesing av kommandolinje-argumenter"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Hvis du noen gang har brukt Terminal eller kommandolinje på din datamaskin, har du sannsynligvis sett at programmer og verktøy kan ta argumenter eller parametere. Men hva er egentlig disse argumentene og hvorfor er det viktig å kunne lese dem? Les videre for å finne ut mer!
+Når du skriver Bash-programmer, er det viktig å kunne lese kommandolinjeargumenter. Dette gir deg muligheten til å lage mer allsidige og interaktive skript som kan tilpasses ulike behov. Ved å kunne lese kommandolinjeargumenter, kan brukere kjøre skriptene dine med spesifikke innstillinger eller påvirkning, og dermed gi en bedre brukeropplevelse.
 
-# Hvordan
+## Hvordan
 
-Når du kjører et Bash-program, kan du legge til argumenter etter kommandoene. Disse argumentene kan være enkeltord eller setninger og de representerer informasjon som programmet vil bruke til å utføre en spesifikk oppgave. For å lese disse argumentene i programmet ditt, må du bruke variabler som heter $1, $2, $3, og så videre. Disse variablene representerer posisjonen til argumentene dine, slik at du enkelt kan få tilgang til dem.
+Å lese kommandolinjeargumenter i Bash er enkelt og krever bare noen få linjer med kode. Først må du huske å inkludere "$@" i starten av skriptet ditt. Dette vil fange alle kommandolinjeargumentene som brukes når skriptet blir kjørt. Deretter kan du bruke "shift" -kommandoen for å sikre at alle argumentene blir lest på riktig måte.
 
-La oss se på et enkelt eksempel. Vi vil lage et Bash-program som tar inn to tall og skriver ut summen av dem.
+La oss nå se på et eksempel:
 
 ```Bash
-echo "Summen av tallene er: $1 + $2 = $(($1 + $2))"
+#!/bin/bash
+echo "Velkommen til mitt skript!"
+echo "Første argument: $1"
+echo "Andre argument: $2"
+echo "Tredje argument: $3"
 ```
 
-Her bruker vi variablene $1 og $2 til å få tak i de to tallene som brukeren skriver inn som argumenter. Vi bruker deretter disse tallene til å beregne summen og skrive den ut på skjermen. La oss si at vi kaller programmet vårt "sum.sh" og kjører det med argumentene "5" og "7". Da vil output være:
+I dette eksempelet vil du se at vi bruker "$1", "$2" og "$3" for å skrive ut de tre første kommandolinjeargumentene. Du kan deretter kjøre skriptet med følgende kommandoer: "./mitt_skript.sh argument1 argument2 argument3". Resultatet vil være:
 
+```Bash
+Velkommen til mitt skript!
+Første argument: argument1
+Andre argument: argument2
+Tredje argument: argument3
 ```
-Summen av tallene er: 5 + 7 = 12
-```
 
-Veldig enkelt, ikke sant? Dette er bare et enkelt eksempel, men det viser hvordan du kan lese argumenter i Bash-programmer.
+## Deep Dive
 
-# Dypdykk
+Det finnes ulike måter å håndtere kommandolinjeargumenter på i Bash, avhengig av kompleksiteten og behovene til skriptet ditt. En metode er å bruke en "case" -struktur for å håndtere ulike alternativer og argumenter. Du kan også bruke variabler og løkker for å håndtere flere argumenter.
 
-Nå lurer du kanskje på hva som skjer hvis et program tar inn et ukjent antall argumenter eller om du ikke vet hvor mange argumenter som vil bli gitt. I slike tilfeller vil du kunne bruke variabelen $@ til å få tilgang til alle argumentene som ble gitt. Du kan også bruke variabelen $# til å finne ut hvor mange argumenter som ble gitt. Disse og andre variabler kan hjelpe deg med å håndtere ulike scenarier når du arbeider med argumenter i Bash-programmer.
+En annen viktig ting å huske på når du leser kommandolinjeargumenter er å validere input. Dette er spesielt viktig når brukere kan legge inn egne argumenter, da det kan føre til uønskede resultater eller feil i skriptet ditt. Bruk gjerne "if" -strukturer og betingelser for å sjekke om argumentene er gyldige før du bruker dem i skriptet ditt.
 
-Det er også viktig å merke seg at argumentene du leser i programmet ditt er strenger, selv om de representerer tall. Hvis du for eksempel vil bruke argumentene til å utføre en matematisk beregning, må du konvertere dem til tall først. Dette kan gjøres ved å bruke kommandoen "expr" eller ved å bruke dobbelfirkantede parenteser rundt variablene som i eksempelet over.
+## Se også
 
-# Se også
-
-- Mer informasjon om lesing av argumenter i Bash: https://www.gnu.org/software/bash/manual/html_node/Positional-Parameters.html
-- Eksempler på Bash-programmer som bruker argumenter: https://www.geeksforgeeks.org/command-line-arguments-in-shell-scripting/
-- Praktiske tips og triks for å arbeide med argumenter i Bash: https://medium.com/@TheKodeMan/bash-command-line-arguments-tips-tricks-a8d032a2dc4f
+- [Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Shell Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial)
+- [Bash Scripting Cheat Sheet](https://devhints.io/bash)

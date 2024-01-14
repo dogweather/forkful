@@ -1,33 +1,53 @@
 ---
-title:                "Rust: הדפסת פלט לתיקון באגים"
+title:                "Rust: הדפסת פלט תיקונים"
+simple_title:         "הדפסת פלט תיקונים"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# למה
+/* Shalom lechol ha-chaverim ha-mishtalechim shba-Rust! Beshvil artikl zeh, tchinam latzet al hegemara shel debug output ba-safek yom-me-hod. L'mat ha-artikl metsuyar la-or hav`mek zot ha-mahanehhut shel be`ur ha-tushia ha-ze.b'artikl ha-zeh, taqvim lhiyot medabrim al mah hu debug output, miltei mlka hayom ba-sibilme hah-d. At lmedim lhibonot pigurim lhibonot sheleshe reddu yt yoplakat ruhst.HaAnnual Rust Conference
+## Why
 
-כתיבת הדפסת פלט לבעיות שיפור הדרגתיות של צוות פיתוח מאפשרת למפתחים למצוא בעיות ולכוון אותן באופן יעיל יותר. 
+למה לעשות דבר מגעיל כמו להדפיס את תוכן האתחלה של התכנית אליכם? אולי יש איזו עניין אסטרונמי אחר?
 
-## כיצד לעשות זאת
+אם תמיד נתנסה להבין כיצד התכנית פועלת ואיפה הבעיות. אבל לדיי קשה לספר תארכוהיים עם הדפסת רגילה או לבזת לב ׃;רחוב עם דפוס.
+
+## How To
+
+אם אתה מעוניין להדפיס את קוד Rust שלך, יש לנו כמה טכניקות.
 
 ```Rust
 fn main() {
-    let name = "David";
-    println!("Hello, {}!", name);
+    println!("זהו דוגמא של הדפסה פשוטה");
+    
+    let number = 15;
+    println!("מספר שלם : {}", number);
+    
+    let bool_value = true;
+    println!("ערך בוליאני : {}", bool_value);
 }
 ```
 
-כדי להדפיס הודעת debug ברוסט, יש להשתמש בפקודת `println!` ולהוסיף `#?` לסוגריים. כך ניתן להדפיס משתנים וערכים באופן דינמי ולנתח את הפלט בצורה ברורה יותר. 
+כאן אנו משתמשים בפקודת `println!` כדי להדפיס את הערכים, עם הכנתקיק המתאים לסוג הנתון. הנה כמה דוגמאות נוספות כדי לסייע לך להבין איך להשתמש בהדפסה פונקצילה :
 
-## כניסה עמוקה
+```Rust
+fn main() {
+    let name = "יעקב";
+    let age = 30;
+    
+    println!("שם : {}, גיל : {}", name, age);
+}
 
-כאשר משתמשים בפקודת `println!` עם `#?`, היא משתמשת במראה הפנימי של כל ערך ומנתחת אותו באופן תחקירי. בנוסף, ניתן להשתמש בפקודת `dbg!` כדי להדפיס סטק טרייס. כל אלו מאפשרים למפתחים לזהות מקורות לבעיות ולהתמודד איתן. 
+// פלט:
+// שם : יעקב, גיל : 30
+```
 
-# ראה גם
+כמובן שאתה יכול להשתמש גם בפקודות אחרות להדפסה, כמו `eprintln!` להדפסת שגיאות או `format!` ליצירת מחרוזת מעוצבת עם הערכים הרלוונטיים.
 
-- [מדריך לשפת תכנות Rust למתחילים](https://www.digitalocean.com/community/tutorials/how-to-install-rust-on-ubuntu-18-04)
-- [תיעוד רשמי על פקודת `println!` ב־Rust](https://doc.rust-lang.org/std/macro.println.html)
-- [הכרות עם פקודת `dbg!` של־Rust](https://towardsdatascience.com/debugging-rust-in-vs-code-7307b015f9ee)
+## Deep Dive
+
+הדפסת תוכן האתחלה היא כלי חשוב בעבודת השיפור הרבה. כמו כן, זה יכול לעזור לנו למצוא בעיות ותקלות בקוד שלנו. בקוד Rust ישנם כמה אפש

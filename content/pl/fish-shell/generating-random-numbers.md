@@ -1,44 +1,81 @@
 ---
 title:                "Fish Shell: Generowanie losowych liczb"
+simple_title:         "Generowanie losowych liczb"
 programming_language: "Fish Shell"
-category:             "Numbers"
+category:             "Fish Shell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego
 
-Generowanie losowych liczb może być niezbędne w wielu projektach programistycznych. Może być wykorzystane do testowania kodu, tworzenia losowych unikalnych identyfikatorów czy symulacji zachowań losowych. W tym wpisie dowiesz się, jak wygenerować losowe liczby w powłoce Fish Shell.
+Generowanie losowych liczb może być przydatne w wielu różnych przypadkach, na przykład przy tworzeniu testów jednostkowych lub symulacji. W tym wpisie dowiesz się, jak można wykorzystać wbudowane funkcje w powłoce Fish Shell do generowania losowych liczb.
 
-## Jak to zrobić
+# Jak to zrobić
 
-Aby wygenerować losową liczbę w Fish Shell, wykorzystujemy wbudowaną funkcję `random`. Możemy wybrać, ile liczb chcemy wygenerować oraz zakres, w jakim mają się znajdować. Przykładowe użycie wygląda następująco:
 
-```Fish Shell
-set i 0
-while test $i -lt 10
-    random 1 100
-    set i (math $i + 1)
-end
+Fish Shell udostępnia kilka funkcji do generowania liczb losowych, a są to:
+
+- $RANDOM - wewnętrzna zmienna, która przechowuje losową liczbę całkowitą z zakresu od 0 do 32767 (wliczając obie te wartości).
+- "fish_random" - funkcja, która zwraca losową liczbę całkowitą z zakresu od 0 do 132767 (wliczając obie te wartości).
+- "fish_gonrand" - funkcja, która zwraca losową liczbę zmiennoprzecinkową z zakresu od 0 do 1 (wyciągając losowe bity z generatora liczby pseudo-losowej).
+
+Aby wygenerować losową liczbę, należy użyć polecenia "echo", który wyświetli wynik funkcji lub zmiennej. Na przykład:
+
+```
+Fish Shell: echo $RANDOM
+18681
 ```
 
-Powyższy kod wygeneruje 10 liczb losowych z zakresu od 1 do 100. Wynik zostanie wyświetlony na ekranie w kolejnych liniach. Możemy również przypisać wynik do zmiennej, aby go wykorzystać w dalszych obliczeniach.
+Aby wygenerować 10 losowych liczb, można użyć pętli "for" i funkcji "fish_random":
 
-## Głębszy zanurzenie
-
-Funkcja `random` wykorzystuje generator liczb pseudolosowych, który działa na podstawie "ziarna" (seed). W przypadku powtórnego uruchomienia kodu z takim samym ziarnem, wynik będzie taki sam. Aby uniknąć anulowania losowości, warto zmieniać ziarno przekazywane do funkcji. Możesz to zrobić, wykorzystując zmienną systemową `$RANDOM`, która jest aktualizowana po każdym wywołaniu funkcji `random`.
-
-```Fish Shell
-set i 0
-while test $i -lt 10
-    random $RANDOM 1 100
-    set i (math $i + 1)
-end
+```
+Fish Shell: for i in (seq 1 10)
+               echo (fish_random)
+           end
+11971
+5014
+24241
+2447
+7939
+27316
+21511
+407
+28423
+16927
 ```
 
-## Zobacz także
+Możesz także ustawić zakres wyświetlanych liczb, np. od 1 do 100, poprzez dodanie właściwych parametrów do funkcji. Na przykład:
 
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/cmds/random.html)
-- [Wprowadzenie do powłoki Fish Shell](https://fishshell.com/docs/current/tutorial.html)
-- [Wprowadzenie do generowania liczb pseudolosowych](https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych)
+```
+Fish Shell: for i in (seq 1 10)
+               echo (fish_random 1 100)
+           end
+98
+53
+65
+4
+30
+10
+66
+72
+3
+90
+```
+
+# Deep Dive
+
+Generowanie liczb losowych jest trudnym zagadnieniem w informatyce. W Fish Shell wykorzystywany jest generator liczb pseudo-losowych - funkcja "fish_gonrand" używa algorytmu LTCG (Linear Congruential Generator), który jest ulepszoną wersją popularnego generatora mersenne twister.
+
+Ważne jest, aby pamiętać, że generowane liczby są jedynie "pseudo-losowe", a więc nie są całkowicie losowe i mogą zawierać pewne korelacje lub powtórzenia. Jest to wystarczające dla większości zastosowań, ale jeśli potrzebujesz bardzo losowej liczby, warto skorzystać z zewnętrznych narzędzi lub biblioteki.
+
+# Zobacz także
+
+Jeśli chcesz dowiedzieć się więcej o generowaniu liczb losowych w powłoce Fish Shell, polecamy zapoznanie się z poniższymi źródłami:
+
+- https://fishshell.com/docs/current/commands.html#random
+- http://scipy.github.io/devdocs/reference/generated/scipy.random.Generator.random.html
+- https://www.tutorialspoint.com/unix_commands/seq.htm
+- https://janisz.github.io/unix/shell/perl/bash/2012/12/28/random-numbers-in-unix-strona-dygestrecie.html

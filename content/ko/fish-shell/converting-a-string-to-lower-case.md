@@ -1,36 +1,44 @@
 ---
 title:                "Fish Shell: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
-문자열을 소문자로 변환하는 것에 대해 왜 이야기하려고 하는지 궁금하지 않으신가요? 리눅스 사용자분들은 당연히 터미널 환경에서 작업을 할 때 다양한 문자열을 다루게 됩니다. 때로는 대문자로 이루어진 문자열을 소문자로 변환해야 할 때가 있는데, 이를 위해서 어떤 방법이 있는지 알아보도록 하겠습니다.
+
+문자열을 소문자로 변환하는 것이 중요한 이유는 데이터 처리 및 문자열 비교를 더 쉽고 간단하게 만들기 위해서입니다. 예를 들어, 입력된 문자열이 모두 소문자로 이루어졌는지 비교를 할 때, 입력된 문자열을 소문자로 변환하여 비교하는 것이 더 정확하고 간단한 방법입니다.
 
 ## 어떻게
-Fish Shell을 사용하면 간단하게 문자열을 소문자로 변환할 수 있습니다. 우선 다음의 예시 코드를 함께 보시죠.
 
-```Fish Shell
-set my_string "HELLO WORLD"
-echo $my_string | string tolower
+```Fish Shell```을 사용하여 문자열을 소문자로 변환하는 방법은 매우 간단합니다. 먼저, 다음의 코드를 이용하여 원본 문자열을 변수에 할당합니다.
+
+```
+set original_string Hello World!
 ```
 
-원래 문자열은 모두 대문자로 이루어져 있지만, `string tolower` 명령어를 사용하면 바로 소문자로 변환됩니다. 결과는 `hello world`라는 문자열이 출력됩니다. 쉬운 간단한 방법이지 않나요?
+이제, ```string``` 명령어와 함께 ```lower``` 옵션을 사용하여 원본 문자열을 소문자로 변환합니다.
 
-## 딥 다이브
-그렇다면 더 깊이 들어가보겠습니다. Fish Shell에서 문자열을 소문자로 변환하는데 사용되는 명령어는 `string tolower`뿐만 아니라 `string totitle`과 `string toupper` 등도 있습니다. 또한 특정한 옵션을 추가하여 변환할 수도 있습니다. 이와 관련된 자세한 정보는 공식 문서를 참고해주세요. 더 나아가서, 편리한 문자열 관련 함수들을 더 많이 알아보시면 유용하게 활용할 수 있습니다.
+```
+string lower $original_string
+```
 
-## 더 알아보기
-자세한 내용을 더 알고 싶으시다면 아래의 링크들을 참고해주세요.
+위의 코드를 실행하면 다음과 같은 결과가 출력됩니다.
 
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
-- [Fish Shell 유용한 기능들](https://github.com/jorgebucaran/awesome-fish)
-- [Fish Shell 사용법 및 팁](https://dev.to/codefather1/fish-shell-tips-and-tricks-295j)
+```
+hello world!
+```
 
-## 관련 링크
-- [Fish Shell로 문자열 자르기](https://fishshell.com/docs/current/cmds/cut.html)
-- [Shell Script for Loops 사용하기](https://ryanstutorials.net/bash-scripting-tutorial/bash-loops.php)
-- [리눅스 명령어 치트시트 정보 참고하기](https://www.thegeekstuff.com/linux-commands-cheat-sheet/)
+## 깊게 파고들기
+
+Fish Shell의 ```string``` 명령어는 여러 가지 옵션을 제공합니다. ```lower``` 옵션 외에도, ```join```, ```length```, ```split``` 등 문자열을 다양한 방식으로 처리하는 옵션이 있습니다. 또한, 변수 뿐만 아니라 명령어의 출력 결과를 활용하여도 문자열을 소문자로 변환할 수 있습니다.
+
+## 참고자료
+
+- [Fish Shell 공식 홈페이지](https://fishshell.com/)
+- [웹 개발을 위한 Fish Shell 튜토리얼](https://webinstall.dev/fish/)
+- [Fish Shell을 활용한 스크립트 작성 방법](https://www.linode.com/docs/guides/linux-shell-scripting-with-fish/)

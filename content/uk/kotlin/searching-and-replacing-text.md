@@ -1,7 +1,9 @@
 ---
 title:                "Kotlin: Пошук та заміна тексту"
+simple_title:         "Пошук та заміна тексту"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/searching-and-replacing-text.md"
 ---
 
@@ -9,48 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Програмування може бути важливою і потужною навичкою, яка полегшує роботу. Заміна тексту є однією з найбільш корисних можливостей для програмістів, яка допомогає пришвидшити та полегшити процес кодування.
+Існує багато ситуацій, коли програмістам потрібно замінити частини тексту у своєму коді. Це може бути необхідно для виправлення помилок, оновлення функціональності або покращення ефективності програми. Заміна тексту є важливою складовою частиною роботи з будь-якою мовою програмування, включаючи Kotlin.
 
-## Як
+## Як це зробити
 
-Приклади використання методів заміни тексту в мові програмування Kotlin в рамках "```Kotlin ... ```" кодових блоків та результати виводу:
+Для заміни тексту в Kotlin можна використовувати різні методи. Один з найпростіших способів - це використовувати метод `replace()`:
 
-- Заміна старої назви змінної на нову:
-
-```Kotlin
-var username = "UkrainianDev"
-username = username.replace("UkrainianDev", "KyivCoder")
-println(username)
-
-// Output: KyivCoder 
+```
+val text = "Привіт, Світ!"
+val newText = text.replace("Світ", "Котлін")
+println(newText) // "Привіт, Котлін!"
 ```
 
-- Заміна всіх літер "a" на "e" у рядку:
+Ви також можете використовувати регулярні вирази для більш гнучкого пошуку та заміни:
 
-```Kotlin
-val sentence = "Цей документ містить лише літери A."
-val result = sentence.replace("a", "e")
-println(result)
-
-// Output: Цей документ містить лише літери e. 
+```
+val text = "Кodíng еz Кotlin іs fun!"
+val newText = text.replace(Regex("[еèé]"), "e")
+println(newText) // "Coding ez Kotlin is fun!"
 ```
 
-- Видалення символів пунктуації з рядку:
+Заміна може також бути виконана за допомогою методів `replaceFirst()` та `replaceLast()`, які замінюють тільки перше або останнє співпадіння з шуканим текстом.
 
-```Kotlin
-val text = "Привіт! Я український програміст."
-val cleanText = text.replace("[^A-Za-z0-9 ]".toRegex(), "")
-println(cleanText)
+## Глибші дослідження
 
-// Output: Привіт Я український програміст 
-```
-
-## Глибокий погляд
-
-Заміна тексту може бути використана не лише для простих рядків, але й для більш складних структур даних, таких як масиви та колекції. Крім того, Kotlin має багато інших методів для роботи з текстом, які можуть бути корисними для заміни та маніпуляції даними у вашому коді.
+Якщо ви хочете більш детально дослідити можливості заміни тексту в Kotlin, рекомендую звернути увагу на додаткові методи та функції, такі як `replaceRange()`, `replaceBefore()`, `replaceAfter()`, `replaceAfterLast()`, `replaceBeforeLast()`. Вони дозволяють замінити текст після, до, перед або після останнього співпадіння з шуканим текстом.
 
 ## Дивіться також
 
-- [Документація Kotlin: Методи заміни](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/#replace)
-- [Туторіал на YouTube про заміну тексту в Kotlin](https://www.youtube.com/watch?v=HcSIMZcow9k)
-- [Стаття Medium про основи роботи з Kotlin та заміну тексту](https://medium.com/@UkrainianDev/kotlin-for-beginners-searching-and-replacing-text-1eb0ad4f5a64)
+- [Офіційна документація Kotlin з методами пошуку та заміни тексту](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- [Стаття про роботу з регулярними виразами у Kotlin](https://blog.mindorks.com/mastering-regex-in-kotlin)
+- [Порівняння різних методів заміни тексту у Kotlin](https://www.jetbrains.com/help/idea/replacements-in-editor.html#5bf85187)
+
+Бажаємо успіхів у вашому роботі з пошуком та заміною тексту у Kotlin!

@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Söka och ersätta text"
+title:                "Gleam: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/gleam/searching-and-replacing-text.md"
 ---
 
@@ -9,35 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Har du någonsin behövt söka och ersätta text i ett stort dokument eller kodprojekt? Istället för att manuellt gå igenom varje instans av texten, kan du enkelt använda Gleams sök- och ersättningsfunktion för att snabbt och effektivt göra ändringar.
+Att söka och ersätta text är en viktig del av programmering eftersom det gör det möjligt att snabbt och enkelt ändra text i stora mängder av kod. Det är också ett bra sätt att göra upprepande uppgifter mer effektiva.
 
-## Hur gör man
+## Hur man gör det
 
-För att söka och ersätta text i Gleam, använder du funktionen `replace`. Till exempel, om du vill ersätta alla förekomster av "hej" med "hejsan", så skulle koden se ut så här:
-
-```Gleam
-let text = "Hej världen! Hej igen!"
-let nyText = replace(text, "hej", "hejsan")
-```
-
-I detta fall kommer `nyText` att ha värdet "Hejsan världen! Hejsan igen!".
-
-Det är också möjligt att söka och ersätta text med hjälp av reguljära uttryck. Istället för en sträng som sökfält, kan du använda ett reguljärt uttryck genom att lägga till `~r` före sökvärdet. Till exempel, om du vill ersätta alla siffror med "X", så skulle koden se ut så här:
+För att söka och ersätta text i Gleam, använd ```replace``` funktionen. Till exempel, om du vill ändra alla förekomster av ordet "hund" till "katt" i en sträng, skulle du skriva:
 
 ```Gleam
-let text = "Det är 123 text"
-let nyText = replace(text, ~r`\d`, "X")
+let str = "Jag har en hund som heter Fido"
+let ny_sträng = replace(str, "hund", "katt")
 ```
 
-Nu kommer `nyText` att ha värdet "Det är XXX text"
+Detta kommer att resultera i strängen "Jag har en katt som heter Fido". Du kan också använda regex (regular expressions) för att söka efter mönster istället för specifika ord. Till exempel:
+
+```Gleam
+let str = "Jag älskar att programmera på Gleam"
+let ny_sträng = replace(str, regex"#Gleam", "Elixir")
+```
+
+Detta kommer att ersätta alla förekomster av "Gleam" med "Elixir" och resultera i strängen "Jag älskar att programmera på Elixir".
 
 ## Djupdykning
 
-Det finns flera saker att tänka på när du använder Gleams sök- och ersättningsfunktion. Först och främst är det viktigt att förstå skillnaden mellan att söka och ersätta i en ren sträng eller med ett reguljärt uttryck. Om du bara behöver söka och ersätta en specifik sträng, är det enklare att använda den första metoden som beskrivs ovan. Om du däremot behöver söka och ersätta mer komplext innehåll, såsom nummer eller bokstäver i ett visst mönster, är det bättre att använda reguljära uttryck.
+I Gleam kan du också använda ```replace_nth``` funktionen för att ersätta den n:te förekomsten av ett mönster i en textsträng. Detta kan vara användbart om du bara vill ersätta vissa förekomster istället för alla. Till exempel:
 
-Det är också viktigt att notera att Gleam är ett funktionellt programmeringsspråk, vilket innebär att `replace` inte kommer att modifiera den ursprungliga texten. Istället kommer den att returnera en ny värde med den sökta och ersatta texten.
+```Gleam
+let str = "Jag har en hund som heter Fido. Jag har en katt som heter Whiskers."
+let ny_sträng = replace_nth(str, "har", "äger", 2)
+```
+
+Detta kommer att ersätta det andra förekomsten av "har" med "äger" och resultatet blir "Jag har en hund som heter Fido. Jag äger en katt som heter Whiskers". Du kan också använda ```replace_all``` för att ersätta alla förekomster utan att behöva ange ett specifikt nummer.
 
 ## Se även
 
-- [Gleams officiella hemsida](https://gleam.run/)
-- [Dokumentation för sök- och ersättningsfunktionen i Gleam](https://gleam.run/documentation/search.html)
+- [Officiell Gleam dokumentation för replace och replace_all](https://gleam.run/)
+- [Regex tutorial för Gleam](https://medium.com/@kay.jones/regular-expressions-in-gleam-a1133

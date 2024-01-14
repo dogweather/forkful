@@ -1,49 +1,41 @@
 ---
-title:                "Kotlin: Pobieranie aktualnej daty"
+title:                "Kotlin: Uzyskiwanie bieżącej daty"
+simple_title:         "Uzyskiwanie bieżącej daty"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto pobrać bieżącą datę?
+# Dlaczego warto poznać bieżącą datę
 
-Pobieranie bieżącej daty jest niezwykle przydatne w wielu rodzajach projektów. Może służyć do monitorowania wydarzeń, tworzenia logów, czy też tylko jako informacja dla użytkownika o aktualnym czasie. W niniejszym artykule dowiesz się, jak w prosty sposób w Kotlinie pobrać bieżącą datę oraz jakie są najczęściej wykorzystywane metody.
+Poznawanie bieżącej daty jest niezbędną umiejętnością w programowaniu, ponieważ pozwala nam na tworzenie aplikacji i funkcji, które wykorzystują aktualny czas. Dzięki temu możemy tworzyć narzędzia, które są bardziej interaktywne i dokładne, dostarczając użytkownikom aktualne informacje lub reagując na określone zdarzenia w określonym czasie.
 
-## Jak to zrobić?
+# Jak to zrobić
 
-Aby pobrać bieżącą datę w Kotlinie, potrzebujemy jedynie jednej linijki kodu:
-
-```Kotlin
-val currentDate = Date()
-```
-
-W powyższym przykładzie tworzymy obiekt typu Date, który przechowuje informację o aktualnym czasie. Następnie możemy wykorzystać różne metody na tym obiekcie, np.:
+Aby uzyskać bieżącą datę w języku Kotlin, możemy użyć wbudowanej klasy `LocalDateTime`. Musimy najpierw zaimportować tę klasę za pomocą `import java.time.LocalDateTime`, a następnie możemy wywołać metodę `now()` wewnątrz wyrażenia `LocalDateTime`:
 
 ```Kotlin
-currentDate.year // zwraca rok
-currentDate.month // zwraca miesiąc
-currentDate.day // zwraca dzień
-currentDate.hours // zwraca godzinę
-currentDate.minutes // zwraca minutę
-currentDate.seconds // zwraca sekundę
+val currentDate = LocalDateTime.now()
 ```
 
-Możemy również wyświetlić całą datę w czytelnej formie, wykorzystując metodę `toString()`:
+Możemy również wyświetlić bieżącą datę za pomocą interaktywnego polecenia `println`:
 
 ```Kotlin
-println(currentDate.toString())
+println("Bieżąca data to: $currentDate")
 ```
 
-Powyższy kod wyświetli bieżącą datę w formacie `Tue Apr 13 17:21:35 CEST 2021`.
+W ten sposób wyświetli się aktualna data w formacie `YYYY-MM-DD HH:MM:SS`.
 
-## Głębszy zanurzenie w temat
+# Deep Dive
 
-Istnieją również inne sposoby na pobranie aktualnej daty w Kotlinie, takie jak wykorzystanie klasy `Calendar` lub pakietu `java.time`. Jednak przy wykorzystaniu klasy `Date` musimy pamiętać, że nie jest ona bezpieczna w wielowątkowym środowisku. Zaleca się zatem wykorzystywanie klasy `Instant` lub `LocalDateTime` z pakietu `java.time`.
+Aby lepiej zrozumieć jak działa uzyskiwanie bieżącej daty w języku Kotlin, warto zapoznać się z `LocalDateTime` oraz innymi klasami z pakietu `java.time`. Ta biblioteka została wprowadzona wraz z wersją Javy 8, aby zastąpić starą klasę `Date`, która miała wiele problemów, w tym związanych z wyświetlaniem i obliczaniem stref czasowych.
 
-## Zobacz także
+`LocalDateTime` zapewnia nam dokładność do nanosekund oraz umożliwia przetwarzanie bieżącej daty i czasu za pomocą różnych metod, takich jak `plusDays()`, `minusMonths()` itp. Możemy również zmienić format wyświetlania daty za pomocą `DateTimeFormatter` oraz przekształcić datę na obiekt `Date` za pomocą `DateConverter`.
 
-- Dokumentacja klasy Date w bibliotece standardowej Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/
-- Przewodnik po Java.time API: https://www.baeldung.com/java-8-date-time-intro 
-- Podstawy programowania w Kotlinie: https://kotlinlang.org/docs/getting-started.html
+# Zobacz także
+
+- Dokumentacja pakietu `java.time`: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- Tutoriale dotyczące biblioteki `java.time`: https://www.baeldung.com/java-8-date-time-intro

@@ -1,38 +1,42 @@
 ---
-title:                "Fish Shell: Trookka kirjoittamisesta standarivirheelle."
+title:                "Fish Shell: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi kirjoittaisit standardivirheelle?
+## Miksi
 
-Kirjoittaminen standardivirheelle on tärkeä osa Fish Shell ohjelmointia. Se mahdollistaa virheiden hallinnan ja vianmäärityksen helpottamisen ohjelmointiprosessissa.
+Usein ohjelmoidessa voi tuntua turhauttavalta, kun ohjelman suorittamisen aikana tulee vastaan virheitä tai muita ilmoituksia. Yksi tapa hallita näitä ilmoituksia on kirjoittamalla niitä standardivirheen ulostuloon (standard error). Tämä auttaa sinua tunnistamaan ja korjaamaan ohjelman ongelmakohdat tehokkaammin.
 
-## Kuinka tehdä se?
+## Miten tehdä
 
-Fish Shell tarjoaa kätevän ja helpon tavan kirjoittaa standardivirheelle käyttämällä "echo" komentoa ja ">2" -osaa sen perään, kuten alla olevassa esimerkissä:
+*Käytä Fish Shellin `echo` komentoa kirjoittaaksesi tekstin suoraan standardivirheeseen:*
 
-```
-echo "Tämä on virheilmoitus" >2
-```
-
-Tämä komento kirjoittaa ilmoituksen standardivirheelle ja antaa käyttäjälle selkeän viestin siitä, mitä on tapahtunut.
-
-## Syvempää tietoa
-
-Kirjoittaminen standardivirheelle mahdollistaa myös virheiden raportoinnin ja käsittelyn skripteissä ja ohjelmissa. Käyttämällä "stderr" muuttujaa, voit ohjata standardivirhettä erityisesti haluamaasi paikkaan. Esimerkiksi:
-
-```
-echo "Tämä on virheilmoitus" 2> $stderr
+```Fish Shell
+echo "Tämä on virhe!" >&2
 ```
 
-Tämä ohjaa virheilmoituksen muuttujaan "stderr", josta voit sitten käsitellä sitä haluamallasi tavalla.
+*Kun haluat ohjelman tuottavan sekä standardivirhettä että standarditulostusta, käytä `2>&1` reitityskomentoa:*
 
-# Katso myös
+```Fish Shell
+ls -invalid 2>&1
+```
 
-- Fish Shell viralliset ohjeet: https://fishshell.com/docs/current/index.html
-- Standardivirheen käyttö Shellissä: https://techstop.github.io/2016/11/24/errors-stdout-stderr/
-- Shell Scripting Tutorial: https://www.shellscript.sh/
+*Tämä yhdistää standardivirheen ja -tulostuksen ja luo yhden yhdistetyn virheilmoituksen.*
+
+## Syvempi sukellus
+
+Standardivirhe on yksi kolmesta tiedostovirrasta, joita käytetään kommunikoimaan ohjelman ja käyttöjärjestelmän välillä. Se on yleensä numeroitu *2* ja ohjelmassa käytetään redirection-komentoja reitittämään se halutulle kanavalle.
+
+Kun tämä virheilmoitus tallennetaan tiedostoon, siitä tulee jälkihoitojälkeä. Voit myös käyttää sitä apuna virheiden löytämisessä ohjelman suorituksen jälkeen.
+
+## Katso myös
+
+- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/)
+- [Standardi virhevienti-ohjeet UNIX-järjestelmissä](https://www.csee.umbc.edu/courses/331/resources/tutorials/unix_fundamentals/part12.html)
+- [Linux Komennon opas](https://linuxcommand.org/index.php)

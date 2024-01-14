@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Sammenslåing av tekststrenger"
+title:                "Bash: Sammenføying av strenger"
+simple_title:         "Sammenføying av strenger"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/concatenating-strings.md"
 ---
 
@@ -9,42 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvorfor bry seg om å kombinere strenger i Bash-programmering? Jo, fordi det er en nyttig og effektiv måte å manipulere og formatere tekst på. Ved å slå sammen flere strenger til en, kan man enkelt lage mer komplekse og tilpassede utskrifter.
+Å slå sammen strenger er en viktig ferdighet å ha i Bash-programmering. Dette lar deg kombinere flere tekststrenger for å lage en lengre streng eller en variabel. Det kan være nyttig når du ønsker å lage dynamiske utskrifter eller sende data til andre kommandoer.
 
-## Hvordan
+## Hvordan gjøre det
 
-Det er enkelt å kombinere strenger i Bash med følgende syntaks:
-
-```Bash
-string1="Hei" 
-string2="verden!" 
-combined="$string1 $string2"
-echo $combined
-```
-
-Dette vil gi utskriften "Hei verden!". Merk at man må bruke et dollar-tegn foran variabelnavnet når man vil ha verdien av variabelen.
-
-Man kan også legge til ekstra tegn eller variabler i strengen, for eksempel:
+For å slå sammen strenger i Bash, bruker du operatoren `+` eller tilde (`~`). La oss ta en titt på et eksempel:
 
 ```Bash
-name="Ola"
-greeting="Hei $name, velkommen!"
-echo $greeting
+# Slå sammen strenger med +
+name="John"
+greeting="Hei, mitt navn er " + $name
+
+# Slå sammen strenger med ~
+age=25
+intro="Jeg er $age år gammel"
+full_intro="Hei, " ~ $greeting ~ ", " ~ $intro
+
+echo $full_intro # Utskrift: Hei, mitt navn er John, Jeg er 25 år gammel
 ```
 
-Dette vil gi utskriften "Hei Ola, velkommen!". Man kan også kombinere strenger med tall og spesialtegn, for å lage mer komplekse utskrifter.
+I dette eksemplet bruker vi `+` til å slå sammen to tekststrenger og tilde (`~`) for å legge til en annen tekststreng i en variabel. Det er viktig å merke seg at det ikke skal være mellomrom rundt operatørene.
 
-## Dype dykk
+## Dypdykk
 
-For de som er interessert i å lære mer om å kombinere strenger i Bash, er det viktig å huske på at det finnes forskjellige måter å gjøre det på. Her er noen tips og triks:
+Det er også mulig å slå sammen strenger med `printf` kommandoen. Dette gir mer kontroll over formateringen av utskriften. La oss se på et eksempel:
 
-- Tilfeldige strenger: Ved hjelp av tilfeldig genererte tall, kan man lage lotto-nummer eller passord ved å kombinere tilfeldige tegn som a-z og 0-9.
-- Løkker: Man kan kombinere strenger i en løkke, for å lage flere utskrifter med forskjellige verdier.
-- Escape-tegn: Hvis man vil inkludere spesialtegn i strengen, som for eksempel "\n" for linjeskift, må man bruke et escape-tegn foran spesialtegnet for å unngå at det tolkes som en kommando.
-- For å lære mer om å kombinere strenger og andre nyttige tips for Bash-programmering, se lenkene nedenfor.
+```Bash
+name="Lisa"
+age=28
+printf "Hei, mitt navn er %s og jeg er %d år gammel." $name $age # Utskrift: Hei, mitt navn er Lisa og jeg er 28 år gammel.
+```
+
+Her bruker vi `%s` og `%d` for å angi at variablene `$name` og `$age` skal legges til i strengen, henholdsvis som en tekst og et tall. Dette tillater også formatering av utskriften, for eksempel ved å angi antall desimaler for et tall eller justering av tekst til venstre/høyre.
 
 ## Se også
 
-- Official GNU Bash Manual: https://www.gnu.org/software/bash/manual/
-- Bash scripting cheatsheet: https://devhints.io/bash
-- Bash examples for beginners: https://www.codecademy.com/learn/learn-the-command-line/articles/bash-scripting-cheat-sheet
+- [Bash-kommandolinjens dokumentasjon om strengmanipulasjon](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [En guide til Bash scripting](https://www.tecmint.com/bash-string-manipulation/)
+- [En interaktiv Bash leksjon om strenger og variabler](https://www.learnshell.org/en/Strings_and_Variables)

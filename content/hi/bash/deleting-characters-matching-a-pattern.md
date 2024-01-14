@@ -1,45 +1,42 @@
 ---
-title:                "Bash: एक पैटर्न के समान अक्षर हटाना"
+title:                "Bash: पैटर्न से मेल खाने वाले अक्षरों को हटाना"
+simple_title:         "पैटर्न से मेल खाने वाले अक्षरों को हटाना"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyun
+Aksar hume coding karte hue kuch aise situation aate hai jahan hume kisi specific pattern ke characters ko delete karna padta hai. Isme kisi specific word ya phrase ki jagah space ya kuch aur character ko hata dene ka kaam hota hai. Iss prakar ke kaam ko karne ke liye hum ek special tool ya technique ka istemaal karte hai jo hume code ko efficient banane aur errors ko kam karne me madad karta hai. Iska naam hai "character matching pattern delete".
 
-बाश प्रोग्रामिंग एक बहुत ही उपयोगी और शक्तिशाली तरीका है ऑटोमेशन को प्रदर्शित करने के लिए। एक ऐसी चीज़ है कि डेलीट के दौरान, हमारे कार्य को ध्यान से रखने, जो सामान्य लगता है लेकिन प्रत्येक बार इसे स्वतंत्र रूप से करना मुश्किल हो सकता है। इसलिए, हम आयत दिया है जिसमें एक निश्चित पैटर्न का कोई मिलता है।
+## Kaise Kare
+Iss coding task ko karne ke liye hum "Bash" programming language ka istemaal karte hai. Yeh ek command-line interface based language hai jo UNIX system par run karta hai. Iska simple syntax aur easy to use commands aapko character matching pattern ko delete karne me madad karte hai. Neeche diye gaye Bash code blocks me hum aapko iss task ka kuch examples dikhayenge:
 
-## कैसे
+```
+# Example 1: Delete all spaces in a string
+my_string="Hello World"
+echo "${my_string// }"
+# Output: HelloWorld
 
-```Bash
-# डेलीट कॉमांड लिखो।
-delete matching pattern
+# Example 2: Delete all vowels in a string
+my_string="Let's code in Bash"
+echo "${my_string//[aeiouAEIOU]}"
+# Output: Lt's cd n Bsh
 ```
 
-उपरोक्त अनुभाग में, हमने बाश रिक्ति का उपयोग करके एक मैचिंग पैटर्न के साथ डिलीट कमांड को लिखा है। यह ऐसी प्रक्रिया हो सकती है:
+Jaisa ki aap dekh sakte hai, humne apne string me se specific characters ko hataya hai bass ek simple command use karke. Isi tarah, aap apne coding tasks me "character matching pattern delete" ka istemaal kar sakte hai aur apne code ko aur efficient bana sakte hai.
 
-```Bash
-# स्ट्रिंग दिए गए हैं।
-string="hello 123 world"
+## Deep Dive
+Iss technique ko use karne ke liye hume curly brackets ke baad slash (/) lagana hota hai. Iske baad hum apne desired characters ya pattern ko likhte hai aur uske baad hum replacement characters ya patterns likhte hai. Agar hum replacement characters ya patterns nahi likhte, tab humare original string se specified characters delete ho jate hai. Agar aap chahe toh aap multiple characters ya patterns ko bhi delete kar sakte hai, jaise humne apne examples me kiya hai.
 
-# स्ट्रिंग से पैटर्न को निकालो।
-delete matching pattern
+Iss technique me "globbing" ka use hota hai jiska kaam hai characters ya patterns ko match karna. Isme aap wildcard characters (*, ?, [ ]) ka bhi istemaal kar sakte hai.
 
-# पैटर्न के अनुसार विशेष करके स्ट्रिंग जाँचो।
-echo $string
+## Dekhein Bhi
+- [Bash scripting tutorial in Hindi](https://www.javatpoint.com/bash-scripting-tutorial)
+- [Bash string manipulation techniques in Hindi](https://www.linuxteach.ml/2020/07/bash-string-manipulation-in-hindi.html)
+- [Bash pattern matching and substitutions](https://www.tutorialspoint.com/unix/unix-regular-expressions.htm)
 
-Output: hello world
-```
-
-यहां, हमने स्ट्रिंग "hello 123 world" को दिया है और उससे "123" को हटाया है। आप अपने प्रत्येक डेलीट cause में रूपांतरण के लिए इस तरीके का उपयोग कर सकते हैं।
-
-## डीप डाइव
-
-हमने अभी तक डिलीट किए गए कारणों के बारे में अधिकतम जानकारी दी है, लेकिन डीप डाइव में, मैं आपको बाश rृामेंटोरनर का उपयोग करके स्पष्ट कर सकता हूं:
-
-- The -d option can be used to specify the character or characters to be deleted. For example, "-d 1" will delete all "1" characters.
-- The -f option can be used to specify the fields on which the pattern matching has to be applied. For example, "-f 2-4" will delete pattern only in fields 2 to 4.
-- The -s option can be used to specify the separator between fields. For example, "-s ' '" will use a space as the separator between fields.
-- The -i option can be
+Asha hai ki aapko iss article se Bash programming language ke iss advanced technique ke bare me thoda aur pata chala hoga aur ab aap iss technique ka istemaal apne coding tasks me kar sakte hai. Yeh ek powerful tool hai aur aapke coding experience ko kafi improve karega. Dhanyawaad!

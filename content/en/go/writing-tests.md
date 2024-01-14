@@ -1,83 +1,81 @@
 ---
 title:                "Go recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "Go"
-category:             "Testing and Debugging"
+category:             "Go"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Write Tests in Go Programming
+# Why: The Importance of Writing Tests in Go
 
-Writing tests is an important aspect of software development, and it holds true in Go programming as well. Tests help in ensuring the quality and stability of the code, and they also act as a safety net for future changes. In this blog post, we will explore the importance of writing tests in Go and see how it can benefit us in the long run.
+In the world of software development, writing tests is often seen as a tedious and time-consuming task. However, in the Go programming language, tests play a crucial role in ensuring the quality and reliability of your code. In this blog post, we'll explore the why, how, and deep dive into writing tests in Go, and see why it's a valuable practice for any Go developer.
 
-## How To Write Tests in Go
+## How To: Writing Tests in Go
 
-Writing tests in Go is an easy and straightforward process. Let's look at an example of a simple calculator program with addition and multiplication functions and see how we can write tests for it.
+The first step in writing tests in Go is to create a separate file with the suffix `_test.go` in the same directory as your code file. This file will contain all your test functions. Let's take a look at an example of a simple function and its corresponding test function:
 
-```
+```Go
+// sample.go
+
 package main
 
-import "fmt"
-
-func add(x, y int) int {
-    return x + y
+// Simple function to check if a number is even
+func isEven(num int) bool {
+    return num%2 == 0
 }
-
-func multiply(x, y int) int {
-    return x * y
-}
-
-func main() {
-    fmt.Println("3 + 5 =", add(3, 5))
-    fmt.Println("3 * 5 =", multiply(3, 5))
-}
-
 ```
 
-To write tests, we need to create a new file with the *_test.go* extension and import the "testing" package. Then, we can write our test functions starting with the word "Test" followed by the name of the function we want to test.
+```Go
+// sample_test.go
 
-```
 package main
 
 import "testing"
 
-func TestAdd(t *testing.T) {
-    result := add(3, 5)
-    if result != 8 {
-        t.Errorf("Addition of 3 and 5 should be 8, got %d instead", result)
+func TestIsEven(t *testing.T) {
+    // Testing for an even number
+    if !isEven(4){
+        t.Error("Expected true, got false")
+    }
+
+    // Testing for an odd number
+    if isEven(3){
+        t.Error("Expected false, got true")
     }
 }
-
-func TestMultiply(t *testing.T) {
-    result := multiply(3, 5)
-    if result != 15 {
-        t.Errorf("Multiplication of 3 and 5 should be 15, got %d instead", result)
-    }
-}
-
 ```
 
-To run these tests, we can use the "go test" command in our terminal. We should see a report with the number of tests passed and failed.
+Running the command `go test` in the terminal will execute all the test functions in the test file and show the results.
 
 ```
 $ go test
 PASS
-ok      _/home/user/calculator      0.010s
+ok    _/home/user/path    0.002s
 ```
 
-Using tests, we can not only check the expected output of our functions but also ensure that they work correctly for different inputs.
+If there are any failures, they will be listed along with the line number and error message. It's important to test for both positive and negative cases to ensure that your code is robust and can handle different scenarios.
 
-## Deep Dive into Writing Tests in Go
+## Deep Dive: Tips for Writing Effective Tests in Go
 
-Tests in Go follow the AAA (Arrange-Act-Assert) pattern, where we arrange the necessary variables, act upon the code under test, and assert on the expected output. This pattern makes our tests more readable and maintainable.
+Writing tests in Go follows the philosophy of "simple is better than complex." This means that your test code should be concise, easy to read, and maintainable. Here are some tips for writing effective tests in Go:
 
-Go also provides a built-in testing framework, which includes functions for assertion and mocking. We can use these to make our tests more robust and comprehensive.
+- Use the `testing` package to write your test functions and the `t.Error()` or `t.Fail()` functions to report failures.
+- Keep test functions and code functions in separate files to maintain a clear separation of concerns.
+- Use descriptive names for your test functions and variables to make it easier to understand the purpose of the test.
+- Test for various edge cases and unexpected inputs to ensure that your code can handle them.
+- Utilize table-driven tests for testing multiple scenarios using a single test function.
 
-When writing tests in Go, we should also follow good testing practices such as writing small and independent tests, avoiding writing tests for third-party libraries, and writing tests before writing the code.
+By following these best practices, you can ensure that your test suite is well-written and adds value to your codebase.
 
 ## See Also
 
-- [Go official documentation on testing](https://golang.org/pkg/testing/)
-- [Effective Go: Testing](https://golang.org/doc/effective_go#testing)
-- [Writing Good Tests in Go](https://medium.com/@matryer/5-simple-tips-and-tricks-for-writing-unit-tests-in-golang-619653f90742)
+If you want to dive deeper into writing tests in Go, here are some helpful resources:
+
+- [Official Go testing package documentation](https://golang.org/pkg/testing/)
+- [Test-driven development with Go tutorial](https://quii.gitbook.io/learn-go-with-tests/)
+- [Advanced testing in Go video course](https://www.udemy.com/course/advanced-testing-in-go/)
+
+So next time you're writing code in Go, don't forget the importance of writing tests. They may seem like extra work, but in the long run, they can save you time and headaches by catching bugs early on. Happy testing!

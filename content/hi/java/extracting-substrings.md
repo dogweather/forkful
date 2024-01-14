@@ -1,38 +1,33 @@
 ---
-title:                "Java: उपस्थित सबस्ट्रिंग्स को निकालना (Upasthit substrings ko nikalna)"
+title:                "Java: सबस्ट्रिंग्स को निकालना"
+simple_title:         "सबस्ट्रिंग्स को निकालना"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/java/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyun:
-Substring nikalne ka pehla aur sabse zaruri sawal hai ki hum aisa kyun karna chahte hain. Substring kya hota hai? Ye ek programming term hai jo string ke ek hisse ko alag se nikalta hai. Ye bahut useful ho sakta hai jab hume kisi specific information ko string se extract karna ho.
+## क्यों?
 
-## Kaise Karein:
-Substring extract karne ke liye, pehle humein original string ka pata hona chahiye. Fir hum iss string par kaam kar sakte hain aur usse substring banakar usse kisi variable mein store kar sakte hain. Iss process ko karne ke liye hum Java programming language ka use kar sakte hain. Neeche diye gaye code snippet mein hum ye dekhenge ki kaise hum substring extract kar sakte hain.
+क्योंकि तारीख और समय जैसे विशेष पदों को जोड़ने या उन्हें अलग करने के लिए उपयोगकर्ताओं को जावा में स्ट्रिंग से उपस्थित उपस्थितियों को हल करनी पड़ती है। इस आर्टिकल में, हम उदाहरण के साथ कूड़ा कूड़े अप्रवाह से स्ट्रिंग सबका निकास कैसे करेंगे।
 
-```Java
-// Original string
-String str = "Meri pehli blog post";
+## कैसे
 
-// Substring  "pehli" extract karne ke liye
-String substr = str.substring(5, 10); 
-
-// Output
-System.out.println(substr); // "pehli"
+"```Java
+String str = "मेरा नाम एलीना है।";
+str.substring(0, 3);
 ```
 
-Is code mein humne pehle original string "Meri pehli blog post" ko ek variable mein store kiya, fir uss string par kaam karke substring extract kiya aur usse ek alag variable mein store kiya. Fir humne output ko print kiya jisme humne dekha ki sirf "pehli" word extract hua hai. Is tarah hum kisi bhi string se substring extract kar sakte hain.
+जब हम इस कोड के बारे में सोचते हैं, तो हम सबसे पहले स्ट्रिंग "मेरा नाम एलीना है" को बनाएंगे और फिर से `str.substring (0, 3)` को आयातित करेंगे, जो `तीन नाम से`रिज्यन करेगा। इसलिए, उत्पाद `मेरा` होगा।
 
-## Gehri Jankari:
-Substring extract karne ke liye, hum string ke index numbers ka use karte hain. Index numbers hote hain string ke har character ka count karke assign kiya hua number. Ye process left se right hoti hai, matlab string ke pehle character ka index number 0 hoga, dusre ka 1, teesre ka 2 aur aise hi aage badhta jaega.
+## गहराई में जाइए
 
-Substring extract karne ke liye, hum `substring()` method ka use karte hain. Is method mein hume do parameters pass karne hote hain - start index aur end index. Start index se substring shuru hota hai aur end index se string khatam ho jata hai. Yahan dyaan rakhe ki end index ke value mein hum last character ke index number se 1 subtract karte hain.
+कदाचार स्ट्रिंग से उपवाहें को छांटने का तरीका काफी सरल है, लेकिन आपको ध्यान देने की जरूरत है कि `substring ()` में अंत प्रतिमान `ऐच्छिक है` और इसलिए अगर आप इसे निर्दिष्ट नहीं करते हैं, तो यह डिफ़ॉल्ट रूप से रियायशील होगा। ये काफी उपयोगी है जब आपको ऊपर से स्ट्रिंग का आइटम और स्थान नहीं पता है, या आपको स्ट्रिंग के शुरुआती या अंत भाग में से कुछ माहिर फेंकना है।
 
-Agar hum sirf start index pass karte hain to end index string ke last character ka index number liya jaega. Agar hum sirf ek parameter pass karte hain to substring method uss index se lekar string ke last character tak ka part extract kar dega.
+## देखें भी
 
-### See Also:
-- Java Strings Tutorial (in Hindi): https://www.programiz.com/java-programming/string
-- String substring() method docs: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#substring-int-int-
+- [Java के स्ट्रिंग से प्रतिभाग निकासी कैसे करें](https://www.tutorialspoint.com/java/lang/string_regionmatches.htm)
+- [हिन्दी में जावा प्रोग्रामिंग को समझने के लिए किताबें](https://books.google.com/books/about/Java_Programming_for_Hindi_Speakers.html?id=-NWoJNgIXNoC)
+- [Java में स्ट्रिंग वन्धन का उप

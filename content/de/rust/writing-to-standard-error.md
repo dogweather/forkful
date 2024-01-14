@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/writing-to-standard-error.md"
 ---
 
@@ -9,44 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In der Welt der Programmierung gibt es viele Situationen, in denen es hilfreich ist, eine Fehlermeldung in die Standardfehlerausgabe zu schreiben. Dies kann dazu beitragen, potenzielle Probleme frühzeitig zu erkennen und zu beheben, was letztendlich zu einem zuverlässigeren und stabileren Code führt.
+Das Schreiben nach `standard error` ist wichtig, um Fehler und Warnungen in unserem Programm zu verfolgen und zu debuggen. Es ermöglicht uns auch, wichtige Informationen während der Laufzeit unseres Programms anzuzeigen.
 
-## Wie geht man vor?
+## Wie man
 
-Das Schreiben in die Standardfehlerausgabe ist in der Programmierung oft eine einfache Aufgabe, aber es gibt einige wichtige Dinge zu beachten. Im Folgenden sind zwei Beispiele aufgeführt, wie man in Rust Code schreibt, der in die Standardfehlerausgabe schreibt:
+Zunächst müssen wir das `std`-Modul von Rust importieren, um auf die Funktionen für das Schreiben nach `standard error` zugreifen zu können. Dann können wir die `eprint!` oder `eprintln!` Makros verwenden, um Text an den `standard error` zu schreiben.
+
+ ```Rust
+use std::io::{self, Write};
+
+fn main() {
+    // Schreiben nach standard error mit eprint!
+    eprint!("Dies ist eine Fehlermeldung.");
+
+    // Schreiben nach standard error mit eprintln!
+    eprintln!("Dies ist eine Warnung: {}", "Out of Memory");
+}
+ ```
+Das obige Beispiel verwendet die `eprint!` und `eprintln!` Makros, um Text direkt nach `standard error` zu schreiben. Es ist jedoch auch möglich, einen `io::Error` zu erzeugen und ihn mit der `eprint!` oder `eprintln!` Makros auszugeben.
 
 ```Rust
-// Beispiel 1: Verwendung von `eprintln!`-Makro
-fn main() {
-    let error_message = "Something went wrong!";
-    eprintln!("Error: {}", error_message);
-}
+ use std::io::{self, Write};
 
-// Beispiel 2: Verwendung von `std::io::stderr`-Modul
-use std::io::Write;
 fn main() {
-    let mut stderr = std::io::stderr();
-    let error_message = "Something went wrong!";
-    writeln!(stderr, "Error: {}", error_message).expect("Failed to write to stderr");
+    // Erstelle einen io::Error
+    let error = io::Error::new(io::ErrorKind::Other, "Out of Memory");
+
+    // Gib den Fehler nach standard error aus
+    eprint!("Ein Fehler ist aufgetreten: {}", error);
 }
 ```
 
-Beide Beispiele erzielen dasselbe Ergebnis, aber es ist wichtig zu beachten, dass das erste Beispiel das `eprintln!`-Makro verwendet, während das zweite Beispiel das `std::io::stderr`-Modul verwendet. Beide Optionen sind gleichermaßen gültig, aber das Verständnis der Unterschiede kann dazu beitragen, die richtige Wahl für Ihren Code zu treffen.
+## Tieferer Einblick
 
-Hier ist die Ausgabe unseres Beispielcodes:
+Das Schreiben nach `standard error` unterscheidet sich vom Schreiben nach `standard output` in einigen wichtigen Punkten. Zum einen ist `standard error` ungepuffert, was bedeutet, dass die Ausgabe sofort auf dem Bildschirm erscheint, auch wenn das Programm noch läuft. `standard output` ist hingegen gepuffert, was bedeutet, dass die Ausgabe möglicherweise nicht sofort angezeigt wird.
 
-```
-Error: Something went wrong!
-```
-
-## Tiefere Einblicke
-
-Das Schreiben in die Standardfehlerausgabe ist nicht nur hilfreich, um Probleme zu erkennen, sondern kann auch dazu beitragen, wichtige Informationen im Debugging-Prozess zu sammeln. Darüber hinaus ist es oft eine gängige Praxis, Fehlermeldungen in Protokolldateien zu schreiben, anstatt sie auf der Standardausgabe auszugeben. Dies kann dazu beitragen, ein saubereres und übersichtlicheres Output zu erhalten.
+Darüber hinaus ist `standard error` standardmäßig rot gefärbt, um es von `standard output` zu unterscheiden. Dies kann jedoch von der Umgebung, in der das Programm ausgeführt wird, geändert werden.
 
 ## Siehe auch
-
-Hier sind einige nützliche Links, um Ihr Verständnis von Rust-Programmierung zu vertiefen:
-
-- [Rust-Dokumentation](https://www.rust-lang.org/learn)
-- [Standard Library Dokumentation](https://doc.rust-lang.org/std/index.html)
+- [Rust-Dokumentation für das std-Modul](https://doc.rust-lang.org/std/index.html)
+- [Offizielle Rust-Website](https://www.rust-lang.org/de-DE/)
 - [Fehlerbehandlung in Rust](https://doc.rust-lang.org/book/ch09-00-error-handling.html)

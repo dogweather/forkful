@@ -1,73 +1,65 @@
 ---
 title:                "Ruby recipe: Printing debug output"
+simple_title:         "Printing debug output"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Debugging is an essential part of any programming project, and being able to print out debug output is a useful tool in every developer's arsenal. It allows you to see the flow of your code, spot errors, and test different scenarios. In this blog post, we will go over the basics of printing debug output in Ruby, including why it's beneficial and how to do it.
+
+Debugging plays a crucial role in the process of programming. It allows developers to identify and fix errors in their code, ensuring that the program runs smoothly and produces the expected results. One useful tool for debugging is printing debug output, also known as "console logging". In this blog post, we will explore why printing debug output is important and how it can help us in our coding journey.
 
 ## How To
 
-To print out debug output in Ruby, we use the `puts` method to display the desired information in the console. Let's take a look at a simple example:
+To print debug output in Ruby, we can use the built-in `puts` method. This method takes in a string as an argument and displays it on the console. Let's take a look at an example:
 
 ```Ruby
-def multiply(num1, num2)
-  puts "Multiplying #{num1} and #{num2}"
-  return num1 * num2
-end
-
-multiply(5, 10)
+str = "Debugging is important!"
+puts str
 ```
 
-This code will output the following in the console:
-
-```
-Multiplying 5 and 10
-=> 50
-```
-
-As you can see, we used string interpolation to include the values of `num1` and `num2` in our output. This can be helpful when trying to figure out the values of variables or the result of a calculation.
-
-We can also use the `p` method to print out the value of a variable:
+The above code will output `Debugging is important!` on the console. We can also use the `p` method, which not only prints the string but also includes the quotation marks and escape characters. Here's an example:
 
 ```Ruby
-age = 25
-p age
+str = "Debugging is important!"
+p str
 ```
 
-This will output `25` in the console. The `p` method is useful when dealing with more complex data structures like arrays or hashes.
+The output will be `"Debugging is important!"`. This can be helpful when debugging code that involves special characters or formatting.
 
-Another useful tool for printing debug output is the `logger` class. It allows you to log information at different levels, such as `debug`, `info`, `warn`, `error`, and `fatal`. Here's an example of how to use it:
+Another useful method for printing debug output is `pp`, which stands for "pretty print". This method displays objects in a more readable and organized format. For example:
 
 ```Ruby
-require 'logger'
-
-logger = Logger.new(STDOUT)
-
-logger.debug("Debug message")
-logger.info("Info message")
+arr = [1, 2, 3]
+pp arr
 ```
 
-This will output the following in the console:
+The output will be displayed as:
 
-```
-D, [2020-01-01T12:00:00.000000 #12345] DEBUG -- : Debug message
-I, [2020-01-01T12:00:00.000000 #12345]  INFO -- : Info message
+```Ruby
+[1, 2, 3]
 ```
 
-For more information on the `logger` class and its capabilities, check out the official documentation [here](https://guides.rubyonrails.org/debugging_rails_applications.html#the-logger).
+This can be especially helpful when working with complex data structures.
 
 ## Deep Dive
 
-Printing debug output is not only useful for troubleshooting and fixing errors but can also help newcomers understand the flow of a codebase. It allows them to see the values of variables and the logic behind each step. However, it's essential to use debug output sparingly and to remove it before deploying your code to production.
+Printing debug output is not just useful for displaying values and variables. It can also help us track the flow of our code and identify any potential errors. By strategically placing `puts` statements throughout our code, we can see which parts of the code are being executed and in what order. This can be particularly helpful when dealing with loops or conditional statements.
 
-Besides using `puts`, `p`, and `logger`, there are other tools and techniques for printing debug output, such as using a debugger or writing custom print methods. It's up to you to decide which method works best for your specific scenario.
+Furthermore, printing debug output also allows us to see the actual values of the variables at different points in our code. This can help us pinpoint any unexpected changes or errors that may be occurring.
+
+It's important to note that while printing debug output can be helpful, it should not be relied upon as the sole method of debugging. It's always important to understand the logic behind our code and thoroughly test it to ensure its functionality.
 
 ## See Also
-- [Official Ruby Documentation](https://www.ruby-doc.org/stdlib-2.7.2/libdoc/logger/rdoc/Logger.html)
-- [Debugging Rails Applications](https://guides.rubyonrails.org/debugging_rails_applications.html)
-- [Ruby Debugging Tips and Tricks](https://www.sitepoint.com/ruby-debugging-tips-tricks/)
+
+For further reading on debugging and printing debug output in Ruby, check out these resources:
+
+- [https://ruby-doc.org/core-2.5.1/Kernel.html#method-i-pp](https://ruby-doc.org/core-2.5.1/Kernel.html#method-i-pp)
+
+- [https://www.rubyguides.com/2019/02/ruby-debugging/](https://www.rubyguides.com/2019/02/ruby-debugging/)
+
+- [https://www.sitepoint.com/debugging-ruby-code-beginner/](https://www.sitepoint.com/debugging-ruby-code-beginner/)

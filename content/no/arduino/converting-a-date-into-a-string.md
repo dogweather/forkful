@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Konvertering av en dato til en streng"
+title:                "Arduino: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/converting-a-date-into-a-string.md"
 ---
 
@@ -9,37 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det kan være nødvendig å konvertere en dato til en streng for å kunne presentere informasjonen på en klar og forståelig måte i et Arduino-program. Dette kan være nyttig for å vise datoer på et display eller sende dem via seriekommunikasjon.
+Hvis du noen gang har hatt behov for å vise en dato i et Arduino-prosjekt, har du sikkert støtt på problemet med å konvertere datoen til en tekststreng. Dette er en vanlig utfordring for mange Arduino-entusiaster, og i denne bloggposten skal vi vise deg hvordan du kan løse dette problemet.
 
-## Hvordan
+## Slik gjør du det
 
-Det finnes flere måter å konvertere en dato til en streng på, men en enkel løsning er å bruke funksjonen `String()`. Her er et eksempel på hvordan dette kan gjøres i et Arduino-program:
+Det første du må gjøre er å starte med å definere en variabel for datoen. Vi vil bruke variabelnavnet "dato" i vårt eksempel, men du kan velge et annet navn etter eget ønske. Her er en kodebit som viser hvordan du kan definere datoen:
 
 ```Arduino
-#include <DateTime.h> // Bibliotek for å håndtere dato og tid
-
-DateTime now(2020, 12, 31, 23, 59, 0); // Oppretter en dato og tid
-
-String datoStreng = String(now.year()) + "/" + String(now.month()) + "/" + String(now.day()); // Konverterer datoen til en streng
-
-Serial.println(datoStreng); // Skriver ut datoen på serieporten
+DateTime dato = DateTime(2021, 9, 14); // Dette er datoen du ønsker å konvertere
 ```
 
-Kjører du dette programmet, vil du få følgende utskrift på serieporten:
+Neste steg er å konvertere datoen til en tekststreng. Dette kan gjøres ved å bruke funksjonen "to_string()", som er tilgjengelig for datatypen "DateTime". Her er et eksempel på hvordan du kan bruke denne funksjonen:
 
-`2020/12/31`
+```Arduino
+Serial.println("Datoen er: " + dato.to_string());
+```
 
-Som du kan se, vil datoen bli presentert i riktig format som en streng. Her er det viktig å huske at du må inkludere biblioteket "DateTime.h" for å kunne bruke funksjonene for dato og tid i Arduino.
+Koden over vil skrive ut datoen som en tekststreng i serieporten. Avhengig av hvilken datoenhet du bruker, kan formatet på tekststrengen variere. Husk å sjekke dokumentasjonen for din enhet for å finne ut mer om gyldige formater.
 
 ## Dypdykk
 
-Det finnes flere måter å konvertere en dato til en streng på, som for eksempel å bruke `snprintf()` eller `sprintf()`. Disse funksjonene gir mer kontroll over formateringen av datoen, men kan være mer kompliserte å bruke. Det er derfor opp til deg å vurdere hvilken metode som passer best for ditt prosjekt.
-
-En annen nyttig funksjon for å konvertere en dato til en streng er `ToString()`, som er en del av "DateTime" biblioteket. Denne funksjonen gjør det enklere å formatere datoen og kan også håndtere datoer før år 2000.
+Så hvordan fungerer egentlig konverteringen av datoen til en tekststreng? Når du kaller funksjonen "to_string()", bruker den datatypen "DateTime" innebygde funksjoner og metoder for å hente ut de ulike delene av datoen, som årstall, måned og dag. Deretter setter den sammen disse verdiene til en tekststreng i riktig format. Dette gjør konverteringsprosessen veldig enkel for deg som programmerer, siden du ikke trenger å tenke på de ulike delene av datoen og hvordan de skal formateres.
 
 ## Se også
 
-- [DateTime bibliotek](https://www.arduinolibraries.info/libraries/date-time)
-- [Konvertere variabler til strenger i Arduino](https://www.arduino.cc/reference/en/language/functions/conversion/strl/)
-
-Takk for at du leste denne bloggposten. Vi håper den var nyttig for deg i å konvertere datoer til strenger i dine Arduino-prosjekter. Lykke til med kodingen!
+- [DateTime dokumentasjon](https://www.arduino.cc/en/Reference/DateTime)
+- [Serial.println() dokumentasjon](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
+- [Intro to Arduino](https://www.makershield.com/til-alle-som-vil-l%C3%A6re-Men-det-er-mye-som-du-b%C3%B8r-vite.rar)_-En introduksjon til Arduino-programmering på norsk.

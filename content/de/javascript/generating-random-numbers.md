@@ -1,39 +1,51 @@
 ---
-title:                "Javascript: Erzeugung von Zufallszahlen"
+title:                "Javascript: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Javascript"
-category:             "Numbers"
+category:             "Javascript"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Warum sollte man sich überhaupt mit der Generierung von Zufallszahlen beschäftigen? Die Antwort ist einfach: Zufallszahlen sind ein wichtiger Bestandteil vieler Programmierprojekte. Sie ermöglichen beispielsweise die Erstellung von zufälligen Charakteren in Computerspielen oder die Durchführung von statistischen Simulationen.
 
-## Wie
-Die Generierung von Zufallszahlen ist in Javascript sehr einfach und kann auf verschiedene Arten erfolgen. Eine Möglichkeit ist die Verwendung der Math.random() Funktion. Diese Funktion gibt eine zufällige Zahl zwischen 0 und 1 zurück. Um eine zufällige ganze Zahl zu generieren, kann man die Funktion mit der Methode Math.floor() kombinieren. Hier ein Beispiel:
+Das Erstellen von Zufallszahlen ist ein wichtiger Bestandteil der Entwicklung von Programmen und Spielen. Sie ermöglichen eine Vielzahl von Funktionen, wie die Generierung von zufälligen Ereignissen oder die Erstellung von Passwörtern.
 
-```Javascript
-let randomInt = Math.floor(Math.random() * 10); // gibt eine zufällige ganze Zahl zwischen 0 und 9 zurück
-console.log(randomInt); // gibt den generierten Wert aus (z.B. 7)
-```
+## Wie man Zufallszahlen generiert
 
-Die generierten Zahlen können auch in Arrays gespeichert werden, um eine zufällige Auswahl daraus zu treffen. Hier ein Beispiel, das eine zufällige Farbe aus einem Array ausgibt:
+Die Generierung von Zufallszahlen ist in Javascript recht einfach. Dafür gibt es die eingebaute Methode `Math.random()`, die eine zufällige Dezimalzahl zwischen 0 und 1 zurückgibt.
 
 ```Javascript
-let colors = ["rot", "gelb", "blau", "grün", "orange", "lila"];
-let randomColor = Math.floor(Math.random() * colors.length);
-console.log(colors[randomColor]); // gibt eine zufällige Farbe aus dem Array aus (z.B. "blau")
+// Beispiel für die Generierung von einer Zufallszahl zwischen 0 und 10
+let randomNum = Math.random() * 10;
+console.log(randomNum); // Output kann z. B. 6.73851 sein
 ```
 
-Es gibt auch Bibliotheken wie beispielsweise "random.js", die umfangreichere Funktionen zur Generierung von Zufallszahlen bieten.
+Um eine ganze Zahl zu erhalten, kann man die Methode `Math.floor()` verwenden, die die erste Zahl vor dem Komma nimmt.
 
-## Deep Dive
-Bei der Verwendung von Zufallszahlen ist es wichtig zu beachten, dass diese nicht wirklich zufällig sind, sondern auf vordefinierten Algorithmen beruhen. Es gibt daher keine Garantie für absolute Zufälligkeit. Auch kann es vorkommen, dass bei schnelleren Aufrufen derselben Funktion, scheinbar gleiche Zufallszahlen zurückgegeben werden.
+```Javascript
+// Beispiel für die Generierung einer Zufallszahl zwischen 1 und 100
+let randomNum = Math.floor(Math.random() * 100) + 1;
+console.log(randomNum); // Output kann z. B. 65 sein
+```
 
-Ein weiterer wichtiger Aspekt ist die "Saat" (Seed), die bei der Generierung von Zufallszahlen verwendet wird. Diese wird als Startwert für den Algorithmus verwendet und beeinflusst die darauffolgenden generierten Zahlen. Um beispielsweise stets dieselben Zufallszahlen zu erhalten, kann man einen festen Wert als Samen setzen. Andernfalls kann man auch einen dynamischen Wert wie zum Beispiel die aktuelle Uhrzeit verwenden, um eine größere Variabilität zu erzielen.
+Man kann auch eine benutzerdefinierte Funktion erstellen, um Zufallszahlen in einem bestimmten Bereich zu generieren.
+
+```Javascript
+// Beispiel für eine Funktion zum Generieren von Zufallszahlen zwischen 5 und 15
+function randomNumBetween(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+console.log(randomNumBetween(5, 15)); // Output kann z. B. 9 sein
+```
+
+## Tiefergehende Informationen zur Generierung von Zufallszahlen
+
+Die Wahl eines Seed, also eines Ausgangspunkts, für die Generierung von Zufallszahlen kann eine wichtige Rolle spielen. Wenn kein Seed verwendet wird, wird standardmäßig der aktuelle Zeitstempel verwendet, was dazu führen kann, dass die gleichen Zahlenfolgen bei jedem Aufruf der Methode `Math.random()` zurückgegeben werden. Mit einem manuell gewählten Seed kann man eine eindeutige Sequenz von Zahlen generieren.
 
 ## Siehe auch
-- https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-- https://github.com/joelnet/random.js
-- https://www.mathematik.de/geschichten-zahlung-hilfsbereite-zufallszahlen/
+
+- Einführung in die Javascript-Mathematik: https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math
+- Erstellung von Passwörtern mit zufälligen Zahlen: https://www.w3schools.com/js/js_random.asp

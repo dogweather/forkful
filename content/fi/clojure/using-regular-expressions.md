@@ -1,41 +1,38 @@
 ---
 title:                "Clojure: Säännöllisten lausekkeiden käyttö"
+simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi käyttää säännöllisiä lausekkeita?
+## Miksi
 
-Säännölliset lausekkeet ovat erittäin hyödyllinen työkalu tekstien käsittelyyn ja muokkaamiseen. Niiden avulla voit etsiä ja korvata tiettyjä merkkijonoja tai löytää tietynlaista rakennetta sisältäviä tekstinpätkiä. Ne auttavat myös validoimaan syötteitä ja tekemään monimutkaisia hakuja tekstimassoista. Säännöllisiä lausekkeita käytetään laajasti ohjelmoinnissa ja tekstinkäsittelysovelluksissa, joten on hyödyllistä oppia niiden käyttöä.
+Regular Expression eli säännöllinen lauseke on voimakas työkalu tekstinkäsittelyssä. Se mahdollistaa tarkkojen haku- ja korvaustoimintojen tekemisen tekstissä. Säännölliset lausekkeet ovat suosittuja ohjelmointikielistä riippumatta ja niiden oppiminen on hyödyllistä monessa eri ohjelmointiympäristössä.
 
-## Kuinka käyttää säännöllisiä lausekkeita?
+## Miten
 
-Säännöllisten lausekkeiden käyttö Clojurella on melko suoraviivaista. Yksinkertaisimmassa tapauksessa voit käyttää ```re-find```-funktiota löytääksesi tietyn mittaisen merkkijonon, esimerkiksi:
-
-```Clojure
-(re-find #"abc" "abcd") ; => "abc"
-(re-find #"123" "abc")  ; => nil
-```
-
-Voit myös käyttää säännöllisiä lausekkeita muuttamaan tekstimuotoja helpommin. Esimerkiksi, voit käyttää ```re-pattern```-funktiota luomaan säännöllisen lausekkeen, jolla voi hakea kaikki 3-merkkiset sanat, ja sitten käyttää ```clojure.string/replace```-funktiota korvaamaan ne haluamallasi merkkijonolla. Esimerkiksi:
+Regular Expressionit ovat osa Clojuren ydinbibliotekkia ja niitä voi käyttää "trygemin" funktiolla. Käytännössä säännöllinen lauseke annetaan merkkijonona ja sen kanssa käytetään sitten monia erilaisia funktioita, jotka suorittavat erilaisia hakutoimintoja. Esimerkiksi voit etsiä tietyn kuvion tekstistä tai korvata sen toisella.
 
 ```Clojure
-(->> "moi hei moi moi"
-     (re-pattern #"\w{3}")
-     (clojure.string/replace "lol")) ; => "lol lol lol lol"
+;; etsii kaikki numerot sanasta "12345"
+(re-find #"\d+" "12345") ; "12345"
+
+;; korvaa merkkijonon "world" merkkijonolla "universe"
+(re-place #"world" "hello world" "world" "universe") ; "hello universe"
 ```
 
-Jos haluat tehdä monimutkaisempia hakuja, voit käyttää erilaisia säännöllisten lausekkeiden ominaisuuksia, kuten vaihtoehtoisia haaroja, toistoja ja ryhmiä. Käy läpi Clojuren dokumentaatio löytääksesi kaikki käytettävissä olevat toiminnot ja ominaisuudet.
+## Syvempää sukellusta
 
-## Syvempää tietoa säännöllisistä lausekkeista
+Säännöllisten lausekkeiden merkintätavoissa on eroja eri ohjelmointikielien välillä, mutta Clojuren tapauksessa käytössä on Perl-yhteensopiva merkintätapa. Tämä tarkoittaa, että perinteiset säännöllisen lausekkeen merkit toimivat myös Clojuressa. Esimerkiksi `+` merkki tarkoittaa "yhdestä useaan kertaa esiintyvää" ja `*` merkki taas "ei-yhtään tai useampaa kertaa esiintyvää".
 
-Vaikka säännöllisten lausekkeiden avulla voit tehdä monimutkaisia hakuja ja muokkauksia, niiden käyttö voi olla joskus haastavaa ja vaikeasti luettavaa. On tärkeää muistaa käyttää selkeitä ja hyvin dokumentoituja säännöllisiä lausekkeita pitkän ajan projekteissa. Lisäksi, jos käytät säännöllisiä lausekkeita usein, voit tallentaa niitä muuttujaan ja käyttää niitä myöhemmin uudelleen, mikä helpottaa ohjelmien ylläpitoa.
+Säännöllisten lausekkeiden käyttö voi aluksi tuntua haastavalta, mutta niiden opettelu palkitsee pitkällä tähtäimellä. Niitä voi käyttää monipuolisesti kaikentyyppisessä tekstikäsittelyssä ja ne tehostavat ohjelmointikokemusta merkittävästi.
 
 ## Katso myös
 
-- Clojuren virallinen säännöllisiä lausekkeita käsittelevä dokumentaatio: https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/replace
-- Säännöllisten lausekkeiden opetusohjelma: https://regexone.com/lesson/introduction_abcs
-- Regular Expressions Cheat Sheet: https://www.rexegg.com/regex-quickstart.html
+- [Clojuren virallinen dokumentaatio regular expressioneistä](https://clojuredocs.org/clojure.core/re-pattern)
+- [Vinkkejä regular expressionien käyttöön Clojuressa](https://stackoverflow.com/questions/40197139/using-re-seq-with-match-groups-in-clojure/40197724#40197724)
+- [Tutoriaali regular expressioneista ja niiden soveltamisesta käytännössä](https://coderwall.com/p/fdvcjq/effective-regular-expressions-in-clojure)

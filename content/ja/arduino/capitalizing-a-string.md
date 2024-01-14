@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: 文字列の先頭を大文字に変換する"
+title:                "Arduino: 文字列の大文字化"
+simple_title:         "文字列の大文字化"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/arduino/capitalizing-a-string.md"
 ---
 
@@ -9,28 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-アルドゥイーノプログラミングでは、文字列を大文字に変換することは非常に一般的なタスクです。例えば、テキストメッセージや電子メールのタイトルを大文字で表示したり、ボタンのラベルを大文字で表示したりすることができます。文字列を大文字にすることで、テキストの読みやすさや視覚的な統一性を向上させることができます。
+プログラムで文字列を大文字にすることのメリットについて、ご存知でしょうか？例えば、データやメッセージを処理する際に、文字列を統一的な形式にすることで処理しやすくなります。
 
-## 方法
+## 使い方
 
-文字列を大文字に変換する方法はいくつかありますが、ここでは最も一般的な方法を紹介します。まず、`toUpperCase()`という関数を使います。この関数は、文字列を大文字に変換した新しい文字列を返します。下の例を見てみましょう。
+文字列を大文字にする方法はいくつかありますが、今回は「Arduino」での方法をご紹介します。下のコードをご覧ください。
 
+```Arduino
+String str = "hello world";
+str.toUpperCase();
+Serial.println(str); // "HELLO WORLD"
 ```
-ArduinoString myString = "hello world";
-ArduinoString upperString = myString.toUpperCase();
-```
-```
-"HELLO WORLD"
-```
+ここでは、文字列を`String`オブジェクトとして宣言し、`toUpperCase()`メソッドを使って大文字に変換しています。そして、`Serial`を使って`str`をシリアルモニターに出力しています。
 
-このように、`toUpperCase()`関数を使うことで、元の文字列を変更せずに大文字に変換することができます。また、`toUpperCase()`関数は英数字だけでなく、日本語の文字列も大文字に変換することができます。
+もし変換したい文字列が`str`以外にある場合は、代わりに`.toUpperCase()`メソッドの中に変換したい文字列を入力することもできます。
 
-## ディープダイブ
+## 詳細説明
 
-文字列を大文字に変換する方法は、C言語と同じように`toupper()`関数を使う方法もありますが、`toUpperCase()`関数の方がArduinoプログラミングにおいてはより簡単で便利です。`toUpperCase()`関数は、内部で`toupper()`関数を使用しており、文字列内のすべての文字を大文字に変換します。また、文字列を大文字に変換する際には、文字エンコーディングにも注意する必要があります。日本語の場合、UTF-8の場合は問題なく大文字に変換されますが、Shift-JISなどのエンコーディングでは変換がうまく行われない場合もあります。
+文字列を大文字に変換するには、コンピューターが文字のコードを変換する必要があります。それぞれの文字には、コンピューターが認識できるコード（ASCIIコードやUnicode）が割り当てられています。大文字と小文字は、このコードの値が異なるだけで同じ文字として扱われています。
 
-## おすすめリンク
+`String`オブジェクトを使用することで、文字列を簡単に扱うことができます。また、大文字に変換するような基本的な操作も提供されています。
 
-- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [C言語で文字列を大文字に変換する方法](https://www.tohoho-web.com/ex/case_up.html)
-- [Arduinoでの文字エンコーディングの扱い方](https://tomosoft.jp/design/?p=13834)
+## 関連リンク
+
+- [Arduino公式ウェブサイト](https://www.arduino.cc/)
+- [C言語で文字列を大文字にする方法](https://programming-place.net/2020/04/13/how-to-uppercase-string-in-c/)

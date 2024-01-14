@@ -1,61 +1,53 @@
 ---
 title:                "Kotlin: Convertire una stringa in minuscolo"
+simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-
-Ci sono molti motivi per cui potresti voler convertire una stringa in caratteri minuscoli in Kotlin. Potresti aver bisogno di confrontare due stringhe in modo da ignorare le differenze di maiuscole e minuscole oppure potresti essere interessato ad ottenere un output uniforme in minuscolo per formattare il testo. Qualunque sia il motivo, il processo di conversione in minuscolo è fondamentale per molte operazioni di manipolazione delle stringhe.
+Convertire una stringa in minuscolo può essere utile quando si desidera uniformare il testo o confrontare due stringhe in modo case-insensitive.
 
 ## Come fare
+Per convertire una stringa in minuscolo in Kotlin, si può utilizzare il metodo `toLowerCase()` della classe `String`. Di seguito è riportato un esempio di codice che mostra come utilizzare questo metodo:
 
-Per convertire una stringa in minuscolo, puoi utilizzare il metodo `toLowerCase()` sulla stringa desiderata. Ad esempio:
+```Kotlin
+val stringa = "KOTLIN È DIVERTENTE!"
+val lowerCase = stringa.toLowerCase()
 
-```kotlin
-fun main() {
-    val stringa = "Ciao Mondo"
-    val nuovaStringa = stringa.toLowerCase()
-    println(nuovaStringa)
-}
+println(lowerCase) // output: kotlin è divertente!
+```
+Nell'esempio sopra, viene creato un oggetto `String` con il valore "KOTLIN È DIVERTENTE!" e poi viene applicato il metodo `toLowerCase()` per convertirlo in minuscolo. Il risultato viene quindi stampato a schermo.
+
+Un'altra opzione è utilizzare il metodo `lowercase()` della classe `StringBuilder` per modificare direttamente la stringa originale:
+
+```Kotlin
+var stringa = "MAIUSCOLO"
+stringa = stringa.lowercase()
+
+println(stringa) // output: maiuscolo
 ```
 
-In questo caso, l'output sarà "ciao mondo", con tutti i caratteri convertiti in minuscolo. 
+## Deep Dive
+Un aspetto importante da tenere in considerazione durante la conversione di una stringa in minuscolo è la gestione degli accenti. Kotlin utilizza il sistema Unicode per rappresentare i caratteri, quindi è necessario usare il metodo `toLowerCase(Locale.getDefault())` per ottenere un risultato corretto in tutte le lingue.
 
-Puoi anche utilizzare il metodo `toLowerCase()` su una sottostringa di una stringa più grande, specificando gli indici di inizio e fine della sottostringa come parametri del metodo.
+In caso contrario, i caratteri accentati potrebbero essere convertiti in caratteri speciali come nel seguente esempio:
 
-```kotlin
-fun main() {
-    val stringa = "ABCDEF"
-    val nuovaStringa = stringa.toLowerCase(1, 4)
-    println(nuovaStringa)
-}
+```Kotlin
+val stringa = "CIAO ÀÈÌÒÙ"
+val lowerCase = stringa.toLowerCase()
+
+println(lowerCase) // output: ciao Ã Ã¨Ã¬Ã²Ã¹
 ```
 
-In questo caso, l'output sarà "AbcdEF", in quanto solo i caratteri compresi tra l'indice 1 (incluso) e l'indice 4 (escluso) saranno convertiti in minuscolo.
-
-## Approfondimento
-
-E' importante notare che il metodo `toLowerCase()` crea una nuova stringa con la conversione in minuscolo, senza modificare la stringa originale. Inoltre, la conversione dei caratteri in minuscolo dipende dalla lingua in uso, in quanto alcune lingue hanno regole specifiche per la conversione dei caratteri. Ad esempio, nella lingua tedesca la lettera "ß" diventa "ss" quando convertita in minuscolo.
-
-È possibile utilizzare anche il metodo `toLowerCase(Locale)` per specificare la lingua desiderata per la conversione dei caratteri in minuscolo.
-
-```kotlin
-fun main() {
-    val stringa = "ß"
-    val nuovaStringa = stringa.toLowerCase(Locale.GERMAN)
-    println(nuovaStringa) // output: "ss"
-}
-
-```
-
-Inoltre, è importante prestare attenzione alla codifica dei caratteri nella stringa quando si effettua la conversione in minuscolo, in modo da evitare problemi di compatibilità.
+Inoltre, è possibile utilizzare il metodo `toUpperCase()` per convertire una stringa in maiuscolo.
 
 ## Vedi anche
+Se sei interessato a saperne di più su come gestire le stringhe in Kotlin, consulta i seguenti link:
 
-- [Documentazione ufficiale di Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Tutorial su come manipolare le stringhe in Kotlin](https://www.programiz.com/kotlin-programming/strings)
-- [Esempi di utilizzo del metodo `toLowerCase()`](https://www.tutorialkart.com/kotlin/string-tolowercase-method-example/#:~:text=The%20Kotlin%20String.toLowerCase(),returns%20new%20String%20in%20lowercase.)
+- [Documentazione di Kotlin sui metodi per la manipolazione delle stringhe](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
+- [Tutorial su come gestire le stringhe in Kotlin](https://www.tutorialkart.com/kotlin/strings/)

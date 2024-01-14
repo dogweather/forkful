@@ -1,7 +1,9 @@
 ---
-title:                "Python: 패턴과 일치하는 문자 삭제"
+title:                "Python: 패턴과 일치하는 문자 삭제하기"
+simple_title:         "패턴과 일치하는 문자 삭제하기"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,34 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-파이썬 프로그램을 만드는 과정에서, 특정한 패턴과 일치하는 문자열을 제거할 때가 있습니다. 그럴 때는 왜 이것을 해야 하는지에 대해 생각해야 합니다. 일반적으로, 이러한 작업은 데이터 정리 또는 특정한 형태의 데이터를 처리하기 위한 필수적인 단계입니다.
+문자열에서 특정 패턴과 일치하는 문자를 삭제하는 것은 데이터 정리나 문자열 처리에 유용한 작업입니다.
 
-## 어떻게
+## 방법
 
-먼저, `re` 모듈을 임포트해야 합니다. 이 모듈은 정규 표현식을 사용할 수 있게 해줍니다. 그리고 `sub()` 메소드를 사용하여 문자열에서 원하는 패턴을 찾고, 해당 부분을 빈 문자열로 대체합니다.
+```python
+# 문자열 변수 설정
+string = "Hello World123"
 
-``` Python
-import re
+# 문자열에서 숫자만 삭제하기
+num = ""
+for char in string:
+    if char.isalpha():
+        num += char
+print(num)
 
-text = "안녕하세요? Hello? こんにちは！"
+# Output: Hello World
 
-result = re.sub("[가-힣]+[\?！]", "", text)
+# 문자열에서 소문자만 삭제하기
+lower = ""
+for char in string:
+    if not char.islower():
+        lower += char
+print(lower)
 
-print(result)
+# Output: HW123
 ```
 
-출력:
-```
-Hello?
-```
+## 깊이 파고들기
 
-위의 코드에서, `"[가-힣]+[\?！]"`라는 정규 표현식은 한글로 이루어진 단어와 뒤에 물음표 또는 느낌표가 오는 패턴을 나타냅니다. 그리고 `sub()` 메소드는 이를 빈 문자열로 대체하여 최종 결과를 반환합니다.
-
-## 깊은 이해
-
-정규 표현식은 매우 강력한 도구입니다. 이를 사용하면 원하는 패턴을 빠르고 쉽게 찾을 수 있습니다. 하지만 정규 표현식을 익히는 것은 쉽지 않을 수 있습니다. 왜냐하면 각 기호가 다르고 각 기호의 의미도 다릅니다. 또한, 한국어 문자열에서 패턴을 찾을 때에는 영어는 물론, 일본어, 중국어도 고려해야 한다는 것이 더 어려운 부분입니다. 따라서, 정규 표현식을 사용할 때에는 기호와 형식에 대해 깊이 이해하는 것이 중요합니다.
+일반적인 문자열 처리 기술 중 하나인 정규표현식을 사용하여 문자열에서 패턴과 일치하는 문자를 삭제할 수 있습니다. 정규표현식은 각 문자의 의미를 나타내는 패턴을 정의하고, 문자열에서 해당 패턴과 일치하는 부분을 추출 또는 삭제하는 데 사용됩니다. 예를 들어, 소문자를 삭제하기 위해 정규표현식 `[a-z]`를 사용할 수 있습니다.
 
 ## 참고 자료
 
-- [정규 표현식 공식 문서](https://docs.python.org/3/library/re.html)
-- [정규 표현식 테스트 사이트](https://regex101.com/)
+[정규표현식에 대한 자세한 설명](https://wikidocs.net/4308)  
+[문자열 처리 관련 파이썬 라이브러리](https://docs.python.org/3/library/string.html)  
+[파이썬 정규표현식 라이브러리](https://docs.python.org/3/library/re.html)

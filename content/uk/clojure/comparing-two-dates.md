@@ -1,51 +1,45 @@
 ---
-title:                "Clojure: Porivnyannya dvoh dat"
+title:                "Clojure: Порівняння двох дат"
+simple_title:         "Порівняння двох дат"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Чому
+##Чому
 
-Ця стаття призначена для висвітлення порівняння двох дат в Clojure та як це може бути корисним в програмуванні.
+Найчастіше, у програмуванні потрібно порівнювати дати для виконання різних умов або функцій в залежності від часу. В цьому блозі ми розглянемо, яким чином порівнювати дати в Clojure та навіщо це потрібно.
 
-## Як це зробити
-
-Порівняння двох дат в Clojure дуже просте за допомогою вбудованих функцій. Спочатку ми визначимо дві змінні для дат, які потрібно порівняти:
+##Як це зробити
 
 ```Clojure
-(def date1 (java.util.Date. 2021 6 1))
-(def date2 (java.util.Date. 2021 7 1))
+(ns date-comparison.core
+  (:require [clj-time.core :as t]))
+
+(def start-date (t/date-time 2020 1 1))
+(def end-date (t/date-time 2020 12 31))
+
+(println (t/plus start-date (t/days 7))) ;; Output: 2020-01-08T00:00:00.000+00:00
+(println (t/greater? start-date end-date)) ;; Output: false
 ```
 
-Тепер ми можемо використовувати функцію `(.before date1 date2)`, щоб перевірити, чи `date1` передує `date2`. Вона поверне `true` у цьому випадку:
+В цьому прикладі ми визначили дві змінні - start-date та end-date - з об'єктами дат, і використовуємо функції з тим самими назвами для порівняння дат та обчислення нової дати на основі початкової.
 
-```Clojure
-(.before date1 date2) ;=> true
-```
+##Глибші дослідження
 
-Аналогічно, використовуючи функцію `(.after date1 date2)`, ми можемо перевірити, чи `date1` слідує за `date2`:
+При порівнянні дат важливо враховувати часові зони та жодних різниць у точності. Clojure надає багато функцій для роботи з датами та часом, включаючи можливість конвертації, форматування та обчислення різниць між датами.
 
-```Clojure
-(.after date1 date2) ;=> false
-```
+Одна з корисних функцій - t/interval - дозволяє обчислювати різницю між двома датами у певних одиницях, наприклад роки, місяці чи дні. Крім того, для більш складних обчислень можна використовувати Clojure.java-time бібліотеку, яка надає доступ до Java 8 API для роботи з датами та часом.
 
-Крім того, ми можемо порівняти дати за допомогою функцій `(.compareTo date1 date2)` або `(.compare date1 date2)`, які повертають відповідний цілочисельний результат:
+##Дивись також
 
-```Clojure
-(.compareTo date1 date2) ;=> -1
-(.compare date1 date2) ;=> -1
-```
+- [Clojure документація по датам та часу](https://clojure.github.io/java-time/)
+- [Дивні випадки у Clojure з датами](http://thinkrelevance.com/blog/2013/06/04/strange-loops-clojure-date-time)
 
-Цей значення означає, що `date1` передує `date2`. Якщо `date1` було б пізніше `date2`, результат був би `1`. Для однакових дат результатом буде 0.
+##Подібні статті
 
-## Profound Dive
-
-У Clojure дати представлені як об'єкти типу `java.util.Date`. Тому, перед порівнянням дат, ми можемо використати всі методи, які доступні для цього типу, наприклад, знаходження різниці між двома датами за допомогою функції `(.getTime date)`. Також є цікавим відомості, що дати можуть бути порівняні таким чином, тому що вони інтерпретуються як цілі числа.
-
-## Дивитися також
-
-- [Документація Clojure з вбудованими функціями дат](https://clojuredocs.org/clojure.core/date-time#clj)
-- [Туторіал з порівнянням дат в Clojure](https://www.baeldung.com/clojure-comparing-dates)
+- [Робота з датами та часом в Clojure](https://amsterdam.luminis.eu/2016/10/24/working-with-dates-and-times-in-clojure/) 
+- [Робота зі змінними датами в Clojure](https://technologyconversations.com/2014/02/14/java-8-date-and-time-clojure/)

@@ -1,33 +1,36 @@
 ---
-title:                "C++: Kansion olemassaolon tarkistaminen"
+title:                "C++: Tarkista onko hakemistoa olemassa"
+simple_title:         "Tarkista onko hakemistoa olemassa"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi: Tämä blogikirjoitus tarkastelee, miksi ja miten tarkistaa, onko hakemisto olemassa, ja syventyy tarkempaan tietoon aiheesta.
+## Miksi: Tarkistaminen onko hakemisto olemassa?
 
-Miksi:
+On monia tilanteita, joissa ohjelmoija haluaa tarkistaa, onko tietty hakemisto olemassa. Esimerkiksi tietyn tiedoston avaaminen voi vaatia, että sen sisältämä hakemisto on olemassa. Hakemiston tarkistaminen auttaa myös välttämään virheitä ohjelman suorituksessa.
 
-Monissa C++-ohjelmoinnin tehtävissä, esimerkiksi tietokantojen tai tiedostojen käsittelyssä, on tärkeää varmistaa, että tietty hakemisto tai polku on olemassa ennen tiedoston avaamista tai tallentamista. Tämä auttaa välttämään mahdollisia virheitä tai poikkeuksia, jotka voivat aiheuttaa ohjelman kaatumisen.
+## Kuinka:
 
-Miten:
+Käytännössä hakemiston olemassaolon tarkistaminen on helppoa C++:ssa käyttäen `std::filesystem` -kirjastoa. Tarvittava kirjasto sisältyy C++17 -standardiin, joten sen ei pitäisi olla ongelma nykyaikaisissa kääntäjissä.
 
-Tarkistaaksesi hakemiston olemassaolon C++:lla, voit käyttää "C++ #include <dirent.h> " kirjastoa sekä "opendir" ja "closedir" funktioita. Seuraava koodiesimerkki osoittaa yksinkertaisen tavan tarkistaa, onko hakemisto olemassa ja tulostaa tulos näytölle:
+Alla on esimerkkikoodi, jossa tarkistetaan, onko hakemisto nimeltä "kuvat" olemassa:
 
 ```C++
 #include <iostream>
-#include <dirent.h>
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 int main() {
-    DIR *dir = opendir("tarkistettava_hakemisto"); // avataan hakemisto
-    if (dir) { // tarkistetaan, onko hakemisto olemassa
-        std::cout << "Hakemisto on olemassa." << std::endl;
-        closedir(dir); // suljetaan hakemisto
-    } else { // jos hakemistoa ei ole olemassa
-        std::cout << "Hakemistoa ei ole olemassa." << std::endl;
+    fs::path polku("kuvat");
+    if (fs::exists(polku)) {
+        std::cout << "Hakemisto kuvat on olemassa." << std::endl;
+    } else {
+        std::cout << "Hakemisto kuvat ei ole olemassa." << std::endl;
     }
     return 0;
 }
@@ -36,20 +39,16 @@ int main() {
 Esimerkkituloste:
 
 ```
-Hakemisto on olemassa.
+Hakemisto kuvat on olemassa.
 ```
 
-Deep Dive:
+## Syvyyteen:
 
-Tarkistaessaan hakemiston olemassaoloa, ohjelma käytännössä yrittää avata kyseistä hakemistoa ja tarkistaa, onko se avattavissa vai saadaanko siitä virheilmoitus. Avattaessa hakemisto, "opendir" funktio palauttaa osoittimen "DIR" tyyppiseen rakenteeseen, joka edustaa avattua hakemistoa. Jos hakemistoa ei löydy, "opendir" palauttaa "NULL" osoittimen ja virheilmoituksen.
+Tarkistamisen taustalla on käyttöjärjestelmän tiedostojärjestelmän toiminta. Kun hakemistoa etsitään, tiedostojärjestelmä käy läpi hakemistorakennetta alkaen juurihakemistosta ja tarkistaen jokaisen kansion ja tiedoston olemassaolon. Jos haettua hakemistoa ei löydy, tiedostojärjestelmä palauttaa virheen.
 
-On myös hyvä huomata, että "opendir" funktio hyväksyy sekä absoluuttisen että suhteellisen polun hakemistoon. Jos siis haluat tarkistaa jonkin muun hakemiston olemassaolon kuin nykyisen työhakemiston, voit antaa sille täyden polun.
+On myös tärkeä huomata, että pelkkä hakemiston olemassaolo ei takaa sitä, että kyseinen hakemisto on käytettävissä. Esimerkiksi käyttöoikeudet tai tallennustila voivat estää ohjelmaa pääsemästä hakemistoon.
 
-See Also:
+## Katso myös:
 
-- UNIX Systems Programming with C++
-https://www.ibm.com/developerworks/aix/library/au-unixcpp.html
-- C++ Reference: opendir()
-https://www.cplusplus.com/reference/cstdio/opendir/
-- C++ Filesystem: exists()
-https://en.cppreference.com/w/cpp/filesystem/exists
+- [std::filesystem -referenssi](https://en.cppreference.com/w/cpp/filesystem)
+- [Tiedostojärjestelmä C++17:ssä](https://en.cppreference.com/w/cpp/filesystem/fs)

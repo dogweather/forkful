@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Einen String in Kleinbuchstaben umwandeln"
+title:                "Bash: Umwandeln einer Zeichenkette in Kleinschreibung"
+simple_title:         "Umwandeln einer Zeichenkette in Kleinschreibung"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,56 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Konvertieren von Strings in Kleinbuchstaben ist ein häufiger Schritt bei der Bearbeitung von Texten in der Bash-Programmierung. Es kann hilfreich sein, um den Vergleich von Strings zu erleichtern oder einheitliche Ausgabeformate zu erzielen.
+Das Konvertieren von Strings in Kleinbuchstaben ist eine nützliche Fähigkeit für jeden, der gerne Bash-Programmierung betreibt. Es ermöglicht eine einfachere und konsistentere Verarbeitung von Texten.
 
 ## Anleitung
 
-Hier zeigen wir, wie man in Bash eine Zeichenkette in Kleinbuchstaben umwandelt:
+Um einen String in Kleinbuchstaben umzuwandeln, gibt es mehrere Möglichkeiten in Bash. Eine Möglichkeit ist die Verwendung der integrierten Funktion `tr`, die den Inhalt einer Datei oder eines Strings bearbeiten kann. Die Syntax sieht folgendermaßen aus:
 
-```
-# Beispieldaten
-text="HALLO WELT"
-
-# Konvertieren in Kleinbuchstaben
-echo "${text,,}"
-
-# Ausgabe: hallo welt
+```Bash
+echo "HALLO" | tr '[:upper:]' '[:lower:]'
 ```
 
-Das Komma in der Variable zeigt an, dass der Inhalt in Kleinbuchstaben umgewandelt werden soll. Diese Methode funktioniert auch mit Variablen, die mehrere Wörter enthalten:
+Die Ausgabe wäre `hallo`, da `tr` den String `HALLO` in Kleinbuchstaben umgewandelt hat.
 
-```
-# Beispieldaten
-name="MAX MUSTERMANN"
+Eine weitere Möglichkeit ist die Verwendung des Befehls `sed`, der ähnlich wie `tr` funktioniert. Die Syntax sieht wie folgt aus:
 
-# Konvertieren in Kleinbuchstaben
-echo "${name,,}"
-
-# Ausgabe: max mustermann
+```Bash
+echo "WELT" | sed 'y/ABCDEFGHIJKLMNOPQRSTUVWXYZ/abcdefghijklmnopqrstuvwxyz/'
 ```
 
-Man kann auch nur einen Teil der Zeichenkette konvertieren, indem man einen Bereich angeben:
+Auch hier wird die Ausgabe `welt` sein.
 
-```
-echo "${text,,4}"
+Es ist auch möglich, eine Schleife zu verwenden, um jeden Buchstaben im String manuell in einen Kleinbuchstaben zu konvertieren. Dies erfordert jedoch etwas mehr Code und ist möglicherweise nicht so effizient wie die beiden oben genannten Methoden.
 
-# Ausgabe: HALLO welt
-```
+## Tiefgreifender Einblick
 
-Das bedeutet, dass nur die Teile der Zeichenkette ab dem vierten Buchstaben in Kleinbuchstaben umgewandelt werden.
-
-## Tiefere Einblicke
-
-Die Bash bietet auch weitere Möglichkeiten, um Zeichenketten in Kleinbuchstaben zu konvertieren. Hier sind einige Beispiele:
-
-- Um alle Buchstaben in einer Zeichenkette groß zu schreiben, benutzt man `^^` statt `,,`.
-- Wenn man nur den ersten Buchstaben in Kleinbuchstaben schreiben möchte, kann man `,,1` benutzen.
-- Es gibt auch eine Option `,,*` um alle Zeichen der Zeichenkette in Kleinbuchstaben umzuwandeln.
-
-Um mehr über diese Methoden und weitere zu erfahren, kann man sich die offizielle Bash-Dokumentation ansehen.
+Beim Konvertieren eines Strings in Kleinbuchstaben verwenden sowohl `tr` als auch `sed` die ASCII-Tabelle, um zu bestimmen, welcher Buchstabe in welchen Buchstaben konvertiert werden soll. Dies bedeutet, dass alle Sonderzeichen oder Zeichen aus anderen Sprachen möglicherweise nicht korrekt konvertiert werden. In solchen Fällen ist es möglicherweise besser, eine eigene benutzerdefinierte Funktion zu erstellen, die diese Zeichen berücksichtigt.
 
 ## Siehe auch
 
-- [Offizielle Bash-Dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash-Programmierung für Anfänger](https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
-- [Einführung in die Bash-Shell](https://www.heise.de/ct/artikel/Grundlagen-der-Bash-Shell-2056759.html)
+- Eine umfassende Übersicht über den `tr`-Befehl in Bash: https://www.computerhope.com/unix/utr.htm
+- Weitere Informationen zum `sed`-Befehl und seiner Verwendung zur Konvertierung von Texten: https://www.computerhope.com/unix/used.htm

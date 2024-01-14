@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: בדיקת קיום תיקייה"
+title:                "Fish Shell: הבדיקה אם התיקייה קיימת"
+simple_title:         "הבדיקה אם התיקייה קיימת"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/fish-shell/checking-if-a-directory-exists.md"
 ---
 
@@ -9,52 +11,14 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-כשמבצעים תכנות של הַדריווכאת, חשוב לוודא שהַאיִדריי קיים והמידע המבוקש ימצא במקומו הנכון.
+בתכנות ישנם רבים מצבי קיצון שיעלים בהשגיות הברורות שלך. כאחד יכול לחפש מיליוני דוגמאות, אך הגישה הטובה ביותר היא ללמוד כיצד לענות על דרישות מסוימות. אחת מהדרישות הללו היא לבדוק אם תיקייה קיימת. כאשר אתה מזהה שגיאות, מפעיל שרשור פעמים, או מתחבר למסד נתונים שלך, התנאים האלה יעזרו לך לשוואת תיקייה או קובץ.
 
-## איך לבדוק אם ספרייה קיימת בְ־Fish Shell
+## איך לעשות זאת
 
-כדי לבדוק אם ספרייה קיימת בְ־Fish Shell, ניתן להשתמש בפקודה הבאה:
+```Fish Shell -c -g "test -d <folder_path> ; or begin; echo "<folder_path> exists!" AND echo "<folder_path> is a file!" OR echo "<folder_path> does not exist!" OR echo "<folder_path> is a directory!"; end;```
 
-```Fish Shell
+כאשר אתה משתמש בפקודה הזו, Fish Shell יבדוק האם תיקייה קיימת תחת הנתיב שסופק. אם כן, התכנית תדפיס "תיקייה קיימת!" ותוסיף תנאי שנוסף, יודפס לו "תיקייה הוא קובץ!". אחרת, אם התיקייה אינה קיימת, התכנית תדפיס "תיקייה לא קיימת!" ותוסיף תנאי שונה יותר שידפיס "תיקייה היא תיקייה!". כאן אתה יכול לכתוב סרטונים תכנותים כאשר התוצאות האלה יתכנו בקובץ. אם תיקייה קיימת, אתה יכול להדפיס בצורה דומה "יחד עם" יש לבחור בתיקיה שיש לה גישה הנתונה.
 
-if test -d path/to/directory
+## חקירה עמוקה
 
-    echo "The directory exists."
-
-else
-
-    echo "The directory does not exist."
-
-end
-
-```
-
-תיאור הקוד: בעזרת הפקודה test והפרמטר -d, אנחנו בודקים אם הנתיב שמופנה קיים ואם כן, נדפיס הודעה מתאימה. אם הנתיב לא קיים, נדפיס הודעה אחרת.
-
-הנה דוגמא נוספת תוך שימוש ב־if-else ב־Fish Shell:
-
-```Fish Shell
-
-if [ -d "path/to/directory" ]; then
-
-    echo "The directory exists."
-
-else
-
-    echo "The directory does not exist."
-
-fi
-
-```
-
-בדוגמא זו, אנו משתמשים בסוג יותר מתקדם של if-else כדי לבדוק אם הנתיב קיים או לא.
-
-## לחקור עמוק יותר
-
-כעת שיעוררו הכיוונים בנוגע לבדיקת קיום ספרייה, נוכל להתעמק יותר ולדעת שפקודת test נועדה לבדוק גם קיום קבצים, לא רק ספריות. ניתן לשנות את הפרמטר המשתנה -d ל-p כדי לבדוק קיום קבצים במקום ספריות. כמו כן, ניתן להשתמש בפקודות אחרות כגון stat, כדי לקבל מידע מפורט יותר על קבצים או ספריות ספציפיות.
-
-## ראה גם
-
-- [פקודת test ב־Fish Shell](https://fishshell.com/docs/current/cmds/test.html)
-- [עיצוב תכניות ב־Fish Shell](https://fishshell.com/docs/current/design.html)
-- [פקודת stat ב־Linux](https://linux.die.net/man/1/stat)
+קיימות הקבצים יכולה להיות מאוד מועילה כשאתר מרכז את הכלים של התכנית שלך. למרבה המזל, Fish Shell מציעה את הפקודה שלה כדי לבדוק אם תיקייה קיימת, ואז מספקת תכנית עזרת עבור זה בגירסאות הקודות. אתה יכול לשפר את התכנית, למשל,

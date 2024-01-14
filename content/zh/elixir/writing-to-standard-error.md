@@ -1,52 +1,54 @@
 ---
-title:                "Elixir: 标准错误输出编程"
+title:                "Elixir: 向标准错误输出（Computational Error）的文章"
+simple_title:         "向标准错误输出（Computational Error）的文章"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-Elixir 编程博客：如何利用标准错误输出
+## 为什么
 
-## 为什么？
-使用标准错误输出可以帮助开发人员诊断和调试代码中的错误。当代码遇到错误时，标准错误输出可以将错误信息打印到控制台，从而帮助开发人员快速发现并解决问题。因此，写入标准错误输出是一种重要的程序员技能。
+为什么要将错误信息写入标准错误流中呢？毕竟，我们可以将错误信息直接打印出来。但事实上，将错误信息写入标准错误流中能够更有效地捕捉异常，并帮助我们更好地调试代码。因此，在编写Elixir代码时，写入标准错误流是一个非常有用的技巧。
 
-## 如何做？
-看下面的示例代码，在Elixir中如何将内容写入标准错误输出：
+## 如何
 
-```Elixir
-IO.puts(:stderr, "这是一个标准错误输出示例")
-```
-
-运行上述代码后，你将在控制台上看到以下输出：
+要将错误信息写入标准错误流中，我们可以使用Elixir的 `IO.write/2` 函数。该函数接受两个参数，第一个参数为要写入的文本，第二个参数为流。我们可以使用 `:stderr` 来表示标准错误流。下面是一个示例代码：
 
 ```Elixir
-这是一个标准错误输出示例
+IO.write("This is an error message", :stderr)
 ```
-
-如上所示，使用 `IO.puts` 函数并指定 `:stderr` 值来将内容写入标准错误输出。同样，也可以使用 `IO.inspect` 函数在调试时打印变量值到标准错误输出。
+运行上述代码后，我们就可以在控制台看到标准错误流中打印出了错误信息。
 
 ## 深入探讨
-除了打印简单的字符串，Elixir 还提供了 `Kernel.inspect/2` 函数来格式化输出。参考下面的示例代码：
+
+除了使用 `IO.write/2` 函数，我们还可以使用 Elixir 的 `Kernel.raise/3` 函数来将错误信息写入标准错误流。该函数会将参数中的异常信息打印到标准错误流中，并将其作为实际异常抛出。下面是一个示例代码：
 
 ```Elixir
-customer = %{"name" => "张三", "age" => 28}
-IO.puts(:stderr, "客户信息是： #{inspect customer}")
+defmodule MyModule do
+  def raise_error do
+    raise "This is an error message"
+  end
+end
+
+MyModule.raise_error()
 ```
 
-运行上述代码后，你将在控制台上看到以下输出：
+运行上述代码后，我们会在控制台看到如下输出：
 
-```Elixir
-客户信息是： %{"age" => 28, "name" => "张三"}
 ```
-如上所示，使用 `Kernel.inspect/2` 函数可以打印出更复杂的数据结构，如 map 和列表。
+** (RuntimeError) This is an error message
+    (elixir 1.11.3) lib/exception.ex:106: Exception.raise/3
+    (elixir 1.11.3) lib/kernel/parallel_compiler.ex:345: Kernel.ParallelCompiler.spawn_compilers/2
+    (elixir 1.11.3) lib/kernel/parallel_compiler.ex:28: Kernel.ParallelCompiler.start/1
+```
 
-## 查看也可以
-想要了解更多关于 Elixir 中标准错误输出的内容，请阅读官方文档。以下是一些相关的链接： 
+可以看到，错误信息被成功写入标准错误流中。
 
-- 官方文档：https://hexdocs.pm/elixir/IO.html#print/2 
-- Elixir 教程：https://elixir-lang.org/getting-started/io-and-the-file-system.html 
-- Elixir 论坛：https://elixirforum.com/t/how-to-write-to-stdout-or-stderr/383
+## 参考链接
 
- 感谢阅读，希望本文对你有帮助！
+- [Elixir文档-IO](https://hexdocs.pm/elixir/IO.html)
+- [Elixir文档-Kernel](https://hexdocs.pm/elixir/Kernel.html)
+- [Elixir错误处理](https://elixir-lang.org/getting-started/error-handling.html)

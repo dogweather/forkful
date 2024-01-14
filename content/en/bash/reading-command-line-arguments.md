@@ -1,75 +1,86 @@
 ---
 title:                "Bash recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
+As a programmer, it's important to have a solid understanding of how to work with command line arguments in Bash. By learning this skill, you can create more dynamic and user-friendly scripts, making your code more versatile and efficient. Plus, knowing how to read command line arguments can save you time and effort when executing your scripts.
 
-Command line arguments are an essential part of Bash programming. They allow us to pass information or parameters to our scripts when running them in the terminal. Without understanding how to read command line arguments, we limit our coding capabilities and hinder our efficiency.
-
-## How To
-
-To read command line arguments in a Bash script, we use the $1, $2, $3, and so on, to indicate the position of the arguments passed. Let's take a look at an example:
+## How To 
+Let's dive into the basics of reading command line arguments in Bash. The first step is to declare your variables and use the "$" symbol before the number in order to reference the argument position. For example, $1 refers to the first argument, $2 refers to the second, and so on.
 
 ```Bash
-#!/bin/bash
+# declaring variables
+first_name=$1
+last_name=$2
 
-echo "Hello $1!"
-echo "My name is $2."
-
-# Running the script with arguments "John" and "Smith" would output:
-# Hello John!
-# My name is Smith.
+echo "Welcome, $first_name $last_name!" 
 ```
+This code will take two arguments from the command line (in the format of First Name Last Name) and output a personalized greeting. If no arguments are given, the script will still run, but the output will be "Welcome, !". You can also use the "$@" symbol to refer to all the arguments given in a single line.
 
-In the above code, we are using the $1 and $2 to read the first and second argument respectively. We can also use $0 to retrieve the name of the script itself.
-
-We can also use the $@ or $* to read all the arguments passed. Let's see how it works in practice:
+Another useful command is "shift", which allows you to move through the arguments in a loop. This can be helpful when working with multiple arguments and their values. Let's see an example:
 
 ```Bash
-#!/bin/bash
-
-echo "Hello $1, $2, and $3!"
-
-# Running the script with arguments "John", "Jane" and "Sam" would output:
-# Hello John, Jane, and Sam!
+while [[ "$#" -gt 0 ]]; do
+  echo "$1"
+  shift
+done
 ```
+This will loop through each argument in the command line and print them out on separate lines. 
 
-As you can see, using $@ or $* allows us to read multiple arguments in one go.
-
-We can also use the $# to get the count of arguments passed. Let's see how it works:
+Lastly, if you want to prompt the user for input instead of taking arguments from the command line, you can use the "read" command. It will wait for the user to input their desired value and assign it to the declared variable. 
 
 ```Bash
-#!/bin/bash
-
-echo "You have passed $# arguments."
-
-# Running the script with arguments "John", "Jane" and "Sam" would output:
-# You have passed 3 arguments.
+echo "What is your favorite color?"
+read color
+echo "Your favorite color is $color!"
 ```
 
-We can also use conditions and loops with command line arguments to make our scripts more dynamic and interactive.
+## Deep Dive 
+Now that you have a basic understanding of how to read command line arguments, let's take a deeper look at some additional features that can enhance your scripts. 
 
-## Deep Dive
+One important aspect to consider is how to handle errors when no arguments are given. You can use the "if" statement to check for the presence of arguments and give an error message if none are found.
 
-To understand the concept of command line arguments better, let's take a closer look at how they work behind the scenes.
+```Bash
+if [ $# -eq 0 ]; then
+  echo "Error: No arguments given."
+  exit 1
+fi
+```
+Additionally, you can use flags and options when using command line arguments. This allows you to give users more control over the behavior of your script. Flags are single characters preceded by a hyphen, while options are longer words preceded by two hyphens. You can use the "getopts" command to parse flags and options, making your scripts more user-friendly.
 
-When we run a script with arguments, the command line parses them and stores them in an array called "argv". The first element of this array (argv[0]) is the name of the script, followed by the arguments in the same order as they were passed. We can access this array in our script using the $@ or $*.
-
-Similarly, $# stores the count of the arguments, and $0 contains the name of the script.
-
-By understanding how command line arguments are stored and accessed, we can use them effectively in our scripts and create powerful and efficient code.
+```Bash
+while getopts "hd:o:" opt; do
+  case $opt in
+    h) # help flag
+      echo "Usage: your_script_name [OPTION]... [ARGUMENT]..."
+      echo " -h: display help menu"
+      echo " -d: set directory"
+      echo " -o: specify output file name"
+      echo "For more info, type 'man your_script_name'"
+      exit 1;;
+    d) # directory option
+      cd $OPTARG
+      ;;
+    o) # output option
+      output_name=$OPTARG
+      ;;
+    *) # invalid option
+      echo "Invalid option. For more info, type 'man your_script_name'"
+      exit 1;;
+  esac
+done
+```
 
 ## See Also
+For more information on working with command line arguments in Bash, check out the following resources: 
 
-Here are some useful resources to help you learn more about command line arguments in Bash:
-
-- [Bash Scripting Tutorial - Command Line Arguments](https://www.learnshell.org/en/Command_Line_Arguments)
-- [Shell Scripting: How-to Read Command Line Arguments](https://linuxcommand.org/lc3_wss0120.php)
-- [Command Line Arguments in Bash Script with Examples](https://linuxhint.com/command-line-arguments-bash/)
-
-By mastering the use of command line arguments, we can enhance our Bash scripting skills and take our coding abilities to the next level. So, go ahead and experiment with different ways of reading command line arguments to become a more efficient developer. Happy coding!
+- [Bash Command Line Arguments](https://linuxhint.com/bash_command_line_arguments/)
+- [Working with Arguments in Bash](https://ryanstutorials.net/bash-scripting-tutorial/bash-arguments.php)
+- [Command Line Arguments in Bash](https://scriptingosx.com/2017/04/the-best-way-to-parse-command-line-arguments/)

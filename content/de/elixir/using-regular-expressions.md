@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Reguläre Ausdrücke verwenden"
+title:                "Elixir: Verwendung von regulären Ausdrücken"
+simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/using-regular-expressions.md"
 ---
 
@@ -9,26 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # Warum
 
-In der Welt der Programmierung gibt es viele Möglichkeiten, um Aufgaben zu lösen. Eine dieser Möglichkeiten sind reguläre Ausdrücke, auch bekannt als Regex. Sie sind eine Mächtige Methode, um Textmuster zu suchen und zu manipulieren. Lassen Sie uns herausfinden, warum es sich lohnt, sich mit regulären Ausdrücken in Elixir zu beschäftigen.
+Regular Expressions (kurz RegEx) sind ein unverzichtbares Werkzeug für die Textverarbeitung in der Programmierung. Sie ermöglichen es uns, komplexe Textmuster zu identifizieren und zu manipulieren. In Elixir können wir RegEx sowohl in Strings als auch in Binärdaten verwenden.
 
-# Wie geht das?
+# Wie geht's
 
-Um reguläre Ausdrücke in Elixir zu nutzen, müssen Sie das Regex-Modul importieren. Dann können Sie verschiedene Funktionen wie `match?`, `replace`, `scan` und `split` verwenden, um Textmuster zu finden, zu ersetzen, zu scannen und zu unterteilen. Sehen wir uns ein Beispiel an:
+Um RegEx in Elixir zu nutzen, können wir das `Regex`-Modul verwenden. Hier ist ein Beispiel für eine RegEx, die prüft, ob ein String eine gültige Email-Adresse enthält:
 
 ```Elixir
-Regex.match?("Hallo Welt", ~r/Welt/) # gibt true zurück, da "Welt" im Ausdruck enthalten ist
-Regex.replace("Hallo Welt", ~r/Welt/, "Elixir") # gibt "Hallo Elixir" aus
-Regex.scan("Dieser Text enthält Zahlen wie 12345", ~r/\d+/) # gibt ["12345"] aus
-Regex.split("Eine, Zwei, Drei", ~r/, /) # gibt ["Eine", "Zwei", "Drei"] aus
+Regex.match?("meine@emailadresse.com", ~r/[\w.]+@[a-z]+\.[a-z]+/)
+```
+Die Ausgabe würde `true` sein, da die übergebene Email-Adresse dem Muster entspricht. Hier sind einige weitere nützliche Funktionen des `Regex`-Moduls:
+
+- `Regex.match?/2` prüft, ob ein String dem übergebenen Muster entspricht.
+- `Regex.replace/3` ersetzt alle in einem String gefundenen Muster durch den angegebenen Wert.
+- `Regex.named_captures/2` gibt ein Map zurück, das die benannten Captures (Teilmuster) des Musters und deren Werte enthält.
+
+Weitere Beispiele und Erklärungen findest du in der offiziellen [Elixir-Dokumentation zum `Regex`-Modul](https://hexdocs.pm/elixir/Regex.html).
+
+# Deep Dive
+
+Ein interessantes Feature von RegEx in Elixir ist die Möglichkeit, benannte Captures zu erstellen. Diese werden durch `(?<capture_name>erweiterter_regulärer_ausdruck)` definiert und können dann mit `Regex.named_captures/2` abgerufen werden. Hier ist ein Beispiel, das das Einfügen von benannten Captures in ein String-Format verdeutlicht:
+
+```Elixir
+Regex.replace("Mein Name ist {{first_name}} {{last_name}}. Ich bin {{age}} Jahre alt.", 
+~r/{{(?<capture>.+)}}/,
+%{"first_name" => "Max", "last_name" => "Mustermann", "age" => 30})
 ```
 
-# Tiefer eintauchen
-
-Reguläre Ausdrücke können viel komplexere Muster als einfache Texte erkennen. Zum Beispiel können Sie mit dem `|` Operator verschiedene mögliche Ausdrücke definieren und mit `{}` eine Wiederholung angeben. Es gibt auch verschiedene Optionen, die Sie in Ihren regulären Ausdrücken verwenden können, um z.B. Groß- und Kleinschreibung zu ignorieren oder nur ganze Wörter zu suchen. Um mehr über reguläre Ausdrücke zu erfahren, können Sie die offizielle Elixir Dokumentation oder andere Online-Ressourcen nutzen.
+Die Ausgabe wäre dann `"Mein Name ist Max Mustermann. Ich bin 30 Jahre alt."`. Durch die Verwendung von benannten Captures können wir dynamisch Strings generieren, die auf bestimmte Werte angepasst sind.
 
 # Siehe auch
 
-- [Elixir Dokumentation für das Regex-Modul](https://hexdocs.pm/elixir/Regex.html)
-- [Regular-Expressions.info - Eine umfassende Online-Ressource für reguläre Ausdrücke](https://www.regular-expressions.info/)
-
-Mit regulären Ausdrücken können Sie komplexe Textmuster in Elixir problemlos finden und manipulieren. Es lohnt sich, sich in dieses mächtige Werkzeug einzuarbeiten und es in Ihren Projekten einzusetzen. Viel Spaß beim Coden mit regulären Ausdrücken in Elixir!
+- [Elixir-Dokumentation zum `Regex`-Modul](https://hexdocs.pm/elixir/Regex.html)
+- [Reguläre Ausdrücke lernen - Einführung von Coding Train (Englisch)](https://www.youtube.com/watch?v=r6I-Ahc0HB4)
+- [RegExr - interaktiver RegEx-Tester und Referenz (Englisch)](https://regexr.com/)

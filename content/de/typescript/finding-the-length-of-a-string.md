@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Die Länge eines Strings finden"
+simple_title:         "Die Länge eines Strings finden"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/typescript/finding-the-length-of-a-string.md"
 ---
 
@@ -9,27 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Wer kennt es nicht? Man möchte in seinem Code die Länge eines Textes ermitteln, sei es zum Validieren einer Eingabe oder zur Berechnung von Abständen. Doch wie macht man das in TypeScript? In diesem Artikel werden wir uns damit beschäftigen, wie man die Länge eines Strings in TypeScript finden kann.
+Das Finden der Länge einer Zeichenkette ist ein grundlegender Bestandteil der Programmierung mit TypeScript. Es ermöglicht uns, die Anzahl der Zeichen einer Zeichenkette zu bestimmen und sie entsprechend zu manipulieren.
 
-## Wie
+## Wie geht das
 
-Um die Länge eines Strings in TypeScript zu ermitteln, gibt es eine einfache Methode namens `length`. Diese wird auf den String aufgerufen und gibt die Anzahl der Zeichen zurück. Schauen wir uns das an einem Beispiel an:
+Um die Länge einer Zeichenkette in TypeScript zu finden, können wir die `length`-Eigenschaft verwenden. Diese liefert uns die Anzahl der Zeichen einer Zeichenkette zurück.
 
 ```TypeScript
-const text: string = "Hallo, Welt!";
-const length: number = text.length;
-
-console.log(length);
-// Output: 12
+let string = "Hallo";
+console.log(string.length);
+// Output: 5
 ```
-Wie man sieht, werden alle Zeichen, einschließlich Leerzeichen, gezählt. Die Methode `length` kann auf jede Art von String in TypeScript angewendet werden, sei es ein einzelner Buchstabe oder ein ganzer Text.
 
-## Deep Dive
+Wir können die `length`-Eigenschaft auch auf mehrzeilige Zeichenketten anwenden. Hierbei werden auch die Leerzeichen mitgezählt.
 
-Wenn man sich den TypeScript Code genauer anschaut, wird man bemerken, dass die Methode `length` in Wirklichkeit eine Eigenschaft von `String` ist. Diese gibt die Anzahl der Zeichen einer Zeichenkette zurück. Dabei müssen jedoch Unicode-Zeichen als mehr als ein Zeichen gezählt werden, was zu einer höheren Länge führt. Es ist außerdem wichtig zu beachten, dass die Methode `length` nur für lesende Operationen genutzt werden kann, das heißt, man kann sie nicht zur Modifikation eines Strings verwenden.
+```TypeScript
+let multilinestring = `Hallo
+Welt`;
+console.log(multilinestring.length);
+// Output: 11
+```
+
+## Tiefere Einblicke
+
+In TypeScript werden Zeichenketten als Instanzen des `string`-Datentyps behandelt. Dieser Datentyp verfügt über die `length`-Eigenschaft, die uns die Anzahl der Zeichen einer Zeichenkette liefert.
+
+Die `length`-Eigenschaft ist in TypeScript auch bei anderen Datentypen wie zum Beispiel Arrays und Maps verfügbar. Bei Arrays gibt sie uns die Anzahl der Einträge zurück, während sie bei Maps die Anzahl der Schlüssel-Wert-Paare liefert.
 
 ## Siehe auch
 
-- [Offizielle TypeScript Dokumentation](https://www.typescriptlang.org/docs/handbook/basic-types.html#string-length)
-- [JavaScript String length property](https://www.w3schools.com/jsref/jsref_length_string.asp)
-- [JavaScript String objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [TypeScript Dokumentation zur length-Eigenschaft](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [Einführung in TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html)
+- [Manipulation von Zeichenketten in TypeScript](https://www.tutorialspoint.com/typescript/typescript_strings.htm)

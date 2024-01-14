@@ -1,35 +1,63 @@
 ---
 title:                "Ruby: Calcolare una data nel futuro o nel passato"
+simple_title:         "Calcolare una data nel futuro o nel passato"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Calcolare una data nel futuro o nel passato può essere molto utile in molte situazioni di programmazione, come ad esempio la pianificazione di eventi o la gestione di scadenze.
 
-## Come Fare
-Per calcolare una data in Ruby, è necessario utilizzare la classe `Time` e il suo metodo `strftime`. Di seguito è riportato un esempio di codice per ottenere la data odierna:
+Calcolare una data nel futuro o nel passato è un'abilità fondamentale per qualsiasi programmatore Ruby. Questo ti consente di manipolare le date nei tuoi programmi e gestire facilmente le operazioni di tempo.
 
-```Ruby
-Time.now.strftime("%d/%m/%Y")
-```
+## Come fare
 
-Questo verrà visualizzato come `01/09/2021` per il 1° settembre 2021. Per calcolare una data in futuro o in passato, è possibile utilizzare gli operatori matematici come `+` e `-` per aggiungere o sottrarre giorni, mesi o anni dalla data attuale. Ad esempio, il seguente codice restituirà la data del 1° novembre 2021:
+Per calcolare una data nel futuro o nel passato in Ruby, hai bisogno di usare la libreria di base `Date` e il suo metodo `+` o `-`, passando come parametro il numero di giorni da aggiungere o sottrarre.
+
+Ecco un esempio di codice che calcola la data di oggi più 10 giorni nel futuro:
 
 ```Ruby
-(Time.now + (31*24*60*60)).strftime("%d/%m/%Y")
+require 'date'
+
+puts "Oggi è il #{Date.today.strftime('%d/%m/%Y')}"
+
+puts "La data tra 10 giorni sarà il #{(Date.today + 10).strftime('%d/%m/%Y')}"
 ```
 
-In questo esempio, moltiplichiamo il numero di giorni (31) per il numero di secondi in un giorno (24*60*60) e lo aggiungiamo alla data attuale.
+L'output di questo codice sarà:
+
+```
+Oggi è il 20/08/2021
+La data tra 10 giorni sarà il 30/08/2021
+```
+
+Ecco invece un esempio per calcolare la data di oggi meno 5 giorni nel passato:
+
+```Ruby
+require 'date'
+
+puts "Oggi è il #{Date.today.strftime('%d/%m/%Y')}"
+
+puts "La data di 5 giorni fa era il #{(Date.today - 5).strftime('%d/%m/%Y')}"
+```
+
+L'output di questo codice sarà:
+
+```
+Oggi è il 20/08/2021
+La data di 5 giorni fa era il 15/08/2021
+```
 
 ## Approfondimento
-Esistono molti altri metodi per effettuare calcoli di data in Ruby, come ad esempio l'utilizzo della classe `DateTime`. Inoltre, è possibile gestire fusi orari e date non standard utilizzando la gemma Ruby `tzinfo`. Per ulteriori informazioni e opzioni per il calcolo di date nel futuro o nel passato, è possibile consultare la documentazione di Ruby o esplorare ulteriori risorse online.
 
-## Vedi Anche
-- Documentazione di Ruby sulle classi `Time` e `DateTime`
-- Documentazione della gemma Ruby `tzinfo`
+Oltre all'aggiunta e alla sottrazione di giorni, la libreria `Date` di Ruby offre molti altri metodi utili per manipolare le date. Ad esempio, puoi usare `next_day` per ottenere la data del giorno successivo, `prev_day` per ottenere la data del giorno precedente, oppure `strftime` per formattare la data secondo le tue preferenze.
 
-Grazie per aver letto questo post sul calcolo di date in Ruby. Speriamo che sia stato utile per la tua programmazione!
+Assicurati di consultare la documentazione ufficiale di Ruby per saperne di più sulla manipolazione delle date.
+
+## Vedi anche
+
+- [Documentazione ufficiale di Ruby per il modulo Date](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/Date.html)
+- [Una guida dettagliata su come lavorare con le date in Ruby](https://www.rubyguides.com/2018/08/ruby-dates/)

@@ -1,34 +1,57 @@
 ---
 title:                "Gleam recipe: Getting the current date"
+simple_title:         "Getting the current date"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Getting the current date is an essential part of many programming tasks, from displaying the current date on a website to creating time-sensitive tasks or scheduling events. In Gleam, this can be done easily using a built-in function. 
+
+Have you ever needed to get the current date in your Gleam program? Maybe you're building an appointment scheduling system or displaying the date on a website. Whatever the case may be, knowing how to get the current date is a useful skill to have in your programming toolkit.
 
 ## How To
-To get the current date in Gleam, we will be using the `Date.from_local_iso8601` function. This function takes in a string of the current date in ISO 8601 format and returns a `Date` type. Let's see how this works in action:
 
-```Gleam
-let today = Date.from_local_iso8601("2021-09-15")
+Getting the current date in Gleam is actually quite simple. First, we need to import the Date module from the standard library:
 
-let output = String.join([today.day, "/", today.month, "/", today.year])
-
-io.format("Today's date is {}", [output])
+```
+Gleam import Date
 ```
 
-Running this code will give us the output `Today's date is 15/09/2021`. Here, we first create a `Date` type using the `Date.from_local_iso8601` function and then use the `String.join` function to format and join the day, month, and year values of the `Date` type. Finally, we use the `io.format` function to print the output in a user-friendly format.
+Next, we can use the `Date.now` function to get the current date and time:
+
+```
+Gleam current_date = Date.now
+```
+
+This will return a `Date.DateTime` record, which contains fields for the month, day, year, hour, minute, second, and millisecond. We can access these fields like so:
+
+```
+Gleam month = current_date.month
+Gleam year = current_date.year
+```
+
+We can also format the date to our desired format using the `Date.format` function. For example, if we wanted to display the date in the format of "Month Day, Year", we could do the following:
+
+```
+Gleam formatted_date = Date.format(current_date, "%B %e, %Y")
+```
+
+This will return a formatted string such as "January 1, 2021". You can experiment with different formatting options to get the date displayed exactly how you want it.
 
 ## Deep Dive
-The `Date.from_local_iso8601` function is just one of the many built-in date and time functions available in Gleam. Other functions include `Date.from_components`, which allows you to create a `Date` type using individual components such as day, month, and year, and `Date.from_unix`, which converts a Unix timestamp into a `Date` type.
 
-It is important to note that the `Date` type in Gleam follows the Gregorian calendar and does not support time zones. If you need to work with time zones, you can use third-party libraries or create your own custom functions.
+Under the hood, the `Date.now` function uses the Erlang `os:system_time` function to get the current system time in milliseconds. It then converts that millisecond value to a `Date.DateTime` record using some built-in Gleam functions.
+
+Additionally, the `Date.format` function uses formatting codes that are similar to the ones used in the C programming language's `strftime` function. So, if you're familiar with C, this should look familiar to you.
 
 ## See Also
-- Official Gleam documentation on Date and Time: https://gleam.run/book/standard-library.html#date-and-time
-- ISO 8601 standard: https://www.iso.org/iso-8601-date-and-time-format.html
-- Third-party Gleam date and time library: https://github.com/gleam-lang/ecdatetime
+
+Here are some helpful links for further reading on Gleam's Date module:
+
+- [Gleam Date Module Documentation](https://gleam.run/modules/date.html)
+- [Erlang os:system_time function documentation](http://erlang.org/doc/man/os.html#system_time-0)
+- [C strftime function documentation](https://en.cppreference.com/w/cpp/chrono/c/strftime)

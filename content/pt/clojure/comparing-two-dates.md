@@ -1,55 +1,51 @@
 ---
 title:                "Clojure: Comparando duas datas"
+simple_title:         "Comparando duas datas"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas pode ser útil na programação
+## Por que Comparar Duas Datas em Clojure?
 
-Comparar datas é uma tarefa comum na programação, especialmente em casos em que precisamos verificar se uma data é anterior, posterior ou igual a outra. Isso pode ser útil em diversos contextos, como por exemplo em aplicações bancárias, de agendamento de compromissos, ou até mesmo em jogos que envolvam tempo.
+Em programação, a necessidade de comparar datas é muito comum. Isso pode ser útil para verificar se um evento ocorreu antes ou depois de outro, ou para determinar o intervalo de tempo entre duas datas. Em Clojure, existem diversas maneiras de realizar essa comparação de forma eficiente e precisa.
 
-## Como comparar duas datas em Clojure
+## Como Fazer em Clojure
 
-Em Clojure, podemos facilmente comparar datas utilizando a função `compare`. Esta função recebe duas datas como parâmetros e retorna um inteiro que representa a ordem entre elas. Se o resultado for menor que 0, significa que a primeira data é anterior à segunda. Se for igual a 0, as datas são iguais. E se for maior que 0, a primeira data é posterior à segunda.
+Existem várias funções em Clojure que podem ser usadas para comparar datas, como `before?`, `after?` e `compareTo`. Vamos ver alguns exemplos de como usá-las:
 
-```Clojure
-(let [data1 (java.util.Date.) ; data atual
-      data2 (java.util.Date. 2021 8 15)] ; data específica: 15 de agosto de 2021
-  (compare data1 data2)) ; retorna -1 pois data1 é anterior à data2
+```
+;; Criando duas datas
+(def data1 (java.util.Date. 2021 9 1))
+(def data2 (java.util.Date. 2021 10 1))
+
+;; Verificando se data1 ocorreu antes de data2
+(before? data1 data2)
+;; Output: true
+
+;; Verificando se data1 ocorreu depois de data2
+(after? data1 data2)
+;; Output: false
+
+;; Comparando as duas datas
+(compareTo data1 data2)
+;; Output: -1 (data1 é anterior a data2)
 ```
 
-```Clojure
-(let [data1 (java.util.Date. 2021 9 20) ; data específica: 20 de setembro de 2021
-      data2 (java.util.Date. 2021 9 20)] ; data específica: 20 de setembro de 2021
-  (compare data1 data2)) ; retorna 0 pois as duas datas são iguais
-```
 
-A função `compare` também funciona com instâncias da classe `LocalDateTime` do pacote `java.time`.
+Além disso, também é possível comparar datas usando os operadores `<`, `>` e `=`. Porém, é importante lembrar que esses operadores retornam `true` ou `false` sem considerar as horas, minutos e segundos das datas. Por isso, é recomendado utilizar as funções específicas de comparação de datas.
 
-```Clojure
-(let [data1 (java.time.LocalDateTime/now) ; data e hora atual
-      data2 (java.time.LocalDateTime/of 2021 10 31 15 30)] ; data e hora específicas: 31 de outubro de 2021 às 15:30
-  (compare data1 data2)) ; retorna 1 pois data1 é posterior à data2
-```
+## Aprofundando no Comparativo de Datas
 
-## Mergulhando mais fundo nas comparações de datas
+Em Clojure, as datas são representadas pelo tipo `java.util.Date`. Isso significa que elas são objetos e possuem diversos métodos que podem ser utilizados para manipulá-las. Além disso, existem também outras bibliotecas externas que facilitam o trabalho com datas em Clojure, como a `clj-time` e a `time-literals`.
 
-Além da função `compare`, Clojure também possui as funções `before?`, `after?` e `=” que facilitam ainda mais a comparação de datas. A função `before?` retorna `true` se a primeira data for anterior à segunda, `false` caso contrário. A função `after?` retorna `true` se a primeira data for posterior à segunda, `false` caso contrário. E a função `=` retorna `true` se as duas datas forem iguais, `false` caso contrário.
+Outro conceito importante ao comparar datas é a zona de tempo ou fuso horário. Em Clojure, é possível definir qual é a zona de tempo padrão para seus cálculos, utilizando a função `set!`, por exemplo: `(set! *time-zone* "Europe/Lisbon")`. Isso garante que as comparações serão feitas levando em consideração o fuso horário desejado.
 
-Podemos também usar operadores lógicos para comparar datas. Por exemplo, podemos usar a função `and` para verificar se uma data está entre duas outras datas.
+## Veja Também
 
-```Clojure
-(let [data3 (java.time.LocalDateTime/of 2021 7 1) ; data específica: 1 de julho de 2021
-      data4 (java.time.LocalDateTime/of 2021 9 1) ; data específica: 1 de setembro de 2021
-      data5 (java.time.LocalDateTime/of 2021 8 15)] ; data específica: 15 de agosto de 2021
-  (and (>= data5 data3) (<= data5 data4))) ; retorna true pois data5 está entre data3 e data4
-```
-
-## Veja também
-
-- Documentação oficial de Clojure sobre a função `compare`: https://clojuredocs.org/clojure.core/compare
-- Documentação oficial de Clojure sobre as funções `before?`, `after?` e `=`: https://clojuredocs.org/clojure.core/before%3F, https://clojuredocs.org/clojure.core/after%3F, https://clojuredocs.org/clojure.core/=
-- Tutorial sobre manipulação de datas em Clojure: https://clojureverse.org/t/manipulating-datetime-in-clojure-the-de-facto-standard-jdk-api/5650/2
+- [Documentação oficial de funções de datas em Clojure](https://clojuredocs.org/clojure.core/before_q)
+- [Liberação do tempo em Clojure usando clj-time](https://github.com/clj-time/clj-time)
+- [Manipulação de datas com time-literals](https://github.com/onetom/time-literals)

@@ -1,51 +1,52 @@
 ---
-title:                "Rust: Trouver la longueur d'une chaîne"
+title:                "Rust: Trouver la longueur d'une chaîne de caractères."
+simple_title:         "Trouver la longueur d'une chaîne de caractères."
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi 
+## Pourquoi
 
-Dans le monde de la programmation, l'une des tâches les plus courantes est la manipulation de chaînes de caractères. Que vous soyez un débutant ou un développeur expérimenté, il est important de comprendre comment trouver la longueur d'une chaîne de caractères dans le langage de programmation que vous utilisez. Dans cet article, nous allons explorer comment trouver la longueur d'une chaîne de caractères en Rust et pourquoi il est important de maîtriser cette compétence.
+Vous pourriez vous demander, pourquoi est-ce important de connaître la longueur d'une chaîne de caractères en Rust ? Eh bien, cela peut être utile lors de la manipulation de données ou de l'affichage de chaînes de caractères dans une certaine limite de longueur.
 
-## Comment faire 
+## Comment faire
 
-La première chose à faire est de comprendre ce qu'est une chaîne de caractères en Rust. En Rust, une chaîne de caractères est une séquence de caractères UTF-8 encodés stockés dans le tas et représentés par le type `String`. Pour trouver la longueur d'une chaîne de caractères, nous pouvons utiliser la méthode `len()` qui renvoie le nombre de caractères dans la chaîne.
+Pour trouver la longueur d'une chaîne de caractères en Rust, vous pouvez utiliser la méthode `len()` qui renvoie un entier représentant le nombre de caractères dans la chaîne.
 
-```Rust
-let string = "Bonjour";
-println!("La longueur de la chaîne de caractères est: {}", string.len());
+Voici un exemple de code pour trouver la longueur d'une chaîne de caractères :
+
+```rust
+let s = String::from("Bonjour !");
+let len = s.len();
+
+println!("La longueur de la chaîne est : {}", len); // output: La longueur de la chaîne est : 9
 ```
 
-La sortie de ce code sera:
+Dans cet exemple, nous créons une nouvelle chaîne de caractères `s` et utilisons la méthode `len()` pour trouver sa longueur. Nous imprimons ensuite la longueur à l'aide de la fonction `println!()`.
 
+## Plongée en profondeur
+
+Vous vous demandez peut-être comment la méthode `len()` fonctionne en interne. En fait, elle compte le nombre d'octets dans la chaîne de caractères et ne tient pas compte des caractères Unicode. Cela signifie qu'une chaîne de caractères contenant des caractères non ASCII aura une longueur différente de celle attendue.
+
+Pour obtenir la longueur réelle de la chaîne de caractères en prenant en compte les caractères Unicode, vous pouvez utiliser la méthode `chars()` qui sépare chaque caractère de la chaîne et ensuite utiliser la méthode `count()` pour compter le nombre de caractères.
+
+Voici un exemple de code pour trouver la longueur d'une chaîne de caractères en utilisant `count()`:
+
+```rust
+let s = String::from("Bonjour !");
+let len = s.chars().count();
+
+println!("La longueur de la chaîne est : {}", len); // output: La longueur de la chaîne est : 8
 ```
-La longueur de la chaîne de caractères est: 7
-```
 
-Nous pouvons également utiliser la méthode `chars()` pour obtenir un itérateur sur chaque caractère de la chaîne, puis compter le nombre d'itérations pour trouver la longueur de la chaîne.
+Comme vous pouvez le voir, la longueur est différente de l'exemple précédent car cette fois-ci, nous prenons en compte les caractères Unicode.
 
-```Rust
-let string = "Bonjour";
-let count = string.chars().count();
-println!("La longueur de la chaîne de caractères est: {}", count);
-```
+## Voir aussi
 
-La sortie de ce code sera la même que précédemment.
-
-## Plongez plus profond 
-
-Maintenant que nous savons comment trouver la longueur d'une chaîne de caractères en Rust, il est important de comprendre un peu plus en profondeur comment cela fonctionne. En utilisant la méthode `len()`, nous obtenons le nombre de caractères dans la chaîne, mais pourquoi est-ce important? En informatique, les chaînes de caractères sont souvent utilisées pour stocker des données textuelles. Si nous voulons manipuler ces données, il est essentiel de savoir exactement combien de caractères sont présents dans la chaîne. Par exemple, si nous voulons extraire un sous-ensemble de caractères de la chaîne, nous avons besoin de connaître la longueur de la chaîne pour déterminer où commencer et où s'arrêter.
-
-Il est également important de noter que la méthode `len()` renvoie le nombre de caractères et non le nombre d'octets, car en Rust, une chaîne de caractères peut contenir des caractères multibytes qui occupent plus d'un octet.
-
-## Voir aussi 
-
-Maintenant que vous savez comment trouver la longueur d'une chaîne de caractères en Rust, voici quelques ressources utiles pour approfondir vos connaissances: 
-
-- [Documentation officielle de Rust sur les chaînes de caractères](https://doc.rust-lang.org/std/string/index.html)
-- [Apprenez Rust en créant des projets réels](https://dev.to/codecrumbs/learn-rust-by-solving-real-problems-1bmo)
-- [Chaînes de caractères en Rust: Heap vs Stack](https://dev.to/rohitrox/strings-in-rust-heap-vs-stack-54fi)
+- [Documentation de la méthode `len()` en Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
+- [Documentation de la méthode `chars()` en Rust](https://doc.rust-lang.org/std/string/struct.String.html#method.chars)
+- [Documentation de la méthode `count()` en Rust](https://doc.rust-lang.org/std/str/struct.Chars.html#method.count)

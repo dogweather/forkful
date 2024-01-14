@@ -1,111 +1,59 @@
 ---
 title:                "Elm: Odczytywanie argumentów wiersza poleceń"
+simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto poznać czytanie argumentów wiersza poleceń w Elm
+## Dlaczego
 
-Poznanie, jak czytać argumenty wiersza poleceń w języku Elm, może znacznie ułatwić nam pracę z naszymi programami. Dzięki temu narzędziu będziemy mogli dostosowywać działanie naszych aplikacji w zależności od przekazanych argumentów, co jest szczególnie przydatne przy tworzeniu programów, które mają mieć różną funkcjonalność w zależności od kontekstu użycia.
+Programowanie w języku Elm może być bardzo przyjemne i wygodne, ale czasami musimy mieć do czynienia z nieznajomymi zmiennymi i opcjami. Jednym z przykładów jest czytanie argumentów z wiersza poleceń. W tym artykule przedstawimy, dlaczego jest to ważna umiejętność i jak ją wykorzystać w języku Elm.
 
-# Jak to zrobić: Przykłady kodu i wyników
+## Jak to zrobić
 
-Przyjrzyjmy się przykładom kodu w języku Elm, które pozwolą nam na dokładne zrozumienie procesu czytania argumentów wiersza poleceń.
+Aby czytać argumenty z wiersza poleceń w Elm, musimy skorzystać z pakietu `core` i jego modułu `Platform.Cmd`. Poniżej znajduje się przykładowy kod:
 
-## Prosty przykład:
 ```Elm
+import Platform.Cmd exposing (args)
+
+main : Program Never
 main =
-    let
-        arguments = System.args
-    in
-        System.exit arguments
-```
-
-W powyższym przykładzie wykorzystujemy funkcję `System.args`, która zwraca nam listę przekazanych argumentów wiersza poleceń. Następnie wykorzystujemy funkcję `System.exit`, aby wyjść z programu i wyświetlić otrzymane argumenty.
-
-Przykładowy wynik dla uruchomienia naszego programu z argumentami `--mode=test` wyglądałby następująco:
-
-```
-["--mode=test"]
-```
-
-## Lepsza obsługa argumentów:
-```Elm
-import Dict exposing (fromList)
-import List exposing (cons)
-
-main =
-    let
-        arguments = System.args
-        params = fromList (List.filterMap extractParameter arguments)
-    in
-        System.exit params
-
-extractParameter argument =
-    case String.split "=" argument of
-        [ key, value ] ->
-            Just ( key, value )
-
-        _ ->
-            Nothing
-```
-
-W tym przykładzie wykorzystujemy funkcje z pakietu `Dict` oraz `List` w celu lepszej obsługi przekazanych argumentów. Najpierw tworzymy słownik `params`, który przechowuje przekazane argumenty jako klucze i wartości. Następnie wykorzystujemy funkcję `String.split` w celu rozdzielenia argumentu na parę `klucz=wartość` oraz funkcję `List.filterMap`, aby usunąć niepoprawne argumenty. Dzięki temu możemy łatwo dostosować nasz program do różnych argumentów i wykorzystywać je w wybrany przez nas sposób.
-
-Przykładowy wynik dla uruchomienia naszego programu z argumentami `--mode=test` oraz `--date=2021-09-01` wyglądałby następująco:
-
-```
-{ "mode" = "test", "date" = "2021-09-01" }
-```
-
-## Zawansowane użycie:
-```Elm
-type alias User =
-    { name : String
-    , age : Int
-    }
-
-main =
-    let
-        arguments = System.args
-        params = getArguments arguments
-        user = getUser params
-    in
-        System.exit user
-
-getArguments arguments =
-    let
-        params = getArgumentsDict arguments
-    in
-        { name = Dict.get "name" params
-        , age = Dict.get "age" params
+    Program.platform
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
         }
 
-getArgumentsDict arguments =
-    fromList (List.filterMap extractParameter arguments)
+init : ( String, Cmd.Cmd msg )
+init =
+    ( "Hello, world!", Cmd.none )
 
-extractParameter argument =
-    case String.split "=" argument of
-        [ key, value ] ->
-            Just ( key, value )
+update : msg -> String -> ( String, Cmd.Cmd msg )
+update msg model =
+    ( args! model, Cmd.none )
 
-        _ ->
-            Nothing
+view : String -> Html.Html msg
+view text =
+    h1 [] [ text ]
 
-getUser { name, age } =
-    { name = Maybe.withDefault "John" name
-    , age = Maybe.withDefault 25 (Maybe.map String.toInt age)
-    }
+subscriptions : String -> Sub.Sub msg
+subscriptions _ =
+    Sub.none
 ```
 
-W tym zaawansowanym przykładzie wykorzystujemy funkcję `String.toInt` oraz moduł `Maybe` w celu konwersji otrzymanych argumentów do odpowiedniego typu. Tworzymy również alias `User` oraz funkcję `getUser`, która zwraca nam obiekt typu `User` na podstawie przekazanych argumentów.
+Kod ten używa funkcji `args`, która zwraca listę argumentów przekazanych do programu przez wiersz poleceń. Następnie funkcja `update` pobiera pierwszy argument z listy i wyświetla go w aplikacji. Prosta i wygodna metoda, prawda?
 
-## Obsługa błędów:
-```Elm
-import String exposing (toInt)
+## Głębsze zanurzenie
 
-main =
-    let
+W powyższym przykładzie użyliśmy tylko jednego argumentu, ale funkcja `args` zwraca całą listę argumentów. Możemy więc wykorzystać tę funkcjonalność do bardziej skomplikowanych zastosowań. Na przykład, możemy czytać argumenty z wiersza poleceń w celu ustawienia różnych ustawień lub opcji dla naszej aplikacji. Możemy również dostosowywać zachowanie naszej aplikacji w zależności od argumentów przekazanych do niej.
+
+## Zobacz również
+
+- Dokumentacja pakietu `core` dotycząca funkcji `args`: <link>
+- Przykładowe aplikacje w Elm: <link>
+- Wideo tutorial na temat czytania argumentów z wiersza poleceń w Elm: <link>

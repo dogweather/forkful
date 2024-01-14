@@ -1,66 +1,49 @@
 ---
-title:                "C#: Textsuche und -ersetzung"
+title:                "C#: Suchen und Ersetzen von Text"
+simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Suchen und Ersetzen von Text ist eine wichtige Fähigkeit, wenn es um die Bearbeitung von Dateien oder das Schreiben von Code geht. Es ermöglicht es uns, schnell und effizient bestimmte Textpassagen zu finden und zu ändern, anstatt dies manuell tun zu müssen.
+Wenn du mit C# programmierst, wirst du häufig Änderungen an deinem Code vornehmen müssen. Eine der häufigsten Aufgaben ist das Suchen und Ersetzen von Text. Dies kann zeitaufwändig sein, wenn du jedes Vorkommen des Textes manuell ändern musst. Glücklicherweise gibt es in C# eine Möglichkeit, dies automatisch zu erledigen. Im folgenden Artikel erfährst du, wie du effizient Text suchen und ersetzen kannst.
 
-# Wie geht's
+## Wie geht das?
 
-Um Text in C# zu suchen und zu ersetzen, verwenden wir die `Replace()` Methode. Diese Methode erwartet zwei Parameter: den zu ersetzenden Text und den Text, mit dem er ersetzt werden soll. Sehen wir uns ein Beispiel an:
-
-```C#
-string text = "Hallo Welt!";
-string newText = text.Replace("Hallo", "Guten Tag");
-Console.WriteLine(newText);
-```
-
-Output: `Guten Tag Welt!`
-
-In diesem Beispiel haben wir den Text "Hallo" durch "Guten Tag" ersetzt und das Ergebnis in der Variablen `newText` gespeichert.
-
-Um jedoch in einer Datei oder einem längeren Text nach bestimmten Wörtern zu suchen und zu ersetzen, können wir die `Regex` Klasse verwenden. Diese Klasse ermöglicht es, mithilfe von regulären Ausdrücken spezifischere Suchmuster zu definieren.
-
-Schauen wir uns ein Beispiel an, in dem wir alle Vokale in einem Text durch einen Unterstrich ersetzen:
+Um Text in C# programmatisch zu suchen und zu ersetzen, müssen wir die Methode "Replace" der string Klasse verwenden. Diese Methode nimmt zwei Parameter an - den zu ersetzenden Text und den neuen Text. Das folgende Beispiel zeigt, wie man alle Vorkommen des Wortes "Hund" in einem Satz durch "Katze" ersetzen kann:
 
 ```C#
-string text = "Ich liebe Programmieren!";
-string pattern = "[aeiou]";
-string newText = Regex.Replace(text, pattern, "_");
-Console.WriteLine(newText);
+string satz = "Ich habe einen Hund, und er ist mein bester Freund.";
+string neuerSatz = satz.Replace("Hund", "Katze");
+
+Console.WriteLine(neuerSatz);
 ```
 
-Output: `_ch l_b_ Pr_gr_mm_r_n!`
+Die Ausgabe dieses Codes wäre: "Ich habe eine Katze, und er ist mein bester Freund." Wie du sehen kannst, wurde das Wort "Hund" durch "Katze" ersetzt.
 
-In diesem Beispiel verwenden wir `[aeiou]` als Suchmuster, was bedeutet, dass alle Vokale in dem Text durch einen Unterstrich ersetzt werden.
-
-Wir können auch Platzhalter verwenden, um bestimmte Wörter oder Zeichenfolgen zu finden und zu ersetzen. Schauen wir uns ein Beispiel an, in dem wir alle Zahlen im Text durch Sternchen ersetzen:
+Du kannst auch eine weitere Option in der "Replace" Methode verwenden, um anzugeben, ob die Groß- und Kleinschreibung berücksichtigt werden soll. Wenn du beispielsweise möchtest, dass nur das Wort "hund" und nicht "Hund" ersetzt wird, kannst du das folgende Code-Beispiel verwenden:
 
 ```C#
-string text = "Heute ist der 3. Februar";
-string pattern = @"\d";
-string newText = Regex.Replace(text, pattern, "*");
-Console.WriteLine(newText);
+string satz = "Ich habe einen Hund, und er ist mein bester Freund.";
+string neuerSatz = satz.Replace("hund", "Katze", StringComparison.OrdinalIgnoreCase);
+
+Console.WriteLine(neuerSatz);
 ```
 
-Output: `Heute ist der *. Februar`
+Die Ausgabe wäre in diesem Fall gleich, aber "Hund" würde weiterhin großgeschrieben bleiben.
 
-In diesem Beispiel verwenden wir den Platzhalter `\d`, der für eine beliebige Zahl steht.
+## Tiefentauchen
 
-# Deep Dive
+Die "Replace" Methode hat noch einige weitere nützliche Optionen, wie z.B. die Angabe einer maximalen Anzahl an Ersetzungen oder die Angabe eines variablen Startpunkts zum Suchen des Textes. Diese Optionen können in bestimmten Fällen sehr praktisch sein, insbesondere wenn du mit großen Textmengen arbeitest.
 
-Suchen und Ersetzen von Text mag einfach erscheinen, aber es kann auch komplexere Anwendungen haben. Eine weitere nützliche Funktion, die die `Regex` Klasse bietet, ist die Möglichkeit, Text zu extrahieren oder zu ersetzen, der bestimmten Kriterien entspricht. Zum Beispiel könnten wir alle URLs in einem Text finden und in anklickbare Links umwandeln oder die E-Mail-Adressen in einem Text in eine bestimmte Formatierung bringen.
+Eine weitere Möglichkeit, Text in C# zu suchen und zu ersetzen, ist die Verwendung von regulären Ausdrücken. Diese erweiterte Suche ermöglicht es dir, komplexere Muster zu erkennen und zu ersetzen. Weitere Informationen zu RegEx in C# findest du in [diesem Artikel](https://www.c-sharpcorner.com/article/searching-string-with-regular-expression/).
 
-Die Verwendung von regulären Ausdrücken erfordert möglicherweise etwas Übung, aber sie kann eine leistungsstarke Fähigkeit sein, um effizient mit Text zu arbeiten.
+## Siehe auch
 
-# Siehe auch
-
-- [Offizielle Dokumentation zu C# String.Replace()](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netframework-4.8)
-- [Tutorial zu regulären Ausdrücken in C#](https://www.w3schools.com/cs/cs_regex.asp)
-- [RegExr - Online-Tool zum Testen von regulären Ausdrücken](https://regexr.com/)
+- [string.Replace Methode in der offiziellen Dokumentation](https://docs.microsoft.com/de-de/dotnet/api/system.string.replace?view=net-5.0)
+- [Reguläre Ausdrücke in C# - Ein Tutorial](https://www.c-sharpcorner.com/article/regular-expression-in-C-Sharp/)

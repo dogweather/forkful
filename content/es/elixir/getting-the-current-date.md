@@ -1,41 +1,65 @@
 ---
 title:                "Elixir: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué necesitas obtener la fecha actual en Elixir?
+# ¿Por qué necesitamos la fecha actual en Elixir?
 
-Hay muchas razones por las cuales un programador Elixir puede necesitar obtener la fecha actual. Algunos ejemplos incluyen registrar la fecha en que se creó un documento, calcular la edad de una persona o simplemente mostrar la fecha actual en una aplicación web.
+La fecha y hora son elementos básicos en cualquier lenguaje de programación, y Elixir no es la excepción. La obtención de la fecha actual puede ser útil para una variedad de aplicaciones, como programar tareas, manejar comparaciones de tiempo o mostrar la fecha a los usuarios.
 
 ## Cómo obtener la fecha actual en Elixir
 
-Obtener la fecha actual en Elixir es muy sencillo gracias a la función `:calendar.local_time`. Esta función toma como argumentos el formato de fecha deseado y devuelve una tupla con el año, mes, día, hora, minuto y segundo actuales.
+Elixir proporciona una función llamada `DateTime.now/0` que devuelve la fecha y hora actuales en un formato específico. Veamos un ejemplo:
 
 ```Elixir
-fecha_actual = :calendar.local_time(:local)
+iex> DateTime.now()
+~N[2021-09-16 13:44:57.538813]
 ```
-Este código devolverá una tupla en el siguiente formato: `{año, mes, día, hora, minutos, segundos}`.
 
-Para convertir esta tupla en un string legible, podemos usar la función `:calendar.format` y especificar el formato deseado. Por ejemplo, si queremos obtener la fecha y hora completa en formato de 12 horas, podemos usar el formato `"{fecha} {horaAMPM}"`.
+Como podemos ver, la respuesta es un `NaiveDateTime`, que no incluye información sobre la zona horaria. Si queremos incluir la zona horaria, podemos usar la función `DateTime.utc_now/0`:
 
 ```Elixir
-fecha_actual = :calendar.local_time(:local)
-fecha_formateada = :calendar.format("{fecha} {horaAMPM}", fecha_actual)
+iex> DateTime.utc_now()
+~U[2021-09-16 17:44:41.249744Z]
 ```
 
-La variable `fecha_formateada` ahora contendrá un string como este: `"Julio 24, 2021 5:30 PM"`.
+Otra forma de obtener la fecha actual es utilizando `:os.system_time/0`, que devuelve el tiempo del sistema en segundos y microsegundos desde la época de Unix (1 de enero de 1970). Podemos convertir este valor en una fecha con la función `DateTime.from_unix/1`:
+
+```Elixir
+iex> DateTime.from_unix(:os.system_time())
+{:ok, ~N[2021-09-16 14:10:06.405046]}
+```
 
 ## Profundizando en la obtención de la fecha actual en Elixir
 
-Además de las funciones `:calendar.local_time` y `:calendar.format`, Elixir también tiene otras funciones útiles para trabajar con fechas y horas. Por ejemplo, `:calendar.universal_time` devuelve la fecha y hora en formato UTC, mientras que `:calendar.datetime_to_gregorian_days` convierte una fecha en una cantidad de días en el calendario gregoriano.
+Si queremos obtener más información sobre la fecha actual, podemos utilizar el módulo `Calendar` de Elixir. Este módulo nos permite obtener la fecha, la hora y la zona horaria en diferentes formatos.
 
-También es importante tener en cuenta que estas funciones dependen del sistema operativo en el que se esté ejecutando el código, por lo que puede haber pequeñas variaciones en los resultados.
+Veamos un ejemplo de cómo obtener la fecha actual en formato de un objeto `Date`:
 
-## Ver también
+```Elixir
+iex> {year, month, day} = Calendar.date()
+{2021, 9, 16}
+```
 
-- [Guía oficial de fechas y horas en Elixir](https://hexdocs.pm/elixir/Calendar.html)
-- [Artículo sobre la manipulación de fechas en Elixir](https://digitalflap.com/manipulating-dates-and-times-in-elixir/)
+También podemos obtener la hora actual en formato de un objeto `Time`:
+
+```Elixir
+iex> {hour, minute, second} = Calendar.time()
+{14, 16, 47}
+```
+
+Además, podemos obtener información sobre la zona horaria actual utilizando `Calendar.time_zone/0` y `Calendar.time_zone_abbr/0`.
+
+## Ver También
+
+- [Documentación de Elixir sobre DateTime](https://hexdocs.pm/elixir/DateTime.html)
+- [Documentación de Elixir sobre Calendar](https://hexdocs.pm/elixir/Calendar.html)
+- [Página web de Elixir](https://elixir-lang.org/)
+
+¡Ahora está listo para utilizar la fecha actual en sus aplicaciones en Elixir! ¡Buena suerte y feliz programación!

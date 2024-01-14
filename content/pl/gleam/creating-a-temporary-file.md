@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Tworzenie pliku tymczasowego"
+title:                "Gleam: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/creating-a-temporary-file.md"
 ---
 
@@ -9,30 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Stworzenie tymczasowego pliku może być niezbędne w wielu różnych sytuacjach. Na przykład, jeśli musimy wykonać pewne operacje na danych tymczasowych, ale nie chcemy lub nie możemy zmieniać istniejącego pliku, to tworzenie nowego, tymczasowego pliku może być bardzo przydatne.
+Stwarzanie tymczasowego pliku jest bardzo przydatne w wielu projektach programistycznych, ponieważ pozwala na tymczasowe przechowywanie danych, manipulowanie nimi oraz łatwe usuwanie ich po zakończeniu pracy.
 
 ## Jak to zrobić
 
-Możemy wykorzystać funkcję `open_temporary_file` z biblioteki standardowej Gleam, aby utworzyć tymczasowy plik. Funkcja ta przyjmuje jako argument nazwę pliku oraz tryb, w jakim ma zostać otwarty. Następnie możemy wykonać operacje na tym pliku, a po zakończeniu działania plik zostanie automatycznie usunięty.
+Aby stworzyć tymczasowy plik w języku programowania Gleam, należy użyć modułu `gleam/file` oraz funkcji `File.temporary`. Poniżej znajduje się przykładowy kod dla systemu UNIX:
 
 ```Gleam
-import standard/file
+use gleam/file
+import gleam/file.TemporaryFile
+import gleam/file.WriteMode
 
-let file = open_temporary_file("temporary.txt", :write)
-file.write("To jest przykładowy tekst")
-file.close()
+result =
+    File.temporary("my_temp_file", extension = "txt", write_mode = WriteMode.ReadWrite) // Tworzy tymczasowy plik o nazwie "my_temp_file.txt"
+    |> TemporaryFile.write("Lorem ipsum") // Zapisuje tekst do pliku
+    |> TemporaryFile.read() // Wczytuje zawartość pliku i zwraca ją jako wynik
+
+// Wynik: Ok("Lorem ipsum") 
 ```
 
-W powyższym przykładzie tworzymy tymczasowy plik o nazwie "temporary.txt" i pozwalamy sobie na jego edycję, wybierając tryb `:write`. Następnie za pomocą funkcji `write` zapisujemy do pliku nasz przykładowy tekst, a na koniec zamykamy plik. Po wykonaniu powyższych operacji plik zostanie automatycznie usunięty.
+## Głębsza analiza
 
-## Pogłębione wyjaśnienia
+Moduł `gleam/file` udostępnia także inne przydatne funkcje związane z tworzeniem tymczasowych plików, takie jak `TemporaryFile.delete()` czy `TemporaryFile.rename()`. Warto również pamiętać, że plik tymczasowy zostanie automatycznie usunięty po zakończeniu działania programu, więc nie musimy martwić się o jego ręczne usuwanie.
 
-Tworząc tymczasowy plik przy użyciu funkcji `open_temporary_file`, możemy wybrać spośród kilku trybów otwarcia. Możemy na przykład tylko odczytywać plik (`:read`) lub tylko zapisywać (`:write`). W przypadku, gdy chcemy mieć możliwość jednoczesnego czytania i zapisywania, możemy wybrać tryb `:read_write`.
+## Zobacz również
 
-Ponadto, funkcja `open_temporary_file` zwraca złożony typ danych `Result`, który może zawierać wartość pliku lub błąd, jeśli utworzenie pliku nie powiodło się. Dzięki temu możemy obsłużyć ewentualne błędy w naszym kodzie.
-
-## Zobacz także
-
-- Dokumentacja biblioteki standardowej Gleam dotycząca funkcji `open_temporary_file`
-- Przykładowy kod korzystający z funkcji `open_temporary_file`
-- Inne przydatne funkcje z biblioteki standardowej Gleam
+- Dokumentacja modułu `gleam/file`: https://gleam.run/modules/gleam_file/
+- Przewodnik po języku Gleam: https://gleam.run/book/
+- Inne artykuły na temat programowania w języku Gleam: https://gleam.run/articles/

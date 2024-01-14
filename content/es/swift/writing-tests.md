@@ -1,45 +1,46 @@
 ---
-title:                "Swift: Escribiendo pruebas"
+title:                "Swift: Creando pruebas"
+simple_title:         "Creando pruebas"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué escribir pruebas en Swift
 
-Escribir pruebas es una parte esencial del proceso de programación que nos permite asegurarnos de que nuestro código funciona correctamente. Al escribir pruebas, podemos identificar y corregir errores antes de que nuestro código sea implementado en un entorno de producción, lo que ahorra tiempo y minimiza el riesgo de fallos en el futuro.
+Escribir pruebas es una parte esencial del desarrollo de cualquier aplicación, y esto también aplica a Swift. Las pruebas nos permiten asegurarnos de que nuestro código funciona correctamente y que cualquier cambio que hagamos no afectará negativamente a la funcionalidad existente. Además, escribir pruebas nos ayuda a encontrar y corregir errores de manera más eficiente, lo que ahorra tiempo y evita problemas en el futuro.
 
-## Cómo hacerlo
+## Cómo escribir pruebas en Swift
 
-Para escribir pruebas en Swift, podemos utilizar el framework de pruebas de Xcode, que nos proporciona una serie de herramientas para escribir y ejecutar pruebas de manera eficiente. Veamos un ejemplo de una prueba de funcionalidad básica de una función de suma en Swift:
+Para escribir pruebas en Swift, podemos utilizar el framework de pruebas integrado en Xcode. Aquí hay un ejemplo sencillo de cómo escribir una prueba para una función que suma dos números:
 
-```Swift
-func sum(_ num1: Int, _ num2: Int) -> Int {
-    return num1 + num2
+```Swift 
+func sumar(_ a: Int, _ b: Int) -> Int {
+  return a + b
 }
 
-func testSum() {
-    let result = sum(2, 3)
-    
-    assert(result == 5, "El resultado debería ser 5")
+// Prueba
+func testSumar() {
+  let resultado = sumar(2, 3)
+  assert(resultado == 5)
 }
-
-testSum()
 ```
 
-En este ejemplo, definimos una función `sum` que toma dos parámetros de tipo `Int` y devuelve la suma de ambos. Luego, en la función `testSum`, llamamos a la función `sum` con los valores 2 y 3 y utilizamos la función `assert` para asegurarnos de que el resultado sea igual a 5. Si no es así, se mostrará un mensaje de error.
+En este ejemplo, utilizamos la función `assert` para verificar que el resultado de nuestra función `sumar` sea igual a 5, que es el resultado esperado de sumar 2 y 3. Si la prueba falla, obtendremos un mensaje de error que nos indicará qué parte de nuestro código necesita ser revisada.
 
-## Profundizando
+Al escribir pruebas, es importante asegurarse de cubrir todos los casos posibles y tener una buena cobertura de código. Podemos utilizar diferentes técnicas como pruebas unitarias, pruebas de integración y pruebas de interfaz de usuario para lograr una buena cobertura.
 
-Además de las pruebas de funcionalidad, también podemos escribir pruebas de rendimiento y pruebas de interfaz de usuario en Swift. Las pruebas de rendimiento nos permiten evaluar la velocidad de nuestro código y detectar posibles cuellos de botella, mientras que las pruebas de interfaz de usuario nos permiten simular interacciones del usuario y validar que nuestra interfaz funcione correctamente.
+## Profundizando en la escritura de pruebas
 
-Para aprender más sobre cómo escribir y ejecutar pruebas en Swift, puedes consultar la documentación oficial de Apple y otros recursos en línea, como los enlaces que se muestran a continuación.
+Escribir pruebas no solo se trata de verificar el resultado de una función o un método, sino también de anticipar y prevenir posibles problemas. A veces, escribir pruebas nos obliga a analizar y entender mejor nuestro propio código y esto a su vez nos ayuda a mejorarlo. Además, el uso de pruebas en nuestro flujo de trabajo nos permite detectar fácilmente cualquier efecto secundario no deseado que pueda surgir al modificar nuestro código.
 
-## Ver también
+Otra ventaja de escribir pruebas es que nos permite documentar nuestro código. Al escribir pruebas, estamos describiendo cómo se supone que debe funcionar nuestro código, lo cual es muy útil para otros programadores que quieran entender y trabajar con nuestro código en el futuro.
 
-- [Documentación de pruebas en Xcode](https://developer.apple.com/documentation/xctest)
-- [Cómo escribir pruebas unitarias en Swift](https://www.hackingwithswift.com/articles/147/super-powered-unit-testing-in-swift)
+# Ver también
 
-¡Esperamos que este artículo te haya ayudado a comprender la importancia de escribir pruebas en Swift y cómo hacerlo de manera eficiente! Recuerda que escribir pruebas adecuadas puede ahorrarte tiempo y dolores de cabeza en el futuro. ¡Feliz codificación!
+- [Documentación de Xcode en español](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/testing_with_xcode/es-lproj/00-Introduction/Introduction.html)
+- [Tutorial de escritura de pruebas en Swift](https://www.raywenderlich.com/960290-getting-started-with-ios-unit-testing-in-swift)
+- [Guía de mejores prácticas para escribir pruebas en Swift](https://medium.com/cr8resume/take-a-step-towards-swift-ios-test-driven-development-139a7c994873)

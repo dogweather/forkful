@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Att skriva en textfil"
+simple_title:         "Att skriva en textfil"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/writing-a-text-file.md"
 ---
 
@@ -9,38 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva en textfil är en grundläggande färdighet som alla som programmerar behöver för att spara och strukturera data. Genom att använda Haskell kan du enkelt skapa textfiler som är snabba och effektiva att läsa och bearbeta.
+Att skriva en textfil är en viktig aspekt av programmering, oavsett vilket programmeringsspråk man använder sig av. Genom att lära sig hur man skriver en textfil i Haskell kan man till exempel läsa och skriva data från en fil eller skapa en loggfil för ett program. Det finns många användningsområden för att kunna hantera textfiler, och det är därför en användbar färdighet att ha inom programmering.
 
-## Hur man gör det
+## Så här gör du
 
-För att skriva en textfil i Haskell behöver vi först importera modulen "System.IO" som ger oss funktioner för att öppna, läsa och skriva till filer. Vi behöver också en variabel som håller namnet på vår fil, t.ex. "minFil.txt".
-
-```Haskell
-import System.IO
-
--- öppna filen i läge för att skriva
-main = do
-    fil <- openFile "minFil.txt" WriteMode
-```
-
-Nu kan vi använda funktionen "hPutStrLn" för att skriva en sträng till filen och funktionen "hClose" för att stänga filen.
+För att kunna skriva en textfil i Haskell behöver du använda dig av funktionen `writeFile`. Denna funktion tar två argument: sökvägen till filen du vill skriva till och innehållet som ska skrivas. Ett enkelt exempel på hur man kan använda denna funktion är:
 
 ```Haskell
--- skriv "Hej världen" till filen
-hPutStrLn fil "Hej världen"
-
--- stäng filen
-hClose fil
+writeFile "hello.txt" "Hej världen!"
 ```
+I detta exempel skriver vi en textfil med namnet "hello.txt" och innehållet "Hej världen!". Om du nu öppnar filen i en texteditor, kommer du se att den innehåller just den texten.
+
+Man kan även använda sig av `appendFile` funktionen för att lägga till text till en fil som redan finns. Detta är användbart om du till exempel vill lägga till loggmeddelanden på slutet av en fil istället för att skriva om hela filen varje gång.
 
 ## Djupdykning
 
-När vi skriver till en textfil i Haskell använder vi "String" som datatyp. Detta innebär att vi kan skriva ut alla typer av text, inklusive specialtecken, direkt till filen. Om vi vill skriva ut andra datatyper som t.ex. en Int eller Bool behöver vi först konvertera dem till en String.
+När man skriver en textfil i Haskell kan man oftast inte använda sig av åäö i filnamnen. Det finns dock en lösning på detta genom att använda funktionen `encodeString` från paketet `System.FilePath`. Denna funktion ersätter åäö med motsvarande engelska tecken, vilket gör att filnamnet kan användas utan problem.
 
-Vi kan också använda funktionen "withFile" istället för "openFile" för att hantera det steg där vi öppnar och stänger filen. Detta hjälper till att undvika eventuella problem med stängda filer.
+För att kunna läsa från en textfil kan man använda sig av funktionen `readFile`, som tar filens sökväg som argument och returnerar en sträng med filens innehåll. Detta är användbart om du vill läsa data från en textfil till ditt program.
 
-## Se också
+## Se även
 
-- [Haskell.org](https://www.haskell.org/)
-- [Haskell för nybörjare (Svenska)](https://medium.com/swiftly-swift/haskell-f%C3%B6r-nyb%C3%B6rjare-en-introduktion-till-funktionell-programmering-och-haskell-b04e9d613fdf)
-- [Haskell Wikibooks](https://en.wikibooks.org/wiki/Haskell)
+- [Haskell Dokumentation](https://www.haskell.org/documentation/)
+- [System.FilePath modulen](https://hackage.haskell.org/package/filepath-1.4.2.1/docs/System-FilePath.html)
+- [Läs mer om textfiler i Haskell](https://wiki.haskell.org/File_handling)

@@ -1,46 +1,64 @@
 ---
-title:                "TypeScript: Utskrift av felsökningsspårning"
+title:                "TypeScript: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "TypeScript"
-category:             "Testing and Debugging"
+category:             "TypeScript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att utskriva debug-utdata är ett viktigt verktyg för att felsöka och förstå vad som händer i din TypeScript-kod. Det kan hjälpa dig att identifiera och åtgärda fel eller felaktiga beteenden, vilket kan spara dig mycket tid och frustration i slutändan.
+
+Det är en vanlig praxis för utvecklare att skriva ut debug-utdata i sina kod för att hjälpa till att felsöka och optimera programmet. Detta är särskilt användbart när man arbetar med komplexa system eller löser problem som kräver en djupare förståelse av koden. I denna bloggpost kommer vi att titta på varför utskrift av debug-utdata är en ovärderlig teknik i TypeScript-programmering.
 
 ## Hur man gör det
-Det finns flera olika sätt att skriva ut debug-utdata i din TypeScript-kod. Här är några exempel att prova på:
+
+För att skriva ut debug-utdata i TypeScript kan du använda funktionen `console.log()` eller `console.debug()`. Här är ett exempel på hur du kan använda `console.log()`:
 
 ```TypeScript
-// Skriva ut en sträng
-const namn: string = "Anna";
-console.log(`Hej ${namn}!`); // Output: Hej Anna!
-
-// Skriva ut en array
-const nummer: number[] = [1, 2, 3];
-console.log(`Det här är en array av nummer: ${nummer}`); // Output: Det här är en array av nummer: [1, 2, 3]
-
-// Skriva ut ett objekt
-const person = {
-  namn: "Johan",
-  ålder: 25,
-  yrke: "Utvecklare"
-};
-console.log(`Här är lite information om ${person.namn}:`, person); // Output: Här är lite information om Johan: { namn: "Johan", ålder: 25, yrke: "Utvecklare" }
+let num1: number = 10;
+let num2: number = 5;
+console.log("Num1: " + num1);
+console.log("Num2: " + num2);
+console.log("Summan av num1 och num2 är: " + (num1 + num2));
 ```
 
-Detta är bara några enkla exempel, men möjligheterna är oändliga. Du kan använda `console.log()` för att skriva ut nästan vad som helst - variabler, funktioner, lokala och globala värden, och så vidare.
+Output:
+
+```
+Num1: 10 
+Num2: 5
+Summan av num1 och num2 är: 15
+```
+
+Du kan också använda placeholders för att göra din kod mer dynamisk. Här är ett exempel på hur du kan använda placeholders:
+
+```TypeScript
+let name: string = "Maria";
+let age: number = 25;
+console.debug("Hej, mitt namn är %s och jag är %d år gammal.", name, age);
+```
+
+Output:
+
+```
+Hej, mitt namn är Maria och jag är 25 år gammal.
+```
 
 ## Djupdykning
-Nu när du vet hur man skriver ut debug-utdata, låt oss ta en djupare titt på varför det är så användbart. Ofta när du skriver kod möter du problem eller frågor som du behöver lösa. Genom att skriva ut debug-utdata i din kod, kan du se exakt vad som händer vid en viss punkt. Detta gör det lättare att förstå och identifiera problemet, vilket i sin tur hjälper dig att lösa det snabbare.
 
-Att skriva ut debug-utdata är också en bra vana att utveckla som utvecklare. Genom att se vad din kod gör i varje steg, kan du lära dig mer om språket och bättra på din egen kodningsteknik.
+Att skriva ut debug-utdata hjälper dig att spåra vad som händer i ditt program och kontrollera värdet på olika variabler och uttryck. Detta är särskilt användbart när du letar efter buggar eller optimerar din kod. Genom att skriva ut specifika värden kan du undersöka vilka delar av koden som körs och jämföra dem med det förväntade beteendet.
 
-## Se även
-Här är några länkar för att hjälpa dig att lära dig mer om debugging i TypeScript:
+En annan fördel med att skriva ut debug-utdata är att det kan hjälpa dig att förstå hur din kod fungerar och vilka metoder som är mest effektiva. Genom att se vad som händer på olika punkter i din kod kan du identifiera flaskhalsar och förbättra prestandan.
 
-- [TypeScript felsökning och loggning](https://www.typescriptlang.org/docs/handbook/debugging.html)
-- [De 5 vanligaste felsökningsteknikerna i TypeScript](https://blog.logrocket.com/what-are-the-5-most-common-typescript-debugging-techniques/)
-- [Felsökningsverktyg för TypeScript](https://blog.angularindepth.com/typescript-debugging-for-newbies-9f83e4285fa8)
+En viktig punkt att komma ihåg när du skriver ut debug-utdata är att se till att ta bort eller kommentera ut alla utskrifter före produktion. Annars kan det påverka prestandan och orsaka onödig overhead i din kod.
+
+## Se också
+
+Här är några länkar för att lära dig mer om att skriva ut debug-utdata i TypeScript:
+
+- [https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html#printing-to-the-console](https://www.typescriptlang.org/docs/handbook/intro-to-js-ts.html#printing-to-the-console)
+- [https://stackify.com/typescript-debugging-tips/](https://stackify.com/typescript-debugging-tips/)
+- [https://codeburst.io/typescript-debugging-with-type-assertions-aa1c3751e959](https://codeburst.io/typescript-debugging-with-type-assertions-aa1c3751e959)

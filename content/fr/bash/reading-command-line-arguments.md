@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Lecture des arguments de ligne de commande"
+title:                "Bash: Lecture des arguments en ligne de commande"
+simple_title:         "Lecture des arguments en ligne de commande"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/reading-command-line-arguments.md"
 ---
 
@@ -9,59 +11,78 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Si vous êtes un programmeur Bash ou que vous cherchez simplement à améliorer vos compétences en programmation, la lecture des arguments de ligne de commande peut être une compétence utile à apprendre. Cela peut vous permettre de créer des scripts plus dynamiques et personnalisables, ainsi que de mieux comprendre comment votre programme interagit avec les entrées de l'utilisateur.
+Si vous êtes nouveau dans le monde de la programmation Bash, vous vous demandez peut-être pourquoi vous devriez vous intéresser à la lecture des arguments de la ligne de commande. En fait, la lecture des arguments de la ligne de commande peut être extrêmement utile pour automatiser des tâches récurrentes ou pour rendre votre script plus dynamique et flexible.
 
 ## Comment faire
 
-Pour lire les arguments de ligne de commande en Bash, vous devez utiliser la variable spéciale `$@` qui contient tous les arguments passés au script. Vous pouvez également utiliser les variables numérotées `$1, $2, $3`, etc. pour accéder à un argument spécifique.
-
-Voici un exemple simple de code qui affiche tous les arguments passés au script :
+Pour lire les arguments de la ligne de commande en Bash, vous devez utiliser la variable spéciale "$@", qui stocke tous les arguments passés au script lors de son exécution. Voici un exemple de code Bash pour lire ces arguments :
 
 ```Bash
 #!/bin/bash
-echo "Les arguments passés sont : $@"
+
+echo "Le premier agument est : $1"
+echo "Le deuxième argument est : $2"
 ```
 
-Lorsque vous exécutez ce script avec des arguments séparés par des espaces, comme `./script.sh argument1 argument2`, la sortie sera :
+Lors de l'exécution de ce script avec les arguments "Bonjour" et "monde", le résultat sera :
 
 ```
-Les arguments passés sont : argument1 argument2
+$ ./script.sh Bonjour monde
+Le premier agument est : Bonjour
+Le deuxième argument est : monde
 ```
 
-Vous pouvez également utiliser la commande `shift` pour parcourir tous les arguments passés et les utiliser dans des boucles ou des conditions.
+Vous pouvez également utiliser la boucle "for" pour parcourir tous les arguments passés. Voici un exemple :
+
+```Bash
+#!/bin/bash
+
+for arg in "$@"
+do
+    echo "L'argument est : $arg"
+done
+```
+
+Si vous exécutez ce script avec les arguments "Bonjour" "monde" "!" le résultat sera :
+
+```
+$ ./script.sh Bonjour monde !
+L'argument est : Bonjour
+L'argument est : monde
+L'argument est : !
+```
 
 ## Plongée en profondeur
 
-L'une des fonctionnalités les plus utiles de la lecture des arguments de ligne de commande est la possibilité de les valider et de les utiliser dans des conditions. Par exemple, vous pouvez vérifier si un certain argument a été passé et, si c'est le cas, effectuer une tâche spécifique.
-
-Voici un exemple de code qui utilise un argument pour vérifier si un fichier existe et l'affiche si c'est le cas :
+Il est également possible de définir des options pour vos arguments de ligne de commande en utilisant la commande "getopt". Cela vous permet de rendre votre script plus convivial en permettant à l'utilisateur de spécifier des options pour personnaliser l'exécution du script. Voici un exemple de code Bash utilisant "getopt" :
 
 ```Bash
 #!/bin/bash
-if [ -f $1 ]
-then
-  echo "Le fichier $1 existe."
-else
-  echo "Le fichier $1 n'existe pas."
-fi
+
+# Définir les options disponibles
+OPTIONS=abc
+
+# Lire les options passées
+OPTIND=1
+while getopts $OPTIONS opt
+do
+    case $opt in
+        a) echo "Option a sélectionnée" ;;
+        b) echo "Option b sélectionnée" ;;
+        c) echo "Option c sélectionnée" ;;
+    esac
+done
 ```
 
-Si vous exécutez ce script avec un argument correspondant à un fichier existant, comme `./script.sh fichier.txt`, la sortie sera :
+En exécutant ce script avec les options "a" "c", le résultat sera :
 
 ```
-Le fichier fichier.txt existe.
+$ ./script.sh -ac
+Option a sélectionnée
+Option c sélectionnée
 ```
-
-Sinon, si l'argument ne correspond pas à un fichier existant, la sortie sera :
-
-```
-Le fichier fichier.txt n'existe pas.
-```
-
-En utilisant des arguments de ligne de commande, vous pouvez également rendre votre script plus interactif en demandant à l'utilisateur de saisir certaines valeurs au lieu de les définir directement dans le code.
 
 ## Voir aussi
-
-- [La documentation Bash officielle](https://www.gnu.org/software/bash/manual/bash.html)
-- [Un tutoriel interactif pour apprendre Bash](https://www.learnshell.org/)
-- [Un guide détaillé sur la lecture des arguments de ligne de commande en Bash](https://linuxize.com/post/bash-script-get-arguments/)
+- [Documentation Bash - Variables spéciales de la ligne de commande](https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html)
+- [Guide du débutant Bash](https://www.tecmint.com/shell-scripting-hello-world-2/)
+- [Documentation Bash - Utilisation de getopt](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html#Bourne-Shell-Builtins)

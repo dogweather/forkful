@@ -1,36 +1,40 @@
 ---
-title:                "Elixir: Convertendo uma string para letras minúsculas"
+title:                "Elixir: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-O Elixir é uma linguagem de programação funcional que está ganhando cada vez mais popularidade entre os desenvolvedores. Uma das tarefas comuns na programação é converter uma string para letras minúsculas. Isso pode ser útil ao manipular dados de entrada ou ao validar informações do usuário. Neste post, vamos explorar como fazer isso em Elixir e mergulhar mais fundo nesse tópico.
+## Por que converter uma string para minúsculas?
 
-## Como fazer
-A conversão de uma string para letras minúsculas em Elixir é fácil e direta usando a função `String.downcase/1`. Essa função recebe uma string como parâmetro e retorna uma string com todas as letras em minúsculo. Vamos ver alguns exemplos:
+A conversão de strings para minúsculas é essencial para manipular e comparar strings em Elixir. Ao converter uma string para minúsculas, você pode garantir que a comparação entre duas strings será precisa, independentemente do uso de letras maiúsculas e minúsculas. Isso é especialmente importante quando se trabalha com entradas de usuários, que podem não seguir um padrão específico de capitalização.
 
-```Elixir
-# Exemplo 1
-String.downcase("OLÁ MUNDO")
-# => "olá mundo"
+## Como fazer isso:
 
-# Exemplo 2
-String.downcase("Elixir é uma linguagem incrível!")
-# => "elixir é uma linguagem incrível!"
+Para converter uma string para minúsculas em Elixir, você pode usar a função `String.downcase/1`. Veja um exemplo abaixo:
+
+```
+Elixir
+iex> String.downcase("ELIXIR")
+"elixir"
+
+iex> String.downcase("Elixir 123")
+"elixir 123"
 ``` 
 
-Como você pode ver, a função `String.downcase/1` transforma todas as letras maiúsculas em minúsculas, independentemente da posição ou idioma.
+Como você pode ver, todas as letras maiúsculas foram convertidas para minúsculas. Além disso, caracteres especiais e números não são afetados pela conversão.
 
-## Mergulho profundo
-A função `String.downcase/1` funciona usando o módulo `:unicode`, que lida com strings unicode em Elixir. Isso significa que a conversão para minúsculas é feita de acordo com as regras da linguagem do sistema operacional em que o código está sendo executado.
+## Profundidade:
 
-Além disso, a função `String.downcase/1` também lida com casos especiais, como a conversão das letras 'İ' e 'I' na turquia, que não seguem o padrão inglês. Isso garante que sua aplicação seja capaz de lidar com diferentes idiomas e caracteres de forma correta.
+Ao converter uma string para minúsculas, é importante entender como isso acontece por trás dos bastidores. Em Elixir, as strings são representadas como listas de caracteres. Ao usar a função `String.downcase/1`, o Elixir itera sobre cada caractere na lista e, quando encontra uma letra maiúscula, usa a função `String.downcase/1` para convertê-la para minúscula. Isso é feito usando o código Unicode de cada caractere, garantindo que a conversão seja precisa e funcione para todos os idiomas.
 
-## Veja também
-- [Documentação da função String.downcase/1](https://hexdocs.pm/elixir/String.html#downcase/1)
-- [Elixir School - Strings](https://elixirschool.com/pt/lessons/basics/binary-and-strings/)
-- [Blog - A modernização da linguagem de programação Elixir](https://blog.saya.academy/a-modernizacao-da-linguagem-de-programacao-elixir/)
+Para obter mais informações sobre strings e como elas são representadas em Elixir, você pode consultar a documentação oficial ou o livro "Programming Elixir", de Dave Thomas.
+
+## Veja também:
+
+- [Documentação oficial do Elixir sobre strings](https://hexdocs.pm/elixir/String.html)
+- [Livro "Programming Elixir" de Dave Thomas](https://pragprog.com/book/elixir/programming-elixir)

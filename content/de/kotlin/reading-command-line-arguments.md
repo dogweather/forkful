@@ -1,7 +1,9 @@
 ---
 title:                "Kotlin: Lesen von Befehlszeilenargumenten"
+simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/kotlin/reading-command-line-arguments.md"
 ---
 
@@ -9,40 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Verwendung von Befehlszeilenargumenten in der Programmierung ist eine effektive Möglichkeit, um die Interaktivität und Flexibilität von Programmen zu erhöhen. Durch das Lesen von Befehlszeilenargumenten kann ein Benutzer verschiedene Varianten eines Programms ausführen, ohne den Programmcode zu ändern. Lesen von Befehlszeilenargumenten ist daher eine wichtige Fähigkeit für jeden Programmierer.
+Das Verarbeiten von Argumenten über die Befehlszeile ist ein wichtiger Teil der Programmierung in jeder Sprache, einschließlich Kotlin. Es ermöglicht es dem Benutzer, das Verhalten des Programms anzupassen und macht es flexibler.
 
-## Wie geht's
+## Wie Geht's
 
-Das Lesen von Befehlszeilenargumenten in Kotlin ist schnell und einfach. Im Folgenden ist ein Beispielcode, der das Konzept verdeutlicht:
+Um Argumente aus der Befehlszeile in Kotlin zu lesen, verwenden wir die `args`-Variable im `main`-Funktionsblock. Die Argumente werden als Array von Strings in der richtigen Reihenfolge übergeben.
 
 ```Kotlin
 fun main(args: Array<String>) {
-    val name = args[0] // erster Parameter wird in 'name' gespeichert
-    val age = args[1].toInt() // zweiter Parameter als Integer gespeichert
-
-    println("Hallo $name, du bist $age Jahre alt.")
+  // Code zum Lesen der Argumente
+  for (arg in args) {
+    println(arg)
+  }
 }
 ```
-Angenommen, der Benutzer gibt beim Ausführen des Programms folgende Befehlszeilenargumente ein:
 
-```bash
-kotlin Meike 24
+Der Codeblock liest alle Argumente und gibt sie einzeln aus. Wenn wir also `kotlin main.kt argument1 argument2` in der Befehlszeile ausführen, wird `argument1` und `argument2` ausgegeben.
+
+## Tief eintauchen
+
+Wir können auch prüfen, ob die Argumente bestimmte Bedingungen erfüllen oder spezielle Aktionen ausführen sollen. Beispielsweise können wir mithilfe von `when`-Statements entscheiden, was mit den Argumenten geschehen soll.
+
+```Kotlin
+fun main(args: Array<String>) {
+  when (args[0]) {
+    "uhrzeit" -> println("Es ist ${Date()}")
+    "name" -> println("Hallo, ${args[1]}!")
+    "quadrat" -> println("Das Quadrat von ${args[1]} ist ${args[1].toInt()*args[1].toInt()}")
+    else -> println("Das Argument ${args[0]} ist ungültig.")
+  }
+}
 ```
 
-Die Ausgabe wäre:
+Wenn wir nun beispielsweise `kotlin main.kt uhrzeit` ausführen, wird die aktuelle Uhrzeit ausgegeben. Oder wenn wir `kotlin main.kt name Max` ausführen, wird uns mit "Hallo, Max!" geantwortet.
 
-```
-Hallo Meike, du bist 24 Jahre alt.
-```
+## Siehe Auch
 
-Die Befehlszeilenargumente werden in einem String-Array `args` gespeichert. Wir können dann auf die einzelnen Argumente zugreifen, indem wir den Index des Arrays angeben. Beachten Sie auch, dass wir den String-Parameter in einen Integer umwandeln, indem wir die `toInt()`-Funktion verwenden.
-
-## Tiefes Eintauchen
-
-Es gibt noch viele andere Möglichkeiten, Befehlszeilenargumente in Kotlin zu lesen und zu verarbeiten. Zum Beispiel können wir überprüfen, ob der Benutzer überhaupt Argumente eingegeben hat, oder wir können benannte Argumente verwenden, um die Eingabe noch flexibler zu gestalten. Wenn Sie tiefer eintauchen möchten, empfehle ich die offizielle Dokumentation von Kotlin zu diesem Thema zu lesen.
-
-## Siehe auch
-
-- [Kotlin-Dokumentation: Befehlszeilenargumente](https://kotlinlang.org/docs/reference/command-line.html)
-- [Tutorial: Befehlszeilenargumente in Kotlin](https://www.tutorialspoint.com/kotlin/kotlin_command_line_arguments.htm)
-- [Lesen von Befehlszeilenargumenten: Ein praktisches Beispiel in Kotlin](https://medium.com/factory-mind/command-line-arguments-in-kotlin-b478abac56d3)
+- Kotlin-Referenz für `args`: https://kotlinlang.org/docs/tutorials/command-line.html#reading-command-line-arguments

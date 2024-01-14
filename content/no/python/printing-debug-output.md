@@ -1,7 +1,9 @@
 ---
 title:                "Python: Utskrift av feilsøkingsutdata"
+simple_title:         "Utskrift av feilsøkingsutdata"
 programming_language: "Python"
-category:             "Testing and Debugging"
+category:             "Python"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/python/printing-debug-output.md"
 ---
 
@@ -9,59 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive et Python-program kan noen ganger føles som å navigere i en mørk labyrint. Du prøver å finne ut hvorfor koden ikke fungerer som den skal, og hvor nøyaktig feilen skjer. En måte å lettere guide seg gjennom labyrinten er ved å bruke print-setninger for å få output av verdier og sjekke om de er som forventet. Dette kan spare deg for mye tid og frustrasjon når du feilsøker koden din.
+Å printe ut debug-output kan være en nyttig måte å feilsøke og forstå koden din på. Det kan hjelpe deg med å identifisere og løse problemer i programmet ditt, og bidra til å forbedre din generelle programmeringskunnskap.
 
 ## Hvordan
 
-For å printe ut debug output i Python, bruker du funksjonen `print()`. Du kan skrive ut verdier eller variabler ved å plassere dem inne i parentesene til `print()`.
+For å skrive ut debug-output i Python, kan du bruke funksjonen `print()`. Denne funksjonen lar deg skrive ut verdier av variabler eller uttrykk rett i konsollen. La oss se på et eksempel:
 
-```
-# Eksempel på bruk av print() for å skrive ut en streng:
-print("Hei, verden!")
-# Output: Hei, verden!
-
-# Eksempel på bruk av print() for å skrive ut en variabel:
+```Python
 navn = "Marie"
-print(f"Hei, {navn}!")
-# Output: Hei, Marie!
+print("Hei, mitt navn er", navn)
 ```
 
-Hvis du vil printe ut flere verdier eller variabler på en linje, kan du skille dem med komma.
+Dette vil resultere i følgende utskrift til konsollen:
 
 ```
-# Eksempel på bruk av print() for å printe ut flere verdier på en linje:
-print("Alder:", 25, "år")
-# Output: Alder: 25 år
-
-# Eksempel på bruk av print() for å printe ut flere variabler og en streng på en linje:
-alder = 25
-navn = "Marie"
-print(navn, "er", alder, "år gammel")
-# Output: Marie er 25 år gammel
+Hei, mitt navn er Marie
 ```
+
+Du kan også legge til flere variabler eller tekster i en `print()`-funksjon ved å bruke komma mellom dem. Dette kan være nyttig når du ønsker å følge med på verdien av flere variabler samtidig.
+
+Debug-output kan også være nyttig når du jobber med løkker eller vil identifisere spesifikke deler av koden din. La oss se på et eksempel med en `while`-løkke:
+
+```Python
+tall = 1
+while tall < 10:
+    print("Tall:", tall)
+    tall += 1
+```
+
+Dette vil skrive ut tallene fra 1 til 9 i konsollen.
 
 ## Dypdykk
 
-Det finnes også andre måter å bruke `print()` for å få mer nøyaktig debug output. For eksempel kan du bruke en såkalt separator for å skille verdiene du printer ut. Standard separator er mellomrom, men du kan endre denne ved å bruke `sep=`:
+Å printe debug-output kan også være nyttig når du ønsker å dele opp koden din og få en bedre forståelse for hvordan den fungerer. Ved å printe ut verdier i forskjellige deler av koden, kan du følge med på hvordan verdiene endrer seg og hvorfor.
 
-```
-# Eksempel på bruk av sep= for å endre separator:
-print("Mennekser", "Dyr", "Fugler", sep=" | ")
-# Output: Mennesker | Dyr | Fugler
-```
-
-Du kan også bruke `end=` for å endre hva som skrives ut etter at du har brukt `print()`. Standard end er en linjeskift, men du kan endre denne ved å bruke `end=`:
-
-```
-# Eksempel på bruk av end= for å endre end:
-dyr = ["hund", "katt", "kanin"]
-for dyr in dyr:
-    print(dyr, end=" -> ")
-# Output: hund -> katt -> kanin ->
-```
+En annen måte å bruke debug-output på, er ved å bruke `assert`-setninger. Disse kan hjelpe deg med å teste om forventede verdier stemmer med faktiske verdier i koden din.
 
 ## Se også
 
-- [Python debugging tutorial](https://realpython.com/python-debugging-pdb/)
-- [Effektiv debugging i Python](https://www.datacamp.com/community/tutorials/python-debugging)
-- [Debugging med print statements](https://medium.com/@pgburgess/how-to-debug-python-code-using-pretty-print-41f23ffb66d7)
+- [Python Tutorial: Basic Debugging Techniques](https://realpython.com/python-debugging-pdb/)
+- [Python Debugging Techniques: Working with Assertions](https://www.youtube.com/watch?v=ZcE4brP6_eI)
+- [Debugging in Python: A Simplified Guide](https://stackify.com/python-debugging-tips/)
+- [Debugging with print statements in Python](https://www.datacamp.com/community/tutorials/debugging-python-print-statements)

@@ -1,44 +1,49 @@
 ---
-title:                "Rust: Tekstin etsiminen ja korvaaminen"
+title:                "Rust: Tekstin etsiminen ja vaihtaminen"
+simple_title:         "Tekstin etsiminen ja vaihtaminen"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi käyttää Rustia tekstien etsimiseen ja korvaamiseen?
+## Miksi
 
-Tekstien etsiminen ja korvaaminen on yleinen tehtävä monille ohjelmoijille. Se voi olla osa koodin refaktorointia tai yksinkertaisesti tekstin siistimistä. Rust on tehokas ja moderni ohjelmointikieli, joka tarjoaa erinomaisen työkalun tekstien etsimiseen ja korvaamiseen.
+Niin kuin kaikissa ohjelmointikielissä, myös Rustin käyttäjien täytyy joskus suorittaa suuria muokkauksia tekstiin. Halutessasi esimerkiksi vaihtaa samalla kertaa kaikki numeraaliset merkit tekstistä, voisi olla hyödyllistä käyttää tekstin etsintä ja korvaaminen -toimintoa. Tämä auttaa säästämään aikaa ja vähentää mahdollisten virheiden määrää, mikä ilmenee käsin koodin muokkaamisesta.
 
-## Miten: Näin käytät Rustia tekstien etsimiseen ja korvaamiseen
+## Miten
 
-Rustilla on kätevä "replace" -metodi, joka voidaan liittää merkkijonomuuttujaan. Tämän metodin avulla voit korvata tietyt osat merkkijonosta toisilla merkkijonoilla. Alla on esimerkki käytöstä:
+Tekstin etsintä ja korvaaminen Rustissa voidaan suorittaa käyttämällä match-avainsanoja ja regular expression -koodia kirjastossa "regex". Alla on esimerkki koodista, joka etsii tekstistä kaikki numerot ja korvaa ne tekstillä "Numero":
 
 ```Rust
+use regex::Regex;
+
 fn main() {
-  let teksti = "Hei, olen Rust!";
+    let teksti = "Tämä on teksti, jossa on numeroita 123 ja 456.";
 
-  // Vaihda "Rust" tekstinä "mahtava Rust"
-  let uusi_teksti = teksti.replace("Rust", "mahtava Rust");
+    let re = Regex::new(r"\d+").unwrap();
+    let korvattu_teksti = re.replace_all(&teksti, "Numero");
 
-  println!("{}", uusi_teksti);
-
-  // Tulostaa: Hei, olen mahtava Rust!
+    println!("{}", korvattu_teksti);
 }
 ```
 
-Käyttämällä "replace" -metodia voit helposti korvata tekstissä esiintyvät osat haluamillasi merkkijonoilla.
+Tämä tulostaisi:
 
-## Syväsukellus: Lisätietoja tekstien etsimisestä ja korvaamisesta Rustilla
+```
+Tämä on teksti, jossa on numeroita Numero ja Numero.
+```
 
-Rustin "replace" -metodi on erittäin tehokas ja suorituskykyinen, ja se pystyy käsittelemään suuria määriä tekstiä nopeasti. Se myös tarjoaa mahdollisuuden käyttää erilaisia säännöllisiä lausekkeita tekstien korvaamisessa, mikä tekee siitä erittäin joustavan vaihtoehdon erilaisiin tarpeisiin.
+## Syväsukellus
 
-Kuitenkin, jos tarvitset vielä enemmän toiminnallisuutta tekstien etsimiseen ja korvaamiseen, voit tutustua Rustin "regex" -kirjastoon. Se tarjoaa kattavan työkalun regex-käsittelyyn ja on integroitu helposti Rustiin.
+Regular expression eli säännöllinen lauseke on sarja merkkejä, jotka auttavat tunnistamaan ja etsimään tiettyjä kuvioita tekstistä. Rustin "regex"-kirjastossa on opas säännöllisiin lausekkeisiin, joka auttaa ymmärtämään lisää tästä aiheesta.
+
+On myös mahdollista suorittaa monimutkaisempia etsintöjä ja korvaamisia, kuten eri merkkiketjujen yhdistelmiä tai sanojen vaihtamista. Tärkeintä on ymmärtää säännöllisten lausekkeiden ja match-avainsanojen perustoiminnallisuudet, ja sen jälkeen voi kokeilla erilaisia tapoja löytää ja korvata tekstiä.
 
 ## Katso myös
-- [Rustin virallinen verkkosivu](https://www.rust-lang.org/)
-- [Rustin dokumentaatio tekstien etsimisestä ja korvaamisesta](https://doc.rust-lang.org/stable/std/string/struct.String.html#method.replace)
-- [Regex-kirjaston dokumentaatio](https://docs.rs/regex/1.3.9/regex/)
 
-Kiitos lukemisesta ja onnea tekstien etsimiseen ja korvaamiseen Rustilla!
+- Rustin virallinen oppikirja: [https://rust-lang.github.io/book/](https://rust-lang.github.io/book/)
+- "regex"-kirjaston dokumentaatio: [https://docs.rs/regex/1.4.3/regex/](https://docs.rs/regex/1.4.3/regex/)
+- Säännölliset lausekkeet: [https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)

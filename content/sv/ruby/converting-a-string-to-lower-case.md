@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Konvertera en sträng till gemener"
+title:                "Ruby: Omvandling av en sträng till gemener"
+simple_title:         "Omvandling av en sträng till gemener"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,28 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att konvertera en sträng till små bokstäver kan vara användbart när du behöver jämföra strängar utan att oroa dig för stora och små bokstäver. Det kan också bidra till enhetlighet och läsbarhet i din kod. 
+Det finns många olika situationer där det kan vara användbart att konvertera en sträng till gemener, eller lower case som det brukar kallas på engelska. Till exempel när man hanterar användarinput eller när man jämför strängar för att undvika förvirring mellan stora och små bokstäver.
 
-## Hur man gör
+## Så här gör du
 
-För att konvertera en sträng till små bokstäver i Ruby, använd metoden `downcase`. Till exempel:
+För att konvertera en sträng till lower case i Ruby kan man använda sig av metoden `downcase` som finns tillgänglig på alla strängar i språket. Här är ett enkelt exempel:
 
 ```Ruby
-str = "Hej, DET HÄR ÄR EN STRÄNG"
-puts str.downcase
+name = "Lisa"
+puts name.downcase
 ```
 
-Den här koden kommer att producera outputen "hej, det här är en sträng". Som du kan se, har alla bokstäver konverterats till små bokstäver. 
+Detta skulle resultera i att strängen "Lisa" blir konverterad till "lisa" när den skrivs ut. Detta är bara ett enkelt exempel, men det finns många fler användningsområden för denna metod och den är enkel att använda.
 
-## Djupdykning
+## Deep Dive
 
-När du använder `downcase`-metoden för en sträng, kommer alla bokstäver A-Z att konverteras till a-z (detta inkluderar även speciella tecken som Å, Ä och Ö i den svenska alfabetet). Siffror, symboler och mellanslag påverkas inte och kommer fortfarande att vara oförändrade i outputen.
+När man konverterar en sträng till lower case i Ruby så ändras inte den ursprungliga strängen, utan det returneras istället en ny sträng med den konverterade versionen. Detta beror på att strängar är en immutable, eller oföränderlig, datastruktur i Ruby.
 
-Något att tänka på är att metoden `downcase` inte kommer att ändra den ursprungliga strängen, utan returnerar en ny sträng med de små bokstäverna. Om du vill spara den nya strängen måste du därför tilldela den till en variabel, som i exemplet ovan.
+Om man vill ignorera eventuella icke-latiniska tecken på samma sätt som `downcase` gör, så kan man istället använda sig av metoden `unicode_normalize` tillsammans med `downcase`. Detta kan vara användbart om man hanterar text på flera olika språk med olika alfabet.
 
-## Se också
+## Se även
 
-För mer information om strängbehandling i Ruby, se följande länkar:
-
-- [Ruby - Strings](https://www.rubyguides.com/ruby-tutorial/ruby-strings/)
-- [The Ruby String Class](https://www.rubyguides.com/2019/03/ruby-string-class/)
+- [Ruby Strings](https://ruby-doc.org/core-2.7.1/String.html)
+- [List of Unicode Normalization Forms](https://unicode.org/reports/tr15/)

@@ -1,7 +1,9 @@
 ---
 title:                "Gleam: המרת תאריך למחרוזת"
+simple_title:         "המרת תאריך למחרוזת"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/gleam/converting-a-date-into-a-string.md"
 ---
 
@@ -9,36 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-תרצה להמיר תאריך למחרוזת בשפת גלים? הנה מספר סיבות לכך:
-
-- בכדי להציג את התאריך בפורמט שמתאים לפרויקט שלך.
-- על מנת לשמור את התאריך בצורה נוחה לעיבוד נוסף.
+למה אנשים מתעסקים במרחב תאריך וממירים אותו למחרוזת בשפת גלים?
 
 ## איך לעשות זאת
 
-נתחיל בהגדרת תאריך ומשתמשים בפונקציות פנימיות כדי להמיר את התאריך למחרוזת. הנה דוגמא פשוטה בשפת גלים:
+תכנונית הקוד הבאה מציגה דוגמא למרחב תאריך וכיצד להמירו למחרוזת בשפת גלים:
 
 ```Gleam
-import gleam/datetime
+import gleam/canonical-date
 
-let date =
-    datetime.now()
-    |> datetime.to_string("%m/%d/%Y")
+let date = Date.now()
+let string_date = canonical_date.to_date_time_string(date)
+
+log(string_date)
 ```
 
-תוכל להתאים את התבנית המשמשת בפונקציה `datetime.to_string` לפי צרכי הפרויקט שלך, ולהשתמש בפונקציות נוספות להוספת מידע נוסף למחרוזת התאריך.
+פלט צפוי:
 
-## Deep Dive
+```
+"2021-11-25T12:37:51.121Z"
+```
 
-כדי להבין טוב יותר איך עובדת המרת תאריך למחרוזת בשפת גלים, נדבר על כמה נושאים חשובים:
+## טיפול עמוק
 
-- השימוש בפונקציות פנימיות כדי ליצור תאריך ולהמיר אותו למחרוזת.
-- ניתוח הפונקציות הפנימיות וחשיבתן.
-- השימוש בתבניות כדי להתאים את המחרוזת לפרויקט שלך.
-
-במידה ויש לך שאלות נוספות על הנושא, תוכל לבדוק את הלינקים המצורפים בהמשך.
+המרחב המובנה `gleam/canonical-date` מכיל פונקציות נוספות לטיפול בתאריכים כגון המרה לתאריך שלאחר זמן מסוים או לחישוב התאריך הנוכחי, וכן פורמטים נוספים למחרוזת תאריך.
 
 ## ראה גם
 
-- התיעוד הרשמי של שפת גלים על המרת תאריך למחרוזת: https://gleam.run/core-modules/datetime.html#to_string
-- סרטון הדרכה למתחילים בשפת גלים, כולל המרה של תאריך למחרוזת: https://www.youtube.com/watch?v=SaUFi5jgCxE
+- [מדריך לשפת גלים](https://gleam.run/blog/guide)
+- [תיעוד עבור המרחב המובנה `gleam/canonical-date`](https://gleam.run/lib/gleam-canonical-date/latest)
+- [מחברת בפייתון עם המרחב המובנה `gleam/canonical-date`](https://gleam.run/notebooks/python/cookbook-canonical-date.html)

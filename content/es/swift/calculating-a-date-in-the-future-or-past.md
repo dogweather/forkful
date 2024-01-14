@@ -1,51 +1,53 @@
 ---
 title:                "Swift: Calculando una fecha en el futuro o pasado"
+simple_title:         "Calculando una fecha en el futuro o pasado"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Qué
+## ¿Por qué calcular una fecha en el futuro o en el pasado?
 
-¿Alguna vez has necesitado saber en qué día caerá tu cumpleaños dentro de cinco años? ¿O cuántos días faltan para Navidad? Calcular fechas en el futuro o en el pasado es una tarea común en programación y en este artículo te enseñaremos cómo hacerlo en Swift.
+A veces, en la programación, necesitamos obtener una fecha en el futuro o en el pasado para realizar determinadas tareas. Por ejemplo, mostrar la fecha de un evento que sucederá en 3 días o calcular la edad de una persona basándonos en su fecha de nacimiento. En este artículo, te explicaremos cómo puedes calcular fácilmente una fecha en el futuro o en el pasado utilizando Swift.
 
-## Cómo
+## Cómo hacerlo
 
-Calculando una fecha en el futuro o en el pasado es una tarea relativamente sencilla en Swift gracias a las funciones que nos proporciona la clase `Date`.
-
-Primero, necesitamos crear una instancia de la fecha actual utilizando la función `Date()`. A partir de esta instancia, podemos utilizar el método `addingTimeInterval()` para agregar un intervalo de tiempo a la fecha actual y así obtener una fecha en el futuro o en el pasado. Por ejemplo, si queremos calcular la fecha dentro de un año, podemos escribir:
+Para calcular una fecha en el futuro o en el pasado en Swift, podemos utilizar la clase `Date` y sus métodos `addingTimeInterval` y `addingComponents`. Veamos algunos ejemplos:
 
 ```Swift
-let unAnoEnSegundos: TimeInterval = 365 * 24 * 60 * 60 // segundos en un año
-let fechaEnUnAno = Date().addingTimeInterval(unAnoEnSegundos)
+// Crear una fecha actual
+let fechaActual = Date()
 
-print(fechaEnUnAno) // salida: 2021-07-04 19:57:34 +0000
+// Mostrar la fecha de mañana
+let fechaManana = fechaActual.addingTimeInterval(24 * 60 * 60)
+print(fechaManana) // Output: 2020-04-01 18:00:00 +0000
+
+// Mostrar la fecha de hace una semana
+let fechaHaceUnaSemana = fechaActual.addingTimeInterval(-7 * 24 * 60 * 60)
+print(fechaHaceUnaSemana) // Output: 2020-03-25 18:00:00 +0000
+
+// Crear un dateComponent con 2 días y 3 horas
+var dateComponent = DateComponents()
+dateComponent.day = 2
+dateComponent.hour = 3
+// Mostrar la fecha en 2 días y 3 horas
+let fechaEnDosDias = Calendar.current.date(byAdding: dateComponent, to: fechaActual)
+print(fechaEnDosDias!) // Output: 2020-04-03 21:00:00 +0000
 ```
 
-Como puedes ver, la salida es una fecha con un año más que la fecha actual. Podemos utilizar esta misma lógica para calcular fechas en el pasado o para agregar diferentes intervalos de tiempo como días, horas, minutos, etc.
+En los ejemplos anteriores, utilizamos `addingTimeInterval` para agregar o restar segundos a una fecha. También podemos utilizar `addingComponents` para agregar componentes específicos, como días, horas o meses. Ten en cuenta que, para obtener el resultado final, debemos usar el método `date(byAdding:to:)` de la clase `Calendar` para aplicar el componente agregado a la fecha actual.
 
-Otra forma de calcular fechas en el futuro o en el pasado es utilizando la clase `Calendar`. Esta clase nos permite manejar fechas y realizar operaciones con ellas. Por ejemplo, si queremos obtener la fecha dentro de un mes, podemos escribir lo siguiente:
+## Profundizando
 
-```Swift
-let fechaHoy = Date()
-let fechaEnUnMes = Calendar.current.date(byAdding: .month, value: 1, to: fechaHoy)!
+Ahora que sabemos cómo calcular una fecha en el futuro o en el pasado, es importante entender cómo funciona internamente la clase `Date` en Swift. Esta clase representa una fecha y hora específica en formato UTC (Coordinated Universal Time) y se basa en un contador de segundos desde la medianoche del 1 de enero de 1970. Al agregar o restar tiempo a una fecha, lo que estamos haciendo es sumar o restar segundos a ese contador. También podemos especificar componentes, como días, meses y años, para obtener una fecha más precisa.
 
-print(fechaEnUnMes) // salida: 2020-08-04 19:57:34 +0000
-```
+Es importante tener en cuenta que cuando trabajamos con fechas y horas, siempre debemos tener en cuenta la zona horaria. En Swift, podemos especificar la zona horaria utilizando el objeto `TimeZone`. Si no especificamos la zona horaria, por defecto se utilizará la zona horaria del dispositivo en el que se está ejecutando la aplicación.
 
-En este caso, estamos utilizando el método `date(byAdding:value:to:)` para agregar un mes a la fecha actual.
+## Ver también
 
-## Deep Dive
-
-Si quieres profundizar más en el tema, puedes investigar sobre el manejo de fechas en Swift y cómo utilizar la clase `DateComponents` para realizar operaciones más avanzadas y precisas con fechas.
-
-También es importante tener en cuenta la zona horaria y el formato de fecha al trabajar con fechas en Swift. Puedes investigar más sobre cómo manejar estos aspectos en tu código.
-
-## Ver También
-
-- [Documentación oficial de Swift sobre la clase Date](https://developer.apple.com/documentation/foundation/date)
-- [Tutoriales de manejo de fechas en Swift](https://www.raywenderlich.com/6740393-swift-date-how-to-work-with-dates-in-swift)
-
-¡Esperamos que este artículo te haya sido útil y te ayude a trabajar con fechas en Swift de manera más eficiente! Recuerda siempre utilizar las funciones y métodos apropiados para obtener resultados precisos y asegurarte de manejar las fechas correctamente en tu código. ¡Hasta la próxima!
+- Documentación oficial de Apple sobre la clase `Date` en Swift: https://developer.apple.com/documentation/foundation/date
+- Artículo sobre cómo trabajar con fechas y horas en Swift: https://www.dummies.com/programming/swift/how-to-work-with-dates-and-times-in-swift/
+- Ejemplo de aplicación utilizando la clase `Date` en Swift: https://www.hackingwithswift.com/example-code/system/how-to-create-a-date-the-swift-way

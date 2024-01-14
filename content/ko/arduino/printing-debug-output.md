@@ -1,47 +1,51 @@
 ---
 title:                "Arduino: 디버그 출력 출력"
+simple_title:         "디버그 출력 출력"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+## 왜
+Arduino 프로그래밍에서 디버그 출력을 하는 이유는 코드의 동작을 이해하고 문제를 해결하기 위해서입니다.
 
-디버그 메시지를 출력하는 것의 이유는 프로그래밍 중에 오류를 추적하고 해결하는 데에 큰 도움이 됩니다. 디버그 출력을 사용하면 프로그램이 실행되는 동안 어떤 값이나 변수가 변하는지, 어떤 함수나 루프가 정확하게 작동하는지 확인할 수 있습니다.
-
-# 방법
-
-만약 우리가 `pinMode()` 함수로 아두이노 핀을 설정해야 한다고 가정해 봅시다. 예를 들어, 우리가 13번 핀을 출력으로 설정하고 싶은 경우 다음과 같이 코드를 작성할 수 있습니다.
+## 사용 방법
+Arduino에 내장된 Serial 라이브러리를 이용하여 디버그 출력을 할 수 있습니다. 아래의 코드는 analogRead() 함수를 이용하여 A0 핀에서 읽어온 값과 그에 해당하는 전압 값을 출력하는 예시입니다.
 
 ```Arduino
-pinMode(13, OUTPUT);
+void setup() {
+  // 시리얼 통신 시작
+  Serial.begin(9600);
+}
 
+void loop() {
+  // A0 핀에서 값을 읽어옴
+  int value = analogRead(A0);
+
+  // Serial.print()를 이용하여 디버그 출력을 함
+  Serial.print("A0 핀에서 읽은 값: ");
+  Serial.print(value);
+  Serial.print(", 해당하는 전압 값: ");
+  Serial.print(value * (5.0 / 1023.0));
+  Serial.println(" V");
+
+  delay(1000);
+}
 ```
 
-그러나 우리가 실제로 핀의 상태를 확인하고 싶다면, 다음과 같이 코드에 디버그 출력을 추가할 수 있습니다.
+위의 코드를 실행하면 아래와 같은 결과가 시리얼 모니터에 출력됩니다.
 
-```Arduino
-pinMode(13, OUTPUT);
-Serial.println(digitalRead(13)); //디버그 출력
+```
+A0 핀에서 읽은 값: 768, 해당하는 전압 값: 1.49 V
 ```
 
-이렇게 하면 프로그램 실행 중에 핀의 상태를 확인할 수 있습니다. 만약 핀을 입력으로 설정하고서도 디버그 출력을 사용하고 싶다면, 다음과 같이 `INPUT` 매개변수를 사용하면 됩니다.
+## 깊이 파고들기
+디버그 출력을 이용해 코드의 동작을 확인하는 것은 디버깅을 위해 꼭 필요한 과정입니다. 디버그 출력을 잘 활용하면 코드의 어떤 부분에서 오류가 발생하는지 쉽게 파악할 수 있습니다. 또한, 디버그 출력을 통해 변수의 값이 어떻게 변하는지를 확인할 수 있어 코드 분석에도 도움이 됩니다.
 
-```Arduino
-pinMode(13, INPUT);
-Serial.println(digitalRead(13)); //디버그 출력
-```
-
-# 깊게 파헤치기
-
-디버그 출력은 프로그래밍 중에 오류를 추적할 때 매우 유용하지만, 프로그램이 끝난 후 디버그 출력을 제거하는 것을 잊지 마세요. 디버그 출력은 프로그램의 메모리를 소모하므로, 프로그램을 완성한 후에는 꼭 지워주어야 합니다.
-
-또한, 디버그 출력을 효과적으로 사용하기 위해서는 적절한 메시지를 출력해야 합니다. 메시지는 간결하면서도 프로그램의 실행 상태를 명확하게 설명할 수 있도록 해야 합니다.
-
-# 관련 링크
-
-- [아두이노 공식 홈페이지](https://www.arduino.cc/)
-- [아두이노 포럼](https://forum.arduino.cc/)
-- [아두이노 디버깅 가이드](https://learn.sparkfun.com/tutorials/how-to-debug-your-arduino-project)
+## See Also
+- [Arduino Serial 라이브러리 공식 문서 (영어)](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Serial.print() 함수를 이용한 디버그 출력 예제 (영어)](https://www.arduino.cc/en/Tutorial/LibraryExamples/SerialOutput)
+- [Serial.println() 함수를 이용한 디버그 출력 예제 (영어)](https://howtomechatronics.com/examples/arduino-serial-print-function-tutorial/)

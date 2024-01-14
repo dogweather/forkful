@@ -1,47 +1,62 @@
 ---
-title:                "Go: Läsa kommandoradsargument"
+title:                "Go: Att läsa inmatade kommandon från kommandoraden"
+simple_title:         "Att läsa inmatade kommandon från kommandoraden"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/go/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att läsa argument från kommandoraden är en viktig del av att utveckla program i Go. Det ger dig möjlighet att få input från användaren och anpassa programmets beteende baserat på detta. I denna bloggpost kommer vi att gå igenom hur du läser kommandoradsargument på ett enkelt och effektivt sätt i Go.
 
-## Hur man gör det
-För att läsa kommandoradsargument i Go, behöver du använda paketet "flag". Du kan börja genom att importera paketet och definiera de variabler som du vill att kommandoradsargumenten ska tilldelas till.
+Att kunna läsa kommandoradsargument i Go är en viktig färdighet för alla som vill kunna skriva kommandoradsapplikationer eller bygga program som kan anropas från kommandoraden.
 
-```
-import "flag"
+## Hur man gör
 
-var username string
-var age int
-```
-
-Därefter kan du använda funktionen "flag.String" eller "flag.Int" för att läsa in argumenten och tilldela dem till variablerna.
+Läsande av kommandoradsargument i Go är enkelt och kan göras med hjälp av standardbiblioteket "flag". Här är en kodexempel tillsammans med det förväntade utdata:
 
 ```
-flag.StringVar(&username, "u", "", "Användarnamn")
-flag.IntVar(&age, "a", 0, "Ålder")
+package main
+
+import (
+	"flag"
+	"fmt"
+)
+
+func main() {
+
+	// Definiera de argument som du vill ta emot
+	argument1 := flag.String("argument1", "default", "första argumentet")
+	argument2 := flag.Int("argument2", 0, "andra argumentet")
+
+	// När argumenten är definierade, anropa "flag.Parse()" för att läsa dem från kommandoraden
+	flag.Parse()
+
+	// Skriv ut argumenten till konsolen
+	fmt.Println("Det första argumentet är: ", *argument1)
+	fmt.Println("Det andra argumentet är: ", *argument2)
+}
 ```
 
-I detta exempel betyder "u" och "a" att dessa argument kan skrivas in från kommandoraden efter flaggan "-u" eller "-a". Om du till exempel vill läsa in användarnamnet "Lisa" och åldern 25, kan du köra programmet på följande sätt: "go run main.go -u Lisa -a 25".
-
-Nu har variablerna "username" och "age" blivit tilldelade med dessa värden och du kan använda dem i ditt program.
+Om du exempelvis kör programmet som `go run main.go -argument1=hej -argument2=10` kommer utdatan att se ut så här:
 
 ```
-fmt.Printf("Användare: %s\n", username)
-fmt.Printf("Ålder: %d\n", age)
+Det första argumentet är: hej
+Det andra argumentet är: 10
 ```
 
-Med detta enkla exempel kan du nu läsa in kommandoradsargument och använda dem i ditt Go-program.
+Det är viktigt att observera att argumentet måste följas av ett "=" när du anropar programmet från kommandoraden. Om du bara skriver `go run main.go -argument1` utan ett "=" kommer programmet att krascha.
 
 ## Djupdykning
-I det föregående exemplet använde vi flaggor för att definiera vilka argument som ska läsas in. Det finns också andra alternativ som kan hjälpa dig att hantera kommandoradsargument mer flexibelt, såsom att läsa in flera argument och hantera olika datatyper. Du kan läsa mer om dessa funktioner i Golangs officiella dokumentation [här](https://golang.org/pkg/flag/).
+
+Nu när vi vet hur man läser kommandoradsargument är det lämpligt att titta närmare på hur det faktiskt fungerar. När vi skapar variablerna `argument1` och `argument2` använder vi funktionen "String" respektive "Int" från bibloteket "flag". Detta gör att de argumenten kan läsas in från kommandoraden och omgöras till de respektive datatyperna. Därefter använder vi "*argument1" och "*argument2" för att hämta värdet från variablerna. När vi lägger en "*" framför en variabel i Go så hämtas värdet från den variabeln istället för referensen till den. Det betyder att vi får tillgång till det faktiska värdet istället för att ändra värdet på den ursprungliga variabeln.
+
+Det finns också flera andra funktioner som kan användas för att läsa kommandoradsargument, såsom "Bool" för boolean-värden och "Duration" för tidsvärden. Du kan också använda "flag.Args()" för att hämta en lista på alla argument som inte definieras explicit i koden. Detta kan vara användbart för mer flexibilitet i dina program.
 
 ## Se även
-- [Golangs officiella dokumentation om flag-paketet](https://golang.org/pkg/flag/)
-- [En tutorial om läsning av kommandoradsargument i Go](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-golang)
-- [En video tutorial om hantering av kommandoradsargument i Go](https://www.youtube.com/watch?v=nutbDp_tXYs)
+
+* [Go Dokumentation om flag-paketet](https://golang.org/pkg/flag/)
+* [Officiell Go tutorial för kommandoradsargument](https://golang.org/doc/tutorial/flags)
+* [En guide för att läsa osignerade argument i Go](https://www.digitalocean.com/community/tutorials/how-to-use-the-flag-package-in-go)

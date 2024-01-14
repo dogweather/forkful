@@ -1,50 +1,72 @@
 ---
-title:                "C: Imprimindo saída de depuração"
+title:                "C: Exibindo a saída de depuração"
+simple_title:         "Exibindo a saída de depuração"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração é útil?
+## Por que
+A impressão de saída de depuração é uma ferramenta essencial para programadores em C. Permite que verifiquemos o comportamento do nosso código e encontremos erros, o que economiza tempo e esforço no processo de depuração.
 
-Quando estamos escrevendo um programa em C, é comum nos depararmos com erros ou comportamentos inesperados. Nesses momentos, imprimir saída de depuração pode ser extremamente útil para descobrir onde está o erro e corrigi-lo. Além disso, a saída de depuração também pode ser usada para entender melhor como o programa está funcionando e como cada variável está sendo alterada ao longo do código.
-
-## Como fazer a impressão de saída de depuração em C?
-
-Para imprimir saída de depuração em C, usamos a função `printf()` da biblioteca padrão `stdio.h`. Essa função recebe uma string de formato que pode conter placeholders para variáveis, e então imprime o valor dessas variáveis na saída. Vamos ver um exemplo:
+## Como fazer
+Aqui estão alguns exemplos de como imprimir saída de depuração em C:
 
 ```C
 #include <stdio.h>
 
-int main() {
+int main()
+{
+    int x = 5;
+    printf("O valor de x é: %d\n", x);
+    // saída: O valor de x é: 5
 
-  int numero = 10;
-  printf("O valor da variável numero é %d\n", numero);
+    float y = 3.14;
+    printf("O valor de y é: %.2f\n", y);
+    // saída: O valor de y é: 3.14
 
-  return 0;
+    char z = 'a';
+    printf("O valor de z é: %c\n", z);
+    // saída: O valor de z é: a
+
+    return 0;
 }
 ```
 
-A saída desse código será:
+Podemos usar a função `printf()` para imprimir diferentes tipos de dados, como inteiros, flutuantes e caracteres. O formato da saída depende dos caracteres de formato que usamos. Por exemplo, `%d` é usado para inteiros e `%f` é usado para flutuantes.
 
+## Aprofundando
+Além de imprimir valores de variáveis, a saída de depuração também pode ser útil para acompanhar o fluxo do código. Podemos incluir mensagens de texto para nos ajudar a entender o que está acontecendo em diferentes partes do programa. Por exemplo:
+
+```C
+#include <stdio.h>
+
+int main()
+{
+    int x = 3;
+
+    if (x > 5)
+    {
+        printf("x é maior que 5\n");
+    }
+    else
+    {
+        printf("x é menor ou igual a 5\n");
+    }
+    // saída: x é menor ou igual a 5
+
+    return 0;
+}
 ```
-O valor da variável numero é 10
-```
 
-Podemos usar vários placeholders para imprimir diferentes tipos de variáveis, por exemplo `%d` para inteiros, `%f` para floats, `%c` para caracteres e `%s` para strings. É importante respeitar a ordem dos argumentos da função `printf()` para que os valores sejam impressos corretamente.
-
-## Mergulho Profundo na impressão de saída de depuração
-
-Além de simplesmente imprimir valores de variáveis, podemos usar a saída de depuração para entender melhor o fluxo do programa. Podemos utilizar `printf()` em diferentes partes do código para imprimir o valor de uma variável em momentos específicos, o que pode nos ajudar a identificar onde o programa está parando ou qual o valor de uma variável em determinado ponto do código.
-
-Outro recurso interessante é a possibilidade de imprimir valores em diferentes bases numéricas. Por exemplo, podemos imprimir um número em binário usando o placeholder `%b` ou em hexadecimal usando `%x`.
-
-Além disso, existem bibliotecas de terceiros que permitem uma impressão de saída de depuração ainda mais poderosa, com cores e informações adicionais, como a biblioteca `dbg.h`.
+Podemos usar a saída de depuração para verificar se nossos loops estão funcionando corretamente, quantas vezes eles são executados e quais valores são atribuídos às variáveis em cada iteração. Isso pode ser especialmente útil quando estamos tentando encontrar erros em loops complexos.
 
 ## Veja também
+Aqui estão alguns recursos adicionais sobre impressão de saída de depuração em C:
 
-- [Documentação oficial do printf() em C](https://en.cppreference.com/w/c/io/printf)
-- [Tutorial sobre debug em C](https://www.programiz.com/c-programming/debugging)
-- [Tutorial sobre a biblioteca dbg.h](https://c.learncodethehardway.org/book/ex20.html)
+[Guia de Iniciantes para Imprimir Saída de Depuração em C](https://www.cs.cmu.edu/~guna/15-123S11/Lectures/Lecture24.pdf)
+[Debugging with printf() in C](https://www.electronicdesign.com/technologies/embedded-revolution/article/21798302/debugging-with-printf-in-c)
+[C Programming Tutorial: Debugging with printf()](https://youtu.be/dXgJzZ4Lx6c)

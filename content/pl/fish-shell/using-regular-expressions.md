@@ -1,53 +1,45 @@
 ---
-title:                "Fish Shell: Używanie wyrażeń regularnych"
+title:                "Fish Shell: Korzystanie z wyrażeń regularnych"
+simple_title:         "Korzystanie z wyrażeń regularnych"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-#Dlaczego
+## Dlaczego
 
-Korzystanie z wyrażeń regularnych jest niezbędne do szybkiego i efektywnego programowania w języku Fish Shell. Dzięki nim możemy znacznie uprościć pracę z tekstem, wykorzystując zaawansowane wzorce do wyszukiwania, zamiany i manipulacji tekstem.
+Jeśli jesteś programistą lub osobą, która często pracuje z tekstowymi plikami, prawdopodobnie słyszałeś(aś) już o wyrażeniach regularnych. Są to bardzo przydatne narzędzia w programowaniu, które pozwalają na wykonywanie zaawansowanych operacji na tekście, takich jak wyszukiwanie, zastępowanie lub filtrowanie. Jeśli chcesz nauczyć się, jak efektywnie wykorzystywać wyrażenia regularne w języku Fish Shell, zapraszamy do lektury!
 
-##Jak to zrobić
+## Jak To Zrobić
 
-Pierwszym krokiem jest przypisanie wzorca do zmiennej. W poniższym przykładzie, wykorzystamy wszelkie cyfry do wyszukania określonego tekstu:
+Aby używać wyrażeń regularnych w języku Fish Shell, musisz najpierw zapoznać się z ich składnią i podstawowymi operacjami. W skrócie, wyrażenia regularne są wyrażeniami, które pozwalają na wykonywanie operacji wyszukiwania i manipulacji na tekście, wykorzystując określone wzory. Dzięki nim możesz znaleźć określone frazy w tekście, np. wszystkie adresy email lub numery telefonów, lub zamienić jedne wyrazy na inne. Oto kilka przykładowych zastosowań wyrażeń regularnych w języku Fish Shell:
 
-```
-set pattern "[0-9]+"
-```
-
-Następnie, używając funkcji `string match` mamy możliwość sprawdzenia, czy dany tekst pasuje do naszego wzorca:
-
-```
-set text "123456"
-if string match -q $pattern $text
-echo "Tekst pasuje do wzorca"
+```Fish Shell
+set files (ls *.txt) # utworzenie listy plików z rozszerzeniem .txt
+for file in $files
+    cat $file | grep -q "lorem ipsum" # wyszukanie w pliku frazy "lorem ipsum"
+        if test $status = 0
+        echo $file # jeśli fraza została znaleziona, wyświetl nazwę pliku
+        end
 end
 ```
 
-Wynik wyżej to "Tekst pasuje do wzorca", ponieważ wyrażenie "[0-9]+" pasuje do tekstu "123456". Przykład ten jest bardzo prosty, ale wykorzystując bardziej skomplikowane wzorce, możemy przeprowadzić bardziej zaawansowane operacje, takie jak zamiana tekstu czy filtrowanie danych.
-
-##Głębsza analiza
-
-Wyrażenia regularne w języku Fish Shell są oparte na wyrażeniach regularnych w języku Perl, więc wiele symboli i wzorców jest podobnych lub identycznych w obu językach. Możemy również wykorzystać operator `=~` do sprawdzania dopasowania wzorca do tekstu:
-
-```
-if begin
-  set text "To jest przykładowy tekst"
-  and string match -q "tekst" $text
-  and string match -q "przykład" $text
-end
-echo "Wyrażenie pasuje"
-end
+```Fish Shell
+set text "załącznik_1.txt, załącznik_2.txt, załącznik_3.txt" # przykładowy tekst zawierający nazwy plików
+echo $text | sed -E 's/([a-zćęółśżź]+)_/Pliki: \1, /g' # zamiana nazw plików na formę zdania, przykładowy output: "Pliki: załącznik_1.txt, załącznik_2.txt, załącznik_3.txt"
 ```
 
-Ten przykład pokazuje, jak możemy wykorzystywać konstrukcje warunkowe w połączeniu z wyrażeniami regularnymi do bardziej zaawansowanych zadań manipulacji tekstem.
+Jak widać, wyrażenia regularne są niezwykle przydatne w manipulowaniu tekstem. Aby bardziej zrozumieć składnię i zastosowania wyrażeń regularnych w języku Fish Shell, polecamy zapoznać się z dokumentacją i wypróbować różne przykłady.
 
-#Zobacz też
+## Zanurz się Głębiej
 
-- https://fishshell.com/docs/current/cmds/set.html
-- https://fishshell.com/docs/current/cmds/string.html
-- https://fishshell.com/docs/current/index.html#overview
+Jeśli chcesz poznać wyrażenia regularne jeszcze lepiej, warto poświęcić trochę czasu na zgłębienie tematu. Na przykład możesz nauczyć się wykorzystywać specjalne znaki i metaznaki, które pozwalają na bardziej zaawansowane operacje, takie jak wykluczanie lub dopasowywanie grup tekstu. W języku Fish Shell możesz również wykorzystać wyrażenia regularne do manipulowania zmiennymi i pętlami.
+
+## Zobacz także
+
+- Dokumentacja języka Fish Shell: https://fishshell.com/docs/current/
+- Tutoriale i przykłady wyrażeń regularnych: https://www.regular-expressions.info/ 
+- Interaktywny edytor wyrażeń regularnych: https://regex101.com/

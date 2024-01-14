@@ -1,49 +1,66 @@
 ---
 title:                "Clojure: Utilizando expresiones regulares"
+simple_title:         "Utilizando expresiones regulares"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+-------
+# ¿Por qué utilizar expresiones regulares en Clojure?
 
-Las expresiones regulares son una herramienta poderosa en la programación, ya que permiten realizar búsquedas y manipulaciones de texto de manera eficiente. Son especialmente útiles para realizar tareas como validación de formularios, análisis de datos y extracción de información específica de un texto.
+Si eres un programador interesado en el procesamiento de texto y la manipulación de datos, entonces las expresiones regulares son una herramienta imprescindible en tu caja de herramientas. Con las expresiones regulares, puedes encontrar patrones específicos de texto en un conjunto de datos de manera rápida y eficiente. En Clojure, la manipulación de expresiones regulares es especialmente conveniente debido a la implementación de la librería `java.util.regex`.
 
-## Cómo hacerlo
+## Cómo utilizar expresiones regulares en Clojure
 
-Para utilizar expresiones regulares en Clojure, primero debemos importar el módulo ```clojure.string```. Luego, podemos utilizar la función ```re-find``` para buscar patrones en una cadena de texto. Por ejemplo, si queremos encontrar todas las palabras que empiecen con la letra "c" en una oración, podemos hacer lo siguiente:
-
-```Clojure
-(require '[clojure.string :as str])
-
-(def oracion "Clojure es un lenguaje de programación funcional")
-(re-find #"c\S+" oracion)
-```
-
-Esto nos devolverá una lista con todas las palabras que comienzan con "c" en la oración, en este caso ```["Clojure" "c" "comienzan" "con" "com" "ción" "cional"]```. 
-En el código anterior, utilizamos la expresión regular ```#"c\S+"```, donde la letra "c" indica el inicio de la palabra y el meta-carácter ```\S+``` representa cualquier cantidad de caracteres no espacios en blanco.
-
-Otra función útil para trabajar con expresiones regulares en Clojure es ```re-seq```, que nos permite obtener todas las coincidencias en vez de solo la primera. Por ejemplo, si queremos encontrar todos los números en una cadena de texto, podemos utilizar la expresión regular ```#"(\d+)"``` y la función ```re-seq```, como se muestra a continuación:
+Para utilizar expresiones regulares en Clojure, primero debes importar la librería `java.util.regex` utilizando la función `import`.
 
 ```Clojure
-(def cadena "Hoy es 15 de noviembre de 2021")
-(re-seq #"\d+" cadena)
+(import 'java.util.regex.Pattern)
 ```
 
-Esto nos devolverá una lista con todos los números encontrados en la cadena, en este caso ```["15" "2021"]```. 
-Con estas funciones y expresiones regulares, podemos realizar una gran cantidad de operaciones de búsqueda y manipulación de texto de manera eficiente en Clojure.
+Luego, puedes crear un objeto Pattern para tu expresión regular utilizando la función `compile`. Por ejemplo, si deseas buscar todas las coincidencias de la palabra "Hola" en una cadena de texto, puedes utilizar la siguiente expresión regular:
 
-## Profundizando
+```Clojure
+(def patron (Pattern/compile "Hola"))
+```
 
-Además de las funciones mencionadas anteriormente, Clojure también ofrece otras herramientas para trabajar con expresiones regulares. Por ejemplo, ```re-pattern``` nos permite compilar una expresión regular antes de utilizarla, lo cual puede mejorar la eficiencia en ciertos casos. Asimismo, podemos utilizar ```re-find-all``` para obtener todas las coincidencias en un texto y ```re-groups``` para obtener grupos específicos dentro de una coincidencia.
+Ahora, puedes usar el método `matcher` para encontrar todas las coincidencias en una cadena de texto dada utilizando la función `find` y mostrando el resultado en una lista de Clojure utilizando la función `re-seq`.
 
-Es importante tener en cuenta que las expresiones regulares pueden ser un poco complicadas de entender al comienzo, pero con la práctica se vuelven una herramienta muy útil y poderosa en la programación. Se recomienda utilizar recursos en línea para aprender más detalles sobre su uso en Clojure y practicar con diferentes patrones y funciones.
+```Clojure
+(def texto "Hola, ¿cómo estás? Hola, espero que estés bien.")
+(re-seq (find patron texto))
+```
+
+La salida será una lista de dos elementos, ya que hay dos coincidencias de la palabra "Hola" en el texto:
+
+```Clojure
+("Hola" "Hola")
+```
+
+## Profundizando en el uso de expresiones regulares
+
+Una de las ventajas de usar expresiones regulares en Clojure es la capacidad de hacer coincidir patrones más complicados utilizando ciertas secuencias de caracteres especiales. Algunos ejemplos comunes incluyen:
+
+- `.`: coincide con cualquier carácter
+- `+`: coincide con uno o más repeticiones del carácter anterior
+- `*`: coincide con cero o más repeticiones del carácter anterior
+- `?`: coincide con cero o una repetición del carácter anterior
+- `[]`: coincide con cualquier carácter dentro de los corchetes
+- `^`: coincide con el inicio de una línea de texto
+- `$`: coincide con el final de una línea de texto
+
+Por ejemplo, si quisieras encontrar todas las direcciones de correo electrónico en un texto, podrías utilizar la siguiente expresión regular:
+
+```Clojure
+(def patron (Pattern/compile "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+"))
+```
 
 ## Ver también
 
-- [Documentación oficial de funciones de expresiones regulares en Clojure](https://clojuredocs.org/clojure.string)
-- [Artículo de introducción a expresiones regulares en Clojure](https://www.braveclojure.com/regular-expressions/)
-
-¡Ahora estás listo para utilizar expresiones regulares en tus proyectos de Clojure! Esperamos que esta guía haya sido útil para comprender el uso y la importancia de esta herramienta en la programación. ¡A seguir aprendiendo y mejorando tus habilidades en Clojure!
+- [Documentación sobre el uso de expresiones regulares en Clojure](https://clojuredocs.org/clojure.core/re-seq)
+- [Expresiones regulares en Java](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+- [Ejemplos de expresiones regulares en Clojure](https://github.com/justonemorefix/clojure-regex-examples)

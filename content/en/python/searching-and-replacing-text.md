@@ -1,7 +1,9 @@
 ---
 title:                "Python recipe: Searching and replacing text"
+simple_title:         "Searching and replacing text"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/searching-and-replacing-text.md"
 ---
 
@@ -9,91 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever found yourself in the tedious task of manually replacing text in a document or code? Not only is it time-consuming and monotonous, but it also leaves room for human error. Luckily, with the power of Python programming, you can easily automate this task and save yourself both time and effort.
+Whether you are a seasoned programmer or just starting out, one of the most common tasks you will encounter is searching and replacing text. This can be for a variety of reasons, such as fixing typos, updating variable names, or making global changes to your code. Whatever the reason may be, learning how to efficiently search and replace text using Python can save you time and frustration.
 
 ## How To
 
-To search and replace text in Python, we will use the `string.replace()` method. This method takes in two parameters: the old text and the new text. Let's look at an example:
+The first step in searching and replacing text using Python is to import the built-in `re` module, which stands for "regular expressions". This module allows us to use powerful pattern matching techniques to find and manipulate text.
 
 ```Python
-# Define a string
-text = "Hello world!"
+import re
+```
 
-# Replace "world" with "Python"
-new_text = text.replace("world", "Python")
+Next, we need to define the text we want to search through and the pattern we want to find and replace. Let's say we have the following string:
 
-# Print the new string
+```Python
+text = "I love python and all its amazing features."
+```
+
+And we want to replace "python" with "Ruby". We can do this by using the `sub` function from the `re` module and passing in the pattern we want to replace, the replacement text, and the original string.
+
+```Python
+new_text = re.sub("python", "Ruby", text)
+```
+
+The `sub` function will replace all instances of "python" with "Ruby" and return the new string. We can then print out the new text to see the changes.
+
+```Python
 print(new_text)
-```
-Output:
-```
-Hello Python!
+# Output: I love Ruby and all its amazing features.
 ```
 
-We can also use the `string.replace()` method to replace multiple instances of the same text by adding a third parameter for the maximum number of replacements.
+But what if we want to replace "python" with "Ruby" and also change the "a" in "amazing" to an "e"? We can use regular expressions to handle this as well.
 
 ```Python
-# Define a string with multiple instances of "Python"
-text = "Python is the best language to learn Python"
+new_text = re.sub("python|amazing", "Ruby", text)
+```
 
-# Replace "Python" with "Java" with a maximum of 1 replacement
-new_text = text.replace("Python", "Java", 1)
+In this case, we are using the `|` symbol to indicate "or", so the `sub` function will replace both "python" and "amazing" with "Ruby".
 
-# Print the new string
+```Python
 print(new_text)
-```
-Output:
-```
-Java is the best language to learn Python
+# Output: I love Ruby and ell its mizing features.
 ```
 
-We can also use this method to replace text in a text file. Let's say we have a text file named "example.txt" with the following content:
-
-```
-Hello world!
-This is just a simple example.
-```
-
-We can use the `readlines()` and `writelines()` methods to read and replace text in the file.
+Additionally, we can use the `re.IGNORECASE` flag to make the search case-insensitive.
 
 ```Python
-# Open the file in read mode
-file = open("example.txt", "r")
-
-# Read the lines and store them in a list
-lines = file.readlines()
-
-# Replace "example" with "sample"
-for index, line in enumerate(lines):
-    lines[index] = line.replace("example", "sample")
-
-# Open the file in write mode
-file = open("example.txt", "w")
-
-# Write the updated lines back to the file
-file.writelines(lines)
-
-# Close the file
-file.close()
+new_text = re.sub("python|amazing", "Ruby", text, flags=re.IGNORECASE)
 ```
 
-The contents of the file will now be:
-
-```
-Hello world!
-This is just a simple sample.
-```
+Now both "python" and "Python" will be replaced with "Ruby".
 
 ## Deep Dive
 
-There are various other methods in Python for searching and replacing text, such as using regular expressions with the `re` library. This provides more advanced and flexible ways of searching and replacing text. You can also specify case sensitivity, reordering of words, and much more using regular expressions.
+Regular expressions can be intimidating, but once you understand the basics, they can be a powerful tool for search and replace tasks. Some common patterns that you might find useful include:
 
-Additionally, you can also use the `str.translate()` method to replace characters or words in a string by mapping them to new values.
+- `.` - Matches any character except newline
+- `*` - Matches zero or more occurrences
+- `+` - Matches one or more occurrences
+- `?` - Matches zero or one occurrence
+- `[]` - Matches any character inside the brackets
+- `()` - Groups multiple patterns together
+- `\b` - Matches at the beginning or end of a word
+
+For more information on regular expressions and the various options and patterns you can use, check out the official Python documentation or this helpful cheatsheet: https://www.debuggex.com/cheatsheet/regex/python.
 
 ## See Also
 
-- [Python string methods](https://www.w3schools.com/python/python_ref_string.asp)
-- [Python regular expressions](https://docs.python.org/3/library/re.html)
-- [Python string translate method](https://www.geeksforgeeks.org/python-string-translate/)
-
-Now you can say goodbye to manual text replacement and let Python handle it for you! Happy coding!
+- Official Python Documentation on Regular Expressions: https://docs.python.org/3/library/re.html
+- Learn Python the Hard Way - Exercise 6 on Regular Expressions: https://learnpythonthehardway.org/python3/ex6.html 
+- Practical Regular Expressions eBook: https://www.openshift.com/blog/practical-regex-ebook or https://www.sitepoint.com/advanced-regular-expressions/

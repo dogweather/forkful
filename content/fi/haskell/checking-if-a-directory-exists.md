@@ -1,48 +1,53 @@
 ---
-title:                "Haskell: Tarkastetaan, onko kansio olemassa"
+title:                "Haskell: Tarkistaako hakemisto on olemassa"
+simple_title:         "Tarkistaako hakemisto on olemassa"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi tarkistaa hakemisto?
+## Miksi tarkistaa, onko hakemisto olemassa?
 
-Haskell on voimakas ja monipuolinen ohjelmointikieli, joka tarjoaa erilaisia ​​työkaluja ja toimintoja ohjelmoijille. Yksi näistä toiminnoista on tarkistaa, onko tietty hakemisto olemassa. Tämä voi olla hyödyllistä monissa eri tilanteissa, esimerkiksi kun halutaan varmistaa, että olemassa oleva tiedosto voidaan avata tai kun tarvitaan tiettyjä tiedostoja säännöllisesti suoritettavaan ohjelmaan. Tässä blogikirjoituksessa tutustutaan tarkemmin siihen, miten tarkistaa, onko hakemisto olemassa Haskellissa.
+Välillä ohjelmoinnissa tarvitsemme tarkistaa, onko tietyssä paikassa olevaa hakemistoa olemassa. Tämä voi johtua esimerkiksi siitä, että haluamme tiedostoon tallentaa jotain, mutta ennen sitä haluamme varmistaa, että hakemisto on olemassa. Tässä artikkelissa käymme läpi, kuinka voimme tarkistaa Haskell-kielellä, onko hakemisto olemassa ja miten voimme käsitellä tilanteita, joissa se ei ole.
 
-## Miten tehdä se
+## Kuinka tehdä se
 
-Ensimmäinen askel on tuoda `System.Directory` kirjasto käyttöön:
+Haskell-kielessä on valmiina `doesDirectoryExist` -niminen funktio, joka tarkistaa hakemiston olemassaolon ja palauttaa boolean-arvon. Alla olevassa esimerkissä tarkistetaan, onko hakemisto "testihakemisto" olemassa ja sen jälkeen tulostetaan tulos.
 
 ```Haskell
 import System.Directory
+
+main = do
+    let directory = "testihakemisto"
+    exists <- doesDirectoryExist directory
+    putStrLn $ "Hakemisto " ++ directory ++ " on olemassa: " ++ show exists
 ```
 
-Tämän jälkeen voimme käyttää `doesDirectoryExist` funktiota tarkistamaan haluamamme hakemiston olemassaolon:
+Jos hakemisto löytyy, tulostuu `True`, muuten `False`.
+
+## Syvempi sukellus
+
+Tarkoituksessa tarkistaa hakemiston olemassaolo, voimme myös käyttää `doesPathExist` -nimistä funktiota, joka tarkistaa kaikenlaisen polun olemassaolon. Tämä on hyödyllistä silloin, kun haluamme tarkistaa jonkin tietyn tiedoston olemassaolon hakemistossa.
+
+Tässä esimerkissä tarkistamme, onko tiedosto "testitiedosto.txt" olemassa hakemistossa "testihakemisto".
 
 ```Haskell
-doesDirectoryExist "/polku/hakemistoon"
+import System.Directory
+
+main = do
+    let directory = "testihakemisto"
+        file = "testitiedosto.txt"
+        path = directory ++ "/" ++ file
+    exists <- doesPathExist path
+    putStrLn $ "Tiedosto " ++ path ++ " on olemassa: " ++ show exists
 ```
 
-Tämä palauttaa `True`, jos hakemisto löytyy, ja `False`, jos se ei ole olemassa. Voimme myös käyttää `getCurrentDirectory` funktiota saadaksemme nykyisen hakemiston ja tarkistaa sen olemassaolon:
-
-```Haskell
-getCurrentDirectory >>= doesDirectoryExist
-```
-
-Tulos olisi myös `True` tai `False` riippuen nykyisen hakemiston olemassaolosta.
-
-## Syventävä tarkastelu
-
-On myös hyvä huomata, että `doesDirectoryExist` funktio heittää poikkeuksen, jos annettua polkua ei voi tarkistaa, esimerkiksi jos annettu polku ei ole hakemisto tai jos polku on virheellinen.
-
-Tarkistettaessa hakemistoa, joka sisältää välilyöntejä, on myös käytettävä `makeAbsolute` funktiota, joka muuttaa annetun polun absoluuttiseksi. Näin välilyönnit eivät aiheuta ongelmia tarkistuksessa.
+Kuten edellisessä esimerkissä, tulostus riippuu siitä, löytyykö tiedosto vai ei.
 
 ## Katso myös
 
-- [Hakemiston tarkistaminen Haskellissa - Dokumentaatio](https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:doesDirectoryExist)
-- [Lyhyt esimerkki hakemiston tarkistamisesta - Stack Overflow](https://stackoverflow.com/questions/40756100/check-if-directory-exists-in-haskell)
-- [Haskellin virallinen kotisivu](https://www.haskell.org/)
-
-Kiitos, että luit tämän blogikirjoituksen! Toivottavasti se auttoi sinua oppimaan lisää siitä, miten tarkistaa hakemistoja Haskellissa. Muista käyttää näitä taitoja omassa koodauksessasi ja jatkaa oppimista!
+- [Haskellin System.Directory-dokumentaatio](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Stack Overflow -kuinka tarkistaa, onko hakemisto olemassa Haskelliin](https://stackoverflow.com/questions/646282/how-to-determine-if-a-file-is-a-directory-in-haskell)

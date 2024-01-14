@@ -1,34 +1,47 @@
 ---
-title:                "Gleam: Usuwanie znaków pasujących do wzorca"
+title:                "Gleam: Usuwanie znaków dopasowujących wzorzec"
+simple_title:         "Usuwanie znaków dopasowujących wzorzec"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
+Polish readers may often come across the need to delete characters in a given string that match a specific pattern. This could be for reasons such as data cleanup, removing sensitive information, or transforming data for further processing. In this blog post, we will explore how to achieve this in Gleam programming language.
+
 ## Dlaczego
 
-Często podczas pisania kodu w języku Gleam, możemy natknąć się na potrzebę usunięcia znaków odpowiadających określonemu wzorcowi. To może być ważne w celu czyszczenia danych wejściowych lub filtrowania danych w celu uzyskania odpowiednich wyników. W tym artykule dowiesz się, jak łatwo usuwać znaki w języku Gleam.
+Często zdarza się, że musimy usunąć znaki w ciągu, które pasują do określonego wzorca. Być może jest to konieczne dla wyczyszczenia danych, usunięcia poufnych informacji lub przekształcenia danych do dalszej obróbki. W tym artykule dowiemy się, jak osiągnąć ten cel w języku programowania Gleam.
 
 ## Jak to zrobić
 
-```Gleam
-import gleam/regex
+W języku Gleam możemy użyć funkcji `String.replace`, która pozwala na podanie wzorca i zastępczej wartości do usunięcia pasujących znaków. Na przykład, jeśli chcemy usunąć wszystkie cyfry z ciągu, możemy użyć następującego kodu:
 
-let input = "Cześć, ta wiadomość będzie zawierać @tagi i *słowa~ do~usunięcia*."
-let output = regex.replace(input, "\\W", "")
-// output: "Cześćtawiadomośćbędziezawieraćtagiisłowadousunięcia"
+```Gleam
+import gleam/re
+
+let str = "Abc123Def"
+let cleaned_str = String.replace(re.compile("\\d+"), "", str)
 ```
 
-W powyższym kodzie, importujemy bibliotekę `gleam/regex` i tworzymy zmienną `input` zawierającą nasz tekst do obróbki. Następnie używamy funkcji `replace` z biblioteki `regex`, która przyjmuje dwa argumenty: tekst do przetworzenia oraz wzorzec, który ma zostać usunięty. W tym przypadku użyliśmy `\\W` jako wzorca, co oznacza, że wszystkie znaki nie będące literami lub cyframi zostaną usunięte. Na końcu, przechowujemy wynik w zmiennej `output` i możemy go wyświetlić lub wykorzystać w dalszej części naszego kodu.
+W powyższym przykładzie, używamy funkcji `re.compile` z pakietu `gleam/re`, aby utworzyć wzorzec wyszukiwania. Następnie przekazujemy ten wzorzec do funkcji `String.replace`, wraz z wartością pustą jako zastępczą. Otrzymujemy wynikowy ciąg, w którym wszystkie cyfry zostały usunięte.
 
-## Wnikliwe spojrzenie
+### Przykład 1:
 
-Funkcja `replace` z biblioteki `gleam/regex` wykorzystuje wyrażenia regularne (regex) do dopasowania i usuwania określonych znaków. W przykładzie powyżej użyliśmy `\\W`, ale można również wykorzystać inne wyrażenia regularne, takie jak `\\d` do usuwania cyfr lub `\\s` do usuwania spacji. Możliwości są nieograniczone, a użycie wyrażeń regularnych pozwala dokładnie dostosować, które znaki chcemy usunąć.
+Wejście: "Abc123Def"
+Wynik: "AbcDef"
+
+### Przykład 2:
+
+Wejście: "123SomeWord456"
+Wynik: "SomeWord"
+
+## Deep Dive
+
+Funkcja `String.replace` wykorzystuje moduł `std.regex` do dopasowywania wzorca w ciągu. Możemy więc wykorzystać bogatą składnię tego modułu do bardziej zaawansowanych operacji usuwania znaków. Na przykład, możemy użyć specjalnych wyrażeń regularnych, takich jak grupowanie i odwrotna odwrotność, aby bardziej precyzyjnie określić, które znaki powinny zostać usunięte.
 
 ## Zobacz również
-
-- Dokumentacja biblioteki `gleam/regex`: [https://gleam.run/modules/regex/](https://gleam.run/modules/regex/)
-- Przykładowe wyrażenia regularne: [https://www.regular-expressions.info/examples.html](https://www.regular-expressions.info/examples.html)
-- Wideo tutorial o wyrażeniach regularnych w języku Gleam: [https://www.youtube.com/watch?v=S981LirFApA](https://www.youtube.com/watch?v=S981LirFApA)
+- Dokumentacja `gleam/re`: https://gleam.run/modules/gleam_re/latest/
+- Dokumentacja `std.regex`: https://gleam.run/modules/gleam_std_regex/latest/

@@ -1,33 +1,37 @@
 ---
-title:                "Kotlin: Eliminazione di caratteri corrispondenti a un modello."
+title:                "Kotlin: Cancellare caratteri corrispondenti a un determinato pattern"
+simple_title:         "Cancellare caratteri corrispondenti a un determinato pattern"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Nella programmazione, ci possono essere diverse ragioni per voler eliminare dei caratteri che corrispondono ad un certo pattern. Ad esempio, può essere utile per ripulire dati di input o per modificare una stringa in un formato specifico.
 
-## Come Fare
-Per eliminare i caratteri che corrispondono ad un pattern in Kotlin, possiamo utilizzare la funzione `replace` sulla stringa di input. Questa funzione prende come parametri il pattern da cercare e la stringa di sostituzione.
+Ci sono molte ragioni per cui potresti voler cancellare i caratteri che corrispondono ad un determinato modello nel tuo programma Kotlin. Ad esempio, potresti voler pulire un input utente per garantire la sicurezza del tuo programma o potresti dover formattare una stringa prima di salvarla in un database.
 
-```Kotlin
-val input = "123-456-789"
-val output = input.replace(Regex("[^\\d]"), "") // output: 123456789
-```
+## Come fare
 
-Nell'esempio sopra, stiamo eliminando tutti i caratteri non numerici dalla stringa di input utilizzando un'espressione regolare. Possiamo anche utilizzare la funzione `replace` per sostituire i caratteri con un altro valore, come mostrato nell'esempio seguente.
+Per cancellare i caratteri che corrispondono ad un modello, puoi utilizzare la funzione `replace` nella classe `String` di Kotlin. Questa funzione accetta due argomenti: il primo è il modello dei caratteri da sostituire e il secondo è la stringa di sostituzione.
 
 ```Kotlin
-val input = "abc123def"
-val output = input.replace(Regex("[a-z]"), "X") // output: XXX123XXX
+val str = "Questo è un esempio di stringa con dei numeri 12345 e delle lettere abcdef"
+val cleanedStr = str.replace(Regex("[0-9]+"), "") // Rimuove tutti i numeri dalla stringa
+println(cleanedStr)
+
+// Output: Questo è un esempio di stringa con dei numeri e delle lettere abcdef
 ```
+
+In questo esempio, utilizziamo la classe `Regex` per creare un modello che rappresenta qualsiasi sequenza di numeri. Questo modello verrà quindi usato nella funzione `replace` per rimuovere tutti i numeri dalla stringa di input.
 
 ## Approfondimento
-L'uso delle espressioni regolari può essere molto utile quando si tratta di rimuovere caratteri che corrispondono ad un determinato pattern. Le espressioni regolari sono uno strumento potente per la manipolazione dei dati e possono essere utilizzate in diverse situazioni di programmazione. Per saperne di più sull'utilizzo di espressioni regolari in Kotlin, si consiglia di consultare la documentazione ufficiale.
 
-## Vedi Anche
-- [Documentazione ufficiale di Kotlin sulle espressioni regolari](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-- [Tutorial per principianti sulle espressioni regolari in Kotlin](https://www.raywenderlich.com/2637734-kotlin-regular-expressions-tutorial-getting-started)
+Se vuoi saperne di più sulla cancellazione dei caratteri corrispondenti ad un pattern, ti consiglio di esplorare la funzione `replace` nella documentazione ufficiale di Kotlin. Inoltre, puoi sperimentare con altri tipi di modelli e stringhe di sostituzione per ottenere risultati diversi. Ricorda sempre di gestire eventuali errori che possono verificarsi durante la cancellazione dei caratteri.
+
+## Vedi anche
+
+- [Documentazione ufficiale di Kotlin su funzione replace](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- [Tutorial su come utilizzare la classe Regex in Kotlin](https://www.baeldung.com/kotlin/regex)

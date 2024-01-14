@@ -1,62 +1,52 @@
 ---
 title:                "Python: Användning av reguljära uttryck"
+simple_title:         "Användning av reguljära uttryck"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför använda reguljära uttryck?
+## Varför
+Regular expressions, eller reguljära uttryck, är ett användbart verktyg inom Python programmering som hjälper till att söka, identifiera och manipulera textsträngar. Det är ett kraftfullt verktyg som sparar tid och gör det möjligt att bearbeta stora mängder data snabbt och effektivt.
 
-Reguljära uttryck är en kraftfull funktion inom Python som gör det möjligt att söka och matcha textsträngar på ett mer avancerat sätt. Genom att använda reguljära uttryck kan du snabbt och effektivt hitta specifika mönster i texten och genomföra åtgärder baserat på dessa mönster. Detta är särskilt användbart inom datahantering, textbehandling och webbprogrammering.
-
-## Så här använder du reguljära uttryck i Python
-
-För att använda reguljära uttryck i Python, behöver du först importera modulen "re". Sedan kan du använda olika metoder för att utföra sökningar och matchningar på en textsträng.
+## Så här gör du
+Det finns olika moduler inom Python som stöder regular expressions, bland annat "re" och "regex". För att använda dessa moduler måste de importeras i koden med hjälp av "import" kommandot. Här är ett exempel på hur man kan söka efter en viss textsträng i en variabel med hjälp av reguljära uttryck:
 
 ```Python
-# Importera modulen "re"
-import re
+import re # importera modulen
 
-# En enkel sökning efter ett exakt ord
-text = "Hej, jag heter Anna"
-resultat = re.search(r"\bAnna\b", text)
-print(resultat.group()) # Output: Anna
+text = "Detta är en textsträng som innehåller ordet Python"
+
+match = re.search(r"Python", text) # sök efter ordet "Python" i textsträngen
+
+if match:
+    print("Ordet hittades.")
+else:
+    print("Ordet hittades inte.")
 ```
 
-```Python
-# En enkel matchning för att hitta en siffra
-text = "Jag är 25 år gammal"
-resultat = re.search(r"\d+", text)
-print(resultat.group()) # Output: 25
+Output:
+
+```
+Ordet hittades.
 ```
 
-Du kan också använda olika "metakaraktärer" för att söka efter mönster som t.ex. bokstäver, siffror, eller specifika teckenkombinationer. Det finns många möjligheter med reguljära uttryck och det är värt att lägga tid på att lära sig grunderna för att kunna använda det effektivt.
+I detta exempel används "re.search()" funktionen för att söka efter ett specifikt mönster, i detta fall ordet "Python". Om mönstret hittas, returneras en matchning och annars returneras "None". Notera att "r" prefixet före strängen används för att behandla strängen som ett reguljärt uttryck.
 
-## Djupdykning i reguljära uttryck
+## Djupgående
+Regular expressions erbjuder många olika mönster för sökning, så som sökning efter flera mönster, avläsning av specifika tecken och ersättning av textsträngar. Det finns också en mängd specialtecken som kan användas för att göra mer avancerade sökningar.
 
-Reguljära uttryck består av olika "regler" som anger vilka typer av tecken och mönster som ska sökas efter. Det finns också många olika modifierare som kan användas för att göra sökningarna mer specifika.
+En av de viktigaste delarna av att använda regular expressions är att förstå hur dessa specialtecken fungerar. "```\d```" står till exempel för att söka efter en siffra, "```\w```" står för ett alfanumeriskt tecken och "```\s```" står för ett mellanslagstecken.
 
-Några grundläggande metakaraktärer som kan vara bra att känna till är:
+Det finns också olika funktioner som kan användas för att manipulera strängar med hjälp av regular expressions, så som "sub()", som ersätter matchade mönster med annan text.
 
-* \b - matchar gränserna för ett ord
-* \d - matchar siffror
-* \w - matchar alfanumeriska tecken
-* \s - matchar mellanslag och tabbar
-
-Det finns också många modifierare som kan användas, som t.ex.:
-
-* + - en eller flera förekomster
-* * - ingen eller flera förekomster
-* ? - en eller ingen förekomst
-* [a-z] - matchar alfabetiska tecken mellan a-z
-* [0-9] - matchar siffror mellan 0-9
-
-Om du vill fördjupa dig mer i reguljära uttryck kan du läsa dokumentationen för modulen "re" i Python eller utforska andra resurser på nätet.
+För djupgående information och exempel på andra mönster och funktioner, se dokumentationen för "re" eller "regex" modulen.
 
 ## Se även
-
-* [Dokumentation för reguljära uttryck i Python](https://docs.python.org/3/library/re.html)
-* [Tutorial för reguljära uttryck i Python](https://www.w3schools.com/python/python_regex.asp)
-* [Reguljära uttryck: Cheat sheet](https://www.dataquest.io/blog/regular-expressions-cheatsheet/)
+- [Re-modulen](https://docs.python.org/3/library/re.html)
+- [Regex-modulen](https://docs.python.org/3/library/re.html)
+- [Reguljära uttryck i Python](https://realpython.com/regex-python/)
+- [Regular Expressions Cheat Sheet](https://www.debuggex.com/cheatsheet/regex/python)

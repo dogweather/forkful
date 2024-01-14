@@ -1,39 +1,41 @@
 ---
-title:                "C#: 文字列の長さを求める"
+title:                "C#: 文字列の長さを見つける"
+simple_title:         "文字列の長さを見つける"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/c-sharp/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# なぜ文字列の長さを調べる必要があるのか
 
-文字列の長さを求めることの意義は、プログラミングでテキストを処理する際に非常に重要です。例えば、ユーザーに入力された文字列をチェックするときや、ファイルの内容を扱うときに、文字列の長さを知る必要があります。
+文字列の長さを調べることは、プログラミングにおいて非常に一般的な作業です。例えば、文字列を入力するフォームで制限された文字数内に入力されているかをチェックする、テキストデータを正しく処理するために必要な作業などが挙げられます。文字列の長さを知ることで、プログラムをより正確に制御することができます。
 
 ## 方法
 
+文字列の長さを調べるには、C#の `Length` プロパティを使用します。例えば、以下のようなコードを記述することで、文字列の長さをコンソールに出力することができます。
+
 ```C#
-// 文字列の長さを求める方法
-string text = "こんにちは、世界！";
-int length = text.Length;
-Console.WriteLine(length); // 出力結果: 9
+string str = "こんにちは";
+Console.WriteLine(str.Length);
 ```
 
-上記のコードでは、`string`型の変数`text`に文字列を代入し、`Length`プロパティを使用して文字列の長さを取得しています。このプロパティは、文字列の全ての文字をカウントしてくれるので、日本語や英語、数字などの多言語にも対応しています。また、空白や句読点も文字としてカウントされるので注意が必要です。
+この場合、`str` の長さである「5」が出力されます。
+
+また、文字列の長さを調べる際には空白も含まれることに注意しましょう。例えば、`Hello World` という文字列の長さは11となります。
 
 ## 深堀り
 
-文字列の長さを求める方法には、`Length`プロパティ以外にも`Count`メソッドを使用する方法もあります。しかし、`Count`メソッドは文字列の長さを求めるだけでなく、指定した条件に合致した文字の数をカウントすることもできます。これは、特定の文字を探して処理を行う場合などに便利です。
+文字列の長さを調べる際には、文字コードの種類にも注意が必要です。たとえば、英語の場合は1文字あたり1バイトとなりますが、日本語の場合は2バイトとなります。そのため、日本語の文字列の長さを調べる際には、`Encoding.GetByteCount()` メソッドを使用することで正確な長さを取得することができます。
 
-## よくある質問
+# 参考リンク
 
-- 日本語の文字列の長さは、英文字列の長さと同じですか？
-  - はい、日本語の文字列も全ての文字をカウントして長さを判断します。
-- 文字列の先頭や末尾にある空白や改行は、文字列の長さに含まれるのですか？
-  - はい、文字列の先頭や末尾の空白や改行も文字としてカウントされます。
+- [C# Length プロパティのドキュメント](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.length)
+- [C# Encoding.GetByteCount() メソッドのドキュメント](https://docs.microsoft.com/ja-jp/dotnet/api/system.text.encoding.getbytecount)
+- [文字コードの種類による文字列の長さ取得の違い](https://www.atmarkit.co.jp/ait/articles/1609/28/news031.html)
 
-## 参考リンク
+## 参考
 
-- [.NET プログラミング ガイド: 文字列の基本](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/strings)
-- [C# マニュアル: string.Length プロパティ](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.length)
+[C#プログラミング入門 - 文字列を扱う](https://www.javadrive.jp/csharp/string/index1.html)

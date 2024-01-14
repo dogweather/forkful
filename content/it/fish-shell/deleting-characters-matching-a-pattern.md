@@ -1,38 +1,39 @@
 ---
-title:                "Fish Shell: Eliminazione di caratteri corrispondenti ad un modello"
+title:                "Fish Shell: Cancellazione di caratteri che corrispondono a un pattern"
+simple_title:         "Cancellazione di caratteri che corrispondono a un pattern"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-Quando si lavora con la Shell Fish, è possibile che ci si trovi a dover eliminare caratteri corrispondenti a un certo pattern. Questo potrebbe essere necessario per eseguire una correzione o per pulire i dati in una stringa.
 
-## Come fare
-Utilizzare il comando `string match` in Fish Shell per trovare e eliminare i caratteri corrispondenti al pattern desiderato. Ad esempio, se vogliamo eliminare tutti i numeri da una stringa, possiamo utilizzare il seguente codice:
+Se sei un programmatore che utilizza Fish Shell, potresti trovarti nella situazione in cui devi eliminare caratteri all'interno di un file che corrispondono a un certo pattern. Questo può essere utile per eseguire operazioni di pulizia del testo o per modificare specifiche parti di un file.
 
-```Fish Shell
-set stringa “Questo è un esempio 123 di una stringa”
-set pattern “[0-9]”
-set nuova_stringa (string match -d -- $pattern $stringa)
+## Come Fare
+
+Per eliminare i caratteri corrispondenti a un pattern in Fish Shell, puoi utilizzare il comando `sed` combinato con il comando `tr` (traduci). Vediamo un esempio pratico:
+
 ```
-Il comando `string match` ci permette di specificare il pattern che vogliamo cercare (`[0-9]` in questo caso) e poi utilizziamo l'opzione `-d` per indicare che vogliamo eliminare i caratteri corrispondenti. Infine, usiamo `--` per indicare che il pattern si applica solo alla stringa e non ai comandi successivi.
-
-Il risultato sarà una nuova stringa senza i caratteri numerici: `Questo è un esempio di una stringa`.
-
-## Approfondimento
-Per effettuare una ricerca più precisa e complessa, possiamo utilizzare espressioni regolari all'interno del comando `string match`. Ad esempio, se vogliamo eliminare tutti i caratteri speciali da una stringa, possiamo utilizzare il seguente codice:
-
-```Fish Shell
-set stringa “Q/uest!o è un'e&mpi,.,o di una strin'ga”
-set pattern “[^a-zA-Z0-9\s]”
-set nuova_stringa (string match -d -- $pattern $stringa)
+Fish Shell
+sed 's/pattern//' file.txt | tr -d ' '
 ```
-In questo caso, stiamo specificando un pattern che selezioni tutti i caratteri diversi da lettere, numeri e spazi (indicati con `[^a-zA-Z0-9\s]`). Il risultato sarà una nuova stringa pulita, senza caratteri speciali: `Q u est o è un e mpi o di una strin ga`.
 
-## Vedi anche
+In questo esempio, il comando `sed` rileverà il pattern specificato e lo sostituirà con una stringa vuota. Il risultato verrà quindi passato al comando `tr` che eliminerà tutti i caratteri spazio presenti nel file. Infine, il risultato finale verrà visualizzato sulla riga di comando.
+
+Naturalmente, puoi personalizzare il comando `sed` per adattarlo alle tue esigenze. Ad esempio, se vuoi eliminare solo un carattere in particolare, puoi utilizzare il comando `tr` per sostituirlo con una stringa vuota. Puoi anche combinare più pattern e comandi per ottenere risultati più complessi.
+
+## Approfondimenti
+
+Eliminare caratteri corrispondenti a un pattern può sembrare una semplice operazione, ma in realtà ha diverse sfaccettature e opzioni che possono essere utilizzate. Ad esempio, puoi utilizzare l'opzione `-i` del comando `sed` per modificare direttamente il file originale con le modifiche effettuate.
+
+Inoltre, è possibile combinare il comando `sed` con altri comandi Unix come `grep` e `awk` per effettuare operazioni più complesse sui file. Puoi anche trovare molte risorse online che mostrano diverse tecniche per eliminare caratteri corrispondenti a un pattern con Fish Shell.
+
+## Vedi Anche
+
 - [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Guida alle espressioni regolari](https://www.regular-expressions.info/)
-- [Guida introduttiva a Fish Shell](https://scotch.io/tutorials/getting-started-with-fish-the-friendly-interactive-shell)
+- [Riferimento del comando sed](https://linux.die.net/man/1/sed)
+- [Tutorial su come utilizzare sed](https://www.tutorialspoint.com/sed/index.htm)

@@ -1,21 +1,19 @@
 ---
-title:                "C: Die aktuelle Datum erhalten"
+title:                "C: Das heutige Datum erhalten"
+simple_title:         "Das heutige Datum erhalten"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-
-Das aktuelle Datum zu erhalten, kann für viele Anwendungen hilfreich sein, sei es für die Organisation von Dateien, die Überprüfung von Garantiefristen oder einfach nur, um den Tag nicht zu vergessen. In dieser Blog-Post werden wir uns anschauen, wie man dies in C programmieren kann.
+Beim Programmieren ist es oft notwendig, das aktuelle Datum zu erfassen. Das kann verwendet werden, um eine Datei mit dem aktuellen Datum zu benennen oder um einen Zeitstempel für bestimmte Aktionen zu setzen.
 
 ## Wie
-
-Um das aktuelle Datum in C zu erhalten, müssen wir die Header-Datei ```<time.h>``` importieren. Diese enthält die Funktionen, die wir benötigen, um das Datum und die Uhrzeit zu erhalten.
-
-Zunächst müssen wir eine Variable vom Typ ```struct tm``` deklarieren. Diese wird verwendet, um die aufgeschlüsselten Informationen des Datums (Jahr, Monat, usw.) zu speichern. Dann rufen wir die ```time()``` Funktion auf, die uns die Anzahl an Sekunden seit dem 1. Januar 1970 zurückgibt. Diese Zahl können wir dann an die ```gmtime()``` Funktion übergeben, die dann die entsprechenden Werte in unserer ```struct tm``` Variable aktualisiert. Schließlich können wir diese Werte in unserem Programm beliebig verwenden. Hier ist ein Beispielcode:
+Es gibt mehrere Wege, das aktuelle Datum in C zu bekommen. Ein einfacher Weg ist die Verwendung der Funktion `time()`, welche die aktuelle Zeit in Sekunden seit dem 1. Januar 1970 zurückgibt. Um das Datum in einem lesbaren Format zu erhalten, muss diese Zahl in die Struktur `struct tm` umgewandelt werden mit der Funktion `localtime()`.
 
 ```C
 #include <stdio.h>
@@ -23,53 +21,31 @@ Zunächst müssen wir eine Variable vom Typ ```struct tm``` deklarieren. Diese w
 
 int main()
 {
-    struct tm current_date; // Deklariere eine Variable vom Typ struct tm
-    time_t seconds = time(NULL); // Rufe die time() Funktion auf und speichere die Rückgabe in seconds
-    current_date = *gmtime(&seconds); // Aktualisiere die Werte in der current_date Variable
-    printf("Heute ist der %d.%d.%d\n", current_date.tm_mday, current_date.tm_mon+1, current_date.tm_year+1900); // Gib das aktuelle Datum aus (ACHTUNG: tm_mon beginnt bei 0)
+    // Aktuelle Zeit in Sekunden seit 1. Januar 1970
+    time_t current_time;
+    time(&current_time);
+
+    // Umwandlung in die Struktur struct tm
+    struct tm *local = localtime(&current_time);
+
+    // Ausgabe des Datums in einem lesbaren Format
+    printf("Das aktuelle Datum ist: %d/%d/%d\n", local->tm_mday, local->tm_mon + 1, local->tm_year + 1900);
+    
     return 0;
 }
 ```
 
-Mit dem obigen Code können wir das aktuelle Datum im Format Tag.Monat.Jahr ausgeben. Hier ist ein Beispieloutput:
+Die Ausgabe sieht dann beispielsweise wie folgt aus:
 
 ```
-Heute ist der 12.9.2021
+Das aktuelle Datum ist: 23/04/2021
 ```
 
 ## Deep Dive
+Die Funktion `time()` ruft in Wahrheit die Funktion `time64()` auf, welche in 64-bit Systemen die Anzahl an Millisekunden seit dem 1. Januar 1601 zurückgibt. Erst mit der Konvertierung in Sekunden und der Verwendung der Struktur `struct tm` wird das aktuelle Datum in ein lesbare Form gebracht.
 
-Die ```time()``` Funktion gibt uns die Anzahl an Sekunden seit dem 1. Januar 1970 zurück, auch bekannt als Unix-Zeitstempel. Dies ist eine gemeinsame Methode, um Datum und Uhrzeit in vielen Programmiersprachen zu speichern, da es eine einfache und standardisierte Möglichkeit bietet, damit zu arbeiten.
-
-```gmtime()``` gibt uns die Werte in Koordinierter Weltzeit (UTC) zurück. Wenn du die lokale Zeit deines Standorts benötigst, kannst du die ```localtime()``` Funktion anstelle von ```gmtime()``` verwenden.
-
-Es ist auch möglich, das aktuelle Datum in einem bestimmten Format auszugeben, indem man die Funktion ```strftime()``` verwendet. Diese erlaubt es uns, ein benutzerdefiniertes Datumsformat anzugeben, wie zum Beispiel ```"%A, %d %b %Y"```, welches uns den Wochentag, den Tag, die abgekürzte Monatsbezeichnung und das Jahr zurückgibt. Hier ist ein Beispielcode:
-
-```C
-#include <stdio.h>
-#include <time.h>
-
-int main()
-{
-    struct tm current_date;
-    time_t seconds = time(NULL);
-    current_date = *gmtime(&seconds);
-    char date_string[50]; // Deklariere ein Array für die Ausgabe
-    strftime(date_string, 50, "%A, %d %b %Y", &current_date); // Verwende strftime() um das Datum in einem bestimmten Format auszugeben
-    printf("%s", date_string);
-    return 0;
-}
-```
-
-Hier ist der entsprechende Beispieloutput:
-
-```
-Sunday, 12 Sep 2021
-```
-
-Für eine vollständige Liste der möglichen Formatierungsoptionen kannst du die [offizielle Dokumentation](https://www.gnu.org/software/libc/manual/html_node/Formatting-Calendar-Time-Strings.html) der ```strftime()``` Funktion konsultieren.
+Es gibt auch eine ähnliche Funktion namens `clock()` welche die CPU-Zeit seit dem Programmstart zurückgibt. Diese kann verwendet werden, wenn man die Ausführungszeit eines bestimmten Programmteils messen möchte.
 
 ## Siehe auch
-
-- [Unix-Zeitstempel auf Wikipedia](https://de.wikipedia.org/wiki/Unixzeit)
-- [Offizielle Dokumentation der <time.h> Header-Datei](https://www.gnu.org/software/libc/manual/html_node/Time_002dRelated-Types.html#Time_002dRelated-Types)
+- [Offizielle Dokumentation zu time()](https://www.cplusplus.com/reference/ctime/time/)
+- [Weitere Informationen zur Struktur struct tm](https://www.geeksforgeeks.org/time-h-header-file-in-c-with-examples/)

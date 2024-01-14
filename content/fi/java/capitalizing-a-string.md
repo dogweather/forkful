@@ -1,43 +1,34 @@
 ---
-title:                "Java: Kirjoita merkkijono isolla alkukirjaimella"
+title:                "Java: Merkkijonon muuttaminen isolla alkukirjaimella"
+simple_title:         "Merkkijonon muuttaminen isolla alkukirjaimella"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi: 
+Kapitalisointi on tapa muuttaa merkkijonon kirjaimien koon alkuperäisestä muodosta isoksi tai pieneksi. Se voi olla hyödyllistä esimerkiksi tekstin muotoilussa tai tiedon käsittelyssä.
 
-Joissain tapauksissa on tarpeen muuttaa merkkijonon kirjaimia muuttamalla ne isoiksi tai pieniksi. Tämä voi olla esimerkiksi tarpeellista, jos halutaan syöttää käyttäjän syöttämä teksti tietokantaan ja varmistaa, että se tallennetaan yhtenäisellä tavalla. Tai toisessa tapauksessa halutaan vain esittää tietoa käyttäjälle visuaalisesti isoina kirjaimina.
-
-## Kuinka tehdä se?
-
-Onneksi Javan String-luokka tarjoaa valmiin toiminnon merkkijonon muuttamiseen isoiksi kirjaimiksi. Tämä toiminto on nimeltään `toUpperCase()`. Se voidaan kutsua suoraan merkkijonoon ja se palauttaa uuden merkkijonon, jossa kaikki kirjaimet ovat isoja.
+## Miten: 
+Kapitalisoiminen on helppoa Java-ohjelmointikielessä. Voit käyttää valmiita kirjastoja tai kirjoittaa oman funktion. Esimerkiksi String-luokassa on valmiina metodeja capitalize() ja toUpperCase(), joilla voi muuttaa merkkijonon kirjaimet isoksi. Alla on esimerkki tällaisen funktion käytöstä:
 
 ```Java
-String teksti = "Hei Maailma!";
-String isoilla = teksti.toUpperCase();
-
-System.out.println(isoilla); // Tulostaa "HEI MAAILMA!"
+String teksti = "tämä on esimerkkiteksti";
+String kapitaloitu = teksti.toUpperCase();
+System.out.println(kapitaloitu);
 ```
 
-Huomaa, että `toUpperCase()` ei muuta alkuperäistä merkkijonoa vaan palauttaa uuden muokatun version. Jos haluat muuttaa alkuperäisen merkkijonon isoiksi kirjaimiksi, voit korvata sen uudella versiolla:
+Tämä koodi tulostaa merkkijonon "TÄMÄ ON ESIMERKKITEKSTI", jossa kaikki kirjaimet ovat isolla.
 
-```Java
-String teksti = "Hei Maailma!";
-teksti = teksti.toUpperCase();
+## Syvällisempi sukellus: 
+Yksi asia, joka kannattaa huomioida kapitalisoinnissa, on merkistö. Eri kielissä ja kulttuureissa käytetään erilaisia merkkejä, joten kapitalisointi voi antaa erilaisia tuloksia eri ympäristöissä. Esimerkiksi ääkköset eivät välttämättä muutu suuriksi kirjaimiksi kaikissa järjestelmissä. Myös numerot ja erikoismerkit voivat aiheuttaa ongelmia kapitalisoitaessa tekstejä.
 
-System.out.println(teksti); // Tulostaa "HEI MAAILMA!"
-```
+Java tarjoaa vaihtoehtoisia metodeja, kuten toUpperCase(Locale), jonka avulla voi määrittää tarkemmin halutun merkistön. Lisäksi on olemassa tapoja käsitellä erikoismerkkejä ja muuttaa ne halutuiksi kirjaimiksi.
 
-## Syvemmälle pintaan
-
-Vaikka `toUpperCase()`-toiminto on helppo käyttää, on hyvä ymmärtää hieman enemmän siitä, miten se toimii taustalla. Javan String-luokka tallentaa merkkijonot taulukkona, jossa jokainen merkki on erillinen elementti. `toUpperCase()`-toiminto käy läpi tämän taulukon ja muuntaa jokaisen merkin isoiksi vastaavien ASCII-koodien avulla.
-
-On myös hyvä huomata, että `toUpperCase()` ei muuta muita merkkejä kuin kirjaimia. Numerot ja erikoismerkit säilyvät samoina. Tämä kannattaa ottaa huomioon, jos merkkijonossa on esimerkiksi välimerkkejä tai numeroita.
-
-## Katso myös
-
-- Javan String-luokan tiedot: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
-- ASCII-koodit: https://www.ascii-code.com/
+## Katso myös: 
+- [String-luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java Strings -kapitalisoinnin ohjeet](https://www.javatpoint.com/java-string-to-uppercase)
+- [Eri merkistöjen vaikutus Java Strings -kapitalisointiin](https://docs.oracle.com/javase/tutorial/i18n/text/string.html) (englanniksi)

@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Hahmon yhdistävien merkkien poistaminen"
+title:                "Javascript: Mallia vastaavien merkkien poistaminen"
+simple_title:         "Mallia vastaavien merkkien poistaminen"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/javascript/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,29 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa ohjelmointitilanteissa voi olla tarpeellista poistaa merkkejä, jotka vastaavat tiettyä kaavaa tai kriteeriä. Tämä voi johtua tiedon muotoilun tarpeesta, tiettyjen merkkien siivoamisesta tai muista syistä. Seuraavassa jaana käydään läpi Javasript-koodin avulla, kuinka voit helposti poistaa merkkejä vastaavat kaavat tai kriteerit.
+JavaScript-ohjelmoijat voivat haluta poistaa merkkejä, jotka vastaavat tiettyä kaavaa esimerkiksi datan puhdistamiseksi tai ei-toivotun tekstin poistamiseksi.
 
 ## Miten
 
-Käyttämällä `replace()`-funktiota ja säännöllisiä lausekkeita, voit poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Seuraavassa esimerkissä haluamme poistaa kaikki välilyönnit merkkijonosta.
+Kärsivällistä lukijaa, lähdetään tutkimaan, miten poistaa merkkejä, jotka vastaavat tiettyä kaavaa JavaScriptillä.
 
-```Javascript
-let merkkijono = "Tämä on esimerkki merkkijonosta, jossa on paljon välilyöntejä.";
-let uusiMerkkijono = merkkijono.replace(/ /g, "");
-console.log(uusiMerkkijono);
+```JavaScript
+// Esimerkki syötteestä
+const data = ['JavaScript', 'Python', 'PHP', 'Java', 'C++'];
+
+// Poistetaan kaikki merkit, jotka sisältävät kirjaimen "p"
+const newData = data.filter(element => !element.includes('p'));
+
+console.log(newData); // Output: ['Java', 'C++'];
+
 ```
 
-Tulostaa: "Tämäonesimerkkimerkkijonosta,jospaljonvälilyöntejä."
+## Syvällinen sukellus 
 
-Tässä esimerkissä `replace()`-funktio korvaa jokaisen välilyönnin merkkijonossa tyhjällä merkkijonolla `""` ja lisää parametrin `g` ansiosta kaikkiin välilyönteihin. Voit myös käyttää muita säännöllisiä lausekkeita ja kaavoja poistaaksesi tiettyjä merkkejä haluamallasi tavalla.
-
-## Syvällinen sukellus
-
-Säännölliset lausekkeet ovat tehokas ja monipuolinen työkalu merkkien ja kaavojen hallintaan. Niitä käytetään usein erilaisissa tietojenmuokkaus- ja tekstinkäsittelytilanteissa. Javasriptissä säännölliset lausekkeet ovat esineitä, joilla on predefinoidut tai käyttäjän määrittelemät kaavat. Ne koostuvat yksinkertaisista merkeistä ja operaattoreista, joiden avulla voit etsiä ja muokata merkkejä haluamallasi tavalla.
-
-Tässä esimerkissä käytimme vain yksinkertaista säännöllistä lauseketta, mutta voit syventää osaamistasi ja löytää monimutkaisempia ja hyödyllisempiä lausekkeita. Säännöllisten lausekkeiden oppiminen auttaa sinua ymmärtämään paremmin, kuinka käsittellä merkkejä ohjelmointikielissä, kuten Javasriptissä.
+Poistamisen lisäksi voimme myös korvata vastaavat merkit muulla merkillä tai toisella merkkijonolla. Voimme myös tarkastella käytössä olevien kaavojen tehokkuutta ja harkita eri vaihtoehtoja sen parantamiseksi. On myös tärkeää tarkistaa, että poistetut merkit vastaavat todella haluttua kaavaa.
 
 ## Katso myös
 
-- [Javasriptin säännölliset lausekkeet -MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [RegExr - väline säännöllisten lausekkeiden kokeilemiseen ja testaamiseen](https://regexr.com/)
+- [String replace method in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [Regular Expressions in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

@@ -1,77 +1,74 @@
 ---
-title:                "Arduino: Написання текстового файлу"
+title:                "Arduino: Створення текстового файлу"
+simple_title:         "Створення текстового файлу"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/arduino/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Чому
-Написання текстового файлу є важливою складовою програмування на Arduino для того, щоб зберегти і обробити дані, отримані з датчиків або від користувача.
+Написання текстових файлів є важливою частиною програмування Arduino, оскільки це дає можливість зберігати інформацію та використовувати її у подальших проектах.
 
 ## Як
-Написання текстового файлу на Arduino просто здійснюється за допомогою використання функцій `Serial` та `SD` бібліотеки. Приклад коду та його вивід показані нижче.
+Написання текстових файлів на Arduino можна виконати за допомогою наступного коду:
 
 ```Arduino
+#include <SPI.h>
 #include <SD.h>
 
-File dataFile;
+File myFile;
 
 void setup() {
-  // ініціалізація Serial порту
+  // ініціалізація SD картки
   Serial.begin(9600);
-
-  // ініціалізація SD карти
-  if (!SD.begin(10)) {
-    Serial.println("Помилка ініціалізації SD карти.");
-    while (1);
+  while (!Serial) {
+    ; // чекаємо з'єднання з монітором серійного порту
   }
 
-  // відкриття файлу для запису даних
-  dataFile = SD.open("dane.txt", FILE_WRITE);
+  Serial.print("Ініціалізація SD картки...");
+  if (!SD.begin(4)) {
+    Serial.println("Не вдалося ініціалізувати SD картку.");
+    while (1);
+  }
+  Serial.println("готово!");
+
+  // записуємо у текстовий файл
+  myFile = SD.open("test.txt", FILE_WRITE);
+
+  // пишемо у файл
+  myFile.println("Привіт, це текстовий файл!");
+  myFile.close();
+
+  // читаємо з файлу
+  myFile = SD.open("test.txt");
+  if (myFile) {
+    Serial.println("Текст з файлу:");
+    
+    while (myFile.available()) {
+      Serial.write(myFile.read());
+    }
+    myFile.close();
+  } else {
+    Serial.println("Не вдалося відкрити файл.");
+  }
 }
 
 void loop() {
-  // зчитування даних з датчика або від користувача
-  int data = analogRead(A0);
-
-  // запис даних у файл
-  dataFile.println(data);
-
-  // вивід даних в Serial порт
-  Serial.println("Записано: " + String(data));
-
-  delay(1000);
+  // нічого не робимо
 }
-
 ```
 
-Вивід:
+Ви можете замінювати текст у функції `myFile.println` для записування різного виду інформації.
 
-```
-Записано: 123
-Записано: 234
-Записано: 345
-Записано: 456
-...
-```
+Ви також можете використовувати команду `Serial.write` для відображення тексту прямо на моніторі серійного порту.
 
-## Глибше вдивлення
-У випадках, коли необхідно записати більш складні дані, наприклад текстові повідомлення або числа з плаваючою крапкою, можна використати функцію `sprintf` для форматування даних перед записом у файл. Наприклад:
-
-```Arduino
-// приклад з тектовим повідомленням та числом з плаваючою крапкою
-char message[] = "Привіт, це значення напруги: %.2f V";
-float voltage = 5.75;
-
-// форматування повідомлення з вставкою значення напруги
-sprintf(message, message, voltage);
-
-// запис повідомлення у файл
-dataFile.println(message);
-```
+## Поглиблене вивчення
+При написанні текстових файлів на Arduino, важливо враховувати, що SD картка повинна бути ініціалізована перед використанням. Також варто звернути увагу на розташування SD картки та використовувати правильні команди для запису та читання файлів.
 
 ## Дивіться також
-- [SD бібліотека Arduino](https://www.arduino.cc/en/reference/SD)
-- [sprintf() функція Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/sprintf/)
+- [Офіційна документація з роботи з SD карткою на Arduino](https://www.arduino.cc/en/Reference/SD)
+- [Приклад записування та читання текстових файлів на Arduino](https://randomnerdtutorials.com/arduino-data-logger-write-read-sd-card/)
+- [Відео урок з використання SD картки на Arduino](https://www.youtube.com/watch?v=SAXkGeNdl6s)

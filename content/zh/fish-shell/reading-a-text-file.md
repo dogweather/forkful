@@ -1,55 +1,64 @@
 ---
 title:                "Fish Shell: 读取文本文件"
+simple_title:         "读取文本文件"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-Markdown格式的内容。
-
 # 为什么
 
-阅读文本文件是在编程过程中必不可少的技能，可以让你快速有效地处理大量数据。
+Reading a text file may seem like a simple task, but it can be a powerful tool in Fish Shell programming. By learning how to read and manipulate text files, you can automate tasks and streamline your workflow.
 
 # 如何
 
-```Fish Shell```是一种强大的UNIX命令行解释器，它提供了许多内置函数来帮助你读取文本文件。下面是一个简单的例子，展示如何使用```cat```命令来打印出一个文本文件的内容。
+使用Fish Shell的 `read` 命令可以轻松地从文本文件中读取内容。例如，假设我们有一个名为 `test.txt` 的文本文件，其中包含以下内容：
 
 ```
-cat example.txt
+Hello, world!
+This is a test file.
 ```
 
-输出结果会显示出文本文件的全部内容。除了```cat```命令之外，你也可以使用```head```和```tail```命令来打印出文本文件的前几行或后几行。比如：
+我们可以使用以下命令读取该文件的内容并打印出来：
 
 ```
-head -5 example.txt
+Fish Shell > set content (read -f test.txt)
+Fish Shell > echo $content
+Hello, world!
+This is a test file.
 ```
 
-这将打印出文本文件的前5行。如果你想要将这些输出保存到另一个文件中，可以使用重定向符号```>```，例如：
+我们可以将输出内容存储在一个变量中，并对其进行操作。例如，要将文件中的文本转换为大写，可以使用 `string toupper` 命令：
 
 ```
-cat example.txt > output.txt
+Fish Shell > set content (read -f test.txt | string toupper)
+Fish Shell > echo $content
+HELLO, WORLD!
+THIS IS A TEST FILE.
 ```
 
-# 深入了解
-
-读取文本文件时，我们还可以使用管道```|```来对文本内容进行处理。比如，你可以将文本文件的内容通过管道传递给```grep```命令，来筛选出符合某些条件的行。例如：
+除了 `read` 命令外，我们还可以使用 `cat` 命令来读取文本文件的内容：
 
 ```
-cat example.txt | grep "keyword"
+Fish Shell > set content (cat test.txt)
+Fish Shell > echo $content
+Hello, world!
+This is a test file.
 ```
 
-这将输出所有包含关键词```keyword```的行。使用管道可以让我们更灵活地处理文本文件。
+# 深入探讨
 
-# 参考链接
+要更深入地研究读取文本文件的功能，可以查看Fish Shell的官方文档或者使用内置的 `help` 命令来获取更多信息。
+
+除了 `read` 和 `cat` 命令，Fish Shell还提供了其他一些用于读取文本文件的命令，例如 `awk` 和 `sed`。这些命令可以帮助您更高效地处理读取的文件内容。
+
+值得注意的是，当使用 `cat` 命令读取文本文件时，文件内容将被打印在终端中，而当使用 `read` 命令时，文件内容将被存储在变量中，可以在后续的操作中使用。
+
+# 参考资料
 
 - [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [Linux命令行入门教程](https://www.linux.com/training-tutorials/how-use-linux-command-line-basics-cli/)
-- [Linux相关网站合集](https://github.com/alebcay/awesome-shell/blob/master/docs/linux.md)
-
-# 参见
-
-- [想要学习Python编程？这里有一份免费资源列表](https://www.freecodecamp.org/news/python-youtube-videos-2/)
-- [学习UNIX命令行的10个最有用的技巧](https://www.howtogeek.com/412055/10-useful-unix-command-line-tips-and-tricks-you-should-know/)
+- [Fish Shell `read` 命令文档](https://fishshell.com/docs/current/cmds/read.html)
+- [Fish Shell `cat` 命令文档](https://fishshell.com/docs/current/cmds/cat.html)

@@ -1,52 +1,38 @@
 ---
 title:                "Arduino: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 
+## 왜
 
-아두이노 프로그래밍에서 문자열을 소문자로 변환하는 것은 매우 유용합니다. 이것은 사용자로 하여금 입력된 문자열을 문자 크기를 구분하지 않고 처리할 수 있게 해주기 때문입니다.
+문자열을 소문자로 변환하는 것이 왜 중요한지 궁금하신가요? 이 블로그 포스트에서 알려드리겠습니다!
 
-## 어떻게
+## 방법
 
-아두이노를 사용하여 문자열을 소문자로 변환하는 방법은 다음과 같습니다. 아래의 예시 코드를 참고하세요.
+우선 ```Arduino```와 같은 프로그래밍 언어를 사용하여 문자열을 소문자로 변환하는 방법을 소개해 드리겠습니다. 아래 예제 코드를 참고해주세요.
 
-```Arduino
-// 사용자로부터 문자열 입력 받기
-String text = Serial.readString();
-
-// 입력받은 문자열을 소문자로 변환
-text.toLowerCase();
-
-// 변환된 문자열을 시리얼 모니터에 출력
-Serial.print(text);
+```
+Arduino String str = "HELLO";
+str.toLowerCase();
+Serial.println(str);
 ```
 
-위의 코드를 실행하면 아두이노가 사용자로부터 문자열을 입력받고, 입력받은 문자열을 소문자로 변환하여 다시 출력합니다. 예를 들어, "HELLO"라는 문자열을 입력하면 "hello"라는 결과가 나오게 됩니다.
+위 코드를 실행하면 ```hello```가 출력됩니다. 여기서 주의해야 할 점은 ```toLowerCase()``` 함수를 사용할 때 기존의 문자열이 아닌 소문자로 변환된 새로운 문자열이 반환된다는 것입니다. 따라서, 결과를 받을 변수를 따로 지정해주는 것이 좋습니다.
 
-## 심층 분석
+## 깊이 파고들기
 
-문자열을 소문자로 변환하는 방법은 다양한 방식으로 가능합니다. 아래는 `toLowerCase()` 함수를 사용한 예시 코드입니다.
+문자열을 소문자로 변환하는 방법을 자세히 살펴보겠습니다. 문자열을 변환하는 가장 일반적인 방법은 각 문자를 확인하고 ASCII 코드를 사용하여 소문자로 변환하는 것입니다. 이는 배열과 반복문을 사용하여 구현할 수 있습니다. 하지만, 이보다 더 효율적인 방법으로 ```toLowerCase()``` 함수가 제공됩니다. 이 함수는 미리 정의된 테이블에 저장된 문자를 참조하여 소문자로 변환합니다. 따라서, 반복문을 사용하는 것보다 더 빠르게 문자열을 변환할 수 있습니다.
 
-```Arduino
-String text = "Hello";
+## 같이 보기
 
-for (int i = 0; i < text.length(); i++) {
-    // 각 문자를 소문자로 변환
-    char c = toLowerCase(text.charAt(i));
-    // 변환된 문자를 시리얼 모니터에 출력
-    Serial.print(c);
-}
-```
+이 블로그 포스트로 문자열을 소문자로 변환하는 방법을 배우셨습니다. 하지만, 이 외에도 Arduino에서 유용한 함수들이 많이 존재합니다. 아래 링크들을 통해 관련 내용을 더 자세히 공부해보세요!
 
-위의 코드는 `toLowerCase()` 함수를 사용하여 각 문자를 소문자로 변환하고, 변환된 문자를 시리얼 모니터에 출력합니다. 따라서 "Hello"라는 문자열을 입력하면 "hello"라는 결과가 나오게 됩니다.
-
-## 참고 자료
-
-- [String.toLowerCase() - Arduino Reference](https://www.arduino.cc/reference/ko/language/variables/data-types/string/functions/tolowercase/)
-- [Arduino - String toLowerCase() - GeeksforGeeks](https://www.geeksforgeeks.org/arduino-string-tolowercase/)
-- [String.charAt() - Arduino Reference](https://www.arduino.cc/reference/ko/language/variables/data-types/string/functions/charat/)
+- [Arduino 공식 사이트](https://www.arduino.cc/)
+- [String 함수 목록](https://www.arduino.cc/en/Reference/StringObject)
+- [ASCII 코드표](http://www.asciitable.com/)

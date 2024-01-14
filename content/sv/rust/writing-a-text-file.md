@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Att skriva en textfil"
+simple_title:         "Att skriva en textfil"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/rust/writing-a-text-file.md"
 ---
 
@@ -9,35 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva en textfil är en grundläggande och viktig funktion i många programmeringsspråk. Det kan vara till nytta för att spara data, läsa in information eller skapa enkla användargränssnitt. I den här artikeln kommer vi att titta närmare på hur du kan skriva en textfil med hjälp av språket Rust.
+Att skriva en textfil är ett grundläggande och viktigt koncept inom programmering, oavsett vilket programmeringsspråk du använder. I denna artikel kommer vi att utforska hur man skriver en textfil i Rust och varför det kan vara användbart för dig som programmerare.
 
-## Så här skriver du en textfil i Rust
+## Hur man gör det
 
-För att skriva en textfil i Rust behöver du först importera biblioteket "std::fs". Detta bibliotek innehåller funktioner för att hantera filer. Sedan behöver du definiera en variabel som kommer att vara din textfil, till exempel "min_textfil.txt". Sedan kan du använda funktionen "write" för att skriva in texten du vill ha i filen.
+Först och främst behöver vi förstå grunderna i Rust syntax innan vi kan börja skriva en textfil. En textfil är helt enkelt en fil som innehåller text och är formaterad på ett speciellt sätt. Vi kan använda Rusts standardbibliotek för att göra detta.
 
-```Rust
-use std::fs;
+För att skriva en textfil behöver vi först öppna en fil och ange vilket läge den ska öppnas i. I detta fall använder vi läget "skriva" (write). Sedan kan vi skriva texten som ska inkluderas i filen.
 
-let min_textfil = "min_textfil.txt";
-fs::write(min_textfil, "Det här är en exempeltext som kommer att sparas i filen.").expect("Kunde inte skriva filen.");
+```rust
+use std::fs::File;
+use std::io::Write;
+
+fn main() {
+    // Öppna filen som vi vill skriva till
+    let mut fil = File::open("mitt_textdokument.txt").unwrap();
+
+    // Definiera läget "write"
+    let läge = write!(&mut fil,"Detta är mitt första textdokument!");
+
+    // Kontrollera om filen har skrivits korrekt
+    if läge.is_err() {
+        println!("Kunde inte skriva till filen: {}", läge.err().unwrap());
+    } else {
+        println!("Lyckades skriva till filen!");
+    }
+}
 ```
 
-Om allt går som det ska, kommer det nu att finnas en fil med namnet "min_textfil.txt" och den kommer att innehålla texten "Det här är en exempeltext som kommer att sparas i filen." Du kan också använda funktionen "append" om du vill lägga till mer text till en befintlig fil.
-
-```Rust
-fs::append(min_textfil, "Det här är mer text som kommer att läggas till filen.").expect("Kunde inte lägga till texten.");
-```
+Om vi kör det här programmet kommer det att skapa en fil med namnet "mitt_textdokument.txt" och skriva in texten "Detta är mitt första textdokument!" i filen. Vi kan också använda variabler och andra Rust-funktioner för att skriva dynamisk text.
 
 ## Djupdykning
 
-När du skriver en textfil i Rust kan du också specificera vilken encoding som ska användas. Som standard används UTF-8. Om du vill använda en annan encoding, kan du använda funktionen "write_with_encoding" istället för "write". Du kan också välja om filen ska skrivas över eller om texten ska läggas till, genom att använda "write_with_options" istället för "write".
+Nu när vi vet hur man skriver en enkel textfil i Rust kan vi ta en djupare titt på några av de andra funktionerna som är tillgängliga för att hantera filer. Till exempel kan vi använda läget "append" (lägga till) istället för "write" för att lägga till text i en befintlig fil istället för att skriva över den. Vi kan också använda andra lägen som "read" för att läsa en fil och "create" för att skapa en helt ny fil.
 
-Det är också viktigt att notera att filvägen måste vara korrekt när du skapar en fil. Om du endast anger ett filnamn, kommer filen att skapas i samma mapp som ditt Rust-program körs från. Men om du vill skapa en fil i en annan mapp, måste du ange hela sökvägen till mappen i filnamnet.
+Vi kan också använda andra metoder från "std::fs" biblioteket, såsom "rename" för att byta namn på en fil och "remove" för att ta bort en fil. Det finns också andra bibliotek och paket tillgängliga från Rust communityn som erbjuder mer avancerade funktioner för att hantera filer.
 
 ## Se också
 
-Här är några användbara länkar för att lära dig mer om att skriva textfiler i Rust:
-
-- [Rust dokumentation för "std::fs" biblioteket](https://doc.rust-lang.org/std/fs/index.html)
-- [En guide för att skapa filer och mappar i Rust](https://www.wikihow.com/Make-a-New-File-in-Rust)
-- [En tutorial för att skriva en textfil i Rust](https://www.tutorialspoint.com/rust/rust_file_handling.htm)
+- [Rust Standard Library Documentation](https://doc.rust-lang.org/std/fs/)
+- [Writing Files in Rust](https://doc.rust-lang.org/book/ch12-03-improving-error-handling-and-modularity.html#writing-to-a-file)
+- [Rust File Operations Tutorial](https://www.tutorialspoint.com/rust/rust_file_io.htm)

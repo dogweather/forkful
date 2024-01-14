@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Vérifier l'existence d'un répertoire"
+title:                "Elixir: Vérification de l'existence d'un répertoire"
+simple_title:         "Vérification de l'existence d'un répertoire"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/checking-if-a-directory-exists.md"
 ---
 
@@ -9,27 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il est important pour tout programmeur d'être capable de vérifier l'existence d'un répertoire dans son code. Cela peut être utile pour vérifier si un fichier peut être créé dans un répertoire spécifique ou si un répertoire est accessible avant de manipuler des fichiers à l'intérieur.
+Avant de rentrer dans le vif du sujet, il est important de comprendre pourquoi il est nécessaire de vérifier l'existence d'un répertoire en programmation en Elixir. Cette étape est essentielle pour s'assurer que le répertoire cible existe avant de le manipuler ou de tenter de le créer. Cela permet également de gérer les erreurs et exceptions qui pourraient survenir lors de l'accès au répertoire.
 
-## Comment faire
+## Comment procéder
 
-Pour vérifier si un répertoire existe en Elixir, nous pouvons utiliser la fonction `File.cwd?/1`. Cette fonction prend en paramètre un chemin de répertoire et renvoie `true` si le répertoire existe et `false` sinon. Voici un exemple de code:
+Vérifier l'existence d'un répertoire en Elixir est une tâche relativement simple. Tout d'abord, nous devons importer le module `File` qui contient la fonction `exists?/1` pour vérifier l'existence d'un répertoire. Ensuite, nous pouvons utiliser cette fonction en lui passant en paramètre le chemin du répertoire cible sous forme de chaîne de caractères.
 
-```Elixir
-if File.cwd?("chemin/vers/mon/répertoire") do
-  IO.puts "Le répertoire existe!"
-else
-  IO.puts "Le répertoire n'existe pas!"
-end
+```
+Elixir
+IO.puts File.exists?("chemin/répertoire")
 ```
 
-Si le répertoire existe, "Le répertoire existe!" sera imprimé dans la console. Sinon, c'est "Le répertoire n'existe pas!" qui sera affiché.
+Si le répertoire existe, la fonction renverra `true`, sinon elle renverra `false`. Nous pouvons également utiliser la fonction `is_directory?/1` pour vérifier si le chemin fourni correspond bien à un répertoire et non à un fichier.
 
-## Plongée en profondeur
+```
+Elixir
+is_dir = is_directory?("chemin/répertoire")
+IO.puts "Le chemin fourni correspond-il à un répertoire ? #{is_dir}"
+```
 
-En réalisant cette vérification, il est important de noter que le chemin de répertoire passé en paramètre doit être un chemin absolu et non relatif. De plus, la fonction renvoie `false` si le chemin de répertoire n'existe pas, mais aussi si le chemin mène à un fichier plutôt qu'à un répertoire.
+## Approfondissement
+
+La fonction `exists?/1` du module `File` utilise en interne la fonction du système d'exploitation respective. Par exemple, sur un système Linux, elle utilise la fonction `stat()` pour vérifier l'existence d'un fichier ou d'un répertoire. Il est donc important de prendre en compte les différentes spécificités du système d'exploitation sur lequel votre code sera exécuté.
 
 ## Voir aussi
 
-- [Documentation Elixir pour la fonction `File.cwd?/1`](https://hexdocs.pm/elixir/File.html#cwd?/1)
-- [Guide Elixir pour les opérations de fichiers et de répertoires](https://elixir-lang.org/getting-started/file-operations.html)
+- Documentation officielle sur la fonction `exists?/1` du module `File` : https://hexdocs.pm/elixir/File.html#exists?/1
+- Article sur les manipulations de fichiers et répertoires en Elixir : https://elixir-lang.org/getting-started/mix-otp/file-system-and-environment.html
+- One article en anglais sur la vérification de l'existence d'un répertoire en Elixir : https://www.poeticoding.com/how-to-check-if-a-directory-exists-in-elixir/

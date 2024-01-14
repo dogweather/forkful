@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Zamiana ciągu znaków na małe litery"
+title:                "Haskell: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,54 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwertowanie tekstu na małe litery jest częstym zadaniem, które pojawi się podczas programowania w Haskellu. Często jest to wymagane w celu ułatwienia porównywania tekstu lub w celu przetwarzania danych. Jest to również ważne w przypadku, gdy przetwarzanie tekstu będzie odbywać się w środowisku zależnym od wielkości liter, na przykład w systemach operacyjnych.
+Czasami w naszych programach musimy zmienić wielkość liter w danym ciągu znaków. Może to być wymagane, na przykład, przy porównywaniu tekstu lub formatowaniu wyświetlania. W tym artykule dowiesz się, dlaczego i jak w łatwy sposób przekonwertować string na małe litery w języku Haskell.
 
 ## Jak to zrobić
 
-Aby zamienić ciąg znaków na małe litery w Haskellu, używamy funkcji `toLower` z modułu `Data.Char`. Spowoduje to zamianę wszystkich dużych liter w tekście na odpowiadające im małe litery.
+Aby wykonać tę konwersję, musimy skorzystać z funkcji `map` oraz `toLower` z modułu `Data.Char`. Sprawdźmy to na przykładzie:
 
 ```Haskell
 import Data.Char (toLower)
 
-toLowerCase :: String -> String
-toLowerCase text = map toLower text
-
-toLowerCase "HELLO WORLD" --> "hello world"
-toLowerCase "HeLlO" --> "hello"
+convertToLower:: String -> String
+convertToLower str = map toLower str
 ```
+W powyższym kodzie najpierw importujemy funkcję `toLower`, a następnie definiujemy funkcję `convertToLower`, która jako argument przyjmuje ciąg znaków. W ciele funkcji wykorzystujemy funkcję `map` do konwersji poszczególnych znaków na małe litery. I gotowe! Teraz wystarczy tylko wywołać funkcję `convertToLower` z wybranym przez nas stringiem.
 
-W powyższym przykładzie definiujemy funkcję `toLowerCase`, która jako argument przyjmuje ciąg znaków i zwraca zmodyfikowany ciąg, w którym wszystkie litery są małymi literami. Wykorzystujemy tutaj funkcję `map` do aplikacji funkcji `toLower` na każdym elemencie ciągu `text`.
-
-Możemy również wywołać funkcję `toLower` bezpośrednio na pojedynczym znaku.
+Przyjrzyjmy się, jak działa ta konwersja na przykładzie:
 
 ```Haskell
-toLower 'A' --> 'a'
-toLower 'b' --> 'b'
+convertToLower "HELLO WORLD" 
 ```
 
-## Głębszy zanurzenie
+Wynikiem będzie:
 
-Warto zauważyć, że funkcja `toLower` nie zmieni znaków, które nie są literami. Zostaną one po prostu zwrócone w niezmienionej formie.
-
-```Haskell
-toLowerCase "123ABC" --> "123abc"
+```
+"hello world"
 ```
 
-Dodatkowo, jeśli chcemy dokonać konwersji tylko na wybranym fragmencie tekstu, możemy wykorzystać wyrażenia lambda.
+Jak widzimy, wszystkie litery zostały zmienione na małe.
 
-```Haskell
-import Data.Char (toLower)
+## Deep Dive
 
-toLowerCase' :: String -> String
-toLowerCase' text = map (\x -> if x `elem` ['A'..'Z'] then toLower x else x) text
+W języku Haskell istnieje wiele różnych funkcji do manipulowania i przetwarzania ciągów znaków. Jednak użycie funkcji `map` w połączeniu z `toLower` jest jednym z najprostszych i najbardziej wydajnych sposobów na zmianę wielkości liter.
 
-toLowerCase' "123ABC" --> "123abc"
-toLowerCase' "HeLlO" --> "hello"
-```
+Funkcja `map` działa na listach, a ponieważ napisy w Haskellu są po prostu listami znaków, możemy wykorzystać tę funkcję do przetwarzania ciągów znaków. Funkcja `toLower` z kolei zamienia pojedynczy znak na jego małą wersję. Dzięki temu, łącząc obie funkcje, możemy dokonać konwersji na każdym znaku w podanym napisie.
 
-Funkcja `toLower'` działa bardzo podobnie do funkcji `toLowerCase`, z tą różnicą, że używamy tutaj wyrażenia lambda, aby sprawdzić, czy dany znak jest literą i tylko wtedy zastosować funkcję `toLower`.
+Sama konwersja na małe litery jest również przydatna przy porównywaniu napisów. Często różne wielkości liter mogą sprawiać problemy w procesie porównywania, dlatego warto wcześniej przekonwertować je na jeden format.
 
-## Zobacz także
+## Zobacz również
 
-* [Moduł Data.Char w dokumentacji Haskella](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
-* [Funkcja toLower w dokumentacji Haskella](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html#v:toLower)
+- [Oficjalna dokumentacja funkcji map](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:map)
+- [Oficjalna dokumentacja funkcji toLower](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toLower)
+- [Inne sposoby na manipulację ciągami znaków w Haskellu](https://wiki.haskell.org/String_processing)

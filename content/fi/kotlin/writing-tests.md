@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Ohjelmointitestien kirjoittaminen"
+title:                "Kotlin: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/writing-tests.md"
 ---
 
@@ -9,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Testien kirjoittaminen voi tuntua aikaa vievältä ja turhalta askareelta, mutta ne ovat erittäin tärkeä osa ohjelmistokehitystä. Hyvin kirjoitetut testit voivat havaita mahdollisia virheitä ja parantaa ohjelman suorituskykyä. Lisäksi ne auttavat uusien kehitysten helpossa ja turvallisessa integroimisessa olemassa olevaan koodiin.
+Testaamisen kirjoittaminen voi tuntua turhalta ja aikaa vievältä työltä, mutta se on todella tärkeä osa ohjelmistokehitystä. Testien avulla voimme varmistaa, että koodimme toimii halutulla tavalla ja vähentää virheiden riskiä tuotantoympäristössä.
 
 ## Miten
 
-Kotlinin avulla testien kirjoittamisesta voi tulla paljon helpompaa ja tehokkaampaa. Seuraavassa on esimerkki yksinkertaisista testiluokista, jotka testaavat funktiota, joka laskee kahden numeron summan.
+Testien kirjoittaminen Kotlinilla on helppoa ja suoraviivaista. Voit käyttää sisäänrakennettua `assert()` -funktiota testien kirjoittamiseen. Katso alla oleva esimerkki `SimpleCalculator` -luokan testaamisesta:
 
-```
-Kotlin
-class SumTest {
-    @Test
-    fun `sum function returns correct result`() {
-        val result = sum(5, 10)
-        assertEquals(15, result)
-    }
-
-    @Test
-    fun `sum function returns incorrect result`() {
-        val result = sum(7, 3)
-        assertEquals(10, result)
-    }
+```Kotlin
+class SimpleCalculator {
+    fun add(x: Int, y: Int) = x + y
 }
 
-fun sum(num1: Int, num2: Int): Int {
-    return num1 + num2
+fun main() {
+    val calc = SimpleCalculator()
+    assert(calc.add(3, 4) == 7)
+    assert(calc.add(-5, 10) == 5)
+    println("All tests passed!")
 }
 ```
 
-Testiluokan voi luoda käyttämällä `class`-avainsanaa ja antamalla sille nimen, esim. `SumTest`. Sen jälkeen testit voidaan kirjoittaa käyttämällä `@Test`-annotaatiota ja antamalla niille kuvaava nimi, kuten `sum function returns correct result`. Tässä annotaatiossa testifunktio on määritelty takapuoletuksena, joten sen voi jättää tyhjäksi. `assertEquals`-funktiolla voi varmistaa, että odotettu tulos ja testin palauttama tulos ovat samat.
+```
+All tests passed!
+```
 
-## Syväsukellus
+Kuten näet, voimme käyttää assert-funktiota testaamaan, onko laskinluokan `add()` -metodi palauttaa odotetun tuloksen erilaisilla lähtöarvoilla.
 
-Testien kirjoittaminen on tärkeä osa ketterää ohjelmistokehitystä, sillä se auttaa havaitsemaan mahdolliset ongelmat ja varmistamaan ohjelman luotettavuuden. Hyvin kirjoitetut testit tarjoavat myös dokumentaatiota ohjelman toiminnallisuudesta ja osoittavat, että koodi on testattu ja toimii odotetulla tavalla.
+Voit myös käyttää ulkoista kirjastoa, kuten JUnit, helpottamaan testien kirjoittamista ja suorittamista.
 
-On tärkeää muistaa, että testien kirjoittamiseen kannattaa käyttää riittävästi aikaa ja huolellisuutta, sillä huonosti kirjoitetut testit voivat aiheuttaa enemmän haittaa kuin hyötyä. On myös hyvä käyttää erilaisia testauksen työkaluja ja menetelmiä, kuten yksikkötesteissä mock-olioita ja integraatiotesteissä simuloituja tietokantoja.
+## Syvällinen sukellus
+
+Testien kirjoittaminen on tärkeää myös sovelluksen jatkokehityksen kannalta. Kun uusia toiminnallisuuksia lisätään tai vanhoja muokataan, testien avulla voimme varmistaa, ettei muutoksista aiheudu odottamattomia virheitä vanhoissa toiminnallisuuksissa.
+
+Lisäksi testien kirjoittaminen auttaa myös koodin toiminnallisuuden ymmärtämisessä ja parantaa siten ohjelman laatua ja ylläpidettävyyttä.
 
 ## Katso myös
 
-- [Testien kirjoittaminen Kotlinilla](https://kotlinlang.org/docs/testing.html)
-- [Kotlin-testikirjaston käyttöönotto Gradle-projektissa](https://ktor.io/quickstart/gradle.html)
-- [Kattava opas yksikkötestaamiseen Kotlinilla](https://proandroiddev.com/kotlin-android-test-driven-development-with-kotlintest-mockk-and-spek-1e01a8ecf8fe)
+- [Kotlinin testaamisen perusteet](https://www.fi.kotlinlang.org/docs/tutorials/testing.html)
+- [JUnit-kirjaston käyttö Kotlinilla](https://www.baeldung.com/junit-5-kotlin)

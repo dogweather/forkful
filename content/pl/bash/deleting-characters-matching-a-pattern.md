@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Usuwanie znaków odpowiadających wzoru"
+title:                "Bash: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,40 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasem w programowaniu musimy usuwać pewne znaki z tekstu zgodnie z określonym wzorcem. To może się przydać, jeśli chcemy przetworzyć duże ilości danych lub oczyszczać je z niechcianych elementów. W tym artykule dowiesz się, jak skutecznie usuwać znaki dopasowane do wzorca w języku Bash.
+Czasami podczas tworzenia skryptów Bash lub edycji istniejących plików tekstowych, istnieje potrzeba usunięcia określonych znaków lub wzorców z tekstu. W tym przypadku można skorzystać z funkcji usunięcia znaków w Bash. Może to przyśpieszyć pracę oraz usunąć niechciane znaki, co jest szczególnie przydatne w przypadku dużej ilości tekstu, który wymaga modyfikacji.
 
 ## Jak to zrobić
 
-Usunięcie znaków w języku Bash jest stosunkowo proste i wymaga wykorzystania polecenia `sed`. Przykładowy kod wyglądałby następująco:
+Aby usunąć znaki odpowiadające danemu wzorcowi w Bash, można użyć polecenie `tr` (transliterate). Poniżej przedstawiono prosty przykład wykorzystania tego polecenia:
 
-```Bash
-sed 's/pattern//g' filename
+```
+Bash
+# Przykładowy tekst do modyfikacji
+text="To jest przykładowy tekst do modyfikacji"
+
+# Usuwanie znaków 'a' i 'o'
+new_text=$(echo $text | tr -d "ao")
+
+# Wyświetlenie zmodyfikowanego tekstu
+echo $new_text
+
+# Output: T jest przykldwy tekst d mdifikcji
 ```
 
-W powyższym przykładzie `sed` przeszukuje plik podanym w `filename` i usuwa wszystkie wystąpienia dopasowujące się do podanego wzorca. Aby wyświetlić wynik na ekranie, możemy dodać opcję `-i`.
+W tym przypadku wykorzystano polecenie `echo` do przekazania zmiennej `text` do polecenia `tr` w celu usunięcia znaków 'a' i 'o'. Następnie wynik został przypisany do zmiennej `new_text` i wyświetlony za pomocą polecenia `echo`.
 
-```Bash
-sed -i 's/pattern//g' filename
+## Deep Dive
+
+Polecenie `tr` jest bardzo potężne i pozwala na usunięcie wielu różnych znaków lub wzorców za pomocą jednej komendy. Aby usunąć więcej niż jeden znak, można po prostu przekazać je jako argument do polecenia `tr`. Na przykład, aby usunąć wszystkie znaki interpunkcyjne ze zmiennej `text` można użyć następującej komendy:
+
+```
+Bash
+new_text=$(echo $text | tr -d '[:punct:]')
 ```
 
-Możemy także określić inny wzorzec zamiast pojedynczego znaku w miejscu `pattern`. Dzięki temu możemy precyzyjniej dostosować usuwanie do naszych potrzeb. Przykładowo, jeśli chcielibyśmy usunąć wszystkie wystąpienia słowa "hello" z tekstu, moglibyśmy użyć następującego polecenia:
+Ponadto, istnieje możliwość podania zakresu znaków do usunięcia z użyciem polecenia `tr`. Na przykład, aby usunąć wszystkie cyfry ze zmiennej `text`, można zastosować polecenie:
 
-```Bash
-sed 's/hello//g' filename
+```
+Bash
+new_text=$(echo $text | tr -d '0-9')
 ```
 
-Usunięte zostaną wszystkie wystąpienia słowa "hello" w podanym pliku. Możemy także zastosować `sed` do wielu plików jednocześnie, używając opcji `-i` oraz podając listę plików oddzielonych spacją.
+Powyższe przykłady dotyczą usunięcia znaków z pojedynczej zmiennej, ale można również użyć polecenia `tr` do modyfikowania plików tekstowych. W tym przypadku zamiast przekazywać zmienną jako argument, podaje się nazwę pliku. Na przykład, jeśli chcemy usunąć wszystkie samogłoski z pliku `tekst.txt`, możemy użyć następującej komendy:
 
-## Dogłębna analiza
+```
+Bash
+tr -d 'aeiou' < tekst.txt
+```
 
-W `sed` można także użyć wyrażeń regularnych, co pozwala na bardziej zaawansowane usuwanie znaków dopasowanych do wzorca. Na przykład, za pomocą wyrażenia regularnego `^pattern` usuwamy wszystkie znaki dopasowane do wzorca, ale tylko na początku linii. Natomiast `$pattern` usuwa dopasowania tylko z końca linii.
+Spowoduje to wyświetlenie zmodyfikowanego tekstu bez samogłosek na ekranie. Aby zapisać wynik do nowego pliku, można użyć symbolu `>` oraz nazwy nowego pliku, na przykład `tr -d 'aeiou' < tekst.txt > nowy_tekst.txt`.
 
-Możliwe jest także zastosowanie flagi `IGNORECASE`, która pozwala na usuwanie znaków niezależnie od wielkości liter. Przykładowo, `sed` z flagą `IGNORECASE` usuwałoby wszystkie wystąpienia słowa "hello", niezależnie czy jest napisane z małej czy dużej litery.
+## Zobacz również
 
-Pamiętaj jednak, że `sed` nie zmienia oryginalnego pliku, chyba że wykorzystasz opcję `-i`. W przypadku, gdy chcemy zachować zmiany w oryginalnym pliku, warto wykorzystać polecenie `cp` do stworzenia kopii, a następnie aplikować `sed` na kopii.
-
-## Zobacz także
-
-- [Dokumentacja `sed`](https://www.gnu.org/software/sed/manual/sed.html)
-- [Przykłady użycia `sed`](https://www.linuxtechi.com/sed-command-examples-linux/)
-- [Wyrażenia regularne w `sed`](https://www.digitalocean.com/community/tutorials/an-introduction-to-regular-expressions)
+- Dokumentacja polecenia `tr`: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
+- Przydatne polecenia Bash: https://linuxize.com/post/bash-commands/
+- Tutoriale Bash: https://www.shell-tips.com/bash/

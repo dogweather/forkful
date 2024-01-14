@@ -1,40 +1,40 @@
 ---
 title:                "Arduino: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/arduino/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+# Perché
 
-L'estrazione delle sottostringhe è un'operazione molto utile nella programmazione di Arduino. Permette di ottenere una parte specifica di una stringa più grande, rendendo più facile il lavoro con i dati e semplificando il codice.
+Se state lavorando con Arduino, probabilmente avete bisogno di manipolare o analizzare delle stringhe. Una delle operazioni più comuni che si possono fare con le stringhe è l'estrazione di sottostringhe. Ciò è utile quando si desidera ottenere solo una parte di una stringa più grande o quando si vuole analizzare i dati contenuti in una stringa.
 
-## Come fare
+## Come
 
-Per estrarre una sottostringa in Arduino, è necessario utilizzare la funzione `substring()`. Questa funzione richiede due parametri: il primo è l'indice della posizione iniziale della sottostringa, mentre il secondo è la lunghezza della sottostringa desiderata.
+Per estrarre una sottostringa da una stringa esistente in Arduino, è possibile utilizzare la funzione `substring()`. Questa funzione richiede tre parametri: la stringa di origine, l'indice di inizio e la lunghezza della sottostringa.
 
-Per esempio, se abbiamo una stringa "Ciao Arduino" e vogliamo estrarre solo la parola "Arduino", dobbiamo utilizzare la funzione `substring(5, 7)` in modo da indicare l'indice 5 come punto di inizio e 7 come lunghezza della sottostringa.
-
-Ecco un esempio completo di codice con l'uso della funzione `substring()`:
-
-```arduino
-String str = "Ciao Arduino";
-String sottostringa = str.substring(5, 7);
-Serial.print(sottostringa);
+```Arduino
+String stringaOriginale = "Ciao mondo!";
+String sottostringa = stringaOriginale.substring(5, 6);
+//sottostringa sarà uguale a "m"
 ```
 
-L'output di questo codice sarà "Arduino".
+La sottostringa viene estratta a partire dall'indice 5 (compreso) e continuerà per 6 caratteri nella stringa di origine. Si noti che gli indici in Arduino partono da zero, quindi il primo carattere ha indice 0.
 
-## Approfondimento
+È inoltre possibile utilizzare la funzione `indexOf()` per trovare l'indice di un carattere specifico all'interno della stringa e utilizzarlo per estrarre una sottostringa. Ad esempio, se si vuole estrarre solo il nome di una persona da una stringa composta da nome e cognome, si può utilizzare la funzione `indexOf()` per trovare l'indice dello spazio tra i due nomi e utilizzarlo per estrarre solo il primo nome.
 
-La funzione `substring()` non solo può essere utilizzata per estrarre parti di una stringa, ma anche per copiare una stringa in un'altra variabile. Questo può essere utile se si vuole manipolare la stringa originale senza modificarla direttamente.
+## Deep Dive
 
-Inoltre, è possibile utilizzare anche la funzione `indexOf()` per trovare la posizione di una specifica sottostringa all'interno di una stringa più grande, e poi utilizzare questo valore come indice nella funzione `substring()`.
+Il tipo di dati `String` in Arduino include molte altre funzioni utili per manipolare le stringhe. Ad esempio, ci sono metodi per convertire le stringhe in caratteri maiuscoli o minuscoli, per sostituire una parte di una stringa con un'altra sottostringa, o per concatenare più stringhe insieme.
 
-## Vedi anche
+Inoltre, vale la pena notare che l'utilizzo di stringhe in Arduino richiede una certa quantità di memoria, quindi è consigliabile utilizzare il tipo di dati `char[]` per le stringhe più lunghe o se si lavora con un quantitativo di memoria limitato.
 
-- [Documentazione ufficiale di Arduino su substring()](https://www.arduino.cc/reference/it/language/variables/data-types/string/substring/)
-- [Esempi di codice con l'uso di substring()](https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringSubstring)
-- [Tutorial di programmazione Arduino](https://www.arduino.cc/en/Tutorial/HomePage) (in italiano)
+# Vedi anche
+
+- [Funzioni di stringa in Arduino](https://www.arduino.cc/reference/tr/language/variables/data-types/string/functions/)
+- [Guida all'utilizzo delle stringhe in Arduino](https://www.arduino.cc/en/Tutorial/String)
+- [Video tutorial sull'estrazione di sottostringhe in Arduino](https://www.youtube.com/watch?v=iLQxqDtPYj4)

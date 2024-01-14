@@ -1,37 +1,51 @@
 ---
-title:                "Rust: 정규 표현식 사용하기"
+title:                "Rust: 정규 표현식을 사용하는 방법"
+simple_title:         "정규 표현식을 사용하는 방법"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/rust/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 사용해야 할까요?
+## 왜 자주 사용되는 *정규 표현식*에 대해 살펴보는 것이 좋을까요?
+정규 표현식은 문자열에서 특정한 패턴을 찾거나 대체하려는 경우 매우 유용합니다. Rust에서도 많은 유저들이 이를 활용하면서 프로그래밍 작업을 효율적으로 할 수 있게 되었습니다.
 
-정규 표현식을 사용하는 이유는 데이터를 처리하거나 분석할 때 패턴이나 규칙을 찾기 위해 사용됩니다. 이를 통해 빠르고 정확하게 원하는 데이터를 추출하거나 변형할 수 있습니다.
-
-## 사용 방법
-
-정규 표현식을 사용하기 위해선 일단 Rust 언어에 대한 기본적인 이해가 필요합니다. 해당 언어의 문법을 읽고 쓸 줄 안다면 정규 표현식을 쉽게 사용할 수 있습니다. 아래는 간단한 예시 코드와 그에 대한 출력 결과입니다.
+## 어떻게 사용할까요?
+여러분의 Rust 코드 안에서 정규 표현식을 사용하는 방법을 알아보겠습니다. 먼저, `regex` 패키지를 다운로드 하세요.
 
 ```Rust
-// "Hello, World!" 단어 추출
-let text = "Hello, World!";
-let re = Regex::new(r"([A-Za-z]+)").unwrap();
-let words: Vec<&str> = re.captures_iter(text).map(|caps| caps[1].trim()).collect();
-println!("{:?}", words);
-// Output: ["Hello", "World"]
+use regex::Regex; // regex 패키지 불러오기
 ```
 
-위 예시 코드는 문자열에서 단어를 추출하는 방법을 보여줍니다. 정규 표현식의 패턴에 따라 원하는 결과를 얻을 수 있습니다. Rust에서는 regex 라이브러리를 사용하여 정규 표현식을 다룰 수 있습니다.
+이제, 패턴을 포함하는 정규 표현식을 정의할 수 있습니다.
 
-## 깊게 파보자
+```Rust
+let re = Regex::new(r"hello"); // "hello" 패턴을 가진 정규 표현식 정의
+```
 
-정규 표현식은 문자열 처리를 위한 강력한 도구입니다. 하지만 이해하고 사용하기 어려운 부분도 있습니다. 예를 들어, 메타 문자가 어떻게 작동하는지, 그리고 캡처 그룹이 어떤 역할을 하는지 등에 대해 자세히 알아보는 것이 중요합니다. 또한 패턴이 복잡해질수록 성능도 중요한 고려 사항이 될 수 있습니다. 이러한 부분에 대해 깊이 탐구하면 더욱 효율적이고 정확한 정규 표현식을 작성할 수 있습니다.
+이제, 이 정규 표현식을 이용해 특정 문자열에 해당 패턴이 있는지 확인할 수 있습니다.
 
-## 다른 정보
+```Rust
+let result = re.is_match("hello world"); // "hello world"에 "hello" 패턴이 있는지 확인
+println!("{:?}", result); // true가 출력됩니다.
+```
 
-- Rust regex 라이브러리 문서: https://docs.rs/regex/
-- 정규 표현식 패턴 실습 사이트: https://regexr.com/
-- Rust 언어 공식 사이트: https://www.rust-lang.org/ko
+## 깊이있게 알아보기
+정규 표현식은 더 복잡한 패턴을 찾기 위해 다양한 메타 문자와 제어 문자를 사용할 수 있습니다. 예를 들어, `+`는 이전 패턴이 한번 이상 반복되는 경우에 사용할 수 있습니다. `*`는 이전 패턴이 0번 이상 반복되는 경우에 사용합니다. `?`는 이전 패턴이 있어도 되고 없어도 되는 경우에 사용합니다.
+
+```Rust
+let re = Regex::new(r"[0-9]+"); // 숫자가 한 번 이상 반복되는 경우를 찾는 정규 표현식 정의
+```
+
+이외에도, `|`를 사용해 여러 개의 패턴 중 하나를 찾을 수 있으며, `()`를 사용해 그룹을 지정할 수 있습니다.
+
+## 더 읽어보기
+- Rust 정식 문서의 [Regex 모듈](https://doc.rust-lang.org/regex/regex/index.html) 소개 페이지
+- Rust 프로그래밍 언어에 대한 [정규 표현식 사용법](https://doc.rust-lang.org/stable/rust-by-example/std/regex.html) 예제
+- [정규 표현식 온라인 테스트 도구](https://regex101.com/)로 직접 실험해보기
+
+## 참고 자료
+- [Rust Cookbook 중 정규 표현식](https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html)
+- [정규 표현식을 활용한 문자열 처리](https://jungledot.net/post/be/iiomR6pV

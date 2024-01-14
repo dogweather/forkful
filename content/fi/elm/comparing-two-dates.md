@@ -1,47 +1,46 @@
 ---
 title:                "Elm: Kahden päivämäärän vertailu"
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi vertailla kahta päivämäärää Elm-ohjelmoinnissa?
+## Miksi
 
-On olemassa useita syitä, miksi vertailla kahta päivämäärää Elm-ohjelmoinnissa. Ensinnäkin, saattaa olla tarpeen tarkistaa, ovatko kaksi päivämäärää samat, esimerkiksi tarkistaaksesi, onko muutamassa päivämääräolemassa sama syntymäpäivä. Toiseksi, vertailemalla päivämääriä voi tarkistaa, onko jokin päivämäärä aikaisempi tai myöhäisempi kuin toinen. Tämä voi olla hyödyllistä järjestettäessä tietoa aikajärjestykseen tai tarkistettaessa, onko tietty tapahtuma tapahtunut ennen toista tapahtumaa.
+On monia tilanteita, joissa ohjelmoinnissa joudutaan vertailemaan kahta päivämäärää, kuten päivämäärän muodostamisessa tai tietojen lajittelussa aikajärjestykseen. Elm-kielellä tämä on helppoa ja suoraviivaista, ja tässä blogikirjoituksessa jaamme vinkkejä, kuinka se tehdään.
 
-## Kuinka vertailla kahta päivämäärää Elm-ohjelmoinnissa?
+## Kuinka tehdä
 
-Vertaileminen kahden päivämäärän välillä Elm-ohjelmoinnissa on yksinkertaista. Ensinnäkin, käytä funktiota "Date.compare", joka palauttaa joko "Less", "Equal" tai "Greater" riippuen siitä, onko ensimmäinen päivämäärä ennen, sama tai myöhemmin kuin toinen. Voit esimerkiksi käyttää seuraavaa koodia:
-
-```
-elm make CompareDates.elm
-```
-
-Sitten anna seuraava koodi "CompareDates.elm" -tiedostoon:
+Vertaillessa päivämääriä Elm-kielellä on tärkeää huomioida niiden oikea formaatti ja käyttää sopivia funktioita vertailun suorittamiseen. Alla on muutamia esimerkkejä käyttäen formattausta "RRRR/KK/PP".
 
 ```
-import Date
-main =
-    case Date.compare (Date.fromParts 1995 12 17 ) (Date.fromParts 1995 12 17) of
-        Date.Less   -> "First date is earlier than second date"
-        Date.Equal  -> "Dates are the same"
-        Date.Greater-> "Second date is earlier than first date"
+Elm säädöspäivä: print (Date.fromIsoString "2020/10/15")
+Elm vanhempipäivä: print (Date.fromIsoString "2020/10/10")
 ```
 
-Kun käytät "elm make" -komentoa, saat seuraavan tulosteen:
+Jos haluamme tarkistaa, kumpi päivämäärä on uudempi, voimme käyttää funktiota `Date.compare`, joka palauttaa `LT` jos ensimmäinen päivämäärä on aikaisempi, `GT` jos toinen päivämäärä on aikaisempi tai `EQ` jos päivämäärät ovat samat.
 
 ```
-Dates are the same
+Elm Date.compare Elm päiväratkaisu
+ELM Date.Compare Elm asetus# sisältö
 ```
 
-## Syvemmälle päivämäärän vertailuun
+Voimme myös halutessamme laskea päivämäärien välisen päivien määrän käyttämällä funktiota `Date.diffInDays`.
 
-Voit myös tarkastella muita tapoja vertailla päivämääriä Elm-ohjelmoinnissa. Esimerkiksi voit tarkistaa, onko jokin päivämäärä tietyn aikavälin sisällä toisesta päivämäärästä käyttämällä funktiota "Date.within", joka palauttaa "True" tai "False". Voit myös laskea päivien tai vuosien eron kahden päivämäärän välillä käyttämällä funktiota "Date.differenceInDays" tai "Date.differenceInYears". Tutustu Elm-dokumentaatioon lisätietoja varten.
+```
+Elm säädöspäivä: print (Date.diffInDays säädöspäivämäärä vanhempipäivämäärä)
+```
+
+## Syvällisempi sukellus
+
+Päivämäärien vertaileminen Elm-kielellä perustuu niiden järjestämiseen aikajärjestykseen. Tämä tarkoittaa sitä, että aikaisempi päivämäärä on pienempi ja myöhäisempi päivämäärä on suurempi. Tämä järjestämisen logiikka on hyvä pitää mielessä vertaillessa päivämääriä.
 
 ## Katso myös
 
-- [Elm virallinen dokumentaatio] (https://guide.elm-lang.org/)
-- [Date-moduulin dokumentaatio] (https://package.elm-lang.org/packages/elm/core/latest/Date)
-- [Vertailufunktioiden ohjevideo] (https://www.youtube.com/watch?v=Z4amHX3mwfg)
+- [Elm ohjelmointikielen viralliset dokumentaatiot](https://guide.elm-lang.org/)
+- [Päivämäärä- ja aikakirjasto Elm-kielellä](https://package.elm-lang.org/packages/elm/time/latest/) 
+- [Elixir-ohjelmointikielen vertailu kahden päivämäärän välillä](https://elixir-lang.org/getting-started/basic-types.html#date-and-time)

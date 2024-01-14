@@ -1,61 +1,68 @@
 ---
 title:                "Bash: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
-En vanlig oppgave for en programmerer er å sjekke om en bestemt mappe eksisterer. Dette er spesielt viktig når vi skriver skript som skal jobbe med filer og må navigere gjennom forskjellige mapper. Ved å lære hvordan man sjekker om en mappe eksisterer, kan vi sikre at skriptene våre fungerer riktig og unngå uventede feil.
+## Hvorfor
 
-# Hvordan gjøre det
-For å sjekke om en mappe eksisterer i Bash, kan vi bruke kommandoen `test`. Denne kommandoen lar oss utføre forskjellige tester, inkludert å sjekke om en mappe eksisterer. Vi kan også bruke `if`-statment for å utføre handlinger basert på resultatet av testen.
+Har du noen gang ønsket å vite om en mappe eksisterer i Bash-programmet ditt? Kanskje du ønsker å utføre en bestemt handling bare hvis mappen allerede finnes, eller kanskje du vil lage en ny mappe hvis den ikke eksisterer ennå. Uansett årsak, å ha evnen til å sjekke om en mappe eksisterer i Bash kan spare deg for mye frustrasjon og feilsøking. I denne blogginnlegget skal vi se på hvordan du enkelt kan sjekke om en mappe eksisterer i Bash-programmet ditt.
 
-```Bash
-if test -d /sti/til/mappe; then
-    # Handle når mappen eksisterer
+## Hvordan gjøre det
+
+For å sjekke om en mappe eksisterer i Bash, kan du bruke kommandoen `test` eller `[[ ]]`. Dette fungerer for både vanlige Bash-skript og interaktive terminaler. La oss se på et eksempel:
+
+```
+if test -d "min-mappe"
+then
+  echo "Mappe eksisterer allerede"
 else
-    # Handle når mappen ikke eksisterer
+  echo "Mappe må opprettes"
 fi
 ```
 
-La oss se et enkelt eksempel på dette i handling. Vi har en mappe kalt "prosjekt" i hjemmemappen vår.
+Her sjekker vi om mappen "min-mappe" eksisterer ved å bruke `-d` flagget i `test` -kommandoen. Hvis mappen allerede finnes, vil skriptet skrive ut "Mappe eksisterer allerede". Hvis ikke, vil det skrive ut "Mappe må opprettes". Du kan også bruke `!` foran `-d` for å sjekke om mappen ikke eksisterer.
 
-```Bash
-if test -d ~/prosjekt; then
-    echo "Mappen eksisterer"
+En annen måte å gjøre dette på er å bruke `[[ ]]` syntaksen:
+
+```
+if [[ -d "min-mappe" ]]
+then
+  echo "Mappe eksisterer allerede"
 else
-    echo "Mappen eksisterer ikke"
+  echo "Mappe må opprettes"
 fi
 ```
 
-Når dette skriptet kjøres, vil det skrive ut "Mappen eksisterer" siden prosjekt-mappen faktisk eksisterer.
+Dette fungerer på samme måte som `test` -kommandoen, men med `[[ ]]` syntaksen kan du også bruke den logiske operatoren `&&` for å sjekke om flere mapper eksisterer.
 
-# Dypdykk
-Vi kan også bruke `test`-kommandoen til å sjekke om en mappe ikke eksisterer ved å bruke utropstegn som foran testen.
+## Dypdykk
 
-```Bash
-if test ! -d /sti/til/mappe; then
-    # Handle når mappen ikke eksisterer
-fi
+Nå som du vet hvordan du sjekker om en mappe eksisterer i Bash, kan det være nyttig å vite hvordan du kan unngå å få en feilmelding hvis mappen ikke eksisterer. En vanlig feil som kan oppstå er at Bash vil skrive ut en feilmelding hvis du prøver å liste innholdet i en mappe som ikke eksisterer. For å unngå dette, kan du bruke `||` operatoren hvis mappen ikke eksisterer:
+
+```
+ls "min-mappe" || echo "Mappen eksisterer ikke"
 ```
 
-Vi kan også bruke `if`-statment for å sjekke om to mapper har samme navn ved å bruke dobbel likhetstegn.
+Her vil skriptet prøve å liste innholdet i "min-mappe", men hvis den ikke eksisterer, vil det skrive ut "Mappen eksisterer ikke" istedenfor å gi en feilmelding.
 
-```Bash
-mappe1="mappe"
-mappe2="mappe"
+Du kan også bruke `mkdir` kommandoen sammen med `-p` flagget for å automatisk lage mappen hvis den ikke allerede eksisterer:
 
-if test "$mappe1" == "$mappe2"; then
-    echo "Mappene har samme navn"
-fi
+```
+mkdir -p "min-mappe"
 ```
 
-Når vi prøver å kjøre disse to eksemplene, vil vi se at testen utføres riktig og den tilsvarende handlingen blir utført.
+Dette fungerer også hvis du vil opprette en undermappe i en eksisterende mappe.
 
-# Se også
-- [BashGuide](https://mywiki.wooledge.org/BashGuide)
-- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [Linuxcommand.org](https://linuxcommand.org/)
+## Se også
+
+For mer informasjon og flere eksempler, kan du se disse ressursene:
+
+- [Bash referansedokumentasjon](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
+- [Bash sjekk om filen / mappen eksisterer](https://linuxize.com/post/bash-check-if-file-exists/)
+- [Bash dokumentasjon på `test` -kommandoen](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)

@@ -1,34 +1,49 @@
 ---
-title:                "Gleam: Päivämäärän haku"
+title:                "Gleam: Nykyisen päivämäärän hakeminen"
+simple_title:         "Nykyisen päivämäärän hakeminen"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi hankkia nykyinen päivämäärä?
+## Miksi
 
-Tulevien tapahtumien suunnittelu, tiedon tallentaminen ja aikaleimojen luominen ovat vain muutamia syitä, miksi joku haluaisi hankkia nykyisen päivämäärän ohjelmoinnissa. Onneksi Glean avulla tämä on helppoa.
+Monissa ohjelmoinnin projekteissa on tarve käyttää tietoa nykyisestä päivästä. Tämä voi olla esimerkiksi päivämäärän näyttäminen käyttöliittymässä tai tietyn ajankohtaan liittyvän toiminnon suorittaminen. Onneksi Gleam tarjoaa helpon tavan saada nykyinen päivämäärä ohjelmassa käyttämällä sisäänrakennettua `gleam/time` kirjastoa.
 
-## Kuinka tehdä se:
+## Miten
 
-```Gleam
-import Gleam.DateTime
-import Gleam.Pipe
+Voit hankkia nykyisen päivämäärän Gleamilla käyttämällä `gleam/time` kirjaston funktiota `now`. Tämä palauttaa nykyisen ajan Gleam `Time` tietorakenteena, josta voit hakea erilaisia tietoja, kuten vuosi, kuukausi tai päivä. Tässä on esimerkki, miten voit käyttää `now` funktiota:
 
-let current_date =
-  DateTime.local_now()
-  |> Date.to_string()
+```gleam
+import gleam/time
+
+let now = time.now()
+
+time.Year(now) // Palauttaa nykyisen vuoden
+time.Month(now) // Palauttaa nykyisen kuukauden
+time.Day(now) // Palauttaa nykyisen päivän
 ```
 
-Tämä yksinkertainen koodinpätkä käyttää DateTime-moduulia hankkimaan nykyisen päivämäärän ja sitten Date-moduulia muuntamaan sen merkkijonoksi. Voit myös muuttaa merkkijonon muotoilua käyttämällä Date.to_string_opts-funktiota ja antamalla haluamasi muodon. Esimerkiksi "YYYY-mm-dd".
+Sen lisäksi, voit myös tulostaa nykyisen päivämäärän suoraan konsoliin käyttämällä `gleam/io` kirjastoa:
 
-## Syvällinen sukellus:
+```gleam
+import gleam/time
+import gleam/io
 
-Jos haluat syvemmän ymmärryksen siitä, miten DateTime ja Date-moduulit toimivat, voit tarkastella niiden lähdekoodia. DateTime-moduuli käyttää Erlangin :os.date -toimintoa ja Date-moduuli käyttää :calendar.now_to_datetime-funktiota.
+let now = time.now()
 
-## Katso myös:
+io.format("{:04}/{:02}/{:02}", [time.Year(now), time.Month(now), time.Day(now)]) // Tulostaa nykyisen päivämäärän muodossa "yyyy/mm/dd"
+```
 
-- Glean DateTime-dokumentaatio: https://gleam.run/modules/gleam_datetime
-- Gleam Date-dokumentaatio: https://gleam.run/modules/gleam_date
+## Syvällisempi sukellus
+
+`gleam/time` kirjastossa on myös muita hyödyllisiä funktioita nykyisen ajan käsittelyyn, kuten `to_unix` joka muuntaa Gleam `Time` tietorakenteen Unix-timestampiksi, sekä `parse` joka muuntaa merkkijonon päivämääräksi. Voit tutustua kaikkiin tarjolla oleviin funktioihin [dokumentaatiosta](https://gleam.run/modules/gleam_time/latest/).
+
+## Katso myös
+
+- [Gleamin dokumentaatio](https://gleam.run/) - Lisää tietoa Gleamista ja sen käytöstä.
+- [Gleam/time kirjaston dokumentaatio](https://gleam.run/modules/gleam_time/latest/) - Lisätietoa `gleam/time` kirjastosta ja sen tarjoamista funktioista.
+- [Io/format funktion dokumentaatio](https://gleam.run/modules/gleam_io/latest/#type.formatter) - Yksityiskohtainen selitys `io/format` funktion käytöstä.

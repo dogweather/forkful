@@ -1,48 +1,61 @@
 ---
-title:                "Python: Znalezienie długości ciągu znaków"
+title:                "Python: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto obliczyć długość łańcucha w Pythonie
+## Dlaczego
 
-Obliczanie długości łańcucha jest niezwykle przydatnym narzędziem w Pythonie. Wiele programów wymaga manipulowania tekstami, a do tego potrzebna jest znajomość długości łańcucha. Nawet jeśli nie używasz Pythona w swojej codziennej pracy, poznaj tę funkcję - może przydać się w przyszłości.
+Długość (ang. length) jest jedną z podstawowych operacji w programowaniu. Jest to bardzo przydatne narzędzie, które pozwala na sprawdzenie ile znaków zawiera dany ciąg tekstu. Dzięki temu możemy lepiej manipulować tekstem w naszym kodzie.
 
-## Jak obliczyć długość łańcucha w Pythonie
+## Jak to zrobić
 
-Aby obliczyć długość łańcucha w Pythonie, użyj funkcji `len()`. Przykładowe użycie wygląda następująco:
-
-```Python
-string = "To jest przykładowy tekst"
-print(len(string))
-
-# Output: 24
-```
-
-Mamy tutaj łańcuch o długości 24 znaków, a korzystając z funkcji `len()`, możemy to łatwo sprawdzić.
-
-Możemy również obliczyć długość łańcucha, w którym znajdują się spacje i inne znaki specjalne:
+Aby obliczyć długość tekstu w języku Python, możemy skorzystać z funkcji `len()`. Spójrzmy na poniższy przykład:
 
 ```Python
-string = "Ala ma kota 123 !@#"
-print(len(string))
-
-# Output: 19
+imie = "Katarzyna"
+print(len(imie))
 ```
 
-Funkcja `len()` liczy wszystkie znaki w łańcuchu, w tym spacje, znaki specjalne i liczby.
+**Output:** `9`
 
-## Głębszy wgląd w obliczanie długości łańcucha
+W tym przypadku, funkcja `len()` zwróciła wartość 9, ponieważ ciąg "Katarzyna" składa się z 9 znaków. Możemy również użyć tej funkcji do obliczenia długości listy lub innego obiektu:
 
-W Pythonie łańcuchy są reprezentowane jako tablice (listy) znaków. Oznacza to, że możemy uzyskać długość łańcucha za pomocą funkcji `len()` tak jak w przypadku innych tablic. Funkcja ta zwraca liczbę elementów w danej tablicy, a w przypadku łańcucha jest to liczba znaków.
+```Python
+liczby = [1, 2, 3, 4, 5]
+print(len(liczby))
+```
 
-Warto również zauważyć, że funkcja `len()` jest uniwersalna i można jej użyć nie tylko do łańcuchów, ale również do list, słowników, krotek itp.
+**Output:** `5`
+
+Ważne jest również pamiętanie, że funkcja `len()` działa nie tylko na typach wbudowanych, ale również na naszych własnych zdefiniowanych klasach i obiektach.
+
+## Deep Dive
+
+W języku Python, długość nie jest zapisywana jako atrybut obiektu, a funkcja `len()` jest wywoływana za każdym razem, kiedy chcemy poznać długość danego obiektu. W przypadku ciągów tekstowych, funkcja ta działa na zasadzie iteracji, sprawdzając ilość znaków od pierwszego do ostatniego.
+
+Ponadto, funkcja `len()` jest często wykorzystywana do pętli for w celu określenia ilości iteracji. Przykładowo, jeśli chcemy wykonać pewną czynność określoną ilość razy, możemy użyć pętli for wraz z funkcją `len()`:
+
+```Python
+for i in range(len(liczby)):
+    print(i)
+```
+
+**Output:**
+```1
+2
+3
+4
+5
+```
 
 ## Zobacz również
 
-- [Dokumentacja Pythona na temat funkcji `len()`](https://docs.python.org/3/library/functions.html#len)
-- [Rozwiązanie problemu z obliczaniem długości łańcucha w Pythonie](https://www.geeksforgeeks.org/python-string-length-len/)
-- [Porównanie różnych sposobów obliczania długości łańcucha w Pythonie](https://stackoverflow.com/questions/1712227/how-do-i-get-the-number-of-elements-in-a-list)
+- Dokumentacja języka Python na temat funkcji len(): https://docs.python.org/3/library/functions.html#len
+- Poradnik na temat pracy z napisami w języku Python: https://realpython.com/python-strings/ 
+- Oficjalny kurs języka Python: https://www.python.org/about/gettingstarted/

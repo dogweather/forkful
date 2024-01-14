@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Suppression de caractères correspondant à un modèle"
+title:                "Elm: Supprimer les caractères correspondants à un motif"
+simple_title:         "Supprimer les caractères correspondants à un motif"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,40 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il peut être nécessaire, lors de la programmation en Elm, de supprimer des caractères correspondant à un modèle spécifique. Par exemple, vous pourriez vouloir supprimer tous les espaces d'une chaîne de caractères pour la nettoyer avant de l'utiliser dans une fonction ou une vue. Dans cet article, nous allons discuter de la façon de supprimer efficacement des caractères correspondant à un modèle en Elm.
+Supprimer des caractères correspondant à un modèle peut sembler une tâche fastidieuse, mais cela peut être très utile dans certaines situations. Par exemple, si vous avez un grand bloc de texte et que vous voulez supprimer toutes les lettres minuscules, cela peut être fait en utilisant une fonction de suppression de caractères. Dans cet article, nous allons explorer comment le faire en utilisant le langage de programmation Elm.
 
-## Comment Faire
+## Comment faire
 
-Pour supprimer des caractères correspondant à un modèle en Elm, nous allons utiliser la fonction `String.replace` disponible dans le module `String`. Cette fonction prend deux arguments: le modèle à remplacer et la chaîne de caractères dans laquelle effectuer le remplacement. Voici un exemple de code montrant comment utiliser cette fonction pour supprimer tous les espaces d'une chaîne de caractères:
-
-```Elm
-import String
-
-myString = "  Bonjour le monde !  "
-cleanString = String.replace " " "" myString
-
--- Output: "Bonjourlemonde!"
-```
-
-Comme vous pouvez le voir, nous importons d'abord le module `String`, puis nous utilisons la fonction `String.replace` pour remplacer tous les espaces par une chaîne vide dans la variable `myString`. En évaluant la variable `cleanString`, nous obtenons la chaîne nettoyée sans espaces.
-
-## Plongée Profonde
-
-La fonction `String.replace` en Elm prend un troisième argument facultatif qui spécifie le nombre maximum de remplacements à effectuer. Si nous ne donnons pas cet argument, tous les caractères correspondant au modèle seront remplacés. Cependant, si nous voulons limiter le nombre de remplacements, nous pouvons utiliser cette troisième argument. Voici un exemple de code montrant comment supprimer seulement les trois premiers espaces d'une chaîne de caractères en utilisant `String.replace` avec un troisième argument:
+Tout d'abord, nous devons définir une fonction qui prendra en entrée une chaîne de caractères et un motif, et renverra une nouvelle chaîne sans les caractères correspondants au modèle spécifié. En Elm, cela peut être fait en utilisant la fonction native "String.filter". Voici un exemple de code :
 
 ```Elm
-import String
+module Main exposing (main)
 
-myString = "  Bonjour le monde !  "
-limitedString = String.replace " " "" myString 3
+import Html exposing (text)
 
--- Output: "Bonjour le monde !"
+removePattern : String -> String -> String
+removePattern str pattern =
+    String.filter (\c -> not (String.contains pattern c)) str
+
+main : Html msg
+main =
+    text (removePattern "Bonjour" "aeiou") -- Renvoie "Bnjr"
 ```
 
-En spécifiant que nous ne voulons que trois remplacements, le reste des espaces est laissé intacts.
+Dans cet exemple, nous importons le module Html pour pouvoir afficher le résultat de notre fonction "removePattern" sous forme de texte. Ensuite, nous définissons la fonction en utilisant "String.filter" en passant une fonction anonyme qui vérifie si le caractère n'est pas présent dans le modèle spécifié. Enfin, nous appelons la fonction en lui passant une chaîne de caractères et un motif et affichons le résultat.
 
-## Voir Aussi
+## Plongée en profondeur
 
-- Documentation de la fonction `String.replace` : https://package.elm-lang.org/packages/elm/core/latest/String#replace
-- Tutoriel sur les fonctions de manipulation de chaînes en Elm : https://guide.elm-lang.org/appendix/strings.html
-- Exemples de manipulation de chaînes en Elm : https://github.com/elm/projects/blob/master/examples/strings/src/Main.elm
+Maintenant que nous avons vu comment supprimer des caractères correspondant à un motif de manière simple, il est utile de comprendre comment la fonction "String.filter" fonctionne en interne. Elle prend en paramètre une fonction qui vérifie chaque caractère de la chaîne de caractères et renvoie "True" si le caractère doit être inclus dans la nouvelle chaîne et "False" si le caractère doit être exclu. Cette fonction peut être écrite de différentes manières selon vos besoins.
+
+## Voir aussi
+
+- Documentation officielle sur les chaînes de caractères en Elm : https://guide.elm-lang.org/strings/
+- Tutoriel sur les fonctions de manipulation des chaînes de caractères en Elm : https://www.elm-tutorial.org/en/02-elm-arch/05-strings.html
+- Exemples pratiques d'utilisation de "String.filter" en Elm : https://gist.github.com/rgrempel/d707b9ff05ef9146096b9e6993ab010b

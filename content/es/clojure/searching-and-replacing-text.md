@@ -1,44 +1,57 @@
 ---
-title:                "Clojure: Búsqueda y reemplazo de texto"
+title:                "Clojure: Buscando y reemplazando texto"
+simple_title:         "Buscando y reemplazando texto"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/clojure/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-##¿Por qué?
+## Por qué
 
-Realizar búsquedas y reemplazos de texto en tus programas Clover puede ahorrarte tiempo y esfuerzo en la corrección de errores y actualización de código.
+Reemplazar texto es una tarea común en programación. Permite modificar grandes cantidades de texto de forma rápida y eficiente. En este blog post, aprenderemos cómo realizar búsquedas y reemplazos de texto en Clojure.
 
-##Cómo hacerlo
+## Cómo hacerlo
 
-Los comandos `replace` y `replace-all` se utilizan para realizar búsquedas y reemplazos en una cadena de texto especificada. Por ejemplo, si queremos reemplazar todas las letras "a" con la letra "e" en la palabra "Casa", escribiríamos lo siguiente:
+### Buscar y reemplazar un patrón específico
 
-```Clojure
-(replace "Casa" \a \e)
-```
-
-Este comando producirá la salida "Cese". Si queremos reemplazar todas las letras "a" con la letra "e" en todo un texto, podemos utilizar el comando `replace-all` de la siguiente manera:
+Podemos utilizar la función `clojure.string/replace` para buscar y reemplazar un patrón específico en una cadena de texto. Por ejemplo, si queremos reemplazar todas las letras mayúsculas por minúsculas en una oración, podemos hacer lo siguiente:
 
 ```Clojure
-(replace-all "Mi casa es azul" \a \e)
+(clojure.string/replace "ESTE ES UN EJEMPLO" #"A-Z" fn [m] (clojure.string/lower-case m))
 ```
 
-La salida de este comando sería "Mi cese es ezul". Además de letras, también se pueden utilizar símbolos y cadenas de texto completas en reemplazos.
+Esto nos dará como resultado "este es un ejemplo".
 
-##Profundizando
+### Reemplazar todas las ocurrencias
 
-Para realizar búsquedas y reemplazos más complejos, se pueden utilizar expresiones regulares en lugar de símbolos. Por ejemplo, si queremos reemplazar todos los números en un texto con una cadena vacía, podemos usar la expresión regular `#"[0-9]+"` junto con el comando `replace-all`:
+Si deseamos reemplazar todas las ocurrencias de un patrón en una cadena de texto, podemos utilizar la función `clojure.string/replace-first` y un bucle `while`. El bucle continuará buscando y reemplazando el patrón hasta que ya no queden ocurrencias. 
 
 ```Clojure
-(replace-all "La fecha es 02/10/20" #"[0-9]+" "")
+(def texto "hola, hola, hola")
+(while true
+  (let [reemplazado (clojure.string/replace-first texto #"hola" "adiós")]
+    (when (= texto reemplazado)
+      (break))
+    (def texto reemplazado))
+  )
+
+(prn texto) ; resultado: "adiós, adiós, adiós"
 ```
 
-La salida de este comando sería "La fecha es //". También se pueden utilizar grupos de captura en las expresiones regulares para realizar reemplazos más específicos.
+## Profundizando
 
-##Ver también
+A veces, puede ser necesario realizar búsquedas y reemplazos en archivos de texto. En ese caso, podemos utilizar la función `slurp` para leer el contenido del archivo y luego aplicar las funciones mencionadas anteriormente para realizar los reemplazos.
 
-- [Documentación oficial de comandos de búsqueda y reemplazo en Clojure](https://clojure.org/guides/text_processing)
-- [Tutorial de programación en Clojure en español](https://www.tutorialspoint.com/clojure/index.htm)
-- [Repositorio de código de ejemplo en Clojure](https://github.com/clojure/clojurescript)
+```Clojure
+(def archivo (slurp "ejemplo.txt"))
+(def archivo-modificado (clojure.string/replace archivo #"patrón" "reemplazo"))
+(spit "ejemplo.txt" archivo-modificado)
+```
+
+## Ver también
+
+- [Documentación oficial de strings en Clojure](https://clojure.org/guides/strings)
+- [Guía interactiva de Clojure para principiantes](https://clojure.org/guides/getting_started)

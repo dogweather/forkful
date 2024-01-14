@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Odczytywanie pliku tekstowego"
+title:                "Gleam: Odczytanie pliku tekstowego"
+simple_title:         "Odczytanie pliku tekstowego"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/reading-a-text-file.md"
 ---
 
@@ -9,34 +11,84 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek próbowałeś przeczytać duży plik tekstowy i znaleźć konkretne informacje w nim zawarte? Nie jest to łatwe zadanie, szczególnie kiedy plik ten zawiera tysiące linii tekstu. Jednak dzięki programowaniu w języku Gleam, możesz łatwo przeszukiwać pliki tekstowe i wyszukiwać potrzebne informacje. Czytanie plików tekstowych może znacznie ułatwić pracę z danymi i zapewnić szybki dostęp do potrzebnych informacji.
+Czy kiedykolwiek musiałeś/aś przeczytać plik tekstowy w swoim programie? Jeśli tak, to wiesz jak ważne jest to umiejętność w świecie programowania. Niezależnie od tego, czy chcesz przetwarzać duże zbiory danych, czy tylko sprawdzić zawartość prostego pliku, opcja ta jest niezbędna w wielu sytuacjach. W tym artykule dowiesz się, jak w prosty sposób czytać pliki tekstowe w języku programowania Gleam.
 
 ## Jak to zrobić
 
-Aby przeczytać plik tekstowy w języku Gleam, będziemy używać funkcji wbudowanej `File.read`, która przyjmuje jako argumenty nazwę pliku oraz opcjonalny kodowania. Przykładowo, jeśli chcemy odczytać plik tekstowy o nazwie "dane.txt", możemy to zrobić w następujący sposób:
+### Początek
+
+Aby móc czytać pliki tekstowe w języku Gleam, musimy najpierw utworzyć odpowiednią funkcję, która będzie zajmować się tym zadaniem. Na początek utwórzmy funkcję `read_file`, która jako argument będzie przyjmować ścieżkę do pliku.
 
 ```Gleam
-let plik = File.read("dane.txt", :utf8)
+fn read_file(path) {
+  // kod do odczytania pliku
+}
 ```
 
-Wynikiem tej funkcji będzie tuple zawierający status odczytu oraz sam plik tekstowy, który możemy następnie przetworzyć do dalszej analizy. Przykładowo, jeśli w pliku "dane.txt" mamy wpisane imię i nazwisko, możemy je wypisać na ekranie w następujący sposób:
+### Otwarcie pliku
+
+Korzystając z funkcji `File.open`, możemy otworzyć plik o podanej ścieżce i zwrócić obiekt pliku, który później będziemy mogli wykorzystać.
 
 ```Gleam
-let imie = File.read("dane.txt", :utf8) |> Tuple.set_at(1)
-let nazwisko = File.read("dane.txt", :utf8) |> Tuple.set_at(2)
-
-io.print("Imię: ", imie)
-io.print("Nazwisko: ", nazwisko)
+fn read_file(path) {
+  let file = File.open(path)
+}
 ```
 
-Powyższy kod wyświetli na ekranie "Imię: John" oraz "Nazwisko: Smith", zakładając że w pliku "dane.txt" znajdują się te dane.
+### Odczytywanie danych
 
-## Deep Dive
+Następnie musimy odczytać zawartość pliku i przekazać ją do zmiennej. W tym celu użyjemy funkcji `File.read` oraz przypiszemy wynik do nowej zmiennej `data`.
 
-Podczas czytania pliku tekstowego w języku Gleam, można także wykorzystać funkcję `File.read_line`, która pozwala odczytać pojedynczą linię tekstu z pliku. Dodatkowo, funkcja `File.read_lines` pozwala na odczytanie wszystkich linii tekstu i zwraca je w postaci listy. W ten sposób możemy łatwo przeszukać cały plik i znaleźć potrzebne informacje.
+```Gleam
+fn read_file(path) {
+  let file = File.open(path)
+  let data = File.read(file)
+}
+```
 
-## Zobacz też
+### Zamknięcie pliku
 
-- Dokumentacja języka Gleam: [https://gleam.run](https://gleam.run)
-- Przetwarzanie plików CSV w języku Gleam: [https://gleam.run/examples/csv.html](https://gleam.run/examples/csv.html)
-- Przykłady użycia funkcji `File` w języku Gleam: [https://gleam.run/docs/stdlib/File.html](https://gleam.run/docs/stdlib/File.html)
+Na zakończenie, musimy pamiętać o zamknięciu pliku, aby nie zajmował on niepotrzebnie zasobów naszego programu. W tym celu wykorzystamy funkcję `File.close` i przekażemy do niej obiekt pliku jako argument.
+
+```Gleam
+fn read_file(path) {
+  let file = File.open(path)
+  let data = File.read(file)
+  File.close(file)
+}
+```
+
+### Przykład użycia
+
+Teraz, gdy mamy już funkcję `read_file` gotową, możemy jej użyć w naszym programie. Przykładem może być odczytywanie zawartości pliku tekstowego i wyświetlenie jej na ekranie.
+
+```Gleam
+let file_path = "ciekawy_plik.txt"
+
+let file_data = read_file(file_path)
+
+IO.print(file_data)
+```
+
+W powyższym przykładzie, najpierw zdefiniowaliśmy zmienną `file_path` przechowującą ścieżkę do pliku. Następnie, używając funkcji `read_file`, odczytaliśmy jego zawartość i przypisaliśmy do zmiennej `file_data`. Na koniec, przy pomocy funkcji `IO.print` wyświetliliśmy odczytaną zawartość na ekranie.
+
+## Głębsze wyjaśnienie
+
+Oprócz odczytywania całych plików, istnieje również możliwość odczytywania ich wiersz po wierszu. W tym celu możemy skorzystać z funkcji `File.read_line`, która będzie czytać kolejne wiersze pliku i zwracać je jako wynik.
+
+```Gleam
+fn read_file(path) {
+  let file = File.open(path)
+  let line = File.read_line(file)
+
+  while let Some(data) = line {
+    // zrobić coś z danymi, np. wydrukować je na ekranie
+    IO.print(data)
+    line = File.read_line(file)
+  }
+
+  File.close(file)
+}
+```
+
+W powyższym przykładzie użyliśmy pętli `while` do odczytywania kolejnych wierszy pliku za pomocą funkcji `File.read_line`. Takie pode

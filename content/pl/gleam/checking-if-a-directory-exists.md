@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Sprawdzanie istnienia katalogu"
+title:                "Gleam: Sprawdzanie czy istnieje katalog"
+simple_title:         "Sprawdzanie czy istnieje katalog"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/checking-if-a-directory-exists.md"
 ---
 
@@ -9,34 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Sprawdzanie czy istnieje katalog jest ważną częścią procesu programowania, ponieważ pozwala nam upewnić się, że nasz kod będzie działał poprawnie, bez żadnych błędów związanych z nieistniejącymi katalogami.
+Sprawdzenie, czy katalog istnieje, jest ważnym aspektem programowania w Gleam. Dzięki temu można uniknąć błędów i zapewnić poprawne działanie programu. 
 
-## Jak To Zrobić
+## Jak to zrobić
 
-Aby sprawdzić czy dany katalog istnieje w języku Gleam, możemy skorzystać z funkcji `File.exists?/1` i przekazać jej ścieżkę do katalogu jako argument. Przykładowy kod wyglądałby następująco:
+Sprawdzenie istnienia katalogu jest proste w Gleam. Wystarczy użyć funkcji `exists` z modułu `gleam/io/fs`. Przykładowy kod wyglądałby następująco: 
 
 ```Gleam
-import File
+import gleam/io/fs
 
-let directory = "sciezka/do/katalogu"
-
-if File.exists?(directory) {
-    IO.println("Katalog istnieje")
-} else {
-    IO.println("Katalog nie istnieje")
+fn main() {
+  let directory = "images"
+  let exists = gleam/io/fs.exists(directory)
+  case exists {
+    Ok(_) -> 
+        io.print("Katalog istnieje!")
+    Err(_) -> 
+        io.print("Katalog nie istnieje")
+  }
 }
-```
+``` 
 
-Po uruchomieniu tego kodu, jeśli katalog istnieje, zostanie wyświetlony komunikat "Katalog istnieje", a jeśli nie istnieje - komunikat "Katalog nie istnieje".
+W powyższym przykładzie, najpierw importujemy moduł `gleam/io/fs`, a następnie tworzymy zmienną `directory`, która przechowuje nazwę sprawdzanego katalogu. Następnie używamy funkcji `exists`, która zwraca wartość typu `Result` - `Ok` jeśli katalog istnieje, lub `Err` jeśli go nie ma. W zależności od tego, jaką wartość zwróci funkcja, wyświetlamy odpowiedni komunikat. W ten sposób możemy w łatwy sposób sprawdzić, czy dany katalog istnieje.
 
-## Głębsze Spostrzeżenia
+## Deep Dive
 
-Sprawdzanie istnienia katalogu jest ważne nie tylko ze względu na poprawne działanie programu, ale również ze względu na bezpieczeństwo danych. Przykładowo, jeśli nasz program jest odpowiedzialny za przechowywanie i zarządzanie plikami użytkowników, to ważne jest, aby upewnić się, że nie istnieją przypadkowe katalogi, które mogłyby naruszyć prywatność danych.
+Funkcja `exists` znajduje się w module `gleam/io/fs`, który zawiera wiele innych przydatnych funkcji do operacji na plikach i katalogach. W przypadku, gdy chcemy sprawdzić, czy katalog istnieje oraz czy jest on pusty, możemy skorzystać z funkcji `is_empty`, która również zwraca wartość typu `Result`. 
 
-Możemy również wykorzystać dodatkowe funkcje, takie jak `File.dir_entries/1`, aby uzyskać listę plików i katalogów znajdujących się w danym katalogu, i odpowiednio nimi zarządzać w naszym kodzie.
+Moduł `gleam/io/fs` zawiera również inne przydatne funkcje, takie jak `read`, `write`, czy `rename`, które pozwalają na czytanie, zapisywanie i zmianę nazwy plików. Dzięki temu, programowanie w Gleam staje się prostsze i bardziej wydajne.
 
-## Zobacz Również
+## Zobacz również
 
-- [Dokumentacja języka Gleam dotycząca funkcji File](https://gleam.run/docs/standard-library/file)
-- [Poradnik: Tworzenie i zarządzanie katalogami w języku Gleam](https://gleam.run/posts/directory-management.html)
-- [Przykładowy kod z funkcją `File.exists?/1`](https://gist.github.com/user/repo/gist-ID)
+- Dokumentacja modułu `gleam/io/fs`: https://gleam.run/modules/io-fs.html
+- Oficjalna strona języka Gleam: https://gleam.run/
+- Przykładowe projekty i biblioteki w Gleam: https://gleam.run/community.html

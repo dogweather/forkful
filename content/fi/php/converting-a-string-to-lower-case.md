@@ -1,34 +1,53 @@
 ---
-title:                "PHP: Merkkijonon muuntaminen pienaakkosiksi"
+title:                "PHP: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: 
-Voit olla tilanteessa, jossa sinun täytyy muuttaa merkkijono pienaakkosiin PHP-ohjelmassa. Se voi olla tarpeellista esimerkiksi vertaillessasi kahta merkkijonoa, jotta varmistat niiden samanmuotoisuuden. Tässä blogikirjoituksessa opit, miten voit helposti konvertoida merkkijonon pienaakkosiin PHP:llä.
+## Miksi
 
-## Miten: 
-Käytännössä, PHP:llä on valmiina funktio, jolla voidaan konvertoida merkkijono pienaakkosiin. Tämä funktio on nimeltään strtolower(). Alla on esimerkkikoodi, jossa käytämme tätä funktiota ja tulostamme muutetun merkkijonon:
+Tässä blogipostauksessa käsittelemme, miksi ja miten muuttaa merkkijono pieniksi kirjaimiksi käyttämällä PHP-ohjelmointikieltä. Pieniä kirjaimia käytetään laajasti ohjelmoinnissa, ja tämän taidon hallinta auttaa välttämään virheitä ja tekee koodistasi helpommin luettavaa ja ymmärrettävää.
+
+## Miten
+
+Merkkijonon muuttaminen pieniksi kirjaimiksi PHP:ssa on helppoa. Voit käyttää strtolower-funktiota, joka ottaa merkkijonon ja palauttaa saman merkkijonon, jossa kaikki kirjaimet on muutettu pieniksi. Alla on esimerkki:
 
 ```PHP
-<?php
-$string = "TÄMÄ ON MERKKIJONO";
-echo strtolower($string);
-// Output: tämä on merkkijono
-?>
+$merkkijono = "TÄMÄ ON MERKKIJONO";
+echo strtolower($merkkijono);
 ```
+Tulostus:
+`tämä on merkkijono`
 
-Kuten näet, funktio muutti kaikki isot kirjaimet pieniksi kirjaimiksi. Tämä toimii myös erikoismerkkien kanssa, kuten skandinaavisilla kirjaimilla.
+Voit myös muuttaa merkkijonon pieniksi kirjaimiksi käyttämällä strtoupper-funktiota, joka tekee päinvastaisen eli muuttaa kaikki kirjaimet isoiksi.
 
-## Syvällisempi tarkastelu: 
-Jos haluat tarkemmin tietoa siitä, miten PHP konvertoi merkkijonon pienaakkosiin, niin tässä on pieni syvällisempi tarkastelu. PHP:ssä käytettävät isot ja pienet kirjaimet perustuvat ASCII-taulukkoon. Jokaisella kirjaimella on oma numeerinen arvo ja isojen ja pienten kirjainten välillä on 32 numeron ero. Tämä tarkoittaa sitä, että jos haluamme muuttaa ison kirjaimen pieneksi, niin meidän täytyy lisätä sen numeeriseen arvoon 32.
+```PHP
+$merkkijono = "tämä on merkkijono";
+echo strtoupper($merkkijono);
+```
+Tulostus:
+`TÄMÄ ON MERKKIJONO`
 
-Kun PHP kohdataan stringin, se käy merkki kerrallaan läpi ja tarkistaa sen numeerisen arvon. Jos kyseessä on iso kirjain, niin PHP lisää siihen 32 ja muuttaa sen pieneksi kirjaimeksi.
+On myös mahdollista muuttaa merkkijonossa olevia kirjaimia, joihin ei liity kielitieteellisiä sääntöjä. Tämä voidaan tehdä käyttämällä mb_strtoupper- ja mb_strtolower-funktioita.
 
-## Katso myös: 
-- PHP manuaali tästä aiheesta
-- Tietoa ASCII-taulukosta
-- Muita hyödyllisiä PHP-funktioita merkkijonoille
+## Syvempää sukellusta
+
+Älä unohda, että PHP on C-kielipohjainen ja kirjaimien muuntaminen suoritetaan ASCII-yhteensopivilla menetelmillä. Tämä tarkoittaa sitä, että merkkijonojen muuntamisessa käytetään koko merkkikoodisarjaa eikä vain kirjaimia, joita käytetään puhekielessä.
+
+Esimerkiksi ä-kirjain voi olla joko kirjaimella 'a' tai kaksi merkkiä 'aa', jotka muodostavat yhden kirjaimen. Samoin kirjain 'Ö' voidaan muodostaa sekä yhdestä että kahdesta merkistä 'öö'.
+
+### Kirjainlajit
+
+PHP tukee monia erilaisia kirjainlajeja. Jokainen kirjainlaji käy läpi erilaisia käsittelyjä, kuten pienen ja ison kirjaimen muutokset tai kirjainten taitava suodattaminen. Voit lisätä lisää kirjainlajeja käyttämällä stringiä, joka sisältää kaikki tarvittavat lajit.
+
+Kokonaisuudessaan nämä kirjainlajit edustavat isoja ja pieniä latinalaisia kirjaimia, kreikkalaisia ja kyrillisiä kirjaimia sekä pisteitä tai diakriittisiä merkkejä. Voit helposti lisätä ja määrittää omat kirjainlajisi käyttämällä ASCII-yhteensopivia merkkialueita.
+
+## Katso myös
+
+- [PHP:n merkkijonojen manuaalisivu](https://www.php.net/manual/en/features.string-case.php)
+- [ASCII-merkkikoodisarja](https://www.ascii-code.com/)

@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/typescript/finding-the-length-of-a-string.md"
 ---
 
@@ -9,38 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Dlaczego warto dowiedzieć się, jak znaleźć długość łańcucha w programowaniu TypeScript? Ponieważ jest to podstawowa umiejętność, która jest wykorzystywana w wielu różnych zastosowaniach. Bez znajomości tej funkcji, wiele zadań programistycznych będzie o wiele trudniejszych do wykonania.
+Wiele razy podczas programowania musimy operować na ciągach znaków, zwanych też stringami. Często potrzebujemy znać długość takiego ciągu, aby wykonać pewne operacje lub weryfikować poprawność danych. W tym artykule dowiesz się, jak w prosty sposób znaleźć długość stringa w języku TypeScript.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-```TypeScript
-// Poniższy przykład kodu pokazuje, jak użyć funkcji .length w celu znalezienia długości łańcucha.
-
-// Tworzymy zmienną zawierającą łańcuch znaków
-let str: string = "To jest przykładowy tekst";
-
-// Używamy funkcji .length do zwrócenia długości łańcucha
-console.log(str.length); // Output: 24
-```
-
-W powyższym przykładzie tworzymy zmienną `str` zawierającą łańcuch znaków. Następnie używamy funkcji `.length` na tej zmiennej, aby wyświetlić jej długość. W naszym przypadku zwróci to liczbę 24, ponieważ łańcuch ten zawiera 24 znaki.
-
-Można również użyć funkcji `.length` do sprawdzenia, czy łańcuch jest pusty. Jeśli zwraca ona liczbę 0, oznacza to, że łańcuch jest pusty.
+Pierwszą metodą jest użycie właściwości `length`, która jest dostępna dla każdego stringa w TypeScript. Przykładowy kod i wynik działania wyglądają następująco:
 
 ```TypeScript
-let emptyStr: string = "";
-
-console.log(emptyStr.length); // Output: 0
+let str: string = "To jest przykładowy string";
+console.log(str.length); // Output: 25
 ```
 
-## Dogłębna analiza
+Inną możliwością jest użycie funkcji `String.length()`, która również zwraca długość stringa. Przykład:
 
-Funkcja `.length` jest dostępna dla wszystkich typów danych łańcuchowych w TypeScript. Pozwala ona na proste i szybkie sprawdzanie długości łańcucha oraz jego pustego stanu. Warto również pamiętać, że funkcja ta zwraca liczbę, a nie indeks ostatniego elementu. Jeśli chcemy uzyskać dostęp do konkretnego znaku w łańcuchu, musimy użyć indeksów.
+```TypeScript
+let name: string = "Anna";
+console.log(name.length()); // Output: 4
+```
 
-## Zobacz również
+W przypadku, gdy chcemy znaleźć długość stringa złożonego z kilku wyrazów, należy użyć metody `split()` razem z funkcją `length()`. Funkcja `split()` rozdzieli string na elementy, a następnie możemy policzyć, ile elementów zawiera nowo powstała tablica. Przykład:
 
-- [Dokumentacja TypeScript dotycząca funkcji .length](https://www.typescriptlang.org/docs/handbook/2/functions.html#the-length-property)
-- [Inne przydatne funkcje łańcuchowe w TypeScript](https://www.w3schools.com/jsref/jsref_obj_string.asp)
-- [Porównanie różnych funkcji do znajdowania długości łańcucha](https://stackoverflow.com/questions/1852383/what-s-the-difference-between-size-length-count-for-javascript-arrays)
+```TypeScript
+let sentence: string = "To jest zdanie w języku TypeScript";
+console.log(sentence.split(" ").length); // Output: 6
+```
 
-Dziękujemy za przeczytanie tego wpisu blogowego. Mamy nadzieję, że dzięki niemu lepiej zrozumiesz, jak znaleźć długość łańcucha w programowaniu TypeScript. Zachęcamy również do eksperymentowania z różnymi funkcjami, aby lepiej zrozumieć ich działanie i wykorzystanie w praktyce. Powodzenia w nauce!
+## Deep Dive
+
+W języku TypeScript, podobnie jak w innych językach programowania, długość stringa jest liczona w oparciu o liczbę znaków w danym stringu. Warto jednak pamiętać, że w niektórych językach, np. chińskim czy japońskim, długość stringa może być obliczana w oparciu o znaki kanji, które składają się z kilku znaków.
+
+W przypadku gdy chcemy policzyć długość stringa zawierającego specjalne znaki, należy pamiętać, że część znaków może być traktowana jako dwa znaki. Na przykład litera `ł` z polskiego alfabetu może być traktowana jako dwa znaki, więc przy liczeniu długości stringa zawierającego tę literę, wynik może być większy niż oczekiwany.
+
+## Zobacz także
+- [Dokumentacja języka TypeScript](https://www.typescriptlang.org/docs/)
+- [Tutorial na temat manipulacji stringami w TypeScript](https://www.tutorialspoint.com/typescript/typescript_strings.htm)
+- [Dyskusja na temat różnic w liczeniu długości stringa w różnych językach](https://stackoverflow.com/questions/10431964/strange-behaviour-on-the-length-of-an-accentuated-string-in-various-languages)

@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Schreiben in den Standardfehler."
+title:                "Gleam: Schreiben auf die Standardfehlerausgabe"
+simple_title:         "Schreiben auf die Standardfehlerausgabe"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/writing-to-standard-error.md"
 ---
 
@@ -9,32 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Schreiben in die Standardfehlerausgabe (Standard Error) ist ein wichtiger Bestandteil der Entwicklung mit Gleam. Es ermöglicht es uns, Fehlermeldungen und Debugging-Informationen zu überwachen und zu verfolgen, was uns bei der Fehlerbehebung und Optimierung unserer Codes helfen kann.
+Das Schreiben auf den Standardfehlerstrom (stderr) ist eine wichtige Funktion für Entwickler, um Fehlermeldungen und Debugging-Informationen in ihren Programmen zu erfassen. Durch die Verwendung von Gleam können wir dieses Feature auf einfache und effektive Weise in unsere Programme integrieren.
 
-## So geht's
+## Wie Geht's
 
-Das Schreiben in die Standardfehlerausgabe ist sehr einfach mit Gleam. Hier ist ein Beispielcode:
+Um auf den Standardfehlerstrom zu schreiben, können wir die Standardbibliotheksfunktion `io.format_stderr` verwenden. Diese Funktion akzeptiert einen Formatierungsstring und optionale Argumente, ähnlich wie die bekannte `printf`-Funktion in anderen Programmiersprachen.
 
-```Gleam
-import gleam/io
-
-pub fn main() {
-  gleam/io.stderr("Dies ist ein Beispieltext, der in die Standardfehlerausgabe geschrieben wird.")
+```
+Gleam
+def some_function() {
+  io.format_stderr("Oh nein, ein Fehler ist aufgetreten!")
 }
 ```
 
-Und hier ist die entsprechende Ausgabe:
+Die Ausgabe dieses Codes wäre "Oh nein, ein Fehler ist aufgetreten!" auf dem stderr-Strom.
+
+## Tiefgehender Einblick
+
+Neben dem einfachen Schreiben von Text auf den Fehlerstrom können wir mit Gleam auch Fehlerobjekte auf den stderr-Strom schreiben. Diese können zusätzliche Informationen wie Fehlercodes und Stacktraces enthalten, die bei der Fehlersuche und Behebung nützlich sein können.
 
 ```
-Dies ist ein Beispieltext, der in die Standardfehlerausgabe geschrieben wird.
+Gleam
+type MyError {
+  message: String,
+  code: Int,
+}
+
+pub fn my_function() -> Result<(), MyError> {
+  // ...code
+}
+
+let error = MyError {message: "Da ist was schief gelaufen", code: 500}
+io.error(error)
 ```
 
-## Tiefer Einblick
+Die Ausgabe in diesem Fall wäre:
 
-Das Schreiben in die Standardfehlerausgabe kann besonders nützlich sein, wenn wir mit komplexen Codes arbeiten, in denen viele Funktionen und Module verwendet werden. Indem wir gezielt Informationen in die Standardfehlerausgabe schreiben, können wir unseren Code besser überwachen und Fehlerquellen schneller finden. Wir können auch spezifische Debugging-Anweisungen einfügen, die uns bei der Analyse von Problemen helfen.
+```
+MyError { message: "Da ist was schief gelaufen", code: 500 }
+```
 
 ## Siehe auch
 
-- [Gleam Dokumentation zu Standardausgaben](https://gleam.run/book/tutorials/io.html#standard-ausgaben)
-- [Gleam Fehlerbehandlung](https://gleam.run/book/tutorials/error-handling.html)
-- [Gleam Logging-Bibliotheken](https://gleam.run/ecosystem/#logging)
+- [Gleam-Dokumentation zur io-Bibliothek](https://gleam.run/articles/standard-library-io/)
+- [Gleam-Dokumentation zu Fehlerbehandlung](https://gleam.run/articles/error-handling/)

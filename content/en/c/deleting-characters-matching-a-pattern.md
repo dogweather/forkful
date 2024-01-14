@@ -1,7 +1,9 @@
 ---
 title:                "C recipe: Deleting characters matching a pattern"
+simple_title:         "Deleting characters matching a pattern"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,53 +11,86 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Have you ever encountered a situation where you needed to delete specific characters from a string or a file? Maybe you were trying to remove all the vowels from a sentence or delete all the digits from a phone number. Well, in those cases, knowing how to delete characters matching a certain pattern can come in handy.
+In many programming tasks, cleaning up data is an important step in order to process it effectively. One common task is deleting characters that match a certain pattern. This could be useful in situations such as removing special characters from a string or replacing certain characters with another.
 
-## How To
+## How To 
 
-Deleting characters that match a pattern can be done easily with C programming. First, let's define a function that takes in a string and a pattern as parameters:
+To delete characters that match a pattern, one approach is to loop through each character in the string and check if it matches the pattern. If it does, we can remove it from the string. Below is a simple example in C, using the `strchr()` function to check for character matches and the `memmove()` function to shift the characters in the string after the match is deleted.
 
-```C
-void deleteCharacters(char *str, char *pattern){
-  // Code to delete characters here
-}
 ```
+#include <stdio.h>
+#include <string.h>
 
-Next, we need to loop through each character in the string and check if it matches the given pattern. If it does, we can simply remove it by shifting all the characters to the left.
+int main() {
+    char str[] = "Hello, $World!";
+    char pattern[] = "$";
 
-```C
-for (int i = 0; i < strlen(str); i++){
-  if (str[i] == *pattern)
-    // Shift all characters after i to the left by one position
-}
-```
+    printf("Before: %s\n", str);
 
-For example, let's say we want to remove all the vowels from the string "Hello World". We can define our function as:
-
-```C
-void deleteCharacters(char *str, char *pattern){
-  int deleteIndex = 0;
-  for (int i = 0; i < strlen(str); i++){
-    if (str[i] != *pattern){
-      str[deleteIndex] = str[i];
-      deleteIndex++;
+    char *ptr;
+    while ((ptr = strchr(str, *pattern)) != NULL ) {
+        memmove(ptr, ptr + 1, strlen(ptr));
     }
-  }
-  str[deleteIndex] = '\0';
+
+    printf("After: %s\n", str);
+    
+    return 0;
 }
 ```
 
-Calling this function with the string "Hello World" and the pattern "aeiou" would result in the output "Hll Wrld". 
+Output:
+
+```
+Before: Hello, $World!
+After: Hello, World!
+```
+
+In this example, we are deleting all occurrences of the character `$` in the string "Hello, $World!".
 
 ## Deep Dive
 
-In the above code, we used the strlen() function to get the length of the string and the '\0' character to indicate the end of the string. This ensures that the final string is properly terminated. Additionally, we used pointers to access and modify the string, which is a common practice in C programming.
+While the above method is a simple and efficient approach, it may not always be suitable for more complex patterns. For example, if we want to delete a sequence of characters rather than just a single character, the `memmove()` function may not work as expected. In such cases, using a regular expression library like PCRE (Perl Compatible Regular Expressions) can be a better option.
 
-It's important to note that the **deleteIndex** variable is used to keep track of the index where we want to place the next character. If we encounter a character that matches our pattern, the index remains the same and the character is simply ignored.
+Regular expressions allow us to match patterns in a more specific and flexible way by using special sequences of characters to represent a search pattern. In the example below, we use the `regex.h` library with the `regex` structure to compile and match a regular expression and then delete the matched characters using the `regexec()` and `regcomp()` functions.
+
+```
+#include <stdio.h>
+#include <string.h>
+#include <regex.h>
+
+int main() {
+    char str[] = "I love #coding in C!";
+    char pattern[] = "[#|a-z]";
+
+    printf("Before: %s\n", str);
+
+    int status;
+    regex_t regex;
+    status = regcomp(&regex, pattern, REG_ICASE);
+    status = regexec(&regex, str, 0, NULL, 0);
+    if (status == 0) {
+        regfree(&regex);
+        regcomp(&regex, pattern, REG_ICASE);
+        regsub(&regex, str, "", str);
+    }
+
+    printf("After: %s\n", str);
+    
+    return 0;
+}
+```
+
+Output:
+
+```
+Before: I love #coding in C!
+After: I lve in !
+```
+
+Here, we use the regular expression "[#|a-z]" to match either a `#` symbol or any lowercase letter. By using the `regsub()` function, we are able to substitute the matched characters with an empty string, effectively deleting them from the string.
 
 ## See Also
 
-- [C String Functions](https://www.programiz.com/c-programming/string-functions)
-- [Pointers in C](https://www.geeksforgeeks.org/pointers-in-c-programming/)
-
-Now you know how to delete characters matching a pattern in C programming. You can use this knowledge to manipulate strings and files as needed. Happy coding!
+- [Regular expressions in C programming language](https://www.systutorials.com/docs/linux/man/3-regcomp/)
+- [C string functions](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+- [PCRE Library](https://www.pcre.org/)

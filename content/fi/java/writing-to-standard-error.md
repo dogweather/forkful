@@ -1,42 +1,48 @@
 ---
-title:                "Java: Kirjoittaminen standardivirheeseen"
+title:                "Java: Kirjoittaminen standardi virheeseen"
+simple_title:         "Kirjoittaminen standardi virheeseen"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi?
+## Miksi
 
-Jokainen Java-ohjelmoija on varmasti törmännyt virheilmoituksiin. Pahimmillaan ne voivat hidastaa työskentelyä ja aiheuttaa harmaita hiuksia. Mutta mitä jos kerrommekin Java-ohjelmalle, että se näyttäisikin virheilmoituksensa standardi virhe -tulostevirrasta? Tämä voi tehdä ohjelmoinnista huomattavasti helpompaa ja mahdollistaa kätevämmän virheidenhallinnan.
+Kirjoittaminen standardidatalle voi olla erittäin hyödyllistä ohjelmoijille useista eri syistä. Erityisesti silloin, kun halutaan havainnollistaa ja seurata ohjelman suoritusta tai vikasignaaleja, standardidatan kirjoittaminen voi olla erittäin hyödyllistä. Se myös auttaa tunnistamaan ja korjaamaan mahdollisia ohjelmointivirheitä.
 
-# Kuinka?
+## Miten
 
-Käyttämällä `System.err` -oliota voimme kirjoittaa virheilmoituksia suoraan standardi virhe -tulostevirtaan. Tämä tapahtuu juuri kuten standardi tulostevirtaan kirjoittaminen, mutta käytämme `println()`-metodia. Alla on esimerkki koodista ja tulos.
+**Esimerkkikoodi Java:**
 
-```Java
-public class StandardErrorExample {
-  public static void main(String[] args) {
-    System.err.println("Tämä on virheilmoitus!");
-  }
+```java
+public static void main(String[] args) {
+    System.err.println("Tämä näyttää viestin standardidatalla"); 
+    System.out.println("Tämä näyttää viestin standardivirrassa");
 }
 ```
 
-Tulos:
+**Esimerkkilähtö:**
 
 ```
-Tämä on virheilmoitus!
+Tämä näyttää viestin standardidatalla
+Tämä näyttää viestin standardivirrassa
 ```
 
-# Syvällisempi sukellus
+Kuten näkyy esimerkistä, ero standardidatan ja standardivirran välillä on pieni, mutta merkittävä. Käyttämällä syöttövirran sijaan virhevirran kirjoittamista, voit helposti seurata ohjelman suoritusta ja havaita mahdolliset ongelmat.
 
-Standardi virhe -tulostevirta on osa Java-kielen "systeemiviestintää". Sitä käytetään normaalisti näyttämään virheilmoituksia ohjelman suorituksen aikana. Tämä tapahtuu, kun esimerkiksi koodissa tapahtuu jokin virhe tai poikkeus. Voimme siis ajatella standardi virhe -tulostevirtaa vähän kuin ohjelman huudoille.
+## Syvällinen tutkimus
 
-Virheilmoitusten lisäksi voimme käyttää standardi virhe -tulostevirtaa myös muuhun viestintään. Esimerkiksi jos haluamme näyttää käyttäjälle jonkin ilmoituksen, voimme kirjoittaa sen standardi virhe -tulostevirtaan ja se näkyy samalla tavalla kuin virheilmoitukset.
+Toinen tapa hyödyntää standardidataa ohjelmoinnissa on käyttää sitä väliaikaisena tallennustilana. Esimerkiksi jos sinun on tarkoitus käsitellä suuri määrä tietoa, voit ohjelmoida ohjelmasi kirjoittamaan tarvittavat tiedot standardidatalle ja lukea ne myöhemmin takaisin.
 
-# Katso myös
+Yksi tärkeä asia, jonka sinun tulee muistaa kirjoittaessasi standardidatalle on käsitellä kaikki mahdolliset poikkeukset (exceptions). Jos virhe ilmenee, ohjelma saattaa kaatua tai olla mahdoton palauttaa tiedot. Parhaan tuloksen saavuttamiseksi kannattaa hyödyntää poikkeusten käsittelyä käyttäen esimerkiksi try-catch -lohkoja.
 
-- Java virheidenhallinta: https://docs.oracle.com/javase/tutorial/essential/exceptions/index.html
-- System.err Java-kirjaston dokumentaatio: https://docs.oracle.com/javase/7/docs/api/java/lang/System.html#err
-- Java virheet ja poikkeukset: https://www.javatpoint.com/exception-handling-in-java
+## Katso myös
+
+Lisätietoa standardidatan käytöstä Java-ohjelmoinnissa löydät seuraavista lähteistä:
+
+- https://www.geeksforgeeks.org/standard-output-streams-in-java/
+- https://docs.oracle.com/javase/7/docs/api/java/lang/System.html
+- https://www.baeldung.com/java-system-out-println-vs-system-err-println

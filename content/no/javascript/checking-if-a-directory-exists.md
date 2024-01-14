@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/checking-if-a-directory-exists.md"
 ---
 
@@ -9,35 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det er viktig å sjekke om en mappe eksisterer i Javascript for å sikre at koden kjører uten feil og hindre potensielle feil i fremtiden.
+Å sjekke om en mappe eksisterer er en viktig del av programmering for å sikre at koden vår fungerer som den skal. Dette er spesielt nyttig når vi arbeider med filbehandling og trenger å vite om en mappe allerede finnes eller om vi må opprette den.
 
-## Hvordan
+## Slik gjør du det
 
-For å sjekke om en mappe eksisterer i Javascript, kan du bruke fs modulet, som gir tilgang til operativsystemets filsystem. Vi kan bruke fs.stat() metoden for å sjekke om en mappe eksisterer. La oss se på et eksempel:
+For å sjekke om en mappe eksisterer i JavaScript, kan vi bruke fs modulen som er innebygd i Node.js. Vi kan først importere denne modulen ved å skrive følgende kode øverst i JavaScript-filen vår:
 
 ```Javascript
 const fs = require('fs');
-
-fs.stat('./mappe', (err, stats) => {
-  if (err) {
-    console.log('Mappen eksisterer ikke');
-  } else {
-    console.log('Mappen eksisterer');
-  }
-});
 ```
 
-Output vil være enten "Mappen eksisterer ikke" eller "Mappen eksisterer" avhengig av om mappen faktisk eksisterer eller ikke. I koden over bruker vi fs.stat() metoden og gir den navnet på mappen vi ønsker å sjekke. Hvis det oppstår en feil, vil vi få en "err" som argument i tilbakekallfunksjonen, og hvis mappen eksisterer vil vi få informasjon om den i "stats" argumentet. 
+Deretter kan vi bruke fs.existsSync() funksjonen for å sjekke om en mappe eksisterer eller ikke. Denne funksjonen tar inn som argument en sti til mappen vi vil sjekke. Her er et eksempel på hvordan vi kan bruke denne funksjonen:
 
-## Dypdykk
+```Javascript
+if(fs.existsSync('./mappenavn')){
+  console.log("Mappen eksisterer!");
+} else{
+  console.log("Mappen eksisterer ikke. Oppretter en ny mappe...");
+  fs.mkdirSync('./mappenavn'); // Oppretter en ny mappe hvis den ikke eksisterer
+}
+```
 
-Det finnes flere metoder for å sjekke om en mappe eksisterer i Javascript. Vi kan også bruke path modulet for å jobbe med filstier, og da spesifikt fs.existsSync() metoden for å sjekke om en sti eksisterer. En annen metode er å bruke try-catch blokker rundt koden som prøver å utføre operasjoner på mappen, og fange eventuelle feil som oppstår.
+I dette eksemplet sjekker vi om mappen "mappenavn" eksisterer i den nåværende arbeidsmappen vår. Hvis mappen eksisterer, vil vi få en melding som bekrefter dette. Hvis ikke, vil vi få en melding om at mappen ikke eksisterer og deretter vil en ny mappe bli opprettet.
 
-Det er også viktig å merke seg at disse metodene kan variere i funksjonalitet avhengig av operativsystemet og versjonen av Node.js som kjøres.
+## Dypere dykk
+
+Det er verdt å merke seg at fs.existsSync() funksjonen returnerer en boolean (true eller false), avhengig av om mappen eksisterer eller ikke. Dette betyr at vi også kan bruke denne funksjonen i en if-setning, som vist i eksempelet ovenfor. Vi kan også bruke denne funksjonen til å sjekke om en fil eksisterer, ved å endre stien som argument til funksjonen.
+
+Det er også verdt å nevne at fs.existsSync() funksjonen er synkron, dette betyr at den vil blokkere resten av koden vår mens sjekken pågår. Dette bør vurderes dersom du arbeider med store mengder filer og mapper.
 
 ## Se også
 
-- [fs module documentation](https://nodejs.org/api/fs.html)
-- [path module documentation](https://nodejs.org/api/path.html)
-- [fs.stat() method documentation](https://nodejs.org/api/fs.html#fs_fs_stat_path_options_callback)
-- [fs.existsSync() method documentation](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
+- [Node.js dokumentasjon om fs modulen](https://nodejs.org/api/fs.html)
+- [Tutorialspoint guide om å sjekke om en mappen eksisterer i Node.js](https://www.tutorialspoint.com/nodejs/mkdirsync.htm)

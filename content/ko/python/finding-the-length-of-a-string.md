@@ -1,33 +1,42 @@
 ---
-title:                "Python: 문자열 길이 찾기"
+title:                "Python: 문자열의 길이 찾기"
+simple_title:         "문자열의 길이 찾기"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/python/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜?
-문자열의 길이를 구하는 것에 참여하는 이유는 매우 간단합니다. 우리는 일상에서 다양한 작업을 할 때 문자열의 길이를 알아야 할 필요가 있을 수 있습니다. 예를 들어, 이메일 주소나 전화번호를 작성할 때 정확한 길이를 알아야 하며, 어떤 문자열이 특정 제한 길이를 초과하는지 확인해야 할 때도 있습니다.
 
-## 어떻게 해야 할까요?
-파이썬에서는 내장 함수인 `len()`을 사용하여 문자열의 길이를 간단하게 구할 수 있습니다. 이 함수는 파라미터로 문자열을 입력받고 문자열의 길이를 정수 형태로 반환합니다. 예를 들어서, `len("Hello World")` 코드를 실행하면 11이라는 값이 출력됩니다. 아래의 예제를 참고해보세요.
+문자열의 길이를 찾는 활동에 참여하는 이유는 무엇일까요? 문자열은 프로그래밍에서 매우 중요한 데이터 타입이기 때문입니다. 따라서 문자열을 다루는 능력은 프로그래머로서 필수적인 기술입니다.
+
+## 방법
+
+문자열의 길이는 Python의 `len()` 함수를 사용하여 쉽게 찾을 수 있습니다. 예를 들어, 다음과 같은 코드를 사용하면 됩니다.
 
 ```Python
-# 문자열의 길이 구하기
-name = "홍길동"
-length = len(name)
-print("이름의 길이는 " + str(length) + "입니다.")
-```
-출력:
-```
-이름의 길이는 3 입니다.
+string = "안녕하세요"
+length = len(string)
+print(length)
 ```
 
-## 깊게 파보기
-문자열의 길이를 구하는 방법이 궁금하신가요? 파이썬에서 문자열은 내부적으로 문자들의 리스트로 표현됩니다. 따라서 `len()` 함수는 문자열을 리스트로 변환하여 길이를 계산합니다. 이를 통해 보다 자세한 길이 계산 과정을 알 수 있습니다.
+출력 결과는 다음과 같을 것입니다.
 
-또한, `len()` 함수는 다양한 자료형에 대해서도 사용할 수 있습니다. 예를 들어, 리스트나 튜플의 길이를 구할 수도 있습니다. 이와 같은 다양한 사용법을 알고 있다면 보다 유용하게 문자열의 길이를 구할 수 있을 것입니다.
+```
+5
+```
 
-## 참고
-파이썬 공식 문서 - [len() 함수](https://docs.python.org/ko/3/library/functions.html#len)
+## 심층 탐구
+
+`len()` 함수는 문자열의 길이를 찾는 데 사용됩니다. 이 함수는 입력으로 문자열을 받고, 해당 문자열의 길이를 정수 형태로 반환합니다. 이 외에도 `len()` 함수는 리스트, 튜플, 딕셔너리 등의 다양한 데이터 구조에서 길이를 측정할 수 있습니다.
+
+또한 `len()` 함수는 문자열의 공백도 문자로 취급하여 공백의 개수도 길이로 계산합니다. 따라서 이 함수를 사용할 때는 이러한 점을 유의해야 합니다.
+
+## 같이 보기
+
+- [Python의 문자열 관련 함수들](https://www.programiz.com/python-programming/string)
+- [Python에서 문자열 다루는 방법](https://realpython.com/python-strings/)
+- [Python 문자열 포맷팅 공식 문서](https://docs.python.org/3/library/string.html#format-string-syntax)

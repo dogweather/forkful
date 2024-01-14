@@ -1,7 +1,9 @@
 ---
-title:                "C#: Odczytywanie argumentów linii poleceń"
+title:                "C#: Odczytywanie argumentów wiersza poleceń"
+simple_title:         "Odczytywanie argumentów wiersza poleceń"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/reading-command-line-arguments.md"
 ---
 
@@ -9,59 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jeśli jesteś programistą C#, z pewnością spotkałeś się z pojęciem argumentów linii poleceń. Te małe, ale potężne elementy pozwalają na przekazywanie parametrów do aplikacji podczas jej uruchamiania. Ale dlaczego warto poznać więcej na ten temat? Czytaj dalej, aby dowiedzieć się dlaczego warto poznać i umiejętnie wykorzystywać argumenty linii poleceń w swoich projektach.
+W dzisiejszych czasach programowanie jest nieodłączną częścią wielu dziedzin naszego życia. Wiele osób zainteresowanych jest nauką języków programowania, ale niektórzy z pewnością zastanawiają się, jakie są najważniejsze aspekty, którymi powinni się zająć. Jednym z nich jest odczytywanie argumentów wiersza poleceń, co jest kluczowym elementem nie tylko dla systemów operacyjnych, ale również dla wielu aplikacji. W tym blogu opowiemy o tym, dlaczego warto zgłębić ten temat i jak to zrobić.
 
 ## Jak to zrobić
 
-Aby zacząć pracę z argumentami linii poleceń w C#, możesz skorzystać z metody `Main` w klasie `Program`. Następnie, wykorzystując tablicę `args`, możesz odczytać i przetworzyć przekazane parametry. Przykładowy kod wygląda tak:
+Odczytywanie argumentów wiersza poleceń jest możliwe dzięki wykorzystaniu metody `GetCommandLineArgs()` w języku C#. Przeanalizujemy przykład poniżej, aby lepiej zrozumieć, jak to działa:
 
 ```C#
-static void Main(string[] args)
+using System;
+
+class Program
 {
-    foreach(string arg in args)
+    static void Main(string[] args)
     {
-        Console.WriteLine(arg);
+        Console.WriteLine("Podane argumenty: ");
+        for (int i = 0; i < args.Length; i++)
+        {
+            Console.WriteLine(args[i]);
+        }
     }
 }
 ```
-
-Po uruchomieniu aplikacji z parametrami `argument1 argument2` otrzymasz następujący wynik:
+Wywołując ten kod z określonymi argumentami wiersza poleceń, otrzymamy następujący wynik:
 
 ```
+$ C:\Users\User\Desktop\Program.exe argument1 argument2
+Podane argumenty:
 argument1
 argument2
 ```
 
-W ten sposób możesz pobierać i wykorzystywać argumenty w swoich programach. Warto również pamiętać, że możesz przekazywać nie tylko wartości tekstowe, ale również liczby czy flagi, które mogą określać działanie aplikacji.
+W powyższym przykładzie wykorzystujemy pętlę `for`, aby wyświetlić wszystkie podane argumenty. Zauważmy również, że pierwszym argumentem jest nazwa pliku wykonywalnego, dlatego w pętli zaczynamy od indeksu 1.
 
-## Deep Dive
+## Dogłębne wody
 
-Jeśli chcesz poznać więcej o argumentach linii poleceń w C#, istnieje kilka ważnych zagadnień, które warto zrozumieć. Jednym z nich jest ich kolejność w tablicy `args`, która może mieć znaczenie, jeśli chcesz przetwarzać różne rodzaje argumentów. Kolejną ważną kwestią jest konwersja typów, ponieważ wszystkie elementy w tablicy są typu `string`.
-
-Rozważmy przykład, w którym jako pierwszy argument przekazujemy liczbę, a jako drugi flagę. Wówczas nasz kod może wyglądać tak:
-
-```C#
-static void Main(string[] args)
-{
-    int number = Convert.ToInt32(args[0]);
-    bool flag = Convert.ToBoolean(args[1]);
-    
-    Console.WriteLine(number * 2);
-    Console.WriteLine(flag);
-}
-```
-
-Po uruchomieniu z parametrami `5 true` otrzymamy wynik:
-
-```
-10
-True
-```
-
-Dzięki temu, możesz dowolnie przetwarzać przekazane argumenty, zależnie od potrzeb twojego projektu.
+Warto wiedzieć, że oprócz podstawowej metody `GetCommandLineArgs()`, istnieją również inne sposoby na odczytywanie argumentów wiersza poleceń w C#. Jednym z nich jest wykorzystanie przestrzeni nazw `System.Environment`, która oferuje różne metody takie jak `GetCommandLine()` lub `GetCommandLineArgs()`. Można również korzystać z biblioteki `CommandLineParser`, która ułatwia zarządzanie i przetwarzanie argumentów wiersza poleceń. 
 
 ## Zobacz również
 
-- [Dokumentacja Microsoft dotycząca argumentów linii poleceń w C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/)
-- [Przykład wykorzystania argumentów linii poleceń w C#](https://dotnettutorials.net/lesson/csharp-command-line-arguments/)
-- [Poradnik poświęcony argumentom linii poleceń w C#](https://www.c-sharpcorner.com/article/working-with-command-line-arguments-in-c-sharp/)
+- [Dokumentacja Microsoft o odczytywaniu argumentów wiersza poleceń w C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.environment.getcommandlineargs?view=net-5.0)
+- [Biblioteka CommandLineParser](https://commandlineparser.codeplex.com/)
+- [Poradnik wideo NTuTech o odczytywaniu argumentów wiersza poleceń](https://www.youtube.com/watch?v=I-puz0iF6QA)

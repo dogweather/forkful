@@ -1,42 +1,39 @@
 ---
-title:                "Ruby: Verifica dell'esistenza di una directory"
+title:                "Ruby: Verifica se una directory esiste"
+simple_title:         "Verifica se una directory esiste"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché controllare se una cartella esiste in Ruby
+## Perché fare un controllo se una directory esiste in Ruby
 
-Se stai scrivendo un programma in Ruby che lavora con file e cartelle, potresti voler controllare se una certa cartella esiste prima di eseguire un'azione su di essa. Questa pratica può aiutare a evitare errori o crash del programma.
+Controllare se una directory esiste è un'operazione comune nei programmi Ruby, soprattutto quando si lavora con file e cartelle. Questo controllo è importante perché permette di evitare errori durante l'esecuzione del codice, come ad esempio cercare di accedere ad una directory inesistente.
 
-Per esempio, se stai cercando di creare una nuova cartella, potresti prima verificare se una cartella con lo stesso nome già esiste per evitare di sovrascrivere dati importanti. Inoltre, controllare l'esistenza di una cartella può aiutare a gestire eventuali errori di accesso ai file.
+## Come fare un controllo se una directory esiste in Ruby
 
-## Come controllare se una cartella esiste in Ruby
-
-Controllare se una cartella esiste in Ruby è semplice e può essere fatto con il metodo `Dir.exist?` seguito dal percorso della cartella che si desidera controllare. Il seguente codice esempio mostra come utilizzare questo metodo:
+Per verificare se una directory esiste in Ruby, possiamo utilizzare il metodo `Dir.exist?` seguito dal percorso della directory che vogliamo controllare. Vediamo un esempio di codice:
 
 ```Ruby
-if Dir.exist?("/Users/utente/Documenti/progetto/ruby")
-  puts "La cartella esiste!"
+if Dir.exist?("/path/to/directory")
+    puts "La directory esiste!"
 else
-  puts "La cartella non esiste."
+    puts "La directory non esiste."
 end
 ```
 
-Se la cartella `/Users/utente/Documenti/progetto/ruby` esiste, il programma stamperà "La cartella esiste!". In caso contrario, verrà stampato "La cartella non esiste.".
+In questo esempio, stiamo utilizzando un semplice condizionale per verificare se la directory specificata esiste o meno. Se il risultato del metodo `Dir.exist?` è `true`, stamperemo il messaggio "La directory esiste!", altrimenti stamperemo "La directory non esiste.".
 
-## Approfondimento sul controllo delle cartelle in Ruby
+## Approfondimento sul controllo di esistenza di una directory
 
-Esistono altre opzioni per controllare l'esistenza di una cartella in Ruby, come ad esempio il metodo `File.directory?` che controlla se il percorso specificato è una cartella. Inoltre, è possibile utilizzare il metodo `Pathname#directory?` se stai lavorando con oggetti `Pathname` per i percorsi dei file.
+Il metodo `Dir.exist?` restituisce un valore booleano, quindi può essere utilizzato anche all'interno di espressioni booleane. Possiamo inoltre utilizzare il metodo `File.directory?` per effettuare lo stesso controllo sulla presenza di una directory, ma in questo caso dobbiamo passare la stringa del percorso completo al metodo.
 
-Un'altra cosa da tenere in considerazione durante la verifica dell'esistenza di una cartella è la differenza tra un percorso assoluto e uno relativo. Un percorso assoluto è il percorso completo della cartella a partire dalla radice del sistema operativo, mentre un percorso relativo è relativo alla posizione del proprio programma. Assicurarsi di utilizzare il percorso corretto quando si controlla l'esistenza di una cartella.
+E' importante notare che il metodo `Dir.exist?` restituirà `false` anche se la directory specificata è vuota o non contiene nessun file, quindi è importante verificare anche la presenza di file al suo interno se necessario.
 
 ## Vedi anche
-
-Ecco alcuni link utili per approfondire ulteriormente il controllo delle cartelle in Ruby:
-
-- [Documentazione ufficiale di `Dir.exist?`](https://ruby-doc.org/core-3.0.0/Dir.html#method-c-exist-3F)
-- [Tutorial su come gestire file e cartelle in Ruby](https://www.rubyguides.com/2015/05/working-with-files-ruby/)
-- [Come ottenere il percorso assoluto di una cartella in Ruby](https://stackoverflow.com/questions/1643919/how-to-get-an-absolute-directory-path-in-ruby)
+- [Ruby Docs - Dir Class](https://ruby-doc.org/core/Dir.html)
+- [Ruby Docs - File Class](https://ruby-doc.org/core/File.html)
+- [Come leggere, scrivere e creare file in Ruby](https://www.linode.com/docs/development/ruby/how-to-read-write-and-create-files-in-ruby/)

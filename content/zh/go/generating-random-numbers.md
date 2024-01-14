@@ -1,46 +1,66 @@
 ---
 title:                "Go: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "Go"
-category:             "Numbers"
+category:             "Go"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要使用随机数
+# 为什么生成随机数
 
-在编程中，随机数是一种非常常用的概念。它们可以为我们提供随机性，使我们的程序更加有趣和灵活。生成随机数也是学习编程语言的一个重要步骤。
+生成随机数在编程中是一个常见的需求，它可以用于各种应用，比如游戏、密码生成和数据随机化。在Go语言中，有多种方法可以生成随机数，让我们一起来看看吧！
 
 ## 如何生成随机数
 
-生成随机数的方法因编程语言而异，但在Go语言中，我们可以使用 `rand` 包的 `Intn()` 函数来生成一个指定范围内的随机整数。
+在Go语言中，我们可以使用math/rand包来生成随机数。首先，我们需要导入这个包：
 
-```
-import (
-    "fmt"
-    "math/rand"
-)
-
-func main() {
-    // 生成0~9之间的随机整数
-    fmt.Println(rand.Intn(10))
-}
+```Go
+import "math/rand"
 ```
 
-输出结果可能为 `6`、`2`、`9` 等不同的数字，这取决于程序每次运行的时机。
+然后，我们可以使用`rand.Intn()`函数来生成一个范围在0到n-1之间的随机整数：
 
-除了 `Intn()` 函数，Go语言中还有其他用于生成随机数的相关函数，比如 `Perm()` 函数可以生成随机的排列序列，`Float32()` 和 `Float64()` 函数可以生成随机的浮点数。
+```Go
+fmt.Println(rand.Intn(10)) // 输出一个0到9之间的随机整数
+```
 
-## 深入了解随机数的实现原理
+我们也可以生成一个范围在n到m之间的随机整数：
 
-在计算机中，真正的随机数是无法实现的，并且伪随机数（pseudo-random）的生成方法也有其局限性。因此，生成的随机数并不是完全随机，而只是具有一定的规律性。在Go语言中，随机数的种子（seed）通常是程序运行的时间，每次程序运行的时候，种子都会不同，从而保证了每次生成的随机数也会不同。
+```Go
+fmt.Println(rand.Intn(m-n+1) + n) // 输出一个n到m之间的随机整数
+```
 
-如果需要更高质量的随机数，可以使用 `crypto/rand` 包来生成加密级别的随机数。
+如果需要更加精确的随机数，我们可以使用`rand.Float64()`函数来生成一个范围在0.0到1.0之间的随机浮点数：
 
-# 查看更多资料
+```Go
+fmt.Println(rand.Float64()) // 输出一个0.0到1.0之间的随机浮点数
+```
 
-1. [Go语言官方文档 - rand包](https://golang.org/pkg/math/rand/)
-2. [菜鸟教程 - Go语言随机数](https://www.runoob.com/go/go-random-number.html)
-3. [Stack Overflow - How to generate random numbers in Go](https://stackoverflow.com/questions/12321133/generating-random-numbers-in-go) 
-4. [Go语言圣经 - 随机数](https://books.studygolang.com/gopl-zh/ch4/ch4-06.html)
-5. [知乎 - 计算机中的伪随机数是如何产生的？](https://www.zhihu.com/question/22231431)
+我们也可以通过设置种子数来生成伪随机数，以保证每次运行程序时都能产生相同的随机数序列：
+
+```Go
+rand.Seed(seed) // 设置种子数
+```
+
+## 深入了解随机数生成
+
+在计算机科学中，真正的随机数是不存在的，因为计算机是按照特定的算法来生成随机数的。因此，我们生成的随机数实际上是伪随机数，只是在短时间内看起来是随机的。
+
+在Go语言中，使用的是伪随机数生成器（Pseudorandom Number Generator, PRNG），它根据设置的种子数来生成随机数序列。如果不设置种子数，默认会使用系统当前时间作为种子数。
+
+另外，我们也可以使用crypto/rand包来生成安全的随机数，它使用更加复杂的随机数生成算法，生成的随机数更为随机和安全。
+
+## 参考链接
+
+- [Go语言官方文档-随机数生成](https://golang.org/pkg/math/rand/)
+- [Go语言官方文档-crypto/rand包](https://golang.org/pkg/crypto/rand/)
+- [有关随机数的更深层次的解释](https://www.youtube.com/watch?v=SxP30euw3-0)
+
+# 参见
+
+- [Go语言教程-Go语言基础](https://www.runoob.com/go/go-tutorial.html)
+- [如何在Go语言中生成随机密码](https://www.digitalocean.com/community/tutorials/how-to-generate-random-passwords-in-go)
+- [生成随机数的原理解析](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Läsning av kommandoradsargument"
+title:                "Elixir: Läsa kommandoradsargument"
+simple_title:         "Läsa kommandoradsargument"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/reading-command-line-arguments.md"
 ---
 
@@ -9,31 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kunna läsa in kommandoradsargument är en viktig färdighet för alla Elixir-programmerare. Det gör det möjligt för dig att skapa mer dynamiska och anpassningsbara program som kan hantera olika användarinput.
+Att läsa kommandoradsargument är en viktig del av programmering i Elixir eftersom det ger dig möjlighet att interagera med ditt program på ett dynamiskt sätt utan att behöva ändra din kod. Det kan också hjälpa till att skriva mer modulära och anpassningsbara program.
 
-## Så här gör du
+## Hur man gör det
 
-Att läsa kommandoradsargument i Elixir är enkelt. För att börja måste du importera modulen `System` genom att skriva `import System` i din fil. Sedan kan du använda funktionen `argv` för att hämta en lista av alla kommandoradsargument som skickas till ditt program. Här är ett enkelt exempel på hur man kan skriva ut alla argument:
+För att läsa kommandoradsargument i Elixir kan du använda funktionen `OptionParser.parse/1` tillsammans med `System.argv/0` som ger dig en lista med alla argument som skickats med i terminalen.
 
-```Elixir
-import System
-IO.puts(argv)
+Här är en kodexempel som visar hur man kan använda denna metod för att läsa och skriva ut kommandoradsargument:
+
+```elixir
+args = System.argv() # lagrar listan med kommandoradsargument
+opts = OptionParser.parse(args) # tar fram argumentet och lagrar dem
+
+IO.puts("Hej " <> opts["name"]) # skriver ut "Hej" tillsammans med namnet som skickats som argument
 ```
 
-Om vi till exempel kör detta program från kommandoraden `elixir args.exs hello world`, kommer vi att få följande utmatning:
+När du kör detta program kommer du att bli ombedd att skicka med ett namn som argument. Till exempel:
 
-```Elixir
-["hello", "world"]
 ```
+elixir minapplikation.exs --name Anna
+```
+
+Detta kommer att resultera i att programmet skriver ut "Hej Anna" som svar.
 
 ## Djupdykning
 
-När du väl har hämtat kommandoradsargumenten kan du använda dem på många olika sätt i ditt program. Du kan till exempel använda dem som inmatning för olika funktioner eller skapa dynamiska variabler baserade på argumenten. Det är viktigt att notera att `argv` returnerar en lista av strängar, så du kan behöva konvertera dem till andra datatyper beroende på dina behov.
+En viktig aspekt att komma ihåg när man läser kommandoradsargument är att de är strängar och behöver eventuellt konverteras till andra datatyper beroende på vad du vill göra med dem i ditt program. Det är också bra att ha en fallback om ett argument inte skickas med, för att undvika fel i ditt program.
 
-En annan viktig aspekt att tänka på är hur du hanterar felaktiga eller otillräckliga kommandoradsargument. Det är en god praxis att inkludera felhantering i ditt program så att det inte kraschar om användaren ger felaktig input.
+En annan användbar funktion för att hantera kommandoradsargument är `OptionParser.help/1` som skriver ut en hjälp-text som visar hur ditt program kan användas och vilka argument som förväntas.
 
 ## Se även
 
-- [Elixir - System](https://hexdocs.pm/elixir/System.html)
-- [Command Line Arguments in Elixir](https://medium.com/@jwarrendawson/command-line-arguments-in-elixir-b05cdaafd299)
-- [Elixir School - Command Line Applications](https://elixirschool.com/sv/lessons/basics/command-line-applications/)
+- [Elixir CLI dokumenation](https://hexdocs.pm/elixir/CLI.html)
+- [Programmering i Elixir: En introduktion](https://medium.com/@christopherlai/programming-in-elixir-an-introduction-4e1c3c3e8639)
+- [Elixir Forum](https://elixirforum.com/)

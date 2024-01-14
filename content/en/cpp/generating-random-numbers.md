@@ -1,7 +1,9 @@
 ---
 title:                "C++ recipe: Generating random numbers"
+simple_title:         "Generating random numbers"
 programming_language: "C++"
-category:             "Numbers"
+category:             "C++"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/cpp/generating-random-numbers.md"
 ---
 
@@ -9,57 +11,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Generating random numbers is an essential skill for any programmer. It allows for the creation of realistic and unpredictable data, which is crucial for testing and simulations. It is also commonly used in games, cryptography, and statistical analysis. In this blog post, we will go over the basics of random number generation in C++.
+Have you ever played a game or used an app where the outcome seemed completely random? Chances are, the developers used computer-generated random numbers to add an element of unpredictability to their program. In this blog post, we'll explore the world of generating random numbers with C++.
 
 ## How To
 
-The first step in generating random numbers in C++ is to include the `<random>` library. This library provides several classes and functions for generating random numbers. The most basic way is to use the `std::rand()` function, which returns a pseudo-random number between 0 and `RAND_MAX`.
+Creating random numbers in C++ is relatively simple. First, we need to include the `<cstdlib>` library, which contains the necessary functions for generating random numbers. Then, we can use the `rand()` function to generate a random number between 0 and `RAND_MAX`, which is a constant defined in the library. However, this will result in the same sequence of numbers each time the program is run.
 
-```C++
+To create a more truly random sequence, we can use the `srand()` function to seed the random number generator with a changing value, such as the system clock time. This will produce a different sequence of numbers each time the program is run.
+
+Let's see an example of generating and printing 10 random numbers between 1 and 100:
+
+```
 #include <iostream>
 #include <cstdlib>
 
 int main() {
+  // seed the random number generator
+  srand(time(0));
 
-    // Generate and print a random number
-    int randomNum = std::rand();
-    std::cout << "Random number: " << randomNum << std::endl;
+  // generate and print 10 random numbers
+  for (int i = 0; i < 10; i++) {
+    int randomNumber = rand() % 100 + 1; // generate random number between 0 and 100
+    std::cout << randomNumber << std::endl;
+  }
 
-    return 0;
+  return 0;
 }
 ```
 
-The above code will produce a different random number each time it is executed. However, the `rand()` function is not recommended for serious applications as it has a limited range and potential for biases. Instead, the `<random>` library provides better options.
+Output:
 
-The `std::random_device` class uses a hardware source of randomness, such as a physical random number generator, for more unpredictable results. It is recommended to use this as a seed for other random number generators.
-
-```C++
-#include <iostream>
-#include <random>
-
-int main() {
-
-    // Use random_device as a seed for mt19937
-    std::random_device rd;
-    std::mt19937 gen(rd());
-
-    // Generate and print a random number
-    int randomNum = gen();
-    std::cout << "Random number: " << randomNum << std::endl;
-
-    return 0;
-}
 ```
-
-This code uses a high-quality random number generator, `std::mt19937`, which produces a wider range of numbers compared to the `rand()` function. Other distributions, like `std::uniform_int_distribution` and `std::uniform_real_distribution`, can be used to specify a range for the generated numbers.
+72
+13
+56
+92
+31
+24
+17
+41
+88
+9
+```
 
 ## Deep Dive
 
-The `<random>` library uses pseudo-random number generators, which produce a sequence of numbers based on a starting value called the seed. The same seed will always produce the same sequence of numbers, hence the term pseudo-random. However, these numbers appear indistinguishable from truly random numbers for most applications.
+Generating truly random numbers is a complex task that relies on mathematical algorithms called random number generators (RNGs). These algorithms use a starting value, called a seed, to generate a sequence of numbers that appear to be random.
 
-It is crucial to note that the random number generators in the `<random>` library are deterministic. This means that given the same seed, the same sequence of numbers will be generated. For truly random numbers, an external source of entropy, like user input or system time, can be used as a seed.
+C++ has two types of RNGs: the linear congruential generator (LCG) and the Mersenne Twister. The `rand()` function we used earlier is based on LCG, which is a simple and fast algorithm but has some limitations in terms of randomness. The Mersenne Twister, on the other hand, is a more sophisticated algorithm that produces more evenly distributed and unpredictable numbers.
+
+It's essential to understand that computer-generated random numbers are actually pseudo-random, meaning they are not truly random but appear to be. This is because computers operate on a set of instructions and cannot truly generate random numbers without an external input.
 
 ## See Also
 
-- [C++ Random Numbers](https://www.learncpp.com/cpp-tutorial/59-random-number-generation/)
-- [C++ Reference: `<random>` library](https://en.cppreference.com/w/cpp/numeric/random)
+- [Random number generation in C++](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
+- [C++ random number generators](http://www.cplusplus.com/reference/random/)
+- [The science of random](https://www.random.org/randomness/)

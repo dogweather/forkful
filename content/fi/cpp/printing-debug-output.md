@@ -1,103 +1,63 @@
 ---
-title:                "C++: Virheenkorjaustulostuksen tulostaminen"
+title:                "C++: Tulosta vianmääritystieto"
+simple_title:         "Tulosta vianmääritystieto"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi: Miksi tulostaa debuggaustulosteita?
+# Miksi
 
-Debuggaus on tärkeä osa ohjelmoinnin prosessia, ja tulosteiden tarkasteleminen on hyvä tapa löytää ja korjata ohjelmissa olevia virheitä. Tulosteiden avulla voit seurata ohjelman suoritusta ja ymmärtää paremmin sen toimintaa. Tämä on erityisen tärkeää silloin, kun ohjelma ei toimi odotetusti tai kun haluat varmistaa, että tietty koodinpätkä toimii oikein.
+Ohjelmointi voi olla monimutkaista ja virheiden löytäminen voi olla haastavaa. Tulosteiden tulostaminen koodin suorituksen aikana voi auttaa havaitsemaan mahdollisia ongelmia ja helpottaa virheiden jäljittämistä.
 
-Kuinka: Esimerkkejä debuggaustulosteiden tulostamisesta
+# Miten
 
-Debuggaustulosteen tulostaminen C++: ssa on helppoa. Voit käyttää "cout" -funktiota ja sen sisään antaa haluamasi muuttujan tai viestin. Voit myös lisätä tulosteisiin muuttujien arvoja helpottaaksesi virheiden löytämistä.
-
-```C++
-#include <iostream>
-using namespace std;
-
-int main() {
-    int x = 5;
-    cout << "x- muuttujan arvo on " << x << endl;
-    cout << "Ihan mitä vain haluat tulostaa debuggaustarkoitukseen" << endl;
-    return 0;
-}
-```
-
-Tuloste: 
-```
-x- muuttujan arvo on 5
-Ihan mitä vain haluat tulostaa debuggaustarkoitukseen
-```
-
-Voit myös käyttää "cerr" -funktiota, joka tulostaa viestin virhe virtaan, jolloin voit nähdä sen esimerkiksi käyttöjärjestelmän konsolissa.
+Aloita lisäämällä tulosteiden tulostaminen haluamiisi kohtiin koodissa. Voit käyttää `cout`-komennolla tai `printf()`-funktiolla tulostamaan haluamasi tiedot konsoliin. Esimerkiksi:
 
 ```C++
-#include <iostream>
-using namespace std;
-
-int main() {
-    int x = 5;
-    cerr << "Debuggaustuloste virhevirtaan" << endl;
-    cerr << "x- muuttujan arvo on " << x << endl;
-    return 0;
-}
+cout << "Tämä on debug tuloste." << endl;
 ```
 
-Tuloste: 
-```
-Debuggaustuloste virhevirtaan
-x- muuttujan arvo on 5
-```
-
-Syntaksin värikoodeilla voit myös helpottaa tulosteiden lukemista ja erottaa ne selkeämmin muusta koodista.
-
-Deep Dive: Syvällisempiä tietoja debuggaustulosteiden tulostamisesta
-
-Yllä mainittujen esimerkkien lisäksi on olemassa monia muita tapoja tulostaa debuggaustulosteita C++: ssa. Voit esimerkiksi käyttää "assert" -funktiota, joka tulostaa automaattisesti viestin, jos määritetty ehto ei täyty.
+Näiden tulosteiden näkyminen konsolissa auttaa seuraamaan koodin suoritusta ja havaitsemaan mahdolliset virheet. Voit myös tulostaa muuttujien arvoja nähdäksesi niiden muutokset koodin suorituksen aikana.
 
 ```C++
-#include <iostream>
-#include <cassert>
-using namespace std;
-
-int main() {
-    int x = 5;
-    assert(x == 10); // Tämä tulostaa virheviestin, koska x ei olekaan 10
-    cout << "Tämä viesti ei tulostu" << endl;
-    return 0;
-}
+int num = 5;
+cout << "Muuttujan 'num' arvo on: " << num << endl;
 ```
 
-Tuloste: 
-```
-Assertion failed
+Mikäli käytät `printf()`-funktiota, voit käyttää muotoilumerkkejä määrittämään tulostettavan muuttujan tyypin. Esimerkiksi:
+
+```C++
+int num = 5;
+printf("Muuttujan 'num' arvo on: %d\n", num);
 ```
 
-Voit myös hyödyntää C++: n "debug" -tilaa, joka on tarkoitettu nimenomaan debuggaustulosteiden tulostamiseen. Tämä tila on käytössä vain debuggauksen aikana, joten varsinaiseen tuotantoon se ei vaikuta.
+# Syvempi sukellus
 
-```
-#include <iostream>
-using namespace std;
+Debug tulosteiden tulostaminen voi olla myös hyödyllistä selvittämään ohjelman toimintaa ja suoritusaikaa. Voit esimerkiksi käyttää `chrono`-kirjastoa mittaamaan ohjelman suoritusaikaa ja nähdäksesi, missä kohdassa ohjelma mahdollisesti hidastuu.
 
-int main() {
-    int x = 5;
-    #ifdef DEBUG // Tämä ehto pätee, jos olet debuggauksessa
-        cout << "x- muuttujan arvo on " << x << endl;
-    #endif
-    cout << "Tämä viesti tulostuu aina" << endl;
-    return 0;
-}
-```
+```C++
+#include <chrono>
+using namespace std::chrono;
 
-Tuloste debuggauksessa:
-```
-x- muuttujan arvo on 5
-Tämä viesti tulostuu aina
+// alustetaan kello
+high_resolution_clock::time_point start = high_resolution_clock::now();
+
+// koodia...
+
+// lopetetaan kello ja tulostetaan kulunut aika
+high_resolution_clock::time_point end = high_resolution_clock::now();
+duration<double> time = duration_cast<duration<double>>(end - start);
+cout << "Ohjelman suoritusaika: " << time.count() << " sekuntia." << endl;
 ```
 
-Katso myös:
-- [C++ Debuggausopas](https://www.tutorialspoint.com
+Voit myös käyttää erilaisia debuggausohjelmia, kuten Visual Studio:n `Debug`-tilaa, joka mahdollistaa tulosteiden katselun ja ohjelman suorituksen pysäyttämisen halutuissa kohdissa.
+
+# Katso myös
+
+- [C++ Debugging Tutorial (Englanniksi)](https://www.guru99.com/c-plus-plus-debugging-tutorial.html)
+- [Debugging Techniques in Visual Studio (Englanniksi)](https://docs.microsoft.com/en-us/visualstudio/debugger/debugging-techniques-in-visual-studio)
+- [C++ Debugging Tips (Englanniksi)](https://www.educba.com/c-plus-plus-debugging-tips/)

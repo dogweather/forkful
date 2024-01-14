@@ -1,48 +1,44 @@
 ---
 title:                "Gleam: Verificando se um diretório existe"
+simple_title:         "Verificando se um diretório existe"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que verificar se um diretório existe?
+## Por que
 
-Verificar se um diretório existe é um passo importante ao lidar com arquivos e pastas em um programa Gleam. É uma maneira de garantir que o código funcione corretamente e evite erros ao tentar acessar um diretório inexistente.
+Se você está trabalhando com o Gleam, é provável que esteja criando uma aplicação que precisa lidar com arquivos e diretórios. Saber como verificar se um diretório existe é uma habilidade importante para garantir que sua aplicação funcione corretamente. Felizmente, o Gleam possui uma função simples que permite fazer essa verificação de forma fácil e eficiente. Continue lendo para descobrir como fazer isso!
 
-## Como fazer
+## Como Fazer
 
-A verificação de diretório pode ser facilmente feita usando a função "file::exists" do módulo "Builtins". Esta função retorna um valor booleano indicando se o diretório existe ou não. Veja um exemplo de uso abaixo:
+Para verificar se um diretório existe no Gleam, você precisará usar a função `Std.Path.dir_exists/1`. Essa função aceita um caminho de string como argumento e retorna um booleano `true` se o diretório existir ou `false` se não existir. Vamos dar uma olhada em um exemplo:
 
-```
-Gleam
-import Builtins
+```Gleam
+import Std.Path
 
-fn check_directory(directory: String) {
-  let exists = Builtins.file::exists(directory)
+dir_name = "exemplo/diretorio"
+result = Std.Path.dir_exists(dir_name)
 
-  case exists {
-    true -> io.println("O diretório " ++ directory ++ " existe.")
-    false -> io.println("O diretório " ++ directory ++ " não existe.")
-  }
-}
-
-// Exemplo de chamada da função
-check_directory("caminho/para/o/diretorio")
+io.format("O diretório ~s existe? ~b", [dir_name, result])
 ```
 
-Saída:
+No exemplo acima, estamos importando o módulo `Std.Path` para ter acesso à função `dir_exists`. Em seguida, declaramos o caminho do diretório que queremos verificar e passamos ele como argumento para a função `dir_exists`. Finalmente, usamos a função `io.format` para imprimir uma mensagem informando se o diretório existe ou não.
+
+A saída deste programa seria:
 
 ```
-O diretório caminho/para/o/diretorio existe.
+O diretório exemplo/diretorio existe? true
 ```
 
-## Mergulho Profundo
+## Aprofundando
 
-Além de verificar se o diretório existe, também é possível verificar permissões de acesso e outras propriedades do diretório usando funções como "file::has_permissions" e "file::get_attributes". Estas funções são úteis para um controle mais específico do diretório e podem ajudar a evitar possíveis erros no código.
+Por trás das cenas, a função `Std.Path.dir_exists/1` está usando a função do sistema operacional `Sys.is_dir/1` para verificar a existência do diretório. Isso significa que a função `dir_exists` retornará `true` mesmo se o caminho passado apontar para um arquivo com o mesmo nome. Além disso, lembre-se de que essa função só verificará se o diretório existe no caminho absoluto. Se você quiser verificar se um diretório existe em um caminho relativo, primeiro terá que convertê-lo para um caminho absoluto usando a função `Std.Path.relative_to_absolute/1`.
 
-## Veja também
+## Veja Também
 
-- [Documentação do módulo Builtins](https://gleam.run/modules/builtin.html)
-- [Exemplos de uso da função file::exists](https://github.com/gleam-lang/gleam/blob/master/examples/file/file.gleam)
+- [Documentação oficial do Gleam sobre a função `Std.Path.dir_exists/1`](https://gleam.run/core/`Std.Path.html#dir_exists:1`)
+- [Guia de consulta rápida do Gleam com a função `Std.Path.dir_exists/1`](https://gleam.run/book/stdlib/files.html#checking-for-the-existence-of-a-directory)

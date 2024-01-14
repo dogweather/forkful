@@ -1,37 +1,39 @@
 ---
-title:                "Java: קריאת ארגומנטים בפקודת השורה"
+title:                "Java: קריאת ארגומנטים משורת הפקודה"
+simple_title:         "קריאת ארגומנטים משורת הפקודה"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+##מדוע
+אדם יבחר לקרוא ארגומנטים של שורת פקודה רק במקרים מסוימים בסיסיים?
 
-ניתן להשתמש במשתני שורת פקודה כדי לספק קלט נתונים לתוכניות ג'אווה ולשנות את הפעולה שלהן בהתאם. קריאת פרמטרים משורת הפקודה יכולה לשמש ליישום גישה אינטראקטיבית לתוכניות ג'אווה, בדיקת תקינות של הקלט ועוד. כתיבת קוד שמאפשר ניתוח פרמטרים של שורת פקודה יכול לקלט קלט נתונים מגוונים ולהפוך את קוד התוכנית לגמיש יותר.
-
-## איך לעשות זאת
-
-כדי לקרוא פרמטרים משורת הפקודה בג'אווה, ניתן להשתמש במחלקת "ArgsParser" המוגדרת כך:
-
-```Java
-import java.util.Arrays;
-
-public class ArgsParser {
-    public static void main(String[] args) {
-        System.out.println("הפרמטרים שנזנו הם: " + Arrays.toString(args));
-    }
+##איך לעשות זאת
+ ` ``Java
+public static void main(String[] args) {
+  // Declare main method
+  for(int i = 0; i < args.length; i++) {
+    // Use a for loop to iterate through the arguments
+    System.out.println("Argument " + i + ": " + args[i]);
+    // Print out each argument along with its index
+  }
 }
 ```
 
-ניתן להריץ את הקוד הזה עם הפרמטרים הרצויים משורת הפקודה ולקבל כתוצאה את הפרמטרים המוזנים בצורה נוחה לאיחסון ושימוש.
+הפלט המשוערך יחזיר:
 
-## לחקור עוד
+`Argument 0: argument1`<br/>
+`Argument 1: argument2`<br/>
+`...`
 
-כדי לע深入了解如何读取命令行参数，可以参考Java官方文档[ArgsParser documentation](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html). ניתן גם לקרוא על זה במדריך ה- [CMD parametes in Java](https://www.baeldung.com/java-command-line-arguments) של בלגון. לשים לב שגירסת הג'אווה הניתנת לתמיכה משלבת כמה שינויים מבין המדריכים המומלצים, אך המושכים בכלי ArgsParser הם עובדים עם גירסאות כדוגמת Java 8 והמעלה.
+##טיול עמוק
+קריאת ארגומנטים של שורת פקודה היא כלי מאוד נוח כאשר אנו רוצים לתקשר ישירות עם המשתמש ולהעביר לו פרמטרים לתכנית שלנו. בדרך כלל, כאשר אנו בונים אפליקציה גרפית איתנה ממשק משתמש, אנו משתמשים בקריאת פרמטרים של שורת פקודה כדי להפעיל פעולות ולשנות תכנית באופן דינאמי.
 
-## ראה גם
-
-- [Java ספר התכנות](https://he.wikipedia.org/wiki/Java)
-- [Java דוקומנטציה רשמית](https://docs.oracle.com/javase/8/docs/api/)
+##ראו גם
+- [Java שמות של בינתחומיים עבור פקודת מערכת בחלונות](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [השרות העליון לכתיבת אפליקציות טרמינלית גרפיות בשפת Java](https://eclipse.org/efxclipse/index.html)
+- [מדריך לעבודה עם פקודות מערכת עם Java](https://www.tutorialspoint.com/java/util/java_util_scanner.htm)

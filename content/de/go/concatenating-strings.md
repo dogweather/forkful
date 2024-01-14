@@ -1,7 +1,9 @@
 ---
-title:                "Go: Zusammenführen von Zeichenketten"
+title:                "Go: Zusammenfügen von Zeichenketten"
+simple_title:         "Zusammenfügen von Zeichenketten"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/go/concatenating-strings.md"
 ---
 
@@ -9,67 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Die Konkatenation von Strings ist wichtig, um verschiedene Textfragmente zu einem Ganzen zu verbinden. Dies ist in vielen Programmiersprachen, einschließlich Go, eine häufig verwendete Funktion.
+Das Zusammenfügen von Strings ist eine häufige Aufgabe beim Programmieren. Es ermöglicht es, mehrere Texte oder Zeichenketten zu einer neuen zusammenzufügen. In diesem Blogbeitrag werden wir uns anschauen, wie man dieses Konzept in der Programmiersprache Go umsetzen kann.
 
-## Anleitung
+## Wie geht man vor?
 
-Um Strings in Go zu konkatentieren, gibt es mehrere Möglichkeiten. Im Folgenden sind einige Beispiele aufgelistet:
-
-#### Mit dem `+` Operator
+Um Strings in Go zusammenzufügen, gibt es verschiedene Möglichkeiten. Eine davon ist die Verwendung des "+" Operators. Hier ist ein Beispielcode, der zwei Strings zusammenfügt und das Ergebnis ausgibt:
 
 ```Go
-name := "John"
-age := 30
-result := name + " is " + age + " years old."
+package main
 
-fmt.Println(result)
+import "fmt"
+
+func main() {
+    text1 := "Hallo"
+    text2 := "Welt"
+    result := text1 + text2
+    fmt.Println(result)
+}
 ```
 
-Das Output wird sein:
+Die Ausgabe dieses Codes wäre "HalloWelt".
 
-```
-John is 30 years old.
-```
-
-#### Mit `fmt.Sprintf()`
+Eine andere Möglichkeit ist die Verwendung der "fmt.Sprintf" Funktion. Hier ein Beispiel, wie man drei Strings zusammenfügt:
 
 ```Go
-a := "Welcome"
-b := "to"
-c := "Go"
+package main
 
-result := fmt.Sprintf("%s %s %s!", a, b, c)
+import "fmt"
 
-fmt.Println(result)
+func main() {
+    text1 := "Hallo"
+    text2 := " "
+    text3 := "Welt"
+    result := fmt.Sprintf("%s%s%s", text1, text2, text3)
+    fmt.Println(result)
+}
 ```
 
-Das Output wird sein:
+Die Ausgabe dieses Codes wäre ebenfalls "Hallo Welt".
 
-```
-Welcome to Go!
-```
+## Tiefere Einblicke
 
-#### Mit `strings.Join()`
+Beim Zusammensetzen von Strings in Go ist es wichtig, die Performance im Auge zu behalten. Da Go eine statisch typisierte Sprache ist, muss bei der Verwendung des "+" Operators darauf geachtet werden, dass die Datentypen der zu verknüpfenden Variablen übereinstimmen. Andernfalls kann es zu Fehlern oder Ineffizienzen kommen.
 
-```Go
-foods := []string{"Pizza", "Burger", "Taco"}
-result := strings.Join(foods, ", ")
-
-fmt.Println("I love", result)
-```
-
-Das Output wird sein:
-
-```
-I love Pizza, Burger, Taco.
-```
-
-## Tiefergehende Informationen
-
-Beim Konkatenieren von Strings ist es wichtig zu beachten, dass die Datentypen der einzelnen Variablen zusammenpassen müssen. Andernfalls kann es zu Fehlern führen. Außerdem gibt es in Go die Möglichkeit, Strings mit dem `+=` Operator zu verändern, anstatt eine neue Variable zu erstellen.
+Ein weiterer Punkt ist die Verwendung von "strings.Join" anstelle von "fmt.Sprintf". Diese Funktion ist effizienter, da sie einen Puffer für die verknüpften Strings verwendet, was die Anzahl der Allokationen reduziert und somit die Performance verbessert.
 
 ## Siehe auch
 
-- [https://tour.golang.org/basics/1](https://tour.golang.org/basics/1)
-- [https://gobyexample.com/string-concatenation](https://gobyexample.com/string-concatenation)
-- [https://golangdocs.com/concatenate-strings-in-golang](https://golangdocs.com/concatenate-strings-in-golang)
+- [Das offizielle Go-Tutorial zu Strings](https://tour.golang.org/basics/1)
+- [Ein ausführlicherer Artikel über Strings in Go](https://blog.golang.org/strings)
+- [Die Dokumentation zu "fmt.Sprintf"](https://golang.org/pkg/fmt/#Sprintf)

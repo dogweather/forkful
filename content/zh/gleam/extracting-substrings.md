@@ -1,35 +1,44 @@
 ---
 title:                "Gleam: 提取子字符串"
+simple_title:         "提取子字符串"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要提取子字符串？
+为什么：提取子字符串可以帮助简化字符串操作，提高代码的可读性和可维护性。
 
-在编程中，有时我们需要从一个字符串中提取出一部分内容，这就是提取子字符串的作用。可能是为了进行某种操作，或者是为了提取出特定的信息。无论是什么原因，提取子字符串都是一项常用且有用的技能。
-
-## 如何提取子字符串
-
-提取子字符串的方法很简单，我们只需要使用Gleam中的`substring`函数即可。这个函数接受两个参数：要提取的原始字符串以及想要提取的部分的起始和结束位置。下面是一个例子：
+如何：
+提取子字符串是通过使用字符串的索引来截取需要的部分，在Gleam中可以通过使用`String.slice`函数来实现。例如，如果我们有一个字符串`"Hello World!"`，想要提取前五个字符，即`"Hello"`，可以通过以下代码实现：
 
 ```Gleam
-let original_string = "Hello, world!"
-let substring = substring(original_string, 7, 11)
-
-io.print(substring)
+let greeting = "Hello World!"
+let first_five = String.slice(greeting, 0, 5)
 ```
 
-这段代码的输出结果应该是`world`。我们可以看到，起始和结束位置分别是第七个和第十一个字符，而最终提取出的子字符串正是我们想要的部分。
+输出结果为`"Hello"`。我们也可以通过指定负数索引来从后往前截取，例如`String.slice(greeting, -6, -1)`将会得到`"World"`。
 
-## 深入了解提取子字符串
+深入了解：
+提取子字符串并不仅限于固定的索引值，我们可以通过使用变量来动态地提取。例如，如果我们有一个需要处理的字符串列表`["user1", "user2", "user3"]`，我们可以使用循环来一次提取每个字符串中的后缀数字，从而得到一个新的列表`[1, 2, 3]`。代码示例如下：
 
-除了起始和结束位置，我们还可以使用`substring`函数的第三个参数指定一个步长。这样可以提取出间隔一定距离的字符。如果我们将第三个参数设置为2，则会提取出奇数位置的字符，而如果设置为3，则会提取出能被3整除的位置的字符。这些功能都使得提取子字符串更加灵活和实用。
+```Gleam
+let users = ["user1", "user2", "user3"]
+let suffix = "user"
+let ids = for user in users {
+    let id_string = String.slice(user, String.length(suffix), String.length(user))
+    String.to_int(id_string)
+}
+```
 
-## 参考链接
+输出结果为`[1, 2, 3]`。通过这种方法，我们可以更灵活地提取子字符串，处理复杂的字符串操作。
 
-- [Gleam文档](https://gleam.run/documentation/)
-- [Gleam](https://github.com/gleam-lang/gleam)
-- [Gleam社区论坛](https://gleam-lang.discourse.group/)
+另外，Gleam还提供了更多有用的函数，如`String.trim`来去除字符串两侧的空格，`String.replace`来替换字符串中的特定部分等等。
+
+查看也可以参考的链接：
+
+- [Gleam官方文档](https://gleam.run/documentation/)
+- [Gleam字符串操作函数](https://gleam.run/documentation/stdlib/string.html)
+- [Gleam列表操作](https://gleam.run/documentation/stdlib/list.html)

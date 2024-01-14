@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Virheenkorjaustulostuksen tulostaminen"
+title:                "Kotlin: Virheenkorjaustulosteiden tulostaminen"
+simple_title:         "Virheenkorjaustulosteiden tulostaminen"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/printing-debug-output.md"
 ---
 
@@ -9,33 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Joskus koodin suorituksessa ilmenee ongelmia tai virheitä, joiden löytämiseen ja korjaamiseen tarvitaan lisätietoa. Tulosteiden (debug output) tarkasteleminen on yksi tapa helpottaa ja nopeuttaa tämän prosessin etenemistä.
+On monia syitä miksi joku saattaisi haluta tulostaa debuggaustietoja ohjelmassa. Yksi yleisimmistä ongelmanratkaisutarkoituksessa on löytää virheitä tai vikoja koodista. Tulostamalla debuggaustietoja, voidaan seurata koodin suoritusta ja selvittää missä vaiheessa virheilmoitus tulee.
 
-## Näin teet sen
+## Miten
 
-Tulosteiden tulostaminen eli debuggauksen tekeminen onnistuu Kotlinissa helposti käyttämällä `println()`-funktiota. Tämä tulostaa annetun arvon tai muuttujan sisällön konsoliin.
-
-```Kotlin
-val luku = 42
-println(luku)
-```
-
-Tämän avulla voit tarkastella ohjelman suorituksen aikana eri muuttujien arvoja ja varmistaa, että oikeita arvoja käytetään halutuissa kohdissa.
-
-## Syvemmälle debuggaukseen
-
-Kotlinissa on myös muita apukeinoja debuggaukseen, kuten `assert()`-funktio, joka tarkistaa, että annettu ehto on tosi. Jos ehto ei täyty, ohjelma keskeytetään ja konsoliin tulostetaan ilmoitus virheestä.
+Kotlinilla on helppo tulostaa debuggaustietoja ohjelmassa. Tähän käytetään `print()` tai `println()` funktiota, jotka tulostavat halutun arvon konsoliin. Alla on esimerkkejä erilaisista tulostusmahdollisuuksista Kotlinilla:
 
 ```Kotlin
-val luku1 = 5
-val luku2 = 10
-assert(luku1 < luku2, {"Ensimmäisen luvun täytyy olla pienempi kuin toisen!"})
+val nimi = "Matti"
+val ikä = 35
+
+print(nimi) // Tulostaa "Matti"
+println(nimi + ikä) // Tulostaa "Matti35"
+println("Nimi: $nimi, Ikä: $ikä") // Tulostaa "Nimi: Matti, Ikä: 35"
 ```
 
-Tämä on hyödyllistä esimerkiksi silloin, kun haluat varmistua, että arvoja käytetään oikeassa järjestyksessä tai että ne ovat oikeassa muodossa.
+Kuten nähdään esimerkeissä, `println()` tulostaa halutun arvon ja siirtyy seuraavalle riville, kun taas `print()` vain tulostaa arvon ilman rivinvaihtoa. Lisäksi voidaan käyttää `'` merkkejä tulostettavan arvon ympärillä, jolloin arvo tulostetaan sellaisenaan ilman tarvetta `+` merkille.
+
+## Syväsyvennys
+
+Debuggaustietoja tulostetaan myös usein tutkittaessa ohjelman suorituskykyä ja sen aikana tapahtuvia muutoksia muuttujissa. Tämä helpottaa ohjelman optimointia ja parantaa sen suorituskykyä. Lisäksi tulostetut tiedot voivat olla hyödyllisiä myös ohjelman dokumentoinnissa ja ongelmanratkaisussa.
 
 ## Katso myös
 
-- [Debugging in Kotlin](https://kotlinlang.org/docs/reference/tools.html#debugging-in-kotlin)
-- [Debugging and Troubleshooting in Kotlin](https://blog.kotlin-academy.com/debugging-and-troubleshooting-in-kotlin-6dffcfcbef18)
-- [Effective Debugging in Kotlin](https://blog.kotlin-academy.com/effective-debugging-in-kotlin-5ecb07aab87c)
+- https://kotlinlang.org/docs/tutorials/command-line.html
+- https://kotlinlang.org/docs/reference/basic-syntax.html#using-string-templates
+- https://www.jetbrains.com/help/idea/debugging-with-variables.html

@@ -1,37 +1,46 @@
 ---
 title:                "Ruby: Imprimindo saída de depuração"
+simple_title:         "Imprimindo saída de depuração"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por que
-Cada programador, em algum momento da sua carreira, enfrenta problemas ao tentar identificar um erro em seu código. E é aí que entra a impressão de saída de depuração. Ao adicionar mensagens de depuração em seu código, você pode acompanhar o fluxo de execução e identificar onde as coisas estão dando errado. Isso pode economizar muito tempo e energia na resolução de problemas em seu código.
+
+Às vezes, enquanto escrevemos um código em Ruby, podemos nos deparar com erros ou problemas que não conseguimos resolver imediatamente. Nestes casos, pode ser útil imprimir saídas de depuração para entender melhor o que está acontecendo em nosso código.
 
 ## Como Fazer
-Para imprimir saída de depuração em Ruby, você pode usar o método `puts` seguido da mensagem que você deseja imprimir dentro de aspas. Por exemplo:
+
+Podemos imprimir saídas de depuração usando o método `puts` ou `p` em Ruby. Por exemplo, se quisermos verificar os valores de uma variável `x` em nosso código, podemos usar `puts x` ou `p x` para imprimir o valor atual dessa variável no console. Vamos ver um exemplo prático:
+
 ```Ruby
-puts "Entrando no loop for..."
+x = 10
+puts x # output: 10
+p x # output: 10
 ```
-Isso irá imprimir a mensagem "Entrando no loop for..." na sua linha de comando ao executar o seu código.
 
-Você também pode adicionar variáveis à sua mensagem de depuração para acompanhar seus valores durante a execução do código. Por exemplo:
+Dessa forma, podemos ver facilmente o valor atual de `x` e usar essas saídas de depuração para identificar e corrigir possíveis erros ou problemas em nosso código.
+
+## Mergulho Profundo
+
+Além de apenas imprimir os valores de variáveis, também podemos usar saídas de depuração para entender melhor o fluxo de nosso código. Por exemplo, podemos imprimir mensagens antes e depois de um determinado trecho de código para verificar se está sendo executado corretamente ou não.
+
+Outra técnica útil é adicionar um número de linha nos nossos `puts` ou `p` para ajudar a identificar de onde está vindo a saída de depuração. Por exemplo:
+
 ```Ruby
-contador = 0
-puts "O contador atual é: #{contador}"
+x = 10
+puts "Valor de x na linha 1: " + x # output: Valor de x na linha 1: 10
+p "Valor de x na linha 2: " + x # output: Valor de x na linha 2: 10
 ```
-Isso imprimirá a mensagem "O contador atual é: 0", onde 0 é o valor atual da variável contador. Isso pode ser útil para rastrear quaisquer mudanças nos valores das suas variáveis ao longo do tempo.
 
-## Profundidade
-Além do método `puts`, também existe o método `p` que pode ser usado para imprimir a saída de depuração em Ruby. A diferença é que o método `p` irá mostrar o tipo de dados de uma variável, enquanto o `puts` apenas imprimirá o valor.
-
-Outra opção é usar o módulo `logger` do Ruby para imprimir saída de depuração. O módulo `logger` oferece opções avançadas, como gravar a saída em um arquivo de log e adicionar níveis de gravidade às mensagens.
-
-Além disso, é importante lembrar de remover todas as mensagens de depuração após resolver os problemas em seu código. Você não quer que sua saída de depuração acabe sendo impressa em produção!
+Isso nos permite saber em qual parte específica de nosso código a saída de depuração está sendo gerada e facilita a localização do problema.
 
 ## Veja Também
-- [Documentação Oficial do Ruby sobre o método `puts`](https://ruby-doc.org/core-2.7.0/IO.html#method-i-puts)
-- [Guia sobre depuração em Ruby](https://www.tutorialspoint.com/ruby/ruby_debugger.htm)
-- [Artigo sobre o módulo `logger` do Ruby](https://www.rubyguides.com/2018/08/ruby-logger/)
+
+- [Debugging in Ruby](https://guides.rubyonrails.org/debugging_rails_applications.html)
+- [Using puts and p to Debug Ruby Code](https://www.rubyguides.com/2019/07/ruby-puts-vs-p/)
+- [Debugging Ruby with Pry](https://pryhq.com/)

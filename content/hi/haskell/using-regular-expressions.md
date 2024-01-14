@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: नियमित अभिव्यक्तियों का उपयोग"
+title:                "Haskell: नियमित अभिव्यक्तियों का उपयोग करना"
+simple_title:         "नियमित अभिव्यक्तियों का उपयोग करना"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/using-regular-expressions.md"
 ---
 
@@ -9,37 +11,20 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-क्या आप ने कभी सोचा है कि क्या हैं वे रेगुलर एक्सप्रेशन्स और आप इनका उपयोग क्यों करेंगे? इस ब्लॉग पोस्ट में, हम आपको हैस्कल में रेगुलर एक्सप्रेशन्स का उपयोग करने के कारण बताएंगे।
+क्या आपने कभी भी प्रोग्रामिंग में टेक्स्ट के साथ काम करते हुए अपने लिए कोड लिखने के समय स्ट्रिंग मैचिंग की मुश्किलों का सामना किया है? क्या आपने कभी अपने कोड में से कुछ खोजने के लिए लंबे समय तक शब्दों या अक्षरों को परखा है? यदि हां, तो आपको रेग्युलर एक्सप्रेशन (regular expressions) चलाने की जरूरत है। यह समस्याओं को सुलझाने का एक शक्तिशाली तरीका है जो आपको प्रोग्रामिंग में अधिक तकनीकी बनाता है।
 
-## कैसे
+## कैसे करें
 
-हैस्कल में रेगुलर एक्सप्रेशन्स का उपयोग बहुत ही आसान है। नीचे उदाहरण सहित हैस्कल कोड ब्लॉक में हमने बताया है कि आप कैसे एक सरल रेगुलर एक्सप्रेशन का उपयोग कर सकते हैं और उसके आउटपुट क्या होगा।
+रेग्युलर एक्सप्रेशन (regular expressions) को हैस्केल में उपयोग करना अत्यंत आसान है। यह एक पावरफुल लाइब्रेरी है जो आपको रखरखाव मुक्त टेक्स्ट से सीधे अनुरोधों द्वारा और बहुविध आकृतियों को स्पष्ट करने के लिए अनुमति देती है। यह लाइब्रेरी हास्केल का पारागमिक संरचना है जो दुनिया के हर स्तर पर समझाना तो परस्पर जुड़ा हो जाएगा।
 
 ```Haskell
--- सरल रेगुलर एक्सप्रेशन उदाहरण
-import Text.Regex.Posix
+-- हैस्केल में रेग्युलर एक्सप्रेशन चलाने का उदाहरण
+import Text.Regex
 
--- एक स्ट्रिंग से प्रथम अंक पाएं
-findFirstNumber :: String -> Maybe String
-findFirstNumber str = (=~"[0-9]+") str
-
-main = do
-  let str = "a1b2c3"
-  print $ findFirstNumber str
+-- साधारण रेग्युलर एक्सप्रेशन का उदाहरण
+testRegex :: String -> Bool
+testRegex str = matches $ mkRegex "[0-9]+"
+  where matches regex = matchTest regex str
 ```
 
-आउटपुट:
-```
-Just "1"
-```
-
-## गहराई तक
-
-हमारे पास रेगुलर एक्सप्रेशन्स काफी गहराई तक जानकारी है। आप हैस्कल में समान पैटर्न को पकड़ने के लिए विभिन्न फंक्शन जैसे (=~), (=~~), (=~~~) आदि का उपयोग कर सकते हैं। इनके अलावा, आप भी स्ट्रिंग पर अनेक पैटर्न को एक साथ चेक करने के लिए ग्रुपिंग और बैकरेफ्रंस का उपयोग कर सकते हैं। यह बेहद उपयोगी है जब आपको अनेक पैटर्न को पकड़ना हो और आप उन पैटर्न्स के क्रम को रखना चाहते हो।
-
-## देखें भी
-
-- [Haskell Wiki - Regular Expressions](https://wiki.haskell.org/Regular_expressions)
-- [A Gentle Introduction to Regular Expressions in Haskell](https://haskell.fpcomplete.com/library/doc/parsing-and-regex)
-- [Haskell Regular Expressions Cheat Sheet](https://devhints.io/haskell-regex)
-- [Online Haskell Regular Expression Tester](https://regex-haskell.com/)
+इस उदाहरण में, हमने `Text.Regex` मोड्यूल को आयात किया है और एक साधारण रेग्युलर एक्सप्रेशन को परीक्षण करने के लिए एक फ़ंक्शन `testRegex` बनाई है। यह संभव है कि आपको थोड़ा सा गणनात्मक फ़ंक्शन पत्ती को ठीक से स

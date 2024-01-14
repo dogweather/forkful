@@ -1,7 +1,9 @@
 ---
 title:                "Bash: Wyszukiwanie i zamiana tekstu"
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/searching-and-replacing-text.md"
 ---
 
@@ -9,35 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Jedną z najważniejszych umiejętności każdego programisty jest umiejętność obsługi tekstu. Bez względu na to, czy piszesz mały skrypt czy duży projekt, prawdopodobnie będziesz musiał przeprowadzić przeszukiwanie i zamianę tekstu w swoim kodzie. W tym wpisie dowiesz się, jak to zrobić w Bashu, języku programowania, który jest wykorzystywany przez wielu programistów i administratów systemów.
+Czy kiedykolwiek musiałeś ręcznie zmieniać wszystkie wystąpienia konkretnego słowa w swoim pliku lub kodzie? To męczące zadanie, które może zająć dużo czasu. Ale nie martw się, jest sposób na szybsze i wydajniejsze zastąpienie tekstu - za pomocą programowania w Bashu.
 
 ## Jak to zrobić
 
-Przeszukiwanie i zamiana tekstu w Bashu jest łatwe i wygodne dzięki używaniu wbudowanych poleceń. Jedną z najczęściej wykorzystywanych komend jest `sed`, która służy do przetwarzania tekstu. Aby przeprowadzić prostą zamianę tekstu, możesz użyć polecenia `sed 's/tekst_do_znalezienia/nowy_tekst/' plik`, gdzie `tekst_do_znalezienia` to wyróżniony tekst, który chcesz zmienić, a `nowy_tekst` to jego zamieniona wersja. Możesz również użyć opcji `i` po poleceniu `sed` aby dokonać zmian bezpośrednio w pliku, zamiast wyświetlać wynik na ekranie. Przykładowy kod wyglądałby tak:
+Aby zastąpić tekst w pliku lub kodzie za pomocą Bashu, musisz użyć wbudowanej funkcji sed (stream editor). Najpierw masz do dyspozycji polecenie "s/tekst-do-zastapienia/nowy-tekst/", które zmienia pierwsze wystąpienie tekstu w danej linii. Jeśli chcesz zmienić wszystkie wystąpienia, musisz dodać "g" na końcu, na przykład "s/tekst-do-zastapienia/nowy-tekst/g". Możesz również dodać opcję "i" do pierwszej litery polecenia, aby zignorować wielkość liter, na przykład "s/tekst-do-zastapienia/nowy-tekst/gi". Oto przykładowy kod w Bashu przed i po użyciu sed:
 
 ```Bash
-sed -i 's/tekst_do_znalezienia/nowy_tekst/' plik
+# Przed użyciem sed
+echo "Hello world!" > plik.txt
+cat plik.txt
+# Hello world!
+
+# Po użyciu sed
+sed -i 's/world!/Dziś jest piękny dzień!/g' plik.txt
+cat plik.txt
+# Hello Dziś jest piękny dzień!
 ```
 
-Jeśli chcesz przeprowadzić zmianę tylko w niektórych wierszach, możesz użyć opcji `r`, aby podać zakres wierszy, na którym ma zostać wykonane polecenie. Przykładowo, `sed -i '10,20s/tekst_do_znalezienia/nowy_tekst/' plik` zmieni tylko tekst w wierszach od 10 do 20.
-
-Inną użyteczną komendą jest `tr`, która służy do tłumaczenia lub usuwania znaków. Aby przeprowadzić prostą zamianę liter, możesz użyć polecenia `tr 'ABCD' 'ZYXW' < plik`, gdzie `ABCD` to litery, które chcesz zamienić, a `ZYXW` to ich zamienione odpowiedniki. Możesz również użyć opcji `d` po poleceniu `tr` aby usunąć określone znaki. Przykładowy kod wyglądałby tak:
+Możesz również zastąpić tekst w wielu plikach naraz przez użycie polecenia find z opcją -exec. Na przykład, aby zastąpić "Hello" na "Cześć" we wszystkich plikach z rozszerzeniem .txt, możesz użyć następującego kodu:
 
 ```Bash
-tr 'abc' 'xyz' < plik
+find . -name "*.txt" -exec sed -i 's/Hello/Cześć/g' {} \;
 ```
-
-Bash oferuje również możliwość użycia wyrażeń regularnych przez dodanie opcji `E` po poleceniu `sed` lub `tr`.
 
 ## Deep Dive
 
-W Bashu istnieje wiele innych komend i opcji, które umożliwiają zaawansowane przeszukiwanie i zamianę tekstu. Możesz również wykorzystać pętle i warunki do przetwarzania większych plików tekstowych lub wielu plików jednocześnie. Przydatne są także takie komendy jak `awk` czy `grep`, które dają jeszcze większe możliwości manipulacji tekstem.
+Aby lepiej zrozumieć jak działają polecenia s/.../.../ i find z opcją -exec, warto wiedzieć, że sed korzysta z tzw. wyrażeń regularnych (regular expressions). Jest to bardzo przydatne narzędzie do wyszukiwania tekstów z różnymi wzorcami, na przykład wszystkich liczb, słów zaczynających się na daną literę czy konkretnych znaków. Istnieje wiele różnych wyrażeń regularnych, więc warto poszukać ich listy i zaznajomić się z tym narzędziem, aby wykorzystać go w pełni.
+
+Polecenie find natomiast służy do wyszukiwania plików zgodnych z określonymi kryteriami, takimi jak rozszerzenie, nazwa czy data modyfikacji. Opcja -exec pozwala uruchomić polecenie dla każdego odnalezionego pliku, w tym przypadku sed. Jest to więc bardzo wygodny sposób na automatyczne zastąpienie tekstu w wielu plikach naraz.
+
+Pamiętaj również, że sed i find nie są dostępne tylko w Bashu - są to narzędzia systemowe, które są również dostępne w innych językach programowania i systemach operacyjnych.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o przeszukiwaniu i zamianie tekstu w Bashu, polecam zapoznać się z poniższymi linkami:
-
-- [Dokumentacja sed](https://www.gnu.org/software/sed/manual/sed.html)
-- [Wprowadzenie do przetwarzania tekstu w Bashu](https://www.howtogeek.com/430730/the-essential-guide-to-performing-text-manipulation-in-linux/)
-- [Wyrażenia regularne w Bashu](https://www.linuxjournal.com/content/bash-regexps-beginners)
-- [Manipulacja tekstem przy użyciu awk i sed](https://www.thegeekstuff.com/2010/06/awk-sed-part-1-strings-and
+- [Wprowadzenie do sed na stronie Linux Academy (w języku angielskim)](https://linuxacademy.com/guide/6058-grep-sed-and-awk/)
+- [Lista wyrażeń regularnych w Wikipedii (w języku polskim)](https://pl.wikipedia.org/wiki/Wyrażenie_regularne)
+- [Dokumentacja do find w manualu systemowym (w języku angielskim)](http://man7.org/linux/man-pages/man1/find.1.html)

@@ -1,52 +1,47 @@
 ---
 title:                "Clojure: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "Clojure"
-category:             "Testing and Debugging"
+category:             "Clojure"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere test in Clojure
+## Perché
 
-Scrivere test è un processo cruciale per garantire che il nostro codice funzioni correttamente e rimanga robusto nel tempo. Inoltre, i test aiutano a identificare eventuali bug e a fornire una documentazione vivente per il nostro codice.
+Scrivere test è un'attività fondamentale nella programmazione che aiuta a verificare il corretto funzionamento del codice. Non solo garantisce un comportamento affidabile dell'applicazione, ma inoltre semplifica il processo di debugging.
 
-## Come scrivere test in Clojure
+## Come fare
 
-Per scrivere test in Clojure, dobbiamo prima importare la libreria `clojure.test`. Successivamente, possiamo definire una funzione test utilizzando la macro `deftest` e specificando il suo nome e il suo corpo all'interno di una parentesi. In questo corpo, possiamo fare degli assert per verificare che il nostro codice restituisca i risultati attesi.
+Per scrivere test in Clojure sono necessari due strumenti fondamentali: `clojure.test` e `clojure.spec`. Il primo è una libreria standard di Clojure che offre un'interfaccia intuitiva per la creazione di test, mentre il secondo viene usato per definire le specifiche di ogni funzione.
 
-```Clojure
-(ns test.esempio
-  (:use clojure.test))
-
-(deftest test-aggiungi
-  (is (= (+ 1 2) 3)))
-```
-
-Una volta creato il nostro test, possiamo eseguirlo utilizzando la funzione `run-tests` e passandogli il namespace in cui si trova il nostro test.
+Per utilizzare `clojure.test`, è necessario definire una funzione che contiene tutti i test, utilizzando il marcatore `deftest`. All'interno di questa funzione, è possibile utilizzare il marcatore `is` per verificare i valori restituiti dalle funzioni testate.
 
 ```Clojure
-(run-tests 'test.esempio)
+(deftest test-somma
+  (is (= 4 (+ 2 2)))
+  (is-not (= 5 (+ 2 2))))
 ```
 
-Questo esempio dovrebbe restituire un output simile a questo:
+Per quanto riguarda `clojure.spec`, invece, è possibile definire le specifiche delle funzioni utilizzando il marcatore `s/fdef` e specificando il nome, gli argomenti e il valore di ritorno della funzione. Questo permette di verificare automaticamente che la funzione rispetti le specifiche in fase di test.
 
+```Clojure
+(s/fdef somma :args int? int? :ret int?)
+(defn somma [a b]
+  (+ a b))
 ```
-Testing test.esempio
 
-Ran 1 tests containing 1 assertions.
-0 failures, 0 errors.
-```
+Una volta definite le specifiche, è possibile utilizzare la funzione `s/check` per controllare se una data funzione ne rispetta i requisiti.
 
-## Approfondimenti sui test in Clojure
+## Approfondimento
 
-In Clojure, possiamo utilizzare anche la macro `is` per creare degli assert più dettagliati e specificare messaggi di errore personalizzati. Inoltre, possiamo utilizzare la funzione `are` per testare più casi di input per una stessa funzione.
+Scrivere test è un processo importante e bisogna considerare alcune best practices per ottenere i migliori risultati. È importante scrivere test che siano indipendenti e riproducibili, in modo da poterli eseguire più volte senza influire sul risultato. Inoltre, è consigliato scrivere test per ogni possibile scenario, in modo da coprire tutti i casi.
 
-Oltre ai test di unità, possiamo scrivere anche test di integrazione per verificare il comportamento di diverse parti del nostro codice in un contesto reale. Questi tipi di test possono essere eseguiti utilizzando la libreria `lein-midje` o `lein-test-refresh` per un continuo rinnovo dei test mentre sviluppiamo.
+È anche fondamentale capire quale parte del codice va testata e quale no. Non tutte le parti del nostro programma necessitano di un test specifico e quindi è importante effettuare una scelta consapevole per evitare test ridondanti o poco utili.
 
 ## Vedi anche
 
 - [Documentazione ufficiale di clojure.test](https://clojure.github.io/clojure/clojure.test-api.html)
-- [Esempi di test in Clojure](https://github.com/clojure/test.check/tree/master/examples)
-- [Libreria lein-midje per i test di integrazione](https://github.com/marick/Midje) 
-- [Libreria lein-test-refresh per il continuo rinnovo dei test](https://github.com/jakemcc/lein-test-refresh)
+- [Documentazione ufficiale di clojure.spec](https://clojure.org/guides/spec)

@@ -1,61 +1,83 @@
 ---
-title:                "C: Scrivere Test"
+title:                "C: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere test in C
-
-Scrivere test è una parte fondamentale del processo di sviluppo di un programma in C. I test ci aiutano a verificare se il nostro codice è corretto e funzionale, e ci permettono di individuare eventuali errori o bug prima che il nostro programma sia distribuito agli utenti finali.
-
-Invece di dover testare manualmente ogni singola funzione o parte del nostro codice, possiamo scrivere test automatizzati che eseguono il controllo per noi. Ciò ci permette di risparmiare tempo e di avere una maggiore sicurezza nel nostro codice.
+## Perché scrivere test in C?
+Scrivere test può sembrare una pratica lunga e noiosa, ma ha numerosi vantaggi. Innanzitutto, aiuta a individuare eventuali bug o errori nel codice prima che possano causare problemi più grandi. Inoltre, i test possono essere riutilizzati e automatizzati per risparmiare tempo e sforzo nelle fasi di sviluppo successive.
 
 ## Come scrivere test in C
+Per scrivere test in C, è necessario utilizzare una libreria di unit testing come CUnit o Unity. Queste librerie forniscono funzionalità e strumenti per creare e gestire i test in modo semplice ed efficace.
 
-Per scrivere test in C, dobbiamo utilizzare una libreria di test come "minunit". Questa libreria ci offre una serie di funzioni utili per creare, eseguire e valutare i nostri test.
-
-Di seguito è riportato un esempio di come potremmo scrivere un test utilizzando la libreria "minunit":
-
-```C
+Ecco un esempio di codice che utilizza CUnit per testare una funzione che calcola il quadrato di un numero:
+```
+// Inclusione delle librerie necessarie
+#include <CUnit/Basic.h>
 #include <stdio.h>
-#include "minunit.h"
+#include "square.h" // File contenente la definizione della funzione "square"
 
-int somma(int a, int b) {
-  return a + b;
+// Definizione del test
+void testSquare(void) {
+    // Valore di input
+    int input = 5;
+    // Valore atteso
+    int expected = 25;
+    // Richiamo della funzione da testare
+    int result = square(input);
+    // Confronto tra il risultato ottenuto e quello atteso
+    CU_ASSERT_EQUAL(result, expected);
 }
 
-MU_TEST(test_somma) {
-  mu_assert_int_eq(6, somma(2, 4));
-  mu_assert_int_eq(10, somma(5, 5));
+// Funzione di inizializzazione delle suite di test
+int init_suite(void) {
+    return 0;
 }
 
-MU_TEST_SUITE(test_suite) {
-  MU_RUN_TEST(test_somma);
+// Funzione di pulizia delle suite di test
+int clean_suite(void) {
+    return 0;
 }
 
+// Funzione main che avvia l'esecuzione dei test
 int main() {
-  MU_RUN_SUITE(test_suite);
-  MU_REPORT();
-  return MU_SUCCESS;
+    // Inizializzazione della suite di test
+    CU_pSuite pSuite = NULL;
+    // Creazione della suite di test
+    pSuite = CU_add_suite("Square Test", init_suite, clean_suite);
+    // Aggiunta del test alla suite
+    CU_add_test(pSuite, "testSquare", testSquare);
+    // Avvio dell'esecuzione dei test
+    CU_basic_run_tests();
+    // Pulizia delle suite di test
+    CU_cleanup_registry();
+    return CU_get_error();
 }
 ```
+Questo codice definisce un test per la funzione "square" e lo esegue utilizzando la libreria CUnit. Una volta eseguito il test, si otterrà un output come questo:
+```
+CUnit - A unit testing framework for C
 
-Nell'esempio sopra, abbiamo definito una funzione "somma" che restituisce la somma di due numeri interi. Poi abbiamo creato un test "test_somma" utilizzando la funzione "mu_assert_int_eq" fornita da "minunit" per verificare se la nostra funzione "somma" calcola correttamente la somma dei numeri dati. Infine, nella funzione "main" abbiamo eseguito il test e generato un report utilizzando le funzioni di "minunit".
+Suite: Square Test
+  Test: testSquare ...passed
 
-## Approfondimento sui test in C
+Run Summary:    Type  Total   Ran Passed Failed Inactive
+              suites      1     1    n/a      0        0
+              tests       1     1      1      0        0
+              asserts     1     1      1      0      n/a
 
-Scrivere test ben strutturati e completi è una parte fondamentale per garantire che il nostro codice sia affidabile e funzionale. Alcuni consigli per scrivere test efficaci includono:
+Elapsed time =    0.000 seconds
+```
 
-- Concentrarsi sui casi limite e sui possibili errori: assicurarsi di testare il codice in condizioni estreme o in situazioni dove potrebbe verificarsi un errore.
-- Mantenere i test semplici e indipendenti: evitare di scrivere test troppo complessi o che dipendono da altri test, in modo da poter facilmente identificare e risolvere eventuali problemi.
-- Testare tutti i rami di esecuzione: assicurarsi che ogni parte del codice venga testata almeno una volta.
-
-Inoltre, è importante automatizzare l'esecuzione dei test in modo che possano essere eseguiti più volte e senza richiedere l'intervento umano, garantendo così la loro efficienza e accuratezza.
+## Approfondimenti sui test in C
+Scrivere test può essere un processo complesso, ma esistono diverse best practice che possono aiutare a semplificarlo. Ad esempio, è importante scrivere test che siano facilmente ripetibili e che si concentrino sulle funzionalità più critiche del codice. Inoltre, è consigliato monitorare regolarmente i test per garantire che siano ancora validi e aggiornarli quando il codice viene modificato.
 
 ## Vedi anche
-
-- [Documentazione di minunit](https://github.com/siu/minunit)
-- [Tutorial su come scrivere test in C](https://dev.to/willamesoares/test-driven-development-tdd-with-c-oo1)
+- [Guida alla scrittura di test con CUnit](http://cunit.sourceforge.net/doc/index.html)
+- [Libreria di test Unity per C](https://github.com/ThrowTheSwitch/Unity)
+- [Best practice per la scrittura di test in C](https://begriffs.com/posts/2017-04-13-designing-a-c-testing-framework.html)

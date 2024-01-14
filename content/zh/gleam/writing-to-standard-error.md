@@ -1,36 +1,44 @@
 ---
 title:                "Gleam: 写入标准错误"
+simple_title:         "写入标准错误"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/gleam/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要写入标准错误
+为什么：
+为什么有时候我们需要将错误信息写入到标准输出流中呢？可能有几个原因。第一，当我们的程序出现错误时，我们想要能够跟踪和调试它，而将错误信息写入标准输出流可以提供给我们必要的信息。第二，如果我们的程序是作为另一个程序的一部分运行的话，将错误信息写入标准输出流可以让父程序捕获并处理这些错误。
 
-在Gleam编程中，有时我们需要将一些错误信息打印出来，这样可以帮助我们更快地调试程序。因此，学习如何将信息写入标准错误是非常重要的。
+如何实现：
+要将错误信息写入到标准输出流中，我们可以使用Gleam的日志记录功能。首先，我们需要导入Gleam内置的Logger模块。然后，我们可以使用Logger模块中的函数`log.error`将错误信息写入标准输出流。下面是一个简单的例子：
 
-## 如何实现
+```Gleam
+import gleam/logger
 
-要将信息写入标准错误，我们可以使用Gleam的标准库中的`stderr`模块。下面是一个简单的例子：
+pub fn main() {
+  log.error("Oops, something went wrong!");
+}
+```
+
+输出结果将会是：
 
 ```
-Gleam 程序代码：
-let message = "这是一个错误信息"
-stderr.write(message)
+[Error] Oops, something went wrong!
 ```
 
-运行以上代码，将会在终端打印出错误信息`这是一个错误信息`。通过调用`write`函数将信息写入标准错误流中。
+深入了解：
+除了简单地输出错误信息外，我们还可以在`log.error`函数中传入一些变量或者数据，以便更准确地定位问题。我们还可以使用多个`log.error`语句来输出不同级别的错误信息，例如`log.warn`和`log.info`等。此外，我们还可以自定义日志输出的格式和目的地，例如将错误信息写入特定的文件。
 
-## 深入了解
+同样重要的是，我们还可以结合使用Gleam中的异常处理功能来捕获和处理错误信息，以便让我们的程序更加健壮和稳定。
 
-标准错误流其实就是一个特殊的文件流，它通常用来存储程序的错误信息。在Gleam中，我们可以通过`stderr`模块来访问它，并使用`write`函数将信息写入其中。除此之外，还可以通过`flush`函数来刷新流，确保写入的信息能够立即显示出来。
+参考链接：
+- [Gleam Logger模块文档](https://gleam.run/stdlib/logger.html)
+- [Gleam 异常处理文档](https://gleam.run/learn/error-handling.html)
 
-参考文档：[Gleam 标准库 - stderr](https://gleam.run/book/stdlib#stderr)
-
-# 参考链接
-
-- [Gleam 官方网站](https://gleam.run/)
-- [Gleam 标准库 - stderr](https://gleam.run/book/stdlib#stderr)
-- [Markdown 语法指南](https://www.markdownguide.org/basic-syntax/)
+另请参阅：
+- [Gleam官方网站](https://gleam.run/)
+- [Gleam官方论坛](https://elixirforum.com/c/gleam/33)
+- [Gleam源代码仓库](https://github.com/gleam-lang/gleam)

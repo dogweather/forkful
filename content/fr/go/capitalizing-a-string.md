@@ -1,19 +1,19 @@
 ---
-title:                "Go: Majuscule d'une chaîne de caractères"
+title:                "Go: Capitalisation d'une chaîne de caractères"
+simple_title:         "Capitalisation d'une chaîne de caractères"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/go/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-Il existe de nombreuses raisons pour lesquelles vous pourriez avoir besoin de capitaliser une chaîne de caractères dans votre code Go. Peut-être que vous souhaitez formater correctement les noms propres, ou peut-être que vous devez respecter des conventions de style spécifiques dans votre projet. Quelle que soit la raison, il est important de savoir comment capitaliser une chaîne en utilisant Go.
+Vous êtes-vous déjà demandé pourquoi il est important de capitaliser une chaîne de caractères en programmation ? Dans cet article, nous allons explorer cette question et vous montrer comment le faire en utilisant le langage de programmation Go.
 
 ## Comment faire
-
-Heureusement, Go a une fonction intégrée appelée "strings.Title" qui peut être utilisée pour capitaliser une chaîne donnée. Voici un exemple de code montrant comment utiliser cette fonction :
+La méthode la plus courante pour capitaliser une chaîne de caractères en Go est d'utiliser la fonction `strings.ToUpper()`. Voici un exemple de code qui montre comment l'utiliser :
 
 ```Go
 package main
@@ -22,21 +22,47 @@ import "fmt"
 import "strings"
 
 func main() {
-    myString := "bonjour tout le monde"
-    fmt.Println(strings.Title(myString))
+    str := "bonjour"
+    fmt.Println(strings.ToUpper(str))
 }
 ```
 
-Lorsque vous exécutez ce code, vous verrez que la chaîne de caractères "bonjour tout le monde" est maintenant capitalisée en "Bonjour Tout Le Monde". Vous pouvez également utiliser cette fonction pour capitaliser une chaîne stockée dans une variable, plutôt que de fournir une chaîne directement dans la fonction "strings.Title".
+Lorsque vous exécuterez ce code, vous obtiendrez l'output suivant :
 
-## Plongée profonde
+```
+BONJOUR
+```
 
-Bien que la fonction "strings.Title" soit utile pour la plupart des cas de capitalisation, il y a quelques exceptions à garder à l'esprit. Par exemple, elle ne capitalisera pas les lettres après les apostrophes ou les traits d'union. Si vous avez besoin d'une capitalisation plus précise, vous devrez peut-être écrire votre propre fonction ou utiliser une bibliothèque tierce.
+Comme vous pouvez le voir, la fonction `strings.ToUpper()` a transformé la chaîne de caractères "bonjour" en "BONJOUR". Cela vous permet de capitaliser facilement une chaîne de caractères en utilisant Go.
 
-De plus, si vous travaillez avec des chaînes en unicode, la fonction "strings.Title" peut ne pas fonctionner correctement. Dans ce cas, vous devrez peut-être utiliser la bibliothèque "golang.org/x/text/unicode/norm" pour normaliser la chaîne avant de la capitaliser.
+## Deep Dive
+Maintenant que vous savez comment capitaliser une chaîne de caractères en Go, plongeons un peu plus profondément dans ce sujet. Il existe en fait deux façons de capitaliser une chaîne de caractères en Go : avec la fonction `strings.ToUpper()` que nous avons utilisée précédemment, ou en utilisant la fonction `strings.Title()`. La fonction `strings.Title()` va capitialiser la première lettre de chaque mot dans une chaîne de caractères, tandis que la fonction `strings.ToUpper()` va capitaliser toutes les lettres. Par exemple :
+
+```Go
+package main
+
+import "fmt"
+import "strings"
+
+func main() {
+    str := "bonjour tout le monde"
+    fmt.Println(strings.Title(str))
+    fmt.Println(strings.ToUpper(str))
+}
+```
+
+L'output de ce code sera :
+
+```
+Bonjour Tout Le Monde
+BONJOUR TOUT LE MONDE
+```
+
+Maintenant, vous pouvez choisir la méthode de capitalisation qui convient le mieux à vos besoins en fonction de la situation.
 
 ## Voir aussi
+Pour en savoir plus sur les fonctions de manipulation de chaînes de caractères en Go, vous pouvez consulter la documentation officielle :  
+- https://golang.org/pkg/strings/  
+- https://tour.golang.org/basics/15  
 
-- [Documentation officielle de Go sur la fonction strings.Title](https://golang.org/pkg/strings/#Title)
-- [Exemples de capitalisation en utilisant Go](https://gobyexample.com/string-functions)
-- [Bibliothèque Go pour la normalisation de chaînes unicode](https://godoc.org/golang.org/x/text/unicode/norm)
+Merci d'avoir lu cet article et à bientôt pour de nouvelles astuces sur le langage Go !

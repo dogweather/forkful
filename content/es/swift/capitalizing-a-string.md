@@ -1,52 +1,61 @@
 ---
 title:                "Swift: Capitalizando una cadena"
+simple_title:         "Capitalizando una cadena"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
-Al escribir código en Swift, es común encontrarse con la necesidad de capitalizar una cadena de texto. Esto puede ser para mejorar la legibilidad o para cumplir con ciertas convenciones de estilo. En este artículo, veremos cómo capitalizar una cadena en Swift de manera eficiente.
+## ¿Por qué capitalizar una cadena en Swift?
 
-## Cómo hacerlo
-Para capitalizar una cadena en Swift, podemos utilizar el método `capitalized` en una instancia de `String`. Este método tomará la primera letra de cada palabra en la cadena y la convertirá a mayúscula, manteniendo el resto en minúscula. Además, también se encargará de mantener las letras acentuadas del idioma español en su forma adecuada.
+En algunos casos, puede ser necesario capitalizar una cadena en Swift para hacerla más legible o estandarizar su formato. Esto es especialmente útil en aplicaciones que requieren una entrada de datos precisa y consistente.
 
-````Swift
-let myString = "hola, ¿cómo estás?"
+## ¿Cómo hacerlo?
 
-print(myString.capitalized)
+Para capitalizar una cadena en Swift, hay varias opciones disponibles. Una forma sencilla es utilizando el método `capitalized` en una variable de tipo `String`. Por ejemplo:
 
-// Salida: Hola, ¿Cómo Estás?
-````
+```Swift
+let cadena = "este es un ejemplo"
+print(cadena.capitalized)
+```
+**Salida:** Este Es Un Ejemplo
 
-Si queremos capitalizar solo la primera letra de la cadena y mantener el resto en minúscula, podemos utilizar el método `capitalizedFirst` de la siguiente manera:
+También se puede utilizar el método `uppercased` para convertir todos los caracteres de la cadena a mayúsculas, o `lowercased` para convertirlos a minúsculas.
 
-````Swift
-let myString = "hola, ¿cómo estás?"
+```Swift
+print(cadena.uppercased())
+```
+**Salida:** ESTE ES UN EJEMPLO
 
-print(myString.capitalizedFirst)
+```Swift
+print(cadena.lowercased())
+```
+**Salida:** este es un ejemplo
 
-// Salida: Hola, ¿cómo estás?
-````
+Otra opción es utilizar el método `prefix` para capitalizar solo la primera letra de la cadena:
 
-También podemos capitalizar solo la primera palabra de la cadena utilizando el método `capitalizedFirst` combinado con el método `lowercased`:
+```Swift
+print(cadena.prefix(1).capitalized + cadena.dropFirst())
+```
+**Salida:** Ese es un ejemplo
 
-````Swift
-let myString = "hola, ¿cómo estás?"
+## Profundizando en la capitalización de cadenas
 
-print(myString.lowercased().capitalizedFirst)
+En Swift, la capitalización de cadenas también puede variar según el idioma y la región. Por ejemplo, si se utiliza `capitalized` en una cadena en español, se respetarán las reglas de capitalización del español, donde se debe respetar la mayúscula en la primera palabra y en los nombres propios.
 
-// Salida: Hola, ¿cómo estás?
-````
+Por otro lado, si se desea una capitalización personalizada, se puede utilizar el método `capitalized(with:)` y especificar un `Locale` que indique cómo se debe capitalizar la cadena. Por ejemplo:
 
-## Profundizando
-Además de los métodos mencionados anteriormente, también podemos capitalizar una cadena utilizando las funciones `uppercased` y `lowercased`. Estas funciones convierten todas las letras de una cadena a mayúscula o minúscula respectivamente.
-
-Otra forma de capitalizar una cadena es utilizando una extensión de Swift que escribamos nosotros mismos. De esta manera, podemos crear una función que se adapte a nuestras necesidades específicas, como por ejemplo, capitalizar solo la primera letra de cada palabra en una cadena con determinados patrones.
+```Swift
+let cadena = "este es un ejemplo"
+let locale = Locale(identifier: "es_MX")
+print(cadena.capitalized(with: locale))
+```
+**Salida:** Este es un Ejemplo
 
 ## Ver también
-- [Documentación oficial de Apple sobre el tipo de datos String](https://developer.apple.com/documentation/swift/string)
-- [Extensión de Swift para capitalizar una cadena](https://medium.com/@mayankmohak/capitalizing-last-name-in-swift-without-terrorism-31cb5b0b5eb8)
-- [Tutorial de Hacking with Swift sobre capitalizar cadenas](https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-the-first-letter-of-a-string)
+
+- [Documentación oficial de Apple sobre la capitalización de cadenas en Swift](https://developer.apple.com/documentation/swift/string/2960994-capitalized)
+- [Tutorial de Hacking with Swift sobre capitalización de cadenas en Swift](https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-the-first-letter-of-a-string)

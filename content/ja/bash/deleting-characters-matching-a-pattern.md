@@ -1,64 +1,72 @@
 ---
-title:                "Bash: 「パターンにマッチする文字を削除する」"
+title:                "Bash: パターンにマッチする文字を削除する"
+simple_title:         "パターンにマッチする文字を削除する"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/bash/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+## なぜ？
 
-特定のパターンと一致する文字を削除するのに、人々がなぜ関わるかを説明するわずか1-2文。
-
-パターンマッチングはBashプログラミングでよく使われる技術です。例えば、複数のファイル名から特定の拡張子を持つファイルを削除する際に、パターンマッチングを使用することができます。これにより、手作業でファイルを1つずつ選択する必要がなく、簡単かつ迅速に削除できます。
+Bashプログラミングを学ぶ上で、特定のパターンにマッチする文字を削除する方法を習得することは重要です。それにより、より効率的なスクリプトの作成や、データの処理が容易になります。
 
 ## 方法
 
-パターンにマッチする文字を削除するベストな方法は、`sed`コマンドを使用することです。以下のような構文を使用します。
+特定のパターンにマッチする文字を削除するには、以下のようなコードを使用することができます。
 
-```
-sed 's/パターン//g' input_file
-```
+```Bash
+# 文字列を変数に代入
+str="Hello World!"
 
-このコマンドは、`input_file`内のすべての行からパターンにマッチする文字を削除します。 `s`はsubstitute（置換）を意味し、`g`はglobal（すべて）を意味します。つまり、行内のすべてのパターンにマッチする文字が削除されます。
+# パターンにマッチする文字を削除
+new_str=${str//l/}
 
-例として、以下のようなテストファイルを作成しましょう。
+# 出力
+echo $new_str
 
-```
-test1.txt
-test2.html
-test3.sh
-test4.txt
+# Output: Heo Word!
 ```
 
-`txt`拡張子を持つファイルを削除するために、`sed`コマンドを使用しましょう。
+上記の例では、変数`str`に"Hello World!"という文字列を代入し、その中からパターンにマッチする文字"l"を削除しています。削除する際には、変数名の前に"//"をつける必要があります。そして、新しい変数`new_str`に削除後の文字列を代入します。最後に、新しい変数の中身を出力することで、削除が正常に行われたかを確認できます。
 
+## ディープダイブ
+
+上記のコードでは、パターンにマッチする文字を一度にすべて削除していますが、場合によっては一部の文字のみを削除したい場合もあります。そのような場合は、下記のようにコードを書くことができます。
+
+```Bash
+# 文字列を変数に代入
+str="Hello World!"
+
+# パターンにマッチする文字を削除
+new_str=${str//l/}
+
+# パターンにマッチする最初の文字を削除
+new_str=${new_str/#H/}
+
+# パターンにマッチする最後の文字を削除
+new_str=${new_str/%!/}
+
+# 出力
+echo $new_str
+
+# Output: Heo Word
 ```
-sed 's/txt//g' test_file
-```
 
-これにより、`test1.txt`と`test4.txt`が削除され、以下の結果になります。
-
-```
-test2.html
-test3.sh
-```
-
-## 深堀り
-
-パターンマッチングを使用することで、より複雑なパターンにも対応することができます。例えば、ファイル名の一部ではなく、特定の文字パターンにマッチするファイルを削除することも可能です。
-
-また、`sed`コマンドのオプションを使用することで、マッチした文字列の置換を行うことも可能です。例えば、`test1`という文字列を`new_test`に置換する場合は、以下のようにオプションを追加します。
-
-```
-sed 's/test1/new_test/g' test_file
-```
-
-これにより、`test1.txt`が`new_test.txt`に置換されます。
+上記の例では、先ほどと同じく"Hello World!"という文字列からlを削除し、その後に最初の文字Hと最後の文字!を削除しています。削除したい位置によって、`/#`や`/%`という記号を使い分けることができます。
 
 ## 参考リンク
 
-- [Bashパターンマッチングチュートリアル](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)
-- [sedコマンドのドキュメント](https://www.gnu.org/software/sed/manual/sed.html)
-- [スラドのsed使いこなしTipsまとめ](https://linux.srad.jp/story/11/09/04/0434206/)
+- [Bash Guide for Beginners - Variable Substitution](http://mywiki.wooledge.org/BashGuide/Substitution)
+- [Bash Hackers Wiki - Parameter Expansion](http://wiki.bash-hackers.org/syntax/pe)
+- [GNU Bash Manual - Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+
+---
+
+## 関連リンク
+
+- [Bashコマンドの基本と基礎](https://www.oracle.com/technetwork/jp/articles/opensource/Linux-Bash2-1506041-ja.html)
+- [Bash Tips: 様々なパターンを削除する](https://qiita.com/muranet/items/3faaf402a6a483c03984)
+- [初心者が迷わないためのBash入門ガイド](https://qiita.com/meznat/items/08a4a0155e5869bbcc78)

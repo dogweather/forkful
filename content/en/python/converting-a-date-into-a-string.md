@@ -1,7 +1,9 @@
 ---
 title:                "Python recipe: Converting a date into a string"
+simple_title:         "Converting a date into a string"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/python/converting-a-date-into-a-string.md"
 ---
 
@@ -9,67 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Converting dates into strings is a common task in programming, especially when working with databases or APIs. By converting a date into a string, you can easily manipulate and display the date in a desired format. This can be useful for creating user-friendly interfaces or generating reports.
+Have you ever encountered the need to display a date in a specific format in your Python program? Converting a date into a string can be a useful skill to have in your programming arsenal. It allows you to customize the presentation of the date and make it more readable for your users.
 
 ## How To
 
-In Python, there are several ways to convert a date into a string. Let's explore three methods using the built-in datetime module.
-
-* First, we can use the `strftime` method to specify a desired format for the date. This method takes in a format string as its argument, which contains placeholders for different components of the date. For example:
+Converting a date into a string in Python is a simple process using the `strftime()` function from the `datetime` module. Here's an example of how to use it:
 
 ```Python
-import datetime
+from datetime import datetime
 
-today = datetime.date.today()
+# Creating a datetime object for today's date
+today = datetime.today()
 
-# Convert date into string with format YYYY-MMM-DD
-formatted_date = today.strftime("%Y-%b-%d")
+# Converting the date into a string format
+date_string = today.strftime('%B %d, %Y')
 
-print(formatted_date) # Output: 2021-Aug-10
+# Printing the result
+print(date_string)
 ```
 
-* Second, we can use the `isoformat` method to convert a date into ISO 8601 format. This is a standardized date format that is commonly used for data exchange. For example:
+This code will output the current date in the format of "Month day, Year", such as "October 08, 2021". Let's break down the code and understand how it works.
 
-```Python
-import datetime
+First, we import the `datetime` module. This module contains the `datetime` class, which allows us to work with date and time values in Python. Next, we create a `today` object using the `datetime.today()` function, which returns the current date and time.
 
-today = datetime.date.today()
+Then, we use the `strftime()` function to convert the `today` object into a string format. The function takes in a formatting string as its argument, which specifies how the date should be displayed. In this example, we used `%B` for the full month name, `%d` for the day of the month with a leading zero, and `%Y` for the four-digit year.
 
-# Convert date into ISO 8601 format
-iso_date = today.isoformat()
-
-print(iso_date) # Output: 2021-08-10
-```
-
-* Lastly, we can also use the `str` function to convert a date object into a string. This method does not provide any formatting options, but it returns a string representation of the date in a default format. For example:
-
-```Python
-import datetime
-
-today = datetime.date.today()
-
-# Convert date into string
-str_date = str(today)
-
-print(str_date) # Output: 2021-08-10
-```
+Finally, we print the `date_string` variable, which now contains the formatted date. You can experiment with different formatting strings and see the output for yourself.
 
 ## Deep Dive
 
-When converting a date into a string, it's important to understand the different format codes that can be used in the `strftime` method. These codes represent different components of a date, such as year, month, and day. Some common format codes include:
+The `strftime()` function offers a wide range of formatting options to convert a date into a string. Here are some of the most commonly used formatting codes:
 
-* `%Y` - Year as a four-digit number
-* `%m` - Month as a zero-padded decimal number
-* `%d` - Day of the month as a zero-padded decimal number
-* `%b` - Month as abbreviated name
-* `%B` - Month as full name
-* `%w` - Weekday as a decimal number (0-6, with Sunday being 0)
-* `%Z` - Time zone name
+- `%a` - Abbreviated weekday name (Mon, Tue, Wed, etc.)
+- `%A` - Full weekday name (Monday, Tuesday, Wednesday, etc.)
+- `%b` - Abbreviated month name (Jan, Feb, Mar, etc.)
+- `%B` - Full month name (January, February, March, etc.)
+- `%d` - Day of the month (01, 02, 03, etc.)
+- `%m` - Month as a number (01 for January, 02 for February, etc.)
+- `%Y` - Four-digit year (2021)
+- `%y` - Two-digit year (21)
+- `%H` - Hour in 24-hour format (00 - 23)
+- `%I` - Hour in 12-hour format (01 - 12)
+- `%p` - AM/PM designation for time
+- `%M` - Minute (00 - 59)
+- `%S` - Second (00 - 59)
 
-For a full list of format codes, you can refer to the Python documentation for `strftime`.
+For a full list of available formatting codes, you can refer to the [Python documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior).
 
 ## See Also
 
-* [Python datetime module documentation](https://docs.python.org/3/library/datetime.html)
-* [ISO 8601 format guide](https://www.iso.org/iso-8601-date-and-time-format.html)
-* [strftime format codes reference](https://strftime.org/)
+- [Converting a String to a Date in Python](https://www.programiz.com/python-programming/datetime/string-datetime)
+- [Python datetime module](https://docs.python.org/3/library/datetime.html)

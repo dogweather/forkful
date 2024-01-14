@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Zmiana tekstu na wielkie litery"
+title:                "Bash: Zmiana wielkości liter w ciągu znaków"
+simple_title:         "Zmiana wielkości liter w ciągu znaków"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/capitalizing-a-string.md"
 ---
 
@@ -9,59 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Cześć czytelnicy, w dzisiejszym poście opowiemy o jednej prosty, ale przydatnej czynności w Bash - jak zamienić pierwszą literę w zdaniu na wielką. Nie tylko ułatwi to czytelnosć kodu, ale także może być przydatne przy wyświetlaniu wiadomości użytkownikowi. Czytaj dalej, aby dowiedzieć się dlaczego warto to zrobić.
+Czy kiedykolwiek próbowałeś zmienić styl tekstu w swoim skrypcie Bash? Może chcesz, aby wszystkie litery w zdaniu były pisane wielkimi literami lub tylko pierwsza litera? W tym artykule dowiesz się, jak prosto zmienić styl tekstu w Bash, aby dopasować go do swoich potrzeb.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-W Bash mamy dostęp do kilku wbudowanych funkcji, które pomogą w zamianie pierwszej litery na wielką. Jedną z nich jest `ucfirst()`, która zwraca pierwszą literę w zdaniu zapisaną wielką literą.
-
-```Bash
-#!/bin/bash
-
-str="witaj świecie!"
-echo "${str^}"
-```
-
-```
-Witaj świecie!
-```
-
-Możemy również użyć `tr` do zamiany pierwszej litery na wielką. Ta metoda jest przydatna, jeśli chcemy zamienić pierwsze litery we wszystkich słowach w zdaniu na wielkie.
+Aby zmienić styl tekstu w Bash, musisz użyć polecenia "tr". Polecenie to służy do zmiany lub usuwania znaków w tekście. Aby zmienić styl tekstu, musimy wybrać odpowiednie opcje polecenia "tr".
 
 ```Bash
-#!/bin/bash
-
-str="witaj świecie!"
-echo "$str" | tr 'a-z' 'A-Z'
+echo "witaj w świecie Bash" | tr '[:lower:]' '[:upper:]'
 ```
+W powyższym przykładzie, polecenie "echo" służy do wyświetlenia tekstowego wyjścia, a następnie przesyła je do polecenia "tr". Opcja '[:lower:]' informuje "tr", aby zmienił wszystkie litery w tekście na małe litery, a opcja '[:upper:]' zmienia litery na wielkie. Wynik tego polecenia będzie wyglądał następująco:
+"WITAJ W ŚWIECIE BASH"
 
-```
-WITAJ ŚWIECIE!
-```
-
-Jeśli potrzebujemy zamienić tylko pierwsze litery we wszystkich słowach na wielkie, możemy użyć `sed`.
+Możesz również użyć opcji "[:upper:]" bezpośrednio w poleceniu "echo", aby uniknąć przesyłania tekstu do polecenia "tr".
 
 ```Bash
-#!/bin/bash
-
-str="witaj świecie!"
-echo "$str" | sed 's/\b\(.\)/\u\1/g'
-```
-
-```
-Witaj Świecie!
+echo "witaj w świecie Bash" | tr '[:lower:]' '[:upper:]'
 ```
 
 ## Deep Dive
 
-Zamiana pierwszej litery na wielką może być pomocna przy wyświetlaniu komunikatów użytkownikowi w czytelny sposób, szczególnie jeśli korzystamy z `read` do przyjmowania danych od użytkownika.
-
-Możemy również dostosować zamianę pierwszej litery na wielką do własnych potrzeb, na przykład zmieniać tylko litery w danym zakresie ASCII lub ignorować niektóre wyjątki.
-
-Zapoznanie się z dokumentacją Bash i eksperymentowanie z różnymi metodami może pomóc w zrozumieniu i wykorzystaniu zamiany pierwszej litery na wielką w różnych przypadkach.
+Aby lepiej zrozumieć jak działa polecenie "tr", musimy poznać jego strukturę. Polecenie składa się z dwóch części, pierwszą jest lista znaków do zmiany, a drugą lista odpowiadających im znaków lub opcji. Możesz również użyć opcji "-d" w drugiej części, aby usunąć wybrane znaki z tekstu zamiast je zmieniać. Opcje mogą być również kompilowane, co oznacza, że można użyć kilku opcji jednocześnie.
 
 ## Zobacz też
-
-- [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Funkcje tekstowe w Bash](https://www.baeldung.com/linux/bash-text-processing-functions)
-- [Manipulowanie tekstem w Bash](https://www.linuxjournal.com/content/bash-string-manipulation)
+- Oficjalna dokumentacja polecenia "tr": [https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+- Tutorial o poleceniu "tr" w Bash: [https://www.linux.com/learn/using-tr-translate-or-delete-characters-bash](https://www.linux.com/learn/using-tr-translate-or-delete-characters-bash)
+- Przydatne komendy Bash: [https://www.linux.com/topic/desktop/useful-bash-commands/](https://www.linux.com/topic/desktop/useful-bash-commands/)

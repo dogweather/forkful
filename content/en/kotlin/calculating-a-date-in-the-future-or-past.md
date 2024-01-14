@@ -1,66 +1,63 @@
 ---
 title:                "Kotlin recipe: Calculating a date in the future or past"
+simple_title:         "Calculating a date in the future or past"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Why 
+## Why
 
-Calculating a date in the future or past can be a useful tool for a variety of tasks. Whether you want to set a reminder for a future event or determine how many days have passed since a historical event, being able to calculate dates quickly and accurately can save you time and effort.
+As a programmer, you may have encountered scenarios where you need to calculate a date in the future or past. This could be for tasks such as scheduling events, setting reminders, or calculating deadlines. Thankfully, with Kotlin, this process can be easily achieved using built-in date and time functions.
 
-# How To
+## How To
 
-Calculating dates in Kotlin is simple and straightforward. All you need is the current date and the number of days you want to add or subtract. Let's take a look at some examples:
-
-```Kotlin
-// Calculate 10 days from today
-val currentDate = LocalDate.now()
-val futureDate = currentDate.plusDays(10)
-println("In 10 days, the date will be: $futureDate")
-```
-Output: In 10 days, the date will be: 2022-01-10
+To calculate a date in the future or past in Kotlin, we can use the `LocalDate` class from the `java.time` package. We can create a `LocalDate` object by passing in the desired date as arguments for the `of()` method. For example:
 
 ```Kotlin
-// Calculate 5 months from a specific date
-val specificDate = LocalDate.of(2020, 12, 12)
-val futureDate = specificDate.plusMonths(5)
-println("In 5 months from 2020-12-12, the date will be: $futureDate")
+val currentDate = LocalDate.now() // Retrieves current date
+val futureDate = LocalDate.of(2021, 9, 1) // Sets future date to September 1st, 2021
+val pastDate = LocalDate.of(2020, 3, 15) // Sets past date to March 15th, 2020
 ```
-Output: In 5 months from 2020-12-12, the date will be: 2021-05-12
 
-You can also calculate dates in the past by using the `minus` methods instead of `plus`:
+We can then use the `plus()` and `minus()` methods to add or subtract the desired number of days, months, or years from the given date. For example:
 
 ```Kotlin
-// Calculate 2 weeks before a specific date
-val specificDate = LocalDate.of(2019, 7, 10)
-val pastDate = specificDate.minusWeeks(2)
-println("2 weeks before 2019-07-10, the date was: $pastDate")
+val newDate = currentDate.plusDays(7) // Adds 7 days to current date
+val pastMonth = futureDate.minusMonths(1) // Subtracts 1 month from future date
+val pastYear = pastDate.minusYears(3) // Subtracts 3 years from past date
 ```
-Output: 2 weeks before 2019-07-10, the date was: 2019-06-26
 
-# Deep Dive
-
-Behind the scenes, Kotlin uses the `java.time` library to handle date calculations. This library provides a variety of methods for working with dates and times, making it a powerful tool for any developer.
-
-Some other useful methods for calculating dates in the future or past include `plusYears()`, `plusHours()`, and `minusDays()`. These methods allow you to specify units other than days.
-
-It's also important to note that you can chain multiple methods together to perform multiple calculations on the same date. For example:
+We can also use `ChronoUnit` enum class to specify the unit of measurement for adding or subtracting time. For example:
 
 ```Kotlin
-// Calculate 5 years and 3 months from a specific date
-val specificDate = LocalDate.of(2010, 5, 10)
-val futureDate = specificDate.plusYears(5).plusMonths(3)
-println("In 5 years and 3 months from 2010-05-10, the date will be: $futureDate")
+val newDate = currentDate.plus(2, ChronoUnit.WEEKS) // Adds 2 weeks to current date
+val pastYear = pastDate.minus(5, ChronoUnit.YEARS) // Subtracts 5 years from past date
 ```
-Output: In 5 years and 3 months from 2010-05-10, the date will be: 2015-08-10
 
-# See Also
+To get the final calculated date, we can use the `toString()` method to convert it to a readable format. For example:
 
-If you want to learn more about working with dates in Kotlin, check out these helpful resources:
+```Kotlin
+println("New date: $newDate")
+```
 
-- [Kotlin documentation on the `java.time` library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-local-date/index.html)
-- [Tutorial on date and time in Kotlin](https://www.baeldung.com/kotlin-dates)
-- [Kotlin Date and Time Cheat Sheet](https://devhints.io/kotlin-datetime)
+This will print the result in the format of `yyyy-MM-dd` (e.g. 2021-09-08).
+
+## Deep Dive
+
+Under the hood, the `LocalDate` class uses the ISO-8601 calendar system to calculate dates. This means that it follows the standard of having 365 days in a year and 7 days in a week. It also takes into consideration leap years, so we don't need to worry about those additional days.
+
+Furthermore, the `ChronoUnit` enum class provides options for adding or subtracting time in larger units such as weeks, months, and years, in addition to the smaller units like days, hours, and seconds. This gives us more flexibility and precision in calculating dates.
+
+It's important to also note that the `plus()` and `minus()` methods return a new `LocalDate` object instead of modifying the original one. This is to ensure immutability and avoid any unexpected changes.
+
+## See Also
+
+- [Kotlin LocalDate class documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
+- [Java 8 Date and Time API tutorial](https://www.baeldung.com/java-8-date-time-api)
+- [Official Java documentation on ISO-8601 calendar system](https://docs.oracle.com/javase/8/docs/api/java/time/chrono/IsoChronology.html)
+
+By using the techniques outlined above, you can easily calculate dates in the future or past in your Kotlin programs. This not only saves time but also ensures accuracy and consistency in your applications. Happy coding!

@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Verketten von Zeichenfolgen"
+title:                "Arduino: Verkettung von Zeichenketten"
+simple_title:         "Verkettung von Zeichenketten"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/arduino/concatenating-strings.md"
 ---
 
@@ -9,72 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Zusammenführen von Zeichenketten (auch bekannt als Konkatenation) ist eine wichtige Funktion in der Programmierung, die es ermöglicht, mehrere Zeichenketten zu einer zusammenzufügen. Dies kann hilfreich sein, um beispielsweise Texte dynamisch zu generieren oder Daten aus verschiedenen Quellen in einer Zeichenkette zu vereinen. In diesem Blogbeitrag erfährst du, wie du mit Arduino Zeichenketten concatenieren kannst.
+Die Verkettung von Strings ist ein wesentlicher Bestandteil der Programmierung. Sie ermöglicht es uns, verschiedene Variablen und Texte zu kombinieren und so komplexe Ausgaben zu erstellen. In diesem Blog-Beitrag werden wir uns genauer damit beschäftigen, warum es wichtig ist, Strings in Arduino-Programmen zu verketten.
 
-## Wie geht's
+## So geht's
 
-Um Zeichenketten in Arduino zu konkatenieren, können wir die Funktion `concat()` verwenden. Diese Funktion nimmt mindestens zwei Parameter, die zu verbindenden Zeichenketten, und gibt eine neue Zeichenkette zurück, die die beiden ursprünglichen Zeichenketten beinhaltet.
+In der Arduino-Programmierung können wir Strings auf verschiedene Arten verketten. Eine Möglichkeit ist die Verwendung des `+` Operators, der zwei Strings miteinander verbindet. Wir können auch die `concat()` Funktion nutzen, um mehrere Strings zusammenzufügen.
 
-```Arduino
-#include <string.h>
-
-void setup() {
-  Serial.begin(9600);
-
-  // zwei Zeichenketten definieren
-  char string1[] = "Hallo, ";
-  char string2[] = "welt!";
-
-  // Zeichenketten konkatenieren
-  char result[20];
-  strcpy(result, string1);
-  strcat(result, string2);
-
-  // Ergebnis ausgeben
-  Serial.println(result);
-}
-
-void loop() {
-
-}
-```
-
-In diesem Beispiel verwenden wir `string.h`, um die Funktionen `strcpy()` und `strcat()` (von "string copy" und "string concatenation") zu nutzen. Zuerst kopieren wir die erste Zeichenkette in eine neue Zeichenkette namens `result` und verwenden dann `strcat()`, um die zweite Zeichenkette an `result` anzuhängen. Das Ergebnis wird dann über `Serial` ausgegeben.
-
-Das könnte so aussehen:
+Um dies besser zu verstehen, werfen wir einen Blick auf ein einfaches Beispiel:
 
 ```Arduino
-Hallo, welt!
+String name = "Max";
+String message = "Hallo, mein Name ist " + name + "!";
+
+Serial.println(message);
 ```
 
-Natürlich können wir auch mehr als zwei Zeichenketten kombinieren, indem wir die `concat()`-Funktion mehrmals hintereinander aufrufen.
+Das Ergebnis unserer Ausgabe wäre: "Hallo, mein Name ist Max!". Hier haben wir den Inhalt der Variablen `name` in unseren Text eingefügt, indem wir den `+` Operator verwendet haben.
+
+Eine alternative Möglichkeit, Strings zu verketten, ist die Verwendung der `printf()` Funktion. Diese ermöglicht es uns, Formatierungszeichen zu nutzen, um die Ausgabe zu gestalten. Hier ein Beispiel:
 
 ```Arduino
-// drei Zeichenketten konkatenieren
-char result[30];
-strcpy(result, "Dies ist ");
-strcat(result, "ein kleiner ");
-strcat(result, "Satz.");
+String first_name = "Anna";
+String last_name = "Miller";
+int age = 32;
 
-// Ausgabe: Dies ist ein kleiner Satz.
+String message = "Mein Name ist %s %s und ich bin %d Jahre alt.";
+
+Serial.printf(message.c_str(), first_name.c_str(), last_name.c_str(), age);
 ```
 
-## Tiefer Einblick
+Unser Resultat wäre: "Mein Name ist Anna Miller und ich bin 32 Jahre alt." Hier haben wir `%s` verwendet, um unsere String-Variablen einzufügen und `%d`, um unsere numerische Variable `age` einzufügen.
 
-Neben der `concat()`-Funktion gibt es noch andere Möglichkeiten, um Zeichenketten zu konkatenieren. Eine davon ist der sogenannte "Format String" oder "sprintf". Mit diesem können wir Platzhalter in einer Zeichenkette definieren und dann Werte an diesen Platzhalter einfügen.
+## Tiefere Einblicke
 
-```Arduino
-char result[30];
-sprintf(result, "Ich heiße %s und bin %d Jahre alt.", "Max", 25);
+Die Verkettung von Strings ist besonders nützlich, wenn wir komplexe Ausgaben erstellen müssen, z.B. für Benutzeroberflächen oder zur Kommunikation mit anderen Geräten. Es ermöglicht uns auch, unseren Code lesbarer zu gestalten, indem wir die Verwendung von Variablen in unseren Texten präziser machen.
 
-// Ausgabe: Ich heiße Max und bin 25 Jahre alt.
-```
-
-In diesem Beispiel wird `%s` durch den String "Max" und `%d` durch die Zahl 25 ersetzt. So können wir dynamische Zeichenketten erzeugen, zum Beispiel für die Ausgabe von Sensordaten.
+Es ist jedoch wichtig zu beachten, dass die Verkettung von Strings im Vergleich zu anderen Operationen in der Arduino-Programmierung relativ aufwendig ist. Wenn es in unseren Programmen darauf ankommt, die Leistung zu optimieren, sollten wir die Verwendung von Strings, insbesondere in Schleifen, vermeiden.
 
 ## Siehe auch
 
-- [String concatenation in C](https://www.programiz.com/c-programming/library-function/string.h/strcat)
-- [Format strings in C](https://www.tutorialspoint.com/c_standard_library/c_function_sprintf.htm)
-
-Danke fürs Lesen und viel Spaß beim Programmieren mit Arduino!
+* [Arduino String Referenz](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+* [Die Verwendung von Strings in C und Arduino](https://www.programmingelectronics.com/learn/c/the-difference-between-strings-and-char-arrays/)
+* [C++ String-Klasse](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)

@@ -1,48 +1,44 @@
 ---
-title:                "C: Redacción de un archivo de texto"
+title:                "C: Escribiendo un archivo de texto"
+simple_title:         "Escribiendo un archivo de texto"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+##Por qué escribir un archivo de texto en C
 
-Escribir un archivo de texto es una tarea sencilla y fundamental en la programación en C. Los archivos de texto son utilizados para guardar información de manera permanente y permiten que los programas puedan acceder y manipular estos datos. Esto es esencial ya sea para almacenar configuraciones, registros o cualquier otra información que deba persistir después de que el programa finalice su ejecución.
+Escribir un archivo de texto en C puede ser una herramienta útil para guardar información importante o resultados de un programa. Además, puede ayudar a hacer que tus programas sean más versátiles y fáciles de compartir con otras personas.
 
-## Cómo
+##Cómo hacerlo
 
-La escritura de un archivo de texto en C se puede dividir en tres pasos fundamentales: abrir, escribir y cerrar el archivo. Primero, necesitamos declarar un puntero a tipo FILE, el cual actuará como nuestro acceso al archivo. Luego, con la función `fopen()` podemos abrir el archivo en el modo deseado, ya sea solo lectura, solo escritura o lectura/escritura.
+Para escribir un archivo de texto en C, primero debes abrir el archivo utilizando la función `fopen()`. Luego, puedes escribir en el archivo utilizando la función `fprintf()` y para finalizar, debes cerrar el archivo con la función `fclose()`. Aquí hay un ejemplo de cómo escribir "¡Hola mundo!" en un archivo de texto llamado "ejemplo.txt":
 
-```C
-#include <stdio.h>
+```
+#include<stdio.h>
 
 int main()
 {
-    FILE *archivo;
-    archivo = fopen("ejemplo.txt", "w");
-    /* código para escribir en el archivo */
+    FILE *archivo = fopen("ejemplo.txt", "w");
+    fprintf(archivo, "¡Hola mundo!");
     fclose(archivo);
     return 0;
 }
 ```
-Una vez que el archivo está abierto, podemos utilizar la función `fprintf()` para escribir en él. Esta función funciona de manera similar a `printf()`, pero en vez de imprimir en la pantalla, imprime en el archivo.
 
-```C
-fprintf(archivo, "Este es un ejemplo de texto que será escrito en el archivo.");
-```
+Si ejecutamos este programa, se creará un archivo de texto llamado "ejemplo.txt" con el texto "¡Hola mundo!" dentro de él.
 
-Finalmente, cuando ya hemos terminado de escribir en el archivo, debemos cerrarlo utilizando la función `fclose()`. Esto asegura que la información se guarde y el archivo se cierre adecuadamente.
+##Profundizando
 
-## Profundizando
+Cuando usas la función `fopen()`, puedes especificar el modo en el cual quieres abrir el archivo. En el ejemplo anterior, usamos "w" como modo, que significa que el archivo se abrirá para escritura y se creará si no existe. Pero también hay otros modos disponibles, como "r" para lectura o "a" para añadir contenido al final del archivo. Puedes consultar la documentación de la función `fopen()` para conocer más sobre los diferentes modos disponibles y sus usos.
 
-Además de las funciones mencionadas anteriormente, existen otras funciones y opciones que pueden ser útiles al momento de escribir un archivo de texto en C. Por ejemplo, la función `fputc()` permite escribir un solo caracter en el archivo y `fputs()` permite escribir una cadena de caracteres. También es posible utilizar el modo "append" al abrir un archivo (utilizando "a" en vez de "w") para añadir información al final del archivo en lugar de sobrescribirlo completamente.
+Además, también es importante tener en cuenta que si el archivo ya existe y lo abres en modo de escritura, todo su contenido anterior se sobrescribirá. Si deseas preservar el contenido anterior del archivo, debes abrirlo en modo de añadir ("a") en lugar de modo de escritura ("w").
 
-Ten en cuenta que al escribir un archivo en C, es importante asegurarse de que siempre se cierre de manera adecuada. De lo contrario, podemos perder información o incluso dañar el archivo.
+##Ver también
 
-## Ver también
-
-- [Tutorial de archivos en C](https://www.programiz.com/c-programming/c-file-input-output)
-- [Documentación oficial de fopen()](https://www.cplusplus.com/reference/cstdio/fopen/)
-- [Declarando y utilizando archivos en C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- Documentación de `fopen()`: https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm
+- Documentación de `fprintf()`: https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm
+- Documentación de `fclose()`: https://www.tutorialspoint.com/c_standard_library/c_function_fclose.htm

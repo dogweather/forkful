@@ -1,43 +1,55 @@
 ---
-title:                "Kotlin: 정규식을 사용하는 방법"
+title:                "Kotlin: 정규 표현식 사용하기"
+simple_title:         "정규 표현식 사용하기"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/kotlin/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 정규식을 사용해야 할까요?
+## 왜?
 
-정규식은 텍스트 데이터에서 원하는 패턴을 찾아내는 강력한 도구입니다. 이를 이용하면 문자열을 다루는 작업이 훨씬 수월해지며, 코드를 더 간결하고 효율적으로 만들 수 있습니다. 따라서 정규식은 프로그래밍에서 매우 중요한 역할을 합니다.
+프로그래밍을 하면서 종종 특정한 문자열을 찾거나 변경해야 할 때가 있습니다. 예를 들어, 이메일 주소를 찾아서 모두 대문자로 바꾸고 싶거나, 전화번호를 추출하거나, 주민등록번호를 올바른 형식으로 바꾸고 싶을 수 있습니다. 이럴 때 유용한 도구가 바로 정규표현식(Regular Expressions)입니다.
 
 ## 사용 방법
 
-정규식을 사용하기 위해서는 `Regex` 클래스를 이용해야 합니다. 다음은 간단한 예제 코드입니다.
+정규표현식을 사용하기 위해서는 Kotlin의 ```Regex``` 클래스를 사용해야 합니다. 이 클래스는 다양한 메소드를 제공하여 문자열을 찾거나 변경할 수 있도록 도와줍니다. 아래는 이메일 주소를 찾아서 모두 대문자로 바꾸는 예시 코드입니다.
 
 ```Kotlin
-val regex = Regex("[0-9]+")
-val text = "Hello world! 123"
-val matches = regex.findAll(text)
-for (match in matches) {
-    println(match.value)
+fun main() {
+    // 원본 문자열
+    val email = "example@exmaple.com"
+    // 정규표현식을 사용하여 대문자로 바꿈
+    val result = Regex("[\\w.-]+@[\\w-]+(\\.[\\w-]+)+").replace(email) { it.value.toUpperCase() }
+    // 결과 출력
+    println(result)
 }
 ```
 
-위 코드는 문자열 `text`에서 숫자만을 찾아내어 출력하는 예제입니다. `Regex` 클래스의 `findAll` 메서드를 이용하면, 해당 정규식과 일치하는 모든 부분을 `MatchResult` 객체로 반환합니다. 이 객체는 `value` 속성을 통해 일치하는 문자열을 가져올 수 있습니다.
+위 코드의 출력은 다음과 같을 것입니다:
 
-## 깊게 파보기
+```
+EXAMPLE@EXAMPLE.COM
+```
 
-정규식에는 다양한 메타문자와 문자 클래스, 그리고 수량자 등이 있어 다양한 패턴을 찾을 수 있습니다. 또한, 캡처 그룹을 이용해 원하는 부분을 추출하는 것도 가능합니다. 이런 다양한 기능들을 익히고 활용하면 더욱 정교한 정규식을 만들어낼 수 있습니다.
+## 깊게 들어가기
 
-## 더 알아보기
+정규표현식은 기본적으로 특정한 패턴을 찾아내기 위해 사용됩니다. 가령 위의 예시에서 사용된 정규표현식은 이메일 주소를 찾아내기 위한 패턴입니다. 이를 조금 더 자세히 살펴보면, 아래와 같은 구조로 이루어져 있습니다.
 
-- [코틀린 공식 문서 - 정규식 사용하기](https://kotlinlang.org/docs/tutorials/kotlin-for-py/regular-expressions.html)
-- [정규식 코딩 도장](https://regexr.com/)
-- [정규식을 사용한 텍스트 처리 - 박상길 블로그](https://kangsudug.tistory.com/50)
+```
+[\\w.-]+@[\\w-]+(\\.[\\w-]+)+
+```
 
-## 참고자료
+먼저 대괄호(```[]```) 안에 있는 문자들은 모두 하나의 문자로 매칭될 수 있습니다. 예를 들어, ```[\\w.-]```는 알파벳, 숫자, 밑줄, 마침표, 그리고 하이픈을 의미합니다. 그리고 플러스(```+```)는 앞에 있는 패턴이 하나 이상 반복될 수 있음을 의미합니다. 따라서 ```[\\w.-]+```는 알파벳, 숫자, 밑줄, 마침표, 그리고 하이픈으로 이루어진 하나 이상의 문자열을 찾아냅니다.
 
-- [코틀린 공식 문서 - 정규식 사용하기](https://kotlinlang.org/docs/tutorials/kotlin-for-py/regular-expressions.html)
-- [정규식 코딩 도장](https://regexr.com/)
-- [정규식을 사용한 텍스트 처리 - 박상길 블로그](https://kangsudug.tistory.com/50)
+두 번째 그룹은 ```@[\\w-]+```로 이루어져 있습니다. 이는 앞의 패턴과 비슷하지만, 마침표 대신에 ```@```를 검색하도록 설정된 것입니다.
+
+마지막 그룹은 괄호로 감싸져 있으며, 앞의 두 그룹에서 매칭된 문자열을 그대로 가져옵니다. 따라서 이 부분은 이메일 주소의 도메인을 추출하는 역할을 합니다.
+
+## 또 다른 정보들
+
+- [Kotlin 정규표현식 문서](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/): 정규표현식을 사용하기 위한 Kotlin의 공식 문서를 참고하세요.
+- [정규표현식 패턴 탐색기](https://regex101.com/): 유용한 패턴을 찾을 수 있는 온라인 도구입니다. 이 사이트에서 정규표현식을 적용하여 결과를 바로 확인할 수 있습니다.
+- [코틀린 공식 블로그](https://blog.jetbrains.com/ko/kotlin/):

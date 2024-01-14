@@ -1,38 +1,51 @@
 ---
 title:                "Ruby: Generering av tilfeldige tall"
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Ruby"
-category:             "Numbers"
+category:             "Ruby"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Det kan være mange grunner til å generere tilfeldige tall i et Ruby-program. Kanskje du trenger å tilfeldig velge et element fra en liste, opprette et unikt passord eller simulere en tilfeldig hendelse. Uansett hva årsaken er, er det viktig å vite hvordan man kan gjøre dette i Ruby.
+# Hvorfor
 
-## Hvordan
-Det finnes mange måter å generere tilfeldige tall i Ruby på, men vi skal se på de to mest vanlige metodene: `rand()` og `Random.new`.
+Programmering er et allsidig og kreativt verktøy som kan brukes til å løse en rekke problemer og utforske ulike konsepter. En av de hyppig brukte funksjonene i programmering er å generere tilfeldige tall. Dette kan være nyttig for å simulere situasjoner, sikre sikkerhet og for å skrive underholdende spill. I denne bloggposten skal vi utforske hvordan man kan generere tilfeldige tall ved hjelp av Ruby-programmeringsspråket.
 
-```Ruby
-# Generer et tilfeldig tall mellom 1 og 10
-puts rand(1..10)
+# Hvordan
 
-# Opprette et tilfeldig objekt av Random-klassen
-random = Random.new
-puts random.rand(100) # Generer et tilfeldig tall mellom 1 og 100
+For å generere tilfeldige tall i Ruby, kan vi bruke metoden `rand` som tar inn et argument for det maksimale tallet vi ønsker å generere. La oss for eksempel si at vi ønsker å generere et tilfeldig tall mellom 1 og 10. Da kan vi bruke følgende kode:
+
+```ruby
+tilfeldig_tall = rand(10)
+puts tilfeldig_tall
 ```
 
-Kjøring av dette koden vil gi noe lignende dette som output:
+Når vi kjører dette eksempelet, vil programmet generere et tilfeldig tall mellom 0 og 9 og skrive det ut til konsollen. Dette er fordi `rand`-metoden inkluderer 0 som et mulig tall. Hvis vi ønsker å generere et tall mellom 1 og 10, kan vi legge til 1 i `rand`-metodens argument:
 
+```ruby
+tilfeldig_tall = rand(10) + 1
+puts tilfeldig_tall
 ```
-7
-42
+
+I tillegg til å generere tilfeldige heltall, kan vi også generere tilfeldige desimaltall ved å bruke `rand`-metoden på følgende måte:
+
+```ruby
+tilfeldig_desimaltall = rand
+puts tilfeldig_desimaltall
 ```
 
-## Deep Dive
-Hvis du vil forstå mer om hvordan tilfeldige tall blir generert i Ruby, er det nyttig å vite at `rand()`-metoden egentlig bare er en forkortelse for `Random.new.rand()`. Dette betyr at alle parametrene til `rand()`-metoden egentlig blir sendt til `Random.new.rand()`. Dette gir deg muligheten til å spesifisere en egen startverdi for tilfeldighetsgenereringen ved å inkludere en `Seed`-parameter i `Random.new`-objektet. En seed-verdi sørger for at den samme sekvensen av tilfeldige tall blir generert hver gang programmet kjøres, noe som kan være nyttig for testing eller konsistente resultater.
+Dette vil generere et tilfeldig desimaltall mellom 0 og 1 og skrive det ut til konsollen.
 
-## Se også
-- [Rubys offisielle dokumentasjon om Random-klassen](https://ruby-doc.org/core-2.7.3/Random.html)
-- [En Stack Overflow-tråd om hvordan seed-verdier fungerer i Ruby](https://stackoverflow.com/questions/39043187/ruby-rand-always-returns-same-value/39043539#39043539)
-- [En guide om tilfeldighetsgenerering og seed-verdier i Ruby](https://www.rubyguides.com/2018/12/ruby-seed-random/)
+# Dypdykk
+
+Nå som vi har sett på hvordan vi kan generere tilfeldige tall i Ruby, la oss se på hvordan dette fungerer i bakgrunnen. Ruby bruker en algoritme kalt "Mersenne Twister" for å generere tilfeldige tall. Denne algoritmen ble utviklet av Makoto Matsumoto og Takuji Nishimura i 1997 og er en av de mest brukte og anerkjente algoritmene for å generere tilfeldige tall.
+
+En av de viktigste egenskapene til Mersenne Twister-algoritmen er at den produserer en sekvens med tall som har en veldig lang periode før de begynner å gjenta seg. Dette gjør den til et pålitelig og effektivt verktøy for å generere tilfeldige tall i programmeringssammenheng.
+
+# Se også
+
+- [Ruby offisiell dokumentasjon om rand-metoden](https://ruby-doc.org/core-2.7.1/Random.html#method-i-rand)
+- [Algorithms and Randomness, en introduksjon til tilfeldige tall og algoritmer](https://towardsdatascience.com/algorithms-and-randomness-47b425f92f1c)
+- [The Mersenne Twister random number generator](https://en.wikipedia.org/wiki/Mersenne_Twister) (engelsk)

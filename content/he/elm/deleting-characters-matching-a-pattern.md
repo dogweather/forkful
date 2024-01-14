@@ -1,48 +1,40 @@
 ---
-title:                "Elm: מחיקת תווים התואמים לתבנית"
+title:                "Elm: מחיקת תווים התואמים תבנית"
+simple_title:         "מחיקת תווים התואמים תבנית"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/elm/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+#″″ מדוע
 
-בכתיבת קוד באלם, לעיתים ייתכן שנתקלו בצורך למחוק תווים שמתאימים לתבנית מסוימת. המשימה הזו ניתנת לביצוע בכמה דרכים שונות תלויות בצרכי הקוד המיוחדים לכל מקרה. בכתבה זו נכיר שתי דרכים למחיקת תווים כאלו, ונלמד מתי כדאי להשתמש בכל דרך באופן לגימור הקוד שלנו.
+כמו כל כתיבת קוד, בעיקרון ישנם מספר דרכים להתמודדות עם בעיות שונות. מחיקת תווים המתאימים לתבנית מבין אלו היא כלי חשוב במגוון הרחב של שפת Elm. כדי להבין לעומק את הכוח של כלי זה, נדגים כמה דוגמאות פשוטות ונעיין בשימושים נפוצים שלו.
 
-## איך לעשות
+#″″ איך לעשות
 
-למחיקת תווים ניתן להשתמש בפונקציית `String.dropWhile` שמקבלת כקלט פונקציה שבודקת אם לתו מסוים יש תבנית מסוימת ומחזירה אמת או שקר לפי הצורך. לדוגמה:
-
-```Elm
-nameContainsPattern : String -> Bool
-nameContainsPattern name =
-    String.contains "elm" name
-
-removePattern : String -> String
-removePattern str =
-    String.dropWhile nameContainsPattern str
-```
-
-כמו כן, ניתן להשתמש בפונקציית `String.replace` שמחליפה תבנית מסוימת בתווים אחרים. לדוגמה:
+תחילה נגדיר פונקציה בשם `deleteMatchingCharacters` המקבלת שני פרמטרים: מחרוזת ותבנית. נשתמש בפונקציות כמו `toList`, `map`, ו- `filter` כדי לממש את הפונקציה.
 
 ```Elm
-removePattern : String -> String
-removePattern str =
-    String.replace "elm" "ELM" str
+deleteMatchingCharacters : String -> String -> String
+deleteMatchingCharacters str pattern = 
+  let
+    strList = String.toList str
+    matchingCharacters = List.filter (\c -> c /= pattern) strList
+  in
+    List.map String.fromChar matchingCharacters |> String.concat
 ```
 
-אם התבנית מכילה פסיקים או תווים מיוחדים, ניתן להשתמש בפונקציית `String.filter` שמסננת את התווים שאינם עונים על התבנית הכווינת. לדוגמה:
+למשל, אם נקרא לפונקציה כך: `deleteMatchingCharacters "Hello, World!" "l"`, הפלט יהיה `Heo, Word!`.
 
-```Elm
-removeSpecialChars : String -> String
-removeSpecialChars str =
-    String.filter (\char -> Char.isAlpha char || Char.isSpace char) str
-```
+את הפונקציה ניתן להשתמש בה במגוון רחב של תרגילים, כגון מחיקת תווים מעקב לפי תבניות (למשל, מחיקת כל הספרות או האותיות), מחיקת תווים מסוימים בתחילת ובסוף המחרוזת, ועוד.
 
-אלו רק כמה דוגמאות מתוך הרבה דרכים אפשריות למחיקת תווים מתאימים לתבנית. מומלץ לחקור ולנסות עם פונקציות נוספות לפי הצורך של כל קוד מסוים.
+#″″ העריכה העמוקה
 
-## מעמקים
+בתוך הפונקציה `deleteMatchingCharacters` יש לנו משתנה `matchingCharacters` שמכיל רשימה של תווים התואמים את התבנית שנמחקים מהמחרוזת שהתקבלה כפרמטר. על מנת להבין את התהליך עומקית יותר, נחקור את הפונקציות שהשתמשנו בהן.
 
-מחיקת תווים מתאימים לתבנית באלם ניתנת לביצוע בכמה דרכים, ולכן חשוב לבחור את הדרך המתאימה ביותר לצרכי הקוד שלנו. לדוגמה, אם יש לנו רשימת מחרוזות עם כמ
+קוד הפונקציה `deleteMatchingCharacters` מתחיל עם השימוש בפונקציה `String.toList` שמקבלת מחרוזת וממירה אותה לרשימה של תווים. נקבל כך את המחרוזת "Hello, World!" כמו כן: `['H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!']`.
+
+לאחר מכן

@@ -1,32 +1,40 @@
 ---
-title:                "Arduino: Procurando e substituindo texto"
+title:                "Arduino: Buscando e substituindo texto"
+simple_title:         "Buscando e substituindo texto"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que?
+## Por que
 
-Se você é um programador iniciante ou experiente, é provável que já tenha se deparado com a necessidade de fazer alterações em um grande bloco de texto. Isso pode ser uma tarefa tediosa e demorada se feito manualmente. Felizmente, existe uma maneira mais eficiente de realizar essa tarefa: a busca e substituição de texto. Neste artigo, vamos explorar como realizar essa operação em linguagem Arduino.
+Se você é um amante da tecnologia e gosta de explorar diferentes projetos de eletrônica, provavelmente já teve que lidar com a necessidade de substituir textos em seus códigos Arduino. Este processo pode ser útil para fazer alterações rápidas ou para facilitar a compreensão do código. Portanto, saber como realizar essa tarefa pode ser muito útil.
 
-## Como fazer:
+## Como fazer
 
-A busca e substituição de texto em Arduino pode ser feita usando a função `replace()` da biblioteca String. Primeiro, você precisa criar uma variável do tipo `String` para armazenar o texto original. Em seguida, chame a função `replace()` e passe como parâmetros o texto a ser substituído e o texto de substituição. Veja o exemplo abaixo:
+Substituir textos em um código Arduino é uma tarefa relativamente simples, graças às funções incorporadas na linguagem. Para realizar essa ação, você precisará da função ```replace()```, que recebe três argumentos: a variável que contém o texto original, o texto a ser substituído e o novo texto a ser inserido. Vamos dar uma olhada em um exemplo prático:
 
 ```
-Arduino String texto = "Reunindo-se com o Arduino é muito divertido!";
-texto.replace("divertido", "fácil");
+String texto = "Oi, mundo!";
+texto.replace("oi", "Olá");
+Serial.println(texto);
 ```
-O código acima substituirá a palavra "divertido" por "fácil" na variável `texto`, resultando no seguinte output: "Reunindo-se com o Arduino é muito fácil!".
 
-## Detalhando:
+Neste código, a palavra "Oi" será substituída por "Olá", resultando na seguinte saída: "Olá, mundo!". É importante notar que a função ```replace()``` é case-sensitive, então "oi" e "Oi" são considerados textos diferentes e só serão substituídos se estiverem escritos da mesma maneira.
 
-A função `replace()` pode ser usada para substituir todas as ocorrências de uma determinada palavra ou caractere em um texto. Por padrão, a substituição será feita em todas as ocorrências, mas você também pode limitar a quantidade de substituições passando um terceiro parâmetro opcional. Além disso, a função é case-sensitive, ou seja, ela diferencia maiúsculas e minúsculas.
+## Mergulho profundo
 
-## Veja também:
+A função ```replace()``` também aceita expressões regulares como argumentos, o que a torna ainda mais poderosa. Além disso, se você precisar substituir todos os casos de uma determinada palavra ou frase, é possível usar a função ```replaceAll()```, que funciona de maneira semelhante à ```replace()```, mas faz a substituição em todos os casos.
 
-- [Documentação oficial da função `replace()`](https://www.arduino.cc/reference/en/language/functions/string/functions/replace/)
-- [Tutorial sobre como usar a função `replace()`](https://randomnerdtutorials.com/arduino-replace-string-function/)
-- [Exemplo prático de uso da função `replace()`](https://www.instructables.com/id/Arduino-Text-Replace/)
+Outro detalhe importante é que a função ```replace()``` retorna um valor booleano, indicando se a substituição foi bem-sucedida ou não. Portanto, se você precisar realizar alguma ação com base nesse resultado, é possível armazená-lo em uma variável e usá-lo em suas condições condicionais.
+
+## Veja também
+
+Aqui estão alguns links úteis com mais informações sobre substituição de texto em códigos Arduino:
+
+- [Documentação oficial do Arduino sobre a função replace()](https://www.arduino.cc/reference/pt/language/variables/data-types/string/functions/replace/)
+- [Tutorial em vídeo sobre como substituir texto em códigos Arduino](https://www.youtube.com/watch?v=-3KUTF0KIYM)
+- [Artigo sobre expressões regulares em Arduino](https://www.automotioncomponents.co.uk/blog/using-regular-expressions-with-the-arduino-programming-language/)

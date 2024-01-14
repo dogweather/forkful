@@ -1,42 +1,51 @@
 ---
 title:                "C: 문자열의 길이 찾기"
+simple_title:         "문자열의 길이 찾기"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
-문자열의 길이를 찾는 것에 대해 왜 관심을 가져야 할까요? 그 이유는 바로 문자열이 프로그래밍에서 매우 중요하기 때문입니다. 문자열은 텍스트를 다루는 데 필수적이며, 많은 프로그램에서 사용되는 데이터 유형 중 하나입니다. 그렇기 때문에 문자열의 길이를 알고 있는 것은 매우 유용합니다.
+# 왜
 
-## 하는 방법
-C 프로그래밍에서 문자열의 길이를 찾는 것은 간단한 작업입니다. 우선 문자열의 시작 위치를 가리키는 포인터를 선언합니다. 그리고 포인터가 가리키는 값이 NULL이 아닐 때까지 계속 반복문을 실행합니다. 반복문 안에서 포인터를 하나씩 이동시키면서 문자열의 길이를 카운트하면 됩니다.
+스트링의 길이를 찾는 것에 참여하는 이유는 매우 눈에 띄는 이유가 있습니다 - 그것은 C 프로그래밍 언어에서 매우 기본적이며 많은 다른 프로그래밍 작업에 필요하기 때문입니다.
 
-```C
-// 입력 문자열
-char str[] = "Hello World";
-// 포인터 선언 및 초기화
-char *ptr = str;
-// 문자열의 길이를 나타낼 변수 선언 및 초기화
-int length = 0;
-// 포인터가 가리키는 값이 NULL이 아닐 때까지 반복
-while (*ptr != '\0') {
-    // 포인터 이동
-    ptr++;
-    // 길이 증가
-    length++;
+## 방법
+
+우리가 할 일은 매우 간단합니다. 우선, ```str``` 이라는 문자열 변수를 생성하고 그 값을 설정합니다. 그런 다음 ```strlen()``` 함수를 사용하여 해당 문자열의 길이를 찾을 수 있습니다. 아래는이 작업을 실제 코드로 보여주는 예시입니다.
+
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+  char str[] = "안녕하세요?";
+
+  printf("문자열의 길이는: %d", strlen(str));
+
+  return 0;
 }
-// 결과 출력
-printf("String length: %d\n", length);
 ```
 
-위 코드를 실행하면 "String length: 11"이라는 결과가 출력될 것입니다. 이를 보면 본인이 작성한 프로그램에서 문자열의 길이를 어떻게 구할 수 있는지 이해할 수 있을 것입니다.
+위 코드를 실행하면 다음과 같은 출력이 나올 것입니다.
 
-## 깊이있게 알아보기
-실제로 C 프로그래밍에서는 문자열의 길이를 구하는 방법이 더 다양하게 존재합니다. 위에서 사용한 while문 대신 for문을 사용하여 구현할 수도 있습니다. 또한, C 라이브러리에서 제공하는 strlen() 함수를 사용할 수도 있습니다. 이 외에도 문자열의 길이를 구하는 더 효율적인 방법들도 존재합니다. 따라서 자신에게 가장 적합한 방법을 찾아 사용해보는 것이 좋습니다.
+```
+문자열의 길이는: 7
+```
+
+위 코드에서 우리는 먼저 ```stdio.h``` 및 ```string.h``` 라이브러리를 포함 시켰습니다. 그런 다음 ```main()``` 함수 내부에서 ```str``` 변수를 생성하고 값을 설정했습니다. 마지막으로 ```printf()``` 함수를 사용하여 문자열의 길이를 출력했습니다. 이때, ```strlen()``` 함수는 ```string.h``` 라이브러리에서 제공하는 함수로, 매개 변수로 들어오는 문자열의 길이를 계산해주는 역할을 합니다.
+
+## 심층 분석
+
+그럼 왜 위와 같은 방식으로 문자열의 길이를 찾아야 할까요? 문자열은 C 프로그래밍에서 매우 중요한 역할을 합니다. 때문에 문자열의 길이를 알고 있으면 많은 작업에서 손쉽게 활용할 수 있습니다. 예를 들어, 우리가 입력 받은 문자열을 다른 변수에 저장하고 이를 가공하거나, 우리가 입력 받은 문자열의 길이가 정해져 있는 경우 해당 길이에 맞게 메모리를 할당하고 이를 활용하는 등 다양한 상황에서 필요합니다.
+
+이러한 작업에 있어서는 ```strlen()``` 함수가 매우 유용합니다. 이 함수는 문자열의 길이를 계산하는 역할을 하기 때문에 우리가 매번 해당 작업을 직접 하지 않고도 문자열의 길이를 쉽게 구할 수 있습니다. 또한 이 함수는 매우 간단하고 효율적인 알고리즘을 사용하기 때문에 코드가 불필요하게 복잡해지는 경우도 없으며, 여러분이 직접 구현하는 것보다 훨씬 빠른 속도로 길이를 구할 수 있습니다.
 
 ## 참고 자료
-- [C Programming Tutorial - Strings](https://www.programiz.com/c-programming/c-strings)
-- [C Programming - String Length](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
-- [GeeksforGeeks - different ways to find length of a string in C/C++](https://www.geeksforgeeks.org/different-ways-find-length-string-c/)
+
+- [C언어의 strlen() 함수 (tistory.com)](https://blog.naver.com/jwyoon25/60159098466)
+- [strlen() 함수 (cplusplus.com)](https://www.cplusplus.com/reference/cstring/strlen/)

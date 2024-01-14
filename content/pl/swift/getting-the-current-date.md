@@ -1,58 +1,46 @@
 ---
-title:                "Swift: Uzyskiwanie bieżącej daty"
+title:                "Swift: Otrzymywanie bieżącej daty"
+simple_title:         "Otrzymywanie bieżącej daty"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego? 
 
-W programowaniu często jesteśmy zmuszeni do wykorzystywania dat, szczególnie obecnej daty. Może to być potrzebne do zapisywania wydarzeń, porządkowania danych lub w celach statystycznych. Dlatego warto wiedzieć, jak uzyskać bieżącą datę w języku Swift.
+W dzisiejszych czasach, programowanie stało się nieodłącznym elementem naszego życia. Wiele osób codziennie korzysta z różnego rodzaju aplikacji i programów, a przy tym nie zdaje sobie sprawy z tego, ile pracy i algorytmów stoi za ich działaniem. Jeśli jesteś jedną z tych osób, które chcą zacząć swoją przygodę z programowaniem, lub po prostu chcesz dowiedzieć się więcej na temat jednej z podstawowych funkcji języka Swift - pobierania aktualnej daty, to ten artykuł jest dla Ciebie.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby uzyskać bieżącą datę w języku Swift, możemy skorzystać z wbudowanej funkcji `Date()`. Przykładowy kod wygląda następująco:
-
-```Swift
-let currentDate = Date()
-print(currentDate)
-```
-Output:
-`2021-02-22 19:00:00 +0000`
-
-Jeśli chcemy zmienić format wyświetlanego czasu, możemy użyć obiektu `DateFormatter` wraz z funkcją `string(from:)`. Przykładowy kod wygląda następująco:
+Aby pobrać aktualną datę w języku Swift, możemy skorzystać z klasy `Date`. Jest to klasa, która reprezentuje datę i czas w naszym kodzie. Przejdźmy teraz do praktyki i zobaczmy, jak wykorzystać tę klasę w naszym kodzie.
 
 ```Swift
-let formatter = DateFormatter()
-formatter.dateFormat = "dd/MM/yyyy"
+// Tworzymy obiekt klasy Date przechowujący aktualną datę i czas
 let currentDate = Date()
-print(formatter.string(from: currentDate))
+// Tworzymy obiekt klasy DateFormatter, który posłuży nam do formatowania daty
+let dateFormatter = DateFormatter()
+// Ustawiamy format daty, w którym chcemy wyświetlać dane
+dateFormatter.dateFormat = "dd/MM/yyyy"
+// Wykorzystujemy date formatter do wyświetlenia aktualnej daty w wybranym przez nas formacie
+print(dateFormatter.string(from: currentDate))
+// Output: 10/02/2021
 ```
-Output:
-`22/02/2021`
 
-## Głębsze zanurzenie 
+Powyższy przykład pokazuje, jak prostym sposobem możemy pobrać i wyświetlić aktualną datę w wybranym przez nas formacie. Oczywiście, format możemy dostosować do swoich potrzeb, wykorzystując dostępne specyfikatory daty.
 
-Uzyskiwanie bieżącej daty może być bardziej skomplikowane, jeśli chcemy dodatkowo uwzględnić różnicę stref czasowych czy zmianę czasu letniego/zimowego. Wówczas możemy skorzystać z klasy `Calendar`, która pozwala na dostęp do bardziej zaawansowanych funkcji związanych z datami.
+## Głębsze wgląd
 
-Na przykład, aby uzyskać bieżącą datę w wybranej strefie czasowej, możemy użyć kodu:
+Teraz, gdy już wiemy, jak pobierać i formatować datę w języku Swift, warto poznać jeszcze kilka istotnych informacji na jej temat. Należy pamiętać, że obiekt `Date` przechowuje datę i czas w określonej strefie czasowej. Domyślnie, jest to strefa czasowa urządzenia, na którym nasz kod jest wykonywany. W przypadku potrzeby pracy z inną strefą czasową, możemy wykorzystać metodę `DateFormatter` `setTimeZone(_:)` i ustawić odpowiednią strefę czasową.
 
-```Swift
-let calendar = Calendar.current
-let currentDate = Date()
-let selectedDate = calendar.date(byAdding: .hour, value: 3, to: currentDate) //dodanie 3 godzin
-print(selectedDate)
-}
-```
-Output:
-`2021-02-22 22:00:00 +0000`
-
-Więcej informacji o klasie `Calendar` i jej możliwościach znajdziesz w dokumentacji Apple.
+Kolejną ważną klasą jest `Calendar`, która pozwala nam na wykonywanie operacji na dacie, takich jak dodawanie lub odejmowanie określonej liczby jednostek czasu. Warto zaznajomić się również z metodami takimi jak `dateComponents(_:, from:)` czy `dateInterval(of:for:)`, które pozwalają na wydobycie lub ustawienie konkretnych informacji o dacie.
 
 ## Zobacz także
 
-- [Dokumentacja Apple - Date](https://developer.apple.com/documentation/foundation/date)
-- [Dokumentacja Apple - DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Dokumentacja Apple - Calendar](https://developer.apple.com/documentation/foundation/calendar)
+1. Dokumentacja Apple na temat klasy [Date](https://developer.apple.com/documentation/foundation/date)
+2. Przewodnik po formatowaniu daty i czasu w języku Swift [https://nshipster.com/dateformatter/](https://nshipster.com/dateformatter/)
+3. Przykładowy projekt wykorzystujący klasy `Date` i `Calendar` [https://github.com/vprazz/swift-date-app](https://github.com/vprazz/swift-date-app)
+
+Dzięki temu artykułowi, już teraz wiesz jak pobierać aktualną datę w języku Swift, jak możesz ją formatować oraz jak wykonywać operacje na dacie. Teraz wystarczy wykorzystać tę wiedzę w swoich projektach i cieszyć się prostotą i skutecznością tej funkcji. Powodzenia!

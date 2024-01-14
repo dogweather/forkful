@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Sammenstilling av strenger"
+title:                "PHP: Sammenføyning av strenger"
+simple_title:         "Sammenføyning av strenger"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/concatenating-strings.md"
 ---
 
@@ -9,48 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å kombinere strenger i PHP kan være nyttig når du ønsker å lage dynamiske tekster eller meldinger. Ved å sette sammen to eller flere strenger, kan du skape en mer tilpasset og personlig utskrift.
+Å kombinere strenger er en viktig konsept i PHP-programmering, og det er noe som de fleste utviklere vil støte på i sin karriere. Det er en effektiv måte å skape dynamiske og tilpassede meldinger eller tekster på. Det kan være nyttig for å vise variabler eller brukerinput på nettsider eller i programmer.
 
 ## Hvordan
 
-For å kombinere strenger i PHP, kan du bruke operatoren "." for å sette sammen to strenger. For eksempel:
+Det enkleste eksempelet på å kombinere strenger er å bruke en prikkoperatør: " . ".
+La oss si at vi ønsker å lage en enkel velkomstmelding på en nettside. Vi kan kombinere en tekststreng med en brukers navn ved å bruke prikkoperatøren:
 
-```PHP
-$message = "Hei";
-$message .= " verden!";
-echo $message;
-
-// Output: Hei verden!
+```
+<?php
+$navn = "Ole";
+echo "Velkommen, " . $navn . "!"; 
+// Output: Velkommen, Ole!
+?>
 ```
 
-Du kan også kombinere variabler og strenger, for å få en enda mer dynamisk utskrift. For eksempel:
+Vi kan også bruke en annen praktisk metode, ```sprintf()```, for å kombinere strenger. Denne funksjonen gir mer fleksibilitet ved å tillate oss å sette inn variabler eller verdier på ønskede steder i tekststrengen ved hjelp av spesielle tegn. Et eksempel på dette er:
 
-```PHP
-$name = "Kari";
-$message = "Hei " . $name . ", velkommen til vår side!";
-echo $message;
-
-// Output: Hei Kari, velkommen til vår side!
+```
+<?php
+$produkt = "sko";
+$antall = 2;
+echo sprintf("Du har kjøpt %d %s", $antall, $produkt);
+// Output: Du har kjøpt 2 sko
+?>
 ```
 
-Det er også mulig å inkludere tallsverdier i en streng ved å bruke "string interpolation". Dette betyr at PHP vil erstatte variabler med deres verdier inni en streng. For eksempel:
+## Dypdykk
 
-```PHP
-$age = 30;
-$message = "Jeg er $age år gammel.";
-echo $message;
-
-// Output: Jeg er 30 år gammel.
-```
-
-## Dyp dykk
-
-Ved å kombinere strenger på riktig måte, kan du spare tid og gjøre koden din mer lesbar. Du kan også bruke forskjellige funksjoner som `str_replace()` eller `substr()` for å manipulere og kombinere strenger på en enda mer avansert måte.
-
-Det er også viktig å huske på å bruke riktig syntaks når du kombinerer strenger, for å unngå feil. Dette inkluderer å bruke riktig plassering av hermetegn og punktuering.
+Det er viktig å være oppmerksom på at når du kombinerer strenger i PHP, vil verdiene automatisk være konvertert til strenger hvis de ikke allerede er det. Dette betyr at hvis du for eksempel prøver å kombinere en tallverdi med en tekststreng ved hjelp av prikkoperatøren, vil tallet bli konvertert til en streng.
+Et annet viktig konsept å være klar over er operatorprioritet. Dette påvirker rekkefølgen som uttrykkene blir evaluert i, og kan påvirke resultatet av strengkombinasjonen hvis det ikke tas hensyn til.
 
 ## Se også
 
-- [PHP String Operators Documentation](https://www.php.net/manual/en/language.operators.string.php)
-- [PHP String Functions Documentation](https://www.php.net/manual/en/ref.strings.php)
-- [W3Schools PHP String Concatenation Tutorial](https://www.w3schools.com/php/php_string_concatenation.asp)
+For å lære mer om concatenate strings i PHP, kan du sjekke ut disse ressursene:
+
+- [PHP Dokumentasjon: String Operators](https://www.php.net/manual/en/language.operators.string.php)
+- [W3Schools: PHP Concatenation](https://www.w3schools.com/php/php_operators.asp)
+- [TutorialsPoint: PHP String Operators](https://www.tutorialspoint.com/php/php_string_operators.htm)

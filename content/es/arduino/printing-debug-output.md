@@ -1,35 +1,49 @@
 ---
 title:                "Arduino: Imprimiendo salida de depuración"
+simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué imprimir la salida de depuración en Arduino?
+## Por Qué
 
-La impresión de la salida de depuración es una práctica común en la programación de Arduino, ya que puede ser de gran ayuda para encontrar errores y solucionar problemas en tu código. Al imprimir la información del proceso de ejecución, puedes identificar posibles fallas y corregirlas de manera más eficiente. Además, puede proporcionar una visión general del funcionamiento de tu programa.
+Cuando estás trabajando en un proyecto de Arduino, a veces puede ser difícil saber lo que realmente está sucediendo en el código. Por eso, imprimir la salida de depuración es una excelente manera de diagnosticar y solucionar problemas en tu programa.
 
-## Cómo imprimir la salida de depuración en Arduino
+## Cómo Hacerlo
 
-Para imprimir la salida de depuración en Arduino, utilizamos la función `Serial.println()`, que permite enviar datos a través del puerto serial a una computadora u otro dispositivo. Por ejemplo:
+Para imprimir la salida de depuración, debemos utilizar la función "Serial.print()" en Arduino. Esta función nos permite imprimir mensajes y valores en la consola de serie, que se puede leer a través de un monitor serial externo.
 
 ```
-Arduino.println("La temperatura actual es: " + String(temperatura));
+Arduino ejemplo de código:
+
+void setup() {
+Serial.begin(9600); //Iniciar la comunicación serie a una velocidad de 9600 baudios
+}
+
+void loop() {
+int x = 5;
+Serial.print("El valor de x es: "); //Imprimir un mensaje
+Serial.println(x); //Imprimir el valor de la variable x y un salto de línea
+delay(1000); // Esperar un segundo antes de repetir el bucle
+}
 ```
 
-Este código imprimirá en pantalla la temperatura actual medida por el sensor en formato de texto. También puedes utilizar variables dentro de la función para imprimir datos en tiempo real.
+La salida de depuración se mostrará en la consola del monitor serial como "El valor de x es: 5". Puedes utilizar "Serial.println()" para imprimir valores de diferentes tipos de datos, como números enteros, flotantes, caracteres y cadenas de texto.
 
-## Profundizando en la impresión de salida de depuración
+## Profundizando
 
-Además de la función `Serial.println()`, existen otras formas de imprimir la salida de depuración en Arduino, como `Serial.print()` y `Serial.write()`. También puedes utilizar el monitor serial en el IDE de Arduino para ver y guardar los datos de salida.
+Además de imprimir mensajes y valores, la función "Serial.print()" también puede ser utilizada para realizar un seguimiento del flujo de tu programa. Puedes insertarla en diferentes partes de tu código para ver si el programa está pasando por esa sección o no.
 
-Es importante tener en cuenta que la impresión de la salida de depuración puede afectar al rendimiento de tu código, por lo que es recomendable desactivarla una vez que hayas finalizado la fase de depuración.
+También hay otros comandos que se pueden utilizar en conjunto con "Serial.print()", como "Serial.begin()", "Serial.end()", "Serial.available()" y "Serial.read()". Estos te permiten controlar la comunicación serie y recibir datos desde el puerto serial.
 
-## Ver también
-- [Tutorial de Arduino sobre la impresión de la salida de depuración](https://www.arduino.cc/en/Tutorial/Serial)
-- [Documentación oficial de la función Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Ejemplos de impresión de salida de depuración en proyectos de Arduino](https://circuitdigest.com/microcontroller-projects/arduino-serial-print-behind-the-curtains)
+No olvides comentar las líneas de código que utilizas para imprimir la salida de depuración una vez que hayas solucionado tus problemas. Esto te ayudará a saber qué cambios has realizado en el código y a mantener un registro de tu progreso.
 
-¡Ahora ya sabes cómo imprimir la salida de depuración en tus programas de Arduino! Con esta herramienta, podrás depurar tu código de manera más efectiva y asegurarte de que todo funcione correctamente. ¡Sigue explorando y aprendiendo más sobre Arduino en nuestra sección de tutoriales y proyectos!
+## Ver También
+
+- [Documentación Oficial de Arduino] (https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- [Tutorial de Debugging con Serial en Arduino] (https://create.arduino.cc/projecthub/taifur/debugging-serial-communication-in-arduino-b9eac7)
+- [Cómo Utilizar el Monitor Serial en Arduino] (https://www.instructables.com/How-To-Use-Arduino-Serial-Ports/)

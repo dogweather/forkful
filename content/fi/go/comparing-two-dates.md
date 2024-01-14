@@ -1,53 +1,60 @@
 ---
 title:                "Go: Kahden päivämäärän vertailu"
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi vertailla kahta päivämäärää Go-koodilla?
 
-Monissa ohjelmoinnin projekteissa on tarve vertailla eri päivämääriä, esimerkiksi tarkistaakseen onko jokin tapahtuma jo mennyt. Tässä blogikirjoituksessa käymme läpi, miten tämä voidaan toteuttaa Go-ohjelmointikielellä.
+Päivämäärien vertailu on yleinen tarve lähes kaikissa ohjelmointiprojekteissa. Oli kyse sitten tapahtumien järjestämisestä tai ajan laskemisesta, päivämäärien vertaaminen on välttämätöntä. Go-ohjelmointikielen avulla tämä tehtävä on helppo toteuttaa, ja tässä blogikirjoituksessa selvitämme miten.
 
-## Kuinka
+## Kuinka vertailla kahta päivämäärää Go-koodilla?
 
-Yksi tapa vertailla päivämääriä on käyttää aikaleimoja (timestamps), jotka ovat kokonaislukuja, jotka esittävät ajanhetkeä tiettynä sekuntina. Go tarjoaa time-paketin, jossa on mahdollista luoda aikaleimoja ja vertailla niitä. Alla on yksinkertainen esimerkki, jossa verrataan kahta päivämäärää ja tulostetaan tulos konsoliin:
+Päivämäärien vertaaminen Go-koodilla onnistuu helposti time-paketin avulla. Alla olevassa esimerkissä luomme kaksi päivämäärää ja vertailemme niitä käyttäen before ja after tarkistusmuuttujia.
 
 ```Go
 package main
+
 import (
     "fmt"
     "time"
 )
+
 func main() {
-    date1 := time.Date(2021, time.May, 10, 12, 0, 0, 0, time.UTC)
-    date2 := time.Date(2021, time.May, 11, 12, 0, 0, 0, time.UTC)
-    
-    if date1.Before(date2) {
-        fmt.Println("Päivämäärä 1 on ennen päivämäärää 2")
-    } else {
-        fmt.Println("Päivämäärä 2 on ennen päivämäärää 1")
-    }
+
+    pvm1 := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
+    pvm2 := time.Date(2021, time.February, 1, 0, 0, 0, 0, time.UTC)
+
+    before := pvm1.Before(pvm2)
+    after := pvm1.After(pvm2)
+
+    fmt.Println("Päivämäärä 1 ennen päivämäärää 2:", before)
+    fmt.Println("Päivämäärä 1 jälkeen päivämäärää 2:", after)
 }
 ```
+Tämä koodi tulostaa seuraavan:
 
-Tulostus:
+Päivämäärä 1 ennen päivämäärää 2: true
+Päivämäärä 1 jälkeen päivämäärää 2: false
 
-```
-Päivämäärä 1 on ennen päivämäärää 2
-```
+Go:ssa päivämäärät ovat time.Time -tyyppisiä objekteja, joiden avulla voidaan suorittaa erilaisia toimintoja kuten vertailua. Päivämäärien tarkkuus on nanosekunteihin asti, mikä tekee Go:sta tehokkaan työkalun päivämäärien käsittelyyn.
 
+## Syvällinen tarkastelu
 
-## Syvällisemmin
+Päivämäärien vertailu Go-koodilla perustuu ajan hetkien väliseen vertailuun. Käyttämällä before ja after metodeja voidaan selvittää onko jokin ajan hetki ennen vai jälkeen toista.
 
-Go-ohjelmointikielessä aikaleimoja käsitellään time.Time-tyypin avulla. Tämä tyyppi sisältää kaikki tarvittavat ominaisuudet ja metodit päivämäärien vertailuun. Aikaleimoja voidaan myös muuttaa eri aikavyöhykkeiden välillä, mikä helpottaa kansainvälisten sovellusten kehitystä.
+Toinen tapa vertailla päivämääriä on käyttää Equal-metodia, joka kertoo onko kaksi päivämäärää samat. Tällä tavoin voidaan tarkistaa esimerkiksi onko kaksi tapahtumaa tapahtunut samana päivänä.
 
-On myös tärkeää huomata, ettei päivämääriä ja aikaleimoja tulisi koskaan vertailla ==- tai !=-operaattoreilla. Aikaleimojen vertailuun tulisi aina käyttää Before(), After() tai Equal() -metodeja, jotka tarkastavat myös mahdolliset aikavyöhykkeiden erot.
-
+Go:ssa on myös mahdollista tehdä aikojen välistä laskentaa, kuten laskea kuinka monta päivää tai tuntia on kahden päivämäärän välillä. Tämä tapahtuu käyttämällä Sub-metodia, joka vähentää kahdesta päivämäärästä toisen toisesta.
 
 ## Katso myös
 
-- [Go time-paketti](https://golang.org/pkg/time/)
-- [Vertaile aikaleimoja Go:ssa](https://medium.com/@saturnsrings/time-manipulation-based-on-millisecond-data-in-golang-3bcace3aad7d)
+- [Time-paketin dokumentaatio](https://golang.org/pkg/time/)
+- [Go-opas päivämäärien käsittelyyn](https://golangbot.com/dates-in-go/)
+
+Kiitos kun luit tämän blogikirjoituksen! Toivottavasti se auttoi sinua ymmärtämään päivämäärien vertailun perusteet Go-koodilla. Muista kuitenkin, että on aina hyvä tutustua kunkin projektin tarpeisiin räätälöityihin toimintoihin ja metodeihin. Onnea ohjelmointiin!

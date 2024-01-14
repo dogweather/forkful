@@ -1,7 +1,9 @@
 ---
 title:                "PHP: Utskrift av felsökningsresultat"
+simple_title:         "Utskrift av felsökningsresultat"
 programming_language: "PHP"
-category:             "Testing and Debugging"
+category:             "PHP"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/printing-debug-output.md"
 ---
 
@@ -9,47 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva ut debuggmeddelanden är en viktig del av PHP-programmering. Det gör det enklare att spåra fel och hitta problem i koden. Utan dessa utskrifter kan det vara svårt att förstå varför en kod inte fungerar som den ska.
+Att skriva kod kan vara en komplex process och ibland kan det vara svårt att felsöka och hitta fel i koden. En av de mest användbara sätten att felsöka din PHP-kod är genom att skriva ut felsökningsmeddelanden. Detta ger dig en djupare insikt i vad som händer i din kod och kan hjälpa dig att hitta och lösa problem snabbare.
 
 ## Så här gör du
 
-Ett enkelt sätt att skriva ut debuggmeddelanden är att använda funktionen `echo`. Här är ett exempel på hur du kan använda det:
+För att skriva ut debug-utdata i din PHP-kod, kan du använda funktionen ```print_r ()``` eller ```var_dump ()```. Dessa funktioner visar en detaljerad utskrift av variabler eller objekt som du väljer att felsöka.
 
-```PHP
+Här är ett enkelt exempel på hur du kan använda ```print_r ()``` för att felsöka en array i din kod:
+
+```
 <?php
-$namn = "Lisa";
-echo "Hej " . $namn . "!"; // Utskrift: Hej Lisa!
+$array = ['Apple', 'Orange', 'Banana'];
+print_r($array);
 ?>
 ```
 
-Du kan också använda funktionen `print_r` för att skriva ut en array eller objekt. Här är ett exempel:
+Detta kommer att producera följande utskrift:
 
-```PHP
+```
+Array
+(
+    [0] => Apple
+    [1] => Orange
+    [2] => Banana
+)
+```
+
+Som du kan se ger detta en detaljerad utskrift av alla element i arrayen, vilket gör det lättare att hitta eventuella fel eller problem.
+
+Å andra sidan kan ```var_dump ()``` ge dig ännu mer information om variabler eller objekt, inklusive datatyper, storlek och värden. Så här kan du använda ```var_dump ()``` för att felsöka en variabel:
+
+```
 <?php
-$frukter = array("äpple", "banan", "apelsin");
-print_r($frukter); // Utskrift: Array ( [0] => äpple [1] => banan [2] => apelsin )
+$name = 'Emma';
+var_dump($name);
 ?>
 ```
 
-För att skriva ut mer detaljerade debuggmeddelanden kan du använda funktionen `var_dump`. Här är ett exempel:
+Denna kod kommer att producera följande utskrift:
 
-```PHP
-<?php
-$ålder = 25;
-var_dump($ålder); // Utskrift: int(25)
-?>
 ```
+string(4) "Emma"
+```
+
+Som du kan se visar ```var_dump ()``` datatypen och längden på strängen, vilket kan vara mycket användbart vid felsökning av mer komplexa variabler.
 
 ## Djupdykning
 
-Det finns flera andra sätt att skriva ut debuggmeddelanden i PHP, som att använda felrapporteringsfunktioner eller logga meddelanden till en fil. Det är också viktigt att bara använda debuggutskrifter under utvecklingsfasen och ta bort dem när koden är klar för produktion.
+En annan metod för att skriva debug-utdata är att använda ```error_log ()```-funktionen. Istället för att skriva ut direkt på skärmen, kan du skicka felsökningsmeddelanden till en loggfilsfil. Detta är särskilt användbart om du vill felsöka en webbapplikation som kör på en server utan direkt åtkomst till en konsol eller terminal.
 
-## Se också
+Till exempel kan du använda ```error_log ()``` för att logga ett meddelande när en viss kodruta körs:
 
-Här är några länkar som kan vara användbara för att lära dig mer om att skriva ut debuggmeddelanden i PHP:
+```
+<?php
+error_log("Kodruta körs!");
+?>
+```
 
-- [PHP manualen för echo](https://www.php.net/manual/en/function.echo.php)
-- [PHP manualen för print_r](https://www.php.net/manual/en/function.print-r.php)
-- [PHP manualen för var_dump](https://www.php.net/manual/en/function.var-dump.php)
-- [En artikel om hur man använder felrapporteringsfunktioner i PHP](https://www.tutorialspoint.com/php/php_error_reporting.htm)
-- [En guide om att logga meddelanden till en fil i PHP](https://www.php.net/manual/en/function.error-log.php)
+Meddelandet sparas sedan i en loggfil som du kan granska senare för att hitta eventuella fel eller problem.
+
+## Se även
+
+- [PHP - Debuga din kod](https://www.php.net/manual/en/debugger.php)
+- [PHP - Felrapportering](https://www.php.net/manual/en/errorfunc.configuration.php)
+- [PHP - Felloggning](https://www.php.net/manual/en/function.error-log.php)

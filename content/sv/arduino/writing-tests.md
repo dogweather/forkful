@@ -1,75 +1,63 @@
 ---
-title:                "Arduino: Skriva tester"
+title:                "Arduino: Skapa tester"
+simple_title:         "Skapa tester"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
-Att skriva tester är en viktig del av utvecklingen av Arduino-program. Det hjälper dig att hitta och korrigera fel tidigt i processen, vilket sparar tid och frustration på lång sikt.
+##Varför skriva tester för Arduino-programmering
 
-##Så här
-Att skriva tester för dina Arduino-program är en enkel process som kan hjälpa dig att bygga bättre och mer tillförlitliga projekt. Eftersom Arduino är baserat på C++ kan du använda de flesta testramverk som finns för detta språk, till exempel Google Test eller Catch.
+När man programmerar för Arduino kan det vara frestande att hoppa över testningen och direkt gå till att implementera koden på en fysisk enhet. Men att skriva tester för din Arduino-kod kan spara dig mycket tid och frustration i det långa loppet.
 
-Här är ett exempel på hur du kan skriva en enhetstest i Arduino med hjälp av Google Test:
+##Så här skriver du tester för Arduino-kod
+
+För att skriva tester för Arduino-kod behöver du en testramverk som stödjer Arduino-bibliotek. Ett exempel på ett sådant ramverk är UnitTest++, som är gratis och öppen källkod.
+
+Efter att du har installerat och konfigurerat testramverket kan du skriva dina tester i samma fil som din kod eller i separata filer. Här är ett exempel på en testklass som testar en funktion som adderar två tal:
 
 ```Arduino
-#include <gtest/gtest.h>
-#include "my_program.h"
+#include <Arduino.h>
+#include "UnitTest++.h" //inkludera testramverket
 
-TEST(MyProgramTest, Addition) {
-    EXPECT_EQ(add(2, 3), 5);
+void addNumbers(int num1, int num2) { //testfunktion
+  return num1 + num2;
 }
 
-TEST(MyProgramTest, Subtraction) {
-    EXPECT_EQ(subtract(10, 5), 5);
+TEST(AddNumbersTest) { //testklass
+  //Arrangera
+  int expected = 5;
+  int actual = 5;
+  
+  //Utför
+  actual = addNumbers(2, 3);
+  
+  //Asserta
+  CHECK_EQUAL(expected, actual);
 }
 
-TEST(MyProgramTest, Multiplication) {
-    EXPECT_EQ(multiply(4, 5), 20);
-}
-
-TEST(MyProgramTest, Division) {
-    EXPECT_EQ(divide(20, 5), 4);
-}
-
-int main(int argc, char **argv) {
-    testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+int main() {
+  return UnitTest::RunAllTests(); //kör alla tester
 }
 ```
 
-Resultatet av dessa enhetstester skulle vara följande:
+Om testet passerar så kommer du se följande output i din seriella monitor:
 
 ```
-[==========] Running 4 tests from 1 test case.
-[----------] Global test environment set-up.
-[----------] 4 tests from MyProgramTest
-[ RUN      ] MyProgramTest.Addition
-[       OK ] MyProgramTest.Addition (0 ms)
-[ RUN      ] MyProgramTest.Subtraction
-[       OK ] MyProgramTest.Subtraction (0 ms)
-[ RUN      ] MyProgramTest.Multiplication
-[       OK ] MyProgramTest.Multiplication (0 ms)
-[ RUN      ] MyProgramTest.Division
-[       OK ] MyProgramTest.Division (0 ms)
-[----------] 4 tests from MyProgramTest (0 ms total)
-
-[----------] Global test environment tear-down
-[==========] 4 tests from 1 test case ran. (0 ms total)
-[  PASSED  ] 4 tests
+Success: 1 tests passed.
 ```
 
-Som du kan se är det väldigt enkelt att skriva och köra enhetstester i Arduino med hjälp av Google Test.
+##Djupdykning i att skriva tester för Arduino
 
-##Djupdykning
-Att skriva tester för dina Arduino-program är inte bara en bra utvecklingspraxis, det hjälper också till att förbättra kvaliteten och tillförlitligheten hos dina projekt. Genom att testa varje del av din kod kan du vara säker på att det fungerar som det ska och hitta eventuella fel eller buggar innan de blir ett större problem.
+Att skriva tester för Arduino-kod ger dig flera fördelar. Det hjälper till att felsöka dina program och hitta buggar innan du implementerar koden på en fysisk enhet. Det kan även hjälpa dig att förstå din kod bättre och underlätta vid vidare utveckling.
 
-Förutom enhetstester kan du också skriva systemtester för att testa hela programmet. Dessa tester hjälper till att säkerställa att alla delar av din kod fungerar tillsammans som de ska och ger ett helhetsperspektiv på ditt projekt.
+När du skriver tester för din kod bör du tänka på att testa alla möjliga scenarier och felkoder för att säkerställa att din kod fungerar som den ska. Det är även bra att återanvända tester när du uppdaterar din kod för att se till att inga nya buggar har introducerats.
 
-Se även
-- [Arduino sketch testing](https://www.arduino.cc/en/Guide/UnitTesting)
-- [Using Google Test for Arduino projects](https://libre.sciences.free.fr/ArduinoGoogleTest/)
-- [Introduction to test-driven development for Arduino](https://www.wired.com/story/test-driven-development-easier-arduino-projects/)
+##Se även
+
+- [Unit testing in Arduino](https://www.arduino.cc/en/Guide/UnitTesting)
+- [UnitTest++](https://github.com/unittest-cpp/unittest-cpp) testramverk för Arduino
+- [Arduino: Getting Started with Testing](https://learn.adafruit.com/arduino-testing/overview) tutorial om testning för Arduino

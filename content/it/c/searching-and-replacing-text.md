@@ -1,7 +1,9 @@
 ---
-title:                "C: Ricerca e sostituzione di testo"
+title:                "C: Cercare e sostituire testo"
+simple_title:         "Cercare e sostituire testo"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/searching-and-replacing-text.md"
 ---
 
@@ -9,44 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Il processo di sostituzione del testo è uno dei compiti più comuni quando si lavora con il linguaggio di programmazione C. Ciò può essere necessario per correggere errori di battitura, cambiare nomi di variabili o modificare parti di un programma. Indipendentemente dalla ragione, la capacità di cercare e sostituire il testo può rendere il lavoro di programmazione più efficiente e veloce. In questo articolo, esploreremo come implementare questa funzionalità in C e esploreremo alcune opzioni per migliorarne l'efficacia.
+La ricerca e la sostituzione di testo sono uno dei compiti più comuni nella programmazione. Non solo può aiutare a correggere facilmente errori ortografici, ma può anche essere utilizzato per effettuare cambiamenti rapidi ed efficienti all'interno del codice.
 
-## Come
+## Come fare
 
-Per sostituire il testo in C, dobbiamo utilizzare la funzione `strstr()` della libreria di stringhe. Questa funzione cerca una sottostringa all'interno di una stringa principale e restituisce un puntatore alla prima occorrenza trovata. È importante notare che `strstr()` è case-sensitive, quindi le maiuscole e le minuscole devono essere rispettate quando si cerca una corrispondenza.
+Per eseguire una ricerca e sostituzione di testo in C, è necessario utilizzare la funzione tolower () per convertire il testo in minuscolo e la funzione strcmp () per confrontare stringhe di testo. Qui di seguito è riportato un esempio di codice che sostituisce tutte le occorrenze di una lettera con un'altra all'interno di una stringa:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-  char text[] = "Questo è un esempio di una stringa";
-  char *match;
+int main()
+{
+   char testo[] = "Questo è un testo di esempio";
+   char lettera1 = 'o';
+   char lettera2 = 'a';
+   int lunghezza = strlen(testo);
 
-  match = strstr(text, "esempio"); // cerca "esempio" in "Questo è un esempio di una stringa"
+   for(int i = 0; i < lunghezza; i++)
+   {
+       if (tolower(testo[i]) == lettera1)
+       {
+           testo[i] = lettera2;
+       }
+   }
 
-  if (match != NULL) {
-  strncpy(match, "cambio", 6);  // sostituisce "esempio" con "cambio"
-  }
-
-  printf("%s\n", text); // stampa "Questo è un cambio di una stringa"
-
-  return 0;
+   printf("%s", testo);
+   return 0;
 }
+
 ```
 
-Il codice sopra utilizza la funzione `strstr()` per cercare la parola "esempio" all'interno della stringa `text` e sostituirla con "cambio". Per farlo, utilizziamo anche la funzione `strncpy()` per copiare la nuova parola nella posizione corretta. Nota che dobbiamo specificare la lunghezza della nuova parola nel parametro finale di `strncpy()` per evitare possibili problemi di buffer overflow.
+L'output di questo esempio sarà "Questà è un testà di esempie".
 
-Oltre alla funzione `strstr()`, esistono anche altre funzioni utili per la sostituzione del testo in C, come `strchr()` e `strtok()`. È importante utilizzare la funzione più adatta alle nostre esigenze per ottenere il risultato desiderato.
+## Approfondimento
 
-## Deep Dive
+Esistono diverse varianti di funzioni di ricerca e sostituzione in C, come ad esempio la funzione strcspn () che cerca una stringa di testo per un elenco di caratteri specificati e restituisce il numero di caratteri corrispondenti trovati. Inoltre, è anche possibile effettuare sostituzioni di testo all'interno di file di testo utilizzando la libreria standard di C "stdio.h" e le funzioni fgets () e fputs ().
 
-Mentre la sostituzione del testo può sembrare un problema più semplice da risolvere, ci sono alcune considerazioni importanti da tenere a mente per ottenere risultati accurati. Ad esempio, se stiamo lavorando con stringhe di dimensioni variabili, è fondamentale allocare dinamicamente la memoria per evitare errori di allocazione o di overflow. Inoltre, dobbiamo considerare anche i possibili effetti collaterali della sostituzione del testo su altre parti del nostro programma.
-
-Inoltre, dobbiamo tener conto anche delle prestazioni. Se stiamo lavorando con grandi quantità di testo, potrebbe essere più efficiente utilizzare una libreria di espressioni regolari invece delle funzioni di libreria stringa C. Questo ci permette di cercare e sostituire testo in modo più avanzato, utilizzando pattern e wildcard per trovare corrispondenze più complesse.
+Una cosa importante da considerare quando si effettuano ricerche e sostituzioni di testo in C è l'efficienza. È buona pratica limitare il numero di chiamate di funzioni di ricerca e sostituzione in modo da non appesantire il codice e rallentare l'esecuzione del programma.
 
 ## Vedi anche
 
-- [Funzione `strstr()` documentazione](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
-- [Funzione `strncpy()` documentazione](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)
-- [Espressioni regolari in C](https://www.regular-expressions.info/c.html)
+- [Funzione tolower](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
+- [Funzione strcmp](https://www.tutorialspoint.com/c_standard_library/c_function_strcmp.htm)
+- [Funzione strcspn](https://www.tutorialspoint.com/c_standard_library/c_function_strcspn.htm)
+- [Libreria standard di C "stdio.h"](https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm)
+- [Funzione fgets](https://www.tutorialspoint.com/c_standard_library/c_function_fgets.htm)
+- [Funzione fputs](https://www.tutorialspoint.com/c_standard_library/c_function_fputs.htm)

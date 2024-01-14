@@ -1,65 +1,48 @@
 ---
-title:                "C++: 日付を文字列に変換する"
+title:                "C++: 「日付を文字列に変換する」"
+simple_title:         "「日付を文字列に変換する」"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-日付を文字列に変換することに取り組む理由を説明します。
+
+日付を文字列に変換するには、プログラマーが日付を扱うために必要不可欠なタスクです。たとえば、特定の日付のフォーマットを変更したり、データベースに日付を格納するために文字列に変換する必要があるかもしれません。このブログポストでは、日付を文字列に変換する方法を学ぶことで、より柔軟に日付を扱うことができるようになります。
 
 ## 方法
-「```C++ ... ```」コードブロック内にコーディング例とサンプル出力を記載します。
-例：
+
+C++では、dateをstringに変換する方法がいくつかあります。それぞれの方法を以下のコードブロックで示します。
+
 ```C++
-#include <iostream>
-using namespace std;
-int main() {
-    // 日付を文字列に変換する
-    int day = 29;
-    int month = 10;
-    int year = 2021;
-    string date = to_string(month) + "/" + to_string(day) + "/" + to_string(year);
-    cout << "変換後の日付：" << date << endl;
-    return 0;
-}
+// 標準的な文字列フォーマット
+time_t now = time(0);
+tm* local_time = localtime(&now);
+char str_buffer [80];
+strftime(str_buffer,80,"%Y-%m-%d",local_time);
+std::string result1 = string(str_buffer);
+
+// 自分でフォーマットを指定する場合
+char buffer [80];
+sprintf (buffer, "%d/%d/%d", local_time->tm_mon+1, local_time->tm_mday, local_time->tm_year+1900);
+std::string result2 = string(buffer);
 ```
-出力：
-```
-変換後の日付：10/29/2021
-```
+
+上記のコードでは、現在の日付を指定したフォーマットで文字列に変換しています。`result1`では、`strftime`関数を使用し、年-月-日の形式で日付を表しています。一方、`result2`では、自分でフォーマットを指定しています。このように、標準的なフォーマットや独自のフォーマットを指定することができます。
 
 ## ディープダイブ
-日付を文字列に変換するときには、**stringstream**クラスを使用することで、より柔軟な方法で変換することができます。stringstreamを使用することで、日付のフォーマットや特定の言語に合わせた文字列に変換することができます。
-例えば、上記のコードをstringstreamを使用して書き換えると次のようになります。
-```C++
-#include <iostream>
-#include <sstream>
-using namespace std;
-int main() {
-    // 日付を文字列に変換する
-    int day = 29;
-    int month = 10;
-    int year = 2021;
-    stringstream ss;
-    ss << year << "年" << month << "月" << day << "日";
-    string date;
-    ss >> date;
-    cout << "変換後の日付：" << date << endl;
-    return 0;
-}
-```
-出力：
-```
-変換後の日付：2021年10月29日
-```
 
-## 参考リンク
-「See Also」
-- [C++ stringstreamクラスの使用方法](https://www.cplusplus.com/reference/sstream/stringstream/)
-- [C++ to_string関数の使用方法](https://www.cplusplus.com/reference/string/to_string/)
-- [C++ 日付のフォーマット](https://www.cplusplus.com/reference/ctime/strftime/)
+日付を文字列に変換する際には、タイムゾーンやロケールに注意する必要があります。`localtime`関数を使用する際には、システムのデフォルトのタイムゾーンやロケールが使用されるため、意図しない結果になる可能性があります。そのため、必要に応じて`setlocale`関数や`tzset`関数を使用することでタイムゾーンやロケールを指定することができます。
 
-**Happy coding!**
+また、C++11からは、`to_string`メソッドを使用することで、日付を文字列に変換することもできます。このメソッドを使用すると、簡単に日付を文字列に変換することができます。
+
+## それでは
+
+- [C++ date library](https://github.com/HowardHinnant/date)
+- [strftime reference](http://www.cplusplus.com/reference/ctime/strftime/)
+- [setlocale reference](http://www.cplusplus.com/reference/clocale/setlocale/)
+- [tzset reference](http://www.cplusplus.com/reference/ctime/tzset/)
+- [to_string reference](http://www.cplusplus.com/reference/string/to_string/)

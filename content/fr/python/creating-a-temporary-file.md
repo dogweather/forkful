@@ -1,53 +1,63 @@
 ---
 title:                "Python: Création d'un fichier temporaire"
+simple_title:         "Création d'un fichier temporaire"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/python/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi créer un fichier temporaire? 
 
-Créer un fichier temporaire peut être très utile dans plusieurs situations en programmation Python. Cela peut être nécessaire pour stocker des données intermédiaires ou pour manipuler des fichiers sans risque de les écraser accidentellement. Dans cet article, nous allons découvrir comment créer un fichier temporaire en utilisant le module intégré `tempfile` de Python.
+Nous avons tous été confrontés à cette situation : vous avez besoin de stocker temporairement des données ou de manipuler un grand nombre de fichiers, mais vous ne voulez pas encombrer votre système de fichiers principal avec des éléments inutiles. C'est là que les fichiers temporaires entrent en jeu! En créant un fichier temporaire, vous pouvez facilement stocker des données de manière temporaire et effacer automatiquement le fichier une fois que vous avez terminé son utilisation.
 
-## Comment faire
+## Comment créer un fichier temporaire en Python?
 
-Pour créer un fichier temporaire en Python, nous allons utiliser la fonction `mkstemp()` du module `tempfile`.
+La création d'un fichier temporaire en Python est simple et peut être faite en utilisant le module `tempfile`. Voici un exemple de code pour créer un fichier temporaire et y écrire du contenu : 
 
 ```Python
 import tempfile
 
-# Création du fichier temporaire
-fichier_temporaire = tempfile.mkstemp()
+# Créer un fichier temporaire
+with tempfile.NamedTemporaryFile() as file:
+    # Écrire du contenu dans le fichier
+    file.write(b"Ceci est un exemple de contenu temporaire")
 
-# Affichage du chemin du fichier temporaire
-print("Chemin du fichier temporaire :", fichier_temporaire[1])
+    # Afficher le chemin du fichier temporaire
+    print("Le chemin du fichier temporaire est :", file.name)
 
-# Écriture de données dans le fichier temporaire
-with open(fichier_temporaire[1], "w") as f:
-    f.write("Ceci est une donnée temporaire.")
-
-# Lecture des données depuis le fichier temporaire
-with open(fichier_temporaire[1], "r") as f:
-    print("Données dans le fichier temporaire :", f.read())
-
-# Suppression du fichier temporaire
-tempfile.cleanup()
-```
-```
-Output:
-Chemin du fichier temporaire: /var/folders/q7/x8pcr76d2td6_5m0ngrl14000000gn/T/tmp5k1zuia4
-Données dans le fichier temporaire: Ceci est une donnée temporaire.
+# Le fichier temporaire sera automatiquement effacé après la sortie de la boucle `with`
 ```
 
-Comme on peut le voir dans l'exemple ci-dessus, la fonction `mkstemp()` renvoie un tuple contenant deux valeurs : un handle pour le fichier temporaire et son chemin d'accès. Nous pouvons ensuite utiliser ce chemin d'accès pour lire ou écrire des données dans le fichier temporaire. Une fois que nous avons terminé de manipuler le fichier temporaire, nous pouvons le supprimer en appelant la fonction `cleanup()` du module `tempfile`.
+Output : 
+```
+Le chemin du fichier temporaire est : /var/folders/7y/q3r121yx69l_c1yf9350xzlw0000gn/T/tmpmv3r_i7m
+```
 
-## Plongée en profondeur
+Il est également possible de spécifier une extension de fichier pour votre fichier temporaire en utilisant le paramètre `suffix`. Par exemple :
 
-Le module `tempfile` de Python offre également d'autres fonctions pour créer des fichiers temporaires en spécifiant différents formats de noms ou en créant des dossiers temporaires. De plus, le paramètre `delete=False` peut être ajouté à la fonction `mkstemp()` pour éviter la suppression automatique du fichier temporaire lors de l'appel de la fonction `cleanup()`. Pour en savoir plus sur toutes les options disponibles, vous pouvez consulter la documentation officielle de Python sur le module `tempfile`.
+```Python
+# Créer un fichier temporaire avec une extension ".txt"
+with tempfile.NamedTemporaryFile(suffix=".txt") as file:
+    # Écrire du contenu dans le fichier
+    file.write(b"Ceci est un exemple de contenu temporaire")
+
+    # Afficher le chemin du fichier temporaire
+    print("Le chemin du fichier temporaire est :", file.name)
+
+# Le fichier temporaire ".txt" sera automatiquement effacé après la sortie de la boucle `with`
+```
+
+## Plongée en profondeur sur la création de fichiers temporaires
+
+Le module `tempfile` offre plusieurs options pour créer et manipuler des fichiers temporaires, telles que `Tempfile()`, `TemporaryDirectory()`, `SpooledTemporaryFile()` et bien d'autres encore. Il est également possible de modifier les options de sauvegarde par défaut, telles que le répertoire dans lequel les fichiers temporaires seront stockés ou le préfixe utilisé pour nommer les fichiers.
+
+Pour en savoir plus sur tous les détails et les options disponibles, consultez la [documentation officielle](https://docs.python.org/fr/3/library/tempfile.html) pour le module `tempfile`.
 
 ## Voir aussi
 
-- [La documentation officielle de Python sur le module `tempfile`](https://docs.python.org/fr/3/library/tempfile.html) 
-- [Un exemple pratique de création de fichiers temporaires en Python](https://www.geeksforgeeks.org/temporary-file-creation-using-python/)
+- [Documentation officielle sur le module `tempfile`](https://docs.python.org/fr/3/library/tempfile.html)
+- [Tutoriel vidéo sur les fichiers temporaires en Python](https://www.youtube.com/watch?v=fgsg1EsEirg)
+- [Article sur les modules en Python pour la manipulation de fichiers temporaires](https://realpython.com/python-tempfile/)

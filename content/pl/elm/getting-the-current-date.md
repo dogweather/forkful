@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Pobieranie aktualnej daty"
+title:                "Elm: Uzyskiwanie bieżącej daty"
+simple_title:         "Uzyskiwanie bieżącej daty"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/getting-the-current-date.md"
 ---
 
@@ -9,48 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-W dzisiejszych czasach programowanie stało się nieodłączną częścią naszego życia. Jest wiele języków programowania do wyboru, ale jeden z nich wyróżnia się swoją prostotą i skutecznością - jest nim Elm. W tym artykule dowiesz się, dlaczego warto poznać ten język, a w szczególności jak uzyskać aktualną datę.
+Posiadanie aktualnej daty jest ważne w wielu aplikacjach, ponieważ pozwala nam śledzić czas i datę wykonania różnych operacji. W Elm istnieje wiele sposobów na uzyskanie bieżącej daty, a w tym artykule wyjaśnimy kilka z nich.
 
 ## Jak to zrobić
 
-Aby uzyskać aktualną datę w Elm, musimy użyć funkcji `Time.now`. Poniżej znajduje się przykładowy kod, który wyświetla aktualną datę i czas w konsoli:
+Istnieją dwie główne metody pobierania bieżącej daty w Elm - za pomocą wbudowanego modułu `Time` lub za pomocą zewnętrznej biblioteki `elm-time`.
+
+### Metoda 1: Moduł Time
+
+Pierwszą metodą jest użycie wbudowanego modułu `Time`, który zapewnia funkcję `now`. Przykładowy kod wyglądałby następująco:
 
 ```Elm
-import Html exposing (text)
 import Time exposing (now)
 
-main =
-  now
-    |> Time.toString
-    |> text
+currDate = now
 ```
 
-Wyjściem z powyższego kodu będzie coś w stylu: "Mar 8, 2021, 12:00:00 PM".
-
-Możemy także użyć funkcji `Time.toIsoString` aby uzyskać datę i czas w formacie ISO:
+Po uruchomieniu tej funkcji otrzymamy wynik w postaci `Result` zawierający aktualną datę i czas. Musimy pamiętać, że czas jest reprezentowany jako wartość całkowita w milisekundach, więc musimy przekonwertować to na bardziej czytelną formę.
 
 ```Elm
-import Html exposing (text)
-import Time exposing (now, toIsoString)
+convertDate result = case result of
+    Ok time -> Date.fromTime time
+    Err _ -> Date.fromTime 0
 
-main =
-  now
-    |> Time.toIsoString
-    |> text
+currDate = now
+convertedDate = convertDate currDate
 ```
 
-Wyjście w tym przypadku będzie wyglądać tak: "2021-03-08T12:00:00Z".
+W powyższym kodzie, najpierw definiujemy funkcję, która przekonwertuje wynik na datę czytelną przez Elm. Następnie wywołujemy funkcję `now` i przekazujemy jej wynik do funkcji `convertDate`.
 
-## Wgląd w szczegóły
+### Metoda 2: Biblioteka Elm-time
 
-Funkcja `Time.now` zwraca wynik typu `Time.Posix` który reprezentuje datę i czas w formacie Unix. Możemy także użyć funkcji `Time.toYearMonthDay` i `Time.toHourMinuteSecond` aby uzyskać dokładne wartości rok, miesiąc, dzień, godzina, minuta i sekunda.
+Drugą metodą jest użycie zewnętrznej biblioteki `elm-time`, która dostarcza bardziej zaawansowane funkcje do manipulowania czasem i datą. Możemy zainstalować tę bibliotekę za pomocą komendy `elm install justinmimbs/time`.
 
-Możemy również manipulować czasem, wykorzystując funkcje takie jak `Time.add` lub `Time.subtract`, których możemy użyć aby dodać lub odjąć od aktualnego czasu określoną ilość sekund, minut, godzin itp.
+```Elm
+import Time exposing (utc, Date)
+import Time.Date exposing (Day, month, year, toYear, toMonth, toDay)
+import Time.Extra exposing (localHour)
 
-Warto także wspomnieć o tym, że Elm jest językiem funkcyjnym, więc zawsze uzyskamy tę samą wartość dla odpowiedniego wejścia. To oznacza, że wywołując funkcję `Time.now` w różnych miejscach w naszym kodzie, uzyskamy tę samą aktualną datę i czas.
+myTime = utc
+myDate = Date.fromTime myTime
 
-## Zobacz również
+currYear = toYear myDate
+currMonth = toMonth myDate
+currDay = toDay myDate
+currHour = localHour 2 myTime
+```
 
-- Dokumentacja funkcji `Time.now` w Elm: https://package.elm-lang.org/packages/elm/time/latest/Time#now
-- Oficjalna strona języka Elm: https://elm-lang.org/
-- Pomocne artykuły i materiały o Elm: https://github.com/isRuslan/awesome-elm#articles-and-tutorials
+W powyższym kodzie, używamy różnych funkcji dostępnych w bibliotece `elm-time` w celu pobrania poszczególnych składowych daty i czasu. Przykładowo, przy użyciu funkcji `localHour` możemy równolegle określić strefę czasową.
+
+## Głębszy zanurzenie
+
+Funkcje `now` i `utc` używają czasu komputera jako podstawy dla obliczeń daty i czasu. Możemy także użyć funkcji `since` i `sinceUtc` do ustalenia daty i czasu względem innej daty, na przykład daty początkowej naszego programu. Dzięki temu możemy śledzić odległość czasową od wybranego punktu.
+
+## Zobacz także
+
+- Dokumentacja modułu `Time` w [oficjalnej dokumentacji Elm](https://package.elm-lang.org/packages/elm/time/latest/)
+- Dokumentacja biblioteki `elm-time` w [oficjalnym repozytorium GitHub](https://github.com/justinmimbs/time)

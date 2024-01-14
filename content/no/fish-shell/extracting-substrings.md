@@ -1,37 +1,38 @@
 ---
-title:                "Fish Shell: Utvinning av delstrenger"
+title:                "Fish Shell: Uttrekk av delstrenger"
+simple_title:         "Uttrekk av delstrenger"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Når vi jobber med tekstbehandling og manipulering i programmer, kan det være nyttig å kunne ekstrahere deler av en tekststreng basert på bestemte kriterier. Dette kan være for å finne og erstatte spesifikke ord, trekke ut data fra en større tekst eller lage nye variabler basert på eksisterende tekst. Å kunne ekstrahere substrings kan være en nyttig ferdighet å ha i verktøykassen din som programmerer.
+Hvorfor skulle noen ha behov for å trekke ut substringer? Vel, noen ganger kan det være nødvendig å manipulere en tekststreng for å få den til å passe til spesifikke formater eller begrensninger. Ved å kunne ekstrahere deler av en streng kan man lettere håndtere og manipulere data.
 
-## Hvordan du gjør det
+## Slik gjør du det
 
-For å ekstrahere substrings i Fish Shell, må vi bruke funksjonen `string sub`. Her er et eksempel på hvordan vi kan bruke denne funksjonen:
+For å ekstrahere en del av en streng i Fish Shell, kan du bruke kommandoen `string --substring`. Den tar to argumenter: startindeks og lengden på ønsket substring. La oss se på et eksempel for å se hvordan dette fungerer:
 
 ```Fish Shell
-set tekst "Dette er en testtekst"
-echo (string sub -s 6 -l 2 $tekst)
+set streng “Hei, dette er en tekststreng”
+echo $streng[8..15]
 ```
 
-I dette eksempelet lar `string sub` oss velge startposisjonen og lengden på substringen vi ønsker å ekstrahere. I dette tilfellet begynner vi på posisjon 6 (som tilsvarer det første bokstavet i ordet "en") og trekker ut 2 bokstaver, som gir oss "en" som output.
+I dette eksemplet trekker vi ut delen av strengen som starter på indeks 8 (den 9. bokstaven) og har en lengde på 8 tegn. Outputen av dette vil være “er en tek”.
 
-Dette er en veldig enkel måte å ekstrahere substrings på, men man kan også bruke regex-uttrykk for å være mer spesifikk i utvelgelsen av substringer.
+Det er også mulig å bruke negative tall for å starte fra slutten av strengen. For eksempel vil `$streng[-8..-1]` gi oss delen av strengen som starter 8 tegn fra slutten og går til siste tegn i strengen.
 
 ## Dypdykk
 
-Dersom du ønsker å lære mer om å ekstrahere substrings i Fish Shell, kan du ta en titt på [`string sub` dokumentasjonen](https://fishshell.com/docs/current/cmds/string.html#string-sub) for å få en oversikt over alle tilgjengelige funksjoner og muligheter. Du kan også eksperimentere med forskjellige regex-uttrykk for å finne den beste måten å ekstrahere ønsket tekst på.
+Det finnes også flere måter å ekstrahere substringer på i Fish Shell. For eksempel kan vi bruke `string match` kommandoen for å finne en del av en streng basert på et mønster. Dette kan være nyttig hvis man ikke vet nøyaktig hvor substringen starter eller slutter.
 
-Et annet godt verktøy for å lære mer om substring-ekstraksjon er å lese og forstå hvordan forskjellige programmerer bruker denne funksjonen i sine prosjekter. Dette kan gi deg en bedre forståelse av hvordan du kan bruke det i egne prosjekter.
+En annen viktig ting å huske på er at når man ekstraherer en del av en streng i Fish Shell, vil det resulterende utvalget være en liste av tegn. Hvis man ønsker å konvertere denne listen til en enkelt streng, kan man bruke `string join` kommandoen.
 
 ## Se også
 
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Regex-tutorial for nybegynnere](https://regexone.com/)
-- [Eksempel på Fish Shell-prosjekt som bruker `string sub`](https://github.com/fish-shell/fish-shell/blob/master/share/functions/__fish_print_hostname.fish)
+- [Fish Shell dokumentasjon om substringer](https://fishshell.com/docs/current/cmds/set.html#substrings)
+- [Tips og triks for å jobbe med strenger i Fish Shell](https://dev.to/scrool/working-with-strings-in-fish-shell-1ag0)

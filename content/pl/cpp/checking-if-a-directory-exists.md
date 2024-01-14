@@ -1,7 +1,9 @@
 ---
-title:                "C++: Sprawdzanie, czy katalog istnieje."
+title:                "C++: Sprawdzanie czy istnieje katalog"
+simple_title:         "Sprawdzanie czy istnieje katalog"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/cpp/checking-if-a-directory-exists.md"
 ---
 
@@ -9,39 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Sprawdzanie czy katalog istnieje jest ważną częścią programowania w C++. Stwarza to możliwość sprawdzenia, czy dana ścieżka jest poprawna i czy możemy z niej korzystać w naszym kodzie.
+ Sprawdzanie, czy dany katalog istnieje, jest ważnym aspektem programowania w C++. W wielu przypadkach może to pomóc w uniknięciu błędów lub dostosowaniu działania programu w zależności od istnienia lub braku danego katalogu.
 
 ## Jak to zrobić
 
-Jeśli chcesz sprawdzić, czy dany katalog istnieje, musisz użyć funkcji `std::filesystem::exists()`. Najpierw musisz jednak zaimportować odpowiednią bibliotekę za pomocą `#include <filesystem>`. Następnie w bloku `main()` możesz stworzyć zmienną typu `bool` i przypisać jej wartość zwracaną przez funkcję `exists()`. Na przykład:
+Aby sprawdzić istnienie katalogu w C++, należy wykorzystać funkcję `std::filesystem::exists()`. Przykładowy kod wygląda następująco:
 
 ```C++
 #include <iostream>
 #include <filesystem>
 
 int main() {
-    bool exists = std::filesystem::exists("sciezka/do/katalogu");
+    // ustawienie ścieżki katalogu, który chcemy sprawdzić
+    std::filesystem::path directory_path("C:/Users/User/Desktop/katalog");
 
-    if (exists) {
-        std::cout << "Katalog istnieje.";
+    // sprawdzenie, czy katalog istnieje
+    if(std::filesystem::exists(directory_path)) {
+        std::cout << "Katalog istnieje" << std::endl;
     } else {
-        std::cout << "Katalog nie istnieje.";
+        std::cout << "Katalog nie istnieje" << std::endl;
     }
 
     return 0;
 }
 ```
 
-W powyższym przykładzie najpierw zaimportowaliśmy bibliotekę `<filesystem>`, następnie w bloku `main()` stworzyliśmy zmienną `exists` typu `bool`, do której przypisaliśmy wartość zwracaną przez funkcję `exists()` z podaniem ścieżki do katalogu. Następnie w zależności od wartości zmiennej `exists` wyświetlamy odpowiedni komunikat.
+Przykładowy wynik dla istniejącego katalogu:
 
-## Pogłębiona analiza
+```
+Katalog istnieje
+```
 
-Sprawdzanie, czy katalog istnieje, może być przydatne w wielu przypadkach. Na przykład przy tworzeniu programów, które w swoim działaniu korzystają z plików zapisanych w określonych lokalizacjach. Dzięki wykorzystaniu funkcji `exists()` możemy upewnić się, że kod wykonamy tylko w przypadku, gdy dana ścieżka jest poprawna. Jest to szczególnie ważne w projekcie, w którym pracuje wiele osób, ponieważ może zdarzyć się, że ktoś wprowadził niepoprawną ścieżkę do pliku, przez co cały program przestanie działać.
+Przykładowy wynik dla nieistniejącego katalogu:
 
-Ponadto, funkcja `exists()` może być również wykorzystana do sprawdzenia, czy dany katalog został utworzony przez nasz program. W przypadku, gdy chcemy zapisać plik w określonej lokalizacji, warto najpierw sprawdzić, czy dany katalog istnieje. Jeśli nie, możemy go utworzyć za pomocą funkcji `std::filesystem::create_directory()`.
+```
+Katalog nie istnieje
+```
 
-## Zobacz również
+## Deep Dive
 
-- [Dokumentacja C++ - std::filesystem::exists()](https://en.cppreference.com/w/cpp/filesystem/exists)
-- [Artykuł na temat tworzenia i usuwania katalogów w C++](https://www.techiedelight.com/create-delete-directory-cpp/)
-- [Poradnik dla początkujących - Tworzenie plików i katalogów w C++](https://www.learncpp.com/cpp-tutorial/creating-and-deleting-directories/)
+Funkcja `std::filesystem::exists()` zwraca wartość typu `bool` - `true` jeśli dany katalog istnieje, `false` jeśli nie. Jeśli jednak chcemy uzyskać więcej informacji o danym katalogu, możemy wykorzystać funkcję `std::filesystem::directory_entry()`.
+
+Ta funkcja tworzy obiekt `std::filesystem::directory_entry`, który przechowuje informacje o konkretnym katalogu. Umożliwia ona dostęp do różnych informacji, takich jak nazwa katalogu, rozmiar, data ostatniej modyfikacji itp.
+
+## Zobacz także
+
+- [Dokumentacja funkcji std::filesystem::exists()](https://en.cppreference.com/w/cpp/filesystem/exists)
+- [Dokumentacja funkcji std::filesystem::directory_entry()](https://en.cppreference.com/w/cpp/filesystem/directory_entry)

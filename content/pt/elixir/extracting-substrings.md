@@ -1,56 +1,52 @@
 ---
-title:                "Elixir: Extraindo Substrings"
+title:                "Elixir: Extraindo subtrings"
+simple_title:         "Extraindo subtrings"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que extrair substrings em Elixir
+## Por que extrair subcadeias?
 
-Extrair substrings é uma ferramenta útil para programadores Elixir que desejam realizar operações específicas em partes específicas de uma string. Ao invés de usar a string inteira, extrair substrings permite que você selecione e manipule uma porção do texto de forma mais eficiente.
+Extrair subcadeias é uma tarefa importante ao trabalhar com strings em Elixir. Ao fazer isso, você pode separar partes específicas de uma string e manipulá-las individualmente. Isso é útil em muitos cenários, como formatação de dados, busca ou até mesmo análise de texto.
 
 ## Como fazer
 
-Para extrair substrings em Elixir, utilize a função `String.slice/3`. O primeiro argumento é a string original, o segundo é o ponto de início da substring e o terceiro é o tamanho da substring. Aqui está um exemplo de código que extrai uma substring de tamanho 4 começando no índice 2:
-
-```Elixir
-string = "Olá mundo!"
-String.slice(string, 2, 4)
-# saída: "á"
+Extrair substrings em Elixir é muito simples e pode ser feito de várias maneiras. Aqui estão dois exemplos que mostram como é possível obter subcadeias usando as funções `String.slice/2` e `String.contains?/2`:
 
 ```
+Elixir
 
-Você também pode fornecer um índice negativo como ponto de início, para contar a partir do final da string. Por exemplo:
+# Exemplo 1
+string = "O Elixir é uma linguagem de programação funcional"
+sub_string = String.slice(string, 2, 6)
+IO.puts(sub_string) # Saída: lixir
 
-```Elixir
-string = "Olá mundo!"
-String.slice(string, -3, 2)
-# saída: "do"
+# Exemplo 2
+string = "O Elixir é uma linguagem de programação funcional"
+sub_string = String.contains?(string, "funcional")
+IO.puts(sub_string) # Saída: true
 ```
 
-Além disso, você pode usar o operador `..` (chamado de "operador de intervalo") para especificar um intervalo de índices ao invés de um ponto de início e tamanho. Por exemplo:
+No primeiro exemplo, usamos a função `String.slice/2`, que recebe uma string, um índice inicial e um número de caracteres a serem extraídos a partir desse índice. Então, a saída será "lixir", que são os 6 caracteres começando do índice 2.
 
-```Elixir
-string = "Hello world!"
-String.slice(string, 3..7)
-# saída: "lo wo"
-```
+Já no segundo exemplo, usamos a função `String.contains?/2` para verificar se a string contém uma determinada subcadeia. No caso, queremos saber se a string contém a palavra "funcional", o que retorna `true`.
 
 ## Mergulho profundo
 
-A função `String.slice/3` é bastante versátil e permite que você extraia substrings de forma flexível. Além disso, ela possui uma variedade de opções adicionais, como o uso de expressões regulares para encontrar padrões em uma string e extrair a correspondência desejada.
+Além desses exemplos básicos, existem outras funções úteis para extrair subcadeias em Elixir. Algumas delas são:
 
-Além disso, você também pode utilizar a função `String.split/2` para extrair uma lista de substrings em vez de uma única substring. Basta fornecer o caractere ou string que deseja usar como ponto de divisão para a string original. Por exemplo:
+- `String.split/2`: retorna uma lista de strings separadas por um caractere especificado
+- `String.replace/4`: substitui uma subcadeia por outra em uma string
+- `String.to_integer/1`: converte uma subcadeia em um número inteiro
 
-```Elixir
-string = "Olá mundo!"
-String.split(string, " ")
-# saída: ["Olá", "mundo!"]
-```
+É importante lembrar que as strings em Elixir são codificadas em UTF-8 e, por isso, certas funções podem se comportar de maneira diferente com caracteres fora do conjunto ASCII.
 
 ## Veja também
 
-- Documentação sobre a função `String.slice/3`: https://hexdocs.pm/elixir/String.html#slice/3
-- Mais informações sobre expressões regulares em Elixir: https://elixir-lang.org/getting-started/pattern-matching.html#regular-expressions
+- [Documentação Elixir sobre strings](https://hexdocs.pm/elixir/String.html)
+- [Cheatsheet de Elixir](https://devhints.io/elixir) para mais funções úteis de strings
+- [Tutorial de Elixir para iniciantes](https://elixirschool.com/pt/) para aprender mais sobre a linguagem.

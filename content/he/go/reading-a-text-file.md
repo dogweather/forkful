@@ -1,42 +1,67 @@
 ---
 title:                "Go: קריאת קובץ טקסט"
+simple_title:         "קריאת קובץ טקסט"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
-ריכוז כמה מילים מספר למה זה כדאי לקרוא קובץ טקסט.
 
-## איך לעשות זאת
-השימוש בדוגמאות קוד ותוצאות דוגמא בתוך קובץ קוד מחובר עם הסימונים ```Go ... ```.
+כתיבת קוד היא כדלקמן משאב מפתח לכל תכנית מחשב. תיבת טקסט היא אחת היכולות הבסיסיות שכדאי לדעת כדי לייצר תכניות מתקדמות בגו.
+
+## איך לעשות
+
+מטרת המאמר הזה היא ללמוד לקרוא קובץ טקסט בשפת גו. נתחיל עם קצת קוד בסיסי, ואחר כך נדרוש יותר עמק בכדי להבין את התהליך הרקורסיבי שמאפשר לנו לקרוא קבצים גדולים.
 
 ```Go
-// פתיחת קובץ טקסט
-file, err := os.Open("filename.txt")
-if err != nil {
-fmt.Println("ארעה שגיאה בפתיחת הקובץ:", err)
-}
+func main() {
+    file, err := os.Open("example.txt")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer file.Close()
 
-// קריאת תוכן הקובץ והדפסתו למסך
-scanner := bufio.NewScanner(file)
-for scanner.Scan() {
-fmt.Println(scanner.Text())
-}
+    scanner := bufio.NewScanner(file)
+    for scanner.Scan() {
+        fmt.Println(scanner.Text())
+    }
 
-// סגירת הקובץ
-err = file.Close()
-if err != nil {
-	fmt.Println("ארעה שגיאה בסגירת הקובץ:", err)
+    if err := scanner.Err(); err != nil {
+        log.Fatal(err)
+    }
 }
 ```
 
-## כיולעמוק
-מידע נוסף על קריאת קובץ טקסט ושימוש בפונקציות נוספות, כמו פתיחת קובץ במצב כתיבה וכיצד לעבוד עם מירכיבי הקובץ.
+הקוד מתחיל עם פתיחת קובץ קיים בעזרת הפונקציה os.Open. אם הפונקציה מחזירה שגיאה, נעביר את השגיאה לפונקציה log.Fatal כדי לסיים את התוכנית. ברגע שהקובץ נפתח, ניצור אובייקט של bufio.Scanner שיעבוד על הקובץ הנפתח. למעשה, הסורק יקרא כל שורה בקובץ עם הפונקציה Scan. ובכל שורה שהקורא בוחן, הוא יודפס למסך בעזרת הפונקציה fmt.Println.
 
-## ראו גם
-- [מדריך לתכנות בשפת Go](https://golang.org/doc/)
-- [מאמר על פונקציות דגלים בשפה Go](https://blog.golang.org/slices)
-- [פרויקט מקור פתוח שמשתמש בשפת Go](https://github.com/golang/go)
+כדי לוודא שאין שגיאות, נציג את בדיקת השגיאות err המתאימה לסורק. אם נתקלנו בשגיאה, נעביר אותה לפונקציה log.Fatal כדי לסיים את התוכנית.
+
+כעת, היכנסו למתכונת הרקורסיבית בשפת גו כדי לאפשר קריאה נמוכה לקבצים גדולים.
+
+```Go
+func main() {
+    file, err := os.Open("example.txt")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer file.Close()
+
+    fileDetails, err := file.Stat()
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    fileSize := fileDetails.Size()
+    buffer := make([]byte, fileSize)
+    bytes := bufio.NewReader(file)
+    _, err = bytes.Read(buffer)
+
+    fmt.Println(buffer)
+}
+```
+
+בקוד הזה, אנו משתמשים בפונק

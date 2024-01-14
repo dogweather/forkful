@@ -1,49 +1,76 @@
 ---
 title:                "Gleam recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-##Why
+## Why
 
-Command line arguments are a crucial aspect of programming in any language, including Gleam. They allow for flexibility and customization in how a program is executed. In this blog post, we will explore how to effectively read and utilize command line arguments in Gleam.
+Command line arguments are an essential part of any programming language and can greatly enhance the functionality and usability of a program. In this blog post, we will explore how to use command line arguments in the Gleam programming language.
 
-##How To
+## How To
 
-To read command line arguments in Gleam, we will use the `args` module from the `sys` standard library. First, we must import the module by adding the following line to our code: 
-
-```Gleam
-import sys/args
-```
-
-Next, we can access the command line arguments in the `execute` function by using the `sys.args` function. It returns a list of strings, with the first element being the program name and subsequent elements being any arguments passed in. For example, if we run our program with the command `gleam program.gleam arg1 arg2`, we can access `arg1` and `arg2` using `sys.args` as follows:
+To read command line arguments in Gleam, we first need to import the `gleam/commands` module, which provides functions for working with command line arguments. Let's take a look at an example:
 
 ```Gleam
-execute = fn() {
-  let args = sys.args()
-  let arg1 = List.get_or_else(args, 1, "") // "arg1"
-  let arg2 = List.get_or_else(args, 2, "") // "arg2"
-  // rest of the code
+import gleam/commands
+
+fn main(argv) {
+  let args = commands.parse(argv)
+  let language = case args[0] {
+    "en_GB" -> "English"
+    "es_ES" -> "Spanish"
+    _ -> "Unknown"
+  }
+  io.println("The selected language is {language}")
 }
 ```
 
-We can also use pattern matching to extract specific arguments or use the `List.contains` function to check if a certain argument was passed in. 
+In this example, we are using the `parse` function from the `gleam/commands` module to retrieve the command line arguments and store them in the `args` variable. We then use a `case` statement to check the value of the first argument and print a message based on the chosen language. Let's see what the output would be when executing this program with different arguments:
 
-##Deep Dive
+```
+$ gleam run main.gleam en_GB
+The selected language is English
+```
 
-While reading command line arguments may seem straightforward, there are a few things to keep in mind. Firstly, the arguments are always returned as strings, so conversions may be necessary depending on the type of data being passed in. Secondly, make sure to handle any potential errors that may occur, such as invalid arguments or missing arguments.
+```
+$ gleam run main.gleam es_ES
+The selected language is Spanish
+```
 
-Another thing to consider is the order in which arguments are passed in. By default, the arguments are passed in the order they were entered on the command line. However, in some cases, the order may not matter and it may be useful to allow the arguments to be passed in any order. This can be achieved by using flags, where a specific flag indicates which argument follows. The `flags` module from the `sys` library can be used to handle this scenario.
+```
+$ gleam run main.gleam fr_FR
+The selected language is Unknown
+```
 
-##See Also
+## Deep Dive
 
-For more information on the `args` and `flags` modules, please refer to the official Gleam documentation: 
+The `gleam/commands` module also provides a `Config` type, which can be passed to the `parse` function to specify different options for parsing the command line arguments. For example, we can set `allow_extra` to `false` to prevent the program from accepting extra arguments. We can also specify a `description` for our program, which will be displayed when using the `--help` flag.
 
-- `sys` standard library: https://gleam.run/documentation/stdlib/sys
-- `args` module: https://gleam.run/documentation/stdlib/sys/args
-- `flags` module: https://gleam.run/documentation/stdlib/sys/flags
+```Gleam
+import gleam/commands
 
-Happy coding with command line arguments in Gleam!
+fn main(argv) {
+  let args = commands.parse(
+    argv,
+    commands.Config(
+      description: "A simple program to demonstrate command line arguments",
+      allow_extra: false
+    )
+  )
+  
+  // Rest of the code
+}
+```
+
+We can also use `commands.parse_or_exit` which returns either the parsed arguments or terminates the program with an error if the arguments are invalid. This allows us to handle any potential errors when reading command line arguments.
+
+## See Also
+
+- [The `gleam/commands` module documentation](https://gleam.run/modules/commands/)
+- [Another blog post on using command line arguments in Gleam](https://myblog.com/gleam-command-line-arguments)

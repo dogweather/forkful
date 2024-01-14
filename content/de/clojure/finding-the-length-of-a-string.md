@@ -1,49 +1,38 @@
 ---
-title:                "Clojure: Die Länge eines Strings finden."
+title:                "Clojure: Die Länge eines Strings finden"
+simple_title:         "Die Länge eines Strings finden"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Jeder, der schon einmal mit Programmierung zu tun hatte, weiß wie wichtig es ist, die Länge einer Zeichenfolge zu kennen. Egal ob es darum geht, Benutzereingaben zu überprüfen oder bestimmte Operationen auf einer Zeichenfolge auszuführen, die Länge ist eine entscheidende Information. In diesem Blogbeitrag werden wir uns genau damit beschäftigen - wie man in Clojure die Länge einer Zeichenfolge findet.
 
-Das Finden der Länge eines Strings ist eine grundlegende Aufgabe in der Programmierung. Es ist besonders hilfreich, wenn man mit Texten arbeitet, da man oft wissen muss, wie viele Zeichen ein String enthält. In diesem Blog-Beitrag werden wir untersuchen, wie man die Länge eines Strings in Clojure berechnen kann.
-
-## Wie man String Länge in Clojure findet
-
-Eine Möglichkeit, die Länge eines Strings in Clojure zu finden, ist die Verwendung der Funktion `count`. Diese Funktion zählt die Anzahl der Elemente in einem Collection-Datentyp. Da Strings in Clojure als Collection von Zeichen behandelt werden, können wir die `count`-Funktion verwenden, um die Länge eines Strings zu erhalten. Hier ist ein Beispiel:
+## Wie man die Länge einer Zeichenfolge in Clojure findet
+Um die Länge einer Zeichenfolge in Clojure zu finden, haben wir mehrere Möglichkeiten. Eine davon ist die Verwendung der Funktion `count`, die die Anzahl der Elemente in einer Sequenz zurückgibt. Da eine Zeichenfolge in Clojure als Sequenz von einzelnen Zeichen behandelt wird, können wir diese Funktion nutzen, um die Länge zu bestimmen. Schauen wir uns dazu ein Beispiel an:
 
 ```Clojure
-(def string "Guten Tag")
-(count string)
+(let [text "Hallo Welt"]
+  (count text))
 ```
 
-Das Ergebnis wäre `9`, da der String "Guten Tag" 9 Zeichen hat. Wir können auch direkt einen String als Argument an die `count`-Funktion übergeben:
+Das Ergebnis dieses Codeschnipsels wird 10 sein, da der String "Hallo Welt" aus genau 10 Zeichen besteht. Wir können auch mehrere Zeichenfolgen kombinieren, um die Gesamtlänge zu berechnen:
 
 ```Clojure
-(count "Hallo")
+(let [text1 "Hallo "
+      text2 "Welt"]
+  (count (str text1 text2)))
 ```
 
-Das gibt ebenfalls das Ergebnis `5` zurück.
+Hier wird das Schlüsselwort `str` verwendet, um die beiden Zeichenfolgen miteinander zu verbinden. Das Ergebnis wird wieder 10 sein, da die einzelnen Zeichenfolgen zusammen 10 Zeichen ergeben.
 
-## Tief eintauchen
-
-Es ist wichtig zu beachten, dass die `count`-Funktion nicht nur für Strings verwendet werden kann, sondern für alle Collection-Datentypen. Das bedeutet, dass wir nicht nur die Länge von Strings, sondern auch von Vektoren, Listen oder Maps finden können.
-
-Wir können auch die `clojure.string` Bibliothek verwenden, um die Länge eines Strings zu berechnen. Diese Bibliothek enthält die Funktion `length`, die ähnlich wie `count` funktioniert. Hier ist ein Beispiel der Verwendung von `length`:
-
-```Clojure
-(require '[clojure.string :as str])
-(def string "Hallo")
-(str/length string)
-```
-
-Das Ergebnis wäre `5`. Eine andere hilfreiche Funktion in der `clojure.string` Bibliothek ist `trim`, die es uns ermöglicht, Leerzeichen am Anfang und Ende eines Strings zu entfernen, bevor wir die Länge berechnen.
+## Tiefentauchen
+Um besser zu verstehen, wie Clojure die Länge einer Zeichenfolge bestimmt, müssen wir etwas tiefer in die Funktionsweise von `count` schauen. Tatsächlich wird `count` nicht nur für Sequenzen verwendet, sondern für alle Datentypen, die eine Anzahl von Elementen besitzen. Hierfür verwendet es das Protokoll `Counted`. Ein Protokoll ist eine abstrakte Schnittstelle, die es Datentypen ermöglicht, auf dieselbe Art und Weise behandelt zu werden. In unserem Fall müssen also alle Datentypen, die die Länge bestimmen sollen, das Protokoll `Counted` implementieren. Dies ermöglicht es uns, `count` in einer Vielzahl von Situationen zu nutzen.
 
 ## Siehe auch
-
-- [Dokumentation für `count` Funktion](https://clojuredocs.org/clojure.core/count)
-- [Dokumentation für `clojure.string` Bibliothek](https://clojuredocs.org/clojure.string)
-- [Weitere Ressourcen für Clojure Programmierer (auf Deutsch)](https://www.clojure.org/resources)
+* Offizielle Dokumentation zu `count`: https://clojuredocs.org/clojure.core/count
+* Informationen zu Protokollen in Clojure: https://clojure.org/reference/protocols

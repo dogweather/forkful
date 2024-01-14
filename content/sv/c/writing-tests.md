@@ -1,7 +1,9 @@
 ---
-title:                "C: Att skriva tester"
+title:                "C: Skriva tester"
+simple_title:         "Skriva tester"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/writing-tests.md"
 ---
 
@@ -9,55 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva tester är en viktig del av en utvecklares arbete. Det hjälper till att bekräfta att koden fungerar som den ska och att den inte bryts av eventuella förändringar i kodbasen. Genom att skriva tester kan du också enklare hitta och lösa eventuella buggar, vilket i slutändan sparar tid och pengar.
+Att skriva tester är en viktig del av programmering, särskilt i C. Det hjälper till att säkerställa att koden fungerar som det är tänkt och minskar risken för buggar och fel. Det är också ett effektivt sätt att kontrollera huruvida koden följer specifikationerna och förbättra kvaliteten på koden.
 
-## Så här gör du
+## Hur man gör
 
-För att skriva tester i C måste du först förstå hur testning fungerar i denna programmeringsspråk. En vanlig metod är att använda ett testramverk, som till exempel CUnit. Genom detta ramverk kan du skriva testfall som kontrollerar att kodens olika funktioner fungerar korrekt.
-
-Här är ett exempel på hur man skriver ett enkelt testfall i C unit:
-
+För att skriva tester i C, börja med att definiera en funktion som du vill testa. I följande exempel ska vi testa en funktion som beräknar medelvärdet av två tal.
 ```C
-#include <stdio.h>
-#include <CUnit/CUnit.h>
-#include <CUnit/Basic.h>
-
-int add(int x, int y) {
-    return x + y;
+// Funktion för att beräkna medelvärde av två tal
+double calculateAverage(double num1, double num2) {
+    return (num1 + num2) / 2.0;
 }
+```
+Nu behöver vi skapa en testfunktion som kan verifiera att resultatet av calculateAverage är korrekt.
+```C
+// Funktion för att testa calculateAverage
+void testCalculateAverage() {
+    // Testa första scenariot
+    if (calculateAverage(10, 20) == 15) {
+        printf("Test 1 lyckades!\n");
+    } else {
+        printf("Test 1 misslyckades!\n");
+    }
 
-void test_add() {
-    CU_ASSERT_EQUAL(add(2, 2), 4);
-    CU_ASSERT_EQUAL(add(5, -2), 3);
+    // Testa andra scenariot
+    if (calculateAverage(5, 9) == 7) {
+        printf("Test 2 lyckades!\n");
+    } else {
+        printf("Test 2 misslyckades!\n");
+    }
 }
-
+```
+Nu kan vi köra vår testfunktion och se resultatet i terminalen.
+```C
 int main() {
-    CU_initialize_registry();
-    
-    CU_pSuite suite = CU_add_suite("Add Test Suite", NULL, NULL);
-    
-    CU_add_test(suite, "add test", test_add);
-    
-    CU_basic_set_mode(CU_BRM_VERBOSE);
-    CU_basic_run_tests();
-    CU_cleanup_registry();
-    
+    testCalculateAverage();
     return 0;
 }
 ```
-
-När detta test körs, kommer det att kontrollera att funktionen "add" returnerar rätt resultat för olika indata. Om testet lyckas, kommer du att få utskriften "CUnit: no failures" från programmet.
+Output:
+```
+Test 1 lyckades!
+Test 2 lyckades!
+```
+Som vi kan se visar vår testfunktion att calculateAverage fungerar korrekt i båda scenarierna.
 
 ## Djupdykning
 
-Att skriva tester kan vara en tidskrävande process, men det finns några viktiga aspekter att tänka på för att göra uppgiften enklare. För det första bör du se till att testa så många möjliga vägar genom koden för att säkerställa att alla funktioner fungerar korrekt. Det är också viktigt att skriva testfall som täcker eventuella buggar som du vet finns i koden.
+Det finns flera fördelar med att skriva tester i C. Förutom att förbättra kvaliteten på koden och minska risken för buggar, så kan tester också fungera som dokumentation för koden. De ger också en möjlighet att identifiera och lösa problem i ett tidigt skede under utvecklingsprocessen, vilket kan spara tid och resurser i det långa loppet.
 
-Ett annat tips är att vara noggrann med namngivningen av dina testfall. Detta gör det enklare att förstå vad som testas och vilken typ av fel som uppstår om testet misslyckas.
+När du skriver tester är det också viktigt att tänka på testets täckning. Detta innebär att se till att alla delar av koden är täckta av tester för att minska risken för missade buggar och fel. Det finns också olika typer av tester som kan användas i C-programmering, som enhetstester, integrationstester och funktionella tester.
 
-Slutligen är det viktigt att använda testdriven utveckling (TDD) för att säkerställa att nya kodändringar inte bryter befintlig fungerande kod. Genom att skriva testfall innan du skriver koden kan du upptäcka eventuella problem innan de blir svårare och dyrare att åtgärda.
+Slutligen, för att uppnå bästa möjliga resultat med tester, se till att skriva testbara och modulära funktioner som enkelt kan testas och som har klara specifikationer för förväntat beteende och output.
 
 ## Se även
 
-- [CUnit testramverk](https://frankmorgner.github.io/cunit/)
-- [TDD koncept och tekniker](https://www.softwaretestinghelp.com/test-driven-development-tdd/)
-- [En guide till enhetstestning i C](https://www.section.io/engineering-education/writing-unit-tests-in-c/)
+- https://www.geeksforgeeks.org/integration-testing/
+- https://www.tutorialspoint.com/software_testing_dictionary/test_coverage.htm
+- https://www.tutorialspoint.com/software_testing_dictionary/unit_testing.htm

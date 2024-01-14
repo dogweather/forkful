@@ -1,48 +1,54 @@
 ---
 title:                "TypeScript: テストの書き方"
+simple_title:         "テストの書き方"
 programming_language: "TypeScript"
-category:             "Testing and Debugging"
+category:             "TypeScript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜテストを書くのか
+# なぜテストを書くのか？
 
-ソフトウェア開発は、常にコードを書くことに焦点が当てられがちですが、テストを書くことも非常に重要です。テストを書くことで、バグを早期に発見したり、コードの品質を向上させたりすることができます。
+テストを書くのは、プログラムをより信頼性の高いものにするためです。テストを書くことで、バグを早期発見し、修正することができます。また、将来的な変更や追加が行われた際に、テストがあることで機能の互換性や動作の保証ができます。
 
-## 方法
+## テストの書き方
 
-テストを書く最も一般的な方法の1つは、単体テストを行うことです。単体テストでは、個々の関数や処理が正しく動作するかを確認するために、入力と期待される出力を定義します。
+テストを書くには、まずテストするコードが書かれたファイルと同じ場所に「spec」というフォルダを作成します。その中に、テストコードを書くためのファイルを作成します。テストコードは「.spec.ts」の拡張子をつけることが多いです。
 
-例えば、以下のような関数があるとします。
+例えば、以下のような関数をテストする場合、テストコードを書くことになります。
 
 ```TypeScript
-function addNumbers(a:number, b:number):number {
-  return a + b;
+// 以下、テストする関数を含むファイルのコード
+export function addNumbers(num1, num2) {
+  return num1 + num2;
 }
 ```
 
-この関数に対して、以下のような単体テストを書くことができます。
-
 ```TypeScript
-it('2つの数を足し合わせること', () => {
-  const result = addNumbers(2, 3);
-  expect(result).toEqual(5);
+// テストコード
+import { addNumbers } from './file-to-test';
+
+describe('addNumbers', () => {
+  it('should add two numbers correctly', () => {
+    // テストする関数の実行
+    const result = addNumbers(2, 3);
+
+    // 期待する出力と実際の出力を比較
+    expect(result).toEqual(5);
+  });
 });
 ```
 
-ここでは、関数が正しく動作し、2つの数を足し合わせて5を返すかをテストしています。もしテストが失敗した場合、コードにバグがある可能性が高いため、修正が必要になります。
+上記のように、テストコードでは「describe」と「it」を使ってテストスイートを作成します。「describe」はテストのグループを作るために使用し、「it」は個々のテストケースを表します。テストコードでは、「import」でテストするファイルから関数を読み込み、テストケースの中で関数を実行し、期待する出力と実際の出力を比較することでテストを行います。
 
-## ディープダイブ
+## テストの深堀り
 
-テストを書く際には、いくつかの重要なポイントがあります。まず、テストはバグを見つけるための手段であるため、網羅的に書くことが重要です。全てのケースをカバーすることで、バグの発見しやすさが向上します。
+テストの深堀りでは、テストの種類や良いテストコードの書き方など、より詳細にテストについて解説します。テストは単体テストや結合テストなど、様々な種類があり、それぞれのテストがどのような目的で行われるのかを理解することが重要です。また、テストのコードは可読性が高く、バグがないように注意深く書く必要があります。
 
-また、テストはコードの品質を向上させるためにも利用できます。より多くのテストを書くことで、コードの可読性やメンテナンス性を高めることができます。
+## 他の参考リンク
 
-さらに、テストコードもまたリファクタリングの対象となります。テストが通るようにコードをリファクタリングすることで、より良いコードを書くことができます。
-
-## See Also
-
-- [TypeScript 公式ドキュメント（日本語）](https://www.typescriptlang.org/ja/docs/)
-- [テスト駆動開発（TDD）のやり方](https://qiita.com/honkaku/items/096677897180c05173e8)
+- [TypeScript公式ドキュメント: テストを行う](https://www.typescriptlang.org/docs/handbook/testing.html)
+- [Qiita: TypeScriptでテストを書く方法](https://qiita.com/ochaochaocha3/items/6777d97e9ac39c1fa988)
+- [TDD Bootcamp: TypeScriptでテスト駆動開発をするための基本的な手法](https://tddbc.connpass.com/event/146442/)

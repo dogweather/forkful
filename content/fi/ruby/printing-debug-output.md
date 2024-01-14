@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Virheenkorjaustulostuksen tulostaminen"
+title:                "Ruby: Debug-tulostuksen tulostaminen"
+simple_title:         "Debug-tulostuksen tulostaminen"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/printing-debug-output.md"
 ---
 
@@ -9,42 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Ruby on suosittu ohjelmointikieli monien sen ominaisuuksien, kuten dynaamisen luonteen ja ohjelmakoodin luettavuuden, ansiosta. Yksi hyödyllinen työkalu, joka auttaa kehittäjiä ymmärtämään ohjelman suoritusta ja havaitsemaan mahdollisia virheitä, on debug-tulostuksen käyttö. Tässä blogikirjoituksessa käsitellään, miksi ja miten Ruby-ohjelmoijien tulisi käyttää debug-tulostusta.
+Ruby-ohjelman debug-tulosteiden tulostaminen on tärkeä osa ohjelmointiprosessia. Debug-tulosteiden tulostaminen auttaa sinua selvittämään ohjelmien virheitä ja koodin suoritusjärjestystä. Se on tärkeä työkalu ohjelmoijille, jotka haluavat varmistaa koodinsa sujuvan ja virheettömän suorituksen.
 
-## Kuinka tehdä
+## Miten
 
-Debug-tulostuksen tekeminen Rubyssa on suhteellisen yksinkertaista. Alla olevassa koodiesimerkissä käytetään `puts`-metodia tulostamaan tietoa ohjelman suorituksen aikana.
-
-```Ruby 
-def laske_summa(a, b)
-  puts "Lasketaan summa #{a} ja #{b}"
-  summa = a + b
-  puts "Tulos on #{summa}"
-end
-
-laske_summa(3, 5)
-# Tulostus:
-# Lasketaan summa 3 ja 5
-# Tulos on 8
-```
-
-Tässä esimerkissä ohjelmoija käyttää debug-tulostusta kahdessa vaiheessa: ensin tulostetaan laskettavat arvot ja sitten tuloksen mukaisesti. Tämä auttaa kehittäjiä varmistamaan, että ohjelman laskutoimitukset toimivat odotetusti.
-
-## Syvempi sukellus
-
-Debug-tulostusta voidaan käyttää myös haettaessa tietoa monimutkaisemmista ohjelman osista, kuten tietorakenteista tai muuttujista. Alla olevassa esimerkissä käytetään `p`-metodia tulostamaan muuttujan arvot.
+Kun haluat tulostaa debug-tulosteita Ruby-ohjelmassasi, voit käyttää `puts`-metodia. Se tulostaa haluamasi viestin ja mahdollisen muuttujan arvon. Esimerkiksi:
 
 ```Ruby
-kolikot = { "euro" => 1, "sentti" => 100 }
-p kolikot
-# Tulostus: {"euro"=>1, "sentti"=>100}
+puts "Tulostetaan debug-tuloste!"
+puts "Muuttujan arvo on #{muuttuja}"
 ```
 
-Tulee kuitenkin muistaa, että debug-tulostukseen käytetty koodi voi hidastaa ohjelman suoritusta. Siksi on tärkeää poistaa debug-tulostukset ennen tuotantoon siirtämistä tai käyttää niitä vain tarvittaessa.
+Ohjelman suorituksessa saat seuraavanlaisen tulosteen:
+
+```
+Tulostetaan debug-tuloste!
+Muuttujan arvo on 10
+```
+
+Voit myös käyttää `p`-metodia, joka tulostaa muuttujan arvon sellaisenaan. Esimerkiksi:
+
+```Ruby
+muuttuja = 10
+p muuttuja
+```
+
+Tällöin saat tulosteena `10`.
+
+## Syvemmälle
+
+On tärkeää muistaa, että debug-tulosteiden tulostaminen hidastaa ohjelman suoritusta. Siksi niitä tulisi käyttää vain silloin, kun todella tarvitset tietoa koodin suorituksen vaiheista. Voit myös käyttää ehtolauseita ja käyttää `puts`- tai `p`-metodia vain tietyissä tilanteissa.
+
+Voit myös käyttää `binding.pry`-metodia ohjelman suorituksen keskeyttämiseen ja tarkastella muuttujien arvoja ja suoritusjärjestystä. Tämä on hyödyllinen työkalu monimutkaisempien ohjelmien debuggaamiseen.
 
 ## Katso myös
 
-- [Ruby-debug -kirjasto](https://github.com/ruby-debug/ruby-debug)
-- [Ruby-debug-tulostuksen opas](https://edgeguides.rubyonrails.org/debugging_rails_applications.html#debug-tulostuksen-käyttö)
-- [Ruby-debugging perusteet](https://www.rubyguides.com/2015/03/ruby-debugging/)
-- [Ruby-opas](https://ruby-lang.org/fi/documentation/)
+- [Ruby-opetusohjelma](https://www.ruby-lang.org/fi/learn/)
+- [Ruby-debuggausopas](https://www.howtogeek.com/howto/6152/use-the-built-in-irb-debugger-to-debug-your-ruby-code/)
+- [Ruby-ohjelmoinnin perusteet](https://www.tutorialspoint.com/ruby/ruby_basic_syntax.htm)

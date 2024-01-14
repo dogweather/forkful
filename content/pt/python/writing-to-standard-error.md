@@ -1,42 +1,40 @@
 ---
 title:                "Python: Escrevendo no erro padrão"
+simple_title:         "Escrevendo no erro padrão"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que escrever no "standard error"
+## Por que escrever para a saída de erro em Python?
 
-Escrever no "standard error" é uma prática comum na programação em Python, principalmente para depurar e lidar com erros em nossos códigos. Quando um programa é executado, é importante entender os diferentes tipos de saída que podem ser gerados, incluindo a saída padrão (standard output) e a saída de erro (standard error). Neste artigo, vamos explorar o uso e a importância da escrita no "standard error" em nossos programas.
+Escrever para a saída de erro em programação é uma prática importante para a depuração de código e identificação de possíveis erros e problemas. Ao imprimir mensagens de erro específicas, podemos entender melhor o que está acontecendo no nosso código e como corrigir esses problemas.
 
-## Como fazer
+## Como fazê-lo?
 
-Para escrever no "standard error" em Python, podemos usar a função `sys.stderr.write()`, que escreve uma mensagem de erro diretamente no "standard error" em vez de exibi-la na tela. Vamos ver um exemplo simples:
+Podemos escrever para a saída de erro em Python usando a função `print()` com a opção `file=sys.stderr`. Isso garantirá que a mensagem de erro seja impressa na saída de erro padrão, que é separada da saída de impressão padrão.
+
+Por exemplo, se tivermos um código que divide dois números, mas o segundo número é 0, isso resultaria em um erro de divisão por zero. Podemos imprimir uma mensagem de erro usando a saída de erro padrão da seguinte forma:
 
 ```Python
-import sys
-
-numero = input("Digite um número inteiro: ")
-
-try:
-    resultado = int(numero)
-    print("O quadrado de", numero, "é", resultado ** 2)
-except ValueError:
-    sys.stderr.write("ERRO: Você não digitou um número inteiro!")
+num1 = 10
+num2 = 0
+resultado = num1 / num2
+print("Resultado da divisão: ", resultado, file=sys.stderr)
 ```
 
-Neste exemplo, se o usuário digitar um valor que não possa ser convertido para inteiro, a mensagem de erro será exibida no "standard error" em vez de aparecer na tela junto com o resultado da operação. Isso pode ser especialmente útil em programas maiores, onde é importante distinguir entre a saída normal e possíveis mensagens de erro.
+Isso imprimirá a mensagem de erro "ZeroDivisionError: division by zero" na saída de erro padrão, alertando-nos sobre o erro e facilitando a depuração.
 
-## Mergulho Profundo
+## Mergulho profundo
 
-Uma das principais razões pelas quais escrevemos para o "standard error" é para ajudar no processo de depuração de nossos códigos. Quando encontramos um erro em nosso programa, é importante entender o que causou o problema e onde ele ocorreu no código. Ao escrever mensagens de erro no "standard error", podemos identificar facilmente onde o erro ocorreu e como ele pode ser corrigido.
+Além de imprimir mensagens de erro simples, também podemos usar a função `print()` para escrever informações mais detalhadas na saída de erro. Por exemplo, podemos adicionar informações extras, como o nome da variável que causou o erro ou uma mensagem mais descritiva sobre o que estava sendo feito no momento do erro. Isso pode nos ajudar a compreender mais facilmente o que podemos fazer para corrigir o problema.
 
-Além disso, ao escrever no "standard error", podemos controlar melhor a saída de nossos programas. Enquanto a saída padrão é geralmente usada para mostrar os resultados do programa, a saída de erro pode ser usada para exibir informações adicionais ou mensagens de aviso que não são diretamente relacionadas ao resultado.
+Outra prática útil é usar a instrução `try/except` para capturar exceções e imprimir mensagens de erro personalizadas. Dessa forma, podemos tratar os erros e imprimir informações mais específicas ao mesmo tempo.
 
 ## Veja também
 
-- [Documentação oficial do Python sobre sys.stderr](https://docs.python.org/3/library/sys.html#sys.stderr)
-- [Tutorial sobre como lidar com erros em Python](https://realpython.com/python-exceptions/)
-- [Artigo sobre como depurar programas em Python](https://blog.finxter.com/how-to-debug-python-code/)
+- [Documentação oficial do Python sobre a função print()](https://docs.python.org/3/library/functions.html#print)
+- [Tutorial sobre tratamento de exceções em Python](https://www.w3schools.com/python/python_try_except.asp)

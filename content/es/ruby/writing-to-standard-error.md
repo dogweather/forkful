@@ -1,59 +1,74 @@
 ---
-title:                "Ruby: Escribiendo a la salida estándar"
+title:                "Ruby: Escribiendo a error estándar"
+simple_title:         "Escribiendo a error estándar"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué escribir a la salida estándar en Ruby?
 
-Escribir a la salida de error estándar en Ruby es una forma útil de depurar y manejar errores en nuestro código. Al utilizar esta técnica, podemos identificar y solucionar problemas en nuestras aplicaciones más rápidamente, lo que resulta en un código más robusto y eficiente.
+La salida estándar, también conocida como `STDOUT`, es una herramienta fundamental en cualquier programa de Ruby. Permite mostrar información importante al usuario, como mensajes de error o resultados de operaciones, de una manera clara y legible. Aprender a escribir a la salida estándar es esencial para cualquier programador en Ruby.
 
-## Cómo hacerlo
+## Cómo escribir a la salida estándar en Ruby
 
-Para escribir a la salida de error estándar en Ruby, podemos usar el método `puts` junto con `$stderr`, que es la variable global que representa la salida de error estándar. Por ejemplo:
-
-```Ruby
-puts "Este es un mensaje de error" # se imprimirá en la salida de error estándar
-```
-
-Podemos incluso pasar una variable a `puts` para imprimir su valor en la salida de error estándar:
+Escribir a la salida estándar en Ruby es sencillo y práctico. Usamos el método `puts` para imprimir mensajes en la pantalla:
 
 ```Ruby
-numero = 123
-puts "El número es #{numero}" # se imprimirá en la salida de error estándar
+puts "¡Hola mundo!"
 ```
 
-El resultado en la terminal sería:
+Este código imprimirá en la pantalla el mensaje "¡Hola mundo!".
 
-```
-El número es 123
-```
-
-## Profundizando
-
-Una forma común de utilizar la salida de error estándar en Ruby es en conjunción con `rescue` y `raise` para manejar excepciones. Por ejemplo, si queremos imprimir un mensaje de error personalizado cuando ocurre una excepción, podemos hacer lo siguiente:
+También podemos utilizar el método `print` para imprimir en la salida estándar sin agregar un salto de línea al final:
 
 ```Ruby
-begin
-  # código que puede arrojar una excepción
-rescue
-  puts "Ocurrió un error: #{$!}" # $! representa el mensaje de error de la excepción
+print "¡Hola "
+print "mundo!"
+```
+
+Este código imprimirá "¡Hola mundo!" sin un salto de línea entre las dos palabras.
+
+Otro método útil es `p`, que nos permite imprimir el valor de una variable junto con su tipo de dato:
+
+```Ruby
+nombre = "Juan"
+p nombre    # Output: "Juan"
+```
+
+## Profundizando en la escritura a la salida estándar en Ruby
+
+A veces, es necesario escribir mensajes de error o información de depuración en la salida estándar. Para hacerlo, podemos utilizar el objeto `$stderr`, que nos permite escribir directamente a la salida de error.
+
+Fíjate en este ejemplo:
+
+```Ruby
+def dividir(a, b)
+    return a / b
+rescue ZeroDivisionError => error
+    $stderr.puts "¡No se puede dividir entre 0!"
+    $stderr.puts error.message
 end
+
+dividir(10, 0)
 ```
 
-Esto resultará en un mensaje de error personalizado en la salida de error estándar cuando se capture una excepción.
+El código anterior producirá el siguiente resultado en pantalla:
+
+```
+¡No se puede dividir entre 0!
+divided by 0
+```
+
+Este es solo un ejemplo de cómo podemos utilizar la salida de error para manejar situaciones inesperadas en nuestros programas.
 
 ## Ver también
 
-- [Documentación de Ruby Error Handling](https://ruby-doc.org/core-2.7.1/Exception.html)
-- [Artículo sobre manejo de errores en Ruby](https://www.rubyguides.com/2018/05/raise-catch/)
-- [Preguntas frecuentes de Ruby sobre manejo de errores](https://ruby-doc.org/docs/keywords/1.9/Object.html#method-i-raise)
+- [Métodos de salida estándar en Ruby](https://ruby-doc.org/core-2.7.2/Kernel.html#method-i-puts)
+- [Manejo de errores en Ruby](https://www.rubyguides.com/2019/04/ruby-exceptions/)
+- [Documentación de Ruby sobre stderr](https://ruby-doc.org/core-2.7.2/IO.html#method-c-new-label-Standard+Streams)
 
----
-
-¡Esperamos que esta información te haya sido útil y que ahora te sientas más cómodo escribiendo a la salida de error estándar en Ruby! Recuerda siempre utilizar esta técnica para mejorar la calidad de tu código y ayudarte en la depuración de errores.
-
-¡Hasta la próxima!
+¡Ahora estás listo para escribir a la salida estándar en tus programas de Ruby! Recuerda siempre verificar la documentación oficial y explorar diferentes métodos para encontrar la mejor forma de imprimir información para tus usuarios. ¡Buena suerte!

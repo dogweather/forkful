@@ -1,68 +1,32 @@
 ---
-title:                "Swift: प्रोग्रामिंग में लिखना"
+title:                "Swift: परीक्षाएं लिखना"
+simple_title:         "परीक्षाएं लिखना"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Kyu
+## क्यों
 
-Testing aapki Swift applications mein bahut zaroori hai kyuki ye aapko code ke bugs aur errors ko pehle se hi pata karne aur solve karne mein madad karta hai. Testing aapki application ki stability aur reliability ko bhi improve karta hai. 
+जैसा कि आप जानते हैं, स्विफ्ट सिर्फ एक ओपन सोर्स प्रोग्रामिंग भाषा है। यह भाषा शुरुआती स्तर पर सीखने में आसान होती है, लेकिन इसमें एक महत्वपूर्ण चुनौती है - एक मेंटरिंग आवश्यकता के अभाव। इसलिए, यदि आप स्विफ्ट प्रोग्रामिंग में अग्रणी बनना चाहते हैं तो आपको बेहतर तरीके से स्विफ्ट में परिक्षण लिखनी आनी चाहिए।
 
-## Kaise Karein
+## कैसे करें
 
-Testing ke liye aap XCTest framework ka istemaal kar sakte hain. Ismein aap apne code ko unit tests, UI tests aur performance tests ke liye alag-alag categories mein organize kar sakte hain. Neeche diye gaye code blocks mein aap dekh sakte hain ki kaise tests ko implement kiya jaata hai.
-
-```Swift
-import XCTest
-@testable import MyApp
-
-class MyTests: XCTestCase {
-
-    // Unit Test Example
-    func testMultiply() {
-        let calculator = Calculator()
-        XCTAssertEqual(calculator.multiply(2, 4), 8)
-    }
-
-    // UI Test Example
-    func testLogin() {
-        let app = XCUIApplication()
-        app.launch()
-        
-        app.textFields["username"].tap()
-        app.textFields["username"].typeText("John")
-        
-        app.secureTextFields["password"].tap()
-        app.secureTextFields["password"].typeText("1234")
-        
-        app.buttons["login"].tap()
-        
-        XCTAssertTrue(app.staticTexts["Welcome John!"].exists)
-    }
-
-    // Performance Test Example
-    func testPerformanceExample() {
-        self.measure {
-            let array = [1, 2, 3, 4, 5]
-            for _ in 0...10000 {
-                array.append(array.sum())
-            }
-        }
-    }
+परिक्षण लेखन सीखने के लिए सबसे अच्छा तरीका उदाहरणों के माध्यम से है। हम इस लेख में "```Swift
+class Calculator { 
+    func sum(_ a: Int, _ b: Int) -> Int { 
+        return a + b 
+    } 
 }
+```" के उदहारण के माध्यम से स्पष्ट रूप से दिखाएंगे कि कैसे आप स्विफ्ट में परीक्षण लिख सकते हैं। इस जटिलता को खत्म करने के लिए, हम अपनी कोड पर स्पष्टीकरण को ला सकते हैं और सुनिश्चित कर सकते हैं कि प्रोग्राम सही तरीके से काम कर रहा है।
 
-```
+## गहराई में
 
-## Deep Dive
+यदि आप बेहतर तरीके से स्विफ्ट में परीक्षण लिखना चाहते हैं तो, आपको सावधानी से अपने कोड को सप्ताह में एक दो बार परखना चाहिए। आपको प्रत्येक बार विभिन्न प्रकार के टेस्ट केस बनाने और परिक्षण कॉड को चलाने में मदद मिलेगी। इसके साथ ही, आपको स्विफ्ट में परीक्षण कितना महत्वपूर्ण है और इसके फायदे क्या हैं यह जानना भी आवश्यक है।
 
-Unit tests aapke code ke alag alag parts ko test karta hai jaise functions, extensions, etc. UI tests aapki application ke UI elements ko test karta hai jaise buttons, text fields, etc. Performance tests aapki application ki performance ko measure karta hai aur potential bottlenecks ko identify karne mein madad karta hai. Ek achi testing strategy aapki application ko reliable aur bug-free banane mein bahut madad karta hai.
+## देखें भी
 
-## Dekhiye Bhi
-
-- [Introduction to XCTest Framework](https://www.raywenderlich.com/960290-ui-testing-with-xctest-tutorial-getting-started)
-- [Unit Testing in Swift](https://medium.com/flawless-app-stories/getting-started-with-unit-testing-in-swift-72ab0baea2d)
-- [UI Testing in Swift](https://blog.xmartlabs.com/2016/07/07/xcode-ui-testing/)
-- [Performance Testing in Swift](https://medium.com/expedia-group-tech/testing-performance-in-ios-62b81c27e622)
+- [स्विफ्ट बिल्डिं

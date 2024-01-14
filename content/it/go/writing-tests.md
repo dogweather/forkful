@@ -1,59 +1,64 @@
 ---
 title:                "Go: Scrivere test"
+simple_title:         "Scrivere test"
 programming_language: "Go"
-category:             "Testing and Debugging"
+category:             "Go"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché scrivere dei test in Go
-Scrivere test per il proprio codice è essenziale per garantire che esso funzioni correttamente e manterrà le sue funzionalità anche dopo le modifiche. Inoltre, i test possono aiutare a identificare bug e problemi in modo tempestivo, risparmiando tempo e sforzi nella fase di debugging.
+## Perché
+Scrivere test è un'importante pratica di sviluppo del software che aiuta a garantire che il codice sia affidabile, robusto e di alta qualità. Inoltre, i test automatizzati aiutano a facilitare la manutenzione del codice e a identificare eventuali bug o problematiche prima che vengano incontrate dagli utenti finali.
 
-## Come scrivere test in Go
-Ecco un esempio di codice che mostra come scrivere e eseguire un test in Go:
+## Come
+Scrivere test in Go è semplice grazie alle sue potenti funzionalità di testing integrato nel linguaggio. Basta seguire questi semplici passaggi per iniziare:
+
+1. Definire le funzioni di test utilizzando il prefisso "Test" seguito dal nome della funzione da testare.
+2. Utilizzare la funzione "t.Errorf()" per segnalare un errore durante il test.
+3. Utilizzare la funzione "t.Run()" per suddividere i test in sottogruppi.
+4. Eseguire i test utilizzando il comando "go test".
+
+Ecco un esempio di come potrebbe apparire un test scritto in Go:
 
 ```Go
-package main
-
-import (
-	"testing"
-)
-
-func Sum(x, y int) int {
-	return x + y
+func TestSomma(t *testing.T) {
+  // Testiamo la funzione di somma per valori positivi
+  risultato := Somma(5, 10)
+  if risultato != 15 {
+    t.Errorf("Somma incorretta, ci aspettavamo 15 ma abbiamo ottenuto %d", risultato)
+  }
 }
 
-func TestSum(t *testing.T) {
-	result := Sum(2, 3)
-	expected := 5
-	if result != expected {
-		t.Errorf("Expected %d, but got %d", expected, result)
-	}
+func TestDivisione(t *testing.T) {
+  // Testiamo la funzione di divisione per valori negativi
+  risultato := Divisione(10, -2)
+  if risultato != -5 {
+    t.Errorf("Divisione incorretta, ci aspettavamo -5 ma abbiamo ottenuto %d", risultato)
+  }
 }
 ```
 
-L'output dovrebbe essere il seguente:
+L'output di questi test dovrebbe essere il seguente:
 
 ```
-$ go test
+--- PASS: TestSomma (0.00s)
+--- PASS: TestDivisione (0.00s)
 PASS
-ok      example.com/test    0.001s
+ok	com/example/test	0.001s
 ```
 
-In questo esempio, stiamo testando una semplice funzione Sum che dovrebbe restituire la somma di due numeri interi. Il test verifica che il risultato di Sum(2,3) sia uguale a 5. In caso contrario, l'errore verrà visualizzato.
+## Deep Dive
+Oltre ai semplici test di esempio mostrati sopra, Go offre molte altre funzionalità per scrivere test efficaci e comprensibili. Alcune di queste includono:
 
-## Un approfondimento sui test in Go
-Quando si scrivono test in Go, è importante seguire alcune buone pratiche:
+- Utilizzo delle funzioni di utilità "t.Helper()" per identificare in modo chiaro quali chiamate di funzione stanno causando eventuali errori.
+- Utilizzo delle funzioni di benchmarking per testare le prestazioni del codice.
+- Utilizzo delle funzioni di mocking per testare il codice in isolamento senza dipendere da altre funzioni o librerie.
 
-- Organizza i tuoi test in file separati dalla logica del tuo codice.
-- Assicurati che i tuoi test vengano eseguiti in modo indipendente l'uno dall'altro.
-- Utilizza il pacchetto "testing" incluso in Go per scrivere e eseguire i tuoi test.
-- Utilizza gli assert per verificare che i risultati ottenuti siano quelli attesi.
+Scopri di più su come scrivere test efficaci in Go dalla documentazione ufficiale e dalla community di Go.
 
-Ricorda che i test non dovrebbero essere un'opportunità per scrivere codice non testato. Assicurati sempre di scrivere test per tutte le funzionalità critiche del tuo codice.
-
-## Vedi anche
-- [Go tutorial sul writing test](https://golang.org/doc/tutorial/add-a-test)
-- [Testing best practices in Go](https://onecompiler.com/blog/golang-testing-best-practices)
-- [Go testing documentation](https://golang.org/pkg/testing/)
+## Vedi Anche
+- [Documentazione ufficiale di Go sul testing](https://golang.org/pkg/testing/)
+- [Go in Action: Writing Effective Unit Tests](https://www.manning.com/books/go-in-action-second-edition)
+- [Effective Go: Testing](https://golang.org/doc/effective_go.html#testing)

@@ -1,69 +1,61 @@
 ---
 title:                "Arduino: Kahden päivämäärän vertailu"
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi vertailla päivämääriä?
-Usein Arduino-ohjelmoinnissa on tarpeen verrata kahta eri päivämäärää, esimerkiksi tarkistamaan onko nykyinen päivä ennen tai jälkeen tiettyä päivämäärää. Tämä voi olla hyödyllistä esimerkiksi erilaisten ajastettujen tapahtumien hallinnassa tai päivämäärän perusteella tapahtuvassa päätöksenteossa.
+## Miksi: Miksi vertailla kahden päivämäärän välillä?
 
-## Kuinka tehdä
-Vertaillessa päivämääriä Arduino-ohjelmassa tulee ottaa huomioon päivämäärän esitystapa ja sen vertailun logiikka. Esimerkiksi jos päivämäärät on tallennettu muuttujiin, voidaan niitä vertailla seuraavalla tavalla:
+Päivämäärän vertailu on tärkeää etenkin projektien aikataulutuksessa ja tapahtumien järjestämisessä. Tämä on myös hyödyllistä, jos haluat tarkistaa, onko jokin päivämäärä jo mennyt tai onko se tulevaisuudessa.
+
+## Miten: Esimerkkejä Arduino-ohjelmoinnista vertaillaksesi kahden päivämäärän välillä
 
 ```Arduino
-// Tallennetaan päivämäärät muuttujiin
-int date1 = 20210920;
-int date2 = 20210810;
+#include <Time.h>
 
-// Vertaillaan päivämääriä ja tulostetaan tulos sarjaporttiin
-if(date1 < date2){
-    Serial.println("Date1 on aiempi kuin Date2");
-} else if(date1 > date2) {
-    Serial.println("Date1 on myöhempi kuin Date2");
-} else {
-    Serial.println("Päivämäärät ovat samat");
+int syotePv = 25; //ensimmäisen päivämäärän päivä
+int syoteKk = 11; //ensimmäisen päivämäärän kuukausi
+int syoteV = 2021; //ensimmäisen päivämäärän vuosi
+
+int tulosPv = 10; //toisen päivämäärän päivä
+int tulosKk = 8; //toisen päivämäärän kuukausi
+int tulosV = 2022; //toisen päivämäärän vuosi
+
+// Luo aikatietueet ensimmäiselle ja toiselle päivämäärälle
+tmElements_t ensimmainen = {0, 0, 0, syotePv, syoteKk, syoteV + CalendarYrOffset};
+tmElements_t toinen = {0, 0, 0, tulosPv, tulosKk, tulosV + CalendarYrOffset};
+
+//Muunna tietueet ajan luvuiksi
+time_t aika1 = makeTime(ensimmainen);
+time_t aika2 = makeTime(toinen);
+
+//Vertaile aikoja
+if(aika1 < aika2){
+  Serial.println("Ensimmäinen päivämäärä on ennen toista päivämäärää.");
+}
+else if(aika1 == aika2){
+  Serial.println("Päivämäärät ovat samat.");
+}
+else{
+  Serial.println("Ensimmäinen päivämäärä on jälkeen toista päivämäärää.");
 }
 ```
 
-Yllä olevassa koodissa ensin tallennetaan kaksi päivämäärää muuttujiin ja sitten verrataan niitä if-else rakenteessa. Arduino käyttää päivämäärän esittämiseen yleensä numeromuotoa YYYYMMDD, jossa vuosi on neljällä numerolla, kuukausi kahdella ja päivä kahdella numerolla.
+Esimerkki tulostaa "Ensimmäinen päivämäärä on ennen toista päivämäärää.", koska ensimmäinen päivämäärä on vuonna 2021 ja toinen päivämäärä vuonna 2022.
 
-## Syväsukellus
-Arduino tarjoaa myös valmiita funktioita päivämäärän esittämiseen ja vertailuun. Esimerkiksi funktio `day()` palauttaa nykyisen päivän, `month()` nykyisen kuukauden ja `year()` nykyisen vuoden. Näitä funktioita voidaan käyttää hyödyksi päivämäärien vertailussa.
+## Syvemmälle: Lisätietoa kahden päivämäärän vertailusta
 
-Esimerkiksi jos haluamme tulostaa nykyisen päivämäärän ja verrata sitä tiettyyn tulevaan päivämäärään, voimme käyttää seuraavaa koodia:
+Päivämäärien vertailu toimii käyttämällä aikatietueita, jotka muunnetaan aikaluvuiksi ja sitten verrataan keskenään. Arduino-koodissa tämä tapahtuu käyttämällä Time-kirjastoa, joka sisältää hyödyllisiä toimintoja aikatietueiden käsittelyyn.
 
-```Arduino
-// Tallennetaan nykyinen päivämäärä muuttujiin
-int currentDay = day();
-int currentMonth = month();
-int currentYear = year();
-
-// Tulostetaan nykyinen päivämäärä sarjaporttiin
-Serial.print("Nykyinen päivämäärä: ");
-Serial.print(currentDay);
-Serial.print("/");
-Serial.print(currentMonth);
-Serial.print("/");
-Serial.println(currentYear);
-
-// Vertaillaan nykyistä päivämäärää ja tulevaa päivämäärää
-int futureDay = 20;
-int futureMonth = 12;
-int futureYear = 2021;
-
-if(currentYear < futureYear || (currentYear == futureYear && currentMonth < futureMonth) || (currentYear == futureYear && currentMonth == futureMonth && currentDay < futureDay)){
-    Serial.println("Tuleva päivämäärä on myöhemmin kuin nykyinen päivämäärä");
-} else if(currentYear == futureYear && currentMonth == futureMonth && currentDay == futureDay) {
-    Serial.println("Päivämäärät ovat samat");
-} else {
-    Serial.println("Tuleva päivämäärä on ennen nykyistä päivämäärää");
-}
-```
-
-Koodi tulostaa ensin nykyisen päivämäärän ja sitten vertailee sitä tulevaan päivämäärään. Kuten huomataan, vertailun logiikka on hieman monimutkaisempi, mutta hyödyntämällä Arduino-funktioita voimme tehdä vertailusta helpompaa.
+Vertailussa on tärkeää ottaa huomioon myös vuodet, jotta tulokset ovat oikein. Tästä syystä tietueet on muunnettava aikatietueiksi käyttämällä makeTime-funktiota.
 
 ## Katso myös
--
+
+- [Time Library for Arduino](https://www.arduino.cc/en/reference/time)
+- [Arduino Reference - Time functions](https://www.arduino.cc/reference/en/libraries/time/)
+- [YouTube: Arduino Time and Date Tutorials Playlist](https://www.youtube.com/playlist?list=PLA567CE235D39FA84)

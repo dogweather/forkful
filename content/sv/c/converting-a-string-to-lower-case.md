@@ -1,7 +1,9 @@
 ---
 title:                "C: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,45 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att konvertera en sträng till små bokstäver är en vanlig operation som ofta används i programmering. Det kan vara användbart när man behöver jämföra strängar, sortera dem eller helt enkelt göra dem mer enhetliga i utseendet.
+I många programmeringsprojekt är det viktigt att ha korrekt formaterad data, och ofta kan det innebära att konvertera en sträng till gemener eller versaler. Det kan vara en viktig del av att skapa en användarvänlig gränssnitt eller att kontrollera indata för att undvika fel.
 
-## Hur man gör det
+## Hur man gör
 
-För att konvertera en sträng till små bokstäver i C-programmering kan man använda en inbyggd funktion som heter `tolower`. Den tar in en enskild karaktär som parameter och returnerar en motsvarande liten bokstav om den var en stor bokstav. Om karaktären redan var en liten bokstav returneras den oförändrad.
+Det finns flera sätt att konvertera en sträng till gemener i C, men det vanligaste sättet är att använda den inbyggda funktionen `tolower()`. Den tar en karaktär som argument och returnerar en gemener om den ursprungliga karaktären var en versal, annars returnerar den samma karaktär.
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
-int main(void) {
-    char str[] = "HELLO WORLD";
-    int i;
+int main()
+{
+    char str[] = "Hej, VÄRLDEN!";
+    int i = 0;
 
-    for(i = 0; str[i]; i++) {
+    while(str[i])
+    {
         str[i] = tolower(str[i]);
+        i++;
     }
 
-    printf("Konverterad sträng: %s", str);
+    printf("%s", str);
 
     return 0;
 }
 ```
 
-Output:
-```
-Konverterad sträng: hello world
-```
-
-Det finns också en annan funktion som kallas `strlwr`, som tar in en hel sträng som parameter och konverterar alla dess bokstäver till små. Detta är dock inte en standard C-funktion, så det beror på vilket bibliotek du använder om den är tillgänglig eller inte.
+Koden ovan använder en while-loop för att loopa igenom varje karaktär i strängen och konvertera den till gemener med hjälp av `tolower()`-funktionen. Slutresultatet blir "hej, världen!".
 
 ## Djupdykning
 
-När man konverterar en sträng till små bokstäver är det viktigt att förstå att det bara fungerar för alfabetiska tecken. Om du har en sträng som innehåller icke-alfabetiska tecken, som siffror eller specialtecken, kommer de att förbli oförändrade. Detta kan leda till oönskade fel eller oväntade resultat om man inte hanterar dem korrekt.
+Det är viktigt att notera att `tolower()`-funktionen endast fungerar för versaler och inte hanterar åäö korrekt om man använder standard ASCII-teckenuppsättning. För att få korrekt konvertering av åäö-nuri kallas C standardbiblioteket `wchar.h` och funktionen `towlower_l()`.
 
-Det finns också andra saker att tänka på när man konverterar mellan stora och små bokstäver i C. Till exempel är det viktigt att ta hänsyn till den aktuella språkinställningen för programmet, eftersom olika språk behandlar bokstäver på olika sätt. Det finns också särskilda begränsningar för vissa teckenuppsättningar, som inte kan hanteras korrekt av vissa C-funktioner.
+En annan viktig aspekt att tänka på är att konverteringen inte sker på plats i minnet, utan istället skapas en ny sträng med de konverterade karaktärerna. Detta kan innebära att extra minne måste allokeras, vilket kan vara problematiskt i vissa fall.
 
-## Se också
+## Se även
 
-- [String lowercase function in C](https://www.programiz.com/c-programming/library-function/string.h/strlwr)
-- [Manipulating strings in C](https://www.geeksforgeeks.org/strings-library-c/)
-- [ASCII character set in C](https://www.tutorialspoint.com/ansi_c/c_ascii_character_set.htm)
+- [C Standardbiblioteket](https://www.ibm.com/docs/sv/is compilers/rhapsody/8.5.3?topic=Standard-library)
+- [wchar.h Dokumentation](https://www.cplusplus.com/reference/cwchar/)
+- [toupper() Funktionen i C](https://www.geeksforgeeks.org/toupper-function-in-c/)

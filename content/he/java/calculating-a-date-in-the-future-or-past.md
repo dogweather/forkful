@@ -1,57 +1,42 @@
 ---
-title:                "Java: חישוב תאריך בעתיד או בעבר"
+title:                "Java: קיבוע תאריך בעתיד או בעבר"
+simple_title:         "קיבוע תאריך בעתיד או בעבר"
 programming_language: "Java"
-category:             "Dates and Times"
+category:             "Java"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/java/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
 ## למה
-
-כדי לתת אפשרות למשתמשים לחשב תאריך מעוד כמה ימים או חודשים אחרי או לפני התאריך הנוכחי.
+בעולם התכנות אנו כל כך בעניין במיקום ובזמן של דברים, לכן לפעמים נדרש לנו לחשב תאריך בעתיד או בעבר. ייתכן שנרצה לייצר אירוע עתידי או לבדוק מתי נעבור לחגוג יום הולדת שנה הבאה. בשפת ג'אווה ישנן כמה דרכים לחשב תאריך בעתיד או בעבר, כך שנוכל ליישם את הפעולה הרצויה עם התאריך המדויק שצריך.
 
 ## איך לעשות זאת
+כדי לחשב תאריך בעתיד או בעבר בשפת ג'אווה, נדרשים שני דברים עיקריים: אובייקט של סוג "תאריך ושעה" ואופרטורים חשבוניים המחזירים ערכים מספריים. האובייקט של סוג "תאריך ושעה" יאפשר לנו לבנות ולערוך תאריכים ושעות, והאופרטורים החשבוניים יאפשרו לנו להוסיף ולחסר ימים, שעות ודקות מהתאריכים הקיימים. להלן כמה דוגמאות של קוד ג'אווה עם תוצאות מצורפות:
 
-רוצים לחשב תאריך מסוים בעתיד? היי, אני מתלבט! אתה יכול לעבוד עם המתודה Calendar.add () ולציין את היחידה הרצויה, כמו ימים או חודשים, ואת המספר הרצוי שלהם. למשל, אם אני רוצה לחשב תאריך שישנה בעשרה ימים מהיום הנוכחי, יש לי את הקוד הבא בשפת ג'אווה:
-```java
-Calendar cal = Calendar.getInstance();
-cal.add(Calendar.DAY_OF_MONTH, 10);
-System.out.println(cal.getTime());
-```
+```Java
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-כשאני מריץ את הקוד הזה, אני מקבל את התאריך המתאים עם עשרה ימים יותר:
-```
-Thu Jun 17 13:12:26 IST 2021
-```
+// חישוב תאריך 3 חודשים קדימה מהיום
+LocalDate today = LocalDate.now();
+LocalDate futureDate = today.plusMonths(3);
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+String formattedDate = futureDate.format(formatter);
+System.out.println(formattedDate); // תעודכן בהתאם לתאריך הרצוי
 
-בנוסף, אם אני רוצה לחשב תאריך שישנה בשנתיים מהיום הנוכחי, אפשר להשתמש במתודה Calendar.add ():
-```java
-cal.add(Calendar.YEAR, 2);
-```
-ואז אני מקבל את התאריך עם שנתיים יותר:
-```
-Thu Jun 09 14:12:26 IST 2023
-```
+// חישוב תאריך בעבר על פי תאריך מוגדר
+LocalDate pastDate = LocalDate.of(1995, 11, 28);
+LocalDate currentDate = LocalDate.now();
+long daysDifference = currentDate.toEpochDay() - pastDate.toEpochDay();
+System.out.println(daysDifference + " ימים עברו מאז תאריך ההנסקה המגודר");
 
-אבל במקרה שאני רוצה לחשב תאריך שמאוחר יותר, יש צורך לעבוד עם מתודות נוספות כמו היצירה של אינסטנס חדש של Calendar והשתמשות במתודה set ():
-```java
-Calendar futureDate = Calendar.getInstance();
-
-int year = 2022;
-int month = 9;
-int day = 25;
-futureDate.set(Calendar.YEAR, year);
-futureDate.set(Calendar.MONTH, month);
-futureDate.set(Calendar.DAY_OF_MONTH, day);
-System.out.println(futureDate.getTime());
+// יצירת תאריך ושעה מדויקים
+LocalDate date = LocalDate.of(2021, 9, 5);
+LocalTime time = LocalTime.of(16, 30, 0);
+System.out.println("האירוע יתקיים בתאריך " + date + " בשעה " + time);
 ```
 
-התאריך הסופי שאני מקבל הוא לפני 25 ימים מתאריך יום השביעי בחודש ספטמבר בשנת 2022:
-```
-Sun Sep 11 13:12:26 IST 2022
-```
-
-## טפסי הביתה
-
-חישוב תאריך בעתיד ובעבר הוא עיקרי בתכנות בשפת ג'אווה. אם אתה רוצה ללמוד עוד על המתודות השונות של Calendar ועל העולם של תאריכים ושעות בג'אווה, הנה כמה קישורים שיכול
+## חקירה עמוקה
+בשפת ג'אווה ישנן עוד ש

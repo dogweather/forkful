@@ -1,50 +1,39 @@
 ---
 title:                "Haskell: Ricerca e sostituzione di testo"
+simple_title:         "Ricerca e sostituzione di testo"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché
+## Perché
 
-La ricerca e la sostituzione di testo sono uno strumento essenziale per tutti i programmatori, in particolare per coloro che lavorano con linguaggi di programmazione funzionali come Haskell. Questa funzionalità consente di manipolare facilmente grandi quantità di testo in modo rapido ed efficiente.
+Molti programmatori si trovano spesso a dover manipolare e modificare grandi quantità di testo. Invece di farlo manualmente, la ricerca e la sostituzione di testo sono strumenti molto potenti e efficienti per automatizzare questo processo.
 
-# Come fare
+## Come Fare
 
-Per iniziare ad utilizzare la funzione di ricerca e sostituzione del testo in Haskell, è necessario importare il modulo "Text.Regex". Una volta importato, è possibile utilizzare la funzione "subRegex" per ricercare e sostituire uno specifico pattern all'interno di una stringa.
-
-### Esempio di codice:
+In Haskell, la funzione "Prelude.uncurry re" può essere utilizzata per cercare e sostituire porzioni di testo all'interno di una stringa. Ecco un esempio di codice che sostituisce tutte le occorrenze di "cane" con "gatto" in una stringa:
+ 
 ```Haskell
-import Text.Regex
-
-text = "Questo è un esempio di testo per la ricerca e la sostituzione in Haskell."
-nuovo_testo = subRegex (mkRegex "Haskell") text "Python"
-
---Output: "Questo è un esempio di testo per la ricerca e la sostituzione in Python."
+Prelude>uncurry re "Il mio cane è adorabile."
+"Il mio gatto è adorabile."
 ```
 
-In questo esempio, la stringa "Haskell" viene cercata all'interno di "text" e viene sostituita con "Python", creando così una nuova stringa "nuovo_testo" con il risultato.
+Inoltre, è anche possibile utilizzare la funzione "substitute" del pacchetto "text" per effettuare la sostituzione in una stringa specifica.
 
-### Esempio di codice con espressione regolare:
-```Haskell
-import Text.Regex
+## Approfondimento
 
-testo = "Questo è un esempio di testo per la ricerca e la sostituzione in Haskell."
-nuovo_testo = subRegex (mkRegex "(.*)Haskell(.*)") testo "\\1Python\\2"
+La ricerca e la sostituzione di testo in Haskell si basano sull'utilizzo di espressioni regolari. Queste espressioni sono pattern che descrivono un insieme di stringhe che si desidera cercare e sostituire. Per esempio, il pattern "cane" corrisponde a qualsiasi stringa che contiene la parola "cane".
 
---Output: "Questo è un esempio di testo per la ricerca e la sostituzione in Python."
-```
+È possibile utilizzare diversi simboli e quantificatori per creare espressioni regolari più complesse e specifiche. Ad esempio, il simbolo "+" indica che il carattere precedente deve essere presente almeno una volta, mentre "*" indica che il carattere deve essere presente zero o più volte.
 
-In questo secondo esempio, viene utilizzata un'espressione regolare per cercare uno specifico pattern all'interno della stringa "testo" e sostituirlo con "Python". L'espressione regolare viene utilizzata per catturare qualsiasi testo che si trovi prima e dopo la parola "Haskell" e poi inserirli nella nuova stringa "nuovo_testo" insieme alla parola "Python".
+La ricerca e la sostituzione di testo in Haskell è un processo potente e flessibile, che può essere utilizzato per automatizzare una varietà di attività di manipolazione del testo.
 
-# Approfondimento
+## Vedi Anche
 
-In Haskell, la funzione "subRegex" accetta diversi parametri per la ricerca e la sostituzione di testo. Ad esempio, è possibile specificare un parametro "caseSensitive" per indicare se la ricerca deve essere effettuata in modo case-sensitive o meno. Inoltre, è anche possibile utilizzare un'alternativa alla funzione "mkRegex" chiamata "mkRegexWithOpts", che accetta un parametro opzionale "RegexOptions" per specificare le opzioni di ricerca come ad esempio "caseInsensitive" o "multiline".
-
-# Vedi anche
-
-- [Documentazione di Text.Regex](https://hackage.haskell.org/package/regex-tdfa-1.3.1.0/docs/Text-Regex.html)
-- [Tutorial su advanced search and replace in Haskell](https://wiki.haskell.org/Regex_as_a_parser)
-- [Esempio di utilizzo di regular expressions in Haskell](https://www.youtube.com/watch?v=0SApfIKUd7c)
+* [Prelude.uncurry re](https://hackage.haskell.org/package/re/docs/Data-Regex.html)
+* [Funzioni per la manipolazione del testo nel pacchetto "text"](https://hackage.haskell.org/package/text/docs/Data-Text.html)
+* [Introduzione alle espressioni regolari in Haskell](https://wiki.haskell.org/Regular_expressions)

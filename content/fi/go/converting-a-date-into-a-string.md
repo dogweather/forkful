@@ -1,76 +1,42 @@
 ---
-title:                "Go: Päivämäärän muuntaminen merkkijonoksi"
+title:                "Go: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
+Go-ohjelmointi on yhä suositumpi ohjelmointikieli, jota käytetään monissa sovelluskehitysprojekteissa. Yksi hyödyllisistä taidoista, joita voi oppia Go-ohjelmoinnissa, on päivämäärän muuntaminen merkkijonoksi. Tämä taito voi olla hyödyllinen esimerkiksi luetun päivämäärän tallentamisessa tietokantaan tai näyttämiseen käyttäjän näkymässä.
 
-Monissa Go-ohjelmoinnin projekteissa saattaa joskus olla tarve muuttaa päivämäärä muotoon, joka on ymmärrettävämpi käyttäjälle tai tallennusta varten. Tässä blogikirjoituksessa tutustutaan kuinka tähän tehtävään voidaan lähteä käsiksi kannustamalla lähdekoodeihin ja ketteriin ohjelmistotyökaluihin.
+## Kuinka tehdä se
 
-## Kuinka tehdä
-
-Katsotaanpa ensin kuinka muuttaa päivämäärä päivämäärärajapinnan avulla. Voimme käyttää aikapakettia luodaksemme haluamamme ajanhetken ja käyttää sitten MarshalJSON-menetelmää muuttaaksemme sen merkkijonoksi. Tässä on yksinkertainen esimerkki:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "time"
-)
+Päivämäärän muuntaminen merkkijonoksi onnistuu helposti Go-kielellä. Ensiksi täytyy tuoda Go:n aikakirjasto käyttöön. Sitten voit käyttää aikakirjaston `Format`-funktiota, joka hyväksyy kaksi parametria: päivämäärän formaatti ja itse päivämäärän.
+```
+import "time"
 
 func main() {
-    t := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
-    json, err := t.MarshalJSON()
-    if err != nil {
-        fmt.Println(err)
-    }
-    fmt.Println(string(json))
+  date := time.Now()
+  dateString := date.Format("02.01.2006")
+  fmt.Println(dateString)
 }
 ```
+Yllä olevassa koodissa ensin haetaan nykyinen päivämäärä `time.Now()` funktion avulla ja muunnetaan se merkkijonoksi `date.Format` funktion avulla. Päivämäärän formaatissa käytetään Esimerkissä "02" merkitsee päivän numeroa, "01" kuukauden ja "2006" vuoden lukua. Voit muuttaa näitä numeroita halutessasi saadaksesi erilaisia muotoja. Tulosteena pitäisi olla nykyinen päivämäärä muodossa "27.06.2021".
 
-Tulostus:
+## Syvemmälle
 
-```
-"2021-01-01T00:00:00Z"
-```
-
-Voit myös muuttaa päivämäärän haluttuun muotoon käyttämällä aika- ja merkkijonopaketteja. Tässä on esimerkki tähän lähestymistapaan:
-
-```Go
-package main
-
-import (
-    "fmt"
-    "time"
-)
-
-func main() {
-    t := time.Date(2020, time.October, 10, 12, 0, 0, 0, time.UTC)
-    layout := "1-2-2006"
-    str := t.Format(layout)
-    fmt.Println(str)
-}
-```
-
-Tulostus:
+Go:n aikakirjasto tarjoaa paljon erilaisia vaihtoehtoja päivämäärän muotoiluun. Esimerkiksi, jos haluat näyttää myös ajan ja kellonajan, niin voit käyttää `Format`-funktion sijaan `DateTime`-funktiota.
 
 ```
-10-10-2020
+dateWithTime := date.Format("02.01.2006 15:04:05")
 ```
 
-## Syvenny
-
-Syvemmälle mentäessä voimme huomata, että päivämäärämuunnos Go-kielessä on erittäin joustavaa. Aikapaketti tarjoaa lukuisia erilaisia toimintoja ja vaihtoehtoja, jotka voivat auttaa muuttamaan päivämäärän haluttuun muotoon.
-
-Esimerkiksi voit käyttää Add-funktiota lisätäksesi aikaa tiettyyn päivämäärään tai Sub-funktiota vähentääksesi sitä. Voit myös käyttää Truncate-menetelmää pyöristääksesi ajan haluttuun tarkkuuteen. Kaikilla näillä toiminnoilla on monia lisävaihtoehtoja, jotka voi löytää Go-ohjelmoinnin dokumentaatiosta.
+Voit myös käyttää muita päivämäärän muotoilujen erikoisia, kuten "Mon Jan 2 15:04:05 MST 2006". Voit lukea lisää vaihtoehdoista Go:n virallisesta dokumentaatiosta.
 
 ## Katso myös
 
-- Aikapaketin dokumentaatio: https://golang.org/pkg/time/
-- Larry Rice, "Aikapaketin käyttö Go-kielessä": https://medium.com/@larryrice/golang-time-package-notes-7ff3a57ab562
-- Go-kielen virallinen verkkosivusto: https://golang.org/
+- [Go:n virallinen dokumentaatio (englanniksi)](https://golang.org/pkg/time/#Time.Format)
+- [Lyhyt esimerkki päivämäärän muuntamisesta merkkijonoksi (englanniksi)](https://gobyexample.com/time-formatting-parsing)

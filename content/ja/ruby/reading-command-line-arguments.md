@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: コンピュータプログラミングにおける「コマンドライン引数の読み取り」"
+title:                "Ruby: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/ruby/reading-command-line-arguments.md"
 ---
 
@@ -9,40 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # なぜ
 
-コマンドライン引数を読むのに *なぜ* 読者が参加する必要があるのか、についての 1-2 文字の説明です。
-
-コマンドライン引数を読むことは、よりオプションを使ってプログラムを実行したい場合や、ユーザーからの入力を受け入れたい場合に役立ちます。また、複数のファイルを同時に処理する場合や、特定の処理を行うために必要な情報をプログラムに提供することができます。
+コマンドライン引数の読み取りを学ぶことは、より多くの経験を得るために役立ちます。また、自分のプログラムが他人にとっても使いやすくなるため、よりプロフェッショナルに見えるようになります。
 
 # 方法
 
-コマンドライン引数を読むためには、プログラムの引数として `ARGV` を使用します。`ARGV` は Ruby の特別なグローバル変数であり、コマンドラインに渡された引数が配列として格納されています。
+コマンドライン引数を読み取り、使用する方法は簡単です。 ```ARGV```という変数を使用して、引数を読み取ることができます。以下のコードは、オプションの引数を使った例です。
 
 ```Ruby
-input = ARGV[0]
-puts "入力された引数は #{input} です。"
+# オプションの引数を読み取るためのコード
+option = ARGV[0]
+
+if option == "-h"
+  puts "使い方：ruby program.rb <オプション> <ファイル名>"
+  puts "-h：使い方を表示する"
+  puts "-c：ファイルの内容を表示する"
+end
+
+file_name = ARGV[1]
+
+if option == "-c"
+  file = File.open(file_name)
+  contents = file.read
+  puts contents
+end
 ```
 
-上記の例では、最初の引数を `ARGV` から取得し、それを文字列の一部として出力しています。
-
-出力:
+このプログラムを実行する際は、以下のようにコマンドラインから引数を渡すことができます。
 
 ```
-$ ruby read_argv.rb hello
-入力された引数は hello です。
+ruby program.rb -h
+ruby program.rb -c test.txt
 ```
 
-# 詳細を掘り下げる
+# 深堀り
 
-コマンドライン引数をより詳しく学ぶには、Ruby のドキュメントを見ることができます。また、`OptionParser` クラスを使用して、より複雑なコマンドライン引数を処理することもできます。
+コマンドライン引数を読み取る際、```ARGV```は配列として引数を受け取ります。引数は、最初の要素から順に、0番目、1番目、2番目のように番号が付けられます。また、コマンドライン引数はスペースで区切って入力することができます。
 
-さらに、ARGV を使ってプログラムに入力を提供する方法だけでなく、環境変数や標準入力からのデータを取得する方法もあります。Ruby には様々な方法でプログラムから入力を受け取る機能が用意されているため、使いやすい方法を選択することができます。
+例えば、```ruby program.rb -c test.txt```の場合、```ARGV```は以下のように代入されます。
 
-# はてしなく続く
+```
+[0] = "-c"
+[1] = "test.txt"
+```
 
-コマンドライン引数の読み方は、プログラミングにおいて非常に重要な機能の一つです。これまでの例では簡単な入力を扱いましたが、実際にはより複雑な引数を扱う必要が出てくるでしょう。そのためには、より詳細な学習や実践が必要になりますが、それによってプログラムの機能性が向上することができます。
+また、コマンドライン引数のうちファイル名を受け取る際、```File.open```メソッドを使用してファイルを開き、ファイルの内容を読み取ることができます。これは、ファイル操作をとても簡単にする方法です。
 
 # 関連リンク
 
-- [Ruby ドキュメント - `ARGV`](https://docs.ruby-lang.org/ja/latest/class/ARGV.html)
-- [Ruby ドキュメント - `OptionParser`](https://docs.ruby-lang.org/ja/latest/class/OptionParser.html)
-- [Ruby チュートリアル - コマンドライン引数を扱う](https://www.ruby-lang.org/ja/documentation/tutorials/quickstart/2/)
+- [Ruby のコマンドライン引数の読み取り方](https://www.rubyguides.com/2015/05/working-with-command-line-arguments/)
+- [コマンドライン引数を扱う練習問題](https://ruby-doc.com/core-3.0.0/ARGF.html#class-ARGF-label-Understanding+Command-Line+Arguments)
+- [コマンドライン引数の使い方を理解する](https://www.bento.io/tutorials/command-line-arguments)
+- [コマンドライン引数についての詳細な説明](https://ruby.hatenadiary.com/entry/20140520/1400535508)

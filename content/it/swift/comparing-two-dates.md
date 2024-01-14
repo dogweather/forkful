@@ -1,54 +1,54 @@
 ---
-title:                "Swift: Confrontare due date"
+title:                "Swift: Confronto tra due date"
+simple_title:         "Confronto tra due date"
 programming_language: "Swift"
-category:             "Dates and Times"
+category:             "Swift"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-C'è spesso la necessità di confrontare due date durante la programmazione di un'applicazione. Comparare due date può essere utile per determinare eventi futuri, verificare se un'azione è stata eseguita entro una scadenza o semplicemente per visualizzare le informazioni in un formato facilmente leggibile. In questo articolo, impareremo come confrontare facilmente due date utilizzando il linguaggio di programmazione Swift.
 
-## Come Fare
-Per confrontare due date in Swift, è necessario convertirle in oggetti del tipo `Date` e poi utilizzare il metodo `compare` per determinare la loro relazione. Ecco un esempio di codice che confronta due date e stampa il risultato:
+Comparare due date è un'operazione comune nella programmazione Swift che può aiutare a gestire le informazioni sul tempo in modo efficace. Può essere utile in casi come la pianificazione di eventi, la creazione di notifiche o la gestione delle scadenze.
+
+## Come fare
+
+Per confrontare due date in Swift, possiamo utilizzare il metodo `compare()` della classe `Date`. Questo metodo restituisce un oggetto di tipo `ComparisonResult` che può assumere 3 valori: `.orderedAscending`, `.orderedSame` o `.orderedDescending`, a seconda che la prima data sia più piccola, uguale o più grande della seconda data.
 
 ```Swift
 let dateFormatter = DateFormatter()
-
 dateFormatter.dateFormat = "dd/MM/yyyy"
-let firstDate = dateFormatter.date(from: "15/01/2021")
-let secondDate = dateFormatter.date(from: "20/01/2021")
 
-if let first = firstDate, let second = secondDate {
-    let comparisonResult = first.compare(second)
-    print(comparisonResult.rawValue) // stampa -1 perché la prima data è prima della seconda
+let date1 = dateFormatter.date(from: "15/06/2021")
+let date2 = dateFormatter.date(from: "20/06/2021")
+
+let comparison = date1!.compare(date2!)
+
+if comparison == .orderedAscending {
+    print("La prima data è più piccola della seconda")
+} else if comparison == .orderedDescending {
+    print("La prima data è più grande della seconda")
+} else {
+    print("Le due date sono uguali")
 }
 ```
 
-Nell'esempio sopra, abbiamo utilizzato un `DateFormatter` per convertire due stringhe in oggetti `Date`. Successivamente, abbiamo utilizzato il metodo `compare` per confrontare le due date e abbiamo stampato il risultato utilizzando il valore restituito `rawValue`, dove -1 indica che la prima data è prima della seconda.
+Output:
+
+```
+La prima data è più piccola della seconda
+```
 
 ## Approfondimento
-Il metodo `compare` restituisce tre possibili valori:
 
-- `.orderedAscending` se la prima data è antecedente alla seconda data
-- `.orderedDescending` se la prima data è successiva alla seconda data
-- `.orderedSame` se le due date sono uguali
+Nella programmazione, le date vengono memorizzate sotto forma di timestamp, che rappresenta il numero di secondi trascorsi dal 1 gennaio 1970. Questo timestamp viene convertito in data leggibile dall'utente utilizzando un formato specifico, come nel nostro esempio `dd/MM/yyyy`.
 
-Inoltre, è possibile utilizzare il modificatore `operator` per confrontare direttamente due date senza dover utilizzare il metodo `compare`. Ad esempio:
+Una cosa importante da notare è che le date vengono confrontate in base al loro timestamp, quindi se due date hanno lo stesso giorno, ma orari diversi, il confronto potrebbe non essere accurato. Per evitare questo problema, è possibile utilizzare il metodo `startOfDay` per impostare gli orari a mezzanotte prima di confrontare le date.
 
-```Swift
-let firstDate = Date() // data corrente
-let secondDate = Date(timeInterval: 3600, since: firstDate) // aggiungiamo un'ora alla prima data
+## Vedi anche
 
-if firstDate > secondDate {
-    print("La prima data è successiva alla seconda")
-} else {
-    print("La prima data è precedente alla seconda") // viene stampato questo output
-}
-```
-
-## Vedi Anche
-- [Documentazione ufficiale di Apple su Date](https://developer.apple.com/documentation/foundation/date)
-- [Tutorial su come utilizzare Date in Swift](https://www.hackingwithswift.com/read/15/3/working-with-dates)
-- [Confrontare date e tempi in Swift](https://www.codingexplorer.com/swiftly-sorting-dates-and-times/)
+- [Documentazione ufficiale di Swift su come confrontare date](https://developer.apple.com/documentation/foundation/date/1409708-compare)
+- [Tutorial su come gestire le date in Swift](https://www.hackingwithswift.com/example-code/language/how-to-compare-dates)
+- [Esempi pratici di confronto tra date in Swift](https://www.swiftbysundell.com/articles/working-with-dates-in-swift/)

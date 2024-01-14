@@ -1,37 +1,41 @@
 ---
-title:                "PHP: 패턴과 일치하는 문자 삭제"
+title:                "PHP: 패턴과 일치하는 글자 삭제하기"
+simple_title:         "패턴과 일치하는 글자 삭제하기"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/php/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 삭제 패턴과 일치하는 문자를 지우는 것일까요?
+# 왜
 
-코드를 작성하다 보면, 때로는 특정한 패턴과 일치하는 문자를 삭제해야 할 때가 있습니다. 이는 예를 들어, 문자열에서 모든 공백을 제거하거나, 특정한 문자열 패턴을 제거하는 경우에 유용합니다. 이러한 작업은 가독성을 높이거나 데이터를 정리할 때 매우 유용합니다.
+패턴에 일치하는 문자를 삭제하는 것에 관심을 가지는 이유는 주로 데이터 정제나 가공에 있습니다. 예를 들어, 어떤 텍스트 파일에서 특정한 단어를 모두 삭제하고 싶을 때 등의 경우에 이 기술을 사용할 수 있습니다.
 
-## 어떻게 삭제 패턴과 일치하는 문자를 지울 수 있을까요?
-
-PHP에서는 정규 표현식을 사용하여 패턴과 일치하는 문자를 삭제할 수 있습니다. 아래의 예시 코드를 참고해주세요.
+# 방법
 
 ```PHP
-$text = "Hello World!";
-$pattern = "/o/";
-$new_text = preg_replace($pattern, "", $text);
+// 입력 문자열
+$input = "Hello World! This is a test string.";
 
-echo $new_text;
-// 결과: Hell Wrld!
+// 정제할 패턴
+$pattern = '/[a-zA-Z]/';
+
+// 입력 문자열에서 패턴에 일치하는 문자를 모두 삭제
+$output = preg_replace($pattern, "", $input);
+echo $output; // 결과: "!  ."
+
 ```
 
-위의 예시 코드에서는 "o"라는 패턴과 일치하는 모든 문자를 삭제하여 "Hello World!"라는 문자열에서 "o"를 없앴습니다. 이를 응용하면 원하는 패턴을 지우는 것이 가능합니다.
+위의 예제 코드에서는 `preg_replace()` 함수를 사용하여 입력 문자열에서 정규표현식 패턴에 일치하는 문자를 모두 삭제하는 방법을 보여줍니다. 이를 응용하여 다양한 패턴을 사용하면 원하는 결과를 얻을 수 있습니다. 또한 `preg_replace()` 함수를 사용할 때는 정규표현식의 문법을 알아야 하며, 이를 사용하여 다양한 패턴을 만들 수 있습니다.
 
-## 깊이 살펴보기
+# 심층 분석
 
-PHP에서 정규 표현식으로 문자를 삭제하는 방법은 여러 가지가 있습니다. 위에서 소개한 `preg_replace()` 외에도 `str_replace()`를 사용하는 방법이 있습니다. 또한, 정규 표현식을 작성하는 방법에도 다양한 문법이 있으며, 조건문을 활용하여 원하는 패턴을 지우는 것도 가능합니다.
+패턴에 일치하는 문자를 삭제하는 방법은 정규표현식(Regular Expression)이라는 개념과 밀접한 관련이 있습니다. 정규표현식은 문자열에서 특정한 패턴을 찾거나 대체하는 작업을 수행할 때 유용하게 사용할 수 있는 도구입니다. 정규표현식의 문법은 다소 복잡할 수 있지만, 한 번 익혀두면 다양한 상황에서 유용하게 사용할 수 있습니다.
 
-# 같이 보기
+# 관련 링크
 
-- [PHP 정규 표현식 문서](https://www.php.net/manual/en/reference.pcre.pattern.syntax.php)
-- [온라인 정규 표현식 테스트 사이트](https://regexr.com)
-- [PHP String 함수 문서](https://www.php.net/manual/en/ref.strings.php)
+- [PHP 정규표현식 가이드 (한국어)](https://www.php.net/manual/kr/book.pcre.php)
+- [정규표현식 30분 학습 (영어)](https://regexone.com/)
+- [정규표현식 실습 사이트 (영어)](https://regexr.com/)

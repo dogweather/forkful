@@ -1,40 +1,49 @@
 ---
-title:                "Java: Mallia vastaavien merkkien poistaminen"
+title:                "Java: Pohjautuvien merkkien poistaminen"
+simple_title:         "Pohjautuvien merkkien poistaminen"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/java/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
 
-Joillakin ohjelmankehittäjillä saatetaan olla tilanteita, joissa on tarpeen poistaa merkkejä tietyllä kaavalla. Tämä voi olla esimerkiksi siinä tapauksessa, että halutaan muokata tai analysoida tekstidataa, jossa on ylimääräisiä tai virheellisiä merkkejä.
+Joskus ohjelmointitehtävissä saatat törmätä tilanteeseen, jossa haluat poistaa tietyn kaavan mukaiset merkit merkkijonosta. Tämä voi olla hyödyllistä esimerkiksi datan käsittelyssä tai tietojen suodattamisessa. Jatka lukemista oppiaksesi, miten voit toteuttaa tämän Java-koodilla.
 
-## Miten tehdä?
+## Miten
 
-Tässä ohjelmointiblogissa esitellään erilaisia tapoja poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Ensimmäinen vaihtoehto on käyttää String-luokan replaceAll-metodia, joka hyödyntää säännöllisiä lausekkeita. Toinen vaihtoehto on käyttää StringBuilder-luokan deleteCharAt-metodia, joka poistaa merkin annetusta indeksistä. Näiden lisäksi on olemassa myös muita tapoja, mutta ne eivät välttämättä ole yhtä tehokkaita tai helppokäyttöisiä.
+Java tarjoaa mahdollisuuden käyttää regular expression -tekniikkaa, joka on erittäin hyödyllinen merkkijonojen käsittelyssä. Voit käyttää metodia `replaceAll()` poistamaan merkkijonon osia, jotka vastaavat haluamaasi kaavaa. Alla on esimerkki koodista, joka poistaa kaikki numerot sisältävät merkit:
 
-```Java 
-// Esimerkki replaceAll-metodista 
-String teksti = "Tämä on esimerkkiteksti, josta halutaan poistaa kaikki numerot 12345";
-String uusiTeksti = teksti.replaceAll("\\d", ""); // poistaa kaikki numerot
-
-System.out.println(uusiTeksti); // tulostaa "Tämä on esimerkkiteksti, josta halutaan poistaa kaikki numerot"
-
-// Esimerkki deleteCharAt-metodista
-StringBuilder teksti = new StringBuilder("Tämä on esimerkkiteksti, josta halutaan poistaa ensimmäinen merkki");
-teksti.deleteCharAt(0); // poistaa ensimmäisen merkin
-
-System.out.println(teksti.toString()); // tulostaa "ämä on esimerkkiteksti, josta halutaan poistaa ensimmäinen merkki"
+```Java
+String originalString = "Hello123";
+String modifiedString = originalString.replaceAll("[0-9]", "");
+System.out.println(modifiedString);
 ```
 
-## Syvemmälle pinnan alle
+Tämän koodin tuloste olisi `Hello`.
 
-Säännölliset lausekkeet ovat tehokas työkalu kaavojen määrittämiseen ja merkkien poistamiseen. Niiden käyttö voi vaatia hieman harjoittelua, mutta ne tarjoavat paljon enemmän mahdollisuuksia verrattuna yksittäisten merkkien poistoon. On myös huomioitava, että säännölliset lausekkeet voivat olla hidas suurilla tekstimäärillä, joten tarvittaessa kannattaa harkita muita vaihtoehtoja.
+Voit myös käyttää `matches()` -metodia tarkistamaan, vastaako merkkijono haluamaasi kaavaan. Alla olevassa esimerkissä tarkistetaan, sisältääkö merkkijono ainoastaan kirjaimia:
+
+```Java
+String stringToCheck = "HelloWorld";
+if (stringToCheck.matches("[a-zA-Z]+")) {
+  System.out.println("Merkkijono koostuu ainoastaan kirjaimista.");
+}
+```
+
+Tämä koodi tulostaisi `Merkkijono koostuu ainoastaan kirjaimista.`.
+
+## Syväsyvennys
+
+Regular expression -tekniikka tarjoaa monia erilaisia merkintöjä, joita voit käyttää määrittelemään haluamasi kaavan. Esimerkiksi `[0-9]` vastaa kaikkia numeroita ja `[a-zA-Z]` vastaa kaikkia kirjaimia. Voit myös käyttää `+`-merkintää vastaamaan yhtä tai useampaa edeltävää merkkiä.
+
+On myös tärkeää muistaa, että `replaceAll()`-metodi palauttaa uuden merkkijonon, joten sinun täytyy tallentaa se uuteen muuttujaan jos haluat käyttää sitä myöhemmin. `replaceAll()` ja `matches()`-metodeilla voit myös käyttää säännöllistä lausetta ($regular expression$) muuttujana.
 
 ## Katso myös
 
-- Java String-luokan API: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html
-- Java StringBuilder-luokan API: https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
-- Säännölliset lausekkeet Java:ssa: https://docs.oracle.com/javase/tutorial/essential/regex/
+- [The Java Tutorials - Reglar Expressions](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- [Regular Expression Cheatsheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
+- [Matcher Class Documentation](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Matcher.html)

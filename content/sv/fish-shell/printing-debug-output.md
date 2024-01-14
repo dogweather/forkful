@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Utskrift av felsökningsutdata"
+title:                "Fish Shell: Utskrift av felsökningsresultat"
+simple_title:         "Utskrift av felsökningsresultat"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/printing-debug-output.md"
 ---
 
@@ -9,39 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Det kan vara ovärderligt att kunna skriva ut debuggutdata när det kommer till att programmera i Fish Shell. Det kan hjälpa dig att hitta fel och förstå hur din kod fungerar. I denna bloggpost kommer vi att utforska hur du kan göra detta.
+Att skriva program kan vara en ganska komplicerad process, speciellt när det kommer till felsökning. Att lägga till debug output i ditt Fish Shell-program kan underlätta denna process och hjälpa dig att hitta och åtgärda eventuella fel. Det är därför viktigt att förstå hur man skriver och använder debug output i Fish Shell.
 
-## Hur man gör det
+## Så här gör du
 
-Det första du behöver göra är att använda kommandot `echo` för att skriva ut text i terminalen. I `Fish Shell` kan du använda `debug`-kommandot för att bara skriva ut debuggutdata när `debug`-flaggan är satt. Det ser ut något i stil med detta:
+Debug output i Fish Shell är ganska enkelt att använda. Du behöver bara lägga till kommandot `echo` följt av det meddelande som du vill skriva ut i terminalen. Till exempel:
 
-```
-Fish Shell
-
-echo "Debuggutdata"
-debug "Denna kommer bara att skrivas ut om debugflaggan är satt"
+```Fish Shell
+echo "Detta är ett debug-meddelande"
 ```
 
-Om du kör detta kommer endast texten "Debuggutdata" att skrivas ut. Om du vill se den andra texten måste du sätta flaggan vid körningen `fish -d 3 script.fish`, där `3` är loggnivån för debuggutdata.
+Det här kommer att skriva ut "Detta är ett debug-meddelande" i terminalen när ditt program körs. Detta kan vara särskilt användbart när du behöver kontrollera värdet på variabler eller följden av vissa steg i ditt program.
+
+Du kan också använda kommandot `printf` för att formatera ditt debug-meddelande på ett specifikt sätt. Till exempel:
+
+```Fish Shell 
+set name "Emilia"
+set age 25
+printf "Personens namn är %s och åldern är %d\n" $name $age
+```
+
+Detta kommer att skriva ut "Personens namn är Emilia och åldern är 25" i terminalen. Du kan lägga till så många variabler som du vill i ditt printf-meddelande genom att använda procenttecken och rätt formatering för respektive variabeltyp.
 
 ## Djupdykning
 
-Nu när du vet hur man skriver ut debuggutdata i Fish Shell, låt oss titta på hur du kan använda det i praktiken. Genom att sätta debuggutdata i olika delar av din kod, kan du se vilka delar som körs och hur. Detta kan hjälpa dig att hitta fel och förbättra din kod.
+Det finns flera sätt att anpassa och förbättra din användning av debug output i Fish Shell. Till exempel kan du använda flaggor som `-s` för att skriva ut tysta meddelanden, vilket kommer att vara osynliga för användaren. Du kan också använda `tee` kommandot för att spara debug output i en fil istället för att skriva ut den i terminalen.
 
-Några bra användningsområden för debuggutdata är:
+För mer avancerade användare kan det vara användbart att lära sig om Funksjoner i Fish Shell och hur man kan använda dessa för att strukturera och organisera sina debug-meddelanden.
 
-- Att kontrollera värden på variabler
-- Att förstå hur en loop körs
-- Att se hur en funktion anropas och blir returnerad
+## Se också
 
-Kom ihåg att ta bort eller kommentera ut debuggutdata innan du publicerar din kod, eftersom det inte är meningen att de ska finnas där i produktionen.
-
-## Se även
-
-Här är några länkar som kan hjälpa dig att lära dig mer om debuggutdata i Fish Shell:
-
-- [Fish Shell - Debug command](https://fishshell.com/docs/current/commands.html#debug)
-- [Shell scripting in fish](https://www.linux.com/tutorials/shell-scripting-in-fish/)
-- [Debugging a Shell Script](https://www.tutorialspoint.com/unix_commands/echo.htm) (på engelska) 
-
-Förhoppningsvis kommer denna information att hjälpa dig att använda debuggutdata för att förbättra din kodning i Fish Shell. Lycka till på din programmeringsresa!
+- [Det officiella dokumentationen för Fish Shell](https://fishshell.com/docs/current/index.html)
+- [En guide till att använda Fish Shell för felsökning](https://www.linuxjournal.com/content/debugging-your-kernel-fishes)
+- [En tutorial om hur man använder printf i Fish Shell](https://www.digitalocean.com/community/tutorials/how-to-use-printf-in-fish-shell)

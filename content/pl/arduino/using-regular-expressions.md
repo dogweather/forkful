@@ -1,51 +1,46 @@
 ---
-title:                "Arduino: Używanie wyrażeń regularnych"
+title:                "Arduino: Użycie wyrażeń regularnych"
+simple_title:         "Użycie wyrażeń regularnych"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/arduino/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+## Dlaczego korzystać z wyrażeń regularnych w programowaniu Arduino?
 
-W dzisiejszych czasach programowanie jest nieodłączną częścią naszego życia. Aby tworzyć skuteczne i wydajne kody, musimy korzystać z różnorodnych narzędzi. Jednym z nich są wyrażenia regularne, które mogą znacznie usprawnić nasze projekty Arduino.
+Wyrażenia regularne są narzędziem niezwykle przydatnym w programowaniu Arduino. Pozwalają one na wykrywanie i manipulowanie tekstowymi wzorcami, co jest niezbędne w wielu aplikacjach. Dzięki nim można np. sprawdzić poprawność wprowadzonych danych lub wyodrębnić potrzebne informacje z otrzymanego tekstu. Korzystanie z wyrażeń regularnych może znacznie ułatwić i przyspieszyć proces programowania w Arduino.
 
-## Jak to zrobić
+## Jak używać wyrażeń regularnych w Arduino?
 
-Wyrażenia regularne są niczym innym jak wzorcami poszukiwań w tekście. Pozwalają odnaleźć i przetworzyć konkretne fragmenty tekstu, co ułatwia pracę z danymi. W Arduino możemy wykorzystać bibliotekę "Regex", aby korzystać z wyrażeń regularnych. Poniżej znajdują się przykłady kodów, które możesz wykorzystać w swoich projektach.
+Używanie wyrażeń regularnych w programowaniu Arduino jest bardzo proste. Wystarczy zaimportować bibliotekę "Regex.h" do swojego kodu oraz utworzyć obiekt typu Regex, który będzie zawierał wzorzec poszukiwania. Następnie można wykorzystać funkcje takie jak "match" lub "find" w celu sprawdzenia, czy dany tekst odpowiada wzorcowi. Można także wykorzystać wyrażenia regularne do podmiany lub wyodrębnienia określonych części tekstu.
+
+Przykładowy kod z użyciem wyrażeń regularnych wyglądałby następująco:
 
 ```
-#include <Regex.h>  //zaimportowanie biblioteki
+#include <Regex.h>
 
-void setup() {
-  Serial.begin(9600); //inicjalizacja portu szeregowego
-}
+Regex wzorzec("abc"); // tworzenie obiektu Regex z poszukiwanym wzorcem
 
-void loop() {
-  String str = "Ala ma kota"; //tekst do przetworzenia
-  Regex reg = Regex("(.*) (.*) (.*)"); // wzorzec dla tekstu
-  if (reg.match(str)) { //sprawdzenie, czy wzorzec pasuje do tekstu
-    Serial.println(reg[0]); //wyświetlenie pełnego dopasowania
-    Serial.println(reg[1]); //wyświetlenie pierwszej grupy dopasowania
-    Serial.println(reg[2]); //wyświetlenie drugiej grupy dopasowania
-    Serial.println(reg[3]); //wyświetlenie trzeciej grupy dopasowania
-  }
-  delay(1000); //opóźnienie
+String tekst = "123abc456"; // tekst do sprawdzenia
+
+if (wzorzec.match(tekst)) { // sprawdzanie, czy tekst pasuje do wzorca
+  Serial.println("Tekst zawiera wzorzec!");
+} else {
+  Serial.println("Tekst nie zawiera wzorca!");
 }
 ```
 
-W powyższym przykładzie korzystamy z wyrażenia regularnego, które dopasowuje trzy słowa oddzielone spacjami. Możemy także zastosować różne znaki, aby tworzyć bardziej zaawansowane wzorce.
+W powyższym przykładzie jeśli tekst "123abc456" zostanie przesłany do Arduino, na monitorze szeregowym pojawi się komunikat "Tekst zawiera wzorzec!".
 
-## Deep Dive
+## Głębsze spojrzenie na wyrażenia regularne w Arduino
 
-Aby lepiej zrozumieć i wykorzystywać wyrażenia regularne, warto poznać podstawowe elementy, z których się składają. Pierwszym z nich jest tzw. "metaznak", który jest specjalnym znakiem o innym znaczeniu niż jego literowe odpowiedniki. Przykłady takich znaków to "." (znak kropki, dopasowuje dowolny pojedynczy znak), "*" (dopasowuje 0 lub więcej wystąpień poprzedniego znaku) czy "+" (dopasowuje 1 lub więcej wystąpień poprzedniego znaku).
+Wyrażenia regularne są wykorzystywane w wielu językach programowania, w tym także w Arduino. Warto więc poznać nie tylko podstawową składnię, ale także zaawansowane funkcje, takie jak grupowanie wzorców czy wykorzystanie operatorów logicznych. Dobrze napisane wyrażenia regularne mogą znacznie ułatwić i usprawnić pracę z tekstami w programowaniu Arduino.
 
-Kolejnym ważnym elementem są "klasy znaków", które pozwalają na dopasowanie konkretnego zestawu znaków. Przykładowo, [a-z] oznacza wszystkie litery od a do z, a [0-9] wszystkie cyfry od 0 do 9. Możemy także wykorzystać specjalne sekwencje, takie jak \d (dowolna cyfra), \w (dowolna litera lub cyfra) czy \s (dowolny biały znak).
+## Zobacz także:
 
-Mając już podstawowe pojęcie o wyrażeniach regularnych, możemy korzystać z nich w swoich projektach Arduino, aby przetwarzać i analizować dane.
-
-## Zobacz także
-
-- [Dokumentacja biblioteki Regex](https://www.arduino.cc/reference/en/libraries/regex/)
-- [Poradnik o wyrażeniach regularnych w Arduino](https://diyprojects.io/arduino-use-regular-expressions-replace-characters-example/)
+- [Dokumentacja Arduino na temat wyrażeń regularnych](https://www.arduino.cc/reference/en/language/functions/communication/regex/)
+- [Wprowadzenie do wyrażeń regularnych w Arduino](https://www.luisllamas.es/reading-text-patterns-using-regularexpression-in-arduino/)
+- [Poradnik na temat wyrażeń regularnych w programowaniu Arduino](https://www.makeuseof.com/tag/using-regular-expressions-arduino-programming/)

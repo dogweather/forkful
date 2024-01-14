@@ -1,45 +1,40 @@
 ---
-title:                "Kotlin: 文字列の先頭を大文字にする"
+title:                "Kotlin: 文字列の先頭を大文字化する"
+simple_title:         "文字列の先頭を大文字化する"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ
+# キャピタライズ(Capitalize)する理由
+文字列をキャピタライズする理由はさまざまです。例えば、データベースの値を正しく表示するためや、プログラムの見栄えを良くするためなどで利用されます。
 
-文字列の大文字化に取り組む理由を説明します。私たちの日常生活では、多くの場面でテキストの大文字と小文字が重要な役割を果たしています。例えば、ウェブサイトのタイトルや文書の見出し、またはメールの件名などが挙げられます。このような場面で、大文字化された文字列を使用することは、より説得力を持ち、読みやすいテキストを作成するのに役立ちます。
-
-## 方法
-
-文字列を大文字化するための具体的な方法を示します。Kotlinの標準ライブラリには、文字列を大文字化するための便利なメソッドが用意されています。```uppercase()```メソッドを使用することで、指定した文字列をすべて大文字に変換することができます。
-
+## キャピタライズの方法
 ```Kotlin
-val str = "hello world"
-val uppercaseStr = str.uppercase()
+fun capitalizeString(str: String): String {
+    // 文字列の最初の文字だけを大文字にする
+    return str.substring(0, 1).toUpperCase() + str.substring(1)
+}
 
-println(uppercaseStr)
+val input1 = "apple"
+val output1 = capitalizeString(input1)
+
+val input2 = "kotlin"
+val output2 = capitalizeString(input2)
+
+println(output1) // Output: Apple
+println(output2) // Output: Kotlin
 ```
-実行結果:
-```
-HELLO WORLD
-```
+このように、Kotlinでは`toUpperCase()`と`substring()`を使うことで簡単に文字列をキャピタライズすることができます。
 
-## ディープダイブ
+## キャピタライズの深い掘り下げ
+文字列をキャピタライズする方法はさまざまですが、Kotlinでは`toUpperCase()`だけでなく、`capitalize()`というメソッドも提供されています。これは文字列の最初の文字だけを大文字にするだけでなく、最初以外の文字は小文字に変換されます。
 
-文字列の大文字化についてもっと深く掘り下げます。日本語の場合、大文字化するという概念が少し異なります。例えば、ひらがなの「あいうえお」をカタカナの「アイウエオ」に変換するのは一般的な大文字化の方法ではありません。そのような場合は、```ただのuppercase()```メソッドではなく、```utf8Upper()```メソッドを使用することで正しい大文字化が可能です。また、文字列の一部のみを大文字化したい場合は、```uppercase()```メソッドではなく、```uppercase()```メソッドの代わりに```replaceRange()```メソッドを使用することで実現できます。
+また、Kotlinでは文字列が変更可能な`MutableString`と変更不可な`String`という2つのタイプがあります。`toUpperCase()`メソッドは`MutableString`のみで使うことができ、`capitalize()`メソッドはどちらでも使うことができます。
 
-## もっと詳しくは
-
-文字列を大文字化するためのより詳細な情報を知りたい方は、以下のリンクを参考にしてください。
-
-- [Kotlin Strings](https://kotlinlang.org/docs/strings.html)
-- [java.lang.String](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Difference between uppercase() and utf8Upper() methods](https://plkotlin.com/difference-between-uppercase-and-utf8upper-methods-in-kotlin/)
-
-## 関連リンク
-
-- [Kotlin公式ウェブサイト](https://kotlinlang.org/)
-- [Kotlin日本語ドキュメンテーション](https://kotlinlang.org/docs/reference/)
-- [Kotlinフォーラム](https://kotlinlang.org/community/)
+# この記事を参考にする
+* [Kotlin Strings](https://kotlinlang.org/docs/basic-syntax.html#escaping-for-raw-strings)
+* [Kotlin Library](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)

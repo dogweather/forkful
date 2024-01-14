@@ -1,40 +1,52 @@
 ---
-title:                "Gleam: Transformer une date en chaîne de caractères"
+title:                "Gleam: Convertir une date en chaîne de caractères"
+simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Lorsque vous travaillez avec des dates dans votre code, il peut être utile de les convertir en chaînes de caractères pour faciliter leur manipulation et leur affichage. Cela peut être particulièrement utile lorsque vous travaillez avec des données de calendrier ou que vous souhaitez formater des dates de manière spécifique pour correspondre à des exigences de présentation particulières.
+Convertir une date en chaîne de caractères est souvent nécessaire dans la programmation, en particulier pour afficher des informations de date à l'utilisateur final. Cela peut également être utile pour trier et filtrer des données basées sur des dates.
 
-# Comment faire
+## Comment faire
 
-La conversion d'une date en chaîne de caractères est assez simple en utilisant le langage de programmation Gleam. Dans l'exemple ci-dessous, nous utiliserons la fonction `Format` pour convertir une date en une chaîne de caractères au format `Mois année` (Month year) :
+Pour convertir une date en chaîne de caractères en utilisant Gleam, il suffit d'utiliser la fonction `to_string` de la bibliothèque standard `gleam/time`.
 
 ```
 Gleam
 import gleam/time
 
-let month_year = time.Format
-    .month_year
-    { month : time.Month.April, year : 2021 }
-    # "Avril 2021"
+let my_date = time.date(2021, 3, 8)
+gleam/time.to_string(my_date)
 ```
 
-Nous pouvons également utiliser d'autres formats prédéfinis tels que `date_time`, `short_date` ou `long_date` pour obtenir des résultats différents. Vous pouvez également créer votre propre format personnalisé en utilisant les options de `time.Format`.
+Lorsque vous exécutez ce code, le résultat devrait être `"2021-03-08"`, le format par défaut pour la conversion de date en chaîne de caractères en Gleam.
 
-# Plongeons plus profondément
+## Plongée en profondeur
 
-En utilisant la fonction `Format`, il est également possible de formater une date en utilisant des spécificateurs de conversion tels que `a` pour le jour de la semaine abrégé en trois lettres, `A` pour le jour de la semaine complet, `d` pour le jour du mois, `m` pour le mois en chiffres et bien plus encore. Cela permet une personnalisation encore plus poussée de la chaîne de caractères résultante.
+En Gleam, les dates sont représentées en utilisant la structure de données `Date` de la bibliothèque standard `gleam/time`. Cette structure contient des fonctions utiles pour travailler avec des dates, telles que `add_days` pour ajouter des jours à une date existante, `subtract_days` pour soustraire des jours, et ainsi de suite. Vous pouvez également utiliser la fonction `parse` pour convertir une chaîne de caractères en date.
 
-Vous pouvez également utiliser la fonction `DateTime.toString` pour convertir une date en une chaîne de caractères au format ISO 8601. Cela peut être particulièrement utile pour stocker et échanger des dates avec des systèmes externes.
+```
+Gleam
+import gleam/time
 
-# Voir également
+let my_date = time.parse("2021-03-08")
+time.add_days(my_date, 5)
+```
 
-- Documentation Gleam sur les formats et spécificateurs de conversion : [https://gleam.run/modules/gleam_time/latest/time.html#Format](https://gleam.run/modules/gleam_time/latest/time.html#Format)
-- Article de blog sur la manipulation des dates en Gleam : [https://bloggle.run/dates-in-gleam/](https://bloggle.run/dates-in-gleam/)
-- Exemples de code pour la manipulation des dates en Gleam : [https://github.com/gleam-lang/gleam_stdlib/blob/master/src/time/tests/tests.gleam](https://github.com/gleam-lang/gleam_stdlib/blob/master/src/time/tests/tests.gleam)
+Dans cet exemple, nous avons d'abord utilisé `parse` pour convertir la chaîne de caractères `"2021-03-08"` en date, puis `add_days` pour ajouter 5 jours à cette date. Le résultat sera alors une nouvelle date représentant le 13 mars 2021.
+
+## Voir aussi
+
+Pour en savoir plus sur les dates et les chaînes de caractères en Gleam, vous pouvez consulter ces ressources :
+
+- [Documentation officielle de Gleam sur les dates](https://gleam.run/core/time.html)
+- [Guide pratique de Gleam pour les débutants](https://gleam.run/book/tour.html)
+- [Forum de la communauté Gleam pour poser des questions et partager des astuces](https://forum.gleam.run/)
+
+N'hésitez pas à explorer et à expérimenter avec Gleam pour en apprendre davantage sur ce langage fonctionnel en plein essor. Bonne programmation !

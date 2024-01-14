@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Comparer deux dates"
+title:                "Fish Shell: Comparaison de deux dates"
+simple_title:         "Comparaison de deux dates"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/comparing-two-dates.md"
 ---
 
@@ -9,38 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-La comparaison de deux dates est une tâche courante dans la programmation, qui peut être particulièrement utile lors de la gestion de données temporelles ou lors de la mise en place de fonctionnalités basées sur la date. Cet article vous montrera comment réaliser facilement cette comparaison en utilisant Fish Shell.
+Si vous programmez en Fish Shell, vous avez peut-être déjà eu besoin de comparer deux dates. Cela peut servir à plusieurs fins, comme vérifier si une date est plus récente qu'une autre ou calculer la différence entre deux dates. Dans cet article, nous allons explorer comment comparer deux dates en utilisant Fish Shell.
 
 ## Comment faire
 
-Pour comparer deux dates en utilisant Fish Shell, nous devrons d'abord les convertir au format UNIX Epoch, qui est un nombre entier représentant le nombre de secondes écoulées depuis le 1er janvier 1970. Voici un exemple de code pour convertir une date en format Epoch :
+Pour comparer des dates en Fish Shell, vous pouvez utiliser la commande `date` suivie des options appropriées pour spécifier les dates à comparer. Par exemple, pour vérifier si une date est plus récente qu'une autre, vous pouvez utiliser les options `-s` et `-d` pour spécifier les dates en tant que chaînes de caractères.
 
-```
-# Définir la date à comparer
-set date_1 (date +%s)
-set date_2 "2020-01-01"
+````fish
+date -s "2020-01-01" -d "2020-01-05"
+````
 
-# Convertir la date au format Epoch
-set epoch_date_2 (date -f "%Y-%m-%d" -i $date_2 +%s)
+Cette commande renverra la valeur `1` si la deuxième date est plus récente que la première, `0` si elles sont identiques et `-1` si elle est plus ancienne. Vous pouvez également utiliser la commande `date` pour calculer la différence entre deux dates en utilisant l'option `-d %j` pour obtenir le nombre de jours entre les deux dates.
 
-# Comparer les deux dates
-if test $date_1 -gt $epoch_date_2
-    echo "Date 1 est plus récente que Date 2"
-else if test $date_1 -lt $epoch_date_2
-    echo "Date 1 est plus ancienne que Date 2"
-else 
-    echo "Les deux dates sont identiques"
-end
-```
+````fish
+date -d "2020-01-01" -d %j "2020-01-05"
+````
 
-Dans cet exemple, nous utilisons la commande `date` pour obtenir la date du jour et nous la convertissons ensuite en format Epoch en utilisant l'option `-f` pour spécifier le format de la date et l'option `-i` pour spécifier la date à convertir. Enfin, nous comparons les deux dates en utilisant la commande `test` et affichons le résultat. 
+Cela vous donnera un résultat de `4`, car il y a quatre jours entre ces deux dates. La commande `date` offre également de nombreuses autres options pour formater et comparer les dates. Consultez la documentation officielle de Fish Shell pour en savoir plus sur ces options.
 
-## Deep Dive
+## Plongée en profondeur
 
-L'utilisation de Fish Shell pour comparer des dates est simple et pratique, mais il y a également quelques astuces à connaître. Par exemple, si vous avez besoin de comparer des dates avec une précision supérieure à la seconde, vous pouvez utiliser la commande `strftime` pour formater les dates au format souhaité. De plus, en utilisant les variables d'environnement `BASE_DATE` et `BASE_TIME`, vous pouvez également définir une date et une heure de référence pour vos comparaisons de dates. Pour plus d'informations, vous pouvez consulter la documentation de Fish Shell sur les dates.
+Pour comprendre comment la commande `date` fonctionne, il est utile de savoir qu'elle utilise la bibliothèque `dateutil` pour effectuer les calculs de dates. Connaître les concepts de base de cette bibliothèque peut vous aider à mieux comprendre comment comparer les dates en Fish Shell.
+
+La bibliothèque `dateutil` utilise une représentation en secondes pour les dates, en comptant à partir de l'époque Unix (le 1er janvier 1970 à 00h00 UTC). Cela signifie que toutes les dates sont converties en secondes avant d'être comparées. La commande `date` utilise ensuite ces valeurs de secondes pour vérifier la différence entre les dates.
 
 ## Voir aussi
 
-- [Documentation Fish Shell sur les dates](https://fishshell.com/docs/current/commands.html#date)
-- [Guide des commandes Fish Shell](https://fishshell.com/docs/current/commands.html)
-- [Exemples de scripts Fish Shell](https://github.com/fish-shell/fish-shell/wiki/Scripts)
+- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/)
+- [Documentation officielle de la bibliothèque dateutil](https://dateutil.readthedocs.io/en/stable/)

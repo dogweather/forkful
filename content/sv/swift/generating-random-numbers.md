@@ -1,46 +1,38 @@
 ---
-title:                "Swift: Generera slumpmässiga tal"
+title:                "Swift: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Swift"
-category:             "Numbers"
+category:             "Swift"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att generera slumpmässiga siffror är ett vanligt behov inom programmering, särskilt inom spelutveckling och simuleringar. Genom att använda sig av slumpmässighet i programmet kan man skapa en mer varierande och spännande upplevelse för användaren.
 
-Att generera slumpmässiga tal är en användbar färdighet för programmerare eftersom det kan användas för att skapa spel, lotterispel eller slumpmässiga simuleringar. Det kan också vara användbart för att testa kod och lösa matematiska problem.
-
-## Hur man gör
-
-För att generera slumpmässiga tal i Swift, använd funktionen `arc4random()` som genererar ett slumpmässigt heltal. Om du vill generera ett slumpmässigt tal inom ett visst intervall kan du använda `arc4random_uniform()` som tar ett heltal som argument och genererar ett slumpmässigt tal mellan 0 och det angivna talet. Här är ett exempel på hur man ska använda dessa funktioner:
+## Hur man gör det
+För att generera slumpmässiga siffror i Swift används funktionen `arc4random_uniform()` tillsammans med `Int()` för att få ett heltal. Till exempel kan man skriva följande kod för att generera ett slumpmässigt tal mellan 1 och 100:
 
 ```Swift
-// Generera slumpmässigt heltal mellan 1 och 10
-let randomNum = arc4random_uniform(10) + 1
-// Generera slumpmässigt heltal mellan 500 och 1000
-let randomNum2 = arc4random_uniform(501) + 500
-
-// Generera slumpmässigt nummer mellan 0 och 1
-let randomDecimal = Double(arc4random()) / Double(UINT32_MAX)
+let randomNumber = Int(arc4random_uniform(100)) + 1
+print(randomNumber) // utskrift: ett tal mellan 1 och 100
 ```
 
-I det här exemplet kommer `randomNum` att vara ett slumpmässigt tal mellan 1 och 10 och `randomNum2` kommer att vara ett slumpmässigt tal mellan 500 och 1000. Den sista raden i exemplet visar hur man kan generera ett slumpmässigt decimaltal genom att först generera ett heltal och sedan dela det med det högsta möjliga heltal för att få ett decimaltal mellan 0 och 1.
+Man kan även använda sig av `arc4random()` för att få ett slumpmässigt tal inom ett visst intervall, till exempel mellan 5 och 10:
+
+```Swift
+let randomNumber2 = Int(arc4random()) % 6 + 5
+print(randomNumber2) // utskrift: ett tal mellan 5 och 10
+```
 
 ## Djupdykning
+`arc4random_uniform()` och `arc4random()` fungerar genom att använda sig av en algoritm för att generera ett pseudoslumpmässigt tal baserat på en startpunkt och en multiplikator. Detta innebär att resultatet blir förutsägbart om man känner till startpunkten och multiplikatorn. Därför är det viktigt att inte använda sig av samma startpunkt varje gång man vill generera slumpmässiga tal.
 
-Om du vill kontrollera vilken typ av värde som `arc4random()` eller `arc4random_uniform()` genererar, kan du använda funktionen `type(of: )` för att se det faktiska värdet. Till exempel, om du vill göra ett slumpmässigt val mellan två strängar, kan du göra det med hjälp av `arc4random()` på följande sätt:
-
-```Swift
-let options = ["Välj mig!", "Inte jag!"]
-let randomIndex = Int(arc4random_uniform(2))
-print(type(of: options[randomIndex])) //String
-print(options[randomIndex]) //Antingen "Välj mig!" eller "Inte jag!"
-```
-
-`options[randomIndex]` kommer att returnera antingen den första eller andra strängen, beroende på vilket slumpmässigt heltal som genererades. Användningen av `type(of: )` visar att det faktiska värdet som returneras är en sträng. Det här kan vara användbart när du arbetar med mer komplexa datastrukturer och vill försäkra dig om att rätt typ av värden hanteras.
+För att undvika detta kan man använda t.ex. aktuell tid som startpunkt, eller en kombination av olika variabler.
 
 ## Se även
-
-- [How to Use Random Numbers in Swift](https://www.hackingwithswift.com/example-code/system/how-to-use-random-numbers-in-swift)
-- [Generating Random Numbers in Swift with GameplayKit](https://www.natashatherobot.com/generating-random-numbers-swift-gameplaykit/)
+- [Apples dokumentation om `arc4random_uniform()`](https://developer.apple.com/documentation/swift/uint32/2995649-arc4random_uniform)
+- [Mer information om pseudosumpmässighet och algoritmer](https://www.computerhope.com/issues/ch001461.htm)
+- [Exempel på hur man kan använda slumpmässighet i spelutveckling med Swift](https://www.raywenderlich.com/3137782-game-logic-using-randomization-within-your-apple-game-frameworks-game-project)

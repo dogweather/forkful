@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Encontrando o comprimento de uma string."
+title:                "Elixir: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/finding-the-length-of-a-string.md"
 ---
 
@@ -9,43 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Encontrar o comprimento de uma string é uma tarefa fundamental em qualquer linguagem de programação. Como programadores, frequentemente precisamos manipular e analisar strings em nossos projetos. É por isso que é importante entender como encontrar o comprimento de uma string em Elixir e usar essa habilidade em nossos códigos.
+A manipulação de strings é uma tarefa comum em qualquer linguagem de programação, e Elixir não é exceção. Encontrar o comprimento de uma string pode parecer simples, mas há várias nuances a serem consideradas.
 
 ## Como fazer
 
-Para encontrar o comprimento de uma string em Elixir, podemos usar a função `String.length/1`. Esta função recebe uma string como entrada e retorna o número de caracteres na string. Veja um exemplo abaixo:
+Para encontrar o comprimento de uma string em Elixir, podemos usar a função `String.length/1`. Veja um exemplo abaixo:
 
+```Elixir
+iex> String.length("Olá, mundo!")
+12
 ```
-Elixir
-iex> String.length("Elixir")
+
+Como você pode ver, a função retornará o número de caracteres na string, incluindo espaços e pontuação.
+
+Podemos também usar a função `String.codepoints/1` para obter uma lista de cada caracter na string e, em seguida, usar a função `Enum.count/1` para contar os elementos da lista. Confira o exemplo abaixo:
+
+```Elixir
+iex> "Hello" |> String.codepoints() |> Enum.count()
+5
+```
+
+Esta abordagem é útil se quisermos lidar com caracteres multibyte, já que a função `String.length/1` conta o número de bytes e não de caracteres.
+
+## Mergulho profundo
+
+Embora a função `String.length/1` possa parecer direta, é importante entender como ela lida com caracteres multibyte e como isso pode afetar o nosso código.
+
+Por exemplo, se usarmos a função em uma string contendo caracteres multibyte, como "ámago", o resultado pode ser surpreendente:
+
+```Elixir
+iex> String.length("ámago")
 6
 ```
 
-Podemos também usar essa função para encontrar o comprimento de uma string armazenada em uma variável. Veja o exemplo abaixo:
+Isso acontece porque no Elixir, as strings são representadas internamente como listas de bytes. Então, quando usamos a função `String.length/1`, ela simplesmente conta o número de elementos na lista. Isso pode ser um problema se estivermos lidando com caracteres que ocupam mais de um byte, pois o comprimento retornado não corresponderá ao número real de caracteres na string.
 
-```
-Elixir
-iex> str = "Esta é uma string"
-iex> String.length(str)
-17
-```
+Uma maneira de contornar isso é usando a função `String.graphemes/1`, que divide a string em suas unidades de caracteres gráficos. Confira o exemplo abaixo:
 
-Também podemos usar esta função para verificar se uma string está vazia. Se a string tiver comprimento 0, ela será considerada vazia. Veja o exemplo abaixo:
-
-```
-Elixir
-iex> String.length("")
-0
+```Elixir
+iex> "ámago" |> String.graphemes() |> Enum.count()
+5
 ```
 
-## Profundidade
-
-Ao trabalhar com strings em Elixir, é importante entender que elas são imutáveis. Isso significa que uma string nunca será modificada e cada operação na string retornará uma nova string. Portanto, quando usamos a função `String.length/1`, não estamos alterando a string original, mas sim retornando o comprimento da string.
-
-Também é importante notar que a função `String.length/1` é sensível a caracteres Unicode. Isso significa que ela contará corretamente o número de caracteres em uma string, mesmo que eles sejam caracteres Unicode de vários bytes.
+Agora, o resultado corresponde corretamente ao número de caracteres na string.
 
 ## Veja também
 
-- [Documentação da função `String.length/1`](https://hexdocs.pm/elixir/String.html#length/1)
-- [Tutorial sobre strings em Elixir](https://elixirschool.com/pt/lessons/basics/strings/)
-- [Guia de estilo de strings em Elixir](https://github.com/lexmag/elixir-style-guide#strings)
+- [Documentação oficial do Elixir](https://elixir-lang.org/docs.html)
+- [Artigo sobre manipulação de strings em Elixir](https://medium.com/@squareroots-mp/strings-manipulation-in-elixir-327f3b7c7a18)
+- [Vídeo tutorial em português sobre Elixir](https://www.youtube.com/watch?v=G8RrJU_GvRg)

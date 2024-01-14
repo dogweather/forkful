@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Skriver tester"
+title:                "TypeScript: Å skrive tester"
+simple_title:         "Å skrive tester"
 programming_language: "TypeScript"
-category:             "Testing and Debugging"
+category:             "TypeScript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/writing-tests.md"
 ---
 
@@ -9,32 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive tester i programmering er en viktig praksis for å sikre kvalitet og pålitelighet i koden din. Det kan hjelpe deg med å oppdage og fikse feil tidligere i utviklingsprosessen, og forhindre potensielle problemer i produksjon.
+Å skrive tester er en viktig og standard praksis i programméring for å sikre kvalitet og pålitelighet i koden din. Ved å skrive tester, kan du identifisere og fikse feil før koden din blir utgitt, noe som gir en bedre brukeropplevelse og sparer tid og ressurser på lang sikt.
 
 ## Hvordan
 
-Å skrive tester i TypeScript er enkelt og kan følge de samme grunnleggende retningslinjene som for andre programmeringsspråk. Først må du installere et testrammeverk som Jest, Mocha eller Karma. Deretter kan du skrive tester ved hjelp av "describe" og "it" funksjonene, som lar deg organisere testene dine i grupper og gi beskrivelser for hver test. Du kan også bruke "expect" funksjonen for å teste om en bestemt verdi er lik forventet verdi. Se eksempelet nedenfor:
+For å skrive tester i TypeScript, må du først opprette en testfil. Denne filen bør ha samme navn som filen du skal teste, men med ".spec" lagt til. For eksempel, hvis filen din heter "calculator.ts", burde testfilen være "calculator.spec.ts".
 
 ```TypeScript
-describe('Kalkulator funksjoner', () => {
-  it('Skal returnere riktig sum', () => {
-    const a = 5;
-    const b = 10;
-    expect(a + b).toBe(15);
-  });
-});
+// calculator.spec.ts
+
+import { add } from './calculator';
+
+describe('Testing Calculator', () => {
+  it('should add two numbers correctly', () => {
+    const result = add(2, 4);
+    
+    expect(result).toBe(6);
+  })
+})
 ```
 
-Dette er et veldig enkelt eksempel, men det viser hvordan du kan strukturere og skrive en test i TypeScript. Du kan også bruke flere avancertere funksjoner og metoder som "beforeEach" for å håndtere initialisering av variabler eller "mock" for å simulere eksterne ressurser.
+I denne koden bruker vi "describe" og "it" fra Jasmine testing biblioteket for å opprette en test suite og en enkelt test. Vi importerer også funksjonen vi vil teste fra den opprinnelige filen og bruker "expect" og "toBe" for å sjekke om resultatet er som forventet.
 
-## Deep Dive
+## Dypdykk
 
-For å skrive effektive tester i TypeScript, er det viktig å forstå begrepet "assertions". Dette er en metode for å teste om en verdi er sann eller ikke. TypeScript støtter flere forskjellige assertions som "toBe" som vi brukte i eksempelet ovenfor, "toEqual" for å sammenligne objekter og "toBeTruthy" for å teste om en verdi er sann. Du kan også bruke "expect" med "toThrow" for å teste om en funksjon kaster en forventet feil. Det er viktig å velge riktig assertions for det du tester for å sikre nøyaktige resultater.
+Å skrive effektive tester innebærer å teste alle mulige scenarioer, inkludert kanttilfeller og feil. Dette sikrer at koden din er robust og håndterer alle situasjoner som kan oppstå. Det er også viktig å sørge for at testene dine er uavhengige av hverandre, slik at en feil i en test ikke påvirker resultatet av en annen test.
 
-I tillegg er det viktig å følge god praksis når det gjelder å skrive tester. Du bør alltid skrive tester som er uavhengige av hverandre, slik at en feil i en test ikke påvirker resultatet av andre tester. Det er også viktig å holde testene dine enkle og leselige, slik at du enkelt kan forstå hva som blir testet og finne ut av eventuelle problemer.
+Det er også viktig å implementere en kontinuerlig integreringsprosess for å sikre at testene dine kjører automatisk hver gang du gjør en endring i koden din. Dette vil hjelpe deg med å oppdage feil raskere og gjøre det lettere å rette dem.
 
 ## Se også
 
-- [Jest](https://jestjs.io/)
-- [Mocha](https://mochajs.org/)
-- [Karma](https://karma-runner.github.io/latest/index.html)
+- [Jasmine dokumentasjon](https://jasmine.github.io/)
+- [En introduksjon til testing i TypeScript](https://mariusschulz.com/articles/a-gentle-introduction-to-testing-in-typescript)
+- [En guide til effektiv testing i JavaScript](https://blog.logrocket.com/a-quick-and-complete-guide-to-mocha-testing-d0e0ea09f09d/)

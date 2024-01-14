@@ -1,40 +1,78 @@
 ---
-title:                "Javascript: Å få dagens dato"
+title:                "Javascript: Hente nåværende dato."
+simple_title:         "Hente nåværende dato."
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-Det å få den nåværende datoen er en viktig del av programmering. Det kan være nyttig for å holde oversikt over tidsstempel, oppdatere innhold på nettsider og mye mer. Uansett hva grunnen er, er det viktig å vite hvordan man får tak i den nåværende datoen i Javascript for å kunne bruke den i programmene våre.
+
+I dagens digitale verden er det å kunne håndtere og håndtere datoer og tidsstempel en avgjørende ferdighet for en programmerer. Å kunne få den nåværende datoen er viktig for å kunne vise riktig informasjon til brukere, trekke ut data fra en database basert på dato eller til og med sjekke hvor lenge siden en hendelse fant sted. I denne bloggposten vil vi utforske hvordan man kan få tak i den nåværende datoen ved hjelp av Javascript.
 
 ## Hvordan
-Det er flere måter å få den nåværende datoen i Javascript på, avhengig av hva slags format du trenger den i. Her er noen eksempler med kode og eksempelutgang som viser deg hvordan du kan få tak i datoen på forskjellige måter:
+
+Det er flere måter å få tak i den nåværende datoen på ved hjelp av Javascript. En av de enkleste måtene er ved hjelp av Date-objektet. Dette objektet representerer et bestemt tidspunkt og vi kan få tak i den nåværende datoen ved å bruke metoden `getDate()`.
 
 ```Javascript
-// Få tak i den nåværende datoen i formatet "dd/mm/yyyy"
-let d = new Date();
-console.log(`${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`); // Output: 23/10/2021
+const dato = new Date();
+const nåværendeDato = dato.getDate();
 
-// Få tak i den nåværende datoen som et ISO-format
-let d = new Date();
-console.log(d.toISOString()); // Output: 2021-10-23T16:34:09.607Z
-
-// Få tak i datoen i en bestemt tidsone
-let d = new Date();
-console.log(d.toLocaleString("nb-NO", {timeZone: "Europe/Oslo"})); // Output: 23.10.2021, 18:34:09
+console.log(nåværendeDato); // Output: 16 (hvis det er den 16. dagen i måneden)
 ```
 
-Som du kan se, kan du justere formatet og tidszonen for å få den nåværende datoen akkurat slik du trenger den.
+Vi kan også formatere datoen ved hjelp av `toLocaleString()`-metoden for å få en mer lesbar utskrift av datoen.
 
-## Deep Dive
-For å få en dypere forståelse av hvordan datoen fungerer i Javascript, er det viktig å vite at den blir lagret som en tallverdi som representerer antall millisekunder siden midnatt, 1. januar 1970. Dette kalles "epoch tiden". Så når du får tak i den nåværende datoen, blir det i bunn og grunn konvertert fra denne tallverdien til et mer leselig format.
+```Javascript
+const dato = new Date();
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const nåværendeDato = dato.toLocaleString('no-NO', options);
 
-Det er også verdt å nevne at spesielle tilfeller, som skuddår og tidssoner, kan påvirke den nåværende datoen og må tas hensyn til når du jobber med den.
+console.log(nåværendeDato); // Output: tirsdag 16. juni 2020
+```
+
+Vi kan også få tilgang til individuelle deler av datoen, som dag, måned og år, ved hjelp av `getDay()`, `getMonth()` og `getFullYear()` metodene.
+
+```Javascript
+const dato = new Date();
+const dag = dato.getDay();
+const måned = dato.getMonth();
+const år = dato.getFullYear();
+
+console.log(dag); // Output: 2 (hvis det er tirsdag)
+console.log(måned); // Output: 5 (hvis det er juni, da måneder i Javascript starter på 0)
+console.log(år); // Output: 2020 (hvis det er 2020 nå)
+```
+
+## Dypdykk
+
+Nå som vi har fått en grunnleggende forståelse av hvordan vi kan få tak i den nåværende datoen, la oss se på noen nyttige metoder som `setDate()` og `setMonth()` som lar oss endre datoen.
+
+```Javascript
+const dato = new Date();
+dato.setDate(26); // Setter datoen til den 26.
+dato.setMonth(8); // Setter måneden til september, siden måneder i Javascript starter på 0
+
+console.log(dato.toLocaleString('no-NO')); // Output: lørdag 26. september 2020
+```
+
+Vi kan også bruke `getTime()`-metoden for å få antall millisekunder siden 1. januar 1970. Dette kan være nyttig hvis vi trenger å beregne tidsforskjeller mellom to datoer.
+
+```Javascript
+const nå = new Date();
+const tidligere = new Date('June 10 2020');
+
+const tidsforskjell = nå.getTime() - tidligere.getTime();
+const dager = tidsforskjell / (1000 * 60 * 60 * 24);
+
+console.log(dager); // Output: 6 (avhengig av hvilken dato det er nå)
+```
 
 ## Se også
-- [MDN - Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [W3Schools - Get Current Date](https://www.w3schools.com/js/js_date_methods.asp)
-- [JavaScript.info - Date and Time](https://javascript.info/date)
+
+- [Date-objektet i Javascript](https://developer.mozilla.org/no/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Manipulere datoer i Javascript](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+- [Formatere datoer i Javascript](https://www.sitepoint.com/javascript-date-examples/)

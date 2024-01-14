@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Tests schreiben"
+simple_title:         "Tests schreiben"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/writing-tests.md"
 ---
 
@@ -9,49 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Tests sind ein wichtiger Bestandteil beim Schreiben von zuverlässigem und fehlerfreiem Code. Durch das Schreiben von Tests können mögliche Fehler frühzeitig erkannt und behoben werden, was zur Verbesserung der Codequalität und der Nutzererfahrung beiträgt. In diesem Blogbeitrag erfahren Sie, warum es wichtig ist, Tests zu schreiben.
+Testen ist ein wichtiger Bestandteil jeder Softwareentwicklung. Es ermöglicht uns, Fehler frühzeitig zu erkennen und sicherzustellen, dass unser Code die erwarteten Ergebnisse liefert. In dieser Blog-Post werden wir uns damit beschäftigen, wie man effektive Tests in Rust schreibt und warum dies wichtig ist.
 
-## So geht's
+## Wie geht man vor
 
-Um Tests in Rust zu schreiben, können Sie die eingebaute Crate "test" verwenden. In den folgenden Beispielen werden wir die Funktion "add" testen, die zwei Zahlen addiert und das Ergebnis zurückgibt.
-
-Zunächst müssen wir das "test" Crate in unser Projekt einbinden:
-
-```Rust
-extern crate test;
-```
-
-Dann erstellen wir eine Funktion, die wir später testen werden:
-
-```Rust
-fn add(x: i32, y: i32) -> i32 {
-    x + y
-}
-```
-
-Als nächstes müssen wir eine Testfunktion für unsere "add" Funktion erstellen. Diese Testfunktion muss mit dem Attribut "test" gekennzeichnet werden, damit der Rust Compiler sie als Test erkennt. In der Testfunktion können wir verschiedene Assertions verwenden, um zu überprüfen, ob das Ergebnis unserer Funktion korrekt ist.
+Eine der wichtigsten Eigenschaften von Rust ist seine Sicherheit. Und das Schreiben von Tests ist eine Möglichkeit, um sicherzustellen, dass unser Code diese Sicherheit beibehält. Hier ist ein einfaches Beispiel eines Tests in Rust:
 
 ```Rust
 #[test]
-fn test_add() {
-    // Testfall 1: Überprüfen, ob 2 + 2 richtig addiert wird
-    assert_eq!(add(2, 2), 4);
-
-    // Testfall 2: Überprüfen, ob 5 + (-3) richtig addiert wird
-    assert_eq!(add(5, -3), 2);
+fn sum_test() {
+    let result = sum(2, 2);
+    assert_eq!(result, 4);
 }
 ```
 
-Um unsere Tests auszuführen, können wir das Kommando "cargo test" in der Konsole verwenden. Dies gibt uns eine Übersicht über alle bestandenen und fehlerhaften Tests.
+In diesem Beispiel definieren wir eine Funktion mit dem Namen `sum` und überprüfen, ob das Ergebnis für die Eingaben 2 und 2 n der erwarteten Summe von 4 entspricht.
 
-## Tiefer gehen
+Das `#[test]` Makro kennzeichnet die Funktion als Testfunktion und das `assert_eq!` Makro vergleicht das erwartete Ergebnis mit dem tatsächlichen Ergebnis der Funktion. Wenn die Bedingung erfüllt ist, ist der Test erfolgreich, ansonsten schlägt der Test fehl.
 
-Es gibt viele Möglichkeiten, Tests in Rust zu schreiben und zu organisieren. Sie können z.B. Tests in separate Moduldateien auslagern und diese dann mit dem Attribut "cfg(test)" markieren, um sie nur beim Testen zu kompilieren. Außerdem können Sie auch Property-based Testing verwenden, um zufällige Eingaben zu generieren und Ihre Funktionen damit zu testen.
+Dies ist nur ein grundlegendes Beispiel, aber es gibt viele andere mögliche Tests, die wir schreiben können. Wir können auch komplexere Strukturen wie `Structs` und `Enums` testen, sowie das Verhalten unseres Codes in verschiedenen Szenarien.
 
-Egal welche Art von Tests Sie schreiben, es ist wichtig, sich an die Prinzipien des Testens zu halten, wie z.B. den Single-Responsibility-Principle und die Verwendung von aussagekräftigen Testnamen.
+## Tiefer in die Materie eintauchen
+
+Um more über das Testen in Rust zu erfahren, können wir uns mit Konzepten wie Mocking, Abdeckungsanalyse und Property-Based Testing auseinandersetzen. Wir können auch verschiedene Testframeworks wie `rspec` oder `proptest` erkunden.
+
+Eine andere wichtige Sache, die wir beachten sollten, ist, dass das Schreiben von Tests auch ein wichtiger Bestandteil des Clean Codes ist. Indem wir gut strukturierte Tests schreiben, verbessern wir auch die Lesbarkeit und Wartbarkeit unseres Codes.
 
 ## Siehe auch
 
-- [Offizielle Rust Dokumentation zu Tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Einführung in das Schreiben von Tests in Rust](https://opensource.com/article/19/6/getting-started-testing-rust)
-- [Property-based Testing mit Rust](https://www.fpcomplete.com/blog/quickcheck-in-rust/)
+Hier sind einige nützliche Links, die dir dabei helfen können, mehr über das Schreiben von Tests in Rust zu erfahren:
+
+- [Offizielle Rust Dokumentation zu Tests](https://doc.rust-lang.org/book/ch11-01-writing-tests.html)
+- [Rust Test Tutorial von Rust By Example](https://rustbyexample.com/testing.html)
+- [Test Driven Development in Rust: Eine praktische Einführung](https://hackernoon.com/test-driven-development-in-rust-a-practical-introduction-8d7129f6ed25)
+
+Das war nur eine Einführung in das Schreiben von Tests in Rust. Wir hoffen, dass du jetzt die Bedeutung des Testens verstehst und bereit bist, diese Praxis in deine eigene Rust-Projekte zu integrieren. Happy Coding!

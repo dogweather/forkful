@@ -1,62 +1,54 @@
 ---
 title:                "Clojure recipe: Writing a text file"
+simple_title:         "Writing a text file"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/clojure/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-#Why
+## Why
 
-Writing code in Clojure can be a rewarding and challenging experience. One of the common tasks in programming is writing and manipulating text files. This blog post will explore how to write a text file in Clojure, walking through the process step by step.
+Text files are a fundamental form of data storage and are essential for any type of programming. They allow for easy storage and retrieval of information, making them a useful tool for developers.
 
-#How To
+## How To
 
-Writing and manipulating text files in Clojure is a relatively simple process. First, we need to open a file for writing using the `with-open` function. This function takes in two arguments - the name of the file we want to write and the keyword `:write` to indicate that we will be writing to the file. This ensures that the file is automatically closed once we are finished writing.
-
-```Clojure
-(with-open [file (clojure.java.io/writer "output.txt" :write)]
-  ;; write your code here
-)
-```
-
-Now that we have opened the file, we can start writing to it using the `write` function. This function takes in two arguments - the file we want to write to and the data to be written. We can use string interpolation to write dynamic content to our file.
+Writing a text file in Clojure is relatively simple. First, we must define the file path and name where we want to save the text file. In this example, we will create a file called "data.txt" in the current directory.
 
 ```Clojure
-(write file "Hello, world!")
-(write file (str "My favorite programming language is " "Clojure."))
+(def file-path "data.txt")
 ```
 
-To finish up, we need to close the file using the `close` function. This ensures that all the data we have written is saved to the file.
+Next, we need to create a writer using the "write-all" function. This function takes two arguments: the file path and the content we want to write to the file.
 
 ```Clojure
-(close file)
+(with-open [writer (writer file-path)]
+  (write-all writer "This is an example text file output"))
 ```
 
-#Deep Dive
-
-In addition to simply writing text to a file, Clojure also allows us to format and manipulate the data before writing it. For example, we can use the `println` function to add a new line after each piece of data we write, making the file more readable.
+We can also use the "spit" function to write content to a file. This function takes the file path as the first argument and the content as the second argument.
 
 ```Clojure
-(write file "This is the first line.")
-(println "This is the second line.")
-(write file "This is the third line.")
+(spit file-path "This is another example text file output")
 ```
 
-We can also use the `spit` function to write the entire contents of a string or sequence to a file, without needing to use `write` multiple times.
+After executing these functions, a text file will be created in the current directory with the specified content.
+
+## Deep Dive
+
+When writing a text file, it's important to consider the encoding and line endings for the file. Clojure uses the default JVM encoding, which is typically UTF-8, for writing text files. However, we can also specify a different encoding by passing it as a third argument to the "with-open" or "spit" functions.
+
+Furthermore, we can also specify different line endings using the ":newline" option with the "spit" function. The default line endings for Clojure are platform-specific (i.e. "\n" for Unix and "\r\n" for Windows), but we can change this by setting the :newline option to "\n" for Unix or "\r\n" for Windows.
 
 ```Clojure
-(spit "output.txt" "This is the first line.
-This is the second line.
-This is the third line.")
+(spit file-path "This text will have custom line endings"
+  :newline "\r\n") ;; for Windows line endings
 ```
 
-In addition, we can use various string functions to manipulate and format our data before writing it to the file, allowing for more customized and professional-looking outputs.
+## See Also
 
-#See Also
+- Official Clojure documentation on "write-all" and "spit" functions: https://clojuredocs.org
 
-- Official Clojure documentation on writing files: https://clojure.org/guides/io
-- Tutorial on handling and manipulating files in Clojure: https://www.braveclojure.com/files/
-
-Writing text files in Clojure is a fundamental skill that is crucial for any programmer. With the knowledge gained from this blog post, you will be able to confidently create and manipulate text files in your Clojure projects. Happy coding!
+- How to read a text file in Clojure blog post: <link-to-read-a-text-file-article>

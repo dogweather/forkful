@@ -1,43 +1,52 @@
 ---
-title:                "C: Tekstitiedoston lukeminen"
+title:                "C: Tiedostosta lukeminen"
+simple_title:         "Tiedostosta lukeminen"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Tekstitiedoston lukeminen on tärkeä osa C-ohjelmoinnin oppimista ja ymmärtämistä. Se on yleinen tehtävä, joka auttaa ymmärtämään ohjelmien toimintaa ja miten tietoa voidaan lukea ja käsitellä.
 
-## Miten 
-Lukeminen tekstitiedostosta C-kielellä on yksinkertainen prosessi. Se alkaa avaamalla tiedosto käyttäen fopen-funktiota, joka ottaa kaksi argumenttia: tiedostonimen ja tilan. Tila on yleensä "r", joka tarkoittaa lukutilaa.
+Haluatko oppia lukemaan tekstitiedostoja omassa C-ohjelmoinnissasi? Ei hätää, tässä blogikirjoituksessa käydään läpi helppoja esimerkkejä ja syvällisempää tietoa tekstitiedostojen lukemisesta.
 
-```
-FILE *tiedosto;
-tiedosto = fopen("tekstitiedosto.txt", "r");
-```
+## Kuinka
 
-Tässä esimerkissä olemme luoneet osoittimen tiedosto-nimiseen FILE-tyyppiseen rakenteeseen ja avanneet tiedoston lukutilassa. Seuraavaksi voimme käyttää fscanf-funktiota lukeaksemme tiedostosta tietoa muuttujiin.
+Käsittelemme tässä kirjoituksessa tekstitiedoston lukemisen kahdella eri tavalla, käyttäen `scanf` ja `fscanf` funktioita. Näiden lisäksi käytämme myös `while`-silmukkaa tiedoston lukemiseen. Alla on koodiesimerkki, jossa käytämme `scanf` funktiota lukemaan tekstitiedostosta yhden rivin kerrallaan:
 
-```
-int numero;
-fscanf(tiedosto, "%d", &numero);
-```
-Tämä lukutapa lukee tiedostosta kokonaisluvun ja tallentaa sen muuttujaan numero.
+```C
+#include <stdio.h>
+#define MAX_LEN 100
 
-## Syvempi sukellus
-C-kielessä on useita tapoja lukea tekstitiedostoja, esimerkiksi fgets-funktio, joka lukee yhden rivin kerrallaan. Lisäksi on myös muita tapoja käsitellä luettua tietoa, kuten vertailemalla sitä muihin muuttujiin tai tallentamalla se taulukkoon.
-
-Tärkeä muistaa on myös sulkea tiedosto, kun olet lopettanut sen lukemisen. Tämä tehdään fclose-funktiolla.
-
-```
-fclose(tiedosto);
+int main(){
+    FILE *file_ptr = fopen("tiedosto.txt", "r");
+    char line[MAX_LEN];
+    
+    while (fscanf(file_ptr, "%[^\n]", line) == 1){
+        printf("%s\n", line);
+    }
+    
+    fclose(file_ptr);
+    
+    return 0;
+}
 ```
 
-Voit myös tarkistaa onnistuneen tiedoston avaamisen tarkistamalla, palauttaako fopen-funktio NULL-arvon. Jos näin on, tiedosto ei ole avattu oikein.
+Tämän esimerkin avulla voit lukea tekstitiedostosta yhden rivin kerrallaan, kunnes tiedosto loppuu. `fscanf` funktiolla voit määrittää, miten paljon haluat lukea tiedostosta kerrallaan. Voit myös käyttää muita muotoilumerkkejä, kuten `%d` tai `%f`, jos haluat lukea tiettyjä tyyppejä tiedostosta. 
+
+## Syvempää tietoa
+
+On tärkeää muistaa, että `fscanf` funktio lukee tiedoston etenemisen mukaan, joten sinun täytyy olla varovainen, ettei tiedoston lukeminen lopu ennen kuin olet käynyt läpi kaikki rivit. Voit myös käyttää `fgets` funktiota, joka lukee tiedoston rivin kerrallaan ja tallentaa sen merkkijonoon. Voit sitten käyttää `sscanf` funktiota lukeaksesi tiettyjä tietoja merkkijonosta.
+
+Tärkeintä on, että muistat aina sulkea tiedosto `fclose` funktiolla, kun olet lopettanut sen lukemisen.
 
 ## Katso myös
-- [C-kielen resurssit](https://fi.wikibooks.org/wiki/C)
-- [Fopen-funktion dokumentaatio](https://www.tutorialspoint.com/c_standard_library/c_function_fopen.htm)
-- [Esimerkkejä tiedoston lukemisesta C:ssä](https://www.programiz.com/c-programming/c-file-input-output)
+
+Katso lisätietoja tekstitiedostojen lukemisesta C-kielellä seuraavien linkkien kautta:
+
+- [GeeksforGeeks: Basics of File Handling in C](https://www.geeksforgeeks.org/basics-file-handling-c/)
+- [Tutorials Point: C - File I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
+- [C-ohjelmointikieli: Tiedostojen lukeminen ja kirjoittaminen](https://www.c-ohjelmointikieli.fi/toinenluku/tiedostot.html)

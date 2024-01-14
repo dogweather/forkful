@@ -1,45 +1,49 @@
 ---
-title:                "Javascript: Überprüfung, ob ein Verzeichnis vorhanden ist"
+title:                "Javascript: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Schritt in der Entwicklung von JavaScript-Programmen. Es ermöglicht es uns, zu überprüfen, ob bestimmte Dateien oder Ordner vorhanden sind, bevor wir versuchen, auf sie zuzugreifen. Dadurch können wir Fehler vermeiden und unsere Programmabläufe effizienter gestalten.
+Das Überprüfen, ob ein Verzeichnis existiert, kann in der Javascript-Programmierung äußerst nützlich sein, insbesondere wenn man mit einer Dateistruktur arbeitet. Indem man sicherstellt, dass ein bestimmtes Verzeichnis vorhanden ist, kann man sicherstellen, dass der Code fehlerfrei ausgeführt wird und möglicherweise unerwartete Abstürze verhindern.
 
-## Wie man überprüft, ob ein Verzeichnis existiert
+# Anleitung
 
-Um zu überprüfen, ob ein Verzeichnis existiert, können wir die `fs`-Bibliothek von Node.js verwenden. Wir importieren sie mit dem Befehl `const fs = require('fs')`. Dann können wir die Funktion `fs.existsSync()` verwenden, um zu überprüfen, ob das Verzeichnis vorhanden ist. Die Funktion gibt `true` zurück, wenn das Verzeichnis existiert, und `false`, wenn es nicht vorhanden ist.
+Die Überprüfung, ob ein Verzeichnis existiert, kann mit Hilfe der `fs` (FileSystem) Modul von Node.js durchgeführt werden. Zunächst müssen wir das Modul mit `require` importieren:
 
 ```Javascript
 const fs = require('fs');
-const directory = './myDirectory';
+```
 
-if (fs.existsSync(directory)) {
-  console.log(`${directory} existiert!`);
+Dann können wir die Funktion `fs.existsSync()` verwenden, um zu überprüfen, ob ein Verzeichnis mit einem angegebenen Pfad vorhanden ist. Hier ist ein Beispielcode:
+
+```Javascript
+const path = './meinVerzeichnis';
+
+// Überprüfe ob das Verzeichnis existiert
+if (fs.existsSync(path)) {
+    console.log('Das Verzeichnis existiert.');
 } else {
-  console.log(`${directory} existiert nicht.`);
+    console.log('Das Verzeichnis existiert nicht.');
 }
 ```
 
-### Beispiel Output:
+Die Ausgabe wird je nachdem, ob das Verzeichnis tatsächlich vorhanden ist oder nicht, unterschiedlich sein. Wenn das Verzeichnis existiert, wird `"Das Verzeichnis existiert."` ausgegeben, ansonsten wird `"Das Verzeichnis existiert nicht."` ausgegeben.
 
-```Javascript
-./myDirectory existiert!
-```
+# Tiefere Einblicke
 
-## Tiefer Einblick
+Wenn man tiefer in das Thema einsteigen möchte, sollte man sich mit der Struktur der Dateisysteme und den verschiedenen Dateiformaten vertraut machen. Auch das Verständnis von Fehlerbehandlung ist wichtig, um effektiv auf das Ergebnis der Überprüfung zu reagieren.
 
-Wenn wir uns näher mit der `fs.existsSync()`-Funktion befassen, sehen wir, dass sie den Pfad zu einem Dateisystemobjekt als Parameter erwartet. Dies kann ein Verzeichnis oder eine Datei sein. Die Funktion verwendet den synchronen Aufruf, was bedeutet, dass die Ausführung des Codes blockiert wird, bis die Funktion abgeschlossen ist. Dies kann in manchen Fällen zu einer längeren Verarbeitungszeit führen und sollte bei der Verwendung beachtet werden.
+Es ist auch erwähnenswert, dass die `fs.existsSync()` Funktion nur überprüft, ob das Verzeichnis existiert. Sie gibt kein Feedback darüber, ob das angegebene Objekt tatsächlich ein Verzeichnis ist. Um dies herauszufinden, kann man die `fs.lstatSync()` Funktion verwenden, die Informationen über das angegebene Objekt zurückgibt.
 
-Es ist auch wichtig zu beachten, dass die Funktion `fs.existsSync()` keine Überprüfung auf die Berechtigungen oder Eigentümer der Datei oder des Verzeichnisses durchführt. Sie gibt lediglich an, ob das Verzeichnis oder die Datei existieren oder nicht.
+# Siehe auch
 
-## Siehe auch
-
-- Node.js fs Modul Dokumentation: https://nodejs.org/dist/latest-v14.x/docs/api/fs.html
-- Kontrolle, ob eine Datei oder ein Verzeichnis in Javascript existiert: https://www.w3docs.com/snippets/javascript/how-to-check-if-a-file-directory-exists.html
-- Verzeichnis- und Dateienbenutzungsstatistik mit fs.stat in Node.js: https://www.section.io/engineering-education/how-to-check-if-directory-exists-in-node-js/
+- [`fs` Modul in der Node.js Dokumentation](https://nodejs.org/api/fs.html)
+- [Einführung in das Dateisystem in Node.js](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+- [Guide zur Fehlerbehandlung in Node.js](https://itnext.io/error-handling-in-node-js-713eda06a312)

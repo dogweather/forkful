@@ -1,43 +1,74 @@
 ---
-title:                "Python: Hitta längden på en sträng"
+title:                "Python: Att hitta längden på en sträng"
+simple_title:         "Att hitta längden på en sträng"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför du bör lära dig att hitta längden på en sträng
+## Varför
 
-Att kunna hitta längden på en sträng är en grundläggande färdighet inom programmering som kan vara ovärderlig. Genom att lära dig denna enkla teknik kan du enkelt utforska och manipulera textsträngar i dina program. Det är också ett viktigt koncept att förstå för att kunna lösa mer komplexa problem i framtiden. Så om du är intresserad av att bli en skicklig programmerare, är det hög tid att lära sig hur man hittar längden på en sträng.
+Att kunna hitta längden på en sträng är en viktig färdighet inom Python-programmering. Genom att kunna göra det kan du manipulera och bearbeta data på ett effektivt sätt.
 
-## Så här hittar du längden på en sträng i Python
+## Hur man gör
 
-För att hitta längden på en sträng i Python är det första du behöver göra att använda den inbyggda funktionen `len()`. Den här funktionen tar en sträng som argument och returnerar längden på strängen i form av ett heltal. Låt oss ta en titt på ett kodexempel:
+Att hitta längden på en sträng i Python är enkelt och kan göras på flera olika sätt.
+
+### Metod 1: Inbyggd funktion `len()`
+
+Det enklaste sättet att hitta längden på en sträng är genom att använda den inbyggda `len()` funktionen. Denna funktion tar in en sträng som argument och returnerar dess längd som ett heltal.
 
 ```Python
-# Definiera en sträng
-text = "Hej, det här är en textsträng!"
+str = "Hej! Jag heter Python"
 
-# Använd len() funktionen för att hitta längden på strängen
-langd = len(text)
-
-# Skriv ut resultatet
-print("Längden på strängen är", langd)
+print(len(str))
 ```
 
-Det förväntade resultatet är: `Längden på strängen är 28`, eftersom det är 28 tecken i strängen inklusive mellanslag och interpunktion. Det är så enkelt det är att hitta längden på en sträng i Python!
+Kodblocket ovan kommer att skriva ut längden på strängen till konsolen, vilket i detta fall är 21.
 
-Om du vill utforska lite mer kan du också använda `len()` funktionen för att hitta längden på en lista, tuple eller dictionary i Python. Du kan även kombinera den med andra funktioner eller metoder för att utföra olika manipulationer på en sträng.
+### Metod 2: Loop
+
+En annan metod för att hitta längden på en sträng är genom att använda en loop. Vi kan loopa igenom varje tecken i strängen och hålla räkningen med en variabel.
+
+```Python
+str = "Hej! Jag heter Python"
+length = 0
+
+for char in str:
+    length += 1
+    
+print(length)
+```
+
+Här ökar vi värdet på vår variabel `length` med 1 för varje tecken vi loopar igenom, vilket ger oss längden på strängen.
+
+### Metod 3: Använda index
+
+Vi kan också använda index för att hitta längden på en sträng. Vi kan enkelt få det sista tecknet i strängen genom att använda `str[-1]`. Genom att sedan loopa genom indexen och öka värdet på en variabel får vi längden på strängen.
+
+```Python
+str = "Hej! Jag heter Python"
+length = 0
+
+while str[length:]:
+    length += 1
+    
+print(length)
+```
 
 ## Djupdykning
 
-När du arbetar med längder på strängar i Python är det viktigt att förstå att en sträng är en sekvens av tecken, och att längden på en sträng mäts i antalet tecken och inte antalet ord eller mellanslag. Det betyder också att specialtecken, såsom accenter eller emoji, också räknas som ett tecken i längden på en sträng.
+I Python är en sträng en sekvens av tecken som är indexerade från 0 till längden på strängen minus 1. Detta gör det möjligt för oss att använda index för att hitta längden på en sträng.
 
-En annan viktig aspekt att tänka på är att Python är ett språk som använder sig av noll-indexering, vilket betyder att det första tecknet i en sträng har index 0, det andra tecknet har index 1 och så vidare. Så om du vill komma åt det sista tecknet i en sträng, kan du använda `len()` funktionen för att hitta längden på strängen och sedan dra av 1 från det värdet. Det sista tecknet har alltid indexet `-1`.
+Det finns också andra inbyggda funktioner som kan göra mer komplicerade operationer relaterade till stränglängder, såsom `count()`, `find()` och `split()`. Genom att förstå hur man hittar längden på en sträng kan du enkelt använda dessa funktioner för att manipulera och analysera data.
+
+Du kan också använda `len()` funktionen tillsammans med andra datatyper som listor och tupler för att hitta deras längder.
 
 ## Se även
 
-* [Officiell Python dokumentation för len() funktionen](https://docs.python.org/sv/3/library/functions.html#len)
-* [Fler exempel på användningen av len() funktionen](https://www.w3schools.com/python/ref_func_len.asp)
-* [En djupare förståelse för sekvenser i Python](http://www.openbookproject.net/thinkcs/python/english3e/strings.html#strings-as-sequences)
+* [Python's oficialida dokumentation om strängar](https://docs.python.org/sv/latest/tutorial/introduction.html#strings)
+* [Python grundläggande strängoperationer](https://www.programiz.com/python-programming/string)
+* [Inbyggda funktioner i Python](https://www.w3schools.com/python/python_ref_functions.asp)

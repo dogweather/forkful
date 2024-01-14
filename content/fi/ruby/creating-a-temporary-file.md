@@ -1,45 +1,61 @@
 ---
-title:                "Ruby: Väliaikaisen tiedoston luominen"
+title:                "Ruby: Väliaikaistiedoston luominen"
+simple_title:         "Väliaikaistiedoston luominen"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi?
+## Miksi
 
-Tervetuloa lukemaan uusinta blogitekstiäni, jossa käsitellään kuinka luoda väliaikainen tiedosto Ruby-ohjelmointikielellä. Voit ihmetellä, miksi joku tarvitsisi väliaikaisen tiedoston luomista ohjelmassa, joten tässä on vastaus: väliaikaisten tiedostojen luominen on hyödyllistä, kun tarvitset tilapäisen tallennuspaikan tietylle tietokoneen toiminnolle, mutta et halua pysyvästä tiedostoa.
+Sinulla on todennäköisesti tullut vastaan tilanne, jossa tarvitset luoda väliaikaisen tiedoston Ruby-ohjelmassasi. Ehkä haluat tallentaa väliaikaisia ​​tietoja, kuten väliaikaista tietokantaa tai tallentaa väliaikaisen kuvan ennen sen lähettämistä jonnekin. Tässä blogikirjoituksessa tarkastelemme, miten voit luoda väliaikaisen tiedoston Ruby-ohjelmassasi.
 
-# Kuinka tehdä?
+## Miten
 
-Voit luoda väliaikaisen tiedoston helposti Ruby-kielellä käyttämällä tempfile-kirjastoa. Aluksi sinun täytyy vaatia kirjasto ja luoda uusi väliaikainen tiedosto kokonaisluvun muuttujassa, kuten seuraavassa esimerkissä:
+Luodaksesi väliaikaisen tiedoston Ruby-ohjelmassasi, sinun täytyy ensin vaatia "tempfile" kirjasto:
 
-```Ruby
+```ruby
 require 'tempfile'
-
-tmp_file = Tempfile.new
 ```
 
-Tämän jälkeen voit kirjoittaa tai lukea tiedostoon käyttämällä tavallisia IO-metodeja. Kun olet valmis, sinun täytyy sulkea tiedosto ja poistaa se, kuten esimerkissä:
+Sitten voit luoda väliaikaisen tiedoston käyttämällä "Tempfile.new" -metodia ja antamalla tiedostonimet:
 
-```Ruby
-tmp_file.close
-tmp_file.unlink
+```ruby
+temp = Tempfile.new(['testi', '.txt'])
 ```
 
-Tämän prosessin avulla voit luoda ja käyttää väliaikaista tiedostoa kaikissa ohjelmissa, joissa sitä tarvitset.
+Voit nyt käyttää luotua väliaikaista tiedostoa kuten mitä tahansa muuta tiedostoa. Voit esimerkiksi kirjoittaa tai lukea tiedostoon käyttämällä "temp" -muuttujaa:
 
-# Syvällinen tieto
+```ruby
+temp.write("Tässä on esimerkki tekstiä.")
+temp.close
 
-Tempfile-kirjasto tarjoaa myös monia muita toimintoja, joita voit käyttää väliaikaisessa tiedostossa. Voit esimerkiksi määrittää tiedoston nimen ja laajennuksen luomisvaiheessa tai määrittää tiedoston sijainnin haluamasi kansion sisällä. Voit myös määrittää tiedoston avaamistavaksi lukemistilaan tai kirjoitustilaan, riippuen tarpeistasi.
+temp.open
+temp.read #=> "Tässä on esimerkki tekstiä."
+```
 
-On myös hyvä pitää mielessä, että väliaikainen tiedosto poistetaan automaattisesti, kun sen omistava Ruby-prosessi suljetaan. Tämä varmistaa, että et jätä turhia ja turvattomia tiedostoja jälkeesi.
+Kun olet valmis käyttämään väliaikaista tiedostoa, muista sulkea se käyttämällä "close" -metodia.
 
-# Katso myös
+## Syvällinen sukellus
 
-- [Tempfile-kirjaston dokumentaatio](https://ruby-doc.org/stdlib-2.7.1/libdoc/tempfile/rdoc/Tempfile.html)
-- [Ruby-kurssi](https://www.codecademy.com/learn/learn-ruby)
-- [Ruby-laaja opas](https://www.ruby-lang.org/en/documentation/)
+Väliaikaisten tiedostojen luominen tapahtuu usein silloin, kun tarvitsemme väliaikaista tallennustilaa, mutta haluamme myös tiedoston poistettavan käytön jälkeen. Tätä varten voit käyttää "Tempfile.create" -metodia, joka luo väliaikaisen tiedoston ja poistaa sen automaattisesti sen käyttämisen jälkeen. Voit myös määrittää, minne väliaikainen tiedosto tallennetaan käyttämällä "dir" -parametria ja määrittelemällä haluamasi kansion polun.
 
-Kiitos lukemisesta! Toivottavasti tämä artikkeli auttoi sinua ymmärtämään väliaikaisen tiedoston luomista Ruby-kielellä. Nähdään seuraavassa blogitekstissä. Nähdään!
+```ruby
+temp = Tempfile.create('testi', dir: '/kansio/polku/')
+```
+
+Voit myös määrittää väliaikaisen tiedoston nimen käyttämällä "tempfile" -parametria.
+
+```ruby
+temp = Tempfile.create('testi', tempfile: 'esimerkki.txt')
+```
+
+Syvällisempää tietoa väliaikaisista tiedostoista löydät Ruby'n virallisesta dokumentaatiosta.
+
+## Katso myös
+
+- [Ruby Tempfile-dokumentaatio](https://ruby-doc.org/stdlib-3.0.0/libdoc/tempfile/rdoc/Tempfile.html)
+- [Ruby virallinen dokumentaatio](https://www.ruby-lang.org/fi/documentation/)

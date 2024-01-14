@@ -1,7 +1,9 @@
 ---
 title:                "Gleam: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,28 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Konwersja tekstu na małe litery jest jedną z podstawowych operacji w programowaniu. Jest to przydatne, ponieważ umożliwia nam ujednolicenie danych i zapewnienie spójności w naszym kodzie. W tym artykule dowiesz się, dlaczego warto dokonać takiej konwersji w języku programowania Gleam.
+Zamiana ciągu znaków na małe litery jest bardzo przydatnym narzędziem w programowaniu. Dzięki temu możemy bez problemu porównywać i sprawdzać równość tekstu bez względu na wielkość liter. Jest to także często wykorzystywane przy tworzeniu aplikacji z interfejsem użytkownika, gdzie chcemy, aby użytkownik wprowadzał tylko małe litery w pola tekstowe.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby przekonwertować ciąg znaków na małe litery w Gleam, możemy skorzystać z wbudowanej funkcji `String.to_lower`, która zwraca nowy ciąg znaków z przekonwertowanymi małymi literami. Poniżej znajduje się przykładowy kod Gleam, który to pokazuje:
+W języku Gleam istnieje bardzo prosty sposób na zamianę wszystkich znaków danej ciągu na małe litery. Wystarczy wykorzystać funkcję `String.to_lower` i jako argument podać nasz ciąg znaków. Poniżej znajduje się przykład kodu:
 
-```gleam
-let tekst = "Witaj świecie!"
-let nowy_tekst = String.to_lower(tekst)
-
-// Output: "witaj świecie!"
+```Gleam
+let example_string = "TEKST DO ZAMIANy"
+let lower_string = String.to_lower(example_string)
 ```
 
-W powyższym przykładzie widzimy, że po przekonwertowaniu pierwsza litera "W" została zamieniona na "w", a polskie znaki w słowie "świecie" zostały zachowane.
+W efekcie otrzymamy wartość `tekst do zamiany` w zmiennej `lower_string`.
 
-## Głębszy wgląd
+## Głębsze wgląd
 
-Realizując operację konwersji na małe litery, należy pamiętać o tym, jakie dane mamy do dyspozycji i w jakim celu będą one wykorzystywane. W niektórych przypadkach może być konieczne wykonanie dodatkowych operacji, takich jak sprawdzenie długości tekstu czy usunięcie białych znaków przed przeprowadzeniem konwersji.
+Warto zauważyć, że funkcja `String.to_lower` nie tylko zmienia litery na małe, ale również uwzględnia polskie znaki. W związku z tym, jeśli nasz ciąg zawierałby litery `Ą`, `Ę`, `Ł` itp. zostaną one również zamienione na odpowiednie małe znaki.
 
-## Zobacz także
+Język Gleam jest także bardzo wydajny w wykonywaniu operacji na tekście, więc zamiana na małe litery nie będzie wpływać na wydajność naszego kodu.
 
-Jeśli chcesz poznać więcej o manipulowaniu tekstem w języku programowania Gleam, zapoznaj się z następującymi artykułami i dokumentacją:
+## Zobacz również
 
-- [Jak przekonwertować ciąg znaków na liczbę](https://przykladowaswitaczka.pl/konwersja_siertki_opglady.html)
-- [Wszystko o pracy ze stringami w Gleam](https://gleam-lang.org/docs/strings)
+- Dokumentacja języka Gleam: https://gleam.run/
+- Przykładowy kod: https://github.com/gleam-lang/gleam/blob/master/src/gleam/string.erl

@@ -1,55 +1,51 @@
 ---
-title:                "Ruby: Säikeen pituuden löytäminen"
+title:                "Ruby: Perhetien pituuden löytäminen"
+simple_title:         "Perhetien pituuden löytäminen"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Merkkijonon pituuden löytäminen Ruby-ohjelmoinnin avulla
 
-Miksi koodaajat ovat niin kiinnostuneita merkkijonon pituuden laskemisesta? Yksinkertaisesti sanottuna, merkkijonon pituuden laskeminen on tärkeä taito, joka auttaa käsittelemään merkkijonoja ja tekstin muokkaamista tietokoneohjelmoinnissa.
+Merkkijonon pituuden löytäminen voi tuntua yksinkertaiselta, mutta se on tärkeä osa ohjelmointia ja voi auttaa ratkaisemaan monia ongelmia. Tässä blogikirjoituksessa kerromme, miten löydät merkkijonon pituuden käyttäen Ruby-ohjelmointikieltä.
 
-## Kuinka tehdä
-
-Seuraavissa koodiesimerkeissä näet, kuinka voit käyttää Rubya merkkijonon pituuden laskemiseen ja tulostamaan sen.
+## Miten tehdä se
 
 ```Ruby
-# Määrittele merkkijono
-merkkijono = "Tämä on testi merkkijono"
-
-# Käytä Rubyn .length -metodia laskemaan merkkijonon pituus
-merkkijono_pituus = merkkijono.length
-
-# Tulosta tulos
-puts "Merkkijonon pituus on #{merkkijono_pituus} merkkiä."
-
-# Output: Merkkijonon pituus on 25 merkkiä.
+string = "Tervetuloa Ruby-maailmaan!"
+puts string.length
 ```
 
-Voit myös käyttää .size -metodia, joka toimii samalla tavalla kuin .length:
+Tulostus:
+
+```
+27
+```
+
+Yllä olevassa esimerkissä luomme muuttujan nimeltä "string", joka sisältää haluamamme merkkijonon. Sitten käytämme "length" -metodia tulostamaan merkkijonon pituuden.
+
+Voit myös käyttää "count" -metodia löytääksesi tietyn merkin määrän merkkijonossa. Esimerkiksi:
 
 ```Ruby
-# Määrittele merkkijono
-merkkijono = "Tämä on toinen testi merkkijono"
-
-# Käytä .size -metodia laskemaan merkkijonon pituus
-merkkijono_pituus = merkkijono.size
-
-# Tulosta tulos
-puts "Merkkijonon pituus on #{merkkijono_pituus} merkkiä."
-
-# Output: Merkkijonon pituus on 30 merkkiä.
+string = "Tervetuloa Ruby-maailmaan!"
+puts string.count("a")
 ```
 
-## Syventyminen
+Tulostus:
 
-Merkkijonon pituuden laskemisen lisäksi voit myös käyttää muita Ruby-menetelmiä käsittelemään merkkijonoja. Esimerkiksi voit käyttää .split -metodia jakamaan merkkijono useisiin osiin sen perusteella, mistä haluat sen jakaa. Voit myös käyttää .upcase ja .downcase -metodeja muuttamaan merkkijonon kirjainkoon.
+```
+3
+```
 
-Yksi tärkeä asia, joka kannattaa muistaa, on se, että Rubyssa merkkijonot ovat muuttumattomia. Tämä tarkoittaa, että kun olet luonut merkkijonon, sitä ei voi muokata. Sen sijaan voit käyttää erilaisia metodeja luomaan uusia merkkijonoja vanhojen pohjalta.
+## Syvempi sukellus
+
+Merkkijonon pituuden löytämisen lisäksi voit käyttää Ruby-ohjelmointia muokkaamaan ja manipuloimaan merkkijonoja. Voit esimerkiksi käyttää "reverse" -metodia kääntämään merkkijonon ympäri, tai "capitalize" -metodia muuttamaan merkkijonon ensimmäisen kirjaimen isoksi. Voit myös yhdistää kaksi merkkijonoa yhteen käyttämällä "+" -merkkiä.
 
 ## Katso myös
 
-- [Rubyn virallinen dokumentaatio merkkijonojen käsittelyyn](https://ruby-doc.org/core-2.6.6/String.html)
-- [The Ruby Style Guide: merkkijonot](https://rubystyle.guide/#strings)
+- [Ruby-ohjelmointikielen virallinen sivusto](https://www.ruby-lang.org/fi/)
+- [Merkkijonojen muokkaaminen Rubyssa](https://www.rubyguides.com/2019/02/ruby-string-methods/)

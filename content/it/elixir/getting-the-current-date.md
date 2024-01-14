@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Ottenere la data corrente"
+simple_title:         "Ottenere la data corrente"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/getting-the-current-date.md"
 ---
 
@@ -9,38 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La data corrente è un elemento fondamentale per molte applicazioni, sia per motivi di registrazione delle attività, sia per calcoli temporali. Inoltre, avere una conoscenza precisa della data e dell'ora può fornire informazioni utili per la risoluzione di problemi.
+Ogni volta che scriviamo un'applicazione, spesso abbiamo bisogno di gestire date e orari. Che sia per tenere traccia degli eventi futuri, calcolare intervalli di tempo o semplicemente visualizzare la data corrente, dobbiamo avere gli strumenti giusti a portata di mano. In Elixir, ottenere la data corrente è un'operazione semplice e veloce, e in questo post ti mostrerò come.
 
-## Come fare
+## Come Fare
 
-Per ottenere la data corrente in Elixir, possiamo utilizzare la funzione `DateTime.utc_now/0`. Dopo averla richiamata, possiamo formattare l'output secondo le nostre preferenze utilizzando `DateTime.to_string/1` e fornendo un formato come parametro.
+Per ottenere la data e l'orario corrente in Elixir, possiamo utilizzare la funzione di libreria `DateTime.utc_now/0` che restituisce un oggetto `DateTime` con il fuso orario impostato su UTC. Vediamo un esempio di codice:
 
-```
-Elixir
-current_date = DateTime.utc_now()
-formatted_date = DateTime.to_string(current_date, "{YYYY}-{MM}-{DD}")
-IO.puts formatted_date
-
-# Output: 2020-08-28
+```Elixir
+current_datetime = DateTime.utc_now()
 ```
 
-In alternativa, possiamo utilizzare la libreria `Calendar` per ottenere la data corrente in altre forme, come il numero del giorno dell'anno o il giorno della settimana.
+Questo ci restituirà un oggetto `DateTime` simile a questo: `~U[2020-09-09 19:30:45]`. Per visualizzare solo la data corrente, possiamo utilizzare il metodo `DateTime.date/1`:
 
+```Elixir
+current_date = DateTime.date(current_datetime)
 ```
-Elixir
-Calendar.local_time() |> Calendar.universal_time()
 
-# Output: {{2020, 8, 28}, {13, 15, 43}}
+In questo caso, la variabile `current_date` conterrà solo la data corrente, senza l'orario: `~D[2020-09-09]`. Anche se la data e l'orario sono rappresentati come stringhe, è importante notare che in realtà sono oggetti, e possono essere manipolati e formattati come tali.
+
+### Formattazione della Data
+
+Ora che abbiamo ottenuto la data, potremmo aver bisogno di formattarla per renderla più leggibile o adatta alle nostre esigenze. Per fare ciò, possiamo utilizzare il modulo `DateTime` che offre diverse funzioni per la formattazione delle date. Ad esempio, possiamo utilizzare la funzione `DateTime.to_iso8601/1` per convertire la data in un formato standardizzato ISO 8601:
+
+```Elixir
+current_date_iso = DateTime.to_iso8601(current_date)
 ```
+
+Il valore di `current_date_iso` sarà ora `2020-09-09`, che è più leggibile rispetto al formato originale. Puoi consultare la documentazione di Elixir per maggiori dettagli sulla formattazione della data e sull'utilizzo di altre funzioni utili.
 
 ## Approfondimento
 
-La funzione `DateTime.utc_now/0` utilizza il sistema di data e ora UTC (Coordinated Universal Time) ed è quindi di solito preferibile rispetto alla funzione `DateTime.local_now/0`, che dipende dalle impostazioni del fuso orario del sistema in cui viene eseguita l'applicazione.
+Oltre alla funzione `DateTime.utc_now/0`, ci sono altre opzioni per ottenere la data corrente in Elixir. Ad esempio, possiamo utilizzare il modulo `Date` per ottenere la data corrente locale, oppure il modulo `Time` per ottenere l'ora corrente senza la data. Inoltre, è possibile impostare il fuso orario locale utilizzando il modulo `TimeZone` e ottenere la data e l'orario in quel fuso orario specifico.
 
-Inoltre, possiamo impostare il fuso orario desiderato utilizzando la funzione `DateTime.from_iso8601/1` e specificando il fuso orario come stringa nel formato ISO 8601: `YYYY-MM-DDThh:mm:ssTZD`.
+## Vedi Anche
 
-## Vedi anche
-
-- [Funzione `DateTime.utc_now/0` nella documentazione di Elixir](https://hexdocs.pm/elixir/DateTime.html#utc_now/0)
-- [Libreria `Calendar` nella documentazione di Elixir](https://hexdocs.pm/elixir/Calendar.html)
-- [Formato ISO 8601 per i fusi orari](https://en.wikipedia.org/wiki/ISO_8601#Time_zone_designators)
+- [Documentazione su DateTime](https://hexdocs.pm/elixir/DateTime.html)
+- [Documentazione su Date](https://hexdocs.pm/elixir/Date.html)
+- [Documentazione su Time](https://hexdocs.pm/elixir/Time.html)
+- [Documentazione su TimeZone](https://hexdocs.pm/elixir/TimeZone.html)

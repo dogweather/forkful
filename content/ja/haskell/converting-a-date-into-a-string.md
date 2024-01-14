@@ -1,31 +1,47 @@
 ---
 title:                "Haskell: 日付を文字列に変換する"
+simple_title:         "日付を文字列に変換する"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-日付を文字列に変換する理由を説明するために、この記事が役立つでしょう。
+
+日付を文字列に変換する理由は何でしょうか。日付を文字列に変換することによって、日付をより読みやすく表示したり、データベースに保存したりすることができるからです。
 
 ## 方法
-日付を文字列に変換するには、まずは日付を表すデータ型を作成します。例えば、以下のような関数を使って日付を指定した形式で文字列に変換することができます。
+
+Haskellで日付を文字列に変換するには、`Data.Time.Format`モジュールの`formatTime`関数を使用します。以下のコードは、現在の日付を"年-月-日"の形式の文字列に変換する例です。
 
 ```Haskell
-import Data.Time.Format
+import Data.Time.Format (formatTime, defaultTimeLocale)
+import Data.Time.Clock (getCurrentTime)
+import Text.Printf (printf)
 
-showDate :: Day -> String
-showDate = formatTime defaultTimeLocale "%Y/%m/%d"
+main = do
+  currentTime <- getCurrentTime
+  let dateString = formatTime defaultTimeLocale "%Y-%m-%d" currentTime
+  printf "今日の日付は %s です。" dateString
 ```
 
-このように、 `formatTime` 関数を使うことで、日付を文字列に変換することができます。例えば、 `showDate (fromGregorian 2020 9 1)` のように使用することができます。この場合、出力は `2020/09/01` となります。
+上記のコードを実行すると、以下のような出力が得られます。
 
-## ディープダイブ
-日付の変換方法についてのより詳細な情報については、[Haskell公式ドキュメント](https://www.haskell.org/haddock/)や[Data.Time.Formatモジュールのドキュメント](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)を参考にしてください。また、日付を操作する際には、他の便利な関数やライブラリを使用することもできますので、ぜひ調べてみてください。
+```
+今日の日付は 2020-02-18 です。
+```
 
-## 関連情報を見る
-* [Haskell公式ドキュメント](https://www.haskell.org/)
-* [Data.Time.Formatモジュールのドキュメント](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html)
-* [fromGregorian関数のドキュメント](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar-Julian.html#v:fromGregorian)
+日付のフォーマットは`%Y`が年、`%m`が月、`%d`が日を表すことに注意してください。詳細なフォーマットの書き方は、[Haskellドキュメント](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:formatTime)を参照してください。
+
+## 深堀り
+
+日付を文字列に変換する際には、コンピュータ内部での日付の表現形式や、ロケール（地域や言語によって異なる日付の表記方法）についても考慮する必要があります。また、`Data.Time.Format`モジュール以外にも、`Data.Time.LocalTime`や`Data.Time.Calendar`などのモジュールを使用することで、より詳細な日付操作が可能です。
+
+## 関連リンク
+
+- [Haskellドキュメント：日付を文字列に変換する方法](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:formatTime)
+- [日本語版Haskell wiki：日付と時刻を扱う](https://wiki.haskell.org/%E6%97%A5%E4%BB%98%E3%81%A8%E6%99%82%E5%88%BB%E3%82%92%E6%89%B1%E3%81%86)
+- [Haskell関数型プログラミング：日付と時刻の操作](https://techbookfest.org/product/6256654045328384?productVariantID=5498067650775040)

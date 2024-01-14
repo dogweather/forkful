@@ -1,49 +1,40 @@
 ---
-title:                "Gleam: 「文字列の連結」"
+title:                "Gleam: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-Gleamプログラミングのブログへようこそ！
+## なぜ
+今回は文字列を連結することで何ができるのか、その理由について紹介します。
 
-## Why（なぜ）
+## 方法
+以下のような```Gleam```コードブロックを使って、実際に連結する方法を説明します。
 
-文字列の連結を行う理由は、異なる文字列を組み合わせて新しい文章を作成するためです。例えば、ある文字列に名前を組み合わせることで、個人に合わせたメッセージを作ることができます。
-
-## How To（方法）
-
-```Gleam
-fn concatenate_strings(string1, string2) {
-  string1 ++ string2
-}
-
-let name = "太郎"
-let message = concatenate_strings("こんにちは、", name)
-
-println(message)
+```gleam
+let first_name = "太郎"
+let last_name = "山田"
+let full_name = first_name ++" "++ last_name
 ```
 
-出力：こんにちは、太郎
+このようにすることで、```full_name```には```太郎 山田```という文字列が格納されます。このように、```++```演算子を使うことで簡単に文字列を連結することができます。
 
-## Deep Dive（更に深く）
+## ディープダイブ
+実は、文字列を連結する際にはいくつかの方法があります。例えば、```++```演算子以外にも、```~```演算子や```<>```演算子が存在します。それぞれの演算子の使い方や違いについて、さらに詳しく説明します。
 
-Gleamでは、2つの文字列を連結するには`++`演算子を使用します。また、複数の文字列を連結することも可能です。また、文字列の連結には`String.concat()`関数を使用することもできます。この関数は、リスト内のすべての文字列を連結して1つの文字列に変換します。
+## 参考リンク
+こちらのリンクを参考にして、さらにGleamの文字列連結機能を学びましょう！
+- https://gleam.run/documentation/stdlib/string.html#concatenating-strings
+- https://blog.gleam.run/the-power-of-strings/ 
+- https://github.com/gleam-lang/gleam/issues/632
 
-```Gleam
-let list_of_strings = ["私の", "名前は", "次郎", "です"]
+# 他に読むべき記事
+Gleamの様々な機能や使い方について詳しく解説している記事をご紹介します！
 
-let message = String.concat(list_of_strings)
-
-println(message)
-```
-
-出力：私の名前は次郎です
-
-## See Also（関連リンク）
-
-- [Gleam公式ドキュメント](https://gleam.run)
-- [文字列の連結の例](https://github.com/gleam-lang/gleam/blob/master/examples/strings.gleam)
-- [文字列操作についての解説](https://www.blacksamurai.org/guide/1-69.html)
+- Gleamでパズルを解く: https://blog.gleam.run/solving-puzzles-with-gleam/
+- パイプラインエラー処理: https://blog.gleam.run/pipeline-error-handling-ja/
+- ElixirからGleamに移行する: https://blog.gleam.run/migrating-to-gleam-from-elixir/

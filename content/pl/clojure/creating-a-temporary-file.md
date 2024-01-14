@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Tworzenie pliku tymczasowego"
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/creating-a-temporary-file.md"
 ---
 
@@ -9,28 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek zdarzyło Ci się potrzebować tymczasowego pliku w swoim programie Clojure? Istnieje wiele powodów, dla których warto stworzyć taki plik, na przykład do tymczasowego przechowywania danych lub tworzenia kopii zapasowych. W tym artykule dowiesz się, jak w prosty sposób stworzyć tymczasowy plik w Clojure.
+Tworzenie pliku tymczasowego może być przydatne, gdy potrzebujemy wygenerować dane lub przeprowadzić operacje na pliku, ale nie chcemy pozostawiać go na stałe w naszym systemie. Może to być szczególnie pomocne podczas testowania kodu lub w sytuacji, gdy mamy do czynienia z ograniczoną przestrzenią dyskową.
 
 ## Jak to zrobić
 
-Tworzenie tymczasowego pliku w Clojure jest bardzo proste. Wystarczy, że użyjesz funkcji `tempfile`, która wraz z funkcją `with-open` pozwala na otwarcie pliku w trybie do odczytu i zapisu. Poniżej znajduje się przykładowy kod, który to demonstruje:
+W Clojure możemy łatwo utworzyć plik tymczasowy za pomocą funkcji `with-open` i `TemporaryFileWriter`. Oto przykładowy kod:
 
 ```Clojure
-(require '[clojure.java.io :as io])
-(with-open [file (io/tempfile "temp")]
-  (println "Plik tymczasowy został stworzony pod ścieżką:" (.getAbsolutePath file)))
+(with-open [file (java.io.File/createTempFile "temp" ".txt")]
+  (let [writer (clojure.java.io/writer file)]
+    (.write writer "Hello World!")
+    (.flush writer)))
 ```
 
-Po wykonaniu tego kodu, pod ścieżką zostanie utworzony tymczasowy plik o nazwie "temp". Pamiętaj, że zawsze należy używać funkcji `with-open`, aby upewnić się, że plik zostanie poprawnie zamknięty po zakończeniu jego użycia.
+W tym przykładzie najpierw tworzymy plik tymczasowy o nazwie "temp" i rozszerzeniu ".txt". Następnie używamy funkcji `writer` z modułu `clojure.java.io`, aby utworzyć obiekt do zapisu danych do naszego pliku. W końcu zapisujemy naszą wiadomość i zamykamy plik. Dzięki użyciu `with-open`, plik zostanie automatycznie usunięty po zakończeniu tego bloku kodu.
 
-## Głębsze zanurzenie
+Warto również pamiętać, że można używać różnych funkcji z modułu `clojure.java.io` do operacji na plikach, takich jak czytanie lub usuwanie.
 
-Funkcje `tempfile` i `with-open` są tylko jednymi z wielu dostępnych w Clojure, które pozwalają na operacje na plikach. Możesz także skorzystać z funkcji `with-out-str`, aby zapisać dane do tymczasowego strumienia wyjściowego, lub użyć biblioteki `fressian` do zapisu i odczytu danych w formie binarnej.
+## Dogłębna analiza
 
-Zawsze pamiętaj, że tworzenie tymczasowych plików jest pomocne, ale należy pamiętać o ich usunięciu po zakończeniu ich użycia. W przypadku gdy potrzebujesz tymczasowego pliku tylko do odczytu danych, możesz skorzystać z funkcji `tmpfile-seq`, która automatycznie usuwa pliki po zakończeniu ich użycia.
+Tworzenie pliku tymczasowego jest zdecydowanie prostszym i bezpieczniejszym sposobem na tymczasowe zapisywanie danych niż ręczne tworzenie i usuwanie plików. Ponadto funkcje z modułu `clojure.java.io` są zgodne z interfejsem Javy, więc możemy używać ich w połączeniu z innymi językami programowania.
 
-## Zobacz też
+Jednak warto pamiętać, że plik tymczasowy jest traktowany przez system operacyjny jako normalny plik, więc może wystąpić konflikt nazw, jeśli użyjemy tej samej nazwy kilka razy w różnych częściach naszego kodu. Dlatego dobrą praktyką jest generowanie różnych i unikalnych nazw dla plików tymczasowych.
 
-- [Dokumentacja Clojure](https://clojure.org)
-- [Poradniki Clojure od podstaw](https://clojure.org/guides/getting_started)
-- [Kurs Clojure dla początkujących](https://learnxinyminutes.com/docs/pl-pl/clojure-pl)
+## Zobacz również
+
+- [Dokumentacja funkcji with-open w Clojure](https://clojuredocs.org/clojure.java.io/with-open)
+- [Sekcja Java Interop w praktyce w oficjalnym tutorialu Clojure](https://clojure.org/guides/interop_in_depth)
+- [Tutorial na temat operacji na plikach w Clojure](https://yobriefca.se/blog/2014/07/15/file-handling-reading-writing-and-appending-with-clojure/)

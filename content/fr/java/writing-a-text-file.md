@@ -1,7 +1,9 @@
 ---
-title:                "Java: Écriture d'un fichier texte."
+title:                "Java: Écrire un fichier texte"
+simple_title:         "Écrire un fichier texte"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/java/writing-a-text-file.md"
 ---
 
@@ -9,93 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Écrire un fichier texte est une tâche courante en programmation Java. Cela permet de stocker des données de manière structurée et organisée, et de les récupérer rapidement lorsque nécessaire. Dans cet article, nous allons expliquer pourquoi il est important et utile d'écrire des fichiers texte en Java.
+La création d'un fichier texte est une tâche courante dans la programmation Java. Que ce soit pour stocker des données, générer des rapports ou créer des fichiers de configuration, la création de fichiers texte est une compétence importante pour tout programmeur Java. Dans cet article, nous allons explorer comment écrire un fichier texte en Java et pourquoi c'est une compétence utile à avoir.
 
 ## Comment faire
 
-Voici un exemple de code en Java pour écrire un fichier texte :
+Pour écrire un fichier texte en Java, nous allons utiliser la classe `FileWriter` et la classe `BufferedWriter` pour améliorer les performances. Voici un exemple de code :
 
-```Java
-import java.io.FileWriter;
-import java.io.IOException;
+```java
+import java.io.*;
 
-public class FileWritingExample {
+public class EcrireFichier {
 
     public static void main(String[] args) {
-
+    
+        // Créer un objet FileWriter
         FileWriter writer = null;
-
+        
         try {
-            writer = new FileWriter("monFichier.txt"); // chemin de destination du fichier
-
-            writer.write("Bonjour à tous !"); // contenu du fichier
-            writer.write("\nCeci est un exemple de texte écrit en Java.");
-
-            System.out.println("Fichier créé avec succès !");
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                writer.close(); // fermeture du fichier
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
-```
-
-Le code ci-dessus utilise la classe `FileWriter` pour écrire dans un fichier texte. Nous devons d'abord instancier un objet `FileWriter` en lui passant en paramètre le chemin du fichier que nous souhaitons créer ou modifier. Ensuite, nous pouvons utiliser la méthode `write()` pour insérer du contenu dans le fichier. Enfin, nous fermons le fichier en utilisant la méthode `close()`. 
-
-Voici ce que nous obtiendrons à l'exécution de ce code :
-
-```
-Bonjour à tous !
-Ceci est un exemple de texte écrit en Java.
-```
-
-Il est également possible d'écrire dans un fichier texte en utilisant la méthode `append()` de la classe `StringBuilder` et en utilisant un objet `PrintWriter` pour écrire dans le fichier. Voici un exemple de code :
-
-```Java
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-
-public class FileWritingExample2 {
-
-    public static void main(String[] args) {
-
-        StringBuilder sb = new StringBuilder();
-
-        sb.append("Bonjour à tous !");
-        sb.append("\nCeci est un exemple de texte écrit en Java.");
-
-        File file = new File("monFichier.txt"); // chemin de destination du fichier
-
-        try (PrintWriter writer = new PrintWriter(new FileWriter(file))) {
-            writer.print(sb.toString()); // écriture du contenu dans le fichier
-            System.out.println("Fichier créé avec succès !");
+            // Spécifier le chemin et le nom du fichier
+            File fichier = new File("monFichier.txt");
+            // Initialiser l'objet FileWriter avec le fichier
+            writer = new FileWriter(fichier);
+            // Créer un objet BufferedWriter pour améliorer les performances
+            BufferedWriter br = new BufferedWriter(writer);
+            // Écrire du texte dans le fichier
+            br.write("Bonjour les programmeurs Java !");
+            // Fermer le BufferedWriter
+            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    
     }
+
 }
 ```
 
-Ce code produit le même résultat que le précédent.
+Le code ci-dessus va créer un fichier texte nommé "monFichier.txt" dans le même répertoire que votre programme Java. Vous pouvez vérifier le contenu du fichier en utilisant un éditeur de texte.
 
 ## Plongée en profondeur
 
-Pour écrire un fichier texte, il est également important de savoir comment gérer les exceptions. La méthode `write()` peut générer une `IOException` si quelque chose ne se passe pas comme prévu lors de l'écriture dans le fichier. C'est pourquoi nous devons entourer notre code avec un bloc `try-catch` pour gérer toute erreur éventuelle.
+Il est important de noter que lors de l'écriture de fichiers texte en Java, il est nécessaire de gérer les exceptions. Cela peut être fait à l'aide de la clause `try/catch` comme dans l'exemple ci-dessus. Il est également important de fermer le `BufferedWriter` après avoir écrit dans le fichier, sinon les données peuvent ne pas être écrites correctement.
 
-Il est également bon de savoir qu'il existe d'autres classes pour écrire dans un fichier, comme `OutputStreamWriter` et `BufferedWriter`. Il est important de se familiariser avec ces différentes classes et de choisir celle qui correspond le mieux à nos besoins.
+De plus, vous pouvez également spécifier un chemin absolu au lieu d'un chemin relatif pour créer votre fichier texte. Et si vous voulez ajouter du texte à un fichier existant, vous pouvez utiliser la méthode `append()` sur l'objet `FileWriter` au lieu de créer un nouveau fichier.
 
 ## Voir aussi
 
-Pour en savoir plus sur l'écriture de fichiers en utilisant Java, voici quelques liens utiles :
+Consultez ces liens pour en savoir plus sur l'écriture de fichiers texte en Java :
 
-- Tutoriel Java sur l'écriture de fichiers : https://openclassrooms.com/fr/courses/1904416-programmez-en-oriente-objet-en-java/1908771-manipulez-des-fichiers-et-des-flux-de-donnees
-- Documentation officielle de Java sur la classe `FileWriter` : https://docs.oracle.com/javase/8/docs/api/java/io/FileWriter.html
-- Tutoriel vidéo sur l'utilisation de la classe `PrintWriter` : https://www.youtube.com/watch?v=bI6RfN8w1Hg
+- [Guide Oracle Java - Les entrées/sorties (E/S)](https://docs.oracle.com/javase/tutorial/essential/io/)
+- [Tutoriel journal des activités Java - Lecture et écriture de fichiers](https://www.baeldung.com/java-write-to-file)
+- [Programmez facilement en Java - Écriture de fichiers](https://openclassrooms.com/fr/courses/26832-apprenez-a-programmer-en-java/23428-le-modele-io-en-java#/id/r-23644)
+
+Écrivez de jolis fichiers texte en Java et améliorez votre codage dès aujourd'hui !

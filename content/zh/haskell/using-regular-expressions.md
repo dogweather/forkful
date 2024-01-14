@@ -1,56 +1,46 @@
 ---
-title:                "Haskell: 使用正则表达式"
+title:                "Haskell: 请注意，请勿包含任何评论或罗马化的标题使用正则表达式"
+simple_title:         "请注意，请勿包含任何评论或罗马化的标题使用正则表达式"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么使用正则表达式
+# 为什么要使用正则表达式
 
-正则表达式是一种强大的工具，可以帮助我们快速、高效地处理文本。它可以用来进行匹配、搜索、替换等操作，在处理大量文本数据时非常实用。如果你经常需要处理文本数据，那么学习使用正则表达式将会让你的工作更加轻松快捷。
+正则表达式是一种强大的文本处理工具，它可以帮助我们快速地在文本中进行匹配和替换操作。如果你经常需要处理大量的文本数据，或者需要从复杂的文本中提取出特定的信息，那么正则表达式将是你的得力助手。
 
-## 如何使用正则表达式
+# 如何使用正则表达式
 
-在Haskell中，正则表达式可以通过`Text.Regex`模块来使用。首先，我们需要导入这个模块：
-
-```Haskell
-import Text.Regex
-```
-
-然后就可以使用`mkRegex`函数来创建一个正则表达式。比如，我们可以创建一个匹配邮箱地址的正则表达式：
+在Haskell中，我们可以使用`Regex`模块来进行正则表达式的匹配。首先，我们需要创建一个正则表达式对象，然后使用`matchRegex`函数来进行匹配。下面是一个简单的例子，匹配一个字符串中的所有数字，并将其替换为`#`：
 
 ```Haskell
-let emailRegex = mkRegex "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}"
+import Text.Regex.Posix
+
+str = "I have 3 apples and 5 bananas."
+regex = "[0-9]+"
+replacement = "#"
+
+replaceAll :: String -> String
+replaceAll str = subRegex (compile regex []) str replacement
+
+main = do
+  print (replaceAll str) -- "I have # apples and # bananas."
 ```
 
-接着，我们可以使用`matchRegex`来检查一个字符串是否符合正则表达式的规则，并返回匹配的结果。比如，我们可以检查一个字符串是否为有效的邮箱地址：
+在上面的例子中，我们使用`Text.Regex.Posix`模块提供的`subRegex`函数来替换匹配到的文本，其中`compile`函数用于编译正则表达式，`[]`表示不使用任何特殊选项。
 
-```Haskell
-matchRegex emailRegex "example@mail.com"
--- 输出：Just ["example@mail.com"]
-```
+# 深入了解正则表达式
 
-如果没有匹配到，`matchRegex`会返回`Nothing`。
+正则表达式除了基本的匹配和替换操作外，还有许多强大的功能，比如字符类、量词、分组等。它们可以让我们更精确地匹配文本，提取出需要的信息。同时，我们还可以使用`anchors`来限定匹配的位置，例如匹配开头和结尾的字符串。
 
-我们也可以使用`subRegex`来替换字符串中符合正则表达式的部分。比如，我们可以将一个字符串中的所有空格替换为下划线：
-
-```Haskell
-subRegex (mkRegex " ") "This is a string with spaces" "_"
--- 输出："This_is_a_string_with_spaces"
-```
-
-更多关于正则表达式的使用方法，可以查看[Haskell官方文档](https://downloads.haskell.org/~ghc/8.10.2/docs/html/libraries/regex-tdfa-1.3.1.0/Text-Regex.html)。
-
-## 深入了解正则表达式
-
-正则表达式的语法和规则有很多，可以根据具体需求进行定制。比如，可以使用`*`来匹配零个或多个字符，使用`+`来匹配一个或多个字符，使用`[]`来指定一个字符集合等等。使用正则表达式需要一定的练习和经验，可以通过尝试不同的表达式来提高自己的熟练程度。
-
-如果你想深入了解正则表达式的语法和规则，推荐阅读这篇[阮一峰的正则表达式教程](https://www.ruanyifeng.com/blog/2008/06/regular_expression.html)。
+正则表达式的语法可能有些复杂，需要一些练习才能掌握。但是一旦掌握了它，就能大大提高文本处理的效率。
 
 # 参考链接
 
-- [Haskell官方文档](https://downloads.haskell.org/~ghc/8.10.2/docs/html/libraries/regex-tdfa-1.3.1.0/Text-Regex.html)
-- [阮一峰的正则表达式教程](https://www.ruanyifeng.com/blog/2008/06/regular_expression.html)
-- [正则表达式30分钟入门教程](https://deerchao.cn/tutorials/regex/regex.htm)
+- [Haskell中的正则表达式](https://hackage.haskell.org/package/regex-posix-0.96.0.0/docs/Text-Regex-Posix.html)
+- [正则表达式入门教程](https://www.runoob.com/regexp/regexp-tutorial.html) 
+- [正则表达式在线测试工具](https://regexr.com/)

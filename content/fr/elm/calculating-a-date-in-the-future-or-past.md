@@ -1,40 +1,57 @@
 ---
-title:                "Elm: Calculer une date dans le futur ou le passé"
+title:                "Elm: Calcul d'une date dans le futur ou dans le passé."
+simple_title:         "Calcul d'une date dans le futur ou dans le passé."
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-Si vous êtes développeur en Elm, vous avez peut-être rencontré des situations où vous avez besoin de calculer une date dans le futur ou dans le passé. Que ce soit pour afficher un événement à venir ou pour calculer les intérêts sur un prêt, la manipulation de dates est un aspect important de la programmation. Dans cet article, nous verrons comment calculer une date en Elm en utilisant la bibliothèque Time.
+Si vous êtes un développeur Elm, vous savez probablement déjà à quel point ce langage est puissant et élégant. Mais saviez-vous qu'il peut également être utilisé pour calculer des dates dans le futur ou le passé ? Dans cet article, nous allons découvrir pourquoi et comment le faire.
 
-# Comment faire
+## Comment faire
 
-Pour calculer une date dans le futur ou dans le passé en Elm, nous allons utiliser la fonction `add` de la bibliothèque Time. Cette fonction prend en paramètres une durée et une date de référence. Elle renvoie alors la date résultante en ajoutant ou en soustrayant la durée à la date de référence.
+Pour calculer une date dans le futur ou le passé en Elm, nous allons utiliser la fonction `add` de la bibliothèque `Time`. Cette fonction prend deux arguments : un entier représentant le nombre d'unités à ajouter et une unité de temps (jour, mois, année, etc.).
+
+Voici un exemple de code pour calculer une date dans le futur en ajoutant 3 mois à la date actuelle :
 
 ```Elm
-import Time
+import Time exposing (..)
 
--- Calculer une date dans 2 semaines à partir d'aujourd'hui
-let futureDate = Time.add (Time.weeks 2) Time.now
-
--- Calculer une date il y a 3 mois à partir d'aujourd'hui
-let pastDate = Time.add (Time.months (-3)) Time.now
+dateFutur = add 3 Months now
 ```
 
-Dans cet exemple, nous importons d'abord la bibliothèque Time, puis nous utilisons la fonction `add` pour calculer une date dans le futur en ajoutant 2 semaines à la date actuelle. Nous faisons de même pour calculer une date dans le passé, en soustrayant cette fois-ci 3 mois à la date actuelle.
+Et voici un autre exemple pour calculer une date dans le passé en soustrayant 2 semaines à la date actuelle :
 
-# Plongée profonde
+```Elm
+import Time exposing (..)
 
-Maintenant que nous savons comment utiliser la fonction `add`, examinons de plus près la manière dont les durées sont traitées en Elm. La bibliothèque Time utilise le type de données `Time.Duration` pour représenter une durée. Ce type de données peut être créé à l'aide de différentes fonctions, telles que `Time.minutes`, `Time.hours`, `Time.days`, etc.
+datePasse = add -2 Weeks now
+```
 
-De plus, il est important de noter que `Time.Duration` utilise un système de type fort pour éviter toute confusion entre les différentes unités de temps. Par exemple, vous ne pouvez pas ajouter une durée de 3 minutes à une date en utilisant `Time.add`, car `Time.minutes` accepte uniquement un `Int` en tant que paramètre. Vous devez plutôt convertir la valeur de minutes en secondes en utilisant `Time.seconds`. Ce système de type garantit une manipulation précise des dates et heures en Elm.
+Notez que la fonction `now` nous donne la date et l'heure actuelles en tant qu'objet `Time`. Vous pouvez également spécifier une date et une heure spécifiques en utilisant la fonction `fromPosix` de la bibliothèque `Time`. 
 
-# Voir aussi
+## Plongée en profondeur
 
-Pour en savoir plus sur la bibliothèque Time en Elm, consultez la documentation officielle [ici](https://package.elm-lang.org/packages/elm/time/latest/).
+La fonction `add` utilise l'arithmétique modulaire pour calculer la date future ou passée. Cela signifie que si vous ajoutez 3 mois à une date, si cette date est le 31 janvier par exemple, le résultat sera le 30 avril car il n'y a pas de 31 avril.
 
-Découvrez également comment gérer les fuseaux horaires en Elm en lisant cet article [Comment gérer les fuseaux horaires en Elm](https://dev.to/jessicalevine328/managing-timezones-in-elm-99k).
+De plus, la fonction `add` renvoie un objet `Time` qui peut être utilisé avec d'autres fonctions de manipulation de dates, telles que `toText` pour afficher la date dans un format spécifique.
+
+Il est également possible de combiner plusieurs appels de la fonction `add` pour calculer des dates plus complexes. Par exemple, pour calculer une date dans 1 an et 4 mois, vous pouvez utiliser le code suivant :
+
+```Elm
+import Time exposing (..)
+
+date = add 1 Years (add 4 Months now)
+```
+
+## Voir aussi
+
+Pour plus d'informations sur la fonction `add` et la manipulation des dates en général, vous pouvez consulter la documentation officielle d'Elm sur les dates et la bibliothèque `Time`.
+
+- Documentation officielle d'Elm sur les dates : https://package.elm-lang.org/packages/elm/time/latest/Time
+- Documentation de la bibliothèque Time : https://package.elm-lang.org/packages/elm/time/latest/Time#add

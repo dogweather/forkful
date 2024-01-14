@@ -1,53 +1,38 @@
 ---
-title:                "Elm: 부분 문자열 추출하기"
+title:                "Elm: 부분 문자열 추출"
+simple_title:         "부분 문자열 추출"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜 substring 추출을 해야할까요?
+## 왜?
 
-Substring 추출은 Elm 프로그래밍에서 문자열을 다룰 때 매우 유용한 기능입니다. 이 기능을 사용하면 문자열 데이터에서 원하는 부분만을 추출하여 간편하게 다룰 수 있습니다.
+문자열에서 부분 문자열을 추출하는 이유는 필요한 정보를 추출하고 가공하는데 유용하기 때문입니다.
 
-## 방법
+## 추출하는 방법 (How To)
 
-다음은 substring 추출을 하는 방법을 보여주는 예제 코드와 출력입니다. 먼저 문자열 데이터 "안녕하세요"를 정의합니다.
-
-```Elm
-string = "안녕하세요"
-```
-
-그리고 substring을 추출하기 위해 Elm의 `String.slice` 함수를 사용합니다. 이 함수는 총 세 개의 인자를 받습니다. 첫 번째 인자는 문자열 데이터에서 추출을 시작할 인덱스, 두 번째 인자는 추출을 끝낼 인덱스, 세 번째 인자는 원하는 문자열 데이터를 전달합니다. 예를 들어서, "안녕하세요"에서 "녕하"만을 추출하고 싶다면 다음과 같이 코드를 작성할 수 있습니다.
+문자열에서 부분 문자열을 추출하는 방법은 다양하지만, Elm의 `String` 모듈을 사용하면 간단하게 할 수 있습니다. 예를 들어, `String.slice` 함수를 사용하면 지정한 시작 위치부터 끝 위치까지의 부분 문자열을 추출할 수 있습니다.
 
 ```Elm
-substring = String.slice 1 3 string
+import String
+
+String.slice 2 5 "Hello World" -- "llo"
 ```
 
-다음은 출력 결과입니다.
+이 외에도 `String.take`, `String.drop` 함수를 사용하여 특정 문자열을 추출하거나 제거할 수 있습니다. 또한 정규식을 이용하여 더 복잡한 추출 작업을 수행할 수도 있습니다.
 
-```Elm
-"녕하"
-```
+## 깊게 파고들기 (Deep Dive)
 
-위의 예제에서 볼 수 있듯이, `String.slice` 함수를 사용하면 간단하게 substring을 추출할 수 있습니다.
+문자열을 다룰 때 가장 중요한 것은 인덱스(index)의 개념입니다. Elm에서 문자열의 인덱스는 항상 유니코드 코드 포인트를 가리키게 됩니다. 이때문에 바이트 단위로 문자열을 다루는 다른 언어와는 달리, 잘못된 인덱스를 사용하면 원하는 결과를 얻지 못할 수 있습니다.
 
-## 더 깊게 들어가기
+또한 `String.slice` 함수에서는 인덱스의 범위가 유효하지 않은 경우 예외를 발생시키는 것에 주의해야합니다. 이를 방지하기 위해 `String.slice` 대신 `String.sliced` 함수를 사용할 수 있습니다. 이 함수는 잘못된 인덱스를 입력하면 대신 `Nothing` 값을 반환하므로 예외가 발생하지 않습니다.
 
-Elm 문자열 데이터에서 substring을 추출할 때 고려해야 할 몇 가지 사항이 있습니다. 첫 번째로, 인덱스는 0부터 시작한다는 점입니다. 따라서 위의 예제에서 추출을 시작하는 인덱스는 실제 문자열 데이터에서는 2번째 글자인 "녕"이지만, 코드에서는 1로 전달해야 합니다. 두 번째로, 추출을 끝내는 인덱스는 실제 문자열 데이터에서는 4번째 글자인 "하"가 아니라 3으로 전달해야 합니다. 마지막으로, 인덱스는 항상 문자열 데이터의 길이보다 작아야 합니다.
+## 더 알아보기 (See Also)
 
-예를 들어서, 위의 예제에서 우리가 끝 인덱스를 4로 전달하면 에러가 발생합니다. 위의 예제에서는 문자열 데이터의 길이가 4보다 작기 때문에 에러가 발생하지 않지만, 만약 문자열 데이터가 "안녕해요"라면 끝 인덱스는 5가 아닌 4로 전달해야 합니다.
-
-## 더 알아보기
-
-substring 추출과 관련된 더 자세한 내용을 알고 싶다면, Elm 공식 문서를 참고해보세요. 또한, 아래의 자료들도 유용할 것입니다.
-
-- Elm 공식 문서: https://guide.elm-lang.org/strings.html#slices
-- Elm 문자열 데이터 다루기: https://elmprogramming.com/strings.html
-- 문자열 추출과 관련된 다양한 예제: https://elmprogramming.com
-
-# 관련 자료
-
-- Elm 문자열 데이터 다루기: https://elmprogramming.com/strings.html
-- Elm 문자열 데이터 소개: https://elmprogramming.com/a-string-introduction.html
+- [The official Elm documentation for String module](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [An Elm tutorial on extracting substrings](https://elmprogramming.com/extract-substrings-elm.html)
+- [A useful guide for understanding Unicode in Elm](https://www.lihaoyi.com/post/HowtoMakeyourUnicodeBugsIrrelevantwiththeScalaProgramingLanguage.html)

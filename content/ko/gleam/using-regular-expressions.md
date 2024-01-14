@@ -1,42 +1,44 @@
 ---
-title:                "Gleam: 정규 표현식 사용하기"
+title:                "Gleam: 정규식 사용하기"
+simple_title:         "정규식 사용하기"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-Gleam 프로그래밍을 위한 Regular Expressions 용기
+# 왜?
 
-## 왜
+정규식을 사용하는 것은 코드를 간결하게 유지하고 원하는 패턴을 찾는 데 매우 유용합니다.
 
-**Regular Expressions**는 Gleam 프로그래밍에서 유용한 도구입니다. 문자열에 대한 검색, 대체 및 패턴 매칭을 쉽게 구현할 수 있습니다.
-
-## 사용 방법
-
-다음은 Gleam에서 Regular Expressions을 사용하는 예제 코드와 결과입니다.
+## 어떻게?
 
 ```Gleam
-import gleam/re as re
-
-fn main() {
-  let str = "Hello, World!";
-  let regex = re.compile("Hello");
-  let matches = re.find(regex, str);
-  assert matches == ["Hello"];
-}
+let input_string = "Hello, world!";
+let regex = regex!("[a-zA-Z]+");
+let matches = regex.matches(input_string);
 ```
-위 코드를 실행하면 `["Hello"]`라는 결과가 출력됩니다. 이는 문자열 "Hello, World!"에서 "Hello"라는 패턴이 발견되었기 때문입니다.
 
-## 깊이 파묻기
+위의 코드는 "Hello, world!"라는 문자열에서 알파벳 문자만 매칭하는 간단한 예제를 보여줍니다.
 
-Regular Expressions에 대해 더 많은 정보를 알아보고 싶다면 다음의 자료를 참고할 수 있습니다:
+```Gleam
+io.format(
+    ~s = "매칭된 문자열: {:?}",
+    regex.match(input_string),
+)
+```
 
-- [Gleam 공식 문서](https://gleam.run/stdlib/http.html#POST-http_request)에서 Regular Expressions에 대한 자세한 설명을 확인할 수 있습니다.
-- [RegexOne](https://regexone.com/)은 Regular Expressions를 배우기에 좋은 사이트입니다. 간단한 예제부터 실무에 활용할 수 있는 예제까지 다양한 학습 자료를 제공합니다.
+위의 코드는 "매칭된 문자열: Hello"라는 출력을 생성합니다.
 
-## 관련 자료
+## Deep Dive
 
-- [Gleam 프로그래밍 언어 소개](https://gleam.run/)는 Gleam 언어의 기본 개념과 특징을 소개하는 공식 사이트입니다.
-- [Gleam 슬랙 채널](https://gleam.run/community/chat.html)은 Gleam 사용자들끼리 소통하고 지원을 받을 수 있는 공식 커뮤니티입니다.
+정규식을 작성할 때 몇 가지 작성 방법이 있습니다. 첫 번째로는 "[a-zA-Z]+"와 같이 문자 그룹을 사용하는 것입니다. 또한 "Hello"라는 문자열에서 문자 "e"를 찾는 대신 "[^a-x]+"와 같이 부정 문자 그룹을 사용해서 찾을 수도 있습니다.
+
+정규식 패턴 뒤에는 매칭 옵션을 추가할 수도 있는데, 가장 일반적인 옵션은 "g"입니다. 이 옵션을 사용하면 매칭된 모든 결과를 찾게 됩니다.
+
+## See Also
+
+- [Gleam 공식 웹사이트](https://gleam.run/)
+- [Gleam 공식 문서](https://gleam.run/documentation/)

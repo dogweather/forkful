@@ -1,39 +1,33 @@
 ---
-title:                "Clojure: 文字列の連結"
+title:                "Clojure: 文字列の結合"
+simple_title:         "文字列の結合"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/clojure/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-##なぜ 
-文字列をつなぎ合わせるのかについての理由は、より複雑なデータを作るためです。たとえば、ユーザーの名前と姓を組み合わせてフルネームを作成したり、文章を動的に変更するために必要となる場合があります。
+## なぜ
+文字列を連結することについて、なぜ誰もが関わるべきかを1-2文で説明します。
 
-##方法
-文字列をつなぎ合わせるには、Clojureの **str** 関数を使用します。この関数に結合したい文字列を引数として渡すことで、簡単に文字列を結合することができます。
+文字列の連結は非常に一般的な作業です。例えば、あなたがテキストメッセージを送るとき、複数の単語や句を一つのメッセージにまとめる必要があります。また、データベースのクエリを作成したい時なども、複数の文字列を結合する必要があります。そのような簡単な作業にも関わらず、文字列の連結を効率的に行う方法を知っておくことは重要です。
 
+## 方法
 ```Clojure
-(str "こんにちは" "、私の名前は" "太郎です。") 
+(defn concat-strings [s1 s2]
+  (str s1 s2))
+(concat-strings "Hello" "World")
+
+; output: HelloWorld
 ```
+文字列を連結する方法はいくつかありますが、Clojureでは`str`関数を使うことができます。この関数は、与えられた文字列を一つの文字列にまとめ、新しい文字列を返します。上の例では、`concat-strings`という関数を定義し、渡された引数を`str`関数に渡しています。結果として、`HelloWorld`という単一の文字列が返されます。
 
-このコードを実行すると、以下のような出力が得られます。
+## 深堀り
+文字列を連結する方法としては、他にも`concat`や`join`という関数があります。`concat`関数は、複数のリストやベクターを結合することができます。一方、`join`関数は、特定のシンボルで区切られた文字列を結合することができます。これらの関数を使うことで、より複雑な文字列の連結を行うことができます。
 
-```
-こんにちは、私の名前は太郎です。
-```
-
-##深堀り
-Clojureでは、 **str** 関数以外にも、 **interpose** や **clojure.string/join** 等の関数を使用して文字列を結合することができます。これらの関数を使うことで、様々な方法で文字列を結合することができます。
-
-また、文字列の中に変数の値を埋め込む方法として、 **format** 関数を使用することもできます。この関数を使うと、より柔軟に文字列を結合することができます。
-
-##見てみる
-- [Clojure入門: 文字列操作](https://www.scalamatsuri.org/ja/2014/schedule/presentation/10/)
-- [文字列の結合 (Clojure)](https://docs.microsoft.com/ja-jp/learn/modules/clojure-string-concatenation/) 
-- [Clojureで文字列を操作する方法](https://dotinstall.com/lessons/basic_clojure_v3/24555)
-
-##関連リンク
-- [Clojure公式ドキュメント](https://clojuredocs.org/)
-- [Clojureチュートリアル](https://clojure.org/guides/getting_started)
-- [Clojure入門講座](https://www.udemy.com/course/clojure-programming-beginners/)
+## 参考文献
+- [ClojureDocs - str](https://clojuredocs.org/clojure.core/str)
+- [ClojureDocs - concat](https://clojuredocs.org/clojure.core/concat)
+- [ClojureDocs - join](https://clojuredocs.org/clojure.string/join)

@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Capitalizando una cadena"
+title:                "Elixir: Capitalizar una cadena"
+simple_title:         "Capitalizar una cadena"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/capitalizing-a-string.md"
 ---
 
@@ -9,45 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Uno de los aspectos más básicos en cualquier lenguaje de programación es la capacidad de manipular cadenas de texto. Una de estas tareas comunes es la capitalización de una cadena. En este artículo, exploraremos cómo podemos lograrlo utilizando Elixir.
+La capitalización de una cadena es una tarea común en la programación, especialmente cuando se trabaja con cadenas de texto. Puede ser útil en situaciones como formatear nombres para que comiencen con mayúscula o para mostrar títulos correctamente.
 
-## Cómo Hacerlo
+## Cómo hacerlo
 
-Para capitalizar una cadena en Elixir, podemos utilizar la función `String.capitalize/1`, que acepta una cadena como argumento y devuelve una versión capitalizada de la misma. Veamos un ejemplo de código:
-
-```elixir
-String.capitalize("hola mundo")
-```
-
-Este código producirá la salida `"Hola mundo"`, con la primera letra de cada palabra en mayúscula. Podemos incluso capitalizar solo la primera letra de la cadena:
+Para capitalizar una cadena en Elixir, podemos utilizar la función `String.capitalize/1` que se encuentra en el módulo `String`. Esta función toma una cadena como argumento y devuelve una nueva cadena con el primer carácter en mayúscula.
 
 ```elixir
-String.capitalize("hola mundo", :first)
+String.capitalize("hola, mundo")
+# Devuelve "Hola, mundo"
 ```
 
-Esta vez, la salida será `"Hola mundo"`, ya que solo se capitalizó la primera letra.
-
-También podemos utilizar `String.capitalize/2` para especificar un conjunto de caracteres diferentes como capitalización. Por ejemplo:
+Si queremos capitalizar todas las palabras en una cadena, podemos utilizar la función `String.capitalize_words/1`, que también se encuentra en el módulo `String`.
 
 ```elixir
-String.capitalize("hola mundo", ["o"])
+String.capitalize_words("bienvenido a elixir")
+# Devuelve "Bienvenido A Elixir"
 ```
-
-En este caso, solo la letra "o" será capitalizada, produciendo la salida `"hOla mundO"`.
 
 ## Profundizando
 
-Si queremos tener un mayor control sobre cómo se capitaliza una cadena, podemos utilizar `String.titlecase/1`, que acepta una cadena y devuelve una versión capitalizada con cada palabra en mayúscula, excepto las palabras especiales como "a", "el", "y" que permanecen en minúsculas.
+Internamente, estas funciones utilizan el módulo `String.Case` para realizar la capitalización. Este módulo contiene funciones para manejar diferentes casos de formato, como mayúsculas, minúsculas y formato de texto.
 
-Otra función útil es `String.upcase/1`, que convierte todas las letras de una cadena en mayúsculas. Por ejemplo:
+Por ejemplo, para capitalizar solo la primera palabra en una cadena, podemos utilizar la función `String.Case.upcase/1`. Esta función devuelve una cadena con la primera letra en mayúscula, pero deja el resto de la cadena como estaba.
 
 ```elixir
-String.upcase("hola mundo")
+String.Case.upcase("bienvenido")
+# Devuelve "Bienvenido"
 ```
-produciendo la salida `"HOLA MUNDO"`.
 
-## Ver También
+Otra forma de capitalizar una cadena es utilizando la función `String.replace/3` junto con expresiones regulares para seleccionar la primera letra de cada palabra y convertirla en mayúscula.
 
-- [Elixir String Functions](https://hexdocs.pm/elixir/String.html)
-- [Mastering Elixir Strings](https://blog.appsignal.com/2018/06/12/elixir-alchemy-mastering-elixir-strings.html)
-- [Elixir Tutorial: Basic Operations with Strings](https://www.freecodecamp.org/news/elixir-tutorial-basic-operations-with-strings-9d0609eae20b/)
+```elixir
+String.replace("hola, mundo", ~r/(?<=\A|\s)(\w)/, fn letter -> String.upcase(letter) end)
+# Devuelve "Hola, Mundo"
+```
+
+## Ver también
+
+- Documentación oficial de Elixir sobre `String.capitalize/1`: https://hexdocs.pm/elixir/String.html#capitalize/1
+- Tutoriales sobre expresiones regulares en Elixir: https://elixirschool.com/es/lessons/basics/pattern-matching/#regex-regular-expressions

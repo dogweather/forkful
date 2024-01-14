@@ -1,45 +1,56 @@
 ---
-title:                "Rust: Convirtiendo una cadena a minúsculas"
+title:                "Rust: Convirtiendo una cadena en minúsculas"
+simple_title:         "Convirtiendo una cadena en minúsculas"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-En la programación, a menudo nos encontramos con la necesidad de manipular y modificar cadenas de texto. Una de estas tareas comunes es convertir una cadena de texto a minúsculas. Ya sea para estandarizar el formato de entrada de los usuarios o para realizar búsquedas en texto sin importar mayúsculas o minúsculas, la conversión a minúsculas es una habilidad útil en cualquier lenguaje de programación. En esta entrada de blog, exploraremos cómo podemos lograr esto en Rust.
+
+Convertir cadenas de texto a minúsculas es una tarea común en muchos programas de software. Puede ser útil para comparar cadenas de manera más precisa o para formatear correctamente la entrada del usuario. En Rust, hay varias formas de lograr esto, dependiendo de lo que esté buscando específicamente.
 
 ## Cómo hacerlo
-Para convertir una cadena a minúsculas en Rust, podemos utilizar el método `to_lowercase()` de la estructura `String`. Este método devuelve una nueva cadena que es una copia de la original, pero con todas las letras en minúsculas. Veamos un ejemplo:
 
-```Rust
-let cadena = "HOLA MUNDO";
-let nueva_cadena = cadena.to_lowercase();
-println!("{}", nueva_cadena);
-// Output: hola mundo
+Hay varias formas de convertir una cadena a minúsculas en Rust. Una forma sencilla es utilizar el método `to_lowercase` de la estructura `String`. Por ejemplo:
+
+```rust 
+let my_string = String::from("HOLA MUNDO");
+let lowercase_string = my_string.to_lowercase();
+
+println!("{}", lowercase_string);
 ```
 
-En este ejemplo, primero creamos una cadena de texto llamada`cadena` y luego utilizamos el método `to_lowercase()` para convertirla a minúsculas. Finalmente, imprimimos la nueva cadena en la consola y obtenemos nuestra cadena en minúsculas como resultado.
+Esto imprimirá "hola mundo". También puede utilizar el método `to_lowercase` en un literal de cadena, en lugar de crear una instancia de `String`.
 
-Podemos aplicar este método tanto a cadenas estáticas como a cadenas dinámicas:
+Además, si está trabajando con cadenas que contienen caracteres no ASCII, puede utilizar `to_lowercase` de `Unicode` para asegurarse de que se manejen correctamente las mayúsculas y minúsculas, utilizando la función `fold` para iterar sobre los caracteres de la cadena.
 
-```Rust
-let cadena = "Hola ";
-let otra_cadena = String::from("Mundo");
-let nueva_cadena = cadena.to_lowercase();
-let otra_nueva_cadena = otra_cadena.to_lowercase();
-println!("{}{}", nueva_cadena, otra_nueva_cadena);
-// Output: hola mundo
+```rust
+let my_string = String::from("ÆRLIGE INNGANG");
+let lowercase_string = my_string.chars()
+    .fold(String::new(), |mut acc, c| {
+        acc.extend(c.to_lowercase());
+        acc
+});
+
+println!("{}", lowercase_string);
 ```
+
+Esto devolverá "ærlige inngang".
 
 ## Profundizando
-Es importante tener en cuenta que este método no solo convierte letras mayúsculas a minúsculas, sino que también maneja caracteres especiales y caracteres de otros idiomas. Por ejemplo, si tenemos una cadena con acentos o diacríticos, también se convertirán a minúsculas.
 
-Además, el método `to_lowercase()` es inmutable, lo que significa que no modifica la cadena original sino que devuelve una nueva. Esto es útil ya que no queremos alterar la cadena original en caso de que la necesitemos en su formato original más tarde.
+Cuando se trata de convertir cadenas a minúsculas en Rust, es importante entender cómo funciona el proceso detrás de escena. En primer lugar, Rust utiliza el estándar Unicode para manejar los caracteres, lo que significa que incluso los caracteres no ASCII se manejan correctamente.
 
-Otra cosa a tener en cuenta es que este método solo convierte a minúsculas, pero no capitaliza las letras iniciales en caso de que la cadena comience con una letra mayúscula.
+Además, el método `to_lowercase` utiliza la tabla de casos Unicode, lo que significa que cada carácter se mapea a su equivalente en minúsculas en función de sus propiedades de caso.
 
-## Ver también
-- Documentación oficial de Rust sobre el método `to_lowercase()`: https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase
-- Ejemplos de uso del método `to_lowercase()` en diferentes situaciones: https://blog.logrocket.com/converting-strings-uppercase-lowercase-rust/
+Una cosa importante a tener en cuenta es que el método `to_lowercase` devuelve una nueva instancia de `String` en lugar de modificar la cadena original. Esto es porque las cadenas en Rust son inmutables por defecto, lo que significa que no pueden ser modificadas después de su creación. Si desea modificar la cadena original, puede utilizar el método `make_ascii_lowercase`, que solo funciona con caracteres ASCII.
+
+## Ver también 
+
+- [Documentación oficial de Rust sobre cadenas y methods](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Ejemplos de conversión de cadenas en el libro de Rust](https://doc.rust-lang.org/book/ch08-02-strings.html#creating-a-new-string-from-a-string-slice)
+- [Unicode en Rust](https://blog.burntsushi.net/ripgrep/unicode/)

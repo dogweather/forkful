@@ -1,54 +1,46 @@
 ---
-title:                "C++: המרת תאריך למחרוזת"
+title:                "C++: להמיר תאריך למחרוזת"
+simple_title:         "להמיר תאריך למחרוזת"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/cpp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
-
-כדי להציג תאריך בפורמט שנוח יותר לקריאה ושימוש בתוכניות, יש צורך להמיר את התאריך למחרוזת.
+## למה 
+כתיבת קוד ב-C++ מכילה המון תהליכים ופעולות שונות, ולעולם אין "נכון" אחד שיספק את כל הפתרונות לבעיות מסוימות. לכן, כעת אנו נתמקד במטרה אחת בטוחה אשר מתבקשת לפעול על ידי המתכנתים והמתכנתיות האנגלו-סקסוניים - coverting מועיל לכתוב דימוי של תאריך כאשר הם רוצים להתחבר לכתובת URL המודפוסות באופן נחמד.
 
 ## איך לעשות זאת
-
-תהליך המרה פשוט יחסית: יש להשתמש בפונקציית `strftime()` ולציין את התבנית המתאימה לפורמט תאריך ואת המשתנים הרלוונטים. למשל:
-
-```C++
+```c++
 #include <iostream>
+#include <string>
 #include <ctime>
-
 using namespace std;
+
+// פונקצית הממירה את התאריך למחרוזת
+string convertDateToString(int day, int month, int year)
+{
+    char formatted_date[15];
+    sprintf(formatted_date, "%02d-%02d-%04d", month, day, year); // יצירת מחרוזת באמצעות sprintf בצורה מתאימה לתאריך
+    string date_string(formatted_date);
+    return date_string;
+}
 
 int main()
 {
-    //קביעת זמן נוכחי
-    time_t currentTime = time(0);
-
-    //המרת התאריך למחרוזת
-    string dateString = ctime(&currentTime);
-
-    cout << "התאריך הנוכחי הוא: " << dateString << endl;
-
+    // דוגמא לפלט של התאריך הממומר למחרוזת בפורמט דדד-אדד-׳יי
+    int day = 6;
+    int month = 11;
+    int year = 2021;
+    string date_string = convertDateToString(day, month, year);
+    cout << "Date: " << date_string << endl;
+    
     return 0;
 }
 ```
+כאן, אנו משתמשים בפונקציית sprintf כדי להמיר את התאריך למחרוזת, ולאחר מכן אנו מחזירים את המחרוזת כערך חזרה לפונקציה הראשית. המחרוזת מוצגת בפורמט דדד-מממ-׳שש, שהוא פורמט נפוץ לטיפוח אינטרנטי וסיפק תכניות מסוימות.
 
-פלט:
-
-```bash
-התאריך הנוכחי הוא: Mon Oct 25 21:50:40 2021
-```
-
-כמו בדוגמה המוצגת, המרת התאריך תציג את התאריך בפורמט הכללי של מחרוזת תאריך ושעה. אפשר להוסיף את `#include <iomanip>` כדי להתאים את המתאריך לפורמט חלק יותר.
-
-## חפירה עמוקה
-
-כדאי לקחת בחשבון שפונקציית `strftime()` יכולה להימצא רק עבור מספר סיסמאות קבועות ומוגבלות. אם יש צורך בתבנית מיוחדת או בערך רלוונטי כמו פורמט של תאריך מותאם אישית, אפשר להשתמש במספר אפשרויות נוספות כמו `stringstream` ו- `put_time()`.
-
-## ראו גם
-
-- [פונקציית strftime ב-C++](https://en.cppreference.com/w/cpp/chrono/c/strftime)
-- [עבודה עם תאריכים ב-C++](https://www.programiz.com/cpp-programming/library-function/ctime)
-- [תצוגת תאריך מותאם אישית ב-C++](https://www.geeksforgeeks.org/strftime-function-in-c-with-examples/)
+## חקירת מעמקים
+המרת תאריך למחרוזת היא משימה נפוצה בקוד המקור שלנו. במאמר זה, אנו למדנו כיצד לבצע זאת באמצעות פונקציות ופקודות שונות ב-C++ כדי ליצור תאריך בפורמט נכון. יש סימניות מיוחדות שניתן להוסיף כדי לשנות את הפורמט לתאריך, כך

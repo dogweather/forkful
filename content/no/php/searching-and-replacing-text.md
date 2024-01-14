@@ -1,7 +1,9 @@
 ---
 title:                "PHP: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/searching-and-replacing-text.md"
 ---
 
@@ -9,43 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Når man skriver kode, er det ofte behov for å endre deler av teksten. Dette kan være å erstatte ord eller endre variabler. I slike tilfeller er det nyttig å kunne søke gjennom koden og enkelt bytte ut tekst. Dette kan spare deg for mye tid og gjøre kodingen mer effektiv.
+Å søke og erstatte tekst er en vanlig oppgave for PHP-programmerere. Det kan være nyttig for å raskt gjøre endringer i store mengder tekst, som for eksempel i en database. Det sparer deg også tid og arbeid ved å gjøre endringer manuelt.
 
 ## Hvordan
 
-For å søke og erstatte tekst i PHP, kan man bruke funksjonen `str_replace()`. Denne funksjonen tar inn tre parametere: søketekst, erstattningstekst og en variabel som skal modifiseres. Her er et eksempel på hvordan man kan søke og erstatte i en tekststreng:
+For å søke og erstatte tekst i PHP, bruker vi innebygde funksjoner som `str_replace()` og `preg_replace()`. Disse funksjonene tar tre argumenter: teksten du ønsker å søke etter, teksten du ønsker å erstatte den med, og teksten du ønsker å søke i. Funksjonene kan også ta imot arrays av tekster for å søke etter flere uttrykk på en gang.
 
 ```PHP
-$tekst = "Dette er en test";
-$erstattning = "en praktisk løsning";
-$søk = "test";
-$modifisert = str_replace($søk, $erstattning, $tekst);
-echo $modifisert; // Dette er en praktisk løsning
+// Søker og erstatter teksten "he" med "ha" i en string
+$string = "Hello world!";
+$ny_string = str_replace("he", "ha", $string);
+
+echo $ny_string; // Output: Hallo world!
+
+// Søker og erstatter teksten "a" og "e" med "X" i en string
+$string = "Hello world!";
+$sok = array("a", "e");
+$erstatter = "X";
+$ny_string = str_replace($sok, $erstatter, $string);
+
+echo $ny_string; // Output: HXllo world!
 ```
 
-Som du kan se, bruker vi funksjonen til å bytte ut "test" med "en praktisk løsning" i teksten "Dette er en test". Det er også mulig å bruke funksjonen til å erstatte flere tekster samtidig:
+For mer avansert søk og erstatning, kan vi bruke `preg_replace()` som tillater bruk av regulære uttrykk. Dette lar deg søke etter tekst basert på mønstre og utføre mer komplekse erstatninger.
 
 ```PHP
-$tekst = "Dette er en test på søk og erstatning";
-$erstattning = ["en praktisk løsning", "effektiv måte"];
-$søk = ["test", "søk og erstatning"];
-$modifisert = str_replace($søk, $erstattning, $tekst);
-echo $modifisert; // Dette er en praktisk løsning på effektiv måte
-```
+// Søker og erstatter alle tall i en string med "X"
+$string = "12345abcde";
+$ny_string = preg_replace("/[0-9]/", "X", $string);
 
-I dette eksempelet erstatter vi både "test" og "søk og erstatning" med "en praktisk løsning" og "effektiv måte".
+echo $ny_string; // Output: XXXXXabcde
+```
 
 ## Dypdykk
 
-I tillegg til `str_replace()` funksjonen, har PHP også andre funksjoner som kan være nyttige for å søke og erstatte tekst. Noen av disse er:
+Det finnes også andre nyttige funksjoner for å søke og erstatte tekst i PHP, som for eksempel `str_ireplace()` som lar deg utføre en søk og erstatting uten å ta hensyn til store og små bokstaver, `strtr()` som gir deg muligheten til å erstatte flere tegn samtidig, og `substr_replace()` for å erstatte en del av en string basert på posisjon.
 
-- `str_ireplace()` som gjør det mulig å søke og erstatte uten å være opptatt av store og små bokstaver.
-- `preg_replace()` som bruker regulære uttrykk for å søke og erstatte tekst.
-- `strtr()` som gjør det mulig å bytte ut flere tegn samtidig.
-
-Det er viktig å merke seg at søk og erstatning kan være en ressurskrevende operasjon, spesielt når det gjelder store tekstdokumenter. Derfor kan det være lurt å begrense bruken til tilfeller der det er nødvendig.
+Det er også viktig å huske på at disse funksjonene kan være ganske ressurskrevende, spesielt hvis du bruker regulære uttrykk. Pass på å begrense søket ditt så mye som mulig for å øke hastigheten.
 
 ## Se også
 
-- [PHP dokumentasjon om str_replace()](https://www.php.net/str_replace)
-- [W3Schools tutorial om å søke og erstatte i PHP](https://www.w3schools.com/php/php_string.asp)
+- [PHP manual for str_replace()](https://www.php.net/manual/en/function.str-replace.php)
+- [PHP manual for preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
+- [PHP manual for strtr()](https://www.php.net/manual/en/function.strtr.php)
+- [PHP manual for substr_replace()](https://www.php.net/manual/en/function.substr-replace.php)

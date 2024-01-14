@@ -1,47 +1,45 @@
 ---
-title:                "Elixir: 컴퓨터 프로그래밍의 '명령줄 인수 읽기'"
+title:                "Elixir: 명령 줄 인수 읽기"
+simple_title:         "명령 줄 인수 읽기"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-커맨드 라인 인수를 읽는 것에 대해 이야기하고 있는 이유는 무엇일까요? 프로그래밍을 하는 사람들이라면 누구나 커맨드 라인 프로그램을 작성할 때 손쉽게 인수를 읽을 수 있도록 알아야 합니다. 이를 통해 더 효율적이고 유연한 코드를 작성할 수 있기 때문입니다.
+커맨드 라인 인자를 읽는 데 왜 관심을 가져야 하는지는 중요한 질문입니다. Elixir는 강력하고 다양한 기능을 제공하므로 이 기능을 활용하는 것이 중요합니다.
 
-## 해보는 법
+## 어떻게
 
-다음은 Elixir에서 커맨드 라인 인수를 읽는 방법을 보여주는 예제 코드입니다.
+커맨드 라인 인자를 읽는 방법은 간단합니다. 우리는 먼저 ```System.argv()``` 함수를 사용하여 커맨드 라인 인자를 리스트로 가져올 수 있습니다. 이후에는 사용자가 원하는 방식으로 데이터를 처리할 수 있습니다. 아래는 간단한 예시입니다.
 
-```
-Elixir 정규식으로 문자열 분할
-```
+```elixir
+defmodule CommandLine do
+  def read_args do
+    args = System.argv()
+    IO.inspect(args)
+  end
+end
 
-위 코드에서는 `OptionParser` 모듈을 사용하여 커맨드 라인 인수를 읽고, `Regex` 모듈을 사용하여 문자열을 분할합니다. 이를 통해 간단하고 쉽게 인수를 분석할 수 있습니다.
-
-아래는 위 코드를 실행한 결과입니다.
-
-```
-관리자$ elixir args.exs -f input.txt -n 10 -v
-
-[
-  file_name: "input.txt",
-  num_lines: 10,
-  verbose: true
-]
+CommandLine.read_args()
 ```
 
-위 결과에서 볼 수 있듯이, 인수를 손쉽게 읽고 해당하는 값을 받아올 수 있습니다.
+위의 코드를 실행해보면, 커맨드 라인에서 사용한 인자들이 리스트로 출력되는 것을 볼 수 있습니다. 예를 들어, 만약 ```elixir my_file.exs arg1 arg2```와 같이 커맨드 라인에서 실행한다면, ```["arg1", "arg2"]```가 출력될 것입니다.
 
-## 깊이 파헤치기
+## 깊이 파고들기
 
-`OptionParser` 모듈을 사용하면 더 많은 기능을 활용할 수 있습니다. 예를 들어, 기본값을 설정할 수 있고, 각 인수에 대한 설명을 추가할 수도 있습니다.
+커맨드 라인 인자를 읽는 것은 Elixir의 기본 함수 중 하나입니다. 그렇기 때문에 우리는 다양한 방식으로 이 기능을 활용할 수 있습니다. 예를 들어, 우리는 애플리케이션을 실행할 때 사용자가 입력한 옵션을 커맨드 라인 인자로 받아서 그에 따라 동작하도록 할 수 있습니다. 또한, 커맨드 라인 인자를 통해 사용자가 원하는 파일의 경로를 받아서 해당 파일을 열어서 처리할 수도 있습니다. 이처럼 커맨드 라인 인자는 우리가 애플리케이션을 더 유동적이고 다양한 방식으로 동작하도록 할 수 있게 해준다는 것을 기억해주세요.
 
-또한 `Regex` 모듈을 사용하지 않고도 `OptionParser` 모듈만으로 인수를 분석할 수 있습니다. 이를 통해 더 간단하고 효율적인 코드를 작성할 수 있습니다.
+# 더 많은 정보
 
-## 관련 자료
+더 많은 정보를 원한다면, [Elixir 공식 문서](https://hexdocs.pm/elixir/System.html#argv/0)를 참고하시기 바랍니다. 여기에는 더 많은 예시 코드와 설명이 제공되어 있으며, 더 자세한 정보를 얻을 수 있습니다.
 
-- [Elixir 공식 문서](https://hexdocs.pm/elixir/OptionParser.html)
-- [Awesome Elixir Github 저장소](https://github.com/h4cc/awesome-elixir#command-line-applications)
+# 관련 링크
+
+- [Elixir 공식 문서](https://hexdocs.pm/elixir/System.html#argv/0)
+- [Elixir 프로그래밍 기초](https://brunch.co.kr/@junho85/14)
+- [Elixir 커맨드 라인 인자 다루기](https://medium.com/@sepidehsohrabi/handle-command-line-argument-in-elixir-a1bb540ca21b)

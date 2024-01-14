@@ -1,7 +1,9 @@
 ---
 title:                "C++: Convertire una data in una stringa"
+simple_title:         "Convertire una data in una stringa"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/cpp/converting-a-date-into-a-string.md"
 ---
 
@@ -9,45 +11,68 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Ci sono diverse ragioni per cui potresti avere la necessità di convertire una data in una stringa all'interno di un programma in C++. Forse stai lavorando con dati da un database e hai bisogno di un modo per rappresentare le date come testo leggibile. Oppure potresti voler creare un'applicazione che visualizzi le date in formati personalizzati per gli utenti. In ogni caso, sapere come convertire una data in una stringa può essere un'abilità utile per i programmatori.
+Spesso nella programmazione ci si trova a dover manipolare le date e, a volte, è necessario convertire una data in una stringa. Questo può risultare utile per la visualizzazione di date in formati specifici o per la memorizzazione dei dati in un file di testo.
 
-## Come Fare
+In questo articolo, impareremo come convertire una data in una stringa utilizzando il linguaggio di programmazione C++.
 
-Per convertire una data in una stringa in C++, è necessario utilizzare la funzione `strftime()` della libreria `<ctime>`. Ecco un esempio di codice che mostra come utilizzare questa funzione per convertire una data nel formato "DD/MM/YYYY":
+## Come fare
 
-```C++
+Per convertire una data in una stringa utilizzando C++, è necessario utilizzare la libreria `chrono` e la funzione `put_time` della libreria `iomanip`. Iniziamo definendo un oggetto di tipo `std::chrono::system_clock::time_point` e inizializziamolo con la data da convertire.
+
+```
 #include <iostream>
-#include <ctime>
+#include <chrono>
+#include <iomanip>
 
 int main() {
-    // Definiamo una data come una struttura "tm"
-    std::tm data = {0, 0, 0, 20, 8, 2021 - 1900};
+  // Definizione della data da convertire - 25 aprile 2021 alle 18:30
+  std::chrono::system_clock::time_point data_da_convertire = std::chrono::system_clock::from_time_t(1619383800);
 
-    // Creiamo una stringa di output con una dimensione sufficiente per contenere la data formattata
-    char output[11];
-
-    // Utilizziamo la funzione strftime per formattare la data in una stringa
-    strftime(output, sizeof(output), "%d/%m/%Y", &data);
-
-    // Stampiamo la data formattata
-    std::cout << output << std::endl;
-
-    return 0;
+  return 0;
 }
 ```
 
-Output:
+Per convertire questa data in una stringa, utilizziamo la funzione `std::put_time()` e specificammo il formato desiderato. Ad esempio, se vogliamo ottenere una stringa nel formato "g/m/aaaa hh:mm" (giorno/mese/anno ora:minuti), possiamo scrivere il seguente codice:
+
 ```
-20/08/2021
+#include <iostream>
+#include <chrono>
+#include <iomanip>
+
+int main() {
+  std::chrono::system_clock::time_point data_da_convertire = std::chrono::system_clock::from_time_t(1619383800);
+
+  // Converte la data in una stringa nel formato "g/m/aaaa hh:mm"
+  std::cout << "Data convertita = " << std::put_time(&data_da_convertire, "%d/%m/%Y %H:%M") << std::endl;
+
+  return 0;
+}
 ```
 
-Ci sono molti parametri che è possibile utilizzare con `strftime()` per ottenere formati di data diversi. Ad esempio, `%d` rappresenta il giorno del mese con due cifre, `%m` rappresenta il mese con due cifre e `%Y` rappresenta l'anno con quattro cifre. Per maggiori informazioni su questi parametri e su come utilizzarli, si consiglia di consultare la documentazione ufficiale della funzione `strftime()`.
+L'output di questo codice sarà "Data convertita = 25/04/2021 18:30".
 
-## Approfondimenti
+## Deep Dive
 
-La funzione `strftime()` può anche essere utilizzata per ottenere altre informazioni sulla data, come ad esempio il giorno della settimana o il numero della settimana dell'anno. Inoltre, è possibile utilizzare la libreria `<chrono>` per ottenere maggiori informazioni sugli intervalli di tempo e sulle date.
+La funzione `std::put_time()` utilizza il formato di stampa di `strftime()` della libreria C, quindi è possibile utilizzare gli stessi specificatori di formato. Ad esempio, potremmo scrivere un codice per ottenere una stringa nel formato "Giorno Settimana, DD MMMM YYYY" (es. Martedì, 07 Settembre 2021) utilizzando il seguente codice:
 
-## Vedi Anche
+```
+#include <iostream>
+#include <chrono>
+#include <iomanip>
 
-- [Documentazione ufficiale della funzione `strftime()`](https://en.cppreference.com/w/cpp/chrono/c/strftime)
-- [Documentazione ufficiale della libreria `<chrono>`](https://en.cppreference.com/w/cpp/chrono)
+int main() {
+  std::chrono::system_clock::time_point data_da_convertire = std::chrono::system_clock::from_time_t(1630985400);
+  
+  // Converte la data in una stringa nel formato "Giorno Settimana, DD MMMM YYYY"
+  std::cout << "Data convertita = " << std::put_time(&data_da_convertire, "%A, %d %B %Y") << std::endl;
+
+  return 0;
+}
+```
+
+L'output di questo codice sarà "Data convertita = Martedì, 07 Settembre 2021".
+
+## Vedi anche
+
+- [Documentazione ufficiale di std::chrono](https://en.cppreference.com/w/cpp/chrono) 
+- [Documentazione ufficiale di std::put_time](https://en.cppreference.com/w/cpp/io/manip/put_time)

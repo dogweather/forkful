@@ -1,45 +1,48 @@
 ---
 title:                "Clojure: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Clojure"
-category:             "Getting Started"
+category:             "Clojure"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor?
 
-Å starte et nytt programmeringsprosjekt kan virke overveldende, men det er en utrolig givende oppgave. Fra å lære nye ferdigheter og forbedre dine eksisterende, til å skape noe unikt og innflytelsesrikt, er det mange grunner til å dykke inn i verdenen av Clojure.
+Å starte et nytt prosjekt kan virke skremmende, men det kan føre til mye kreativitet og læring. Ikke vær redd for å ta sjansen og prøve noe nytt!
 
-# Hvordan
+## Hvordan Gjøre Det
 
-For å komme i gang med et nytt Clojure-prosjekt, må du åpne en terminal og skrive følgende kommandoer:
+Å starte et nytt Clojure-prosjekt er enkelt! Følg disse trinnene:
 
-```Clojure
-lein new app prosjektnavn
-cd prosjektnavn
-lein run
-```
+1. Åpne din foretrukne kodeeditor og lag en ny fil med .clj utvidelse.
+2. Importer nødvendige biblioteker ved å legge til ```(require [bibliotek.navn])``` i begynnelsen av filen.
+3. Definer funksjonene du vil bruke ved hjelp av ```(defn funksjonsnavn [parameter] (funksjonskode))```.
+4. Kjør programmet ved å skrive ```(funksjonsnavn verdi)``` ved hjelp av den innebygde ```println``` funksjonen for å skrive ut resultater.
 
-Dette vil opprette en ny mappe med navnet "prosjektnavn" og en "core.clj" fil inne i den. Kjør kommandoen `lein run` for å starte programmet.
-
-For å legge til ekstra biblioteker, kan du bruke følgende kommandoer:
+Et eksempel på en enkel funksjon som legger to tall sammen ser slik ut:
 
 ```Clojure
-lein new library bib-navn
-lein install
+(defn add-numbers [x y]
+  (+ x y))
+
+(println (add-numbers 2 3))
+
+;; Output: 5
 ```
 
-Dette vil opprette en ny mappe kalt "bib-navn" og installere den i ditt lokale Maven-repositorium. Deretter kan du legge den til som en avhengighet i ditt prosjekt ved å inkludere `(require '[bib-navn.core :refer :all])` i "core.clj" filen.
+## Dypdykk
 
-# Dypdykk
+Når du starter et nytt prosjekt, kan det være lurt å sette opp en god struktur for koden din. En anbefalt måte å gjøre dette på er å følge Clojure's standard prosjekt layout. Dette innebærer å ha separate mapper for kildekode, tester og ressurser. Det er også viktig å ha en "project.clj" fil som inneholder nødvendige biblioteker og avhengigheter for prosjektet.
 
-Når du starter et nytt Clojure-prosjekt, er det viktig å planlegge godt og følge noen best practices. Å identifisere og definere funksjonaliteten til prosjektet ditt, organisere koden din i moduler og implementere enhetstesting er alle viktige aspekter for å sikre et vellykket prosjekt.
+En annen god praksis er å dokumentere koden din ved hjelp av Clojure-docstrings. Dette gjør det lettere for andre å forstå og bruke koden din.
 
-I tillegg er det viktig å følge Clojure sin konvensjonelle filstruktur, hvor hovedkoden din skal ligge i "src/" -mappen og enhetstestene i "test/" -mappen. Dette sikrer en ren og organisert kodebase som er enklere å vedlikeholde.
+Hvis du møter på problemer eller trenger mer informasjon, er det mange ressurser og fellesskap tilgjengelig online for å hjelpe deg med å komme i gang med Clojure.
 
-# Se også
+## Se Også
 
-- [Offisiell Clojure nettside](https://clojure.org)
-- [Clojure dokumentasjon](https://clojure.org/documentation)
-- [Clojure style guide](https://github.com/bbatsov/clojure-style-guide)
+- [Clojure Dokumentasjon](https://clojuredocs.org/)
+- [Offisiell Clojure Nettside](https://clojure.org/)
+- [Clojure Reddit Fellesskap](https://www.reddit.com/r/Clojure/)

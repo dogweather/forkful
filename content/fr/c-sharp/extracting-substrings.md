@@ -1,7 +1,9 @@
 ---
 title:                "C#: Extraction de sous-chaînes"
+simple_title:         "Extraction de sous-chaînes"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/c-sharp/extracting-substrings.md"
 ---
 
@@ -9,50 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'extraction de sous-chaînes est une opération couramment utilisée en programmation pour récupérer une partie spécifique d'une chaîne de caractères. Cela peut être utile pour de nombreuses tâches, telles que la manipulation de données ou la création de formats de chaînes personnalisés.
+L'extraction de sous-chaînes, également connue sous le nom de substring en anglais, est une opération courante dans la programmation. Elle permet de sélectionner une partie spécifique d'une chaîne de caractères, en se basant sur un indice de début et un indice de fin. Cette fonctionnalité peut être très utile dans différentes situations de programmation, notamment pour manipuler et traiter des données.
 
-## Comment Faire
+## Comment faire
 
-Pour extraire une sous-chaîne en C#, vous pouvez utiliser la méthode `Substring` sur un objet de type `string`. Cette méthode prend deux paramètres : l'index de départ et la longueur de la sous-chaîne souhaitée.
+Pour effectuer une extraction de sous-chaîne en C#, nous pouvons utiliser la méthode `Substring()` qui est disponible dans la classe `string`. Cette méthode prend deux paramètres en entrée : l'indice de début et la longueur de la sous-chaîne désirée.
 
-```C#
-string chaine = "La programmation en C# est amusante !";
-string sousChaine = chaine.Substring(5, 11);
-
-Console.WriteLine(sousChaine); // affiche "programmation"
-```
-
-La méthode `Substring` commence à compter à partir de 0, donc l'index de départ pour "programmation" est 5 (car il s'agit du sixième caractère dans la chaîne). Si vous ne spécifiez pas la longueur de la sous-chaîne, elle sera automatiquement définie comme la fin de la chaîne d'origine.
-
-Vous pouvez également utiliser des index négatifs pour compter à partir de la fin de la chaîne, par exemple :
+Voici un exemple de code C# utilisant la méthode `Substring()` :
 
 ```C#
-string chaine = "La programmation en C# est amusante !";
-string sousChaine = chaine.Substring(5, chaine.Length - 28);
-
-Console.WriteLine(sousChaine); // affiche "programmation"
+string phrase = "Bonjour tout le monde!";
+string sousChaine = phrase.Substring(8, 4);
+Console.WriteLine(sousChaine);
 ```
 
-Dans cet exemple, nous utilisons la propriété `Length` pour déterminer la longueur de la chaîne d'origine et nous soustrayons la longueur de la sous-chaîne (28 caractères) pour obtenir la longueur totale de la sous-chaîne.
+Dans cet exemple, nous avons spécifié un indice de début de 8, ce qui correspond au premier caractère de la sous-chaîne souhaitée, ainsi qu'une longueur de 4 caractères. La console affichera donc le mot "tout" en tant que sous-chaîne extraite.
 
-## Plongée Profonde
-
-Il est également possible d'extraire des sous-chaînes à partir d'autres types de données, tels que des tableaux de caractères. Dans ce cas, vous pouvez utiliser la méthode `Subarray` pour récupérer une partie spécifique du tableau. Par exemple :
+Il est également possible d'extraire une sous-chaîne à partir d'un indice de début jusqu'à la fin de la chaîne en utilisant la méthode `Substring()` avec un seul paramètre :
 
 ```C#
-char[] lettres = {'a', 'b', 'c', 'd', 'e', 'f'};
-char[] sousLettres = lettres.Subarray(2, 3);
-
-foreach (char lettre in sousLettres)
-{
-    Console.Write(lettre + " "); // affiche "c d e"
-}
+string nom = "Dupont";
+string prenom = nom.Substring(0, 2);
+Console.WriteLine(prenom);
 ```
 
-La méthode `Subarray` utilise également les mêmes paramètres que `Substring` : l'index de départ et la longueur de la sous-chaîne.
+Dans cet exemple, nous avons spécifié un indice de début de 0, ce qui correspond au premier caractère du nom, ainsi qu'une longueur de 2 caractères. La console affichera donc les deux premières lettres du nom, soit "Du".
 
-## Voir Aussi
+## Plongée en profondeur
 
-- [Documentation Microsoft sur la méthode Substring](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.substring)
-- [Documentation Microsoft sur la méthode Subarray](https://docs.microsoft.com/fr-fr/dotnet/api/system.array.subarray)
-- [Article sur les manipulations de chaînes en C#](https://www.tutorialsteacher.com/csharp/csharp-string)
+Il est important de noter que la méthode `Substring()` ne modifie pas la chaîne de caractères originale, elle retourne plutôt une nouvelle chaîne avec la sous-chaîne extraite. De plus, si la longueur spécifiée dépasse la longueur de la chaîne, une exception sera levée.
+
+Il est également possible de spécifier un seul indice en tant que paramètre, ce qui indiquera à la méthode de commencer à cet indice et de retourner le reste de la chaîne.
+
+```C#
+string phrase = "Hello world!";
+string sousChaine = phrase.Substring(6);
+Console.WriteLine(sousChaine);
+```
+
+Dans cet exemple, la console affichera "world!", car nous avons spécifié l'indice de début 6, ce qui correspond au premier caractère après l'espace dans la chaîne "Hello world!".
+
+## Voir aussi
+
+Voici quelques ressources supplémentaires pour en apprendre davantage sur les extractions de sous-chaînes en C# :
+
+- [Documentation officielle de Microsoft pour la méthode `Substring()`](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.substring)
+- [Tutoriel sur les extractions de sous-chaînes en C#](https://www.tutorialspoint.com/csharp/csharp_substring.htm)
+- [Vidéo explicative sur les extractions de sous-chaînes en C#](https://www.youtube.com/watch?v=w14tYhdP92Y)

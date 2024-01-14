@@ -1,53 +1,69 @@
 ---
 title:                "Ruby: 检查目录是否存在"
+simple_title:         "检查目录是否存在"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-```
-## 为什么要检查文件夹是否存在
-文件处理是编程中常见的任务。有时，需要查找某个特定的文件夹，但在执行任何操作之前，我们需要先检查该文件夹是否存在。这样可以避免程序因为找不到文件夹而发生错误。
+## 为什么
 
-需要检查文件夹是否存在的情况可能很多，有时可能是因为用户输入的路径不正确，有时可能是因为程序需要使用特定的文件夹来存储数据。不管是什么原因，检查文件夹是否存在都可以帮助我们在编程中更加有效地处理文件。
+在编程中，经常需要检查某个文件夹是否存在。这可以帮助我们确保我们的程序能够正常运行，并避免出现不必要的错误。我们可以使用Ruby来轻松检查一个文件夹是否存在，并根据需要采取相应的措施。
 
-## 如何检查文件夹是否存在
-在Ruby中，我们可以使用`Dir.exist?()`方法来检查文件夹是否存在。下面是一个简单的例子：
+## 怎么做
 
-```Ruby
-if Dir.exist?("/Users/username/Desktop")
-  puts "文件夹存在"
+首先，我们需要使用```Dir.exists?()```方法来检查文件夹是否存在。此方法将返回一个布尔值，如果文件夹存在，则为```true```，如果不存在，则为```false```。
+
+```ruby
+if Dir.exists?("documents")
+  puts "Documents folder exists!"
 else
-  puts "文件夹不存在"
+  puts "Documents folder does not exist."
 end
 ```
 
-上面的代码会遍历当前用户桌面上的文件夹，如果存在名为“username”的文件夹，则会输出“文件夹存在”，否则会输出“文件夹不存在”。
+上述代码将根据文件夹的存在与否打印不同的信息。
 
-我们也可以使用绝对路径或相对路径来检查特定的文件夹，如：
+另一种方法是使用```File.directory?()```方法来实现相同的功能。此方法也将返回一个布尔值，如果文件夹存在，则为```true```，如果不存在，则为```false```。
 
-```Ruby
-if Dir.exist?("Documents/Files")
-  puts "文件夹存在"
+```ruby
+if File.directory?("documents")
+  puts "Documents folder exists!"
 else
-  puts "文件夹不存在"
+  puts "Documents folder does not exist."
 end
 ```
 
-## 深入了解检查文件夹是否存在
-`Dir.exist?()`方法检查的是路径是否指向一个存在的文件夹，如果路径指向一个文件，则会返回`false`。如果需要检查路径是否指向一个文件夹或文件，可以使用`File.exist?()`方法。
+无论是使用```Dir.exists?()```还是```File.directory?()```，我们都可以在需要时轻松确定一个文件夹是否存在。
 
-除了`Dir.exist?()`和`File.exist?()`方法，Ruby中还有一些其他方法可以用来检查文件夹是否存在，如`File.directory?()`和`FileTest.directory?()`。这些方法的使用方式与`Dir.exist?()`类似，只是返回的结果可能稍有不同。
+## 深入探讨
 
-## 参考资料
-- [Ruby核心文档-Dir](https://ruby-doc.org/core-2.7.0/Dir.html)
-- [掌握文件和文件夹的操作](https://www.jianshu.com/p/aae55f1318e5)
-- [Ruby中的文件和文件夹操作](https://www.runoob.com/ruby/ruby-files-io.html)
+在Ruby中，还有许多其他方法可以帮助我们检查文件夹的存在性。例如，我们可以使用```Dir.empty?()```方法来检查文件夹是否为空。此方法将返回一个布尔值，如果文件夹为空，则为```true```，如果不为空，则为```false```。
 
-### 查看也可以
-[如何创建和删除文件夹](https://example.com/create-delete-directory)
-[遍历文件夹中的所有文件](https://example.com/traverse-directory)
-[处理文件路径中的特殊字符](https://example.com/handle-special-characters)
+```ruby
+if Dir.empty?("documents")
+  puts "Documents folder is empty."
+else
+  puts "Documents folder contains files or subfolders."
+end
 ```
+
+我们还可以使用```Dir.glob()```方法来获取一个文件夹中所有文件或子文件夹的列表。此方法将返回一个数组，我们可以在代码中使用循环来访问每个文件或子文件夹。
+
+```ruby
+Dir.glob("documents/*").each do |item|
+  puts item
+end
+```
+
+## 参考链接
+
+- [Dir.exists?() Ruby Doc](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exists-3F)
+- [File.directory?() Ruby Doc](https://ruby-doc.org/core-2.7.1/File.html#method-c-directory-3F)
+- [Dir.empty?() Ruby Doc](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-empty-3F)
+- [Dir.glob() Ruby Doc](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-glob)
+
+## 参考链接

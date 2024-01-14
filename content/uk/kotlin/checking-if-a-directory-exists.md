@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Перевірка наявності каталогу"
+title:                "Kotlin: Перевірка існування каталогу"
+simple_title:         "Перевірка існування каталогу"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/kotlin/checking-if-a-directory-exists.md"
 ---
 
@@ -9,39 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Перевірка існування директорії є важливою для ефективної роботи з файлами в вашому Kotlin програмуванні. Це може допомогти уникнути непотрібних помилок та забезпечити правильне виконання операцій з файлами.
+Чи ви коли-небудь вступали у ситуацію, коли ваша програма несподівано зупинялася через те, що вона не змогла знайти певну директорію? Якщо так, то ви знаєте, наскільки це є важливим, щоб переконатися, що директорія існує перед тим, як продовжувати виконання програми. У цій статті ми розглянемо, як перевірити, чи існує директорія в коді Kotlin.
 
-## Як це зробити
+## Як
 
-Для перевірки існування директорії у Kotlin використовується функція `exists()` з класу `File`. Приклад реалізації такої перевірки виглядає наступним чином:
+Для перевірки існування директорії в Kotlin ми використаємо функцію `exists()` з класу `File`. Наприклад, якщо нам потрібно перевірити існування директорії з назвою `myFolder` в поточній директорії, ми можемо тут же виконати код Kotlin.
 
 ```Kotlin
-fun checkDirectory(directoryPath: String){
-    val folder = File(directoryPath)
-    if (folder.exists()){
-        println("Директорія існує")
-    } else{
-        println("Директорія не існує")
-    }
-}
-
-fun main() {
-    checkDirectory("Робочий стіл")
+if (File("myFolder").exists()) {
+    println("Директорія існує.")
+} else {
+    println("Директорія не існує.")
 }
 ```
 
-Приклад виводу:
+Якщо директорія `myFolder` існує, ви побачите повідомлення `Директорія існує.` у консолі. В іншому випадку ви побачите повідомлення `Директорія не існує.`.
 
-```
-Директорія не існує
-```
+## Глибинний аналіз
 
-## Глибокий занурення
+Існує кілька більш глибоких аспектів перевірки існування директорії, які можуть бути корисними для вас. Наприклад, ви можете використовувати функцію `isDirectory` для перевірки, чи є цей об'єкт `File` директорією. Також, якщо ви хочете переконатися, що ця директорія єдина в своєму роді, ви можете використовувати функцію `isUnique()`.
 
-Реалізація перевірки існування директорії базується на тому, що вона перевіряє, чи існує файл з вказаним шляхом. Якщо файл не знайдено, то повертається `false`. Таким чином, для перевірки існування директорії використовується фактично функція перевірки файлу.
+## Дивіться також
 
-## Дивись також
-
-- [Документація з перевірки існування директорії в Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/exists.html)
-- [Порівняння різних методів перевірки існування директорії в Java і Kotlin](https://stackoverflow.com/questions/18166780/how-do-i-check-if-a-directory-exists-in-kotlin-java)
-- [Приклади роботи з директоріями в Kotlin](https://www.programiz.com/kotlin-programming/directory)
+- [Документація Kotlin: Class File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+- [Стаття на Medium: Checking if a Directory Exists in Kotlin](https://medium.com/@krispypen/checking-if-a-directory-exists-in-kotlin-c5243b884821)
+- [Відео на YouTube: Checking if a Directory Exists in Kotlin](https://www.youtube.com/watch?v=B6x9pDBSAoY)

@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: Alimerkkijonojen erottaminen"
+simple_title:         "Alimerkkijonojen erottaminen"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/extracting-substrings.md"
 ---
 
@@ -9,45 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Substringien erottelu on tärkeä osa ohjelmointia ja se auttaa meitä käsittelemään merkkijonoja tehokkaasti. Esimerkiksi kun haluamme hakea tiettyä tekstipätkää suuremmasta merkkijonosta, voimme käyttää substring-funktiota.
+Substringin erottaminen on hyödyllinen taito, joka auttaa parantamaan koodisi luettavuutta ja tehokkuutta. Se on erityisen hyödyllinen silloin, kun haluat muokata tai käsitellä tiettyä osaa merkkijonosta erillään muusta.
 
 ## Miten
 
-Alla on TypeScript-koodeja, jotka näyttävät, miten voimme käyttää substring-funktiota eri tilanteissa. Huomaa, että jokaisen esimerkin jälkeen on esitetty myös tuloste konsolissa.
+Jos haluat erottaa merkkijonosta tietyn osan, voit käyttää TypeScriptin `substring()`-metodia. Tämä metodi ottaa kaksi parametria: aloitusindeksin ja lopetuspisteen. Näiden parametrien avulla voit määrittää, minkä osan merkkijonosta haluat erottaa.
+
+Esimerkiksi, jos meillä on merkkijono "Tämä on esimerkki", ja haluamme erottaa siitä sanan "esimerkki", voimme käyttää seuraavaa koodia:
 
 ```TypeScript
-// Yksinkertainen käyttö: erottaa substrings alusta alkaen annettuun indeksiin asti
-let sana: string = "Hei maailma";
-let eritelty = sana.substring(0, 3); // substrings alusta alkaen annettuun indeksiin asti (ei sisälly indeksiin 3)
-console.log(eritelty); // Tulostaa "Hei"
-
-// Negatiiviset indeksit: laskee merkkijonon lopusta alkaen
-let numerot: string = "12345";
-let viimeinen = numerot.substring(-4); // Hakee merkkijonon kolme viimeistä merkkiä
-console.log(viimeinen); // Tulostaa "345"
+let merkkijono: string = "Tämä on esimerkki";
+let osa: string = merkkijono.substring(9, 18);
+console.log(osa);
 ```
+
+Tämä tulostaa "esimerkki" konsoliin. Huomaa, että aloitusindeksi alkaa aina 0:sta ja lopetuspiste ei sisälly eristettyyn osaan.
+
+Voit myös käyttää `substring()`-metodia, jos haluat erottaa osan merkkijonosta sen alusta tai lopusta. Jos haluat erottaa ensimmäisen sanan "Tämä", voit käyttää seuraavaa koodia:
 
 ```TypeScript
-// Etsii tiettyä merkkijonoa ja palauttaa sen alkuperäisen indeksin
-let lause: string = "Ohjelmointi on hauskaa";
-let indeksi = lause.indexOf("hauskaa"); // Palauttaa 16 (indeksi, jossa sana "hauskaa" alkaa)
-let eritelty = lause.substring(indeksi); // Erittää merkkijonon halutusta indeksistä loppuun saakka
-console.log(eritelty); // Tulostaa "hauskaa"
+let sana: string = merkkijono.substring(0, 4);
+console.log(sana);
 ```
 
-```TypeScript
-// Käyttää regular expressionia hakeakseen tietyn kaavan mukaisia merkkijonoja
-let sana: string = "Kello on 12:00";
-let oikeinMuotoiltu = sana.substring(sana.search(/\d+:\d+/)); // Hakee merkkijonon, jossa on numeroita kaksoispisteellä erotettuna
-console.log(oikeinMuotoiltu); // Tulostaa "12:00"
-```
+Tämä tulostaa "Tämä" konsoliin.
 
 ## Syvällinen sukellus
 
-Substring-funktiolla on myös muita ominaisuuksia, kuten sen käyttö eri tietotyypeillä ja miten se käsittelee tyhjiä merkkijonoja. On tärkeää huomioida myös indeksien käsittely, jotta vältetään virheet koodissa. Voit lukea lisää näistä ominaisuuksista TypeScriptin virallisesta dokumentaatiosta.
+Vaikka `substring()` on helppo ja kätevä tapa erottaa osa merkkijonosta, on hyvä tietää, että se luo aina uuden merkkijonon sen sijaan, että muokkaisi alkuperäistä merkkijonoa. Tämä voi aiheuttaa suorituskykyongelmia, jos kyseessä on suuri merkkijono.
+
+Toinen tärkeä asia huomioitavaa on, että `substring()` käyttää aloitusindeksejä ja lopetuspistettä, kun taas `substr()`-metodi käyttää aloitusindeksiä ja pituutta. Tämä voi aiheuttaa hämmennystä, joten on tärkeää pitää nämä kaksi metodia erillään.
 
 ## Katso myös
 
-- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [MDN Web Docs -substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [W3Schools -substring()](https://www.w3schools.com/jsref/jsref_substring.asp)
+- [Microsoftin virallinen dokumentaatio `substring()`-metodista](https://docs.microsoft.com/en-gb/scripting/javascript/reference/substring-method-string-javascript)
+- [MDN:n selitys `substring()`-metodista](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)

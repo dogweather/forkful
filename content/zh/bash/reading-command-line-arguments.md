@@ -1,38 +1,51 @@
 ---
 title:                "Bash: 读取命令行参数"
+simple_title:         "读取命令行参数"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么阅读 Bash 命令行参数
-Bash 是一个强大的命令行解释器，它可以让你通过在命令行中输入命令来与计算机进行交互。阅读命令行参数可以帮助你更有效地使用 Bash，使你的工作更加轻松和高效。
+## 为什么阅读命令行参数
+
+阅读命令行参数是学习Bash编程的重要一步。它能够帮助你更好地掌握命令行界面，并且为你的编程工作提供方便。通过阅读命令行参数，你可以轻松地向你的脚本传递信息，控制程序的行为，并且提高生产效率。
 
 ## 如何阅读命令行参数
-阅读命令行参数很简单。你只需要在命令行中输入 `bash` 命令，然后加上一个 `-c` 参数，后面跟着你想要运行的命令。例如，如果你想要运行 `ls` 命令，并查看当前目录下的文件列表，你可以输入以下命令：
+
+首先，在Bash中使用`$#`来访问命令行参数的数量。例如，如果你运行`bash script.sh apple orange banana`，那么`$#`会返回3个参数的数量。
+
+接下来，你可以使用`$@`来访问所有的命令行参数。它会将所有的参数作为一个字符串返回。例如，在上面的例子中，`$@`会返回`apple orange banana`。
+
+如果你想要访问单独的命令行参数，你可以使用`$1`，`$2`，`$3`等等。它会按照参数的顺序返回对应的参数。例如，在上面的例子中，`$1`会返回`apple`，`$2`会返回`orange`，`$3`会返回`banana`。
+
+这些都是最基本的命令行参数访问方式。你也可以使用`getopts`指令来更有效地读取参数。它允许你指定不同的标志和参数，并通过参数调用运行不同的代码。你可以通过使用`-h`标志来显示帮助信息或者`-s`标志来指定输出信息的样式。
+
+下面是一个简单的示例，演示了如何使用`getopts`来读取命令行参数，并根据参数的不同运行不同的代码。
 
 ```Bash
-bash -c "ls"
+#!/bin/bash
+
+while getopts "hs" option; do 
+    case "${option}" in
+        h) echo "帮助信息：使用-h标志来查看帮助信息。";;
+        s) echo "输出样式：使用-s标志来指定输出信息的样式。";;
+        *) echo "未知的选项，请使用-h标志来查看帮助信息。";;
+    esac
+done
 ```
 
-这样就会将 `ls` 命令作为参数传递给 `bash` 命令，从而实现了阅读命令行参数的功能。你也可以添加更多的参数，比如 `echo` 命令，用来打印出 `bash` 命令执行后的结果。
+当你运行这个脚本时，可以通过在命令行中添加不同的标志来改变输出信息。例如，`bash script.sh -h`会输出帮助信息，`bash script.sh -s`会输出样式信息，而`bash script.sh -x`则会显示未知选项的提示。
 
-```Bash
-bash -c "ls; echo '命令执行完毕！'"
-```
+## 深入探讨命令行参数
 
-## 深入了解阅读命令行参数
-在 Bash 中，命令行参数是通过变量 `$@` 来表示的，它包含了所有传递给 `bash` 命令的参数。如果只想要读取其中的一个参数，可以使用 `$1`、`$2` 等来获取第一个、第二个参数，以此类推。如果想要获取所有参数的个数，可以使用 `$#` 来查看。这些变量都是内置的，可以在任何地方使用。
+读取命令行参数在Bash编程中是非常重要的。它可以帮助你更加灵活地编写脚本，并且可以通过添加不同的标志来操作代码，从而提高代码的可读性和可扩展性。除了`getopts`指令之外，你还可以通过使用`$OPTARG`来访问带有数值或字符串的标志参数。无论你使用哪种方式，阅读命令行参数都是一个必要的技能，能够使你的Bash编程更加高效。
 
-另外，你也可以使用 `getopts` 命令来读取命令行参数。它可以帮助你更方便地读取参数，并且提供了更多的选项和功能。同时，还可以使用 `shift` 命令来移动参数的位置，便于在不同的位置读取参数。
+## 参考资料
 
-## 参考链接
-- [Bash 参数](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameters.html)
-- [Bash 中的 getopts 命令](https://www.gnu.org/software/bash/manual/html_node/The-Set-Builtin.html)
-- [Bash 中的 shift 命令](https://www.gnu.org/software/bash/manual/html_node/Bourne-Shell-Builtins.html)
-
-# 参见
-- [Bash 入门指南](https://www.newcastlerunners.org/binmao/bash/)
-- [Bash 教程 - 网易云课堂](https://study.163.com/course/courseMain.htm?courseId=1210004&_trace_c_p_k2_=4475a4ed413344c08078f65f0d591c71)
+- [Bash官方文档](https://www.gnu.org/software/bash/manual/bash.html)
+- [理解Bash中的命令行参数](https://www.howtogeek.com/442908/how-to-understand-a-programming-languages-command-line-arguments/)
+- [Bash中的getopts指令](https://www.baeldung.com/linux/bash-getopts)
+- [通过例子学习Bash编程](https://blog.mattbrock.co.uk/learning-linux-3-writing-a-bash-script/)

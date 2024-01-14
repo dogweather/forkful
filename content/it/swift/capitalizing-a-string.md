@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Capitalizzazione di una stringa"
+title:                "Swift: Capitalizzare una stringa"
+simple_title:         "Capitalizzare una stringa"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/swift/capitalizing-a-string.md"
 ---
 
@@ -9,52 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Spesso in programmazione ci troviamo a dover manipolare stringhe di testo per renderle più leggibili o uniformi. Una delle operazioni comuni è la capitalizzazione di una stringa, ovvero mettere la prima lettera di ogni parola in maiuscolo. In questo articolo vedremo come eseguire questa operazione in Swift e perché potrebbe essere utile farlo.
+Capire come capitalizzare una stringa è essenziale per la gestione dei dati in Swift. Questa operazione può essere utile per uniformare l'aspetto di una stringa o per confrontare correttamente due stringhe.
 
-## Come Fare
+## Come farlo
 
-Per capitalizzare una stringa in Swift possiamo utilizzare il metodo `capitalized` della classe `String`. Ecco un esempio di codice che mostra come utilizzare questo metodo:
-
-```Swift
-let testo = "programmazione in swift"
-let testoCapitalizzato = testo.capitalized
-print(testoCapitalizzato) // Stampa "Programmazione In Swift"
-```
-
-Come si può vedere, il metodo `capitalized` ha trasformato la stringa in maiuscolo, mettendo la prima lettera di ogni parola in maiuscolo. È importante notare che questo metodo non solo capitalizza le prime lettere, ma anche tutte le altre lettere che erano già in maiuscolo rimangono tali.
-
-Inoltre, possiamo specificare il locale da utilizzare per la capitalizzazione passando un parametro al metodo `capitalized`. Ad esempio, se vogliamo capitalizzare una stringa utilizzando il locale tedesco, possiamo fare così:
+Utilizzando il metodo `uppercased()` possiamo ottenere una nuova stringa con tutti i caratteri convertiti in maiuscolo. Vediamo un esempio usando una variabile `name` e stampando l'output:
 
 ```Swift
-let testo = "programmazione in swift"
-let testoCapitalizzato = testo.capitalized(locale: Locale(identifier: "de_DE"))
-print(testoCapitalizzato) // Stampa "Programmierung In Swift"
+let name = "maria"
+print(name.uppercased())
+
+// Output: MARIA
 ```
 
-È importante notare che i risultati possono variare in base al locale utilizzato.
+Possiamo anche utilizzare il metodo `capitalized()` per ottenere una nuova stringa con il primo carattere convertito in maiuscolo. Vediamo un altro esempio usando una variabile `city` e stampando l'output:
+
+```Swift
+let city = "roma"
+print(city.capitalized())
+
+// Output: Roma
+```
+
+È anche possibile capitalizzare una stringa specifica utilizzando il metodo `replacingOccurrences(of:with:)`:
+
+```Swift
+let phrase = "questa è una frase"
+print(phrase.replacingOccurrences(of: "f", with: "F"))
+
+// Output: questa è una frase
+```
 
 ## Approfondimento
 
-Oltre al metodo `capitalized`, Swift ci offre altre opzioni per capitalizzare una stringa. Ad esempio, possiamo utilizzare il metodo `capitalized(with: Locale)` della classe `NSMutableString` per capitalizzare una stringa modificandola direttamente:
+Il metodo `uppercased()` utilizza il locale predefinito del dispositivo per la conversione in maiuscolo dei caratteri. Tuttavia, è possibile specificare manualmente il locale passandolo come argomento al metodo. Ad esempio, per garantire che i caratteri dell'alfabeto italiano vengano capitalizzati correttamente, possiamo utilizzare il locale `it_IT`:
 
 ```Swift
-var testo = "programmazione in swift"
-(testo as NSString).capitalized(with: Locale(identifier: "it_IT")) // Modifica la stringa
-print(testo) // Stampa "Programmazione In Swift"
+let phrase = "questa è una frase"
+print(phrase.uppercased(locale: Locale(identifier: "it_IT")))
+
+// Output: QUESTA È UNA FRASE
 ```
 
-Inoltre, possiamo utilizzare la classe `TitleCaseConverter` della libreria `Foundation` per capitalizzare una stringa secondo le regole del case del titolo. Ad esempio:
+È importante notare che il metodo `capitalized()` non solo converte il primo carattere della stringa in maiuscolo, ma anche tutti i caratteri successivi che sono preceduti da uno spazio, un segno di punteggiatura o un simbolo di punteggiatura.
 
-```Swift
-let testo = "programmazione in swift"
-let titleCaseConverter = TitleCaseConverter()
-let testoCapitalizzato = titleCaseConverter.convert(testo) // "Programmazione in Swift"
-```
+## Vedi anche
 
-È importante notare che questa classe non gestisce correttamente le parole composte, quindi nel caso di parole composte con la prima lettera già in maiuscolo, queste verranno comunque capitalizzate.
-
-## Vedi Anche
-
-- [Manuale di Swift](https://docs.swift.org/swift-book/)
-- [Documentazione ufficiale di Apple su `String`](https://developer.apple.com/documentation/swift/string)
-- [Informazioni sui locale di Swift](https://developer.apple.com/documentation/foundation/locale)
+- [Documentazione Apple su String](https://developer.apple.com/documentation/swift/string)
+- [Tutorial su String in Swift](https://www.raywenderlich.com/511-swift-string-cheat-sheet)

@@ -1,44 +1,49 @@
 ---
-title:                "Gleam: Tekstitiedoston lukeminen"
+title:                "Gleam: Tiedostojen lukeminen"
+simple_title:         "Tiedostojen lukeminen"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi lukea tekstitiedosto?
 
-Tekstitiedoston lukeminen on yksi keskeisimmistä ohjelmoinnin taidoista, joka on välttämätön monissa sovelluksissa. Se on erityisen tärkeää, jos haluat käsitellä suuria määriä tiedonkäsittelyä ja tallennusta. Lue tämä artikkeli oppiaksesi, miten voit lukea tekstiä ja hyödyntää sitä Gleam-kielellä.
+Monet ohjelmoijat kohtaavat tilanteita, joissa on tarpeen lukea ja käsitellä tekstitiedostoja. Se voi olla esimerkiksi tietokannan varmuuskopiointi tai tietojen siirto eri järjestelmien välillä. Tämä blogikirjoitus näyttää, miten Gleam-ohjelmointikielellä voit helposti lukea tekstitiedostoja ja käsitellä niiden sisältöä.
 
-## Miten
+## Miten toteuttaa tekstitiedoston lukeminen
 
-```Gleam 
-import io
+Gleamissa on valmiina `File` moduuli, joka tarjoaa toimintoja tiedostojen käsittelyyn. `File.read` -funktio lukee tiedoston sisällön ja palauttaa sen merkkijonona. Katso esimerkki koodi ja tuloste alla:
 
-// Avaaminen ja lukeminen tiedostosta
-file := io.open!("tiedosto.txt", "r")
-contents := file.read()
+```Gleam
+import File
 
-// Tulostetaan tiedoston sisältö
-case contents {
-  Ok(text) -> io.println(text)
-  Error(error) -> io.println("Virhe: #(error)")
-}
+let result = File.read("tiedosto.txt")
 ```
 
-Yllä olevassa koodiesimerkissä näet, miten voit avata ja lukea tiedoston Gleam-ohjelmointikielessä. Ensimmäisellä rivillä tuodaan io-moduuli, joka sisältää toimintoja tiedostojen käsittelyyn. Sitten avataan tiedosto käyttäen io.open!-funktiota, joka ottaa ensimmäisenä parametrina tiedoston nimen ja toisena parametrina avaamistilan ("r" tarkoittaa lukemista). Tämän jälkeen voit lukea sisällön kutsuen file.read() -funktiota.
+Tämä koodi lukee tekstitiedoston nimeltä `tiedosto.txt` ja tallentaa sen sisällön muuttujaan `result`. Voit myös antaa tiedoston polun parametrina `read`-funktiolle, jos tiedosto ei sijaitse nykyisessä kansiossa. Jos tiedostoa ei löydy, `File.read` palauttaa virheilmoituksen.
 
-Tulostamme sitten tiedoston sisällön case-lauseen avulla. Jos tiedoston lukeminen onnistuu, sisältö asetetaan muuttujaan "text" ja tulostetaan io.println-funktiolla. Muussa tapauksessa, jos tapahtuu virhe, tulostetaan virheilmoitus.
+Jos tiedostossa on useita rivejä, voit pilkkoa sen `String.split` -funktiolla ja käsitellä jokaista riviä erikseen. Esimerkki koodissa alla:
 
-## Syväluotaus
+```Gleam
+import File
 
-Tiedostojen lukeminen Gleamilla voi olla hieman monimutkaista, jos haluat tehdä enemmän kuin yksinkertaisesti lukea tiedostoa ja tulostaa sen sisällön. Voit esimerkiksi käsitellä erilaisia formaatteja, kuten CSV- tai JSON-tiedostoja, tai lukea tiedostoa osissa tietyn koon mukaan.
+let result = File.read("tiedosto.txt")
+let lines = String.split(result, "\n")
+```
 
-Tähän tarkoitukseen Gleam tarjoaa useita moduuleja, kuten csv, json ja binary, jotka auttavat käsittelemään erilaisia tiedostomuotoja ja datatyyppejä. Voit tutustua näihin moduuleihin Gleam-kirjastosta löytyvien dokumentaatioiden avulla.
+Tämä koodi lukee tiedoston ja pilkkoo sen rivit, tallentaen ne listana `lines`-muuttujaan. Voit käydä läpi listan `list.map`-funktiolla ja suorittaa haluamasi toiminnon jokaiselle riville.
+
+## Syvempää tietoa tekstitiedoston käsittelystä
+
+Gleam tarjoaa myös muita toimintoja tekstitiedoston käsittelyyn, kuten `read_lines` ja `read_into` -funktiot. `read_lines` lukee ja palauttaa tiedoston rivit listana, kun taas `read_into` lukee tiedoston ja tallentaa sen sisällön muuttujaan, joka on määritelty parametrina. Voit tarkistaa kaikki `File` moduulin tarjoamat toiminnot Gleamin virallisesta dokumentaatiosta.
+
+Jos haluat käsitellä tiedoston sisältöä monimutkaisemmin, voit myös käyttää Gleamin `Regex`-moduulia ja säännöllisiä lausekkeita. Esimerkiksi voit käyttää `Regex.replace_all`-funktiota muuttamaan tietyn merkkijonon kaikki esiintymät haluttuun muotoon.
 
 ## Katso myös
 
-- [Gleam-kirjaston dokumentaatio](https://gleam.run/)
-- [Gleam-moduulit tiedostojen käsittelyyn](https://gleam.run/modules/file)
-- [Ohjeet teksti-tiedoston lukemiseen Gleamilla](https://gleam.run/articles/reading_text_files)
+- [Gleam virallinen dokumentaatio] (https://gleam.run/) - täältä löydät lisää tietoa Gleamista ja sen tarjoamista toiminnoista
+- [Gleam-kurssi] (https://gleam.run/courses/learn-gleam) - interaktiivinen opetusohjelma Gleamin perusteisiin tutustumiseen
+- [Gleam-yhteisö] (https://github.com/gleam-lang/gleam/discussions) - liity Gleamin aktiiviseen yhteisöön ja saa apua ja vinkkejä ohjelmoinnissa

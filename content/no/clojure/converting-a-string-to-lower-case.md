@@ -1,42 +1,39 @@
 ---
-title:                "Clojure: Konvertere en streng til små bokstaver"
+title:                "Clojure: Konvertere en streng til små bokstaver."
+simple_title:         "Konvertere en streng til små bokstaver."
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å konvertere en streng til små bokstaver er et vanlig problem i programmering. Dette er nyttig i tilfeller der du trenger å sammenligne strenger uavhengig av store og små bokstaver, eller trenger å formatere en streng på en bestemt måte.
+I dagens teknologiske verden er det vanlig å jobbe med store mengder tekst, og ofte kan det være nødvendig å behandle tekststrenger på en spesifikk måte. Konvertering av en tekststreng til små bokstaver er en vanlig operasjon, og det er derfor viktig å ha kunnskap om hvordan man kan gjøre dette effektivt ved hjelp av Clojure.
 
-## Hvordan
+# Hvordan gjøre det
 
-For å konvertere en streng til små bokstaver i Clojure, kan du bruke funksjonen `lower-case` som tar en streng som argument og returnerer en ny streng med bare små bokstaver. Her er et eksempel:
-
-```Clojure
-(lower-case "HELLO WORLD")
-```
-
-Dette vil returnere strengen "hello world".
-
-Hvis du har en liste med strenger, kan du bruke `map` -funksjonen for å påføre `lower-case` på hvert element i listen. Her er et eksempel:
+Det er flere måter å konvertere en tekststreng til små bokstaver i Clojure. En av de enkleste måtene er å bruke funksjonen `lower-case`, som tar en tekststreng som argument og returnerer en ny streng med alle bokstavene i små bokstaver.
 
 ```Clojure
-(map lower-case ["HELLO" "WORLD"])
+(lower-case "HEI, VERDEN!")
 ```
+Output: ```"hei, verden!"```
 
-Dette vil returnere en liste med strenger ["hello" "world"].
+En annen måte å gjøre det på er å bruke funksjonen `map` sammen med `char-lower-case`, som gjør at hver bokstav i strengen blir omgjort til en liten bokstav. Dette kan være nyttig hvis man ønsker å konvertere flere tekststrenger samtidig.
 
-## Dypdykk
+```Clojure
+(map char-lower-case ["HEI, VERDEN!" "DAGEN I DAG"])
+```
+Output: ```("hei, verden!" "dagen i dag")```
 
-Når du bruker `lower-case` på en streng som inneholder spesialtegn, vil disse ikke bli endret til små bokstaver. Dette er fordi Clojure følger Unicode-standard og håndterer spesialtegn på riktig måte. Hvis du trenger å konvertere spesialtegn til små bokstaver, kan du bruke funksjonen `lower-case*`, som også støtter en ekstra argument for å angi språk.
+# Dypdykk
 
-En annen ting å merke seg er at `lower-case` funksjonen er ikke-destruktiv, det vil si at den ikke endrer den originale strengen, men returnerer en ny streng med de konverterte bokstavene. Hvis du trenger å endre den originale strengen, kan du bruke `string/lower-case!` funksjonen fra standardbiblioteket `clojure.string`.
+Det er viktig å være oppmerksom på at når man bruker `lower-case` funksjonen, vil den returnere en ny streng og ikke endre den opprinnelige strengen. Dette gjelder også når man bruker `map` og `char-lower-case` sammen. Det kan også være lurt å være forsiktig med spesielle tegn og symboler, da disse kan bli feil hvis de kommer i kontakt med `lower-case` -funksjonen.
 
-## Se Også
+# Se også
 
-- [Clojure Dokumentasjon: lower-case](https://clojuredocs.org/clojure.string/lower-case)
-- [Clojure Dokumentasjon: lower-case*](https://clojuredocs.org/clojure.string/lower-case*)
-- [Unicode-tabell](https://unicode-table.com/en/)
+- [Clojure dokumentasjon om lower-case funksjonen](https://clojuredocs.org/clojure.core/lower-case)
+- [En guide til Clojure datastrukturer](https://github.com/teodoran/clojure-data-structures/blob/master/README-no.md)

@@ -1,74 +1,73 @@
 ---
-title:                "C: Tworzenie tymczasowego pliku"
+title:                "C: Tworzenie pliku tymczasowego"
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego tworzymy pliki tymczasowe?
+## Dlaczego
 
-Tworzenie plików tymczasowych może być niezbędnym elementem w wielu programach. Na przykład, gdy potrzebujemy przechować tymczasowe dane, zapisywać pliki tymczasowe lub wykonujemy różne operacje na danych, tworzenie plików tymczasowych jest koniecznym krokiem. W tym artykule dowiesz się dlaczego tworzenie plików tymczasowych jest ważne i jak to zrobić w języku C.
+Tworzenie plików tymczasowych jest częstym zadaniem w wielu aplikacjach C. Pliki tymczasowe są używane do przechowywania danych, które są potrzebne tylko przez krótki czas lub które nie są potrzebne po zamknięciu programu. Mogą też być wykorzystywane jako tymczasowe „magazyny” dla wyników pośrednich w procesach obliczeniowych.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-W języku C istnieje kilka sposobów na tworzenie plików tymczasowych. Jednym z najpopularniejszych jest użycie funkcji `tmpfile()` lub `mkstemp()`. Oto przykładowy kod, który pokazuje, jak użyć funkcji `tmpfile()` do tworzenia pliku tymczasowego:
+Tworzenie plików tymczasowych w języku C jest dość proste. Kod poniżej pokazuje przykład funkcji, która tworzy plik tymczasowy i zapisuje do niego pewne dane. Prosimy zwrócić uwagę na komentarze w kodzie, które wyjaśniają poszczególne kroki:
 
 ```C
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-    FILE *temp_file = tmpfile();
-    if (temp_file == NULL) {
-        perror("Nie udało się utworzyć pliku tymczasowego");
-        exit(EXIT_FAILURE);
-    } else {
-        printf("Plik tymczasowy utworzony pomyślnie\n");
-        // dalsze operacje na pliku
+int main()
+{
+    // Tworzy unikalną nazwę dla pliku tymczasowego, który będzie zawierał
+    // wygenerowaną przez program liczbę
+    char *temp_file = tmpnam(NULL);
+    
+    // Aby utworzyć plik tymczasowy używamy funkcji fopen()
+    FILE *fp = fopen(temp_file, "w");
+    
+    // Sprawdzamy, czy udało się utworzyć plik
+    if (fp == NULL)
+    {
+        printf("Błąd podczas tworzenia pliku tymczasowego\n");
+        return 1;
     }
+    
+    // Zapisujemy dane do pliku
+    fprintf(fp, "Tworzenie pliku tymczasowego w języku C");
+    
+    // Zamykamy plik
+    fclose(fp);
+    
+    // Komunikat o pomyślnym utworzeniu pliku
+    printf("Plik tymczasowy utworzony: %s\n", temp_file);
     
     return 0;
 }
+
+```
+Przykładowy wynik:
+
+```
+Plik tymczasowy utworzony: /tmp/tmpH7Qc4x
 ```
 
-Output:
-```
-Plik tymczasowy utworzony pomyślnie
-```
+## Głębsza analiza
 
-Funkcji `mkstemp()` natomiast możemy użyć w ten sposób:
+W języku C możemy skorzystać z kilku różnych funkcji do tworzenia plików tymczasowych. Jedną z popularniejszych jest funkcja `tmpnam()` użyta w naszym przykładzie. Funkcja ta generuje unikalną nazwę dla pliku tymczasowego w formacie `/tmp/tmpXXXXXX`, gdzie `X` oznacza losową literę lub cyfrę.
 
-```C
-#include <stdio.h>
+Możemy też użyć funkcji `mkstemp()`, która tworzy plik tymczasowy i zwraca jego deskryptor. Dzięki temu możemy bezpośrednio pracować z plikiem, bez konieczności używania funkcji `fopen()`.
 
-int main() {
-    char template[] = "/tmp/tempfileXXXXXX";
-    int fd = mkstemp(template);
-    if (fd == -1) {
-        perror("Nie udało się utworzyć pliku tymczasowego");
-        exit(EXIT_FAILURE);
-    } else {
-        printf("Plik tymczasowy utworzony pomyślnie\n");
-        // dalsze operacje na pliku
-    }
-    
-    return 0;
-}
-```
+W przypadku chęci utworzenia pliku tymczasowego w danym katalogu, możemy użyć funkcji `mktemp()`, która umożliwia określenie ścieżki do utworzenia pliku.
 
-Output:
-```
-Plik tymczasowy utworzony pomyślnie
-```
-
-## Głębszy przegląd
-
-Tworzone pliki tymczasowe są usuwane automatycznie po zamknięciu programu. Są one również unikalne - nie mogą istnieć dwa pliki tymczasowe o tej samej nazwie. Jednak niektóre systemy operacyjne mogą mieć różne sposoby tworzenia plików tymczasowych. Na przykład, na systemie Linux, możesz użyć funkcji `mkstemp()` zamiast `tmpfile()` dla większej kontroli nad plikami tymczasowymi.
+Tworzenie plików tymczasowych w języku C jest bardzo przydatną umiejętnością, którą warto poznać podczas nauki programowania w tym języku.
 
 ## Zobacz także
 
-- [Tworzenie plików tymczasowych w języku C na stronie Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
-- [Dokumentacja funkcji tmpfile() w języku C](https://www.gnu.org/software/libc/manual/html_node/Creating-Temp-Files.html)
-- [Porównanie funkcji tmpfile() i mkstemp() w artykule na Medium](https://medium.com/@xrom/libc-tmpfile-vs-mkstemp-395a85bfcac7)
+* [Dokumentacja funkcji tmpnam()](https://www.tutorialspoint.com/c_standard_library/c_function_tmpnam.htm)
+* [Przykładowy kod tworzący plik tymczasowy w języku C++](https://www.geeksforgeeks.org/tmpnam-function-in-c-c/)
+* [Dokumentacja funkcji mkstemp()](https://www.tutorialspoint.com/c_standard_library/c_function_mkstemp.htm)

@@ -1,7 +1,9 @@
 ---
 title:                "Swift: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/swift/finding-the-length-of-a-string.md"
 ---
 
@@ -9,42 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-Você provavelmente já teve que lidar com strings ao programar em Swift, seja para manipulá-las, imprimi-las ou até mesmo para encontrar seu comprimento. O comprimento de uma string é simplesmente o número de caracteres que ela contém e pode ser útil em diversas situações. Neste artigo, vamos explorar por que encontrar o comprimento de uma string pode ser importante e como fazer isso em Swift.
+Se você é novo no mundo da programação, pode se perguntar por que alguém se preocuparia em encontrar o comprimento de uma string. Afinal, isso parece ser uma tarefa simples. No entanto, saber como encontrar o comprimento de uma string é uma habilidade fundamental em qualquer linguagem de programação, incluindo Swift. Isso pode ser útil ao construir aplicativos que requerem a manipulação de dados de texto, como formulários ou mensagens de usuário.
 
-## Como Fazer
+## Como
 
-Encontrar o comprimento de uma string em Swift é bastante simples. Basta usar a propriedade `count` em sua string, que retornará o número de caracteres que ela possui. Veja um exemplo de código abaixo:
+Agora vamos mergulhar no código Swift para descobrir como encontrar o comprimento de uma string. Primeiro, precisamos definir uma string usando aspas duplas, como neste exemplo:
 
-```Swift
-let minhaString = "Olá mundo!"
-print(minhaString.count)
-
-// Saída: 11
+``` Swift
+let minhaString = "Olá, mundo!"
 ```
 
-Aqui, declaramos uma string e utilizamos a propriedade `count` para retornar seu comprimento. Note que espaços e pontuações também são contados como caracteres.
+Em seguida, usamos o método `count` para encontrar o número de caracteres na string:
 
-Outra forma de encontrar o comprimento de uma string é utilizando o método `count(_:)` da classe `NSString`. Ele recebe como parâmetro um `CharacterSet` e retorna o número de caracteres da string que fazem parte desse conjunto. Veja um exemplo:
-
-```Swift
-let minhaString = "Aprendendo Swift"
-print((minhaString as NSString).count(with: .letters))
-
-// Saída: 15
+``` Swift
+let comprimento = minhaString.count
 ```
 
-Neste exemplo, declaramos uma string e utilizamos o método `count(_:)` com o parâmetro `.letters`, que contabiliza apenas letras. Dessa forma, conseguimos encontrar o comprimento considerando apenas as letras da nossa string.
+Então, basta imprimir o resultado para ver o comprimento da sua string:
 
-## Deep Dive
+``` Swift
+print(comprimento)
+```
 
-Agora que sabemos como encontrar o comprimento de uma string, vamos entender um pouco mais sobre como a linguagem Swift lida com strings. Internamente, as strings em Swift são estruturas complexas e podem ser encaradas como coleções de caracteres. Por isso, é possível utilizarmos os mesmos métodos e propriedades que usamos em coleções, como `count` e `isEmpty`.
+O console irá mostrar: `12`, que é o número de caracteres em "Olá, mundo!".
 
-Além disso, é importante mencionar que a propriedade `count` é uma forma eficiente e otimizada de encontrar o comprimento de uma string. Isso significa que não precisamos nos preocupar com a complexidade do algoritmo utilizado por trás dessa propriedade, já que ela foi projetada para ser rápida e eficiente.
+## Mergulho profundo
 
-## Veja Também
+Agora que sabemos como encontrar o comprimento de uma string, vamos entender melhor como funciona. O método `count` retorna o número de caracteres na string, incluindo espaços, pontuação e caracteres especiais. O comprimento de uma string vazia será 0.
 
-- [Documentação oficial da linguagem Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Tutorial sobre strings em Swift](https://www.hackingwithswift.com/quick-start/understanding-swift/whats-the-difference-between-a-string-and-a-substring-in-swift)
-- [Exemplos práticos de manipulação de strings em Swift](https://learnappmaking.com/string-swift-how-to-ios-programming/)
+É importante lembrar que, no Swift, cada caractere tem um valor numérico atribuído a ele. Por exemplo, a letra "a" tem um valor de 97. Então, ao usar o método `count`, ele conta quantos caracteres individuais estão presente na string e não o número de palavras.
 
-Com este conhecimento, esperamos que você se sinta mais confortável para trabalhar com strings em seus projetos em Swift. Encontrar o comprimento de uma string é apenas uma das muitas operações que podemos fazer com elas, então explore e divirta-se programando!
+## Veja também
+
+Aqui estão alguns links úteis para expandir seu conhecimento sobre strings e outras funcionalidades do Swift:
+
+- [Documentação Oficial do Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Ray Wenderlich - Strings no Swift](https://www.raywenderlich.com/3967712-swift-strings-and-characters-getting-started)
+- [Hacking with Swift - Manipulação de Strings](https://www.hackingwithswift.com/quick-start/understanding-swift/manipulating-strings)
+
+Agora você deve estar pronto para trabalhar com strings em seu próximo projeto Swift! Pratique e você se tornará um mestre em pouco tempo. Divirta-se programando!

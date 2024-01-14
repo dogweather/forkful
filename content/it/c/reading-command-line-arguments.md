@@ -1,42 +1,90 @@
 ---
-title:                "C: Leggere gli argomenti della linea di comando"
+title:                "C: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
- 
 
-La lettura degli argomenti della riga di comando è un'abilità fondamentale per ogni programmatore C. Ciò consente di creare programmi dinamici e interattivi che possono ricevere input da parte dell'utente durante l'esecuzione. In questo post, impareremo come leggere gli argomenti della riga di comando in C per migliorare le nostre capacità di programmazione.
+In questo post parleremo di come leggere gli argomenti della riga di comando in C. Se sei un programmatore alle prime armi o vuoi espandere le tue conoscenze linguistiche, questo argomento è perfetto per te!
 
-## Come Fare
+## Come fare
 
-Per leggere gli argomenti della riga di comando in C, dobbiamo includere la libreria "stdio.h" e dichiarare due argomenti nel main: "argc" e "argv". "argc" è un intero che indica il numero di argomenti passati alla riga di comando, mentre "argv" è un array di stringhe che contiene i parametri passati.
+Per leggere gli argomenti della riga di comando, dobbiamo prima definire la funzione "main" del nostro programma. All'interno di questa funzione, possiamo utilizzare due parametri: "argc" e "argv". "argc" è un intero che rappresenta il numero di argomenti passati da linea di comando, mentre "argv" è un array di stringhe che contiene gli argomenti stessi.
 
-Per esempio, supponiamo di avere un programma chiamato "hello.c" che prende un argomento dalla riga di comando e poi lo stampa a schermo. Il codice sarebbe il seguente:
+Vediamo un esempio pratico:
 
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-  printf("Hello %s!", argv[1]);
-  return 0;
+    // Stampa il numero di argomenti dalla riga di comando
+    printf("Numero di argomenti: %d\n", argc);
+
+    // Utilizza un ciclo for per stampare tutti gli argomenti
+    for(int i = 0; i < argc; i++) {
+        printf("Argomento %d: %s\n", i, argv[i]);
+    }
+
+    return 0;
 }
 ```
 
-Se compiliamo e eseguiamo il programma utilizzando "hello Maria" come argomento, verrà stampato a schermo "Hello Maria!".
+Se il nostro programma viene compilato e chiamato con gli argomenti "ciao" e "mondo", l'output sarà il seguente:
+
+```
+Numero di argomenti: 3
+Argomento 0: ./a.out
+Argomento 1: ciao
+Argomento 2: mondo
+```
+
+In questo esempio, "a.out" rappresenta il nome del nostro programma compilato.
 
 ## Approfondimento
 
-Oltre all'uso dei parametri della riga di comando come input, possiamo anche utilizzarli per opzioni e argomenti opzionali. Leremo più in dettaglio sull'utilizzo degli argomenti opzionali e sulla manipolazione delle stringhe passate come argomenti.
+Ora che sappiamo come leggere gli argomenti della riga di comando, possiamo utilizzarli per renderlo più dinamico. Ad esempio, possiamo creare un programma che calcola la somma di due numeri inseriti dall'utente tramite riga di comando.
 
-Inoltre, è importante notare che gli argomenti della riga di comando sono di tipo stringa. Ciò significa che dobbiamo convertire i valori in altri tipi di dati se vogliamo utilizzarli in operazioni matematiche, per esempio.
+```C
+#include <stdio.h>
+#include <stdlib.h> // Incluso per utilizzare la funzione "atoi" per convertire la stringa in intero
 
-## Vedi Anche
+int main(int argc, char *argv[]) {
+    // Inizializza due variabili per contenere i numeri
+    int num1, num2;
+    
+    // Verifica che siano stati inseriti due argomenti
+    if(argc < 3) {
+        printf("Inserisci due numeri come argomenti\n");
+        return 1; // Restituisce 1 per indicare che c'è un errore
+    }
 
-- [Dichiarazione e utilizzo di argomenti della riga di comando in C](https://www.programiz.com/c-programming/c-command-line-arguments)
-- [Utilizzo delle funzioni di conversione di stringhe in C](https://www.tutorialspoint.com/c_standard_library/c_function_atoi.htm)
-- [Introduzione alla programmazione in C](https://www.html.it/guide/guida-c/)
+    // Converte le stringhe in interi e le assegna alle variabili
+    num1 = atoi(argv[1]);
+    num2 = atoi(argv[2]);
+
+    // Esegue l'operazione e stampa il risultato
+    printf("La somma di %d e %d è: %d\n", num1, num2, num1 + num2);
+
+    return 0;
+}
+```
+
+Se il nostro programma viene chiamato con gli argomenti "2" e "5", l'output sarà:
+
+```
+La somma di 2 e 5 è: 7
+```
+
+Questo è solo uno dei tanti esempi di come possiamo utilizzare gli argomenti della riga di comando per rendere i nostri programmi più dinamici e personalizzabili.
+
+## Vedi anche
+
+- [Il sito ufficiale di programmazione in C](https://www.learn-c.org/)
+- [Un tutorial sui parametri della riga di comando in C](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+- [Un esempio avanzato di lettura degli argomenti dalla riga di comando](https://www.cprogramming.com/tutorial/c/lesson14.html)

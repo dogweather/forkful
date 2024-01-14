@@ -1,72 +1,59 @@
 ---
 title:                "PHP: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Es importante para los programadores poder obtener la fecha y hora actual en sus aplicaciones PHP. Esto les permite realizar tareas específicas, como registrar la hora en que se realizó una acción o mostrar la fecha actual en un formato específico para el usuario.
+¿Alguna vez te has preguntado cómo obtiene tu teléfono inteligente la fecha actual? ¿O cómo los sitios web muestran la fecha y hora exactas en diferentes zonas horarias? La respuesta es: ¡gracias a la programación en PHP! En este artículo, te mostraré cómo obtener la fecha actual utilizando el lenguaje de programación PHP.
 
 ## Cómo hacerlo
-En PHP, podemos obtener la fecha y hora actual utilizando la función `date()`. Esta función acepta dos parámetros: el formato de fecha deseado y un timestamp opcional. Si no se proporciona un timestamp, la función devolverá la fecha y hora actuales.
+Para obtener la fecha actual en PHP, podemos usar la función `date()`. Veamos un ejemplo sencillo:
 
 ```PHP
 <?php
-$fecha_actual = date('d-m-Y H:i:s');
-echo $fecha_actual;
+echo date("Y-m-d"); // mostrará la fecha actual en formato año-mes-día
+?>
 ```
+El resultado de este código sería algo como "2021-10-12", dependiendo de la fecha actual. A través de la función `date()`, podemos especificar el formato en el que queremos mostrar la fecha y también podemos añadir la hora, minutos y segundos.
 
-Este código devolverá la siguiente salida:
-
-`15-07-2021 14:30:29`
-
-Si deseamos obtener la fecha y hora en un formato específico, podemos utilizar los siguientes caracteres en el primer parámetro de la función `date()` para definir el formato deseado:
-
-- `d`: día del mes, con ceros iniciales (01-31)
-- `m`: mes, con ceros iniciales (01-12)
-- `Y`: año con cuatro dígitos (ej. 2021)
-- `H`: hora en formato de 24 horas (00-23)
-- `i`: minutos con ceros iniciales (00-59)
-- `s`: segundos con ceros iniciales (00-59)
-
-Por ejemplo, si queremos mostrar la fecha y hora en formato español, podemos usar el siguiente código:
+Otro ejemplo interesante es utilizar la función `strftime()` para mostrar la fecha en diferentes idiomas. Por ejemplo, si queremos que la fecha se muestre en español, podemos escribir:
 
 ```PHP
 <?php
-setlocale(LC_ALL,'es_ES');
-$fecha_actual = date('d \d\e F \d\e Y \a \l\a\s H:i:s');
-echo $fecha_actual;
+setlocale(LC_ALL, 'es_ES');
+echo strftime("%A, %d de %B de %Y"); // mostrará la fecha actual en formato "día de la semana, día de mes de año"
+?>
 ```
 
-Y la salida sería:
-
-`15 de julio de 2021 a las 14:30:29`
+El resultado sería "martes, 12 de octubre de 2021".
 
 ## Profundizando
-Además de la función `date()`, también podemos utilizar la clase `DateTime` para trabajar con fechas y horas. Esta clase proporciona métodos útiles para formatear, comparar y manipular fechas y horas. Por ejemplo, podemos obtener la fecha y hora actual con la clase `DateTime` de la siguiente manera:
+Ahora, profundicemos en la función `date()` y en cómo podemos utilizarla para obtener diferentes formatos de fecha y hora. Aquí hay una tabla con algunos de los formatos más comunes:
+
+| Formato | Salida |
+|---------|--------|
+| Y-m-d | 2021-10-12 |
+| m/d/y | 10/12/21 |
+| j M Y | 12 Oct 2021 |
+| l, j F Y | martes, 12 de octubre de 2021 |
+
+Para obtener una lista completa de los formatos disponibles, puedes consultar la documentación oficial de PHP.
+
+Además, también podemos utilizar la función `strtotime()` para calcular fechas en el pasado o en el futuro. Por ejemplo, si queremos obtener la fecha actual en la que se cumpla un año a partir de hoy, podemos escribir:
 
 ```PHP
 <?php
-$fecha_actual = new DateTime();
-echo $fecha_actual->format('d-m-Y H:i:s');
+echo date("d-m-Y", strtotime("+1 year")); // mostrará la fecha actual en formato día-mes-año con un año añadido
+?>
 ```
-
-La clase `DateTime` también nos permite realizar operaciones con fechas, como agregar días o horas a una fecha determinada. Por ejemplo, si queremos obtener la fecha y hora en una semana, podemos usar el siguiente código:
-
-```PHP
-<?php
-$fecha_actual = new DateTime();
-$fecha_actual->modify('+1 week');
-echo $fecha_actual->format('d-m-Y H:i:s');
-```
-
-Y la salida sería:
-
-`22-07-2021 14:30:29`
 
 ## Ver también
-- [La función `date()` en la documentación de PHP](https://www.php.net/manual/es/function.date.php)
-- [La clase `DateTime` en la documentación de PHP](https://www.php.net/manual/es/class.datetime.php)
+- Documentación oficial de PHP sobre funciones de fecha y hora: https://www.php.net/manual/es/ref.datetime.php
+- Tutorial en español sobre el manejo de fechas en PHP: https://www.webempresa.com/blog/trabajar-con-datos-de-fecha-y-hora-en-php.html
+- Ejemplos de la función `date()` y sus formatos: https://www.php.net/manual/es/function.date.php

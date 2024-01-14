@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Zapisywanie ciągu znaków wielką literą"
+title:                "Gleam: Zmiana wielkości litery łańcucha"
+simple_title:         "Zmiana wielkości litery łańcucha"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/gleam/capitalizing-a-string.md"
 ---
 
@@ -9,42 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Wiele razy w trakcie pisania kodu musimy dokonać zmiany na łańcuchu znaków, takiej jak zmiana formatu na wszystkie wielkie litery lub zmiana pierwszej litery na wielką. Aby ułatwić to zadanie, przydatną funkcją w języku Gleam jest capitalize, która pozwala na proste i szybkie kapitalizowanie łańcuchów znaków.
+Czasami w naszych programach potrzebujemy zmienić wielkość liter w tekście. Na przykład, może chcemy zmienić wszystkie litery na dużych lub na małe. W tym artykule przyjrzymy się w jaki sposób możemy użyć języka programowania Gleam do zastosowania tej operacji na stringach.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Aby skorzystać z funkcji capitalize, musimy najpierw zaimportować moduł string i skorzystać z dostępnego w nim algorytmu. Poniżej przedstawiono przykładowy kod w języku Gleam w celu kapitalizacji nazwiska "kowalski":
+Aby zmienić wielkość liter w tekście, możemy skorzystać z funkcji `String.capitalize` dostępnej w bibliotece standardowej języka Gleam. W poniższym przykładzie użyjemy tej funkcji na przykładzie zdania "witaj świecie".
 
-```
-Gleam
-import string
+``` Gleam
+let zdanie = "witaj świecie"
+let zmienione_zdanie = String.capitalize(zdanie)
 
-let nazwisko = string.capitalize("kowalski")
-
-io.println(nazwisko)
-
-// Output: Kowalski
+// Wynik: "Witaj świecie"
 ```
 
-Jak widać, funkcja capitalize działa na podobnej zasadzie jak funkcja upper w innych językach programowania. Możemy również wykorzystać tę funkcję do kapitalizacji całego łańcucha znaków:
+Jak widać, funkcja `String.capitalize` zmienia pierwszą literę zdania na wielką, a pozostałe litery pozostają bez zmian. Aby zmienić wszystkie litery na duże, możemy użyć funkcji `String.uppercase` lub na małe funkcji `String.lowercase`.
 
-```
-Gleam
-import string
+## Deep Dive
 
-let tekst = "witaj w świecie programowania"
-let kapitalizowany_tekst = string.capitalize(tekst)
+Funkcje `String.capitalize`, `String.uppercase` i `String.lowercase` są często używane do formatowania tekstu w naszym programie. Jednak warto pamiętać, że są one zależne od ustawień lokalnych naszego systemu operacyjnego, co może mieć wpływ na wyjście. Dlatego ważne jest, aby upewnić się, że nasze dane są poprawnie ustawione w odpowiedniej postaci przed przeprowadzeniem operacji zmiany wielkości liter.
 
-io.println(kapitalizowany_tekst)
+## Zobacz także
 
-// Output: Witaj w świecie programowania
-```
-
-## Głębsze zanurzenie
-
-W przypadku funkcji capitalize warto zauważyć, że jest ona zastosowana jako część modułu string, który zawiera również inne przydatne metody do manipulacji łańcuchami znaków. Ta konkretna metoda przeprowadza kapitalizację wszystkich liter poza pierwszą, co może być przydatne w niektórych przypadkach. Możemy również wykorzystać funkcję capitalize do stworzenia własnego algorytmu kapitalizacji dopasowanego do naszych potrzeb.
-
-## Zobacz też
-
-- Dokumentacja modułu string w języku Gleam: https://gleam.run/modules/string.html
-- Przykładowe wykorzystanie capitalize w języku Gleam: https://github.com/gleam-lang/gleam_stdlib/blob/master/std/string/string.gleam#L11-L25
+- Dokumentacja języka Gleam: https://gleam.run/
+- Biblioteka standardowa języka Gleam: https://gleam.run/modules/ 
+- Przewodnik po operacjach na stringach w języku Gleam: https://gleam.run/docs/guides/strings

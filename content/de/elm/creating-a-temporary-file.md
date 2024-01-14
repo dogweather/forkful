@@ -1,85 +1,59 @@
 ---
-title:                "Elm: Erstellung einer temporären Datei"
+title:                "Elm: Erstellen einer temporären Datei"
+simple_title:         "Erstellen einer temporären Datei"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elm/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Ever wonder how to create a temporary file in Elm? This blog post will guide you through the process and show you why it can be useful.
 
-Das Erstellen von temporären Dateien ist ein nützliches Werkzeug in der Programmierung, um Daten temporär zu speichern und zu verwalten. Dies kann hilfreich sein, wenn man zum Beispiel an Dateien arbeitet, die man später wieder löschen möchte, oder wenn man spezifische Informationen für eine bestimmte Aufgabe benötigt.
-
-## Wie geht das?
-
-In Elm gibt es verschiedene Möglichkeiten, um temporäre Dateien zu erstellen. Eine Möglichkeit ist die Verwendung der `File` Bibliothek. Diese Bibliothek ermöglicht es, Dateien zu erstellen, zu lesen, zu schreiben und zu löschen. Hier ist ein Beispiel, wie man eine temporäre Datei erstellen kann:
+## Wie
+Um eine temporäre Datei in Elm zu erstellen, müssen wir zuerst das Built-In Modul `Platform` importieren. Dann können wir die Funktion `File.Temporary.temp` aufrufen, um eine temporäre Datei zu erstellen und deren Pfad als String zu erhalten. Hier ist ein Beispielcode:
 
 ```Elm
+import Platform
+import File.Temporary
 import File
-import Random
-
-type alias TempFile =
-    { name : String
-    , path : String
-    , content : String
-    }
-
-createTempFile : Cmd Msg
-createTempFile =
-    Random.generate TempGenerated (Random.int 0 100)
-        |> Task.toMaybe
-        |> Task.andThen
-            (\randomNumber ->
-                let
-                    fileName =
-                        "temp_file" ++ (toString randomNumber) ++ ".txt"
-                in
-                    File.write fileName "Hello, World!"
-                        |> Task.map (TempCreated fileName)
-            )
-        |> Task.perform TaskErr
-
-type Msg
-    = TempGenerated Int
-    | TempCreated String File.Task
-    | TaskErr File.Step
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        TempGenerated num ->
-            ( model
-            , createTempFile
-            )
-
-        TempCreated fileName task ->
-            ( model
-            , Task.attempt TaskErr task
-            )
-
-        TaskErr err ->
-            ( model, Cmd.none )
 
 main =
-    Browser.element
-        { init = init
-        , update = update
-        , subscriptions = always Sub.none
-        , view = view
-        }
+  Platform.worker
+    { init = init
+    , update = update
+    , subscriptions = subscriptions
+    }
 
-main.wrapped (File.batch []) "elm-output"
+type Msg = CreateTempFile (Result File.Error String)
+
+init : () -> (Model, Cmd Msg)
+init _ =
+  (Model, Cmd.batch
+    [ File.Temporary.temp CreateTempFile
+    ])
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+  case msg of
+    CreateTempFile (Result.Ok path) ->
+      (model, File.write path "Hello World!")
+    CreateTempFile (Result.Err err) ->
+      (model, Cmd.none)
+
+subscriptions : Model -> Sub Msg
+subscriptions _ = Sub.none
 ```
 
-Dieses Beispiel erstellt eine temporäre Datei mit einem zufällig generierten Namen und fügt den Text "Hello, World!" hinzu.
+Der obige Code erstellt eine temporäre Datei und schreibt den String "Hello World!" in diese Datei. Wenn die Datei erfolgreich erstellt wird, sollte das Ergebnis `Result.Ok` sein und der Pfad zu dem temporären Ordner wird in der `CreateTempFile` Nachricht zurückgegeben.
 
-## Tiefer Einblick
+## Deep Dive
+Die Funktion `File.Temporary.temp` nimmt einen optionalen Präfix für die temporäre Datei als Argument. Wenn kein Präfix angegeben wird, wird standardmäßig "tmp" verwendet. Darüber hinaus gibt es auch die Möglichkeit, den temporären Ordner zu ändern. Wir können dies erreichen, indem wir den Argument `Just "custom/temp/path"` an die Funktion übergeben.
 
-Die `File` Bibliothek ermöglicht auch das Erstellen von Verzeichnissen und das Ausführen von Operationen auf Dateien, wie zum Beispiel das Umbenennen oder Verschieben. Es ist auch wichtig zu beachten, dass die erstellten temporären Dateien nicht permanent gespeichert werden und nach der Verwendung gelöscht werden sollten.
+Die Funktion `File.Temporary.temp` nutzt das Dateisystem des Betriebssystems, um temporäre Dateien zu erstellen. Dies hat den Vorteil, dass die Dateien automatisch gelöscht werden, sobald das Programm beendet wird. Wir sollten diese Funktion daher verwenden, um temporäre Dateien zu erstellen, anstatt manuell Dateien zu erstellen und später zu löschen.
 
 ## Siehe auch
-
-- [Elm File Library Dokumentation](https://package.elm-lang.org/packages/elm/file/latest)
-- [Elm Random Library Dokumentation](https://package.elm-lang.org/packages/elm/random/latest)
-- [Temporäre Dateien in der Programmierung](https://en.wikipedia.org/wiki/Temporary_file)
+- [Offizielle Elm Dokumentation zu temporären Dateien](https://package.elm-lang.org/packages/elm/file/latest/File-Temporary#temp)
+- [Blog-Beitrag über das Arbeiten mit Dateien in Elm](https://dev.to/criesbeck/working-with-files-in-elm-3a7g)

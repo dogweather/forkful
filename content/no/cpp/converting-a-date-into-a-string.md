@@ -1,7 +1,9 @@
 ---
-title:                "C++: Konvertering av en dato til en streng"
+title:                "C++: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/converting-a-date-into-a-string.md"
 ---
 
@@ -9,83 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å konvertere en dato til en streng er en viktig del av å programmere i C++. Det kan være nyttig for å vise datoer i et brukervennlig format, som for eksempel i en kalenderapplikasjon eller en logg. Det kan også være nødvendig å lagre datoer i en streng for å lagre dem i en database eller sende dem over internett.
+Å konvertere en dato til en streng kan være nyttig for å vise datoer i et mer leselig format for brukere, eller for å lagre datoer som en del av en filnavn eller databaseoppføring.
 
-## Hvordan
+## Slik gjør du det
 
-Det er flere måter å konvertere en dato til en streng i C++. En enkel måte er å bruke funksjonen `to_string()`. La oss se på et eksempel:
-
-```C++
-#include <iostream>
-#include <string>
-#include <sstream>
-#include <ctime>
-
-using namespace std;
-
-int main()
-{
-    // Opprett en tid som skal konverteres
-    time_t now = time(0);
-
-    // Bruk localtime() for å få den lokale tidssonen
-    tm *ltm = localtime(&now);
-
-    // Bruk stringstream for å konvertere datoen til en streng
-    ostringstream oss;
-    oss << ltm->tm_mday << "/" << 1 + ltm->tm_mon << "/" << 1900 + ltm->tm_year;
-
-    // Bruk to_string() for å konvertere strengen til en heltall-string
-    string date = to_string(oss.str());
-
-    // Skriv ut datoen
-    cout << date << endl;
-
-    return 0;
-}
-```
-**Output:**
-`29/11/2021`
-
-I dette eksempelet bruker vi funksjonen `localtime()` for å få den lokale tiden og deretter `ostringstream` for å konvertere datoen til en streng. Til slutt bruker vi `to_string()` for å konvertere strengen til en heltallsstreng, som kan være nyttig i visse situasjoner.
-
-## Dypdykk
-
-I tillegg til å bruke `to_string()` kan du også konvertere en dato til en streng ved hjelp av biblioteket Boost. Boost er et populært C++ bibliotek som inneholder mange nyttige funksjoner og verktøy. Det inneholder også `boost::lexical_cast` funksjonen, som kan brukes til å konvertere datoen til en streng med bare én linje kode.
-
-La oss se på et eksempel:
+Konvertering av en dato til en streng kan gjøres enkelt ved å bruke et innebygd bibliotek i C++ kalt "stringstream". Følgende er et eksempel på hvordan du kan bruke dette biblioteket for å konvertere en dato til en streng:
 
 ```C++
 #include <iostream>
-#include <string>
-#include <boost/lexical_cast.hpp>
-#include <ctime>
+#include <sstream> // inkluder stringstream biblioteket
+#include <ctime> // inkluder ctime biblioteket for å få tilgang til dato- og tidsfunksjoner
 
-using namespace std;
+int main() {
+    time_t now = time(0); // hent nåværende dato og tid
 
-int main()
-{
-    // Opprett en tid som skal konverteres
-    time_t now = time(0);
+    // konverter til en streng ved å bruke stringstream
+    stringstream ss;
+    ss << put_time(localtime(&now), "%d.%m.%Y"); // bruker ønsket format her
 
-    // Bruk localtime() for å få den lokale tidssonen
-    tm *ltm = localtime(&now);
+    // lagre den konverterte datoen som en streng i en variabel
+    string date = ss.str();
 
-    // Bruk boost::lexical_cast til å konvertere datoen til en streng
-    string date = boost::lexical_cast<string>(ltm->tm_mday) + "/" + boost::lexical_cast<string>(1 + ltm->tm_mon) + "/" + boost::lexical_cast<string>(1900 + ltm->tm_year);
-
-    // Skriv ut datoen
-    cout << date << endl;
+    // skriv ut den konverterte datoen
+    cout << "Dagens dato: " << date << endl;
 
     return 0;
 }
 ```
 
-**Output:**
-`29/11/2021`
+Dette vil gi følgende utdata:
 
-Som du kan se, bruker vi `boost::lexical_cast` for å konvertere hvert element av datoen til en streng og deretter kombinerer dem sammen til en hel streng.
+```
+Dagens dato: 26.04.2021
+```
 
-## Se Også
-- [String conversion (C++) - GeeksforGeeks](https://www.geeksforgeeks.org/string-conversion-in-c/)
-- [Boost C++ libraries](https://www.boost.org/)
+## Dykk dypere
+
+Det å konvertere en dato til en streng kan bli mer komplisert dersom man ønsker å bruke et spesifikt datoformat eller lokal tidssone. I eksempelet over bruker vi "%d.%m.%Y" for å få datoen i formatet dag.måned.år, men man kan endre dette til ønsket format.
+
+I tillegg kan man også bruke forskjellige funksjoner fra ctime-biblioteket for å få tilgang til andre aspekter ved datoen, for eksempel dag i uken eller klokkeslett.
+
+## Se også
+
+- [Completing conversions in C++](https://www.learncpp.com/cpp-tutorial/completing-conversions-in-cpp/)
+- [StringStream class reference](https://www.cplusplus.com/reference/sstream/stringstream/)
+- [Date and time functions in C++](https://www.cplusplus.com/reference/ctime/)

@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: Konwertowanie ciągu znaków na małe litery"
+simple_title:         "Konwertowanie ciągu znaków na małe litery"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,42 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasami, gdy pracujemy z różnymi danymi w Elixir, musimy zmienić wielkość liter w ciągu znaków. Jest to szczególnie przydatne przy walidacji danych lub porównywaniu ich wartości. W tym artykule omówimy, jak prosto i skutecznie przekształcić ciąg znaków na małe litery przy użyciu Elixir.
+Przetwarzanie ciągu znaków jest nieodłączną częścią każdego języka programowania. W Elixirze często będziesz musiał zmienić ciąg znaków na formę pisemną w małych literach, czyli na tzw. "lower case". W tym artykule dowiesz się, dlaczego warto to robić i jak można to zrobić w Elixirze.
 
-## Jak to zrobić
+## Jak to zrobić?
 
-Aby przekształcić ciąg znaków na małe litery w Elixir, możemy użyć funkcji `String.downcase/1`. Przykładowe użycie wyglądałoby następująco:
-
-```Elixir
-iex> String.downcase("PRZYKLADOWY CIAG ZNAKOW")
-"przykladowy ciag znakow"
-```
-Możemy także wykorzystać tę funkcję na listach znaków, stosując ją jako drugi argument funkcji `Enum.map/2`, na przykład:
+Kod w Elixirze jest nie tylko efektywny, ale także prosty w użyciu. Konwersja ciągu znaków na formę pisemną w małych literach jest tutaj bardzo prosta i wyraźna. Wystarczy użyć metody `String.downcase()` aby przekonwertować ciąg znaków.
 
 ```Elixir
-iex> "PRZYKLADOWY CIAG ZNAKOW" |> String.graphemes() |> Enum.map(&String.downcase/1) |> Enum.join()
-"przykladowy ciag znakow"
+string = "ELIXIR JEST FANTASTYCZNYM JĘZYKIEM PROGRAMOWANIA"
+converted_string = String.downcase(string)
+IO.puts converted_string
 ```
-Zauważ, że używamy funkcji `String.graphemes/1` aby podzielić ciąg znaków na pojedyncze znaki, ponieważ funkcja `String.downcase/1` działa tylko na pojedyncze znaki lub listy znaków.
 
-## Dogłębna analiza
-
-Istnieje także funkcja `String.downcase/2`, która pozwala na określenie języka, w którym ma być przeprowadzona konwersja na małe litery. Jest to szczególnie ważne, ponieważ nie wszystkie języki mają takie same reguły przy zmienianiu wielkości liter. Na przykład, w języku tureckim znak "I" jest zmieniany na "ı" zamiast na "i" w języku angielskim. Przykładowe użycie wyglądałoby następująco:
+Tym prostym kodem zmienimy ciąg znaków na "elixir jest fantastycznym językiem programowania". Bardzo często w programowaniu będziesz potrzebować również usunąć spacje z ciągu znaków. W Elixirze możesz to zrobić używając metody `String.trim()`.
 
 ```Elixir
-iex> String.downcase("BÜYÜK I", :turkish)
-"büyüki"
+string = "  Więcej kodu tylko znaczy więcej możliwości  "
+converted_string = String.downcase(string) |> String.trim()
+IO.puts converted_string
 ```
 
-Ponadto, w celu zapewnienia całkowitej zgodności z Unicode, możemy użyć funkcji `String.downcase/3`, która przyjmuje opcjonalny argument "case" jako drugi argument i pozwala na określenie reguł dla konkretnych języków i przypadków. Przykładowe użycie wyglądałoby następująco:
+Teraz nasz ciąg znaków będzie wyglądał następująco "więcej kodu tylko znaczy więcej możliwości". Jak widać, Elixir umożliwia nam wykonanie obu operacji w jednej linijce kodu.
 
-```Elixir
-iex> String.downcase("İ", [:case, :fold])
-"i"
-```
+## Przyjrzyjmy się tematowi bliżej
+
+W Elixirze ciągi znaków są traktowane jako listy znaków, więc metoda `String.downcase()` właściwie jest skrótem dla funkcji `Enum.map()` wykonującej konwersję na każdym znaku z osobna. Dzięki temu metoda ta jest bardzo wydajna i nie ma potrzeby używania pętli, co znacznie ułatwia pracę programistom.
+
+Warto również wspomnieć o tym, że Elixir jest językiem funkcyjnym i nie ma tutaj żadnych zmiennych, które są modyfikowane. Dlatego też przy użyciu metody `String.downcase()` nie zmieniamy oryginalnego ciągu znaków, tylko zwracamy nowy.
 
 ## Zobacz także
 
-- Elixir String moduł dokumentacja: https://hexdocs.pm/elixir/String.html
-- Elixir Enum moduł dokumentacja: https://hexdocs.pm/elixir/Enum.html
-- Unicode Case Folding: https://unicode-table.com/en/sections/case-folding/
+Jeśli jesteś zainteresowany dowiedzeniem się więcej o stringach w Elixirze, polecamy przeczytać te artykuły:
+
+- https://elixir-lang.org/getting-started/string-patterns-and-regular-expressions.html
+- https://medium.com/@coryodaniel/understanding-elixir-string-manipulation-92a6be76ab51
+- https://www.tutorialspoint.com/elixir/elixir_strings.htm

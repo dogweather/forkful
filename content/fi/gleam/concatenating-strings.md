@@ -1,38 +1,58 @@
 ---
-title:                "Gleam: Liitosmerkkijonot"
+title:                "Gleam: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
-Tervetuloa lukemaan blogia Gleam-ohjelmointikielestä! Tämän artikkelin aiheena on "miten liittää merkkijonoja". Vaikka tämä voi kuulostaa yksinkertaiselta tehtävältä, on tärkeää ymmärtää, miksi ja milloin tätä toimintoa voi käyttää.
+## Miksi
 
-Käytännössä liittää merkkijonoja yksinkertaisesti tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi. Tätä voi tarvita esimerkiksi tulostettaessa käyttäjän syöttämää tietoa, kuten nimeä ja sukunimeä, yhtenä merkkijonona.
+Miksi haluaisimme yhdistää merkkijonoja? Syy on yksinkertainen: se on tärkeä osa ohjelmointia ja se auttaa tekemään koodistamme tehokkaampaa.
 
-# Miten
-Gleamissa merkkijonojen liittäminen tapahtuu käyttäen plus-merkkiä (`+`). Seuraavassa esimerkissä liitämme merkkijonot "Terve" ja "maailma":
+## Miten
 
-```Gleam 
-let tervehdys = "Terve" + "maailma"
+Aloita luomalla kaksi muuttujaa, joissa on erilaiset merkkijonot. Voit käyttää esimerkkinä etunimiä ja sukunimiä.
+
+```
+Gleam
 ```
 
-Kun tulostamme muuttujan `tervehdys` arvon, saamme seuraavan tuloksen:
+Voimme yhdistää nämä kaksi merkkijonoa yhteen käyttämällä `<>` -operaattoria.
 
-> Tervemaailma
+```
+Gleam <> Programming
+```
 
-Huomaa, että Gleamissa aina kun yhdistetään merkkijonoja, tulee niiden välissä olla vähintään yksi tyhjä merkki. Muuten merkkijonot liitetään yhteen ilman välilyöntejä.
+Tämä tuottaa tuloksen "Gleam Programming".
 
-# Deep Dive
-Gleamissa merkkijonojen liittämisen taustalla on `string` -muuttujan tyyppi. Tämä tarkoittaa, että Gleam käsittelee kaikkia merkkijonoja olioina, joilla on omat sisäiset toiminnallisuudet ja metodeja.
+Voit myös yhdistää useampia merkkijonoja samassa lauseessa.
 
-Esimerkiksi voit käyttää `string.concat()` -metodia liittämään useita merkkijonoja yhteen. Voit myös käyttää `string.to_upper()` -metodia muuttamaan merkkijonon kaikki kirjaimet isoiksi kirjaimiksi.
+```
+"Hello" <> " " <> "World"
+```
 
-Gleam tarjoaa myös monia muita hyödyllisiä metodeja ja toimintoja merkkijonojen käsittelyyn. Lisätietoja löydät Gleamin virallisesta dokumentaatiosta.
+Tämä tuottaa tuloksen "Hello World".
 
-# Katso myös
-- [Gleam-ohjelmointikielen virallinen dokumentaatio](https://gleam.run/documentation/)
-- [Gleam-ohjelmointikielen perusteet - opetusohjelma](https://gleam.run/tutorials/getting-started/)
-- [Miten luoda ja käyttää muuttujia Gleamissa](example.com)
+Voit myös käyttää `String.concat` -funktiota yhdistämään useampia merkkijonoja yhteen. Esimerkiksi:
+
+```
+String.concat(["Gleam", " ", "Programming"])
+```
+
+Tämä tuottaa saman tuloksen kuin edellinen esimerkki.
+
+## Syväsukellus
+
+Miksi käyttäisimme `<>` -operaattoria tai `String.concat` -funktiota sen sijaan, että kirjoittaisimme yhteenketjuvan merkkijonon suoraan? Yksi syy on, että se helpottaa muuttujien käyttöä ja lisää koodimme luettavuutta. Lisäksi se sallii dynaamisen yhdistämisen, eli voimme käyttää muuttujia ja laskutoimituksia merkkijonojen yhdistämisessä.
+
+Merkkijonojen yhdistäminen on myös olennainen osa monimutkaisempia ohjelmia, kuten tietokantakyselyiden tai web-sovellusten tekemistä.
+
+## Katso myös
+
+- [Gleam-kielen dokumentaatio](https://gleam.run)
+- [Merkkijonojen yhdistäminen Ruby-kielessä](https://ruby-doc.org/core-2.7.1/String.html#method-i-2B)
+- [Merkkijonojen yhdistäminen JavaScript-kielessä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)

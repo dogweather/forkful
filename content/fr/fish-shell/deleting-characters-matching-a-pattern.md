@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Suppression de caractères correspondant à un motif"
+title:                "Fish Shell: Suppression de caractères correspondants à un modèle"
+simple_title:         "Suppression de caractères correspondants à un modèle"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,32 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-L'une des fonctionnalités les plus utiles du Fish Shell est la possibilité de supprimer des caractères correspondant à un motif. Que vous souhaitiez nettoyer un fichier de données ou supprimer des lignes indésirables dans votre code, cette fonctionnalité peut vous faire gagner un temps précieux.
+Supprimer des caractères correspondants à un modèle peut être une tâche courante lors de la programmation en Shell Fish. Cela peut être utile pour nettoyer des données, supprimer des espaces inutiles ou simplement pour formater des informations.
 
 ## Comment faire
 
-Dans Fish Shell, vous pouvez utiliser la commande `sed` pour supprimer des caractères correspondant à un motif. Par exemple, pour supprimer toutes les lignes contenant "hello" dans un fichier, vous pouvez utiliser la commande suivante :
+Pour supprimer des caractères correspondants à un modèle dans le Shell Fish, vous pouvez utiliser la commande `string replace`, en spécifiant le modèle de caractères à supprimer ainsi que le nouveau modèle à utiliser. Par exemple, pour remplacer tous les espaces par des tirets dans une chaîne de caractères, vous pouvez utiliser la commande suivante :
 
 ```Fish Shell
-sed '/hello/d' fichier.txt 
+set my_string "Ceci est un exemple"
+string replace " " "-" $my_string
 ```
+Sortie : `Ceci-est-un-exemple`
 
-Cela supprimera toutes les lignes contenant "hello" dans le fichier et affichera le résultat dans le terminal. Vous pouvez également utiliser des expressions régulières pour affiner votre sélection. Par exemple, pour supprimer toutes les lignes contenant un nombre à quatre chiffres, vous pouvez utiliser :
+## Approfondissement
 
-```Fish Shell
-sed '/[0-9]\{4\}/d' fichier.txt
-```
-
-Assurez-vous de bien maîtriser les expressions régulières avant d'utiliser cette fonctionnalité, car elles peuvent être délicates.
-
-## Plongée en profondeur
-
-La commande `sed` utilise en fait des flux de texte pour supprimer les caractères correspondant à un motif. Cela signifie qu'au lieu de modifier directement le fichier source, elle affiche le résultat modifié dans le terminal. Vous pouvez également utiliser la redirection pour enregistrer le résultat dans un nouveau fichier.
-
-De plus, la commande `sed` peut être utilisée conjointement avec d'autres commandes de manipulation de texte, telles que `grep`, pour créer des expressions plus complexes.
+La commande `string replace` peut être utilisée avec des expressions régulières pour supprimer des caractères complexes. Par exemple, pour supprimer tous les chiffres d'une chaîne de caractères, vous pouvez utiliser l'expression régulière `[0-9]` dans la commande. Il est également possible de combiner plusieurs commandes `string replace` pour supprimer plusieurs motifs à la fois.
 
 ## Voir aussi
 
-- [Les expressions régulières avec Fish Shell](https://fishshell.com/docs/current/regexp.html)
-- [La référence de la commande sed](https://fishshell.com/docs/current/cmds/sed.html)
-- [Utiliser des pipelines en Fish Shell](https://fishshell.com/docs/current/tutorial.html#using-pipelines)
+- [Documentation du Shell Fish](https://fishshell.com/docs/current/)
+- [Guide de référence du Shell Fish](https://fishshell.com/docs/current/cmds/string-replace.html)
+- [Guide complet de l'expression régulière en Shell Fish](https://codereviewvideos.com/blog/fish-shell/regular-expressions-in-fish-shell/)

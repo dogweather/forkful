@@ -1,56 +1,41 @@
 ---
-title:                "Clojure: Excluindo caracteres correspondentes a um padrão"
+title:                "Clojure: Excluindo caracteres que correspondem a um padrão"
+simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+# Por que deletar caracteres que correspondem a um padrão?
 
-Quando estamos trabalhando em um projeto de programação, muitas vezes encontramos situações em que precisamos deletar certos caracteres de uma string que correspondem a um certo padrão. Isso pode ser útil para processar dados, reformatar texto ou até mesmo limpar dados de entrada. Em Clojure, existem algumas maneiras diferentes de realizar essa tarefa.
+Existem algumas situações em que é necessário eliminar caracteres que correspondem a um determinado padrão em uma string. Isso pode ser útil, por exemplo, quando se deseja limpar uma string de caracteres indesejados antes de realizar alguma operação com ela.
 
-## Como Fazer
+## Como fazer
 
-Você pode usar a função `replace` para deletar caracteres que correspondem a um padrão em uma string. Por exemplo, se quisermos deletar todas as ocorrências de números de uma string, podemos utilizar a seguinte expressão:
+Em Clojure, podemos usar a função `replace` para substituir caracteres que correspondem a um padrão por uma string vazia. Vamos dar uma olhada em um exemplo de código:
 
-```Clojure
-(replace "123abc456def" #"[0-9]" "")
-; => "abcdef"
-```
+````Clojure
+(def string-a-limpar "Olá, (mundo)!")
 
-Nesse caso, a função `replace` recebe três parâmetros: a string original, um padrão regular expressão que representa os caracteres que queremos deletar (no caso, qualquer dígito) e uma string vazia como terceiro parâmetro, indicando que queremos substituir esses caracteres por nada.
+(replace #"[(),!]" "" string-a-limpar)
 
-Uma outra maneira de deletar caracteres que correspondem a um padrão é utilizando a função `replace-first`, que só irá deletar a primeira ocorrência do padrão. Porém, essa função também aceita um segundo parâmetro opcional, que especifíca por quantas substituições queremos fazer. Por exemplo:
+; Saída:
+; "Olá mundo"
+````
 
-```Clojure
-(replace-first "abc123def456" #"[0-9]" "" 2)
-; => "abcdef456"
-```
+Neste exemplo, estamos usando a expressão regular `#[(),!]` para representar o padrão que queremos deletar. Note que os caracteres dentro dos colchetes correspondem aos caracteres que queremos eliminar, e as aspas duplas representam a string vazia que será usada para substituí-los. O terceiro parâmetro da função `replace` é a string que queremos limpar.
 
-Nesse caso, apenas as duas primeiras ocorrências de dígitos são removidas da string.
+## Mergulho profundo
 
-## Deep Dive
+Além da função `replace`, também existem outras maneiras de deletar caracteres que correspondem a um padrão em Clojure. Podemos usar a função `clojure.string/replace` ou a função `subs`, que nos permite substituir uma parte de uma string por outra.
 
-Além das funções `replace` e `replace-first`, Clojure também possui outras opções para deletar caracteres que correspondem a um padrão. A função `subs` pode ser utilizada para retornar uma parte de uma string, eliminando os caracteres que correspondem ao padrão especificado. Por exemplo:
+Também é possível usar expressões regulares mais complexas, com grupos de captura, para deletar apenas partes específicas da string correspondentes a determinados padrões. Essas ferramentas podem ser úteis em situações mais avançadas em que é necessário um controle mais preciso sobre a remoção de caracteres.
 
-```Clojure
-(subs "abc123def456" #"[0-9]")
-; => "abcdef"
-```
+# Veja também
 
-Outra opção é utilizar a função `re-seq`, que irá retornar uma seqüência de todas as ocorrências dos caracteres que correspondem ao padrão. Por exemplo:
-
-```Clojure
-(re-seq #"[0-9]" "abc123def456")
-; => ("1" "2" "3" "4" "5" "6")
-```
-
-## Veja Também
-
-Se você quiser aprender mais sobre as diversas funções relacionadas a strings em Clojure, confira a documentação oficial em https://clojure.org/api/string ou dê uma olhada nesses tutoriais: 
-
-- https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
-- https://www.braveclojure.com/do-things/
-- https://cljdoc.org/d/clojure/clojure/1.10.0-alpha5/api/clojure.string#format
+- [Documentação oficial de Clojure sobre expressões regulares](https://clojure.org/reference/regular_expressions) 
+- [Tutorial sobre expressões regulares em Clojure](https://tech.bigcartel.com/blog/regular-expressions-in-clojure) 
+- [Exemplos de uso de expressões regulares em Clojure](https://www.jayway.com/2014/06/14/clojure-regular-expressions/)

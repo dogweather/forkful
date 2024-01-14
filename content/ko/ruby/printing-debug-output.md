@@ -1,49 +1,56 @@
 ---
-title:                "Ruby: 디버그 출력 출력하기"
+title:                "Ruby: 디버그 출력하기"
+simple_title:         "디버그 출력하기"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/ruby/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# 왜
+잉여 디버그 출력을 생성하는 이유 : 디버깅은 프로그래밍 과정에서 필수적인 부분이며, 디버그 출력을 통해 코드의 실행 경로를 이해하고 문제를 해결할 수 있습니다.
 
-어떤 이유로 디버그 출력을 출력하는 것이 중요할까요? 디버그 출력은 프로그램을 개발하며 코드의 실행을 추적하고 오류를 잡는데 매우 유용합니다. 디버그 출력은 여러분이 작성한 코드의 실행을 실제로 볼 수 있게 해주며, 문제점을 파악하고 해결할 수 있게 해줍니다.
+### 왜
 
-# 사용 방법
+디버그 출력을 생성하는 이유는 해당 코드의 동작을 이해하기 위해서입니다. 디버그 출력을 통해 코드의 실행 경로를 확인하고 각 단계에서 변수의 값을 추적할 수 있습니다.
 
-디버그 출력을 하기 전에, 필요한 코드에 `require "pry"`를 추가해주어야 합니다. 그리고 디버그를 출력하고 싶은 부분에서 `binding.pry`를 호출하면 됩니다. 다음은 예제 코드와 그 결과입니다.
+```Ruby
+num1 = 10
+num2 = 20
+sum = num1 + num2
 
-```ruby
-require "pry"
-
-def sum(x, y)
-  binding.pry
-  x + y
-end
-
-result = sum(5, 10)
-puts result
+puts "num1의 값: #{num1}"
+puts "num2의 값: #{num2}"
+puts "합계: #{sum}"
 ```
 
-위 코드를 실행하면, `binding.pry` 호출 이후 코드가 중지되고, 아래와 같이 디버그 콘솔창이 나타납니다.
+위의 예시 코드에서는 변수의 값과 합계를 확인하기 위해 디버그 출력을 사용하였습니다.
+
+### 어떻게
+
+디버그 출력은 `puts` 명령어를 사용하여 간단하게 생성할 수 있습니다. `puts`는 정해진 포맷에 따라 객체의 값을 콘솔에 출력하는 명령어로, 디버그 출력에 매우 유용합니다.
 
 ```
-[1] pry(main)> sum(5, 10)
-=> 15
+num1의 값: 10
+num2의 값: 20
+합계: 30
 ```
 
-이제 디버그 콘솔창에서 여러분이 원하는 변수의 값을 확인하거나, 코드를 수정하고 다시 실행해볼 수 있습니다.
+### 딥 다이브
 
-# 깊이 알아보기
+디버그 출력을 사용할 때 주의해야 할 점이 있습니다. 디버그 출력이 너무 많거나 불필요한 정보를 출력할 경우 코드의 가독성이 낮아지고 성능에도 영향을 미칠 수 있습니다. 또한, 디버그 출력을 모두 제거하지 않은 채 코드를 배포할 경우 보안 이슈가 될 수 있으므로 주의해야 합니다.
 
-위의 예제에서 사용된 `binding`은 바로 현재 코드의 실행 컨텍스트를 나타냅니다. `pry`는 이 컨텍스트의 정보를 사용해 디버그 콘솔창을 제공합니다. 또한 `pry`는 코드 중지 후 조사(inspect) 기능을 제공하여 여러분이 원하는 객체나 변수의 값을 자세히 살펴볼 수 있게 해줍니다.
+## 참고 자료
 
-더 많은 정보를 원하신다면, [pry 공식 문서](https://github.com/pry/pry/wiki)를 참고해보시기 바랍니다.
+- <https://www.rubyguides.com/2016/05/print-output-ruby/>
+- <https://www.ruby-lang.org/en/documentation/quickstart/2/>
+- <https://www.tutorialspoint.com/ruby/ruby_variables.htm>
 
-# 또 다른 보기
+---
 
-- [pry 공식 문서](https://github.com/pry/pry/wiki)
-- [Ruby 디버깅 툴 비교](https://www.rubyguides.com/2018/01/debugging-ruby/)
-- [Ruby - Debugger 모듈](https://www.tutorialspoint.com/ruby-debugger-module)
+## 참고 자료
+
+- <https://www.rubyguides.com/2016/05/print-output-ruby/>
+- <https://www.ruby-lang.org/en/documentation/quickstart/2/>
+- <https://www.tutorialspoint.com/ruby/ruby_variables.htm>

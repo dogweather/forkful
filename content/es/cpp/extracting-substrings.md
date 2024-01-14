@@ -1,54 +1,33 @@
 ---
 title:                "C++: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué extraer subcadenas en C++?
 
-En la programación, hay ocasiones en las que necesitamos trabajar con una parte específica de una cadena de texto. Por ejemplo, puede que queramos extraer un nombre de usuario de una dirección de correo electrónico o separar una fecha en día, mes y año. Para resolver este tipo de problemas, podemos utilizar una técnica llamada "extracción de subcadenas" en C++. En esta entrada de blog, te enseñaremos cómo hacerlo.
+Extraer subcadenas (también conocidas como subcadenas o cadenas secundarias) es una técnica útil en programación para obtener una sección específica de una cadena de texto. Esto puede ser importante en situaciones donde solo se necesita una parte de una cadena más grande, como buscar una palabra clave o procesar datos en un formato específico. Aprender a extraer subcadenas en C++ puede ayudar a mejorar la eficiencia y la precisión de su código.
 
-## Cómo
+## Cómo extraer subcadenas en C++
 
-Para extraer una subcadena de una cadena de texto en C++, utilizamos la función `substr()`. Esta función toma dos parámetros: el índice de inicio de la subcadena y el número de caracteres que deseamos extraer. Por ejemplo, si queremos extraer la subcadena "mundo" de la cadena "Hola mundo", utilizaríamos la función de la siguiente manera:
-
-```C++
-string cadena = "Hola mundo";
-string subcadena = cadena.substr(5,5);
-
-cout << subcadena; // Salida: mundo
-```
-
-También podemos especificar solo el índice de inicio y la función `substr()` extraerá automáticamente el resto de la cadena:
+Para extraer una subcadena en C++, utilizamos la función `substr()` de la biblioteca `string`. Esta función toma dos argumentos: la posición inicial de la subcadena y la longitud deseada. Por ejemplo, si queremos extraer la subcadena "hola" de la cadena "¡Hola mundo!", la función se vería así:
 
 ```C++
-string cadena = "Hola mundo";
-string subcadena = cadena.substr(5); // Extrae desde el índice 5 hasta el final de la cadena
-
-cout << subcadena; // Salida: mundo
+string texto = "¡Hola mundo!";
+string subcadena = texto.substr(1, 4);
+cout << subcadena; // Salida: "hola"
 ```
+Tenga en cuenta que la posición inicial comienza en 0 y la longitud incluye el último carácter de la subcadena. También podemos usar variables en lugar de valores fijos para los argumentos, lo que nos permite extraer subcadenas de manera más dinámica.
 
-También podemos utilizar la función con variables, lo que hace que sea más dinámico y nos permite extraer diferentes subcadenas en base a diferentes condiciones. En este ejemplo, utilizamos la longitud de la palabra "mundo" para extraer la subcadena a partir de ese punto:
+## Profundizando en la extracción de subcadenas
 
-```C++
-string cadena = "Hola mundo";
-int pos = cadena.find("mundo"); // Encuentra el índice de la primera letra de la palabra "mundo"
-string subcadena = cadena.substr(pos, "mundo".length()); // Extrae desde ese índice hasta la longitud de la palabra "mundo"
-
-cout << subcadena; // Salida: mundo
-```
-
-## Deep Dive
-
-Ahora que sabes cómo utilizar la función `substr()` en C++, es importante entender cómo funcionan los índices en una cadena de texto. En C++, los índices comienzan en 0, lo que significa que la primera letra de una cadena tiene el índice 0, la segunda letra tiene el índice 1 y así sucesivamente. Es importante tener en cuenta esto al utilizar la función `substr()` ya que si especificamos un índice fuera del rango de la cadena, recibiremos un error.
-
-Además, si la subcadena que queremos extraer es más larga que la cadena original, C++ simplemente extraerá los caracteres hasta el final de la cadena sin mostrar ningún error. Por ejemplo, si intentamos extraer una subcadena de 10 caracteres de la cadena "Hola mundo", que solo tiene un total de 9 caracteres, obtendremos la cadena completa como resultado.
+Además de la función `substr()`, también podemos utilizar la función `find()` para encontrar la posición de una subcadena dentro de otra cadena de texto. Y si necesitamos extraer múltiples subcadenas, podemos utilizar un bucle y la función `find()` para iterar a través de la cadena y extraerlas una por una. También existen otras técnicas para la extracción de subcadenas, como el uso de expresiones regulares.
 
 ## Ver también
-
-Si quieres aprender más sobre la extracción de subcadenas en C++, te recomendamos revisar la documentación oficial de C++ sobre la función `substr()`: https://www.cplusplus.com/reference/string/string/substr/
-
-También puedes encontrar más información y ejemplos sobre esta función en otros blogs y foros de programación. ¡Sigue practicando y verás cómo esta técnica puede ser útil en tus proyectos de programación!
+- [Documentación de `substr()` en cplusplus.com](https://www.cplusplus.com/reference/string/string/substr/)
+- [Tutorial de extracción de subcadenas en C++ en hackr.io](https://hackr.io/tutorials/learn-c-plus-plus/substring-in-c)

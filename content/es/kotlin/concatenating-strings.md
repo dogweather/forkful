@@ -1,7 +1,9 @@
 ---
 title:                "Kotlin: Uniendo cadenas"
+simple_title:         "Uniendo cadenas"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/concatenating-strings.md"
 ---
 
@@ -9,61 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Un aspecto esencial de cualquier lenguaje de programación es la capacidad de trabajar con cadenas de texto. Una de las operaciones más comunes en este sentido es la concatenación de cadenas, que consiste en unir dos o más cadenas en una sola. Aunque puede parecer una operación simple, hay varias razones por las que uno podría necesitar concatenar cadenas en Kotlin. Por ejemplo, para crear un mensaje personalizado, generar una cadena de consulta para una URL, o simplemente para formatear y presentar datos al usuario.
+La concatenación de cadenas es una técnica común en la programación para unir dos o más cadenas de texto en una sola. Esto es útil cuando se desea combinar palabras, oraciones o incluso variables en una sola cadena. Puede ser especialmente útil en aplicaciones web o móviles donde se necesita mostrar información al usuario.
 
 ## Cómo hacerlo
 
-Para concatenar cadenas en Kotlin, podemos utilizar el operador `+` o la función `plus()`. El operador `+` simplemente une dos cadenas, como se puede ver en el siguiente ejemplo:
+Para concatenar cadenas en Kotlin, se puede utilizar el operador `+` o el método `plus()`. Veamos un ejemplo:
 
 ```Kotlin
 val nombre = "Juan"
 val apellido = "García"
-val nombreCompleto = nombre + " " + apellido
-println(nombreCompleto) // Salida: Juan García
-```
-
-Alternativamente, podemos utilizar la función `plus()` para concatenar más de dos cadenas:
-
-```Kotlin
-val paginaWeb = "www.miweb.com"
-val protocolo = "http://"
-val url = protocolo.plus(paginaWeb)
-println(url) // Salida: http://www.miweb.com
-```
-
-También es posible concatenar cadenas con variables o expresiones, como en el siguiente ejemplo:
-
-```Kotlin
-val cantidad = 10
-val mensaje = "Tienes " + cantidad + " mensajes nuevos."
-println(mensaje) // Salida: Tienes 10 mensajes nuevos.
-```
-
-## Profundizando
-
-Es importante tener en cuenta que cada vez que concatenamos cadenas en Kotlin, se crea una nueva cadena en la memoria. Por lo tanto, si necesitamos concatenar varias cadenas dentro de un bucle, podría ser más eficiente utilizar la clase `StringBuilder`, que nos permite crear una cadena mutable y modificarla sin tener que generar una nueva cada vez.
-
-```Kotlin
-val nombres = listOf("Juan", "María", "José")
-val mensaje = StringBuilder("Los nombres son: ")
-nombres.forEach { nombre ->
-    mensaje.append(nombre).append(", ")
-}
-println(mensaje) // Salida: Los nombres son: Juan, María, José,
-```
-
-Otro aspecto importante es el uso de la función `format()`, que nos permite formatear cadenas con valores de variables de una manera más eficiente que concatenar manualmente. Por ejemplo:
-
-```Kotlin
-val nombre = "Jaime"
+val nombreCompleto = nombre + " " + apellido // "Juan García"
 val edad = 25
-val mensaje = "%s tiene %d años.".format(nombre, edad)
-println(mensaje) // Salida: Jaime tiene 25 años.
+val info = "Me llamo " + nombreCompleto + " y tengo " + edad + " años." // "Me llamo Juan García y tengo 25 años."
 ```
 
-## Vea también
+También se puede usar el método `format()` para incluir variables en una cadena de formato:
 
-- [Documentación oficial de Kotlin sobre concatenación de cadenas](https://kotlinlang.org/docs/basic-types.html#strings)
-- [Tutorial de concatenación de cadenas en Kotlin](https://www.baeldung.com/kotlin-string-concatenation)
-- [Uso de la clase `StringBuilder` en Kotlin](https://www.geeksforgeeks.org/stringbuilder-class-in-kotlin/)
-- [Más sobre la función `format()` en Kotlin](https://www.programiz.com/kotlin-programming/string-formatting)
+```Kotlin
+val nombre = "Sofía"
+val apellido = "López"
+val nombreCompleto = "%s %s".format(nombre, apellido) // "Sofía López"
+val edad = 30
+val info = "Me llamo %s y tengo %d años.".format(nombreCompleto, edad) // "Me llamo Sofía López y tengo 30 años."
+```
+
+Como se puede ver en los ejemplos, se pueden concatenar cadenas de texto con otros tipos de datos, como enteros.
+
+## Deep Dive
+
+En Kotlin, las cadenas son inmutables, lo que significa que no se pueden modificar una vez creadas. Entonces, al concatenar cadenas, en realidad se están creando nuevas cadenas en lugar de modificar las existentes. Esto puede no ser eficiente si se están manejando grandes cadenas de texto, ya que se estarían creando varias copias. En estos casos, se recomienda utilizar la clase `StringBuilder`, que permite modificar una cadena sin crear copias adicionales.
+
+También es importante tener en cuenta que la concatenación repetida de cadenas puede ralentizar el rendimiento de una aplicación, ya que requiere una gran cantidad de asignaciones y creación de objetos. Por lo tanto, es una buena práctica usar la clase `StringBuilder` o el método `format()` en lugar de una concatenación tradicional.
+
+## Ver también
+- [Documentación de Kotlin sobre la clase StringBuilder](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)
+- [Más información sobre concatenación de cadenas en Kotlin](https://www.baeldung.com/kotlin/concat-strings)

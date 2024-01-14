@@ -1,7 +1,9 @@
 ---
-title:                "Python: Erzeugung von Zufallszahlen"
+title:                "Python: Erzeugung von zufälligen Zahlen"
+simple_title:         "Erzeugung von zufälligen Zahlen"
 programming_language: "Python"
-category:             "Numbers"
+category:             "Python"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/python/generating-random-numbers.md"
 ---
 
@@ -9,36 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Generieren von Zufallszahlen ist ein wichtiges Konzept in der Programmierung. Es ermöglicht es uns, zufällige Ergebnisse für Spiele, Simulationen, Kryptographie und vieles mehr zu erzeugen. Es ist auch ein nützliches Werkzeug für Testing und Debugging von Code.
+In der Programmierung gibt es oft Situationen, in denen man zufällige Zahlen benötigt. Beispielsweise kann man damit bestimmte Testfälle erstellen, Spiele entwickeln oder das Verhalten von Algorithmen testen. Ohne zufällige Zahlen wäre es sehr schwierig, realitätsnahe Szenarien zu simulieren. Zum Glück bietet Python eine Vielzahl von Funktionen, um zufällige Zahlen zu generieren.
 
-## Wie geht man vor
+## How To
 
-Um in Python Zufallszahlen zu generieren, können wir die eingebaute Funktion `random` verwenden. Hier ist ein Beispiel, um eine zufällige Ganzzahl zwischen 1 und 10 zu erstellen:
-
-```Python
-import random
-x = random.randint(1,10)
-print(x)
-```
-
-Die Ausgabe könnte zum Beispiel `7` sein. Wir können auch Zufallszahlen in einer bestimmten Spanne generieren, indem wir die Funktion `randrange` verwenden. Hier ist ein Beispiel, um eine zufällige gerade Zahl zwischen 0 und 100 zu erstellen:
+Python bietet mehrere Möglichkeiten, um zufällige Zahlen zu erzeugen. Eine der einfachsten Methoden ist die Verwendung der Random-Bibliothek. Diese Bibliothek enthält eine Vielzahl von Funktionen, die es ermöglichen, Zufallszahlen auf unterschiedliche Weise zu erzeugen. Im Folgenden ist ein Beispiel für die Generierung einer zufälligen Ganzzahl zwischen 1 und 10:
 
 ```Python
 import random
-x = random.randrange(0,101,2)
-print(x)
+
+# Zufällige Ganzzahl zwischen 1 und 10 erzeugen
+number = random.randint(1, 10)
+
+print(number) # Output: Eine zufällige Ganzzahl zwischen 1 und 10
+``` 
+
+Man kann auch eine Liste von zufälligen Zahlen erstellen. Dafür kann man die `random.sample()` Funktion verwenden. Hier ist ein Beispiel, das eine Liste mit 5 zufälligen Dezimalzahlen zwischen 0 und 1 erstellt:
+
+```Python
+import random
+
+# Liste mit 5 zufälligen Dezimalzahlen zwischen 0 und 1 erstellen
+numbers = random.sample(range(0, 1), 5)
+
+print(numbers) # Output: Eine Liste mit 5 zufälligen Dezimalzahlen zwischen 0 und 1
 ```
 
-Die Ausgabe könnte zum Beispiel `54` sein, da es sich um eine gerade Zahl zwischen 0 und 100 handelt.
+## Deep Dive
 
-## Tiefendurchgang
+Die Random-Bibliothek in Python verwendet den Mersenne-Twister-Algorithmus, um zufällige Zahlen zu erzeugen. Dieser Algorithmus ist sehr schnell und erzeugt Zahlen mit einer sehr guten Gleichverteilung. Wenn man jedoch kryptographisch sichere Zufallszahlen benötigt, sollte man die `secrets` Bibliothek verwenden, die Funktionen zur Erzeugung von kryptographisch sicheren Zufallszahlen bietet.
 
-Es gibt viele verschiedene Methoden, um Zufallszahlen in Python zu generieren. Die Funktionen `random` und `randrange` sind nur zwei Beispiele. Wir können auch Zufallszahlen mit einer bestimmten Verteilung erzeugen, wie zum Beispiel mit der Funktion `random.gauss` für eine Gaußverteilung. Es ist auch möglich, eine Liste mit Zufallszahlen zu erstellen, indem man die Funktion `random.shuffle` verwendet.
-
-Es gibt auch spezialisierte Module wie `numpy` und `scipy`, die zusätzliche Funktionen für die Zufallszahlenerzeugung bieten. Es ist wichtig, zu verstehen, welche Art von Zufallszahlen man benötigt, um die passende Methode auszuwählen.
+Zusätzlich bietet Python auch die `numpy` Bibliothek, die viele Funktionen zur Erzeugung von zufälligen Zahlen enthält. Diese Bibliothek wird oft verwendet, um große Mengen von Zufallszahlen zu generieren, was besonders für wissenschaftliche Berechnungen und statistische Analysen relevant ist.
 
 ## Siehe auch
 
-- [Python Dokumentation: Zufallszahlen](https://docs.python.org/de/3/library/random.html)
-- [Tutorial: Random-Zahlen in Python](https://www.digitalocean.com/community/tutorials/how-to-use-the-python-random-number-generator)
-- [Numpy Dokumentation: Zufallszahlen](https://numpy.org/doc/stable/reference/random/index.html)
+- [Die Random-Bibliothek in Python](https://docs.python.org/3/library/random.html)
+- [Kapitel über Zufallszahlen in der Python Dokumentation](https://docs.python.org/3/tutorial/random.html)
+- [Die numpy Bibliothek in Python](https://numpy.org/doc/stable/index.html)

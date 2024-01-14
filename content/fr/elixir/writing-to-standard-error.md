@@ -1,41 +1,45 @@
 ---
-title:                "Elixir: Écriture vers l'erreur standard"
+title:                "Elixir: Écrire sur la sortie d'erreur standard"
+simple_title:         "Écrire sur la sortie d'erreur standard"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi écrire vers la sortie d'erreur?
+# Pourquoi écrire vers l'erreur standard en Elixir
 
-Écrire vers la sortie d'erreur est utile lors de la détection et de la gestion des erreurs dans un programme Elixir. Cela peut permettre de mieux comprendre l'origine et la nature des erreurs, et faciliter la résolution de problèmes.
+L'écriture vers l'erreur standard, aussi appelée stderr, est une étape importante lorsque l'on écrit du code en Elixir. Cela permet de mieux comprendre et de déboguer les erreurs qui se produisent lors de l'exécution d'un programme. C'est un outil précieux pour tout programmeur en Elixir.
 
-## Comment écrire vers la sortie d'erreur
+## Comment faire
 
-Pour écrire vers la sortie d'erreur en Elixir, utilisez la fonction `IO.write` ou `IO.puts` en spécifiant `:stderr` comme deuxième argument. Par exemple :
+Pour écrire vers l'erreur standard en Elixir, il suffit d'utiliser la fonction `IO.puts/2` en lui passant le message d'erreur en premier argument et le flux d'erreur standard en deuxième argument.
 
-```` elixir
-IO.write(:stderr, "Erreur: Le nombre entré doit être positif")
-````
-Dans cet exemple, le message d'erreur sera écrit vers la sortie d'erreur.
+```
+Elixir IO.puts("Une erreur est survenue.", :stderr)
+``` 
 
-Il est également possible d'écrire vers la sortie d'erreur avec des libellés de couleur en utilisant le module `IO.ANSI` et la fonction `IO.ANSI.format` :
+Cela affichera le message d'erreur dans le terminal, ce qui peut être très utile lors de la phase de débogage. Voici un exemple de sortie :
 
-```` elixir
-IO.write(:stderr, IO.ANSI.format([:red, :bold], "Erreur critique"))
-````
+```
+Une erreur est survenue.
+```
 
-Cela affichera "Erreur critique" en rouge et en gras dans la sortie d'erreur.
+## Plongée en profondeur
 
-## Plongez dans la sortie d'erreur
+En Elixir, il est possible d'utiliser un logger pour gérer les erreurs et les messages de façon plus détaillée. Pour écrire vers l'erreur standard en utilisant un logger, il faut utiliser la fonction `Logger.error/1` en lui passant le message d'erreur en argument.
 
-La sortie d'erreur en Elixir est gérée par le système d'exploitation, et peut donc varier selon la plateforme utilisée. Sur les systèmes basés sur Unix, tels que Linux ou macOS, `:stderr` est associé à un processus appelé "standard error file descriptor". Il est également possible d'utiliser `:stderr` avec des superviseurs et des processus de supervision en Elixir, pour gérer les erreurs de manière plus robuste.
+```
+Elixir Logger.error("Une erreur est survenue.")
+```
 
-Il est important de noter que lorsque l'exécution d'un programme génère des erreurs, elles ne seront pas toujours affichées automatiquement dans la sortie d'erreur. Il peut être nécessaire d'utiliser des outils tels que `logger` ou `sentry` pour capturer et gérer ces erreurs de manière plus efficace.
+Cela affichera le message d'erreur dans le terminal ainsi que dans le fichier de log défini pour le logger en question. Il est également possible de personnaliser les informations affichées en utilisant différentes macros fournies par le module `Logger`.
 
 ## Voir aussi
 
-- [Documentation sur la sortie d'erreur en Elixir](https://hexdocs.pm/elixir/IO.html#write/2)
-- [Guide sur la gestion des erreurs en Elixir](https://elixir-lang.org/getting-started/try-catch-and-rescue.html)
-- [Article sur les meilleures pratiques de gestion des erreurs en Elixir](https://blog.appsignal.com/2018/08/14/elixir-alchemy-best-practices-for-error-handling-and-rescue.html)
+- [Documentation Elixir sur l'écriture vers l'erreur standard](https://hexdocs.pm/elixir/IO.html#puts/2)
+- [Documentation Elixir sur les loggers](https://hexdocs.pm/logger/)
+
+Merci d'avoir lu cet article et j'espère que cela vous a aidé à mieux comprendre l'utilité de l'écriture vers l'erreur standard en Elixir. N'hésitez pas à explorer davantage les différentes fonctionnalités et options disponibles pour gérer les erreurs dans vos programmes en Elixir.

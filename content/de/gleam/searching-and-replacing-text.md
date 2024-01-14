@@ -1,53 +1,53 @@
 ---
 title:                "Gleam: Suchen und Ersetzen von Text"
+simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum?
+## Warum
 
-Für Programmierer ist das Suchen und Ersetzen von Text eine alltägliche Aufgabe. Es ist ein wichtiger Teil des Programmierprozesses und kann dabei helfen, effizienter und schneller zu arbeiten. In diesem Blogpost werden wir uns genauer mit der Such- und Ersetzungsfunktion in Gleam befassen und zeigen, wie sie eingesetzt werden kann, um Zeit und Mühe zu sparen.
+Text zu suchen und zu ersetzen ist eine grundlegende Fähigkeit beim Programmieren. Es ermöglicht uns, schnell und effektiv Fehler zu korrigieren oder bestimmte Wörter oder Zeichenfolgen in unserem Code zu ändern. Es ist auch besonders hilfreich, wenn wir denselben Code in verschiedenen Stellen wieder verwenden möchten. Daher ist es wichtig, dass wir als Programmierer wissen, wie man Texte suchen und ersetzen kann.
 
-## Wie
+## Wie es geht
 
-Die Such- und Ersetzungsfunktion in Gleam ist sehr einfach zu bedienen. Man kann sie auf verschiedene Arten aufrufen: entweder über die eingebaute ```.replace()``` Funktion oder über das Modul ```String.replace()```.
-
-Ein Beispiel für die Verwendung von ```.replace()``` könnte wie folgt aussehen:
+Das Gleam-Standardbibliothek bietet verschiedene Funktionen, um Text zu suchen und zu ersetzen. Hier sind zwei Beispiele:
 
 ```Gleam
-let original_text = "Dies ist ein Beispieltext."
-let replaced_text = original_text.replace("Beispieltext", "neuer Text")
+let ergebnis = Text.replace("Hallo Welt", "Hallo", "Guten Tag")
+// Ergebnis: "Guten Tag Welt"
+
+let zahlen = Text.replace("1,2,3,4,5", ",", " ")
+// Ergebnis: "1 2 3 4 5"
 ```
 
-Das Ergebnis wird in der Variablen ```replaced_text``` gespeichert und lautet "Dies ist ein neuer Text." Wir können auch reguläre Ausdrücke verwenden, um gezielt Text zu suchen und zu ersetzen. Ein Beispiel dafür wäre:
+In diesen Beispielen nutzen wir die `replace` Funktion, die drei Argumente akzeptiert - den ursprünglichen Text, den zu ersetzenden Text und den Ersatz. Sie können auch eine Funktion angeben, die entscheidet, welcher Teil des Textes ersetzt werden soll. Diese können wir in einem zusätzlichen Argument angeben:
 
 ```Gleam
-let original_text = "Dies ist ein Beispieltext."
-let replaced_text = original_text.replace([regex"\s+", "g"], "")
+let ergebnis = Text.replace_with("Hallo Welt", "Hallo", |match| {
+  if match == "Hallo" {
+    "Guten Tag"
+  } else {
+    match
+  }
+})
+// Ergebnis: "Guten Tag Welt"
 ```
 
-In diesem Fall würden alle Leerzeichen im Text durch nichts ersetzt werden, was zu der Ausgabe "DiesisteinBeispieltext." führen würde.
+Dieses Beispiel zeigt eine Funktion, die entscheidet, dass nur der Text "Hallo" ersetzt werden soll, während alles andere erhalten bleibt.
 
-Ein weiteres nützliches Beispiel für die Such- und Ersetzungsfunktion ist die Verwendung von Mustern und Backreferenzen. Mit diesen können wir gezielt nach bestimmten Textmustern suchen und sie ersetzen. Ein Beispiel dafür wäre:
+## Tiefe Tauchen
 
-```Gleam
-let original_text = "Heute ist der 20. Juni."
-let replaced_text = original_text.replace([regex"(\d+)\.", "g"], [pattern"$1. Tag", ""])
-```
+Es gibt noch weitere Funktionen in der Gleam-Standardbibliothek, die uns beim Suchen und Ersetzen von Text helfen können. Unter anderem gibt es Funktionen wie `find`, `contains`, `first_match`, `matches`, die es uns ermöglichen, Teile des Textes zu finden, die mit bestimmten Kriterien übereinstimmen. Auch können wir reguläre Ausdrücke verwenden, um noch komplexere Suchanfragen zu erstellen.
 
-Das Ergebnis wäre "Heute ist der 20. Tag Juni."
-
-## Deep Dive
-
-Für fortgeschrittenere Anwendungen gibt es auch die Möglichkeit, benutzerdefinierte Such- und Ersetzungsfunktionen zu schreiben. Diese können dann in verschiedenen Szenarien eingesetzt werden, zum Beispiel beim Entwickeln von Textverarbeitungsprogrammen oder bei der Verarbeitung großer Datensätze.
-
-Um eine benutzerdefinierte Funktion zu schreiben, können wir das Gleam-Modul ```String.Match``` verwenden. Dieses bietet Funktionen wie ```replace_first()``` und ```replace_all()```, die für komplexe Such- und Ersetzungsvorgänge nützlich sein können.
+Ein wichtiger Aspekt beim Suchen und Ersetzen von Text ist die Leistung. Durch die Verwendung von Algorithmen wie Boyer-Moore oder Knuth-Morris-Pratt kann die Suche nach Text in Millionen von Zeichen sehr schnell erfolgen. Daher ist es wichtig, dass wir uns mit diesen Algorithmen vertraut machen, um unsere Programmierfähigkeiten weiter zu optimieren.
 
 ## Siehe auch
 
-- Offizielle Gleam-Dokumentation: https://gleam.run/
-- Eine Einführung in reguläre Ausdrücke: https://tutorialedge.net/golang/go-regex-tutorial/
-- Dieser Blogpost auf GitHub: https://github.com/username/article.md
+- [Gleam-Standardbibliothek](https://gleam.run/) - Offizielle Gleam-Dokumentation
+- [Einführung in die Textverarbeitung mit Gleam](https://gleam.run/articles/text-processing) - Tutorial zur Verwendung von Textverarbeitungsfunktionen in Gleam
+- [Einführung in reguläre Ausdrücke](https://gleam.run/articles/regex) - Artikel über die Verwendung von regulären Ausdrücken in Gleam.

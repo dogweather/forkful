@@ -1,7 +1,9 @@
 ---
-title:                "C++: Kontrollera om en katalog finns"
+title:                "C++: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/checking-if-a-directory-exists.md"
 ---
 
@@ -9,76 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kontrollera om en mapp finns är en viktig del av programmering eftersom det kan hjälpa dig att hantera dina filer och mappar på ett effektivt sätt. Om du till exempel försöker skapa en ny mapp men en mapp med samma namn redan finns, kan du använda funktionen för att undvika att överlappa eller skriva över befintliga filer.
+Att kolla om en mapp finns är en viktig del av många program som arbetar med filhantering. Det kan hjälpa till att undvika felaktig hantering av filer och också underlätta för användaren genom att indikera om en viss mapp finns tillgänglig för användning.
 
-## Hur man gör det
-
-För att kontrollera om en mapp finns, kan du använda sig av funktionen "opendir". Genom att använda ```C++ opendir() ``` och sedan ```C++ readdir()``` kan du öppna en viss mapp och lista filerna i den.
-
-Här är ett exempel på hur man kan använda-se ```C++ opendir()``` för att lista alla filer i en mapp:
+## Så här gör du
 
 ```C++
 #include <iostream>
-#include <dirent.h>
+#include <filesystem>
 
-using namespace std;
+namespace fs = std::filesystem;
 
 int main() {
-    DIR *dir;
-    struct dirent *ent;
-    if ((dir = opendir ("C:\\Users\\ExampleUser\\Documents\\Test")) != NULL) {
-        while ((ent = readdir (dir)) != NULL) {
-            cout << ent->d_name << endl;
-        }
-        closedir (dir);
-    } else {
-        cout << "Kan inte öppna den här mappen" << endl;
-    }
-    return 0;
+
+   // Ange sökvägen till mappen du vill kontrollera
+   std::string path = "/dokument/testmapp/";
+
+   // Använd exists() för att kontrollera om mappen finns
+   if (fs::exists(path)) {
+      std::cout << "Mappen finns." << std::endl;
+   } else {
+      std::cout << "Mappen finns inte." << std::endl;
+   }
+
+   return 0;
 }
 ```
-Efter att ha kört koden ovan, bör du få följande utdata:
 
-```
-file1.txt
-file2.txt
-file3.txt
-file4.txt
-```
+### Exempeloutput:
+
+Mappen finns inte.
+
+I det här exemplet används C++ standardbiblioteket "filesystem" för att enkelt kontrollera om en given sökväg representerar en befintlig mapp. Det är enkelt att implementera och ger snabbt resultat.
 
 ## Djupdykning
 
-Förutom att lista filer i en mapp, kan du också kontrollera om en specifik mapp finns genom att använda funktionen "opendir" kombinerat med en "if-sats". Om mappen finns, returnerar funktionen ett DIR-pekare och därmed evalueras "if-satsen" som sann. Om mappen inte hittas, returnerar funktionen NULL och "if-satsen" är inte sann.
+Att kontrollera om en mapp faktiskt finns kan kräva lite mer förståelse av hur ett operativsystem hanterar filer och mappar. I sin enklaste form innebär detta att gå igenom alla filsystemsnivåer som hierarkin i en mappstruktur består av.
 
-En annan användbar funktion är "mkdir" som låter dig skapa en ny mapp om den inte redan finns. Här är ett exempel på hur man kan använda-se både "opendir" och "mkdir" för att kontrollera och skapa en mapp:
-
-```C++
-#include <iostream>
-#include <dirent.h>
-#include <sys/stat.h>
-
-using namespace std;
-
-int main() {
-    DIR *dir;
-    if ((dir = opendir ("C:\\Users\\ExampleUser\\Documents\\Test")) == NULL) {
-        // Mappen finns inte, skapa en ny
-        int result = mkdir("C:\\Users\\ExampleUser\\Documents\\Test", 0777);
-        if (result == 0) {
-            cout << "Mappen skapades!" << endl;
-        } else {
-            cout << "Det gick inte att skapa mappen." << endl;
-        }
-    } else {
-        // Mappen finns redan
-        cout << "Mappen finns redan." << endl;
-    }
-    return 0;
-}
-```
+I vissa fall kan det också vara användbart att känna till och kunna hantera eventuella fel och undantag som kan uppstå vid kontrollen av en mapp. Till exempel kan en otillräcklig behörighet förhindra att en mapp kontrolleras korrekt.
 
 ## Se även
 
-- [Funktionen "opendir" i C++](https://en.cppreference.com/w/cpp/filesystem/opendir)
-- [Funktionen "readdir" i C++](https://en.cppreference.com/w/cpp/filesystem/readdir)
-- [Funktionen "mkdir" i C++](https://en.cppreference.com/w/cpp/filesystem/mkdir)
+- [C++ standardbiblioteket "filesystem"](https://en.cppreference.com/w/cpp/filesystem)
+- [Kontrollera behörighet i C++](https://www.geeksforgeeks.org/directory-permissions-in-c-programming-language/)

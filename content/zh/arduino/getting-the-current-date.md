@@ -1,54 +1,71 @@
 ---
 title:                "Arduino: 获取当前日期"
+simple_title:         "获取当前日期"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/arduino/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 为什么
+为了让你的代码与时间相关，你想要获取当前的日期是很有用的。比如说，你可能想要在某个特定的日期触发某个操作，或者在不同的日期显示不同的信息。
 
-在现代的生活中，我们经常需要使用到当前的日期。无论是日历、日程安排还是其他的应用，都需要准确地获取当前的日期。在编写Arduino程序时，也经常需要获取当前的日期来做一些特定的操作。因此，学习如何获取当前日期是非常有用的。
-
-## 如何获取当前日期
-
-获取当前日期的方式在Arduino程序中并不复杂，只需要使用`millis()`函数即可。这个函数可以返回自Arduino开发板上电以来的毫秒数。根据这个毫秒数，我们可以计算出当前日期，并且将它打印出来。下面是一个简单的例子：
-
+## 怎么做
 ```Arduino
-unsigned long currentMillis = millis();
-unsigned long days = currentMillis / (24 * 60 * 60 * 1000);
-unsigned long hours = (currentMillis % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000);
-unsigned long minutes = (currentMillis % (60 * 60 * 1000)) / (60 * 1000);
-unsigned long seconds = (currentMillis % (60 * 1000)) / 1000;
+// 首先，我们需要引入Time库
+#include <Time.h>
 
-Serial.print("Current date: ");
-Serial.print(days);
-Serial.print(" days, ");
-Serial.print(hours);
-Serial.print(" hours, ");
-Serial.print(minutes);
-Serial.print(" minutes, and ");
-Serial.print(seconds);
-Serial.println(" seconds since power on.");
+void setup() {
+  // 初始化串口通信，使我们能够在串口监视器中查看输出
+  Serial.begin(9600);
+
+  // 获取当前时间
+  time_t now = time(nullptr);
+
+  // 使用hour(), minute(), second()函数分别获取当前的小时、分钟和秒数
+  int hour = hour(now);
+  int minute = minute(now);
+  int second = second(now);
+
+  // 使用year(), month(), day()函数分别获取当前的年、月和日
+  int year = year(now);
+  int month = month(now);
+  int day = day(now);
+
+  // 输出日期和时间信息到串口监视器
+  Serial.print("当前时间为：");
+  Serial.print(hour);
+  Serial.print(":");
+  Serial.print(minute);
+  Serial.print(":");
+  Serial.print(second);
+  Serial.print(", ");
+  Serial.print(year);
+  Serial.print("/");
+  Serial.print(month);
+  Serial.print("/");
+  Serial.println(day);
+}
 ```
 
-输出结果可能会是这样的：
+代码解析：
 
+- 首先，在`setup()`函数中，我们需要初始化串口通信，并将波特率设置为9600。
+- 接着，我们通过调用`time()`函数来获取当前的时间，并将其赋值给`now`变量。请注意，`time()`函数来自于Time库，在使用之前需要先引入该库。
+- 使用`hour()`, `minute()`和`second()`函数可以分别获取当前的小时、分钟和秒数，将它们赋值给对应的变量。
+- 相同的，使用`year()`, `month()`和`day()`函数可以分别获取当前的年、月和日，将它们赋值给对应的变量。
+- 最后，通过输出这些变量的值到串口监视器，我们可以获得当前的日期和时间信息。
+
+输出示例：
 ```
-Current date: 8 days, 3 hours, 21 minutes, and 42 seconds since power on.
-```
+当前时间为：12:34:56, 2020/7/15
 
-## 深入了解获取当前日期
+## 深入了解
+获取当前时间的方法并不仅限于使用Time库中的函数。事实上，在Arduino中有很多其他的方法可以获取当前日期和时间，比如通过连接WiFi获取NTP（网络时间协议）时间。你也可以使用实时时钟模块（RTC）来获取准确的时间信息。
 
-除了使用`millis()`函数外，还有其他一些方法可以获取当前日期。例如，可以使用`clock()`函数来获取系统时钟的值，然后根据系统时钟的值来计算当前日期。另外，也可以借助于DS1307实时时钟模块来获取真正的日期和时间。
-
-此外，我们还可以使用`day()`,`month()`,`year()`等函数来分别获取当前日期的日、月、年部分。这些函数需要传入一个时间戳作为参数，可以通过获取当前毫秒数然后转换成时间戳的方式来使用。
-
-## 参考资料
-
-- [Arduino官方文档中的millis()函数](https://www.arduino.cc/reference/en/language/functions/time/millis/)
-- [Arduino官方文档中的clock()函数](https://www.arduino.cc/reference/en/language/functions/time/clock/)
-- [Arduino官方文档中的day()函数](https://www.arduino.cc/reference/en/language/functions/time/day/)
-- [DS1307实时时钟模块使用指南](https://www.arduino.cc/en/tutorial/DS1307RealTimeClock)
-- [如何使用Arduino实现一个日历应用](https://www.instructables.com/id/Programming-the-7Science-RTC-Module-Using-Arduino/)
+## 另请参阅
+- [介绍Time库](https://www.arduino.cc/en/Reference/Time): Arduino官方文档中关于Time库的介绍。
+- [如何使用NTP时间](https://create.arduino.cc/projecthub/vancasts/nmbs-station-clock-25f97f?ref=search&ref_id=NTP&offset=2): 一个使用WiFi与NTP服务器来获取时间的项目示例。
+- [使用实时时钟模块DS3231](https://www.instructables.com/id/Real-Time-Clock-With-Arduino-Using-DS1307-and-DS323/): 一个教你如何通过DS3231实时时钟模块获取时间信息的指南。

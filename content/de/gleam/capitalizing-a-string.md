@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Großschreibung eines Strings"
+title:                "Gleam: Eine Zeichenkette großschreiben"
+simple_title:         "Eine Zeichenkette großschreiben"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/capitalizing-a-string.md"
 ---
 
@@ -9,30 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Es gibt viele Gründe, warum man vielleicht einen String im Programmieren großschreiben möchte. Ein häufiger Grund ist, um Konsistenz und Lesbarkeit im Code zu gewährleisten, besonders bei der Darstellung von Benutzereingaben oder Ausgabe an den Benutzer.
+Das Kapitalisieren einer Zeichenfolge kann in vielen Situationen nützlich sein, wie zum Beispiel bei der Formatierung von Benutzereingaben oder der Erstellung von lesbaren Überschriften.
 
-## Wie geht's
-
-Die Gleam-Programmiersprache bietet ein einfaches und effektives Mittel, um einen String in Großbuchstaben umzuwandeln. Mit der Funktion `String.capitalize` können wir einen beliebigen String übergeben und erhalten als Ergebnis den selben String, jedoch mit dem ersten Buchstaben großgeschrieben. Hier ist ein Beispiel:
+## Wie geht das
+Die Gleam-Sprache bietet eine integrierte Funktion, um eine Zeichenfolge zu kapitalisieren: `String.capitalize`. Diese Funktion akzeptiert eine Zeichenfolge als Eingabe und gibt eine neue Zeichenfolge zurück, in der der erste Buchstabe großgeschrieben wird.
 
 ```Gleam
-let name = "max"
-let capitalized_name = String.capitalize(name)
-IO.print(capitalized_name)
+let input = "hi there"
+let output = String.capitalize(input)
+
+// output == "Hi there"
 ```
 
-Die Ausgabe wird sein:
+Um sicherzustellen, dass auch die restlichen Buchstaben in der Zeichenfolge im richtigen Format sind, gibt es auch die Funktion `String.capitalize_words`, die jede einzelne Wort in der Zeichenfolge großschreibt.
 
+```Gleam
+let input = "hello gleam programming"
+let output = String.capitalize_words(input)
+
+// output == "Hello Gleam Programming"
 ```
-Max
-```
 
-## Tiefergehend
+## Tiefer Einblick
+Das Kapitalisieren einer Zeichenfolge kann auch manuell mit dem Modul `String` und seinen Funktionen `to_list`, `map` und `from_list` erreicht werden. Dies mag komplexer erscheinen, bietet aber mehr Flexibilität bei der Bearbeitung von Zeichenfolgen.
 
-Obwohl es einfach erscheinen mag, gibt es einige interessante Dinge zu beachten, wenn man einen String in Gleam großschreiben möchte. Zum Beispiel unterstützt die Funktion `String.capitalize` auch Unicode-Zeichen und Umlaute. Außerdem gibt es verschiedene Methoden, um nur einen Teil eines Strings in Großbuchstaben zu konvertieren oder um eine bestimmte Schreibweise beizubehalten. Durch die Verwendung von Gleams Pattern Matching-Konstrukten können wir auch komplexere Logik implementieren, um Strings in bestimmten Fällen zu großschreiben.
+`to_list` konvertiert die Zeichenfolge in eine Liste von Zeichen. Mit `map` und einem Bedingungsausdruck kann dann jeder Buchstabe in der Liste überprüft und gegebenenfalls großgeschrieben werden. Schließlich wird die Liste mit `from_list` wieder in eine Zeichenfolge umgewandelt.
+
+Eine detaillierte Erklärung dieses Prozesses findest du in der Gleam-Dokumentation.
 
 ## Siehe auch
-
-- [Gleam-Dokumentation: `String.capitalize`](https://gleam.run/docs/stdlib/string#capitalize)
-- [Gleam-Dokumentation: Pattern Matching](https://gleam.run/docs/guide/pattern-matching)
-- [Blog-Beitrag: Warum Konsistenz in der Programmierung wichtig ist](https://www.codementor.io/@oleksiychupryna/why-consistency-matters-in-programming-best-practices-ntn06709p)
+- [Die Gleam-Dokumentation zu String-Funktionen](https://gleam.run/articles/strings/)
+- [Ein Tutorial zur Arbeit mit Gleam-Strings](https://dev.to/lee_hodges/working-with-strings-in-gleam-1720)
+- [Ein Beispielprojekt mit Gleam-String-Manipulationen](https://github.com/gleam-lang/gleam_string_examples)

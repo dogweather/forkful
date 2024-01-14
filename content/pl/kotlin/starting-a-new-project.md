@@ -1,56 +1,39 @@
 ---
-title:                "Kotlin: Rozpoczynanie nowego projektu"
+title:                "Kotlin: Rozpoczynając nowy projekt"
+simple_title:         "Rozpoczynając nowy projekt"
 programming_language: "Kotlin"
-category:             "Getting Started"
+category:             "Kotlin"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto zacząć nowy projekt?
+## Dlaczego
 
-Nie ma nic bardziej ekscytującego niż rozpoczynanie nowego projektu! Może chcesz stworzyć aplikację mobilną, strukturę danych lub prosty skrypt - niezależnie od tego, każdy nowy projekt w Kotlinie jest ekscytującym wyzwaniem! Samo programowanie w Kotlinie jest wygodne i intuicyjne, a jego nowoczesna składnia i narzędzia pozwalają na szybkie tworzenie aplikacji. Nie czekaj dłużej i zacznij swoją przygodę z nowym projektem w Kotlinie już dziś!
+Założenie nowego projektu w języku Kotlin może być bardzo ekscytujące i satysfakcjonujące. Kotlin jest nowoczesnym językiem programowania, który oferuje wiele zalet, takich jak czytelny składni, bezpieczeństwo typów i możliwość wykorzystania środowiska JVM. Rozpoczęcie projektu w Kotlinie może pomóc Ci w ulepszeniu swoich umiejętności programistycznych i wzniesieniu Twojego projektu na wyższy poziom.
 
-## Jak zacząć?
+## Jak To Zrobić
 
-Pierwszym krokiem w tworzeniu nowego projektu w Kotlinie jest zainstalowanie odpowiedniego oprogramowania. Wymagane jest pobranie i zainstalowanie JDK (Java Development Kit), a następnie Kotlina jako języka programowania. Po zainstalowaniu możesz wybrać swoje ulubione narzędzie, takie jak IntelliJ IDEA, Android Studio lub inne, aby rozpocząć pracę.
+Pierwszym krokiem przy rozpoczynaniu projektu w języku Kotlin jest oczywiście pobranie i zainstalowanie języka oraz odpowiedniej wersji JDK. Następnie musisz wybrać swoje ulubione IDE, takie jak IntelliJ lub Android Studio, które oferują wiele przydatnych narzędzi do programowania Kotlin. Aby rozpocząć kodowanie, musisz utworzyć nowy projekt i dodać plik z rozszerzeniem ".kt". Następnie możesz zacząć pisać kod, korzystając z przykładowych bloków kodu poniżej:
 
-Zanim zaczniesz pisać kod, warto zapoznać się z podstawową składnią Kotlina. Poniżej przedstawione są przykłady kodu, które pomogą Ci zacząć:
-
-```kotlin
-// Przykład prostej funkcji, która dodaje dwie liczby
-fun dodaj(x: Int, y: Int): Int {
-    return x + y
+```Kotlin
+fun main() {
+    val language = "Kotlin"
+    print("Witaj w $language!") //Output: Witaj w Kotlin!
 }
-
-// Wywołanie funkcji i wyświetlenie wyniku
-val wynik = dodaj(5, 3)
-println(wynik) // Output: 8
-
-// Przykład definicji klasy i tworzenia obiektu
-class Osoba(val imie: String, val nazwisko: String) {
-    fun przedstawSie() {
-        println("Cześć, jestem $imie $nazwisko")
-    }
-}
-
-val osoba = Osoba("Adam", "Kowalski")
-osoba.przedstawSie() // Output: Cześć, jestem Adam Kowalski
 ```
 
-Zobaczysz, że składnia Kotlina jest czytelna i przypomina język angielski, co sprawia, że jest łatwy w użyciu i szybki do nauki. Ponadto, Kotlin jest w pełni interoperacyjny z Javą, co oznacza, że możesz używać istniejących bibliotek i frameworków Javy w swoim projekcie.
+W tym przykładzie tworzymy prostą funkcję "main()", która wypisuje powitanie wraz z wykorzystaniem zmiennej "language". Język Kotlin jest bardzo czytelny i można w nim wykorzystywać wiele zaawansowanych funkcji, takich jak lambdy, wyrażenia warunkowe i wiele innych.
 
-## Głębsze zanurzenie
+## Zanurzenia w Temat
 
-Tworzenie projektów w Kotlinie może być bardzo różnorodne, w zależności od twojego celu. Możesz używać Kotlina do tworzenia aplikacji mobilnych, aplikacji desktopowych, aplikacji serwerowych, czy też używać go do programowania struktur danych lub algorytmów. W zależności od wybranego celu, musisz dostosować swoje podejście.
+Rozpoczęcie nowego projektu w języku Kotlin może wymagać dodatkowych kroków, takich jak ustawienie odpowiednich zależności i konfiguracji projektu. Jednak warto poświęcić czas na zrozumienie wszystkich funkcji i możliwości, jakie oferuje ten język. Możesz również stosować wzorce projektowe i wykorzystywać biblioteki dostępne dla języka Kotlin, aby ułatwić sobie pracę i zwiększyć wydajność projektu.
 
-Jeśli tworzysz aplikację mobilną, możesz wybrać framework Android lub korzystać z Kotlin Multiplatform, który pozwoli Ci tworzyć aplikację dla różnych platform, takich jak Android, iOS, czy też web. Natomiast jeśli tworzysz aplikację desktopową, może przydać Ci się biblioteka Kotlin/Native umożliwiająca kompilację kodu na natywny kod maszynowy.
+## Zobacz także
 
-Pamiętaj również, aby korzystać z dokumentacji Kotlina i wspólnoty programistów, jeśli potrzebujesz pomocy lub inspiracji. Razem możemy stworzyć piękne i funkcjonalne projekty w Kotlinie!
+Jeśli jesteś zainteresowany dalszym zgłębianiem języka Kotlin i rozpoczynaniem nowych projektów, polecamy zapoznać się z następującymi zasobami:
 
-# Zobacz również
-
-- Oficjalna strona Kotlina: https://kotlinlang.org/
-- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/
-- Kotlin Academy - blog o programowaniu w Kotlinie: https://blog.kotlin-academy.com/
-- Reddit Kotlin - społeczność programistów Kotlina: https://www.reddit.com/r/Kotlin/
+- Strona główna języka Kotlin: https://kotlinlang.org/
+- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/home.html
+- Kursy online z Kotlinem: https://www.udemy.com/topic/kotlin/

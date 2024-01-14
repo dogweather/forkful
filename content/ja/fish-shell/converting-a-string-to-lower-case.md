@@ -1,42 +1,48 @@
 ---
-title:                "Fish Shell: 「文字列を小文字に変換する」"
+title:                "Fish Shell: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## なぜ？
+## なぜ 
 
-文字列を小文字に変換することの利点は何でしょうか？一般的に、文字列を小文字に変換することはプログラムの標準形式にすることができるため、データの整形や検索などの処理をしやすくなります。
+文字列を小文字に変換する必要があるのかを1-2文で説明します。
 
-## 使い方
+例えば、日本語のコードで検索する際には平仮名とカタカナの区別をしないようにするために、大文字と小文字の区別がなくなる文字列に変換することが重要です。
 
-```Fish Shell
-set string "Hi, My Name is John."  
-echo $string | tr '[:upper:]' '[:lower:]'
+## 方法 
+
+Fish Shellを使用して文字列を小文字に変換する方法を示します。
+
+```
+# 変換前の文字列
+set message "こんにちは！"
+
+# 変換後の文字列
+set lower_message (string tolower $message)
+
+# 変換結果の出力
+echo $lower_message
+
+# output:
+# こんにちは！
 ```
 
-出力： hi, my name is john.
+## 深く掘り下げる 
 
-`tr`コマンドは、テキストの変換を行うコマンドです。引数に`[:upper:]`と`[:lower:]`を指定することで、大文字を小文字に変換することができます。このコマンドを利用することで、簡単に文字列を小文字に変換することができます。
+文字列を小文字に変換する際、Fish Shellはどのように処理を行っているのでしょうか。
 
-## 深堀り
+まず、`string tolower`コマンドは引数として受け取った文字列をすべて小文字に変換します。そして、変換した文字列を`set`コマンドを用いて新しい変数に格納します。これにより、変換前の文字列と変換後の文字列を比較することができます。
 
-文字列を小文字に変換する方法は、プログラミング言語によって異なりますが、Fish Shellでは`tr`コマンドを使うことができます。これはUNIX系のオペレーティングシステムでよく使われるコマンドで、実際には文字の置換を行うコマンドです。`tr`コマンドの詳細については、[公式ドキュメント](https://fishshell.com/docs/current/cmds/tr.html)を参照してください。
+また、日本語のコードで使用されるひらがなやカタカナは小文字と大文字という概念がないため、`string tolower`コマンドを使用しても変化はありません。しかし、このような場合でも一貫性を保つために変換することは重要です。
 
-さらに、Fish Shellでは`string`コマンドを使うことでも文字列を小文字に変換することができます。こちらは、文字列を変数として定義し、`string`コマンドを利用して変換を行います。詳細な使い方については、[公式ドキュメント](https://fishshell.com/docs/current/cmds/string.html)を参照してください。
+## See Also 
 
-## 併せて読みたい
-
-- [Fish Shell Quickstart](https://fishshell.com/docs/current/tutorial.html)
-- [UNIXコマンドの基本](https://qiita.com/take-yan/items/5b9a91c5fca9dce210bb)
-- [文字列の置換をするコマンドの使い方](https://qiita.com/take-yan/items/09bed116928c42775ca7)
-
-より詳細な内容については、上記リンクを参照してください。
-
-## 参考文献
-
-- [公式ドキュメント](https://fishshell.com/docs/current/index.html)
-- [Tutorial for Unix Commands](http://www.electronics.dit.ie/staff/tscarff/using_unix_commands.html)
+- [Fish Shell 公式サイト](https://fishshell.com/)
+- [Fish Shell ドキュメント](https://fishshell.com/docs/current/)
+- [Fish Shell における文字列操作](https://fishshell.com/docs/current/cmds/string.html)

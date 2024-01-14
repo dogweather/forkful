@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Extrahieren von Teilstrings"
+title:                "Swift: Unterzeichenketten extrahieren"
+simple_title:         "Unterzeichenketten extrahieren"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/extracting-substrings.md"
 ---
 
@@ -9,38 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Extrahieren von Teilstrings oder Teilabschnitten aus einem längeren Text kann in der Programmierung sehr nützlich sein. Zum Beispiel, wenn Sie Benutzereingaben prüfen müssen oder bestimmte Informationen aus einem Text extrahieren möchten. In der Swift Programmierung gibt es verschiedene Möglichkeiten, Teilstrings zu extrahieren, je nach Ihren individuellen Anforderungen.
+Das Extrahieren von Teilstrings kann eine nützliche Funktion in der Swift Programmierung sein, da es es ermöglicht, nur einen Teil eines Texts zu extrahieren, anstatt den gesamten String zu verwenden. Dies kann besonders hilfreich sein, wenn man mit großen Texten arbeitet und nur bestimmte Teile davon benötigt.
 
-## Wie geht das?
+## Wie geht man vor
 
-Um Teilstrings in Swift zu extrahieren, gibt es verschiedene Methoden, die Sie verwenden können. Eine Möglichkeit ist die Verwendung der `substring` Funktion. Hier ist ein Beispiel, wie Sie den dritten bis zum sechsten Buchstaben aus einem String extrahieren können:
-
-```Swift
-let text = "Willkommen"
-let extractedText = text.substring(with: 2..<6) // ergebnis: "llko"
-```
-
-Sie können auch ein spezifisches Wort oder Zeichen als Trennungslinie verwenden, um Teilstrings zu extrahieren. Zum Beispiel, um den zweiten Namen aus einer Liste von Vor- und Nachnamen zu extrahieren:
+Die Extraktion von Teilstrings kann mit der `substring` Funktion in Swift erreicht werden. Hier ist ein Beispielcode, der diesen Prozess veranschaulicht:
 
 ```Swift
-let names = "Maria, Anna, Max"
-let separator = ", "
-let secondName = names.components(separatedBy: separator)[1] // ergebnis: "Anna"
+let string = "Hello World"
+let substring = string.substring(from: 6)
+print(substring) // Output: World
 ```
 
-Es gibt auch eine Shorthand-Syntax für die `substring` Funktion, die es Ihnen ermöglicht, Teilstrings auf eine einfachere Art und Weise zu extrahieren:
+Das `substring` muss mit dem Ausgangsstring und einer startenden Indexposition aufgerufen werden. In diesem Beispiel beginnt der Teilstring mit dem sechsten Zeichen, was dem Buchstaben "W" entspricht.
+
+Es ist auch möglich, die Länge des Teilstrings anzugeben, wenn man nicht den gesamten Rest des Textes extrahieren möchte. In diesem Fall würde der Code folgendermaßen aussehen:
 
 ```Swift
-let text = "Apple"
-let secondToLastChar = text[1...2] // ergebnis: "pp"
+let string = "Hello World"
+let substring = string.substring(from: 6, length: 5)
+print(substring) // Output: World
 ```
+
+Das Argument `length` gibt an, wie viele Zeichen nach dem startenden Index extrahiert werden sollen.
 
 ## Tiefergehende Informationen
 
-Die `substring` Funktion ist nur eine von vielen Möglichkeiten, Teilstrings in Swift zu extrahieren. Es gibt auch andere Methoden wie `prefix`, `suffix` und `index` die je nach Situation nützlich sein können. Es ist wichtig, die verschiedenen Möglichkeiten zu kennen, um das richtige Werkzeug für die jeweilige Aufgabe auszuwählen.
+Man kann auch Teilstrings aus dem Anfang eines Strings extrahieren, indem man die `substring(to:)` Funktion verwendet. Diese nimmt lediglich die endende Indexposition als Argument:
+
+```Swift
+let string = "Hello World"
+let substring = string.substring(to: 5)
+print(substring) // Output: Hello
+```
+
+Wenn man bestimmte Zeichen in einem String als Teilstring extrahieren möchte, kann man die `range(of:)` Funktion verwenden, um die Indexpositionen dieser Zeichen zu finden und dann die `substring` Funktion anzuwenden.
 
 ## Siehe auch
 
-- [Offizielle Swift-Dokumentation zu Teilstrings](https://developer.apple.com/documentation/swift/string/1784955-substring)
-- [Weitere Beispiele für die Verwendung von Teilstrings in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-extract-a-substring-from-a-string-using-indexes)
-- [Ein kurzes Tutorial zur Verwendung von Shorthand-Notation für Teilstrings in Swift](https://medium.com/@johnsundell/swifts-string-refinements-3e72c0d753fe)
+- [Offizielle Swift Dokumentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID283)
+- [Extraktion von Teilstrings in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-extract-a-substring-from-a-string)
+- [Teilstrings mit range(of:) finden](https://www.hackingwithswift.com/example-code/strings/how-to-highlight-substrings-using-nsmutableattributedstring)

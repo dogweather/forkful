@@ -1,51 +1,34 @@
 ---
 title:                "Javascript: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego regularne wyrażenia są ważne w programowaniu?
+## Dlaczego warto korzystać z wyrażeń regularnych?
 
-Regularne wyrażenia są ważnym narzędziem w programowaniu, pozwalającym na skuteczne manipulowanie tekstami i sprawdzanie czy spełniają one określone kryteria. Pozwalają one także na szybkie i prostsze przetwarzanie danych, oszczędzając czas i wysiłek programistów.
+Wyrażenia regularne są bardzo przydatne w programowaniu, ponieważ pozwalają na skuteczne przeszukiwanie tekstu i manipulowanie nim. Dzięki nim możemy znaleźć określone wzorce w tekście, a następnie wykonać określone działania na znalezionych fragmentach. Jest to bardzo pomocne w automatyzacji procesów i skracaniu czasu pracy.
 
-## Jak korzystać z regularnych wyrażeń?
+## Jak korzystać z wyrażeń regularnych?
 
-Aby używać regularnych wyrażeń w języku Javascript, należy użyć wbudowanego obiektu RegExp. Istnieją trzy sposoby na utworzenie obiektu RegExp: literalnie, z wykorzystaniem konstruktora lub wyrażenia z filtrami.
-
-Przykładowe kodowanie using literal:
+Aby korzystać z wyrażeń regularnych w języku Javascript, musimy utworzyć obiekt RegExp, który będzie zawierał nasze wyrażenie i odpowiednie flagi. Przykładowo, jeśli chcemy znaleźć wszystkie wystąpienia słowa "programowanie" w tekście, użyjemy następującego wyrażenia:
 ```Javascript
-var regex = /abc/; 
+let regex = /programowanie/gi;
 ```
+Flaga "g" oznacza globalne przeszukiwanie, a "i" ignoruje wielkość liter. Następnie możemy wykorzystać różne metody tego obiektu, takie jak `test()` czy `match()`, aby znaleźć i wyświetlić pasujące fragmenty tekstu.
 
-Przykładowe kodowanie using constructor:
-```Javascript
-var regex = new RegExp("abc"); 
-```
+## Głębszy wgląd w użycie wyrażeń regularnych
 
-Przykładowe coding using expression with flags:
-```Javascript
-var regex = new RegExp("abc", "gi");
-```
+Wyrażenia regularne oferują wiele możliwości, takich jak wyszukiwanie wzorców, zastępowanie tekstu, grupowanie i wiele innych. Warto również poznać specjalne znaki, takie jak "^" czy "$", które pomagają w określeniu konkretnego kontekstu wyszukiwania. Dobrą praktyką jest również testowanie naszych wyrażeń na różnych danych wejściowych, aby upewnić się, że działa ono zgodnie z oczekiwaniami.
 
-## Zagłębienie
+## Zobacz również
 
-Regularne wyrażenia posiadają szerokie zastosowanie w programowaniu. Pozwalają na wykonywanie różnych operacji, takich jak wyszukiwanie, zastępowanie, rozdzielenie i inne. Są również bardzo przydatne w walidacji formularzy i sprawdzaniu poprawności wprowadzonych danych.
+Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych w języku Javascript, polecamy zapoznać się z poniższymi artykułami:
 
-Poniżej przedstawione są niektóre przydatne wzory, które można wykorzystać przy korzystaniu z regularnych wyrażeń:
-
-- \d - odpowiada dowolnej cyfrze
-- \w - odpowiada dowolnemu znakowi alfanumerycznemu
-- \s - odpowiada dowolnemu białemu znakowi
-- [abc] - odpowiada każdemu ze znaków a, b lub c
-- [^abc] - odpowiada każdemu znakowi, który nie jest a, b lub c
-- ^ - odpowiada początkowi tekstu
-- $ - odpowiada końcowi tekstu
-
-## Zobacz także
-
-- Dokumentacja języka Javascript: https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions
-- Interaktywny tutorial regularnych wyrażeń: https://regexone.com/
-- Narzędzie do testowania i weryfikacji regularnych wyrażeń: https://regex101.com/
+- [MDN Web Docs - Wyrażenia regularne](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [W3Schools - Wyrażenia regularne](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+- [Kurs JavaScript - Wyrażenia regularne](https://kursjs.pl/kurs/regular-exp.php)

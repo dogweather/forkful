@@ -1,7 +1,9 @@
 ---
 title:                "Bash: 텍스트 파일 읽기"
+simple_title:         "텍스트 파일 읽기"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/reading-a-text-file.md"
 ---
 
@@ -9,33 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # 왜
 
-당신이 텍스트 파일을 읽는 것에 대해 관심을 가지고 있을까요? 텍스트 파일을 읽는 것은 프로그래밍에서 매우 중요합니다. 이 기술을 배우면, 당신은 더 많은 정보를 분석하고 가공할 수 있습니다. 게다가, 텍스트 파일을 읽는 것은 쉽고 빠르며 유용합니다.
+쉘 스크립트를 배우는 한국어 독자들에게는 "텍스트 파일 읽기"가 처음 접하는 개념일 수도 있습니다. 이 글을 통해 쉘 스크립트에서 텍스트 파일을 읽는 법을 배우고, 어떤 경우에 이를 활용할 수 있는지 알아보겠습니다.
 
-# 방법
+# 어떻게
 
-텍스트 파일을 읽는 가장 기본적인 방법은 `read` 명령어를 사용하는 것입니다. 예를 들면, 다음과 같은 코드를 사용할 수 있습니다.
+우선 텍스트 파일을 읽는 가장 기본적인 방법은 `cat`을 이용하는 것입니다. 다음과 같은 코드 블록을 통해 예제를 살펴보겠습니다.
 
 ```Bash
-file="example.txt"
-while read line; do
+#!/bin/bash
+
+# hello.txt 파일을 읽어서 내용을 출력합니다.
+cat hello.txt
+```
+
+위 코드를 실행하면 `hello.txt` 파일에 있는 내용이 출력되게 됩니다. 다만, `cat`은 파일 내용을 그대로 출력하는 것이기 때문에 라인별로 내용을 읽을 수 없습니다.
+
+이런 경우 `while` 루프를 사용하면 파일 내용을 한 줄씩 읽을 수 있습니다. 다음 코드를 살펴보겠습니다.
+
+```Bash
+#!/bin/bash
+
+# hello.txt 파일을 한 줄씩 읽어서 변수에 저장하고 출력합니다.
+while read line
+do
   echo "$line"
-done < "$file"
+done < hello.txt
 ```
 
-위의 코드는 텍스트 파일의 모든 줄을 한 줄씩 읽어서 화면에 출력합니다. 여기서 `example.txt`는 당신이 읽고 싶은 파일의 이름입니다. 또 다른 방법으로는 `cat` 이용하여 텍스트 파일의 전체 내용을 확인하는 것입니다. 예를 들면, 다음과 같이 사용할 수 있습니다.
+위 코드에서 `while` 루프를 이용해 파일 내용을 한 줄씩 읽고, `echo`를 이용해 해당 줄을 출력하는 것을 볼 수 있습니다. 이렇게 하면 파일 내용을 라인별로 읽을 수 있게 됩니다.
 
-```Bash 
-cat example.txt
-```
+# 깊게 파고들기
 
-이 명령어는 그저 텍스트 파일의 내용을 확인하는 것이지만, 당신은 여기서 추가적인 가공을 수행할 수도 있습니다. 예를 들면, `grep` 명령어를 사용하여 특정 패턴이나 키워드를 검색할 수 있습니다. 이외에도 `awk` 또는 `sed`를 사용하여 특정 줄 또는 문자열만 추출할 수 있습니다.
+텍스트 파일을 읽는 것은 쉘 스크립트에서 매우 중요한 기능입니다. 파일 내용을 읽어오는 것 뿐만 아니라, 해당 내용을 활용해 다양한 작업을 할 수 있기 때문입니다.
 
-# 딥 다이브
+가령, 파일 내용을 읽어와서 조건문을 통해 특정 단어가 포함되어 있는지 확인하고, 포함되어 있다면 특정 작업을 수행하도록 할 수 있습니다. 또한 읽은 내용을 변수에 저장하고, 이를 다른 변수나 파일에 활용할 수도 있습니다.
 
-텍스트 파일을 읽는 것은 단순한 작업처럼 보일 수 있지만, 실제로는 많은 작업과 원리가 있습니다. 텍스트 파일을 읽을 때, 우리는 파일을 조각조각 나누어 읽는 것입니다. 이러한 조각을 버퍼(Buffer)라고 부릅니다. 파일의 크기가 클 경우, 우리는 버퍼를 여러 번 사용하여 파일을 읽어야 할 수도 있습니다. 또한, 특정 인코딩 방식을 사용하는 파일을 읽을 때 문제가 생기기도 합니다. 이러한 문제들을 해결하기 위해서는 파일 관련 함수들에 대한 깊은 이해가 필요합니다.
+텍스트 파일을 읽는 것은 쉘 스크립트에서의 가장 기본적인 작업 중 하나이기 때문에, 적극적으로 활용해보시기 바랍니다.
 
-# 관련 정보
+# 관련 링크
 
-- [Bash 공식 문서: 파일 읽기](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
-- [Bash Academy: 파일과 스트림 사용하기](https://guide.bash.academy/input-output.html)
-- [셸 프로그래밍에 대한 초보자 가이드](https://www.shellscript.sh/)
+- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+- [리눅스 쉘 스크립트 기초 입문](https://www.dreamy.pe.kr/zbxe/CodeClip/11146172)

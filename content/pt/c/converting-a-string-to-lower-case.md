@@ -1,45 +1,73 @@
 ---
 title:                "C: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por Que
+## Por que
 
-Quando se trabalha com programação, é comum lidar com strings, que são conjuntos de caracteres. Em algumas situações, pode ser necessário alterar o formato de uma string, como por exemplo, transformá-la em letras minúsculas. Neste artigo, vamos explorar como fazer essa conversão em C.
+Se você é um programador iniciante ou experiente, provavelmente já se deparou com a necessidade de converter strings para letras minúsculas em algum momento. Há várias razões pelas quais isso pode ser importante em um projeto de programação, desde a formatação de dados até o processamento de entrada do usuário. Dominar essa habilidade pode facilitar muito o seu trabalho e melhorar a eficácia do seu código.
 
 ## Como Fazer
 
-Para converter uma string para letras minúsculas em C, podemos utilizar a biblioteca string.h e a função strlwr(). Esta função recebe como parâmetro a string que será convertida e retorna a mesma string com todas as letras em minúsculo.
+Há várias maneiras diferentes de converter uma string para letras minúsculas em C. Aqui, vamos mostrar dois exemplos utilizando a função `tolower()` da biblioteca padrão `<ctype.h>` e uma solução usando loops e condicionais.
 
-```
-#include <stdio.h>
-#include <string.h>
+#### Utilizando `tolower()`
 
-int main()
-{
-    char string[20] = "Olá MUNDO";
-    printf("String original: %s\n", string);
-    printf("String em minúsculo: %s\n", strlwr(string));
+````C
+#include <stdio.h> 
+#include <ctype.h> 
 
-    return 0;
+int main() { 
+    char palavra[] = "CASA"; 
+
+    for (int i = 0; palavra[i] != '\0'; i++) { 
+        palavra[i] = tolower(palavra[i]); 
+    } 
+
+    printf("%s", palavra); 
+    // saída será "casa"
+    
+    return 0; 
 }
+````
 
-```
+#### Com loops e condicionais
 
-Neste exemplo, a string original é "Olá MUNDO" e a função strlwr() retorna "olá mundo". Podemos ver que todas as letras foram convertidas para minúsculo.
+````C
+#include <stdio.h> 
+
+int main() {
+    char palavra[] = "CASA"; 
+
+    for (int i = 0; palavra[i] != '\0'; i++) {
+        if (palavra[i] >= 'A' && palavra[i] <= 'Z') { 
+            palavra[i] = palavra[i] + 32; 
+        } 
+    } 
+
+    printf("%s", palavra); 
+    // saída será "casa"
+    
+    return 0; 
+}
+````
+
+Este é apenas um exemplo básico de como isso pode ser feito e é importante lembrar que há várias outras maneiras de alcançar o mesmo resultado. É importante entender a lógica por trás da conversão e escolher a abordagem que melhor se adapta ao seu projeto.
 
 ## Mergulho Profundo
 
-Por trás da função strlwr(), existe um processo de conversão que ocorre. Primeiramente, é importante saber que em C, as letras maiúsculas e minúsculas são representadas por valores diferentes na tabela ASCII. As minúsculas possuem valores mais altos do que as maiúsculas. Dessa forma, quando utilizamos a função strlwr(), ela percorre a string e altera o valor de cada letra para um valor mais alto, resultando em letras minúsculas.
+Agora, vamos dar uma olhada mais profunda no processo de conversão de strings para letras minúsculas. Linguagens de programação usam códigos ASCII para representar caracteres. Para letras maiúsculas, os códigos variam de 65 a 90, enquanto que para letras minúsculas eles vão de 97 a 122. Portanto, simplesmente adicionando 32 ao código ASCII da letra maiúscula, podemos convertê-la para minúscula. No entanto, se a string contiver caracteres especiais ou acentos, pode ser necessário utilizar bibliotecas adicionais para garantir a correta conversão.
 
-No entanto, é importante lembrar que a função strlwr() não funciona com todos os idiomas. Ela funciona apenas com caracteres da língua inglesa. Para lidar com outros idiomas, é necessário utilizar outras funções e técnicas de programação.
+Outra coisa importante a se considerar é o impacto que a conversão pode ter no desempenho do seu código, especialmente se a string for longa. Em alguns casos, pode ser mais eficiente trabalhar com strings em maiúsculas e fazer a conversão apenas quando necessário.
 
 ## Veja Também
 
-- [Documentação do strlwr() em C](https://www.tutorialspoint.com/c_standard_library/c_function_strlwr.htm)
-- [ASCII Table](https://www.asciitable.com/)
-- [Outras funções para lidar com strings em C](https://www.programiz.com/c-programming/c-strings)
+- [Conversão de Strings para Maiúsculas em C](https://www.programiz.com/c-programming/examples/uppercase-string)
+- [Manipulação de Strings em C](https://www.geeksforgeeks.org/string-manipulation-in-c-without-using-library-function/)
+- [Documentação da função `tolower()`](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)

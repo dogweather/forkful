@@ -1,44 +1,47 @@
 ---
-title:                "Go: Konwersja ciągu znaków na małe litery"
+title:                "Go: Zmiana ciągu znaków na małe litery"
+simple_title:         "Zmiana ciągu znaków na małe litery"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Dlaczego
- Konwersja ciągu znaków na małe litery może być niezbędna w wielu sytuacjach w programowaniu. Na przykład, gdy chcemy porównać dwa ciągi znaków bez względu na wielkość liter, używając funkcji konwersji na małe litery możemy uprościć ten proces.
+
+Dlaczego ktoś chciałby przekonwertować ciąg znaków na małe litery? Jest kilka powodów dla których moglibyśmy to zrobić. Przede wszystkim, może to być potrzebne w celu ujednolicenia danych wejściowych, tak aby niezależnie od przypadków liter w ciągu, był on traktowany jako to samo słowo. Może być również przydatne przy porównywaniu i sortowaniu tekstów.
 
 ## Jak to zrobić
+
+Aby przekonwertować ciąg znaków na małe litery w języku Go, możemy użyć funkcji `strings.ToLower()` lub `strings.ToLowerSpecial()` w połączeniu z pakietem `strings`. Oto przykłady kodu, który pokazują jak to zrobić:
+
 ```Go
 package main
 
-import "fmt"
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-    str1 := "PROGRAMOWANIE"
-    fmt.Println("Pierwotny ciąg: ", str1)
-    fmt.Println("Ciąg po konwersji na małe litery: ", strings.ToLower(str1))
-
-    str2 := "Go"
-    fmt.Println("Pierwotny ciąg: ", str2)
-    fmt.Println("Ciąg po konwersji na małe litery: ", strings.ToLower(str2))
+	str := "HELLO WORLD"
+	fmt.Println(strings.ToLower(str)) //output: hello world
+	fmt.Println(strings.ToLowerSpecial(unicode.TurkishCase, "Istanbul")) //output: istanbul
 }
 ```
-Output:
-```
-Pierwotny ciąg: PROGRAMOWANIE
-Ciąg po konwersji na małe litery: programowanie
-Pierwotny ciąg: Go
-Ciąg po konwersji na małe litery: go
-```
 
-## Głębszy wykład
-Konwersja ciągu znaków na małe litery w języku Go może zostać wykonana za pomocą funkcji `strings.ToLower ()`. Jest to funkcja, która zwraca kopię ciągu znaków z wszystkimi literami przekształconymi na małe. Ważne jest, aby pamiętać, że funkcja ta nie zmienia oryginalnego ciągu znaków, ale zwraca jego zmienioną kopię. Oznacza to, że oryginalny ciąg pozostaje bez zmian, a funkcja zwraca nowy ciąg. 
+Jak widać, obie funkcje zwracają przekonwertowany ciąg znaków, w którym wszystkie litery są małe. W przypadku użycia `ToLowerSpecial()`, możemy określić język i styl pisania, aby uzyskać odpowiednią konwersję.
+
+## Pod lupą
+
+Przeglądając dokładniej funkcje `ToLower()` i `ToLowerSpecial()`, możemy zauważyć, że obie używają metody `unicode.SimpleFold()` do przeprowadzenia konwersji. Metoda ta mapuje bieżące znaki na ich składnik, a następnie używa funkcji `unicode.ToLower()` dla każdego z tych składników.
+
+Funkcja `ToLowerSpecial()` używa metod `unicode.SimpleFold()` oraz `unicode.SpecialCase.ToLower()` aby obsłużyć różne przypadki specjalne w różnych językach.
 
 ## Zobacz również
-- Dokumentacja języka Go na temat konwersji ciągów znaków: https://golang.org/pkg/strings/#ToLower
-- Porównywanie ciągów znaków bez uwzględniania wielkości liter w języku Go: https://www.golangprograms.com/go-language/builtin-package/strings.html#adf
-- Dyskusja na temat różnych metod konwertowania ciągów znaków na małe litery w języku Go: https://stackoverflow.com/questions/45668712/golang-why-is-strings-tolower-preferred-over-strings-map-unicode-tolower
+
+- Dokumentacja Go dla pakietu `strings`: https://golang.org/pkg/strings/
+- Dokumentacja Go dla pakietu `unicode`: https://golang.org/pkg/unicode/
+- Przykładowy kod na konwersję ciągu znaków na małe litery: https://play.golang.org/p/Q2DeuYNL051

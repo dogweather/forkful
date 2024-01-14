@@ -1,7 +1,9 @@
 ---
 title:                "Elm recipe: Capitalizing a string"
+simple_title:         "Capitalizing a string"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/capitalizing-a-string.md"
 ---
 
@@ -9,41 +11,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Capitalize Strings in Elm
-
-Capitalizing strings is a common task in programming, and in Elm, it can easily be done using built-in functions. In this blog post, we will explore how to capitalize strings in Elm and why it may be useful in certain scenarios.
+Capitalizing strings may seem like a simple task, but it is a common requirement in programming. Whether you are creating a form for user input or formatting text for display, capitalization can greatly enhance the readability and aesthetics of your code. In this post, we will explore how to capitalize strings in Elm and why it is an important skill for any programmer to have.
 
 ## How To
 
-To capitalize a string in Elm, we can use the `toUpper` function from the `String` module. This function takes in a string and returns a new string with all characters converted to uppercase.
+In Elm, there are a few different ways to capitalize a string depending on your specific needs. Let's take a look at some examples using the `String` module:
 
 ```
-Elm String.toUpper
+-- Capitalize the first letter of a string
+String.capitalize "elm" --> "Elm"
 
--- Example usage
-string = "hello world"
-capitalized = String.toUpper string
--- Output: "HELLO WORLD"
+-- Capitalize all letters in a string
+String.toUpper "elm" --> "ELM"
 ```
 
-We can also use the `toUpperFirst` function to capitalize only the first character of a string.
+As you can see, the `String.capitalize` and `String.toUpper` functions are the main tools for capitalization in Elm. These functions work on Unicode characters, making them suitable for languages with non-Latin characters.
+
+If you want to capitalize only the first letter of each word in a string, you can use the `String.words` and `List.map` functions in combination with `String.capitalize`.
 
 ```
-Elm String.toUpperFirst
+-- Capitalize first letter of each word in a string
+words = String.words "elm programming is awesome!"
+List.map String.capitalize words --> ["Elm", "Programming", "Is", "Awesome!"]
+```
 
--- Example usage
-string = "hello world"
-capitalized = String.toUpperFirst string
--- Output: "Hello world"
+Another useful technique for capitalization is pattern matching. This allows you to create custom rules for capitalizing strings based on certain criteria.
+
+```
+-- Capitalize string based on length
+firstLetter = \word ->
+    String.left 1 word
+        |> String.toUpper
+
+otherLetters = \word ->
+    String.dropLeft 1 word
+
+capitalizedString = \word ->
+    case String.length word of
+        0 -> ""
+        1 -> word
+        _ -> firstLetter word ++ otherLetters word
+
+capitalizedString "elm" --> "Elm"
+capitalizedString "Programming" --> "Programming"
 ```
 
 ## Deep Dive
 
-In Elm, strings are immutable, which means they cannot be changed in-place. Therefore, when we use `toUpper` or `toUpperFirst` functions, they return a new string instead of modifying the original one.
+In addition to the `String` module, there is also the `Text` module in Elm which provides more advanced features for capitalization. The `Text` module uses a type-safe approach to working with text, ensuring that your code won't compile if you try to perform invalid operations.
 
-Additionally, these functions work with Unicode characters, making them suitable for internationalization. Elm also provides other string functions that can be useful in manipulating and formatting strings, such as `trim`, `split`, and `join`.
+One useful function in the `Text` module is `Text.toTitle`. This takes a string and capitalizes the first letter of each word, while converting the rest of the letters to lowercase.
+
+```
+import Text exposing (toTitle)
+
+toTitle "elm programming" --> "Elm Programming"
+```
+
+Another helpful function in the `Text` module is `Text.toUpperFirst`. This allows you to capitalize only the first letter of a string, while keeping the rest of the letters in lowercase.
+
+```
+toUpperFirst "elm" --> "Elm"
+toUpperFirst "PrograMMIng" --> "Programming"
+```
 
 ## See Also
 
-- Official Elm Documentation for Strings: https://package.elm-lang.org/packages/elm/core/latest/String
-- Elm Programming Language Website: https://elm-lang.org/
+Now that you know how to capitalize strings in Elm, here are some additional resources to continue your learning journey:
+
+- [Official Elm documentation on the `String` module](https://package.elm-lang.org/packages/elm/string/latest/)
+- [Official Elm documentation on the `Text` module](https://package.elm-lang.org/packages/elm/text/latest/)
+- [Elm in Action book](https://www.manning.com/books/elm-in-action)
+- [Elm community website for more helpful resources](https://elm-lang.org/community)

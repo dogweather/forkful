@@ -1,44 +1,64 @@
 ---
 title:                "C: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché (Why)
 
-Molti programmatori si trovano spesso ad affrontare il problema di estrarre una sottostringa da una stringa più grande in C. Magari si vuole ottenere solamente una parte di una stringa più lunga o si vuole manipolare una stringa per ottenere un output specifico. In questo caso, l'estrazione di sottostringhe può essere una tecnica molto utile e ci permette di gestire le stringhe in modo più flessibile.
+Estrarre delle sottostringhe è un'operazione comune nella programmazione e può essere molto utile per molteplici motivi. Ad esempio, potresti dover manipolare dei dati di input per ottenere solo le informazioni che ti interessano, oppure dover effettuare delle operazioni su una parte specifica di una stringa. Imparare come estrarre delle sottostringhe può quindi semplificare il tuo codice e rendere il tuo programma più efficiente.
 
-## Come fare
+## Come (How To)
 
-Per estrarre una sottostringa in C, possiamo utilizzare la funzione `strncpy()` che copia un numero specificato di caratteri da una stringa di origine ad una stringa di destinazione. La sintassi per utilizzare questa funzione è la seguente:
+Per estrarre una sottostringa da una stringa in C, è possibile utilizzare la funzione `strncpy()`. Questa funzione prende come argomenti la stringa di destinazione, la stringa di origine e il numero di caratteri da copiare.
 
 ```C
-strncpy(dest, source, n)
-```
-dove `dest` è la stringa di destinazione in cui verrà copiata la sottostringa, `source` è la stringa di origine da cui verranno estratti i caratteri e `n` è il numero di caratteri da copiare.
+#include <stdio.h>
+#include <string.h>
 
-Ad esempio, se vogliamo estrarre i primi 5 caratteri di una stringa `str`, possiamo utilizzare la funzione `strncpy()` in questo modo:
+int main(){
+    char str1[50] = "Ciao a tutti!";
+    char str2[50];
+
+    // Estrarre i primi 4 caratteri di str1 e copiarli in str2
+    strncpy(str2, str1, 4);
+
+    printf("%s\n", str2); // Output: Ciao
+
+    return 0;
+}
+```
+
+La funzione `strncpy()` può avere delle limitazioni, in quanto se la stringa di origine è più corta della stringa di destinazione, potrebbero essere copiati dei caratteri indesiderati alla fine. In questi casi, è possibile utilizzare la funzione `strncat()` per concatenare la stringa di origine alla stringa di destinazione solo fino a quando non è stata copiata la giusta quantità di caratteri.
+
 ```C
-char str[10] = "Ciao mondo";
-char sub[6];
-strncpy(sub, str, 5);
-printf("La sottostringa è %s", sub);
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char str1[50] = "Ciao a tutti!";
+    char str2[50];
+
+    // Estrarre i primi 4 caratteri di str1 e concatenarli a str2
+    strncat(str2, str1, 4);
+
+    printf("%s\n", str2); // Output: Ciao
+
+    return 0;
+}
 ```
-Questo produrrà l'output `La sottostringa è Ciao`.
 
-È importante notare che la sottostringa estratta non avrà un carattere terminatore `\0` alla fine, quindi dobbiamo assicurarci di aggiungerlo manualmente alla fine della sottostringa se vogliamo utilizzarla come una stringa completa.
+## Deep Dive
 
-## Approfondimento
+Per comprendere appieno il funzionamento della funzione `strncpy()`, è importante sapere che questa funzione aggiunge un carattere speciale di terminazione `'\0'` alla fine della stringa di destinazione, per indicare la fine della stringa. È quindi importante che la stringa di destinazione abbia una dimensione sufficientemente grande da poter contenere tutti i caratteri desiderati e il carattere di terminazione.
 
-La funzione `strncpy()` non solo ci permette di estrarre una sottostringa da una stringa di origine, ma ci consente anche di specificare la lunghezza della sottostringa desiderata. In questo modo, possiamo estrarre sia una sottostringa di lunghezza fissa che una sottostringa di lunghezza variabile.
+## Vedi Anche (See Also)
 
-Inoltre, C offre anche altre funzioni per l'estrazione di sottostringhe, come ad esempio `strncat()` e `substring()`. È importante leggere la documentazione di queste funzioni per capire come utilizzarle correttamente e quali potrebbero essere i loro limiti.
-
-## Vedi anche
-
-1. [Documentazione ufficiale di C](https://devdocs.io/c/)
-2. [Come usare le funzioni di stringa in C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-3. [Esempi di codice per lavorare con stringhe in C](https://www.includehelp.com/c/string-functions-in-c-learnc.aspx)
+- [Funzioni di manipolazione delle stringhe in C (in italiano)](https://www.programmareinlinguaggio.com/le-funzioni-per-manipolare-le-stringhe-in-c/)
+- [Documentazione ufficiale della funzione `strncpy()` (in inglese)](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)
+- [Estrarre una stringa di caratteri da una stringa in C (in inglese)](https://www.geeksforgeeks.org/extract-a-substring-from-a-string-in-c/)

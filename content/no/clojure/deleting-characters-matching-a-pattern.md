@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Slette tegn som samsvarer med et mønster"
+title:                "Clojure: Sletting av tegn som matcher et mønster"
+simple_title:         "Sletting av tegn som matcher et mønster"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,33 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Noen ganger kan vi finne oss selv i situasjoner der vi trenger å slette tegn som matcher et bestemt mønster i en streng. Dette kan være nyttig for å rydde opp i data, formatere tekst eller filtrere ut uønskede tegn. Å forstå hvordan man kan utføre denne handlingen i Clojure kan være nyttig for å effektivisere og optimalisere kode.
+Noen ganger kan det hende vi trenger å slette spesifikke tegn som matcher et mønster i en tekststreng. Dette kan være nyttig når vi trenger å rense data eller filtrere ut uønskede tegn. I denne bloggposten vil vi utforske hvordan vi kan gjøre dette ved hjelp av Clojure-programmering.
 
-## Hvordan Du Gjør Det
+## Hvordan
 
-I Clojure kan vi bruke funksjonen `clojure.string/replace` for å erstatte deler av en streng basert på et gitt mønster. For å slette tegn som matcher et mønster, kan vi bruke et tomt streng som erstatning. Her er et eksempel på hvordan dette vil se ut:
-
-```Clojure
-(require '[clojure.string :as str])
-(str/replace "Hello world!" #"[aeiou]" "")
-```
-Dette vil gi oss outputen "Hll wrld!", siden alle vokaler i strengen har blitt slettet.
-
-Vi kan også bruke et regex-uttrykk for å spesifisere hvilke tegn vi ønsker å slette. I dette eksempelet vil vi slette alle tall fra en streng:
+For å slette tegn som matcher et mønster, kan vi bruke funksjonen `clojure.string/replace` i Clojure. Denne funksjonen tar inn en tekststreng, et mønster og en erstatning og returnerer en ny tekststreng med de matchende tegnene erstattet med ønsket erstatning.
 
 ```Clojure
-(str/replace "I have 5 apples" #"\d" "")
+(clojure.string/replace "Dette er en tekst som inneholder tall 123" #"[\d]" "")
+; "Dette er en tekst som inneholder tall "
 ```
-Outputen vil da bli "I have apples".
 
-## Dypdykk
+Her sletter vi alle tall i tekststrengen ved å bruke mønsteret `#"[d]"` som matcher alle tall i strengen. Vi erstatter de matchende tegnene med et tomt tegn `""` som bare sletter dem.
 
-I tillegg til å bruke `clojure.string/replace`, kan vi også bruke funksjonen `clojure.string/replace-first` for å slette kun det første tegnet som matcher mønsteret. Dette kan være nyttig hvis vi ønsker å fjerne kun en del av strengen.
+La oss se et annet eksempel der vi ønsker å slette alle vokaler fra en tekststreng:
 
-Vi kan også kombinere flere mønstre ved å bruke `clojure.string/replace-pattern`. Dette vil tillate oss å slette ulike typer tegn fra en streng basert på flere forskjellige mønstre.
+```Clojure
+(clojure.string/replace "Dette er en tekst med vokaler" #"aeiou" "")
+; "Dtt r n txt m vklr"
+```
 
-## Se Også
+I dette tilfellet bruker vi mønsteret `#"aeiou"` som matcher alle vokaler i tekststrengen. Vi erstatter de matchende tegnene med et tomt tegn `""` for å slette dem.
 
-- [Clojure's string manipulation functions](https://clojuredocs.org/clojure.string)
-- [Regular expressions in Clojure](https://clojuredocs.org/clojure.core/re-find)
-- [Tutorial on replacing characters in strings in Clojure](https://www.guru99.com/clojure-string-manipulations.html)
+## Gå i dybden
+
+Det er også mulig å bruke regulære uttrykk i mønsteret for å utføre mer avansert sletting av tegn. Vi kan for eksempel bruke `#"[\p{Punct}]"` for å slette alle tegn som regnes som tegnsetting i teksten. Dette vil inkludere tegn som komma, punktum, utropstegn osv.
+
+Vi kan også bruke funksjonen `clojure.string/replace-first` for å bare slette det første mønsteret som matcher i tekststrengen. Dette kan være nyttig når vi bare ønsker å fjerne en spesifikk forekomst av et tegn eller et mønster.
+
+```Clojure
+(clojure.string/replace-first "Dette er en tekst med flere tegn !" #"tegn" "")
+; "Dette er en tekst med flere !"
+```
+
+Som du kan se, har bare den første forekomsten av "tegn" blitt slettet, selv om det var flere.
+
+## Se også
+
+- Clojure dokumentasjon for `clojure.string/replace` og `clojure.string/replace-first`: https://clojuredocs.org/clojure.string/replace, https://clojuredocs.org/clojure.string/replace-first
+- Regulære uttrykk i Clojure: https://clojuredocs.org/clojure.repl/doc
+- Bruk av Clojure funksjoner i strenger: https://clojure.or.id/en/slot/2011/04/clojure-core-important-library-string-function/

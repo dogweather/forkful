@@ -1,61 +1,44 @@
 ---
-title:                "Ruby: Lecture des arguments de la ligne de commande"
+title:                "Ruby: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
-
-L'utilisation d'arguments en ligne de commande est un aspect important de la programmation en Ruby, car cela permet aux utilisateurs de passer des paramètres à un programme lorsqu'il est exécuté. Ce sont ces arguments qui peuvent rendre un programme plus flexible et permettre l'automatisation des processus.
+# Pourquoi lire les arguments de la ligne de commande en Ruby
+La lecture des arguments de la ligne de commande est une compétence essentielle pour tout programmeur Ruby. Cela vous permet de passer des paramètres à votre programme lors de son exécution, ou de fournir des informations supplémentaires au programme pendant son exécution. Cela peut également vous aider à automatiser certaines tâches et à rendre votre code plus flexible. Dans cet article, nous allons couvrir les bases de la lecture des arguments de la ligne de commande en Ruby.
 
 ## Comment faire
-
-La lecture des arguments en ligne de commande dans Ruby est assez simple et peut être réalisée en quelques étapes faciles. Tout d'abord, nous devons utiliser la variable globale `ARGV` pour stocker tous les arguments entrés par l'utilisateur. Ensuite, nous pouvons utiliser des méthodes de manipulation de tableaux, telles que `shift` ou `slice`, pour extraire les arguments individuels du tableau.
+Pour lire les arguments de la ligne de commande en Ruby, vous pouvez utiliser la variable globale `ARGV`. Cette variable contient un tableau avec tous les arguments passés à votre programme lors de son exécution. Voici un exemple :
 
 ```Ruby
-# Exemple de code pour lire les arguments en ligne de commande
+# code exemple
 ARGV.each do |arg|
-  puts "Argument : #{arg}"
+  puts "Argument passé : #{arg}"
 end
-
-# Output de la commande : ruby arguments.rb arg1 arg2 arg3
-# Output du code ci-dessus :
-# Argument : arg1
-# Argument : arg2
-# Argument : arg3
 ```
 
-Vous pouvez également utiliser des options telles que `OptionParser`, qui vous permettent de définir des options avec des valeurs spécifiques pour vos arguments en ligne de commande. Cela peut être utile pour spécifier des paramètres obligatoires ou facultatifs pour votre programme.
+Si vous exécutez le programme ci-dessus en tapant `ruby mon_programme.rb un_argument deux_arguments`, vous obtiendrez la sortie suivante :
 
-```Ruby
-# Exemple de code avec OptionParser
-require 'optparse'
-
-options = {}
-OptionParser.new do |opts|
-  opts.on("-f", "--format FORMAT", "Specify output format") do |format|
-    options[:format] = format
-  end
-end.parse!
-
-puts "Output format : #{options[:format]}"
-
-# Output de la commande : ruby arguments.rb -f csv
-# Output du code ci-dessus :
-# Output format : csv
 ```
+Argument passé : un_argument
+Argument passé : deux_arguments
+```
+
+Comme vous pouvez le voir, chaque argument est stocké comme une chaîne de caractères dans le tableau `ARGV`.
 
 ## Plongée en profondeur
+Il y a quelques points importants à garder à l'esprit lors de la lecture des arguments de la ligne de commande en Ruby. Tout d'abord, la première valeur du tableau `ARGV` sera toujours le nom du fichier Ruby que vous exécutez. Cela peut être utile si vous devez spécifier des fichiers d'entrée ou de sortie dans votre programme.
 
-En plus de ces méthodes de base, il existe également des bibliothèques tierces telles que `ARGV Wizard` qui offrent des fonctionnalités avancées pour la lecture des arguments en ligne de commande. Elles peuvent inclure des validations et des options de configuration supplémentaires pour améliorer encore plus l'expérience de l'utilisateur.
+Deuxièmement, les arguments passés à votre programme seront séparés par des espaces. Si vous avez besoin de passer des arguments contenant des espaces, vous devrez les entourer de guillemets doubles (") ou simples ('). Sinon, les espaces seront considérés comme des séparateurs et vos arguments seront incorrects.
 
-Il est également important de noter que les arguments en ligne de commande peuvent être utilisés avec d'autres aspects du langage Ruby, tels que les scripts ou les programmes en ligne de commande. Cela les rend extrêmement polyvalents et utiles pour une variété de projets.
+Enfin, vous pouvez également spécifier des options courtes et longues en utilisant la gem `optparse`. Cela vous permettra de définir des options avec des noms explicites et de les utiliser dans votre programme. Vous pouvez en savoir plus sur la gem `optparse` en consultant la [documentation officielle](https://ruby-doc.org/stdlib-2.7.0/libdoc/optparse/rdoc/OptionParser.html).
 
-## Voir aussi
-
-- [Guide Ruby sur les arguments en ligne de commande](https://www.rubyguides.com/2018/06/ruby-argv/)
-- [Documentation officielle de Ruby sur les options de ligne de commande](https://ruby-doc.org/core-2.6/OptionParser.html)
-- [RubyGems : ARGV Wizard](https://rubygems.org/gems/argv_wizard)
+# Voir aussi
+- [Documentation sur la variable globale ARGV](https://ruby-doc.org/core/ARGF.html)
+- [Tutoriel sur la gem optparse](https://www.rubyguides.com/2018/10/ruby-optionsparser/)
+- [Autre exemple de lecture des arguments de la ligne de commande en Ruby](https://www.devdungeon.com/content/ruby-getting-command-line-arguments)

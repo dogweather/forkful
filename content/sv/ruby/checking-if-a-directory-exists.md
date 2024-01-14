@@ -1,45 +1,51 @@
 ---
-title:                "Ruby: Kontrollera om en mapp existerar"
+title:                "Ruby: Kontrollera om en mapp finns"
+simple_title:         "Kontrollera om en mapp finns"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-##Varför
-Att kontrollera om en katalog existerar är en viktig del av Ruby-programmering. Det hjälper dig att undvika fel och förhindra att din kod kraschar om filer eller kataloger inte finns.
+# Varför
 
-##Hur man gör
-Det finns flera olika sätt att kontrollera om en katalog existerar i Ruby. Ett sätt är att använda File.exist?() metoden. Här är ett exempel på hur du kan använda den:
+I programmering är det alltid viktigt att hantera olika scenarier och möjliga felaktiga beteenden som kan uppstå. En av dessa situationer är att kontrollera om en mapp eller katalog existerar på en viss sökväg. Detta är en viktig åtgärd för att säkerställa att vår kod inte kraschar eller ger felaktiga resultat.
+
+# Så här gör du
+
+Vi använder oss av Ruby-metoden `Dir.exist?` för att kontrollera om en mapp finns på en specifik sökväg. Detta returnerar en boolesk värde som antingen är sant om mappen existerar eller falskt om den inte gör det.
 
 ```Ruby
-if File.exist?(“/hemanvandare/dokumenter”)
-  puts “Katalogen existerar!”
+# Skapar en sökväg och kontrollerar om den existerar
+path = "./min_mapp"
+puts Dir.exist?(path) # Returnerar false
+
+# Skapar en mapp och kontrollerar igen
+Dir.mkdir(path)
+puts Dir.exist?(path) # Returnerar true
+```
+
+Om vi vill göra en specifik åtgärd om mappen existerar eller inte, kan vi använda en `if`-sats tillsammans med `Dir.exist?`:
+
+```Ruby
+if Dir.exist?(path)
+  puts "Mappen existerar redan"
 else
-  puts “Katalogen finns inte.”
+  Dir.mkdir(path)
+  puts "Mappen skapad"
 end
 ```
 
-I detta exempel använder vi File.exist?() metoden för att kolla om katalogen "dokumenter" existerar i mappen "hemanvandare". Om den gör det, skrivs ett meddelande ut som säger att katalogen existerar. Om den inte gör det, skrivs ett annat meddelande ut.
+# Djupdykning
 
-För att kontrollera om en katalog existerar i en annan mapp, kan du ändra sökvägen i File.exist?() metoden. Till exempel, om du vill kontrollera om en katalog existerar i "desktop" mappen, kan du använda "/hemanvandare/desktop/katalogen".
+Bortsett från metoden `Dir.exist?`, finns det också andra sätt att kontrollera om en mapp existerar. Till exempel kan vi använda oss av `File.exist?` som kontrollerar om en fil med ett visst namn existerar och returnerar samma booleska värde. Detta kan vara användbart om vi bara vill kontrollera en specifik fil inuti en mapp.
 
-##Djupdykning
-Det finns också andra sätt att kontrollera om en katalog existerar i Ruby. En annan metod är Dir.exist?(), som gör exakt samma sak som File.exist?() metoden, men den är speciellt för kataloger. Här är ett exempel:
+Det är också viktigt att notera att `Dir.exist?` endast kontrollerar om mappen finns på en specificerad sökväg. Om sökvägen innehåller flera undermappar, kommer denna metod inte kontrollera om alla undermappar också existerar. I sådana fall rekommenderas det att använda sig av en mer detaljerad kontroll, till exempel att använda `Dir.glob` för att få en lista över alla undermappar och sedan kontrollera varje enskild mapp.
 
-```Ruby
-if Dir.exist?(“/hemanvandare/dokumenter”)
-  puts “Katalogen existerar!”
-else
-  puts “Katalogen finns inte.”
-end
-```
+# Se också
 
-Det finns också möjlighet att använda Dir.glob() metoden för att kontrollera om en katalog existerar. Denna metod används för att hitta filer eller mappar som matchar ett visst mönster. Om Du vill läsa mer om dessa metoder kan du använda Ruby-dokumentationen för att få mer information och fler exempel.
-
-##Se även
-- Ruby-dokumentationen för File, Dir, och Glob klasserna:
-  - https://ruby-doc.org/core-3.0.0/File.html
-  - https://ruby-doc.org/core-3.0.0/Dir.html
-  - https://ruby-doc.org/core-3.0.0/Dir.html#method-c-glob
+- [Ruby Dokumentation om `Dir.exist?`](https://ruby-doc.org/core/Dir.html#method-c-exist-3F)
+- [Ruby Dokumentation om `File.exist?`](https://ruby-doc.org/core/File.html#method-c-exist-3F)
+- [Tutorial: How to Check if a Directory Exists in Ruby](https://www.rubyguides.com/2019/10/ruby-check-if-directory-exists/)

@@ -1,37 +1,40 @@
 ---
-title:                "Elm: Päivämäärän muuttaminen merkkijonoksi"
+title:                "Elm: Päivämäärän muuntaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Miksi
-Elm-ohjelmointi kiehtoo monia ohjelmoijia sen yksinkertaisuuden ja vakaan rakenteen takia. Mutta yksinkertaisuus ei tarkoita, että sen ominaisuudet ovat rajoitettuja. Tässä artikkelissa tutustumme siihen, kuinka muunnetaan päivämäärä merkkijonoksi Elm-ohjelmassa ja miksi tämä on hyödyllistä.
 
-## Kuinka tehdä
-Koodiesimerkkien avulla näytämme, kuinka päivämäärä voidaan muuntaa merkkijonoksi käyttämällä Elm-kirjastojen tarjoamia valmiita toimintoja. Käyttämällä funktioita kuten `format`, `Date.toMillis` ja `Time.Posix`, voimme helposti muuttaa päivämäärän halutun muotoiseksi ja tulostaa sen merkkijonona.
+Monissa ohjelmointikielissä päivämäärän muuttaminen merkkijonoksi voi olla monimutkaista ja haastavaa. Elm-kielessä tämä prosessi on kuitenkin yksinkertaista ja helppoa, mikä tekee siitä hyvän vaihtoehdon päivämäärämuotojen käsittelyyn.
+
+## Miten
+
+Elm-kielessä päivämäärän muuttaminen merkkijonoksi tapahtuu `Date.toIsoString`-funktiolla. Tämä funktio ottaa parametrinaan päivämäärämuuttujan ja palauttaa sen merkkijonona ISO 8601 -standardin mukaisessa muodossa.
 
 ```Elm
-import Date exposing (Date)
-import Date.Format as Format
-import Time exposing (Posix)
+import Date exposing (..)
 
-date : Date
-date =
-  Date.fromCalendarDate 2020 1 15
+dateToString : Date -> String
+dateToString date =
+  Date.toIsoString date
 
-Format.custom "dd.MM.yyyy" (Date.toMillis date)
-    -- Output: "15.01.2020"
+main =
+  dateToString (Date.fromYMD 2021 03 08)
 
-Format.rfc2822 (Posix.millisToPosix (Date.toMillis date))
-    -- Output: "Wed, 15 Jan 2020 00:00:00 +0000"
+-- Output: "2021-03-08"
 ```
 
-## Syvällinen sukellus
-Päivämäärän muuntaminen merkkijonoksi on hyödyllistä, kun ohjelmoijan täytyy näyttää päivämäärä käyttäjälle selkeässä ja ymmärrettävässä muodossa. Mutta tämä toiminto voi myös olla hyödyllinen datan käsittelyssä ja vertailussa. Esimerkiksi voimme käyttää `Date.toMillis`-funktiota muuttaaksemme päivämäärän millisekunteina, jolloin voimme helposti vertailla kahta päivämäärää ja laskea niiden välisen eron.
+## Syvempi sukellus
+
+Elm-kielessä päivämäärät ovat kokonaislukuja, joiden arvo on millisekunteina kulunut aika 1. tammikuuta 1970 klo 00:00:00 UTC:sta lähtien. `Date.fromYMD`-funktio muuntaa annetut vuosi, kuukausi ja päivä kokonaisluvuksi, jota `Date.toIsoString`-funktio käyttää muodostaakseen oikeanlaisen merkkijonon.
 
 ## Katso myös
-- [Date-moduulin dokumentaatio](https://package.elm-lang.org/packages/elm/time/latest/Time)
-- [Time-moduulin dokumentaatio](https://package.elm-lang.org/packages/elm/time/latest/Time)
+
+- [Elm-kieen virallinen dokumentaatio](https://guide.elm-lang.org/dates_and_times.html)
+- [ISO 8601 -standardi](https://en.wikipedia.org/wiki/ISO_8601)

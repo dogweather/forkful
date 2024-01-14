@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: Utskrift av felsökningsutdata"
+simple_title:         "Utskrift av felsökningsutdata"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/arduino/printing-debug-output.md"
 ---
 
@@ -9,29 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att skriva debug output är ett viktigt verktyg för att felsöka och förbättra din Arduino kod. Genom att skriva ut variabler, värden och meddelanden kan du bättre förstå vad som händer i din kod och identifiera eventuella problem. Det är också ett bra sätt att följa med i koden och se hur olika värden ändras under körningen.
+Att skriva debug-utdata är en viktig del av programmering med Arduino. Det kan hjälpa dig att förstå hur din kod fungerar och hitta eventuella problem som kan dyka upp.
 
-## Så här gör du
+## Såhär gör du
 
-För att skriva debug output i Arduino kan du använda funktionen "Serial.print()". Den tar som argument den variabel eller det värde du vill skriva ut. Du kan också använda "Serial.println()" för att lägga till en radbrytning efter varje utskrift.
+För att skriva debug-utdata så behöver du använda funktionen `Serial.print ()` i dina Arduino-program. Den här funktionen skriver ut text eller numeriska värden till serieporten på din Arduino. Här är ett enkelt exempel på hur du kan skriva ut text och ett numeriskt värde:
 
-```Arduino
-int sensorValue = 0; // Skapa en variabel för att lagra sensordata
-sensorValue = analogRead(A0); // Läs av analoga pinnen A0
-Serial.print("Sensordata: "); // Skriv ut en text följt av värdet
-Serial.println(sensorValue); // Skriv ut sensordata och en radbrytning
+```
+Arduino
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.print("Hello world!");
+  int value = 42;
+  Serial.print("The answer is: ");
+  Serial.print(value);
+  delay(1000); //vänta en sekund innan nästa utskrift
+}
 ```
 
-Det finns också möjlighet att använda "Serial.write()" för att skriva ut binär data, eller "Serial.printf()" för att formatera utskriften på ett mer specifikt sätt.
+I det här exemplet kan du se att vi först behöver initiera serieporten med funktionen `Serial.begin ()` i `setup ()`-delen av koden. Sedan använder vi `Serial.print ()` för att skriva ut text och numeriska värden. Det är viktigt att inkludera en liten fördröjning (eng. delay) mellan utskrifterna så att seriell kommunikation inte överbelastas.
 
 ## Djupdykning
 
-När du skriver debug output är det viktigt att tänka på hur det påverkar prestandan i din kod. Om du har för många utskrifter kan det leda till att din kod blir långsammare och eventuellt till och med orsaka krascher. Tänk därför på att ta bort eller kommentera ut alla utskrifter när du är klar med din kod.
+När du skriver debug-utdata kan du använda dig av flera olika funktioner än bara `Serial.print ()`. Här är några andra användbara funktioner att känna till:
 
-En annan viktig aspekt är vilken hastighet du kommunicerar med din dator via seriel kommunikation. Standardhastigheten på Arduino är 9600 baud, men du kan ändra den med funktionen "Serial.begin()". Om du vill se debug output i realtid kan du också använda ett seriellt monitor-program på din dator, som till exempel Arduino IDE:s monitor, CoolTerm eller PuTTY.
+- `Serial.println ()` - samma som `Serial.print ()`, men lägger till en ny rad efter varje utskrift. Perfekt för att göra det lättare att läsa debug-utdata.
+- `Serial.write ()` - skickar en byte istället för en sträng. Användbar för att skicka binära data.
+- `Serial.available ()` - kollar hur många tecken som finns tillgängliga att läsa från serieporten. Användbar för att undvika att läsa tom data.
+- `Serial.read ()` - läser ett tecken från serieporten och returnerar det som en byte. Användbar för att läsa indata från andra enheter.
+
+Det finns också flera inställningar du kan ändra för serieporten, som baud rate och data bits. Detta kan vara användbart om du har problem med att data inte skrivs korrekt till serieporten.
 
 ## Se även
 
-- [Arduino Serial Library Reference](https://www.arduino.cc/en/Reference/Serial)
-- [Serial Communication with Arduino](https://www.arduino.cc/en/Tutorial/Serial)
-- [Debugging Arduino Code with Serial Printing](https://create.arduino.cc/projecthub/joshi/debugging-arduino-code-with-serial-print-1d649e)
+Här är några andra resurser som kan vara användbara när du skriver debug-utdata:
+
+- [Arduino Serial Communication](https://www.arduino.cc/reference/en/language/functions/communication/serial/) - officiell dokumentation om hur man använder serieporten i Arduino.
+- [Serial.print () vs Serial.println () in Arduino](https://www.teachmemicro.com/arduino-serialprint-vs-serialprintln/) - en förklaring av skillnaden mellan `Serial.print ()` och `Serial.println ()`.
+- [Arduino Serial Monitor](https://www.arduino.cc/en/Tutorial/SerialMonitor) - en guide om hur man använder den inbyggda seriemonitorn i Arduino IDE för att visa och skicka seriell data mellan din dator och Arduino.
+
+Förhoppningsvis har du nu en bättre förståelse för varför och hur man skriver debug-utdata i Arduino. Lycka till med dina projekt!

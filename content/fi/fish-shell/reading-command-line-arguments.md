@@ -1,38 +1,50 @@
 ---
-title:                "Fish Shell: Komentoriviparametrien lukeminen"
+title:                "Fish Shell: Luen komentoriviparametrit"
+simple_title:         "Luen komentoriviparametrit"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
-Tervetuloa lukemaan blogikirjoitusta Fish Shell -ohjelmoinnista! Tässä kirjoituksessa käsittelemme komentoriviparametrien lukemista Fish Shellissa ja miten se voi auttaa tehokkaassa ohjelmointityössäsi.
+## Miksi?
 
-## Miten
-Fish Shell tarjoaa kätevän tavan lukea komentoriviparametreja ohjelmointikoodissa. Voit helposti käyttää näitä parametreja suorituksen aikana esimerkiksi tiedostojen käsittelyssä tai muissa toiminnoissa.
+Komentoriviparametrit ovat välttämättömiä ohjelmoinnissa ja voivat auttaa sinua suorittamaan monimutkaisia komentosarjoja kätevästi. Tämä blogikirjoitus esittelee, miten voit lukea komentoriviparametrejä käyttäen Fish Shell -ohjelmointikieltä.
 
-Seuraavassa esimerkissä näytämme kuinka lukea komentoriviparametri, joka määrittelee tiedostopolun ja tulostaa sen sisällön:
+## Miten?
+
+Fish Shellin avulla voit lukea komentoriviparametrejä käyttämällä `status` -komennon `argv`-muuttujaa. Tämä muuttuja sisältää kaikki komentoriviparametrit, joten voit käyttää sitä ominaisuuksien ja arvojen hakemiseen. Katso alla olevaa esimerkkiä:
 
 ```Fish Shell
-#!/bin/fish
+# Hakee `status`-komennon `argv`-muuttujan
+set komentoriviparametrit $argv
 
-if test -f $1
-    cat $1
-else
-    echo "Tiedostoa ei löytynyt."
+# Tulostaa kaikki komentoriviparametrit yksitellen
+for parametri in $komentoriviparametrit
+    echo $parametri
 end
 ```
 
-Jos ajamme tämän komentoriviparametrilla "tiedosto.txt", ohjelma tulostaa tiedoston sisällön. Muuten se ilmoittaa, että tiedostoa ei löytynyt.
+Kun ajat tätä komentoa terminalissa `fishscript.fish -a -b -c`, saat seuraavan tulosteen:
 
-## Deep Dive
-Fish Shellin "stat" -komennolla voidaan lukea tarkemmin komentoriviparametreja ja niiden ominaisuuksia. Lisäksi "getopts" -komennolla voidaan helposti käsitellä useampia parametreja kerralla.
+```
+-a
+-b
+-c
+```
 
-Komentoriviparametrien lukeminen voi olla hyödyllistä myös skripteissä, joissa esimerkiksi halutaan käynnistää erilaisia toimintoja eri parametreilla. Fish Shell tarjoaa monipuoliset mahdollisuudet näiden parametrien käsittelyyn ja helpottaa ohjelmointityötäsi.
+Voit myös hakea yksittäisen parametrin arvon käyttämällä sen sijaintia `argv`-muuttujassa. Esimerkiksi jos haluat hakea ensimmäisen parametrin, voit käyttää `argv[1]`.
+
+## Syvemmälle
+
+Komentoriviparametrit voivat sisältää myös muita hyödyllisiä tietoja, kuten tiedostonimien ja hakemistojen polkuja. Voit käyttää `status`-komennon muita muuttujia, kuten `argc`, `pid` ja `ppid`, saadaksesi lisätietoja komentoriviparametreistä.
+
+Voit myös luoda omia muuttujia ja sijoittaa niihin komentoriviparametrien arvoja käyttämällä `set` -komentoa. Tämä voi helpottaa tietojen käsittelemistä ohjelmassasi.
 
 ## Katso myös
-- Fish Shellin dokumentaatio: https://fishshell.com/docs/current/index.html
-- "getopts" -komennon käyttöohjeet: https://fishshell.com/docs/current/commands.html#getopts
-- "stat" -komennon tarkemmat ominaisuudet: https://fishshell.com/docs/current/cmds/stat.html
+
+- [Fish Shell -dokumentaatio](https://fishshell.com/docs/current/cmds/set.html)
+- [Komentoriviparametriopas](https://www.shell-tips.com/bash/command-line-arguments/) (englanniksi)
+- [Fish Shell -tutoriaali](https://fishshell.com/docs/current/tutorial.html)

@@ -1,41 +1,57 @@
 ---
 title:                "Fish Shell: Lendo um arquivo de texto"
+simple_title:         "Lendo um arquivo de texto"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/fish-shell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Por que ler um arquivo de texto com Fish Shell
 
-Muitas vezes, ao trabalhar com programação, precisamos manipular arquivos de texto. Seja para extrair informações específicas ou para fazer mudanças em massa, a leitura de arquivos de texto é uma tarefa comum em muitos projetos. Neste artigo, vamos mostrar como é fácil e útil ler um arquivo de texto usando o Fish Shell.
+Se você é um programador ou simplesmente gosta de brincar com o Fish Shell, pode se perguntar por que alguém iria querer ler um arquivo de texto no terminal. A resposta é simples: ler um arquivo de texto pode facilitar a realização de tarefas repetitivas ou automatizar processos em massa.
 
-## Como fazer
+## Como fazer isso com o Fish Shell
 
-Para ler um arquivo de texto usando o Fish Shell, primeiro precisamos usar o comando `cat` juntamente com o nome do arquivo. Por exemplo, se quisermos ler um arquivo chamado "dados.txt" que está localizado em nosso diretório atual, podemos usar o seguinte comando:
-
-```Fish Shell
-cat dados.txt
-```
-
-Isso irá imprimir todo o conteúdo do arquivo no terminal. Mas e se quisermos apenas as primeiras linhas do arquivo? Podemos usar o comando `head` com o nome do arquivo e a opção `-n`, especificando o número de linhas que queremos imprimir. Por exemplo, se quisermos imprimir apenas as primeiras 10 linhas do arquivo, podemos usar o comando:
+Para ler um arquivo de texto com o Fish Shell, primeiro precisamos usar o comando `cat`. Este comando é usado para exibir o conteúdo de um arquivo de texto em sua saída padrão.
 
 ```Fish Shell
-head -n 10 dados.txt
+cat arquivo.txt
 ```
 
-Da mesma forma, se quisermos imprimir apenas as últimas linhas do arquivo, podemos usar o comando `tail` combinado com a opção `-n`. Por exemplo, para imprimir as últimas 5 linhas do arquivo, podemos usar o comando:
+Com isso, o conteúdo do arquivo de texto será exibido no seu terminal. Você também pode usar o comando `head` para exibir apenas as primeiras linhas do arquivo ou `tail` para exibir as últimas linhas.
 
 ```Fish Shell
-tail -n 5 dados.txt
+head arquivo.txt
+tail arquivo.txt
 ```
 
-## Mergulho profundo
+Você também pode usar o comando `grep` para encontrar palavras ou padrões específicos no arquivo de texto.
 
-Existem muitas outras opções e comandos que podemos usar para ler e manipular arquivos de texto no Fish Shell. Por exemplo, podemos usar o comando `grep` para procurar por padrões específicos no arquivo, ou o comando `sed` para fazer alterações em linhas específicas. Além disso, o Fish Shell oferece suporte a expressões regulares, o que pode ser muito útil ao lidar com arquivos de texto.
+```Fish Shell
+grep "palavra" arquivo.txt
+```
+
+## Aprofundando um pouco mais
+
+Ao ler um arquivo de texto com o Fish Shell, ele será lido linha por linha, o que significa que podemos usar um loop para executar ações em cada linha. Veja o exemplo abaixo:
+
+```Fish Shell
+while read linha
+  echo $linha
+end < arquivo.txt
+```
+
+Isso exibirá na saída padrão cada linha do arquivo de texto. Além disso, você pode usar comandos de redirecionamento para salvar o resultado da leitura em um novo arquivo, por exemplo:
+
+```Fish Shell
+grep "palavra" arquivo.txt > resultado.txt
+```
 
 ## Veja também
 
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
-- [Tutorial de linha de comando do Fish Shell](https://techexpert.tips/pt-br/fish-shell-pt-br/como-usar-comandos-de-linha-comando-fish-shell-linux/)
+- Aprenda mais sobre o Fish Shell: [https://fishshell.com/](https://fishshell.com/)
+- Documentação do comando `cat`: [https://fishshell.com/docs/current/cmds/cat.html](https://fishshell.com/docs/current/cmds/cat.html)
+- Saiba mais sobre loops no Fish Shell: [https://fishshell.com/docs/current/tutorial.html#tut_loops](https://fishshell.com/docs/current/tutorial.html#tut_loops)

@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/reading-a-text-file.md"
 ---
 
@@ -9,36 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Voi tuntua oudolta lukea jopa yksinkertaisesta teksti-tiedostosta. Kuitenkin, jos haluat luoda mukautettuja skriptejä tai tehokkaammin hallita tiedostoja, voi olla hyödyllistä oppia miten voi lukea ja käsitellä tietoa suoraan teksti-tiedostoista.
+Tekstirivin lukeminen on yksi perustavanlaatuisimmista tehtävistä tiedonkäsittelyssä. Usein meidän täytyy lukea läpi suuria määriä tietoa ja erottaa sieltä haluamamme tiedot. Fish Shell tarjoaa meille helpon tavan tehdä tämä.
 
 ## Miten
 
-```fish-shell
-cat tiedosto.txt
-```
-Tämä yksinkertainen komento tulostaa tiedoston sisällön terminaaliin. Voit myös käyttää `head` ja `tail` komentoja nähdäksesi vain tiedoston ensimmäisen tai viimeisen osan.
+Fish Shell tarjoaa meille merkkijonotoiminnon `read`. Tällä funktiolla voimme lukea haluamamme tiedoston ja tallentaa sen sisällön muuttujaan. Tämä muuttuja voidaan sitten käyttää haluamallamme tavalla, kuten tulostaa se näytölle.
 
-Jos haluat käsitellä tiedoston sisältöä enemmän, voit käyttää komentoja kuten `awk` tai `sed` poimimaan tiettyjä tietoja tai muokkaamaan tekstiä. Esimerkiksi, jos haluat nähdä vain tietyn sarakkeen tiedosto.txt-tiedostosta, voit tehdä sen näin:
-
-```fish-shell
-awk '{print $2}' tiedosto.txt
-```
-Tämä tulostaa toisen sarakkeen jokaiselta riviltä tiedostosta.
-
-## Syvä sukellus
-
-Teksti-tiedoston lukeminen on hyödyllinen taito kun teet skriptejä tai haluat hallita tiedostoja terminaalista. Voit myös käyttää `grep` komentoa hakeaksesi tiettyä tekstiä tiedostosta tai `sed` komentoa muokataksesi tekstiä haluamallasi tavalla.
-
-Voit myös käyttää `pipe` merkkiä (`|`) yhdistämään erilaisia komentoja ja suorittamaan useita toimintoja yhdellä komennolla. Esimerkiksi voit käyttää `cat` komentoa yhdessä `grep` ja `wc` komentojen kanssa laskeaksesi montako kertaa tietty sana esiintyy tiedostossa:
-
-```fish-shell
-cat tiedosto.txt | grep "sana" | wc -l
+```Fish Shell
+set sisalto (read -i tiedosto.txt)
+echo $sisalto
 ```
 
-Tämä tulostaa kyseisen sanan lukumäärän tiedostossa.
+Tässä esimerkissä luetaan tiedosto nimeltä "tiedosto.txt" ja tallennetaan sen sisältö muuttujaan nimeltä "sisalto". Sitten tämä sisältö tulostetaan näytölle komennolla `echo`.
+
+## Syvempi sukellus
+
+Lisäksi Fish Shellillä on muitakin vaihtoehtoja tekstirivin lukemiseksi. Voimme myös lukea tiedostosta vain tietyn määrän merkkejä tai rivejä.
+
+```Fish Shell
+set merkit (read -n 10 tiedosto.txt)
+echo $merkit
+```
+
+Tässä esimerkissä luetaan tiedostosta vain 10 ensimmäistä merkkiä ja tallennetaan ne muuttujaan nimeltä "merkit". Sitten tulostetaan muuttujan sisältö näytölle.
 
 ## Katso myös
-
-- [Fish Shell käyttöönotto-opas](https://fishshell.com/docs/current/tutorial.html)
-- [Teksti-tiedostot ja komentojen päällekkäisyys](https://forum.ubuntu-fi.org/index.php?topic=47805.0)
-- [Awk ja Sed - tekstiä käsittelevät käyttöohjeet](https://developer.ibm.com/articles/l-lp1612/)
+- [Fish Shellin dokumentaatio lukemisesta](https://fishshell.com/docs/current/cmds/read.html)
+- [Merkkijonojen käsittely Fish Shellillä](https://fishshell.com/docs/current/tutorial.html#tut_strings)

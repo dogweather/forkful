@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Pisanie do standardowego błędu"
+title:                "Bash: Pisanie do standardowego wyjścia błędów"
+simple_title:         "Pisanie do standardowego wyjścia błędów"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/writing-to-standard-error.md"
 ---
 
@@ -9,31 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Cześć czytelniku! Jeśli jesteś programistą lub uczysz się programowania, z pewnością słyszałeś o standardowym błędzie i zapisywaniu do niego. W tym wpisie postaram się przybliżyć Ci ten temat i wyjaśnić, dlaczego warto zaprzyjaźnić się z tym narzędziem.
+Pisanie do standardowego błędu jest nieodłączną częścią programowania w Bash. Jest to prosty, ale bardzo użyteczny sposób na wyświetlanie błędów i komunikatów diagnostycznych podczas wykonywania skryptów lub poleceń w terminalu.
 
 ## Jak to zrobić
 
-Do zapisywania do standardowego błędu używa się polecenia ```echo```, a następnie przekierowuje się wyjście do standardowego błędu przy użyciu symbolu ```>&2```. Na przykład:
+Możesz pisać do standardowego błędu przy użyciu polecenia `echo` wraz z argumentem `>&2` lub wykorzystując operator `2>`, który przekierowuje wyjście do standardowego błędu. Przykładowo:
 
-```Bash
-echo "To jest błąd" >&2
+```
+Bash
+
+echo "Nie udało się odnaleźć pliku!" >&2
+
+ls nieistniejacy_plik 2> bledy.txt
 ```
 
-Powoduje wypisanie tekstu "To jest błąd" do standardowego błędu. Możesz również użyć standardowego wyjścia, aby przekazać treść błędu do standardowego błędu, jak w przykładzie poniżej:
+W pierwszym przykładzie wyświetlamy komunikat o błędzie, a w drugim zapisujemy błędy do pliku `bledy.txt`. Możesz również użyć `2>&1` aby przekierować standardowy błąd do standardowego wyjścia.
 
-```Bash
-ls nieistniejący_katalog 1>&2
-```
+## Wszczepienie się głębiej
 
-Powyższe polecenie spowoduje, że w przypadku, gdy katalog nie istnieje, zostanie wyświetlony komunikat błędu, a nie "kolejne linie kodu".
+Warto pamiętać, że domyślnie standardowy błąd jest przekierowywany do konsoli, dlatego warto używać przekierowania wyjścia do pliku lub potoku, aby móc później przejrzeć komunikaty błędów.
 
-## Głębsza analiza
-
-Przekierowywanie do standardowego błędu jest przydatne w wielu sytuacjach. Przede wszystkim, jest to jedna z podstawowych technik obsługi błędów w skryptach Shell. Pozwala też na wygodne wypisywanie komunikatów błędów użytkownikowi podczas uruchamiania programów lub skryptów. Dodatkowo, można użyć specjalnych warunków i pętli do przekazywania informacji o błędach, co ułatwia debugowanie kodu.
+Dodatkowo, warto również zwrócić uwagę na wykorzystanie zmiennych `$?`, które przechowuje kod zakończenia ostatnio wykonywanego polecenia. Możesz wykorzystać go w warunkach, aby obsłużyć odpowiednio wyjątki i błędy.
 
 ## Zobacz również
 
-Jeśli chcesz dowiedzieć się więcej o zapisywaniu do standardowego błędu w Bash, polecam przeczytać te artykuły:
-
-- [https://linuxhint.com/bash_error_stderr/](https://linuxhint.com/bash_error_stderr/)
-- [https://www.redhat.com/sysadmin/using-stderr](https://www.redhat.com/sysadmin/using-stderr)
+- [BashGuide - Standardowe wejście i wyjście](http://mywiki.wooledge.org/BashGuide/InputAndOutput)
+- [BashRef - Wymiana danych z procesami](https://ss64.com/bash/syntax-redirection.html)
+- [BashTutorial - Przekierowywanie wyjścia i wejścia](https://linuxconfig.org/bash-scripting-tutorial-for-beginners#h1-5-1-standard-output-and-error)

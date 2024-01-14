@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Använda reguljära uttryck"
+title:                "Haskell: Att använda reguljära uttryck"
+simple_title:         "Att använda reguljära uttryck"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/using-regular-expressions.md"
 ---
 
@@ -9,40 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Reguljära uttryck, även kända som regex, är ett kraftfullt verktyg inom programmering för att söka, matcha och manipulera textsträngar. Genom att lära sig hur man använder regex kan du öka din programmeringskunskap och effektivitet.
+Regular expressions, eller reguljära uttryck, är ett kraftfullt verktyg som används för att söka efter och manipulera textsträngar. Genom att lära sig att använda reguljära uttryck, kan du effektivisera dina program och göra textbehandling enklare och snabbare.
 
 ## Hur man gör
 
-För att använda reguljära uttryck i Haskell, måste du importera modulen `Text.Regex.Posix`. Sedan kan du använda funktioner som `matchRegex` för att matcha strängar mot ditt reguljära uttryck. Se nedan för ett exempel:
+För att använda reguljära uttryck i Haskell, behöver du importera "Text.Regex" modulen. Sedan kan du använda funktioner som "regexMatch" för att söka efter en matchning i en textsträng. Här är ett exempel:
 
 ```Haskell
-import Text.Regex.Posix
+import Text.Regex
 
--- Skapa ett reguljärt uttryck för att hitta alla mailadresser
-pattern = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}"
+-- Skapar ett reguljärt uttryck för att matcha ett telefonnummer
+telefonnummer <- regexFromText "^[0-9]{3}-[0-9]{3}-[0-9]{4}$"
 
--- Skapa en sträng att matcha mot
-text = "Hej! Mitt mail är john_doe@example.com och jag är intresserad av Haskell."
-
--- Använd matchRegex för att hitta alla matchningar
-matches = matchRegex (makeRegex pattern) text
-
--- Skriv ut resultaten
-print matches
+-- Söker efter matchning i en textsträng
+regexMatch telefonnummer "Telefonnummer: 123-456-7890"
+-- Output: Just "123-456-7890"
 ```
 
-Output:
-
-`Just ["john_doe@example.com"]`
+Som du kan se i exemplet ovan, kan du använda reguljära uttryck för att söka efter specifika mönster i en textsträng, som i det här fallet ett telefonnummer. Du kan också använda andra funktioner som "regexReplace" för att byta ut en del av en textsträng som matchar med ditt reguljära uttryck.
 
 ## Djupdykning
 
-Reguljära uttryck kan vara svåra att förstå och skriva, men det finns många resurser där ute som kan hjälpa dig. En bra resurs är "Learn Regex the Hard Way" (https://regex.learncodethehardway.org/) som lär dig allt från grunderna till mer avancerade uttryck. Det är också viktigt att testa dina uttryck i ett regex-testverktyg för att se hur de matchar mot olika strängar.
+Det finns många olika sätt att använda reguljära uttryck på i Haskell, och det kan ta lite tid att lära sig alla funktioner och olika metoder för att manipulera textsträngar. Men regelbundna uttryck är en viktig del av Haskell-programmering och kan hjälpa dig att göra dina program mer effektiva och pålitliga.
 
-Det finns också många olika funktioner och modifierare som kan användas med reguljära uttryck, såsom att göra matcher icke-greedy (till exempel `*?`) eller att ersätta text med `subRegex` funktionen. Utforska dessa möjligheter för att få en bättre förståelse för reguljära uttryck.
+En av de största fördelarna med att använda reguljära uttryck är att de är plattformsoberoende och kan användas på olika operativsystem och språk. Dessutom finns det många online-resurser och bibliotek som kan hjälpa dig att lära dig mer om reguljära uttryck och deras användning i Haskell.
 
 ## Se även
 
-- "Learn Regex the Hard Way": https://regex.learncodethehardway.org/
-- Regex-testverktyg: https://regexr.com/
-- Officiell dokumentation för `Text.Regex.Posix`: https://hackage.haskell.org/package/regex-posix/docs/Text-Regex-Posix.html
+- [Haskell.org Regular Expressions](https://www.haskell.org/onlinereport/regex.html)
+- [Real World Haskell: Regular expressions](https://www.realworldhaskell.org/bonus-parsing-with-parsec.html#regular-expressions)
+- [RegExr: Learn, Build, & Test Regular Expressions](https://regexr.com/)

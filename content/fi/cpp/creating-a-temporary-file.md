@@ -1,47 +1,56 @@
 ---
 title:                "C++: Väliaikaisen tiedoston luominen"
+simple_title:         "Väliaikaisen tiedoston luominen"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi luoda väliaikainen tiedosto?
 
-Tilapäisten tiedostojen luominen on olennainen osa C++ ohjelmointia monissa tapauksissa. Ne antavat ohjelmalle mahdollisuuden tallentaa väliaikaista dataa, kuten käyttäjän syötteitä tai väliaikaisia tuloksia laskutoimituksille, jotka eivät ole osa varsinaista ohjelman toimintaa. Tilapäisten tiedostojen käyttö voi myös olla hyödyllistä testauksessa ja virheenkorjauksessa.
+On monia syitä, miksi ohjelmoijat luovat väliaikaisia tiedostoja. Yleisimpiä syitä ovat tiedon tallentaminen, väliaikaisen datan käyttö ja tarvittavan resurssin varaus. Näitä tiedostoja käytetään yleensä ohjelman suorituksen aikana ja poistetaan lopuksi suorituksen päätyttyä.
 
-## Kuinka
+## Kuinka luoda väliaikainen tiedosto
 
-Tilapäisten tiedostojen luominen C++:ssa on melko yksinkertaista. Tarvitset vain `fstream` kirjaston, joka tarjoaa toimintoja tiedostojen luomiseen ja hallintaan.
+Väliaikaisen tiedoston luominen C++:lla on helppoa. Alla on esimerkki koodista, jolla luodaan väliaikainen tiedosto "temp.txt" ja kirjoitetaan siihen tietoa:
 
-```
-#include <iostream>
+```c++
 #include <fstream>
+using namespace std;
 
-int main(){
-    // Luo uusi tiedosto ja avaa se kirjoittamista varten
-    std::ofstream tiedosto("tilapainen.txt");
-    
-    // Kirjoita tiedostoon jotain dataa
-    tiedosto << "Tämä on tilapäinen tiedosto!" << std::endl;
-    
-    // Sulje tiedosto
-    tiedosto.close();
+int main() {
+// luodaan ja avataan väliaikainen tiedosto
+ofstream temp_file("temp.txt");
 
-    return 0;
+// tietojen kirjoittaminen tiedostoon
+temp_file << "Tämä on väliaikainen tiedosto" << endl;
+
+// tiedoston sulkeminen ja poistaminen
+temp_file.close();
+remove("temp.txt");
+
+return 0;
 }
 ```
 
-Yllä oleva esimerkki luo uuden tiedoston nimeltä "tilapainen.txt" ja kirjoittaa siihen merkkijonon "Tämä on tilapäinen tiedosto!". Tärkeää on sulkea tiedosto `close()` funktion avulla, jotta tiedosto ei jää avoimeksi ja ohjelma ei aiheuta virheitä.
+Saatu tuloste on:
 
-## Syvällinen sukellus
+```
+Tämä on väliaikainen tiedosto
+```
 
-Tilapäisten tiedostojen luominen perustuu C++:n oletuksena tarjoamiin `in` ja `out` virtauksiin, joita voit käyttää `fstream` kirjastossa. Käyttämällä `ofstream` virrata työkaluna voimme määrittää, haluammeko luoda tiedoston uutta dataa varten (`ofstream`) vai lukea olemassa olevaa dataa (`ifstream`). Tämä riippuu siitä, millaista dataa tarvitsemme tilapäiseen tiedostoon.
+Koodissa käytetään fstream-kirjastoa, joka mahdollistaa tiedoston luomisen ja tietojen kirjoittamisen siihen. Lopuksi käytetään remove-funktiota poistamaan väliaikainen tiedosto.
 
-Tilapäisten tiedostojen luominen on myös hyvä tapa suojata tietoja, jotka on kirjoitettu niiden sisällä, sillä ne poistetaan automaattisesti, kun suoritus päättyy.
+## Syvällisempi tarkastelu väliaikaisen tiedoston luomisesta
+
+Väliaikaiset tiedostot luodaan yleensä käyttöjärjestelmän temp-hakemistoon, joka on varattu väliaikaisten tiedostojen tallentamiseen. Jokaisella käyttöjärjestelmällä on oma temp-hakemistonsa, joka löytyy tiedostojärjestelmän juuresta.
+
+Väliaikainen tiedosto voidaan luoda myös käyttämällä temporary_filestream-luokkaa fstream-kirjastossa. Tämä mahdollistaa automatisoidun tiedoston poistamisen sen sulkemisen yhteydessä, mikä on kätevä vaihtoehto erityisesti suurten tiedostojen käsittelyssä.
 
 ## Katso myös
 
-- [C++ fstream - dokumentaatio](https://www.cplusplus.com/reference/fstream/)
-- [Tilapäisten tiedostojen luominen C++:ssa](http://www.cplusplus.com/doc/tutorial/files/)
+- [fstream-kirjaston dokumentaatio](http://www.cplusplus.com/reference/fstream/)
+- [temporary_filestream-luokan dokumentaatio](http://www.cplusplus.com/reference/fstream/temporary_filestream/)

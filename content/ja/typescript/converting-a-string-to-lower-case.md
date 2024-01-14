@@ -1,7 +1,9 @@
 ---
 title:                "TypeScript: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/typescript/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,24 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-文字列を小文字に変換することに関して、なぜそれをする必要があるのかということが気になるかもしれません。実際、私たちはしばしば文字列を小文字で使用したい場合があります。例えば、ユーザーからの入力を検証する際や、特定の検索キーワードを探す際に、文字列を小文字に変換する必要があるかもしれません。そのため、効率的かつ正確なコードを書くために、文字列を小文字に変換する方法を知ることは重要です。
+文字列を小文字に変換する作業は、プログラム内で文字列を比較や検索する際に非常に便利です。大文字と小文字を区別しない場合、文字列を小文字に変換することで簡単に処理できるようになります。
 
 ## 方法
 
-TypeScriptでは、文字列を小文字に変換するためには`toLowerCase()`メソッドを使用します。このメソッドは文字列オブジェクトに内蔵されており、元の文字列を小文字に変換した新しい文字列を返します。以下のコードブロックを参考にしてください。
+文字列を小文字に変換するためには、JavaScript内で用意されている `toLowerCase()` メソッドを使用します。例えば、以下のように記述することで文字列を小文字に変換することができます。
 
 ```TypeScript
-let str: string = "HELLO WORLD";
-let lowerCaseStr: string = str.toLowerCase();
-console.log(lowerCaseStr); // 出力結果: hello world
+let str = "Hello World";
+let lowerCaseStr = str.toLowerCase();
+
+console.log(lowerCaseStr);
+// 出力結果：hello world
 ```
 
 ## 深堀り
 
-TypeScriptにおける`toLowerCase()`メソッドは、文字列を小文字にするだけではなく、大文字や小文字を区別する言語に特化した変換を行うこともできます。また、特定の言語環境に依存した変換も行うことができます。詳細についてはドキュメントを参照してください。
+JavaScriptの `toLowerCase()` メソッドは、文字列を小文字に変換するだけではなく、様々な文字列操作を行うことができます。例えば、英数字以外の文字も自動的に小文字に変換するため、多言語を取り扱うプログラムでも便利に使うことができます。また、`toUpperCase()` メソッドを併用することで、文字列内の大文字のみを小文字に変換することも可能です。さらに、`toLocaleLowerCase()` メソッドを使用することで、ロケールに応じた正しい小文字変換を行うこともできます。
 
-## 併せて参照
+## 参考リンク
 
-見るべき他の関連記事やリンクを以下に挙げます。 
-- [TypeScriptドキュメント](https://www.typescriptlang.org/docs/handbook/strings.html)
-- [MDN Web Docs - `toLowerCase()`](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+[JavaScriptで文字列を操作する方法 | MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String)
+
+「See Also」
+- [JavaScriptで文字列を比較する方法 | MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/String)
+- [TypeScriptで配列を操作する方法 | チュートリアルジャパン](https://www.tutorialspoint.com/typescript/typescript_strings.htm)

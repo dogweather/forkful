@@ -1,48 +1,51 @@
 ---
 title:                "Haskell: テキストファイルの読み込み"
+simple_title:         "テキストファイルの読み込み"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## ホワイ
+## Why
 
-テキストファイルを読み込むことは、プログラミングにおいて非常に重要です。そのため、Haskellを学ぶ上で基本的なスキルとなります。このブログ投稿では、Haskellでテキストファイルを読み込む方法について紹介します。
+プログラマーにとって、テキストファイルを読み取ることは非常に重要です。テキストファイルは、プログラム間でデータを共有するための一般的な方法です。Haskellでは、テキストファイルを読み取る方法を学ぶことで、より多くのプログラミングの可能性が開けます。
 
-## ハウトゥ
+## How To
 
-まずは、テキストファイルを読み込むための基本的なコードを見ていきましょう。
+まず、`readFile`関数を使用してテキストファイルを開きます。この関数は、ファイルのパスを引数に取り、ファイルの内容を文字列として返します。
+
+```Haskell
+main = do
+  fileContents <- readFile "example.txt"
+  print fileContents
+```
+
+上記のコードでは、`example.txt`という名前のテキストファイルを読み取り、その内容を`fileContents`変数に格納し、`print`関数を使って画面に表示しています。
+
+もう1つの方法は、`withFile`関数を使用する方法です。この関数は、ファイルを開くためのハンドラーを作成し、その後削除する必要があります。
 
 ```Haskell
 import System.IO
 
 main = do
-    handle <- openFile "sample.txt" ReadMode
+  withFile "example.txt" ReadMode $ \handle -> do
     contents <- hGetContents handle
-    putStrLn contents
-    hClose handle
+    print contents
 ```
 
-まず、`System.IO`モジュールをインポートします。その後、`openFile`関数を使って、`sample.txt`という名前のファイルを読み込みモードで開きます。`hGetContents`関数はハンドルからテキストを読み込みます。そして、`putStrLn`関数を使って、読み込んだ内容をターミナルに出力します。最後に、`hClose`関数でハンドルを閉じて処理を終了します。
+上記のコードでは、`example.txt`を読み取りモードで開き、その内容をハンドラーから取得し、`print`関数を使用して画面に表示しています。
 
-## ディープダイブ
+## Deep Dive
 
-テキストファイルを読み込む際に重要なのは、ファイルのエンコーディングについてです。Haskellの`hGetContents`関数は、デフォルトではUTF-8エンコーディングを使用してテキストを読み込みます。しかし、ファイルのエンコーディングが異なる場合は、`hSetEncoding`関数を使って明示的に指定する必要があります。
+Haskellでは、`Text`というモジュールを使用することで、テキストファイルをより高度に扱うことができます。例えば、`lines`関数を使用すると、テキストファイルの各行をリストとして取得することができます。
 
-また、`hGetContents`関数は、ファイルを全て一度に読み込むのではなく、必要に応じて遅延評価を行います。これにより、大きなファイルをメモリに読み込まずに処理することができます。
+また、Haskellにはパーサーという概念があり、テキストファイルをパースすることでより複雑な構造のデータを取得することができます。例えば、CSVファイルをパースして、データベースに保存するような処理を行うことができます。
 
-さらに、テキストファイルを読み込む際に利用できる便利な関数やモジュールもあります。例えば、`readFile`関数や`Text.Encoding`モジュールなどが挙げられます。これらを活用することで、より柔軟なテキスト処理を行うことができます。
+## See Also
 
-## シーアルソーシリンク
-
-- [Haskellでテキストファイルを書き込む方法](https://www.haskell.org/tutorial/io.html#reading-and-writing-files)
-- [HaskellのIOモナドについて](https://wiki.haskell.org/IO_inside)
-- [Haskellでのファイル取得のさまざまな方法](https://lgo-tera.hatenablog.com/entry/20171120/1511172656)
-
-## 関連リンク
-
-- [Haskell.jp](https://haskell.jp/)
-- [Haskellの基本的な文法](https://qiita.com/7shi/items/145f1232a2c4ad3f9b96)
-- [Haskellのコードを読めるようになろう](https://qiita.com/tanakh/items/0ba42c7ca36cd29d0ac8)
+- [Haskellのドキュメント](https://www.haskell.org/documentation/)
+- [Haskellコミュニティ](https://wiki.haskell.org/Communities)
+- [テキストファイルを読み取る方法の詳細](https://wiki.haskell.org/Reading_a_file)

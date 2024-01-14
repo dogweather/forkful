@@ -1,44 +1,49 @@
 ---
-title:                "Haskell: 現在の日付を取得する"
+title:                "Haskell: 「現在の日付を取得する」"
+simple_title:         "「現在の日付を取得する」"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
+Haskellを使って現在の日付を取得する必要性があるかご存知ですか？今回は、なぜそれが重要かをお話ししましょう。
 
-今日の日付を取得する必要がある理由はさまざまです。例えば、プログラムを書いているときに現在の日付を使用する必要があるかもしれません。また、日付を使用してデータを整理する場合にも便利です。
+##方法
+日付を取得する方法は、Haskellでは簡単です。まず、```import Data.Time```というコードで、日付を扱うためのData.Timeモジュールをインポートします。
 
-## 方法
-
-現在の日付を取得するには、Haskellの標準ライブラリであるData.Timeモジュールを使用します。下記のコードを実行することで、現在の日付を取得することができます。
+次に、```getCurrentTime```関数を使用し、現在の日付を取得します。例えば、今日の日付を取得する場合は、次のようなコードになります。
 
 ```Haskell
 import Data.Time
-
 main = do
-    now <- getCurrentTime
-    let today = utctDay now
-    putStrLn $ "今日の日付は " ++ show today ++ " です。"
+    let today = getCurrentTime
+    print today
 ```
 
-このコードを実行すると、以下のように現在の日付が表示されます。
+上記のコードを実行すれば、簡単に現在の日付が取得できます。
 
+## ディープダイブ
+Haskellでは、```getCurrentTime```関数によって取得された日付は、特定のデータ型で表されます。これは、時間、日付、時差などの情報を含んでいます。また、このデータ型内の値を使って、さまざまな日付の計算を行うこともできます。
+
+例えば、```getCurrentTime```関数で取得した日付の2日前の日付を求める方法は以下のようになります。
+
+```Haskell
+import Data.Time
+main = do
+    let today = getCurrentTime
+        twoDaysAgo = today - 2
+    print twoDaysAgo
 ```
-今日の日付は 2021-01-01 です。
-```
 
-また、currentDateTime関数を使用することで、現在の日付と時刻を取得することもできます。
+このように、Haskellでは日付の取得だけでなく、日付の計算も簡単に行うことができます。
 
-## 深堀り
+## はじめよう
+現在の日付を取得するための方法を学びましたが、もしもっと詳しく知りたい場合は、[Haskell公式ドキュメント](https://haskell.org/documentation)や[Real World Haskell](https://haskell.org/)を参考にすると良いでしょう。
 
-Data.Timeモジュールには、日付や時刻を操作するための様々な関数が用意されています。例えば、Date型やTimeOfDay型などのデータ型があり、これらを使用することで日付や時刻を自由に操作することができます。
-
-また、TimeLocaleという型を使用することで、日付や時刻の表示形式をカスタマイズすることも可能です。
-
-## 関連情報
-
-- [Data.Timeモジュールのドキュメント](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Data.Timeのチュートリアル](https://www.schoolofhaskell.com/user/commercial/content/a-tutorial-on-package-time)
+## 参考リンク
+- [Haskell公式ドキュメント](https://haskell.org/documentation)
+- [Real World Haskell](https://haskell.org/)

@@ -1,45 +1,37 @@
 ---
 title:                "Bash: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Bash"
-category:             "Testing and Debugging"
+category:             "Bash"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/bash/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi kirjoittaa testeja?
+## Miksi kirjoittaa testejä
+Testien kirjoittaminen on tärkeä osa ohjelmoinnin prosessia, sillä se varmistaa koodin toimivuuden ja ehkäisee mahdollisten virheiden syntymistä. Näin säästetään aikaa ja vaivaa pitkällä tähtäimellä, sillä hyvin testattu koodi vaatii vähemmän korjauksia ja huoltoa myöhemmin.
 
-Testien kirjoittaminen on tärkeä osa Bash-ohjelmointia, sillä se auttaa varmistamaan, että koodi toimii odotetusti ja vähentää ohjelmistovirheiden riskiä. Se myös auttaa parantamaan koodin laatua ja ylläpidettävyyttä.
+## Kuinka kirjoittaa testejä
+Testien kirjoittaminen Bash-kielen avulla on helppoa ja tehokasta. Käytämme testikirjastoja, kuten Batsia ja shunit2:ta, joiden avulla voimme luoda monipuolisia ja luotettavia testejä. Alla on esimerkki Batsin käytöstä testin luomiseen:
 
-## Miten kirjoittaa testeja Bashilla?
-
-Bashin version 4.0 jälkeen se sisältää sisäänrakennetun [[-operaattorin, joka mahdollistaa yksinkertaisten testien kirjoittamisen.
-
-```
-#!/bin/bash
-
-# Testataan, muuttuuko muuttuja nimi oikein
-nimi="Matti"
-if [[ $nimi == "Matti" ]]; then
-  echo "Muuttuja nimi on Matti."
-else
-  echo "Muuttuja nimi ei ole Matti."
-fi
+```Bash
+@test "Funktion summa oikein" {
+  run summa 1 2
+  [ "$status" -eq 0 ]
+  [ "$output" -eq 3 ]
+}
 ```
 
-Tässä esimerkissä [[-operaattori vertaa muuttujaa nimi merkkijonoon "Matti". Jos ehto on tosi, tulostetaan lauseke "Muuttuja nimi on Matti." Jos ehto ei ole tosi, tulostetaan lauseke "Muuttuja nimi ei ole Matti."
+Tässä esimerkissä luomme testin, joka varmistaa, että funktio "summa" antaa oikean tuloksen parametreille 1 ja 2. "Run" -komento suorittaa funktion ja tallentaa sen palauttaman statuksen muuttujaan "$status" ja tulosteen "$output" muuttujaan. Tämän jälkeen tarkistamme, onko status 0 ja tulos 3, jotka olisi odotettu tulos.
 
-Testien kirjoittaminen on erityisen hyödyllistä Bash-skriptejä varten, sillä se auttaa varmistamaan, että skripti toimii odotusten mukaisesti ja havaitsemaan mahdolliset virheet.
+## Syvällisempi sukellus testien kirjoittamiseen
+Testien kirjoittaminen auttaa meitä luomaan luotettavaa koodia ja säästämään aikaa ja vaivaa korjauksilta. Hyvät testit kattavat kaikki mahdolliset skenaariot ja varmistavat, että koodi toimii odotetulla tavalla. Testejä voi myös automatisoida osaksi ohjelmointiprosessia, mikä helpottaa ja nopeuttaa ohjelmien huoltoa.
 
-## Syvenny testien kirjoittamiseen
-
-Testien kirjoittaminen Bashilla on melko yksinkertaista, mutta on myös mahdollista kirjoittaa monimutkaisempia testejä, jotka tarkistavat esimerkiksi kattavasti skriptin eri osa-alueita.
-
-Lisäksi Bashilla on saatavilla erilaisia testitoimintoja, kuten `test` ja `[` -komento, jotka antavat vielä lisää mahdollisuuksia testien kirjoittamiseen.
-
-On myös hyödyllistä kirjoittaa testejä, jotka testaavat skriptin mahdollisia virhetilanteita ja huonosti muotoiltuja syötteitä. Näin voit varmistaa, että skripti toimii luotettavasti myös näissä tapauksissa.
+Testien kirjoittamisen lisäksi on tärkeää myös ymmärtää, miten testien avulla voi parantaa koodin laatua ja optimoida suorituskykyä. Näitä tekniikoita ja vinkkejä voi löytää esimerkiksi tutorial-sivustoilta ja ohjelmointiyhteisöistä.
 
 ## Katso myös
-
-- [Bash-käsikirja](https://www.gnu.org/software/bash/manual/html_node/index.html)
-- [Bash Testien kirjoittaminen](https://askubuntu.com/questions/521191/how-to-write-a-bash-script-to-test-the-most-frequently-used-command)
+- [Bats-testikirjaston dokumentaatio](https://github.com/bats-core/bats-core)
+- [shunit2-testikirjaston dokumentaatio](https://github.com/kward/shunit2)
+- [Ohjelmiston testaus -opetusohjelma (Helsingin yliopisto)](https://www.cs.helsinki.fi/uudet-oppijat/ohjelmointi/opetusohjelma/program-and-how-learn-tests-testing)
+- [Bash-yhteisö foorumi ja keskusteluryhmä](https://www.bash.org/)

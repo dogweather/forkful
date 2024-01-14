@@ -1,80 +1,48 @@
 ---
 title:                "Elixir: Imprimiendo salida de depuración"
+simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Elixir"
-category:             "Testing and Debugging"
+category:             "Elixir"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué
 
-A veces, cuando estamos desarrollando un programa en Elixir, nos encontramos con errores o problemas que no parecen fáciles de resolver. En estos casos, imprimir resultados de depuración puede ser una herramienta útil para entender qué está sucediendo en nuestro código y cómo solucionarlo.
+Imagínate que estás escribiendo código en Elixir y te encuentras con un error. ¿Cómo puedes saber qué está causando ese error? Aquí es donde imprimir salidas de depuración en tu código puede ser increíblemente útil. Puedes ver qué valores tienen tus variables en diferentes puntos de tu código y rastrear el origen del error. ¡Sigue leyendo para aprender cómo hacerlo!
 
-## Cómo
+# Cómo hacerlo
 
-Para imprimir resultados de depuración en Elixir, podemos utilizar la función `IO.inspect/2`. Esta función nos permite imprimir cualquier valor o variable en la consola. Veamos un ejemplo:
-
-```Elixir
-data = [1, 2, 3]
-IO.inspect(data)
-```
-
-La salida en la consola será:
-
-```
-[1, 2, 3]
-```
-
-Podemos incluso utilizar esta función dentro de una expresión Elixir, como en el siguiente ejemplo:
+ Para imprimir salidas de depuración en tu código en Elixir, puedes utilizar la función `IO.inspect/2`. Simplemente pasa la variable que deseas inspeccionar como primer argumento y un mensaje opcional como segundo argumento. Por ejemplo:
 
 ```Elixir
-num = 5
-IO.inspect("El número es #{num}")
+age = 25
+IO.inspect(age, "Mi edad es:")
+```
+```Elixir
+Mi edad es: 25
 ```
 
-La salida en la consola será:
-
-```
-El número es 5
-```
-
-## Profundizando
-
-Además de imprimir resultados de depuración simples, la función `IO.inspect/2` también acepta opciones adicionales que pueden ser útiles en diferentes situaciones. Por ejemplo, podemos utilizar la opción `:label` para proporcionar un nombre o descripción al resultado impreso:
+También puedes usar este método para imprimir el valor de una expresión o una función. Por ejemplo:
 
 ```Elixir
-num = 10
-IO.inspect(num, label: "Número")
+IO.inspect(Enum.sum([1, 2, 3]), "La suma es:")
 ```
-
-La salida en la consola será:
-
-```
-Número: 10
-```
-
-Otra opción interesante es `:pretty`, que nos permite imprimir resultados en un formato más legible. Por ejemplo, si tenemos un mapa con varios valores, podemos utilizar esta opción para imprimirlo en formato JSON:
-
 ```Elixir
-data = %{"nombre" => "Juan", "edad" => 30}
-IO.inspect(data, pretty: true)
+La suma es: 6
 ```
+¡Fácil, ¿verdad? Esta es una forma sencilla de imprimir información útil mientras estás depurando tu código.
 
-La salida en consola será:
+# Profundizando
 
-```
-%{
-  "nombre" => "Juan",
-  "edad" => 30
-}
-```
+Aunque `IO.inspect/2` es una forma rápida y sencilla de imprimir salidas de depuración, puede que no siempre sea la mejor opción. Por ejemplo, si tienes muchas salidas de depuración en tu código, puede ser abrumador y difícil de seguir. En estos casos, puedes utilizar la biblioteca [ex_debug](https://hex.pm/packages/ex_debug) para organizar y filtrar tus salidas de depuración.
 
-Puedes encontrar más opciones y ejemplos en la documentación oficial de Elixir para `IO.inspect/2`.
+Además, si estás trabajando con algún tipo de aplicación web escrita en Elixir, también puedes utilizar la herramienta de depuración [IEx.pry](https://hexdocs.pm/iex/IEx.html#pry/0) para detener la ejecución de tu código y explorar su estado en ese punto.
 
-## Ver también
+# Ver también
 
-- [Documentación oficial de Elixir para la función IO.inspect/2](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Tutorial de Elixir en español](https://elixircourse.com/es/)
-
-¡Espero que esta breve introducción sobre imprimir resultados de depuración en Elixir te haya sido útil! ¡Sigue aprendiendo y explorando para convertirte en un experto en este lenguaje de programación funcional!
+- [Documentación de Elixir sobre `IO.inspect/2`](https://hexdocs.pm/elixir/IO.html#inspect/2)
+- [ex_debug en HexDocs](https://hexdocs.pm/ex_debug/ExDebug.html)
+- [Documentación de IEx en HexDocs](https://hexdocs.pm/iex/IEx.html)

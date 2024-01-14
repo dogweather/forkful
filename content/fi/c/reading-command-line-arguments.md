@@ -1,55 +1,49 @@
 ---
-title:                "C: Komentoriviparametrien lukeminen"
+title:                "C: Lukemassa komentoriviparametreja"
+simple_title:         "Lukemassa komentoriviparametreja"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-### Miksi:
+## Miksi
 
-Monet C-ohjelmoijat saattavat haluta lukea komentoriviargumentteja ohjelmaansa, jotta he voivat muokata sen toimintoja ja parametreja ilman koodin muokkaamista.
+Ohjelmointi on monipuolista ja mielenkiintoista, ja osa siitä on käsitellä käyttäjän antamia syötteitä. Komentoriviparametrit ovat tärkeitä tällä alueella, ja tämä blogipostaus auttaa sinua ymmärtämään, miten niitä käsitellään C-kielellä.
 
-### Miten:
+## Miten tehdä
 
-Komentoriviargumenttien lukeminen on tärkeä taito C-ohjelmoinnissa, ja se onnistuu muutamalla yksinkertaisella askeleella.
+Komentoriviparametrien lukeminen C-kielellä on helppoa, kun tiedät mitä teet. Alla olevassa koodiesimerkissä näet yksinkertaisen tavan lukea komentoriviltä annettua argumenttia ja tulostaa se konsoliin:
 
-1. Esimerkiksi, käytä main-funktiota ja sen parametria argc.
+```C
+#include <stdio.h>
 
-```
-#mukana <stdio.h>
-
-int main(int argc, char *argv[]) {
-
-    //tulostaa yhteensä komentoriviargumenttien määrän
-    printf("Yhteensä %d argumenttia annettu.\n", argc);
-
-    //tulostaa kaikki argumentit
-    for (int i = 0; i < argc; i++) {
-        printf("%s\n", argv[i]);
+int main(int argc, char *argv[])
+{
+    if (argc > 1)
+    {
+        printf("Ensimmäinen komentoriviparametri on: %s\n", argv[1]);
     }
-
-    palauta 0;
+    else
+    {
+        printf("Et antanut komentoriviparametreja.\n");
+    }
+    return 0;
 }
 ```
 
-2. Käännä ja aja ohjelma komentorivillä antamalla argumentteja, esimerkiksi:
+Kun ajat tämän koodin komentoriviltä ja annat sille esimerkiksi seuraavanlaisen syötteen: `./ohjelma "Tervetuloa"`, näet tuloksen `Ensimmäinen komentoriviparametri on: Tervetuloa`. Huomaat, että voit käyttää `argv`-muuttujaa saadaksesi pääsyn komentoriviparametreihin. Voit myös käyttää `argc`-muuttujaa tarkistaaksesi, onko käyttäjä antanut syötettä vai ei.
 
-```
-./ohjelma argumentti1 argumentti2 argumentti3
-```
+## Syvemmälle
 
-Nyt voit havaita, että printf-käsky tulostaa argumenttien määrän ja kaikki argumentit, joita syötät ohjelman nimeä seuraavan jälkeen.
+C-kielellä on muitakin tapoja käsitellä komentoriviparametreja. Voit esimerkiksi käyttää `getopt`-funktiota, joka auttaa sinua lukemaan ja käsittelemään komentoriviparametreja. Voit myös käyttää `scanf`-funktiota lukemaan merkkijonoja suoraan komentoriviltä.
 
-### Syvennys:
+Jokainen käyttötilanne on erilainen, joten on tärkeää tutustua eri tapoihin lukea komentoriviparametreja ja valita se, joka sopii parhaiten tarpeisiisi.
 
-Komentoriviargumenttien lukeminen on hyödyllistä esimerkiksi silloin, kun haluat käsitellä ohjelmasi tietoja dynaamisesti. Voit esimerkiksi vaihtaa tiettyjä toimintoja ohjelmassasi antamalla erilaisia argumentteja.
+## Katso myös
 
-Lisäksi voit myös käyttää strcmp-funktiota vertailemaan argumentteja ja reagoida sen mukaan. Tämä avaa mahdollisuuksia kehittää joustavampia ja monipuolisempia ohjelmia.
-
-### Katso myös:
-
-1. [C-kielen virallinen dokumentaatio](https://en.cppreference.com/w/c/language/main_function)
-2. [Codecademy C-opas](https://www.codecademy.com/learn/learn-c)
-3. [C-ohjelmoinnin 10 tärkeintä käsitettä](https://medium.com/launch-school/c-ohjelmoinnin-10-t%C3%A4rkeint%C3%A4-k%C3%A4sitett%C3%A4-d99ef5117246)
+- [C Cheat Sheet](https://www.codecademy.com/learn/learn-c/modules/learn-c-cpp-cheatsheet)
+- [C-kurssi Codecademyssa](https://www.codecademy.com/learn/learn-c)
+- [getopt-dokumentaatio](https://www.gnu.org/software/libc/manual/html_node/Example-of-Getopt.html)

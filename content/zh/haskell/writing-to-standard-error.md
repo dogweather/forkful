@@ -1,30 +1,67 @@
 ---
-title:                "Haskell: 标准错误输出的编写"
+title:                "Haskell: 向标准错误写入"
+simple_title:         "向标准错误写入"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+## 为什么要写标准错误 (Why Write to Standard Error)
 
-写入标准错误是Haskell编程中重要的一部分。它允许我们记录错误和调试信息，这在处理复杂的程序时非常有用。通过将错误信息打印到标准错误中，我们可以在程序执行失败时及时发现问题并解决它们。
+在编程中，我们经常需要打印输出来帮助我们调试代码。但是有时候，我们不希望输出被包含在我们程序的正常输出中，因为它们可能会被其他输出混淆。这时，我们就可以使用标准错误，将输出打印到控制台的另一个位置，帮助我们更方便地分析和排除错误。
 
-## 如何进行
+## 如何写入标准错误 (How To Write to Standard Error)
 
-一般来说，我们可以使用“```haskell
-hPutStrLn stderr "Error Message"
-```”代码块来将错误信息发送到标准错误中。这里我们使用了宣告的hPutStrLn函数，它允许我们将错误信息作为字符串发送到标准错误中。我们也可以使用其他函数来打印更多信息，如hPutStr或hPutChar。
+在Haskell中，我们可以使用 `hPutStrLn` 函数将输出打印到标准错误。下面是一个例子：
 
-## 深入了解
+```Haskell
+import System.IO
 
-除了将错误信息打印到标准错误中，我们还可以使用标准错误来发送其他信息，如调试信息。通过在代码中使用"```haskell
-hPutStrLn stderr "Debug info"
-```"代码块，我们可以在程序运行时打印出需要的调试信息。这对于定位复杂的程序错误非常有用。
+main = do
+    hPutStrLn stderr "这是一个标准错误输出。"
+```
 
-## 参考链接
+运行该程序，我们将在控制台上看到如下输出：
 
-- [Haskell文档：标准错误](https://www.haskell.org/onlinereport/io.html#hprem41472)
-- [Haskell标准库：System.IO](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO.html)
-- [Haskell教程：Debugging Techniques in Haskell](https://mmhaskell.com/blog/2017/9/25/debugging-techniques-in-haskell-part-1)
+```
+这是一个标准错误输出。
+```
+
+注意，标准错误输出默认是以红色字体显示，以帮助我们更易于区分它和标准输出。
+
+## 深入了解 (Deep Dive into Writing to Standard Error)
+
+除了 `hPutStrLn`，Haskell中还有其他函数可以帮助我们向标准错误输出信息。比如，`hPutStr` 和 `hPrint` 函数都可以用来输出字符串或任何可显示的值到标准错误。在实际编程中，我们可以根据需要选择最合适的函数来输出信息。
+
+此外，我们还可以使用 `stderr` 关键字来直接指定标准错误输出，而不必每次都调用 `hPutStrLn` 函数。以下是一个例子：
+
+```Haskell
+import System.IO
+
+main = do
+    let str = "这是另一个标准错误输出。"
+    hPutStrLn stderr str  -- 使用hPutStrLn函数
+    hPutStr stderr str   -- 使用hPutStr函数
+    hPrint stderr str    -- 使用hPrint函数
+    str `debug` stderr   -- 使用debug函数输出
+```
+
+运行该程序，我们将看到如下输出：
+
+```
+这是另一个标准错误输出。
+这是另一个标准错误输出。
+这是另一个标准错误输出。
+这是另一个标准错误输出。
+```
+
+可以看到，效果是一样的。因此，根据个人喜好和编程需要，我们可以选择使用最方便的方式来向标准错误输出信息。
+
+## 参考资料 (See Also)
+
+- [Haskell标准库文档 - System.IO](http://hackage.haskell.org/package/base-4.14.1.0/docs/System-IO.html)
+- [Haskell中的标准错误输出 - 菜鸟教程](https://www.runoob.com/w3cnote/haskell-stderr.html)
+- [跟我学Haskell - 第7章 输入输出](https://book.haskellcn.org/read/dive-into-haskell-laopao/io.html)

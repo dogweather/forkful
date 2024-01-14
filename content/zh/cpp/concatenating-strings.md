@@ -1,57 +1,58 @@
 ---
-title:                "C++: 字符串连接"
+title:                "C++: 连接字符串"
+simple_title:         "连接字符串"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-##为什么
+为什么要连接字符串？
 
-当我们需要将多个字符串连接在一起时，我们需要使用字符串连接。这可以帮助我们在编程过程中更有效地处理字符串，并减少代码重复。
+在编程中，有时候我们需要将多个字符串连接在一起以创建一个完整的字符串。这可以使代码更加简洁和可读，并且在处理字符串时也会更加方便。接下来，我将向大家介绍如何在C++中连接字符串，以及这背后的一些深层信息。
 
-##怎么做
+如何连接字符串？
 
-字符串连接最简单的方法是使用 "+"运算符，它将两个字符串连接在一起。例如：
+为了连接字符串，我们可以使用C++中的"+"运算符。让我们看一个例子：
+
 ```C++
-string hello = "Hello";
-string world = "World";
-string helloWorld = hello + world;
-cout << helloWorld;
+#include <iostream>
+using namespace std;
+
+int main() {
+    // 定义两个字符串
+    string str1 = "Hello";
+    string str2 = "world";
+
+    // 使用"+"运算符连接字符串，并赋值给新的变量
+    string combinedStr = str1 + " " + str2;
+
+    // 打印输出结果
+    cout << combinedStr; // 输出 "Hello world"
+
+    return 0;
+}
 ```
-输出：HelloWorld
 
-我们也可以使用"append"函数来连接字符串，它可以接受多个字符串作为参数。例如：
-```C++
-string sentence = "This is";
-sentence.append(" a sentence").append(" using append function.");
-cout << sentence;
-```
-输出：This is a sentence using append function.
+在这个例子中，我们将两个字符串 "Hello" 和 "world" 连接在一起，并将结果赋值给新的变量 combinedStr。最后，我们打印输出这个变量的值，结果为 "Hello world"。
 
-如果我们想要在每个字符串之间添加一个空格，我们可以使用"join"函数。例如：
-```C++
-string fruits[] = {"apple", "banana", "orange"};
-string joinedFruits = join(begin(fruits), end(fruits), " ");
-cout << joinedFruits;
-```
-输出：apple banana orange
+深入探讨
 
-##深入了解
+在C++中，字符串是一个包含字符序列的特殊数据类型。在连接字符串时，C++会在内存中开辟足够大的空间来存储新的字符串。这个过程可能会涉及到字符串的复制和重构，因此在处理大量字符串时可能会影响性能。为了避免这种情况，我们可以使用C++中的字符串流来连接字符串，这样可以更有效地处理字符串连接操作。
 
-字符串连接的底层原理是将两个字符串的内容复制到一个新的字符串中。因此，在处理大量字符串时，使用字符串连接可能会导致性能下降。为了避免这种情况，我们可以使用"StringBuilder"类来动态构建字符串。它可以避免频繁地创建新的字符串，并提高执行效率。
+另外，还有一些库函数可以帮助我们连接字符串，如`strcat()`和`strncat()`。这些函数可以避免频繁的内存分配和重构，从而提高性能。
 
-另外，当我们需要连接数字和字符串时，我们需要将数字转换为字符串。可以使用"to_string"函数来实现此功能。例如：
-```C++
-int number = 123;
-string result = "The number is " + to_string(number);
-cout << result;
-```
-输出：The number is 123
+参考链接
 
-## 参考链接
+- [C++字符串连接教程](https://www.geeksforgeeks.org/c-string-class-and-its-applications/)
+- [了解字符串操作的原理](https://www.geeksforgeeks.org/strcat-vs-strncat-cpp/)
+- [使用C++字符串流连接字符串](https://www.geeksforgeeks.org/stringstream-in-c-and-its-applications/)
+- [学习C++字符串库函数](https://www.geeksforgeeks.org/string-library-functions-in-cpp-stl/)
 
-- [C++字符串的连接方法](https://www.cnblogs.com/wangjiquan/p/10190460.html)
-- [C++中的字符串连接](https://blog.csdn.net/yygb227/article/details/40936893)
-- [C++中StringBuilder的使用方法](https://blog.csdn.net/lucifer_xf/article/details/38470873)
+请参考
+
+- [字符串数据类型](https://www.w3schools.com/cpp/cpp_strings.asp)
+- [C++基础知识教程](https://www.geeksforgeeks.org/cpp-tutorial/)
+- [C++标准库参考手册](https://www.cplusplus.com/reference/)

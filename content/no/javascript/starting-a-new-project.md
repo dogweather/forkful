@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Å starte et nytt prosjekt."
+title:                "Javascript: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Javascript"
-category:             "Getting Started"
+category:             "Javascript"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/starting-a-new-project.md"
 ---
 
@@ -9,62 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å starte et nytt programmeringsprosjekt kan være en spennende og givende opplevelse. Det gir deg muligheten til å utvikle og implementere dine egne ideer, lære nye ferdigheter, og være kreativ. Det er også en flott måte å bygge din portefølje og vise potensielle arbeidsgivere eller klienter hva du er i stand til.
+Å starte et nytt programmeringsprosjekt kan virke som en skremmende oppgave, men det kan også være utrolig givende. Ved å lage dine egne programmer eller nettsider, kan du lære nye programmeringsspråk og utvide dine ferdigheter. Det kan også være en måte å uttrykke din kreativitet og lage noe som er helt unikt.
 
-## Slik gjør du det
+## Hvordan
 
-For å starte et nytt prosjekt i Javascript, må du først velge en kodeeditor som passer for deg. Det finnes mange alternativer der ute, men noen populære valg inkluderer Visual Studio Code, Sublime Text og Atom. Deretter må du installere Node.js og npm, som er nødvendig for å kjøre og administrere dine Javascript-prosjekter.
+Å starte et nytt prosjekt krever litt planlegging og forberedelse. For å komme i gang, må du velge et programmeringsspråk og et rammeverk å bruke. Dette vil påvirke hvordan du bygger og organiserer koden din. Deretter må du sette deg noen mål for prosjektet, enten det er å lære en ny teknologi eller å lage et ferdig produkt.
 
-Når du har satt opp miljøet ditt, kan du begynne å skrive kode. Javascript er et populært programmeringsspråk som brukes til å lage interaktive og dynamiske nettsteder og applikasjoner. For å kunne starte et prosjekt, må du ha grunnleggende kjennskap til Javascript-konsepter som variabler, loops og funksjoner.
-
-La oss for eksempel si at du ønsker å lage en enkel kalkulator. I din kodeeditor, skriv følgende:
+Etter å ha bestemt deg for hva du vil oppnå, kan du begynne å kode. Her er et eksempel på hvordan man kan lage en enkel "Hello World" applikasjon i Javascript:
 
 ```Javascript
-// Definerer en funksjon som tar to tall og en operator som parametere
-function kalkulator(tall1, tall2, operator) {
-  let resultat; 
-  // Bruker en switch-case for å utføre riktig matematisk operasjon avhengig av operatøren
-  switch (operator) {
-    case "+":
-      resultat = tall1 + tall2;
-      break;
-    case "-":
-      resultat = tall1 - tall2;
-      break;
-    case "*":
-      resultat = tall1 * tall2;
-      break;
-    case "/":
-      resultat = tall1 / tall2;
-      break;
-    default:
-      console.log("Ugyldig operator");
-  }
-  // Returnerer resultatet
-  return resultat;
-}
-
-// Kaller funksjonen og lagrer resultatet i en variabel
-let sum = kalkulator(5, 10, "+");
-
-// Skriver ut resultatet i konsollen
-console.log(sum); // Forventet utgang: 15
+// Dette er et enkelt "Hello World" program
+console.log("Hei, verden!");
 ```
 
-Som du kan se, definerer vi her en funksjon som tar inn to tall og en operator som parametere. Deretter bruker vi en switch-case for å utføre riktig matematisk operasjon avhengig av hvilken operator som blir gitt til funksjonen. Til slutt kalles funksjonen og resultatet lagres i en variabel, som deretter blir skrevet ut til konsollen.
+Når koden kjører, vil du se følgende output: Hei, verden!
+
+Dette er bare et enkelt eksempel på hvordan du kan bruke Javascript, men mulighetene er uendelige. Når du føler deg mer komfortabel med språket, kan du begynne å jobbe med mer komplekse prosjekter og utvikle dine ferdigheter enda mer.
 
 ## Dypdykk
 
-Når du starter et nytt Javascript-prosjekt, er det viktig å ha en plan og organisere din kode på en god måte. En god praksis er å dele koden din inn i moduler, som er uavhengige deler av koden som utfører en bestemt oppgave. Dette gjør koden enklere å lese, vedlikeholde og feilsøke.
+Når du starter et nytt prosjekt, er det viktig å ha en god organisering av koden din. Dette vil gjøre det enklere å vedlikeholde og utvide prosjektet i fremtiden. En måte å gjøre dette på er å dele koden din inn i forskjellige filer og mapper basert på funksjonalitet. Dette vil også gjøre det enklere å feilsøke hvis noe går galt.
 
-Det er også viktig å dokumentere koden din godt, slik at andre og fremtidige deg selv enkelt kan forstå hva som skjer i koden. Det finnes forskjellige dokumentasjonsverktøy som JSDoc som kan hjelpe deg med dette.
+En annen viktig del av å starte et nytt prosjekt er å ha en god arbeidsflyt. Dette innebærer å bruke versjonskontroll systemer som Git og jobbe med feature branches for å holde koden din ryddig og organisert. Det er også viktig å teste koden din grundig før du publiserer den for å unngå feil i produksjon.
 
-Husk også å inkludere testing i ditt prosjekt. Ved å skrive tester for koden din, kan du sikre at den fungerer som den skal og oppdage eventuelle feil tidlig.
+## Se også
 
-## Se Også
+- [Lær Javascript] (https://www.w3schools.com/js/)
+- [Vanlige feil i Javascript] (https://www.codingame.com/blog/common-javascript-errors/)
+- [10 tips for å bli en bedre Javascript utvikler] (https://medium.com/javascript-scene/10-tips-to-become-a-better-javascript-developer-208a1fb470cf)
 
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Sublime Text](https://www.sublimetext.com/)
-- [Atom](https://atom.io/)
-- [Node.js](https://nodejs.org/en/)
-- [JSDoc](https://jsdoc.app/)
+Nå som du har lært hvorfor og hvordan du skal starte et nytt prosjekt i Javascript, kan du begynne å utforske og lage dine egne spennende applikasjoner eller nettsider. God koding!

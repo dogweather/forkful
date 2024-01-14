@@ -1,45 +1,46 @@
 ---
-title:                "Gleam: Calculando uma data no futuro ou passado."
+title:                "Gleam: Calculando uma data no futuro ou passado"
+simple_title:         "Calculando uma data no futuro ou passado"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
+## Why
 
-Calcular datas no futuro ou no passado pode ser útil em várias situações, como agendar eventos ou tarefas, planejar viagens ou acompanhar prazos importantes.
+Você já se perguntou como seria possível calcular uma data no futuro ou no passado? Existem diversas razões pelas quais alguém pode querer fazer esta operação, como prever datas importantes, organizar cronogramas ou até mesmo criar jogos que envolvem passagem do tempo. Independentemente do motivo, o Gleam torna este processo simples e fácil.
 
-## Como fazer
+## How To
 
-Para realizar essa tarefa no Gleam, podemos utilizar a função `DateTime.add` ou `DateTime.sub`. A primeira recebe uma data e um intervalo de tempo como parâmetros e retorna uma nova data avançando o intervalo de tempo especificado. Já a segunda faz o oposto, retrocedendo o intervalo de tempo fornecido.
-
-Vejamos um exemplo de uso da função `DateTime.add` para calcular uma data 1 semana no futuro:
+Para calcular uma data no futuro ou no passado usando o Gleam, basta utilizar a função `Date.add` passando como argumentos a data inicial e um valor inteiro representando a quantidade desejada de dias. Por exemplo:
 
 ```Gleam
-import gleam/datetime.{ DateTime, Week }
-
-let data_atual = DateTime.now()
-let data_futura = DateTime.add(Week(1), data_atual)
+let data_inicial = Date.new(2021, 10, 15)
+let data_futura = Date.add(data_inicial, 365)
 ```
 
-Neste caso, a variável `data_futura` terá o valor correspondente a uma semana após a data atual.
+O código acima adiciona 365 dias à data inicial e armazena o resultado na variável `data_futura`. Você pode alterar o valor inteiro para uma quantidade maior ou menor de dias, dependendo da sua necessidade.
 
-## Mergulho profundo
-
-Caso queiramos calcular uma data futura ou passada com base em um intervalo de tempo específico, podemos utilizar a função `DateTime.from_parts`. Esta função permite fornecer diretamente os valores para ano, mês, dia, hora, minuto e segundo da data desejada. Por exemplo, para calcular uma data daqui a 2 anos e 3 meses, podemos fazer o seguinte:
+Para calcular uma data no passado, basta utilizar um valor inteiro negativo. Por exemplo:
 
 ```Gleam
-import gleam/datetime.{ DateTime }
-
-let data_futura = DateTime.from_parts(year=DateTime.now().year + 2, month=DateTime.now().month + 3, day=DateTime.now().day, hour=DateTime.now().hour, minute=DateTime.now().minute, second=DateTime.now().second)
+let data_passada = Date.add(data_inicial, -15)
 ```
 
-Note que utilizamos os valores atuais para hora, minuto e segundo, já que não foi especificado um intervalo de tempo para estes.
+Este código subtrai 15 dias da data inicial e armazena o resultado na variável `data_passada`. Simples assim!
 
-## Veja também
+## Deep Dive
 
-- [Documentação oficial do módulo DateTime do Gleam](https://gleam.run/modules/gleam_datetime/latest/DateTime.html)
-- [Tutorial de programação em Gleam](https://gleam.run/blog/getting-started-with-gleam-to-build-a-todo-backend.html)
-- [Exemplos de projetos em Gleam](https://github.com/gleam-lang/gleam/tree/master/examples)
+Na verdade, o Gleam permite que você faça muito mais do que apenas adicionar ou subtrair dias de uma data. Você também pode usar as funções `Date.add_months` e `Date.add_years` para adicionar meses e anos, respectivamente.
+
+Além disso, o Gleam possui uma função `Date.diff` que calcula a diferença entre duas datas em dias. Este pode ser um recurso útil para quem deseja medir a passagem do tempo entre duas datas específicas.
+
+## See Also
+
+- [Documentação do Gleam sobre datas](https://gleam.run/modules/date)
+- [Outros recursos úteis do Gleam](https://gleam.run/documentation)
+
+Esperamos que este artigo tenha sido útil e que você possa usar o Gleam para calcular datas no futuro ou no passado de forma eficiente e fácil. Continue explorando todas as funcionalidades desta linguagem de programação funcional moderna e divirta-se criando aplicações incríveis!

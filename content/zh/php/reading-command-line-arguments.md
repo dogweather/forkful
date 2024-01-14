@@ -1,7 +1,9 @@
 ---
 title:                "PHP: 读取命令行参数"
+simple_title:         "读取命令行参数"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/reading-command-line-arguments.md"
 ---
 
@@ -9,49 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 # 为什么要阅读命令行参数？
 
-在PHP编程中，阅读命令行参数是一项基本的技能。通过读取命令行参数，您可以为您的脚本提供外部输入，使其更加灵活和功能强大。例如，您可以根据命令行传递的参数来调整脚本的行为，或者让用户通过命令行输入数据。因此，学习如何读取命令行参数是非常重要的，它可以帮助您更好地掌握PHP编程知识，并实现更多有用的功能。
+在PHP编程中，阅读命令行参数是一项非常重要的技能。通过使用命令行参数，我们可以向程序传递额外的信息，从而使得程序更加灵活和可配置。这样一来，我们就可以根据不同的需求来运行同一段代码，而无需修改代码本身。
 
-# 如何读取命令行参数
+## 如何阅读命令行参数？
 
-要读取命令行参数，首先需要声明一个 `$argv` 数组变量，它会包含所有通过命令行传递的参数。然后，您可以使用 `count()` 函数来检查参数的数量，或使用 `foreach` 循环来遍历所有的参数。下面是一个简单的示例，展示如何读取并输出命令行参数：
+阅读命令行参数并不复杂。首先，我们需要在程序中使用PHP内置的`$argv`变量来获取所有的命令行参数。然后，我们可以使用`$argv`数组来访问每一个参数。下面是一个简单的例子：
 
 ```PHP
 <?php
-// 声明 `$argv` 数组变量
-$argv = $_SERVER['argv'];
+// 获取命令行参数
+$args = $argv;
 
-// 检查参数的数量并输出结果
-echo "您输入了 " . count($argv) . "个参数：\n";
-
-// 使用 foreach 循环遍历所有参数并输出
-foreach ($argv as $key => $value) {
-    echo $key . ": " . $value . "\n";
+// 打印出所有参数
+foreach ($args as $arg) {
+    echo "$arg\n";
 }
 ```
 
-假设您执行了以下命令：`php script.php hello world`，则上述示例的输出结果将为：
+假设我们在命令行中输入了如下命令：
 
 ```
-您输入了 3 个参数：
-0: php
-1: script.php
-2: hello
-3: world
+php myprogram.php hello world
 ```
 
-您可以看到，第一个参数是操作PHP的二进制文件，第二个参数是您在命令行输入的脚本名称，剩下的参数则是您传递的实际参数。
+那么上面的代码将会输出：
 
-# 深入学习命令行参数
+```
+myprogram.php
+hello
+world
+```
 
-除了基本的读取参数方法外，您还可以使用 `getopt()` 函数来解析命令行选项。`getopt()` 函数可以帮助您更轻松地处理多个参数，并将它们转换为可供使用的变量。您可以通过阅读更多资料来学习如何使用 `getopt()` 函数，并利用它来实现更复杂的命令行操作。
+我们可以看到，`$argv`数组中的第一个元素是程序的名称，而后面的参数则依次排列。如果我们想要获取特定位置的参数，可以使用`$argv`数组中的对应索引。例如，如果我们想要获取第二个参数，可以使用`$argv[1]`。
+
+## 深入了解命令行参数
+
+在上面的例子中，我们仅仅是简单地打印出了命令行参数。但是，命令行参数的功能远不止于此。我们还可以给参数添加前缀，如`--option`或`-o`。这样一来，我们就可以通过检查参数是否存在来决定程序的行为。
+
+此外，我们还可以为命令行参数设置默认值。当用户没有输入参数时，程序将会使用默认值来运行。要想使用这个功能，我们需要使用`$argc`变量来获取参数的数量。如果`$argc`为1，意味着用户没有输入任何参数，我们可以使用`$args[0]`来判断用户是否添加了命令行选项。
+
+最后，我们还可以使用第三方库来简化使用命令行参数的过程。例如，Symfony的Console组件提供了非常强大的功能，可帮助我们解析和使用命令行参数。
 
 # 参考链接
 
-- PHP官方文档：https://www.php.net/manual/zh/features.commandline.php
-- 教程：https://www.w3cschool.cn/php/php-command-line.html
-- 代码示例：https://www.runoob.com/php/php-commandline-input.html
+- [PHP $argc变量的用法及算法官网示例](https://www.runoob.com/php/php-argc-argc.html)
+- [使用Symphony Console组件处理命令行参数](https://www.toptal.com/php/building-chat-cli-symfony-console)
+- [PHP命令行参数简介](https://www.php.net/manual/zh/features.commandline.php)
 
-# 另请参阅
+# 参见
 
-- [阅读命令行参数的更多方法与技巧](https://www.example.com/read-command-line-arguments)
-- [通过命令行参数来优化您的PHP脚本](https://www.example.com/optimize-php-script-with-command-line-arguments)
+- [PHP内置变量](https://www.php.net/manual/zh/reserved.variables.php)
+- [Symphony Console组件文档](https://symfony.com/doc/current/components/console.html)

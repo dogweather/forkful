@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Verificação da existência de um diretório."
+title:                "Arduino: Verificando se um diretório existe"
+simple_title:         "Verificando se um diretório existe"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/arduino/checking-if-a-directory-exists.md"
 ---
 
@@ -9,26 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que verificar se um diretório existe?
 
-Quando trabalhamos com desenvolvimento de projetos no Arduino, muitas vezes precisamos armazenar arquivos em um cartão SD. Porém, antes de salvar ou acessar um arquivo, é importante ter certeza de que o diretório onde queremos inseri-lo realmente existe. É essa a função que verificamos no código Arduino: garantir que o diretório existe antes de realizar qualquer operação.
+Verificar se um diretório existe é um processo importante ao trabalhar com Arduino. Isso permite que o programa execute tarefas específicas com base na existência ou não de um diretório. Pode ser útil em situações onde o usuário precisa salvar ou recuperar dados de um diretório específico.
 
-## Como fazer isso?
+## Como fazer
 
-Para verificar se um diretório existe, utilizamos a função ```SD.exists()``` seguida do nome do diretório entre parênteses. Uma possível implementação seria a seguinte:
+Para verificar se um diretório existe, podemos usar a função `exists()` da biblioteca "SD.h". Esta função retorna um valor booleano verdadeiro se o diretório existir e falso se não existir. Aqui está um exemplo de como usar essa função:
 
-```Arduino
-if(SD.exists("meu_diretorio")){
-   //Realize a operação desejada
+```
+#include <SD.h>
+
+void setup() {
+  Serial.begin(9600);
+  if (SD.exists("meu_diretorio")) {      //verifica se o diretório "meu_diretorio" existe
+    Serial.println("O diretório existe!");
+  } else {
+    Serial.println("O diretório não existe!");
+  }
+}
+
+void loop() {
+  
 }
 ```
 
-Caso o diretório "meu_diretorio" exista, a operação será realizada. Caso contrário, nada será executado. É importante ressaltar que o nome do diretório deve ser inserido entre aspas e respeitar a estrutura de pastas do seu cartão SD.
+Se o diretório "meu_diretorio" existir, o programa imprimirá "O diretório existe!" no monitor serial. Caso contrário, ele imprimirá "O diretório não existe!".
 
-## Aprofundando no assunto
+## Aprofundando
 
-A função ```SD.exists()``` retorna um valor booleano, ou seja, verdadeiro (true) se o diretório existir ou falso (false) se ele não existir. Além disso, é possível utilizar outras funções relacionadas, como por exemplo, a ```SD.mkdir()```, que cria um diretório caso ele não exista. Também é importante lembrar que, se existir um arquivo com o mesmo nome do diretório, a função ```SD.exists()``` irá retornar ```false```, pois o nome já está em uso.
+Quando usamos a função `exists()` para verificar um diretório, o Arduino tenta acessar o diretório especificado e, se conseguir, o diretório é considerado como existente. Caso contrário, ele é considerado inexistente. É importante notar que esta função não verifica se o diretório contém arquivos, apenas se o diretório em si existe.
 
 ## Veja também
 
-- Documentação oficial da SD.h library (em inglês): https://www.arduino.cc/en/reference/SD
-- Artigo sobre leitura e gravação de arquivos em cartão SD (em português): https://blog.arduino.cc/2016/07/06/how-to-control-10-objects-with-one-arduino-board-and-a-joystick/ 
-- Vídeo tutorial sobre como usar um cartão SD com Arduino (em português): https://www.youtube.com/watch?v=8-V98mQd5Ok
+- Documentação da função exists() da biblioteca SD.h: https://www.arduino.cc/reference/en/libraries/sd/exist/
+- Tutorial sobre o uso de diretórios no Arduino: https://www.arduino.cc/en/Tutorial/Files
+
+O processo de verificar a existência de um diretório pode ser muito útil ao trabalhar com projetos mais complexos no Arduino. Com a compreensão deste processo, você pode utilizar essa função em seus projetos para facilitar o armazenamento e recuperação de dados. Então, verifique sempre se o diretório existe antes de tentar acessá-lo!

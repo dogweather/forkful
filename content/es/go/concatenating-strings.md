@@ -1,47 +1,53 @@
 ---
 title:                "Go: Concatenando cadenas"
+simple_title:         "Concatenando cadenas"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué concatenar cadenas en Go?
+## Por qué
 
-Concatenar cadenas en Go es una técnica común en programación que permite unir dos o más cadenas de texto en una sola. Esto es útil en situaciones donde se desea crear una salida de texto más compleja o agregar información dinámica a una cadena existente.
+Concatenar strings es una habilidad fundamental en programación y es especialmente útil cuando se trabaja con texto. Permite combinar varias cadenas de caracteres para crear una sola, lo que puede ser útil para tareas como la impresión de mensajes o la creación de URLs.
 
-## Cómo hacerlo:
+## Cómo
 
-En Go, el operador `+` se utiliza para concatenar cadenas. Por ejemplo, si queremos unir las cadenas "¡Hola" y "mundo!", podemos utilizar el siguiente código:
-
-```Go
-saludo := "¡Hola"
-mundo := "mundo!"
-fmt.Println(saludo + " " + mundo)
-```
-
-Esto imprimirá la cadena "¡Hola mundo!" en la pantalla. También se puede utilizar la función `strings.Join()` para concatenar más de dos cadenas a la vez, utilizando un delimitador opcional.
+La concatenación de strings en Go es simple y se puede realizar de varias formas. Una opción es utilizar el operador `+` para unir dos strings:
 
 ```Go
-paises := []string{"España", "México", "Argentina"}
-fmt.Println(strings.Join(paises, ", "))
+nombre := "Juan"
+apellido := "Pérez"
+nombreCompleto := nombre + " " + apellido
+fmt.Println(nombreCompleto) // salida: Juan Pérez
 ```
 
-Esto imprimirá "España, México, Argentina" en la pantalla. Se pueden concatenar cadenas de diferentes tipos, como cadenas y variables enteras o flotantes.
+Otra opción es utilizar la función `fmt.Sprintf()` que devuelve una cadena formateada con los valores especificados:
 
-En Go, las cadenas de texto se pueden manipular utilizando la librería `strings`, que ofrece funciones útiles para dividir, reemplazar y buscar texto dentro de una cadena.
+```Go
+edad := 25
+descripcion := fmt.Sprintf("Tengo %d años", edad)
+fmt.Println(descripcion) // salida: Tengo 25 años
+```
 
-## Una mirada más profunda:
+También se puede utilizar `strings.Join()` para unir un arreglo de strings en una sola cadena:
 
-El proceso de concatenar cadenas en Go se basa en la creación de una nueva cadena a partir de dos o más cadenas existentes. Esto significa que se asigna un nuevo bloque de memoria para contener la cadena concatenada.
+```Go
+canciones := []string{"Despacito", "La Bamba", "Bailando"}
+playlist := strings.Join(canciones, ", ")
+fmt.Println(playlist) // salida: Despacito, La Bamba, Bailando
+```
 
-Es importante tener en cuenta que, debido a que las cadenas en Go son inmutables, cada vez que se concatena una cadena, se crea una nueva versión en lugar de modificar la original. Esto puede tener un impacto en el rendimiento si se concatena un gran número de cadenas en un ciclo o bucle.
+## Un poco más profundo
 
-Además, como se mencionó anteriormente, la librería `strings` ofrece funciones para manipular cadenas de texto de manera más eficiente y con menos impacto en el rendimiento.
+Es importante tener en cuenta que la concatenación de strings en Go crea una nueva cadena cada vez que se realiza. Esto puede no ser un problema con pequeñas cadenas, pero puede afectar al rendimiento en operaciones con strings más grandes.
 
-## Ver también:
+También es importante considerar el uso de la función `bytes.Buffer` para evitar la creación constante de nuevas cadenas en el proceso de concatenación. Esta función crea un búfer de bytes que se puede utilizar para agregar strings sin crear nuevas cadenas en cada operación.
 
-- Documentación oficial de Go sobre cadenas: https://golang.org/pkg/strings/
-- Ejemplos de concatenación de cadenas en Go: https://gobyexample.com/string-concatenation
-- Tutorial de programación básica de Go: https://www.freecodecamp.org/news/learn-golang/
+## Ver también
+
+- [La documentación oficial de strings en Go](https://golang.org/pkg/strings/)
+- [Tips para mejorar el performance en cadenas en Go](https://kgrz.io/strings-build-up-grpc-performance.html)
+- [El operador `+=` en Go](https://www.geeksforgeeks.org/golang-short-assignment-operator-variable-set-value/)

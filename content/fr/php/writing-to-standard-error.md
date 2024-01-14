@@ -1,46 +1,46 @@
 ---
-title:                "PHP: Écrire vers les erreurs standards"
+title:                "PHP: Ecrire sur l'erreur standard"
+simple_title:         "Ecrire sur l'erreur standard"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/php/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Vous vous demandez peut-être pourquoi quelqu'un utiliserait standard error lors de l'écriture de code PHP ? La réponse est simple : il y a des situations où la sortie standard (standard output) n'est pas suffisante pour fournir des informations sur les erreurs. C'est là que l'écriture à standard error peut être utile. Cela permet de séparer les messages d'erreur et les messages de débogage, rendant la lecture des informations de débogage plus facile et plus efficace.
+L'écriture sur la sortie d'erreur standard, ou "standard error", peut sembler une étape inutile dans un script PHP. Cependant, cela peut être très utile pour le débogage et la gestion des erreurs lors du développement d'applications web. Dans cet article, nous allons explorer pourquoi il est important d'écrire sur la sortie d'erreur standard et comment le faire efficacement. 
 
-## Comment faire
+## Comment faire 
 
-Pour écrire à standard error en PHP, vous pouvez utiliser la fonction `fwrite()` en spécifiant une sortie de type `STDERR`. Voici un exemple de code :
+Pour écrire sur la sortie d'erreur standard en PHP, vous pouvez utiliser la fonction `fwrite()` en spécifiant le descripteur de fichier pour la sortie d'erreur standard, qui est `STDERR`. Par exemple : 
 
 ```PHP
-<?php
-$vers = 5;
-$division = 10 / $vers;
+fwrite(STDERR, "Erreur : Une variable n'a pas été définie");
+```
 
-if ($division == 2.5) {
-    echo "La division s'est effectuée correctement.\n";
-} else {
-    fwrite(STDERR, "Il y a eu une erreur lors de la division.\n");
+Cela enverra un message d'erreur à la console ou au fichier de log, selon la configuration de votre serveur. Vous pouvez également utiliser `error_log()` pour écrire directement dans un fichier de log défini. 
+
+Il est également important de noter que l'on peut utiliser `try...catch` pour capturer les erreurs et les écrire sur la sortie d'erreur standard. Par exemple : 
+
+```PHP
+try {
+  // Code susceptible de générer une erreur
+} catch (Exception $e) {
+  fwrite(STDERR, "Erreur : ".$e->getMessage());
 }
 ```
 
-Lorsque vous exécutez ce code, le message d'erreur sera affiché dans le terminal plutôt que dans l'affichage standard. Cela peut s'avérer très utile lors du débogage et du test de votre code.
+## Plongée en profondeur 
 
-## Plongée en profondeur
+L'écriture sur la sortie d'erreur standard peut être particulièrement utile lors du développement d'applications web. Cela permet de détecter et de gérer les erreurs plus facilement, en les enregistrant dans un fichier dédié ou en les affichant dans la console pour un débogage rapide. 
 
-Il est important de noter que l'écriture à standard error peut également être utilisée pour enregistrer des messages d'erreur dans un fichier de journal au lieu de les afficher directement dans le terminal. Cela peut être utile lors du développement de grandes applications qui nécessitent une surveillance et une gestion des erreurs plus étendues.
+En plus de cela, écrire sur la sortie d'erreur standard peut également être utilisé pour améliorer la sécurité de votre application. En logguant les erreurs, vous pouvez repérer et résoudre rapidement les vulnérabilités potentielles de votre code. 
 
-Une autre astuce utile consiste à utiliser la fonction `error_reporting()` pour contrôler le niveau de rapport d'erreurs et ainsi avoir un meilleur contrôle sur les messages d'erreur qui seront écrits à standard error.
+## Voir aussi 
 
-## Voir aussi
-
-Pour en savoir plus sur l'utilisation de standard error en PHP, vous pouvez consulter les ressources suivantes :
-
-- [Documentation officielle de PHP sur la fonction `fwrite()`](https://www.php.net/manual/fr/function.fwrite.php)
-- [Article sur le site Mastering PHP sur la gestion des erreurs avec PHP](https://masteringphp.net/exception-handling-with-try-catch-finally/)
-- [Discussion sur Stack Overflow sur la différence entre les sorties standard et les sorties d'erreur en PHP](https://stackoverflow.com/questions/37803660/difference-between-php-echo-and-fwrite-stderr)
-
-N'hésitez pas à explorer et à expérimenter avec l'écriture à standard error dans vos projets PHP pour améliorer votre processus de débogage et de gestion des erreurs. Bonne programmation !
+- [Tutoriel PHP complet pour les débutants](https://www.w3schools.com/php/)
+- [Documentation officielle de PHP sur fwrite()](https://www.php.net/manual/fr/function.fwrite.php)
+- [Guide de débogage PHP](https://www.php.net/manual/fr/debugger.php)

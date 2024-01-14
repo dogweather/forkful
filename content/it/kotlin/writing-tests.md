@@ -1,43 +1,40 @@
 ---
-title:                "Kotlin: Scrivere test"
+title:                "Kotlin: Scrittura di test"
+simple_title:         "Scrittura di test"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/kotlin/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Perché
+## Perché scrivere test: 
 
-Scrivere test di unità è un'importante pratica di sviluppo del software che può aiutare a migliorare la qualità del codice e la stabilità delle applicazioni. Inoltre, aiuta anche a identificare eventuali bug prima che il codice venga messo in produzione.
+Scrivere test è un'importante abilità per qualsiasi programmatore Kotlin. I test sono una parte integrale del processo di sviluppo del software e aiutano a garantire la qualità e l'affidabilità del codice. Inoltre, scrivere test può aiutare a rintracciare eventuali errori nel codice prima che diventino problemi più grandi. 
 
-## Come fare
+## Come scrivere test: 
 
-Per scrivere test di unità in Kotlin, è necessario utilizzare il framework di testing integrato all'interno del linguaggio. Di seguito, vedremo un esempio di come creare un test di unità per una semplice funzione che calcola il doppio di un numero:
+Per scrivere test efficaci in Kotlin, è necessario seguire alcuni passaggi semplici. Inizialmente, è importante creare una funzione di test che definisca il comportamento desiderato del codice. Quindi, è possibile utilizzare assert statement per verificare se il risultato della funzione coincide con il valore atteso. Di seguito è riportato un esempio di come potrebbe apparire il codice: 
 
 ```Kotlin
-fun double(number: Int): Int {
-    return number * 2
+fun addNumbers(x: Int, y: Int): Int {
+    return x + y
 }
 
-class TestDouble {
-    
-    @Test
-    fun `test double function`() {
-        val result = double(5)
-        assertEquals(10, result)
-    }
+fun testAddNumbers() {
+    val result = addNumbers(2, 3)
+    val expected = 5
+    assert(result == expected)
 }
 ```
 
-In questo esempio, abbiamo creato una funzione ```double``` che prende in input un intero e ritorna il doppio del numero. Nella classe di test ```TestDouble```, abbiamo creato un metodo annotato con ```@Test``` che esegue la funzione e confronta il risultato con quello atteso utilizzando il metodo ```assertEquals``` fornito dal framework di testing. 
+## Deep Dive: 
 
-## Approfondimento
+Scrivere test può sembrare un processo complicato all'inizio, ma una volta comprese le basi, può diventare una parte naturale del processo di sviluppo del software. È importante capire che i test non sono solo per controllare la correttezza del codice, ma anche per aiutarci a progettare e organizzare il codice in modo più efficace. Inoltre, i test possono essere utili per identificare eventuali bug e implementare funzionalità nuove senza causare problemi in altre parti del codice. 
 
-Scrivere test di unità non riguarda solo controllare il funzionamento delle singole funzioni, ma anche garantire che il codice sia ben progettato e scalabile. Alcuni dei concetti chiave da tenere a mente quando si scrivono test di unità includono l'isolamento delle dipendenze, il testing delle eccezioni e il mantenimento di un buon coverage dei test per il proprio codice.
+## Vedi Anche: 
 
-## Vedi anche
-
-- [Documentazione di Kotlin per il testing](https://kotlinlang.org/docs/testing.html)
-- [Esempio di testing di un'applicazione Android con Kotlin](https://medium.com/@simonmarquis/testing-your-android-app-with-kotlin-37111f107704)
-- [Best practices per il testing in Kotlin](https://proandroiddev.com/kotlin-best-practices-for-unit-testing-94b2d7739a93)
+- ["Testing in Kotlin: A Quick Guide" - AndroidPIT](https://www.androidpit.it/testing-in-kotlin-quick-tutorial)
+- ["Effective Unit Testing in Kotlin" - Ray Wenderlich](https://www.raywenderlich.com/986865-effective-unit-testing-in-kotlin)
+- ["Kotlin Testing" - Kotlinlang.org](https://kotlinlang.org/docs/tutorials/kotlin-for-py/testing.html#writing-tests)

@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Comparer deux dates"
+title:                "Haskell: Comparaison de deux dates"
+simple_title:         "Comparaison de deux dates"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/comparing-two-dates.md"
 ---
 
@@ -9,43 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Comparaison de dates est une tâche courante en programmation, en particulier dans le développement d'applications liées au temps, telles que les calendriers ou les tâches planifiées. Comprendre comment comparer deux dates est un outil utile pour créer des fonctionnalités précises et fiables.
+La comparaison de deux dates est une tâche courante dans la programmation en Haskell. Elle permet de déterminer si une date est antérieure, égale ou postérieure à une autre date, ce qui peut être utile pour trier des données ou réaliser des calculs basés sur des dates.
 
 ## Comment faire
 
-Pour comparer deux dates en Haskell, nous avons besoin d'utiliser la fonction `compare` du module `Data.Time`. Prenons par exemple les deux dates suivantes :
+Pour comparer deux dates en Haskell, nous utiliserons le type de données `UTCTime` du module `Data.Time` ainsi que la fonction `compare` du module `Data.Ord`. Voici un exemple de code qui compare deux dates et affiche le résultat :
 
+```Haskell
+import Data.Time
+import Data.Ord
+
+-- Définition de deux dates
+date1 = UTCTime (fromGregorian 2020 1 1) (secondsToDiffTime 0)
+date2 = UTCTime (fromGregorian 2021 1 1) (secondsToDiffTime 0)
+
+-- Comparaison de date1 et date2
+comparison = compare date1 date2
+
+-- Affichage du résultat
+print comparison
 ```
-date1 = fromGregorian 2021 10 01 -- 1er octobre 2021
-date2 = fromGregorian 2021 09 25 -- 25 septembre 2021
-```
+Output: `LT`
 
-La fonction `compare` prend deux arguments et renvoie un type de données `Ordering` qui peut être soit `GT` (plus grand), `LT` (plus petit) ou `EQ` (égal). Nous pouvons l'utiliser pour comparer les deux dates de la manière suivante :
+Dans cet exemple, nous avons comparé la date du 1er janvier 2020 à celle du 1er janvier 2021. Comme le résultat est `LT` (pour "Lower Than"), cela signifie que date1 est antérieure à date2.
 
-```
-compare date1 date2 -- LT (plus petit)
-```
+## Plongée plus profonde
 
-Il est également possible de comparer les dates dans un ordre inverse en utilisant la fonction `flip` :
+Pour mieux comprendre comment la fonction `compare` fonctionne pour comparer des dates, il est important de comprendre comment les dates sont représentées en Haskell. Dans l'exemple ci-dessus, nous avons utilisé le type de données `UTCTime` qui représente une date et une heure en temps universel coordonné. Cette représentation est basée sur un nombre de secondes écoulées depuis l'époque Unix (1er janvier 1970 à minuit UTC).
 
-```
-flip compare date1 date2 -- GT (plus grand)
-```
-
-Nous pouvons également comparer les dates dans un contexte de tri en utilisant la fonction `sort` du module `Data.List` :
-
-```
-dates = [date1, date2]
-sort dates -- [25 septembre 2021, 1er octobre 2021]
-```
-
-## Plongée en profondeur
-
-La fonction `compare` utilise le fait que les dates peuvent être représentées comme des nombres entiers, en considérant le jour, le mois et l'année comme des chiffres. Cela permet d'obtenir le bon ordre des dates en les comparant directement.
-
-Cependant, pour les dates avec des heures, minutes ou secondes, la fonction `compare` ne suffit pas car elle ne prend en compte que la date elle-même. Dans ce cas, il est nécessaire d'utiliser la fonction `compareUTCTime` du module `Data.Ord` qui prend en compte les heures.
+Lorsque la fonction `compare` est appliquée à deux `UTCTime`, elle convertit d'abord ces valeurs en nombres de secondes, puis les compare. Ainsi, une date antérieure à une autre sera représentée par un nombre de secondes plus petit et sera considérée comme "inférieure". De même, une date postérieure sera représentée par un nombre de secondes plus grand et sera considérée comme "supérieure".
 
 ## Voir aussi
 
-- [Documentation de la fonction `compare` dans le module `Data.Time`](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html#t:Day)
-- [Documentation de la fonction `compareUTCTime` dans le module `Data.Ord`](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Ord.html#v:compareUTCTime)
+- [Documentation du module Data.Time](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Documentation du module Data.Ord](https://hackage.haskell.org/package/base/docs/Data-Ord.html)

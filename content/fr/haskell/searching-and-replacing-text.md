@@ -1,40 +1,54 @@
 ---
 title:                "Haskell: Recherche et remplacement de texte"
+simple_title:         "Recherche et remplacement de texte"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-Lorsque vous programmez en Haskell, vous pourriez avoir à effectuer des recherches et des remplacements de texte dans votre code. Cela peut sembler fastidieux, mais heureusement, Haskell a des fonctions intégrées pour vous aider à le faire efficacement. Découvrez comment effectuer des recherches et des remplacements de texte en Haskell!
+
+L'une des tâches courantes en programmation est le remplacement de texte. Que vous soyez débutant ou expérimenté en Haskell, il est important de savoir comment effectuer cette tâche de manière efficace et en utilisant les bonnes méthodes.
 
 ## Comment faire
-La fonction de base pour effectuer des recherches et des remplacements de texte en Haskell est `replace`. Elle prend en entrée un motif de recherche, une chaîne de remplacement et un texte dans lequel effectuer la recherche. Voici un exemple simple:
+
+Haskell offre plusieurs façons d'effectuer la recherche et le remplacement de texte dans une chaîne de caractères. La méthode la plus simple consiste à utiliser la fonction `substitute` de la bibliothèque `Data.String.Utils`. Voici un exemple de code montrant comment utiliser cette fonction :
 
 ```Haskell
-replace "chat" "chien" "J'aime les chats"
+import Data.String.Utils (replace)
+
+main = do
+  let phrase = "Bonjour tout le monde!"
+  let nouvellePhrase = replace "Bonjour" "Salut" phrase
+  print nouvellePhrase
 ```
+Cet exemple remplace le mot "Bonjour" par "Salut" dans la phrase "Bonjour tout le monde!". Le résultat affiché sera "Salut tout le monde!".
 
-Cela renverra la chaîne de texte "J'aime les chiens". Notez que cela ne modifie pas directement la chaîne de texte originale, cela renvoie plutôt une nouvelle chaîne avec les modifications. 
-
-On peut également utiliser la fonction `replace` sur des listes de caractères en utilisant le type `String` en Haskell. Voici un exemple:
+Mais si vous voulez aller plus loin et remplacer toutes les occurrences d'un mot dans une phrase, vous pouvez utiliser les expressions régulières avec la bibliothèque `Text.Regex.Posix`. Voici un exemple de code montrant comment utiliser cette méthode :
 
 ```Haskell
-replace "H" "Hello" "wrd"
-```
+import Text.Regex.Posix
 
-Cela renverra "HelloHelloello". Vous pouvez également utiliser la fonction de recherche et de remplacement de manière récursive pour effectuer des modifications complexes dans une chaîne de caractères.
+main = do
+  let phrase = "Bonjour tout le tout tout le monde!"
+  let nouvellePhrase = subRegex (mkRegex "le") phrase "la"
+  print nouvellePhrase
+```
+Dans cet exemple, nous avons remplacé toutes les occurrences du mot "le" par "la" dans la phrase donnée. Le résultat sera "Bonjour tout la tout tout la monde!".
 
 ## Plongée en profondeur
-En plus de la fonction de base `replace`, Haskell offre également d'autres fonctions utiles pour la recherche et le remplacement de texte. Par exemple, `nub` peut être utilisé pour supprimer tous les doublons dans une liste, tandis que `unfold` peut être utilisé pour générer une liste à partir d'une fonction récursive.
 
-De plus, vous pouvez également utiliser des expressions régulières pour effectuer des recherches et des remplacements de texte en Haskell en important le module `Text.Regex`. Les expressions régulières sont un outil puissant pour la manipulation de chaînes de caractères et peuvent être utilisées pour des recherches plus complexes.
+En Haskell, il existe plusieurs fonctions et bibliothèques dédiées à la recherche et au remplacement de texte, telles que `Data.Text`, `Data.ByteString`, etc. Chacune de ces bibliothèques a ses propres avantages et fonctionnalités, il est donc important de prendre le temps d'apprendre à les utiliser correctement.
 
-Vous pouvez également utiliser des fonctions de manipulation de chaînes de caractères telles que `take` et `drop` pour extraire des parties spécifiques d'une chaîne de texte avant de la modifier avec la fonction `replace`.
+De plus, il est également essentiel de comprendre le concept des expressions régulières et leur utilisation en Haskell. Les expressions régulières peuvent sembler complexes au début, mais une fois que vous les maîtriserez, elles deviendront un outil puissant pour le remplacement de texte.
 
 ## Voir aussi
-- [Documentation sur les fonctions de manipulation de chaînes de caractères en Haskell](http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#g:23)
-- [Tutoriel sur l'utilisation d'expressions régulières en Haskell](https://www.tutorialspoint.com/haskell/haskell_regular_expressions.htm)
-- [Exemples pratiques d'utilisation de fonctions de manipulation de chaînes en Haskell](https://blog.infinitenegativeutility.com/2014/5/haskell-lists-strings-and-matching)
+
+Pour plus d'informations sur la recherche et le remplacement de texte en Haskell, vous pouvez consulter les liens suivants :
+
+- [Documentation officielle de Haskell sur les expressions régulières](https://wiki.haskell.org/Regular_expressions)
+- [Tutoriel sur les expressions régulières en Haskell](https://www.schoolofhaskell.com/school/to-infinity-and-beyond/competition-winners/tobias-ostlund/parsing-a-simple-imperative-language)
+- [Documentation officielle de la bibliothèque `Text.Regex.Posix`](https://hackage.haskell.org/package/regex-posix-0.95.2/docs/Text-Regular-Posix.html)

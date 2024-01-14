@@ -1,7 +1,9 @@
 ---
-title:                "Java: Wyszukiwanie i zamiana tekstu."
+title:                "Java: Wyszukiwanie i zamiana tekstu"
+simple_title:         "Wyszukiwanie i zamiana tekstu"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/java/searching-and-replacing-text.md"
 ---
 
@@ -9,38 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek znalazłeś się w sytuacji, gdzie musiałeś zmienić fragment tekstu w swoim kodzie lub dokumencie? Może zmieniła się nazwa zmiennej lub musisz dostosować tekst do innych wymagań. W takich sytuacjach bardzo pomocne jest wyszukiwanie i zamienianie tekstu. Pozwala ono szybko i skutecznie dokonać zmian bez konieczności ręcznego przechodzenia przez każdą linię tekstu. W tym wpisie dowiesz się jak wykonać to zadanie w języku Java.
+Jeśli często pracujesz z tekstem w swoim kodzie Java i musisz dokonywać zmian w wielu miejscach, metoda wyszukiwania i zamiany może być niezwykle przydatna. Zamiast ręcznie edytować każde wystąpienie tekstu, możesz po prostu użyć tej funkcji i zaoszczędzić sobie cennego czasu i wysiłku.
 
 ## Jak to zrobić
 
-Pierwszym krokiem jest wybranie odpowiedniej metody do wyszukiwania i zamiany tekstu. W przypadku stringów w Javie, możemy skorzystać z metody `replace()` lub `replaceAll()`. Pierwsza służy do zamiany pojedynczych znaków, natomiast druga do zamiany wyrażeń regularnych.
+Aby użyć metody wyszukiwania i zamiany w swoim kodzie Java, możesz skorzystać z następującej składni:
 
-Przykładowo, jeśli mamy zmienną `text` zawierającą tekst "Hello world!", możemy użyć metody `replace()` aby zamienić "world" na "Java". W tym celu należy użyć następującej składni:
-
-```Java
-String newText = text.replace("world", "Java");
+```java
+String newText = oldText.replaceAll("stary_tekst", "nowy_tekst"); 
 System.out.println(newText);
 ```
 
-Po uruchomieniu powyższego kodu, otrzymamy wyjście "Hello Java!".
+W powyższym przykładzie, zmienna `newText` będzie zawierać zmieniony tekst, który można następnie wyświetlić na ekranie za pomocą `System.out.println()`.
 
-Jeśli chcemy wykonać zamianę na podstawie wyrażenia regularnego, możemy skorzystać z metody `replaceAll()` wraz z odpowiednim wyrażeniem.
+## Głębsza analiza
 
-```Java
-String newText = text.replaceAll("\\d+", "Java");
+Możesz również użyć metody wyszukiwania i zamiany do bardziej zaawansowanych operacji, takich jak wykorzystanie wyrażeń regularnych. Na przykład, jeśli chcesz zamienić wszystkie liczby w tekście na słowo "liczba", możesz użyć następującego kodu:
+
+```java
+String text = "Mam 5 samochodów i 3 rowery";
+String newText = text.replaceAll("\\d+", "liczba");
 System.out.println(newText);
 ```
 
-W powyższym przykładzie wyrażenie regularne `\\d+` oznacza każdą liczbę występującą w tekście. W wyniku otrzymamy "Hello Java!".
+Otrzymasz wtedy wyjście "Mam liczba samochodów i liczba rowery". Wyrażenia regularne pozwalają na jeszcze większą kontrolę nad procesem wyszukiwania i zamiany, ale wymagają nieco nauki i praktyki. 
 
-## Deep Dive
+## Zobacz również
 
-W przypadku wyrażeń regularnych, możemy skorzystać także z metody `replaceFirst()` do zamiany tylko pierwszego wystąpienia wyrażenia. Dodatkowo, metoda `replace()` może przyjmować też obiekt typu `CharSequence`, co oznacza, że można użyć jej do zamiany tekstu w obiektach innych niż String.
-
-Jednym z bardziej zaawansowanych sposobów wyszukiwania i zamiany tekstu jest użycie klas `Pattern` i `Matcher` z pakietu `java.util.regex`. Dzięki nim możemy precyzyjniej definiować wyrażenia regularne oraz manipulować tekstem za pomocą grup.
-
-## Zobacz także
-
-- https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-char-char-
-- https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
-- https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html
+- Dokumentacja Java String: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#replaceAll(java.lang.String,%20java.lang.String)
+- Tutorial o wyrażeniach regularnych w Java: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html

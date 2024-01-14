@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Sprawdzenie czy katalog istnieje."
+title:                "Haskell: Sprawdzanie istnienia katalogu"
+simple_title:         "Sprawdzanie istnienia katalogu"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/checking-if-a-directory-exists.md"
 ---
 
@@ -9,42 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Sprawdzanie, czy dany katalog istnieje, jest ważnym krokiem w wielu programach pisanych w języku Haskell. Może to pomóc w uniknięciu błędów lub umożliwić dostęp do potrzebnych informacji. Dlatego warto poznać jak to zrobić.
+Sprawdzanie, czy dany katalog istnieje, jest ważnym aspektem programowania w Haskellu. Po pierwsze, może to pomóc uniknąć błędów w programie związanych z brakującym katalogiem. Po drugie, może to być przydatne w przypadku działań na plikach, gdzie konieczne jest określenie ścieżki do istniejącego katalogu. W tym artykule omówimy, dlaczego warto zwrócić uwagę na sprawdzanie istnienia katalogów oraz jak to zrobić w Haskellu.
 
 ## Jak to zrobić
 
-Aby sprawdzić istnienie katalogu w Haskell, można użyć funkcji `doesDirectoryExist` z modułu `System.Directory`. Przyjmuje ona ścieżkę do katalogu jako argument i zwraca wartość typu `Bool` (True/False).
-
-Przykładowy kod:
+Sprawdzenie, czy dany katalog istnieje, jest możliwe dzięki funkcji ```doesDirectoryExist``` z modułu ```System.Directory```. Wymaga to jednak wcześniejszego importowania tego modułu. Przykładowy kod może wyglądać następująco:
 
 ```Haskell
 import System.Directory
 
+main :: IO()
 main = do
-  let path = "C:\\Users\\User\\Documents\\example"
-  dirExists <- doesDirectoryExist path
+  let dirName = "moj_katalog"
+  dirExists <- doesDirectoryExist dirName
   if dirExists
     then putStrLn "Katalog istnieje."
     else putStrLn "Katalog nie istnieje."
 ```
 
-Przykładowy wynik dla istniejącego katalogu:
+W powyższym przykładzie, najpierw importujemy potrzebny nam moduł, a następnie tworzymy zmienną z nazwą naszego katalogu. W kolejnej linii wywołujemy funkcję ```doesDirectoryExist```, która zwraca wartość typu ```Bool```, informującą czy dany katalog istnieje. W składni ```if/else``` sprawdzamy tę wartość i wypisujemy odpowiedni komunikat.
+
+Przykładowy output programu może wyglądać tak:
 
 ```
 Katalog istnieje.
 ```
 
-Przykładowy wynik dla nieistniejącego katalogu:
+## Deep Dive
 
-```
-Katalog nie istnieje.
-```
+Funkcja ```doesDirectoryExist``` korzysta z funkcji systemowej ```stat```, która jest dostępna na większości platform. Wynik tej funkcji jest konwertowany na ```Bool``` i zwracany przez Haskell. W przypadku błędnego wywołania lub gdy operacja nie powiedzie się, funkcja zwraca ```False```.
 
-## Głębsza analiza
+Warto również zwrócić uwagę, że funkcja ```doesDirectoryExist``` nie sprawdza, czy dany katalog jest dostępny do zapisu lub odczytu. Po prostu informuje nas o tym, czy dana ścieżka odpowiada prawdziwemu katalogowi.
 
-W języku Haskell, funkcja `doesDirectoryExist` używa systemowego wywołania `access`, które sprawdza istnienie pliku lub katalogu. Oznacza to, że nie tylko można sprawdzić istnienie katalogu, ale także dowiedzieć się czy można odczytać, zapisać lub wykonać operacje na danym katalogu.
+## Zobacz także
 
-## Zobacz również
-
-- Dokumentacja funkcji `doesDirectoryExist`: https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:doesDirectoryExist
-- Przykładowy kod z wykorzystaniem funkcji `doesDirectoryExist`: https://stackoverflow.com/questions/35661188/how-to-check-if-a-directory-exists-in-haskell
+- [Dokumentacja modułu System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
+- [Tutorial o zarządzaniu plikami i katalogami w Haskellu](https://www.fpcomplete.com/blog/2016/10/read-only-file-io#file-system-basics)
+- [Poradnik programowania w Haskellu](https://wiki.haskell.org/How_to_write_a_Haskell_program)

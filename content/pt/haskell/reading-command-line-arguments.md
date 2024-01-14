@@ -1,47 +1,51 @@
 ---
 title:                "Haskell: Lendo argumentos da linha de comando"
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
+## Por que
 
-Ler argumentos da linha de comando é uma habilidade valiosa para qualquer programador Haskell. Ao entender como processar e manipular esses argumentos, você pode criar programas mais eficientes e flexíveis, permitindo que o usuário personalize a execução do seu código.
+Você pode estar se perguntando por que alguém iria querer ler argumentos da linha de comando em um programa Haskell. A resposta é simples: isso pode tornar seu programa mais interativo e flexível, permitindo que os usuários forneçam opções e variáveis ao executá-lo.
 
-## Como fazer a leitura de argumentos da linha de comando em Haskell
+## Como fazer
 
-Para ler os argumentos da linha de comando em Haskell, você precisa importar o módulo `System.Environment`. Em seguida, use a função `getArgs` para obter uma lista de strings contendo os argumentos passados na chamada do seu programa. Você também pode especificar a quantidade de argumentos esperada usando a função `length`.
+Para ler argumentos da linha de comando em Haskell, é necessário importar o módulo System.Environment. Em seguida, você pode usar a função `getArgs`, que retorna uma lista de strings contendo os argumentos fornecidos na linha de comando.
 
-Veja um exemplo simples de código que lê dois argumentos da linha de comando e imprime a soma deles:
+Por exemplo, se quisermos ler dois números inteiros da linha de comando e imprimir sua soma, podemos escrever o seguinte código:
 
 ```Haskell
 import System.Environment
 
 main = do
-  args <- getArgs
-  if length args /= 2
-    then putStrLn "Erro: forneça exatamente 2 argumentos"
-    else do
-      let x = read $ args !! 0 -- converte o primeiro argumento para um número
-      let y = read $ args !! 1 -- converte o segundo argumento para um número
-      putStrLn $ "A soma de " ++ show x ++ " e " ++ show y ++ " é " ++ show (x + y)
-```
-Ao executar esse código com `runhaskell soma.hs 3 5`, o output será:
-
-```
-A soma de 3 e 5 é 8
+    args <- getArgs
+    let num1 = read (args !! 0) :: Int
+        num2 = read (args !! 1) :: Int
+        result = num1 + num2
+    putStrLn $ "A soma de " ++ show num1 ++ " e " ++ show num2 ++ " é " ++ show result
 ```
 
-## Aprofundando na leitura de argumentos da linha de comando
+Ao executar o programa com os argumentos "2" e "3", teremos o seguinte resultado:
 
-Ao trabalhar com a leitura de argumentos da linha de comando, é importante ter em mente que eles são sempre lidos como strings. Portanto, se você precisar usá-los como outros tipos de dados (como números), é necessário convertê-los usando funções como `read` ou `readMaybe` do módulo `Text.Read`.
+```
+A soma de 2 e 3 é 5
+```
 
-Além disso, o primeiro argumento (index 0) é sempre o nome do programa em execução, e os demais argumentos são passados na ordem em que foram especificados.
+É importante lembrar que, por padrão, os argumentos são tratados como strings, por isso é necessário converter para o tipo de dado desejado, no nosso caso, o tipo `Int`.
+
+## Navegação profunda
+
+A função `getArgs` pode retornar não apenas os argumentos fornecidos na linha de comando, mas também variáveis de ambiente e outros parâmetros que podem ser passados ​​para o programa. Além disso, é possível trabalhar com argumentos nomeados, utilizando módulos como o `optparse-applicative` ou `cmdargs`.
+
+Outra dica útil é utilizar a função `lookupEnv` do módulo System.Environment para verificar se uma variável de ambiente específica foi fornecida na linha de comando. Isso pode ser útil para definir opções padrão ou personalizadas para seu programa.
 
 ## Veja também
 
-- [Documentação do módulo System.Environment](https://hackage.haskell.org/package/base/docs/System-Environment.html)
-- [Guia básico do Haskell](https://www.haskell.org/tutorial/)
+- [Documentação oficial do módulo System.Environment](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
+- [Tutorial sobre leitura de argumentos da linha de comando em Haskell](https://wiki.haskell.org/High-level_option_handling_with_getOpt) 
+- [Exemplos práticos de uso do módulo System.Environment](https://www.codementor.io/@undefined/A_1_Novice_s_Taking_Haskell_To_the_Command_Line-z1klr8vxz)

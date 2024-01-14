@@ -1,7 +1,9 @@
 ---
 title:                "Go: Generazione di numeri casuali"
+simple_title:         "Generazione di numeri casuali"
 programming_language: "Go"
-category:             "Numbers"
+category:             "Go"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/go/generating-random-numbers.md"
 ---
 
@@ -9,78 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Generare numeri casuali è una funzione utile in molte applicazioni, come nei giochi e nei sistemi di crittografia. In Go, ci sono molte opzioni per generare numeri casuali che consentono di personalizzare e controllare il processo.
+Generare numeri casuali è un aspetto importante della programmazione in Go. Può essere utile in diversi contesti, come ad esempio nei giochi, nella crittografia e nell'analisi statistica.
 
 ## Come Fare
 
-Per generare numeri casuali in Go, utilizzeremo il package "math/rand" e la funzione "Intn" per generare un intero casuale tra 0 e un numero massimo specificato. Il numero massimo è esclusivo, quindi se vogliamo generare un numero tra 1 e 10, dobbiamo specificare 11 come limite superiore.
+Per generare numeri casuali in Go, è necessario importare il pacchetto `math/rand`. Poi, si può usare la funzione `rand.Intn()` per generare un intero randomico all'interno di un range specificato. Ad esempio:
 
-```
-package main
-
-import (
-    "fmt"
-    "math/rand"
-)
+```Go
+import "math/rand"
 
 func main() {
-    // Generare un numero casuale tra 1 e 10
-    numeroCasuale := rand.Intn(11)
-
-    fmt.Println(numeroCasuale)
+    // Genera un numero casuale tra 0 e 99
+    randNum := rand.Intn(100)
+    fmt.Println(randNum)
 }
 ```
 
-Questo codice produrrà un numero casuale ogni volta che viene eseguito. Se vogliamo ottenere un numero casuale diverso ogni volta, dobbiamo impostare il seme con la funzione "Seed". Possiamo utilizzare una variabile di tipo int64 per la semente e passarla alla funzione "Seed". Inoltre, per evitare di ottenere sempre lo stesso numero casuale quando eseguiamo il codice, possiamo utilizzare la funzione "Time" del package "time" per ottenere il tempo corrente come seme.
+Output:
 
-```
-package main
-
-import (
-    "fmt"
-    "math/rand"
-    "time"
-)
-
-func main() {
-    // Impostare il seme con il tempo corrente
-    rand.Seed(time.Now().UnixNano())
-
-    // Generare un numero casuale tra 1 e 10
-    numeroCasuale := rand.Intn(11)
-
-    fmt.Println(numeroCasuale)
-}
+``` 
+57
 ```
 
-Possiamo anche utilizzare la funzione "Float64" per generare numeri decimali casuali. In questo caso, dobbiamo specificare un limite inferiore e superiore per il numero.
-
-```
-package main
-
-import (
-    "fmt"
-    "math/rand"
-    "time"
-)
-
-func main() {
-    // Impostare il seme con il tempo corrente
-    rand.Seed(time.Now().UnixNano())
-
-    // Generare un numero casuale tra 1 e 10
-    numeroCasuale := rand.Float64() * 10 + 1 // genererà un numero tra 1 e 10
-
-    fmt.Println(numeroCasuale)
-}
-```
+Si può anche usare `rand.Float64()` per generare un numero a virgola mobile tra 0.0 e 1.0. Inoltre, si può impostare il seme di generazione dei numeri casuali usando la funzione `rand.Seed()`.
 
 ## Approfondimento
 
-Ci sono molti altri modi per generare numeri casuali in Go, come l'utilizzo del package "crypto/rand" per generare numeri crittograficamente sicuri. Inoltre, possiamo anche utilizzare le funzioni "Read" e "ReadInt" per generare numeri casuali da un generatore di numeri casuale personalizzato.
+In Go, la generazione di numeri casuali è gestita dal generatore di numeri pseudo-casuali (PRNG) fornito dal pacchetto `math/rand`. Questo PRNG utilizza un algoritmo di tipo Linear Congruential Generator per produrre una sequenza di numeri che sembrano casuali, ma che in realtà sono deterministici, dato un seme iniziale.
+
+È importante notare che il generatore di numeri casuali in Go non è considerato sicuro per scopi crittografici, poiché è possibile prevedere i numeri generati se si conosce il seme iniziale. In questi casi, si dovrebbe utilizzare il pacchetto `crypto/rand` che utilizza un generatore di numeri crittograficamente sicuro.
 
 ## Vedi Anche
 
-- [Package "math/rand" nella documentazione di Go](https://golang.org/pkg/math/rand/)
-- [Little Go Snippets: Generare numeri casuali](https://yourbasic.org/golang/random-number-generator/)
-- [Risorse sul generatore di numeri casuali in Go](https://hackernoon.com/resources-for-the-go-random-number-generator-5428bf01faf7)
+- Documentazione ufficiale di Go sul pacchetto `math/rand`: https://golang.org/pkg/math/rand/
+- Tutorial su come generare numeri casuali in Go: https://gobyexample.com/random-numbers 
+- Spiegazione dettagliata sul funzionamento del generatore di numeri casuali in Go: https://stackoverflow.com/questions/30667030/how-is-the-go-stdlib-math-rand-prng-seeded

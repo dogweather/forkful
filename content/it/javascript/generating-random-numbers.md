@@ -1,63 +1,42 @@
 ---
-title:                "Javascript: Generazione di numeri casuali"
+title:                "Javascript: Generare numeri casuali"
+simple_title:         "Generare numeri casuali"
 programming_language: "Javascript"
-category:             "Numbers"
+category:             "Javascript"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/javascript/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# Perché Generare Numeri Casuali in Javascript?
+## Perché
 
-Generare numeri casuali è un'operazione molto comune nella programmazione di giochi, simulazioni e applicazioni che richiedono una componente di casualità. In Javascript, esistono diverse funzioni già presenti nel linguaggio che permettono di generare numeri casuali, ma comprendere come funzionano e come utilizzarle è fondamentale per avere un controllo maggiore sui risultati ottenuti.
+Generare numeri casuali è un'operazione fondamentale nella programmazione. Può essere utile per creare giochi, simulazioni o test casuali.
 
-## Come Generare Numeri Casuali in Javascript
+## Come fare
 
-Per generare numeri casuali in Javascript, esistono due metodi principali: utilizzare la funzione `Math.random()` o la libreria `random-js`. Vediamo di seguito dei semplici esempi di codice per entrambi i metodi e il risultato ottenuto.
+Per generare un numero casuale in Javascript, si può utilizzare il metodo `Math.random()`. Questo metodo restituisce un numero casuale compreso tra 0 (incluso) e 1 (escluso).
 
-### Utilizzando la Funzione `Math.random()`
-
-```Javascript
-// Genera un numero casuale compreso tra 0 e 1
-var randomNumber = Math.random();
-console.log(randomNumber);
-// Output: 0.5234620912308679
-
-// Genera un numero casuale compreso tra 0 e 10
-var randomInteger = Math.random() * 10;
-console.log(Math.floor(randomInteger));
-// Output: 7
+```
+var number = Math.random();
+console.log(number); // esempio di output: 0.3765410456
 ```
 
-Come si può vedere, utilizzando la funzione `Math.random()` possiamo generare facilmente numeri casuali compresi tra 0 e 1, ma se vogliamo ottenere un intervallo diverso possiamo moltiplicare il numero per il range desiderato e utilizzare il metodo `Math.floor()` per arrotondarlo all'intero inferiore.
+Per ottenere un numero casuale in un range specifico, si può utilizzare la formula `Math.floor(Math.random() * (max - min + 1)) + min`. Ad esempio, per generare un numero casuale compreso tra 1 e 10:
 
-### Utilizzando la Libreria `random-js`
-
-```Javascript
-// Import della libreria random-js
-var Random = require('random-js');
-// Creazione del seed per la generazione dei numeri casuali
-var random = new Random(Random.engines.mt19937().autoSeed());
-
-// Genera un numero casuale compreso tra 0 e 10
-var randomNumber = random.integer(0, 10);
-console.log(randomNumber);
-// Output: 6
-
-// Genera un numero casuale compreso tra 5 e 15
-var randomInteger = random.integer(5, 15);
-console.log(randomInteger);
-// Output: 13
+```
+var randomNum = Math.floor(Math.random() * 10) + 1;
+console.log(randomNum); // esempio di output: 6
 ```
 
-Utilizzando la libreria `random-js` possiamo avere maggior controllo sulla generazione dei numeri casuali. Possiamo decidere l'intervallo di numeri da cui estrarre, il tipo di distribuzione (uniforme o gaussiana) e la possibilità di utilizzare un seed per ottenere sempre gli stessi risultati.
+## Approfondimento
 
-## Approfondimento sulla Generazione di Numeri Casuali
+Il metodo `Math.random()` utilizza un algoritmo pseudo-casuale per generare i numeri casuali. Ciò significa che i numeri non sono veramente casuali, ma sono generati seguendo una sequenza predefinita. Questo può essere utile per riprodurre gli stessi risultati in diversi momenti, ma non è sicuro per utilizzi in cui è richiesta una vera casualità, come nei giochi d'azzardo.
 
-La generazione di numeri casuali in Javascript utilizza l'algoritmo di pseudo-randomizzazione, ovvero una sequenza di numeri che sembrano casuali ma che in realtà seguono un determinato schema. Per questo motivo, la generazione di numeri casuali non è consigliata per applicazioni che richiedono un elevato grado di sicurezza, come ad esempio la crittografia.
+Per questo motivo, esistono anche altre tecniche per generare numeri casuali, come utilizzare il timestamp di sistema o un dispositivo hardware esterno. Inoltre, esistono anche librerie di terze parti che offrono funzionalità più sofisticate per la generazione di numeri casuali.
 
-Inoltre, è importante tenere conto del fatto che la funzione `Math.random()` restituisce sempre numeri decimali compresi tra 0 e 1, mentre la libreria `random-js` permette di ottenere numeri interi, rendendola più adatta per determinati casi d'uso.
+## Vedi anche
 
-## Vedi Anche
-- [Documentazione sulla funzione `Math.random()` su MDN](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Documentazione di `random-js`](https://github.com/ckknight/random-js)
+- [Documentazione ufficiale di Math.random()](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Libreria Chance.js per la generazione di numeri casuali](https://chancejs.com/)
+- [Approfondimenti sulla casualità nei calcolatori](https://en.wikipedia.org/wiki/Randomness#Randomness_in_computing)

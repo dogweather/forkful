@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Sjekke om en mappe eksisterer"
+title:                "PHP: Å sjekke om en mappe eksisterer"
+simple_title:         "Å sjekke om en mappe eksisterer"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/checking-if-a-directory-exists.md"
 ---
 
@@ -9,46 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Det er viktig å sjekke om en mappe eksisterer før du prøver å utføre operasjoner på den i PHP. Dette kan bidra til å unngå feil og sikre en jevn kjøring av koden din.
+Når man programmerer i PHP, kan det hende at man trenger å sjekke om en mappe eksisterer før man utfører en spesifikk handling. Dette kan være for å unngå feil, sikre at koden kjører som den skal, eller for å gi relevant informasjon til brukeren.
 
 ## Hvordan
 
-For å sjekke om en mappe eksisterer i PHP, kan du bruke funksjonen `is_dir()`. Denne funksjonen tar inn som argument en streng som representerer mappen du ønsker å sjekke. Dersom mappen eksisterer, vil funksjonen returnere `true`, mens dersom den ikke eksisterer vil den returnere `false`.
+Det finnes flere måter å sjekke om en mappe eksisterer i PHP, men den mest effektive metoden er å bruke funksjonen `file_exists()`. Denne funksjonen tar en filbane som argument og returnerer `true` hvis filen eller mappen eksisterer, eller `false` hvis den ikke finnes.
 
-```
-PHP
-$mappe_navn = "/stien/til/mappen";
+```PHP
+$mappe = 'bilder/';
 
-if (is_dir($mappe_navn)) {
+if(file_exists($mappe)){
     echo "Mappen eksisterer!";
-} else {
-    echo "Mappen eksisterer ikke!";
+}
+else{
+    echo "Mappen eksisterer ikke.";
 }
 ```
 
-Dersom du ønsker å sjekke om en mappe eksisterer relativt til din nåværende arbeidsmappe, kan du bruke funksjonen `chdir()` for å sette arbeidsmappen, og deretter bruke `is_dir()` til å sjekke om mappen eksisterer på samme måte som vist i eksempelet over.
-
-```
-PHP
-// Sett arbeidsmappen til rotmappen
-chdir("/");
-
-// Sjekk om mappe eksisterer
-if (is_dir("stien/til/mappen")) {
-    echo "Mappen eksisterer!";
-} else {
-    echo "Mappen eksisterer ikke!";
-}
-```
+I dette eksempelet brukes en if-else statement for å sjekke om mappen eksisterer. Hvis mappen eksisterer, vil en melding bli vist til brukeren, ellers vil en annen melding vises.
 
 ## Dypdykk
 
-Når du bruker funksjonen `is_dir()` for å sjekke om en mappe eksisterer, kan det være nyttig å vite at den også tar inn en valgfri parameter som lar deg sjekke om en *fil* med samme navn som mappen eksisterer. Dette kan være nyttig for å unngå konflikter med filer og mapper som deler samme navn.
+Det er viktig å merke seg at `file_exists()` funksjonen også kan brukes til å sjekke om en fil eksisterer. Denne funksjonen vil imidlertid også returnere `true` hvis filen du sjekker for eksistens er en tom fil. For å unngå dette, kan man også bruke funksjonen `is_dir()`, som kun returnerer `true` hvis det faktisk er en mappe som eksisterer.
 
-Det er også viktig å merke seg at selv om funksjonen returnerer `false` dersom mappen ikke eksisterer, betyr det ikke nødvendigvis at det er en feil. Det kan hende at mappen ikke eksisterer, eller at stien du har angitt er feil. Det er derfor viktig å dobbeltsjekke stien og eventuelt bruke feilhåndtering for å sikre en problemfri kjøring av koden din.
+```PHP
+$fil = 'dokumenter/ferieplan.docx';
+
+if(file_exists($fil)){
+    if(is_dir($fil)){
+        echo "Dette er en mappe.";
+    }
+    else{
+        echo "Dette er en fil.";
+    }
+}
+else{
+    echo "Filen eksisterer ikke.";
+}
+```
+
+Dette eksempelet viser hvordan man først sjekker om mappen eller filen eksisterer, og deretter bruker `is_dir()` for å skille mellom en fil og en mappe.
 
 ## Se også
 
-- Les mer om `is_dir()` funksjonen i PHPs offisielle dokumentasjon: [https://www.php.net/manual/en/function.is-dir.php](https://www.php.net/manual/en/function.is-dir.php)
-- Lær mer om PHP inkludering av filer og sikkerhetstiltak for å unngå problemer med mappenavn: [https://www.php.net/manual/en/language.include.php](https://www.php.net/manual/en/language.include.php)
-- Utforsk andre nyttige PHP funksjoner for å håndtere filer og mapper: [https://www.php.net/manual/en/ref.filesystem.php](https://www.php.net/manual/en/ref.filesystem.php)
+- [PHP.net - file_exists()](https://www.php.net/manual/en/function.file-exists.php)
+- [PHP.net - is_dir()](https://www.php.net/manual/en/function.is-dir.php)

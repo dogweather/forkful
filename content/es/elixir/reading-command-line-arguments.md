@@ -1,64 +1,78 @@
 ---
-title:                "Elixir: Leyendo argumentos de línea de comandos"
+title:                "Elixir: Lectura de argumentos de línea de comandos"
+simple_title:         "Lectura de argumentos de línea de comandos"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Los argumentos de línea de comando son una herramienta importante para los programadores de Elixir. Leer los argumentos de línea de comando puede ayudarte a crear programas que sean más dinámicos y adaptables a diferentes escenarios.
+En la programación de Elixir, a menudo es necesario leer argumentos de línea de comandos para que nuestro programa pueda tomar decisiones en función de la entrada del usuario. En esta publicación, exploraremos cómo hacerlo de manera eficiente y efectiva.
 
 ## Cómo hacerlo
-
-La forma más sencilla de leer los argumentos de línea de comando en Elixir es utilizando la función `System.argv()`. Esta función devuelve una lista de cadenas que contienen los argumentos ingresados por el usuario al momento de ejecutar el programa.
-
-Veamos un ejemplo de cómo usarlo en un programa simple que toma dos argumentos y los suma:
+Usando el módulo `OptionParser` de Elixir, podemos leer y procesar los argumentos de línea de comandos de manera muy sencilla. Primero, importamos el módulo en nuestro archivo de Elixir:
 
 ```Elixir
-#!/usr/bin/env elixir
+import OptionParser
+```
 
-defmodule Sumador do
-  def sumar() do
-    argumentos = System.argv()
-    primer_numero = String.to_integer(argumentos[1])
-    segundo_numero = String.to_integer(argumentos[2])
-    resultado = primer_numero + segundo_numero
+Luego, definimos las opciones que queremos leer y cómo deben ser procesadas. Por ejemplo, si queremos leer dos argumentos, uno para un nombre y otro para una edad, podemos hacerlo de la siguiente manera:
 
-    IO.puts("La suma de los dos números es: #{resultado}")
+```Elixir
+OptionParser.parse(
+  ["--nombre", "Juan", "--edad", "25"],
+  switches: [
+    nombre: {:string, "--nombre"},
+    edad: {:integer, "--edad"}
+  ]
+)
+```
+
+Esto creará un mapa con la estructura `{nombre: "Juan", edad: 25}` que podemos utilizar en nuestro programa. Además, podemos definir acciones para cada opción, como imprimir un mensaje si se ingresa un argumento incorrecto:
+
+```Elixir
+OptionParser.parse(
+  ["--nombre", "Juan", "--edad", "25", "--altura", "1.80"],
+  switches: [
+    nombre: {:string, "--nombre"},
+    edad: {:integer, "--edad"},
+    altura: {:float, "--altura"}
+  ],
+  on_argument_error: fn(option, _value) ->
+    IO.puts "El argumento #{option} no fue ingresado correctamente."
   end
-end
+)
 
-Sumador.sumar()
+# Salida:
+# El argumento --altura no fue ingresado correctamente.
 ```
 
-Si ejecutamos este programa desde la línea de comando con los argumentos `4` y `5`, el resultado será `La suma de los dos números es: 9`.
+## Deep Dive
+El módulo `OptionParser` también nos permite definir opciones con argumentos opcionales y argumentos con múltiples valores. Podemos hacerlo utilizando las opciones `{:option, :optional}` y `{:option, :repeatable}`, respectivamente.
 
-## Profundizando
-
-Además de la función `System.argv()`, también podemos utilizar la biblioteca `OptionParser` para leer y manejar los argumentos de línea de comando de una manera más estructurada.
-
-Por ejemplo, si queremos permitirle al usuario ingresar un flag `-r` que indique si queremos sumar o restar los números, podemos utilizar `OptionParser` de la siguiente manera:
+Además, podemos utilizar la opción `:switch` para definir una opción que solamente necesita ser mencionada para ser activada, sin ningún valor asociado. Por ejemplo, si queremos una opción `--ayuda` que muestre un mensaje de ayuda, podemos hacerlo de la siguiente manera:
 
 ```Elixir
-require OptionParser
+OptionParser.parse(
+  ["--nombre", "Juan", "--edad", "25", "--ayuda"],
+  switches: [
+    nombre: {:string, "--nombre"},
+    edad: {:integer, "--edad"},
+    ayuda: :switch
+  ],
+  on_switch: fn(_option) ->
+    IO.puts "Bienvenido a este programa de Elixir!"
+  end
+)
 
-OptionParser.parse("-r", "Primer número", "Segundo número") do
-  {["add", primer_numero, segundo_numero], _, _} ->
-    resultado = primer_numero + segundo_numero
-    IO.puts("La suma de los dos números es: #{resultado}")
-  {["sub", primer_numero, segundo_numero], _, _} ->
-    resultado = primer_numero - segundo_numero
-    IO.puts("La resta de los dos números es: #{resultado}")
-end
+# Salida:
+# Bienvenido a este programa de Elixir!
 ```
-
-De esta manera, si ejecutamos nuestro programa con los argumentos `add 4 5`, obtendremos `La suma de los dos números es: 9`, mientras que si ejecutamos `sub 5 3`, obtendremos `La resta de los dos números es: 2`.
 
 ## Ver también
-
-- [Documentación de `System.argv/0` en el sitio oficial de Elixir](https://hexdocs.pm/elixir/System.html#argv/0)
-- [Documentación de `OptionParser` en el sitio oficial de Elixir](https://hexdocs.pm/elixir/OptionParser.html)
-- [Tutorial de Elixir: Reading Command Line Arguments](https://elixir-lang.org/getting-started/command-line.html)
+- Documentación oficial de OptionParser: https://hexdocs.pm/elixir/OptionParser.html
+- Ejemplos prácticos de lectura de argumentos de línea de comandos en Elixir:
+  https://medium.com/@afe19940913/handling-command-line-arguments-in-elixir-f55f041c8711

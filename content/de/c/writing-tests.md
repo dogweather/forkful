@@ -1,7 +1,9 @@
 ---
-title:                "C: Tests schreiben"
+title:                "C: Programmieren von Tests"
+simple_title:         "Programmieren von Tests"
 programming_language: "C"
-category:             "Testing and Debugging"
+category:             "C"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/writing-tests.md"
 ---
 
@@ -9,32 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Tests schreiben ist ein wichtiger Bestandteil des Programmierens. Es ermöglicht uns, sicherzustellen, dass unser Code korrekt funktioniert und potenzielle Bugs frühzeitig zu finden. Es reduziert auch die Zeit, die wir für das Debuggen und Fehlerbehebung aufwenden müssen, was letztendlich zu einer effizienteren Programmierung führt.
+Viele Entwickler mögen es nicht, Tests zu schreiben. Es ist zusätzliche Arbeit und es scheint, als ob es Zeit verschwendet, die man stattdessen in das Schreiben von produktivem Code investieren könnte. Aber sobald man die Vorteile von Tests erkannt hat, wird man nie wieder ohne sie arbeiten wollen.
 
-## Wie funktioniert es?
+## Wie geht man vor?
 
-Um Tests in C zu schreiben, verwenden wir das Test-Framework "Unit Testing Framework" (UTF). Zuerst müssen wir unser Testprogramm mit ``#include <utf.h>`` importieren. Dann können wir unsere Testfunktionen mit dem Makro `TEST()` definieren und mit verschiedenen Assert-Funktionen wie `ASSERT_EQUAL()` und `ASSERT_NOT_EQUAL()` überprüfen, ob unsere erwarteten Ergebnisse mit den tatsächlichen übereinstimmen.
+Um effektiv Tests zu schreiben, muss man wissen, wie man sie schreibt. Am besten lernt man durch Beispiele, also werfen wir einen Blick auf einen einfachen Code-Block in C:
 
-Hier ist ein Beispiel eines einfachen Tests, der überprüft, ob die Funktion `add()` korrekt zwei Zahlen addiert:
+```C
+#include <stdio.h>
 
-```
-C
-TEST(test_addition) {
-  int result = add(3, 5);
-  ASSERT_EQUAL(result, 8);
+int main(void) {
+    int num1 = 5, num2 = 10;
+
+    if (num1 < num2) {
+        printf("num1 is smaller than num2.");
+    }
+    else {
+        printf("num1 is greater than num2.");
+    }
+    return 0;
 }
 ```
 
-Wenn wir jetzt unser gesamtes Testprogramm ausführen, sollten wir sehen, dass unser Test erfolgreich ist und keine Fehler aufgetreten sind.
+Dies ist ein sehr einfaches Beispiel, aber es zeigt, dass man einfach einen Test schreiben kann, indem man seine erwartete Ausgabe mit der tatsächlichen Ausgabe vergleicht. In diesem Fall erwarten wir, dass "num1 is smaller than num2." ausgegeben wird, da 5 kleiner als 10 ist. Wenn jedoch der Code geändert wird und "num1 is greater than num2." ausgegeben wird, wissen wir sofort, dass etwas falsch läuft.
 
-## Tiefere Einblicke
+Neben einfachen Vergleichen können Tests auch verwendet werden, um zu prüfen, ob bestimmte Funktionen richtig funktionieren. Zum Beispiel könnten wir eine Funktion implementieren, die zwei Zahlen multipliziert und dann einen Test schreiben, um sicherzustellen, dass sie die richtige Ausgabe zurückgibt.
 
-Es gibt verschiedene Arten von Tests, die wir beim Schreiben von C-Code verwenden können, wie zum Beispiel Unit Tests, Integrationstests und Systemtests. Unit Tests überprüfen einzelne Funktionen oder Module, während Integrationstests die Interaktion zwischen verschiedenen Modulen testen. Systemtests prüfen schließlich das gesamte Programm als Ganzes.
+## Tiefer in die Materie eintauchen
 
-Um sicherzustellen, dass wir effektive Tests schreiben, müssen wir auch darauf achten, dass unsere Tests unabhängig, reproduzierbar und tolerant gegenüber Änderungen sind. Unabhängigkeit bedeutet, dass jeder Test unabhängig von anderen getestet werden sollte. Reproduzierbarkeit stellt sicher, dass unsere Tests bei jeder Ausführung dieselben Ergebnisse liefern. Und Toleranz gegenüber Änderungen bedeutet, dass unsere Tests auch dann erfolgreich sind, wenn sich der Code ändert.
+Natürlich gibt es viel mehr zu Tests als nur einfache Vergleiche. Je nach Sprache und Framework gibt es unterschiedliche Methoden und Techniken, um Tests zu schreiben. Es ist wichtig, sich eingehend mit den spezifischen Anforderungen des jeweiligen Projekts auseinanderzusetzen und die Tests entsprechend anzupassen.
+
+Außerdem ist es wichtig, dass Tests regelmäßig ausgeführt werden, um sicherzustellen, dass sie immer noch korrekt sind. Wenn man Code ändert oder neue Funktionen hinzufügt, können Tests sehr nützlich sein, um potenzielle Probleme zu erkennen, bevor sie in der Produktion auftreten.
 
 ## Siehe auch
 
-- [Einführung in das Unit Testing in C](https://www.tutorialspoint.com/cprogramming/c_unit_testing.htm)
-- [CUnit Dokumentation](http://cunit.sourceforge.net/doc/index.html)
-- [The All-Pair Testing Tool (APT-Engine)](https://www.tutorialspoint.com/software_testing_dictionary/all_pair_testing_tool.htm)
+- [Einführung in das Testen von C-Code](https://www.freecodecamp.org/news/test-driven-development-what-it-is-and-how-to-use-it/)
+- [CUnit: Ein Framework für das Testen von C-Code](https://cunit.sourceforge.io/)
+- [Warum Tests für Entwickler wichtig sind](https://www.thoughtworks.com/insights/blog/unit-test)

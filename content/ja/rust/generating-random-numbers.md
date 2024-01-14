@@ -1,51 +1,48 @@
 ---
-title:                "Rust: ランダムな数値の生成"
+title:                "Rust: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "Rust"
-category:             "Numbers"
+category:             "Rust"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/rust/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-Rustで偶数を生成する方法
-
 ## なぜ
 
-乱数生成をする理由は多々あります。例えば、シミュレーションやゲームで使うことができます。また、ランダムなデータを生成することで、コンピューターの性能をテストすることもできます。
+コンピュータプログラミングにおいて、ランダムな数値を生成することは非常に便利です。例えば、ゲームやシミュレーションなどのアプリケーションで、プレイヤーやコンピュータの行動をランダムに決める必要がある場合に使用されます。また、暗号学的なアプリケーションにおいてもランダムな数値の生成が重要です。
 
 ## 作り方
 
-Rustで乱数を生成するには、`rand`クレートを使用します。まずは、`Cargo.toml`に`rand`を追加し、`main.rs`ファイルで`rand`をインポートします。
-
-```Rust
-[dependencies]
-rand = "0.7.3"
-```
+Rust言語において、ランダムな数値を生成する方法をご紹介します。まず、Rustの標準ライブラリに含まれているrandクレートをインポートします。次に、乱数生成器を作成し、その中にランダムな数値を生成するためのメソッドを呼び出します。
 
 ```Rust
 use rand::Rng;
-```
 
-次に、`main`関数の中で`rand`の`thread_rng`メソッドを使用し、乱数ジェネレーターを作成します。ここでは、1から10までの間の乱数を生成する例を示します。
-
-```Rust
 fn main() {
     let mut rng = rand::thread_rng();
-    let random_number: u32 = rng.gen_range(1, 11);
-    println!("ランダムな数: {}", random_number);
+    let random_number: u32 = rng.gen();
+    println!("Random number: {}", random_number);
 }
 ```
 
-上記のコードを実行すると、毎回1から10までの間のランダムな数が出力されるでしょう。
+上記のコードでは、乱数生成器としてrand::thread_rng()を使用しています。そして、u32というデータ型を指定してランダムな数値を生成し、それを出力しています。もちろん、データ型や生成する数値の範囲を変更することも可能です。詳細な使い方はドキュメントを確認してください。
 
 ## 深堀り
 
-Rustの`rand`クレートには、様々なランダムなデータを生成するメソッドがあります。例えば、`gen`メソッドを使用すると、任意の型のランダムな値を生成することができます。また、`fill`メソッドを使用すると、与えられた変数や配列をランダムな値で埋めることができます。
+実際には、ランダムな数値の生成は非常に複雑なことであり、暗号学的なアプリケーションにおいてはセキュリティ上の重要なポイントとなります。そのため、rust-cryptoというサードパーティーライブラリを使用することが推奨されています。
 
-さらに、`Distribution`トレイトを使用することで、特定の範囲や分布に沿ったランダムな値を生成することもできます。例えば、`Uniform`を使用すると、任意の範囲からランダムな数を生成することができます。
+また、乱数生成器の種類やアルゴリズムについても、より詳しく学ぶことでより安全なランダムな数値の生成が可能になります。Rustのドキュメントや他の学習リソースを活用して、より深い知識を身につけることをお勧めします。
 
-## 関連記事
+## 良い記事
 
-- [`rand`クレートドキュメント](https://docs.rs/rand/0.7.3/rand/)
-- [Rustの乱数生成について知る](https://codeburst.io/understanding-random-number-generation-in-rust-7717ebf940de)
-- [乱数生成ライブラリで遊ぶ](https://guillaume-gomez.blog/?d=00/09/01)
+- [RNGs and the Get There](https://www.rust-lang.org/ja/what-is-rust#:~:text=The%20Rust%20language%20has%20a%20strong%20focus%20on%20memory%20and%20concurrency%2C%20including%20safe%20data%20sharing%20between%20threads.) - Rustのドキュメントにおける乱数生成器に関する説明
+- [The Rust Standard Library - Generating Random Numbers](https://doc.rust-lang.org/std/rand/index.html) - randクレートのドキュメント
+- [Generating Random Numbers in Rust using the Standard Library and rand crate](https://dev.to/bbowers21/generating-random-numbers-in-rust-using-the-standard-library-and-rand-crate-1bmo) - randクレートを使用したランダムな数値の生成の方法について詳しく解説した記事
+
+## 関連リンク
+
+- [rust-crypto crate](https://github.com/DaGenix/rust-crypto) - 暗号学的なアプリケーションにおけるランダムな数値の生成に使用されるサードパーティーライブラリ
+- [Rust By Example: Random](https://doc.rust-lang.org/stable/rust-by-example/std_misc/rand.html) - Rustの公式ドキュメントにおけるランダムな数値の生成のサンプルコード集
+- [RNG Book](https

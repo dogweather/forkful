@@ -1,51 +1,83 @@
 ---
-title:                "Python: Omvandling av en datum till en sträng"
+title:                "Python: Omvandla ett datum till en sträng"
+simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/python/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att omvandla ett datum till en sträng är en vanlig uppgift i många Python-program. Det kan behövas för att skapa snygga utskrifter eller när man ska spara datum i en fil eller databas. 
 
-Att konvertera ett datum till en sträng är en vanlig uppgift inom programmering eftersom det tillåter användare att visa eller spara datum på olika sätt. Det kan också vara användbart för dataanalys eller beräkningar som involverar datum.
+## Så här gör du
+För att konvertera ett datum till en sträng i Python behöver du först importera "datetime" biblioteket. Sedan kan du använda funktionen "strftime" för att välja det önskade strängformatet och sedan ange vilket datum som ska omvandlas.
 
-## Hur man gör det
-
-Det finns flera sätt att konvertera ett datum till en sträng i Python, men det vanligaste är att använda datetime-modulen, som innehåller funktioner för datum- och tidsmanipulering.
-
-```python
+```Python
+# Importera datetime biblioteket
 import datetime
 
 # Skapa ett datumobjekt
-today = datetime.date.today()
+datum = datetime.datetime(2021, 3, 19)
 
-# Konvertera till sträng och visa resultatet
-print(today.strftime("%d/%m/%Y")) # Output: 31/10/2021
+# Konvertera till sträng med formatet åååå-mm-dd
+omvandlat_datum = datum.strftime("%Y-%m-%d")
+
+# Skriv ut resultatet
+print(omvandlat_datum)
+
+# Resultat: 2021-03-19
 ```
 
-I detta exempel använder vi strftime-funktionen för att formatera datumet till önskat format, i detta fall dag/månad/år. Det finns flera olika formatspecifikationer du kan använda för att skapa olika utdata.
+Du kan också välja att använda andra format, till exempel "datummånadå" med "%d-%b-%Y".
 
-## Djupdykning
-
-När du konverterar ett datum till en sträng är det viktigt att förstå vilka olika format som stöds och hur de påverkar utdata. Det finns även möjlighet att konvertera datumet till en lokal tidszon och hantera eventuella skillnader mellan olika länders datumformat.
-
-En annan användbar funktion är strptime, som gör det möjligt att konvertera en sträng till ett datumobjekt. Detta kan vara särskilt användbart när du hanterar användarinput eller data från en databas.
-
-```python
+```Python
+# Importera datetime biblioteket
 import datetime
 
-# Konvertera sträng till datumobjekt
-date_string = "2021-10-31"
-date = datetime.datetime.strptime(date_string, "%Y-%m-%d")
+# Skapa ett datumobjekt
+datum = datetime.datetime(2021, 3, 19)
 
-# Visa resultatet
-print(date) # Output: 2021-10-31 00:00:00
+# Konvertera till sträng med formatet åååå-mm-dd
+omvandlat_datum = datum.strftime("%d-%b-%Y")
+
+# Skriv ut resultatet
+print(omvandlat_datum)
+
+# Resultat: 19-Mar-2021
 ```
 
-## Se även
+## Djupdykning
+När du konverterar ett datum till en sträng kan du också inkludera tid och tidszon. Det finns olika format som du kan använda beroende på hur du vill ha utskriften. Du kan också använda funktionen "strptime" för att omvandla en sträng till ett datum.
 
-- [Python datetime-modulen](https://docs.python.org/sv/3/library/datetime.html)
-- [Strftime formatspecifikationer](https://docs.python.org/sv/3/library/datetime.html#strftime-and-strptime-behavior)
-- [Date and Time Data Types in Python](https://realpython.com/python-datetime/)
+```Python
+# Importera datetime biblioteket
+import datetime
+
+# Skapa ett datetime objekt
+datum = datetime.datetime(2021, 3, 19, 13, 25)
+
+# Konvertera till sträng med formatet åååå-mm-dd T hh:mm
+omvandlad_strang = datum.strftime("%Y-%m-%d T %H:%M")
+
+# Skriv ut resultatet
+print(omvandlad_strang)
+
+# Resultat: 2021-03-19 T 13:25
+
+# Konvertera sträng till ett datetime objekt
+nytt_datum = datetime.datetime.strptime("Mar 19, 2021", "%b %d, %Y")
+
+# Skriv ut resultatet
+print(nytt_datum)
+
+# Resultat: 2021-03-19 00:00:00
+```
+
+Det finns också andra funktioner som kan hjälpa dig att hantera datum och tid i Python, som "date", "time" och "timedelta". Det är viktigt att läsa dokumentationen för att välja den bästa metoden för ditt syfte.
+
+## Se även
+- [Python datetime bibliotek](https://docs.python.org/3/library/datetime.html)
+- [strftime och strptime](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)

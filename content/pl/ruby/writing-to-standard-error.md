@@ -1,63 +1,43 @@
 ---
-title:                "Ruby: Pisanie do standardowego błędu"
+title:                "Ruby: Pisanie do standardowego błędu."
+simple_title:         "Pisanie do standardowego błędu."
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/ruby/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-#Dlaczego pisać do standardowego wyjścia błędów?
+## Dlaczego
 
-Pisanie do standardowego wyjścia błędów jest ważną częścią pisania w języku Ruby. Jest to szczególnie przydatne wtedy, gdy chcemy zobaczyć informacje o błędach lub ostrzeżeniach w naszym kodzie. Umożliwia to łatwiejsze debugowanie i naprawianie potencjalnych błędów.
+Pisanie do standardowego błędu jest nieodłączną częścią pisania kodu w Ruby. Wiele osób może zastanawiać się dlaczego jest to ważne lub dlaczego w ogóle powinniśmy to robić. W tym wpisie dowiesz się, dlaczego pisanie do standardowego błędu jest tak istotne i jak możesz to zrobić.
 
-##Jak to zrobić?
+## Jak to zrobić
 
-Istnieje kilka sposobów na wypisywanie informacji do standardowego wyjścia błędów w Ruby. Najczęściej używane są metody `warn` i `raise`. Możemy je wywołać za pomocą `Kernel.warn` lub `Kernel.raise`. Przykładowe użycie wygląda następująco:
-
-```Ruby
-def divide(x, y)
-  if y.zero?
-    raise ZeroDivisionError, "Nie można dzielić przez 0!"
-  else
-    return x / y
-  end
-end
-
-puts divide(10, 5) # Output: 2
-puts divide(10, 0) # Output: ZeroDivisionError: Nie można dzielić przez 0!
-```
-
-Jak widać, wywołanie `raise` powoduje zatrzymanie wykonywania kodu i wypisanie informacji o błędzie. Natomiast `warn` pozwala kontynuować działanie programu, ale wypisuje ostrzeżenie.
-
-Inną metodą jest użycie `STDERR.puts`, która bezpośrednio pisze do standardowego wyjścia błędów. Przykładowe użycie:
+Aby napisać do standardowego błędu w Ruby, możesz użyć metody `warn` lub `stderr.puts`. Możesz także przekierować standardowe wyjście do standardowego błędu za pomocą operatora `>>`. Przykładowy kod wyglądałby następująco:
 
 ```Ruby
-STDERR.puts "Wystąpił błąd!" # Output: Wystąpił błąd!
+# Metoda warn
+warn "Podany argument jest nieprawidłowy"
+
+# Metoda stderr.puts
+$stderr.puts "Wystąpił błąd podczas wykonania programu"
+
+# Przekierowanie standardowego wyjścia do standardowego błędu
+puts "Witaj na stronie internetowej" >> $stderr
 ```
 
-##Głębsza analiza
+Powyższy kod używa różnych sposobów, aby wypisać informację na standardowy błąd. Możesz wybrać ten, który najlepiej pasuje do twojego kodu i potrzeb.
 
-Kiedy używamy `raise`, możemy podać nie tylko typ błędu, ale także dodatkową informację. Przykładowo:
+## Deep Dive
 
-```Ruby
-def check_age(age)
-  if age < 18
-    raise StandardError, "Osoba musi być pełnoletnia!"
-  else
-    puts "Dostęp do witryny udzielony."
-  end
-end
+Pisanie do standardowego błędu jest ważne, ponieważ pozwala nam na wyświetlenie informacji o błędach lub problemach występujących podczas wykonania programu. Standardowe wyjście jest używane do wyświetlania informacji wyjściowych dla użytkownika, a standardowy błąd do wyświetlania komunikatów o błędach lub problemach. Dzięki temu możemy lepiej kontrolować i zarządzać naszym kodem.
 
-check_age(16) # Output: StandardError: Osoba musi być pełnoletnia!
-```
+## Zobacz także
 
-Także `warn` pozwala na przekazanie dodatkowych parametrów, np. `warn "Błąd przy zapisie pliku!", location: "14:9"`.
+Zapoznaj się z poniższymi linkami, aby dowiedzieć się więcej o pisaniu do standardowego błędu w Ruby:
 
-#Zobacz też
-
-- Dokumentacja Ruby o wypisywaniu do standardowego wyjścia błędów: https://ruby-doc.org/core-2.7.1/IO.html#method-i-puts
-- Poradnik na temat zarządzania błędami w Ruby: https://www.rubyguides.com/2019/05/ruby-error-handling/
-- Wideo- tutorial o wypisywaniu do standardowego wyjścia błędów w Ruby: https://www.youtube.com/watch?v=jL-khRbEd2w
-
-Dzięki wypisywaniu do standardowego wyjścia błędów, możemy w prosty sposób znaleźć i naprawić błędy w naszym kodzie. Pamiętajmy o odpowiednim zarządzaniu informacjami oraz wyjątkami, aby nasze programy były jeszcze bardziej wydajne i niezawodne.
+- [Dokumentacja Ruby](https://ruby-doc.org/core-2.7.2/Kernel.html#method-i-warn)
+- [Wideo na YouTube](https://www.youtube.com/watch?v=7Cs7TDYhuZI)
+- [Artykuł na Medium](https://medium.com/@josh_cheek/stderr-warn-puts-and-io-64b1224a5c1d)

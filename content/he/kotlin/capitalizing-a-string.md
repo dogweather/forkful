@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: הפכו מחרוזת לאותיות רישיות"
+title:                "Kotlin: שיפור מחרוזת באותיות רישיות"
+simple_title:         "שיפור מחרוזת באותיות רישיות"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/kotlin/capitalizing-a-string.md"
 ---
 
@@ -9,52 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## למה
 
-מחרוזת קיימת בכמעט כל תכנית בקוד ולעיתים קרות שאנו רוצים להוסיף את כל האותיות הראשונות שלה באותיות גדולות. לדוגמה, ייתכן שנרצה להפוך את המשפט "זו היא משפט חשוב" ל "זו היא משפט חשוב בכל האותיות הראשונות גדולות". לכן, החלטנו לכתוב בלוג זה על איך לבצע את הפעולה הזאת באמצעות קוד Kotlin.
+כתבתי את המאמר הזה בגלל שהשתמשתי בשיטת לשנות מחרוזת לגדולות בשפת קוטלין ורציתי לשתף את המידע הבעיה עם קהל נרחב של קוראים. 
 
-## איך לעשות זאת
-
-הנה שתי דרכים להפעיל את העיבוד של מחרוזת עם אותיות גדולות בשפת Kotlin:
+## כיצד לעשות
 
 ```Kotlin
-fun capitalizeString(str: String): String {
-    // ראשית, נעשה מחרוזת קטנה כדי שלא נשנה את המשפט המקורי
-    val smallStr = str.toLowerCase()
-    
-    // ניקח את המילים במחרוזת ונבדוק את האות הראשונה של כל מילה
-    // אם היא אות קטנה, נחליף אותה באות גדולה
-    return smallStr.split(" ").joinToString(" ") { word ->
-        word.replaceFirstChar {
-            if (it.isLowerCase()) it.titlecase(
-                Locale.getDefault()
-            ) else it.toString()
-        }
-    }
+fun capitalizeString(str: string): string {
+    return str.capitalize()
 }
-
-println(capitalizeString("זו היא משפט חשוב"))
-// Output: זו היא משפט חשוב
-
-println(capitalizeString("this is an important sentence"))
-// Output: This Is An Important Sentence
 ```
 
-אפשר לראות שהפעולה עובדת גם עם מחרוזת ארוכה יותר וגם עם מחרוזת מרובעת כמו "זהו משפט חשוב לשני אנשים".
+קוד זה ייבא את הפונקציה המובנית `capitalize()` שתגדיל את המחרוזת שהועברה כמשתנה. לדוגמא, אם תכניסו את המחרוזת "kotlin" תקבלו כתוצאה את המחרוזת "Kotlin".
 
-הדרך השניה היא להשתמש בפונקציה פנימית קיימת בשפת Kotlin שקוראת "replaceFirstChar", שגם מבצעת את הפעולה הזאת:
+כמו כן, ניתן גם להתייחס לפונקציה `toUpperCase()` המעלה את כל התווים במחרוזת לאותיות גדולות. 
 
 ```Kotlin
-fun capitalizeString(str: String): String {
-    return str.replaceFirstChar {
-        if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString()
-    }
+fun capitalizeString(str: string): string {
+    return str.toUpperCase()
 }
-
-println(capitalizeString("זהו משפט חשוב לשני אנשים"))
-// Output: זהו משפט חשוב לשני אנשים
 ```
 
-בשתי הדרכים, אנו מצליחים להכניס את המשפט המקורי עם אותיות גדולות.
+כתובת זו תחזיר "KOTLIN" כתוצאה.
 
-## חפירה עמוקה
+## חקירה מעמיקה
 
-בגרסה
+השיטות המוצגות מתארות שימושים פשוטים של כתיבת מחרוזת לאותיות גדולות. אבל ישנן גם שיטות יותר מתקדמות לכתיבת מחרוזות, כגון `toUpperCase(Locale)` שמשמשת להפוך את המחרוזת לאותיות גדולות בשפה מסוימת.
+
+בנוסף, ישנם פונקציות מתנדבות חיצוניות שנבנו על בסיס השיטות הקיימות, והן משתמשות בתכונות ופתרונות מתקדמים יותר לכתיבת מחרוזות לאותיות גדולות. אז אם אתם מעוניינים לעשות יותר מסתם לשנות את המחרוזת לאותיות גדולות, ישנן אפשרויות מתקדמות מאוד שכדאי לחקור.
+
+## ראו גם
+
+- [Kotlin Documentation on Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- [Kotlin String Extensions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/index.html#extensions-for-strings)
+- [Kotlin Fun with Strings](https://devrockstars.com/blog/performing-fun-tasks-with-strings-in-kotlin/)

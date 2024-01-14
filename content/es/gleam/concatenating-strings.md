@@ -1,38 +1,53 @@
 ---
-title:                "Gleam: Uniendo cadenas de texto"
+title:                "Gleam: Uniendo cadenas"
+simple_title:         "Uniendo cadenas"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-Si estás leyendo esto, probablemente tengas curiosidad sobre cómo concatenar cadenas en Gleam. Esta habilidad es importante para cualquier programador, ya que te permite combinar múltiples cadenas para crear una sola, lo cual es especialmente útil cuando estás trabajando con datos.
 
-## Cómo hacerlo
-```Gleam 
-let nombre = "Juan"
-let apellido = "García"
+Concatenar cadenas de texto es una herramienta esencial en la programación. Permite combinar diferentes textos para crear uno más grande y completo. Aprender a concatenar correctamente las cadenas en Gleam puede ayudarte a mejorar tu eficiencia y a hacer tu código más legible.
 
-let nombre_completo = nombre <> " " <> apellido
+## Cómo Hacerlo
 
-IO.println(nombre_completo)
+Para concatenar cadenas en Gleam, usaremos el operador `++` entre dos cadenas. Veamos un ejemplo:
+
+```Gleam
+let saludo = "¡Hola"
+let nombre = "María!"
+let mensaje = saludo ++ nombre
 ```
 
-```
-Juan García
+Aquí, las cadenas "¡Hola" y "María!" se unen para formar un nuevo mensaje "¡Hola María!". Es importante tener en cuenta que el resultado de la concatenación será una nueva cadena, por lo que debemos asignarlo a una variable si queremos utilizarlo más adelante.
+
+Si necesitamos agregar más cadenas al mensaje, podemos seguir utilizando el operador `++`:
+
+```Gleam
+let apellido = "González!"
+let saludo_completo = mensaje ++ " " ++ apellido
 ```
 
-La concatenación de cadenas en Gleam se realiza mediante el operador `<>`, el cual une dos cadenas en una sola. También puedes usarlo para unir más de dos cadenas al mismo tiempo. Solo recuerda colocar espacios en blanco entre cada cadena para que la salida sea legible.
+Con esto, nuestro saludo ahora incluye el apellido de la persona, y tenemos el siguiente resultado: "¡Hola María González!".
 
 ## Profundizando
-La concatenación de cadenas en Gleam se puede realizar no solo con cadenas de texto, sino también con otros tipos de datos como enteros y booleanos. Esto se logra gracias a la capacidad de Gleam de convertir automáticamente otros tipos de datos a cadenas antes de concatenarlos.
 
-Además, el operador `<>` también funciona con variables, lo que significa que puedes unir cadenas almacenadas en variables en lugar de escribir todo en una sola línea de código.
+Es importante mencionar que el operador `++` solo puede unir dos cadenas juntas, por lo que si necesitas agregar más de dos cadenas, deberás utilizar una función llamada `String.concat`. Esta toma una lista de cadenas y las concatena en una sola. Veamos un ejemplo:
 
-## Ver también
-- [Documentación oficial de Gleam sobre cadenas](https://gleam.run/book/tour/strings.html)
-- [Ejemplos de cómo concatenar cadenas en Gleam](https://github.com/gleam-lang/gleam/blob/master/src/tests/strings_test.test)
+```Gleam
+let texto1 = "¡Hola"
+let texto2 = "a todos"
+let texto3 = "los lectores!"
+let mensaje = String.concat([texto1, texto2, texto3])
+```
 
-¡Ahora que sabes cómo concatenar cadenas en Gleam, puedes seguir aprendiendo sobre otras funcionalidades del lenguaje!
+El resultado será la cadena "¡Hola a todos los lectores!".
+
+## Ver También
+
+- [Documentación oficial de Gleam sobre concatenación de cadenas](https://gleam.run/book/tour/string-and-ternary.html#concatenation)
+- [Artículo sobre concatenación de cadenas en Gleam de Codeural](https://codeural.com/2020/08/10/concatenar-strings-en-gleam/)

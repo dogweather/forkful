@@ -1,45 +1,55 @@
 ---
 title:                "C# recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
-Command line arguments may seem like a mundane topic, but they are actually an important aspect of programming. Understanding how to read and manipulate command line arguments can greatly improve the functionality and efficiency of your code. In this blog post, we will explore the use of command line arguments in C# and how they can benefit your programming journey.
+## Why 
+Command line arguments are a powerful tool for developers to manipulate their programs without having to constantly modify the code. They allow for flexibility and customization, making the program more user-friendly. In this blog post, we'll explore how to effectively read command line arguments in C#.
 
-## How To
-In C#, reading command line arguments is a simple process. You start by creating a string array variable to store the arguments, which is automatically generated when the program is executed. Then, you can use a for loop to iterate through the array and access each individual argument.
+## How To 
+Reading command line arguments in C# is a simple process that can greatly enhance the functionality of your program. Let's take a look at an example code:
 
-```
-C# // Example code to read command line arguments
-static void Main(string[] args)
+```C#
+using System;
+
+class Program
 {
-    for (int i = 0; i < args.Length; i++)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Argument {0}: {1}", i + 1, args[i]);
+        for (int i = 0; i < args.Length; i++)
+        {
+            Console.WriteLine($"Argument {i+1}: {args[i]}");
+        }
     }
 }
 ```
 
-Let's say we have a program called "Hello" and we execute it with the following command line arguments: `Hello John 123`. The output would be:
+In this code, we first declare a `Main` method that takes in an array of strings called `args`, which represent the command line arguments. Then, using a `for` loop, we can iterate through the arguments and access each one individually. In this case, we print out the index and value of each argument using Console.WriteLine.
 
-```
-Argument 1: John
-Argument 2: 123
+To run this program with command line arguments, we can navigate to the directory where the executable file is located and type in `program.exe arg1 arg2 arg3`. This will output:
+
+```C#
+Argument 1: arg1
+Argument 2: arg2
+Argument 3: arg3
 ```
 
-As you can see, the arguments are stored in the `args` array in the order they were entered in the command line. You can also use conditional statements or other logic to manipulate the arguments as needed for your program.
+Notice that the program reads the arguments in the same order they were inputted in the command line. This can be useful when passing in multiple parameters or options for your program.
 
 ## Deep Dive
-Now, let's dive a little deeper into the world of command line arguments. Did you know that you can pass in not only strings, but also numbers and even files? This allows for even more flexibility in your programs. You can also use special characters, such as quotes, to handle arguments with spaces or other special characters. For example, `Hello "John Smith" 123` would pass in "John Smith" as one argument instead of two separate arguments.
+Command line arguments can also be used to set values for variables in your program. For example, let's say we have a program that performs a calculation and we want to be able to specify the input values through command line arguments. We can do this by converting the argument values to the appropriate data type, using methods like `int.Parse()` or `double.Parse()`, and assigning them to our variables. This allows for more dynamic and customizable programs.
 
-It's also important to note that the first argument in the array (`args[0]`) is always the name of the program itself. This can be useful for programs that need to reference themselves or if you want to provide instructions or options in the first argument.
+It's important to note that command line arguments are case-sensitive, meaning that `arg` and `Arg` would be treated as different arguments. Additionally, we can include special characters, such as spaces and symbols, in our arguments by using quotation marks ("") to encapsulate them.
 
-## See Also
-- [Microsoft Docs: Command-line arguments (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- [C# Corner: Command Line Arguments in C#](https://www.c-sharpcorner.com/article/command-line-arguments-in-C-Sharp)
+There are also special characters that have a reserved function in command line arguments, such as the backslash (\) for escaping characters and the hyphen (-) for indicating an option.
 
-With the knowledge and understanding of command line arguments in C#, you can greatly improve the functionality and user experience of your programs. Whether you're a beginner or an experienced programmer, the use of command line arguments is a skill worth adding to your repertoire. Happy coding!
+## See Also 
+- [Microsoft Docs on Command Line Arguments in C#](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- [C# Command Line Parser Library](https://github.com/commandlineparser/commandline)
+- [Passing Command Line Arguments to a Console Application](https://www.softfluent.com/blog/dev/Passing-command-lines-to-a-console-application)

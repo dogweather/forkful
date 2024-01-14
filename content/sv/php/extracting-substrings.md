@@ -1,52 +1,51 @@
 ---
 title:                "PHP: Extrahera substrängar"
+simple_title:         "Extrahera substrängar"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/php/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-
-Att extrahera substrängar är en vanlig utmaning i PHP-programmering. Det kan vara användbart för att manipulera textdata eller hantera dynamisk input från användare. Genom att lära sig hur man extraherar substrängar kan du utöka dina PHP-färdigheter och skapa mer effektiv kod.
+Strängutvinning är en vanlig programmeringsteknik som används för att extrahera en del av en sträng. Detta kan vara användbart i många olika situationer, till exempel när du vill söka igenom en lång sträng efter ett specifikt ord eller när du vill manipulera en sträng för att få den att passa in på ett visst format.
 
 ## Så här gör du
-
-För att extrahera en substräng från en befintlig sträng i PHP, använder du funktionen `substr()`. Syntaxen för denna funktion är:
-
-```PHP
-$nyStrang = substr($befintligStrang, startposition, längd);
-```
-
-Det första argumentet är den befintliga strängen som du vill extrahera en del av. Det andra argumentet är startpositionen för substrängen, och det sista argumentet är längden på substrängen. Om du inte anger ett längdargument kommer substrängen att extraheras från startpositionen till slutet av den befintliga strängen.
-
-Här är ett exempel på hur du kan använda `substr()` för att extrahera en del av en sträng:
+Det enklaste sättet att extrahera en del av en sträng är genom att använda funktionen `substr()`. Den tar in tre parametrar: strängen som ska bearbetas, startpositionen för den del av strängen du vill extrahera och det valfria antalet tecken som ska extraheras.
 
 ```PHP
-$strang = "Hej, välkommen till min blogg!";
-$delAvStrang = substr($strang, 5, 8);
-
-echo $delAvStrang; // kommer att skriva ut "välkommen"
+<?php
+$str = "Välkommen till min blogg!";
+echo substr($str, 10); // Output: min blogg!
 ```
 
-Du kan också använda `substr()` för att extrahera från slutet av en sträng genom att använda negativa startpositioner. Här är ett exempel:
+Om du istället bara vill extrahera de första 10 tecknen av strängen kan du använda negativa värden för de sista två parametrarna, vilket gör att den del av strängen som är utanför det specificerade området ignoreras.
 
 ```PHP
-$strang = "Hej, välkommen till min blogg!";
-$delAvStrang = substr($strang, -6, 6);
-
-echo $delAvStrang; // kommer att skriva ut "blogg!"
+<?php
+$str = "Välkommen till min blogg!";
+echo substr($str, 0, -7); // Output: Välkommen till
 ```
 
-## Djupdykning
+Det är också möjligt att använda regelbundna uttryck för att extrahera en del av en sträng. Detta ger dig ännu mer kontroll över vilka delar av strängen du vill hämta.
 
-När du extraherar substrängar finns det några saker att tänka på. Först och främst är det viktigt att förstå att indexeringen av en sträng i PHP börjar på 0. Det innebär att den första bokstaven i en sträng har index 0, den andra bokstaven har index 1 och så vidare.
+```PHP
+<?php
+$str = "Hemsida: www.example.com";
+preg_match('/w{3}.(.+?)\/$/i', $str, $matches); // Hitta delen av strängen efter "www." och fram till "/"-tecknet
+echo $matches[1]; // Output: example
+```
 
-Dessutom kommer `substr()` inte att generera ett fel om den angivna startpositionen är utanför gränserna för den befintliga strängen. Istället kommer den att returnera en tom sträng. Du bör alltid kontrollera om längden på den befintliga strängen är längre än din startposition för att undvika oväntade resultat.
+## Deep Dive
+För mer komplexa extraheringsbehov kan det vara användbart att använda funktionerna `strpos()` och `strrpos()` för att hitta positionerna för den del av strängen du vill hämta. Dessa funktioner returnerar det första respektive sista förekomsten av ett visst tecken eller en delsträng.
+
+Om du behöver hantera flera förekomster av en delsträng kan du använda `explode()` för att dela upp strängen i en array vid varje förekomst av den delsträng du letar efter.
 
 ## Se även
-
-- PHP:dokumentation om substrängar (https://www.php.net/manual/en/function.substr.php)
-- En guide till strängfunktioner i PHP (https://www.w3schools.com/php/php_string_functions.asp)
-- En videohandledning om att extrahera substrängar i PHP (https://www.youtube.com/watch?v=dSKJvjefE3k)
+- [PHP Manual: substr](https://www.php.net/manual/en/function.substr.php)
+- [PHP Manual: preg_match](https://www.php.net/manual/en/function.preg-match.php)
+- [PHP Manual: strpos](https://www.php.net/manual/en/function.strpos.php)
+- [PHP Manual: strrpos](https://www.php.net/manual/en/function.strrpos.php)
+- [PHP Manual: explode](https://www.php.net/manual/en/function.explode.php)

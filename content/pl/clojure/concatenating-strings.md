@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/concatenating-strings.md"
 ---
 
@@ -9,35 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Połączenie ciągów znaków, zwane także konkatenacją, jest powszechną czynnością w programowaniu. Jest niezbędne, jeśli chcemy łączyć różne ciągi znaków w jeden i tworzyć dynamiczne teksty. W tym artykule dowiesz się, dlaczego warto poznać ten podstawowy koncept oraz jak wykorzystać go w języku Clojure.
+Dlaczego powinieneś używać konkatenacji stringów? Jest to ważny element w programowaniu Clojure, ponieważ pozwala na łączenie różnych stringów w jeden. W ten sposób możemy tworzyć dowolne wyrażenia i przetwarzać dane w sposób bardziej złożony.
 
-## Jak to zrobić?
+## Jak to zrobić
 
-Pierwszym krokiem do łączenia ciągów znaków jest użycie funkcji `str`. Przyjmuje ona dowolną liczbę argumentów i łączy je w jeden ciąg znaków. Na przykład:
-
-```Clojure
-(str "Cześć, " "to jest " "blog " "o Clojure!")
-```
-
-Output: `Cześć, to jest blog o Clojure!`
-
-Możemy również użyć znaku `+`, aby połączyć dwa ciągi znaków. Na przykład:
+Przykładowy kod wykorzystujący konkatenację stringów wygląda następująco:
 
 ```Clojure
-("Hello " + "world!")
+(def imie "Kasia")
+(def nazwisko "Nowak")
+(def wiek 28)
+
+(str "Cześć, jestem " imie " " nazwisko " i mam " wiek " lat.")
 ```
 
-Output: `Hello world!`
+Wynikiem działania tego kodu będzie: `Cześć, jestem Kasia Nowak i mam 28 lat.`
 
-Jeśli chcemy połączyć więcej niż dwa ciągi, musimy użyć funkcji `str` lub `reduce`.
+Jedną z najczęstszych metod konkatenacji stringów w Clojure jest używanie funkcji `str`, która łączy wszystkie argumenty w jedną dłuższą linię. Możemy również użyć `concat`, aby połączyć listę stringów w jedną linię lub operatora `str` do łączenia dwóch stringów.
 
-## Pogłębione spojrzenie
+## Głębsza analiza
 
-Podczas konkatenacji ciągów warto pamiętać o wydajności. Używanie funkcji `str` jest szybsze niż używanie `+`, ponieważ unika konwersji typów wewnętrznie. Dlatego też zaleca się stosowanie `str`, jeśli łączymy więcej niż dwa ciągi.
+Podczas konkatenacji stringów w Clojure warto pamiętać o typach danych. Jeśli jeden z argumentów jest listą, to zostanie ona rozwinięta i połączona z resztą stringów. Jeśli argument jest liczbą, zostanie automatycznie przekształcony na string.
 
-Warto również zwrócić uwagę na kolejność argumentów w funkcji `str`. Argumenty zostaną połączone w tej samej kolejności, w jakiej je podaliśmy. Możemy jednak zmienić kolejność, używając funkcji `reverse` lub `map`.
+Inną ciekawą funkcjonalnością jest możliwość łączenia stringów za pomocą separatora przy użyciu `str-join` lub `join` (w przypadku list). Jest to przydatne w przypadku łączenia większej ilości wartości i chcemy oddzielić je od siebie.
 
-## Zobacz także
+## Zobacz również
 
-* Oficjalna dokumentacja Clojure: https://clojure.org/api/cheatsheet
-* Przykłady konkatenacji w Clojure: https://www.baeldung.com/clojure/string-concatenation
+Jeśli chcesz dowiedzieć się więcej o konkatenacji stringów w Clojure, polecamy zapoznać się z poniższymi materiałami:
+
+- https://www.tutorialspoint.com/clojure/clojure_strings.htm
+- https://clojuredocs.org/clojure.core/str
+- https://www.clojure.org/reference/strings

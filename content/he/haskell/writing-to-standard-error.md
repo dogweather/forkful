@@ -1,38 +1,39 @@
 ---
-title:                "Haskell: כתיבה אל תוך השגיאה התקנית"
+title:                "Haskell: כתיבה לפלט השגיאה התקני"
+simple_title:         "כתיבה לפלט השגיאה התקני"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+## למה:
 
-כתיבה למטרת שכיתה שונה בכינונים ושהיא בטוחה יותר למחברת עם פלט תקין ונתונים.
+כתיבה לפלט של שגיאות (standard error) היא כלי חשוב בתכנות ב-Haskell. היא מאפשרת למתכנת לזהות במדויק את המקור של השגיאות ולתקן אותן בקלות. בנוסף, כתיבה לstandard error מאפשרת לנו לצפות בתוצאות רץ של התוכנית בזמן אמת ולקבל מידע חיוני לגבי התכנית שאנחנו מפתחים.
 
-## איך לעשות זאת
+## איך לעשות זאת:
+
+כתיבה לפלט של שגיאות ב-Haskell נעשה באמצעות הפונקציה `hPutStr` או `hPutStrLn` המקבלת כפרמטר את קובץ הפלט שלנו, כפי שניתן לראות בדוגמאות הקוד הבאות:
 
 ```Haskell
-main :: IO ()
+import System.IO
+
 main = do
-  let x = 5
-      y = 10
-  putStrLn $ "כינון " ++ show x ++ " הוא " ++ show (x * y)
+    let fileName = "log.txt" -- קובץ הפלט שלנו
+    errorFile <- openFile fileName WriteMode
+    hPutStr errorFile "משהו רע קרה" -- הוספת הודעת שגיאה לקובץ
+    hClose errorFile -- סגירת קובץ הפלט
 ```
 
-פלט:
+הנתונים שנמסרים לפונקציות כתיבה ל-standard error יופיעו במסך בפורמט הבא: `נתונים בקובץ פלט: <נתונים>`.
 
-```
-כינון 5 הוא 50
-```
+## העומק של מצביע השגיאות:
 
-## חקירה מעמיקה
+כדי לעשות שימוש יעיל בכתיבה לפלט של שגיאות, חשוב לנצל אותה בתהליך התכנות. כאשר נתבקש לבדוק תכניות באים תקינות ולמצוא אילוצים בתכנות, כתיבת הפלט של שגיאות תסייע לנו לאתר ולהתגבר על הבעיות האלה. בנוסף, כפי שאמרנו למעלה, כתיבה ל-standard error מאפשרת לנו לקבל מידע חיוני בזמן אמת על התכנית שאנחנו מפתחים ולתקן אותה בצורה יעילה ומהירה.
 
-כאשר נכנסים לעולם של Haskell, נתקלים במונחים כמו "IO" ו "putStrLn" שבעצם מבצעים את פעולת הכתיבה ל-standard error. זה מאפשר לנו להפעיל את הפונקציות בתוך ה-IO context ולתפוס פלט שלהם במקום הנכון. כדי לפנות לנתונים לכתיבה ל-standard error, ניתן להשתמש בפונקציות כמו "hPutStrLn" או "hPutStr".
+## ראה גם:
 
-## ראה גם
-
-- [המדריך המבואי ל-Haskell](https://wiki.haskell.org/Introduction)
-- [הספר "Real World Haskell"](http://book.realworldhaskell.org/read/)
-- [מדריך לשפת Haskell בעברית](https://yalh.io/he/)
+* [הוראות הפונקציות hPutStr ו-hPutStrLn בויקיפדיה](https://en.wikibooks.org/wiki/Haskell/Input_and_Output#Error_Outputs)
+* [מדריך תכנות ב-Haskell למ

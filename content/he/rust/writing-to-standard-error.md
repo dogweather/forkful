@@ -1,41 +1,55 @@
 ---
-title:                "Rust: כתיבה לצלצול נספח"
+title:                "Rust: לכתיבה אל תוך שגיאת תקן"
+simple_title:         "לכתיבה אל תוך שגיאת תקן"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/rust/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-##למה
+## למה
+כתיבה לפלט שגיאה סטנדרטי נחשבת לכלי חשוב בתוך תהליך הקודם לכתיבת שגיאות בתוכניות. בדרך זו, אפשר לזהות ולטפל בשגיאות כמעט בזמן אמת ולהקטין את כמות הזמן והמאמץ הנדרשים לטיפול בהם.
 
-על מנת לפרסם מידע כתוב ולהציג מידע מפורט על תקלות ושגיאות בקוד, מתכנתים השתמשו בתכונה הנקראת "כתיבה למסך שגיאות" או כתיבה ל standard error בכדי לעזור באיתור ותיקון שגיאות בתוכניות. כתיבה ל-mustandest# הוא צורת התקשרות עם תכונה זו המאפשרת קריאת שגיאות ותיקון תקלות באופן יעיל ומוקדם בתהליך הפיתוח של תוכניות.
-
-##כיצד
-
-תחילה, ניצור קובץ חדש בשפת Rust ונאתחל את הספריות הנדרשות. לדוגמה:
+## איך לעשות זאת
+בדוגמאות הקוד והפלט שיפורטו בהמשך, אנחנו נשתמש בשפת תכנות Rust כדי להדגים איך לבצע כתיבה לפלט שגיאה סטנדרטי. נתחיל עם פונקציה פשוטה שמקבלת מספר כפרמטר ומדפיסה את הערך שלו לפלט שגיאה. לשם כך, נשתמש בפונקציה `eprintln!` מתוך הספרייה `std`.
 
 ```Rust
-fn main() {
-  // use the standard library to access standard error
-  use std::io::Write;
-
-  // create a new file for writing to standard error
-  let mut stderr = std::io::stderr();
-
-  // write an error message to standard error
-  writeln!(stderr, "This is an error message").expect("Failed to write to standard error");
+fn print_to_stderr(number: i32) {
+    eprintln!("The number is: {}", number);
 }
 ```
 
-בקטע הקוד לעיל, אנחנו משתמשים בספריית התקנה של Rust ובפונקציות שלה כדי לכתוב לכתובת standard error. ניצור קובץ חדש ונכתוב אליו הודעה שגיאה כדי לבדוק את הפעולה בפועל.
+כעת, נדרוס את הפונקציה ונעביר לה ערך של משתנה שלא קיים.
 
-הפעולה תתגייס באופן אוטומטי לתוך הסוגריים הבדוקים כאשר היא תסיים את ניסיונות התקשורת. בתהליך הזה, כתיבה ל-standard error חשובה במיוחד בכדי לאתר ולתקן שגיאות קוד בתוכניות שלנו.
+```Rust
+let non_existing_number = 100;
+print_to_stderr(non_existing_number);
+```
 
-##עטיפת קודים
+הפלט של הקוד הנ"ל יהיה:
 
-אין רחוב משחקים או פתרונות פשוטים כאשר מדובר בתקשורת עם standard error. בכדי להבין את כל האופציות והפונקציות השונות שניתן להשתמש בהן בתהליך זה, ייתכן שתרצו להשתמש באתר המקורי של בשפת Rust או בתיעוד רשמי של הספריית standard error.
+```
+The number is: 100
+```
 
-###אבני דרך
+ניתן להעביר לפונקציה זו גם מחרוזת כפרמטר ולהדפיס גם הודעות שגיאה ידניות לפלט.
 
-לפעמים, בעת עבודה עם כתיבה ל-standard error, ית
+```Rust
+fn print_to_stderr(string: &str) {
+    eprintln!("There was an error in the program: {}", string);
+}
+
+let error_message = "Error occurred.";
+print_to_stderr(error_message);
+```
+
+הפלט של הקוד הנ"ל יהיה:
+
+```
+There was an error in the program: Error occurred.
+```
+
+## מגע מעמיק
+הכתיבה לפלט שגיאה סטנדרטי יכולה לעזור גם במקרים שבהם נמצא שגיאה ספציפית בתוך התכנית ואנחנו רוצים לדעת מה היא בדיוק. במקרה זה, ניתן להשתמש במקרה של אינטרפרטציה של שגיאות מתוך המחרוזת ולתת למכונה לחזור על הפעולה שביצעה את השגיאה, כך שנוכל להבין מה

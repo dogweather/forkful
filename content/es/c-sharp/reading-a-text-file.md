@@ -1,51 +1,62 @@
 ---
-title:                "C#: Leyendo un archivo de texto."
+title:                "C#: Leyendo un archivo de texto"
+simple_title:         "Leyendo un archivo de texto"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c-sharp/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué leer un archivo de texto en C#
+## Por qué
 
-Si eres un programador en C# (pronunciado "C Sharp") y necesitas manipular datos almacenados en un archivo de texto, entonces leer y entender cómo hacerlo es una habilidad importante a tener. En este artículo, aprenderás los conceptos básicos para leer un archivo de texto en C# y cómo aplicarlos en tu propio código.
+Si eres un programador en C#, seguramente te hayas encontrado en la situación de tener que leer un archivo de texto en tu código. Ya sea para obtener información de un usuario, importar datos o realizar algún tipo de cálculo, es importante saber cómo leer un archivo de texto de manera eficiente. En este artículo, te mostraremos cómo hacerlo en C# de una manera sencilla y efectiva.
 
-## Cómo leer un archivo de texto en C#
+## Cómo hacerlo
 
-Para leer un archivo de texto en C#, primero debemos inicializar un objeto de la clase `StreamReader` que nos permitirá acceder al archivo. Utilizando el método `ReadLine()`, podemos leer cada línea del archivo y almacenarla en una variable de tipo string. A continuación, podemos imprimir o manipular esos datos según sea necesario. A continuación se presenta un ejemplo de código para leer y mostrar el contenido de un archivo de texto utilizando la estructura `try-catch`:
+Para leer un archivo de texto en C#, vamos a utilizar la clase `StreamReader` de la librería `System.IO`. Esta clase nos permite leer caracteres desde un flujo de datos en C#. Primero, debemos crear una instancia de la clase `StreamReader` pasándole como argumento la ruta del archivo que queremos leer. Por ejemplo:
 
 ```C#
-StreamReader archivo = new StreamReader(@"C:\Users\Usuario\Archivo.txt");
+StreamReader sr = new StreamReader("archivo.txt");
+```
 
-try
+Luego, podemos utilizar el método `ReadLine()` de la clase  `StreamReader` para leer cada línea del archivo de texto en una variable de tipo `string`. El método `ReadLine()` devuelve la siguiente línea de caracteres del archivo y se mueve al siguiente salto de línea en cada llamada. Por ejemplo:
+
+```C#
+string linea = sr.ReadLine();
+```
+
+Si queremos leer el archivo completo, podemos utilizar un bucle `while` y una variable auxiliar para almacenar cada línea leída y mostrarla en pantalla. Por ejemplo:
+
+```C#
+string linea;
+while ((linea = sr.ReadLine()) != null)
 {
-    string linea;
-    while ((linea = archivo.ReadLine()) != null)
-    {
-        Console.WriteLine(linea);
-    }
-}
-catch (Exception e)
-{
-    Console.WriteLine("Error: " + e.Message);
-}
-finally
-{
-    archivo.Close();
+    Console.WriteLine(linea);
 }
 ```
 
-La salida del código anterior mostraría todas las líneas del archivo, una después de la otra.
+Finalmente, para asegurarse de que se liberen todos los recursos utilizados, es importante cerrar el `StreamReader` utilizando el método `Close()`. Así quedará nuestro código completo:
 
-## Deep Dive: Información más detallada sobre la lectura de archivos de texto en C#
+```C#
+StreamReader sr = new StreamReader("archivo.txt");
+string linea;
+while ((linea = sr.ReadLine()) != null)
+{
+    Console.WriteLine(linea);
+}
+sr.Close();
+```
 
-Además de `ReadLine()`, la clase `StreamReader` también tiene otros métodos útiles para leer archivos de texto, como `Read()`, `ReadBlock()` y `ReadToEnd()`. Cada uno de estos métodos tiene su propio propósito y características, por lo que es importante familiarizarse con ellos.
+Como puedes ver, es fácil leer un archivo de texto en C# utilizando la clase `StreamReader`. Puedes adaptar este código a tus necesidades para leer el archivo de texto de manera eficiente.
 
-También es importante mencionar el bloque `try-catch-finally` utilizado en nuestro ejemplo. Este es un bloque de código que se utiliza para manejar posibles errores que puedan ocurrir durante la lectura del archivo. Es importante seguir buenas prácticas de programación y siempre manejar posibles errores en nuestro código.
+## Profundizando
+
+Si deseas obtener más información sobre cómo leer un archivo de texto en C#, puedes echar un vistazo a la documentación oficial de Microsoft sobre la clase `StreamReader` y sus métodos. También puedes probar diferentes maneras de leer archivos de texto, como utilizando la clase `File` de la librería `System.IO` o el método `ReadAllLines()`. ¡Experimenta y encuentra la forma que mejor se adapte a tu proyecto!
 
 ## Ver también
 
-- [Documentación oficial de Microsoft sobre la clase StreamReader] (https://docs.microsoft.com/es-es/dotnet/api/system.io.streamreader?view=net-5.0)
-- [Ejemplos de lectura de archivos de texto en C#] (https://www.c-sharpcorner.com/blogs/read-text-file-in-c-sharp1)
-- [Tutorial de C# para principiantes] (https://www.tutorialspoint.com/csharp/index.htm)
+- [Documentación oficial de Microsoft sobre la clase `StreamReader`](https://docs.microsoft.com/es-es/dotnet/api/system.io.streamreader)
+- [Ejemplo de lectura de archivos de texto en C#](https://www.c-sharpcorner.com/UploadFile/a20beb/file-read-and-display-content-in-net/)
+- [Consejos para leer y escribir archivos de texto en C#](https://www.codeproject.com/Articles/16019/C-File-Read-Write-Using-StreamReader-and-StreamWri)

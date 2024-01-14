@@ -1,62 +1,55 @@
 ---
-title:                "C++: Überprüfen, ob ein Verzeichnis existiert"
+title:                "C++: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-##Warum
-Beim Programmieren kann es oft vorkommen, dass man überprüfen muss, ob ein bestimmtes Verzeichnis existiert. Dies kann zum Beispiel beim Speichern von Daten oder beim Zugriff auf Dateien wichtig sein. In diesem Blogpost werde ich erklären, wie man in C++ überprüfen kann, ob ein Verzeichnis existiert und was dabei zu beachten ist.
+## Warum
 
-##Wie geht das?
-Um zu überprüfen, ob ein Verzeichnis existiert, verwenden wir die "filesystem" Bibliothek von C++. Diese wurde in C++17 eingeführt und bietet viele nützliche Funktionen für die Arbeit mit Dateien und Verzeichnissen.
+Das Überprüfen, ob ein Verzeichnis vorhanden ist, ist ein wichtiger Schritt bei der Programmierung von Anwendungen, die mit Dateiverwaltung zu tun haben, wie z.B. Dateiexplorern oder Backup-Programmen. Durch die Überprüfung kann sichergestellt werden, dass die Anwendung richtig funktioniert und keine Fehler auftreten.
 
-Um diese Bibliothek in unserem Code zu nutzen, müssen wir sie zunächst im Header-Teil unseres Programms mit `#include <filesystem>` einbinden.
+## Wie geht es
 
-Als nächstes benötigen wir eine Variable vom Typ `std::filesystem::path`, die den Pfad zum Verzeichnis, welches wir überprüfen möchten, enthält. Dieser Pfad kann entweder absolut oder relativ sein. Mit folgendem Code können wir überprüfen, ob das Verzeichnis existiert:
+Eine Möglichkeit, um zu überprüfen, ob ein Verzeichnis vorhanden ist, ist die Verwendung von C++'s `std::filesystem`-Bibliothek. Diese Bibliothek bietet Funktionen und Klassen für die Dateiverwaltung, einschließlich der Überprüfung von Verzeichnissen. Im Folgenden ist ein Beispielcode aufgeführt, der die Funktion `std::filesystem::exists()` verwendet, um zu überprüfen, ob ein Verzeichnis mit dem angegebenen Pfad vorhanden ist:
 
-```
+```C++
+#include <iostream>
 #include <filesystem>
 
-// Pfad zum Verzeichnis festlegen
-std::filesystem::path meinVerzeichnis("/home/benutzer/Dokumente");
+int main() {
+    // Definiere den Pfad des zu überprüfenden Verzeichnisses
+    std::filesystem::path myDir = "C:/Users/Username/Desktop/myFolder"; 
 
-// Überprüfen, ob das Verzeichnis existiert
-if (std::filesystem::exists(meinVerzeichnis)) {
-    std::cout << "Das Verzeichnis existiert!" << std::endl;
-} else {
-    std::cout << "Das Verzeichnis existiert nicht!" << std::endl;
+	// Überprüfe, ob das Verzeichnis vorhanden ist
+	if (std::filesystem::exists(myDir)) {
+		std::cout << "Das Verzeichnis existiert.";
+	} else {
+		std::cout << "Das Verzeichnis wurde nicht gefunden.";
+	}
+
+	return 0;
 }
 ```
 
-Die Funktion `std::filesystem::exists()` gibt true zurück, wenn das Verzeichnis existiert, ansonsten wird false zurückgegeben. Wir können also anhand des Rückgabewertes entscheiden, wie wir weiter vorgehen wollen.
-
-Manchmal reicht es nicht aus, nur zu überprüfen, ob ein Verzeichnis existiert. Wir möchten vielleicht auch wissen, ob es sich dabei tatsächlich um ein Verzeichnis handelt und nicht um eine Datei. Dafür können wir die Funktion `std::filesystem::is_directory()` verwenden. Diese gibt ebenfalls true oder false zurück und kann zusammen mit `std::filesystem::exists()` genutzt werden.
+Beispiel Ausgabe:
 
 ```
-// Überprüfen, ob das Verzeichnis existiert und ob es sich dabei um ein Verzeichnis handelt
-if (std::filesystem::exists(meinVerzeichnis) && std::filesystem::is_directory(meinVerzeichnis)) {
-    // Hier können wir z.B. auf das Verzeichnis zugreifen oder weitere Aktionen ausführen
-}
+Das Verzeichnis existiert.
 ```
 
-##Tiefere Einblicke
-Wenn wir `#include <filesystem>` in unserem Code verwenden, wird die gesamte "filesystem" Bibliothek eingebunden. Das kann allerdings zu Problemen führen, zum Beispiel wenn wir auch andere Bibliotheken einbinden, die ebenfalls Datei- und Verzeichnis-Funktionen anbieten.
+## Tiefer tauchen
 
-Um dies zu vermeiden, können wir die einzelnen Funktionen gezielt einbinden, indem wir `#include <filesystem>` durch den gewünschten Funktionsaufruf ersetzen. Zum Beispiel:
+Der oben genannte Code verwendet die `std::filesystem::exists()`-Funktion, um zu überprüfen, ob ein Verzeichnis vorhanden ist. Diese Funktion gibt einen booleschen Wert zurück (`true` oder `false`), abhängig davon, ob das Verzeichnis vorhanden ist oder nicht. Es gibt auch andere Funktionen in der `std::filesystem`-Bibliothek, wie z.B. `std::filesystem::is_directory()` und `std::filesystem::is_regular_file()`, die verwendet werden können, um spezifischere Überprüfungen durchzuführen.
 
-```
-// Nur die Funktionen exists() und is_directory() einbinden
-#include <filesystem>
-using std::filesystem::exists;
-using std::filesystem::is_directory;
-```
+Es ist auch wichtig zu beachten, dass die `std::filesystem`-Bibliothek Teil des C++17-Standards ist. Um sicherzustellen, dass Ihre Anwendung auf allen Plattformen funktioniert, sollte geprüft werden, ob die Bibliothek auf dem verwendeten System verfügbar ist.
 
-Das gibt uns mehr Kontrolle darüber, welche Funktionen wir verwenden und vermeidet potenzielle Konflikte mit anderen Bibliotheken.
+## Siehe auch
 
-##Siehe auch
-- [Offizielle Dokumentation zur "filesystem" Bibliothek](https://en.cppreference.com/w/cpp/filesystem)
-- [Übersicht über nützliche C++17 Funktionen](https://www.heise.de/select/ct/2018/25/1543912245472471) (auf Deutsch)
-- [Artikel zur Verwendung von C++17 Bibliotheken in älteren Versionen](https://abseil.io/blog/20200313-filesystem-detection) (auf Englisch)
+- [C++-Referenz für std::filesystem](https://en.cppreference.com/w/cpp/filesystem)
+- [Überprüfen eines Verzeichnisses mit Boost.Filesystem](https://www.boost.org/doc/libs/master/libs/filesystem/doc/index.htm)
+- [Dateien und Verzeichnisse in C++ verwalten](https://www.techopedia.com/2/29170/software/development/a-primer-on-file-and-directory-management-in-c)

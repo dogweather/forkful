@@ -1,60 +1,59 @@
 ---
 title:                "C++: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Comme programmeur en C++, il est parfois nécessaire de comparer deux dates pour effectuer des opérations telles que la planification d'événements ou la gestion de tâches. Comprendre comment comparer des dates est une compétence importante à maîtriser pour tout développeur de logiciels.
+La comparaison de deux dates est une tâche courante en programmation et peut être très utile dans de nombreuses situations. Cela peut permettre de vérifier la validité des données saisies par l'utilisateur, de trier des données temporelles ou encore de planifier des événements.
 
 ## Comment faire
 
-Pour comparer deux dates en C++, nous devons utiliser la classe "std::chrono::time_point". Cette classe représente un point spécifique dans le temps, et nous pouvons l'utiliser pour créer des instances de date et les comparer entre elles.
-
-Voici un exemple de code montrant comment définir deux dates et les comparer entre elles :
+Pour comparer deux dates en C++, vous pouvez utiliser la fonction `difftime()` qui calcule la différence en secondes entre deux dates passées en paramètres. Voici un exemple de code:
 
 ```C++
-// Importer les bibliothèques nécessaires
 #include <iostream>
-#include <chrono>
-using namespace std; 
+#include <ctime>
+
+using namespace std;
 
 int main() {
-    // Définir les dates à comparer
-    chrono::time_point<chrono::system_clock> date1 = chrono::system_clock::now();
-    chrono::time_point<chrono::system_clock> date2 = date1 + chrono::hours(24);
+    // définition de deux dates
+    time_t date1 = time(NULL);
+    time_t date2 = time(NULL);
 
-    // Comparer les dates
-    if (date1 < date2) {
-        cout << "Date 1 est plus tôt que date 2" << endl;
-    } else if (date1 > date2) {
-        cout << "Date 1 est plus tard que date 2" << endl;
-    } else {
-        cout << "Les dates sont égales" << endl;
-    }
+    // utilisation de la fonction difftime
+    double diff = difftime(date1, date2);
+
+    // affichage du résultat
+    cout << "La différence entre les deux dates est de " << diff << " secondes." << endl;
 
     return 0;
 }
 ```
 
-Voici un exemple de sortie pour illustrer la comparaison entre deux dates :
+Dans cet exemple, nous utilisons la fonction `time()` pour obtenir la date actuelle à l'aide de l'objet `time_t`. Ensuite, nous passons ces deux dates à la fonction `difftime()` et stockons le résultat dans une variable `double`. Enfin, nous affichons le résultat à l'écran.
 
-```
-Date 1 est plus tôt que date 2
-```
+Si les deux dates sont identiques, le résultat sera égal à 0. Dans le cas contraire, il sera soit positif si la première date est antérieure à la deuxième, soit négatif si elle est postérieure.
 
-## Plongée en profondeur
+## Approfondissement
 
-Il est important de comprendre que les dates sont des objets complexes en C++, et qu'il existe plusieurs façons de les représenter et de les comparer. Par exemple, il existe différents types de "clocks" (horloges) en C++, et chacune peut fournir différents niveaux de précision pour les dates.
+Lors de la comparaison de dates, il existe plusieurs éléments à prendre en compte. Par exemple, les dates peuvent être représentées de différentes manières selon le format choisi, et les fuseaux horaires peuvent également avoir un impact sur les résultats.
 
-Il est également important de noter que les dates peuvent être affectées par des valeurs de timezone (fuseaux horaires) et des changements de temps, ce qui peut compliquer la comparaison entre elles. C'est pourquoi il est recommandé d'utiliser la classe "std::chrono::time_point" qui est conçue pour gérer ces détails et nous permettre de comparer les dates de manière précise.
+De plus, il peut être intéressant d'utiliser des fonctions telles que `gmtime()` ou `localtime()` pour obtenir des informations plus précises sur les dates, telles que le jour de la semaine ou le numéro de la semaine.
+
+Il est également important de faire attention aux erreurs de calcul qui peuvent survenir en raison des années bissextiles ou des changements d'heure.
+
+Enfin, il est recommandé de consulter la documentation de votre compilateur ou de votre bibliothèque standard pour connaître les fonctions disponibles pour comparer les dates et les différentes options de formatage.
 
 ## Voir aussi
 
-- [Documentation sur classe "std::chrono::time_point" (en anglais)](https://en.cppreference.com/w/cpp/chrono/time_point)
-- [Tutoriel sur les opérations de temps en C++ (en anglais)](https://www.geeksforgeeks.org/operations-date-time-c/)
-- [Article sur la manipulation des dates et heures en C++ (en français)](https://blog.frankel.ch/manipulation-temps-date-heure-cpp/)
+- [Documentation de la fonction difftime en C++](https://www.cplusplus.com/reference/ctime/difftime/)
+- [Documentation de la fonction time en C++](https://www.cplusplus.com/reference/ctime/time/)
+- [Documentation de la structure tm en C++](https://www.cplusplus.com/reference/ctime/tm/)

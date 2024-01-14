@@ -1,64 +1,45 @@
 ---
 title:                "Fish Shell: デバッグ出力の印刷"
+simple_title:         "デバッグ出力の印刷"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/fish-shell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
+## なぜデバッグ出力を行うか？
 
-プログラムを書く際に、どのように実行されているかを確認するために、デバッグ出力をプリントすることは非常に役に立ちます。デバッグ出力は、コードがどのように動作しているかを確認し、問題を解決するのに役立つ情報を提供します。
+デバッグ出力を行う理由は、コードをデバッグするために重要なステップです。デバッグ出力を使うことで、コードの実行中に起きた問題を特定し、その問題を解決するのに役立ちます。
 
-## やり方
+## フィッシュシェルでのデバッグ出力の方法
 
-デバッグ出力をプリントするには、次のようなコマンドを使います。
+デバッグ出力を行うには、```echo```コマンドを使用します。以下の例をご覧ください。
 
 ```fish
-echo "デバッグ出力"
+echo "デバッグ出力の例"
 ```
+このコマンドを実行すると、ターミナル上に「デバッグ出力の例」というメッセージが表示されます。これにより、特定のコードが実行されたことが確認できます。
 
-上記のコマンドをターミナルで実行すると、"デバッグ出力"という文字列が出力されます。
-
-また、変数の値や条件文を出力することもできます。
+また、特定の変数の値を確認するには、```set```コマンドを使用します。例えば、以下のコードを見てください。
 
 ```fish
-set variable "変数の値"
+set variable "こんにちは"
 echo $variable
-echo (if expr; "条件が真の場合" else; "条件が偽の場合"; end)
 ```
+これにより、「こんにちは」というメッセージが表示されます。つまり、変数```variable```の値が```echo```コマンドで表示されることが分かります。
 
-次のような出力が得られるでしょう。
+## デバッグ出力の詳細について
 
-```
-変数の値
-条件が真の場合
-または
-条件が偽の場合
-```
+デバッグ出力はコードの実行中に特定の値や処理内容を確認するために行われます。これにより、コードのどの部分が問題を引き起こしているかを特定し、修正することができます。
 
-さらに、ファイルの中身やコマンドの結果も出力することができます。
+また、フィッシュシェルでは、```echo```コマンドの他にも、```printf```や```debug```といったコマンドも使うことができます。これらのコマンドは、より詳細な出力を行うことができます。
 
-```fish
-cat file.txt
-ls | grep "キーワード"
-```
+## 関連リンクを参照
 
-## 深く掘り下げる
+この記事ではフィッシュシェルでのデバッグ出力について紹介しましたが、詳細な使い方やさらに他のコマンドについては以下のリンクを参考にしてください。
 
-デバッグ出力をプリントすることの利点は、コードを理解しやすくすることにあります。コードが複雑だったり、思った通りに動作しなかったりする場合には、デバッグ出力を追加することで、どのような処理を行っているかを把握しやすくなります。
-
-また、デバッグ出力を使うことで、コードの実行中にどのような変数が使われているかを確認することもできます。これにより、プログラム内のバグを特定するのに役立ちます。
-
-# 見逃さないでください
-
-- [Fish Shell 公式サイト](https://fishshell.com)
-- [Fish Shell の使い方](https://github.com/fish-shell/fish-shell/blob/master/doc_src/README.md)
-- [Fish Shell のチュートリアル](https://fishshell.com/docs/current/tutorial.html)
-
----
-See Also / 関連リンク:
-
-- [Fish Shell Cookbook](https://github.com/jorgebucaran/fisher)
-- [Fish Shell 設定ガイド](https://medium.com/@KiwamuIto/ja007-introducing-the-fish-shell-its-setup-and-configuration-7f6a2bf6f0f)
+- [フィッシュシェル公式サイト](https://fishshell.com/)
+- [フィッシュシェルのデバッグ出力についてのチュートリアル](https://fishshell.com/docs/current/tutorial.html#dealing-with-errors)
+- [フィッシュシェルのデバッグ出力についてのドキュメント](https://fishshell.com/docs/current/cmds/debug.html)

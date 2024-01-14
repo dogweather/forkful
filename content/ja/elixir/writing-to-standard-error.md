@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: 「標準エラーに書き込む」"
+simple_title:         "「標準エラーに書き込む」"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/elixir/writing-to-standard-error.md"
 ---
 
@@ -9,27 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-プログラミングをするとき、時々私たちはエラーメッセージを受け取ります。しかし、それらのメッセージがどこから来たのか疑問に思ったことはありませんか？それは標準エラー出力（Standard Error）です。今回は、Elixirで標準エラー出力をどのように書くか、そしてなぜそれが重要なのかについてお話しします。
+標準エラーに書き込むことについてエルクサーのプログラミングブログをお読みいただきありがとうございます。慣れないうちは、標準出力に書き込むことが一般的ですが、標準エラーへの書き込みは、デバッグ作業やエラーの表示など、プログラムの機能度を向上させるために重要な役割を果たします。
 
-## どのように書くか
+## 使い方
 
 ```elixir
-IO.puts("このメッセージは標準出力に表示されます")
-IO.puts("このメッセージは標準エラー出力に表示されます", [:stderr])
+IO.puts("Standard output message")
 ```
 
-上記のように、`IO.puts`関数を使用してメッセージを出力します。`[:stderr]`パラメータを渡すことで、メッセージを標準エラー出力に送ることができます。また、`IO.puts/2`のように、第二引数に`stderr`を明示的に渡すこともできます。
+標準出力に書き込むには、上記のように`IO.puts`関数を使用します。しかし、標準エラーに書き込む場合は、`IO.puts/1`関数を`IO.stderr`に渡します。
 
-もしも出力先を指定しない場合、デフォルトでは標準出力にメッセージが表示されます。
+```elixir
+IO.puts(IO.stderr, "Standard error message")
+```
+
+これにより、標準エラーへのメッセージが出力されます。また、`IO.inspect/2`関数を使用することで、標準エラーに変数の内容を表示させることもできます。
+
+```elixir
+num = 10
+IO.inspect(IO.stderr, num) # => 標準エラーに 10というメッセージが出力される
+```
 
 ## 深堀り
 
-なぜ私たちは標準エラー出力を使用するのでしょうか？その理由は、プログラムが何らかのエラーを検出した際、そのメッセージを確実にコンソールに表示するためです。標準出力は、実行結果や他の情報で埋め尽くされる可能性があり、重要なエラーメッセージを見逃してしまうことがあります。
+標準エラーへの書き込みは、主にエラーハンドリングやデバッグ作業で使用されます。プログラムで発生したエラーを即時に表示させることで、解決されるべき問題箇所を特定することができます。
 
-また、標準エラー出力は、エラーログを保存するために使用することもできます。例えば、`File.write`関数を使用して、エラーメッセージをテキストファイルに保存することができます。
+また、`IO.inspect/2`関数による標準エラーへの出力は、プログラムの実行速度にほとんど影響を与えません。これは、エラーが発生したときにのみ出力されるためです。
 
-## 参考リンク
+## 併せて読みたい
 
-- [Elixir公式ドキュメント - IO.puts/1](https://hexdocs.pm/elixir/IO.html#puts/1)
-- [Elixir公式ドキュメント - IO.puts/2](https://hexdocs.pm/elixir/IO.html#puts/2)
-- [The Power of Elixir’s standard_errors](https://hackernoon.com/the-power-of-elixirs-standard-errors-59c180f3ad60)
+- [Elixir公式ドキュメント - IOモジュール](https://hexdocs.pm/elixir/IO.html)
+- [Elixir公式ドキュメント - Kernelモジュール](https://hexdocs.pm/elixir/Kernel.html#puts/1)
+- [Elixir School - IOモジュール](https://elixirschool.com/ja/lessons/basics/io/)

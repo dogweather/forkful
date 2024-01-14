@@ -1,43 +1,39 @@
 ---
-title:                "Javascript: 디렉토리가 존재하는지 확인하기."
+title:                "Javascript: 디렉토리가 존재하는지 확인하기"
+simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 디렉토리가 존재하는지를 확인해야 할까요?
+## 왜
 
-디렉토리가 존재하는지 확인하는 것은 자바스크립트 프로그램 작성시 중요한 부분입니다. 디렉토리가 존재하지 않는 상황에서 해당 디렉토리를 사용하려고 한다면 프로그램 실행 중 에러가 발생할 수 있습니다. 따라서 디렉토리의 존재 여부를 반드시 확인해야 합니다.
+파일을 다루는 프로그래밍 작업을 하다 보면 종종 특정 디렉토리가 존재하는지 아닌지를 확인해야 할 때가 있습니다. 이러한 상황에서 디렉토리가 존재하는지 미리 체크하는 것은 코드의 안정성을 높이고 파일을 처리하는 과정에서 생길 수 있는 에러를 방지할 수 있습니다.
 
-## 방법
+## 작업 방법
 
-자바스크립트에서 디렉토리를 존재하는지 확인하는 방법은 간단합니다. 우선 "fs" 모듈을 사용하여 파일시스템에 접근합니다. 그 다음 "existsSync" 함수를 이용하여 디렉토리의 존재 여부를 확인합니다. 아래는 예시 코드와 결과입니다.
+우선 주어진 경로가 디렉토리인지 확인하기 위해서는 `fs` (file system) 모듈을 이용해야 합니다. 아래는 `fs` 모듈을 이용하여 디렉토리가 존재하는지 확인하는 간단한 예제 코드입니다.
 
 ```Javascript
-// 파일시스템 모듈을 불러옵니다.
 const fs = require('fs');
 
-// 디렉토리 경로를 변수에 저장합니다.
-const dirPath = 'myDirectory';
+const path = './myDirectory'; // 특정 디렉토리 경로 지정
+const directoryExists = fs.existsSync(path); // 디렉토리 존재 여부를 불리언 값으로 반환
 
-// existsSync 함수를 이용하여 디렉토리의 존재 여부를 확인합니다.
-if (fs.existsSync(dirPath)) {
-  console.log('디렉토리가 존재합니다.');
-} else {
-  console.log('디렉토리가 존재하지 않습니다.');
-}
+console.log(directoryExists); // true or false 출력
 ```
 
-위의 코드를 실행하면 해당 디렉토리의 존재 여부에 따라 적절한 메시지가 출력됩니다.
+위 코드에서 `fs.existsSync()` 메소드를 사용하여 경로가 존재하는지 미리 확인할 수 있습니다. 만약 해당 경로에 디렉토리가 존재하지 않는다면 `false`를 반환하고, 존재한다면 `true`를 반환합니다.
 
-## 딥 다이브
+## 깊이있는 이야기
 
-디렉토리의 존재 여부를 확인하는 방법에는 "existsSync" 함수 외에도 "access" 함수를 사용하는 방법이 있습니다. "access" 함수는 디렉토리 뿐만 아니라 파일의 존재 여부도 확인할 수 있습니다. 또한 "fs.stat" 함수를 사용하여 디렉토리의 상세 정보를 확인할 수도 있습니다.
+보다 디테일한 이야기를 들어보면 `fs.existsSync()` 메소드는 비동기적으로 파일을 처리하는 `fs.exists()` 메소드를 대체하고 있습니다. 과거 `fs.existsSync()` 메소드는 동기적으로 작동하며 스택을 차지하는 타이밍이 매우 컸기 때문에 자연스럽게 비동기 메소드가 대안으로 사용되게 되었습니다. 따라서 최신 버전의 Node.js에서는 `fs.existsSync()` 메소드가 deprecated 되었지만 여전히 많은 코드베이스에서 이용되고 있기 때문에 알아두는 것이 좋습니다. 
 
-## 유용한 링크들
+## 참고 자료
 
-- [Node.js 공식 문서 - 파일 시스템 접근하기](https://nodejs.org/api/fs.html)
-- [MDN 웹 문서 - existsSync 함수](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/fs/existsSync)
-- [MDN 웹 문서 - access 함수](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/fs/access)
+- [Node.js 공식 문서 - `fs` 모듈](https://nodejs.org/api/fs.html)
+- [Node.js 공식 문서 - `fs.existsSync()` 메소드](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
+- [Node.js 공식 문서 - `fs.exists()` 메소드](https://nodejs.org/api/fs.html#fs_fs_exists_path_callback)

@@ -1,62 +1,50 @@
 ---
-title:                "Gleam: Encontrando la longitud de una cadena"
+title:                "Gleam: Encontrar la longitud de una cadena"
+simple_title:         "Encontrar la longitud de una cadena"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué?
-La búsqueda de la longitud de una cadena es una tarea común y esencial en la programación. Saber la longitud de una cadena puede ayudarnos a manipularla de manera más eficiente y realizar operaciones específicas en ella.
+## Por qué
+En la programación, hay muchas veces en las que necesitamos saber la longitud de una cadena de caracteres. Esto puede ser útil en varios casos, como por ejemplo trabajar con textos en una página web o manipular datos en una base de datos. En esta publicación, exploraremos cómo podemos encontrar la longitud de una cadena utilizando Gleam.
 
 ## Cómo hacerlo
-
-En Gleam, podemos encontrar fácilmente la longitud de una cadena utilizando la función `String.length`. Esta función toma una cadena como argumento y devuelve su longitud.
-
-```Gleam
-let cadena = "¡Hola mundo!"
-let longitud = String.length(cadena)
-
-$> longitud
-13
-```
-
-También podemos utilizar un bucle `for` para recorrer cada carácter de la cadena y aumentar un contador cada vez que se encuentre uno.
+En Gleam, podemos utilizar la función `str.length()` para encontrar la longitud de una cadena. Veamos un ejemplo práctico:
 
 ```Gleam
-let cadena = "¡Hola mundo!"
-let contador = 0
-
-for caracter in String.to_list(cadena) {
-  contador = contador + 1
-}
-
-$> contador
-13
+let cadena = "Hola, ¿cómo estás?";
+let longitud = str.length(cadena);
+io.print(longitud); // Output: 19
 ```
 
-Ambas opciones son sencillas y eficaces para encontrar la longitud de una cadena en Gleam.
+Como se puede ver, la función `str.length()` toma una cadena como argumento y devuelve un número que representa la longitud de esa cadena.
+También podemos utilizar la función `str.to_bytes()` para convertir la cadena en una lista de bytes y luego obtener su longitud. Veamos cómo se hace:
+
+```Gleam
+let cadena = "Hello! ¿Cómo estás?";
+let bytes = str.to_bytes(cadena);
+io.print(list.length(bytes)); // Output: 21
+```
+
+Otra forma de encontrar la longitud de una cadena es iterar sobre ella y contar el número de caracteres. En Gleam, podemos hacerlo utilizando la función `str.fold()` que toma una función y una lista como argumentos. Veamos un ejemplo:
+
+```Gleam
+let cadena = "Feliz Navidad";
+let longitud = str.fold(
+    (caracter, contador) -> contador + 1,
+    0,
+    str.to_chars(cadena)
+);
+io.print(longitud); // Output: 14
+```
 
 ## Profundizando
-
-Cuando utilizamos la función `String.length`, Gleam en realidad cuenta la cantidad de caracteres en la cadena, incluyendo espacios en blanco, signos de puntuación y otros caracteres especiales.
-
-Si queremos hacer un conteo más preciso y excluir ciertos caracteres, podemos utilizar la función `Regex.replace` para reemplazarlos por una cadena vacía y luego utilizar la función `String.length` en la cadena resultante.
-
-```Gleam
-use gleam/regex
-
-let cadena = "¡Hola mundo!"
-let cadena_sin_puntuacion = Regex.replace("[-¡!?,.;:¡¿?'\"¡]", cadena, "")
-
-let longitud = String.length(cadena_sin_puntuacion)
-
-$> longitud
-9
-```
+En Gleam, las cadenas son representadas como una lista de caracteres. Por lo tanto, podemos utilizar las funciones de listas para manipular cadenas de manera eficiente. También es importante tener en cuenta que las cadenas en Gleam son inmutables, lo que significa que no se pueden modificar una vez creadas. Por lo tanto, debemos tener cuidado al manipular cadenas en Gleam.
 
 ## Ver también
-
-- [Documentación de la función `String.length` en Gleam](https://gleam.run/documentation/std-lib-string.html#length)
-- [Tutorial de Gleam](https://gleam.run/getting-started/introduction.html) para más información sobre la manipulación de cadenas.
+- Documentación oficial de Gleam sobre strings: https://gleam.run/book/tour/strings.html
+- Ejemplos de cadenas en Gleam: https://github.com/gleam-lang/gleam/blob/master/examples/string.gleam

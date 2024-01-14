@@ -1,49 +1,57 @@
 ---
 title:                "Elm: Generering av tilfeldige tall"
+simple_title:         "Generering av tilfeldige tall"
 programming_language: "Elm"
-category:             "Numbers"
+category:             "Elm"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor 
 
-Å generere tilfeldige tall er en vanlig oppgave i programmering, og det kan være nyttig for flere ulike bruksområder. Enten det er for å lage et mini-spill, generere tilfeldige brukere eller teste tilfeldige situasjoner, er det viktig å ha god forståelse for hvordan man kan gjøre dette i Elm.
+I dagens verden av programmering er det viktig å kunne tilfeldige tall. Kanskje du vil simulere et spill, lage et lotteri, eller generere unike koder. Uansett hva årsaken er, kan tilfeldige tall være en viktig del av mange programmeringsprosjekter. I denne bloggposten vil vi utforske hvordan du kan generere tilfeldige tall ved hjelp av Elm-programmeringsspråket.
 
-## Slik gjør du det
+# Hvordan
 
-For å generere tilfeldige tall i Elm, kan du bruke funksjonen `Random.float`:
+For å generere tilfeldige tall i Elm, må vi bruke en "Random"-modul. Dette gir oss funksjoner for å lage tilfeldige tall basert på forskjellige typer distribusjoner. La oss se på et eksempel på hvordan du kan generere et tilfeldig tall fra 1 til 10:
+
 ```Elm
 import Random
 
--- Generer et tilfeldig tall mellom 0 og 1
-Random.float 0 1
+randomNum : Int
+randomNum =
+    Random.int 1 10
 ```
 
-Hvis du ønsker å generere et heltall, kan du bruke funksjonen `Random.int`:
+Her importerer vi modulen og bruker funksjonen "int" for å generere et heltall mellom 1 og 10. Vi kan også bruke "float" funksjonen for å generere et tilfeldig flyttall. For å faktisk få et tilfeldig tall, må vi bruke funksjonen "generate" som tar inn funksjonen vår og returnerer et tilfeldig tall.
+
 ```Elm
 import Random
 
--- Generer et tilfeldig heltall mellom 1 og 10
-Random.int 1 10
+randomNum : Cmd msg
+randomNum =
+    Random.generate NewNumber (Random.int 1 10)
+
+type Msg
+    = NewNumber Int
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        NewNumber num ->
+            ( { model | randomNum = num }, Cmd.none )
 ```
 
-For å få ulike resultater hver gang, kan du bruke `Random.step`:
-```Elm
-import Random
+Her har vi opprettet en handling "NewNumber" som tar inn et heltall og oppdaterer modellen vår. Vi bruker også funksjonen "Cmd.none" for å unngå å sende en kommando til elm-runtime som kan forårsake en uendelig løkke.
 
--- Generer et tilfeldig heltall mellom 1 og 10, men få et nytt tall hver gang du kaller denne funksjonen
-Random.step (Random.int 1 10) Random.initialSeed
-```
+# Dypdykk
 
-## Dykk dypere
+"Random"-modulen i Elm har muligheter for å generere tall fra forskjellige distribusjoner som "normal", "uniform" og "exponential". Vi kan også bruke funksjonen "step" for å generere sekvensielle tilfeldige tall basert på en gitt distribusjon. Utforsk dokumentasjonen for mer informasjon og eksempler.
 
-I Elm er tilfeldighet basert på en type kalt `Random.Generator`, som bruker en tilstandsfunksjon `Random.State` for å generere forskjellige tall hver gang den kjøres. For å generere et tilfeldig tall, bruker `Random`-modulen `Utils` for å konvertere til en `Generator`. Denne typen funksjon er også avhengig av en seed, som er et tilfeldig tall som brukes som utgangspunkt for å generere nye tall.
+# Se også
 
-For å forstå dette bedre, kan du lese mer om tilfeldighet og `Random`-modulen i Elm-dokumentasjonen [her](https://package.elm-lang.org/packages/elm/random/latest/Random).
-
-## Se også
-
-- [Elm-dokumentasjon om tilfeldighet](https://package.elm-lang.org/packages/elm/random/latest/Random)
-- [Elm-tutorial om tilfeldighet](https://elmprogramming.com/generating-random-numbers-in-elm.html)
+- Elm Dokumentasjon: https://guide.elm-lang.org/effects/random.html
+- Random-mehodene: https://package.elm-lang.org/packages/elm/random/latest/Random
+- Youtube tutorial: https://www.youtube.com/watch?v=is895OMo5FQ

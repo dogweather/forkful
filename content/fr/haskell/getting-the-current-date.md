@@ -1,56 +1,38 @@
 ---
 title:                "Haskell: Obtenir la date actuelle"
+simple_title:         "Obtenir la date actuelle"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/haskell/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-La manipulation de dates et d'heures est une tâche courante en programmation et peut servir à de nombreuses fins, telles que l'affichage de la date actuelle sur une application ou le calcul du temps écoulé depuis une certaine date. Dans cet article, nous allons explorer comment obtenir la date actuelle en Haskell.
+Pourquoi devriez-vous apprendre à obtenir la date actuelle en Haskell ? En tant que langage de programmation fonctionnel, Haskell valorise l'utilisation de fonctions pures, ce qui signifie que les fonctions ne dépendent pas de l'état externe pour produire des résultats cohérents. Cela en fait un excellent choix pour manipuler les dates, car les données temporelles sont hautement dépendantes du contexte et peuvent être difficiles à gérer dans d'autres langages.
 
-## Comment faire
+## Comment le faire
 
-Pour obtenir la date actuelle en Haskell, nous allons utiliser la bibliothèque `time`, qui contient des fonctions pour travailler avec des dates et des heures. Tout d'abord, nous devons l'importer dans notre programme :
+Pour obtenir la date actuelle en Haskell, nous allons utiliser la fonction `getCurrentTime` de la bibliothèque `Data.Time`. Cette fonction renvoie un objet `UTCTime` qui représente l'heure et la date universelles coordonnées (UTC).
 
 ```Haskell
 import Data.Time
+
+main = do
+  currentTime <- getCurrentTime
+  print currentTime
 ```
 
-Ensuite, nous pouvons utiliser la fonction `getCurrentTime` pour récupérer la date et l'heure actuelles. Cette fonction renvoie une valeur de type `IO UTCTime`, nous devons donc utiliser l'opérateur `>>=` pour extraire la valeur de la monade `IO` :
+La sortie de ce code sera quelque chose comme `2021-11-11 09:35:00 UTC`. Cela peut être difficile à lire, mais il s'agit en fait d'un objet complexe contenant différentes informations sur l'heure et la date. Pour extraire des informations spécifiques, nous pouvons utiliser les fonctions telles que `utctDay` pour obtenir le jour de la date ou `utctDayTime` pour obtenir l'heure en secondes depuis minuit.
 
-```Haskell
-getCurrentTime >>= \currentTime -> print currentTime
-```
+## Approfondissement
 
-Ce code imprimera la date et l'heure actuelles au format `UTCTime` :
+Il est important de comprendre que `getCurrentTime` renvoie l'heure et la date actuelles en fonction du système d'exploitation sur lequel le code est exécuté. Cela signifie que si vous exécutez le code sur différents ordinateurs ou à différents moments, vous obtiendrez des résultats différents. Il est également utile de noter qu'il existe d'autres types de données pour représenter les heures et les dates dans Haskell, tels que `ZonedTime` qui prend en compte les fuseaux horaires.
 
-```
-2020-05-20 15:30:00 UTC
-```
+## Voir aussi 
 
-Nous pouvons également utiliser la fonction `utcToLocalTime` pour convertir cette date en un fuseau horaire local :
-
-```Haskell
-let utcTime = getCurrentTime
-utcToLocalTime utc utcTime >>= \localTime -> print localTime
-```
-
-Ce code imprimera la date et l'heure actuelles au format `LocalTime` :
-
-```
-2020-05-20 08:30:00
-```
-
-## Plongée en profondeur
-
-La fonction `getCurrentTime` utilise le temps système du système d'exploitation pour récupérer la date et l'heure actuelles. Cependant, cela peut causer des problèmes lorsque plusieurs threads tentent d'utiliser cette fonction en même temps, car le temps peut avancer entre le moment où la fonction est appelée et le moment où elle retourne sa valeur.
-
-Pour éviter cela, la bibliothèque `time` fournit également la fonction `getCurrentTime` qui utilise une horloge monotone pour garantir un résultat cohérent, même en cas de concurrence. Cependant, cette fonction n'est pas disponible sur toutes les plateformes, donc il est important de faire attention à la fonction à utiliser en fonction de votre cas d'utilisation.
-
-## Voir aussi
-
-- [Documentation de la bibliothèque `time`](https://hackage.haskell.org/package/time)
-- [Guide sur la manipulation de dates en Haskell](https://www.haskell.org/tutorial/datetime.htm)
+- [Documentation officielle de `Data.Time`](https://hackage.haskell.org/package/time/docs/Data-Time.html)
+- [Tutoriel sur les dates et heures en Haskell](https://mmhaskell.com/blog/2017/3/6/manipulating-dates-and-times-in-haskell)
+- [Exemples pratiques d'utilisation de la bibliothèque `Data.Time`](https://wiki.haskell.org/Cookbook/Date_and_time)

@@ -1,111 +1,53 @@
 ---
 title:                "Javascript: Escrevendo testes"
+simple_title:         "Escrevendo testes"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever testes é importante para programadores em Javascript?
+## Por que escrever testes?
 
-Escrever testes é uma prática essencial para garantir a qualidade do código em qualquer linguagem de programação, incluindo Javascript. Ao escrever testes, podemos verificar se o nosso código está funcionando conforme o esperado e detectar possíveis problemas antes mesmo deles ocorrerem em produção. Isso nos ajuda a economizar tempo e recursos, além de garantir um produto final de melhor qualidade.
+Ao escrever um código em Javascript, muitas vezes nos deparamos com a necessidade de realizar testes para garantir que o nosso código está funcionando corretamente. Isso é importante para evitar possíveis erros e bugs em nosso código, além de garantir a qualidade e confiabilidade do mesmo.
 
-## Como escrever testes em Javascript
+## Como fazer isso?
 
-Existem várias ferramentas e frameworks disponíveis para escrever testes em Javascript, mas neste artigo vamos nos concentrar em dois deles: Mocha e Jest.
-
-### Mocha
-
-Mocha é um framework de teste popular que oferece uma sintaxe clara e simples para escrever testes. Para começar, instale o Mocha globalmente em seu projeto usando o npm:
+Para escrever testes em Javascript, podemos usar uma ferramenta chamada Jest. Com o Jest, podemos criar testes automatizados que irão verificar se o código se comporta conforme o esperado. Abaixo, segue um exemplo de código e sua saída utilizando o Jest:
 
 ```Javascript
-npm install -g mocha
-```
-
-Em seguida, crie um arquivo de teste com o nome "test.js" e adicione o seguinte código:
-
-```Javascript
-// Importe a biblioteca de assertividade "chai"
-var assert = require('chai').assert;
-
-// Descreva o que o teste deve verificar
-describe('Calculadora', function() {
-
-  // Descreva o que o teste específico deve verificar
-  it('deve retornar a soma de dois números', function() {
-    // Execute o código que deve ser testado
-    var resultado = soma(2, 3);
-
-    // Verifique se o resultado é igual ao esperado
-    assert.equal(resultado, 5);
-  });
-
-  // Também podemos testar se a função lança um erro
-  it('deve lançar um erro se os parâmetros não forem números', function() {
-    // Execute o código que deve ser testado
-    function testarSoma() {
-      soma('dois', 'três');
-    }
-
-    // Verifique se a função lança um erro
-    assert.throws(testarSoma, Error);
-  });
-});
-
-// Função que deve ser testada
-function soma(a, b) {
-  return a + b;
+// Função para retornar o dobro de um número
+function dobrarNumero(numero) {
+  return numero * 2;
 }
-```
 
-Para executar os testes, basta rodar o seguinte comando no terminal:
-
-```
-mocha test.js
-```
-
-### Jest
-
-Jest é uma biblioteca de teste criada pelo Facebook e possui algumas vantagens em relação ao Mocha, como uma sintaxe mais simples e a capacidade de executar testes em paralelo. Para começar, instale o Jest em seu projeto com o npm:
-
-```Javascript
-npm install --save-dev jest
-```
-
-Em seguida, crie um arquivo de teste com o nome "app.test.js" e adicione o seguinte código:
-
-```Javascript
-// Descreva o que o teste deve verificar
-describe('Teste de somar', () => {
-  // Descreva o que o teste específico deve verificar
-  test('deve retornar a soma de dois números', () => {
-    // Execute o código que deve ser testado
-    const resultado = soma(5, 5);
-
-    // Verifique se o resultado é igual ao esperado
-    expect(resultado).toBe(10);
-  });
+// Teste para verificar se a função retorna o dobro corretamente
+it('deve dobrar corretamente', () => {
+  expect(dobrarNumero(5)).toBe(10);
 });
-
-// Função que deve ser testada
-function soma(a, b) {
-  return a + b;
-}
 ```
 
-Para executar os testes, basta rodar o seguinte comando no terminal:
+Saída esperada:
 
 ```
-jest app.test.js
+✔ deve dobrar corretamente
 ```
 
-## Aprofundando-se em testes
+Dessa forma, podemos garantir que a nossa função está retornando o dobro corretamente, evitando possíveis erros no futuro.
 
-Além dos exemplos apresentados, existem diversos outros conceitos e técnicas importantes para escrever testes eficazes em Javascript, como teste de integração, teste de unidade, mocks e spies. É importante estudar e praticar essas técnicas para se tornar um programador mais habilidoso e garantir a qualidade do seu código.
+## Aprofundando mais
+
+Escrever testes pode parecer um processo complexo e demorado, mas na verdade, quando bem feito, pode economizar tempo e evitar dores de cabeça. Existem várias técnicas e boas práticas para escrever testes efetivos, como o TDD (Test Driven Development) e BDD (Behavior Driven Development).
+
+Além disso, é importante entender a diferença entre testes unitários, que verificam uma função ou módulo específico, e testes de integração, que testam a integração entre diferentes partes do código.
+
+Outro conceito importante é o de cobertura de testes, que indica a porcentagem do código que foi testado. É recomendado ter uma boa cobertura de testes para garantir que todas as partes do código estão sendo verificadas adequadamente.
 
 ## Veja também
 
-- [Documentação do Mocha](https://mochajs.org/)
 - [Documentação do Jest](https://jestjs.io/pt-BR/)
-- [Artigo sobre testes em Javascript](https://medium.com/xp-inc/testes-unit%C3%A1rios-no-javascript-com-jest-a-primeira-vista-dcf5a5e81da2)
+- [Test Driven Development: Guia para Iniciantes](https://blog.geekhunter.com.br/test-driven-development/)
+- [5 Princípios para Escrever Testes Angular Eficazes](https://blog.cubos.io/testes-angular-eficazes/)
+- [Integração Contínua e Testes Automatizados: Qual a Importância?](https://blog.locaweb.com.br/desenvolvimento-web/integracao-continua-testes-automatizados/)

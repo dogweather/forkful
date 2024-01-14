@@ -1,56 +1,81 @@
 ---
 title:                "Gleam recipe: Comparing two dates"
+simple_title:         "Comparing two dates"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/gleam/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Comparing dates is a common task in programming, especially when working with data that involves time and date information. In Gleam, there are built-in functions that make it easy to compare two dates and determine the relationship between them. In this blog post, we will explore the different ways you can compare dates in Gleam and how it can be useful in your projects.
+Comparing dates is a common task in programming and can be useful in a variety of situations. Whether you need to check for overlapping events, calculate the time difference between two dates, or simply sort a list of dates, having the ability to compare dates is an essential skill for any programmer. In this post, we'll explore how to compare two dates in Gleam and the different ways you can use this feature in your code.
 
 ## How To
+To start, let's define two dates using the `Date.from_calendar` function. This function takes in a record with the keys `year`, `month`, `day`, `hour`, `minute`, and `second` to create a `Date` type.
 
-To compare two dates in Gleam, we will use the `Date` module. This module provides various functions for creating, parsing, and comparing dates. Here's an example of how we can use the `Date` module to compare two dates:
+```
+Gleam
+let date1 = Date.from_calendar(
+  year: 2021,
+  month: 4,
+  day: 15,
+  hour: 12,
+  minute: 30,
+  second: 0
+)
 
-```Gleam
-import Date
-
-let january1st = Date.from_ymd(2021, 1, 1)
-let december31st = Date.from_ymd(2020, 12, 31)
-
-let result = Date.compare(january1st, december31st)
-
-// Output: GreaterThan
+let date2 = Date.from_calendar(
+  year: 2021,
+  month: 4,
+  day: 20,
+  hour: 15,
+  minute: 0,
+  second: 0
+)
 ```
 
-In this code, we first import the `Date` module. Then, we create two variables with different dates using the `from_ymd` function and pass in the year, month, and day as arguments. Finally, we use the `compare` function to compare the two dates, which returns an enum with three possible values: `Equal`, `LessThan`, or `GreaterThan`. In this example, the output is `GreaterThan`, indicating that January 1st is a later date than December 31st.
+Now that we have our two dates, we can use the `Date.compare` function to compare them. This function takes in two `Date` values and returns an `Ordering` type, which can be either `Less`, `Equal`, or `Greater`.
 
-We can also compare specific aspects of dates, such as the year, month, or day, by using the `get` function. Here's an example:
-
-```Gleam
-let january2021 = Date.from_ymd(2021, 1, 1)
-let january2020 = Date.from_ymd(2020, 1, 1)
-
-let yearComparison = Date.get(january2021, Date.Year) == Date.get(january2020, Date.Year)
-
-// Output: False
+```
+Gleam
+let result = Date.compare(date1, date2)
 ```
 
-In this code, we create two variables with dates in different years and use the `get` function to compare the year values. As you can see, the result is `False` since the year values are not equal.
+To use this result in our code, we can use a `case` expression to handle the different scenarios.
+
+```
+Gleam
+case result {
+  Equal -> "The dates are the same"
+  Less -> "Date1 is earlier than Date2"
+  Greater -> "Date1 is later than Date2"
+}
+```
+
+We can also use the `Date.between` function to check if a given date falls between two other dates. This function takes in a `Date` value and two other `Date` values and returns a `Bool` indicating whether the first date falls between the other two.
+
+```
+Gleam
+let date3 = Date.from_calendar(
+  year: 2021,
+  month: 4,
+  day: 17,
+  hour: 9,
+  minute: 0,
+  second: 0
+)
+
+let is_between = Date.between(date3, date1, date2)
+```
 
 ## Deep Dive
+Behind the scenes, the `Date` type in Gleam is implemented using Erlang's `calendar` module, which is based on the Gregorian calendar. This module provides a high level of accuracy for working with dates, ensuring that Leap Years and Daylight Saving Time are taken into account. This means that you can rely on the `Date` type to accurately compare dates and handle edge cases.
 
-Behind the scenes, Gleam uses the `Calendar` module for comparing dates. The `Calendar` module implements the Gregorian calendar, which is the most widely used calendar system worldwide. It takes into account factors such as leap years and time zones to accurately compare dates.
-
-When using the `compare` function, the dates are first converted into their corresponding "day number" and then compared. The "day number" is a number representing the number of days since the start of the year 1 AD. This is a more efficient way of comparing dates compared to comparing each date component individually.
+It's also worth noting that the `Date` type does not include any time zone information. If you need to work with time zones, it's recommended to convert your dates to UTC before performing any comparisons.
 
 ## See Also
-
-- [Gleam Date Module Documentation](https://gleam.run/modules/date.html)
-- [Gleam Calendar Module Documentation](https://gleam.run/modules/calendar.html)
-- [Gleam Language Documentation](https://gleam.run/documentation)
-
-Happy coding with Gleam!
+- Gleam documentation on `Date` type: https://gleam.run/documentation/std-lib/date.html
+- Erlang `calendar` module: http://erlang.org/doc/man/calendar.html
+- "Date and Time in Gleam" blog post by Connie Kennedy: https://conniekennedy.dev/writing/date-and-time-in-gleam/

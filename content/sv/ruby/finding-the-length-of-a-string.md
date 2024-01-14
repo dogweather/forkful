@@ -1,58 +1,42 @@
 ---
-title:                "Ruby: Att hitta längden på en sträng"
+title:                "Ruby: Att hitta längden av en sträng"
+simple_title:         "Att hitta längden av en sträng"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/ruby/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+## Varför?
 
-Att kunna räkna ut längden på en sträng är en grundläggande färdighet inom programmering och är särskilt nyttig när man arbetar med text- och datatypshantering. Det hjälper också till att förbättra effektiviteten och läsbarheten av din kod.
+Att hitta längden på en sträng är en vanlig och användbar uppgift i Ruby-programmering. Det kan hjälpa dig att hantera data och manipulera text på ett effektivt sätt. Dessutom kan det vara en grundläggande färdighet som kan hjälpa dig att förstå mer komplexa koncept inom programmering.
 
-## Så här gör du
+## Så här gör man
 
-För att räkna ut längden på en sträng, behöver vi använda en inbyggd metod som heter "length". Låt oss ta en titt på följande exempel:
-
-```Ruby
-sträng = "Hej världen!"
-längd = sträng.length
-
-puts längd # Output: 12
-```
-
-I detta exempel definierar vi en variabel "sträng" med värdet "Hej världen!" och använder sedan "length" metoden för att beräkna dess längd. Slutligen skriver vi ut längden till konsolen och får resultatet 12. Det är viktigt att notera att "length" metoden fungerar för både enkel- och dubbelciterade strängar.
-
-Om vi tittar på ett annat exempel där strängen har specialtecken som \n eller \t, kommer längden att inkludera dessa tecken också:
+För att hitta längden på en sträng kan du använda dig av metoden `length`, som finns tillgänglig för alla strängar i Ruby. Detta ger dig antalet tecken i strängen, inklusive mellanslag och specialtecken. Se nedan för ett exempel:
 
 ```Ruby
-sträng = "Hej\nvärlden!"
-längd = sträng.length
-
-puts längd # Output: 13
+sträng = "Hej, detta är en sträng!"
+puts sträng.length
 ```
 
-Vi kan också använda "length" metoden på en tom sträng, vilket kommer att returnera 0 som längd:
-
+Output:
 ```Ruby
-sträng = ""
-längd = sträng.length
-
-puts längd # Output: 0
+24
 ```
 
-## Djupare analys
+## Deep Dive
 
-I bakgrunden använder "length" metoden en enkel algoritm som räknar antalet tecken i en sträng genom att iterera genom varje tecken och öka räknaren med 1 för varje tecken. Detta gör att metoden kan hantera även långa strängar effektivt utan att ha en stor påverkan på prestandan.
+Det finns flera sätt att hitta längden på en sträng i Ruby. En annan metod är `size`, som fungerar på samma sätt som `length`. Det finns också metoden `bytesize`, som ger dig längden på strängen i bytes istället för tecken.
 
-En annan intressant aspekt är att "length" metoden inte enbart fungerar på strängar. Den kan också användas på andra datatyper som arrayer och hashar för att beräkna deras längd.
+För att hitta längden på en sträng utan att räkna med mellanslag och specialtecken, kan du använda metoden `strip` först, som tar bort mellanslag från början och slutet av strängen. Sedan kan du använda `length` för att räkna antalet tecken.
+
+Det är också viktigt att vara medveten om att teckenkodning (encoding) kan påverka längden på en sträng. Om du arbetar med icke-latiniska tecken eller specialtecken, se till att din sträng är korrekt kodad för att få en korrekt längd.
 
 ## Se även
 
-För mer information om strängar och dess användning i Ruby, se:
-
-- https://www.rubyguides.com/ruby-tutorial/ruby-strings/
-- https://en.wikibooks.org/wiki/Ruby_Programming/String
-
-Lycka till med att utforska längden på strängar i Ruby!
+- [Ruby String Documentation](https://ruby-doc.org/core-2.7.0/String.html)
+- [Ruby String Methods](https://www.rubyguides.com/2019/02/ruby-string-methods/)
+- [Understanding Strings in Ruby](https://hackhands.com/ruby-string-exercises/)

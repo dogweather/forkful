@@ -1,34 +1,51 @@
 ---
-title:                "Haskell: Escrevendo no erro padrão"
+title:                "Haskell: Escrevendo para o erro padrão"
+simple_title:         "Escrevendo para o erro padrão"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/haskell/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que escrever para o padrão de erro?
+## Por que escrever para o erro padrão
 
-Escrever para o padrão de erro em Haskell pode ser extremamente útil para os programadores. Isso permite que os erros sejam exibidos de uma maneira mais clara e legível, facilitando a detecção e resolução de bugs em seus códigos.
+Escrever para o erro padrão é uma prática comum em linguagens de programação, incluindo Haskell. Isso permite que você monitore e registre possíveis erros ou informações importantes durante a execução do seu código.
 
-## Como fazer
+## Como escrever para o erro padrão em Haskell
 
-Para escrever para o padrão de erro em Haskell, você precisará importar o módulo "System.IO" e usar a função "hPutStrLn" para imprimir sua mensagem de erro. Veja um exemplo abaixo:
+Para escrever para o erro padrão em Haskell, você pode utilizar a função `hPutStrLn` do módulo `System.IO`. Por exemplo, se você quiser imprimir uma mensagem de erro, você pode fazer o seguinte:
 
 ```Haskell
 import System.IO
 
+hPutStrLn stderr "Erro: Valor inválido."
+```
+Isso imprimirá a mensagem "Erro: Valor inválido." no seu terminal.
+
+Além disso, você também pode capturar os erros gerados pelo seu código e escrevê-los para o erro padrão usando a função `hPrint`. Veja um exemplo:
+
+```Haskell
+import System.IO
+
+divide :: Double -> Double -> IO ()
+divide x y = do
+    if y == 0
+        then hPutStrLn stderr "Erro: Divisão por zero."
+        else hPrint stderr $ x / y
+
 main = do
-  hPutStrLn stderr "Ocorreu um erro: Não foi possível encontrar o arquivo."
+    divide 10 2 -- Imprime "5.0"
+    divide 10 0 -- Imprime "Erro: Divisão por zero."
 ```
 
-A saída do código acima será algo como: "Ocorreu um erro: Não foi possível encontrar o arquivo." na saída de erro.
+## Aprofundando-se na escrita para o erro padrão
 
-## Profundidade
-
-Além da função "hPutStrLn", existem outras funções úteis que podem ser usadas para escrever em padrão de erro em Haskell, como "hPutStr" e "hPutChar". Além disso, é importante ter em mente que o padrão de erro é um fluxo de saída diferente do padrão de entrada e de saída, portanto, é preciso ter cuidado ao manipulá-lo em seus códigos.
+Além das funções `hPutStrLn` e `hPrint`, existem outras maneiras de escrever para o erro padrão em Haskell, como o uso de `hPutStr` e `hPutChar`. Além disso, é possível customizar a saída do erro padrão alterando o buffer com a função `hSetBuffering`. Vale a pena explorar as diferentes opções e escolher aquela que melhor se adequa às suas necessidades.
 
 ## Veja também
 
-- Documentação do módulo "System.IO" em Haskell: https://hackage.haskell.org/package/base/docs/System-IO.html
-- Tutorial básico sobre escrita para o padrão de erro em Haskell: https://www.haskell.org/tutorial/io.html
+- [Documentação da função hPutStrLn](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html#v:hPutStrLn)
+- [Tutorial sobre a manipulação de erros em Haskell](https://www.ahri.net/2011/04/14/error-handling-in-haskell/)
+- [Artigo sobre como personalizar a saída do erro padrão em Haskell](https://ieeexplore.ieee.org/document/6979447)

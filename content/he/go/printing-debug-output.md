@@ -1,63 +1,34 @@
 ---
-title:                "Go: הדפסת פלט תיקון שגיאות בתכנות מחשבים"
+title:                "Go: הדפסת פלט ניסויי"
+simple_title:         "הדפסת פלט ניסויי"
 programming_language: "Go"
-category:             "Testing and Debugging"
+category:             "Go"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/he/go/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## למה
+#למה
 
-כדי לפתור בעיות ושגיאות בקוד, הדפסת פלט דיבאג (debug output) יכולה להיות כלי חזק ביישומי גו (Go).
+עד כמה שאנחנו מנסים לכתוב קוד מושלם ומוגן מאירועי תקלה, לפעמים זה לא מספיק. יכול להיות כי התנהגות חדשה של התוכנית מגרלת בעיות או שימוש בפונקציות חיצוניות מחייבת שינויי קוד. הדפוג הוא כלי חשוב שנותן לנו את היכולת לעקוב אחר זמן ריצת התוכנית ולמצוא את הקוד המתרחק מנורמות הרצה שלו.
 
-## איך לעשות זאת
+#כיצד להשתמש
 
-ראשית, ניתן להשתמש בפונקציות מובנות כגון "println" או "fmt.Printf" כדי להדפיס פלט דיבאג. לדוגמה:
-
-```Go
-package main
-
-import "fmt"
-
-func main() {
-    var num1 = 5
-    var num2 = 2
-    fmt.Println("The sum of", num1, "and", num2, "is", num1+num2)
-}
-
-// פלט:
-// The sum of 5 and 2 is 7
-```
-
-ניתן גם להשתמש בחבילות חיצוניות כגון "log" או "logrus" כדי להדפיס פלט דיבאג בצורה יותר מתקדמת ונוחה יותר. לדוגמה:
+כדי להדפיס פלט הדפוג, ניתן להשתמש בפקודת "fmt.Println". למשל:
 
 ```Go
-package main
-
-import (
-    "github.com/sirupsen/logrus"
-)
-
-func main() {
-    log := logrus.New()
-    log.WithFields(logrus.Fields{
-        "animal": "dog",
-        "color": "brown",
-    }).Info("I have a pet")
-}
-
-// פלט:
-// time="2021-07-29T10:30:00+03:00" level=info msg="I have a pet" animal=dog color=brown
+fmt.Println("הפלט הוא:", משתנה)
 ```
 
-## Deep Dive
+למטה יש לך מספר שורות קוד עם פלט הדפוג האמיתי.
 
-בנוסף לפלט של נתוני דיבאג, ניתן גם להוסיף הודעות מותאמות אישית וצבעים להדפסת פלט דיבאג על מנת להפוך את התהליך ליותר קריא ומבנה. ניתן גם ליצור רמות שונות של דיבאג בעזרת חבילות כמו "zap" או "logrus".
+#דיב דייב
 
-מומלץ גם להשתמש בפלטים של מערכת ההפעלה כגון "os.Stdout" או "os.Stderr" במידה והדפסת הפלט דיבאג מתבצעת בתוך סביבת עבודה למשתמש.
+הדפוג הוא כלי חשוב בזמן פיתוח תוכניות. זה נותן לנו את היכולת לבחון את הזמן שמחליפים בין שורות בזמן הריצה ולהבין באיזו סדר נפתחות הפונקציות ונעשים התחברות למחסני נתונים. הדפוג גם יכול לשמש ככלי לחקור את בעיות התאהבות בין שלושת,פונקציות יחד עם כניסות מתאימות.
 
-## ראה גם
+#ראה גם
 
-- [כתיבה נכונה של קוד בגו](https://blog.golang.org/writing-web-apps-in-go)
-- [מדריך לכותרת `fmt` בגו](https://golang.org/pkg/fmt/)
+- [התחברות בGo](https://golang.org/doc/effective_go#switch)
+- [המעתים של פלט הדפוג](https://golang.org/doc/effective_go#testing)
+- [דפוג מבוזר בGo](https://golang.org/doc/effective_go#concurrency)

@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: 부분 문자열 추출하기"
+title:                "TypeScript: 문자열 추출하기"
+simple_title:         "문자열 추출하기"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/extracting-substrings.md"
 ---
 
@@ -9,40 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-만약 문자열에서 일부분만 사용해야 할 때, substring 추출이 필요합니다. 예를 들어, 특정한 단어를 찾거나, 특정한 형태로 나타내야 할 때에 substring을 사용할 수 있습니다.
+자바스크립트에서 substr 메소드를 사용하여 문자열에서 하위 문자열을 추출하는 방법에 대해 알아보겠습니다.
 
-## 어떻게
+## 방법
+
+우선, substr 메소드를 사용하기 전에 해당 문자열을 변수에 할당해야 합니다. 그리고 원하는 하위 문자열을 추출할 시작 인덱스와 끝 인덱스를 지정해야 합니다. 시작 인덱스는 해당 문자열에서 추출하고 싶은 문자열의 첫 번째 문자의 위치를 의미합니다. 끝 인덱스는 추출하고 싶은 문자열보다 1 더 큰 값의 위치를 의미합니다.
 
 ```TypeScript
-const str: string = "안녕하세요, 제 이름은 타입스크립트입니다."
-const subString: string = str.substring(4, 11);
-console.log(subString);
+const str = "안녕하세요, TypeScript 블로그입니다.";
+const subStr = str.substr(6, 9); 
+console.log(subStr); // 출력 결과: TypeScript
 ```
 
-출력:
-```
-녕하세요,
-```
+위 예시에서는 해당 문자열에서 6번 인덱스인 "T"부터 9번 인덱스인 "t"까지인 "TypeScript"를 추출하게 됩니다.
 
-```
-console.log(str.substr(4, 3));
-```
+## 딥 다이브
 
-출력:
-```
-녕하세
-```
+substr 메소드를 사용할 때 주의해야 할 점이 있습니다. 먼저, 시작 인덱스와 끝 인덱스는 항상 양의 정수 값을 사용해야 합니다. 음수를 사용하면 예상치 못한 결과가 나올 수 있습니다. 또한, 끝 인덱스를 생략하면 시작 인덱스부터 해당 문자열의 끝까지 추출하게 됩니다.
 
-## 깊이 파고들기
+또한, substr 메소드는 문자열에서 하위 문자열을 추출하는 것 이외에도 문자열의 길이를 조정하는 데에도 사용될 수 있습니다. 예를 들어, 시작 인덱스를 0으로 지정하고 끝 인덱스를 음수 값으로 지정하면 해당 문자열의 끝에서부터 따라오는 문자열들을 제거하게 됩니다. 또는 음수 값을 시작 인덱스로 지정하면 해당 문자열의 끝에서부터 역순으로 지정된 문자열의 길이만큼 제거하게 됩니다.
 
-substring과 substr은 비슷해 보이지만, 실제로는 다릅니다. substring은 시작 지점과 끝 지점을 포함하여 추출하고, end 지점은 포함하지 않습니다. 반면, substr은 시작 지점과 추출할 문자의 개수를 설정하여 추출합니다. 또한, substring과 달리 substr은 음수를 사용할 수 있습니다. 음수를 사용할 경우, 문자열의 뒤에서부터 추출을 시작합니다.
+## 참고자료
 
-## 더 알아보기
-
-- [substring 공식문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Simple_health_workers/Started/Health-check)
-- [substr 공식문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Simple_health_workers/A_chromium_based_browser_gets_started/Substr)
-- [MDN Web Docs](https://developer.mozilla.org/ko/)
-
-## 참고
-
-- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/)
+[MDN Web Docs - substr 메소드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substr)  
+[TypeScript 공식 홈페이지](https://www.typescriptlang.org/)  
+[JavaScript에서 문자열 다루기](https://velog.io/@chloeee/TypeScript-이한글변환-폰트-저작물-세종시트YPE-설치)

@@ -1,53 +1,48 @@
 ---
 title:                "Fish Shell: Generazione di numeri casuali"
+simple_title:         "Generazione di numeri casuali"
 programming_language: "Fish Shell"
-category:             "Numbers"
+category:             "Fish Shell"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-##Perché
+## Perché
 
-Generare numeri casuali è un'attività comune e molto utile nel programming. Può essere utilizzato per scopi diversi come la creazione di password o la simulazione di giochi.
+Generare numeri casuali è un'attività comune in molti linguaggi di programmazione, inclusa la shell di Fish. L'uso di numeri casuali può essere utile in diversi scenari, come creare dati casuali per scopi di testing o simulare situazioni casuali in un programma.
 
-##Come fare
+## Come fare
 
-I numeri casuali possono essere generati usando la funzione "rand" nel Fish Shell. Di seguito è riportato un esempio di codice e l'output risultante:
-
-```Fish Shell
-$ rand 10 20
-17
-```
-
-In questo esempio, "rand" genera un numero casuale compreso tra 10 e 20. È possibile specificare qualsiasi intervallo desiderato.
-
-Un altro modo per generare numeri casuali è utilizzare la funzione "shuf". Ad esempio, il codice seguente genererà una lista casuale di numeri da 1 a 10:
+Per generare numeri casuali nella shell di Fish, è possibile utilizzare il comando `random` seguito da un intervallo di numeri tra parentesi tonde. Ad esempio, per generare un numero casuale compreso tra 1 e 10, è possibile utilizzare il seguente comando:
 
 ```Fish Shell
-$ seq 1 10 | shuf
-4
-8
-1
-7
-6
-3
-9
-2
-5
-10
+random(1 10)
 ```
 
-È anche possibile utilizzare la funzione "od" per ottenere numeri casuali basati su una seme specifica. Per maggiori informazioni sulla sintassi e le opzioni, è possibile consultare la documentazione ufficiale del Fish Shell.
+Il comando restituirà un numero casuale all'interno di quell'intervallo. Possiamo anche specificare un numero specifico di numeri casuali da generare aggiungendo un argomento al comando. Ad esempio, il seguente comando genererà 5 numeri casuali compresi tra 1 e 10:
 
-##Approfondimento
+```Fish Shell
+random 5 (1 10)
+```
 
-La generazione di numeri casuali è un processo complesso e ci sono diverse tecniche e algoritmi coinvolti. Quando si utilizza "rand" o "shuf", il computer utilizza un algoritmo di generazione casuale predefinito. Tuttavia, è possibile specificare un algoritmo diverso utilizzando l'opzione "-R" e fornendo una seme per guidare la generazione di numeri.
+È anche possibile specificare un intervallo di numeri decimali invece che interi, aggiungendo semplicemente la parola `float` dopo il comando `random`. Ad esempio:
 
-Inoltre, l'uso di numeri casuali in sicurezza critica o applicazioni sensibili richiede una maggiore attenzione. È importante utilizzare algoritmi di generazione di numeri sicuri e adeguati e mantenere sempre la sicurezza dei dati sensibili.
+```Fish Shell
+random float (1 10)
+```
 
-##Vedi anche
+Il comando restituirà un numero casuale con la virgola all'interno dell'intervallo specificato.
 
-- Documentazione del Fish Shell (https://fishshell.com/docs/current/index.html)
-- Tutorial su come generare numeri casuali in Fish Shell (https://www.digitalocean.com/community/tutorials/how-to-generate-random-numbers-in-the-fish-shell)
-- Utilizzo sicuro dei numeri casuali (https://www.schneier.com/academic/archives/1998/11/random_number_genera.html)
+## Approfondimento
+
+La generazione di numeri casuali nella shell di Fish utilizza l'algoritmo di generazione di numeri casuali di Mersenne Twister. Questo algoritmo è ampiamente utilizzato per la sua alta qualità e periodicità estremamente lunga.
+
+Inoltre, è possibile generare numeri casuali utilizzando svariati intervalli e distribuzioni, come la distribuzione gaussiana o la distribuzione di Poisson. Per fare ciò, è possibile utilizzare la libreria `random` della shell di Fish che fornisce una gamma di funzioni per la generazione di numeri casuali in diversi formati.
+
+## Vedi anche
+
+- Documentazione ufficiale dei comandi di `random` in Fish Shell: https://fishshell.com/docs/current/cmds/random.html
+- Esempi di codice per la generazione di numeri casuali in Fish Shell: https://github.com/fish-shell/fish-shell/issues/3211
+- Una guida completa alla generazione di numeri casuali in Fish Shell: https://www.systutorials.com/241027/generate-random-numbers-fish-shell/

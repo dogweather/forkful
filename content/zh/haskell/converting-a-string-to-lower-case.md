@@ -1,48 +1,79 @@
 ---
 title:                "Haskell: 将字符串转换为小写"
+simple_title:         "将字符串转换为小写"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么要将字符串转换为小写
 
-在使用Haskell编程时，有时我们需要将字符串转换成小写。这可以帮助我们更容易地比较字符串或者进行其他操作。在这篇博文中，我们将探讨如何使用Haskell来将字符串转换成小写，并提供详细的代码示例和说明。
+在Haskell编程中，字符串是一个常见的数据类型。有时候，我们可能需要将字符串中的所有字符都转换为小写，这样可以方便我们进行比较和处理。接下来，让我们一起来看看如何在Haskell中实现字符串转换为小写的功能吧！
 
 ## 如何操作
 
-为了将一个字符串转换成小写，我们可以使用内置的函数`map`和`toLower`。首先，我们需要将字符串转换成一个字符列表，然后使用`map`函数将每个字符都转换成小写。最后，我们使用`concat`函数将字符列表转换回一个字符串。下面是一个示例代码：
+首先，我们需要导入Haskell的标准库Data.Char，这个库中包含了`toLower`这个函数，可以将一个字符转换为小写。然后，我们需要使用`map`函数来遍历字符串中的每一个字符，并将它们传入`toLower`函数中，最后再将所有字符组合起来，就可以得到转换为小写后的字符串了。
 
 ```Haskell
-lowercaseString :: String -> String
-lowercaseString str = concat (map toLower (toUpperCase str))
+import Data.Char
+
+toLowerString :: String -> String
+toLowerString str = map toLower str
+
 ```
 
-在这个例子中，我们定义了一个名为`lowercaseString`的函数，它接受一个字符串作为输入，并使用`map`函数将字符串中的每个字符都转换成小写。最后，我们使用`concat`函数将字符列表转换回一个字符串。
-
-让我们来看一个例子，假设我们有一个名为`name`的字符串变量，它的值是"Alice"。如果我们使用`lowercaseString`函数将它转换成小写，那么最后的结果将会是"alice"。下面是示例输出：
+接下来，让我们看一下这段代码的运行结果吧！
 
 ```Haskell
-lowercaseString "Alice" -- output: "alice"
+toLowerString "Hello World"
 ```
 
-现在我们已经知道如何使用`map`和`toLower`函数来将字符串转换成小写，让我们深入探讨一下如何实现这个转换。
+输出结果为：
 
-## 深入了解
+```
+"hello world"
+```
 
-在Haskell中，字符串实际上是一个字符列表，所以我们可以使用列表操作来处理字符串。`map`函数接受一个函数和一个列表作为参数，并将该函数应用到列表中的每个元素。`toLower`函数是一个处理字符的函数，它可以将一个大写字符转换成小写。
+很简单吧！通过使用`toLower`函数和`map`函数，我们就能够将一个字符串转换为小写了。
 
-在我们的函数`lowercaseString`中，我们首先使用`toUpperCase`函数将字符串转换成一个字符列表。然后使用`map`函数将`toLower`函数应用到每个字符上，这样就实现了将字符串转换成小写的功能。
+## 深入探讨
 
-## 参考链接
+除了上面提到的方法，我们还可以使用Haskell中的模式匹配来实现字符串转换为小写。具体操作是先将字符串分割成单个字符的列表，然后使用模式匹配来判断每个字符是否为大写字母，如果是，则将其转换为对应的小写字母，最后再将列表拼接成字符串。
 
-- [Haskell map](https://www.tutorialspoint.com/haskell/haskell_map.htm)
-- [Haskell toLower](https://www.tutorialspoint.com/haskell/haskell_tolower.htm)
-- [Haskell concat](https://www.tutorialspoint.com/haskell/haskell_concat.htm)
+```Haskell
+import Data.Char
 
-## 参见
+toLowerString :: String -> String
+toLowerString "" = ""
+toLowerString (x:xs)
+  | x `elem` ['A'..'Z'] = toLower x : toLowerString xs
+  | otherwise = x : toLowerString xs
+```
 
-- [Haskell字符串操作指南](https://www.haskell.org/tutorial/strings.html)
-- [Haskell字符串处理函数](https://www.tutorialspoint.com/haskell/string_manipulation_functions.htm)
+在这个例子中，我们使用了空字符串和x:xs这两种模式来处理空字符串和含有多个字符的字符串。最后，让我们来看一下这段代码的执行结果吧！
+
+```Haskell
+toLowerString "Hello World"
+```
+
+输出结果为：
+
+```
+"hello world"
+```
+
+通过使用模式匹配，我们不仅可以将一个字符串转换为小写，还可以学习一种新的语法来处理复杂的字符串操作。
+
+# 参考资料
+
+- [Haskell标准库中的Data.Char模块](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html)
+- [Haskell模式匹配指南](https://learn.hfm.io/pattern-matching.html)
+- [Haskell for 语言参考中文版](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html)
+
+# 参见
+
+- [Haskell中字符串的常用操作](https://example.com/haskell-string-operations)
+- [如何在Haskell中实现字符串比较](https://example.com/haskell-string-comparison)

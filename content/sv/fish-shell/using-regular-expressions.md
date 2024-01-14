@@ -1,46 +1,49 @@
 ---
-title:                "Fish Shell: Användning av reguljära uttryck"
+title:                "Fish Shell: Att använda reguljära uttryck"
+simple_title:         "Att använda reguljära uttryck"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/fish-shell/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-# Varför använda reguljära uttryck?
+## Varför
+Många gånger när vi arbetar med programmering, behöver vi söka igenom och hantera textsträngar på ett effektivt sätt. Det är här reguljära uttryck, även kallade regex, kommer in i bilden. Med hjälp av regex kan vi definiera mönster för att matcha och manipulera textsträngar på ett snabbt och effektivt sätt. I den här bloggposten kommer vi att undersöka hur Fish Shell kan hjälpa oss att använda reguljära uttryck för att förbättra vår kodning.
 
-Reguljära uttryck är en kraftfull verktyg inom programmering som används för att söka och manipulera textsträngar på ett effektivt och flexibelt sätt. De är användbara för att söka och ersätta specifika mönster, validera inmatningar eller extrahera information från textfiler. I Fish Shell, är reguljära uttryck en viktig del av verktyget och kan hjälpa till att förbättra produktiviteten för programmerare.
-
-## Så här gör du
-
-Att använda reguljära uttryck i Fish Shell är enkelt och kan göras direkt i terminalen. Här är några exempel för att hjälpa dig komma igång:
+## Hur man gör
+För att använda reguljära uttryck i Fish Shell behöver vi kommandot `pcregrep`. Här är ett exempel på hur man kan använda det för att söka efter en specifik textsträng i en fil:
 
 ```Fish Shell
-# Söka efter ord i en textfil
-grep "mönster" filnamn.txt
-
-# Söka efter exakt matchning av ett ord
-grep -w "ord" filnamn.txt
-
-# Ersättning av en textsträng med en annan
-sed 's/ursprunglig sträng/ersättningssträng/'
-
-# Extrahera information från texten
-sed -n 's/mönster/\1/p' filnamn.txt
+pcregrep 'mönster' fil.txt
 ```
-I dessa exempel är "filnamn.txt" den fil som innehåller texten du vill söka igenom och manipulera. Du kan också använda reguljära uttryck direkt i Fish Shells kommandorad, utan att behöva använda grep eller sed. För att lära dig mer om de olika kommandona och syntaxen, kan du använda Fish Shells inbyggda hjälpfunktion genom att skriva "help <kommando>" i terminalen.
+
+Detta kommer att söka igenom filen `fil.txt` och visa alla rader som matchar mönstret "mönster". Vi kan också använda reguljära uttryck tillsammans med andra kommandon i Fish Shell. Till exempel kan vi använda `sed` för att ersätta en textsträng som matchar ett visst mönster med en annan textsträng:
+
+```Fish Shell
+sed 's/mönster/ersättning/g' fil.txt
+```
+
+I detta exempel kommer alla instanser av "mönster" i filen att ersättas med "ersättning".
 
 ## Djupdykning
+Reguljära uttryck kan verka skrämmande först, men när man väl lär sig grunderna blir de otroligt användbara för textmanipulering. Här är några viktiga metatecken att komma ihåg när man arbetar med reguljära uttryck:
 
-Reguljära uttryck används ofta för enklare manipulationer som sökning och ersättning, men de kan också vara mycket avancerade och användas för mer komplexa uppgifter. Till exempel kan du använda grupperingar och återställningar för att extrahera specifika delar av en textsträng, eller använda specialtecken för att matcha flera mönster. Det finns också olika modifierare som kan användas för att göra dina uttryck mer precisa och effektiva.
+- `.` matchar ett enskilt tecken
+- `*` matchar noll eller fler av det tidigare tecknet eller mönstret
+- `+` matchar en eller fler av det tidigare tecknet eller mönstret
+- `?` matchar noll eller en av det tidigare tecknet eller mönstret
+- `()` används för att gruppera mönster
+- `|` används för att ange alternativ för mönster
 
-En annan viktig aspekt av reguljära uttryck är att olika verktyg, som grep och sed, kan ha olika syntax eller stöd för vissa funktioner. Därför är det viktigt att förstå hur Fish Shell tolkar reguljära uttryck för att få bästa möjliga resultat.
+Det finns många fler metatecken som kan användas för att skapa komplexa och kraftfulla reguljära uttryck. Det är värt att ta lite tid och lära sig dem för att effektivt kunna använda dem i ditt arbete.
 
-# Se även
+## Se också
+Här är några användbara resurser för att fortsätta lära sig om reguljära uttryck och Fish Shell:
 
-Nedan finns några användbara länkar för att lära dig mer om användningen av reguljära uttryck i Fish Shell:
+- [Fish Shell: Regex dokumentation](https://fishshell.com/docs/current/regex.html)
+- [PCRE dokumentation](https://www.pcre.org/current/doc/html/pcre2syntax.html)
+- [Mastering Regular Expressions av Jeffrey E.F. Friedl](https://regex.info/book.html)
 
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-- [Grundläggande användning av reguljära uttryck i terminalen](https://www.digitalocean.com/community/tutorials/using-grep-regular-expressions-to-search-for-text-patterns-in-linux)
-- [Avancerade tekniker för reguljära uttryck i Fish Shell](https://dev.to/maxwell_dev/advanced-regular-expression-techniques-with-the-fish-shell-4pp3)
-- [Skillnaderna mellan reguljära uttryck i olika verktyg](https://stackoverflow.com/questions/38318201/differences-between-regex-in-perl-python-and-grep)
+Nu när du har en grundläggande förståelse för reguljära uttryck, börja använda dem i ditt dagliga arbete för att göra din kodning mer effektiv och produktiv!

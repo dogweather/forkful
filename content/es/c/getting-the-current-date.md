@@ -1,58 +1,91 @@
 ---
 title:                "C: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-¿Alguna vez has querido saber qué día es hoy? O tal vez necesitas obtener la fecha actual para realizar cálculos u otras tareas en tu programa. Obtener la fecha y hora actual es una función esencial en muchos programas y en este artículo te enseñaré cómo hacerlo en lenguaje C.
 
-## Cómo
-Para obtener la fecha actual en C, utilizaremos la función `time()` de la librería `time.h`. Primero, la incluiremos en nuestro programa:
+Obtener la fecha actual es una tarea común en la programación C. Esto puede ser útil para muchas aplicaciones, como registros de eventos, seguimiento de cronogramas y más. Al tener la fecha actual, podemos realizar diversas operaciones utilizando la información de fecha y hora.
+
+## Cómo hacerlo
+
+Para obtener la fecha actual en C, utilizamos la función `time()` de la biblioteca `time.h`. Esta función devuelve la cantidad de segundos desde el 1 de enero de 1970 a las 00:00:00 GMT. Esto se conoce como el "epoch time". Para utilizar esta función, primero debemos incluir la biblioteca `time.h` en nuestro programa.
 
 ```C
+// Incluir la biblioteca time.h
 #include <time.h>
+
+int main(){
+
+    // Declarar una variable de tipo time_t para almacenar la fecha actual
+    time_t time_current;
+
+    // Obtener la fecha actual usando la función time()
+    time(&time_current);
+
+    // Imprimir la fecha actual en formato de número entero
+    printf("La fecha actual es: %ld", time_current);
+
+    return 0;
+}
 ```
 
-Luego, usaremos la función `time()` para obtener el número de segundos transcurridos desde el 1 de enero de 1970 a las 00:00:00 (también conocido como *epoch*). Este número se conoce como *epoch time* y es utilizado para calcular la fecha y hora actual.
+La salida del programa sería algo como:
+
+```
+La fecha actual es: 1614732556
+```
+
+Podemos ver que obtenemos un número entero grande, que representa la cantidad de segundos desde el 1 de enero de 1970. Sin embargo, este número no es útil para la mayoría de los usuarios. Por lo tanto, necesitamos convertirlo a un formato de fecha y hora legible.
+
+Podemos hacer eso utilizando la función `ctime()`. Esta función convierte la fecha y hora en un formato de cadena de caracteres leíble para humanos. También debemos tener en cuenta que la función `ctime()` agrega un salto de línea al final, por lo que se debe tener en cuenta al imprimir la salida.
 
 ```C
- time_t current_time;
- time(&current_time);
+// Incluir la biblioteca time.h
+#include <time.h>
+
+int main(){
+
+    // Declarar una variable de tipo time_t para almacenar la fecha actual
+    time_t time_current;
+
+    // Obtener la fecha actual usando la función time()
+    time(&time_current);
+
+    // Convertir la fecha actual en una cadena de caracteres legíble
+    char *date_current = ctime(&time_current);
+
+    // Imprimir la fecha actual
+    printf("La fecha actual es: %s", date_current);
+
+    return 0;
+}
 ```
 
-Ahora, necesitamos convertir ese número de segundos en una forma legible para los humanos. Para ello, usaremos la función `localtime()` que nos dará una estructura de tipo `tm` con los valores de año, mes, día, hora, minutos y segundos.
-
-```C
-struct tm* local_time = localtime(&current_time);
-```
-
-Finalmente, podemos imprimir la fecha y hora actual utilizando la función `printf()` y los valores de la estructura `tm`.
-
-```C
-printf("La fecha actual es: %d/%d/%d\n", local_time->tm_mday, local_time->tm_mon + 1, local_time->tm_year + 1900);
-printf("La hora actual es: %d:%d:%d\n", local_time->tm_hour, local_time->tm_min, local_time->tm_sec);
-```
-
-El resultado de este código puede verse así:
+La salida del programa sería:
 
 ```
-La fecha actual es: 19/03/2021
-La hora actual es: 16:30:00
+La fecha actual es: Wed Mar 03 23:55:56 2021
 ```
 
-## Profundizando
-Como mencionamos anteriormente, el número de segundos desde *epoch* se utiliza para calcular la fecha y hora actual. Pero, ¿cómo lo hace exactamente la función `localtime()`?
+¡Ahora obtenemos una fecha y hora legíble!
 
-La respuesta es que utiliza la información de la zona horaria local (que puede ser modificada por el usuario) y una estructura de datos llamada *time zone database* que contiene información sobre los husos horarios y los cambios en el horario de verano.
+## Deep Dive
 
-Además, vale la pena mencionar que en sistemas operativos basados en Unix, el *epoch* se calcula a partir de la fecha 1 de enero de 1970, mientras que en sistemas basados en Windows, se utiliza la fecha 1 de enero de 1601.
+Introducir la función `time()` y la biblioteca `time.h` puede llevar a pensar que solo obtendremos la fecha actual. Sin embargo, podemos realizar otras operaciones usando esta información. Por ejemplo, podemos utilizar la estructura `tm` de la biblioteca `time.h` para separar la fecha y hora en diferentes componentes como año, mes, día, hora, minuto, segundo, entre otros.
+
+Además, podemos utilizar otras funciones, como `localtime()` para obtener la fecha y hora local, `gmtime()` para obtener la fecha y hora GMT, `strftime()` para formatear la salida, entre otras.
+
+En resumen, obtener la fecha actual en C puede ser una tarea sencilla, pero también es importante conocer las diferentes herramientas que nos permiten manipular y utilizar esta información de manera más eficiente.
 
 ## Ver también
-- [Documentación de la función `time()` en C](https://en.cppreference.com/w/cpp/chrono/c/time)
-- [Tutorial sobre la librería `time.h`](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- [Explicación de la estructura `tm` en C](https://www.programiz.com/c-programming/c-structure-tm)
-- [Página oficial de la *time zone database*](https://www.iana.org/time-zones)
+
+- [Documentación de la función time() en cplusplus.com](http://www.cplusplus.com/reference/ctime/time/)
+- [Tutorial sobre trabajar con fechas y horas en C](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
+- [Documentación de la biblioteca time.h en la página oficial de GNU](https://www.gnu.org/software/libc/manual/html_node/Time-of-Day.html)

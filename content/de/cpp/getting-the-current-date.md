@@ -1,7 +1,9 @@
 ---
-title:                "C++: Das aktuelle Datum erhalten"
+title:                "C++: Die aktuelle Datumsangabe erhalten"
+simple_title:         "Die aktuelle Datumsangabe erhalten"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/cpp/getting-the-current-date.md"
 ---
 
@@ -9,36 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In der heutigen Welt, in der vieles digitalisiert ist, ist es oft wichtig, das aktuelle Datum zu kennen. Ob es darum geht, Verträge zu unterzeichnen, Erinnerungen zu setzen oder Daten in einer Datenbank zu speichern, das aktuelle Datum ist unerlässlich. In diesem Blog-Beitrag werden wir uns ansehen, wie man in C++ das aktuelle Datum abrufen kann.
+Die Verwendung des aktuellen Datums ist ein wesentlicher Bestandteil der Programmierung. Es ermöglicht uns, zeitbezogene Funktionen in unsere Programme zu integrieren, wie z.B. die Anzeige des aktuellen Datums für Benutzer oder die Durchführung von Berechnungen basierend auf dem aktuellen Datum.
 
-## Wie es geht
+## Wie Man
 
-Das Abrufen des aktuellen Datums in C++ ist relativ einfach. Zunächst müssen wir die "chrono" Bibliothek in unserem Code einbinden. Diese Bibliothek enthält die Funktionen, die wir benötigen, um das Datum zu bekommen. Dann können wir die Funktion `chrono::system_clock::now()` verwenden, um die aktuelle Systemzeit abzurufen. Schauen wir uns ein Beispiel an:
+Um das aktuelle Datum in C++ zu erhalten, müssen wir zuerst die Bibliothek <ctime> einbinden. Diese enthält Funktionen, die es uns ermöglichen, auf das Datum und die Uhrzeit zuzugreifen. Dann müssen wir eine Variable vom Typ "time_t" deklarieren, um das aktuelle Datum zu speichern. Wir können dies mit der Funktion "time()" tun, die das aktuelle Datum in Sekunden seit dem 1. Januar 1970 zurückgibt. Wir können auch die Funktionen "localtime()" oder "gmtime()" verwenden, um dieses Ergebnis in ein lesbares Format umzuwandeln.
 
 ```C++
 #include <iostream>
-#include <chrono>
+#include <ctime>
 
-int main() {
-    auto current_time = std::chrono::system_clock::now();
-    std::time_t current_time_t = std::chrono::system_clock::to_time_t(current_time);
+int main()
+{
+    // Einbinden der <ctime> Bibliothek
+    std::time_t t = std::time(0);
+
+    // Konvertieren in ein lesbares Format
+    std::tm* now = std::localtime(&t);
 
     // Ausgabe des aktuellen Datums
-    std::cout << "Das aktuelle Datum ist: " << std::ctime(&current_time_t);
+    std::cout << "Das aktuelle Datum ist: "
+              << (now->tm_year + 1900) << '-'
+              << (now->tm_mon + 1) << '-'
+              << now->tm_mday
+              << std::endl;
 
     return 0;
 }
+
 ```
 
-Diese wenigen Zeilen Code geben uns das aktuelle Datum auf unserem System aus. Es ist wichtig zu beachten, dass die Funktion `std::ctime()` das Datum in der lokalen Zeitzone des Systems umwandelt. Wenn Sie das Datum in einer bestimmten Zeitzone benötigen, müssen Sie eine andere Funktion verwenden.
+Die Ausgabe des obigen Codes könnte wie folgt aussehen:
 
-## Tiefer Einblick
+```
+Das aktuelle Datum ist: 2021-07-20
+```
 
-Die Funktion `chrono::system_clock::now()` gibt ein Objekt des Typs "chrono::time_point" zurück. Dieses Objekt enthält die Anzahl der vergangenen Sekunden seit dem 1. Januar 1970, auch bekannt als "Unix-Zeit". Mit der Funktion `system_clock::to_time_t()` können wir dieses Objekt in ein Objekt des Typs `std::time_t` umwandeln, das ein Datum und eine Uhrzeit darstellt. Wir können dann die Funktion `std::ctime()` verwenden, um dieses Objekt in eine lesbare Zeichenfolge zu konvertieren.
+## Blick ins Detail
 
-Es gibt auch andere Funktionen, die das aktuelle Datum zurückgeben, wie zum Beispiel `chrono::steady_clock::now()`, die eine konstante Zeit zurückgeben, unabhängig davon, ob das System angepasst wird oder nicht.
+Wie bereits erwähnt, gibt die Funktion "time()" das aktuelle Datum in Sekunden seit dem 1. Januar 1970 zurück. Dies wird auch als "Epoch"-Zeitstempel bezeichnet. Die Funktion "localtime()" wandelt dieses Ergebnis in einen strukturierten Zeiger um, der Informationen wie Jahr, Monat und Tag enthält. Die Funktion "gmtime()" funktioniert auf die gleiche Weise, gibt jedoch die UTC-Zeit (koordinierte Weltzeit) zurück.
 
-## Siehe auch
+Die <ctime> Bibliothek enthält auch viele andere Funktionen und Konstanten, die mit Datum und Uhrzeit zusammenhängen. Sie können in der offiziellen C++ Dokumentation weitere Informationen darüber finden.
 
-- [C++ Dokumentation: Funktionen zur Zeitmessung](https://de.cppreference.com/w/cpp/chrono)
-- [Unix Time: Warum ist der 01.01.1970 wichtig?](https://www.howtogeek.com/509592/epoch-time-explained-what-is-it-and-why-is-it-used/)
+## Siehe Auch
+
+- [C++ Zeit- und Datumsfunktionen](https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_73/rtref/timew.htm)
+- [C++ Zeit-Klasse](http://www.cplusplus.com/reference/chrono/system_clock/now/)
+- [Offizielle C++ Dokumentation für <ctime>](https://en.cppreference.com/w/cpp/chrono/c)

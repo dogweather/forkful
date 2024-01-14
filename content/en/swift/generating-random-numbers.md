@@ -1,51 +1,48 @@
 ---
 title:                "Swift recipe: Generating random numbers"
+simple_title:         "Generating random numbers"
 programming_language: "Swift"
-category:             "Numbers"
+category:             "Swift"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
-Generating random numbers is a fundamental aspect of programming and can be useful in a variety of applications. It can add an element of randomness to games, simulations, and data analysis, making them more realistic and accurate.
+📝 Blog Post: Why Generating Random Numbers is Important in Programming
 
-## How To 
-To generate random numbers in Swift, we can use the built-in `random()` method from the `Int` or `Double` data types. For example, to generate a random integer between 1 and 10, we can use the following code: 
+## Why
 
-```Swift
-let randomNumber = Int.random(in: 1...10) 
-print(randomNumber) //output: 7
-```
+Generating random numbers is an important task in programming as it allows us to introduce unpredictability and variability in our code. This can be especially useful in applications such as games, simulations, and algorithms.
 
-To generate a random decimal number between 0 and 1, we can use the `Double.random()` method:
+## How To
+
+To generate random numbers in Swift, we can use the `random` method from the `RandomNumberGenerator` protocol. For example, if we want to generate a random integer between 1 and 100, we can use the following code:
 
 ```Swift
-let randomDecimal = Double.random(in: 0...1) 
-print(randomDecimal) //output: 0.6270913786
+let randomNumber = Int.random(in: 1...100)
+print(randomNumber)
 ```
 
-We can also use the `arc4random()` method from the `UInt32` data type to generate random numbers within a range:
+This will produce a different random number each time the code is executed. We can also generate random numbers of different data types, such as `Float`, `Double`, and `Bool`, using the same method.
+
+Another way to generate random numbers is by using the `arc4random` function, which is available in both Swift and Objective-C. This function generates a uniformly distributed random number within a given range. Here's an example of generating a random number between 1 and 10:
 
 ```Swift
-let randomNumber = Int(arc4random_uniform(100)) 
-print(randomNumber) //output: 42
+let randomNumber = Int(arc4random_uniform(10)) + 1
+print(randomNumber)
 ```
 
-## Deep Dive 
-Behind the scenes, the `random()` and `arc4random()` methods use algorithms to generate pseudorandom numbers. This means that while the numbers may appear random, they are actually determined by a predetermined sequence. 
+## Deep Dive
 
-To ensure a truly random sequence, we can use the `GKRandom` class from the `GameplayKit` framework. It uses a more complex algorithm and can generate numbers based on various distributions, such as Gaussian and binomial. 
+There are different ways of generating random numbers, each with their own advantages and limitations. One common method is the pseudorandom number generator, which uses a mathematical algorithm to produce seemingly random numbers. However, these numbers are not truly random as the algorithm can be predicted.
 
-```Swift
-let randomGenerator = GKMersenneTwisterRandomSource() 
-let randomNumber = randomGenerator.nextInt(upperBound: 50) 
-print(randomNumber) //output: 28
-```
+Another method is the hardware-based random number generator, which uses physical processes such as thermal noise to generate truly random numbers. This is considered to be more secure and unpredictable compared to pseudorandom generators.
 
-## See Also 
-For more information on generating random numbers in Swift, check out the official documentation and the following resources:
+It is important to understand how random numbers are generated in order to properly use them in our code and avoid any security vulnerabilities.
 
-- [Generating Random Numbers in Swift](https://learnappmaking.com/random-numbers-swift-app-development/)
-- [Intro to Random Numbers in Swift: Part 1](https://blog.usejournal.com/intro-to-random-numbers-in-swift-part-1-c830873672f8)
-- [Randomness in Swift](https://www.swiftbysundell.com/basics/randomness/)
+## See Also
+
+- [Official Apple Documentation on Generating Random Numbers in Swift](https://developer.apple.com/documentation/swift/randomnumbergenerating)
+- [Tutorial on Generating Random Numbers in Swift 5](https://medium.com/@mallowigi/generating-random-numbers-in-swift-5-fa566336297c)
+- [Comparison of Different Methods for Generating Random Numbers](https://medium.com/@phantomofmace/comparing-random-number-generation-methods-7dc7e8a21749)

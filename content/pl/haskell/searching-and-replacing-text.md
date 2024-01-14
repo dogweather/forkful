@@ -1,7 +1,9 @@
 ---
-title:                "Haskell: Wyszukiwanie i zamiana tekstu"
+title:                "Haskell: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/haskell/searching-and-replacing-text.md"
 ---
 
@@ -9,45 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czasem musimy dokonać zmian w ogromnych plikach tekstowych. Może to być zmiana nazwy jednego słowa na inne, wykasowanie całych fragmentów tekstu lub zamiana wielu wystąpień jednego wyrażenia na inne. W takich przypadkach niezwykle pomocne jest narzędzie do wyszukiwania i zamiany tekstu. W tym artykule opowiemy o programowaniu tego typu narzędzia w języku Haskell.
+Często jesteśmy zmuszeni do ręcznego zmieniania dużej ilości tekstu, na przykład gdy musimy wykonać powtarzalną operację na kilku plikach. W takiej sytuacji wykorzystanie funkcji wyszukiwania i zamiany tekstu w języku Haskell jest bardzo wygodnym i efektywnym sposobem na rozwiązanie tego problemu.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Poniżej przedstawiamy przykłady kodu, które wyjaśnią jak dokonywać wyszukiwania i zamiany tekstu w języku Haskell. Kod będzie zapisany w blokach kodu ```Haskell```, aby zachować czytelność.
+Używając funkcji `sub` z biblioteki `Text.Regex.PCRE`, możemy przeprowadzić proste wyszukiwanie i zamianę tekstu w języku Haskell. W poniższym przykładzie zamienimy wszystkie wystąpienia słowa "Witaj" na "Cześć" w tekście:
 
-```
--- Importujemy bibliotekę do pracy z wyrażeniami regularnymi
-import Text.RegularExpressions
+```Haskell
+import Text.Regex.PCRE
 
--- Definujemy funkcję, która dokonuje wyszukiwania i zamiany tekstu
--- Pierwszy argument to wyrażenie regularne, które chcemy znaleźć
--- Drugi argument to tekst, w którym chcemy dokonać zmiany
--- Trzeci argument to wyrażenie, którem chcemy zastąpić znalezione wyrażenie
-replace :: String -> String -> String -> String
-replace regex input replacement =
-  let match = input =~ regex :: Bool
-  in if match then subRegex (mkRegex regex) input replacement else input
+main = do
+  let text = "Witaj, to jest tekst powitalny."
+  let newText = sub regex "Cześć" text
+  putStrLn newText
+  where
+    regex = makeRegex "Witaj" :: Regex
 ```
 
-Kod ten używa biblioteki do pracy z wyrażeniami regularnymi i definiuje funkcję ```replace```, która przyjmuje trzy argumenty: wyrażenie regularne, tekst i wyrażenie, które ma zastąpić znalezione wyrażenie. W linii kodu zaczynającej się od ```in``` wykorzystujemy funkcję ```subRegex```, która wykonuje faktyczną zamianę tekstu na podstawie podanego wyrażenia regularnego oraz wyrażenia zastępczego.
+Wynikiem działania tego programu będzie:
 
 ```
-> replace "Haskell" "Ja lubię programować w Haskell!" "Jestem zafascynowany programowaniem w Haskell!"
-"Ja lubię programować Jestem zafascynowany programowaniem w Haskell!"
+Cześć, to jest tekst powitalny.
 ```
 
-W powyższym przykładzie używamy naszej funkcji, aby znaleźć i zastąpić wszystkie wystąpienia słowa "Haskell" w danym tekście. Widzimy, że dokonuje ona zamiany tylko na pierwszym wystąpieniu, zgodnie z oczekiwaniami.
+Używając funkcji `gsub` zamiast `sub`, możemy zamienić wszystkie wystąpienia danego słowa, a nie tylko pierwsze. 
 
-## Deep Dive
+## Głębszy Wgląd
 
-Praca ze zgłębianiem wyrażeń regularnych może być trudna i wymaga dużo praktyki. Jednak w języku Haskell istnieje wiele bibliotek, takich jak ```Text.RegularExpressions```, które ułatwiają pracę z wyrażeniami regularnymi. Warto zaznajomić się z dokumentacją tych bibliotek i eksperymentować z różnymi wyrażeniami, aby lepiej zrozumieć ich działanie.
+Funkcja `sub` oraz `gsub` działają na podobnej zasadzie jak funkcja `replace` z biblioteki `Data.Text`, jednak korzystają z wyrażeń regularnych. Wykorzystując wyrażenia regularne, możemy dokładniej kontrolować, które fragmenty tekstu mają zostać zamienione, na przykład mogą być to tylko wystąpienia danego słowa, podane litery, liczby czy inne wzorce. Dodatkowo, korzystając z funkcji `makeRegex` możemy zbudować wyrażenie regularne z dowolnego tekstu zawierającego zmienne. 
 
-## Zobacz też
+## Zobacz Również
 
-Jeśli praca z wyrażeniami regularnymi w języku Haskell wciąż wydaje się trudna, warto sięgnąć po inne źródła, takie jak:
-
-- [Dokumentacja biblioteki "Text.RegularExpressions"](https://hackage.haskell.org/package/regex-posix/docs/Text-RegularExpressions-Regex-Posix.html)
-- [Przewodnik po wyrażeniach regularnych w Haskellu](https://wiki.haskell.org/Regular_expressions)
-- [Książka "Real World Haskell" - rozdział o wyrażeniach regularnych](http://book.realworldhaskell.org/read/regular-expressions.html)
-
-Dzięki tym źródłom z pewnością zrozumiesz lepiej jak działa wyszukiwanie i zamiana tekstu w języku Haskell.
+- Dokumentacja funkcji `sub` z biblioteki `Text.Regex.PCRE`: http://hackage.haskell.org/package/regex-pcre/docs/Text-Regex-PCRE.html#v:sub
+- Poradnik wyrażeń regularnych w Haskellu: https://en.wikibooks.org/wiki/Haskell/Understanding_the_regular_expression_package
+- Przykładowe zadania korzystające z funkcji wyszukiwania i zamiany tekstu: https://exercism.io/tracks/haskell/exercises/grade-school

@@ -1,7 +1,9 @@
 ---
-title:                "C++: टेक्स्ट फाइल को पढ़ना"
+title:                "C++: एक टेक्स्ट फाइल पढ़ना"
+simple_title:         "एक टेक्स्ट फाइल पढ़ना"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/cpp/reading-a-text-file.md"
 ---
 
@@ -9,30 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-यदि आप एक बेहतर कंप्यूटर प्रोग्रामर उत्तीर्ण करने चाहते हैं, तो आपको टेक्स्ट फ़ाइलों को पढ़ने की जानकारी होना ज़रूरी है। जब आप टेक्स्ट फ़ाइलों को पढ़ेंगे, आप एक कंप्यूटर प्रोग्राम से दूसरे प्रोग्राम को संपादित कर सकते हैं, जो आपकी प्रोग्रामिंग कौशल को बढ़ाएगा।
+एक टेक्स्ट फ़ाइल पढ़ने का क्या महत्व है? अगर आप अपने कोड में डेटा को ठीक से संरचित करना चाहते हैं या कोड रिपोर्ट को जांचने के लिए अपने प्रोग्राम को डेबग करना चाहते हैं, तो टेक्स्ट फ़ाइल पढ़ना अत्यधिक उपयोगी हो सकता है।
 
 ## कैसे करें
 
 ```C++
 #include <iostream>
 #include <fstream>
-#include <string>
 using namespace std;
 
 int main() {
-    ifstream file;  // फ़ाइल ऑब्जेक्ट बनाएं
-    string line;    // पंक्ति के लिए स्ट्रिंग बनाएं
-    file.open("my_file.txt");   // फ़ाइल खोलें
-    while (getline(file, line)) {   // फाइल से पंक्तियां पढ़ें
-        cout << line << endl;   // पंक्ति प्रिंट करें
+    // Create an input file stream object
+    ifstream inputFile;
+    // Open the text file
+    inputFile.open("sample.txt");
+
+    // Check if file opened successfully
+    if (inputFile.is_open()) {
+        // Read the file line by line
+        string line;
+        while (getline(inputFile, line)) {
+            // Print the line
+            cout << line << endl;
+        }
+        // Close the file
+        inputFile.close();
     }
-    file.close();   // फ़ाइल बंद करें
+    else {
+        // Print an error message if file cannot be opened
+        cerr << "Unable to open file." << endl;
+    }
+
     return 0;
 }
 ```
 
-इस कोड ब्लॉक का उपयोग करके आप टेक्स्ट फ़ाइलों को आसानी से पढ़ सकते हैं। यदि आपको पंक्तियों को अलग-अलग स्ट्रिंग में अलग करने की आवश्यकता हो, तो आप `getline()` के बजाय `>>` ऑपरेटर का उपयोग कर सकते हैं। आप इसके साथ स्ट्रिंग स्थिरीभूत पाठ्यक्रम योजना का उपयोग करके फ़ाइल के साथ काम कर सकते हैं।
+**उत्पाद:**
 
-## गहराई में बनाएं
+```
+This is a line of text.
+This is another line of text.
+```
 
-टेक्स्ट फ़ाइलों को पढ़ने के लिए, `fstream` और `string` को आपके कोड में शामिल करें। `while` लूप के ज़रिए आप फ़ाइल से पंक्तियां पढ़ सकते हैं और उन्हें स्ट्रिंग के रूप में अलग-अलग चोटियों में सहेज सकते हैं। आप भी फ़ाइल से नंबर्स, ब
+## गहराई में जाईए
+
+टेक्स्ट फ़ाइल पढ़ना बहुत सरल हो सकता है, लेकिन यह कुछ महत्वपूर्ण बिंदुओं पर ध्यान देने का समय लेता है। पहले, आपको फ़ाइल ओपन करने के बाद उसे सही ढंग से बंद करना होता है, अन्यथा यह आपके सिस्टम पर उठाए गए मामलों को अनापत्ति कर सकता है। दूसरे, आपको स्ट्रिंग के पाठन के अलावा भी एक सीमित संख्या के शब्दों को पढ़ने की क्षमता को विकसित करने के लिए शामिल होना चाहिए।
+
+## और भी देखें
+
+[प्रोग्रामिंग में C++ का कितना महत्वपूर्ण है?](https://www.educba.com/importance-of-c-plus-plus-programming/)
+
+[अपने C++ कोड को ठीक से तरीके से संरचित कैसे करें](https://www.geeksforgeeks.org/structures-in-cpp/)
+
+[अपने C++ कोड को डेबग कैसे करें? ](https://www.geeksforgeeks.org/debugging-in-cpp/)

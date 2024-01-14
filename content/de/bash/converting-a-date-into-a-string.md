@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Eine Datum in einen String umwandeln"
+title:                "Bash: Umwandlung eines Datums in einen String"
+simple_title:         "Umwandlung eines Datums in einen String"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/bash/converting-a-date-into-a-string.md"
 ---
 
@@ -9,52 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Konvertieren eines Datums in einen String ist eine häufige Aufgabe in der Bash-Programmierung. Es kann hilfreich sein, um Daten in einem benutzerfreundlichen Format auszugeben oder um Werte in einer Datei zu speichern. In diesem Blog-Beitrag werde ich erläutern, wie man ein Datum in einen String umwandelt und warum es in der Bash-Programmierung nützlich sein kann.
+Sie fragen sich vielleicht, warum es wichtig ist, ein Datum in einen String umzuwandeln. Nun, in der Programmierung gibt es oft verschiedene Formate, in denen ein Datum angezeigt werden kann. Durch die Umwandlung in einen String können Sie sicherstellen, dass das Datum in einem einheitlichen Format angezeigt wird, unabhängig davon, wie es in der Datenbank oder im Code gespeichert ist.
 
-## Wie geht's?
+## Wie geht's
 
-Um ein Datum in einen String umzuwandeln, können wir die `date`-Funktion in Bash verwenden. Schauen wir uns ein Beispiel an:
+Die Umwandlung eines Datums in einen String in Bash ist relativ einfach. Folgen Sie einfach den Schritten unten mit den dazugehörigen Code-Beispielen:
 
+1. Definieren Sie das Datum im gewünschten Format
 ```Bash
-# Setzen eines Datums
-date_to_convert='01/01/2020'
-
-# Konvertieren des Datums in den String
-converted_date=$(date -d "$date_to_convert" + "%d.%m.%Y")
-
-# Ausgabe des Strings
-echo "$converted_date"
+date="2021/12/31"
 ```
 
-Im obigen Code wird zunächst das Datum `01/01/2020` in der Variable `date_to_convert` gespeichert. Dann wird die `date`-Funktion mit dem Parameter `-d` verwendet, um das Datum in das gewünschte Format umzuwandeln. In diesem Fall wird das Datum im Format `TT.MM.JJJJ` in der Variablen `converted_date` gespeichert. Schließlich wird der String mit der `echo`-Funktion ausgegeben.
-
-Die Verwendung des Parameters `-d` ist jedoch nicht zwingend erforderlich. Wenn wir das Datum ohne diesen Parameter angeben, wird das aktuelle Datum in das gewünschte Format umgewandelt.
-
+2. Verwenden Sie den `date` Befehl und das gewünschte Datumsformat als Option.
 ```Bash
-# Konvertieren des aktuellen Datums in den String
-converted_date=$(date + "%d.%m.%Y")
-
-# Ausgabe des Strings
-echo "$converted_date"
+str_date=$(date +"%d.%m.%Y" -d "$date")
 ```
 
-In beiden Beispielen sehen wir, dass das Datum in den String `01.01.2020` umgewandelt wurde.
-
-## Tiefentauchen
-
-Wenn wir uns die `date`-Funktion genauer ansehen, können wir verschiedene Optionen für das Format des Strings festlegen. Zum Beispiel können wir das Datum im ISO-Format `JJJJ-MM-TT` umwandeln oder sogar Stunden, Minuten und Sekunden hinzufügen.
-
+3. Geben Sie den Inhalt der Variable `str_date` aus
 ```Bash
-# Konvertieren des Datums im ISO-Format mit Zeitangabe
-converted_date=$(date + "%Y-%m-%d %H:%M:%S")
-
-# Ausgabe des Strings
-echo "$converted_date"
+echo $str_date
+# Output: 31.12.2021
 ```
 
-Die vollständige Dokumentation der `date`-Funktion und ihrer Optionen kann in der Bash-Shell mit `man date` abgerufen werden.
+Durch die Verwendung der `date` Funktion können Sie das Datum in verschiedenen Formaten anzeigen lassen, indem Sie die Formatierungsoption entsprechend anpassen.
+
+## Tiefere Einblicke
+
+In Bash gibt es verschiedene Möglichkeiten, ein Datum in einen String umzuwandeln. Neben dem verwendeten Beispiel können Sie auch den `printf` Befehl verwenden, um das Datum in anderen Formaten auszugeben. Sie können auch mit der `awk` Funktion arbeiten, um das Datum auszulesen und in einen String zu konvertieren.
+
+Es ist auch wichtig zu beachten, dass die Umgebungseinstellungen wie die Zeitzoneneinstellung und das verwendete Format der Ausgabe beeinflussen können. Deshalb ist es wichtig, sicherzustellen, dass diese Einstellungen richtig konfiguriert sind, um unerwartete Ergebnisse zu vermeiden.
 
 ## Siehe auch
 
-- [Date Manipulation in Bash (Englisch)](https://opensource.com/article/18/12/bash-tricks)
-- [Bash Scripting Tutorial (Deutsch)](https://www.shellscript.sh/index.html)
+- [Bash-Referenzhandbuch: Datums- und Zeitfunktionen](https://www.gnu.org/software/bash/manual/html_node/Shell-Functions.html#Shell-Functions)
+- [Bash-Hackers Wiki: Daten- und Uhrzeitfunktionen](https://wiki.bash-hackers.org/commands/builtin/date)
+- [Linuxize: Wie man ein Datum in Bash formatiert](https://linuxize.com/post/how-to-format-date-in-bash/)

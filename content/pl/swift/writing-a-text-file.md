@@ -1,54 +1,38 @@
 ---
 title:                "Swift: Tworzenie pliku tekstowego"
+simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego warto tworzyć pliki tekstowe w języku Swift?
+W dzisiejszych czasach tekstowe pliki są nieodłączną częścią programowania i stanowią ważny element tworzenia oprogramowania. Dlaczego więc warto poznać ich tworzenie i jak to zrobić? Jakie korzyści płyną z umiejętności pisania plików tekstowych? Przeczytaj ten artykuł, aby dowiedzieć się więcej!
 
-Pisanie plików tekstowych jest ważnym aspektem programowania w języku Swift. Pozwala nam zapisywać i odczytywać dane w prosty sposób, co może być bardzo przydatne w różnych aplikacjach. W tym wpisie dowiedz się dlaczego warto korzystać z plików tekstowych oraz jak to zrobić.
+## Dlaczego
+Pisanie plików tekstowych jest nie tylko ważnym aspektem programowania, ale także daje wiele przydatnych możliwości. Pozwala na zapisywanie danych w łatwy do odczytania i zrozumienia formacie, umożliwiając przechowywanie informacji bezpośrednio w plikach na komputerze. Dzięki temu można szybko przetwarzać i analizować duże ilości danych, co jest szczególnie ważne przy tworzeniu zaawansowanych aplikacji. Teraz zapoznamy się z krótkim przykładem kodu, który pokaże, jak w praktyce tworzyć i zapisać plik tekstowy w języku Swift.
 
-## Jak to zrobić?
-
-Pierwszym krokiem jest otworzenie pliku do zapisu lub odczytu za pomocą klasy `FileHandle`. Następnie wykorzystując metodę `write` lub `read`, możemy zapisywać lub odczytywać dane z pliku. Poniżej przedstawione są przykładowe fragmenty kodu z wykorzystaniem biblioteki `Foundation`.
+## Jak To Zrobić
 
 ```Swift
-// otwarcie pliku do zapisu
-let file = FileHandle(forWritingAtPath: "dane.txt")
-
-// zapisywanie danych do pliku
-let data = "To jest przykładowy tekst do zapisania w pliku."
-file?.write(data.data(using: .utf8)!)
-
-// zamknięcie pliku
-file?.close()
-
-// otwarcie pliku do odczytu
-let file2 = FileHandle(forReadingAtPath: "dane.txt")
-
-// odczytywanie danych z pliku
-let fileData = file2?.readDataToEndOfFile()
-
-// konwersja danych na string
-if let dataString = String(data: fileData!, encoding: .utf8) {
-    print(dataString)
-}
-
-// zamknięcie pliku
-file2?.close()
+// Tworzenie nowego pliku tekstowego o nazwie "sampleFile.txt" w bieżącym katalogu
+let fileURL = URL(fileURLWithPath: "sampleFile.txt")
+// Zapisywanie zawartości w postaci String
+let fileContents = "To jest przykład tekstu w naszym pliku"
+// Zapisywanie pliku na dysku
+try fileContents.write(to: fileURL, atomically: true, encoding: .utf8)
 ```
+W powyższym przykładzie korzystamy z klasy `URL` w celu utworzenia ścieżki do pliku, a następnie zapisujemy zawartość w postaci tekstu w zmiennej `fileContents`. Na koniec wykorzystujemy funkcję `write` w celu zapisania pliku na dysku. Zauważ, że musimy również podać kodowanie tekstu - w tym przypadku używamy standardowego kodowania UTF-8.
 
-Powyższy kod pokazuje jak w prosty sposób można otworzyć plik do zapisu oraz odczytać z niego dane. Pamiętaj, że przed zapisaniem danych konieczne jest przekonwertowanie ich na typ `Data`, a przed odczytaniem - na `String`.
+## Deep Dive
+Tworzenie plików tekstowych to jedna z podstawowych czynności, którą powinien umieć każdy programista. Jednak warto poznać również bardziej zaawansowane funkcje związane z tym tematem. Na przykład, można dodać nowe linie do pliku tekstowego, wykorzystując funkcję `append` zamiast `write`. Istnieje też możliwość odczytu już istniejącego pliku - w tym celu wykorzystuje się klasę `Data` lub `String`, aby wczytać zawartość do zmiennej i przetwarzać ją dalej w kodzie.
 
-## Głębszy zanurzenie
+## See Also
+Jeśli chcesz dowiedzieć się więcej o tworzeniu plików tekstowych w języku Swift, polecamy zapoznanie się z poniższymi źródłami:
+- [Dokumentacja Apple na temat tworzenia plików w Swift](https://developer.apple.com/documentation/foundation/filemanager/)
+- [Artykuł na blogu Ray Wenderlich na temat obsługi plików tekstowych w Swift](https://www.raywenderlich.com/365-property-lists-tutorial-for-ios-how-to-save-data-in-apps)
+- [Wideo na YouTube na temat tworzenia i odczytu plików tekstowych w Swift](https://www.youtube.com/watch?v=s1F_mX5d2gg)
 
-Tworzenie plików tekstowych w języku Swift jest możliwe dzięki wykorzystaniu klasy `FileHandle` z biblioteki `Foundation`. Klasa ta umożliwia dostęp do plików na różne sposoby, jak np. odczytanie tylko części danych za pomocą metody `read(upToCount:)` lub przesunięcie kursora za pomocą metody `seek(toFileOffset:)`. Ponadto, klasa `FileHandle` dziedziczy po klasie `InputStream` i `OutputStream`, co pozwala na wygodne korzystanie z funkcjonalności związanych z przesyłaniem danych.
-
-## Zobacz też
-
-- [Dokumentacja Apple o klasie FileHandle](https://developer.apple.com/documentation/foundation/filehandle)
-- [Inne sposoby na manipulowanie plikami tekstowymi w Swift](https://medium.com/swift-programming/swift-programing-working-with-strings-files-d4da5f6fb2c)
-- [Przykładowy projekt wykorzystujący pliki tekstowe w Swift](https://github.com/karolaltamirano/swift-file-manager)
+Dzięki wykorzystaniu powyższych informacji, już teraz możesz bez problemu tworzyć i obsługiwać pliki tekstowe w swoich aplikacjach w języku Swift. Będziesz mógł efektywnie zarządzać danymi, co w dłuższej perspektywie ułatwi Ci pracę i pozwoli osiągnąć lepsze wyniki.

@@ -1,45 +1,56 @@
 ---
-title:                "Kotlin: Convertir una fecha en una cadena"
+title:                "Kotlin: Convirtiendo una fecha en una cadena"
+simple_title:         "Convirtiendo una fecha en una cadena"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/kotlin/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por qué
-En la programación, es común tener que lidiar con fechas y horas en diferentes formatos. Convertir una fecha a una cadena de caracteres es una tarea frecuente que puede ser necesaria para mostrar información en un formato específico o para guardar en una base de datos. En esta publicación, aprenderemos cómo convertir una fecha en una cadena de caracteres en Kotlin.
+## Por qué
 
-# Cómo hacerlo
-Para convertir una fecha en una cadena de caracteres en Kotlin, podemos utilizar la función `format` del objeto `SimpleDateFormat` de la clase `java.text`. A continuación, se muestra un ejemplo paso a paso:
+Convertir una fecha a una cadena de texto puede ser útil en situaciones en las que se necesite mostrar la fecha de una manera más legible para el usuario. Por ejemplo, en una aplicación de reserva de citas, se podría mostrar la fecha de la cita en formato de texto para que sea más fácil de entender.
+
+## Cómo hacerlo
+
+Primero, importemos el paquete de manejo de fechas en Kotlin:
 
 ```Kotlin
-// Importar clase SimpleDateFormat
-import java.text.SimpleDateFormat
-
-// Crear un objeto SimpleDateFormat con el formato deseado
-val dateFormat = SimpleDateFormat("dd/MM/yyyy")
-
-// Obtener fecha actual
-val fechaActual = Date()
-
-// Utilizar la función format para convertir la fecha en una cadena de caracteres
-val fechaString = dateFormat.format(fechaActual)
-
-// Imprimir la cadena resultante
-println(fechaString)
-
-// Salida: 01/07/2021
+import java.time.format.DateTimeFormatter
 ```
 
-# Profundizando más
-La función `format` acepta diferentes patrones para formatear la fecha en la cadena de caracteres resultante. Por ejemplo, si queremos incluir la hora y los minutos, podemos utilizar el patrón "dd/MM/yyyy HH:mm". También podemos utilizar letras específicas para mostrar el día de la semana o el mes en palabras en lugar de números.
+Luego, creamos una instancia del objeto `LocalDateTime` con la fecha que queremos convertir:
 
-Además, en lugar de utilizar `Date()` para obtener la fecha actual, podemos pasar una fecha específica como parámetro a la función `format`. Esto es útil si queremos convertir una fecha de una variable o de una base de datos en una cadena de caracteres con un formato determinado.
+```Kotlin
+val date = LocalDateTime.of(2021, 4, 15, 10, 30, 0)
+```
 
-Otra opción para convertir una fecha en una cadena de caracteres es utilizar la función `toString` de la clase `Date`. Sin embargo, esto devuelve la fecha en un formato estandarizado que puede no ser adecuado para nuestras necesidades específicas.
+Ahora, usamos el método `format()` y pasamos como argumento el formato de fecha deseado:
 
-# Ver también
-- [Documentación oficial de SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
-- [Cómo trabajar con fechas y horas en Kotlin](https://kotlinlang.org/docs/dates.html)
-- [Ejemplos de patrones de formato de fecha y hora](https://www.tutorialspoint.com/java/text_simpledateformat.htm)
+```Kotlin
+val formattedDate = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+println(formattedDate) // output: 15/04/2021
+```
+
+Podemos usar diferentes patrones en el método `DateTimeFormatter` según el formato de fecha que necesitemos. Por ejemplo, si queremos mostrar la fecha con el nombre del mes en lugar de su número, podemos usar el patrón "dd MMMM yyyy" y obtendremos "15 abril 2021".
+
+## Profundizando
+
+La clase `DateTimeFormatter` nos permite crear patrones personalizados para la conversión de fechas. Algunos de los símbolos más comunes que se usan en patrones son:
+
+- `y`: año
+- `M`: mes
+- `d`: día
+- `H`: hora (formato de 24 horas)
+- `h`: hora (formato de 12 horas)
+- `m`: minuto
+- `s`: segundo
+
+Podemos combinar estos símbolos con otros caracteres para obtener el formato deseado. Por ejemplo, si queremos mostrar las horas y minutos con un cero al inicio si son menores a 10, podemos usar el patrón "HH:mm" y obtendremos "10:30" en lugar de "10: 30".
+
+## Ver también
+
+- [Documentación oficial de Kotlin sobre `DateTimeFormatter`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-date-time-formatter/)
+- [Tutoriales de manejo de fechas en Kotlin](https://www.kotlinresources.com/library/kotlin-datetime/)

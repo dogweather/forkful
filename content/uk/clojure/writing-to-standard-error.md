@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Використання стандартної помилки в програмуванні"
+title:                "Clojure: Писання в стандартну помилку"
+simple_title:         "Писання в стандартну помилку"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/clojure/writing-to-standard-error.md"
 ---
 
@@ -9,48 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Написання до стандартного виводу помилок можна було б здійснити за допомогою надійної мови програмування Clojure. Він пропонує багато міцних методів обробки та відстеження помилок, що робить цей процес більш ефективним та менш помітним для користувача.
+Писання до вихідного потоку стандартної помилки є важливим інструментом для відлагодження вашого програмного коду. Він дозволяє виходити зі звичайного стилю тестування програм та забезпечує більш повний завершений опису помилок, що допомагає розуміти, місце та причину виникнення проблем.
 
 ## Як
 
-Приклад 1:
+Для писання до потоку стандартної помилки використовуйте функцію `println!` та напишіть ваше повідомлення у цитатній формі. Наприклад:
 
 ```Clojure
-(println "Повідомлення про помилку." *err*)
+(println! "Сталася помилка обробки даних." )
 ```
 
-Вихід 1:
+Це виведе наступне повідомлення до стандартного потоку помилок:
 
 ```
-Повідомлення про помилку.
+"Сталася помилка обробки даних."
 ```
 
-Приклад 2:
+## Поглиблене дослідження
+
+Іноді ви можете зіткнутися із ситуацією, коли потрібно вивести більш детальне повідомлення про помилку. В такому разі, ви можете використовувати `prinln!` для виводу форматованої інформації. Наприклад:
 
 ```Clojure
-(binding [*out* *err* f] (prn "Ця помилка буде виведена у вказаний файл."))
+(let [x 5
+      y 0]
+  (try
+    (/ x y)
+    (catch Exception e
+      (println! "Помилка обробки даних:" {:x x :y y} e))))
 ```
 
-Вихід 2:
+Це виведе наступну інформацію до стандартного потоку помилок:
 
 ```
-Ця помилка буде виведена у вказаний файл.
-```
-
-## Глибше
-
-Написання до стандартного виводу помилок - це корисний спосіб отримати додаткову інформацію про роботу програми. Ви можете використовувати функцію `err` для доступу до стандартного виводу помилок та спостерігати за виведенням туди повідомлень про помилки. Приклади використання цієї функції характеризуються операційною системою та контекстом, у якому вона була виконана.
-
-### В send-off-exception методу
-
-```Clojure
-(defmethod send-off-exception [Exception]
- (println "Вивести напряму до стандартного виводу помилок: " *err*))
-```
-В даному випадку, метод `send-off-exception` виводить повідомлення жартома про метод `send-off-exception`. До стандартного виводу помилок буде виведено "Вивести напряму до стандартного виводу помилок: #<<".
-
-## Дивіться також
-
-- [Офіційна документація Clojure по виведенню до стандартного виводу помилок](https://clojure.org/reference/exceptions#_standard_error_output)
-- [Навчальне відео про використання стандартного виводу помилок у Clojure](https://www.youtube.com/watch?v=MO-8VHO7H-8)
-- [Популярна стаття про обходження помилок та вивід до стандартного виводу у Clojure](https://blog.cognitect.com/blog/2017/5/12/exceptions)
+"Помилка обробки даних: {:x 5 :y 0} #error {:cause "Divide by zero" :via [{:type java.lang.ArithmeticException :message "Divide by zero" :at [clojure.lang.Numbers divide "Numbers.java" 197]} {:type java.lang.ArithmeticException :message "Divide by zero" :at [clojure.lang.Numbers divide "Numbers.java" 3742]} {:type java.lang.ArithmeticException :message "Divide by zero" :at [user$eval2400 invokeStatic "form-init2347265261595024914.clj" -1]} {:type java.lang.ArithmeticException :message "Divide by zero" :at [user$eval2400 invoke "form-init2347265261595024914.clj" -1]} {:type clojure.lang.Compiler load "Compiler.java" 7561} {:type clojure.lang.Compiler load "Compiler.java" 7514} {:type clojure.lang.Compiler eval "Compiler.java" 7868} {:type clojure.lang.Compiler eval "Compiler.java" 7880} {:type clojure.core$eval invokeStatic "core.clj" 3206} {:type clojure.core$eval invoke "core.clj" 3202} {:type clojure.main$repl$read_eval_print__7408$fn__7409 invoke "main.clj" 251} {:type clojure.main$repl$read_eval_print__7408 invoke "main.clj" 251} {:type clojure.main$repl$fn__7417 invoke "main.clj" 269} {:type clojure.main$repl invokeStatic "main.clj" 269} {:type clojure.main$repl doInvoke "main.clj" 174} {:type clojure.lang.RestFn invoke "RestFn.java" 1523} {:type user$eval2399 invokeStatic "form-init2347265261595024914.clj" -1} {:type user$eval2399 invoke "form-init2347265261595024914.clj" -1} {:type clojure.lang.Compiler eval "Compiler.java" 7865} {:type clojure.lang.Compiler eval "Compiler.java" 7864} {:type clojure.core

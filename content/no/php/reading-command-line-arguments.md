@@ -1,38 +1,52 @@
 ---
-title:                "PHP: Lesing av kommandolinjeargumenter"
+title:                "PHP: Lesing av kommandolinje-argumenter"
+simple_title:         "Lesing av kommandolinje-argumenter"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/php/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Velkommen til vår blogg om PHP-programmering! I dag skal vi snakke om hvordan man kan lese kommandolinje-argumenter i PHP. Dette er en nyttig ferdighet å ha for å kunne lage programmer som kan kjøres fra terminalen. Les videre for å lære mer!
 
-Å kunne lese kommandolinje-argumenter er en svært nyttig ferdighet i PHP-programmering. Det lar deg lage mer dynamiske og interaktive skript, og kan spare tid og krefter ved å eliminere behovet for å stadig endre variabler i koden.
-
-## Hvordan
-
-For å lese kommandolinje-argumenter i PHP, kan du bruke funksjonen `getopt()`. Denne funksjonen tar to argumenter - en streng med argumentalternativer og en array som lagrer de returnerte verdiene.
+## Hvordan gjøre det
+For å lese kommandolinje-argumenter i PHP, kan man bruke funksjonen "argv" i kombinasjon med en løkke. La oss se på et eksempel:
 
 ```PHP
-$options = getopt("a:b:c:");
+<?php
+// Hente ut kommandolinje-argumenter
+$arguments = $_SERVER['argv'];
+
+// Gå gjennom alle argumentene
+foreach ($arguments as $argument) {
+    echo $argument . "\n"; // Skriver ut hvert argument på en ny linje
+}
+?>
 ```
 
-I dette eksempelet er `a`, `b` og `c` argumentalternativer som kan brukes i kommandolinjen. Hvis du for eksempel kjører skriptet ditt ved å legge til `--a=1 --b=2` som argumenter, blir verdiene `1` og `2` lagret i `$options`-arrayen.
+Hvis vi kjører dette skriptet fra terminalen med følgende kommando:
 
-Det er også mulig å angi at et argument må ha en verdi ved å legge til kolon (`:`) etter argumentnavnet. For eksempel `getopt("f:")` vil kreve et argument som `--f=3` og lagre verdien `3` i `$options`-arrayen.
+```
+php command_line_args.php arg1 arg2 arg3
+```
+
+Skal vi få følgende output:
+
+```
+arg1
+arg2
+arg3
+```
+
+Som du kan se, vil alle argumentene vi skriver etter skriptnavnet bli lagret i en array og kan deretter behandles.
 
 ## Dypdykk
-
-Ved å bruke `getopt()` i en løkke, kan du enkelt håndtere flere argumenter samtidig. Husk at hver gang `getopt()` kalles, vil den fjerne første argument i argumentlista. Derfor må du bruke en annen variabel for å lagre dine brukte argumenter for senere bruk.
-
-En annen nyttig funksjon når du jobber med kommandolinje-argumenter er `count()` som lar deg telle antall elementer i en array. Dette kan være nyttig når du vil sjekke om et obligatorisk argument ble sendt inn.
-
-For en fullstendig forståelse av hvordan `getopt()` fungerer og hvordan du kan bruke det i dine PHP-skript, sjekk ut PHPs dokumentasjon.
+Nå som vi har lært hvordan man kan lese kommandolinje-argumenter i PHP, la oss ta en dypere titt på de forskjellige mulighetene vi har til å arbeide med dem. For eksempel kan vi bruke funksjonen "count" for å sjekke antall argumenter som ble sendt inn. Vi kan også bruke if-setninger eller switch-case for å behandle forskjellige typer argumenter. Det finnes mange forskjellige måter å håndtere kommandolinje-argumenter på, så det er viktig å finne ut hva som passer best for ditt prosjekt.
 
 ## Se også
-
-- [PHPs dokumentasjon for `getopt()`](https://www.php.net/manual/en/function.getopt.php)
-- [Tutorial: How to Read Command Line Arguments in PHP](https://www.tutorialrepublic.com/php-tutorial/php-command-line-arguments.php)
-- [How to Use Command line Arguments in PHP](https://www.w3adda.com/php-tutorial/php-command-line-arguments)
+- PHP: $_SERVER - [https://www.php.net/manual/en/reserved.variables.server.php](https://www.php.net/manual/en/reserved.variables.server.php)
+- PHP: argc - [https://www.php.net/manual/en/reserved.variables.server.php#88659](https://www.php.net/manual/en/reserved.variables.server.php#88659)
+- PHP: getopt - [https://www.php.net/manual/en/function.getopt.php](https://www.php.net/manual/en/function.getopt.php)

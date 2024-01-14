@@ -1,42 +1,71 @@
 ---
-title:                "Clojure: Umwandlung eines Strings in Kleinbuchstaben"
+title:                "Clojure: Umwandeln eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum String in Kleinbuchstaben konvertieren?
+## Warum
 
-Das Konvertieren eines Strings in Kleinbuchstaben ist eine häufige Aufgabe in der Programmierung, die viele Vorteile bietet. Durch die Verwendung von Kleinbuchstaben in einem Text können wir zum Beispiel die Lesbarkeit verbessern und Texte leichter vergleichen.
+Das Konvertieren eines Strings in Kleinbuchstaben ist eine häufig benötigte Funktion beim Programmieren. Es ermöglicht uns, Texte einheitlich zu formatieren und erleichtert somit die weitere Verarbeitung.
 
-## Wie man einen String in Kleinbuchstaben konvertiert
+## Wie geht's
 
-Das Konvertieren eines Strings in Kleinbuchstaben in Clojure ist ganz einfach. Verwenden Sie einfach die Funktion `lower-case`, um den Text zu konvertieren.
-
-```Clojure
-(lower-case "HELLO WORLD")
-```
-
-Output: "hello world"
-
-Um sicherzustellen, dass alle Zeichen korrekt konvertiert werden, können wir auch die Funktion `normalize-string` verwenden.
+Um einen String in Kleinbuchstaben umzuwandeln, können wir die `lower-case` Funktion verwenden. Diese Funktion akzeptiert einen einzigen Parameter, den zu konvertierenden String.
 
 ```Clojure
-(normalize-string (lower-case "HALLÖ") :form [:nfd])
+(lower-case "Hallo WELT") ; Output: "hallo welt"
 ```
 
-Output: "hällo" 
+Ein weiterer Weg ist die Verkettung der `str` Funktion mit der `clojure.string/lower-case` Funktion. Dies ermöglicht eine bessere Lesbarkeit und  ist besonders hilfreich, wenn wir zusätzliche Manipulationen am String vornehmen möchten.
+
+```Clojure
+(str (clojure.string/lower-case "HALLo")) ; Output: "hallo"
+```
 
 ## Tiefer Einblick
 
-Bei der Konvertierung von Strings in Clojure ist es wichtig zu wissen, dass die Funktion `lower-case` keine Unterstützung für den Unicode-Lowercasing-Algorithmus bietet. Stattdessen verwendet es das Standardverfahren für die Umwandlung von ASCII-Zeichen, was zu unerwarteten Ergebnissen führen kann, wenn nicht-ASCII-Zeichen vorhanden sind.
+Beim Konvertieren in Kleinbuchstaben kann es zu unerwartetem Verhalten kommen, je nachdem, welche Zeichen im String enthalten sind. Zum Beispiel kann die Großbuchstaben-I mit Akut (Ì) nicht einfach in einen Kleinbuchstaben umgewandelt werden. Stattdessen bleibt es ein unverändertes Zeichen.
 
-Um dieses Problem zu umgehen, können wir die Funktion `normalize-string` verwenden, um zunächst die Zeichen in die normalisierte Form zu bringen und dann den Unicode-Lowercasing-Algorithmus anzuwenden.
+```Clojure
+(lower-case "Ã‰è") ; Output: "Ã©Ã¨"
+```
+
+Um dieses Problem zu lösen, können wir die `Unicode`-Bibliothek verwenden. Sie bietet die `normalization` Funktion, die uns hilft, Sonderzeichen in ASCII-Zeichen umzuwandeln. Dann können wir die `lower-case` Funktion wie gewohnt verwenden.
+
+```Clojure
+(require '[clojure.string :refer [lower-case]]
+         '[clojure.data :as data]
+         '[clojure.java.io :as io]
+         '[clojure.pprint :refer [print-table]])
+
+(defn convert-text [text]
+  (lower-case (apply str (data/normalization :nfd text))))
+
+(defn read-text-from-file [file]
+  (reduce str 
+          (with-open [r (io/reader file)]
+            (line-seq r))))
+
+(def sample-text (read-text-from-file "sample.txt"))
+
+(print-table [["Original Text" "Converted Text"]
+              [sample-text (convert-text sample-text)]])
+```
+
+Und der Output sieht jetzt so aus:
+
+```
+| Original Text | Converted Text |
+|---------------+----------------|
+| liebe GrÃ¼ÃŸe  | liebe grüße   |
+```
 
 ## Siehe auch
 
-- [ClojureString - lower-case](https://clojuredocs.org/clojure.string/lower-case)
-- [Unicode Standard Annex #44 - Case Mappings](https://unicode.org/reports/tr44/)
-- [Unicode Character Database](https://www.unicode.org/ucd/)
+- [Clojure Dokumentation zu lower-case](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/lower-case)
+- [Clojure Unicode Bibliothek](https://clojuredocs.org/clojure.java.io/reader)

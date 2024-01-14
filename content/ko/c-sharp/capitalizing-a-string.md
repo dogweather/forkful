@@ -1,33 +1,46 @@
 ---
-title:                "C#: 문자열 대문자로 변환하기"
+title:                "C#: 문자열 대문자로 바꾸기"
+simple_title:         "문자열 대문자로 바꾸기"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-문자열에 대문자를 사용하는 일에 참여하는 이유는 무엇일까요? 한-영 번역기를 사용하거나 키보드를 변경하는 등의 경우에는 일반적으로 문자열에 대문자를 사용하는 것이 더 효율적일 수 있습니다.
+문자열을 대문자로 변환하는 것에 대해 궁금하신가요? 이 블로그 포스트에서는 C# 코드를 사용하여 문자열을 대문자로 변환하는 방법을 알려드릴게요.
 
-## 방법
+## 어떻게 하나요
 
-아래 코드 블록에는 C# 언어로 작성된 예제와 해당 예제의 출력 결과가 포함되어 있습니다.
+문자열을 대문자로 변환하는 것은 매우 간단합니다. 먼저, `string` 타입의 변수를 만들고 원하는 값을 할당합니다. 그런 다음 `ToUpper()` 메소드를 사용하여 변수 내의 모든 문자를 대문자로 변환합니다.
 
 ```C#
-string input = "hello world";
-string capitalized = input.ToUpper();
-Console.WriteLine(capitalized);
+string myString = "hello world";
+string upperString = myString.ToUpper();
+Console.WriteLine(upperString);
 ```
 
-출력 결과: HELLO WORLD
+위의 코드를 실행하면 `HELLO WORLD`라는 출력 결과를 얻을 수 있습니다.
 
-## 깊이 파고들기
+## 더 들어가보기
 
-문자열을 대문자로 바꾸기 위해 사용된 `ToUpper()` 메서드는 단순히 문자열의 모든 문자를 대문자로 바꾸는 것이 아닙니다. 실제로는 문자의 아스키 코드 값을 기준으로 대소문자를 구분하고 대문자의 아스키 코드 값을 반환합니다. 따라서 영문자 외의 다른 문자는 변경되지 않습니다.
+하지만 문자열을 대문자로 변환하는 것은 더 복잡합니다. 예를 들어, 한국어에서는 조사가 있기 때문에 모든 단어를 대문자로 변환한다면 올바로된 문장을 만들 수 없습니다. 이 경우 `CultureInfo` 클래스의 `TextInfo` 속성을 사용하면 각 언어에 맞게 문자열을 변환할 수 있습니다.
 
-## 참고
+```C#
+string myString = "안녕하세요";
+CultureInfo cultureInfo = new CultureInfo("ko-KR");
+TextInfo textInfo = cultureInfo.TextInfo;
+string upperString = textInfo.ToUpper(myString);
+Console.WriteLine(upperString);
+```
 
-- [C# 문자열의 대문자로 변경하기](https://www.c-sharpcorner.com/blogs/converting-lowercase-character-to-uppercase-using-tostring-method-in-c-sharp1)
-- [스트링 내 문자를 소문자에서 대문자로 변환](https://stackoverflow.com/questions/2443085/convert-string-to-lower-case-capital-first-letter-each-word)
+위의 코드를 실행하면 `안녕하세요`가 아니라 `안녕하세요.`와 같은 출력 결과를 얻을 수 있습니다.
+
+## 같이 보기
+
+- [string.ToUpper 메소드 문서](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netcore-3.1)
+- [CultureInfo 클래스 문서](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1)
+- [TextInfo 속성 문서](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo?view=netcore-3.1)

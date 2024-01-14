@@ -1,48 +1,36 @@
 ---
 title:                "Bash: 获取当前日期"
+simple_title:         "获取当前日期"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/bash/getting-the-current-date.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么使用Bash编程
+## 为什么
 
-Bash是一种功能强大的命令行解释器，它可以帮助用户在Unix和Linux操作系统中进行复杂的任务。获取当前日期可能听起来简单，但实际上它可以作为学习Bash编程的一个很好的起点。通过掌握获取当前日期的方法，您将能够学习和理解更高级的Bash编程概念，从而提高您的技能。
+在Bash编程中，获取当前日期是一项非常常见的任务。它可以帮助你创建基于当前日期的文件名，或者作为一部分作业任务，以发送带有当前日期的邮件。不管你的目的是什么，获取当前日期都是一个很有用的工具。
 
-# 如何获取当前日期
+## 如何做
 
-在Bash中，您可以使用内置的`date`命令来获取当前日期。假设我们想要以`YYYY-MM-DD`的格式显示当前日期，那么可以使用以下命令：
+在Bash中获取当前日期非常容易。你只需要使用内置的date命令，并选择你想要的日期格式。以下是一个简单的例子：
 
+```Bash
+DATE=$(date '+%Y-%m-%d')
+echo $DATE
 ```
-Bash
-date +"%Y-%m-%d"
-```
-这将在控制台中输出当前日期，例如`2021-09-28`。您还可以结合使用其他选项来自定义日期的格式，例如显示小时和分钟：
 
-```
-Bash
-date +"%Y-%m-%d %H:%M"
-```
-这将输出类似于`2021-09-28 15:30`的结果。如果您想要获取当前日期的Unix时间戳，可以使用`%s`选项：
+这个例子将打印出类似于“2021-07-19”的日期格式。你可以根据你的需要选择不同的格式，比如“%A”将会打印出星期几， “%H:%M:%S”将会打印出当前时间。你可以在不同的选项之间使用“-”符号来组合不同的日期格式。
 
-```
-Bash
-date +"%s"
-```
-这将输出自1970年1月1日以来的秒数。
+## 深入了解
 
-# 深入了解获取当前日期
+要更深入地了解如何使用date命令来获取当前日期，你可以查看它的手册页（man page）来获得更多的选项和用法。在Bash编程中，了解如何使用各种工具非常重要，它可以帮助你提高你的编程技能，并帮助你更有效地完成任务。
 
-除了上述方法外，还有其他一些方法可以在Bash中获取当前日期。例如，您可以使用`printf`命令来格式化日期，或者使用`builtin`命令来执行与`date`类似的操作。另外，您还可以使用`calendar`命令来显示日历，或者安装`tmux`工具来在终端中实时显示当前日期。
+另外，你也可以使用其他工具来获取当前日期，比如使用Python中的datetime模块。不同的工具可以提供不同的功能和用法，你可以根据自己的喜好来选择最合适的工具。
 
-无论您使用哪种方法，获取当前日期的基本概念都是一样的。首先，您需要知道日期的格式，然后使用特定的选项来格式化输出。这是学习Bash编程中重要的一步，因为您可以将此概念应用于其他方面。
+## 另请参阅
 
-# 查看更多
-
-- [Bash官方文档](https://www.gnu.org/software/bash/)
-- [Bash编程基础](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Bash编程指南](https://ryanstutorials.net/bash-scripting-tutorial/)
-- [Bash日期和时间格式化指南](https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/)
-- [Bash日期和时间函数](https://www.learnshell.org/en/Bash_Functions#Date_and_Time)
+- [Bash中的date命令手册页](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Python中的datetime模块文档](https://docs.python.org/3/library/datetime.html)

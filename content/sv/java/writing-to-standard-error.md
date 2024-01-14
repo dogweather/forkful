@@ -1,36 +1,40 @@
 ---
 title:                "Java: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-Att skriva till standardfel är ett viktigt verktyg i Java-programmering, eftersom det ger möjlighet att felmeddelanden skrivna till standard output (eller console) att ignoreras eller försvinna bland annan utdata. Genom att skicka felmeddelanden till standardfel, säkerställer vi att de syns och kan åtgärdas av utvecklaren.
+Att skriva till standard error, även kallad stderr, är en viktig del av felsökning och debugging inom Java-programmering. Det ger dig möjlighet att skriva ut felmeddelanden och annan viktig information till error streamen istället för till standard output streamen.
 
 ## Hur man gör det
-För att skriva till standardfel i Java, behöver du använda objektet System.err och metoden println() som skriver ut en sträng till standardfel. Här är ett exempel: 
+För att skriva till stderr i Java kan du använda "System.error" klassen tillsammans med "println" metoden för att skriva ut önskat meddelande. Här är ett exempel på hur det kan se ut i din kod:
 
 ```Java
-System.err.println("Detta är ett exempel på ett felmeddelande"); 
+System.err.println("Ett fel har inträffat.");
 ```
 
-Om vi kör detta kodblock får vi följande utdata i standardfel:
+Detta kommer att skriva ut "Ett fel har inträffat." till error streamen när koden körs. Om du vill skriva ut mer information, som variabler eller stack traces, kan du använda "System.err.format" metoden tillsammans med formatters. Här är ett exempel på hur detta kan se ut:
 
 ```Java
-Detta är ett exempel på ett felmeddelande
+String name = "John Doe";
+int age = 30;
+System.err.format("Namn: %s, Ålder: %d", name, age);
 ```
 
-Det är viktigt att komma ihåg att använda System.err.println() bara när det är nödvändigt, eftersom det kan göra din kod svårare att läsa och förstå.
+Detta kommer att skriva ut "Namn: John Doe, Ålder: 30" till error streamen. Kom ihåg att du kan använda detta för debugging och även för att ge användbara felmeddelanden till användare av din kod.
 
 ## Djupdykning
-När vi skriver till standardfel, skickar vi egentligen utströmmen till felhanteringsmekanismen i Java. Detta gör att felmeddelanden kan åtgärdas på olika sätt beroende på miljön där koden körs. Till exempel, om vi kör koden i en webbapplikation, kan felmeddelandena skickas till en loggfil som utvecklaren kan kolla på senare.
+Den största skillnaden mellan standard output streamen och error streamen är att error streamen inte buffras. Det betyder att allt som skrivs till stderr kommer att skrivas ut direkt. Detta är användbart när du vill vara säker på att felmeddelanden inte missas, men det kan också leda till att felmeddelanden blandas ihop om flera processer skriver till stderr samtidigt.
 
-Det är också värt att notera att standardfel inte bara används för felmeddelanden utan också för att skriva ut information om varningar eller avbrott i koden. Att använda System.err.println() ger utvecklare möjlighet att se dessa meddelanden och felsöka sin kod mer effektivt.
+Det är också viktigt att notera att System.out och System.err delar samma standard output stream, vilket betyder att de inte bör användas för olika ändamål. Om du vill skriva till stderr ska du alltid använda System.err klassen.
 
-## Se också
-- [Java API Dokumentation](https://docs.oracle.com/javase/8/docs/api/)
-- [Java Felsökning: Att använda System.err.println()](https://www.baeldung.com/java-system-out-println-vs-system-err-println)
-- [Javaskolan: System.err.println()](http://javaskolan.se/src/system.err.println.html)
+## Se även
+- [Java Dokumentation: System klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+- [The Java Tutorials: Flöden för input och output](https://docs.oracle.com/javase/tutorial/essential/io/index.html)
+- [Java Code Geeks: System.out vs System.err in Java](https://www.javacodegeeks.com/2015/04/system-out-vs-system-err-in-java.html)

@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Pobieranie aktualnej daty"
+title:                "Elixir: Pobieranie bieżącej daty"
+simple_title:         "Pobieranie bieżącej daty"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/getting-the-current-date.md"
 ---
 
@@ -9,43 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Istnieje wiele sytuacji, w których programiści muszą pobrać aktualną datę w swoim kodzie. Może to być potrzebne do zapisania daty utworzenia pliku, utworzenia nowego wpisu w dzienniku lub wyświetlenia ostatniej aktualizacji na stronie. Wykorzystanie bieżącej daty jest również przydatne podczas tworzenia testów i debugowania.
+Zapewne wielu programistów zastanawia się po co w ogóle potrzebujemy pobierać aktualną datę w naszej aplikacji. Cóż, istnieje wiele powodów, dla których może to być potrzebne. Być może chcemy umożliwić użytkownikom wyświetlanie aktualnej daty lub czasu w naszej aplikacji, a może potrzebujemy uaktualniać ją w celu generowania raportów lub analiz. Bez względu na powód, pobieranie aktualnej daty jest ważną i nieodłączną częścią wielu aplikacji.
 
 ## Jak to zrobić
 
-W Elixirze istnieją dwa podstawowe sposoby na pobranie bieżącej daty. Pierwszym jest użycie wbudowanej funkcji `Date.utc_today/0`, która zwraca bieżącą datę w formacie UTC. Przykładowy kod wyglądałby tak:
+Aby pobrać aktualną datę w języku Elixir, możemy skorzystać z wbudowanej funkcji `Date.utc_today/0`. Powróćmy do naszych podstaw języka i przetestujmy tę funkcję w interpreterze i zobaczmy jak działa:
 
 ```Elixir
-today = Date.utc_today()
-IO.puts("Bieżąca data to: #{today}")
+Date.utc_today()
 ```
 
-To wyświetli aktualną datę w formacie: "YYYY-M-D". Jeśli chcemy wyświetlić datę w innym formacie, możemy użyć funkcji `Date.to_string/2`. Na przykład, jeśli chcemy wyświetlić datę w formacie "D.MonthName.YYYY", możemy zmodyfikować nasz kod w następujący sposób:
+Po uruchomieniu tej komendy, powinniśmy otrzymać aktualną datę w formacie `{year, month, day}`. Na przykład ` {2020, 10, 15}` oznacza 15 października 2020 roku. Możemy także przekazać argument do tej funkcji, aby otrzymać datę w wybranej strefie czasowej. Na przykład jeśli chcemy otrzymać aktualną datę w Warszawie, możemy użyć:
 
 ```Elixir
-formatted_date = Date.to_string(today, "D.~w.YYYY")
-IO.puts("Bieżąca data to: #{formatted_date}")
+Date.utc_today("Europe/Warsaw")
 ```
 
-To wyświetli datę w formacie "D.Miesiąc.Rok", np. "12.Listopad.2021".
+W ten sposób możemy uaktualnić naszą aplikację o bieżącą datę i wykorzystać ją w dowolny sposób.
 
-Drugim sposobem na pobranie bieżącej daty jest użycie modułu `Calendar`. Możemy użyć funkcji `Calendar.local_time/0`, która zwraca aktualny czas w podanej strefie czasowej. Możemy wybrać strefę czasową, dostosowując argumenty funkcji `local_time`. Przykładowy kod wyglądałby tak:
+## Głębsza analiza
+
+Jeśli chcemy pobrać więcej informacji na temat daty, możemy wykorzystać moduł `Calendar` w Elixirze. Udostępnia on wiele funkcji, które umożliwiają nam manipulowanie i przetwarzanie dat. Na przykład, funkcja `Calendar.day_of_week/1` przyjmuje datę jako argument i zwraca jej dzień tygodnia jako liczbę z zakresu 1-7, gdzie 1 oznacza poniedziałek, a 7 niedzielę.
 
 ```Elixir
-now = Calendar.local_time({{"Europe", "Warsaw"}, "Etc/UTC"})
-IO.puts("Aktualny czas w Warszawie to: #{now}")
+Calendar.day_of_week({2020, 10, 15}) #=> 4
 ```
 
-To wyświetli aktualny czas w strefie czasowej "Europe/Warsaw", w formacie "YYYY-M-D h:m:s".
+Możemy także użyć funkcji `Calendar.ISO.week_number/1`, aby wyznaczyć numer tygodnia w roku dla danej daty.
 
-## Głębsze zagłębienie
+```Elixir
+Calendar.ISO.week_number({2020, 10, 15}) #=> {2020, 42}
+```
 
-W języku Elixir nie ma wbudowanego typu danych dla daty i czasu. Zamiast tego, używa się funkcji z modułów `Date` i `Calendar` do manipulowania datami i czasami. Warto pamiętać, że wszystkie operacje na dacie są niezmiennicze - oznacza to, że funkcje te nie zmieniają oryginalnej daty, ale zwracają nowe wartości.
+Dzięki tym funkcjom oraz wielu innym dostępnym w module `Calendar`, możemy w pełni wykorzystać możliwości Elixira w manipulowaniu datami.
 
-Można również używać formatów daty i czasu, takich jak ISO 8601, dzięki modułowi `DateTime`. Ten moduł oferuje funkcje do konwertowania daty i czasu na stringi, parsowania stringów na daty i czas i wiele innych. Warto zapoznać się z dokumentacją tego modułu, aby dowiedzieć się więcej.
+## Zobacz także
 
-## Zobacz również
+Jeśli chcesz dowiedzieć się więcej o tym, jak wykorzystać daty w języku Elixir, warto zapoznać się z następującymi artykułami:
 
-- [Dokumentacja modułu Date w Elixirze](https://hexdocs.pm/elixir/Date.html)
-- [Dokumentacja modułu Calendar w Elixirze](https://hexdocs.pm/elixir/Calendar.html)
-- [Dokumentacja modułu DateTime w Elixirze](https://hexdocs.pm/elixir/DateTime.html)
+- [Dokumentacja Elixir: Calendar](https://hexdocs.pm/elixir/Calendar.html)
+- [Pobieranie daty w różnych strefach czasowych w Elixir](https://cultivatehq.com/posts/working-with-timezones-and-dates-in-elixir/)
+- [Moduł `Date` w Elixirze](https://elixir-lang.org/getting-started/basic-types.html#dates-and-times)
+
+Mam nadzieję, że ten wpis był pomocny w zrozumieniu jak pobierać aktualną datę w języku Elixir. Dziękuję za przeczytanie!

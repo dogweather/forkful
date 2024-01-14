@@ -1,57 +1,32 @@
 ---
-title:                "Fish Shell: Tekstin hakeminen ja vaihtaminen"
+title:                "Fish Shell: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Tekstin etsiminen ja korvaaminen on tärkeä osa ohjelmoinnin ja tiedonkäsittelyn prosessia. Se auttaa meitä nopeasti muuttamaan suuria määriä tekstiä halutun muodon tai sisällön mukaiseksi. Fish Shellissa on joitakin tehokkaita työkaluja tähän tarkoitukseen, ja tässä artikkelissa tarkastelemme niitä syvällisemmin.
+Tekstin etsiminen ja korvaaminen on tärkeä osa ohjelmoinnin prosessia useimmilla kielillä, mukaan lukien Fish Shell. Se auttaa tehokkaasti muokkaamaan ja päivittämään suuria määriä tekstiä ilman manuaalista työskentelyä. Lue eteenpäin oppiaksesi, miten se tehdään Fish Shellillä.
 
-# Miten
-
-Fish Shell tarjoaa muutamia erilaisia vaihtoehtoja tekstin etsimiseen ja korvaamiseen. Yksi tapa on käyttää `sed` -komennon muunnelmia, kuten `gsed` tai `sed -i`, jotka tunnistetaan automaattisesti Fish Shellin kautta.
+## Miten
 
 ```Fish Shell
-# Etsi ja korvaa "hello" tekstillä "hei"
-gsed -i 's/hello/hei/g' tiedosto.txt
-
-# Etsi ja korvaa useita sanoja
-gsed -i 's/word1/word2/g ; s/word3/word4/g' tiedosto.txt
+sed -i 's/vanha/uusi/g' tiedosto.txt
 ```
 
-Toinen vaihtoehto on käyttää Fish Shellin sisäänrakennettua `string replace` -toimintoa.
+Tässä esimerkissä käytämme komentoa `sed` korvaamaan kaikki "vanha" sanat "uusi" sanalla tiedosto.txt-tiedostossa. Toiminnon `-i` avulla muutokset tallennetaan suoraan tiedostoon. Voit myös tehdä vaikutuksia useisiin tiedostoihin kerralla käyttämällä haku- ja korvausoperaattoreita. Lisätietoja voit lukea Fish Shellin manuaalista käyttämällä komentoa` man sed`. Voit myös käyttää muita komentoja, kuten `awk` ja `find`, tekstin etsimiseksi ja korvaamiseksi.
 
-```Fish Shell
-# Etsi ja korvaa "hello" tekstillä "hei"
-string replace hello hei tiedosto.txt
+## Deep Dive
 
-# Etsi ja korvaa useita sanoja
-string replace word1 word2 word3 word4 tiedosto.txt
-```
+Voit etsiä ja korvata vain tiettyjä merkkijonoja käyttämällä säännöllisiä lausekkeita (regular expressions). Voit käyttää `sed`-komentoa tai Fish Shellin `string replace` -toimintoa. Voit myös käyttää muuttujia ja ehtolausekkeita, jotta voit etsiä ja korvata eri merkkijonoja eri tilanteissa.
 
-## Syvällisempi sukellus
+## Katso myös
 
-Fish Shellin `string replace` -toiminto tarjoaa monia hyödyllisiä vaihtoehtoja. Voit esimerkiksi käyttää säännöllisiä lausekkeita, jotta voit määrittää tarkasti, mitä tekstin osia etsiä ja korvata.
-
-```Fish Shell
-# Etsi ja korvaa kaikki numerot väliltä 0-9
-string replace '[0-9]' 'number' tiedosto.txt
-```
-
-Voit myös käyttää `|` -merkkiä, jotta voit suorittaa useita korvauksia samalla kertaa.
-
-```Fish Shell
-# Etsi ja korvaa "hello" tekstillä "hei" tai "hi"
-string replace hello hei | hi tiedosto.txt
-```
-
-Näiden työkalujen lisäksi Fish Shell tarjoaa myös `replace` -toiminnon, joka toimii samalla tavoin kuin `string replace`, mutta se korvaa vain ensimmäisen esiintymän.
-
-# Katso myös
-
-- [Fish Shellin dokumentaatio tekstikorvauksista](https://fishshell.com/docs/current/cmds/string.html#replace)
-- [Fish Shellin käyttöohjeet säännöllisistä lausekkeista](https://fishshell.com/docs/current/tutorial.html#tutorialregular-expressions)
+- [Fish Shell Manuaali](https://fishshell.com/docs/current/#overview)
+- [sed-komento](https://www.gnu.org/software/sed/manual/sed.html)
+- [string replace - Fish Shellin ohjeet](https://fishshell.com/docs/current/commands.html#string-replace)

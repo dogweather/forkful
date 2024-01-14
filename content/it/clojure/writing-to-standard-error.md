@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Scrivere su standard error"
+simple_title:         "Scrivere su standard error"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/writing-to-standard-error.md"
 ---
 
@@ -9,30 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scrivere alla standard error è un'attività fondamentale per la risoluzione dei bug e il debugging nel processo di sviluppo di un programma in Clojure. È uno strumento utile per individuare rapidamente possibile errori nel codice e determinare dove si trovano.
+Scrivere a standard error (stderr) è un'importante abilità nella programmazione di Clojure. Consente di mostrare messaggi di errore e informazioni di debug durante l'esecuzione del codice. 
 
-## Come Fare
+## Come fare
 
-Per scrivere alla standard error in Clojure, è necessario utilizzare la funzione `println` all'interno di un blocco `try/catch`. Ad esempio, se vogliamo scrivere il messaggio "Questo è un errore" alla standard error, possiamo utilizzare il seguente codice:
+Per scrivere a stderr in Clojure, è necessario utilizzare la funzione `println` con il parametro `System/err` come argomento. Ad esempio:
 
-```Clojure 
-(try
-  (throw (Exception. "Questo è un errore"))
-  (catch Exception e 
-    (println System/err (.getMessage e))))
+```Clojure
+(println "Questo è un messaggio di errore" System/err)
 ```
 
-L'output sarà:
-
-```bash
-Questo è un errore
-```
+L'output verrà stampato nel terminale, invece che sulla standard output (stdout).
 
 ## Approfondimento
 
-La standard error è un flusso di output separato dalla standard output, utilizzato per stampare i messaggi di errore. Nel processo di sviluppo di un programma, è importante utilizzare la standard error per separare i messaggi di errore dai messaggi di output regolari. Inoltre, utilizzando la standard error possiamo inviare i messaggi di errore ad altri servizi o log per un'ulteriore analisi.
+In Clojure, stderr è gestito dal sistema di Java. Questo significa che è possibile utilizzare anche altre funzioni Java per scrivere a stderr, ad esempio `eprint` e `eprintln` dalla classe `java.lang.System`. Inoltre, è possibile utilizzare la global var `*err*` per accedere all'oggetto PrintWriter per scrivere a stderr.
 
-## Vedi Anche
-- [Documentazione ufficiale di Clojure](https://clojure.org/)
-- [Tutorial di Clojure per principianti](https://clojure.org/guides/getting_started)
-- [Tutorial di debugging in Clojure](https://clojure.org/guides/development_debugging)
+## Vedi anche
+
+- [Documentazione ufficiale di Clojure sulle funzioni System](https://clojure.org/reference/java_interop#_stdio)
+- [Guida su come gestire gli errori in Clojure](https://www.clojure.org/guides/learn/exceptions)
+- [Articolo sull'utilizzo delle funzioni Java in Clojure](https://medium.com/@jimfawcett/using-java-in-clojure-1455cd706111)

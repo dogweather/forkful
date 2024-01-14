@@ -1,41 +1,45 @@
 ---
-title:                "Haskell: Alaotsikoiden erottaminen"
+title:                "Haskell: Alaryhmien erottelu"
+simple_title:         "Alaryhmien erottelu"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/haskell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi: Miksi käyttää substringin erottelua?
 
-Miksi haluatte etsiä alimerkkijonoja Haskellissa? On monia tilanteita, joissa on tarpeen hakea tietoa merkkijonoista, kuten analysoitaessa käyttäjän syöttämiä tietoja tai prosessoidessa tekstipohjaisia tiedostoja.
+Substringien erottaminen on hyödyllistä kun halutaan hakea tietoa tietyistä osioista merkkijonosta tai verrata eri merkkijonoja osittain. Tämä voi olla hyödyllistä esimerkiksi tekstitiedostojen käsittelyssä.
 
-## Näin teet sen
+## How To: Miten käyttää substringin erottelua
 
-Etsitään ensin yksittäinen alimerkkijono merkkijonosta käyttäen `take` ja `drop` -funktioita.
-
-```Haskell
-let merkkijono = "Hei maailma!"
-let alimerkkijono = take 3 merkkijono  -- alimerkkijono = "Hei"
-let uusiMerkkijono = drop 5 merkkijono -- uusiMerkkijono = "maailma!"
-```
-
-Voit myös hakea useita alimerkkijonoja samalla kertaa käyttäen `substring` -funktiota.
+Substringin erottelu on helppoa Haskell-kielen avulla. Käytämme siihen `take` ja `drop` funktioita, jotka ottavat parametreikseen halutun merkkijonon sekä aloitus- ja lopetusindeksit.
 
 ```Haskell
-let merkkijono = "Tämä on esimerkki."
-let alimerkkijonot = substring 5 10 merkkijono -- alimerkkijonot = "on esim"
+take 4 "Tervetuloa!" -- palauttaa "Terv"
+drop 9 "Tervetuloa!" -- palauttaa "a!"
 ```
 
-## Syvemmälle
+Molemmat funktiot palauttavat uuden merkkijonon, joka koostuu alkuperäisestä merkkijonosta määritetyiltä indekseiltä. Voit myös yhdistää nämä funktiot ja saada tarkemman substringin haluamiltasi kohdilta.
 
-Haskellissa alimerkkijonojen hakeminen perustuu `take` ja `drop` -funktioihin, jotka ottavat parametreinaan merkkijonon ja määritellyn alueen. `substring` -funktio puolestaan yhdistää nämä kaksi funktiota ja mahdollistaa useiden alimerkkijonojen hakuun.
+```Haskell
+take 4 (drop 9 "Tervetuloa!") -- palauttaa "!a"
+```
 
-On myös muita tapoja hakea alimerkkijonoja, kuten käyttämällä säännöllisiä lausekkeita `regex` kirjaston avulla.
+## Deep Dive: Syvempää tietoa substringin erottelusta
 
-## Katso myös
+Substringien erottelu voi olla myös hyödyllistä kun halutaan käsitellä merkkijonoja listoina. Voimme esimerkiksi muuttaa merkkijonon listaksi käyttämällä `words` funktiota, joka erottaa sanat välilyöntien kohdalta.
 
-- [Haskellin `String` dokumentaatio](https://www.haskell.org/onlinereport/standard-prelude.html#t:String)
-- [Haskellin `substring` dokumentaatio](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:substring)
-- [Regex kirjasto Haskellille](https://hackage.haskell.org/package/regex)
+```Haskell
+words "Oletko nähnyt supersankareita?" -- palauttaa ["Oletko", "nähnyt", "supersankareita?"]
+```
+
+Tämän jälkeen voimme käsitellä sanoja listana ja esimerkiksi etsiä tiettyjä sanoja tai tarkastella sanojen pituuksia. Voimme myös yhdistää `take` ja `drop` funktiot listan kanssa ja käsitellä haluamaamme osaa merkkijonosta.
+
+## Katso myös:
+
+- [Haskell substringin erottelu](https://www.w3schools.com/haskell/show_code.asp?filename=demo_substr)
+- [Haskell stringien käsittely](https://wiki.haskell.org/Strings) 
+- [Substringien erottelun käyttö esimerkiksi tekstitiedostoissa](https://www.sis.uta.fi/~hxiao/SV/SV2011/lecture/IO.case2.substrings.pdf)

@@ -1,7 +1,9 @@
 ---
 title:                "C#: Verwendung von regulären Ausdrücken"
+simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c-sharp/using-regular-expressions.md"
 ---
 
@@ -9,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Reguläre Ausdrücke sind eine unglaublich nützliche Technik in der Programmierung. Sie ermöglichen es uns, komplexe Muster in Texten zu erkennen und zu verarbeiten. Dies kann uns bei der Validierung von Benutzereingaben, der Suche in Dateien oder sogar bei der Extraktion von Daten aus unstrukturierten Texten helfen.
+Die Verwendung von regulären Ausdrücken (auch bekannt als "Regex") ist ein leistungsstarkes Werkzeug, das Programmierern hilft, bestimmte Muster in Text zu identifizieren und zu manipulieren. Dies kann besonders nützlich sein, wenn Sie große Mengen von Daten durchsuchen oder bestimmte Daten validieren müssen.
 
-## Wie man sie verwendet
+## Wie man es macht
 
-Die Verwendung regulärer Ausdrücke in C# ist relativ einfach. Zunächst müssen wir jedoch die `System.Text.RegularExpressions`-Namespace importieren, um Zugriff auf die entsprechenden Klassen zu haben. Dann können wir die statische `Regex`-Klasse verwenden, um eine Instanz unseres regulären Ausdrucks zu erstellen.
+Um reguläre Ausdrücke in C# zu verwenden, müssen Sie zuerst die ```System.Text.RegularExpressions```-Namespace importieren. Dann können Sie die statischen Methoden der ```Regex```-Klasse verwenden, um ein Regex-Objekt zu erstellen und es auf Text anzuwenden. Schauen wir uns ein Beispiel an: 
 
 ```C#
+using System;
 using System.Text.RegularExpressions;
 
-// Erstellt eine Instanz eines regulären Ausdrucks, der nach dem Wort "Hallo" sucht
-Regex regex = new Regex("Hallo");
+string text = "Hallo, mein Name ist Max und ich bin 25 Jahre alt.";
+string regex = "mein Name ist ([A-Z][a-z]+)";
+
+Match match = Regex.Match(text, regex);
+
+if (match.Success)
+{
+    Console.WriteLine("Der erkannte Name ist: " + match.Groups[1].Value);
+}
 ```
 
-Nachdem wir eine Instanz erstellt haben, können wir diese nun verwenden, um nach übereinstimmenden Mustern in einem Text zu suchen. Zum Beispiel:
+In diesem Beispiel erstellen wir ein Regex-Objekt, das nach einem Namen sucht, der wie ein Vor- und Nachname aufgebaut ist. Dann überprüfen wir, ob es eine Übereinstimmung zwischen dem Text und dem Muster gibt, und geben den erkannten Namen aus.
 
-```C#
-// Sucht nach dem Wort "Hallo" in einem Text
-string text = "Hallo Welt!";
-Match match = regex.Match(text);
+Die Ausgabe dieses Codes wäre: "Der erkannte Name ist: Max".
 
-// Gibt "Hallo" als übereinstimmendes Ergebnis zurück
-Console.WriteLine(match.Value);
-```
+## Tiefer Einblick
 
-Dies ist jedoch nur eine einfache Anwendung von regulären Ausdrücken. Wir können auch Metazeichen verwenden, um mehrere Möglichkeiten in einem Muster abzudecken, oder auch Quantoren, um auf wiederholte Vorkommen eines Musters zu prüfen. Die offizielle Dokumentation von Microsoft bietet weitere Beispiele und Erklärungen für die Verwendung von regulären Ausdrücken in C#.
+Die Verwendung von regulären Ausdrücken erfordert ein gutes Verständnis von Mustererkennung und speziellen Zeichen. Es gibt viele verschiedene Zeichen, die verwendet werden können, um Muster zu definieren, und es ist wichtig, diese sorgfältig zu kennen, um die gewünschten Ergebnisse zu erzielen.
 
-## Tiefergehende Einblicke
+Eine Sache, die bei der Verwendung von Regex oft übersehen wird, ist die Möglichkeit, Gruppen zu definieren. Sie können runde Klammern um einen Teil des Musters platzieren, um diesen Teil als separate Gruppe zu identifizieren. Dies ist besonders nützlich, wenn Sie nur an einem bestimmten Teil des Musters interessiert sind und ihn später in Ihrem Code abrufen möchten.
 
-Reguläre Ausdrücke können sehr leistungsfähig sein, aber sie können auch sehr komplex werden. Es gibt mehrere Operatoren und Optionen, die wir nutzen können, um unsere Muster anzupassen und bestimmte Ergebnisse zu erzielen. Um ein Meister der regulären Ausdrücke zu werden, ist es wichtig, diese Konzepte zu verstehen und zu üben. 
-Eine interessante Methode hierfür ist die Verwendung von Online-Tools wie RegEx101 oder RegExr, um unsere Ausdrücke zu testen und zu verfeinern.
+Eine weitere nützliche Funktion von regulären Ausdrücken ist die Möglichkeit, die Ausdrücke bei Bedarf zu modifizieren. Sie können beispielsweise einen Regex mit der Option "IgnoreCase" erstellen, um die Groß- und Kleinschreibung zu ignorieren, oder "Multiline", um mehrzeilige Texte zu verarbeiten.
 
 ## Siehe auch
-
-- [Microsoft: Verwenden von regulären Ausdrücken in .NET](https://docs.microsoft.com/de-de/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [RegEx101: Online-Tool zum Testen von regulären Ausdrücken](https://regex101.com/)
-- [RegExr: Interaktives Online-Tool zum Erstellen und Testen von regulären Ausdrücken](https://regexr.com/)
+- [Microsoft Docs: Reguläre Ausdrücke in C#](https://docs.microsoft.com/de-de/dotnet/standard/base-types/regular-expressions-in-csharp)
+- [C# Programmierhandbuch: Reguläre Ausdrücke](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/concepts/regular-expressions)
+- [Regex Tester & Debugger](https://regex101.com/)

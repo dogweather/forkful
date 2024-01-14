@@ -1,40 +1,42 @@
 ---
-title:                "Rust: Umwandeln eines Strings in Kleinbuchstaben"
+title:                "Rust: Umwandlung eines Strings in Kleinbuchstaben"
+simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/rust/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-"## Warum"
+## Warum
+Wenn du dich für das Lernen von Rust entschieden hast, wirst du festgestellt haben, dass es eine mächtige und wachsende Sprache mit einer starken Typisierung ist. Eines der häufigen Aufgaben beim Programmieren ist das Konvertieren von Strings in Kleinbuchstaben. Aber warum sollte man das überhaupt tun? Im Folgenden werden wir uns genauer mit diesem Thema befassen.
 
-Rust ist eine Programmiersprache, die für die Entwicklung von sicheren und performanten Anwendungen bekannt ist. Eine der grundlegenden Aufgaben in der Programmierung ist die Bearbeitung von Texten, und dies gilt auch für Rust. In diesem Blog-Beitrag geht es darum, wie man eine Zeichenfolge in Kleinbuchstaben umwandelt.
-
-## Wie geht man vor?
-
-Die Rust Standardbibliothek bietet eine Methode, um eine Zeichenfolge in Kleinbuchstaben umzuwandeln: die Methode `to_lowercase()`. Hier ist ein Beispielcode, wie man diese Methode verwendet:
+## So geht's
+Um einen String in Rust in Kleinbuchstaben zu konvertieren, gibt es einen einfachen Weg mit der Funktion `to_lowercase()`. Hier ist ein Beispielcode, der einen String in Kleinbuchstaben umwandelt:
 
 ```Rust
-let s = String::from("HELLO RUST PROGRAMMERS");
-
-let lower_case = s.to_lowercase();
-
-println!("{}", lower_case); // output: hello rust programmers
+let string = "Hallo, Rust!";
+let string_lower = string.to_lowercase();
+println!("{}", string_lower);
 ```
+Die Ausgabe dieses Codes wird `hallo, rust!` sein.
 
-Die Methode `to_lowercase()` gibt eine neue Zeichenfolge zurück, die alle Buchstaben in Kleinbuchstaben enthält. Um diese Methode verwenden zu können, muss die Zeichenfolge den Typ `String` haben, da die Methode darauf definiert ist.
+Es ist auch möglich, Strings in Unicode zu konvertieren, indem man die Funktion `to_lowercase()` auf den Typ `Chars` anwendet. Hier ist ein Beispielcode:
 
-Bei der Benutzung von `to_lowercase()` muss man beachten, dass die Methode keine Unicode-Normalisierung durchführt. Dies bedeutet, dass Zeichen wie "ß" oder "ä" nicht in ihre entsprechenden Einzelzeichen umgewandelt werden.
+```Rust
+let string = "RUST 💻";
+let mut char_iter = string.chars().peekable();
+while let Some(char) = char_iter.next() {
+    print!("{}", char.to_lowercase());
+}
+```
+Die Ausgabe dieses Codes wird `rust 💻` sein.
 
 ## Tiefergehende Einblicke
-
-Beim Konvertieren einer Zeichenfolge in Kleinbuchstaben sollten Entwickler auch die Leistung im Auge behalten. Um die Bearbeitungsgeschwindigkeit zu verbessern, sollte man es vermeiden, die Zeichenfolge mehrmals durchlaufen zu lassen. Stattdessen kann man die Methode `to_lowercase()` in einer Kette von Methodenaufrufen verwenden, um die Zeichenfolge in Kleinbuchstaben umzuwandeln und gleichzeitig andere Bearbeitungen durchzuführen.
-
-Zusätzlich gibt es auch die Methode `make_ascii_lowercase()`, die eine Zeichenfolge in ASCII-Zeichen in Kleinbuchstaben umwandelt. Diese Methode kann nützlich sein, wenn man sicherstellen möchte, dass eine Zeichenfolge nur aus ASCII-Zeichen besteht.
+Jetzt wo wir wissen, wie wir Strings in Kleinbuchstaben konvertieren, können wir einen tieferen Einblick in die Technik dahinter werfen. Die `to_lowercase()`-Funktion verwendet die Unicode-Standardisierung, um die Umwandlung korrekt durchzuführen. Es gibt jedoch mehrere Regeln und Ausnahmen bei der Umwandlung in Kleinbuchstaben, je nach Sprache und Alphabet. In Rust gibt es auch die Möglichkeit, spezifische Locale und Unicode-Methoden zu verwenden, um eine genauere Konvertierung durchzuführen.
 
 ## Siehe auch
-
-- Rust Standardbibliothek Dokumentation: https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase
-- Mehr über Rust Programmierung: https://www.rust-lang.org/learn
-- Unicode-Normalisierung: https://unicode.org/reports/tr15/
+- [Rust Dokumentation - Strings](https://doc.rust-lang.org/std/string/index.html)
+- [Unicode-Standardisierung](https://unicode.org/standard/standard.html) 
+- [Rust The Book - "Common Collections"](https://doc.rust-lang.org/book/ch08-03-hash-maps.html)

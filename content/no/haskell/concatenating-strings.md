@@ -1,7 +1,9 @@
 ---
 title:                "Haskell: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/haskell/concatenating-strings.md"
 ---
 
@@ -9,46 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Som programmerere har vi ofte behov for å kombinere tekststrenger for å skape nyttige utskrifter og meldinger. Dette prosessen, kjent som å "konkatenere" strenger, er en viktig del av å bygge funksjonelle programmer. I Haskell, er dette en enkel oppgave takket være funksjoner som `++` og `concat`.
+Å koble sammen strenger, også kjent som "concatenation", er en vanlig oppgave i programmering. Dette er spesielt nyttig når vi ønsker å slå sammen tekststrenger for å lage en lengre uttrykk. I Haskell, er dette enkelt å gjøre og kan hjelpe til å gjøre koden mer lesbar.
 
 ## Hvordan
 
-Før vi dykker inn i dybden av å konkatenere strenger i Haskell, la oss først se på et enkelt eksempel for å forstå konseptet:
+I Haskell, bruker vi operatoren "++" for å koble sammen to strenger. La oss si at vi ønsker å kombinere to navn, "Per" og "Olsen", for å danne navnet "Per Olsen". Dette kan gjøres ved å skrive følgende kode:
 
 ```Haskell
-concat "Hei" "verden"
+navn1 = "Per"
+navn2 = "Olsen"
+navn = navn1 ++ " " ++ navn2
+
+print navn
 ```
 
-Dette vil resultere i utskriften `Hei verden`. Her er begge strengene kombinert ved hjelp av funksjonen `concat`, som tar to strenger som input og returnerer en kombinert streng som output. 
+Output:
 
-For å konkatenerere mer enn to strenger, kan vi bruke `++` funksjonen som tar to lister av tegn som input og kombinerer dem til én. For eksempel:
+```
+Per Olsen
+```
+
+Vi kan også kombinere flere strenger på en gang. La oss si at vi ønsker å danne navnet "Mary Anne Johnson". Dette kan gjøres ved å skrive:
 
 ```Haskell
-"Hallo" ++ " " ++ "Norge"
+navn1 = "Mary"
+navn2 = "Anne"
+etternavn = "Johnson"
+navn = navn1 ++ " " ++ navn2 ++ " " ++ etternavn
+
+print navn
 ```
 
-Dette vil skrive ut `Hallo Norge`, da `++` kombinerer hver streng med et mellomrom imellom. Du kan også bruke `++` til å konkatenere en streng med en liste av tegn, som vist i dette eksempelet:
+Output:
+
+```
+Mary Anne Johnson
+```
+
+Det er viktig å merke seg at operatoren "++" også kan brukes på andre typer data, ikke bare strenger. Vi kan for eksempel kombinere to lister:
 
 ```Haskell
-"Hallo" ++ [' ', 'V', 'e', 'r', 'd', 'e', 'n']
+liste1 = [1,2,3]
+liste2 = [4,5,6]
+liste = liste1 ++ liste2
+
+print liste
 ```
 
-Dette vil gi samme resultat som forrige eksempel, altså `Hallo Verden`.
+Output:
 
-## Dykk dypere
-
-Når vi bruker funksjonene `++` og `concat`, må vi være oppmerksomme på at de operer på lister av tegn og ikke bare på strenger. Dette betyr at for å konkatenere strenger, må vi konvertere dem til lister først. Dette kan gjøres ved hjelp av funksjonen `words`, som tar en streng som input og returnerer en liste av ord. For eksempel:
-
-```Haskell
-concat (words "Hei, verden!")
+```
+[1,2,3,4,5,6]
 ```
 
-Dette vil skrive ut `Hei, verden!` siden `words` konverterer strengen til en liste av ord, og deretter konkatenere dem til én streng ved hjelp av `concat`.
+## Dypdykk
 
-En annen viktig ting å være klar over er at begge funksjonene `++` og `concat` kun kan konkatenere lister av tegn og ikke andre datatyper som tall eller boolske verdier. For å konkatenere disse datatypene, må vi først konvertere dem til en streng og deretter bruke funksjonene som beskrevet over.
+I Haskell, er funksjonen "++" faktisk en del av "Monoid" klassen. Dette betyr at det finnes visse egenskaper og regler som gjelder for denne funksjonen. For eksempel, er "++" assosiativ, det betyr at rekkefølgen av koble sammen strenger ikke spiller noen rolle. Dette betyr at "a ++ (b ++ c)" er det samme som "(a ++ b) ++ c".
+
+En annen egenskap er at det finnes en "nøytral" verdi, som ikke endrer resultatet når den brukes med "++". I tilfelle av strenger, er den nøytrale verdien en tom streng, "". Dette betyr at "" ++ "Hei" er det samme som "Hei". Dette kan være nyttig å vite når man jobber med mer komplekse kodesnutter.
 
 ## Se også
 
-- [Offisiell Haskell dokumentasjon](https://www.haskell.org/documentation/)
-- [Haskell tutorials på norsk](http://haskell.no/tutorials/)
-- [Konkatenere strenger i Haskell - Stack Overflow spørsmål](https://stackoverflow.com/questions/20496811/konkatenere-strenger-i-haskell)
+* [Haskell Documentation](https://www.haskell.org/documentation/)
+* [Learn You a Haskell](http://learnyouahaskell.com/chapters)
+* [Real World Haskell](http://book.realworldhaskell.org/read)

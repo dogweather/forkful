@@ -1,7 +1,9 @@
 ---
-title:                "PHP: Kuvioon sopivien merkkien poistaminen"
+title:                "PHP: Kuvion mukaisten merkkien poistaminen"
+simple_title:         "Kuvion mukaisten merkkien poistaminen"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/php/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,42 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi haluaisit poistaa merkkejä, jotka vastaavat tiettyä kaavaa? Tämä on hyvä tapa puhdistaa syötteitä tai tekstidataa, joka saattaa sisältää tarpeettomia merkkejä.
+Monissa tilanteissa on hyödyllistä pystyä poistamaan merkkejä, jotka vastaavat tiettyä kuvioa ohjelmoinnin aikana. Tämä voi säästää aikaa ja vaivaa manuaaliselta työltä, ja olla tärkeää tiettyjen algoritmien tai datan käsittelyn kannalta.
 
-## Miten tehdä
+## Kuinka tehdä
+
+Tehtävän suorittamiseksi PHP:ssä voit käyttää `preg_replace()`-funktiota. Se ottaa parametrina kaksi merkkijonoa, ensimmäisenä olevan kuvion ja toisena korvaavan merkkijonon. Se palauttaa uuden merkkijonon, jossa kaikki kuvioon vastaavat merkit on korvattu annetulla merkkijonolla.
+
+Esimerkiksi, jos haluamme poistaa kaikki välilyönnit merkkijonon lopusta, voimme käyttää seuraavaa koodia:
 
 ```PHP
-$text = "Tämä on esimerkki tekstistä! Tässä on ekstra merkki.";
-$modified_text = preg_replace("/[!]/", "", $text);
-echo $modified_text;
-```
-Tulostus:
-
-```
-Tämä on esimerkki tekstistä Tässä on ekstra merkki.
+$input = "Tämä on esimerkkiteksti.   ";
+$output = preg_replace("/\s+$/", "", $input);
 ```
 
-Koodiesimerkissä käytämme `preg_replace()` -funktiota, joka ottaa ensimmäisenä parametrina vastaan kaavan, jonka haluamme poistaa. Tässä tapauksessa se on `/[!]/`, mikä tarkoittaa, että haluamme poistaa kaikki huutomerkki-merkit tekstistä. Toisena parametrina annamme tyhjän merkkijonon, mikä tarkoittaa, että poistetut merkit korvataan tyhjällä.
+Tässä kuviossa `\s+` vastaa yhtä tai useampaa välilyöntiä ja `$` merkkijonon loppua. Lopputuloksena `$output`-muuttujassa on "Tämä on esimerkkiteksti."
 
 ## Syvempi sukellus
 
-Voit myös käyttää säännöllisiä lausekkeita (regular expressions) kaavassa, jolla poistetaan merkkejä. Tässä esimerkissä haluamme poistaa kaikki numerot tekstistä:
+`preg_replace()`-funktion käyttö voi olla monimutkaisempaa kuin yksinkertainen esimerkkimme. Kuvion käyttäminen regex-säännöissä voi olla hankalaa ja aiheuttaa virheitä. Tärkeää on myös muistaa, että `preg_replace()` ei muuta alkuperäistä merkkijonoa, vaan palauttaa muokatun kopion.
 
-```PHP
-$text = "12 varista laulaa puussa.";
-$modified_text = preg_replace("/[0-9]/", "", $text);
-echo $modified_text;
-```
-Tulostus:
-
-```
-varista laulaa puussa.
-```
-
-Säännölliset lausekkeet ovat hyödyllisiä, koska ne antavat enemmän joustavuutta ja tarkkuutta kaavassa. Voit löytää lisätietoa PHP:n säännöllisistä lausekkeista PHP:n virallisesta dokumentaatiosta.
+Voit lukea lisää PHP:n regex-ehdoista ja `preg_replace()`-funktion eri parametreistä PHP:n virallisesta dokumentaatiosta.
 
 ## Katso myös
 
-- PHP:n viralliset dokumentaatiot säännöllisistä lausekkeista: https://www.php.net/manual/en/regexp.reference.php 
-- Hyödyllisiä vinkkejä säännöllisten lausekkeiden käyttöön: https://www.regular-expressions.info/
-- Leikkaa ja liitä -työkalu säännöllisten lausekkeiden testaamiseen: https://regex101.com/
+- [PHP-pääsivu](https://www.php.net/)
+- [preg_replace-dokumentaatio](https://www.php.net/manual/en/function.preg-replace.php)
+- [Regex-tutoriaali](https://www.regular-expressions.info/)

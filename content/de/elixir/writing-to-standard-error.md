@@ -1,35 +1,42 @@
 ---
 title:                "Elixir: Schreiben auf Standardfehler"
+simple_title:         "Schreiben auf Standardfehler"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
-Warum sollte man überhaupt etwas in die Standardfehler-Ausgabe schreiben? Erfahren Sie hier, was der Zweck dieser Funktion ist und wann es sinnvoll ist, sie einzusetzen.
+## Warum
 
-# Wie geht es?
-Das Schreiben in die Standardfehler-Ausgabe ist eine grundlegende Funktion in der Elixir-Programmiersprache. Verwenden Sie dazu einfach den Befehl `IO.puts` mit dem Argument `:stderr`:
+Das Schreiben auf die Standardfehlerausgabe ist von großer Bedeutung, um Fehler und Warnungen in unserem Elixir-Code zu identifizieren und zu beheben.
 
-```elixir
-IO.puts("Dies ist eine Fehlermeldung", :stderr)
+## Wie geht das?
+
+Das Schreiben auf die Standardfehlerausgabe ist einfach und unerlässlich für jeden Elixir-Entwickler. Hier ist ein Beispiel, wie man einen Wert auf die Fehlerausgabe schreibt:
+
+```Elixir
+IO.puts(:stderr, "Dies ist ein Beispiel für die Standardfehlerausgabe!")
 ```
 
-Dies wird die angegebene Nachricht in die Standardfehler-Ausgabe schreiben und sie von regulären Ausgaben unterscheiden. Hier ist ein Beispiel für die Ausgabe in der Konsole:
+Das obige Beispiel wird den Text "Dies ist ein Beispiel für die Standardfehlerausgabe!" auf die Standardfehlerausgabe schreiben. Hier ist ein weiteres Beispiel, diesmal mit einem Erlang-Modul:
 
-```elixir
-iex> IO.puts("Dies ist eine Fehlermeldung", :stderr)
-Dies ist eine Fehlermeldung
-:ok
+```Elixir
+:io.format(:stderr, "Das ist ein Beispiel aus dem Modul ~p", [ErlangModule])
 ```
 
-# Tiefer in die Materie eintauchen
-Es gibt verschiedene Anwendungsfälle, bei denen es sinnvoll ist, in die Standardfehler-Ausgabe zu schreiben. Zum Beispiel kann es nützlich sein, Fehlermeldungen oder Warnungen auszugeben, um Programmierfehler zu identifizieren und zu beheben. Sie können auch benutzerdefinierte Ausgaben erstellen, um Informationen anzuzeigen, die in regulären Ausgaben nicht angezeigt werden sollen.
+Dies wird den Namen des Moduls "ErlangModule" auf die Standardfehlerausgabe schreiben.
 
-Es ist auch wichtig zu beachten, dass die Standardfehler-Ausgabe in Elixir asynchron ist, was bedeutet, dass sie nicht in der Reihenfolge angezeigt wird, in der sie geschrieben wurde. Dies kann hilfreich sein, um Fehlermeldungen von regulären Ausgaben zu unterscheiden und die Lesbarkeit zu verbessern.
+## Eintauchen in die Tiefe
 
-# Siehe auch
-- [Die offizielle Elixir-Dokumentation für `IO.puts`](https://hexdocs.pm/elixir/IO.html#puts/2)
-- [Ein Elixir-Tutorial zum Schreiben in die Standardfehler-Ausgabe](https://elixirschool.com/en/lessons/basics/io/)
+Das Schreiben auf die Standardfehlerausgabe kann auch verwendet werden, um zusätzliche Informationen während der Ausführung unseres Codes zu verfolgen. Dies kann besonders hilfreich sein, wenn wir mit größeren und komplexeren Code-Basen arbeiten. Wir können verschiedene Debugging-Informationen wie z.B. die Werte von Variablen oder Funktionsaufrufe auf die Standardfehlerausgabe schreiben, um unser Programm zu überwachen und potenzielle Fehlerquellen zu finden.
+
+Ein weiterer Vorteil des Schreibens auf die Standardfehlerausgabe ist, dass die Daten in Echtzeit angezeigt werden. Im Gegensatz zur Standardausgabe werden die Daten auf der Standardfehlerausgabe ohne Pufferung direkt ausgegeben.
+
+Um effektiv auf die Standardfehlerausgabe zu schreiben, sollten wir uns mit der Dokumentation der Elixir-'IO' und Erlang-'io'-Module vertraut machen.
+
+## Siehe auch
+- [Offizielle Elixir-Dokumentation über das Schreiben auf die Standardfehlerausgabe](https://hexdocs.pm/elixir/IO.html#puts/2)
+- [Offizielle Erlang-Dokumentation über das Schreiben auf die Standardfehlerausgabe] (http://erlang.org/doc/man/io.html#format-2)

@@ -1,73 +1,59 @@
 ---
-title:                "Go: 标准错误的编写"
+title:                "Go: 向标准错误写入"
+simple_title:         "向标准错误写入"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/go/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么
+为什么：写入标准错误
 
-为什么会有人想要把一些信息写入标准错误流（stderr）呢？正如我们所知，标准输入流（stdin）和标准输出流（stdout）分别用于接收用户的输入和输出程序的结果。然而，在某些情况下，我们需要将一些错误信息显示给用户，这时就需要用到标准错误流了。
+通常情况下，我们使用标准输出来显示程序的结果。但是有时候，我们需要将一些错误信息发送给用户，这时候就需要用到标准错误输出。通过将错误信息写入标准错误，我们可以让用户更清楚地知道程序发生了什么问题，帮助他们更好地理解程序运行过程。
 
-# 如何操作
+如何做：在Go中编写标准错误
 
-如果你想要将信息显示给用户，你可以使用log包中的Print()或Printf()函数来进行输出，它们都会将信息写入标准错误流。下面是一个使用Print()函数的示例：
-
-```Go
-package main
-
-import "log"
-
-func main() {
-	log.Print("这是一个错误信息。")
-}
-```
-
-运行这段代码，你会发现错误信息会被打印出来。如果你想要将错误信息和其他信息一起打印出来，可以使用Printf()函数来格式化输出。下面是一个使用Printf()函数的示例：
-
-```Go
-package main
-
-import "log"
-
-func main() {
-	name := "小明"
-	log.Printf("欢迎%s登录。", name)
-	log.Print("这是一个错误信息。")
-}
-```
-
-运行这段代码，你会看到控制台打印出了欢迎信息和错误信息。上面的示例都是将信息打印到控制台，如果你想要将信息写入一个文件，可以使用log包中的SetOutput()函数来设置输出位置。下面是一个将信息写入文件的示例：
+要将错误信息写入标准错误，我们可以使用标准库中的方法`fmt.Fprintf`。这个方法的第一个参数是一个`io.Writer`接口，其中就包含了标准错误输出流。下面是一个简单的示例代码，在使用`fmt.Fprintf`将错误信息写入标准错误后，程序会终止运行并输出错误信息。
 
 ```Go
 package main
 
 import (
-	"log"
+	"fmt"
 	"os"
 )
 
 func main() {
-	f, err := os.OpenFile("log.txt", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0644)
+	file, err := os.Open("test.txt")
 	if err != nil {
-		log.Fatal(err)
+		fmt.Fprintf(os.Stderr, "文件打开失败：%v\n", err)
+		os.Exit(1)
 	}
-	defer f.Close()
-	log.SetOutput(f)
-	log.Print("这是一个写入文件的错误信息。")
+	defer file.Close()
+	// do something with the file
 }
 ```
 
-运行这段代码，你会发现在目录下生成了一个名为log.txt的文件，其中记录了错误信息。除了Print()和Printf()函数外，log包中还有其他用于输出信息的函数，你可以根据需要选择合适的函数来使用。
+输出：
 
-# 深入了解
+```
+文件打开失败：open test.txt: no such file or directory
+```
 
-虽然在日常的编程中，我们经常会使用标准错误流来输出错误信息，但它其实是一个非常简单的概念。标准错误流是一个用于输出错误信息的流，在操作系统中通常被定义为文件描述符2。在Go语言中，我们可以通过os.Stderr变量来访问标准错误流，它是一个指向标准错误流文件描述符的File类型变量。
+深入了解：写入标准错误的更多方法
 
-# 参考链接
+除了`fmt.Fprintf`之外，Go标准库还提供了其他方法用于写入标准错误，比如`log`包中的方法和`os.Stderr`变量。此外，我们也可以自定义一个`Writer`类型的对象来实现将错误信息写入标准错误的功能。具体的实现方法可以参考Go官方文档和其他教程。
 
-- [log包文档](https://golang.org/pkg/log/)
-- [标准流（stdin、stdout、stderr）的概念](https://zh.wikipedia.org/wiki/%E6%A0%87%E5%87%86%E6%B5%81)
-- [使用os包操作文件](https://golang.org/pkg/os/)
+请参见：
+
+- [Go文档 - fmt.Fprintf](https://golang.org/pkg/fmt/#Fprintf)
+- [Go文档 - log](https://golang.org/pkg/log/)
+- [Go语言中文网 - 错误处理](https://studygolang.com/articles/3806)
+- [CSDN - Go语言标准库中的Fprint之fmt包详解](https://blog.csdn.net/cywosp/article/details/40853345)
+
+请参阅：
+
+- 阅读更多有关标准错误的内容
+- 学习其他有用的Go编程技巧

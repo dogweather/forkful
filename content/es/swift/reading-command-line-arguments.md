@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Leyendo argumentos de línea de comandos."
+title:                "Swift: Leyendo argumentos de línea de comando"
+simple_title:         "Leyendo argumentos de línea de comando"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/swift/reading-command-line-arguments.md"
 ---
 
@@ -9,42 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por qué
 
-Los argumentos de línea de comando son una forma útil de interactuar con nuestro programa mientras se ejecuta, ya sea para proporcionar información o tomar decisiones en tiempo real. En esta publicación, veremos cómo leer y utilizar los argumentos de línea de comando en Swift para hacer que nuestros programas sean más dinámicos y versátiles.
+En el mundo de la programación, es importante tener conocimiento sobre cómo utilizar la línea de comando para interactuar con un programa. Una de las tareas más comunes que pueden surgir es la lectura de argumentos de línea de comando. En este artículo, hablaremos sobre por qué es importante aprender a hacerlo y cómo hacerlo en Swift.
 
 ## Cómo hacerlo
 
-Para leer argumentos de línea de comando en Swift, podemos utilizar la clase `CommandLine`, que nos proporciona una matriz de cadenas con los argumentos pasados al programa. Veamos un ejemplo de cómo leer y utilizar estos argumentos:
+Para leer argumentos de línea de comando en Swift, necesitamos utilizar la clase `CommandLine` que está incluida en la biblioteca estándar de Swift. Esta clase nos permite acceder a los argumentos de línea de comando como un arreglo de cadenas. Veamos un ejemplo de código:
 
 ```Swift
-let argumentos = CommandLine.arguments
-print("Cantidad de argumentos: \(argumentos.count)")
+// Este es un ejemplo de un programa que toma dos argumentos de línea de comando y los imprime en la consola
 
-// Si se proporciona un argumento adicional, lo usamos para dar un saludo personalizado
-if argumentos.count > 1 {
-    let nombre = argumentos[1]
-    print("¡Hola, \(nombre)! Bienvenido a nuestro programa.")
-}
+import Foundation
+
+let arguments = CommandLine.arguments
+
+let firstArgument = arguments[1]
+let secondArgument = arguments[2]
+
+print("El primer argumento es: \(firstArgument)")
+print("El segundo argumento es: \(secondArgument)")
 ```
 
-Supongamos que ejecutamos nuestro programa con los argumentos `swift miPrograma.swift John`:
+Supongamos que corremos este código desde la línea de comando con los argumentos `swift argumentos.swift hola mundo`. La salida sería:
+
 ```
-Cantidad de argumentos: 2
-¡Hola, John! Bienvenido a nuestro programa.
+El primer argumento es: hola
+El segundo argumento es: mundo
 ```
+
+Como podemos ver, estamos accediendo a los argumentos de línea de comando utilizando el subscript de la clase `CommandLine` y luego los imprimimos en la consola.
 
 ## Profundizando
 
-Aparte de la cantidad y los valores de los argumentos, también podemos acceder a otras propiedades de la clase `CommandLine`, como el nombre del ejecutable, opciones y argumentos de opción específicos. Por ejemplo, supongamos que nuestro programa tiene una opción `-verbose` que nos permite imprimir información adicional. Podríamos implementarlo de la siguiente manera:
+Es importante tener en cuenta que el primer argumento, en este caso `hola`, se encuentra en la posición `1` del arreglo de argumentos, no `0` como podríamos pensar. Esto se debe a que la posición `0` del arreglo contiene el nombre del programa.
 
-```Swift
-let argumentos = CommandLine.arguments
-if argumentos.contains("-verbose") {
-    print("Opción verbose activada.")
-}
-```
-
-De esta manera, podemos leer y utilizar los argumentos de línea de comando para personalizar la ejecución de nuestro programa y proporcionar una mejor experiencia para nuestros usuarios.
+Además, es importante mencionar que si necesitamos leer más de dos argumentos de línea de comando, podemos utilizar un loop para acceder a todos ellos.
 
 ## Ver también
 
-Para más información sobre cómo utilizar argumentos de línea de comando en Swift, puedes consultar la documentación oficial de Apple: [Lectura y uso de argumentos de la línea de comando](https://developer.apple.com/documentation/foundation/commandline). También tenemos una publicación sobre cómo crear un programa simple utilizando argumentos de línea de comando en Swift: [Cómo hacer un Saludo Personalizado Utilizando Argumentos de Línea de Comando en Swift](https://www.example.com/).
+- [Documentación oficial de Apple sobre la clase CommandLine](https://developer.apple.com/documentation/foundation/commandline)
+- [Artículo sobre lectura de argumentos de línea de comando en Swift](https://medium.com/@marianneguenette/swift-command-line-arguments-a11971c421c3)
+- [Tutorial detallado sobre el uso de la clase CommandLine en Swift](https://www.appcoda.com/command-line-arguments-swift/)

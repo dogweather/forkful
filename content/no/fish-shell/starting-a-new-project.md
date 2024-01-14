@@ -1,43 +1,57 @@
 ---
-title:                "Fish Shell: Innledning av et nytt prosjekt"
+title:                "Fish Shell: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Fish Shell"
-category:             "Getting Started"
+category:             "Fish Shell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
 
-Lurer du på hva Fish Shell er og hvorfor du bør engasjere deg i å starte et nytt prosjekt med det? Da er du på rett sted! Fish Shell er et kraftig verktøy for å skrive og kjøre kommandoer i terminalen din. Den har et intuitivt grensesnitt og er enkel å lære for både nybegynnere og erfarne utviklere. Ved å bruke Fish Shell vil du øke effektiviteten din og kunne fullføre oppgaver raskere.
+Det kan være mange grunner til å starte et nytt prosjekt, enten det er for personlig utvikling eller for å løse en konkret utfordring. Uansett grunn, så kan du bruke Fish Shell til å effektivt håndtere kommandoer og automatisere prosesser i ditt nye prosjekt.
 
-## Slik gjør du det
-
-Hvis du vil begynne å bruke Fish Shell, må du først installere det på datamaskinen din. Det kan gjøres ved hjelp av kommandoen `brew install fish` i terminalen din hvis du bruker macOS eller ved å følge veiledningen på Fish Shells offisielle nettside for andre operativsystemer.
-
-Etter at installasjonen er fullført, kan du åpne en ny terminal og skrive `fish` for å starte Fish Shell. Du vil umiddelbart legge merke til det moderne og brukervennlige utseendet. La oss prøve å skrive noen kommandoer og se resultatene.
+##Hvordan
 
 ```Fish Shell
-ls
+# Opprette ny mappe for prosjektet
+mkdir mitt_prosjekt
+
+# Gå til mappen
+cd mitt_prosjekt
+
+# Opprette en ny fil
+touch main.py
+
+# Skriv inn koden i filen
+echo "print('Hei verden!')" > main.py
+
+# Kjøre filen
+python main.py
 ```
-----
-Documents  Downloads  Music  Pictures  Videos
+
+Nå vil du se følgende utskrift i terminalen:
 
 ```Fish Shell
-echo Hei, verden!
+Hei verden!
 ```
-----
-Hei, verden!
 
-Som du kan se, kjører kommandoene og resultatene seg selv uten behov for å skrive `enter` etter hver kommando. Dette er en av de mange funksjonene som gjør Fish Shell så praktisk å bruke.
+Fish Shell gjør det enkelt å opprette og navigere rundt i mapper, samt å skrive og kjøre kode. Dette gjør det til et perfekt verktøy for å starte et nytt prosjekt.
 
-## Dypdykk
+##Dypdykk
 
-Nå som du er komfortabel med å bruke Fish Shell, kan du begynne å utforske flere funksjoner og tilpasningsmuligheter. Du kan enkelt endre utseendet og fargene på prompten din ved å redigere Fish Shells konfigurasjonsfil. Du kan også lage dine egne funksjoner og snarveier for å gjøre arbeidsflyten din enda mer effektiv.
+Noe av det beste med Fish Shell er dens omfattende dokumentasjon og fellesskap. Hvis du trenger hjelp til å starte et nytt prosjekt, finnes det utallige ressurser tilgjengelig. Her er noen av dem:
 
-Men kanskje det beste med Fish Shell er støtten for plugins og utvidelser. Det finnes et bredt utvalg av tredjeparts plugins som kan legges til for å gjøre Fish Shell enda kraftigere. Du kan for eksempel installere plugins for å håndtere versjonskontroll, gjøre nettverkskall og kjøre kommandoer i parallell.
+- [Fish Shell sin offisielle dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [GitHub-siden til Fish Shell med kildekoden](https://github.com/fish-shell/fish-shell)
+- [Fish Shell subreddit hvor du kan få hjelp og diskutere med andre brukere](https://www.reddit.com/r/fishshell)
 
-## Se også
+Med disse ressursene tilgjengelig, er du godt rustet til å starte ditt neste prosjekt med Fish Shell.
 
-- [Fish Shell offisiell nettside](https://fishshell.com)
-- [Liste over Fish Shell plugins](https://github.com/fisherman/awesome-fish)
+##Se også
+
+- [En grunnleggende guide til å komme i gang med Fish Shell](https://www.cyberciti.biz/open-source/command-line-hacks/fish-shell-tutorial/)
+- [10 nyttige tips for å maksimere produktiviteten din med Fish Shell](https://spin.atomicobject.com/2017/08/01/fish-shell-features/)
+- [Hvordan bruke Fish Shell til å jobbe med Git](https://www.monolets.com/2020/02/26/git-fish-shell/)

@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/clojure/concatenating-strings.md"
 ---
 
@@ -9,36 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att sammanfoga strängar (även kallat "att konkatenera" strängar) är en viktig del av programmering. Genom att sammanfoga olika strängar kan man skapa mer komplexa och användbara strängar. I Clojure, en funktionell programmeringsspråk, kan man enkelt sammanfoga strängar med hjälp av inbyggda funktioner.
+Varför skulle någon vilja kombinera strängar när de programmerar? Kort sagt, det är ett sätt att slå samman flera strängar för att skapa en enda sträng. Detta kan vara användbart när man bygger textutskrifter eller skapar dynamiska meddelanden.
 
-## Så här gör du
+## Hur
 
-För att sammanfoga strängar i Clojure, kan man använda sig av funktionen `str`. Den tar ett eller flera argument och returnerar en sträng som representerar de angivna argumenten, i samma ordning som de angavs. Här är ett exempel på hur man kan använda `str`-funktionen:
+För att kombinera strängar i Clojure kan du använda funktionen `str`. Här är ett enkelt exempel:
 
 ```Clojure
-(str "Hej " "världen!") ;; Output: "Hej världen!"
+(str "Hej" " " "världen!")
 ```
 
-Man kan också sammanfoga strängar med hjälp av operatorn `str`. Den tar två argument och returnerar en sammanfogad sträng. Här är samma exempel som ovan, fast med operatorn:
+Detta skulle ge följande output:
 
-```Clojure
-"Hej "  "världen!" ;; Output: "Hej världen!"
+```
+Hej världen!
 ```
 
-Det är också möjligt att sammanfoga strängar med `format`-funktionen. Den tar en formatsträng och ett eller flera argument och returnerar en formaterad sträng. Här är ett exempel på hur man kan använda `format` för att sammanfoga strängar:
+Du kan också använda `str` för att kombinera en sträng med en variabel. Till exempel:
 
 ```Clojure
-(format "I %s önskar jag dig en trevlig %s." "Sverige" "dag") ;; Output: "I Sverige önskar jag dig en trevlig dag."
+(def s "Jag gillar att programmera i Clojure")
+(str s " för det är ett elegant språk.")
+```
+
+Detta skulle ge följande output:
+
+```
+Jag gillar att programmera i Clojure för det är ett elegant språk.
+```
+
+Du kan också använda `str` för att skapa dynamiska meddelanden med hjälp av strängformatering. Till exempel:
+
+```Clojure
+(str "Hej " "du är " (str (+ 10 5) " år gammal."))
+```
+
+Detta skulle ge följande output:
+
+```
+Hej du är 15 år gammal. 
 ```
 
 ## Djupdykning
 
-I Clojure är strängar oföränderliga (immutable), vilket betyder att de inte kan ändras efter att de har skapats. Detta innebär att varje gång man sammanfogar strängar, skapas en ny sträng istället för att ändra den ursprungliga strängen. Detta kan leda till ineffektivitet vid användning av stora datamängder, eftersom man då skapar många nya strängar istället för att ändra en befintlig.
+Bakom kulisserna använder Clojure `StringBuilder` för att kombinera strängar. Detta betyder att det är en effektiv metod för att kombinera strängar, speciellt när det finns en stor mängd strängar som behöver sättas ihop.
 
-För att undvika detta kan man använda sig av `StringBuilder`, som finns i Java-biblioteket som Clojure bygger på. `StringBuilder` låter en bygga upp en sträng bit för bit och ändra den efter behov, vilket är mer effektivt än att skapa en ny sträng varje gång.
+Det är också värt att notera att funktionen `str` kan ta ett obegränsat antal argument. Du kan passera in så många strängar som du vill och de kommer att sättas ihop i den ordningen de kommer i. Det kan vara bra att se till att inte glömma bort argumenten om du använder variabler för att sammanslagna strängar.
 
-## Se även
+## Se också
 
-* [ClojureDocs - str](https://clojuredocs.org/clojure.core/str)
-* [ClojureDocs - format](https://clojuredocs.org/clojure.core/format)
-* [ClojureDocs - StringBuilder](https://clojuredocs.org/java.lang.StringBuilder)
+* [Dokumentation för funktionen `str`](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/str)
+* [En djupare förståelse av strängformatering i Clojure](https://www.braveclojure.com/core-functions-in-depth/#String_Functions)

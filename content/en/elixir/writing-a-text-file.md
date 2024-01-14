@@ -1,7 +1,9 @@
 ---
 title:                "Elixir recipe: Writing a text file"
+simple_title:         "Writing a text file"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/writing-a-text-file.md"
 ---
 
@@ -9,49 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Writing a text file is an essential skill for any programmer, as it allows you to store and manipulate data in a readable format. In the world of Elixir programming, knowing how to write a text file is especially important as it gives you the ability to exchange data with other applications or systems.
+If you're new to Elixir programming, you might be wondering why anyone would want to write a text file. Well, there are many reasons to do so - from storing configuration settings to creating log files for debugging purposes. Plus, understanding how to write a text file is a handy skill to have in your programming toolkit.
 
 ## How To
 
-To write a text file in Elixir, we will use the `File.write` function. This function takes in two parameters: the name of the file and the data you want to write. Let's see an example of how to use this function to write the name "John" to a file called "name.txt".
+Writing a text file in Elixir is a straightforward process. First, we need to define the name and path of our file using the `File.open/2` function. Then, we can use the `IO.write/2` function to write our desired text into the file. Let's see an example:
 
 ```Elixir
-File.write("name.txt", "John")
+file = File.open("example.txt", [:write])
+IO.write(file, "This is a sample text.")
+File.close(file)
 ```
 
-This will create a file called "name.txt" in the same directory as your Elixir code and write the data "John" to it. If the file already exists, the `File.write` function will overwrite its contents.
+In the code above, we first open a file named "example.txt" with the `File.open` function. The second argument, `:write`, specifies that we want to write to the file. Next, we use the `IO.write` function to actually write the text we want into the file. Finally, we close the file with the `File.close` function.
 
-We can also write more complex data to a text file by using Elixir's interpolation feature. Let's say we have a list of names and we want to write each one on a new line in a text file called "names.txt":
-
-```Elixir
-names = ["John", "Alice", "Mark"]
-File.write("names.txt", for name <- names, do: "#{name}\n")
-```
-
-This will create a file called "names.txt" and write the names on separate lines, like this:
-
-```
-John
-Alice
-Mark
-```
+Now, if we open the "example.txt" file, we should see the text "This is a sample text." written inside. Easy, right?
 
 ## Deep Dive
 
-When writing a text file in Elixir, it's essential to understand how the underlying file system functions. By default, Elixir uses the same encoding as the underlying file system, which is typically UTF-8.
+If you're interested in learning more about writing text files in Elixir, it's important to understand that there are various options and functions available to customize your file writing experience. For example, you can use `:append` instead of `:write` in the `File.open` function to append text to a file that already exists. Additionally, the `IO.write` function has options for specifying character encoding and line endings.
 
-You can also specify the encoding when writing a file by passing the `:encoding` option as a third parameter to the `File.write` function. For example, if you want to save the file in UTF-16 encoding, you can do so by writing:
-
-```Elixir
-File.write("names.txt", "John", encoding: :utf16)
-```
-
-Additionally, you can also use the `:append` option to append data to an existing file instead of overwriting its contents. This can be useful for creating log files that continuously add new entries.
+Furthermore, it's important to remember to properly handle errors when writing a text file. This can be done using the `File.write/3` function, which returns `{:ok, bytes_written}` if the file was successfully written, or `{:error, reason}` if there was an error.
 
 ## See Also
 
-Check out these resources for further reading on writing text files in Elixir:
+To learn more about writing text files in Elixir, check out the following resources:
 
-- Official Elixir documentation for `File.write`: https://hexdocs.pm/elixir/File.html#write/2
-- Blog post on file manipulation in Elixir: https://medium.com/@jtmccormick/working-with-files-in-elixir-741b4af02ae1
-- Elixir Forum discussion on writing text files: https://elixirforum.com/t/write-text-to-file/1381
+- [Elixir File Module Documentation](https://hexdocs.pm/elixir/File.html)
+- [Elixir IO Module Documentation](https://hexdocs.pm/elixir/IO.html)
+- [Elixir File and Path Manipulation - A Quick Guide](https://medium.com/@brucepomeroy/elixir-file-and-path-manipulation-a-quick-guide-f48d36c94d4c)
+
+Happy coding!

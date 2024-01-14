@@ -1,7 +1,9 @@
 ---
 title:                "Swift: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/reading-a-text-file.md"
 ---
 
@@ -9,53 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Miksi lukisi tiedostoa ohjelmointitekstistä? Tämän kysymyksen tarkoituksena on valaista, miksi tämä taito voi olla hyödyllinen tai tarpeellinen ohjelmointikehityksessä.
+Lukemalla tekstiedostoja ohjelmoijat voivat helposti käsitellä suuria määriä tietoa, kuten tekstejä ja laskentataulukoita, ilman tarvetta syöttää niitä manuaalisesti. Tämä tekee ohjelmoinnista nopeampaa ja vähentää virheiden mahdollisuutta.
 
-## Kuinka tehdä se
+## Miten
 
-Seuraavaksi esittelemme yksinkertaisen tavan lukea tekstitiedosto Swift-kielellä käyttäen Foundation-kirjastoa.
-
-Ensinnäkin, tarvitset tekstitiedoston, jota haluat lukea. Voit käyttää esimerkiksi seuraavaa tekstiä:
+Tekstiedostojen lukeminen Swiftissä on helppoa käyttämällä `String`-luokan `contentsOfFile`-metodia. Alla on esimerkki koodista, joka lukee tekstiedoston nimeltä "data.txt" ja tulostaa sen sisällön konsoliin:
 
 ```Swift
-Tervetuloa lukemaan tekstiä Swiftille!
-Tässä on esimerkki tietokoneohjelmasta.
-Toivomme, että nautit lukemisesta!
-```
-
-Seuraavaksi, voit käyttää Foundation-kirjastoa avataksesi tekstitiedoston ja lukeaksesi sen sisältöä. Koodisi tulisi näyttää tältä:
-
-```Swift
-import Foundation
-
-//Valitse tekstitiedosto käyttämällä URL-osoitetta.
-let fileURL = URL(fileURLWithPath: "polku/tekstitiedosto.txt")
-
-do {
-    //Avaa tiedosto ja lue sen sisältö käyttäen String-initialisaattoria.
-    let fileContent = try String(contentsOf: fileURL)
-    print(fileContent) //Tulostaa tekstitiedoston sisällön konsoliin.
-} catch {
-    //Jos virhe tapahtuu, tulostetaan virheviesti.
-    print("Virhe avatessa tekstitiedostoa: \(error)")
+if let path = Bundle.main.path(forResource: "data", ofType: "txt") { // etsii tiedoston polun
+    do {
+         let data = try String(contentsOfFile: path) // lukee tiedoston sisällön merkkijonona
+         print(data) // tulostaa sisällön konsoliin
+     } catch {
+         print("Virhe: \(error)") // käsittelee mahdolliset virheet
+     }
 }
 ```
 
-Kun suoritat tämän koodin, tulee tulosteena olla tekstin sisältö, joka näyttää tältä:
+Käyttämällä `components(separatedBy:)`-metodia, voit jakaa tiedoston sisällön haluamallasi tavalla. Esimerkiksi seuraava koodi jakaa tiedoston rivit ja tulostaa ne yksitellen:
 
+```Swift
+if let path = Bundle.main.path(forResource: "data", ofType: "txt") {
+    do {
+         let data = try String(contentsOfFile: path)
+         let lines = data.components(separatedBy: "\n") // jakaa merkkijonon rivinvaihdon kohdalta
+         for line in lines {
+             print(line) // tulostaa rivin konsoliin
+         }
+     } catch {
+         print("Virhe: \(error)")
+     }
+}
 ```
-Tervetuloa lukemaan tekstiä Swiftille!
-Tässä on esimerkki tietokoneohjelmasta.
-Toivomme, että nautit lukemisesta!
-```
 
-## Syventävää tietoa
+## Syväsukellus
 
-Tähän mennessä olemme läpikäyneet yksinkertaisen tavan lukea tekstitiedosto Swiftillä. On kuitenkin hyvä tietää, että Foundation-kirjastossa on myös muita tapoja lukea tekstitiedostoja, kuten Data- ja InputStream-luokat. Näitä luokkia voi käyttää esimerkiksi silloin, kun haluat lukea tiedoston pätkissä tai käsitellä tietoa binäärimuodossa.
-
-Kannattaa myös pitää mielessä, että tekstitiedostot eivät aina ole yksinkertaisia ja niiden lukeminen voi joskus johtaa virheisiin. On tärkeää käsitellä mahdollisia virheitä ja poikkeuksia koodissasi, jotta ohjelma toimii luotettavasti.
+Tekstiedostojen lukeminen Swiftissä perustuu `String`-luokan `contentsOfFile`-metodiin, joka luo merkkijonon tiedoston sisällöstä. Tämä metodi heittää `throws`-avainsanan avulla mahdolliset virheet. `Bundle`-luokka puolestaan auttaa löytämään tiedoston polun tietyssä hakemistossa. Tiedoston sisältöä voi sitten käsitellä `components(separatedBy:)`-metodilla, joka jakaa merkkijonon halutun erotinmerkin kohdalta.
 
 ## Katso myös
 
-- [Swiftin viralliset ohjekirjat Foundation-kirjastosta](https://developer.apple.com/documentation/foundation)
-- [Stack Overflow -kysymys ja vastaus tekstitiedoston lukemisesta Swiftillä](https://stackoverflow.com/questions/58494728/how-to-read-data-from-text-file-in-swift)
+- [Swiftin virallinen dokumentaatio tekstiedostojen lukemisesta](https://developer.apple.com/documentation/foundation/string/1413584-contentsoffile)
+- [Kaikki `String`-luokan saatavilla olevat metodit](https://developer.apple.com/documentation/swift/string)

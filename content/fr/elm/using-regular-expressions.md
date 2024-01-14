@@ -1,7 +1,9 @@
 ---
-title:                "Elm: Utiliser les expressions régulières"
+title:                "Elm: L'utilisation des expressions régulières"
+simple_title:         "L'utilisation des expressions régulières"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elm/using-regular-expressions.md"
 ---
 
@@ -9,39 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Les expressions régulières sont un outil puissant dans le domaine de la programmation. Elles permettent de manipuler et de rechercher des motifs dans du texte, ce qui peut être très utile dans diverses situations, comme la validation de formulaires ou la manipulation de données. 
+Si vous êtes un programmeur Elm en herbe, vous avez probablement entendu parler des expressions régulières (ou *regular expressions* en anglais). Mais pourquoi voudriez-vous les utiliser dans votre code ?
+
+Les expressions régulières sont des outils puissants pour manipuler et chercher des chaînes de caractères dans vos programmes. Elles sont particulièrement utiles lorsqu'il s'agit de valider des entrées utilisateur ou de filtrer des données. En les maîtrisant, vous pourrez simplifier et améliorer efficacement vos scripts Elm.
 
 ## Comment faire
 
-Pour utiliser les expressions régulières en Elm, il faut d'abord les importer à partir du module `Regex` :
+Pour utiliser des expressions régulières en Elm, vous pouvez utiliser la bibliothèque `elm/regex` intégrée. Vous devez d'abord importer cette bibliothèque dans votre fichier en ajoutant la ligne suivante :
 
-``` Elm
-import Regex exposing (..)
+```Elm
+import Regex
 ```
 
-Ensuite, on peut créer une expression régulière en utilisant la fonction `regex` et en lui passant une chaîne de caractères contenant le motif à rechercher :
+Ensuite, vous pouvez utiliser la fonction `Regex.contains` pour vérifier si une chaîne de caractères contient une expression régulière spécifique. Par exemple, si vous voulez vérifier si une adresse e-mail est valide, vous pouvez utiliser le code suivant :
 
-``` Elm
-let regEx = regex "elm"
+```Elm
+Regex.contains (Regex.regex "[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,63}") "monemail@elm.com"
 ```
 
-On peut alors appliquer cette expression régulière à du texte en utilisant la fonction `find` :
+Ce code renverra `True` car l'adresse e-mail est valide. Si vous voulez extraire une partie d'une chaîne de caractères, vous pouvez utiliser la fonction `Regex.find` et spécifier la partie que vous voulez extraire en utilisant des groupes de capture. Par exemple :
 
-``` Elm
-let text = "J'aime programmer en Elm"
-let result = find regEx text
+```Elm
+Regex.find (Regex.regex "([A-Z0-9._%+-]+)@[A-Z0-9.-]+\.[A-Z]{2,63}") "monemail@elm.com"
 ```
 
-La fonction `find` renverra un `Maybe Regex.Match` qui indique si le motif a été trouvé ou non, ainsi que les informations sur le premier match trouvé. On peut aussi utiliser `findAll` pour trouver tous les matches dans le texte.
+Cela renverra `Just "monemail"` car nous avons spécifié que nous voulons extraire la partie avant le symbole "@".
 
 ## Plongée en profondeur
 
-Les expressions régulières en Elm sont basées sur le standard standard ECMA-262, ce qui signifie qu'elles utilisent les mêmes symboles et caractères spéciaux que d'autres langages de programmation. On peut utiliser des symboles comme `.` pour représenter n'importe quel caractère, `+` pour indiquer un ou plusieurs occurrences, ou `?` pour indiquer que le caractère précédent est optionnel.
+Si vous voulez en savoir plus sur les expressions régulières et leur syntaxe, il existe de nombreuses ressources en ligne, telles que [ce tutoriel sur les expressions régulières en français](https://www.creativejuiz.fr/blog/astuces/regex-pour-les-nuls-20-exemples-reguliers-utiles) ou [cette documentation sur les expressions régulières en Elm](https://package.elm-lang.org/packages/elm/regex/latest/Regex).
 
-En plus de la recherche de motifs, les expressions régulières en Elm permettent également de remplacer des parties du texte en utilisant la fonction `replace` ou de diviser le texte en utilisant la fonction `split`.
+Il est important de noter que les expressions régulières peuvent être difficiles à comprendre et à déboguer, surtout pour les débutants. Il est donc recommandé de pratiquer et de tester vos expressions régulières avant de les utiliser dans votre code.
 
 ## Voir aussi
 
-- [La documentation officielle des expressions régulières en Elm](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [Un cours interactif sur les expressions régulières en Elm](https://elmprogramming.com/regex-in-elm.html)
-- [Un outil en ligne pour tester vos expressions régulières en Elm](https://regex.guide/cookbook.html#elm)
+- [Documentation officielle Elm sur les expressions régulières](https://package.elm-lang.org/packages/elm/regex/latest/Regex)
+- [Tutoriel sur les expressions régulières en français](https://www.creativejuiz.fr/blog/astuces/regex-pour-les-nuls-20-exemples-reguliers-utiles)
+- [Différents outils pour tester et expérimenter avec des expressions régulières](https://www.creativejuiz.fr/blog/outils-tester-adn-texte-expressions-regulieres)

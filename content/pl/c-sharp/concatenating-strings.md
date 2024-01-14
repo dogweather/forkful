@@ -1,46 +1,54 @@
 ---
 title:                "C#: Łączenie ciągów znaków"
+simple_title:         "Łączenie ciągów znaków"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c-sharp/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego warto używać łączenia łańcuchów w języku C#?
+## Dlaczego
 
-Język C# oferuje wiele różnych funkcji, które ułatwiają pracę z łańcuchami znaków. Jedną z nich jest łączenie, czyli łączenie dwóch lub więcej łańcuchów w jeden. Jest to niezwykle przydatna funkcja w różnych rodzajach programów, od prostych aplikacji konsolowych po skomplikowane aplikacje webowe.
+C# jest jednym z najpopularniejszych języków programowania wykorzystywanych w branży IT. Jedną z podstawowych operacji, które możemy wykonać w tym języku, jest łączenie (konkatencjonowanie) ciągów znaków, co pozwala nam na tworzenie bardziej skomplikowanych i dynamicznych aplikacji. W tym artykule przyjrzymy się dlaczego warto nauczyć się tej podstawowej operacji oraz jak ją zastosować w praktyce.
 
-## Jak używać łączenia łańcuchów w języku C#?
+## Jak to zrobić
 
-Aby skorzystać z funkcji łączenia w języku C#, należy użyć operatora "+" i podać dwa lub więcej łańcuchów wewnątrz nawiasów. Na przykład:
+Aby skonkatencjonować ciągi znaków w C#, możemy skorzystać z operatora "+" lub metody "Concat" z klasy "String". Przykładowy kod wyglądałby następująco:
 
-```C#
-string firstName = "Jan";
-string lastName = "Kowalski";
+```
+string firstName = "John";
+string lastName = "Doe";
+
 string fullName = firstName + " " + lastName;
-Console.WriteLine(fullName);
+Console.WriteLine(fullName); // Output: John Doe
+
+string otherFullName = String.Concat(firstName, " ", lastName);
+Console.WriteLine(otherFullName); // Output: John Doe
 ```
 
-W powyższym przykładzie połączyliśmy zmienne "firstName" i "lastName" za pomocą operatora "+". Następnie, używając funkcji "Console.WriteLine", wyświetliliśmy ich połączenie, czyli pełne imię i nazwisko. Konsola wyświetli "Jan Kowalski".
+Po uruchomieniu powyższego kodu, na konsoli zostanie wyświetlony pełny imię i nazwisko "John Doe". Istnieje również możliwość formatowania ciągów znaków za pomocą metody "Format" z klasy "String", która pozwala na dynamiczne podstawianie zmiennych do wybranego formatu. Przykładowy kod może wyglądać tak:
 
-Możemy również łączyć więcej niż dwa łańcuchy za pomocą operatora "+". Na przykład:
+```
+string firstName = "John";
+string lastName = "Doe";
+int age = 30;
 
-```C#
-string sentence = "Witaj ";
-string firstName = "Jan";
-string greeting = sentence + firstName + "! Jak się masz?";
-Console.WriteLine(greeting);
+string formattedString = String.Format("{0} {1} is {2} years old.", firstName, lastName, age);
+Console.WriteLine(formattedString); // Output: John Doe is 30 years old.
 ```
 
-Takie wykorzystanie łączenia może być bardzo przydatne przy tworzeniu dynamicznych wiadomości lub komunikatów dla użytkowników naszej aplikacji.
+W powyższym przykładzie zmienna "formattedString" zostaje sformatowana według określonego formatu, w którym "{0}", "{1}" i "{2}" oznaczają kolejne zmienne podane jako argumenty w metodzie "Format".
 
-## Podstawowa zasada działania łączenia łańcuchów w języku C#
+## Deep Dive
 
-Podczas łączenia łańcuchów w języku C#, wszystkie zmienne zawierające łańcuchy znaków są konkatenowane w jedną zmienną. Oznacza to, że zmienne te nie są zmieniane, a jedynie tworzony jest nowy łańcuch z połączonymi wartościami. Jest to istotne, gdyż zmienne zawierające łańcuchy znaków są niezmiennicze (immutable), co oznacza, że nie można bezpośrednio zmieniać ich wartości, tylko tworzyć nowe zmienne zawierające zmienione lub połączone łańcuchy.
+Konkatencjonowanie ciągów znaków jest bardzo przydatną funkcją, zwłaszcza jeśli pracujemy z dużymi i złożonymi tekstami. W przypadku, gdy musimy łączyć wiele ciągów znaków w celu utworzenia jednego, dużego wyrazu, użycie operatora "+" lub metody "Concat" jest znacznie wygodniejsze i bardziej czytelniejsze niż ręczne dodawanie kolejnych znaków.
 
-## Zobacz także
+Warto również zwrócić uwagę na to, że operacja łączenia ciągów znaków jest wykorzystywana przez wiele innych funkcji w C#, takich jak np. pobieranie danych z bazy danych czy obsługa formularzy w aplikacjach internetowych.
 
-- [Dokumentacja Microsoft na temat łączenia łańcuchów w języku C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/strings/#concatenating)
-- [Przykłady i wyjaśnienia operatora "+" w języku C#](https://www.pluralsight.com/guides/working-with-strings-csharp)
-- [Poradnik na temat wielowątkowego łączenia łańcuchów w języku C#](https://stackify.com/formatting-strings-in-csharp/)
+## Zobacz też
+
+- [Dokumentacja C# - Łączenie ciągów znaków](https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/strings/#concatenating-strings)
+- [Porównanie wydajności łączenia ciągów znaków w C#](https://www.dotnetperls.com/comparison)
+- [Przykładowe zadania z wykorzystaniem łączenia ciągów znaków w C#](http://www.c-sharpcorner.com/UploadFile/7177bd/concatenate-strings-and-print-message-using-C-Sharp/)

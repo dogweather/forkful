@@ -1,44 +1,49 @@
 ---
-title:                "Arduino: Transformer une date en chaîne de caractères"
+title:                "Arduino: Convertir une date en chaîne de caractères"
+simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "Arduino"
-category:             "Dates and Times"
+category:             "Arduino"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+# Pourquoi Convertir une Date en Chaîne de Caractères en Arduino
 
-La conversion d'une date en une chaîne de caractères est une tâche courante lors de la programmation en Arduino. Cela peut être utile pour l'affichage de la date et de l'heure actuelles sur un écran LCD ou pour sauvegarder des données dans une carte SD dans un format facilement identifiable. Dans cet article, nous allons explorer comment réaliser cette conversion en utilisant Arduino.
+Si vous êtes un passionné d'Arduino, vous savez probablement déjà que ce microcontrôleur peut être utilisé pour réaliser une variété de projets passionnants. L'une des fonctionnalités les plus utiles de l'Arduino est sa capacité à enregistrer et traiter des dates. Mais parfois, il peut être nécessaire de convertir cette date en une chaîne de caractères, c'est-à-dire un ensemble de caractères en texte. Dans cet article, nous allons expliquer pourquoi vous pourriez avoir besoin de convertir une date en une chaîne de caractères et comment le faire en utilisant Arduino.
 
-## Comment faire
+## Comment Convertir une Date en Chaîne de Caractères en Arduino
 
-Pour convertir une date en une chaîne de caractères, nous allons utiliser la bibliothèque Time d'Arduino. Cette bibliothèque permet de manipuler facilement les informations liées au temps comme la date, l'heure et les fuseaux horaires. Tout d'abord, nous devons inclure la bibliothèque Time dans notre code :
+Pour convertir une date en une chaîne de caractères, vous devez utiliser la fonction `sprintf()` en Arduino. Cette fonction prend trois arguments : le premier est une chaîne de caractères qui spécifie le format dans lequel vous souhaitez que la date soit convertie, le deuxième est une variable qui stocke la date en tant que `Struct tm` et le troisième est la chaîne de caractères résultante.
 
 ```Arduino
 #include <Time.h>
+
+// Variable pour stocker la date et l'heure actuelles
+tmElements_t date;
+
+// Récupérer la date actuelle
+RTC.read(date);
+
+// Convertir la date en une chaîne de caractères
+char dateString[25];
+sprintf(dateString, "%02d/%02d/%04d", date.Day, date.Month, date.Year + 1970);
 ```
 
-Ensuite, nous pouvons utiliser la fonction `format()` pour convertir une date en une chaîne de caractères, en spécifiant le format souhaité. Par exemple, pour convertir la date actuelle en une chaîne de caractères au format dd/mm/yyyy, nous utiliserons la ligne suivante dans notre code :
+Dans cet exemple, nous utilisons le format "jour/mois/année" pour convertir la date en une chaîne de caractères. Vous pouvez choisir le format qui convient le mieux à votre projet en utilisant les spécificateurs de format disponibles pour la fonction `sprintf()`.
 
-```Arduino
-String date = String(format(Time.now(), "%d/%m/%Y"));
-```
+## Plongeon en Profondeur
 
-La variable `date` contiendra maintenant la date au format souhaité. Nous pouvons également ajouter l'heure à cette chaîne en utilisant la même méthode :
+Si vous êtes curieux de connaître le fonctionnement interne de la conversion de date en chaîne de caractères en Arduino, voici quelques informations supplémentaires pour vous satisfaire. La fonction `sprintf()` utilise les informations de `Struct tm` pour extraire chaque élément de la date (jour, mois, année) et les ajoute à une chaîne de caractères en respectant le format spécifié.
 
-```Arduino
-String dateHeure = String(format(Time.now(), "%d/%m/%Y %H:%M:%S"));
-```
+De plus, il est important de noter que la prise en charge des dates en Arduino est basée sur le temps Unix, qui représente le nombre de secondes écoulées depuis le 1er janvier 1970. Cela explique pourquoi nous devons ajouter 1970 pour obtenir l'année correcte dans notre exemple.
 
-La variable `dateHeure` contiendra maintenant la date et l'heure actuelles au format dd/mm/yyyy hh:mm:ss. Vous pouvez expérimenter avec différents formats en utilisant la fonction `format()` pour obtenir le résultat souhaité.
+## See Also
 
-## Plongée en profondeur
+Si vous souhaitez en savoir plus sur la manipulation des dates en Arduino, voici quelques liens utiles :
 
-La bibliothèque Time d'Arduino utilise un objet de type `tmElements_t` pour stocker les informations liées au temps. Cet objet contient différentes variables telles que `tmYear`, `tmMonth` et `tmDay` pour la date et `tmHour`, `tmMinute` et `tmSecond` pour l'heure. La fonction `format()` prend cet objet en entrée et retourne une chaîne de caractères en fonction du format spécifié. Vous pouvez également utiliser la fonction `makeTime()` pour créer un objet `tmElements_t` à partir de valeurs spécifiques, ce qui peut s'avérer utile si vous devez travailler avec une date et une heure personnalisées.
+- [Documentation Arduino pour la fonction `sprintf()`](https://www.arduino.cc/reference/en/language/functions/character-functions/sprintf/)
+- [Tutoriel sur la gestion du temps en Arduino](https://learn.adafruit.com/memories-of-an-arduino/coding-for-use-with-the-real-time-clock)
 
-## Voir aussi
-
-- [Documentation de la bibliothèque Time d'Arduino](https://www.arduino.cc/en/Reference/Time)
-- [Tutoriel vidéo sur la conversion d'une date en une chaîne de caractères en utilisant Arduino](https://www.youtube.com/watch?v=7IQhNOs5W5M)
-- [Forum Arduino dédié à la bibliothèque Time](https://forum.arduino.cc/index.php?topic=239078.0)
+Nous espérons que cet article vous a aidé à comprendre comment convertir une date en une chaîne de caractères en utilisant Arduino. Amusez-vous bien dans vos projets et n'hésitez pas à explorer davantage les fonctionnalités de ce microcontrôleur polyvalent.

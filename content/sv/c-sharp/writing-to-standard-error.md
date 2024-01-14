@@ -1,50 +1,48 @@
 ---
-title:                "C#: Att skriva till standardfel"
+title:                "C#: Skriva till standardfel"
+simple_title:         "Skriva till standardfel"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
+Om du någonsin har stött på felmeddelanden medan du kör ett C# program, har du förmodligen sett till standard Error. Men varför skulle någon vilja skriva till standard Error i sitt program? Det finns faktiskt flera anledningar till detta, och i den här artikeln kommer vi att titta på varför det är viktigt och hur man kan göra det.
+
 ## Varför
 
-Att skriva till standardfel är en viktig del av C# programmering eftersom det ger oss möjlighet att hantera och spåra eventuella fel som kan uppstå under exekveringen av ett program. Genom att skriva till standardfel kan vi få värdefull information om vad som gått fel och var det har inträffat, vilket underlättar felsökningen och förbättrar kvaliteten på vårt kod.
+Skrivning till standard Error är en viktig del av felsökning i C# program. Genom att skriva felmeddelanden till standard Error, kan utvecklare enkelt se vilka problem som uppstår och varför. Detta gör det lättare att spåra och lösa buggar i koden.
 
 ## Hur man gör
 
-För att skriva till standardfel i C# använder vi metoden `Console.Error.WriteLine()`. Detta gör att vi kan skriva ett meddelande till standardfelströmmen, vilket vanligtvis kopplas till en konsoll eller en loggfilsfil. Låt oss ta en titt på ett exempel:
+För att skriva till standard Error i C#, behöver du använda Console.Error.WriteLine() metoden. Detta kommer att skriva ut ett meddelande till standard Error strömmen, som då kan ses i din konsol eller i en loggfil. Här är ett exempel i kod:
 
 ```C#
 try
 {
-    int x = 5;
-    int y = 0;
-    int result = x / y;
-    Console.WriteLine($"Resultatet av divisionen är: {result}");
+    // Kod som kan orsaka fel
 }
 catch (Exception ex)
 {
-    Console.Error.WriteLine($"Ett fel uppstod: {ex.Message}");
+    // Skriver ut felmeddelandet till standard Error
+    Console.Error.WriteLine($"Ett fel inträffade: {ex.Message}");
 }
 ```
 
-I detta exempel delar vi två heltal där nämnaren är noll, vilket resulterar i ett fel. Istället för att bara använda `Console.WriteLine()` för att skriva ut ett meddelande till standardutströmmen, använder vi `Console.Error.WriteLine()` för att skriva ut ett felmeddelande till standardfelströmmen. 
+I det här exemplet kommer felmeddelandet att skrivas ut till standard Error i händelse av ett undantag. På så sätt kan utvecklare enkelt se vilken typ av fel som uppstod och varför.
 
-Output: 
+## Djupdykning
 
-`Ett fel uppstod: Divison med 0 är inte tillåtet.`
+När du skriver till standard Error, är det viktigt att komma ihåg att det är en ström som är avsedd för felförhållanden. Det är inte tänkt att användas för vanliga utskrifter i ditt program. Dessutom är det viktigt att inkludera tillräcklig information i ditt felmeddelande, såsom felmeddelandet i exemplet ovan. Detta gör det lättare att identifiera och åtgärda problemet.
 
-Genom att använda `Console.Error.WriteLine()` kan vi fånga och hantera eventuella fel och lämna användbara meddelanden för felsökning. Detta är en viktig del av att skriva robust och pålitlig kod.
-
-## Deep Dive
-
-I många fall kanske vi vill skriva till standardfelströmmen utan att nödvändigtvis fånga ett fel. Detta kan vara användbart om vi vill skriva ut varningar eller annan information om programmet som inte är kritiskt för dess exekveringshastighet. Det finns flera andra metoder i `Console.Error`-klassen som vi kan använda för att skriva till standardfelströmmen, som `Console.Error.Write()` för att skriva en sträng utan att lägga till en ny rad, eller `Console.Error.Flush()` för att tömma bufferten för standardfelströmmen.
-
-Vi kan också använda `Console.SetError()`-metoden för att ändra standardfelström för vår applikation. Detta kan vara användbart om vi till exempel vill skriva felen till en loggfil istället för konsollen. 
+Det finns också andra sätt att skriva till standard Error, som att använda Console.SetError() för att ändra standard Error strömmen eller att använda Trace och Debug klasserna. Det är viktigt att utforska dessa metoder och se vad som fungerar bäst för ditt specifika program.
 
 ## Se även
 
-- [C# Dokumentation: Console.Error Property](https://docs.microsoft.com/en-us/dotnet/api/system.console.error?view=net-5.0)
-- [Using Standard Error Stream in C#](https://www.c-sharpcorner.com/article/using-standard-error-stream-in-c-sharp/)
-- [Error Handling in C#](https://stackify.com/csharp-error-handling-best-practices/)
+- [C# Console.Error.WriteLine() metod dokumentation](https://docs.microsoft.com/sv-se/dotnet/api/system.console.error.writeline?view=netcore-3.1)
+- [Felhanteringsguiden för C#](https://docs.microsoft.com/sv-se/dotnet/csharp/programming-guide/exceptions/)
+- [Loggning och felsökning i C#](https://www.tutorialspoint.com/csharp/csharp_error_handling.htm)
+
+Att skriva till standard Error är en viktig del av felsökning i C# program. Genom att använda rätt metoder och inkludera tillräcklig information i dina felmeddelanden, kan du enkelt spåra och åtgärda buggar i koden. Nu är det dags att gå ut och implementera detta i ditt nästa projekt!

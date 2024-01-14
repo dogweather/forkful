@@ -1,79 +1,56 @@
 ---
 title:                "Elixir: Generowanie losowych liczb"
+simple_title:         "Generowanie losowych liczb"
 programming_language: "Elixir"
-category:             "Numbers"
+category:             "Elixir"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego: Generowanie liczb losowych w Elixir
+# Dlaczego generowanie losowych liczb jest ważne w Elixirze?
 
-Generowanie liczb losowych może wydawać się niepotrzebnym lub przypadkowym aspektem programowania, ale jest niezwykle ważnym elementem w wielu aplikacjach. Przykładowo, losowe liczby mogą być wykorzystane do losowania zwycięzców w konkursach, generowania unikalnych identyfikatorów lub testowania funkcji w kodzie. W Elixir, istnieje wiele sposobów na generowanie liczb losowych, a w tym artykule opiszemy najpopularniejsze metody.
+Generowanie losowych liczb jest istotnym aspektem w każdym języku programowania, a Elixir nie jest wyjątkiem. Dzięki generowaniu losowych liczb możemy symulować różnorodne scenariusze i testować nasze aplikacje pod różnymi warunkami. Pozwala to również na tworzenie unikatowych kluczy, hasła czy identyfikatorów dla naszych użytkowników.
 
-## Jak to zrobić: Przykłady kodu i rezultaty
+# Jak wygenerować losowe liczby w Elixirze?
 
-### Używając funkcji `Enum.random/1`
-
-Jednym z najprostszych sposobów na wygenerowanie losowej liczby jest użycie funkcji `Enum.random/1` z modułu `Enum`. Ta funkcja pobiera kolekcję i zwraca losowy element z tej kolekcji. W przypadku pobrania pojedynczej liczby, funkcja wylosuje ją z przedziału od 0 do podanej liczby.
+Możemy wykorzystać wbudowaną funkcję `:rand.uniform/1` do generowania losowych liczb lub wykorzystać moduł `:rand` w celu dostosowania generowanych liczb do naszych potrzeb.
 
 ```Elixir
-Enum.random(100)
-# => 57
+# Prosty przykład generowania losowego numeru między 1 a 100
+rand_num = :rand.uniform(1..100)
+IO.puts(rand_num)
+
+# Przykład wykorzystania modułu `:rand` do wygenerowania losowego hasła
+require Integer
+require List
+
+alphabet = 'abcdefghijklmnoprstuwxyz'
+user_password = :rand.seed(:erlang.timestamps)
+|> Integer.to_string(36)
+|> String.codepoints()
+|> List.to_tuple()
+|> Enum.map(fn(x) -> alphabet[x] end)
+|> List.to_string()
+
+IO.puts(user_password)
 ```
 
-### Używając biblioteki `:rand`
-
-Elixir udostępnia również wbudowaną bibliotekę `:rand`, która oferuje więcej zaawansowanych funkcji generowania liczb losowych. Jedną z nich jest funkcja `random_uniform/1`, która wylosuje liczbę z przedziału od 0 do podanej liczby.
-
-```Elixir
-:rand.uniform(100)
-# => 33
+### Output:
+```
+47
+v7mhnspz
 ```
 
-### Używając funkcji `Kernel.SpecialForms.apply/2`
+# Głębszy wgląd w generowanie losowych liczb
 
-Możemy również wykorzystać funkcję `apply/2` z modułu `Kernel.SpecialForms`, aby wywołać dowolną funkcję i przekazać jej jako argument wartości losowe. W poniższym przykładzie wywołujemy funkcję `Enum.random/1` i przekazujemy jej przedział od 0 do 100.
+Funkcja `:rand.uniform/1` wykorzystuje generator pseudolosowy o nazwie Mersenne Twister. Jest to algorytm o bardzo dużej periodyczności, co oznacza, że wygenerowane liczby są trudne do przewidzenia, ale jednak nie są całkowicie losowe. Dlatego zaleca się wykorzystywanie tego typu generatorów jedynie do celów niedokładnych symulacji lub przy generowaniu wartości, które nie są krytyczne dla bezpieczeństwa naszej aplikacji.
 
-```Elixir
-apply(Enum, :random, [100])
-# => 91
-```
+Możemy również używać modułu `:rand` w celu dostosowania naszego generatora pseudolosowego do bardziej konkretnych zastosowań. Na przykład, możemy określić ziarno dla generatora, aby uzyskać te same wyniki zawsze, gdy generujemy numery z tych samych danych wejściowych. Możemy również wybrać spośród kilku różnych algorytmów generujących do wykorzystania w zależności od naszych wymagań.
 
-## Głębszy zanurzenie: Dodatkowe informacje o generowaniu liczb losowych
-
-### Losowanie z różnych rozkładów
-
-Poza standardowym wyborem losowych liczb, możemy również wykorzystać funkcję `:rand.uniform/1` do losowania z określonego rozkładu prawdopodobieństwa. W poniższym przykładzie losujemy z rozkładu normalnego o średniej 10 i odchyleniu standardowym 5.
-
-```Elixir
-:rand.normal(10, 5)
-# => 7.524284
-```
-
-### Używanie własnego generatora liczb losowych
-
-Jeśli chcemy wykorzystać własny generator liczb losowych, możemy zdefiniować własny moduł i wykorzystać go w naszym kodzie. Moduł ten musi implementować funkcję `:rand.uniform/0`, która zwraca losową wartość z przedziału od 0 do 1, oraz funkcję `:rand.uniform/1`, która przyjmuje argument powinna zwracać losową wartość z przedziału od 0 do tej liczby.
-
-```Elixir
-defmodule MyRandom do
-  defuniform do
-    :ok
-    if(:rand.uniform < 0.5, do: 1, else: 2)
-  end
-  defuniform(n) do
-    :ok
-    if(:rand.uniform < 0.5, do: n * 2, else: n * 3)
-  end
-end
-
-MyRandom.uniform
-# => 1 lub 2
-MyRandom.uniform(10)
-# => 20 lub 30
-```
-
-## Zobacz też
-
-- [Dokumentacja Elixir: Generowanie liczb losowych](https://hexdocs.pm/elixir/Kernel.html#uniform/1)
-- [Poradnik programowania: Jak generować losowe liczby w Elixir](https://www.brianstorti.com/random-numbers-in-elixir/)
+# Zobacz również
+- Dokumentacja Elixir dla funkcji `:rand.uniform/1`: https://hexdocs.pm/elixir/1.10/Kernel.html#base-uniform/2
+- Dokumentacja Elixir dla modułu `:rand`: https://hexdocs.pm/elixir/1.10/Random.html
+- Konwersja liczby całkowitej na ciąg znaków w Elixirze: https://elixirschool.com/pl/lessons/basics/basics/#właściwość-wewnątrz-właściwości-string-codepointsi-listtostring/
+- Przewidywalność pseudolosowych liczb w informatyce: https://en.wikipedia.org/wiki/Pseudorandomness

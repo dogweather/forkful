@@ -1,58 +1,34 @@
 ---
-title:                "Swift: 컴퓨터 프로그래밍에서 명령줄 인수 읽기"
+title:                "Swift: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/swift/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
+이 포스트에서는 소프트웨어 개발에서 중요한 역할을 하는 명령 줄 인수를 읽는 방법을 배우게 됩니다. 명령 줄 인수는 여러분이 작성하는 프로그램에 대한 사용자 입력을 제공하는 방법 중 하나입니다. 이 포스트를 읽는 것으로 더 나은 개발자가 되는 첫 걸음을 내딛을 수 있습니다.
 
-명령줄 인수를 읽는 일은 아주 유용한 기술입니다. 이 블로그 포스트에서는 Swift 프로그래밍 언어로 명령줄 인수를 해석하는 방법을 배우게 될 것입니다.
-
-## 어떻게 하나요?
-
-명령줄 인수를 읽는 방법은 간단합니다. 먼저, ```CommandLine``` 클래스를 import한 다음, ```arguments``` 프로퍼티를 사용하여 사용자가 입력한 인수들을 가져올 수 있습니다.
-
-다음은 간단한 예시 코드입니다:
+# 방법
+명령 줄 인수를 읽기 위해서는 `CommandLine` 클래스를 사용합니다. 이 클래스에는 `arguments` 속성이 있으며, 이를 통해 모든 인수를 배열로 받아올 수 있습니다. 아래는 예시 코드입니다.
 
 ```Swift
-import Foundation
-
-let arguments = CommandLine.arguments
-print("사용자가 입력한 인수들: \(arguments)")
-```
-
-위 코드를 실행하면 다음과 같은 출력 결과를 얻을 수 있습니다.
-
-```
-사용자가 입력한 인수들: ["main", "file1.txt", "file2.txt"]
-```
-
-위에서 볼 수 있듯이, ```arguments```는 배열 형태로 입력된 값들을 저장합니다. 배열의 첫 번째 요소는 프로그램의 이름을 나타내는 문자열이며, 그 뒤로는 사용자가 입력한 인수들이 차례대로 나열됩니다.
-
-## 깊이 파고들기
-
-더 복잡한 명령줄 인수를 다루려면, ```CommandLine``` 클래스의 다른 메서드들을 사용할 수 있습니다. 예를 들어, ```CommandLine``` 클래스의 ```option``` 메서드를 사용하면 특정 옵션이 입력되었는 지 확인할 수 있습니다.
-
-아래는 사용자가 입력한 인수 중에서 ```-h``` 또는 ```--help``` 옵션이 입력된 경우에만 도움말 메시지를 출력하는 예제입니다.
-
-```Swift
-import Foundation
-
-let arguments = CommandLine.arguments
-
-if arguments.option("h", "help") != nil {
-    print("도움말: 이 프로그램은 두 개의 파일을 비교하는 역할을 합니다.")
-    print("사용법: main <file1> <file2>")
+if CommandLine.arguments.count > 0 {
+    for argument in CommandLine.arguments {
+        print(argument)
+    }
 }
 ```
 
-위 코드를 통해 명령줄 인수를 더욱 효율적으로 다루고 활용할 수 있게 됩니다.
+위 코드를 실행하면, 사용자가 입력한 모든 인수가 출력됩니다. 예를 들어, `./myProgram Swift is awesome`를 입력하면, `./myProgram`, `Swift`, `is`, `awesome`가 순서대로 출력됩니다.
 
-## See Also
+# 깊이 파고들기
+명령 줄 인수는 여러분이 다양한 방법으로 활용할 수 있습니다. 예를 들어, 사용자가 입력한 인수에 따라 다른 동작을 하도록 프로그램을 제어할 수 있습니다. 또한, 인수를 사용하여 특정 파일 경로나 설정값을 지정할 수도 있습니다. 이 외에도 다양한 가능성이 존재합니다. 따라서 명령 줄 인수를 잘 활용하는 것은 좋은 프로그램을 개발하는 데 꼭 필요한 기술입니다.
 
-- [Swift documentation for CommandLine class](https://developer.apple.com/documentation/foundation/commandline)
-- [How to Read Command Line Arguments in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-read-command-line-arguments-using-commandline)
-- [Using Swift as a Scripting Language](https://developer.apple.com/library/archive/documentation/IDEs/Conceptual/swift_debugger_guide/Scripting/Scripting.html)
+# 또 보기
+- [Swift 공식 문서](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+- [레이 캐스트: 명령 줄 인수](https://www.raywenderlich.com/7678174-command-line-programs-on-macos-tutorial)
+- [The Swift Dev: 명령 줄 인수](https://theswiftdev.com/all-about-command-line-arguments-in-swift/)

@@ -1,55 +1,47 @@
 ---
 title:                "Kotlin: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/kotlin/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは、Kotlinプログラミングの皆さん！今日の記事では、どのように文字列を小文字に変換するかについてお話ししたいと思います。文字列を小文字に変換すると何が良いのか、そしてどのように行うのかを説明します。さらに、深いレベルまでその仕組みを掘り下げていきます。
+## なぜ
 
-## Why
+文字列を小文字に変換することについて、なぜ誰かが取り組むのか、理由を説明します。
 
-文字列を小文字に変換すると、大文字と小文字の区別が無くなって、文字列の検索や比較がより簡単になります。また、プログラムの可読性も上がるため、より効率的にコードを書くことができます。
+## 方法
 
-## How To
-
-文字列を小文字に変換する方法はいくつかありますが、今回はKotlinの組み込み関数である `toLowerCase()` を使います。以下の例をご覧ください。
+文字列を小文字に変換するには、`toLowerCase()`メソッドを使用します。例えば、以下のようにコーディングします。
 
 ```Kotlin
-val str = "Hello World!"
-val lowerCaseStr = str.toLowerCase()
-
-println(str)
-// 出力: Hello World!
-println(lowerCaseStr)
-// 出力: hello world!
+val str = "Hello World"
+println(str.toLowerCase())
 ```
 
-`toLowerCase()` 関数は、指定した文字列を小文字に変換してその結果を返します。オリジナルの文字列は変更されないため、新しい変数に代入する必要があります。
+これにより、出力は次のようになります。
 
-また、文字列を比較する際には、両方の文字列を小文字に変換してから比較することで、大文字と小文字の区別を無くすことができます。例えば、以下のようなコードになります。
-
-```Kotlin
-val str1 = "kotlin"
-val str2 = "KOTLIN"
-
-if(str1.toLowerCase() == str2.toLowerCase()) {
-    println("同じ文字列です")
-} else {
-    println("異なる文字列です")
-}
-// 出力: 同じ文字列です
+```
+hello world
 ```
 
-## Deep Dive
+## ディープダイブ
 
-文字列を小文字に変換する際には、言語やライブラリによって実装方法が異なることがあります。Kotlinの `toLowerCase()` 関数は、プラットフォームの基本的なルールに従って、Unicode標準を使用して小文字に変換を行います。つまり、英数字以外の文字を含む場合にも正しく変換されます。また、Turkish（トルコ語）のように、大文字と小文字が文字ごとに異なる言語にも対応しています。
+`toLowerCase()`メソッドは、与えられた文字列を小文字に変換するための便利なメソッドです。一般的に、文字列を比較する際に、大文字と小文字を区別したくない場合にこのメソッドを使用します。
 
-さらに、文字列に `Locale` を指定することができるため、特定の言語における小文字への変換も可能です。例えば、日本語の場合は `Locale.JAPAN` を指定することで、ひらがなやカタカナも正しく小文字に変換されます。
+また、Kotlinでは`toLowerCase()`メソッドの他に、`uppercase()`メソッドも提供されています。これは文字列をすべて大文字に変換してくれます。
 
-## See Also
+## 詳細を見る
 
-- [Kotlin's toLowerCase() function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
-- [Unicode Standard](https://www.unicode.org/standard/standard.html)
+Kotlinでは、文字列を小文字に変換するための他にも便利なメソッドや関数が提供されています。例えば、`trim()`メソッドを使用することで文字列の前後の空白を取り除くことができます。
+
+また、文字列を操作する際には、`StringBuilder()`クラスを使用することでパフォーマンスを向上させることができます。
+
+## 関連リンクを見る
+
+[公式ドキュメント](https://kotlinlang.org/docs/strings.html#string-case-manipulation-methods)
+[Kotlinで文字列を比較する方法](https://www.geeksforgeeks.org/how-to-compare-two-string-in-kotlin/)
+[文字列操作についての詳細なガイド](https://dev.to/quickbirdstudios/kotlin-string-the-8-most-common-operations-and-classes-you-can-use-51b2)

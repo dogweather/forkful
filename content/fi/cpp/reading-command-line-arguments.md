@@ -1,7 +1,9 @@
 ---
 title:                "C++: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/cpp/reading-command-line-arguments.md"
 ---
 
@@ -9,48 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä miksi lukijamme saattavat haluta oppia kuinka lukea komentoriviparametrejä C++-ohjelmoinnissa. Saatat tarvita tätä taitoa, jotta voit kirjoittaa ohjelmia, jotka ovat yhteensopivia muiden komentorivipohjaisten työkalujen kanssa, tai ehkä haluat tehdä ohjelmastasi käyttäjäystävällisemmän antamalla käyttäjien syöttää parametreja suoraan ohjelmalle.
+Komentoriviargumenttien lukeminen on tärkeä osa C++ ohjelmointia, sillä se mahdollistaa käyttäjien syötteiden käsittelyn ja erilaisten toimintojen suorittamisen ohjelmassa. Tässä blogikirjoituksessa tutustumme tarkemmin komentoriviargumenttien lukemiseen C++ -koodissa ja opimme, miten voimme hyödyntää tätä taitoa ohjelmoinnissamme.
 
-## Kuinka
+## Miten
 
-Aloita luomalla pääfunktio, joka ottaa parametreiksi "argc" ja "argv". Tämä pääfunktio olioina voidaan käyttää lukemaan komentoriviparametreja. Tässä on yksinkertainen esimerkki:
+Komentoriviargumenttien lukeminen onnistuu C++:n standardikirjaston `argc` ja `argv` muuttujien avulla. `argc` sisältää arvonaan komentoriviargumenttien lukumäärän ja `argv` on merkkijonojen taulukko, joka sisältää itse komentoriviargumentit. Alla on esimerkkikoodi, joka tulostaa kaikki komentoriviargumentit yksitellen:
 
 ```C++
 #include <iostream>
 
-using namespace std;
-
-int main(int argc, char *argv[])
-{
-    // tulosta komentoriviparametrien lukumäärä
-    cout << "Komentoriviparametrien lukumäärä: " << argc << endl;
-
-    // tulosta kaikki parametrit 
-    for (int i = 0; i < argc; ++i) {
-        cout << "Parametri " << i << ": " << argv[i] << endl;
-    }
-
-    return 0;
+int main(int argc, char* argv[]) {
+  for (int i = 0; i < argc; i++) {
+    std::cout << argv[i] << std::endl;
+  }
+  return 0;
 }
 ```
 
-Tässä esimerkissä käytämme "cout" -toimintoa tulostamaan lukumäärän ja kaikki parametrit. Voit käyttää myös muita C++:n toimintoja, kuten "string" -luokkaa, käsittelläksesi parametrit haluamallasi tavalla.
-
-Kun suoritat tämän ohjelman komentoriviltä antamalla sille muutaman parametrin, esimerkiksi "ohjelmamme parametri1 parametri2", saamme seuraavan tuloksen:
+Esimerkkituloste, kun ohjelmaa suoritetaan komennolla `./my_program hello world`:
 
 ```
-Komentoriviparametrien lukumäärä: 3
-Parametri 0: ohjelmamme
-Parametri 1: parametri1
-Parametri 2: parametri2
+./my_program
+hello
+world
 ```
 
-## Syvempi sukellus
+## Syvällisempi tarkastelu
 
-Kun ohjelmasi on saanut komentoriviparametrit, voit käsitellä niitä ja tehdä ohjelmastasi vieläkin monipuolisemman esimerkiksi käyttämällä "if"-lausekkeita tai luokkia. Voit myös käyttää "stringstream" -luokkaa muuttamaan parametrit eri tyypeiksi, kuten "int" tai "double". Muista myös käsitellä mahdollisia virheilmoituksia, jos käyttäjä ei anna oikeaa määrää parametreja tai antaa virheellisen parametrin.
+Komentoriviargumenttien lukeminen ei rajoitu vain yksittäisten syötteiden tulostamiseen, vaan niitä voi myös käyttää esimerkiksi ehtolauseiden tai silmukoiden ehtoina. Lisäksi `argc` ja `argv` muuttujia voidaan hyödyntää myös erilaisten virheiden käsittelyssä. Esimerkiksi jos tiettyjä argumentteja ei ole määritelty tai niiden arvot ovat virheellisiä, voidaan ohjelma lopettaa virheilmoituksella.
 
 ## Katso myös
 
-- [C++:n "main"-funktio](https://www.cplusplus.com/articles/4z18T05o/)
-- [string-luokka](https://www.cplusplus.com/reference/string/string/)
-- [stringstream-luokka](https://www.cplusplus.com/reference/sstream/stringstream/)
+- [C++ Standardikirjaston dokumentaatio](https://en.cppreference.com/w/cpp/language/main_function)
+- [C++ Kirja: Komentoriviargumenttien lukeminen](https://en.wikibooks.org/wiki/C%2B%2B_Programming/Code/Standard_C_Library/Functions/argc_and_argv)

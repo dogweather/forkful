@@ -1,57 +1,49 @@
 ---
 title:                "Kotlin recipe: Starting a new project"
+simple_title:         "Starting a new project"
 programming_language: "Kotlin"
-category:             "Getting Started"
+category:             "Kotlin"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/kotlin/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-Are you looking to start a new programming project? Perhaps you want to learn a new language or add to your skillset? Starting a new project in Kotlin could be just the thing for you! Kotlin is a modern and powerful programming language with a large and growing community. Plus, it is fully interoperable with the Java programming language, making it a great choice for projects of all sizes and purposes.
+Starting a new project can be daunting, but it's also an exciting opportunity to create something new and bring your ideas to life. Whether you're a seasoned developer or just getting started, starting a new project allows you to challenge yourself and continue to learn and grow.
 
 ## How To
-To begin your Kotlin journey, first make sure you have the necessary tools installed. You will need the Kotlin compiler, which can be downloaded from the official Kotlin website or installed through a dependency manager such as Gradle or Maven. Once installed, you can start by creating a new Kotlin project in your IDE of choice. 
+To get started with a new project in Kotlin, follow these simple steps:
+1. Install the Kotlin compiler and set up your development environment.
+2. Decide on the type and purpose of your project. Is it a web application, a mobile app, or something else?
+3. Create a new project in your chosen IDE, such as IntelliJ or Android Studio.
+4. Start writing your code in Kotlin, using ```Kotlin ... ``` code blocks to demonstrate your examples.
 
-Let's take a look at a simple "Hello, World!" program written in Kotlin:
-
-```Kotlin
-fun main() {
-    println("Hello, World!")
-}
-```
-In this code block, we have a function called `main` which is the entry point of our program. Within the function, we use the `println()` function to print out our desired message. To run this program, we can use the `kotlinc` command in our terminal to compile the code, followed by `kotlin` to execute it.
-
-Now, let's take a look at a more complex example using variables and conditional statements:
+Here's a quick example of how to create a simple "Hello World" program in Kotlin:
 
 ```Kotlin
 fun main() {
-    val num1 = 10 //declaring a variable
-    val num2 = 5
-    val sum = num1 + num2 //calculating the sum
-    
-    if (sum > 15) {
-        println("The sum is greater than 15")
-    } else {
-        println("The sum is less than or equal to 15")
-    }
+    println("Hello, world!")
 }
 ```
 
-In this example, we are first declaring two variables `num1` and `num2` with the values of 10 and 5 respectively. Next, we calculate the sum of these two variables and store it in a new variable `sum`. We then use an `if-else` statement to check if the sum is greater than 15 and print out the corresponding message. Again, we can use the `kotlinc` and `kotlin` commands to compile and execute this code.
+The output of this code would be:
+```
+Hello, world!
+```
+
+Kotlin is a powerful and versatile language, allowing for functional, object-oriented, and reactive programming styles. Make use of its features like extension functions, null safety, and coroutines to make your code more efficient and robust.
 
 ## Deep Dive
-Starting a new project in Kotlin can open up a world of possibilities. With its concise and intuitive syntax, Kotlin allows for faster and more efficient coding. It also has powerful features such as null safety and type interference, making your code more robust and less prone to errors. Additionally, Kotlin has great support for functional programming, giving you even more options when designing your project.
+When starting a new project, it's important to have a clear understanding of your goals and what you hope to achieve. This will help you make decisions about the architecture, design patterns, and third-party libraries you may need to use.
 
-As you dive deeper into Kotlin, you will find many resources and communities to help you along the way. From official documentation to online tutorials and forums, there is no shortage of information and support for this popular language.
+It's also important to consider the scalability and maintainability of your project. Are you planning to expand it in the future? Will other developers be able to easily understand and modify your code?
+
+Additionally, keep in mind the platform or platforms your project will be targeting. Kotlin is a cross-platform language, so it can be used for a variety of projects, but certain considerations may need to be made for specific platforms, such as Android or web development.
+
+Ultimately, the most important aspect of starting a new project is to have fun and enjoy the process. Don't be afraid to experiment and try new things, and use any challenges as an opportunity to learn and improve.
 
 ## See Also
-If you're interested in learning more about Kotlin and starting your own projects, check out these helpful resources:
-
-- Official Kotlin website: https://kotlinlang.org/
-- Kotlin documentation: https://kotlinlang.org/docs/home.html
-- Kotlin tutorials: https://kotlinlang.org/docs/tutorials/
-- Kotlin subreddit: https://www.reddit.com/r/Kotlin/
-- Kotlin community forum: https://discuss.kotlinlang.org/
-
-Start your Kotlin journey today and unlock a whole new world of coding possibilities!
+- [Official Kotlin Documentation](https://kotlinlang.org/docs/home.html)
+- [Kotlin Tutorials by JetBrains](https://kotlinlang.org/docs/tutorials/)
+- [Build Your First Kotlin App](https://developer.android.com/codelabs/basic-android-kotlin-training-intro) by Google Developers

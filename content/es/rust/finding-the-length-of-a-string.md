@@ -1,56 +1,39 @@
 ---
-title:                "Rust: Encontrando la longitud de una cadena."
+title:                "Rust: Encontrar la longitud de una cadena"
+simple_title:         "Encontrar la longitud de una cadena"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/rust/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-En la programación, a menudo necesitamos encontrar la longitud de una cadena de texto para realizar ciertas operaciones. En este artículo, aprenderemos cómo hacerlo en Rust de manera eficiente.
+En la programación, es importante poder manipular y trabajar con cadenas de texto. Una tarea común es encontrar la longitud de una cadena, es decir, cuántos caracteres contiene. En este artículo, vamos a explorar cómo podemos hacer esto en Rust y por qué es importante.
 
 ## Cómo hacerlo
-
-Para encontrar la longitud de una cadena de texto en Rust, podemos usar el método `len()` que está disponible en todos los tipos de datos `String` y `&str`. Aquí hay un ejemplo de cómo usarlo:
-
-```Rust
-let mi_cadena = "¡Hola, mundo!";
-let longitud = mi_cadena.len();
-
-println!("La longitud de la cadena es: {}", longitud);
-```
-
-Este código imprimirá: `La longitud de la cadena es: 13`.
-
-También podemos usar `len()` en una cadena de texto que almacenamos en una variable de tipo `String`:
+Para encontrar la longitud de una cadena en Rust, podemos usar el método `len()` en una variable que contenga una cadena. Veamos un ejemplo:
 
 ```Rust
-let mi_cadena = String::from("¡Hola, mundo!");
-let longitud = mi_cadena.len();
-
-println!("La longitud de la cadena es: {}", longitud);
+let mi_cadena = "¡Hola mundo!";
+println!("Longitud de la cadena: {}", mi_cadena.len());
 ```
 
-De esta manera, también obtendremos una longitud de `13`.
+La salida de este código sería `Longitud de la cadena: 12`, ya que la cadena contiene 12 caracteres. También podemos usar el método `len()` en una cadena directamente, sin asignarla a una variable primero:
+
+```Rust
+println!("Longitud de la cadena: {}", "¡Hola mundo!".len());
+```
+
+Esta forma es más corta y directa, pero a veces es útil tener la cadena asignada a una variable si la vamos a usar más adelante en nuestro código.
 
 ## Profundizando
+En Rust, se trata de ser explícito y seguro en el manejo de tipos de datos. Por eso, cuando usamos el método `len()` en una cadena, el resultado es un número entero del tipo `usize`. Esto nos permite asegurarnos de que siempre estamos trabajando con una cantidad numérica válida, en lugar de solo confiar en la longitud de una cadena determinada por el sistema operativo.
 
-Hay una diferencia técnica entre usar `len()` en una cadena de texto almacenada en una variable de tipo `String` y en una cadena de texto literal. Al usarlo en una variable de tipo `String`, se llama al método `len()` del tipo `String`, mientras que en una cadena de texto literal, se llama al método `len()` del tipo `&str`.
+También es importante tener en cuenta que, en Rust, cada carácter en una cadena ocupa una ubicación específica en la memoria. Por lo tanto, la longitud de una cadena en Rust no es simplemente la cantidad de caracteres, sino también el espacio en memoria que ocupa. Esto es útil en el manejo de cadenas seguras y eficientes en términos de rendimiento.
 
-Además, también podemos utilizar el método `chars()` en una cadena de texto para obtener un iterador que nos permite recorrer cada carácter de la cadena. Luego, podemos usar el método `count()` en este iterador para obtener la cantidad total de caracteres en la cadena.
-
-```Rust
-let mi_cadena = "¡Hola, mundo!";
-let cantidad_caracteres = mi_cadena.chars().count();
-
-println!("La cantidad de caracteres en la cadena es: {}", cantidad_caracteres);
-```
-
-Este código imprimirá: `La cantidad de caracteres en la cadena es: 13`.
-
-## Véase también
-
-- [La documentación oficial de Rust sobre la manipulación de cadenas de texto](https://doc.rust-lang.org/std/string/index.html)
-- [El tutorial de Rust Strings de Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/std/str.html)
+## Ver también
+- [Documentación oficial de Rust sobre cadenas](https://doc.rust-lang.org/std/string/)
+- [Tutorial de Rust en español](https://dev.to/erikaheidi/tutorial-de-rust-en-espanol-parte-1-342o)
+- [Ejemplos prácticos de Rust](https://doc.rust-lang.org/stable/rust-by-example/)

@@ -1,54 +1,33 @@
 ---
-title:                "Swift: デバッグの出力を印刷する"
+title:                "Swift: 「デバッグ出力の印刷」"
+simple_title:         "「デバッグ出力の印刷」"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/swift/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## なぜ
-プログラムを書く際に、デバッグ用の出力を表示することが重要です。これにより、コードが期待どおりに動作しているかどうかを確認することができます。
+
+デバッグ出力を行う理由は、コードを実行した際に何が起きているかを理解したり、バグを特定したりするためです。
 
 ## 方法
-デバッグ用の出力を表示するには、Swiftの ```print()``` 関数を使用します。以下の例を参考にしてください。
 
 ```Swift
 let number = 5
-print("変数numberの値は\(number)です。")
-
-// 出力結果：変数numberの値は5です。
+print("This is a number: \(number)")
 ```
 
-このように、```print()```関数を使うと、任意のデータを出力することができます。また、複数の値を出力する際には、コンマで区切ることもできます。
+このように、`print()`関数を使用してデバッグ出力を行うことができます。出力結果は`This is a number: 5`となります。
 
-```Swift
-let name = "田中"
-let age = 25
-print("私の名前は\(name)です。年齢は\(age)才です。")
+## ディープダイブ
 
-// 出力結果：私の名前は田中です。年齢は25才です。
-```
+デバッグ出力を行うことで、コードの実行結果を確認し、検証することができます。また、`print()`関数を使用する際には、`debug`パラメーターを追加することで、より詳細な情報を出力することができます。
 
-## 深堀り
-デバッグ用の出力を表示する際に便利なのが、オプションの引数です。例えば、出力するときの区切りや改行を指定することができます。
+## さらに見る
 
-```Swift
-print("Apple", "Banana", "Melon", separator: ", ", terminator: ".")
-// 出力結果：Apple, Banana, Melon.
-```
-
-また、デバッグ用の出力を表示しながら、実際にアプリが実行される時には出力されないようにすることもできます。
-
-```Swift
-// デバッグ用の出力を表示
-print("この部分のみデバッグモードでのみ出力されます。")
-
-// アプリ実行時には出力されない
-assertionFailure("このコードは実行されません。")
-```
-
-## 関連記事
-- [Swift公式ドキュメント - print(_:separator:terminator:)](https://developer.apple.com/documentation/swift/1541053-print)
-- [デバッグの基本 - Swiftスタートアップガイド](https://aktsk.hatenablog.com/entry/2014/06/29/215246)
-- [Swiftでassertを使う方法 - Qiita](https://qiita.com/SatoshiKawabata/items/811b2ecf79529ed24662)
+- [Swiftのprint関数の使い方](https://qiita.com/RyotaMurohoshi/items/58e1a98a60cb546a8411)
+- [デバッグを効率的に行うための方法](https://techacademy.jp/magazine/14009)
+- [デバッグ文法入門](https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/debugging/)

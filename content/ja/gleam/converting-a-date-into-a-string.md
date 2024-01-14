@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: 「日付を文字列に変換する」"
+title:                "Gleam: 日付を文字列に変換する"
+simple_title:         "日付を文字列に変換する"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/gleam/converting-a-date-into-a-string.md"
 ---
 
@@ -9,22 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-日付を文字列に変換する必要があるかもしれません。例えば、データベースに日付を保存する場合や、日付を指定したフォーマットで表示したい場合などです。
+日付を文字列に変換することの利点は何でしょうか？このブログポストでは、Gleamプログラミング言語で日付を文字列に変換する方法を詳しく説明します。
 
-## 方法
+## やり方
 
+まず、Gleamで日付を文字列に変換する必要なモジュールをインポートします。
+
+```Gleam
+import gleam/time as time
 ```
-Gleam.Date.to_string(Date.new(2021, 7, 15))
+
+次に、現在の日付を取得します。
+
+```Gleam
+let date = time.now()
 ```
 
-上記のように、`Gleam.Date.to_string`関数を使用して日付を文字列に変えることができます。上記のコードを実行すると、`2021-07-15`という文字列が返されます。
+そして、日付を文字列に変換します。
 
-## 詳しく学ぶ
+```Gleam
+let string = time.format(date, "%Y-%m-%d")
+```
 
-日付を文字列に変換するには、まず`Gleam.Date.to_string`関数で日付を文字列に変換できるようにします。その際には、Gleamで標準的に使われているISO 8601形式（YYYY-MM-DD）が使用されます。もし、異なるフォーマットで日付を文字列に変換したい場合は、`Gleam.Date.format`関数を使用することで、指定したフォーマットで日付を文字列に変換できます。
+この場合、変換された文字列は"2021-09-30"となります。
 
-## 参考リンク
+## ディープダイブ
 
-- [Gleam 公式ドキュメント](https://gleam.run/getting-started/getting-started)
-- [Gleam コミュニティフォーラム](https://forum.gleam.run/)
-- [ISO 8601 形式を理解する](https://ja.wikipedia.org/wiki/ISO_8601)
+日付を文字列に変換する際、Gleamプログラミング言語では、format関数を使用します。この関数には2つの引数があります。最初の引数は日付オブジェクトであり、2つ目の引数は日付をどのような形式の文字列に変換するかを指定するフォーマット文字列です。
+
+フォーマットされた文字列には、使用できる特殊な文字があります。例えば、"%Y"は4桁の年を表し、"%m"は2桁の月を表します。詳細なフォーマット文字列の一覧は、Gleamの公式ドキュメントを参照してください。
+
+## 詳しくはこちら
+
+- [Gleam公式ドキュメント](https://gleam.run/documentation/)
+- [日付を文字列に変換する方法についての詳細な解説記事](https://example.com/converting-date-to-string)
+- [Gleamで日付を扱う方法についてのチュートリアル動画](https://youtube.com/gleam-tutorial/123)
+
+## 関連リンク
+
+- [Gleamを使用したWebアプリケーション開発の方法についてのブログポスト](https://example.com/gleam-web-development)
+- [Gleamでのデータベース操作の方法についての公式ドキュメント](https://gleam.run/documentation/database)
+- [Gleamコミュニティのフォーラム](https://gleam.discourse.group/)

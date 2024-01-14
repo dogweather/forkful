@@ -1,7 +1,9 @@
 ---
-title:                "Arduino: Uttrekking av substringer"
+title:                "Arduino: Uttrekking av delstrenger"
+simple_title:         "Uttrekking av delstrenger"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/extracting-substrings.md"
 ---
 
@@ -9,45 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Når du jobber med Arduino-programmering, er det ofte behov for å manipulere strenger med tekst. Dette kan innebære å hente ut et lite stykke av teksten, kjent som en substring. Dette kan være nyttig når du for eksempel ønsker å vise en del av en lengre melding, eller når du trenger å sammenligne to deler av en tekststreng.
+Visual programming har nådd utrolige høyder de siste årene, og tusenvis av mennesker har begynt å lære å kode gjennom populære plattformer som Arduino. En av de viktigste funksjonene i Arduino er evnen til å trekke ut substrings fra en tekststreng. Dette kan være svært nyttig i ulike prosjekter, for eksempel å behandle sensordata eller lese og tolke informasjon fra en annen enhet. I denne bloggposten vil jeg vise deg hvorfor og hvordan du kan ekstrahere substrings i dine Arduino-prosjekter.
 
-## Hvordan
+## Hvordan du gjør det
 
-For å ekstrahere substrings i Arduino, bruker vi funksjonen `substring()`. Denne funksjonen tar inn to parametere: startindeks og slutindeks. Startindeksen angir hvor i strengen du ønsker å begynne å hente ut tekst, mens slutindeksen angir hvor du ønsker å avslutte.
-
-```Arduino
-String myString = "Hei, dette er en test";
-String extractedString = myString.substring(5, 9);
-
-Serial.println(extractedString);
-```
-
-Kjører dette koden vil gi følgende output: `dette`
-
-Du kan også bruke `substring()` til å hente ut resten av strengen fra en gitt startindeks:
+Å trekke ut substrings med Arduino er en relativt enkel oppgave, men det kan være forvirrende for nybegynnere. La oss se på et eksempel: Vi har en tekststreng som inneholder navn og alder på en person, og vi ønsker å trekke ut bare alderen. Følgende kode viser hvordan dette kan gjøres:
 
 ```Arduino
-String myString = "Hei, dette er en test";
-String extractedString = myString.substring(5);
-
-Serial.println(extractedString);
+String person = "John 25";    // definere tekststreng
+int index = person.indexOf(' ');    // finne plassering av mellomrom
+String alder = person.substring(index+1);    // ekstrahere alderen fra plasseringen på mellomrommet
+Serial.println(alder);    // skriv ut alderen
 ```
 
-Dette vil gi følgende output: `dette er en test`
+I denne koden bruker vi funksjonene `indexOf` og `substring` til å finne og ekstrahere substrings. Først finner vi plasseringen av mellomrommet ved å bruke `indexOf`-funksjonen. Deretter bruker vi `substring`-funksjonen til å ekstrahere alt etter dette mellomrommet, som i dette tilfellet er alderen. Til slutt skriver vi ut alderen ved hjelp av `Serial.println`-funksjonen. Kjører du denne koden, vil du få output "25" på seriellmonitoren.
 
-Merk at startindeksen i dette tilfellet er inkludert i det ekstraherte substringet.
+## Dykk dypere
 
-## Dypdykk
+Hvis du ønsker å dykke dypere inn i utdrag av tekst, kan du også bruke `substring`-funksjonen til å definere en start og sluttindeks for utdraget. Dette kan være nyttig hvis det er mer enn ett mellomrom i tekststrengen, eller hvis du ønsker å trekke ut en spesifikk del av teksten. Hvis vi tar samme eksempel som tidligere, kan vi endre koden slik:
 
-Det er noen viktige ting å være klar over når du bruker `substring()` i Arduino-programmering:
+```Arduino
+String person = "John 25 Smith";    // definere tekststreng
+int index1 = person.indexOf(' ');    // finne plassering av første mellomrom
+int index2 = person.lastIndexOf(' ');    // finne plassering av siste mellomrom
+String etternavn = person.substring(index2+1);    // ekstrahere etternavnet fra plasseringen på siste mellomrom
+String fornavn = person.substring(index1+1, index2);    // ekstrahere fornavnet fra plasseringen på første mellomrom til siste mellomrom
+Serial.println(fornavn);    // skriv ut fornavnet
+Serial.println(etternavn);    // skriv ut etternavnet
+```
 
-- Indeksene begynner alltid på 0. Dette betyr at første tegn i strengen har indeks 0.
-- Slutindeksen er valgfri. Hvis den ikke angis, vil funksjonen hente ut resten av strengen fra startindeksen.
-- Hvis du angir en slutindeks som er større enn lengden på strengen, vil funksjonen bare hente ut teksten frem til slutten av strengen.
-- Du kan ikke bruke negative indekser, som kan være vanlig i andre programmeringsspråk.
+I denne koden bruker vi både `indexOf` og `lastIndexOf` for å finne plasseringen av de to mellomrommene i tekststrengen. Deretter bruker vi `substring`-funksjonen igjen, men denne gangen med både en start og sluttindeks som parameter. Kjører du denne koden, vil du få output "John" og "Smith" på seriellmonitoren.
 
 ## Se også
 
-- [Arduino referanseguide om `substring()` (engelsk)](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
-- [W3Schools om `substring()` (engelsk)](https://www.w3schools.com/jsref/jsref_substring.asp)
-- [Tutorial om tekstbehandling i Arduino (engelsk)](https://sportysnetwork.com/teachsomebody/how-to-handle-text/?et=wzfscf55fcp)
+- `indexOf()` dokumentasjon: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/indexof/
+- `substring()` dokumentasjon: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/

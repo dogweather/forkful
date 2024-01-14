@@ -1,41 +1,54 @@
 ---
-title:                "Arduino: Tiedon kirjoittaminen standardivirheeseen"
+title:                "Arduino: Kirjoittaminen standardivirheelle"
+simple_title:         "Kirjoittaminen standardivirheelle"
 programming_language: "Arduino"
-category:             "Files and I/O"
+category:             "Arduino"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/arduino/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi kirjoittaa standardi virheeseen?
+## Miksi: Miksi kirjoittaa standardierroriin?
 
-On monia syitä miksi kirjoittaa tiedot standardi virheeseen (standard error). Yksi yleisimmistä syistä on virheiden käsittely. Kun ohjelmassa tapahtuu virhe, se kirjoitetaan standardi virheeseen, mikä helpottaa sen löytämistä ja korjaamista.
+Kirjoittaminen standardierroriin on hyödyllinen tapa havaita ja korjata ohjelmointivirheitä Arduino-projektissa. Se on myös hyvä tapa varmistaa, että ohjelmasi toimii oikein ja ettei se kaadu odottamatta.
 
-## Miten: Esimerkkejä ja koodinpätkiä kirjoittamisesta standardi virheeseen
+## Miten: Esimerkkejä ja koodilohkoja
 
-#### ```Arduinovoid setup() {
+```Arduino
+// Esimerkki kirjoittamisesta standardierroriin
+Serial.print("Tämä on virheellinen lause"); // Tulostaa "Tämä on virheellinen lause" standardierroriin
+```
+
+Kun kirjoitat standardierroriin, ohjelma kirjoittaa viestit vakiotulostovirhevirtaan, jota voidaan seurata sarjaportin monitorissa. Tämä auttaa vianetsintään ja virheiden tunnistamiseen.
+
+```Arduino
+// Esimerkki standardierroriin kirjoittamisesta ja virheen käsittelystä
+Serial.print("Tervetuloa Arduino-projektiin!"); // Tulostaa tervehdyksen
+Serial.print("Tämä on virheellinen lause"); // Tulostaa "Tämä on virheellinen lause" standardierroriin
+
+// Virheenkäsittelijä
+void errorHandling() {
+  // Käsittelee virheen
+}
+
+void setup() {
+  // Alustaa sarjaportin monitorin
   Serial.begin(9600);
-  Serial.println("Ohjelma aloitettu.");
 }
 
 void loop() {
-  int luku = analogRead(A0); //luetaan tulon arvo
-  if (luku < 500) { //jos arvo alle 500
-    //kirjoitetaan virhe standardi virheeseen
-    Serial.print("Tulon arvo on liian pieni: ");
-    Serial.println(luku);
-  }
+  // Suorittaa päätoiminnot
+  errorHandling(); // Kutsuu virheenkäsittelijää, jos virhe tapahtuu
 }
 ```
-Esimerkissä luetaan analogisen tulon arvo ja jos se on alle 500, kirjoitetaan virhe standardi virheeseen. Tämä esimerkki osoittaa, miten könnykkästi virhekirjoitukset voidaan toteuttaa Arduino-koodissa.
 
-## Syvemmälle: Tietoa kirjoittamisesta standardi virheeseen
+## Syvempää tietoa standardierroriin kirjoittamisesta
 
-Kirjoittaminen standardi virheeseen on tärkeää virheiden käsittelyn lisäksi myös siksi, että se erottaa virheet normaalista tulostuksesta. Kun tulostus ja virheet ovat erillään, helpottaa se koodin lukemista ja ylläpitoa. Myös monimutkaisemmissa ohjelmissa, joissa on useita tiedostoja, standardi virheeseen kirjoittaminen auttaa löytämään virheet nopeammin.
+Standardierroriin kirjoittamista käytetään usein yhdessä vianetsintätoimintojen, kuten Serial.print(), kanssa. Se on myös hyödyllistä käyttää, kun haluat vain kirjoittaa tietyn viestin näkyviin, kun ohjelman suoritus on päättynyt. Huomaa, että standardierroriin kirjoittaminen ei katkaise ohjelman suoritusta, vaan se jatkaa suoritustaan normaalisti.
 
 ## Katso myös
 
-- [Arduino Serial.begin()](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
-- [Arduino Serial.println()](https://www.arduino.cc/reference/en/language/functions/communication/serial/println/)
-- [Arduino Debugging](https://www.arduino.cc/en/Tutorial/debugging)
-- [C++ Standard Error Output](http://www.cplusplus.com/reference/cstdio/stderr/)
+- [Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
+- [Arduino - kommunikointi sarjaportin kanssa](https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialCommunication)
+- [Vianetsintä Arduino-projekteissa](https://create.arduino.cc/projecthub/Anyintelli/how-to-troubleshoot-arduino-projects-7d66ff)

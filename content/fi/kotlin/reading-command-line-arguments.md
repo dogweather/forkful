@@ -1,48 +1,69 @@
 ---
-title:                "Kotlin: Komentoriviparametrien lukeminen."
+title:                "Kotlin: Lukeminen komentoriviparametreista"
+simple_title:         "Lukeminen komentoriviparametreista"
 programming_language: "Kotlin"
-category:             "Files and I/O"
+category:             "Kotlin"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/kotlin/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi lukea komentorivin argumentteja?
+## Miksi
+Yksi tärkeimmistä taidoista modernissa ohjelmoinnissa on kyky lukea komentorivin argumentteja. Se säästää aikaa ja vaivaa manuaalisen syöttämisen sijaan. Lisäksi, se antaa mahdollisuuden tehdä ohjelmistosta dynaamisemman ja monipuolisemman käyttäjille.
 
-Kun ohjelmoit Kotlinilla, on tärkeää ymmärtää, miten voit lukea komentorivin argumentteja. Tämä antaa sinulle mahdollisuuden muokata ohjelmaasi suoraan komentoriviltä, mikä on erittäin hyödyllistä testauksessa ja virheiden korjaamisessa. Se on myös yksi perustavaa laatua olevista taidoista, kun opetellaan ohjelmointia.
-
-## Kuinka lukea komentorivin argumentteja Kotlinilla
-
-Voit helposti lukea komentorivin argumentteja Kotlinissa käyttämällä `args`-muuttujaa. Tämä muuttuja sisältää taulukon kaikista komentorivin argumenteista. Voit tulostaa ne konsolille yksinkertaisesti käyttämällä `println`-funktiota.
+## Kuinka
+Kotlin tarjoaa helpon tavan lukea komentorivin argumentteja käyttämällä `args` muuttujaa. Tämän muuttujan avulla voit päästä käsiksi kaikkiin argumentteihin, jotka on syötetty ohjelman suorituksen alussa. Alla on yksinkertainen esimerkki:
 
 ```Kotlin
-fun main(args: Array<String>) {
-    println(args.joinToString())
+fun main(args: Array<String>){ 
+    println("Komentorivin argumentit:") 
+    for (arg in args) { 
+        println("$arg") 
+    } 
 }
 ```
 
-Tämä tulostaa kaikki komentorivin argumentit yhdistettyinä merkkijonoksi. Voit myös käsitellä erilaisia argumentteja erikseen taulukkoindeksien avulla.
+Jos tämä koodi ajetaan komentorivillä käyttäen esimerkiksi `kotlin CommandLine.kt arg1 arg2 arg3`, nähdään seuraava tulos:
+
+```
+Komentorivin argumentit:
+arg1
+arg2
+arg3
+```
+
+Kuten näet, kaikki argumentit on tallennettu `args` muuttujaan ja niitä voidaan käsitellä haluamallasi tavalla. Voit myös luoda ehtolauseita, jotka tarkistavat, ovatko tietyt argumentit mukana ja suorittavat sen perusteella erilaisia toimintoja.
+
+## Syvällinen tarkastelu
+Käyttämällä `args` muuttujaa, et ole rajoitettu vain lukemaan tekstipohjaisia argumentteja. Voit myös lukea numeerisia argumentteja ja jopa tiedostoja ja kansioita. Alla on esimerkki, jossa luetaan neljä numeerista argumenttia, lasketaan niiden summa ja tulostetaan se:
 
 ```Kotlin
 fun main(args: Array<String>) {
-    println(args[0]) // ensimmäinen komentorivin argumentti
-    println(args[1]) // toinen komentorivin argumentti
+  if(args.size < 4){ 
+        println("Tarvitset neljä argumenttia!") 
+        return 
+    } 
+
+    var sum = 0 
+
+    for(i in 1..4){ 
+        sum += args[i-1].toInt() 
+    } 
+
+    println("Summa on: $sum") 
 }
 ```
 
-Voit myös käyttää `args`-muuttujaa muiden funktioiden ja ehtojen sisällä, esimerkiksi luodaksesi ehtolausekkeen, joka tarkistaa, onko tietty argumentti annettu.
+Jos ajetaan esimerkiksi `kotlin ArgumenttienLaskeminen.kt 1 2 3 4`, nähdään seuraava tulos:
 
-## Syvempää tietoa komentorivin argumenttien lukemisesta
+```
+Summa on: 10
+```
 
-Kun luet komentorivin argumentteja Kotlinilla, on tärkeää tietää, että `args`-muuttuja sisältää aina vähintään yhden arvon: ohjelman nimet. Tämä tarkoittaa, että jos et anna mitään argumentteja, taulukko on silti kooltaan vähintään yksi.
-
-On myös tärkeää muistaa, että komentorivin argumentit on eroteltu välilyönneillä. Tämä tarkoittaa, että jos haluat lukea argumentin, joka sisältää välilyönnin, sinun on yhdistettävä useampi taulukon indeksi yhteen merkkijonoon.
-
-Toinen hyödyllinen vinkki on käyttää `args`-muuttujan `size`-ominaisuutta, joka kertoo taulukon koon. Tämän avulla voit luoda silmukan, joka lukee kaikki komentorivin argumentit riippumatta siitä, kuinka monta niitä on.
+Kuten näet, voit käyttää `args` muuttujaa käsittelemään erilaisia argumentteja ja suorittamaan monimutkaisempia tehtäviä ohjelmassa. Se on hyödyllinen taito, jota kannattaa opetella.
 
 ## Katso myös
-
-- [Kotlinin perusteiden oppiminen](https://kotlinlang.org/docs/reference/basic-syntax.html)
-- [Kotlinin Array- ja List-tietorakenteiden käyttö](https://kotlinlang.org/docs/reference/basic-types.html#arrays)
-
-Kirjoittaja: [Sofia Laakso](https://github.com/sofialaakso)
+- [Kotlinin `args` muuttujan dokumentaatio](https://kotlinlang.org/docs/command-line.html#passing-command-line-arguments-to-the-main-function)
+- [Kotlinin viralliset verkkosivut](https://kotlinlang.org/)
+- [Ohjelmointiopetusvideot suomeksi](https://fi.wikipedia.org/wiki/Luokka:Ohjelmointiopetusvideot)

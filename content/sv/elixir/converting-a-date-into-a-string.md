@@ -1,43 +1,40 @@
 ---
 title:                "Elixir: Omvandla ett datum till en sträng"
+simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
-I denna blogginlägg kommer vi att gå igenom hur man konverterar datum till strängar i Elixir. Detta är en viktig del av programmering eftersom datum ofta används för att representera tid och det är viktigt att kunna arbeta med dem på ett effektivt sätt.
 
-## Hur man gör
-För att konvertera datum till strängar i Elixir kan vi använda funktionen `to_string` tillsammans med en formateringssträng. Här är ett exempel:
+Elixir är ett otroligt kraftfullt programmeringsspråk som erbjuder många möjligheter för utvecklare. En av dessa är möjligheten att enkelt konvertera datum till strängar. I denna bloggpost kommer vi att utforska varför man skulle vilja göra detta och hur man kan göra det på ett enkelt sätt.
 
-```elixir
-# Skapar ett datum-objekt för 1 januari 2021
-date = ~D[2021-01-01]
+## Så här gör du
 
-# Konverterar datumet till en sträng med formatet "YYYY-mm-dd"
-date_str = to_string(date, "YYYY-mm-dd")
+Konvertera ett datum till en sträng är enkelt i Elixir. Vi använder funktionen `~D` som står för "Datum" och lägger bara till datumet som en argument. Låt oss titta på ett exempel:
 
-IO.puts(date_str) # Output: "2021-01-01"
+```Elixir
+~D[2021-03-24] 
 ```
 
-Som du kan se i exemplet ovan måste vi ange ett format som passar vårt behov. Detta kan innehålla olika kombinationer av år, månad och dag, beroende på vad vi vill ha med i vår slutgiltiga sträng. Här är några av de vanligaste formateringssträngarna:
+Detta kommer att returnera datumet som en sträng "2021-03-24". Vi kan också lägga till en valfri formattering genom att använda `~D{}` och ange den önskade formatmallen.
 
-- `YYYY` - Fyra siffror för året
-- `YY` - Två siffror för året
-- `mm` - Två siffror för månaden
-- `dd` - Två siffror för dagen
+```Elixir
+~D{2021-03-24, {"månad", "dag", "år"}} 
+```
 
-Det finns också flera andra mönster som vi kan använda, beroende på vilken information vi vill ha med eller exakt hur vi vill formatera vår sträng. Mer information om detta kan hittas i Elixirs officiella dokumentation för `Calendar`.
+Detta ett annat strängformat "mars 24, 2021". Du kan experimentera med olika formatmallar för att få den önskade strängen för ditt program. 
 
 ## Djupdykning
-När vi konverterar datum till strängar är det viktigt att förstå vilken tidszon som är inställd på vårt system. Om vi inte specifikt anger en tidszon i vår konvertering, kommer den att använda den systeminställda tidszonen. Det kan resultera i att strängen ser annorlunda ut än vad vi förväntade oss om vi arbetar i ett annat tidszon.
 
-Det är också värt att notera att om vi försöker konvertera ett ogiltigt datum, t.ex. 30 februari, kommer det att generera ett undantag. Därför är det bra att alltid kontrollera att våra datum är giltiga innan vi konverterar dem till strängar.
+Konvertering av datum till sträng är faktiskt mycket mer komplicerat bakom kulisserna. Elixir använder sig av Erlangs bibliotek `calendar` för att göra denna process snabb och effektiv. Det finns också många andra inbyggda funktioner som `~D` som gör det möjligt att hantera datum enkelt utan att behöva oroa dig för komplexa algoritmer.
 
-## Se även
-- Elixirs officiella dokumentation för `Calendar`: https://hexdocs.pm/elixir/Calendar.html
-- Mer om formateringssträngar för datum: https://hexdocs.pm/elixir/Calendar.html#strftime-and-strftime-1
-- Diskussion om tidszoner i Elixir: https://elixirforum.com/t/time-zones-in-elixir-ecto/26566
+## Se också
+
+- [Elixir Docs - Date and Time](https://elixir-lang.org/docs/master/DateTime.html)
+- [Elixir School - Dates and Times](https://elixirschool.com/en/lessons/basics/dates/)
+- [Learn X in Y Minutes - Elixir](https://learnxinyminutes.com/docs/elixir/)

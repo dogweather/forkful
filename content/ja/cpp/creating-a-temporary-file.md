@@ -1,39 +1,52 @@
 ---
-title:                "C++: 「一時ファイルの作成」"
+title:                "C++: 一時ファイルの作成"
+simple_title:         "一時ファイルの作成"
 programming_language: "C++"
-category:             "Files and I/O"
+category:             "C++"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-# なぜ
-テンポラリファイルを作成することに携わる理由について、本記事では紹介します。
+## なぜ
 
-## 作成方法
-以下のようなステップでC++プログラミングを使用して、テンポラリファイルを作成することができます。
+テンポラリファイルを作成することは、プログラマーにとって非常に便利です。プログラムを実行する間に生成された一時的なデータを保存することで、プログラムのメモリ使用量を減らし、パフォーマンスを向上させることができます。
+
+## 作り方
+
+テンポラリファイルを作成するには、<fstream>ヘッダーの```tmpfile()```関数を使用します。以下のコードは、```tmpfile()```関数を用いてテンポラリファイルを作成し、その中に文字列を書き込む例です。
 
 ```C++
 #include <iostream>
 #include <fstream>
 
-// ファイル名を指定して一時ファイルを作成する
-std::ofstream tempFile("temporary.txt");
+using namespace std;
 
-// ファイルに内容を書き込む
-tempFile << "これはテストファイルです。" << std::endl;
+int main() {
+    // テンポラリファイルを作成
+    FILE* temp_file = tmpfile();
 
-// ファイルを閉じる
-tempFile.close();
+    // テンポラリファイルに文字列を書き込む
+    fputs("Hello, world!", temp_file);
+
+    // テンポラリファイルを閉じる
+    fclose(temp_file);
+
+    return 0;
+}
 ```
 
-上記のコードを実行すると、`temporary.txt`という名前の一時ファイルが作成されて、指定した内容が書き込まれます。
+このプログラムを実行すると、指定した文字列を含むテンポラリファイルが作成されます。
 
-## 深堀り
-テンポラリファイルを作成することによって、アプリケーションが一時的に必要とするデータを保存することができます。また、ファイルのパスを指定せずに作成することができるため、エラーが起きる可能性が減ります。
+## もっと掘り下げる
 
-また、一時ファイルには自動的に削除されるタイムスタンプが付与されるため、プログラムの実行後に手動でファイルを削除する必要がありません。
+テンポラリファイルは、一時的なデータを保存するだけでなく、プログラムの安全性にも役立ちます。例えば、ファイル入出力処理中にエラーが発生した場合、テンポラリファイルを使用して元のファイルを復元することができます。
 
-# 参考リンク
-- [std::ofstream - C++ Reference](https://www.cplusplus.com/reference/fstream/ofstream/)
-- [C++で一時ファイルを扱う](https://qiita.com/walkers/items/9b1070820e255c9b380a)
+また、<cstdio>ヘッダーの```tempnam()```関数を使用することで、ユーザーが場所を指定できる場所にテンポラリファイルを作成することもできます。これにより、プログラムの柔軟性を高めることができます。
+
+## 参考リンク
+
+- [C++ Reference - tmpfile()](https://en.cppreference.com/w/cpp/io/c/tmpfile)
+- [C++ Reference - tempnam()](https://en.cppreference.com/w/cpp/io/c/tempnam)
+- [C++でテンポラリファイルを作成する方法](https://code-examples.net/ja/q/b232f3)

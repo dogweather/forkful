@@ -1,46 +1,49 @@
 ---
-title:                "Haskell: 「日付の比較」"
+title:                "Haskell: 2つの日付を比較する"
+simple_title:         "2つの日付を比較する"
 programming_language: "Haskell"
-category:             "Dates and Times"
+category:             "Haskell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/haskell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## 方針
-日本の読者の皆様、こんにちは！今日は、Haskellで日付を比較する方法についてお話ししたいと思います。日付の比較は、日付を処理するプログラムを開発する際に非常に重要なスキルです。どのようにすれば、Haskellを使って日付を比較することができるのでしょうか？それでは、さっそく見ていきましょう！
+## なぜ
+
+日時を比較することは、日常生活の中でよく行われる作業です。プログラムを書いていると、時には異なる日時の比較が必要になることがあります。そのような場合、Haskellの関数を使って簡単に日時を比較することができます。
 
 ## 方法
-まず最初に、Haskellで日付を表現する方法を学びましょう。Haskellでは、```UTCTime```という型を使って日付を表します。例えば、2020年4月1日を表す場合、以下のように記述します。
+
+日時を比較するには、Haskellの標準ライブラリである"Data.Time"モジュールを使用します。最初に、比較したい2つの日時をそれぞれをオブジェクトとして定義します。例えば、以下のようになります。
 
 ```Haskell
-let date = UTCTime (fromGregorian 2020 4 1) (secondsToDiffTime 0)
+let date1 = UTCTime (fromGregorian 2021 1 1) (secondsToDiffTime 3600) -- 2021年1月1日 01:00:00
+let date2 = UTCTime (fromGregorian 2022 1 1) (secondsToDiffTime 0) -- 2022年1月1日 00:00:00
 ```
 
-上記のコードでは、```UTCTime```コンストラクタを使い、```fromGregorian```関数を使って日付を指定しています。```secondsToDiffTime```関数を使うことで、時間を表すための型を指定しています。
-
-さて、日付を比較するには、比較演算子を使用します。Haskellでは、```Ord```型クラスを使って比較が可能な型を表現します。```UTCTime```型も```Ord```型クラスに属しているため、比較演算子を使うことができます。
-
-例えば、以下のように日付を比較することができます。
+次に、"diffUTCTime"関数を使って日時の差分を取得します。この関数は、差分を秒単位で表すことができます。例えば、今回の場合は、以下のようになります。
 
 ```Haskell
-date1 > date2 -- date1がdate2よりも未来の日付かどうかを判定
-date1 == date2 -- date1とdate2が同じ日付かどうかを判定
-date1 >= date2 -- date1がdate2よりも未来の日付かまたは同じ日付かどうかを判定
+diffUTCTime date2 date1 -- 31536000秒 (1年)
 ```
 
-ここまで、日付を比較するための基本的な方法を学びました。次に、さらに深く掘り下げていきましょう。
+より複雑な比較をする場合は、"Day"データ型を使って日付のみを比較することもできます。以下の例では、"toGregorian"関数を使って"Day"を"(year, month, day)"のタプルに変換してから比較しています。
 
-## 深堀り
-Haskellでは、日付を比較するための多くの便利な関数が提供されています。例えば、```diffUTCTime```関数を使うことで、２つの日付の差を取得することができます。また、```addUTCTime```関数を使うことで、指定した時間を日付に加算することができます。
+```Haskell
+let date3 = modifiedJulianDay 58849 -- 2021年1月1日
+let date4 = modifiedJulianDay 61553 -- 2022年1月1日
+if toGregorian date3 < toGregorian date4 then "date4はdate3よりも後です" else "date3はdate4よりも後です" -- "date4はdate3よりも後です"
+```
 
-さらに、Haskellでは日付の比較ができるだけでなく、日付をソートすることも可能です。```sort```関数を使うことで、日付のリストをソートすることができます。
+## 詳細を深掘り
 
-さらに、日付をフォーマットするための関数も提供されています。例えば、```formatTime```関数を使うと、指定したフォーマットで日付を表示することができます。
+日時を比較する際に気をつける点は、時差の影響を受けることです。例えば、日本で2022年1月1日に実行した場合と、グリニッジ標準時で同じ日時に実行した場合とでは、差分が異なってしまいます。そのような場合は、"zonedTimeToUTC"関数を使って時差を考慮した日時を取得する必要があります。
 
-以上で、Haskellで日付を比較する方法の紹介を終えたいと思います。みなさんもぜひ、これらの関数を使って日付を扱うプログラムを開発してみてください！
+また、"diffUTCTime"関数は、2つの日時の差分を秒単位で表しますが、より詳細な比較が必要な場合は、"diffDays"や"diffTimeOfDay"関数を使うことで、日数や時間単位での差を取得することもできます。
 
-## 参考リンク
-- [Haskellの日付処理ドキュメント](https://www.haskell.org/haskellwiki/Time_and_Date)
-- [日付や時間を扱うための基本パッケージのドキュメント](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [日付をフォーマットするための関数](https://hackage.haskell.org/package/time/docs/Data-Time-Format.html)
+## 関連リンク
+
+- [Haskell Data.Timeモジュールのドキュメント](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/time-1.9.3/Data-Time.html)
+- [HourlyUTCTimeライブラリ](http://hackage.haskell.org/package/HourlyUTCTime)
+- [zonedTimeToUTC関数の例](https://stackoverflow.com/questions/5820617/convert-local-date-into-utc-in-haskell-data-time-format)

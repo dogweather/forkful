@@ -1,39 +1,58 @@
 ---
 title:                "Elm: 날짜를 문자열로 변환하기"
+simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elm/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 Elm 프로그래밍을 배워야 할까요?
 
-날짜와 시간은 프로그래밍에서 중요한 요소입니다. 때로는 날짜와 시간을 다른 포맷으로 표현해야할 때가 있습니다. 이번 블로그 포스트에서는 Elm에서 날짜를 문자열로 변환하는 방법을 알아보겠습니다.
+하지만 새로운 기술을 배우는 것은 절대 쉬운 일이 아닙니다. 그래서 이번 포스트에서는 Elm 프로그래밍 언어를 공부하는 이유를 알려드리고자 합니다. Elm은 시대를 앞서가는 함수형 프로그래밍 언어로, 견고한 구조와 쉬운 문법을 가지고 있으며, 웹 애플리케이션을 개발하는 데 매우 효과적입니다.
 
-## 사용 방법
-
-날짜를 문자열로 변환하기 위해서는 `Date` 모듈의 `toString` 함수를 사용해야 합니다. 이 함수는 두 개의 인자를 받습니다. 첫 번째 인자로는 날짜를 표현하는 `Date` 타입의 값을 전달하고, 두 번째 인자로는 원하는 포맷을 지정하는 `Date.Format` 타입의 값을 전달합니다.
+## 어떻게 다른 날짜를 문자열로 변환할 수 있을까요?
 
 ```Elm
-import Date exposing (Date)
-import Date.Format exposing (Format)
+import Time exposing (..)
 
--- 날짜를 "년-월-일" 형식으로 표현
-Date.toString (Date.fromTime 1500000000) (Format.custom "yyyy-MM-dd")
+dateToString : Date -> String
+dateToString date =
+    case toMonthAndDay date of
+        Just (month, day) ->
+            let
+                monthStr =
+                    if month < 10 then
+                        "0" ++ toString month
+                    else
+                        toString month
+            in
+            monthStr ++ "/" ++ toString day
 
--- 2017-07-14 로 출력됨
+        Nothing ->
+            "날짜를 찾을 수 없습니다."
 ```
 
-위의 예시 코드에서 `Date.fromTime` 함수는 타임스탬프로부터 날짜를 생성하는 함수입니다. 이를 통해 현재 시간이 아닌 다른 날짜를 사용할 수도 있습니다. 또한 `Date.Format` 모듈에는 다양한 포맷 옵션들이 있으니 필요에 따라 사용하면 됩니다.
+위의 예제에서는 Elm의 `Time` 라이브러리를 이용해 날짜를 문자열로 변환하는 방법을 보여줍니다. `toMonthAndDay` 함수를 통해 월과 일을 추출하고, 이를 문자열로 처리하여 최종적으로 원하는 포맷으로 변환합니다.
 
-## 더 깊게 알아보기
+출력 예시:
+```
+dateToString (fromCalendarDate 2021 1 1)
+```
+```
+"01/01"
+```
 
-`toString` 함수의 두 번째 인자에 대한 값으로 `Date.Format.custom` 이외의 다른 값들을 사용하면 기본적인 날짜 형식으로 출력됩니다. 이는 `Date.Format` 모듈에 미리 정의된 값을 사용하는 것입니다. 이러한 값을 이용하면 포맷 작업을 간편하게 할 수 있습니다. 또한 `toString` 함수 외에도 `format` 함수를 통해 날짜를 문자열로 변환할 수 있습니다.
+## 깊게 들어가보면?
 
-## 관련 자료
+날짜를 문자열로 변환하는 것은 꽤 간단한 작업처럼 보이지만, 실제로는 많은 고민과 계획이 필요한 작업입니다. 왜냐하면 다양한 언어와 문화, 지역마다 날짜를 표현하는 방식이 다를 수 있기 때문입니다. 때문에 Elm은 `Time` 라이브러리를 통해 이를 처리할 수 있는 다양한 함수들을 제공합니다.
 
-- [Elm 공식 문서 - Date 모듈](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Elm 공식 문서 - Date.Format 모듈](https://package.elm-lang.org/packages/elm/time/latest/Date-Format)
-- [Elm 공식 문서 - Date의 `toString` 함수](https://package.elm-lang.org/packages/elm/time/latest/Date#toString)
-- [Elm 공식 문서 - Date.Format의 값들](https://package.elm-lang.org/packages/elm/time/latest/Date-Format#predefined-formats)
+`dateToString` 함수에서도 `toMonthAndDay`, `fromCalendarDate` 외에도 `toMinuteAndSecond`을 이용해서 시간까지 포함시킬 수 있습니다. 또한 `Date` 타입에서 추출한 정보를 `toString` 함수를 통해 원하는 포맷으로 자유롭게 조합할 수 있습니다.
+
+# 더 알아보기
+
+위 예제에서 사용된 `Time` 라이브러리의 다양한 함수들에 대해 더 자세히 알아보고 싶다면 아래 링크를 참고해주세요.
+
+[Time - Elm 문서](https://elm-lang.org/docs/time)

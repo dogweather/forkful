@@ -1,51 +1,45 @@
 ---
-title:                "Bash: Läsning av en textfil"
+title:                "Bash: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Att kunna läsa och hantera textfiler är en viktig färdighet inom Bash-programmering. Genom att förstå hur man läser textfiler kan man manipulera och använda data på ett effektivt sätt.
 
-Att läsa textfiler är en viktig del i Bash-programmering eftersom det låter dig läsa, behandla och använda informationen från externa filer i dina skript.
-
-## Så här gör du
-
-För att läsa en textfil i Bash, använder du kommandot `cat` följt av filnamnet som du vill läsa. Till exempel:
+## Hur man gör det
+Läsning av textfiler i Bash kan åstadkommas genom användning av kommandot "cat". Detta kommando läser innehållet på en textfil och skriver ut det till standardutdata. Ett enkelt exempel skulle vara:
 
 ```Bash
-cat filnamn.txt
+cat min_textfil.txt
 ```
 
-Detta kommer att skriva ut innehållet i textfilen direkt i terminalen. Om du vill spara innehållet i en variabel för att använda i ditt skript, kan du använda följande syntax:
+Detta skulle skriva ut allt innehåll i filen "min_textfil.txt" till skärmen. Om man istället vill spara resultatet från en läsning i en variabel, kan man använda följande kod:
 
 ```Bash
-variabel=$(cat filnamn.txt)
+variabel=$(cat min_textfil.txt)
+echo "$variabel"
 ```
 
-Nu kan du använda variabeln `variabel` för att behandla innehållet i filen.
-
-Om du bara vill läsa en viss del av filinnehållet, kan du använda kommandot`head` eller `tail` för att skriva ut de första eller sista raderna i filen. Till exempel:
-
-```Bash
-head -n 5 filnamn.txt # skriver ut de första 5 raderna i filen
-tail -n 3 filnamn.txt # skriver ut de sista 3 raderna i filen
-```
-
-Du kan också använda kommandot `grep` för att söka efter ett specifikt ord eller mönster i filen, och sedan använda resultatet i ditt skript. Till exempel:
-
-```Bash
-variabel=$(grep "ord" filnamn.txt) # sparar de rader som innehåller ordet "ord" i variabeln
-```
+Här läser vi in filens innehåll och lagrar det i variabeln "variabel", som sedan skrivs ut med hjälp av "echo"-kommandot. Detta är bara ett enkelt exempel på hur man kan läsa en textfil, men det finns många fler sätt att hantera data från en fil.
 
 ## Djupdykning
+För att kunna läsa och hantera en textfil på ett mer detaljerat sätt, kan man använda sig av olika kommandon inom Bash. Ett användbart kommando är "grep", som används för att söka efter specifika rader eller ord i en fil. Till exempel kan man använda:
 
-När du läser textfiler i Bash, är det viktigt att ha kunskap om olika teckenkodningar och om hur kommandon som `cat` och `grep` hanterar specialtecken och linjeslut. Det är också bra att känna till möjligheterna att hantera och manipulera innehållet i en textfil, såsom att ersätta delar av texten eller sortera innehållet.
+```Bash
+grep "sökord" min_textfil.txt
+```
+
+Detta kommer att söka igenom filen "min_textfil.txt" och skriva ut alla rader som innehåller det angivna sökordet.
+
+Man kan också använda sig av "sed" för att manipulera innehållet i en textfil. Med hjälp av olika sed-uttryck kan man till exempel byta ut specifika ord eller ta bort rader från filen. Det finns många fler kommandon och tekniker man kan använda för att läsa och hantera textfiler i Bash, det viktigaste är att förstå grundläggande koncept och veta vilka kommandon som är tillgängliga.
 
 ## Se även
-
-- [Bash-kommandon för filhantering](https://www.dataskolan.net/bash-kommandon-for-filhantering/)
-- [En introduktion till Bash-programmering](https://rikardlinde.se/blog/2020/01/03/en_introduktion_till_bash_programmering/)
-- [Guide till kodning i Bash](https://help.ubuntu.com/community/Beginners/BASHscripting)
+- [Bash Guide for Beginners](https://opensource.com/article/19/10/bash-scripting-guide)
+- [Bash Text Processing Commands](https://opensource.com/article/20/9/bash-text-processing)
+- [Unix Text Processing Commands](https://www.tutorialspoint.com/unix/unix-text-processing.htm)

@@ -1,59 +1,58 @@
 ---
-title:                "Ruby: Lendo argumentos da linha de comando"
+title:                "Ruby: Lendo Argumentos da Linha de Comando"
+simple_title:         "Lendo Argumentos da Linha de Comando"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
+## Por que
 
-Ler argumentos da linha de comando é uma habilidade importante para qualquer programador em Ruby. Com essa habilidade, é possível criar programas interativos e personalizáveis, permitindo que os usuários insiram informações diretamente no momento da execução do programa.
+Você pode estar se perguntando por que seria importante aprender a ler argumentos de linha de comando em Ruby. A resposta é simples – essa habilidade pode ser muito útil, especialmente quando se trata de trabalhar com programas do tipo "linha de comando" ou "terminal". Isso permite que você interaja diretamente com seu código e personalize a entrada de dados.
 
-## Como Ler Argumentos da Linha de Comando
+## Como Fazer
 
-Em Ruby, ler argumentos da linha de comando é uma tarefa simples. Primeiro, precisamos definir uma variável para armazenar os argumentos. Isso pode ser feito usando o método `ARGV`, que retorna uma matriz com os argumentos passados para o programa.
+Ruby facilita muito a leitura de argumentos de linha de comando. Tudo o que você precisa é utilizar a classe `ARGV`, que é responsável por armazenar os argumentos passados durante a execução do programa.
 
-```
-args = ARGV
-puts "Seu primeiro argumento é #{args[0]}"
-```
+```Ruby
+# Lendo o primeiro argumento
+puts ARGV[0]
 
-Assim, se o usuário digitar `ruby programa.rb Olá`, o programa imprimirá `Seu primeiro argumento é Olá`.
+# Lendo o segundo argumento
+puts ARGV[1]
 
-É importante notar que os argumentos da linha de comando são sempre lidos como strings. Portanto, se você precisar de um número inteiro ou float, será necessário convertê-lo usando o método `to_i` ou `to_f`, respectivamente.
-
-Você também pode definir argumentos padrão caso o usuário não forneça nenhum. Basta adicionar um argumento após uma vírgula no método `ARGV`. Por exemplo:
-
-```
-args = ARGV[0] || "Mundo"
-puts "Olá #{args}!"
-```
-
-Se o usuário não fornecer nenhum argumento, o padrão "Mundo" será usado.
-
-## Profundamente em Leitura de Argumentos da Linha de Comando
-
-Além do método `ARGV`, há também o método `ARGV.getopts`, que permite que você especifique opções para seus argumentos. Por exemplo, imagine que seu programa precise de um argumento `-n` para executar alguma ação específica. Você pode usá-lo da seguinte maneira:
-
-```
-options = {}
-opt_parser = OptionParser.new do |opts|
-  opts.banner = "Uso: programa.rb [opções]"
-  opts.on("-n NOME", "--nome=NOME", "Define o nome") do |nome|
-    options[:nome] = nome
-  end
+# Lendo todos os argumentos em um loop
+ARGV.each do |arg|
+  puts arg
 end
-opt_parser.parse!
-
-puts "Olá #{options[:nome]}!"
 ```
 
-Agora, se o usuário executar `ruby programa.rb -n Maria`, o programa imprimirá `Olá Maria!`. Você pode especificar mais opções conforme necessário.
+Agora, vamos supor que você queira rodar o seguinte comando: `ruby meu_programa.rb argumento1 argumento2`. O output seria:
 
-## See Also
+```
+argumento1
+argumento2
+argumento1
+argumento2
+```
 
-- [Documentação Oficial do Ruby - ARGV](https://ruby-doc.org/core-2.7.3/ARGV.html)
-- [Documentação Oficial do Ruby - OptionParser](https://ruby-doc.org/stdlib-2.0.0/libdoc/optparse/rdoc/OptionParser.html)
-- [Tutorial do Ruby para Iniciantes - Leitura de Argumentos da Linha de Comando](https://ruby-doc.org/stdlib-2.7.3/libdoc/optparse/rdoc/index.html)
+## Mergulho Profundo
+
+Além da classe `ARGV`, você também pode utilizar o método `gets` para ler argumentos de linha de comando. Ele permite que você faça a leitura de entrada de dados diretamente do terminal, o que pode ser útil em certas situações.
+
+```Ruby
+print "Digite seu nome: "
+nome = gets.chomp
+puts "Olá, #{nome}!"
+```
+
+Este código irá pedir ao usuário que digite seu nome, e em seguida, irá imprimir uma mensagem personalizada com base na entrada. É importante notar que o método `gets` sempre retorna uma string, então é necessário utilizar o método `chomp` para remover a quebra de linha que é acrescentada à entrada.
+
+## Veja Também
+
+* [Ruby - Documentação Oficial](https://www.ruby-lang.org/pt/documentation/)
+* [Introdução ao Ruby para Iniciantes](https://medium.com/@qbustillo91/introdu%C3%A7%C3%A3o-ao-ruby-para-iniciantes-68a64b031fb6)
+* [Aprenda Ruby em 20 Minutos](https://www.youtube.com/watch?v=Dji9ALCgfpM)

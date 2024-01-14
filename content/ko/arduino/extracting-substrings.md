@@ -1,7 +1,9 @@
 ---
 title:                "Arduino: 부분 문자열 추출하기"
+simple_title:         "부분 문자열 추출하기"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/arduino/extracting-substrings.md"
 ---
 
@@ -9,59 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-왜 누군가가 자르기를 통해 부분 문자열을 추출하는 데 참여할까요? 부분 문자열을 추출하는 것은 문자열에서 필요한 정보를 추출하는 간단하고 유용한 방법입니다. 이를 통해 문자열을 더 쉽게 다룰 수 있으며, 데이터를 분석하거나 처리할 때 유용하게 사용할 수 있습니다.
+우리가 일상적으로 사용하는 문자열에서 일부분을 추출할 필요가 있을 수 있습니다. Arduino에서 substring을 추출하는 방법을 배우면, 더 다양한 프로젝트를 만들 수 있고 다양한 기능을 추가할 수 있습니다.
 
-## 하는 법
+## 어떻게 하나요
 
-우선, 추출하려는 문자열을 변수에 할당해야 합니다. 예를 들어, "Hello World"라는 문자열을 변수에 할당하고 싶다면 다음과 같이 합니다.
-
-```Arduino
-String str = "Hello World";
-```
-
-이제 우리는 문자열에서 원하는 부분을 추출할 수 있습니다. 부분 문자열을 추출하는 방법에는 여러 가지가 있지만, 여기서는 `substring()` 함수를 사용하겠습니다. 이 함수는 문자열에서 원하는 글자 수만큼의 부분 문자열을 추출해줍니다.
-
-다음은 `substring()` 함수를 사용하여 "Hello"라는 부분 문자열을 추출하는 예시 코드입니다.
+Arduino에서 substring을 추출하는 방법은 매우 간단합니다. 먼저, 추출하고 싶은 문자열을 지정하고 그 문자열의 시작과 끝 인덱스를 정해줍니다. 그리고 Arduino의 내장 함수 중 하나인 substring() 함수를 사용하면 됩니다. 아래는 코드 예시와 함께 설명하겠습니다.
 
 ```Arduino
-String str = "Hello World";
-String sub = str.substring(0, 5);
+String str = "Hello World!"; // 추출하고 싶은 문자열
+String sub1 = str.substring(0, 5); // 시작 인덱스 0부터 끝 인덱스 4까지 추출합니다.
+String sub2 = str.substring(6); // 6부터 끝까지 추출합니다.
+
+Serial.println(sub1); // 출력: "Hello"
+Serial.println(sub2); // 출력: "World!"
 ```
 
-위 코드에서 `substring()` 함수는 첫 번째 매개변수로 부분 문자열의 시작 인덱스, 두 번째 매개변수로 부분 문자열의 끝 인덱스를 받습니다. 따라서 위 코드는 "Hello World"라는 문자열에서 첫 5글자를 추출하여 `sub` 변수에 할당하는 것입니다.
+위의 코드에서는 `substring()` 함수를 사용하여 간단히 문자열을 추출할 수 있습니다. 또한, 인덱스 값을 이용하여 원하는 부분만 추출할 수 있기 때문에 다양한 활용이 가능합니다. 
 
-만약 우리가 "World"라는 부분 문자열을 추출하고 싶다면 어떻게 할까요? 이 경우에는 두 번째 매개변수에 원하는 부분 문자열의 마지막 인덱스를 지정하면 됩니다.
+## 딥 다이브
+
+Arduino에서 substring을 추출하는 또 다른 방법으로는 `indexOf()` 함수를 사용하는 방법이 있습니다. 이 함수는 원하는 문자나 문자열이 어느 위치에 있는지 찾아주는 함수입니다. 예를 들어, 아래와 같은 코드를 작성하면 "World"의 시작 인덱스를 알 수 있습니다.
 
 ```Arduino
-String str = "Hello World";
-String sub = str.substring(6, 11);
+String str = "Hello World!";
+int index = str.indexOf("World"); // index = 6
+
 ```
 
-위 코드는 "Hello World"라는 문자열에서 인덱스 6부터 11까지의 문자열, 즉 "World"를 추출해줍니다.
+이렇게 얻은 인덱스 값을 `substring()` 함수에 넣어주면 "World"만 추출할 수 있습니다.
 
-이처럼 `substring()` 함수를 사용하면 문자열에서 필요한 부분을 쉽게 추출할 수 있습니다.
+또 한 가지 중요한 점은 Arduino에서 `substring()` 함수를 사용하기 위해서는 `String` 라이브러리를 추가해야 한다는 점입니다. 아두이노 IDE에서 `Sketch` 메뉴, `Include Library` 메뉴로 들어가면 `String` 라이브러리를 추가할 수 있습니다.
 
-## 깊이 들어가기
+## 참고
 
-`substring()` 함수를 사용하는 방법을 좀 더 깊이 들어가 보겠습니다. 이 함수는 세 개의 매개변수를 받을 수도 있습니다. 세 번째 매개변수를 사용하면 추출한 부분 문자열에서 원하는 문자를 제거할 수 있습니다.
+만약 Arduino를 처음 사용하거나 `substring()` 함수를 사용하는 것이 낯설다면, 아래의 링크들을 참고하시면 좋을 것 같습니다.
 
-예를 들어, "Hello World"라는 문자열에서 공백을 제거하고 싶다면 다음과 같이 `substring()` 함수를 호출하면 됩니다.
+- [Arduino String 라이브러리 공식 문서](https://www.arduino.cc/reference/ko/language/variables/data-types/string/)
+- [Arduino 튜토리얼: 문자열 다루기](https://www.arduino.cc/en/Tutorial/StringConstructors)
 
-```Arduino
-String str = "Hello World";
-String sub = str.substring(0, 5, 0);
-```
+## 더 알아보기
 
-세 번째 매개변수는 제거할 문자의 개수를 나타내며, 위 코드에서는 0을 지정하여 공백을 모두 제거한 결과인 "HelloWorld"를 추출합니다.
-
-또한 `substring()` 함수를 사용하여 추출한 부분 문자열을 다른 변수에 할당할 수도 있습니다. 이렇게 하면 추출한 문자열을 나중에 다시 사용할 수 있습니다.
-
-```Arduino
-String str = "Hello World";
-String sub = str.substring(0, 5);
-String sub2 = sub + " Universe";
-```
-
-위 코드에서는 먼저 "Hello World" 문자열에서 첫 5글자를 추출하여 `sub` 변수에 할당하고, `sub` 변수의 값에 " Universe" 문자열을 추가하여 `sub2` 변수에 할당하는 것입니다.
-
-추출한 부분 문자열을 바로 사용하지 않고 나중에 사용하기 위해 변수
+- [Arduino String 라이브러리 추가 방법 정리](https://m.blog.naver.com/wooh_hyun/221216871334)
+- [String과 char의 차이점 이해하기](https://m.blog.naver.com/PostView.nhn?blogId=showstopper&logNo=220316169113&proxyReferer=https%3A%2F%2Fwww.google.com%2F)

@@ -1,7 +1,9 @@
 ---
 title:                "Kotlin: Obtendo a data atual"
+simple_title:         "Obtendo a data atual"
 programming_language: "Kotlin"
-category:             "Dates and Times"
+category:             "Kotlin"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/kotlin/getting-the-current-date.md"
 ---
 
@@ -9,49 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que obter a data atual é importante
 
-Saber a data atual é uma tarefa comum em muitos aplicativos e sistemas de software. Isso pode ser útil para exibir informações atualizadas, agendar eventos e tarefas, registrar timestamps e muito mais.
+Obter a data atual é uma tarefa comum em muitos projetos de programação. Pode ser útil em situações como registrar a data de criação de um arquivo ou armazenar a data de um evento.
 
-## Como obter a data atual em Kotlin
+## Como fazer
 
-Usando a linguagem de programação Kotlin, obter a data atual é uma tarefa fácil. Tudo o que precisamos fazer é importar a classe `java.util.Date` e criar uma instância dela.
-
-```Kotlin
-import java.util.Date
-
-val dataAtual = Date()
-println(dataAtual)
-```
-
-A saída deste código será algo parecido com `Sun Aug 08 13:12:22 BRT 2021`, dependendo do local e do fuso horário em que você estiver executando esse código.
-
-Além disso, também é possível formatar a data de acordo com sua preferência usando a classe `java.text.SimpleDateFormat`.
-
-```Kotlin
-val dataAtual = Date()
-val formato = SimpleDateFormat("dd/MM/yyyy")
-println(formato.format(dataAtual))
-```
-
-Neste exemplo, a data atual será formatada no formato de dia, mês e ano separados por barras, resultando em algo como `08/08/2021`.
-
-## Mergulhando mais fundo na obtenção da data atual
-
-A classe `java.util.Date` é amplamente utilizada para obter a data atual, mas é importante mencionar que ela possui algumas limitações. Por exemplo, ela não fornece maneiras de trabalhar com horários e fusos horários diferentes.
-
-Por esse motivo, a partir da versão 8 do Java, foi introduzida a classe `java.time.LocalDate`, que oferece métodos mais robustos para trabalhar com datas. Em Kotlin, podemos usá-la da seguinte maneira:
+Existem várias maneiras de obter a data atual em Kotlin. A maneira mais simples é usar a classe `LocalDate` do pacote `java.time` e o método `now()` para obter a data atual.
 
 ```Kotlin
 import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 val dataAtual = LocalDate.now()
-val formato = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-println(formato.format(dataAtual))
+println(dataAtual) // 2021-05-25
 ```
 
-O resultado final será o mesmo que o exemplo anterior, mas agora estamos utilizando uma classe mais moderna e específica para trabalhar com datas.
+Podemos personalizar o formato de data usando o método `format()` com um objeto `DateTimeFormatter`.
+
+```Kotlin
+import java.time.format.DateTimeFormatter  
+
+val dataAtual = LocalDate.now()
+val dataFormatada = dataAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+println(dataFormatada) // 25/05/2021
+```
+
+Se quisermos obter a data e a hora atuais, podemos usar a classe `LocalDateTime`.
+
+```Kotlin
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
+val dateTimeAtual = LocalDateTime.now()
+val dateTimeFormatado = dateTimeAtual.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"))
+println(dateTimeFormatado) // 25/05/2021 15:30:45
+```
+
+## Mergulho profundo
+
+A classe `LocalDate` possui muitos métodos úteis para trabalhar com datas, como `plusDays()`, `minusMonths()`, `isBefore()` e `isAfter()`. Também podemos utilizar outras classes como `LocalTime` e `ZoneDateTime` para obter mais opções de manipulação de data e hora.
+
+Outra maneira de obter a data atual é usando a classe `Calendar` do Java.
+
+```Kotlin
+import java.util.Calendar
+
+val dataAtual = Calendar.getInstance().time
+println(dataAtual) // Tue May 25 15:30:45 GMT 2021
+```
+
+Por fim, também podemos usar a biblioteca `Joda Time`, que possui uma sintaxe intuitiva e muitas opções para trabalhar com data e hora.
 
 ## Veja também
 
-- [Documentação oficial do Kotlin sobre a classe Date](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/)
-- [Tutorial sobre a classe Date em Kotlin](https://www.geeksforgeeks.org/kotlin-date-class/)
+- Guia de referência para a classe `LocalDate`: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/)
+- Documentação da classe `Calendar`: [https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+- Utilizando a biblioteca `Joda Time` em Kotlin: [https://www.baeldung.com/kotlin/jodatime](https://www.baeldung.com/kotlin/jodatime)

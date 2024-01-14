@@ -1,7 +1,9 @@
 ---
-title:                "Java: Att stora bokstavera en sträng"
+title:                "Java: Att göra en sträng med stor bokstav"
+simple_title:         "Att göra en sträng med stor bokstav"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/java/capitalizing-a-string.md"
 ---
 
@@ -9,50 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ##Varför
 
-Att använda sig av en kapitaliserad sträng kan vara användbart i många olika sammanhang. Det kan till exempel hjälpa till att förtydliga text, göra den mer lättläslig eller för att följa ett specifikt format på en viss plattform eller enhet.
+Att kapitalisera en sträng kan vara användbart för att förbättra utseendet och lättläsligheten i en applikation. Det är också ett vanligt krav i vissa system och API-anrop.
 
-##Så här gör man
+##Så här gör du
 
-För att kapitalisera en sträng med hjälp av Java finns det flera sätt att göra det på. Ett av de enklaste sätten är att använda sig av String-klassen och dess metod toUpperCase(). Här är ett exempel:
-
-```Java
-String str = "hej på dig!";
-String capitalized = str.toUpperCase();
-System.out.println(capitalized);
-```
-
-Output: HEJ PÅ DIG!
-
-För att kapitalisera endast den första bokstaven i en sträng kan man använda sig av metoden capitalize() från StringUtils-klassen i Apache Commons Text. Här är ett exempel på hur det kan se ut:
+För att kapitalisera en sträng i Java kan du använda metoden `toUpperCase()` tillsammans med `charAt()` för att iterera igenom strängen. Nedan följer ett exempel på hur detta kan göras:
 
 ```Java
-String str = "hej på dig!";
-String capitalized = org.apache.commons.text.WordUtils.capitalize(str);
-System.out.println(capitalized);
+String str = "hej på dig";
+String capitalizedStr = "";
+
+for (int i = 0; i < str.length(); i++) {
+    capitalizedStr += Character.toUpperCase(str.charAt(i));
+}
+
+System.out.println(capitalizedStr);
 ```
 
-Output: Hej på dig!
+**Output:**
 
-En annan metod är att använda sig av String Builder-klassen och dess metod replace(). Detta kan vara praktiskt när man vill byta ut ett visst tecken eller en viss sekvens av tecken i en sträng. Här är ett exempel på hur det kan se ut:
-
-```Java
-StringBuilder sb = new StringBuilder("Hej på dig!");
-sb.replace(0, 1, "H");
-System.out.println(sb.toString());
+```
+HEJ PÅ DIG
 ```
 
-Output: Hej på dig!
+Detta är bara ett enkelt exempel, det finns flera andra sätt att kapitalisera en sträng i Java. Det är också viktigt att notera att Java är ett språk med strikt typtilldelning, så det är viktigt att ange datatypen för variablerna korrekt.
 
 ##Djupdykning
 
-Att kapitalisera en sträng handlar om mycket mer än bara att ändra bokstävernas storlek. För att få en djupare förståelse för det kan det vara intressant att undersöka hur olika språk hanterar storleken på bokstäver.
+När man tittar närmare på hur metoden `toUpperCase()` fungerar, så används en intern algoritm för att konvertera varje bokstav till dess motsvarande versala form. Detta innebär att även specialtecken eller accenter kommer att kapitaliseras på rätt sätt.
 
-I vissa språk, som tyska, finns det specifika regler för vilka bokstäver som ska vara kapitaliserade i början av en mening. På engelska är det vanligare med en mer avslappnad attityd till storleken på bokstäver och oftast kapitaliseras alla ord i en titel. Det finns även språk där det inte existerar någon större skillnad mellan stora och små bokstäver, som japanska.
-
-Att förstå dessa skillnader kan vara avgörande vid programmering av en applikation som är tänkt att fungera internationellt.
+Det finns också andra sätt att kapitalisera en sträng i Java, som att använda `StringBuilder` eller `StringBuffer` för en mer effektiv implementation. Det är viktigt att förstå hur olika metoder påverkar prestandan i en applikation.
 
 ##Se även
 
-- [Java String Class](https://www.w3schools.com/java/java_string.asp)
-- [Apache Commons Text StringUtils Class](https://commons.apache.org/proper/commons-text/apidocs/org/apache/commons/text/WordUtils.html)
-- [Java StringBuilder Class](https://www.w3schools.com/java/java_stringbuilder.asp)
+- [Java String Klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Java StringBuilder Klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+- [Java StringBuffer Klassen](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html)

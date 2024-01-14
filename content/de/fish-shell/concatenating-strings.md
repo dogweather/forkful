@@ -1,76 +1,52 @@
 ---
-title:                "Fish Shell: Zusammenführen von Zeichenketten"
+title:                "Fish Shell: Verkettung von Zeichenfolgen"
+simple_title:         "Verkettung von Zeichenfolgen"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
-Wenn du dich mit der Fish Shell beschäftigst, wirst du früher oder später auf das Konzept des Zusammenfügens von Zeichenfolgen oder auch "String Concatenation" stoßen. Dies ist eine grundlegende Funktion, die dir dabei hilft, Zeichenfolgen zu manipulieren und zusammenzufügen, um komplexere Aktionen auszuführen. In diesem Blogbeitrag werden wir uns genauer mit dem Warum, dem Wie und den Hintergründen von String Concatenation in der Fish Shell beschäftigen.
+
+Eine der Grundfunktionen der Programmierung ist die Möglichkeit, Strings zu kombinieren, um damit komplexe Ausgaben zu erstellen. Das kann hilfreich sein, um zum Beispiel Benutzereingaben mit statischen Texten zu verbinden oder Daten aus verschiedenen Variablen zu kombinieren.
 
 ## Wie geht das?
-Um Zeichenfolgen in der Fish Shell zu konkatenieren, verwenden wir den Punkt-Operator (.). Dieser Operator verbindet zwei Zeichenfolgen miteinander und gibt eine kombinierte Zeichenfolge zurück. Hier ist ein Beispiel:
 
-```
-Fish Shell:
+Die Fish Shell bietet eine einfache Möglichkeit, Strings mit dem Befehl `string join` zu verbinden. Dabei wird der Befehl mit zwei Argumenten aufgerufen: dem Trennzeichen und einer Liste von Strings, die kombiniert werden sollen. Hier ist ein Beispiel:
 
-set name "Max"
-set age "25"
-
-echo $name . " ist " . $age . " Jahre alt"
-
-output: Max ist 25 Jahre alt
+```Fish Shell
+string join " " "Hallo" "welt!" # Ausgabe: Hallo welt!
 ```
 
-Wie du sehen kannst, haben wir zuerst zwei Variablen mit dem Befehl `set` erstellt und dann mit dem Punkt-Operator den Inhalt der Variablen zusammengefügt. Es ist wichtig zu beachten, dass der Punkt-Operator nur Strings miteinander verbinden kann, daher müssen wir gegebenenfalls Zahlen in Strings umwandeln, um sie hinzuzufügen.
+Wie man sehen kann, wird das Trennzeichen, hier ein Leerzeichen, zwischen den einzelnen Strings platziert. Man kann auch mehr als zwei Strings miteinander verbinden und verschiedene Trennzeichen verwenden. Hier ist ein weiteres Beispiel:
 
-Eine weitere Möglichkeit, Zeichenfolgen zu konkatenieren, ist die Verwendung von Platzhaltern. Hier ist ein Beispiel:
-
+```Fish Shell
+string join " - " "Ich" "bin" "eine" "Fish" "Shell" # Ausgabe: Ich - bin - eine - Fish - Shell
 ```
-Fish Shell:
-
-set fruit "Apfel"
-
-echo "Ich esse gerne %s" $fruit
-
-output: Ich esse gerne Apfel
-```
-
-Der Platzhalter %s wird durch den Wert der Variable `fruit` ersetzt. Dies ist besonders nützlich, wenn man komplexe Zeichenfolgen mit variablen Werten zusammenfügen möchte, da es viel übersichtlicher und weniger fehleranfällig ist.
 
 ## Tiefergehende Informationen
-In der Fish Shell gibt es auch die Möglichkeit, mehrere Zeichenfolgen miteinander zu verketten. Dabei werden alle Zeichenfolgen hintereinandergehängt und ergeben eine große Zeichenfolge. Hier ist ein Beispiel:
 
-```
-Fish Shell:
+Der Befehl `string join` kann auch noch mehr als nur die Verbindung von Strings. Man kann zum Beispiel auch Arrays verwenden, um damit dynamisch Strings zu verbinden. Hier ein Beispiel:
 
-set string1 "Hallo"
-set string2 "Welt"
-
-echo $string1$string2
-
-output: HalloWelt
+```Fish Shell
+set fruits "Apfel" "Birne" "Banane"
+string join " und " $fruits # Ausgabe: Apfel und Birne und Banane
 ```
 
-Eine weitere wichtige Funktion ist die Verwendung von Variablen innerhalb des Punkt-Operators. Hier ist ein Beispiel:
+Außerdem bietet die Fish Shell auch eine spezielle Syntax, um Strings zu kombinieren: den `..` Operator. Dieser funktioniert ähnlich wie `string join`, ist aber kürzer und kann auch andere Arten von Sequenzen miteinander verbinden. Hier ein Beispiel:
 
-```
-Fish Shell:
-
-set fruit "Bananen"
-
-set statement "Ich esse gerne"
-
-echo $statement . " " . $fruit
-
-output: Ich esse gerne Bananen
+```Fish Shell
+echo "Zahl: " 1..10 # Ausgabe: Zahl: 1 2 3 4 5 6 7 8 9 10
 ```
 
-Wie du sehen kannst, können wir Variablen sowohl vor als auch nach dem Punkt-Operator verwenden, um komplexe Zeichenfolgen zu erstellen.
+Eine detaillierte Beschreibung aller Möglichkeiten und Syntaxen gibt es in der offiziellen Fish Shell Dokumentation.
 
 ## Siehe auch
-- [Official Fish Shell documentation on string concatenation](https://fishshell.com/docs/current/tutorial.html#tut_concat)
-- [Fish Shell scripting tutorial on string manipulation](https://github.com/jorgebucaran/fisher)
-- [Blog post about advanced string concatenation techniques in Fish Shell](https://blog.fishshell.com/fish-shellie/)
+
+- Offizielle Fish Shell Dokumentation: https://fishshell.com/docs/current
+- Einführung in die Fish Shell: https://opensource.com/article/18/5/how-learn-fish-shell
+- Interaktives Tutorial für Fish Shell: https://rootnroll.com/d/fish-shell/
+- Weitere Tipps und Tricks für die Fish Shell: https://www.example.com/

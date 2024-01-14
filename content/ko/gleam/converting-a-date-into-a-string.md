@@ -1,36 +1,48 @@
 ---
 title:                "Gleam: 날짜를 문자열로 변환하기"
+simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Gleam"
-category:             "Dates and Times"
+category:             "Gleam"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/gleam/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+왜: 날짜를 문자열로 변환하는 것에 참여하는 이유를 간단히 설명하는 부분입니다.
 
-날짜를 문자열로 변환하는 것이 왜 중요한지 궁금하신가요? 날짜는 많은 데이터를 다루는 프로그래밍에서 중요한 요소입니다. 예를 들어 데이터베이스 쿼리를 작성하거나 시간 기반의 알림을 만들 때, 날짜를 적절한 형식으로 변환하는 것이 필수적입니다.
-
-## 방법
-
-다음은 Gleam에서 날짜를 문자열로 변환하는 예제입니다.
+날짜를 문자열로 변환하는 방법:
 
 ```Gleam
-import gleam/time.String
+import Date.Format
+import Gleam.Time
 
-let date = Time.Date.from_gregorian(2021,10,25)
-let string = String.to_iso8601_date(date)
+let date = Time.date(2021, 3, 20)
+let format = "%Y-%m-%d"
+let string_date = Date.Format.format(date, format)
 
-log(string) // 출력 결과: "2021-10-25"
+// string_date는 "2021-03-20"을 반환합니다.
 ```
 
-위 코드는 먼저 `gleam/time` 모듈에서 `Date`를 불러와서 지정된 연도, 월, 일을 포함하는 날짜 객체를 생성합니다. 그리고 이를 `gleam/time/String` 모듈의 `to_iso8601_date` 함수에 전달하여 ISO 8601 표준 형식으로 변환합니다. 최종적으로 변환된 문자열을 출력합니다.
+문자열 날짜로 변환하는 코드 예시와 출력 결과를 ```Gleam ...``` 코드 블록 안에서 제공합니다.
 
-## 깊이있는 분석
+깊게 살펴보기:
 
-날짜를 문자열로 변환하는 과정은 간단하지만 중요합니다. Gleam에서는 다양한 형식의 날짜를 지원하기 때문에, 예제에서는 ISO 8601 형식을 사용하였지만 다른 형식도 동일한 방법으로 변환할 수 있습니다. 또한 날짜의 포맷이나 타임존 등 옵션을 지정할 수 있어 원하는 결과를 얻을 수 있습니다. 더 자세한 정보는 [Gleam 공식 문서](https://gleam.run/documentation/)를 참고하시기 바랍니다.
+날짜를 문자열로 변환하는 더 깊이있는 정보에 대해 다루는 부분입니다. 여러 가지 형식의 날짜를 문자열로 변환하는 방법이나 날짜 시간대 정보를 문자열로 포함시키는 방법 등 더 많은 세부 정보를 제공합니다.
 
-## 또 다른 참고자료
+참고자료:
 
-- [Gleam에서 날짜 다루기](https://gleam.run/articles/dates/)
-- [Gleam에서 문자열 다루기](https://gleam.run/articles/strings/)
+## 외부 참고 자료
+- [Gleam 문서 - 날짜 포맷팅](https://gleam.run/documentation/std/date_format)
+- [Gleam 문서 - Date 패키지](https://gleam.run/documentation/std/date)
+
+## 다른 프로그래밍 언어에서 날짜 변환하기
+- [Python에서 날짜를 문자열로 변환하는 방법](https://www.programiz.com/python-programming/datetime/strftime)
+- [JavaScript에서 날짜를 문자열로 변환하는 방법](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString)
+- [Java에서 날짜를 문자열로 변환하는 방법](https://www.baeldung.com/java-date-to-string)
+
+See Also:
+이제 이 글을 더 확장하여 다른 종류의 날짜 포맷팅을 Gleam에서 할 수 있는 방법에 대해 배웠습니다. 더 많은 정보를 찾기 위해 다음 링크를 참고하세요:
+
+- [Gleam 문서 - 날짜 및 시간](https://gleam.run/documentation/std/time)
+- [Gleam 문서 - String 모듈](https://gleam.run/documentation/std/string)

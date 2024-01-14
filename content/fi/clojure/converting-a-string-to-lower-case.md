@@ -1,33 +1,66 @@
 ---
-title:                "Clojure: Merkkijonon muuntaminen pienaakkosiksi"
+title:                "Clojure: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi: Miksi muuttaa merkkijono pienaakkosiksi? 
+## Miksi
 
-Converting a string to lower case can be useful for data cleaning, text processing, and ensuring consistency in your code. When working with strings, it is important to have a standardized format to avoid errors and make comparisons easier. 
+Miksi muuntaa merkkijono pienikirjaimiseksi? Pienikirjaimistaminen voi olla hyödyllistä esimerkiksi tietokannan haut tai vertailutarkoituksissa.
 
-## Kuinka: 
+## Miten tehdä
 
-```Clojure 
-(println (lower-case "KISSA"))
- ; tulostaa "kissa" 
-(println (lower-case "Hei, minkälaista päivää sinulla on?"))
- ; tulostaa "hei, minkälaista päivää sinulla on?" 
-``` 
+Klojurella merkkijonon pienikirjaimistaminen on helppoa käyttämällä `clojure.string/lower-case`-funktiota. Katso esimerkkejä ja tulostuksia alla olevasta koodilohkosta.
 
-Voit muuntaa merkkijonon pienaakkosiksi käyttämällä `lower-case` -funktiota ja antamalla haluamasi merkkijonon parametriksi. Tämä muuttaa kaikki merkkijonon kirjaimet pienaakkosiksi ja palauttaa uuden merkkijonon. Voit käyttää tätä muodostaaksesi tasalaatuisen vertailupohjan tai helpottamaan tietojen käsittelyä. 
+```Clojure
+(clojure.string/lower-case "HELSINKI")
+;; Tulostaa "helsinki"
 
-## Syvällinen sukellus: 
+(clojure.string/lower-case "CLOJURE PROGRAMMOINTI")
+;; Tulostaa "clojure ohjelmointi"
+```
 
-Pienaseksuksen muuttaminen on standardiksi monissa ohjelmointikielissä, joten on hyödynnällistä olla tutustunut tähän käsitteeseen. Voit myös halutessasi muokata tekstiä ennen sen passausta algoritmeille tai saadaksesi visuaalisesti yhtenäisen lopputuloksen. Huomioi, että tämä funktio toimii vain ascii-kirjanmerkeille, joten se ei välttämättä toimi tukemme kielelle. Voit kuitenkin koodaamalla omaa funktiota laajentaa näitä toiminnallisuuksia. 
+Voit myös käyttää `str/lower-case`-funktiota, joka toimii samalla tavalla.
 
-## Katso myös: 
+```Clojure
+(str/lower-case "ESIMERKKI")
+;; Tulostaa "esimerkki"
+```
 
-- [Clojure Dokumentaatio](https://clojure.org/reference/strings) 
-- [Miten muunnetaan merkkijono pienaakkosiin Javassa](https://www.baeldung.com/java-string-lowercase) 
-- [Piena
+## Syvemmälle
+
+Merkkijonon pienikirjaimistaminen ei rajoitu pelkästään aakkosiin. Esimerkiksi ääkköset ja erikoismerkit voidaan myös muuntaa pienikirjaimiksi.
+
+```Clojure
+(clojure.string/lower-case "ÄÄKKÖSET")
+;; Tulostaa "ääkköset"
+
+(clojure.string/lower-case "PELIAIKA: 00:20.5")
+;; Tulostaa "peliaika: 00:20.5"
+```
+
+On myös hyvä huomata, että merkkijono pysyy muuttumattomana, ellei sitä tallenneta uuteen muuttujaan tai rakenteeseen.
+
+```Clojure
+;; Alkuperäinen merkkijono
+(def city "TAMPERE")
+
+;; Pienikirjaimistettu merkkijono tallennetaan uuteen muuttujaan
+(def lowercase-city (clojure.string/lower-case city))
+
+(lowercase-city)
+;; Tulostaa "tampere"
+
+city
+;; Pysyy muuttumattomana ja tulostaa silti "TAMPERE"
+```
+
+## Katso myös
+
+- [Klojure - String-oppaat](https://clojure.org/guides/strings)
+- [Klojure - Merkkijonofunktiot](https://clojure.github.io/clojure/clojure.string-api.html#clojure.string/lower-case)

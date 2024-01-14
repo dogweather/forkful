@@ -1,46 +1,38 @@
 ---
 title:                "Haskell: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Haskell"
-category:             "Strings"
+category:             "Haskell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
 
-Att konvertera en sträng till gemener (lower case) är ett vanligt problem när man arbetar med textbehandling i Haskell. Genom att göra detta kan man åstadkomma konsistens och enhetlighet i ens data, vilket är viktigt för många applikationer.
+Att konvertera en sträng till små bokstäver är en vanlig uppgift inom programmering. Detta kan vara användbart för att jämföra strängar på ett enhetligt sätt eller för att skapa en sökfunktion som ignorerar bokstavskapital.
 
-## Hur man gör det
+##Så här gör du
 
-Att konvertera en sträng till gemener i Haskell är ganska enkelt. Det finns en inbyggd funktion som heter `toLower` som tar emot en sträng som argument och returnerar en ny sträng med alla bokstäver i gemener.
-
-För att använda denna funktion behöver du importera modulen `Data.Char` genom att lägga till `import Data.Char` längst upp i din fil.
-
-Här är ett exempel som visar hur man konverterar en sträng till gemener och sedan skriver ut resultatet:
+För att konvertera en sträng till små bokstäver i Haskell, använder vi den inbyggda funktionen `map` tillsammans med funktionen `toLower` från modulen `Data.Char`. Kodexemplet nedan visar hur detta kan göras:
 
 ```Haskell
-import Data.Char
+import Data.Char (toLower)
 
-main = do
-    let string = "HEJ ALLA SWEDISH READERS!"
-    let lower = toLower string
-    putStrLn lower
+strToLower :: String -> String
+strToLower = map toLower
 ```
 
-Kör detta och du borde få utskriften `hej alla swedish readers!`.
+I detta exempel definierar vi en funktion `strToLower` som tar en sträng som argument och använder `map` för att applicera `toLower` på varje tecken i strängen. För att använda denna funktion i vår kod, kan vi sedan helt enkelt skriva `strToLower "EXEMPELSTRÄNG"` och få ut resultatet `"exempelsträng"`.
 
-## Djupdykning
+##Djupdykning
 
-Nu när vi vet hur man konverterar en sträng till gemener låt oss ta en titt på vad som händer under huven.
+För att förstå hur funktionen `map` fungerar i samband med `toLower`, måste vi först förstå datatypen `String` i Haskell. I Haskell är `String` en samling av `Char`-värden, vilket betyder att varje element eller bokstav i en sträng är representerad av en `Char`.
 
-`toLower` funktionen använder sig av den inbyggda funktionen `ord` för att konvertera en karaktär till motsvarande numeriska värde i ASCII-tabellen. Sedan använder den funktionen `chr` för att konvertera detta värde tillbaka till en gemener karaktär.
+Funktionen `map` tar en funktion som första argument och en lista som andra argument. Den applicerar sedan funktionen på varje element i listan och returnerar en ny lista med de nya värdena. I vårt fall är funktionen som vi vill applicera `toLower` och listan är vår `String`. Detta innebär att `map toLower "EXEMPELSTRÄNG"` resulterar i en ny lista med bokstäverna i strängen konverterade till små bokstäver.
 
-Det betyder att `toLower` inte bara fungerar med bokstäver i det engelska alfabetet, utan det fungerar också med specialtecken, accenter och alfabet från andra språk.
+##Se även
 
-Om du vill gräva ännu djupare så kan du ta en titt på källkoden för `toLower` genom att köra kommandot `:browse Data.Char` i GHCI (Haskell interpreter).
-
-## Se även
-
-- [Haskell dokumentation för `Data.Char`](https://hackage.haskell.org/package/base/docs/Data-Char.html)
-- [ASCII-tabell](https://www.td.unh.edu “ASCII-tabell”)
+- [Haskell Data.Char dokumentation](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html#v:toLower)
+- [Haskell map dokumentation](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-List.html#v:map)

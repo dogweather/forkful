@@ -1,59 +1,45 @@
 ---
 title:                "Rust recipe: Reading a text file"
+simple_title:         "Reading a text file"
 programming_language: "Rust"
-category:             "Files and I/O"
+category:             "Rust"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/rust/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Why
-
-Reading a text file may seem like a simple task, but it is an essential skill for any programmer. Whether you need to process large amounts of data or simply extract information from a file, knowing how to read a text file efficiently can save you time and frustration. In this blog post, we will explore how to read a text file using Rust programming language.
+Text files are a common form of data storage and retrieval, and being able to read and parse them is a necessary skill for any programmer. If you're learning Rust, understanding how to read and manipulate text files is a great way to practice using the language's features.
 
 ## How To
+To read a text file in Rust, we first need to open it using the `File::open()` method. This function returns a `Result` type, which we can use to handle any potential errors that may occur. Let's see an example of reading a file named "data.txt" and printing its contents:
 
-To read a text file in Rust, we first need to open the file and create a `File` object. We can do this using the `std::fs::File` module, which provides methods for file manipulation. We also need to import the `io::prelude` module to read and write to the file. Here is an example code that reads a text file named "data.txt" and prints its contents to the console:
-
-```Rust
+```rust
 use std::fs::File;
-use std::io::prelude::*;
+use std::io::{BufReader, BufRead};
 
 fn main() {
-    let mut file = File::open("data.txt").expect("Failed to open file"); // open the file
-    let mut contents = String::new(); // create an empty string
-    file.read_to_string(&mut contents).expect("Failed to read file"); // read file and store contents in string
-    println!("{}", contents); // print contents to console
-}
-```
-
-Running this code will output the contents of the "data.txt" file. We can also use the `std::io::BufReader` module for more efficient reading of large text files. Here is an example code using `BufReader`:
-
-```Rust
-use std::fs::File;
-use std::io::{self, BufReader};
-use std::io::prelude::*;
-
-fn main() -> io::Result<()> {
-    let file = File::open("data.txt")?; // open the file
-    let buf_reader = BufReader::new(file); // create a buffer reader object
-    for line in buf_reader.lines() {
-        println!("{}", line?); // print each line to console
+    if let Ok(file) = File::open("data.txt") {
+        let reader = BufReader::new(file);
+        for line in reader.lines() {
+            println!("{}", line.unwrap());
+        }
+    } else {
+        println!("Error opening file.");
     }
-    Ok(())
 }
 ```
 
-This code will print out each line in the "data.txt" file.
+In this code, we use the `BufReader` type to efficiently read the contents of the file line by line. The `lines()` method returns an iterator, which we can use to loop through all the lines in the file. For each line, we use `unwrap()` to get the actual string value. This is just a basic example, but there are many ways to read and manipulate text files in Rust.
 
 ## Deep Dive
+Now, let's take a closer look at how the `BufReader` type works. When we call the `lines()` method, it actually returns an iterator of `io::Result<String>`. This means each line can potentially contain an error, which we handle using the `unwrap()` method. However, this is not an ideal way to handle errors, as it will panic if an error occurs. To handle errors properly, we can use the `match` expression or `expect()` method.
 
-Behind the scenes, Rust uses a `Read` trait to read from a file. This trait allows different types of objects, such as `File` and `BufReader`, to implement read operations in a similar manner. The `Read` trait provides methods such as `read`, which reads bytes from a file into a buffer, and `read_to_string`, which reads bytes and converts them into a `String`.
+Additionally, we can also specify the character encoding when reading a text file. By default, UTF-8 encoding is assumed, but we can use the `encoding_from_uitf8()` function to detect the encoding of the file and read it accordingly.
 
-Rust also handles errors gracefully using the `?` operator, which is used to propagate errors instead of using `expect` to handle them. This helps in writing more robust and reliable code.
-
-## See Also
-
-- [Rust Standard Library documentation for File and BufReader](https://doc.rust-lang.org/std/fs/struct.File.html)
-- [Rust Book - The Read trait](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html#the-read-trait)
-- [Rust By Example - File I/O](https://rustbyexample.com/std_misc/file.html)
+## See Also 
+- [Rust Documentation: File](https://doc.rust-lang.org/std/fs/struct.File.html)
+- [Rust Documentation: BufReader](https://doc.rust-lang.org/std/io/struct.BufReader.html)
+- [Rust Documentation: Result](https://doc.rust-lang.org/std/result/)
+- [Rust Cookbook: Reading a File Line by Line](https://rust-lang-nursery.github.io/rust-cookbook/file/read-write.html#read-a-file-line-by-line)

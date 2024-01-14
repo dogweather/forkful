@@ -1,55 +1,50 @@
 ---
-title:                "Javascript: 새로운 프로젝트 시작하기"
+title:                "Javascript: 새 프로젝트 시작하기"
+simple_title:         "새 프로젝트 시작하기"
 programming_language: "Javascript"
-category:             "Getting Started"
+category:             "Javascript"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+## 왜?
 
-현재 코딩 분야에서 가장 인기 있는 언어 중 하나인 자바스크립트를 배우고 새 프로젝트를 시작하는 것은 자신의 기술력과 경험을 향상시키는 데 도움이 됩니다.
+새로운 프로젝트를 시작하는 이유는 여러 가지가 있을 수 있습니다. 첫째로, 새로운 기술을 배워보고 싶거나, 새로운 언어를 시도해보고 싶을 수 있습니다. 또한 꾸준한 실습을 통해 자신의 코딩 스킬을 향상 시키고 싶은 경우에도 새로운 프로젝트를 시작할 수 있습니다. 어떤 이유든지 새로운 프로젝트를 시작하는 것은 계속해서 발전하고 성장하기 위한 좋은 방법입니다.
 
-## 어떻게
+## 어떻게 할까요?
 
-아래는 새로운 프로젝트를 시작하는 간단한 예제 코드와 실행 결과입니다.
+새로운 프로젝트를 시작하는 첫 단계는 Javascript를 설치하고 환경을 설정하는 것입니다. 우선 Node.js를 설치한 다음, 다음과 같이 코드를 작성해 봅시다:
 
 ```Javascript
-// HTML 파일 내에서 자바스크립트 코드 작성
-<!DOCTYPE html>
-<html>
-<head>
-  <title>새 프로젝트</title>
-</head>
-<body>
-  <script>
-    //변수 선언
-    var myName = "나는 자바스크립트를 배우고 있습니다.";
-    // console.log() 함수를 통해 변수 출력
-    console.log(myName);
-  </script>
-</body>
-</html>
-```
-```
-결과: 나는 자바스크립트를 배우고 있습니다.
+const greeting = "안녕하세요!";
+console.log(greeting);
 ```
 
-## 심층 분석
+위 코드를 실행하면 "안녕하세요!"라는 메시지가 화면에 출력됩니다. 이제 새로운 기술을 배우거나 새로운 아이디어를 시도해볼 수 있습니다.
 
-새로운 프로젝트를 시작하기 전에 아래의 단계를 따라야 합니다.
+```Javascript
+function multiply(x, y) {
+  return x * y;
+}
 
-1. 기획 단계: 프로젝트의 목표, 기능, 기간 등을 정하고 문서 작성
-2. 디자인 단계: 화면 구성, 디자인, 사용자 인터페이스 등을 결정하고 스케치 작성
-3. 코딩 단계: 코딩 환경 설정, 코드 작성, 테스트 등을 진행
-4. 배포 단계: 호스팅 서비스 선택, 배포된 사이트 테스트, 검증 등을 수행
+const result = multiply(3, 4);
+console.log(result);
+```
 
-새로운 프로젝트를 시작할 때는 항상 위의 단계를 따르며 철저한 계획과 팀원 간의 원활한 협업이 필요합니다.
+위 코드는 주어진 두 수를 곱한 값을 반환하는 함수를 정의하고, 이를 호출하여 결과를 화면에 출력하는 간단한 예시입니다. 이와 같이 실제로 코드를 작성해보면서 새로운 프로젝트를 시작하는 것이 가장 효과적입니다.
+
+## 깊게 들어가기
+
+새로운 프로젝트를 시작하면서 앞서 말한 목적이 첫 번째로 떠오르지만, 여러분은 그 이상의 것들을 얻을 수 있습니다. 더 나은 코드 작성, 문제 해결 능력 향상, 협업 능력 발전 등 다양한 장점을 얻을 수 있습니다. 또한 새로운 프로젝트를 통해 지속적인 학습과 발전을 이루어 낼 수 있습니다. 따라서 새로운 프로젝트를 시작할 때 열정과 호기심을 잃지 않고 깊게 파고들어 보며 새로운 것들을 배우는 것이 중요합니다.
 
 ## 더 알아보기
 
-- [자바스크립트 공식 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript)
-- [무료로 배우는 자바스크립트 강의](https://www.inflearn.com/course/javascript-coding-basic/?inst=5cceb8db)
-- [자바스크립트 프로젝트 아이디어와 예제 코드 블랙](https://1000-projects.tistory.com/entry/Javascript-Project-Ideas-with-Source-Code-Free-Down)
-- [자바스크립트 개발자 커뮤니티 사이트](https://jsdev.kr/)
+새로운 프로젝트를 시작하고자 하는데 더 많은 도움이 필요하다면 아래의 링크들을 참고해 보세요.
+
+- [Node.js 다운로드](https://nodejs.org/en/download/)
+- [자바스크립트 기초 공부하기](https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+- [코드카데미](https://www.codecademy.com/)
+- [노마드 코더](https://nomadcoders.co/javascript-for-beginners)
+- [개발자들의 블로그](https://velog.io/)

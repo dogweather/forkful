@@ -1,72 +1,80 @@
 ---
-title:                "Rust: Concatenando strings"
+title:                "Rust: Unindo strings"
+simple_title:         "Unindo strings"
 programming_language: "Rust"
-category:             "Strings"
+category:             "Rust"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/rust/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-Você provavelmente já se deparou com a necessidade de juntar ou misturar diferentes strings em seu código. Talvez você precise criar uma mensagem personalizada para o usuário ou construir uma URL dinamicamente. Em qualquer caso, a concatenação de strings é uma habilidade fundamental em programação e é especialmente importante na linguagem Rust.
+##Porque Concatenar Strings em Rust é Importante
 
-## Como fazer
-Em Rust, a concatenação de strings é realizada usando o operador `+` ou o método `format!()`. Vejamos alguns exemplos de como usar essas opções:
+Concatenar strings é uma tarefa comum em programação e pode ser especialmente útil em Rust. Ao concatenar strings, é possível unir várias strings em uma única string, permitindo que sejam manipuladas e apresentadas de forma mais eficiente.
 
-Cenário 1: Juntando duas strings literais
+##Como Concatenar Strings em Rust
+
+É simples concatenar strings em Rust usando o operador `+`. Veja o exemplo abaixo:
+
+```Rust 
+let primeiro_nome = "João";
+let sobrenome = "da Silva";
+
+let nome_completo = primeiro_nome + " " + sobrenome;
+
+println!("{}, bem-vindo!", nome_completo);
+```
+
+Esse código irá produzir a seguinte saída:
+
+```
+João da Silva, bem-vindo!
+```
+
+Também é possível concatenar mais de duas strings de uma vez:
+
 ```Rust
-let saudacao = "Olá";
-let nome = "Maria";
-let mensagem = saudacao + nome;
+let primeira_parte = "Eu";
+let segunda_parte = "amo";
+let terceira_parte = "Rust";
 
-println!("{}", mensagem);
+let frase = primeira_parte + " " + segunda_parte + " " + terceira_parte;
+
+println!("{}", frase);
 ```
 
-Saída:
+A saída será:
+
 ```
-OláMaria
+Eu amo Rust
 ```
 
-Cenário 2: Juntando uma string literal com uma variável
+##Aprofundando em Concatenação de Strings em Rust
+
+Ao concatenar strings em Rust, é importante observar que o tipo de dado resultante é sempre `String`. Isso significa que é possível armazenar o resultado da concatenação em uma variável e continuar manipulando a string normalmente.
+
+Outra coisa importante a se notar é que o operador `+` não funciona apenas com o tipo `&str` (referência para sequência de caracteres). Ele também funciona com o tipo `String`, o que torna o processo de concatenação ainda mais flexível.
+
+Outra opção para concatenar strings em Rust é através do método `format!()`. Esse método cria uma nova string a partir de strings existentes, como no exemplo abaixo:
+
 ```Rust
-let saudacao = "Olá";
-let nome = "Maria";
-let mensagem = saudacao + &nome;
+let primeiro_nome = "Maria";
+let sobrenome = "dos Santos";
 
-println!("{}", mensagem);
+let nome_completo = format!("{} {}", primeiro_nome, sobrenome);
+
+println!("{}, seja bem-vinda!", nome_completo);
 ```
 
-Saída:
-```
-OláMaria
-```
+A saída será:
 
-Cenário 3: Usando o método `format!()`
-```Rust
-let saudacao = "Olá";
-let nome = "Maria";
-let mensagem = format!("{} {}", saudacao, nome);
-
-println!("{}", mensagem);
+```
+Maria dos Santos, seja bem-vinda!
 ```
 
-Saída:
-```
-Olá Maria
-```
+##Veja também
 
-Observe que no terceiro cenário usamos o `format!()` para criar uma nova string contendo a concatenação das duas strings. Isso nos permite formatar a string de maneira mais flexível e é particularmente útil quando precisamos combinar mais de duas strings.
-
-## Profundidade
-Por baixo dos panos, a concatenação de duas strings em Rust envolve a criação de uma nova string que contém o conteúdo dos dois operandos. Isso é feito através da alocação de memória para a nova string e a cópia dos bytes das duas strings originais para a nova string.
-
-Mas e quanto ao desempenho? Vale a pena usar o operador `+` ou o método `format!()`? Na verdade, em Rust, a concatenação de strings é otimizada em tempo de compilação para usar o método `format!()` em vez do operador `+`.
-
-Além disso, Rust também fornece uma maneira de compilar strings em tempo de execução sem alocar nova memória ou copiar bytes. Isso é feito usando o tipo `String` e seu método `push_str()` para adicionar uma string a uma já existente.
-
-Em resumo, a concatenação de strings em Rust é eficiente e pode ser facilmente realizada usando o operador `+` ou o método `format!()`. No entanto, é importante ter em mente as opções mais eficientes, como o uso do tipo `String` e o método `push_str()`.
-
-## Veja também
-- [Documentação oficial do Rust sobre strings](https://doc.rust-lang.org/std/string/index.html)
-- [Explicação sobre tipos e alocação de memória em Rust](https://blog.jimb.xyz/spotlight-on-rust-strings/)
-- [Análise de desempenho da concatenação de strings em diferentes linguagens de programação](https://hackernoon.com/the-curious-case-of-concatenating-strings-javascript-python-go-ruby-and-rust-b05401b0ba82)
+- [Documentação oficial de Strings em Rust](https://doc.rust-lang.org/std/string/index.html)
+- [Concatenação de Strings em Rust - Tutorialspoint](https://www.tutorialspoint.com/rust/rust_string.htm)
+- [Deep Dive: Entendendo Referências em Rust](https://www.rust-lang.org/pt-BR/learn/official-documents/book/second-edition/ch04-00-understanding-ownership)

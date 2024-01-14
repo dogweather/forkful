@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Extrahera delsträngar."
+title:                "Bash: Extrahering av understrängar"
+simple_title:         "Extrahering av understrängar"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/bash/extracting-substrings.md"
 ---
 
@@ -9,41 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att extrahera substrängar är en vanlig uppgift inom Bash-programmering. Det kan hjälpa dig att manipulera strängar och få ut den del av en sträng som du behöver för att lösa ett problem. Det är ett användbart verktyg att ha i verktygslådan för alla som arbetar med Bash.
+En av de grundläggande funktionerna i Bash-programmering är att extrahera substrängar (delsträngar) från en större textsträng. Detta kan vara användbart för att manipulera data eller för att bearbeta text på ett specifikt sätt. 
 
 ## Så här gör du
 
-För att extrahera en substring i Bash, kan du använda kommandot `cut` eller `grep`. Låt oss titta på ett exempel:
+För att extrahera en substräng i Bash använder du kommandot `cut`. Det här kommandot tar ett antal flaggor som styr utmatningen och visar bara den del av texten som du vill ha. Här är ett enkelt exempel:
 
 ```Bash
-str="Hej alla! Välkomna till min blogg." # Skapar en variabel med en lång sträng
-echo ${str:4:4}  # Skriver ut en substring som börjar på position 4 och är 4 tecken lång
+text="Hej! Det här är en textsträng."
+echo ${text:9:4}
 ```
 
-Output: `alla`
+**Utanför kodblocket** betyder detta att vi har en variabel `text` som innehåller en textsträng. I den sista raden använder vi sedan `echo` för att skriva ut en del av texten, från position 9 till längden 4. Detta ger oss ett resultat på "här ".
 
-Här använde vi parameterexpansion för att extrahera en substring från en variabel. Syntaxen är `${var:start:length}`, där `start` är positionen där substrängen ska börja och `length` är längden på den extraherade substringen.
-
-Om du vill extrahera en del av en sträng baserat på ett visst mönster kan du använda `cut` eller `grep`. Låt oss ta en titt på ett exempel med `grep`:
+En annan användbar funktion är att kunna extrahera en del av en textsträng baserat på ett visst villkor. I det här fallet kan du använda `grep`-kommandot för att söka igenom en textsträng och bara returnera de delar som matchar ditt villkor. Här är ett exempel:
 
 ```Bash
-str="Det finns många äpplen i korgen." # Skapar en variabel med en sträng
-echo ${str | grep -o "många.*kor"}  # Skriver ut en substring som matchar mönstret "många.*kor"
+text="Hej! Det här är en textsträng."
+echo $text | grep "här"
 ```
 
-Output: `många äpplen i korgen`
-
-Här använder vi parametern `-o` för att bara skriva ut den matchande delen av strängen och mönstret `många.*kor` för att välja den del av strängen vi är intresserade av.
+I detta fall blir resultatet "här är en textsträng."
 
 ## Djupdykning
 
-Nu när vi har en grundläggande förståelse för hur man extraherar substrängar i Bash, låt oss titta på några andra användbara funktioner och tekniker för att göra det.
+När det gäller att extrahera substrängar i Bash, finns det många olika alternativ och flaggor som du kan använda för att anpassa din utmatning. Till exempel kan du använda `-f` flaggan med `cut`-kommandot för att specificera vilka tecken som ska användas som avgränsare i din textsträng. Detta kan vara användbart om du exempelvis arbetar med en CSV-fil.
 
-En viktig sak att tänka på är att inledningen av en sträng är position 0, vilket ofta kan orsaka förvirring och misstag. Så om du vill extrahera de första 4 tecknen av en sträng, måste du ange `${var:0:4}` istället för `${var:1:4}`.
+För att gå ännu djupare i ämnet kan du också använda regelbundna uttryck för att extrahera delsträngar. Under övningens gång kan du upptäcka att det finns vissa mönster i textsträngen som du vill extrahera. I dessa fall kan du använda verktyg som `sed` eller `awk` för att skapa mer avancerade uttryck som hjälper dig att få den exakta delsträngen du vill ha.
 
-En annan användbar teknik är att använda parameterexpansion för att få ut en del av en sträng baserat på ett visst mönster. Till exempel, om du vill extrahera en del av en URL som innehåller en viss term, kan du använda följande syntax: `${var#*sökterm}`. Detta kommer att ta bort allt som kommer före söktermen i strängen.
+## Se också
 
-## Se även
-
-- [GNU Bash manual](https://www.gnu.org/software/bash/manual/bash.html) - Här hittar du mer information om parameterexpansion och andra användbara funktioner inom Bash.
-- [Regex101](https://regex101.com/) - En användbar webbplats för att testa dina regex-mönster.
+- [Dokumentation för `cut`](https://www.gnu.org/software/coreutils/manual/html_node/cut-invocation.html)
+- [Dokumentation för `grep`](https://www.gnu.org/software/grep/manual/grep.html)
+- [Dokumentation för `sed`](https://www.gnu.org/software/sed/manual/sed.html)
+- [Dokumentation för `awk`](https://www.gnu.org/software/gawk/manual/gawk.html)

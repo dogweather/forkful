@@ -1,41 +1,41 @@
 ---
-title:                "Arduino: Utskrift av feilsøkingsutdata"
+title:                "Arduino: Utskrift av feilsøkingsresultater"
+simple_title:         "Utskrift av feilsøkingsresultater"
 programming_language: "Arduino"
-category:             "Testing and Debugging"
+category:             "Arduino"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+##Hvorfor
 
-Å printe debug-utdata er en viktig del av å programmere Arduino. Det hjelper deg med å finne og feilsøke problemer i koden din.
+Når du arbeider med Arduino-programmering kan det noen ganger være vanskelig å forstå hvorfor noe ikke fungerer som det skal. Det er her utskrift av feilmeldinger og debug-informasjon kommer til nytte. Ved å skrive ut denne informasjonen kan du få en bedre forståelse av hva som skjer i koden din og dermed feilrette problemet mer effektivt.
 
-## Slik gjør du det
+##Slik gjør du det
 
-For å printe debug-utdata i Arduino, kan du bruke funksjonen "Serial.print()". Du kan også bruke "Serial.println()" for å skrive ut en linje med tekst og gå til neste linje. Her er et eksempel på hvordan du kan bruke disse funksjonene:
+For å skrive ut debug-informasjon i Arduino-kode, kan du bruke funksjonen "Serial.print ()". Dette vil skrive ut informasjonen du ønsker i seriell overvåkingsvindu i Arduino IDE.
 
-```Arduino
-int verdi = 42; // Opprett en variabel og gi den verdien 42
+```Arduino Serial.print ("Hei, dette er en debug-melding!");```
 
-Serial.print("Denne variabelen har verdien: "); // Skriv ut en tekstlinje
-Serial.println(verdi); // Skriv ut verdien av variabelen og gå til neste linje
-```
+Dette vil skrive ut teksten "Hei, dette er en debug-melding!" i overvåkningsvinduet hver gang koden din når denne linjen.
 
-Output vil se slik ut i Serial Monitor:
+##Dypere dykk
 
-```
-Denne variabelen har verdien: 42
-```
+For å få mer detaljert informasjon i utskriftene dine kan du bruke funksjonen "Serial.println ()". Dette vil skrive ut meldingen din i et eget linjeskift i overvåkningsvinduet.
 
-## Dykker dypere
+```Arduino Serial.println ("Verdi av variabel: " + variabel);```
 
-Det finnes flere måter å bruke "Serial.print()" og "Serial.println()" på, som å skrive ut tekst, tall, og til og med verdien av sensorer som er koblet til Arduino. Du kan også bruke "Serial.begin()" for å initialisere Serial kommunikasjonen og sette et baudrate (datahastighet) for å sikre at utdata blir sendt og mottatt riktig.
+Dette vil skrive ut verdien av variabelen din sammen med teksten "Verdi av variabel: " i et eget linjeskift i overvåkningsvinduet.
 
-En annen nyttig funksjon i debugging er "Serial.available()". Denne funksjonen lar deg sjekke om det er data tilgjengelig til å bli lest fra Serial monitor. Det er spesielt nyttig når du arbeider med seriell kommunikasjon mellom Arduino og en datamaskin.
+Du kan også bruke bindestrek for å kombinere tekst og variabler i utskriftene dine.
 
-## Se også
+```Arduino Serial.println ("Summen av tallene er: " + tall1 + tall2);```
 
-- [Official Arduino Serial reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-- [Arduino - Debugging](https://www.arduino.cc/en/Guide/Troubleshooting#debugging)
-- [Arduino Serial Monitor: Ultimate Guide](https://randomnerdtutorials.com/arduino-serial-monitor-ultimate-guide/)
+Dette vil skrive ut summen av verdien av tall1 og tall2 sammen med teksten "Summen av tallene er: " i et eget linjeskift i overvåkningsvinduet.
+
+##Se også
+
+- Mer informasjon om Serial-funksjonene: [https://www.arduino.cc/reference/en/language/functions/communication/serial/](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+- Tutorial om debugging i Arduino: [https://www.arduino.cc/en/Tutorial/Debugging](https://www.arduino.cc/en/Tutorial/Debugging)

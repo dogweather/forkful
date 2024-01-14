@@ -1,67 +1,69 @@
 ---
-title:                "Fish Shell: 读取命令行参数"
+title:                "Fish Shell: 阅读命令行参数"
+simple_title:         "阅读命令行参数"
 programming_language: "Fish Shell"
-category:             "Files and I/O"
+category:             "Fish Shell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/fish-shell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+# 为什么要阅读命令行参数
+阅读命令行参数是学习Fish Shell编程的重要一步。在命令行下，我们可以通过读取和解析不同的参数，来实现更高效和灵活的脚本编写。
 
-为什么要阅读命令行参数？命令行参数是Fish Shell编程的关键组成部分。它们允许您在运行脚本或执行任何命令时提供输入。阅读命令行参数让您的程序更加灵活和可定制。
+# Fish Shell 如何读取命令行参数
+在Fish Shell中，读取命令行参数非常简单。我们可以通过使用 `$argv` 表示命令行参数。例如，如果我们运行以下命令：
+```
+fish script.fish hello world
+```
+那么，`$argv[1]` 将会是 `hello`，`$argv[2]` 将会是 `world`。如果我们需要读取所有的参数，可以使用 `$argv[1..-1]` 来表示所有的命令行参数。让我们来看一个示例代码：
+```Fish Shell
+#!/usr/bin/fish
 
-## How To
+echo "我收到了这些命令行参数：$argv[1..-1]"
+```
+输出将会是：
+```
+我收到了这些命令行参数：hello world
+```
 
-阅读命令行参数是一项简单的任务，只需遵循以下步骤即可：
+# 深入探讨命令行参数的读取
+除了简单地读取命令行参数之外，我们还可以使用一些特殊的标记来控制命令行参数的读取。例如，在参数前面加上两个减号 `--`，将会使它变成一个命令行选项。我们可以通过使用 `-s` 来表示 `--silent`。让我们来看一个完整的示例代码：
+```Fish Shell
+#!/usr/bin/fish
 
-1. 首先，您需要在Fish Shell中定义一个函数来处理命令行参数。例如：
+# 定义一些选项的默认值
+set silent false
+set name "Anonymous"
 
-    ```Fish Shell
-    function my_script
-    ```
+# 检查命令行参数并设置选项的值
+for arg in $argv
+    switch $arg
+        case "-s" or "--silent"
+            set silent true
+        case "-n" or "--name"
+            set name $argv[(math $argv | grep -n $arg | cut -d ":" -f 1) + 1]
+end
 
-2. 然后，您需要使用`set`命令来定义您需要读取的参数，并将其赋值给变量。例如：
+# 执行相应的操作
+if $silent
+    echo "欢迎，$name。我是一个安静的脚本。"
+else
+    echo "欢迎，$name。我是一个有声音的脚本。"
+end
+```
+如果我们运行以下命令：
+```
+fish script.fish --silent --name Lucy
+```
+输出将会是：
+```
+欢迎，Lucy。我是一个安静的脚本。
+```
 
-    ```Fish Shell
-    set first_argument $argv[1]
-    set second_argument $argv[2]
-    ```
-
-3. 现在，您可以在函数中使用这些变量来执行您想要的操作。例如，您可以通过`echo`命令打印出参数的值：
-
-    ```Fish Shell
-    echo "第一个参数的值为：$first_argument"
-    echo "第二个参数的值为：$second_argument"
-    ```
-
-4. 最后，您可以在命令行中运行您的函数，并传递参数。例如：
-
-    ```Fish Shell
-    my_script hello world
-    ```
-
-    这将会打印出：
-
-    ```
-    第一个参数的值为：hello
-    第二个参数的值为：world
-    ```
-
-## Deep Dive
-
-虽然阅读命令行参数是一项简单的任务，但是有一些注意事项和技巧值得我们深入研究：
-
-- Fish Shell默认情况下，会自动解析命令行参数并赋值给变量`$argv`。如果您想要禁用这一行为，可以使用`set -U _pass_argv false`命令。
-- 如果您传递给函数的参数数量超过了您定义的变量数量，多余的参数将会被忽略。
-- 您也可以使用`shift`命令来移除已使用的参数，以便在函数中处理剩下的参数。
-- 如果您需要按照特定的顺序读取参数，可以使用`set命令`并指定参数的位置。例如，`set my_argument $argv[3]`。
-- 您也可以使用`count`命令来获取传递给函数的参数数量，以便在需要处理可变数量参数的情况下使用。
-
-## See Also
-
+# 参考链接
 - [Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
-- [Fish Shell参考手册](https://fishshell.com/docs/current/commands.html)
-- [了解更多Fish Shell编程技巧](https://fishshell.com/docs/current/index.html#tutorials)
-
-感谢阅读本文，希望它能帮助您更好地掌握Fish Shell编程中的参数读取。祝您编程愉快！
+- [Fish Shell GitHub仓库](https://github.com/fish-shell/fish-shell)
+- [Fish Shell 文档翻译项目](https://github.com/oh-my-fish/docs)
+- [Linux命令行基础教程](https://www.linuxcommand.org/lc3_learning_the_shell.php)

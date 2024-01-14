@@ -1,56 +1,70 @@
 ---
 title:                "C++: Comparando duas datas"
+simple_title:         "Comparando duas datas"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/cpp/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-Ao trabalhar com datas em programas de computador, pode ser necessário comparar duas datas para determinar qual delas é maior ou se são iguais. Isso pode ser útil em diversas situações, como em sistemas de reservas ou controle de estoque.
+## Por que comparar duas datas é importante?
 
-## Como
-Em C++, podemos comparar duas datas utilizando o operador de comparação "==" (igual) ou "!=" (diferente). Porém, para isso, é preciso que as datas sejam representadas em uma forma que o compilador possa entender, como por exemplo, utilizando o formato "dd/mm/aaaa" ou "mm/dd/aaaa". Vejamos um exemplo de código:
+Comparar datas é uma tarefa comum na programação, especialmente no desenvolvimento de programas que envolvem agendamentos ou cálculos de prazos. Além disso, a comparação de datas pode ser usada para verificar a validade de dados, como datas de nascimento ou vencimento de documentos.
+
+## Como comparar duas datas em C++?
+
+Para comparar duas datas em C++, utilizamos os operadores de comparação "menor que" (<) e "maior que" (>), que retornam verdadeiro (true) ou falso (false) dependendo da relação entre as datas.
 
 ```C++
-#include<iostream>
-using namespace std;
+// Declaração das variáveis de data
+int dia1, dia2, mes1, mes2, ano1, ano2;
 
-int main()
-{
-	// Declarando e inicializando duas datas
-	string data1 = "15/05/2021";
-	string data2 = "20/05/2021";
+// Entrada dos valores das datas
+cout << "Digite o dia, mês e ano da primeira data: ";
+cin >> dia1 >> mes1 >> ano1;
 
-	// Comparando as datas utilizando o operador !=
-	if(data1 != data2)
-	{
-		cout << "As datas sao diferentes." << endl;
-	}
+cout << "Digite o dia, mês e ano da segunda data: ";
+cin >> dia2 >> mes2 >> ano2;
 
-	// Comparando as datas utilizando o operador ==
-	if(data1 == data2)
-	{
-		cout << "As datas sao iguais." << endl;
-	}
-
-	return 0;
+// Comparação utilizando os operadores de comparação
+if (ano1 < ano2) {
+    cout << "A primeira data é anterior à segunda data";
+} else if (ano1 > ano2) {
+    cout << "A segunda data é anterior à primeira data";
+} else {
+    if (mes1 < mes2) {
+        cout << "A primeira data é anterior à segunda data";
+    } else if (mes1 > mes2) {
+        cout << "A segunda data é anterior à primeira data";
+    } else {
+        if (dia1 < dia2) {
+            cout << "A primeira data é anterior à segunda data";
+        } else if (dia1 > dia2) {
+            cout << "A segunda data é anterior à primeira data";
+        } else {
+            cout << "As datas são iguais";
+        }
+    }
 }
 ```
 
-A saída deste código será:
+### Exemplo de saída:
 
 ```
-As datas sao diferentes.
+Digite o dia, mês e ano da primeira data: 15 05 1990
+Digite o dia, mês e ano da segunda data: 10 04 1990
+A primeira data é anterior à segunda data
 ```
 
-## Deep Dive
-Ao utilizar o operador de comparação "==" com datas, é importante ter em mente que ele irá comparar os valores do tipo `string` em ordem alfabética. Por isso, se as datas forem representadas em formato "dd/mm/aaaa", é preciso garantir que o dia venha primeiro, seguido do mês e, por último, o ano. Caso contrário, a comparação pode não ser precisa. 
+## Explorando mais a comparação de datas
 
-Além disso, é importante lembrar que essa comparação será feita apenas com base no texto das datas, e não em seu valor numérico. Ou seja, se tivermos duas datas representadas em texto como "05/2021" e "10/2020", a primeira será considerada maior por ter o valor "05" antes do valor "10" na ordem alfabética.
+É importante lembrar que a comparação de datas em C++ é feita considerando o valor numérico de cada elemento (dia, mês, ano). Por isso, é necessário ter cuidado ao comparar datas que estejam em formatos diferentes, como por exemplo dia/mês/ano e mês/dia/ano.
+
+Além disso, em C++ também podemos utilizar a biblioteca <ctime> para trabalhar com datas e realizar operações, como adicionar ou subtrair dias de uma data específica.
 
 ## Veja também
-- [Documentação oficial da linguagem C++ sobre operadores de comparação](http://www.cplusplus.com/doc/oldtutorial/operators/)
-- [Tutorial sobre manipulação de datas em C++](https://www.geeksforgeeks.org/date-manipulation-in-c-c-and-python/)
-- [Artigo sobre a importância de comparar datas em sistemas de informática](https://blog.cobli.co/a-impotancia-de-comparar-datas-em-sistema/)
+
+- [Documentação da biblioteca ctime em C++](https://www.cplusplus.com/reference/ctime/)
+- [Tutorial de comparação de datas em C++](https://www.geeksforgeeks.org/compare-two-dates-c-2/)

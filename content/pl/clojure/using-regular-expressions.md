@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/using-regular-expressions.md"
 ---
 
@@ -9,34 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Działanie wyrażeń regularnych może wydawać się skomplikowane i niepotrzebne, ale w rzeczywistości jest to bardzo przydatne narzędzie dla programistów. Pozwala ono na szybkie i precyzyjne przetwarzanie tekstów, znajdowanie określonych wzorców oraz manipulację nimi.
+Regularne wyrażenia są bardzo przydatnym narzędziem w programowaniu, pozwalającym na wyraźne i precyzyjne określanie wzorców w tekście. Dzięki nim możemy szybko i skutecznie przeprowadzać operacje na naszych danych, co z kolei może zaoszczędzić nam dużo czasu i wysiłku.
 
 ## Jak to zrobić
 
-Aby użyć wyrażeń regularnych w języku Clojure, należy użyć funkcji `re-seq` lub `re-matches`. Przykładowo, jeśli chcemy znaleźć wszystkie wystąpienia słowa "programowanie" w tekście, możemy użyć wyrażenia regularnego `#"programowanie"`. Następnie, możemy użyć funkcji `re-seq` do przetworzenia tekstu i otrzymać listę wszystkich pasujących fragmentów. 
+Używanie regularnych wyrażeń w języku Clojure jest bardzo proste i intuicyjne. Aby rozpocząć, musimy najpierw zaimportować bibliotekę `clojure.string`. Następnie możemy użyć funkcji `re-find` lub `re-matches` do znalezienia dopasowań do naszego wzorca. Przykładowy kod wyglądałby tak:
 
 ```Clojure
-(def tekst "Kiedy potrzebujemy lekkiego odprężenia, najlepiej zająć się czymś przyjemnym, np. programowaniem.")
-(re-seq #"\w+" tekst)
+(ns rozdzial-regularne-wyrazenia
+  (:require [clojure.string :as str]))
 
-; Output: ["Kiedy" "potrzebujemy" "lekkiego" "odprężenia" "najlepiej" "zająć" "się" "czymś" "przyjemnym" "np" "programowaniem"]
+(str/re-find #"[a-z]+[0-9]+" "abc123")
+;; wynik: "abc123"
+
+(str/re-matches #"[a-z]+" "123")
+;; brak dopasowania
 ```
 
-Aby zastąpić fragment tekstu, można użyć funkcji `re-find`, a następnie funkcji `clojure.string/replace`. W poniższym przykładzie zastępujemy wszystkie wystąpienia słowa "programowaniem" słowem "kodowaniem".
+Jak widać, wystarczy podać wzorzec w postaci wyrażenia regularnego i ciąg znaków, na którym chcemy go przetestować. Dodatkowo, możemy również użyć funkcji `re-find-first` i `re-find-all` do znalezienia pierwszego dopasowania lub wszystkich dopasowań w ciągu znaków.
 
-```Clojure
-(def tekst "Kiedy potrzebujemy lekkiego odprężenia, najlepiej zająć się czymś przyjemnym, np. programowanie.")
-(re-find #"\w+" tekst)
-(clojure.string/replace tekst #"programowaniem" "kodowaniem")
+## Zagłębienie się w temat
 
-; Output: "Kiedy potrzebujemy lekkiego odprężenia, najlepiej zająć się czymś przyjemnym, np. kodowaniem."
-```
+Możliwości wykorzystania regularnych wyrażeń są bardzo szerokie i zależą głównie od naszej kreatywności. Możemy użyć różnorodnych operatorów, takich jak `+` (dopasowanie jednego lub więcej wystąpień), `*` (dopasowanie zera lub więcej wystąpień) czy `?` (dopasowanie opcjonalne), aby precyzyjnie określić nasz wzorzec. Dodatkowo, możemy również wykorzystać grupowanie dopasowań i wyrażenia alternatywne, aby uwzględnić różne warianty naszego wzorca.
 
-## Głębszy Przegląd
+W języku Clojure, regularne wyrażenia nie są zbyt skomplikowane i nie wymagają od nas specjalistycznej wiedzy matematycznej. Jednak w celu lepszego zrozumienia i poszerzenia swoich umiejętności, warto zapoznać się z podstawowymi pojęciami, takimi jak znak "?" (Ciąg znaków) czy "..." (Znaki specjalne).
 
-Wyrażenia regularne pozwalają na używanie zaawansowanych wzorców, takich jak klasy znaków, kwantyfikatory czy grupy. Dzięki temu można dokładnie określić, jakich fragmentów tekstu szukamy. Ważnym elementem jest wyrażenie `^` oznaczające początek tekstu oraz wyrażenie `$` oznaczające koniec tekstu, które można wykorzystać do szukania ciągów znaków na początku lub końcu wyrażenia.
+## Zobacz także
 
-## Zobacz też
-
-- Dokumentacja Clojure dotycząca wyrażeń regularnych: https://clojuredocs.org/clojure.core/re-seq
-- Przydatny tutorial odnośnie wyrażeń regularnych w języku Clojure: https://www.braveclojure.com/regular-expressions/
+- [Oficjalna dokumentacja Clojure dla wyrażeń regularnych](https://clojuredocs.org/clojure.string/re-find)
+- [Tutorial na YouTube o wyrażeniach regularnych w Clojure](https://www.youtube.com/watch?v=8IpaF8_uE4o)
+- [Blog post o wykorzystaniu regularnych wyrażeń w praktyce](https://purelyfunctional.tv/guide/regular-expression-overview/)

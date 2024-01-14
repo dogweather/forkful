@@ -1,43 +1,69 @@
 ---
 title:                "Elm: Comparando duas datas"
+simple_title:         "Comparando duas datas"
 programming_language: "Elm"
-category:             "Dates and Times"
+category:             "Elm"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que comparar duas datas é importante em Elm?
+## Por que Comparar Duas Datas em Elm é Importante
 
-Ao trabalhar com programação, frequentemente precisamos comparar duas datas para realizar diferentes tarefas, como ordenar eventos em um calendário ou validar informações de um formulário. Em Elm, comparar duas datas pode ser feito de forma simples e eficiente, por isso é importante entender como isso funciona.
+Se você é um programador Elm, provavelmente já se encontrou em uma situação em que precisava comparar duas datas. Talvez você precise verificar se uma data é anterior ou posterior à outra, ou talvez precise encontrar a diferença entre elas. Independentemente do motivo, comparar datas é uma tarefa comum em muitos projetos Elm. Neste artigo, vamos explorar como fazer isso de forma eficiente e eficaz.
 
-## Como fazer em Elm
+## Como Comparar Duas Datas em Elm
 
-Felizmente, comparar datas em Elm é bastante simples. Primeiro, devemos importar o módulo `Date` e criar duas variáveis com as datas que queremos comparar. Em seguida, utilizamos a função `Date.compare` passando as duas datas como argumentos. O resultado será uma `Maybe` que indica se a primeira data é menor, igual ou maior que a segunda.
+Felizmente, Elm possui uma biblioteca nativa chamada `Time` que fornece funções úteis para trabalhar com datas. Para comparar duas datas, podemos usar a função `Time.compare` que recebe duas datas e retorna um dos seguintes valores:
 
-```elm
--- Importar o módulo Date
-import Date exposing (..)
+- `Time.Before` se a primeira data for anterior à segunda
+- `Time.After` se a primeira data for posterior à segunda
+- `Time.Same` se ambas as datas forem iguais
 
--- Criar as duas datas a serem comparadas
-data1 = Date.fromCalendarDate 2021 5 10
-data2 = Date.fromCalendarDate 2021 5 15
+Vejamos um exemplo prático:
 
--- Comparar as datas e obter o resultado
-resultado = Date.compare data1 data2
+```Elm
+import Time
+
+data1 : Time.Posix
+data2 : Time.Posix
+
+-- Definindo as duas datas como timestamps do Unix (segundos desde 1º de janeiro de 1970)
+data1 = 1577836800 -- 1º de janeiro de 2020 às 00:00:00
+data2 = 1609459200 -- 1º de janeiro de 2021 às 00:00:00
+
+-- Comparando as duas datas
+comparação = Time.compare data1 data2
+
+-- O resultado será Time.Before, já que a primeira data é anterior à segunda
 ```
 
-O resultado será `Just LT`, indicando que a primeira data (data1) é menor que a segunda (data2). Caso o resultado seja `Just EQ`, significa que as datas são iguais, e se for `Just GT`, a primeira data é maior que a segunda.
+Além disso, também podemos usar a função `Time.diff` para encontrar a diferença entre duas datas em unidades específicas, como dias, meses ou anos. Por exemplo:
 
-Caso as datas não possam ser comparadas (por exemplo, uma delas é inválida), o resultado será `Nothing`. Portanto, é importante sempre tratar esse retorno para evitar erros em nosso código.
+```Elm
+import Time
 
-## Mergulho profundo
+data1 : Time.Posix
+data2 : Time.Posix
 
-Em Elm, as datas são representadas como números de milissegundos desde o Unix Epoch (1 de janeiro de 1970). Isso significa que podemos também trabalhar diretamente com esses números para comparar datas em formato de milissegundos.
+-- Definindo as duas datas como timestamps do Unix (segundos desde 1º de janeiro de 1970)
+data1 = 1577836800 -- 1º de janeiro de 2020 às 00:00:00
+data2 = 1609459200 -- 1º de janeiro de 2021 às 00:00:00
 
-Além disso, existem outras funções úteis no módulo `Date` que podem nos auxiliar no processo de comparação, como `toTime` e `fromTime`. Vale a pena explorar essas funções e aprender mais sobre a manipulação de datas em Elm.
+-- Encontrando a diferença em dias
+diferençaEmDias = Time.diff Time.Days data1 data2
 
-## Veja também
+-- O resultado será 365, já que há exatamente 365 dias entre as duas datas
+```
 
-- Documentação do módulo Date do Elm: https://package.elm-lang.org/packages/elm/core/latest/Date
-- Tutorial sobre comparação de datas em Elm: https://medium.com/@gumsoul/comparing-dates-in-elm-b1622265baf0
+## Aprofundando na Comparação de Duas Datas
+
+Ao comparar duas datas em Elm, é importante ter em mente que a precisão pode variar de acordo com o fuso horário do usuário. Por isso, é importante garantir que as datas estejam no mesmo fuso horário antes de fazer a comparação.
+
+Outra dica útil é usar o sistema de tipos fortes do Elm para evitar erros de comparação de datas, como comparar uma data do tipo `Time.Posix` com uma data do tipo `Time.Extra.Calendar`. Usar tipos específicos para datas pode ajudar a prevenir esses erros e tornar seu código mais legível e robusto.
+
+## Veja Também
+
+- [Documentação da Biblioteca Time em Elm](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Exemplos de Comparação de Datas em Elm](https://gist.github.com/rtfeldman/98fcef1a9f1366913bc7e6f032904894)

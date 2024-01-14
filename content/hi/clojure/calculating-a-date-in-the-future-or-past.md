@@ -1,43 +1,38 @@
 ---
-title:                "Clojure: भावित कल या भूत की तारीख की गणना"
+title:                "Clojure: भविष्य या भूतकाल में तिथि की गणना"
+simple_title:         "भविष्य या भूतकाल में तिथि की गणना"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+"## इसकी क्यों":
 
-अगर आप किसी हिसाब से आगामी या भविष्य की तारीख की गणना करने में शामिल हैं, तो इस ब्लॉग पोस्ट का लक्ष्य आपको Clojure के माध्यम से इस टास्क को कैसे पूरा करने में मदद करना है।
+अगर आप वर्तमान तारीख से आगामी या पूर्व की तारीख को जानने या निर्धारित करने में रुचि रखते हैं, तो आप Clojure प्रोग्रामिंग भाषा का उपयोग करके इसे आसानी से कर सकते हैं। 
 
-## कैसे करें
+"## कैसे करें":
 
-"ऐकड़े" कोड ब्लॉक के भीतर, आप निम्नलिखित संयुक्त कोड द्वारा कोड विश्लेषण का अध्ययन कर सकते हैं:
+यदि आप Clojure भाषा को नया समझ रहे हैं, तो आपको `import` स्टेटमेंट के साथ `java.time.LocalDate` क्लास को इम्पोर्ट करना होगा। फिर, `LocalDate.now()` फ़ंक्शन का इस्तेमाल करके वर्तमान तारीख प्राप्त करें। उसके बाद, `plusDays()` फ़ंक्शन का उपयोग करके वर्तमान तारीख से जोड़ने या `minusDays()` फ़ंक्शन का उपयोग करके घटाने के लिए दिनों और तारीखों को पास करें। नीचे दिए गए कोड ब्लॉक में एक उदाहरण है:
 
 ```Clojure
-; वर्तमान तारीख
-(def present-date (java.util.Date.))
-; 1 दिन की मात्रा जोड़
-(def second-day (-> present-date (.after (* 2 24 60 60 1000))))
+(import java.time.LocalDate)
+(def today (LocalDate/now))
+(def future-date (.plusDays today 10))
+(def past-date (.minusDays today 5))
 
-; 10 वर्ष की मात्रा घटाएं
-(def decade-ago (-> present-date (.after (* -10 365 24 60 60 1000))))
-
-; प्रिंट करें
-(println "वर्तमान तारीख: " present-date)
-(println "आगामी तारीख: " second-day)
-(println "भविष्य की तारीख: " decade-ago)
+(past-date) ; Output: #object[java.time.LocalDate 0x7561c5f5 "2022-02-25"]
+(future-date) ; Output: #object[java.time.LocalDate 0x76c8b3dc "2022-03-12"]
 ```
 
-आउटपुट:
+"## गहराई में":
 
-```
-वर्तमान तारीख: #inst "२०२०-०७-१९टी१३:४६:२२५.२९४-००:००"
-आगामी तारीख: #inst "२०२०-०७-२०टी१३:४६:२२५.२९४-००:००"
-भविष्य की तारीख: #inst "२०१०-०७-१९टी१३:४६:२२५.२९४-००:००"
-```
+Clojure में तारीख की गणना करने के लिए कई तरीके हैं। उपरोक्त उदाहरण में, हम `plusDays()` और `minusDays()` फ़ंक्शन का इस्तेमाल करते हैं, लेकिन आप `plusMonths()` और `minusMonths()` फ़ंक्शन का इस्तेमाल करके महीने या `plusYears()` और `minusYears()` फ़ंक्शन का इस्तेमाल करके साल दोनों तारीखों को जोड़ने या घटाने के लिए भी कर सकते हैं। 
 
-## गहराई में जाएं
+"## देखें":
 
-तारीख की गणना करना अत्यंत महत्वपूर्ण हो सकता है, क्योंकि यह किसी भी काम के लिए जरूरी हो सकता है, जैसे कि समय के अनुसार संदर्भित आगामी आभासी घटनाओं को प्राप्त करना। Clojure में तारीख की गणना के लिए उपलब्ध विभिन्न तरीके हैं, जिनका उपयोग करके आप अपनी आवश्यकताओं के अनुसार तारी
+- [JavaDocs में `LocalDate` की जानकारी](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [क्लोजर का ऑफिशियल वेबसाइट](https://clojure.org/)
+- [Java और Clojure में तारीख की गणना के ब

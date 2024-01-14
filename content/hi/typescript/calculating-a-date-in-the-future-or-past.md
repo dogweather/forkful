@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: भबिष्य या भूतकाल में एक दिन की गणना"
+title:                "TypeScript: Bhavishya ya Bhoot ki ek tithi ka ganana"
+simple_title:         "Bhavishya ya Bhoot ki ek tithi ka ganana"
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,33 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-कभी-कभी हमें भविष्य या अतीत की तारीख निकालने की जरूरत हो सकती है, जैसे किसी इमारत का निर्माण करने की तारीख, किसी समाचार के प्रकाशन की तारीख आदि। TypeScript प्रोग्रामिंग में हम आसानी से ऐसी तारीखों को निकाल सकते हैं जो भविष्य या अतीत की हो।
+अगर आप बड़े प्रोजेक्टस में काम करते हैं जो अलग-अलग देशों के समय जोन में बसा हैं, तो आपको कई बार विभिन्न तारीखों को फिक्स करना पड़ सकता है। इस तरह की स्थिति में आपको आने वाले कुछ सालों या महीनों में एक निश्चित तारीख को निर्धारित करने की जरूरत हो सकती है। ऐसे में, तारीख को फटाफट निकालने के लिए एक अल्गोरिथम का उपयोग किया जा सकता है।
 
 ## कैसे करें
 
-इस कार्य को करने के लिए हमें `Date` ऑब्जेक्ट का उपयोग करना होगा। निम्नलिखित कोड ब्लॉक में हम देखेंगे कि कैसे हम अपने कोड में `Date` ऑब्जेक्ट को इस्तेमाल कर सकते हैं और कैसे हम भविष्य या अतीत की तारीखों को निकाल सकते हैं।
+कुछ कीबोर्ड्स से आप तारीख, महीना और साल की जानकारी प्राप्त कर सकते हैं। इसके बाद, हमें इस तारीख को निर्धारित संख्या के साथ मिलाना होगा। इसके बाद, हम तारीख को परस्पर सम्बंधित दिन, महीना और साल के साथ जोड़ सकते हैं और इससे नए तारीख को प्राप्त कर सकते हैं। नीचे आप एक यहां कोड से इस अल्गोरिथम का उदाहरण देख सकते हैं।
 
 ```TypeScript
-// अपने कोड में Date ऑब्जेक्ट को इम्पोर्ट करें
-import { Date } from 'typescript';
+function getFutureOrPastDate(date: Date, numberOfYears: number): Date {
+    date.setFullYear(date.getFullYear() + numberOfYears);
+    return date;
+}
 
-// अब हम Date ऑब्जेक्ट का उपयोग करके भविष्य की तारीख निकाल सकते हैं
-let futureDate = new Date();
+const today = new Date();
+const futureDate = getFutureOrPastDate(today, 5);
 
-// यहां हम भविष्य की तारीख से 10 दिन आगे की तारीख निकाल रहे हैं
-futureDate.setDate(futureDate.getDate() + 10);
-
-console.log(futureDate); // Output: 2020-06-22T00:00:00.000Z
-
-// अब आइसीटी स्पैन में हम अतीत की तारीख निकालेंगे
-let pastDate = new Date();
-
-// यहां हम अतीत की तारीख से 5 दिन पहले की तारीख निकाल रहे हैं
-pastDate.setDate(pastDate.getDate() - 5);
-
-console.log(pastDate); // Output: 2020-06-07T00:00:00.000Z
+console.log(futureDate.toDateString()); // Output: Sat Sep 18 2026
 ```
 
-## गहरी खोज
+## गहराई में जाएं
 
-जब हम `Date` ऑब्जेक्ट का उपयोग करते हैं, तो हमें माह, दिन और साल के साथ तारीख सेट करने की अनुमति मिलती है। इसके अलावा, हम `getDate()`, `getMonth()`, `getFullYear()` जैसी फ़ंक्शन का उपयोग करके भी तारीख के प
+इस अल्गोरिथम में हमने `getFutureOrPastDate` नामक एक फ़ंक्शन बनाया है जो स्टार्ट तारीख और संबंधित नंबर ऑफ़ ईयर्स को लेता है और इसे नए तारीख में बदल देता है। हम यहां स्टार्ट तारीख को `Date` टाइप में ले रहे हैं और नए तारीख को भी वापस `Date` टाइप में रिटर्न कर रहे हैं।
+
+इसे आप फिर से कस

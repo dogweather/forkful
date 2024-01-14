@@ -1,46 +1,53 @@
 ---
-title:                "Elm: Å sjekke om en mappe eksisterer"
+title:                "Elm: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Elm"
-category:             "Files and I/O"
+category:             "Elm"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elm/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+## Hvorfor 
 
-Å sjekke om en mappe eksisterer er en viktig del av å skrive pålitelige og brukervennlige programmer. Ved å sjekke om en mappe eksisterer, kan du unngå feil og sikre at programmet fungerer som det skal.
+I denne bloggposten skal vi se nærmere på hvordan man kan sjekke om en mappe eksisterer i Elm-programmeringsspråket, og hvorfor dette kan være nyttig.
 
-## Hvordan
+## Hvordan Gjøre Det 
 
-For å sjekke om en mappe eksisterer i Elm, kan du bruke funksjonen `Dir.exists`. Denne funksjonen tar inn en streng som representerer mappen du ønsker å sjekke, og returnerer en `Task` som enten vil returnere `True` eller `False`, avhengig av om mappen eksisterer eller ikke. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+Det første vi må gjøre er å importere den nødvendige pakken ved hjelp av følgende kode:
 
 ```Elm
-import Dir
-
-myDirectory : String
-myDirectory = "minMappe"
-
-Dir.exists myDirectory
-    |> Task.attempt handleExists
-
-handleExists : Bool -> msg
-handleExists exists =
-    if exists then
-        -- gjør noe dersom mappen eksisterer
-    else
-        -- gjør noe dersom mappen ikke eksisterer
+import File
 ```
 
-I dette eksempelet oppretter vi en streng som representerer mappen vår, og deretter bruker vi funksjonen `Dir.exists` for å sjekke om denne mappen eksisterer. Avhengig av resultatet, kan vi utføre forskjellige handlinger ved hjelp av funksjonen `handleExists`.
+Deretter kan vi bruke funksjonen `File.exists` for å sjekke om en mappe eksisterer. For eksempel, hvis vi ønsker å sjekke om mappen "bilder" finnes, kan koden se slik ut:
 
-## Dypdykk
+```Elm
+File.exists "bilder"
+```
 
-Når du bruker funksjonen `Dir.exists`, er det viktig å merke seg at den ikke sjekker om mappen er tom eller ikke. Den sjekker bare om mappen eksisterer eller ikke. Du kan også bruke funksjonen `Dir.list` for å få en liste over filer og mapper i en spesifikk mappe.
+Denne funksjonen returnerer en `Task Bool`, som betyr at den enten vil returnere `True` hvis mappen eksisterer, eller `False` hvis den ikke gjør det. Vi kan håndtere denne tasken ved hjelp av funksjonen `Task.andThen`, som lar oss fortsette å kjøre koden vår basert på resultatet av tasken.
 
-For å gjøre dypdykket enda dypere, kan du utforske [Elm's Directory-modul](https://package.elm-lang.org/packages/elm/core/latest/Dir) for flere nyttige funksjoner for å håndtere mapper og filer i Elm.
+```Elm
+File.exists "bilder"
+    |> Task.andThen 
+        (\exists ->
+            if exists then
+                -- Fyll inn koden du ønsker å kjøre dersom mappen eksisterer
+            else
+                -- Fyll inn koden du ønsker å kjøre dersom mappen ikke eksisterer
+        )
+```
 
-## Se også
+## Dypdykk 
 
-- [Elm Directory-modulen](https://package.elm-lang.org/packages/elm/core/latest/Dir)
-- [Elm's Task-modul](https://package.elm-lang.org/packages/elm/core/latest/Task)
+Når vi bruker funksjonen `File.exists`, blir ikke mappen faktisk sjekket på nåværende tidspunkt. Dette gjøres først når tasken blir kjørt senere i koden. Dette kan være nyttig å være klar over, spesielt hvis du forventer at mappen skal eksistere når du kjører koden din.
+
+Det er også verdt å nevne at denne funksjonen bare sjekker etter mapper i samme directory som din Elm-fil. Dersom du vil sjekke om en mappe eksisterer i et annet directory, kan du bruke funksjonen `File.exactlyExists` i stedet.
+
+## Se Også 
+
+- [Elm Dokumentasjon - File](https://package.elm-lang.org/packages/elm/file/latest/)
+- [Elm Programmeringspråket](https://elm-lang.org/)
+- [Elm Norsk Brukernettverk](https://www.meetup.com/Elm_Norge/)

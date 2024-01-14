@@ -1,62 +1,72 @@
 ---
-title:                "Python: 产生随机数"
+title:                "Python: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "Python"
-category:             "Numbers"
+category:             "Python"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/python/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么要生成随机数
+为什么：为什么会有人想要生成随机数？
 
-在编程中，随机数是一个非常有用的概念。它可以被用来创建不同的测试数据、模拟随机事件和增加算法的复杂性。生成随机数可以让程序具有更大的灵活性和多样性。
+他们可能想要创建一个随机化的程序，或者在游戏中使用随机数来增加游戏性。随机数也可以用于模拟实验，以及在数据分析中产生随机样本。
 
-## 如何生成随机数
+如何：使用Python生成随机数的方法如下： 
 
-生成随机数可以在Python中非常方便地实现。下面是一个简单的例子，展示了如何使用Python的random模块来生成随机数。
+```Python 
+# 导入random模块
+import random 
 
-```Python
-import random
+# 生成一个0-1之间的随机数
+random_number = random.random()
+print(random_number)
 
-# 生成一个介于0到10之间的随机整数
-random_num = random.randint(0, 10)
-print(random_num)
+# 生成一个范围内的随机整数
+random_int = random.randint(1, 10)
+print(random_int)
 
-# 生成一个0到1之间的随机小数
-random_float = random.random()
+# 生成一个指定范围和步长的随机浮点数
+random_float = random.uniform(1.5, 3.5, 0.5)
 print(random_float)
 
-# 从一个列表中随机选择一个元素
-options = ["A", "B", "C", "D"]
-random_choice = random.choice(options)
-print(random_choice)
+# 从一个序列中随机选择一个元素
+my_list = [1, 2, 3, 4, 5]
+random_choice = random.choice(my_list)
+print(random_choice) 
+
+# 打乱一个序列中的元素顺序
+random.shuffle(my_list)
+print(my_list)
 ```
 
-以上代码的输出结果可能为：
+输出结果：
 
-```
-8
-0.83257
-B
-```
+0.524632782334
+7
+2.789
+3
 
-除了以上这些简单的例子，Python的random模块还有许多不同的函数可以用来生成不同类型的随机数。通过灵活地使用这些函数，我们可以在编程中实现更多有趣的功能。
+深入了解：生成随机数不是一个简单的过程，它涉及到复杂的数学算法。Python中的random模块使用的是Mersenne Twister算法，它是一种伪随机数生成器。这意味着生成的随机数看起来是随机的，但实际上是根据一个固定的种子开始的。如果使用相同的种子，将会生成相同的随机数序列。
 
-## 深入了解随机数生成
+此外，生成的随机数也受到计算机系统的影响。因为计算机是基于算法和固定的输入，所以它不能产生真正意义上的随机数。因此，在使用随机数时，应该保持谨慎，并避免依赖它们来保证程序的安全性。
 
-其实，计算机无法真正生成完全的随机数。它们通常是通过一个称为“伪随机数生成器”的算法来产生的。这个算法使用一个称为“种子”的数字作为输入，然后根据特定的规则来确定生成的随机数。一般来说，相同的种子会导致相同的随机数序列。因此，在使用随机数时，我们需要仔细选择种子，以避免重复的结果。
+另一个值得注意的问题是随机数的种子。一些应用程序可能需要固定的种子来保证生成一致的随机数序列，而其他应用程序可能需要更多的随机性，需要使用不同的种子来生成不同的随机数序列。
 
-在Python中，默认的种子是当前系统时间。如果我们需要每次运行程序时生成不同的随机数序列，可以通过使用random模块的seed()函数来指定种子。举个例子，如果我们想要每次运行程序时都生成相同的随机数序列，可以在程序的开头加上如下代码：
+参考链接：
 
-```Python
-# 设置种子为100，保证每次运行时都会生成相同的随机数序列
-random.seed(100)
-```
+- [Python官方文档 - 随机数生成器](https://docs.python.org/2/library/random.html)
+- [深入理解随机数生成算法](https://cs.wikipedia.org/wiki/Mersenne_Twister)
+- [如何使用随机数生成器](https://www.digitalocean.com/community/tutorials/how-to-use-the-random-number-generator-in-python-3)
 
-另外，Python的random模块还有一些高级函数，可以用来生成更复杂的随机数，如随机排列一个列表、生成符合特定概率分布的随机数等。对于想要深入学习随机数生成的读者，可以通过阅读Python官方文档来了解更多。
+同样了解： 
 
-## 查看其他资源
+- [如何使用Python创建一个随机数密码生成器] (https://www.askpython.com/python-modules/python-password-generator)
+- [如何使用随机数来改变程序的运行方式](https://code.tutsplus.com/tutorials/random-number-generation-in-python--cms-26563)
+- [如何使用随机数优化图像处理过程](https://medium.com/quick-code/optimize-image-processing-performance-with-this-simple-python-technique-8112e406c355)
 
-- [Python官方文档 - random模块](https://docs.python.org/3/library/random.html)
-- [实用Python技巧：生成随机数](https://www.geeksforgeeks.org/python-tricks-generate-random-number/)
-- [使用Python生成随机数的几种方法](https://medium.com/@mohirpara/ways-of-generating-random-numbers-in-python-8bc2f174c4a5)
+请参阅：
+
+- 更多关于Python的随机数生成器文章 [https://www.askpython.com/](https://www.askpython.com/)
+- Python的官方文档 [https://docs.python.org/2/](https://docs.python.org/2/)

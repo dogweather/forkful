@@ -1,33 +1,50 @@
 ---
-title:                "Elixir: Kaavan mukaisten merkkien poistaminen"
+title:                "Elixir: Mallia vastaavien merkkien poistaminen"
+simple_title:         "Mallia vastaavien merkkien poistaminen"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elixir/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-Miksi: 
-Koodin kirjoittaminen ja ylläpito voidaan helpottaa poistamalla merkkejä, jotka vastaavat tiettyä kaavaa. Tämä voi auttaa säilyttämään koodin selkeyden ja tehokkuuden.
+## Miksi Poistaa Merkkejä Jotka Vastaa Kaavaa
 
-Kuinka tehdä: 
-```Elixir
-def delete_pattern(pattern, text) do 
-  Regex.replace pattern, text, ""
-end
+Elixir on funktionaalinen ohjelmointikieli, joka on suunniteltu skaalautuviksi ja joustaviksi sovellusten kehittämistä varten. Yksi Elixirin hyödyllisistä ominaisuuksista on kyky poistaa merkkejä, jotka vastaavat tiettyä kaavaa. Tässä blogikirjoituksessa tarkastellaan, miksi tämä toiminto on tärkeä ja miten sitä voi käyttää tehokkaasti.
 
-IO.puts delete_pattern ~r/[0-9]/, "Olen syntynyt vuonna 1995"
+## Miten Tehdä
+
+Elixirissa voit käyttää `String.replace/3` -funktiota poistaaksesi merkkejä tietyn kaavan mukaan. Esimerkiksi, jos haluat poistaa kaikki välilyönnit merkkijonosta, voit tehdä seuraavasti:
+
+```
+Elixir> String.replace("Tämä on esimerkki", " ", "")
+"Tämäonesimerkki"
 ```
 
-Tulostus: "Olen syntynyt vuonna"
+Voit myös käyttää regex-kaavoja `String.replace/3` -funktion toisessa parametrissa. Esimerkiksi, jos haluat poistaa kaikki numerot merkkijonosta, voit käyttää seuraavaa koodia:
 
-Vavvau! Tämä yksinkertainen koodinpätkä poistaa tekstistä kaikki numerot ja palauttaa vain sanallisen osan. Voit käyttää tätä toimintoa esimerkiksi silloin, kun sinun tarvitsee lukea käyttäjältä syötteitä ja haluat poistaa niistä kaikki mahdolliset numerot.
+```
+Elixir> String.replace("12345 on numerosarja", ~r/\d/, "")
+" on numerosarja"
+```
 
-Syvällinen sukellus: 
-Tämä yksinkertainen esimerkki käyttää Regex-moduulia, joka on sisäänrakennettu Elixir-ohjelmointikieleen. Se mahdollistaa monimutkaisten kaavojen käytön koodin muokkauksessa ja poistaa tehokkaasti merkkejä. Lisäksi voit käyttää myös Regex.match -toimintoa, joka palauttaa tekstistä vastaavat kohdat kaavan perusteella.
+Lisäksi voit käyttää `String.replace/4` -funktiota säätääksesi kaavan käyttäytymistä. Voit esimerkiksi poistaa vain ensimmäisen esiintymän kaavasta lisäämällä parametrin `limit: 1`. Alla on esimerkki:
 
-Katso myös: 
-Voit oppia lisää Regexin käytöstä Elixirissä ja sen hyödyllisyydestä alla olevista linkeistä:
-- [Regex-moduulin dokumentaatio](https://hexdocs.pm/elixir/Regex.html)
-- [Vinkkejä Regexin käyttöön Elixirissä](https://dev.to/nagasirena/using-regex-matching-in-elixir-3m1n)
-- [Realistisen esimerkin Regexin käytöstä Elixirissä](https://www.poeticoding.com/2-simple-regex-examples-in-elixir-with-string-match/)
+```
+Elixir> String.replace("aabbaabb", "aa", "", limit: 1)
+"bbaabb"
+```
+
+## Syvällinen Sukellus
+
+`String.replace/3` - ja `String.replace/4` -funktioiden avulla voit poistaa merkkejä merkkijonosta vastaavien kaavojen avulla. Voit myös yhdistää näitä funktioita muiden Elixirin toimintojen kanssa, kuten `Enum.map/2`, jotta voit poistaa merkkejä useammasta merkkijonosta kerralla.
+
+On myös tärkeää huomata, että merkkijonot ovat Elixirissa muuttumattomia, joten `String.replace/3` -funktio luo uuden merkkijonon, jossa halutut muutokset on tehty. Tämä tarkoittaa, että alkuperäinen merkkijono ei muutu.
+
+## Katso myös
+
+- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%25-String-Replace-3)
+- [RegEx-kaavan opas](https://regexr.com/)
+
+Kiitos että luit tämän blogikirjoituksen! Toivottavasti se auttoi sinua oppimaan kuinka poistaa merkkejä Elixirissä.

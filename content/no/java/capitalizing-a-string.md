@@ -1,42 +1,46 @@
 ---
-title:                "Java: Kapitalisering av en streng"
+title:                "Java: Store bokstaver i en tekststreng"
+simple_title:         "Store bokstaver i en tekststreng"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Det å kunne kapitalisere en string er en viktig ferdighet i Java-programmering. Det lar deg endre store bokstaver og små bokstaver i en string, og gir deg mer kontroll over hvordan dataene dine blir presentert.
+Å kunne formatere tekst er en viktig del av programmering, spesielt når det kommer til å få riktig utseende på utskrifter og brukergrensesnitt. Å kunne kapitalisere en streng, eller gjøre den om til store bokstaver, er en vanlig oppgave som kan være nyttig i mange programmeringsoppgaver.
 
-# Hvordan
+## Hvordan
 
-Det er flere måter å kapitalisere en string i Java på, avhengig av hva formålet ditt er. Her er to eksempler på metoder for å kapitalisere en string:
+For å kapitalisere en streng i Java, kan man bruke metoden .toUpperCase(). Her er et eksempel på hvordan dette kan se ut i kode:
 
-```Java
-String navn = "jeg heter maria";
-// Bruke metoden toUpperCase() for å gjøre alle bokstaver store
-String stortNavn = navn.toUpperCase();
-System.out.println(stortNavn); // Output: JEG HETER MARIA
-
-// Splitte stringen og bruke metoden substring() for å kapitalisere første bokstav i hvert ord
-String[] ord = navn.split(" ");
-String kapitalisertNavn = "";
-for (String ordet : ord) {
-  String førsteBokstav = ordet.substring(0, 1).toUpperCase();
-  String restenAvOrdet = ordet.substring(1);
-  kapitalisertNavn += førsteBokstav + restenAvOrdet + " ";
-}
-System.out.println(kapitalisertNavn.trim()); // Output: Jeg Heter Maria
+```Java 
+String navn = "ola nordmann";
+System.out.println(navn.toUpperCase());
 ```
 
-# Deep Dive
+Dette vil gi følgende utskrift: "OLA NORDMANN". Metoden .toUpperCase() endrer altså strengen til å inneholde kun store bokstaver.
 
-Når man kapitaliserer en string, er det viktig å være klar over forskjellen mellom metoden toUpperCase() og å splitte og bruke substring(). Metoden toUpperCase() endrer kun bokstavene til store bokstaver, mens den andre metoden gir deg mulighet til å gjøre den første bokstaven stor og resten av ordet små. Det er også viktig å merke seg at både stringen og arrayet er uendret, og det må lagres i en ny variabel for å kunne brukes senere.
+Det finnes også anledninger der man ønsker å bare kapitalisere første bokstav i en streng, og la resten forbli små bokstaver. Dette kan gjøres ved å bruke metoden .substring() og kombinere den med .toUpperCase(). Se eksempelet under:
 
-# Se også
+```Java
+String navn = "ola nordmann";
+String kapitalisert = navn.substring(0, 1).toUpperCase() + navn.substring(1).toLowerCase();
+System.out.println(kapitalisert);
+```
 
-- [Java String documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-- [Java split() and substring() methods](https://www.w3schools.com/java/java_ref_string.asp)
+Her vil utskriften bli: "Ola nordmann", med kun den første bokstaven kapitalisert og resten i små bokstaver.
+
+## Dypdykk
+
+Det er verdt å merke seg at .toUpperCase() og .toLowerCase() metodene tar hensyn til språkkontekst. Dette betyr at hvis man for eksempel har norske bokstaver i en streng, vil disse også bli kapitalisert eller gjort om til små bokstaver i henhold til norske regler.
+
+Det finnes også andre metoder for å kapitalisere en streng i Java, som for eksempel StringUtils.capitalize() fra Apache Commons library. Denne metoden tar hensyn til flere språk og kulturer, og kan være nyttig å bruke i mer komplekse programmer.
+
+## Se også
+
+- [String documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Apache Commons StringUtils.capitalize()](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html#capitalize-java.lang.String-)

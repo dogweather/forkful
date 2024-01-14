@@ -1,7 +1,9 @@
 ---
 title:                "Javascript: Obliczanie daty w przyszłości lub przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "Javascript"
-category:             "Dates and Times"
+category:             "Javascript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/javascript/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,33 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Programowanie to nie tylko pisanie kodu, ale także rozwiązywanie problemów. Czasem musimy policzyć datę w przyszłości lub w przeszłości, na przykład gdy pracujemy nad aplikacją kalendarza lub planujemy wydarzenia. Wtedy ważne jest, aby znać sposoby na obliczanie daty w przyszłości lub przeszłości, aby nasz kod był precyzyjny i wykorzystywał odpowiednie informacje.
+Obliczanie daty w przyszłości lub przeszłości może okazać się bardzo przydatne podczas tworzenia różnego rodzaju aplikacji. Może to być przydatne w takich przypadkach, jak wyświetlanie terminów ważności, planowania wydarzeń lub kontrolowania danych historycznych.
 
 ## Jak to zrobić
 
-W JavaScript istnieje wiele metod na obliczanie daty w przyszłości lub przeszłości. Możemy użyć wbudowanych metod takich jak `getDate()`, `setDate()` czy `toLocaleDateString()` lub skorzystać z bibliotek takich jak moment.js.
+```javascript
+// Obliczanie daty w przyszłości
+let dzisiaj = new Date();
+let dataWKolejnychDniach = new Date();
+dataWKolejnychDniach.setDate(dzisiaj.getDate() + 7);
+console.log(dataWKolejnychDniach);
 
-```Javascript
-// Obliczenie daty w przyszłości
-let dzis = new Date();
-dzis.setDate(dzis.getDate() + 7);
-console.log(dzis.toLocaleDateString());
-
-// Obliczenie daty w przeszłości
-let wczoraj = new Date();
-wczoraj.setDate(wczoraj.getDate() - 1);
-console.log(wczoraj.toLocaleDateString());
+// Output: 2021-08-24T16:53:48.335Z
 ```
 
-W powyższym przykładzie użyliśmy metody `setDate()` do obliczenia daty w przyszłości i przeszłości na podstawie aktualnej daty. Dzięki temu możemy wykorzystać już wbudowane funkcje języka JavaScript zamiast pisać skomplikowane algorytmy.
+```javascript
+// Obliczanie daty w przeszłości
+let dzisiaj = new Date();
+let dataWPoprzednichDniach = new Date();
+dataWPoprzednichDniach.setDate(dzisiaj.getDate() - 7);
+console.log(dataWPoprzednichDniach);
 
-## Głębsze wchłonięcie
+// Output: 2021-08-10T16:53:48.335Z
+```
 
-Podczas obliczania daty w przyszłości lub przeszłości musimy pamiętać o różnicach w czasie, gdyż nie wszystkie kraje czy regiony korzystają z tego samego systemu czasu. Dlatego warto poznać również takie metody jak `getTimezoneOffset()` czy `getHours()`, dzięki którym możemy precyzyjnie określić datę w zależności od strefy czasowej.
+Konstruktor `Date` w Javascripcie pozwala na tworzenie daty i czasu w oparciu o różne parametry, takie jak rok, miesiąc, dzień, godzina, minuta itp. W przypadku obliczania daty w przyszłości lub przeszłości, możemy skorzystać z metody `setDate()` i określić liczbę dni, o które chcemy zmienić naszą aktualną datę.
 
-Innym ważnym aspektem jest również obsługa różnych formatów daty. W tym przypadku przydatna może być metoda `toLocaleDateString()`, która pozwala na wybór określonego formatu, np. polskiego czy amerykańskiego.
+## Deep Dive
 
-## Zobacz także
+Ważną rzeczą, o której należy pamiętać przy obliczaniu daty w przyszłości lub przeszłości, jest uwzględnienie różnic czasowych. W przypadku, gdy nasza aplikacja jest wykorzystywana w różnych strefach czasowych, może to wpłynąć na dokładność obliczonej daty. W takiej sytuacji, powinniśmy skorzystać z metod `getUTC*()` i `setUTC*()`, które uwzględniają czas uniwersalny UTC.
 
-- [Oficjalna dokumentacja JavaScript o obiektach daty](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date)
-- [Biblioteka moment.js do pracy z datami w JavaScript](https://momentjs.com/)
+Kolejną możliwością jest użycie zewnętrznych bibliotek, takich jak moment.js, które oferują wygodne metody do manipulowania datami i czasem. Dzięki temu można uniknąć błędów i uwzględnić różnice czasowe.
+
+## Zobacz również
+
+- [Dokumentacja Javascript Date](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js](https://momentjs.com/)

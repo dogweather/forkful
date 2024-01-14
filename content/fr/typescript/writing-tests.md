@@ -1,41 +1,55 @@
 ---
-title:                "TypeScript: Ecriture de tests"
+title:                "TypeScript: Écrire des tests"
+simple_title:         "Écrire des tests"
 programming_language: "TypeScript"
-category:             "Testing and Debugging"
+category:             "TypeScript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi écrire des tests en TypeScript ?
 
-Écrire des tests est un élément essentiel du processus de développement logiciel. Cela permet de valider le bon fonctionnement de votre code et de détecter les erreurs avant qu'elles ne deviennent des problèmes majeurs. Les tests rendent également le processus de débogage plus facile en ciblant spécifiquement les parties du code qui présentent des problèmes.
+Ecrire des tests en TypeScript permet de s'assurer du bon fonctionnement de son code et d'éviter tout problème futur. Cela améliore la qualité et la stabilité de votre application, ainsi que sa maintenabilité. 
 
-## Comment faire
+## Comment faire ?
 
-Pour commencer à écrire des tests en TypeScript, il suffit d'utiliser le framework de test intégré appelé "Jest". Jest est facile à configurer et à utiliser, et il vous permet de tester votre code avec des assertions simples et intuitives.
+Pour écrire des tests en TypeScript, vous pouvez utiliser le framework de test le plus populaire, Jest. Pour commencer, installez Jest en tant que dépendance de développement dans votre projet:
 
-Voici un exemple de code TypeScript où nous testons une fonction simple qui ajoute deux nombres et renvoie le résultat :
+```TypeScript
+npm install --save-dev jest
+```
 
-```typescript
-function sum(a: number, b: number) {
-    return a + b;
-}
+Ensuite, créez un fichier de test avec l'extension ".test.ts" pour chaque fichier que vous souhaitez tester dans votre projet. Par exemple, si vous avez un fichier "utils.ts" qui contient des fonctions utiles, vous pouvez créer "utils.test.ts" pour écrire vos tests. 
 
-test('La fonction sum devrait retourner la somme des deux nombres', () => {
-    expect(sum(2, 3)).toBe(5);
+Dans ce fichier de test, vous devez importer le module à tester et utiliser la syntaxe `test()` pour écrire vos tests:
+
+```TypeScript
+import {someFunction} from './utils';
+
+test('La fonction someFunction retourne bien une chaîne de caractères', () => {
+  expect(someFunction()).toBe('Bonjour');
 });
 ```
 
-Dans cet exemple, nous avons créé un test en utilisant la fonction `test` de Jest et avons utilisé l'assertion `expect` pour vérifier que notre fonction `sum` renvoie le résultat attendu. Jest prend en charge une variété d'assertions telles que `toBe` pour vérifier l'égalité stricte, `toEqual` pour vérifier l'égalité de valeurs et bien d'autres.
+Vous pouvez également utiliser d'autres méthodes d'assertion telles que `toEqual` ou `toContain` selon vos besoins. Ensuite, vous pouvez exécuter vos tests en utilisant la commande `npm run test`.
 
 ## Plongée en profondeur
 
-Écrire des tests efficaces en TypeScript implique de bien comprendre le concept de types. Il est important de tester tous les scénarios possibles, y compris ceux où les variables peuvent avoir des valeurs null ou undefined. Les blocs de tests avec des itérations sur des tableaux ou des objets peuvent également être utiles pour couvrir tous les cas possibles.
+Maintenant que vous savez comment écrire des tests en TypeScript, voici quelques conseils pour vous aider à écrire des tests de qualité :
 
-Il est également important d'utiliser des outils de couverture de code tels que Istanbul pour mesurer la couverture de vos tests et vous assurer que toutes les parties de votre code sont testées correctement.
+- Utilisez des noms de tests clairs et explicites pour faciliter la compréhension.
+- Couvrez tous les scénarios possibles, y compris les cas de bordures.
+- Utilisez des mocks pour isoler votre code et faciliter les tests.
+- Utilisez des fonctions `beforeEach` et `afterEach` pour initialiser et nettoyer votre environnement de test.
 
 ## Voir aussi
 
-- [Documentation Jest](https://jestjs.io/fr/)
-- [Les tests unitaires en TypeScript pour les débutants](https://www.technopedia.fr/les-tests-unitaires-en-typescript-pour-les-debutants/)
+Pour en savoir plus sur les tests en TypeScript, vous pouvez consulter les ressources suivantes :
+
+- [Documentation Jest](https://jestjs.io/docs/en/getting-started)
+- [Articles sur les tests en TypeScript](https://medium.com/devschacht/5-tips-for-testing-typescript-applications-1650080b90e0)
+- [Exemple de projet avec des tests en TypeScript](https://github.com/Twinkle0615/unit-testing-typescript-project)
+
+Maintenant que vous avez les bases, il est temps d'écrire des tests pour votre propre projet en TypeScript et d'assurer la qualité de votre code !

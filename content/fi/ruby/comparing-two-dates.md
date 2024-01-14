@@ -1,61 +1,40 @@
 ---
-title:                "Ruby: Kahden päivämäärän vertaaminen"
+title:                "Ruby: Kahden päivämäärän vertailu"
+simple_title:         "Kahden päivämäärän vertailu"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+# Miksi vertailla kaksi päivämäärää?
 
-Useat ohjelmoijat joutuvat ajoittain vertailemaan kahta päivämäärää keskenään. Tämä voi johtua esimerkiksi tarpeesta laskea päivien tai viikkojen välinen ero, tai tarkistaa, kumpi päivämäärä on ennen tai jälkeen toista. Tässä blogikirjoituksessa käymme läpi, miten voit vertailla päivämääriä Ruby-ohjelmointikielellä.
+Oletko koskaan halunnut vertailla kahta päivämäärää Rubyssa? Se voi olla hyödyllistä esimerkiksi kun haluat tietää onko jokin tietty päivämäärä ennen vai jälkeen toista. Tässä blogikirjoituksessa opit miten voit vertailla kahta päivämäärää käyttämällä Rubya.
 
-## Miten
+## Miten tehdä se?
 
-Vertaillessa kahta päivämäärää, on tärkeää muistaa että ne ovat Rubyssa Date-olioita. Tämä tarkoittaa, että niitä voidaan käsitellä samalla tavalla kuin muitakin olioita, ja niillä on käytössään erilaisia metodeja.
-
-Käytännössä päivämäärien vertailu tapahtuu niiden välisenä matemaattisena operaationa. Tämä tarkoittaa, että voit käyttää merkkejä >, < ja == vertailuoperaattoreina päivämäärien välillä.
-
-Esimerkiksi, jos haluat tarkistaa, onko tietty päivämäärä ennen toista, voit käyttää seuraavaa koodia:
+Vertaileminen on helppoa käyttäen Rubyn Date-luokkaa. Voit luoda uuden Date-olion käyttäen `Date.parse` metodia ja antamalla sille päivämäärän merkkijonona. Tämän jälkeen voit käyttää `>` ja `<` operaattoreita vertailemiseen.
 
 ```Ruby
-date1 = Date.new(2021, 5, 10)
-date2 = Date.new(2021, 5, 15)
+päivä1 = Date.parse("2020-05-28")
+päivä2 = Date.parse("2020-05-29")
 
-if date1 < date2
-  puts "Date1 on ennen Date2:ta"
+if päivä1 > päivä2 
+  puts "Päivä 1 on myöhempi."
 end
+
+# Output: Päivä 1 on myöhempi.
 ```
 
-Tulostus tästä koodista olisi:
+## Syväluotaus
 
-```
-Date1 on ennen Date2:ta
-```
+Rubyn Date-luokka tarjoaa myös muita hyödyllisiä metodeja vertailuun, kuten `between?` joka tarkistaa onko jokin päivämäärä kahden annetun päivämäärän välissä. Voit myös käyttää `==` operaattoria tarkistaaksesi ovatko päivämäärät täsmälleen samat.
 
-Voit myös laskea kahden päivämäärän välisen eron käyttämällä Date-olioille tarjolla olevaa `days`-metodia. Tämä antaa tulokseksi päivien määrän kahden päivämäärän välillä.
+On myös tärkeää huomata, että Date-oliot eivät sisällä aikatietoja. Jos haluat vertailla myös aikoja, kannattaa käyttää DateTime-luokkaa.
 
-```Ruby
-days = date2 - date1
+# Katso myös
 
-puts "Päivien määrä Date1 ja Date2 välillä on #{days}"
-```
-
-Tulostus tästä koodista olisi:
-
-```
-Päivien määrä Date1 ja Date2 välillä on 5
-```
-
-## Syväsukellus
-
-Rubyssä päivämäärät ovat tallennettuna Gregoriaaniseen kalenteriin, joten voit verrata niitä helposti muihin kalentereihin. Voit esimerkiksi muuntaa päivämäärän esimerkiksi Heprean tai Islamilaisen kalenterin mukaan käyttämällä `gregorian`-metodia ja antamalla sille haluamasi kalenterin nimen parametrina.
-
-Rubyssa on myös tarjolla erilaisia Date-olioihin liittyviä metodeja, jotka auttavat päivämäärien vertailussa ja muokkauksessa. Näitä ovat mm. `next`, `prev` ja `to_s`.
-
-## Katso myös
-
-- [Ruby Date -dokumentaatio](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
-- [Ruby Time-luokan vertailuoperaattorit](https://ruby-doc.org/core-2.7.2/DateTime.html#method-i-3C-3C)
-- [Ruby Date-formatoinnin opas](https://strftime.org/)
+- [Ruby Date-luokan dokumentaatio](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [Ruby DateTime-luokan dokumentaatio](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html)

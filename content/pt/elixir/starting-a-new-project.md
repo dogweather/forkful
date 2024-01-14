@@ -1,41 +1,58 @@
 ---
-title:                "Elixir: Começando um novo projeto"
+title:                "Elixir: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Elixir"
-category:             "Getting Started"
+category:             "Elixir"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto com Elixir?
+## Por que iniciar um novo projeto em Elixir?
 
-Há muitas linguagens de programação por aí, então por que você deveria considerar utilizar Elixir para um novo projeto? Com uma sintaxe limpa e concisa, funcionalidade de concorrência incorporada e uma comunidade robusta de suporte, Elixir oferece uma experiência de desenvolvimento eficiente e confiável.
+Se você está procurando uma linguagem de programação moderna e eficiente para iniciar um novo projeto, Elixir é uma ótima opção. Com sua sintaxe concisa e funcional, sua escalabilidade e tolerância a falhas incorporadas, e sua capacidade de executar em ambientes de produção sem interrupções, Elixir é uma escolha inteligente para qualquer desenvolvedor.
 
-## Como começar um projeto em Elixir
+## Como Fazer
 
-Começar um novo projeto em Elixir é fácil e rápido. Primeiro, certifique-se de ter o Elixir instalado em sua máquina. Em seguida, crie um diretório para seu projeto e acesse-o por meio da linha de comando. Agora, vamos criar um arquivo `hello.exs` e adicionar o seguinte código dentro dele:
+Para começar a programar em Elixir, é importante entender alguns conceitos básicos. Uma das principais estruturas utilizadas em Elixir são as funções, que podem ser definidas da seguinte maneira:
 
 ```Elixir
-defmodule Hello do
-  def print_greeting do
-    IO.puts "Olá, mundo!"
-  end
+def soma(a, b) do
+  a + b
 end
 ```
 
-Podemos executar esse código utilizando o comando `elixir hello.exs` no diretório do projeto. O resultado será a impressão de "Olá, mundo!" no console.
+Isso define uma função chamada "soma" que recebe dois parâmetros e retorna a soma deles. Para executar essa função, utilizamos o seguinte comando:
 
-## Aprofundando-se no início de um projeto
+```Elixir
+soma(2, 3)
+```
 
-Ao começar um novo projeto, é importante pensar em como organizar suas pastas e arquivos para manter seu código limpo e estruturado. Além disso, você pode aproveitar as bibliotecas e frameworks disponíveis na comunidade Elixir para poupar tempo e esforços no desenvolvimento.
+O resultado seria 5.
 
-Outra vantagem de utilizar Elixir é sua funcionalidade de concorrência, por meio do mecanismo de processos leves (lightweight processes). Isso permite que seu código execute tarefas de forma paralela, melhorando a performance de sua aplicação.
+Outro recurso interessante é o "pipe operator", que permite encadear funções de forma mais fácil e legível. Por exemplo:
 
-Por fim, não esqueça de sempre consultar a documentação oficial e a comunidade em busca de ajuda e ideias para o seu projeto.
+```Elixir
+1..10
+|> Enum.map(fn x -> x * 2 end)
+|> Enum.filter(fn x -> rem(x, 3) == 0 end)
+|> Enum.reduce(0, fn x, acc -> x + acc end)
+```
+
+Isso irá gerar uma lista com os números pares entre 1 e 10, filtrando apenas os que são divisíveis por 3 e, em seguida, somando-os. O resultado seria 18.
+
+Além disso, é importante destacar a importância dos testes em Elixir. Com a estrutura de testes integrada na linguagem, é possível garantir que o código esteja funcionando corretamente antes de lançá-lo em produção.
+
+## Aprofundando
+
+Ao iniciar um novo projeto em Elixir, é importante se familiarizar com o sistema de construção de projetos da linguagem, chamado Mix. Ele fornece ferramentas para criar, testar e executar projetos de forma eficiente.
+
+Outro aspecto importante é a utilização do OTP (Open Telecom Platform), um conjunto de bibliotecas e ferramentas que permitem a criação de sistemas altamente escaláveis e tolerantes a falhas. Com as ferramentas do OTP, é possível construir aplicativos que se adaptem às necessidades e demandas de um ambiente de produção.
 
 ## Veja também
 
 - [Site oficial do Elixir](https://elixir-lang.org/)
-- [Documentação oficial do Elixir](https://elixir-lang.org/docs.html)
-- [Elixir Forum, comunidade de discussão sobre Elixir](https://elixirforum.com/)
-- [Elixir School, um guia gratuito de Elixir para iniciantes](https://elixirschool.com/pt/)
+- [Documentação da linguagem](https://elixir-lang.org/docs.html)
+- [Blog oficial do Elixir](https://elixir-lang.org/blog/)
+- [Vídeos de tutoriais do Elixir](https://www.youtube.com/playlist?list=PLGLfVvz_LVvSVywel3Y_qyz3NJZaE1qOg)

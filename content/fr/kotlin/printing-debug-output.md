@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Affichage du débogage"
+title:                "Kotlin: Affichage des sorties de débogage"
+simple_title:         "Affichage des sorties de débogage"
 programming_language: "Kotlin"
-category:             "Testing and Debugging"
+category:             "Kotlin"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/kotlin/printing-debug-output.md"
 ---
 
@@ -9,32 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il est important de savoir comment afficher des informations de débogage lors de la programmation en Kotlin afin de résoudre rapidement des erreurs dans votre code. Cela peut vous faire gagner du temps et vous aider à comprendre le fonctionnement de votre programme.
+L'un des défis majeurs en programmation est de trouver et de résoudre les erreurs qui se produisent dans notre code. L'une des meilleures façons de comprendre ce qui se passe réellement dans notre programme est d'utiliser des instructions d'impression de débogage. Cela permet d'afficher des informations sur les différentes étapes de notre code afin de mieux comprendre où se trouvent les erreurs et comment les résoudre.
 
-## Comment Faire
+## Comment faire
 
-Voici un exemple simple de code Kotlin avec des instructions permettant de voir des informations de débogage :
+Voici un exemple simple de code en Kotlin pour imprimer du débogage :
 
-```
+```Kotlin
 fun main() {
-    val x: Int = 5
-    println("x est égal à $x.") // Affiche x est égal à 5.
-    println("Le double de x est égal à ${x * 2}.") // Affiche Le double de x est égal à 10.
+    val num1 = 5
+    val num2 = 10
+    println("La somme de $num1 et $num2 est ${num1 + num2}")
 }
 ```
 
-Dans cet exemple, nous avons utilisé la fonction `println` pour afficher des informations de débogage. Cette fonction permet d'afficher une chaîne de caractères et peut également afficher des valeurs de variables en les plaçant à l'intérieur des accolades `${}`.
+La ligne de code ```println``` est l'instruction d'impression de débogage. Elle nous permet d'afficher le résultat de l'opération entre ```num1``` et ```num2```. Dans ce cas, le résultat affiché sera "La somme de 5 et 10 est 15". Cette technique peut être utilisée pour afficher toutes sortes d'informations, telles que des valeurs de variables, des erreurs ou des messages de contrôle, afin de mieux comprendre le comportement de notre code.
 
-Vous pouvez également utiliser la fonction `print` si vous ne voulez pas que le curseur se déplace à la ligne suivante après chaque instruction d'impression.
+## Plongée en profondeur
 
-## Plongée en Profondeur
+Il existe plusieurs façons de personnaliser les instructions d'impression de débogage en Kotlin. Par exemple, nous pouvons utiliser la fonction ```print``` au lieu de ```println``` pour afficher les informations sur la même ligne. De plus, nous pouvons utiliser les fonctions de formattage telles que ```printf``` pour contrôler l'apparence des données imprimées. En utilisant ces techniques, nous pouvons rendre notre débogage plus efficace et plus facile à analyser.
 
-Il existe d'autres façons d'afficher des informations de débogage en Kotlin. Par exemple, la fonction `debug` du package `kotlinx.serialization` peut être utilisée pour imprimer des détails sur une variable, même lorsqu'elle est nullable. Vous pouvez également utiliser la fonction `assert` pour vérifier des conditions dans votre code et afficher un message d'erreur si elles ne sont pas respectées.
+## Voir aussi
 
-Il est également important de noter que l'utilisation excessive de l'affichage de débogage peut ralentir considérablement votre programme. Il est donc conseillé de supprimer ces instructions d'impression une fois que vous avez résolu les erreurs ou compris le fonctionnement de votre code.
-
-## Voir Aussi
-
-- [Documentation officielle de Kotlin sur le débogage](https://kotlinlang.org/docs/tutorials/command-line.html#debugging-with-assert)
-- [Article Medium sur l'affichage de débogage en Kotlin](https://medium.com/better-programming/debugging-in-kotlin-76335e96dd2b)
-- [Exemple de débogage en Kotlin avec IntelliJ IDEA](https://blog.jetbrains.com/idea/2011/02/deep-debugging-of-intellij-idea-kotlin-plugin/)
+- [Guide de débogage en Kotlin](https://www.kotlincodes.com/debugging-in-kotlin/)
+- [Documentation officielle sur les instructions d'impression en Kotlin](https://kotlinlang.org/docs/tutorials/command-line.html#printing-information)
+- [Vidéo YouTube sur les techniques de débogage en Kotlin](https://www.youtube.com/watch?v=Nlpg-JXkUmA)

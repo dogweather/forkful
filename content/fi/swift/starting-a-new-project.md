@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Aloittamassa uutta projektia"
+title:                "Swift: Aloittaminen uusi projekti"
+simple_title:         "Aloittaminen uusi projekti"
 programming_language: "Swift"
-category:             "Getting Started"
+category:             "Swift"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/starting-a-new-project.md"
 ---
 
@@ -9,42 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-On monia syitä aloittaa uusi projekti Swift-ohjelmointikielen avulla. Se voi olla mahdollisuus oppia uutta, kehittää omaa osaamista tai luoda uusi ja innovatiivinen ratkaisu ongelmaan. Lisäksi Swift on suosittu ja monipuolinen kieli, joka voi olla hyödyllinen taito tulevaisuutta ajatellen.
+Miksi aloittaa uusi ohjelmointiprojekti? Moni saattaa kysyä tätä itseltään ennen kuin tarttuu koodaushaasteeseen. Mutta onneksi vastaus on yksinkertainen - koska se on hauskaa ja opettavaista! Uuden projektin aloittaminen antaa mahdollisuuden kehittää taitojaan ja luoda jotain ainutlaatuista.
 
-## Kuinka aloittaa
+## Kuinka
 
-Aloittaaksesi uuden projektin Swiftillä, sinun tulee ensin luoda uusi Xcode-projekti. Tämän jälkeen voit aloittaa koodaamisen käyttämällä seuraavia esimerkkejä:
+Aloittaaksesi uuden ohjelmointiprojektin Swiftillä, tarvitset tietokoneen ja Xcode-ohjelmiston, joka on saatavilla ilmaiseksi App Storesta. Kun olet asentanut Xcoden, voit aloittaa uuden projektin valitsemalla "File" ja sitten "New" valikosta.
+
+Seuraavaksi valitse "Single View App" ja anna projektillesi nimi. Voit myös valita alustan, jolle haluat kehittää (esimerkiksi iOS tai macOS). Nyt voit aloittaa koodaamisen!
+
+Alla on esimerkki koodista, joka tulostaa "Hei maailma!" konsoliin:
 
 ```Swift
-// Luodaan uusi muuttuja ja annetaan sille arvo "Tervetuloa"
-var tervehdys = "Tervetuloa!"
-
-// Tulostetaan muuttujan sisältö
-print(tervehdys)
-
-// Luodaan lista suosikki elokuvista
-var suosikit = ["Leijonakuningas", "Harry Potter", "Pirates of the Caribbean"]
-
-// Tulostetaan listan pituus
-print(suosikit.count)
-
-// Lisätään listaan uusi elokuva
-suosikit.append("Matkalla jonnekin")
-
-// Tulostetaan päivitetty lista
-print(suosikit)
+print("Hei maailma!")
 ```
 
-Tämä on vain yksinkertainen esimerkki siitä, mitä voit tehdä Swiftillä. Voit myös tutustua dokumentaatioon ja kokeilla erilaisia ominaisuuksia ja toimintoja.
+Kun olet valmis, voit suorittaa koodisi painamalla "Run"-painiketta Xcoden yläpalkista. Tämä avaa simulointiympäristön, jossa voit nähdä koodisi ulostulon.
 
-## Syvempi sukellus
+## Syväsukellus
 
-Aloittaessa uutta projektia Swiftillä on tärkeää ymmärtää kielen perusteet ja säännöt. On myös hyvä oppia hyviä käytäntöjä ja noudattaa niitä jo projektin alkuvaiheessa. Tämä auttaa sinua välttämään tulevia ongelmia ja tekee koodistasi helpommin ymmärrettävää myös muille kehittäjille.
+Kun olet oppinut perusteet, voit aloittaa syväsukelluksen Swiftin maailmaan. Voit esimerkiksi alkaa tutkia erilaisia ​​Swift-kirjastoja ja -kehyksiä, joita voit käyttää projektissasi. Voit myös opetella edistyneempiä aiheita, kuten moniketjutusta ja sovellusten arkkitehtuuria.
 
-Voit myös hyödyntää opetusmateriaaleja ja ohjeita, jotka auttavat sinua syventymään Swiftin maailmaan ja parantamaan taitojasi. Muista myös osallistua yhteisöön ja vaihtaa ajatuksia muiden Swift-käyttäjien kanssa.
+Aloittaminen uudella ohjelmointiprojektilla saattaa tuntua pelottavalta, mutta muista, että jokainen kehittäjä on kokenut aloittelija kerran. Uskalla kokeilla ja haastaa itsesi, ja älä anna vaikeuksien estää sinua oppimasta uutta.
 
 ## Katso myös
 
-- [Swiftin virallinen dokumentaatio](https://docs.swift.org/swift-book)
-- [Swiftin opetusvideosarja (suomenkielinen)](https://www.youtube.com/watch?v=qhxRgv57-Gc)
-- [Swift-foorumi](https://forums.swift.org)
+- [Swiftin virallinen dokumentaatio](https://docs.swift.org)
+- [Apple Developer](https://developer.apple.com/swift/)
+- [Swift Playgrounds -sovellus](https://apps.apple.com/fi/app/swift-playgrounds/id908519492?l=fi)

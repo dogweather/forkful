@@ -1,50 +1,44 @@
 ---
 title:                "C: Buscando y reemplazando texto"
+simple_title:         "Buscando y reemplazando texto"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-En este artículo, hablaremos sobre una tarea común en programación: la búsqueda y reemplazo de texto. Si eres programador o estudiante de programación, es muy probable que hayas tenido que realizar esta tarea en algún momento. Ya sea para corregir errores en tu código o para realizar cambios a gran escala, la búsqueda y reemplazo de texto es una herramienta esencial en el desarrollo de software.
-
 ## Por qué
-La búsqueda y reemplazo de texto es útil para ahorrar tiempo y realizar cambios de manera eficiente. En lugar de tener que revisar manualmente cada línea de código, esta técnica te permite buscar y reemplazar automáticamente una cadena de texto por otra en todo el archivo. Esto es especialmente útil cuando se trabaja con archivos grandes o se tiene un gran número de cambios que hacer.
+La búsqueda y reemplazo de texto es una tarea común en la programación de C. Ya sea para corregir errores en el código o para realizar cambios en un archivo de texto, esta técnica es esencial para cualquier programador. En este artículo, aprenderemos por qué es importante saber cómo buscar y reemplazar texto en C.
 
 ## Cómo hacerlo
-La búsqueda y reemplazo de texto es una función que se encuentra disponible en la mayoría de los editores de texto y entornos de desarrollo integrados (IDE, por sus siglas en inglés). Sin embargo, también puedes escribir tu propia función de búsqueda y reemplazo en C.
-
-A continuación, se presenta un ejemplo simple de cómo realizar una búsqueda y reemplazo en C:
+La función `strchr()` en C se puede utilizar para buscar una letra específica en una cadena de texto. Por ejemplo, si queremos encontrar la primera aparición de la letra "a" en una cadena llamada `texto`, podemos usar el siguiente código:
 
 ```C
-#include<stdio.h>
-
-int main() {
-    char string[] = "Hola Mundo";
-    char buscar[] = "Mundo";
-    char reemplazar[] = "amigos";
-
-    char *resultado = strstr(string, buscar);
-
-    if (resultado != NULL) {
-        strncpy(resultado, reemplazar, strlen(reemplazar));
-    }
-
-    printf("%s", string);
-
-    return 0;
-}
+char texto[] = "Hola mundo!";
+char *ptr;
+ptr = strchr(texto, 'a');
 ```
 
-En este ejemplo, tenemos una cadena de texto "Hola Mundo" y queremos reemplazar "Mundo" por "amigos". Utilizando la función `strstr()`, buscamos la primera aparición de "Mundo" dentro de la cadena y luego utilizamos`strncpy()` para reemplazarla por "amigos". Al final, imprimimos la cadena resultante "Hola amigos".
+El puntero `ptr` apuntará a la primera aparición de "a" en la cadena `texto`. Si la letra no está presente, el puntero será NULL. También podemos utilizar la función `strstr()` para buscar una subcadena específica en una cadena de texto.
+
+Para reemplazar una letra o una subcadena en una cadena, podemos usar la función `strncpy()` para copiar una nueva cadena en la posición deseada.
+
+```C
+char texto[] = "Hola mundo!";
+char nuevoTexto[50];
+strncpy(nuevoTexto, texto, 5);
+strncpy(nuevoTexto + 5, "amigos!", 8);
+```
+
+El nuevo texto será "Hola amigos!".
 
 ## Profundizando
-Existen diversas funciones que pueden utilizarse para realizar una búsqueda y reemplazo en C, como `strstr()`, `strchr()`, entre otras. Cada una tiene sus propias características y es importante conocerlas para poder elegir la mejor opción para cada caso.
+La función `strchr()` utiliza un algoritmo de búsqueda lineal, lo que significa que recorre cada elemento de la cadena hasta encontrar una coincidencia. Si trabajamos con cadenas de texto muy largas, este algoritmo puede resultar ineficiente. Una opción más eficiente es la búsqueda binaria, que divide la cadena en dos mitades y busca en la mitad correcta según el valor de la letra que estamos buscando.
 
-También es importante tener en cuenta que, al realizar una búsqueda y reemplazo, se debe prestar especial atención a la longitud de la cadena y los límites de memoria. En el ejemplo anterior, utilizamos `strncpy()` para asegurarnos de no sobrepasar el tamaño del arreglo de caracteres.
+También es importante tener en cuenta que la función `strncpy()` no agrega automáticamente el carácter nulo al final de la cadena reemplazada. Esto puede causar errores si continuamos utilizando la cadena en otras partes del código. Para solucionarlo, podemos agregar manualmente el carácter nulo al final de la cadena.
 
 ## Ver también
-- [Tutorial de C para principiantes](https://www.programiz.com/c-programming)
-- [Documentación de la librería estándar de C](https://www.cplusplus.com/reference/clibrary/)
-- [Ejemplo de búsqueda y reemplazo en C++](https://www.programmingexamples.net/how-to-replace-all-occurrences-of-a-substring-in-a-string-with-another-string-in-c/)
+- [Documentación de la función `strchr()` en C](https://www.gnu.org/software/libc/manual/html_node/Searching-for-Strings.html#Searching-for-Strings)
+- [Documentación de la función `strncpy()` en C](https://www.gnu.org/software/libc/manual/html_node/Copying-and-Concatenation.html#Copying-and-Concatenation)

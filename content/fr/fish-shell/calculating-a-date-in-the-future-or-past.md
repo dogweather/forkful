@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Calcul d'une date dans le futur ou le passé"
+simple_title:         "Calcul d'une date dans le futur ou le passé"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/fish-shell/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,73 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Il est souvent utile de pouvoir calculer une date dans le futur ou le passé dans un script Fish Shell. Que ce soit pour planifier des tâches ou pour vérifier des dates d'échéance, cette fonctionnalité peut s'avérer très pratique.
+Calculer une date dans le futur ou le passé peut être utile pour planifier des tâches ou des événements à l'avance ou pour vérifier des dates passées. Cela peut également être un moyen de mieux comprendre comment le temps s'écoule et de résoudre des problèmes mathématiques liés aux dates.
 
 ## Comment faire
 
-Pour calculer une date dans le futur ou le passé, nous pouvons utiliser la commande `date` intégrée à Fish Shell. Voici un exemple de code pour calculer la date exacte dans 30 jours :
+Le Fish Shell offre plusieurs commandes utiles pour calculer des dates dans le futur ou le passé. Voici quelques exemples:
 
+```Fish Shell
+# Calculer la date dans 5 jours
+date -d "+5 days"
+
+# Calculer la date il y a 2 semaines
+date -d "-2 weeks"
+
+# Calculer la date dans 1 mois et 3 jours
+date -d "+1 month +3 days"
+
+# Calculer la date il y a 2 ans et 1 mois
+date -d "-2 years -1 month"
 ```
-Fish Shell - Calculer une date dans le futur
 
-# On définit une variable avec la date actuelle
-set today (date "+%Y-%m-%d")
-
-# On utilise la commande date pour ajouter 30 jours
-set future (date -d "$today + 30 days" "+%Y-%m-%d")
-
-# On affiche le résultat
-echo $future  # Output : 2020-05-12
-```
-
-De la même manière, pour calculer une date dans le passé, il suffit d'utiliser un nombre de jours négatif dans la commande `date` :
-
-```
-Fish Shell - Calculer une date dans le passé
-
-# On définit une variable avec la date actuelle
-set today (date "+%Y-%m-%d")
-
-# On utilise la commande date pour soustraire 30 jours
-set past (date -d "$today - 30 days" "+%Y-%m-%d")
-
-# On affiche le résultat
-echo $past  # Output : 2020-03-13
-```
+La sortie sera affichée au format suivant: "Jour Mois Année Heure:Minute:Seconde". Par exemple: "16 juillet 2020 15:00:00".
 
 ## Plongée en profondeur
 
-La commande `date` en Fish Shell utilise la syntaxe GNU pour calculer les dates. Cela signifie que nous pouvons utiliser des combinaisons de jours/mois/années ou même des jours de la semaine pour calculer une date. Par exemple, si nous voulons obtenir la date exacte dans 2 semaines, nous pouvons utiliser :
+Le Fish Shell utilise la commande "date" du système d'exploitation pour effectuer ces calculs de dates. Vous pouvez trouver plus d'informations sur la façon dont cette commande fonctionne en utilisant la commande "man date" dans votre terminal. Vous pouvez également utiliser des options supplémentaires pour personnaliser la sortie, comme en spécifiant un fuseau horaire ou un format de date différent.
 
-```
-Fish Shell - Calculer une date dans 2 semaines
-
-# On définit une variable avec la date actuelle
-set today (date "+%Y-%m-%d")
-
-# On utilise la commande date avec la syntaxe GNU pour ajouter 2 semaines
-set future (date -d "$today + 2 weeks" "+%Y-%m-%d")
-
-# On affiche le résultat
-echo $future  # Output : 2020-04-03
-```
-
-Vous pouvez également utiliser des combinaisons de jours/mois/années pour calculer une date spécifique. Par exemple, si nous voulons obtenir la date du 1er avril de l'année en cours, nous pouvons utiliser :
-
-```
-Fish Shell - Calculer la date du 1er avril
-
-# On définit une variable avec l'année actuelle
-set year (date "+%Y")
-
-# On utilise la commande date avec la syntaxe GNU pour obtenir la date du 1er avril
-set april (date -d "04/01/$year" "+%Y-%m-%d")
-
-# On affiche le résultat
-echo $april  # Output : 2020-04-01
-```
+Il est également possible de combiner ces commandes avec d'autres pour créer des scripts plus complexes qui prennent en compte des variables telles que les jours ouvrables, les congés ou les événements spéciaux.
 
 ## Voir aussi
 
-- [Documentation complète de la commande date GNU](https://www.gnu.org/software/coreutils/manual/html_node/Examples-of-date.html)
-- [Guide des commandes en Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Comment calculer une date avec le Fish Shell](https://fishshell.com/docs/current/commands.html#date)
+- [Documentation sur la commande "date"](https://www.gnu.org/software/coreutils/date)
+- [Liste des formats de date disponibles](https://www.gnu.org/software/coreutils/manual/html_node/Date-conversion-specifiers.html)

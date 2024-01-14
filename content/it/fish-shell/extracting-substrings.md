@@ -1,59 +1,36 @@
 ---
 title:                "Fish Shell: Estrazione di sottostringhe"
+simple_title:         "Estrazione di sottostringhe"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/fish-shell/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Perché
-In questo articolo, impareremo come e perché estrarre sottostringhe utilizzando il Fish Shell. Estrarre sottostringhe può essere utile per manipolare e ottenere informazioni specifiche da una stringa più grande.
 
-## Come fare
-Per estrarre una sottostringa, utilizziamo il comando `string` seguito dal punto esclamativo `!` seguito dalla posizione di inizio e fine della sottostringa desiderata. Ad esempio:
+Ci sono molte ragioni per cui potresti voler estrarre sottostringhe all'interno del tuo codice Fish Shell. Ad esempio, potresti dover manipolare stringhe per creare nuove variabili o per formattare i risultati in un modo specifico.
 
-```
-Fish Shell 1.0.0 (Iwashi)
-$ set stringa "Questo è un'importante stringa di esempio!"
-$ echo $stringa
-Questo è un'importante stringa di esempio!
-$ set sottostringa $stringa[10..20]
-$ echo $sottostringa
-importante
-```
+## Come Fare
 
-Nell'esempio sopra, abbiamo creato una variabile `stringa` con una stringa di esempio e poi estrapolato la sottostringa di caratteri che vanno dal decimo al ventesimo posto utilizzando il comando `set` e la variabile `$stringa`.
-
-In alternativa, possiamo utilizzare i comandi di sostituzione delle stringhe per estrarre una sottostringa da una variabile già esistente. Ad esempio, possiamo utilizzare il comando `strmatch` per trovare una corrispondenza e estrarre la sottostringa che precede o segue la corrispondenza. Vediamo un esempio:
+Estrarre sottostringhe in Fish Shell è relativamente semplice. Per farlo, usa il comando `string sub` seguito da un indice di inizio e fine, seguito dalla stringa a cui si vuole applicare l'estrazione.
 
 ```
-Fish Shell 1.0.0 (Iwashi)
-$ set url "https://it.wikipedia.org/wiki/Shell"
-$ echo $url
-https://it.wikipedia.org/wiki/Shell
-$ set suburl strmatch -r "it.wikipedia.org/wiki/(.*)/" -- $url
-$ echo $suburl
-Shell
+Fish Shell
+string sub 2 6 "Ciao a tutti!" 
 ```
 
-In questo caso, abbiamo utilizzato il comando `strmatch` per cercare l'espressione regolare `it.wikipedia.org/wiki/(.*)/` nella variabile `url` e quindi estrarre la sottostringa che segue immediatamente la corrispondenza, in questo caso "Shell".
+Questo codice restituirà la sottostringa "iao a" poiché l'indice di inizio è 2 e l'indice finale è 6, che corrisponde alle lettere "i" e "a" rispettivamente.
+
+Puoi anche combinare l'uso di `string sub` con altri comandi per creare espressioni più complesse. Ad esempio, puoi usare il comando `string match` per trovare una determinata parola all'interno di una stringa e poi estrarne la sottostringa usando `string sub`.
 
 ## Approfondimento
-Il Fish Shell supporta anche altre funzionalità per l'estrazione di sottostringhe, come utilizzare la posizione di un carattere specifico come punto di inizio o fine della sottostringa. Possiamo anche utilizzare l'indice negativo per indicare la posizione di una sottostringa in base agli ultimi caratteri della stringa. Ad esempio:
 
-```
-Fish Shell 1.0.0 (Iwashi)
-$ set stringa "4, 8, 15, 16, 23, 42"
-$ echo $stringa
-4, 8, 15, 16, 23, 42
-$ set numero $stringa[4..$]
-$ echo $numero
-16, 23, 42
-```
-In questo esempio, abbiamo assegnato alla variabile `stringa` una serie di numeri separati da virgola. Poi, utilizzando l'indice negativo -4, abbiamo estrapolato una sottostringa a partire dal quarto carattere dall'ultima virgola fino alla fine della stringa.
+L'estrazione delle sottostringhe è solo una delle tante funzioni utili che puoi sfruttare in Fish Shell. Per saperne di più, puoi consultare la documentazione ufficiale di Fish Shell o partecipare alla comunità di utenti per scambiare informazioni e scoprire nuovi trucchi e tecniche.
 
-## Vedi anche
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutorial di Fish Shell su dev.to](https://dev.to/sreyajkumar/fish-shell-tutorial-3kno)
-- [Estrarre sottostringhe con awk su Linuxize](https://linuxize.com/post/how-to-extract-substrings-in-bash/)
+## Vedi Anche
+
+- [Documentazione di Fish Shell](https://fishshell.com/docs/current/index.html#string-substring)
+- [Comunità di Fish Shell](https://fishshell.com/community.html)

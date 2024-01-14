@@ -1,59 +1,98 @@
 ---
 title:                "TypeScript: Leyendo argumentos de línea de comando"
+simple_title:         "Leyendo argumentos de línea de comando"
 programming_language: "TypeScript"
-category:             "Files and I/O"
+category:             "TypeScript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/typescript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué leer argumentos de línea de comandos en TypeScript
+## Por qué
 
-Si eres un programador de TypeScript, es muy probable que hayas escuchado sobre la lectura de argumentos de línea de comandos en tus programas. Esta técnica puede ser útil para interactuar con tu programa de una manera más dinámica y personalizada. En este artículo, te explicaremos por qué es importante aprender a leer argumentos de línea de comandos en TypeScript y cómo hacerlo.
+¿Alguna vez has tenido la necesidad de pasar argumentos por línea de comando en un programa TypeScript? Tal vez estás construyendo una aplicación de línea de comandos o simplemente quieres tener un poco más de control sobre cómo se ejecuta tu aplicación. Sea cual sea el caso, leer argumentos por línea de comando es una habilidad útil que puede facilitar tu trabajo.
 
 ## Cómo hacerlo
 
-La lectura de argumentos de línea de comandos en TypeScript es un proceso relativamente sencillo. Primero, necesitas importar el módulo `process` en tu programa. Luego, puedes acceder a los argumentos ingresados por el usuario a través de la propiedad `argv` del objeto `process`.
+Para leer argumentos por línea de comando en TypeScript, podemos utilizar la variable `process` y su propiedad `argv`. Esta propiedad contiene un array con todos los argumentos pasados en la línea de comando, incluyendo el nombre del archivo que se está ejecutando. Veamos un ejemplo de cómo podemos acceder a estos argumentos y mostrarlos por consola:
 
-Veamos un ejemplo de cómo leer y mostrar los argumentos de línea de comandos en TypeScript:
-
-```TypeScript
-import process from 'process';
-
+```typescript
 const args = process.argv;
-
-// Los primeros dos elementos de args son el directorio de Node.js y el archivo TypeScript.
-// Los siguientes elementos son los argumentos ingresados por el usuario.
-for (let i = 2; i < args.length; i++) {
-  console.log(`Argumento ${i - 1}: ${args[i]}`);
-}
-
+console.log(args);
 ```
 
-Si ejecutamos este programa con el siguiente comando:
+Si ejecutamos este código con el comando `ts-node index.ts arg1 arg2 arg3`, obtendremos la siguiente salida por consola:
 
+```shell
+[
+  'C:\\ruta\\hacia\\typescript.node',
+  'C:\\ruta\\hacia\\index.ts',
+  'arg1',
+  'arg2',
+  'arg3'
+]
 ```
-node programa.ts hola mundo
+
+Como podemos ver, la variable `process.argv` contiene todos los argumentos que pasamos por línea de comando, incluyendo el nombre del archivo que se está ejecutando y la ruta al ejecutable de TypeScript.
+
+Pero, ¿qué sucede si queremos acceder a argumentos específicos? Podemos hacerlo utilizando el índice del array. Por ejemplo, si queremos mostrar solo el segundo argumento, podemos escribir `console.log(args[2])` y obtendremos `arg1` como resultado.
+
+Podemos incluso utilizar la librería `yargs` para facilitar la lectura de argumentos por línea de comando. Veamos un ejemplo de cómo podríamos utilizar `yargs` para acceder a los argumentos pasados al ejecutar una aplicación:
+
+```typescript
+import yargs from 'yargs';
+
+const argv = yargs(process.argv).argv;
+const username = argv.username;
+
+console.log(`Hola ${username}, bienvenido a mi aplicación.`);
 ```
 
-El resultado sería:
+Si ejecutamos este código con el comando `ts-node index.ts --username John`, obtendremos la siguiente salida por consola:
 
+```shell
+Hola John, bienvenido a mi aplicación.
 ```
-Argumento 1: hola
-Argumento 2: mundo
+
+## Profundizando un poco más
+
+Ahora que sabemos cómo leer argumentos por línea de comando en TypeScript, es importante mencionar que también podemos pasar argumentos opcionales utilizando la librería `yargs`. Podemos definir argumentos opcionales utilizando `.option()` y acceder a ellos utilizando el método `check()` de `argv`. Por ejemplo, si queremos hacer que el argumento `--greeting` sea opcional, podemos escribir lo siguiente:
+
+```typescript
+import yargs from 'yargs';
+
+const argv = yargs(process.argv)
+  .option('greeting', {
+    alias: 'g',
+    type: 'string',
+    describe: 'Mensaje de bienvenida'
+  })
+  .check(argv => {
+    if (!argv.greeting) {
+      argv.greeting = 'Hola';
+    }
+
+    return true;
+  })
+  .argv;
+
+console.log(`${argv.greeting}, bienvenido a mi aplicación.`);
 ```
 
-Puedes ver que los argumentos ingresados por el usuario son accesibles a través de un array en el módulo `process`.
+Si ejecutamos este código con el comando `ts-node index.ts` obtendremos la siguiente salida por consola:
 
-## Profundizando
+```shell
+Hola, bienvenido a mi aplicación.
+```
 
-Ahora que sabes cómo leer argumentos de línea de comandos en TypeScript, puede ser útil saber más sobre cómo funciona este proceso en detalle. Los argumentos de línea de comandos son cadenas de texto que se pasan a tu programa al momento de ejecutarlo. Pueden ser útiles para proporcionar información como opciones, rutas de archivos o cualquier otro tipo de dato que tu programa necesite para funcionar correctamente.
+Pero si ejecutamos el mismo código con el comando `ts-node index.ts --greeting Welcome`, obtendremos lo siguiente:
 
-Además de la propiedad `argv`, el objeto `process` también incluye otras propiedades y métodos útiles para interactuar con el entorno de ejecución de tu programa. También puedes utilizar la librería `yargs` para facilitar la lectura y manejo de argumentos de línea de comandos en tu código.
-
-¡Explora y experimenta con la lectura de argumentos de línea de comandos en TypeScript para descubrir sus beneficios y posibilidades!
+```shell
+Welcome, bienvenido a mi aplicación.
+```
 
 ## Ver también
 
-- [Documentación oficial de Node.js sobre el módulo process](https://nodejs.org/api/process.html)
-- [Librería "yargs" para manejo de argumentos de línea de comandos en TypeScript](https://www.npmjs.com/package/yargs)
+- [Documentación de process.argv en la documentación oficial de Node.js](https://nodejs.org/dist/latest-v16.x/docs/api/process.html#process_process_argv)
+- [Documentación de yargs en su página oficial](https://www.npmjs.com/package/yargs)

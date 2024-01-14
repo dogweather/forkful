@@ -1,7 +1,9 @@
 ---
-title:                "Fish Shell: Ein Datum in einen String umwandeln"
+title:                "Fish Shell: Eine Datum in einen String umwandeln"
+simple_title:         "Eine Datum in einen String umwandeln"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/fish-shell/converting-a-date-into-a-string.md"
 ---
 
@@ -9,46 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Es gibt viele Gründe, warum man ein Datum in eine Zeichenkette umwandeln möchte. Eine häufige Anwendung ist zum Beispiel die Ausgabe von Datumsangaben in einem bestimmten Format, das besser lesbar oder besser an die Anforderungen des Projekts angepasst ist.
+Das Konvertieren von Datum in einen String kann hilfreich sein, um das Datum in einem bestimmten Format anzuzeigen oder in einer Datei zu speichern. Mit der Fish Shell können Sie dies auf einfache Weise programmatisch erreichen.
 
-## Wie geht es
+## Wie geht das?
 
-Um ein Datum in eine Zeichenkette umzuwandeln, gibt es verschiedene Ansätze, je nachdem welche Programmiersprache oder Framework man verwendet. Im Folgenden wird gezeigt, wie man dies in der Fish Shell erreichen kann.
-
-```Fish Shell
-set -l date (date -f "%Y-%m-%d") 
-echo "Das heutige Datum ist $date."
-```
-
-Dieser Code verwendet den Befehl `date` mit dem Parameter `-f`, um das Datum in das gewünschte Format zu bringen. In diesem Fall wird `%Y-%m-%d` verwendet, was für das aktuelle Jahr, Monat und Tag steht. Die Ausgabe wird dann in der Variablen `date` gespeichert und anschließend mit dem Befehl `echo` ausgegeben.
-
-Die Ausgabe dieses Codes sieht wie folgt aus:
+Um ein Datum in einen String umzuwandeln, können Sie die `date` Befehlszeilenschnittstelle (CLI) oder die `strftime` Fish Shell Funktion verwenden. Hier sind Beispiele für beide Methoden mit jeweiliger Ausgabe:
 
 ```
-Das heutige Datum ist 2020-09-24.
+Fish Shell Date:
+date +%d.%m.%Y
+30.03.2021
+
+Fish Shell Strftime:
+strftime %d.%m.%Y %m/%d/%Y
+30.03.2021 03/30/2021
 ```
 
-## Tiefer eintauchen
+Hier sehen wir, dass die `date` CLI das Datum basierend auf dem angegebenen Format zurückgibt, während die `strftime` Funktion das Datum basierend auf dem angegebenen Format konvertiert und ausgibt.
 
-Die Fish Shell enthält auch eine integrierte Funktion `strftime`, um ein Datum in eine Zeichenkette umzuwandeln. Hier ein Beispiel:
+Für weitere Optionen und Informationen zu Formaten können Sie die Dokumentation der Fish Shell oder die Manpages des `date` Befehls überprüfen.
 
-```Fish Shell
-set -l date (strftime "%A, %e %B %Y")
-echo "Heute ist $date."
-```
+## Tiefes Eintauchen
 
-Die Funktion `strftime` verwendet für das Datum das Format `%A, %e %B %Y`, was für den aktuellen Wochentag, den Tag im Monat ausgeschrieben, den Monat des Jahres ausgeschrieben und das gesamte Jahr steht.
-
-Die Ausgabe dieses Codes sieht wie folgt aus:
-
-```
-Heute ist Donnerstag, 24 September 2020.
-```
-
-Es gibt noch viele weitere Formatierungsoptionen für die Funktion `strftime`, die je nach Bedarf angepasst werden können. Eine vollständige Liste findet man in der [Fish Shell Dokumentation](https://fishshell.com/docs/current/cmds/strftime.html).
+Eine Sache, auf die man bei der Konvertierung von Datum in einen String achten sollte, ist unterschiedliche Datumsformate in verschiedenen Ländern und Kulturen. Daher wäre es hilfreich, sich mit den ISO Standards für Datumsformatierung vertraut zu machen und diese in Ihrem Code zu berücksichtigen, um mögliche Probleme und Inkompatibilitäten zu vermeiden.
 
 ## Siehe auch
 
-- [Offizielle Fish Shell Dokumentation](https://fishshell.com/docs/current/)
-- [Fish Shell Cheatsheet in Deutsch](https://github.com/fish-shell/fish-shell/blob/master/doc/info/fish.info)
-- [Übersicht über die wichtigsten Fish Shell Befehle](https://digitalocean.com/community/tutorials/an-introduction-to-fish-a-smart-and-user-friendly-command-line-shell)
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+- [`date` Manpage](https://man7.org/linux/man-pages/man1/date.1.html)
+- [ISO Standards für Datumsformatierung](https://de.wikipedia.org/wiki/ISO_8601)

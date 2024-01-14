@@ -1,45 +1,46 @@
 ---
-title:                "TypeScript: Omvandla en sträng till små bokstäver"
+title:                "TypeScript: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+# Varför konvertera en sträng till gemener?
 
-Att konvertera en sträng till gemener, eller lowercase, är ett vanligt problem som många programmerare står inför. Det kan vara användbart när du behöver göra jämförelser mellan strängar eller behöver formatera data på ett enhetligt sätt.
+Att konvertera en sträng till gemener är en vanlig uppgift inom programmering, särskilt när man arbetar med användarinput eller jämför strängar. Genom att omvandla en sträng till gemener ser vi till att all text är i samma format, vilket kan underlätta vid jämförelser och sökningar. I denna bloggpost kommer jag att visa hur du enkelt kan konvertera en sträng till gemener i TypeScript.
 
-## Hur man gör det
+## Så här gör du
 
-För att konvertera en sträng till gemener i TypeScript, kan du använda metoden `toLowerCase()` som finns tillgänglig för strängar. Här är ett exempel på hur du kan använda den:
+För att konvertera en sträng till gemener i TypeScript kan vi använda den inbyggda metoden "toLowerCase". Denna metod tar emot en sträng och returnerar en ny sträng med alla bokstäver konverterade till gemener. Nedan finns en kodexempel på hur du kan använda denna metod:
 
 ```TypeScript
-let namn = "Sven";
-console.log(namn.toLowerCase());
+let sträng = "HEJ DÄR!";
+let gemener = sträng.toLowerCase();
+console.log(gemener);
+
+// Output: hej där!
 ```
 
-Output:
-
-```
-sven
-```
-
-Som du kan se konverterades den ursprungliga strängen "Sven" till en sträng med gemener "sven" genom att använda `toLowerCase()`.
+Vi tilldelar variabeln "sträng" värdet "HEJ DÄR!" och sedan tilldelar vi en ny variabel "gemener" som innehåller det konverterade värdet av "sträng" med hjälp av "toLowerCase" metoden. Slutligen skriver vi ut "gemener" till konsolen och får outputen "hej där!".
 
 ## Djupdykning
 
-När du använder `toLowerCase()` för att konvertera en sträng till gemener, kommer alla bokstäver i strängen att omvandlas, även specialtecken och siffror. Detta inkluderar också bokstäver med diakritiska tecken, som å, ä, ö. Det gör att du kan göra exakta jämförelser mellan strängar oavsett bokstävernas storlek eller diakritiska tecken.
+Förutom att konvertera bokstäver till gemener har "toLowerCase" metoden också möjlighet att hantera specialtecken och diakritiska tecken. Detta innebär att om du har en sträng som innehåller exempelvis "Å", "Ä" eller "Ö", så kommer de också att konverteras till gemener.
 
-Det är också värt att notera att `toLowerCase()` inte ändrar på den ursprungliga strängen, utan returnerar en ny sträng med den konverterade versionen. Så om du behöver behålla den ursprungliga strängen, se till att tilldela den konverterade versionen till en ny variabel.
+Det är också viktigt att notera att "toLowerCase" endast konverterar bokstäver till gemener och inte påverkar andra tecken, såsom siffror eller specialtecken. Dessa kommer fortfarande vara kvar i strängen efter konverteringen.
 
 ## Se även
 
-Här är några användbara länkar för att lära dig mer om strängar i TypeScript och andra sätt att hantera dem:
+Här är några användbara länkar för dig som vill lära dig mer om konvertering av strängar till gemener i TypeScript:
 
-- [Officiell TypeScript dokumentation om strängar](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
-- [En guide till stränghantering i TypeScript](https://www.digitalocean.com/community/tutorials/how-to-work-with-strings-in-typescript)
-- [W3Schools artikel om strängmetoder i TypeScript](https://www.w3schools.com/js/js_string_methods.asp)
+- [MDN webbdocs: DOMString.toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [TypeScript Handbook: String Operations](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string-operations)
+- [codecademy: How to Use (and Abuse) Lowercase](https://www.codecademy.com/articles/javascript-uppercase-lowercase)
 
-Tack för att du läser!
+# Se också
+
+För mer information om andra programmeringsrelaterade ämnen på svenska, besök gärna [Programming Blogg på Acodez](https://www.acodez.se/blog).

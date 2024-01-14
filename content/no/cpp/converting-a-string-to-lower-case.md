@@ -1,82 +1,90 @@
 ---
 title:                "C++: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/cpp/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor
+## Hvorfor
 
-Å konvertere en streng til små bokstaver er en vanlig oppgave i C++ programmering. Dette er nyttig når man for eksempel skal sammenligne to strenger, da man ofte ønsker å ignorere forskjeller i bokstavstørrelse og fokusere på selve innholdet i strengene.
+Dersom du jobber med string manipulasjon eller bruker input fra brukere, kan det være nyttig å konvertere alle bokstaver til små bokstaver (lower case). Dette gjør det enklere å håndtere og sammenligne tekster.
 
-# Hvordan
+## Hvordan
 
-For å konvertere en streng til små bokstaver i C++, kan man bruke både standardbiblioteket og enkle metoder. La oss se på et eksempel:
+For å konvertere en string til lower case i C++, kan du bruke funksjonen ```tolower()``` fra standardbiblioteket ```<cctype>```. Her er et enkelt eksempel:
 
-```C++
+```
 #include <iostream>
-#include <string>
+#include <cctype>
+
+using namespace std;
+
+int main() {
+  string tekst = "ALLE STORE BOKSTAVER";
+  
+  // looper gjennom alle tegn i stringen
+  for (char& c : tekst) {
+    // sjekker om tegnet er en stor bokstav
+    if (isupper(c)) {
+      // konverterer til lower case
+      c = tolower(c);
+    }
+  }
+  
+  // skriver ut den konverterte stringen
+  cout << tekst << endl;
+  
+  return 0;
+}
+```
+
+**Output:**
+
+```
+alle store bokstaver
+```
+
+Det er også mulig å bruke funksjonen ```transform()``` fra standardbiblioteket ```<algorithm>``` for å konvertere en string til lower case. Her er et eksempel med input fra brukeren:
+
+```
+#include <iostream>
 #include <algorithm>
 
 using namespace std;
 
 int main() {
-    // Opprett en streng med store bokstaver
-    string str = "Dette ER En TEkST";
-
-    // Bruk transform() funksjonen fra <algorithm> til å konvertere strengen til små bokstaver
-    transform(str.begin(), str.end(), str.begin(), ::tolower);
-
-    // Skriv ut den konverterte strengen
-    cout << str << endl;
-
-    return 0;
+  string tekst;
+  
+  // får input fra brukeren
+  cout << "Skriv inn en string: ";
+  getline(cin, tekst);
+  
+  // konverterer til lower case
+  transform(tekst.begin(), tekst.end(), tekst.begin(), ::tolower);
+  
+  // skriver ut den konverterte stringen
+  cout << tekst << endl;
+  
+  return 0;
 }
 ```
 
-Output:
+**Output:**
 
 ```
-dette er en tekst
+skriv inn en string: JEG ER EN BRUKERINPUT
+jeg er en brukerinput
 ```
 
-I dette eksempelet bruker vi funksjonen `transform()` fra `<algorithm>` biblioteket til å konvertere alle bokstavene i strengen til små bokstaver. Denne funksjonen tar inn tre parametere: startpunktet for strengen, slutt-tpunktet og hvor den skal skrive de konverterte bokstavene. Her bruker vi også `::tolower` som en lambda-funksjon som konverterer hver enkelt bokstav til små bokstaver.
+## Deep Dive
 
-Det finnes også en enklere metode for å oppnå samme resultat:
+Når du bruker funksjonen ```tolower()``` eller ```transform()```, vil alle tegn i stringen bli konvertert til lower case, inkludert spesialtegn og tall. Det er også viktig å huske at disse funksjonene ikke bare konverterer store bokstaver til små, men også bokstaver i andre språk og alfabet. Det finnes også andre måter å konvertere en string til lower case på, som å bruke en løkke og sjekke hvert tegn individuelt. Det er opp til programmeren å velge den metoden som best passer for deres behov.
 
-```C++
-#include <iostream>
-#include <string>
+## Se også
 
-using namespace std;
-
-int main() {
-    // Opprett en streng med store bokstaver
-    string str = "Dette ER En TEkST";
-
-    // Loop gjennom strengen og konverter hver enkelt bokstav til små bokstaver
-    for (int i = 0; i < str.length(); i++) {
-        str[i] = tolower(str[i]);
-    }
-
-    // Skriv ut den konverterte strengen
-    cout << str << endl;
-
-    return 0;
-}
-```
-
-# Dypdykk
-
-I tillegg til å konvertere til små bokstaver, finnes det også andre nyttige funksjoner for bokstavkonvertering i C++. For eksempel kan man bruke `toupper()` for å konvertere til store bokstaver, og `islower()` og `isupper()` for å sjekke om en bokstav er henholdsvis liten eller stor.
-
-Det er også viktig å være oppmerksom på at bokstaver kan variere avhengig av språk. For eksempel vil bokstaven "å" ha forskjellige betydninger i norsk og svensk, og dermed også forskjellige verdier i C++. Det kan derfor være lurt å bruke Unicode eller UTF-8 for å sikre at alle bokstaver blir konvertert riktig.
-
-# Se også
-
-- [String to Lower/Upper Case in C++](https://www.geeksforgeeks.org/string-to-lower-upper-case-in-cpp/)
-- [C++ Transform Function](https://www.geeksforgeeks.org/transform-function-in-c-stl/)
-
-Takk for at du leste denne artikkelen! Vi håper den har vært nyttig for deg i din C++ programmering. Lykke til videre med å konvertere strenger til små bokstaver!
+- [C++ string manipulation](https://www.programiz.com/cpp-programming/string)
+- [C++ standard library](https://www.cplusplus.com/reference/)

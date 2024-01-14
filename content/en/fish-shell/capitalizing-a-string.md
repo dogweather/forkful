@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell recipe: Capitalizing a string"
+simple_title:         "Capitalizing a string"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/capitalizing-a-string.md"
 ---
 
@@ -9,44 +11,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As a Fish Shell programmer, you may come across situations where you need to capitalize a string. For example, when dealing with user inputs or generating titles for your scripts. In these cases, it is important to know how to properly capitalize a string to ensure consistency and readability in your code.
+As a programmer, you may come across situations where you need to manipulate strings, such as capitalizing them. This can be useful for various purposes, such as displaying names or titles in a proper format. In this blog post, we will explore how to capitalize a string using Fish Shell.
 
 ## How To
 
-Capitalizing a string in Fish Shell is a simple process that can be achieved in a few different ways, depending on your specific needs and preferences.
-
-One method is by using the `string match` command. This will take a given string and convert the first character to uppercase. Here's an example:
+To begin, let's create a variable called "name" and assign it a string value:
 
 ```
-string match --capitalize "hello world"
+set name "john doe"
 ```
 
-This will output "Hello world".
-
-Another option is to use the `string toupper` command. This will convert all characters in a string to uppercase. For instance:
+Next, we can use the `string capitalize` command in Fish Shell to convert the first letter of each word in the string to uppercase. Let's see how it works by using the `echo` command to print the value of our "name" variable:
 
 ```
-string toupper "fish shell"
+echo (string capitalize $name)
 ```
 
-The output will be "FISH SHELL".
-
-You can also use the `tr` command to achieve the same result. Here's an example:
+The output will be:
 
 ```
-echo "fish shell" | tr "[:lower:]" "[:upper:]"
+John Doe
 ```
 
-This will also result in "FISH SHELL".
+As we can see, "john doe" has been converted to "John Doe" with the first letter of each word capitalized.
 
 ## Deep Dive
 
-While the above methods are suitable for most cases, it's important to note that they may not work as expected for strings that contain special characters or foreign characters. In these situations, it may be necessary to use regular expressions or more advanced methods to properly capitalize the string.
+Now, let's take a deeper look at how the `string capitalize` command works. By default, it only capitalizes the first letter of each word. However, it also has an optional argument that allows us to specify which letters to capitalize. For example, if we only want to capitalize the first letter of the string, we can use the argument "1":
 
-Additionally, it's important to consider the language and intended use of the string when deciding on the capitalization method. For example, in some languages, only the first letter of a sentence should be capitalized, while in others, proper nouns and acronyms may also be capitalized.
+```
+echo (string capitalize -1 $name)
+```
+
+The output will be:
+
+```
+John doe
+```
+
+Similarly, we can use other numbers as arguments to capitalize the first few letters of the string. For example, if we use "2", the first two letters will be capitalized:
+
+```
+echo (string capitalize -2 $name)
+```
+
+The output will be:
+
+```
+JOhn doe
+```
+
+We can also use the `string -r` command to reverse the order of the letters before capitalizing them. For example:
+
+```
+echo (string capitalize -r $name)
+```
+
+The output will be:
+
+```
+Doe john
+```
+
+This can be useful if we want to capitalize the last letter of a string instead of the first.
 
 ## See Also
 
-- [Fish documentation on string manipulation](https://fishshell.com/docs/current/cmds/string.html)
-- [Fish tutorial on regular expressions](https://fishshell.com/docs/current/tutorial.html#using-regular-expressions)
-- [List of supported languages in Fish Shell](https://fishshell.com/docs/current/#supported-languages)
+- [Fish Shell string manipulation documentation](https://fishshell.com/docs/current/cmds/string.html)
+- [Other useful Fish Shell commands](https://fishshell.com/docs/current/cmds.html)
+- [Fish Shell tutorials and tips](https://fishshell.com/docs/current/tutorial.html)

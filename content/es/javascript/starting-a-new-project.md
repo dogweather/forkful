@@ -1,57 +1,39 @@
 ---
 title:                "Javascript: Comenzando un nuevo proyecto"
+simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Javascript"
-category:             "Getting Started"
+category:             "Javascript"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/javascript/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías empezar un nuevo proyecto?
+## Por qué
 
-Empezar un nuevo proyecto puede ser una oportunidad emocionante para expandir tus habilidades de programación, aprender nuevas tecnologías y crear algo que te apasiona. Además, puede ser una buena manera de mostrar tu creatividad y construir un portfolio impresionante.
+Empezar un nuevo proyecto de programación puede ser intimidante, pero también puede ser increíblemente gratificante. Puede ser una oportunidad para aprender nuevas habilidades, mejorar las existentes y crear algo nuevo e innovador. También es una gran forma de expresar tu creatividad y explorar tus intereses.
 
-## Cómo comenzar un nuevo proyecto en Javascript
+## Cómo hacerlo
 
-Antes de comenzar a escribir código, es importante tener claro el objetivo del proyecto y cuáles son los requisitos y funcionalidades que deseas incluir. Una vez que tengas una idea clara de lo que quieres lograr, puedes seguir estos pasos para iniciar tu proyecto:
+Para empezar un nuevo proyecto de Javascript, primero debes tener una idea clara de lo que quieres lograr. Puedes empezar haciendo una lista de todas las características que quieres que tenga tu proyecto y luego priorizarlas en orden de importancia. Esto te ayudará a tener una visión clara de tu objetivo y a mantenerte enfocado.
 
-```javascript
-// Paso 1: Inicializar el proyecto
-mkdir nombre-proyecto
-cd nombre-proyecto
-npm init
+Una vez que tengas una idea clara de lo que quieres, puedes empezar a escribir tu código. Aquí hay un ejemplo de cómo imprimir "¡Hola mundo!" en la consola utilizando Javascript:
 
-// Paso 2: Instalar dependencias
-npm install express
-
-// Paso 3: Crear archivo de entrada
-touch index.js
-
-// Paso 4: Importar dependencias y configurar servidor
-const express = require("express");
-const app = express();
-
-// Paso 5: Crear endpoints
-app.get("/", (req, res) => {
-  res.send("¡Hola mundo!");
-});
-
-// Paso 6: Iniciar servidor
-app.listen(3000, () => {
-  console.log("Servidor corriendo en el puerto 3000");
-});
+```Javascript
+console.log("¡Hola mundo!");
 ```
 
-Después de seguir estos pasos, podrás ejecutar el archivo `index.js` en tu navegador y ver el mensaje "¡Hola mundo!".
+Este es un ejemplo muy básico, pero es un buen punto de partida para empezar a familiarizarte con la sintaxis de Javascript. Puedes seguir agregando más líneas de código para crear tu proyecto, o incluso buscar recursos en línea para ayudarte a llevarlo al siguiente nivel.
 
-## Profundizando en el proceso de iniciar un nuevo proyecto
+## Profundizando
 
-Empezar un nuevo proyecto no se trata solo de escribir código, también es importante tener en cuenta ciertos aspectos como la estructura del proyecto, la organización de archivos y el control de versiones. Además, es crucial documentar tu código para que otros puedan entenderlo y colaborar contigo en el futuro.
+A medida que empieces a trabajar en tu proyecto, es importante recordar que es un proceso continuo de aprendizaje. No tengas miedo de experimentar y probar cosas nuevas. También es importante tener en cuenta buenas prácticas de codificación, como hacer comentarios en tu código para que sea más fácil de entender y seguir.
 
-Una buena práctica es seguir patrones de diseño y utilizar herramientas como NPM y Git para gestionar las dependencias y el control de versiones de tu proyecto.
+También puedes buscar en línea tutoriales y guías sobre cómo abordar problemas específicos que puedan surgir durante el desarrollo de tu proyecto. Y no tengas miedo de pedir ayuda o retroalimentación de otras personas en la comunidad de programación.
 
 ## Ver también
 
-- [Guía de inicio rápido de Node.js](https://developer.mozilla.org/es/docs/Learn/Server-side/Express_Nodejs/Introduction)
-- [Documentación de Express.js](https://expressjs.com/es/)
-- [Patrones de diseño en Javascript](https://github.com/fbeline/Design-patterns-JS)
+- [Documentación de Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript)
+- [Tutorial de Javascript para principiantes](https://www.freecodecamp.org/news/solo-pruebas-gratuitas-de-codificación-en-la-manzana-25-tutoriales-de-javascript-que-puedes-terminar-en-el/)
+
+¡Ahora tienes todas las herramientas para empezar tu proyecto de Javascript! Recuerda tener paciencia, seguir aprendiendo y disfrutar del proceso. ¡Buena suerte!

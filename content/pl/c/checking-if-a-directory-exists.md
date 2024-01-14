@@ -1,68 +1,81 @@
 ---
-title:                "C: Sprawdzanie, czy istnieje katalog"
+title:                "C: Sprawdzanie istnienia katalogu"
+simple_title:         "Sprawdzanie istnienia katalogu"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego:
+## Dlaczego
 
-Często w trakcie pisania programów w języku C jest konieczne sprawdzenie, czy dany katalog istnieje. Jest to ważne, ponieważ pozwala uniknąć błędów związanych z próbą dostępu do nieistniejącego katalogu. W tym artykule pokażemy, jak w prosty sposób sprawdzić istnienie katalogu w języku C.
+Niektórzy z nas mogą zadać sobie pytanie, po co w ogóle sprawdzać istnienie danego katalogu w naszym programie w C? Jednym z głównych powodów jest zapewnienie bezpieczeństwa naszego kodu. Dzięki temu, możemy upewnić się, że nasze operacje plikowe będą działać poprawnie w przypadku, gdy dany katalog nie istnieje.
 
-## Jak to zrobić:
+## Jak to zrobić
 
-Aby sprawdzić, czy dany katalog istnieje, musimy wykorzystać funkcję `opendir()` z biblioteki `dirent.h`. Przykładowy kod wygląda następująco:
+Istnieje kilka sposobów na sprawdzenie, czy dany katalog istnieje w języku programowania C. Poniżej przedstawione są przykładowe kody, które wskazują, jak to zrobić.
 
-```C
-#include <stdio.h>
-#include <dirent.h>
-
-int main() {
-    DIR *dir = opendir("sciezka_do_katalogu");
-    if (dir) {
-        printf("Katalog istnieje!\n");
-        closedir(dir);
-    } else {
-        printf("Katalog nie istnieje.\n");
-    }
-    return 0;
-}
-```
-
-W powyższym przykładzie wykorzystujemy funkcję `opendir()` do otwarcia katalogu o podanej ścieżce. Jeśli funkcja zwróci wartość inna niż `NULL`, oznacza to, że katalog istnieje. Następnie wyświetlamy odpowiedni komunikat i zamykamy katalog funkcją `closedir()`. W przeciwnym wypadku, gdy funkcja `opendir()` zwróci `NULL`, oznacza to, że katalog nie istnieje.
-
-## Głębsze zanurzenie:
-
-Warto zauważyć, że funkcja `opendir()` może zwrócić wartość inna niż `NULL` również wtedy, gdy nie uda się otworzyć katalogu z powodu braku odpowiednich uprawnień lub gdy podano błędną ścieżkę. Dlatego warto także skorzystać z funkcji `errno` z biblioteki `errno.h`, która umożliwia nam sprawdzenie błędu, który wystąpił podczas próby otworzenia katalogu. Przykładowy kod wykorzystujący tę funkcję wygląda następująco:
+Przy użyciu funkcji `opendir()`:
 
 ```C
 #include <stdio.h>
 #include <dirent.h>
-#include <errno.h>
 
-int main() {
-    DIR *dir = opendir("sciezka_do_katalogu");
-    if (dir == NULL) {
-        if (errno == EACCES) {
-            printf("Brak uprawnień do otwarcia katalogu.\n");
-        } else if (errno == ENOENT) {
-            printf("Katalog nie istnieje.\n");
-        } else {
-            printf("Inny błąd podczas próby otwarcia katalogu.\n");
-        }
-    } else {
-        printf("Katalog istnieje!\n");
-        closedir(dir);
+int main()
+{
+    char* path = "/home/user/Desktop"; // ścieżka do katalogu, którego istnienie chcemy sprawdzić
+
+    DIR* dir = opendir(path); // otwarcie katalogu
+
+    if(dir) // jeśli katalog istnieje
+    {
+        printf("%s directory exists.\n", path);
+        closedir(dir); // zamknięcie katalogu
     }
+    else // jeśli katalog nie istnieje
+    {
+        printf("%s directory does not exist.\n", path);
+    }
+    
     return 0;
 }
 ```
 
-W tym przypadku wykorzystujemy funkcję `errno` do sprawdzenia, jaki konkretnie błąd wystąpił podczas próby otworzenia katalogu. Dzięki temu możemy wyświetlić bardziej szczegółowy komunikat dla użytkownika.
+Przy użyciu funkcji `stat()`:
 
-## Zobacz też:
+```C
+#include <stdio.h>
+#include <sys/stat.h>
 
-- [Dokumentacja funkcji opendir()](https://linux.die.net/man/3/opendir)
-- [Lista kodów błędów systemu Linux](https://www-numi.fnal.gov/offline_software/srt_public_context/WebDocs/Errors/unix_system_errors.html)
+int main()
+{
+    char* path = "/home/user/Desktop"; // ścieżka do katalogu, którego istnienie chcemy sprawdzić
+
+    struct stat st = {0}; // tworzenie struktury stat
+    int result = stat(path, &st); // wywołanie funkcji stat
+
+    if(result == 0) // jeśli katalog istnieje
+    {
+        printf("%s directory exists.\n", path);
+    }
+    else // jeśli katalog nie istnieje
+    {
+        printf("%s directory does not exist.\n", path);
+    }
+    
+    return 0;
+}
+```
+
+## Głębsza analiza
+
+W powyższych przykładach, użytkownik musi podać ścieżkę do katalogu, który chce sprawdzić. Jest to najprostsza i najbardziej powszechna metoda. Jednak, istnieją również inne sposoby, takie jak użycie funkcji `access()` lub `realpath()`. Najważniejsze jest upewnienie się, że używamy odpowiednich funkcji i odpowiednio obsługujemy potencjalne błędy.
+
+## Zobacz również
+
+- [Dokumentacja funkcji opendir()](https://www.man7.org/linux/man-pages/man3/opendir.3.html)
+- [Dokumentacja funkcji stat()](https://www.man7.org/linux/man-pages/man2/stat.2.html)
+- [Poradnik na temat funkcji access()](https://www.dynatrace.com/resources/ebooks/javabook/access-and-check-for-existence-of-files-directories/)
+- [Przykładowe kody na GitHubie](https://github.com/topics/directory-exists-c)

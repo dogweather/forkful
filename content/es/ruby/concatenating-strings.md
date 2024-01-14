@@ -1,57 +1,57 @@
 ---
 title:                "Ruby: Uniendo cadenas de texto"
+simple_title:         "Uniendo cadenas de texto"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-Concatenar strings o cadenas de texto es una habilidad esencial en la programación ya que nos permite combinar diferentes strings para crear una cadena más larga y completa. Esto puede ser útil en situaciones como la generación de mensajes personalizados, la construcción de URLs y la creación de mensajes de error.
+La concatenación de cadenas es una técnica clave en la programación Ruby para combinar múltiples cadenas en una sola. Esto es útil para crear mensajes personalizados, generar código dinámicamente o para cualquier tarea que requiera la combinación de cadenas.
 
 ## Cómo hacerlo
+Para concatenar cadenas en Ruby, podemos usar el operador de suma (+) o el método ```.concat```. Veamos algunos ejemplos:
 
-La concatenación de strings en Ruby es muy sencilla. Simplemente usamos el operador + para unir dos o más cadenas. Veamos un ejemplo:
+```ruby
+# Usando el operador +
+nombre = "María"
+apellido = "García"
+nombre_completo = nombre + " " + apellido
+puts nombre_completo  # María García
 
-```Ruby
-string1 = "Hola"
-string2 = "mundo"
-puts string1 + " " + string2
+# Usando el método .concat
+mensaje = "¡Hola "
+nombre = "Carlos"
+mensaje.concat(nombre)
+puts mensaje # ¡Hola Carlos
 ```
-
-La salida de este código sería "Hola mundo". Como se puede ver, podemos incluir espacios entre las cadenas para dar formato a la salida. También podemos utilizar el operador << para concatenar strings. Veamos otro ejemplo:
-
-```Ruby
-string1 = "¡Bienvenido a"
-string2 = " mi blog!"
-puts string1 << string2
-```
-
-En este caso, la salida sería "¡Bienvenido a mi blog!". Como se puede observar, el operador << es especialmente útil si queremos añadir una cadena al final de otra sin tener que incluir los espacios de forma manual.
 
 ## Profundizando
+Además de estos métodos básicos, también podemos usar el método ```.prepend``` para agregar texto al principio de una cadena, y el método ```.insert``` para insertar texto en una posición específica. También podemos usar el interpolación de cadenas para combinar variables dentro de una cadena, encerrándolas entre llaves y un signo de dólar ($).
 
-En Ruby, también podemos utilizar el método concat para concatenar strings. Este método es similar al operador << pero puede ser más útil en ciertas situaciones. También podemos usar el método .concat para concatenar una cadena a sí misma varias veces. Veamos un ejemplo:
+```ruby
+# Usando .prepend
+nombre = "Ana"
+mensaje = "Feliz cumpleaños "
+mensaje.prepend(nombre + ", ")
+puts mensaje # Ana, Feliz cumpleaños
 
-```Ruby
-string = "Happy "
-string.concat("birthday!")
-puts string  # Salida: Happy birthday!
+# Usando .insert
+nombre = "Pedro"
+saludo = "¡Bienvenido a Ruby!"
+mensaje.insert(11, nombre + ", ")
+puts mensaje # ¡Bienvenido a Ruby, Pedro!
+
+# Interpolación de cadenas
+edad = 25
+mensaje = "Tengo #{edad} años de edad"
+puts mensaje # Tengo 25 años de edad
 ```
-
-También podemos utilizar el método *format* para agregar variables a una cadena. Tenga en cuenta que la cadena debe tener un marcador de posición para cada variable que se va a agregar. Por ejemplo:
-
-```Ruby
-name = "Maria"
-puts "Bienvenidos a mi blog, %s!" % name
-```
-
-La salida sería "Bienvenidos a mi blog, Maria!". En este caso, el marcador de posición %s es reemplazado por la variable name.
 
 ## Ver también
-
-- [Documentación oficial de Ruby sobre concatenación de strings](https://ruby-doc.org/core-2.7.1/String.html#method-i-2B)
-- [Tutorial de concatenación de strings en Ruby](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
-- [Post en el blog de Ruby sobre concatenación de strings y otros métodos útiles](https://www.dreamincode.net/forums/topic/195829-useful-string-methods/)
+- Documentación oficial de Ruby sobre la concatenación de cadenas: https://ruby-doc.org/core-2.7.1/String.html#method-i-2B
+- Ejemplos prácticos de concatenación de cadenas: https://www.geeksforgeeks.org/how-to-concatenate-two-strings-in-ruby/
+- Experiencias y recomendaciones de programadores sobre la concatenación de cadenas en Ruby: https://stackoverflow.com/questions/4582207/how-to-concatenate-strings-in-ruby

@@ -1,63 +1,49 @@
 ---
 title:                "Arduino: Suppression de caractères correspondant à un motif"
+simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "Arduino"
-category:             "Strings"
+category:             "Arduino"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/arduino/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Pourquoi
-
-Lorsque vous programmez avec Arduino, vous pourriez vous retrouver dans une situation où vous avez besoin de supprimer des caractères correspondant à un certain modèle. Cela peut sembler étrange, mais ça peut être utile dans des situations spécifiques, comme lorsqu'on traite des données reçues par un port série ou lorsqu'on effectue des opérations de nettoyage sur des chaînes de caractères.
+Supprimer des caractères qui correspondent à un certain motif peut être utile pour filtrer des données ou pour simplifier la manipulation d'une chaîne de caractères. Cela peut également être utile dans des projets où des données spécifiques doivent être collectées ou affichées.
 
 ## Comment faire
-
-Pour supprimer des caractères correspondant à un modèle, nous allons utiliser la fonction `remove` de la bibliothèque `String`. Cette fonction prend deux paramètres : le premier est le caractère ou le motif à supprimer, et le deuxième est l'indice de départ à partir duquel la suppression doit commencer.
-
-Voici un exemple de code qui utilise la fonction `remove` pour supprimer tous les caractères "a" d'une chaîne de caractères :
+Pour supprimer des caractères correspondant à un motif, nous allons utiliser la fonction `replace()` de la bibliothèque `String` d'Arduino. Cette fonction prend deux paramètres : le motif à rechercher et la valeur par laquelle il doit être remplacé. Voici un exemple de code :
 
 ```Arduino
 #include <String.h>
 
-String exampleString = "Bonjour, Arduino !";
-exampleString.remove('a', 0);
-Serial.print(exampleString);
+void setup() {
+  Serial.begin(9600); // Initialise la communication série
+  String message = "Bonjour Arduino !"; // Chaîne de caractères à traiter
+  Serial.println(message); // Affiche la chaîne de caractères originale
+  
+  // Remplace toutes les lettres 'o' par des 'a'
+  message.replace('o', 'a');
+  
+  Serial.println(message); // Affiche la chaîne de caractères modifiée
+}
+
+void loop() {
+
+}
 ```
 
-Ce code va imprimer la chaîne de caractères "Bonjour, rduino !" (notez que le "a" a été supprimé). Si nous voulons supprimer tous les caractères "o" à partir de l'indice 5, nous pouvons modifier notre code comme ceci :
-
-```Arduino
-exampleString.remove('o', 5);
+Output:
 ```
-
-Et nous obtiendrons "Bonjour, Ardinu !" comme résultat.
-
-Il est également possible de supprimer plusieurs caractères à la fois en utilisant un modèle. Par exemple, si nous voulons supprimer tous les chiffres d'une chaîne de caractères, nous pouvons utiliser la fonction `remove` ainsi :
-
-```Arduino
-exampleString.remove("[0-9]");
+Bonjour Arduino !
+Banjaar Arduina !
 ```
-
-Et cela supprimera tous les chiffres de la chaîne de caractères.
 
 ## Plongée en profondeur
-
-La fonction `remove` utilise des expressions régulières pour supprimer des caractères correspondant à un motif spécifique. Les expressions régulières sont un moyen puissant de manipuler et de rechercher des chaînes de caractères dans un texte. Elles peuvent sembler intimidantes au début, mais une fois que vous aurez compris leur fonctionnement, elles peuvent être très utiles pour effectuer des opérations complexes de traitement de texte.
-
-Par exemple, voici quelques expressions régulières couramment utilisées :
-
-- `[0-9]` : correspond à n'importe quel chiffre
-- `[a-z]` : correspond à n'importe quelle lettre minuscule
-- `[A-Z]` : correspond à n'importe quelle lettre majuscule
-- `.` : correspond à n'importe quel caractère
-- `+` : correspond à une ou plusieurs occurrences du caractère précédent
-- `*` : correspond à zéro ou plusieurs occurrences du caractère précédent
-
-Il existe de nombreux autres caractères spéciaux et possibilités de combinaison, mais cela nécessiterait un article entier dédié aux expressions régulières.
+La fonction `replace()` est très utile pour supprimer des caractères correspondant à un motif, mais elle a ses limites. Elle ne peut remplacer qu'un caractère à la fois et ne prend pas en compte les majuscules et les minuscules. Pour une plus grande flexibilité, nous pouvons utiliser d'autres fonctions de la bibliothèque `String` telles que `remove()` ou `replaceAll()`. Il est également important de noter que ces fonctions peuvent consommer beaucoup de mémoire, il est donc préférable de les utiliser avec parcimonie dans vos projets Arduino.
 
 ## Voir aussi
-
-- [La documentation officielle de la fonction `remove` de la bibliothèque `String`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/remove/)
-- [Un tutoriel complet sur les expressions régulières en C++](https://www.cplusplus.com/reference/regex/)
-- [Un outil en ligne pour tester vos expressions régulières](https://regex101.com/)
+- [Documentation officielle d'Arduino sur la fonction `replace()`](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [Tutoriel de programmation pour débutants sur le traitement de chaînes de caractères avec Arduino](https://www.circuitbasics.com/basics-arduino-string-processing/)
+- [Forum de la communauté Arduino pour poser vos questions et partager vos connaissances](https://forum.arduino.cc/)

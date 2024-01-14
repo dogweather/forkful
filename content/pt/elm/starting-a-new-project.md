@@ -1,40 +1,38 @@
 ---
 title:                "Elm: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Elm"
-category:             "Getting Started"
+category:             "Elm"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/elm/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Porquê
+## Por que começar um novo projeto em Elm?
 
-Se você é um desenvolvedor em busca de uma linguagem de programação funcional moderna e eficiente, então pode considerar começar seu próximo projeto em Elm. Com uma sintaxe simples e forte sistema de tipos, Elm é uma excelente escolha para construir aplicações web escaláveis e confiáveis.
+Se você está procurando uma linguagem de programação funcional que seja elegante, eficiente e fácil de aprender, então Elm é a resposta. Além disso, é uma ótima opção para projetos web devido à sua arquitetura baseada em componentes e desempenho confiável.
 
-## Como
+## Como começar um novo projeto em Elm
 
-Para iniciar um novo projeto em Elm, você precisa primeiro instalar o compilador Elm e configurar seu ambiente de desenvolvimento. Em seguida, use o comando `elm init` para criar uma nova estrutura de diretórios para o seu projeto. Dentro dessa estrutura, você pode começar a escrever seu código Elm em arquivos `.elm`, que serão compilados em JavaScript e executados no navegador.
+Primeiro, baixe o compilador Elm e certifique-se de que ele está configurado corretamente em seu sistema. Em seguida, inicie um novo projeto com o comando `elm-init`. Depois de definir o nome e as dependências do seu projeto, você pode começar a escrever código!
 
-Vamos dar uma olhada em um exemplo simples de código Elm:
-
-```Elm
--- Declarando uma função
-saudar nome =
-    "Olá, " ++ nome ++ "!"
-
--- Chamando a função
-main =
-    saudar "João"
+```
+elm-init minha-aplicacao
+cd minha-aplicacao
+elm-reactor
 ```
 
-A saída deste código será uma simples mensagem "Olá, João!". Perceba como a sintaxe de Elm é semelhante a outras linguagens funcionais como Haskell e F#, tornando-a fácil de aprender.
+Agora você pode escrever seu código em arquivos `Main.elm` ou em qualquer outro arquivo e ver os resultados em tempo real no navegador com a ajuda do Elm Reactor.
 
-## Mergulho Profundo
+## Deep Dive
 
-Ao iniciar um novo projeto em Elm, é importante entender alguns conceitos-chave, como o padrão de arquitetura “Model-View-Update” e como usar os tipos e funcionalidades do sistema de tipos de Elm para garantir um código seguro e sem erros. Também é útil explorar os pacotes da comunidade Elm para encontrar bibliotecas e ferramentas para ajudá-lo no desenvolvimento.
+Uma das principais vantagens do Elm é sua arquitetura baseada em componentes, que significa que você pode dividir seu projeto em pequenos módulos independentes que se comunicam entre si por meio de mensagens. Isso torna o código mais organizado, fácil de gerenciar e menos propenso a erros.
 
-## Ver também
+Além disso, o compilador Elm é incrivelmente bom em detectar e prevenir erros de tempo de execução. Isso significa que você pode ter certeza de que seu código funcionará sem problemas e sem surpresas desagradáveis.
 
-- [Documentação oficial do Elm](https://elm-lang.org/docs)
-- [Pacotes da comunidade Elm](https://package.elm-lang.org/)
-- [Tutorial Elm em Português](https://medium.com/@allanmarquesdesouza/elm-a-linguagem-funcional-para-web-bd7f0c631ba0)
+## Veja também
+
+- [Site oficial do Elm](https://elm-lang.org/)
+- [Documentação oficial do Elm](https://guide.elm-lang.org/)
+- [Codecademy - Curso de Elm](https://www.codecademy.com/learn/learn-elm)

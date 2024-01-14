@@ -1,37 +1,40 @@
 ---
-title:                "Gleam: Encontrando o comprimento de uma string"
+title:                "Gleam: Encontrar o comprimento de uma string"
+simple_title:         "Encontrar o comprimento de uma string"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/gleam/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que encontrar o comprimento de uma string é importante?
+## Por que encontrar o comprimento de uma string?
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação, especialmente ao lidar com dados de entrada do usuário ou ao manipular strings em geral. Saber o comprimento de uma string pode ajudar os programadores a realizar várias operações, como validação de dados, formatação de strings e muito mais. Por isso, é um conceito fundamental que todo programador deve dominar.
+Encontrar o comprimento de uma string é uma tarefa comum em programação, especialmente ao lidar com entrada de dados do usuário ou ao manipular strings em geral. Saber o comprimento de uma string pode ser útil para diferentes propósitos, como validar o tamanho do input do usuário ou fazer operações de manipulação de dados.
 
-# Como encontrar o comprimento de uma string em Gleam
+## Como fazer:
 
-Em Gleam, podemos encontrar o comprimento de uma string usando a função `String.length()`. Veja um exemplo abaixo:
+Para encontrar o comprimento de uma string em Gleam, podemos usar a função `String.length()`. Veja um exemplo abaixo:
 
 ```Gleam
-let string = "Olá, mundo!"
-let comprimento = String.length(string)
+let texto = "Olá, mundo!"
+let comprimento = String.length(texto)
+
+// Saída:
+// comprimento: 12
 ```
 
-Neste exemplo, definimos uma string chamada "Olá, mundo!" e usamos a função `String.length()` para encontrar o seu comprimento. O valor retornado será 12, já que essa é a quantidade de caracteres na string.
+Aqui, declaramos uma variável `texto` que contém a string "Olá, mundo!" e em seguida usamos a função `String.length()` para encontrar o comprimento dessa string. O comprimento será armazenado na variável `comprimento` e o resultado será impresso no console.
 
-Também é importante notar que espaços em branco e caracteres especiais também são contados como caracteres na string. Por exemplo, a string "Olá, mundo!" tem 12 caracteres, mas se incluirmos um espaço em branco no final dela, o comprimento será de 13.
+## Profundidade:
 
-# Mergulho mais profundo
+A função `String.length()` é bastante útil e simples, no entanto, é importante entender como ela funciona por debaixo dos panos. Em essência, ela conta quantos caracteres existem na string, incluindo espaços em branco e caracteres especiais. Portanto, o comprimento de uma string vazia será 0.
 
-Existem outras maneiras de encontrar o comprimento de uma string em Gleam, como utilizar a sintaxe `#[derive len]` para estruturas personalizadas que implementam o Trait `Length`. Além disso, a função `String.length()` também pode ser aplicada a uma lista de strings para encontrar o comprimento total da lista.
+Além disso, é importante lembrar que, em alguns idiomas, há caracteres que possuem mais de um byte. Isso significa que o comprimento pode variar dependendo do idioma que a string está sendo escrita. Em Gleam, esses caracteres são contados corretamente e a função `String.length()` retorna o comprimento correto.
 
-Outro aspecto importante a ser considerado é a diferença entre caracteres e bytes em relação ao comprimento de uma string. Em alguns casos, o comprimento de uma string pode ser diferente do número de bytes que ela ocupa na memória, especialmente quando se trata de usar caracteres multibyte. Isso pode afetar alguns algoritmos e funções que dependem do comprimento de uma string, portanto, é importante estar ciente dessas diferenças.
+## Veja também:
 
-# Veja também
-
-- Documentação oficial da função `String.length()`: https://gleam.run/core/gleam/String.html#length
-- Tutorial de Gleam sobre strings: https://gleam.run/tutorials/strings
-- Sintaxe `#[derive len]`: https://gleam.run/tutorials/derive-attribute#length
+- Documentação oficial da função `String.length()`: [https://gleam.run/docs/stdlib/String.length.html](https://gleam.run/docs/stdlib/String.length.html)
+- Tutorial de Gleam: [https://gleam.run/getting-started/](https://gleam.run/getting-started/)
+- Lista completa de funções de string em Gleam: [https://gleam.run/docs/stdlib/String.html](https://gleam.run/docs/stdlib/String.html)

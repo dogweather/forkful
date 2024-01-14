@@ -1,58 +1,45 @@
 ---
 title:                "TypeScript: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "TypeScript"
-category:             "Testing and Debugging"
+category:             "TypeScript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/typescript/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi Kirjoittaa Testejä
 
-Testaaminen on tärkeä osa ohjelmistokehitystä. Se varmistaa, että koodi toimii oikein ja estää mahdolliset bugeja ja virheitä tulevaisuudessa. Kirjoittamalla testeja voit myös helpommin ymmärtää koodiasi ja tehdä siitä luotettavamman.
+Testien kirjoittaminen on tärkeä osa hyvää ohjelmistokehitystä. Ne auttavat varmistamaan, että koodi toimii odotetulla tavalla ja vähentävät virheiden riskiä. Ne myös helpottavat uusien ominaisuuksien lisäämistä ja vanhojen parantamista, koska testit voivat havaita mahdolliset rikkomukset.
 
-## Miten
+## Kuinka Kirjoittaa Testejä
 
-Testien kirjoittaminen TypeScriptillä on helppoa ja tehokasta. Voit käyttää esimerkiksi Jest-kirjastoa, joka tarjoaa valmiit työkalut testien luomiseen ja ajamiseen. Tässä esimerkissä näytämme, miten voit testata yksinkertaisen funktio, joka palauttaa kahden luvun summan.
+Testien kirjoittaminen TypeScriptillä on helppoa ja monipuolista. Voit käyttää esimerkiksi suositeltuja testauskirjastoja, kuten Jest, Mocha tai Jasmine.
 
-```TypeScript
-const sum = (a: number, b: number) => a + b;
+Alla olevassa koodiesimerkissä käytetään Jest-kirjastoa. Ensimmäiseksi tarvitset asennettuna Jestin ja TypeScriptin, jotka voidaan asentaa npm-paketinhallintajärjestelmällä. Seuraavaksi voit luoda uuden testitiedoston esimerkiksi nimeltään "math.test.ts" ja lisätä siihen seuraavan koodin:
 
-it('returns the sum of two numbers', () => {
-  expect(sum(2, 3)).toEqual(5);
+````TypeScript
+import { sum } from './math';
+
+describe('Math tests', () => {
+  test('sum function should return the correct value', () => {
+    expect(sum(2, 3)).toEqual(5);
+  });
 });
-```
+````
 
-Tässä koodissa määritämme funktio sum, joka ottaa vastaan kaksi numeroa ja palauttaa niiden summan. Sen jälkeen testaamme funktiota käyttäen Jest-kirjaston `expect`- ja `toEqual`-funktioita, jotka vertaavat funktiomme palautusta odotettuun arvoon.
+Tässä koodissa ensimmäiseksi tuodaan käytettäväksi math.ts-tiedostosta `sum`-funktio. Sitten testit suoritetaan `describe`-blokissa, jossa määritellään testien ryhmän nimi. `test`-funktiossa verrataan sum-funktion palauttaman arvon oikeaan arvoon käyttäen Jest-kirjaston `toEqual`-metodia.
 
-Voit myös testata virheitä esimerkiksi `toThrow`-funktion avulla:
+Voit ajaa testit komennolla `npm test` ja näet tuloksen, jossa kerrotaan, onko testi läpäissyt vai ei.
 
-```TypeScript
-const divide = (a: number, b: number) => {
-  if (b === 0) {
-    throw new Error('Division by zero not allowed');
-  } else {
-    return a / b;
-  }
-}
+## Syvemmälle Testien Kirjoittamiseen
 
-it('throws an error when dividing by zero', () => {
-  expect(() => divide(4, 0)).toThrow('Division by zero not allowed');
-});
-```
+Testien kirjoittamisen syvällinen ymmärtäminen vaatii perehtymistä niiden eri osa-alueisiin, kuten unit-testaukseen, integraatiotestaukseen ja funktionaaliseen testaukseen. Unit-testauksessa testataan yksittäisiä komponentteja erillisinä, integraatiotestauksessa testataan eri komponenttien toimivuutta yhdessä ja funktionaalisessa testauksessa testataan järjestelmän käyttäytymistä loppukäyttäjän näkökulmasta.
 
-Kuten näet, testien kirjoittaminen TypeScriptillä on melko yksinkertaista. Voit myös luoda omia testejä tarpeen mukaan ja muokata niitä tarpeidesi mukaan.
+Lisäksi testien kirjoittamisessa on hyvä noudattaa hyviä käytäntöjä, kuten antipatternien välttämistä ja testien ylläpidon huomioimista.
 
-## Syvemmälle
-
-Testien kirjoittaminen ei ole vain yksinkertainen tapa varmistaa koodin toimivuus, vaan se auttaa myös parantamaan koodisi laatua. Kirjoittamalla testejä joudut ajattelemaan koodiasi tarkemmin ja huomaat mahdollisia heikkouksia ja virheitä, joita et ehkä muuten olisi huomannut.
-
-Hyvä käytäntö on myös kirjoittaa testit ennen varsinaisen koodin kirjoittamista. Tällöin varmistat, että koodiasi on helppo testata ja se toimii odotetulla tavalla.
-
-Voit myös integroida testit osaksi jatkuvaa integraatiota ja kehitystä (CI/CD), jotta testien ajaminen tapahtuu automaattisesti jokaisen koodimuutoksen yhteydessä. Tämä nopeuttaa koodin kehitysprosessia ja varmistaa, että muutokset eivät riko toimivaa koodia.
-
-## Katso myös
-
-- Jestin viralliset dokumentaatiot: https://jestjs.io/
-- TypeScript-testauksen perusteet: https://www.typescriptlang.org/docs/handbook/testing.html
-- Hyviä käytäntöjä testien kirjoittamisessa: https://enterprisecraftsmanship.com/posts/good-practices-for-writing-e2e-tests/
+## Katso Myös
+- [Jest](https://jestjs.io/)
+- [Mocha](https://mochajs.org/)
+- [Jasmine](https://jasmine.github.io/)

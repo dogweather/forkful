@@ -1,53 +1,56 @@
 ---
 title:                "PHP: Comparando dos fechas"
+simple_title:         "Comparando dos fechas"
 programming_language: "PHP"
-category:             "Dates and Times"
+category:             "PHP"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+## ¿Por qué comparar dos fechas en programación?
 
-Comparar fechas es una tarea común en la programación para manejar y ordenar datos de manera efectiva. Saber cómo comparar dos fechas te ahorrará tiempo y estrés, y te ayudará a crear código más robusto y preciso.
+Comparar dos fechas puede ser una tarea común en programación. Esto se debe a que a menudo es necesario verificar si una fecha es anterior o posterior a otra, o si ambas son iguales. En este artículo, aprenderemos cómo hacerlo en PHP.
 
 ## Cómo hacerlo
 
-Para comparar dos fechas en PHP, primero debes asegurarte de que ambas estén en el mismo formato, ya sea un string o un timestamp. Luego, puedes utilizar la función `strtotime()` para convertir las fechas a timestamp y así poder realizar la comparación.
+Para comparar dos fechas en PHP, podemos utilizar la función "strtotime()" para convertir una fecha en un formato de tiempo para su fácil manipulación. A continuación, podemos utilizar la función "date()" para formatear la fecha de acuerdo a nuestras necesidades.
 
-A continuación, se muestra un ejemplo de cómo comparar dos fechas en formato de string:
+Veamos un ejemplo de cómo comparar dos fechas en PHP:
 
 ```PHP
-// Definir las dos fechas a comparar
-$fecha1 = "30-06-2021";
-$fecha2 = "15-07-2021";
+$fecha1 = '2020-05-25';
+$fecha2 = '2020-06-01';
 
-// Convertir las fechas a timestamp
+// convertir fechas a formato de tiempo
 $timestamp1 = strtotime($fecha1);
 $timestamp2 = strtotime($fecha2);
 
-// Comparar las fechas
-if ($timestamp1 > $timestamp2) {
-    echo "$fecha1 es mayor que $fecha2";
-} elseif ($timestamp1 < $timestamp2) {
-    echo "$fecha2 es mayor que $fecha1";
+// formatear fechas para comparar
+$formatted1 = date('Y-m-d', $timestamp1);
+$formatted2 = date('Y-m-d', $timestamp2);
+
+// comparar fechas
+if($formatted1 > $formatted2) {
+    echo "La fecha 1 es posterior a la fecha 2";
+} elseif($formatted1 < $formatted2) {
+    echo "La fecha 1 es anterior a la fecha 2";
 } else {
     echo "Ambas fechas son iguales";
 }
+
+// output: La fecha 1 es anterior a la fecha 2
 ```
 
-El código anterior imprimirá "15-07-2021 es mayor que 30-06-2021". Ten en cuenta que el operador de comparación utilizado es el símbolo `>`, sin embargo, también se pueden utilizar otros operadores como `>=`, `<=` o `==`, según sea necesario.
+En este ejemplo, hemos utilizado la función "strtotime()" para convertir las fechas en formato de tiempo y luego la función "date()" para formatearlas como fechas nuevamente. Finalmente, comparamos las fechas utilizando operadores como ">", "<" y "==".
 
-## Profundizando
+## Inmersión profunda
 
-Existen muchas formas de comparar dos fechas en PHP, pero una de las más utilizadas es utilizando la función `date_diff()`, que devuelve la diferencia entre dos fechas en un objeto DateInterval. Esta función es útil cuando se desea obtener detalles más específicos, como la cantidad de días, meses o años entre dos fechas.
-
-Otra función útil para comparar fechas es `checkdate()`, que verifica si una fecha es válida o no. Esto puede ser útil cuando se trabaja con datos ingresados por el usuario, ya que permite evitar errores en la comparación de fechas inválidas.
-
-¡Explora otras funciones y métodos de comparación de fechas en PHP y encuentra el que mejor se adapte a tus necesidades!
+Una cosa importante a tener en cuenta al comparar fechas en PHP es asegurarse de que ambas fechas estén en el mismo formato. De lo contrario, puede llevar a resultados inesperados. Además, al utilizar la función "strtotime()", puede ocurrir un comportamiento impredecible al pasar una fecha en formato dd/mm/aaaa debido a diferencias regionales. Es importante asegurarse de que el formato de fecha utilizado sea compatible en diferentes entornos.
 
 ## Ver también
 
-- [Documentación oficial de PHP sobre la función date_diff()](https://www.php.net/manual/es/function.date-diff.php)
-- [Documentación oficial de PHP sobre la función checkdate()](https://www.php.net/manual/es/function.checkdate.php)
-- [Tutorial de W3Schools sobre cómo comparar fechas en PHP](https://www.w3schools.com/php/phptryit.asp?filename=tryphp_func_strtotime)
+- [Documentación de strtotime() en PHP](https://www.php.net/manual/es/function.strtotime.php)
+- [Documentación de date() en PHP](https://www.php.net/manual/es/function.date.php)
+- [Tutorial de PHP datetime](https://www.w3schools.com/php/php_date.asp)

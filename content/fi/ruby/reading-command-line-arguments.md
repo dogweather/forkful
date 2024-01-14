@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Komentoriviparametrien lukeminen"
+simple_title:         "Komentoriviparametrien lukeminen"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/reading-command-line-arguments.md"
 ---
 
@@ -9,47 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Tervetuloa lukemaan tätä Ruby-ohjelmointiblogia, jossa käsitellään miten lukea komentoriviparametreja ja miksi se on tärkeää. ...
+Miksi lukisi komentokehoteen argumentit Ruby-ohjelmoinnin yhteydessä? Komentokehotteen argumentit ovat käytännöllisiä ja tehokkaita tapoja antaa ohjelmalle tietoa suorituksen aikana.
 
-## Miten tehdä
+## Miten
 
-Jotta voit lukea komentoriviparametreja Ruby-ohjelmassa, sinun tulee hyödyntää ``ARGV`` -muuttujaa. Tämä muuttuja sisältää tiedot kaikista komentoriviparametreista, jotka on syötetty ohjelman suorittamisen yhteydessä. Käytännön esimerkki näyttää, miten voit käyttää tätä muuttujaa:
-
-```Ruby
-# Luo ohjelma, joka tulostaa komentoriviparametrit
-puts ARGV
-```
-
-Jos ajamme tämän ohjelman käyttäen seuraavaa komentoa:
-
-```
-ruby ohjelma.rb foo bar
-```
-
-Tulostus olisi:
-
-```
-["foo", "bar"]
-```
-
-Kuten näet, ARGV-muuttujaan tallennetaan parametrien tiedot taulukkona. Voit myös käyttää ``ARGV`` -muuttujan ``index`` -metodia tarkastellaksesi tiettyjä parametreja tarkemmin. Esimerkiksi:
+Kommentokehotteessa käyttämistäsi argumenteista voit antaa ohjelmalle tietoa suorituksen aikana käyttämällä Rubyn ARGV-muuttujaa. Se sisältää taulukon kaikista annetuista argumenteista. Alla on esimerkki kodista ja tulosteesta:
 
 ```Ruby
-# Tulostaa toisen komentoriviparametrin
-puts ARGV[1]
+# Koodiesimerkki
+ARGV.each do |argument|
+  puts "Antamasi argumentti oli: #{argument}"
+end
+
+# Komentokehotteen syöttö
+ruby ohjelma.rb ensimmäinen toinen kolmas
+
+# Tuloste
+Antamasi argumentti oli: ensimmäinen
+Antamasi argumentti oli: toinen
+Antamasi argumentti oli: kolmas
 ```
 
-Tässä tapauksessa tulostus olisi:
+## Syväsukellus
 
-```
-bar
-```
-
-## Syvällisempi tarkastelu
-
-Komentoriviparametrien lukeminen on erittäin tärkeä ja hyödyllinen taito Ruby-ohjelmoinnissa. Niiden avulla voit tehdä ohjelmastasi monipuolisemman ja antaa käyttäjille mahdollisuuden välittää tietoja ohjelmalle parametreina. Voit myös suorittaa erilaisia toimintoja riippuen siitä, mitä komentoriviparametreja on annettu. On myös hyödyllistä koodata ohjelma siten, että se hyväksyy erilaisia parametreja ja antaa virheilmoituksen, jos parametreja ei annettu oikeassa muodossa.
+Komentokehotteen argumenttien lukeminen voi tuntua yksinkertaiselta, mutta se voi todella parantaa ohjelmasi toimivuutta ja joustavuutta. Voit myös käyttää ARGV-muuttujaa ohjelmasi sisään lataamien tiedostojen lukemiseen ja muihin monipuolisiin tarkoituksiin.
 
 ## Katso myös
 
-- [Ruby Doc: ARGV](https://ruby-doc.org/core-2.6.3/ARGV.html)
-- [RubyLearning: Reading Command-line Arguments](http://rubylearning.com/blog/2011/01/03/reading-command-line-arguments/)
+- [Ruby ARGV-dokumentaatio](https://ruby-doc.org/core-2.7.1/ARGF.html)
+- [Ohjeita Ruby-ohjelmoinnin aloittamiseen](https://www.codecademy.com/learn/learn-ruby) 
+- [Ruby syntaksin perusteet](https://www.rubyguides.com/2018/03/ruby-syntax-cheat-sheet/)

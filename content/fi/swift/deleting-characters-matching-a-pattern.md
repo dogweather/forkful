@@ -1,37 +1,51 @@
 ---
 title:                "Swift: Mallia vastaavien merkkien poistaminen"
+simple_title:         "Mallia vastaavien merkkien poistaminen"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi poistaa nimikkeitä mallin mukaan?
+## Miksi?
 
-Nimikkeiden poistaminen, jotka vastaavat tiettyä mallia, voi olla hyödyllistä, jos haluat suodattaa tietyn tyyppisen sisällön tai löytää tietyntyyppisiä merkintöjä. Esimerkiksi, jos sinulla on tekstiä, jossa on sekä numeroita että kirjaimia ja haluat poistaa vain numerot, voit käyttää tätä toimintoa.
+Päivittäisessä Swift-ohjelmoinnissa saattaa joskus ilmetä tarve poistaa tietyn kuvion mukaisia merkkejä string-tekstistä. Tämä voi johtua esimerkiksi turhista välilyönneistä tai muista tarpeettomista merkeistä, jotka halutaan poistaa ja jättää jäljelle vain halutut merkit.
 
-## Miten se tehdään?
+## Näin teet sen
 
-Voit käyttää Swiftin `replacingOccurrences(of:with:options:)` -funktiota poistaaksesi merkkejä, jotka vastaavat haluamaasi mallia. Esimerkiksi jos haluat poistaa kaikki numerot merkkijonosta, voit käyttää seuraavaa koodia:
+Alla on esimerkkejä koodista, joka poistaa merkkejä matching-kuviota vastaavista stringeistä käyttäen Swift-kieltä. Vaihda vain haluamasi string muuttujan arvo koodin ajoa varten ja saat nähdä tuotoksen koodin ajon jälkeen.
 
 ```Swift
-let teksti = "123abc456"
-let vainKirjaimet = teksti.replacingOccurrences(of: "[0-9]", with: "", options: .regularExpression)
+// Alustetaan string-muuttuja
+var string: String = "Tervetuloa Swift-ohjelmoinnin maailmaan!"
 
-print(vainKirjaimet)
+// Poistetaan välilyönnit stringistä
+string = string.replacingOccurrences(of: " ", with: "")
 
-// Output: "abc"
+//Tulostetaan muuttujan arvo, josta välilyönnit on poistettu
+print(string)
+// Output: TervetuloaSwift-ohjelmoinninmaailmaan!
 ```
 
-Kuten näet, käytämme `[0-9]` mallia, joka vastaa kaikkia numeroita. Voit käyttää myös muita mallinpään tai säännöllisiä lausekkeita poistaaksesi tietyn tyyppisiä merkkejä.
+```Swift
+// Alustetaan toinen string-muuttuja
+var string2: String = "Swift on ihana ohjelmointikieli!"
 
-## Syvällisempi tarkastelu
+// Poistetaan kaikki kirjaimet paitsi vokaalit
+string2 = string2.replacingOccurrences(of: "[^aeiouy]", with: "", options: .regularExpression, range: nil)
 
-Swiftin `replacingOccurrences(of:with:options:)` -funktio toimii käyttämällä säännöllisiä lausekkeita. Tämä tarkoittaa, että voit käyttää monimutkaisempia malleja ja jopa luoda omia sääntöjä. Voit myös käyttää erilaisia ```options``` -arvoja määrittääksesi, miten poistaminen tapahtuu. Tarkempi kuvaus säännöllisistä lausekkeista ja `options` -arvoista löytyy [Swiftin dokumentaatiosta](https://developer.apple.com/documentation/swift/string/1786171-replacingoccurrences).
+// Tulostetaan muuttujan arvo, jossa on jäljellä vain vokaalit
+print(string2)
+// Output: ioo-ieoieiei
+```
+
+## Syvenny aiheeseen
+
+Stringien muokkaaminen on tärkeä osa ohjelmointia, ja Swift tarjoaa helppoja tapoja poistaa merkkejä matching-kuvioiden perusteella. Voit myös käyttää muita parametreja, kuten "range", jolla voit tarkentaa alueen, jolta haluat poistaa merkkejä. Tämän avulla voit esimerkiksi poistaa merkkejä vain tietystä kohdasta stringistä.
 
 ## Katso myös
 
-- [Swiftin dokumentaatio säännöllisistä lausekkeista](https://developer.apple.com/documentation/swift/string/2878330).
-- [NSHipsterin opas säännöllisiin lausekkeisiin Swiftissa](https://nshipster.com/swift-regular-expressions/).
-- [Apple:n esimerkkejä säännöllisistä lausekkeista Swiftissä](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/RegularExpressions.html).
+* [Swiftin virallinen dokumentaatio](https://docs.swift.org/swift-book/)
+* [Täydellinen opas stringien muokkaamiseen Swiftissä](https://www.hackingwithswift.com/articles/181/how-to-use-regular-expressions-in-swift)

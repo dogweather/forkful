@@ -1,52 +1,40 @@
 ---
 title:                "Elm: Uniendo cadenas"
+simple_title:         "Uniendo cadenas"
 programming_language: "Elm"
-category:             "Strings"
+category:             "Elm"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/elm/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-#¿Por qué deberías concatenar strings en Elm?
+¡Hola, programadores de Elm! Hoy hablaremos sobre cómo concatenar cadenas de texto en Elm y por qué es una habilidad importante para tener.
 
-La concatenación de strings es una técnica esencial en cualquier lenguaje de programación para unir cadenas de texto y formar una sola cadena más larga. En Elm, puede resultar útil a la hora de crear mensajes de texto dinámicos en una interfaz de usuario o formar URLs personalizadas para llamar a una API externa, entre otros casos de uso.
+## ¿Por qué?
 
-## ¿Cómo hacerlo en Elm?
+Concatenar cadenas de texto es una práctica común en la programación, especialmente cuando se trabaja con datos dinámicos. En lugar de tener una cadena de texto estática, la concatenación nos permite unir varias cadenas para crear una más larga y compleja. Esto puede ser útil en situaciones como mostrar mensajes personalizados en una aplicación, crear URLs dinámicas o construir código HTML.
 
-Para concatenar strings en Elm, utilizamos el operador `++`, que simplemente une dos cadenas de texto. Veamos algunos ejemplos prácticos:
+## Cómo hacerlo
 
-```
--- Ejemplo 1: Concatenando dos strings
-"¡Hola " ++ "amigo!"  --> "¡Hola amigo!"
+Para concatenar cadenas de texto en Elm, utilizamos el operador `++`. Veamos un ejemplo simple de cómo se ve esto:
 
--- Ejemplo 2: Uniendo más de dos strings
-"Bienvenido " ++ "a " ++ "mi " ++ "blog"  --> "Bienvenido a mi blog"
-
--- Ejemplo 3: Usando variables y concatenación para formar una URL personalizada
-let
-  name = "Juan"
-  age = 30
-  url = "https://miapi.com/users/" ++ name ++ "?age=" ++ String.fromInt age
-in
-  url  --> "https://miapi.com/users/Juan?age=30"
+```Elm
+saludo = "¡Hola "
+nombre = "Pedro"
+mensaje = saludo ++ nombre ++ "!"
 ```
 
-## Profundizando en la concatenación de strings
+En este caso, `mensaje` será igual a "¡Hola Pedro!", ya que hemos unido las cadenas de texto con el operador `++`. Notarás que hemos incluido un espacio después de "Hola" para que el resultado final no quede pegado. Si no lo hiciéramos, obtendríamos "¡HolaPedro!".
 
-En Elm, cada cadena de texto es en realidad un valor de tipo `String`, que es un listado de caracteres de texto. Al utilizar el operador `++`, lo que estamos haciendo es unir dos listas de caracteres para crear una sola lista más larga. Esto significa que también podemos concatenar listas de caracteres en lugar de strings individuales.
+## Profundizando
 
-Además, es importante mencionar que el operador `++` es asociativo a la derecha, lo que significa que en una concatenación de tres o más strings, se unirán primero los últimos dos y luego el resultado con el siguiente. Por ejemplo:
+Mientras que el uso básico del operador `++` es bastante simple, hay algunas cosas interesantes a tener en cuenta. Por ejemplo, si una de las cadenas es una lista de caracteres (`List Char`), no podremos unirla directamente con otra cadena de texto. En su lugar, debemos usar la función `List.map` para convertirla en una lista de cadenas. Esto puede ser confuso al principio, pero es una buena oportunidad para aprender sobre tipos en Elm.
 
-```
-"¡Hola " ++ "amigo" ++ "!"  --> "¡Hola amigo!"
-
-equivale a:
-
-"¡Hola " ++ ("amigo" ++ "!")  --> "¡Hola amigo!"
-```
+Además, es importante tener en cuenta que la concatenación consume memoria. Con cadenas de texto pequeñas no es un problema, pero si estamos manejando grandes cantidades de datos, es posible que necesitemos encontrar una solución más eficiente.
 
 ## Ver también
 
-- [Documentación oficial sobre concatenación de strings en Elm](https://package.elm-lang.org/packages/elm/core/latest/String#++)
-- [Tutorial sobre manipulación de strings en Elm](https://dev.to/sgrvl/tutorial-string-manipulation-in-elm-44jn)
-- [Ejemplos de uso de concatenación de strings en Elm](https://github.com/w0rm/elm-string-concat/blob/master/Compare.md)
+- Documentación oficial de Elm sobre la concatenación de cadenas: https://guide.elm-lang.org/appendix/strings.html
+- Ejemplos de cómo utilizar el operador `++` en la vida real: https://legacy.gitbook.com/book/elm-tutorial/string-concatenation-in-action/details
+- Artículo sobre cómo optimizar el rendimiento al concatenar cadenas: https://dev.to/benshope/elm-string-concatenation-performance-tips-33fl

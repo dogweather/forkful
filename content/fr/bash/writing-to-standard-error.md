@@ -1,51 +1,44 @@
 ---
 title:                "Bash: Écriture vers l'erreur standard"
+simple_title:         "Écriture vers l'erreur standard"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/bash/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi écrire sur l'erreur standard en Bash
+## Pourquoi
 
-Si vous êtes programmeur en Bash, vous avez probablement déjà entendu parler de l'erreur standard ou "standard error". Mais pourquoi est-il important d'écrire sur l'erreur standard ? En bref, cela permet de mieux gérer les erreurs et les messages d'erreur lors de l'exécution d'un script. Sans écrire correctement sur l'erreur standard, il peut être difficile de savoir où se produit une erreur et comment la résoudre.
+Il y a de nombreuses raisons pour lesquelles on pourrait vouloir écrire vers la sortie d'erreur standard (stderr) en Bash. Cela peut être utile lors du débogage d'un script ou lors de la gestion des erreurs dans un programme. Quelle que soit la raison, il peut être utile de connaître les bases de cette fonctionnalité pour un programmeur Bash.
 
-# Comment écrire sur l'erreur standard en Bash
+## Comment Faire
 
-La syntaxe pour écrire sur l'erreur standard est assez simple. Tout ce dont vous avez besoin est la commande "echo" suivie du message d'erreur entre guillemets. Par exemple, si vous voulez afficher le message "Erreur : fichier introuvable", vous utiliserez la commande suivante :
-
-```Bash
-echo "Erreur : fichier introuvable"
-```
-
-Le résultat sera affiché dans le terminal de la manière suivante :
-
-```
-Erreur : fichier introuvable
-```
-
-Il est également possible d'afficher des messages d'erreur plus détaillés en utilisant les variables spéciales "stderr" et ">&2". Ces variables envoient le message directement à l'erreur standard plutôt qu'à la sortie standard.
+Pour écrire vers stderr en Bash, il suffit simplement d'utiliser la commande `>&2` suivie du contenu que vous souhaitez écrire. Voici un exemple:
 
 ```Bash
-echo "Une erreur s'est produite" 1>&2
-echo "Code d'erreur : 404" >&2
+echo "Ceci est un exemple d'erreur" >&2
 ```
 
-Le résultat sera ainsi affiché :
+Cela écrira "Ceci est un exemple d'erreur" vers stderr plutôt que vers la sortie standard (stdout). Vous pouvez également rediriger la sortie standard vers stderr en utilisant le symbole `1>&2`. Voici un autre exemple:
 
+```Bash
+ls fichier_inexistant.txt 1>&2
 ```
-Une erreur s'est produite
-Code d'erreur : 404
-```
 
-# Plongée profonde dans l'écriture sur l'erreur standard
+Cela écrira un message d'erreur lorsqu'il essayera de lister un fichier inexistant.
 
-L'erreur standard est en fait un flux de données qui permet d'afficher des messages d'erreur ou de débogage dans le terminal. Cela permet de séparer les messages d'erreur des messages de sortie standard, qui sont généralement affichés à l'utilisateur.
+## Plongée Profonde
 
-En utilisant la syntaxe ">&2", vous pouvez rediriger les messages d'erreur vers l'erreur standard et ainsi les afficher en temps réel. Cela est particulièrement utile lorsque vous exécutez un script et que vous voulez voir les messages d'erreur en même temps que les messages de sortie standard.
+Il est important de noter que stderr est une sortie différente de stdout et qu'ils peuvent être gérés séparément. Par exemple, si vous utilisez le symbole `|` pour rediriger la sortie d'un programme vers un autre, stderr ne sera pas redirigé. Il est également possible de rediriger stderr vers un fichier en utilisant le symbole `2>`.
 
-# Voir aussi
-- [Guide de référence Bash](https://www.gnu.org/software/bash/manual/)
-- [Comment utiliser les variables spéciales en Bash](https://www.linuxjournal.com/content/return-values-bash-scripts)
-- [Comprendre l'écriture sur l'erreur standard en Bash](https://www.baeldung.com/linux/bash-redirect-error-output)
+Il est également possible de combiner stderr et stdout en utilisant `2>&1` pour rediriger les deux vers la même sortie. Cela peut être utile dans certaines situations, mais il est important de comprendre que les messages d'erreur seront alors mélangés avec la sortie standard.
+
+## Voir Aussi
+
+Pour en savoir plus sur l'écriture vers stderr en Bash, consultez ces liens utiles:
+
+- Tutoriel Bash de la Documentation officielle: https://linuxconfig.org/bash-scripting-tutorial
+- Documentation Bash sur les redirections: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Redirections
+- Utiliser une sortie d'erreur pour le débogage: https://www.cyberciti.biz/tips/debugging-shell-script.html

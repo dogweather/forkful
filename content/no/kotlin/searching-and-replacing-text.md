@@ -1,73 +1,54 @@
 ---
-title:                "Kotlin: Søke- og erstatningsfunksjoner for tekstbehandling"
+title:                "Kotlin: Søking og utskifting av tekst"
+simple_title:         "Søking og utskifting av tekst"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/kotlin/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Mange programmerere står ofte overfor en vanlig oppgave: Å søke og erstatte tekst i en kodebase. Dette kan være tidkrevende og kjedelig å gjøre manuelt, spesielt når man jobber med store og komplekse prosjekter. Derfor har Kotlin et praktisk og effektivt verktøy for å søke og erstatte tekst, som kan spare deg for masse tid og frustrasjon. Les videre for å lære hvordan du kan gjøre dette på en enkel måte.
+Det å søke og erstatte tekst er en viktig del av programmering, spesielt når det gjelder å automatisere prosesser og effektivisere arbeidsflyten. Enten du er en erfaren utvikler eller nybegynner, er det å mestre søk- og erstattingsfunksjonene i Kotlin en viktig ferdighet å ha.
 
-## Slik gjør du det
+# Hvordan gjøre det
 
-Å søke og erstatte tekst i Kotlin er enkelt og kan gjøres ved å bruke funksjonen `replace()` på en String. La oss si at du har en string som ser slik ut:
+For å søke og erstatte tekst i Kotlin, kan du bruke funksjonen `replace()` som finnes i `kotlin.String` klassen. For å erstatte all tekst som matcher et bestemt mønster med en annen tekst, bruker du følgende syntaks:
 
 ```Kotlin
-val navn = "Ole"
+val nyTekst = originalTekst.replace("mønster", "erstattendetekst")
 ```
 
-Hvis du vil erstatte "Ole" med "Anne", kan du gjøre følgende:
+La oss si at vi har en liste med navn, og vi ønsker å bytte ut alle navn som begynner med bokstaven "A" med navnet "Andrea". Her er et eksempel på hvordan vi kan gjøre dette i Kotlin:
 
 ```Kotlin
-val nyttNavn = navn.replace("Ole", "Anne")
-println(nyttNavn)
+val navnListe = listOf("Amanda", "Martin", "Julie", "Anna", "Matias")
+
+for (navn in navnListe) {
+    val nyttNavn = navn.replace("^A.*".toRegex(), "Andrea")
+    println(nyttNavn)
+}
 ```
 
 Dette vil gi følgende output:
-
 ```
-Anne
-```
-
-Som du ser, erstattet funksjonen `replace()` tekststrengen "Ole" med "Anne". Du kan også bruke denne funksjonen til å søke og erstatte en del av teksten, for eksempel bare de første to bokstavene:
-
-```Kotlin
-val nyttNavn = navn.replaceFirst("Ol", "An")
-println(nyttNavn)
+Andrea
+Martin
+Julie
+Anna
+Matias
 ```
 
-Output:
+# Dypdykk
 
-```
-Anne
-```
+I tillegg til å erstatte tekst basert på et mønster, kan du også bruke mer avanserte funksjoner som `replaceAll()` og `replaceAfter()` for å gjøre mer spesifikke endringer i teksten. Du kan også bruke `replaceFirst()` for å bare erstatte den første forekomsten av et mønster.
 
-Hvis du ønsker å ignorere store og små bokstaver, kan du bruke `replace()` i kombinasjon med en regulær uttrykk i stedet:
+Det er også viktig å merke seg at `replace()`-funksjonen returnerer en ny `String` og påvirker ikke den opprinnelige `String`-variabelen. Derfor er det viktig å tilordne resultatet av `replace()` til en ny variabel eller direkte bruke den i en printsetning som vist i eksempelet ovenfor.
 
-```Kotlin
-val nyttNavn = navn.replace(Regex("ol"), "An")
-println(nyttNavn)
-```
+# Se også
 
-Output:
-
-```
-Anne
-```
-
-Disse er bare noen få eksempler, men funksjonen `replace()` har mange muligheter og kan tilpasses etter behov.
-
-## Dypdykk
-
-Funksjonen `replace()` er veldig nyttig, men hvis du ønsker å gjøre mer avanserte søk og erstatninger, kan du også bruke funksjonen `replaceEach()`. Denne funksjonen tar imot et array av tekststrenger som du vil søke etter, og et array av tekststrenger som du vil erstatte de med. Du kan også bruke dette til å søke etter regulære uttrykk og erstatte dem med noe annet.
-
-En annen nyttig funksjon er `replaceBefore()` og `replaceAfter()`, som lar deg spesifisere en tekststreng som skal erstattes før eller etter gitt tekst eller et regluært uttrykk. Dette kan også tilpasses etter dine behov og kan gjøre søk og erstatning enda mer effektivt.
-
-## Se også
-
-- [Dokumentasjon for Kotlin String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
-- [Kotlin regex referanse](https://kotlinlang.org/docs/reference/regular-expressions.html)
-- [Eksempler på søk og erstatning i Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/replace.html)
+- [Kotlin String documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+- [Kotlin Regex documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/java.util.regex.-pattern/index.html)
+- [Regular Expressions in Kotlin](https://www.baeldung.com/kotlin-regular-expressions)

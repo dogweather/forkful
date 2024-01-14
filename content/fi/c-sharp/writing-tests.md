@@ -1,7 +1,9 @@
 ---
-title:                "C#: Testien kirjoittaminen"
+title:                "C#: Testien laatiminen"
+simple_title:         "Testien laatiminen"
 programming_language: "C#"
-category:             "Testing and Debugging"
+category:             "C#"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/writing-tests.md"
 ---
 
@@ -9,34 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Ohjelmointi on taito, jota voidaan jatkuvasti parantaa ja kehittää. Yksi tapa parantaa omaa kykyämme on kirjoittaa testejä. Testien kirjoittaminen auttaa varmistamaan, että koodimme toimii oikein ja vähentää mahdollisia bugien määrää. Se myös auttaa meitä ymmärtämään paremmin omaa koodiamme ja miten se toimii.
+Testaaminen on tärkeä osa ohjelmointia, sillä se auttaa varmistamaan koodin toimivuuden ja vähentämään mahdollisia virheitä. Testien avulla voit myös helposti havaita ja korjata bugeja ennen kuin ne aiheuttavat suurempia ongelmia.
 
-## Miten
+## Kuinka
 
-Testaamisen avulla voimme varmistaa, että koodimme toimii oikein erilaisilla syötteillä ja eri tilanteissa. C# -kielellä testien kirjoittaminen on hyvin helppoa käyttämällä valmiita testikirjastoja, kuten NUnit tai xUnit. Alla on esimerkkikoodi, jossa testataan yksinkertaista metodia, joka laskee kahden numeron summan.
+Testien kirjoittaminen C#:lla on helppoa ja ne voidaan lisätä helposti osaksi ohjelmakoodia. Alla on esimerkki yksinkertaisesta testitapauksesta, jossa testataan laskuoperaatioiden toimivuutta.
 
 ```C#
-[Test]
-public void SumTest()
+// luodaan testiluokka
+public class LaskinTests
 {
-    // Alustetaan testattava metodi
-    Calculator calculator = new Calculator();
+    // testifunktio, jossa suoritetaan laskinoperaatio ja verrataan tulosta odotettuun arvoon
+    [Fact]
+    public void TestaaSumma()
+    {
+        // asetetaan testattava luku
+        int luku1 = 5;
 
-    // Testataan metodia annetulla syötteellä ja odotetulla tuloksella
-    Assert.AreEqual(calculator.Sum(2, 3), 5);
+        // asetetaan odotettu tulos
+        int odotettuTulos = 10;
+
+        // suoritetaan laskutoimitus
+        int tulos = Laskin.Summa(luku1, luku2);
+
+        // verrataan tulosta odotettuun arvoon
+        Assert.Equal(odotettuTulos, tulos);
+    }
 }
 ```
 
-Mikäli testit eivät mene läpi, saatamme huomata, että metodi ei toimi odotetulla tavalla. Voimme korjata koodia ja ajaa testit uudelleen, kunnes kaikki testit menevät läpi.
+Testien kirjoittamisessa hyödynnetään yleensä testing framework -kirjastoa, kuten esimerkiksi xUnit tai NUnit. Näiden avulla voit helposti suorittaa testit ja saada selkeän raportin niiden toimivuudesta.
 
-## Syväsukellus
+## Syventävä sukellus
 
-Testien kirjoittaminen auttaa myös tekemään koodin parannuksia ja uusien ominaisuuksien lisäämistä helpommaksi ja turvallisemmaksi. Kun meillä on kattava testikokoelma, voimme olla varmoja siitä, että koodimme toimii joka kerta, kun teemme muutoksia.
+Testien kirjoittamisella on monia etuja, kuten koodin laadun parantaminen, virheiden havaitseminen ja ennaltaehkäisy sekä ohjelmiston luotettavuuden lisääminen. On tärkeää muistaa, että testien tulee olla kattavia ja peittää mahdollisimman monta erilaista skenaariota, jotta ne ovat mahdollisimman hyödyllisiä.
 
-Lisäksi testit voivat auttaa dokumentoimaan koodia. Kun kirjoitamme testejä, kirjoitamme käytännössä myös spesifikaation siitä, miten koodin tulisi toimia. Tämä tekee koodin ymmärtämisestä helpompaa ja nopeampaa myös muille tiimin jäsenille.
+Toinen tärkeä huomioitava asia on testien jatkuvuus. Testien tulisi aina pysyä ajantasalla koodin muutosten kanssa, jotta ne ovat aina relevantteja ja luotettavia.
 
 ## Katso myös
 
-- [NUnit](https://nunit.org/)
 - [xUnit](https://xunit.net/)
-- [Test Driven Development (TDD)](https://fi.wikipedia.org/wiki/Test_Driven_Development)
+- [NUnit](https://nunit.org/)
+- [Testausstrategiat ohjelmoinnissa](https://medium.com/@donireyes/testausstrategiat-ohjelmoinnissa-65018dd5a807)

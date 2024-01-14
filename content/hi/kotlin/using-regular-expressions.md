@@ -1,36 +1,34 @@
 ---
-title:                "Kotlin: नियमित अभिव्यक्तियों का प्रयोग करना"
+title:                "Kotlin: आमतौर प्रयोग करना"
+simple_title:         "आमतौर प्रयोग करना"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/kotlin/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
-
-यदि आप नियमित अभिव्यक्तियों का उपयोग करते हैं तो आपको अपने कोड को संकटमुक्त और साफ बनाने में मदद मिल सकती है। 
+# हम क्यों इस्तेमाल करे जनरल एक्सप्रेशन्स?
+जनरल एक्सप्रेशन्स के उपयोग से हम टेक्स्ट स्ट्रिंग में सरलता से कुछ टेक्स्ट ढूंढ़ सकते हैं, जो हमारे लिए जरूरी हो सकता है। यह टेक्स्ट स्ट्रिंग में एक या अधिक शब्दों, पैटर्न या डिजिटस की खोज करने में हमें मदद कर सकता है।
 
 ## कैसे करें
+जनरल एक्सप्रेशन्स का उपयोग करना बहुत सरल है। सबसे पहले, हम `Regex` ऑब्जेक्ट बनाते हैं और उसमें हमारे कॉम्पाइल्ड पैटर्न डालते हैं। फिर हम इसे `find()` या `matchEntire()` के साथ `String` पर कॉल करते हैं। नीचे दिए गए उदाहरण में, हमने दो शब्दों के बीच कुछ टेक्स्ट स्ट्रिंग से शुरू होने वाले शब्दों की खोज की है।
 
-```
-Kotlin
-val regex = Regex("^[A-Za-z0-9+_.-]+@(.+)\$")
-
-fun validateEmail(email: String): Boolean {
-    return regex.matches(email)
-}
-
-validateEmail("example@email.com") // true
-validateEmail("_invalid@address.com") // false
+```Kotlin
+val pattern = Regex("hello")
+val text = "hey there, hello world!"
+val result = pattern.find(text)
+println(result?.value)
 ```
 
-## गहराई से जानें
+उपरोक्त कोड का आउटपुट `hello` होगा। हमारे द्वारा निर्दिष्ट पैटर्न के अनुसार, यह सबसे पहला `hello` होगा। अगर आप शुरू में ही दोनों शब्दों के बीच कोई और शब्द खोजना चाहते हैं, तो आप `matchEntire()` का उपयोग कर सकते हैं जो स्ट्रिंग की पूरी मिलान करेगा।
 
-नियमित अभिव्यक्तियों का उपयोग करना जांचने से पहले, आपको परिभाषा करनी होगी जो आपकी जरूरतों को समायोजित करने में मदद करती है। आप भिन्न तरीकों से अभिव्यक्तियों का उपयोग कर सकते हैं, जैसे कि वार्जिंग, अवस्था और समूह। आप इन अभिव्यक्तियों को जोड़कर भी उन्हें और अधिक शक्तिशाली और उपयोगी बना सकते हैं। इस लेख में हम उन अभिव्यक्तियों का समीक्षण करेंगे जो Kotlin में उपलब्ध हैं। 
+```Kotlin
+val pattern = Regex("^hello ")
+val text = "hello world, hey there, hello universe!"
+val result = pattern.matchEntire(text)
+println(result?.value)
+```
 
-## देखें भी
-
-- [Kotlin अभिव्यक्तियां क्या हैं](https://kotlinlang.org/docs/reference/keywords.html)
-- [Kotlin दस्तावेजीकरण - नियमित अभिव्यक्तियां](https://kotlinlang.org/docs/reference/regular-expressions.html)
-- [Kotlin नियमित अभिव्यक्तियों को उपयोग करना](https://www.programiz.com/kotlin-programming/regular-expression)
+उपरोक्त कोड का आउटपुट `hello world` होगा। हमने उस स्ट्रिंग को खोजा है जो `hello` से शुरू होता है और अपने बाद कुछ भी आ सकता है। इस उदाहरण में, हमारे बनाये गए कॉम्पाइल्ड प

@@ -1,79 +1,46 @@
 ---
 title:                "Elm: Generowanie losowych liczb"
+simple_title:         "Generowanie losowych liczb"
 programming_language: "Elm"
-category:             "Numbers"
+category:             "Elm"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elm/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego
+# Dlaczego używać losowych liczb w Elm?
 
-Generowanie liczb losowych jest ważną częścią wielu programów, szczególnie tych związanych z grami, symulacjami czy testowaniem. Przypomnijmy sobie, jak ważne jest, aby każda gra lub plansza były unikalne i różniły się od siebie w celu zapewnienia użytkownikom ciekawych i zróżnicowanych doświadczeń. W tym wpisie opowiemy o sposobach generowania liczb losowych w języku Elm.
+Generowanie losowych liczb jest ważnym aspektem programowania w języku Elm, który pozwala na tworzenie różnorodnych aplikacji i rozwiązań. Umożliwia to wprowadzenie elementu losowości, co może być przydatne w wielu przypadkach, np. w grach czy symulacjach.
 
-## Jak
+# Jak generować losowe liczby w Elm?
 
-### Generowanie liczb losowych w zakresie
-
-Aby wygenerować liczbę losową w określonym zakresie, musimy użyć funkcji `Random.int` wraz z odpowiednimi parametrami. Przykładowo, jeśli chcemy wylosować liczbę z zakresu od 1 do 10, nasz kod będzie wyglądał następująco:
+Możemy wykorzystać wbudowaną funkcję `Random` w bibliotece `Random` do generowania losowych liczb w Elm. Przykładowo, możemy użyć funkcji `generate` wraz z określoną wartością `Int` dla minimalnej i maksymalnej wartości, a następnie wykorzystać wygenerowany wynik w naszym kodzie.
 
 ```Elm
 import Random
 
-Random.int 1 10
+losowaLiczba : Int
+losowaLiczba =
+  Random.generate (\_ -> Random.int 1 10)
 ```
 
-Powyższy przykład zwróci nam wylosowaną liczbę, ale co jeśli chcemy wyświetlić ją użytkownikowi? W tym celu możemy wykorzystać funkcję `Random.Generate`, która pozwoli nam wygenerować wartość i przekazać ją do wybranej funkcji. Przykładowo, aby wyświetlić wylosowaną liczbę na stronie, możemy użyć funkcji `Html.text`:
+W powyższym przykładzie wygenerujemy liczbę całkowitą z przedziału od 1 do 10. Możemy również wykorzystać funkcję `posFloat` do generowania liczb zmiennoprzecinkowych.
 
 ```Elm
-import Html exposing (text)
-import Random
-
-Random.generate GetRandomNumber (Random.int 1 10)
-
-type Msg = GetRandomNumber Int
-
-update msg model =
-    case msg of
-        GetRandomNumber randomNum ->
-            { model | randomNumber = randomNum }
-
-view model =
-    text (toString model.randomNumber)
+Random.generate (\_ -> Random.float 0 1)
 ```
 
-### Generowanie liczb losowych na podstawie listy
+Powyższy kod wygeneruje liczbę zmiennoprzecinkową z przedziału od 0 do 1. Możemy również określić konkretny typ danych, jakiego oczekujemy, np. `bool`, `char` czy `string`.
 
-Czasami potrzebujemy wygenerować wartość losową na podstawie wcześniej zdefiniowanej listy. W takim przypadku możemy użyć funkcji `Random.shuffled` wraz z naszą listą jako parametrem. Przykładowo, mamy listę imion użytkowników i chcemy wylosować z niej jedno imię:
+# Głębsze zagadnienia dotyczące generowania losowych liczb
 
-```Elm
-import Random
-import Html exposing (text)
+Funkcja ` Random` wykorzystuje tzw. generator losowości, który jest ustawiony na podstawie bieżącego stanu aplikacji. Możemy również zdefiniować własny generator, co daje nam większą kontrolę nad generowanymi liczbami. W przypadku generowania liczb zmiennoprzecinkowych, możemy również określić precyzję wyniku za pomocą funkcji `floatFrom`. 
 
-userNames = ["Anna", "Jan", "Kasia", "Piotr", "Maria"]
+Bardziej szczegółowe informacje na temat generowania losowych liczb w Elm można znaleźć w oficjalnej dokumentacji: https://package.elm-lang.org/packages/elm/random/latest/.
 
-Random.shuffled userNames
-    |> Random.generate GetRandomName
+# Zobacz również
 
-type Msg = GetRandomName String
-
-update msg model =
-    case msg of
-        GetRandomName randomName ->
-            { model | randomName = randomName }
-
-view model =
-    text model.randomName
-```
-
-## Deep Dive
-
-Generowanie liczb losowych w Elm odbywa się przy użyciu funkcji `Random`, która implementuje algorytm Mersenne Twister. Jest to bardzo popularny i sprawdzony sposób na generowanie liczb pseudolosowych, który zapewnia wyższą jakość generowanych wartości.
-
-W języku Elm istnieją także inne funkcje pozwalające na bardziej precyzyjną kontrolę nad generowanymi liczbami, takie jak `Random.float` czy `Random.bool`. Odpowiednie wykorzystanie tych funkcji może pomóc w tworzeniu bardziej zaawansowanych programów i gier.
-
-## Zobacz także
-
-- Dokumentacja języka Elm: https://elm-lang.org/docs
-- Przewodnik po generatorze liczb losowych: https://guide.elm-lang.org/effects/random.html
-- Przykładowe implementacje w języku Elm: https://github.com/mweststrate/elm-random-extra
+- DuoCode: "Generating and Working with Random Numbers in Elm": https://duo.com/decipher/generating-and-working-with-random-numbers-in-elm
+- Elm Spacemacs: "Generating Random Numbers in Elm": https://www.spacemacs.org/layers/+lang/elm/README.html#generating-random-numbers-in-elm
+- Elm Weekly: "Random numbers in Elm": https://elm

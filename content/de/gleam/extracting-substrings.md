@@ -1,56 +1,44 @@
 ---
 title:                "Gleam: Unterstrings extrahieren"
+simple_title:         "Unterstrings extrahieren"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Extrahieren von Teilstrings ist eine wichtige Aufgabe in der Programmierung, besonders wenn es um die Manipulation von Texten geht. Es ermöglicht es uns, bestimmte Teile eines Textes zu isolieren und sie für weitere Verarbeitungsschritte zu verwenden. In diesem Blog-Beitrag werden wir uns ansehen, wie man in der funktionalen Programmiersprache Gleam Teilstrings extrahieren kann.
+Das Extrahieren von Teilzeichenfolgen ist eine häufige Aufgabe in der Programmierung. Es kann hilfreich sein, wenn Sie bestimmte Zeichen oder Wörter aus einem längeren Text extrahieren möchten. Mit Gleam können Sie diese Aufgabe schnell und einfach erledigen.
 
-## Wie Geht Das
+# Wie man es macht
 
-Um Teilstrings in Gleam zu extrahieren, können wir die `substring` Funktion verwenden. Diese Funktion erwartet als Argumente den Text, aus dem der Teilstring extrahiert werden soll, sowie die Start- und Endposition des Teilstrings.
-
-```Gleam
-let text = "Gleam ist eine funktionale, typsichere Programmiersprache"
-let substring = substring(text, 16, 27)
-```
-
-In diesem Beispiel extrahieren wir den Teilstring "funktionale" aus dem ursprünglichen Text und speichern ihn in der Variable `substring`. Die Zählung der Positionen beginnt bei 0, daher ist die Startposition 16 und die Endposition 27.
-
-Wenn wir das Programm ausführen und `substring` ausgeben, erhalten wir das gewünschte Ergebnis:
+Um Teilzeichenfolgen mit Gleam zu extrahieren, verwenden Sie die Funktion `String.substring()`. Hier ist ein Beispielcode, der die ersten 5 Zeichen eines Strings extrahiert:
 
 ```Gleam
-io.println(substring)
-// funktionale
+let string = "Hallo, Welt!"
+let substring = String.substring(string, 0, 5) // substring = "Hallo"
 ```
 
-## Ein Tiefer Einblick
-
-Die `substring` Funktion in Gleam ist sehr flexibel und bietet verschiedene Möglichkeiten, Teilstrings zu extrahieren. Wir können beispielsweise auch angeben, ab welcher Position der Teilstring beginnen soll und den Rest des Textes extrahieren:
+Sie können auch die Länge des extrahierten Substrings angeben, wie in diesem Beispiel, der die ersten 10 Zeichen extrahiert:
 
 ```Gleam
-substring(text, 16) // gibt "funktionale, typsichere Programmiersprache" zurück
+let string = "Gleam ist fantastisch!"
+let substring = String.substring(string, 0, 10) // substring = "Gleam ist "
 ```
 
-Außerdem können wir negative Zahlen verwenden, um die Positionen von hinten zu zählen. Wenn wir beispielsweise `-3` als Endposition angeben, extrahiert die Funktion die letzten drei Buchstaben des Textes.
+# Tiefer Einblick
 
-```Gleam
-substring(text, -3) // gibt "age" zurück
-```
+Es ist wichtig zu beachten, dass der Index des ersten Zeichens in Gleam bei 0 beginnt. Dies bedeutet, dass das Zeichen an der Position 0 im Beispiel oben das "H" ist. Wenn Sie beispielsweise die ersten 3 Zeichen von "Hallo" extrahieren möchten, müssten Sie den Index von 0 bis 2 angeben.
 
-Es ist auch möglich, den Begriff "länge" als Endposition anzugeben, um den Teilstring bis zum Ende des Textes zu extrahieren.
+Es gibt auch eine `String.substr() `Funktion in Gleam, die ähnlich wie `String.substring()` funktioniert, außer dass Sie nur den Anfangsindex angeben müssen und der Substring bis zum Ende des Strings extrahiert wird.
 
-```Gleam
-substring(text, 16, "länge") // gibt "funktionale, typsichere Programmiersprache" zurück
-```
+# Siehe auch
 
-## Siehe Auch
+Hier sind einige nützliche Links, um mehr über das Extrahieren von Teilzeichenfolgen in Gleam zu erfahren:
 
-- Dokumentation zur `substring` Funktion in Gleam: https://gleam.run/documentation/stdlib/string#substring
-- Einführung in Gleam: https://gleam.run/getting-started/introduction.html
-- Tutorial zur funktionalen Programmierung: https://www.tutorialspoint.com/functional_programming/index.htm
+- Offizielle Gleam-Dokumentation: https://gleam.run/documentation
+- Gleam-Tutorial zum Arbeiten mit Zeichenfolgen: https://gleam.run/tutorials/strings
+- Gleam-Quellcode auf GitHub: https://github.com/gleam-lang/gleam

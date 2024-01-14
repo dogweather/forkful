@@ -1,7 +1,9 @@
 ---
-title:                "C: Att påbörja ett nytt projekt"
+title:                "C: Att börja ett nytt projekt"
+simple_title:         "Att börja ett nytt projekt"
 programming_language: "C"
-category:             "Getting Started"
+category:             "C"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/starting-a-new-project.md"
 ---
 
@@ -9,43 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-När det kommer till programmering, är det alltid spännande att starta ett nytt projekt. Det kan vara för att lära sig en ny programmeringsspråk, skapa något nytt och innovativt eller helt enkelt för att utmana sig själv. Oavsett anledning så finns det alltid en känsla av nystart och möjligheter när man påbörjar ett nytt projekt.
+Att starta ett nytt projekt kan vara en utmanande och spännande upplevelse. Genom programmering kan du skapa något helt nytt och använda din kreativitet och logiska tänkande för att lösa problem. Det är också ett sätt att utveckla och förbättra dina färdigheter som programmerare.
 
-## Hur man gör
+## Så här gör du
 
-Att starta ett nytt projekt kan verka överväldigande, men det behöver det faktiskt inte vara. För att hjälpa dig igång, kommer vi gå igenom några grundläggande steg du kan följa.
+För att starta ett nytt C-programmeringsprojekt behöver du först ha en textredigerare installerad på din dator, till exempel Visual Studio Code eller Sublime Text. Därefter behöver du ha en C-kompilator, som GCC, installerad för att kunna köra ditt program.
 
-Först och främst måste du välja ett programmeringsspråk som du vill använda. För denna bloggpost kommer vi fokusera på C. Det är ett vanligt språk som är väldigt flexibelt och användbart för en bred variation av applikationer.
-
-Nästa steg är att välja en integrerad utvecklingsmiljö (IDE) för att skriva och kompilera din kod. Det finns många olika alternativ, men några populära val är Visual Studio Code, Eclipse och Code::Blocks.
-
-När du har installerat din valda IDE, är det dags att börja skriva din kod. Här är ett enkelt exempel på hur du kan skriva en "Hello World"-applikation i C:
+För att kompilera din kod, öppna din textredigerare och skapa en ny fil med filändelsen `.c`. Börja sedan med att inkludera biblioteket `stdio.h` för att kunna använda standard in- och utmatningsfunktioner. Sedan kan du börja skriva din kod enligt följande:
 
 ```C
 #include <stdio.h>
 
 int main()
 {
-    printf("Hej världen!\n");
+    // Kod här
     return 0;
 }
 ```
 
-När du har skrivit din kod, kan du kompilera den genom att använda en inbyggd funktion i din IDE eller genom att använda ett kompilatorprogram som GCC.
+I `main()`-funktionen kan du sedan skriva din kod och använda olika kontrollstrukturer som `for`-loopar och `if`-satser för att styra programmet. Se nedan för ett enkelt exempel:
 
-När din kod är framgångsrikt kompilerad, kan du köra den och se resultatet. I vårt exempel kommer det att skrivas ut "Hej världen!" i terminalen.
+```C
+#include <stdio.h>
+
+int main()
+{
+    int num = 5;
+
+    if (num > 0)
+    {
+        for (int i = 0; i < num; i++)
+        {
+            printf("Hej från C!\n");
+        }
+    }
+
+    return 0;
+}
+```
+
+När du är klar med din kod, spara filen och använd Sedan kommandot `gcc filnamn.c -o programnamn` för att kompilera din kod och skapa en körbar fil. Du kan sedan köra ditt program genom att skriva `./programnamn` i terminalen.
 
 ## Djupdykning
 
-Att starta ett nytt projekt innebär mer än bara att skriva kod. Det handlar också om planering och organisation. En av de första sakerna du bör göra när du startar ett nytt projekt är att skapa en tydlig projektplan. Du kan också skapa ett flödesschema eller en samling av användbara algoritmer och datastrukturer för att hjälpa dig längs vägen.
+Att starta ett nytt projekt innebär inte bara att skriva kod, utan också att planera och organisera ditt arbete. Det är viktigt att ha en tydlig målbild och en strukturerad plan för att undvika kaos i senare skeden av projektet.
 
-När det kommer till C-programmering, är det också viktigt att förstå hantverket och alla dess aspekter. Detta inkluderar att känna till grundläggande syntax, variabler, loopar, villkor och andra nyckelkomponenter i ett C-program.
+En bra början är att skapa en lista över de olika funktioner och delar som ditt program ska innehålla. Detta gör det lättare att identifiera och lösa problem längs vägen. Det kan också vara bra att skriva kommentarer i din kod för att hjälpa dig själv och andra att förstå vad varje del av koden gör.
 
-Slutligen, glöm inte bort vikten av att testa din kod och använda felsökningsverktyg. Detta kan hjälpa dig att hitta och fixa eventuella fel som dyker upp och säkerställer att din kod fungerar som det ska.
+En annan viktig del av att starta ett nytt projekt är att inse att det är en kontinuerlig process. Bara för att du har avslutat ett projekt betyder det inte att du är klar som programmerare. Genom att ständigt lära dig nya saker och utmana dig själv, blir du bättre och bättre på att skapa högkvalitativa program.
 
 ## Se även
 
-- [En introduktion till C-programmering](https://www.programiz.com/c-programming)
+För mer information och inspiration om C-programmering, se nedan för några användbara länkar:
+
+- [Learn X in Y minutes](https://learnxinyminutes.com/docs/c/)
+- [C Programming Language på TutorialsPoint](https://www.tutorialspoint.com/cprogramming/)
 - [Visual Studio Code](https://code.visualstudio.com/)
-- [Eclipse](https://www.eclipse.org/)
-- [Code::Blocks](https://www.codeblocks.org/)
+- [GCC](https://gcc.gnu.org/)

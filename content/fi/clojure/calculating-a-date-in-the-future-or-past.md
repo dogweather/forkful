@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Ajan laskeminen tulevaisuudessa tai menneisyydessä"
+simple_title:         "Ajan laskeminen tulevaisuudessa tai menneisyydessä"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/clojure/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,55 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Monissa tilanteissa saattaa olla tarpeellista laskea tietty päivämäärä tulevaisuudessa tai menneisyydessä eteenpäin. Tässä blogikirjoituksessa käydään läpi miten tätä tehdään Clojure-kielellä.
+On monia tilanteita, jolloin tarvitset tietää tulevia tai menneitä päiviä. Ehkä haluat suunnitella tulevia tapahtumia tai tarkistaa, kuinka kauan sitten jotain tapahtui. Clojuren avulla voit helposti laskea päivien määrän tulevaisuudessa tai menneisyydessä.
 
-## Kuinka tehdä
+## Miten tehdä
 
-Yksi tapa laskea tulevaisuuden tai menneisyyden päivämääriä Clojurella on käyttää `clj-time` -kirjastoa, joka tarjoaa hyödyllisiä funktioita päivämäärien käsittelyyn.
-
-### Tulevaisuuden päivämäärä
-
-Voimme käyttää `clj-time.core/plus` -funktiota lisäämään päivämäärään haluamamme määrän päiviä. Esimerkiksi, jos haluamme laskea päivän kolme päivää eteenpäin tänään:
-
-```Clojure
-(let [tänään (t/today)
-      tulevaisuudessa (t/plus tänään (t/days 3))]
-  tulevaisuudessa)
-;; => "2021-08-03T00:00:00.000000000"
+```
+Clojure (local-date ...)
 ```
 
-### Menneisyyden päivämäärä
+Clojuren `local-date`-funktio mahdollistaa uuden päivän luomisen. Se ottaa parametreinä vuoden, kuukauden ja päivämäärän:
 
-Menneisyyden päivämäärän laskeminen on samanlainen kuin tulevaisuuden päivämäärän laskeminen, mutta käytämme `clj-time.core/minus` -funktiota. Esimerkiksi, jos haluamme laskea päivän neljä päivää taaksepäin tänään:
-
-```Clojure
-(let [tänään (t/today)
-      menneisyydessä (t/minus tänään (t/days 4))]
-  menneisyydessä)
-;; => "2021-07-28T00:00:00.000000000"
+```
+Clojure (local-date 2021 7 10)
 ```
 
-## Syvemmälle aiheeseen
+Tämä luo uuden päivän vuonna 2021, heinäkuun 10. päivänä. Voit myös lisätä tai vähentää päiviä luomaasi päivään käyttämällä `plus` tai `minus`-funktioita:
 
-Voimme myös käyttää `clj-time.core/date-time` -funktiota asettaaksemme tietyn päivämäärän kokonaisella vuosiluvulla, kuukaudella ja päivällä. Esimerkiksi, jos haluamme laskea päivän tulevaisuudessa vuonna 2022:
-
-```Clojure
-(let [tulevaisuudessa (t/date-time 2022 1 1)]
-  tulevaisuudessa)
-;; => "2022-01-01T00:00:00.000000000"
+```
+Clojure (plus (local-date 2021 7 10) 3)
 ```
 
-On myös mahdollista muuttaa päivämäärää eri muodoiksi käyttämällä `clj-time.format/unparse` -funktiota. Esimerkiksi, jos haluamme tulostaa päivämäärän tekstimuodossa:
+Tämä lisää uuteen päivään kolme päivää, ja näin luodaan päivä heinäkuun 13. päivänä. Voit myös käyttää `minus`-funktiota vähentämään päiviä tai `multiple`-funktiota kertomaan päivien määrän halutulla kertoimella.
 
-```Clojure
-(let [tänään (t/date-time 2021 8 1)
-      tekstimuodossa (t/format tänään "dd/MM/yyyy")]
-  tekstimuodossa)
-;; => "01/08/2021"
-```
+## Syvällisempi tarkastelu
+
+Clojuren päivämäärätoiminnot ovat mahdollisia Clojuren sisäänrakennettujen Javan Date ja Time luokkien ansiosta. Tämä tekee päivämäärien käsittelystä erittäin tehokasta ja monipuolista.
+
+Voit myös käyttää muita funktioita, kuten `parse`, `to-date` ja `utc` muuntaaksesi päivämääriä halutun muodon tai aikavyöhykkeen mukaan. Lisätietoja näistä ja muista Clojuren päivämäärätoimintoa löydät virallisesta dokumentaatiosta.
 
 ## Katso myös
 
-- `clj-time` -kirjasto: https://github.com/clj-time/clj-time
-- `clj-time` -dokumentaatio: https://clj-time.github.io/clj-time/
-- `clj-time` -esimerkit: https://github.com/clj-time/clj-time/blob/master/test/de/siegmar/clj-time/test/core.clj
+- Clojuren virallinen dokumentaatio (https://clojure.org/reference/dates)
+- Java Date ja Time -luokat (https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- Clojuren päivämäärätoimintoja opastava ohje (https://practicalli.github.io/blog/posts/clojure-dates/)

@@ -1,52 +1,40 @@
 ---
 title:                "Ruby: Comenzando un nuevo proyecto"
+simple_title:         "Comenzando un nuevo proyecto"
 programming_language: "Ruby"
-category:             "Getting Started"
+category:             "Ruby"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/ruby/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+# Por qué comenzar un nuevo proyecto en Ruby
+Ruby es un lenguaje de programación versátil y poderoso que ha ganado popularidad en los últimos años. Su sintaxis simple y expresiva hace que sea fácil de aprender para los principiantes y también permite a los desarrolladores más experimentados crear aplicaciones complejas. Si estás buscando comenzar un nuevo proyecto de programación, Ruby es una excelente opción a considerar.
 
-¡Bienvenidos a mi blog de programación en Ruby! Si estás leyendo esto, probablemente estés interesado en empezar un nuevo proyecto en Ruby y no estás seguro de por dónde empezar. Bueno, ¡has venido al lugar correcto! En este post, te explicaré por qué deberías considerar utilizar Ruby para tu próximo proyecto.
+## Cómo empezar
+Para comenzar un nuevo proyecto en Ruby, primero necesitas tener Ruby instalado en tu sistema. Puedes descargar e instalar la última versión de Ruby desde su sitio web oficial. Una vez que tengas Ruby instalado, puedes utilizar el administrador de paquetes `gem` para instalar cualquier biblioteca o herramienta que necesites para tu proyecto. Utilizar un administrador de paquetes facilita el proceso de gestión de dependencias y asegura que estés utilizando las versiones correctas de las bibliotecas.
 
-## Cómo
-
-Antes de sumergirnos en los detalles de cómo empezar un nuevo proyecto en Ruby, es importante entender los conceptos básicos de este lenguaje de programación. Ruby es un lenguaje interpretado y orientado a objetos, lo que significa que cada elemento en Ruby es un objeto con sus propios métodos y propiedades.
-
-Para empezar, necesitarás tener Ruby instalado en tu computadora. Puedes encontrar instrucciones de cómo hacerlo en la documentación oficial de Ruby. Una vez que tengas Ruby instalado, puedes crear un nuevo archivo con la extensión ".rb" y escribir tu código en él.
-
-Aquí hay un ejemplo de un programa sencillo en Ruby que pide al usuario que ingrese su nombre y lo saluda:
+Ahora que tienes todo configurado, puedes comenzar a escribir código en Ruby. Aquí hay un ejemplo de una función simple que suma dos números:
 
 ```Ruby
-puts "¿Cómo te llamas?"
-nombre = gets.chomp
-puts "¡Hola, #{nombre}! Bienvenido a mi blog de programación en Ruby."
+def sumar(a, b)
+  return a + b
+end
+
+puts sumar(5, 7)
 ```
 
-Cuando este programa se ejecuta, la salida será:
-
-```
-¿Cómo te llamas?
-John
-¡Hola, John! Bienvenido a mi blog de programación en Ruby.
-```
-
-Hay muchos otros conceptos importantes que debes conocer al empezar un proyecto en Ruby, como variables, condicionales, bucles, y la sintaxis de los métodos. Te recomiendo que investigues más sobre ellos y practiques escribiendo código para familiarizarte con el lenguaje.
+La salida de este código será `12` ya que la función `sumar` toma dos argumentos, los suma y luego devuelve el resultado. Puedes experimentar con diferentes funciones y ver cómo afectan la salida de tu código.
 
 ## Profundizando
+Cuando se trata de comenzar un nuevo proyecto en Ruby, es importante tener en cuenta algunas cosas importantes. Primero, decide si quieres utilizar un enfoque de desarrollo impulsado por pruebas (Test-driven development o TDD) o un enfoque más tradicional en el que escribes el código primero y luego escribes pruebas para él. TDD es recomendado por muchos desarrolladores experimentados como el mejor enfoque ya que te permite escribir código más sólido y de alta calidad.
 
-Ahora, profundicemos un poco más en por qué Ruby es una gran opción para empezar un nuevo proyecto. En primer lugar, Ruby es un lenguaje extremadamente legible y fácil de aprender. Su sintaxis es sencilla y elegante, lo que hace que sea más rápido escribir código en comparación con otros lenguajes.
+También es importante planificar tu arquitectura de código antes de comenzar a escribirlo. Piensa en las diferentes partes de tu aplicación y cómo interactuarán entre sí. Esto te ayudará a escribir un código más organizado y fácil de mantener a largo plazo.
 
-Además, Ruby tiene una gran comunidad de programadores y un ecosistema robusto con muchas bibliotecas y frameworks disponibles para simplificar el desarrollo de aplicaciones. Por ejemplo, Ruby on Rails es un framework muy popular para el desarrollo web en Ruby.
+Si no estás seguro de cómo estructurar tu proyecto en Ruby, puedes buscar tutoriales y guías en línea para inspirarte. Además, ¡no tengas miedo de hacer preguntas y buscar ayuda en línea! La comunidad de Ruby es muy amigable y siempre está dispuesta a ayudar a los recién llegados.
 
-## Ver también
-
-- [Documentación oficial de Ruby](https://www.ruby-lang.org/es/documentation/)
-- [Ruby on Rails tutorial](https://www.railstutorial.org/)
-- [Ejemplos de código en Ruby](https://github.com/ruby/ruby/tree/trunk/sample)
-
-¡Gracias por leer mi post sobre cómo empezar un nuevo proyecto en Ruby! Espero que te haya inspirado para adentrarte en este lenguaje de programación y que disfrutes escribiendo código en él.
-
-¡Hasta la próxima!
+# Ver también
+- Ruby Official Website: https://www.ruby-lang.org/es/
+- Ruby on Rails Tutorial: https://www.railstutorial.org/book
+- Learn Ruby in Y minutes: https://learnxinyminutes.com/docs/es-es/ruby-es/

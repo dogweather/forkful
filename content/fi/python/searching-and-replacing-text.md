@@ -1,41 +1,54 @@
 ---
-title:                "Python: Hakeminen ja tekstin korvaaminen"
+title:                "Python: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Python"
-category:             "Strings"
+category:             "Python"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/python/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi?
+## Miksi
+Python on yksi maailman suosituimmista ohjelmointikielistä, ja sen avulla voi tehdä monenlaisia asioita. Yksi hyödyllisimmistä toiminnoista on tekstin etsiminen ja korvaaminen. Tämä on erityisen hyödyllistä esimerkiksi tekstinkäsittelyohjelmassa tai datan käsittelyssä.
 
-Tekstin etsiminen ja korvaaminen on tärkeä osa ohjelmoinnin prosessia, joka mahdollistaa nopean ja tarkan tietojen muokkaamisen. Se on erityisen hyödyllistä, kun käsitellään suuria tiedostomääriä tai halutaan tehdä samanlaisia muutoksia useille tiedostoille.
+## Kuinka tehdä
+Käytä Pythonin "replace()" -metodia etsimään ja korvaamaan tiettyä tekstiä.
 
-## Kuinka tehdä se?
+```Python
+# Luo teksti
+teksti = "Tervetuloa kotiin!"
 
-Tekstin etsiminen ja korvaaminen Pythonilla on helppoa. Voit käyttää sisäänrakennettua `replace()` -funktiota, joka korvaa kaikki annetun merkkijonon esiintymät toisella merkkijonolla. Voit myös käyttää `regex` -moduulia, joka mahdollistaa monimutkaisempia hakuja ja korvauksia.
+# Käytä replace()-metodia korvataksesi "Tervetuloa" "Hei" -sanalla
+uusi_teksti = teksti.replace("Tervetuloa", "Hei")
 
+# Tulosta uusi teksti
+print(uusi_teksti)
+
+>>> Hei kotiin!
 ```
-# Perus esimerkki
-teksti = "Hei maailma!"
-korvattu_teksti = teksti.replace("maailma", "universumi")
-print(korvattu_teksti)
-# Tulostaa: Hei universumi!
 
-# Regex esimerkki
+## Syvempi sukellus
+Pythonilla voi tehdä tarkempaa tekstien etsimistä ja korvaamista käyttämällä säännöllisiä lausekkeita. Tämä mahdollistaa esimerkiksi useiden erilaisten hakusanojen korvaamisen tai erikoismerkkien huomioimisen.
+
+```Python
+# Tuodaan syvempi tekstityökalu
 import re
-teksti = "Tämä on esimerkki 123 numerosta"
-korvattu_teksti = re.sub("\d+", "456", teksti)
-print(korvattu_teksti)
-# Tulostaa: Tämä on esimerkki 456 numerosta
+
+# Luo teksti
+teksti = "Tänään on aurinkoinen päivä ja sinne on paljon ihmisiä tulossa."
+
+# Käytä re.sub()-funktiota korvaamaan "sinne" "tänne"
+# ja "ihmisiä" "ihmisiäni"
+uusi_teksti = re.sub(r'sinne|ihmisiä', lambda x: x.group().capitalize() + 'ni', teksti)
+
+# Tulosta uusi teksti
+print(uusi_teksti)
+
+>>> Tänään on aurinkoinen päivä ja tänne on paljon ihmisiäni tulossa.
 ```
-
-## Syvällinen sukellus
-
-Tekstin etsiminen ja korvaaminen ei ole vain yksinkertaista merkkijonojen vaihtamista. Voit käyttää säännöllisiä lausekkeita (`regex`) sisällyttämään muuttujia ja ehtoja hakuusi, jolloin voit tehdä monimutkaisempia muutoksia. Voit myös kehittää omaa logiikkaasi `replace()` -funktion käytössä, esimerkiksi tehdä erilaisia muutoksia eri osille tekstiä.
 
 ## Katso myös
-
-- [Python`replace()` dokumentaatio](https://docs.python.org/3/library/stdtypes.html#str.replace)
-- [Python regex opas](https://docs.python.org/3/howto/regex.html)
-- [Regex testeri](https://regex101.com/) (hyödyllinen testaamaan ja harjoittelemaan säännöllisiä lausekkeita)
+- [Pythonin dokumentaatio tekstin korvaamisesta](https://docs.python.org/3/library/string.html#string.replace)
+- [Regex kirjasto Pythonissa](https://docs.python.org/3/library/re.html)
+- [10 hyödyllistä Python-käskyä tekstin käsittelyyn](https://www.pythonforbeginners.com/text-processing/using-regexes-in-python)

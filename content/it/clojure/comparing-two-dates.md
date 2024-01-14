@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Confrontare due date"
+title:                "Clojure: Confronto tra due date"
+simple_title:         "Confronto tra due date"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/clojure/comparing-two-dates.md"
 ---
 
@@ -9,68 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Comparare due date è spesso un passo necessario in programmazione, specialmente quando si lavora con dati temporali o si desidera ottenere informazioni sui tempi trascorsi tra due eventi. In questo articolo, esploreremo come effettuare questo tipo di confronto utilizzando il linguaggio di programmazione Clojure.
+Ci sono molte situazioni in cui potresti dover confrontare due date in un programma Clojure. Ad esempio, potresti aver bisogno di verificare se una data è antecedente o successiva rispetto a un'altra, o di calcolare la differenza tra due date. Conoscere come confrontare due date in modo efficace può semplificare la gestione delle date nel tuo codice e aiutarti a evitare errori.
 
 ## Come fare
 
-Per confrontare due date in Clojure, possiamo utilizzare la funzione `compare` che prende in input due argomenti di tipo `java.util.Date` e restituisce un valore numerico che indica se la prima data è precedente, successiva o uguale alla seconda data.
+Per confrontare due date in Clojure, puoi utilizzare la funzione `compare`, che prende in input due date e restituisce -1 se la prima è precedente alla seconda, 0 se sono uguali o 1 se la prima è successiva alla seconda. Ecco un esempio di codice:
 
-```
-(def data-1 (java.util.Date. "2020-01-01"))
-(def data-2 (java.util.Date. "2020-01-02"))
+```Clojure
+(def data1 (java.util.Date. 2021 6 1))
+(def data2 (java.util.Date. 2021 6 15))
 
-(println (compare data-1 data-2))
-;; Output: -1 (data-1 è precedente a data-2)
-
-(println (compare data-2 data-1))
-;; Output: 1 (data-2 è successiva a data-1)
-
-(println (compare data-1 data-1))
-;; Output: 0 (data-1 è uguale a data-1)
+(println (compare data1 data2))
 ```
 
-Possiamo anche utilizzare la funzione `before?` o `after?` per ottenere un risultato booleano (vero o falso) a seconda del confronto tra due date.
+L'output di questo codice sarà `1`, poiché la data1 è successiva alla data2. Puoi anche utilizzare la funzione `before?` o `after?` per verificare se una data è antecedente o successiva rispetto a un'altra, come mostrato in questo esempio:
 
+```Clojure
+(def data1 (java.util.Date. 2021 6 1))
+(def data2 (java.util.Date. 2021 6 15))
+
+(println (before? data1 data2))
+(println (after? data1 data2))
 ```
-(def data-1 (java.util.Date. "2020-01-01"))
-(def data-2 (java.util.Date. "2020-01-02"))
 
-(println (before? data-1 data-2))
-;; Output: true (data-1 è precedente a data-2)
-
-(println (after? data-2 data-1))
-;; Output: false (data-2 è successiva a data-1)
-
-(println (before? data-1 data-1))
-;; Output: false (data-1 è uguale a data-1)
-```
+L'output di questo codice sarà rispettivamente `true` e `false`, poiché la data1 è antecedente alla data2.
 
 ## Approfondimento
 
-Il valore restituito dalla funzione `compare` può essere utilizzato anche per ordinare una sequenza di date utilizzando la funzione `sort-by`.
+Ci sono alcune cose importanti da considerare quando si confrontano due date in Clojure. Innanzitutto, è necessario assicurarsi che le date siano nello stesso formato prima di utilizzare la funzione `compare`. Inoltre, è importante considerare che la funzione `compare` confronta le date utilizzando sia il giorno che l'ora, quindi se desideri confrontare solo la data senza tener conto dell'ora, puoi utilizzare la funzione `equal?`.
 
-```
-(def dates [(java.util.Date. "2020-01-01") (java.util.Date. "2020-01-03") (java.util.Date. "2020-01-02")])
-
-(sort-by compare dates)
-;; Output: [(java.util.Date. "2020-01-01") (java.util.Date. "2020-01-02") (java.util.Date. "2020-01-03")]
-```
-
-Inoltre, Clojure offre la funzione `between?` che ci permette di verificare se una data si trova tra due date specificate.
-
-```
-(def data (java.util.Date. "2020-01-02"))
-(def data-inizio (java.util.Date. "2020-01-01"))
-(def data-fine (java.util.Date. "2020-01-03"))
-
-(between? data-inizio data data-fine)
-;; Output: true (la data è compresa tra data-inizio e data-fine)
-
-(between? data-fine data data-inizio)
-;; Output: false (la data non è compresa tra data-fine e data-inizio)
-```
+Un altro aspetto da tenere a mente è che le date in Clojure sono rappresentate come oggetti mutabili. Ciò significa che se modifichi una data, anche altre funzioni che la utilizzano potrebbero essere influenzate. Assicurati quindi di gestire correttamente le date e di creare nuovi oggetti quando necessario.
 
 ## Vedi anche
 
-- [Documentazione ufficiale di Clojure sulla gestione delle date](https://clojure.org/reference/java_interop#_working_with_java_util_date_and_java_util_calendar_objects)
-- [Tutorial di Clojure sul confronto tra date](https://www.tutorialspoint.com/clojure/clojure_date_time.htm)
+- Documentazione ufficiale di Clojure sulla funzione `compare`: https://clojuredocs.org/clojure.core/compare
+- Tutorial su come gestire le date in Clojure: https://clojure-doc.org/articles/ecosystem/java_jdbc/home.html
+- Altri esempi di codice su come confrontare date in Clojure: https://github.com/jafingerhut/clojure-date-utils/blob/master/src/bbatsov/date_utils.clj

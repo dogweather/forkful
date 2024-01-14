@@ -1,7 +1,9 @@
 ---
 title:                "Ruby: Ottenere la data corrente"
+simple_title:         "Ottenere la data corrente"
 programming_language: "Ruby"
-category:             "Dates and Times"
+category:             "Ruby"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/ruby/getting-the-current-date.md"
 ---
 
@@ -9,35 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-La programmazione è un campo in costante evoluzione e imparare un nuovo linguaggio può sembrare scoraggiante. Ma con l'avvento di Ruby, la programmazione può essere resa più facile e divertente. Una delle attività quotidiane di un programmatore è ottenere la data corrente e, con Ruby, è possibile farlo in modo efficiente e veloce.
+Ci sono molte ragioni per cui potresti voler conoscere la data attuale all'interno del tuo programma Ruby. Potresti aver bisogno di utilizzare la data per creare un file con il formato corretto o per gestire programmi di backup. Inoltre, la conoscenza della data corrente può essere utile nelle applicazioni Web per mostrare informazioni aggiornate ai tuoi utenti.
 
 ## Come fare
 
-Per ottenere la data corrente in Ruby, utilizzeremo il metodo `Time.now`. Vediamo un esempio pratico:
+Per ottenere la data corrente in Ruby, puoi utilizzare il metodo `Time.now`, che restituisce un oggetto `Time` con la data e l'ora attuali.
 
-```Ruby
-today = Time.now
-puts today
+```ruby
+current_date = Time.now
+puts current_date
 ```
-L'output di questo codice sarà la data e l'ora corrente nel formato `Anno-Mese-Giorno Ore:Minuti:Secondi`. Ad esempio: `2021-05-31 14:35:21`
 
-Il metodo `Time.now` ci restituisce una istanza della classe `Time`, il che significa che possiamo utilizzare tutti i metodi disponibili per questa classe, come ad esempio il metodo `strftime` per formattare la data nel formato che desideriamo. Vediamo un esempio:
+Output: `2021-10-27 13:32:47 +0100`
 
-```Ruby
-today = Time.now
-puts today.strftime("%d/%m/%Y")
+Puoi anche utilizzare il metodo `strftime` per formattare la data in diversi modi:
+
+```ruby
+current_date = Time.now
+puts current_date.strftime("%d/%m/%Y")
 ```
-In questo caso, l'output sarà la data corrente nel formato `Giorno/Mese/Anno`. Ad esempio: `31/05/2021`
+
+Output: `27/10/2021`
 
 ## Approfondimento
 
-Sapere come ottenere la data corrente è importante, ma è altrettanto importante capire come viene rappresentata e gestita nel linguaggio di programmazione. In Ruby, la data e l'ora sono gestite utilizzando l'oggetto `Time`, che è uno dei tanti tipi di dati disponibili.
+In Ruby, il tempo è rappresentato come il numero di secondi trascorsi dal 1° gennaio 1970 (conosciuto come "epoch time"). Questa rappresentazione è comune a molti altri linguaggi di programmazione.
 
-La classe `Time` è dotata di molti metodi utili per manipolare e gestire date e orari. Ad esempio, con il metodo `day` possiamo ottenere il giorno del mese, mentre con `month` possiamo ottenere il mese corrente. Esistono anche metodi per aggiungere o sottrarre giorni, mesi o anni da una data specifica.
+Inoltre, puoi anche specificare una timezone specifica utilizzando il metodo `Time.localtime`:
 
-Inoltre, Ruby offre la possibilità di convertire una stringa in un oggetto `Time` utilizzando il metodo `parse`. Questo è utile quando si ha una data in un formato diverso da quello desiderato e si vuole convertirla in un oggetto `Time` per manipolarla.
+```ruby
+current_date = Time.now
+puts current_date.localtime("-04:00")
+```
+
+Output: `2021-10-27 09:32:47 -0400`
 
 ## Vedi anche
 
-- [Documentazione di Ruby `Time` class](https://ruby-doc.org/core-3.0.1/Time.html)
-- [Tutorial su come gestire le date con Ruby](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-control-flow-u/articles/ruby-time-date-manipulation)
+- [Time class documentation](https://ruby-doc.org/core-3.0.0/Time.html)
+- [Ruby's Time Library](https://www.rubyguides.com/2020/02/ruby-time/)
+- [Working with dates and times in Ruby](https://www.twilio.com/blog/working-with-dates-and-times-in-ruby)

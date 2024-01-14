@@ -1,29 +1,51 @@
 ---
-title:                "TypeScript: स्ट्रिंग्स को एक साथ जोड़ना"
+title:                "TypeScript: स्ट्रिंग्स की संयोजन"
+simple_title:         "स्ट्रिंग्स की संयोजन"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-कोई भी प्रोग्रामिंग भाषा में स्ट्रिंग को जोड़ना एक आम और उपयोगी काम है। स्ट्रिंग को जोड़कर हम अपनी प्रोग्राम में समूहीकरण करते हैं और इससे हमारे कोड को लिखने में आसानी होती है।
 
-## कैसें करें
+क्या आप वास्तविकता में स्ट्रिंग्स को साथ जोड़ना चाहते हैं? यह वास्तव में बहुत उपयोगी हो सकता है। स्ट्रिंग विधाओं का प्रयोग आपको अपने कोड को संगठित और उपयोगी बनाने में मदद कर सकता है। हालांकि, यह शायद आपको बहुत विचित्र लगे, लेकिन आप अपने कोड को दीर्घकालिक रूप से सुरक्षित रखने के लिए इस्तेमाल कर सकते हो।
+
+## कैसे करना है
+
 ```TypeScript
-let firstString = "हेलो";
-let secondString = "दुनिया!";
-
-let concatenation = firstString + secondString;
-
-console.log(concatenation);
+let language = "TypeScript";
+let statement = "I love using ";
+let output = statement + language;
+console.log(output);
 ```
-आप कोड को चलाएंगे तो कॉन्सोल पर हमें `हेलोदुनिया!` मिलेगा। इसमें हमने दो स्ट्रिंग `firstString` और `secondString` को जोड़कर एक नए स्ट्रिंग `concatenation` बनाया है। हम `+` ऑपरेटर का उपयोग करके स्ट्रिंग को जोड़ सकते हैं। उदाहरण के लिए, यदि हम `firstString = "Hello"` और `secondString = "World!"` लिखते तो हमें `HelloWorld!` मिलता।
 
-## गहराई में जाएं
-स्ट्रिंग को जोड़ने के लिए, हम अनेक तरह के विधियों का उपयोग कर सकते हैं। उपरोक्त उदाहरण में हमने दो स्ट्रिंग को जोड़ने के लिए `+` ऑपरेटर का उपयोग किया है, लेकिन हम `concat()` फ़ंक्शन या `.concat()` मैथमेटिकल ऑपरेटर से भी स्ट्रिंग को जोड़ सकते हैं।  इसके अलावा स्ट्रिंग टेम्पलेट लिटरेल्स भी उपयोगी हो सकते हैं जहां हम `${}` से भिन्न भिन्न मानों को एक साथ जोड़ सकते हैं। 
+उपरोक्त कोड अपने स्क्रिप्ट को इस तरह से प्रिंट करेगा:
 
-## देखें भी
-- [टाइपस्क्रिप्ट मैनुअल](https://www.typescriptlang.org/docs/handbook/basic-types.html)
-- [टाइपस्क्रिप्ट स्ट्रिंग ऑपरेटर्स](https://www.typescriptlang.org/docs/handbook/2/objects.html#string-literal-types)
+```TypeScript
+I love using TypeScript
+```
+
+## गहरी खोज
+
+जब आप `+` ऑपरेटर का उपयोग स्ट्रिंग्स को जोड़ने के लिए करते हैं, यह इसके पीछे आगे जाता है - स्ट्रिंग्स को जोड़ते समय, उनके बीच एक स्पेसिफिक बर्तन जोड़ा जाता है, जो आपको देखने को नहीं मिलता है। यह बर्तन रिपोर्ट कोड में से निकालने की आवश्यकता को कई चांस देता है। एक और उपाय स्ट्रिंग्स को जोड़ने के लिए `concat()` विधाओं का उपयोग करना है, जो आपको एक फ़िल्टर निकालने की सुविधा देता है। आप यह कोड देख सकते हैं:
+
+```TypeScript
+let language = "TypeScript";
+let statement = "I love using ";
+let output = statement.concat(language);
+console.log(output);
+```
+
+अब भी आपको इसी परिणाम को प्रिंट करेगा:
+
+```TypeScript
+I love using TypeScript
+```
+
+## भी देखें
+
+- [TypeScript Strings](https://www.typescriptlang.org/docs/handbook/strings.html)
+- [JavaScript String concat() Method](https://www.w3schools.com/jsref/jsref_concat_string.asp)

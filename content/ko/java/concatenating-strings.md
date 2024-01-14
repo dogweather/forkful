@@ -1,54 +1,39 @@
 ---
 title:                "Java: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/java/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜
 
-작성된 언어를 사용하는 프로그래머라면 당신은 문자열을 연결해보았을 것입니다. 하지만 왜 문자열 연결을 하는 것인지 궁금하셨나요? 이 블로그 포스트에서는 이에 대해 알아보겠습니다.
+문자열을 결합하는 것은 자바 프로그래밍에서 매우 중요합니다. 이를 통해 여러 문자열을 하나로 조합할 수 있으며, 이를 통해 더 복잡한 작업을 수행할 수 있습니다.
 
-## 어떻게
-
-먼저, 문자열 연결의 기본적인 사용법을 알아보겠습니다. 코드 블록에서 ```Java``` 를 사용하여 예제와 출력을 보여줄 것입니다.
+# 어떻게 하나요
 
 ```Java
-String str1 = "Hello ";
-String str2 = "World!";
-String result = str1 + str2;
-System.out.println(result);
-```
-출력:
-```
-Hello World!
+String firstName = "John";
+String lastName = "Smith";
+String fullName = firstName + " " + lastName;
+System.out.println(fullName);
 ```
 
-또한, 문자열 연결의 강력한 기능 중 하나는 변수 뿐만 아니라 바로 값을 넣어 연결할 수 있다는 점입니다. 예를 들어,
+위의 예시 코드에서는 먼저 성과 이름을 각각 변수로 지정하고, 마지막으로 그 두 변수를 결합하여 하나의 문자열을 만들고 출력합니다. 이처럼 '+' 연산자를 사용하면 간단하게 문자열을 결합할 수 있습니다.
 
-```Java
-String name = "John";
-int age = 25;
-String result = "My name is " + name + " and I am " + age + " years old.";
-System.out.println(result);
-```
+출력: John Smith
 
-출력:
-```
-My name is John and I am 25 years old.
-```
+# 깊이 파고들기
 
-## 더 알아보기
+문자열을 결합하는 방법은 여러 가지가 있지만, 가장 흔한 방법은 '+' 연산자를 사용하는 것입니다. 이 연산자는 문자열과 변수, 숫자 등을 결합할 수 있으며, 결합한 결과는 새로운 문자열이 됩니다.
 
-문자열 연결은 String 클래스의 메소드인 concat()과 비슷합니다. 하지만 문자열 연결을 사용하면 더 간편하고 쉽게 문자열을 합칠 수 있습니다. 또한 문자열 연결은 메모리를 더 효율적으로 관리할 수 있습니다.
+그 외에도 StringBuilder나 StringBuffer 클래스를 사용하여 문자열을 동적으로 변경하고 결합하는 방법이 있습니다. 이를 통해 메모리를 더 효율적으로 관리할 수 있으며, 문자열 결합의 성능을 높일 수 있습니다.
 
-## 더 알아보기
+# 또 다른 정보
 
-이 블로그 포스트는 문자열 연결의 기본적인 사용법과 강력한 기능에 대해 소개해드렸습니다. 하지만 문자열 연결의 더 많은 기능들을 이용해보시길 추천합니다. 더 많은 정보는 아래의 링크를 확인해주세요.
-
-## 같이 보기
-
-- [Java String 클래스 문서](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java 문자열 연결의 효율성에 대한 논문](https://www.cs.nyu.edu/courses/spring11/CSCI-GA.2110-002/lecture7b.pdf)
+- [Java String concatenation](https://docs.oracle.com/javase/tutorial/java/data/strings.html)
+- [StringBuilder vs. StringBuffer in Java](https://www.baeldung.com/java-string-builder-vs-string-buffer)
+- [Java Operators](https://www.w3schools.com/java/java_operators.asp)

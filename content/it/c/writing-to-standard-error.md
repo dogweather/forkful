@@ -1,7 +1,9 @@
 ---
-title:                "C: Scrivere su errore standard"
+title:                "C: Scrittura su errore standard"
+simple_title:         "Scrittura su errore standard"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/c/writing-to-standard-error.md"
 ---
 
@@ -9,41 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Scrivere su standard error in programmazione C può sembrare un'operazione inutile o poco utilizzata, ma in realtà è importante per la gestione degli errori e la risoluzione dei bug nel codice. Inoltre, può aiutare a visualizzare messaggi di debug durante lo sviluppo.
+Scrivere a standard error è un modo efficace per visualizzare messaggi di errore o di debug durante l'esecuzione di un programma. Può anche essere utile per registrare informazioni importanti durante l'esecuzione del programma.
 
-## Come fare
+## Come Fare
 
-Per scrivere su standard error in C, è necessario includere la libreria `stdio.h` nel codice e utilizzare la funzione `fprintf` con il valore `stderr` come argomento. Ad esempio:
+Per scrivere a standard error in un programma in linguaggio C, è necessario includere la libreria `<stdio.h>` e utilizzare la funzione `fprintf` con il primo parametro impostato su `stderr`. Ad esempio:
 
 ```C
 #include <stdio.h>
 
-int main(void) {
-    fprintf(stderr, "Questo è un messaggio scritto su standard error\n");
-    return 0;
+int main() {
+
+  int numero = 10;
+  
+  // stampa il messaggio di errore a standard error
+  fprintf(stderr, "Il valore di numero è: %d\n", numero);
+  
+  return 0;
 }
 ```
 
-L'output sarà mostrato sulla console standard di errore come:
+L'output di questo codice sarà:
 
-```bash
-Questo è un messaggio scritto su standard error
-```
+`Il valore di numero è: 10`
 
-In questo modo, è possibile inviare messaggi di errore o di debug direttamente sulla console senza influenzare l'output standard del programma. Si consiglia di utilizzare questo metodo quando si vuole distinguere i messaggi di errore dai messaggi di output regolari.
+Si noti che il messaggio di errore viene stampato a video solo se si utilizza un compilatore che supporta il concetto di standard error. In caso contrario, verrà stampato a standard output.
 
 ## Approfondimento
 
-La funzione `fprintf` ha la seguente sintassi:
+La funzione `fprintf` è molto simile alla funzione `printf` in quanto entrambe vengono utilizzate per stampare un messaggio formattato su uno stream di output. Tuttavia, la differenza principale è che `printf` scrive su standard output, mentre `fprintf` può essere utilizzata per scrivere su qualsiasi stream, inclusi `stdout` e `stderr`.
 
-```
-int fprintf(FILE *stream, const char *format, ...)
-```
+Inoltre, è importante notare che a differenza della funzione `printf`, `fprintf` richiede un parametro aggiuntivo prima della stringa di formato con il nome dello stream su cui si vuole scrivere.
 
-Il primo argomento `stream` indica il file su cui scrivere, mentre il secondo argomento `format` è una stringa di formattazione che definisce il tipo di dati e il numero di argomenti successivi. Ci sono diversi tipi di dati che possono essere utilizzati, come `%s` per una stringa, `%d` per un intero e `%f` per un numero decimale. Ad esempio, `fprintf` può essere utilizzata per scrivere su file o eventualmente su altri tipi di stream diversi da `stderr`.
+## Vedi Anche
 
-## Vedi anche
-
-- [Manuale di riferimento di fprintf](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
-- [Cos'è e come usare standard error in C](https://www.geeksforgeeks.org/what-is-standard-error-in-c/)
-- [Come gestire gli errori in C](https://www.programmingsimplified.com/c/error-handling-c-programs)
+- The difference between fprintf, printf, and sprintf (https://www.quora.com/What-is-the-difference-between-printf-spring-and-fprintf)
+- C programming tutorial (https://www.programiz.com/c-programming)

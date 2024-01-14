@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Auslesen von Unterzeichenketten"
+title:                "Elixir: Extrahieren von Teilstrings"
+simple_title:         "Extrahieren von Teilstrings"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/extracting-substrings.md"
 ---
 
@@ -9,30 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Substring-Extraktion ist eine häufig verwendete Funktion in der Programmierung. Es ermöglicht uns, Teilstrings aus einem string zu extrahieren, die wir für spätere Berechnungen, Überprüfungen oder Anzeigen benötigen. In Elixir ist die substring-Funktion sehr effizient und einfach zu verwenden, was sie zu einem wertvollen Werkzeug in unserem Programmierarsenal macht.
+Das Extrahieren von Teilzeichenketten ist ein nützliches Werkzeug für Entwickler, um bestimmte Teile von Texten oder Zeichenketten zu isolieren. Dies kann besonders hilfreich sein, wenn man mit großen Datensätzen arbeitet oder wenn man spezifische Informationen aus einem Text extrahieren möchte.
 
-## Wie man es macht
+## Wie man Teilzeichenketten extrahiert
 
-Um eine Substring aus einem Elixir string zu extrahieren, verwenden wir die `String.slice/3` Funktion. Diese Funktion nimmt drei Argumente an: der string, von dem wir eine Teilstring extrahieren möchten, der Anfangsindex und der Endindex. Wenn wir beispielsweise den string `"Elixir ist großartig"` haben und den Teilstring `"großartig"` extrahieren möchten, können wir folgenden Code schreiben:
+Um Teilzeichenketten in Elixir zu extrahieren, gibt es verschiedene Möglichkeiten. Eine davon ist die Verwendung der `String.slice/3` Funktion. Diese Funktion nimmt eine Zeichenkette, den Startindex und die Länge als Argumente und gibt eine Teilzeichenkette zurück, die am angegebenen Startindex beginnt und eine bestimmte Länge hat.
 
-```Elixir
-String.slice("Elixir ist großartig", 11, 19)
+```
+Elixir> String.slice("Dies ist ein Beispiel", 5, 4)
+s ist
 ```
 
-Das Ergebnis wäre `"großartig"`, da der Anfangsindex 11 der Buchstabe "g" ist und der Endindex 19 das "i" am Ende des Wortes ist. Beachten Sie, dass der Endindex nicht Teil des resultierenden Teilstrings ist.
+Eine andere Möglichkeit ist die Verwendung der `String.split/3` Funktion, die eine Zeichenkette anhand eines Trennzeichens in eine Liste von Teilzeichenketten aufteilt.
 
-Wir können auch negative Indizes verwenden, um von hinten zu zählen. Zum Beispiel würde `String.slice("Elixir ist großartig", -9, -1)` den Teilstring `"Elixir"` extrahieren.
+```
+Elixir> String.split("Apfel,Birne,Orange", ",")
+["Apfel", "Birne", "Orange"]
+```
 
-Wenn wir einen Teilstring bis zum Ende des string extrahieren möchten, können wir den `String.length/1` Operator verwenden, um die Länge des strings zu erhalten. Zum Beispiel würde `String.slice("Elixir ist großartig", 0, String.length("Elixir ist großartig"))` den gesamten string zurückgeben.
+Zusätzlich gibt es auch die `Regex.split/2` Funktion, die eine Zeichenkette anhand eines regulären Ausdrucks in eine Liste von Teilzeichenketten aufteilt.
 
-## Tief eintauchen
+```
+Elixir> Regex.split("Dies ist ein Beispiel", ~r/[aeiou]/)
+["D", "s ", "st ", "n B", "sp", "l"]
+```
 
-Neben der `String.slice/3` Funktion, gibt es in Elixir auch die `String.split/2` Funktion, die uns ermöglicht, einen string in bestimmten Abschnitten aufzuteilen. Wir können einen Teilstring als Trennzeichen verwenden und erhalten dann eine Liste der aufgeteilten Abschnitte. Zum Beispiel würde `String.split("Elixir::ist::großartig", "::")` die Liste `["Elixir", "ist", "großartig"]` zurückgeben.
+All diese Funktionen können kombiniert werden, um komplexe Extraktionen durchzuführen und verschiedene Teile einer Zeichenkette zu isolieren.
 
-Eine andere nützliche Funktion ist `String.trim/1`, die uns ermöglicht, Leerzeichen oder Zeilenumbrüche am Anfang oder Ende eines strings zu entfernen. Dies ist besonders hilfreich, wenn wir mit Benutzereingaben arbeiten.
+## Tiefergehender Einblick
+
+Es gibt noch viele weitere Funktionen und Methoden in Elixir, die beim Extrahieren von Teilzeichenketten nützlich sein können. Dazu gehören zum Beispiel `String.replace/4`, `String.trim/2` oder auch die Verwendung von regulären Ausdrücken mit der `Regex` Module.
+
+Es ist auch wichtig, zu beachten, dass Elixir Zeichenketten als Binärdaten behandelt und daher einige Funktionen wie `String.slice/3` bei der Arbeit mit speziellen Zeichen wie Emojis oder nicht-lateinischen Zeichen möglicherweise nicht wie erwartet funktionieren. In solchen Fällen können die Funktionen im `Unicode` Modul eine bessere Alternative bieten.
 
 ## Siehe auch
 
-- [Elixir-Dokumentation zu Strings](https://hexdocs.pm/elixir/String.html)
-- [Elixir School: Strings](https://elixirschool.com/de/lessons/basics/string/)
-- [ElixirForum: Substring extrahieren](https://elixirforum.com/t/getting-a-substring/1102)
+- [Offizielle Elixir Dokumentation](https://elixir-lang.org/getting-started/string-patterns-and-regular-expressions.html#string-slicing)
+- [Elixir Cookbook: String Manipulation](https://elixircasts.io/elixir-cookbook/string-manipulation)
+- [Elixir School: Strings](https://elixirschool.com/en/lessons/basics/strings/)

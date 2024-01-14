@@ -1,7 +1,9 @@
 ---
 title:                "Elixir recipe: Concatenating strings"
+simple_title:         "Concatenating strings"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/concatenating-strings.md"
 ---
 
@@ -9,43 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-String concatenation, the process of combining two or more strings into one, is a common task in programming. It allows us to create dynamic and informative output by joining different pieces of text together. In this blog post, we will explore how to concatenate strings in Elixir and why it is useful.
+Concatenating strings is a crucial aspect of programming in any language, including Elixir. It allows us to combine multiple strings together to form a new, longer string. This can be useful for creating dynamic messages, building URLs, or formatting text in various ways. Learning how to effectively concatenate strings in Elixir can greatly enhance your coding skills and make your code more versatile.
 
 ## How To
 
-In Elixir, we can use the `<>` operator to concatenate strings. Let's take a look at a simple example:
+To concatenate strings in Elixir, we can use the `<>` operator or the `string_concat()` function. Let's see some examples:
 
-```Elixir
-name = "John" <> " " <> "Doe"
-IO.puts(name)
+```elixir
+# Using the <> operator
+"Greetings " <> "from " <> "Elixir!" #=> "Greetings from Elixir!"
+
+# Using the string_concat() function
+string_concat("Hello ", "world!") #=> "Hello world!"
 ```
 
-The output of this code would be `John Doe`, as the three strings are joined together to create a new string. We can also use the `<<>>` syntax to concatenate strings, like so:
+As we can see, both methods produce the same result. However, when dealing with longer strings or more complex concatenations, it is recommended to use the `string_concat()` function for better readability and maintainability.
 
-```Elixir
-"Greetings, " <> "my" <<>> "friend"
+We can also use interpolation to concatenate strings with variables:
+
+```elixir
+name = "Lisa"
+
+# Using the <> operator
+"Hello " <> name <> "! Welcome to Elixir!" #=> "Hello Lisa! Welcome to Elixir!"
+
+# Using the string_concat() function
+string_concat("Hello ", name, "! Welcome to Elixir!") #=> "Hello Lisa! Welcome to Elixir!"
 ```
 
-This would result in `Greetings, my friend`.
-We can also concatenate variables together, as shown in the example below:
+Lastly, we can use the `string()` function to convert non-string values to strings before concatenating:
 
-```Elixir
-first_name = "John"
-last_name = "Doe"
-full_name = first_name <> " " <> last_name
+```elixir
+"Today is " <> string(3) <> "rd of " <> string(5) #=> "Today is 3rd of 5"
 ```
-
-Here, the variable `full_name` would contain the string `John Doe`. It's important to note that the `<>` operator is not limited to just strings. It can be used to concatenate any type of data, including numbers and lists.
 
 ## Deep Dive
 
-Behind the scenes, the `<>` operator in Elixir is actually calling the `Kernel.++/2` function. This function takes two arguments, the two strings to be concatenated, and returns a new string with the two joined together.
+Strings in Elixir are represented as binaries - a sequence of 8-bit bytes. This allows for efficient handling of strings, as binary operations are faster than character-based operations.
 
-It's also worth mentioning that in Elixir, strings are stored as UTF-8 encoded binaries. This means that when concatenating strings, Elixir will first convert them to binaries before joining them together.
+Elixir also provides the `IO.puts()` function for printing strings to the console. It automatically adds a new line at the end of the output, making it perfect for printing concatenated strings:
+
+```elixir
+IO.puts("Hi there!")
+IO.puts("What's " <> "your " <> "name?") #=> Hi there!
+#=> What's your name?
+```
+
+Additionally, we can also use `IO.inspect()` to output the string representation of any data structure, including concatenated strings:
+
+```elixir
+IO.inspect("Good" <> " " <> "morning!") #=> "Good morning!"
+```
 
 ## See Also
 
-- Official Elixir documentation on string concatenation: https://hexdocs.pm/elixir/String.html#concatenation
-- Elixir School's lesson on strings: https://elixirschool.com/en/lessons/basics/strings/
-
-Now that you have a better understanding of how to concatenate strings in Elixir, go forth and create dynamic and informative output in your programs!
+- [Elixir String module](https://hexdocs.pm/elixir/String.html)
+- [Elixir String concatenation guide](https://elixirschool.com/lessons/basics/strings/#string-concatenation)
+- [Elixir String interpolation](https://elixir-lang.org/getting-started/strings-and-binaries.html#string-interpolation)

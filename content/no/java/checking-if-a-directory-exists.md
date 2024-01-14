@@ -1,47 +1,43 @@
 ---
-title:                "Java: Kontrollere om en mappe eksisterer"
+title:                "Java: Sjekke om en mappe eksisterer"
+simple_title:         "Sjekke om en mappe eksisterer"
 programming_language: "Java"
-category:             "Files and I/O"
+category:             "Java"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/checking-if-a-directory-exists.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-I Java-programmering, er det viktig å sjekke om en mappe eksisterer før du prøver å gjøre noe med den. Dette kan forhindre unødvendige feil og problemer senere i koden din.
+Å undersøke om en mappe eksisterer kan være en viktig del av en javaprogrammerers arbeid. Dette kan være nyttig for å sikre at programmet fungerer riktig og for å unngå feil som kan oppstå når en mappe ikke er tilgjengelig.
 
 ## Hvordan
-
-Sjekke om en mappe eksisterer i Java er en ganske enkel prosess. Du trenger en File-objekt og bruker metoden `exists()` for å sjekke om mappen eksisterer. Her er et eksempel på hvordan du kan gjøre det:
+Det er flere måter å sjekke om en mappe eksisterer i Java. En enkel måte å gjøre dette på er ved hjelp av File-klassen. Følgende kode viser hvordan du kan sjekke om en mappe med navnet "testmappe" eksisterer på C-stasjonen:
 
 ```Java
-File mappe = new File("minMappe");
-if(mappe.exists()) {
-    System.out.println("Mappen eksisterer.");
-} else {
-    System.out.println("Mappen eksisterer ikke.");
-}
+File mappe = new File("C:\\testmappe");
+boolean finnes = mappe.exists();
+System.out.println("Finnes mappen: " + finnes);
 ```
 
-Hvis mappen eksisterer, vil utgangen være "Mappen eksisterer." Hvis den ikke eksisterer, vil utgangen være "Mappen eksisterer ikke."
+Dersom mappen eksisterer vil output være: "Finnes mappen: true". Hvis mappen ikke eksisterer vil output være: "Finnes mappen: false".
+
+En annen måte å sjekke om en mappe eksisterer er ved hjelp av metoden `exists()` fra klassen `Files` i Java NIO. Følgende kode viser hvordan du kan gjøre dette:
+
+```Java
+Path mappeSti = Paths.get("C:\\testmappe");
+boolean finnes = Files.exists(mappeSti);
+System.out.println("Finnes mappen: " + finnes);
+```
+
+Her også vil output variere avhengig av om mappen eksisterer eller ikke.
 
 ## Dypdykk
+Det er viktig å merke seg at selv om en mappe eksisterer når du sjekker det på en gitt tid, så kan det hende at mappen slettes eller flyttes senere. Derfor bør man alltid være forsiktig når man stoler på at en mappe eksisterer før man bruker den i koden sin.
 
-Når du bruker `exists()`-metoden, vil den også sjekke om det er en fil med samme navn som mappen. Dette betyr at hvis du prøver å opprette en ny mappe med navnet "minMappe", vil `exists()` returnere true fordi en fil med samme navn allerede eksisterer. For å unngå dette, kan du bruke `isDirectory()`-metoden i tillegg til `exists()`. Dette vil sikre at det faktisk er en mappe med navnet du søker etter. Her er et eksempel på hvordan du kan gjøre det:
-
-```Java
-File mappe = new File("minMappe");
-if(mappe.exists() && mappe.isDirectory()) {
-    System.out.println("Mappen eksisterer.");
-} else {
-    System.out.println("Mappen eksisterer ikke.");
-}
-```
-
-Dette vil gi deg et mer nøyaktig resultat når du sjekker om en mappe eksisterer eller ikke.
+Noen ganger kan det også være lurt å sjekke om en mappe er tilgjengelig for skriving, ikke bare om den eksisterer. Dette kan gjøres ved å bruke metoden `isWritable()` fra File eller `isWritable()` fra Files.
 
 ## Se også
-
-- [Java Dokumentasjon - File Class](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
-- [Java Tutorials - Working with Files and Directories](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+- [Java Documentation - File Class](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/File.html)
+- [Java Documentation - Files Class](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/nio/file/Files.html)

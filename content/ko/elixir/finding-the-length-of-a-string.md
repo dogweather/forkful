@@ -1,7 +1,9 @@
 ---
 title:                "Elixir: 문자열의 길이 찾기"
+simple_title:         "문자열의 길이 찾기"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/elixir/finding-the-length-of-a-string.md"
 ---
 
@@ -9,35 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 왜
 
-문자열의 길이를 찾게 되는 이유는 데이터를 다룰때 중요한 부분 중 하나입니다. 프로그래머는 자주 다양한 유형의 데이터를 다루게 되는데, 그 중에는 문자열 또한 포함됩니다. 따라서 문자열의 길이를 정확히 파악하는 것은 중요한 스킬입니다.
+문자열의 길이를 구하는 것은 프로그램을 작성할 때 매우 중요합니다. 예를 들어 사용자의 입력을 검증하거나 특정 문자열을 처리할 때 길이를 확인해야 할 수 있습니다. 이러한 상황에서 문자열의 길이를 구하는 방법에 대해 알아보겠습니다.
 
-## 방법
+## 어떻게 하나요
 
-``` Elixir
-# 문자열의 길이 구하기
-input = "안녕하세요"
-IO.puts String.length(input)
+문자열의 길이를 구하는 가장 간단한 방법은 `String.length/1` 함수를 사용하는 것입니다. 이 함수는 문자열의 길이를 정수 형태로 반환합니다.
 
-# 출력결과
-5
+```Elixir
+string = "Hello World"
+String.length(string) #=> 11
 ```
 
-위의 예제에서 볼 수 있듯이, Elixir에서는 `String.length` 함수를 사용하여 간단하게 문자열의 길이를 구할 수 있습니다. 또한 입력한 문자열 내에 공백 또한 길이에 포함되므로 유의해야 합니다.
+이 외에도 `length/1` 함수는 모든 유니코드 문자를 지원하므로 다국어 문자열에 대해서도 올바르게 동작합니다.
+
+또 다른 방법은 문자열을 리스트로 변환한 후 `length/1` 함수를 사용하는 것입니다. 이 방법은 문자열 내에 있는 모든 문자를 카운트할 수 있으며, 유니코드 문자도 제대로 처리할 수 있습니다.
+
+```Elixir
+string = "안녕하세요"
+string |> String.codepoints() |> length() #=> 5
+```
 
 ## 깊이 파고들기
 
-문자열의 길이를 구하는 방법은 내부적으로 어떻게 작동할까요? Elixir에서는 문자열을 바이트로 저장하므로, `String.length` 함수는 문자열의 바이트 수를 반환합니다.
+문자열의 길이를 구하는 방법은 간단하지만, 이와 관련하여 몇 가지 유용한 함수를 알아봅시다.
 
-예를 들어, "안녕하세요"라는 문자열의 경우 한글은 3바이트로 되어있기 때문에 `String.length` 함수는 5를 반환합니다. 이는 각 문자를 나타내는 코드 포인트가 2바이트이고, 마지막 공백은 1바이트로 이루어져 있기 때문입니다. 따라서 문자열의 길이를 구할 때에는 바이트 수를 주의 깊게 살펴보는 것이 중요합니다.
+- `String.trim/1` 함수는 문자열 앞뒤에 있는 공백을 제거한 후 문자열의 길이를 반환합니다.
+- `String.graphemes/1` 함수는 유니코드 그래프로 이루어진 리스트를 반환하므로, 이를 조합하여 정확한 문자열의 길이를 구할 수 있습니다.
+- `String.codepoints/1` 함수는 문자열을 유니코드 코드 포인트로 이루어진 리스트로 변환하므로, 이를 이용해 문자열의 길이를 구할 수 있습니다.
 
-## 관련 정보
+이러한 함수들을 응용하면 문자열의 길이를 유연하게 다룰 수 있습니다.
 
-- [Elixir 문서](https://hexdocs.pm/elixir/Kernel.html#String.length/1)
-- [문자열 다루는 방법](https://elixirschool.com/kr/lessons/basics/string/)
-- [바이트와 코드 포인트의 차이점](https://medium.com/@joaodlf/understanding-bytes-code-points-and-graphemes-in-elixir-and-erlang-60d9b323fd46)
+## 참고하기
 
-## 참고 자료
-
-- [Elixir 공식 문서](https://elixir-lang.org/)
-- [Elixir School](https://elixirschool.com/kr/)
-- [Elixir 커뮤니티 사이트](https://elixir-lang.org/community/)
+- Elixir 문서: https://hexdocs.pm/elixir/String.html#length/1
+- ElixirSchool: https://elixirschool.com/lessons/basics/built-in-types/#strings
+- Learn X in Y minutes: https://learnxinyminutes.com/docs/kr/elixir-kr/

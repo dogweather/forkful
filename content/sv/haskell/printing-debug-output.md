@@ -1,43 +1,51 @@
 ---
-title:                "Haskell: Utmatning av felsökningsresultat"
+title:                "Haskell: Utskrift av felsökningsutmatning"
+simple_title:         "Utskrift av felsökningsutmatning"
 programming_language: "Haskell"
-category:             "Testing and Debugging"
+category:             "Haskell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/haskell/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
+##Varför
+I Haskell-utveckling kan det ibland vara användbart att kunna skriva ut debug-utmatning för att förstå hur ens kod arbetar och var det kan finnas eventuella problem. I denna bloggpost ska vi titta på hur man enkelt kan använda sig av debug-utmatning i Haskell.
 
-Det finns många olika anledningar till varför programmerare skulle vilja använda debugging-utskrifter i Haskell. Det kan vara ett användbart verktyg för att förstå vad som händer i koden, identifiera fel och effektivisera utvecklingsprocessen.
+##Så här gör du
+Att skriva ut debug-utmatning i Haskell är enkelt med hjälp av funktionen `traceShow`. Den tar emot ett värde och en sträng och skriver ut strängen tillsammans med värdet. Här är ett enkelt exempel:
 
-## Hur man gör
-
-För att skriva ut debug-utskrifter i Haskell kan vi använda oss av `Debug.Trace` modulen. Vi importerar modulen och använder funktionen `trace` som tar in en sträng som argument för vad som ska skrivas ut. Vi kan även använda oss av funktionen `traceShow` för att skriva ut det exakta värdet av en variabel.
-
-```
-Haskell
+```Haskell
 import Debug.Trace
 
-main :: IO ()
 main = do
   let x = 5
-  trace "Värdet av x är: " $ traceShow x
+      y = 10
+      z = traceShow (x + y) "Summan av x och y är:"
+  print z
 ```
-Output:
+Output: Summan av x och y är: 15
+
+Som du kan se skrevs strängen ut tillsammans med värdet `15`. Man kan också använda operatorn `.` för att kombinera flera `traceShow` anrop. Här är ett annat exempel:
+
+```Haskell
+import Debug.Trace
+
+main = do
+  let x = 5
+      y = 10
+      z = traceShow (x+y) . traceShow (x*y) $ "Summan av x och y är:"
+  print z
 ```
-Värdet av x är: 
-5
-```
+Output: Summan av x och y är: 15
 
-## Djupdykning
+Som du kan se skrevs både summan och produkten av `x` och `y` ut tillsammans med strängen.
 
-Det finns ett par saker att tänka på när det kommer till debugging-utskrifter i Haskell. För det första, se till att bara använda dem under utvecklingsfasen och ta bort dem innan du pushar koden till produktion. Det kan också vara användbart att inkludera en no-op-funktion för debug-utskrifter så att de inte påverkar prestandan i produktion.
+##Djupdykning
+I Haskell är det viktigt att notera att `traceShow` är en ren funktion, vilket innebär att den alltid returnerar samma värde för samma indata. Detta innebär att trots att du använder `traceShow` för att skriva ut värden när de beräknas, så kommer dessa värden inte att skrivas ut om de samma värden används senare i din kod.
 
-En annan sak att tänka på är att `trace` och `traceShow` endast fungerar i `IO` monaden, så de kan inte användas direkt i `Pure` funktioner. Det finns dock bibliotek som `Debug.SimpleReflect` som erbjuder liknande funktioner för pure funktioner.
+Detta kan vara förvirrande för många utvecklare, särskilt de som är vana vid att skriva ut debug-utmatning i andra språk på samma sätt. Det är viktigt att vara medveten om detta beteende och förstå att `traceShow` bara är till för att hjälpa dig att förstå hur värdena beräknas.
 
-## Se även
-
-* [Debugging i Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/debugging-haskell)
-* [Debug.Trace dokumentation](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
-* [Using Debug.Trace tutorial](https://wiki.haskell.org/Using_Debug.Trace)
+##Se även
+- [Haskell Debugging Techniques](https://mmhaskell.com/blog/2019/3/25/haskell-debugging-techniques)
+- [Debugging in Haskell](https://www.fpcomplete.com/blog/2017/01/programming-haskell-debugging/)

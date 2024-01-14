@@ -1,40 +1,43 @@
 ---
 title:                "C: 创建临时文件"
+simple_title:         "创建临时文件"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## 为什么
+# 为什么
+在进行C语言编程时，有时我们需要临时存储一些数据或创建一个临时文件，这可以帮助我们更有效地处理数据和程序。通过创建临时文件，我们可以暂时保存数据，避免使用硬编码的方式，同时也可以节省内存空间。因此，创建临时文件在编程中是非常有用的。
 
-有时，编程过程中我们需要创建临时文件来存储临时数据，而不是直接操作主要文件。这样可以避免意外覆盖或损坏主要文件，并且在程序执行完毕后，临时文件会自动删除，保持电脑整洁。
-
-## 创建临时文件的方法
-
-我们可以使用C语言中的`tmpfile()`函数来创建临时文件。下面是一个简单的例子：
+## 如何
+在C语言中，我们可以使用`fopen()`函数来创建一个临时文件，并使用`fprintf()`函数来向文件中写入数据。下面是一个简单的示例代码：
 
 ```C
-FILE *fp; //声明文件指针
-char data[10] = "Hello"; //创建需要写入临时文件的数据
-fp = tmpfile(); //使用tmpfile()函数创建临时文件
-fprintf(fp, "%s", data); //将数据写入临时文件中
+// 打开或创建临时文件
+FILE *fp = fopen("temp.txt", "w+"); 
+
+// 向文件中写入数据
+fprintf(fp, "这是一条测试数据\n");
+
+// 关闭文件
+fclose(fp);
 ```
 
-运行程序后，我们可以在临时文件中找到存储的数据。临时文件的名称将在运行时自动生成，我们可以通过使用`tmpnam()`函数获取临时文件的完整路径和名称。
+运行上述代码后，我们可以在当前工作目录下看到一个名为`temp.txt`的临时文件，其中包含了我们写入的数据。
 
-```C
-char* filename = tmpnam(NULL); //使用tmpnam()函数获取临时文件路径和名称
-printf("临时文件路径和名称：%s", filename); 
-```
+## 深入探讨
+在创建临时文件时，我们可以使用不同的打开模式来决定文件的行为。例如，使用`w+`模式可以创建一个新文件，并且如果文件已存在，则会被截断为空文件。而使用`a+`模式可以在已有文件末尾追加数据。另外，我们还可以使用`tmpfile()`函数来创建一个没有文件名的临时文件，这个临时文件会在关闭时被自动删除。
 
-## 深入了解临时文件
-
-除了`tmpfile()`和`tmpnam()`函数，C语言还提供了其他一些函数来操作临时文件，例如`tmpfile_s()`函数和`tempnam()`函数。这些函数的使用方法和效果略有不同，但都能实现创建临时文件的功能。需要注意的是，临时文件会在程序结束时自动删除，但我们也可以使用`fclose()`函数来手动关闭并删除临时文件。
+除了临时文件，我们还可以使用`tmpnam()`函数来生成一个唯一的临时文件名。这在需要临时存储数据但不想创建实际文件时非常有用。
 
 ## 参考链接
+- [C语言文件操作](https://www.runoob.com/cprogramming/c-file-io.html)
+- [创建临时文件与目录](https://blog.csdn.net/Senior_How/article/details/104539087)
+- [临时文件的创建与删除](https://www.cnblogs.com/paddix/p/5450607.html)
 
-- [C语言临时文件教程](https://www.runoob.com/cprogramming/c-function-tmpfile.html)
-- [临时文件与假文件的区别](https://zhidao.baidu.com/question/1751853642630800527.html)
-- [tmpfile()函数文档](http://www.cplusplus.com/reference/cstdio/tmpfile/)
+# 请参阅
+- [创建临时文件的C代码示例](https://github.com/Sunfished/creating-temp-file-in-C)
+- [C程序设计基础教程](http://c.biancheng.net/c/)

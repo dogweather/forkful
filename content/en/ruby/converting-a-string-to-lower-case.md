@@ -1,60 +1,53 @@
 ---
 title:                "Ruby recipe: Converting a string to lower case"
+simple_title:         "Converting a string to lower case"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Converting strings to lower case is an essential task in any programming language, including Ruby. By converting a string to lower case, we can manipulate and compare text in a case-insensitive manner. This is useful for tasks such as user input validation, sorting and searching data, and formatting text for display. In this blog post, we'll explore different ways to convert strings to lower case in Ruby.
+As a Ruby programmer, you may come across situations where you need to convert a string to lower case. This simple task can be useful when you want to ensure consistency or make string comparisons case-insensitive.
 
 ## How To
 
-To convert a string to lower case in Ruby, we can use the `downcase` method. Let's take a look at an example:
+To convert a string to lower case in Ruby, you can use the `downcase` method. Here's an example:
 
 ```Ruby
 string = "HELLO WORLD"
 puts string.downcase
 ```
 
-This will output `hello world`, all in lowercase letters. We can also use the `downcase!` method to modify the original string instead of creating a new one. This is useful if we want to permanently change the string.
+This code will output `hello world` to the console. As you can see, the `downcase` method converts all characters in the string to their lower case equivalent. This method does not modify the original string, but returns a new string with the changes applied.
+
+You can also use the `downcase!` method to modify the original string itself. Here's an example:
 
 ```Ruby
-string = "HELLO WORLD"
+string = "I LOVE RUBY"
 string.downcase!
 puts string
 ```
 
-This will output `hello world` since the `downcase!` method modifies the string in place. We can also use the `downcase` method on individual characters within a string using the `each_char` method:
-
-```Ruby
-string = "HeLLO wORld"
-string.each_char do |char|
-  print char.downcase
-end
-
-# Output: hello world
-```
+This will output `i love ruby` to the console. The `downcase!` method modifies the string directly, which can be useful if you don't need the original string anymore.
 
 ## Deep Dive
 
-Ruby's `downcase` method uses the Unicode character mapping for case conversions. This means that it can handle special characters from different languages, making it a powerful tool for internationalization. Additionally, the `downcase` method does not modify the original string but returns a new string with the case conversion. The `downcase!` method, on the other hand, directly modifies the original string.
+So how does the `downcase` method work? Behind the scenes, Ruby utilizes Unicode case mappings to convert the string characters. This means that the method is not limited to the English alphabet, but can handle international characters as well.
 
-We can also use the `downcase` method in conjunction with regular expressions for more complex string manipulation. For example, we can use the `gsub` method to replace all uppercase letters with lower case ones, while preserving any other characters:
+In addition, the `downcase` method also takes into account the current locale of the system. This means that the results may vary depending on the language and cultural conventions of the system where the code is executed.
 
-```Ruby
-string = "HeLLO wORld!"
-string = string.gsub(/[A-Z]+/) { |match| match.downcase }
-puts string
-
-# Output: hello world!
-```
+It's also worth noting that the `downcase` method only converts uppercase characters to their lowercase equivalent. Any non-alphabetic characters, such as numbers or symbols, will not be affected. If you want to also convert these characters to lowercase, you can combine the `downcase` method with the `gsub` method.
 
 ## See Also
 
-- [Ruby's `String` class documentation](https://ruby-doc.org/core-2.7.1/String.html)
-- [Ruby's `String#downcase` method documentation](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)
-- [Ruby's `gsub` method documentation](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+Here are some helpful links for further reading on string manipulation in Ruby:
+
+- [Ruby String Documentation](https://ruby-doc.org/core-3.0.2/String.html)
+- [Unicode Case Mappings](https://unicode.org/faq/casemap_charprop.html)
+- [Locale-Sensitive Case Mapping in Ruby](https://www.rubydoc.info/github/ruby/ruby/Rake%2FLocale/CONVICTION)
+
+Happy coding!

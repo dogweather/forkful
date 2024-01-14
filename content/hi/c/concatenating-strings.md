@@ -1,7 +1,9 @@
 ---
-title:                "C: स्ट्रिंग्स को जोड़ना"
+title:                "C: स्ट्रिंग को जोड़ना।"
+simple_title:         "स्ट्रिंग को जोड़ना।"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/c/concatenating-strings.md"
 ---
 
@@ -9,37 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-अगर आप किसी बड़े स्ट्रिंग को प्रिंट करना चाहते हैं तो आपको एक abstract data type से मूल्य प्राप्त करके उसे प्रिंट करना होगा. और यदि आपको इस स्ट्रिंग के साथ दूसरे स्ट्रिंग को जोड़ना है, तो आपको स्ट्रिंग को जोड़ने के लिए एक अनुभवी समूह का उपयोग करना होगा.
+क्या आपने कभी सोचा है कि कंकटनेटिंग स्ट्रिंग ऐसा क्यों महत्वपूर्ण है? यह आपको दो या अधिक स्ट्रिंग्स को संयुक्त करने की अनुमति देता है, जो आपको अपने प्रोग्राम में विभिन्न स्ट्रिंग्स को प्रभावी रूप से उपयोग करने की सुविधा प्रदान करता है। अब चलिए जानते हैं कि हम कंकटनेटिंग स्ट्रिंग को कैसे कर सकते हैं।
 
 ## कैसे करें
 
-आपको स्ट्रिंग को जोड़ने के लिए स्ट्रिंग के अंत में दो आंकड़ों के साथ एक नया स्ट्रिंग बनाना होगा. नीचे दिए गए कोड ब्लॉक में एक उदाहरण है:
-
 ```C
-//कोड उदाहरण
-char str1[20] = "Hello";
-char str2[] = "World";
-char result[30];
+#include <stdio.h>
+#include <string.h>
 
-//strcat () फ़ंक्शन से स्ट्रिंगों को जोड़ें
-strcat(result,str1);
-strcat(result," ");
-strcat(result,str2);
-printf("%s", result);
-
-// आउटपुट: Hello World
+int main() {
+    char str1[50] = "Hello ";
+    char str2[] = "world!";
+    
+    // Concatenating str1 and str2
+    strcat(str1, str2);
+    
+    printf("%s", str1);
+    
+    return 0;
+}
 ```
 
-## गहराई में खोज
+### आउटपुट
 
-C में स्ट्रिंगों को जोड़ने के लिए, स्ट्रिंग को एक्सेस करने और उस स्ट्रिंग को तय करने के लिए कुछ विशेष तरीके हो सकते हैं. इनमे से कुछ तरीकों के बारे में अधिक जानकारी के लिए, नीचे दिए गए लिंक्स का उपयोग करें:
+Hello world!
 
-- [String Concatenation in C](https://www.programiz.com/c-programming/library-function/string.h/strcat)
-- [String Manipulation Functions in C](https://www.geeksforgeeks.org/string-manipulation-in-c-without-using-string-h/)
-- [Arrays in C](https://www.tutorialspoint.com/cprogramming/c_arrays.htm)
+ऊपर दिए गए कोड उदाहरण में, हमने `strcat()` फ़ंक्शन का उपयोग किया है जो स्ट्रिंग `str1` में `str2` को कंकटनेट करता है। हमने फ़ंक्शन को उसी स्ट्रिंग के साथ बुलाया है जिससे हम कंकटनेट करना चाहते हैं और ताकि यह मौजूदा स्ट्रिंग में प्रभावित हो सके। इस तरह से, हम स्ट्रिंग को संयुक्त कर सकते हैं और उसे उपयोगी रूप से प्रदर्शित कर सकते हैं।
 
-## देखें भी
+## गहराई में जाएं
 
-- [Pointers in C](https://www.hackerearth.com/practice/notes/pointers-in-c/)
-- [Memory Allocation in C](https://www.geeksforgeeks.org/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/) 
-- [C Language Tutorials in Hindi](https://www.studytonight.com/c/)
+कंकटनेटिंग स्ट्रिंग का उपयोग करना आसान तो है, लेकिन यह स्ट्रिंग्स में मेमोरी के संभावित बढ़ोतरी का कारण बन सकता है। कई बार, हमें `malloc()` या `calloc()` जैसी मुख्य फ़ंक्शन्स का उपयोग करना पड़ता है जो स्ट्रिंग के लिए अलग से मेमोरी का आवंटन करती हैं। यदि हम अनविति में स्ट्रिंग्स को कंक्टनेट करते हैं, तो

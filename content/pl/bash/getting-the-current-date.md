@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Uzyskiwanie bieżącej daty"
+title:                "Bash: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/getting-the-current-date.md"
 ---
 
@@ -9,52 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu potrzebujemy informacji o dacie. Może to być potrzebne do wygenerowania raportu, zapisania pliku z datą w nazwie lub do wyświetlenia aktualnego czasu dla użytkownika. W tym artykule dowiesz się, w jaki sposób w prosty sposób uzyskać aktualną datę w języku Bash, aby łatwo móc jej używać w swoich programach.
+Cześć czytelnicy! W dzisiejszym wpisie będziemy rozmawiać o tym, dlaczego warto poznać sposoby pobierania bieżącej daty w języku Bash. Jest to podstawowa umiejętność, która może być bardzo przydatna podczas tworzenia skryptów i automatyzacji zadań.
 
-## Jak to zrobić
+## Jak To Zrobić
 
-Istnieje kilka sposobów na uzyskanie aktualnej daty w Bash. Następujące przykłady przedstawiają najprostszą metodę, ale istnieje wiele innych, które mogą być dostępne w twoim systemie operacyjnym lub wersji Bash. Możesz wypróbować różne metody, aby znaleźć tę, która najlepiej spełnia twoje potrzeby.
+Aby pobrać aktualną datę w Bashu, wystarczy wykorzystać wbudowane funkcje systemowe. Jedną z nich jest polecenie `date`, które zwraca bieżącą datę i czas w ustawionym formacie. Oto kilka przykładowych zastosowań tego polecenia:
 
-```Bash
-# Dostępna data i godzina
-date
-
-# Aktualna data
-date +"%F"
-
-# Aktualny czas
-date +"%T"
-
-# Format 12-godzinny z AM/PM
-date +"%r"
-
-# Aktualny rok
-date +"%Y"
-
-# Aktualny miesiąc
-date +"%m"
-
-# Aktualny dzień
-date +"%d"
+```
+Bash
+date +"%d/%m/%Y"    #wyświetli datę w formacie DD/MM/RRRR
+date +"%H:%M:%S"    #wyświetli czas w formacie HH:MM:SS
+date +"%A"          #wyświetli dzień tygodnia np. wtorek, środa
 ```
 
-### Wysoki poziom
+Wymienione powyżej przykłady to tylko niewielka część możliwości polecenia `date`. Istnieje wiele innych opcji, które pozwalają na bardziej wyszukane formatowanie daty i czasu. Możesz je znaleźć w dokumentacji polecenia lub po prostu spróbować eksperymentować z różnymi argumentami.
 
-Komenda `date` jest wykorzystywana do uzyskania informacji o dacie i czasie. Może przyjąć różne formaty i opcje, co daje duże możliwości w dostosowaniu uzyskiwanych danych do swoich potrzeb. Możesz wyświetlić pomoc w konsoli, wpisując `man date` lub `date --help`, aby poznać dostępne opcje i ich szczegółowe opisy.
+## Deep Dive
 
-Jeśli potrzebujesz użyć aktualnej daty w nazwie pliku, np. do utworzenia kopii zapasowej lub zapisania pliku z unikalną nazwą, warto skorzystać z komendy `touch` lub `cp` i wprowadzić odpowiednio sformatowany wynik uzyskany z `date`. Przykładowo, jeśli chcesz utworzyć plik z datą i godziną w nazwie, możesz użyć następującej komendy:
-
-```Bash
-# Utworzenie pliku z datą i godziną w nazwie
-touch file_$(date +"%F_%T").txt
-```
-
-## Zagłębienie
-
-Polecam dokładnie przeanalizować formatowanie komendy `date`, ponieważ dostępne jest wiele opcji, które mogą ułatwić korzystanie z aktualnej daty. Warto także poeksperymentować z różnymi opcjami, aby lepiej zrozumieć, jak działają. W ten sposób będziesz bardziej pewny w użyciu jej w swoich programach.
+Poznajemy kolejną funkcję Bash o nazwie `date +%s`. Tym razem nie wyświetlimy formatowanej daty, a ilość sekund, która upłynęła od ery Unix'a (1 stycznia 1970 roku). Ciekawostką jest to, że wiele systemów operacyjnych przechowuje daty w takiej formie, co ułatwia porównywanie i obliczenia na dacie. Załóżmy, że potrzebujemy obliczyć, ile dni minęło od momentu, kiedy rozpoczęliśmy pracę nad naszym projektem. Wystarczy pobrać aktualną datę w sekundach i odjąć datę startową, a następnie podzielić wynik przez liczbę sekund w jednym dniu. Takie obliczenia są bardzo proste dzięki funkcjom Bash.
 
 ## Zobacz także
 
-- Dokumentacja komendy `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation
-- Przydatne opcje komendy `date`: https://www.codecoffee.com/tipsforlinux/articles/35.html
-- Poradnik na temat pracy z datami w Bash: https://www.lifewire.com/use-command-to-work-with-dates-2201058
+- Dokumentacja polecenia `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Poradnik o formatowaniu daty: https://devhints.io/bash-date-format
+- Przykłady zastosowania funkcji `date` w codziennej pracy: https://www.cyberciti.biz/faq/linux-unix-get-yesterdays-tomorrows-date/

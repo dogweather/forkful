@@ -1,38 +1,56 @@
 ---
-title:                "C: Encontrar la longitud de una cadena"
+title:                "C: Encontrando la longitud de una cadena"
+simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¡Por Qué!
-En la programación, trabajar con cadenas de caracteres (strings) es una tarea común y esencial. En algunas situaciones, es necesario conocer la longitud de una cadena de caracteres para poder manipularla correctamente. En este artículo, aprenderemos cómo encontrar la longitud de una cadena en el lenguaje de programación C.
+## Por qué
 
-## Cómo hacerlo
-Para encontrar la longitud de una cadena de caracteres en C, utilizaremos la función `strlen` de la biblioteca `string.h`. Esta función toma como argumento la cadena de caracteres y devuelve un valor de tipo `size_t` que representa su longitud. Veamos un ejemplo de cómo utilizarla:
+En programación, a menudo necesitamos saber la longitud de una cadena para realizar diversas tareas. Ya sea para validar la entrada del usuario, manipular datos o simplemente por curiosidad, encontrar la longitud de una cadena es una habilidad esencial para cualquier programador en C.
+
+## Cómo
+
+En C, la longitud de una cadena se refiere al número de caracteres que contiene, incluyendo espacios y símbolos. Para encontrar la longitud de una cadena, podemos usar la función `strlen()` que se encuentra en la biblioteca estándar `string.h`.
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main(){
-  char nombre[] = "Juan";
-  size_t longitud = strlen(nombre);
-  printf("La longitud de la cadena '%s' es: %zu", nombre, longitud);
-  return 0;
+int main() {
+    // definir una cadena
+    char cadena[] = "¡Hola, mundo!";
+
+    // encontrar la longitud de la cadena
+    int longitud = strlen(cadena);
+
+    // imprimir la longitud
+    printf("La longitud de la cadena es: %d", longitud);
+
+    return 0;
 }
 ```
 
-En este ejemplo, utilizamos la función `strlen()` para encontrar la longitud de la cadena `nombre` (que contiene "Juan") y la almacenamos en la variable `longitud`. Luego, imprimimos el resultado utilizando `printf`, donde `%zu` es el especificador de formato para un valor de tipo `size_t`. El resultado será: `La longitud de la cadena 'Juan' es: 4`.
+**Salida:**
+
+```
+La longitud de la cadena es: 13
+```
+
+En este ejemplo, primero definimos una cadena llamada "¡Hola, mundo!" y luego usamos la función `strlen()` para encontrar su longitud. Finalmente, imprimimos la longitud en la pantalla.
 
 ## Profundizando
-Ahora que sabemos cómo encontrar la longitud de una cadena en C, es importante conocer algunos detalles importantes sobre el tema. Por ejemplo, esta función cuenta todos los caracteres de la cadena, incluyendo el carácter nulo `'\0'`. Este es el carácter que se agrega automáticamente al final de una cadena en C y se utiliza para indicar el final de la misma.
 
-También es importante mencionar que `strlen` es una función muy rápida, ya que solo recorre la cadena una vez. Esto hace que sea ideal para utilizar en programas que requieren de una ejecución eficiente.
+La función `strlen()` cuenta el número de caracteres de una cadena hasta encontrar el caracter nulo (`\0`), que marca el final de la cadena. Esto significa que la longitud de una cadena vacía (sin ningún carácter) es 0, mientras que la longitud de una cadena con solo un caracter nulo es 1.
 
-## Ver También
-- [Tutorial de C en Español](https://www.learn-c.org/es/)
-- [Documentación oficial de la función `strlen()` en la biblioteca `string.h` en C](https://www.gnu.org/software/libc/manual/html_node/String-Length.html)
-- [¿Por qué utilizar C en la programación?](https://medium.com/@arnaldorgil/por-qu%C3%A9-usar-c-en-2018-dc90de25fd25)
+Además, es importante recordar que la longitud devuelta por `strlen()` es de tipo `size_t`, que suele ser equivalente a `unsigned int`. Por lo tanto, si queremos almacenar la longitud de una cadena en una variable, debemos declararla como `size_t` o `unsigned int`.
+
+## Ver también
+
+- [Función `strlen()` en la documentación de C](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
+- [Ejemplos adicionales de encontrar la longitud de una cadena en C](https://www.geeksforgeeks.org/strlen-function-in-c/)
+- [Cómo contar el número de palabras en una cadena en C](https://www.freecodecamp.org/news/c-find-length-of-string/#:~:text=We%20can%20use%20the%20strlen,function%20to%20find%20the%20length.&text=We%20can%20calculate%20the%20number,positions%20in%20the%20character%20array.)

@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Å bruke regulære uttrykk"
+title:                "Ruby: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/using-regular-expressions.md"
 ---
 
@@ -9,28 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Regulære uttrykk er en kraftig verktøy for å søke og manipulere tekst i et programmeringsspråk som Ruby. De lar deg finne og behandle tekstmønstre på en effektiv måte, noe som kan være svært nyttig i dataanalyse, tekstbehandling og mer.
+Hvis du er i utviklingsverdenen, har du sikkert hørt om regular expressions. Men hvorfor skal du bruke dem? Regular expressions er et kraftig verktøy som lar deg søke og manipulere tekst basert på mønstre. Det kan være nyttig for å finne og erstatte tekst, validere inndata og mye mer. Det er også et utbredt verktøy som brukes i mange programmeringsspråk, inkludert Ruby.
 
 ## Hvordan
 
-For å bruke regulære uttrykk i Ruby, må du først importere "regexp" biblioteket. Deretter kan du definere uttrykket ditt innenfor et "```Ruby ... ```" kodeblokk som følger:
+For å bruke regular expressions i Ruby, trenger du først å inkludere `regexp` biblioteket ved å skrive `require 'regexp'` øverst i filen din. Deretter kan du skrive et mønster ved å bruke `/` rundt det, for eksempel `/hello world/`, som vil matche teksten "hello world" i en streng. Du kan også bruke forskjellige spesielle tegn, som `.` for å matche ethvert tegn, `+` for å matche ett eller flere forekomster av det foregående tegnet, og `*` for å matche null eller flere forekomster. La oss se på et eksempel:
 
 ```Ruby
-my_string = "Dette er en tekststreng som inneholder tallene 123"
-
-my_regex = /(\d+)/ # (d+) angir at vi ønsker å finne alle tallene i strengen
-
-matches = my_string.scan(my_regex) # gir oss en liste over alle tallene som matchet uttrykket vårt
-
-puts matches # output: ["123"]
+text = "Hello world, this is a blog post written in Norwegian!"
+pattern = /H.*?n[wd]/
+puts text.gsub(pattern, "Hallo")
 ```
+
+I dette eksemplet vil vi erstatte alle ord som starter med `H` og slutter med `n` eller `w` med "Hallo", slik at vi får ut "Hallo, Hallo, Hallo Hallo Hallo Halo!".
 
 ## Dypdykk
 
-Det er mange forskjellige spesifikke uttrykk og metoder du kan bruke med regulære uttrykk i Ruby. For eksempel kan du bruke "match" metoden til å finne et spesifikt mønster i en streng, eller "sub" metoden for å erstatte deler av en streng med annen tekst. Det er også mulig å bruke flagg for å endre hvordan uttrykket tolkes, for eksempel for å ignorere store og små bokstaver eller begynnelsen og slutten på en linje.
+Regulære uttrykk kan være kompliserte og kraftige, og det er umulig å dekke alt i en enkelt blogginnlegg. Men det er noen få ting du bør vite når du bruker dem. Først, sørg for å bruke nøyaktig matche hvis du vil at uttrykket ditt skal matche hele strenger og ikke bare deler av det. For eksempel hvis vi endrer mønsteret vårt i eksemplet ovenfor til `/H.*n[wd]/`, vil vi få ut "Hallo world, this is a blog post written in Norwegian!". Merk at "Hallo hello Hallo Hallo Hallo Halo" er ikke en ønsket utgang.
 
-## Se Også
+En annen ting å huske på er at regular expressions er case sensitive. Det betyr at `/hello/` ikke vil matche "Hello", så du må ta hensyn til store og små bokstaver når du lager dine mønstre.
 
-- [En oversikt over regulære uttrykk i Ruby](https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html)
-- [Ruby sin offisielle dokumentasjon for regexp biblioteket](https://ruby-doc.org/core-3.0.0/Regexp.html)
-- [En tutorial for å lære mer om regulære uttrykk i Ruby](https://www.youtube.com/watch?v=sa-TUpSx1JA)
+Det er også lurt å være forsiktig når du bruker spesielle tegn som `.` og `+`. De kan være veldig nyttige, men også føre til uønskede resultater hvis du ikke bruker dem riktig.
+
+## Se også
+
+- [Rubys dokumentasjon om regular expressions](https://ruby-doc.org/core-2.3.1/Regexp.html)
+- [En interaktiv tutorial om regular expressions i Ruby](https://www.codecademy.com/en/courses/ruby-beginner-en-NFCZ7/0/1)
+- [En praktisk guide for regular expressions i Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)

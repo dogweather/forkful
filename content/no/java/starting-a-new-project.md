@@ -1,62 +1,40 @@
 ---
 title:                "Java: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Java"
-category:             "Getting Started"
+category:             "Java"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/java/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
+Å starte et nytt programmeringsprosjekt kan virke overveldende, spesielt for nybegynnere. Men ved å lære Java, kan du åpne døren til en hel verden av muligheter innen programmering. Med sin enkle syntaks og allsidighet, er Java et flott språk å lære for både nybegynnere og erfarne utviklere.
 
-Det er mange grunner til å starte et nytt Java-prosjekt. Kanskje du har en ny idé for en applikasjon eller et program som du vil utvikle. Eller kanskje du ønsker å lære mer om Java og trenger et praktisk prosjekt å jobbe med. Uansett motivasjon, er det alltid spennende å starte et nytt prosjekt og se hvor det fører deg.
-
-## Slik gjør du det
-
-Før du begynner å kode, er det viktig å ha en klar forståelse av hva du ønsker å oppnå med prosjektet ditt. Skisser ut funksjonaliteten og strukturen til programmet ditt, og tenk på hvilke verktøy og ressurser du trenger. Når du har en plan, kan du følge disse enkle trinnene for å sette i gang med ditt nye Java-prosjekt:
+## Hvordan
+For å komme i gang med et nytt Java-prosjekt, må du først sørge for å ha Java Development Kit (JDK) installert på datamaskinen din. Deretter kan du følge disse enkle trinnene for å lage ditt første Java-program:
 
 ```Java
-public class MinProsjekt {
+public class Main {
     public static void main(String[] args) {
-        // Sørg for at Java er installert på datamaskinen din
-        // Husk å importere nødvendige biblioteker
-        // Skriv koden din her
+        System.out.println("Hei verden!");
     }
 }
 ```
 
-Etter å ha satt opp prosjektets struktur, kan du begynne å skrive koden din. Bruk riktig syntaks og følg beste praksis for å skrive ren og effektiv kode. Husk også å kommentere koden din for å gjøre den lettere å forstå for andre brukere eller for deg å referere til senere.
+Her har vi opprettet en klasse kalt "Main" og en statisk metode kalt "main" som er inngangen til programmet vårt. Inne i denne metoden har vi brukt System-klassen til å skrive ut teksten "Hei verden!" til konsollen.
 
-Når koden din er klar, kan du teste den ved å kjøre programmet og se på resultatet:
-
-```Java
-public class MinProsjekt {
-    public static void main(String[] args) {
-        int tall1 = 5;
-        int tall2 = 10;
-        int sum = tall1 + tall2;
-
-        System.out.println("Summen av " + tall1 + " og " + tall2 + " er " + sum);
-    }
-}
-```
-
-Output:
-
-```
-Summen av 5 og 10 er 15
-```
-
-Du kan også bruke debug-funksjonaliteten i din IDE for å finne og løse eventuelle feil i koden din.
+Dette er et enkelt eksempel, men det viser hvordan du kan lage et Java-program og bruke noen grunnleggende syntakse. Du kan nå starte å utforske Java-verdenen og lære mer om dets funksjoner og muligheter.
 
 ## Dypdykk
+Når du skal starte et nytt Java-prosjekt, er det viktig å ha en klar og gjennomtenkt plan. Først må du bestemme hva målet med prosjektet er, og hvilke funksjoner og egenskaper det skal ha. Deretter kan du begynne å designe og implementere koden din ved hjelp av objektorientert programmering (OOP) og utnytte Java sine mange biblioteker og rammeverk.
 
-Når du starter et Java-prosjekt, er det viktig å også tenke på noen andre aspekter som kan påvirke arbeidet ditt. Dette inkluderer valg av utviklingsmiljø, versjonshåndtering og testing av koden din. Det er også viktig å sørge for at du følger sikkerhetsstandarder og beste praksis for å unngå potensielle sårbarheter.
+I tillegg er det viktig å følge god programmeringspraksis, som å lage kommentarer og følge standard konvensjoner for formatering og navngivning. Dette vil gjøre det enklere for deg og andre utviklere å forstå og vedlikeholde koden din i fremtiden.
 
-En annen viktig del av et prosjekt er også dokumentasjon. Selv om det kan virke kjedelig, er det viktig å dokumentere koden din for å gjøre det lettere for andre å forstå og bruke den. Dette inkluderer å skrive kommentarer i koden, lage README-filer og eventuelt utvikle en brukermanual.
+For mer informasjon og ressurser om hvordan du kan starte et Java-prosjekt, kan du sjekke ut lenkene under.
 
 ## Se også
-
+- [Hvordan installere JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
 - [Offisiell Java-dokumentasjon](https://docs.oracle.com/javase/tutorial/)
-- [GitHub: Beste praksis for Java-prosjekter](https://github.com/oojacoboo/guide_to_clean_java)
-- [Javaboka - Introduksjon til Java-programmering](https://bokbasen.janets.no/webread/read/id/113629/slug/javaboka)
+- [Java Code Conventions](https://www.oracle.com/java/technologies/javase/codeconventions-introduction.html)

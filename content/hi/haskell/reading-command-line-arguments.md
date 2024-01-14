@@ -1,60 +1,33 @@
 ---
-title:                "Haskell: कम्प्यूटर प्रोग्रामिंग में कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
+title:                "Haskell: कम्प्यूटर प्रोग्रामन्ग के लिए कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
+simple_title:         "कम्प्यूटर प्रोग्रामन्ग के लिए कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
+अगर आप किसी हैस्केल प्रोग्रामर हैं या बनना चाहते हैं, तो आपको कमांड लाइन एर्ग्यूमेंट को पढ़ना सीखना बहुत जरूरी है। इससे आपको अपने प्रोग्राम में उपयोगकर्ता से दिए गए इनपुट को प्रोसेस करने का तरीका समझने में मदद मिलेगी।
 
-कमांड लाइन विकल्पों को पढ़ने का आपत्तिजनक काम हो सकता है, लेकिन यह हैसकेल प्रोग्रामिंग में अत्यंत महत्वपूर्ण होता है। यह बहुत सारी अवस्थाओं में उपयोगी हो सकता है, जैसे कि अधिकतम सुरक्षा के लिए अनुरोध प्रोग्रामों को, विभिन्न प्रकार के समाप्ति और विधि कार्यों को, और आपके कोड का आकंशी पूर्वानुमान करने के लिए।
-
-## कैसे
-
-कमांड लाइन विकल्पों को पढ़ने के लिए हस्केल में `System.Environment.getArgs` फ़ंक्शन का उपयोग किया जाता है। इस फ़ंक्शन को अपने कोड में इस प्रकार से लिखा जा सकता है:
-
+## कैसे करें
 ```Haskell
 import System.Environment
 
 main = do
-  args <- getArgs
-  print args
+    args <- getArgs
+    putStrLn ("Command line arguments: " ++ show args)
+```
+ऊपर दिए गए हस्केल कोड में, हमने `System.Environment` मॉड्यूल को इंपोर्ट किया है। यह मॉड्यूल हमें `getArgs` नामक फ़ंक्शन को उपयोग करने का अनुमति देता है, जो हमें सभी कमांड लाइन एर्ग्यूमेंट को स्ट्रिंग लिस्ट के रूप में देता है। इसके बाद, हम `putStrLn` फ़ंक्शन का उपयोग करके उपयोगकर्ता से दिए गए इनपुट को प्रिंट करते हैं। ध्यान दें कि, `show` फ़ंक्शन को उपयोग करके हम स्ट्रिंग लिस्ट को स्ट्रिंग में रूपांतरित करते हैं ताकि हम उसे प्रिंट कर सके।
+
+इसके बाद, आप कमांड लाइन में `runhaskell` कमांड का उपयोग करके अपना हस्केल कोड चला सकते हैं, जिससे आपको उपयोगकर्ता द्वारा दिए गए इनपुट का अंदाज़ा लग सके।
+
+```bash
+$ runhaskell command-line-args.hs hello world
+Command line arguments: ["hello","world"]
 ```
 
-यदि आप अपने कोड को आवृत्ति से संपत्ति बनाना चाहते हैं, तो आप मानचित्र योग्यता प्राप्त कमांड लाइन विकल्पों की गणना भी कर सकते हैं। आप इसका उपयोग `System.Console.GetOpt` प्रक्रिया के साथ कर सकते हैं, जो स्टैंडर्ड ऊपर दिए गए कमांड लाइन विकल्पों को देखेगा और उन्हें आपके कोड के लिए उदाहरण जोड़ेंगे। इस प्रक्रिया को आप इस प्रकार से उपयोग में ला सकते हैं:
-
-```Haskell
-import System.Console.GetOpt
-import System.Environment
-
-data Options = Options {
-  optFlag :: Bool,
-  optInputFile :: FilePath
-} deriving Show
-
-defaultOptions = Options {
-  optFlag = False,
-  optInputFile = ""
-}
-
-options :: [OptDescr (Options -> Options)]
-options = [
-  Option ['f'] ["flag"]
-         (NoArg (\opts -> opts { optFlag = True }))
-         "Set flag"
-  Option ['i'] ["input"]
-         (ReqArg (\file opts -> opts { optInputFile = file }))
-         "Input file"
-  ]
-
-main = do
-  args <- getArgs
-  let (opts, nonOpts, errors) = getOpt Permute options args
-  case errors of
-    [] -> print opts
-    _ -> error (concat errors)
-```
-
-यहां हमने `Options` डेटा टाइप बनाया और उसम
+## गहराई में जाएं
+अगर आप गहराई में जाना चाहते हैं, तो आप हस्केल के `System.Environment` मॉड्यूल को जान सकते हैं। इसमें अन्य भी फ़ंक्शन हैं, जैसे `getProgName` जो हमें वर्तमान प्रोग्राम का

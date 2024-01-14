@@ -1,48 +1,41 @@
 ---
-title:                "Javascript: Debug-Ausgabe drucken"
+title:                "Javascript: Fehlerausgabe drucken"
+simple_title:         "Fehlerausgabe drucken"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Warum
+Bevor wir in die Details eintauchen, wollen wir uns erstmal überlegen, warum wir Debug-Ausgaben in unserem JavaScript-Code verwenden sollten. Diese Art von Ausgaben können uns dabei helfen, Fehler in unserem Code zu finden und zu beheben. Sie bieten uns Einblicke in den Ablauf unseres Programms und zeigen uns, wo es eventuell zu Fehlfunktionen kommt. Insbesondere bei komplexen Anwendungen können Debug-Ausgaben sehr nützlich sein, um Probleme schnell zu erkennen und zu beheben.
 
-Debug-Ausgaben sind ein wesentlicher Bestandteil bei der Entwicklung von Javascript-Projekten. Sie helfen dabei, Fehler zu finden und den Ablauf des Codes zu verstehen. Ohne Debug-Ausgaben wäre es oft schwierig, den genauen Grund für ein unerwartetes Verhalten des Codes zu identifizieren. Deshalb ist es wichtig zu verstehen, warum und wie man Debug-Ausgaben im Javascript-Code einsetzt.
+## Wie
+Um Debug-Ausgaben in unserer JavaScript-Anwendung zu erzeugen, können wir die `console.log()`-Funktion verwenden. Diese Funktion ermöglicht es uns, beliebige Werte in der Konsole unseres Browsers auszugeben. Schauen wir uns beispielsweise folgendes Code-Beispiel an:
 
-## Wie geht man vor
-
-Um Debug-Ausgaben in Javascript zu machen, können wir die `console.log()` Funktion verwenden. Diese Funktion gibt den übergebenen Wert in der Konsole aus. Hier ist ein einfaches Beispiel:
-
-```Javascript
-let zahl = 5;
-console.log(zahl); //Gibt 5 in der Konsole aus
+```javascript
+let name = "Max";
+let age = 30;
+console.log(`Mein Name ist ${name} und ich bin ${age} Jahre alt.`);
 ```
 
-Wir können auch mehrere Werte in einer Debug-Ausgabe kombinieren, indem wir sie mit Kommas trennen. Zum Beispiel:
+Wenn wir diesen Code ausführen, werden wir in der Konsole unseres Browsers folgende Ausgabe sehen:
 
-```Javascript
-let zahl1 = 5;
-let zahl2 = 10;
-console.log("Wert von Zahl 1:", zahl1, "Wert von Zahl 2:", zahl2); //Gibt "Wert von Zahl 1: 5 Wert von Zahl 2: 10" in der Konsole aus
+```
+Mein Name ist Max und ich bin 30 Jahre alt.
 ```
 
-Wir können auch die `console.log()` Funktion in Bedingungen oder Schleifen verwenden, um den Ablauf des Codes zu verfolgen. Hier ist ein Beispiel, das zählt, wie oft eine Schleife durchlaufen wird:
+Hier haben wir die Werte unserer Variablen `name` und `age` in der Ausgabe angezeigt, um sicherzustellen, dass die Werte korrekt zugewiesen wurden. Wir können `console.log()` auch verwenden, um den Wert von bestimmten Ausdrücken oder Variablen zu überprüfen, während unser Programm ausgeführt wird.
 
-```Javascript
-for (let i = 0; i < 10; i++) {
-  console.log("Schleifendurchlauf:", i+1); //Gibt "Schleifendurchlauf: 1, Schleifendurchlauf: 2" usw. bis "Schleifendurchlauf: 10" in der Konsole aus
-}
-```
+Wir können auch verschiedene Arten von Ausgaben erzeugen, indem wir verschiedene Methoden der Konsole verwenden, z.B. `console.error()` für Fehlermeldungen oder `console.warn()` für Warnungen. Es ist auch möglich, Objekte oder Arrays in der Konsole auszugeben und ihre Inhalte zu untersuchen.
 
-## Tiefes Eintauchen
+## Deep Dive
+Neben der `console.log()`-Funktion gibt es noch weitere Methoden und Eigenschaften, die uns bei der Fehlerbehebung und Analyse unseres Codes helfen können. Zum Beispiel können wir `console.table()` verwenden, um Daten in tabellarischer Form in der Konsole anzuzeigen, oder `console.group()` und `console.groupEnd()` verwenden, um zusammengehörige Ausgaben zusammenzufassen.
 
-Um Debug-Ausgaben effektiv zu nutzen, ist es wichtig zu verstehen, wann und wo sie platziert werden sollten. Es ist sinnvoll, Debug-Ausgaben in Teilen des Codes zu platzieren, wo es zu Problemen kommen könnte oder um bestimmte Variablen zu verfolgen. Dabei ist es jedoch wichtig, am Ende des Debugging- Prozesses alle Debug-Ausgaben zu entfernen, um eine unnötige Belastung des Codes zu vermeiden.
-
-Außerdem ist es hilfreich, die verschiedenen Methoden der `console`-Objekts zu kennen, wie z.B. `console.warn()` für Warnungen und `console.error()` für Fehlermeldungen. Diese können dazu beitragen, den Code besser zu strukturieren und Probleme schnell zu identifizieren.
+Darüber hinaus können wir auch die sogenannten "breakpoints" verwenden, um den Ablauf unseres Codes zu unterbrechen und uns die Werte von Variablen in einem bestimmten Bereich anzusehen. Diese Funktion ist besonders hilfreich beim Debuggen von komplexem Code, da sie es uns ermöglicht, den Zustand unseres Programms zu einem bestimmten Zeitpunkt zu untersuchen.
 
 ## Siehe auch
-- [Javascript Debugging Tutorial](https://www.w3schools.com/js/js_debugging.asp)
-- [Console Object in Javascript](https://developer.mozilla.org/en-US/docs/Web/API/Console)
-- [Why is Debugging Important?](https://www.geeksforgeeks.org/why-debugging-is-important-in-programming/)
+- [Einführung in das Debugging in JavaScript](https://developer.mozilla.org/de/docs/Web/JavaScript/Debugging)
+- [Die verschiedenen Methoden der JavaScript-Konsole](https://developer.mozilla.org/de/docs/Web/API/Console#%C3%9Cbersicht_%C3%BCber_die_console-API_Intervallconsole-object)

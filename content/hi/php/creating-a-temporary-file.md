@@ -1,37 +1,46 @@
 ---
-title:                "PHP: Atemporary file बनाना"
+title:                "PHP: एक अस्थायी फ़ाइल बनाना"
+simple_title:         "एक अस्थायी फ़ाइल बनाना"
 programming_language: "PHP"
-category:             "Files and I/O"
+category:             "PHP"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/php/creating-a-temporary-file.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
+हेलो दोस्तों, आज हम PHP programming ब्लॉग पोस्ट के साथ हैं और आज हम आपको बताएंगे की ताजगी फाइल क्यों बनाई जाती है।
 
-आज के युग में प्रोग्रामिंग स्किल्स का बहुत महत्व हैं और उन्हें सीखने और अपनाने में कोई भी व्यक्ति नहीं पीछे रहना चाहता हैं। एक ऐसी स्किल्ड में से एक हैं PHP प्रोग्रामिंग। आप अपने PHP कोड को और भी सुरक्षित और बेहतर बनाने के लिए टेम्पोररी फाइल सृजन कर सकते हैं। इसका प्रयोग आपको सुरक्षित डेटा जोड़ने या और भी अनेक विभिन्न कार्यों में मदद कर सकता हैं।
+## कैसे
+ताजगी फाइल बनाने के लिए सबसे पहले हमें ```tempnam()``` फंक्शन का उपयोग करके temporary file का नाम जनरेट करना होता है। इसके बाद हम ```fopen()``` फंक्शन का उपयोग करके temporary file को खोलते हैं और उसमे कुछ डेटा लिखते हैं। अंत में हम ```fclose()``` फंक्शन का उपयोग करके ताजगी फाइल को बंद करते हैं।
 
-## कैसे करें
+इस सबको समझाने के लिए हम नीचे दिए गए कोड ब्लॉक का उपयोग करेंगे।
 
 ```PHP
-$file = tmpfile();
-fwrite($file, "This is a temporary file.");
-echo fread($file, filesize("Your File Path"));
-fclose($file);
+<?php
+
+// Generate temporary file name using tempnam() function
+$temp_file = tempnam('/tmp', 'temp_');
+
+// Open temporary file using fopen() function
+$handle = fopen($temp_file, 'w');
+
+// Write some data to the temporary file
+fwrite($handle, 'Hello World! This is a temporary file.');
+
+// Close the temporary file
+fclose($handle);
+
+// Output the temporary file name
+echo "Temporary file created at: " . $temp_file;
 ```
 
-## गहराई तक जाईये
+यह कोड चलाने के बाद आपको कुछ इस तरह का आउटपुट मिलेगा:
 
-टेम्पोररी फाइल सृजन करने के बारे में गहराई से जानने से पहले हमें यह समझना चाहिए कि यह क्या है और यहाँ इसका क्या उपयोग होता हैं। टेम्पोररी फाइलें अस्थायी फाइलें होती हैं जो आमतौर पर एप्लीकेशन या सिस्टम प्रोसेसेस की अपने आप डिलीट हो जाती हैं। ये फाइलें ऑपरेशन कमलाई और सुरक्षितता बनाए रखने के लिए स्टोर होती हैं। इससे अपने कोड को प्रोटेक्ट किया जा सकता हैं और डेटा लॉस या वाइरस से बचाया जा सकता हैं।
+```
+Temporary file created at: /tmp/temp_q0h1bo
+```
 
-## अधिक जानकारी के लिए
-
-[PHP Official Documentation on tmpfile() function](https://www.php.net/manual/en/function.tmpfile.php)
-
-[GeeksforGeeks tutorial on PHP temporary files](https://www.geeksforgeeks.org/creating-temporary-files-in-php/)
-
-## देखें भी
-
-[How to Secure Your PHP Code](https://www.example.com/how-to-secure-php-code)
-
-[Introduction to PHP: Basics and Best Practices](https://www.example.com/introduction-to-php-basics)
+## डीप डाइव
+अब हम इस ताजगी फाइल के और गहराई से जानेंगे। ताजगी फाइल का उपयोग कुछ स्थितियों में बहुत ही उपयोगी हो सकता है। जैसे की कभी-कभी हमें अपने कोड में विशेष प्रकार का काम करना होता है जिसका उपयोग आम प्रकार से नहीं किया जा सकता है। ऐसे में हम एक ताजगी फाइल बनाकर उसमे अपने कोड को लिख सकते हैं और उसका उपयोग कर सकते हैं। एक बार काम पूरा हो जाने के बाद यह फाइल खुद बन्द हो जाती है और आपको चिंता करने की आवश्यकता नहीं हो

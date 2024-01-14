@@ -1,52 +1,52 @@
 ---
 title:                "Python: Imprimindo saída de depuração"
+simple_title:         "Imprimindo saída de depuração"
 programming_language: "Python"
-category:             "Testing and Debugging"
+category:             "Python"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/python/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que imprimir saída de depuração é importante?
+## Por que imprimir saída de depuração é importante
 
-A impressão de saída de depuração é uma ferramenta essencial para a identificação e correção de erros em seus códigos Python. Ao imprimir trechos específicos de seus códigos, você pode ter uma visão mais clara do que está acontecendo em cada etapa da execução do programa. Além disso, é uma forma eficaz de verificar se os valores das variáveis estão corretos e se o código está seguindo o fluxo esperado.
+Quando escrevemos um código complexo, é muito comum encontrar erros e bugs no processo. A saída de depuração é uma ferramenta essencial que nos ajuda a entender como o código está funcionando e onde estão os possíveis problemas. Sem ela, seria muito mais difícil encontrar e corrigir esses erros.
 
-## Como fazer isso?
+## Como imprimir saída de depuração
 
-Imprimir saída de depuração é uma tarefa simples em Python. Basta usar a função `print()` e adicionar os valores ou variáveis que deseja visualizar. Aqui está um exemplo de código:
+Abaixo, mostramos um exemplo simples de como imprimir uma mensagem de depuração em um código Python:
 
-```python
-# Declaração de variáveis
-nome = "Maria"
-idade = 25
-altura = 1.60
+```Python
+x = 5
+y = 10
 
-# Imprimindo saída de depuração
-print("O nome é:", nome)
-print("A idade é:", idade)
-print("A altura é:", altura)
+# Imprimir valores das variáveis
+print("O valor de x é:", x)
+print("O valor de y é:", y)
+
+# Imprimir resultado da soma entre x e y
+print("A soma entre x e y é:", x + y)
 ```
 
-E aqui está o resultado da saída de depuração:
+Saída:
 
 ```
-O nome é: Maria
-A idade é: 25
-A altura é: 1.60
+O valor de x é: 5
+O valor de y é: 10
+A soma entre x e y é: 15
 ```
 
-Como você pode ver, a função `print()` exibe as informações que adicionamos entre parênteses na saída. Isso pode ser muito útil para verificar se os valores das variáveis são os esperados ou se algum erro ocorreu durante a execução do código.
+Podemos ver que ao imprimir as mensagens de depuração, conseguimos visualizar os valores das variáveis e o resultado da operação, o que nos ajuda a entender como o código está funcionando. Essa é apenas uma maneira simples de imprimir saída de depuração, mas existem outras formas mais avançadas de utilizá-la.
 
-## Mergulhando mais fundo
+## Aprofundando na impressão de saída de depuração
 
-Existem algumas dicas e boas práticas que podem ajudar a tornar a impressão de saída de depuração mais eficaz:
+Além de imprimir mensagens simples, também podemos utilizar a função `print()` para mostrar informações mais detalhadas, como por exemplo o tipo de dado de uma variável ou o valor de um determinado índice em uma lista. Podemos também utilizar a biblioteca `logging` para criar logs de depuração mais complexos e personalizáveis.
 
-- Adicione expressões ou mensagens claras na saída para torná-la mais fácil de entender.
-- Use a formatação de string para ter um controle maior sobre a aparência da saída.
-- Organize a saída em várias linhas para torná-la mais legível.
-- Ao terminar a depuração, lembre-se de remover todas as instruções de impressão de saída para evitar que poluam seu código.
+É importante saber quando e como usar a saída de depuração, pois ela pode ser muito útil na identificação e correção de erros em um código. Porém, é necessário ter cuidado para não utilizar excessivamente, pois isso pode diminuir a performance do programa.
 
-## Ver também
+## Veja também
 
-- Documentação oficial de impressão em Python: https://docs.python.org/3/library/functions.html#print
-- Tutoriais de debug em Python: https://code.visualstudio.com/docs/python/python-tutorial
+- [Documentação oficial do Python](https://docs.python.org/3.9/tutorial/index.html)
+- [Artigo sobre boas práticas de depuração em Python](https://realpython.com/python-debugging-pdb/#dont-use-print)
+- [Explicação sobre a biblioteca logging](https://realpython.com/python-logging/)

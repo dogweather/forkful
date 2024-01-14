@@ -1,53 +1,63 @@
 ---
 title:                "Fish Shell recipe: Starting a new project"
+simple_title:         "Starting a new project"
 programming_language: "Fish Shell"
-category:             "Getting Started"
+category:             "Fish Shell"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/fish-shell/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why Start a New Project in Fish Shell?
+## Why
+Starting a new project can seem overwhelming, but with the help of the Fish Shell, it doesn't have to be. By using this powerful and user-friendly shell, you can easily navigate and execute commands in a more efficient and intuitive way.
 
-Starting a new project may seem daunting, especially if you've never used Fish Shell before. However, there are many benefits to using Fish Shell for your programming projects. Fish Shell is a user-friendly, interactive shell that offers powerful features and customization options. It also has a growing community of users who are constantly sharing tips and tricks for improving productivity. So why not give it a try and see how it can enhance your programming experience?
+## How To
+To get started, first make sure you have the Fish Shell installed on your system. If you are using a Mac, you can download and install it using Homebrew with the command:
 
-## How To Start a New Project in Fish Shell
-
-To start a new project in Fish Shell, follow these simple steps:
-
-```
-Fish Shell> mkdir new_project
-Fish Shell> cd new_project
+```Fish Shell
+brew install fish
 ```
 
-This creates a new directory for your project and navigates you into it. Next, you'll need to initialize a new Git repository for version control:
+Once you have Fish Shell installed, you can start using it by opening a terminal and typing the command `fish`. This will launch the Fish Shell and you can begin navigating and executing commands.
 
-```
-Fish Shell> git init
-```
+To create a new project, you can use the `mkdir` command to make a new directory and then use `cd` to navigate into that directory. For example:
 
-Now, let's create a simple script file for your project:
-
-```
-Fish Shell> touch script.fish
+```Fish Shell
+mkdir my_project
+cd my_project
 ```
 
-You can then open the script file in your preferred text editor and start writing your code! Don't forget to save your changes and commit them to your Git repository.
+Next, you can use the `touch` command to create new files within the project. Then, open the files with your preferred text editor and start coding! For example:
 
-## Deep Dive into Starting a New Project
+```Fish Shell
+touch index.html style.css
+```
 
-When starting a new project in Fish Shell, there are a few things to keep in mind:
+This will create two new files within the `my_project` directory. You can then use the `nano` command to open the files in the nano text editor:
 
-- Use `set -x` to debug your scripts: This will print each command as it is executed, helping you identify any errors.
-- Take advantage of Fish Shell's tab completion: Use the `tab` key to autocomplete commands, file names, and even variable names.
-- Customize your prompt: Fish Shell allows for easy customization of your command prompt, making it easier to keep track of your current location and Git status.
+```Fish Shell
+nano index.html
+nano style.css
+```
 
-By exploring Fish Shell's documentation and community forums, you'll discover even more tips and techniques for starting and managing projects in Fish Shell.
+## Deep Dive
+The power of the Fish Shell comes from its extensive and customizable auto-complete feature. This means that as you type out commands or file names, you can use the tab key to automatically fill in the rest of the word or suggest options. This can save you time and reduce errors in your coding.
+
+Additionally, you can use the `alias` command to create shortcuts for commonly used commands. For example, if you frequently use the `git add` and `git commit` commands, you can create an alias for them like this:
+
+```Fish Shell
+alias ga="git add"
+alias gc="git commit"
+```
+
+This allows you to simply type `ga` or `gc` instead of the longer command, making your workflow more efficient.
 
 ## See Also
+To learn more about Fish Shell and how to optimize your experience with it, check out these helpful resources: 
 
-For more information on Fish Shell and its capabilities, check out these helpful links:
+- [Fish Shell homepage](https://fishshell.com/)
+- [Fish Shell tutorial](https://www.youtube.com/watch?v=uImIqB9xcBk)
+- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
 
-- [Fish Shell Documentation](https://fishshell.com/docs/current/)
-- [Fish Shell GitHub Repository](https://github.com/fish-shell/fish-shell)
-- [Fish Shell User Forums](https://fishshell.com/forums/)
+Now that you know the basics of starting a new project with the Fish Shell, go ahead and give it a try! You'll see just how easy and convenient it can make your coding experience. Happy coding!

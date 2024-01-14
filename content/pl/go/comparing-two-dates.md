@@ -1,87 +1,57 @@
 ---
 title:                "Go: Porównywanie dwóch dat"
+simple_title:         "Porównywanie dwóch dat"
 programming_language: "Go"
-category:             "Dates and Times"
+category:             "Go"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/go/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego porównywanie dwóch dat jest ważne w programowaniu w Go?
+## Dlaczego porównywać daty?
 
-Porównywanie dwóch dat jest ważnym elementem w programowaniu w Go, ponieważ często musimy określić, która z dwóch dat jest wcześniejsza lub późniejsza. Może to być przydatne w przypadku sortowania danych lub wykonywania określonych działań w zależności od daty.
+Porównywanie dat jest częstym wyzwaniem dla programistów, szczególnie dla tych, którzy pracują w języku Go. Dzięki temu krótkiemu przewodnikowi nauczysz się, jak porównywać daty w Go i uniknąć frustracji przy próbie rozwiązania tego problemu.
 
-# Jak porównać dwie daty w Go?
+## Jak to zrobić?
 
-Aby porównać dwie daty w Go, musimy użyć funkcji "Equal()" z pakietu "time". Najpierw musimy przekonwertować daty do typu "Time", a następnie porównać je za pomocą funkcji "Equal()". Poniższy kod przedstawia przykładowe porównanie dwóch dat i wyświetlenie wyniku:
-
-```Go
-package main
-
-import (
-	"fmt"
-	"time"
-)
-
-func main() {
-	// Przykładowe daty do porównania
-	date1 := time.Date(2021, time.August, 11, 0, 0, 0, 0, time.UTC)
-	date2 := time.Date(2021, time.August, 10, 0, 0, 0, 0, time.UTC)
-
-	// Porównanie dat
-	if date1.Equal(date2) {
-		fmt.Println("Daty są identyczne")
-	} else if date1.After(date2) {
-		fmt.Println("Pierwsza data jest późniejsza")
-	} else if date1.Before(date2) {
-		fmt.Println("Pierwsza data jest wcześniejsza")
-	}
-}
-```
-
-**Output:**
-
-```
-Pierwsza data jest późniejsza
-```
-
-# Głębsze spojrzenie na porównywanie dwóch dat w Go
-
-Funkcja "Equal()" porównuje daty na podstawie dokładnej wartości, więc jeśli obie daty są różne o zaledwie kilka milisekund, zostanie zwrócona wartość "false". Dla wielu zastosowań może to być wystarczające, jednak jeśli potrzebujemy porównać daty z większą precyzją, możemy wykorzystać funkcję "Truncate()" do zaokrąglenia dat do jednostki czasu, na przykład do minut lub godzin.
-
-Przykładowo, jeśli chcemy porównać daty pomijając różnicę w sekundach, możemy użyć funkcji "Truncate" dla obu dat, a następnie porównać je za pomocą funkcji "Equal()":
+By porównać dwie daty w Go, musisz najpierw skonwertować je na typ ```time.Time```. Następnie wykorzystaj operator `>` lub ` <` aby porównać daty i sprawdzić, która jest wcześniejsza lub późniejsza.
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	// Przykładowe daty do porównania
-	date1 := time.Date(2021, time.August, 11, 14, 30, 21, 0, time.UTC)
-	date2 := time.Date(2021, time.August, 11, 14, 30, 15, 0, time.UTC)
+    // Utwórz przykładowe daty
+    date1 := time.Date(2021, 3, 15, 0, 0, 0, 0, time.UTC)
+    date2 := time.Date(2021, 6, 1, 0, 0, 0, 0, time.UTC)
 
-	// Porównanie dat
-	if date1.Truncate(time.Minute).Equal(date2.Truncate(time.Minute)) {
-		fmt.Println("Daty są identyczne z dokładnością do minuty")
-	} else if date1.After(date2) {
-		fmt.Println("Pierwsza data jest późniejsza")
-	} else if date1.Before(date2) {
-		fmt.Println("Pierwsza data jest wcześniejsza")
-	}
+    // Porównaj daty
+    if date1 > date2 {
+        fmt.Println(date1, "jest późniejsza niż", date2)
+    } else if date2 > date1 {
+        fmt.Println(date2, "jest późniejsza niż", date1)
+    } else {
+        fmt.Println(date1, "i", date2, "są takie same")
+    }
 }
 ```
 
-**Output:**
-
+Output:
+```Go
+2021-06-01 00:00:00 +0000 UTC jest późniejsza niż 2021-03-15 00:00:00 +0000 UTC
 ```
-Daty są identyczne z dokładnością do minuty
-```
 
-# Zobacz także
+## Deep Dive
 
-- Dokumentacja pakietu "time" w języku Go: https://golang.org/pkg/time/
-- Przykładowy kod z porównaniem dwóch dat: https://play.golang.org/p/kXC_Gp3WW7g
+Porównywanie dat w Go może być nieco skomplikowane ze względu na różnice w sposobie obsługi czasu w różnych strefach czasowych. Dlatego najlepiej pracować z datami w jednej jednostce czasu, na przykład w UTC lub w lokalnej strefie czasowej. Możesz użyć metody `UTC()` lub `Local()` by skonwertować datę na wybraną strefę czasową.
+
+Ponadto, jeśli chcesz porównywać również godziny i minuty, musisz wykorzystać metody `Truncate()` lub `Round()` by wyeliminować różnice w czasie z uwagi na precyzję.
+
+## Zobacz także
+- [Pakiet time w języku Go](https://pkg.go.dev/time)
+- [Porównywanie dat w języku Go](https://golang.org/src/time/example_test.go)

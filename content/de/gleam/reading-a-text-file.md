@@ -1,41 +1,39 @@
 ---
 title:                "Gleam: Ein Textdokument lesen"
+simple_title:         "Ein Textdokument lesen"
 programming_language: "Gleam"
-category:             "Files and I/O"
+category:             "Gleam"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/gleam/reading-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+##Warum
+Warum sollte man sich die Zeit nehmen, einen Text zu lesen? Die Antwort ist einfach: Textdateien sind ein wesentlicher Bestandteil der Programmierung und werden häufig als Datenquelle für Code verwendet. Indem man lernt, wie man Textdateien richtig liest, kann man seine Programmierfähigkeiten verbessern und effektivere Code schreiben.
 
-Das Lesen von Textdateien ist eine wichtige Fähigkeit in der Programmierung, die Ihnen ermöglicht, Daten aus externen Dateien in Ihr Programm zu integrieren. Dies kann hilfreich sein, um große Datenmengen zu verarbeiten oder um Benutzereingaben zu speichern.
-
-## Wie geht das?
-
-Die Sprache Gleam bietet eine einfache und effiziente Möglichkeit, Textdateien zu lesen. Im Folgenden finden Sie Beispiele für das Lesen von Textdateien mit verschiedenen Methoden.
+##How To
+Das Lesen einer Textdatei in Gleam ist ein grundlegender Prozess, der jedoch für viele Neu- und Fortgeschrittene Programmierer verwirrend sein kann. Um klarzustellen, wie es gemacht wird, folgen hier einige einfache Code-Beispiele, die zeigen, wie man eine Textdatei in Gleam öffnet, liest und schließt.
 
 ```Gleam
-// Datei öffnen
-file := File.open("meine_datei.txt", {|file| file})
+fname = "meinTextdokument.txt"
 
-// Eine Zeile lesen
-gleam_line := File.read_line(file)
+file = open(fname)
 
-// Die Datei Zeile für Zeile lesen und in einer Liste speichern
-lines := file
-|> File.read_lines
-|> List.map(String.trim)
+content = read(file)
+
+print(content)
+
+close(file)
 ```
+Hier wird zuerst der Dateiname in einer Variablen gespeichert. Dann wird die Datei mit der `open` Funktion geöffnet und ihre Inhalte mit der `read` Funktion in eine Variable geladen. Schließlich wird der Inhalt mit der `print` Funktion ausgegeben und die Datei mit der `close` Funktion geschlossen.
 
-Das Ergebnis des obigen Codes ist eine Liste von Strings, die jede Zeile der Textdatei enthält. Durch die Verwendung von `List.map` können Manipulationen an jeder Zeile durchgeführt werden, bevor sie in der Liste gespeichert wird.
+##Deep Dive
+Das Lesen einer Textdatei in Gleam gibt dir die volle Kontrolle über ihre Inhalte. Man kann sie in Teile aufteilen, spezifische Zeilen lesen oder sogar die Daten in andere Formate umwandeln. Gleam bietet auch verschiedene Funktionen, um Textdateien effizient zu lesen, z. B. `read_line`, `read_chunk` und `read_file`.
 
-## Deep Dive
+Außerdem gibt es in Gleam Bibliotheken wie `std/filesystem` und `std/file` mit nützlichen Funktionen zum Lesen und Verarbeiten von Textdateien. Während der Textverarbeitung mit Gleam noch komplizierter sein kann als mit anderen Sprachen, bieten diese Bibliotheken viele hilfreiche Werkzeuge, um die Arbeit zu erleichtern.
 
-Wenn Sie tiefer in das Lesen von Textdateien mit Gleam eintauchen möchten, können Sie die Dokumentation von Gleam zu den `File`- und `String`-Modulen konsultieren. Diese bieten eine Vielzahl von Funktionen, die es Ihnen ermöglichen, komplexe Operationen auf Textdateien durchzuführen. Es ist auch wichtig, sich bewusst zu sein, wie Gleam mit Datei- und Zeichenkodierungen umgeht, um unerwartete Ergebnisse zu vermeiden.
-
-## Siehe auch
-
-- [Gleam-Dokumentation zu File-Modul](https://gleam.run/modules/gleam_io/file.html)
-- [Gleam-Dokumentation zu String-Modul](https://gleam.run/modules/gleam_core/string.html)
-- [Beispielprojekt zum Lesen von Textdateien mit Gleam](https://github.com/gleam-lang/gleam_io_examples)
+##Siehe auch
+- [Gleam-Dokumentation zur Textverarbeitung](https://gleam.run/documentation/stdlib-filesystem)
+- [Artikel zu Dateiverarbeitung mit Gleam](https://dev.to/reverentgeek/reading-and-writing-files-with-gleam-14l9)
+- [Tutorial zur Verarbeitung von Textdateien in Gleam](https://edofic.com/posts/reading-files-gleam/)

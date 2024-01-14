@@ -1,68 +1,36 @@
 ---
-title:                "C#: TranslateStor bokstavsättning av en sträng"
+title:                "C#: Bokstavera en sträng"
+simple_title:         "Bokstavera en sträng"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c-sharp/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Varför skulle du vilja lära dig hur man stora bokstäver en sträng i C#? Ibland vill man kanske ha en sträng som är lättare att läsa, eller så behöver man anpassa en sträng för ett specifikt syfte. Oavsett anledning, är det alltid bra att ha den här färdigheten i din programmeringsverktygslåda.
 
-Att stora bokstäver i en sträng kanske inte verkar som en komplicerad uppgift, men det kan vara användbart i vissa situationer. En stor bokstav i början av en mening är en viktig del av stavning och grammatik, och kapitaliserade namn används ofta i programmering för att hänvisa till variabler eller metoder.
-
-## Så här gör du
-
-Det finns flera sätt att göra ett C# program för att kapitalisera en sträng. Här är två exempel:
-
+## Hur man gör
 ```C#
-// Skapa en string variabel för att representera vår sträng
-string str = "detta är en sträng";
+// Skapa en sträng
+string minSträng = "detta är en sträng som behöver stora bokstäver";
 
-// Använd en loop för att iterera över varje tecken i strängen
-// och konvertera det första tecknet till en stor bokstav
-for (int i = 0; i < str.Length; i++)
-{
-    if (i == 0)
-    {
-        // Använd ToUpper() metoden för att göra första tecknet stort
-        str = char.ToUpper(str[0]) + str.Substring(1);
-    }
-}
+// Använd funktionen ToUpper() för att stora bokstäver strängen
+string storaBokstäver = minSträng.ToUpper();
 
-// Skriv ut den kapitaliserade strängen
-Console.WriteLine(str);
-// Output: Detta är en sträng
+// Skriv ut resultatet
+Console.WriteLine(storaBokstäver);
+
+// Output: DETTA ÄR EN STRÄNG SOM BEHÖVER STORA BOKSTÄVER
 ```
 
-En annan metod är att använda inbyggda metoder som `ToUpper()` och `ToTitleCase()`:
+## Djupdykning
+Det finns egentligen två sätt att stora bokstäver en sträng i C#. Det första sättet är att använda funktionen ToUpper(), som beskrivs i föregående exempel. Det andra sättet är att använda funktionen ToUpperInvariant(), vilket ger samma resultat men med ett annat tillvägagångssätt. Skillnaden mellan de två är att ToUpperInvariant() använder de inbyggda inställningarna för ditt operativsystem, medan ToUpper() tar hänsyn till de specifika kulturinställningarna för din applikation.
 
-```C#
-// Skapa en string variabel för att representera vår sträng
-string str = "detta är en sträng";
+Ibland kanske du också behöver göra om en sträng till små bokstäver istället för stora. I så fall kan du använda funktionen ToLower() eller ToLowerInvariant() för samma resultat fast med små bokstäver istället.
 
-// Använd ToUpper() metoden för att göra hela strängen stor
-str = str.ToUpper();
-
-// Skriv ut den kapitaliserade strängen
-Console.WriteLine(str);
-// Output: DETTA ÄR EN STRÄNG
-
-// Använd ToTitleCase() metoden för att göra första bokstaven i varje ord stor
-str = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str);
-
-// Skriv ut den kapitaliserade strängen
-Console.WriteLine(str);
-// Output: Detta Är En Sträng
-```
-
-Som du kan se, finns det flera alternativ beroende på dina specifika behov och preferenser.
-
-## Läs djupare
-
-Att kapitalisera en sträng är bara en liten del av större koncept som innehåller att manipulera strängar i C#. Det finns många inbyggda metoder och funktioner som kan hjälpa dig att åstadkomma komplexa strängmanipuleringar. Det är också viktigt att förstå skillnaderna mellan att använda `ToUpper()` och `ToTitleCase()` eftersom de kan ge olika resultat beroende på språk och kulturella inställningar.
-
-## Se också
-
-- [Microsoft C# Dokumentation: String Operationer](https://docs.microsoft.com/sv-se/dotnet/csharp/programming-guide/strings/)
-- [C# String Manipuleringstekniker](https://www.c-sharpcorner.com/article/string-manipulation-in-C-Sharp/)
+## Se även
+- Microsofts dokumentation om ToUpper() function: https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netframework-4.8
+- En guide för C# strängar: https://www.c-sharpcorner.com/UploadFile/a8e6df/string-in-C-Sharp-programming-language/

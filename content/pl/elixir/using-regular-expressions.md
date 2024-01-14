@@ -1,33 +1,40 @@
 ---
 title:                "Elixir: Używanie wyrażeń regularnych"
+simple_title:         "Używanie wyrażeń regularnych"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
-## Dlaczego?
+## Dlaczego
 
-Regularne wyrażenia są nieodłączną częścią każdego języka programowania, w tym także Elixira. Pozwalają one na wykonywanie zaawansowanych operacji na tekście, takich jak wyszukiwanie, podstawianie czy sprawdzanie poprawności. Dzięki nim możemy manipulować napisami w sposób szybszy i bardziej precyzyjny. Zapraszam do zapoznania się z poniższym artykułem, aby dowiedzieć się więcej na temat korzystania z regularnych wyrażeń w Elixirze.
+Regular expressions są potężnym narzędziem w języku Elixir, pozwalającym na efektywne manipulowanie i przetwarzanie ciągów znaków. Gdy stosujemy regular expressions, możemy w szybki sposób odnaleźć interesujące nas wzorce w tekście oraz modyfikować go według naszych potrzeb. To narzędzie jest niezwykle przydatne w rozwiązywaniu wielu problemów programistycznych.
 
-## Jak to zrobić?
+## Jak używać
 
-Aby rozpocząć pracę z regularnymi wyrażeniami w Elixirze, wystarczy skorzystać z podstawowego modułu `Regex`. Poniżej znajduje się przykład kodu, który wykorzystuje wyrażenie regularne do wyciągnięcia numeru telefonu z tekstu i zwrócenia go jako string:
+Aby skorzystać z możliwości regular expressions w Elixir, musimy najpierw zaimportować moduł `Regex`. Przykładowy kod wyglądałby następująco:
 
 ```Elixir
-phone_number = Regex.run(~r/[0-9]{3}-[0-9]{3}-[0-9]{4}/, "Moje numer telefonu to 123-456-7890.")
-IO.puts(phone_number) # Output: 123-456-7890
+import Regex
+
+text = "Witaj w świecie Elixira"
+
+Regex.scan(~r[witaj], text)
 ```
 
-Możemy również używać wyrażeń regularnych wraz z innymi funkcjami, takimi jak `String.replace/3` lub `Enum.filter/2`, aby wykonać bardziej zaawansowane operacje na tekście.
+Powyższy kod wykorzystuje funkcję `scan` do przeszukania tekstu i zwrócenia wszystkich wystąpień wzorca "witaj". Dzięki temu możemy łatwo znaleźć i przetworzyć konkretny napis lub wyrażenie regularne.
 
-## Głębszy wgląd
+## Głębszy zanurzenie
 
-W Elixirze wyrażenia regularne wykorzystują składnię wyrażeń regularnych Perl, co oznacza, że wyrażenie musi być ujęte w `~r` i `~r{}`. Dodatkowo, moduł `Regex` oferuje wiele różnych funkcji do wykonywania operacji na wyrażeniach regularnych, takich jak `Regex.run/2` czy `Regex.scan/3`. Jeśli chcemy wykonać operacje na wyrażeniu regularnym na całym tekście, możemy skorzystać z funkcji `Regex.named_captures/2` do znalezienia wszystkich pasujących grup w tekście.
+Istnieje wiele możliwości związanych z regular expressions w języku Elixir. Możemy m.in. wykonywać podstawowe operacje takie jak dopasowywanie, zastępowanie czy dzielenie tekstu, jak również bardziej zaawansowane, np. wykorzystywać grupowanie, wyrażenia warunkowe czy lookahead.
+
+Ważne jest również zrozumienie wyrażeń regularnych poprzez śledzenie krok po kroku, jak są dopasowywane do tekstu. Dzięki temu możemy uniknąć błędów lub zoptymalizować nasze wyrażenia.
 
 ## Zobacz też
 
-- [Oficjalna dokumentacja Elixira na temat wyrażeń regularnych](https://hexdocs.pm/elixir/Regex.html)
-- [Poradnik dla początkujących w programowaniu z wykorzystaniem wyrażeń regularnych w Elixirze](https://medium.com/@angelika314/regular-expressions-in-elixir-an-idiomatic-introduction-f027f166a53)
-- [Wideo tutorial na temat wyrażeń regularnych w Elixirze](https://www.youtube.com/watch?v=U4yJ1TOQax0)
+- Oficjalna dokumentacja Elixir na temat regular expressions: https://hexdocs.pm/elixir/Regex.html
+- Przewodnik po regular expressions w Elixir: https://elixirschool.com/pl/lessons/advanced/regex/
+- Praktyczne przykłady z wykorzystaniem regular expressions: https://www.tutorialspoint.com/elixir/elixir_regular_expressions.htm

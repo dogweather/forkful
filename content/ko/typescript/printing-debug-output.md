@@ -1,48 +1,40 @@
 ---
-title:                "TypeScript: 디버그 출력을 출력하기"
+title:                "TypeScript: 디버그 출력 출력"
+simple_title:         "디버그 출력 출력"
 programming_language: "TypeScript"
-category:             "Testing and Debugging"
+category:             "TypeScript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜 해야 할까?
+## 왜 디버그 출력을 사용해야 하는가
 
-디버그 출력을 활용하는 이유는 간단합니다. 만약 당신이 프로그래머라면, 코드를 디버그하고 문제를 해결하는 것이 가장 중요한 일 중 하나일 것입니다. 시스템에서 무엇이 잘못됐는지 확인하는 가장 쉬운 방법 중 하나가 바로 디버그 출력을 통해 확인하는 것입니다. 이를 통해 더 나은 디버깅 경험을 만들 수 있습니다.
+디버그 출력을 사용하면 코드를 실행하는 동안 변수의 값을 확인하고 코드의 흐름을 따라갈 수 있습니다. 이를 통해 코드의 오류를 신속하게 찾을 수 있고, 개발 과정에서 더욱 효율적으로 작업할 수 있습니다.
 
-## 어떻게 해야 할까?
+## 사용 방법
 
-디버그 출력을 활용하는 방법은 간단합니다. 먼저 ```console.log()``` 함수를 사용하여 출력하고자 하는 값을 지정할 수 있습니다. 예를 들어, 다음의 코드를 확인해 보세요.
-
-```TypeScript
-let number = 5;
-console.log("Number is:", number);
-```
-
-위 코드는 콘솔에 ```Number is: 5```를 출력합니다. 이처럼 우리는 콘솔에 변수의 값을 출력함으로써 디버깅을 할 수 있습니다. 또한 ```console.error()``` 함수를 사용하여 에러 메시지를 출력할 수도 있습니다.
-
-## 깊이 들어가기
-
-디버그 출력은 디버깅을 위해 가장 많이 사용되는 방법입니다. 하지만 디버그 출력은 우리가 잘못된 곳에서 값을 출력하고 있는지, 값의 타입이 맞는지 등 자세한 정보를 제공하지는 않습니다. 이럴 때는 ```console.table()``` 함수를 사용해야 합니다. 이 함수는 객체를 테이블 형태로 콘솔에 출력합니다. 예를 들어, 다음의 코드를 확인해 보세요.
+디버그 출력을 사용하는 것은 간단합니다. `console.log()` 메소드를 사용하여 원하는 변수나 값의 값을 출력할 수 있습니다. 예를 들어, 다음과 같이 코드를 작성하고 실행해보면 콘솔에 "Hello World!"가 출력됩니다.
 
 ```TypeScript
-let person = {
-  name: "John",
-  age: 25
-};
-
-console.table(person);
+console.log("Hello World!");
 ```
 
-위 코드는 콘솔에 객체 ```person```을 테이블 형태로 출력합니다. 이렇게 하면 더 많은 정보를 제공받을 수 있어 디버깅이 더 쉬워집니다.
+추가적으로, 디버그 출력을 사용할 때 반복문의 실행 상태를 확인하거나 오류가 발생한 부분의 로그를 남겨 디버그에 도움이 되도록 할 수도 있습니다. 예를 들어, 다음과 같이 코드를 작성하고 실행해보면 `i` 변수의 값을 콘솔에 출력하면서 반복문을 5번 실행하게 됩니다.
 
-## 보기
+```TypeScript
+for(let i = 0; i < 5; i++){
+  console.log(i);
+}
+```
 
-디버그 출력이 얼마나 유용한지 알아보았습니다. 하지만 디버그 출력만으로 모든 문제를 해결할 수는 없습니다. 그래서 아래의 링크들을 참고하여 디버깅 경험을 더욱 향상시킬 수 있도록 노력해 보세요.
+## 딥 다이브
 
-### 참고 링크들
+디버그 출력을 사용하는 것은 간단하지만, 잘못 사용할 경우에는 코드를 복잡하게 만들 수 있습니다. 따라서 디버그 출력을 사용할 때에는 신중하게 생각하고, 오류를 찾기 위한 목적으로만 사용해야 합니다. 또한, 보안에 민감한 정보는 출력하지 않도록 주의해야 합니다.
 
-- [MDN web docs - Console API](https://developer.mozilla.org/en-US/docs/Web/API/Console)
-- [Microsoft TypeScript handbook - Debugging](https://www.typescriptlang.org/docs/handbook/debugging.html)
-- [LogRocket - Debugging TypeScript code with logging and the debugger statement](https://blog.logrocket.com/debug-typescript-code/)
+## 함께 보기
+
+- [TypeScript 디버깅 가이드](https://www.typescriptlang.org/docs/handbook/debugging.html)
+- [배워보자, TypeScript (2) - 디버그 창 조작](https://www.inflearn.com/course/typescript/dashboard)
+- [디버그 출력을 통한 JavaScript 디버깅](https://d2.naver.com/helloworld/1633222)

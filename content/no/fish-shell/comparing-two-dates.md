@@ -1,52 +1,39 @@
 ---
 title:                "Fish Shell: Sammenligning av to datoer"
+simple_title:         "Sammenligning av to datoer"
 programming_language: "Fish Shell"
-category:             "Dates and Times"
+category:             "Fish Shell"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/fish-shell/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
-Har du noen gang lurt på hvordan du kan sammenligne to datoer i Fish Shell? Å sammenligne datoer kan være nyttig for å organisere og sortere informasjon, spesielt hvis du jobber med store mengder data eller kalendersystemer.
+# Hvorfor
+I denne bloggposten skal vi se nærmere på hvordan man kan sammenligne to datoer ved hjelp av Fish Shell programmeringsspråk. Dette kan være nyttig når man ønsker å filtrere eller sortere data etter dato.
 
-## Slik gjør du det
-Kod blokkene nedenfor viser deg hvordan du kan sammenligne datoer i Fish Shell og få ønsket resultat.
+# Hvordan gjøre det
+For å sammenligne to datoer i Fish Shell, kan man bruke kommandoen `date1 > date2` der `date1` og `date2` er de to datoene som skal sammenlignes. Her er et eksempel på hvordan dette kan gjøres:
 
 ```Fish Shell
-# Definer to datoer
-set dato1 2021-10-01
-set dato2 2021-09-15
+set start_date (date -u +'%Y-%m-%d')
+set end_date (date -u +'%Y-%m-%d' -d '2 days ago')
 
-# Bruk «date» kommandoen for å konvertere datoene til sekunder siden 1970
-set dato1_s (date -f '%s' $dato1)
-set dato2_s (date -f '%s' $dato2)
-
-# Sammenlign datoer ved å subtrahere sekunder siden 1970
-if test $dato1_s -gt $dato2_s
-    echo "$dato1 er en senere dato enn $dato2"
-else if test $dato1_s -lt $dato2_s
-    echo "$dato1 er en tidligere dato enn $dato2"
+if test $start_date \> $end_date
+    echo "Start dato er senere enn sluttdato"
+else if test $start_date == $end_date
+    echo "Start og sluttdato er lik"
 else
-    echo "Datoene er like"
+    echo "Start dato er tidligere enn sluttdato"
 end
 ```
 
-Output:
-```Fish Shell
-$ sh diff_dates.fish
-2021-10-01 er en senere dato enn 2021-09-15
-```
+I dette eksempelet brukes `date`-kommandoen til å sette variablene `start_date` og `end_date` til dagens dato og dagen før. Deretter brukes `test`-kommandoen til å sammenligne datoene og gi en tilbakemelding basert på resultatet. Resultatet av dette eksempelet vil være `Start dato er tidligere enn sluttdato` ettersom `start_date` er satt til dagens dato mens `end_date` er satt til dagen før.
 
-## Dykk dypere
-Når du sammenligner datoer, er det viktig å være oppmerksom på formateringsforskjeller og overflødige symboler som kan påvirke resultatet. For eksempel, hvis datoene er i forskjellige formater, må du kanskje bruke en annen kommando for å konvertere dem til sekunder siden 1970. I tillegg kan forskjellige tidszoner også påvirke resultatet.
+# Dypdykk
+Det finnes ulike måter å sammenligne datoer på i Fish Shell, blant annet ved å bruke operatørene `>`, `<`, `==` og `!=` i kombinasjon med `date`-kommandoen. Man kan også bruke `test`-kommandoen med argumentet `-nt` for å sammenligne om en fil er nyere enn en annen. Dette kan være nyttig i situasjoner der man ønsker å sjekke om en fil har blitt endret etter en bestemt dato.
 
-En annen ting å merke seg er at Fish Shell har en innebygd funksjon for å sammenligne datostrenger, men ikke for å sammenligne datoer som sekunder siden 1970. Derfor må vi bruke kommandoen «test» og sammenligningsoperatørene «-gt» (greater than) og «-lt» (less than) for å sammenligne datoer som sekunder siden 1970.
-
-Å dykke dypere inn i sammenligning av datoer i Fish Shell kan hjelpe deg med å forstå de ulike faktorene som kan påvirke resultatet og dermed gjøre deg i stand til å lage mer nøyaktige sammenligninger.
-
-## Se også
-- [Fish Shell - Offisielt nettsted](https://fishshell.com/)
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
-- [«date» kommandoen dokumentasjon](https://fishshell.com/docs/current/commands.html#date)
-- [«test» kommandoen dokumentasjon](https://fishshell.com/docs/current/commands.html#test)
+# Se også
+- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
+- [Bruk av dato i Fish Shell](https://fishshell.com/docs/current/tutorial.html#use-dates)
+- [Sammenligning av data i Fish Shell](https://fishshell.com/docs/current/tutorial.html#conditionals)

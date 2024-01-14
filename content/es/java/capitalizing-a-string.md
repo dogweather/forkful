@@ -1,46 +1,54 @@
 ---
 title:                "Java: Capitalizando una cadena"
+simple_title:         "Capitalizando una cadena"
 programming_language: "Java"
-category:             "Strings"
+category:             "Java"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/java/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-#¿Por qué capitalizar una cadena de texto en Java?
+## Por qué capitalizar una cadena
 
-Capitalizar una cadena de texto se refiere a convertir la primera letra de cada palabra a mayúscula y dejar el resto en minúscula. Aunque puede parecer una tarea simple, es importante conocer cómo hacerlo en Java para poder manipular eficientemente las cadenas de texto en un programa.
+En la programación Java, a menudo nos encontramos con la necesidad de capitalizar una cadena de texto para que la primera letra de cada palabra esté en mayúscula. Esto es especialmente útil cuando se trabaja con entradas de usuarios que pueden estar en minúsculas o cuando se desea seguir una convención de nomenclatura específica.
 
-#Cómo hacerlo en Java
+## Cómo hacerlo
 
-Para capitalizar una cadena de texto en Java, se puede utilizar el método `toUpperCase()` de la clase `Character` para convertir la primera letra en mayúscula. Luego, se puede utilizar el método `toLowerCase()` para convertir el resto de la palabra en minúscula. A continuación se muestra un ejemplo de cómo capitalizar una cadena de texto en Java:
+Para capitalizar una cadena en Java, se puede utilizar el método `toUpperCase()` de la clase `String`. Este método convierte todas las letras de una cadena en mayúsculas. Sin embargo, para capitalizar solo la primera letra de cada palabra, podemos usar el siguiente código:
 
-```
-String cadena = "hola, mundo!";
-String[] palabras = cadena.split(" ");
-String nuevaCadena = "";
-for (String palabra : palabras) {
-    char primeraLetra = palabra.charAt(0);
-    char primeraLetraMayus = Character.toUpperCase(primeraLetra);
-    String restoPalabra = palabra.substring(1);
-    restoPalabra = restoPalabra.toLowerCase();
-    nuevaCadena += primeraLetraMayus + restoPalabra + " ";
+```Java
+String input = "hola mundo";
+StringBuilder output = new StringBuilder();
+
+// Divide la cadena en palabras
+String[] words = input.split(" ");
+for (String word : words) {
+    // Convierte la primera letra en mayúscula y concatena con el resto de la palabra en minúscula
+    String capitalizedWord = word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
+    // Agrega la palabra capitalizada al string de salida
+    output.append(capitalizedWord).append(" ");
 }
-System.out.println(nuevaCadena.trim());
+
+// Imprime el resultado final
+System.out.println(output); // Salida: Hola Mundo
 ```
 
-Este código tomará la cadena de texto "hola, mundo!" y la convertirá en "Hola, Mundo!". Como se puede ver, se utilizó el método `split()` para separar la cadena por palabras y luego un ciclo for para iterar sobre cada palabra y realizar la conversión.
+Este código divide la cadena en palabras utilizando el espacio como separador, y luego itera sobre cada palabra para capitalizar la primera letra y convertir el resto en minúsculas. Finalmente, se imprime el resultado en la consola.
 
-#Profundizando en la capitalización de cadenas de texto
+## Profundizando
 
-Además de capitalizar la primera letra de cada palabra, también se puede utilizar el método `toUpperCase()` para convertir toda la cadena de texto a mayúsculas. Esto puede ser útil para fines de comparación o para dar un formato específico a una cadena.
+En el código anterior, utilizamos el método `split()` de la clase `String` para dividir la cadena en palabras. Este método también acepta un patrón regular como argumento, lo que lo hace más flexible para casos en los que los separadores pueden variar. Por ejemplo, si las palabras estuvieran separadas por espacios, comas y guiones, podríamos usarlo de la siguiente manera:
 
-Otra forma de capitalizar una cadena de texto es utilizando la clase `StringBuffer`. Esta clase tiene un método llamado `replace()` que permite reemplazar caracteres específicos en una cadena. Utilizando este método, se pueden reemplazar las primeras letras de cada palabra por su versión en mayúscula.
+```Java
+String input = "hola, java-mundo";
+String[] words = input.split("[ ,\\-]");
+```
 
-En resumen, capitalizar una cadena de texto en Java puede ser útil para presentar información de manera más coherente o para realizar comparaciones más precisas en un programa.
+Además, podemos agregar una validación para manejar casos en los que la cadena esté vacía o no contenga ninguna palabra.
 
-#Ver también
+## Ver también
 
-- [Documentación oficial de Java para la clase Character](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html)
-- [Método replace de la clase StringBuffer](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html#replace-int-int-java.lang.String-)
-- [Tutorial sobre manipulación de cadenas en Java](https://www.javatpoint.com/java-string-tutorial)
+- [Java String class API](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [Regular Expressions in Java](https://www.baeldung.com/java-regexp)
+- [Validación de entradas de usuarios en Java](https://www.geeksforgeeks.org/how-to-validate-an-input-using-javafx/)

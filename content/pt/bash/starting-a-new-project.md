@@ -1,46 +1,57 @@
 ---
-title:                "Bash: Começando um novo projeto"
+title:                "Bash: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Bash"
-category:             "Getting Started"
+category:             "Bash"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que
-Começar um novo projeto de programação pode ser uma emocionante e desafiadora jornada. Ele permite que você desenvolva suas habilidades em linguagens de programação, crie soluções criativas para problemas e até mesmo crie algo completamente novo e inovador. Alguns podem começar um projeto como um hobby, enquanto outros podem estar procurando desenvolver suas habilidades para uso profissional. De qualquer forma, iniciar um novo projeto é uma oportunidade de crescer e aprender.
+## Por que começar um novo projeto?
 
-## Como fazer
-Antes de começar a programar, é importante definir claramente a ideia do seu projeto. Qual é o objetivo? Quais são os recursos e funcionalidades que você deseja incluir? Essas informações ajudarão a orientar o desenvolvimento do seu projeto e garantir que ele seja bem-sucedido.
+Se você está procurando aprender uma nova habilidade e ampliar seus conhecimentos em tecnologia, começar um novo projeto de codificação em Bash pode ser uma ótima opção. Além disso, projetos pessoais podem ser uma ótima maneira de aprimorar suas habilidades e criar algo que você pode compartilhar com outros.
 
-Depois de ter a ideia do seu projeto, é hora de começar a codificar. O Bash é uma linguagem de script amplamente utilizada no Linux e macOS, e pode ser uma ótima opção para iniciantes. Você pode começar criando um arquivo com a extensão ".sh" e adicionando o seguinte código:
+## Como fazer:
+
+Para começar um novo projeto de codificação em Bash, você precisará ter o Bash instalado em seu computador. Uma vez que você tenha o Bash configurado, siga estas etapas simples para começar o seu projeto:
 
 ```Bash
-#!/bin/bash
+#Crie um novo diretório para o seu projeto
+mkdir meu_projeto
 
-# Imprime "Olá, mundo!" na tela
-echo "Olá, mundo!"
+#Navegue para o diretório
+cd meu_projeto
+
+#Crie um arquivo em branco com a extensão .sh (que é a extensão padrão para scripts Bash)
+touch meu_script.sh
+
+#Abra o arquivo com seu editor de texto preferido
+nano meu_script.sh
 ```
 
-Depois de salvar o arquivo, você pode executá-lo em seu terminal usando o comando `bash nome_do_arquivo.sh`. Isso irá imprimir "Olá, mundo!" na sua tela.
+Aqui você pode adicionar todo o código que quiser e, quando terminar, salve o arquivo (Ctrl + X no nano) e execute-o.
 
-Existem muitos recursos e tutoriais disponíveis on-line para ajudá-lo a aprender o Bash e melhorar suas habilidades de programação. Experimente diferentes comandos e explore as possibilidades do Bash para tornar seu projeto ainda mais interessante e útil.
+```Bash
+#Dê ao arquivo permissão de execução
+chmod +x meu_script.sh
 
-## Profundidade
-Ao iniciar um novo projeto, é importante seguir algumas melhores práticas de programação para garantir que seu código seja eficiente e fácil de entender. Aqui estão algumas dicas para ajudá-lo a criar um projeto bem-sucedido:
+#Execute o arquivo
+./meu_script.sh
+```
 
-- Comente seu código para explicar a lógica e facilitar a manutenção.
-- Use variáveis ​​para armazenar valores e facilitar alterações no futuro.
-- Teste seu código regularmente para garantir que ele funcione corretamente.
-- Mantenha seu código limpo e organizado para facilitar a leitura.
+Você verá a saída do seu código no terminal.
 
-Não tenha medo de cometer erros ou pedir ajuda quando necessário. Programação é um processo de aprendizagem contínuo e sempre haverá espaço para melhorias e novos desafios.
+## Aprofundando:
 
-## Veja também
-Aqui estão alguns recursos adicionais para ajudá-lo a começar seu novo projeto de programação:
+Antes de começar a escrever seu código, é importante ter uma boa compreensão de como o Bash funciona e quais são suas principais características. Além disso, é útil conhecer algumas dicas e truques para facilitar o processo de codificação.
 
-- [Tutorial do Bash em português](https://beltsliberty.org/materiais/bash/funcoes-bash/)
-- [Aprenda Bash da linha de comando](https://www.learnshell.org/)
-- [Lista de comandos Bash úteis](https://www.geeksforgeeks.org/handy-bash-commands/)
+Uma boa maneira de aprender mais sobre Bash é pesquisar tutoriais online e tentar reproduzir o código que você encontrar. Além disso, leia a documentação oficial do Bash para aprender mais sobre como ele funciona e suas diferentes funcionalidades.
 
-Agora que você tem as ferramentas e conhecimentos básicos, é hora de começar a trabalhar em seu novo projeto de programação! Boa sorte e divirta-se criando.
+Também é recomendável se familiarizar com os comandos básicos do Bash, como "cd" para navegar entre os diretórios e "ls" para listar os arquivos em um diretório. Esses comandos serão úteis ao criar e gerenciar seu projeto.
+
+## Veja também:
+- Documentação oficial do Bash: https://www.gnu.org/software/bash/
+- Tutoriais de Bash da Linuxize: https://linuxize.com/tags/bash/
+- Introdução ao Bash (em português): https://www.devmedia.com.br/bash-o-que-e-e-principais-comandos/23970

@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Textdatei lesen"
+title:                "Elixir: Textdateien lesen"
+simple_title:         "Textdateien lesen"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/elixir/reading-a-text-file.md"
 ---
 
@@ -9,25 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Es gibt viele Gründe, warum man sich mit dem Lesen von Textdateien in Elixir beschäftigen sollte. Zum einen ist es ein grundlegendes Konzept, das häufig in der Programmierung vorkommt. Zum anderen kann es bei der Entwicklung von Dateiverarbeitungs- oder Datenbankanwendungen von entscheidender Bedeutung sein. Egal aus welchem ​​Grund, das Lesen von Textdateien ist eine nützliche Fähigkeit, die jeder Elixir-Programmierer kennen sollte.
+Warum sollte man sich mit dem Lesen von Textdateien in Elixir beschäftigen? Nun, Textdateien sind ein grundlegender Bestandteil der Datenverarbeitung und können in vielen Anwendungen nützlich sein, sei es für die Eingabe von Benutzereingaben, das Lesen von externen Konfigurationsdateien oder das Analysieren von Logfiles.
 
 ## Wie man Textdateien in Elixir liest
 
-Das Lesen von Textdateien in Elixir ist einfach und effizient. Zunächst müssen wir eine Textdatei öffnen und den Inhalt in einer Variablen speichern. Dies kann mit der `File.read` Funktion erreicht werden, die den Dateipfad als Argument nimmt. Schauen wir uns das in einem Codebeispiel an:
+Um eine Textdatei in Elixir zu lesen, müssen wir zunächst die Funktion `File.read/1` verwenden, die uns ermöglicht, einen Dateinamen als Parameter zu übergeben und den Inhalt der Datei als Binärdaten zurückzugeben. Hier ist ein Beispiel:
 
 ```Elixir
-file = File.read("mein_textdokument.txt")
-IO.puts(file)
+{:ok, content} = File.read("mein_textdokument.txt")
+IO.puts(content)
 ```
 
-In diesem Beispiel öffnen wir die Datei "mein_textdokument.txt" und speichern den Inhalt in der Variablen `file`. Anschließend geben wir den Inhalt mit `IO.puts` aus, um ihn auf der Konsole anzuzeigen. Diese Funktion funktioniert auch für andere Dateiformate wie CSV oder JSON.
+In diesem Codebeispiel speichern wir den Inhalt des Dokuments in einer Variablen namens `content` und geben ihn dann mit `IO.puts/1` auf der Konsole aus.
 
-## Tiefer eintauchen
+## Tiefere Einblicke
 
-Um tiefer in das Lesen von Textdateien in Elixir einzutauchen, ist es wichtig zu verstehen, dass `File.read` den Inhalt der Datei als Binärdaten zurückgibt. Um also mit dem Inhalt zu arbeiten, müssen wir ihn möglicherweise in einen String oder eine Liste umwandeln. Dies kann mit den Funktionen `to_string` und `String.split` erreicht werden. Darüber hinaus bietet Elixir auch integrierte Funktionen wie `File.exists?` und `File.read!`, um auf die Datei zuzugreifen und Fehler zu behandeln.
+Beim Lesen von Textdateien gibt es einige wichtige Dinge zu beachten. Erstens, wenn die Datei sehr groß ist, kann es sinnvoll sein, sie zeilenweise oder in Chunks zu lesen, um den Speicherverbrauch zu minimieren. Dies kann mit der Funktion `File.stream!/2` erreicht werden, die uns einen Stream von Daten aus der Datei zurückgibt.
+
+Zweitens, beim Lesen von Dateien, die in verschiedenen Zeichensätzen codiert sein können, ist es wichtig, den korrekten Zeichensatz beim Öffnen der Datei anzugeben. Dies kann mit der Option `{:encoding, encoding_name}` beim Aufruf der Funktion `File.read/2` gemacht werden.
 
 ## Siehe auch
 
-- Offizielle Elixir-Dokumentation zu File-Modulen: https://hexdocs.pm/elixir/File.html
-- Lesen von Dateien mit Elixir: https://thinkingelixir.com/reading-files-with-elixir/
-- Blog-Post zum Schreiben von Textdateien mit Elixir: https://blog.lelonek.me/reading-and-writing-files-in-elixir-2f12b0b7b9ea
+- Offizielle Elixir Dokumentation für File.read: https://hexdocs.pm/elixir/File.html#read/1
+- Einführung in das Lesen von Textdateien in Elixir: https://medium.com/@ericdecanini/how-to-read-a-text-file-with-elixir-5a850aabe4aa
+- Lesen von großen Dateien in Elixir: https://medium.com/@robocopkaka/reading-large-files-line-by-line-in-elixir-e2d6cdca9c61

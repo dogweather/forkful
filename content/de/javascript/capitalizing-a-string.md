@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Ein String großschreiben"
+title:                "Javascript: Eine Zeichenfolge großschreiben"
+simple_title:         "Eine Zeichenfolge großschreiben"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/javascript/capitalizing-a-string.md"
 ---
 
@@ -9,32 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-In der Programmierung gibt es oft die Notwendigkeit, Strings (Zeichenketten) in bestimmten Fällen zu modifizieren. Das kann unter anderem dazu dienen, den String in einem bestimmten Format darzustellen oder eine einheitliche Schreibweise zu gewährleisten. Eine häufige Anforderung ist das Großschreiben von Strings. Doch warum sollte man überhaupt einen String großschreiben?
+Capitalizing Strings ist eine grundlegende Funktion in der Javascript Programmierung, die oft verwendet wird, um die Darstellung von Text zu verändern. Es kann hilfreich sein, um die Lesbarkeit bestimmter Wörter oder Sätze zu erhöhen oder um bestimmte Formatierungsanforderungen zu erfüllen.
 
-## Wie geht das
+## Wie geht es
 
-Das Großschreiben eines Strings kann auf verschiedene Arten in Javascript umgesetzt werden. Eine Möglichkeit ist die Verwendung der `toUpperCase()` Funktion. Diese konvertiert alle Zeichen eines Strings in Großbuchstaben und gibt den modifizierten String zurück. Hier ein Beispiel:
-
-```Javascript
-const string = "hallo welt";
-const capitalizedString = string.toUpperCase();
-console.log(capitalizedString); // Ausgabe: HALLO WELT
-```
-
-Eine andere Möglichkeit ist die Verwendung der `replace()` Funktion. Mit Hilfe von regulären Ausdrücken kann man alle Kleinbuchstaben durch den entsprechenden Großbuchstaben ersetzen. Hier ein Beispiel:
+Um einen String in Javascript zu kapitalisieren, können Sie die `toUpperCase()` Methode verwenden. Diese Methode ändert alle Buchstaben in einem String in Großbuchstaben.
 
 ```Javascript
-const string = "hallo welt";
-const capitalizedString = string.replace(/[a-z]/g, char => char.toUpperCase());
-console.log(capitalizedString); // Ausgabe: HALLO WELT
+let string = "hallo welt";
+let capitalizedString = string.toUpperCase();
+console.log(capitalizedString);
+```
+Ausgabe:
+```
+HALLO WELT
 ```
 
-## Tiefergehende Informationen
+Wenn Sie jedoch nur den Anfangsbuchstaben eines Strings groß schreiben möchten, können Sie die `charAt()` und `toUpperCase()` Methoden kombinieren. Die `charAt()` Methode gibt den Zeichenwert an der angegebenen Position im String zurück. Dies ermöglicht es uns, den ersten Buchstaben des Strings auszuwählen, ihn in einen Großbuchstaben zu konvertieren und ihn mit dem restlichen String zu verbinden.
 
-Das Großschreiben von Strings scheint auf den ersten Blick eine einfache Aufgabe zu sein. Doch es gibt einige Dinge zu beachten, wenn man sicherstellen möchte, dass ein String korrekt großgeschrieben wird. Zum Beispiel müssen Sonderzeichen und Umlaute beim Großschreiben berücksichtigt werden. Auch die Lokalisierung eines Programms kann Auswirkungen auf den Umgang mit Groß- und Kleinschreibung haben.
+```Javascript
+let string = "javascript ist toll";
+let capitalizedString = string.charAt(0).toUpperCase() + string.slice(1);
+console.log(capitalizedString);
+```
+
+Ausgabe:
+```
+Javascript ist toll
+```
+
+## Tiefer eintauchen
+
+Während die oben genannten Methoden eine einfache Möglichkeit bieten, Strings in Javascript zu kapitalisieren, gibt es auch andere Möglichkeiten, die genutzt werden können. Eine Möglichkeit ist die Verwendung von regulären Ausdrücken, um bestimmte Regeln für die Großschreibung festzulegen.
+
+Ein anderer wichtiger Aspekt bei der Großschreibung von Strings ist, wie verschiedene Sprachen damit umgehen. Zum Beispiel können im Deutschen bestimmte Substantive immer groß geschrieben werden, während im Englischen nur der erste Buchstabe eines Satzes groß geschrieben wird. Für die sprachspezifische Großschreibung gibt es auch Bibliotheken und Tools, die dabei helfen können.
 
 ## Siehe auch
 
-- [MDN Web Docs - String.prototype.toUpperCase()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Eintrag zu Groß- und Kleinschreibung auf Wikipedia](https://de.wikipedia.org/wiki/Gro%C3%9F-_und_Kleinschreibung)
+- [MDN Dokumentation für die toUpperCase() Methode](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [Reguläre Ausdrücke in Javascript](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [String Großschreibung in verschiedenen Sprachen](https://www.techonthenet.com/js/string_toUpperCase.php)

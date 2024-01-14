@@ -1,48 +1,60 @@
 ---
 title:                "C# recipe: Searching and replacing text"
+simple_title:         "Searching and replacing text"
 programming_language: "C#"
-category:             "Strings"
+category:             "C#"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/c-sharp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Have you ever found yourself needing to make a change to a large amount of text, but manually editing each instance would take too much time? That's where searching and replacing text comes in handy. This useful tool allows you to quickly and efficiently make changes to multiple instances of text at once, saving you valuable time and effort.
+In programming, it is not uncommon to encounter situations where text needs to be replaced within a file. This could be for formatting purposes, data manipulation, or any other specific task. In such cases, it is important to have an efficient method of searching and replacing text to save time and effort. In this blog post, we will explore the different ways to do so using C#.
 
 ## How To
 
-To search and replace text in C#, we use the `Replace()` method. This method takes in two string parameters: the text to be replaced and the text to replace it with. Let's take a look at an example:
+There are a few ways to search and replace text in a file using C#. The most common method is using the `Regex` class to perform regular expression searches and replacements. The `Regex` class provides various methods such as `Match()`, `Replace()`, and `ReplaceMany()` that can be used to perform different types of search and replace operations. Below is a basic example using a regular expression to search and replace text in a file:
 
-```C#
-string originalText = "Hello World!";
-string modifiedText = originalText.Replace("World", "Universe");
-Console.WriteLine(modifiedText);
+```
+C#
+string fileContent = File.ReadAllText("example.txt");
+string pattern = @"([a-z]+) (\d+)";
+string replacement = "$2 $1";
+
+string updatedContent = Regex.Replace(fileContent, pattern, replacement);
+
+Console.WriteLine(updatedContent);
 ```
 
-The above code will output "Hello Universe!" as it has replaced the word "World" with "Universe" in the original text. You can also use this method to replace multiple instances of a word or phrase, making it even more efficient.
+In the example above, the `Regex` class is used to find patterns matching lowercase alphabets followed by numbers, and then replace them with the capture groups in reverse order. The output should include the replaced text in the desired format.
 
-```C#
-string originalText = "I love apples, apples are the best!";
-string modifiedText = originalText.Replace("apples", "bananas");
-Console.WriteLine(modifiedText);
+Another commonly used method for searching and replacing text is using the `StringBuilder` class. This class provides efficient ways to manipulate strings and also has a `Replace()` method that allows for text replacement. Below is an example of using `StringBuilder` to search and replace text:
+
+```
+C#
+StringBuilder sb = new StringBuilder();
+sb.AppendLine("This is some text");
+sb.AppendLine("This is some more text");
+sb.AppendLine("Even more text");
+
+sb.Replace("text", "content");
+
+Console.WriteLine(sb.ToString());
 ```
 
-The output in this case would be "I love bananas, bananas are the best!" as both instances of "apples" have been replaced with "bananas". This method is not case-sensitive, so it will replace all instances regardless of capitalization.
+In the above example, the `Replace()` method is used to change all instances of `"text"` to `"content"` in the `StringBuilder` object. The output should include the updated content with the replaced text.
 
 ## Deep Dive
 
-It's important to note that the `Replace()` method returns a new string with the modifications, leaving the original string unchanged. This is because strings in C# are immutable, meaning they cannot be changed once created. The `Replace()` method allows us to work around this by creating a new string with our desired modifications.
+Regular expressions can be a powerful tool for searching and replacing text, but they can also be complex and difficult to read. One useful tip when working with regular expressions is to use online tools such as Regex101 or RegExr to test and debug your patterns before implementing them in your C# code.
 
-If you need to replace text in a specific location within a string, you can use the overload of the `Replace()` method that accepts a third parameter, which specifies the starting index of the replacement. This allows you to target specific instances of the text to be replaced.
-
-Searching and replacing text can also be done using regular expressions, which allow for more complex and flexible pattern matching. This is especially useful when you need to replace text based on a specific pattern or condition. C# has a `Regex.Replace()` method for this purpose.
+Another thing to keep in mind is that regular expressions can also be used for advanced search and replace operations, such as capturing specific groups of text and using them in the replacement text. This can be done by using capture groups and referencing them using back-references, denoted by `"$N"` where N represents the number of the capture group.
 
 ## See Also
 
-For more information on the `Replace()` method and regular expressions, check out the following resources:
-
-- [Microsoft Docs - String.Replace Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
-- [Microsoft Docs - Regular Expressions in .NET](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [Tutorialspoint - C# String Replace Method](https://www.tutorialspoint.com/csharp/csharp_string_replace.htm)
+- [Microsoft C# Regex Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1)
+- [Microsoft C# StringBuilder Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=netcore-3.1)
+- [Regex101](https://regex101.com/)
+- [RegExr](https://regexr.com/)

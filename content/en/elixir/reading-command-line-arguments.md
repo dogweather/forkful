@@ -1,55 +1,54 @@
 ---
 title:                "Elixir recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elixir/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why 
+## Why
 
-Have you ever run a program from the command line and wondered how it was able to read the arguments you passed in? Or perhaps you're working on a project that requires you to handle command line arguments and you're not sure where to start. Either way, understanding how to read command line arguments in Elixir can be a useful skill for any developer. So let's dive in and learn how!
+When it comes to programming in Elixir, there are many tools available to make our lives easier. One of these tools is reading command line arguments. Understanding how to do this can save you time and make your code more efficient. In this post, we will explore how to read command line arguments in Elixir.
 
 ## How To
 
-First, let's start with a basic example. Let's say we have a file called `greet.ex` and we want to pass in a name as an argument and have our program greet that person. Here's how we can do that:
+To read command line arguments in Elixir, we can use the `System.argv` function. This function returns a list of command line arguments passed to the program. Let's take a look at a simple example:
 
-```Elixir
-# greet.ex
-name = System.argv[1]
-IO.puts "Hello #{name}!"
+```
+Elixir
+defmodule CommandLine do
+  def main do
+    args = System.argv
+    IO.puts "Arguments passed: #{inspect args}"
+  end
+end
+
+CommandLine.main()
 ```
 
-Now when we run our program from the command line, for example `elixir greet.ex John`, we'll see the output `Hello John!`.
+In this example, we define a module `CommandLine` and a function `main`. Inside the `main` function, we use `System.argv` to retrieve the command line arguments and then use `IO.puts` to output them on the screen. Let's say we run this program with the following command: `elixir command_line.exs argument1 argument2`. The output will be:
 
-But what if we want to pass in multiple arguments? Not a problem! We can use the `System.argv` function to read in arguments as a list. Here's an example:
-
-```Elixir
-# multiply.ex
-arguments = System.argv
-
-first_number = String.to_integer(arguments[1])
-second_number = String.to_integer(arguments[2])
-
-product = first_number * second_number
-IO.puts "The product of #{first_number} and #{second_number} is #{product}."
+```
+Arguments passed: ["argument1", "argument2"]
 ```
 
-Now when we run our program with the command `elixir multiply.ex 4 5`, we'll see the output `The product of 4 and 5 is 20`. Pretty cool, right?
+We can also access specific arguments by using their position in the list. For example, if we want to access the second argument, we can use `args[1]`. Keep in mind that the first argument will always be the name of the script itself.
+
+We can also use `System.argv` inside a `mix.exs` file to pass arguments to our project when running tasks. This can be useful for different configurations or settings.
 
 ## Deep Dive
 
-So let's take a deeper look at how `System.argv` works. This function returns a list of all the arguments passed in, including the program name itself. The first element in the list will always be the name of the program, so if we want to access just the arguments, we need to start at the second element, which is at index 1. We can also use functions like `String.to_integer` to convert our arguments to different data types, as we did in our multiplication example.
+Behind the scenes, `System.argv` is using the Erlang `os:getarg` function to retrieve the arguments from the command line. This function uses the operating system's API to access the arguments. It's important to note that command line arguments are always passed as strings, so we may need to convert them to the desired data type before using them in our code.
 
-Another thing to keep in mind is that command line arguments are always passed in as strings. So if you want to perform any type of mathematical operation on the arguments, you'll need to convert them to numbers first.
+Another helpful tool for working with command line arguments is the `OptionParser` module. This module provides a convenient way to parse and validate options passed through the command line. It also allows us to define default values for options if they are not provided.
 
 ## See Also
 
-For more information on working with command line arguments in Elixir, check out these resources:
+To learn more about reading command line arguments in Elixir, check out these resources:
 
-- Elixir's [System](https://hexdocs.pm/elixir/System.html) module documentation
-- Elixir School's [Lesson on Command Line Applications](https://elixirschool.com/en/lessons/advanced/command-line-args/)
-- Elixir Forum's [Thread on Reading Command Line Arguments](https://elixirforum.com/t/how-to-read-arguments-from-the-command-line/10961)
-
-So there you have it, a quick and easy guide to reading command line arguments in Elixir. Happy coding!
+- [Elixir Documentation on System.argv](https://hexdocs.pm/elixir/System.html#argv/0)
+- [Elixir Documentation on OptionParser](https://hexdocs.pm/elixir/OptionParser.html)
+- [Blog post on Command Line Arguments in Elixir by PragTob](https://pragtob.wordpress.com/2013/10/22/bite-sized-command-line-applications-with-elixir-part-2/)

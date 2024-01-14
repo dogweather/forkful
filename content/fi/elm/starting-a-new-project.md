@@ -1,7 +1,9 @@
 ---
 title:                "Elm: Uuden projektin aloittaminen"
+simple_title:         "Uuden projektin aloittaminen"
 programming_language: "Elm"
-category:             "Getting Started"
+category:             "Elm"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/elm/starting-a-new-project.md"
 ---
 
@@ -9,32 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Onko sinulla innostava idea uudesta projektista? Elm on loistava valinta kielenä, joka auttaa sinua luomaan upeita web-sovelluksia. 
+Miksi kukaan aloittaisi uuden projektin Elm-ohjelmointikielellä? Blogin kirjoittaja haluaa kertoa, miksi tämä voi olla hyvä vaihtoehto.
 
-## Kuinka aloittaa
+## Miten aloittaa
 
-Elm on helppo päästä alkuun, vaikka sinulla ei olisi aiempaa kokemusta ohjelmoinnista. Aloita lataamalla Elm Compiler:
-```
-Elm install elm
-```
-Jälkeenpäin voit luoda uuden projektin kirjoittamalla:
-```
-Elm init
-```
-Seuraa terminaalilta saatavia ohjeita ja anna projektillesi nimeksi haluamasi nimi.
+```Elm
+-- Tuotetaan yksinkertainen "Hello World" -viesti
+import Html exposing (text)
 
-Seuraavaksi voit luoda yksinkertaisen Hello World -sovelluksen käyttäen Elm:n syntaksia:
+main =
+  text "Hei maailma!"
 ```
-Elm -< HelloWorld.elm
-```
-Voit ajaa sovelluksen selaimessa avaamalla hello_world.html-tiedoston, joka syntyy komennon suorittamisen jälkeen.
 
-## Syvällinen sukellus
+Tässä koodiesimerkissä näytetään, kuinka yksinkertaisesti voi aloittaa Elm-projektin ja tuottaa tekstiä. Elm on selkeä ja helppo oppia, joten koodin kirjoittaminen on miellyttävää.
 
-Elm on funktionaalinen ohjelmointikieli, mikä tarkoittaa sitä että se pyrkii minimoimaan muuttujien käyttöä. Se käyttää myös mallipohjaista lähestymistapaa. Kannattaa tutustua Elm:n viralliseen dokumentaatioon ja opetella käyttämään sen toimintoja.
+## Syvempi sukellus
+
+Elm tarjoaa paljon enemmän kuin vain yksinkertaisen "Hello World" -viestin. Vahva tyyppijärjestelmä ja yksikäsitteinen syntaksi tekevät ohjelmoinnista turvallisempaa ja virhealttiimpaa kuin perinteisissä JavaScript-projekteissa. Elmissä on myös laaja yhteisö, josta voit saada apua ja oppia uutta.
 
 ## Katso myös
 
-- [Elm:n kotisivut](https://elm-lang.org/)
-- [Elm:n virallinen dokumentaatio](https://guide.elm-lang.org/) 
-- [Elm:n yhteisöfoorumi](https://discourse.elm-lang.org/)
+- [Elm-kurssi](https://www.elm-lang.org/learn)
+- [Virallinen Elm-dokumentaatio](https://guide.elm-lang.org/)
+- [Elm-yhteisöfoorumi](https://discourse.elm-lang.org/)

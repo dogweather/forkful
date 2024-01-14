@@ -1,73 +1,74 @@
 ---
-title:                "Swift: Einen String großschreiben"
+title:                "Swift: Ein String großschreiben"
+simple_title:         "Ein String großschreiben"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum 
-In diesem Blogbeitrag werden wir untersuchen, wie man in Swift eine Zeichenkette (String) großschreibt. Das Kapitalisieren von Strings ist ein häufig verwendeter Schritt in der Programmierung, da es hilft, Daten einheitlich zu formatieren und Lesbarkeit zu verbessern.
+## Warum
 
-# Wie man es macht 
-Um eine Zeichenkette in Swift zu kapitalisieren, gibt es zwei gängige Methoden: die Verwendung der `capitalize` Methode und die Verwendung der `uppercased` Methode. Hier ist ein Beispiel für beide Methoden:
+Die Großschreibung eines Strings ist eine der grundlegendsten Funktionen in der Swift-Programmierung. Es ermöglicht es, einen Text in einem einheitlichen Format darzustellen, was besonders wichtig ist, wenn wir mit Benutzereingaben oder Daten aus externen Quellen arbeiten. Aber warum sollten wir uns die Mühe machen, einen String zu kapitalisieren? Nun, es sorgt nicht nur für ein ästhetisch ansprechenderes Erscheinungsbild, sondern kann auch bei der Suche, Sortierung oder Vergleich von Strings hilfreich sein. In diesem Blogbeitrag erfährst du, wie du Strings in Swift ganz einfach kapitalisieren kannst.
 
-```Swift
-let name = "max mustermann"
+## Wie geht's
 
-// Verwendung der capitalize Methode
-let capitalized1 = name.capitalize()
-print(capitalized1)
-// Ausgabe: Max mustermann
+Um einen String in Swift zu kapitalisieren, gibt es verschiedene Möglichkeiten, je nachdem wie deine Anforderungen sind.
 
-// Verwendung der uppercased Methode
-let capitalized2 = name.uppercased()
-print(capitalized2)
-// Ausgabe: MAX MUSTERMANN
+### Die `capitalized` Methode
 
-```
-
-Wie Sie sehen können, gibt es einen kleinen Unterschied im Ergebnis der beiden Methoden. Die `capitalize` Methode behält die ursprüngliche Formatierung des Strings bei, während die `uppercased` Methode alle Buchstaben in Großbuchstaben ändert.
-
-Sie können auch die Kombination von `uppercased` und `lowercased` verwenden, um bestimmte Buchstaben in einem String zu ändern. Hier ist ein Beispiel:
+Die einfachste Methode ist die Verwendung der `capitalized` Methode. Diese Methode wandelt den ersten Buchstaben jedes Worts im String automatisch in einen Großbuchstaben um.
 
 ```Swift
-let phrase = "Ich lEbe Swift!"
-
-let uppercased = phrase.uppercased()
-print(uppercased)
-// Ausgabe: ICH LEBE SWIFT!
-
-let lowercased = phrase.lowercased()
-print(lowercased)
-// Ausgabe: ich lebe swift!
-
-let middleCapitalized = phrase[0] + uppercased[1..<uppercased.count - 1] + phrase[phrase.count - 1]
-print(middleCapitalized)
-// Ausgabe: ILebe Swift!
-
+let name = "max muster"
+print(name.capitalized) // Ausgabe: Max Muster
 ```
 
-In diesem Beispiel haben wir die `uppercased` Methode verwendet, um alle Buchstaben in Großbuchstaben zu ändern, und dann die `lowercased` Methode, um alle Buchstaben in Kleinbuchstaben zu ändern. Schließlich haben wir die  `uppercased` und `lowercased` Ergebnisse kombiniert, um nur den mittleren Buchstaben großzuschreiben.
+Wie du sehen kannst, wird der Name "max muster" in "Max Muster" umgewandelt. Diese Methode ist nützlich, wenn du sicherstellen möchtest, dass dein String immer mit einem Großbuchstaben beginnt.
 
-# Tiefere Einblicke 
-Jetzt, wo wir wissen, wie wir eine Zeichenkette in Swift großschreiben können, werfen wir einen Blick auf die Grundlagen dessen, was im Hintergrund passiert.
+### Die `uppercased` Methode
 
-Swift verwendet den Unicode-Standard für die Darstellung von Zeichenketten. Dies bedeutet, dass jeder Buchstabe, jede Zahl oder jedes Sonderzeichen einen eindeutigen Code hat, um es zu identifizieren. Wenn Sie also eine Zeichenkette großschreiben, ändert Swift nur die Unicode-Codes der Zeichen entsprechend.
-
-Es ist auch wichtig zu beachten, dass die `uppercase` Methoden keine Auswirkungen auf Sonderzeichen haben. Sie funktionieren nur bei Buchstaben. Hier ist ein Beispiel:
+Manchmal möchtest du vielleicht, dass der gesamte String in Großbuchstaben angezeigt wird. Dafür kannst du die `uppercased` Methode verwenden.
 
 ```Swift
-let str = "!!Hello!"
-let capitalized = str.uppercased()
-print(capitalized)
-// Ausgabe: !!HELLO!
-
+let text = "Hallo, wie geht es dir?"
+print(text.uppercased()) // Ausgabe: HALLO, WIE GEHT ES DIR?
 ```
 
-Das Ausrufezeichen wurde nicht in einen Großbuchstaben geändert, da es kein Buchstabe ist, sondern ein Sonderzeichen.
+Mit dieser Methode kannst du deinen String komplett in Großbuchstaben ändern.
 
-# Siehe auch
-- [Apple Developer Dokumentation über String Manipulation (Englisch)](https://developer.apple.com/documentation/swift/string)
-- [Swift-Blog Beitrag über Substring und String Manipulation (Englisch)](https://swift.org/blog/substring/)
+### Die `lowercased` Methode
+
+Ähnlich wie bei `uppercased` kannst du mithilfe der `lowercased` Methode deinen String in Kleinbuchstaben umwandeln.
+
+```Swift
+let phrase = "ALLES GROẞGESCHRIEBEN"
+print(phrase.lowercased()) // Ausgabe: alles großgeschrieben
+```
+
+Diese Methode ist besonders nützlich, wenn du sicherstellen möchtest, dass alle Benutzereingaben in Kleinbuchstaben gespeichert werden, um mögliche Inkonsistenzen zu vermeiden.
+
+### Die `capitalized(with:)` Funktion
+
+Mithilfe der `capitalized(with:)` Funktion kannst du auch bestimmte Anforderungen an die Großschreibung stellen. Du kannst zum Beispiel festlegen, dass der erste Buchstabe in jedem Satz großgeschrieben wird.
+
+```Swift
+let text = "ich bin stolz ein Programmierer zu sein. und auf Swift besonders."
+print(text.capitalized(with: .individualWords)) // Ausgabe: Ich Bin Stolz Ein Programmierer Zu Sein. Und Auf Swift Besonders.
+```
+
+In diesem Beispiel wird der erste Buchstabe jedes Satzes großgeschrieben, während alle anderen Buchstaben klein bleiben.
+
+## Deep Dive
+
+Hinter den Kulissen überprüft die Großschreibung in Swift jedes Zeichen in einem String und wendet die entsprechenden Änderungen an. Dies bedeutet, dass du auch Sonderzeichen und Buchstaben aus anderen Sprachen mit Großbuchstaben umwandeln kannst.
+
+Wichtig zu beachten ist auch, dass die Großschreibung in Swift nur auf Strings funktioniert. Wenn du also versuchst, einen Integer oder ein Array zu kapitalisieren, wird es zu einem Fehler führen.
+
+## Siehe auch
+
+- [Swift Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Capitalizing Strings in Swift](https://www.hackingwithswift.com/articles/167/how-to-capitalise-the-first-letter-of-a-string)
+- [String Capitalization in Swift](https://www.avanderlee.com/swift/string-capitalization-swift/)

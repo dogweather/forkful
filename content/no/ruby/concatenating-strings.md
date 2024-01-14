@@ -1,7 +1,9 @@
 ---
-title:                "Ruby: Sammenslåing av tekststrenger"
+title:                "Ruby: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/ruby/concatenating-strings.md"
 ---
 
@@ -9,59 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å slå sammen strenger er en viktig del av Ruby-programmering og er nyttig når du vil kombinere forskjellige tekststrenger til en enkelt streng. Dette kan være nyttig for å lage dynamiske tekster, til å vise resultatene av variabler eller for å formatere utdataen på en spesiell måte. Ved å lære hvordan du slår sammen strenger, kan du gjøre kodene dine mer effektive og funksjonelle.
+Å kombinere strenger (concatenate strings) er en viktig del av programmering som lar deg sette sammen flere tekststrenger til en enkelt streng. Dette er nyttig for å lage dynamiske tekster eller formater for å presentere data på en lesbar måte.
 
 ## Hvordan
 
-Koden for å slå sammen strenger i Ruby er veldig enkel. Du kan bruke "+" operatøren for å slå sammen to strenger, eller du kan bruke "<<" symbolet for å legge til en streng i enden av en annen.
-
-La oss se på et eksempel:
+Man kan enkelt kombinere strenger i Ruby ved å bruke "+" -operatøren. Se eksempelet nedenfor:
 
 ```Ruby
-navn = "Jørgen"
+navn = "Marit"
 alder = 25
-puts "Hei, mitt navn er " + navn + " og jeg er " + alder.to_s + " år gammel."
+
+puts "Hei, mitt navn er " + navn + ", og jeg er " + alder.to_s + " år gammel."
 ```
 
-I dette eksempelet benytter vi oss av både "+" operatøren og "<<" symbolet for å slå sammen flere strenger. Vi bruker også ".to_s" for å konvertere variablene til strenger, siden vi ikke kan slå sammen strenger og tall direkte.
+Dette vil resultere i følgende utskrift:
 
-Når du kjører dette eksempelet, vil du få følgende utdata:
-
+```ruby
+Hei, mitt navn er Marit, og jeg er 25 år gammel.
 ```
-Hei, mitt navn er Jørgen og jeg er 25 år gammel.
+
+Vi kan også bruke string-interpolasjon ved hjelp av "#{}" -syntaxen. Dette gjør det mulig å inkludere variabler rett inn i teksten uten å måtte konvertere dem til strenger. Eksempelet nedenfor viser hvordan man kan bruke string-interpolasjon for å oppnå det samme resultatet som det forrige eksempelet:
+
+```Ruby
+navn = "Marit"
+alder = 25
+
+puts "Hei, mitt navn er #{navn}, og jeg er #{alder} år gammel."
 ```
 
 ## Dypdykk
 
-I tillegg til å bruke "+" operatøren og "<<" symbolet, kan du også bruke metoden ".concat" for å slå sammen strenger i Ruby. Denne metoden legger til en streng i enden av en annen, og endrer strengen den blir brukt på.
+I tillegg til å kombinere strenger ved hjelp av "+", kan vi også bruke metoden "concat" for å oppnå samme effekt. Det er viktig å merke seg at "concat" endrer den opprinnelige strengen, mens "+"-operatøren lager en helt ny streng.
 
-La oss se på et eksempel:
+En annen viktig ting å huske på er at det ikke er begrensninger på hvor mange strenger man kan kombinere. Man kan enkelt legge til flere variabler og tekststrenger ved hjelp av "+" eller string-interpolasjon.
 
-```Ruby
-sangen = "Jeg elsker "
-sangen.concat("å synge.")
-puts sangen
-```
+## Se også
 
-I dette tilfellet vil strengen "Jeg elsker " bli endret til "Jeg elsker å synge." ved hjelp av ".concat" metoden.
-
-Du kan også bruke interpolasjon for å sette inn variabler i en streng. Dette gjøres ved å bruke "#" før variabelnavnet inne i en streng. La oss se på et eksempel:
-
-```Ruby
-navn = "Oda"
-puts "Hei, mitt navn er #{navn} og jeg elsker å kode."
-```
-
-Dette vil gi følgende utdata:
-
-```
-Hei, mitt navn er Oda og jeg elsker å kode.
-```
-
-## Se Også
-
-For å lære mer om strenger i Ruby og deres bruksområder, kan du besøke disse ressursene:
-
-- [Offisiell Ruby dokumentasjon for strenger](https://ruby-doc.org/core-2.7.1/String.html)
-- [Enkel Guide til Ruby - Strenger](https://www.tutorialspoint.com/ruby/ruby_strings.htm)
-- [Ruby Strenger - En Omfattende Guide](https://www.rubyguides.com/2015/05/ruby-strings/)
+- Offisiell dokumentasjon for string manipulation <https://ruby-doc.org/core-3.0.2/String.html>
+- Enkel guide til Ruby <https://www.ruby-lang.org/no/documentation/quickstart/>
+- Mer avansert guide til Ruby <https://www.tutorialspoint.com/ruby/>

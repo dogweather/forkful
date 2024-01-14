@@ -1,53 +1,44 @@
 ---
 title:                "Arduino: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Arduino"
-category:             "Getting Started"
+category:             "Arduino"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/arduino/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-# Hvorfor?
+## Hvorfor
+Å starte et nytt prosjekt med Arduino kan være en morsom og spennende måte å lære om elektronikk og programmering på. Med Arduino kan du lage alt fra enkle LED-lyskilder til komplekse roboter eller interaktive kunstverk. Det er også en rimelig måte å utforske og eksperimentere med nye ideer på. 
 
-Å starte et nytt prosjekt med Arduino kan være en spennende og givende opplevelse. Med Arduino kan du enkelt lage dine egne elektroniske apparater og roboter. Det er også en flott måte å lære om programmering og elektronikk på, samtidig som du kan skape noe som faktisk fungerer.
-
-# Hvordan?
-
-For å starte et Arduino-prosjekt trenger du selvfølgelig en Arduino-enhet, enten det er en Uno, Nano eller annen modell. Du trenger også noen grunnleggende deler som motstander, LED-lys, jumperkabler og en breadboard.
-
-Først må du koble Arduinoen til datamaskinen din og laste ned den nyeste versjonen av Arduino-programvaren. Deretter kan du begynne å skrive koden din i det åpne tekstfeltet i programvaren. Her er et eksempel på en enkel kode som får en LED til å blinke:
+## Hvordan
+Å starte et nytt prosjekt med Arduino krever noen grunnleggende trinn. Først må du ha en Arduino-kontroller og en datamaskin med Arduino-programvare installert. Deretter kan du følge disse trinnene for å programmere og teste ut enkle kretser på Arduino:
 
 ```Arduino
-// Sett opp pinne 13 som utgang
+// Opprett en variabel for å styre en LED-pinne
+int ledPin = 9;
+
 void setup() {
-  pinMode(13, OUTPUT);
+  // Sett LED-pinne som utgang
+  pinMode(ledPin, OUTPUT);
 }
 
-// Gjenta for alltid
 void loop() {
-  // Skru på LED-en
-  digitalWrite(13, HIGH);
-  // Vent i ett sekund
-  delay(1000);
-  // Skru av LED-en
-  digitalWrite(13, LOW);
-  // Vent i ett sekund
-  delay(1000);
+  // Slå på LED
+  digitalWrite(ledPin, HIGH);
+  delay(1000); // Vent i 1 sekund
+  // Slå av LED
+  digitalWrite(ledPin, LOW); 
+  delay(1000); // Vent i 1 sekund
 }
 ```
+Dette enkle programmet vil slå av og på en LED-pinne hvert sekund. Du kan også legge til flere funksjoner og sensorkomponenter for å lage mer avanserte prosjekter. Arduino har et stort utvalg av sensorer, motorer, skjermer og andre komponenter som du kan bruke i prosjektene dine.
 
-Når du har skrevet koden din og lagret den, kan du laste den opp til Arduinoen ved å klikke på "Upload" -knappen. Du vil da se at LED-lyset blinker i ett sekund av gangen.
+## Dykk dypere
+Når du blir mer fortrolig med Arduino-programmering, kan du ta et dypere dykk og utforske mer avanserte funksjoner og konsepter. Dette kan inkludere å lære om analog og digital signalbehandling, kommunikasjon med eksterne enheter via seriell eller WiFi, og å lage avanserte brukergrensesnitt. Det er også viktig å forstå grunnleggende elektronikk og hvordan komponentene fungerer sammen med Arduino.
 
-# Dykk dypere
-
-Det er utallige muligheter og muligheter når du starter et Arduino-prosjekt. Du kan leke deg med sensorer og aktuatorer, lage interaktive prosjekter med knapper og LCD-skjermer, eller til og med kommunisere med andre enheter via Bluetooth eller Wi-Fi.
-
-Det er også viktig å nevne at Arduino-miljøet er stort og aktivt, med mange ressurser og guider tilgjengelig online. Det er også vanligvis lett å finne lignende prosjekter som andre har gjort for inspirasjon og hjelp.
-
-Så hva venter du på? Koble til Arduinoen din og begynn å utforske de endeløse mulighetene som ligger foran deg.
-
-# Se også
-
-- Offisiell Arduino-nettside: https://www.arduino.cc/
-- Arduino-prosjekter og guider: https://www.instructables.com/arduino/
-- Arduino-fellesskapet og forum: https://forum.arduino.cc/
+## Se også
+- [Offisiell Arduino nettside](https://www.arduino.cc/)
+- [Liste over Arduino-prosjekter for nybegynnere](https://maker.pro/arduino/projects-for-beginners) 
+- [Arduino-programvare og dokumentasjon](https://www.arduino.cc/en/software)

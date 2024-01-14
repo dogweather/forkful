@@ -1,7 +1,9 @@
 ---
 title:                "Clojure: Sprawdzanie istnienia katalogu"
+simple_title:         "Sprawdzanie istnienia katalogu"
 programming_language: "Clojure"
-category:             "Files and I/O"
+category:             "Clojure"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/checking-if-a-directory-exists.md"
 ---
 
@@ -9,28 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Często w programowaniu potrzebujemy sprawdzić, czy dany katalog istnieje przed wykonaniem pewnych operacji na plikach wewnątrz niego. Jest to ważne, ponieważ jeśli katalog nie istnieje, nasz program może generować błędy lub nie działać prawidłowo. W tym wpisie dowiesz się, jak w łatwy sposób sprawdzić istnienie katalogu w Clojure.
+Sprawdzanie, czy katalog istnieje, jest bardzo ważnym elementem programowania w Clojure. Pozwala to na upewnienie się, że nasz program będzie działał poprawnie i nie będzie wywoływał błędów związanych z brakującymi katalogami.
 
 ## Jak to zrobić
 
-Sprawdzenie istnienia katalogu w Clojure jest bardzo proste. Wystarczy użyć funkcji `clojure.java.io/file` do utworzenia obiektu katalogu, a następnie użyć funkcji `exists?` do sprawdzenia czy istnieje. Poniżej znajduje się przykładowy kod:
+Sprawdzanie, czy katalog istnieje, może wydawać się trudne, ale w rzeczywistości jest to bardzo prosta czynność w języku Clojure. Wystarczy użyć funkcji "clojure.java.io/file" i podać ścieżkę do katalogu, który chcemy sprawdzić. Następnie wywołujemy funkcję "exists?" na stworzonym obiekcie, która zwróci wartość true, jeśli katalog istnieje, lub false, jeśli nie istnieje.
 
 ```Clojure
-(require '[clojure.java.io :as io])
-(def directory (io/file "/ścieżka/do/katalogu"))
-(exists? directory)
+(def dir (clojure.java.io/file "/sciezka/do/katalogu"))
+(exists? dir)
+;; Output: false
 ```
 
-W powyższym przykładzie używamy funkcji `exists?` do sprawdzenia czy katalog istnieje. Funkcja ta zwraca `true` jeśli istnieje, lub `false` jeśli nie istnieje. Możemy również użyć tej funkcji do sprawdzania istnienia plików.
+W powyższym przykładzie stworzyliśmy zmienną "dir" przechowującą obiekt katalogu. Następnie wywołaliśmy funkcję "exists?" na tej zmiennej, która zwróciła wartość false, ponieważ katalog jeszcze nie istnieje.
 
-## Deep Dive
+Jednak warto pamiętać, że ta metoda nie jest w 100% niezawodna. Istnieje szansa, że katalog zostanie utworzony lub usunięty między wywołaniami funkcji. Dlatego ważne jest, aby również stosować odpowiednie obsługiwanie wyjątków, aby uniknąć błędów w programie.
 
-Podczas wywoływania funkcji `exists?`, Clojure wywołuje pod spodem funkcję `java.io.File#exists` z języka Java. Zwraca ona również `true` lub `false` w zależności od istnienia pliku lub katalogu. Jest to wygodne, ponieważ nie musimy importować dodatkowych bibliotek do operacji na plikach.
+## Dogłębna analiza
 
-Jeśli chcesz dowiedzieć się więcej o funkcjach dostępnych w Clojure do pracy z plikami i katalogami, polecam przeczytać dokumentację Clojure na temat funkcji `clojure.java.io/file` i `exists?`.
+Podczas sprawdzania, czy katalog istnieje, warto również wiedzieć, że funkcja "exists?" działa dla dowolnego typu pliku, a nie tylko dla katalogów. Oznacza to, że można jej użyć również do sprawdzania istnienia plików lub innych zasobów.
 
-## Zobacz także
+Ponadto, jeśli chcemy uzyskać więcej informacji o pliku, na którym wywołujemy funkcję "exists?", można również wykorzystać funkcję "file-seq", która zwraca sekwencję plików i katalogów w podanej ścieżce. W ten sposób można uzyskać dostęp do dodatkowych informacji, takich jak nazwa pliku, rozmiar, data utworzenia itp.
 
-- [Dokumentacja Clojure o pracy z plikami i katalogami](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Poradnik na temat operacji na plikach w Clojure](https://medium.com/@gonewest818/working-with-files-in-clojure-60ee19a594e4)
-- [Funkcja exists? na stronie ClojureDocs](https://clojuredocs.org/clojure.java.io/exists_q)
+## Zobacz również
+
+- [Dokumentacja Clojure o funkcji "exists?"](https://clojuredocs.org/clojure.java.io/exists_q)
+- [Poradnik o sprawdzaniu istnienia plików w Clojure](https://clojureunraveled.com/check-file-exists/)
+- [Tutorial o obsłudze wyjątków w Clojure](https://purelyfunctional.tv/article/exception-handling-in-clojure/)

@@ -1,7 +1,9 @@
 ---
-title:                "Swift: Søke etter og erstatte tekst"
+title:                "Swift: Søking og bytting av tekst"
+simple_title:         "Søking og bytting av tekst"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/swift/searching-and-replacing-text.md"
 ---
 
@@ -9,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å søke og erstatte tekst er en vanlig oppgave i programmering, spesielt når man arbeider med store mengder kode. Dette kan spare deg for mye tid og gjøre programmeringen mer effektiv. 
+Uten å bruke riktig søk og erstatt-funksjonalitet i programmering kan det være en utfordring å finne og endre tekst. Dette kan føre til mye unødvendig manuelt arbeid og potensielle feil. Derfor er det viktig for utviklere å forstå hvordan man bruker søk og erstatt-funksjoner i Swift for å effektivt jobbe med store tekstfiler.
 
 ## Hvordan
 
-Det er flere måter å søke og erstatte tekst på i Swift. Et av de vanligste verktøyene er metoden `replacingOccurrences(of:with:)`. Her er et eksempel på hvordan den kan brukes:
+For å søke og erstatte tekst i Swift, kan man bruke metoden `replacingOccurrences(of:with:)` sammen med en streng og en annen streng som skal erstattes. For eksempel:
 
-```Swift
+```Swift 
+let originalText = "Dette er en tekst som jeg skal endre"
+let endretTekst = originalText.replacingOccurrences(of: "skal endre", with: "har endret")
 
-let text = "Hei, jeg er en tekststreng."
-let newText = text.replacingOccurrences(of: "tekststreng", with: "programmerer")
-
-print(newText) // Output: Hei, jeg er en programmerer.
+print(endretTekst)
 ```
 
-I dette eksempelet erstatter vi "tekststreng" med "programmerer". Det er også mulig å bruke denne metoden for å fjerne tekst, ved å erstatte den med en tom streng: `replacingOccurrences(of:with:"")`.
+Dette vil resultere i følgende output: `Dette er en tekst som jeg har endret`.
 
-En annen måte å søke og erstatte tekst på er ved hjelp av regulære uttrykk med klassen `NSRegularExpression`. Her er et eksempel på hvordan du kan erstatte gjentakende ord:
+Man kan også bruke regulære uttrykk gjennom klassen `NSRegularExpression` for å søke og erstatte tekst basert på et mønster. For eksempel:
 
 ```Swift
-let text = "Dette er er en en tekst tekst."
-let regex = try NSRegularExpression(pattern: "\\b(\\w+) \\1\\b", options: [])
-let range = NSRange(location: 0, length: text.utf16.count)
-let newText = regex.stringByReplacingMatches(in: text, options: [], range: range, withTemplate: "$1")
+let text = "Jeg har spist 3 epler og 2 bananer"
+let regex = try! NSRegularExpression(pattern: "\\d+", options: .caseInsensitive)
+let modifisertTekst = regex.stringByReplacingMatches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count), withTemplate: "5")
 
-print(newText) // Output: Dette er en tekst.
+print(modifisertTekst)
 ```
 
-Her bruker vi et regulært uttrykk for å finne alle gjentakende ord og erstatte dem med en enkelt forekomst av ordet.
+Dette vil resultere i følgende output: `Jeg har spist 5 epler og 5 bananer`.
 
 ## Dypdykk
 
-Det finnes også andre metoder og verktøy for å søke og erstatte tekst i Swift, som for eksempel bruk av `range` og `deletingCharacters(in:)`. Det er viktig å vite hvilken metode som passer best til ditt spesifikke tilfelle.
+Det finnes flere nyttige metoder og egenskaper som kan brukes sammen med søk og erstatt-funksjonalitet i Swift. For eksempel kan man bruke flagget `caseInsensitive` for å utføre en ikke-tilpasningsdyktig søk og erstatt-operasjon, eller man kan bruke metoden `firstMatch(in: options: range:)` for å kun få det første treffet for en gitt streng.
 
-Det kan også være nyttig å lese dokumentasjonen og eksperimentere med forskjellige metoder for å bli mer komfortabel med søking og erstatting av tekst i Swift.
+Det kan også være nyttig å bruke kontrolstrukturen `guard` for å sikre at et søk og erstatt-operasjonen var vellykket før man gjør videre handlinger med resultatet.
 
-## Se også
+## Se Også
 
-- [Offisiell dokumentasjon for `replacingOccurrences(of:with:)`](https://developer.apple.com/documentation/foundation/nsstring/1642976-replacingoccurrences)
-- [Guide til regulære uttrykk i Swift](https://www.raywenderlich.com/1137702-regular-expressions-tutorial-for-swift)
-- [Mer informasjon om søking og erstatting i Swift](https://www.hackingwithswift.com/example-code/strings/how-to-use-regex-in-swift)
+- [Apple Developer Documentation for `String`-klassen](https://developer.apple.com/documentation/swift/string)
+- [Apple Developer Documentation for `NSRegularExpression`-klassen](https://developer.apple.com/documentation/foundation/nsregularexpression)

@@ -1,7 +1,9 @@
 ---
-title:                "Kotlin: Att kapitalisera en sträng"
+title:                "Kotlin: Kapitalisering av en sträng"
+simple_title:         "Kapitalisering av en sträng"
 programming_language: "Kotlin"
-category:             "Strings"
+category:             "Kotlin"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/kotlin/capitalizing-a-string.md"
 ---
 
@@ -9,58 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att kapitalisera en sträng kan vara användbart när man till exempel vill visa en titel eller ett namn på ett mer formellt sätt.
+Att kunna förstå grunderna i Kotlin-programmering är viktigt för alla som vill bli framgångsrika programmerare. En viktig del av detta är att kunna manipulera strängar, inklusive att första bokstaven i en sträng blir stor bokstav. Detta kan verka som en liten detalj men det är en viktig del av att skriva läsbar och korrekt kod.
 
-## Så här gör du
+## Hur man gör
 
-För att kapitalisera en sträng i Kotlin, kan du använda inbyggda String-metoder som `toUpperCase()` och `toLowerCase()`. Dessa metoder konverterar alla bokstäver till stora eller små, respektive.
-
-Exempel 1:
+För att första bokstaven i en sträng ska bli stor bokstav, kan du använda funktionen `capitalize()` i Kotlin. Du kan använda denna funktion på en enskild sträng eller på en lista av strängar. Här är ett exempel:
 
 ```Kotlin
-val namn = "anna andersson"
-val kapitaliseratNamn = namn.capitalize()
-println(kapitaliseratNamn) // Anna andersson
+val namn = "sara"
+println(namn.capitalize()) // output: Sara
 ```
 
-Exempel 2:
+Du kan också använda `capitalize()` på en lista av strängar, vilket gör att första bokstaven i varje sträng blir stor bokstav. Här är ett exempel som visar hur man kan använda `map()` funktionen för att tillämpa `capitalize()` på en lista av strängar:
 
 ```Kotlin
-val yrke = "doktor"
-val merFormelltYrke = yrke.toUpperCase()
-println(merFormelltYrke) // DOKTOR
+val namnLista = listOf("anna", "peter", "måns")
+val namnMedStoraBokstäver = namnLista.map { it.capitalize() }
+println(namnMedStoraBokstäver) // output: [Anna, Peter, Måns]
 ```
 
-Om du vill kapitalisera en sträng där varje ord börjar med en stor bokstav, kan du använda metoden `split()` först och sedan använda `capitalize()` för varje ord.
-
-Exempel 3:
-
-```Kotlin
-val citat = "live and learn"
-val kapitaliseratCitat = citat.split(" ")
-    .map { it.capitalize() }
-    .joinToString(" ")
-println(kapitaliseratCitat) // Live And Learn
-```
+Det finns också en annan liknande funktion kallad `decapitalize()` som omvandlar den första bokstaven till en liten bokstav. Detta kan vara användbart om du behöver standardisera strängar i ditt program.
 
 ## Djupdykning
 
-När du använder `capitalize()`-metoden, kommer endast första bokstaven i strängen att kapitaliseras. Alla andra bokstäver kommer att förbli som de är, vilket kan leda till oväntade resultat om du försöker kapitalisera ord som redan är helt eller delvis stora bokstäver.
-
-En annan metod som du kan använda är `replaceFirstChar()` som tar emot en lambda-funktion som argument. Denna funktion kan du använda för att ändra första bokstaven i strängen till en stor bokstav och behålla alla andra bokstäver som de är.
-
-Exempel 4:
+Förutom `capitalize()` och `decapitalize()` finns det också andra sätt att manipulera strängar i Kotlin. En viktig funktion är `substring()`, som låter dig välja en del av en sträng baserat på start- och slutindex. Här är ett exempel:
 
 ```Kotlin
-val land = "usa"
-val kapitaliseratLand = land.replaceFirstChar { it.uppercase() }
-println(kapitaliseratLand) // USA
+val sträng = "hej javaprogrammerare"
+println(sträng.substring(4,12)) // output: javaprogr
 ```
 
-Det finns också bibliotek som erbjuder mer avancerade funktioner för att kapitalisera strängar, särskilt när det kommer till att hantera olika språk och specialtecken.
+En annan användbar funktion är `toLowerCase()` och `toUpperCase()` som låter dig ändra bokstäver till antingen små eller stora. Dessa funktioner kan vara användbara för att jämföra strängar utan att behöva bekymra dig om skillnader i stora och små bokstäver.
 
-## Se även
+## Se också
 
-- [Officiell Dokumentation om String-metoder](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
-- [Kapitalisera strängar i Kotlin: En handledning](https://blog.kotlin-academy.com/string-processing-part-i-using-regular-expressions-and-replace-all-to-transform-the-string-75252216d292)
-- [Hantera specialtecken vid kapitalisering i Kotlin](https://medium.com/@fraggjkee/apply-kotlin-capitalize-with-locales-52179a122339)
+- [Officiell Kotlin hemsida](https://kotlinlang.org)
+- [Kotlin GitHub repository](https://github.com/JetBrains/kotlin)
+- [Kotlin Playground](https://play.kotlinlang.org)
+- [Kotlin Standard Bibliotek](https://kotlinlang.org/api/latest/jvm/stdlib/index.html)

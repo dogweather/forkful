@@ -1,53 +1,42 @@
 ---
 title:                "Go: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Hvorfor
-
-Å konvertere en streng til små bokstaver kan være nyttig i mange tilfeller, spesielt når det kommer til formatering og sammenligning av tekster. Det er også en vanlig oppgave som må håndteres i mange programmeringsspråk, inkludert Go.
+Det å konvertere en streng til små bokstaver i Go kan være nyttig når du for eksempel trenger å sammenligne to strenger uavhengig av store eller små bokstaver. Det kan også gjøre koden din mer lesbar hvis du ønsker å bruke små bokstaver i hele koden.
 
 ## Hvordan
-
-I Go kan du enkelt konvertere en streng til små bokstaver ved å bruke metoden "ToLower" fra "strings" pakken. Her er et enkelt eksempel på hvordan du kan gjøre det:
+For å konvertere en streng til små bokstaver i Go, kan du bruke funksjonen `ToLower` fra `strings` pakken. Her er et eksempel på hvordan du kan gjøre det:
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"strings"
+    "fmt"
+    "strings"
 )
 
 func main() {
-	str := "HEI, JEG ER EN STRENG"
-	lowercase := strings.ToLower(str)
-	fmt.Println(lowercase)
+    str := "HEI, JEG ER EN STRENG"
+    fmt.Println(strings.ToLower(str))
 }
-
-// Output: hei, jeg er en streng
 ```
 
-Som du kan se, bruker vi "ToLower" metoden på en streng og lagrer resultatet i en ny variabel. Deretter skriver vi ut den nye strengen som er i små bokstaver. Her er noen viktige ting å merke seg om denne metoden:
-
-- Den returnerer en ny streng i små bokstaver, originalstrengen forblir uendret.
-- Hvis du prøver å bruke denne metoden på en tom streng, vil den returnere en tom streng.
-- Den støtter også andre språk enn engelsk, så dersom du har en streng med spesialtegn eller andre tegn fra andre språk, vil den også bli konvertert til små bokstaver.
+Dette vil gi følgende output: `hei, jeg er en streng`.
 
 ## Dypdykk
-
-Under overflaten bruker "ToLower" metoden en teknikk som kalles Unicode normalisering. Dette er en måte å sørge for at ulike tegn i tekster har en konsekvent representasjon, uavhengig av hvilket språk eller tegnsett de tilhører. Dette kan forhindre mulige problemer med sammenligning eller bokstavrekkefølge.
-
-En annen viktig ting å merke seg er at konverteringen til små bokstaver kan variere avhengig av hvilket språk og tegnsett som er i bruk. For eksempel vil ß (tysk stor bokstav s) i de fleste tilfeller bli konvertert til ss, mens den kinesiske karakteren 降 vil bli konvertert til dens små bokstavvariant 霜.
+Det kan være nyttig å vite at `ToLower` funksjonen i Go tar hensyn til både ASCII og Unicode bokstaver. Det betyr at den vil konvertere alle store bokstaver til små uansett hvilket språk teksten er skrevet på. Det er også viktig å merke seg at funksjonen ikke vil endre på originalstrengen, men heller returnere en ny streng med de konverterte bokstavene.
 
 ## Se også
+- [Go dokumentasjon om strings pakken](https://golang.org/pkg/strings/#ToLower)
+- [Gode programmeringsprinsipper på norsk](https://www.apress.com/gp/blog/all-blog-posts/all-posts/principles-of-good-programming-by-marian-pierzchala/15162878)
+- [Lær Go på norsk](https://github.com/kristianvalind/Norsk-Go)
 
-Nedenfor er noen nyttige ressurser for å lære mer om konvertering av strenger til små bokstaver i Go:
-
-- [Offisiell dokumentasjon for "strings" pakken i Go](https://golang.org/pkg/strings/)
-- [En god artikkel om Unicode normalisering og strenger i Go](https://blog.golang.org/normalization)
-- [En video som forklarer Go sin "strings" pakke og hvordan du håndterer tekst](https://www.youtube.com/watch?v=sJVrNWc-7Xk)
+*Dette blogginnlegget ble skrevet på norsk av en Go-entusiast og er ment å gjøre det enklere for norske lesere å lære og forstå konseptet med å konvertere streng til små bokstaver i Go.*

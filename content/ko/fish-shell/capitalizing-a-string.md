@@ -1,42 +1,50 @@
 ---
 title:                "Fish Shell: 문자열 대문자로 변환하기"
+simple_title:         "문자열 대문자로 변환하기"
 programming_language: "Fish Shell"
-category:             "Strings"
+category:             "Fish Shell"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/fish-shell/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜: 왜 문자열을 대문자로 바꾸어야 하는지에 대한 간단한 설명
+## 왜: 문자열의 첫 글자를 대문자로 바꾸는 것에 관심이 있는 이유
 
-문자열을 대문자로 바꾸는 것은 프로그래밍에서 자주 사용되는 작업입니다. 예를 들어 데이터베이스에서 가져온 사용자 이름이나, 사용자의 입력값을 처리할 때, 많은 경우에 대문자로 변환해야합니다. 이 작업을 통해 문자열을 비교하거나 필터링하는 것이 간단해지고, 보다 일관된 결과를 얻을 수 있습니다.
+문자열을 대문자로 바꾸는 것은 작업하는 언어에 따라 다른 이유가 있을 수 있지만, 일반적으로 사용자가 원하는 형식에 맞춰서 출력할 때 사용됩니다. 예를 들어, 사용자가 입력한 이름을 출력할 때는 첫 글자를 대문자로 바꾸는 것이 보다 예쁜 출력을 만들 수 있는 방법입니다.
 
-## Fish 쉘을 이용한 문자열 대문자로 변환하기
+## 사용 방법: "```Fish Shell...```" 코드 블록을 이용한 코딩 예시와 출력 결과
 
-Fish Shell에서 문자열을 대문자로 변환하는 방법은 간단합니다. 먼저 문자열을 변수에 할당하고, 다음과 같이 `string toupper` 함수를 사용하면 됩니다.
+자 이제 여러분도 문자열의 첫 글자를 대문자로 바꾸는 방법을 배우실 차례입니다. 먼저 Fish Shell에서 사용되는 문자열 함수 중 하나인 ```strcap```을 이용하여 첫 글자를 대문자로 바꾸는 방법을 알아보겠습니다.
 
-```Fish Shell
-set my_string "Hello, world!"
-echo $my_string | string toupper
+```
+set name "john"
+echo (string match -r '[a-z]+' $name ? (string match -r '[a-z]+' $name | string sub -s 1)"cmatch $name | string sub -s 1)
 ```
 
-위의 코드를 실행하면 `HELLO, WORLD!`라는 결과가 출력됩니다. 또한, 내부에서 Fish Shell이 대문자로 자동 변환하는 `u` flag를 사용해도 같은 결과를 얻을 수 있습니다.
+위의 코드 블록을 실행하면 출력 결과는 "John"이 될 것입니다.
 
-```Fish Shell
-echo -u "Hello, world!"
+## 깊이 들어가보기: 문자열 중간에 있는 글자를 대문자로 바꾸기
+
+지금까지 우리는 문자열의 첫 글자를 대문자로 바꾸는 방법만을 알아보았습니다. 하지만 만약 문자열 중간에 있는 특정 글자를 대문자로 바꾸고 싶다면 어떻게 해야 할까요? 이 때 사용할 수 있는 기능이 있습니다. 바로 ```strupper``` 함수입니다. 이 함수는 문자열의 모든 글자를 대문자로 바꾸어주는 기능을 합니다. 따라서, 원하는 위치의 글자만 대문자로 바꾸어주기 위해서는 해당 위치의 문자를 대문자로 바꾼 다음, 나머지 글자는 다시 소문자로 바꿔주면 됩니다.
+
+예를 들어, 문자열 "johnSmith"에서 6번째 위치에 있는 "S"를 대문자로 바꾸고 싶다면 다음과 같이 코드를 작성할 수 있습니다.
+
+```
+set name "johnSmith"
+set upper (string -s 6 $name | string upcase)
+set result (string sub -s 6 $name)
+echo $result$upper
 ```
 
-다른 쉘 프로그램들과 마찬가지로 변수에 할당하여 사용하는 것이 가장 일반적인 방식입니다. 하지만 Fish Shell에는 내장되어 있는 문자열 처리 함수들을 사용할 수 있으므로, 편리하게 문자열을 대문자로 변환할 수 있습니다.
-
-## 더 알아보기: 문자열 대문자로 변환하기
-
-Fish 쉘에서 문자열을 대문자로 변환하는 것은 간단한 작업이지만, 내부에서 어떻게 처리되는지 더 알아볼 필요가 있습니다. Fish Shell에서는 다양한 문자열 처리 함수를 제공하며, `string toupper` 함수 역시 그 중 한 가지입니다. 이 함수는 주어진 문자열의 각 문자를 대문자로 변환하고, 새로운 문자열을 반환합니다. 또한, `string tolower` 함수를 사용하면 문자열을 소문자로 변환할 수도 있습니다.
-
-Fish Shell에서는 기본적으로 Unicode를 지원합니다. 따라서, 문자열의 언어나 국적에 상관없이 모든 문자를 대문자로 변환할 수 있습니다. 또한, Fish Shell은 대소문자를 구분하지 않으므로 문자열을 비교할 때, 먼저 모두 대문자로 변환하고 이후에 비교하는 것이 좋습니다.
+위의 코드를 실행하면 출력 결과는 "johnSmitH"가 될 것입니다.
 
 ## 참고 자료
 
-- [Fish Shell 공식 문서 (영어)](https://fishshell.com/docs/current/index.html)
-- [Fish Shell GitHub 레포지토리 (영어)](https://github.com/fish-shell/fish-shell)
-- [Fish Shell 커뮤니티 포럼 (영어)](https://github.com/fish-shell/fish-shell/)
-- [Fish Shell 한국어 사용 설명서 (번역)](http://fishshell-dev.readthedocs.io/ko/latest/)
+- [Fish Shell 문서](https://fishshell.com/docs/current/commands.html)
+- [유용한 Fish Shell 스크립트 코드](https://github.com/jorgebucaran/fish-shell-cookbook)
+- [자바스크립트에서 문자열의 첫 글자를 대문자로 바꾸는 방법](https://www.w3schools.com/jsref/jsref_touppercase.asp)
+
+## 참고하기
+
+[비쥬얼 스튜디오 코드에서 Fish Shell 설정하기](https://marketplace.visualstudio.com/items?itemName=mcneelco.Fish)

@@ -1,65 +1,46 @@
 ---
-title:                "PHP: Buscando y reemplazando texto."
+title:                "PHP: Buscar y reemplazar texto"
+simple_title:         "Buscar y reemplazar texto"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/php/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Por qué
-
-A la hora de escribir código en PHP, a veces es necesario realizar cambios en un texto para mejorar su funcionalidad o corregir errores. Para esto, es importante saber cómo buscar y reemplazar texto de forma eficiente.
+Si eres un desarrollador de PHP, es posible que te encuentres en situaciones donde necesites reemplazar ciertas palabras o frases en un texto. Esto puede ser para corregir errores o para actualizar contenido en una página web. En lugar de hacerlo manualmente, existe una función en PHP que puede facilitarte esta tarea: la función `str_replace()`.
 
 ## Cómo hacerlo
+La sintaxis básica de `str_replace()` es la siguiente:
 
-Para realizar una búsqueda y reemplazo de texto en PHP, se puede utilizar la función `str_replace()`. Esta función toma tres parámetros: el texto a buscar, el texto de reemplazo y el texto completo donde se realizará la búsqueda. Por ejemplo:
+```PHP
+str_replace( string $reemplazar, string $nuevo, string|array $cadena [, int $conteo ] )
+```
+
+En primer lugar, debes definir la palabra o frase que deseas reemplazar en la variable `$reemplazar`. Luego, especifica el nuevo texto que deseas utilizar en la variable `$nuevo`. Estas dos variables pueden ser cadenas de texto, o incluso arreglos de cadenas si necesitas reemplazar varias palabras o frases a la vez.
+
+Por ejemplo, si tienes un texto que dice "Hola mundo!", pero necesitas cambiarlo a "Hola usuarios!", puedes usar la función `str_replace()` de la siguiente manera:
 
 ```PHP
 $texto = "Hola mundo!";
-echo str_replace("mundo", "amigos", $texto);
+$nuevo_texto = str_replace("mundo", "usuarios", $texto);
+echo $nuevo_texto;
 ```
 
-La salida de este código sería "Hola amigos!".
+Esto mostrará "Hola usuarios!" en la pantalla.
 
-También se pueden utilizar expresiones regulares para realizar búsquedas más específicas. Por ejemplo, para reemplazar todos los números en un texto por un asterisco, se puede utilizar la siguiente expresión regular:
-
-```PHP
-$texto = "Este es un texto con números: 12345";
-echo preg_replace("/[0-9]+/", "*", $texto);
-```
-
-La salida sería "Este es un texto con números: *****".
+El parámetro opcional `$conteo` te permite especificar cuántas veces deseas hacer el reemplazo en el texto. Por defecto, la función reemplazará todas las coincidencias en la cadena de texto.
 
 ## Profundizando
+Además de la función `str_replace()`, PHP ofrece otras funciones similares para buscar y reemplazar texto, como `str_ireplace()` que es insensible a mayúsculas y minúsculas, o `preg_replace()` que utiliza expresiones regulares para realizar el reemplazo.
 
-Si se necesita realizar búsquedas y reemplazos más complejos, se puede utilizar la función `preg_replace_callback()`. Esta función permite utilizar una función personalizada para realizar el reemplazo en lugar de un string fijo. Por ejemplo:
+También puedes utilizar `str_replace()` en combinación con otras funciones, como `explode()` para dividir una cadena de texto en un arreglo y luego realizar el reemplazo en uno o varios elementos individualmente.
 
-```PHP
-// Función que toma el primer y último caracter y los intercambia
-function intercambiar($match) {
-  return $match[2] . $match[1];
-}
-
-$texto = "Hola mundo!";
-echo preg_replace_callback("/([a-z]+) ([a-z]+)/i", "intercambiar", $texto);
-```
-
-La salida sería "mundo Hola!".
-
-Otra herramienta útil es `strtr()`, que permite realizar múltiples reemplazos en un solo paso. Por ejemplo:
-
-```PHP
-$texto = "Este es un ejemplo con varios cambios";
-$reemplazos = array("ejemplo" => "texto", "varios" => "muchos");
-echo strtr($texto, $reemplazos);
-```
-
-La salida sería "Este es un texto con muchos cambios".
+Recuerda revisar la documentación oficial de PHP para obtener más información y ejemplos de uso.
 
 ## Ver también
-
-- [Documentación oficial de str_replace() en PHP.net](https://www.php.net/manual/es/function.str-replace.php)
-- [Información sobre expresiones regulares en PHP](https://www.php.net/manual/es/reference.pcre.pattern.syntax.php)
-- [Documentación oficial de preg_replace_callback() en PHP.net](https://www.php.net/manual/es/function.preg-replace-callback.php)
-- [Más información sobre la función strtr() en PHP.net](https://www.php.net/manual/es/function.strtr.php)
+- Documentación oficial de `str_replace()`: https://www.php.net/manual/es/function.str-replace.php
+- Documentación oficial de `explode()`: https://www.php.net/manual/es/function.explode.php
+- Documentación oficial de `preg_replace()`: https://www.php.net/manual/es/function.preg-replace.php

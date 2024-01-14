@@ -1,41 +1,41 @@
 ---
 title:                "Elixir: Användning av reguljära uttryck"
+simple_title:         "Användning av reguljära uttryck"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/elixir/using-regular-expressions.md"
 ---
 
 {{< edit_this_page >}}
 
 ## Varför
+Reguljära uttryck är ett kraftfullt verktyg inom Elixir som hjälper dig att söka och manipulera text baserat på specifika mönster. Detta kan vara användbart för att analysera data, formatera text eller validera inmatning. Genom att lära sig reguljära uttryck kan du effektivisera din kodning och få mer precist kontroll över dina strängar.
 
-Det finns många anledningar till varför man skulle vilja använda sig av reguljära uttryck (regular expressions) i sin Elixir-programmering. Regelbundna uttryck ger en mycket kraftfull och flexibel metod att matcha och manipulera textsträngar. Detta kan vara användbart för att extrahera specifika delar av texten, ersätta delar av det med annan text, eller för att validera indata. På så sätt kan man göra mer avancerade och dynamiska operationer på text, vilket kan underlätta programmeringsarbetet.
+## Hur man använder reguljära uttryck i Elixir
+För att använda reguljära uttryck i Elixir behöver du först importera modulen `Regex` genom att skriva `import Regex` högst upp i din fil. Sedan kan du använda syntaxen `~r//` för att definiera ditt reguljära uttryck.
 
-## Hur man gör
-
-För att använda reguljära uttryck i Elixir, behöver man först importera "regex" biblioteket. Sedan kan man använda sig av funktionen "Regex.match?" tillsammans med ett reguljärt uttryck som första argument och en textsträng som andra argument. Om matchningen lyckas, returnerar funktionen en "Matchdata" struktur som innehåller information om den hittade matchningen. Om matchningen misslyckas returneras "nil".
-
-```Elixir
+```elixir
 import Regex
 
-Regex.match?(~r/[0-9]+/, "123") # Returnerar %Regex.MatchData{...}
-Regex.match?(~r/[0-9]+/, "abc") # Returnerar nil
+string = "Hej, jag älskar Elixir!"
+
+~r/Elixir/ # matchar ordet "Elixir" i texten
+
+Regex.run(~r/Elixir/, string) # output: ["Elixir"]
+
 ```
 
-Man kan också använda "Regex.replace" funktionen för att byta ut delar av en textsträng som matchar ett reguljärt uttryck med en specifik text. I följande exempel byter vi ut alla förekomster av "X" i texten med bokstaven "Y".
-
-```Elixir
-Regex.replace(~r/X/, "My example", "Y") # Returnerar "My Yyample"
-```
+Det finns också många olika regexp-funktioner som du kan använda, till exempel `match?`, `scan` och `replace` för att uppnå olika effekter baserat på ditt användningsfall. Se till att kolla dokumentationen för fler detaljer och exempel.
 
 ## Djupdykning
+Reguljära uttryck bygger på ett koncept som kallas "regular expression engine". Detta är en algoritm som kan läsa ett reguljärt uttryck och utföra olika operationer baserat på det.
 
-Att behärska reguljära uttryck kan vara en viktig färdighet för en programutvecklare, speciellt i webbutveckling där man hanterar mycket textsträngar. För att lära sig mer om reguljära uttryck i Elixir, kan man konsultera den officiella dokumentationen för "Regex" biblioteket och experimentera med olika reguljära uttryck på en webbplats som regex101.com. Det finns också många online-tutorials och böcker som fokuserar på reguljära uttryck och hur man använder dem i programmering.
+I Elixir används "PCRE" (Perl Compatible Regular Expressions) som standard för reguljära uttryck. Det finns också andra engine-alternativ du kan använda, såsom "RE2" och "Hyperscan". Varje engine har sina egna fördelar och begränsningar, så det kan vara värt att utforska vilken som passar dina behov bäst.
+
+En annan sak att notera är att reguljära uttryck inte alltid är det bästa valet för att lösa ett problem. Det är viktigt att överväga alternativa lösningar och hitta en balans mellan enkelhet och prestanda.
 
 ## Se även
-
-För mer information om reguljära uttryck i Elixir, kolla in dessa resurser:
-
-- Officiella dokumentationen för "Regex" biblioteket: https://hexdocs.pm/elixir/Regex.html
-- Regex101.com: en online-webbplats för att testa reguljära uttryck med realtids-feedback: https://regex101.com/
-- Elixir School: en gratis webbplats med många lektioner om Elixir, inklusive hur man använder reguljära uttryck: https://elixirschool.com/lessons/basics/regex/
+* [Elixir Dokumentation: Regex](https://hexdocs.pm/elixir/Regex.html)
+* [Mastering Regular Expressions av Jeffrey Friedl](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)
+* [Regular-Expressions.info](https://regular-expressions.info/) (tillgänglig på svenska)

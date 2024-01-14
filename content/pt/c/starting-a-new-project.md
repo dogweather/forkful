@@ -1,75 +1,47 @@
 ---
 title:                "C: Começando um novo projeto"
+simple_title:         "Começando um novo projeto"
 programming_language: "C"
-category:             "Getting Started"
+category:             "C"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que começar um novo projeto?
+## Por que iniciar um novo projeto em C?
 
-Muitas vezes, os programadores se encontram diante da necessidade de iniciar um novo projeto em C. Isso pode acontecer por diversos motivos, como a criação de um software mais eficiente ou a atualização de um projeto antigo. Independentemente da razão, é importante entender como iniciar um novo projeto em C pode ser benéfico para a sua carreira e para a indústria de tecnologia como um todo.
+Iniciar um novo projeto em C pode ser um desafio, mas também pode ser extremamente gratificante. A linguagem C é amplamente usada em sistemas operacionais, aplicações de baixo nível e jogos, o que significa que você pode criar programas poderosos e eficientes. Além disso, aprender C é um ótimo primeiro passo para se tornar um programador mais avançado.
 
-## Como começar um novo projeto em C
+## Como começar em C
 
-Começar um novo projeto em C pode parecer intimidante no início, mas seguir alguns passos importantes pode tornar esse processo muito mais fácil. Primeiramente, é importante ter uma ideia clara do que você deseja criar e quais ferramentas serão necessárias para isso. Em seguida, você pode seguir os seguintes passos:
-
-1. Crie um arquivo de cabeçalho (.h) que inclua todas as bibliotecas e funções que serão utilizadas no seu projeto.
-2. Crie um arquivo de código (.c) que contenha a função main, que é onde o seu programa começará a ser executado.
-3. Escreva cuidadosamente o código para sua função main e quaisquer outras funções necessárias para executar a tarefa desejada.
-4. Compile o código usando um compilador C, como o GCC, para garantir que não haja erros.
-5. Execute o programa e, se necessário, faça ajustes até que ele funcione conforme o esperado.
-
-Aqui está um exemplo de código em C para calcular o quadrado de um número e imprimir o resultado:
+Antes de começar a escrever seu código, você precisará configurar seu ambiente de desenvolvimento. Isso inclui escolher um compilador e um editor de texto, como o Visual Studio Code ou o Sublime Text. Em seguida, você pode seguir os passos abaixo para criar seu primeiro programa em C.
 
 ```C
 #include <stdio.h>
-
-// Função para calcular o quadrado de um número
-int square(int num){
-    return num * num;
-}
-
-int main(){
-    int num, result;
-
-    // Recebe o número do usuário
-    printf("Insira um número: ");
-    scanf("%d", &num);
-
-    // Calcula o quadrado usando a função square()
-    result = square(num);
-
-    // Imprime o resultado
-    printf("O quadrado de %d é %d\n", num, result);
-
+int main() {
+    printf("Bem-vindo ao mundo da programação em C!");
     return 0;
 }
 ```
 
-A saída desse programa será:
-
-```bash
-Insira um número: 5
-O quadrado de 5 é 25
+Output:
+```
+Bem-vindo ao mundo da programação em C!
 ```
 
-Como você pode ver, seguindo esses passos e prestando atenção ao seu código, você pode facilmente criar um novo projeto em C.
+Com este programa simples, você pode começar a entender os conceitos básicos da linguagem C, como a estrutura de um programa e o uso de declarações e funções.
 
-## Aprofundando-se no início de um novo projeto
+## Aprofundando em um novo projeto
 
-Ao iniciar um novo projeto em C, é importante estar ciente de algumas boas práticas que podem tornar essa tarefa mais fácil. Algumas dicas úteis incluem:
+Ao iniciar um novo projeto em C, é importante ter uma compreensão clara dos recursos e padrões da linguagem. Você pode se aprofundar ainda mais aprendendo sobre ponteiros, estruturas de dados e como gerenciar a memória em seus programas. Além disso, é importante ter práticas de codificação sólidas, como comentar seu código e seguir padrões de nomenclatura.
 
-- Planejar seu código antes de escrevê-lo, definindo as funções necessárias e como elas irão interagir entre si.
-- Utilizar comentários adequados para ajudar outros desenvolvedores (ou até mesmo você mesmo) a entender o código no futuro.
-- Realizar testes regulares durante o processo de desenvolvimento para garantir que seu código está funcionando corretamente.
-- Manter a organização do seu código, utilizando indentação e nomes de variáveis significativos.
-
-Começar um novo projeto em C pode ser desafiador, mas é também uma ótima oportunidade para aprender e aprimorar suas habilidades de programação.
+Outra dica importante é se familiarizar com bibliotecas de terceiros para ampliar as funcionalidades do seu programa. Existem muitas bibliotecas disponíveis que podem facilitar muito o processo de criação de um programa em C, como a biblioteca "stdio.h" que usávamos no exemplo acima.
 
 ## Veja também
 
-- [The C Programming Language](http://www.cs.cf.ac.uk/Dave/C/node1.html)
-- [GCC - The GNU Compiler Collection](https://gcc.gnu.org/)
-- [10 Boas práticas de programação em C](https://www.toptal.com/c/dont-get-me-started-with-c)
+- Documentação do C: https://www.gnu.org/software/gnu-c-manual/
+- Tutoriais da linguagem C: https://www.learn-c.org/
+- Biblioteca padrão do C: https://www.tutorialspoint.com/c_standard_library/
+
+Agora que você está familiarizado com os conceitos básicos da linguagem C, pode começar a explorar e criar seus próprios projetos. Aproveite para aprender e praticar, e em pouco tempo você estará criando programas incríveis em C!

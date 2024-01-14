@@ -1,47 +1,58 @@
 ---
-title:                "Javascript: Konvertere en streng til små bokstaver"
+title:                "Javascript: Konvertering av streng til små bokstaver"
+simple_title:         "Konvertering av streng til små bokstaver"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/javascript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Det å konvertere en streng til små bokstaver kan være nyttig i mange tilfeller. Det kan hjelpe med å standardisere data, gjøre søkefunksjoner mer fleksible, og skape en jevnere og mer konsistent tekststruktur.
+For mange programmerere kan det å konvertere en streng til små bokstaver virke som en enkel oppgave. Men det er faktisk en nyttig funksjon med mange bruksområder. Ved å konvertere en streng til små bokstaver, kan vi enkelt sammenligne og filtrere data, lage brukervennlige grensesnitt og mye mer.
 
-## Hvordan gjøre det
+# Hvordan
 
-For å konvertere en streng til små bokstaver, kan du bruke metoden `.toLowerCase()`. Denne metoden tar den eksisterende strengen og returnerer den samme strengen, men med alle bokstavene omgjort til små bokstaver.
-
-```javascript
-let tekst = "Ja, Jeg Vil Konvertere";
-let nyTekst = tekst.toLowerCase();
-
-console.log(nyTekst); // ja, jeg vil konvertere
+```Javascript
+// Eksempel på konvertering av streng til små bokstaver
+let navn = "Ola Nordmann";
+let nyttNavn = navn.toLowerCase();
+console.log(nyttNavn);
+// Output: "ola nordmann"
 ```
 
-Som du kan se i eksempelet ovenfor, returnerer `.toLowerCase()`-metoden en ny streng med alle bokstavene i små bokstaver. Den originale strengen blir ikke endret.
+Å konvertere en streng til små bokstaver i JavaScript er ganske enkelt. Vi bruker metoden `toLowerCase()` som kan brukes på en hvilken som helst streng. Den returnerer en ny streng med alle bokstaver i små bokstaver.
 
-Dette kan også brukes på variabler som inneholder tall eller andre typer data, men det er viktig å huske at metoden kun fungerer for å konvertere bokstaver til små bokstaver, og ikke tall til bokstaver.
+Dette kan også gjøres ved hjelp av for-løkker og vilkårssjekker, men det er mye enklere og mer effektivt å bruke den innebygde `toLowerCase()`-metoden.
 
-```javascript
-let tall = 123;
-let tekst = "Tekst med Tall";
-
-console.log(tall.toLowerCase()); // Vil gi en feilmelding, da .toLowerCase() kun fungerer på strenger
-console.log(tekst.toLowerCase()); // tekst med tall
+```Javascript
+// Konvertering av hvert tegn i en streng til små bokstaver
+let navn = "Ola Nordmann";
+let nyttNavn = "";
+for (let i = 0; i < navn.length; i++) {
+  if (navn[i].charCodeAt() < 91 && navn[i].charCodeAt() > 64) {
+    // konverterer store bokstaver til små bokstaver ved å legge til 32 til Unicode-verdien
+    nyttNavn += String.fromCharCode(navn[i].charCodeAt() + 32);
+  } else {
+    nyttNavn += navn[i];
+  }
+}
+console.log(nyttNavn);
+// Output: "ola nordmann"
 ```
 
-## Dypdykk
+Vi kan også bruke `toUpperCase()`-metoden for å konvertere en streng til store bokstaver på samme måte.
 
-Som nevnt tidligere, kan konvertering av strenger til små bokstaver hjelpe med å standardisere data og gjøre søkefunksjoner mer fleksible. Dette er spesielt nyttig når du må sammenligne tekststrenger, da store og små bokstaver ofte kan føre til feil i søk og sammenligninger.
+# Dypdykk
 
-Det er også verdt å nevne at `.toLowerCase()`-metoden kun fungerer for konvertering til små bokstaver i det unicode-området som omfatter de latinske bokstavene, spesielt a til z. For andre språk som bruker andre bokstaver, kan det være nødvendig å bruke andre metoder for å konvertere til små bokstaver.
+Det kan være nyttig å forstå hvordan datamaskinen håndterer bokstaver og tekst. I programmeringsspråk som JavaScript, brukes Unicode for å representere bokstaver og tegn. Dette er en standard som tildeler et unikt nummer til hver tegn i nesten alle språk og skriftsystemer i verden.
 
-## Se også
+Når vi konverterer en streng til små bokstaver, bruker JavaScript denne Unicode-standarden til å finne de riktige små bokstavene som tilsvarer de store bokstavene i strengen. Dette gjør den innebygde metoden `toLowerCase()` både rask og pålitelig.
 
-- [JavaScript string `.toLowerCase()` metode (MDN)](https://developer.mozilla.org/nb/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Unicode Character Table](https://unicode-table.com/en/) for å se hvordan forskjellige bokstaver håndteres i utf-8
-- [Text Cleanse: Fra store bokstaver til små bokstaver med JavaScript](https://www.textcleanse.com/en/Lowercase)
+# Se også
+
+- [JavaScript String toLowerCase() Method](https://www.w3schools.com/jsref/jsref_tolowercase.asp)
+- [Unicode](https://home.unicode.org/)
+- [ASCII og Unicode - en kort oversikt](https://www.mn.uio.no/ifi/tjenester/ikt/hjelp/programvare/forts/ascii-unicode.html)

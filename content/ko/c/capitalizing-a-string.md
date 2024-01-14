@@ -1,60 +1,50 @@
 ---
-title:                "C: 문자열 대문자화"
+title:                "C: 문자열 대문자화하기"
+simple_title:         "문자열 대문자화하기"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/c/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
 ## 왜
+문자열을 대문자로 변환하는 것에 대해 이야기해보겠습니다. 
 
-문자열을 대문자로 변환하는 것에 관심이 있으신가요? 일반적으로 프로그래밍에서 문자열을 대문자로 변환하는 이유는 다음과 같습니다.
+## How To
+문자열을 대문자로 변환하는 방법은 매우 간단합니다. `strcpry()` 함수를 사용하면 됩니다. 다음은 간단한 예제 코드와 출력 결과입니다.
 
-- 사용자에게 입력 받은 문자열을 특정한 형식으로 표현하기 위해서
-- 문자열의 대소문자를 구분하지 않는 경우 일관성을 유지하기 위해서
-- 문자열의 비교를 용이하게 하기 위해서
-
-이외에도 다양한 이유로 문자열을 대문자로 변환할 수 있습니다. 이제 우리는 C 언어를 사용해서 문자열을 대문자로 변환하는 방법에 대해 알아보겠습니다.
-
-## 하는 법
-
-C 언어에서 문자열을 대문자로 변환하는 방법은 매우 간단합니다. 먼저, 사용자로부터 문자열을 입력받고 그 값을 변수에 저장합니다. 그리고 이 변수의 문자를 하나씩 읽어서 대문자로 변환하면 됩니다. 예제 코드는 아래와 같습니다.
-
-```C
+```
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-    char str[100];
+int main(void) {
+  char str[] = "hello world";
+  printf("%s\n", str);
 
-    printf("문자열을 입력하세요: ");
-    scanf("%s", str);
+  // 문자열을 대문자로 변환
+  strupr(str);
+  printf("%s\n", str);
 
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (str[i] >= 'a' && str[i] <= 'z') {
-            str[i] = str[i] - 32;
-        }
-    }
-
-    printf("대문자로 변환된 결과: %s\n", str);
-
-    return 0;
+  return 0;
 }
+
+/* 출력 결과
+hello world
+HELLO WORLD
+*/
 ```
 
-위의 코드를 실행하면 사용자가 입력한 문자열이 대문자로 변환된 결과가 출력됩니다. 예를 들어, 'hello'를 입력하면 'HELLO'로 변환됩니다.
+위의 코드에서 `strupr()` 함수를 사용하여 문자열을 대문자로 변환할 수 있습니다. 이 함수는 `string.h` 라이브러리에 포함되어 있으며, 문자열을 대문자로 변환하는 기능을 합니다.
 
-## 깊은 고민
+## Deep Dive
+문자열을 대문자로 변환하기 위해 `strupr()` 함수가 어떻게 작동하는지 깊이 알아보겠습니다. 이 함수는 주어진 문자열을 순회하면서, 각 문자를 `toupper()` 함수를 사용하여 대문자로 변환합니다. 그 후, 변환된 문자열을 반환합니다.
 
-하지만 위의 예제 코드는 단순하게 문자를 하나씩 읽어서 변환하기 때문에 한글이나 특수문자 등을 대문자로 변환하는 데에는 적용할 수 없습니다. 이를 해결하기 위해서는 유니코드를 다루는 라이브러리를 사용하거나 일일이 각 문자에 대한 예외 처리를 해주어야 합니다.
+또한, 이 함수를 사용하여 변환되는 문자가 알파벳이 아닌 경우에는 변환하지 않습니다. 즉, 스페이스, 숫자, 특수 문자 등은 변환되지 않는 것을 확인할 수 있습니다.
 
-또한, 문자열의 길이가 매우 긴 경우에는 위의 코드로는 비효율적일 수 있습니다. 따라서 좀 더 최적화된 방법을 고민하고 적용해야 합니다.
+결과적으로, `strupr()` 함수는 주어진 문자열을 대문자로 변환하는 역할을 하며, 각 문자를 일일이 변환하는 과정을 거치게 됩니다.
 
-이처럼 문자열을 대문자로 변환하는 것도 간단해 보이지만 실제로는 여러 고민과 적절한 기술이 필요한 일이 될 수 있습니다.
-
-## 관련 링크
-
-- [C 언어 문자열 함수](https://modoocode.com/31)
-- [유니코드 라이브러리](https://www.gnu.org/software/libunistring/)
-- [문자열 대문자 변환 최적화 방법](https://www.geeksforgeeks.org/c-program-uppercase-string/)
+## See Also
+- [C string 함수 - strupr()](https://www.tutorialspoint.com/c_standard_library/c_function_strupr.htm)
+- [C 언어 - 문자열(str) 함수](https://dojang.io/mod/page/view.php?id=311)

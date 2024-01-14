@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Rust"
-category:             "Getting Started"
+category:             "Rust"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/starting-a-new-project.md"
 ---
 
@@ -9,32 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Hvis du er en programmerer som er på utkikk etter et nytt språk å lære, så kan du ha hørt om Rust. Rust er et moderne, systemnært programmeringsspråk som har blitt mer og mer populært de siste årene. Det er kjent for sin sikkerhet, ytelse og kraftige verktøy. I denne bloggposten vil vi utforske hvorfor du bør vurdere å starte et nytt prosjekt med Rust.
+Å starte et nytt program kan være en spennende og givende opplevelse. Det kan gi deg muligheten til å løse problemer på en ny og innovativ måte, og å lære deg et fantastisk programmeringsspråk som Rust. 
 
 ## Hvordan
 
-For å vise hvor enkelt det er å kode i Rust, vil vi gå gjennom et enkelt eksempel. Først må du installere Rust ved å følge instruksjonene på deres offisielle nettside. Når du har installert det, kan du lage et nytt prosjekt ved hjelp av kommandoen "cargo new prosjektnavn". Deretter kan du redigere filen "src/main.rs" og legge til følgende kode:
+Rust er et kraftig og effektivt språk som er populært blant utviklere for sin fokus på sikkerhet, ytelse og konkurranse. La oss ta en titt på hvordan du kan starte ditt neste prosjekt med Rust.
+
+Først må du installere Rust på datamaskinen din. Dette kan gjøres enkelt ved å følge trinnene på Rusts offisielle nettside. Når du har installert Rust, er du klar til å begynne å kode.
+
+La oss si at du ønsker å lage et program som teller antall ord i en tekstfil. I Rust kan du enkelt gjøre dette ved å benytte deg av standardbiblioteket og noen få linjer med kode. Her er et eksempel:
 
 ```Rust
+use std::env;
+use std::fs;
+
 fn main() {
-    println!("Hei, verden!");
+    let args: Vec<String> = env::args().collect();
+    let filename = &args[1];
+    let contents = fs::read_to_string(filename).expect("Kunne ikke lese filen");
+
+    let word_count = contents.split_whitespace().count();
+
+    println!("Det er {} ord i filen.", word_count);
 }
 ```
 
-Kjør deretter programmet ved å skrive "cargo run" i terminalen din. Hvis alt går som det skal, så vil du se teksten "Hei, verden!" i terminalen din. Dette er et enkelt eksempel på hvordan du kan skrive ut tekst ved hjelp av Rust.
+I dette eksempelet benytter vi oss av `std::env` for å hente inn argumenter som er gitt til programmet, og `std::fs` for å lese filinnholdet. Deretter splitter vi teksten ved mellomrom og teller antall ord. Til slutt skriver vi ut antall ord til konsollen.
 
-Men Rust er mye mer enn bare å skrive ut tekst. Det er et kraftig språk som støtter konkurranseorientert programmering, parallell programmering og mye mer. Utforsk Rusts offisielle dokumentasjon og eksempler for å lære mer om hva du kan gjøre med dette språket.
+## Dykk dypere
 
-## Dypdykk
+Nå som du har etablert grunnlaget for ditt nye prosjekt, kan det være lurt å dykke dypere inn i Rusts dokumentasjon og ressurser for å lære enda mer. Her er noen andre ressurser som kan være nyttige for deg:
 
-Når du starter et nytt prosjekt med Rust, er det viktig å ta deg tid til å forstå de grunnleggende konseptene og prinsippene i språket. Rust er et låntypet språk, som betyr at du må deklarere variablene dine og tydeliggjøre hva slags type data de skal inneholde. Det er også viktig å følge Rusts eierskapsregler for å sikre at minnehåndtering blir gjort på en sikker måte.
-
-En annen viktig del av Rust er pakkesystemet "Cargo". Dette verktøyet gjør det enkelt å håndtere avhengigheter og bygget av ditt Rust-prosjekt. Utforsk forskjellige pakker og biblioteker i Rusts pakkeindeks for å se hva som er tilgjengelig for deg å bruke i dine prosjekter.
+- [Rust dokumentasjon](https://doc.rust-lang.org/book/)
+- [Offisiell Rust bibliotek dokumentasjon](https://doc.rust-lang.org/std/)
+- [Rust Reddit-samfunnet](https://www.reddit.com/r/rust)
+- [Rust Discord-samfunnet](https://discord.gg/rust-lang)
 
 ## Se også
 
-- Offisiell Rust dokumentasjon: https://www.rust-lang.org/no/
-- Rusts pakkeregister: https://crates.io/
-- Rust Reddit forum: https://www.reddit.com/r/rust/
-
-Med disse ressursene og ditt nyoppdagede kunnskap om Rust, håper vi at du er inspirert til å starte et nytt prosjekt med dette spennende programmeringsspråket. Lykke til!
+- [Hvordan lære Rust: En nybegynnerveiledning](https://blog.rust-lang.org/2015/04/10/learning-rust.html)
+- [Bygge en chatbot i Rust](https://www.freecodecamp.org/news/build-a-chat

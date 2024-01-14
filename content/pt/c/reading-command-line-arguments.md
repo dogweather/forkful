@@ -1,65 +1,86 @@
 ---
 title:                "C: Lendo argumentos da linha de comando"
+simple_title:         "Lendo argumentos da linha de comando"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/c/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por que ler argumentos da linha de comando?
+## Por que ler argumentos de linha de comando em C?
 
-Ler argumentos da linha de comando em um programa em C pode trazer muitos benefícios. Com essa funcionalidade, você pode criar programas mais interativos e personalizados, que permitem ao usuário fornecer informações específicas ao executá-los. Além disso, com argumentos da linha de comando, você pode automatizar tarefas e economizar tempo.
+Se você é um programador iniciante em C ou se já tem algum conhecimento da linguagem, deve ter ouvido falar sobre a importância de ler argumentos de linha de comando. Mas por que exatamente isso é importante? Continue lendo este artigo para descobrir.
 
-## Como ler argumentos da linha de comando em C
+## Como fazer isso em C?
 
-A leitura de argumentos da linha de comando em C é uma tarefa bastante simples. Tudo o que você precisa fazer é declarar os parâmetros "argc" e "argv" na sua função "main". O parâmetro "argc" representa o número de argumentos passados na linha de comando e "argv" é um array de strings contendo cada um desses argumentos.
+Ao trabalhar com linguagens de programação, é comum querer que o programa seja flexível e tenha a capacidade de se adaptar a diferentes situações. Ao permitir que o usuário passe argumentos através da linha de comando, o programa se torna mais versátil e pode ser executado de maneiras diferentes dependendo das necessidades do usuário.
 
-Para acessar os argumentos individuais, basta usar o índice do array "argv". Por exemplo, se o primeiro argumento for o nome do seu programa, ele estará armazenado em "argv[0]". Você pode usar um loop "for" para percorrer todos os argumentos e imprimi-los na tela.
+Felizmente, a linguagem C possui uma ferramenta muito útil para ler argumentos de linha de comando: a função `main()`. Esta função é responsável por receber os argumentos e executar o programa de acordo com eles.
 
-Veja um exemplo de código abaixo:
+Para isso, é preciso definir dois parâmetros para a função `main()`: `argc` e `argv`. O primeiro indica a quantidade de argumentos passados e o segundo é um vetor de strings que contém os próprios argumentos. Veja abaixo um exemplo de como isso pode ser feito:
 
 ```C
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]){
+  int i;
 
-    // imprime o nome do programa
-    printf("Nome do programa: %s\n", argv[0]);
+  // Imprime a quantidade de argumentos
+  printf("Quantidade de argumentos: %d\n", argc);
 
-    // imprime todos os argumentos
-    for (int i = 1; i < argc; i++) {
-        printf("Argumento %d: %s\n", i, argv[i]);
-    }
+  // Imprime cada argumento passado
+  for(i=0; i < argc; i++){
+    printf("Argumento %d: %s\n", i, argv[i]);
+  }
 
-    return 0;
+  return 0;
 }
 ```
-
-Se executarmos esse programa com o seguinte comando na linha de comando:
-
-```
-./programa arg1 arg2 arg3
-```
-
-O output será:
+Ao executar este código com os argumentos "primeiro", "segundo" e "terceiro" passados na linha de comando, o resultado será:
 
 ```
-Nome do programa: ./programa
-Argumento 1: arg1
-Argumento 2: arg2
-Argumento 3: arg3
+Quantidade de argumentos: 4
+Argumento 0: nome-do-programa
+Argumento 1: primeiro
+Argumento 2: segundo
+Argumento 3: terceiro
 ```
 
-É importante ressaltar que os argumentos da linha de comando são sempre lidos como strings, mesmo que sejam números. Portanto, é necessário fazer a conversão para o tipo de dado correto, caso seja necessário usá-los em operações matemáticas.
+## Aprofundando na leitura de argumentos de linha de comando
 
-## Uma olhada mais profunda na leitura de argumentos da linha de comando
+Muitas vezes, é necessário ler argumentos de linha de comando e utilizá-los de maneira mais elaborada em um programa. Por exemplo, podemos querer que o usuário passe algum valor numérico e realizar operações com ele.
 
-Além do número e da string do argumento, a função "main" também pode ter um terceiro parâmetro opcional, "envp", que contém as variáveis de ambiente do sistema. Isso pode ser útil em algumas situações, como a procura de um valor específico para um determinado ambiente.
+Para isso, é preciso converter a string contendo o argumento para um tipo numérico, como `int` ou `float`. A biblioteca `stdlib.h` possui funções que facilitam essa conversão, como `atoi()` e `atof()`. No exemplo abaixo, vemos como podemos utilizar essas funções para ler um número passado como argumento e realizar uma soma com outro valor previamente definido no código.
 
-Outro recurso interessante é a possibilidade de usar a biblioteca "getopt" para lidar com a leitura de argumentos opcionais. Com essa biblioteca, você pode definir opções com argumentos e definir o comportamento caso o usuário não forneça esses argumentos.
+```C
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]){
+  int num, soma;
+
+  // Lê o argumento passado e converte para inteiro
+  num = atoi(argv[1]);
+  
+  // Realiza a soma com um valor pré-definido
+  soma = num + 10;
+
+  // Imprime o resultado
+  printf("A soma de %d com 10 é %d\n", num, soma);
+
+  return 0;
+}
+```
+Ao executar este código com o argumento "5" passado na linha de comando, o resultado será:
+
+```
+A soma de 5 com 10 é 15
+```
 
 ## Veja também
-
-- [Tutorial sobre leitura de argumentos da linha de comando em C](https://www.guru99.com/c-command-line-arguments.html)
-- [Documentação oficial do GNU getopt](https://www.gnu.org/software/libc/manual/html_node/Using-Getopt.html)
+- [Documentação oficial do C](https://devdocs.io/c/)
+- [Tutorial sobre argumentos de linha de comando em C](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
+- [Funções de conversão de tipos em C](https://www.geeksforgeeks.org/conversion-functions-in-c/)
+- [Outros recursos úteis sobre C](https://www.cprogramming.com/)

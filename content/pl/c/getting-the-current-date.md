@@ -1,7 +1,9 @@
 ---
-title:                "C: Pobieranie aktualnej daty"
+title:                "C: Uzyskiwanie aktualnej daty"
+simple_title:         "Uzyskiwanie aktualnej daty"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/getting-the-current-date.md"
 ---
 
@@ -9,45 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Otrzymywanie aktualnej daty jest ważnym elementem wielu programów. Często musimy wiedzieć, jaka jest bieżąca data, aby wykonać pewne działania, takie jak generowanie raportów lub tworzenie datowników.
+Programowanie w języku C to nie tylko nauka składni i struktury kodu, ale także umiejętność wykonywania codziennych zadań za pomocą kodu. Jednym z przydatnych zadań jest pobieranie aktualnej daty. W tym wpisie pokażemy, dlaczego jest to ważne i jak to zrobić w języku C.
 
 ## Jak to zrobić
 
-W języku C istnieje kilka sposobów na uzyskanie aktualnej daty. Jednym z nich jest użycie funkcji `time()`, która zwraca liczbę sekund, które upłynęły od 1 stycznia 1970 roku (tzw. Epoce Unixa). Aby przekazać tę liczbę na bieżącą datę, możemy użyć funkcji `localtime()`, która konwertuje tę liczbę na strukturę `tm` zawierającą informacje o dacie i czasie. Poniżej znajduje się przykładowy kod:
+Aby pobrać aktualną datę w języku C, użyjemy funkcji `time()` z biblioteki `time.h`. Następnie, możemy użyć struktury `tm` w bibliotece `time.h`, aby uzyskać dostęp do danych takich jak dzień, miesiąc, rok itp. W przykładzie poniżej wyświetlimy bieżącą datę w formacie DD-MM-RRRR.
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main(void)
-{
-    // uzyskanie liczby sekund od epoki Unix-a
-    time_t current_time = time(NULL);
+int main() {
+   time_t czas;
+   struct tm * data;
+   char biezaca_data[100];
+  
+   czas = time(NULL);
+   data = localtime(&czas);
+  
+   strftime(biezaca_data, sizeof(biezaca_data), "%d-%m-%Y", data);
+  
+   printf("Dzisiaj jest %s.\n", biezaca_data);
 
-    // konwersja do struktury tm
-    struct tm *t = localtime(&current_time);
-
-    // wyświetlenie bieżącej daty
-    printf("Bieżąca data: %d.%d.%d\n", t->tm_mday, t->tm_mon+1, t->tm_year+1900);
-
-    return 0;
+   return 0;
 }
 ```
 
-Wyjście z powyższego kodu może wyglądać następująco, w zależności od bieżącej daty:
+Przykładowy wynik:
 
 ```
-Bieżąca data: 10.11.2021
+Dzisiaj jest 20-05-2021.
 ```
 
-## Głębsze zagadnienia
+## Głębsze zanurzenie
 
-W przypadku uzyskiwania bieżącej daty mogą pojawić się pewne problemy związane z różnymi strefami czasowymi i zmianami czasu letniego. W takim przypadku warto sięgnąć po bardziej zaawansowane funkcje takie jak `gettimeofday()` lub `localtime_r()`.
+Funkcja `time()` zwraca liczbę sekund od 1 stycznia 1970 roku, znana jako czas epoki. Struktura `tm` zawiera pola takie jak `tm_sec`, `tm_min`, `tm_hour`, `tm_mday`, `tm_mon`, `tm_year` itp., które są używane do uzyskania danych o bieżącej dacie i godzinie. Więcej informacji na temat formatowania daty znajduje się w dokumentacji biblioteki `time.h.`
 
-Jednym z problemów związanych ze zmianą czasu letniego jest to, że w niektórych przypadkach funkcja `localtime()` może zwrócić niepoprawną datę, ponieważ pole `tm_isdst` w strukturze `tm` może być ustawione na wartość `1` lub `0` zamiast oczekiwanej `-1`. Aby tego uniknąć, warto użyć funkcji `localtime_r()`, która pozwala na wykorzystanie dodatkowego parametru umożliwiającego określenie, czy system używa czasu letniego czy nie.
+## Zobacz również
 
-## Zobacz także
-
-- Oficjalna dokumentacja języka C: https://en.cppreference.com/w/c
-- Praca z datami i czasem w języku C: https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm
-- Problem ze zmianą czasu letniego w funkcji `localtime()`: http://man7.org/linux/man-pages/man3/localtime.3.html
+- [Dokumentacja biblioteki time.h w języku C](https://www.programiz.com/c-programming/library-function/time)
+- [Przykłady użycia funkcji time()](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
+- [Inne przydatne funkcje czasu w języku C](https://fresh2refresh.com/c-programming/c-time-date-functions/)

@@ -1,30 +1,55 @@
 ---
 title:                "TypeScript: तारीख को स्ट्रिंग में बदलना"
+simple_title:         "तारीख को स्ट्रिंग में बदलना"
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/typescript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## क्यों
+## Kyon
 
-कभी-कभी हमें अपनी डेट को एक स्ट्रिंग में परिवर्तित करने की आवश्यकता होती है। यह उदाहरण के लिए, उपयोगकर्ता को अपने जन्मदिन की तिथि को दिखाने के लिए एक 'मीटअप' एप्लिकेशन बनाना चाहिए। डेट को सीधे ऐसे दिखाने में त्रुटियां आ सकती है, और इसलिए उसे एक स्ट्रिंग में परिवर्तित करना सरल हो सकता है।
+Kisi bhi programming language mein, tithiyon ko ek string mein badalna zaroori ho sakta hai. Ye dates aur times ko ek readable format mein rakhne ke liye zaroori hai. TypeScript mein bhi, date ko string mein convert karna aasaan hai aur iss blog post mein hum aapko iss process ki sahi tarika batayenge.
 
-## कैसे करें
+## Kaise Karein
+
+Date ko string mein convert karne ke liye, hum `toLocaleString()` method ka istemaal karenge. Iske liye, hum sabse pehle ek `Date` object banayenge. Fir `toLocaleString()` method ko iss object pe call karenge aur parameters ke roop mein hum desired date or time format ko specify karenge. Chaliye shuru karte hain!
 
 ```TypeScript
-let date = new Date(1995, 11, 17);
-let stringDate = date.toDateString();
-console.log(stringDate); // बुधवार, 1 जनवरी 1995
+let currentDate = new Date(); 
+console.log(currentDate.toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' } ));
+```
+Yeh humare console mein kuch iss tarah ki output dega: "Wednesday, 2021, June 23". Aap apne desired format ke hisaab se parameters change kar sakte hain.
+
+Ab agar hum sirf time aur date ko alag alag parts mein print karna chahte hain, toh hum `toLocaleTimeString()` aur `toLocaleDateString()` methods ka istemaal kar sakte hain.
+
+```TypeScript
+console.log(currentDate.toLocaleTimeString('en-US'));
+console.log(currentDate.toLocaleDateString('en-US'));
 ```
 
-इस कोड ब्लॉक में, हमने `new Date()` तिथि ऑब्जेक्ट को बनाने के लिए उदाहरण दिया है। यहां तारीख 1995, 11, 17 है, इसका मतलब है कि यह 17 दिसंबर 1995 को होगी। उसके बाद, हम `toDateString()` फ़ंक्शन का उपयोग करके उस डेट को एक स्ट्रिंग में परिवर्तित करते हैं। अंत में, हम इस स्ट्रिंग को कॉन्सोल पर छापते हैं।
+Ismein humare console mein time aur date alag alag tarah se print honge: "11:05:00 AM" aur "06/23/2021".
 
-## गहराई तक पतन
+## Gehri Jhaank
 
-डेट को स्ट्रिंग में परिवर्तित करने के लिए, हम `toString()` और `toISOString()` जैसे अन्य फ़ंक्शनों का भी उपयोग कर सकते हैं। इन फ़ंक्शनों के स्वरूप भिन्न हो सकते हैं और आपको उन्हें अपनी आवश्यकताओं के अनुसार चुनना होगा। इसके अलावा, आप स्वयं भी स्ट्रिंग के स्वरूप को संशोधित कर सकते हैं, जैसे कि आप अपने स्ट्रिंग में तिथि, महीना और वर्ष को अलग-अलग ढंग से प्रदर्शित कर सकते हैं।
+Hamesha accha practise hoga ke hum `toLocaleString()` method ka `override` property bhi istemaal karein. Iss property se hum apne date aur time format ko customize kar sakte hain. `override` property hume ek `Date` object return karega, jiske saath hum `toLocaleString()` method ko fir se call kar sakte hain aur desired format ko specify kar sakte hain.
 
-## देखें भी
+```TypeScript
+let currentDate = new Date();
+let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+let dateToString = currentDate.toLocaleString('en-US', options);
+console.log(dateToString); // Output: "Wednesday, 2021, June 23"
 
-[Date ऑब्जेक्ट क
+let customDate = dateToString.toLocaleString('en-US', { weekday: 'short', year: '2-digit', month: 'numeric', day: 'numeric' });
+console.log(customDate); // Output: "Wed, 21, 6/23"
+```
+
+Iss tarah hum apne date aur time format ko apne requirements ke hisaab se customize kar sakte hain.
+
+## See Also
+
+Iss blog post mein humne dekha ki hum kaise TypeScript mein date ko string mein convert kar sakte hain. Agar aapko aur zyada jaankari chahiye inbuilt methods ke baare mein toh aap iss [documentation](https://www.typescriptlang.org/docs/handbook/internationalization.html) ko check kar sakte hain.
+
+Agar aapko ye blog post helpful laga ho, toh humein [Twitter](https://twitter.com/techtouhid) pe zaroor follow karein. Aur agar aapko koi aur TypeScript ya programming se related topic pe blog post chahiye ho, toh humein [email](mailto:techblog@example.com) karke bata sakte hain. Happy coding! 🚀

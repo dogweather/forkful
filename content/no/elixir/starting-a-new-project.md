@@ -1,46 +1,51 @@
 ---
 title:                "Elixir: Å starte et nytt prosjekt"
+simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Elixir"
-category:             "Getting Started"
+category:             "Elixir"
+tag:                  "Getting Started"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/elixir/starting-a-new-project.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor starte et nytt prosjekt med Elixir?
+# Hvorfor
 
-Elixir er et spennende programmeringsspråk som brukes til å lage skalerbare, feiltolerante og distribuerte systemer. Det er inspirert av språket Erlang og bygger på funksjonell programmering. Å starte et prosjekt med Elixir gir mulighet for å bygge et holdbart og pålitelig system som kan håndtere store mengder data og brukere.
+Hvis du er en programmerer, enten nybegynner eller erfaren, som er på utkikk etter et nytt prosjekt å dykke inn i, kan Elixir være et spennende valg. Dette funksjonelle programmeringspråket kombinerer funksjonalitet og skalerbarhet, noe som gjør det til et kraftig verktøy for å bygge pålitelige og fleksible applikasjoner.
 
-## Slik gjør du det
+# Hvordan
 
-For å starte et nytt prosjekt med Elixir, må du først installere språket og Elixir-miljøet på datamaskinen din. Deretter kan du følge disse enkle stegene:
+For å starte et nytt prosjekt i Elixir, må du først installere språket på datamaskinen din. Deretter kan du følge disse trinnene for å komme i gang:
 
-1. Lag en ny mappe for prosjektet ditt og naviger til denne mappen i terminalen.
-2. Kjør kommandoen `mix new project_name` for å lage et nytt Elixir-prosjekt.
-3. Nå er det på tide å sette i gang med kode! Åpne filen `lib/project_name.ex` og begynn å eksperimentere med din første funksjon.
-
-Her er et eksempel på hvordan en enkel funksjon kan se ut i Elixir:
-
-```Elixir
-def hello(name) do
-  "Hei, #{name}!"
-end
 ```
-I denne funksjonen tar vi inn et navn som parameter, og returnerer en streng med en hilsen. For å teste dette, kan du kjøre kommandoen `iex -S mix` i terminalen for å åpne Elixir sin interaktive skall, og deretter kjøre `Hello.hello("Navn")` for å se output.
+Elixir new prosjektnavn
+cd prosjektnavn
+mix test
+```
 
-## Dykk dypere
+Dette vil opprette en ny mappe med prosjektnavnet ditt, navigere deg til mappen og kjøre en test for å sikre at alt fungerer som det skal.
 
-Etter å ha fått en smakebit på Elixir sin syntaks og funksjonaliteter, er det på tide å dykke dypere inn i språket og utforske dets mange unike funksjoner. Elixir har for eksempel et robust mønstermatching-system og et kraftig asynkront jobbsystem ved hjelp av "beverages". Å utforske disse og andre funksjoner vil hjelpe deg å bygge mer effektive og skalerbare applikasjoner.
+For å legge til avhengigheter i prosjektet ditt, kan du redigere filen `mix.exs` og legge til nødvendige biblioteker under `deps`. Når du har gjort endringer, kjør `mix deps.get` for å laste ned de nye avhengighetene.
 
-En annen fordel med å bruke Elixir er at det kjører på Erlang virtuell maskin (BEAM) som er kjent for å være svært stabilt og feiltolerant. Dette betyr at applikasjonene dine vil kunne håndtere feil og kjøre jevnt uten å krasje.
+For å skrive kode i Elixir, kan du bruke enten en fil med `.ex`-utvidelse eller kjøre interactive mode ved å skrive `iex` i terminalen. Her er et eksempel på Elixir-kode, som definerer en funksjon som beregner summen av to tall:
 
-## Se også
+```
+defmodule Kalkulator do
+  def sum(a, b) do
+    a + b
+  end
+end
 
-Du kan lære mer om Elixir og begynne å bygge dine egne prosjekter ved å sjekke ut disse ressursene:
+IO.puts Kalkulator.sum(2, 3)
+# Output: 5
+```
 
-- [Offisiell Elixir-nettside](https://elixir-lang.org/)
-- [Elixir School](https://elixirschool.com/no/)
-- [Elixir forum](https://elixirforum.com/)
-- [Elixircast podcast](https://elixircast.com/)
+# Dykk dypere
 
-Lykke til med ditt Elixir-prosjekt! 😉
+Elixir har et rikt økosystem med mange løsninger for å håndtere forskjellige funksjoner, som webutvikling, databehandling og parallelle programmer. Ta deg tid til å utforske forskjellige biblioteker og ressurser som er tilgjengelige for å hjelpe deg med ditt prosjekt. Du kan også lære mer om Elixir ved å sjekke ut offisiell dokumentasjon og delta i det aktive samfunnet på nettet.
+
+# Se også
+
+- [Elixir Official Documentation](https://elixir-lang.org/docs.html)
+- [Awesome Elixir](https://github.com/h4cc/awesome-elixir)
+- [Elixir Forum](https://elixirforum.com/)

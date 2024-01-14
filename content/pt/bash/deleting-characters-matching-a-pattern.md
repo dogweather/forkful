@@ -1,7 +1,9 @@
 ---
 title:                "Bash: Excluindo caracteres que correspondem a um padrão"
+simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,24 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que
 
-O Bash é uma linguagem de script amplamente utilizada em sistemas operacionais Linux e Unix. Uma das tarefas mais comuns ao escrever scripts é manipular strings e substituir caracteres indesejados. A função "tr" do Bash é uma ferramenta poderosa para isso, permitindo que você delete caracteres que correspondam a um determinado padrão em uma string.
+Existem muitas situações em que se pode precisar excluir caracteres que correspondam a um determinado padrão em um arquivo ou texto. Isso pode ser necessário para limpar dados, formatar um documento ou até mesmo para criar um programa mais eficiente. Qualquer que seja o motivo, é importante saber como realizar essa tarefa no Bash.
 
-## Como Fazer
+## Como fazer
 
-Para usar a função "tr" para excluir caractéres, comece escrevendo o comando `tr`, seguido pelo conjunto de caracteres que deseja substituir. Por exemplo, se você quiser excluir todos os caracteres numéricos de uma string, usaria o comando `tr 0-9`. Em seguida, use o argumento "d" para indicar que você deseja excluir os caracteres (exemplo: `tr 0-9 d`).
+A exclusão de caracteres correspondentes a um padrão pode ser feita usando o comando `sed` no Bash. Este comando é usado para realizar operações de edição em um arquivo ou texto. Para excluir caracteres correspondentes a um padrão, basta seguir a seguinte sintaxe:
 
-Por exemplo, se você tiver a string "Bash 101", o comando `echo "Bash 101" | tr 0-9 d` resultará na saída "Bash".
+```
+sed 's/padrão//' arquivo.txt
+```
 
-Se você quiser excluir mais de uma letra ou número específico, pode usar o argumento "c" (complemento) para excluir os caracteres que não deseja. Por exemplo, `tr -c aeiou` excluirá todas as vogais de uma string.
+Neste exemplo, o caractere `/` é usado para separar o padrão do texto que deve ser editado. O `sed` irá procurar pelo padrão indicado e excluir todos os caracteres correspondentes dentro do arquivo indicado. Também é possível usar expressões regulares para indicar padrões mais complexos.
 
-## Profundidade
+Por exemplo, se quisermos excluir todas as vogais maiúsculas de um texto, podemos usar a seguinte sintaxe:
 
-A função "tr" do Bash tem muitas outras opções que podem ser usadas para manipular strings de forma mais avançada. Por exemplo, você pode usar o comando `tr` para converter caracteres em maiúsculos para minúsculos (ou vice-versa) usando o argumento "u" ou "l". Você também pode usar a opção `-s` para comprimir caracteres repetidos em uma string.
+```
+sed 's/[AEIOU]//g' arquivo.txt
+```
 
-É importante ter em mente que a função "tr" funcionará de maneira diferente em sistemas operacionais diferentes. Certifique-se de verificar a documentação específica para o seu sistema antes de usar a função "tr" em seus scripts.
+Neste caso, a flag `g` é adicionada no final para indicar que o comando deve procurar por todas as ocorrências do padrão dentro do arquivo. Vale ressaltar que o comando `sed` não altera o arquivo original, mas sim imprime o resultado da edição na saída padrão. Para salvar as alterações, é preciso redirecionar a saída para um novo arquivo, como por exemplo `sed 's/[AEIOU]//g' arquivo.txt > novo_arquivo.txt`.
+
+## Mergulho profundo
+
+Para ser mais preciso nos padrões que devem ser removidos, também é possível usar a opção `-i` com o comando `sed`. Isso permite que as alterações sejam feitas diretamente no arquivo original, sem ser necessário redirecionar a saída.
+
+Além disso, o `sed` também possui outras opções e funcionalidades, como a possibilidade de substituir caracteres correspondentes por outros, usar grupos de captura e outros recursos. Para saber mais detalhes e exemplos de uso, consulte a documentação oficial do comando.
 
 ## Veja também
 
-- [Documentação do Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Tutorial de Introdução ao Bash](https://linuxize.com/post/bash-scripting-tutorial/)
-- [Documentação do comando "tr"](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
+Aqui estão alguns links úteis para continuar aprendendo sobre como deletar caracteres correspondentes a um padrão no Bash:
+
+- Documentação oficial do comando `sed`: https://www.gnu.org/software/sed/manual/sed.html
+- Tutorial de expressões regulares do Bash: https://linux.die.net/Bash-Beginners-Guide/sect_04_01.html
+- Mais exemplos práticos do uso do `sed`: https://www.tecmint.com/linux-sed-command-to-delete-lines-in-file/

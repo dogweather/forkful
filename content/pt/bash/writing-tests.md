@@ -1,7 +1,9 @@
 ---
 title:                "Bash: Escrevendo testes"
+simple_title:         "Escrevendo testes"
 programming_language: "Bash"
-category:             "Testing and Debugging"
+category:             "Bash"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/bash/writing-tests.md"
 ---
 
@@ -9,55 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Por que escrever testes em Bash?
 
-A programação em Bash pode ser divertida e produtiva, mas também pode ser desafiadora. Às vezes, você escreve um script que parece funcionar perfeitamente, mas quando acaba de executá-lo, percebe que algo está errado. Para evitar esse tipo de frustração, é importante escrever testes para o seu código em Bash. Eles garantem que seu script funcione corretamente e também facilitam a identificação e correção de erros.
+Os testes são uma parte essencial do processo de programação em qualquer linguagem. Eles nos permitem verificar se o nosso código está funcionando conforme esperado e nos dão uma camada adicional de segurança ao fazer alterações em nosso código. Além disso, escrever testes pode ajudar a identificar possíveis bugs ou falhas antes de colocar o código em produção. Em Bash, os testes são especialmente úteis para verificar entradas e saídas de scripts e garantir que eles estão funcionando corretamente.
 
-## Como escrever testes em Bash
+## Como escrever testes em Bash?
 
-Para escrever testes em Bash, você pode usar a estrutura do comando `test`. Ele permite que você verifique condições lógicas e gere saídas diferentes com base nos resultados dos testes. Por exemplo:
+Escrever testes em Bash é bastante simples. Podemos usar a estrutura "if/else" para verificar se uma determinada condição é verdadeira ou falsa e, em seguida, imprimir uma mensagem de sucesso ou falha de acordo com o resultado. Por exemplo, vamos supor que temos um script que recebe um número como entrada e precisamos verificar se esse número é positivo ou negativo. Podemos escrever um teste da seguinte maneira:
 
-```Bash
+```
 #!/bin/bash
 
-variavel=10
+input=5
+expected_output="positivo"
 
-# Testa se a variável é maior que 5
-if [ $variavel -gt 5 ]; then
-  echo "A variável é maior que 5"
+if (($input > 0)); then
+  echo "O número é positivo"
 else
-  echo "A variável é menor que 5"
+  echo "O número é negativo"
 fi
 ```
 
-Neste exemplo, a saída seria "A variável é maior que 5", pois o valor da variável é maior que 5. Experimente alterar o valor da variável e verá que a saída também muda.
+Neste exemplo, definimos a variável "input" com o valor 5 e esperamos que o script imprima a mensagem "O número é positivo". Se alterarmos o valor de "input" para -5, a saída será "O número é negativo". Isso nos dá uma maneira fácil de verificar se o nosso script está funcionando corretamente.
 
-Outra opção é usar o comando `test` diretamente, seguido de um operador lógico e um valor a ser testado. Por exemplo:
+## Mergulho profundo em escrever testes em Bash
 
-```Bash
-#!/bin/bash
+Existem várias abordagens diferentes quando se trata de escrever testes em Bash. Podemos usar o comando "test" para verificar expressões condicionais, como a igualdade entre duas variáveis, ou podemos usar o comando "grep" para verificar se uma determinada string está presente em uma saída esperada. Além disso, é importante lembrar de fazer os testes tão abrangentes quanto possível, cobrindo todos os possíveis cenários e entradas de dados.
 
-variavel=10
-
-# Testa se a variável é maior que 5
-if test $variavel -gt 5; then
-  echo "A variável é maior que 5"
-else
-  echo "A variável é menor que 5"
-fi
-```
-
-Os operadores lógicos mais comuns são `-eq` (igual a), `-ne` (diferente de), `-gt` (maior que), `-lt` (menor que), `-ge` (maior ou igual a) e `-le` (menor ou igual a). Você pode combinar esses operadores usando `&&` para "e" e `||` para "ou".
-
-## Deep Dive
-
-Além dos testes básicos, existem outras técnicas para escrever testes mais avançados em Bash. Você pode usar a ferramenta `BATS` (Bash Automated Testing System) para tornar a criação e execução de testes mais fácil e eficiente. Ele tem uma sintaxe semelhante ao `bash`, mas inclui recursos extras, como configuração e relatórios de teste.
-
-Você também pode usar a ferramenta `catch` para testar a saída de cada etapa do seu script em Bash. Isso permite que você detecte com facilidade onde os erros ocorrem e os corrija rapidamente.
-
-O teste de unidade é outra técnica importante para garantir que seu código em Bash esteja funcionando corretamente. Ele consiste em testar apenas uma parte específica do seu código e isolar quaisquer problemas que possam surgir nessa área.
+Outra dica útil é criar um script separado exclusivamente para testes. Dessa forma, podemos executar apenas os testes a qualquer momento e garantir que nosso script principal não seja alterado acidentalmente.
 
 ## Veja também
 
-- [Tutorial de testes em Bash](https://www.shellscript.sh/testing.html)
-- [Documentação do comando test](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-- [BATS - Bash Automated Testing System](https://github.com/sstephenson/bats)
-- [Catch - ferramenta de teste para Bash](https://github.com/sharkdp/catch)
+- [Documentação oficial do Bash](https://www.gnu.org/software/bash/)
+- [Tutorial de testes em Bash](https://www.tldp.org/LDP/abs/html/debugging.html#TESTING)
+- [Livro "The Bash Guide"](https://guide.bash.academy/)
+
+Esperamos que este artigo tenha ajudado você a entender a importância de escrever testes em Bash e como fazê-lo de forma eficiente. Com prática e atenção aos detalhes, podemos garantir que nosso código está funcionando corretamente e evitar problemas futuros. Não se esqueça de testar sempre e nunca confiar apenas em testes automatizados.

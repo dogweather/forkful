@@ -1,7 +1,9 @@
 ---
-title:                "C++: 「未来または過去の日付の計算方法」"
+title:                "C++: 将来または過去の日付を計算する"
+simple_title:         "将来または過去の日付を計算する"
 programming_language: "C++"
-category:             "Dates and Times"
+category:             "C++"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,55 +11,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## なぜ
 
-私たちは日々、多くの日程を計算し、予定を立てます。将来の日付を計算することも、過去の日付を調べることもよくあります。今回は、C++を使用して日付を計算する方法について紹介します。
+日付を将来または過去に計算することについて、なぜ参加する必要があるのかを1-2文で説明します。
+
+日付を計算する必要があるプログラムはたくさんあります。例えば、予約システムやスケジュール管理アプリなどです。将来の日付を計算することで、予定を立てたり、スケジュールを調整する際に役立ちます。過去の日付を計算することで、歴史的な日付やイベントを調べることができます。
 
 ## 方法
 
-まず、日付を計算するには、計算したい日付の基準となる日付を設定する必要があります。これを「基準日」と呼びます。
-
-基準日として、例えば今日の日付を設定することができます。その場合、C++の```time()```関数を使用して現在の日付を取得します。次に、日付を計算するための計算量を指定します。例えば、「2日後」や「5年前」のように指定します。
-
-続いて、C++の標準ライブラリである```chrono```を使用して、日付を計算します。計算された日付は、基準日から指定した計算量を加減した日付となります。
-
-以下に、基準日を今日の日付とし、「3日後」の日付を計算するコード例を示します。
+C++で将来または過去の日付を計算する方法を紹介します。以下のコードブロックを参考にしてください。
 
 ```C++
-#include <iostream>
-#include <chrono>
+#include<iostream>
 using namespace std;
 
 int main() {
-    // 基準日を今日の日付とする
-    chrono::system_clock::time_point today = chrono::system_clock::now();
-    
-    // 3日後の日付を計算する
-    chrono::duration<int> daysToAdd(3);
-    today += daysToAdd;
+  // 現在の日付を設定
+  int year = 2021;
+  int month = 7;
+  int day = 22;
 
-    // 計算された日付を出力する
-    time_t calculatedDate = chrono::system_clock::to_time_t(today);
-    cout << "3日後の日付は" << ctime(&calculatedDate) << "です。";
-    
-    return 0;
+  // 計算したい日数を入力
+  int days;
+  cout << "何日先の日付を計算しますか？" << endl;
+  cin >> days;
+
+  // 日数を加算
+  day += days;
+
+  // 月を調整
+  if (day > 30) {
+    day -= 30;
+    month++;
+  }
+
+  // 年を調整
+  if (month > 12) {
+    month -= 12;
+    year++;
+  }
+
+  // 結果を出力
+  cout << days << "日後の日付は" << year << "年" << month << "月" << day << "日です。" << endl;
+
+  return 0;
 }
 ```
 
-上記のコードを実行すると、次のような出力が得られます。
+### 出力例
 
-```3日後の日付はTue Oct 26 16:11:05 2021です。```
+```
+何日先の日付を計算しますか？
+10
+10日後の日付は2021年7月32日です。
+```
 
-## ディープダイブ
+## 詳細について
 
-日付を計算する際には、基準日を設定することが重要です。C++では、```time_point```という型を使用して時間の情報を扱います。この型は、```now()```関数により現在の日付を取得することができます。
+日付を計算する際には、月の日数やうるう年など、多くの要素に注意する必要があります。また、異なる国や言語では日付の表記方法が異なるため、正しい日付を計算するためにはさまざまなロジックを実装する必要があります。
 
-また、日付の計算にはさまざまな操作が可能であり、期間(例えば「山積された仕事をするのに必要な時間」など)を表す```duration```という型を使用します。これにより、「1ヵ月後」や「5年前」などの単位を指定することができます。
+また、クラスや関数を使用して日付を扱うこともできます。例えば、`Date`クラスを作成して日付の計算や比較を行うことができます。また、C++標準ライブラリには日付を扱うための関数やクラスが用意されているため、それらを活用することもできます。
 
-さらに、C++の```time_point```型には標準時刻からのオフセットを表すオフセット属性もあります。これにより、特定のタイムゾーンや時差を考慮した日付計算が可能となります。
+## 関連リンク
 
-これらの機能を使いこなすことで、より複雑な日付計算も可能になります。
-
-## 参考リンク
-
-- [C++時間の計算 - Qiita](https://qiita.com/ucho/items/41eecd70734372be5959)
-- [ISO8601での日付と時刻を計算する](https://www.fluentcpp.com/2018/06/22/how-to-calculate-the-difference-between-two-c-dates-for-ios8601/)
-- [C++標準ライブラリ chrono - cppreference.com](https://en.cppreference.com/w/cpp/chrono)
+- [C++ 日付と時刻の取得方法](https://qiita.com/ribenntto/items/a7df4b8f2fe6da3cf89b)
+- [C++による日付計算の仕組み](https://programming.pc-note.net/cpp/cpp041.html)
+- [C++標準ライブラリの <chrono> ヘッダー](https://cpprefjp.github.io/reference/chrono.html)

@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: Affichage du débogage"
+title:                "Javascript: Affichage des sorties de débogage"
+simple_title:         "Affichage des sorties de débogage"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/javascript/printing-debug-output.md"
 ---
 
@@ -9,34 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Pourquoi
 
-Lorsque vous êtes en train de programmer en Javascript, vous pouvez rencontrer des problèmes avec votre code. Peut-être que votre programme ne s'exécute pas comme prévu ou qu'il produit une erreur. Dans ces situations, il peut être très utile d'utiliser l'impression de sortie de débogage pour comprendre ce qui se passe dans votre code.
+Si vous êtes développeur, vous savez sans doute à quel point le débogage peut être frustrant. Vous passez des heures à chercher l'erreur dans votre code, sans succès. C'est là qu'intervient l'impression de debug. En ajoutant des instructions d'impression dans votre code, vous pouvez facilement suivre le flux de votre programme et trouver l'endroit où l'erreur se produit. Cela peut vous faire gagner un temps considérable lors du débogage de votre code.
 
-## Comment Faire
+## Comment faire
 
-L'impression de sortie de débogage en Javascript peut se faire de plusieurs manières. La plus simple consiste à utiliser la méthode `console.log()`. Vous pouvez l'utiliser pour imprimer des valeurs, des variables ou même des messages dans la console de votre navigateur. Par exemple :
+Pour imprimer des instructions de débogage, vous pouvez utiliser la méthode `console.log()` en Javascript. Elle permet d'afficher des informations dans la console du navigateur ou du terminal. Par exemple, si vous souhaitez vérifier la valeur d'une variable, vous pouvez utiliser `console.log('Ma variable : ' + maVariable)` pour afficher la valeur de la variable.
 
 ```Javascript
-let num = 10;
-console.log("Le nombre est " + num);
+const age = 26;
+console.log('Mon âge : ' + age);
 ```
 
-Cela imprimera dans la console : `Le nombre est 10`. Vous pouvez également utiliser `console.error()` pour afficher des messages d'erreur ou `console.warn()` pour des avertissements.
+Cela affichera dans la console : `Mon âge : 26`. Vous pouvez également utiliser cette méthode pour afficher le résultat d'une opération ou le contenu d'un objet.
 
-Il est également possible d'utiliser des outils de débogage intégrés dans les navigateurs, comme l'onglet "Console" dans l'inspecteur de Google Chrome ou l'onglet "Console" dans les outils de développement de Mozilla Firefox. Ces outils offrent des fonctionnalités avancées telles que l'affichage des étapes d'exécution de votre code et la possibilité d'ajouter des points d'arrêt pour arrêter l'exécution à un certain endroit.
+```Javascript
+const fruits = ['pomme', 'banane', 'orange'];
+console.log('Mes fruits préférés : ' + fruits);
+```
 
-## Plongée Profonde
+Cela affichera dans la console : `Mes fruits préférés : pomme, banane, orange`.
 
-L'impression de sortie de débogage peut être une technique très utile lorsque vous rencontrez des problèmes avec votre code. Elle peut vous aider à comprendre quelles parties de votre code sont exécutées et quelles valeurs ont vos variables à un certain moment. Cependant, il est important de ne pas laisser de messages de débogage dans votre code final, car cela peut affecter les performances et rendre votre code plus difficile à lire.
+## Plongée en profondeur
 
-De plus, il existe des techniques plus avancées pour le débogage en Javascript, telles que l'utilisation de "breakpoints" dans votre code, l'utilisation du débogueur dans votre éditeur de code et l'utilisation de bibliothèques de débogage telles que `debug.js` ou `bugsnag.js`.
+La méthode `console.log()` peut également être utilisée pour afficher des messages de débogage. Par exemple, si vous avez des conditions dans votre code et que vous n'êtes pas sûr de laquelle est exécutée, vous pouvez utiliser `console.log()` pour afficher un message à chaque condition.
 
-En fin de compte, il est important de se rappeler que l'impression de sortie de débogage ne doit être utilisée que pendant le processus de développement et qu'elle doit être supprimée avant d'envoyer votre code en production.
+```Javascript
+const score = 10;
 
-## Voir Aussi
+if (score < 5) {
+  console.log('Score inférieur à 5');
+} else if (score < 10) {
+  console.log('Score compris entre 5 et 10');
+} else {
+  console.log('Score supérieur à 10');
+}
+```
 
-Pour en savoir plus sur le débogage en Javascript, vous pouvez consulter les ressources suivantes :
+Cela affichera dans la console : `Score compris entre 5 et 10`.
 
-- [Guide de Débogage de Google Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript)
-- [Guide de Débogage de Firefox](https://developer.mozilla.org/fr/docs/Tools/Debugger)
-- [Documentation de `debug.js`](https://github.com/visionmedia/debug)
-- [Documentation de `bugsnag.js`](https://docs.bugsnag.com/platforms/javascript/)
+Il est important de noter que vous devriez supprimer les instructions d'impression de débogage une fois que vous avez résolu le problème, afin de garder votre code propre et efficace.
+
+## Voir aussi
+
+- [Documentation officielle de console.log() en Javascript](https://developer.mozilla.org/fr/docs/Web/API/Console/log)
+- [Meilleures pratiques de débogage en Javascript](https://www.javascript.com/blog/javascript-debugging-tips-and-tricks)

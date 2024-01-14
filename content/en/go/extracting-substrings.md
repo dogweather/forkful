@@ -1,7 +1,9 @@
 ---
 title:                "Go recipe: Extracting substrings"
+simple_title:         "Extracting substrings"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/go/extracting-substrings.md"
 ---
 
@@ -9,47 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-Substring extraction is a common task in programming, and understanding how it works can greatly enhance your skills as a developer. By learning how to extract substrings, you can manipulate strings more efficiently and create more complex programs.
+Extracting substrings is a useful skill to have for any Go programmer. By taking a portion of a larger string, it allows for more efficient processing and manipulation of data.
 
 ## How To
 
+Let's dive into some coding examples on how to extract substrings in Go.
+
 ```Go
-package main
-
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-	// Defining a string to extract substrings from
-	s := "Hello, world!"
-
-	// Extracting substring from index 0 to 5
-	fmt.Println(s[0:5]) // Output: Hello
-
-	// Extracting substring from index 7 to the end of the string
-	fmt.Println(s[7:]) // Output: world!
-
-	// Extracting substring from index 7 to 11
-	fmt.Println(s[7:11]) // Output: worl
-}
+//Example 1: Substring starting from a given index
+str := "Hello World!"
+substring := str[6:] // substring = "World!"
 ```
 
-The code above shows three different ways to extract substrings from a string in Go. The first `Println` statement extracts the substring from index 0 to 5, which includes the letter "l" at index 5. The second `Println` statement extracts the substring from index 7 to the end of the string. Finally, the last `Println` statement extracts the substring from index 7 to 11, excluding the letter "d" at index 11.
+In this example, we use the slice operator `[startIndex:endIndex]` to specify the range of characters we want to extract. By omitting the endIndex, it defaults to the end of the string, allowing us to extract all characters from the given index to the end.
 
-It's important to note that strings in Go are immutable, meaning they cannot be changed. Therefore, extracting substrings does not modify the original string, but rather creates a new string.
+```Go
+//Example 2: Substring of a specific length
+str := "Hello World!"
+substring := str[1:5] // substring = "ello"
+```
+
+Here, we use the same slice operator to specify the start and end index, but this time we limit the length of the substring by specifying an endIndex. This allows us to extract a specific portion of a string.
+
+```Go
+//Example 3: Substring with a custom function
+func substring(str string, start int, length int) string {
+    runes := []rune(str)
+    return string(runes[start:start+length])
+}
+
+str := "Hello World!"
+substring := substring(str, 1, 5) // substring = "ello"
+```
+
+This example uses a custom function, `substring`, to extract a substring from a given string. By converting the string to a slice of runes, we can use the index values to specify the start and end of the substring.
 
 ## Deep Dive
 
-The syntax for extracting substrings in Go is `string[startIndex:endIndex]`. The `startIndex` is inclusive, meaning it will include the character at that index, while the `endIndex` is exclusive, meaning it will not include the character at that index.
+In Go, strings are immutable, meaning they cannot be changed once created. This presents a hurdle when trying to extract substrings, as a new string must be created to hold the extracted characters.
 
-If the `startIndex` is omitted, the substring will start from the beginning of the string. Similarly, if the `endIndex` is omitted, the substring will go until the end of the string.
+To overcome this, Go's `strings` package offers the `Substring()` function that simplifies extracting substrings. Additionally, some important things to keep in mind when extracting substrings are:
 
-In addition to extracting substrings from a specific index, you can also use the `strings` package in Go to extract substrings based on a specific character or pattern. For example, you can use `strings.Split` to split a string into substrings based on a delimiter.
+- The index values should be within the length of the string, otherwise it will result in a "slice bounds out of range" error.
+- Negative index values can be used to extract substrings starting from the end of the string.
+- The endIndex value can be greater than the length of the string, in which case it will default to the end of the string.
+- Unicode characters can be extracted using the `strings.Index()` function to find their index value.
 
 ## See Also
 
-- [Strings and Characters in Go](https://golang.org/ref/spec#Characters)
-- [The Go Programming Language Specification](https://golang.org/ref/spec)
-- [The Strings package in Go](https://golang.org/pkg/strings/)
+- Official documentation on strings package: https://golang.org/pkg/strings/
+- A beginner's guide to Go: https://golangbot.com/learn-golang-series/
+- More examples of string manipulation in Go: https://www.callicoder.com/golang-strings-guide/

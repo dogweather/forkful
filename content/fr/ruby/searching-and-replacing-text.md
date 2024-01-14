@@ -1,53 +1,45 @@
 ---
 title:                "Ruby: Recherche et remplacement de texte"
+simple_title:         "Recherche et remplacement de texte"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/ruby/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+## Pourquoi 
 
-Il est souvent nécessaire de remplacer du texte dans un programme pour corriger des erreurs ou pour modifier du contenu. Utiliser la fonction de recherche et de remplacement en Ruby peut vous faire gagner du temps et vous aider à éviter des erreurs manuelles.
+De nombreuses tâches de programmation nécessitent la manipulation de chaînes de texte, et parfois il est nécessaire de remplacer du texte spécifique dans ces chaînes. Heureusement, en utilisant quelques astuces de Ruby, vous pouvez effectuer ces recherches et remplacements de manière efficace et précise.
 
-## Comment faire
+## Comment faire 
 
-Pour utiliser la fonction de recherche et de remplacement en Ruby, il vous suffit d'utiliser la méthode `gsub` (global substitution) sur une chaîne de caractères. Voici un exemple de code :
+Pour remplacer du texte dans une chaîne en utilisant Ruby, vous pouvez utiliser la méthode `sub`, qui prend en argument une expression régulière pour la chaîne à rechercher et une autre chaîne pour la remplacer. Par exemple:
 
-```Ruby
-texte = "Bonjour le monde!"
-texte.gsub!("monde", "Ruby")
-
-puts texte #=> Bonjour le Ruby!
-```
-Dans cet exemple, nous avons défini une variable `texte` avec une phrase contenant le mot "monde". En utilisant la méthode `gsub`, nous avons remplacé le mot "monde" par "Ruby". En exécutant ce code, nous obtenons la phrase modifiée "Bonjour le Ruby!".
-
-Vous pouvez également utiliser la méthode `gsub` avec des expressions régulières pour effectuer des remplacements plus complexes. Voici un autre exemple de code :
-
-```Ruby
-texte = "J'aime manger du fromage."
-texte.gsub!(/manger (.*) fromage/, 'manger du bon fromage')
-
-puts texte #=> J'aime manger du bon fromage.
-```
-Dans cet exemple, nous avons utilisé une expression régulière pour cibler une partie spécifique de la phrase et la remplacer par une nouvelle phrase.
-
-## Plongée en profondeur
-
-La méthode `gsub` accepte également un bloc en tant que paramètre, ce qui vous permet de personnaliser encore plus votre recherche et votre remplacement de texte. Vous pouvez y accéder en utilisant `gsub!` avec un bloc comme ceci :
-
-```Ruby
-texte = "Il fait beau dehors."
-texte.gsub!("beau") { |match| match.upcase }
-
-puts texte #=> Il fait BEAU dehors.
+```Ruby 
+phrase = "Je suis un programmeur Ruby."
+nouvelle_phrase = phrase.sub(/Ruby/, "Python")
+puts nouvelle_phrase
 ```
 
-Dans cet exemple, nous avons utilisé le bloc pour mettre en majuscule le mot "beau" dans notre phrase. Vous pouvez également utiliser le bloc pour effectuer des modifications plus complexes, telles que la transformation d'un mot en une autre forme grammaticale.
+Ceci produira la sortie: "Je suis un programmeur Python." La méthode `sub` remplacera uniquement la première occurrence du texte recherché dans la chaîne. Si vous souhaitez remplacer toutes les occurrences, vous pouvez utiliser la méthode `gsub`.
 
-## Voir aussi
+```Ruby
+phrase = "Ruby est un langage de programmation populaire."
+nouvelle_phrase = phrase.gsub(/Ruby/, "Python")
+puts nouvelle_phrase 
+```
 
-- [Guide sur les méthodes de manipulation de chaînes en Ruby](https://www.rubyguides.com/ruby-tutorial/string-methods/)
-- [Documentation officielle de Ruby sur la méthode `gsub`](https://ruby-doc.org/core-2.7.3/String.html#method-i-gsub)
-- [Tutoriel sur les expressions régulières en Ruby](https://www.regular-expressions.info/ruby.html)
+Cela produira la sortie: "Python est un langage de programmation populaire." Vous pouvez également utiliser des expressions régulières plus complexes pour effectuer des recherches et remplacements en utilisant la méthode `sub`. Par exemple, en utilisant des groupes dans votre expression régulière, vous pouvez capturer des parties de la chaîne d'origine et les utiliser dans la chaîne de remplacement.
+
+## Plongée en profondeur 
+
+Il existe plusieurs autres méthodes et options en Ruby pour effectuer des recherches et remplacements dans du texte, telles que `scan` et `replace`. En utilisant ces méthodes, vous pouvez créer des scripts puissants pour manipuler des chaînes de texte à votre avantage. De plus, comprendre les expressions régulières en profondeur vous permettra de créer des recherches et remplacements encore plus complexes et précis.
+
+## Voir aussi 
+
+- [Documentation officielle de la méthode `sub`](https://ruby-doc.org/core-2.5.1/String.html#method-i-sub)
+- [Documentation officielle de la méthode `gsub`](https://ruby-doc.org/core-2.5.1/String.html#method-i-gsub)
+- [Documentation officielle de la méthode `scan`](https://ruby-doc.org/core-2.5.1/String.html#method-i-scan)
+- [Documentation officielle de la méthode `replace`](https://ruby-doc.org/core-2.5.1/String.html#method-i-replace)

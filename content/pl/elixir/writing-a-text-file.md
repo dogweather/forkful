@@ -1,42 +1,56 @@
 ---
-title:                "Elixir: Pisanie pliku tekstowego"
+title:                "Elixir: Tworzenie pliku tekstowego"
+simple_title:         "Tworzenie pliku tekstowego"
 programming_language: "Elixir"
-category:             "Files and I/O"
+category:             "Elixir"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/elixir/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-### Dlaczego pisanie plików tekstowych jest ważne w programowaniu?
+## Dlaczego warto pisać pliki tekstowe?
 
-Pisanie plików tekstowych jest ważną częścią procesu programowania, ponieważ pozwala nam przechowywać i przetwarzać duże ilości informacji w prosty i czytelny sposób. Pliki tekstowe są również przydatne, gdy chcemy udostępnić nasz kod innym programistom lub uruchomić naszą aplikację na różnych środowiskach.
+Pisanie plików tekstowych jest nieodłączną częścią programowania w Elixirze. Jest to skuteczny sposób na przechowywanie danych w strukturach niezależnych od komputera. Pozwala to na łatwiejsze przenoszenie i udostępnianie danych.
 
-### Jak pisać pliki tekstowe w języku Elixir?
+## Jak to zrobić?
 
-W języku Elixir możemy łatwo pisać pliki tekstowe przy użyciu wbudowanych funkcji modułu `File` oraz `IO`. Poniżej znajdują się przykładowe kodowe bloki przedstawiające dwa sposoby zapisu tekstu do pliku:
+Poniżej znajdziesz przykłady kodu w języku Elixir wraz z wynikami w postaci komentarzy w blokach "```Elixir ... ```". W ten sposób, nauczysz się pisać pliki tekstowe w Elixirze w prosty i zrozumiały sposób.
 
-```elixir
-# Przy użyciu modułu File
-File.write("moj_plik.txt", "To jest przykładowy tekst.")
+```Elixir
+# Otwieramy plik do zapisu
+file = File.open("plik.txt", [:write])
 
-# Przy użyciu modułu IO
-File.open("moj_plik.txt", [:write], fn file ->
-  IO.write(file, "To jest przykładowy tekst.")
-end)
+# Zapisujemy tekst do pliku
+IO.write(file, "Cześć! Jestem plikiem tekstowym napisanym w Elixirze.")
+
+# Zamykamy plik
+File.close(file)
+
+# Otwieramy plik do odczytu
+file = File.open("plik.txt", [:read])
+
+# Wyświetlamy zawartość pliku
+IO.read(file)
+
+# Zamykamy plik
+File.close(file)
 ```
 
-W powyższych przykładach `moj_plik.txt` jest nazwą pliku, a `"To jest przykładowy tekst."` jest tekstem, który zostanie zapisany w pliku. Możemy również użyć różnych opcji, takich jak `:append` lub `:utf8`, aby dostosować sposób zapisu pliku.
+Wynik:
 
-Po wykonaniu powyższego kodu, utworzymy plik o nazwie `moj_plik.txt` z tekstem `"To jest przykładowy tekst."` wewnątrz.
+```
+"Cześć! Jestem plikiem tekstowym napisanym w Elixirze."
+```
 
-### Pogłębione informacje o pisaniu plików tekstowych
+## Głębszy zanurzenie
 
-Pisanie plików tekstowych w języku Elixir jest bardzo proste i wydajne, ponieważ język ten ma wbudowane funkcje, które pozwalają nam na łatwe zarządzanie plikami. Dodatkowo, dzięki funkcjom modułu `IO`, możemy nie tylko pisać do pliku, ale także czytać z niego i manipulować jego zawartością.
+Pisanie plików tekstowych w Elixirze ma wiele zalet. Można w nich przechowywać różnego rodzaju dane, np. teksty, liczby, zapisywanie wyników funkcji, a także tworzenie nowych plików lub nadpisywanie istniejących. Ponadto, dzięki wykorzystaniu struktur danych w Elixirze, można łatwo i szybko przetwarzać informacje zapisane w plikach.
 
-Warto również pamiętać, że pliki tekstowe w Elixir są traktowane jako strumienie danych, co sprawia, że są wysoce wydajne i mogą być przetwarzane w sposób przewidywalny i skalowalny.
+Dzięki wbudowanym funkcjom w języku Elixir, operowanie na plikach tekstowych jest nie tylko proste, ale również wydajne. Ponadto, jest to niezbędna umiejętność dla każdego programisty Elixira, który chce tworzyć solidne i funkcjonalne aplikacje.
 
-### Zobacz również
+## Zobacz również
 
-- [Dokumentacja Elixir - Moduł File](https://hexdocs.pm/elixir/File.html)
-- [Dokumentacja Elixir - Moduł IO](https://hexdocs.pm/elixir/IO.html)
-- [Blog o Elixirze (po polsku)](https://brainhub.eu/blog/elixir-put-language-backend-development/)
+- [Dokumentacja Elixir - Praca z plikami](https://hexdocs.pm/elixir/File.html)
+- [Poradnik dla początkujących w Elixirze](https://medium.com/@piotrgiedzi/unboxing-elixir-poradnik-dla-pocz%C4%85tkuj%C4%85cych-49757d15c02b)
+- [10 powodów, dla których warto zacząć programować w Elixirze](https://medium.com/@owolox/10-ways-elixir-nerds-use-elixir-to-hack-their-lives-f9188296adb8)

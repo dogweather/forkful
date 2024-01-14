@@ -1,50 +1,58 @@
 ---
 title:                "Swift: Pisanie testów"
+simple_title:         "Pisanie testów"
 programming_language: "Swift"
-category:             "Testing and Debugging"
+category:             "Swift"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/swift/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Dlaczego pisanie testów jest ważne dla programistów Swift?
+## Dlaczego
 
-W dzisiejszych czasach, pisanie testów jest kluczowym elementem procesu tworzenia oprogramowania. Zapewnienie, że nasz kod działa poprawnie jest nie tylko po prostu dobrym zwyczajem, ale także jest niezbędne dla zachowania jakości i funkcjonalności naszej aplikacji. W przypadku języka programowania Swift, pisanie testów jest szczególnie ważne ze względu na jego bezpieczeństwo i stabilność. Dlatego też, nauka pisania testów jest nieodzowna dla każdego programisty Swift.
+Testowanie jest niezwykle ważnym elementem procesu pisania kodu. Pomaga ono upewnić się, że nasz kod działa poprawnie i zapobiega błędom w przyszłości. Pisząc testy, możemy mieć większą pewność, że nasza aplikacja będzie odporna na wszelkie ewentualne problemy.
 
-# Jak napisać testy w języku Swift?
+## Jak to zrobić
 
-Aby napisać testy w języku Swift, musimy najpierw zaimportować moduł XCTest, który jest częścią standardowej biblioteki języka Swift. Następnie, możemy definiować testy za pomocą metody `func test()`, w której wywołujemy różne metody i porównujemy oczekiwane rezultaty z rzeczywistymi. Oto przykładowy kod testu:
+Pisanie testów w języku Swift jest stosunkowo proste i wygodne dzięki wbudowanemu w język frameworkowi - XCTest. Najpierw musimy utworzyć nowy projekt w Xcode, a następnie dodać do niego tzw. "test target", czyli specjalne miejsce, w którym będziemy umieszczać nasze testy. 
 
-```
+Poniżej przedstawiam prosty przykład testu, który sprawdza poprawność funkcji dodawania dwóch liczb:
+
+```Swift
+// Importujemy XCTest, aby mieć dostęp do jego funkcji testujących
 import XCTest
 
-class CalculatorTests: XCTestCase {
-    
-    func testAddition() {
-        let calculator = Calculator()
-        
-        let result = calculator.add(5, 7)
-        
-        XCTAssertEqual(result, 12)
-    }
-}
+// Tworzymy nasz testowy "class"
+class TestExample: XCTestCase {
 
-class Calculator {
+    // Funkcja testowa, która będzie automatycznie uruchamiana przez XCTest
+    func testAddition() {
+        // Definiujemy dwie liczby, które chcemy dodać
+        let num1 = 5
+        let num2 = 10
+        // Wywołujemy funkcję dodawania i oczekujemy, że jej wynik będzie równy 15
+        XCTAssertEqual(add(num1: num1, num2: num2), 15)
+    }
     
-    func add(_ num1: Int, _ num2: Int) -> Int {
+    // Funkcja dodająca dwie liczby, którą chcemy przetestować
+    func add(num1: Int, num2: Int) -> Int {
         return num1 + num2
     }
+    
 }
 ```
 
-W powyższym przykładzie, testujemy metodę `add()` naszej klasy `Calculator`, oczekując, że dodanie liczb 5 i 7 zwróci wartość 12. Za pomocą metody `XCTAssertEqual()`, porównujemy otrzymany wynik z oczekiwanym. Jeśli test nie przejdzie, zostanie wyświetlony błąd z informacją o błędzie.
+Po uruchomieniu testu, otrzymamy rezultat "Test Passed". W ten sposób sprawdzamy, czy nasza funkcja dodawania działa poprawnie. Warto zwrócić uwagę na nazwę funkcji testowej - musi ona zaczynać się od słowa "test", aby została automatycznie wywołana przez XCTest.
 
-# Głębsze wgląd w pisanie testów
+## Deep Dive
 
-Napisać testy, które są łatwe w utrzymaniu i posiadają dobre pokrycie kodu jest nie tak łatwe, jak mogłoby się wydawać na pierwszy rzut oka. Dlatego warto poznać więcej technik i narzędzi, które pomogą nam w pisaniu testów. Na przykład, jest możliwe wykorzystanie tzw. metody `setUp()` w celu zainicjowania potrzebnych obiektów przed każdym testem. Istnieją także narzędzia takie jak Quick i Nimble, które ułatwiają pisanie testów oraz porównywanie wartości i obiektów. Warto również poznać różne rodzaje testów, takie jak testy jednostkowe czy testy integracyjne, i wybrać te odpowiednie dla naszego projektu.
+Istnieje wiele róznych typów testów, które możemy pisać w języku Swift, takich jak testy jednostkowe, testy wydajnościowe czy testy interfejsu użytkownika. Ważne jest, aby pamiętać, że pisanie testów nie tylko sprawia, że nasz kod jest bardziej bezpieczny i niezawodny, ale także ułatwia jego dalsze rozwijanie i utrzymanie. 
 
-# Zobacz także
+Pamiętajmy również o zasadzie TDD (Test Driven Development), która polega na pisaniu testów przed samym kodem. Dzięki temu mamy pewność, że nasz kod będzie zgodny z oczekiwaniami i spełni wszystkie wymagania, a testy staną się częścią naszego procesu pisania kodu.
 
-- [Oficjalna dokumentacja Apple o XCTest](https://developer.apple.com/documentation/xctest)
-- [Najlepsze praktyki i wzorce pisania testów w języku Swift](https://medium.com/@jelenalecet/the-best-practices-and-patterns-for-writing-tests-in-swift-yis8hc7d2b)
-- [Quick i Nimble - narzędzia do pisania testów w języku Swift](https://quick-labs.github.io/Nimble/)
+## Zobacz też
+
+- ["A Complete Guide to Writing Unit Tests in Swift" od Ray Wenderlich](https://www.raywenderlich.com/960290-ios-unit-testing-and-ui-testing-tutorial)
+- ["Introduction to Testing in Swift" od Apple](https://developer.apple.com/documentation/swift/testing)
+- ["Why Testing Matters" od Hacking with Swift](https://www.hackingwithswift.com/articles/156/why-testing-matters)

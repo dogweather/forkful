@@ -1,64 +1,50 @@
 ---
 title:                "C: Obliczanie daty w przyszłości lub przeszłości"
+simple_title:         "Obliczanie daty w przyszłości lub przeszłości"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/c/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Czy dlaczego warto obliczyć datę w przyszłości lub przeszłości?
+# Dlaczego
 
-Obliczanie daty w przyszłości lub przeszłości może być bardzo przydatne w wielu sytuacjach, na przykład w tworzeniu aplikacji internetowych obsługujących rezerwacje lub planowanie wydarzeń. Może również być używane do obliczania terminów płatności lub dat ważności. Dzięki temu możemy uniknąć pomyłek i zaoszczędzić czas na ręczne wyliczanie dat.
+C jest jednym z najpopularniejszych i najpotężniejszych języków programowania w dzisiejszych czasach. Jego uniwersalność i wydajność pozwala na tworzenie różnorodnych programów, w tym również narzędzi do obliczania dat w przyszłości lub przeszłości. Wydaje się to proste, ale jest to jednak bardzo przydatna i ważna funkcja, szczególnie dla programistów zajmujących się systemami czasu rzeczywistego.
 
-## Jak to zrobić?
+# Jak to zrobić
 
-W poniższym przykładzie pokażemy, jak napisanie jednej funkcji w C może pomóc nam w obliczaniu daty w przyszłości lub przeszłości. Zobaczmy kod w akcji:
+Pisanie programów w języku C może wydawać się skomplikowane, ale zastosowanie odpowiednich bibliotek i funkcji może znacznie ułatwić zadanie. Najpierw należy zadeklarować zmienne, do których zostaną zapisane wyniki obliczeń. Następnie wewnątrz pętli for, przy użyciu funkcji z biblioteki time.h, obliczamy datę w przyszłości lub przeszłości. Poniższy kod jest przykładem obliczenia daty z 30 dniemdla kalendarza gregoriańskiego:
 
 ```C
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include<stdio.h>
+#include<time.h>
 
-// funkcja do obliczania daty w przyszłości lub przeszłości
-// przyjmuje trzy argumenty: rok, miesiąc i dzień
-
-void oblicz_date(int rok, int miesiac, int dzien) {
-    // zdefiniuj strukturę tm do przechowywania daty
-    struct tm data = { .tm_year=rok-1900, .tm_mon=miesiac-1, .tm_mday=dzien};
-
-    // zdefiniuj zmienne sekundy i czasu
-    time_t sekundy;
-    struct tm *czas;
-
-    // pobierz czas bieżący
-    time(&sekundy);
-
-    // oblicz datę w przyszłości lub przeszłości
-    sekundy += mktime(&data);
-
-    // skonwertuj czas na strukturę gotową do wyświetlenia
-    czas = localtime(&sekundy);
-
-    // wyświetl datę w czytelny sposób
-    printf("Nowa data: %02d/%02d/%d\n", czas->tm_mday, czas->tm_mon+1, czas->tm_year+1900);
-}
-
-int main() {
-    // przykładowe wywołanie funkcji
-    oblicz_date(2020, 5, 15);
+int main()
+{
+    int dzien, miesiac, rok;
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+    for(int i = 0; i < 30; i++)
+    {
+        dzien = tm.tm_mday + i;
+        miesiac = tm.tm_mon + 1; //tm_mon zwraca miesiąc od 0, dlatego dodajemy 1
+        rok = tm.tm_year + 1900;
+        printf("Data za %d dni: %02d/%02d/%d.\n", i+1, dzien, miesiac, rok);
+    }
     return 0;
 }
 ```
-W tym przykładzie korzystamy z funkcji `mktime()` i `localtime()` z biblioteki `time.h` do obliczenia daty w przyszłości lub przeszłości, uwzględniając podane przez nas dane. Jeśli na przykład chcemy obliczyć datę, która jest 5 dni po podanej, wystarczy dodać 5 do `data.tm_mday`. 
 
-## Głębszy zanurzenie
+Powyższy kod wykorzystuje funkcję time.h do pobrania aktualnego czasu i zapisania go do zmiennej t. Następnie funkcja localtime(&t) przepisuje czas do struktury tm, co pozwala na łatwiejsze manipulowanie datami i godzinami. W pętli for, za pomocą zwykłych działań matematycznych, obliczamy daty w przyszłości lub przeszłości i wyświetlamy je na ekranie. Pamiętajmy, że wartości w strukturze tm są indeksowane od 0, więc musimy dodać lub odjąć 1, aby uzyskać odpowiednią wartość dnia i miesiąca.
 
-Obliczanie daty w przyszłości lub przeszłości może być bardziej skomplikowane, gdy uwzględnia się skoki czasowe lub różnice w datach między różnymi państwami. W takich przypadkach należy dokładnie zapoznać się z dokumentacją funkcji `mktime()` i pozostałych funkcji z biblioteki `time.h`, aby osiągnąć poprawne wyniki.
+# Głębsza analiza
 
-Inną użyteczną funkcją, która może pomóc w obliczaniu dat, jest `difftime()` z tej samej biblioteki. Pozwala ona na obliczenie różnicy w czasie między dwoma strukturami `tm`.
+Obliczanie daty w przyszłości lub przeszłości może być potrzebne w różnych przypadkach. Na przykład, może być to przydatne w systemach rezerwacji, gdzie trzeba zarezerwować jakiś termin w przyszłości lub w symulacjach finansowych, gdzie trzeba przewidzieć dalsze wydarzenia. Kluczem do obliczenia daty w C jest funkcja time.h, która jest częścią standardowej biblioteki języka C i udostępnia wiele funkcji związanych z czasem i datą.
 
-## Zobacz również
-- [Dokumentacja funkcji mktime()](https://www.cplusplus.com/reference/ctime/mktime/)
-- [Dokumentacja funkcji localtime()](https://www.cplusplus.com/reference/ctime/localtime/)
-- [Poradnik dla początkujących w C](https://www.cprogramming.com/begin.html)
+# Zobacz także
+
+- [Documentacja funkcji time.h](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Tutorial o manipulowaniu datami w C](https://www.programiz.com/c-programming/c-date-time)
+- [Inne przydatne funkcje w bibliotece time.h](https://www.geeksforgeeks.org/time-h-header-file-in-c-with-examples/)

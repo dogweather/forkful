@@ -1,50 +1,66 @@
 ---
-title:                "Python: Calculando una fecha en el futuro o en el pasado."
+title:                "Python: Calculando una fecha en el futuro o en el pasado"
+simple_title:         "Calculando una fecha en el futuro o en el pasado"
 programming_language: "Python"
-category:             "Dates and Times"
+category:             "Python"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/python/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-## Por qué
+##Por qué
 
-Hay muchas razones por las cuales uno pueda necesitar calcular una fecha en el futuro o en el pasado, especialmente en el contexto de la programación. Puede ser necesario para realizar tareas de programación, como planificación de eventos o generación de informes. Además, es una habilidad importante para tener cuando se trabaja con fechas y horarios en general.
+Una de las tareas más comunes en la programación es calcular una fecha en el futuro o en el pasado. Esto puede ser útil para diversas aplicaciones, como el seguimiento de eventos o la planificación de tareas. Aprender a calcular estas fechas también te ayudará a comprender mejor la manipulación de fechas y tiempos en Python.
 
-## Cómo
+##Cómo hacerlo
 
-Para calcular una fecha en el futuro o en el pasado en Python, utilizamos el módulo `datetime`. Primero, importamos el módulo:
+Para calcular una fecha en el futuro o en el pasado en Python, primero debemos importar el módulo datetime. Luego, utilizamos la función datetime.timedelta(), que toma como argumentos los días, horas, minutos y segundos que queremos añadir o restar a la fecha actual. Veamos un ejemplo de cómo calcular la fecha y hora actuales y después sumarle 5 días:
 
-```Python
+```python
+# Importar el módulo datetime
 import datetime
+
+# Obtener la fecha y hora actuales
+fecha_actual = datetime.datetime.now()
+
+# Sumar 5 días a la fecha y hora actuales
+nueva_fecha = fecha_actual + datetime.timedelta(days=5)
+
+print("La nueva fecha es:", nueva_fecha)
 ```
+La salida de este código sería: `La nueva fecha es: 2021-12-25 10:28:57.686841`
 
-Luego, podemos crear un objeto `datetime` utilizando la función `datetime()`, especificando los argumentos de año, mes y día:
+También podemos restar una cantidad de tiempo para obtener una fecha en el pasado. Por ejemplo, si queremos obtener la fecha hace 3 meses, utilizamos un valor negativo en la función timedelta():
 
-```Python
-fecha = datetime.datetime(2021, 10, 31)
+```python
+# Obtener la fecha y hora actuales
+fecha_actual = datetime.datetime.now()
+
+# Restar 3 meses a la fecha y hora actuales
+fecha_pasada = fecha_actual - datetime.timedelta(days=3*30)
+
+print("La fecha hace 3 meses era:", fecha_pasada)
 ```
+La salida sería `La fecha hace 3 meses era: 2021-09-27 10:28:57.686841`
 
-Una vez que tenemos nuestro objeto `datetime`, podemos manipularlo para obtener una fecha en el futuro o en el pasado. Por ejemplo, podemos usar el método `timedelta()` para agregar o restar días, semanas, meses o años a nuestra fecha:
+##Profundizando
 
-```Python
-# fecha en el futuro
-fecha_futura = fecha + datetime.timedelta(days=7)
-print(fecha_futura)
+El módulo datetime en Python también incluye otras funciones útiles para trabajar con fechas y tiempos, como la función date(), que nos permite obtener solo la fecha sin la hora, y la función time(), que nos permite obtener solo la hora sin la fecha.
 
-# fecha en el pasado
-fecha_pasada = fecha - datetime.timedelta(months=3)
-print(fecha_pasada)
+También podemos crear nuestras propias fechas utilizando el constructor datetime(), especificando el año, mes, día, hora, minuto y segundo:
+
+```python
+# Crear una fecha específica
+fecha = datetime.datetime(2021, 12, 31, 11, 59, 59)
+
+print("La fecha creada es:", fecha)
 ```
+La salida sería `La fecha creada es: 2021-12-31 11:59:59`
 
-El resultado se imprimirá en formato `YYYY-MM-DD HH:MM:SS`.
+En resumen, calcular fechas en el futuro o en el pasado en Python es una tarea muy útil y sencilla. Con el uso del módulo datetime y sus funciones, podemos realizar cálculos precisos y personalizar nuestras fechas según nuestras necesidades.
 
-## Profundizando
-
-El módulo `datetime` también nos brinda otras funciones y métodos para trabajar con fechas y horarios. Por ejemplo, podemos obtener el día, mes y año de una fecha específica utilizando los métodos `day`, `month` y `year` respectivamente. También podemos formatear la fecha en un formato personalizado utilizando el método `strftime()`. Puedes encontrar más información sobre estos métodos y otras funciones útiles en la documentación oficial del módulo.
-
-## Ver también
-
-- [Documentación oficial del módulo `datetime` en Python](https://docs.python.org/es/3/library/datetime.html)
-- [Tutorial de programación con fechas en Python](https://realpython.com/python-datetime/)
-- [Video tutorial sobre cómo trabajar con fechas en Python](https://www.youtube.com/watch?v=eirjjyP2qcQ)
+## Vea también
+- Documentación oficial del módulo datetime de Python: https://docs.python.org/es/3/library/datetime.html
+- Tutorial sobre manipulación de fechas y tiempos en Python: https://realpython.com/python-datetime/#calculating-deltas-with-timedelta
+- Ejemplos prácticos de cálculo de fechas en Python: https://www.geeksforgeeks.org/python-datetime-timedelta-function/

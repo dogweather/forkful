@@ -1,38 +1,46 @@
 ---
-title:                "Ruby: टेस्ट लेखन"
+title:                "Ruby: टेस्ट दाखिल करना"
+simple_title:         "टेस्ट दाखिल करना"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
 ## क्यों
-प्रोग्रामिंग में टेस्ट कोड लिखने का सबसे महत्वपूर्ण कारण है कि यह हमें चाहिए ताकि हम अपनी कोड को ठीक ढंग से चलाने और सुनिश्चित कर सकें कि यह सही तरीके से काम कर रहा है। टेस्ट कोड लिखने से हम इसकी परीक्षण और सुरक्षा में भी सुधार कर सकते हैं।
+
+ऑब्जेक्ट-ओरिएंटेड प्रोग्रामिंग का उपयोग करके तेजी से बदलती दुनिया में, आपको अपने कोड को सुरक्षित और आसान बनाने के लिए टेस्ट लिखना अत्यंत आवश्यक है।
 
 ## कैसे करें
-टेस्ट कोड लिखने के लिए हम `Minitest` या `RSpec` की मदद ले सकते हैं। सबसे पहले हम आगे बढ़ने से पहले `gem install` कमांड के द्वारा अपने सिस्टम में `Minitest` या `RSpec` को इंस्टॉल कर सकते हैं। अगर आप `Ruby on Rails` में काम कर रहे हैं तो आपको इन को अपने `Gemfile` में भी जोड़ना होगा।
 
-टेस्ट कोड को लिखने के लिए हमें सामान्य फ़ाइल `test/test_file_name.rb` को बनाना होगा। यहां हम आपको एक उदाहरण दे रहे हैं।
+यहाँ हम Ruby में टेस्ट कैसे लिखते हैं, उसके बारे में सीखेंगे।
+
+टेस्ट कोड लिखने से पहले, हमें आवश्यक गेम सेटअप को सेट करना होगा। इसके लिए, हमें `require 'minitest/autorun'` अभिव्यक्ति को एक फाइल के शुरुआत में जोड़नी होगी। यह आपको minitest लाइब्रेरी के साथ प्रोग्राम को लोड करना सुनिश्चित करता है।
+
+अब, हमारे पास एक `Calculator` क्लास है जिसमे `add` और `subtract` डाला गया है। हमें सुनिश्चित करना होगा कि ये डाले गए ऑपरेशन्स सही तरीके से काम कर रहे हैं।
+
+इसके लिए, हम निम्नलिखित रूप में टेस्ट कोड लिख सकते हैं:
 
 ```Ruby
-# test/calculator_test.rb
-require "minitest/autorun"
-require_relative "../calculator"
+require 'minitest/autorun'
 
-class CalculatorTest < Minitest::Test
+class TestCalculator < Minitest::Test
   def setup
-    @calculator = Calculator.new
+    @calc = Calculator.new
   end
 
   def test_add
-    assert_equal 5, @calculator.add(2, 3), "अनुमानित परिणाम 5 होना चाहिए लेकिन असली परिणाम #{@calculator}"
+    assert_equal 5, @calc.add(2, 3)
   end
 
   def test_subtract
-    assert_equal 2, @calculator.subtract(5, 3), "अनुमानित परिणाम 2 होना चाहिए लेकिन असली परिणाम #{@calculator}"
+    assert_equal 1, @calc.subtract(3, 2)
   end
 end
 ```
 
-सामान्य स्थितियों में हम `assert_equal` में दो अर्ग्युमेंट पर्याप्त होते हैं: आपकी अनुमानित परिणाम और आपकी तय की गई सीमा। यदि अनुमानित परिणाम और असली परिणाम में कोई अंतर नहीं है, तो टेस्ट पास हो जाएगा। अन्यथा, यह विफल हो जाएगा और पास किए गए आउटपुट में
+जैसा कि आप देख सकते हैं, हमने `Minitest::Test` को अपने `TestCalculator` क्लास का एक उपयोग किया है। इससे, हमें `setup` अभिव्यक्ति को अपनी क्लास में जोड़ना होगा जो हर टेस्ट की सुरुआत में दोबारा उपयोग किए गए अभिव्यक्तियों को बनाता है।
+
+फिर, हमें प्रत्येक `test` अभिव्यक्ति में एक `assert_equal` अभिव्यक्ति को लिखना होगा जो आशा करता है कि दी गई मूल्य परिणाम

@@ -1,55 +1,44 @@
 ---
-title:                "Elixir: Calcul d'une date future ou passée"
+title:                "Elixir: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "Elixir"
-category:             "Dates and Times"
+category:             "Elixir"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/elixir/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
-# Pourquoi
+## Pourquoi
 
-La capacité de calculer une date dans le futur ou le passé est très utile en programmation, car elle permet de manipuler et de gérer efficacement les dates. Cela peut être utile pour créer des rappels, des événements futurs ou des validations de date dans une application.
+Si vous travaillez sur des projets informatiques, vous savez peut-être déjà à quel point les dates peuvent être importantes. Mais parfois, il est nécessaire de gérer des dates dans le futur ou dans le passé. Dans cet article, nous allons parler de la façon de calculer une date dans le futur ou dans le passé en utilisant Elixir.
 
 ## Comment faire
 
-Pour calculer une date dans le futur ou le passé en Elixir, nous pouvons utiliser la fonction `Date.add/2` pour ajouter un nombre de jours, de semaines, de mois ou d'années à une date donnée. Nous pouvons également utiliser la fonction `Date.diff/2` pour calculer la différence entre deux dates.
-
-Voici un exemple de code pour calculer une date dans le futur en ajoutant 5 jours à la date actuelle:
+Pour commencer, nous allons utiliser la fonction `Calendar.add/3` pour ajouter ou soustraire une quantité spécifiée de temps à une date donnée. Par exemple, si nous voulons calculer la date dans 7 jours à partir d'aujourd'hui, nous pouvons utiliser `Calendar.add(Date.utc_today(), 7, :days)`. Cela utilisera la date UTC actuelle comme point de départ et ajoutera 7 jours.
 
 ```Elixir
-current_date = Date.utc_today()
-new_date = Date.add(current_date, 5, :days)
-IO.puts "La date dans 5 jours sera le #{Date.to_iso8601(new_date)}"
+date_future = Calendar.add(Date.utc_today(), 7, :days)
+IO.puts("Date dans 7 jours: #{date_future}")
 ```
 
-La sortie de ce code sera:
-
-```
-La date dans 5 jours sera le 2022-01-31
-```
-
-## Plongée en profondeur
-
-En plus d'ajouter ou de soustraire un certain nombre de jours, de semaines, de mois ou d'années à une date, nous pouvons également utiliser des fonctions telles que `Date.beginning_of_week/2` et `Date.end_of_day/2` pour obtenir la date du début ou de la fin d'une semaine ou d'un jour spécifique.
-
-Par exemple, nous pouvons utiliser `Date.beginning_of_week/2` pour obtenir la date du début de la semaine actuelle et `Date.end_of_day/2` pour obtenir la date de la fin de la journée actuelle.
+Cela renverra `Date dans 7 jours: 20XX-XX-XX`, en fonction de la date actuelle. De même, si vous voulez calculer une date dans le passé, il suffit de spécifier un nombre négatif comme deuxième argument dans `Calendar.add/3`.
 
 ```Elixir
-start_of_week = Date.beginning_of_week(Date.utc_today())
-end_of_day = Date.end_of_day(Date.utc_today())
-
-IO.puts "La semaine a commencé le #{Date.to_iso8601(start_of_week)} et se termine à #{Date.to_iso8601(end_of_day)}"
+date_passé = Calendar.add(Date.utc_today(), -3, :months)
+IO.puts("Date il y a 3 mois: #{date_passé}")
 ```
 
-La sortie de ce code sera:
+Cela renverra `Date il y a 3 mois: 20XX-XX-XX`, encore une fois en fonction de la date actuelle. Vous pouvez également utiliser d'autres unités de temps telles que `:weeks`, `:hours` ou `:minutes` en fonction de vos besoins.
 
-```
-La semaine a commencé le 2022-01-24 et se termine à 2022-01-30T23:59:59Z
-```
+## En profondeur
 
-# Voir aussi
+Si vous voulez plonger un peu plus profondément, Elixir dispose d'une fonctionnalité utile appelée les "timex intervals". Timex est une bibliothèque de gestion des dates et des heures qui étend les fonctionnalités de base d'Elixir. En utilisant Timex, vous pouvez également facilement calculer des dates dans le futur ou dans le passé en fonction des intervalles de temps.
 
-- Documentation officielle d'Elixir pour la manipulation de dates : https://hexdocs.pm/elixir/Date.html
-- Tutoriel vidéo sur le calcul de dates en Elixir : https://www.youtube.com/watch?v=chwSjzPHKxM
-- Article de blog sur les différentes façons de manipuler les dates en Elixir : https://medium.com/cameron-nokes/3-ways-to-manipulate-dates-in-elixir-abb69d0ee670
+Par exemple, si vous voulez calculer la date qui correspond à un an à partir de maintenant, vous pouvez utiliser `Timex.add(Duration.from_years(1))` pour créer un intervalle d'un an et l'ajouter à la date actuelle. Timex offre également des fonctionnalités avancées pour gérer les fuseaux horaires, les horaires d'été et bien plus encore.
+
+## Voir aussi
+
+- [Documentation sur les fonctions de date d'Elixir](https://hexdocs.pm/elixir/Calendar.html#add/3)
+- [Documentation sur Timex](https://hexdocs.pm/timex/Timex.html)
+- [Tutoriel sur le calcul des dates avec Elixir](https://blog.appsignal.com/2016/12/20/working-with-dates-and-times-in-elixir.html)

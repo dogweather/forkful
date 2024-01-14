@@ -1,31 +1,41 @@
 ---
-title:                "C#: 写入标准错误"
+title:                "C#: 向标准错误输出的写法"
+simple_title:         "向标准错误输出的写法"
 programming_language: "C#"
-category:             "Files and I/O"
+category:             "C#"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c-sharp/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：为什么有人会选择写入标准错误？可能是为了调试程序或者记录程序运行时的错误信息。无论是哪种情况，都需要使用C#中的标准错误输出功能。
+## 为什么要将错误信息写入标准错误
 
-如何：在C#中，可以使用“Console.Error.WriteLine()”来将信息写入标准错误。下面是一个简单的示例代码和输出：
+C#是一种常用的编程语言，它具有强大的功能和灵活的特性。其中一个重要的功能就是可以将错误信息写入标准错误，这对于调试程序非常有用。通过将错误信息写入标准错误，开发者可以更容易地追踪程序中的错误，提高代码的可读性和可维护性。
+
+## 如何进行错误信息写入
+
+要将错误信息写入标准错误，我们需要使用标准输出流的 `Console.Error` 方法。首先，我们需要使用 `try-catch` 块来捕获程序中可能发生的错误。然后，在 `catch` 块中，使用 `Console.Error.WriteLine()` 方法来将对应的错误信息输出到标准错误流中。下面是一个简单的示例代码：
 
 ```C#
-string error = "发生了一个错误！";
-Console.Error.WriteLine(error);
+try
+{
+    // 代码块
+}
+catch(Exception ex)
+{
+    Console.Error.WriteLine("发生了一个错误：" + ex.Message);
+}
 ```
 
-输出：
-```
-发生了一个错误！
-```
+当程序运行时，如果发生了错误，错误信息就会被输出到标准错误流中。这样，我们就可以更方便地定位和解决问题。
 
-更深入地了解：写入标准错误是一个重要的程序开发技巧，可以帮助我们更有效地调试和排查错误。通过写入标准错误，我们可以在程序运行时获取错误信息，并定位错误发生的位置。另外，我们还可以结合其他工具来处理和分析标准错误的信息，从而更好地优化程序。
+## 深入了解错误信息写入
 
-还有什么：如果想要进一步了解如何使用C#中的标准错误输出功能，可以参考以下链接：
-- [C# Console类的使用方法](https://www.runoob.com/csharp/csharp-console-application.html)
-- [C#中的标准错误输出功能](https://docs.microsoft.com/zh-cn/dotnet/api/system.console.error?view=net-5.0)
-- [如何调试C#程序](https://www.cnblogs.com/loveis715/p/6480309.html)
+除了在 `catch` 块中直接输出错误信息外，我们还可以使用 `StringBuilder` 类来构建错误信息，并最终统一输出。这样可以更灵活地控制输出的格式和内容。另外，在大型项目中，我们也可以使用自定义的日志库来处理错误信息的输出，提高代码的可维护性和可扩展性。
 
-另外，建议阅读Markdown语法的相关教程，以便更好地编写文档。加油！
+## 相关链接
+
+- [C#文档中关于Console类的说明](https://docs.microsoft.com/en-us/dotnet/api/system.console?view=net-5.0)
+- [C#文档中关于控制台输出的说明](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/main-and-command-args/walkthrough-displaying-command-line-arguments)
+- [C#文档中关于异常处理的说明](https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/exceptions/)

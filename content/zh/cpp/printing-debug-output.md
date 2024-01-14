@@ -1,43 +1,42 @@
 ---
 title:                "C++: 打印调试输出"
+simple_title:         "打印调试输出"
 programming_language: "C++"
-category:             "Testing and Debugging"
+category:             "C++"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/cpp/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-为什么：调试输出是C++编程中必不可少的一部分，它可以帮助程序员找出代码中的错误，提高程序的可读性和可维护性。
+为什么：为什么会使用打印调试输出？因为打印调试输出是帮助程序员调试代码的重要工具，它可以帮助我们发现错误并进行修复。
 
-如何实现：在C++中，我们可以使用cout语句来输出调试信息。例如，在下面的代码块中，我们使用cout来打印一个简单的字符串信息，并在屏幕上显示出来。
-
+如何：首先，我们需要在代码中插入打印语句，使用cout语句可以打印出特定的变量值，如下所示：
 ```C++
-#include <iostream>
-using namespace std;
-
-int main() {
-    cout << "Hello World!" << endl;
-    return 0;
+int a = 10;
+cout << "a的值为：" << a << endl;
+```
+输出结果为：“a的值为：10”。同时，还可以使用debug宏来控制打印语句的显示，如下所示：
+```C++
+#define DEBUG 1
+int a = 10;
+if (DEBUG) {
+  cout << "a的值为：" << a << endl;
 }
 ```
+当DEBUG为1时，打印语句会显示在控制台上，当DEBUG为0时，打印语句则会被忽略。这样可以在需要调试时打印输出，而在正式运行时则不会有额外的输出。
 
-输出结果为：
-
-```
-Hello World!
-```
-
-深入探讨：除了简单的字符串输出，我们还可以使用cout打印变量的值、数据类型、数组、结构体等各种调试信息。我们也可以使用endl来换行，使用setw来设置输出宽度，使用setprecision来控制输出精度等等。总的来说，cout语句提供了很多灵活的选项来帮助我们对程序进行调试。
-
-另外，我们也可以使用cerr来输出错误信息，它会在控制台显示红色的文字，并且会在程序崩溃时提供更详细的错误信息，帮助我们更快地找出问题所在。
-
-和cout类似的还有clog，它可以用来输出程序运行时的一般性信息。和cerr不同的是，clog的信息会显示为黄色的文字，用来区分不同类型的输出信息。
-
-总的来说，调试输出是一个非常重要的工具，它可以帮助我们更快地找出程序中的问题，并且提高我们的开发效率。
+深入探讨：打印调试输出的另一个重要作用是帮助我们理解程序的执行过程。通过观察打印输出的结果，我们可以更容易地理解程序的运行逻辑，从而更容易定位错误。另外，打印调试输出也可以帮助我们优化代码，比如可以打印出循环或递归过程中的变量值，从而找出可能存在的性能问题。
 
 另请参阅：
 
-- [C++ Output](https://www.programiz.com/cpp-programming/input-output)
-- [C++ Debugging](https://www.tutorialspoint.com/cplusplus/cpp_debugging.htm)
-- [The Power of Debugging: A Guide to Becoming a Better Programmer](https://www.codingblocks.net/blog/the-power-of-debugging/)
-- [常见的C++编程错误及其解决方法](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Common_CSS_Questions)
+- [C++调试技巧](https://blog.csdn.net/qlciou/article/details/13036135)
+- [使用cout语句输出调试信息](https://www.cnblogs.com/52php/p/3609664.html)
+- [使用debug宏来控制打印输出](https://www.lkmake.com/2017/05/04/cpp-print-debug-view/index.html)
+
+参阅：
+
+有用的链接：
+
+- [Markdown基本语法](https://guides.github.com/features/mastering-markdown/)
+- [C++参考手册](https://msdn.microsoft.com/zh-cn/library/wzxaf3ay.aspx)

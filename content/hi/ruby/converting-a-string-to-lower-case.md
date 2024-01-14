@@ -1,55 +1,35 @@
 ---
-title:                "Ruby: स्ट्रिंग को लोअर केस में बदलना"
+title:                "Ruby: स्ट्रिंग को लोअर केस में रूपांतरित करना"
+simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरित करना"
 programming_language: "Ruby"
-category:             "Strings"
+category:             "Ruby"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/ruby/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-##Kyu: 
+## क्यों
+यह पोस्ट आपको बताएगी कि रूबी में स्ट्रिंग को लोअर केस में कन्वर्ट कैसे किया जाता है और इसका क्या उपयोग हो सकता है।
 
-Kisi bhi programming language mein, hum string manipulation se waqif hote hai. Kabhi kabhi, hume upper case ke saath problem ho sakti hai, jaise ki website URLs ko lower case mein convert karna ya fir passwords ko case-sensitive banane ke liye. Iska ek solution hai string ko lower case mein convert karne ka. Is blog post mein hum is process ko Ruby programming language ke through explore karenge.
-
-##Kaise Kare:
-
-```Ruby
-puts "Hello World!".downcase
-```
-
-```
-irb(main):001:0> puts "Hello World!".downcase
-hello world!
-=> nil
-```
-
-Jaisa ki humne dekha, `downcase` method humare string ko lower case mein convert kar deta hai. Isko hum variable mein bhi store kar sakte hai:
+## कैसे करें
+यदि आप रूबी में स्ट्रिंग को लोअर केस में कन्वर्ट करना चाहते हैं, तो आपको सबसे पहले String ऑब्जेक्ट को create करना होगा। उसके बाद String ऑब्जेक्ट के `.downcase` method का इस्तेमाल करके आप स्ट्रिंग को लोअर केस में कन्वर्ट कर सकते हैं। नीचे दिए गए कोड ब्लॉक में आपको इसका एक उदाहरण दिया गया है। 
 
 ```Ruby
-my_string = "Hindi Blog Post".downcase
-puts my_string
+string = "HELLO WORLD"
+puts string.downcase
 ```
 
-```
-irb(main):001:0> my_string = "Hindi Blog Post".downcase
-=> "hindi blog post"
-irb(main):002:0> puts my_string
-hindi blog post
-=> nil
+आपको निम्नलिखित आउटपुट मिलेगा:
+
+```bash
+hello world
 ```
 
-Is tarah hum apne strings ko aasani se lower case mein convert kar sakte hai.
+## गहराई में खोज
+स्ट्रिंग को लोअर केस में कन्वर्ट करने के बारे में और गहराई में जानने के लिए, आपको पहले से ही रूबी में Mutable और Immutable Types के बारे में थोड़ी जानकारी होनी चाहिए। Immutable डेटा types बिना कोई changes किये बनाया जा सकता है, जबकि Mutable types को लोग उनमें changes कर सकते हैं। जैसा कि हम जानते हैं कि स्ट्रिंग Immutable types के उदाहरण है। जबकि मूल उदाहरण जैसे arrays और hashes Mutable types होते हैं। 
 
-##Gehraai Mein Jaae:
+इसलिए, स्ट्रिंग को लोअर केस में कन्वर्ट करने से पहले, आपको स्ट्रिंग को `.downcase` method का इस्तेमाल करके किसी अन्य उपकरण में assign करना हो सकता है जहां आपको Immutable types की आवश्यकता होती है।
 
-Ruby mein `downcase` method ka use karne se pehle, hume kuch important baatein dhyaan mein rakhni chahiye. Sabse pehle, ye method sirf strings ko lower case mein convert kar sakta hai. Agar hum isko numbers, symbols ya spaces ke saath upyog karenge to iska koi effect nahi hoga. Isliye, humare string ke content ko dhyaan se dekhna hoga.
-
-Ek aur important point hai ki `downcase` method original string ko change nahi karta hai. Balki woh ek naya string return karta hai. Isliye, dyan rahe original string ka value same hi rahega.
-
-##Dekhiye Agar:
-
-Agar aapko sorting ya searching ke liye lower case string chahiye, toh aap `downcase` method ka use kar sakte hai. Iske alawa, aap password security aur data validation mein bhi iska upyog kar sakte hai.
-
-##Aur Padhiye:
-
-- [Ruby String Documen
+## अधिक जानकारी के लिए
+स्ट्रिंग को लोअर केस में कन्वर्ट करना हमेशा महत्वपूर्ण होता है क्योंकि यह डेटा

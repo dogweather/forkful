@@ -1,29 +1,39 @@
 ---
-title:                "TypeScript: Перетворення рядка у нижній регістр"
+title:                "TypeScript: Перетворення рядка в нижній регістр"
+simple_title:         "Перетворення рядка в нижній регістр"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/typescript/converting-a-string-to-lower-case.md"
 ---
 
 {{< edit_this_page >}}
 
-## Для чого
-У конвертацію рядка в нижній регістр є кілька причин. Одна з них - зручність при порівнянні рядків, які утворюються з різних джерел даних. Також, в деяких мовних правилах вимагається використання нижнього регістру, що робить конвертацію необхідною.
+Why: Чому
 
-## Як це зробити
+Уявіть, що у вас є програма, яка отримує введений користувачем текст і повинна обробити його у певному форматі. Однак, якщо користувач введе текст у верхньому регістрі, це може спричинити проблеми при подальшій обробці. Тому, перетворення рядка до нижнього регістру може бути корисним кроком для забезпечення правильної роботи вашої програми.
+
+How To: Конвертування рядка до нижнього регістру досить просте в TypeScript. Просто використайте метод `toLowerCase ()` вбудованого об'єкта `String` для зміни всіх символів рядка на малі літери.
+
 ```TypeScript
-let str: string = "Hello, World!"
-let lowerCaseStr: string = str.toLowerCase();
-console.log(lowerCaseStr);
+const string = "Привіт, Я TypeScript Рядок";
+
+console.log(string.toLowerCase());
+// виведе "привіт, я typescript рядок"
 ```
-Вище наведений код показує приклад перетворення рядка в нижній регістр. Виклик функції `toLowerCase()` поверне копію рядка, де всі символи будуть у нижньому регістрі. У випадку з кодом вище, в консолі буде виведено `hello, world!`.
 
-## Глибоке дослідження
-Конвертація рядка в нижній регістр використовує вбудовану функцію `toLowerCase()`, яка є частиною стандартного об'єкту `String` TypeScript. Ця функція не тільки буде перетворювати літери латинського алфавіту, а й буде працювати з будь-якою іншою мовою, в якій підтримується нижній регістр.
+Deep Dive: Починаючи з TypeScript 4.1, можна використовувати ключове слово `as const` для додаткової безпеки при конвертуванні рядків до нижнього регістру. Це забезпечує, що тип рядка не буде змінений після конвертування.
 
-Найважливішою частиною конвертації є використання вбудованої функції замість писання власної логіки. Це дозволяє ефективно і швидко обробляти великі об'єми даних і забезпечує більшу стабільність.
+```TypeScript
+const string = "Привіт, я TypeScript Рядок" as const;
 
-## Дивіться також
-Щоб отримати більше інформації про вбудовані функції TypeScript, перегляньте офіційну документацію з цієї теми:
-- [String.toLowerCase()](https://www.typescriptlang.org/docs/handbook/strings.html#toLowerCase)
-- [Стандартні об'єкти](https://www.typescriptlang.org/docs/handbook/standard-library.html)
+console.log(string.toLowerCase());
+// виведе "привіт, я typescript рядок"
+
+console.log(string.toUpperCase());
+// отримаємо помилку, оскільки тип "string" був збережений як постійний
+```
+
+See Also (Дивись також):
+- [Метод toLowerCase() в JavaScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Огляд TypeScript 4.1](https://devblogs.microsoft.com/typescript/announcing-typescript-4-1/)

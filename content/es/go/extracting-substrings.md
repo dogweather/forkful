@@ -1,72 +1,50 @@
 ---
 title:                "Go: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué deberías extraer subcadenas en Go?
+## ¿Por qué extraer subcadenas en Go?
 
-Extraer subcadenas es una operación común en la programación, especialmente cuando se trabaja con cadenas de texto largas. En Go, es una tarea sencilla que puede ahorrar tiempo y mejorar la eficiencia de tu código.
+Extraer subcadenas, o partes de una cadena, puede ser útil en muchas situaciones. Por ejemplo, si tiene una cadena larga y solo necesita una parte específica de ella, extraer una subcadena le permitirá manejarla de manera más eficiente.
 
 ## Cómo extraer subcadenas en Go
 
-Para extraer una subcadena en Go, utilizamos la función `Substr()` de la librería `strings` y le pasamos como argumentos la cadena original, el índice de inicio y la longitud de la subcadena deseada. Por ejemplo:
+La forma más sencilla de extraer una subcadena en Go es usando el operador de sección `[:]`. Este operador permite especificar una sección de una cadena utilizando índices numéricos.
+
+Por ejemplo, si tenemos una cadena llamada `cadena` y queremos extraer la letra "h" en la posición 5, podemos usar `cadena[5:6]`. El resultado será una nueva cadena que contiene solo la letra "h".
+
+Para mostrar cómo funciona esto en código, aquí hay un ejemplo de cómo extraer una subcadena de un nombre completo y mostrar solo el apellido:
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-	str := "¡Hoy es un buen día para aprender Go!"
-	substr := strings.Substr(str, 9, 8)
-	fmt.Println(substr)
-}
+nombreCompleto := "Sofía Alonso"
+apellido := nombreCompleto[6:]
+fmt.Println(apellido)
 ```
 
-Este código imprimirá "un buen día", ya que empieza en el índice 9 y tiene una longitud de 8 caracteres.
+El resultado será "Alonso" impreso en la consola.
 
-También podemos extraer una subcadena desde un cierto índice hasta el final de la cadena utilizando la función `SubstrFrom()`:
+## Profundizando en la extracción de subcadenas
+
+Además del operador de sección, Go también ofrece la función `Substring()` para extraer subcadenas de manera más específica. Esta función toma dos argumentos: el índice de inicio y la longitud de la subcadena que se desea extraer.
+
+Siguiendo con el ejemplo anterior, si queremos extraer solo "fia" de "Sofía", podemos usar `Substring(2,3)`, lo que significa que queremos comenzar en el tercer carácter (índice 2) y extraer una subcadena de 3 caracteres.
 
 ```Go
-package main
-
-import (
-	"fmt"
-	"strings"
-)
-
-func main() {
-	str := "¡Hoy es un buen día para aprender Go!"
-	substr := strings.SubstrFrom(str, 22)
-	fmt.Println(substr)
-}
+nombreCompleto := "Sofía Alonso"
+subcadena := nombreCompleto.Substring(2,3)
+fmt.Println(subcadena)
 ```
 
-Este código imprimirá "para aprender Go!", ya que empieza en el índice 22 y va hasta el final de la cadena.
-
-Además de estas funciones, también tenemos la opción de utilizar `SubstrBetween()` para extraer una subcadena entre dos índices específicos.
-
-## Un vistazo más profundo a la extracción de subcadenas
-
-Ahora que sabemos cómo utilizar las funciones `Substr()`, `SubstrFrom()` y `SubstrBetween()`, profundicemos un poco más en cómo funcionan estas funciones.
-
-La función `Substr()` toma tres argumentos: la cadena original, el índice de inicio y la longitud de la subcadena. El índice de inicio puede ser negativo, lo que significa que se contará desde el final de la cadena. Por ejemplo, si pasamos un índice de inicio de -5 en lugar de 5, extraería los últimos 5 caracteres de la cadena.
-
-La función `SubstrFrom()` toma dos argumentos: la cadena original y el índice de inicio. En este caso, si el índice de inicio es negativo, se extraerán los caracteres desde ese índice hasta el final de la cadena.
-
-La función `SubstrBetween()` también toma dos argumentos: la cadena original y dos índices. En este caso, ambos índices pueden ser negativos, lo que proporciona una mayor flexibilidad al extraer subcadenas.
-
-En resumen, la extracción de subcadenas en Go es una tarea sencilla gracias a las funciones `Substr()`, `SubstrFrom()` y `SubstrBetween()`. Con solo unos pocos parámetros, podemos extraer fácilmente partes específicas de una cadena de texto.
+El resultado será "fia" impreso en la consola.
 
 ## Ver también
 
-- Documentación oficial de la librería `strings` en Go: https://golang.org/pkg/strings/
-- Tutorial en línea sobre la extracción de subcadenas en Go: https://www.tutorialspoint.com/golang/golang_strings.htm
-- Video de YouTube que muestra ejemplos prácticos de extracción de subcadenas en Go: https://www.youtube.com/watch?v=XXnZC9ugUls
+- [Documentación oficial de Go sobre el operador de sección](https://golang.org/ref/spec#Slice_expressions)
+- [Documentación oficial de Go sobre la función Substring()](https://golang.org/pkg/strings/#Substring)
+- [Ejemplos de uso de subcadenas en Go](https://gobyexample.com/slices)

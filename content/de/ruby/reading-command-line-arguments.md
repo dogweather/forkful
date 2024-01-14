@@ -1,43 +1,55 @@
 ---
-title:                "Ruby: Das Lesen von Befehlszeilenargumenten"
+title:                "Ruby: Lesen von Befehlszeilenargumenten"
+simple_title:         "Lesen von Befehlszeilenargumenten"
 programming_language: "Ruby"
-category:             "Files and I/O"
+category:             "Ruby"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/ruby/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-# Warum
+## Warum
 
-Das Lesen von Befehlszeilenargumenten ist eine äußerst nützliche Fähigkeit, die Ihnen als Ruby Programmierer helfen kann, effizientere und vielseitigere Anwendungen zu schreiben. In diesem Blog-Beitrag werden wir uns mit der Grundlage des Lesens von Befehlszeilenargumenten beschäftigen und Ihnen einige Tipps geben, wie Sie dies in Ihren Projekten implementieren können.
+Das Lesen von Befehlszeilenargumenten ist eine wichtige Fähigkeit für jeden, der Ruby programmiert und auf der Kommandozeile arbeitet. Durch die Verwendung von Befehlszeilenargumenten kann ein Ruby-Programm mit variablen oder benutzerdefinierten Eingaben ausgeführt werden, ohne dass der Code selbst geändert werden muss. Es ist auch ein effektiver Weg, um die Interaktion mit dem Benutzer zu ermöglichen.
 
-# Wie
+## Wie
 
-Um Befehlszeilenargumente in Ihrem Ruby-Code zu lesen, müssen Sie die `ARGV`-Variable verwenden. Diese beinhaltet alle durch Leerzeichen getrennten Argumente, die beim Ausführen Ihres Ruby-Skripts übergeben wurden. Hier ist ein Beispiel, wie Sie auf diese Variable zugreifen können:
+Die Verwendung von Befehlszeilenargumenten in Ruby ist sehr einfach. Zunächst muss der "ARGV" Array verwendet werden, um die Argumente aufzunehmen, die beim Aufruf des Programms übergeben werden. Ein Beispielcode dafür sieht so aus:
 
-```ruby
-puts ARGV[0] # gibt das erste Argument aus
-puts ARGV[1] # gibt das zweite Argument aus
+```Ruby
+# Beispielcode für Befehlszeilenargumente
+puts "Hallo, #{ARGV[0]}!"
 ```
 
-Angenommen, Sie haben ein Ruby-Skript namens `greetings.rb`, das Sie wie folgt ausführen: `ruby greetings.rb Hallo Welt`. Der obige Code würde dann "Hallo" und "Welt" als Ausgabe ausgeben. Beachten Sie, dass das erste Argument in der `ARGV`-Variable an Index 0 gespeichert ist.
+Wenn das obige Beispiel als "ruby beispiel.rb Welt" aufgerufen wird, wird es "Hallo, Welt!" ausgeben. Das erste Argument nach dem Programmnamen wird demnach in das Programm übergeben.
 
-Sie können auch eine Schleife verwenden, um alle Argumente auszugeben:
+## Deep Dive
 
-```ruby
-ARGV.each do |arg|
-  puts arg
-end
+In Ruby gibt es auch die Möglichkeit, Optionen und Flags über die Befehlszeilenargumente zu übergeben. Diese können mit der Ruby "OptionParser" Klasse einfach gehandhabt werden. Im folgenden Beispielcode werden wir die Option "-u" für den Benutzernamen und die Option "-p" für das Passwort verwenden:
+
+```Ruby
+# Beispielcode für Befehlszeilenargumente mit Optionen
+require 'optparse'
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: beispiel.rb [options]"
+  opts.on("-u", "--user USER", "Benutzername") do |u|
+    options[:user] = u
+  end
+  opts.on("-p", "--password PASS", "Passwort") do |p|
+    options[:password] = p
+  end
+end.parse!
+
+puts "Benutzername: #{options[:user]}"
+puts "Passwort: #{options[:password]}"
 ```
 
-# Tieferer Einblick
+Wenn das obige Beispiel als "ruby beispiel.rb -u Max -p geheim" aufgerufen wird, wird es "Benutzername: Max" und "Passwort: geheim" ausgeben.
 
-Es gibt einige zusätzliche Dinge, die Sie beim Lesen von Befehlszeilenargumenten beachten sollten. Zum Beispiel können Sie die Anzahl der übergebenen Argumente überprüfen, indem Sie die `ARGV.length`-Methode verwenden. Sie können auch Argumente anhand ihres Datentyps überprüfen und entsprechende Aktionen ausführen.
+## Siehe auch
 
-Einige gängige Muster, die in der Ruby-Community verwendet werden, sind das Verwenden von Option Flags (z.B. `--help` oder `-v`) und die Verwendung von `OptionParser` zum Parsen von Argumenten. Eine tiefere Beschäftigung mit diesen Konzepten ist jedoch über den Rahmen dieses Blog-Beitrags hinaus.
-
-# Siehe auch
-
-- Offizielle Dokumentation zu `ARGV` von Ruby: https://ruby-doc.org/core-2.7.1/ARGV.html
-- Ein Tutorial zum Lesen von Befehlszeilenargumenten in Ruby: https://www.rubyguides.com/2018/05/argv-argument-vector/
-- Ein Git-Projekt mit Beispielen für die Verwendung von OptionParser: https://github.com/wbailey/command_line_args_ruby
+- [Ruby Dokumentation zu Befehlszeilenargumenten](https://ruby-doc.org/core-2.7.1/ARGV.html)
+- [Ruby Dokumentation zu OptionParser](https://ruby-doc.org/stdlib-2.7.1/libdoc/optparse/rdoc/OptionParser.html)
+- [Tutorial zu Befehlszeilenargumenten in Ruby](https://www.rubyguides.com/2019/02/ruby-command-line-arguments/)

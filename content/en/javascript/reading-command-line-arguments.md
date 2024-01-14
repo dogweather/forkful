@@ -1,49 +1,60 @@
 ---
 title:                "Javascript recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "Javascript"
-category:             "Files and I/O"
+category:             "Javascript"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/javascript/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+##Why
 
-As a Javascript programmer, you may have come across the term "command line arguments" before. But why exactly would you need to read these arguments in your code? The answer is simple - command line arguments allow you to pass specific inputs to your program when it is executed. This can be useful for customizing your program's behavior or handling different scenarios. In this blog post, we'll explore how to read command line arguments in Javascript and how it can benefit your programming.
+Have you ever wanted to create a Javascript program that can be run through the command line? Or maybe you have come across a situation where you needed to pass specific values or options to your program before running it. In both cases, having the ability to read command line arguments can be extremely useful.
 
-## How To
+##How To
 
-Reading command line arguments in Javascript can be done using the `process.argv` property. This property is an array that contains all the arguments passed to your program in the command line. Let's take a look at an example:
+Reading command line arguments in Javascript is actually quite simple. All you need is the `process.argv` property, which is available in both Node.js and browser environments. `process.argv` is an array that stores all the arguments passed to a program through the command line.
 
-```Javascript
-// Our program to read and display command line arguments
-console.log(process.argv)
-
-// Output when executing `node index.js firstArg secondArg`
-// [ 'node', '/path/to/file/index.js', 'firstArg', 'secondArg' ]
-```
-
-As you can see, the first two elements of the `process.argv` array are the path to the node executable and the path to the current file. The remaining elements are the arguments passed in the command line, in the order they were entered. You can access these arguments using array indexing, starting from the third element. Let's see another example where we pass in a number as an argument and perform some operations on it:
+Let's take a look at an example. Suppose we have a program called `divider.js` which takes in two numbers and divides them, returning the result. We can pass these two numbers as command line arguments when running the program:
 
 ```Javascript
-// Our program to read and manipulate command line arguments
-const num = parseInt(process.argv[2]) // converting argument from string to integer
-const square = num * num // calculating the square
-console.log(`The square of ${num} is ${square}`) // displaying the result
+// divider.js
 
-// Output when executing `node index.js 5`
-// The square of 5 is 25
+let num1 = process.argv[2]; // first argument
+let num2 = process.argv[3]; // second argument
+
+let result = num1 / num2;
+
+console.log("The result is: " + result);
 ```
 
-You can even pass in multiple arguments and make use of conditional statements to handle different scenarios. The possibilities are endless! Experiment with different inputs and see what you can come up with.
+If we run this program in the command line with the command `node divider.js 10 5`, the output will be `The result is: 2`. Here, `process.argv[0]` will be the path to the Node.js binary, `process.argv[1]` will be the path to the script (`divider.js`), `process.argv[2]` will be `10`, and `process.argv[3]` will be `5`.
 
-## Deep Dive
+We can also pass in multiple arguments:
 
-Apart from using `process.argv`, there are other methods to read command line arguments in Javascript. One of them is using a popular library called `yargs`. This library provides a more robust and user-friendly way to handle command line arguments by allowing you to specify options and flags for your program.
+```Javascript
+// greetings.js
 
-You can also validate the arguments passed using `process.argv` or `yargs` by checking their data types and values. This can help prevent unexpected errors and improve the overall stability of your program.
+let name = process.argv[2]; // first argument
+let age = process.argv[3]; // second argument
 
-## See Also
+console.log("Hello " + name + "! You are " + age + " years old.");
+```
 
-- [Official Node.js documentation on process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- [Yargs documentation](https://www.npmjs.com/package/yargs)
+Running `node greetings.js John 25` will output `Hello John! You are 25 years old.`. Here, `process.argv[0]` and `process.argv[1]` will be the same as the previous example, while `process.argv[2]` will be `John` and `process.argv[3]` will be `25`.
+
+##Deep Dive
+
+There are a few things to keep in mind when reading command line arguments. Firstly, all the arguments are treated as strings, so you need to convert them to the desired data type (e.g. using `parseInt()` for numbers). Secondly, if there are spaces in an argument, it needs to be surrounded by double quotes when passed in the command line (e.g. `node program.js "string with spaces"`). Finally, if you need to pass in a flag (e.g. `--verbose`), you can check for its existence by using `process.argv.includes("--verbose")` which will return a boolean value.
+
+##See Also
+
+Here are some helpful resources for further reading on working with command line arguments in Javascript:
+
+- [Node.js Documentation on process.argv](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+- [Commander.js - A popular library for building command line interfaces in Node.js](https://www.npmjs.com/package/commander)
+- [Getting Started with Command Line Arguments in Javascript](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-node-js)
+
+Now that you know how to read command line arguments, you can incorporate this knowledge into your Javascript programs and make them even more versatile. Happy coding!

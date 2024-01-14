@@ -1,7 +1,9 @@
 ---
-title:                "C++: Stora bokstäver i en sträng"
+title:                "C++: Kapitalisera en sträng"
+simple_title:         "Kapitalisera en sträng"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/capitalizing-a-string.md"
 ---
 
@@ -9,40 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att konvertera en sträng till stora bokstäver är en vanlig operation inom programmering. Det kan vara användbart för att göra texten mer läsbar eller för att jämföra strängar med lika bokstäver oavsett storlek.
+I denna bloggpost kommer vi att titta på hur man kan förkapa en sträng i C ++. Det är en vanlig uppgift som utvecklare stöter på när de arbetar med textdata. Att förkapa en sträng innebär att göra det första bokstaven i varje ord i strängen till en stor bokstav. Detta kan vara användbart när man vill formatera data eller när man vill ha en enhetlig presentation av information.
 
-## Hur man gör det
+## Hur man gör
+
+För att förkapa en sträng i C ++ måste vi först inkludera standardbiblioteket `string` som ger oss tillgång till funktioner för strängmanipulering. Sedan behöver vi en variabel som innehåller den sträng som vi vill förkapa. Vi kan använda funktionen `toupper()` för att göra om den första bokstaven i strängen till en stor bokstav. Sedan kan vi använda en lökloop för att gå igenom alla bokstäver i strängen och förkapa dem. 
+
+Här är en kodexempel som visar detta steg för steg:
 
 ```C++
-#include <iostream> //inkluderar standardbiblioteket för in- och utmatning
-#include <string> //inkluderar biblioteket för strängar
+#include <iostream>
+#include <string>
+
 using namespace std;
 
 int main() {
-    string str = "hej världen";
-    for(int i=0;i<str.length();i++){ //loopar igenom varje tecken i strängen
-        if (str[i]>=97 && str[i]<=122){ //kollar om tecknet är en liten bokstav
-            str[i] = str[i]-32; //konverterar det till versal genom att subtrahera 32 från det
-        }
+  // Här skapar vi en variabel som innehåller den sträng som vi vill förkapa
+  string text = "hej på dig";
+
+  // Använder toupper() för att göra första bokstaven stor
+  text[0] = toupper(text[0]);
+  
+  // Löploop som förkapar alla bokstäver i strängen
+  for (int i = 0; i < text.length(); i++) {
+    if (text[i] == ' ') {
+      text[i+1] = toupper(text[i+1]);
     }
-    cout << str; //skriver ut den konverterade strängen
-    return 0;
+  }
+
+  // Skriver ut den förkaptulerade strängen
+  cout << text;
+
+  return 0;
 }
-
 ```
 
-Output:
-```
-HEJ VÄRLDEN
-```
+Output: `Hej På Dig`
 
-## Djupdykning
+## Deep Dive
 
-För att förstå varför vi behöver konvertera strängar till stora bokstäver måste vi förstå hur datorer lagrar bokstäver. I datorns interna kodning, ASCII, tilldelas varje bokstav ett numeriskt värde. Till exempel är bokstaven "a" i ASCII-koden 97 och "A" är 65. Det finns en skillnad på 32 mellan bokstäverna i versal och gemener.
+För att förkapa en sträng i C ++ måste vi förstå hur strängar och tecken fungerar i programmering. En sträng är en sekvens av tecken som representerar en text. Varje tecken är egentligen en numerisk kod från ASCII-tabellen som berättar för datorn hur det ska tolkas. I vår kodexempel ovan använder vi funktionen `toupper()` för att ändra den numeriska koden för bokstaven till dess motsvarande stor bokstav.
 
-När vi jämför två strängar i vår kod, kommer de att förstås som olika om ena är skriven med stora bokstäver och andra med små, även om de innehåller samma bokstäver. Därför är det nödvändigt att konvertera strängarna till en enhetlig form för att undvika felaktiga resultat.
+För att först skapa en sträng i C ++ använder vi datastrukturen `string` som är en del av standardbiblioteket. `string`-typen har en mängd olika funktioner som vi kan använda för att manipulera strängar, inklusive `toupper()`.
+
+En viktig sak att tänka på när vi arbetar med strängar i C ++ är att en sträng är en array av tecken. Detta betyder att varje tecken har en plats i minnet och vi kan komma åt enskilda tecken genom att ange deras position i strängen.
 
 ## Se även
 
-- [C++ strings](https://www.learncpp.com/cpp-tutorial/working-with-strings/)
-- [ASCII table](https://www.asciitable.com/)
+- [C ++ - strängdatastruktur](https://www.w3schools.com/cpp/cpp_strings.asp)
+- [ASCII-teckenkoder](https://www.ascii-code.com/)

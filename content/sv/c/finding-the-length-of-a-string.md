@@ -1,7 +1,9 @@
 ---
-title:                "C: Att hitta längden av en sträng"
+title:                "C: Att hitta längden på en sträng"
+simple_title:         "Att hitta längden på en sträng"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/c/finding-the-length-of-a-string.md"
 ---
 
@@ -9,59 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Varför
 
-Att hitta längden på en sträng är en grundläggande del av C-programmering. Det är viktigt att förstå hur detta fungerar eftersom det är en vanlig uppgift inom programmering. Om du vill lära dig mer om C-programmering och förbättra dina färdigheter är det viktigt att ha en god förståelse för hur stränglängd beräknas.
+Att hitta längden på en sträng är en grundläggande operation inom programmering och är användbart för att kunna hantera textdata på ett effektivt sätt. Det är också en viktig färdighet för att kunna manipulera strängar på ett korrekt sätt och undvika buggar i dina program.
 
-## Hur man gör det
+## Hur man gör
 
-För att räkna ut längden på en sträng i C använder vi funktionen `strlen()`. Den här inbyggda funktionen finns i string.h-biblioteket och kan användas genom att inkludera detta bibliotek i början av ditt program.
-
-```C
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-   char str[50];
-   
-   printf("Skriv in en sträng: ");
-   scanf("%s", str);
-   
-   int length = strlen(str);
-   
-   printf("Längden på strängen är %d tecken.", length);
-   
-   return 0;
-}
-```
-
-### Exempel
-
-Låt oss säga att vi vill räkna längden på strängen "Hej C-programmerare!".
+För att hitta längden på en sträng i C-programmering, kan du använda en inbyggd funktion som kallas "strlen". Den här funktionen tar en sträng som argument och returnerar längden på strängen som en heltalsvariabel. Här är ett exempel på hur du kan använda "strlen" i ditt program:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-   char str[50] = "Hej C-programmerare!";
-   
-   int length = strlen(str);
-   
-   printf("Längden på strängen är %d tecken.", length);
-   
-   return 0;
+int main(void) {
+    char str[] = "Hej hej!";
+    int len = strlen(str);
+
+    printf("Längden på strängen är: %d", len);
+
+    return 0;
 }
 ```
 
-Output: Längden på strängen är 19 tecken.
+Output: Längden på strängen är: 8
+
+Som du kan se använde vi "strlen" för att hitta längden på strängen "Hej hej!" och sedan skrev ut resultatet med hjälp av printf-funktionen.
 
 ## Djupdykning
 
-För att förstå hur funktionen `strlen()` fungerar måste vi först förstå hur en sträng lagras i minnet. En sträng i C är en array av tecken som avslutas med ett nolltecken (`'\0'`). Detta nolltecken används för att indikera slutet på strängen. Så när `strlen()`-funktionen körs, räknar den enbart antalet tecken i arrayen tills den når nolltecknet, vilket markerar slutet på strängen. Därför är det viktigt att ha en tillräckligt stor array för att lagra hela strängen och ett extra utrymme för nolltecknet.
+Att förstå hur "strlen" faktiskt fungerar kan hjälpa dig att förbättra din programmeringsförmåga. Grunden för denna funktion är en loop som går igenom varje tecken i strängen tills den når slutet av strängen och räknar antalet tecken längs vägen. Detta är faktiskt en mycket effektiv lösning på problemet, eftersom det endast tar en iteration över strängen för att hitta dess längd, oavsett hur lång eller kort strängen är.
+
+En annan viktig sak att notera är att "strlen" endast räknar tecken som är en del av själva strängen. Det spelar ingen roll om det finns osynliga tecken som null-tecken eller mellanslag på slutet av strängen, eftersom detta inte påverkar längden på själva strängen.
 
 ## Se även
 
-- [C-programmering för nybörjare](https://www.programiz.com/c-programming)
-- [strlen() - C biblioteksreferens](https://www.programiz.com/c-programming/library-function/string.h/strlen) 
-- [C-programmering: Strängar](https://www.studytonight.com/c/strings-in-c.php)
+- [The C Programming Language](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628) av Brian Kernighan och Dennis Ritchie
+- [Fördjupning i C-strängar](https://www.programiz.com/c-programming/c-strings) på Programiz.com
+- [En introduktion till C-programmering](https://www.youtube.com/watch?v=1WJf-KKLn9Y) på YouTube (på svenska)

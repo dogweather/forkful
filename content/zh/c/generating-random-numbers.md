@@ -1,61 +1,73 @@
 ---
 title:                "C: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "C"
-category:             "Numbers"
+category:             "C"
+tag:                  "Numbers"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/c/generating-random-numbers.md"
 ---
 
 {{< edit_this_page >}}
 
-# 为什么要生成随机数？
+## 为什么
 
-随机数在编程中是非常有用的。它们可以用来测试程序、生成随机密码、随机选择列表中的项等等。在本文中，我们将向您展示如何在C语言中生成随机数，以及一些关于随机数生成的深入信息。
+在计算机编程中，生成随机数是一个非常有用的技巧。它可以帮助我们解决一些难题，也可以增加程序的趣味性。无论是在游戏开发、随机算法还是密码学中，随机数都扮演着重要的角色。
 
-## 如何生成随机数
+## 如何
 
-要在C语言中生成随机数，我们需要使用一个叫做`rand()`的函数。这个函数会生成一个0到`RAND_MAX`之间的随机整数。`RAND_MAX`是C语言中预定义的一个宏，代表了随机数的最大取值。为了使用该函数，我们需要在程序的开头加上`#include <stdlib.h>`来引入标准库中的随机数函数。
-
-我们来看一个简单的例子，代码如下所示：
+如果你想在C语言中生成随机数，你可以使用`rand()`函数。首先，需要包含`stdlib.h`头文件。然后，在你需要生成随机数的位置，使用`rand()`函数，并将其赋值给一个变量。例如：
 
 ```C
 #include <stdlib.h>
-#include <stdio.h>
 
 int main() {
-	int randomNumber = rand() % 10; //生成一个0到9之间的随机数
-	printf("%d", randomNumber); //打印随机数
-	return 0;
+    int random_number = rand(); // random_number将会是一个随机数
 }
 ```
 
-运行以上代码，我们会得到一个随机数作为输出。每次运行程序，输出的随机数都会不同。
-
-## 深入了解随机数生成
-
-随机数的生成本质上是一个伪随机数生成的过程。这意味着它不是真正意义上的随机数，而是通过一定的算法来生成看起来随机的数。在C语言中，这个算法就是`rand()`函数内部的算法。
-
-另一个让人感兴趣的问题是如何让随机数返回不同的值。为了实现这样的功能，我们需要使用`srand()`函数来设置随机数种子。只要我们给`rand()`函数提供不同的种子，它就会返回不同的随机数序列。
-
-下面我们来看一个可以实现这一点的例子：
+不过，单单使用`rand()`函数并不能保证每次都生成不同的随机数。为了达到更好的随机性，我们可以先使用`srand()`函数播种随机数发生器，再使用`rand()`函数生成随机数。我们可以使用当前时间作为播种的种子，确保每次生成的随机数都不同。例如：
 
 ```C
 #include <stdlib.h>
-#include <stdio.h>
+#include <time.h>
 
 int main() {
-	for(int i = 0; i < 10; i++) {
-		srand(i); //设置不同的随机数种子
-		int randomNumber = rand() % 10; //生成一个0到9之间的随机数
-		printf("%d", randomNumber); //打印随机数
-	}
-	return 0;
+    // 使用当前时间作为种子，种子只需要设置一次
+    srand(time(0));
+
+    int random_number = rand(); // random_number将会是一个随机数
 }
 ```
 
-运行以上代码，我们会得到10个不同的随机数序列输出，每次运行程序随机数序列都会不同。
+通过使用`srand()`函数，我们可以在程序每次运行时都得到不同的随机数。除此之外，我们还可以使用`rand()`函数的参数来控制随机数的范围。例如，要生成0-9的随机数，可以使用`rand() % 10`，这样得到的结果永远不会超过10。还可以结合`srand()`函数一起使用，如下所示：
 
-# 参考链接
+```C
+#include <stdlib.h>
+#include <time.h>
 
-- [C语言中的随机数生成](https://www.programiz.com/c-programming/examples/generate-random)
-- [随机数生成器原理](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
-- [如何防止随机数重复](https://www.programming9.com/programs/c-programs/316-how-to-avoid-repeating-the-same-random-number)
+int main() {
+    srand(time(0));
+
+    // 生成0-9的随机数
+    int random_number = rand() % 10;
+}
+```
+
+## 深入探究
+
+我们可以看到，生成随机数并不是一件非常复杂的事情。但是，要达到真正的随机性，我们需要更复杂的算法。在计算机科学中，真正的随机数是不存在的，因为计算机都是基于一系列固定的指令来工作的。因此，我们需要使用伪随机数生成算法，来模拟真正的随机性。
+
+伪随机数生成算法需要一系列的参数来产生随机数，我们可以称之为“种子”。种子可以是任何非负整数，但是为了实现更好的随机性，我们往往会使用当前时间、程序运行时间、鼠标的位置等作为种子。
+
+在计算机科学中，有几种流行的伪随机数生成算法，比如线性同余法、梅森旋转算法等。这些算法主要通过一系列迭代运算，来生成伪随机数。
+
+## 参考链接
+
+- [C语言随机数生成示例](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
+- [伪随机数生成算法](https://zh.wikipedia.org/zh-hans/%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0%E7%94%9F%E6%88%90)
+- [随机性和伪随机数算法](https://blog.csdn.net/gc817724278/article/details/5900837)
+
+## 另请参阅
+
+- [C语言学习指南](https://www.runoob.com/cprogramming/c-tutorial.html)
+- [C语言随机数生成函数查看手册](https://www.cplusplus.com/reference/c

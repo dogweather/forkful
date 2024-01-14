@@ -1,7 +1,9 @@
 ---
-title:                "C: Å skrive til standardfeil"
+title:                "C: Skriver til standardfeil"
+simple_title:         "Skriver til standardfeil"
 programming_language: "C"
-category:             "Files and I/O"
+category:             "C"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/c/writing-to-standard-error.md"
 ---
 
@@ -9,35 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å skrive til standard error i C-programmering kan være nyttig når du ønsker å sende feilmeldinger eller annen informasjon til brukeren eller logge dem for feilrapportering. Dette hjelper til med å feilsøke og debugge programmet ditt.
+Det er en essensiell del av programmering å kunne skrive til standard error. Dette gjør det mulig å feilsøke og identifisere problemer under kjøring av programmet ditt. Det er også en måte å kommunisere til brukeren at noe ikke gikk som forventet.
 
 ## Hvordan
 
-For å skrive til standard error i C, kan du bruke funksjonen `fprintf()` og angi `stderr` som filpeker. Her er et eksempel på hvordan du kan skrive til standard error i C:
+Å skrive til standard error i C er enkelt og kan gjøres ved å bruke funksjonen `fprintf()` med `stderr`-parameteren. La oss se på et eksempel:
 
 ```C
 #include <stdio.h>
 
 int main() {
-    fprintf(stderr, "Dette er en feilmelding som skrives til standard error!\n");
-    return 0;
+  int num1, num2;
+
+  printf("Skriv inn to tall: ");
+  scanf("%d %d", &num1, &num2);
+
+  if (num2 == 0) {
+    fprintf(stderr, "Error: Kan ikke dele på null!\n");
+    return 1;
+  }
+
+  printf("%d / %d = %d\n", num1, num2, num1 / num2);
+
+  return 0;
 }
 ```
 
-Det forventede resultatet etter å ha kjørt dette programmet er:
+Her bruker vi `fprintf()` til å skrive en feilmelding til standard error hvis brukeren prøver å dele på 0. Vi har også brukt `\n` for å legge til en linjeskift i meldingen. Kjøringen av dette programmet kan se slik ut:
 
+```bash
+$ ./divider
+Skriv inn to tall: 10 2
+10 / 2 = 5
+$ ./divider
+Skriv inn to tall: 10 0
+Error: Kan ikke dele på null!
 ```
-Dette er en feilmelding som skrives til standard error!
-```
 
-## Deep Dive
+Som du ser blir feilmeldingen skrevet til standard error og ikke standard output.
 
-Standard error er en av de tre standard strømmene i C-programmering, de to andre er standard inn og standard ut. Denne strømmen bruker vanligvis den samme plasseringen som standard ut, men den kan bli omdirigert uavhengig av standard inn og standard ut hvis det er ønskelig.
+## Dypdykk
 
-I C-programmering brukes `stderr`-variabelen som et nyttig verktøy for feilsøking og debugging, spesielt når du kjører ferdigkompilerte programmer fra terminalen. Det er også viktig å merke seg at standard error ikke blir bufferet slik som standard ut, så det som er skrevet til standard error vil vises umiddelbart.
+Det er viktig å merke seg at standard error har en annen buffer enn standard output. Dette betyr at meldingene kan komme i en annen rekkefølge enn du forventer. Det er også mulig å omdirigere standard error til en fil hvis du ønsker å lagre feilmeldingene for senere bruk.
 
-## Se Også
+Du kan også bruke `fprintf()` til å skrive til standard output, men da må du bruke `stdout`-parameteren istedenfor `stderr`.
 
-- [C Programming Tutorial - Error Handling](https://www.learn-c.org/en/Error_Handling)
-- [Why Use Standard Error in C?](https://www.geeksforgeeks.org/why-use-standard-error-in-c/)
-- [C Programming Language - Standard Streams](https://www.programiz.com/c-programming/c-input-output)
+## Se også
+
+- [Funksjonen `fprintf()` i C](https://www.tutorialspoint.com/c_standard_library/c_function_fprintf.htm)
+- [Feilsøking i C-programmer](https://www.tutorialspoint.com/cprogramming/c_debugging.htm)

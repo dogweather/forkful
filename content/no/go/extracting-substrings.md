@@ -1,40 +1,52 @@
 ---
-title:                "Go: Uttrekking av substringer"
+title:                "Go: Utvinning av delstrenger"
+simple_title:         "Utvinning av delstrenger"
 programming_language: "Go"
-category:             "Strings"
+category:             "Go"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/go/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-Velkommen til vår Go programmeringsblogg! I dag skal vi se på hvordan man kan hente ut substrings i Go.
-
 ## Hvorfor
-Å hente ut substrings kan være nyttig i ulike situasjoner, for eksempel når man ønsker å hente ut en del av en tekststreng eller når man skal jobbe med tekstbehandling i Go. Å kunne utføre disse operasjonene kan gjøre koden mer effektiv og lesbar.
+
+Å ekstrahere substrings, eller delstrenger, kan være nyttig når du jobber med tekstbehandling i Go. Dette gjør det mulig å isolere og manipulere deler av en tekststreng, som kan være nyttig for å utføre visse oppgaver. I denne bloggposten vil jeg vise deg hvordan du kan gjøre dette ved hjelp av Go-programmeringsspråket.
 
 ## Hvordan
-For å hente ut en substring i Go bruker vi funksjonen "Substring". Her er et eksempel på hvordan man kan hente ut en del av en tekststreng: 
+
+Først må du importere "strings" pakken i Go, som gir deg tilgang til verktøyene for tekstbehandling. Deretter kan du bruke "substrings" funksjonen og spesifisere hvilken del av strengen du ønsker å trekke ut.
+
+Her er et eksempel på hvordan dette kan se ut i praksis:
+
 ```Go
-str := "Hei alle sammen!"
-substr := str[4:9] 
-fmt.Println(substr) // Output: alle
+package main
+
+import "fmt"
+import "strings"
+
+func main() {
+	str := "Hei alle sammen!"
+	substr := strings.Substr(str, 4, 8) // Dette vil ekstrahere "alle" fra strengen
+
+	fmt.Println(substr) // Output: alle
+}
 ```
-Vi har her satt variabelen "str" til å være teksten "Hei alle sammen!" og definerer deretter "substr" som en substring av "str", med et startpunkt på indeks 4 og en lengde på 5 (indeks 4-8). Ved hjelp av "fmt.Println" får vi nå utskrift av substringsen "alle". 
 
-Det er også mulig å hente ut en substring uten å angi en lengde, da vil Go automatisk ta med resten av tekststrengen fra startpunktet, som vist i følgende eksempel: 
-```Go
-str := "Hei alle sammen!"
-substr := str[4:]
-fmt.Println(substr) // Output: alle sammen!
-```
-Dette kan være nyttig hvis man ønsker å hente ut en del av en lengre tekststreng.
+Det er viktig å merke seg at den første indeksen starter på 0. I eksempelet ovenfor er indeks 4 "a" i "alle". Videre kan du også bruke "-1" som siste indeks for å ekstrahere alt etter den gitte startindeksen.
 
-## Deep Dive
-For å forstå mer teknisk hvordan henting av substrings fungerer i Go, må vi se på hvordan tekststrenger er lagret i språket. I Go er tekststrenger lagret som en sekvens av bytes som representerer hver enkelt bokstav eller tegn i strengen. Når vi bruker "Substring" funksjonen, velger vi et startpunkt og eventuelt en lengde i form av antall bytes. Dette betyr at vi kan hente ut deler av en tekststreng uavhengig av det faktiske antallet tegn i strengen.
+## Dype dykk
 
-Det er også viktig å merke seg at når man endrer substrings, så endres også den opprinnelige tekststrengen. Dette kan føre til uventede resultater hvis man ikke er klar over det.
+Når det gjelder å ekstrahere substrings i Go, er det viktig å forstå forskjellen mellom runes og bytes. En rune tilsvarer en karakter, mens en byte kan være mer enn én karakter, avhengig av hvilket tegnsett som brukes.
+
+Dette betyr at hvis du ønsker å ekstrahere substrings basert på visse tegn, må du være sikker på å bruke riktig indeksering for å unngå uventede resultater.
+
+En annen funksjon å være klar over er "LastIndex" som kan brukes til å finne indeksen til det siste forekomsten av en gitt rune eller byte i en streng.
 
 ## Se også
-- [Go Dokumentasjon: Strings og substrings](https://golang.org/doc/effective_go.html#strings)
-- [Introduksjon til tekstbehandling i Go](https://www.digitalocean.com/community/tutorials/how-to-use-strings-in-go)
-- [Go Playground - Prøv ut eksemplene våre!](https://play.golang.org/)
+
+Her er noen nyttige ressurser for å lære mer om å ekstrahere substrings i Go:
+
+- [Go Offisiell Dokumentasjon](https://golang.org/pkg/strings/#Substr)
+- [Tutorial: Manipulating Strings in Go](https://www.callicoder.com/golang-strings-tutorial/)
+- [Go: The Complete Guide](https://www.udemy.com/go-the-complete-bootcamp-course-golang/)

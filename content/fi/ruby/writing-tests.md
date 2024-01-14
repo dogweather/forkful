@@ -1,65 +1,85 @@
 ---
 title:                "Ruby: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Ruby"
-category:             "Testing and Debugging"
+category:             "Ruby"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/ruby/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi: Miksi kirjoittaisit testejä?
+## Miksi
 
-Kirjoittaminen testejä Ruby-ohjelmistoon saattaa tuntua ylimääräiseltä askeleelta, mutta se voi todella säästää aikaa ja vaivaa pitkällä aikavälillä. Testit varmistavat, että koodi toimii odotetulla tavalla ja auttavat havaitsemaan mahdolliset virheet ennen kuin koodi päätyy tuotantoon. Tämä takaa, että ohjelmisto toimii luotettavasti ja vähentää mahdollisia yllätyksiä jatkokehityksessä.
+Miksi kirjoittaa testeja? Testien kirjoittaminen on tärkeä osa hyvää ohjelmointia, sillä se varmistaa koodin laadun ja vähentää virheiden mahdollisuutta. Testaus myös helpottaa koodin ylläpitämistä ja mahdollistaa uusien ominaisuuksien lisäämisen ilman, että se rikkoo jo olemassa olevaa koodia.
 
-# Miten: Testejä kirjoittamassa
+## Kuinka tehdä
 
-Testien kirjoittaminen Ruby-ohjelmistoon on helppoa ja yksinkertaista. Voit käyttää Ruby:n sisäänrakennettuja testejä, kuten `assert` tai `expect`, tai voit käyttää suosittuja testikehyksiä, kuten RSpec tai MiniTest.
+Testien kirjoittaminen Rubyssa on helppoa ja intuitiivista. Käytämme tähän Ruby-on-Railsin sisäänrakennettua testauskehystä, nimeltään MiniTest.
 
-Katsotaanpa esimerkiksi, kuinka voit kirjoittaa yksinkertaisen testin `Calculator`-luokan `add`-metodille, joka lisää yhteen kaksi lukua:
+### Asennus
 
-```Ruby
-require "minitest/autorun"
+Asentaaksesi MiniTestin, voit käyttää RubyGems-pakettienhallintajärjestelmää. Avaa terminaali ja suorita seuraavat komennot:
 
-class Calculator
-  def add(num1, num2)
-    num1 + num2
-  end
+```bash
+gem install minitest
+```
+
+### Esimerkki
+
+Tarkastellaan esimerkkinä ohjelmaa, joka tarkistaa annetun luvun parillisuuden. 
+
+```ruby
+# Ohjelma tarkistaa, onko luku parillinen vai ei
+def onko_parillinen?(luku)
+  luku % 2 == 0 
 end
 
-class CalculatorTest < Minitest::Test
-  def test_add
-    calculator = Calculator.new
-    assert_equal 5, calculator.add(2, 3)
+# Testien kirjoittaminen
+require 'minitest/autorun'
+
+# Testiluokka
+class ParillinenTesti < Minitest::Test
+  # Testi, joka varmistaa, että luku 2 on parillinen
+  def test_parillinen_luku
+    tulos = onko_parillinen?(2)
+    assert_equal(true, tulos)
+  end
+  
+  # Testi, joka varmistaa, että luku 3 ei ole parillinen
+  def test_pariton_luku
+    tulos = onko_parillinen?(3)
+    assert_equal(false, tulos)
   end
 end
 ```
 
-Ensimmäisessä koodilohkossa luomme `Calculator`-luokan, joka sisältää `add`-metodin. Sitten luomme `CalculatorTest`-luokan, joka perii `Minitest::Test`-luokan ja sisältää testin `test_add`. Tämä testi luo `Calculator`-olion ja käyttää `assert_equal`-metodia tarkistaakseen, että `add`-metodi palauttaa odotetun tuloksen.
+### Tulostus
 
-Voit ajaa tämän testin kirjoittamalla komentoriville `ruby [tiedostonimi]`, mikä näyttää seuraavan tulosteen:
+Suorita testit komennolla `ruby nimi_testikoodi.rb` ja tulostuksen tulisi olla seuraavanlainen:
 
 ```bash
-Run options: "--seed 3808"
+Run options: --seed 62838
 
 # Running:
 
-.
+..
 
-Finished in 0.001136s, 879.5967 runs/s, 879.5967 assertions/s.
+Finished in 0.000615s, 3248.8101 runs/s, 4873.2151 assertions/s.
 
-1 runs, 1 assertions, 0 failures, 0 errors, 0 skips
+2 runs, 3 assertions, 0 failures, 0 errors, 0 skips
 ```
 
-Tässä näet, että testi suoritettiin onnistuneesti ilman virheitä tai virheilmoituksia.
+## Syvällinen tarkastelu
 
-# Syvemmälle: Testien kirjoittamisessa
+Testien kirjoittaminen ei ole vain yksinkertainen prosessi, vaan sitä on hyvä syvällisemmin tutkia ja ymmärtää. Testit eivät vain varmista koodin toimintaa, vaan myös auttavat ymmärtämään omaa koodia paremmin. Ne pakottavat meidät miettimään erilaisia skenaarioita ja testaamaan koodia eri tavoin. Tämä johtaa parempaan suunnitteluun ja laadukkaampaan koodiin.
 
-Testien kirjoittaminen ei rajoitu vain yksinkertaisiin metodeihin ja tulosten tarkistamiseen. Voit myös testata monimutkaisempia toimintoja ja varmistaa, että koodi toimii kaikissa mahdollisissa tapauksissa.
+## Katso myös
 
-Esimerkiksi voit testata `Calculator`-luokan `add`-metodia useammin kuin vain yhdellä luvulla. Voit myös testata muiden operaatioiden, kuten vähennyslaskun tai kerto-laskun, toimivuuden. Näin varmistat, että kaikki laskutoimitukset toimivat oikein.
+Jos haluat oppia lisää testien kirjoittamisesta Rubyssa, suosittelemme seuraavia resursseja:
 
-Voit myös testata, miten ohjelmisto toimii virheellisillä käyttäjän syötteillä. Tämä auttaa havaitsemaan mahdollisia virheitä ja estää ohjelmiston kaatumisen käyttäjän antaessa vääriä syötteitä.
+- [Minitest Documentation] (https://github.com/seattlerb/minitest#mini-testrdoc)
+- [Ruby Testing Tools] (https://blog.honeybadger.io/best-ruby-testing-tools/)
+- [Test Driven Development with Ruby] (https://www.codementor.io/ruby-on-rails/tutorial/test-driven-development-ruby-test-unit)
 
-Lisäksi voit kirjoittaa testejä, jotka suorittavat kelvollisen ja kelvottoman koodin, jotta voit selvittää, miten koodi käyttäytyy erilaisissa tilanteissa.
-
-Testien kirjoittaminen on tärkeä osa Ruby-ohjelmiston kehitystä, joten var
+Kiitos lukemisesta! Toivottavasti tämä artikkeli auttoi sinua ymmärtämään testien kirjoittamisen tärkeyden ja antoi sinulle hyödyllisiä vinkkejä Ruby-testaamiseen. Onnea testaamiseen ja hyvän koodin kirjoittamiseen!

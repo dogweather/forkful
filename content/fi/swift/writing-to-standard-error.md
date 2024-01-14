@@ -1,52 +1,55 @@
 ---
-title:                "Swift: Kirjoittaminen standardivirheelle"
+title:                "Swift: Kirjoittaminen standardivirheeseen"
+simple_title:         "Kirjoittaminen standardivirheeseen"
 programming_language: "Swift"
-category:             "Files and I/O"
+category:             "Swift"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/swift/writing-to-standard-error.md"
 ---
 
 {{< edit_this_page >}}
 
-# Miksi
+## Miksi
 
-Miksi kirjoittaa standardivirheeseen?
+Tervetuloa lukemaan tätä blogikirjoitusta kirjoittamisesta standardiin virheeseen Swift-ohjelmointikielellä. Tässä artikkelissa käymme läpi syitä siihen, miksi kirjoittaisit tietoa standardiin virheeseen ja miten se voisi hyödyttää sinua ohjelmoinnissa.
 
-Standardivirheeseen kirjoittaminen on tärkeä osa ohjelmointia, sillä se auttaa tunnistamaan ja korjaamaan virheitä ohjelmassa. Se myös tarjoaa ajan tasalla olevaa tietoa ohjelman suorituksessa tapahtuvista muutoksista.
-
-## Kuinka tehdä
-
-Kirjoittaminen standardivirheeseen Swiftillä on helppoa. Se tehdään käyttämällä "write" funktiota ja antamalla haluttu viesti parametrina. Tämän jälkeen viesti tulostetaan ohjelman suorituksen aikana standardivirheeseen.
+## Miten
 
 ```Swift
-// Kirjoita standardivirheeseen
-write("Tämä on virheviesti")
-```
-Tulostus:
-```
-Tämä on virheviesti
+func divideNumbers(x: Int, y: Int) throws {
+    guard y != 0 else {
+        throw CustomError("Error: Y cannot be 0!")
+    }
+    
+    let result = x / y
+    print(result)
+}
+
+do {
+    try divideNumbers(x: 10, y: 0)
+} catch {
+    print(error)
+}
 ```
 
-Voit myös käyttää "print" funktiota ja ohjata tulostus standardivirheeseen käyttämällä "standardError" parametria.
+Koodinpätkässä esitetään yksinkertainen funktio, joka jakaa kaksi lukua ja heittää virheen, jos toinen numero on 0. Kun koodia ajetaan, virhe tulostetaan standardiin virheeseen, mikä auttaa sinua tunnistamaan, missä osassa koodia virhe tapahtui.
 
-```Swift
-// Tulostus standardivirheeseen
-print("Tämä on virheviesti", standardError: StandardError())
 ```
-Tulostus:
-```
-Tämä on virheviesti
+Error: Y cannot be 0!
 ```
 
-## Syvempi sukellus
+Tämä esimerkki osoittaa, että standardiin virheen kirjoittaminen voi auttaa sinua vianetsinnässä ja virheiden tunnistamisessa koodissasi.
 
-Standardivirheeseen kirjoittaminen on hyödyllistä etenkin silloin, kun halutaan nähdä tarkka aikajärjestyksessä tapahtuvat muutokset ohjelman suorituksessa. Virheviestit ovat myös tärkeä osa ohjelmointia, sillä ne auttavat havaitsemaan ja korjaamaan virheitä ohjelmassa.
+## Syvempää tietoa
 
-On myös hyvä huomioida, että standardivirheeseen kirjoittaminen ei estä ohjelmaa suorittamasta loppuun asti. Sen sijaan ohjelma jatkaa suoritustaan, mutta tulostaa ohjelman aikana tapahtuvat muutokset standardivirheeseen. Tämä tekee ohjelman virheenhallinnasta helpompaa, sillä pystyt näkemään mahdolliset ongelmat ohjelman suorituksen aikana.
+Standardi virheeseen kirjoittaminen antaa sinulle mahdollisuuden hallita virheitäsi suoraan koodissasi. Tämä voi olla hyödyllistä erityisesti silloin, kun haluat näyttää käyttäjille tarkemman virheviestin kuin pelkän koodinvirheen.
+
+Voit myös käyttää asettaa eri tasoisia virheitä, joista jotkut voidaan käsitellä ja jotkut jätetään ohjelmaa käyttävän kehittäjän vastuulle.
 
 ## Katso myös
 
-- [Swift dokumentaatio](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
-- [Standardivirheen hallinta Swiftillä](https://developer.apple.com/documentation/swift/standarderror)
-- [Virheiden tunnistaminen ja hallinta Swiftissä](https://www.hackingwithswift.com/new-syntax-swift-2-error-handling-try-catch)
+Tässä on muutamia hyödyllisiä linkkejä, jotka voivat auttaa sinua oppimaan lisää tietoa standardiin virheeseen kirjoittamisesta:
 
-*Huom. Tämä artikkeli on tarkoitettu ainoastaan tiedoksi ja ei korvaa virallisia dokumentaatioita.*
+- [Apple:n virallinen dokumentaatio Swift-ohjelmointikielestä](https://developer.apple.com/swift/)
+- [Swift-yhteisön foorumit ja keskustelupalstat](https://swift.org/community/)
+- [Ohjelmointikielen kehittäjien vinkkejä virheiden käsittelyyn](https://www.mokacoding.com/blog/throwing-error-swift/

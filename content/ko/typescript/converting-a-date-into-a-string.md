@@ -1,54 +1,78 @@
 ---
 title:                "TypeScript: 날짜를 문자열로 변환하기"
+simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "TypeScript"
-category:             "Dates and Times"
+category:             "TypeScript"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/typescript/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-"## 왜" 
-
-날짜를 문자열로 변환하는 작업에 참여하는 이유를 간략히 설명합니다. 
+Korean Translation:
 
 ## 왜
-여러분은 TypeScript를 사용하면서 타입 변환 작업을 자주 할 수 있습니다. 이 중에서도 날짜 객체를 문자열로 변환하는 작업은 매우 중요합니다. 예를 들어, 사용자의 생일이나 이벤트 날짜를 문자열 형태로 저장해야하는 경우가 있을 수 있습니다. 따라서 우리는 TypeScript에서 날짜를 문자열로 변환하는 방법을 알아보겠습니다.
 
-"## 사용방법"
+날짜를 문자열로 변환하는 이유를 설명합니다.
 
-아래 코드 블록을 참고하여 TypeScript에서 날짜를 문자열로 변환하는 방법을 살펴보세요. 
+날짜를 문자열로 변환하는 작업은 종종 프로그램에서 필요한 작업입니다. 예를 들어, 사용자 인터페이스를 업데이트할 때 또는 데이터베이스에 저장된 날짜를 사용해 새로운 날짜를 생성할 때 필요합니다.
+
+## 방법
+
+먼저, JavaScript에서 날짜를 문자열로 변환하는 방법에 대해 간단히 알아보겠습니다. 그런 다음 TypeScript에서 이를 어떻게 구현하는지에 대해 살펴보겠습니다.
+
+### JavaScript에서 날짜를 문자열로 변환하기
+
+우선 `Date` 객체를 생성하고 `toString()` 메소드를 사용하여 해당 객체를 문자열로 변환합니다.
+
+```JavaScript
+const date = new Date();
+date.toString(); // 문자열로 변환된 날짜: "Mon Oct 18 2021 08:00:00 GMT+0800 (Singapore Standard Time)"
+```
+
+하지만 이렇게 변환된 문자열은 날짜와 시간 모두를 포함하기 때문에 원하는 포맷이 아닐 수 있습니다. 이럴 때 `Intl.DateTimeFormat` 객체를 사용하면 원하는 포맷으로 날짜를 표시할 수 있습니다.
+
+```JavaScript
+const date = new Date();
+const options = {
+  weekday: 'short',
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+  timeZone: 'UTC'
+};
+const formatter = new Intl.DateTimeFormat('en-US', options);
+formatter.format(date); // "Mon, Oct 18, 2021"
+```
+
+### TypeScript에서 날짜를 문자열로 변환하기
+
+TypeScript에서 날짜를 문자열로 변환하는 방법은 JavaScript와 동일합니다. 다만, TypeScript는 정적으로 타입이 지정되기 때문에 `formatter.format()` 메소드의 인수를 올바른 타입으로 지정해주어야 합니다.
 
 ```TypeScript
-let today: Date = new Date();
-let dateString: string = today.toDateString();
-console.log(dateString);
+const date: Date = new Date();
+const options: Intl.DateTimeFormatOptions = {
+  weekday: 'short',
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+  timeZone: 'UTC'
+};
+const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat('en-US', options);
+formatter.format(date); // "Mon, Oct 18, 2021"
 ```
-output: Fri Sep 11 2020
 
-위의 코드를 실행하면 현재 날짜를 문자열로 변환한 결과를 볼 수 있습니다. 이렇게 변환된 날짜 문자열은 다양한 형태로 사용할 수 있습니다. 
+## 깊이 파보기
 
-따라서 날짜를 원하는 형태로 변환하려면 Date 객체에서 제공하는 다양한 메소드를 활용해야 합니다. 예를 들어, 년도, 월, 일 등을 포함한 원하는 형태로 날짜를 변환할 수 있습니다. 아래의 코드 예제를 참고하시기 바랍니다.
+날짜를 문자열로 변환하는 내부 동작에 대해 더 알아보겠습니다. 날짜 객체는 컴퓨터 내부적으로 숫자로 저장되며, 이는 유닉스 시간 (Unix time) 이라고 불립니다. 1970년 1월 1일 자정을 기준으로 경과된 밀리초의 숫자를 나타냅니다. 이 숫자는 `Date` 생성자의 인수로 전달되어 날짜 객체를 생성하며, `toString()` 메소드에서는 이 숫자를 다시 날짜와 시간 형식으로 변환합니다.
 
-```TypeScript
-let today: Date = new Date();
-let options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-let dateString: string = today.toLocaleDateString(undefined, options);
-console.log(dateString);
-```
-output: September 11, 2020 
+## 참고 문서
 
-위의 코드에서는 toLocaleDateString() 메소드를 사용하여 원하는 형태로 날짜를 변환하였습니다. 마이크로소프트에서 제공하는 자세한 문서를 참고하여 필요에 맞게 원하는 형태로 날짜를 변환할 수 있습니다.
+- [MDN: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [MDN: Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript Docs: Date](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#using-dates)
 
+## 참조
 
-"## 깊이 있는 내용"
-
-날짜를 문자열로 변환하는 작업은 매우 흔하고 중요한 작업입니다. 따라서 이번 섹션에서는 이 작업에 대해 깊이 있는 내용을 알아보겠습니다. 
-
-우선 Date 객체는 자바스크립트에서 날짜와 시간을 다루는 데 사용되는 기본 객체입니다. 이 객체는 다양한 메소드를 제공하며 날짜와 시간을 다양한 방식으로 조회하고 조작할 수 있습니다. 따라서 우리는 이 객체를 사용하여 날짜를 문자열로 변환하는 작업을 수행할 수 있습니다. 
-
-또한 날짜를 변환할 때는 어떤 형식으로 변환할지 정하는 옵션을 설정할 수 있습니다. 예를 들어, ‘year', 'month', 'day'와 같은 옵션을 지정하여 날짜를 년, 월, 일로 나누어 변환할 수 있습니다. 이러한 옵션을 통해 우리는 Date 객체에서 제공하는 다양한 메소드를 조합하여 정확한 날짜를 원하는 형태로 변환할 수 있습니다. 
-
-받은 날짜 객체를 어떤 형식으로 변환할지 선택함으로써 우리는 날짜를 손쉽게 문자열로 변환할 수 있습니다. 따라서 TypeScript에서는 다양한 날짜 변환 메소드를 사용하여 원하는 형태로 날짜를 변환할 수 있습니다.
-
-
-"## 참고
+- [날짜 객체](https://ko.wikipedia.org/wiki/%EB%82%A0%EC%A7%9C_%EA%B0%9D%EC%B2%B4)
+- [유닉스 시간](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%89%EC%8A%A4_%EC%8B%9C%EA%B0%84)

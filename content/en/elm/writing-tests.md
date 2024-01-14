@@ -1,7 +1,9 @@
 ---
 title:                "Elm recipe: Writing tests"
+simple_title:         "Writing tests"
 programming_language: "Elm"
-category:             "Testing and Debugging"
+category:             "Elm"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/elm/writing-tests.md"
 ---
 
@@ -9,49 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Why
 
-As developers, writing tests may seem like an extra step that takes up valuable time. However, writing tests in Elm can actually save you time and effort in the long run. By ensuring that your code is functioning properly through automated tests, you can catch and fix errors before they become bigger issues, ultimately making your code more reliable and maintainable.
+In the world of programming, testing is crucial for ensuring the quality and functionality of our code. However, writing tests for our code can often be seen as a tedious and time-consuming task. So why should we bother adding this extra step in our development process?
+
+The answer is simple: tests help catch bugs and errors early on, allowing us to fix them before they cause larger issues down the road. They also serve as a safety net when making changes to our code, providing assurance that everything is still working as intended. In short, writing tests ultimately saves time and effort in the long run.
 
 ## How To
 
-To write tests in Elm, you will need to use the [elm-test](https://github.com/elm-explorations/test) package. This allows you to write unit tests for your functions and also test your user interface (UI) using the [elm-test-browsers](https://github.com/elm-explorations/test/tree/master/elm-test-browsers) package.
-
-First, let's create a simple function to test. In this example, we'll create a function that multiplies two numbers together:
-
-```Elm
-multiply : Int -> Int -> Int
-multiply x y =
-  x * y
-```
-Next, we can write a test for this function using the `test` function from `elm-test` and the `Test` module:
-
-```Elm
-test "multiply" <|
-  \() ->
-    let
-      expected = 12
-      actual = multiply 3 4
-    in
-      Expect.equal expected actual
-```
-
-The `test` function takes in a descriptive string as the first argument, and a function that returns a `Test` object as the second argument. In this case, we use the `Expect.equal` function to compare the expected and actual outputs of our `multiply` function.
-
-To run these tests, we can use the `elm-test` command in our terminal:
+Luckily, Elm makes writing tests a breeze with its built-in `elm-test` package. Let's take a look at an example of how to write a simple test for a function that adds two numbers together:
 
 ```
-elm-test
+Elm.Test.init
+    |> Elm.Test.describe "add function"
+        [ Elm.Test.test "adds two positive numbers" <|
+            \_ ->
+                Elm.Test.expect (add 2 3 == 5)
+        ]
+    |> Elm.Test.run
 ```
 
-This will run all the tests in our project and give us a summary of the results.
+In this code, we use the `describe` function to give our test a descriptive name, and then use `test` to specify what the expected outcome should be for a given input. Finally, we use `expect` to compare the actual output to the expected result. We can then run our test with the `run` function.
+
+When we run this test, we should see an output similar to the following:
+
+```
+╷
+│ Expect.add )
+╵
+Failure: expecting `add 2 3` to equal `5`
+Was: `6`
+```
+
+This indicates that our test failed because the actual output was not equal to the expected result.
 
 ## Deep Dive
 
-Writing tests in Elm follows a similar structure to writing code. You can use common functions such as `map`, `reduce`, and `filter` to manipulate your test data, just like you would with regular data. It's also important to note that tests are run in isolation, meaning they don't have any access to your application's state. This helps to ensure that your tests are not affected by any external factors.
+Writing tests in Elm also allows us to take advantage of its powerful type system. For example, we can use type annotations on our test functions to ensure that we are passing in the correct types of data. We can also use pattern matching to handle different scenarios and ensure that our code is handling all cases properly.
 
-Additionally, the `Test` module in `elm-test` provides useful functions for testing specific scenarios, such as `Expect.notEqual` for checking non-equality, and `Expect.greaterThan` for checking numerical comparisons.
+Additionally, Elm's `elm-test` package offers other helpful functions such as `fuzz` to generate random inputs for our tests and `todo` to temporarily ignore certain tests while we are working on them.
 
 ## See Also
 
-- [elm-test package](https://github.com/elm-explorations/test)
-- [elm-test-browsers package](https://github.com/elm-explorations/test/tree/master/elm-test-browsers)
-- [Official Elm Guide on testing](https://guide.elm-lang.org/testing/)
+To learn more about writing tests in Elm, check out these useful links:
+
+- [Elm Documentation on Testing](https://guide.elm-lang.org/testing/)
+- [Elm Syntax Cheatsheet](https://elmprogramming.com/learn-elm-syntax.html)
+- [Elm Test Package Documentation](https://package.elm-lang.org/packages/elm-explorations/test/latest/)
+- [Elm Testing Best Practices](https://medium.com/@jaybazuzi/elm-testing-best-practices-4c02aa12ac05)

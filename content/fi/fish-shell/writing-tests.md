@@ -1,7 +1,9 @@
 ---
 title:                "Fish Shell: Testien kirjoittaminen"
+simple_title:         "Testien kirjoittaminen"
 programming_language: "Fish Shell"
-category:             "Testing and Debugging"
+category:             "Fish Shell"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/fish-shell/writing-tests.md"
 ---
 
@@ -9,23 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Kun ohjelmoit, on tärkeää varmistaa, että koodisi toimii odotetulla tavalla. Yksi tapa tehdä tämä on kirjoittaa testejä koodillesi. Testit varmistavat, että koodisi toimii halutulla tavalla ja estävät mahdollisia virheitä ja bugien syntymistä.
+Kirjoittamalla testejä varmistat, että koodisi toimii kuten odotat ja vähentää mahdollisia virheitä tulevaisuudessa.
 
-## Kuinka tehdä
+## Kuinka
 
-```Fish Shell``` -testien kirjoittaminen on helppoa ja nopeaa. Voit aloittaa luomalla ``` do_test.fish``` -tiedoston, jossa voit kirjoittaa testejä. Seuraavaksi voit lisätä testejä haluamallesi komentoriville näin:
+```Fish Shell``` -käyttö esimerkkien ja tulosteen kanssa auttaa sinua ymmärtämään, miten testien kirjoittaminen toimii Fish Shell -ohjelmointikielessä.
 
-```Fish Shell
-test "$komennon-nimi " -nimeni-alussa " " -haun-tulos-on ""määritetty-arvo
+1. Aseta ympäristömuuttujat
+```
+set -x TEST_VAR "Hello World"
+set -x ANOTHER_VAR "Bye Bye"
 ```
 
-Lisäämällä testejä tällä tavalla, voit varmistaa, että komentosi palauttaa halutun tuloksen. Voit myös käyttää ehtolauseita testikoodisi tarkistamiseen. Kun olet lisännyt kaikki haluamasi testit, suorita testit ajamalla komento ```fish do_test.fish``` ja näet tuloksen testien läpäisystä tai mahdollisista virheistä.
+2. Luo testitiedosto
+```
+@test "TEST_VAR on oikea arvo" 
+set ACTUAL_VAL $TEST_VAR
+set EXPECTED_VAL "Hello World"
+[ $ACTUAL_VAL != $EXPECTED_VAL ] && echo "FAIL: Odotettiin $EXPECTED_VAL, saatiin $ACTUAL_VAL"  
+done
+```
 
-## Syvällisempi sukellus
+3. Suorita testitiedosto
+```
+fish testi.sh
+```
 
-```Fish Shell``` tarjoaa erilaisia ​​komentoja ja toimintoja testien kirjoittamiseen. Voit esimerkiksi käyttää ```bass``` -komennon avulla muita komentoriviltä löytyviä työkaluja testeissäsi. Voit myös käyttää ehtolauseita testien tarkistamiseen, kuten ```test %%komento -exclude "virhe"``` tarkistaa mahdolliset virheet testien suorittamisen yhteydessä.
+Output:
+```
+🐟 testi.sh
+TEST_VAR on oikea arvo: Passed
+```
+
+## Syvempää tarkastelua
+
+Testien kirjoittaminen on tärkeä osa koodausprosessia, jotta voidaan varmistaa luotettava ja toimiva koodi. Hyvät testit antavat myös mahdollisuuden tehdä muutoksia koodiin turvallisesti ja helposti.
 
 ## Katso myös
 
-- [Fish Shell -dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [Ohjeita testien kirjoittamiseen ```Fish Shell``` -pohjaisilla projekteilla](https://10nalli.fi/article/2019/1/1/ohjeita-testien-kirjoittamiseen-fish-shell-pohjaisilla-projekteilla)
+[Fish Shell Tutorial](https://fishshell.com/docs/current/tutorial.html)
+[Fish Shell -dokumentaatio](https://fishshell.com/docs/current/index.html)

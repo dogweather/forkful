@@ -1,7 +1,9 @@
 ---
-title:                "Bash: Порівняння двох дат."
+title:                "Bash: Порівняння двох дат"
+simple_title:         "Порівняння двох дат"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/bash/comparing-two-dates.md"
 ---
 
@@ -9,57 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Нерідко програмісти зіткнуться з задачею порівняння двох дат в своїх проєктах. Це може бути корисно при роботі з базами даних, розробці програм, або для тестування. Наприклад, ви можете перевірити, чи дата була введена правильно або зробити умовну логіку, що залежить від дат.
+Компарація дат може бути корисна для багатьох сценаріїв, зокрема при роботі з даними відстеження часу, плануванні та подіях. Вона дозволяє швидко та ефективно порівнювати дати та виконувати різні дії на основі результатів порівняння.
 
-## Як
+## Як використовувати
 
-Для порівняння двох дат в Bash використовується утиліта `date`. Спочатку нам потрібно встановити формат дати, використовуючи опцію `-d`. Потім ми можемо порівняти дати за допомогою умов `>=` або `<=`.
-
+Є кілька способів порівнювати дати в Bash. Один з них - використовувати команду `date -d` з ключем `+%s`, яка конвертує дату в формат UNIX timestamp. Наприклад:
 ```Bash
-# Встановлення формату дати
-date1="2020-05-10"
-date2="2020-05-12"
-
-# Порівняння дат
-if [[ $date1 > $date2 ]]; then
-  echo "$date1 пізніше за $date2"
-elif [[ $date1 < $date2 ]]; then
-  echo "$date1 раніше за $date2"
+a="2021-01-01"
+b="2021-01-02"
+if [[ $(date -d "$a" +%s) -gt $(date -d "$b" +%s) ]]; then
+    echo "$a is later than $b"
 else
-  echo "Дати однакові"
+    echo "$b is later than $a"
 fi
 ```
+Виходом буде `2021-01-02 is later than 2021-01-01`.
 
-Вивід:
-
-```
-2020-05-10 раніше за 2020-05-12
-```
-
-Можна також використовувати опцію `-r` для порівняння дат з використанням їхніх таймстемпів. Наприклад:
-
+Також можна використовувати вбудовані функції в Bash, такі як `date +%s`, для конвертації дат в timestamp. Наприклад:
 ```Bash
-date1="2020-05-10"
-date2=$(date "+%Y-%m-%d") # Поточна дата
-
-if [[ $(date -d "$date1" +%s) -gt $(date -d "$date2" +%s) ]]; then
-  echo "$date1 пізніше за поточну дату"
+a="2021-01-01"
+b="2021-01-02"
+if (( $(date -d "$a" +%s) > $(date -d "$b" +%s) )); then
+    echo "$a is later than $b"
 else
-  echo "$date1 раніше або дорівнює поточній даті"
+    echo "$b is later than $a"
 fi
 ```
+Виходом буде те саме - `2021-01-02 is later than 2021-01-01`.
 
-Вивід:
+## Глибоке заглиблення
 
-```
-2020-05-10 раніше або дорівнює поточній даті
-```
-
-## Глибоке занурення
-
-Детальніше про роботу з датами в Bash можна дізнатися в [офіційній документації](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation). Там є багато корисних опцій для роботи з датами, таких як встановлення часових зон, врахування високосних років тощо.
+Використання команди `date -d` не дозволяє порівнювати дати з мілісекундами, тому у більш складних сценаріях краще використати вбудовані функції Bash. Також важливо враховувати формат дат, щоб уникнути помилок у порівнянні. Наприклад, дата у форматі `MM/DD/YYYY` може бути сприйнята як `DD/MM/YYYY`, що призведе до некоректного порівняння.
 
 ## Дивіться також
 
-- [Stack Overflow: Compare dates in Bash](https://stackoverflow.com/questions/18689457/comparing-two-dates-using-bash)
-- [Linuxize: How to Compare Dates in Bash](https://linuxize.com/post/how-to-compare-dates-in-bash/)
+- [Офіційна документація Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [10 Bash Programming Interview Questions for Linux Users](https://www.tecmint.com/linux-bash-scripting-interview-questions/)
+- [Керівництво по використанню команди date в Bash](https://www.lifewire.com/bash-date-command-3572123)

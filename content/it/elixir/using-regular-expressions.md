@@ -1,7 +1,9 @@
 ---
-title:                "Elixir: Utilizzare le espressioni regolari"
+title:                "Elixir: Utilizzo delle espressioni regolari"
+simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Elixir"
-category:             "Strings"
+category:             "Elixir"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/elixir/using-regular-expressions.md"
 ---
 
@@ -9,37 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Se vi state avventurando nel mondo della programmazione in Elixir, è probabile che vi siate imbattuti nel concetto delle espressioni regolari. Ma perché dovrebbero interessarvi? Semplice: le espressioni regolari sono uno strumento potente per cercare e manipolare testo all'interno dei vostri programmi.
+Le espressioni regolari sono uno strumento potente per la manipolazione di testo e la ricerca di pattern all'interno di stringhe. Con Elixir, possono aumentare l'efficienza e la flessibilità della programmazione, aiutando a semplificare compiti come la validazione di input utente o l'estrazione di informazioni da grandi dataset.
 
-## Come fare
+## Come usarle
 
-Per utilizzare le espressioni regolari in Elixir, avrete bisogno di conoscere l'operatore `=~`. Questo operatore confronta una stringa con un'espressione regolare e restituisce `true` se trova una corrispondenza, altrimenti `false`. Ad esempio, supponiamo di avere una stringa contenente un indirizzo email e vogliamo verificarne la validità. Possiamo farlo utilizzando l'espressione regolare `\w+@\w+\.\w+`.
+Per utilizzare le espressioni regolari in Elixir, è necessario importare il modulo Regex utilizzando `import Regex`. Dopo di che, è possibile utilizzare le funzioni fornite da questo modulo per creare ed eseguire le espressioni regolari.
 
-```
-Elixir
-email = "esempio@email.com"
-email =~ \w+@\w+\.\w+
-# output: true
-```
+Un esempio semplice sarebbe la verifica se una stringa contiene un numero di telefono valido seguendo il formato italiano. Utilizzando l'espressione regolare `~r/^\+39\d{10}$/`, possiamo verificare se una stringa inizia con "+39" e ha esattamente 10 numeri successivi. Di seguito un codice di esempio che utilizza questa espressione regolare:
 
-Inoltre, potete utilizzare il modulo `Regex` per l'applicazione di operazioni più complesse sulle espressioni regolari. Ad esempio, se vogliamo estrarre il dominio dall'indirizzo email sopra, possiamo utilizzare il seguente codice:
+```Elixir
+import Regex
 
-```
-Elixir
-Regex.run(~r/(\w+)@(\w+)\.(\w+)/, email)
-# output: ["esempio", "email", "com"]
+numero_telefono = "+393456789012"
+
+if Regex.match?(~r/^\+39\d{10}$/, numero_telefono) do
+  IO.puts "Numero di telefono valido"
+else
+  IO.puts "Numero di telefono non valido"
+end
+
+# Output:
+# Numero di telefono valido
 ```
 
 ## Approfondimento
 
-Le espressioni regolari in Elixir sono potenti perché supportano diverse funzionalità avanzate, come la possibilità di utilizzare gruppi di cattura, negazione e quantificatori. Inoltre, Elixir supporta anche modelli di espressioni regolari in stile Perl, che sono più flessibili e compatibili con altri linguaggi di programmazione.
+Le espressioni regolari offrono molte opzioni e syntax per creare e gestire pattern complessi, quindi è importante avere una buona comprensione di queste funzionalità per utilizzarle pienamente. Ad esempio, è possibile utilizzare i gruppi di cattura per estrarre parti specifiche di una stringa, o utilizzare le opzioni dei flag come "i" per rendere le espressioni regolari non case-sensitive.
 
-Un'altra caratteristica utile delle espressioni regolari in Elixir è la possibilità di utilizzarle nel modulo `String` per la ricerca e la sostituzione di testo all'interno di stringhe.
+Elixir offre anche alcune funzionalità uniche per le espressioni regolari, come la possibilità di utilizzarle all'interno delle funzioni `String.replace` e `String.split`. Questo permette di manipolare facilmente stringhe e modificarle in base ai pattern definiti.
 
-Per un elenco completo delle funzionalità supportate e dei vari modelli di espressioni regolari, consultate la documentazione ufficiale di Elixir.
-
-## Vedi anche
-
-- [Documentazione ufficiale di Elixir su espressioni regolari](https://hexdocs.pm/elixir/1.12/regex/Regex.html)
-- [Regex101: Un ottimo strumento per testare le vostre espressioni regolari](https://regex101.com/)
-- [Elixir Forum: Discussione sulla manipolazione di espressioni regolari in Elixir](https://elixirforum.com/t/manipulating-regex-in-elixir/9333)
+## Vedi Anche
+- [Documentazione sul modulo Regex](https://hexdocs.pm/elixir/Regex.html)
+- [Tutorial sulla sintassi delle espressioni regolari](https://www.regular-expressions.info/elixir.html)
+- [Elixir School: Espressioni Regolari](https://elixirschool.com/it/lessons/basics/regular-expressions/)

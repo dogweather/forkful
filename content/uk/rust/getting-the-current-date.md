@@ -1,7 +1,9 @@
 ---
 title:                "Rust: Отримання поточної дати."
+simple_title:         "Отримання поточної дати."
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/uk/rust/getting-the-current-date.md"
 ---
 
@@ -9,45 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Чому
 
-Одним із найпоширеніших завдань у програмуванні є отримання поточної дати. Це важливо для багатьох застосувань, таких як облік часу, генерація звітності та поділка даних за датами. У цьому блозі ми розглянемо, як отримати поточну дату за допомогою мови програмування Rust.
+Отримання поточної дати є важливою складовою для багатьох програм, особливо тих, що використовуються для обробки даних та створення звітів. У Rust є простий та ефективний спосіб отримати поточну дату, що допоможе зберегти час та зусилля програмістів.
 
-## Як отримати поточну дату у Rust
+## Як це зробити
 
-Для того, щоб отримати поточну дату у Rust, найпростіший спосіб - використати стандартний модуль `std::time::SystemTime`. Почніть зі створення змінної, яка буде зберігати поточний час:
+В Rust існує стандартна бібліотека з функціями для роботи з часом. Щоб отримати поточну дату, спочатку потрібно імпортувати бібліотеки `std::time::SystemTime` та `std::time::SystemTimeError`. Тоді можна викликати функцію `now()` з `SystemTime`, що поверне поточний час у форматі `SystemTime`.
 
-```Rust
-let current_time = std::time::SystemTime::now();
+Наприклад, якщо ми хочемо отримати дату у форматі `%Y-%m-%d`, можна використати метод `format()` з бібліотеки `chrono`, яка надає інструменти для роботи зі строковими даними дати та часу. Далі, результат необхідно сконвертувати у строку та вивести на екран.
+
+```
+Rust
+use std::time::{SystemTime, SystemTimeError};
+use chrono::prelude::*;
+
+fn main() {
+    let current_date = SystemTime::now();
+    let formatted_date = current_date
+        .duration_since(SystemTime::UNIX_EPOCH)
+        .map(|d| Utc.timestamp(d.as_secs() as i64, 0).format("%Y-%m-%d").to_string())
+        .unwrap_or_else(|e| e.to_string());
+
+    println!("Potочна дата: {}", formatted_date);
+}
 ```
 
-Для отримання зрозумілого для людини представлення часу, ми можемо використати функцію `format()`:
+Вивід на екран буде виглядати так:
 
-```Rust
-let date = std::time::SystemTime::now();
-let human_readable = date.format("%a, %d %b %Y %T");
-println!("Current date and time: {}", human_readable); 
+```
+Potочна дата: 2019-11-24
 ```
 
-У цьому прикладі ми використали формат дати для отримання дня тижня, дня місяця, місяця, року та часу. Щоб дізнатися додаткову інформацію про формати дати, ви можете переглянути [цю документацію.](https://doc.rust-lang.org/std/time/index.html#strftime-%28огляд-%29)
+## Глибокая інформація
 
-## Занурення у отримання поточної дати
+Якщо більше зацікавлених у наступну побітову глибоку розбірку цього процесу, можна дізнатися більше про `SystemTime` та `SystemTimeError` у [документації Rust](https://doc.rust-lang.org/std/time/struct.SystemTime.html). Також, для роботи з форматуванням дати і часу, можна перевірити більше про [chrono бібліотеку](https://docs.rs/chrono/0.4.10/chrono/).
 
-Пригадайте, що стандартний модуль `std::time::SystemTime` повертає час у вигляді кількості секунд, які пройшли з 1 січня 1970 року. Це називається [Unix-часом.](https://uk.wikipedia.org/wiki/Unix-час) Це потрібно для того, щоб програма могла працювати незалежно від різних часових зон у світі.
+## Дивись також
 
-Щоб отримати час у нормальному форматі, вам може знадобитися використати стандартний модуль `chrono`, який надає широкі можливості для роботи з датами і часом у Rust. Ми можемо використати його для створення об'єкта `DateTime` з дати, яку ми отримали від `SystemTime`:
-
-```Rust
-let current_time = std::time::SystemTime::now();
-let date_time = chrono::DateTime::<chrono::offset::Utc>::from(current_time);
-```
-
-Також, співставляючи часові зони, можна використати метод `with_timezone()`:
-
-```Rust
-let local_date_time = date_time.with_timezone(&chrono::Local);
-```
-
-Тепер ми можемо використати функцію `format()` для представлення часу у зрозумілому форматі для нашої часової зони:
-
-```Rust
-let current_time = std::time::SystemTime::now();
-let date_time = chrono::DateTime::<chrono::offset::Utc>::from(current
+- [Робота зі строковими даними дати та часу в Rust](https://www.phoronix.com/scan.php?page=news_item&px=Rust-Date-Time-Formats)
+- [Створення графіку дати з даними в Rust](https://rust-lang-nursery.github.io/date-time/guide-conversion.html)
+- [Порівняння дат у Rust](https://raymii.org/s/blog/Comparing_dates_with_Rust__the_easy_way.html)

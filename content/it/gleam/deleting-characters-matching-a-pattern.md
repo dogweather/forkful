@@ -1,7 +1,9 @@
 ---
-title:                "Gleam: Eliminazione di caratteri corrispondenti ad un modello"
+title:                "Gleam: Eliminazione dei caratteri corrispondenti a un pattern"
+simple_title:         "Eliminazione dei caratteri corrispondenti a un pattern"
 programming_language: "Gleam"
-category:             "Strings"
+category:             "Gleam"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/it/gleam/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,38 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Perché
 
-Spesso durante la scrittura di codice, potresti aver bisogno di eliminare alcuni caratteri particolari da una stringa. Puoi farlo manualmente, ma non sarebbe bello avere una funzione che possa farlo per te?
+Eliminare caratteri che corrispondono a un determinato modello può essere utile per pulire o manipolare dati in un modo specifico. Questa funzione può essere particolarmente utile quando si lavora con grandi quantità di testo o stringhe.
 
 ## Come fare
 
-Ecco dove entra in gioco *delete_matching*. Questa funzione, disponibile in Gleam, consente di eliminare tutti i caratteri che corrispondono a un determinato modello all'interno di una stringa.
+Per eliminare caratteri che corrispondono a un modello in Gleam, è possibile utilizzare la funzione `String.filter`. Questa funzione prende come input una stringa e una funzione di filtro che determina quali caratteri devono essere rimossi. Esempio:
 
 ```Gleam
-let nome = "Giacomo-123!"
-let risultato = delete_matching(nome, "-123")
-gleam_assert.equal(risultato, "Giacomo!")
+let pattern = "aeiou"
+let string = "hello world"
+let filtered_string = String.filter(x -> not String.contains(pattern, x), string)
 ```
 
-In questo esempio, stiamo eliminando i caratteri "-123" dalla nostra stringa di input "Giacomo-123!". Vediamo il risultato della funzione nella variabile "risultato".
+Questo esempio utilizza la funzione `String.contains` per verificare se il carattere corrente è incluso nel modello. Se il carattere non è incluso, viene incluso nella stringa finale. L'output per questo sarebbe `"hll wrld"`. 
 
 ## Approfondimento
 
-Ma come funziona esattamente *delete_matching*? In realtà, questa funzione è solo una casella di caramelle che contiene altri strumenti come regex e split. In sostanza, questa è una combinazione di una regex che individua il modello che desideriamo eliminare e una split che divide la stringa in due parti, mantenendo solo la parte desiderata.
-
-Vediamo un esempio di questo processo dietro le quinte:
-
-```Gleam
-let nome = "Giacomo-123!"
-let pattern = "-123"
-let regex = Regex.new(pattern)
-let parts = String.split(nome, regex)
-gleam_assert.equal(parts, ["Giacomo", ""])
-```
-
-Come puoi vedere, il nostro stringa è stata divisa in due parti: "Giacomo" e "-123!". Infine, possiamo unire nuovamente solo la prima parte, ottenendo il risultato finale.
+La funzione `String.filter` può essere combinata con altre funzioni, come ad esempio `String.map` o `String.replace`, per manipolare stringhe in modo ancora più specifico. Inoltre, è possibile utilizzare espressioni regolari per determinare modelli di corrispondenza più complessi. Consulta la documentazione di Gleam per ulteriori informazioni su queste funzioni.
 
 ## Vedi anche
 
-- Documentazione ufficiale di Gleam su *delete_matching*
-- Esempi di utilizzo della funzione *delete_matching* in altri progetti Gleam
-- Ulteriori informazioni sulle funzionalità di regexp disponibili in Gleam
+- Documentazione ufficiale di Gleam (https://gleam.run/)
+- Tutorial su come utilizzare le funzioni di stringa in Gleam (https://dev.to/pragmaticivan/working-with-strings-in-gleam-2jc)
+- Un esempio di utilizzo di espressioni regolari in Gleam (https://sivamaksuddulagn.com/posts/pattern-matching-with-regex-in-gleam/)

@@ -1,7 +1,9 @@
 ---
-title:                "Clojure: Usuwanie znaków pasujących do wzoru"
+title:                "Clojure: Usuwanie znaków odpowiadających wzorcowi"
+simple_title:         "Usuwanie znaków odpowiadających wzorcowi"
 programming_language: "Clojure"
-category:             "Strings"
+category:             "Clojure"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/clojure/deleting-characters-matching-a-pattern.md"
 ---
 
@@ -9,37 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Usunięcie znaków odpowiadających wzorcowi jest ważnym aspektem programowania w języku Clojure. Pozwala to na efektywne przetwarzanie i manipulację tekstem, co jest niezbędne w wielu projektach. W tym poście wyjaśnimy, dlaczego usuwanie znaków jest przydatne i jak to zrobić.
+Czasami podczas programowania w Clojure zdarza się, że musimy usunąć wszystkie znaki w ciągu znaków, które pasują do określonego wzorca. Może to być potrzebne, gdy musimy oczyścić dane lub przeprowadzić inne operacje na tekście. W tym wpisie opowiemy o tym, jak można to zrobić za pomocą kawałków kodu w Clojure.
 
 ## Jak to zrobić
 
-```Clojure
-(def s "abc-123-def" )
-(println (str/replace s #"-" ""))
-;; Output: "abc123def"
-```
-
-Powyższy przykład pokazuje użycie funkcji ```str/replace```, która dostarcza proste rozwiązanie do usuwania znaków zgodnie z wzorcem. Funkcja ta przyjmuje dwa argumenty: ciąg znaków oraz wyrażenie regularne. W naszym przypadku, wykorzystaliśmy wyrażenie ```#"-"``` aby usunąć wszystkie myślniki z tekstu. Następnie, użycie pustego łańcucha ```""``` jako drugiego argumentu powoduje zastąpienie znalezionych znaków pustym łańcuchem, co w efekcie usuwa je z ciągu. Funkcja ```str/replace``` jest bardzo przydatna w różnych przypadkach usuwania znaków w tekstach.
-
-Inną opcją jest użycie funkcji ```clojure.string/replace```, która również działa w ten sam sposób, ale jest dostępna w standardowej bibliotece Clojure.
-
-Możemy również zastosować zmienne regularne do wybrania konkretnych znaków do usunięcia. Przykład poniżej ilustruje usunięcie wszystkich cyfr z ciągu znaków:
+Jednym z prostych sposobów na usunięcie wszystkich znaków pasujących do wzorca jest użycie funkcji `replace` wraz z wyrażeniem regularnym. Przykładowo, jeśli chcemy usunąć wszystkie cyfry z ciągu znaków, możemy wykorzystać następujący kod:
 
 ```Clojure
-(def s "abc123def" )
-(println (str/replace s #"\d" ""))
-;; Output: "abcdef"
+(def tekst "abc123def456ghi")
+(replace #"\d" "" tekst)
 ```
-Jest to bardzo przydatne, gdy chcemy pozbyć się określonej grupy znaków, na przykład separatorów lub znaków specjalnych.
 
-## Deep Dive
+W powyższym przykładzie, tekst zostanie przeparsowany przez wyrażenie regularne `#"\d"`, które oznacza "znajdź wszystkie cyfry". Następnie, te znaki zostaną zastąpione przez pusty ciąg znaków. W rezultacie, otrzymamy nowy ciąg bez cyfr: `abcdefghi`.
 
-Jeśli chcesz bardziej zgłębić temat usuwania znaków z tekstu, warto zapoznać się z funkcją ```clojure.string/replace-first```, która usuwa tylko pierwsze wystąpienie zgodne z wyrażeniem regularnym. Możemy również zastosować dodatkowe opcje w nawiasach klamrowych, takie jak zmiana wielkości znaków oraz ograniczenie liczby wystąpień zastępowania.
+Możemy również użyć funkcji `filter` wraz z wyrażeniem regularnym, aby usunąć wszystkie znaki pasujące do wzorca z danego ciągu. Przykładowo, jeśli chcemy usunąć wszystkie samogłoski z tekstu, możemy wykorzystać ten kod:
 
-Inną podstawową funkcją do usuwania znaków jest ```clojure.string/replace-last```, która analogicznie działa jak ```/replace-first```, ale usuwa tylko ostatnie wystąpienie zgodne z wyrażeniem regularnym.
+```Clojure
+(def tekst "programowanie")
+(apply str (filter #"(?i)[aeiouy]" tekst))
+```
+
+W tym przypadku, wyrażenie regularne `#"(?i)[aeiouy]"` oznacza "znajdź wszystkie samogłoski bez uwzględniania wielkości liter". Następnie, za pomocą funkcji `apply` i `str` wypełniamy pustym ciągiem każdy znak, który pasuje do wzorca, uzyskując w ten sposób ciąg bez samogłosek: `prgrmwn`.
+
+Możliwości jest wiele, a wybór metody zależy od naszego konkretnego przypadku. Warto jednak pamiętać, że wyrażenia regularne wraz z odpowiednimi funkcjami w Clojure są bardzo przydatne w usuwaniu znaków pasujących do wzorca.
+
+## Deep Dive 
+
+W Clojure, wyrażeniem regularnym jest ciąg znaków zwracany przez funkcję `re-pattern`. Na przykład, wyrażenie `#"[a-z]+"` zostanie przekonwertowane na wyrażenie regularne, które będzie pasować do wszystkich ciągów znaków zawierających małe litery od a do z.
+
+Ważne jest także, aby pamiętać o wyrażeniach regularnych wielu wyrazów, które mogą być użyteczne w bardziej skomplikowanych przypadkach. Na przykład, wyrażenie `#"(?i)[aeiouy]+` będzie pasować do wszystkich samogłosek, niezależnie od ich wielkości liter.
+
+Łącząc te informacje z funkcjami `replace` i `filter`, możemy dokonywać bardzo precyzyjnych operacji na tekście i usuwać tylko te znaki, których chcemy się pozbyć.
 
 ## Zobacz również
 
-- https://clojuredocs.org/clojure.string/replace
-- https://clojuredocs.org/clojure.string/replace-first
-- https://clojuredocs.org/clojure.string/replace-last
+Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych i funkcjach w Clojure, zapoznaj się z poniższymi linkami:
+
+- [Dokumentacja Clojure](https://clojure.org/documentation)
+- [Oficjalny tutorial Clojure](https://clojure.org/guides/getting_started)
+- [Książka "Clojure for the Brave and True" autorstwa Danieli Higginbotham](https://www.braveclojure.com/clojure-for-the-brave-and-true/)

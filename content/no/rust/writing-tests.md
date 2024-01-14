@@ -1,49 +1,48 @@
 ---
-title:                "Rust: Skriving av tester"
+title:                "Rust: Skrevetester"
+simple_title:         "Skrevetester"
 programming_language: "Rust"
-category:             "Testing and Debugging"
+category:             "Rust"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/rust/writing-tests.md"
 ---
 
 {{< edit_this_page >}}
 
-## Hvorfor
+# Hvorfor
 
-Å skrive tester er en viktig del av å skrive stabil og pålitelig Rust-kode. Det hjelper deg med å oppdage feil og buggs tidlig i utviklingsprosessen, slik at du kan fikse dem før de forårsaker større problemer. Det gir også en god oversikt over koden din og gjør det enklere å forstå den.
+Å skrive tester i programmering er en viktig og nødvendig del av utviklingsprosessen. Tester bidrar til å sikre at koden fungerer som den skal og reduserer risikoen for feil og bugs i produksjon. Det kan også bidra til å forbedre kvaliteten og holdbarheten til kodebasen din.
 
-## Hvordan
+# Hvordan
 
-Det finnes flere forskjellige testrammeverk i Rust, men det mest populære er `cargo test` som er inkludert i Rust-verktøykassen.
-
-
-For å skrive tester, må du lage et nytt bibliotek (eller mappe) i prosjektet ditt med navnet `tests`. Deretter kan du lage en ny fil med `.rs`-utvidelse inne i denne mappen og begynne å skrive testene dine.
-
-La oss si at du har en funksjon `add` som tar to tall som argumenter og returnerer summen av dem. For å teste denne funksjonen, kan du skrive følgende kode i testfilen din:
+For å skrive tester i Rust, må du først importere "test" biblioteket ved å legge til følgende linje øverst i filen din:
 
 ```Rust
-fn add(x: i32, y: i32) -> i32 {
-    x + y
-}
+#[test]
+```
 
+Deretter kan du bruke tester ved å legge til egendefinerte funksjoner og bruke assert-makroen for å sjekke om ønsket resultat er oppnådd. Her er et eksempel på en enkel test av en "add" funksjon:
+
+```Rust
 #[test]
 fn test_add() {
-    assert_eq!(add(2, 2), 4);
-    assert_eq!(add(5, 10), 15);
+    let result = add(2, 3); // Kaller funksjonen "add" med to tall og lagrer resultatet i en variabel
+    assert_eq!(result, 5); // Sjekker om resultatet er lik forventet svar
 }
 ```
 
-I dette tilfellet bruker vi `assert_eq!`-makroen som sammenligner forventet og faktisk resultat. Hvis de er like, passerer testen, ellers feiler den.
+Når du kjører denne testen, vil du få en melding om at testen er bestått eller mislyktes, samt informasjon om hvilken linje som eventuelt feilet.
 
-Etter å ha skrevet testene dine, kan du kjøre dem ved å kjøre kommandoen `cargo test` i terminalen. Hvis alle testene dine passerer, vil du se en grønn melding om at testene er bestått. Hvis det oppstår en feil, vil testen mislykkes og du vil få en rød melding.
+# Dypdykk
 
-## Dypdykk
+Det finnes flere typer tester du kan skrive i Rust, blant annet unit tester, integrasjonstester og ytelsestester. Det er også mulig å bruke "test" biblioteket til å generere dokumentasjon ved hjelp av kodeeksempler.
 
-I tillegg til å bruke `assert_eq!`, er det også andre nyttige makroer og funksjoner som du kan bruke når du skriver tester. For eksempel kan du bruke `assert_ne!` for å teste at to verdier ikke er like, eller `assert!` for å teste vilkårlige påstander.
+En viktig regel å følge når man skriver tester i Rust er at hver testfunksjon skal være uavhengig og ikke påvirke andre tester. Dette sikrer at resultatene er pålitelige og at eventuelle feil kan spores tilbake til en spesifikk test.
 
-Det er også verdt å nevne at `cargo test` har flere alternativer som du kan bruke for å begrense eller filtrere testene dine. For å se alle tilgjengelige alternativer, kan du kjøre kommandoen `cargo test --help`.
+Hvis du ønsker å lære mer om å skrive tester i Rust, kan du sjekke ut dokumentasjonen for "test" biblioteket på Rusts offisielle nettside.
 
-## Se også
+# Se også
 
-- [The Rust Programming Language - Kapittel 6: Testing your Code](https://doc.rust-lang.org/book/ch11-00-testing.html)
-- [Introduction to Rust Testing](https://danielkeep.github.io/tlborm/book/mk-1-ch01.html)
-- [Rust by Example - Testing](https://doc.rust-lang.org/rust-by-example/testing.html)
+* [Rust dokumentasjon - test biblioteket](https://doc.rust-lang.org/std/macro.assert.html)
+* [En innføring i å skrive tester i Rust](https://adventures.mechanicalrock.io/rust-introduction-w-writing-unit-tests.html)
+* [Hvordan skrive gode tester i Rust](https://medium.com/@adiswami/a-concise-guide-to-writing-tests-in-rust-83116dd9a344)

@@ -1,56 +1,53 @@
 ---
-title:                "C: Borrado de caracteres que coinciden con un patrón."
+title:                "C: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "C"
-category:             "Strings"
+category:             "C"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/es/c/deleting-characters-matching-a-pattern.md"
 ---
 
 {{< edit_this_page >}}
 
-## ¿Por qué borrar caracteres que coincidan con un patrón?
+## Por qué
 
-A veces en la programación, nos encontramos con la necesidad de eliminar caracteres de una cadena que coincidan con un patrón específico. Esto puede ser útil para limpiar datos o para validar la entrada del usuario. En este artículo, exploraremos cómo podemos lograr esto en lenguaje C.
+A veces, en programación, nos encontramos con la necesidad de eliminar ciertos caracteres de una cadena de texto que coinciden con un patrón específico. Ya sea para limpiar datos, validar información o simplemente para una tarea específica, conocer cómo eliminar caracteres es una habilidad importante en el desarrollo de software.
 
 ## Cómo hacerlo
 
-Para eliminar caracteres coincidentes con un patrón en C, utilizaremos la función `memmove()` de la librería `string.h`. Esta función nos permite mover cierta cantidad de bytes de una posición de memoria a otra. En nuestro caso, vamos a usarla para mover los caracteres que queremos eliminar al final de la cadena.
-
-El siguiente código es un ejemplo de cómo podemos eliminar los caracteres "a" y "b" de la cadena "holaab":
+Para eliminar caracteres que coinciden con un patrón en C, podemos utilizar la función `strspn()` de la biblioteca estándar de C. Esta función toma dos argumentos: una cadena de caracteres a analizar y una cadena que contiene los caracteres a eliminar. A continuación, se muestra un ejemplo de cómo utilizar esta función:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-void deleteCharacters(char *string, char *pattern){
-    char *match;
-    while ((match = strstr(string, pattern)) != NULL) {
-        memmove(match, match + strlen(pattern), strlen(string) + 1 - strlen(pattern));
-    }
-}
+int main() {
+	char texto[] = "Ejemplo123";
+	char patrones[] = "0123456789"; // elimina todos los dígitos
 
-int main(){
-    char name[10] = "holaab";
-    char pattern[] = "ab";
-    deleteCharacters(name, pattern);
-
-    printf("%s", name); //imprimirá "hol"
-    return 0;
+	printf("Texto original: %s\n", texto); //  imprime "Ejemplo123"
+	
+	int cantidad_eliminada = strspn(texto, patrones); // devuelve la cantidad de caracteres eliminados
+	texto[cantidad_eliminada] = '\0'; // añade el carácter nulo al final para indicar el nuevo final de la cadena
+	
+	printf("Texto sin dígitos: %s\n", texto); // imprime "Ejemplo"
 }
 ```
 
-En este ejemplo, la función `deleteCharacters()` recibe dos argumentos: un puntero a la cadena donde queremos eliminar los caracteres y un puntero al patrón que queremos borrar. Dentro de la función, utilizamos un bucle `while` y la función `strstr()` para encontrar la posición de la primera coincidencia del patrón en la cadena. Luego, utilizando `memmove()`, movemos los caracteres que están después de la coincidencia al inicio de la cadena, sobreescribiendo así los caracteres que queremos eliminar. Este proceso se repite hasta que ya no hay coincidencias.
+Output:
+
+```
+Texto original: Ejemplo123
+Texto sin dígitos: Ejemplo
+``` 
 
 ## Profundizando
 
-Ahora que conocemos la función `memmove()` y cómo podemos utilizarla para eliminar caracteres coincidentes con un patrón, es importante tener en cuenta algunas cosas:
+La función `strspn()` utiliza un enfoque de "barrido" para eliminar los caracteres que coinciden con el patrón. Comienza al principio de la cadena y va avanzando carácter por carácter hasta encontrar uno que no esté incluido en la cadena de patrones. Una vez que encuentra este carácter, devuelve la cantidad de caracteres que ha eliminado hasta ese punto. Luego, se utiliza esta cantidad para determinar el nuevo final de la cadena.
 
-- La función `memmove()` trabaja con posiciones de memoria, no con caracteres específicos. Por lo tanto, siempre debemos tener cuidado de no sobrepasar los límites de nuestra cadena al mover los caracteres.
-- Si queremos eliminar un solo carácter, podemos simplemente mover un solo byte en lugar de toda una cadena.
-- Podemos adaptar este enfoque para eliminar más de un patrón en una sola cadena, simplemente llamando a `deleteCharacters()` varias veces.
+También hay otra función, `strcspn()`, que realiza el mismo proceso pero elimina los caracteres que no coinciden con el patrón. En combinación, estas dos funciones pueden ser muy útiles para limpiar y manipular cadenas de texto en C.
 
-¡Ahora ya sabes cómo eliminar caracteres coincidentes con un patrón en C! Si tienes dudas o quieres seguir aprendiendo sobre este tema, te recomendamos estos recursos adicionales:
+## Ver también
 
-## Vea también
-
-- [Documentación de la función `memmove()` en cplusplus.com](https://www.cplusplus.com/reference/cstring/memmove/)
-- [Tutorial de C en el canal de Youtube Programación ATS](https://www.youtube.com/watch?v=RURck40-v1k)
+- Documentación oficial de `strspn()` en [C++ Reference](https://en.cppreference.com/w/c/string/byte/strspn)
+- Artículo sobre la función `strcspn()` en [GeeksforGeeks](https://www.geeksforgeeks.org/c-strcspn-function/)

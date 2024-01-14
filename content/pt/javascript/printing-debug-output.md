@@ -1,48 +1,61 @@
 ---
 title:                "Javascript: Imprimindo saída de depuração"
+simple_title:         "Imprimindo saída de depuração"
 programming_language: "Javascript"
-category:             "Testing and Debugging"
+category:             "Javascript"
+tag:                  "Testing and Debugging"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pt/javascript/printing-debug-output.md"
 ---
 
 {{< edit_this_page >}}
 
-# Por que imprimir saída de depuração em Javascript?
+## Introdução: Por que imprimir mensagens de depuração em um programa Javascript?
 
-Debugar código é uma parte essencial do processo de programação. No entanto, muitos programadores tendem a subestimar a importância de imprimir saída de depuração em seu código Javascript. Fazer isso pode fornecer informações valiosas sobre o fluxo do código e ajudar a identificar e corrigir erros de forma mais eficiente. Neste artigo, vamos explorar a importância da saída de depuração em Javascript e como implementá-la em seu código.
+Se você já teve alguma experiência com programação, provavelmente já se deparou com a necessidade de debugar seu código. Isso significa identificar e corrigir erros e falhas em um programa de computador. Para ajudar nesse processo, uma técnica muito útil é a impressão de mensagens de depuração durante a execução do programa. Neste artigo, vamos explorar por que e como imprimir mensagens de depuração em programas Javascript.
 
-## Como fazer
+## Como fazer: Exemplos de código e saída
 
-A maneira mais simples de imprimir saída de depuração em Javascript é usando o comando `console.log()`. Vamos supor que temos a seguinte função que calcula a média de dois números:
+Em Javascript, existem várias maneiras de imprimir mensagens de depuração, mas a forma mais comum é utilizando o comando console.log(). Isso permite que você imprima informações no console do navegador ou do ambiente de desenvolvimento.
+
+Veja um exemplo simples de como utilizar o console.log() em um programa Javascript:
 
 ```Javascript
-function calcularMedia(a, b) {
-  console.log(`Calculando a média de ${a} e ${b}.`);
-  let media = (a + b) / 2;
-  console.log(`A média é ${media}.`);
-  return media;
-}
+let nome = "Maria";
+let idade = 28;
 
-calcularMedia(4, 6);
+console.log(`O nome é ${nome} e a idade é ${idade}.`);
 ```
 
-A saída de depuração deste código seria:
+A saída deste código será:
 
 ```
-Calculando a média de 4 e 6.
-A média é 5.
+O nome é Maria e a idade é 28.
 ```
 
-Isso nos permite ver os valores que estão sendo passados para a função e a média calculada, o que pode ser útil para identificar erros em nosso código. Além de `console.log()`, há também outros métodos de saída de depuração, como `console.info()`, `console.warn()` e `console.error()`, que podem ser usados para imprimir informações específicas sobre o estado do código.
+Isso pode ser muito útil para verificar se as variáveis estão recebendo os valores esperados, ou para entender os valores e resultados de operações matemáticas ou lógicas.
 
-## Mergulho profundo
+Outra maneira de imprimir mensagens de depuração é utilizando o comando alert(), que exibe uma janela pop-up com a mensagem desejada. Veja um exemplo:
 
-Utilizar saída de depuração em Javascript também pode ser muito útil para entender o fluxo do código e realizar testes. Quando se tem um código complexo, pode ser difícil acompanhar o que está acontecendo em cada etapa do processo. Com a saída de depuração, podemos ver os valores das variáveis e como eles são modificados ao longo do código, o que ajuda a identificar possíveis problemas e otimizar o desempenho.
+```Javascript
+let numero = Math.random();
 
-Além disso, podemos utilizar métodos como `console.table()` para imprimir dados estruturados em uma tabela, facilitando a visualização e compreensão dos dados.
+alert(`O número gerado é ${numero}.`);
+```
 
-# Veja também
+A saída será uma janela pop-up mostrando o valor gerado pelo método Math.random().
 
-- [Documentação oficial do console em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/API/Console)
-- [Artigo sobre debug em Javascript](https://tableless.com.br/o-guia-definitivo-de-debug-de-aplicacoes-javascript/)
-- [Livro sobre depuração de código em Javascript](https://www.casadocodigo.com.br/products/livro-depurando-javascript)
+Você também pode utilizar o console.table() para imprimir informações em forma de tabela, ou o console.error() para exibir mensagens de erro.
+
+## Aprofundando: Maiores informações sobre impressão de mensagens de depuração
+
+A impressão de mensagens de depuração é uma técnica essencial para encontrar e corrigir erros em seus programas. Ao imprimir informações relevantes durante a execução do código, você pode entender melhor o que está acontecendo e identificar onde o problema está ocorrendo.
+
+Além disso, a impressão de mensagens de depuração pode ajudar a verificar se um determinado trecho de código está sendo executado ou não, o que é especialmente útil para testar condições e loops.
+
+No entanto, é importante lembrar que é uma boa prática remover as mensagens de depuração antes de publicar o código para produção. Isso garante que seu programa não imprima informações sensíveis ou desnecessárias para o usuário final.
+
+## Veja também
+
+- [Documentação do console do Javascript](https://developer.mozilla.org/pt-BR/docs/Web/API/Console)
+- [Tutorial de debug em Javascript](https://medium.com/javascript-inside/introduction-to-debugging-javascript-7c1dcb8a7c79)
+- [Dicas para melhorar suas habilidades de debug](https://dev.to/rebeccauranga/dealing-with-the-wild-wild-world-of-debugging-3b7p)

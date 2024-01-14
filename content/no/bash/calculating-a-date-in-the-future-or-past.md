@@ -1,38 +1,56 @@
 ---
-title:                "Bash: Beregning av dato i fremtiden eller fortiden"
+title:                "Bash: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Bash"
-category:             "Dates and Times"
+category:             "Bash"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/bash/calculating-a-date-in-the-future-or-past.md"
 ---
 
 {{< edit_this_page >}}
 
+Bash programmering for å beregne datoer
+
 ## Hvorfor
-Det kan være flere grunner til å ønske å beregne en dato i fremtiden eller fortiden, enten det er for å planlegge en reise, huske på viktige hendelser eller bare for å tilpasse kalenderen din. Heldigvis kan dette enkelt gjøres med Bash-programmering.
 
-## Slik gjør du det
-For å beregne en dato i fremtiden eller fortiden i Bash, trenger vi å bruke kommandoen `date` og dens mange muligheter. Her er et eksempel på hvordan du kan beregne datoen 30 dager fra nå:
+Beregning av datoer i fremtiden eller fortiden er en vanlig oppgave for mange. Det kan være nyttig for å planlegge hendelser, som bursdager eller ferier, eller for å spore markeder og aksjer. Uansett årsak er det viktig å ha en enkel og pålitelig måte å beregne datoer på, og dette er akkurat det Bash-programmering kan hjelpe oss med.
+
+## Hvordan 
+
+Det finnes flere forskjellige måter å beregne datoer i fremtiden eller fortiden ved hjelp av Bash-programmering. Et eksempel er å bruke kommandoen "date" kombinert med et antall dager, måneder eller år som skal legges til eller trekkes fra den nåværende datoen. For å beregne datoen 10 dager frem i tid, kan du for eksempel bruke kommandoen "date -d '+10 days'", og du vil få output som viser datoen 10 dager etter dagens dato.
+
 ```Bash
-date -d "+30 days"
+$ date -d '+10 days'
+Onsdesdag 12. mai 2021 21.54.00 CEST
 ```
-Dette vil gi oss outputen `Mon Nov 15 00:00:00 CET 2021`, noe som betyr 30 dager fra datoen programmet ble kjørt.
 
-For å beregne en dato i fortiden, kan vi bruke kommandoen `date` sammen med parameteren `-` etterfulgt av antall dager. Her er et eksempel på hvordan du kan beregne datoen 100 dager tilbake i tid:
+Du kan også bruke variabler og matematiske operasjoner for å beregne datoer. For eksempel kan du bruke variabelen "today" som er satt til dagens dato, og deretter bruke dette til å beregne datoen 3 uker frem i tid. Resultatet vil være det samme som ved å bruke "date" kommandoen, men dette er et eksempel på hvordan du kan bruke Bash-programmering for å gjøre beregningene mer fleksible.
+
 ```Bash
-date -d "-100 days"
+$ today=$(date +%Y-%m-%d)
+$ echo $today
+2021-05-02
+$ new_date=$(date -d "-1 month +3 weeks" '+%Y-%m-%d')
+$ echo $new_date
+2021-05-23
 ```
-Dette vil gi oss outputen `Thu Aug 05 00:00:00 CEST 2021`.
 
-## Dykk dypere
-Hvis du vil gå enda dypere i å beregne datoer i Bash, kan du også bruke kommandoen `date` til å arbeide med konkrete datoer. For eksempel, hvis du vil beregne datoen 1. mai neste år, kan du bruke følgende kommando:
-```Bash
-date -d "1st may next year"
-```
-Dette vil gi oss outputen `Sun May 01 00:00:00 CEST 2022`.
+## Deep Dive
 
-Det er også mulig å bruke `date` til å arbeide med tidsperioder og endre formatet på datoen som vises. Du kan lese mer om dette og andre nyttige tips i `date`'s manual.
+Hvis du ønsker å lære mer om hvordan Bash-programmering beregner datoer, kan du utforske "date" kommandoen nærmere. Her er noen av de mest nyttige argumentene du kan bruke for å beregne datoer i fortid og fremtid:
 
-## Se også
-- `date`'s manual: https://linux.die.net/man/1/date
-- How to format dates in Bash: https://www.cyberciti.biz/faq/linux-unix-formatting-dates-for-display/
-- GNU's informative page about the `date` command: https://www.gnu.org/software/coreutils/date
+- -d/--date: Dette argumentet lar deg angi en spesifikk dato i stedet for dagens dato. For eksempel kan du bruke "date -d '2021-07-15' '+3 months'" for å beregne datoen 3 måneder etter 15. juli 2021.
+- -v/--version: Dette argumentet lar deg utføre mer komplekse beregninger ved å bruke variabler og matematiske operasjoner. For eksempel kan du bruke "date -v '+1d' '+%Y-%m-%d'" for å beregne datoen for neste dag.
+- -u/--utc: Dette argumentet viser datoen og klokkeslettet i UTC-tidssone i stedet for den lokale tidssonen.
+- -j/--day: Dette argumentet returnerer dagen i året i stedet for dato og klokkeslett.
+- -r/--reference: Dette argumentet lar deg bruke en referansedato og beregne forskjellen mellom den datoen og dagens dato.
+
+Se også
+
+- [Bash manual page for date command](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+- [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/bash-variables.php)
+- [Unix Timestamp Converter](https://www.unixtimestamp.com/)
+
+---
+
+Bash-programmering kan være et nyttig verktøy for å beregne datoer i fremtiden eller fortiden. Ved å bruke enkle kommandoer som "date" kan du enkelt få output med ønsket dato og klokkeslett. Du kan også utforske mer avanserte alternativer for å gjøre beregningene mer nøyaktige og fleksible. Lykke til med å beregne dine fremtidige arrangementer og følg med på markeder og aksjer med Bash-programmering!

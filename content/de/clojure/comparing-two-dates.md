@@ -1,51 +1,63 @@
 ---
-title:                "Clojure: Vergleich von zwei Daten"
+title:                "Clojure: Vergleich von zwei Datumsangaben"
+simple_title:         "Vergleich von zwei Datumsangaben"
 programming_language: "Clojure"
-category:             "Dates and Times"
+category:             "Clojure"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/clojure/comparing-two-dates.md"
 ---
 
 {{< edit_this_page >}}
 
-## Warum
+# Warum
 
-Das Vergleichen von zwei Daten ist eine häufige Aufgabe in der Programmierung, besonders wenn es um die Verarbeitung von Datumsangaben geht. Es kann hilfreich sein, um zu überprüfen, ob ein bestimmtes Datum vor oder nach einem anderen Datum liegt oder um herauszufinden, wie viele Tage zwischen diesen beiden Daten liegen.
+Das Vergleichen von zwei Daten ist ein wichtiger Aspekt in der Programmierung, da es uns ermöglicht zu überprüfen, ob ein bestimmtes Datum vor oder nach einem anderen Datum liegt. Dies kann hilfreich sein, um Daten zu sortieren oder um bestimmte Aktionen basierend auf dem Datum auszuführen.
 
-## Wie man zwei Daten vergleicht
+## Wie geht man vor
 
-In Clojure gibt es eine Vielzahl von Funktionen, die beim Vergleichen von Daten helfen können. Eine grundlegende Möglichkeit ist die Verwendung der Funktion `compare`, die zwei Daten miteinander vergleicht und ein Ergebnis zurückgibt, das angibt, ob das erste Datum vor, gleich oder nach dem zweiten Datum liegt.
-
-```Clojure
-(compare #inst "2021-01-01" #inst "2021-01-15")
-;; Output: -1
-```
-
-In diesem Beispiel wird `-1` zurückgegeben, was bedeutet, dass das erste Datum vor dem zweiten liegt.
-
-Eine weitere nützliche Funktion ist `days`, die die Anzahl der Tage zwischen zwei Daten zurückgibt.
+Um zwei Daten in Clojure zu vergleichen, können wir die Funktion `before?` oder `after?` verwenden. Diese Funktionen haben jeweils zwei Argumente, das erste Datum und das zweite Datum, und geben entweder `true` oder `false` zurück, je nachdem ob das erste Datum vor oder nach dem zweiten Datum liegt.
 
 ```Clojure
-(days #inst "2021-01-01" #inst "2021-01-15")
-;; Output: 14
+(before? (java.time.LocalDate/now) (java.time.LocalDate/parse "2020-01-01"))
+
+; => true
+
+(after? (java.time.LocalDate/now) (java.time.LocalDate/parse "2020-01-01"))
+
+; => false
 ```
 
-Dies ist besonders praktisch, wenn man wissen möchte, wie viele Tage zwischen zwei Ereignissen vergangen sind.
-
-## Tiefere Einblicke
-
-Das Vergleichen von Daten kann komplexer werden, wenn es um verschiedene Zeitzonen oder die Berücksichtigung von Uhrzeiten geht. Hier bieten sich Funktionen wie `local-date-time` oder `zoned-date-time` an, um sicherzustellen, dass die Vergleiche unter Berücksichtigung der gewünschten Zeitzone oder Uhrzeiten erfolgen.
-
-Zusätzlich gibt es auch Funktionen wie `before?` und `after?`die eine boolesche Aussage zurückgeben, die angibt, ob das erste Datum vor oder nach dem zweiten Datum liegt.
+Wir können auch die Funktion `compare` verwenden, die uns eine Zahl zurückgibt, die angibt, ob das erste Datum vor, gleich oder nach dem zweiten Datum liegt.
 
 ```Clojure
-(after? #inst "2021-01-01" #inst "2021-01-15")
-;; Output: false
+(compare (java.time.LocalDate/now) (java.time.LocalDate/parse "2020-01-01"))
+
+; => 1
+
+(compare (java.time.LocalDate/parse "2020-01-01") (java.time.LocalDate/parse "2020-01-01"))
+
+; => 0
+
+(compare (java.time.LocalDate/parse "2020-01-01") (java.time.LocalDate/now))
+
+; => -1
 ```
 
-Es gibt auch die Möglichkeit, benutzerdefinierte Vergleichsfunktionen zu erstellen, die spezifischere Kriterien für den Vergleich von Daten festlegen.
+## Tieferer Einblick
+
+Beim Vergleichen von Daten in Clojure ist es wichtig zu beachten, dass die Funktionen `before?`, `after?` und `compare` nur mit Java-Datentypen funktionieren. Wenn wir beispielsweise zwei Clojure-Datentypen wie `LocalDate` vergleichen möchten, müssen wir sie zunächst in Java-Datentypen umwandeln.
+
+```Clojure
+(before? (clj-time.core/now) (clj-time.core/parse "2020-01-01"))
+
+; => ClassCastException java.lang.Long cannot be cast to java.time.LocalDate
+
+(before? (clj-time.coerce/to-java (clj-time.core/now)) (clj-time.coerce/to-java (clj-time.core/parse "2020-01-01")))
+
+; => true
+```
 
 ## Siehe auch
 
-- [Clojure-Dokumentation zu Datums- und Zeitfunktionen](https://clojure.org/reference/java_interop#date_and_time)
-- [Zusätzliche Beispiele und Erläuterungen zum Vergleichen von Daten in Clojure](https://www.baeldung.com/java-compare-dates)
-- [Weitere Informationen zur Arbeit mit Datumsangaben in Clojure](https://adityatannu.com/blog/clojure-dates/)
+- [Clojure Dokumentation über Datum und Zeit](https://clojure.org/reference/date_and_time)
+- [Java 8 Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

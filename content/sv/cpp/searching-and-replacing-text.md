@@ -1,57 +1,52 @@
 ---
 title:                "C++: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/sv/cpp/searching-and-replacing-text.md"
 ---
 
 {{< edit_this_page >}}
 
-## Varför
-Att söka och ersätta text är en vanlig procedur inom programmering, oavsett om det handlar om att ändra en stavning eller att uppdatera variablnamn. Genom att lära sig hur man effektivt söker och ersätter text i C++ kan man spara tid och undvika manuella misstag.
+##Varför
 
-## Hur man gör
-För att söka och ersätta text i C++, behöver man använda sig av två huvudfunktioner: `find()` och `replace()`. `find()` kommer att leta igenom en sträng efter en viss text och returnera positionen där texten hittades. `replace()` kommer sedan att byta ut den hittade texten med en annan.
+Att söka och ersätta text är en vanlig uppgift inom programmering som kan spara mycket tid och ansträngning. Genom att använda en enkel sök-och-ersättningsfunktion kan du snabbt ändra flera förekomster av en specifik textsträng i ett dokument eller en kodbas. Detta är särskilt användbart när du behöver uppdatera en kodbas med nya variablenamn eller gör större förändringar i ett projekt.
 
-Här är ett kodexempel som visar hur man använder `find()` och `replace()` för att byta ut alla förekomster av ordet "hej" till "hello":
+##Så här
+
+För att söka och ersätta en textsträng i C++ kan du använda strängfunktionen `find()` i kombination med `replace()`-funktionen. Här är ett enkelt exempel som söker efter alla förekomster av "hej" och ersätter dem med "hello" i en sträng:
 
 ```C++
-#include <iostream>
-#include <string>
+string myString = "hej och hej då";
+myString.replace(myString.find("hej"), 3, "hello");
+```
 
-int main() {
-    std::string str = "Hej värld!";
-    std::string hello = "hello";
-    
-    // Letar efter första förekomsten av "hej"
-    size_t found = str.find("hej");
-    
-    if (found != std::string::npos) { // Om "hej" hittas
-        // Byt ut "hej" med "hello"
-        str.replace(found, 3, hello);
-    }
-    
-    std::cout << str; // Skriver ut "Hello värld!"
-    
-    return 0;
+Detta exempel kommer att ändra "hej" till "hello" på både första och andra förekomsten i strängen `myString`. Genom att använda `replace()`-funktionen tillsammans med `find()` kan du snabbt och effektivt ändra flera förekomster av en viss textsträng.
+
+För att söka och ersätta i en hel fil använder du `ifstream` och `ofstream` för att öppna och skriva till filen. Här är ett exempel på hur detta kan göras:
+
+```C++
+ifstream inputFile("minFil.txt");
+ofstream outputFile("ersattMinFil.txt");
+
+string line;
+while (getline(inputFile, line)) {
+    line.replace(line.find("hej"), 3, "hello");
+    outputFile << line << endl;
 }
 ```
 
-Output:
-```
-Hello värld!
-```
+I detta exempel öppnas en fil för läsning och en annan fil skapas för att skriva det ändrade innehållet till. Sedan sätts en kommandorad som läser in varje rad i filen och ersätter alla förekomster av "hej" med "hello" med `replace()`-funktionen. Slutligen skrivs den ändrade raden till den nya filen med hjälp av `ofsstream`.
 
-## Djupdykning
-När det kommer till sökning och ersättning av text i C++, finns det vissa saker att tänka på för att undvika vanliga misstag. Till exempel, `find()` returnerar positionen där texten hittades som en `size_t`variabel, vilket är ett unsigned integer. Detta betyder att om "hej" inte hittas i strängen, kommer `find()` att returnera det största möjliga värdet för en `size_t`, vilket kan leda till oväntade resultat. 
+##Djupdykning
 
-En annan viktig aspekt att tänka på är att `replace()` inte ersätter text i själva strängen, utan genererar en ny sträng med de ändringar som gjorts. För att ändra originalsträngen behöver man tilldela resultatet av `replace()` tillbaka till den.
+Även om söka och ersätta i C++ kan verka enkelt finns det vissa fall där det kan bli mer komplicerat. Till exempel om du vill söka och ersätta en textsträng som finns inuti citattecken kan det bli mer krångligt. Detta beror på att `find()`-funktionen söker efter en hel sträng, inte en del av en sträng. För att lösa detta problem kan du använda `substr()`-funktionen för att dela upp strängen i mindre delar och sedan använda `find()` för att söka och ersätta inuti dessa delsträngar.
 
-## Se även
-- [C++ Dokumentation för `find()`](https://www.cplusplus.com/reference/string/string/find/)
-- [C++ Dokumentation för `replace()`](https://www.cplusplus.com/reference/string/string/replace/)
-- [En guide för grundläggande C++ strängmanipulering](https://www.learncpp.com/cpp-tutorial/6-x-chapter-6-comprehensive-data-decision-and-looping-statements/6-10-string-manipulation/)
+Du kan också använda `regex` för att söka och ersätta text med hjälp av reguljära uttryck. Detta ger en mer flexibel sökning och något som kan vara användbart för mer komplexa uppgifter. Men det är viktigt att komma ihåg att `regex` kan vara resurskrävande och bör användas med försiktighet i större projekt.
 
-Se även
- - [Markdown: Syntax](https://daringfireball.net/projects/markdown/syntax)
- - [Get Started with Markdown in Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown)
+##Se också
+
+- [C++ String Class Reference](https://www.cplusplus.com/reference/string/string/)
+- [C++ ifstream Class Reference](https://www.cplusplus.com/reference/fstream/ifstream/)
+- [C++ ofstream Class Reference](https://www.cplusplus.com/reference/fstream/ofstream/)

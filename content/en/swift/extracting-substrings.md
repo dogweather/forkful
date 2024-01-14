@@ -1,57 +1,71 @@
 ---
 title:                "Swift recipe: Extracting substrings"
+simple_title:         "Extracting substrings"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/swift/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+Why
 
-Have you ever needed to extract a specific part of a string in your Swift code? Whether it's for formatting purposes or to retrieve important data, extracting substrings can be a useful skill for any Swift programmer. In this blog post, we will dive into the topic of substring extraction and learn how it can benefit us in our coding endeavors.
+Have you ever needed to pull out a specific part of a string in your Swift code? Maybe you want to extract a name from a longer sentence or break apart a string based on certain characters. This is where extracting substrings comes in handy.
 
-## How To
+How To
 
-First, let's start with understanding what a substring is. A substring is a part of a larger string that can be extracted based on a specific set of criteria. In Swift, we can use the `subString(from:to:)` function to extract substrings. Let's see an example of how this works:
-
-```Swift
-var sentence = "I love coding in Swift!"
-var substring = sentence.subString(from: 2, to: 6)
-print(substring)
-```
-The output of this code will be "love", as we are extracting the characters from the 2nd index to the 6th index of the original string.
-
-But what if we don't know the exact index of the characters we want to extract? In that case, we can use the `subString(from:)` function to extract all characters starting from a specific index to the end of the string. Let's see an example:
+To begin, we will start with a simple string: 
 
 ```Swift
-var sentence = "I love coding in Swift!"
-var substring = sentence.subString(from: 7)
-print(substring)
+let sentence = "Hello, my name is John."
 ```
-The output of this code will be "coding in Swift!", as we are extracting all characters from the 7th index to the end of the string.
 
-We can also extract substrings based on a specific pattern using the `range(of:)` function. For example, if we want to extract everything before the word "coding", we can do so with the following code:
+To extract a substring from this string, we can use the `substring` method. First, we need to determine the range of characters we want to extract. For example, let's say we want to extract "John" from the string. We can do this by creating a `Range` object using the `..<` operator.
 
 ```Swift
-var sentence = "I love coding in Swift!"
-var range = sentence.range(of: "coding")
-var substring = sentence.subString(to: range!.lowerBound)
-print(substring)
+let range = ...<15
 ```
 
-The output of this code will be "I love ", as we are extracting all characters before the word "coding". 
+Next, we can use the `substring` method on our string variable, passing in the range we just created. Note that the range goes from the first character we want to extract up to, but not including, the character at the end of the range.
 
-## Deep Dive
+```Swift
+let name = sentence.substring(with: range)
+```
 
-In Swift, substrings are represented using the `Substring` type, which is a thin wrapper around the original string. This means that when we extract a substring, it shares the same memory as the original string, making it more efficient than creating a new string.
+Now, if we print out `name`, we will see the desired output of "John".
 
-It's also worth noting that substrings are not limited to just strings. We can extract substrings from any type that conforms to the `Collection` protocol, such as arrays and dictionaries.
+```
+John
+```
 
-Lastly, it's important to be aware that since substrings are just a portion of the original string, any changes made to the substring will also affect the original string. If we want to create a new string with the extracted substring, we can use the `String` initializer and pass in the substring as an argument.
+We can also use the `substring` method to extract multiple substrings from a string. For example, let's say we want to extract both "Hello" and "John" from our original string. We can do this by creating a range that specifies the start and end of each substring.
 
-## See Also
+```Swift
+let range1 = ...<5     // for "Hello"
+let range2 = 21..<26  // for "John"
+```
 
-- [Swift Substrings: Explained with Code Examples](https://www.swiftbysundell.com/basics/substring/)
-- [Substring in Swift: Explained with Code Examples](https://www.programiz.com/swift-programming/substring)
-- [The Power of Substring in Swift](https://medium.com/@lucasfarah/using-the-power-of-substring-in-swift-60c297b7bc4a)
+Then, we can simply call the `substring` method twice, passing in the appropriate range for each substring.
+
+```Swift
+let greeting = sentence.substring(with: range1)
+let name = sentence.substring(with: range2)
+```
+
+This will give us the following output:
+
+```
+Hello
+John
+```
+
+Deep Dive
+
+The `substring` method is actually a shorthand for accessing a `substring(from:)` method and a `substring(to:)` method individually. The `substring(from:)` method takes in an integer that specifies the starting index of the substring, while the `substring(to:)` method takes in an integer that specifies the ending index.
+
+Another important thing to note is that the `substring` method returns a `String` type, not a `Substring` type. If you want to work with `Substring` types instead, you can use the `prefix` and `suffix` methods.
+
+See Also
+
+For more information on manipulating strings in Swift, check out the official documentation here: https://developer.apple.com/documentation/swift/string

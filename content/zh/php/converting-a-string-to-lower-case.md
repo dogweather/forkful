@@ -1,7 +1,9 @@
 ---
 title:                "PHP: 将字符串转换为小写"
+simple_title:         "将字符串转换为小写"
 programming_language: "PHP"
-category:             "Strings"
+category:             "PHP"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/zh/php/converting-a-string-to-lower-case.md"
 ---
 
@@ -9,34 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 为什么要将字符串转换为小写
 
-字符串转换为小写在实际的程序开发中非常常见。它可以用来统一字符串的格式，方便比较和搜索，也可以增强用户体验。无论是处理用户输入，还是从数据库或其他来源获取数据，我们都需要对字符串进行格式处理。将字符串转换为小写就是其中一种处理方式。
+在编程中，有时我们需要将字符串转换为小写形式。这可能是为了与数据库中的数据匹配，或者为了方便比较字符大小写。不管什么原因，学习如何将字符串转换为小写形式是非常重要的。
 
-## 如何实现
-
-首先，我们需要使用PHP内置的函数`strtolower()`来将字符串转换为小写。它接受一个字符串作为参数，并返回转换为小写的结果。让我们来看一个例子：
+## 如何实现字符串转换为小写形式
+```PHP
+$string = "HELLO, WORLD";
+echo strtoupper($string); // outputs "hello, world"
+```
+在上面的例子中，我们使用了PHP内置函数`strtoupper()`来将字符串转换为小写形式。这个函数接收一个字符串作为参数，并返回一个全部为小写字母的新字符串。
 
 ```PHP
-$str = "Hello World";
-echo strtolower($str);
+$string = "ThIs iS a MixEd CaSe";
+echo strtolower($string); // outputs "this is a mixed case"
 ```
-输出为：
-```
-hello world
-```
+另一个PHP内置函数`strtolower()`也能实现同样的功能。它将字符串中的所有字母转换为小写形式，并返回一个新的字符串。
 
-如上所示，我们可以直接使用`strtolower()`函数来转换字符串，并将结果打印出来。你也可以将转换后的结果赋值给一个新的变量，并在后续的代码中使用。此外，`strtolower()`函数也可以处理中文字符串。
+## 深入了解字符串转换为小写形式
+在PHP中，字符串的大小写转换是通过使用ASCII编码来实现的。ASCII编码是一种标准的字符集，它赋予每一个字符一个数字编码，从而使得计算机能够识别并处理这些字符。
 
-## 深入探讨
+在ASCII编码中，大写字母和小写字母是有着不同的数值范围，因此我们可以通过改变字符的ASCII编码来实现大小写转换。这也就是为什么我们能够使用`strtoupper()`和`strtolower()`这样的函数来进行转换。
 
-在程序开发中，我们经常会将用户输入的字符串转换为小写，以便进行统一的比较。例如，用户在登录时，输入的用户名可能大小写不规范，那么我们就需要将其转换为小写后与数据库中的用户名进行比较。这样就可以确保即使用户输入的大小写不同，也能成功登录。
+## 参考文章
 
-另外，当我们从数据库或其他来源获取数据时，也需要进行字符串转换。防止由于大小写不同导致无法正确匹配数据。字符串转换为小写也可以在搜索功能中发挥作用，以确保搜索结果的准确性。
-
-## 参考链接
-- [PHP官方文档：strtolower函数](http://php.net/manual/zh/function.strtolower.php)
-- [PHP教程：转换大小写](http://www.w3school.com.cn/php/func_string_strtolower.asp)
-- [理解 PHP 中的字符串操作函数](https://segmentfault.com/a/1190000002918641) 
-
-## 参见
-
-请参考上面提供的参考链接，了解更多关于处理字符串的方法。
+- [PHP官方文档 - strtoupper()](https://www.php.net/manual/en/function.strtoupper.php)
+- [PHP官方文档 - strtolower()](https://www.php.net/manual/en/function.strtolower.php)
+- [ASCII编码表](https://www.ascii-code.com/)

@@ -1,54 +1,74 @@
 ---
 title:                "Haskell recipe: Reading command line arguments"
+simple_title:         "Reading command line arguments"
 programming_language: "Haskell"
-category:             "Files and I/O"
+category:             "Haskell"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/en/haskell/reading-command-line-arguments.md"
 ---
 
 {{< edit_this_page >}}
 
-## Why
+## Why 
 
-Reading command line arguments is a crucial skill for any programmer who wants to create powerful and user-friendly command line applications. By being able to read arguments provided by the user, you can make your application more flexible and customizable.
+Command line arguments are a powerful and essential part of any programming language, including Haskell. They allow us to provide inputs to our programs directly from the command line, making our programs more dynamic and versatile. In this blog post, we will explore how to read command line arguments in Haskell and how it can benefit our programming.
 
-## How To
+## How To 
 
-In Haskell, reading command line arguments is a straightforward process. The `getArgs` function from the `System.Environment` module allows you to retrieve a list of all the arguments provided by the user. Let's see an example:
+Reading command line arguments in Haskell is a straightforward process. We can access the command line arguments through the `getArgs` function provided by the `System.Environment` module. Let's take a look at a simple example:
 
-```Haskell
-import System.Environment
+```
+-- Import the necessary module
+import System.Environment (getArgs)
 
-main = do
+-- Define a function to read and display the command line arguments
+printArgs :: IO ()
+printArgs = do
+    -- Get the command line arguments as a list of strings
     args <- getArgs
-    putStrLn ("Arguments provided: " ++ show args)
+    -- Print each argument on a separate line
+    mapM_ putStrLn args
 ```
 
-In this code, we import the `System.Environment` module and then use the `getArgs` function to retrieve the arguments and store them in the `args` variable. Finally, we use the `putStrLn` function to print out the list of arguments to the console.
-
-If we compile and run this code with the following command:
+When we run this code and pass in some arguments, for example: `stack runhaskell Main.hs argument1 argument2`, we will get the following output:
 
 ```
-runhaskell args.hs hello world 123
+argument1
+argument2
 ```
 
-We will get the following output:
+We can also perform operations on the command line arguments, such as converting them to the desired data type, using functions like `read` or `fromJust` from the `Text.Read` module. Let's see an example:
 
 ```
-Arguments provided: ["hello", "world", "123"]
+-- Import the necessary modules
+import System.Environment (getArgs)
+import Text.Read (readMaybe)
+
+-- Define a function to calculate the sum of the command line arguments
+calcSum :: IO ()
+calcSum = do
+    -- Get the command line arguments as a list of strings
+    args <- getArgs
+    -- Convert the arguments to integers and calculate the sum
+    let sum = sum $ mapMaybe readMaybe args :: Int
+    -- Print the result
+    print sum
 ```
 
-As you can see, the `getArgs` function returns a list of strings, where each string represents a different argument provided by the user.
+When we run this code and pass in some arguments, for example: `stack runhaskell Main.hs 8 4`, we will get the following output:
 
-## Deep Dive
+```
+12
+```
 
-Now let's take a deeper look at how the `getArgs` function actually works. When you run a Haskell program from the command line, all the arguments provided after the name of the program are passed to the `main` function as a list of strings. Haskell then handles these arguments and makes them available to your program via the `getArgs` function.
+## Deep Dive 
 
-Keep in mind that the `getArgs` function can only retrieve arguments that come after the name of the program. Any arguments provided before the name of the program will not be accessible.
+Behind the scenes, the `getArgs` function uses the `System.Environment.getProgName` function to get the name of the program and the `System.IO.getArgs` function to get the arguments passed in by the user. Command line arguments are stored as a list of strings, so we need to convert them to the desired data type if needed. Additionally, we can use the `System.Console.GetOpt` module to parse and validate more complex command line options.
 
-Also, it's important to note that the `getArgs` function returns a pure list, meaning it's evaluated lazily. This means that if you only use a few arguments from the list, Haskell will only evaluate those arguments, resulting in better memory usage and performance.
+## See Also 
 
-## See Also
+To learn more about command line arguments in Haskell, check out these resources:
 
-- [System.Environment module documentation](https://hackage.haskell.org/package/base-4.12.0.0/docs/System-Environment.html)
-- [Haskell command line arguments tutorial](https://www.tutorialspoint.com/haskell/haskell_command_line_arguments.htm)
-- [Lazy evaluation in Haskell](https://wiki.haskell.org/Lazy_evaluation)
+- Official Haskell Documentation on Command Line Arguments: https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/using-cmdline.html
+- "Haskell Command-Line Arguments" Tutorial by Learn You a Haskell for Great Good: http://learnyouahaskell.com/input-and-output#command-line-arguments
+- "Command Line Parsing and Error Handling in Haskell" Blog Post by Functional Works: https://www.functionalworks.com/blog/2018/11/28/command-line-parsing-error-handling-in-haskell

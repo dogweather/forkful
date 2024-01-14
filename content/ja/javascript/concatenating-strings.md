@@ -1,35 +1,38 @@
 ---
-title:                "Javascript: 「文字列を連結する」"
+title:                "Javascript: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/javascript/concatenating-strings.md"
 ---
 
 {{< edit_this_page >}}
 
-「なぜ連結(concatenation)するのか」
+## なぜ
 
-文字列を連結することは、プログラミングにおいて非常に重要です。それでは、なぜプログラマーたちは文字列を連結するのでしょうか？それを学びましょう！
+文字列の連結を行う理由について、簡単な説明をする。 
 
-「やり方」
+## 連結方法
 
-文字列を連結する方法は、非常にシンプルです。JavaScriptでは、"+"演算子を使用して文字列を連結できます。以下の例を見てみましょう。
+以下のようなコード例を使用して、文字列の連結を行う方法を示す。コードブロック内のサンプル出力も記載する。
 
 ```Javascript
-let firstName = "太郎";
-let lastName = "山田";
-let fullName = firstName + lastName;
+// 文字列の連結方法
+let string1 = "こんにちは";
+let string2 = "みなさん";
+let result = string1 + string2;
 
-console.log(fullName);
+console.log(result);
+// こんにちはみなさん
 ```
 
-出力結果は、"太郎山田"となります。
+## 深堀り
 
-「深堀り」
+文字列の連結について、より詳細な情報を提供する。文字列の連結は、文字列を組み立てるために非常に便利であり、特にユーザーとのインタラクションを行う場合に重要である。また、文字列の連結はパフォーマンスに影響するため、最適な方法を選択することも重要である。 
 
-JavaScriptでは、文字列を連結するために"+"演算子以外にも、"concat()"メソッドを使用することができます。また、テンプレートリテラルを使用することで、より簡潔なコードを書くことができます。
+## 参考リンク
 
-「See Also」
-
-- JavaScriptでの文字列の連結方法: https://www.w3schools.com/js/js_strings_concat.asp
-- テンプレートリテラルについて：https://www.w3schools.com/js/js_string_templates.asp
+- [MDN Web Docs: 文字列を連結する](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [TechAcademyマガジン: 文字列の連結を学ぶ](https://techacademy.jp/magazine/48051)
+- [Qiita: JavaScriptで文字列の連結を行う方法](https://qiita.com/KIA_yakiyan/items/03c545819734cf45329e)

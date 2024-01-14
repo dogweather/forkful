@@ -1,53 +1,54 @@
 ---
-title:                "C++: 部分文字列の抽出"
+title:                "C++: 文字列の抽出"
+simple_title:         "文字列の抽出"
 programming_language: "C++"
-category:             "Strings"
+category:             "C++"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ja/cpp/extracting-substrings.md"
 ---
 
 {{< edit_this_page >}}
 
-こんにちは、プログラマーの皆さん。
-今日はC++での抽出サブストリングについてお話しします。
-
 ## なぜ
 
-抽出サブストリングは、長い文字列から必要な情報を取り出すために使用されます。たとえば、大きな文章から特定の単語やフレーズを見つけ出す場合に役立ちます。また、入力されたデータからフォーマットを整えたり、特定の部分だけを取り出して処理したりすることができます。
+プログラミング言語C ++を学習するのにあたり、文字列操作は重要なスキルです。その中でも、サブストリング（部分文字列）を抽出することはとても便利です。サブストリングを抽出することで、必要な情報だけを取得でき、処理をより効率的に行うことができます。
 
 ## 方法
 
-C++では、Stringクラスのsubstrメソッドを使って、特定の位置から指定した長さの文字列を抽出することができます。以下のサンプルコードをご覧ください。
+サブストリングを抽出する方法は簡単です。まずは文字列を取得し、抽出したい部分の開始位置と長さを指定します。その後、`substr()`関数を使って、部分文字列を取得します。
 
 ```C++
-#include <iostream>
-#include <string>
+// 文字列を取得
+string str = "こんにちは、私はプログラマーです。";
 
-using namespace std;
+// 抽出したい部分の開始位置と長さを指定
+int start = 6; // "は"の位置から開始
+int length = 6; // 6文字を抽出
 
-int main() {
-  string sentence = "今日はいい天気です。";
-  string weather = sentence.substr(4, 3); // 4文字目から3文字分を抽出
-  cout << "抽出した情報： " << weather << endl;
-  return 0;
-}
+// 部分文字列を取得
+string sub = str.substr(start, length); // subには"は、私"が格納される
 
-// Output: 天気
+// 結果を出力
+cout << sub << endl; // "は、私"が表示される
 ```
 
-上記の例では、"今日はいい天気です。"という文字列から、"天気"という部分を抽出しています。
+## 深堀り
 
-## 詳細
+`substr()`関数の定義は以下の通りです。
 
-抽出サブストリングを行う際には、第一引数に指定する位置は文字列の先頭を示す"0"から始まります。また、第二引数に指定する長さの値は省略することもでき、その場合は指定した位置から最後までの文字列が抽出されます。
+```C++
+string substr (size_t pos, size_t len) const;
+```
 
-さらに、C++では文字列の一部分を置換することも可能です。substrメソッドの第三引数に、置換する文字列を指定することで実現できます。
+第一引数には抽出したい部分の開始位置を、第二引数には抽出する長さを指定します。第二引数は省略することができ、省略すると開始位置から文字列の末尾までの部分文字列が返されます。
 
-## 関連情報
+また、文字列の末尾からの文字数を指定することもできます。開始位置をマイナスの値で指定した場合、末尾から数えた文字数になります。
 
-抽出サブストリングについて、もっと詳しく知りたい方は以下のリンクをご参照ください。
+さらに、現在の文字列の長さよりも長い文字列を指定した場合、文字列の最後までの部分文字列が返されます。しかし、開始位置が文字列の長さを超える場合はエラーが発生します。
 
-- [C++ substr method documentation](https://www.cplusplus.com/reference/string/string/substr/)
-- [Tutorialspoint C++ Substr](https://www.tutorialspoint.com/cplusplus/string_substr.htm)
-- [GeeksforGeeks String in C++](https://www.geeksforgeeks.org/string-in-cpp/)
+以上のように、`substr()`関数を使いこなすことで、柔軟に部分文字列を抽出することができます。
 
-それでは、抽出サブストリングを使ってより効率的なプログラミングを行いましょう！
+## See Also
+
+- [C++ string::substr](https://www.cplusplus.com/reference/string/string/substr/) - `substr()`関数の詳細な定義が記載されています。
+- [C++ strings](https://www.programiz.com/cpp-programming/strings) - C++での文字列操作の基本を学べるチュートリアルです。

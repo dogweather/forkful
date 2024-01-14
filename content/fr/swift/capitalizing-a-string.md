@@ -1,49 +1,46 @@
 ---
 title:                "Swift: Capitaliser une chaîne de caractères"
+simple_title:         "Capitaliser une chaîne de caractères"
 programming_language: "Swift"
-category:             "Strings"
+category:             "Swift"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fr/swift/capitalizing-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Pourquoi
+### Pourquoi
 
-Vous vous demandez peut-être pourquoi capitaliser une chaîne de caractères est important en programmation Swift. La réponse est simple : cela permet de mettre en évidence certaines parties d'un texte, comme les titres ou les noms propres, et de rendre l'affichage plus cohérent.
+La capitalisation de chaînes de caractères est une étape importante dans la programmation en Swift, car elle permet de convertir une chaîne en une autre avec une majuscule au début de chaque mot. Cela peut être utile pour l'affichage de noms propres ou pour respecter les conventions de présentation dans une application.
 
-## Comment faire
+### Comment faire
 
-Il existe plusieurs façons de capitaliser une chaîne de caractères en Swift. Voici quelques exemples de code et leur résultat :
+Il existe plusieurs façons de capitaliser une chaîne en Swift. Voici deux exemples à l'aide de la fonction `capitalized` :
 
-```Swift
-let string = "hello world"
-let capitalizedString = string.capitalized
-print(capitalizedString) // Affiche "Hello World"
-
-let sentence = "bonjour à tous"
-let capitalizedSentence = sentence.capitalized(with: Locale(identifier: "fr")) // Prend en compte les spécificités de la langue française
-print(capitalizedSentence) // Affiche "Bonjour à Tous"
+```
+Swift let str = "voiture apple" print(str.capitalized)
+// Output: Voiture Apple
+```
+```
+Swift let str = "123abc" print(str.capitalized)
+// Output: 123abc (car il n'y a pas de mots à capitaliser)
 ```
 
-Comme vous pouvez le voir, il suffit d'utiliser la méthode `capitalized` sur une chaîne de caractères pour obtenir sa version capitalisée. Vous pouvez également spécifier la locale pour une capitalisation plus précise selon la langue.
+Vous pouvez également utiliser la fonction `capitalized(with: Locale)` pour spécifier une langue spécifique pour la capitalisation. Par exemple, si vous voulez que la première lettre de chaque mot soit en majuscule en français, vous pouvez utiliser la locale `fr_FR` :
 
-## Plongeon en profondeur
-
-En plus de la méthode `capitalized`, il existe d'autres façons de capitaliser une chaîne de caractères en Swift. Par exemple, la méthode `uppercased` permet de mettre en majuscule tous les caractères, tandis que `lowercased` les mettra en minuscule.
-
-Il est également possible d'utiliser la structure `CharacterSet` pour déterminer quels caractères doivent être capitalisés. Par exemple, le code suivant capitalisera uniquement la première lettre de chaque mot et laissera les autres en minuscule :
-
-```Swift
-let sentence = "hello world"
-let firstCharacter = CharacterSet(charactersIn: " ").union(.uppercaseLetters)
-let capitalizedSentence = sentence.capitalized(with: firstCharacter)
-print(capitalizedSentence) // Affiche "Hello World"
+```
+Swift let str = "pomme orange" print(str.capitalized(with: Locale(identifier: "fr_FR")))
+// Output: Pomme Orange
 ```
 
-## Voir aussi
+### Plongée en profondeur
 
-Si vous souhaitez en savoir plus sur la manipulation de chaînes de caractères en Swift, voici quelques liens utiles :
+Lorsque vous utilisez la fonction `capitalized`, il est important de noter que seules les lettres sont converties en majuscules, tandis que les nombres et les symboles sont ignorés. De plus, les majuscules déjà présentes dans la chaîne seront conservées, à moins que vous n'utilisiez la fonction `lowercased` pour tout convertir en minuscules avant de capitaliser.
 
-- [Documentation officielle Apple sur les chaînes de caractères](https://developer.apple.com/documentation/foundation/string)
-- [Tutoriel sur la manipulation des chaînes de caractères en Swift](https://www.hackingwithswift.com/read/0/0/strings-and-integers)
-- [Vidéo explicative sur la capitalisation en Swift](https://www.youtube.com/watch?v=a6Cqg8T5ku8)
+Une autre chose à considérer est que la fonction `capitalized` ne prend pas en compte les caractères spéciaux tels que les accents ou les cédilles. Pour être plus précis, vous pouvez utiliser la fonction `capitalized(with: CapitalizationOptions)` pour spécifier le type de capitalisation que vous souhaitez. Par exemple, vous pouvez utiliser `.capitalized(exceptFirstCharacter: Bool)` pour capitaliser tous les caractères sauf le premier.
+
+### Voir aussi
+
+- [Documentation officielle de Swift sur la capitalisation de chaînes](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID295)
+- [Tutoriel sur la capitalisation de chaînes en Swift](https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-the-first-letter-of-a-string)
+- [Exemples de fonction `capitalized` en Swift](https://cocoacasts.com/capitalizing-strings-with-swift)

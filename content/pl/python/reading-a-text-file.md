@@ -1,7 +1,9 @@
 ---
 title:                "Python: Odczytywanie pliku tekstowego"
+simple_title:         "Odczytywanie pliku tekstowego"
 programming_language: "Python"
-category:             "Files and I/O"
+category:             "Python"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/python/reading-a-text-file.md"
 ---
 
@@ -9,32 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Czy kiedykolwiek musiałeś przeczytać plik tekstowy w swoim kodzie Python? Jeśli tak, to dobrze wiesz, że jest to ważna umiejętność, która może ułatwić pracę z danymi w Twoim programie. W tym blogu dowiesz się, dlaczego warto nauczyć się czytać pliki tekstowe w Pythonie.
+Czy kiedykolwiek zdarzyło Ci się, że musiałeś przeczytać plik tekstowy w języku Python? Jeśli tak, wiesz już prawdopodobnie, że jest to bardzo powszechny scenariusz w świecie programowania. Czytanie plików tekstowych jest ważną umiejętnością i niezbędnym elementem wielu projektów. Zapoznanie się z tą tematyką pozwoli Ci na pracę z różnymi typami danych i dostęp do informacji, które są przechowywane w plikach.
 
 ## Jak to zrobić
 
-Aby przeczytać plik tekstowy w Pythonie, możesz wykorzystać funkcję wbudowaną `open()`. Spójrzmy na prosty przykład:
+Najprostszym sposobem na odczytanie pliku tekstowego w języku Python jest użycie funkcji wbudowanej `open`. Wymaga ona dwóch argumentów — nazwy pliku oraz trybu, w jakim plik będzie otwarty (np. tylko do odczytu czy do zapisu). Poniżej przedstawiony jest przykładowy kod, który otwiera plik `tekst.txt` i wypisuje jego zawartość na ekranie:
 
 ```Python
-with open("plik.txt", "r") as f:
-    for line in f:
-        print(line)
+file = open("tekst.txt", "r")
+print(file.read())
 ```
 
-Powyższy kod otwiera plik o nazwie "plik.txt" w trybie tylko do odczytu (`"r"`) i przypisuje go do zmiennej `f`. Następnie pętla `for` iteruje po wszystkich liniach w pliku i wypisuje je na konsoli. 
-
-Możesz również określić inny tryb otwarcia pliku, na przykład `"w"` dla zapisu lub `"a"` dla dopisywania. Zawsze pamiętaj, aby zamknąć plik po użyciu poprzez wywołanie metody `close()` lub korzystając z instrukcji `with`, co zapewni automatyczne zamknięcie pliku.
+W tym przykładzie użyliśmy trybu "r", czyli tylko do odczytu. Możemy także określić inne dostępne tryby, takie jak "w" (zapis) czy "a" (dopisywanie danych na końcu pliku). Po zakończeniu pracy z plikiem, należy pamiętać o jego zamknięciu za pomocą metody `close()`.
 
 ## Deep Dive
 
-Podczas czytania plików w Pythonie warto zwrócić uwagę na kilka rzeczy. Po pierwsze, tryb otwarcia powinien zostać właściwie określony, aby móc później wykonać żądane operacje na pliku. Ponadto, pamiętaj, że metoda `readline()` pozwala na odczyt pojedynczej linii, natomiast `readlines()` zwraca listę z wszystkimi liniami. 
+Podczas czytania plików tekstowych warto pamiętać o kilku istotnych kwestiach. Po pierwsze, zwróć uwagę na dokładną ścieżkę dostępu do pliku, aby program wiedział, gdzie go szukać. Po drugie, należy pamiętać o odpowiednim kodowaniu pliku, ponieważ różne języki mogą wymagać różnych kodowań znaków. W przypadku braku określonego kodowania, przyjętym będzie kodowanie domyślne systemu operacyjnego.
 
-Innym przydatnym narzędziem jest moduł `csv`, który umożliwia łatwiejszą pracę z plikami CSV. Możesz je odczytywać i zapisywać przy użyciu specjalnych funkcji, takich jak `reader()` i `writer()`.
+Warto także wiedzieć, że funkcja `open()` zwraca obiekt typu `File`, na którym możemy wywoływać różne metody, takie jak `read()` czy `write()`. Pozwala to na bardziej zaawansowane operacje na plikach, na przykład dzielenie ich na linie czy modyfikowanie zawartości.
 
-## Zobacz również
+## Zobacz też
 
-Jeśli chcesz poznać więcej o pracy z plikami tekstowymi w Pythonie, polecamy zapoznać się z oficjalną dokumentacją języka Python oraz z następującymi linkami:
+Jeśli chcesz dowiedzieć się więcej o czytaniu plików tekstowych w języku Python, polecamy zapoznać się z poniższymi materiałami:
 
-- [Inne przydatne funkcje do czytania plików w Pythonie](https://www.w3schools.com/python/python_file_handling.asp)
-- [Podstawy modułu csv w Pythonie](https://realpython.com/python-csv/)
-- [Przykład wykorzystania instrukcji with](https://www.geeksforgeeks.org/with-statement-in-python/)
+- Dokumentacja Pythona na temat plików: https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
+- Poradnik "Python — odczytywanie pliku tekstowego": https://realpython.com/read-write-files-python/
+- Wideo "Python Tutorial: File Objects — Reading and Writing to Files": https://www.youtube.com/watch?v=Uh2ebFW8OYM

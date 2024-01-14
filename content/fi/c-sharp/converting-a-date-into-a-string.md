@@ -1,44 +1,57 @@
 ---
-title:                "C#: Päivämäärän muuntaminen merkkijonoksi"
+title:                "C#: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "C#"
-category:             "Dates and Times"
+category:             "C#"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/c-sharp/converting-a-date-into-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi tehdä päivämäärästä merkkijono?
 
-Monissa C# -sovelluksissa on tarve muuttaa päivämäärä muotoon, joka voidaan esittää merkkijonona. Tämä voi olla tarpeellista esimerkiksi, kun päivämäärällä halutaan näyttää käyttäjälle tietoa joltakin tietyltä ajalta.
+Monesti ohjelmoinnissa tulee tarvetta muuttaa päivämäärä merkkijonoksi, esimerkiksi käyttäjän nähtäväksi tai tietokantaan tallennettavaksi. Tämä tapahtuu yleensä siksi, että päivämäärän käsittelyyn merkkijono-muodossa on helppoa ja monipuolista.
 
-## Näin teet sen
-
-Date-luokka tarjoaa erilaisia ​​menetelmiä päivämäärän muuttamiseen merkkijonoksi. Tässä esimerkissä käytämme ToShortDateString()-menetelmää, joka muuttaa päivämäärän lyhyeksi merkkijonoksi. Koodilohko näyttää, kuinka tämä tehdään:
+## Kuinka tehdä se?
 
 ```C#
-// Luodaan uusi DateTime-olio  
-DateTime date = new DateTime(2020, 10, 15);
+// Luodaan DateTime-olio, joka sisältää halutun päivämäärän
+DateTime date = new DateTime(2020, 1, 14);
 
-// Muutetaan päivämäärä merkkijonoksi
-string dateString = date.ToShortDateString();
+// Muunnetaan päivämäärä merkkijonoksi
+string dateString = date.ToString();
 
-// Tulostetaan tulos
-Console.WriteLine(dateString);
-
+// Tulos: "14.1.2020 0.00.00"
 ```
 
-Tulostus tästä koodilohkosta olisi: 15.10.2020. Voit myös muuttaa päivämäärän erilaiseen muotoon, kuten esimerkiksi ToLongDateString()-menetelmällä, joka tulostaisi esimerkiksi "15. lokakuuta 2020".
+```C#
+// Voimme myös määrittää halutun muotoilun käyttämällä ToString-metodia
+string formattedDate = date.ToString("dd/MM/yyyy");
 
-## Syvempää tietoa
+// Tulos: "14/01/2020"
+```
 
-C# tukee erilaisia ​​kielellisiä ominaisuuksia päivämäärämuunnoksia varten. Esimerkiksi voit käyttää muotoilumerkkijonoja määrittämään tarkemman muotoilun haluamallesi päivämäärän esitystavalle. Voit myös käyttää CultureInfo-luokkaa, joka tarjoaa tietoja eri kulttuureiden päivämäärän kirjoitus- ja lukutavasta. Täällä on lisää esimerkkejä eri päivämäärän muunnoksiin:
+Merkkijonoksi muutettu päivämäärä voidaan myös tallentaa muuttujaan tai tulostaa suoraan konsolille käyttäjän nähtäväksi.
 
-- [C# DateTime -päivämäärän muunnos](https://www.w3schools.com/cs/cs_date_tostring.asp)
-- [Muotoilumerkkijonot C# päivämäärämuunnoksille](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
-- [CultureInfo-luokan käyttö päivämäärämuunnoksissa](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo?view=netcore-3.1)
+```C#
+// Tallennetaan merkkijono-muotoinen päivämäärä muuttujaan
+string dateAsString = date.ToString("dddd, MMMM d, yyyy");
+
+// Tulos: "tiistai, tammikuu 14, 2020"
+
+// Tulostetaan päivämäärä suoraan konsolille
+Console.WriteLine(date.ToString("yyyy-MM-dd"));
+
+// Tulos: "2020-01-14"
+```
+
+## Syvällisempi sukellus
+
+C#-kielellä päivämäärä-muuttujasta voidaan muodostaa merkkijono käyttämällä sen ToString-metodia. Metodi ottaa valinnaisena parametrina merkkijonon, joka määrittelee halutun muotoilun. Muotoilun avulla voidaan esimerkiksi määrittää päivämäärän näyttämisen tarkempi formaatti tai ottaa mukaan myös aika. C# tarjoaa monipuolisen valikoiman erilaisia muotoilutapoja, jotka löytyvät virallisen dokumentaation valmiista listaamista.
 
 ## Katso myös
 
-- [Päivämäärän muuntaminen SQL:stä stringiksi C#](https://www.c-sharpcorner.com/UploadFile/mahesh/converting-datetime-to-string-and-vice-versa-in-c-Sharp/)
-- [C# -päivämääräluokat ja niiden käyttö](https://www.tutorialspoint.com/csharp/csharp_date_time.htm)
-- [Päivämäärän validointi C# -sovelluksissa](https://www.c-sharpcorner.com/article/validate-datetime-in-c-sharp/)
+- [DateTime-rakenne](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1)
+- [ToString-metodi](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=netcore-3.1)
+- [DateTimeFormatter-luokka](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.datetimeformatinfo?view=netcore-3.1)

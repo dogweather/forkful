@@ -1,59 +1,61 @@
 ---
-title:                "Go: Tekstitiedoston kirjoittaminen"
+title:                "Go: Tiedostoon kirjoittaminen"
+simple_title:         "Tiedostoon kirjoittaminen"
 programming_language: "Go"
-category:             "Files and I/O"
+category:             "Go"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/go/writing-a-text-file.md"
 ---
 
 {{< edit_this_page >}}
 
-## Miksi
+## Miksi?
 
-Tekstiasioiden kirjoittaminen on olennainen osa ohjelmointia. Se mahdollistaa tiedon tallentamisen pysyvästi ja käsittelemisen myöhemmin. Go-kielellä kirjoittaminen on nopeaa ja tehokasta, ja se tarjoaa monipuolisia toimintoja tekstien käsittelyyn.
+Kirjoittaminen teksti tiedostoihin on tärkeä osa monien ohjelmien toimintaa. Tekstitiedostoissa voidaan tallentaa tietoa, kuten käyttäjänimiä ja salasanoja, asetustietoja ja muita tärkeitä tietoja. On tärkeää tietää, miten kirjoittaa tekstiä oikein ohjelmissa, jotta varmistetaan tietojen turvallinen ja luotettava tallennus.
 
-## Kuinka
+## Kuinka?
 
-Käytä tekstisi kirjoittamiseen seuraavaa syntaksia:
+Go-kielellä tekstiä voidaan kirjoittaa lukuisilla eri tavoilla. Yksi tapa on käyttää pakettia nimeltä "io", joka sisältää funktioita tekstin kirjoittamiseen ja lukemiseen. Seuraavassa koodiesimerkissä näet, miten tekstiä voidaan kirjoittaa uuteen tiedostoon käyttämällä tätä pakettia:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "os"
+	"fmt"
+	"os"
 )
 
 func main() {
+	// Avaa tai luo uusi tiedosto nimeltä "tekstifile.txt"
+	file, err := os.Create("tekstifile.txt")
 
-    // Avataan tiedosto tekstiasoiden kirjoittamista varten
-    f, err := os.Create("tekstitiedosto.txt")
-    if err != nil {
-        fmt.Println(err)
-        return
-    }
-    defer f.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 
-    // Kirjoitetaan teksti tiedostoon
-    if _, err := f.WriteString("Tervetuloa kirjoittamaan tekstiä Go-kielellä!"); err != nil {
-        fmt.Println(err)
-        return
-    }
+	// Kirjoita tekstiä tiedostoon
+	fmt.Fprintln(file, "Tässä on tekstiä")
 
-    // Tulostetaan onnistunut viesti
-    fmt.Println("Tiedosto luotu ja teksti kirjoitettu onnistuneesti.")
+	// Sulje tiedosto lopuksi
+	defer file.Close()
+
+	fmt.Println("Tiedosto kirjoitettu onnistuneesti.")
 }
 ```
 
-Syntaksissa käytetään "os" ja "fmt" kirjastoja, jotka mahdollistavat tiedostojen luomisen ja tulostamisen.
+Ajamalla tätä koodia saat luotua uuden tiedoston nimeltä "tekstifile.txt" ja kirjoittaa siihen tekstiä. Voit myös muokata koodia ja käyttää erilaisia funktioita, kuten `file.WriteString()` tai `file.Write([]byte("Tässä on toinen teksti"))` saadaksesi erilaisia tuloksia.
 
-Koodin suorittamisen jälkeen teksti tallentuu tiedostoon "tekstitiedosto.txt". Voit avata tiedoston ja tarkistaa, että teksti tallentui onnistuneesti.
+## Syvempää tietoa
 
-## Syvempi sukellus
+Go-kielessä käytetään UTF-8-koodausta kaikessa tekstin käsittelyssä, joten sinun ei tarvitse huolehtia erilaisten koodausten käytöstä. Voit myös määrittää, haluatko käyttää tekstin kirjoittamiseen linjakohtaisesti `fmt.Fprintln()`-funktiolla tai haluatko vain kirjoittaa yhden rivin `fmt.Fprintf()`-funktiolla.
 
-Go-kielellä on erilaisia toimintoja, joilla tekstien käsittelyä voi muokata. Tarkempia ohjeita ja vinkkejä löytyy Go:n viralliselta sivustolta dokumentaatiosta.
+Markdown-tiedostoja voi myös luoda Go-kielellä käyttäen `fmt.Fprintf()`-funktiota ja Markdown-syntaksia. Tämä on erityisen kätevää, jos haluat luoda automatisoituja raportteja tai dokumentteja.
 
 ## Katso myös
 
-- [Go:n dokumetentaatio tekstien käsittelystä] (https://golang.org/pkg/)
-- [Go-koodin syntaksin opas] (https://golang.org/ref/spec)
-- [Ohjelmointikieli Go:n historia] (https://blog.golang.org/origins)
+Hyödyllisiä linkkejä aiheen tutkimiseen:
+
+- [Go io-paketti](https://golang.org/pkg/io/)
+- [Go fmt-paketti](https://golang.org/pkg/fmt/)
+- [Go-markdown-paketti](https://github.com/gomarkdown/markdown)

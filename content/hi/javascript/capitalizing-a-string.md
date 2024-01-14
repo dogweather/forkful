@@ -1,7 +1,9 @@
 ---
-title:                "Javascript: स्ट्रिंग कैपिटलाइज करना"
+title:                "Javascript: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Javascript"
-category:             "Strings"
+category:             "Javascript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/hi/javascript/capitalizing-a-string.md"
 ---
 
@@ -9,30 +11,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्यों
 
-कोई भी मानव भाषा में कोष्टक अक्षरों को उच्च वर्णमाला अक्षरों में रूपांतरित करना चाहेगा। यह एक ठीक से संरचित प्रोग्राम लिखने और आपकी कोई भी आवश्यकताओं को पूरा करने का सुनहरा मौका है। जावास्क्रिप्ट लैंग्वेज में, `toUpperCase()` फ़ंक्शन का इस्तेमाल अपनी कोडिंग कार्य में निकालने का सरल और स्थायी तरीका है।
+जावास्क्रिप्ट में स्ट्रिंग को कैपिटलाइज करने से हमें इस स्ट्रिंग को उपयोग करने में आसानी होगी और यह प्रोग्रामिंग कोड को पढ़ने में भी सुविधाजनक होगा।
 
-## कैसे
+## कैसे करें
 
-```javascript
-//अक्षरण में फंक्शन का उपयोग
-let name = "हिन्दी";
-let capitalized = name.toUpperCase(); // एक्षन के परिणाम को खरीदें "हिन्दी" ही खारिज
-console.log(capitalized); // हिन्दी
+```Javascript
+let str = "hello world";
+str = str.toUpperCase();
+console.log(str); // Output: HELLO WORLD
 ```
 
-```javascript
-// असामान्य चारित्र को उच्च वर्णमाला के साथ कनेक्टिंग
-let song = "कुछ ऐसा ही होता है (अलग खेल होता है)";
-let capitalizedSong = song.toUpperCase();
-console.log(capitalizedSong); // कुछ ऐसा ही होता है (अलग खेल होता है)
-```
+## गहराई में जाएं
 
-## गहराई
+स्ट्रिंग को कैपिटलाइज करने के लिए हम `.toUpperCase()` फंक्शन का उपयोग कर सकते हैं। यह फंक्शन दिया हुआ स्ट्रिंग को अपर केस में रिटर्न करता है। स्ट्रिंग को कैपिटलाइज करने का यह तरीका सबसे सरल और आसान है।
 
-जब आप इस फ़ंक्शन को इस्तेमाल करते हैं, तो यह `toUpperCase()` फ़ंक्शन की आत्मा कोल करता है जो इसे इंस्टेन्ट्स से बनाता है और उसे स्ट्रिंग को कैप्स के साथ रिटर्न करता है। एक बार रिटर्न करने के बाद, प्रसंस्करण कंपोनेंट फ़ंक्शन को काम से निकाल दिया जाता है।
+## और भी देखें
 
-## देखें भी
-
-- [JavaTPoint: जावास्क्रिप्ट अक्षरों को उच्च आवृत्ति में परिवर्तित करने के सबसे आसान तरीके](https://www.javatpoint.com/javascript-string-touppercase)
-- [GeeksforGeeks: जावास्क्रिप्ट रीटर्न स्ट्रिंग को अपर करने के तरीके रिवर्स](https://www.geeksforgeeks.org/javascript-return-string-reverse-uppercase-letter-alternate/)
-- [नोट स्कूल: जावास्क्र
+अधिक जानकारी के लिए देखें: 
+- [String.prototype.toUpperCase() documentation from MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [Capitalizing a string in JavaScript from GeeksforGeeks](https://www.geeksforgeeks.org/capitalize-first-letter-of-a-string-in-javascript/)

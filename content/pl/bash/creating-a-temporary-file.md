@@ -1,7 +1,9 @@
 ---
 title:                "Bash: Tworzenie pliku tymczasowego"
+simple_title:         "Tworzenie pliku tymczasowego"
 programming_language: "Bash"
-category:             "Files and I/O"
+category:             "Bash"
+tag:                  "Files and I/O"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/pl/bash/creating-a-temporary-file.md"
 ---
 
@@ -9,31 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Dlaczego
 
-Programowanie w Bashu jest nie tylko szalenie użyteczne, ale też bardzo ciekawe. Jedną z najważniejszych umiejętności, które muszą posiadać programiści Bash, jest tworzenie plików tymczasowych. Dlaczego? Cóż, mamy dla Ciebie kilka powodów.
+Tworzenie plików tymczasowych jest niezwykle ważne w programowaniu Bash. Są one niezbędne dla przechowywania chwilowych danych, dzięki czemu nie zaburzają one istniejących plików lub struktur katalogów. Tworzenie tymczasowych plików jest również niezbędne w tworzeniu skryptów, które wymagają korzystania z wielu plików tymczasowych jednocześnie.
 
-Po pierwsze, pliki tymczasowe są bardzo przydatne w procesie tworzenia i testowania kodu. Pozwalają one na przechowywanie tymczasowych danych, które mogą być potrzebne w trakcie działania programu. Dzięki temu nie musimy obciążać naszego systemu operacyjnego, a nasz kod jest bardziej niezawodny i odporny na błędy.
+## Jak to zrobić
 
-Po drugie, tworzenie plików tymczasowych jest ważne w kontekście bezpieczeństwa danych. Wyobraź sobie, że pracujesz nad programem, który przechowuje wrażliwe informacje, takie jak hasła. Jeśli wszystko byłoby przechowywane w jednym pliku, to w przypadku jego wycieku, wszystkie te informacje mogłyby zostać ujawnione. Dzięki plikom tymczasowym, możemy rozdzielić nasze dane i zmniejszyć ryzyko wycieku informacji.
-
-## Jak stworzyć plik tymczasowy
-
-Tworzenie pliku tymczasowego w Bashu jest bardzo proste. Wystarczy użyć polecenia `mktemp`, które automatycznie tworzy plik tymczasowy z unikalną nazwą. Spróbujmy tego przykładu:
+Aby utworzyć plik tymczasowy w Bash, możemy skorzystać z komendy `mktemp`. Polecenie to generuje unikalny plik tymczasowy na podstawie określonego szablonu, który można dostosować. Przykładowy kod wyglądałby następująco:
 
 ```Bash
-file=$(mktemp)
-echo "To jest zawartość mojego pliku tymczasowego" > $file
-cat $file
+temp_file=$(mktemp prefix_XXXXXXXXXX)
+echo "To jest przykładowe dane" > $temp_file
+cat $temp_file
 ```
 
-W tym przypadku, zmienna `file` przechowuje nazwę pliku tymczasowego, a następnie wypisujemy do niego pewną zawartość. Oczywiście, zawartość ta może być dowolna w naszym programie.
+W powyższym kodzie używamy szablonu `prefix_XXXXXXXXXX`, który zostanie zastąpiony przez losowe 10 znaków. Następnie pobieramy nazwę wygenerowanego pliku tymczasowego do zmiennej `temp_file`, a następnie wyświetlamy zawartość pliku i czyszczymy go.
 
-## Głębszy wgląd
+Warto także wspomnieć o opcji `-d` dla komendy `mktemp`, która pozwala na utworzenie tymczasowego katalogu zamiast pliku.
 
-Tworzenie plików tymczasowych w Bashu jest jeszcze bardziej zaawansowane niż to, co pokazaliśmy powyżej. W rzeczywistości, możemy ustawić wiele opcji, takich jak modyfikowanie nazwy pliku, ustalanie innej lokalizacji czy dostosowywanie prefiksu i sufiksu. Aby poznać pełną listę opcji, możesz sprawdzić dokumentację polecenia `mktemp`.
+## Pogłębione informacje
 
-Należy również pamiętać o usuwaniu plików tymczasowych po zakończeniu działania naszego programu. Możemy to zrobić ręcznie, używając polecenia `rm`, lub automatycznie, ustalając odpowiednie opcje podczas tworzenia pliku tymczasowego.
+Podczas tworzenia pliku tymczasowego, ważne jest, aby upewnić się, że nazwa pliku jest unikalna, aby uniknąć przypadkowego nadpisania istniejących plików. Dlatego też, warto dodać prefiks lub sufiks do nazwy pliku w szablonie. Możemy również użyć opcji `-u` w celu wyświetlenia tylko wygenerowanej nazwy pliku, bez jego utworzenia.
 
-## Zobacz również
+Dodatkowo, istnieje również możliwość ustawienia innego katalogu tymczasowego, w którym plik będzie tworzony, przy użyciu zmiennej środowiskowej `TMPDIR`.
 
-- [Dokumentacja `mktemp`](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)
-- [Kurs Bash na Codecademy](https://www.codecademy.com/learn/learn-the-command-line)
+## Zobacz także
+
+- [Dokumentacja komendy mktemp](https://www.man7.org/linux/man-pages/man1/mktemp.1.html)
+- [Inne sposoby tworzenia plików tymczasowych w Bash](https://www.shellhacks.com/create-temporary-file-one-line-bash-script/)
+- [Poradnik tworzenia plików tymczasowych dla początkujących](https://www.ostechnix.com/create-temporary-files-shell-scripting/)

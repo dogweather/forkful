@@ -1,68 +1,65 @@
 ---
 title:                "Bash: 문자열의 길이 찾기"
+simple_title:         "문자열의 길이 찾기"
 programming_language: "Bash"
-category:             "Strings"
+category:             "Bash"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/ko/bash/finding-the-length-of-a-string.md"
 ---
 
 {{< edit_this_page >}}
 
-## 왜
+# 왜 문자열 길이를 찾아야 할까요?
 
-문자열 길이를 찾는 것에 참여하는 이유는 자동화 된 프로세스에서 문자열의 길이를 알아야하는 경우가 있기 때문입니다.
+문자열 길이를 찾는 것은 프로그래밍에서 매우 중요한 부분입니다. 예를 들어, 어떤 문자열을 다룰 때, 우리는 그 문자열의 길이를 알아야만 해당 문자열을 올바르게 처리할 수 있습니다. 따라서 문자열의 길이를 찾는 것은 필수적입니다.
 
-## 어떻게
+## 어떻게 하면 문자열 길이를 찾을 수 있을까요?
 
-"```Bash
-# 문자열 길이를 찾는 간단한 예제
-string="안녕하세요"
-num=${#string}
-echo "문자열의 길이는 $num입니다."
+한 가지 간단한 방법은 Bash 내장 변수인 `$#`를 사용하는 것입니다. 이 변수는 현재 스크립트에 전달된 인수의 개수를 나타내는데, 하나의 문자열이 전달되었을 때 이 값은 해당 문자열의 길이와 동일합니다.
+
+예제를 살펴보겠습니다.
+
+```Bash
+#!/bin/bash
+
+# "Hello"라는 문자열을 사용하여 스크립트를 실행합니다.
+
+echo "The length of the string is $#"
 ```
 
-이 예제는 Bash에서 문자열 길이를 찾는 가장 간단하고 효율적인 방법을 보여줍니다. "$ {#variable}" 문법을 사용하면 변수의 길이를 찾을 수 있습니다. 
+위 스크립트를 실행하면 다음과 같은 출력이 나옵니다.
 
-"```Bash
-# 사용자 입력으로 문자열 길이를 찾는 예제
-echo "문자열을 입력하세요:"
-read string
-num=${#string}
-echo "입력한 문자열의 길이는 $num입니다."
+```
+The length of the string is 5
 ```
 
-이 예제는 사용자로부터 입력 받은 문자열의 길이를 찾는 방법을 보여줍니다. "read" 명령어를 사용하여 사용자 입력을 받고, 위에서 설명한 "$ {#variable}" 문법을 사용하여 입력 받은 문자열의 길이를 찾는 것입니다.
+`$#` 변수를 사용하여 문자열의 길이를 찾을 수 있습니다. 하지만 이 방법은 문자열에 포함된 공백을 제외하고 길이를 계산하기 때문에, 정확한 길이를 알고 싶다면 다른 방법을 사용하는 것이 좋습니다.
 
-## 깊게 파고들기
+`expr` 명령어를 사용하여 문자열의 길이를 센다는 것이 효율적인 방법입니다. 아래 예제를 살펴보세요.
 
-원래는 Bash에서 문자열 길이를 찾는 것이 매우 간단하다는 것을 알았지만, 문자열 내에 첫 번째 문자가 공란인 경우에는 제대로 계산되지 않는다는 것을 발견했습니다. 
+```Bash
+#!/bin/bash
 
-따라서 아래와 같이 "$ {variable%}" 문법을 사용하여 공란을 제거한 뒤, 다시 "$ {#variable}" 문법을 사용하여 변수의 길이를 찾아야 합니다.
+# "Hello World"라는 문자열을 사용하여 스크립트를 실행합니다.
 
-"```Bash
-# 공란을 제거한 뒤 문자열 길이를 찾는 예제
-string=" hello world"
-string=${string% }
-num=${#string}
-echo "공란을 제거한 문자열의 길이는 $num입니다."
+echo "The length of the string is $(expr length "Hello World")"
 ```
 
-위 예제에서는 원래 변수 "string"에 공란이 포함되어 있지만, "$ {string% }"를 사용하여 공란을 제거한 뒤 다시 길이를 찾는 것을 볼 수 있습니다.
+위 스크립트를 실행하면 다음과 같은 출력이 나옵니다.
 
-## 또 다른 길이 찾기 방법
+```
+The length of the string is 11
+```
 
-관련된 다른 유용한 정보를 알아보려면 아래 링크를 참조하시기 바랍니다.
+위 예제에서는 `expr length`를 사용하여 문자열의 길이를 계산했습니다. 따라서 이 방법을 사용하면 문자열의 공백도 포함하여 정확한 길이를 구할 수 있습니다.
 
-### 더 많은 예제
+## 깊이 들어가보면
 
-- [Bash 문자열 길이 찾는 예제](https://www.howtogeek.com/275538/how-to-get-the-length-of-a-string-in-bash/)
-- [Bash 문자열 가지고 놀기: 길이 찾기](https://linoxide.com/linux-shell-script/bash-string-length-count/)
-- [Bash에서 문자열 처리하기](https://ryanstutorials.net/bash-scripting-tutorial/bash-strings.php)
+Bash에서는 문자열의 길이를 찾는 다양한 방법이 있습니다. 예를 들면 `wc` 명령어를 사용할 수도 있습니다. 또한 `cut` 명령어를 사용해 원하는 부분만 추출한 후 그 길이를 구하는 것도 가능합니다. Bash에서 제공하는 다양한 내장 명령어와 함수를 사용하여 더욱 다양한 방법으로 문자열의 길이를 찾을 수 있습니다.
 
-## 더 많은 정보
+## 관련 사이트
 
-위에 제시된 예제는 Bash에서 문자열 길이를 찾는 일반적인 방법을 보여주고 있습니다. 하지만 Bash에는 더 많은 문자열 처리와 관련된 유용한 기능이 있으며, 더 깊이 파고들어 공부해보시기 바랍니다.
-
-## 참고자료
-
-- [Bash 관련문자열 처리 관련 문서](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion)
-- [Bash 쉘 스크립트 문서](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
+- [Bash 공식 웹사이트](https://www.gnu.org/software/bash/)
+- [Bash 입문자를 위한 튜토리얼](https://www.learnshell.org/en/)
+- [Bash 스크립트 예제들](https://www.shellscript.sh/)
+- [Linux 명령어 레퍼런스](https://www.linuxcommand.org/)

@@ -1,7 +1,9 @@
 ---
-title:                "TypeScript: Utvinning av substrings"
+title:                "TypeScript: Uthenting av delstrenger"
+simple_title:         "Uthenting av delstrenger"
 programming_language: "TypeScript"
-category:             "Strings"
+category:             "TypeScript"
+tag:                  "Strings"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/no/typescript/extracting-substrings.md"
 ---
 
@@ -9,64 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hvorfor
 
-Å trekke ut substrings er en vanlig oppgave når du jobber med tekstbehandling i programmering. Dette kan være nyttig for å manipulere og behandle data på en mer detaljert og presis måte. I denne blogginnlegget vil vi gå gjennom hvordan du kan trekke ut substrings ved hjelp av TypeScript.
+Å trekke ut substrings, eller deler av en streng, er en vanlig oppgave i programmering. Dette kan være nyttig for å manipulere data eller hente ut spesifikke deler av en tekststreng. I denne blogginnlegget skal vi se på hvordan man kan gjøre dette i TypeScript.
 
 ## Slik gjør du det
 
-For å trekke ut substrings i TypeScript bruker vi metoden `substring()` sammen med indeksene til start og slutt på den delen av teksten vi ønsker å hente ut. La oss se på et enkelt eksempel:
+For å trekke ut en substring i TypeScript, kan du bruke metoden `substring()` på en strengvariabel. Denne metoden tar inn to argumenter: startindeks og stoppindeks. La oss se på et eksempel:
 
 ```TypeScript
-let tekst = "Hei, dette er en test";
+let tekst = "Dette er en tekststreng";
 
-let substring = tekst.substring(5, 10);
+let delTekst = tekst.substring(5, 8);
 
-console.log(substring);
+console.log(delTekst);
 ```
 
-Dette eksemplet vil gi oss følgende output:
+Dette vil resultere i output-en `er`. Her har vi brukt metoden til å trekke ut deler fra den opprinnelige `tekst`-variabelen, fra og med indeks 5 til og med indeks 8.
+
+Hvis du kun ønsker å trekke ut en del av en streng fra og med en bestemt indeks, kan du bare bruke én argument i `substring()`-metoden. For eksempel:
 
 ```TypeScript
-dette
+let tekst = "Dette er en tekststreng";
+
+let delTekst = tekst.substring(12);
+
+console.log(delTekst);
 ```
 
-I koden over har vi definert en tekststreng og deretter brukt `substring()`-metoden for å hente ut teksten fra indeks 5 til indeks 10. Det er viktig å huske på at indeksene starter på 0, så det betyr at vi egentlig henter ut teksten fra den sjette (5 + 1) til den ellevte (10 + 1) bokstaven i teksten.
-
-Vi kan også bruke negative indekser i `substring()`-metoden. Dette vil gi oss teksten fra slutten av teksten, som vist i eksempelet under:
-
-```TypeScript
-let tekst = "Hei, dette er en test";
-
-let substring = tekst.substring(-4, -1);
-
-console.log(substring);
-```
-
-Outputen for dette eksemplet vil være:
-
-```TypeScript
-tes
-```
-
-Vi kan også bruke variabler eller konstanter som indekser, avhengig av hva som passer best for oppgaven vår. Her er et eksempel på hvordan vi kan bruke konstanter som indekser:
-
-```TypeScript
-let tekst = "Hei, dette er en test";
-
-const START_INDEX = 5;
-const END_INDEX = 10;
-
-let substring = tekst.substring(START_INDEX, END_INDEX);
-
-console.log(substring);
-```
+Her vil `substring()`-metoden automatisk bruke indeksen 12 som start og trekke ut alt etter dette. Dette vil resultere i output-en `tekststreng`.
 
 ## Dykk dypere
 
-Det er også verdt å nevne at `substring()`-metoden ikke endrer på den originale teksten, men heller returnerer en ny tekststreng basert på parametrene vi har gitt den. Hvis du ønsker å endre på den originale teksten, kan du bruke metoden `splice()` i stedet.
+I tillegg til `substring()`-metoden, kan man også bruke `slice()`-metoden for å trekke ut substrings i TypeScript. Denne metoden fungerer på samme måte som `substring()`, men tar inn negative indekser for å trekke ut deler fra slutten av strengen. Her er et eksempel:
 
-Det er også mulig å hente ut deler av en tekst basert på kun én indeks i `substring()`-metoden. Hvis vi kun gir en startindeks, vil metoden hente ut teksten fra dette punktet og helt til slutten av teksten. Og hvis vi kun gir en sluttindeks, vil metoden hente ut teksten fra begynnelsen av teksten og til dette punktet.
+```TypeScript
+let tekst = "Dette er en tekststreng";
+
+let delTekst = tekst.slice(-6);
+
+console.log(delTekst);
+```
+
+Dette vil gi output-en `steng`, siden vi trekker ut de siste 6 bokstavene av strengen.
+
+Det er også verdt å merke seg at `substring()` og `slice()` returnerer en ny streng og endrer ikke den opprinnelige strengen. Hvis du ønsker å endre den opprinnelige strengen, kan du bruke `replace()`-metoden.
 
 ## Se også
 
-- [MDN web docs: substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [TypeScript documentation: string methods](https://www.typescriptlang.org/docs/handbook/2/strings.html#string-methods)
+- [Dokumentasjon for `substring()`](https://www.tutorialspoint.com/typescript/string_substring.htm)
+- [Dokumentasjon for `slice()`](https://www.tutorialspoint.com/typescript/string_slice.htm)
+- [Dokumentasjon for `replace()`](https://www.tutorialspoint.com/typescript/string_replace.htm)

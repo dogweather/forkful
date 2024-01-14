@@ -1,7 +1,9 @@
 ---
-title:                "Rust: Laskeminen tulevaan tai menneeseen päivämäärään"
+title:                "Rust: Tulevan tai menneen päivämäärän laskeminen"
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
 programming_language: "Rust"
-category:             "Dates and Times"
+category:             "Rust"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/fi/rust/calculating-a-date-in-the-future-or-past.md"
 ---
 
@@ -9,44 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Miksi
 
-Joskus ohjelmiston on laskettava päivämäärä tulevaisuudessa tai menneisyydessä. Tähän on monia mahdollisia syitä, kuten aikaperustaisen palkan laskeminen tai tulevien tapahtumien aikatauluttaminen. Jokainen sovellus voi tarvita tätä ominaisuutta eri syistä, mutta yhteinen tekijä on päivämäärän laskeminen halutun ajanjakson päässä nykyisestä ajasta.
+Rust on suosittu ohjelmointikieli monipuolisen ja luotettavan tyyppijärjestelmänsä ansiosta. Yksi sen voimista on myös sen kyky käsitellä aikaa ja päivämääriä tehokkaasti. Tässä blogikirjoituksessa tutustumme siihen, miten voimme laskea tulevan tai menneen päivämäärän Rustin avulla.
 
-## Miten
+## Kuinka tehdä
 
-Rustilla on joukko sisäänrakennettuja työkaluja ja kirjastoja, jotka tekevät päivämäärän laskemisen helpoksi. Ensimmäinen askel on lisätä `chrono`-kirjasto `Cargo.toml` tiedostoon:
-
-```Rust
-[dependencies]
-chrono = "0.4"
-```
-
-Seuraavaksi voit luoda uuden `DateTime` -muuttujan nykyisellä ajalla ja käyttää `chrono` -kirjastoa lisätäksesi tai vähentääksesi päiviä tai muita aikayksiköitä. Alla on esimerkki kahden päivän päästä olevan päivämäärän laskemisesta:
+Laskeminen tulevan tai menneen päivämäärän Rustilla on helppoa käyttämällä "chrono" kirjastoa. Ensiksi, tuo kirjasto projektiisi riippuvuuksien luetteloon ja käytä sen Date-pakkausta määrittämään haluttu päivämäärä:
 
 ```Rust
-use chrono::{DateTime, Datelike, Local, Duration};
-
-fn main() {
-   let today: DateTime<Local> = Local::now();
-   let two_days_from_today: DateTime<Local> = today + Duration::days(2);
-
-   println!("Päivämäärä kahden päivän päästä on {}.", two_days_from_today.date())
-}
+use chrono::{Date, Duration, Local, NaiveDate};
+let current_date: Date<Local> = Local::today();
+let future_date = current_date + Duration::days(7);
+let past_date = current_date - Duration::weeks(2);
 ```
 
-Tämä koodi tuottaa seuraavan tulosteen:
+Ensimmäinen rivi tuo "chrono" kirjaston projektiin ja luo uuden päivämäärän tyyppiä "Local". Tällä hetkellä olevan päivämäärän saa käyttämällä "today()" metodia.
+
+Seuraavat kaksi riviä laskevat tulevan ja menneen päivämäärän käyttämällä "+" ja "-" operaattoreita sekä "Duration" tyyppiä. Tässä esimerkissä lisätään 7 päivää ja vähennetään 2 viikkoa nykyisestä päivämäärästä.
+
+Lopuksi, voit tulostaa päivämäärät käyttämällä "println!" makroa:
 
 ```Rust
-Päivämäärä kahden päivän päästä on 2021-11-11.
+println!("Tuleva päivämäärä: {}", future_date);
+println!("Menneet päivämäärät: {}", past_date);
 ```
 
-Muita hyödyllisiä aikayksiköitä, joita voit käyttää `chrono` -kirjastossa, ovat esimerkiksi `minutes()`, `hours()`, `weeks()` jne.
+Kun ajat koodin, saat seuraavan tulosteen:
 
-## Syvällinen sukellus
+```
+Tuleva päivämäärä: 2021-04-20
+Menneet päivämäärät: 2021-04-06
+```
 
-Jotta voitaisiin laskea tarkempia päivämääriä, kuten palkanmaksupäivä kuukauden lopussa tai tulevien tapahtumien aikataulutus vuosien päähän, sinun kannattaa tutustua `chrono` -kirjaston dokumentaatioon ja erilaisiin aikayksiköihin, joita voit käyttää. Lisäksi voit luoda omia `Duration`-muuttujia esimerkiksi yhdistämällä erilaisia aikayksiköitä ja käyttää niitä päivämäärän laskemiseen.
+## Syväsukellus
+
+"chrono" kirjasto tarjoaa laajan valikoiman toimintoja ja metodeja päivämäärien käsittelyyn. Voit esimerkiksi laskea päivien, viikkojen ja kuukausien määrän kahden päivämäärän välillä, muuntaa päivämäärän eri aikavyöhykkeelle tai formatoida päivämäärän halutunlaiseksi.
+
+Lisäksi, "chrono" kirjaston avulla voit myös laskea aikaleimoja ja kellonaikoja. Se tarjoaa myös tuki tuleville aikavyöhykkeiden muutoksille, mikä tekee siitä erittäin luotettavan.
 
 ## Katso myös
-
-- [Chrono Crate Documentation](https://docs.rs/chrono/latest/chrono/)
-- [Rust Language Reference](https://doc.rust-lang.org/reference/index.html)
-- [Cargo Package Registry](https://crates.io/)
+- Chrono dokumentaatio: https://docs.rs/chrono/0.4.19/chrono/ 
+- Rust dokumentaatio: https://doc.rust-lang.org/std/time/index.html 
+- "Date and Time Handling in Rust" Medium-artikkeli: https://medium.com/@rickyattds/date-and-time-handling-in-rust-be263f819b96

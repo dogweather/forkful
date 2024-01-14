@@ -1,7 +1,9 @@
 ---
-title:                "C: Eine Datum in einer Zeichenfolge umwandeln"
+title:                "C: Ein Datum in eine Zeichenfolge umwandeln"
+simple_title:         "Ein Datum in eine Zeichenfolge umwandeln"
 programming_language: "C"
-category:             "Dates and Times"
+category:             "C"
+tag:                  "Dates and Times"
 editURL:              "https://github.com/dogweather/forkful/blob/master/content/de/c/converting-a-date-into-a-string.md"
 ---
 
@@ -9,9 +11,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Warum
 
-Das Konvertieren eines Datums in eine Zeichenfolge ist ein wichtiger Schritt in der Programmierung, um eine benutzerfreundliche Darstellung von Datum und Zeit zu ermöglichen. Eine solche Funktion ist nützlich, wenn Sie beispielsweise einen Benutzer mit einem bestimmten Datum begrüßen möchten oder eine Formatierung für die Anzeige von Kalenderereignissen benötigen.
+Das Umwandeln eines Datums in eine Zeichenkette mag auf den ersten Blick vielleicht keine spannende Aufgabe erscheinen, aber es ist eine wichtige Fähigkeit für jeden C-Programmierer. Das Konvertieren von Daten in verschiedene Formate, wie zum Beispiel in eine Zeichenkette, ist eine grundlegende Technik in der Programmierung und wird häufig benötigt, um Daten für die Ausgabe oder die Verarbeitung zu formatieren.
 
-## Wie geht's
+## Wie
+
+Das Konvertieren eines Datums in eine Zeichenkette in C ist relativ einfach und erfordert nur wenige Zeilen Code. Zunächst müssen wir die Variablen für das Datum erstellen, die wir konvertieren möchten. In diesem Beispiel verwenden wir die Standard-Library-Funktion `time()` um das aktuelle Datum und die aktuelle Uhrzeit zu erhalten. Dann verwenden wir die `strftime()` Funktion, um das Datum in eine Zeichenkette umzuwandeln.
 
 ```C
 #include <stdio.h>
@@ -19,39 +23,42 @@ Das Konvertieren eines Datums in eine Zeichenfolge ist ein wichtiger Schritt in 
 
 int main()
 {
-  time_t jetzt = time(NULL);
-  struct tm * datum = localtime(&jetzt);
+    // Variablen für das Datum und die Zeichenkette erstellen
+    time_t now;
+    struct tm *date;
+    char date_str[50];
 
-  // Datumsformat festlegen
-  char zeichenfolge[50];
-  strftime(zeichenfolge, sizeof(zeichenfolge), "%A, %d. %B %Y", datum);
+    // Aktuelles Datum und Uhrzeit abrufen
+    time(&now);
+    
+    // Datum in eine Zeichenkette umwandeln
+    date = localtime(&now);
+    strftime(date_str, sizeof(date_str), "%d.%m.%Y", date);
 
-  printf("Heute ist %s.\n", zeichenfolge);
+    // Zeichenkette ausgeben
+    printf("%s", date_str);
 
-  return 0;
+    return 0;
 }
 ```
 
-**Ausgabe:**
+Die `strftime()` Funktion erwartet drei Argumente: die Variable, in der das umgewandelte Datum gespeichert werden soll, die maximale Größe dieser Variable und das Format, in dem das Datum ausgegeben werden soll. Im obigen Beispiel verwenden wir das Format `%d.%m.%Y`, um das Datum in dem üblichen deutschen Format anzuzeigen: Tag, Monat, Jahr.
+
+Wenn wir dieses Programm ausführen, sollte die Ausgabe das aktuelle Datum in Form einer Zeichenkette im gewünschten Format enthalten.
 
 ```
-Heute ist Freitag, 28. Mai 2021.
+31.03.2021
 ```
 
-Dieses Beispiel nutzt die Standardbibliotheken `stdio.h` und `time.h`, um das aktuelle Datum und die aktuelle Uhrzeit abzurufen. Mit der Funktion `strftime()` können wir das Datum in einem bestimmten Format ausgeben.
+## Deep Dive
 
-Um ein individuelles Format zu erstellen, können verschiedene Formatierungszeichen verwendet werden, die in der Dokumentation von `strftime()` aufgeführt sind. In diesem Beispiel haben wir den Wochentag, das Datum, den Monat und das Jahr angegeben.
+Obwohl das Konvertieren eines Datums in eine Zeichenkette in C einfach erscheinen mag, gibt es einige wichtige Dinge zu beachten. Zum Beispiel müssen wir sicherstellen, dass die Variable, in der das umgewandelte Datum gespeichert wird, groß genug ist, um das gesamte Datum abzudecken. Andernfalls könnte die Zeichenkette abgeschnitten werden und das Datum wäre unvollständig.
 
-## Tiefer Einblick
+Außerdem bietet die `strftime()` Funktion viele verschiedene Formatierungsoptionen, mit denen wir das Datum nach unseren Wünschen formatieren können. Wir können auch spezifische Sprach- und Ländercodes angeben, um das Datum in verschiedenen regionalen Formaten anzuzeigen.
 
-Bei der Konvertierung eines Datums in eine Zeichenfolge gibt es einige wichtige Dinge zu beachten. Zunächst ist die verwendete Zeichenfolge begrenzt auf eine bestimmte Länge. Es ist wichtig sicherzustellen, dass die Zeichenfolge groß genug ist, um das Datum in dem gewünschten Format aufzunehmen.
-
-Darüber hinaus ist es wichtig, die korrekten Funktionen zum Abrufen des Datums und der Uhrzeit zu verwenden, je nachdem, ob Sie das lokale oder das UTC-Datum benötigen. Die Funktionen `localtime()` und `gmtime()` können hier hilfreich sein.
-
-Es sollte auch beachtet werden, dass die Formatierung von Datumsangaben in verschiedenen Regionen unterschiedlich sein kann. Daher ist es wichtig, dass Sie die richtigen Formatierungsmöglichkeiten für Ihre Zielgruppe kennen.
+Eine vollständige Liste der verfügbaren Formatierungsoptionen und ihre Bedeutung kann der offiziellen Dokumentation der `strftime()` Funktion entnommen werden.
 
 ## Siehe auch
 
-- [Dokumentation zu `strftime()`](https://www.cplusplus.com/reference/ctime/strftime/) (Englisch)
-- [Formatierung von Datumsangaben in verschiedenen Regionen](https://www.timeanddate.com/date/timezone.html) (Englisch)
-- [Beispielcode für das Konvertieren eines Datums in eine Zeichenfolge](https://www.geeksforgeeks.org/how-to-convert-date-string-to-month-integer-in-cc-programming/) (Englisch)
+- Offizielle Dokumentation der `strftime()` Funktion: https://www.cplusplus.com/reference/ctime/strftime/
+- Weitere Informationen zu Datums- und Zeitformaten in C: https://www.tutorialspoint.com/cprogramming/c_date_time.htm
